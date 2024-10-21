@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_PATH_COST_CALC_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 OverJumpHeight = 100">
+      <DisplayName>ジャンプ力をオーバーしている時の高さ倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 SkyHeightScale = 3">
+      <DisplayName>空中ノードの高度さ倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 OverFlyDistScale = 5">
+      <DisplayName>飛べる距離を超えている時の距離倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 SkyCost = 3">
+      <DisplayName>空中ノードのコスト</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 GroundCost">
+      <DisplayName>地上ノードのコスト</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 PrevOverHeightScale = 10">
+      <DisplayName>前の高度より高い時の高さ倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 JumpBeginXzDistScale = 3">
+      <DisplayName>ジャンプする時の水平方向による距離倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 WallJumpHeightScale = 2">
+      <DisplayName>三角飛びするときの高さ倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 WallJumpMinCost = 5">
+      <DisplayName>三角飛びするときの最低コスト</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 WaterNodeCost = 10000">
+      <DisplayName>水面ノードのコスト</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 OnWaterNodeCost = 1000">
+      <DisplayName>水上ノードのコスト</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 NoPassNodeCost = 100000">
+      <DisplayName>通れない大きさのノードのコスト</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 bUnuseWallJump">
+      <DisplayName>三角飛びパスを狙わない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>AIDLCで追加。ONで三角飛びを使用したパスを通らない用になる。</Description>
+      <Maximum>1</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u8 bLargeCostArea">
+      <DisplayName>パス検索領域を拡張する</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>AIDLCで追加。ONでパス検索の範囲が250m→1000mになる</Description>
+      <Maximum>1</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved1[14] = 2">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1000</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>16</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

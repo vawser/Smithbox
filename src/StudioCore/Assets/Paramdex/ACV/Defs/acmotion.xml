@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_MOTIONINFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="u8 AnimID_old">
+      <DisplayName>AP2アニメ(1バイト版は現在使われていない)</DisplayName>
+      <Enum>ACANMID_OLD</Enum>
+    </Field>
+    <Field Def="u8 bLoop">
+      <DisplayName>ループ</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 InterpolateID">
+      <DisplayName>補間ID</DisplayName>
+      <Enum>ACANIM_HOKAN_ID</Enum>
+    </Field>
+    <Field Def="u8 bDisableCoreCtrl">
+      <DisplayName>コア制御禁止</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 UpperPriority">
+      <DisplayName>上半身再生優先度</DisplayName>
+    </Field>
+    <Field Def="u8 bApplyLower">
+      <DisplayName>下半身アニメ再生</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u16 AnimID">
+      <DisplayName>AP2アニメ</DisplayName>
+      <Enum>ACANMID</Enum>
+      <Maximum>60000</Maximum>
+    </Field>
+    <Field Def="u8 BoosterAnimID">
+      <DisplayName>ﾌﾞｰｽﾀｰアニメ</DisplayName>
+      <Enum>BOOSTERANMID</Enum>
+      <EditFlags>Wrap, Lock</EditFlags>
+    </Field>
+    <Field Def="fixstr Reserved2[7]">
+      <DisplayName>--予約--</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

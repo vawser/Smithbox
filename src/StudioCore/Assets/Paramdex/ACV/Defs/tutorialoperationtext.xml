@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TUTORIAL_OPERATION_TEXT</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u32 操作説明メッセージID">
+      <DisplayName>操作説明メッセージID</DisplayName>
+      <Maximum>9000000</Maximum>
+    </Field>
+    <Field Def="u8 キーフォント１">
+      <DisplayName>キーフォント１</DisplayName>
+      <Enum>TUTORIAL_KEY_ICON</Enum>
+    </Field>
+    <Field Def="u8 キーフォント２">
+      <DisplayName>キーフォント２</DisplayName>
+      <Enum>TUTORIAL_KEY_ICON</Enum>
+    </Field>
+    <Field Def="fixstr 予約[2]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

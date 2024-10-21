@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GROW_PARTS_BLADE_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 hitRadius_Min">
+      <DisplayName>当たり長さ（成長最低）</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 hitRadius_Org">
+      <DisplayName>当たり長さ（成長前）</DisplayName>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 hitRadius_Max">
+      <DisplayName>当たり長さ（成長最大）</DisplayName>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 bladeRadius_Min">
+      <DisplayName>ブレード太さ（成長最低）</DisplayName>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 bladeRadius_Org">
+      <DisplayName>ブレード太さ（成長前）</DisplayName>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u16 bladeRadius_Max">
+      <DisplayName>ブレード太さ（成長最大）</DisplayName>
+      <SortID>6</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

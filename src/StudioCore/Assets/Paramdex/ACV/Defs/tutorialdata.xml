@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TUTORIAL_DATA_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="fixstr レイヤー名[32]">
+      <DisplayName>レイヤー名</DisplayName>
+      <Description>有効化するレイヤー名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="fixstr スクリプト名[32]">
+      <DisplayName>スクリプト名</DisplayName>
+      <Description>ミッション管理に当たるスクリプト名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="u32 自機のイベントID">
+      <DisplayName>自機のイベントID</DisplayName>
+      <Description>【敵イベントデータ.xls】の照合データキー</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+    </Field>
+    <Field Def="s32 自機機体構成ID">
+      <DisplayName>自機機体構成ID</DisplayName>
+      <Description>自機機体構成ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+    </Field>
+    <Field Def="s32 自機初期位置ポイントID">
+      <DisplayName>自機初期位置ポイントID</DisplayName>
+      <Description>自機初期位置</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+    </Field>
+    <Field Def="dummy8 予約[52]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+    </Field>
+  </Fields>
+</PARAMDEF>

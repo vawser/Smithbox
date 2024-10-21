@@ -1,0 +1,12 @@
+{
+    "list": [
+        {
+            "id": "default",
+            "name": "Default",
+            
+            "tags": [
+                "default"
+            ]
+        }
+    ]
+}

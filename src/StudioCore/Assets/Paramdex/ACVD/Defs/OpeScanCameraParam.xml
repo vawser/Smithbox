@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>OPERATOR_SCAN_CAMERA_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 EyeAngleX">
+      <DisplayName>カメラ角度X</DisplayName>
+      <Description>カメラ角度X</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 EyeAngleY">
+      <DisplayName>カメラ角度Y</DisplayName>
+      <Description>カメラ角度Y</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 EyeDist = 1">
+      <DisplayName>距離</DisplayName>
+      <Description>距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 AtOffsetX">
+      <DisplayName>注視点X</DisplayName>
+      <Description>注視点X</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 AtOffsetY">
+      <DisplayName>注視点Y</DisplayName>
+      <Description>注視点Y</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 AtOffsetZ">
+      <DisplayName>注視点Z</DisplayName>
+      <Description>注視点Z</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[8]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>8</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

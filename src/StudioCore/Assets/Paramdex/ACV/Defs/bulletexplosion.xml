@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BULLET_EXPLOSION_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 BehaviorID">
+      <DisplayName>プログラム</DisplayName>
+      <Enum>BULLET_BEHAVIOR_ID</Enum>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 bShootable">
+      <DisplayName>撃墜可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>この弾が「迎撃可」の弾によって撃ち落されることができる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 bCanGoWater">
+      <DisplayName>水中可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 bWireThrough = 1">
+      <DisplayName>金網貫通</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 bInterceptable = 1">
+      <DisplayName>迎撃可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>この弾が「撃墜可」の弾を撃ち落すことができる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 HitRadius">
+      <DisplayName>当たり半径</DisplayName>
+      <Description>球爆発はこの値を無視します</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 ProximityFuseRange">
+      <DisplayName>近接信管距離</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 DecayPower">
+      <DisplayName>減衰：威力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 DecayRecoil">
+      <DisplayName>減衰：反動</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 DecayDiffsibility">
+      <DisplayName>減衰：拡散力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 DecayPenetrability">
+      <DisplayName>減衰：貫通力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 InitRadius = 6">
+      <DisplayName>初期爆発半径</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 MaxRadius = 16">
+      <DisplayName>最大爆発半径</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 DamageFrame = 25">
+      <DisplayName>ダメージ発生時間</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 DamageFrameDecayRate = 0.5">
+      <DisplayName>フレーム単位のダメージ減衰係数</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 FlashRange">
+      <DisplayName>閃光 効果範囲</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="f32 FlashTime">
+      <DisplayName>閃光 効果時間(秒)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="f32 Brightness">
+      <DisplayName>照明効果</DisplayName>
+      <Description>( 0以外の値を )設定するとダメージが無効になります</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u8 DamageHitCount">
+      <DisplayName>ダメージ発生回数</DisplayName>
+      <Description>0のときはダメージが毎フレーム入ります</Description>
+      <Maximum>1</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u8 MinEffectRate">
+      <DisplayName>最小減衰率(%)</DisplayName>
+      <Description>減衰率はこの値より小さくならない</Description>
+      <Maximum>100</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved1[18]">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>22</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

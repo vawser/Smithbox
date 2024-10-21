@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_AC_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 RewardID">
+      <DisplayName>報酬ID</DisplayName>
+      <Description>報酬額のID</Description>
+      <Maximum>99999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[30]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

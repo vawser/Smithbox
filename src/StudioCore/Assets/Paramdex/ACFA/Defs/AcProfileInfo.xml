@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_PROFILE_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 ID = 0">
+      <DisplayName>ID</DisplayName>
+    </Field>
+    <Field Def="fixstr dummy[3]">
+      <DisplayName>ダミー</DisplayName>
+      <EditFlags>None</EditFlags>
+    </Field>
+    <Field Def="fixstrW Description[254]">
+      <DisplayName>説明</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

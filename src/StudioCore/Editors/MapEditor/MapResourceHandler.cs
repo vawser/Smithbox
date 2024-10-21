@@ -23,11 +23,13 @@ namespace StudioCore.Editors.MapEditor
 
         private HashSet<ResourceDescriptor> LoadList_MapPiece_Model = new();
         private HashSet<ResourceDescriptor> LoadList_Character_Model = new();
+        private HashSet<ResourceDescriptor> LoadList_Enemy_Model = new();
         private HashSet<ResourceDescriptor> LoadList_Asset_Model = new();
         private HashSet<ResourceDescriptor> LoadList_Collision = new();
         private HashSet<ResourceDescriptor> LoadList_Navmesh = new();
 
         private HashSet<ResourceDescriptor> LoadList_Character_Texture = new();
+        private HashSet<ResourceDescriptor> LoadList_Enemy_Texture = new();
         private HashSet<ResourceDescriptor> LoadList_Asset_Texture = new();
         private HashSet<ResourceDescriptor> LoadList_Map_Texture = new();
         private HashSet<ResourceDescriptor> LoadList_Other_Texture = new();
@@ -48,7 +50,7 @@ namespace StudioCore.Editors.MapEditor
         {
             MapResource = MapLocator.GetMapMSB(MapID);
 
-            if(MapResource.AssetPath == null)
+            if (MapResource.AssetPath == null)
                 return false;
 
             return true;
@@ -84,6 +86,18 @@ namespace StudioCore.Editors.MapEditor
             {
                 Msb = MSBD.Read(MapResource.AssetPath);
             }
+            else if (Smithbox.ProjectType == ProjectType.ACFA)
+            {
+                Msb = MSBFA.Read(MapResource.AssetPath);
+            }
+            else if (Smithbox.ProjectType == ProjectType.ACV)
+            {
+                Msb = MSBV.Read(MapResource.AssetPath);
+            }
+            else if (Smithbox.ProjectType == ProjectType.ACVD)
+            {
+                Msb = MSBVD.Read(MapResource.AssetPath);
+            }
             else
             {
                 Msb = MSB1.Read(MapResource.AssetPath);
@@ -109,7 +123,7 @@ namespace StudioCore.Editors.MapEditor
             foreach (IMsbModel model in Msb.Models.GetEntries())
             {
                 // MapPiece
-                if (model.Name.StartsWith("m"))
+                if (model.Name.StartsWith('m'))
                 {
                     var name = ModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name);
                     var modelAsset = ModelLocator.GetMapModel(AdjustedMapID, name, name);
@@ -119,7 +133,7 @@ namespace StudioCore.Editors.MapEditor
                 }
 
                 // Character
-                if (model.Name.StartsWith("c"))
+                if (model.Name.StartsWith('c'))
                 {
                     var modelAsset = ModelLocator.GetChrModel(model.Name, model.Name);
 
@@ -127,8 +141,17 @@ namespace StudioCore.Editors.MapEditor
                         LoadList_Character_Model.Add(modelAsset);
                 }
 
+                // Enemy
+                if (model.Name.StartsWith('e'))
+                {
+                    var modelAsset = ModelLocator.GetEneModel(model.Name);
+
+                    if (modelAsset.IsValid())
+                        LoadList_Enemy_Model.Add(modelAsset);
+                }
+
                 // Object / Asset
-                if (model.Name.StartsWith("o") || model.Name.StartsWith("AEG"))
+                if (model.Name.StartsWith('o') || model.Name.StartsWith("AEG"))
                 {
                     var modelAsset = ModelLocator.GetObjModel(model.Name, model.Name);
 
@@ -137,7 +160,7 @@ namespace StudioCore.Editors.MapEditor
                 }
 
                 // Collision
-                if (model.Name.StartsWith("h"))
+                if (model.Name.StartsWith('h'))
                 {
                     var modelAsset = ModelLocator.GetMapCollisionModel(AdjustedMapID, ModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name), false);
 
@@ -148,7 +171,7 @@ namespace StudioCore.Editors.MapEditor
                 // Navmesh
                 if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.DS1 or ProjectType.DS1R)
                 {
-                    if (model.Name.StartsWith("n"))
+                    if (model.Name.StartsWith('n'))
                     {
                         var modelAsset = ModelLocator.GetMapNVMModel(AdjustedMapID, ModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name));
 
@@ -165,7 +188,7 @@ namespace StudioCore.Editors.MapEditor
             foreach (IMsbModel model in Msb.Models.GetEntries())
             {
                 // Character
-                if (model.Name.StartsWith("c"))
+                if (model.Name.StartsWith('c'))
                 {
                     var textureAsset = TextureLocator.GetChrTextures(model.Name);
 
@@ -173,8 +196,17 @@ namespace StudioCore.Editors.MapEditor
                         LoadList_Character_Texture.Add(textureAsset);
                 }
 
+                // Enemy
+                if (model.Name.StartsWith('e'))
+                {
+                    var textureAsset = TextureLocator.GetEneTextureContainer(model.Name);
+
+                    if (textureAsset.IsValid())
+                        LoadList_Enemy_Texture.Add(textureAsset);
+                }
+
                 // Object
-                if (model.Name.StartsWith("o"))
+                if (model.Name.StartsWith('o'))
                 {
                     var textureAsset = TextureLocator.GetObjTextureContainer(model.Name);
 
@@ -225,7 +257,7 @@ namespace StudioCore.Editors.MapEditor
         {
             foreach (Entity obj in map.Objects)
             {
-                if (obj.WrappedObject is IMsbPart mp && mp.ModelName != null && mp.ModelName != "" &&
+                if (obj.WrappedObject is IMsbPart mp && mp.ModelName != null && mp.ModelName != string.Empty &&
                     obj.RenderSceneMesh == null)
                 {
                     int[]? masks = null;
@@ -327,6 +359,25 @@ namespace StudioCore.Editors.MapEditor
             task = texJob.Complete();
             tasks.Add(task);
 
+            // Enemy
+            texJob = ResourceManager.CreateNewJob($@"Enemy Textures");
+
+            foreach (ResourceDescriptor asset in LoadList_Enemy_Texture)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = texJob.Complete();
+            tasks.Add(task);
+
             // Asset
             texJob = ResourceManager.CreateNewJob($@"Asset Textures");
 
@@ -393,6 +444,25 @@ namespace StudioCore.Editors.MapEditor
             job = ResourceManager.CreateNewJob($@"Characters");
 
             foreach (ResourceDescriptor asset in LoadList_Character_Model)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+
+            // Enemies
+            job = ResourceManager.CreateNewJob($@"Enemies");
+
+            foreach (ResourceDescriptor asset in LoadList_Enemy_Model)
             {
                 if (asset.AssetArchiveVirtualPath != null)
                 {

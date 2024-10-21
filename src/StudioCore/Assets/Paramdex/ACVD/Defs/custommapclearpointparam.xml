@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CUSTOM_MAP_CLEAR_POINT_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 MissionClearPoint">
+      <DisplayName>クリア時獲得攻略ポイント</DisplayName>
+      <Description>ミッションクリア時に獲得する攻略ポイント</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 AcBreakGetPoint = 30">
+      <DisplayName>AC撃破時攻略ポイント</DisplayName>
+      <Description>AC撃破時に獲得する攻略ポイント</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved[8]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

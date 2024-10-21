@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>HERI_BEHAVIOR_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 HorizontalAccel = 1">
+      <DisplayName>水平方向の加速度</DisplayName>
+      <Description>水平方向の加速度</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 HorizontalMaxSpeed = 100">
+      <DisplayName>水平方向の最高速度（km/h）</DisplayName>
+      <Description>水平方向の最高速度</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 HorizontalBrake = 0.1">
+      <DisplayName>水平方向のブレーキ</DisplayName>
+      <Description>水平方向のブレーキ</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved01[4] = 1">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>271</SortID>
+    </Field>
+    <Field Def="f32 LiftUpAccel = 1">
+      <DisplayName>上方向の加速度</DisplayName>
+      <Description>上方向の加速度</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="f32 LiftUpMaxSpeed = 100">
+      <DisplayName>上方向の最高速度（km/h）</DisplayName>
+      <Description>上方向の最高速度</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="f32 LiftUpBrake = 0.1">
+      <DisplayName>上方向のブレーキ</DisplayName>
+      <Description>上方向のブレーキ</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="f32 JumpAccel">
+      <DisplayName>ジャンプの加速度</DisplayName>
+      <Description>ジャンプ時の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="f32 LiftDownAccel = 1">
+      <DisplayName>下方向の加速度</DisplayName>
+      <Description>下方向の加速度</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="f32 LiftDownMaxSpeed = 100">
+      <DisplayName>下方向の最高速度（km/h）</DisplayName>
+      <Description>下方向の最高速度</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 LiftDownBrake = 0.1">
+      <DisplayName>下方向のブレーキ</DisplayName>
+      <Description>下方向のブレーキ</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="f32 FallAccel = 1">
+      <DisplayName>落下加速度</DisplayName>
+      <Description>落下時加速度（死亡時など）</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="f32 DashHorizontalAccel = 1">
+      <DisplayName>ダッシュ時水平方向の加速度</DisplayName>
+      <Description>ダッシュ時水平方向の加速度</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="f32 DashHorizontalMaxSpeed = 100">
+      <DisplayName>ダッシュ時水平方向の最高速度（km/h）</DisplayName>
+      <Description>ダッシュ時水平方向の最高速度</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>140</SortID>
+    </Field>
+    <Field Def="u8 AltBrakeFrame = 30">
+      <DisplayName>高度調整ブレーキフレーム</DisplayName>
+      <Minimum>1</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="u8 bKIRIMOMIDead">
+      <DisplayName>キリモミ死亡する？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>キリモミ死亡するか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="u8 bDeadAnimFlyPlay">
+      <DisplayName>死亡アニメを飛んでいても再生する？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>OFFで接地してから死亡アニメ再生</Description>
+      <Maximum>1</Maximum>
+      <SortID>170</SortID>
+    </Field>
+    <Field Def="u8 bAutoQuickturnDash">
+      <DisplayName>壁にぶつかったら勝手に反転三角跳びをするか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <DisplayFormat>%f</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>180</SortID>
+    </Field>
+    <Field Def="f32 SideDashAccel">
+      <DisplayName>横急加速の加速度</DisplayName>
+      <Description>横急加速時の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>190</SortID>
+    </Field>
+    <Field Def="u8 QuickTurnRadPerFrame = 90">
+      <DisplayName>クイックターンの最大旋回量[deg/frm]</DisplayName>
+      <Description>クイックターン時の最大旋回量</Description>
+      <Maximum>180</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 KIRIMOMIRev = 15">
+      <DisplayName>キリモミ死亡時角速度[deg/frame]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>161</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved05[2]">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>272</SortID>
+    </Field>
+    <Field Def="f32 DeadBrake = 0.1">
+      <DisplayName>死亡時地上ブレーキ</DisplayName>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="f32 DeadAccel = 1">
+      <DisplayName>死亡時加速</DisplayName>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="f32 HighNormalAccel = -1">
+      <DisplayName>高速加速度</DisplayName>
+      <Description>-1で水平方向の加速度と同じ</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>240</SortID>
+    </Field>
+    <Field Def="f32 HighNormalAccelSpeed">
+      <DisplayName>高速加速度を使うようになる最低速度[km/h]</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="f32 HighDashAccel = -1">
+      <DisplayName>高速ダッシュ加速度</DisplayName>
+      <Description>-1でダッシュ時水平方向の加速度と同じ</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>260</SortID>
+    </Field>
+    <Field Def="f32 HighDashAccelSpeed">
+      <DisplayName>高速ダッシュ加速度を使うようになる最低速度[km/h]</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>270</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved06[16] = 1">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>273</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

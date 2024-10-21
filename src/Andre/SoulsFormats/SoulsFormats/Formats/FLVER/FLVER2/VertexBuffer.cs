@@ -1,13 +1,8 @@
-﻿using SoulsFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public partial class FLVER2
@@ -17,13 +12,21 @@ namespace SoulsFormats
         /// </summary>
         public class VertexBuffer
         {
+            public bool EdgeCompressed { get; set; }
+
+            /// <summary>
+            /// The index of this buffer into the current vertex stream.<br/>
+            /// Used to combine buffers into a single vertex stream.
+            /// </summary>
+            public int BufferIndex { get; set; }
+
             /// <summary>
             /// Index to a layout in the FLVER's layout collection.
             /// </summary>
             public int LayoutIndex { get; set; }
 
             internal int VertexSize;
-            internal int BufferIndex;
+
             internal int VertexCount;
             internal int BufferOffset;
 
@@ -38,6 +41,19 @@ namespace SoulsFormats
             internal VertexBuffer(BinaryReaderEx br)
             {
                 BufferIndex = br.ReadInt32();
+
+                // TODO EDGE
+                int final = BufferIndex & ~0x60000000;
+                if (final != BufferIndex)
+                {
+                    EdgeCompressed = true;
+                    BufferIndex = final;
+                }
+                else
+                {
+                    EdgeCompressed = false;
+                }
+
                 LayoutIndex = br.ReadInt32();
                 VertexSize = br.ReadInt32();
                 VertexCount = br.ReadInt32();
@@ -47,38 +63,50 @@ namespace SoulsFormats
                 BufferOffset = br.ReadInt32();
             }
 
-            internal void ReadBuffer(BinaryReaderEx br, List<BufferLayout> layouts, List<FLVER.Vertex> vertices, int dataOffset, FLVERHeader header)
+            internal void ReadBuffer(BinaryReaderEx br, List<BufferLayout> layouts, List<FLVER.Vertex> vertices, int count, int dataOffset, FLVERHeader header)
             {
                 BufferLayout layout = layouts[LayoutIndex];
                 if (VertexSize != layout.Size)
-                    throw new InvalidDataException($"Mismatched vertex buffer and buffer layout sizes.");
+                {
+                    //Only try this for DS1
+                    if (header.Version == 0x2000B || header.Version == 0x2000C || header.Version == 0x2000D)
+                    {
+                        if (!layout.DarkSoulsRemasteredFix())
+                        {
+                            throw new InvalidDataException($"Mismatched vertex buffer and buffer layout sizes for Dark Souls Remastered model.");
+                        }
+                    }
+                    else
+                    {
+                        throw new InvalidDataException($"Mismatched vertex buffer and buffer layout sizes.");
+                    }
+                }
+
 
                 br.StepIn(dataOffset + BufferOffset);
                 {
-                    // TODO:
-                    // Issue with multi-blend meshes where the vertices write the UV values out differently, breaking the textures.
-                    // Likely the issue is that the uvFactor is wrong.
-
                     float uvFactor = 1024;
                     if (header.Version >= 0x2000F)
                         uvFactor = 2048;
 
-                    for (int i = 0; i < vertices.Count; i++)
+                    for (int i = 0; i < count; i++)
                         vertices[i].Read(br, layout, uvFactor);
                 }
                 br.StepOut();
 
-                VertexSize = -1;
-                BufferIndex = -1;
-                VertexCount = -1;
-                BufferOffset = -1;
+                // TODO ACVD
+                //VertexSize = -1;
+                //BufferIndex = -1;
+                //VertexCount = -1;
+                //BufferOffset = -1;
             }
 
             internal void Write(BinaryWriterEx bw, FLVERHeader header, int index, int bufferIndex, List<BufferLayout> layouts, int vertexCount)
             {
                 BufferLayout layout = layouts[LayoutIndex];
 
-                bw.WriteInt32(bufferIndex);
+                // TODO Edge I wonder if this is just a byte for flags at the start
+                bw.WriteInt32(EdgeCompressed ? (bufferIndex | 0x60000000) : bufferIndex);
                 bw.WriteInt32(LayoutIndex);
                 bw.WriteInt32(layout.Size);
                 bw.WriteInt32(vertexCount);

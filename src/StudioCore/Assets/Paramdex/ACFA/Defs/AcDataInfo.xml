@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_DATA_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 ID = 0">
+      <DisplayName>ID</DisplayName>
+    </Field>
+    <Field Def="u8 AcTextInfoID = 0">
+      <DisplayName>ACテキストID</DisplayName>
+    </Field>
+    <Field Def="fixstr dummy[2]">
+      <DisplayName>ダミー</DisplayName>
+      <EditFlags>None</EditFlags>
+    </Field>
+    <Field Def="u32 AcAssemblyDrawingID = 0">
+      <DisplayName>機体構成ID</DisplayName>
+      <Maximum>99999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FACTION_ORDER_NUMBER_GEN</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 val00_min">
+      <DisplayName>値1最小値</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 val00_max">
+      <DisplayName>値1最大値</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 val01_min">
+      <DisplayName>値2最小値</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 val01_max">
+      <DisplayName>値2最大値</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

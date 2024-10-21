@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using HKLib.hk2018.hkHashMapDetail;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
@@ -8,6 +9,7 @@ using StudioCore.Platform;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -55,10 +57,16 @@ public class PropertiesChangedAction : ViewportAction
         ChangedObject = changed;
         var change = new PropertyChange();
         change.Property = prop;
+
+        var value = change.Property.GetValue(ChangedObject);
         if (index != -1 && prop.PropertyType.IsArray)
         {
-            var a = (Array)change.Property.GetValue(ChangedObject);
+            var a = (Array)value;
             change.OldValue = a.GetValue(index);
+        }
+        else if (value.GetType().IsGenericType && index != -1 && value is IList list)
+        {
+            change.OldValue = list[index];
         }
         else
         {
@@ -74,10 +82,16 @@ public class PropertiesChangedAction : ViewportAction
     {
         var change = new PropertyChange();
         change.Property = prop;
+
+        var value = change.Property.GetValue(ChangedObject);
         if (index != -1 && prop.PropertyType.IsArray)
         {
-            var a = (Array)change.Property.GetValue(ChangedObject);
+            var a = (Array)value;
             change.OldValue = a.GetValue(index);
+        }
+        else if (value.GetType().IsGenericType && index != -1 && value is IList list)
+        {
+            change.OldValue = list[index];
         }
         else
         {
@@ -98,10 +112,15 @@ public class PropertiesChangedAction : ViewportAction
     {
         foreach (PropertyChange change in Changes)
         {
+            var value = change.Property.GetValue(ChangedObject);
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
-                var a = (Array)change.Property.GetValue(ChangedObject);
+                var a = (Array)value;
                 a.SetValue(change.NewValue, change.ArrayIndex);
+            }
+            else if (value.GetType().IsGenericType && change.ArrayIndex != -1 && value is IList list)
+            {
+                list[change.ArrayIndex] = change.NewValue;
             }
             else
             {
@@ -121,10 +140,15 @@ public class PropertiesChangedAction : ViewportAction
     {
         foreach (PropertyChange change in Changes)
         {
+            var value = change.Property.GetValue(ChangedObject);
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
-                var a = (Array)change.Property.GetValue(ChangedObject);
+                var a = (Array)value;
                 a.SetValue(change.OldValue, change.ArrayIndex);
+            }
+            else if (value.GetType().IsGenericType && change.ArrayIndex != -1 && value is IList list)
+            {
+                list[change.ArrayIndex] = change.OldValue;
             }
             else
             {
@@ -259,10 +283,16 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
                     NewValue = newval,
                     ArrayIndex = index
                 };
+
+                var value = change.Property.GetValue(propObj);
                 if (index != -1 && prop.PropertyType.IsArray)
                 {
-                    var a = (Array)change.Property.GetValue(propObj);
+                    var a = (Array)value;
                     change.OldValue = a.GetValue(index);
+                }
+                else if (value.GetType().IsGenericType && index != -1 && value is IList list)
+                {
+                    change.OldValue = list[index];
                 }
                 else
                 {
@@ -278,10 +308,15 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
     {
         foreach (PropertyChange change in Changes)
         {
+            var value = change.Property.GetValue(change.ChangedObj);
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
-                var a = (Array)change.Property.GetValue(change.ChangedObj);
+                var a = (Array)value;
                 a.SetValue(change.NewValue, change.ArrayIndex);
+            }
+            else if (value.GetType().IsGenericType && change.ArrayIndex != -1 && value is IList list)
+            {
+                list[change.ArrayIndex] = change.NewValue;
             }
             else
             {
@@ -310,10 +345,15 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
     {
         foreach (PropertyChange change in Changes)
         {
+            var value = change.Property.GetValue(change.ChangedObj);
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
-                var a = (Array)change.Property.GetValue(change.ChangedObj);
+                var a = (Array)value;
                 a.SetValue(change.OldValue, change.ArrayIndex);
+            }
+            else if (value.GetType().IsGenericType && change.ArrayIndex != -1 && value is IList list)
+            {
+                list[change.ArrayIndex] = change.OldValue;
             }
             else
             {

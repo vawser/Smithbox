@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENV_SFX_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="u16 WaterSpraySfxID">
+      <DisplayName>水しぶきSFXID</DisplayName>
+      <Maximum>60000</Maximum>
+    </Field>
+    <Field Def="u16 WaterSplashSfxID">
+      <DisplayName>水飛び込み時SFXID</DisplayName>
+      <Maximum>60000</Maximum>
+    </Field>
+    <Field Def="u16 WaterFlyOutSfxID">
+      <DisplayName>水飛び出し時SFXID</DisplayName>
+      <Maximum>60000</Maximum>
+    </Field>
+    <Field Def="dummy8 Reserved[22]">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

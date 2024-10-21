@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ACCAM_BEHAVIOR_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 LookAtHeight = 3.4">
+      <DisplayName>注視点の高さ(腰から)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 LookAtOffsetX">
+      <DisplayName>注視点の補正位置X</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 LookAtOffsetZ">
+      <DisplayName>注視点の補正位置Z</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 EyeHeight = 1.39999986">
+      <DisplayName>注視点～視点の高さ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 EyeDist = 15">
+      <DisplayName>視点の距離</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 EyeAngleY">
+      <DisplayName>視点の角度(デバッグ)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 FovAngle = 40">
+      <DisplayName>画角</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 LookAtFollowRateX = 0.15">
+      <DisplayName>視点の追従率:左右</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 LookAtFollowRateF = 0.17">
+      <DisplayName>:前</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 LookAtFollowRateB = 1">
+      <DisplayName>:後</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 EyeFollowRateX = 0.21">
+      <DisplayName>注視点の追従率:左右</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 EyeFollowRateF = 0.4">
+      <DisplayName>:前</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 EyeFollowRateB = 1">
+      <DisplayName>:後</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 FlyLookAtFollowRateX = 0.14">
+      <DisplayName>(空中)視点の追従率:左右</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 FlyLookAtFollowRateY = 0.16">
+      <DisplayName>:上下</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 FlyLookAtFollowRateF = 0.08">
+      <DisplayName>:前</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="f32 FlyLookAtFollowRateB = 1">
+      <DisplayName>:後</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="f32 FlyEyeFollowRateX = 0.17">
+      <DisplayName>(空中)注視点の追従率:左右</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="f32 FlyEyeFollowRateY = 0.23">
+      <DisplayName>:上下</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="f32 FlyEyeFollowRateF = 0.5">
+      <DisplayName>:前</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 FlyEyeFollowRateB = 1">
+      <DisplayName>:後</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="f32 DelayFollowStartFrame">
+      <DisplayName>遅れ追従の開始フレーム</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>1</Increment>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="f32 DelayFollowMaxFrame">
+      <DisplayName>遅れ追従の最大フレーム</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>1</Increment>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="f32 DelayFollowKeepFrame">
+      <DisplayName>遅れ追従の持続フレーム</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>1</Increment>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 DelayFollowStableFrame">
+      <DisplayName>遅れ追従の安定フレーム</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>1</Increment>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="f32 DelayLookAtFollowRateX = 0.15">
+      <DisplayName>遅れ追従の注視点追従:左右</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="f32 DelayLookAtFollowRateY = 0.3">
+      <DisplayName>:上下</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="f32 DelayLookAtFollowRateZ = 0.15">
+      <DisplayName>:前後</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="f32 DelayEyeFollowRateX = 0.27">
+      <DisplayName>遅れ追従の視点追従:左右</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="f32 DelayEyeFollowRateY = 0.3">
+      <DisplayName>:上下</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="f32 DelayEyeFollowRateZ = 0.15">
+      <DisplayName>:前後</DisplayName>
+      <Description>とりあえずパラメータで背景色が、グレーになっていた</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 ZTiltStartXSpeed">
+      <DisplayName>Ｚ回転を開始する横速度</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>10</Increment>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="f32 ZTiltMaxXSpeed = 800">
+      <DisplayName>Ｚ回転が最大になる横速度</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>10</Increment>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="f32 MaxZTiltAngle = 15">
+      <DisplayName>Ｚ回転の最大角度</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>1</Increment>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="f32 DelayAngleVelocity = 1">
+      <DisplayName>追従が遅れる旋回速度</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="f32 EyeFollowDelayRate = 1">
+      <DisplayName>追従が遅れる際の追従補正率</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="f32 HitRadius = 1">
+      <DisplayName>当たり半径</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="f32 EyeApproachRate = 0.9">
+      <DisplayName>見上げ:視点が近づく割合</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="f32 EyeDownRate = 0.5">
+      <DisplayName>見上げ:視点が降りる割合</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="f32 EyeForwardLength = 7">
+      <DisplayName>見下し:視点が前に出る距離</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="f32 AtForwardLength = 7">
+      <DisplayName>見下し:注視点が前に出る距離</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="f32 DashInvRate = 0.9">
+      <DisplayName>切返し:補正速度率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="f32 DashInvDecay = 0.93">
+      <DisplayName>切返し:補正減衰率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="f32 SideMovingAt = -2.4">
+      <DisplayName>横移動:注視点の補正高さ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="f32 SideMovingEye = -5.4">
+      <DisplayName>横移動:視点の補正高さ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="f32 SideMovingRate = 0.03">
+      <DisplayName>横移動:補間レート</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="f32 SideMovingRevRate = 0.07">
+      <DisplayName>横移動:戻りレート</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="f32 BlurIntpRate = 0.15">
+      <DisplayName>ブラー：補間レート</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="f32 BlurStartSpeed = 250">
+      <DisplayName>ブラー：開始速度</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>1</Increment>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="f32 BlurMaxSpeed = 1200">
+      <DisplayName>ブラー：最大速度</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>1</Increment>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="f32 BlurStartSpeedV = 250">
+      <DisplayName>ブラー：開始速度(垂直)</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>1</Increment>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="f32 BlurMaxSpeedV = 1200">
+      <DisplayName>ブラー：最大速度(垂直)</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>1</Increment>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="f32 BlurOffset = 10">
+      <DisplayName>ブラー：オフセット</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>20</Maximum>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="s32 BlurAlpha = 180">
+      <DisplayName>ブラー：アルファ値</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="f32 BlurCenterThin = 1">
+      <DisplayName>ブラー：中央の薄め値</DisplayName>
+      <Description>重要なパラメータ。修正する際は森田まで。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="f32 ShakeMoveAmplX">
+      <DisplayName>加速揺れ：振幅X　   </DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="f32 ShakeMoveAmplY = 0.5">
+      <DisplayName>：振幅Y</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="f32 ShakeMoveFreqX">
+      <DisplayName>加速揺れ：周期X　   </DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="f32 ShakeMoveFreqY = 0.07">
+      <DisplayName>：周期Y   　</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="f32 ShakeImpactAmplX">
+      <DisplayName>衝撃揺れ：最大振幅X　   </DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="f32 ShakeImpactAmplY = 0.5">
+      <DisplayName>：最大振幅Y 　  </DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="f32 ShakeImpactFreqX">
+      <DisplayName>衝撃揺れ：最大周期X　   </DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="f32 ShakeImpactFreqY = 0.07">
+      <DisplayName>：最大周期Y   　</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="f32 ShakeImpactTime = 0.3">
+      <DisplayName>衝撃揺れ：時間　</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>64</SortID>
+    </Field>
+    <Field Def="f32 ShakeImpactAccelMin = 30">
+      <DisplayName>衝撃揺れ：揺れ発生最低衝撃値</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>65</SortID>
+    </Field>
+    <Field Def="f32 ShakeImpactAccelMax = 50">
+      <DisplayName>衝撃揺れ：最大衝撃値</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>66</SortID>
+    </Field>
+    <Field Def="f32 ShakeFootStepAmplX">
+      <DisplayName>歩行揺れ：振幅X　   </DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>67</SortID>
+    </Field>
+    <Field Def="f32 ShakeFootStepAmplY = 0.2">
+      <DisplayName>：振幅Y 　  </DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>68</SortID>
+    </Field>
+    <Field Def="f32 ShakeFootStepFreqX">
+      <DisplayName>歩行揺れ：周期X　   </DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>69</SortID>
+    </Field>
+    <Field Def="f32 ShakeFootStepFreqY = 0.07">
+      <DisplayName>：周期Y   　</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="f32 ShakeFootStepTime = 0.1">
+      <DisplayName>歩行揺れ：時間　</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="f32 WaterStopYOffset = 5">
+      <DisplayName>水面停止時のオフセット高さ</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>72</SortID>
+    </Field>
+    <Field Def="s16 CamFollowRateInterpolateFrame = 30">
+      <DisplayName>カメラ追従率補間フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>73</SortID>
+    </Field>
+    <Field Def="u8 ZTiltInterpolateFrame = 30">
+      <DisplayName>Z回転中の補間フレーム</DisplayName>
+      <SortID>74</SortID>
+    </Field>
+    <Field Def="u8 ZTiltEndInterpolateFrame = 10">
+      <DisplayName>Z回転終了時の補間フレーム</DisplayName>
+      <SortID>75</SortID>
+    </Field>
+    <Field Def="f32 BlurThinPow = 2">
+      <DisplayName>ブラー：掛かり具合</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>5</Maximum>
+      <SortID>76</SortID>
+    </Field>
+    <Field Def="f32 BlurNoEffectSizeX = 0.85">
+      <DisplayName>ブラー：かけない範囲(X)</DisplayName>
+      <Description>この値が大きいとズームブラーが端っこだけになります</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>77</SortID>
+    </Field>
+    <Field Def="f32 BlurNoEffectSizeY = 0.45">
+      <DisplayName>ブラー：かけない範囲(Y)</DisplayName>
+      <Description>この値が大きいとズームブラーが端っこだけになります</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>78</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -37,6 +37,14 @@ public static class MiscLocator
                 return "ER";
             case ProjectType.AC6:
                 return "AC6";
+            case ProjectType.AC4:
+                return "AC4";
+            case ProjectType.ACFA:
+                return "ACFA";
+            case ProjectType.ACV:
+                return "ACV";
+            case ProjectType.ACVD:
+                return "ACVD";
             default:
                 throw new Exception("Game type not set");
         }
@@ -61,6 +69,7 @@ public static class MiscLocator
 
         return ret;
     }
+
     public static List<string> GetObjectTimeActBinders(bool ignoreProject = false)
     {
         List<string> ret = new List<string>();

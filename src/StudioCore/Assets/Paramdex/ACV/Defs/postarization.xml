@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>POSTARIZATION_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="f32 Alpha">
+      <DisplayName>強さ</DisplayName>
+      <Description>フィルターのかかる強さです</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ColorStep = 1">
+      <DisplayName>階調</DisplayName>
+      <Description>色の階調</Description>
+      <Minimum>1</Minimum>
+    </Field>
+    <Field Def="dummy8 dumy[11]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

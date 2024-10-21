@@ -1,11 +1,9 @@
 ﻿using StudioCore.Core.Project;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StudioCore.Resource.Locators;
 public static class MapLocator
@@ -22,26 +20,30 @@ public static class MapLocator
     {
         ResourceDescriptor ad = new();
         ad.AssetPath = null;
-        if (mapid.Length != 12)
+        if (mapid.Length != 12 &&
+            Smithbox.ProjectType != ProjectType.AC4 &&
+            Smithbox.ProjectType != ProjectType.ACFA &&
+            Smithbox.ProjectType != ProjectType.ACV &&
+            Smithbox.ProjectType != ProjectType.ACVD)
             return ad;
 
         string preferredPath = "";
         string backupPath = "";
 
         // SOFTS
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             preferredPath = $@"map\{mapid}\{mapid}.msb";
             backupPath = $@"map\{mapid}\{mapid}.msb";
         }
         // BB chalice maps
-        else if (Smithbox.ProjectType == ProjectType.BB && mapid.StartsWith("m29"))
+        else if (Smithbox.ProjectType is ProjectType.BB && mapid.StartsWith("m29"))
         {
             preferredPath = $@"\map\MapStudio\{mapid.Substring(0, 9)}_00\{mapid}.msb.dcx";
             backupPath = $@"\map\MapStudio\{mapid.Substring(0, 9)}_00\{mapid}.msb";
         }
         // DeS, DS1, DS1R
-        else if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R || Smithbox.ProjectType == ProjectType.DES)
+        else if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
         {
             preferredPath = $@"\map\MapStudio\{mapid}.msb";
             backupPath = $@"\map\MapStudio\{mapid}.msb.dcx";
@@ -51,6 +53,108 @@ public static class MapLocator
         {
             preferredPath = $@"\map\MapStudio\{mapid}.msb.dcx";
             backupPath = $@"\map\MapStudio\{mapid}.msb";
+        }
+        // ACFA
+        else if (Smithbox.ProjectType is ProjectType.ACFA)
+        {
+            if (mapid.StartsWith("model") || mapid.StartsWith("system"))
+            {
+                // system maps
+                preferredPath = $@"model\system\{mapid}.msb";
+                backupPath = $@"model\system\{mapid}.msb";
+            }
+            else if (!mapid.StartsWith('m'))
+            {
+                // test maps starting without "m"
+                if (mapid.Length < 3)
+                    throw new IndexOutOfRangeException($"Map ID is too short: {mapid}");
+
+                preferredPath = $@"model\map\m{mapid[..3]}\{mapid}.msb";
+                backupPath = $@"bind\event\m{mapid[..3]}_event.bnd";
+            }
+            else
+            {
+                // normal maps
+                if (mapid.Length < 4)
+                    throw new IndexOutOfRangeException($"Map ID is too short: {mapid}");
+
+                preferredPath = $@"model\map\{mapid[..4]}\{mapid}.msb";
+                backupPath = $@"bind\event\{mapid[..4]}_event.bnd";
+            }
+        }
+        // ACV
+        else if (Smithbox.ProjectType is ProjectType.ACV)
+        {
+            if (mapid.StartsWith("ingamegarage"))
+            {
+                // garage maps
+                preferredPath = $@"\model\map\ingamegarage\{mapid}.msb";
+                backupPath = $@"\model\map\ingamegarage\{mapid}.msb";
+            }
+            else if (mapid.StartsWith("worldtop"))
+            {
+                // main menu map
+                preferredPath = $@"\model\map\worldtop\{mapid}.msb";
+                backupPath = $@"\model\map\worldtop\{mapid}.msb";
+            }
+            else if (mapid.EndsWith("_env"))
+            {
+                // env maps
+                preferredPath = $@"\model\map\ch_env\{mapid}.msb";
+                backupPath = $@"\model\map\ch_env\{mapid}.msb";
+            }
+            else if (mapid.Length > 5)
+            {
+                // maps with longer names
+                preferredPath = $@"\model\map\{mapid[..5]}\{mapid}.msb";
+                backupPath = $@"\model\map\{mapid[..5]}\{mapid}.msb";
+            }
+            else
+            {
+                // normal maps
+                preferredPath = $@"\model\map\{mapid}\{mapid}.msb";
+                backupPath = $@"\model\map\{mapid}\{mapid}.msb";
+            }
+        }
+        // ACVD
+        else if (Smithbox.ProjectType is ProjectType.ACVD)
+        {
+            if (mapid.StartsWith("ch"))
+            {
+                // mission maps
+                preferredPath = $@"\model\map\ch_mission\{mapid}.msb";
+                backupPath = $@"\model\map\ch_mission\{mapid}.msb";
+            }
+            else if (mapid.StartsWith("ingamegarage"))
+            {
+                // garage maps
+                preferredPath = $@"\model\map\ingamegarage\{mapid}.msb";
+                backupPath = $@"\model\map\ingamegarage\{mapid}.msb";
+            }
+            else if (mapid.StartsWith("worldtop"))
+            {
+                // main menu map
+                preferredPath = $@"\model\map\worldtop\{mapid}.msb";
+                backupPath = $@"\model\map\worldtop\{mapid}.msb";
+            }
+            else if (mapid.EndsWith("_env"))
+            {
+                // env maps
+                preferredPath = $@"\model\map\ch_env\{mapid}.msb";
+                backupPath = $@"\model\map\ch_env\{mapid}.msb";
+            }
+            else if (mapid.Length > 5)
+            {
+                // maps with longer names
+                preferredPath = $@"\model\map\{mapid[..5]}\{mapid}.msb";
+                backupPath = $@"\model\map\{mapid[..5]}\{mapid}.msb";
+            }
+            else
+            {
+                // normal maps
+                preferredPath = $@"\model\map\{mapid}\{mapid}.msb";
+                backupPath = $@"\model\map\{mapid}\{mapid}.msb";
+            }
         }
 
         if (!gameRootOnly && Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{preferredPath}") || writemode && Smithbox.ProjectRoot != null)
@@ -248,23 +352,69 @@ public static class MapLocator
 
         try
         {
-            HashSet<string> mapSet = new();
-
-            // DS2 has its own structure for msbs, where they are all inside individual folders
-            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            HashSet<string> mapSet = [];
+            bool checkRegex = true;
+            void SearchLooseMaps(string dir, string wildcard)
             {
-                var maps = Directory.GetFileSystemEntries(Smithbox.GameRoot + @"\map", @"m*").ToList();
-
-                if (Smithbox.ProjectRoot != null)
+                if (!Directory.Exists(dir))
                 {
-                    if (Directory.Exists(Smithbox.ProjectRoot + @"\map"))
-                    {
-                        maps.AddRange(Directory.GetFileSystemEntries(Smithbox.ProjectRoot + @"\map", @"m*").ToList());
-                    }
+                    return;
                 }
 
-                foreach (var map in maps)
-                    mapSet.Add(Path.GetFileNameWithoutExtension($@"{map}.blah"));
+                foreach (string path in Directory.EnumerateFiles(dir, wildcard, SearchOption.AllDirectories))
+                {
+                    mapSet.Add(Path.GetFileNameWithoutExtension(path));
+                }
+            }
+
+            // DS2, ACFA, ACV, and ACVD have their own structure for msbs, where they are all inside individual folders
+            if (Smithbox.ProjectType is ProjectType.ACFA)
+            {
+                SearchLooseMaps(Smithbox.GameRoot + @"\model\map", "*.msb");
+                SearchLooseMaps(Smithbox.GameRoot + @"\model\system", "*.msb");
+                if (Smithbox.ProjectRoot != null)
+                {
+                    SearchLooseMaps(Smithbox.ProjectRoot + @"\model\map", "*.msb");
+                    SearchLooseMaps(Smithbox.ProjectRoot + @"\model\system", "*.msb");
+                }
+
+                checkRegex = false;
+            }
+            else if (Smithbox.ProjectType is ProjectType.ACV)
+            {
+                SearchLooseMaps(Smithbox.GameRoot + @"\model\map", "*.msb");
+                if (Smithbox.ProjectRoot != null)
+                {
+                    SearchLooseMaps(Smithbox.ProjectRoot + @"\model\map", "*.msb");
+                }
+
+                checkRegex = false;
+            }
+            else if (Smithbox.ProjectType is ProjectType.ACVD)
+            {
+                SearchLooseMaps(Smithbox.GameRoot + @"\model\map", "*.msb");
+                if (Smithbox.ProjectRoot != null)
+                {
+                    SearchLooseMaps(Smithbox.ProjectRoot + @"\model\map", "*.msb");
+                }
+
+                // Remove a few ACV format MSBs
+                mapSet.Remove("m3107");
+                mapSet.Remove("m3107_map"); // Could be loaded as ACV or ACVD, but is still companion to an ACV format map
+                mapSet.Remove("map_template");
+                mapSet.Remove("map_template_map");
+                mapSet.Remove("ingamegaragemenu0320_env");
+                mapSet.Remove("ingamegaragemenu0350_env");
+
+                checkRegex = false;
+            }
+            else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+            {
+                SearchLooseMaps(Smithbox.GameRoot + @"\map", @"m*");
+                if (Smithbox.ProjectRoot != null)
+                {
+                    SearchLooseMaps(Smithbox.ProjectRoot + @"\map", @"m*");
+                }
             }
             else
             {
@@ -292,11 +442,13 @@ public static class MapLocator
                     mapSet.Add(msb);
             }
 
-            Regex mapRegex = new(@"^m\d{2}_\d{2}_\d{2}_\d{2}$");
-            var mapList = mapSet.Where(x => mapRegex.IsMatch(x)).ToList();
+            List<string> mapList;
+            if (checkRegex)
+                mapList = mapSet.Where(x => GeneratedRegexMethods.DSMapRegex().IsMatch(x)).ToList();
+            else
+                mapList = mapSet.ToList();
 
             mapList.Sort();
-
             FullMapList = mapList;
             return FullMapList;
         }
@@ -315,13 +467,51 @@ public static class MapLocator
     {
         HashSet<string> mapSet = new();
 
-        // DS2 has its own structure for msbs, where they are all inside individual folders
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        bool checkRegex = true;
+        void SearchLooseMaps(string dir, string wildcard)
         {
-            var maps = Directory.GetFileSystemEntries(projectPath + @"\map", @"m*").ToList();
+            if (!Directory.Exists(dir))
+            {
+                return;
+            }
 
-            foreach (var map in maps)
-                mapSet.Add(Path.GetFileNameWithoutExtension($@"{map}.blah"));
+            foreach (string path in Directory.EnumerateFiles(dir, wildcard, SearchOption.AllDirectories))
+            {
+                mapSet.Add(Path.GetFileNameWithoutExtension(path));
+            }
+        }
+
+        // DS2, ACFA, ACV, and ACVD have their own structure for msbs, where they are all inside individual folders
+        if (Smithbox.ProjectType is ProjectType.ACFA)
+        {
+            SearchLooseMaps(projectPath + @"\model\map", "*.msb");
+            SearchLooseMaps(projectPath + @"\model\system", "*.msb");
+
+            checkRegex = false;
+        }
+        else if (Smithbox.ProjectType is ProjectType.ACV)
+        {
+            SearchLooseMaps(projectPath + @"\model\map", "*.msb");
+
+            checkRegex = false;
+        }
+        else if (Smithbox.ProjectType is ProjectType.ACVD)
+        {
+            SearchLooseMaps(projectPath + @"\model\map", "*.msb");
+
+            // Remove a few ACV format MSBs
+            mapSet.Remove("m3107");
+            mapSet.Remove("m3107_map"); // Could be loaded as ACV or ACVD, but is still companion to an ACV format map
+            mapSet.Remove("map_template");
+            mapSet.Remove("map_template_map");
+            mapSet.Remove("ingamegaragemenu0320_env");
+            mapSet.Remove("ingamegaragemenu0350_env");
+
+            checkRegex = false;
+        }
+        else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        {
+            SearchLooseMaps(projectPath + @"\map", @"m*");
         }
         else
         {
@@ -337,11 +527,13 @@ public static class MapLocator
                 mapSet.Add(msb);
         }
 
-        Regex mapRegex = new(@"^m\d{2}_\d{2}_\d{2}_\d{2}$");
-        var mapList = mapSet.Where(x => mapRegex.IsMatch(x)).ToList();
+        List<string> mapList;
+        if (checkRegex)
+            mapList = mapSet.Where(x => GeneratedRegexMethods.DSMapRegex().IsMatch(x)).ToList();
+        else
+            mapList = mapSet.ToList();
 
         mapList.Sort();
-
         return mapList;
     }
 
@@ -352,20 +544,17 @@ public static class MapLocator
     /// <returns>The map ID for the purpose of asset storage</returns>
     public static string GetAssetMapID(string mapid)
     {
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.DES or ProjectType.ER or ProjectType.AC6)
+        {
             return mapid;
-
-        if (Smithbox.ProjectType is ProjectType.DS1R)
+        }
+        else if (Smithbox.ProjectType is ProjectType.DS1R)
         {
             if (mapid.StartsWith("m99"))
             {
                 // DSR m99 maps contain their own assets
                 return mapid;
             }
-        }
-        else if (Smithbox.ProjectType is ProjectType.DES)
-        {
-            return mapid;
         }
         else if (Smithbox.ProjectType is ProjectType.BB)
         {
@@ -374,6 +563,23 @@ public static class MapLocator
                 // Special case for chalice dungeon assets
                 return "m29_00_00_00";
             }
+        }
+        else if (Smithbox.ProjectType is ProjectType.ACFA)
+        {
+            return mapid[..4];
+        }
+        else if (Smithbox.ProjectType is ProjectType.ACV)
+        {
+            return mapid[..5];
+        }
+        else if (Smithbox.ProjectType is ProjectType.ACVD)
+        {
+            if (mapid.Length == 12 && mapid.StartsWith("ch"))
+            {
+                return string.Concat(mapid.AsSpan(7, 4), "0");
+            }
+
+            return mapid[..4] + '0';
         }
 
         // Default

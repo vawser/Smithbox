@@ -34,7 +34,8 @@ public static class TimeActBank
 
     public static bool IsSupportedProjectType()
     {
-        if (Smithbox.ProjectType is ProjectType.Undefined or ProjectType.DS2)
+        // Some of these AC games use TAE but it's not researched for their version yet
+        if (Smithbox.ProjectType is ProjectType.Undefined or ProjectType.DS2 or ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
             return false;
 
         return true;

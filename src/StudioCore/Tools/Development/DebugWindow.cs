@@ -78,6 +78,9 @@ public class DebugWindow
         // Tests
         [Display(Name = "MSBE - Byte Perfect Test")] Test_MSBE_BytePerfect,
         [Display(Name = "MSB_AC6 - Byte Perfect Test")] Test_MSB_AC6_BytePerfect,
+        [Display(Name = "MSBFA - Byte Perfect Test")] Test_MSBFA_BytePerfect,
+        [Display(Name = "MSBV - Byte Perfect Test")] Test_MSBV_BytePerfect,
+        [Display(Name = "MSBVD - Byte Perfect Test")] Test_MSBVD_BytePerfect,
         [Display(Name = "BTL - Byte Perfect Test")] Test_BTL_BytePerfect,
         [Display(Name = "Unique Param Row ID Insert")] Test_UniqueParamRowIDs,
         [Display(Name = "FLVER2 - Byte Perfect Test")] Test_FLVER2_BytePerfect,
@@ -151,6 +154,15 @@ public class DebugWindow
                     break;
                 case SelectedDebugTab.Test_MSB_AC6_BytePerfect:
                     DisplayTest_MSB_AC6();
+                    break;
+                case SelectedDebugTab.Test_MSBFA_BytePerfect:
+                    DisplayTest_MSBFA();
+                    break;
+                case SelectedDebugTab.Test_MSBV_BytePerfect:
+                    DisplayTest_MSBV();
+                    break;
+                case SelectedDebugTab.Test_MSBVD_BytePerfect:
+                    DisplayTest_MSBVD();
                     break;
                 case SelectedDebugTab.Test_BTL_BytePerfect:
                     DisplayTest_BTL();
@@ -333,6 +345,37 @@ public class DebugWindow
     {
         Test_MSB_AC6_BytePerfect.Display();
     }
+
+    private void DisplayTest_MSBFA()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        if (ImGui.Button("MSBFA read/write test", buttonSize))
+        {
+            Test_MSB_ACFA_BytePerfect.Run();
+        }
+    }
+
+    private void DisplayTest_MSBV()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        if (ImGui.Button("MSBV read/write test", buttonSize))
+        {
+            Test_MSB_ACV_BytePerfect.Run();
+        }
+    }
+
+    private void DisplayTest_MSBVD()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        if (ImGui.Button("MSBVD read/write test", buttonSize))
+        {
+            Test_MSB_ACVD_BytePerfect.Run();
+        }
+    }
+
     private void DisplayTest_BTL()
     {
         var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);

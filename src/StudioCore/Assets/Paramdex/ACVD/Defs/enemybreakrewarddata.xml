@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_BREAK_REWARD_DATA_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 ch00_EnemyBreakReward">
+      <DisplayName>Chapter0の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 ch01_EnemyBreakReward">
+      <DisplayName>Chapter1の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 ch02_EnemyBreakReward">
+      <DisplayName>Chapter2の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 ch03_EnemyBreakReward">
+      <DisplayName>Chapter3の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 ch04_EnemyBreakReward">
+      <DisplayName>Chapter4の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s32 ch05_EnemyBreakReward">
+      <DisplayName>Chapter5の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 ch06_EnemyBreakReward">
+      <DisplayName>Chapter6の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 ch07_EnemyBreakReward">
+      <DisplayName>Chapter7の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s32 ch08_EnemyBreakReward">
+      <DisplayName>Chapter8の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s32 ch09_EnemyBreakReward">
+      <DisplayName>Chapter9の敵撃破報酬額</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[28]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>12</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

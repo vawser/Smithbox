@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DRAW_AUTO_BLINK_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="u8 Type">
+      <DisplayName>タイプ</DisplayName>
+      <Description>0:点滅なし？1:点滅あり？</Description>
+    </Field>
+    <Field Def="dummy8 dummy[1]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+    <Field Def="u16 SecBlinkCount = 1">
+      <DisplayName>点滅回数</DisplayName>
+      <Description>１秒間の点滅回数</Description>
+      <Maximum>10000</Maximum>
+    </Field>
+    <Field Def="f32 AlwaysLightTime = 1">
+      <DisplayName>明滅周期(秒)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.1</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 BlinkLightTimeRate = 0.5">
+      <DisplayName>点滅時間割合</DisplayName>
+      <Description>明滅周期(秒)のうち何割点滅している状態にあるか</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 BlinkLightCof = 1">
+      <DisplayName>点滅時の係数</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

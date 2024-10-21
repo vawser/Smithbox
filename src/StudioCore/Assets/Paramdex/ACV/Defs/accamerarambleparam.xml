@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_CAMERA_RAMBLE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 CamType">
+      <DisplayName>カメラタイプ</DisplayName>
+      <Enum>CAMERA_RAMBLE_TYPE</Enum>
+      <Description>振動するカメラのタイプ</Description>
+      <DisplayFormat />
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 dumy[3]">
+      <DisplayName>ダミー</DisplayName>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 RambleDist">
+      <DisplayName>振動距離</DisplayName>
+      <Description>TAEで発生した距離からこの距離の間にカメラがいた場合に振動します</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 BeginDecreaseDist">
+      <DisplayName>減衰開始距離</DisplayName>
+      <Description>振動の減衰を開始する距離（この距離以降、振動距離までの間で線形で振動幅が減衰します）</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

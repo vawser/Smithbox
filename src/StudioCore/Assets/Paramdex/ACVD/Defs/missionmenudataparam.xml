@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MISSION_MENU_DATA_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 MissionType">
+      <DisplayName>種別</DisplayName>
+      <Enum>MISSION_TYPE</Enum>
+      <Description>ミッションの種別</Description>
+      <Maximum>128</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 padding[1]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>99</Maximum>
+      <Increment>1</Increment>
+      <SortID>1003</SortID>
+    </Field>
+    <Field Def="u8 bLastMission">
+      <DisplayName>最終ミッションフラグ</DisplayName>
+      <Description>このミッションをクリアするとゲームクリアとなるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1001</SortID>
+    </Field>
+    <Field Def="s8 UnlockMissionNum = -1">
+      <DisplayName>アンロックミッション数</DisplayName>
+      <Description>このミッションがアンロックされるためにプレイする必要のある同一グループのミッションの数（-1：不要）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 AreaID = -1">
+      <DisplayName>エリアID</DisplayName>
+      <Description>エリアID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s32 TitleID = -1">
+      <DisplayName>名前ID</DisplayName>
+      <Description>ミッションの名前のID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s32 InfoID_normal = -1">
+      <DisplayName>説明ID</DisplayName>
+      <Description>難易度普通のミッションの説明文のID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s32 PopupTextID = -1">
+      <DisplayName>ポップアップテキストID</DisplayName>
+      <Description>ミッションアイコンにカーソルが合わさったときに表示される説明文のテキストID（-1：表示しない）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="u8 AchievementMissionType">
+      <DisplayName>実績ミッション種別</DisplayName>
+      <Enum>ACHIEVEMENT_MISSION_TYPE</Enum>
+      <Description>実績用の種別（達成報酬データにて使用）</Description>
+      <Maximum>128</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s8 MapInfoID = -1">
+      <DisplayName>2Dマップ情報ID</DisplayName>
+      <Description>このミッションのメニュー用マップ情報のID（対戦・ボス戦で使用。アリーナ･対戦マップデータ.xlsのID）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="u8 IconDmyPolyID">
+      <DisplayName>アイコン表示位置</DisplayName>
+      <Description>ミッション選択時のアイコンの表示位置（メニューモデルのダミポリのIDを指定。0だとリストに表示されません）</Description>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="u8 bMain">
+      <DisplayName>メインミッションか</DisplayName>
+      <Description>このミッションをクリアするとチャプターが進むかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 BriefInfoID_normal = -1">
+      <DisplayName>ブリーフィング説明ID</DisplayName>
+      <Description>ブリーフィングで表示される難易度ノーマルのテキストID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="s32 AcTest_EneInfoID = -1">
+      <DisplayName>ACTEST敵情報</DisplayName>
+      <Description>ACTESTの敵情報用テキストID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="u16 ThumbnailTextureID">
+      <DisplayName>サムネイルテクスチャID</DisplayName>
+      <Description>ミッション選択で表示されるサムネイルテクスチャのID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="s16 EneThumbnailID1 = -1">
+      <DisplayName>敵のサムネイルID1</DisplayName>
+      <Description>ブリーフィングで表示される敵のサムネイルテクスチャのIDの１つ目（-1：表示しない、0～敵ID、10000～エンブレムID、20000～特殊ID）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>30000</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s16 EneThumbnailID2 = -1">
+      <DisplayName>敵のサムネイルID2</DisplayName>
+      <Description>ブリーフィングで表示される敵のサムネイルテクスチャのIDの２つ目（-1：表示しない、0～敵ID、10000～エンブレムID、20000～特殊ID）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>30000</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="s16 UnlockMission = -1">
+      <DisplayName>アンロックミッション</DisplayName>
+      <Description>このミッションがアンロックされるためにクリアする必要のあるミッションのID（-1：不要）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s32 ChapterTextID = -1">
+      <DisplayName>チャプターテキストID</DisplayName>
+      <Description>チャプター名のテキストID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s32 InGameTitleTextID = -1">
+      <DisplayName>インゲームメニュータイトルID</DisplayName>
+      <Description>インゲームメニューのタイトルのテキストID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u16 BriefingMapID">
+      <DisplayName>ブリーフィングサムネイルID</DisplayName>
+      <Description>ブリーフィングで表示するマップサムネイルのID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u16 RewardPlayerRateValue">
+      <DisplayName>クリア時プレーヤー評価</DisplayName>
+      <Description>このミッションをクリアしたときにランクに関係なく取得する評価ポイント</Description>
+      <Maximum>9999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u8 SpecialUnlockType">
+      <DisplayName>特殊アンロックタイプ</DisplayName>
+      <Enum>MISSION_SPECIAL_UNLOCK_TYPE</Enum>
+      <Description>このミッションをアンロックする特別な条件</Description>
+      <Maximum>128</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="dummy8 padding2[1]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>1004</SortID>
+    </Field>
+    <Field Def="s16 EneThumbnailID3 = -1">
+      <DisplayName>敵のサムネイルID3</DisplayName>
+      <Description>ブリーフィングで表示される敵のサムネイルテクスチャのIDの3つ目（-1：表示しない、0～敵ID、10000～エンブレムID、20000～特殊ID）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>30000</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="s32 MissionClearRewardMoney">
+      <DisplayName>クリア時獲得報酬額</DisplayName>
+      <Description>ミッションクリア時に獲得する報酬額</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="dummy8 reserved2[4] = 30">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>999999</Maximum>
+      <Increment>1</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 MissionIconID">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>ミッション選択画面で表示するアイコンのID(1：ストーリー　2：オーダー　3：領地戦　4：チュートリアル　ボス戦のモデルIDもここで扱う</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="u8 DifficultyLevel">
+      <DisplayName>攻略難度</DisplayName>
+      <Description>このミッションの攻略難度</Description>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 SortieCondition">
+      <DisplayName>ボス戦出撃条件</DisplayName>
+      <Description>ボス戦に出撃するために必要なチーム評価</Description>
+      <SortID>1002</SortID>
+    </Field>
+    <Field Def="s16 SortIndex = -1">
+      <DisplayName>表示順</DisplayName>
+      <Description>NEXTアイコンが表示される順番。（-1：対象外</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 GroupID">
+      <DisplayName>グループID</DisplayName>
+      <Description>このミッションのグループID。ミッション進行用。</Description>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="dummy8 reserved3[1]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>1005</SortID>
+    </Field>
+    <Field Def="u16 RewardPlayerRateValue_RankF">
+      <DisplayName>プレーヤー評価_F</DisplayName>
+      <Description>このミッションをランクF以上でクリアしたときに取得する評価ポイント</Description>
+      <Maximum>9999</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="u16 RewardPlayerRateValue_RankE">
+      <DisplayName>プレーヤー評価_E</DisplayName>
+      <Description>このミッションをランクE以上でクリアしたときに取得する評価ポイント</Description>
+      <Maximum>9999</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="u16 RewardPlayerRateValue_RankD">
+      <DisplayName>プレーヤー評価_D</DisplayName>
+      <Description>このミッションをランクD以上でクリアしたときに取得する評価ポイント</Description>
+      <Maximum>9999</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="u16 RewardPlayerRateValue_RankC">
+      <DisplayName>プレーヤー評価_C</DisplayName>
+      <Description>このミッションをランクC以上でクリアしたときに取得する評価ポイント</Description>
+      <Maximum>9999</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="u16 RewardPlayerRateValue_RankB">
+      <DisplayName>プレーヤー評価_B</DisplayName>
+      <Description>このミッションをランクB以上でクリアしたときに取得する評価ポイント</Description>
+      <Maximum>9999</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="u16 RewardPlayerRateValue_RankA">
+      <DisplayName>プレーヤー評価_A</DisplayName>
+      <Description>このミッションをランクA以上でクリアしたときに取得する評価ポイント</Description>
+      <Maximum>9999</Maximum>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="u16 RewardPlayerRateValue_RankS">
+      <DisplayName>プレーヤー評価_S</DisplayName>
+      <Description>このミッションをランクS以上でクリアしたときに取得する評価ポイント</Description>
+      <Maximum>9999</Maximum>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[10]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>1006</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

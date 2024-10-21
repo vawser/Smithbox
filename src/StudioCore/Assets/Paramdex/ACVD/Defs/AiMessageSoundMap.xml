@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AI_MESSAGE_SOUND_MAP</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 textID">
+      <DisplayName>テキストID</DisplayName>
+      <Description>テキストID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u32 voice_offset0">
+      <DisplayName>音声ID０</DisplayName>
+      <Description>音声1番目</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u32 voice_offset1">
+      <DisplayName>音声ID１</DisplayName>
+      <Description>音声2番目</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u32 voice_offset2">
+      <DisplayName>音声ID２</DisplayName>
+      <Description>音声3番目</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u8 bUseCallSign">
+      <DisplayName>呼称を使用するか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>A1・A2などの呼称を先頭に入れるかどうか。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 reserve00[15]">
+      <DisplayName>予約</DisplayName>
+      <SortID>41</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -116,10 +116,10 @@ namespace SoulsFormats
                 FaceSets = new List<FaceSet>(faceSetIndices.Length);
                 foreach (int i in faceSetIndices)
                 {
-                    if (!faceSetDict.ContainsKey(i))
+                    if (!faceSetDict.TryGetValue(i, out FaceSet value))
                         throw new NotSupportedException("Face set not found or already taken: " + i);
 
-                    FaceSets.Add(faceSetDict[i]);
+                    FaceSets.Add(value);
                     faceSetDict.Remove(i);
                 }
                 faceSetIndices = null;
@@ -130,10 +130,10 @@ namespace SoulsFormats
                 VertexBuffers = new List<VertexBuffer>(vertexBufferIndices.Length);
                 foreach (int i in vertexBufferIndices)
                 {
-                    if (!vertexBufferDict.ContainsKey(i))
+                    if (!vertexBufferDict.TryGetValue(i, out VertexBuffer value))
                         throw new NotSupportedException("Vertex buffer not found or already taken: " + i);
 
-                    VertexBuffers.Add(vertexBufferDict[i]);
+                    VertexBuffers.Add(value);
                     vertexBufferDict.Remove(i);
                 }
                 vertexBufferIndices = null;
@@ -156,14 +156,6 @@ namespace SoulsFormats
                         }
                     }
                 }
-
-                for (int i = 0; i < VertexBuffers.Count; i++)
-                {
-                    VertexBuffer buffer = VertexBuffers[i];
-                    // This appears to be some kind of flag on edge-compressed vertex buffers
-                    if ((buffer.BufferIndex & ~0x60000000) != i)
-                        throw new FormatException("Unexpected vertex buffer index.");
-                }
             }
 
             internal void ReadVertices(BinaryReaderEx br, int dataOffset, List<BufferLayout> layouts, FLVERHeader header)
@@ -181,7 +173,7 @@ namespace SoulsFormats
                         Vertices.Add(new FLVER.Vertex(uvCap, tanCap, colorCap));
 
                     foreach (VertexBuffer buffer in VertexBuffers)
-                        buffer.ReadBuffer(br, layouts, Vertices, dataOffset, header);
+                        buffer.ReadBuffer(br, layouts, Vertices, vertexCount, dataOffset, header);
                 }
             }
 

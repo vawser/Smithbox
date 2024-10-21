@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_BATTLE_STYLE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 BattleStyle">
+      <DisplayName>戦闘スタイル</DisplayName>
+      <Enum>AcBattleStyle</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 MoveType">
+      <DisplayName>起動型分類</DisplayName>
+      <Enum>ASSEMBLE_MOVE_TYPE</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 DefenceType">
+      <DisplayName>防御型分類</DisplayName>
+      <Enum>ASSEMBLE_DEFENCE_TYPE</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 BattleRangeType">
+      <DisplayName>狙撃型分類</DisplayName>
+      <Enum>ASSEMBLE_BATTLE_RANGE_TYPE</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

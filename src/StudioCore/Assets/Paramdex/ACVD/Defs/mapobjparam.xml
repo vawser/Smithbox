@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MAPOBJ_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="dummy8 reserve00[2]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 BehaviorType">
+      <DisplayName>挙動</DisplayName>
+      <Enum>MAPOBJ_BEHAVIOR_TYPE</Enum>
+      <Description>オブジェクトの挙動タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 DoorOpenDist">
+      <DisplayName>＜削除予定＞ドア開く距離[10m]</DisplayName>
+      <Description>10ｍ単位です</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 DoorOpenHeight">
+      <DisplayName>＜削除予定＞ドア開く高さ[10m]</DisplayName>
+      <Description>10ｍ単位です</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u8 DoorCloseDist">
+      <DisplayName>ドア閉じる距離[10m]</DisplayName>
+      <Description>10ｍ単位です。０では閉じません。</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u8 DoorCloseHeight">
+      <DisplayName>ドア閉じる高さ[10m]</DisplayName>
+      <Description>10ｍ単位です</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="dummy8 pad00[1]">
+      <DisplayName>予約</DisplayName>
+      <SortID>131</SortID>
+    </Field>
+    <Field Def="u16 Mob_RegroupTAE">
+      <DisplayName>賑やかし：集合時TAE</DisplayName>
+      <Description>賑やかし挙動で、集合し始めるときのTAEシナリオID。０では何もしません。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u16 Mob_DisperseTAE">
+      <DisplayName>賑やかし：解散時TAE</DisplayName>
+      <Description>賑やかし挙動で、解散し始めるときのTAEシナリオID。０では何もしません。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="u16 Mob_RegroupLoopTAE">
+      <DisplayName>賑やかし：集合ループTAE</DisplayName>
+      <Description>賑やかし挙動で、集合してループしはじめるときのTAEシナリオID。０では何もしません。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="u16 Mob_DisperseLoopTAE">
+      <DisplayName>賑やかし：解散ループTAE</DisplayName>
+      <Description>賑やかし挙動で、解散してループしはじめるときのTAEシナリオID。０では何もしません。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="u16 DoorOpenDist_long">
+      <DisplayName>ドア開く距離[m]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>60000</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u16 DoorOpenHeight_long">
+      <DisplayName>ドア開く高さ[m]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>60000</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="dummy8 reserve10[36]">
+      <DisplayName>予約０</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="u8 Rigidness">
+      <DisplayName>硬さ</DisplayName>
+      <Description>衝突相手に与えるダメージの算出に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="dummy8 reserve21[7]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-127</Minimum>
+      <Maximum>127</Maximum>
+      <Increment>1</Increment>
+      <SortID>120</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

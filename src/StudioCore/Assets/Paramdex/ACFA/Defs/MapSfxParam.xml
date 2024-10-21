@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MAP_SFXPARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="s16 AcBoosterLight = 0">
+      <DisplayName>AcLightブースター</DisplayName>
+      <Description>ブースターSFX</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AcMainBooster = 0">
+      <DisplayName>Acメインブースタ</DisplayName>
+      <Description>メインブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AcLegBooster = 0">
+      <DisplayName>Ac足ブースタ</DisplayName>
+      <Description>足ブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AcBackBooster = 0">
+      <DisplayName>Acバックブースタ</DisplayName>
+      <Description>バックブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AcQBNormal = 0">
+      <DisplayName>AcQB　Normal</DisplayName>
+      <Description>QB　Normal</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AcQBShortage = 0">
+      <DisplayName>AcQB　Charge・Shortage</DisplayName>
+      <Description>QB　Charge・Shortage</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AcQBLarge = 0">
+      <DisplayName>AcQB_Large</DisplayName>
+      <Description>QB_Large</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AcWeaponPurge = 0">
+      <DisplayName>AcWeaponPurge</DisplayName>
+      <Description>WeaponPurge</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 EnemyMainBooster = 0">
+      <DisplayName>敵メインブースタ</DisplayName>
+      <Description>敵メインブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 EnemyLegBooster = 0">
+      <DisplayName>敵足ブースタ</DisplayName>
+      <Description>敵足ブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AcWaterSfxBig = 619">
+      <DisplayName>自機水しぶき（大）</DisplayName>
+      <Description>自機水しぶき（大）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AcWaterSfxSmall = 620">
+      <DisplayName>自機水しぶき（小）</DisplayName>
+      <Description>自機水しぶき（小）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 EnemyWaterSfxBig = 619">
+      <DisplayName>敵水しぶき（大）</DisplayName>
+      <Description>敵水しぶき（大）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 EnemyWaterSfxSmall = 620">
+      <DisplayName>敵水しぶき（小）</DisplayName>
+      <Description>敵水しぶき（小）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 BulletWaterSfxBig = 0">
+      <DisplayName>弾丸水しぶき（大）</DisplayName>
+      <Description>弾丸水しぶき（大）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 BulletWaterSfxSmall = 627">
+      <DisplayName>弾丸しぶき（小）</DisplayName>
+      <Description>弾丸しぶき（小）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="dummy8 reserved[32]">
+      <DisplayName>----</DisplayName>
+      <EditFlags>Wrap</EditFlags>
+    </Field>
+  </Fields>
+</PARAMDEF>

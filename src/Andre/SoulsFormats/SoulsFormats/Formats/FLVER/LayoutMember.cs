@@ -52,6 +52,7 @@ namespace SoulsFormats
                         case LayoutType.Byte4B:
                         case LayoutType.Short2toFloat2:
                         case LayoutType.Byte4C:
+                        case LayoutType.Byte4D:
                         case LayoutType.UV:
                         case LayoutType.Byte4E:
                         case LayoutType.Unknown:
@@ -165,6 +166,11 @@ namespace SoulsFormats
             /// Four bytes.
             /// </summary>
             Byte4C = 0x13,
+
+            /// <summary>
+            /// Four bytes.
+            /// </summary>
+            Byte4D = 0x14,
 
             /// <summary>
             /// Two shorts.

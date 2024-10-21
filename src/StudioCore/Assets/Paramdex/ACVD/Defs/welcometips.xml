@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WELCOME_TIPS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 TitleID = -1">
+      <DisplayName>タイトルID</DisplayName>
+      <Description>タイトルテキストのID(ようこそTIPSテキスト.xls)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 TextID = -1">
+      <DisplayName>本文のID</DisplayName>
+      <Description>本文のID(ようこそTIPSテキスト.xls)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 ThumbnailID = -1">
+      <DisplayName>サムネイルのID</DisplayName>
+      <Description>サムネイルデータのID(サムネイルテクスチャパラメータ.xls)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[6]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>5</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

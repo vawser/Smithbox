@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENU_MODEL_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 FocusFov = 40">
+      <DisplayName>フォーカス時：画角</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>120</Maximum>
+    </Field>
+    <Field Def="f32 FocusPosX">
+      <DisplayName>フォーカス時：座標(x)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="f32 FocusPosY">
+      <DisplayName>フォーカス時：座標(y)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="f32 FocusPosZ">
+      <DisplayName>フォーカス時：座標(z)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="angle32 FocusRotX">
+      <DisplayName>フォーカス時：回転(x)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+    </Field>
+    <Field Def="angle32 FocusRotY">
+      <DisplayName>フォーカス時：回転(y)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+    </Field>
+    <Field Def="angle32 FocusRotZ">
+      <DisplayName>フォーカス時：回転(z)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+    </Field>
+    <Field Def="s16 FocusAreaID">
+      <DisplayName>フォーカス時：地方ＩＤ</DisplayName>
+      <Description>名称は変わるかも・・・</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 FocusCityID = -1">
+      <DisplayName>フォーカス時：都市ＩＤ</DisplayName>
+      <Description>名称は変わるかも・・・</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s8 FocusTexChangeRate">
+      <DisplayName>フォーカス時：テクスチャ切り替え率</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="dummy8 focusdummy[2]">
+      <DisplayName>ダミー</DisplayName>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u8 SfxEmitDummyID">
+      <DisplayName>エンブレム表示位置</DisplayName>
+      <Description>エンブレム表示位置用ダミポリ(赤ダミー)の開始位置（１：トップ時、２～４：下位、５～７：中位、８～１０：上位）</Description>
+      <EditFlags>None</EditFlags>
+      <Increment>0</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 SelectFov = 40">
+      <DisplayName>決定時：画角</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>120</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 SelectPosX">
+      <DisplayName>決定時：座標(x)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 SelectPosY">
+      <DisplayName>決定時：座標(y)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 SelectPosZ">
+      <DisplayName>決定時：座標(z)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="angle32 SelectRotX">
+      <DisplayName>決定時：回転(x)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="angle32 SelectRotY">
+      <DisplayName>決定時：回転(y)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="angle32 SelectRotZ">
+      <DisplayName>決定時：回転(z)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 SelectAreaID">
+      <DisplayName>決定時：地方ＩＤ</DisplayName>
+      <Description>名称は変わるかも・・・</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 SelectCityID = -1">
+      <DisplayName>決定時：都市ＩＤ</DisplayName>
+      <Description>名称は変わるかも・・・</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s8 SelectTexChangeRate">
+      <DisplayName>決定時：テクスチャ切り替え率</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="dummy8 selectummy[3]">
+      <DisplayName>ダミー</DisplayName>
+      <SortID>25</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

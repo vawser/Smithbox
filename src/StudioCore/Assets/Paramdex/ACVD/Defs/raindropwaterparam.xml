@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FILTER_RAIN_DROP_WATER_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="f32 DropBlendAlpha = 0.7">
+      <DisplayName>雨粒Alpha</DisplayName>
+      <Description>雨粒単体の描画のα</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 DropOffsetTexU = 0.03">
+      <DisplayName>雨粒OffsetU</DisplayName>
+      <Description>雨粒単体の歪みUVオフセット</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 DropOffsetTexV = 0.03">
+      <DisplayName>雨粒OffsetV</DisplayName>
+      <Description>雨粒単体の歪みUVオフセット</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 DropBaseSize = 2.5">
+      <DisplayName>雨粒の基本サイズ</DisplayName>
+      <Description>雨粒の基本サイズ</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0.1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 DropRandSize = 1">
+      <DisplayName>雨粒のランダムサイズ</DisplayName>
+      <Description>雨粒のランダムサイズ（雨粒サイズ＝基本サイズ±ランダムサイズ）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0.1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 DropColorUp = 2.5">
+      <DisplayName>雨粒の輝度値係数</DisplayName>
+      <Description>雨粒単体の輝度値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 DropBaseAlphaTime = 5">
+      <DisplayName>雨粒消える時間(秒)</DisplayName>
+      <Description>雨粒の消える時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 DropRandAlphaTime = 3">
+      <DisplayName>雨粒消える時間ランダム(秒)</DisplayName>
+      <Description>雨粒の消える時間ランダム（消える時間=雨粒の消える時間±ランダム）</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 DropAutoRainTime = 0.8">
+      <DisplayName>雨粒の配置時間(秒)</DisplayName>
+      <Description>雨粒の配置までの時間</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="s32 DropRainNum = 2">
+      <DisplayName>雨粒の数</DisplayName>
+      <Description>一度に配置する雨粒の数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="f32 DropFallSpeed = 20">
+      <DisplayName>雨粒移動速度(pixcel/秒)</DisplayName>
+      <Description>通常時の雨粒のY軸移動速度</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0.1</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 DropUpMovePow = 0.4">
+      <DisplayName>雨粒の上移動補正係数</DisplayName>
+      <Description>雨粒が上に移動する時に補正する速度係数</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.1</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 DropSlowBeginTime = 3">
+      <DisplayName>雨粒減速開始時間(秒)</DisplayName>
+      <Description>雨粒がたまに減速するまでの時間</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 DropSlowTime = 2">
+      <DisplayName>雨粒減速時間（秒）</DisplayName>
+      <Description>雨粒が減速している時間</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 DropSlowRate = 0.2">
+      <DisplayName>雨粒減速率</DisplayName>
+      <Description>雨粒が減速する係数</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 DropNoRangeLeft = 170">
+      <DisplayName>雨粒降らない範囲（左）</DisplayName>
+      <Description>この範囲から</Description>
+      <DisplayFormat>%.f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>512</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 DropNoRangeRight = 340">
+      <DisplayName>雨粒降らない範囲（右）</DisplayName>
+      <Description>この範囲まで雨粒が付きません</Description>
+      <DisplayFormat>%.f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>512</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="dummy8 reserve0[8]">
+      <DisplayName>ダミー</DisplayName>
+      <EditFlags>Wrap</EditFlags>
+    </Field>
+    <Field Def="f32 TailBlendAlpha = 1">
+      <DisplayName>雨尾Alpha</DisplayName>
+      <Description>尻尾の描画α</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 TailOffsetTexU = 0.03">
+      <DisplayName>雨尾OffsetU</DisplayName>
+      <Description>尻尾描画時の歪みのUV</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 TailOffsetTexV = 0.03">
+      <DisplayName>雨尾OffsetV</DisplayName>
+      <Description>尻尾描画時の歪みのUV</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 TailColorUp = 2">
+      <DisplayName>雨尾の輝度値係数</DisplayName>
+      <Description>尻尾描画字の輝度値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 TailStayAlpha = 0.983">
+      <DisplayName>雨尾を残すα値</DisplayName>
+      <Description>前のフレームの描画をどのくらい残すかのα</Description>
+      <DisplayFormat>%.4f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+    </Field>
+    <Field Def="f32 TailStayDistortion = 0.23">
+      <DisplayName>雨尾を消すＲＧ値</DisplayName>
+      <Description>この値以下のRG値を切り捨て</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 reserve1[8]">
+      <DisplayName>ダミー</DisplayName>
+      <EditFlags>Wrap</EditFlags>
+    </Field>
+    <Field Def="f32 WindBeginSpeed = 70">
+      <DisplayName>風圧開始速度(km/h)</DisplayName>
+      <Description>横に動きはじめるときのカメラ移動速度</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 WindMaxSpeed = 160">
+      <DisplayName>風圧最大速度(km/h)</DisplayName>
+      <Description>横に動くときのカメラ最大移動速度</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="dummy8 reserve2[4]">
+      <DisplayName>ダミー</DisplayName>
+      <EditFlags>Wrap</EditFlags>
+    </Field>
+    <Field Def="f32 SplashBlendAlpha">
+      <DisplayName>水はねAlpha</DisplayName>
+      <Description>水はねの描画α</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 SplashOffsetTexU = 0.03">
+      <DisplayName>水はねOffsetU</DisplayName>
+      <Description>水はねの歪みUVオフセット</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 SplashOffsetTexV = 0.03">
+      <DisplayName>水はねOffsetV</DisplayName>
+      <Description>水はねの歪みUVオフセット</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 SplashRandOffsetTexU = 0.1">
+      <DisplayName>水はねランダムOffsetU</DisplayName>
+      <Description>水はねの歪みランダムUVオフセット</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 SplashRandOffsetTexV = 0.1">
+      <DisplayName>水はねランダムOffsetV</DisplayName>
+      <Description>水はねの歪みランダムUVオフセット</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 SplashColorUp = 2">
+      <DisplayName>水はねの輝度値係数</DisplayName>
+      <Description>水はねの輝度値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="u16 SplashSpeed = 900">
+      <DisplayName>水はね移動速度(pixcel/秒)</DisplayName>
+      <Description>水はねの一秒間の移動量</Description>
+      <Maximum>5000</Maximum>
+    </Field>
+    <Field Def="s16 SplashBeginOffset = 100">
+      <DisplayName>水はね初期オフセット</DisplayName>
+      <Description>水はねの初期オフセット</Description>
+      <Minimum>-1280</Minimum>
+      <Maximum>1280</Maximum>
+    </Field>
+    <Field Def="u8 SplashDir">
+      <DisplayName>水はね方向</DisplayName>
+      <Enum>SPLASH_DIR</Enum>
+      <Description>水はね方向</Description>
+    </Field>
+    <Field Def="u8 SplashTex">
+      <DisplayName>水はねテクスチャ</DisplayName>
+      <Enum>SPLASH_TEX</Enum>
+      <Description>水はねのゆがみのテクスチャ</Description>
+      <DisplayFormat>%s</DisplayFormat>
+    </Field>
+    <Field Def="u8 SplashTexUVReverse">
+      <DisplayName>水はねテクスチャUV反転</DisplayName>
+      <Enum>SPLASH_TEX_UV</Enum>
+      <Description>水はねのゆがみのテクスチャの反転</Description>
+      <DisplayFormat>%s</DisplayFormat>
+    </Field>
+    <Field Def="u8 SplashZoomMode">
+      <DisplayName>水はねテクスチャズーム</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>水はねのズームモード</Description>
+      <DisplayFormat>%s</DisplayFormat>
+    </Field>
+    <Field Def="f32 SplashZoomSpeed">
+      <DisplayName>水はねテクスチャズーム速度（picel/秒）</DisplayName>
+      <Description>水はねのテクスチャズーム速度</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+    </Field>
+    <Field Def="dummy8 reserve3[4]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

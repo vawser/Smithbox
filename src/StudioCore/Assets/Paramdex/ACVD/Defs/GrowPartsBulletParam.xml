@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GROW_PARTS_BULLET_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 bulletPower_Min">
+      <DisplayName>ダメージ：威力（成長最低）</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 bulletPower_Org">
+      <DisplayName>ダメージ：威力（成長前）</DisplayName>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 bulletPower_Max">
+      <DisplayName>ダメージ：威力（成長最大）</DisplayName>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 bulletRecoil_Min">
+      <DisplayName>ダメージ：反動（成長最低）</DisplayName>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 bulletRecoil_Org">
+      <DisplayName>ダメージ：反動（成長前）</DisplayName>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u16 bulletRecoil_Max">
+      <DisplayName>ダメージ：反動（成長最大）</DisplayName>
+      <SortID>6</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

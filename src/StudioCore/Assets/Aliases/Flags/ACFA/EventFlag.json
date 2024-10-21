@@ -1,0 +1,12 @@
+{
+    "list": [
+        {
+            "id": "1000",
+            "name": "Example",
+            
+            "tags": [
+                "flag"
+            ]
+        }
+    ]
+}

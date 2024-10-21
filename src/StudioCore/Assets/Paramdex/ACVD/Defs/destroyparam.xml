@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ACV_DESTROY_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 DestroyMotionType">
+      <DisplayName>破壊動作タイプ</DisplayName>
+      <Enum>DESTROY_MOTION_TYPE</Enum>
+      <Description>破壊動作タイプ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>4</Maximum>
+      <Increment>2</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 bStepDestroy = 1">
+      <DisplayName>段階破壊</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>段階破壊</Description>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 Dummy[3] = 1">
+      <DisplayName>ダミー</DisplayName>
+      <Description>ダミー</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="s32 EffectID">
+      <DisplayName>エフェクトID</DisplayName>
+      <Description>発生するSFXとSEセットのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 SpreadDir">
+      <DisplayName>散乱方向</DisplayName>
+      <Enum>DISPERSED_DIRECTION</Enum>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 RotateDir">
+      <DisplayName>回転方向</DisplayName>
+      <Enum>ROTATION_DIRECTION</Enum>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 bSpreadFromParent">
+      <DisplayName>親から散乱</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="dummy8 Dummy2[3] = 1">
+      <DisplayName>ダミー</DisplayName>
+      <Description>ダミー2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 RotateRevolution">
+      <DisplayName>回転角速度[deg/sec]</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 RotateRevolution_RandomRange">
+      <DisplayName>回転角速度ランダム幅[deg/sec]</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 FallAcceleration = 9.8">
+      <DisplayName>落下加速度[m/sec]</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 FallAcceleration_RandomRange">
+      <DisplayName>落下加速度ランダム幅[m/sec]</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 SpreadSpeed">
+      <DisplayName>散乱速度[m/sec]</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 SpreadSpeed_RandomRange">
+      <DisplayName>散乱速度ランダム幅[m/sec]</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 bCollide">
+      <DisplayName>当たり判定</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s8 DispTimeOnGround">
+      <DisplayName>着地後表示時間[sec]</DisplayName>
+      <Description>マイナス値にするとずっと表示</Description>
+      <Minimum>-1</Minimum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u16 RecoilRate = 100">
+      <DisplayName>吹っ飛び具合(%)</DisplayName>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u16 RotationRate = 100">
+      <DisplayName>回転具合(%)</DisplayName>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u8 bSFXDirOutside">
+      <DisplayName>ＳＦＸを外側に向かわせるか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u8 bApplyBulletForce">
+      <DisplayName>被弾方向に吹っ飛ぶか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u16 TAEScenarioID">
+      <DisplayName>TAEのシナリオＩＤ</DisplayName>
+      <Description>TimeActEditorのシナリオを呼び出す。</Description>
+      <Maximum>9999</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="dummy8 reserve0[14]">
+      <DisplayName>予約</DisplayName>
+      <SortID>25</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

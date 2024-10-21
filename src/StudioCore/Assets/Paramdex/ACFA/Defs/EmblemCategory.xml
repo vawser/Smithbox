@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EMBLEM_CATEGORY_INFO_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="s32 CategoryTxtID = 0">
+      <DisplayName>カテゴリ名テキストID</DisplayName>
+      <Description>カテゴリ名テキストID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+    </Field>
+    <Field Def="s32 CategoryTpfStartID = 0">
+      <DisplayName>CategoryTpfStartID</DisplayName>
+      <Description>The TPF ID of the first emblem in the category.</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+    </Field>
+    <Field Def="s32 CategoryTpfEndID = 0">
+      <DisplayName>CategoryTpfEndID</DisplayName>
+      <Description>The TPF ID of the last emblem in the category.</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+    </Field>
+  </Fields>
+</PARAMDEF>

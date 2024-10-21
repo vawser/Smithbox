@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MISSION_ESTIMATE</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 BaseReward">
+      <DisplayName>基本報酬</DisplayName>
+      <Maximum>9000000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 reserved1[12]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 RankD">
+      <DisplayName>評価D(報酬の割合)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 RankC">
+      <DisplayName>評価C(報酬の割合)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 RankB">
+      <DisplayName>評価B(報酬の割合)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 RankA">
+      <DisplayName>評価A(報酬の割合)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 RankS">
+      <DisplayName>評価S(報酬の割合)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="dummy8 reserved2[102]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>10</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

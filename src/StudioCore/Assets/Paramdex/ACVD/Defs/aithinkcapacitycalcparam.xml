@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AI_THINK_CAPACITY_CALC_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="f32 ALL_Constant">
+      <DisplayName>キャパシティの定数</DisplayName>
+      <Description>状況の変化に関わらない一定のキャパシティ</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="fixstr reseve0[12]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="f32 PARate_Low">
+      <DisplayName>PA率（低）</DisplayName>
+      <Description>PAのファジイ値を出すためのPA率の低い側の基準値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 PARate_High = 1">
+      <DisplayName>PA率（高）</DisplayName>
+      <Description>PAのファジイ値を出すためのPA率の高い側の基準値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 PAFuzzy_Low">
+      <DisplayName>PAファジイ値(低）</DisplayName>
+      <Description>PAファジイ値の低い側の値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 PAFuzzy_High = 1">
+      <DisplayName>PAファジイ値(高）</DisplayName>
+      <Description>PAファジイ値の高い側の値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 PAFuzzyCoef">
+      <DisplayName>PAファジイ値に対しての係数</DisplayName>
+      <Description>PAファジイ値に対してかける係数(マイナスの場合、関数を変更する)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 APFuzzyBegin = 1">
+      <DisplayName>APファジイ値(Begin値）</DisplayName>
+      <Description>APのファジイ値を出すためのAP率の初期の基準値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 APFuzzyMid = 0.5">
+      <DisplayName>APファジイ値(Mid値）</DisplayName>
+      <Description>APのファジイ値を出すためのAP率の中間の基準値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 APFuzzyEnd">
+      <DisplayName>APファジイ値(End値）</DisplayName>
+      <Description>APのファジイ値を出すためのAP率の末期の基準値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 APFuzzyRateBegin = 1">
+      <DisplayName>AP率（Begin）</DisplayName>
+      <Description>APファジイ値の初期の値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 APFuzzyRateMid = 0.5">
+      <DisplayName>AP率（Mid）</DisplayName>
+      <Description>APファジイ値の中間の値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 APFuzzyRateEnd">
+      <DisplayName>AP率（End）</DisplayName>
+      <Description>APファジイ値の末期の値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 APFuzzyCoef">
+      <DisplayName>APファジイ値に対しての係数</DisplayName>
+      <Description>APファジイ値に対してかける係数(マイナスの場合、関数を変更する)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="u16 TensionDist_Min">
+      <DisplayName>テンション距離（近）</DisplayName>
+      <Description>テンションが適用される距離（近）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60000</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="u16 TensionDist_Max = 1">
+      <DisplayName>テンション距離（遠）</DisplayName>
+      <Description>テンションが適用される距離（遠）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60000</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="f32 TensionRate = 1">
+      <DisplayName>テンション率</DisplayName>
+      <Description>テンションが率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="fixstr reseve1[56]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

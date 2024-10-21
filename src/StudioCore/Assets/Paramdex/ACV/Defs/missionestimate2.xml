@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MISSION_ESTIMATE2</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 RankD">
+      <DisplayName>評価D(報酬金額)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-1000000</Minimum>
+      <Maximum>1000000</Maximum>
+      <Increment>100</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 RankC">
+      <DisplayName>評価C(報酬金額)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-1000000</Minimum>
+      <Maximum>1000000</Maximum>
+      <Increment>100</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 RankB">
+      <DisplayName>評価B(報酬金額)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-1000000</Minimum>
+      <Maximum>1000000</Maximum>
+      <Increment>100</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 RankA">
+      <DisplayName>評価A(報酬金額)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-1000000</Minimum>
+      <Maximum>1000000</Maximum>
+      <Increment>100</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 RankS">
+      <DisplayName>評価S(報酬金額)</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>-1000000</Minimum>
+      <Maximum>1000000</Maximum>
+      <Increment>100</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s32 RankE_BonusPoint">
+      <DisplayName>評価Eの時の獲得ボーナス攻略ポイント（予備）</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000000</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 RankD_BonusPoint">
+      <DisplayName>評価Dの時の獲得ボーナス攻略ポイント</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000000</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 RankC_BonusPoint">
+      <DisplayName>評価Cの時の獲得ボーナス攻略ポイント</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000000</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s32 RankB_BonusPoint">
+      <DisplayName>評価Bの時の獲得ボーナス攻略ポイント</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000000</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s32 RankA_BonusPoint">
+      <DisplayName>評価Aの時の獲得ボーナス攻略ポイント</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000000</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 RankS_BonusPoint">
+      <DisplayName>評価Sの時の獲得ボーナス攻略ポイント</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000000</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 reserved2[84]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>13</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

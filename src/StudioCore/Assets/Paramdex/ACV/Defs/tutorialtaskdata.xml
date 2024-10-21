@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TUTORIAL_TASK_DATA</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u16 課題ID">
+      <DisplayName>課題ID</DisplayName>
+      <Description>課題ID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 CAPイベントID">
+      <DisplayName>CAPイベントID</DisplayName>
+      <Description>CAPイベントID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 課題テキストID">
+      <DisplayName>課題テキストID</DisplayName>
+      <Description>課題テキストID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 操作説明テキストID">
+      <DisplayName>操作説明テキストID</DisplayName>
+      <Description>操作説明テキストID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SYSTEM_COLOR_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 ColorR">
+      <DisplayName>R</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 ColorG">
+      <DisplayName>G</DisplayName>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 ColorB">
+      <DisplayName>B</DisplayName>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 ColorA">
+      <DisplayName>A</DisplayName>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

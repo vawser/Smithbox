@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CUSTOM_AI_CHIP_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 NameID">
+      <DisplayName>名前ID</DisplayName>
+      <Description>名前のテキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 DescID">
+      <DisplayName>説明文ID</DisplayName>
+      <Description>説明文のテキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 Min">
+      <DisplayName>最小値</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 Max">
+      <DisplayName>最大値</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 Default">
+      <DisplayName>デフォルト値</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 Add">
+      <DisplayName>値の増減値</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 Cost">
+      <DisplayName>コスト</DisplayName>
+      <Description>パラメータのコスト基準値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 DialType">
+      <DisplayName>表示ダイアルタイプ</DisplayName>
+      <Enum>CUSTOM_AI_CHIP_PARAM_DIAL_TYPE</Enum>
+      <Description>パラメータを表示するダイアルの種別</Description>
+      <Maximum>127</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[21]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>10</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

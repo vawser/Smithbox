@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ASSAULT_ARMOR_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="f32 RectificationPerformance">
+      <DisplayName>整波性能</DisplayName>
+      <Description>基準となる制波性能。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>100</Increment>
+    </Field>
+    <Field Def="f32 AttackFactor">
+      <DisplayName>攻撃力係数</DisplayName>
+      <Description>敵の場合は生の攻撃力</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+    </Field>
+    <Field Def="f32 EndAttackFactor">
+      <DisplayName>AA終了時の攻撃力係数</DisplayName>
+      <Description>敵の場合は生の攻撃力</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+    </Field>
+    <Field Def="f32 PAAttackPowerConversionRate">
+      <DisplayName>PA-攻撃力変換率</DisplayName>
+      <Description>残りPAをどれだけ攻撃力に追加するか</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 PAAttenuation">
+      <DisplayName>PA減衰</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="f32 PAPenetration">
+      <DisplayName>PA貫通</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="f32 Recoil">
+      <DisplayName>反動</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="f32 EndRecoil">
+      <DisplayName>AA終了時の反動</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="f32 PARecoilConversionRate">
+      <DisplayName>PA-反動変換率</DisplayName>
+      <Description>残りPAをどれだけ反動に追加するか</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+    </Field>
+    <Field Def="f32 InitialBlastRadiusFactor">
+      <DisplayName>初期爆発半径係数</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="f32 MaximumBlastRadiusFactor">
+      <DisplayName>最大爆発半径係数</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="f32 PABlastRadiusConversionFactor">
+      <DisplayName>PA-爆発半径変換率</DisplayName>
+      <Description>残りPAをどれだけ爆発半径に追加するか</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+    </Field>
+    <Field Def="s32 DamageFrame = 10">
+      <DisplayName>ダメージ発生フレーム</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="f32 FlashDurationSeconds = 10">
+      <DisplayName>閃光効果時間（秒）</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 NegativeValueFromPA0">
+      <DisplayName>PA0からのマイナス値</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1000</Increment>
+    </Field>
+     <Field Def="s32 DamageType = 1">
+      <DisplayName>ダメージの種類（0：実弾 1：EN）</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 AssaultArmorMinPA">
+      <DisplayName>AAを使うのに必要な最低PA</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1000</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

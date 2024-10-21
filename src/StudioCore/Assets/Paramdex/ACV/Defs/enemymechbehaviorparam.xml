@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MECH_BEHAVIOR_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 HorizontalAccel = 1">
+      <DisplayName>水平方向の加速度</DisplayName>
+      <Description>水平方向の加速度</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 HorizontalMaxSpeed = 100">
+      <DisplayName>水平方向の最高速度（km/h）</DisplayName>
+      <Description>水平方向の最高速度</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 HorizontalBrake = 0.1">
+      <DisplayName>水平方向のブレーキ</DisplayName>
+      <Description>水平方向のブレーキ</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 LiftUpAccel = 1">
+      <DisplayName>上方向の加速度</DisplayName>
+      <Description>上方向の加速度</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 LiftUpMaxSpeed = 100">
+      <DisplayName>上方向の最高速度（km/h）</DisplayName>
+      <Description>上方向の最高速度</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 LiftDownMaxSpeed = 100">
+      <DisplayName>下方向の最高速度（km/h）</DisplayName>
+      <Description>下方向の最高速度</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 DashHorizontalAccel = 1">
+      <DisplayName>ダッシュ時水平方向の加速度</DisplayName>
+      <Description>ダッシュ時水平方向の加速度</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 DashHorizontalMaxSpeed = 100">
+      <DisplayName>ダッシュ時水平方向の最高速度（km/h）</DisplayName>
+      <Description>ダッシュ時水平方向の最高速度</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 JumpAccel = 20">
+      <DisplayName>ジャンプの加速度</DisplayName>
+      <DisplayFormat>%.4f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 AntiFallBoostMaxSpeed = 20">
+      <DisplayName>ブース途中の落下最高速度（km/h）</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 SideDashAccel">
+      <DisplayName>QB加速度</DisplayName>
+      <Description>QB加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 QuickTurnRadPerFrame = 90">
+      <DisplayName>クイックターンの最大旋回量[deg/frm]</DisplayName>
+      <Description>クイックターン時の最大旋回量</Description>
+      <Maximum>180</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved02[3] = 1">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="f32 HighNormalAccel = -1">
+      <DisplayName>高速加速度</DisplayName>
+      <Description>-1で水平方向の加速度と同じ</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 HighNormalAccelSpeed">
+      <DisplayName>高速加速度を使うようになる最低速度[km/h]</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 HighDashAccel = -1">
+      <DisplayName>高速ダッシュ加速度</DisplayName>
+      <Description>-1でダッシュ時水平方向の加速度と同じ</Description>
+      <DisplayFormat>%.5f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 HighDashAccelSpeed">
+      <DisplayName>高速ダッシュ加速度を使うようになる最低速度[km/h]</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved03[16] = 1">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>20</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

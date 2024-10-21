@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AIAC_WEAPON_CHIP_PARAMETER</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 bOutRangeShoot">
+      <DisplayName>射程外射撃をするか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>射程外射撃をするか？</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="u8 typeFlashPanic">
+      <DisplayName>フラッシュロケット被弾時動作</DisplayName>
+      <Enum>AI_ONHIT_FLASHROCKET_REACT_TYPE</Enum>
+      <Description>フラッシュロケット被弾時動作。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="u8 minEnRate">
+      <DisplayName>最低エネルギー率[0～100]</DisplayName>
+      <Description>エネルギー量がこの値以上でないと、武器を使おうとしません</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="u8 nohit_rate">
+      <DisplayName>当てない割合[0～100]</DisplayName>
+      <Description>当てない割合。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="u8 lock_level">
+      <DisplayName>ロックレベル[0～2]</DisplayName>
+      <Description>射撃するロックレベル。0でノーロック。2で２時ロック。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>2</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s8 enAdjustType">
+      <DisplayName>EN調整タイプ</DisplayName>
+      <Enum>AI_EN_ADJUST_TYPE</Enum>
+      <Description>EN調整タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>330</SortID>
+    </Field>
+    <Field Def="dummy8 reserve10[12]">
+      <DisplayName>予約</DisplayName>
+      <SortID>421</SortID>
+    </Field>
+    <Field Def="u16 chaffUseRange">
+      <DisplayName>チャフ使用距離[frame]</DisplayName>
+      <Description>カスタムAIでチャフを使用するターゲットとの距離</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>270</SortID>
+    </Field>
+    <Field Def="f32 chaffStayTime">
+      <DisplayName>チャフ使用距離内にいる時間[sec]</DisplayName>
+      <Description>カスタムAIでターゲットが↑の距離以内にこの時間いた時にチャフ使用</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="f32 noShoot_min">
+      <DisplayName>射撃しない時間 min[sec]</DisplayName>
+      <Description>射撃しない時間　最小値。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="f32 noShoot_max">
+      <DisplayName>射撃しない時間 max[sec]</DisplayName>
+      <Description>射撃しない時間　最大値。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="f32 nohit_rad">
+      <DisplayName>当てない時の外す幅[m]</DisplayName>
+      <Description>予測地点からのずらし量</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>240</SortID>
+    </Field>
+    <Field Def="f32 purge_dist">
+      <DisplayName>パージ距離[m]</DisplayName>
+      <Description>＜構え武器用＞この距離より近寄られた場合、パージする</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="u16 triggerLag_min">
+      <DisplayName>トリガーを引くまでのラグ min[frame]</DisplayName>
+      <Description>トリガーを引くまでのラグ時間[60フレーム換算]</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60000</Maximum>
+      <SortID>260</SortID>
+    </Field>
+    <Field Def="u16 triggerLag_max">
+      <DisplayName>トリガーを引くまでのラグ max[frame]</DisplayName>
+      <Description>トリガーを引くまでのラグ時間[60フレーム換算]</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60000</Maximum>
+      <SortID>270</SortID>
+    </Field>
+    <Field Def="u8 triggerFwdAngleX_deg">
+      <DisplayName>トリガーを引く前方角度X[deg]</DisplayName>
+      <Description>トリガーを引く正面方向の角度[deg]。中心軸での断面の側面同士の角度。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>280</SortID>
+    </Field>
+    <Field Def="u8 triggerFwdAngleY_deg">
+      <DisplayName>トリガーを引く前方角度Y[deg]</DisplayName>
+      <Description>トリガーを引く正面方向の角度[deg]。中心軸での断面の側面同士の角度。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>281</SortID>
+    </Field>
+    <Field Def="u8 missileLockNum = 1">
+      <DisplayName>ミサイルロック数</DisplayName>
+      <Description>ミサイルロック数がこの設定値になるまで、ミサイルの射撃を待つ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>20</Maximum>
+      <SortID>290</SortID>
+    </Field>
+    <Field Def="u8 CIWSEnRate">
+      <DisplayName>CIWS用エネルギー率[0～100]</DisplayName>
+      <Description>CIWS用エネルギー率。EN率がこの値以下になっている場合、OFF距離未満でも、ON状態を継続する。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>320</SortID>
+    </Field>
+    <Field Def="u8 charge_rate">
+      <DisplayName>チャージ率[0～100]</DisplayName>
+      <Description>チャージ武器用チャージ率[0～100]</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>231</SortID>
+    </Field>
+    <Field Def="u8 counterGunEnRate">
+      <DisplayName>カウンターガン用エネルギー率[0-100]</DisplayName>
+      <Description>カウンターガン用EN率。EN率がこの値以上の時にONにする。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>320</SortID>
+    </Field>
+    <Field Def="u16 activateRange">
+      <DisplayName>スイッチ式肩武器　有効化距離[m]</DisplayName>
+      <Description>スイッチ式肩武器の機能をONにする距離[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u16 inactivateRange">
+      <DisplayName>スイッチ式肩武器　無効化距離[m]</DisplayName>
+      <Description>スイッチ式肩武器の機能をOFFにする距離[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="u8 shootPerformance">
+      <DisplayName>カスタムAI：射撃演算性能</DisplayName>
+      <Description>カスタムAIでのみ使用</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 snipeCheckType">
+      <DisplayName>スナイプ構え時チェック方法</DisplayName>
+      <Enum>SNIPE_CHECK_TYPE</Enum>
+      <Description>構えるときにチェックする方法</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>420</SortID>
+    </Field>
+    <Field Def="f32 snipeInRange">
+      <DisplayName>スナイプ構え距離[m]</DisplayName>
+      <Description>構え武器の構える距離[m]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 snipeOutRange">
+      <DisplayName>スナイプ構え解除距離[m]</DisplayName>
+      <Description>構え武器を解除する距離[m]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>410</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

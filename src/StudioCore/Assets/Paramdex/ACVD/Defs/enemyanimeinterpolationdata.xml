@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_ANIME_INTPOLATION_DATA_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="u16 IntpToWalk = 90">
+      <DisplayName>歩きアニメへの補間フレーム</DisplayName>
+      <Description>歩きアニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 IntpToStop = 120">
+      <DisplayName>停止アニメへの補間フレーム</DisplayName>
+      <Description>停止アニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 IntpToTurn = 120">
+      <DisplayName>旋回アニメへの補間フレーム</DisplayName>
+      <Description>旋回アニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 IntpToDash = 120">
+      <DisplayName>ダッシュアニメへの補間フレーム</DisplayName>
+      <Description>ダッシュアニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 IntpToJumpCharge = 180">
+      <DisplayName>ジャンプアニメへの補間フレーム</DisplayName>
+      <Description>ジャンプアニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 IntpFly = 120">
+      <DisplayName>飛行アニメへの補間フレーム</DisplayName>
+      <Description>飛行アニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 IntpLand = 8">
+      <DisplayName>着地アニメへの補間フレーム</DisplayName>
+      <Description>着地アニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 IntpDamage = 180">
+      <DisplayName>ダメージアニメへの補間フレーム</DisplayName>
+      <Description>ダメージアニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 IntpDead = 8">
+      <DisplayName>死亡アニメへの補間フレーム</DisplayName>
+      <Description>死亡アニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 IntpBlade = 30">
+      <DisplayName>ブレードアニメへの補間フレーム</DisplayName>
+      <Description>ブレードアニメへの補間フレーム</Description>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="fixstr reserve1[44]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PERFORMANCE_THRESHOLD</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 AcBehavior">
+      <DisplayName>AC挙動[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 EnemyBehavior">
+      <DisplayName>敵挙動[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 Object">
+      <DisplayName>オブジェ[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 FCSUpdate">
+      <DisplayName>FCS更新[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 LayoutUpdate">
+      <DisplayName>配置更新[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 Collision">
+      <DisplayName>アタリ更新[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 AI">
+      <DisplayName>ロジック更新[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 Raycast">
+      <DisplayName>レイキャスト[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 SFX">
+      <DisplayName>SFX[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 WaitDraw">
+      <DisplayName>描画待ち[%]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="dummy8 reserve00[22]">
+      <DisplayName>予約</DisplayName>
+      <SortID>12</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

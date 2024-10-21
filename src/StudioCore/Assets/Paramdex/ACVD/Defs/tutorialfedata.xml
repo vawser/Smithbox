@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TUTORIAL_FE_DATA_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 TitleTextID">
+      <DisplayName>タイトルID</DisplayName>
+      <EditFlags>Lock</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+    </Field>
+    <Field Def="s32 TutorialTextID">
+      <DisplayName>説明文ID</DisplayName>
+      <EditFlags>Lock</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 MovieID">
+      <DisplayName>ムービーID</DisplayName>
+      <EditFlags>Lock</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 KeyAssignAct0">
+      <DisplayName>動作0</DisplayName>
+      <Enum>TUTORIAL_KEY_ASSIGN_ACT_TYPE</Enum>
+      <EditFlags>Lock</EditFlags>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 KeyAssignAct1">
+      <DisplayName>動作1</DisplayName>
+      <Enum>TUTORIAL_KEY_ASSIGN_ACT_TYPE</Enum>
+      <EditFlags>Lock</EditFlags>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 KeyAssignAct2">
+      <DisplayName>動作2</DisplayName>
+      <Enum>TUTORIAL_KEY_ASSIGN_ACT_TYPE</Enum>
+      <EditFlags>Lock</EditFlags>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 KeyAssignAct3">
+      <DisplayName>動作3</DisplayName>
+      <Enum>TUTORIAL_KEY_ASSIGN_ACT_TYPE</Enum>
+      <EditFlags>Lock</EditFlags>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s32 KeyTextID0">
+      <DisplayName>動作説明ID0</DisplayName>
+      <EditFlags>Lock</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 KeyTextID1">
+      <DisplayName>動作説明ID1</DisplayName>
+      <EditFlags>Lock</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 KeyTextID2">
+      <DisplayName>動作説明ID2</DisplayName>
+      <EditFlags>Lock</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s32 KeyTextID3">
+      <DisplayName>動作説明ID3</DisplayName>
+      <EditFlags>Lock</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>10</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

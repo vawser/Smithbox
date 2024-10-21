@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WEAPONSOUND_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s16 Shoot = -1">
+      <DisplayName>発射SE</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 Reload = -1">
+      <DisplayName>リロードSE</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 MagazineReload = -1">
+      <DisplayName>マガジン リロードSE</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 ReloadFrame">
+      <DisplayName>リロードSE 再生フレーム</DisplayName>
+      <Description>リロードＳＥ再生タイミング用</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 Charge = -1">
+      <DisplayName>溜めSE</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 Charged = -1">
+      <DisplayName>溜まり状態SE</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 FlyLoop = -1">
+      <DisplayName>飛行ループＳＥ</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 AfterAccel = -1">
+      <DisplayName>加速後 SE(追従しない)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s16 AfterAccelFollow = -1">
+      <DisplayName>加速後 SE(追従する)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 SeRangeType">
+      <DisplayName>可聴範囲タイプ</DisplayName>
+      <Enum>SE_RANGE_TYPE</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[13] = -1">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="dummy8 reserved2[2] = -1">
+      <DisplayName>予約</DisplayName>
+      <Description>何故か余計なリザーブ</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>14</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

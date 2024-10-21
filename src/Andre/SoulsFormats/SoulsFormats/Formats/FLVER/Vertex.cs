@@ -198,6 +198,11 @@ namespace SoulsFormats
                             for (int i = 0; i < 4; i++)
                                 BoneIndices[i] = br.ReadByte();
                         }
+                        else if (member.Type == LayoutType.Short2toFloat2)
+                        {
+                            for (int i = 0; i < 4; i++)
+                                BoneIndices[i] = br.ReadByte();
+                        }
                         else
                             throw new NotImplementedException($"Read not implemented for {member.Type} {member.Semantic}.");
                     }
@@ -322,6 +327,10 @@ namespace SoulsFormats
                             Tangents.Add(ReadByteNormXYZW(br));
                         }
                         else if (member.Type == LayoutType.Byte4C)
+                        {
+                            Tangents.Add(ReadByteNormXYZW(br));
+                        }
+                        else if (member.Type == LayoutType.Byte4D)
                         {
                             Tangents.Add(ReadByteNormXYZW(br));
                         }
@@ -501,6 +510,11 @@ namespace SoulsFormats
                             for (int i = 0; i < 4; i++)
                                 bw.WriteByte((byte)BoneIndices[i]);
                         }
+                        else if (member.Type == LayoutType.Short2toFloat2)
+                        {
+                            for (int i = 0; i < 4; i++)
+                                bw.WriteByte((byte)BoneIndices[i]);
+                        }
                         else
                             throw new NotImplementedException($"Write not implemented for {member.Type} {member.Semantic}.");
                     }
@@ -641,6 +655,10 @@ namespace SoulsFormats
                             WriteByteNormXYZW(bw, tangent);
                         }
                         else if (member.Type == LayoutType.Byte4C)
+                        {
+                            WriteByteNormXYZW(bw, tangent);
+                        }
+                        else if (member.Type == LayoutType.Byte4D)
                         {
                             WriteByteNormXYZW(bw, tangent);
                         }

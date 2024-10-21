@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>OFFLINE_EXP2TEAM_LV</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 exp">
+      <DisplayName>経験値</DisplayName>
+      <Description>必要な経験値</Description>
+      <Maximum>2.14748365E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

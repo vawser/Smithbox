@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MAPOBJ_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="s16 ApIncreaseRate = 0">
+      <DisplayName>AP上昇率</DisplayName>
+      <Description>-100でAP0、0でAP100%、100でAP200%</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="dummy8 reserved0[3]">
+      <DisplayName>予約1</DisplayName>
+    </Field>
+    <Field Def="u8 bLock = 0">
+      <DisplayName>ロック</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ロック可能かどうかフラグ</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 RadarDisplay = 3">
+      <DisplayName>レーダー表示</DisplayName>
+      <Description>レーダーに表示される形状</Description>
+    </Field>
+    <Field Def="u8 bVisibleToAI = 0">
+      <DisplayName>AIが認識できるか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>AIが認識できるか？</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 Penetrability">
+      <DisplayName>貫通具合</DisplayName>
+      <Description>弾丸の貫通しやすさ( 死亡時 )</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 AttackPower">
+      <DisplayName>攻撃力</DisplayName>
+      <Description>攻撃力</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="dummy8 reserved1[16]">
+      <DisplayName>予約2</DisplayName>
+    </Field>
+    <Field Def="fixstr ScriptName[16]">
+      <DisplayName>スクリプト名</DisplayName>
+      <EditFlags>None</EditFlags>
+    </Field>
+    <Field Def="f32 ScriptParam0">
+      <DisplayName>スクリプトパラメータ0</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="dummy8 reserved2[4]">
+      <DisplayName>予約3</DisplayName>
+      <Description>衝突ダメージから減算</Description>
+    </Field>
+    <Field Def="u8 Rigidness = 0">
+      <DisplayName>硬さ</DisplayName>
+      <Description>衝突相手に与えるダメージの算出に使用</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="s8 LockType = 0">
+      <DisplayName>ロックオン方式</DisplayName>
+      <Enum>LOCKON_TYPE</Enum>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="u8 bRadShield = 1">
+      <DisplayName>射線遮蔽フラグ</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>射線をさえぎるかどうか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="s8 CollisionDistCompensation = 0">
+      <DisplayName>衝突距離補正</DisplayName>
+      <Description>球衝突によう誤差距離補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-127</Minimum>
+    </Field>
+    <Field Def="u8 bScaleAnim = 0">
+      <DisplayName>スケールアニメ有効？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bAnim = 0">
+      <DisplayName>アニメ有効？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>アニメーションをそもそもしない場合は、ＯＦＦ（メモリ削減策）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 reserved3[2]">
+      <DisplayName>予約4</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

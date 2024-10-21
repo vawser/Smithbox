@@ -33,6 +33,12 @@ public class ModelCommandQueue
                     Screen.ResManager.LoadCharacter(modelName);
                 }
 
+                if (assetType == "Enemy")
+                {
+                    Screen.FileSelection._searchInput = modelName;
+                    Screen.ResManager.LoadEnemy(modelName);
+                }
+
                 if (assetType == "Asset")
                 {
                     Screen.FileSelection._searchInput = modelName;

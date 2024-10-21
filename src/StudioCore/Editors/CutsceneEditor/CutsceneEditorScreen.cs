@@ -125,7 +125,7 @@ public class CutsceneEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_CutsceneEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2 or ProjectType.AC4 or ProjectType.ACFA)
         {
             ImGui.Begin("Editor##InvalidCutsceneEditor");
 

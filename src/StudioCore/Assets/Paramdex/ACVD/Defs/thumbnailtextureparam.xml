@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>THUMBNAIL_TEXTURE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 SizeX">
+      <DisplayName>サムネイルの幅</DisplayName>
+      <Description>サムネイルのサイズ（幅）</Description>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 SizeY">
+      <DisplayName>サムネイルの高さ</DisplayName>
+      <Description>サムネイルのサイズ（高さ）</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 ColumnNum">
+      <DisplayName>横の個数</DisplayName>
+      <Description>横に何個のサムネイルが並んでいるか</Description>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="dummy8 Padding[3]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="fixstr pFilePath[64]">
+      <DisplayName>ファイルパス</DisplayName>
+      <Description>テクスチャのファイルパス。転送フォルダ以下からのパスを指定してください。</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved[24]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>22</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

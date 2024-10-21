@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_OBJECT_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 EnableLocked">
+      <DisplayName>ロックされるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ロック対象になるかどうか、なる場合はＯＮ</Description>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 MapScanIconType">
+      <DisplayName>マップスキャンアイコンタイプ</DisplayName>
+      <Enum>MAPSCAN_ICON_TYPE</Enum>
+      <Description>マップスキャンの対象になるかどうか、なる場合はON</Description>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 CameraCollidable = 1">
+      <DisplayName>カメラと衝突判定するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>カメラと当たり判定する場合は ON</Description>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 EnableWallJump = 1">
+      <DisplayName>三角跳びできるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>三角跳びできるオブジェクトはON</Description>
+      <Maximum>1</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 DamageID">
+      <DisplayName>破壊時発生ダメージID</DisplayName>
+      <Description>破壊した時に発生する弾丸発生パラメータのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 DrawAreaOffset">
+      <DisplayName>描画範囲の大きさオフセット</DisplayName>
+      <Description>描画バウンディングボックスの大きさオフセット</Description>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+      <Increment>1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 bLookLinePenetrate">
+      <DisplayName>AIの視線が透過するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>AIの視線判定を無視するときはON</Description>
+      <Maximum>1</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 bNoactivateIfAllBreak">
+      <DisplayName>全関節破壊で再作成しない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>全関節が破壊されたら、再作成しないようにする。メモリ節約・パフォーマンスのため</Description>
+      <Maximum>1</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved[50]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <Increment>1</Increment>
+      <SortID>10</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

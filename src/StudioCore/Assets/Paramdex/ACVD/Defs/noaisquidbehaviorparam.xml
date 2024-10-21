@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>NO_AI_SQUID_BEHAVIOR_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 ExpMinWaitFrame">
+      <DisplayName>自爆アクションを開始するまでの最低待機フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 ExpStickDist">
+      <DisplayName>自爆時の張り付き挙動を開始するターゲットまでの距離</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 ExpActionDist">
+      <DisplayName>自爆アクションの開始距離</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 ExpStickFrame">
+      <DisplayName>張り付き挙動を開始してから自爆するまでのフレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 ExpDist">
+      <DisplayName>ターゲットがこの距離以内に来たら自爆</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u16 ExpFrame">
+      <DisplayName>自爆挙動を開始してから自爆するまでの最大フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved[20] = 1">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>8</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

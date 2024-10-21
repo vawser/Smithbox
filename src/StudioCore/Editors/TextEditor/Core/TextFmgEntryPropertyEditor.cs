@@ -404,7 +404,6 @@ public class TextFmgEntryPropertyEditor
             }
 
             var textCommit = ImGui.IsItemDeactivatedAfterEdit();
-
             if (textCommit)
             {
                 var action = new ChangeFmgEntryText(Selection.SelectedContainerWrapper, entry, _textCache);

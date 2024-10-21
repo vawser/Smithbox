@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_PERFORMANCE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 DisableCollideWithMap">
+      <DisplayName>マップに当たらない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ONでマップとのあたりを取らない</Description>
+      <Maximum>1</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 DisableCollideWithEntity">
+      <DisplayName>通常の敵に当たらない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ONで他のキャラクタとの接触をとらないで、自機との当たりのみを見る。</Description>
+      <Maximum>1</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 TargetIsPlayerOnly">
+      <DisplayName>ターゲットは自機のみ</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>攻撃する対象が、自機のみ</Description>
+      <Maximum>1</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 MoveInPlayerSightOnly">
+      <DisplayName>自機のサイト内でしか動かない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>自機のサイト内でしか動かないようにして、計算時間を稼ぐ。「制御を無効化する距離」と併用する事</Description>
+      <Maximum>1</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u8 NoUseIK">
+      <DisplayName>IKを使用しない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>IKを使用しない。</Description>
+      <Maximum>1</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="u8 NoCollsionBulletContainRate">
+      <DisplayName>あたり無し弾丸含有率</DisplayName>
+      <Description>射撃時にあたりを持たない弾丸の率を設定</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="u8 NoUseJcon">
+      <DisplayName>関節制御を使用しない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>関節制御を使用しない</Description>
+      <Maximum>1</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="u8 NoAnime">
+      <DisplayName>アニメーションしない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>完全にアニメーションしない</Description>
+      <Maximum>1</Maximum>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="u8 bPlaySEOutSight">
+      <DisplayName>視界外でもSEを再生する</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>視界外でもSEを再生するかどうか。OFFの場合、見えない状態で一定距離離れると、SEが再生されなくなる。</Description>
+      <Maximum>1</Maximum>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="u8 NetSendSkipFrame = 2">
+      <DisplayName>マルチプレイ時に送信をスキップするフレーム数</DisplayName>
+      <Description>マルチプレイ時に送信をスキップするフレーム数</Description>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 ActionHistoryNum = 1">
+      <DisplayName>マルチプレイ時に送信するアクション履歴最大数</DisplayName>
+      <Description>マルチプレイ時に送信するアクション履歴最大数</Description>
+      <Minimum>1</Minimum>
+      <Maximum>4</Maximum>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved1[1] = 1000">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>10000</Maximum>
+      <Increment>5</Increment>
+      <SortID>990</SortID>
+    </Field>
+    <Field Def="u8 NoHitSFX">
+      <DisplayName>ＳＦＸに当たらない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>SFXに当たらないようにします。</Description>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="u8 NoHitFriendSFX">
+      <DisplayName>見方のSFXにあたらない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>見方のSFXにあたらない。</Description>
+      <Maximum>1</Maximum>
+      <Increment>0</Increment>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="u8 NoHitPlayer">
+      <DisplayName>自機に当たらない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>自機に当たらないようにする</Description>
+      <Maximum>1</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="u8 RideMoveableObject">
+      <DisplayName>動くものに乗れるようにする。</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>このフラグを立てると敵が動くものに乗れるようになる。（レイキャストをやるので重め）</Description>
+      <Maximum>1</Maximum>
+      <SortID>140</SortID>
+    </Field>
+    <Field Def="u8 Performance_AutoBoostUpdateSpan = 2">
+      <DisplayName>オートブースト更新間隔</DisplayName>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="u8 Performance_SkipAiSyncDataFrame = 10">
+      <DisplayName>ＡI同期スキップフレーム</DisplayName>
+      <Description>制御側からAI側に情報を渡す間隔</Description>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="u8 SkipAIContorlFrame = 10">
+      <DisplayName>AIの操作をスキップするフレーム数</DisplayName>
+      <Description>AI側の操作を解釈する間隔</Description>
+      <SortID>170</SortID>
+    </Field>
+    <Field Def="u8 SkipFCSTargetSearchSpan">
+      <DisplayName>Fcsのターゲット検索の間隔（フレーム）</DisplayName>
+      <Description>Fcsのターゲット検索の間隔（フレーム）</Description>
+      <SortID>180</SortID>
+    </Field>
+    <Field Def="u8 JconLockPosUpdateSpan">
+      <DisplayName>関節制御の更新間隔</DisplayName>
+      <Description>関節制御の更新間隔</Description>
+      <SortID>190</SortID>
+    </Field>
+    <Field Def="u8 Performance_IKRaycastSpan = 5">
+      <DisplayName>IK用の当たり判定の間引きフレーム</DisplayName>
+      <Description>IK用の当たり判定の間引きフレーム</Description>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 NoUseLockShelterCheck">
+      <DisplayName>ロックの遮蔽チェックを行わない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ロックの遮蔽チェックを行わない</Description>
+      <Maximum>1</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="u8 EnableDestroyOnAir">
+      <DisplayName>空中にいても、破壊する</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>空中にいても、破壊する</Description>
+      <Maximum>1</Maximum>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="f32 BeginControllEnableDist = 1000">
+      <DisplayName>制御を有効化する距離</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>5</Increment>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="f32 NoControllDist = 1000">
+      <DisplayName>制御を無効化する距離</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>5</Increment>
+      <SortID>240</SortID>
+    </Field>
+    <Field Def="u16 AnimeEveryFrameUpdateDist = 200">
+      <DisplayName>アニメーションを毎フレーム更新する距離</DisplayName>
+      <Description>この距離までは、アニメーションを毎フレーム更新</Description>
+      <Maximum>9999</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="u16 AnimeEveryFrameStopDist = 800">
+      <DisplayName>アニメーションを停止させる距離</DisplayName>
+      <Description>この距離からは、アニメーションが停止する</Description>
+      <Maximum>9999</Maximum>
+      <SortID>260</SortID>
+    </Field>
+    <Field Def="u8 AnimeUpdateMaxSpan = 120">
+      <DisplayName>アニメーション最大更新間隔(フレーム)</DisplayName>
+      <Description>毎フレーム距離から徐々に更新間隔をあけていき、最後の直前では、この更新感覚になる。</Description>
+      <SortID>270</SortID>
+    </Field>
+    <Field Def="u8 bNoVisibleJconEnable">
+      <DisplayName>見えない状態でもアニメを有効にする</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>280</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved2[10] = 1">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>991</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

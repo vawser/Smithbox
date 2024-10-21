@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EMBLEM_CATEGORY_INFO_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 CategoryTxtID">
+      <DisplayName>カテゴリ名テキストID</DisplayName>
+      <Description>カテゴリ名テキストID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2.14748365E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 bExisitingEmblem">
+      <DisplayName>既存エンブレム</DisplayName>
+      <Description>既存エンブレムか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 dummy[3]">
+      <DisplayName>ダミー</DisplayName>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 CategoryInfoTextID">
+      <DisplayName>カテゴリ説明テキストID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[20]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

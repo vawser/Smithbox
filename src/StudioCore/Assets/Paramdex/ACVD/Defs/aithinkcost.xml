@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AI_THINK_COST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="u8 InfluenceItemID1">
+      <DisplayName>思考考慮項目１</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目１</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost1">
+      <DisplayName>項目１消費コスト</DisplayName>
+      <Description>項目１の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID2">
+      <DisplayName>思考考慮項目２</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目２</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost2">
+      <DisplayName>項目２消費コスト</DisplayName>
+      <Description>項目２の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID3">
+      <DisplayName>思考考慮項目３</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目３</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost3">
+      <DisplayName>項目３消費コスト</DisplayName>
+      <Description>項目３の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID4">
+      <DisplayName>思考考慮項目４</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目４</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost4">
+      <DisplayName>項目４消費コスト</DisplayName>
+      <Description>項目４の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID5">
+      <DisplayName>思考考慮項目５</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目５</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost5">
+      <DisplayName>項目５消費コスト</DisplayName>
+      <Description>項目５の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID6">
+      <DisplayName>思考考慮項目６</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目６</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost6">
+      <DisplayName>項目６消費コスト</DisplayName>
+      <Description>項目６の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID7">
+      <DisplayName>思考考慮項目７</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目７</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost7">
+      <DisplayName>項目７消費コスト</DisplayName>
+      <Description>項目７の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID8">
+      <DisplayName>思考考慮項目８</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目８</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost8">
+      <DisplayName>項目８消費コスト</DisplayName>
+      <Description>項目８の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID9">
+      <DisplayName>思考考慮項目９</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目９</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost9">
+      <DisplayName>項目９消費コスト</DisplayName>
+      <Description>項目９の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID10">
+      <DisplayName>思考考慮項目１０</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目１０</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost10">
+      <DisplayName>項目１０消費コスト</DisplayName>
+      <Description>項目１０の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID11">
+      <DisplayName>思考考慮項目１１</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目１１</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost11">
+      <DisplayName>項目１１消費コスト</DisplayName>
+      <Description>項目１１の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID12">
+      <DisplayName>思考考慮項目１２</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目１２</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost12">
+      <DisplayName>項目１２消費コスト</DisplayName>
+      <Description>項目１２の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID13">
+      <DisplayName>思考考慮項目１３</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目１３</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost13">
+      <DisplayName>項目１３消費コスト</DisplayName>
+      <Description>項目１３の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID14">
+      <DisplayName>思考考慮項目１４</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目１４</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost14">
+      <DisplayName>項目１４消費コスト</DisplayName>
+      <Description>項目１４の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID15">
+      <DisplayName>思考考慮項目１５</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目１５</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost15">
+      <DisplayName>項目１５消費コスト</DisplayName>
+      <Description>項目１５の消費コスト</Description>
+    </Field>
+    <Field Def="u8 InfluenceItemID16">
+      <DisplayName>思考考慮項目１６</DisplayName>
+      <Enum>AI_THINK_ABLITY_INFLUENCE_ITEM</Enum>
+      <Description>思考項目１６</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ItemCost16">
+      <DisplayName>項目１６消費コスト</DisplayName>
+      <Description>項目１６の消費コスト</Description>
+    </Field>
+    <Field Def="fixstr reserve1[32]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

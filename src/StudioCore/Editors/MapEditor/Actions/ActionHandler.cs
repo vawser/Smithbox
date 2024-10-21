@@ -133,6 +133,15 @@ public class ActionHandler
             case ProjectType.AC6:
                 msbclass = typeof(MSB_AC6);
                 break;
+            case ProjectType.ACFA:
+                msbclass = typeof(MSBFA);
+                break;
+            case ProjectType.ACV:
+                msbclass = typeof(MSBV);
+                break;
+            case ProjectType.ACVD:
+                msbclass = typeof(MSBVD);
+                break;
             default:
                 throw new ArgumentException("type must be valid");
         }
@@ -913,6 +922,15 @@ public class ActionHandler
                 break;
             case ProjectType.AC6:
                 msbclass = typeof(MSB_AC6);
+                break;
+            case ProjectType.ACFA:
+                msbclass = typeof(MSBFA);
+                break;
+            case ProjectType.ACV:
+                msbclass = typeof(MSBV);
+                break;
+            case ProjectType.ACVD:
+                msbclass = typeof(MSBVD);
                 break;
             default:
                 throw new ArgumentException("type must be valid");

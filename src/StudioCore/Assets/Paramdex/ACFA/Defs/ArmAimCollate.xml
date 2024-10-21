@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ARM_AIM_COLLATE</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="fixstr ArmType[16]">
+      <DisplayName>腕構えタイプ</DisplayName>
+    </Field>
+    <Field Def="fixstr WeaponStanceType[16]">
+      <DisplayName>武器構えタイプ</DisplayName>
+    </Field>
+    <Field Def="u16 StanceDataID = 0">
+      <DisplayName>構えデータID</DisplayName>
+    </Field>
+    <Field Def="dummy8 reserved[2]">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>Wrap</EditFlags>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FILTER_DAMAGENOISE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="f32 MaxAmplitude = 15">
+      <DisplayName>最大振幅</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 MinInterval = 1">
+      <DisplayName>最小インターバル</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 MaxInterval = 4">
+      <DisplayName>最大インターバル</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 AmplitudeAmplificationSpeed = 120">
+      <DisplayName>振幅増幅速度</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 NoiseScroll = 0.03">
+      <DisplayName>ノイズスクロール</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="f32 Persistence = 1">
+      <DisplayName>固執性</DisplayName>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 Porosity = 64">
+      <DisplayName>空隙性</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 Smoothness">
+      <DisplayName>滑らかさ</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="f32 Amplitude">
+      <DisplayName>振幅</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="s8 AnimStatus = 0">
+      <DisplayName>アニメーションステータス</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 summary[27]">
+      <DisplayName>要約</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

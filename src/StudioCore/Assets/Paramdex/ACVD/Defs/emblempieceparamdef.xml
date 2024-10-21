@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EMBLEM_PIECE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 CategoryID">
+      <DisplayName>カテゴリID</DisplayName>
+      <Description>カテゴリID「エンブレムカテゴリ分け」のID</Description>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 bExisitingEmblem">
+      <DisplayName>既存エンブレム</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Description>既存エンブレムか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 PieceID">
+      <DisplayName>ピースID</DisplayName>
+      <Description>ピースのデータのID。エンブレムの場合はエンブレムのID。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u32 Price">
+      <DisplayName>値段</DisplayName>
+      <Description>ピースの値段</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 InitType">
+      <DisplayName>初期状態</DisplayName>
+      <Enum>EMBLEM_PIECE_INIT_TYPE</Enum>
+      <Description>ピースの初期状態</Description>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 GroupID">
+      <DisplayName>グループID</DisplayName>
+      <Description>このピースのグループID</Description>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u16 DispIndex">
+      <DisplayName>表示順</DisplayName>
+      <Description>表示するときの順番</Description>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 bAchievement">
+      <DisplayName>実績対象ピースか？</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Description>実績の「エンブレムマスター」の対象となるピースか？（DLCなどで発売後に増える場合はNOにする必要があります</Description>
+      <Maximum>1</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u8 bDisableEdit">
+      <DisplayName>編集不可ピースか？</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Description>編集不可能ピースか？（YESにするとエンブレム作成、デカール選択で選択できなくなります）</Description>
+      <Maximum>1</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="u8 bDLCTeamEmblem">
+      <DisplayName>チームエンブレムに設定可能か</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Description>DLCのエンブレムでチームエンブレム設定が出来るかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[1]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>43</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

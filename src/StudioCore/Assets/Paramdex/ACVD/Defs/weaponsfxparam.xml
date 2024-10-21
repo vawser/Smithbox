@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WEAPONSFX_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s16 BulletSfxID">
+      <DisplayName>弾丸 SFX</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 MuzzleSfxID">
+      <DisplayName>発射 SFX</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 CartridgeSfxID">
+      <DisplayName>薬莢 SFX</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 DeleteSfxID">
+      <DisplayName>削除SFX</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 HitSfxType">
+      <DisplayName>着弾 ﾀｲﾌﾟ</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 ChargeSfxID">
+      <DisplayName>溜め SFX</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 ChargedSfxID">
+      <DisplayName>溜まり状態 SFX</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 AfterAccelSfxID">
+      <DisplayName>加速後SFXID(追従しない)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s16 AfterAccelFollowSfxID">
+      <DisplayName>加速後SFXID(追従する)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[16]">
+      <DisplayName>予約</DisplayName>
+      <SortID>11</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

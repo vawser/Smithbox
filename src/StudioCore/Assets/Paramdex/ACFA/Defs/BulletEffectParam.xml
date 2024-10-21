@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BULLET_EFFECTPARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="s16 StoneBulletSFX = 0">
+      <DisplayName>SFX：石 （弾)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 StoneMapSFX = 0">
+      <DisplayName>SFX：石 (マップ)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 WaterBulletSFX = 0">
+      <DisplayName>SFX：水 （弾)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 WaterMapSFX = 0">
+      <DisplayName>SFX：水 (マップ)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 GlassBulletSFX = 0">
+      <DisplayName>SFX：ガラス （弾)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 GlassMapSFX = 0">
+      <DisplayName>SFX：ガラス (マップ)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ConcreteBulletSFX = 0">
+      <DisplayName>SFX：ｺﾝｸﾘｰﾄ （弾)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ConcreteMapSFX = 0">
+      <DisplayName>SFX：ｺﾝｸﾘｰﾄ (マップ)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 PABulletSFX = 0">
+      <DisplayName>SFX：PA （弾)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 PAMapSFX = 0">
+      <DisplayName>SFX：PA (マップ)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ACBulletSFX = 0">
+      <DisplayName>SFX：AC （弾)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ACMapSFX = 0">
+      <DisplayName>SFX：AC (マップ)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 DefaultBulletSFX = 0">
+      <DisplayName>ＳＦＸ：その他 （弾)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 DefaultMapSFX = 0">
+      <DisplayName>ＳＦＸ：その他 (マップ)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="dummy8 reserved[8]">
+      <DisplayName>--予約--</DisplayName>
+    </Field>
+    <Field Def="s16 StoneBulletSE = 0">
+      <DisplayName>SＥ：石 （弾)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 StoneMapSE = 0">
+      <DisplayName>SＥ：石 (マップ)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 WaterBulletSE = 0">
+      <DisplayName>SＥ：水 （弾)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 WaterMapSE = 0">
+      <DisplayName>SＥ：水 (マップ)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 GlassBulletSE = 0">
+      <DisplayName>SＥ：ガラス （弾)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 GlassMapSE = 0">
+      <DisplayName>SＥ：ガラス (マップ)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ConcreteBulletSE = 0">
+      <DisplayName>SＥ：ｺﾝｸﾘｰﾄ （弾)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ConcreteMapSE = 0">
+      <DisplayName>SＥ：ｺﾝｸﾘｰﾄ (マップ)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 PABulletSE = 0">
+      <DisplayName>SＥ：PA （弾)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 PAMapSE = 0">
+      <DisplayName>SＥ：PA (マップ)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ACBulletSE = 0">
+      <DisplayName>SＥ：AC （弾)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ACMapSE = 0">
+      <DisplayName>SＥ：AC (マップ)</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 DefaultBulletSE = 0">
+      <DisplayName>ＳＥ：その他 （弾)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 DefaultMapSE = 0">
+      <DisplayName>ＳＥ：その他 (マップ)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

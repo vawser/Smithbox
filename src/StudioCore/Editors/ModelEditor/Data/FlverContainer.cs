@@ -163,7 +163,7 @@ public class FlverContainer
     {
         string ext = ".flver";
 
-        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
             ext = ".flv";
         }
@@ -184,10 +184,13 @@ public class FlverContainer
                 }
 
                 return chrDir;
+            case FlverContainerType.Enemy:
+                string eneDir = @"\model\ene\";
+                return eneDir;
             case FlverContainerType.Object:
                 string objDir = @"\obj\";
 
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
                     objDir = @"\model\obj\";
                 }
@@ -210,7 +213,7 @@ public class FlverContainer
                     partDir = @"\model\parts\";
 
                     var partType = "";
-                    switch (ContainerName.Substring(0, 2))
+                    switch (ContainerName[..2])
                     {
                         case "as":
                             partType = "accessories";
@@ -242,6 +245,106 @@ public class FlverContainer
 
                     partDir = $"{partDir}\\{partType}\\";
                 }
+                else if (Smithbox.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                {
+                    partDir = @"\model\ac";
+
+                    string partCat = @"parts";
+                    string partType = string.Empty;
+                    switch (ContainerName[..2])
+                    {
+                        case "hd":
+                            partType = "head";
+                            break;
+                        case "cr":
+                            partType = "core";
+                            break;
+                        case "am":
+                            partType = "arm";
+                            break;
+                        case "lg":
+                            partType = "leg";
+                            break;
+                        case "fs":
+                            partType = "fcs";
+                            break;
+                        case "gn":
+                            partType = "gene";
+                            break;
+                        case "bs":
+                            partType = "boost";
+                            break;
+                        case "gb": // Actually gbs but we only read two chars here
+                            partType = "g_boost";
+                            break;
+                        case "hr":
+                        case "hl":
+                            partType = "hand";
+                            break;
+                        case "br":
+                        case "bl":
+                            partType = "back";
+                            break;
+                        case "hg": // Actually hgr and hgl but we only read two chars here
+                            partType = "hanger";
+                            break;
+                        case "sh":
+                            partType = "shoul";
+                            break;
+                        case "ow":
+                            partType = "ow";
+                            break;
+                        case "rc":
+                            partType = "recon";
+                            break;
+                        case "ir":
+                        case "il":
+                            partCat = "sub";
+                            partType = "arm";
+                            break;
+                        case "bb":
+                            partCat = "sub";
+                            partType = "bb";
+                            break;
+                        case "cl":
+                            // What to do about cr here...
+                            partCat = "sub";
+                            partType = "core";
+                            break;
+                        case "dr":
+                        case "dl":
+                        case "dx":
+                        case "dy":
+                        case "er":
+                        case "el":
+                        case "ex":
+                        case "ey":
+                        case "fr":
+                        case "fl":
+                        case "fx":
+                        case "fy":
+                        case "gg":
+                            partCat = "sub";
+                            partType = "leg";
+                            break;
+                        case "ob":
+                            partCat = "sub";
+                            partType = "ob";
+                            break;
+                        case "sb":
+                            partCat = "sub";
+                            partType = "sb";
+                            break;
+                        case "aa":
+                            // What to do about br here...
+                            // What to do about bl here...
+                            partCat = "sub";
+                            partType = "head";
+                            break;
+                    }
+
+                    partDir = $@"{partDir}\{partCat}\{partType}\";
+                }
 
                 return partDir;
             case FlverContainerType.MapPiece:
@@ -253,7 +356,7 @@ public class FlverContainer
                     mapPieceDir = $@"\map\{shortMapId}\{MapID}\";
                 }
 
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
                     mapPieceDir = $@"\model\map\";
                 }
@@ -270,7 +373,7 @@ public class FlverContainer
         switch (Type)
         {
             case FlverContainerType.Character:
-                string chrExt = @".chrbnd.dcx";
+                string chrExt = ".chrbnd.dcx";
                 BinderType = FlverBinderType.BND;
 
                 if (Smithbox.ProjectType is ProjectType.DS1)
@@ -278,15 +381,31 @@ public class FlverContainer
                     chrExt = ".chrbnd";
                     BinderType = FlverBinderType.BND;
                 }
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA)
                 {
                     chrExt = ".bnd";
                     BinderType = FlverBinderType.BND;
                 }
+                else if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                {
+                    chrExt = ".bnd.dcx";
+                    BinderType = FlverBinderType.BND;
+                }
 
                 return chrExt;
+            case FlverContainerType.Enemy:
+                string eneExt = ".bnd";
+                BinderType = FlverBinderType.BND;
+
+                if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                {
+                    eneExt = ".bnd.dcx";
+                    BinderType = FlverBinderType.BND;
+                }
+
+                return eneExt;
             case FlverContainerType.Object:
-                string objExt = @".objbnd.dcx";
+                string objExt = ".objbnd.dcx";
                 BinderType = FlverBinderType.BND;
 
                 if (Smithbox.ProjectType is ProjectType.DS1)
@@ -294,7 +413,7 @@ public class FlverContainer
                     objExt = ".objbnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
                     objExt = ".bnd";
                     BinderType = FlverBinderType.BND;
@@ -312,7 +431,7 @@ public class FlverContainer
 
                 return objExt;
             case FlverContainerType.Parts:
-                string partExt = @".partsbnd.dcx";
+                string partExt = ".partsbnd.dcx";
                 BinderType = FlverBinderType.BND;
 
                 if (Smithbox.ProjectType is ProjectType.DS1)
@@ -320,9 +439,14 @@ public class FlverContainer
                     partExt = ".partsbnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA)
                 {
                     partExt = ".bnd";
+                    BinderType = FlverBinderType.BND;
+                }
+                else if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                {
+                    partExt = ".bnd.dcx";
                     BinderType = FlverBinderType.BND;
                 }
 
@@ -335,6 +459,16 @@ public class FlverContainer
                 {
                     mapPieceExt = ".mapbhd";
                     BinderType = FlverBinderType.BXF;
+                }
+                else if (Smithbox.ProjectType is ProjectType.ACFA)
+                {
+                    mapPieceExt = ".bnd";
+                    BinderType = FlverBinderType.BND;
+                }
+                else if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                {
+                    mapPieceExt = ".dcx.bnd";
+                    BinderType = FlverBinderType.BND;
                 }
                 else if (Smithbox.ProjectType is ProjectType.DS1R or ProjectType.BB)
                 {

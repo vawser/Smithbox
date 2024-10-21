@@ -521,6 +521,24 @@ public class CommonMenubarHandler
                 }
                 UIHelper.ShowHoverTooltip("Display the test panel.");
 
+                if (ImGui.MenuItem($"Test: MSBFA Byte-Perfect Write"))
+                {
+                    DebugWindow.ToggleWindow(SelectedDebugTab.Test_MSBFA_BytePerfect);
+                }
+                UIHelper.ShowHoverTooltip("Display the test panel.");
+
+                if (ImGui.MenuItem($"Test: MSBV Byte-Perfect Write"))
+                {
+                    DebugWindow.ToggleWindow(SelectedDebugTab.Test_MSBV_BytePerfect);
+                }
+                UIHelper.ShowHoverTooltip("Display the test panel.");
+
+                if (ImGui.MenuItem($"Test: MSBVD Byte-Perfect Write"))
+                {
+                    DebugWindow.ToggleWindow(SelectedDebugTab.Test_MSBVD_BytePerfect);
+                }
+                UIHelper.ShowHoverTooltip("Display the test panel.");
+
                 if (ImGui.MenuItem($"Test: BTL Byte-Perfect Write"))
                 {
                     DebugWindow.ToggleWindow(SelectedDebugTab.Test_BTL_BytePerfect);

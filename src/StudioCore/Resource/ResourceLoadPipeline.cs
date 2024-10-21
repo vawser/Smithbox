@@ -57,8 +57,10 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
         // PIPELINE: Byte Requests
         _loadByteResourcesTransform = new ActionBlock<LoadByteResourceRequest>(r =>
         {
+#if !DEBUG
             try
             {
+#endif
                 var res = new T();
 
                 // PIPELINE: Load the byte resource (as the <T> type)
@@ -71,21 +73,24 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
 
                     _loadedResources.Post(request);
                 }
+#if !DEBUG
             }
             catch(Exception ex)
             {
                 TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, ex);
             }
-
+#endif
             r.Data.Dispose();
         }, options);
 
         // PIPELINE: File Requests
         _loadFileResourcesTransform = new ActionBlock<LoadFileResourceRequest>(r =>
         {
+#if !DEBUG
             try
             {
-                var res = new T();
+#endif
+            var res = new T();
 
                 // PIPELINE: Load the byte resource (as the <T> type)
                 var success = res._Load(r.File, r.AccessLevel, r.VirtualPath);
@@ -97,6 +102,7 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
 
                     _loadedResources.Post(request);
                 }
+#if !DEBUG
             }
             catch (FileNotFoundException e1) 
             { 
@@ -109,7 +115,9 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             catch (InvalidDataException e3) { 
                 TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, e3); 
             }
+#endif
         }, options);
+
     }
 
     public ITargetBlock<LoadByteResourceRequest> LoadByteResourceBlock => _loadByteResourcesTransform;

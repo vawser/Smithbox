@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FLOCKING_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="f32 MaxForce">
+      <DisplayName>群れ制御で使用する最大の力</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 SepalateForceRate">
+      <DisplayName>離れる力の割合</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 CohesionForcerate">
+      <DisplayName>近づく力の割合</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 SeekForceRate">
+      <DisplayName>目標位置に近づく力の割合</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="u16 MinSepalateDistance">
+      <DisplayName>最低限あける距離[m]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>3000</Maximum>
+    </Field>
+    <Field Def="u8 FlockingType">
+      <DisplayName>群れタイプ</DisplayName>
+      <Enum>FLOCKING_BEHAVIOR_TYPE</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="u8 SepalateCalcSpanFrame">
+      <DisplayName>離れる力算出間隔[frame]</DisplayName>
+      <EditFlags>None</EditFlags>
+    </Field>
+    <Field Def="f32 WallAvoidanceForceRate">
+      <DisplayName>壁よけ力の割合</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="dummy8 reserve0[8]">
+      <DisplayName>予約</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

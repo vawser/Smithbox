@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ACSOUNDEFFECTDEF_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="f32 ReflectionsDelay">
+      <DisplayName>ReflectionsDelay</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 ReverbDelay">
+      <DisplayName>ReverbDelay</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>85</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EarlyDiffusion">
+      <DisplayName>EarlyDiffusion</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>15</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 LateDiffusion">
+      <DisplayName>LateDiffusion</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>15</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 LowEQGain">
+      <DisplayName>LowEQGain</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>12</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 LowEQCutoff">
+      <DisplayName>LowEQCutoff</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 HighEQGain">
+      <DisplayName>HighEQGain</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>8</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 HighEQCutoff">
+      <DisplayName>HighEQCutoff</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>14</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 RearDelay">
+      <DisplayName>RearDelay</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>5</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 RoomFilterFrequency">
+      <DisplayName>RoomFilterFrequency</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>20</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 RoomFilterMain">
+      <DisplayName>RoomFilterMain</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 RoomFilterHighFrequency">
+      <DisplayName>RoomFilterHighFrequency</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 ReflactionsGain">
+      <DisplayName>ReflactionsGain</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>20</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 ReverbGain">
+      <DisplayName>ReverbGain</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-100</Minimum>
+      <Maximum>20</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 DecayTime">
+      <DisplayName>DecayTime</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.1</Minimum>
+      <Maximum>30</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 Density">
+      <DisplayName>Density</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 RoomSize">
+      <DisplayName>RoomSize</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 WetDryMix">
+      <DisplayName>WetDryMix</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

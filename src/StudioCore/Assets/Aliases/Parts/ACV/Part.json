@@ -1,0 +1,12 @@
+{
+    "list": [
+        {
+            "id": "dummy",
+            "name": "Dummy",
+            
+            "tags": [
+                "dummy"
+            ]
+        }
+    ]
+}

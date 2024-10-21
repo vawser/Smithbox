@@ -1,16 +1,9 @@
-﻿using Octokit;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static SoulsFormats.DRB;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace StudioCore.Editors.TextEditor;
 
 // TODO: really these should now be objects but I don't want to re-work everything again so they'll remain enums for now
+// TODO: ACFA, ACV, ACVD
 
 /// ----------------------------------
 /// Keep the enum names consistent between each game as the ParamMETA 
@@ -31,7 +24,7 @@ namespace StudioCore.Editors.TextEditor;
 /// - "DLC2"
 
 /// <summary>
-/// FMG IDs for DS1
+/// FMG IDs for DES
 /// </summary>
 public enum Item_MsgBndID_DES
 {

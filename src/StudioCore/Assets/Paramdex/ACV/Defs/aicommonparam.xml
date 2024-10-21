@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AI_COMMON_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="fixstr Name[32]">
+      <DisplayName>名前</DisplayName>
+      <Description>AIの名前・説明</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="fixstr ScriptName[32]">
+      <DisplayName>スクリプト名</DisplayName>
+      <Description>ファイル名から拡張子を抜いた名前</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 RemainLost">
+      <DisplayName>忘れるまでの時間</DisplayName>
+      <Description>認識してから忘れるまでの時間。マイナスで絶対忘れない</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 NavFailDist = 100">
+      <DisplayName>パスナビゲーションが失敗する距離</DisplayName>
+      <Description>実際の目標位置からパスの目標位置がこの値ずれたら、パスは失敗する。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 NavTimeout = 1">
+      <DisplayName>パス検索をあきらめる時間</DisplayName>
+      <Description>パス検索をあきらめる時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 NavPointArriveDist = 15">
+      <DisplayName>パス移動のノードに到着したか判定距離</DisplayName>
+      <Description>パス移動のノードに到着したか判定距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 WallAvoidanceRate">
+      <DisplayName>壁をよけるのに割く力</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 ObstacleAvoidanceRate">
+      <DisplayName>動く障害物をよけるのに割く力</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 BulletAvoidRate">
+      <DisplayName>弾をよけるのに割く力</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 SeekRate = 1">
+      <DisplayName>目的地に移動するために割く力</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 WanderRate">
+      <DisplayName>ウロウロするために割く力</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 SeparationRate">
+      <DisplayName>仲間から離れようとするのに割く力</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 CohesionRate">
+      <DisplayName>仲間に近づこうとするのに割く力</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 AlignmentRate">
+      <DisplayName>仲間と同じ方向に向こうとするのに割く力</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 FlockingDist">
+      <DisplayName>群れ制御半径</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 FlockingAngle">
+      <DisplayName>群れ制御視界範囲</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="f32 MaxForce = 2">
+      <DisplayName>力の有効量</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="f32 ReturnRegionRate">
+      <DisplayName>指定領域から出ないようにする力</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u8 UseNavGraph">
+      <DisplayName>地形認識を使用するか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>地形認識を使用するか？</Description>
+      <DisplayFormat>%.d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u8 UseFlocking">
+      <DisplayName>群れ制御を使用するか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <DisplayFormat>%.d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 CombiningSteeringMethod">
+      <DisplayName>力の分配方法</DisplayName>
+      <Enum>AI_COMBINING_STEEIRNG_METHOD</Enum>
+      <Description>力の合成方法を選択する。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u8 UseObstacleAvoidance">
+      <DisplayName>障害物回避制御を使用するか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>直線当たりを使用した障害物回避制御をONOFF</Description>
+      <DisplayFormat>%.d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u8 UseWallAvoidance">
+      <DisplayName>壁回避制御を使用するか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>壁回避制御を使用するか？</Description>
+      <DisplayFormat>%.d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="u8 UseGroundCheck">
+      <DisplayName>地面チェックを行うか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>地面チェックを行うか？</Description>
+      <DisplayFormat>%.d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u8 UseMissionRegionAvoidance">
+      <DisplayName>作戦領域外に出ないようにするか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>作戦領域外に出ないようにするか？</Description>
+      <DisplayFormat>%.d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="u8 UseKeepOutRegionAvoidance">
+      <DisplayName>進入禁止領域に入らないようにするか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>進入禁止領域に入らないようにするか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="u16 KeepOutRegionSensorLength = 200">
+      <DisplayName>進入禁止領域の判定を行うセンサーの長さ</DisplayName>
+      <Description>進入禁止領域の判定を行うセンサーの長さ</Description>
+      <Maximum>1000</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="u16 PathCostCalcParamID">
+      <DisplayName>パスコスト計算パラメータID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="u16 MinReactFrame">
+      <DisplayName>警戒状態が送られてから気づくまでの最小フレーム</DisplayName>
+      <Maximum>999</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="u16 MaxReactFrame">
+      <DisplayName>警戒状態が送られてから気づくまでの最大フレーム</DisplayName>
+      <Maximum>999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="f32 AcheForgetTime = 10">
+      <DisplayName>被弾情報を忘れるまでの時間</DisplayName>
+      <Description>被弾したことを忘れるまでの時間</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 BattleToCautionTime = 4">
+      <DisplayName>戦闘状態から警戒状態に移る時間</DisplayName>
+      <Description>ターゲットをロストしてから警戒状態に移るまでの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="f32 CautionToNoCautionTime = 3">
+      <DisplayName>警戒状態から無警戒状態に移る時間</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s32 AIDriverType">
+      <DisplayName>AIドライバーの種類</DisplayName>
+      <Enum>AI_DRIVER_TYPE</Enum>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="u8 WallAvoidance_SensorLength = 30">
+      <DisplayName>壁検出の当た線分の長さ</DisplayName>
+      <Description>壁検出用当たり線分の長さ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="u8 WallAvoidance_SubSensorAngle = 45">
+      <DisplayName>補助壁検出当たり線分との角度</DisplayName>
+      <Description>補助壁検出当たり線分のメインとの角度（°）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="u8 TtTMargin = 15">
+      <DisplayName>旋回時マージン</DisplayName>
+      <Description>旋回の際のマージン。旋回速度の速いキャラの場合、大きめに設定する事</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>90</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="u8 VtTMargin = 15">
+      <DisplayName>視線旋回時マージン</DisplayName>
+      <Description>視線旋回の際のマージン。旋回速度の速いキャラの場合、大きめに設定する事</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>90</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="f32 NoMoveJudgeTime">
+      <DisplayName>移動できてないと判断する時間</DisplayName>
+      <Description>大きくしすぎると状態の更新間隔が長くなる</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="f32 NoMoveJudgeDist">
+      <DisplayName>移動できてないと判断する移動距離</DisplayName>
+      <Description>大きくしすぎると移動できてない状態が多くなる</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u8 UseTriggerNetSync">
+      <DisplayName>ネット：トリガー同期するか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ネットワーク越しにトリガーを同期するかどうか。比較的、頻繁に通信するため帯域を使用します。必要がなければ、OFFにしておいてください。</Description>
+      <Maximum>1</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="u8 bUseQuickTurn">
+      <DisplayName>反転三角跳びをするか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>今のところACVざこATK専用</Description>
+      <Maximum>1</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="u8 bExLastBossTargetSelector">
+      <DisplayName>ACVEXラスボス専用ターゲット選択</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ACVラスボス専用ターゲット選択を使うか</Description>
+      <Maximum>1</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="u8 OnWaterBehaviorType">
+      <DisplayName>水上回避行動タイプ</DisplayName>
+      <Enum>AI_ON_WATER_BEHAVIOR_TYPE</Enum>
+      <Maximum>100</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="u16 OutOfAreaJudgeFrame = 300">
+      <DisplayName>この時間注意領域から出てたら離脱中とみなす[frame]</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="u16 OutOfAreaKeepFrame = 600">
+      <DisplayName>この時間は注意領域に出ていると判定する[frame]</DisplayName>
+      <Description>注意領域から戻ってきても最低このフレーム数は離脱していると判断します</Description>
+      <Maximum>9999</Maximum>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="u16 AiLockPriorityOffset">
+      <DisplayName>AIからロックされる時の優先度距離オフセット</DisplayName>
+      <Description>この値が大きいほどAIからのターゲット認識の優先が低くなります</Description>
+      <Maximum>9999</Maximum>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="u8 OutOfAreaReturnType">
+      <DisplayName>領域外からの復帰方法</DisplayName>
+      <Enum>AI_OUT_AREA_BEHAVIOR_TYPE</Enum>
+      <Maximum>100</Maximum>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="u8 SinkWaterBehavior">
+      <DisplayName>水中に行ったときの挙動</DisplayName>
+      <Enum>ENEMY_SINK_WATER_BEHAVIOR_TYPE</Enum>
+      <Description>水中に入ったときの挙動（重いので必要な人だけ設定）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="u8 MissileAvoidanceDirAngle">
+      <DisplayName>ミサイル回避：ミサイルの移動方向による無視角度[deg]</DisplayName>
+      <Description>ミサイルの移動方向が自分の方向に対してこの角度以上ずれていたら無視する</Description>
+      <Maximum>180</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="u8 MissileAvoidancePercent">
+      <DisplayName>ミサイル回避：回避する確率[%]</DisplayName>
+      <Description>ミサイルの回避行動をする確率</Description>
+      <Maximum>100</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="u16 MissileAvoidanceReactionFrame">
+      <DisplayName>ミサイル回避：あとこのフレーム以内に当たるなら反応</DisplayName>
+      <Description>ミサイルがこのフレーム以内に当たるなら反応する</Description>
+      <Maximum>9999</Maximum>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved5[4]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="f32 ExParam00">
+      <DisplayName>追加パラメータ０</DisplayName>
+      <Description>追加パラメータ０</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="f32 ExParam01">
+      <DisplayName>追加パラメータ１</DisplayName>
+      <Description>追加パラメータ１</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="f32 ExParam02">
+      <DisplayName>追加パラメータ２</DisplayName>
+      <Description>追加パラメータ２</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="f32 ExParam03">
+      <DisplayName>追加パラメータ３</DisplayName>
+      <Description>追加パラメータ３</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="f32 ExParam04">
+      <DisplayName>追加パラメータ４</DisplayName>
+      <Description>追加パラメータ４</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="f32 ExParam05">
+      <DisplayName>追加パラメータ５</DisplayName>
+      <Description>追加パラメータ５</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="f32 ExParam06">
+      <DisplayName>追加パラメータ６</DisplayName>
+      <Description>追加パラメータ６</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="f32 ExParam07">
+      <DisplayName>追加パラメータ７</DisplayName>
+      <Description>追加パラメータ７</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="fixstr Reserved2[32]">
+      <DisplayName>予約２</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>61</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

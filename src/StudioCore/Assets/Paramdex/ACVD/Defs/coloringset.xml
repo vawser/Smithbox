@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>COLORING_SET_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 BASE_R">
+      <Description>メイン_R</Description>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 BASE_G">
+      <Description>メイン_G</Description>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 BASE_B">
+      <Description>メイン_B</Description>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 AID_R">
+      <Description>サブ1_R</Description>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 AID_G">
+      <Description>サブ1_G</Description>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 AID_B">
+      <Description>サブ1_B</Description>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 AID2_R">
+      <Description>ACVでは使用しない</Description>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 AID2_G">
+      <Description>ACVでは使用しない</Description>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 AID2_B">
+      <Description>ACVでは使用しない</Description>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 OPTIONAL_R">
+      <Description>サブ2_R</Description>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 OPTIONAL_G">
+      <Description>サブ2_G</Description>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 OPTIONAL_B">
+      <Description>サブ2_B</Description>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 JOINT_R">
+      <Description>ACVでは使用しない</Description>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u8 JOINT_G">
+      <Description>ACVでは使用しない</Description>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u8 JOINT_B">
+      <Description>ACVでは使用しない</Description>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u8 KOJIMA_R">
+      <Description>グロー_R</Description>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u8 KOJIMA_G">
+      <Description>グロー_G</Description>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u8 KOJIMA_B">
+      <Description>グロー_B</Description>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="dummy8 dmy[2]">
+      <DisplayName>ダミー</DisplayName>
+      <Description>ダミー</Description>
+      <SortID>20</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

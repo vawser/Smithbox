@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BULLET_MISSILE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 BehaviorID">
+      <DisplayName>プログラム</DisplayName>
+      <Enum>BULLET_BEHAVIOR_ID</Enum>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 bShootable">
+      <DisplayName>撃墜可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>この弾が「迎撃可」の弾によって撃ち落されることができる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 bCanGoWater">
+      <DisplayName>水中可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 bWireThrough">
+      <DisplayName>金網貫通</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 bInterceptable = 1">
+      <DisplayName>迎撃可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>この弾が「撃墜可」の弾を撃ち落すことができる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 HitRadius">
+      <DisplayName>当たり半径</DisplayName>
+      <Description>0 なら直線当たり</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 ProximityFuseRange">
+      <DisplayName>近接信管距離</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 DecayPower">
+      <DisplayName>減衰：威力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 DecayRecoil">
+      <DisplayName>減衰：反動</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 DecayDiffsibility">
+      <DisplayName>減衰：拡散力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 DecayPenetrability">
+      <DisplayName>減衰：貫通力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 bLock = 1">
+      <DisplayName>ロック可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 bRadarDisplay = 1">
+      <DisplayName>レーダー表示可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved2[2]">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="f32 AirCP">
+      <DisplayName>空力係数</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 Accel">
+      <DisplayName>加速度</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 AfterAccelGravity">
+      <DisplayName>加速後：重力加速度</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s32 AccelStartFrame">
+      <DisplayName>加速開始フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s32 AccelEndFrame">
+      <DisplayName>加速終了フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s32 ActStartFrame">
+      <DisplayName>通常アクション開始フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s32 ActEndFrame">
+      <DisplayName>通常アクション終了フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 StdActID">
+      <DisplayName>通常アクション</DisplayName>
+      <Enum>MISSILE_ACTION_ID</Enum>
+      <Description>加速開始後に行うアクション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u8 bFollowBulletVel = 1">
+      <DisplayName>通常アクション前：向きを速度方向に合わせるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u8 ForceTraceFrame">
+      <DisplayName>強制補足フレーム</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved3[1]">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="f32 TraceTrunAngle">
+      <DisplayName>追尾最大旋回角度</DisplayName>
+      <Description>追尾旋回可能な範囲（度）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>1</Increment>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 LockDist">
+      <DisplayName>ロック範囲（距離）</DisplayName>
+      <Description>自律ロックオン時の範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>10</Increment>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="f32 LockAng">
+      <DisplayName>ロック範囲（角度）</DisplayName>
+      <Description>自律ロックオン時の範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="f32 TraceDist">
+      <DisplayName>捕捉範囲（距離）</DisplayName>
+      <Description>追尾が継続可能な範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>10</Increment>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="f32 TraceAng">
+      <DisplayName>捕捉範囲（角度）</DisplayName>
+      <Description>追尾が継続可能な範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="f32 CloseActStartDist">
+      <DisplayName>接近アクション開始距離</DisplayName>
+      <Description>接近アクションを開始する（ターゲットとの）距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>10</Increment>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="u8 CloseActID">
+      <DisplayName>接近アクション</DisplayName>
+      <Enum>MISSILE_ACTION_ID</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved4[1]">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="s16 CloseActStartFrame">
+      <DisplayName>接近アクション開始フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 HeightActStartDist">
+      <DisplayName>高度指定アクション開始距離</DisplayName>
+      <Description>初期高度からこの高度まで落下するとアクション開始</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="u8 HeightActID">
+      <DisplayName>高度指定アクション</DisplayName>
+      <Enum>MISSILE_ACTION_ID</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="u8 TargetLostActID">
+      <DisplayName>ターゲットロスト後アクション</DisplayName>
+      <Enum>MISSILE_ACTION_ID</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="u8 DecoyResist = 100">
+      <DisplayName>デコイ耐性</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="u8 CrowdType">
+      <DisplayName>群制御タイプ</DisplayName>
+      <Enum>MISSILE_CROWD_ID</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="u8 GroupCtrlMinSpread">
+      <DisplayName>群制御：最小広がり幅（半径）</DisplayName>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="u8 GroupCtrlMaxSpread">
+      <DisplayName>群制御：最大広がり幅（半径）</DisplayName>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="u16 GroupCtrlSpreadDist">
+      <DisplayName>群制御：広がり幅が狭くなり始める敵との距離</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="s32 HitBulletID">
+      <DisplayName>着弾弾丸ID</DisplayName>
+      <Description>着弾したときに爆発と一緒に発生させる弾丸ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>8999999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="f32 PerfRandomRate">
+      <DisplayName>性能ランダム率</DisplayName>
+      <Description>弾の加速力、追尾性能のランダム度合い</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="f32 BulletWeight = 1">
+      <DisplayName>弾丸重量</DisplayName>
+      <Description>弾速調整用の重量パラメータ。重いほど速度変化が緩やかになる。（落下速度には影響しない）</Description>
+      <Minimum>0.1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="u8 MaxQuakeAngle">
+      <DisplayName>最大ブレ角度</DisplayName>
+      <Description>加速度に比例したブレの大きさ</Description>
+      <Maximum>90</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="u8 LockOnce">
+      <DisplayName>一度捕捉するまで迷走せず</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>垂直ミサイルなどで使用</Description>
+      <Maximum>1</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="u8 QuakeFrame">
+      <DisplayName>ブレフレーム</DisplayName>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved6[1]">
+      <DisplayName>--予約--</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="u32 ShootBulletID">
+      <DisplayName>射撃弾丸発生ＩＤ</DisplayName>
+      <Description>弾丸発生パラメータＩＤを指定</Description>
+      <Maximum>8999999</Maximum>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="u8 OnceShootCount">
+      <DisplayName>同時発射数</DisplayName>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="u8 ShootInterval">
+      <DisplayName>射撃間隔（フレーム）</DisplayName>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="u16 ShootSpeed">
+      <DisplayName>初期弾速</DisplayName>
+      <Description>m/s　自分の移動速度に上乗せ</Description>
+      <Maximum>9999</Maximum>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="u16 MaxSpeedKmH = 1200">
+      <DisplayName>最高速度(Km/h)</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="u16 MinSpeedKmH = 200">
+      <DisplayName>最低速度(Km/h)</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="f32 Brake">
+      <DisplayName>ブレーキ(m/sec)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="f32 BeforeAccelGravity">
+      <DisplayName>加速前：重力加速度</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved7[12]">
+      <DisplayName>--予約--</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>63</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

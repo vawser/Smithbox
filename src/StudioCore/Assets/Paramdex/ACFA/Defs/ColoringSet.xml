@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>COLORING_SET_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 BASE_R = 128">
+      <DisplayName>BASE R</DisplayName>
+    </Field>
+    <Field Def="u8 BASE_G = 128">
+      <DisplayName>BASE G</DisplayName>
+    </Field>
+    <Field Def="u8 BASE_B = 128">
+      <DisplayName>BASE B</DisplayName>
+    </Field>
+    <Field Def="u8 AID_R = 128">
+      <DisplayName>AID R</DisplayName>
+    </Field>
+    <Field Def="u8 AID_G = 128">
+      <DisplayName>AID G</DisplayName>
+    </Field>
+    <Field Def="u8 AID_B = 128">
+      <DisplayName>AID B</DisplayName>
+    </Field>
+    <Field Def="u8 AID2_R = 128">
+      <DisplayName>AID2 R</DisplayName>
+    </Field>
+    <Field Def="u8 AID2_G = 128">
+      <DisplayName>AID2 G</DisplayName>
+    </Field>
+    <Field Def="u8 AID2_B = 128">
+      <DisplayName>AID2 B</DisplayName>
+    </Field>
+    <Field Def="u8 OPTIONAL_R = 128">
+      <DisplayName>OPTIONAL R</DisplayName>
+    </Field>
+    <Field Def="u8 OPTIONAL_G = 128">
+      <DisplayName>OPTIONAL G</DisplayName>
+    </Field>
+    <Field Def="u8 OPTIONAL_B = 128">
+      <DisplayName>OPTIONAL B</DisplayName>
+    </Field>
+    <Field Def="u8 JOINT_R = 128">
+      <DisplayName>JOINT R</DisplayName>
+    </Field>
+    <Field Def="u8 JOINT_G = 128">
+      <DisplayName>JOINT G</DisplayName>
+    </Field>
+    <Field Def="u8 JOINT_B = 128">
+      <DisplayName>JOINT B</DisplayName>
+    </Field>
+    <Field Def="u8 KOJIMA_R = 128">
+      <DisplayName>KOJIMA R</DisplayName>
+    </Field>
+    <Field Def="u8 KOJIMA_G = 128">
+      <DisplayName>KOJIMA G</DisplayName>
+    </Field>
+    <Field Def="u8 KOJIMA_B = 128">
+      <DisplayName>KOJIMA B</DisplayName>
+    </Field>
+    <Field Def="dummy8 dummy[2]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

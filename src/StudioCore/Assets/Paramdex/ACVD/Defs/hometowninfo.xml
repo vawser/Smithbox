@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>HOMETOWN_INFO</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 areaId">
+      <DisplayName>地域ID</DisplayName>
+      <Description>地域ごとに振られるID</Description>
+      <Maximum>10000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

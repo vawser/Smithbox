@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ARENA_AC_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 ID">
+      <DisplayName>ID</DisplayName>
+    </Field>
+    <Field Def="u8 所属アリーナID">
+      <DisplayName>所属アリーナID</DisplayName>
+    </Field>
+    <Field Def="u8 ACのデータID">
+      <DisplayName>ACのデータID</DisplayName>
+    </Field>
+    <Field Def="u8 プロフィールデータID">
+      <DisplayName>プロフィールデータID</DisplayName>
+    </Field>
+    <Field Def="fixstr AIの名前[12]">
+      <DisplayName>AIの名前</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>127</Maximum>
+    </Field>
+    <Field Def="u32 報酬金額">
+      <DisplayName>報酬金額</DisplayName>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s16 GA貢献度">
+      <DisplayName>GA貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 インテリオル貢献度">
+      <DisplayName>インテリオル貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 オーメル貢献度">
+      <DisplayName>オーメル貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 企業連貢献度">
+      <DisplayName>企業連貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ORCA貢献度">
+      <DisplayName>ORCA貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 自治都市貢献度">
+      <DisplayName>自治都市貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 貢献度予備1">
+      <DisplayName>貢献度予備1</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 貢献度予備2">
+      <DisplayName>貢献度予備2</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

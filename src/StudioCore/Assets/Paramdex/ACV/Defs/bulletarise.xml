@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BULLET_ARISE_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 BulletID">
+      <DisplayName>弾丸ID</DisplayName>
+      <Maximum>8999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 SfxType">
+      <DisplayName>SFX</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 HitEffectID">
+      <DisplayName>着弾ID</DisplayName>
+      <Maximum>8999999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 CameraID">
+      <DisplayName>カメラ</DisplayName>
+      <Description>カメラ振動用のカメラパラメータのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 DamageType">
+      <DisplayName>ダメージ：タイプ</DisplayName>
+      <Enum>DAMAGE_TYPE</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 DamagePierce">
+      <DisplayName>ダメージ：貫通</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 DamageRadial">
+      <DisplayName>ダメージ：反動タイプ</DisplayName>
+      <Enum>BULLET_RECOIL_TYPE</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 DamageReturnRate">
+      <DisplayName>ダメージ：還元率</DisplayName>
+      <Description>発射した本人に、着弾後のダメージが入る割合</Description>
+      <Maximum>100</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 DamagePower">
+      <DisplayName>ダメージ：威力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>5</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 DamageRecoil">
+      <DisplayName>ダメージ：反動</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>5</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 DamageDiffsibility">
+      <DisplayName>ダメージ：拡散力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>5</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 DamagePenetrability">
+      <DisplayName>ダメージ：貫通力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>5</Increment>
+      <SortID>12</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

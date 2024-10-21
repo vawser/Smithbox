@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MEDAL_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 NameID">
+      <DisplayName>タイトルID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 CaptionID">
+      <DisplayName>説明ID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 PeaceNum">
+      <DisplayName>勲章ピース</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 MedalPoint">
+      <DisplayName>勲章ポイント</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 TexID">
+      <DisplayName>勲章画像ID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 ThumbnailTexID">
+      <DisplayName>サムネイル画像ID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 CategoryID">
+      <DisplayName>カテゴリーID</DisplayName>
+      <Maximum>12</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 PriorityID">
+      <DisplayName>優先順位</DisplayName>
+      <Maximum>99</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 HonorID">
+      <DisplayName>称号ID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 PlayerRatingBonus">
+      <DisplayName>プレイヤー 評価ボーナス</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 CaptionID_Own">
+      <DisplayName>取得後説明ID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

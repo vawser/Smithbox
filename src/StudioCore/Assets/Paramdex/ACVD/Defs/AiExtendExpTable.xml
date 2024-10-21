@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AI_EXTEND_EXP_TABLE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 Exp_Move">
+      <DisplayName>移動 - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_Move">
+      <DisplayName>移動 - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 Exp_Avoid">
+      <DisplayName>回避 - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_Avoid">
+      <DisplayName>回避 - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u32 Exp_RAtk">
+      <DisplayName>右攻撃 - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_RAtk">
+      <DisplayName>右攻撃 - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u32 Exp_LAtk">
+      <DisplayName>左攻撃 - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_LAtk">
+      <DisplayName>左攻撃 - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u32 Exp_SAtk">
+      <DisplayName>肩攻撃 - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_SAtk">
+      <DisplayName>肩攻撃 - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u32 Exp_Search">
+      <DisplayName>認識 - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_Search">
+      <DisplayName>認識 - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u32 Exp_Target">
+      <DisplayName>ターゲット - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_Target">
+      <DisplayName>ターゲット - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u32 Exp_SpMove">
+      <DisplayName>特殊移動 - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_SpMove">
+      <DisplayName>特殊移動 - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u32 Exp_SpAct">
+      <DisplayName>特殊行動 - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_SpAct">
+      <DisplayName>特殊行動 - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u32 Exp_Logic">
+      <DisplayName>ロジック - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_Logic">
+      <DisplayName>ロジック - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u32 Exp_Cost">
+      <DisplayName>コスト - 累計経験値</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u32 MoneyRate_Cost">
+      <DisplayName>コスト - 投資換算レート</DisplayName>
+      <Description>カテゴリごとの累計経験値*投資換算レートが20億を超えないように！</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>22</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

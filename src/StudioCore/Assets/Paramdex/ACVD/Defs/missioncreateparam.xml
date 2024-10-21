@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MISSION_CREATE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="u16 PlayerACEventID">
+      <DisplayName>自機のイベント</DisplayName>
+      <Description>自機に適応するイベントID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 FightMessageID">
+      <DisplayName>対AC戦ミッション メッセージシステムデータＩＤ</DisplayName>
+      <Description>対戦メッセージID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u32 EnemyACEntityID">
+      <DisplayName>対AC戦ミッション 対決相手のエンティティID</DisplayName>
+      <Description>対戦メッセージの対決相手のエンティティID。０で無効。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u8 bUseVOB">
+      <DisplayName>VOBを使用</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>VOBモデルをロードするかどうか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="fixstr Reserve0[23]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="u16 AIHeapSize = 3072">
+      <DisplayName>AI全体で使用するメモリ量[KB]</DisplayName>
+      <Description>AI全体で使用するヒープサイズ。KB単位</Description>
+      <EditFlags>None</EditFlags>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="u16 EventScriptHeapSize = 2048">
+      <DisplayName>イベントスクリプトのメモリ量[KB]</DisplayName>
+      <Description>イベントスクリプトで使用するヒープサイズ。KB単位</Description>
+      <EditFlags>None</EditFlags>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="u16 SFXHaepSize = 6144">
+      <DisplayName>SFXで使用するメモリ量[KB]</DisplayName>
+      <Description>SFXで使用するメモリ量。KB単位。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>3072</Minimum>
+      <Maximum>10240</Maximum>
+      <Increment>256</Increment>
+    </Field>
+    <Field Def="fixstr Reserve1[26]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>NPC_AC_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 AiID">
+      <DisplayName>AIのID</DisplayName>
+      <Description>AC用AIパラメータのID</Description>
+      <Maximum>65535</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 DesignID">
+      <DisplayName>機体構成ID</DisplayName>
+      <Description>機体構成のID</Description>
+      <Maximum>65535</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 PirotNameID">
+      <DisplayName>パイロット名</DisplayName>
+      <Description>パイロット名のID</Description>
+      <Maximum>65535</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved1[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>5</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

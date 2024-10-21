@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ARENA_AC_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 ID = 0">
+      <DisplayName>ID</DisplayName>
+    </Field>
+    <Field Def="u8 ArenaID = 0">
+      <DisplayName>所属アリーナID</DisplayName>
+    </Field>
+    <Field Def="u8 AcDataInfoID = 0">
+      <DisplayName>ACのデータID</DisplayName>
+    </Field>
+    <Field Def="u8 AcProfileInfoID = 0">
+      <DisplayName>プロフィールデータID</DisplayName>
+    </Field>
+    <Field Def="fixstr AIScriptName[12]">
+      <DisplayName>AIの名前</DisplayName>
+    </Field>
+    <Field Def="u32 RewardAmount = 0">
+      <DisplayName>報酬金額</DisplayName>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s16 GAContrib = 0">
+      <DisplayName>GA貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 InteriorUnionContrib = 0">
+      <DisplayName>インテリオル貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 OmerScienceContrib = 0">
+      <DisplayName>オーメル貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 LeagueContrib = 0">
+      <DisplayName>企業連貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ORCAContrib = 0">
+      <DisplayName>ORCA貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 LineArkContrib = 0">
+      <DisplayName>自治都市貢献度</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ReservedContrib1 = 0">
+      <DisplayName>貢献度予備1</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 ReservedContrib2 = 0">
+      <DisplayName>貢献度予備2</DisplayName>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

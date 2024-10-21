@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WORLDAREA_BATTLEMAP_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 DamageCost">
+      <DisplayName>前半ﾐｯｼｮﾝ 目標金額</DisplayName>
+      <Description>総被害額</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="s16 FallLevel1MissionID">
+      <DisplayName>Lv1 ﾐｯｼｮﾝID</DisplayName>
+      <Description>陥落レベル0 ﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+    </Field>
+    <Field Def="s16 FallLevel1TimeLimit = 1">
+      <DisplayName>Lv1 対戦時間</DisplayName>
+      <Description>陥落レベル0 対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 FallLevel2MissionID">
+      <DisplayName>Lv2 ﾐｯｼｮﾝID</DisplayName>
+      <Description>陥落レベル1 ﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 FallLevel2TimeLimit = 1">
+      <DisplayName>Lv2 対戦時間</DisplayName>
+      <Description>陥落レベル1 対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 FallLevel3MissionID">
+      <DisplayName>Lv3 ﾐｯｼｮﾝID</DisplayName>
+      <Description>陥落レベル2 ﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 FallLevel3TimeLimit = 1">
+      <DisplayName>Lv3 対戦時間</DisplayName>
+      <Description>陥落レベル2 対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 FallLevel4MissionID">
+      <DisplayName>Lv4 ﾐｯｼｮﾝID</DisplayName>
+      <Description>陥落レベル3 ﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 FallLevel4TimeLimit = 1">
+      <DisplayName>Lv4 対戦時間</DisplayName>
+      <Description>陥落レベル3 対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 FallLevel5MissionID">
+      <DisplayName>Lv5 ﾐｯｼｮﾝID</DisplayName>
+      <Description>陥落レベル4 ﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s16 FallLevel5TimeLimit = 1">
+      <DisplayName>Lv5 対戦時間</DisplayName>
+      <Description>陥落レベル4 対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 FallLevel6MissionID">
+      <DisplayName>Lv6 ﾐｯｼｮﾝID</DisplayName>
+      <Description>陥落レベル5 ﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 FallLevel6TimeLimit = 1">
+      <DisplayName>Lv6 対戦時間</DisplayName>
+      <Description>陥落レベル5 対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 FallLevel7MissionID">
+      <DisplayName>Lv7 ﾐｯｼｮﾝID</DisplayName>
+      <Description>陥落レベル6 ﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s16 FallLevel7TimeLimit = 1">
+      <DisplayName>Lv7 対戦時間</DisplayName>
+      <Description>陥落レベル6 対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s16 FallLevel8MissionID">
+      <DisplayName>Lv8 ﾐｯｼｮﾝID</DisplayName>
+      <Description>陥落レベル7 ﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s16 FallLevel8TimeLimit = 1">
+      <DisplayName>Lv8 対戦時間</DisplayName>
+      <Description>陥落レベル7 対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 CustomLayoutMissionID">
+      <DisplayName>ｶｽﾀﾑ配置 ﾐｯｼｮﾝID</DisplayName>
+      <Description>カスタム配置を使うﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s16 CustomLayoutTimeLimit = 1">
+      <DisplayName>ｶｽﾀﾑ配置 対戦時間</DisplayName>
+      <Description>カスタム配置を使うマップでの対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s16 HandicapMissionID">
+      <DisplayName>ﾊﾝﾃﾞ戦 ﾐｯｼｮﾝID</DisplayName>
+      <Description>ハンデ戦のﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s16 HandicapTimeLimit = 1">
+      <DisplayName>ﾊﾝﾃﾞ戦 対戦時間</DisplayName>
+      <Description>ハンディーキャップでの対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s16 BossBattleMissionID">
+      <DisplayName>ボス戦 ﾐｯｼｮﾝID</DisplayName>
+      <Description>ボス戦ﾐｯｼｮﾝID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="s16 BossBattleTimeLimit = 1">
+      <DisplayName>ボス戦 対戦時間</DisplayName>
+      <Description>ボス戦での対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s16 TotalDestructionMissionID">
+      <DisplayName>前半ﾐｯｼｮﾝ ﾐｯｼｮﾝID</DisplayName>
+      <Description>前半ミッションID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="s16 TotalDestructionTimeLimit = 1">
+      <DisplayName>前半ﾐｯｼｮﾝ 対戦時間</DisplayName>
+      <Description>破壊総額での対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="s16 DestroyTargetMissionID">
+      <DisplayName>後半ﾐｯｼｮﾝ ﾐｯｼｮﾝID</DisplayName>
+      <Description>後半ミッションID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="s16 DestroyTargetTimeLimit = 1">
+      <DisplayName>後半ﾐｯｼｮﾝ 対戦時間</DisplayName>
+      <Description>後半ミッションでの対戦時間</Description>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[8]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>31</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>
