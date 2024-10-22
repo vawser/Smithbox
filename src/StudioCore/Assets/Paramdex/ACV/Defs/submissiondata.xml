@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SUBMISSION_DATA_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 name">
+      <DisplayName>サブミッション名称</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9990000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 desc">
+      <DisplayName>サブミッション説明</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9990000</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 rank">
+      <DisplayName>難易度</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 unlock_difficulty">
+      <DisplayName>対応難易度</DisplayName>
+      <Enum>SUBMISSION_DIFFICULTY</Enum>
+      <Description>アンロックする難易度を設定。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 debug">
+      <DisplayName>サブミッションの総数から除外する？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>デバッグ用の場合はこのフラグをONにしてください</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="dummy8 reserve00[1]">
+      <DisplayName>予約</DisplayName>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u32 rewardMoney">
+      <DisplayName>クリア時の獲得報酬額</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9990000</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u32 rewardTeamPoint">
+      <DisplayName>クリア時の獲得チームポイント</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9990000</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="dummy8 reserve01[12]">
+      <DisplayName>予約</DisplayName>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="dummy8 reserve10[32]">
+      <DisplayName>予約</DisplayName>
+      <SortID>13</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ARM_AIM_COLLATE</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 LegsMotionID">
+      <DisplayName>脚部モーションID</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 WeaponSize">
+      <DisplayName>武器サイズ</DisplayName>
+      <Enum>WEP_PARTS_SIZE</Enum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserved1[30]">
+      <DisplayName>予約</DisplayName>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u16 AimDataID">
+      <DisplayName>構えデータID</DisplayName>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 CoreMotionID">
+      <DisplayName>コアモーションID</DisplayName>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[1]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%1.2f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>8</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

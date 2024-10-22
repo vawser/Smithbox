@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_GRAPHICS_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 CollisionRadius = 3">
+      <DisplayName>あたり球半径</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 SfxParamID">
+      <DisplayName>ＳＦＸパラメータID</DisplayName>
+      <Minimum>0</Minimum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 SoundParamID">
+      <DisplayName>サウンドパラメータID</DisplayName>
+      <Minimum>0</Minimum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 TankLegIntpFrame = 200">
+      <DisplayName>タンク脚の補間フレーム</DisplayName>
+      <Description>今のところDEF-MTのみ有効</Description>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 Reserved5 = 800">
+      <DisplayName>--予約--</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 Reserved6 = 120">
+      <DisplayName>--予約--</DisplayName>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve1[3] = 120">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 Hit_UpperHitSphereRadius = 5">
+      <DisplayName>上半身当たり球半径（ｍ）</DisplayName>
+      <Description>上半身当たり球半径</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 Hit_UpperHitSphereHeightOffset = 8">
+      <DisplayName>上半身当たり球オフセット（ｍ）</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u16 AnimInterpolateInfoID">
+      <DisplayName>アニメーション補間データID</DisplayName>
+      <Description>アニメーション補間データID</Description>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 Movement_MasterAnimeUpdateRate">
+      <DisplayName>マスター移動アニメの再生レート</DisplayName>
+      <Description>マスターアニメの再生レート</Description>
+      <Maximum>200</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 Performance_DisableAnimeLOD">
+      <DisplayName>アニメーションのＬＯＤ処理を行わない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 UseScaleAnime">
+      <DisplayName>スケールアニメを使用する</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 bUseMasterAnimReviseMove">
+      <DisplayName>マスターアニメを補正しながら行う</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ループアニメで同じ位置に戻ってくる人のみONにすること！</Description>
+      <Maximum>1</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u16 MasterAnimStopFrame = 1">
+      <DisplayName>マスター移動アニメの加速しきる、停止するフレーム</DisplayName>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 OneColSphereOffset = -1">
+      <DisplayName>当たり球１つのオフセット[m]</DisplayName>
+      <Description>マイナスの場合、当たり球半径がオフセット値（08/2/3以前の動作）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 KickCollisionRadius">
+      <DisplayName>三角飛び用当たり球半径[m]</DisplayName>
+      <Description>三角飛び用当たり球半径[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="f32 KickCollisionHeight">
+      <DisplayName>三角飛び用当たり球オフセット[m]</DisplayName>
+      <Description>三角飛び用当たり球オフセット[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve3[16] = 120">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+      <SortID>21</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

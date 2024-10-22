@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ACSIS_DISPLAY_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="fixstr ObjectName[16]">
+      <DisplayName>オブジェクト名</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EyeAngleX">
+      <DisplayName>視点角度X</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EyeAngleY">
+      <DisplayName>Y</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EyeDist = 10">
+      <DisplayName>視点距離</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>5000</Maximum>
+    </Field>
+    <Field Def="f32 AtOffsetX">
+      <DisplayName>注視位置X</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="f32 AtOffsetY">
+      <DisplayName>Y</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="f32 AtOffsetZ">
+      <DisplayName>Z</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="f32 PartsDistRate = 1">
+      <DisplayName>パーツ：視点距離係数</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 PartsAngleX">
+      <DisplayName>パーツ：配置角度X</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

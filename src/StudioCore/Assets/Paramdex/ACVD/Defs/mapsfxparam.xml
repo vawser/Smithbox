@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MAP_SFXPARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s16 AcBoosterLight">
+      <DisplayName>AcLightブースター</DisplayName>
+      <Description>ブースターSFX</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 AcMainBooster">
+      <DisplayName>Acメインブースタ</DisplayName>
+      <Description>メインブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 AcFootBooster">
+      <DisplayName>Ac足ブースタ</DisplayName>
+      <Description>足ブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 AcBackBooster">
+      <DisplayName>Acバックブースタ</DisplayName>
+      <Description>バックブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 AcQBNormal">
+      <DisplayName>AcQB　Normal</DisplayName>
+      <Description>QB　Normal</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 AcQBShortage">
+      <DisplayName>AcQB　Charge・Shortage</DisplayName>
+      <Description>QB　Charge・Shortage</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 AcQBLarge">
+      <DisplayName>AcQB_Large</DisplayName>
+      <Description>QB_Large</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 AcWeaponPurge">
+      <Description>WeaponPurge</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s16 EnemyMainBooster">
+      <DisplayName>敵メインブースタ</DisplayName>
+      <Description>敵メインブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 EnemyFootBooster">
+      <DisplayName>敵足ブースタ</DisplayName>
+      <Description>敵足ブースタ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 AcWaterSfxBig = 619">
+      <DisplayName>自機水しぶき（大）</DisplayName>
+      <Description>自機水しぶき（大）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 AcWaterSfxSmall = 620">
+      <DisplayName>自機水しぶき（小）</DisplayName>
+      <Description>自機水しぶき（小）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s16 EnemyWaterSfxBig = 619">
+      <DisplayName>敵水しぶき（大）</DisplayName>
+      <Description>敵水しぶき（大）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s16 EnemyWaterSfxSmall = 620">
+      <DisplayName>敵水しぶき（小）</DisplayName>
+      <Description>敵水しぶき（小）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s16 BulletWaterSfxBig">
+      <DisplayName>弾丸水しぶき（大）</DisplayName>
+      <Description>弾丸水しぶき（大）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 BulletWaterSfxSmall = 627">
+      <DisplayName>弾丸しぶき（小）</DisplayName>
+      <Description>弾丸しぶき（小）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[32]">
+      <DisplayName>----</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>18</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

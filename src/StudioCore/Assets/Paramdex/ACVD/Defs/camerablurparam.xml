@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FILTER_CAMERABLUR_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="u8 Alpha = 255">
+      <DisplayName>アルファ</DisplayName>
+    </Field>
+    <Field Def="u8 BlurType">
+      <DisplayName>ブラータイプ</DisplayName>
+      <Enum>BLUR_TYPE</Enum>
+      <Maximum>3</Maximum>
+    </Field>
+    <Field Def="dummy8 dummy[2]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+    <Field Def="f32 OffsetCoef">
+      <DisplayName>オフセット係数</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+    </Field>
+    <Field Def="f32 MotionBlurOffsetCoef">
+      <DisplayName>モーションブラーオフセット係数</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

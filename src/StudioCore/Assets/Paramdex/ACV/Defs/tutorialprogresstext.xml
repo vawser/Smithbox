@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TUTORIAL_PROGRESS_TEXT</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u32 テキストID１">
+      <DisplayName>テキストID１</DisplayName>
+      <Description>テキストID１</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9000000</Maximum>
+    </Field>
+    <Field Def="u32 テキストID２">
+      <DisplayName>テキストID２</DisplayName>
+      <Description>テキストID２</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9000000</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

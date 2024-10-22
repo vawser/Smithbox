@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EVENT_MESSAGE_TEXT_MAP_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 MessageID">
+      <DisplayName>メッセージサウンドマップID</DisplayName>
+      <Description>メッセージサウンドマップID。優先度シートのメッセージサウドマップIDと合わせてください。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 TextID">
+      <DisplayName>テキストID</DisplayName>
+      <Description>ミッションメッセージ.xlsのテキストID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 SoundID">
+      <DisplayName>サウンドＩＤ</DisplayName>
+      <Description>サウンドＩＤ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u32 ExtraFrame">
+      <DisplayName>ボイス終端からのフレーム数[frame]</DisplayName>
+      <Description>ボイス終端からのフレーム数。60FPS換算</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

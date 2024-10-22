@@ -18,7 +18,7 @@ public static class TexUtils
     public static bool IsSupportedProjectType()
     {
         // Need to add PS3 deswizzling support for these to work
-        if (Smithbox.ProjectType is ProjectType.DES)
+        if (Smithbox.ProjectType is ProjectType.DES or ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
             return false;
         }

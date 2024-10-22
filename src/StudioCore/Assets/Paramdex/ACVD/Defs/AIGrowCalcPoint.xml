@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AI_GROW_CALC_POINT_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 Threshold">
+      <DisplayName>閾値</DisplayName>
+      <Description>閾値</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 Point">
+      <DisplayName>ポイント</DisplayName>
+      <Description>ポイント</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 MissionThreshold">
+      <DisplayName>ミッション閾値</DisplayName>
+      <Description>オンラインミッション用閾値</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 MissionPoint">
+      <DisplayName>ミッションポイント</DisplayName>
+      <Description>オンラインミッション用ポイント</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

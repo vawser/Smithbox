@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>NO_AI_BATTERY_BEHAVIOR_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 AiLockPriorityOffset">
+      <DisplayName>AIからのロック優先度オフセット</DisplayName>
+      <Description>この値が大きいほどAIからロックされにくくなります</Description>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 ShootMinRange">
+      <DisplayName>最小射撃距離</DisplayName>
+      <Description>この距離以上ターゲットが離れると射撃開始</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 ShootMaxRange">
+      <DisplayName>最大射撃距離</DisplayName>
+      <Description>この距離以内にターゲットが近づくと射撃開始</Description>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 MinShootIntervalFrame">
+      <DisplayName>最小射撃間隔[Frame]</DisplayName>
+      <Description>射撃間隔の最小値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 MaxShootIntervalFrame">
+      <DisplayName>最大射撃間隔[Frame]</DisplayName>
+      <Description>射撃間隔の最大値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 bNoUseFcs">
+      <DisplayName>ターゲット認識でFCSを使わない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ONにすると敵対する誰かが射撃距離内に入ったら射撃</Description>
+      <Maximum>1</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 ShootLimitOuterAngle">
+      <DisplayName>銃口がこの角度以上ずれていたら射撃しない[ deg ]</DisplayName>
+      <Maximum>180</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u16 MinWaitFrame">
+      <DisplayName>最小射撃前待機フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u16 MaxWaitFrame">
+      <DisplayName>最大射撃前待機フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u16 ShootMinRange_SubW">
+      <DisplayName>サブ武器：最小射撃距離</DisplayName>
+      <Description>この距離以上ターゲットが離れると射撃開始</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u16 ShootMaxRange_SubW">
+      <DisplayName>サブ武器：最大射撃距離</DisplayName>
+      <Description>この距離以内にターゲットが近づくと射撃開始</Description>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 ShootLimitOuterAngle_SubW">
+      <DisplayName>サブ武器：銃口がこの角度以上ずれていたら射撃しない[ deg ]</DisplayName>
+      <Maximum>180</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 bWaitShootFollow">
+      <DisplayName>待機、射撃中にターゲット追従をするか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved2[2] = 1">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u16 MinShootIntervalFrame_SubW">
+      <DisplayName>サブ武器：最小射撃間隔[Frame]</DisplayName>
+      <Description>射撃間隔の最小値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u16 MaxShootIntervalFrame_SubW">
+      <DisplayName>サブ武器：最大射撃間隔[Frame]</DisplayName>
+      <Description>射撃間隔の最大値</Description>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u16 MinWaitFrame_SubW">
+      <DisplayName>サブ武器：最小射撃前待機フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u16 MaxWaitFrame_SubW">
+      <DisplayName>サブ武器：最大射撃前待機フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved3[16] = 1">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>21</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

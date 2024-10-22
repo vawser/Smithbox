@@ -48,17 +48,9 @@ public class GlobalModelSearch
             SetupSearch = false;
 
             resMaps = new List<ResourceDescriptor>();
-
-            var mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";
-
-            if (_targetProjectFiles)
+            void FindLooseMaps(string dir, string wildcard)
             {
-                mapDir = $"{Smithbox.ProjectRoot}/map/mapstudio/";
-            }
-
-            foreach (var entry in Directory.EnumerateFiles(mapDir))
-            {
-                if (entry.Contains(".msb.dcx"))
+                foreach (var entry in Directory.EnumerateFiles(dir, wildcard, SearchOption.AllDirectories))
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
                     ResourceDescriptor ad = MapLocator.GetMapMSB(name);
@@ -69,93 +61,84 @@ public class GlobalModelSearch
                 }
             }
 
-            if (Smithbox.ProjectType == ProjectType.DES)
+            void AddMaps(Func<string, IMsb> read)
             {
                 foreach (var res in resMaps)
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(res.AssetPath));
-                    var msb = MSBD.Read(res.AssetPath);
+                    var msb = read(res.AssetPath);
 
                     if (!MapList.ContainsKey(name))
                         MapList.Add(name, msb);
                 }
             }
-            if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
-            {
-                foreach (var res in resMaps)
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(res.AssetPath));
-                    var msb = MSB1.Read(res.AssetPath);
 
-                    if (!MapList.ContainsKey(name))
-                        MapList.Add(name, msb);
+            if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            {
+                string modelMapDir;
+                string sysMapDir;
+                if (_targetProjectFiles)
+                {
+                    modelMapDir = $"{Smithbox.ProjectRoot}/model/map/";
+                    sysMapDir = $"{Smithbox.ProjectRoot}/model/system/";
                 }
+                else
+                {
+                    modelMapDir = $"{Smithbox.GameRoot}/model/map/";
+                    sysMapDir = $"{Smithbox.GameRoot}/model/system/";
+                }
+
+                FindLooseMaps(modelMapDir, "*.msb");
+                FindLooseMaps(sysMapDir, "*.msb");
             }
-            if (Smithbox.ProjectType == ProjectType.DS2 || Smithbox.ProjectType == ProjectType.DS2S)
+            else
             {
-                foreach (var res in resMaps)
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(res.AssetPath));
-                    var msb = MSB2.Read(res.AssetPath);
+                string mapDir;
+                if (_targetProjectFiles)
+                    mapDir = $"{Smithbox.ProjectRoot}/map/mapstudio/";
+                else
+                    mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";
 
-                    if (!MapList.ContainsKey(name))
-                        MapList.Add(name, msb);
-                }
+                FindLooseMaps(mapDir, "*.msb.dcx");
             }
-            if (Smithbox.ProjectType == ProjectType.DS3)
-            {
-                foreach (var res in resMaps)
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(res.AssetPath));
-                    var msb = MSB3.Read(res.AssetPath);
 
-                    if (!MapList.ContainsKey(name))
-                        MapList.Add(name, msb);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.BB)
+            switch (Smithbox.ProjectType)
             {
-                foreach (var res in resMaps)
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(res.AssetPath));
-                    var msb = MSBB.Read(res.AssetPath);
-
-                    if (!MapList.ContainsKey(name))
-                        MapList.Add(name, msb);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.SDT)
-            {
-                foreach (var res in resMaps)
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(res.AssetPath));
-                    var msb = MSBS.Read(res.AssetPath);
-
-                    if (!MapList.ContainsKey(name))
-                        MapList.Add(name, msb);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.ER)
-            {
-                foreach (var res in resMaps)
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(res.AssetPath));
-                    var msb = MSBE.Read(res.AssetPath);
-
-                    if (!MapList.ContainsKey(name))
-                        MapList.Add(name, msb);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.AC6)
-            {
-                foreach (var res in resMaps)
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(res.AssetPath));
-                    var msb = MSB_AC6.Read(res.AssetPath);
-
-                    if (!MapList.ContainsKey(name))
-                        MapList.Add(name, msb);
-                }
+                case ProjectType.DES:
+                    AddMaps(MSBD.Read);
+                    break;
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    AddMaps(MSB1.Read);
+                    break;
+                case ProjectType.DS2:
+                case ProjectType.DS2S:
+                    AddMaps(MSB2.Read);
+                    break;
+                case ProjectType.DS3:
+                    AddMaps(MSB3.Read);
+                    break;
+                case ProjectType.BB:
+                    AddMaps(MSBB.Read);
+                    break;
+                case ProjectType.SDT:
+                    AddMaps(MSBS.Read);
+                    break;
+                case ProjectType.ER:
+                    AddMaps(MSBE.Read);
+                    break;
+                case ProjectType.AC6:
+                    AddMaps(MSB_AC6.Read);
+                    break;
+                case ProjectType.ACFA:
+                    AddMaps(MSBFA.Read);
+                    break;
+                case ProjectType.ACV:
+                    AddMaps(MSBV.Read);
+                    break;
+                case ProjectType.ACVD:
+                    AddMaps(MSBVD.Read);
+                    break;
             }
         }
 

@@ -37,9 +37,9 @@ public static class TextLocator
     }
 
     /// <summary>
-    /// Get all fmg paths (for DS2)
+    /// Get all fmg paths (for DS2, ACFA, ACV, and ACVD)
     /// </summary>
-    public static List<string> GetFmgs(bool rootOnly = false, string targetDir = "")
+    public static List<string> GetFmgs(string dir, bool rootOnly = false, string targetDir = "")
     {
         FileList = new();
 
@@ -48,7 +48,7 @@ public static class TextLocator
             targetDir = Smithbox.GameRoot;
         }
 
-        var rootPath = $"{targetDir}\\menu\\text\\";
+        var rootPath = $"{targetDir}\\{dir}";
         var filePattern = $".fmg";
 
         if (Directory.Exists(rootPath))
@@ -60,20 +60,12 @@ public static class TextLocator
 
     public static void SearchFolder(string rootPath, string filePattern, bool rootOnly)
     {
-        var entries = Directory.GetFileSystemEntries(rootPath);
-
+        var entries = Directory.EnumerateFiles(rootPath, "*", SearchOption.AllDirectories);
         foreach (var entry in entries)
         {
-            if (IsDirectory(entry))
+            if (entry.EndsWith(filePattern) || entry.EndsWith($"{filePattern}.dcx"))
             {
-                SearchFolder(entry, filePattern, rootOnly);
-            }
-            else
-            {
-                if (entry.EndsWith(filePattern) || entry.EndsWith($"{filePattern}.dcx"))
-                {
-                    AddFile(entry, rootOnly);
-                }
+                AddFile(entry, rootOnly);
             }
         }
     }

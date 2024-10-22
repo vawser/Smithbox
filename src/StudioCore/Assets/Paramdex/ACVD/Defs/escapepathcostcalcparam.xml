@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ESCAPE_PATH_COST_CALC_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 EscapeDirScale = 10">
+      <DisplayName>逃走方向へのコスト倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 SelfDirScale = 5">
+      <DisplayName>自分の向きの外れ具合倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 VelocityDirScale = 12">
+      <DisplayName>速度方向の外れ具合倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 GroundNodeScale">
+      <DisplayName>地面ノード倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 SkyNodeScale">
+      <DisplayName>空中ノード倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 NodeVerticalHeightScale = 0.5">
+      <DisplayName>ノードの垂直方向倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 SelfHeightScale = 2">
+      <DisplayName>自分との高さの差による倍率</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved1[4] = 2">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1000</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>9</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

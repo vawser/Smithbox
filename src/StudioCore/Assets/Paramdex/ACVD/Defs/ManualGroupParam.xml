@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MANUAL_GROUP_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 FirstID_On">
+      <DisplayName>開始ID(サーバ使用)</DisplayName>
+      <Description>サーバ使用時の表示開始ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 LastID_On">
+      <DisplayName>終了ID(サーバ使用)</DisplayName>
+      <Description>サーバ使用時の表示終了ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 bShowOnline = 1">
+      <DisplayName>サーバ使用時に表示する</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Description>サーバ使用時のマニュアル画面でリストに表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 bShowOffline = 1">
+      <DisplayName>サーバ未使用オフラインで表示する</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Description>サーバ未使用オフライン時のマニュアル画面でリストに表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u8 bOnlyOverSeas">
+      <DisplayName>海外版専用</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Description>海外版のときのみ表示する</Description>
+      <Maximum>1</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="u8 bShowServerlessOnline = 1">
+      <DisplayName>サーバ未使用オンライン状態で表示する</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Description>サーバ未使用時オンライン状態のマニュアル画面でリストに表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s32 Guide_On">
+      <DisplayName>ガイドID(サーバ使用)</DisplayName>
+      <Description>各画面から表示したときに最初に表示されるガイド用マニュアルのID。ここに設定したIDはマニュアル画面では表示されない</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 Guide_Off">
+      <DisplayName>ガイドID(サーバ未使用)</DisplayName>
+      <Description>各画面から表示したときに最初に表示されるガイド用マニュアルのID。ここに設定したIDはマニュアル画面では表示されない</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 FirstID_Off">
+      <DisplayName>開始ID(サーバ未使用)</DisplayName>
+      <Description>開始ID(サーバ未使用)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 LastID_Off">
+      <DisplayName>終了ID(サーバ未使用)</DisplayName>
+      <Description>終了ID(サーバ未使用)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s32 Guide_Hard">
+      <DisplayName>ガイドID(ハード)</DisplayName>
+      <Description>ガイドID(ハード)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s32 FirstID_Hard">
+      <DisplayName>開始ID(ハード)</DisplayName>
+      <Description>開始ID(ハード)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s32 LastID_Hard">
+      <DisplayName>終了ID(ハード)</DisplayName>
+      <Description>終了ID(ハード)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[8]">
+      <DisplayName>padding</DisplayName>
+      <SortID>24</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

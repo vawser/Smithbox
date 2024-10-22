@@ -672,8 +672,19 @@ public class Entity : ISelectable, IDisposable
                 if (att != null)
                 {
                     string[] array;
-                    if (p.PropertyType.IsArray) { array = (string[])p.GetValue(WrappedObject); }
-                    else { array = [(string)p.GetValue(WrappedObject)]; }
+                    var value = p.GetValue(WrappedObject);
+                    if (p.PropertyType.IsArray)
+                    {
+                        array = (string[])value;
+                    }
+                    else if (value is IEnumerable<string> list)
+                    {
+                        array = list.ToArray();
+                    }
+                    else
+                    {
+                        array = [(string)value];
+                    }
 
                     foreach (string sref in array)
                     {
@@ -917,6 +928,15 @@ public class Entity : ISelectable, IDisposable
         }
 
         return t;
+    }
+
+    /// <summary>
+    /// Gets the bounds of the render scene mesh for this <see cref="Entity"/>.
+    /// </summary>
+    /// <returns>A <see cref="Veldrid.Utilities.BoundingBox"/></returns>
+    public Veldrid.Utilities.BoundingBox GetBounds()
+    {
+        return _renderSceneMesh.GetBounds();
     }
 
     /// <summary>
@@ -1713,6 +1733,10 @@ public class MsbEntity : Entity
             case ProjectType.DS2S:
             case ProjectType.AC6:
             case ProjectType.DS2:
+            case ProjectType.AC4:
+            case ProjectType.ACFA:
+            case ProjectType.ACV:
+            case ProjectType.ACVD:
             case ProjectType.Undefined:
             default:
                 return null;

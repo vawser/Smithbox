@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DESTROY_AP_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 AP">
+      <DisplayName>ＡＰ</DisplayName>
+      <Maximum>999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 CutoffDamage">
+      <DisplayName>最低有効ダメージ</DisplayName>
+      <Maximum>999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 CollisionDefensibility">
+      <DisplayName>衝突防御力</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 bObjBreakBulletEnable">
+      <DisplayName>オブジェ破壊壇が有効か</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="fixstr reserve0[22]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>5</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

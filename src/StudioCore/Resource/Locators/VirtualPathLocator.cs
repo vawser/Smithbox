@@ -1,4 +1,5 @@
 ﻿using StudioCore.Core.Project;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +15,13 @@ public static class VirtualPathLocator
 {
     public static string TexturePathToVirtual(string texpath)
     {
+        // For these projects, return the texture name only
+        if (Smithbox.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        {
+            // HACK: Only include texture name and not full virtual path
+            return Path.GetFileNameWithoutExtension(texpath);
+        }
+
         // MAP Texture
         if (texpath.Contains(@"\map\"))
         {
@@ -74,8 +82,6 @@ public static class VirtualPathLocator
     public static string VirtualToRealPath(string virtualPath, out string bndpath)
     {
         var pathElements = virtualPath.Split('/');
-        Regex mapRegex = new(@"^m\d{2}_\d{2}_\d{2}_\d{2}$");
-        var ret = "";
 
         // Parse the virtual path with a DFA and convert it to a game path
         var i = 0;
@@ -120,6 +126,25 @@ public static class VirtualPathLocator
                     bndpath = "";
                     return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_{pathElements[i]}.tpf.dcx");
                 }
+                else if (Smithbox.ProjectType == ProjectType.ACFA)
+                {
+                    var mid = pathElements[i];
+                    bndpath = "";
+                    return LocatorUtils.GetAssetPath($@"model\map\{mid}\{mid}_t.bnd");
+                }
+                else if (Smithbox.ProjectType == ProjectType.ACV)
+                {
+                    var mid = pathElements[i];
+                    i++;
+                    bndpath = "";
+                    return LocatorUtils.GetAssetPath($@"model\map\{mid}\{pathElements[i]}.tpf.dcx");
+                }
+                else if (Smithbox.ProjectType == ProjectType.ACVD)
+                {
+                    var mid = pathElements[i];
+                    bndpath = "";
+                    return LocatorUtils.GetAssetPath($@"model\map\{mid}\{mid}_htdcx.bnd");
+                }
                 else
                 {
                     var mid = pathElements[i];
@@ -138,7 +163,7 @@ public static class VirtualPathLocator
                     return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_{id}.tpfbhd");
                 }
             }
-            else if (mapRegex.IsMatch(pathElements[i]))
+            else if (GeneratedRegexMethods.IsMapId(pathElements[i]))
             {
                 var mapid = pathElements[i];
                 i++;
@@ -160,6 +185,12 @@ public static class VirtualPathLocator
 
                     if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
                         return LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\{pathElements[i]}.mapbnd.dcx");
+
+                    if (Smithbox.ProjectType is ProjectType.ACFA)
+                        return LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.bnd");
+
+                    if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                        return LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.dcx.bnd");
 
                     return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.mapbnd.dcx");
                 }
@@ -292,6 +323,7 @@ public static class VirtualPathLocator
             i++;
             var objid = pathElements[i];
             i++;
+
             if (pathElements[i].Equals("model") || pathElements[i].Equals("tex"))
             {
                 bndpath = "";
@@ -301,13 +333,24 @@ public static class VirtualPathLocator
                 if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}.bnd");
 
+                if (Smithbox.ProjectType is ProjectType.ACFA)
+                    if (pathElements[i].Equals("model"))
+                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}_m.bnd");
+                    else if (pathElements[i].Equals("tex"))
+                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}_t.bnd");
+
+                if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                    if (pathElements[i].Equals("model"))
+                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}_m.bnd.dcx");
+                    else if (pathElements[i].Equals("tex"))
+                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}.tpf.dcx");
+
                 if (Smithbox.ProjectType == ProjectType.ER)
                 {
                     // Derive subfolder path from model name (all vanilla AEG are within subfolders)
                     if (objid.Length >= 6)
                     {
-                        var path = LocatorUtils.GetOverridenFilePath($@"asset\aeg\{objid.Substring(0, 6)}\{objid}.geombnd.dcx");
-                        return path;
+                        return LocatorUtils.GetOverridenFilePath($@"asset\aeg\{objid.Substring(0, 6)}\{objid}.geombnd.dcx");
                     }
                     return null;
                 }
@@ -350,6 +393,37 @@ public static class VirtualPathLocator
                 }
 
                 return LocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd.dcx");
+            }
+        }
+        // ENEMIES
+        else if (pathElements[i].Equals("ene"))
+        {
+            i++;
+            var eneid = pathElements[i];
+            i++;
+
+            if (pathElements[i].Equals("model"))
+            {
+                if (Smithbox.ProjectType == ProjectType.ACFA)
+                {
+                    bndpath = "";
+                    return LocatorUtils.GetOverridenFilePath($@"model\ene\{eneid}\{eneid}_m.bnd");
+                }
+
+                bndpath = "";
+                return LocatorUtils.GetOverridenFilePath($@"model\ene\{eneid}\{eneid}_m.bnd.dcx");
+            }
+
+            if (pathElements[i].Equals("tex"))
+            {
+                if (Smithbox.ProjectType == ProjectType.ACFA)
+                {
+                    bndpath = "";
+                    return LocatorUtils.GetOverridenFilePath($@"model\ene\{eneid}\{eneid}_t.bnd");
+                }
+
+                bndpath = "";
+                return LocatorUtils.GetOverridenFilePath($@"model\ene\{eneid}\{eneid}.tpf.dcx");
             }
         }
         // PARTS

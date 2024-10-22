@@ -133,7 +133,7 @@ namespace SoulsFormats
             int vertexIndicesSize = br.AssertByte([0, 8, 16, 32]);
             Header.Unicode = br.ReadBoolean();
             Header.Unk4A = br.ReadBoolean();
-            br.AssertByte(0);
+            Header.Unk4B = br.ReadBoolean();
 
             Header.Unk4C = br.ReadInt32();
 
@@ -263,7 +263,7 @@ namespace SoulsFormats
             bw.WriteByte(vertexIndicesSize);
             bw.WriteBoolean(Header.Unicode);
             bw.WriteBoolean(Header.Unk4A);
-            bw.WriteByte(0);
+            bw.WriteBoolean(Header.Unk4B);
 
             bw.WriteInt32(Header.Unk4C);
 
@@ -474,6 +474,11 @@ namespace SoulsFormats
             public bool Unk4A { get; set; }
 
             /// <summary>
+            /// Unknown.
+            /// </summary>
+            public bool Unk4B { get; set; }
+
+            /// <summary>
             /// Unknown; I believe this is the primitive restart constant, but I'm not certain.
             /// </summary>
             public int Unk4C { get; set; }
@@ -507,6 +512,7 @@ namespace SoulsFormats
                 Version = 0x20014;
                 Unicode = true;
             }
+
             public FLVERHeader Clone()
             {
                 return (FLVERHeader)MemberwiseClone();

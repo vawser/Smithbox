@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_WEAPON_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 WeaponId = 9000">
+      <DisplayName>武器ID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 WeaponJconID = -1">
+      <DisplayName>関節制御</DisplayName>
+      <Enum>JOINTCTRL_ID</Enum>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 WeaponPolyID = 110">
+      <DisplayName>ダミポリ</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 WeaponLockDir = 1">
+      <DisplayName>ロック敵に曲げる</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 bSelfHitEnable">
+      <DisplayName>自分にも当たる？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u16 EquipAnimID">
+      <DisplayName>武器装備時に再生するアニメID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>401</SortID>
+    </Field>
+    <Field Def="u16 ReleaseAnimID">
+      <DisplayName>武器解除時に再生するアニメID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>402</SortID>
+    </Field>
+    <Field Def="s8 LaserSightType">
+      <DisplayName>レーザーサイト動作タイプ</DisplayName>
+      <Enum>ENEMY_LASERSIGHT_TYPE</Enum>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 bAutoShootAfterEquip">
+      <DisplayName>装備アクション後必ず射撃するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>装備アクションをした後に、AIがトリガーを引かなくても、必ず射撃するように内部でトリガーを引くかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>403</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve4[2] = 45">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>90</Maximum>
+      <Increment>1</Increment>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="u8 BladeWaveHitLength">
+      <DisplayName>ブレード光波：ブレード当たりの長さ</DisplayName>
+      <Description>0以外の値を入れると当たり形状がBOXになる( 0 == で通常形状 )</Description>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u8 LaserSightEnable">
+      <DisplayName>予約</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>削除予定のパラメータ。「レーザーサイト動作タイプ」へ移行する。</Description>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="u16 ShootConeAngle">
+      <DisplayName>ターゲットへ曲げる角度[deg]</DisplayName>
+      <Description>ターゲットがダミポリから見てこの角度の円錐にいたときに射撃方向を曲げます</Description>
+      <Maximum>180</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="s16 ShootChargeAnimId = -1">
+      <DisplayName>射撃時に再生するチャージアニメID</DisplayName>
+      <Description>射撃時に再生するチャージアニメID( -1で再生なし )</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u8 weaponNameID">
+      <DisplayName>武器名ID</DisplayName>
+      <Description>敵武器名.xlsのID</Description>
+      <SortID>1001</SortID>
+    </Field>
+    <Field Def="u8 Reserve8">
+      <DisplayName>予約</DisplayName>
+      <Maximum>30000</Maximum>
+      <Increment>10</Increment>
+      <SortID>9004</SortID>
+    </Field>
+    <Field Def="u16 ShootAnimeGroupID">
+      <DisplayName>攻撃アニメグループ</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u16 WeaponPolyCount">
+      <DisplayName>ダミポリの数</DisplayName>
+      <Description>0であれば従来どおり次の武器のダミポリまで作成 0以外ならダミポリから指定数ダミポリを作成</Description>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 Reserve9 = 15">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>90</Maximum>
+      <SortID>9005</SortID>
+    </Field>
+    <Field Def="u8 BulletSnipePosDirectionRate">
+      <DisplayName>弾丸射撃地点演出ランダム率</DisplayName>
+      <Description>ターゲットの背後から射撃するときに、ターゲットの視界に入るような弾丸を射撃するようにする初期割合。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 Reserve5">
+      <DisplayName>予約</DisplayName>
+      <Maximum>200</Maximum>
+      <SortID>9006</SortID>
+    </Field>
+    <Field Def="u8 BulletDir_MaxTargetPointRadius = 50">
+      <DisplayName>弾丸演出：目標地点の最大半径[m]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="u16 BulletDir_ZeroErrorLockFrame">
+      <DisplayName>弾丸演出：正確に当てるまでのロック時間[frame]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>202</SortID>
+    </Field>
+    <Field Def="u8 BulletDir_BiasTargetInSight">
+      <DisplayName>弾丸演出：ターゲットサイト内最低演出率[0-100]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>203</SortID>
+    </Field>
+    <Field Def="u8 bUseAiVirtualTarget = 1">
+      <DisplayName>AIの警戒状態のターゲットを使うか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ロックターゲットがいなくなったときにAIの警戒状態ターゲットがいればそっちを使うか</Description>
+      <Maximum>1</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u16 BulletDir_UnDirectionRange">
+      <DisplayName>弾丸演出：演出を行わない距離[m]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>204</SortID>
+    </Field>
+    <Field Def="u16 ShootStiffFrame">
+      <DisplayName>射撃時間接制御硬直フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 bUseSnipePosFollowMode">
+      <DisplayName>射撃位置を補間するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 ShootForceBendSideAngle">
+      <DisplayName>ターゲットへ曲げる横の角度[deg]</DisplayName>
+      <Description>縦と横が0なら「ターゲットへ曲げる角度[deg]」が使われます</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>90</Maximum>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="u8 ShootForceBendLengthAngle">
+      <DisplayName>ターゲットへ曲げる縦の角度[deg]</DisplayName>
+      <Description>縦と横が0なら「ターゲットへ曲げる角度[deg]」が使われます</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>90</Maximum>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="u8 bCurvedFire">
+      <DisplayName>曲射射撃するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>曲射射撃するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 SnipePosFollowRotSpeedX">
+      <DisplayName>射撃位置補間時のX軸の角速度[deg/frame]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="f32 SnipePosFollowRotSpeedY">
+      <DisplayName>射撃位置補間時のY軸の角速度[deg/frame]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>302</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve1[16]">
+      <DisplayName>予約</DisplayName>
+      <SortID>1000</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

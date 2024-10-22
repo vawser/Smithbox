@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DRAW_SELFILLUME_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="f32 SelfIllumeR">
+      <DisplayName>R</DisplayName>
+      <Description>自己発光色Rの乗算値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 SelfIllumeG">
+      <DisplayName>G</DisplayName>
+      <Description>自己発光色Gの乗算値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 SelfIllumeB">
+      <DisplayName>B</DisplayName>
+      <Description>自己発光色Bの乗算値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 SelfIllumeCoef">
+      <DisplayName>係数</DisplayName>
+      <Description>自己発光色全体の乗算値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

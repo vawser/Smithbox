@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_BASIC_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 ProgramID = 1">
+      <DisplayName>プログラム</DisplayName>
+      <Enum>ENEMY_BEHAVIOR_ID</Enum>
+      <DisplayFormat>%f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 Lockable = 1">
+      <DisplayName>ロック可能</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <DisplayFormat>%f</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 Reserved01 = 2">
+      <DisplayName>予約</DisplayName>
+      <Description>敵は２がデフォルト値。IDは、レーダー.xls参照の事。</Description>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="u8 bNoOpDown = 1">
+      <DisplayName>上下移動固定</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <DisplayFormat>%f</DisplayFormat>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 CollideLv = 1">
+      <DisplayName>押されやすさ</DisplayName>
+      <Enum>COLLIDE_LV</Enum>
+      <DisplayFormat>%f</DisplayFormat>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 Ap = 1">
+      <DisplayName>AP</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>10</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 Weight = 1">
+      <DisplayName>機体重量</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 AutoBoostDepthWater">
+      <DisplayName>オートブーストが発動する水深</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved1[24] = 100">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>9001</SortID>
+    </Field>
+    <Field Def="f32 TurnAccel = 0.5">
+      <DisplayName>【旧】旋回推力[rad/sec]</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u16 TurnAccel_DegPerSec">
+      <DisplayName>旋回推力[deg/sec]</DisplayName>
+      <Description>１秒間での最大旋回角度[度/秒]</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1000</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved2[38] = 0.5">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>10</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>9002</SortID>
+    </Field>
+    <Field Def="f32 ViewAngleY = -1">
+      <DisplayName>水平視線範囲（-1=∞)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 ViewAngleMinX = -70">
+      <DisplayName>下方視線範囲[deg]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="f32 ViewAngleMaxX = 70">
+      <DisplayName>上方視線範囲[deg]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>202</SortID>
+    </Field>
+    <Field Def="f32 ViewTurnSpeed = 0.02">
+      <DisplayName>【旧】視線速度[rad/frame]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>203</SortID>
+    </Field>
+    <Field Def="u16 ViewTurnSpeed_DegPerSec">
+      <DisplayName>視線速度[deg/sec]</DisplayName>
+      <Description>上下視線の角速度[度/秒]</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1000</Maximum>
+      <SortID>204</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved9[2]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <Maximum>10000</Maximum>
+      <Increment>1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 RecoilSuppress = 4">
+      <DisplayName>反動抑制</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 Penetrability">
+      <DisplayName>貫通具合</DisplayName>
+      <Description>弾丸の貫通しやすさ( 死亡時 )</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="u8 CollisionType">
+      <DisplayName>当たりタイプ</DisplayName>
+      <Enum>ENEMY_COLLISION_TYPE</Enum>
+      <Description>当たりの形状を指定します。</Description>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved02[1]">
+      <DisplayName>予約</DisplayName>
+      <Description>ロックのされ方</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>9003</SortID>
+    </Field>
+    <Field Def="u8 DestructionPossibleObjContact">
+      <DisplayName>破壊可能オブジェに接触したら破壊するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ONで破壊可能</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="u8 Reserved4 = 4">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>9005</SortID>
+    </Field>
+    <Field Def="u8 Reserved5 = 4">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>9006</SortID>
+    </Field>
+    <Field Def="u8 UseCaterpillarCtrl">
+      <DisplayName>キャタピラ制御をするか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>テクスチャアニメでキャタピラ制御する場合はONにしてください。</Description>
+      <Maximum>1</Maximum>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="u16 Reserved03 = 10000">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>9007</SortID>
+    </Field>
+    <Field Def="f32 Reserved6 = 0.8">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>9008</SortID>
+    </Field>
+    <Field Def="u8 UseUnderWaterDead">
+      <DisplayName>水没死亡処理を使用するか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>水没死亡処理を使用するか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 AcceptAiTarget">
+      <DisplayName>ＡＩからのターゲット設定を受け付けるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ＡＩからのターゲット設定を受け付けるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u16 Reserved7 = 200">
+      <DisplayName>予約</DisplayName>
+      <Description>地上バックブースト最高速</Description>
+      <Maximum>9999</Maximum>
+      <SortID>9009</SortID>
+    </Field>
+    <Field Def="u16 Reserved8 = 200">
+      <DisplayName>予約</DisplayName>
+      <Description>空中バックブースト最高速</Description>
+      <Maximum>9999</Maximum>
+      <SortID>9010</SortID>
+    </Field>
+    <Field Def="s8 Reserved04">
+      <DisplayName>予約</DisplayName>
+      <Description>マイナス値で水平視線旋回速度を使用する。！注意！単位は、度/secです</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>9011</SortID>
+    </Field>
+    <Field Def="u8 NoUpdateRoomID">
+      <DisplayName>部屋ID更新しない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u16 RewardID">
+      <DisplayName>報酬ID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 DeadDeleteType">
+      <DisplayName>死亡後の削除タイプ</DisplayName>
+      <Enum>ENEMY_DEAD_DELETE_TYPE</Enum>
+      <Maximum>1</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 ViewCoordDumyPolyID">
+      <DisplayName>視線制御で使うダミポリID</DisplayName>
+      <Description>使わないときは0にしてください</Description>
+      <SortID>205</SortID>
+    </Field>
+    <Field Def="u8 CannonSetLostTargetAnimID">
+      <DisplayName>キャノン構え中に敵を見失った時のアニメID</DisplayName>
+      <Description>使わないときは0にしてください</Description>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u8 HitEnemyWall">
+      <DisplayName>敵当たりに当たるか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>当たりモデルの敵マテリアルに当たるようにするフラグ。主にビルの上や、高架から落ちないようにする最後の手段。</Description>
+      <Maximum>1</Maximum>
+      <SortID>401</SortID>
+    </Field>
+    <Field Def="u8 Path_OnWaterMoveEnable">
+      <DisplayName>パス検索で水上を通るか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s8 ScanType">
+      <DisplayName>スキャンタイプ</DisplayName>
+      <Enum>ENEMY_SCAN_TYPE</Enum>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u8 LowDefenseKE = 10">
+      <DisplayName>ＫＥ小ダメージ補正値</DisplayName>
+      <SortID>302</SortID>
+    </Field>
+    <Field Def="u8 HiDefenseKE = 90">
+      <DisplayName>ＫＥ大ダメージ補正値</DisplayName>
+      <SortID>303</SortID>
+    </Field>
+    <Field Def="u16 DefenseThresholdKE = 200">
+      <DisplayName>ＫＥダメージしきい値</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>304</SortID>
+    </Field>
+    <Field Def="u8 LowDefenseTE = 10">
+      <DisplayName>TＥ小ダメージ補正値</DisplayName>
+      <SortID>305</SortID>
+    </Field>
+    <Field Def="u8 HiDefenseTE = 90">
+      <DisplayName>TＥ大ダメージ補正値</DisplayName>
+      <SortID>306</SortID>
+    </Field>
+    <Field Def="u16 DefenseThresholdTE = 200">
+      <DisplayName>ＴＥダメージしきい値</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>307</SortID>
+    </Field>
+    <Field Def="u8 LowDefenseCE = 10">
+      <DisplayName>CＥ小ダメージ補正値</DisplayName>
+      <SortID>308</SortID>
+    </Field>
+    <Field Def="u8 HiDefenseCE = 90">
+      <DisplayName>CＥ大ダメージ補正値</DisplayName>
+      <SortID>309</SortID>
+    </Field>
+    <Field Def="u16 DefenseThresholdCE = 200">
+      <DisplayName>ＣＥダメージしきい値</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="u16 SmallStaggerThreshold = 400">
+      <DisplayName>小よろけしきい値</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>311</SortID>
+    </Field>
+    <Field Def="u16 LargeStaggerThreshold = 700">
+      <DisplayName>大よろけしきい値</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>312</SortID>
+    </Field>
+    <Field Def="u16 BlastThreshold = 1000">
+      <DisplayName>吹き飛びしきい値</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>313</SortID>
+    </Field>
+    <Field Def="u16 SmallStaggerFrame = 20">
+      <DisplayName>小よろけフレーム</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>314</SortID>
+    </Field>
+    <Field Def="u16 LargeStaggerFrame = 30">
+      <DisplayName>大よろけフレーム</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>315</SortID>
+    </Field>
+    <Field Def="u16 BlastFrame = 40">
+      <DisplayName>吹き飛びフレーム</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>316</SortID>
+    </Field>
+    <Field Def="u16 StaggerPenaltyDefThrKE = 50">
+      <DisplayName>よろけ時ＫＥダメージしきい値</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>317</SortID>
+    </Field>
+    <Field Def="u16 StaggerPenaltyDefThrTE = 50">
+      <DisplayName>よろけ時ＴＥダメージしきい値</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>318</SortID>
+    </Field>
+    <Field Def="u16 StaggerPenaltyDefThrCE = 50">
+      <DisplayName>よろけ時ＣＥダメージしきい値</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>319</SortID>
+    </Field>
+    <Field Def="u8 StaggerPenaltyPrecisionX = 100">
+      <DisplayName>よろけ時射撃精度Xに足す角度</DisplayName>
+      <Maximum>200</Maximum>
+      <SortID>320</SortID>
+    </Field>
+    <Field Def="u8 StaggerPenaltyPrecisionY = 100">
+      <DisplayName>よろけ時射撃精度Yに足す角度</DisplayName>
+      <Maximum>200</Maximum>
+      <SortID>321</SortID>
+    </Field>
+    <Field Def="f32 StaggerPenaltyTime = 5">
+      <DisplayName>よろけペナルティ時間[sec]</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>322</SortID>
+    </Field>
+    <Field Def="u16 ClashMaxSpeedH = 200">
+      <DisplayName>吹き飛び時水平最高速度</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>323</SortID>
+    </Field>
+    <Field Def="u16 ClashMaxSpeedV = 200">
+      <DisplayName>吹き飛び時垂直最高速度</DisplayName>
+      <Maximum>65500</Maximum>
+      <SortID>324</SortID>
+    </Field>
+    <Field Def="f32 ClashBrakeH = 0.01">
+      <DisplayName>吹き飛び時水平ブレーキ値</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>325</SortID>
+    </Field>
+    <Field Def="f32 ClashBrakeV = 0.01">
+      <DisplayName>吹き飛び時垂直ブレーキ値</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>326</SortID>
+    </Field>
+    <Field Def="fixstr Reserve2[4]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9012</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

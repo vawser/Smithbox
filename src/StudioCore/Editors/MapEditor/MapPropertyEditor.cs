@@ -1388,17 +1388,19 @@ public class MapPropertyEditor
             }
             else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
-                var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
-                ShowFieldHint(type, prop, selection);
-                ImGui.NextColumn();
-                ImGui.SetNextItemWidth(-1);
                 var o = prop.GetValue(obj);
-                ImGui.Text(o.GetType().Name);
-                ImGui.NextColumn();
-                if (open)
+                if (o != null)
                 {
-                    PropEditorGeneric(selection, entSelection, o);
-                    ImGui.TreePop();
+                    var open = ImGui.TreeNodeEx(prop.Name, ImGuiTreeNodeFlags.DefaultOpen);
+                    ImGui.NextColumn();
+                    ImGui.SetNextItemWidth(-1);
+                    ImGui.Text(o.GetType().Name);
+                    ImGui.NextColumn();
+                    if (open)
+                    {
+                        PropEditorGeneric(selection, entSelection, o);
+                        ImGui.TreePop();
+                    }
                 }
 
                 ImGui.PopID();

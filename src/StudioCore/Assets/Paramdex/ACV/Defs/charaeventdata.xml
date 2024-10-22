@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CHARA_EVENT_DATA</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="fixstr ScriptName[32]">
+      <DisplayName>スクリプト名</DisplayName>
+      <Description>読み込むスクリプトファイル名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="f32 EventParam0">
+      <DisplayName>イベントパラメータ0</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EventParam1">
+      <DisplayName>イベントパラメータ1</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EventParam2">
+      <DisplayName>イベントパラメータ2</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EventParam3">
+      <DisplayName>イベントパラメータ3</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EventParam4">
+      <DisplayName>イベントパラメータ4</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EventParam5">
+      <DisplayName>イベントパラメータ5</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EventParam6">
+      <DisplayName>イベントパラメータ6</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 EventParam7">
+      <DisplayName>イベントパラメータ7</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="fixstr reserve1[64]">
+      <DisplayName>予約１</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

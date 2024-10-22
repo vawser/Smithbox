@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>NPC_CORPS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 NpcAcID_00">
+      <DisplayName>NPC一人目</DisplayName>
+      <Description>NPC一人目</Description>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 NpcAcID_01">
+      <DisplayName>NPC二人目</DisplayName>
+      <Description>NPC一人目</Description>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 NpcAcID_02">
+      <DisplayName>NPC三人目</DisplayName>
+      <Description>NPC一人目</Description>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 NpcAcID_03">
+      <DisplayName>NPC四人目</DisplayName>
+      <Description>NPC一人目</Description>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 TeamLevel">
+      <DisplayName>チームレベル</DisplayName>
+      <Description>チームレベル</Description>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u16 TeamNameID">
+      <DisplayName>チーム名</DisplayName>
+      <Description>チーム名</Description>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u16 TeamEmblemID">
+      <DisplayName>チームエンブレム</DisplayName>
+      <Description>チームエンブレム</Description>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u16 HonorID">
+      <DisplayName>通り名</DisplayName>
+      <Description>通り名：1～の値を指定してください。 1=メニューテキストの46000に対応しています</Description>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u16 ShoutID">
+      <DisplayName>開始時台詞</DisplayName>
+      <Description>開始時台詞：49750～の値を指定してください。 メニューテキストの同IDと対応しています</Description>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved1[6]">
+      <DisplayName>予約</DisplayName>
+      <SortID>11</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

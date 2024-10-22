@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ARMWEAPON_AIMINFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="fixstr EquipJointCtrlName[16]">
+      <DisplayName>装備時関節制御名</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="fixstr ReleaseJointCtrlName[16]">
+      <DisplayName>解除時間接制御名</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="f32 ReleaseAnimInterpolation">
+      <DisplayName>解除時アニメ補間具合</DisplayName>
+      <DisplayFormat>%1.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

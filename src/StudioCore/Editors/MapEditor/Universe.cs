@@ -353,26 +353,26 @@ public class Universe
         var amapid = MapLocator.GetAssetMapID(map.Name);
 
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
-        if (modelname.ToLower().StartsWith("m"))
+        if (modelname.StartsWith("m", StringComparison.CurrentCultureIgnoreCase))
         {
             loadflver = true;
             var name = ModelLocator.MapModelNameToAssetName(amapid, modelname);
             asset = ModelLocator.GetMapModel(amapid, name, name);
             filt = RenderFilter.MapPiece;
         }
-        else if (modelname.ToLower().StartsWith("c"))
+        else if (modelname.StartsWith("c", StringComparison.CurrentCultureIgnoreCase))
         {
             loadflver = true;
             asset = ModelLocator.GetChrModel(modelname, modelname);
             filt = RenderFilter.Character;
         }
-        else if (modelname.ToLower().StartsWith("o") || modelname.StartsWith("AEG"))
+        else if (modelname.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || modelname.StartsWith("AEG"))
         {
             loadflver = true;
             asset = ModelLocator.GetObjModel(modelname, modelname);
             filt = RenderFilter.Object;
         }
-        else if (modelname.ToLower().StartsWith("h"))
+        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase))
         {
             loadcol = true;
             asset = ModelLocator.GetMapCollisionModel(amapid,
@@ -382,7 +382,7 @@ public class Universe
 
             filt = RenderFilter.Collision;
         }
-        else if (modelname.ToLower().StartsWith("n"))
+        else if (modelname.StartsWith("n", StringComparison.CurrentCultureIgnoreCase))
         {
             loadnav = true;
             asset = ModelLocator.GetMapNVMModel(amapid, ModelLocator.MapModelNameToAssetName(amapid, modelname));
@@ -681,7 +681,7 @@ public class Universe
 
     public bool LoadMap(string mapid, bool selectOnLoad = false)
     {
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2S)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             if (ParamBank.PrimaryBank.Params == null)
             {
@@ -699,8 +699,6 @@ public class Universe
         }
 
         LoadMapAsync(mapid, selectOnLoad);
-
-
         return true;
     }
 
@@ -746,6 +744,10 @@ public class Universe
             case ProjectType.DS1R:
             case ProjectType.DS2:
             case ProjectType.DS2S:
+            case ProjectType.AC4: // TODO unsure if this is correct
+            case ProjectType.ACFA: // TODO unsure if this is correct
+            case ProjectType.ACV: // TODO unsure if this is correct
+            case ProjectType.ACVD: // TODO unsure if this is correct
                 _dispGroupCount = 4;
                 break;
             case ProjectType.BB:
@@ -801,7 +803,12 @@ public class Universe
 
             if (IsRendering)
             {
-                resourceHandler.SetupHumanEnemySubstitute();
+                if (Smithbox.ProjectType != ProjectType.AC4 &&
+                    Smithbox.ProjectType != ProjectType.ACFA &&
+                    Smithbox.ProjectType != ProjectType.ACV &&
+                    Smithbox.ProjectType != ProjectType.ACVD)
+                    resourceHandler.SetupHumanEnemySubstitute();
+
                 resourceHandler.SetupModelLoadLists();
                 resourceHandler.SetupTexturelLoadLists();
                 resourceHandler.SetupModelMasks(map);
@@ -1292,6 +1299,46 @@ public class Universe
                 var prev = MSBD.Read(ad.AssetPath);
                 MSBD n = new();
                 n.Trees = prev.Trees;
+                msb = n;
+            }
+            //TODO ACFA
+            else if (Smithbox.ProjectType == ProjectType.ACFA)
+            {
+                MSBFA prev = MSBFA.Read(ad.AssetPath);
+                MSBFA n = new();
+                n.Models.Version = prev.Models.Version;
+                n.Events.Version = prev.Events.Version;
+                n.Parts.Version = prev.Parts.Version;
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                n.DrawingTree = prev.DrawingTree;
+                n.CollisionTree = prev.CollisionTree;
+                msb = n;
+            }
+            else if (Smithbox.ProjectType == ProjectType.ACV)
+            {
+                MSBV prev = MSBV.Read(ad.AssetPath);
+                MSBV n = new();
+                n.Models.Version = prev.Models.Version;
+                n.Events.Version = prev.Events.Version;
+                n.Parts.Version = prev.Parts.Version;
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                n.DrawingTree = prev.DrawingTree;
+                n.CollisionTree = prev.CollisionTree;
+                msb = n;
+            }
+            else if (Smithbox.ProjectType == ProjectType.ACVD)
+            {
+                MSBVD prev = MSBVD.Read(ad.AssetPath);
+                MSBVD n = new();
+                n.Models.Version = prev.Models.Version;
+                n.Events.Version = prev.Events.Version;
+                n.Parts.Version = prev.Parts.Version;
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                n.DrawingTree = prev.DrawingTree;
+                n.CollisionTree = prev.CollisionTree;
                 msb = n;
             }
             else

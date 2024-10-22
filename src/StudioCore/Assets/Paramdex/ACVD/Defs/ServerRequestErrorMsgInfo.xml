@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SERVER_REQUEST_ERROR_MSGINFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 InterfaceID">
+      <DisplayName>インターフェイスID</DisplayName>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 LimitedGameFlow">
+      <DisplayName>限定フロー</DisplayName>
+      <Enum>GameFlowID</Enum>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s8 BehaviorType">
+      <DisplayName>エラー処理</DisplayName>
+      <Enum>ErrorDialogType</Enum>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s8 InterfaceSubID">
+      <DisplayName>インターフェイスサブID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 RequestResultCode">
+      <DisplayName>リクエスト結果</DisplayName>
+      <Enum>ServerRequestResultCode</Enum>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 ExtErrorCode">
+      <DisplayName>拡張エラーコード</DisplayName>
+      <Enum>ServerExtErrorCode</Enum>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u32 TextID">
+      <DisplayName>テキストID</DisplayName>
+      <Maximum>1E+09</Maximum>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

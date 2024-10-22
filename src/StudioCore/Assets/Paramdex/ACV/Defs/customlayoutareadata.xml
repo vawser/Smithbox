@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CUSTOMLAYOUT_AREADATA_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 mapID = 5000">
+      <DisplayName>マップID</DisplayName>
+      <Description>対戦マップ一覧のID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 mapLevel">
+      <DisplayName>マップレベル</DisplayName>
+      <Description>MapLayerID</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 presetCustomLayoutID">
+      <DisplayName>プリセット配置ID</DisplayName>
+      <Description>プリセットのカスタム配置データID</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u32 maxTotalCost">
+      <DisplayName>最大配置コスト</DisplayName>
+      <Description>最大配置コスト</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1000000</Maximum>
+      <Increment>0</Increment>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u8 maxListNum = 5">
+      <DisplayName>生産ラインの最大数</DisplayName>
+      <Description>生産ラインの最大数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="dummy8 reserved1[3]">
+      <DisplayName>予約</DisplayName>
+      <SortID>990</SortID>
+    </Field>
+    <Field Def="u32 targetAmount">
+      <DisplayName>妨害作戦：目標砲台損害額</DisplayName>
+      <Description>妨害作戦：目標砲台損害額</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>5E+08</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="u32 targetACRepairCost">
+      <DisplayName>妨害作戦：目標AC損害額</DisplayName>
+      <Description>妨害作戦：目標AC損害額</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>5E+08</Maximum>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="u16 targetDataCollectPoint">
+      <DisplayName>データ回収目標ポイント</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="dummy8 reserved2[10]">
+      <DisplayName>予約</DisplayName>
+      <SortID>991</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

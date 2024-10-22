@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SFX_LIMITPARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 BulletHitLimitFrame">
+      <DisplayName>弾丸着弾 連続発生禁止フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 BulletHitLimitRange">
+      <DisplayName>弾丸着弾 連続発生禁止距離</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 MapHitLimitFrame">
+      <DisplayName>マップ着弾 連続発生禁止フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 MapHitLimitRange">
+      <DisplayName>マップ着弾 連続発生禁止距離</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 PaHitLimitFrame">
+      <DisplayName>ＰＡ着弾 連続発生禁止フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 PaHitLimitRange">
+      <DisplayName>ＰＡ着弾 連続発生禁止距離</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 DestroyLimitFrame">
+      <DisplayName>破壊 連続発生禁止フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 DestroyLimitRange">
+      <DisplayName>破壊 連続発生禁止距離</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[32]">
+      <DisplayName>----</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>10</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

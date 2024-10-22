@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_CAMERA_OFFSET_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 EyeOffsetYOffsetRate = -2">
+      <DisplayName>視点オフセットY　の倍率</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 EyeDistOffset = -3">
+      <DisplayName>視点距離　のオフセット</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 EyeMinDist = 6">
+      <DisplayName>視点距離の最小値</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 GarageEyeOffsetZOffset = -2">
+      <DisplayName>ガレージの視点のZ方向オフセット</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 GarageTopEyeOffsetZOffset = -2">
+      <DisplayName>ガレージトップの視点のZ方向オフセット</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 EyeOffsetXOffsetRate">
+      <DisplayName>視点オフセットX　の倍率</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 FollowOffsetY">
+      <DisplayName>カメラが自機に近づくときのオフセット高さ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 EyeApproachRate = 0.9">
+      <DisplayName>見上げ:視点が近づく割合</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 EyeDownRate = 0.5">
+      <DisplayName>見上げ:視点が降りる割合</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>9</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

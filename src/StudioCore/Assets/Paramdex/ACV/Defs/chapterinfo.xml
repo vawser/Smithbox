@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CHAPTER_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 チャプターID">
+      <DisplayName>チャプターID</DisplayName>
+      <Description>キーミッションの無いチャプター用設定</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u8 クリアミッション数">
+      <DisplayName>クリアミッション数</DisplayName>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u8 遷移先チャプターID">
+      <DisplayName>遷移先チャプターID</DisplayName>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="fixstr ダミー[1]">
+      <DisplayName>ダミー</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

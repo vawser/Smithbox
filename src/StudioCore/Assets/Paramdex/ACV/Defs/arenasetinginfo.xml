@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ARENA_SETTING_INFO_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 MapID">
+      <DisplayName>対戦マップＩＤ</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 TeamLv">
+      <DisplayName>チームレベル</DisplayName>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u16 TeamEmblemID">
+      <DisplayName>チームエンブレム</DisplayName>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="dummy8 dummy00[2]">
+      <DisplayName>dummy</DisplayName>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u32 TeamNameID">
+      <DisplayName>チーム名</DisplayName>
+      <Maximum>7999999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u32 PolygID">
+      <DisplayName>ポリ劇ID</DisplayName>
+      <Maximum>999999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 Desing00">
+      <DisplayName>機体構成１</DisplayName>
+      <Enum>ASSEMBLY_ID</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 AiName00">
+      <DisplayName>AI名１</DisplayName>
+      <Enum>ACAI_ID</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u32 HonorID">
+      <DisplayName>通り名</DisplayName>
+      <Maximum>7999999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u32 ShoutID">
+      <DisplayName>開始セリフ</DisplayName>
+      <Maximum>7999999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 dummy01[24]">
+      <DisplayName>dummy</DisplayName>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s32 Desing01">
+      <DisplayName>機体構成２</DisplayName>
+      <Enum>ASSEMBLY_ID</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 AiName01">
+      <DisplayName>AI名２</DisplayName>
+      <Enum>ACAI_ID</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="dummy8 dummy03[32]">
+      <DisplayName>dummy</DisplayName>
+      <SortID>17</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

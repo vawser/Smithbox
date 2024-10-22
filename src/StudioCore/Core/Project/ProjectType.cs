@@ -12,5 +12,9 @@ public enum ProjectType
     SDT = 7, // Sekiro: Shadows Die Twice
     ER = 8, // Elden Ring
     AC6 = 9, // Armored Core VI: Fires of Rubicon
-    DS2 = 10 // Dark Souls II
+    DS2 = 10, // Dark Souls II
+    AC4 = 11, // Armored Core 4
+    ACFA = 12, // Armored Core: For Answer
+    ACV = 13, // Armored Core V
+    ACVD = 14, // Armored Core: Verdict Day
 }

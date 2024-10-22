@@ -30,13 +30,11 @@ public static class ModelLocator
         if (Smithbox.ProjectType == ProjectType.DES)
             return $@"{modelname}";
 
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2 || Smithbox.ProjectType == ProjectType.ACFA || Smithbox.ProjectType == ProjectType.ACV || Smithbox.ProjectType == ProjectType.ACVD)
             return modelname;
 
         return $@"{mapid}_{modelname.Substring(1)}";
     }
-
-
 
     public static ResourceDescriptor GetMapModel(string mapid, string mapContainerId, string modelId)
     {
@@ -51,6 +49,10 @@ public static class ModelLocator
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{modelId}.mapbnd.dcx");
         else if (Smithbox.ProjectType is ProjectType.AC6)
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{modelId}.mapbnd.dcx");
+        else if (Smithbox.ProjectType is ProjectType.ACFA)
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.bnd");
+        else if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.dcx.bnd");
         else
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{modelId}.mapbnd.dcx");
 
@@ -59,6 +61,11 @@ public static class ModelLocator
         {
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
             ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flv.dcx";
+        }
+        else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        {
+            ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
+            ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flv";
         }
         else
         {
@@ -222,13 +229,23 @@ public static class ModelLocator
         return ret;
     }
 
+    public static ResourceDescriptor GetEneModel(string ene)
+    {
+        ResourceDescriptor ret = new();
+        ret.AssetName = ene;
+        ret.AssetArchiveVirtualPath = $@"ene/{ene}/model";
+        ret.AssetVirtualPath = $@"ene/{ene}/model/{ene}.flv";
+
+        return ret;
+    }
+
     public static ResourceDescriptor GetObjModel(string objContainerId, string objId)
     {
         ResourceDescriptor ret = new();
         ret.AssetName = objId;
         ret.AssetArchiveVirtualPath = $@"obj/{objContainerId}/model";
 
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId}.flv";
         else if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId.ToUpper()}.flver";
@@ -236,11 +253,13 @@ public static class ModelLocator
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId}.flver";
 
         // Direct paths
-        if (Smithbox.ProjectType == ProjectType.DS1)
+        if (Smithbox.ProjectType is ProjectType.DS1)
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"obj\{objId}.objbnd");
-        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\obj\{objId}.bnd");
-        else if (Smithbox.ProjectType == ProjectType.ER)
+        else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\obj\{objId}\{objId}.bnd");
+        else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\obj\{objId}\{objId}_m.bnd");
+        else if (Smithbox.ProjectType is ProjectType.ER)
         {
             // Derive subfolder path from model name (all vanilla AEG are within subfolders)
             if (objContainerId.Length >= 6)
@@ -248,7 +267,7 @@ public static class ModelLocator
                 ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\aeg\{objContainerId.Substring(0, 6)}\{objId}.geombnd.dcx");
             }
         }
-        else if (Smithbox.ProjectType == ProjectType.AC6)
+        else if (Smithbox.ProjectType is ProjectType.AC6)
         {
             if (objContainerId.Length >= 6)
                 ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{objId}.geombnd.dcx");

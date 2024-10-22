@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_TEXT_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 ID">
+      <DisplayName>ID</DisplayName>
+    </Field>
+    <Field Def="fixstr ダミー[1]">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="fixstrW 搭乗者名[31]">
+      <DisplayName>搭乗者名</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="fixstrW 機体名[32]">
+      <DisplayName>機体名</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="fixstr 所属勢力[32]">
+      <DisplayName>所属勢力</DisplayName>
+      <Description>現在使用していない　仕様変更があるかもしれないそうなので残す</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_CAMERA_ACTION_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s16 ActionId">
+      <DisplayName>アクションID</DisplayName>
+      <Enum>AC_ACTION_ID</Enum>
+      <EditFlags>Lock</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="fixstr ActReserve[25]">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat />
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 FovEnable = 1">
+      <DisplayName>画角有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 FovMaxAngle = 82">
+      <DisplayName>画角:最大画角</DisplayName>
+      <Minimum>1</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 FovMaxFrame = 300">
+      <DisplayName>画角:増加フレーム</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 FovKeepFrame = -1">
+      <DisplayName>画角:持続フレーム(-1=∞)</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>2000</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 FovFadeFrame = 30">
+      <DisplayName>画角:戻りフレーム</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="fixstr FovReserve[12]">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat />
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 ShakeNoMoveRate">
+      <DisplayName>揺れ:通常揺れ強度</DisplayName>
+      <Description>値が入っていると常にゆれます</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 ShakeAccelRate">
+      <DisplayName>揺れ:加速揺れ強度</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 ShakeAccelMin">
+      <DisplayName>揺れ:開始加速度</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 ShakeAccelMax">
+      <DisplayName>揺れ:最大加速度</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 EyeOffsetX">
+      <DisplayName>視点オフセットX</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-500</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 EyeOffsetY">
+      <DisplayName>視点オフセットY</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-500</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 EyeDistance">
+      <DisplayName>視点距離</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 EyeHeight">
+      <DisplayName>視点高さ</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="f32 BlurRate">
+      <DisplayName>ブラー:ブラー影響度</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s16 EyeFadeInFrame = 60">
+      <DisplayName>視点切り替えフレーム</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="fixstr EyeReserved[2]">
+      <DisplayName>--予約--</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="f32 TurnHeight">
+      <DisplayName>旋回中Y地点</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s16 TurnOffsetMoveFrame = 30">
+      <DisplayName>旋回中位置変化フレーム</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u8 bTrunMoveEnable">
+      <DisplayName>旋回時カメラ左右移動有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u8 Reserved2">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="f32 TurnCenterDist">
+      <DisplayName>旋回中中間地点距離</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>500</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 LookAtFollowRateX = 0.14">
+      <DisplayName>注視点の追従率:左右</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="f32 LookAtFollowRateY = 0.16">
+      <DisplayName>:上下</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="f32 LookAtFollowRateF = 0.08">
+      <DisplayName>:前</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="f32 LookAtFollowRateB = 1">
+      <DisplayName>:後</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="f32 EyeFollowRateX = 0.17">
+      <DisplayName>視点の追従率:左右</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="f32 EyeFollowRateY = 0.23">
+      <DisplayName>:上下</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="f32 EyeFollowRateF = 0.5">
+      <DisplayName>:前</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 EyeFollowRateB = 1">
+      <DisplayName>:後</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="s16 CamFollowRateInterpolateFrame = 30">
+      <DisplayName>カメラ追従率補間フレーム</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="fixstr Reserved[34]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>34</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>
