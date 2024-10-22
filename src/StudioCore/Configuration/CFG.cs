@@ -424,6 +424,10 @@ public class CFG
     public bool TextEditor_TextExport_UseQuickExport = false;
     public string TextEditor_TextExport_QuickExportPrefix = "quick_export";
 
+    public bool TextEditor_LanguageSync_PrimaryOnly = false;
+    public bool TextEditor_LanguageSync_AddPrefix = true;
+    public string TextEditor_LanguageSync_Prefix = "TRANSLATE: ";
+
     // OLD
     public string FMG_SearchAndReplace_SearchText = "";
     public string FMG_SearchAndReplace_ReplaceText = "";

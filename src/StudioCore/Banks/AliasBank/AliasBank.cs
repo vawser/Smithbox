@@ -41,7 +41,9 @@ public class AliasBank
         }
         catch (Exception e)
         {
+#if DEBUG
             TaskLogs.AddLog($"Failed to load: {AliasTitle} Bank: {e.Message}");
+#endif
         }
 
         TaskLogs.AddLog($"Alias Bank: Loaded {AliasTitle} Bank");

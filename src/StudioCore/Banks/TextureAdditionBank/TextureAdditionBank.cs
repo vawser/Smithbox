@@ -34,7 +34,9 @@ namespace StudioCore.Banks.TextureAdditionBank
             }
             catch (Exception e)
             {
+#if DEBUG
                 TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
+#endif
             }
 
             TaskLogs.AddLog($"Texture Addition Bank: Loaded Additions");

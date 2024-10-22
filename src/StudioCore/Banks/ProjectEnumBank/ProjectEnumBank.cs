@@ -42,7 +42,9 @@ public class ProjectEnumBank
         }
         catch (Exception e)
         {
+#if DEBUG
             TaskLogs.AddLog($"Failed to load: {EnumTitle} Bank: {e.Message}");
+#endif
         }
 
         TaskLogs.AddLog($"Alias Bank: Loaded {EnumTitle} Bank");

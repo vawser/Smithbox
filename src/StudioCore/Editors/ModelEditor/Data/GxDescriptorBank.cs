@@ -28,7 +28,9 @@ public class GxDescriptorBank
         }
         catch (Exception e)
         {
-            //TaskLogs.AddLog($"Failed to load: GX Item Descriptors Bank: {e.Message}");
+#if DEBUG
+            TaskLogs.AddLog($"Failed to load: GX Item Descriptors Bank: {e.Message}");
+#endif
         }
 
         TaskLogs.AddLog($"GX Item Descriptors: Loaded Bank");

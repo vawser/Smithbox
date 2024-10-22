@@ -37,7 +37,9 @@ public class FormatBank
         }
         catch (Exception e)
         {
+#if DEBUG
             TaskLogs.AddLog($"Failed to load Format Bank {FormatTitle}: {e.Message}");
+#endif
         }
 
         TaskLogs.AddLog($"Format Bank: Loaded {FormatTitle} Bank");

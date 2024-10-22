@@ -35,7 +35,9 @@ namespace StudioCore.Banks.TextureBlockBank
             }
             catch (Exception e)
             {
+#if DEBUG
                 TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
+#endif
             }
 
             TaskLogs.AddLog($"Texture Block Bank: Loaded Blocks");

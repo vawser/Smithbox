@@ -603,12 +603,12 @@ public class Smithbox
         if(AliasCacheHandler != null)
             AliasCacheHandler.OnGui();
 
-        // Tool windows
-        ColorPicker.DisplayColorPicker();
-
         ImGui.PopStyleVar(2);
 
         UIHelper.UnapplyBaseStyle();
+
+        // Tool windows
+        ColorPicker.DisplayColorPicker();
 
         Tracy.TracyCZoneEnd(ctx);
 

@@ -117,6 +117,19 @@ public class TextEditorTab
             UIHelper.ShowHoverTooltip("Automatically name the export file instead of display the Export Text prompt. Will overwrite the existing quick export file each time.");
         }
 
+        // Language Sync
+        if (ImGui.CollapsingHeader("Language Sync", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Display Primary Category only", ref CFG.Current.TextEditor_LanguageSync_PrimaryOnly);
+            UIHelper.ShowHoverTooltip("Only show your primary category (language) in the selection dropdown.");
+
+            ImGui.Checkbox("Apply Prefix", ref CFG.Current.TextEditor_LanguageSync_AddPrefix);
+            UIHelper.ShowHoverTooltip("Add a prefix to synced text in the target language container for all new entries.");
+
+            ImGui.InputText("##prefixText", ref CFG.Current.TextEditor_LanguageSync_Prefix, 255);
+            UIHelper.ShowHoverTooltip("The prefix to apply.");
+        }
+
         // Text Entry Copy
         if (ImGui.CollapsingHeader("Clipboard Action", ImGuiTreeNodeFlags.DefaultOpen))
         {

@@ -29,8 +29,7 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.Filename}"))
         {
-            // TODO: add sync to X language
-            // LanguageSync.DisplaySyncOptions();
+            LanguageSync.DisplaySyncOptions();
 
             FmgImporter.FileContextMenuOptions();
             FmgExporter.FileContextMenuOptions();
