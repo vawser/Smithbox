@@ -112,9 +112,15 @@ public static class ResourceManager
         {
             TPF.Texture tex = tpf.Textures[i];
 
-            // HACK: Only include texture name and not full virtual path
-            ret[i] = new LoadTPFTextureResourceRequest(tex.Name, tpf, i,
-                action._accessLevel);
+            // HACK: Only include texture name and not full virtual path for these projects
+            if (Smithbox.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            {
+                ret[i] = new LoadTPFTextureResourceRequest(tex.Name, tpf, i, action._accessLevel);
+            }
+            else
+            {
+                ret[i] = new LoadTPFTextureResourceRequest($@"{action._virtpathbase}/{tex.Name}", tpf, i, action._accessLevel);
+            }
         }
 
         action._tpf = null;

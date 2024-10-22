@@ -15,10 +15,13 @@ public static class VirtualPathLocator
 {
     public static string TexturePathToVirtual(string texpath)
     {
-        // HACK: Only include texture name and not full virtual path
-        return Path.GetFileNameWithoutExtension(texpath);
+        // For these projects, return the texture name only
+        if (Smithbox.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        {
+            // HACK: Only include texture name and not full virtual path
+            return Path.GetFileNameWithoutExtension(texpath);
+        }
 
-        /*
         // MAP Texture
         if (texpath.Contains(@"\map\"))
         {
@@ -74,7 +77,6 @@ public static class VirtualPathLocator
         }
 
         return texpath;
-        */
     }
 
     public static string VirtualToRealPath(string virtualPath, out string bndpath)
