@@ -120,6 +120,8 @@ Model Editor:
 
 
 # PRIORITY - for hotfix release
+- ADD: inner search from File and Text File filters (e.g. check the entries too) - Add search button for them next to filter box
+
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
 - ADD: text merge: tool that will attempt to add unique/modified rows from X source into current project
 

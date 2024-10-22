@@ -178,66 +178,11 @@ public class TextEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Data"))
         {
-            if (ImGui.BeginMenu("FMG", Selection.SelectedFmgWrapper.File != null))
-            {
-                if (ImGui.BeginMenu("Export Entries"))
-                {
-                    FmgExporter.DisplayExportList(true);
-
-                    ImGui.EndMenu();
-                }
-
-                if (ImGui.BeginMenu("Import Entries"))
-                {
-                    FmgImporter.DisplayImportList();
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("FMG Entries", Selection.SelectedFmgWrapper.File != null && Selection._selectedFmgEntry != null))
-            {
-                if (ImGui.BeginMenu("Export Entries"))
-                {
-                    FmgExporter.DisplayExportList();
-
-                    ImGui.EndMenu();
-                }
-
-                if (ImGui.BeginMenu("Import Entries"))
-                {
-                    FmgImporter.DisplayImportList();
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndMenu();
-            }
+            FmgImporter.MenubarOptions();
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Clear Stored Text"))
-            {
-                DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"All stored text will be deleted. Do you proceed?",
-                    "Warning",
-                    MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
-                {
-                    var wrapperPathList = TextLocator.GetFmgWrappers();
-
-                    foreach (var path in wrapperPathList)
-                    {
-                        if (File.Exists(path))
-                        {
-                            File.Delete(path);
-                        }
-                    }
-                }
-            }
+            FmgExporter.MenubarOptions();
 
             ImGui.EndMenu();
         }

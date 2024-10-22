@@ -105,16 +105,16 @@ public static class TextLocator
         return false;
     }
 
-    public static string GetFmgWrapperDirectory()
+    public static string GetStoredTextDirectory()
     {
-        return $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\FMG Wrappers";
+        return $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Exported Text";
     }
 
-    public static List<string> GetFmgWrappers()
+    public static List<string> GetStoredContainerWrappers()
     {
         List<string> results = new();
 
-        var wrapperDir = GetFmgWrapperDirectory();
+        var wrapperDir = GetStoredTextDirectory();
 
         if (Directory.Exists(wrapperDir))
         {

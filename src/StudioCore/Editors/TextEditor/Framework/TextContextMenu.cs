@@ -32,6 +32,9 @@ public class TextContextMenu
             // TODO: add sync to X language
             // LanguageSync.DisplaySyncOptions();
 
+            FmgImporter.FileContextMenuOptions();
+            FmgExporter.FileContextMenuOptions();
+
             ImGui.EndPopup();
         }
     }
@@ -43,19 +46,8 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FmgContext##FmgContext{fmgInfo.ID}"))
         {
-            if (ImGui.BeginMenu("Export Entries"))
-            {
-                FmgExporter.DisplayExportList(true);
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Import Entries"))
-            {
-                FmgImporter.DisplayImportList();
-
-                ImGui.EndMenu();
-            }
+            FmgImporter.FmgContextMenuOptions();
+            FmgExporter.FmgContextMenuOptions();
 
             ImGui.EndPopup();
         }
@@ -87,19 +79,8 @@ public class TextContextMenu
 
             ImGui.Separator();
 
-            if (ImGui.BeginMenu("Export Entries"))
-            {
-                FmgExporter.DisplayExportList();
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Import Entries"))
-            {
-                FmgImporter.DisplayImportList();
-
-                ImGui.EndMenu();
-            }
+            FmgImporter.FmgEntryContextMenuOptions();
+            FmgExporter.FmgEntryContextMenuOptions();
 
             ImGui.EndPopup();
         }

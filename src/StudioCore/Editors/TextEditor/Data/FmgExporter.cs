@@ -1,7 +1,10 @@
-﻿using ImGuiNET;
+﻿using Google.Protobuf.Reflection;
+using ImGuiNET;
 using Microsoft.AspNetCore.Components.Forms;
+using Org.BouncyCastle.Crypto;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
@@ -24,79 +27,422 @@ public static class FmgExporter
         editor.TextExportModal.Display();
     }
 
-    public static void DisplayExportList(bool ignoreSelected = false)
+    /// <summary>
+    /// Context Menu options in the Container list
+    /// </summary>
+    public static void MenubarOptions()
     {
-        if (ImGui.Selectable("All"))
-        {
-            FmgExporter.DisplayExportModal(ExportType.All);
-        }
-        UIHelper.ShowHoverTooltip("All entries from the currently selected FMG will be exported.");
+        var editor = Smithbox.EditorHandler.TextEditor;
 
-        if (!ignoreSelected)
+        if (ImGui.BeginMenu("Export"))
         {
-            if (ImGui.Selectable("Selected"))
+            // File
+            if (ImGui.BeginMenu("File", editor.Selection.SelectedContainerWrapper != null))
             {
-                FmgExporter.DisplayExportModal(ExportType.Selected);
+                if (ImGui.Selectable("Export Selected File"))
+                {
+                    DisplayExportModal(ExportType.Container);
+                }
+
+                if (TextBank.VanillaBankLoaded)
+                {
+                    ImGui.Separator();
+
+                    if (ImGui.Selectable("Export Modified Text"))
+                    {
+                        DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
+                    }
+                    UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files)) that are considered 'modified'.");
+
+                    if (ImGui.Selectable("Export Unique Text"))
+                    {
+                        DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
+                    }
+                    UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+                }
+
+                ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip("Only selected entries from the currently selected FMG will be exported.");
+            UIHelper.ShowHoverTooltip("Export your currently selected File (including all of its Text Files and their Text Entries) to a export text file.");
+
+            // FMG
+            if (ImGui.BeginMenu("Text File", editor.Selection.SelectedFmgWrapper.File != null))
+            {
+                if (ImGui.Selectable("Export Selected Text File"))
+                {
+                    DisplayExportModal(ExportType.FMG);
+                }
+
+                if (TextBank.VanillaBankLoaded)
+                {
+                    ImGui.Separator();
+
+                    if (ImGui.Selectable("Export Modified Text"))
+                    {
+                        DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
+                    }
+                    UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
+
+                    if (ImGui.Selectable("Export Unique Text"))
+                    {
+                        DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
+                    }
+                    UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+                }
+
+                ImGui.EndMenu();
+            }
+            UIHelper.ShowHoverTooltip("Export your currently selected Text File (including all of its entries) to a export text file.");
+
+            // FMG Entries
+            if (ImGui.BeginMenu("Text Entry", editor.Selection._selectedFmgEntry != null))
+            {
+                if (ImGui.Selectable("Export Selected Text Entries"))
+                {
+                    DisplayExportModal(ExportType.FMG_Entries);
+                }
+
+                if (TextBank.VanillaBankLoaded)
+                {
+                    ImGui.Separator();
+
+                    if (ImGui.Selectable("Export Modified Text"))
+                    {
+                        DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
+                    }
+                    UIHelper.ShowHoverTooltip("Only include FMG entries that are considered 'modified'.");
+
+                    if (ImGui.Selectable("Export Unique Text"))
+                    {
+                        DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
+                    }
+                    UIHelper.ShowHoverTooltip("Only include FMG entries that are considered 'unique'.");
+                }
+
+                ImGui.EndMenu();
+            }
+            UIHelper.ShowHoverTooltip("Export your currently selected FMG Entries to a export text file.");
+
+            if (ImGui.MenuItem("Clear Text Storage"))
+            {
+                DialogResult result = PlatformUtils.Instance.MessageBox(
+                    $"All export text files will be deleted. Do you proceed?",
+                    "Warning",
+                    MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    var wrapperPathList = TextLocator.GetStoredContainerWrappers();
+
+                    foreach (var path in wrapperPathList)
+                    {
+                        if (File.Exists(path))
+                        {
+                            File.Delete(path);
+                        }
+                    }
+                }
+            }
+            UIHelper.ShowHoverTooltip("Clears all the export text files from the storage folder.");
+
+            ImGui.EndMenu();
         }
     }
 
-    public static void DisplayExportModal(ExportType exportType)
+    /// <summary>
+    /// Context Menu options in the Container list
+    /// </summary>
+    public static void FileContextMenuOptions()
+    {
+        if (ImGui.BeginMenu("Export Text"))
+        {
+            if (ImGui.Selectable("Export Selected File"))
+            {
+                DisplayExportModal(ExportType.Container);
+            }
+
+            if (TextBank.VanillaBankLoaded)
+            {
+                ImGui.Separator();
+
+                if (ImGui.Selectable("Export Modified Text"))
+                {
+                    DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
+                }
+                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
+
+                if (ImGui.Selectable("Export Unique Text"))
+                {
+                    DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
+                }
+                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+            }
+
+            ImGui.EndMenu();
+        }
+        UIHelper.ShowHoverTooltip("Export all associated Text Files and the Text Entries within this container.");
+    }
+
+    /// <summary>
+    /// Context Menu options in the FMG list
+    /// </summary>
+    public static void FmgContextMenuOptions()
+    {
+        if (ImGui.BeginMenu("Export Text"))
+        {
+            if (ImGui.Selectable("Export Selected Text File"))
+            {
+                DisplayExportModal(ExportType.FMG);
+            }
+
+            if (TextBank.VanillaBankLoaded)
+            {
+                ImGui.Separator();
+
+                if (ImGui.Selectable("Export Modified Text"))
+                {
+                    DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
+                }
+                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'modified'.");
+
+                if (ImGui.Selectable("Export Unique Text"))
+                {
+                    DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
+                }
+                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'unique'.");
+            }
+
+            ImGui.EndMenu();
+        }
+        UIHelper.ShowHoverTooltip("Export all associated entries within this Text File.");
+    }
+
+    /// <summary>
+    /// Context Menu options in the FMG Entry list
+    /// </summary>
+    public static void FmgEntryContextMenuOptions()
+    {
+        if (ImGui.BeginMenu("Export Text"))
+        {
+            if (ImGui.Selectable("Export Selected Text Entries"))
+            {
+                DisplayExportModal(ExportType.FMG_Entries);
+            }
+
+            if (TextBank.VanillaBankLoaded)
+            {
+                ImGui.Separator();
+
+                if (ImGui.Selectable("Export Modified Text"))
+                {
+                    DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
+                }
+                UIHelper.ShowHoverTooltip("Only include Text Entries that are considered 'modified'.");
+
+                if (ImGui.Selectable("Export Unique Text"))
+                {
+                    DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
+                }
+                UIHelper.ShowHoverTooltip("Only include Text Entries that are considered 'unique'.");
+            }
+
+            ImGui.EndMenu();
+        }
+        UIHelper.ShowHoverTooltip("Export all selected Text Entries.");
+    }
+
+    public static void DisplayExportModal(ExportType exportType, ExportModifier exportModifier = ExportModifier.None)
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
         editor.TextExportModal.ShowModal = true;
-        editor.TextExportModal.ExportType = exportType;
+        CurrentExportType = exportType;
+        CurrentExportModifier = exportModifier;
     }
+
+    public static ExportType CurrentExportType = ExportType.Container;
+    public static ExportModifier CurrentExportModifier = ExportModifier.None;
 
     /// <summary>
     /// Export the FMG entries and save them under the specified wrapper name.
     /// </summary>
-    public static void ProcessExport(string wrapperName, ExportType exportType)
+    public static void ProcessExport(string storedName)
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
-        var selectedFmgEntries = editor.Selection.FmgEntryMultiselect.StoredEntries;
+        // Stored Text
+        var storedFmgContainer = new StoredFmgContainer();
+        storedFmgContainer.Name = storedName;
+        storedFmgContainer.FmgWrappers = new List<StoredFmgWrapper>();
 
-        var fmgWrapper = new StoredFmgWrapper();
-        fmgWrapper.Name = wrapperName;
-
-        // Create new FMG for the wrapper
-        var exportFmg = new FMG();
-        exportFmg.Name = selectedFmgInfo.File.Name;
-        exportFmg.Version = selectedFmgInfo.File.Version;
-        exportFmg.BigEndian = selectedFmgInfo.File.BigEndian;
-        exportFmg.Entries = new List<FMG.Entry>();
-
-        if (exportType is ExportType.All)
+        // Container
+        if (CurrentExportType is ExportType.Container)
         {
-            foreach(var entry in selectedFmgInfo.File.Entries)
-            {
-                var newEntry = new FMG.Entry(exportFmg, entry.ID, entry.Text);
-                exportFmg.Entries.Add(newEntry);
-            }
+            var selectedContainer = editor.Selection.SelectedContainerWrapper;
 
-            fmgWrapper.Fmg = exportFmg;
-        }
-        else if(exportType is ExportType.Selected)
-        {
-            foreach (var (key, entry) in selectedFmgEntries)
+            foreach(var wrapper in selectedContainer.FmgWrappers)
             {
-                var newEntry = new FMG.Entry(exportFmg, entry.ID, entry.Text);
-                exportFmg.Entries.Add(newEntry);
+                ProcessFmg(wrapper, storedFmgContainer);
             }
-
-            fmgWrapper.Fmg = exportFmg;
         }
 
-        WriteWrapper(fmgWrapper);
+        // FMG
+        if (CurrentExportType is ExportType.FMG)
+        {
+            var selectedFmgWrapper = editor.Selection.SelectedFmgWrapper;
+
+            ProcessFmg(selectedFmgWrapper, storedFmgContainer);
+        }
+
+        // FMG Entries
+        if (CurrentExportType is ExportType.FMG_Entries)
+        {
+            var selectedFmgWrapper = editor.Selection.SelectedFmgWrapper;
+
+            // Export associated group entries as well
+            if(CFG.Current.TextEditor_Entry_DisplayGroupedEntries)
+            {
+                var currentEntry = editor.Selection._selectedFmgEntry;
+                var fmgEntryGroup = editor.EntryGroupManager.GetEntryGroup(currentEntry);
+
+                if (fmgEntryGroup.SupportsGrouping)
+                {
+                    // This sends the associated fmg wrappers for processing.
+                    // The current entry multiselection IDs will still match, even though the entries
+                    // (as an object) is not within the associated wrappers.
+                    if (fmgEntryGroup.SupportsTitle)
+                    {
+                        var wrapper = editor.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
+
+                        // If not null, then use the associated wrapper
+                        if(wrapper != null)
+                            ProcessFmg(wrapper, storedFmgContainer, true);
+                        // If null, then it means the current selection IS this wrapper, so use that
+                        else
+                            ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
+                    }
+                    if (fmgEntryGroup.SupportsSummary)
+                    {
+                        var wrapper = editor.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
+                        if (wrapper != null)
+                            ProcessFmg(wrapper, storedFmgContainer, true);
+                        else
+                            ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
+                    }
+                    if (fmgEntryGroup.SupportsDescription)
+                    {
+                        var wrapper = editor.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
+                        if (wrapper != null)
+                            ProcessFmg(wrapper, storedFmgContainer, true);
+                        else
+                            ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
+                    }
+                    if (fmgEntryGroup.SupportsEffect)
+                    {
+                        var wrapper = editor.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
+                        if (wrapper != null)
+                            ProcessFmg(wrapper, storedFmgContainer, true);
+                        else
+                            ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
+                    }
+                }
+                else
+                {
+                    ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
+                }
+            }
+            // Otherwise just export the selected entries
+            else
+            {
+                ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
+            }
+        }
+
+        WriteWrapper(storedFmgContainer);
     }
 
-    public static void WriteWrapper(StoredFmgWrapper wrapper)
+    private static void ProcessFmg(TextFmgWrapper wrapper, StoredFmgContainer storedFmgText, bool selectionOnly = false)
     {
-        var writeDir = TextLocator.GetFmgWrapperDirectory();
+        // Build wrapper
+        var storedFmgWrapper = new StoredFmgWrapper();
+        storedFmgWrapper.Name = wrapper.Name;
+        storedFmgWrapper.ID = wrapper.ID;
+
+        // Build FMG
+        var storedFmg = new FMG();
+        storedFmg.Name = wrapper.File.Name;
+        storedFmg.Version = wrapper.File.Version;
+        storedFmg.BigEndian = wrapper.File.BigEndian;
+        storedFmg.Entries = new List<FMG.Entry>();
+
+        // Build FMG entries
+        foreach (var entry in wrapper.File.Entries)
+        {
+            ProcessFmgEntries(storedFmg, entry, selectionOnly);
+        }
+
+        // Add built FMG to wrapper
+        storedFmgWrapper.Fmg = storedFmg;
+
+        // Add FMG wrapper to stored text list (only if it contains entries)
+        if(storedFmg.Entries.Count > 0)
+            storedFmgText.FmgWrappers.Add(storedFmgWrapper);
+    }
+
+    private static void ProcessFmgEntries(FMG storedFmg, FMG.Entry entry, bool selectionOnly = false)
+    {
+        var editor = Smithbox.EditorHandler.TextEditor;
+
+        // For the FMG entry selection only option
+        if(selectionOnly)
+        {
+            bool skip = true;
+
+            foreach(var sel in editor.Selection.FmgEntryMultiselect.StoredEntries)
+            {
+                var fmgEntry = sel.Value;
+
+                if(fmgEntry.ID == entry.ID)
+                {
+                    skip = false;
+                }
+            }
+
+            if(skip)
+            {
+                return;
+            }
+        }
+
+        // All
+        if (CurrentExportModifier is ExportModifier.None)
+        {
+            var storedFmgEntry = new FMG.Entry(storedFmg, entry.ID, entry.Text);
+            storedFmg.Entries.Add(storedFmgEntry);
+        }
+        // Modified Omly
+        if (CurrentExportModifier is ExportModifier.ModifiedOnly)
+        {
+            if (editor.DifferenceManager.IsDifferentToVanilla(entry))
+            {
+                var storedFmgEntry = new FMG.Entry(storedFmg, entry.ID, entry.Text);
+                storedFmg.Entries.Add(storedFmgEntry);
+            }
+        }
+        // Unique Only
+        if (CurrentExportModifier is ExportModifier.UniqueOnly)
+        {
+            if (editor.DifferenceManager.IsUniqueToProject(entry))
+            {
+                var storedFmgEntry = new FMG.Entry(storedFmg, entry.ID, entry.Text);
+                storedFmg.Entries.Add(storedFmgEntry);
+            }
+        }
+    }
+
+    public static void WriteWrapper(StoredFmgContainer wrapper)
+    {
+        var writeDir = TextLocator.GetStoredTextDirectory();
         var writePath = $"{writeDir}\\{wrapper.Name}.json";
 
         if(!Directory.Exists(writeDir))
@@ -109,7 +455,7 @@ public static class FmgExporter
         if (File.Exists(writePath))
         {
             DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"Stored text already exists under this name. Overwrite?", 
+                    $"Exported text already exists under this name. Overwrite?", 
                     "Warning", 
                     MessageBoxButtons.YesNo);
 
@@ -125,7 +471,7 @@ public static class FmgExporter
 
         if(proceed)
         {
-            string jsonString = JsonSerializer.Serialize(wrapper, typeof(StoredFmgWrapper), StoredFmgWrapperSerializationContext.Default);
+            string jsonString = JsonSerializer.Serialize(wrapper, typeof(StoredFmgContainer), StoredContainerWrapperSerializationContext.Default);
 
             try
             {
@@ -135,7 +481,7 @@ public static class FmgExporter
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Exported stored text as {wrapper.Name} at: {writePath}");
+                TaskLogs.AddLog($"Exported text as {wrapper.Name} at: {writePath}");
             }
             catch (Exception ex)
             {

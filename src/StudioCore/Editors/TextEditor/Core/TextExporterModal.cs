@@ -15,7 +15,6 @@ public class TextExporterModal
     private TextSelectionManager Selection;
 
     public bool ShowModal = false;
-    public ExportType ExportType = ExportType.All;
 
     public string WrapperName = "";
 
@@ -29,7 +28,7 @@ public class TextExporterModal
     {
         if (ShowModal)
         {
-            ImGui.OpenPopup("Export Text Modal");
+            ImGui.OpenPopup("Export Text");
         }
 
         ExportMenu();
@@ -38,7 +37,7 @@ public class TextExporterModal
 
     public void ExportMenu()
     {
-        if (ImGui.BeginPopupModal("Export Text Modal", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
+        if (ImGui.BeginPopupModal("Export Text", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
             var width = UI.ModalButtonSize;
 
@@ -46,11 +45,20 @@ public class TextExporterModal
             ImGui.SetNextItemWidth(width.X);
             ImGui.InputText("##wrapperName", ref WrapperName, 255);
 
+            if(WrapperName == "")
+            {
+                ImGui.BeginDisabled();
+            }
             if (ImGui.Button("Export", UI.ModalButtonHalfSize))
             {
                 ShowModal = false;
-                FmgExporter.ProcessExport(WrapperName, ExportType);
+                FmgExporter.ProcessExport(WrapperName);
             }
+            if (WrapperName == "")
+            {
+                ImGui.EndDisabled();
+            }
+
             ImGui.SameLine();
             if (ImGui.Button("Close", UI.ModalButtonHalfSize))
             {
@@ -61,10 +69,4 @@ public class TextExporterModal
             ImGui.EndPopup();
         }
     }
-}
-
-public enum ExportType
-{
-    All,
-    Selected
 }
