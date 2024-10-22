@@ -1391,7 +1391,8 @@ public class MapPropertyEditor
                 var o = prop.GetValue(obj);
                 if (o != null)
                 {
-                    var open = ImGui.TreeNodeEx(prop.Name, ImGuiTreeNodeFlags.DefaultOpen);
+                    var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                    ShowFieldHint(type, prop, selection);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     ImGui.Text(o.GetType().Name);
