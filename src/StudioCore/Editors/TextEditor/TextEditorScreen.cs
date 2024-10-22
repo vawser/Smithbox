@@ -341,9 +341,7 @@ public class TextEditorScreen : EditorScreen
             AutomaticDiffTimer.Close();
         }
 
-        var interval = 10 * 1000;
-        if (interval < 10000)
-            interval = 10000;
+        var interval = 3000;
 
         AutomaticDiffTimer = new Timer(interval);
         AutomaticDiffTimer.Elapsed += OnAutomaticDiff;

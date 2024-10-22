@@ -118,7 +118,3 @@ Model Editor:
 # TODO
 - Check https://github.com/vawser/Smithbox/pull/146 PR, test existing games for regressions in Map, Model and Text Editor
 
-
-# PRIORITY - for hotfix release
-- ADD: inner search from File and Text File filters (e.g. check the entries too) - Add search button for them next to filter box
-

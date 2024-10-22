@@ -49,7 +49,7 @@ public class TextFilters
     /// <summary>
     /// Is the search input an match for the passed text?
     /// </summary>
-    public bool IsFileFilterMatch(string text, string alias)
+    public bool IsFileFilterMatch(string text, string alias, TextContainerWrapper containerWrapper)
     {
         bool isValid = true;
 

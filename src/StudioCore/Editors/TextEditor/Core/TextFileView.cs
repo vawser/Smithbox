@@ -195,7 +195,7 @@ public class TextFileView
             }
         }
 
-        if (Filters.IsFileFilterMatch(displayName, ""))
+        if (Filters.IsFileFilterMatch(displayName, "", wrapper))
         {
             // Script row
             if (ImGui.Selectable($"{displayName}##{wrapper.Filename}{index}", index == Selection.SelectedContainerKey))

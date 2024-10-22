@@ -23,6 +23,9 @@ public static class LanguageSync
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
+        if (!TextBank.VanillaBankLoaded)
+            return;
+        
         var currentContainerWrapper = editor.Selection.SelectedContainerWrapper;
 
         if (ImGui.BeginMenu("Sync With"))
@@ -103,7 +106,6 @@ public static class LanguageSync
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        // Add new
         foreach (var srcEntry in sourceWrapper.File.Entries)
         {
             // Unique to source
@@ -119,21 +121,24 @@ public static class LanguageSync
                 var newEntry = new FMG.Entry(targetWrapper.File, srcEntry.ID, newText);
                 targetWrapper.File.Entries.Add(newEntry);
             }
-
-            // TODO: add modified detection based on source entry difference state
-            /*
             else if (targetWrapper.File.Entries.Any(e => e.ID == srcEntry.ID))
             {
                 var targetEntry = targetWrapper.File.Entries.Where(e => e.ID == srcEntry.ID).FirstOrDefault();
+
                 if(targetEntry != null)
                 {
-                    var newText = targetEntry.Text;
+                    if (editor.DifferenceManager.IsDifferentToVanilla(srcEntry))
+                    {
+                        var newText = targetEntry.Text;
 
-                    var newEntry = new FMG.Entry(targetWrapper.File, srcEntry.ID, newText);
-                    targetWrapper.File.Entries.Add(newEntry);
+                        if (newText == null)
+                            newText = "";
+
+                        var newEntry = new FMG.Entry(targetWrapper.File, srcEntry.ID, newText);
+                        targetWrapper.File.Entries.Add(newEntry);
+                    }
                 }
             }
-            */
         }
 
         targetWrapper.File.Entries.Sort();

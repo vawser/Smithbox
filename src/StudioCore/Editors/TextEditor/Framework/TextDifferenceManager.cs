@@ -200,7 +200,6 @@ public class TextDifferenceManager
                 return DifferenceCache[entryId];
             }
         }
-        // Ptjer
         else
         {
             if (DifferenceCache.ContainsKey(entryId))
