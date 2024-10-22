@@ -192,8 +192,8 @@ public static class GlobalTextReplacement
 
             foreach (var result in ReplacementResults)
             {
-                // Ignore results from unused containers if not in Advanced Presentation mode
-                if (!CFG.Current.TextEditor_AdvancedPresentationMode)
+                // Ignore results from unused containers if in Simple mode
+                if (CFG.Current.TextEditor_SimpleFileList)
                 {
                     if (result.ContainerWrapper.IsContainerUnused())
                     {

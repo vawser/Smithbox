@@ -133,7 +133,7 @@ public static class FmgImporter
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current File.\n\nExisting entries will be not modified by the contents of the stored text.");
+        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current File.\n\nExisting entries will be NOT modified by the contents of the stored text.");
 
         if (ImGui.BeginMenu("Replace"))
         {
@@ -154,7 +154,7 @@ public static class FmgImporter
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current Text file.\n\nExisting entries will be modified by the contents of the stored text.");
+        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current Text file.\n\nExisting entries WILL be modified by the contents of the stored text.");
     }
 
     private static List<EditorAction> ImportActions;

@@ -130,8 +130,8 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
         if (name.Contains("ngword"))
             prettyName = "Blocked Words";
 
-        // Ignore this in Simple mode since the user doesn't need to know it
-        if (CFG.Current.TextEditor_AdvancedPresentationMode)
+        // Only show DLC type in non-Simple mode
+        if (!CFG.Current.TextEditor_SimpleFileList)
         {
             if (name.Contains("dlc01") || name.Contains("dlc1"))
                 prettyName = $"{prettyName} - DLC 1";

@@ -62,8 +62,8 @@ public class TextFmgView
                 }
                 else
                 {
-                    // Advanced Presentation
-                    if (CFG.Current.TextEditor_AdvancedPresentationMode)
+                    // If not in Simple mode, display all FMG files fully
+                    if (!CFG.Current.TextEditor_SimpleFmgList)
                     {
                         var info = Selection.SelectedContainerWrapper;
 
@@ -200,7 +200,7 @@ public class TextFmgView
                             }
                         }
                     }
-                    // Simple Presentation
+                    // Otherwise, display only the Title FMG files and ungrouped FMG files, split by Base/DLC1/DLC2
                     else
                     {
                         var info = Selection.SelectedContainerWrapper;
@@ -292,8 +292,8 @@ public class TextFmgView
                 selectableName = $"[{id}] {selectableName}";
             }
 
-            // Only show DLC markers in Advanced Mode
-            if(CFG.Current.TextEditor_AdvancedPresentationMode && dlcGroupingName != "")
+            // Only show DLC markers in non Simple mode
+            if(!CFG.Current.TextEditor_SimpleFmgList && dlcGroupingName != "")
             {
                 selectableName = $"{selectableName} [{dlcGroupingName}]";
             }

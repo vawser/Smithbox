@@ -16,14 +16,6 @@ public class TextEditorTab
 
     public void Display()
     {
-        // Presentation
-        if (ImGui.CollapsingHeader("Presentation", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Advanced Presentation Mode", ref CFG.Current.TextEditor_AdvancedPresentationMode);
-            UIHelper.ShowHoverTooltip("Toggles the display of containers and FMG to mirror the actual structure.");
-
-        }
-
         // Data
         if (ImGui.CollapsingHeader("Data", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -66,17 +58,22 @@ public class TextEditorTab
         // File List
         if (ImGui.CollapsingHeader("File List", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Simple File List", ref CFG.Current.TextEditor_SimpleFileList);
+            UIHelper.ShowHoverTooltip("Display the file list in a simple form: this means unused containers are hidden.");
+
             ImGui.Checkbox("Display Community File Name", ref CFG.Current.TextEditor_DisplayCommunityContainerName);
             UIHelper.ShowHoverTooltip("If enabled, the names in the File List will be given a community name.");
 
             ImGui.Checkbox("Display Source Path", ref CFG.Current.TextEditor_DisplaySourcePath);
             UIHelper.ShowHoverTooltip("If enabled, the path of the source file will be displayed in the hover tooltip.");
-
         }
 
         // Text File List
         if (ImGui.CollapsingHeader("Text File List", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Simple Text File List", ref CFG.Current.TextEditor_SimpleFmgList);
+            UIHelper.ShowHoverTooltip("Display the text file list in a simple form: this means non-title or standalone files are hidden.");
+
             ImGui.Checkbox("Display FMG ID", ref CFG.Current.TextEditor_DisplayFmgID);
             UIHelper.ShowHoverTooltip("Display the FMG ID in the Text File List by the name.");
 
@@ -108,6 +105,16 @@ public class TextEditorTab
 
             ImGui.Checkbox("Allow Duplicate IDs", ref CFG.Current.TextEditor_Entry_AllowDuplicateIds);
             UIHelper.ShowHoverTooltip("Allow Entry ID input to apply change even if the ID is a duplicate of an existing entry row.");
+        }
+
+        // Text Export
+        if (ImGui.CollapsingHeader("Text Export", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Include Grouped Entries", ref CFG.Current.TextEditor_TextExport_IncludeGroupedEntries);
+            UIHelper.ShowHoverTooltip("When exporting Text Entries, if they are associated with a group, include the associated entries as well whilst exporting.");
+
+            ImGui.Checkbox("Use Quick Export", ref CFG.Current.TextEditor_TextExport_UseQuickExport);
+            UIHelper.ShowHoverTooltip("Automatically name the export file instead of display the Export Text prompt. Will overwrite the existing quick export file each time.");
         }
 
         // Text Entry Copy

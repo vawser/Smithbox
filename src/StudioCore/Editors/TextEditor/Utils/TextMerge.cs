@@ -20,12 +20,17 @@ public static class TextMerge
 {
     public static string TargetProjectDir = "";
 
-    public static bool ReplaceModifiedRows = false;
+    public static bool ReplaceModifiedRows = true;
 
     public static void Display()
     {
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
+
+        UIHelper.WrappedText("Use this to merge a target project's text files into your current project.");
+        UIHelper.WrappedText("");
+        UIHelper.WrappedText("Merging will bring all unique text from the target project into your project.\nIncludes modified text if enabled.");
+        UIHelper.WrappedText("");
 
         if (ImGui.BeginTable($"textMergeTable", 2, ImGuiTableFlags.SizingFixedFit))
         {
@@ -119,7 +124,7 @@ public static class TextMerge
             }
         }
 
-        TaskLogs.AddLog($"Applied FMG Merge.");
+        TaskLogs.AddLog($"Applied Text Merge.");
     }
 
     private static void ProcessFmg(TextFmgWrapper sourceInfo, TextFmgWrapper targetInfo)
@@ -159,6 +164,6 @@ public static class TextMerge
             targetEntry.Text = entry.Text;
         }
 
-        TaskLogs.AddLog($"Modified {sourceInfo.Name} FMG");
+        TaskLogs.AddLog($"Modified {sourceInfo.Name} Text File");
     }
 }

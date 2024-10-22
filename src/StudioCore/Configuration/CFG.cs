@@ -386,6 +386,8 @@ public class CFG
     public TextContainerCategory TextEditor_PrimaryCategory = TextContainerCategory.English;
 
     public bool TextEditor_AdvancedPresentationMode = false;
+    public bool TextEditor_SimpleFileList = true;
+    public bool TextEditor_SimpleFmgList = true;
 
     public bool TextEditor_IncludeNonPrimaryContainers = true;
     public bool TextEditor_IncludeVanillaCache = true;
@@ -394,7 +396,7 @@ public class CFG
     public bool TextEditor_DisplayCommunityContainerName = true;
     public bool TextEditor_DisplaySourcePath = true;
 
-    public bool TextEditor_DisplayFmgID = true;
+    public bool TextEditor_DisplayFmgID = false;
     public bool TextEditor_DisplayFmgPrettyName = true;
 
     public bool TextEditor_DisplayNullEntries = true;
@@ -417,6 +419,10 @@ public class CFG
     public string TextEditor_CreationModal_IncrementalNaming_Template = "";
 
     public bool TextEditor_IgnoreIdOnDuplicate = false;
+
+    public bool TextEditor_TextExport_IncludeGroupedEntries = true;
+    public bool TextEditor_TextExport_UseQuickExport = false;
+    public string TextEditor_TextExport_QuickExportPrefix = "quick_export";
 
     // OLD
     public string FMG_SearchAndReplace_SearchText = "";

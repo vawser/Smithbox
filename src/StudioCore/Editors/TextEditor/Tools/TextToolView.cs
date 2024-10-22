@@ -52,12 +52,10 @@ public class TextToolView
             }
 
             // Text Merge
-            /*
             if (ImGui.CollapsingHeader("Text Merge"))
             {
                 TextMerge.Display();
             }
-            */
         }
 
         ImGui.End();

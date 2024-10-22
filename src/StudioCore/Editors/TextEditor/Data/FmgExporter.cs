@@ -255,9 +255,19 @@ public static class FmgExporter
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        editor.TextExportModal.ShowModal = true;
         CurrentExportType = exportType;
         CurrentExportModifier = exportModifier;
+
+        if (CFG.Current.TextEditor_TextExport_UseQuickExport)
+        {
+            var exportName = CFG.Current.TextEditor_TextExport_QuickExportPrefix;
+
+            FmgExporter.ProcessExport(exportName);
+        }
+        else
+        {
+            editor.TextExportModal.ShowModal = true;
+        }
     }
 
     public static ExportType CurrentExportType = ExportType.Container;
@@ -300,7 +310,7 @@ public static class FmgExporter
             var selectedFmgWrapper = editor.Selection.SelectedFmgWrapper;
 
             // Export associated group entries as well
-            if(CFG.Current.TextEditor_Entry_DisplayGroupedEntries)
+            if(CFG.Current.TextEditor_TextExport_IncludeGroupedEntries)
             {
                 var currentEntry = editor.Selection._selectedFmgEntry;
                 var fmgEntryGroup = editor.EntryGroupManager.GetEntryGroup(currentEntry);
