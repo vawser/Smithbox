@@ -58,7 +58,7 @@ public class TextNewEntryCreationModal
         {
             var entry = Selection._selectedFmgEntry;
             var fmgEntryGroup = EntryGroupManager.GetEntryGroup(entry);
-
+            
             if (ImGui.CollapsingHeader("Configuration", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 if (ImGui.BeginTable($"createConfigurationTable", 2, ImGuiTableFlags.SizingFixedFit))
@@ -235,7 +235,7 @@ public class TextNewEntryCreationModal
             // Grouped
             if(fmgEntryGroup.SupportsGrouping)
             {
-                if (fmgEntryGroup.Title != null)
+                if (fmgEntryGroup.SupportsTitle)
                 {
                     ImGui.Separator();
                     UIHelper.WrappedText("Title");
@@ -244,7 +244,7 @@ public class TextNewEntryCreationModal
                     DisplayEditTable(1, ref _newId, ref _newTitleText);
                 }
 
-                if (fmgEntryGroup.Summary != null)
+                if (fmgEntryGroup.SupportsSummary)
                 {
                     ImGui.Separator();
                     UIHelper.WrappedText("Summary");
@@ -253,7 +253,7 @@ public class TextNewEntryCreationModal
                     DisplayEditTable(2, ref _newId, ref _newSummaryText);
                 }
 
-                if (fmgEntryGroup.Description != null)
+                if (fmgEntryGroup.SupportsDescription)
                 {
                     ImGui.Separator();
                     UIHelper.WrappedText("Description");
@@ -262,7 +262,7 @@ public class TextNewEntryCreationModal
                     DisplayEditTable(3, ref _newId, ref _newDescriptionText);
                 }
 
-                if (fmgEntryGroup.Effect != null)
+                if (fmgEntryGroup.SupportsEffect)
                 {
                     ImGui.Separator();
                     UIHelper.WrappedText("Effect");
@@ -325,105 +325,24 @@ public class TextNewEntryCreationModal
         }
     }
 
+    private bool HasIdCollision = false;
+
     /// <summary>
     /// Create new entries based on passed parameters.
     /// </summary>
     public List<EditorAction> CreateNewEntries(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, int creationCount, 
         FmgEntryGeneratorBase generator, int offset)
     {
-        var displayIdError = false;
-
         if (IsAvailableID(entry, newId))
         {
             List<EditorAction> actions = new List<EditorAction>();
 
-            // TODO: add support for creating grouped entries even if source entry isn't grouped (but supports them)
             if (fmgEntryGroup.SupportsGrouping)
             {
-                // Check to see if the entry group has a filled entry,
-                // if it is null then we can ignore that 'type' when making the new entries
-
-                if (fmgEntryGroup.Title != null)
-                {
-                    if (IsAvailableID(fmgEntryGroup.Title, newId))
-                    {
-                        var newTitleText = _newTitleText;
-
-                        if (CFG.Current.TextEditor_CreationModal_UseIncrementalTitling)
-                        {
-                            var prefix = CFG.Current.TextEditor_CreationModal_IncrementalTitling_Prefix;
-                            var postfix = CFG.Current.TextEditor_CreationModal_IncrementalTitling_Postfix;
-
-                            if (creationCount != 0)
-                            {
-                                newTitleText = $"{newTitleText} {prefix}{creationCount}{postfix}";
-                            }
-                        }
-
-                        if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming && generator != null)
-                        {
-                            foreach(var row in generator.DefinitionList)
-                            {
-                                if(row.Offset == offset)
-                                {
-                                    if (row.PossessiveAdjust && newTitleText.Contains("'s"))
-                                    {
-                                        var owner = newTitleText.Split("'s")[0];
-                                        var part = newTitleText.Split("'s")[1];
-
-                                        newTitleText = $"{owner}'s {row.PrependText.Trim()}{part}{row.AppendText}";
-                                    }
-                                    else
-                                    {
-                                        newTitleText = $"{row.PrependText} {newTitleText}{row.AppendText}";
-                                    }
-                                }
-                            }
-                        }
-
-                        actions.Add(CreateNewEntry(fmgEntryGroup.Title, newId, newTitleText));
-                    }
-                    else
-                    {
-                        displayIdError = true;
-                    }
-                }
-
-                if (fmgEntryGroup.Summary != null)
-                {
-                    if (IsAvailableID(fmgEntryGroup.Summary, newId))
-                    {
-                        actions.Add(CreateNewEntry(fmgEntryGroup.Summary, newId, _newSummaryText));
-                    }
-                    else
-                    {
-                        displayIdError = true;
-                    }
-                }
-
-                if (fmgEntryGroup.Description != null)
-                {
-                    if (IsAvailableID(fmgEntryGroup.Description, newId))
-                    {
-                        actions.Add(CreateNewEntry(fmgEntryGroup.Description, newId, _newDescriptionText));
-                    }
-                    else
-                    {
-                        displayIdError = true;
-                    }
-                }
-
-                if (fmgEntryGroup.Effect != null)
-                {
-                    if (IsAvailableID(fmgEntryGroup.Effect, newId))
-                    {
-                        actions.Add(CreateNewEntry(fmgEntryGroup.Effect, newId, _newEffectText));
-                    }
-                    else
-                    {
-                        displayIdError = true;
-                    }
-                }
+                HandleNewTitleEntry(entry, fmgEntryGroup, newId, creationCount, generator, offset, actions);
+                HandleNewSummaryEntry(entry, fmgEntryGroup, newId, actions);
+                HandleNewDescriptionEntry(entry, fmgEntryGroup, newId, actions);
+                HandleNewEffectEntry(entry, fmgEntryGroup, newId, actions);
             }
             else
             {
@@ -440,22 +359,195 @@ public class TextNewEntryCreationModal
                 return actions;
             }
         }
-        else
-        {
-            displayIdError = true;
-        }
 
         // Display error message if ID is already in use by parent FMG
-        if (displayIdError)
+        if (HasIdCollision)
         {
             PlatformUtils.Instance.MessageBox(
                 "ID is already in use or is invalid.",
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+
+            HasIdCollision = false;
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Handle title entry creation
+    /// </summary>
+    private void HandleNewTitleEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, int creationCount,
+        FmgEntryGeneratorBase generator, int offset, List<EditorAction> actions)
+    {
+        var selectedFmgWrapper = Selection.SelectedFmgWrapper;
+
+        // Title
+        if (fmgEntryGroup.SupportsTitle)
+        {
+            TextFmgWrapper wrapper = null;
+
+            // If no existing Title entry exists, get the appropriate title wrapper and create a new entry
+            if (fmgEntryGroup.Title == null)
+            {
+                wrapper = EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
+            }
+            else
+            {
+                wrapper = selectedFmgWrapper;
+            }
+
+            var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
+
+            if (IsAvailableID(sourceEntry, newId))
+            {
+                var newTitleText = _newTitleText;
+
+                if (CFG.Current.TextEditor_CreationModal_UseIncrementalTitling)
+                {
+                    var prefix = CFG.Current.TextEditor_CreationModal_IncrementalTitling_Prefix;
+                    var postfix = CFG.Current.TextEditor_CreationModal_IncrementalTitling_Postfix;
+
+                    if (creationCount != 0)
+                    {
+                        newTitleText = $"{newTitleText} {prefix}{creationCount}{postfix}";
+                    }
+                }
+
+                if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming && generator != null)
+                {
+                    foreach (var row in generator.DefinitionList)
+                    {
+                        if (row.Offset == offset)
+                        {
+                            if (row.PossessiveAdjust && newTitleText.Contains("'s"))
+                            {
+                                var owner = newTitleText.Split("'s")[0];
+                                var part = newTitleText.Split("'s")[1];
+
+                                newTitleText = $"{owner}'s {row.PrependText.Trim()}{part}{row.AppendText}";
+                            }
+                            else
+                            {
+                                newTitleText = $"{row.PrependText} {newTitleText}{row.AppendText}";
+                            }
+                        }
+                    }
+                }
+
+                actions.Add(CreateNewEntry(sourceEntry, newId, newTitleText));
+            }
+            else
+            {
+                HasIdCollision = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Handle summary entry creation
+    /// </summary>
+    private void HandleNewSummaryEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, List<EditorAction> actions)
+    {
+        var selectedFmgWrapper = Selection.SelectedFmgWrapper;
+
+        // Summary
+        if (fmgEntryGroup.SupportsSummary)
+        {
+            TextFmgWrapper wrapper = null;
+
+            // If no existing Summary entry exists, get the appropriate Summary wrapper and create a new entry
+            if (fmgEntryGroup.Summary == null)
+            {
+                wrapper = EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
+            }
+            else
+            {
+                wrapper = selectedFmgWrapper;
+            }
+
+            var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
+
+            if (IsAvailableID(sourceEntry, newId))
+            {
+                actions.Add(CreateNewEntry(sourceEntry, newId, _newSummaryText));
+            }
+            else
+            {
+                HasIdCollision = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Handle description entry creation
+    /// </summary>
+    private void HandleNewDescriptionEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, List<EditorAction> actions)
+    {
+        var selectedFmgWrapper = Selection.SelectedFmgWrapper;
+
+        // Description
+        if (fmgEntryGroup.SupportsDescription)
+        {
+            TextFmgWrapper wrapper = null;
+
+            // If no existing Description entry exists, get the appropriate Description wrapper and create a new entry
+            if (fmgEntryGroup.Description == null)
+            {
+                wrapper = EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
+            }
+            else
+            {
+                wrapper = selectedFmgWrapper;
+            }
+
+            var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
+
+            if (IsAvailableID(sourceEntry, newId))
+            {
+                actions.Add(CreateNewEntry(sourceEntry, newId, _newDescriptionText));
+            }
+            else
+            {
+                HasIdCollision = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Handle effect entry creation
+    /// </summary>
+    private void HandleNewEffectEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, List<EditorAction> actions)
+    {
+        var selectedFmgWrapper = Selection.SelectedFmgWrapper;
+
+        // Description
+        if (fmgEntryGroup.SupportsEffect)
+        {
+            TextFmgWrapper wrapper = null;
+
+            // If no existing Effect entry exists, get the appropriate Effect wrapper and create a new entry
+            if (fmgEntryGroup.Effect == null)
+            {
+                wrapper = EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
+            }
+            else
+            {
+                wrapper = selectedFmgWrapper;
+            }
+
+            var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
+
+            if (IsAvailableID(sourceEntry, newId))
+            {
+                actions.Add(CreateNewEntry(sourceEntry, newId, _newEffectText));
+            }
+            else
+            {
+                HasIdCollision = true;
+            }
+        }
     }
 
     /// <summary>

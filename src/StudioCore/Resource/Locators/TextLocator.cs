@@ -87,16 +87,26 @@ public static class TextLocator
         FileList.Add(path);
     }
 
-    public static string GetFmgWrapperDirectory()
+    public static bool IsDirectory(string path)
     {
-        return $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\FMG Wrappers";
+        FileAttributes attr = File.GetAttributes(path);
+
+        if (attr.HasFlag(FileAttributes.Directory))
+            return true;
+
+        return false;
     }
 
-    public static List<string> GetFmgWrappers()
+    public static string GetStoredTextDirectory()
+    {
+        return $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Exported Text";
+    }
+
+    public static List<string> GetStoredContainerWrappers()
     {
         List<string> results = new();
 
-        var wrapperDir = GetFmgWrapperDirectory();
+        var wrapperDir = GetStoredTextDirectory();
 
         if (Directory.Exists(wrapperDir))
         {

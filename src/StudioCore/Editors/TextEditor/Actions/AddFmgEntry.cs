@@ -39,7 +39,15 @@ public class AddFmgEntry : EditorAction
 
     public override ActionEvent Execute()
     {
-        Fmg.Entries.Insert(InsertionIndex, NewEntry);
+        if (InsertionIndex != -1)
+        {
+            Fmg.Entries.Insert(InsertionIndex, NewEntry);
+        }
+        else
+        {
+            Fmg.Entries.Add(NewEntry);
+        }
+
         Info.IsModified = true;
 
         Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();
@@ -49,7 +57,15 @@ public class AddFmgEntry : EditorAction
 
     public override ActionEvent Undo()
     {
-        Fmg.Entries.RemoveAt(InsertionIndex);
+        if (InsertionIndex != -1)
+        {
+            Fmg.Entries.RemoveAt(InsertionIndex);
+        }
+        else
+        {
+            Fmg.Entries.Remove(NewEntry);
+        }
+
         Info.IsModified = false;
 
         Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();

@@ -1,11 +1,15 @@
 ﻿using ImGuiNET;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
+using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Actions;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,7 +22,82 @@ namespace StudioCore.Editors.TextEditor;
 
 public static class FmgImporter
 {
-    public static Dictionary<string, StoredFmgWrapper> ImportSources = new();
+    public static Dictionary<string, StoredFmgContainer> ImportSources = new();
+
+    /// <summary>
+    /// Context Menu options in the Container list
+    /// </summary>
+    public static void MenubarOptions()
+    {
+        var editor = Smithbox.EditorHandler.TextEditor;
+
+        if (ImGui.BeginMenu("Import"))
+        {
+            if (ImGui.BeginMenu("File", editor.Selection.SelectedContainerWrapper != null))
+            {
+                DisplayImportList(ImportType.Container);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.ShowHoverTooltip("Import the selected text file on the container level, replacing all FMGs and their associated entries (if applicable).");
+
+            if (ImGui.BeginMenu("Text File", editor.Selection.SelectedFmgWrapper.File != null))
+            {
+                DisplayImportList(ImportType.FMG);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.ShowHoverTooltip("Import the selected text file on the FMG level, replacing all associated entries (if applicable).");
+
+            if (ImGui.BeginMenu("Text Entry", editor.Selection._selectedFmgEntry != null))
+            {
+                DisplayImportList(ImportType.FMG_Entries);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.ShowHoverTooltip("Import the selected text file on the FMG Entry level, replacing all matching entries.");
+
+            ImGui.EndMenu();
+        }
+    }
+    /// <summary>
+    /// Context Menu options in the Container list
+    /// </summary>
+    public static void FileContextMenuOptions()
+    {
+        if (ImGui.BeginMenu("Import Text"))
+        {
+            DisplayImportList(ImportType.Container);
+
+            ImGui.EndMenu();
+        }
+    }
+
+    /// <summary>
+    /// Context Menu options in the FMG list
+    /// </summary>
+    public static void FmgContextMenuOptions()
+    {
+        if (ImGui.BeginMenu("Import Text"))
+        {
+            DisplayImportList(ImportType.FMG);
+
+            ImGui.EndMenu();
+        }
+    }
+
+    /// <summary>
+    /// Context Menu options in the FMG Entry list
+    /// </summary>
+    public static void FmgEntryContextMenuOptions()
+    {
+        if (ImGui.BeginMenu("Import Text"))
+        {
+            DisplayImportList(ImportType.FMG_Entries);
+
+            ImGui.EndMenu();
+        }
+    }
 
     /// <summary>
     /// Get the FMG Wrapper sources on project load
@@ -29,45 +108,9 @@ public static class FmgImporter
     }
 
     /// <summary>
-    /// Load the wrappers into the FmgWrapper object and fill the ImportSources dictionary
-    /// </summary>
-    private static void LoadWrappers()
-    {
-        ImportSources = new();
-
-        var wrapperPathList = TextLocator.GetFmgWrappers();
-
-        if (wrapperPathList.Count > 0)
-        {
-            foreach (var path in wrapperPathList)
-            {
-                var filename = Path.GetFileName(path);
-                var wrapper = new StoredFmgWrapper();
-
-                if (File.Exists(path))
-                {
-                    using (var stream = File.OpenRead(path))
-                    {
-                        wrapper = JsonSerializer.Deserialize(stream, StoredFmgWrapperSerializationContext.Default.StoredFmgWrapper);
-                    }
-                }
-
-                if(!ImportSources.ContainsKey(filename))
-                {
-                    ImportSources.Add(filename, wrapper);
-                }
-                else
-                {
-                    TaskLogs.AddLog($"Attempted to add stored text with existing key: {filename}");
-                }
-            }
-        }
-    }
-
-    /// <summary>
     /// Display the possible import sources for the user to select from
     /// </summary>
-    public static void DisplayImportList()
+    public static void DisplayImportList(ImportType importType)
     {
         LoadWrappers();
 
@@ -79,7 +122,7 @@ public static class FmgImporter
                 {
                     if (ImGui.Selectable($"{entry.Name}"))
                     {
-                        AppendEntries(entry);
+                        ImportText(entry, ImportBehavior.Append);
                     }
                 }
             }
@@ -90,7 +133,7 @@ public static class FmgImporter
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current FMG.\n\nExisting entries will be not modified by the contents of the stored text.");
+        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current File.\n\nExisting entries will be not modified by the contents of the stored text.");
 
         if (ImGui.BeginMenu("Replace"))
         {
@@ -100,7 +143,7 @@ public static class FmgImporter
                 {
                     if (ImGui.Selectable($"{entry.Name}"))
                     {
-                        ReplaceEntries(entry);
+                        ImportText(entry, ImportBehavior.Replace);
                     }
                 }
             }
@@ -111,75 +154,100 @@ public static class FmgImporter
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current FMG.\n\nExisting entries will be modified by the contents of the stored text.");
+        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current Text file.\n\nExisting entries will be modified by the contents of the stored text.");
+    }
 
-        if (ImGui.BeginMenu("Overwrite"))
+    private static List<EditorAction> ImportActions;
+
+    private static void ImportText(StoredFmgContainer containerWrapper, ImportBehavior importBehavior)
+    {
+        ImportActions = new List<EditorAction>();
+
+        var editor = Smithbox.EditorHandler.TextEditor;
+
+        var targetContainer = editor.Selection.SelectedContainerWrapper;
+
+        if (targetContainer == null)
+            return;
+
+        foreach (var fmgWrapper in targetContainer.FmgWrappers)
         {
-            if (ImportSources.Count > 0)
+            foreach (var storedFmgWrapper in containerWrapper.FmgWrappers)
             {
-                foreach (var (key, entry) in ImportSources)
+                if (fmgWrapper.ID == storedFmgWrapper.ID)
                 {
-                    if (ImGui.Selectable($"{entry.Name}"))
-                    {
-                        OverwriteEntries(entry);
-                    }
+                    ProcessFmg(targetContainer, fmgWrapper, storedFmgWrapper, importBehavior);
                 }
             }
-            else
-            {
-                ImGui.Text("No exported text exists yet.");
-            }
-
-            ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("The selected stored text will replace to the current FMG entry list.\n\nExisting entries will be removed completely.");
+
+        var groupAction = new FmgGroupedAction(ImportActions);
+        editor.EditorActionManager.ExecuteAction(groupAction);
+    }
+    private static void ProcessFmg(
+        TextContainerWrapper containerWrapper, 
+        TextFmgWrapper fmgWrapper, 
+        StoredFmgWrapper storedWrapper, 
+        ImportBehavior importBehavior)
+    {
+        var targetEntries = fmgWrapper.File.Entries;
+
+        foreach (var storedEntry in storedWrapper.Fmg.Entries)
+        {
+            storedEntry.Parent = fmgWrapper.File;
+
+            // New entry
+            if (!targetEntries.Any(e => e.ID == storedEntry.ID))
+            {
+                ImportActions.Add(new AddFmgEntry(containerWrapper, storedEntry, storedEntry, storedEntry.ID));
+            }
+            // Existing entry
+            else if(targetEntries.Any(e => e.ID == storedEntry.ID) && importBehavior is not ImportBehavior.Append)
+            {
+                var targetEntry = targetEntries.Where(e => e.ID == storedEntry.ID).FirstOrDefault();
+
+                if (targetEntry != null)
+                {
+                    ImportActions.Add(new ChangeFmgEntryText(containerWrapper, targetEntry, storedEntry.Text));
+                }
+            }
+        }
     }
 
     /// <summary>
-    /// Append contents of the selected source to the contents of the currently selected FMG (respecting ID order)
+    /// Load the wrappers into the FmgWrapper object and fill the ImportSources dictionary
     /// </summary>
-    public static void AppendEntries(StoredFmgWrapper wrapper)
+    private static void LoadWrappers()
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
+        ImportSources = new();
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
+        var wrapperPathList = TextLocator.GetStoredContainerWrappers();
 
-        var action = new AppendFmgEntries(selectedFmgInfo, wrapper);
-        editor.EditorActionManager.ExecuteAction(action);
+        if (wrapperPathList.Count > 0)
+        {
+            foreach (var path in wrapperPathList)
+            {
+                var filename = Path.GetFileName(path);
+                var wrapper = new StoredFmgContainer();
 
-        TaskLogs.AddLog($"Imported stored text: {wrapper.Name}.");
-    }
+                if (File.Exists(path))
+                {
+                    using (var stream = File.OpenRead(path))
+                    {
+                        wrapper = JsonSerializer.Deserialize(stream, StoredContainerWrapperSerializationContext.Default.StoredFmgContainer);
+                    }
+                }
 
-    /// <summary>
-    /// Replace the contents of the currently selected FMG with the contents of the selected source if they match, 
-    /// or append otherwise
-    /// </summary>
-    public static void ReplaceEntries(StoredFmgWrapper wrapper)
-    {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
-        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
-
-        var action = new ReplaceFmgEntries(selectedFmgInfo, wrapper);
-        editor.EditorActionManager.ExecuteAction(action);
-
-        TaskLogs.AddLog($"Imported stored text: {wrapper.Name}.");
-    }
-
-    /// <summary>
-    /// Overwrite the contents of the currently selected FMG with the contents of the selected source if they match, 
-    /// or append otherwise.
-    /// </summary>
-    public static void OverwriteEntries(StoredFmgWrapper wrapper)
-    {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
-        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
-
-        var action = new OverwriteFmgEntries(selectedFmgInfo, wrapper);
-        editor.EditorActionManager.ExecuteAction(action);
-
-        TaskLogs.AddLog($"Imported stored text: {wrapper.Name}.");
+                if (!ImportSources.ContainsKey(filename))
+                {
+                    ImportSources.Add(filename, wrapper);
+                }
+                else
+                {
+                    TaskLogs.AddLog($"Attempted to add stored text with existing key: {filename}");
+                }
+            }
+        }
     }
 }
 
