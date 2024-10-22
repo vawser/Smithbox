@@ -76,6 +76,7 @@ public static class TextMerge
         {
             ApplyMerge();
         }
+        UIHelper.ShowHoverTooltip("May hang whilst processing the merge.");
     }
 
     private static void ApplyMerge()
@@ -101,22 +102,35 @@ public static class TextMerge
         foreach (var entry in TextBank.FmgBank)
         {
             var primaryKey = Path.GetFileName(entry.Key);
+            var currentContainer = entry.Value;
 
             foreach (var pEntry in TextBank.TargetFmgBank)
             {
                 var targetKey = Path.GetFileName(pEntry.Key);
+                var targetContainer = entry.Value;
 
-                if (primaryKey == targetKey)
+                // Same category
+                if (currentContainer.ContainerDisplayCategory == targetContainer.ContainerDisplayCategory)
                 {
-                    var targetEntry = TextBank.TargetFmgBank[entry.Key];
-
-                    foreach (var fmgInfo in entry.Value.FmgWrappers)
+                    // Same file
+                    if (primaryKey == targetKey)
                     {
-                        foreach (var targetInfo in targetEntry.FmgWrappers)
+                        // Get the container wrapper from the target bank
+                        var targetWrapper = TextBank.TargetFmgBank.Where(
+                            e => e.Value.ContainerDisplayCategory == targetContainer.ContainerDisplayCategory &&
+                            e.Value.Filename == targetKey).FirstOrDefault().Value;
+
+                        if (targetWrapper != null)
                         {
-                            if (fmgInfo.ID == targetInfo.ID)
+                            foreach (var curWrapper in entry.Value.FmgWrappers)
                             {
-                                ProcessFmg(fmgInfo, targetInfo);
+                                foreach (var tarWrapper in targetWrapper.FmgWrappers)
+                                {
+                                    if (curWrapper.ID == tarWrapper.ID)
+                                    {
+                                        ProcessFmg(curWrapper, tarWrapper);
+                                    }
+                                }
                             }
                         }
                     }
@@ -127,23 +141,22 @@ public static class TextMerge
         TaskLogs.AddLog($"Applied Text Merge.");
     }
 
-    private static void ProcessFmg(TextFmgWrapper sourceInfo, TextFmgWrapper targetInfo)
+    private static void ProcessFmg(TextFmgWrapper sourceWrapper, TextFmgWrapper targetWrapper)
     {
         List<FMG.Entry> missingEntries = new();
         List<FMG.Entry> modifiedEntries = new();
 
-        foreach (var entry in targetInfo.File.Entries)
+        foreach (var entry in targetWrapper.File.Entries)
         {
             // Entry ID not present in source, therefore add to missing entries
-            if(!sourceInfo.File.Entries.Any(e => e.ID == entry.ID))
+            if(!sourceWrapper.File.Entries.Any(e => e.ID == entry.ID))
             {
                 missingEntries.Add(entry);
             }
 
             // Entry ID is present in source,
             // Entry Text not present in source, therefore add to modified entries
-            if (sourceInfo.File.Entries.Any(e => e.ID == entry.ID) &&
-                !sourceInfo.File.Entries.Any(e => e.Text == entry.Text))
+            if (sourceWrapper.File.Entries.Any(e => e.ID == entry.ID && e.Text != entry.Text))
             {
                 modifiedEntries.Add(entry);
             }
@@ -152,18 +165,25 @@ public static class TextMerge
         // Add Missing
         foreach(var entry in missingEntries)
         {
-            TaskLogs.AddLog($"{entry.ID} {entry.Text}");
-            sourceInfo.File.Entries.Add(entry);
+            //TaskLogs.AddLog($"{entry.ID} {entry.Text}");
+            sourceWrapper.File.Entries.Add(entry);
         }
 
         // Change Modified
         foreach (var entry in modifiedEntries)
         {
-            TaskLogs.AddLog($"{entry.ID} {entry.Text}");
-            var targetEntry = sourceInfo.File.Entries[entry.ID];
-            targetEntry.Text = entry.Text;
+            //TaskLogs.AddLog($"{entry.ID} {entry.Text}");
+
+            if (sourceWrapper.File.Entries.Any(e => e.ID == entry.ID))
+            {
+                var targetEntry = sourceWrapper.File.Entries.Where(e => e.ID == entry.ID).FirstOrDefault();
+                if(targetEntry != null)
+                {
+                    targetEntry.Text = entry.Text;
+                }
+            }
         }
 
-        TaskLogs.AddLog($"Modified {sourceInfo.Name} Text File");
+        //TaskLogs.AddLog($"Modified {sourceWrapper.Name} Text File");
     }
 }
