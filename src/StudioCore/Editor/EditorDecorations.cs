@@ -447,7 +447,7 @@ public class EditorDecorations
 
             if(cont)
             {
-                TextResult result = TextFinder.GetTextResult(entry.fmg, oldval);
+                TextResult result = TextFinder.GetTextResult(entry.fmg, oldval, entry.offset);
 
                 if (result != null)
                 {

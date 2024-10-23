@@ -187,6 +187,9 @@ public class TextDifferenceManager
 
     public bool IsDifferentToVanilla(FMG.Entry entry)
     {
+        if (entry == null)
+            return false;
+
         var entryId = $"{entry.ID}";
         var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
