@@ -47,6 +47,8 @@ Param Editor
  - ADD: DES Meta
  - ADD: DS1 Meta
  - ADD: translated BB row names
+ - ADD: Copy to NPC AtkParam/BehaviorParam from PC AtkParam/BehaviorParam and vice versa
+ - ADD: Revert param to Vanilla + Revert selected rows to Vanilla
  - ADD: stayparam support for DS3 (requires 'blob' editor with manual definitions)
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
  - ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
@@ -59,16 +61,6 @@ Gparam Editor:
  - ADD: GPARAM reference support (e.g. jump to map param, and if it is offset, that value entry offset)
  - ADD: sticky selection: don't automatically clear selection, rather only clear it if it becomes invalid
  - ADD: support for BB .gparambnd.dcx
-
-Time Act Editor
- - ADD: TAE Mass Edit tool
- - ADD: handling for event groups (currently copied events simply inherit the existing assignment)
- - ADD: Data export/import for TAE/Animation/Event
- - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
- - ADD: quicklink to TimeAct from param
- 
- - FIX: TAE a330 + a331 in AC6 are not reading correctly
- - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
 
 Texture Viewer: 
  - ADD: support for 'custom' Shoebox Layouts for non-Shoebox Layout games. Smithbox will instead read from a Shoebox folder in .smithbox for these games.
@@ -107,9 +99,17 @@ EMEVD Editor:
  - ADD: Add ability to insert/delete/order instructions.
  - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
  
+Time Act Editor
+ - ADD: TAE Mass Edit tool
+ - ADD: handling for event groups (currently copied events simply inherit the existing assignment)
+ - ADD: Data export/import for TAE/Animation/Event
+ - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
+ - ADD: quicklink to TimeAct from param
+ 
+ - FIX: TAE a330 + a331 in AC6 are not reading correctly
+ - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
+
+
 #--------------------------------------
 # Notes
 #--------------------------------------
-
- - ADD: Copy to NPC AtkParam/BehaviorParam from PC AtkParam/BehaviorParam and vice versa
- - ADD: Revert param to Vanilla + Revert selected rows to Vanilla

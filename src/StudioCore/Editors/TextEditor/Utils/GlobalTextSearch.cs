@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Org.BouncyCastle.Crypto;
 using StudioCore.Editor;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -17,6 +18,7 @@ public static class GlobalTextSearch
     private static string _globalSearchInput = "";
     private static bool IgnoreCase = false;
     private static SearchFilterType FilterType = SearchFilterType.PrimaryCategory;
+    private static SearchMatchType MatchType = SearchMatchType.All;
 
     private static List<TextResult> SearchResults = new();
 
@@ -73,6 +75,31 @@ public static class GlobalTextSearch
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
+            ImGui.Text("Match Type");
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            if (ImGui.BeginCombo("##searchMatchType", MatchType.GetDisplayName()))
+            {
+                foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
+                {
+                    var matchType = (SearchMatchType)entry;
+
+                    if (ImGui.Selectable(matchType.GetDisplayName()))
+                    {
+                        MatchType = matchType;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            UIHelper.ShowHoverTooltip("The contents to match with.");
+
+            // Row 4
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
             ImGui.Text("Ignore Case");
 
             ImGui.TableSetColumnIndex(1);
@@ -86,7 +113,7 @@ public static class GlobalTextSearch
         if (ImGui.Button("Search##executeSearch", UI.GetStandardHalfButtonSize()))
         {
             HasSearched = true;
-            SearchResults = TextFinder.GetGlobalTextResult(_globalSearchInput, FilterType, IgnoreCase);
+            SearchResults = TextFinder.GetGlobalTextResult(_globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         ImGui.SameLine();
         if (ImGui.Button("Clear##clearSearchResults", UI.GetStandardHalfButtonSize()))
@@ -113,10 +140,17 @@ public static class GlobalTextSearch
                 }
 
                 var foundText = result.Entry.Text;
-                if (foundText.Contains("\n"))
+                if (foundText != null)
                 {
-                    var firstSection = foundText.Split("\n")[0];
-                    foundText = $"{firstSection} <...>";
+                    if (foundText.Contains("\n"))
+                    {
+                        var firstSection = foundText.Split("\n")[0];
+                        foundText = $"{firstSection} <...>";
+                    }
+                }
+                else
+                {
+                    foundText = $"<null>";
                 }
 
                 var category = result.ContainerWrapper.ContainerDisplayCategory.ToString();

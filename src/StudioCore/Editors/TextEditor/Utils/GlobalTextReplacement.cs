@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -17,6 +18,7 @@ public static class GlobalTextReplacement
     private static string _globalSearchInput = "";
     private static string _globalReplaceInput = "";
     private static SearchFilterType FilterType = SearchFilterType.PrimaryCategory;
+    private static SearchMatchType MatchType = SearchMatchType.All;
 
     private static List<ReplacementResult> ReplacementResults = new();
 
@@ -86,7 +88,32 @@ public static class GlobalTextReplacement
             }
             UIHelper.ShowHoverTooltip("The search filter to use.");
 
-            // Row 3
+            // Row 4
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.Text("Match Type");
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            if (ImGui.BeginCombo("##searchMatchType", MatchType.GetDisplayName()))
+            {
+                foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
+                {
+                    var matchType = (SearchMatchType)entry;
+
+                    if (ImGui.Selectable(matchType.GetDisplayName()))
+                    {
+                        MatchType = matchType;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            UIHelper.ShowHoverTooltip("The contents to match with.");
+
+            // Row 5
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
@@ -97,7 +124,7 @@ public static class GlobalTextReplacement
             ImGui.Checkbox("##ignoreCase", ref IgnoreCase);
             UIHelper.ShowHoverTooltip("Specifies case-insensitive matching for regex.");
 
-            // Row 4
+            // Row 6
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
@@ -108,7 +135,7 @@ public static class GlobalTextReplacement
             ImGui.Checkbox("##multilineRegex", ref MultilineRegex);
             UIHelper.ShowHoverTooltip("Multiline mode for regex. Changes the meaning of ^ and $ so they match at the beginning and end, respectively, of any line, and not just the beginning and end of the entire string.");
 
-            // Row 5
+            // Row 7
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
@@ -119,7 +146,7 @@ public static class GlobalTextReplacement
             ImGui.Checkbox("##singleLineRegex", ref SinglelineRegex);
             UIHelper.ShowHoverTooltip("Specifies single-line mode for regex. Changes the meaning of the dot (.) so it matches every character (instead of every character except \\n).");
 
-            // Row 6
+            // Row 8
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
@@ -136,7 +163,7 @@ public static class GlobalTextReplacement
         if (ImGui.Button("Preview Edit##executeSearch", UI.GetStandardHalfButtonSize()))
         {
             HasSearched = true;
-            ReplacementResults = TextFinder.GetReplacementResult(_globalSearchInput, FilterType, IgnoreCase);
+            ReplacementResults = TextFinder.GetReplacementResult(_globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         UIHelper.ShowHoverTooltip("Populate the edit preview list.");
         ImGui.SameLine();
@@ -202,10 +229,17 @@ public static class GlobalTextReplacement
                 }
 
                 var foundText = result.Entry.Text;
-                if (foundText.Contains("\n"))
+                if (foundText != null)
                 {
-                    var firstSection = foundText.Split("\n")[0];
-                    foundText = $"{firstSection} <...>";
+                    if (foundText.Contains("\n"))
+                    {
+                        var firstSection = foundText.Split("\n")[0];
+                        foundText = $"{firstSection} <...>";
+                    }
+                }
+                else
+                {
+                    foundText = $"<null>";
                 }
 
                 var category = result.ContainerWrapper.ContainerDisplayCategory.ToString();

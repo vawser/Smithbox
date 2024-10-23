@@ -1,4 +1,6 @@
 ﻿using SoulsFormats;
+using StudioCore.Editors.TextEditor.Enums;
+using StudioCore.Editors.TimeActEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -79,7 +81,7 @@ public static class TextFinder
     /// <summary>
     /// Get text result for global search.
     /// </summary>
-    public static List<TextResult> GetGlobalTextResult(string searchTerm, SearchFilterType searchFilterType, bool ignoreCase)
+    public static List<TextResult> GetGlobalTextResult(string searchTerm, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
     {
         var results = new List<TextResult>();
 
@@ -107,27 +109,51 @@ public static class TextFinder
                     var entryText = fmgEntry.Text;
                     var searchText = searchTerm;
 
-                    if (entryText == null)
-                        continue;
-
-                    if (ignoreCase)
+                    if (entryText != null)
                     {
-                        entryText = entryText.ToLower();
-                        searchText = searchText.ToLower();
+                        if (ignoreCase)
+                        {
+                            entryText = entryText.ToLower();
+                            searchText = searchText.ToLower();
+                        }
+
+                        if (matchType is SearchMatchType.All or SearchMatchType.Text)
+                        {
+                            if (entryText.Contains(searchText))
+                            {
+                                TextResult result = new();
+                                result.ContainerName = containerName;
+                                result.ContainerWrapper = entry;
+                                result.FmgID = fmg.ID;
+                                result.FmgName = fmg.Name;
+                                result.Fmg = fmg.File;
+                                result.FmgEntryID = fmgEntry.ID;
+                                result.Entry = fmgEntry;
+
+                                results.Add(result);
+                            }
+                        }
                     }
 
-                    if(entryText.Contains(searchText))
+                    if (matchType is SearchMatchType.All or SearchMatchType.ID)
                     {
-                        TextResult result = new();
-                        result.ContainerName = containerName;
-                        result.ContainerWrapper = entry;
-                        result.FmgID = fmg.ID;
-                        result.FmgName = fmg.Name;
-                        result.Fmg = fmg.File;
-                        result.FmgEntryID = fmgEntry.ID;
-                        result.Entry = fmgEntry;
+                        if(Regex.IsMatch(searchText, @"^\d+$"))
+                        {
+                            var id = int.Parse(searchText);
+                            if (fmgEntry.ID == id)
+                            {
+                                TextResult result = new();
+                                result.ContainerName = containerName;
+                                result.ContainerWrapper = entry;
+                                result.FmgID = fmg.ID;
+                                result.FmgName = fmg.Name;
+                                result.Fmg = fmg.File;
+                                result.FmgEntryID = fmgEntry.ID;
+                                result.Entry = fmgEntry;
 
-                        results.Add(result);
+                                results.Add(result);
+                            }
+                        }
                     }
                 }
             }
@@ -140,7 +166,7 @@ public static class TextFinder
     /// <summary>
     /// Get text result for global replacement.
     /// </summary>
-    public static List<ReplacementResult> GetReplacementResult(string searchPattern, SearchFilterType searchFilterType, bool ignoreCase)
+    public static List<ReplacementResult> GetReplacementResult(string searchPattern, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
     {
         var results = new List<ReplacementResult>();
 
@@ -168,30 +194,54 @@ public static class TextFinder
                     var entryText = fmgEntry.Text;
                     var searchText = searchPattern;
 
-                    if (entryText == null)
-                        continue;
-
-                    if (ignoreCase)
+                    if (entryText != null)
                     {
-                        entryText = entryText.ToLower();
-                        searchText = searchText.ToLower();
+                        if (ignoreCase)
+                        {
+                            entryText = entryText.ToLower();
+                            searchText = searchText.ToLower();
+                        }
+
+                        if (matchType is SearchMatchType.All or SearchMatchType.Text)
+                        {
+                            var match = Regex.Match(entryText, searchText);
+
+                            if (match.Success)
+                            {
+                                ReplacementResult result = new();
+                                result.Match = match;
+                                result.ContainerName = containerName;
+                                result.ContainerWrapper = entry;
+                                result.FmgID = fmg.ID;
+                                result.FmgName = fmg.Name;
+                                result.Fmg = fmg.File;
+                                result.FmgEntryID = fmgEntry.ID;
+                                result.Entry = fmgEntry;
+
+                                results.Add(result);
+                            }
+                        }
                     }
 
-                    var match = Regex.Match(entryText, searchText);
-
-                    if(match.Success)
+                    if (matchType is SearchMatchType.All or SearchMatchType.ID)
                     {
-                        ReplacementResult result = new();
-                        result.Match = match;
-                        result.ContainerName = containerName;
-                        result.ContainerWrapper = entry;
-                        result.FmgID = fmg.ID;
-                        result.FmgName = fmg.Name;
-                        result.Fmg = fmg.File;
-                        result.FmgEntryID = fmgEntry.ID;
-                        result.Entry = fmgEntry;
+                        if (Regex.IsMatch(searchText, @"^\d+$"))
+                        {
+                            var id = int.Parse(searchText);
+                            if (fmgEntry.ID == id)
+                            {
+                                ReplacementResult result = new();
+                                result.ContainerName = containerName;
+                                result.ContainerWrapper = entry;
+                                result.FmgID = fmg.ID;
+                                result.FmgName = fmg.Name;
+                                result.Fmg = fmg.File;
+                                result.FmgEntryID = fmgEntry.ID;
+                                result.Entry = fmgEntry;
 
-                        results.Add(result);
+                                results.Add(result);
+                            }
+                        }
                     }
                 }
             }

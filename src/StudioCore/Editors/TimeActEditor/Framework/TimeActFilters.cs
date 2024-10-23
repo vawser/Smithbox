@@ -204,6 +204,9 @@ public static class TimeActFilters
         bool isValid = true;
         var input = _timeActEventFilterString.ToLower();
 
+        if (evtEntry == null)
+            return true;
+
         if (input != "")
         {
             string[] inputParts = input.Split("+");
