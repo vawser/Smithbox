@@ -159,7 +159,9 @@ namespace SoulsFormats
                         }
                         else
                         {
-                            if (vi1 != vi2 && vi1 != vi3 && vi2 != vi3)
+                            // On a few ACFA skybox models of version 0x12, degenerate faces must be included or faces will get flipped
+                            bool includeDegenerateFaces = version == 0x12;
+                            if (includeDegenerateFaces || (vi1 != vi2 && vi1 != vi3 && vi2 != vi3))
                             {
                                 // Every time the triangle strip restarts, compare the average vertex normal to the face normal
                                 // and flip the starting direction if they're pointing away from each other.
