@@ -38,13 +38,8 @@ Map Editor:
  - FIX: misc texture loads during map load can hang, causing the load window to never disppear. (e.g. Leyndell)
  
 Text Editor:
- - ADD: Name Template create tool
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
 
-
-Model Editor:
- - ADD: param jump from Model Mask list
- 
 Material Editor
  - ADD: Implement Material/MATBIN editor
 
@@ -85,17 +80,6 @@ Texture Viewer:
  - ADD: support for tpfbdt files 
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
-EMEVD Editor:
- - DEV: instruction test: find missing instructions / missing or invalid arguments
- 
- - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
- - ADD: enum selection changes value
- - ADD: Add ability to insert/delete/order events.
- - ADD: Add ability to insert/delete/order instructions.
- 
-ESD Editor:
- - ADD: 
- 
 Model Editor:  
  - ADD: Add DES Flver support for loading
  - ADD: FBX Import into loose FLVER
@@ -112,9 +96,23 @@ Model Editor:
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
  - FIX: account for scale when displaying dummies/bones
  
+ ESD Editor:
+ - ADD: 
+ 
+EMEVD Editor:
+ - DEV: instruction test: find missing instructions / missing or invalid arguments
+ 
+ - ADD: enum selection changes value
+ - ADD: Add ability to insert/delete/order events.
+ - ADD: Add ability to insert/delete/order instructions.
+ - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
+ 
 #--------------------------------------
 # Notes
 #--------------------------------------
-# TODO
-- Check https://github.com/vawser/Smithbox/pull/146 PR, test existing games for regressions in Map, Model and Text Editor
+
+Param Editor
+ - ADD: DES Meta
+ - ADD: DS1 Meta
+ - ADD: non-machine translated BB row names
 

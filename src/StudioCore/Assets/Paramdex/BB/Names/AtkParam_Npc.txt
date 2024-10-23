@@ -1,748 +1,747 @@
-0 【システム】ダミー弾
-1 【システム】ダミー弾（味方に当たる）
-4 【システム】無効攻撃【共通】
-5 弾を出し続ける　ダミー攻撃
-10 テンプレ　LV１　小ダメージ
-11 テンプレ　LV２　中ダメージ
-12 テンプレ　LV３　大ダメージ
-13 テンプレ　LV４　吹っ飛び（大）
-14 テンプレ　LV５　押し
-15 テンプレ　LV６　叩きつけダメージ
-16 テンプレ　LV７　吹っ飛び（小）
-17 テンプレ　LV８　極小ダメージ
-18 テンプレ　LV９　かち上げダメージ
-19 テンプレ　LV10 吹っ飛び（特大）
-20 テンプレ　LV11 ブレス
-21 テンプレ　ガード
-22 テンプレ　パリィ用ガード
-23 テンプレ　パリィ投げ
-24 テンプレ　背面投げ
-25 テンプレ　パリィ
+0 [System] Dummy bullet
+1 [System] Dummy bullet (hits allies)
+4 [System] Ineffective attack [Common]
+5 Dummy attack that keeps firing bullets
+10 Template LV1 Small damage
+11 Template LV2 Medium damage
+12 Template LV3 Large damage
+13 Template LV4 Blow-off (Large)
+14 Template LV5 press
+15 Template LV6 Slam Damage
+16 Template LV7 Blow-off (Small)
+17 Template LV8 Minimal damage
+18 Template LV9 Lifting damage
+19 Template LV10 Blow-off (Extra Large)
+20 Template LV11 Breath
+21 Template Guard
+22 Template parry guard
+23 Template parry throw
+24 Template Back Throw
+25 Template Parry
 101 NPC_test1
 102 NPC_test2
 103 NPC_test3
-104 NPC_test4_ガード
-105 NPC_test5_大攻撃
-106 NPC_test6_盾攻撃
-107 NPC_test7_突進攻撃
-200 落下　半径1ｍ
-201 吹っ飛び（弱）　半径1ｍ
-202 吹っ飛び（強）　半径1ｍ
-2000 墓王　魔空間攻撃
-3000 共通攻撃【ハシゴ_右パンチ】
-3001 共通攻撃【ハシゴ_右キック】
-3002 共通攻撃【ハシゴ_左パンチ】
-3003 共通攻撃【ハシゴ_左キック】
-3004 共通攻撃【ハシゴ_滑り降り】
-3005 共通攻撃【ハシゴ_右パンチ_長身】
-3006 共通攻撃【ハシゴ_左パンチ_長身】
-3100 共通攻撃【落下・人型】
-3101 共通攻撃【仰向け落下・人型】
-3102 共通攻撃【うつ伏せ落下・人型】
-3103 共通攻撃【着地・人型】
-3104 共通攻撃【ドスン着地・人型】
-3105 共通攻撃【仰向け着地・人型】
-3106 共通攻撃【うつ伏せ着地・人型】
-3107 共通攻撃【吹っ飛ぶ・人型】
-3108 共通攻撃【ステップ・人型】
-3109 共通攻撃【ステップ・c2520不死人盗賊】
-3110 共通攻撃【落下・四足型】
-3111 共通攻撃【着地・四足型】
-3112 共通攻撃【吹っ飛ぶ・ｃ1200犬ネズミ】
-3113 共通攻撃【ステップ・c2950スケルトン（獣）】
-3114 共通攻撃【落下・c2950スケルトン（獣）】
-3115 共通攻撃【着地・c2950スケルトン（獣）】
-3116 共通攻撃【吹っ飛ぶ・c2950スケルトン（獣）】
-3117 共通攻撃【落下・c2960トーテムスケルトン】
-3118 共通攻撃【着地・c2960トーテムスケルトン】
-3119 共通攻撃【落下・c3090大蚊】
-3120 共通攻撃【吹っ飛ぶ・c3090大蚊】
-3121 共通攻撃【落下・c3200うごめく腐肉】
-3122 共通攻撃【着地・c3200うごめく腐肉】
-3123 共通攻撃【落下・c3210たまご背負い】
-3124 共通攻撃【着地・c3210たまご背負い】
-3125 共通攻撃【吹っ飛ぶ・c3210たまご背負い】
-3126 共通攻撃【落下・c3220寄生虫】
-3127 共通攻撃【着地・c3220寄生虫】
-3128 共通攻撃【吹っ飛ぶ・c3220寄生虫】
-3129 共通攻撃【ステップ・c3270バジリスク】
-3130 共通攻撃【落下・c3270バジリスク】
-3131 共通攻撃【着地・c3270バジリスク】
-3132 共通攻撃【落下・ｃ3290王蟲と蚊】
-3133 共通攻撃【着地・ｃ3290王蟲と蚊】
-3134 共通攻撃【落下・ｃ3300結晶トカゲ】
-3135 共通攻撃【着地・ｃ3300結晶トカゲ】
-3136 共通攻撃【吹っ飛ぶ・ｃ3300結晶トカゲ】
-3137 共通攻撃【ステップ・ｃ3340公使の黒犬】
-3138 共通攻撃【吹っ飛ぶ・ｃ3340公使の黒犬】
-3139 共通攻撃【落下・c3350動く樹】
-3140 共通攻撃【着地・ｃ3350動く樹】
-3141 共通攻撃【落下・c3380大ヒル】
-3142 共通攻撃【着地・c3380大ヒル】
-3143 共通攻撃【吹っ飛ぶ・c3380大ヒル】
-3144 共通攻撃【ステップ・ｃ3410カエルエイ】
-3145 共通攻撃【吹っ飛ぶ・ｃ3410カエルエイ】
-3146 共通攻撃【ステップ・ｃ5360口裂け大猫】
-3147 共通攻撃【落下・ｃ5360口裂け大猫】
-3148 共通攻撃【着地・ｃ5360口裂け大猫】
-3149 共通攻撃【吹っ飛ぶ・ｃ5360口裂け大猫】
-3150 共通攻撃【ステップ（右足）・c2320アイアンゴーレム】
-3151 共通攻撃【ステップ（左足）・c2320アイアンゴーレム】
-3152 共通攻撃【落下・ｃ2320アイアンゴーレム】
-3153 共通攻撃【着地・ｃ2320アイアンゴーレム】
-3154 共通攻撃【ステップ・c5210聖剣の狼】
-3155 共通攻撃【ステップ（後ろ足のみ）・c5210聖剣の狼】
-3156 共通攻撃【落下・c5210聖剣の狼】
-3157 共通攻撃【着地・c5210聖剣の狼】
-3158 共通攻撃【ステップ・c5280焔の魔女クラグスパイダー】
-3159 共通攻撃【落下・c5280焔の魔女クラグスパイダー】
-3160 共通攻撃【着地・c5280焔の魔女クラグスパイダー】
-3161 共通攻撃【落下・c5320皇母妹】
-3162 共通攻撃【着地・c5320皇母妹】
-3163 共通攻撃【吹っ飛ぶ・c5320皇母妹】
-3164 共通攻撃【落下・c5350ガーゴイル】
-3165 共通攻撃【着地・c5350ガーゴイル】
-3166 共通攻撃【ステップ・c5350ガーゴイル】
-3167 共通攻撃【吹っ飛ぶ・c5350ガーゴイル】
-3168 共通攻撃【ステップ・c2260ヤリデーモン】
-3169 共通攻撃【落下・c2260ヤリデーモン】
-3170 共通攻撃【着地・c2260ヤリデーモン】
-3171 共通攻撃【吹っ飛ぶ・c2260ヤリデーモン】
-3172 共通攻撃【ステップ（攻撃中）・c2260ヤリデーモン】
-3173 共通攻撃【落下・ｃ1202犬ネズミ（大）】
-3174 共通攻撃【着地・ｃ1202犬ネズミ（大）】
-3175 共通攻撃【ステップ・ｃ1202犬ネズミ（大）】
-3176 共通攻撃【落下・c3460アーマードタスク】
-3177 共通攻撃【着地・c3460アーマードタスク】
-3178 共通攻撃【吹っ飛ぶ・c3460アーマードタスク】
-3179 共通攻撃【落下・c3490ドリフトアイテム】
-3180 共通攻撃【着地・c3490ドリフトアイテム】
-3181 共通攻撃【吹っ飛ぶ・c3490ドリフトアイテム】
-3182 共通攻撃【ステップ・c3490ドリフトアイテム】
-3183 共通攻撃【仰向け落下・ｃ2360四騎士C】
-3184 共通攻撃【うつ伏せ落下・ｃ2360四騎士C】
-3185 共通攻撃【落下・c3240イザリス】
-3186 共通攻撃【着地・c3240イザリス】
-3187 共通攻撃【吹っ飛ぶ・c3240イザリス】
-3188 共通攻撃【落下・c3250イザリス・クイーン】
-3189 共通攻撃【着地・c3250イザリス・クイーン】
-3190 共通攻撃【吹っ飛ぶ・c3250イザリス・クイーン】
-3191 共通攻撃【小吹っ飛ぶ・c3250イザリス・クイーン】
-3192 共通攻撃【落下・c3330ビシャーチャ】
-3193 共通攻撃【仰向け落下・c3330ビシャーチャ】
-3194 共通攻撃【うつ伏せ落下・c3330ビシャーチャ】
-3195 共通攻撃【着地・c3330ビシャーチャ】
-3196 共通攻撃【ドスン着地・c3330ビシャーチャ】
-3197 共通攻撃【仰向け着地・c3330ビシャーチャ】
-3198 共通攻撃【うつ伏せ着地・c3330ビシャーチャ】
-3199 共通攻撃【吹っ飛ぶ・c3330ビシャーチャ】
-3200 共通攻撃【落下・ｃ2830不死人ファランクス】
-3201 共通攻撃【着地・ｃ2830不死人ファランクス】
-3202 共通攻撃【吹っ飛ぶ・ｃ2830不死人ファランクス】
-3203 共通攻撃【落下・c3400クラグスパイダー子】
-3204 共通攻撃【着地・c3400クラグスパイダー子】
-3205 共通攻撃【吹っ飛ぶ・c3400クラグスパイダー子】
-3206 共通攻撃【ステップ・c3400クラグスパイダー子】
-3207 共通攻撃【ステップ・c3480太陽虫】
-3208 共通攻撃【落下・c2300徘徊デーモン】
-3209 共通攻撃【着地・ｃ2300徘徊デーモン】
-3210 共通攻撃【吹っ飛ぶ・ｃ2300徘徊デーモン】
-3211 共通攻撃【落下・c2860巨人奴隷】
-3212 共通攻撃【着地・c2860巨人奴隷】
-3213 共通攻撃【ステップ・c2870巨人衛兵】
-3214 共通攻撃【ステップ・c2930スケルトン（車輪）】
-3215 共通攻撃【吹っ飛ぶ・c2930スケルトン（車輪）】
-3216 共通攻撃【吹っ飛ぶ（車輪）・c2930スケルトン（車輪）】
-3217 共通攻撃【落下・ｃ3370木登りトカゲ】
-3218 共通攻撃【着地・ｃ3370木登りトカゲ】
-3219 共通攻撃【吹っ飛ぶ・ｃ3370木登りトカゲ】
-3220 共通攻撃【ステップ・ｃ3370木登りトカゲ】
-3221 共通攻撃【落下・ｃ3390穴掘りウジ虫】
-3222 共通攻撃【着地・c3390穴掘りウジ虫】
-3223 共通攻撃【ステップ・ｃ3420ドラゴンゾンビ】
-3224 共通攻撃【落下・ｃ3420ドラゴンゾンビ】
-3225 共通攻撃【着地・ｃ3420ドラゴンゾンビ】
-3226 共通攻撃【落下・ｃ3420ドラゴンゾンビ（下半身）】
-3227 共通攻撃【着地・ｃ3420ドラゴンゾンビ（下半身）】
-3228 共通攻撃【落下・ｃ3500ビッグゼリー】
-3229 共通攻撃【着地・ｃ3500ビッグゼリー】
-3230 共通攻撃【落下・ｃ3520ワイバーン】
-3231 共通攻撃【着地・ｃ3520ワイバーン】
-3232 共通攻撃【ステップ・ｃ3520ワイバーン】
-3233 共通攻撃【落下・ｃ5200ムカデデーモン】
-3234 共通攻撃【着地・ｃ5200ムカデデーモン】
-3235 共通攻撃【ステップ・ｃ5200ムカデデーモン】
-3236 共通攻撃【落下・ｃ5201ムカデデーモンの腕】
-3237 共通攻撃【着地・ｃ5201ムカデデーモンの腕】
-3238 共通攻撃【ステップ・ｃ5201ムカデデーモンの腕】
-3239 共通攻撃【落下・ｃ5202ムカデデーモンの尻尾】
-3240 共通攻撃【着地・ｃ5202ムカデデーモンの尻尾】
-3241 共通攻撃【ステップ・ｃ5202ムカデデーモンの尻尾】
-3242 共通攻撃【落下・ｃ5260貪食ドラゴン】
-3243 共通攻撃【吹っ飛ぶ・ｃ2780ミミック】
-3244 共通攻撃【落下・ｃ5220墓王】
-3245 共通攻撃【着地・ｃ5220墓王】
-3246 共通攻撃【落下・ｃ3450坐禅ドラゴン】
-3247 共通攻撃【着地・ｃ3450坐禅ドラゴン】
-3248 共通攻撃【着地（手の部分）・ｃ3450坐禅ドラゴン】
-3249 共通攻撃【落下・ｃ5290白竜シース】
-3250 共通攻撃【着地・ｃ5290白竜シース】
-3251 共通攻撃【着地（触手右）・ｃ5290白竜シース】
-3252 共通攻撃【着地（触手左）・ｃ5290白竜シース】
-3253 共通攻撃【着地（触手後）・ｃ5290白竜シース】
-3254 共通攻撃【落下・c2230デブデーモン】
-3255 共通攻撃【ドスン着地・c2230デブデーモン】
-3256 共通攻撃【ステップ・c2230デブデーモン】
-3257 共通攻撃【落下・c2250ハンマーデーモン】
-3258 共通攻撃【ステップ・c2250ハンマーデーモン】
-3259 共通攻撃【ステップ・c2400アサシン】
-3260 共通攻撃【ドスン着地・ｃ5271グリフィス（大）】
-3261 共通攻撃【吹っ飛ぶ・c2900スケルトン】
-3262 共通攻撃【ステップ・ｃ2920骨太スケルトン】
-3263 共通攻撃【はしご上攻撃・c2690蛇人A】
-3264 共通攻撃【落下・c2430動く石像】
-3265 共通攻撃【着地・c2430動く石像】
-3266 共通攻撃【吹っ飛ぶ・c2430動く石像】
-3267 共通攻撃【落下・ｃ2940スケルトン赤子】
-3268 共通攻撃【落下・c3200_うごめく腐肉】
-3269 共通攻撃【落下・c5240プリンスイザリス】
-3300 【DLC】新・共通攻撃【足元・大ダメージ・人型】
-3301 【DLC】新・共通攻撃【中心・大ダメージ・人型】
-3303 【DLC】新・共通攻撃【足元・小ダメージ・人型】
-3306 【DLC】新・共通攻撃【中心・ダメージなし・人型】
-3307 【DLC】新・共通攻撃【背中・ダメージなし・人型】
-3308 【DLC】新・共通攻撃【足元・ダメージなし・人型】
-3309 【DLC】新・共通攻撃【お腹・ダメージなし・人型】
-3310 共通攻撃【ステップ・c1000猟犬】
-3311 共通攻撃【落下・c1000猟犬】
-3312 共通攻撃【着地・c1000猟犬】
-3313 共通攻撃【吹っ飛ぶc1000猟犬】
-3314 共通攻撃【ステップ（右足）・c5000教区長】
-3315 共通攻撃【ステップ（左足）・c5000教区長】
-3316 共通攻撃【ステップ（左手）・c5000教区長】
-3317 共通攻撃【落下・ｃ5000教区長】
-3318 共通攻撃【着地・ｃ5000教区長】
-3319 共通攻撃【踏み込み（右足）・c5000教区長】
-3320 共通攻撃【踏み込み（左足）・c5000教区長】
-3321 共通攻撃【落下・c1110死と闇の眷属】
-3322 共通攻撃【着地・c1110死と闇の眷属】
-3323 共通攻撃【吹っ飛ぶ・c1110死と闇の眷属】
-3324 共通攻撃【ステップ・c1100下水ネズミ】
-3325 共通攻撃【落下・c1100下水ネズミ】
-3326 共通攻撃【着地・c1100下水ネズミ】
-3327 共通攻撃【吹っ飛ぶ・c1100下水ネズミ】
-3328 共通攻撃【ステップ・c1170屍肉鳥】
-3329 共通攻撃【落下・c1170屍肉鳥】
-3330 共通攻撃【着地・c1170屍肉鳥】
-3331 共通攻撃【吹っ飛ぶ・c1170屍肉鳥】
-3332 共通攻撃【ステップ（右足）・c5020聖女ビースト】
-3333 共通攻撃【ステップ（左足）・c5020聖女ビースト】
-3334 共通攻撃【ステップ（左手）・c5020聖女ビースト】
-3335 共通攻撃【落下・c5020聖女ビースト】
-3336 共通攻撃【着地・c5020聖女ビースト】
-3337 共通攻撃【踏み込み（右足）・c5020聖女ビースト】
-3338 共通攻撃【踏み込み（左足）・c5020聖女ビースト】
-3339 共通攻撃【ステップ・c1140狂信者の獣】
-3340 共通攻撃【吹っ飛ぶ・c1140狂信者の獣】
-3341 共通攻撃【打ち上げ・c1140狂信者の獣】
-3342 共通攻撃【着地・ダメージ無し・c5520レッサーデーモンバリエーション】
-3343 共通攻撃【着地・c2510月の落とし子】
-3344 共通攻撃【ステップ・c2130血舐め】
-3345 共通攻撃【落下・c2130血舐め】
-3346 共通攻撃【着地・c2130血舐め】
-3347 共通攻撃【吹っ飛ぶ・c2130血舐め】
-3348 共通攻撃【ステップ・c2530星の花】
-3349 共通攻撃【落下・c5090始祖ビースト】
-3350 共通攻撃【着地・c5090始祖ビースト】
-3351 共通攻撃【落下・c5100白痴の蜘蛛】
-3352 共通攻撃【着地・c5100白痴の蜘蛛】
-3353 共通攻撃【押し・c2610群衆女】
-3360 共通攻撃【ステップ（右後足）・c4510ルドウイーク】
-3361 共通攻撃【ステップ（左後足）・c4510ルドウイーク】
-3362 共通攻撃【ステップ（右前足）・c4510ルドウイーク】
-3363 共通攻撃【ステップ（左前足）・c4510ルドウイーク】
-4000 共通_延焼攻撃
-4010 ダミー弾　焦げ跡デカール用
-4011 ダミー弾　油まみれデカール用
-4012 ダミー弾　森用デカール無し
-4020 共通_投げ発生時に周囲を怯ませる・つかみ
-4021 共通_投げ発生時に周囲を怯ませる・ふっとび
-4100 ダンジョン　油沼延焼　マップあたり有り版
-4101 ダンジョン　油沼延焼　マップあたり無し版
-4110 ダンジョン　油沼延焼　炎ダメージ
-4111 ダンジョン　油沼延焼　炎ダメージ　マップあたり無し版
-5000 城下1　燃える死体
-5010 城下1　閉門ダメージ
-5020 城下1　燃えるゴロゴロ樽
-5030 城下1　燃える鉄球（未使用）
-5040 王城1　ペンデュラム
-5041 ダンジョン ギロチン（王城1　ペンデュラム 無敵無効無し版）
-5050 王城1　大鉄球
-5060 王城1　エレベータ天井槍
-5070 ダンジョン　火矢トラップ（元・王城1　飛び出す矢）
-5080 王城1　火を噴くガーゴイル像
-5090 廃都　溶岩ダメージ【指輪で無効】
-5091 廃都　溶岩ダメージ【指輪も貫通】
-5100 墓地1　トゲ橋の針
-5110 チュートリアル　鉄球
-5120 墓地1　石像の針
-5130 ヘルカイト_ファイアブレス
-5140 ヘルカイト_ファイアブレス（強）
-5150 ヘルカイト_飛び立ちブレス
-5160 ヘルカイト_前方飛行＆反転_ブレス
-5170 ヘルカイト_上昇＆下方ブレス_ブレス
-5180 廃都　封印破壊衝撃波
-5190 ヘルカイト_Ｂ地点ブレス３
-5200 ヘルカイト_Ａ地点→Ｂ地点移動
-5210 ヘルカイト_Ｂ地点ブレス１
-5220 ヘルカイト_Ｂ地点ブレス２
-5230 ヘルカイト_Ｂ地点飛び立ちブレス２
-6000 ダンジョン　爆発タル
-6010 宗教街　たき火
-6020 【SP】　聖堂街B　焚火
-6030 廃墟　大爆発
-6040 廃墟　爆発タル
-6050 墓地街　爆発タル
-6080 【SP】ダンジョン　周囲強化
-6090 【SP】　香炉　毒
-6091 【SP】　香炉　油まみれ
-6092 【SP】　香炉　ただの煙
-6100 【SP】 森　ペンデュラム（丸太）
-6110 聖堂街B　焚火
-6111 聖堂街B　薪車（藁玉）
-6112 聖堂街B　薪車（藁玉）　止め
-6120 【SP】　ダンジョン　香炉　毒　儀式レベル1
-6121 【SP】　ダンジョン　香炉　毒　儀式レベル2
-6122 【SP】　ダンジョン　香炉　毒　儀式レベル3
-6123 【SP】　ダンジョン　香炉　毒　儀式レベル4
-6124 【SP】　ダンジョン　香炉　毒　儀式レベル5
-6125 【SP】　ダンジョン　香炉　毒　儀式レベル6
-6126 【SP】　ダンジョン　香炉　毒　儀式レベル7
-6127 【SP】　ダンジョン　香炉　毒　儀式レベル8
-6130 【SP】 ダンジョン　ペンデュラム＆ギロチン　儀式レベル1
-6131 【SP】 ダンジョン　ペンデュラム＆ギロチン　儀式レベル2
-6132 【SP】 ダンジョン　ペンデュラム＆ギロチン　儀式レベル3
-6133 【SP】 ダンジョン　ペンデュラム＆ギロチン　儀式レベル4
-6134 【SP】 ダンジョン　ペンデュラム＆ギロチン　儀式レベル5
-6135 【SP】 ダンジョン　ペンデュラム＆ギロチン　儀式レベル6
-6136 【SP】 ダンジョン　ペンデュラム＆ギロチン　儀式レベル7
-6137 【SP】 ダンジョン　ペンデュラム＆ギロチン　儀式レベル8
-6140 【SP】 ダンジョン　岩・鉄球　儀式レベル1
-6141 【SP】 ダンジョン　岩・鉄球　儀式レベル2
-6142 【SP】 ダンジョン　岩・鉄球　儀式レベル3
-6143 【SP】 ダンジョン　岩・鉄球　儀式レベル4
-6144 【SP】 ダンジョン　岩・鉄球　儀式レベル5
-6145 【SP】 ダンジョン　岩・鉄球　儀式レベル6
-6146 【SP】 ダンジョン　岩・鉄球　儀式レベル7
-6147 【SP】 ダンジョン　岩・鉄球　儀式レベル8
-6150 【SP】ダンジョン　爆発タル　儀式レベル1
-6151 【SP】ダンジョン　爆発タル　儀式レベル2
-6152 【SP】ダンジョン　爆発タル　儀式レベル3
-6153 【SP】ダンジョン　爆発タル　儀式レベル4
-6154 【SP】ダンジョン　爆発タル　儀式レベル5
-6155 【SP】ダンジョン　爆発タル　儀式レベル6
-6156 【SP】ダンジョン　爆発タル　儀式レベル7
-6157 【SP】ダンジョン　爆発タル　儀式レベル8
-6160 【SP】 ダンジョン　焚火　儀式レベル1
-6161 【SP】 ダンジョン　焚火　儀式レベル2
-6162 【SP】 ダンジョン　焚火　儀式レベル3
-6163 【SP】 ダンジョン　焚火　儀式レベル4
-6164 【SP】 ダンジョン　焚火　儀式レベル5
-6165 【SP】 ダンジョン　焚火　儀式レベル6
-6166 【SP】 ダンジョン　焚火　儀式レベル7
-6167 【SP】 ダンジョン　焚火　儀式レベル8
-6170 【SP】 ダンジョン　大砲
-6171 【SP】 ダンジョン　大砲　ダミー弾
-6172 【SP】 ダンジョン　大砲　爆風
-6173 【SP】 森　大砲
-6174 【SP】 森　大砲　ダミー弾
-6175 【SP】 森　大砲　爆風
-6200 【SP】 ダンジョン　火矢トラップ　儀式レベル1
-6201 【SP】 ダンジョン　火矢トラップ　儀式レベル2
-6202 【SP】 ダンジョン　火矢トラップ　儀式レベル3
-6203 【SP】 ダンジョン　火矢トラップ　儀式レベル4
-6204 【SP】 ダンジョン　火矢トラップ　儀式レベル5
-6205 【SP】 ダンジョン　火矢トラップ　儀式レベル6
-6206 【SP】 ダンジョン　火矢トラップ　儀式レベル7
-6207 【SP】 ダンジョン　火矢トラップ　儀式レベル8
-6210 【SP】 ダンジョン　火矢トラップ　嵐属性・儀式レベル1
-6211 【SP】 ダンジョン　火矢トラップ　嵐属性・儀式レベル2
-6212 【SP】 ダンジョン　火矢トラップ　嵐属性・儀式レベル3
-6213 【SP】 ダンジョン　火矢トラップ　嵐属性・儀式レベル4
-6214 【SP】 ダンジョン　火矢トラップ　嵐属性・儀式レベル5
-6215 【SP】 ダンジョン　火矢トラップ　嵐属性・儀式レベル6
-6216 【SP】 ダンジョン　火矢トラップ　嵐属性・儀式レベル7
-6217 【SP】 ダンジョン　火矢トラップ　嵐属性・儀式レベル8
-6220 【SP】 ダンジョン　火矢トラップ　コズミック属性・儀式レベル1
-6221 【SP】 ダンジョン　火矢トラップ　コズミック属性・儀式レベル2
-6222 【SP】 ダンジョン　火矢トラップ　コズミック属性・儀式レベル3
-6223 【SP】 ダンジョン　火矢トラップ　コズミック属性・儀式レベル4
-6224 【SP】 ダンジョン　火矢トラップ　コズミック属性・儀式レベル5
-6225 【SP】 ダンジョン　火矢トラップ　コズミック属性・儀式レベル6
-6226 【SP】 ダンジョン　火矢トラップ　コズミック属性・儀式レベル7
-6227 【SP】 ダンジョン　火矢トラップ　コズミック属性・儀式レベル8
-6230 【SP】 ダンジョン　火矢トラップ　サブ特徴毒敵・儀式レベル1
-6231 【SP】 ダンジョン　火矢トラップ　サブ特徴毒敵・儀式レベル2
-6232 【SP】 ダンジョン　火矢トラップ　サブ特徴毒敵・儀式レベル3
-6233 【SP】 ダンジョン　火矢トラップ　サブ特徴毒敵・儀式レベル4
-6234 【SP】 ダンジョン　火矢トラップ　サブ特徴毒敵・儀式レベル5
-6235 【SP】 ダンジョン　火矢トラップ　サブ特徴毒敵・儀式レベル6
-6236 【SP】 ダンジョン　火矢トラップ　サブ特徴毒敵・儀式レベル7
-6237 【SP】 ダンジョン　火矢トラップ　サブ特徴毒敵・儀式レベル8
-6240 【SP】 ダンジョン　火矢トラップ　サブ特徴強化敵・儀式レベル1
-6241 【SP】 ダンジョン　火矢トラップ　サブ特徴強化敵・儀式レベル2
-6242 【SP】 ダンジョン　火矢トラップ　サブ特徴強化敵・儀式レベル3
-6243 【SP】 ダンジョン　火矢トラップ　サブ特徴強化敵・儀式レベル4
-6244 【SP】 ダンジョン　火矢トラップ　サブ特徴強化敵・儀式レベル5
-6245 【SP】 ダンジョン　火矢トラップ　サブ特徴強化敵・儀式レベル6
-6246 【SP】 ダンジョン　火矢トラップ　サブ特徴強化敵・儀式レベル7
-6247 【SP】 ダンジョン　火矢トラップ　サブ特徴強化敵・儀式レベル8
-6250 【SP】 ダンジョン　ギロチン　儀式レベル1
-6251 【SP】 ダンジョン　ギロチン　儀式レベル2
-6252 【SP】 ダンジョン　ギロチン　儀式レベル3
-6253 【SP】 ダンジョン　ギロチン　儀式レベル4
-6254 【SP】 ダンジョン　ギロチン　儀式レベル5
-6255 【SP】 ダンジョン　ギロチン　儀式レベル6
-6256 【SP】 ダンジョン　ギロチン　儀式レベル7
-6257 【SP】 ダンジョン　ギロチン　儀式レベル8
-6350 時計塔　弾丸本体
-6351 時計塔　着弾
-6352 時計塔　弾丸本体_周回用
-6353 時計塔　着弾_周回用
-6360 時計塔　c4030_患者B_隕石
-6361 時計塔　c4030_患者B_隕石_着弾
-7000 ダンジョン_人寄せの鐘5m
-7001 ダンジョン_人寄せの鐘10m
-7002 ダンジョン_人寄せの鐘15m
-7003 ダンジョン_人寄せの鐘20m
-7004 ダンジョン_人寄せの鐘25m
-7005 ダンジョン_人寄せの鐘30m
-7006 ダンジョン_人寄せの鐘40m
-7007 ダンジョン_人寄せの鐘50m
-7008 ダンジョン_人寄せの鐘60m
-7009 ダンジョン_人寄せの鐘70m
-7010 ダンジョン_人寄せの鐘80m
-7011 ダンジョン_人寄せの鐘90m
-7012 ダンジョン_人寄せの鐘100m
-7014 ダンジョン_人寄せの鐘_目覚まし50m
-7015 ダンジョン_人寄せの鐘_目覚まし100m
-7100 ダンジョン_錆びた扉
-7110 ダンジョン_錆びた宝箱
-7120 ダンジョン_火薬タルの爆発
-7130 ダンジョン_HPドレイン回復
-7200 【SP】　聖堂街A毒ガス
-7201 聖堂街_人寄せの鐘10m
-7202 聖堂街_人寄せの鐘20m
-7203 聖堂街_人寄せの鐘30m
-7204 聖堂街_人寄せの鐘40m
-7205 聖堂街_人寄せの鐘40m（長寿命）
-7210 【SP】聖堂街A_銃弾_至近距離
-7211 【SP】聖堂街A_銃弾_近距離
-7212 【SP】聖堂街A_銃弾_中距離
-7213 【SP】聖堂街A_銃弾_遠距離
-7300 廃墟_目覚まし音
-7400 大学_PC発見音
-7500 森_大砲用_親弾丸
-7501 森_大砲用_孫弾丸
-7600 聖堂街D_号令
-7610 聖堂街D_号令小
-7620 聖堂街D_仕掛け銃
-7630 聖堂街D_藁玉
-7640 廃墟　爆発タル
-7700 漁村_号令_AI音
-7710 漁村_ナメクジ火炎壷_AI音
-7720 漁村_ナメクジ火炎壷
-7721 漁村_ナメクジ火炎壷_延焼弾丸発生ダミー
-7730 漁村_水面着地_AI音
-20600 c2060_グール_生首を投げる
-22300 c2230_デブデーモン_前方魔法
-22305 c2230_デブデーモン_自己中心魔法
-22310 c2231_スノウデーモン_魔法発動（前方）
-22311 c2231_スノウデーモン_魔法発動（自分中心）
-22600 c2260_ヤリデーモン_ヤリ投げ１
-23000 c2300_徘徊デーモン_電撃魔法
-23200 c2320_アイアンゴーレム_斧から真空波
-23600 c2360_四騎士Ｃ（雷）_ヒップアタック_雷爆発
-23700 c2370_四騎士Ｄ_魔法発射１
-23701 c2370_四騎士Ｄ_魔法発射２（長い）
-23702 c2370_四騎士Ｄ_魔法だワッショイ
-23800 c2380_土偶騎士_フォース魔法
-24000 c2400_アサシン_ナイフ投擲
-24100 c2410_白騎士_大弓発射
-24300 c2430_動く石像_ブレス（正面・長め）
-24301 c2430_動く石像_ブレス（首振り）
-25000 c2500_不死人_弓射撃
-25200 c2520_不死人（盗賊）_投げナイフ
-25300 c2530_不死人（蓑虫）_吹き矢
-25400 c2540_不死人（戦士）_瓶を投げる
-25500 c2550_不死人（重戦士）_ボウガン射撃
-25600 c2560_不死人（軽騎士）_ボウガン射撃
-25900 c2590_王の公使（スナイパー）_射撃
-26500 c2650_死人（墓守）　ガイコツから魔法を発射
-26501 c2650_灰を撒く
-26700 c2670_死霊男_魔法発射
-26800 c2680_死霊女_赤子を突き出す
-27000 c2700_蛇人B_毒液を吐く
-27001 c2700_蛇人B_魔法発射
-27100 c2710_クリスタルガード_ひろがる結晶弾
-27110 c2711_クリスタルガード（琥珀）_ひろがる結晶弾
-27300 c2730_ヒロイン_ブレス（足元）
-27301 c2730_ヒロイン_ブレス（少し首振り）  ※ダメージを分けるときのためのもの
-28000 c2800_不死人（結晶）　弓射撃
-28110 c2811_不死者（蛮兵・岩）_岩を投げる
-28300 c2830_不死人ファランクス_槍投げ
-28400 c2840_不死人（鬱血）_血の毒霧を吐く
-28401 c2840_不死人（鬱血）_死亡時毒血大量噴出
-28402 c2840_不死人（鬱血）_呪術１
-28403 c2840_不死人（鬱血）_呪術２
-28600 c2860_巨人奴隷_投擲１～３
-28700 c2870_巨人衛兵（上位版）_奇跡・神の怒り
-29000 c2900_スケルトン　矢
-29010 c2910_スケルトン（大）　大弓矢
-30900 c3090_大蚊_毒血噴出
-32200 c3220_寄生虫_液体を出す
-32300 c3230_カゲロウ龍_魔法の槍
-32310 c3230_カゲロウ龍_魔法の槍（大）
-32320 c3230_カゲロウ龍_魔法の槍（特大）【着弾】
-32330 c3230_カゲロウ龍_範囲爆発
-32400 c3240_イザリス_消化液
-32700 c3270_バジリスク_石化ブレス
-32701 c3270_バジリスク_ジャンプ＆ブレス
-32702 c3270_バジリスク_ジャンプ＆ブレス＿着弾
-33200 c3320_三人羽織り_魔方陣Ａ
-33201 c3320_三人羽織り_魔方陣Ａ（逆さ）
-33202 c3320_三人羽織り_後ステップ＆魔方陣Ａ
-33203 c3320_三人羽織り_後ステップ＆魔方陣Ａ（逆さ）
-33300 c3330_ビシャーチャ_墨を吐く
-33410 c3341_公使の炎犬_炎を吐く
-33800 c3380_大ヒル_粘液を吐く
-33900 c3390_穴掘りウジ虫_近距離に液を吐く
-33901 c3390_穴掘りウジ虫_遠距離に液を吐く
-33902 c3390_穴掘りウジ虫_根元に液を吐く（地面）
-33903 c3390_穴掘りウジ虫_遠くに液を吐く（地面）
-33904 c3390_穴掘りウジ虫_粘液を吐く（壁）
-33906 c3390_穴掘りウジ虫_粘液・前（天井）
-33907 c3390_穴掘りウジ虫_粘液・右（天井）
-33908 c3390_穴掘りウジ虫_粘液・左（天井）
-33909 c3390_穴掘りウジ虫_粘液・後ろ（天井）
-34000 c3400_クラグスパイダー子_へその緒からマグマ
-34001 c3400_クラグスパイダー子_へその緒からマグマ【着弾】
-34100 c3410_カエルエイ_粘液
-34200 c3420_ドラゴンゾンビ　アッシドブレス
-34203 c3420_ドラゴンゾンビ　正面ブレス
-34204 c3420_ドラゴンゾンビ　広角ブレス
-34205 c3420_ドラゴンゾンビ　浮遊して真下にブレス
-34206 c3420_ドラゴンゾンビ　浮遊して真下にブレス（拡散する子弾）
-34207 c3420_ドラゴンゾンビ(ｍ16専用)　右方向にブレス
-34208 c3420_ドラゴンゾンビ(ｍ16専用)_ブレス（各方向共通）
-34209 c3420_ドラゴンゾンビ(ｍ16専用)　左方向にブレス
-34300 c3430_ヘルカイト_ブレス
-34700 ｃ3470_金キメラ（旧）_翼で風を起こす
-34701 ｃ3470_金キメラ（旧）_ブレス１
-34710 ｃ3471_金キメラ_翼で風を起こす
-34711 ｃ3471_金キメラ_ブレス1
-34712 ｃ3471_金キメラ_ブレス2
-34713 ｃ3471_金キメラ_空中ブレス1
-34714 ｃ3471_金キメラ_空中ブレス2
-34716 ｃ3471_金キメラ_空中ブレス（子）
-34717 ｃ3471_金キメラ_空中ブレス（孫）
-34718 ｃ3471_金キメラ_空中ブレス（曾孫）
-34719 ｃ3471_金キメラ_空中ブレス（玄孫）
-34720 ｃ3471_金キメラ_空中ブレス（来孫）
-34721 ｃ3471_金キメラ_ステップ振り向きブレス
-34910 c3491_ドリフトアイテム（悪）_トゲトゲ発射
-35000 c3500_ビッグゼリー_スライムを吐く（近距離）
-35001 c3500_ビッグゼリー_スライムを吐く（遠距離）
-35011 c3501_ウィスプ_自爆
-35012 c3501_ウィスプ_触れる攻撃
-35200 c3520_ワイバーン_上下ブレス
-35201 c3520_ワイバーン_左右ブレス（近）
-35202 c3520_ワイバーン_左右ブレス（中）
-35203 c3520_ワイバーン_左右ブレス（遠）
-35204 c3520_ワイバーン_急降下ブレス
-35205 c3520_ワイバーン_ブレス着弾
-35206 c3520_ワイバーン_ブレス（地上）
-35207 c3520_ワイバーン_首振りブレス（地上）
-35208 c3520_ワイバーン_ブレス＆バックステップ（地上）
-35209 c3520_ワイバーン_飛び立ちブレス（地上）
-35210 c3520_ワイバーン_飛び立ちブレス（前方移動）
-35211 c3520_ワイバーン_飛び立ちブレス右回り込み
-35212 c3520_ワイバーン_上昇＆滑空＆ブレス
-35213 c3520_ワイバーン_上昇ブレス＆飛び越え
-35300 c3530_湖獣_Ａ地点→Ｂ地点移動_ブレス
-35301 c3530_湖獣_Ｂ地点→Ａ地点移動_ブレス
-35310 c3530_湖獣_ブレス　本体
-35320 c3530_湖獣_移動ブレス　本体
-35330 c3530_湖獣_ブレス【着弾（子）】
-35331 c3530_湖獣_移動ブレス【着弾（子）】
-45100 c4510_黒竜_直線ブレス
-45101 c4510_黒竜_直線ブレス_1発目
-45102 c4510_黒竜_直線ブレス_2発目
-45103 c4510_黒竜_直線ブレス_3発目
-45110 c4510_黒竜_扇型ブレス
-45120 c4510_黒竜_立ち上がりブレス
-45130 c4510_黒竜_180旋回_ブレス
-45140 c4510_黒竜_イベント攻撃（遠）ブレス
-45160 c4510_黒竜_イベント攻撃（近）ブレス
-45170 c4510_黒竜_直下ブレス
-45180 c4510_黒竜_崖ブレス1
-45190 c4510_黒竜_崖ブレス2
-45200 c4510_黒竜_橋を横切る_衝撃
-51400 c5140（DS２プロト）_飛竜の眷属_ブレス弾丸
-52000 c5200_ムカデ巨人_火球
-52002 c5200_ムカデ巨人_巨大な火球を投げる【投げ】
-52003 c5200_ムカデ巨人_巨大な火球を投げる【着弾】
-52201 墓王　自己中心爆発
-52310 c5231_キングイザリス（第３形態）_着弾用弾
-52311 c5231_キングイザリス（第３形態）_ブレス着弾
-52600 c5260_貪食ドラゴン_ゲロ（実弾）
-52601 c5260_貪食ドラゴン_ゲロ（着弾）
-52700 c5270_グリフィス_稲妻を発生させて投げる
-52701 c5270_グリフィス_片手・雷発射
-52710 c5271_グリフィス（大）_稲妻を発生させて投げる
-52711 c5271_巨大グリフィス_ヒップアタック_爆発
-52712 c5271_巨大老騎士グリフィス_片手・雷発射
-52800 ｃ5280_焔の魔女クラグスパイダー_マグマ弾【投げ】
-52801 ｃ5281_焔の魔女クラグスパイダー_マグマ弾【着弾】
-52802 ｃ5280_焔の魔女クラグスパイダー_強ブレス
-52803 ｃ5280_焔の魔女クラグスパイダー_自分中心爆発
-52804 ｃ5280_焔の魔女クラグスパイダー_おしり火炎
-52805 ｃ5281_焔の魔女クラグスパイダー_強ブレスマグマ弾【着弾】
-52900 c5290_白竜シース_ブレス（近距離なぎ払い）
-52901 c5290_白竜シース_ブレス（近距離なぎ払い）【着弾】
-52902 c5290_白竜シース_ブレス（遠距離なぎ払い）
-52903 c5290_白竜シース_ブレス（遠距離なぎ払い）【着弾】
-52904 c5290_白竜シース_ブレス（正面）
-52905 c5290_白竜シース_ブレス（正面）【着弾】
-52906 c5290_白竜シース_ブレス（正面）：途中の遅いver.
-52907 c5290_白竜シース_自己中心爆発【親】
-52908 c5290_白竜シース_自己中心爆発
-52909 c5290_白竜シース_自己中心爆発
-52910 c5290_白竜シース_自己中心爆発（ダメージ継続用）【親】
-52911 c5290_白竜シース_自己中心爆発（ダメージ継続用）
-52912 c5290_白竜シース_自己中心爆発_子弾１
-52913 c5290_白竜シース_自己中心爆発_子弾２
-52914 c5290_白竜シース_自己中心爆発_子弾３
-52915 c5290_白竜シース_自己中心爆発_子弾４
-52916 c5290_白竜シース_自己中心爆発_子弾５
-52917 c5290_白竜シース_自己中心爆発_子弾６
-52921 c5290_白竜シース_ブレス（正面）【着弾】
-53000 c5300_不死王ジャ＝イール_ソウルエネルギー爆発
-53200 c5320_皇母妹　弓
-53201 c5320_皇母妹　誘導
-53202 c5320_皇母妹　極太
-53500 c5350_ガーゴイル_首振りブレス
-53501 c5350_ガーゴイル_空中からブレス
-53510 c5351_ガーゴイル（色違い）_首振りブレス
-53511 c5351_ガーゴイル（色違い）_空中からブレス
-53900 c5390_ジャイール・デーモン_自己中心爆発
-53901 c5390_ジャイール・デーモン_闇のオーラをばらまく
-53902 c5390_ジャイール・デーモン_巨大な闇のオーラを発射
-54000 c5400_ボスイザリス_右手で炎を投げる（右方向）
-54001 c5400_ボスイザリス_右手で炎を投げる（左方向）
-54002 c5400_ボスイザリス_自己中心炎
-54004 c5400_ボスイザリス_残るマグマ
-54005 c5400_ボスイザリス_炎を投げる【着弾】
-54011 c5400_ボスイザリス_炎の嵐
-100000 c1000_猟犬_引っ掻く1
-100001 c1000_猟犬_引っ掻く2
-100010 c1000_猟犬_噛みつく1
-100011 c1000_猟犬_噛みつく2
-100020 c1000_猟犬_飛び掛かる（短）
-100030 c1000_猟犬_飛び掛かる（長）
-100040 c1000_猟犬_走り抜ける
-100050 c1000_猟犬_のしかかって噛みつく
-100060 c1000_猟犬_あばれ引っ掻き（1段目）　左手 小
-100061 c1000_猟犬_あばれ引っ掻き（2段目）　左手 小
-100062 c1000_猟犬_あばれ引っ掻き（3段目）　右手 小
-100063 c1000_猟犬_あばれ引っ掻き（4段目）　右手 小
-100064 c1000_猟犬_あばれ引っ掻き（5段目）　左手 小
-100065 c1000_猟犬_あばれ引っ掻き（6段目）　右手 吹飛
-100066 c1000_猟犬_噛みつく3
-100070 c1000_猟犬__投げ攻撃
-100090 c1000_猟犬_窓破壊 体当たり
-100091 c1000_猟犬_窓破壊 引っ掻き1
-100092 c1000_猟犬_窓破壊 引っ掻き2
-100093 c1000_猟犬_窓破壊 扉くぐり用（キャラ弾き飛ばし用）
-101000 c1010_司祭_炎魔法（小）
-101010 c1010_司祭_炎魔法（中）
-101020 c1010_司祭_杖をぶんぶんなぎ払う（1撃目）
-101021 c1010_司祭_杖をぶんぶんなぎ払う（2撃目）
-101030 c1010_司祭_呪う
-101040 c1010_司祭_炎魔法（コンボ）
-101100 c1010_廃墟スナイパー_射撃
-101110 c1010_廃墟スナイパー_連射
-101120 c1010_廃墟スナイパー_速射
-101800 c1010_生贄街砲台
-101820 c1010_生贄街砲台（ガトリング）
-101900 c1010_司祭_ボス_炎魔法（小）
-101910 c1010_司祭_ボス_炎魔法（中）
-101920 c1010_司祭_ボス_杖をなぎ払う（１撃目）
-101930 c1010_司祭_ボス_炎魔法（コンボ）
-101940 c1010_司祭_ボス_杖をなぎ払う（２撃目）
-101950 c1010_司祭_ボス_高速火塊
-101960 c1010_司祭_ボス_誘導火塊
-101970 c1010_司祭_ボス_マグマ波発射
-101980 c1010_司祭_ボス_散弾（1撃目）
-101990 c1010_司祭_ボス_散弾（2撃目）
-102000 c1020_群衆A_斧を振る（松明&斧）
-102001 c1020_群衆A_2連続攻撃（1撃目）（松明&斧）
-102002 c1020_群衆A_2連続攻撃（2撃目）（松明&斧）
-102003 c1020_群衆A_振りかぶって叩きつける（松明&斧）
-102004 c1020_群衆A_走って振り下ろす（松明&斧）
-102005 c1020_群衆A_松明で殴る(右手）（松明&斧）
-102006 c1020_群衆A_松明を振り回す(右手）（松明&斧）(左から)
-102007 c1020_群衆A_松明を振り回す(右手）（松明&斧）(右から)
-102008 c1020_群衆A_松明を突き出す(右手）（松明&斧）
-102009 c1020_群衆A_松明を掲げて叫ぶ(右手）（松明&斧）
-102010 c1020_群衆A_盾で殴りつける（盾&松明）
-102011 c1020_群衆A_押し出して盾をぶつける（盾&松明）
-102012 c1020_群衆A_盾を構えて突進（盾&松明）
-102013 c1020_群衆A_松明で殴る(左手）（盾&松明）
-102014 c1020_群衆A_松明を振り回す(左手）（盾&松明）(右から)
-102015 c1020_群衆A_松明を振り回す(左手）（盾&松明）(左から)
-102016 c1020_群衆A_松明を突き出す(左手）（盾&松明）
-102017 c1020_群衆A_松明を掲げて叫ぶ(左手）（盾&松明）
-102020 c1020_群衆A_2回突く（1撃目）（火かき棒&盾） ※サーベルとして使用中
-102021 c1020_群衆A_2回突く（2撃目）（火かき棒&盾） ※サーベルとして使用中
-102022 c1020_群衆A_勢いをつけて突く（火かき棒&盾） ※サーベルとして使用中
-102023 c1020_群衆A_盾に隠れて突く（火かき棒&盾）
-102024 c1020_群衆A_叩きつける（火かき棒&盾） ※包丁・鎌として使用中
-102030 c1020_群衆A_片手で連続攻撃（１撃目）（サーベル）
-102031 c1020_群衆A_片手で連続攻撃（２撃目）（サーベル）
-102032 c1020_群衆A_片手で連続攻撃（３撃目）（サーベル）
-102033 c1020_群衆A_両手で力任せに攻撃（サーベル）
-102034 c1020_群衆A_暴れる（振り回す）（サーベル）(左から)
-102035 c1020_群衆A_暴れる（振り回す）（サーベル）(右から)
-102036 c1020_群衆A_飛び込んで攻撃（サーベル）
-102037 c1020_群衆A_両手で力強く突く（サーベル）
-102040 c1020_群衆A_片手で連続攻撃（１撃目）（鎌・包丁）
-102041 c1020_群衆A_片手で連続攻撃（２撃目）（鎌・包丁）
-102042 c1020_群衆A_片手で連続攻撃（３撃目）（鎌・包丁）
-102043 c1020_群衆A_両手で力任せに攻撃（鎌・包丁）
-102044 c1020_群衆A_暴れる（振り回す）（鎌・包丁）(左から)
-102045 c1020_群衆A_暴れる（振り回す）（鎌・包丁）(右から)
-102046 c1020_群衆A_飛び込んで攻撃（鎌・包丁）
-102050 c1020_群衆A_手斧を投げる（投擲&盾）
-102051 c1020_群衆A_手斧で切りかかる（投擲&盾） ※鎌として使用中
-102052 c1020_群衆A_盾を構えて手斧で切る（投擲&盾）
-102053 c1020_群衆A_2連続切り（投擲&盾）_1段目 ※包丁として使用中
-102054 c1020_群衆A_2連続切り（投擲&盾）_2段目 ※包丁として使用中
-102055 c1020 群衆A_火炎壺を投げる
-102056 c1020 群衆A_油壺を投げる
-102060 c1020_群衆A_突く（両手長物）
-102061 c1020_群衆A_２回突く（１撃目）（両手長物）
-102062 c1020_群衆A_２回突く（２撃目）（両手長物）
-102063 c1020_群衆A_横に薙ぐ（両手長物）
-102064 c1020_群衆A_両手で棒を構えて押し出す（両手長物）
-102065 c1020_群衆A_両手で叩きつける（両手長物）
-102066 c1020_群衆A_走って突く（両手長物）
-102067 c1021_群衆A_PCを発見（聖堂街用）
-102068 c1021_群衆A_音弾丸（聖堂街用）
-102070 c1020_群衆A_ガード（共通）
-102071 c1020_群衆A_体が当たる（共通）
-102075 c1020_群衆A_殴る（素手）
-102076 c1020_群衆A_蹴る（素手）
+104 NPC_test4_Guard
+105 NPC_test5_Big Attack
+106 NPC_test6_shield attack
+107 NPC_test7_Rush attack
+200 Falling radius 1m
+201 Blowback (weak) 1m radius
+202 Blowback (strong) 1m radius
+2000 Tomb King Magic Space Attack
+3000 Common attack [Ladder_Right punch]
+3001 Common attack [Ladder_Right kick]
+3002 Common attack [Ladder_Left punch]
+3003 Common attack [Ladder_Left kick]
+3004 Common attack [Ladder_sliding]
+3005 Common attack [Ladder_Right punch_Tall]
+3006 Common attack [Ladder_Left punch_Tall]
+3100 Common attack [falling/humanoid]
+3101 Common attack [falling on back/humanoid]
+3102 Common attack [Falling prone/Humanoid]
+3104 Common attack [thud landing/humanoid]
+3105 Common attack [landing on supine/humanoid]
+3106 Common attack [landing prone/humanoid]
+3107 Common attack [Blow away/Humanoid]
+3108 Common attack [Step/Humanoid]
+3109 Common attack [Step/c2520 Immortal Thief]
+3110 Common attack [falling/quadruped type]
+3111 Common attack [landing/quadruped type]
+3112 Common attack [Blow away/c1200 dog and rat]
+3113 Common attack [Step/c2950 Skeleton (Beast)]
+3114 Common attack [Falling/c2950 skeleton (beast)]
+3115 Common attack [Landing/c2950 skeleton (beast)]
+3116 Common attack [Blow away/c2950 skeleton (beast)]
+3117 Common attack [Falling/c2960 Totem Skeleton]
+3118 Common attack [Landing/c2960 Totem Skeleton]
+3119 Common attack [Falling/c3090 large mosquito]
+3120 Common attack [Blow away/c3090 large mosquito]
+3121 Common attack [Falling/c3200 moving carrion]
+3122 Common attack [Landing/c3200 moving carrion]
+3123 Common attack [falling/c3210 egg carrying]
+3124 Common attack [landing/c3210 egg carrying]
+3125 Common attack [Blow away/c3210 egg carrying]
+3126 Common attack [falling/c3220 parasite]
+3127 Common attack [Landing/c3220 Parasite]
+3128 Common attack [Blow away/c3220 Parasite]
+3129 Common attack [Step/c3270 Basilisk]
+3130 Common attack [Falling/c3270 Basilisk]
+3131 Common attack [Landing/c3270 Basilisk]
+3132 Common attack [falling/c3290 royal insect and mosquito]
+3133 Common attack [Landing/c3290 Royal insect and mosquito]
+3134 Common attack [Falling/c3300 crystal lizard]
+3135 Common attack [Landing/c3300 crystal lizard]
+3136 Common attack [Blow away/c3300 crystal lizard]
+3137 Common attack [Step c3340 Minister's black dog]
+3138 Common attack [Blows away/c3340 Minister's black dog]
+3139 Common attack [Falling/c3350 moving tree]
+3140 Common attack [landing/c3350 moving tree]
+3141 Common attack [Falling/c3380 large hill]
+3142 Common attack [Landing/c3380 large hill]
+3143 Common attack [Blow away/c3380 large hill]
+3144 Common attack [Step/c3410 Frog Ray]
+3145 Common attack [Blow away/c3410 frog ray]
+3146 Common attack [Step c5360 big cat with split mouth]
+3147 Common attack [Falling/c5360 big cat with split mouth]
+3148 Common attack [Landing/c5360 big cat with split mouth]
+3149 Common attack [Blows away/c5360 big cat with gaping mouth]
+3150 Common attack [Step (right foot)/c2320 Iron Golem]
+3151 Common attack [Step (left foot)/c2320 Iron Golem]
+3152 Common attack [Falling/c2320 Iron Golem]
+3153 Common attack [Landing/c2320 Iron Golem]
+3154 Common attack [Step/c5210 Holy Sword Wolf]
+3155 Common attack [Step (back legs only)/c5210 Holy Sword Wolf]
+3156 Common attack [Falling/c5210 Holy Sword Wolf]
+3157 Common attack [Landing/c5210 Holy Sword Wolf]
+3158 Common attack [Step/c5280 Flame Witch Crag Spider]
+3159 Common attack [Falling/c5280 Flame Witch Crag Spider]
+3160 Common attack [Landing/c5280 Flame Witch Crag Spider]
+3161 Common attack [Falling/c5320 Empress sister]
+3162 Common attack [Landing/c5320 Empress sister]
+3163 Common attack [Blows away/c5320 Empress sister]
+3164 Common attack [Falling/c5350 Gargoyle]
+3165 Common attack [Landing/c5350 Gargoyle]
+3166 Common attack [Step/c5350 Gargoyle]
+3167 Common attack [Blow away/c5350 Gargoyle]
+3168 Common attack [Step/c2260 Spear Demon]
+3169 Common attack [Falling/c2260 Spear Demon]
+3170 Common attack [Landing/c2260 Spear Demon]
+3171 Common attack [Blow away/c2260 Spear Demon]
+3172 Common attack [Step (attacking)/c2260 Spear Demon]
+3173 Common attack [Falling/c1202 dog and rat (large)]
+3174 Common attack [Landing/c1202 dog and rat (large)]
+3175 Common attack [Step/c1202 Dog/Mouse (Large)]
+3176 Common attack [Falling/c3460 Armored Task]
+3177 Common Attack [Landing/c3460 Armored Task]
+3178 Common attack [Blow away/c3460 Armored Task]
+3179 Common attack [falling/c3490 drift item]
+3180 Common attack [landing/c3490 drift item]
+3181 Common attack [Blow away/c3490 drift item]
+3182 Common attack [Step/c3490 drift item]
+3183 Common attack [Fall on back/c2360 Four Knights C]
+3184 Common attack [Falling prone/c2360 Four Knights C]
+3185 Common attack [Falling/c3240 Izalith]
+3186 Common attack [Landing/c3240 Izalith]
+3187 Common attack [Blow away/c3240 Izalith]
+3188 Common attack [Falling/c3250 Izalith Queen]
+3189 Common attack [Landing/c3250 Izalith Queen]
+3190 Common attack [Blow away/c3250 Izalith Queen]
+3191 Common attack [Small blow-off/c3250 Izalith Queen]
+3192 Common attack [Falling/c3330 Vishacha]
+3193 Common attack [Fall on back/c3330 Vishacha]
+3194 Common attack [Falling prone/c3330 Vishacha]
+3195 Common attack [Landing/c3330 Vishacha]
+3196 Common attack [Thud landing/c3330 Vishacha]
+3197 Common attack [landing on supine/c3330 Vishacha]
+3198 Common attack [prone landing/c3330 Vishacha]
+3199 Common attack [Blow away/c3330 Vishacha]
+3200 Common attack [Falling/c2830 Immortal Phalanx]
+3201 Common attack [Landing/c2830 Immortal Phalanx]
+3202 Common attack [Blow away/c2830 Immortal Phalanx]
+3203 Common attack [Falling/c3400 Krag spider child]
+3204 Common attack [Landing/c3400 Krag spider child]
+3205 Common attack [Blow away/c3400 Krag spider child]
+3206 Common attack [Step/c3400 Crag spider child]
+3207 Common attack [Step/c3480 Sun insect]
+3208 Common attack [falling/c2300 wandering demon]
+3209 Common attack [landing/c2300 wandering demon]
+3210 Common attack [Blow away/c2300 wandering demon]
+3211 Common attack [Falling/c2860 giant slave]
+3212 Common attack [Landing/c2860 giant slave]
+3213 Common attack [Step/c2870 Giant Guard]
+3214 Common attack [Step/c2930 skeleton (wheel)]
+3215 Common attack [Blow away/c2930 skeleton (wheel)]
+3216 Common attack [Blow away (wheels)/c2930 skeleton (wheels)]
+3217 Common attack [falling/c3370 tree climbing lizard]
+3218 Common attack [Landing/c3370 tree climbing lizard]
+3219 Common attack [Blow away/c3370 tree climbing lizard]
+3220 Common attack [Step/c3370 Tree climbing lizard]
+3221 Common attack [falling/c3390 digging maggot]
+3222 Common attack [Landing/c3390 digging maggot]
+3223 Common attack [Step/c3420 Dragon Zombie]
+3224 Common attack [Falling/c3420 Dragon Zombie]
+3225 Common attack [Landing/c3420 Dragon Zombie]
+3226 Common attack [Falling/c3420 Dragon Zombie (lower body)]
+3227 Common attack [Landing/c3420 Dragon Zombie (lower body)]
+3228 Common attack [Falling/c3500 big jelly]
+3229 Common attack [Landing/c3500 Big Jelly]
+3230 Common attack [Falling/c3520 Wyvern]
+3231 Common attack [Landing/c3520 Wyvern]
+3232 Common attack [Step c3520 Wyvern]
+3233 Common attack [Falling/C5200 Centipede Demon]
+3234 Common attack [Landing/c5200 Centipede Demon]
+3235 Common attack [Step C5200 Centipede Demon]
+3236 Common attack [Falling/c5201 Centipede demon arm]
+3237 Common attack [Landing/c5201 Centipede demon arm]
+3238 Common attack [Step c5201 Centipede demon arm]
+3239 Common attack [Falling/c5202 Centipede demon's tail]
+3240 Common attack [Landing/c5202 Centipede demon tail]
+3241 Common attack [Step/c5202 Centipede demon's tail]
+3242 Common attack [Falling/c5260 Devouring Dragon]
+3243 Common attack [Blow away/c2780 Mimic]
+3244 Common attack [Falling/c5220 Grave King]
+3245 Common attack [Landing/c5220 Grave King]
+3246 Common attack [Falling/c3450 Zazen Dragon]
+3247 Common attack [Landing/c3450 Zazen Dragon]
+3248 Common attack [Landing (hand part)/c3450 Zazen Dragon]
+3249 Common attack [Falling/c5290 White Dragon Sheath]
+3250 Common attack [Landing/c5290 White Dragon Sheath]
+3251 Common attack [Landing (tentacle right)/c5290 White Dragon Sheath]
+3252 Common attack [Landing (tentacle left)/c5290 White Dragon Sheath]
+3253 Common attack [Landing (after tentacle)/c5290 White Dragon Sheath]
+3254 Common attack [Falling/c2230 Fat Demon]
+3255 Common attack [Thud landing/c2230 fat demon]
+3256 Common attack [Step/c2230 Fat Demon]
+3257 Common attack [Falling/c2250 Hammer Demon]
+3258 Common attack [Step/c2250 Hammer Demon]
+3259 Common attack [Step/c2400 Assassin]
+3260 Common attack [Thud landing/c5271 Griffith (Large)]
+3261 Common attack [Blow away/c2900 skeleton]
+3262 Common attack [Step/c2920 thick skeleton]
+3263 Common attack [Ladder top attack/c2690 Hebito A]
+3264 Common attack [Falling/c2430 moving stone statue]
+3265 Common attack [landing/c2430 moving stone statue]
+3266 Common attack [Blow away/c2430 moving stone statue]
+3267 Common attack [Falling/c2940 skeleton baby]
+3268 Common attack [Falling/c3200_Moving carrion]
+3269 Common attack [Falling/c5240 Prince Izalith]
+3300 [DLC] New common attack [Foot/Large damage/Humanoid]
+3301 [DLC] New common attack [Center/Large damage/Humanoid]
+3303 [DLC] New common attack [Foot/Small damage/Humanoid]
+3306 [DLC] New common attack [Center/No damage/Humanoid]
+3307 [DLC] New common attack [Back/No damage/Humanoid]
+3308 [DLC] New common attack [Foot/No damage/Humanoid]
+3309 [DLC] New common attack [belly/no damage/humanoid]
+3310 Common attack [Step/c1000 Hound]
+3311 Common attack [Falling/c1000 hound]
+3312 Common attack [landing/c1000 hound]
+3313 Common attack [Blowing away c1000 hound]
+3314 Common attack [Step (right foot)/c5000 vicar]
+3315 Common attack [Step (left foot)/c5000 vicar]
+3316 Common attack [Step (left hand)/c5000 vicar]
+3317 Common attack [fall/c5000 vicar]
+3318 Common attack [Landing/C5000 Parish Chief]
+3319 Common attack [stepping (right foot)/c5000 vicar]
+3320 Common attack [stepping (left foot)/c5000 vicar]
+3321 Common attack [Fall/c1110 Followers of Death and Darkness]
+3322 Common attack [Landing/c1110 Followers of Death and Darkness]
+3323 Common attack [Blow away/c1110 Followers of Death and Darkness]
+3324 Common attack [Step/c1100 Sewer Rat]
+3325 Common attack [falling/c1100 sewer rat]
+3326 Common attack [Landing/c1100 Sewer Rat]
+3327 Common attack [Blow away/c1100 sewer rat]
+3328 Common attack [Step/c1170 Carcass Bird]
+3329 Common attack [Falling/c1170 carcass bird]
+3330 Common attack [Landing/c1170 Carcass Bird]
+3331 Common attack [Blow away/c1170 Carcass Bird]
+3332 Common attack [Step (right foot)/c5020 Saint Beast]
+3333 Common attack [Step (left foot)/c5020 Saint Beast]
+3334 Common attack [Step (left hand)/c5020 Saint Beast]
+3335 Common attack [Falling/c5020 Saint Beast]
+3336 Common attack [Landing/c5020 Saint Beast]
+3337 Common attack [stepping (right foot)/c5020 Saint Beast]
+3338 Common attack [stepping (left foot)/c5020 Saint Beast]
+3339 Common attack [Step/c1140 Fanatic Beast]
+3340 Common attack [Blow away/c1140 Fanatic's beast]
+3341 Common attack [Launch/c1140 Fanatic's Beast]
+3342 Common attack [Landing/No damage/c5520 Lesser Demon variation]
+3343 Common attack [Landing/c25 October's spawn]
+3344 Common attack [Step/c2130 Blood licking]
+3345 Common attack [falling/c2130 blood licking]
+3346 Common attack [landing/c2130 blood licking]
+3347 Common attack [Blow away/c2130 Blood licking]
+3348 Common attack [Step/c2530 Star Flower]
+3349 Common attack [Falling/c5090 Founder Beast]
+3350 Common attack [Landing/c5090 Founder Beast]
+3351 Common attack [Falling/c5100 Idiot Spider]
+3352 Common attack [Landing/c5100 Idiot Spider]
+3353 Common attack [push/c2610 crowd woman]
+3360 Common attack [Step (right hind foot)/c4510 Ludwig]
+3361 Common attack [Step (left hind foot)/c4510 Ludwig]
+3362 Common attack [Step (front right foot)/c4510 Ludwig]
+3363 Common attack [Step (left front foot)/c4510 Ludwig]
+4000 Common_Fire spread attack
+4010 Dummy bullet for scorch mark decal
+4011 Dummy bullet for oil-covered decals
+4012 Dummy bullet No forest decal
+4020 Common_Finch/grab the surroundings when a throw occurs
+4021 Common_Frighten the surroundings when a throw occurs/Futtobi
+4100 Dungeon　Aburanuma Fire　Version with map
+4101 Dungeon Ayanuma Fire Spread Map No Version
+4110 Dungeon Oil Swamp Fire Fire Damage
+4111 Dungeon Ayanuma Fire Spread Fire Damage No map per version
+5000 Castle area 1 Burning corpse
+5010 Castle Town 1 Closing Damage
+5020 Castle area 1 Burning rumbling barrel
+5030 Castle area 1 Burning iron ball (unused)
+5040 Ojo 1 Pendulum
+5041 Dungeon Guillotine (Ojyo 1 Pendulum Invincible/Non-null version)
+5050 Ojo 1 Large Iron Ball
+5060 Ojo 1 Elevator Ceiling Spear
+5070 Dungeon Fire Arrow Trap (Former Ojo 1 Jumping Arrow)
+5080 Royal Castle 1 Fire-breathing gargoyle statue
+5090 Ruined City Lava damage [Negated by ring]
+5091 Abandoned City Lava damage [pierces through the ring]
+5100 Cemetery 1 Thorn Bridge Needle
+5110 Tutorial Iron Ball
+5120 Cemetery 1 Stone Statue Needle
+5130 Hellkite_Fire Breath
+5140 Hellkite_Fire Breath (Strong)
+5150 Hellkite_Flying Breath
+5160 Hellkite_Forward flight & reversal_Breath
+5170 Hellkite_Rising & Downward Breath_Breath
+5180 Abandoned City Seal Breaking Shock Wave
+5190 Hellkite_B point breath 3
+5200 Hellkite_Move from point A to point B
+5210 Hellkite_B point breath 1
+5220 Hellkite_B point breath 2
+5230 Hellkite_B point takeoff breath 2
+6000 Dungeon Explosive Barrel
+6010 Religious town bonfire
+6020 [SP] Cathedral Town B Bonfire
+6030 Ruins Big Explosion
+6040 Ruins Explosive Barrel
+6050 Cemetery District Explosive Barrel
+6080 [SP] Dungeon Surrounding Strengthening
+6090 [SP] Incense Burner Poison
+6091 [SP] Incense burner covered in oil
+6092 [SP] Incense burner, just smoke
+6100 [SP] Forest Pendulum (Log)
+6110 Cathedral Town B Bonfire
+6111 Cathedral Town B Firewood cart (straw ball)
+6112 Cathedral Town B Firewood cart (straw ball) stop
+6120 [SP] Dungeon Incense Burner Poison Ritual Level 1
+6121 [SP] Dungeon Incense Burner Poison Ritual Level 2
+6122 [SP] Dungeon Incense Burner Poison Ritual Level 3
+6123 [SP] Dungeon Incense Burner Poison Ritual Level 4
+6124 [SP] Dungeon Incense Burner Poison Ritual Level 5
+6125 [SP] Dungeon Incense Burner Poison Ritual Level 6
+6126 [SP] Dungeon Incense Burner Poison Ritual Level 7
+6127 [SP] Dungeon Incense Burner Poison Ritual Level 8
+6130 [SP] Dungeon Pendulum & Guillotine Ritual Level 1
+6131 [SP] Dungeon Pendulum & Guillotine Ritual Level 2
+6132 [SP] Dungeon Pendulum & Guillotine Ritual Level 3
+6133 [SP] Dungeon Pendulum & Guillotine Ritual Level 4
+6134 [SP] Dungeon Pendulum & Guillotine Ritual Level 5
+6135 [SP] Dungeon Pendulum & Guillotine Ritual Level 6
+6136 [SP] Dungeon Pendulum & Guillotine Ritual Level 7
+6137 [SP] Dungeon Pendulum & Guillotine Ritual Level 8
+6140 [SP] Dungeon Rock/Iron Ball Ritual Level 1
+6141 [SP] Dungeon Rock/Iron Ball Ritual Level 2
+6142 [SP] Dungeon Rock/Iron Ball Ritual Level 3
+6143 [SP] Dungeon Rock/Iron Ball Ritual Level 4
+6144 [SP] Dungeon Rock/Iron Ball Ritual Level 5
+6145 [SP] Dungeon Rock/Iron Ball Ritual Level 6
+6146 [SP] Dungeon Rock/Iron Ball Ritual Level 7
+6147 [SP] Dungeon Rock/Iron Ball Ritual Level 8
+6150 [SP] Dungeon Explosive Barrel Ritual Level 1
+6151 [SP] Dungeon Explosive Barrel Ritual Level 2
+6152 [SP] Dungeon Explosive Barrel Ritual Level 3
+6153 [SP] Dungeon Explosive Barrel Ritual Level 4
+6154 [SP] Dungeon Explosive Barrel Ritual Level 5
+6155 [SP] Dungeon Explosive Barrel Ritual Level 6
+6156 [SP] Dungeon Explosive Barrel Ritual Level 7
+6157 [SP] Dungeon Explosive Barrel Ritual Level 8
+6160 [SP] Dungeon Bonfire Ritual Level 1
+6161 [SP] Dungeon Bonfire Ritual Level 2
+6162 [SP] Dungeon Bonfire Ritual Level 3
+6163 [SP] Dungeon Bonfire Ritual Level 4
+6164 [SP] Dungeon Bonfire Ritual Level 5
+6165 [SP] Dungeon Bonfire Ritual Level 6
+6166 [SP] Dungeon Bonfire Ritual Level 7
+6167 [SP] Dungeon Bonfire Ritual Level 8
+6170 [SP] Dungeon Cannon
+6171 [SP] Dungeon Cannon Dummy Bullet
+6172 [SP] Dungeon Cannon Blast
+6173 [SP] Forest Cannon
+6174 [SP] Forest Cannon Dummy Bullet
+6175 [SP] Forest Cannon Blast
+6200 [SP] Dungeon Fire Arrow Trap Ritual Level 1
+6201 [SP] Dungeon Fire Arrow Trap Ritual Level 2
+6202 [SP] Dungeon Fire Arrow Trap Ritual Level 3
+6203 [SP] Dungeon Fire Arrow Trap Ritual Level 4
+6204 [SP] Dungeon Fire Arrow Trap Ritual Level 5
+6205 [SP] Dungeon Fire Arrow Trap Ritual Level 6
+6206 [SP] Dungeon Fire Arrow Trap Ritual Level 7
+6207 [SP] Dungeon Fire Arrow Trap Ritual Level 8
+6210 [SP] Dungeon Fire Arrow Trap Storm Attribute/Ritual Level 1
+6211 [SP] Dungeon Fire Arrow Trap Storm Attribute/Ritual Level 2
+6212 [SP] Dungeon Fire Arrow Trap Storm Attribute/Ritual Level 3
+6213 [SP] Dungeon Fire Arrow Trap Storm Attribute/Ritual Level 4
+6214 [SP] Dungeon Fire Arrow Trap Storm Attribute/Ritual Level 5
+6215 [SP] Dungeon Fire Arrow Trap Storm Attribute/Ritual Level 6
+6216 [SP] Dungeon Fire Arrow Trap Storm Attribute/Ritual Level 7
+6217 [SP] Dungeon Fire Arrow Trap Storm Attribute/Ritual Level 8
+6220 [SP] Dungeon Fire Arrow Trap Cosmic Attribute/Ritual Level 1
+6221 [SP] Dungeon Fire Arrow Trap Cosmic Attribute/Ritual Level 2
+6222 [SP] Dungeon Fire Arrow Trap Cosmic Attribute/Ritual Level 3
+6223 [SP] Dungeon Fire Arrow Trap Cosmic Attribute/Ritual Level 4
+6224 [SP] Dungeon Fire Arrow Trap Cosmic Attribute/Ritual Level 5
+6225 [SP] Dungeon Fire Arrow Trap Cosmic Attribute/Ritual Level 6
+6226 [SP] Dungeon Fire Arrow Trap Cosmic Attribute/Ritual Level 7
+6227 [SP] Dungeon Fire Arrow Trap Cosmic Attribute/Ritual Level 8
+6230 [SP] Dungeon Fire Arrow Trap Sub Feature Poisonous Enemy/Ritual Level 1
+6231 [SP] Dungeon Fire Arrow Trap Sub Feature Poisonous Enemy/Ritual Level 2
+6232 [SP] Dungeon Fire Arrow Trap Sub Feature Poisonous Enemy/Ritual Level 3
+6233 [SP] Dungeon Fire Arrow Trap Sub Feature Poison Enemy/Ritual Level 4
+6234 [SP] Dungeon Fire Arrow Trap Sub Feature Poison Enemy/Ritual Level 5
+6235 [SP] Dungeon Fire Arrow Trap Sub Feature Poison Enemy/Ritual Level 6
+6236 [SP] Dungeon Fire Arrow Trap Sub Feature Poison Enemy/Ritual Level 7
+6237 [SP] Dungeon Fire Arrow Trap Sub Feature Poison Enemy/Ritual Level 8
+6240 [SP] Dungeon Fire Arrow Trap Sub Feature Enhancement Enemy/Ritual Level 1
+6241 [SP] Dungeon Fire Arrow Trap Sub Feature Enhancement Enemy/Ritual Level 2
+6242 [SP] Dungeon Fire Arrow Trap Sub Feature Enhancement Enemy/Ritual Level 3
+6243 [SP] Dungeon Fire Arrow Trap Sub Feature Enhancement Enemy/Ritual Level 4
+6244 [SP] Dungeon Fire Arrow Trap Sub Feature Enhancement Enemy/Ritual Level 5
+6245 [SP] Dungeon Fire Arrow Trap Sub Feature Enhancement Enemy/Ritual Level 6
+6246 [SP] Dungeon Fire Arrow Trap Sub Feature Enhancement Enemy/Ritual Level 7
+6247 [SP] Dungeon Fire Arrow Trap Sub Feature Enhancement Enemy/Ritual Level 8
+6250 [SP] Dungeon Guillotine Ritual Level 1
+6251 [SP] Dungeon Guillotine Ritual Level 2
+6252 [SP] Dungeon Guillotine Ritual Level 3
+6253 [SP] Dungeon Guillotine Ritual Level 4
+6254 [SP] Dungeon Guillotine Ritual Level 5
+6255 [SP] Dungeon Guillotine Ritual Level 6
+6256 [SP] Dungeon Guillotine Ritual Level 7
+6257 [SP] Dungeon Guillotine Ritual Level 8
+6350 Clock Tower Bullet Body
+6351 Clock Tower Landing
+6352 Clock tower bullet body_for orbiting
+6353 Clock tower landing_for orbiting
+6360 Clock Tower c4030_Patient B_Meteorite
+6361 Clock Tower c4030_Patient B_Meteorite_landing
+7000 Dungeon_Crowd Bell 5m
+7001 Dungeon_Call Bell 10m
+7002 Dungeon_Call Bell 15m
+7003 Dungeon_Call Bell 20m
+7004 Dungeon_Call Bell 25m
+7005 Dungeon_Call Bell 30m
+7006 Dungeon_Call Bell 40m
+7007 Dungeon_Call Bell 50m
+7008 Dungeon_Call Bell 60m
+7009 Dungeon_Call Bell 70m
+7010 Dungeon_Call Bell 80m
+7011 Dungeon_Call Bell 90m
+7012 Dungeon_Crowd Bell 100m
+7014 Dungeon_Crowd bell_Alarm clock 50m
+7015 Dungeon_Crowd Bell_Alarm Clock 100m
+7100 Dungeon_Rusty Door
+7110 Dungeon_Rusted Treasure Chest
+7120 Dungeon_Gunpowder barrel explosion
+7130 Dungeon_HP drain recovery
+7200 [SP] Cathedral City A Poison Gas
+7201 Cathedral Town_Call Bell 10m
+7202 Cathedral Town_Call Bell 20m
+7203 Cathedral Town_Call Bell 30m
+7204 Cathedral town_Call bell 40m
+7205 Cathedral Town_Call bell 40m (long life)
+7210 [SP] Cathedral City A_Bullet_Close range
+7211 [SP] Cathedral City A_Bullet_Close range
+7212 [SP] Cathedral City A_Bullet_Medium range
+7213 [SP] Cathedral City A_Bullet_Long Range
+7300 Ruins_Alarm sound
+7400 University_PC discovery sound
+7500 Forest_Cannon_Main bullet
+7501 Forest_Cannon_Grand Bullet
+7600 Cathedral Town D_Order
+7610 Cathedral District D_Order Elementary School
+7620 Cathedral Town D_Socket Gun
+7630 Cathedral Town D_Straw Ball
+7640 Ruins Explosive Barrel
+7700 Fishing village_Command_AI sound
+7710 Fishing village_Slug flame pot_AI sound
+7720 Fishing village_Slug flame pot
+7721 Fishing village_Slug flame pot_Burning bullet generation dummy
+7730 Fishing village_Water surface landing_AI sound
+20600 c2060_Ghoul_Throw the severed head
+22300 c2230_fat demon_forward magic
+22305 c2230_fat demon_selfish magic
+22310 c2231_Snow Demon_Magic activation (front)
+22311 c2231_Snow Demon_Magic activation (self-centered)
+22600 c2260_Spear Demon_Spear Throwing 1
+23000 c2300_Wandering Demon_Electric Magic
+23200 c2320_Iron Golem_Vacuum wave from ax
+23600 c2360_Four Knights C (Lightning)_Hip attack_Lightning explosion
+23700 c2370_Four Knights D_Magic launch 1
+23701 c2370_Four Knights D_Magic launch 2 (long)
+23702 c2370_Four Horsemen D_Magic Wasshoi
+23800 c2380_Dogu Knight_Force magic
+24000 c2400_Assassin_Knife Throwing
+24100 c2410_White Knight_Largebow firing
+24300 c2430_Moving stone statue_Bracelet (front/long)
+24301 c2430_Moving stone statue_Breath (shaking head)
+25000 c2500_immortal_bow shooting
+25200 c2520_Immortal (Thief)_Throwing knife
+25300 c2530_Immortal (Minomushi)_Blowgun
+25400 c2540_Immortal (Warrior)_Throw the bottle
+25500 c2550_Immortal (heavy warrior)_Bowgun shooting
+25600 c2560_Immortal (Light Knight)_Bowgun shooting
+25900 c2590_King's Minister (Sniper)_Shooting
+26500 c2650_Dead Man (Grave Keeper) Fires magic from a skeleton
+26501 c2650_Scatter the ashes
+26700 c2670_Dead Man_Magic firing
+26800 c2680_Dead Woman_Pushing out the baby
+27000 c2700_Snakeman B_Spits venom
+27001 c2700_Snakeman B_Magic firing
+27100 c2710_Crystal Guard_Spreading Crystal Bullet
+27110 c2711_Crystal Guard (Amber)_Spreading Crystal Bullet
+27300 c2730_Heroine_Brace (feet)
+27301 c2730_Heroine_Brace (slightly swinging) *For dividing damage.
+28000 c2800_Immortal (Crystal) Bow shooting
+28110 c2811_Immortal (barbarian/rock)_Throwing a rock
+28300 c2830_Immortal Phalanx_Spear Thrower
+28400 c2840_Immortal (congestion)_vomits poisonous mist of blood
+28401 c2840_Immortal (congestion)_Lots of poisonous blood gushes out upon death
+28402 c2840_Immortal (Congestion)_Magic 1
+28403 c2840_Immortal (Congestion)_Magic 2
+28600 c2860_Giant Slave_Throwing 1-3
+28700 c2870_Giant Guard (Advanced version)_Miracle/God's Wrath
+29000 c2900_skeleton arrow
+29010 c2910_Skeleton (large) large bow and arrow
+30900 c3090_Large mosquito_Poisonous blood spout
+32200 c3220_parasite_emit liquid
+32300 c3230_Mayfly Dragon_Magic Spear
+32310 c3230_Mayfly Dragon_Magic Spear (Large)
+32320 c3230_Mayfly Dragon_Magic Spear (Extra Large) [Impacted]
+32330 c3230_Mayfly Dragon_Area Explosion
+32400 c3240_Izalith_Digestive fluid
+32700 c3270_Basilisk_Petrified Breath
+32701 c3270_Basilisk_Jump & Breath
+32702 c3270_Basilisk_Jump & Breath_Landing
+33200 c3320_Three people wear_Magic square A
+33201 c3320_Three people wearing magic square A (upside down)
+33202 c3320_Three people wear_Back step & magic square A
+33203 c3320_Three people wear_Back step & magic square A (upside down)
+33300 c3330_Vishacha_Spit ink
+33410 c3341_Envoy's Flame Dog_Breathes flames
+33800 c3380_large leech_vomits mucus
+33900 c3390_Burrowing maggot_Spits liquid at close range
+33901 c3390_Burrowing maggot_Spits liquid over a long distance
+33902 c3390_Burrowing maggot_Spits liquid at the base (ground)
+33903 c3390_Burrowing maggot_Spits liquid far away (ground)
+33904 c3390_burrowing maggot_vomiting mucus (wall)
+33906 c3390_burrowing maggot_mucus/front (ceiling)
+33907 c3390_Burrowing maggot_Mucus/Right (ceiling)
+33908 c3390_Burrowing maggot_Mucus/Left (ceiling)
+33909 c3390_burrowing maggot_mucus/back (ceiling)
+34000 c3400_Krag Spider Child_Magma from the umbilical cord
+34001 c3400_Crag Spider Child_Magma from the umbilical cord [landing]
+34100 c3410_Frog ray_Mucus
+34200 c3420_Dragon Zombie Ashido Breath
+34203 c3420_Dragon Zombie Front Bracelet
+34204 c3420_Dragon Zombie Wide Angle Bracelet
+34205 c3420_Dragon Zombie Floating and breathing directly below
+34206 c3420_Dragon Zombie Floating and breathing directly below (spreading submunitions)
+34207 c3420_Dragon Zombie (m16 only) Breath to the right
+34208 c3420_Dragon Zombie (m16 only)_Breath (common to all directions)
+34209 c3420_Dragon Zombie (m16 only) Breath to the left
+34300 c3430_Hellkite_Breath
+34700 c3470_Gold Chimera (old)_Create wind with wings
+34701 c3470_Gold Chimera (old)_Bracelet 1
+34710 c3471_Gold Chimera_Create wind with wings
+34711 c3471_Gold Chimera_Brace 1
+34712 c3471_Gold Chimera_Brace 2
+34713 c3471_Gold Chimera_Aerial Breath 1
+34714 c3471_Gold Chimera_Aerial Breath 2
+34716 c3471_Gold Chimera_Aerial Breath (Child)
+34717 c3471_Gold Chimera_Aerial Breath (grandson)
+34718 c3471_Gold Chimera_Aerial Breath (great-grandchild)
+34719 c3471_Gold Chimera_Aerial Breath (great-great grandchild)
+34720 c3471_Gold Chimera_Aerial Breath (Future Grandchild)
+34721 c3471_Gold Chimera_Step turning bracelet
+34910 c3491_Drift item (evil)_spiky fire
+35000 c3500_Big Jelly_Spits slime (close range)
+35001 c3500_Big Jelly_Spits slime (long range)
+35011 c3501_wisp_suicide
+35012 c3501_wisp_touch attack
+35200 c3520_Wyvern_Upper and lower breath
+35201 c3520_Wyvern_Left and right breath (near)
+35202 c3520_Wyvern_Left and right bracelet (middle)
+35203 c3520_Wyvern_Left and right breath (far)
+35204 c3520_Wyvern_Swoop Breath
+35205 c3520_Wyvern_Brace impact
+35206 c3520_Wyvern_Breath (ground)
+35207 c3520_Wyvern_Swinging breath (ground)
+35208 c3520_Wyvern_Breath & Backstep (Ground)
+35209 c3520_Wyvern_Flying breath (ground)
+35210 c3520_Wyvern_Flying breath (forward movement)
+35211 c3520_Wyvern_Flying breath clockwise turn
+35212 c3520_Wyvern_Rise & Glide & Breath
+35213 c3520_Wyvern_Rise Breath & Jump Over
+35300 c3530_Lake Beast_Move from point A to point B_Breath
+35301 c3530_Lake Beast_Move from point B to point A_Breath
+35310 c3530_Lake Beast_Brace body
+35320 c3530_Lake Beast_Movement bracelet main body
+35330 c3530_Lake Beast_Breath [Lockdown (Child)]
+35331 c3530_Lake Beast_Moving Breath [Lockdown (Child)]
+45100 c4510_Black Dragon_Straight line bracelet
+45101 c4510_Black Dragon_Straight line breath_1st shot
+45102 c4510_Black Dragon_Straight line breath_2nd shot
+45103 c4510_Black Dragon_Straight line breath_3rd shot
+45110 c4510_Black Dragon_Fan-shaped bracelet
+45120 c4510_Black Dragon_Rising Breath
+45130 c4510_Black Dragon_180 Turn_Breath
+45140 c4510_Black Dragon_Event attack (far) breath
+45160 c4510_Black Dragon_Event attack (near) breath
+45170 c4510_Black Dragon_Direct Breath
+45180 c4510_Black Dragon_Cliff Breath 1
+45190 c4510_Black Dragon_Cliff Breath 2
+45200 c4510_Black Dragon_Crossing the bridge_Shock
+51400 c5140 (DS2 Proto)_Flying Dragon's Follower_Breath Bullet
+52000 c5200_centipede giant_fireball
+52002 c5200_Centipede Giant_Throws a huge fireball [Throw]
+52003 c5200_Centipede Giant_Throws a huge fireball [landing]
+52201 Tomb King Selfish Explosion
+52310 c5231_King Izalith (3rd form)_Impact bullet
+52311 c5231_King Izalith (3rd form)_Breath impact
+52600 c5260_devouring dragon_vomit (live bullet)
+52601 c5260_devouring dragon_vomit (landing)
+52700 c5270_Griffith_Generate and throw lightning
+52701 c5270_Griffith_One-handed lightning launch
+52710 c5271_Griffith (Large)_Generates and throws lightning.
+52711 c5271_Giant Griffith_Hip Attack_Explosion
+52712 c5271_Giant old knight Griffith_One-handed lightning launch
+52800 c5280_Flame Witch Krag Spider_Magma Bullet [Throwing]
+52801 c5281_Flame Witch Krag Spider_Magma bullet [landing]
+52802 c5280_Flame Witch Krag Spider_Strong Breath
+52803 c5280_Flame Witch Krag Spider_Self-centered Explosion
+52804 c5280_Flame Witch Krag Spider_Butt Flame
+52805 c5281_Flame Witch Krag Spider_Strong breath magma bullet [landing]
+52900 c5290_White Dragon Sheath_Breath (close range sweep)
+52901 c5290_White Dragon Sheath_Breath (close range sweep) [Impact]
+52902 c5290_White Dragon Sheath_Breath (long-distance sweep)
+52903 c5290_White Dragon Sheath_Breath (long-distance sweep) [Impact]
+52904 c5290_White Dragon Sheath_Brace (front)
+52905 c5290_White Dragon Sheath_Brace (front) [Impact]
+52906 c5290_White Dragon Sheath_Brace (front): Late version in the middle.
+52907 c5290_White Dragon Sheath_Egocentric Explosion [Parent]
+52908 c5290_White Dragon Sheath_Egocentric Explosion
+52909 c5290_White Dragon Sheath_Egocentric Explosion
+52910 c5290_White Dragon Sheath_Self-centered explosion (for continuous damage) [Parent]
+52911 c5290_White Dragon Sheath_Self-centered explosion (for continuous damage)
+52912 c5290_White Dragon Sheath_Self-centered explosion_Submunition 1
+52913 c5290_White Dragon Sheath_Self-centered explosion_Submunition 2
+52914 c5290_White Dragon Sheath_Self-centered explosion_Submunition 3
+52915 c5290_White Dragon Sheath_Self-centered explosion_Submunition 4
+52916 c5290_White Dragon Sheath_Self-centered explosion_Submunition 5
+52917 c5290_White Dragon Sheath_Self-centered explosion_Submunition 6
+52921 c5290_White Dragon Sheath_Brace (front) [Impact]
+53000 c5300_Immortal King Jah Eel_Soul Energy Explosion
+53200 c5320_Imperial Mother Sister Bow
+53201 c5320_Imperial mother sister induction
+53202 c5320_Emperor mother's sister extra thick
+53500 c5350_gargoyle_swinging bracelet
+53501 c5350_Gargoyle_Breath from the air
+53510 c5351_Gargoyle (different colors)_Swinging bracelet
+53511 c5351_Gargoyle (different colors)_Breath from the air
+53900 c5390_Jair Demon_Egocentric Explosion
+53901 c5390_Jair Demon_Spreads an aura of darkness
+53902 c5390_Jair Demon_Emits a huge aura of darkness
+54000 c5400_Boss Izalith_Throw flame with right hand (toward right)
+54001 c5400_Boss Izalith_Throw flame with right hand (toward left)
+54002 c5400_Boss Izalis_Egocentric flame
+54004 c5400_Boss Izalith_Remaining magma
+54005 c5400_Boss Izalith_Throw flame [landing]
+54011 c5400_Boss Izalith_Fire Storm
+100000 c1000_Hound_Scratch 1
+100001 c1000_Hound_Scratch 2
+100010 c1000_Hound_Bite 1
+100011 c1000_Hound_Bite 2
+100020 c1000_hound_pounce (short)
+100030 c1000_hound_pounce (long)
+100040 c1000_hound_run through
+100050 c1000_hound_leans and bites
+100060 c1000_hound_abare scratch (1st stage) left hand small
+100061 c1000_hound_abare scratch (2nd row) left hand small
+100062 c1000_Hound_Abare Scratch (3rd row) Right hand small
+100063 c1000_hound_abare scratch (4th row) right hand small
+100064 c1000_Hound_Abare Scratch (5th row) Left hand small
+100065 c1000_Hound_Abare Scratch (6th stage) Right hand Blowbi
+100066 c1000_Hound_Bite 3
+100070 c1000_Hound__Throwing attack
+100090 c1000_hound_window breaking ramming
+100091 c1000_hound_window broken scratch 1
+100092 c1000_hound_window broken scratch 2
+100093 c1000_hound_window breaking For passing through doors (for knocking characters away)
+101000 c1010_Priest_Flame Magic (Small)
+101010 c1010_Priest_Fire magic (medium)
+101020 c1010_Priest_Swipe away the staff (1st shot)
+101021 c1010_Priest_Swipe away the staff (2nd shot)
+101030 c1010_priest_curse
+101040 c1010_Priest_Fire magic (combo)
+101100 c1010_Ruins Sniper_Shooting
+101110 c1010_Ruins Sniper_Rapid fire
+101120 c1010_Ruins Sniper_Rapid Fire
+101800 c1010_Sacrifice Street Artillery Battery
+101820 c1010_Sacrifice Street Artillery Battery (Gatling)
+101900 c1010_Priest_Boss_Fire magic (small)
+101910 c1010_Priest_Boss_Fire magic (medium)
+101920 c1010_Priest_Boss_Sweep the staff (1st shot)
+101930 c1010_Priest_Boss_Fire magic (combo)
+101940 c1010_Priest_Boss_Sweep the staff (2nd shot)
+101950 c1010_Priest_Boss_High-speed fire mass
+101960 c1010_Priest_Boss_Guided fire mass
+101970 c1010_Priest_Boss_Magma wave launch
+101980 c1010_Priest_Boss_Scattered bullet (1st shot)
+101990 c1010_Priest_Boss_Scattered bullet (2nd shot)
+102000 c1020_crowd A_ swinging the ax (torches & axes)
+102001 c1020_Crowd A_2 continuous attack (1st shot) (torch & ax)
+102002 c1020_Crowd A_2 continuous attack (2nd shot) (torch & ax)
+102003 c1020_Crowd A_Swing and slam (torch & ax)
+102004 c1020_Crowd A_Run and swing down (torches & axes)
+102005 c1020_Crowd A_ Hit with a torch (right hand) (torch & ax)
+102006 c1020_Crowd A_ Brandishing a torch (right hand) (torch & ax) (from left)
+102007 c1020_Crowd A_ Brandishing a torch (right hand) (torch & ax) (from the right)
+102008 c1020_Crowd A_ Stick out a torch (right hand) (torch & ax)
+102009 c1020_Crowd A_ Raising a torch and shouting (right hand) (torch & ax)
+102010 c1020_Crowd A_ Hit with a shield (shield & torch)
+102011 c1020_Crowd A_ Push out and hit with shield (shield & torch)
+102012 c1020_Crowd A_Charging with shield (shield & torch)
+102013 c1020_Crowd A_ Hit with a torch (left hand) (shield & torch)
+102014 c1020_Crowd A_ Brandishing a torch (left hand) (shield & torch) (from the right)
+102015 c1020_Crowd A_ Brandishing a torch (left hand) (shield & torch) (from left)
+102016 c1020_Crowd A_ Stick out a torch (left hand) (shield & torch)
+102017 c1020_Crowd A_ Raising a torch and shouting (left hand) (shield & torch)
+102020 c1020_Crowd A_Poke twice (1st shot) (Poker & Shield) *Used as a saber
+102021 c1020_Crowd A_Poke twice (2nd shot) (Poker & Shield) *Used as a saber
+102022 c1020_Crowd A_Poke with momentum (Poker & Shield) *Used as a saber
+102023 c1020_Crowd A_Hide and poke behind the shield (Poker & Shield)
+102024 c1020_Crowd A_Slap (Poker & Shield) *Used as a knife/scythe
+102030 c1020_Crowd A_Continuous attack with one hand (1st shot) (saber)
+102031 c1020_Crowd A_Continuous attack with one hand (2nd shot) (saber)
+102032 c1020_Crowd A_Continuous attack with one hand (3rd shot) (saber)
+102033 c1020_Crowd A_Attack with brute force with both hands (saber)
+102034 c1020_Crowd A_Rage (swinging) (saber) (from left)
+102035 c1020_Crowd A_Rampaging (swinging) (saber) (from the right)
+102036 c1020_Crowd A_Jump and attack (saber)
+102037 c1020_Crowd A_Strike forcefully with both hands (saber)
+102040 c1020_Crowd A_Continuous attack with one hand (1st shot) (Sickle/Knife)
+102041 c1020_Crowd A_Continuous attack with one hand (2nd shot) (Sickle/Knife)
+102042 c1020_Crowd A_Continuous attack with one hand (3rd shot) (Sickle/Knife)
+102043 c1020_Crowd A_ Attack with brute force with both hands (sickle/knife)
+102044 c1020_Crowd A_Rampaging (swinging) (scythe/knife) (from left)
+102045 c1020_Crowd A_Rampaging (swinging) (scythe/knife) (from the right)
+102046 c1020_Crowd A_Jump and attack (sickle/knife)
+102050 c1020_Crowd A_Throwing a hatchet (throwing & shield)
+102051 c1020_Crowd A_Clash with a hatchet (throwing & shield) *Used as a sickle
+102052 c1020_Crowd A_ Hold up a shield and cut with a hatchet (throwing & shield)
+102053 c1020_Crowd A_2 consecutive cuts (throwing & shield)_1st stage *Used as a kitchen knife
+102054 c1020_Crowd A_2 consecutive cuts (throwing & shield)_2nd stage *Used as a kitchen knife
+102055 c1020 Crowd A_Throwing a flame jar
+102056 c1020 Crowd A_Throwing an oil pot
+102060 c1020_Crowd A_Poke (long-handed with both hands)
+102061 c1020_Crowd A_ Poke twice (1st shot) (long-handed with both hands)
+102062 c1020_Crowd A_ Poke twice (2nd shot) (long-handed with both hands)
+102063 c1020_Crowd A_Nagiri to the side (long-handed with both hands)
+102064 c1020_Crowd A_ Hold a stick with both hands and push it out (long object with both hands)
+102065 c1020_Crowd A_Slamming with both hands (long-handed)
+102066 c1020_Crowd A_Run and poke (long-handed)
+102067 c1021_Crowd A_Discover PC (for Cathedral City)
+102068 c1021_crowd A_sound bullet (for cathedral town)
+102070 c1020_crowd A_guard (common)
+102071 c1020_Crowd A_Body hits (common)
+102075 c1020_Crowd A_Hitting (bare hands)
+102076 c1020_Crowd A_Kicking (bare hands)
 102080 【テスト】c1020_群集A_銃弾_至近距離
 102081 【テスト】c1020_群集A_銃弾_近距離
 102082 【テスト】c1020_群集A_銃弾_中距離

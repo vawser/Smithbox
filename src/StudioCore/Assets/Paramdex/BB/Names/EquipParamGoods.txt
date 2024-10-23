@@ -1,51 +1,51 @@
 1 アイテム切替テストA
 2 アイテム切替テストb
-100 ダークリング
-111 別れの空砲
-120 呼び鈴
-130 血族ランキング観覧アイテム
-131 連盟ランキング観覧アイテム
-200 通常協力要請
-201 通常協力要請_使用不可
-205 通常協力希望
-206 通常協力希望_使用不可
-225 通常侵入希望
-226 通常侵入希望_使用不可
-700 ガスコインのオルゴール
-701 娼婦の血
-702 囚われの尼僧の血
-703 女医の薬
-704 血濡れの赤子
-705 女王の血
-706 時計塔女医の血
-800 前をさす
-801 一礼（男／軽い）
-802 さあ、行こう
-803 歓喜
-804 マントをひるがえす
-805 一礼（男／丁寧）
-806 一礼（女／軽い）
-807 一礼（女／丁寧）
-808 手を振る
-809 祈る
-810 待て！
-811 静かに
-812 エイエイオー
-813 ガッツポーズ
-814 賞賛する
-815 雄叫び
-816 命乞い
-817 ほこりをはらう
-818 宗教A（簡易）
-819 宗教A（丁寧）
-820 宗教B
-821 座る
-822 連盟
-900 弾丸【PG直接指定】
-901 テンポラリ弾丸【PG直接指定】
-910 弾丸回復
-999 E3版用リセットアイテム
-1000 HP回復【PG直接指定】
+100 Hunter's Mark
+111 Silencing Blank
+120 Notebook
+130 Vileblood Register
+131 League Staff
+200 Beckoning Bell
+201 Beckoning Bell (unused)
+205 Small Resonant Bell
+206 Small Resonant Bell (unused)
+225 Sinister Resonant Bell
+226 Sinister Resonant Bell (unused)
+700 Tiny Music Box
+701 Blood of Arianna
+702 Blood of Adella
+703 Iosefka's Blood Vial
+704 Blood Dreg
+705 Queenly Blood
+706 Blood of Adeline
+800 Gesture: Point Forward
+801 Gesture: Hunter's Salutation
+802 Gesture: Conviction
+803 Gesture: Joy
+804 Gesture: Shake-off Cape
+805 Gesture: Church Bow (Male)
+806 Gesture: Curtsy
+807 Gesture: Church Bow (Female)
+808 Gesture: Wave
+809 Gesture: Pray
+810 Gesture: Wait
+811 Gesture: Shh!
+812 Gesture: Hunter's Rally
+813 Gesture: Triumph
+814 Gesture: Approval
+815 Gesture: Roar
+816 Gesture: Beg for Life
+817 Gesture: Brush off Dust
+818 Gesture: Respect
+819 Gesture: Deep Respect
+820 Gesture: Make Contact
+821 Gesture: Sit Down
+822 Gesture: League Oath
+900 Quicksilver Bullets
+901 Blood Bullets
+910 Bullet Recovery
+999 Reset Items (E3)
+1000 Blood Vial
 1100 毒・出血回復薬
 1101 狂気・獣化回復薬
 1110 獣化薬

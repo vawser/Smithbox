@@ -501,9 +501,15 @@ public class CommonMenubarHandler
 
                 ImGui.Separator();
 
+                if (ImGui.MenuItem($"FMG Ref Helper"))
+                {
+                    DebugWindow.ToggleWindow(SelectedDebugTab.FmgRefPrint);
+                }
+                UIHelper.ShowHoverTooltip("Display the helper.");
+
                 if (ImGui.MenuItem($"FLVER Layout Helper"))
                 {
-                    DebugWindow.ToggleWindow(SelectedDebugTab.FlverLayoutHelper);
+                    DebugWindow.ToggleWindow(SelectedDebugTab.FlverDumpHelper);
                 }
                 UIHelper.ShowHoverTooltip("Display the helper.");
 

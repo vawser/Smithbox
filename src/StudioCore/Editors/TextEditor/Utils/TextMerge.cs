@@ -169,17 +169,20 @@ public static class TextMerge
             sourceWrapper.File.Entries.Add(entry);
         }
 
-        // Change Modified
-        foreach (var entry in modifiedEntries)
+        if (ReplaceModifiedRows)
         {
-            //TaskLogs.AddLog($"{entry.ID} {entry.Text}");
-
-            if (sourceWrapper.File.Entries.Any(e => e.ID == entry.ID))
+            // Change Modified
+            foreach (var entry in modifiedEntries)
             {
-                var targetEntry = sourceWrapper.File.Entries.Where(e => e.ID == entry.ID).FirstOrDefault();
-                if(targetEntry != null)
+                //TaskLogs.AddLog($"{entry.ID} {entry.Text}");
+
+                if (sourceWrapper.File.Entries.Any(e => e.ID == entry.ID))
                 {
-                    targetEntry.Text = entry.Text;
+                    var targetEntry = sourceWrapper.File.Entries.Where(e => e.ID == entry.ID).FirstOrDefault();
+                    if (targetEntry != null)
+                    {
+                        targetEntry.Text = entry.Text;
+                    }
                 }
             }
         }

@@ -73,7 +73,8 @@ public class DebugWindow
         [Display(Name = "TAE Validation")] ValidateTAE,
 
         // Helpers
-        [Display(Name = "FLVER Layout Helper")] FlverLayoutHelper,
+        [Display(Name = "FMG Ref Print")] FmgRefPrint,
+        [Display(Name = "FLVER Layout Helper")] FlverDumpHelper,
 
         // Tests
         [Display(Name = "MSBE - Byte Perfect Test")] Test_MSBE_BytePerfect,
@@ -144,8 +145,11 @@ public class DebugWindow
                     break;
 
                 // Helpers
-                case SelectedDebugTab.FlverLayoutHelper:
-                    DisplayHelper_FLVERDumpy();
+                case SelectedDebugTab.FmgRefPrint:
+                    DisplayHelper_FmgRefPrint();
+                    break;
+                case SelectedDebugTab.FlverDumpHelper:
+                    DisplayHelper_FLVERDumper();
                     break;
 
                 // Tests
@@ -320,7 +324,17 @@ public class DebugWindow
 
     // Helpers
 
-    private void DisplayHelper_FLVERDumpy()
+    private void DisplayHelper_FmgRefPrint()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        if (ImGui.Button("Print FMG Refs for current param", buttonSize))
+        {
+            FmgRefPrintTool.Print();
+        }
+    }
+
+    private void DisplayHelper_FLVERDumper()
     {
         var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
