@@ -765,6 +765,31 @@ public class KeyBindings
             "Trigger the CSV Export prompt.",
             Key.Unknown);
 
+        public KeyBind PARAM_ExportCSV_Names = new(
+            "Export CSV - Export Row Names",
+            "Export selected row names to window.",
+            Key.Unknown);
+
+        public KeyBind PARAM_ExportCSV_Param = new(
+            "Export CSV - Export Param",
+            "Export selected param to window.",
+            Key.Unknown);
+
+        public KeyBind PARAM_ExportCSV_AllRows = new(
+            "Export CSV - Export All Rows",
+            "Export selected all rows to window.",
+            Key.Unknown);
+
+        public KeyBind PARAM_ExportCSV_ModifiedRows = new(
+            "Export CSV - Export Modified Rows",
+            "Export selected modified rows to window.",
+            Key.Unknown);
+
+        public KeyBind PARAM_ExportCSV_SelectedRows = new(
+            "Export CSV - Export Selected Rows",
+            "Export selected selected rows to window.",
+            Key.Unknown);
+
         // Row Namer
         public KeyBind PARAM_ApplyRowNamer = new(
             "Apply Row Namer (Flat)",

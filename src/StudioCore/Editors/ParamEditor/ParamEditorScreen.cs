@@ -108,8 +108,12 @@ public class ParamEditorScreen : EditorScreen
 
     private bool HasSetupFmgDecorators = false;
 
+    private ParamEditorShortcuts EditorShortcuts;
+
     public ParamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
+        EditorShortcuts = new ParamEditorShortcuts(this);
+
         ToolWindow = new ToolWindow(this);
         ToolSubMenu = new ToolSubMenu(this);
         Handler = new ActionHandler(this);
@@ -249,13 +253,13 @@ public class ParamEditorScreen : EditorScreen
                     {
                         EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/2");
                     }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExportCSV.HintText}");
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExportCSV_Names.HintText}");
 
                     if (ImGui.MenuItem("Export entire param to window"))
                     {
                         EditorCommandQueue.AddCommand(@"param/menu/massEditCSVExport/0");
                     }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExportCSV.HintText}");
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExportCSV_Param.HintText}");
 
                     if (ImGui.MenuItem("Export entire param to file"))
                     {
@@ -643,6 +647,8 @@ public class ParamEditorScreen : EditorScreen
                 GotoSelectedRow = true;
             }
         }
+
+        EditorShortcuts.Shortcuts();
 
         ToolSubMenu.Shortcuts();
         ToolWindow.Shortcuts();

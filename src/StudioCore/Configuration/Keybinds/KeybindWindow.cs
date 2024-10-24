@@ -652,6 +652,27 @@ public class ParamEditorKeybindTab
             KeyBindings.Current.PARAM_ExportCSV = InputTracker.KeybindLine(10,
                 KeyBindings.Current.PARAM_ExportCSV,
                 KeyBindings.Default.PARAM_ExportCSV);
+
+            KeyBindings.Current.PARAM_ExportCSV_Names = InputTracker.KeybindLine(11,
+                KeyBindings.Current.PARAM_ExportCSV_Names,
+                KeyBindings.Default.PARAM_ExportCSV_Names);
+
+            KeyBindings.Current.PARAM_ExportCSV_Param = InputTracker.KeybindLine(12,
+                KeyBindings.Current.PARAM_ExportCSV_Param,
+                KeyBindings.Default.PARAM_ExportCSV_Param);
+
+            KeyBindings.Current.PARAM_ExportCSV_AllRows = InputTracker.KeybindLine(13,
+                KeyBindings.Current.PARAM_ExportCSV_AllRows,
+                KeyBindings.Default.PARAM_ExportCSV_AllRows);
+
+
+            KeyBindings.Current.PARAM_ExportCSV_ModifiedRows = InputTracker.KeybindLine(14,
+                KeyBindings.Current.PARAM_ExportCSV_ModifiedRows,
+                KeyBindings.Default.PARAM_ExportCSV_ModifiedRows);
+
+            KeyBindings.Current.PARAM_ExportCSV_SelectedRows = InputTracker.KeybindLine(15,
+                KeyBindings.Current.PARAM_ExportCSV_SelectedRows,
+                KeyBindings.Default.PARAM_ExportCSV_SelectedRows);
         }
 
         if (ImGui.CollapsingHeader("Row Namer", ImGuiTreeNodeFlags.DefaultOpen))
