@@ -303,6 +303,9 @@ public class ModelResourceManager : IResourceEventListener
             loadPath = loosePath;
         }
 
+        if (modelAsset == null)
+            return;
+
         if (!File.Exists(loadPath))
             return;
 
@@ -377,9 +380,13 @@ public class ModelResourceManager : IResourceEventListener
             {
                 BinderReader bndReader;
                 if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                {
                     bndReader = new BND3Reader(modelAsset.AssetPath);
+                }
                 else
+                {
                     bndReader = new BND4Reader(modelAsset.AssetPath);
+                }
 
                 foreach (var file in bndReader.Files)
                 {
@@ -408,11 +415,15 @@ public class ModelResourceManager : IResourceEventListener
             {
                 BinderReader bndReader;
                 if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.ACV or ProjectType.ACVD)
+                {
                     // BND3: DES, DS1
                     bndReader = new BND3Reader(modelAsset.AssetPath);
+                }
                 else
+                {
                     // BND4: DS2, DS3, SDT, ER, AC6
                     bndReader = new BND4Reader(modelAsset.AssetPath);
+                }
 
                 foreach (var file in bndReader.Files)
                 {

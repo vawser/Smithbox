@@ -5,6 +5,7 @@ using StudioCore.Configuration.Keybinds;
 using StudioCore.Configuration.Settings;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Graphics;
 using StudioCore.Interface;
 using StudioCore.Settings;
@@ -593,6 +594,12 @@ public class CommonMenubarHandler
     private bool MayChangeProject()
     {
         if (TaskManager.AnyActiveTasks())
+        {
+            return false;
+        }
+
+        // If vanilla bank is in the process of loading, don't allow switch
+        if (TextBank.VanillaBankLoading && !TextBank.VanillaBankLoaded)
         {
             return false;
         }

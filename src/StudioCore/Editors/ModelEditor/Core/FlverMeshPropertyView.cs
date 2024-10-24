@@ -1,11 +1,14 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Framework;
+using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -140,7 +143,64 @@ public class FlverMeshPropertyView
                 }
             }
         }
+
+        // TEMP
+        ImGui.Separator();
+
+        ImGui.Columns(3);
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Translate by:");
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Scale by:");
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Rotate by:");
+
+        ImGui.NextColumn();
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputFloat3("##translateInput", ref StoredTranslationInput);
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputFloat3("##scaleInput", ref StoredScaleInput);
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputFloat("##rotateInput", ref StoredRotationInput);
+
+        ImGui.NextColumn();
+
+        var curFlver = Screen.ResManager.GetCurrentFLVER();
+
+        if (ImGui.Button("Translate"))
+        {
+            VertexUtils.TranslateMesh(curFlver, entry, StoredTranslationInput);
+        }
+        if (ImGui.Button("Scale"))
+        {
+            VertexUtils.ScaleMesh(curFlver, entry, StoredScaleInput);
+        }
+        if (ImGui.Button("Rotate X"))
+        {
+            VertexUtils.RotateMesh(curFlver, entry, StoredRotationInput, RotationAxis.X);
+        }
+        if (ImGui.Button("Rotate Y"))
+        {
+            VertexUtils.RotateMesh(curFlver, entry, StoredRotationInput, RotationAxis.Y);
+        }
+        if (ImGui.Button("Rotate Z"))
+        {
+            VertexUtils.RotateMesh(curFlver, entry, StoredRotationInput, RotationAxis.Z);
+        }
+
+        ImGui.Columns(1);
     }
+
+    private Vector3 StoredTranslationInput = new Vector3();
+
+    private float StoredRotationInput = 0.0f;
+
+    private Vector3 StoredScaleInput = new Vector3();
 
     private void DisplayFaceSetProperties(FLVER2.FaceSet faceset, int index)
     {

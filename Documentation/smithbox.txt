@@ -53,6 +53,7 @@ Param Editor
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
  - ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
  - ADD: ItemGib for ER
+ - ADD: option to include project-unique rows in Param Comparison Report
  - FIX: color picker throwing CTD on second param view
  
 Gparam Editor:
@@ -113,3 +114,4 @@ Time Act Editor
 #--------------------------------------
 # Notes
 #--------------------------------------
+- Finish Time Act Editor search term change

@@ -32,7 +32,7 @@ public class TimeActToolView
         {
             var windowWidth = ImGui.GetWindowWidth();
 
-            if(ImGui.CollapsingHeader("Property Search"))
+            if(ImGui.CollapsingHeader("Time Act Search"))
             {
                 TimeActSearch.Display();
             }

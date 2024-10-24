@@ -22,6 +22,8 @@ public class TimeActSearch
     private TimeActEditorScreen Screen;
     public TimeActActionHandler ActionHandler;
 
+    private List<TimeActSearchTerm> Terms = new();
+    private List<TimeActSearchResult> Results = new();
 
     public TimeActSearch(TimeActEditorScreen screen)
     {
@@ -29,26 +31,19 @@ public class TimeActSearch
         ActionHandler = screen.ActionHandler;
     }
 
-    private TimeActSearchType CurrentSearchType = TimeActSearchType.AnimationID;
-    private string SearchInput = "";
-    private List<TimeActSearchResult> searchResults = new List<TimeActSearchResult>();
-    private bool AllowPartialMatch = false;
-
-    public void Display()
+    private void DisplaySearchTerm(TimeActSearchTerm term)
     {
-        if (Screen.Selection.ContainerInfo == null)
-        {
-            UIHelper.WrappedText("You must select a File first.");
-            return;
-        }
+        var windowWidth = ImGui.GetWindowWidth() * 0.975f;
+        var defaultButtonSize = new Vector2(windowWidth, 24);
 
-        var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-
+        UIHelper.WrappedText("Search Input:");
         ImGui.PushItemWidth(windowWidth);
+        ImGui.InputText("##searchInput", ref term.SearchInput, 255);
+        UIHelper.ShowHoverTooltip("The search term to match with.");
 
         UIHelper.WrappedText("Search Type:");
-        if (ImGui.BeginCombo("##Search Type", CurrentSearchType.GetDisplayName()))
+        ImGui.PushItemWidth(windowWidth);
+        if (ImGui.BeginCombo("##Search Type", term.CurrentSearchType.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(TimeActSearchType)))
             {
@@ -56,13 +51,15 @@ public class TimeActSearch
 
                 if (ImGui.Selectable($"{serType.GetDisplayName()}"))
                 {
-                    CurrentSearchType = serType;
+                    term.CurrentSearchType = serType;
                 }
             }
 
             ImGui.EndCombo();
         }
-        if (CurrentSearchType is TimeActSearchType.EventValue)
+        UIHelper.ShowHoverTooltip("What type of values the search term will be compared to.");
+
+        if (term.CurrentSearchType is TimeActSearchType.EventValue)
         {
             UIHelper.WrappedText("");
             UIHelper.WrappedText($"Event Value will only match within the currently selected Time Act container:");
@@ -70,33 +67,68 @@ public class TimeActSearch
         }
         UIHelper.WrappedText("");
 
-        UIHelper.WrappedText("Search Input:");
-        ImGui.InputText("##searchInput", ref SearchInput, 255);
-
-        ImGui.Checkbox("Allow Partial Matches", ref AllowPartialMatch);
+        ImGui.Checkbox("Allow Partial Matches", ref term.AllowPartialMatch);
         UIHelper.WrappedText("");
+        UIHelper.ShowHoverTooltip("Allow partial matches for this term.");
+
+        if (ImGui.Button("Clear Term"))
+        {
+            Terms.Remove(term);
+        }
+        UIHelper.ShowHoverTooltip("Remove this term.");
+
+        ImGui.Separator();
+    }
+
+    public void Display()
+    {
+        var windowWidth = ImGui.GetWindowWidth() * 0.975f;
+        var defaultButtonSize = new Vector2(windowWidth, 24);
+
+        if (Screen.Selection.ContainerInfo == null)
+        {
+            UIHelper.WrappedText("You must select a File first.");
+            return;
+        }
+
+        ImGui.Separator();
+        UIHelper.WrappedText("Search Terms");
+        ImGui.Separator();
+
+        foreach (var existingComponent in Terms)
+        {
+            DisplaySearchTerm(existingComponent);
+        }
+
+        // Add new Term
+        if (ImGui.Button("Add New Search Term", defaultButtonSize))
+        {
+            Terms.Add(new TimeActSearchTerm());
+        }
+        UIHelper.ShowHoverTooltip("Add a new term.");
+
+        ImGui.Separator();
 
         if (ImGui.Button("Search##searchButton", defaultButtonSize))
         {
             if (Screen.Selection.ContainerIndex != -1 && Screen.Selection.CurrentTimeActKey != -1)
             {
-                if (SearchInput != "")
+                if (Terms.Count > 0)
                 {
                     GenerateSearchResults();
                 }
             }
         }
 
-
         ImGui.Separator();
 
         UIHelper.WrappedText("Results:");
 
-        if (searchResults.Count > 0)
+        if (Results.Count > 0)
         {
-            for (int i = 0; i < searchResults.Count; i++)
+            for (int i = 0; i < Results.Count; i++)
             {
-                var res = searchResults[i];
+                var res = Results[i];
                 var displayName = $"{res.TimeActName}";
 
                 if (res.ResultAnim != null)
@@ -152,121 +184,178 @@ public class TimeActSearch
 
     public void GenerateSearchResults()
     {
-        searchResults = new();
+        Results = new();
 
-        var containerIndex = Screen.Selection.ContainerIndex;
+        var truth = false;
 
-        for (int j = 0; j < Screen.Selection.ContainerInfo.InternalFiles.Count; j++)
+        // TODO: implement the 'overall' truth for a set of terms, and only add a result if it matches all of them.
+
+        foreach (var term in Terms)
         {
-            var timeActFile = Screen.Selection.ContainerInfo.InternalFiles[j].TAE;
-            var timeActName = Screen.Selection.ContainerInfo.InternalFiles[j].Name;
-
-            for (int i = 0; i < timeActFile.Animations.Count; i++)
+            // Time Acts
+            for (int j = 0; j < Screen.Selection.ContainerInfo.InternalFiles.Count; j++)
             {
-                var anim = timeActFile.Animations[i];
+                var timeActFile = Screen.Selection.ContainerInfo.InternalFiles[j].TAE;
+                var timeActName = Screen.Selection.ContainerInfo.InternalFiles[j].Name;
 
-                if (CurrentSearchType is TimeActSearchType.AnimationID)
+                // Time Act Animations
+                for (int i = 0; i < timeActFile.Animations.Count; i++)
+                {
+                    if (term.CurrentSearchType is TimeActSearchType.AnimationID)
+                    {
+                        var result = MatchAnimation(term, timeActFile, timeActName, i, j);
+                    }
+                }
+            }
+        }
+    }
+
+    public (bool, TimeActSearchResult) MatchAnimation(TimeActSearchTerm term, TAE timeActFile, string timeActName, int i, int j)
+    {
+        var containerIndex = Screen.Selection.ContainerIndex;
+        var anim = timeActFile.Animations[i];
+
+        if (term.AllowPartialMatch)
+        {
+            if (anim.ID.ToString().Contains(term.SearchInput))
+            {
+                var result = new TimeActSearchResult(timeActName, timeActFile, anim);
+                result.ContainerIndex = containerIndex;
+                result.TimeActIndex = j;
+                result.AnimationIndex = i;
+                return (true, result);
+            }
+        }
+        else
+        {
+            if (anim.ID.ToString() == term.SearchInput)
+            {
+                var result = new TimeActSearchResult(timeActName, timeActFile, anim);
+                result.ContainerIndex = containerIndex;
+                result.TimeActIndex = j;
+                result.AnimationIndex = i;
+                return (true, result);
+            }
+        }
+
+        return (false, null);
+    }
+}
+
+/*
+Results = new();
+
+var containerIndex = Screen.Selection.ContainerIndex;
+
+for (int j = 0; j < Screen.Selection.ContainerInfo.InternalFiles.Count; j++)
+{
+    var timeActFile = Screen.Selection.ContainerInfo.InternalFiles[j].TAE;
+    var timeActName = Screen.Selection.ContainerInfo.InternalFiles[j].Name;
+
+    for (int i = 0; i < timeActFile.Animations.Count; i++)
+    {
+        var anim = timeActFile.Animations[i];
+
+        if (CurrentSearchType is TimeActSearchType.AnimationID)
+        {
+            if (AllowPartialMatch)
+            {
+                if (anim.ID.ToString().Contains(SearchInput))
+                {
+                    var result = new TimeActSearchResult(timeActName, timeActFile, anim);
+                    result.ContainerIndex = containerIndex;
+                    result.TimeActIndex = j;
+                    result.AnimationIndex = i;
+                    Results.Add(result);
+                }
+            }
+            else
+            {
+                if (anim.ID.ToString() == SearchInput)
+                {
+                    var result = new TimeActSearchResult(timeActName, timeActFile, anim);
+                    result.ContainerIndex = containerIndex;
+                    result.TimeActIndex = j;
+                    result.AnimationIndex = i;
+                    Results.Add(result);
+                }
+            }
+        }
+        else
+        {
+            for (int k = 0; k < anim.Events.Count; k++)
+            {
+                var evt = anim.Events[k];
+
+                if (CurrentSearchType is TimeActSearchType.EventID)
                 {
                     if (AllowPartialMatch)
                     {
-                        if (anim.ID.ToString().Contains(SearchInput))
+                        if (evt.Type.ToString().Contains(SearchInput))
                         {
-                            var result = new TimeActSearchResult(timeActName, timeActFile, anim);
+                            TimeActUtils.ApplyTemplate(timeActFile, Screen.Selection.CurrentTimeActType);
+
+                            var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
                             result.ContainerIndex = containerIndex;
                             result.TimeActIndex = j;
                             result.AnimationIndex = i;
-                            searchResults.Add(result);
+                            result.EventIndex = k;
+                            Results.Add(result);
                         }
                     }
                     else
                     {
-                        if (anim.ID.ToString() == SearchInput)
+                        if (evt.Type.ToString() == SearchInput)
                         {
-                            var result = new TimeActSearchResult(timeActName, timeActFile, anim);
+                            TimeActUtils.ApplyTemplate(timeActFile, Screen.Selection.CurrentTimeActType);
+
+                            var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
                             result.ContainerIndex = containerIndex;
                             result.TimeActIndex = j;
                             result.AnimationIndex = i;
-                            searchResults.Add(result);
+                            result.EventIndex = k;
+                            Results.Add(result);
                         }
                     }
                 }
-                else
+
+                if (CurrentSearchType is TimeActSearchType.EventValue)
                 {
-                    for (int k = 0; k < anim.Events.Count; k++)
+                    if (evt.Parameters != null)
                     {
-                        var evt = anim.Events[k];
-
-                        if (CurrentSearchType is TimeActSearchType.EventID)
+                        if (AllowPartialMatch)
                         {
-                            if (AllowPartialMatch)
+                            foreach (var entry in evt.Parameters.ParameterValues)
                             {
-                                if (evt.Type.ToString().Contains(SearchInput))
-                                {
-                                    TimeActUtils.ApplyTemplate(timeActFile, Screen.Selection.CurrentTimeActType);
+                                var valueStr = entry.Value.ToString();
 
+                                if (valueStr.Contains(SearchInput))
+                                {
                                     var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
                                     result.ContainerIndex = containerIndex;
                                     result.TimeActIndex = j;
                                     result.AnimationIndex = i;
                                     result.EventIndex = k;
-                                    searchResults.Add(result);
-                                }
-                            }
-                            else
-                            {
-                                if (evt.Type.ToString() == SearchInput)
-                                {
-                                    TimeActUtils.ApplyTemplate(timeActFile, Screen.Selection.CurrentTimeActType);
-
-                                    var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
-                                    result.ContainerIndex = containerIndex;
-                                    result.TimeActIndex = j;
-                                    result.AnimationIndex = i;
-                                    result.EventIndex = k;
-                                    searchResults.Add(result);
+                                    result.EventPropertyValue = valueStr;
+                                    Results.Add(result);
                                 }
                             }
                         }
-
-                        if (CurrentSearchType is TimeActSearchType.EventValue)
+                        else
                         {
-                            if (evt.Parameters != null)
+                            foreach (var entry in evt.Parameters.ParameterValues)
                             {
-                                if (AllowPartialMatch)
-                                {
-                                    foreach (var entry in evt.Parameters.ParameterValues)
-                                    {
-                                        var valueStr = entry.Value.ToString();
+                                var valueStr = entry.Value.ToString();
 
-                                        if (valueStr.Contains(SearchInput))
-                                        {
-                                            var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
-                                            result.ContainerIndex = containerIndex;
-                                            result.TimeActIndex = j;
-                                            result.AnimationIndex = i;
-                                            result.EventIndex = k;
-                                            result.EventPropertyValue = valueStr;
-                                            searchResults.Add(result);
-                                        }
-                                    }
-                                }
-                                else
+                                if (valueStr == SearchInput)
                                 {
-                                    foreach (var entry in evt.Parameters.ParameterValues)
-                                    {
-                                        var valueStr = entry.Value.ToString();
-
-                                        if (valueStr == SearchInput)
-                                        {
-                                            var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
-                                            result.ContainerIndex = containerIndex;
-                                            result.TimeActIndex = j;
-                                            result.AnimationIndex = i;
-                                            result.EventIndex = k;
-                                            result.EventPropertyValue = valueStr;
-                                            searchResults.Add(result);
-                                        }
-                                    }
+                                    var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
+                                    result.ContainerIndex = containerIndex;
+                                    result.TimeActIndex = j;
+                                    result.AnimationIndex = i;
+                                    result.EventIndex = k;
+                                    result.EventPropertyValue = valueStr;
+                                    Results.Add(result);
                                 }
                             }
                         }
@@ -276,5 +365,4 @@ public class TimeActSearch
         }
     }
 }
-
-
+*/
