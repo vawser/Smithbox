@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ModelEditor.Utils;
 
 public static class VertexUtils
 {
-    public static void TranslateMesh(FLVER2 curFlver, FLVER2.Mesh curMesh, Vector3 changeVector)
+    public static void TranslateMesh(FLVER2.Mesh curMesh, Vector3 changeVector)
     {
         foreach(var vertex in curMesh.Vertices)
         {
@@ -19,22 +19,30 @@ public static class VertexUtils
             vertex.Position.Y += changeVector.Y;
             vertex.Position.Z += changeVector.Z;
         }
-
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
     }
 
-    public static void ScaleMesh(FLVER2 curFlver, FLVER2.Mesh curMesh, Vector3 scaleVector)
+    public static void ScaleMesh(FLVER2.Mesh curMesh, Vector3 scaleVector)
     {
         foreach (var vertex in curMesh.Vertices)
         {
-            vertex.Position.X *= scaleVector.X;
-            vertex.Position.Y *= scaleVector.Y;
-            vertex.Position.Z *= scaleVector.Z;
-        }
+            if (scaleVector.X != 0)
+            {
+                vertex.Position.X *= scaleVector.X;
+            }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+            if (scaleVector.Z != 0)
+            {
+                vertex.Position.Y *= scaleVector.Y;
+            }
+
+            if (scaleVector.Y != 0)
+            {
+                vertex.Position.Z *= scaleVector.Z;
+            }
+        }
     }
-    public static void RotateMesh(FLVER2 curFlver, FLVER2.Mesh curMesh, float angle, RotationAxis axis)
+
+    public static void RotateMesh(FLVER2.Mesh curMesh, float angle, RotationAxis axis)
     {
         float angleRadians = angle * (float)Math.PI / 180.0f;
         float cos = (float)Math.Cos(angleRadians);
@@ -50,11 +58,15 @@ public static class VertexUtils
 
             if (axis is RotationAxis.X)
             {
-                vertex.Position.Y = vertex.Position.Y * cos - vertex.Position.Z * sin;
-                vertex.Position.Z = vertex.Position.Y * sin + vertex.Position.Z * cos;
+                var newY = vertex.Position.Y * cos - vertex.Position.Z * sin;
+                var newZ = vertex.Position.Y * sin + vertex.Position.Z * cos;
+                vertex.Position.Y = newY;
+                vertex.Position.Z = newZ;
 
-                vertex.Normal.Y = vertex.Normal.Y * cos - vertex.Normal.Z * sin;
-                vertex.Normal.Z = vertex.Normal.Y * sin + vertex.Normal.Z * cos;
+                var newNormalY = vertex.Normal.Y * cos - vertex.Normal.Z * sin;
+                var newNormalZ = vertex.Normal.Y * sin + vertex.Normal.Z * cos;
+                vertex.Normal.Y = newNormalY;
+                vertex.Normal.Z = newNormalZ;
 
                 if (vertex.Tangents.Count > 0)
                 {
@@ -67,11 +79,15 @@ public static class VertexUtils
             }
             if (axis is RotationAxis.Y)
             {
-                vertex.Position.X = vertex.Position.X * cos - vertex.Position.Z * sin;
-                vertex.Position.Z = -vertex.Position.X * sin + vertex.Position.Z * cos;
+                var newX = vertex.Position.X * cos - vertex.Position.Z * sin;
+                var newZ = -vertex.Position.X * sin + vertex.Position.Z * cos;
+                vertex.Position.X = newX;
+                vertex.Position.Z = newZ;
 
-                vertex.Normal.X = vertex.Normal.X * cos - vertex.Normal.Z * sin;
-                vertex.Normal.Z = -vertex.Normal.X * sin + vertex.Normal.Z * cos;
+                var newNormalX = vertex.Normal.X * cos - vertex.Normal.Z * sin;
+                var newNormalZ = -vertex.Normal.X * sin + vertex.Normal.Z * cos;
+                vertex.Normal.X = newNormalX;
+                vertex.Normal.Z = newNormalZ;
 
                 if (vertex.Tangents.Count > 0)
                 {
@@ -84,11 +100,15 @@ public static class VertexUtils
             }
             if (axis is RotationAxis.Z)
             {
-                vertex.Position.X = vertex.Position.X * cos - vertex.Position.Y * sin;
-                vertex.Position.Y = vertex.Position.X * sin + vertex.Position.Y * cos;
+                var newX = vertex.Position.X * cos - vertex.Position.Y * sin;
+                var newY = vertex.Position.X * sin + vertex.Position.Y * cos;
+                vertex.Position.X = newX;
+                vertex.Position.Y = newY;
 
-                vertex.Normal.X = vertex.Normal.X * cos - vertex.Normal.Y * sin;
-                vertex.Normal.Y = vertex.Normal.X * sin + vertex.Normal.Y * cos;
+                var newNormalX = vertex.Normal.X * cos - vertex.Normal.Y * sin;
+                var newNormalY = vertex.Normal.X * sin + vertex.Normal.Y * cos;
+                vertex.Normal.X = newNormalX;
+                vertex.Normal.Y = newNormalY;
 
                 if (vertex.Tangents.Count > 0)
                 {
@@ -100,8 +120,6 @@ public static class VertexUtils
                 }
             }
         }
-
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
     }
 }
 

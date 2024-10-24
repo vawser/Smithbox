@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Editors.ModelEditor.Actions.Mesh;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ModelEditor.Utils;
@@ -144,63 +145,112 @@ public class FlverMeshPropertyView
             }
         }
 
-        // TEMP
-        ImGui.Separator();
-
-        ImGui.Columns(3);
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Translate by:");
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Scale by:");
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Rotate by:");
-
-        ImGui.NextColumn();
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputFloat3("##translateInput", ref StoredTranslationInput);
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputFloat3("##scaleInput", ref StoredScaleInput);
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputFloat("##rotateInput", ref StoredRotationInput);
-
-        ImGui.NextColumn();
-
-        var curFlver = Screen.ResManager.GetCurrentFLVER();
-
-        if (ImGui.Button("Translate"))
-        {
-            VertexUtils.TranslateMesh(curFlver, entry, StoredTranslationInput);
-        }
-        if (ImGui.Button("Scale"))
-        {
-            VertexUtils.ScaleMesh(curFlver, entry, StoredScaleInput);
-        }
-        if (ImGui.Button("Rotate X"))
-        {
-            VertexUtils.RotateMesh(curFlver, entry, StoredRotationInput, RotationAxis.X);
-        }
-        if (ImGui.Button("Rotate Y"))
-        {
-            VertexUtils.RotateMesh(curFlver, entry, StoredRotationInput, RotationAxis.Y);
-        }
-        if (ImGui.Button("Rotate Z"))
-        {
-            VertexUtils.RotateMesh(curFlver, entry, StoredRotationInput, RotationAxis.Z);
-        }
-
-        ImGui.Columns(1);
+        DisplayMeshAdjustments(entry);
     }
 
     private Vector3 StoredTranslationInput = new Vector3();
-
-    private float StoredRotationInput = 0.0f;
-
     private Vector3 StoredScaleInput = new Vector3();
+
+    private float StoredRotationInput_X = 0.0f;
+    private float StoredRotationInput_Y = 0.0f;
+    private float StoredRotationInput_Z = 0.0f;
+
+    private void DisplayMeshAdjustments(FLVER2.Mesh entry)
+    {
+        ImGui.Separator();
+        UIHelper.WrappedText("Mesh Adjustments");
+        ImGui.Separator();
+
+        var curFlver = Screen.ResManager.GetCurrentFLVER();
+
+        if (ImGui.BeginTable($"meshAdjustmentsTable", 2, ImGuiTableFlags.SizingFixedFit))
+        {
+            ImGui.TableSetupColumn("Button", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
+
+            // Row 1
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            if (ImGui.Button("Translate", new Vector2(150, 24)))
+            {
+                var action = new TranslateMesh(curFlver, entry, StoredTranslationInput);
+                Screen.EditorActionManager.ExecuteAction(action);
+            }
+            UIHelper.ShowHoverTooltip("Translate the selected mesh by the specified vector.");
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            ImGui.InputFloat3("##translateInput", ref StoredTranslationInput);
+
+            // Row 2
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            if (ImGui.Button("Scale", new Vector2(150, 24)))
+            {
+                var action = new ScaleMesh(curFlver, entry, StoredScaleInput);
+                Screen.EditorActionManager.ExecuteAction(action);
+            }
+            UIHelper.ShowHoverTooltip("Scale the selected mesh by the specified vector.");
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            ImGui.InputFloat3("##scaleInput", ref StoredScaleInput);
+
+            // Row 3
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            if (ImGui.Button("Rotate X##rotateXbutton", new Vector2(150, 24)))
+            {
+                var action = new RotateMesh(curFlver, entry, StoredRotationInput_X, RotationAxis.X);
+                Screen.EditorActionManager.ExecuteAction(action);
+            }
+            UIHelper.ShowHoverTooltip("Rotate the selected mesh on the X-axis by the specified angle.");
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            ImGui.InputFloat("##rotateInputX", ref StoredRotationInput_X);
+
+            // Row 4
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            if (ImGui.Button("Rotate Y##rotateYbutton", new Vector2(150, 24)))
+            {
+                var action = new RotateMesh(curFlver, entry, StoredRotationInput_Y, RotationAxis.Y);
+                Screen.EditorActionManager.ExecuteAction(action);
+            }
+            UIHelper.ShowHoverTooltip("Rotate the selected mesh on the Y-axis by the specified angle.");
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            ImGui.InputFloat("##rotateInputY", ref StoredRotationInput_Y);
+
+            // Row 5
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            if (ImGui.Button("Rotate Z##rotateZbutton", new Vector2(150, 24)))
+            {
+                var action = new RotateMesh(curFlver, entry, StoredRotationInput_Z, RotationAxis.Z);
+                Screen.EditorActionManager.ExecuteAction(action);
+            }
+            UIHelper.ShowHoverTooltip("Rotate the selected mesh on the Z-axis by the specified angle.");
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            ImGui.InputFloat("##rotateInputZ", ref StoredRotationInput_Z);
+
+            ImGui.EndTable();
+        }
+    }
 
     private void DisplayFaceSetProperties(FLVER2.FaceSet faceset, int index)
     {
