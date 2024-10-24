@@ -366,6 +366,12 @@ public class Universe
             asset = ModelLocator.GetChrModel(modelname, modelname);
             filt = RenderFilter.Character;
         }
+        else if (modelname.StartsWith("e", StringComparison.CurrentCultureIgnoreCase))
+        {
+            loadflver = true;
+            asset = ModelLocator.GetEneModel(modelname);
+            filt = RenderFilter.Character;
+        }
         else if (modelname.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || modelname.StartsWith("AEG"))
         {
             loadflver = true;

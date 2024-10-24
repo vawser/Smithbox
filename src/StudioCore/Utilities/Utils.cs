@@ -11,6 +11,7 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -808,24 +809,60 @@ public static class Utils
         return new float[] { -1, 1, 0, 0, 1, 1, 1, 0, 1, -1, 1, 1, -1, -1, 0, 1 };
     }
 
-    public static Matrix4x4 GetBoneObjectMatrix(FLVER.Node bone, List<FLVER.Node> bones)
+    public static Matrix4x4 GetBoneWorldMatrix(FLVER.Node bone, List<FLVER.Node> bones)
     {
-        Matrix4x4 res = Matrix4x4.Identity;
-        FLVER.Node parentBone = bone;
-        do
+        Matrix4x4 matrix = bone.ComputeLocalTransform();
+        while (bone.ParentIndex != -1)
         {
-            res *= parentBone.ComputeLocalTransform();
-            if (parentBone.ParentIndex >= 0)
-            {
-                parentBone = bones[parentBone.ParentIndex];
-            }
-            else
-            {
-                parentBone = null;
-            }
-        } while (parentBone != null);
+            bone = bones[bone.ParentIndex];
+            matrix *= bone.ComputeLocalTransform();
+        }
 
-        return res;
+        return matrix;
+    }
+
+    public static void PrintBoneInfo(List<FLVER.Node> bones, bool debug)
+    {
+        Action<string> write = debug ? (string value) => Debug.Write(value) : Console.Write;
+
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine();
+        sb.AppendLine("==== BONE INFO START ====");
+        for (int i = 0; i < bones.Count; i++)
+        {
+            var bone = bones[i];
+            sb.AppendLine($"[{i}] {bone.Name}");
+            sb.AppendLine($"\tPosition: {bone.Position}");
+            sb.AppendLine($"\tRotation: {bone.Rotation}");
+            sb.AppendLine($"\tScale: {bone.Scale}");
+            sb.AppendLine($"\tParent Index: {bone.ParentIndex}");
+            sb.AppendLine($"\tChild Index: {bone.FirstChildIndex}");
+            sb.AppendLine($"\tNext Sibling Index: {bone.NextSiblingIndex}");
+            sb.AppendLine($"\tPrevious Sibling Index: {bone.PreviousSiblingIndex}");
+            sb.AppendLine($"\tLocal Transform: {bone.ComputeLocalTransform()}");
+            sb.AppendLine($"\tWorld Transform: {GetBoneWorldMatrix(bone, bones)}");
+        }
+        sb.AppendLine("==== BONE INFO END ====");
+        sb.AppendLine();
+
+        write(sb.ToString());
+    }
+
+    public static void PrintTransformInfo(Matrix4x4[] transforms, bool debug)
+    {
+        Action<string> write = debug ? (string value) => Debug.Write(value) : Console.Write;
+
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine();
+        sb.AppendLine("==== TRANSFORM INFO START ====");
+        for (int i = 0; i < transforms.Length; i++)
+        {
+            sb.AppendLine($"{transforms[i]}");
+        }
+        sb.AppendLine("==== TRANSFORM INFO END ====");
+        sb.AppendLine();
+
+        write(sb.ToString());
     }
 
     public static void setRegistry(string name, string value)
