@@ -400,8 +400,10 @@ public class FlverResource : IResource, IDisposable
             dest.MaterialMask = int.Parse(matName.Substring(1, 2));
         }
 
+        dest.SpecializationConstants = new List<SpecializationConstant>();
+
         //FLVER0 stores layouts directly in the material
-        if (Smithbox.ProjectType == ProjectType.DES)
+        if (Smithbox.ProjectType is ProjectType.DES or ProjectType.ACFA)
         {
             var desMat = (FLVER0.Material)mat;
             var foundBoneIndices = false;
@@ -415,7 +417,8 @@ public class FlverResource : IResource, IDisposable
                     {
                         case FLVER.LayoutSemantic.Normal:
                             if (layoutType.Type == FLVER.LayoutType.Byte4B ||
-                                layoutType.Type == FLVER.LayoutType.Byte4E)
+                                layoutType.Type == FLVER.LayoutType.Byte4E ||
+                                layoutType.Type == FLVER.LayoutType.Short2toFloat2)
                             {
                                 dest.SetNormalWBoneTransform();
                             }
@@ -444,7 +447,6 @@ public class FlverResource : IResource, IDisposable
             dest.LayoutType = MeshLayoutType.LayoutSky;
             dest.VertexLayout = MeshLayoutUtils.GetLayoutDescription(dest.LayoutType);
             dest.VertexSize = MeshLayoutUtils.GetLayoutVertexSize(dest.LayoutType);
-            dest.SpecializationConstants = new List<SpecializationConstant>();
             return;
         }
 
@@ -484,7 +486,7 @@ public class FlverResource : IResource, IDisposable
             specConstants.Add(new SpecializationConstant(3, hasShininess2));
         }
 
-        dest.SpecializationConstants = specConstants;
+        dest.SpecializationConstants.AddRange(specConstants);
         dest.VertexLayout = MeshLayoutUtils.GetLayoutDescription(dest.LayoutType);
         dest.VertexSize = MeshLayoutUtils.GetLayoutVertexSize(dest.LayoutType);
 
@@ -600,7 +602,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillNormalSNorm8(sbyte* dest, BinaryReaderEx br, FLVER.LayoutType type, Vector3* n)
+    private unsafe void FillNormalSNorm8(sbyte* dest, BinaryReaderEx br, FLVER.LayoutType type, Vector3* n, int[] meshBoneIndices, bool useNormalWTransform)
     {
         var nw = 0;
         if (type == FLVER.LayoutType.Float3)
@@ -667,6 +669,12 @@ public class FlverResource : IResource, IDisposable
         dest[1] = (sbyte)(n->Y * 127.0f);
         dest[2] = (sbyte)(n->Z * 127.0f);
         dest[3] = (sbyte)nw;
+
+        // HACK: Move normalW index from local to global bone index
+        if (useNormalWTransform && nw >= 0 && nw < meshBoneIndices.Length)
+        {
+            dest[3] = (sbyte)meshBoneIndices[nw];
+        }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -880,7 +888,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesNormalOnly(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, ref bool posfilled)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, ref bool posfilled)
     {
         Span<FlverLayoutSky> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -910,7 +918,7 @@ public class FlverResource : IResource, IDisposable
                     }
                     else if (l.semantic == FLVER.LayoutSemantic.Normal)
                     {
-                        FillNormalSNorm8((*v).Normal, br, l.type, &n);
+                        FillNormalSNorm8((*v).Normal, br, l.type, &n, meshBoneIndices, useNormalWTransform);
                     }
                     else
                     {
@@ -965,7 +973,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesStandard(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, float uvFactor)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor)
     {
         br.StepIn(buffer.bufferOffset);
         var pverts = (FlverLayout*)vertBuffer;
@@ -998,7 +1006,7 @@ public class FlverResource : IResource, IDisposable
                 }
                 else if (l.semantic == FLVER.LayoutSemantic.Normal)
                 {
-                    FillNormalSNorm8((*v).Normal, br, l.type, &n);
+                    FillNormalSNorm8((*v).Normal, br, l.type, &n, meshBoneIndices, useNormalWTransform);
                 }
                 else if (l.semantic == FLVER.LayoutSemantic.UV && l.index == 0)
                 {
@@ -1097,7 +1105,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesUV2(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, float uvFactor)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor)
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -1129,7 +1137,7 @@ public class FlverResource : IResource, IDisposable
                     }
                     else if (l.semantic == FLVER.LayoutSemantic.Normal)
                     {
-                        FillNormalSNorm8((*v).Normal, br, l.type, &n);
+                        FillNormalSNorm8((*v).Normal, br, l.type, &n, meshBoneIndices, useNormalWTransform);
                     }
                     else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < 2)
                     {
@@ -1230,6 +1238,19 @@ public class FlverResource : IResource, IDisposable
                     vert.Position = Vector3.Transform(vert.Position, boneTfm);
                     vert.Normal = Vector3.TransformNormal(vert.Normal, boneTfm);
                     mesh.Vertices[v] = vert;
+                }
+            }
+        }
+
+        // Move NormalW local indices to global bone indices for shader
+        if (Smithbox.ProjectType is ProjectType.ACFA && mesh.Dynamic != 1)
+        {
+            for (int i = 0; i < mesh.Vertices.Count; i++)
+            {
+                var vert = mesh.Vertices[i];
+                if (vert.NormalW < mesh.BoneIndices.Length && vert.NormalW >= 0)
+                {
+                    mesh.Vertices[i].NormalW = mesh.BoneIndices[vert.NormalW];
                 }
             }
         }
@@ -1344,6 +1365,19 @@ public class FlverResource : IResource, IDisposable
     {
         if (mesh.Vertices == null)
             return;
+
+        // Move NormalW local indices to global bone indices for shader
+        if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD && mesh.Dynamic != 1)
+        {
+            for (int i = 0; i < mesh.Vertices.Count; i++)
+            {
+                var vert = mesh.Vertices[i];
+                if (vert.NormalW < mesh.BoneIndices.Count && vert.NormalW >= 0)
+                {
+                    mesh.Vertices[i].NormalW = mesh.BoneIndices[vert.NormalW];
+                }
+            }
+        }
 
         dest.Material = GPUMaterials[mesh.MaterialIndex];
 
@@ -1504,31 +1538,23 @@ public class FlverResource : IResource, IDisposable
             }
             else if (mesh.NodeIndex != -1 && mesh.NodeIndex < Bones.Count)
             {
-                dest.LocalTransform = Utils.GetBoneObjectMatrix(Bones[mesh.NodeIndex], Bones);
+                dest.LocalTransform = Utils.GetBoneWorldMatrix(Bones[mesh.NodeIndex], Bones);
             }
         }
 
         Marshal.FreeHGlobal(dest.PickingVertices);
     }
 
-    private static Matrix4x4 GetBoneObjectMatrix(FlverBone bone, List<FlverBone> bones)
+    private static Matrix4x4 GetBoneWorldMatrix(List<FlverBone> bones, FlverBone bone)
     {
-        Matrix4x4 res = Matrix4x4.Identity;
-        FlverBone? parentBone = bone;
-        do
+        Matrix4x4 matrix = bone.ComputeLocalTransform();
+        while (bone.parentIndex != -1)
         {
-            res *= parentBone.Value.ComputeLocalTransform();
-            if (parentBone?.parentIndex >= 0)
-            {
-                parentBone = bones[(int)parentBone?.parentIndex];
-            }
-            else
-            {
-                parentBone = null;
-            }
-        } while (parentBone != null);
+            bone = bones[bone.parentIndex];
+            matrix *= bone.ComputeLocalTransform();
+        }
 
-        return res;
+        return matrix;
     }
 
     private unsafe void ProcessMesh(ref FlverMesh mesh, BinaryReaderEx br, int version,
@@ -1591,6 +1617,7 @@ public class FlverResource : IResource, IDisposable
         var meshVertices = dest.GeomBuffer.MapVBuffer();
         var meshIndices = dest.GeomBuffer.MapIBuffer();
 
+        var meshBoneIndices = mesh.GetMeshBoneIndices(br);
         bool posfilled = false;
         foreach (var vbi in vertexBufferIndices)
         {
@@ -1602,7 +1629,8 @@ public class FlverResource : IResource, IDisposable
             {
                 layoutmembers[i] = new FlverBufferLayoutMember(br);
                 if (layoutmembers[i].semantic == FLVER.LayoutSemantic.Normal &&
-                    (layoutmembers[i].type == FLVER.LayoutType.Byte4B ||
+                    (layoutmembers[i].type == FLVER.LayoutType.Byte4A ||
+                     layoutmembers[i].type == FLVER.LayoutType.Byte4B ||
                      layoutmembers[i].type == FLVER.LayoutType.Byte4E))
                 {
                     dest.UseNormalWBoneTransform = true;
@@ -1623,17 +1651,15 @@ public class FlverResource : IResource, IDisposable
 
             if (dest.Material.LayoutType == MeshLayoutType.LayoutSky)
             {
-                FillVerticesNormalOnly(br, ref vb, layoutmembers, pvhandle, meshVertices, ref posfilled);
+                FillVerticesNormalOnly(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, ref posfilled);
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV2)
             {
-                FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices,
-                    version >= 0x2000F ? 2048 : 1024);
+                FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000F ? 2048 : 1024);
             }
             else
             {
-                FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices,
-                    version >= 0x2000F ? 2048 : 1024);
+                FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000F ? 2048 : 1024);
             }
         }
 
@@ -1772,7 +1798,7 @@ public class FlverResource : IResource, IDisposable
             }
             else if (mesh.defaultBoneIndex != -1 && mesh.defaultBoneIndex < FBones.Count)
             {
-                dest.LocalTransform = GetBoneObjectMatrix(FBones[mesh.defaultBoneIndex], FBones);
+                dest.LocalTransform = GetBoneWorldMatrix(FBones, FBones[mesh.defaultBoneIndex]);
             }
         }
 
@@ -1893,6 +1919,21 @@ public class FlverResource : IResource, IDisposable
             BoneTransforms.Clear();
         }
 
+        if (GPUMaterials.Any(e => e.GetNormalWBoneTransform()))
+        {
+            StaticBoneBuffer = Renderer.BoneBufferAllocator.Allocate(64 * (uint)Bones.Count, 64);
+            var tbones = new Matrix4x4[Bones.Count];
+            for (var i = 0; i < Bones.Count; i++)
+            {
+                tbones[i] = Utils.GetBoneWorldMatrix(Bones[i], Bones);
+            }
+
+            Renderer.AddBackgroundUploadTask((d, cl) =>
+            {
+                StaticBoneBuffer.FillBuffer(cl, tbones);
+            });
+        }
+
         if (al == AccessLevel.AccessGPUOptimizedOnly)
         {
             Flver = null;
@@ -1941,7 +1982,7 @@ public class FlverResource : IResource, IDisposable
                 var tbones = new Matrix4x4[Bones.Count];
                 for (var i = 0; i < Bones.Count; i++)
                 {
-                    tbones[i] = Utils.GetBoneObjectMatrix(Bones[i], Bones);
+                    tbones[i] = Utils.GetBoneWorldMatrix(Bones[i], Bones);
                 }
 
                 Renderer.AddBackgroundUploadTask((d, cl) =>
@@ -2106,7 +2147,7 @@ public class FlverResource : IResource, IDisposable
             var tbones = new Matrix4x4[FBones.Count];
             for (var i = 0; i < FBones.Count; i++)
             {
-                tbones[i] = GetBoneObjectMatrix(FBones[i], FBones);
+                tbones[i] = GetBoneWorldMatrix(FBones, FBones[i]);
             }
 
             Renderer.AddBackgroundUploadTask((d, cl) =>
@@ -2383,6 +2424,7 @@ public class FlverResource : IResource, IDisposable
         public readonly int materialIndex;
         public readonly int defaultBoneIndex;
         public int boneCount;
+        public readonly int boneOffset;
         public readonly int facesetCount;
         public readonly uint facesetIndicesOffset;
         public readonly int vertexBufferCount;
@@ -2390,19 +2432,25 @@ public class FlverResource : IResource, IDisposable
 
         public FlverMesh(BinaryReaderEx br)
         {
-            dynamic = br.AssertInt32([0, 1]);
+            dynamic = br.AssertByte([0, 1]);
+            br.AssertByte(0);
+            br.AssertByte(0);
+            br.AssertByte(0);
             materialIndex = br.ReadInt32();
             br.AssertInt32(0);
             br.AssertInt32(0);
             defaultBoneIndex = br.ReadInt32();
             boneCount = br.ReadInt32();
             br.ReadInt32(); // bb offset
-            br.ReadInt32(); // bone offset
+            boneOffset = br.ReadInt32();
             facesetCount = br.ReadInt32();
             facesetIndicesOffset = br.ReadUInt32();
             vertexBufferCount = br.AssertInt32([0, 1, 2, 3]);
             vertexBufferIndicesOffset = br.ReadUInt32();
         }
+
+        public readonly int[] GetMeshBoneIndices(BinaryReaderEx br)
+            => br.GetInt32s(boneOffset, boneCount);
     }
 
     private struct FlverFaceset
