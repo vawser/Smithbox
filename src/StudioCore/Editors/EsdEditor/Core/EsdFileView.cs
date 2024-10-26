@@ -44,6 +44,8 @@ public class EsdFileView
         // File List
         ImGui.Begin("Files##TalkFileList");
 
+        Filters.DisplayFileFilterSearch();
+
         ImGui.Text($"File");
         ImGui.Separator();
 
@@ -52,28 +54,40 @@ public class EsdFileView
             var displayName = $"{info.Name}";
             var aliasName = AliasUtils.GetMapNameAlias(info.Name);
 
-            // File row
-            if (ImGui.Selectable($@" {displayName}", displayName == Selection._selectedBinderKey))
+            if (Filters.IsFileFilterMatch(displayName, aliasName))
             {
-                Selection.ResetScript();
-                Selection.ResetStateGroup();
-                Selection.ResetStateGroupNode();
+                // File row
+                if (ImGui.Selectable($@" {displayName}", displayName == Selection._selectedBinderKey))
+                {
+                    Selection.ResetScript();
+                    Selection.ResetStateGroup();
+                    Selection.ResetStateGroupNode();
 
-                Selection.SetFile(info, binder);
-            }
+                    Selection.SetFile(info, binder);
+                }
 
-            // Arrow Selection
-            if (ImGui.IsItemHovered() && Selection.SelectNextFile)
-            {
-                Selection.SelectNextFile = false;
-                Selection.SetFile(info, binder);
-            }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
-            {
-                Selection.SelectNextFile = true;
-            }
+                // Arrow Selection
+                if (ImGui.IsItemHovered() && Selection.SelectNextFile)
+                {
+                    Selection.SelectNextFile = false;
+                    Selection.SetFile(info, binder);
+                }
+                if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                {
+                    Selection.SelectNextFile = true;
+                }
 
-            UIHelper.DisplayAlias(aliasName);
+                // Only apply to selection
+                if (Selection._selectedBinderKey != "")
+                {
+                    if (Selection._selectedBinderKey == info.Name)
+                    {
+                        ContextMenu.FileContextMenu(info);
+                    }
+                }
+
+                UIHelper.DisplayAlias(aliasName);
+            }
         }
 
         ImGui.End();

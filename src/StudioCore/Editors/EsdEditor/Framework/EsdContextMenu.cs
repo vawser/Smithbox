@@ -1,4 +1,6 @@
-﻿using StudioCore.Editors.EsdEditor;
+﻿using SoulsFormats;
+using StudioCore.Editors.EsdEditor;
+using StudioCore.Editors.TalkEditor;
 using StudioCore.TalkEditor;
 using System;
 using System.Collections.Generic;
@@ -22,5 +24,25 @@ public class EsdContextMenu
         Screen = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
+    }
+
+    public void FileContextMenu(EsdBank.EsdScriptInfo info)
+    {
+
+    }
+
+    public void ScriptContextMenu(ESD entry)
+    {
+
+    }
+
+    public void StateGroupContextMenu(KeyValuePair<long, Dictionary<long, ESD.State>> entry)
+    {
+
+    }
+
+    public void StateNodeContextMenu(ESD.State entry)
+    {
+
     }
 }

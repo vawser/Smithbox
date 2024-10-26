@@ -1,10 +1,15 @@
-﻿using ImGuiNET;
+﻿using HKLib.hk2018.hkaiCollisionAvoidance;
+using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editors.TalkEditor;
+using StudioCore.Interface;
 using StudioCore.TalkEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,12 +23,16 @@ public class EsdScriptView
     private EsdEditorScreen Screen;
     private EsdPropertyDecorator Decorator;
     private EsdSelectionManager Selection;
+    private EsdFilters Filters;
+    private EsdContextMenu ContextMenu;
 
     public EsdScriptView(EsdEditorScreen screen)
     {
         Screen = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
+        Filters = screen.Filters;
+        ContextMenu = screen.ContextMenu;
     }
 
     /// <summary>
@@ -44,21 +53,48 @@ public class EsdScriptView
         var info = Selection._selectedFileInfo;
         var scriptKey = Selection._selectedEsdScriptKey;
 
+        Filters.DisplayScriptFilterSearch();
+
         if (info != null)
         {
-            ImGui.Text($"Scripts");
-            ImGui.Separator();
-
             for (int i = 0; i < info.EsdFiles.Count; i++)
             {
                 ESD entry = info.EsdFiles[i];
 
-                if (ImGui.Selectable($@" {entry.Name}", i == scriptKey))
-                {
-                    Selection.ResetStateGroup();
-                    Selection.ResetStateGroupNode();
+                var displayName = $"{entry.Name}";
+                var aliasName = displayName;
 
-                    Selection.SetScript(i, entry);
+                if (Filters.IsScriptFilterMatch(displayName, aliasName))
+                {
+                    if (ImGui.Selectable($@" {displayName}", i == scriptKey))
+                    {
+                        Selection.ResetStateGroup();
+                        Selection.ResetStateGroupNode();
+
+                        Selection.SetScript(i, entry);
+                    }
+
+                    // Arrow Selection
+                    if (ImGui.IsItemHovered() && Selection.SelectNextScript)
+                    {
+                        Selection.SelectNextScript = false;
+                        Selection.SetScript(i, entry);
+                    }
+                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    {
+                        Selection.SelectNextScript = true;
+                    }
+
+                    // Only apply to selection
+                    if (Selection._selectedEsdScriptKey != -1)
+                    {
+                        if (Selection._selectedEsdScriptKey == i)
+                        {
+                            ContextMenu.ScriptContextMenu(entry);
+                        }
+                    }
+
+                    UIHelper.DisplayAlias(aliasName);
                 }
             }
         }

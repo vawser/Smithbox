@@ -26,7 +26,6 @@ public class EsdEditorScreen : EditorScreen
 
     public EsdToolView ToolView;
     public EsdToolMenubar ToolMenubar;
-    public EsdActionMenubar ActionMenubar;
 
     public EsdFileView FileView;
     public EsdScriptView ScriptView;
@@ -45,7 +44,6 @@ public class EsdEditorScreen : EditorScreen
 
         ToolView = new EsdToolView(this);
         ToolMenubar = new EsdToolMenubar(this);
-        ActionMenubar = new EsdActionMenubar(this);
 
         FileView = new EsdFileView(this);
         ScriptView = new EsdScriptView(this);
@@ -105,10 +103,6 @@ public class EsdEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        ActionMenubar.Display();
-
-        ImGui.Separator();
-
         ToolMenubar.Display();
 
         ImGui.Separator();
@@ -171,7 +165,6 @@ public class EsdEditorScreen : EditorScreen
         StateNodeView.OnProjectChanged();
         StateNodePropertyView.OnProjectChanged();
 
-        ActionMenubar.OnProjectChanged();
         ToolMenubar.OnProjectChanged();
 
         EsdBank.LoadEsdScripts();

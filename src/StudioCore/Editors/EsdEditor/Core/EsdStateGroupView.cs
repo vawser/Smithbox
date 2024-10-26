@@ -1,5 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Configuration;
+using StudioCore.Interface;
 using StudioCore.TalkEditor;
 using System;
 using System.Collections.Generic;
@@ -17,12 +19,16 @@ public class EsdStateGroupView
     private EsdEditorScreen Screen;
     private EsdPropertyDecorator Decorator;
     private EsdSelectionManager Selection;
+    private EsdFilters Filters;
+    private EsdContextMenu ContextMenu;
 
     public EsdStateGroupView(EsdEditorScreen screen)
     {
         Screen = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
+        Filters = screen.Filters;
+        ContextMenu = screen.ContextMenu;
     }
 
     /// <summary>
@@ -43,6 +49,8 @@ public class EsdStateGroupView
         var script = Selection._selectedEsdScript;
         var stateGroupKey = Selection._selectedStateGroupKey;
 
+        Filters.DisplayStateGroupFilterSearch();
+
         if (script != null)
         {
             foreach (var entry in script.StateGroups)
@@ -50,11 +58,39 @@ public class EsdStateGroupView
                 var stateId = entry.Key;
                 var stateGroups = entry.Value;
 
-                if (ImGui.Selectable($@" {stateId}", stateGroupKey == stateId))
-                {
-                    Selection.ResetStateGroupNode();
+                var displayName = $"{entry.Key}";
+                var aliasName = displayName;
 
-                    Selection.SetStateGroup(stateId, stateGroups);
+                if (Filters.IsStateGroupFilterMatch(displayName, aliasName))
+                {
+                    if (ImGui.Selectable($@" {stateId}", stateGroupKey == stateId))
+                    {
+                        Selection.ResetStateGroupNode();
+
+                        Selection.SetStateGroup(stateId, stateGroups);
+                    }
+
+                    // Arrow Selection
+                    if (ImGui.IsItemHovered() && Selection.SelectNextStateGroup)
+                    {
+                        Selection.SelectNextStateGroup = false;
+                        Selection.SetStateGroup(stateId, stateGroups);
+                    }
+                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    {
+                        Selection.SelectNextStateGroup = true;
+                    }
+
+                    // Only apply to selection
+                    if (Selection._selectedStateGroupKey != -1)
+                    {
+                        if (Selection._selectedStateGroupKey == entry.Key)
+                        {
+                            ContextMenu.StateGroupContextMenu(entry);
+                        }
+                    }
+
+                    UIHelper.DisplayAlias(aliasName);
                 }
             }
         }
