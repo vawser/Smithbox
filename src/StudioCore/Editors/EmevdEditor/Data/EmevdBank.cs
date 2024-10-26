@@ -345,19 +345,19 @@ public static class EmevdBank
         // Load every script in the regulation
         foreach (BinderFile f in emevdBnd.Files)
         {
-            TaskLogs.AddLog(f.Name);
+            //TaskLogs.AddLog(f.Name);
             var scriptName = Path.GetFileNameWithoutExtension(f.Name);
             EventScriptInfo info = new EventScriptInfo(scriptName, f.Name);
 
             if (!f.Name.ToUpper().EndsWith(".EMEVD"))
             {
-                TaskLogs.AddLog("Skipped due to lacking .emevd");
+                //TaskLogs.AddLog("Skipped due to lacking .emevd");
                 continue;
             }
 
             if (ScriptBank.ContainsKey(info))
             {
-                TaskLogs.AddLog("Skipped as already added");
+                //TaskLogs.AddLog("Skipped as already added");
                 continue;
             }
 
@@ -365,7 +365,7 @@ public static class EmevdBank
             {
                 EMEVD script = EMEVD.Read(f.Bytes);
                 ScriptBank.Add(info, script);
-                TaskLogs.AddLog($"{scriptName} added");
+                //TaskLogs.AddLog($"{scriptName} added");
             }
             catch (Exception e)
             {
