@@ -1,0 +1,66 @@
+#-----------------------------------
+# Animation ID Mappings
+#-----------------------------------
+020000 - Walk (Base)
+020010 - Walk (Foward)
+020011 - Walk (Backward)
+020012 - Walk (Left)
+020013 - Walk (Right)
+
+020100 - Run (Base)
+020110 - Run (Foward)
+020111 - Run (Backward)
+020112 - Run (Left)
+020113 - Run (Right)
+
+020200 - Stop
+020201 - Stop
+020202 - Stop
+020210 - Stop (Foward)
+020211 - Stop (Backward)
+020212 - Stop (Left)
+020213 - Stop (Right)
+020220 - Stop (Foward)
+020221 - Stop (Backward)
+020222 - Stop (Left)
+020223 - Stop (Right)
+020230 - Stop (Foward)
+020231 - Stop (Backward)
+020232 - Stop (Left)
+020233 - Stop (Right)
+
+020520 - Lean (Left)
+020521 - Lean (Right)
+020550 - Lean (Left)
+020551 - Lean (Right)
+020560 - Lean (Left)
+020561 - Lean (Right)
+
+022200 - Land 
+022201 - Land 
+022202 - Land 
+022210 - Land 
+022211 - Land 
+022212 - Land 
+022213 - Land 
+022220 - Land 
+022221 - Land 
+022222 - Land 
+022223 - Land 
+022230 - Land 
+022231 - Land 
+022232 - Land 
+022233 - Land 
+
+022500 - Spin (Left)
+022501 - Spin (Right)
+022506 - Spin (Left)
+022507 - Spin (Right)
+022510 - Spin (Left)
+022511 - Spin (Right)
+022512 - Crouch Turn (Left)
+022513 - Crouch Turn (Right)
+022516 - Spin (Left)
+022517 - Spin (Right)
+022522 - Crouch Turn (Left)
+022523 - Crouch Turn (Right)

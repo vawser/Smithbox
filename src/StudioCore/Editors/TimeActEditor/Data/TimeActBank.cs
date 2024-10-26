@@ -225,6 +225,12 @@ public static class TimeActBank
         FileChrBank = new();
         LoadChrTimeActs(FileChrBank);
 
+        // Add the bXXXX.tae from the behavior binder
+        if(Smithbox.ProjectType is ProjectType.AC6)
+        {
+            LoadChrBehaviorTimeActs(FileChrBank);
+        }
+
         IsCharacterTimeActsLoaded = true;
     }
 
@@ -256,6 +262,12 @@ public static class TimeActBank
 
         VanillaChrFileBank = new();
         LoadChrTimeActs(VanillaChrFileBank);
+
+        // Add the bXXXX.tae from the behavior binder
+        if (Smithbox.ProjectType is ProjectType.AC6)
+        {
+            LoadChrBehaviorTimeActs(VanillaChrFileBank);
+        }
 
         IsVanillaCharacterTimeActsLoaded = true;
     }
@@ -314,6 +326,37 @@ public static class TimeActBank
         }
     }
 
+    /// <summary>
+    /// Loads all of the Character TAE (AC6)
+    /// </summary>
+    public static void LoadChrBehaviorTimeActs(Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> targetBank, bool rootOnly = false)
+    {
+        string fileDir = @"\chr";
+        string fileExt = @".behbnd.dcx";
+
+        List<string> fileNames = MiscLocator.GetCharacterBehaviorTimeActBinders();
+
+        foreach (string name in fileNames)
+        {
+            string filePath = $"{fileDir}\\{name}{fileExt}";
+
+            if (rootOnly)
+            {
+                LoadChrTimeAct($"{Smithbox.GameRoot}\\{filePath}", targetBank);
+            }
+            else
+            {
+                if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
+                {
+                    LoadChrTimeAct($"{Smithbox.ProjectRoot}\\{filePath}", targetBank);
+                }
+                else
+                {
+                    LoadChrTimeAct($"{Smithbox.GameRoot}\\{filePath}", targetBank);
+                }
+            }
+        }
+    }
 
     /// <summary>
     /// Loads all of the Object TAE

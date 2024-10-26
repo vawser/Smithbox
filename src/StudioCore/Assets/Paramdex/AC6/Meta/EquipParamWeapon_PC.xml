@@ -49,15 +49,6 @@
         <Option Value="213" Name="PULSE GUN" />
         <Option Value="214" Name="FLAMETHROWER" />
         <Option Value="215" Name="LASER SHOTGUN" />
-        <Option Value="216" Name="UNKNOWN" />
-        <Option Value="217" Name="UNKNOWN" />
-        <Option Value="218" Name="UNKNOWN" />
-        <Option Value="219" Name="UNKNOWN" />
-        <Option Value="220" Name="UNKNOWN" />
-        <Option Value="221" Name="UNKNOWN" />
-        <Option Value="222" Name="UNKNOWN" />
-        <Option Value="223" Name="UNKNOWN" />
-        <Option Value="224" Name="UNKNOWN" />
         <Option Value="250" Name="LIGHT WAVE BLADE / CORAL OSCILLATOR" />
         <Option Value="251" Name="CORAL OSCILLATOR" />
         <Option Value="252" Name="PLASMA THROWER" />
@@ -71,17 +62,6 @@
         <Option Value="260" Name="STUN BATON" />
         <Option Value="261" Name="EXPLOSIVE THROWER" />
         <Option Value="262" Name="FISTS" />
-        <Option Value="280" Name="UNKNOWN" />
-        <Option Value="281" Name="UNKNOWN" />
-        <Option Value="300" Name="UNKNOWN" />
-        <Option Value="301" Name="UNKNOWN" />
-        <Option Value="302" Name="UNKNOWN" />
-        <Option Value="303" Name="UNKNOWN" />
-        <Option Value="304" Name="UNKNOWN" />
-        <Option Value="305" Name="UNKNOWN" />
-        <Option Value="306" Name="UNKNOWN" />
-        <Option Value="330" Name="UNKNOWN" />
-        <Option Value="331" Name="UNKNOWN" />
     </Enum>
   </Enums>
   <Field>
@@ -319,12 +299,31 @@
     <energyLoad AltName="Energy Load" Wiki="EN Load of the part." />
     <menuTextID AltName="Menu Text ID" FmgRef="Modern_Menu_Text" />
     <ammunitionCost AltName="Ammunition Cost" Wiki="Cost per round fired. At the end of each mission, the total number of rounds fired is used to calculate ammunition expenses." />
+    <pulseArmorValue AltName="Pulse Armor Value" Wiki="Used by Pulse Armor and Terminal Armor: is the value of mitigation 'armor' they grant." />
+    
     <unkAttackAnimation AltName="Unknown Attack Animation" />
     <pulseArmorDamageReductionRate_Kinetic AltName="Pulse Armor Damage Mitigation: Kinetic" />
     <pulseArmorDamageReductionRate_Energy AltName="Pulse Armor Damage Mitigation: Energy" />
     <pulseArmorDamageReductionRate_Explosive AltName="Pulse Armor Damage Mitigation: Explosive" />
     <pulseArmorDamageReductionRate_Coral AltName="Pulse Armor Damage Mitigation: Coral" />
-    <pulseArmorDamageReductionRate_Dark AltName="Pulse Armor Damage Mitigation: Dark" />
+    <pulseArmorDamageReductionRate_Dark AltName="Pulse Armor Damage Mitigation: Unknown" />
+    
+    <pulseArmorDamageReductionRate_AcsAnomaly AltName="Pulse Armor Damage Mitigation: ACS Anomaly" />
+    <pulseArmorDamageReductionRate_ElecDischarge AltName="Pulse Armor Damage Mitigation: Electric Discharge" />
+    <pulseArmorDamageReductionRate_Plasma AltName="Pulse Armor Damage Mitigation: Plasma" />
+    <pulseArmorDamageReductionRate_ElecDischargeType2 AltName="Pulse Armor Damage Mitigation: Electric Discharge (Type 2)" />
+    <pulseArmorDamageReductionRate_Uranium AltName="Pulse Armor Damage Mitigation: Uranium" />
+    <pulseArmorDamageReductionRate_Unknown AltName="Pulse Armor Damage Mitigation: Unknown" />
+    
+    <pulseArmor_FfxId_Unknown1 AltName="Pulse Armor: Unknown FFX ID" ParticleAlias=""/>
+    <pulseArmor_FfxId_Unknown1_DummyPolyId AltName="Pulse Armor: Unknown Dummy Polygon ID" />
+    <pulseArmor_FfxId_Unknown2 AltName="Pulse Armor: Unknown FFX ID" ParticleAlias="" />
+    <pulseArmor_FfxId_Unknown2_DummyPolyId AltName="Pulse Armor: Unknown Dummy Polygon ID" />
+    <pulseArmor_FfxId_Unknown3 AltName="Pulse Armor: Unknown FFX ID" ParticleAlias="" />
+    <pulseArmor_FfxId_Unknown3_DummyPolyId AltName="Pulse Armor: Unknown Dummy Polygon ID" />
+    <pulseArmor_FfxId_Unknown4 AltName="Pulse Armor: Unknown FFX ID" ParticleAlias="" />
+    <pulseArmor_FfxId_Unknown4_DummyPolyId AltName="Pulse Armor: Unknown Dummy Polygon ID" />
+    
     <pulseArmorDamageReductionRate_Impact AltName="Pulse Armor Damage Mitigation: Impact" />
     <shieldGuardFacingAngleHorizontalOffset AltName="Pulse Shield: Deployment Angle Offset (Horizontal)" Wiki="Horizontal offset for shield guard facing angle.\nPositive values = angle right, negative values = angle left." />
     <shieldGuardFacingAngleVerticalOffset AltName="Pulse Shield: Deployment Angle Offset (Vertical)" Wiki="Vertical offset for shield guard facing angle.\nPositive values = angle up, negative values = angle down." />
@@ -359,6 +358,10 @@
     <chargingEnergyLoad AltName="Charging Energy Load" Wiki="Additional energy load to apply when firing a charged shot." />
     <shoulderShootDelay AltName="Shoulder Fire Delay" Wiki="Affects the delay before a shoulder weapon fires." />
     <shoulderChargedShootDelay AltName="Shoulder Charged Fire Delay" Wiki="Affects the delay before a shoulder weapon charge fires." />
+    
+    <pulseArmor_FfxId_Unknown5 AltName="Pulse Armor: Unknown FFX ID" ParticleAlias="" />
+    <pulseArmor_FfxId_Unknown5_DummyPolyId AltName="Pulse Armor: Unknown Dummy Polygon ID" />
+    
     <coreExpansionDecayRate AltName="Core Expansion Decay Rate" Wiki="How much expansion HP is lost per second." />
     <impactDampeningRate AltName="Impact Dampening Rate" Wiki="Ability to mitigate incoming ACS burden while performing a regular guard." />
     <projectBarrierSizeCorrection AltName="Projected Barrier: Size Correction" />
@@ -376,7 +379,7 @@
     
     <initialGuardStatusMitigation_AcsAnomaly AltName="Initial Guard - Status Mitigation: ACS Anomaly" Wiki="Ability to mitigate incoming ACS Anomaly strain while performing an Initial Guard." />
     <initialGuardStatusMitigation_ElecDischarge AltName="Initial Guard - Status Mitigation: Electric Discharge" Wiki="Ability to mitigate incoming Electric Discharge strain while performing an Initial Guard." />
-    <initialGuardStatusMitigation_CameraDisruption AltName="Initial Guard - Status Mitigation: Camera Disruption" Wiki="Ability to mitigate incoming Camera Disruption strain while performing an Initial Guard." />
+    <initialGuardStatusMitigation_Plasma AltName="Initial Guard - Status Mitigation: Plasma" Wiki="Ability to mitigate incoming Plasma strain while performing an Initial Guard." />
     <initialGuardStatusMitigation_Unknown AltName="Initial Guard - Status Mitigation: Unknown" Wiki="Ability to mitigate incoming Unknown strain while performing an Initial Guard." />
     
     <weaponCoolingRate AltName="Weapon Cooling Rate" Wiki="Speed at which heat buildup is reduced." />

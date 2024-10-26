@@ -70,6 +70,19 @@ public static class MiscLocator
         return ret;
     }
 
+    // AC6
+    public static List<string> GetCharacterBehaviorTimeActBinders(bool ignoreProject = false)
+    {
+        List<string> ret = new List<string>();
+
+        var paramDir = @"\chr";
+        var paramExt = @".behbnd.dcx";
+
+        ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+
+        return ret;
+    }
+
     public static List<string> GetObjectTimeActBinders(bool ignoreProject = false)
     {
         List<string> ret = new List<string>();

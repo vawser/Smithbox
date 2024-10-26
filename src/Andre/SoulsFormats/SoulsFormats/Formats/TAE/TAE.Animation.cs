@@ -375,8 +375,10 @@ namespace SoulsFormats
 
                         if (!(format == TAEFormat.DES || format == TAEFormat.DS1 || format == TAEFormat.DESR))
                         {
-                            br.AssertVarint(0);
-                            br.AssertVarint(0);
+                            //br.AssertVarint(0);
+                            //br.AssertVarint(0);
+                            UnkVarInt00 = br.ReadVarint();
+                            UnkVarInt01 = br.ReadVarint();
                         }
                         else
                         {
@@ -421,6 +423,9 @@ namespace SoulsFormats
                 }
                 br.StepOut();
             }
+
+            private long UnkVarInt00;
+            private long UnkVarInt01;
 
             internal void WriteHeader(BinaryWriterEx bw, int i, TAEFormat format)
             {
@@ -496,8 +501,10 @@ namespace SoulsFormats
 
                 if (!(format is TAEFormat.DES or TAEFormat.DS1 or TAEFormat.DESR))
                 {
-                    bw.WriteVarint(0);
-                    bw.WriteVarint(0);
+                    //bw.WriteVarint(0);
+                    //bw.WriteVarint(0);
+                    bw.WriteVarint(UnkVarInt00);
+                    bw.WriteVarint(UnkVarInt01);
                 }
                 else
                 {

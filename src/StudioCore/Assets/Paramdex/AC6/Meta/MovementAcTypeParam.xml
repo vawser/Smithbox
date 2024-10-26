@@ -20,6 +20,8 @@
     <tankDrift_skidSpeed AltName="Tank Drift: Skid Speed" />
     <tankDrift_skidTurnRadius AltName="Tank Drift: Skid Turn Radius" />
     <tankDrift_initInputAngleThreshold AltName="Tank Drift: Initiation Input Angle Threshold" />
+    
+    <additionalUpwardsBoostWhenFalling AltName="Additional Upwards Boost whilst Falling" />
   </Field>
   <Self />
 </PARAMMETA>

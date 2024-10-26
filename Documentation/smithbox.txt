@@ -107,11 +107,10 @@ Time Act Editor
  - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
  - ADD: quicklink to TimeAct from param
  - ADD: make the TAE search a multiple-term search: each term is checked, and only if all terms are true then the associated result is included
+ - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
  
 
 
 #--------------------------------------
 # Notes
 #--------------------------------------
- - FIX: TAE a330 + a331 in AC6 are not reading correctly
- - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
