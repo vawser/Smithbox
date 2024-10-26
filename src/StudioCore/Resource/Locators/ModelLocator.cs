@@ -246,19 +246,31 @@ public static class ModelLocator
         ret.AssetArchiveVirtualPath = $@"obj/{objContainerId}/model";
 
         if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId}.flv";
+        }
         else if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId.ToUpper()}.flver";
+        }
         else
+        {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId}.flver";
+        }
 
         // Direct paths
         if (Smithbox.ProjectType is ProjectType.DS1)
+        {
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"obj\{objId}.objbnd");
+        }
         else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\obj\{objId}\{objId}.bnd");
+        {
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\obj\{objId}.bnd");
+        }
         else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        {
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\obj\{objId}\{objId}_m.bnd");
+        }
         else if (Smithbox.ProjectType is ProjectType.ER)
         {
             // Derive subfolder path from model name (all vanilla AEG are within subfolders)
