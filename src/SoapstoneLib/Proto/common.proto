@@ -78,6 +78,7 @@ enum FromSoftGame {
   DARK_SOULS_3 = 7;
   SEKIRO = 8;
   ELDEN_RING = 9;
+  ARMORED_CORE_6 = 10;
 }
 
 // Namespaces for different types of game data.
