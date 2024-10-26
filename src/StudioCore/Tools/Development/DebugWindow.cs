@@ -14,6 +14,7 @@ using System;
 using static SoulsFormats.MSB_AC6;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
+using SoapstoneLib;
 
 namespace StudioCore.Tools.Development;
 
@@ -198,6 +199,16 @@ public class DebugWindow
             {
                 ImGui.Text(task);
             }
+        }
+
+        if (ImGui.CollapsingHeader("Soapstone Server"))
+        {
+            var running = SoapstoneServer.GetRunningPort() is int port
+                ? $"running on port {port}"
+                : "not running";
+            ImGui.Text(
+                $"The server is {running}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect.");
+            ImGui.Checkbox("Enable cross-editor features", ref CFG.Current.Enable_Soapstone_Server);
         }
     }
     private void DisplayResourceManager()

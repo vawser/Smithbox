@@ -18,17 +18,6 @@ World Map:
  - ADD: the dungeon icons, add icon radius for the non-open world maps
  - ADD: support for large/medium/small tile overlays
  
-ESD Editor:
- - ADD: 
- 
-EMEVD Editor:
- - DEV: instruction test: find missing instructions / missing or invalid arguments
- 
- - ADD: enum selection changes value
- - ADD: Add ability to insert/delete/order events.
- - ADD: Add ability to insert/delete/order instructions.
- - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
- 
 Time Act Editor
  - ADD: TAE Mass Edit tool
  - ADD: handling for event groups (currently copied events simply inherit the existing assignment)

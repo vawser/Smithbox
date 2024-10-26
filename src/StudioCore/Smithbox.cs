@@ -66,6 +66,8 @@ public class Smithbox
 
     private bool _showImGuiDebugLogWindow;
 
+    private readonly SoapstoneService _soapstoneService;
+
     // ImGui Debug windows
     private bool _showImGuiDemoWindow;
     private bool _showImGuiMetricsWindow;
@@ -112,6 +114,8 @@ public class Smithbox
         WindowHandler = new CommonMenubarHandler(_context);
 
         TextBank.LoadTextFiles();
+
+        _soapstoneService = new SoapstoneService(_version);
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         SetupFonts();
@@ -292,6 +296,13 @@ public class Smithbox
     public void Run()
     {
         SetupCSharpDefaults();
+
+        if (CFG.Current.Enable_Soapstone_Server)
+        {
+            TaskManager.RunPassiveTask(new TaskManager.LiveTask("Soapstone Server",
+                TaskManager.RequeueType.None, true,
+                () => SoapstoneServer.RunAsync(KnownServer.DSMapStudio, _soapstoneService).Wait()));
+        }
 
         if (CFG.Current.System_Check_Program_Update)
         {

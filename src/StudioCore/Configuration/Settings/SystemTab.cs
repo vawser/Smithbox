@@ -25,6 +25,10 @@ public class SystemTab
                 ref CFG.Current.System_Check_Program_Update);
             UIHelper.ShowHoverTooltip("When enabled Smithbox will automatically check for new versions upon program start.");
 
+            ImGui.Checkbox("Enable Soapstone Server",
+                ref CFG.Current.System_Check_Program_Update);
+            UIHelper.ShowHoverTooltip("Enables the Soapstone Server, allow for cross-data integration with DarkScript.");
+
             ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f);
             UIHelper.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
 

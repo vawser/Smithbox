@@ -68,6 +68,7 @@ public class CFG
     //****************************
     // Settings: System
     //****************************
+    public bool Enable_Soapstone_Server = true;
     public bool System_Check_Program_Update = true;
     public float System_Frame_Rate = 60.0f;
     public bool System_Enable_Soapstone_Server = true;
