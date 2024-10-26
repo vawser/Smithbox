@@ -32,11 +32,14 @@ public class TextDifferenceManager
     /// </summary>
     private Dictionary<string, bool> DifferenceCache = new();
 
+    private bool CacheFilled = false;
+
     /// <summary>
     /// Generate difference truth for currently selected FMG
     /// </summary>
     public void TrackFmgDifferences()
     {
+        CacheFilled = false;
         AdditionCache = new();
         DifferenceCache = new();
 
@@ -182,11 +185,17 @@ public class TextDifferenceManager
                     }
                 }
             }
+
+            CacheFilled = true;
         }
     }
 
     public bool IsDifferentToVanilla(FMG.Entry entry)
     {
+        // Ignore if the cache is being filled, or the bank isn't loaded
+        if (!CacheFilled)
+            return false;
+
         if (entry == null)
             return false;
 
@@ -216,6 +225,10 @@ public class TextDifferenceManager
 
     public bool IsUniqueToProject(FMG.Entry entry)
     {
+        // Ignore if the cache is being filled, or the bank isn't loaded
+        if (!CacheFilled)
+            return false;
+
         if (entry == null)
             return false;
 

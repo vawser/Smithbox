@@ -894,15 +894,11 @@ public class ParamEditorView
                     _paramEditor.CopySelectionToClipboard(_selection);
                 }
 
-                ImGui.Separator();
-
                 if (ImGui.Selectable(@$"Paste clipboard ({KeyBindings.Current.PARAM_PasteClipboard.HintText})", false,
                         ParamBank.ClipboardRows.Any() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
                 }
-
-                ImGui.Separator();
 
                 if (ImGui.Selectable(@$"Delete selection ({KeyBindings.Current.CORE_DeleteSelectedEntry.HintText})", false,
                         _selection.RowSelectionExists()
@@ -911,8 +907,6 @@ public class ParamEditorView
                 {
                     _paramEditor.DeleteSelection(_selection);
                 }
-
-                ImGui.Separator();
 
                 if (ImGui.Selectable(@$"Duplicate selection ({KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText})", false,
                         _selection.RowSelectionExists()
