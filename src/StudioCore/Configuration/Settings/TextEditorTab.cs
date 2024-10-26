@@ -66,6 +66,9 @@ public class TextEditorTab
 
             ImGui.Checkbox("Display Source Path", ref CFG.Current.TextEditor_DisplaySourcePath);
             UIHelper.ShowHoverTooltip("If enabled, the path of the source file will be displayed in the hover tooltip.");
+
+            ImGui.Checkbox("Display File Precedence Hint", ref CFG.Current.TextEditor_DisplayContainerPrecedenceHint);
+            UIHelper.ShowHoverTooltip("Display the File precedence hint on hover.");
         }
 
         // Text File List
@@ -79,6 +82,9 @@ public class TextEditorTab
 
             ImGui.Checkbox("Display Community FMG Name", ref CFG.Current.TextEditor_DisplayFmgPrettyName);
             UIHelper.ShowHoverTooltip("Display the FMG community name instead of the internal form.");
+
+            ImGui.Checkbox("Display FMG Precedence Hint", ref CFG.Current.TextEditor_DisplayFmgPrecedenceHint);
+            UIHelper.ShowHoverTooltip("Display the FMG precedence hint on hover.");
         }
 
         // Text Entries List

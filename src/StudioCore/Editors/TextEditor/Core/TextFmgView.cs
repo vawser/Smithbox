@@ -220,6 +220,13 @@ public class TextFmgView
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "")
                                     {
                                         HandleFmgView(fmgInfo);
+                                        if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
+                                        {
+                                            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                                            {
+                                                UIHelper.ShowHoverTooltip("This FMG has the highest priority for new entries, so it is recommended you always add new entries in this section.");
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -239,6 +246,13 @@ public class TextFmgView
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 1")
                                     {
                                         HandleFmgView(fmgInfo);
+                                        if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
+                                        {
+                                            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                                            {
+                                                UIHelper.ShowHoverTooltip("This FMG contains entries associated with DLC 1, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base section FMG will take precedence.");
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -258,6 +272,13 @@ public class TextFmgView
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 2")
                                     {
                                         HandleFmgView(fmgInfo);
+                                        if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
+                                        {
+                                            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                                            {
+                                                UIHelper.ShowHoverTooltip("This FMG contains entries associated with DLC 2, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base or DLC 1 section FMG will take precedence.");
+                                            }
+                                        }
                                     }
                                 }
                             }

@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Core.Project;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;

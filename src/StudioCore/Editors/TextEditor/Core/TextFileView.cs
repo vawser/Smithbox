@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
@@ -229,6 +230,28 @@ public class TextFileView
                 }
             }
 
+            // Display hint if normal File List is displayed to user knows about the game's usage of the containers
+            if (CFG.Current.TextEditor_DisplayContainerPrecedenceHint && !CFG.Current.TextEditor_SimpleFileList)
+            {
+                if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                {
+                    if (wrapper.Filename.Contains("item") || wrapper.Filename.Contains("menu"))
+                    {
+                        if (wrapper.Filename.Contains("dlc2") || wrapper.Filename.Contains("dlc02"))
+                        {
+                            UIHelper.ShowHoverTooltip("This container is the only one used by the game.\nOnly use this one.");
+                        }
+                        else if (wrapper.Filename.Contains("dlc1") || wrapper.Filename.Contains("dlc01"))
+                        {
+                            UIHelper.ShowHoverTooltip("This container is no longer used by the game.\nDo not use this one.");
+                        }
+                        else
+                        {
+                            UIHelper.ShowHoverTooltip("This container is no longer used by the game.\nDo not use this one.");
+                        }
+                    }
+                }
+            }
             if (CFG.Current.TextEditor_DisplaySourcePath)
             {
                 UIHelper.ShowHoverTooltip($"Source File: {wrapper.ReadPath}");

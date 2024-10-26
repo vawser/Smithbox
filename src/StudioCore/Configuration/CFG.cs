@@ -391,10 +391,12 @@ public class CFG
 
     public bool TextEditor_IncludeNonPrimaryContainers = true;
     public bool TextEditor_IncludeVanillaCache = true;
+    public bool TextEditor_DisplayFmgPrecedenceHint = true;
 
     public bool TextEditor_DisplayPrimaryCategoryOnly = false;
     public bool TextEditor_DisplayCommunityContainerName = true;
     public bool TextEditor_DisplaySourcePath = true;
+    public bool TextEditor_DisplayContainerPrecedenceHint = true;
 
     public bool TextEditor_DisplayFmgID = false;
     public bool TextEditor_DisplayFmgPrettyName = true;
