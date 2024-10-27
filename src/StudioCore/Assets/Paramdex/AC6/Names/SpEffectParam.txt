@@ -1820,3 +1820,4 @@
 3043310 AI Interrupt
 3043320 AI Interrupt
 4021021 AI Interrupt
+9100100 AC Test: Player Re-Supply Effect

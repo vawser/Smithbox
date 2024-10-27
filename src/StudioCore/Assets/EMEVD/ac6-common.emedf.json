@@ -2546,6 +2546,238 @@
                     ]
                 },
                 {
+                    "name": "Unknown 3[1001]",
+                    "index": 1001,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 3[1005]",
+                    "index": 1005,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 3[1008]",
+                    "index": 1008,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 3[1009]",
+                    "index": 1009,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 3[1010]",
+                    "index": 1010,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 3[1011]",
+                    "index": 1011,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
                     "name": "Unknown 3[1012]",
                     "index": 1012,
                     "args": [
@@ -2565,6 +2797,94 @@
                         }
                     ]
                 },
+                {
+                    "name": "Unknown 3[1013]",
+                    "index": 1013,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 3[1014]",
+                    "index": 1014,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 3[1015]",
+                    "index": 1015,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -2641,6 +2961,54 @@
                             "increment": 1,
                             "format_string": "%0.3f",
                             "unk1": 0,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[1]",
+                    "index": 1,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
@@ -3684,6 +4052,82 @@
                     ]
                 },
                 {
+                    "name": "Unknown 4[18]",
+                    "index": 18,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
                     "name": "IF Character Ratio Has SpEffect",
                     "index": 19,
                     "args": [
@@ -3774,6 +4218,220 @@
                     ]
                 },
                 {
+                    "name": "Unknown 4[20]",
+                    "index": 20,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[22]",
+                    "index": 22,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[23]",
+                    "index": 23,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
                     "name": "IF Player Targeted",
                     "index": 28,
                     "args": [
@@ -3829,6 +4487,40 @@
                             "increment": 1,
                             "format_string": "%d",
                             "unk1": 0,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[29]",
+                    "index": 29,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
@@ -4174,9 +4866,525 @@
                     ]
                 },
                 {
+                    "name": "Unknown 4[1000]",
+                    "index": 1000,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[1001]",
+                    "index": 1001,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[1002]",
+                    "index": 1002,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[1003]",
+                    "index": 1003,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[1004]",
+                    "index": 1004,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[1005]",
+                    "index": 1005,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[1006]",
+                    "index": 1006,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
                     "name": "Unknown 4[1007]",
                     "index": 1007,
                     "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[1008]",
+                    "index": 1008,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 4[1009]",
+                    "index": 1009,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
                         {
                             "name": "Unknown",
                             "type": 5,
@@ -7830,7 +9038,41 @@
                     ]
                 },
                 {
-                    "name": "Unknown 1003[1014]",
+                    "name": "CONTROL FLOW Unknown 1003[1002]",
+                    "index": 1002,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "CONTROL FLOW Unknown 1003[1014]",
                     "index": 1014,
                     "args": [
                         {
@@ -8796,7 +10038,42 @@
                     "index": 6,
                     "args": [
                         {
-                            "name": "Unknown",
+                            "name": "Event ID",
+                            "type": 2,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 1,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Parameters",
+                            "type": 2,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 1,
+                            "unk3": 4,
+                            "unk4": 0,
+                            "vararg": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Initialize Local Event",
+                    "index": 7,
+                    "args": [
+                        {
+                            "name": "Event Slot ID",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -8841,28 +10118,57 @@
                     ]
                 },
                 {
-                    "name": "Initialize Event (ESD?)",
-                    "index": 7,
+                    "name": "Initialize ESD Event",
+                    "index": 8,
                     "args": [
                         {
-                            "name": "Unknown",
+                            "name": "Event Slot ID",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
-                            "min": 0,
-                            "max": 31,
+                            "min": -1,
+                            "max": 999,
                             "increment": 1,
                             "format_string": "%d",
                             "unk1": 0,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
+                        },
+                        {
+                            "name": "Event ID",
+                            "type": 2,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 1,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Parameters",
+                            "type": 2,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 1,
+                            "unk3": 4,
+                            "unk4": 0,
+                            "vararg": true
                         }
                     ]
                 },
                 {
-                    "name": "End Event (ESD?)",
-                    "index": 8,
+                    "name": "Unknown 2000[9]",
+                    "index": 9,
                     "args": [
                         {
                             "name": "Unknown",
@@ -8870,10 +10176,10 @@
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 31,
+                            "max": 2000000000,
                             "increment": 1,
                             "format_string": "%d",
-                            "unk1": 0,
+                            "unk1": 1,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
@@ -8904,6 +10210,74 @@
                     "name": "Unknown 2000[11]",
                     "index": 11,
                     "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2000[12]",
+                    "index": 12,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2000[13]",
+                    "index": 13,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
                         {
                             "name": "Unknown",
                             "type": 5,
@@ -9133,7 +10507,49 @@
                         {
                             "name": "Should Freeze",
                             "type": 0,
-                            "enum_name": "BOOL",
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 99,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 0,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 99,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 0,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 99,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 0,
+                            "enum_name": null,
                             "default": 0,
                             "min": 0,
                             "max": 99,
@@ -9403,9 +10819,7 @@
                 {
                     "name": "Play Cutscene to Player + UNKNOWN 2002[09]",
                     "index": 9,
-                    "args": [
-                        
-                    ]
+                    "args": []
                 },
                 {
                     "name": "Play Cutscene to Player with Weather and Time",
@@ -9881,90 +11295,6 @@
                             "name": "Playback Method",
                             "type": 2,
                             "enum_name": "Cutscene Play Mode",
-                            "default": 0,
-                            "min": 0,
-                            "max": 0,
-                            "increment": 0,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Area Entity ID",
-                            "type": 2,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Map ID",
-                            "type": 5,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Player Entity ID",
-                            "type": 2,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Unknown14",
-                            "type": 5,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Unknown18",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
-                            "min": 0,
-                            "max": 0,
-                            "increment": 0,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Should Update Stable Position",
-                            "type": 0,
-                            "enum_name": "BOOL",
                             "default": 0,
                             "min": 0,
                             "max": 0,
@@ -11566,33 +12896,33 @@
                     ]
                 },
                 {
-                    "name": "Unknown 2003[62]",
+                    "name": "Set Event Flag AC",
                     "index": 62,
                     "args": [
                         {
-                            "name": "Unknown",
-                            "type": 5,
+                            "name": "Target Event Flag ID",
+                            "type": 2,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
                             "max": 2000000000,
                             "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
+                            "format_string": "%08d",
+                            "unk1": 0,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
                         },
                         {
-                            "name": "Unknown",
+                            "name": "Desired Flag State",
                             "type": 5,
-                            "enum_name": null,
-                            "default": 0,
+                            "enum_name": "ON/OFF",
+                            "default": 1,
                             "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
+                            "max": 0,
+                            "increment": 0,
                             "format_string": "%d",
-                            "unk1": 1,
+                            "unk1": 0,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
@@ -11787,9 +13117,9 @@
                     "index": 69,
                     "args": [
                         {
-                            "name": "Target Event Flag Type",
-                            "type": 0,
-                            "enum_name": "Target Event Flag Type",
+                            "name": "Unknown",
+                            "type": 2,
+                            "enum_name": null,
                             "default": 0,
                             "min": 0,
                             "max": 0,
@@ -11801,24 +13131,24 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Target Event Flag ID",
+                            "name": "Unknown",
                             "type": 2,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%08d",
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
                             "unk1": 0,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
                         },
                         {
-                            "name": "Desired Flag State",
-                            "type": 0,
-                            "enum_name": "ON/OFF",
-                            "default": 1,
+                            "name": "Unknown",
+                            "type": 2,
+                            "enum_name": null,
+                            "default": 0,
                             "min": 0,
                             "max": 0,
                             "increment": 0,
@@ -12307,8 +13637,8 @@
                     ]
                 },
                 {
-                    "name": "Unknown 2003[1010]",
-                    "index": 1010,
+                    "name": "Unknown 2003[1000]",
+                    "index": 1000,
                     "args": [
                         {
                             "name": "Unknown",
@@ -12324,6 +13654,654 @@
                             "unk3": 0,
                             "unk4": 0
                         },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1001]",
+                    "index": 1001,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1002]",
+                    "index": 1002,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1003]",
+                    "index": 1003,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1004]",
+                    "index": 1004,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1005]",
+                    "index": 1005,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1006]",
+                    "index": 1006,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1007]",
+                    "index": 1007,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1008]",
+                    "index": 1008,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1009]",
+                    "index": 1009,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Set Relative Event Flag",
+                    "index": 1010,
+                    "args": [
+                        {
+                            "name": "Type",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Event Flag ID",
+                            "type": 2,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Desired Flag State",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1011]",
+                    "index": 1011,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1012]",
+                    "index": 1012,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1013]",
+                    "index": 1013,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1018]",
+                    "index": 1018,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1019]",
+                    "index": 1019,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1021]",
+                    "index": 1021,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1026]",
+                    "index": 1026,
+                    "args": [
                         {
                             "name": "Unknown",
                             "type": 5,
@@ -12372,6 +14350,46 @@
                             "unk3": 0,
                             "unk4": 0
                         },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Set Player Checkpoint",
+                    "index": 1029,
+                    "args": [
+                        {
+                            "name": "Player Entity ID",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1030]",
+                    "index": 1030,
+                    "args": [
                         {
                             "name": "Unknown",
                             "type": 5,
@@ -12464,7 +14482,27 @@
                 },
                 {
                     "name": "Unknown 2003[1034]",
-                    "index": 1046,
+                    "index": 1034,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1035]",
+                    "index": 1035,
                     "args": [
                         {
                             "name": "Unknown",
@@ -12585,7 +14623,135 @@
                     ]
                 },
                 {
-                    "name": "Unknown 2003[1046]",
+                    "name": "Unknown 2003[1039]",
+                    "index": 1039,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1040]",
+                    "index": 1040,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1041]",
+                    "index": 1041,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1043]",
+                    "index": 1043,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1044]",
+                    "index": 1044,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1046]", // Set Player Spawnpoint?
                     "index": 1046,
                     "args": [
                         {
@@ -12605,10 +14771,9 @@
                     ]
                 },
                 {
-                    "name": "Unknown 2003[1047]",
+                    "name": "Hide Player HUD",
                     "index": 1047,
-                    "args": [
-                    ]
+                    "args": []
                 },
                 {
                     "name": "Unknown 2003[1048]",
@@ -12630,6 +14795,66 @@
                         }
                     ]
                 },
+                {
+                    "name": "Unknown 2003[1049]",
+                    "index": 1049,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1050]",
+                    "index": 1050,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2003[1051]",
+                    "index": 1051,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -14448,6 +16673,26 @@
                     ]
                 },
                 {
+                    "name": "Unknown 2004[51]",
+                    "index": 51,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
                     "name": "Change Character",
                     "index": 52,
                     "args": [
@@ -14617,6 +16862,68 @@
                             "increment": 1,
                             "format_string": "%0.3f",
                             "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[64]",
+                    "index": 64,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 9999,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 9999,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 9999,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 9999,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 0,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
@@ -15370,8 +17677,568 @@
                     ]
                 },
                 {
+                    "name": "Unknown 2004[1000]",
+                    "index": 1000,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1011]",
+                    "index": 1011,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1012]",
+                    "index": 1012,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1013]",
+                    "index": 1013,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1016]",
+                    "index": 1016,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1017]",
+                    "index": 1017,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
                     "name": "Unknown 2004[1018]",
                     "index": 1018,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1019]",
+                    "index": 1019,
                     "args": [
                         {
                             "name": "Unknown",
@@ -15421,6 +18288,102 @@
                     "name": "Unknown 2004[1020]",
                     "index": 1020,
                     "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1021]",
+                    "index": 1021,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1022]",
+                    "index": 1022,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
                         {
                             "name": "Unknown",
                             "type": 5,
@@ -15525,6 +18488,190 @@
                             "unk3": 0,
                             "unk4": 0
                         },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1031]",
+                    "index": 1031,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1032]",
+                    "index": 1032,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1033]",
+                    "index": 1033,
+                    "args": [
+                        {
+                            "name": "Unknown", // Entity ID?
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 6,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1034]",
+                    "index": 1034,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2004[1035]",
+                    "index": 1035,
+                    "args": [
                         {
                             "name": "Unknown",
                             "type": 5,
@@ -16232,6 +19379,40 @@
                     ]
                 },
                 {
+                    "name": "Unknown 2005[19]",
+                    "index": 19,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
                     "name": "Create Big Damaging Asset",
                     "index": 20,
                     "args": [
@@ -16356,6 +19537,170 @@
                             "max": 9999,
                             "increment": 1,
                             "format_string": "%0.3f",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2005[21]",
+                    "index": 21,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2005[22]",
+                    "index": 22,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2005[23]",
+                    "index": 23,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2005[25]",
+                    "index": 25,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
                             "unk1": 1,
                             "unk2": 0,
                             "unk3": 0,
@@ -16670,13 +20015,13 @@
                     ]
                 },
                 {
-                    "name": "Display Banner",
+                    "name": "Display Text Effect Message",
                     "index": 2,
                     "args": [
                         {
-                            "name": "Banner Type",
+                            "name": "FeTextEffectParam ID",
                             "type": 0,
-                            "enum_name": "Text Banner Type",
+                            "enum_name": null,
                             "default": 8,
                             "min": 0,
                             "max": 0,
@@ -16744,11 +20089,11 @@
                     ]
                 },
                 {
-                    "name": "Unknown 2007[05]",
+                    "name": "End Text Effect Message",
                     "index": 5,
                     "args": [
                         {
-                            "name": "Unknown",
+                            "name": "Slot",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -17250,18 +20595,18 @@
                     ]
                 },
                 {
-                    "name": "Set Camera Angle",
+                    "name": "Set Garage Camera Animation",
                     "index": 4,
                     "args": [
                         {
-                            "name": "Unknown",
+                            "name": "Garage Camera Anim Param ID",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
                             "max": 9999,
                             "increment": 1,
-                            "format_string": "%0.3f",
+                            "format_string": "%d",
                             "unk1": 1,
                             "unk2": 0,
                             "unk3": 0,
@@ -17270,9 +20615,209 @@
                     ]
                 },
                 {
-                    "name": "Unknown 2008[5]",
+                    "name": "Set Garage Camera",
                     "index": 5,
                     "args": [
+                        {
+                            "name": "Camera ID",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2008[6]",
+                    "index": 6,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2008[7]",
+                    "index": 7,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2008[8]",
+                    "index": 8,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
                         {
                             "name": "Unknown",
                             "type": 5,
@@ -17540,6 +21085,68 @@
             "index": 2010,
             "instrs": [
                 {
+                    "name": "Unknown 2010[1]",
+                    "index": 1,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
                     "name": "Play SE",
                     "index": 2,
                     "args": [
@@ -17573,6 +21180,26 @@
                         },
                         {
                             "name": "Sound ID",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2010[6]",
+                    "index": 6,
+                    "args": [
+                        {
+                            "name": "Unknown",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -17665,20 +21292,6 @@
                             "enum_name": null,
                             "default": 0,
                             "min": -1,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "State",
-                            "type": 5,
-                            "enum_name": "Boss BGM State",
-                            "default": 0,
-                            "min": -100,
                             "max": 2000000000,
                             "increment": 1,
                             "format_string": "%d",
@@ -18012,6 +21625,40 @@
                             "unk4": 0
                         }
                     ]
+                },
+                {
+                    "name": "Unknown 2012[14]",
+                    "index": 14,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
                 }
             ]
         },
@@ -18019,7 +21666,7 @@
             "name": "Unknown Category [2015]",
             "index": 2015,
             "instrs": [
-               {
+                {
                     "name": "Unknown 2015[1]",
                     "index": 1,
                     "args": [
@@ -18057,6 +21704,276 @@
                     "name": "Unknown 2015[2]",
                     "index": 2,
                     "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Unknown Category [2016]",
+            "index": 2016,
+            "instrs": [
+                {
+                    "name": "Unknown 2016[0]",
+                    "index": 0,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2016[1]",
+                    "index": 1,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2016[2]",
+                    "index": 2,
+                    "args": []
+                },
+                {
+                    "name": "Unknown 2016[3]",
+                    "index": 3,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2016[4]",
+                    "index": 4,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2016[5]",
+                    "index": 5,
+                    "args": []
+                }
+            ]
+        },
+        {
+            "name": "Unknown Category [2017]",
+            "index": 2017,
+            "instrs": [
+                {
+                    "name": "Unknown 2017[0]",
+                    "index": 0,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2017[1]",
+                    "index": 1,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2017[2]",
+                    "index": 2,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2017[3]",
+                    "index": 3,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Unknown Category [2020]",
+            "index": 2020,
+            "instrs": [
+                {
+                    "name": "Unknown 2020[4]",
+                    "index": 4,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown 2020[5]",
+                    "index": 5,
+                    "args": [
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
                         {
                             "name": "Unknown",
                             "type": 5,

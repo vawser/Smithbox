@@ -102,23 +102,6 @@ Model Editor:
 #--------------------------------------
 # Notes
 #--------------------------------------
-{
-          "name": "Unknown 3[1015]",
-          "index": 1015,
-          "args": [
-            {
-              "name": "Unknown",
-              "type": 5,
-              "enum_name": null,
-              "default": 0,
-              "min": 0,
-              "max": 2000000000,
-              "increment": 1,
-              "format_string": "%d",
-              "unk1": 1,
-              "unk2": 0,
-              "unk3": 0,
-              "unk4": 0
-            }
-          ]
-        }
+# Cur Entity ID
+160
+
