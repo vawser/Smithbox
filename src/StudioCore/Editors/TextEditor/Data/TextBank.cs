@@ -174,9 +174,25 @@ public static class TextBank
     public static void LoadFmg(string path, SortedDictionary<string, TextContainerWrapper> bank)
     {
         var name = Path.GetFileName(path);
-        var relPath = path.Replace(Smithbox.GameRoot, string.Empty).Replace(Smithbox.ProjectRoot, string.Empty);
+
+        var containerRelPath = path;
+        if (containerRelPath.Contains(Smithbox.ProjectRoot))
+        {
+            containerRelPath = containerRelPath.Replace(Smithbox.ProjectRoot, "");
+        }
+        if (containerRelPath.Contains(Smithbox.GameRoot))
+        {
+            containerRelPath = containerRelPath.Replace(Smithbox.GameRoot, "");
+        }
+        if (containerRelPath.Contains(name))
+        {
+            containerRelPath = containerRelPath.Replace(name, "");
+        }
+
+        //TaskLogs.AddLog(containerRelPath);
+
         var containerType = TextContainerType.Loose;
-        var containerCategory = TextUtils.GetLanguageCategory(relPath);
+        var containerCategory = TextUtils.GetLanguageCategory(containerRelPath);
 
         // Skip non-English if this is disabled
         if(!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
@@ -205,20 +221,7 @@ public static class TextBank
             TextContainerWrapper containerWrapper = new();
             containerWrapper.Filename = name;
             containerWrapper.ReadPath = path;
-
-            containerWrapper.RelativePath = path;
-            if (path.Contains(Smithbox.ProjectRoot))
-            {
-                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(Smithbox.ProjectRoot, "");
-            }
-            if (path.Contains(Smithbox.GameRoot))
-            {
-                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(Smithbox.GameRoot, "");
-            }
-            if (path.Contains(name))
-            {
-                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(name, "");
-            }
+            containerWrapper.RelativePath = containerRelPath;
 
             containerWrapper.CompressionType = compressionType;
             containerWrapper.ContainerType = containerType;
@@ -253,9 +256,24 @@ public static class TextBank
     public static void LoadFmgContainer(string path, SortedDictionary<string, TextContainerWrapper> bank)
     {
         var name = Path.GetFileName(path);
-        var relPath = path.Replace(Smithbox.GameRoot, string.Empty).Replace(Smithbox.ProjectRoot, string.Empty);
+        var containerRelPath = path;
+        if (containerRelPath.Contains(Smithbox.ProjectRoot))
+        {
+            containerRelPath = containerRelPath.Replace(Smithbox.ProjectRoot, "");
+        }
+        if (containerRelPath.Contains(Smithbox.GameRoot))
+        {
+            containerRelPath = containerRelPath.Replace(Smithbox.GameRoot, "");
+        }
+        if (containerRelPath.Contains(name))
+        {
+            containerRelPath = containerRelPath.Replace(name, "");
+        }
+
+        //TaskLogs.AddLog(containerRelPath);
+
         var containerType = TextContainerType.BND;
-        var containerCategory = TextUtils.GetLanguageCategory(relPath);
+        var containerCategory = TextUtils.GetLanguageCategory(containerRelPath);
 
         // Skip non-English if this is disabled
         if (!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
@@ -279,20 +297,7 @@ public static class TextBank
             TextContainerWrapper containerWrapper = new();
             containerWrapper.Filename = name;
             containerWrapper.ReadPath = path;
-
-            containerWrapper.RelativePath = path;
-            if (path.Contains(Smithbox.ProjectRoot))
-            {
-                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(Smithbox.ProjectRoot, "");
-            }
-            if (path.Contains(Smithbox.GameRoot))
-            {
-                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(Smithbox.GameRoot, "");
-            }
-            if (path.Contains(name))
-            {
-                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(name, "");
-            }
+            containerWrapper.RelativePath = containerRelPath;
 
             containerWrapper.CompressionType = compressionType;
             containerWrapper.ContainerType = containerType;

@@ -94,7 +94,7 @@ public class EmevdActionHandler
                     }
                 }
 
-                var line = $"{arrStr} | Int: {iValue} | Float: {fValue} | Shorts: {sValue_1}, {sValue_2}";
+                var line = $"{arrStr}";
                 if (display)
                 {
                     UIHelper.WrappedText(line);
