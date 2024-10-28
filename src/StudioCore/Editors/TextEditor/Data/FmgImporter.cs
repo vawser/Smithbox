@@ -6,6 +6,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Actions;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -116,6 +117,13 @@ public static class FmgImporter
 
         if(ImGui.BeginMenu("Append"))
         {
+            if (ImGui.Selectable($"From external file"))
+            {
+                PromptExternalTextImport(ImportBehavior.Append);
+            }
+
+            ImGui.Separator();
+
             if (ImportSources.Count > 0)
             {
                 foreach (var (key, entry) in ImportSources)
@@ -137,6 +145,13 @@ public static class FmgImporter
 
         if (ImGui.BeginMenu("Replace"))
         {
+            if (ImGui.Selectable($"From external file"))
+            {
+                PromptExternalTextImport(ImportBehavior.Replace);
+            }
+
+            ImGui.Separator();
+
             if (ImportSources.Count > 0)
             {
                 foreach (var (key, entry) in ImportSources)
@@ -161,6 +176,11 @@ public static class FmgImporter
 
     private static void ImportText(StoredFmgContainer containerWrapper, ImportBehavior importBehavior)
     {
+        if(containerWrapper.FmgWrappers == null)
+        {
+            return;
+        }
+
         ImportActions = new List<EditorAction>();
 
         var editor = Smithbox.EditorHandler.TextEditor;
@@ -246,6 +266,51 @@ public static class FmgImporter
                 {
                     TaskLogs.AddLog($"Attempted to add stored text with existing key: {filename}");
                 }
+            }
+        }
+    }
+
+    private static StoredFmgContainer GenerateStoredFmgContainer(string path)
+    {
+        var filename = Path.GetFileName(path);
+        var wrapper = new StoredFmgContainer();
+
+        if (File.Exists(path))
+        {
+            using (var stream = File.OpenRead(path))
+            {
+                try
+                {
+                    wrapper = JsonSerializer.Deserialize(stream, StoredContainerWrapperSerializationContext.Default.StoredFmgContainer);
+                }
+                catch(Exception e)
+                {
+                    TaskLogs.AddLog($"Failed to read JSON file for Text Import: {e.Message}");
+                }
+
+                return wrapper;
+            }
+        }
+
+        return wrapper;
+    }
+
+    private static void PromptExternalTextImport(ImportBehavior type)
+    {
+        if (PlatformUtils.Instance.OpenFileDialog("Select stored text JSON", ["json"], out var path))
+        {
+            if (!File.Exists(path))
+            {
+                DialogResult message = PlatformUtils.Instance.MessageBox(
+                    "Selected file is invalid.", "Error",
+                    MessageBoxButtons.OK);
+                return;
+            }
+
+            var generatedStoredFmgContainer = GenerateStoredFmgContainer(path);
+            if (generatedStoredFmgContainer != null)
+            {
+                ImportText(generatedStoredFmgContainer, type);
             }
         }
     }

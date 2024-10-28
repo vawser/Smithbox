@@ -46,9 +46,6 @@ Map Editor:
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  - FIX: misc texture loads during map load can hang, causing the load window to never disppear. (e.g. Leyndell)
  
-Text Editor:
- - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
-
 Material Editor
  - ADD: Implement Material/MATBIN editor
 
@@ -99,6 +96,11 @@ Model Editor:
  - FIX: account for scale when displaying dummies/bones
 
 
+Text Editor:
+ - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
+ - FIX: issue with exporting modified/unique on container level
+ - FIX: crash on multi-select in FMG list
+ 
 #--------------------------------------
 # Notes
 #--------------------------------------

@@ -385,6 +385,10 @@ public static class FmgExporter
         storedFmg.BigEndian = wrapper.File.BigEndian;
         storedFmg.Entries = new List<FMG.Entry>();
 
+        // We have to call this so the diff cache updates for each wrapper,
+        // without changing the user selection
+        Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences(wrapper.ID);
+
         // Build FMG entries
         foreach (var entry in wrapper.File.Entries)
         {

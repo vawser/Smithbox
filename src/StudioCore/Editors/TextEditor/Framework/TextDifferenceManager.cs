@@ -37,7 +37,7 @@ public class TextDifferenceManager
     /// <summary>
     /// Generate difference truth for currently selected FMG
     /// </summary>
-    public void TrackFmgDifferences()
+    public void TrackFmgDifferences(int setFmgId = -1)
     {
         CacheFilled = false;
         AdditionCache = new();
@@ -55,10 +55,19 @@ public class TextDifferenceManager
         var containerCategory = Selection.SelectedContainerWrapper.ContainerDisplayCategory;
         var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
         var containerName = Selection.SelectedContainerWrapper.Filename;
+
+        // Fmg ID for comparison is selected FMG
         var fmgID = Selection.SelectedFmgWrapper.ID;
+
+        // Set the ID to passed instead of selected if called from the FmgExporter
+        if(setFmgId != -1)
+        {
+            fmgID = setFmgId;
+        }
 
         if (TextBank.VanillaBankLoaded)
         {
+            // Get vanilla container and entries
             var vanillaContainer = TextBank.VanillaFmgBank
                 .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
                 .Where(e => e.Value.Filename == containerName)
@@ -92,7 +101,25 @@ public class TextDifferenceManager
                 }
             }
 
-            foreach(var entry in Selection.SelectedFmgWrapper.File.Entries)
+            // Get primary container and enetries
+            var primaryContainer = TextBank.FmgBank
+                .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
+                .Where(e => e.Value.Filename == containerName)
+                .FirstOrDefault();
+
+            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                primaryContainer = TextBank.FmgBank
+                .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
+                .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
+                .Where(e => e.Value.Filename == containerName)
+                .FirstOrDefault();
+            }
+
+            var primaryFmg = primaryContainer.Value.FmgWrappers
+            .Where(e => e.ID == fmgID).FirstOrDefault();
+
+            foreach (var entry in primaryFmg.File.Entries)
             {
                 string entryId = $"{entry.ID}";
 
