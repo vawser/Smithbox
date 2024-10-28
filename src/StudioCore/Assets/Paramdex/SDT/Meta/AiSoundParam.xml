@@ -6,6 +6,12 @@
         <Option Value="1" Name="Default" />
         <Option Value="2" Name="Collision Based" />
     </Enum>
+	<Enum Name="AI_SOUND_RANK" type="u8">
+        <Option Value="0" Name="Normal Sound" />
+        <Option Value="1" Name="Important Sound" />
+        <Option Value="2" Name="Threat Sound" />
+        <Option Value="3" Name="Auditory Hallucination" />
+    </Enum>
   </Enums>
   <Field>
     <radius AltName="Radius" Wiki="How far the sound reaches" />

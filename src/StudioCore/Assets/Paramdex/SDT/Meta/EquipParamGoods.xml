@@ -169,11 +169,11 @@
     <consumeHpRate Wiki="Cosumes a percentage of Hp when this item is used, can't be used if your current Hp is less than or equal to the requirement" />
     <useGetItemId Wiki="Items that will be awarded when this item is used" Refs="EquipParamGoods(useGetItem=1)" />
     <useGetItemNum Wiki="Amount of items that will be recieved" />
-    <useLimitSpEffectType0 Wiki="Prevents the item from being used if the stateInfo defined here is present" />
-    <useLimitSpEffectType1 Wiki="Prevents the item from being used if the stateInfo defined here is present" />
-    <useLimitSpEffectType2 Wiki="Prevents the item from being used if the stateInfo defined here is present" />
-    <useLimitSpEffectType3 Wiki="Prevents the item from being used if the stateInfo defined here is present" />
-    <useLimitSpEffectType4 Wiki="Prevents the item from being used if the stateInfo defined here is present" />
+    <useLimitSpEffectType0 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
+    <useLimitSpEffectType1 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
+    <useLimitSpEffectType2 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
+    <useLimitSpEffectType3 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
+    <useLimitSpEffectType4 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
   </Field>
   <Self Wiki="Defines consumable items" AlternativeOrder="refId_default,refId_1,refCategory,behaviorId,replaceCategory,refVirtualWepId,consumeResourceItemA,consumeResourceItemB,consumeResourceItemC,consumeHpRate,-,
 maxNum,maxRepositoryNum,overEquipPtyMaxType,autoReplenishType,maxReplaceItemId,-,

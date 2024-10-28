@@ -25,9 +25,15 @@
       <Option Value="10" Name="Lightning (Midair reversal animation)" />
     </Enum>
     <Enum Name="BULLET_LAUNCH_CONDITION_TYPE" type="u8">
-      <Option Value="0" Name="When it hits or runs out" />
-      <Option Value="1" Name="Only when it hits water" />
-      <Option Value="4" Name="Only when it hits the gorund" />
+      <Option Value="0" Name="Always" />
+      <Option Value="1" Name="Hit water" />
+      <Option Value="2" Name="Hit water or swamp" />
+      <Option Value="3" Name="Didn't hit enemy" />
+      <Option Value="4" Name="Hit enemy" />
+      <Option Value="5" Name="Unknown" />
+      <Option Value="6" Name="Unknown" />
+      <Option Value="254" Name="Expired" />
+      <Option Value="255" Name="Hit ground or enemy" />
     </Enum>
     <Enum Name="ATKPARAM_STAMINA_ATKATTR_TYPE" type="u8">
       <Option Value="0" Name="None" />
@@ -43,6 +49,23 @@
       <Option Value="10" Name="Attribute A" />
       <Option Value="11" Name="Attribute B" />
       <Option Value="12" Name="Attribute C" />
+    </Enum>
+	<Enum Name="BULLET_FOLLOW_TYPE" type="u8">
+      <Option Value="0" Name="Do not follow" />
+      <Option Value="1" Name="Follow shooter" />
+      <Option Value="2" Name="Follow shooter's feet" />
+      <Option Value="3" Name="Follow target" />
+      <Option Value="4" Name="Slide along ground" />
+      <Option Value="5" Name="Return to shooter" />
+    </Enum>
+	<Enum Name="BULLET_EMITTE_POS_TYPE" type="u8">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="Shooter + randomCreateRadius" />
+        <Option Value="2" Name="Higher elevation" />
+        <Option Value="3" Name="Nearby enemy origin. If no enemies, targets bullet origin." />
+        <Option Value="4" Name="Nearest enemy + randomCreateRadius" />
+        <Option Value="5" Name="Parent bullet (instead of hit location)" />
+        <Option Value="6" Name="Above and behind target" />
     </Enum>
   </Enums>
   <Field>
@@ -73,11 +96,11 @@
     <spEffectIDForShooter Wiki="Applies speffect to the bullet owner when the bullet is shot" Refs="SpEffectParam" />
     <autoSearchNPCThinkID />
     <HitBulletID Wiki="Bullet that spawns based on the launchConditionType" Refs="Bullet" />
-    <spEffectId0 Refs="SpEffectParam" />
-    <spEffectId1 Refs="SpEffectParam" />
-    <spEffectId2 Refs="SpEffectParam" />
-    <spEffectId3 Refs="SpEffectParam" />
-    <spEffectId4 Refs="SpEffectParam" />
+    <spEffectId0 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
+    <spEffectId1 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
+    <spEffectId2 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
+    <spEffectId3 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
+    <spEffectId4 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
     <numShoot Wiki="The number of projectiles fired at once" />
     <homingAngle Wiki="The amount of corrections applied to the bullet trajectory every second" />
     <shootAngle Wiki="Offsets the angle the bullet is shot at in degrees on the Y axis, Negative # = Shoot right/Positive # = Shoot left" />
@@ -93,13 +116,13 @@
     <lockShootLimitAng />
     <isPenetrate Wiki="Can the bullet travel through characters and objects?" IsBool="" />
     <prevVelocityDirRate Wiki="Ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall" />
-    <atkAttribute Wiki="Physical damage type" Enum="ATKPARAM_ATKATTR_TYPE" />
-    <spAttribute Wiki="Non-physical damage type" Enum="ATKPARAM_SPATTR_TYPE" />
+    <atkAttribute Wiki="Physical damage type" Enum="ATKPARAM_ATKATTR_TYPE" VRef="atkAttribute" />
+    <spAttribute Wiki="Non-physical damage type" Enum="ATKPARAM_SPATTR_TYPE" VRef="spAttribute" />
     <Material_AttackType />
     <Material_AttackMaterial_forSfx />
     <Material_Size />
     <launchConditionType Wiki="Determines the conditions required for HitBulletID to spawn" Enum="BULLET_LAUNCH_CONDITION_TYPE" />
-    <FollowType />
+    <FollowType Enum="BULLET_FOLLOW_TYPE" />
     <pad7 />
     <isAttackSFX Wiki="Sets whether bullets such as arrows remain stuck in the character" IsBool="" />
     <isEndlessHit IsBool="" />
@@ -144,7 +167,7 @@
     <generateObjId Wiki="Creates the specified object when the bullet is shot" Refs="ObjectParam" />
     <lifeRandomRange Wiki="Add a random number of seconds with the set time amplitude to the lifetime" />
     <Material_AttackMaterial_forSe />
-    <staminaPhysicsAttribute Wiki="Posture damage type" Enum="ATKPARAM_STAMINA_ATKATTR_TYPE" />
+    <staminaPhysicsAttribute Wiki="Posture damage type" Enum="ATKPARAM_STAMINA_ATKATTR_TYPE" VRef="atkAttribute" />
     <attachEffectType />
     <objGenerateTiming />
     <sfxId_ForceErase />
@@ -160,7 +183,7 @@
     <isHitOtherBulletForceEraseB IsBool="" />
     <pad4 />
     <pad5 />
-    <EmittePosType />
+    <EmittePosType Enum="BULLET_EMITTE_POS_TYPE" />
     <disappearDistanceToTarget Wiki="When the bullet approaches the specified value (m) from the guidance target, the bullet disappears" />
     <pad6 />
   </Field>

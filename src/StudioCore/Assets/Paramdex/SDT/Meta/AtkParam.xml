@@ -126,8 +126,8 @@
     <dmgLevel Wiki="Damage Level (stun type) applied by the attack" />
     <mapHitType_Normal />
     <guardCutCancelRate Wiki="The amount that will go through a guard no matter what. Only works when the player doesn't have Kuro's Charm" />
-    <atkAttribute Wiki="Physical damage type" Enum="ATKPARAM_ATKATTR_TYPE" />
-    <spAttribute Wiki="Non-physical damage type" Enum="ATKPARAM_SPATTR_TYPE" />
+    <atkAttribute Wiki="Physical damage type" Enum="ATKPARAM_ATKATTR_TYPE" VRef="atkAttribute" />
+    <spAttribute Wiki="Non-physical damage type" Enum="ATKPARAM_SPATTR_TYPE" VRef="spAttribute" />
     <atkType Wiki="Determines the SFX and SE used when attacking" />
     <atkMaterial_forSfx />
     <atkSize />
@@ -268,7 +268,7 @@
     <throwDamageAttribute />
     <overwriteAttackElementCorrectId />
     <dmgLevel_vsPlayer />
-    <staminaPhysicsAttribute Wiki="Posture damage type" Enum="ATKPARAM_STAMINA_ATKATTR_TYPE" />
+    <staminaPhysicsAttribute Wiki="Posture damage type" Enum="ATKPARAM_STAMINA_ATKATTR_TYPE" VRef="atkAttribute" />
     <directAtkStamDamage Wiki="Posture damage multiplier for direct hits" />
     <repelLostStamDamage Wiki="Posture damage multiplier for blocked hits" />
     <directAtkStamDamage_Attacker Wiki="Posture damage dealt to the attacker when this attack hits directly" />
@@ -280,7 +280,7 @@
     <deflectAction />
     <staminaDamageAttackHitParry Wiki="Flat posture damage dealt to attacker if this attack is countered with Mikiri Counter" />
     <hitObjAnimeId />
-    <counterSpEffectCondition Wiki="Will activate the counterSpEffectConditon on speffects, which triggers speffects on the attacker" />
+    <counterSpEffectCondition Wiki="Will activate the counterSpEffectConditon on speffects, which triggers speffects on the attacker" VRef="contnterSpEffectCondition" />
     <attackDirectionPoint IsBool="" />
     <statusAilmentAtkPowerCorrectRate_byPoint Wiki="Alter the amount of status build-up dealt by a flat amount" />
     <guardAttribute />
