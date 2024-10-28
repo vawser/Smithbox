@@ -136,7 +136,10 @@ public class TextSelectionManager
         if(changeContext)
             CurrentSelectionContext = TextSelectionContext.FmgEntry;
 
-        FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
+        if (CurrentSelectionContext == TextSelectionContext.FmgEntry)
+        {
+            FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
+        }
 
         _selectedFmgEntryIndex = index;
         _selectedFmgEntry = entry;
