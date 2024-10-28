@@ -1,0 +1,546 @@
+{
+    "commands" : [
+        {
+            "id": 0,
+            "bank": 1,
+            "name": "debugEvent",
+            "displayName": "Debug Event",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 1,
+            "bank": 1,
+            "name": "talkToPlayer",
+            "displayName": "Talk to Player",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 2,
+            "bank": 1,
+            "name": "invokeEvent",
+            "displayName": "Invoke Event",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 3,
+            "bank": 1,
+            "name": "stopAttacking",
+            "displayName": "Stop Attacking",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 4,
+            "bank": 1,
+            "name": "attack",
+            "displayName": "Attack",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 5,
+            "bank": 1,
+            "name": "removeMyAggro",
+            "displayName": "Remove My Aggro",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 6,
+            "bank": 1,
+            "name": "displayOneLineHelp",
+            "displayName": "Display Line Help",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 7,
+            "bank": 1,
+            "name": "turnToFacePlayer",
+            "displayName": "Turn to Face Player",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 8,
+            "bank": 1,
+            "name": "forceEndTalk",
+            "displayName": "Force End Talk",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 9,
+            "bank": 1,
+            "name": "clearTalkProgressData",
+            "displayName": "Clear Talk Progress Data",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 10,
+            "bank": 1,
+            "name": "showShopMessage",
+            "displayName": "Show Shop Message",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 11,
+            "bank": 1,
+            "name": "setEventFlag",
+            "displayName": "Set Event Flag",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 12,
+            "bank": 1,
+            "name": "closeShopMessage",
+            "displayName": "Close Shop Message",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 13,
+            "bank": 1,
+            "name": "openCampMenu",
+            "displayName": "Open Camp Menu",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 14,
+            "bank": 1,
+            "name": "closeCampMenu",
+            "displayName": "Open Camp Menu",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 15,
+            "bank": 1,
+            "name": "changeTeamType",
+            "displayName": "Change Team Type",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 16,
+            "bank": 1,
+            "name": "setDefaultTeamType",
+            "displayName": "Set Default Team Type",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 17,
+            "bank": 1,
+            "name": "openGenericDialog",
+            "displayName": "Open Generic Dialog",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 18,
+            "bank": 1,
+            "name": "forceCloseGenericDialog",
+            "displayName": "Force Close Generic Dialog",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 19,
+            "bank": 1,
+            "name": "addTalkListData",
+            "displayName": "Add Talk List Data",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 20,
+            "bank": 1,
+            "name": "clearTalkListData",
+            "displayName": "Clear Talk List Data",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 21,
+            "bank": 1,
+            "name": "requestMoviePlayback",
+            "displayName": "Request Movie Playback",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 22,
+            "bank": 1,
+            "name": "openRegularShop",
+            "displayName": "Open Regular Shop",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 23,
+            "bank": 1,
+            "name": "openRepairShop",
+            "displayName": "Open Repair Shop",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 24,
+            "bank": 1,
+            "name": "openEnhanceShop",
+            "displayName": "Open Enhance Shop",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 25,
+            "bank": 1,
+            "name": "openHumanityMenu",
+            "displayName": "Open Humanity Menu",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 26,
+            "bank": 1,
+            "name": "openMagicShop",
+            "displayName": "Open Magic Shop",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 27,
+            "bank": 1,
+            "name": "openMiracleShop",
+            "displayName": "Open Miracle Shop",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 28,
+            "bank": 1,
+            "name": "openMagicEquip",
+            "displayName": "Open Magic Equip",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 29,
+            "bank": 1,
+            "name": "openMiracleEquip",
+            "displayName": "Open Miracle Equip",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 30,
+            "bank": 1,
+            "name": "openRepository",
+            "displayName": "Open Repository",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 31,
+            "bank": 1,
+            "name": "openSoul",
+            "displayName": "Open Soul",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 32,
+            "bank": 1,
+            "name": "closeMenu",
+            "displayName": "Close Menu",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 33,
+            "bank": 1,
+            "name": "setEventFlagRange",
+            "displayName": "Set Event Flag Range",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 34,
+            "bank": 1,
+            "name": "openDepository",
+            "displayName": "Open Depository",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 35,
+            "bank": 1,
+            "name": "clearTalkActionState",
+            "displayName": "Clear Talk Action State",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 36,
+            "bank": 1,
+            "name": "clearTalkDisabledState",
+            "displayName": "Clear Talk Disabled State",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 37,
+            "bank": 1,
+            "name": "setTalkDisableStateMaxDuration",
+            "displayName": "Set Talk Disable State Max Duration",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 38,
+            "bank": 1,
+            "name": "setUpdateDistance",
+            "displayName": "Set Update Distance",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 39,
+            "bank": 1,
+            "name": "clearPlayerDamageInfo",
+            "displayName": "Clear Player Damage Info",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 41,
+            "bank": 1,
+            "name": "startWarpMenuInitialization",
+            "displayName": "Start Warp Menu Initialization",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 42,
+            "bank": 1,
+            "name": "startBonfireAnimationLoop",
+            "displayName": "Start Bonfire Animation Loop",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 43,
+            "bank": 1,
+            "name": "endBonfireKindleAnimationLoop",
+            "displayName": "End Bonfire Kindle Animation Loop",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 46,
+            "bank": 1,
+            "name": "openSellShop",
+            "displayName": "Open Sell Shop",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 47,
+            "bank": 1,
+            "name": "changePlayerStat",
+            "displayName": "Change Player State",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 48,
+            "bank": 1,
+            "name": "openEquipmentChangeOfPurposeShop",
+            "displayName": "Open Equipment Change of Purpose Shop",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 49,
+            "bank": 1,
+            "name": "combineMenuFlagAndEventFlag",
+            "displayName": "Combine Menu Flag and Event Flag",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 50,
+            "bank": 1,
+            "name": "requestSave",
+            "displayName": "Request Save",
+            "description": "",
+            "args": [
+                
+            ]
+        },
+        {
+            "id": 63,
+            "bank": 1,
+            "name": "playTextEffect",
+            "displayName": "Play Text Effect",
+            "description": "Plays a text effect on the screen.",
+            "args": [
+                {
+                    "name": "feTextEffectParamId",
+                    "displayName": "Text Effect Param ID",
+                    "description": "The ID of a param row from the FeTextEffectParam param.",
+                    "type": 0,
+                    "argEnum": null
+                }
+            ]
+        },
+        // Special case for the 6 bank command, where the ID is the node it points to
+        {
+            "id": -1,
+            "bank": 6,
+            "name": "moveToMachine"
+            "displayName": "Move to Machine",
+            "description": "",
+            "args": [
+                {
+                    "name": "",
+                    "displayName": "",
+                    "description": "",
+                    "type": 0
+                }
+            ]
+        }
+    ],
+    "functions" : [
+        {
+            "id": 0,
+            "name": ""
+            "displayName": "",
+            "description": "",
+            "args": [
+                {
+                    "name": "",
+                    "displayName": "",
+                    "description": "",
+                    "type": 0
+                }
+            ]
+        }
+    ],
+    "enums" : [
+        {
+            "referenceName": "exampleEnum",
+            "displayName": "Example Enum",
+            "description": "",
+            "members": [
+                {
+                    "identifier": "0",
+                    "displayName": "Test",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}

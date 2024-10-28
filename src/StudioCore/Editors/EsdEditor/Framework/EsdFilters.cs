@@ -86,10 +86,10 @@ public class EsdFilters
 
     public void DisplayScriptFilterSearch()
     {
-        ImGui.InputText($"Search##internalFileFilterSearch", ref FileFilterInput, 255);
+        ImGui.InputText($"Search##internalFileFilterSearch", ref InternalFileFilterInput, 255);
 
         ImGui.SameLine();
-        ImGui.Checkbox($"##internalFileFilterExactMatch", ref FileFilterExactMatch);
+        ImGui.Checkbox($"##internalFileFilterExactMatch", ref InternalFileFilterExactMatch);
         UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
     }
 
@@ -143,10 +143,10 @@ public class EsdFilters
 
     public void DisplayStateGroupFilterSearch()
     {
-        ImGui.InputText($"Search##stateGroupFilterSearch", ref FileFilterInput, 255);
+        ImGui.InputText($"Search##stateGroupFilterSearch", ref StateGroupFilterInput, 255);
 
         ImGui.SameLine();
-        ImGui.Checkbox($"##stateGroupFilterExactMatch", ref FileFilterExactMatch);
+        ImGui.Checkbox($"##stateGroupFilterExactMatch", ref StateGroupFilterExactMatch);
         UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
     }
 
@@ -200,10 +200,10 @@ public class EsdFilters
 
     public void DisplayStateFilterSearch()
     {
-        ImGui.InputText($"Search##stateFilterSearch", ref FileFilterInput, 255);
+        ImGui.InputText($"Search##stateFilterSearch", ref StateFilterInput, 255);
 
         ImGui.SameLine();
-        ImGui.Checkbox($"##stateFilterExactMatch", ref FileFilterExactMatch);
+        ImGui.Checkbox($"##stateFilterExactMatch", ref StateFilterExactMatch);
         UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
     }
 

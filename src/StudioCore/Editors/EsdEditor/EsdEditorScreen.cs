@@ -50,6 +50,8 @@ public class EsdEditorScreen : EditorScreen
         StateGroupView = new EsdStateGroupView(this);
         StateNodeView = new EsdStateNodeView(this);
         StateNodePropertyView = new EsdStateNodePropertyView(this);
+
+        EsdMeta.SetupMeta();
     }
 
     public string EditorName => "ESD Editor##TalkScriptEditor";

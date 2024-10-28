@@ -255,6 +255,7 @@
     <None Update="Assets\WorldMap\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Workflow\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\GX Items\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\ESD\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
