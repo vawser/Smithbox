@@ -82,8 +82,14 @@ public class TextDifferenceManager
                 .FirstOrDefault();
             }
 
+            if (vanillaContainer.Value == null)
+                return;
+
             var vanillaFmg = vanillaContainer.Value.FmgWrappers
             .Where(e => e.ID == fmgID).FirstOrDefault();
+
+            if (vanillaFmg == null)
+                return;
 
             Dictionary<string, string> vanillaEntries = new();
 
@@ -107,6 +113,9 @@ public class TextDifferenceManager
                 .Where(e => e.Value.Filename == containerName)
                 .FirstOrDefault();
 
+            if (primaryContainer.Value == null)
+                return;
+
             if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 primaryContainer = TextBank.FmgBank
@@ -118,6 +127,9 @@ public class TextDifferenceManager
 
             var primaryFmg = primaryContainer.Value.FmgWrappers
             .Where(e => e.ID == fmgID).FirstOrDefault();
+
+            if (primaryFmg == null)
+                return;
 
             foreach (var entry in primaryFmg.File.Entries)
             {
@@ -227,11 +239,15 @@ public class TextDifferenceManager
             return false;
 
         var entryId = $"{entry.ID}";
-        var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
         // DS2
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
+            if (Selection.SelectedContainerWrapper == null)
+                return false;
+
+            var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+
             entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
 
             if (DifferenceCache.ContainsKey(entryId))
@@ -260,11 +276,15 @@ public class TextDifferenceManager
             return false;
 
         var entryId = $"{entry.ID}";
-        var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
         // DS2
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
+            if (Selection.SelectedContainerWrapper == null)
+                return false;
+
+            var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+
             entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
 
             if (AdditionCache.ContainsKey(entryId))
