@@ -9,6 +9,11 @@ General:
  - ADD: Add format json support for the other MSB types.
  - ADD: Add articles covering all of the features and common use-cases in Smithbox
  
+ - ADD: global search: allow user to enter regex search term, then collate matches in ALL possible data 
+  - add quick-links if possible
+  - add toggles for data sources
+  - should be new menubar item as it is independant of any editor (after debugging)
+ 
 Viewport:
  - ADD: support for transparent shapes, so regions can be better visualized
  - ADD: support for billboard sprites, e.g. images that are rendered towards the camera but placed at a fixed point in the viewport space
@@ -113,7 +118,4 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
-- ADD: global search: allow user to enter regex search term, then collate matches in ALL possible data 
- - add quick-links if possible
- - add toggles for data sources
- - should be new menubar item as it is independant of any editor (after debugging)
+- Add ESD editing ability
