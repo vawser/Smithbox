@@ -35,7 +35,8 @@ public class TextEntryGroupManager
 
         foreach (var group in groupings)
         {
-            if (group.GetSummaryEnumID() == parentFmgID ||
+            if (group.GetTitleEnumID() == parentFmgID || 
+                group.GetSummaryEnumID() == parentFmgID ||
                 group.GetDescriptionEnumID() == parentFmgID ||
                 group.GetEffectEnumID() == parentFmgID)
             {
@@ -59,9 +60,10 @@ public class TextEntryGroupManager
 
         foreach(var group in groupings)
         {
-            if(group.GetTitleEnumID() == parentFmgID || 
-                group.GetDescriptionEnumID() == parentFmgID ||
-                group.GetEffectEnumID() == parentFmgID)
+            if(group.GetTitleEnumID() == parentFmgID ||
+               group.GetSummaryEnumID() == parentFmgID ||
+               group.GetDescriptionEnumID() == parentFmgID ||
+               group.GetEffectEnumID() == parentFmgID)
             {
                 if (group.SupportsSummary)
                 {
@@ -84,8 +86,9 @@ public class TextEntryGroupManager
         foreach (var group in groupings)
         {
             if (group.GetTitleEnumID() == parentFmgID ||
-                group.GetSummaryEnumID() == parentFmgID ||
-                group.GetEffectEnumID() == parentFmgID)
+               group.GetSummaryEnumID() == parentFmgID ||
+               group.GetDescriptionEnumID() == parentFmgID ||
+               group.GetEffectEnumID() == parentFmgID)
             {
                 if (group.SupportsDescription)
                 {
@@ -108,8 +111,9 @@ public class TextEntryGroupManager
         foreach (var group in groupings)
         {
             if (group.GetTitleEnumID() == parentFmgID ||
-                group.GetDescriptionEnumID() == parentFmgID ||
-                group.GetSummaryEnumID() == parentFmgID)
+               group.GetSummaryEnumID() == parentFmgID ||
+               group.GetDescriptionEnumID() == parentFmgID ||
+               group.GetEffectEnumID() == parentFmgID)
             {
                 if (group.SupportsEffect)
                 {

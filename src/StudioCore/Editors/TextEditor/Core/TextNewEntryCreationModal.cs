@@ -386,18 +386,7 @@ public class TextNewEntryCreationModal
         // Title
         if (fmgEntryGroup.SupportsTitle)
         {
-            TextFmgWrapper wrapper = null;
-
-            // If no existing Title entry exists, get the appropriate title wrapper and create a new entry
-            if (fmgEntryGroup.Title == null)
-            {
-                wrapper = EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
-            }
-            else
-            {
-                wrapper = selectedFmgWrapper;
-            }
-
+            TextFmgWrapper wrapper = EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -455,18 +444,7 @@ public class TextNewEntryCreationModal
         // Summary
         if (fmgEntryGroup.SupportsSummary)
         {
-            TextFmgWrapper wrapper = null;
-
-            // If no existing Summary entry exists, get the appropriate Summary wrapper and create a new entry
-            if (fmgEntryGroup.Summary == null)
-            {
-                wrapper = EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
-            }
-            else
-            {
-                wrapper = selectedFmgWrapper;
-            }
-
+            TextFmgWrapper wrapper = EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -490,18 +468,7 @@ public class TextNewEntryCreationModal
         // Description
         if (fmgEntryGroup.SupportsDescription)
         {
-            TextFmgWrapper wrapper = null;
-
-            // If no existing Description entry exists, get the appropriate Description wrapper and create a new entry
-            if (fmgEntryGroup.Description == null)
-            {
-                wrapper = EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
-            }
-            else
-            {
-                wrapper = selectedFmgWrapper;
-            }
-
+            TextFmgWrapper wrapper = EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -525,18 +492,7 @@ public class TextNewEntryCreationModal
         // Description
         if (fmgEntryGroup.SupportsEffect)
         {
-            TextFmgWrapper wrapper = null;
-
-            // If no existing Effect entry exists, get the appropriate Effect wrapper and create a new entry
-            if (fmgEntryGroup.Effect == null)
-            {
-                wrapper = EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
-            }
-            else
-            {
-                wrapper = selectedFmgWrapper;
-            }
-
+            TextFmgWrapper wrapper = EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
