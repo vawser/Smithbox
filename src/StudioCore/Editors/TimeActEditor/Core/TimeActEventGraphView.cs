@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.TimeActEditor.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,7 @@ public class TimeActEventGraphView
     public void Display()
     {
         ImGui.Begin("Event Graph##TimeActAnimEventGraph");
+        Selection.SwitchWindowContext(TimeActEditorContext.EventGraph);
 
         if (!Selection.HasSelectedTimeActAnimation())
         {

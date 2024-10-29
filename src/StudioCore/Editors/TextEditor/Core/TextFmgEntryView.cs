@@ -42,12 +42,12 @@ public class TextFmgEntryView
     {
         if (ImGui.Begin("Text Entries##fmgEntryList"))
         {
-            Selection.SwitchWindowContext(TextSelectionContext.FmgEntry);
+            Selection.SwitchWindowContext(TextEditorContext.FmgEntry);
 
             Filters.DisplayFmgEntryFilterSearch();
 
             ImGui.BeginChild("FmgEntriesList");
-            Selection.SwitchWindowContext(TextSelectionContext.FmgEntry);
+            Selection.SwitchWindowContext(TextEditorContext.FmgEntry);
 
             if (Selection.SelectedFmgWrapper != null && Selection.SelectedFmgWrapper.File != null)
             {

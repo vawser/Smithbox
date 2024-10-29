@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor.Enums;
 
-public enum TimeActSelectionContext
+public enum TimeActEditorContext
 {
     [Display(Name = "None")] None,
     [Display(Name = "File")] File,
     [Display(Name = "Time Act")] TimeAct,
     [Display(Name = "Animation")] Animation,
+    [Display(Name = "Animation Property")] AnimationProperty,
     [Display(Name = "Event")] Event,
+    [Display(Name = "Event Property")] EventProperty,
+    [Display(Name = "Event Graph")] EventGraph,
     [Display(Name = "Property")] Property
 }

@@ -10,6 +10,7 @@ using SoulsFormats;
 using HKLib.hk2018.hkaiCollisionAvoidance;
 using ImGuiNET;
 using StudioCore.Utilities;
+using StudioCore.Editors.TimeActEditor.Enums;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -38,7 +39,7 @@ public class TextSelectionManager
 
     private KeyBind MultiSelectKey = KeyBindings.Current.TEXT_Multiselect;
 
-    public TextSelectionContext CurrentWindowContext;
+    public TextEditorContext CurrentWindowContext = TextEditorContext.None;
 
     public TextSelectionManager(TextEditorScreen screen)
     {
@@ -130,7 +131,7 @@ public class TextSelectionManager
     /// </summary>
     public void SelectFmgEntry(int index, FMG.Entry entry)
     {
-        if (CurrentWindowContext == TextSelectionContext.FmgEntry)
+        if (CurrentWindowContext == TextEditorContext.FmgEntry)
         {
             FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
         }
@@ -173,7 +174,7 @@ public class TextSelectionManager
     /// Switches the focus context to the passed value.
     /// Use this on all windows (e.g. both Begin and BeginChild)
     /// </summary>
-    public void SwitchWindowContext(TextSelectionContext newContext)
+    public void SwitchWindowContext(TextEditorContext newContext)
     {
         if (ImGui.IsWindowHovered())
         {

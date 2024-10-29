@@ -86,7 +86,7 @@ public class TextShortcuts
         var fmg = Selection.SelectedFmgWrapper.File;
 
         // Select All
-        if (selectionContext is TextSelectionContext.FmgEntry)
+        if (selectionContext is TextEditorContext.FmgEntry)
         {
             if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
             {
@@ -112,7 +112,7 @@ public class TextShortcuts
         var selectionContext = Selection.CurrentWindowContext;
 
         // Copy Entry Contents
-        if (selectionContext is TextSelectionContext.FmgEntry)
+        if (selectionContext is TextEditorContext.FmgEntry)
         {
             if (InputTracker.GetKey(KeyBindings.Current.TEXT_CopyEntryContents))
             {

@@ -1,12 +1,15 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using HKLib.hk2018.hkHashMapDetail;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,9 +49,9 @@ public class TimeActSelectionManager
     public TimeActContextMenu ContextMenu;
 
     public TimeActTemplateType CurrentTimeActType = TimeActTemplateType.Character;
-
-    public TimeActSelectionContext CurrentSelectionContext = TimeActSelectionContext.None;
     public FileContainerType CurrentFileContainerType = FileContainerType.None;
+
+    public TimeActEditorContext CurrentWindowContext = TimeActEditorContext.None;
 
     public bool FocusContainer = false;
     public bool FocusTimeAct = false;
@@ -119,12 +122,9 @@ public class TimeActSelectionManager
         }
     }
 
-    public void FileContainerChange(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo, int index, FileContainerType containerType, bool changeContext = true)
+    public void FileContainerChange(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo, int index, FileContainerType containerType)
     {
         CurrentFileContainerType = containerType;
-
-        if (changeContext)
-            CurrentSelectionContext = TimeActSelectionContext.File;
 
         ContainerIndex = index;
         ContainerKey = info.Name;
@@ -152,7 +152,7 @@ public class TimeActSelectionManager
             for(int i = 0; i < ContainerInfo.InternalFiles.Count; i++)
             {
                 var timeAct = ContainerInfo.InternalFiles[i].TAE;
-                TimeActChange(timeAct, i, false);
+                TimeActChange(timeAct, i);
                 break;
             }
         }
@@ -176,11 +176,8 @@ public class TimeActSelectionManager
         Reset(true, true, true);
     }
 
-    public void TimeActChange(TAE entry, int index, bool changeContext = true)
+    public void TimeActChange(TAE entry, int index)
     {
-        if(changeContext)
-            CurrentSelectionContext = TimeActSelectionContext.TimeAct;
-
         TimeActSelection(CurrentTimeActKey, index);
 
         CurrentTimeActKey = index;
@@ -206,7 +203,7 @@ public class TimeActSelectionManager
             for (int i = 0; i < CurrentTimeAct.Animations.Count; i++)
             {
                 var anim = CurrentTimeAct.Animations[i];
-                TimeActAnimationChange(anim, i, false);
+                TimeActAnimationChange(anim, i);
                 break;
             }
         }
@@ -227,11 +224,8 @@ public class TimeActSelectionManager
         Reset(false, true, true);
     }
 
-    public void TimeActAnimationChange(TAE.Animation entry, int index, bool changeContext = true)
+    public void TimeActAnimationChange(TAE.Animation entry, int index)
     {
-        if (changeContext)
-            CurrentSelectionContext = TimeActSelectionContext.Animation;
-
         AnimationSelection(CurrentTimeActAnimationIndex, index);
 
         CurrentTimeActAnimation = entry;
@@ -258,7 +252,7 @@ public class TimeActSelectionManager
             for (int i = 0; i < CurrentTimeActAnimation.Events.Count; i++)
             {
                 var evt = CurrentTimeActAnimation.Events[i];
-                TimeActEventChange(evt, i, false);
+                TimeActEventChange(evt, i);
                 break;
             }
         }
@@ -275,11 +269,8 @@ public class TimeActSelectionManager
         Reset(false, false, true);
     }
 
-    public void TimeActEventChange(TAE.Event entry, int index, bool changeContext = true)
+    public void TimeActEventChange(TAE.Event entry, int index)
     {
-        if (changeContext)
-            CurrentSelectionContext = TimeActSelectionContext.Event;
-
         EventSelection(CurrentTimeActEventIndex, index);
 
         CurrentTimeActEvent = entry;
@@ -291,7 +282,7 @@ public class TimeActSelectionManager
 
     public void TimeActEventPropertyChange(string entry, int index)
     {
-        CurrentSelectionContext = TimeActSelectionContext.Property;
+        CurrentWindowContext = TimeActEditorContext.Property;
 
         CurrentTimeActEventProperty = entry;
         CurrentTimeActEventPropertyIndex = index;
@@ -467,6 +458,18 @@ public class TimeActSelectionManager
         {
             StoredEvents.Clear();
             StoredEvents.Add(currentIndex, animEvent);
+        }
+    }
+    /// <summary>
+    /// Switches the focus context to the passed value.
+    /// Use this on all windows (e.g. both Begin and BeginChild)
+    /// </summary>
+    public void SwitchWindowContext(TimeActEditorContext newContext)
+    {
+        if (ImGui.IsWindowHovered())
+        {
+            CurrentWindowContext = newContext;
+            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
         }
     }
 }

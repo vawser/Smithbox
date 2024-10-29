@@ -32,11 +32,13 @@ public class TimeActContainerFileView
     {
         // File List
         ImGui.Begin("Files##TimeActFileList");
+        Selection.SwitchWindowContext(TimeActEditorContext.File);
 
         ImGui.InputText($"Search##fileContainerFilter", ref TimeActFilters._fileContainerFilterString, 255);
         UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("ContainerList");
+        Selection.SwitchWindowContext(TimeActEditorContext.File);
 
         if (ImGui.CollapsingHeader("Characters", ImGuiTreeNodeFlags.DefaultOpen))
         {

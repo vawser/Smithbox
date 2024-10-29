@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
-public enum TextSelectionContext
+public enum TextEditorContext
 {
+    [Display(Name = "None")] None,
     [Display(Name = "File")] File,
     [Display(Name = "FMG")] Fmg,
     [Display(Name = "FMG.Entry")] FmgEntry,

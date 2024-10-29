@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
+using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ public class TimeActEventPropertyView
     public void Display()
     {
         ImGui.Begin("Properties##TimeActEventProperties");
+        Selection.SwitchWindowContext(TimeActEditorContext.EventProperty);
 
         if (!Selection.HasSelectedTimeActEvent())
         {
@@ -40,6 +42,7 @@ public class TimeActEventPropertyView
         UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("EventPropertyList");
+        Selection.SwitchWindowContext(TimeActEditorContext.EventProperty);
 
         if (CFG.Current.TimeActEditor_DisplayPropertyType)
         {

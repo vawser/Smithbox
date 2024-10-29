@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ public class TimeActAnimationPropertyView
     public void Display()
     {
         ImGui.Begin("Animation Properties##TimeActAnimationProperties");
+        Selection.SwitchWindowContext(TimeActEditorContext.AnimationProperty);
 
         if (!Selection.HasSelectedTimeActAnimation())
         {

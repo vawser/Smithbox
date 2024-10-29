@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Interface;
 using System;
@@ -28,6 +29,7 @@ public class TimeActInternalFileView
     public void Display()
     {
         ImGui.Begin("Time Acts##TimeActList");
+        Selection.SwitchWindowContext(TimeActEditorContext.TimeAct);
 
         if (!Selection.HasSelectedFileContainer())
         {
@@ -39,6 +41,7 @@ public class TimeActInternalFileView
         UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("TimeActList");
+        Selection.SwitchWindowContext(TimeActEditorContext.TimeAct);
 
         for (int i = 0; i < Selection.ContainerInfo.InternalFiles.Count; i++)
         {

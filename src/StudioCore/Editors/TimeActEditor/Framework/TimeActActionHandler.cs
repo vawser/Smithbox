@@ -53,60 +53,75 @@ public class TimeActActionHandler
     public void DetermineCreateTarget()
     {
         var handler = Screen.ActionHandler;
-        var context = Screen.Selection.CurrentSelectionContext;
+        var context = Screen.Selection.CurrentWindowContext;
 
         switch (context)
         {
-            case TimeActSelectionContext.File: break;
-            case TimeActSelectionContext.TimeAct:
+            case TimeActEditorContext.File: 
                 break;
-            case TimeActSelectionContext.Animation:
+            case TimeActEditorContext.TimeAct:
                 break;
-            case TimeActSelectionContext.Event:
+            case TimeActEditorContext.Animation:
+                break;
+            case TimeActEditorContext.AnimationProperty:
+                break;
+            case TimeActEditorContext.Event:
                 Screen.ActionHandler.CreateEvent();
                 break;
-            case TimeActSelectionContext.Property: break;
+            case TimeActEditorContext.EventProperty:
+                break;
+            case TimeActEditorContext.Property: break;
         }
     }
 
     public void DetermineDuplicateTarget()
     {
         var handler = Screen.ActionHandler;
-        var context = Screen.Selection.CurrentSelectionContext;
+        var context = Screen.Selection.CurrentWindowContext;
 
         switch (context)
         {
-            case TimeActSelectionContext.File: break;
-            case TimeActSelectionContext.TimeAct:
+            case TimeActEditorContext.File: 
+                break;
+            case TimeActEditorContext.TimeAct:
                 Screen.ActionHandler.DuplicateTimeAct();
                 break;
-            case TimeActSelectionContext.Animation:
+            case TimeActEditorContext.Animation:
                 Screen.ActionHandler.DuplicateAnimation();
                 break;
-            case TimeActSelectionContext.Event:
+            case TimeActEditorContext.AnimationProperty:
+                break;
+            case TimeActEditorContext.Event:
                 Screen.ActionHandler.DuplicateEvent();
                 break;
-            case TimeActSelectionContext.Property: break;
+            case TimeActEditorContext.EventProperty:
+                break;
+            case TimeActEditorContext.Property: break;
         }
     }
     public void DetermineDeleteTarget()
     {
         var handler = Screen.ActionHandler;
-        var context = Screen.Selection.CurrentSelectionContext;
+        var context = Screen.Selection.CurrentWindowContext;
 
         switch (context)
         {
-            case TimeActSelectionContext.File: break;
-            case TimeActSelectionContext.TimeAct:
+            case TimeActEditorContext.File: 
+                break;
+            case TimeActEditorContext.TimeAct:
                 Screen.ActionHandler.DeleteTimeAct();
                 break;
-            case TimeActSelectionContext.Animation:
+            case TimeActEditorContext.Animation:
                 Screen.ActionHandler.DeleteAnimation();
                 break;
-            case TimeActSelectionContext.Event:
+            case TimeActEditorContext.AnimationProperty:
+                break;
+            case TimeActEditorContext.Event:
                 Screen.ActionHandler.DeleteEvent();
                 break;
-            case TimeActSelectionContext.Property: break;
+            case TimeActEditorContext.EventProperty:
+                break;
+            case TimeActEditorContext.Property: break;
         }
     }
 

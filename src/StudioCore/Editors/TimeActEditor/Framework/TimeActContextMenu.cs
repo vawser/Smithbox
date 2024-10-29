@@ -55,12 +55,10 @@ public class TimeActContextMenu
         {
             if(ImGui.Selectable($"Duplicate##duplicateAction{key}"))
             {
-                Screen.Selection.CurrentSelectionContext = TimeActSelectionContext.TimeAct;
                 Screen.ActionHandler.DetermineDuplicateTarget();
             }
             if (ImGui.Selectable($"Delete##deleteAction{key}"))
             {
-                Screen.Selection.CurrentSelectionContext = TimeActSelectionContext.TimeAct;
                 Screen.ActionHandler.DetermineDeleteTarget();
             }
 
@@ -83,12 +81,10 @@ public class TimeActContextMenu
         {
             if (ImGui.Selectable($"Duplicate##duplicateAction{key}"))
             {
-                Screen.Selection.CurrentSelectionContext = TimeActSelectionContext.Animation;
                 Screen.ActionHandler.DetermineDuplicateTarget();
             }
             if (ImGui.Selectable($"Delete##deleteAction{key}"))
             {
-                Screen.Selection.CurrentSelectionContext = TimeActSelectionContext.Animation;
                 Screen.ActionHandler.DetermineDeleteTarget();
             }
 
@@ -110,17 +106,14 @@ public class TimeActContextMenu
         {
             if (ImGui.Selectable($"Create##createAction{key}"))
             {
-                Screen.Selection.CurrentSelectionContext = TimeActSelectionContext.Event;
                 Screen.ActionHandler.DetermineCreateTarget();
             }
             if (ImGui.Selectable($"Duplicate##duplicateAction{key}"))
             {
-                Screen.Selection.CurrentSelectionContext = TimeActSelectionContext.Event;
                 Screen.ActionHandler.DetermineDuplicateTarget();
             }
             if (ImGui.Selectable($"Delete##deleteAction{key}"))
             {
-                Screen.Selection.CurrentSelectionContext = TimeActSelectionContext.Event;
                 Screen.ActionHandler.DetermineDeleteTarget();
             }
 

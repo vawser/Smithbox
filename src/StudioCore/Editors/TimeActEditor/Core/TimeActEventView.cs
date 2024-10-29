@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ public class TimeActEventView
     public void Display()
     {
         ImGui.Begin("Events##TimeActAnimEventList");
+        Selection.SwitchWindowContext(TimeActEditorContext.Event);
 
         if (!Selection.HasSelectedTimeActAnimation())
         {
@@ -40,6 +42,7 @@ public class TimeActEventView
         UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("EventList");
+        Selection.SwitchWindowContext(TimeActEditorContext.Event);
 
         for (int i = 0; i < Selection.CurrentTimeActAnimation.Events.Count; i++)
         {
