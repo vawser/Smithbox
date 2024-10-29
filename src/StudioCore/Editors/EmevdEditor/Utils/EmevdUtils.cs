@@ -22,10 +22,7 @@ public static class EmevdUtils
     /// <returns></returns>
     public static bool SupportsEditor()
     {
-        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.AC6)
-            return true;
-
-        return false;
+        return true;
     }
 
     /// <summary>

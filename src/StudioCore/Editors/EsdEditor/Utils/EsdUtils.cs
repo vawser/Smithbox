@@ -11,11 +11,6 @@ public static class EsdUtils
 {
     public static bool SupportsEditor()
     {
-        if(Smithbox.ProjectType is ProjectType.AC6)
-        {
-            return true;
-        }
-
-        return false;
+        return true;
     }
 }

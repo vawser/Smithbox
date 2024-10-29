@@ -16,7 +16,9 @@ public class MaterialResourceBank
 
     public IReadOnlyDictionary<string, MaterialInfo> Matbins => _matbins;
 
-
+    /// <summary>
+    /// Always loaded as it is used by the Map Editor
+    /// </summary>
     public void LoadBank()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)

@@ -334,7 +334,6 @@
     <Folder Include="Assets\Regulations\ER\1.13.1 (11310027)\" />
     <Folder Include="Editors\CutsceneEditor\Actions\" />
     <Folder Include="Editors\CutsceneEditor\Enums\" />
-    <Folder Include="Editors\CutsceneEditor\Utils\" />
     <Folder Include="Editors\EsdEditor\Actions\" />
     <Folder Include="Editors\HavokEditor\Actions\" />
     <Folder Include="Editors\HavokEditor\Core\" />

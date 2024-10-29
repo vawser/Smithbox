@@ -4,6 +4,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.CutsceneEditor.Framework;
+using StudioCore.Editors.CutsceneEditor.Utils;
 using StudioCore.Interface;
 using System.Numerics;
 using Veldrid;
@@ -131,7 +132,7 @@ public class CutsceneEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_CutsceneEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2 or ProjectType.AC4 or ProjectType.ACFA)
+        if (!CutsceneUtils.SupportsEditor())
         {
             ImGui.Begin("Editor##InvalidCutsceneEditor");
 
@@ -143,10 +144,7 @@ public class CutsceneEditorScreen : EditorScreen
         {
             if (!CutsceneBank.IsLoaded)
             {
-                if (ImGui.Button("Load Cutscene Editor"))
-                {
-                    CutsceneBank.LoadCutscenes();
-                }
+                CutsceneBank.LoadCutscenes();
             }
 
             if (CutsceneBank.IsLoaded)
