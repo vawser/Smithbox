@@ -65,7 +65,7 @@ public class EmevdSelectionManager
         if (ImGui.IsWindowHovered())
         {
             CurrentWindowContext = newContext;
-            TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
+            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
         }
     }
 }

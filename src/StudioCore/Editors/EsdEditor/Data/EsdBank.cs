@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.MSBFA.Event;
 
 namespace StudioCore.Editors.TalkEditor;
 public static class EsdBank
@@ -58,17 +59,11 @@ public static class EsdBank
 
             switch (Smithbox.ProjectType)
             {
-                case ProjectType.DS3:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                case ProjectType.DS1:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
                     break;
-                case ProjectType.SDT:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.ER:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.AC6:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                case ProjectType.DS1R:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
                     break;
                 default:
                     TaskLogs.AddLog($"Invalid ProjectType during SaveESDScript");
@@ -81,6 +76,9 @@ public static class EsdBank
 
             switch (Smithbox.ProjectType)
             {
+                case ProjectType.BB:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                    break;
                 case ProjectType.DS3:
                     fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
                     break;

@@ -110,6 +110,9 @@ public static class EmevdBank
             case ProjectType.DS1R:
                 fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_24_9);
                 break;
+            case ProjectType.BB:
+                fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                break;
             case ProjectType.DS3:
                 fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_44_9);
                 break;

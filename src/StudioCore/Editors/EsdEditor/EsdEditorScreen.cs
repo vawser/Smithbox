@@ -234,6 +234,10 @@ public class EsdEditorScreen : EditorScreen
         if (!CFG.Current.EnableEsdEditor)
             return;
 
+        Selection.ResetScript();
+        Selection.ResetStateGroup();
+        Selection.ResetStateGroupNode();
+
         FileView.OnProjectChanged();
         ScriptView.OnProjectChanged();
         StateGroupView.OnProjectChanged();
