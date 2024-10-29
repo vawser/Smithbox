@@ -504,9 +504,13 @@ public class Smithbox
         {
             WindowHandler.ProjectDropdown();
             EditorHandler.FileDropdown();
-            EditorHandler.FocusedEditor.EditDropdown();
-            EditorHandler.FocusedEditor.ViewDropdown();
-            EditorHandler.FocusedEditor.EditorUniqueDropdowns();
+
+            if (EditorHandler.FocusedEditor != null)
+            {
+                EditorHandler.FocusedEditor.EditDropdown();
+                EditorHandler.FocusedEditor.ViewDropdown();
+                EditorHandler.FocusedEditor.EditorUniqueDropdowns();
+            }
 
             WindowHandler.HelpDropdown();
             WindowHandler.AliasDropdown();

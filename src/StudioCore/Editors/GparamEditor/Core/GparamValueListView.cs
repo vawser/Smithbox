@@ -140,6 +140,8 @@ public class GparamValueListView
 
             ImGui.EndChild();
         }
+
+        ImGui.End();
     }
 
     /// <summary>

@@ -47,6 +47,7 @@ public class InterfaceTab
                 UI.Current.System_UI_Scale = UI.Default.System_UI_Scale;
                 _tempScale = UI.Current.System_UI_Scale;
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                Smithbox.FontRebuildRequest = true;
             }
 
             ImGui.Checkbox($"Multiply UI scale by DPI ({(DPI.Dpi / 96).ToString("P0", new NumberFormatInfo { PercentPositivePattern = 1, PercentNegativePattern = 1 })})", ref UI.Current.System_ScaleByDPI);

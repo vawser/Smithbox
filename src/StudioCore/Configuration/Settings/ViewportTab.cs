@@ -31,6 +31,16 @@ public class ViewportTab
             //ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_BackgroundColor);
             //ImguiUtils.ShowHoverTooltip("Change the background color in the viewport. Requires a restart of Smithbox to take effect.");
 
+            ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f);
+            UIHelper.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
+
+            // Round FPS to the nearest whole number
+            CFG.Current.System_Frame_Rate = (float)Math.Round(CFG.Current.System_Frame_Rate);
+
+            if (ImGui.Button("Reset"))
+            {
+                CFG.Current.System_Frame_Rate = CFG.Default.System_Frame_Rate;
+            }
         }
 
         if (ImGui.CollapsingHeader("Rendering", ImGuiTreeNodeFlags.DefaultOpen))

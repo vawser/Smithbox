@@ -95,6 +95,7 @@ public class GparamFieldListView
                 DisplayMissingFieldSection();
             }
         }
+
         ImGui.EndChild();
 
         ImGui.End();

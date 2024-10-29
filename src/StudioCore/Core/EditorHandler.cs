@@ -53,49 +53,43 @@ public class EditorHandler
 
     public EditorHandler(IGraphicsContext _context)
     {
-        MapEditor = new MapEditorScreen(_context.Window, _context.Device);
-        ModelEditor = new ModelEditorScreen(_context.Window, _context.Device);
-        TextEditor  = new TextEditorScreen(_context.Window, _context.Device);
-        ParamEditor = new ParamEditorScreen(_context.Window, _context.Device);
-        TimeActEditor = new TimeActEditorScreen(_context.Window, _context.Device);
+        /*
         CutsceneEditor = new CutsceneEditorScreen(_context.Window, _context.Device);
-        GparamEditor = new GparamEditorScreen(_context.Window, _context.Device);
         MaterialEditor = new MaterialEditorScreen(_context.Window, _context.Device);
         ParticleEditor = new ParticleEditorScreen(_context.Window, _context.Device);
         EmevdEditor = new EmevdEditorScreen(_context.Window, _context.Device);
         EsdEditor = new EsdEditorScreen(_context.Window, _context.Device);
-        TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
         HavokEditor = new HavokEditorScreen(_context.Window, _context.Device);
+        */
 
-        EditorList = [
-            MapEditor,
-            ModelEditor,
-            ParamEditor,
-            TextEditor,
-            GparamEditor,
-            TextureViewer,
-            TimeActEditor
-        ];
+        MapEditor = new MapEditorScreen(_context.Window, _context.Device);
+        ModelEditor = new ModelEditorScreen(_context.Window, _context.Device);
+        ParamEditor = new ParamEditorScreen(_context.Window, _context.Device);
+        TextEditor = new TextEditorScreen(_context.Window, _context.Device);
+        GparamEditor = new GparamEditorScreen(_context.Window, _context.Device);
+        TimeActEditor = new TimeActEditorScreen(_context.Window, _context.Device);
+        TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
 
-        if(FeatureFlags.EnableEditor_Cutscene) 
-            EditorList.Add(CutsceneEditor);
+        EditorList = new();
 
-        if (FeatureFlags.EnableEditor_HavokBehavior)
-            EditorList.Add(HavokEditor);
+        /*
+        EditorList.Add(CutsceneEditor);
+        EditorList.Add(HavokEditor);
+        EditorList.Add(MaterialEditor);
+        EditorList.Add(ParticleEditor);
+        EditorList.Add(EmevdEditor);
+        EditorList.Add(EsdEditor);
+        */
 
-        if (FeatureFlags.EnableEditor_Material)
-            EditorList.Add(MaterialEditor);
+        EditorList.Add(MapEditor);
+        EditorList.Add(ModelEditor);
+        EditorList.Add(ParamEditor);
+        EditorList.Add(TextEditor);
+        EditorList.Add(TextureViewer);
+        EditorList.Add(GparamEditor);
+        EditorList.Add(TimeActEditor);
 
-        if (FeatureFlags.EnableEditor_Particle)
-            EditorList.Add(ParticleEditor);
-
-        if (FeatureFlags.EnableEditor_Evemd)
-            EditorList.Add(EmevdEditor);
-
-        if (FeatureFlags.EnableEditor_Esd)
-            EditorList.Add(EsdEditor);
-
-        FocusedEditor = MapEditor;
+        FocusedEditor = TextureViewer;
     }
 
     public void UpdateEditors()
