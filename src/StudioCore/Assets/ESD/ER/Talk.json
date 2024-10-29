@@ -1,0 +1,2676 @@
+{
+    "commands": [
+        {
+            "id": 0,
+            "bank": 1,
+            "name": "debugEvent",
+            "displayName": "Debug Event",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 1,
+            "bank": 1,
+            "name": "talkToPlayer",
+            "displayName": "Talk to Player",
+            "description": "",
+            "args": [
+                {
+                    "name": "talkParamId",
+                    "displayName": "Talk Param ID",
+                    "description": "",
+                    "argLink": "param/TalkParam"
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "bank": 1,
+            "name": "invokeEvent",
+            "displayName": "Invoke Event",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 3,
+            "bank": 1,
+            "name": "stopAttacking",
+            "displayName": "Stop Attacking",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 4,
+            "bank": 1,
+            "name": "attack",
+            "displayName": "Attack",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 5,
+            "bank": 1,
+            "name": "removeMyAggro",
+            "displayName": "Remove My Aggro",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 6,
+            "bank": 1,
+            "name": "displayOneLineHelp",
+            "displayName": "Display Line Help",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 7,
+            "bank": 1,
+            "name": "turnToFacePlayer",
+            "displayName": "Turn to Face Player",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 8,
+            "bank": 1,
+            "name": "forceEndTalk",
+            "displayName": "Force End Talk",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "bank": 1,
+            "name": "clearTalkProgressData",
+            "displayName": "Clear Talk Progress Data",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 10,
+            "bank": 1,
+            "name": "showShopMessage",
+            "displayName": "Show Shop Message",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 11,
+            "bank": 1,
+            "name": "setEventFlag",
+            "displayName": "Set Event Flag",
+            "description": "",
+            "args": [
+                {
+                    "name": "eventFlag",
+                    "displayName": "Event Flag ID",
+                    "description": ""
+                },
+                {
+                    "name": "eventFlagState",
+                    "displayName": "Event Flag State",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "bank": 1,
+            "name": "closeShopMessage",
+            "displayName": "Close Shop Message",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 13,
+            "bank": 1,
+            "name": "openCampMenu",
+            "displayName": "Open Camp Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 14,
+            "bank": 1,
+            "name": "closeCampMenu",
+            "displayName": "Open Camp Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 15,
+            "bank": 1,
+            "name": "changeTeamType",
+            "displayName": "Change Team Type",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 16,
+            "bank": 1,
+            "name": "setDefaultTeamType",
+            "displayName": "Set Default Team Type",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 17,
+            "bank": 1,
+            "name": "openGenericDialog",
+            "displayName": "Open Generic Dialog",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "bank": 1,
+            "name": "forceCloseGenericDialog",
+            "displayName": "Force Close Generic Dialog",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 19,
+            "bank": 1,
+            "name": "addTalkListData",
+            "displayName": "Add Talk List Data",
+            "description": "",
+            "args": [
+                {
+                    "name": "talkListEntrySlot",
+                    "displayName": "Slot",
+                    "description": ""
+                },
+                {
+                    "name": "talkListEntryCondition",
+                    "displayName": "Condition",
+                    "description": ""
+                },
+                {
+                    "name": "talkListEntryEventFlagCheck",
+                    "displayName": "Event Flag Check",
+                    "description": "-1 means it is ignored"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "bank": 1,
+            "name": "clearTalkListData",
+            "displayName": "Clear Talk List Data",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 21,
+            "bank": 1,
+            "name": "requestMoviePlayback",
+            "displayName": "Request Movie Playback",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "bank": 1,
+            "name": "openRegularShop",
+            "displayName": "Open Regular Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 23,
+            "bank": 1,
+            "name": "openRepairShop",
+            "displayName": "Open Repair Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 24,
+            "bank": 1,
+            "name": "openEnhanceShop",
+            "displayName": "Open Enhance Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 25,
+            "bank": 1,
+            "name": "openHumanityMenu",
+            "displayName": "Open Humanity Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 26,
+            "bank": 1,
+            "name": "openMagicShop",
+            "displayName": "Open Magic Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 27,
+            "bank": 1,
+            "name": "openMiracleShop",
+            "displayName": "Open Miracle Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 28,
+            "bank": 1,
+            "name": "openMagicEquip",
+            "displayName": "Open Magic Equip",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 29,
+            "bank": 1,
+            "name": "openMiracleEquip",
+            "displayName": "Open Miracle Equip",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 30,
+            "bank": 1,
+            "name": "openRepository",
+            "displayName": "Open Repository",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 31,
+            "bank": 1,
+            "name": "openSoul",
+            "displayName": "Open Soul",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 32,
+            "bank": 1,
+            "name": "closeMenu",
+            "displayName": "Close Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 33,
+            "bank": 1,
+            "name": "setEventFlagRange",
+            "displayName": "Set Event Flag Range",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 34,
+            "bank": 1,
+            "name": "openDepository",
+            "displayName": "Open Depository",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 35,
+            "bank": 1,
+            "name": "clearTalkActionState",
+            "displayName": "Clear Talk Action State",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 36,
+            "bank": 1,
+            "name": "clearTalkDisabledState",
+            "displayName": "Clear Talk Disabled State",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 37,
+            "bank": 1,
+            "name": "setTalkDisableStateMaxDuration",
+            "displayName": "Set Talk Disable State Max Duration",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 38,
+            "bank": 1,
+            "name": "setUpdateDistance",
+            "displayName": "Set Update Distance",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "bank": 1,
+            "name": "clearPlayerDamageInfo",
+            "displayName": "Clear Player Damage Info",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 41,
+            "bank": 1,
+            "name": "startWarpMenuInitialization",
+            "displayName": "Start Warp Menu Initialization",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "bank": 1,
+            "name": "startBonfireAnimationLoop",
+            "displayName": "Start Bonfire Animation Loop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 43,
+            "bank": 1,
+            "name": "endBonfireKindleAnimationLoop",
+            "displayName": "End Bonfire Kindle Animation Loop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 46,
+            "bank": 1,
+            "name": "openSellShop",
+            "displayName": "Open Sell Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 47,
+            "bank": 1,
+            "name": "changePlayerStat",
+            "displayName": "Change Player State",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 48,
+            "bank": 1,
+            "name": "openEquipmentChangeOfPurposeShop",
+            "displayName": "Open Equipment Change of Purpose Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 49,
+            "bank": 1,
+            "name": "combineMenuFlagAndEventFlag",
+            "displayName": "Combine Menu Flag and Event Flag",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 50,
+            "bank": 1,
+            "name": "requestSave",
+            "displayName": "Request Save",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 51,
+            "bank": 1,
+            "name": "changeMotionOffsetId",
+            "displayName": "Change Motion Offset ID",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 52,
+            "bank": 1,
+            "name": "playerEquipmentQuantityChange",
+            "displayName": "Player Equipment Quantity Change",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 53,
+            "bank": 1,
+            "name": "requestTrophyUnlock",
+            "displayName": "Request Trophy Unlock",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 54,
+            "bank": 1,
+            "name": "enterBonfireEventRange",
+            "displayName": "Enter Bonfire Event Range",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 55,
+            "bank": 1,
+            "name": "setAquittalCostMessageTag",
+            "displayName": "Set Aquittal Cost Message Tag",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 56,
+            "bank": 1,
+            "name": "subtractAcquittalCostFromPlayerSouls",
+            "displayName": "Subtract Acquittal Cost from Player Souls",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 57,
+            "bank": 1,
+            "name": "shuffleRandomSeed",
+            "displayName": "Shuffle Random Seed",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 58,
+            "bank": 1,
+            "name": "setRandomSeed",
+            "displayName": "Set Random Seed",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 59,
+            "bank": 1,
+            "name": "replaceTool",
+            "displayName": "Replace Tool",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 60,
+            "bank": 1,
+            "name": "breakCovenantPledge",
+            "displayName": "Break Covenant Pledge",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 61,
+            "bank": 1,
+            "name": "playerRespawn",
+            "displayName": "Player Respawn",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 62,
+            "bank": 1,
+            "name": "giveSpEffectToPlayer",
+            "displayName": "Give SpEffect to Player",
+            "description": "",
+            "args": [
+                {
+                    "name": "spEffectId",
+                    "displayName": "SpEffect ID",
+                    "description": "",
+                    "argLink": "param/SpEffectParam"
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "bank": 1,
+            "name": "playTextEffect",
+            "displayName": "Play Text Effect",
+            "description": "Plays a text effect on the screen.",
+            "args": [
+                {
+                    "name": "feTextEffectParamId",
+                    "displayName": "Text Effect Param ID",
+                    "description": "The ID of a param row from the FeTextEffectParam param.",
+                    "argLink": "param/FeTextEffectParam"
+                }
+            ]
+        },
+        {
+            "id": 64,
+            "bank": 1,
+            "name": "addIzalithRankingPoints",
+            "displayName": "Add Izalith Ranking Points",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 65,
+            "bank": 1,
+            "name": "openItemAcquisitionMenu",
+            "displayName": "Open Item Acquisition Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 66,
+            "bank": 1,
+            "name": "acquireGesture",
+            "displayName": "Acquire Gesture",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 67,
+            "bank": 1,
+            "name": "forceCloseMenu",
+            "displayName": "Force Close Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 68,
+            "bank": 1,
+            "name": "setTalkTime",
+            "displayName": "Set Talk Time",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 69,
+            "bank": 1,
+            "name": "collectPyromancyFlame",
+            "displayName": "Collect Pyromancy Flame",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 70,
+            "bank": 1,
+            "name": "openArenaRanking",
+            "displayName": "Open Arena Ranking",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 71,
+            "bank": 1,
+            "name": "reportConversationEndToHavokBehavior",
+            "displayName": "Report Conversation End to Havok Behavior",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 76,
+            "bank": 1,
+            "name": "openConversationChoiceMenu",
+            "displayName": "Open Conversation Choice Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 80,
+            "bank": 1,
+            "name": "stopEventAnimWithoutForcedConversaionEnd",
+            "displayName": "Stop Event Animation without Forced Conversation End",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "bank": 1,
+            "name": "openCharacterCreationMenu",
+            "displayName": "Open Character Creation Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 82,
+            "bank": 1,
+            "name": "openQuantitySelectionMenu",
+            "displayName": "Open Quantity Selection Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 83,
+            "bank": 1,
+            "name": "clearStoredQuantity",
+            "displayName": "Clear Stored Quantity",
+            "description": "Clears the stored quantity set by openQuantitySelectionMenu.",
+            "args": []
+        },
+        {
+            "id": 100,
+            "bank": 1,
+            "name": "setWorkValue",
+            "displayName": "Set Work Value",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 101,
+            "bank": 1,
+            "name": "updatePlayerRespawnPoint",
+            "displayName": "Update Player Respawn Point",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 102,
+            "bank": 1,
+            "name": "setMessageTagValue",
+            "displayName": "Set Message Tag Value",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 103,
+            "bank": 1,
+            "name": "turnCharacterToFaceEntity",
+            "displayName": "Turn Character to face Entity",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 104,
+            "bank": 1,
+            "name": "awardItemLot",
+            "displayName": "Award Item Lot",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 105,
+            "bank": 1,
+            "name": "openEstusAllotMenu",
+            "displayName": "Open Estus Allot Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 106,
+            "bank": 1,
+            "name": "addRankingPoints",
+            "displayName": "Add Ranking Points",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 107,
+            "bank": 1,
+            "name": "openHollowingLevelupMenu",
+            "displayName": "Open Hollowing Levelup Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 108,
+            "bank": 1,
+            "name": "estusAllocationUpdate",
+            "displayName": "Update Estus Allocation",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 109,
+            "bank": 1,
+            "name": "bonfireActivation",
+            "displayName": "Bonfire Activation",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 111,
+            "bank": 1,
+            "name": "openTranspositionShop",
+            "displayName": "Open Transposition Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 112,
+            "bank": 1,
+            "name": "setBonfireMenuData",
+            "displayName": "Set Bonfire Menu Data",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 113,
+            "bank": 1,
+            "name": "reallocateAttributes",
+            "displayName": "Reallocate Attributes",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 114,
+            "bank": 1,
+            "name": "openUndeadMatch",
+            "displayName": "Open Undead Match",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 115,
+            "bank": 1,
+            "name": "openBonfireMenu",
+            "displayName": "Open Bonfire Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 117,
+            "bank": 1,
+            "name": "fadeAndAlterTime",
+            "displayName": "Fade and Alter Time",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "skipHours",
+                    "displayName": "Skip Hours",
+                    "description": ""
+                },
+                {
+                    "name": "skipMinutes",
+                    "displayName": "Skip Minutes",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "fadeMode",
+                    "displayName": "Fade Mode",
+                    "description": "",
+                    "argEnum": "fadeModeEnum"
+                },
+                {
+                    "name": "fadeDuration",
+                    "displayName": "Fade Duration",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 118,
+            "bank": 1,
+            "name": "runMachine",
+            "displayName": "Run Machine",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "bank": 1,
+            "name": "unknown119",
+            "displayName": "Unknown [119]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "bank": 1,
+            "name": "unknown120",
+            "displayName": "Unknown [120]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 123,
+            "bank": 1,
+            "name": "requestAnimation",
+            "displayName": "Request Animation",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 130,
+            "bank": 1,
+            "name": "openPhysickMenu",
+            "displayName": "Open Physick Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 131,
+            "bank": 1,
+            "name": "acquireGesture",
+            "displayName": "Acquire Gesture",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 135,
+            "bank": 1,
+            "name": "openDragonCommunionShop",
+            "displayName": "Open Dragon Communion Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 142,
+            "bank": 1,
+            "name": "openTailoringShop",
+            "displayName": "Open Tailoring Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 143,
+            "bank": 1,
+            "name": "openAshOfWarShop",
+            "displayName": "Open Ash of War Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 144,
+            "bank": 1,
+            "name": "openPuppetShop",
+            "displayName": "Open Puppet Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 146,
+            "bank": 1,
+            "name": "openDupeShop",
+            "displayName": "Open Dupe Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 147,
+            "bank": 1,
+            "name": "setEventFlagValue",
+            "displayName": "Set Event Flag Value",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 148,
+            "bank": 1,
+            "name": "openChampionEquipmentShop",
+            "displayName": "Open Champion Equipment Shop",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 205,
+            "bank": 1,
+            "name": "unknown205",
+            "displayName": "Unknown [205]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 206,
+            "bank": 1,
+            "name": "unknown206",
+            "displayName": "Unknown [206]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 207,
+            "bank": 1,
+            "name": "unknown207",
+            "displayName": "Unknown [207]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 208,
+            "bank": 1,
+            "name": "unknown208",
+            "displayName": "Unknown [208]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 209,
+            "bank": 1,
+            "name": "unknown209",
+            "displayName": "Unknown [209]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 210,
+            "bank": 1,
+            "name": "unknown210",
+            "displayName": "Unknown [210]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 212,
+            "bank": 1,
+            "name": "unknown212",
+            "displayName": "Unknown [212]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 213,
+            "bank": 1,
+            "name": "unknown213",
+            "displayName": "Unknown [213]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 214,
+            "bank": 1,
+            "name": "scheduleEmevdEvent",
+            "displayName": "Schedule EMEVD Event",
+            "description": "Used to schedule to mXX_XX_XX_XX.emevd events.",
+            "args": [
+                {
+                    "name": "slot",
+                    "displayName": "Slot",
+                    "description": "-1 schedules all instantiations of the event (unverified)"
+                },
+                {
+                    "name": "eventId",
+                    "displayName": "Event ID",
+                    "description": "emevd/Event"
+                }
+            ]
+        },
+        {
+            "id": 215,
+            "bank": 1,
+            "name": "scheduleCommonEmevdEvent",
+            "displayName": "Schedule Common EMEVD Event",
+            "description": "Used to schedule to common.emevd events.",
+            "args": [
+                {
+                    "name": "slot",
+                    "displayName": "Slot",
+                    "description": "-1 schedules all instantiations of the event (unverified)"
+                },
+                {
+                    "name": "eventId",
+                    "displayName": "Event ID",
+                    "description": "emevd/Event"
+                }
+            ]
+        },
+        {
+            "id": 216,
+            "bank": 1,
+            "name": "runMachine",
+            "displayName": "Run Machine",
+            "description": "Unverified",
+            "args": [
+                {
+                    "name": "machineId",
+                    "displayName": "Machine ID",
+                    "description": "Unverified",
+                    "argLink": "esd/StateGroup"
+                }
+            ]
+        },
+        {
+            "id": 217,
+            "bank": 1,
+            "name": "killMachine",
+            "displayName": "Kill Machine",
+            "description": "Unverified",
+            "args": [
+                {
+                    "name": "machineId",
+                    "displayName": "Machine ID",
+                    "description": "Unverified",
+                    "argLink": "esd/StateGroup"
+                }
+            ]
+        },
+        {
+            "id": 218,
+            "bank": 1,
+            "name": "unknown218",
+            "displayName": "Unknown [218]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 219,
+            "bank": 1,
+            "name": "unknown219",
+            "displayName": "Unknown [219]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 220,
+            "bank": 1,
+            "name": "unknown220",
+            "displayName": "Unknown [220]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 221,
+            "bank": 1,
+            "name": "setMissionState",
+            "displayName": "Set Mission State",
+            "description": "",
+            "args": [
+                {
+                    "name": "mission",
+                    "displayName": "Mission",
+                    "description": ""
+                },
+                {
+                    "name": "option",
+                    "displayName": "Option",
+                    "description": "",
+                    "argEnum": "missionOption"
+                },
+                {
+                    "name": "value",
+                    "displayName": "Value",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 222,
+            "bank": 1,
+            "name": "unknown222",
+            "displayName": "Unknown [222]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 224,
+            "bank": 1,
+            "name": "fadeBgm",
+            "displayName": "Fade BGM",
+            "description": "",
+            "args": [
+                {
+                    "name": "soundId",
+                    "displayName": "Sound ID",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 225,
+            "bank": 1,
+            "name": "endMission",
+            "displayName": "End Mission",
+            "description": "",
+            "args": [
+                {
+                    "name": "isFailed",
+                    "displayName": "Is Failed",
+                    "description": "If true, the missions ends as a failure (not a victory)."
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 226,
+            "bank": 1,
+            "name": "playTutorial",
+            "displayName": "Play Tutorial",
+            "description": "",
+            "args": [
+                {
+                    "name": "tutorialParamId",
+                    "displayName": "Tutorial Param ID",
+                    "description": "",
+                    "argLink": "param/TutorialParam"
+                }
+            ]
+        },
+        {
+            "id": 227,
+            "bank": 1,
+            "name": "runMachine",
+            "displayName": "Run Machine",
+            "description": "",
+            "args": [
+                {
+                    "name": "machineId",
+                    "displayName": "Machine ID",
+                    "description": "",
+                    "argLink": "esd/StateGroup"
+                }
+            ]
+        },
+        {
+            "id": 228,
+            "bank": 1,
+            "name": "garageSetupUnknown",
+            "displayName": "Garage Setup Unknown",
+            "description": "Only used in Garage setup; removing prevents the menu from appearing, but that could be for a variety of reasons.",
+            "args": []
+        },
+        {
+            "id": 229,
+            "bank": 1,
+            "name": "endTextEffect",
+            "displayName": "End Text Effect",
+            "description": "Instantly ends text effects in slot.",
+            "args": [
+                {
+                    "name": "slot",
+                    "displayName": "Slot",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 230,
+            "bank": 1,
+            "name": "setPlayerControlState",
+            "displayName": "Set Player Control State",
+            "description": "Toggles the ability for the player to use controls.",
+            "args": [
+                {
+                    "name": "isDisabled",
+                    "displayName": "Is Disabled",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 234,
+            "bank": 1,
+            "name": "playToastMessage",
+            "displayName": "Play Toast Message",
+            "description": "",
+            "args": [
+                {
+                    "name": "eventTextId",
+                    "displayName": "Event Text ID",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 235,
+            "bank": 1,
+            "name": "unknown235",
+            "displayName": "Unknown [235]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 236,
+            "bank": 1,
+            "name": "unknown236",
+            "displayName": "Unknown [236]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 237,
+            "bank": 1,
+            "name": "unlockArchive",
+            "displayName": "Unlock Archive",
+            "description": "Grants archive; maybe technically the good that unlocks it; maybe specific to logs",
+            "args": [
+                {
+                    "name": "archiveId",
+                    "displayName": "Archive ID",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 238,
+            "bank": 1,
+            "name": "playSound",
+            "displayName": "Play Sound",
+            "description": "Plays or overrides sound or something",
+            "args": [
+                {
+                    "name": "entityId",
+                    "displayName": "Entity ID",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "soundId",
+                    "displayName": "Sound ID",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 239,
+            "bank": 1,
+            "name": "playerResupply",
+            "displayName": "Player Resupply",
+            "description": "Restores player weapons, ammo, AP, etc; used by Sherpas",
+            "args": []
+        },
+        {
+            "id": 240,
+            "bank": 1,
+            "name": "unknown240",
+            "displayName": "Unknown [240]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 241,
+            "bank": 1,
+            "name": "playTextEffectArgument",
+            "displayName": "Play Text Effect with Argument",
+            "description": "",
+            "args": [
+                {
+                    "name": "feTextEffectParamId",
+                    "displayName": "Text Effect Param ID",
+                    "description": "",
+                    "argLink": "param/FeTextEffectParam"
+                },
+                {
+                    "name": "value",
+                    "displayName": "Value",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 242,
+            "bank": 1,
+            "name": "unknown242",
+            "displayName": "Unknown [242]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 243,
+            "bank": 1,
+            "name": "unknown243",
+            "displayName": "Unknown [243]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 244,
+            "bank": 1,
+            "name": "unknown244",
+            "displayName": "Unknown [244]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 245,
+            "bank": 1,
+            "name": "endTutorial",
+            "displayName": "End Tutorial",
+            "description": "",
+            "args": [
+                {
+                    "name": "tutorialParamId",
+                    "displayName": "Tutorial Param ID",
+                    "description": "",
+                    "argLink": "param/TutorialParam"
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 246,
+            "bank": 1,
+            "name": "unknown246",
+            "displayName": "Unknown [246]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 247,
+            "bank": 1,
+            "name": "unknown247",
+            "displayName": "Unknown [247]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 248,
+            "bank": 1,
+            "name": "unknown248",
+            "displayName": "Unknown [248]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 249,
+            "bank": 1,
+            "name": "unknown249",
+            "displayName": "Unknown [249]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 250,
+            "bank": 1,
+            "name": "grantItem",
+            "displayName": "Grant Item",
+            "description": "",
+            "args": [
+                {
+                    "name": "category",
+                    "displayName": "Category",
+                    "description": ""
+                },
+                {
+                    "name": "itemId",
+                    "displayName": "Item ID",
+                    "description": ""
+                },
+                {
+                    "name": "quantity",
+                    "displayName": "Quantity",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 251,
+            "bank": 1,
+            "name": "unknown251",
+            "displayName": "Unknown [251]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 252,
+            "bank": 1,
+            "name": "unknown252",
+            "displayName": "Unknown [252]",
+            "description": "Used exactly once, when the arena is first unlocked; no obvious effect",
+            "args": []
+        },
+        {
+            "id": 253,
+            "bank": 1,
+            "name": "unknown253",
+            "displayName": "Unknown [253]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 254,
+            "bank": 1,
+            "name": "unknown254",
+            "displayName": "Unknown [254]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 255,
+            "bank": 1,
+            "name": "endTextEffects",
+            "displayName": "End all Text Effects",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 256,
+            "bank": 1,
+            "name": "unknown256",
+            "displayName": "Unknown [256]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 259,
+            "bank": 1,
+            "name": "grantEmblem",
+            "displayName": "Grant Emblem",
+            "description": "",
+            "args": [
+                {
+                    "name": "emblemId",
+                    "displayName": "Emblem ID",
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "functions": [
+        {
+            "id": 0,
+            "name": "areEnemiesNearby",
+            "displayName": "Are Enemies Nearby",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 1,
+            "name": "getDistanceToPlayer",
+            "displayName": "Get Distance to Player",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 2,
+            "name": "hasTalkEnded",
+            "displayName": "Has Talk Ended",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 3,
+            "name": "isTalkEntityDead",
+            "displayName": "Is Dead",
+            "description": "Refers to the entity that the ESD is attached to.",
+            "args": []
+        },
+        {
+            "id": 4,
+            "name": "isPlayerTalking",
+            "displayName": "Is Player Talking",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 5,
+            "name": "isTalkEntityAttacked",
+            "displayName": "Is Attacked",
+            "description": "Refers to the entity that the ESD is attached to.",
+            "args": []
+        },
+        {
+            "id": 6,
+            "name": "getTalkEntityHp",
+            "displayName": "Get HP",
+            "description": "Refers to the entity that the ESD is attached to.",
+            "args": []
+        },
+        {
+            "id": 7,
+            "name": "getDistanceFromEnemy",
+            "displayName": "Get Distance from Enemy",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 8,
+            "name": "getRelativeAnglePlayerSelf",
+            "displayName": "Get Relative Angle",
+            "description": "Refers to the angle between the player and the entity that the ESD is attached to.",
+            "args": []
+        },
+        {
+            "id": 9,
+            "name": "isPlayerAttacking",
+            "displayName": "Is Player Attacking",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 10,
+            "name": "getRelativeAngleSelfPlayer",
+            "displayName": "Get Relative Angle",
+            "description": "Refers to the angle between the entity that the ESD is attached to and the player.",
+            "args": []
+        },
+        {
+            "id": 11,
+            "name": "isTalkInProgress",
+            "displayName": "Is Talk in Progress",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 12,
+            "name": "getTalkInterruptCause",
+            "displayName": "Get Cause of Talk Interrupt",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 13,
+            "name": "getShopCondition",
+            "displayName": "Get Shop Condition",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 14,
+            "name": "getLineHelpStatus",
+            "displayName": "Get Line Help Status",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 15,
+            "name": "getEventFlag",
+            "displayName": "Get Event Flag",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 16,
+            "name": "isItemOwnedByPlayer",
+            "displayName": "Is Item owned by Player",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 17,
+            "name": "isItemEquippedByPlayer",
+            "displayName": "Is Item equipped by Player",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 18,
+            "name": "isFightingAlone",
+            "displayName": "Is Fighting Alone",
+            "description": "Refers to the entity that the ESD is attached to.",
+            "args": []
+        },
+        {
+            "id": 19,
+            "name": "isClientPlayerInteracting",
+            "displayName": "Is Client Player Interacting",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 20,
+            "name": "isCampMenuOpen",
+            "displayName": "Is Camp Menu Open",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 21,
+            "name": "isGenericDialogOpen",
+            "displayName": "Is Generic Dialog Open",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 22,
+            "name": "getGenericDialogResult",
+            "displayName": "Get Generic Dialog Result",
+            "description": "Refers to the button result.",
+            "args": []
+        },
+        {
+            "id": 23,
+            "name": "getTalkListEntryResult",
+            "displayName": "Get Talk List Entry Result",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 24,
+            "name": "isMoviePlaying",
+            "displayName": "Is Movie Playing",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 25,
+            "name": "isMenuOpen",
+            "displayName": "Is Menu Open",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 26,
+            "name": "isDisabled",
+            "displayName": "Is Disabled",
+            "description": "Refers to the entity that the ESD is attached to.",
+            "args": []
+        },
+        {
+            "id": 27,
+            "name": "isPlayerDead",
+            "displayName": "Is Player Dead",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 28,
+            "name": "isInteractingInMenu",
+            "displayName": "Is Interacting in Menu",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 29,
+            "name": "getStatValue",
+            "displayName": "Get Stat Value",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 30,
+            "name": "isPlayerMovingAway",
+            "displayName": "Is Player Moving Away",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 31,
+            "name": "isAlreadyInTalk",
+            "displayName": "Is Already in Talk",
+            "description": "Refers to instances where one player is already interacting, and a client player may try and interact.",
+            "args": []
+        },
+        {
+            "id": 32,
+            "name": "isTalkDisabledPeriodOver",
+            "displayName": "Is Talk Enabled",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 33,
+            "name": "isPlayerAttacked",
+            "displayName": "Is Player being Attacked",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 34,
+            "name": "getPlayerHeightDistance",
+            "displayName": "Get Height Distance from Player",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 35,
+            "name": "getPlayerCharacterType",
+            "displayName": "Get Player Character Type",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 36,
+            "name": "canAdvanceTalkBlock",
+            "displayName": "Can Advance to next Talk Block",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 37,
+            "name": "compareBonfireState",
+            "displayName": "Check Bonfire State",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 38,
+            "name": "compareBonfireLevel",
+            "displayName": "Check Bonfire Level",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 39,
+            "name": "compareHubBonfireLevel",
+            "displayName": "Check Hub Bonfire Level",
+            "description": "Hub refers to the main bonfire, e.g. Firelink Shrine",
+            "args": []
+        },
+        {
+            "id": 40,
+            "name": "bonfireRegistration0",
+            "displayName": "Bonfire Registration 0",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 41,
+            "name": "bonfireRegistration1",
+            "displayName": "Bonfire Registration 1",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 42,
+            "name": "bonfireRegistration2",
+            "displayName": "Bonfire Registration 2",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 43,
+            "name": "bonfireRegistration3",
+            "displayName": "Bonfire Registration 3",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 44,
+            "name": "bonfireRegistration4",
+            "displayName": "Bonfire Registration 4",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 45,
+            "name": "comparePlayerStat",
+            "displayName": "Check Player Stat",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 46,
+            "name": "getRelativeAngleBetweenPlayers",
+            "displayName": "Get Relative Angle between Players",
+            "description": "Specify axis",
+            "args": []
+        },
+        {
+            "id": 47,
+            "name": "compareItemCount",
+            "displayName": "Check Item Count",
+            "description": "Refers to the count in the player's inventory",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "name": "isPlayerWeaponDamaged",
+            "displayName": "Is Player Weapon Damaged",
+            "description": "Refers to the current weapon only",
+            "args": []
+        },
+        {
+            "id": 49,
+            "name": "comparePlayerAcquittalPrice",
+            "displayName": "Check Acquittal Price",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 50,
+            "name": "compareRandomValue",
+            "displayName": "Check Random Value",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 51,
+            "name": "isWarpDestinationSelected",
+            "displayName": "Is Warp Destination Selected",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 52,
+            "name": "isInMultiplayerSession",
+            "displayName": "Is in Multiplayer Session",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 53,
+            "name": "isTalkExclusiveMenuOpen",
+            "displayName": "Is Talk Exclusive Menu Open",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 54,
+            "name": "isRankingMenuOpen",
+            "displayName": "Is Ranking Menu Open",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 55,
+            "name": "getPlayerCurrentHp",
+            "displayName": "Get Current Player HP",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 56,
+            "name": "compareActionButtonArea",
+            "displayName": "Check Action Button Interaction",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "name": "isSpecificTalkEnded",
+            "displayName": "Is Specific Talk Ended",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "name": "isSpecificGenericDialogOpen",
+            "displayName": "Is Specific Generic Dialog Open",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "name": "isSpecificMenuOpen",
+            "displayName": "Is Specific Menu Open",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "name": "isSpeffectPresent",
+            "displayName": "Is SpEffect Present",
+            "description": "Refers to the entity that the ESD is attached to.",
+            "args": [
+                {
+                    "name": "spEffectId",
+                    "displayName": "SpEffect ID",
+                    "description": "",
+                    "argLink": "param/SpEffectParam"
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "name": "IsSpEffectPresentPlayer",
+            "displayName": "Is Player SpEffect Present",
+            "description": "Refers to the player.",
+            "args": [
+                {
+                    "name": "spEffectId",
+                    "displayName": "SpEffect ID",
+                    "description": "",
+                    "argLink": "param/SpEffectParam"
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "name": "getQuantitySelectionValue",
+            "displayName": "Get Quantity Selection Value",
+            "description": "Refers to the value set by the openQuantitySelectionMenu command",
+            "args": []
+        },
+        {
+            "id": 100,
+            "name": "getWorkValue",
+            "displayName": "Get Work Value",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 101,
+            "name": "getEventFlagValue",
+            "displayName": "Get Event Flag Value",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 102,
+            "name": "getElapsedFrames",
+            "displayName": "Get Elapsed Frames",
+            "description": "Refers to the current state only.",
+            "args": []
+        },
+        {
+            "id": 103,
+            "name": "getElapsedSeconds",
+            "displayName": "Get Elapsed Seconds",
+            "description": "Refers to the current state only.",
+            "args": []
+        },
+        {
+            "id": 104,
+            "name": "getPlayerStat",
+            "displayName": "Get Player Stat",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 105,
+            "name": "getLevelupSoulCost",
+            "displayName": "Get Levelup Soul Cost",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 106,
+            "name": "isCharacterTurnAnimOver",
+            "displayName": "Is Character Turn Animation Over",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 107,
+            "name": "isCharacterEventAnimOver",
+            "displayName": "Is Character Event Anim Over",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 108,
+            "name": "getItemHeldMaxCount",
+            "displayName": "Get Max Count Held for Item",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 109,
+            "name": "getEstusAllocation",
+            "displayName": "Get Estus Allocation",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 110,
+            "name": "getBonfireKindlingLevel",
+            "displayName": "Get Bonfire Kindling Level",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 111,
+            "name": "isOnline",
+            "displayName": "Is Online",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 112,
+            "name": "isPenalizedForArena",
+            "displayName": "Is Penalized for Arena",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 202,
+            "name": "unknown202",
+            "displayName": "Unknown [202]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 203,
+            "name": "doesMachineExist",
+            "displayName": "Does Machine Exist",
+            "description": "",
+            "args": [
+                {
+                    "name": "machineId",
+                    "displayName": "Machine ID",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 310,
+            "name": "unknown310",
+            "displayName": "Unknown [310]",
+            "description": "",
+            "args": [
+                {
+                    "name": "XXX",
+                    "displayName": "XXX",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 312,
+            "name": "getRelativeEventFlag",
+            "displayName": "Get Relative Event Flag State",
+            "description": "",
+            "args": [
+                {
+                    "name": "eventFlagId",
+                    "displayName": "Event Flag ID",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 313,
+            "name": "unknown313",
+            "displayName": "Unknown [313]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 314,
+            "name": "getMissionState",
+            "displayName": "Get Mission State",
+            "description": "",
+            "args": [
+                {
+                    "name": "missionId",
+                    "displayName": "Mission ID",
+                    "description": ""
+                },
+                {
+                    "name": "option",
+                    "displayName": "Option",
+                    "description": "",
+                    "argEnum": "missionOption"
+                }
+            ]
+        },
+        {
+            "id": 315,
+            "name": "unknown315",
+            "displayName": "Unknown [315]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 316,
+            "name": "unknown316",
+            "displayName": "Unknown [316]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                },
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 318,
+            "name": "unknown318",
+            "displayName": "Unknown [318]",
+            "description": "",
+            "args": [
+                {
+                    "name": "unknown",
+                    "displayName": "Unknown",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 319,
+            "name": "isStateInfoPresent",
+            "displayName": "Is State Info Present",
+            "description": "Refers to the player. Gets whether you have state info.",
+            "args": [
+                {
+                    "name": "stateInfoId",
+                    "displayName": "State Info ID",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 320,
+            "name": "isTextEffectSlotEmpty",
+            "displayName": "Is Text Effect Slot Empty",
+            "description": "Gets whether text effect slot is empty.",
+            "args": [
+                {
+                    "name": "slot",
+                    "displayName": "Slot",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": 321,
+            "name": "unknown321",
+            "displayName": "Unknown [321]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 322,
+            "name": "getGameCycle",
+            "displayName": "Get Game Cycle Count",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 324,
+            "name": "unknown324",
+            "displayName": "Unknown [324]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 325,
+            "name": "unknown325",
+            "displayName": "Unknown [325]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 326,
+            "name": "unknown326",
+            "displayName": "Unknown [326]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 327,
+            "name": "getChapterCompletionCount",
+            "displayName": "Get Number of Chapters Completed",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 328,
+            "name": "unknown328",
+            "displayName": "Unknown [328]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 329,
+            "name": "unknown329",
+            "displayName": "Unknown [329]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 331,
+            "name": "getArenaCompletion",
+            "displayName": "Is Arena Match Completed",
+            "description": "",
+            "args": [
+                {
+                    "name": "arenaParamId",
+                    "displayName": "Arena Param ID",
+                    "description": "",
+                    "argLink": "param/ArenaParam"
+                }
+            ]
+        },
+        {
+            "id": 332,
+            "name": "unknown332",
+            "displayName": "Unknown [332]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 333,
+            "name": "unknown333",
+            "displayName": "Unknown [333]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 334,
+            "name": "unknown334",
+            "displayName": "Unknown [334]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 335,
+            "name": "unknown335",
+            "displayName": "Unknown [335]",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 336,
+            "name": "isFadeComplete",
+            "displayName": "Is Fade Complete",
+            "description": "Gets whether fade is complete (or not started)",
+            "args": []
+        },
+        {
+            "id": 337,
+            "name": "getHunterClass",
+            "displayName": "Get Hunter Class",
+            "description": "",
+            "args": []
+        },
+        {
+            "id": 338,
+            "name": "isTutorialComplete",
+            "displayName": "Is Tutorial Complete",
+            "description": "Gets whether tutorial is complete (or not started); applies to both modals and toasts.",
+            "args": []
+        }
+    ],
+    "enums": [
+        {
+            "referenceName": "fadeModeEnum",
+            "displayName": "Fade Mode",
+            "description": "",
+            "members": [
+                {
+                    "identifier": "0",
+                    "displayName": "None",
+                    "description": ""
+                },
+                {
+                    "identifier": "1",
+                    "displayName": "In/Out",
+                    "description": ""
+                },
+                {
+                    "identifier": "2",
+                    "displayName": "Out",
+                    "description": ""
+                },
+                {
+                    "identifier": "3",
+                    "displayName": "In",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "referenceName": "missionOption",
+            "displayName": "Mission Option",
+            "description": "",
+            "members": [
+                {
+                    "identifier": "0",
+                    "displayName": "Avaliable",
+                    "description": ""
+                },
+                {
+                    "identifier": "1",
+                    "displayName": "Complete",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}

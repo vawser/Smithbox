@@ -232,6 +232,15 @@ public static class VirtualPathLocator
                         return LocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
                     }
 
+                    if (Smithbox.ProjectType == ProjectType.SDT)
+                    {
+                        bndpath = "";
+                        if (hittype == "lo")
+                            return LocatorUtils.GetAssetPath($@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+
+                        return LocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                    }
+
                     if (Smithbox.ProjectType == ProjectType.ER)
                     {
                         bndpath = "";
@@ -267,6 +276,12 @@ public static class VirtualPathLocator
                     }
 
                     if (Smithbox.ProjectType == ProjectType.DS3)
+                    {
+                        bndpath = "";
+                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
+                    }
+
+                    if (Smithbox.ProjectType == ProjectType.SDT)
                     {
                         bndpath = "";
                         return LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");

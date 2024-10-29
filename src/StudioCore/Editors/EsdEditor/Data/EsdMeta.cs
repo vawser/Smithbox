@@ -29,7 +29,7 @@ public static class EsdMeta
 
         var metaDir = $"{AppContext.BaseDirectory}\\Assets\\ESD\\{MiscLocator.GetGameIDForDir()}";
 
-        // Only supporting Talk ESD currently
+        // Only supporting Talk ESD currently (change this based on project type)
         var resourcePath = $"{metaDir}\\Talk.json";
 
         if (File.Exists(resourcePath))

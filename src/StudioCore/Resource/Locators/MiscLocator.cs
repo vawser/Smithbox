@@ -310,7 +310,6 @@ public static class MiscLocator
         // Not supported
         if (Smithbox.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
-            or ProjectType.BB
             or ProjectType.DES)
         {
             return new List<string>();
@@ -329,10 +328,7 @@ public static class MiscLocator
     public static List<string> GetTalkBinders()
     {
         // Not supported + Sekiro
-        if (Smithbox.ProjectType is ProjectType.DS2S
-            or ProjectType.DS2
-            or ProjectType.BB
-            or ProjectType.DES)
+        if (Smithbox.ProjectType is ProjectType.DES)
         {
             return new List<string>();
         }
@@ -340,6 +336,12 @@ public static class MiscLocator
         // DS1R + DS3 + Sekiro + ER + AC6
         var paramDir = @"\script\talk";
         var paramExt = @".talkesdbnd.dcx";
+
+        if(Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        {
+            paramDir = @"\ezstate\";
+            paramExt = @".esd";
+        }
 
         List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
 

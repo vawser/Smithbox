@@ -39,6 +39,7 @@ public static class ModelLocator
     public static ResourceDescriptor GetMapModel(string mapid, string mapContainerId, string modelId)
     {
         ResourceDescriptor ret = new();
+
         if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DES)
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{modelId}.flver");
         else if (Smithbox.ProjectType is ProjectType.DS1R or ProjectType.BB)

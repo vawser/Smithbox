@@ -157,6 +157,10 @@ public static class EsdBank
 
     private static void LoadEsdScript(string path)
     {
+        // TODO: add DS2 ESD support
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            return;
+
         if (path == null)
         {
             TaskLogs.AddLog($"Could not locate {path} when loading ESD file.",
