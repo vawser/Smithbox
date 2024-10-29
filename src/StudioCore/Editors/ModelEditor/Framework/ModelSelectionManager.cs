@@ -1,10 +1,13 @@
-﻿using SoulsFormats;
+﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editor.Multiselection;
 using StudioCore.Editors.ModelEditor.Core;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -422,5 +425,20 @@ public class ModelSelectionManager
         ResetSelection();
         _selectedHighCollision = index;
         _selectedFlverGroupType = GroupSelectionType.CollisionHigh;
+    }
+
+    public ModelEditorContext CurrentWindowContext = ModelEditorContext.None;
+
+    /// <summary>
+    /// Switches the focus context to the passed value.
+    /// Use this on all windows (e.g. both Begin and BeginChild)
+    /// </summary>
+    public void SwitchWindowContext(ModelEditorContext newContext)
+    {
+        if (ImGui.IsWindowHovered())
+        {
+            CurrentWindowContext = newContext;
+            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
+        }
     }
 }

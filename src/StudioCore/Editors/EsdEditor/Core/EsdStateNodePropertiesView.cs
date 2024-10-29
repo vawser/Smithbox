@@ -3,6 +3,7 @@ using ImGuiNET;
 using Org.BouncyCastle.Utilities;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.EsdEditor.EsdLang;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
@@ -50,6 +51,7 @@ public class EsdStateNodePropertyView
     public void Display()
     {
         ImGui.Begin("State Node##EsdStateNodePropertyView");
+        Selection.SwitchWindowContext(EsdEditorContext.StateNodeContents);
 
         var stateNode = Selection._selectedStateGroupNode;
 

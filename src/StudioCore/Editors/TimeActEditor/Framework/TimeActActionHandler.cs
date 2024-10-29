@@ -70,7 +70,6 @@ public class TimeActActionHandler
                 break;
             case TimeActEditorContext.EventProperty:
                 break;
-            case TimeActEditorContext.Property: break;
         }
     }
 
@@ -96,7 +95,6 @@ public class TimeActActionHandler
                 break;
             case TimeActEditorContext.EventProperty:
                 break;
-            case TimeActEditorContext.Property: break;
         }
     }
     public void DetermineDeleteTarget()
@@ -121,7 +119,6 @@ public class TimeActActionHandler
                 break;
             case TimeActEditorContext.EventProperty:
                 break;
-            case TimeActEditorContext.Property: break;
         }
     }
 

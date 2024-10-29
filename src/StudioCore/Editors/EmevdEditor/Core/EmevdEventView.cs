@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
+using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
@@ -46,10 +47,12 @@ public class EmevdEventView
     public void Display()
     {
         ImGui.Begin("Events##EventListView");
+        Selection.SwitchWindowContext(EmevdEditorContext.EventList);
 
         Filters.DisplayEventFilterSearch();
 
         ImGui.BeginChild("EventListSection");
+        Selection.SwitchWindowContext(EmevdEditorContext.EventList);
 
         if (Selection.SelectedScript != null)
         {

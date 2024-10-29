@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StudioCore.Resource.Locators;
 using SoulsFormats;
+using StudioCore.Editors.TextureViewer.Enums;
 
 namespace StudioCore.Editors.TextureViewer;
 
@@ -40,6 +41,7 @@ public class TexTextureViewport
     public void Display()
     {
         ImGui.Begin("Viewer##TextureViewer", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
+        Selection.SwitchWindowContext(TextureViewerContext.TextureViewport);
 
         Selection.TextureViewWindowPosition = ImGui.GetWindowPos();
         Selection.TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());

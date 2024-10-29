@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.MapQuery;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
@@ -47,6 +48,8 @@ public class ToolWindow
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor"))
         {
+            Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.ToolWindow);
+
             var windowHeight = ImGui.GetWindowHeight();
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);

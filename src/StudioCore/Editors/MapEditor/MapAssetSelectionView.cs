@@ -4,6 +4,7 @@ using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
@@ -60,6 +61,8 @@ namespace StudioCore.Editors.MapEditor
 
             if (ImGui.Begin($@"Asset Browser##MapAssetBrowser"))
             {
+                Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.AssetBrowser);
+
                 ImGui.InputText($"Search", ref _searchInput, 255);
                 UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 

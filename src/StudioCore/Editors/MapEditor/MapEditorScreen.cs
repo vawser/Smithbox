@@ -55,6 +55,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public ViewportActionManager EditorActionManager = new();
 
+    public MapSelectionManager Selection;
+
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetSelectionView MapAssetSelectionView;
     public SelectionGroupEditor SelectionGroupEditor;
@@ -99,6 +101,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     {
         Rect = window.Bounds;
         Window = window;
+
+        Selection = new MapSelectionManager(this);
 
         if (device != null)
         {

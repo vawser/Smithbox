@@ -1,6 +1,10 @@
-﻿using SoulsFormats;
+﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Editors.GparamEditor.Data;
+using StudioCore.Editors.GparamEditor.Enums;
+using StudioCore.Editors.TextEditor;
 using StudioCore.GraphicsEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -212,5 +216,20 @@ public class GparamSelectionManager
     public GPARAM.IFieldValue GetSelectedGparamFieldValue()
     {
         return _selectedFieldValue;
+    }
+
+    public GparamEditorContext CurrentWindowContext = GparamEditorContext.None;
+
+    /// <summary>
+    /// Switches the focus context to the passed value.
+    /// Use this on all windows (e.g. both Begin and BeginChild)
+    /// </summary>
+    public void SwitchWindowContext(GparamEditorContext newContext)
+    {
+        if (ImGui.IsWindowHovered())
+        {
+            CurrentWindowContext = newContext;
+            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
+        }
     }
 }

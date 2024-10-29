@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
+using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
@@ -43,10 +44,12 @@ public class EsdFileView
     {
         // File List
         ImGui.Begin("Files##TalkFileList");
+        Selection.SwitchWindowContext(EsdEditorContext.File);
 
         Filters.DisplayFileFilterSearch();
 
         ImGui.BeginChild("FileListSection");
+        Selection.SwitchWindowContext(EsdEditorContext.File);
 
         foreach (var (info, binder) in EsdBank.TalkBank)
         {

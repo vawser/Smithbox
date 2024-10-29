@@ -282,8 +282,6 @@ public class TimeActSelectionManager
 
     public void TimeActEventPropertyChange(string entry, int index)
     {
-        CurrentWindowContext = TimeActEditorContext.Property;
-
         CurrentTimeActEventProperty = entry;
         CurrentTimeActEventPropertyIndex = index;
     }

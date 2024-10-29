@@ -21,6 +21,7 @@ namespace StudioCore.Editors.ModelEditor.Actions;
 public class ModelToolView
 {
     private ModelEditorScreen Screen;
+    private ModelSelectionManager Selection;
     public GlobalModelSearch ModelUsageSearch;
 
     private bool ObjIncludeTextures = true;
@@ -28,6 +29,7 @@ public class ModelToolView
     public ModelToolView(ModelEditorScreen screen)
     {
         Screen = screen;
+        Selection = screen.Selection;
         ModelUsageSearch = new GlobalModelSearch(screen);
     }
 
@@ -46,6 +48,8 @@ public class ModelToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_ModelEditor"))
         {
+            Selection.SwitchWindowContext(ModelEditorContext.ToolWindow);
+
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
 

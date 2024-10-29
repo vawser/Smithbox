@@ -3,7 +3,10 @@ using StudioCore.Configuration;
 using StudioCore.DebugPrimitives;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Tools;
+using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.MsbEditor;
 using StudioCore.Editors.TimeActEditor;
@@ -163,6 +166,16 @@ public class Viewport : IViewport
         {
             if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
             {
+                if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
+                {
+                    Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.MapViewport);
+                }
+
+                if (Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+                {
+                    Smithbox.EditorHandler.ModelEditor.Selection.SwitchWindowContext(ModelEditorContext.ModelViewport);
+                }
+
                 Vector2 p = ImGui.GetWindowPos();
                 Vector2 s = ImGui.GetWindowSize();
                 Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);

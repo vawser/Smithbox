@@ -2,6 +2,7 @@
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
@@ -49,6 +50,7 @@ public class EsdScriptView
     public void Display()
     {
         ImGui.Begin("Scripts##EsdScriptList");
+        Selection.SwitchWindowContext(EsdEditorContext.Script);
 
         var info = Selection._selectedFileInfo;
         var scriptKey = Selection._selectedEsdScriptKey;
@@ -56,6 +58,7 @@ public class EsdScriptView
         Filters.DisplayScriptFilterSearch();
 
         ImGui.BeginChild("ScriptListSection");
+        Selection.SwitchWindowContext(EsdEditorContext.Script);
 
         if (info != null)
         {

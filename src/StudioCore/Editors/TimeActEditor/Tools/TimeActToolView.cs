@@ -2,6 +2,7 @@
 using ImGuiNET;
 using StudioCore.Core.Project;
 using StudioCore.Editors.TimeActEditor.Actions;
+using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Interface;
 
@@ -10,12 +11,14 @@ namespace StudioCore.Editors.TimeActEditor.Tools;
 public class TimeActToolView
 {
     private TimeActEditorScreen Screen;
+    private TimeActSelectionManager Selection;
     private TimeActActionHandler ActionHandler;
     private TimeActSearch TimeActSearch;
 
     public TimeActToolView(TimeActEditorScreen screen)
     {
         Screen = screen;
+        Selection = screen.Selection;
         ActionHandler = screen.ActionHandler;
         TimeActSearch = new TimeActSearch(screen);
     }
@@ -30,6 +33,8 @@ public class TimeActToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TimeActEditor"))
         {
+            Selection.SwitchWindowContext(TimeActEditorContext.ToolWindow);
+
             var windowWidth = ImGui.GetWindowWidth();
 
             if(ImGui.CollapsingHeader("Time Act Search"))

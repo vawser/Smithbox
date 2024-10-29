@@ -33,7 +33,6 @@ public class EmevdEditorScreen : EditorScreen
 
     public EmevdToolView ToolView;
     public EmevdToolMenubar ToolMenubar;
-    public EmevdActionMenubar ActionMenubar;
 
     public EmevdEventCreationModal EventCreationModal;
     public EmevdInstructionCreationModal InstructionCreationModal;
@@ -58,7 +57,6 @@ public class EmevdEditorScreen : EditorScreen
         ActionHandler = new EmevdActionHandler(this);
         ToolView = new EmevdToolView(this);
         ToolMenubar = new EmevdToolMenubar(this);
-        ActionMenubar = new EmevdActionMenubar(this);
 
         EventCreationModal = new EmevdEventCreationModal(this);
         InstructionCreationModal = new EmevdInstructionCreationModal(this);
@@ -156,10 +154,6 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        ActionMenubar.Display();
-
-        ImGui.Separator();
-
         ToolMenubar.Display();
 
         ImGui.Separator();
@@ -254,7 +248,6 @@ public class EmevdEditorScreen : EditorScreen
 
             ToolView.OnProjectChanged();
             ToolMenubar.OnProjectChanged();
-            ActionMenubar.OnProjectChanged();
 
             EmevdBank.LoadEventScripts();
             EmevdBank.LoadEMEDF();

@@ -42,12 +42,12 @@ public class TexFileContainerView
     public void Display()
     {
         ImGui.Begin("Files##TextureContainerList");
-
-        ImGui.Separator();
+        Selection.SwitchWindowContext(TextureViewerContext.FileList);
 
         Filters.DisplayFileFilterSearch();
 
-        ImGui.Separator();
+        ImGui.BeginChild("TextureFileCategories");
+        Selection.SwitchWindowContext(TextureViewerContext.FileList);
 
         if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER)
         {
@@ -75,6 +75,8 @@ public class TexFileContainerView
         {
             DisplayFileSection("Other", TextureViewCategory.Other);
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

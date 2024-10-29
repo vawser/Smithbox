@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
+using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextureViewer;
@@ -16,11 +17,13 @@ namespace StudioCore.Editors.TextureViewer.Tools;
 public class TexToolView
 {
     private TextureViewerScreen Screen;
+    private TexViewSelection Selection;
     public TexTools Tools;
 
     public TexToolView(TextureViewerScreen screen)
     {
         Screen = screen;
+        Selection = screen.Selection;
         Tools = screen.Tools;
     }
 
@@ -34,6 +37,8 @@ public class TexToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextureViewer"))
         {
+            Selection.SwitchWindowContext(TextureViewerContext.ToolWindow);
+
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
             var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);

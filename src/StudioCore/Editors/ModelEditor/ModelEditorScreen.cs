@@ -82,9 +82,9 @@ public class ModelEditorScreen : EditorScreen
         _universe = new Universe(RenderScene, _selection);
 
         // Order matters here as classes may fill references via Screen composition
-        ToolView = new ModelToolView(this);
         ViewportManager = new ModelViewportManager(this, Viewport);
         Selection = new ModelSelectionManager(this);
+        ToolView = new ModelToolView(this);
         ResManager = new ModelResourceManager(this, Viewport);
         ContextMenu = new ModelContextMenu(this);
         Decorator = new ModelPropertyDecorator(this);

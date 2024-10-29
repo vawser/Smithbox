@@ -3,6 +3,7 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Configuration;
+using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -45,10 +46,12 @@ public class GparamFieldListView
     public void Display()
     {
         ImGui.Begin("Fields##GparamFields");
+        Selection.SwitchWindowContext(GparamEditorContext.Field);
 
         Filters.DisplayFieldFilterSearch();
 
         ImGui.BeginChild("GparamFieldsSection");
+        Selection.SwitchWindowContext(GparamEditorContext.Field);
 
         if (Selection.IsGparamGroupSelected())
         {

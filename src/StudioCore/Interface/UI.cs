@@ -147,6 +147,11 @@ public class UI
     public bool Interface_EmevdEditor_ToolConfigurationWindow = true;
 
     // ESD Editor
+    public bool Interface_EsdEditor_FileList = true;
+    public bool Interface_EsdEditor_ScriptList = true;
+    public bool Interface_EsdEditor_StateGroupList = true;
+    public bool Interface_EsdEditor_StateNodeList = true;
+    public bool Interface_EsdEditor_StateNodeContents = true;
     public bool Interface_EsdEditor_ToolConfigurationWindow = true;
 
     // Texture Viewer

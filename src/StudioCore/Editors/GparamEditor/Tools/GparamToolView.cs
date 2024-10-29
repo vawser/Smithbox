@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
+using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.Editors.GparamEditor.Framework;
 using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.Editors.ParamEditor;
@@ -18,11 +19,13 @@ namespace StudioCore.Editors.GparamEditor.Tools;
 public class GparamToolView
 {
     private GparamEditorScreen Screen;
+    private GparamSelectionManager Selection;
     public GparamActionHandler ActionHandler;
 
     public GparamToolView(GparamEditorScreen screen)
     {
         Screen = screen;
+        Selection = screen.Selection;
         ActionHandler = new GparamActionHandler(screen);
     }
 
@@ -47,6 +50,8 @@ public class GparamToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_GparamEditor"))
         {
+            Selection.SwitchWindowContext(GparamEditorContext.ToolWindow);
+
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
             var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);

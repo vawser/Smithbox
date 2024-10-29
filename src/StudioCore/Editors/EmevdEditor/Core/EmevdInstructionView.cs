@@ -2,6 +2,7 @@
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
 using System;
@@ -46,10 +47,12 @@ public class EmevdInstructionView
     public void Display()
     {
         ImGui.Begin("Instructions##EventInstructionView");
+        Selection.SwitchWindowContext(EmevdEditorContext.InstructionList);
 
         Filters.DisplayInstructionFilterSearch();
 
         ImGui.BeginChild("InstructionListSection");
+        Selection.SwitchWindowContext(EmevdEditorContext.InstructionList);
 
         if (Selection.SelectedEvent != null)
         {

@@ -67,10 +67,13 @@ public class FileSelectionView
 
         if (ImGui.Begin($@"Asset Browser##ModelAssetBrower"))
         {
+            Selection.SwitchWindowContext(ModelEditorContext.File);
+
             ImGui.InputText($"Search", ref _searchInput, 255);
             UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
             ImGui.BeginChild("AssetBrowserLists");
+            Selection.SwitchWindowContext(ModelEditorContext.File);
 
             DisplayLooseSection();
             DisplayCharacterList();

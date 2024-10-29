@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.TextureViewer;
 using System;
 using System.Collections.Generic;
@@ -37,19 +38,16 @@ public class TexTextureListView
     public void Display()
     {
         ImGui.Begin("Textures##TextureViewList");
-
-        ImGui.Separator();
+        Selection.SwitchWindowContext(TextureViewerContext.TextureList);
 
         Filters.DisplayTextureFilterSearch();
 
-        ImGui.Separator();
+        ImGui.BeginChild("TextureList");
+        Selection.SwitchWindowContext(TextureViewerContext.TextureList);
 
         if (Selection._selectedTextureContainer != null && Selection._selectedTextureContainerKey != "")
         {
             TextureViewInfo data = Selection._selectedTextureContainer;
-
-            ImGui.Text($"Textures");
-            ImGui.Separator();
 
             if (data.Textures != null)
             {
@@ -79,6 +77,8 @@ public class TexTextureListView
                 }
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

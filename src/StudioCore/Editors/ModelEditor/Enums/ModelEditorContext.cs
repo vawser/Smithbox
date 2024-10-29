@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TextEditor;
+namespace StudioCore.Editors.ModelEditor.Enums;
 
-public enum TextEditorContext
+public enum ModelEditorContext
 {
     [Display(Name = "None")] None,
     [Display(Name = "File")] File,
-    [Display(Name = "FMG")] Fmg,
-    [Display(Name = "FMG.Entry")] FmgEntry,
-    [Display(Name = "FMG.Entry Contents")] FmgEntryContents,
+    [Display(Name = "Model Hierarchy")] ModelHierarchy,
+    [Display(Name = "Model Viewport")] ModelViewport,
+    [Display(Name = "Model Properties")] ModelProperties,
     [Display(Name = "Tool Window")] ToolWindow
 }

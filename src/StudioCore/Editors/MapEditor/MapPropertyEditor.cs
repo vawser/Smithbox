@@ -3,6 +3,7 @@ using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
@@ -1535,7 +1536,10 @@ public class MapPropertyEditor
         ImGui.SetNextWindowSize(new Vector2(350, h - 80) * scale, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowPos(new Vector2(w - 370, 20) * scale, ImGuiCond.FirstUseEver);
         ImGui.Begin($@"Properties##{id}");
+        Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.MapObjectProperties);
+
         ImGui.BeginChild("propedit");
+        Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.MapObjectProperties);
 
         if (Screen.Universe.postLoad && entSelection.Count > 1)
         {
@@ -1554,6 +1558,7 @@ public class MapPropertyEditor
             ImGui.Separator();
             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
             ImGui.BeginChild("MSB_EditingMultipleObjsChild");
+            Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.MapObjectProperties);
             PropEditorSelectedEntities(selection);
             ImGui.PopStyleColor();
             ImGui.EndChild();

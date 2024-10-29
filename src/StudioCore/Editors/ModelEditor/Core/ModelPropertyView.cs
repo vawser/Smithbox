@@ -76,6 +76,8 @@ public class ModelPropertyView
 
         if (ImGui.Begin($@"Properties##ModelEditorProperties"))
         {
+            Selection.SwitchWindowContext(ModelEditorContext.ModelProperties);
+
             if (Screen.ResManager.GetCurrentFLVER() != null && !SuspendView)
             {
                 var entryType = Selection._selectedFlverGroupType;

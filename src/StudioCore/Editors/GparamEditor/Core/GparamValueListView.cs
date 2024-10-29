@@ -1,6 +1,7 @@
 ﻿using HKLib.hk2018.hkaiCollisionAvoidance;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
@@ -45,6 +46,7 @@ public class GparamValueListView
     public void Display()
     {
         ImGui.Begin("Values##GparamValues");
+        Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
 
         Filters.DisplayFieldValueFilterSearch();
 
@@ -58,6 +60,7 @@ public class GparamValueListView
 
             // ID
             ImGui.BeginChild("IdList##GparamPropertyIds");
+            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"ID");
             ImGui.Separator();
 
@@ -89,6 +92,7 @@ public class GparamValueListView
 
             // Time of Day
             ImGui.BeginChild("IdList##GparamTimeOfDay");
+            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"Time of Day");
             ImGui.Separator();
 
@@ -107,6 +111,7 @@ public class GparamValueListView
 
             // Value
             ImGui.BeginChild("ValueList##GparamPropertyValues");
+            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"Value");
             ImGui.Separator();
 
@@ -126,6 +131,7 @@ public class GparamValueListView
 
             // Value
             ImGui.BeginChild("InfoList##GparamPropertyInfo");
+            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"Information");
             ImGui.Separator();
 

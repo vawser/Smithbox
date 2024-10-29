@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.EmevdEditor;
 using System;
@@ -41,6 +42,7 @@ public class EmevdEventParameterView
     public void Display()
     {
         ImGui.Begin("Event Properties##EventParameterView");
+        Selection.SwitchWindowContext(EmevdEditorContext.EventProperties);
 
         if (Selection.SelectedEvent != null)
         {

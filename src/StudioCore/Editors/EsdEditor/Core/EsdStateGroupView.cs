@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
 using System;
@@ -45,6 +46,7 @@ public class EsdStateGroupView
     public void Display()
     {
         ImGui.Begin("State Group Selection##EsdStateGroupSelectView");
+        Selection.SwitchWindowContext(EsdEditorContext.StateGroup);
 
         var script = Selection._selectedEsdScript;
         var stateGroupKey = Selection._selectedStateGroupKey;
@@ -52,6 +54,7 @@ public class EsdStateGroupView
         Filters.DisplayStateGroupFilterSearch();
 
         ImGui.BeginChild("StateGroupSection");
+        Selection.SwitchWindowContext(EsdEditorContext.StateGroup);
 
         if (script != null)
         {

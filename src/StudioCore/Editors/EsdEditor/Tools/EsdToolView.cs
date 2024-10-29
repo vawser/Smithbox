@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
+using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.EsdEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
@@ -18,11 +19,13 @@ namespace StudioCore.Editors.EsdEditor;
 public class EsdToolView
 {
     private EsdEditorScreen Screen;
+    private EsdSelectionManager Selection;
     private EsdActionHandler ActionHandler;
 
     public EsdToolView(EsdEditorScreen screen)
     {
         Screen = screen;
+        Selection = screen.Selection;
         ActionHandler = screen.ActionHandler;
     }
 
@@ -42,6 +45,8 @@ public class EsdToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_EsdEditor"))
         {
+            Selection.SwitchWindowContext(EsdEditorContext.ToolWindow);
+
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
 

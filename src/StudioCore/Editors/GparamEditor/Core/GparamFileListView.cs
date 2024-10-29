@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editors.GparamEditor.Data;
+using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -41,10 +42,12 @@ public class GparamFileListView
     public void Display()
     {
         ImGui.Begin("Files##GparamFileList");
+        Selection.SwitchWindowContext(GparamEditorContext.File);
 
         Filters.DisplayFileFilterSearch();
 
         ImGui.BeginChild("GparamFileSection");
+        Selection.SwitchWindowContext(GparamEditorContext.File);
 
         foreach (var (name, info) in GparamParamBank.ParamBank)
         {

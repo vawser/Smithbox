@@ -2,6 +2,7 @@
 using ImGuiNET;
 using Octokit;
 using SoulsFormats;
+using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
@@ -54,6 +55,7 @@ public class EmevdInstructionPropertyView
     public void Display()
     {
         ImGui.Begin("Instruction Properties##InstructionParameterView");
+        Selection.SwitchWindowContext(EmevdEditorContext.InstructionProperties);
 
         if (Selection.SelectedEvent != null && Selection.SelectedInstruction != null)
         {

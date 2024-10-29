@@ -1,6 +1,7 @@
 ﻿using HKLib.hk2018.hkaiCollisionAvoidance;
 using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
 using System;
@@ -45,6 +46,7 @@ public class EsdStateNodeView
     public void Display()
     {
         ImGui.Begin("State Node Selection##EsdStateNodeSelectView");
+        Selection.SwitchWindowContext(EsdEditorContext.StateNode);
 
         var stateGroups = Selection._selectedStateGroups;
         var stateNodeKey = Selection._selectedStateGroupNodeKey;
@@ -52,6 +54,7 @@ public class EsdStateNodeView
         Filters.DisplayStateFilterSearch();
 
         ImGui.BeginChild("StateNodeSection");
+        Selection.SwitchWindowContext(EsdEditorContext.StateNode);
 
         if (stateGroups != null)
         {

@@ -17,5 +17,6 @@ public enum TimeActEditorContext
     [Display(Name = "Event")] Event,
     [Display(Name = "Event Property")] EventProperty,
     [Display(Name = "Event Graph")] EventGraph,
-    [Display(Name = "Property")] Property
+    [Display(Name = "Property")] Property,
+    [Display(Name = "Tool Window")] ToolWindow
 }

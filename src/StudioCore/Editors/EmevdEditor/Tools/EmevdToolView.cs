@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
+using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
@@ -15,10 +16,12 @@ public class EmevdToolView
 {
     private EmevdEditorScreen Screen;
     private EmevdActionHandler ActionHandler;
+    private EmevdSelectionManager Selection;
 
     public EmevdToolView(EmevdEditorScreen screen)
     {
         Screen = screen;
+        Selection = screen.Selection;
         ActionHandler = screen.ActionHandler;
     }
 
@@ -38,6 +41,8 @@ public class EmevdToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_EmevdEditor"))
         {
+            Selection.SwitchWindowContext(EmevdEditorContext.ToolWindow);
+
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
 

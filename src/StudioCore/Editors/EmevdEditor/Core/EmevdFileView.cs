@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -46,10 +47,12 @@ public class EmevdFileView
     {
         // File List
         ImGui.Begin("Files##EventScriptFileList");
+        Selection.SwitchWindowContext(EmevdEditorContext.File);
 
         Filters.DisplayFileFilterSearch();
 
         ImGui.BeginChild("FileListSection");
+        Selection.SwitchWindowContext(EmevdEditorContext.File);
 
         foreach (var (info, binder) in EmevdBank.ScriptBank)
         {

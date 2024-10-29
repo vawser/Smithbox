@@ -15,6 +15,7 @@ using StudioCore.Editors.MapEditor.WorldMap;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
+using StudioCore.Editors.MapEditor.Enums;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -136,6 +137,8 @@ public class MapSceneTree : IActionEventHandler
 
         if (ImGui.Begin($@"Map Object List##{_id}"))
         {
+            Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.MapObjectList);
+
             ImGui.PopStyleVar();
 
             if (Smithbox.ProjectType is ProjectType.DS2S || Smithbox.ProjectType is ProjectType.DS2)
@@ -209,6 +212,7 @@ public class MapSceneTree : IActionEventHandler
         var scale = DPI.GetUIScale();
 
         ImGui.BeginChild("listtree");
+        Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.MapObjectList);
 
         if (_universe.LoadedObjectContainers.Count == 0)
         {

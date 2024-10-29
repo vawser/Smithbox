@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Formats;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
@@ -175,6 +176,7 @@ public class WorldMapScreen : IResourceEventListener
             return;
 
         ImGui.Begin("World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
+        Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.WorldMap);
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();
@@ -227,6 +229,7 @@ public class WorldMapScreen : IResourceEventListener
 
         // Properties
         ImGui.Begin("Properties##WorldMapProperties");
+        Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.WorldMapProperties);
 
         UIHelper.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
         UIHelper.WrappedText($"");

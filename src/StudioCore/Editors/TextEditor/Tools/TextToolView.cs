@@ -21,11 +21,13 @@ namespace StudioCore.Editors.TextEditor;
 public class TextToolView
 {
     private TextEditorScreen Screen;
+    public TextSelectionManager Selection;
     private TextActionHandler ActionHandler;
 
     public TextToolView(TextEditorScreen screen)
     {
         Screen = screen;
+        Selection = screen.Selection;
         ActionHandler = screen.ActionHandler;
     }
 
@@ -39,6 +41,8 @@ public class TextToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor"))
         {
+            Selection.SwitchWindowContext(TextEditorContext.ToolWindow);
+
             // Global Text Search
             if (ImGui.CollapsingHeader("Text Search"))
             {

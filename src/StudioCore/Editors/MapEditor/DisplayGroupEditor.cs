@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Settings;
@@ -55,6 +56,8 @@ public class DisplayGroupEditor
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(4.0f, 2.0f) * scale);
         if (ImGui.Begin("Render Groups") && _scene != null)
         {
+            Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.RenderGroups);
+
             DrawGroup dg = _scene.DisplayGroup;
             if (dg.AlwaysVisible || dg.RenderGroups.Length != dispCount)
             {

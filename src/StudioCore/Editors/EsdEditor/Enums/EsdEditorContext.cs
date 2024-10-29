@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TextEditor;
+namespace StudioCore.Editors.EsdEditor.Enums;
 
-public enum TextEditorContext
+public enum EsdEditorContext
 {
     [Display(Name = "None")] None,
     [Display(Name = "File")] File,
-    [Display(Name = "FMG")] Fmg,
-    [Display(Name = "FMG.Entry")] FmgEntry,
-    [Display(Name = "FMG.Entry Contents")] FmgEntryContents,
+    [Display(Name = "Script")] Script,
+    [Display(Name = "State Group")] StateGroup,
+    [Display(Name = "State Node")] StateNode,
+    [Display(Name = "State Node Contents")] StateNodeContents,
     [Display(Name = "Tool Window")] ToolWindow
 }

@@ -1,5 +1,9 @@
-﻿using SoulsFormats;
+﻿using ImGuiNET;
+using SoulsFormats;
+using StudioCore.Editors.EmevdEditor.Enums;
+using StudioCore.Editors.TextEditor;
 using StudioCore.EmevdEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,5 +52,20 @@ public class EmevdSelectionManager
         SelectNextScript = false;
         SelectNextEvent = false;
         SelectNextInstruction = false;
+    }
+
+    public EmevdEditorContext CurrentWindowContext = EmevdEditorContext.None;
+
+    /// <summary>
+    /// Switches the focus context to the passed value.
+    /// Use this on all windows (e.g. both Begin and BeginChild)
+    /// </summary>
+    public void SwitchWindowContext(EmevdEditorContext newContext)
+    {
+        if (ImGui.IsWindowHovered())
+        {
+            CurrentWindowContext = newContext;
+            TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
+        }
     }
 }

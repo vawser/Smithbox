@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 using StudioCore.TextureViewer;
 using System;
@@ -39,12 +40,16 @@ public class TexTexturePropertyView
     public void Display()
     {
         ImGui.Begin("Properties##PropertiesView");
+        Selection.SwitchWindowContext(TextureViewerContext.TextureProperties);
 
         UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
         UIHelper.WrappedText($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
 
         UIHelper.WrappedText($"");
         UIHelper.WrappedText($"Properties of {Selection.CurrentTextureName}:");
+
+        ImGui.BeginChild("TextureProperties");
+        Selection.SwitchWindowContext(TextureViewerContext.TextureProperties);
 
         if (Selection._selectedTexture != null)
         {
@@ -93,6 +98,8 @@ public class TexTexturePropertyView
                 }
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

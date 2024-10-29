@@ -1,5 +1,9 @@
-﻿using SoulsFormats;
+﻿using ImGuiNET;
+using SoulsFormats;
+using StudioCore.Editors.EsdEditor.Enums;
+using StudioCore.Editors.TextEditor;
 using StudioCore.TalkEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,6 +102,21 @@ public class EsdSelectionManager
     {
         _selectedStateGroupNodeKey = -1;
         _selectedStateGroupNode = null;
+    }
+
+    public EsdEditorContext CurrentWindowContext = EsdEditorContext.None;
+
+    /// <summary>
+    /// Switches the focus context to the passed value.
+    /// Use this on all windows (e.g. both Begin and BeginChild)
+    /// </summary>
+    public void SwitchWindowContext(EsdEditorContext newContext)
+    {
+        if (ImGui.IsWindowHovered())
+        {
+            CurrentWindowContext = newContext;
+            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
+        }
     }
 }
 

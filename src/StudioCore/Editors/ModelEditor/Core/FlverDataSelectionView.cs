@@ -12,6 +12,7 @@ using StudioCore.Editor;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Editors.ModelEditor.Framework;
+using StudioCore.Editors.ModelEditor.Enums;
 
 namespace StudioCore.Editors.ModelEditor.Core;
 
@@ -49,11 +50,14 @@ public class FlverDataSelectionView
 
         if (ImGui.Begin($@"Model Hierarchy##ModelEditorModelHierarchy"))
         {
+            Selection.SwitchWindowContext(ModelEditorContext.ModelHierarchy);
+
             Filters.DisplayFlverFilter();
 
             if (Screen.ResManager.GetCurrentFLVER() != null && !SuspendView)
             {
                 ImGui.BeginChild("modelHierarchySection");
+                Selection.SwitchWindowContext(ModelEditorContext.ModelHierarchy);
 
                 DisplaySection_Header();
                 DisplaySection_Dummies();
