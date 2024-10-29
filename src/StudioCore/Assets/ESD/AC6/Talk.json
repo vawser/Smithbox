@@ -1185,7 +1185,7 @@
                 {
                     "name": "eventId",
                     "displayName": "Event ID",
-                    "description": ""
+                    "description": "emevd/Event"
                 }
             ]
         },
@@ -1204,7 +1204,7 @@
                 {
                     "name": "eventId",
                     "displayName": "Event ID",
-                    "description": ""
+                    "description": "emevd/Event"
                 }
             ]
         },

@@ -7,6 +7,7 @@ using StudioCore.Editors.EsdEditor.EsdLang;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,13 +81,17 @@ public class EsdStateNodePropertyView
         UIHelper.WrappedText(displayTitle);
         ImGui.Separator();
 
-        if (ImGui.BeginTable($"esdCommandTable_{imguiId}", 2, ImGuiTableFlags.SizingFixedFit))
+        if (ImGui.BeginTable($"esdCommandTable_{imguiId}", 4, ImGuiTableFlags.SizingFixedFit))
         {
-            ImGui.TableSetupColumn("CommandIdentifier", ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn("CommandParameters", ImGuiTableColumnFlags.WidthStretch);
+            ImGui.TableSetupColumn("Column1", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Column2", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Column3", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Column4", ImGuiTableColumnFlags.WidthStretch);
 
-            foreach (var cmd in commands)
+            for(int i = 0; i < commands.Count; i++) 
             {
+                var cmd = commands[i];
+
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
@@ -95,7 +100,7 @@ public class EsdStateNodePropertyView
 
                 ImGui.TableSetColumnIndex(1);
 
-                DisplayCommandIdSection(node, commands, cmd);
+                DisplayCommandIdSection(node, commands, cmd, i);
 
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
@@ -103,9 +108,7 @@ public class EsdStateNodePropertyView
                 ImGui.AlignTextToFramePadding();
                 UIHelper.WrappedText("Parameters");
 
-                ImGui.TableSetColumnIndex(1);
-
-                DisplayerCommandParameterSection(node, commands, cmd);
+                DisplayerCommandParameterSection(node, commands, cmd, i);
             }
 
             ImGui.EndTable();
@@ -115,32 +118,25 @@ public class EsdStateNodePropertyView
     /// <summary>
     /// Command ID
     /// </summary>
-    private void DisplayCommandIdSection(ESD.State node, List<CommandCall> commands, CommandCall cmd)
+    private void DisplayCommandIdSection(ESD.State node, List<CommandCall> commands, CommandCall cmd, int imguiId)
     {
         var displayIdentifier = $"{cmd.CommandBank} [{cmd.CommandID}]";
 
         ImGui.AlignTextToFramePadding();
         UIHelper.WrappedText(displayIdentifier);
 
-        var cmdMeta = EsdMeta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
-        if (cmdMeta != null)
-        {
-            var displayAlias = cmdMeta.displayName;
-            ImGui.AlignTextToFramePadding();
-            UIHelper.DisplayAlias(displayAlias);
-        }
+        ImGui.TableSetColumnIndex(2);
 
         // Go to State Group
         if (cmd.CommandBank == 6)
         {
-            ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Button("Go To", new Vector2(150 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
+            if (ImGui.ArrowButton($"idJumpLinkButton{imguiId}", ImGuiDir.Right))
             {
                 var targetStateGroup = cmd.CommandID;
                 var groups = Selection._selectedEsdScript.StateGroups;
 
-                foreach(var (key, entry) in groups)
+                foreach (var (key, entry) in groups)
                 {
                     if (key == targetStateGroup)
                     {
@@ -149,13 +145,25 @@ public class EsdStateNodePropertyView
                     }
                 }
             }
+            UIHelper.ShowHoverTooltip("View this state group.");
+        }
+
+        ImGui.TableSetColumnIndex(3);
+
+        // Alias
+        var cmdMeta = EsdMeta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
+        if (cmdMeta != null)
+        {
+            var displayAlias = cmdMeta.displayName;
+            ImGui.AlignTextToFramePadding();
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, displayAlias);
         }
     }
 
     /// <summary>
     /// Command Parameters
     /// </summary>
-    private void DisplayerCommandParameterSection(ESD.State node, List<CommandCall> commands, CommandCall cmd)
+    private void DisplayerCommandParameterSection(ESD.State node, List<CommandCall> commands, CommandCall cmd, int imguiId)
     {
         var cmdArgMeta = EsdMeta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
 
@@ -165,34 +173,47 @@ public class EsdStateNodePropertyView
 
             var expr = EzInfixor.BytecodeToInfix(arg);
 
+            ImGui.TableSetColumnIndex(1);
+
             // Value expr
-            if(expr is ConstExpr constExpr)
+            if (expr is ConstExpr constExpr)
             {
                 ImGui.AlignTextToFramePadding();
                 UIHelper.WrappedText($"{constExpr}");
 
+                ImGui.TableSetColumnIndex(2);
+
+                // Display quick-link button if applicable
+                if (cmdArgMeta.Count > i)
+                {
+                    var argMeta = cmdArgMeta[i];
+
+                    DisplayGoToButton(argMeta, constExpr, $"{imguiId}{i}");
+                }
+
+                ImGui.TableSetColumnIndex(3);
+
+                // Display alias
                 if (cmdArgMeta.Count > i)
                 {
                     var argMeta = cmdArgMeta[i];
 
                     var displayAlias = argMeta.displayName;
                     ImGui.AlignTextToFramePadding();
-                    UIHelper.DisplayAlias(displayAlias);
-
-                    // Display quick-link button if applicable
-                    DisplayGoToButton(argMeta, constExpr);
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, displayAlias);
                 }
             }
+
+            ImGui.TableNextRow();
         }
     }
 
-    private void DisplayGoToButton(EsdMeta_Arg argMeta, ConstExpr expr)
+    private void DisplayGoToButton(EsdMeta_Arg argMeta, ConstExpr expr, string imguiId)
     {
         if (argMeta.argLink != null)
         {
-            ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Button("Go To", new Vector2(150 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
+            if (ImGui.ArrowButton($"parameterJumpLinkButton{imguiId}", ImGuiDir.Right))
             {
                 var linkExpression = argMeta.argLink.Split("/");
                 var source = linkExpression[0];
@@ -225,10 +246,19 @@ public class EsdStateNodePropertyView
 
                     EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{rowID}");
                 }
+
+                // EMEVD
+                if (source == "emevd")
+                {
+                    var mapName = Selection._selectedFileInfo.Name;
+                    var eventId = target;
+
+                    //EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{rowID}");
+                }
             }
+            UIHelper.ShowHoverTooltip("View this in its associated editor.");
         }
     }
-
 
     public void DisplayConditions(ESD.State node, string imguiId)
     {

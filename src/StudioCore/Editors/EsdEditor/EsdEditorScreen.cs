@@ -4,6 +4,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.EsdEditor;
 using StudioCore.Editors.EsdEditor.Framework;
+using StudioCore.Editors.EsdEditor.Utils;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
 using System.Collections.Generic;
@@ -128,7 +129,7 @@ public class EsdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Smithbox.ProjectType is not ProjectType.AC6)
+        if (!EsdUtils.SupportsEditor())
         {
             ImGui.Begin("Editor##InvalidEsdEditor");
 

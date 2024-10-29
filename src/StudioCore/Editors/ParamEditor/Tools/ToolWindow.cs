@@ -493,7 +493,7 @@ public class ToolWindow
             }
 
             // Item Gib
-            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+            if (Smithbox.ProjectType is ProjectType.DS3)
             {
                 if (ImGui.CollapsingHeader("Item Gib"))
                 {

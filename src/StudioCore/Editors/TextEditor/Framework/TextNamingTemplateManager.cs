@@ -1,4 +1,5 @@
-﻿using StudioCore.TextEditor;
+﻿using StudioCore.Core.Project;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,8 +27,6 @@ public class TextNamingTemplateManager
     public TextNamingTemplateManager(TextEditorScreen screen)
     {
         Screen = screen;
-
-        SetupTemplates();
     }
 
     public FmgEntryGeneratorBase GetGenerator(string name)
@@ -45,37 +44,48 @@ public class TextNamingTemplateManager
 
     public void SetupTemplates()
     {
-        if (!Directory.Exists(ProjectPath))
+        if (Smithbox.ProjectType is not ProjectType.Undefined)
         {
-            Directory.CreateDirectory(ProjectPath);
-        }
-
-        foreach (var file in Directory.EnumerateFiles(RootPath))
-        {
-            var filename = Path.GetFileName(file);
-
-            var rootPath = $"{RootPath}{filename}";
-            var projectPath = $"{ProjectPath}{filename}";
-
-            if (File.Exists(rootPath) && !File.Exists(projectPath))
+            if (!Directory.Exists(ProjectPath))
             {
-                File.Copy(rootPath, projectPath);
+                Directory.CreateDirectory(ProjectPath);
+            }
+
+            foreach (var file in Directory.EnumerateFiles(RootPath))
+            {
+                var filename = Path.GetFileName(file);
+
+                var rootPath = $"{RootPath}{filename}";
+                var projectPath = $"{ProjectPath}{filename}";
+
+                if (File.Exists(rootPath) && !File.Exists(projectPath))
+                {
+                    File.Copy(rootPath, projectPath);
+                }
             }
         }
     }
 
     public void OnProjectChanged()
     {
+        ProjectPath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Naming Templates\\";
+
         GeneratorDictionary = new();
 
-        if (Directory.Exists(ProjectPath))
+        if (Smithbox.ProjectType is not ProjectType.Undefined)
         {
-            foreach (var file in Directory.EnumerateFiles(ProjectPath, "*.json"))
-            {
-                var jsonString = File.ReadAllText(file);
-                var newResource = JsonSerializer.Deserialize(jsonString, FmgEntryGeneratorBaseSerializationContext.Default.FmgEntryGeneratorBase);
+            SetupTemplates();
+            CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template = "";
 
-                GeneratorDictionary.Add(newResource.Name, newResource);
+            if (Directory.Exists(ProjectPath))
+            {
+                foreach (var file in Directory.EnumerateFiles(ProjectPath, "*.json"))
+                {
+                    var jsonString = File.ReadAllText(file);
+                    var newResource = JsonSerializer.Deserialize(jsonString, FmgEntryGeneratorBaseSerializationContext.Default.FmgEntryGeneratorBase);
+
+                    GeneratorDictionary.Add(newResource.Name, newResource);
+                }
             }
         }
     }
