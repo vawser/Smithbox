@@ -18,7 +18,8 @@
                 {
                     "name": "talkParamId",
                     "displayName": "Talk Param ID",
-                    "description": ""
+                    "description": "",
+                    "argLink": "param/TalkParam"
                 },
                 {
                     "name": "unknown",
@@ -585,7 +586,8 @@
                 {
                     "name": "spEffectId",
                     "displayName": "SpEffect ID",
-                    "description": ""
+                    "description": "",
+                    "argLink": "param/SpEffectParam"
                 }
             ]
         },
@@ -599,7 +601,8 @@
                 {
                     "name": "feTextEffectParamId",
                     "displayName": "Text Effect Param ID",
-                    "description": "The ID of a param row from the FeTextEffectParam param."
+                    "description": "The ID of a param row from the FeTextEffectParam param.",
+                    "argLink": "param/FeTextEffectParam"
                 }
             ]
         },
@@ -1216,7 +1219,7 @@
                     "name": "machineId",
                     "displayName": "Machine ID",
                     "description": "Unverified",
-                    "argLink": "StateGroup"
+                    "argLink": "esd/StateGroup"
                 }
             ]
         },
@@ -1231,7 +1234,7 @@
                     "name": "machineId",
                     "displayName": "Machine ID",
                     "description": "Unverified",
-                    "argLink": "StateGroup"
+                    "argLink": "esd/StateGroup"
                 }
             ]
         },
@@ -1346,7 +1349,8 @@
                 {
                     "name": "tutorialParamId",
                     "displayName": "Tutorial Param ID",
-                    "description": ""
+                    "description": "",
+                    "argLink": "param/TutorialParam"
                 }
             ]
         },
@@ -1361,7 +1365,7 @@
                     "name": "machineId",
                     "displayName": "Machine ID",
                     "description": "",
-                    "argLink": "StateGroup"
+                    "argLink": "esd/StateGroup"
                 }
             ]
         },
@@ -1513,7 +1517,8 @@
                 {
                     "name": "feTextEffectParamId",
                     "displayName": "Text Effect Param ID",
-                    "description": ""
+                    "description": "",
+                    "argLink": "param/FeTextEffectParam"
                 },
                 {
                     "name": "value",
@@ -1579,7 +1584,8 @@
                 {
                     "name": "tutorialParamId",
                     "displayName": "Tutorial Param ID",
-                    "description": ""
+                    "description": "",
+                    "argLink": "param/TutorialParam"
                 },
                 {
                     "name": "unknown",
@@ -2236,7 +2242,8 @@
                 {
                     "name": "spEffectId",
                     "displayName": "SpEffect ID",
-                    "description": ""
+                    "description": "",
+                    "argLink": "param/SpEffectParam"
                 }
             ]
         },
@@ -2249,7 +2256,8 @@
                 {
                     "name": "spEffectId",
                     "displayName": "SpEffect ID",
-                    "description": ""
+                    "description": "",
+                    "argLink": "param/SpEffectParam"
                 }
             ]
         },
@@ -2564,7 +2572,8 @@
                 {
                     "name": "arenaParamId",
                     "displayName": "Arena Param ID",
-                    "description": ""
+                    "description": "",
+                    "argLink": "param/ArenaParam"
                 }
             ]
         },

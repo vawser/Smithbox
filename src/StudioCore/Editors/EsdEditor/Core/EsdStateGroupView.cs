@@ -51,6 +51,8 @@ public class EsdStateGroupView
 
         Filters.DisplayStateGroupFilterSearch();
 
+        ImGui.BeginChild("StateGroupSection");
+
         if (script != null)
         {
             foreach (var entry in script.StateGroups)
@@ -94,6 +96,8 @@ public class EsdStateGroupView
                 }
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

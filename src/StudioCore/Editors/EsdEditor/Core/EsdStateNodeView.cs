@@ -51,6 +51,8 @@ public class EsdStateNodeView
 
         Filters.DisplayStateFilterSearch();
 
+        ImGui.BeginChild("StateNodeSection");
+
         if (stateGroups != null)
         {
             foreach (var (key, entry) in stateGroups)
@@ -89,6 +91,8 @@ public class EsdStateNodeView
                 }
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

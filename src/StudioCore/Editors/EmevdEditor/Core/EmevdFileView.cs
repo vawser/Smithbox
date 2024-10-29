@@ -49,7 +49,7 @@ public class EmevdFileView
 
         Filters.DisplayFileFilterSearch();
 
-        ImGui.Separator();
+        ImGui.BeginChild("FileListSection");
 
         foreach (var (info, binder) in EmevdBank.ScriptBank)
         {
@@ -91,6 +91,8 @@ public class EmevdFileView
                 UIHelper.DisplayAlias(aliasName);
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

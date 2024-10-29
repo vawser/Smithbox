@@ -48,7 +48,8 @@ public class EmevdEventView
         ImGui.Begin("Events##EventListView");
 
         Filters.DisplayEventFilterSearch();
-        ImGui.Separator();
+
+        ImGui.BeginChild("EventListSection");
 
         if (Selection.SelectedScript != null)
         {
@@ -100,6 +101,8 @@ public class EmevdEventView
                 }
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

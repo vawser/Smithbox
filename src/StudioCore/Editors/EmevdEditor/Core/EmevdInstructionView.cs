@@ -48,7 +48,8 @@ public class EmevdInstructionView
         ImGui.Begin("Instructions##EventInstructionView");
 
         Filters.DisplayInstructionFilterSearch();
-        ImGui.Separator();
+
+        ImGui.BeginChild("InstructionListSection");
 
         if (Selection.SelectedEvent != null)
         {
@@ -91,6 +92,8 @@ public class EmevdInstructionView
             }
 
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

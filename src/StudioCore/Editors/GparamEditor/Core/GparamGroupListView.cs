@@ -43,18 +43,13 @@ public class GparamGroupListView
     {
         ImGui.Begin("Groups##GparamGroups");
 
-        ImGui.Separator();
-
         Filters.DisplayGroupFilterSearch();
 
-        ImGui.Separator();
+        ImGui.BeginChild("GparamGroupsSection");
 
         if (Selection.IsFileSelected())
         {
             GPARAM data = Selection.GetSelectedGparam();
-
-            ImGui.Text($"Group");
-            ImGui.Separator();
 
             // Available groups
             for (int i = 0; i < data.Params.Count; i++)
@@ -115,6 +110,8 @@ public class GparamGroupListView
                 AddMissingGroupSection();
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

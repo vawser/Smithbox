@@ -53,6 +53,8 @@ public class FlverDataSelectionView
 
             if (Screen.ResManager.GetCurrentFLVER() != null && !SuspendView)
             {
+                ImGui.BeginChild("modelHierarchySection");
+
                 DisplaySection_Header();
                 DisplaySection_Dummies();
                 DisplaySection_Materials();
@@ -64,6 +66,8 @@ public class FlverDataSelectionView
                 DisplaySection_AllSkeletons();
                 DisplaySection_LowCollision();
                 DisplaySection_HighCollision();
+
+                ImGui.EndChild();
             }
         }
 

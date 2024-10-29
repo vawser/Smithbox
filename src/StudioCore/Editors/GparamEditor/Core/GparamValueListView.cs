@@ -46,11 +46,7 @@ public class GparamValueListView
     {
         ImGui.Begin("Values##GparamValues");
 
-        ImGui.Separator();
-
         Filters.DisplayFieldValueFilterSearch();
-
-        ImGui.Separator();
 
         if (Selection.IsGparamFieldSelected())
         {
@@ -138,8 +134,6 @@ public class GparamValueListView
 
             ImGui.EndChild();
         }
-
-        ImGui.End();
     }
 
     /// <summary>

@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using Google.Protobuf.WellKnownTypes;
+using ImGuiNET;
 using Org.BouncyCastle.Utilities;
 using SoulsFormats;
 using StudioCore.Editor;
@@ -11,8 +12,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static SoulsFormats.ESD;
+using static StudioCore.Editors.EsdEditor.EsdLang.AST;
 
 namespace StudioCore.Editors.EsdEditor;
 
@@ -87,6 +90,7 @@ public class EsdStateNodePropertyView
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
+                ImGui.AlignTextToFramePadding();
                 UIHelper.WrappedText("Command");
 
                 ImGui.TableSetColumnIndex(1);
@@ -96,6 +100,11 @@ public class EsdStateNodePropertyView
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
+                ImGui.AlignTextToFramePadding();
+                UIHelper.WrappedText("Parameters");
+
+                ImGui.TableSetColumnIndex(1);
+
                 DisplayerCommandParameterSection(node, commands, cmd);
             }
 
@@ -103,25 +112,30 @@ public class EsdStateNodePropertyView
         }
     }
 
+    /// <summary>
+    /// Command ID
+    /// </summary>
     private void DisplayCommandIdSection(ESD.State node, List<CommandCall> commands, CommandCall cmd)
     {
         var displayIdentifier = $"{cmd.CommandBank} [{cmd.CommandID}]";
 
+        ImGui.AlignTextToFramePadding();
         UIHelper.WrappedText(displayIdentifier);
 
         var cmdMeta = EsdMeta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
         if (cmdMeta != null)
         {
             var displayAlias = cmdMeta.displayName;
+            ImGui.AlignTextToFramePadding();
             UIHelper.DisplayAlias(displayAlias);
         }
-
-        ImGui.SameLine();
 
         // Go to State Group
         if (cmd.CommandBank == 6)
         {
-            if (ImGui.Button("Go To", new Vector2(80 * DPI.GetUIScale(), 18 * DPI.GetUIScale())))
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button("Go To", new Vector2(150 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
             {
                 var targetStateGroup = cmd.CommandID;
                 var groups = Selection._selectedEsdScript.StateGroups;
@@ -138,12 +152,11 @@ public class EsdStateNodePropertyView
         }
     }
 
+    /// <summary>
+    /// Command Parameters
+    /// </summary>
     private void DisplayerCommandParameterSection(ESD.State node, List<CommandCall> commands, CommandCall cmd)
     {
-        UIHelper.WrappedText("Parameters");
-
-        ImGui.TableSetColumnIndex(1);
-
         var cmdArgMeta = EsdMeta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
 
         for(int i = 0; i < cmd.Arguments.Count; i++)
@@ -151,19 +164,66 @@ public class EsdStateNodePropertyView
             var arg = cmd.Arguments[i];
 
             var expr = EzInfixor.BytecodeToInfix(arg);
-            UIHelper.WrappedText($"{expr.AsInt()}");
 
-            EsdMeta_Arg argMeta = null;
-            if (cmdArgMeta.Count > i)
+            // Value expr
+            if(expr is ConstExpr constExpr)
             {
-                argMeta = cmdArgMeta[i];
+                ImGui.AlignTextToFramePadding();
+                UIHelper.WrappedText($"{constExpr}");
 
-                var displayAlias = argMeta.displayName;
-                UIHelper.DisplayAlias(displayAlias);
-
-                if (argMeta.argLink != null && argMeta.argLink == "StateGroup")
+                if (cmdArgMeta.Count > i)
                 {
+                    var argMeta = cmdArgMeta[i];
 
+                    var displayAlias = argMeta.displayName;
+                    ImGui.AlignTextToFramePadding();
+                    UIHelper.DisplayAlias(displayAlias);
+
+                    // Display quick-link button if applicable
+                    DisplayGoToButton(argMeta, constExpr);
+                }
+            }
+        }
+    }
+
+    private void DisplayGoToButton(EsdMeta_Arg argMeta, ConstExpr expr)
+    {
+        if (argMeta.argLink != null)
+        {
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button("Go To", new Vector2(150 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
+            {
+                var linkExpression = argMeta.argLink.Split("/");
+                var source = linkExpression[0];
+                var target = linkExpression[1];
+
+                // ESD
+                if (source == "esd")
+                {
+                    if (target == "StateGroup")
+                    {
+                        var targetStateGroup = expr.AsInt();
+                        var groups = Selection._selectedEsdScript.StateGroups;
+
+                        foreach (var (key, entry) in groups)
+                        {
+                            if (key == targetStateGroup)
+                            {
+                                Selection.ResetStateGroupNode();
+                                Selection.SetStateGroup(key, entry);
+                            }
+                        }
+                    }
+                }
+
+                // PARAM
+                if (source == "param")
+                {
+                    var paramName = target;
+                    var rowID = expr.AsInt();
+
+                    EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{rowID}");
                 }
             }
         }

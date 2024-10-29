@@ -42,11 +42,9 @@ public class GparamFileListView
     {
         ImGui.Begin("Files##GparamFileList");
 
-        ImGui.Separator();
-
         Filters.DisplayFileFilterSearch();
 
-        ImGui.Separator();
+        ImGui.BeginChild("GparamFileSection");
 
         foreach (var (name, info) in GparamParamBank.ParamBank)
         {
@@ -84,6 +82,8 @@ public class GparamFileListView
 
             ContextMenu.FileContextMenu(name, info);
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

@@ -46,8 +46,7 @@ public class EsdFileView
 
         Filters.DisplayFileFilterSearch();
 
-        ImGui.Text($"File");
-        ImGui.Separator();
+        ImGui.BeginChild("FileListSection");
 
         foreach (var (info, binder) in EsdBank.TalkBank)
         {
@@ -89,6 +88,8 @@ public class EsdFileView
                 UIHelper.DisplayAlias(aliasName);
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

@@ -55,6 +55,8 @@ public class EsdScriptView
 
         Filters.DisplayScriptFilterSearch();
 
+        ImGui.BeginChild("ScriptListSection");
+
         if (info != null)
         {
             for (int i = 0; i < info.EsdFiles.Count; i++)
@@ -98,6 +100,8 @@ public class EsdScriptView
                 }
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.End();
     }

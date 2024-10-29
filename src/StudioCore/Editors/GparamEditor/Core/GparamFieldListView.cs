@@ -46,18 +46,13 @@ public class GparamFieldListView
     {
         ImGui.Begin("Fields##GparamFields");
 
-        ImGui.Separator();
-
         Filters.DisplayFieldFilterSearch();
 
-        ImGui.Separator();
+        ImGui.BeginChild("GparamFieldsSection");
 
         if (Selection.IsGparamGroupSelected())
         {
             GPARAM.Param data = Selection.GetSelectedGparamGroup();
-
-            ImGui.Text($"Field");
-            ImGui.Separator();
 
             for (int i = 0; i < data.Fields.Count; i++)
             {
@@ -97,6 +92,7 @@ public class GparamFieldListView
                 DisplayMissingFieldSection();
             }
         }
+        ImGui.EndChild();
 
         ImGui.End();
     }
