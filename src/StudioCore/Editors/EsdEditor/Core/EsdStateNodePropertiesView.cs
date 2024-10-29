@@ -2,6 +2,7 @@
 using Org.BouncyCastle.Utilities;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.EsdEditor.EsdLang;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
@@ -129,6 +130,7 @@ public class EsdStateNodePropertyView
                 {
                     if (key == targetStateGroup)
                     {
+                        Selection.ResetStateGroupNode();
                         Selection.SetStateGroup(key, entry);
                     }
                 }
@@ -142,11 +144,31 @@ public class EsdStateNodePropertyView
 
         ImGui.TableSetColumnIndex(1);
 
-        foreach (var arg in cmd.Arguments)
+        var cmdArgMeta = EsdMeta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
+
+        for(int i = 0; i < cmd.Arguments.Count; i++)
         {
-            UIHelper.WrappedText(BitConverter.ToString(arg));
+            var arg = cmd.Arguments[i];
+
+            var expr = EzInfixor.BytecodeToInfix(arg);
+            UIHelper.WrappedText($"{expr.AsInt()}");
+
+            EsdMeta_Arg argMeta = null;
+            if (cmdArgMeta.Count > i)
+            {
+                argMeta = cmdArgMeta[i];
+
+                var displayAlias = argMeta.displayName;
+                UIHelper.DisplayAlias(displayAlias);
+
+                if (argMeta.argLink != null && argMeta.argLink == "StateGroup")
+                {
+
+                }
+            }
         }
     }
+
 
     public void DisplayConditions(ESD.State node, string imguiId)
     {

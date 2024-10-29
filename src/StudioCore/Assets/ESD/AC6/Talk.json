@@ -18,26 +18,22 @@
                 {
                     "name": "talkParamId",
                     "displayName": "Talk Param ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -99,8 +95,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -130,14 +125,12 @@
                 {
                     "name": "eventFlag",
                     "displayName": "Event Flag ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "eventFlagState",
                     "displayName": "Event Flag State",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -191,32 +184,27 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -238,20 +226,17 @@
                 {
                     "name": "talkListEntrySlot",
                     "displayName": "Slot",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "talkListEntryCondition",
                     "displayName": "Condition",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "talkListEntryEventFlagCheck",
                     "displayName": "Event Flag Check",
-                    "description": "-1 means it is ignored",
-                    "type": 0
+                    "description": "-1 means it is ignored"
                 }
             ]
         },
@@ -273,14 +258,12 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -422,8 +405,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -445,8 +427,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -604,8 +585,7 @@
                 {
                     "name": "spEffectId",
                     "displayName": "SpEffect ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -619,9 +599,7 @@
                 {
                     "name": "feTextEffectParamId",
                     "displayName": "Text Effect Param ID",
-                    "description": "The ID of a param row from the FeTextEffectParam param.",
-                    "type": 0,
-                    "argEnum": null
+                    "description": "The ID of a param row from the FeTextEffectParam param."
                 }
             ]
         },
@@ -707,8 +685,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -770,20 +747,17 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -885,69 +859,58 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "skipHours",
                     "displayName": "Skip Hours",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "skipMinutes",
                     "displayName": "Skip Minutes",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "fadeMode",
                     "displayName": "Fade Mode",
                     "description": "",
-                    "type": 0,
                     "argEnum": "fadeModeEnum"
                 },
                 {
                     "name": "fadeDuration",
                     "displayName": "Fade Duration",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -961,8 +924,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -976,8 +938,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1079,14 +1040,12 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1100,14 +1059,12 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1121,20 +1078,17 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1148,8 +1102,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1163,14 +1116,12 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1184,8 +1135,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1199,8 +1149,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1214,8 +1163,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1229,14 +1177,12 @@
                 {
                     "name": "slot",
                     "displayName": "Slot",
-                    "description": "-1 schedules all instantiations of the event (unverified)",
-                    "type": 0
+                    "description": "-1 schedules all instantiations of the event (unverified)"
                 },
                 {
                     "name": "eventId",
                     "displayName": "Event ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1250,14 +1196,12 @@
                 {
                     "name": "slot",
                     "displayName": "Slot",
-                    "description": "-1 schedules all instantiations of the event (unverified)",
-                    "type": 0
+                    "description": "-1 schedules all instantiations of the event (unverified)"
                 },
                 {
                     "name": "eventId",
                     "displayName": "Event ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1272,7 +1216,7 @@
                     "name": "machineId",
                     "displayName": "Machine ID",
                     "description": "Unverified",
-                    "type": 0
+                    "argLink": "StateGroup"
                 }
             ]
         },
@@ -1287,7 +1231,7 @@
                     "name": "machineId",
                     "displayName": "Machine ID",
                     "description": "Unverified",
-                    "type": 0
+                    "argLink": "StateGroup"
                 }
             ]
         },
@@ -1325,21 +1269,18 @@
                 {
                     "name": "mission",
                     "displayName": "Mission",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "option",
                     "displayName": "Option",
                     "description": "",
-                    "type": 0,
                     "argEnum": "missionOption"
                 },
                 {
                     "name": "value",
                     "displayName": "Value",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1353,8 +1294,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1368,8 +1308,7 @@
                 {
                     "name": "soundId",
                     "displayName": "Sound ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1383,20 +1322,17 @@
                 {
                     "name": "isFailed",
                     "displayName": "Is Failed",
-                    "description": "If true, the missions ends as a failure (not a victory).",
-                    "type": 0
+                    "description": "If true, the missions ends as a failure (not a victory)."
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1410,8 +1346,7 @@
                 {
                     "name": "tutorialParamId",
                     "displayName": "Tutorial Param ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1420,13 +1355,13 @@
             "bank": 1,
             "name": "runMachine",
             "displayName": "Run Machine",
-            "description": "Unverified",
+            "description": "",
             "args": [
                 {
                     "name": "machineId",
                     "displayName": "Machine ID",
-                    "description": "Unverified",
-                    "type": 0
+                    "description": "",
+                    "argLink": "StateGroup"
                 }
             ]
         },
@@ -1448,8 +1383,7 @@
                 {
                     "name": "slot",
                     "displayName": "Slot",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1463,8 +1397,7 @@
                 {
                     "name": "isDisabled",
                     "displayName": "Is Disabled",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1478,8 +1411,7 @@
                 {
                     "name": "eventTextId",
                     "displayName": "Event Text ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1493,8 +1425,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1508,8 +1439,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1523,8 +1453,7 @@
                 {
                     "name": "archiveId",
                     "displayName": "Archive ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1538,20 +1467,17 @@
                 {
                     "name": "entityId",
                     "displayName": "Entity ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "soundId",
                     "displayName": "Sound ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1573,8 +1499,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1588,14 +1513,12 @@
                 {
                     "name": "feTextEffectParamId",
                     "displayName": "Text Effect Param ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "value",
                     "displayName": "Value",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1609,14 +1532,12 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1630,8 +1551,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1645,8 +1565,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1660,14 +1579,12 @@
                 {
                     "name": "tutorialParamId",
                     "displayName": "Tutorial Param ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1681,32 +1598,27 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1728,8 +1640,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1751,20 +1662,17 @@
                 {
                     "name": "category",
                     "displayName": "Category",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "itemId",
                     "displayName": "Item ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "quantity",
                     "displayName": "Quantity",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1794,8 +1702,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1825,8 +1732,7 @@
                 {
                     "name": "unknown",
                     "displayName": "unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -1840,23 +1746,7 @@
                 {
                     "name": "emblemId",
                     "displayName": "Emblem ID",
-                    "description": "",
-                    "type": 0
-                }
-            ]
-        },
-        {
-            "id": -1,
-            "bank": 6,
-            "name": "moveToMachine",
-            "displayName": "Move to Machine",
-            "description": "",
-            "args": [
-                {
-                    "name": "",
-                    "displayName": "",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         }
@@ -2200,32 +2090,27 @@
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2294,8 +2179,7 @@
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2308,8 +2192,7 @@
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2322,8 +2205,7 @@
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2336,14 +2218,12 @@
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2356,8 +2236,7 @@
                 {
                     "name": "spEffectId",
                     "displayName": "SpEffect ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2370,8 +2249,7 @@
                 {
                     "name": "spEffectId",
                     "displayName": "SpEffect ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2489,8 +2367,7 @@
                 {
                     "name": "machineId",
                     "displayName": "Machine ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2503,8 +2380,7 @@
                 {
                     "name": "XXX",
                     "displayName": "XXX",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2517,8 +2393,7 @@
                 {
                     "name": "eventFlagId",
                     "displayName": "Event Flag ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2531,8 +2406,7 @@
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2545,14 +2419,12 @@
                 {
                     "name": "missionId",
                     "displayName": "Mission ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "option",
                     "displayName": "Option",
                     "description": "",
-                    "type": 0,
                     "argEnum": "missionOption"
                 }
             ]
@@ -2566,8 +2438,7 @@
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2580,14 +2451,12 @@
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 },
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2600,8 +2469,7 @@
                 {
                     "name": "unknown",
                     "displayName": "Unknown",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2614,8 +2482,7 @@
                 {
                     "name": "stateInfoId",
                     "displayName": "State Info ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2628,8 +2495,7 @@
                 {
                     "name": "slot",
                     "displayName": "Slot",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },
@@ -2698,8 +2564,7 @@
                 {
                     "name": "arenaParamId",
                     "displayName": "Arena Param ID",
-                    "description": "",
-                    "type": 0
+                    "description": ""
                 }
             ]
         },

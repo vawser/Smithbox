@@ -140,33 +140,6 @@ public static class EsdMeta
 
         return null;
     }
-
-    public static EsdMeta_ArgType GetArgType(long passedBank, long passedId, int argIndex)
-    {
-        var command = TalkEsdBank.commands.Where(e => e.bank == passedBank && e.id == passedId).FirstOrDefault();
-        if (command != null)
-        {
-            if (command.args != null && command.args.Count > 0)
-            {
-                for(int i = 0; i < command.args.Count; i++)
-                {
-                    var arg = command.args[i];
-
-                    if (i == argIndex)
-                    {
-                        try
-                        {
-                            EsdMeta_ArgType argType = (EsdMeta_ArgType)Enum.Parse(typeof(EsdMeta_ArgType), $"{arg.type}");
-                            return argType;
-                        }
-                        catch { }
-                    }
-                }
-            }
-        }
-
-        return EsdMeta_ArgType.invalid;
-    }
 }
 
 [JsonSourceGenerationOptions(
@@ -218,7 +191,7 @@ public class EsdMeta_Arg
     public string name { get; set; }
     public string displayName { get; set; }
     public string description { get; set; }
-    public int type { get; set; }
+    public string argLink { get; set; }
     public string argEnum { get; set; }
 }
 
@@ -236,16 +209,4 @@ public class EsdMeta_EnumMember
     public string identifier { get; set; }
     public string displayName { get; set; }
     public string description { get; set; }
-}
-
-public enum EsdMeta_ArgType
-{
-    [Display(Name = "invalid")] invalid = -1,
-    [Display(Name = "s32")] s32 = 0,
-    [Display(Name = "u32")] u32 = 1,
-    [Display(Name = "f32")] f32 = 2,
-    [Display(Name = "u8")] u8 = 3,
-    [Display(Name = "s8")] s8 = 4,
-    [Display(Name = "u16")] u16 = 5,
-    [Display(Name = "s16")] s16 = 6
 }
