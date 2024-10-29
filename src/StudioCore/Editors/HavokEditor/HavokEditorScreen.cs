@@ -56,6 +56,9 @@ public class HavokEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableHavokEditor)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -93,11 +96,15 @@ public class HavokEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-
+        if (!CFG.Current.EnableHavokEditor)
+            return;
     }
 
     public void EditorUniqueDropdowns()
     {
+        if (!CFG.Current.EnableHavokEditor)
+            return;
+
         //ActionMenubar.Display();
 
         //ImGui.Separator();
@@ -109,6 +116,9 @@ public class HavokEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableHavokEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -310,6 +320,9 @@ public class HavokEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableHavokEditor)
+            return;
+
         HavokFileBank.LoadAllHavokFiles();
 
         ResetActionManager();
@@ -317,6 +330,9 @@ public class HavokEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (!CFG.Current.EnableHavokEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -326,6 +342,9 @@ public class HavokEditorScreen : EditorScreen
 
     public void SaveAll()
     {
+        if (!CFG.Current.EnableHavokEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 

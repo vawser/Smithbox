@@ -73,6 +73,9 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableTimeActEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -160,6 +163,9 @@ public class TimeActEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableTimeActEditor)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -211,6 +217,9 @@ public class TimeActEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
+        if (!CFG.Current.EnableTimeActEditor)
+            return;
+
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("TAE Files"))
@@ -266,6 +275,9 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
+        if (!CFG.Current.EnableTimeActEditor)
+            return;
+
         // ToolMenubar.DisplayMenu();
     }
 
@@ -274,6 +286,9 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableTimeActEditor)
+            return;
+
         Selection.OnProjectChanged();
 
         TimeActBank.IsLoaded = false;
@@ -288,6 +303,9 @@ public class TimeActEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (!CFG.Current.EnableTimeActEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -310,6 +328,9 @@ public class TimeActEditorScreen : EditorScreen
 
     public void SaveAll()
     {
+        if (!CFG.Current.EnableTimeActEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 

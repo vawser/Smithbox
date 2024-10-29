@@ -44,15 +44,29 @@ public class SystemTab
             Smithbox.UpdateSoulsFormatsToggles();
         }
 
-        if (ImGui.CollapsingHeader("Editors", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader("Editors"))
         {
             UIHelper.WrappedText("Determine which editors are enabled. Changes will only take affect after Smithbox is restarted.");
+            ImGui.Checkbox("Enable Map Editor", ref CFG.Current.EnableMapEditor);
+            ImGui.Checkbox("Enable Model Editor", ref CFG.Current.EnableModelEditor);
+            ImGui.Checkbox("Enable Param Editor", ref CFG.Current.EnableParamEditor);
+            ImGui.Checkbox("Enable Text Editor", ref CFG.Current.EnableTextEditor);
+            ImGui.Checkbox("Enable Time Act Editor", ref CFG.Current.EnableTimeActEditor);
+            ImGui.Checkbox("Enable Gparam Editor", ref CFG.Current.EnableGparamEditor);
+            ImGui.Checkbox("Enable Texture Viewer", ref CFG.Current.EnableTextureViewer);
+            ImGui.Checkbox("Enable EMEVD Editor", ref CFG.Current.EnableEmevdEditor);
+            ImGui.Checkbox("Enable ESD Editor", ref CFG.Current.EnableEsdEditor);
 
-            ImGui.Checkbox("Cutscene Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Cutscene);
-            UIHelper.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            // WIP
+            /*
+            ImGui.Checkbox("Enable Cutscene Editor", ref CFG.Current.EnableCutsceneEditor);
+            ImGui.Checkbox("Enable Havok Editor", ref CFG.Current.EnableHavokEditor);
+            ImGui.Checkbox("Enable Material Editor", ref CFG.Current.EnableMaterialEditor);
+            ImGui.Checkbox("Enable Particle Editor", ref CFG.Current.EnableParticleEditor);
+            */
         }
 
-        if (ImGui.CollapsingHeader("Aliases", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader("Aliases"))
         {
             ImGui.Checkbox("Change Base Aliases", ref CFG.Current.AliasBank_EditorMode);
             UIHelper.ShowHoverTooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");

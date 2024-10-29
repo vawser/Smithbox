@@ -129,6 +129,9 @@ public class ParamEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableParamEditor)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -207,6 +210,9 @@ public class ParamEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
+        if (!CFG.Current.EnableParamEditor)
+            return;
+
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Editor"))
@@ -229,6 +235,9 @@ public class ParamEditorScreen : EditorScreen
 
     public void EditorUniqueDropdowns()
     {
+        if (!CFG.Current.EnableParamEditor)
+            return;
+
         ToolSubMenu.DisplayMenu();
 
         ImGui.Separator();
@@ -585,6 +594,9 @@ public class ParamEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableParamEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         if (!_isShortcutPopupOpen && !_isMEditPopupOpen && !_isStatisticPopupOpen && !_isSearchBarActive)
@@ -930,6 +942,9 @@ public class ParamEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableParamEditor)
+            return;
+
         ToolWindow.OnProjectChanged();
         ToolSubMenu.OnProjectChanged();
 
@@ -953,6 +968,9 @@ public class ParamEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (!CFG.Current.EnableParamEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -975,6 +993,9 @@ public class ParamEditorScreen : EditorScreen
 
     public void SaveAll()
     {
+        if (!CFG.Current.EnableParamEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 

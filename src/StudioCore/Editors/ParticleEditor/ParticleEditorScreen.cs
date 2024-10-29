@@ -63,6 +63,9 @@ public class ParticleEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableParticleEditor)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -100,6 +103,9 @@ public class ParticleEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
+        if (!CFG.Current.EnableParticleEditor)
+            return;
+
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Files"))
@@ -139,6 +145,9 @@ public class ParticleEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableParticleEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -167,12 +176,9 @@ public class ParticleEditorScreen : EditorScreen
 
             if (!ParticleBank.IsLoaded)
             {
-                if (!CFG.Current.AutoLoadBank_Particle)
+                if (ImGui.Button("Load Particle Editor"))
                 {
-                    if (ImGui.Button("Load Particle Editor"))
-                    {
-                        ParticleBank.LoadParticles();
-                    }
+                    ParticleBank.LoadParticles();
                 }
             }
 
@@ -392,11 +398,13 @@ public class ParticleEditorScreen : EditorScreen
     //*****************************
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableParticleEditor)
+            return;
+
         // Only support FXR3 for now
-        if(Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
-            if (CFG.Current.AutoLoadBank_Particle)
-                ParticleBank.LoadParticles();
+            ParticleBank.LoadParticles();
         }
 
         ResetActionManager();

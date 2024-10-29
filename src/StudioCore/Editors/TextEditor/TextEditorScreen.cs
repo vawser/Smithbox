@@ -73,6 +73,9 @@ public class TextEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableTextEditor)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -133,6 +136,9 @@ public class TextEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
+        if (!CFG.Current.EnableTextEditor)
+            return;
+
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Files"))
@@ -176,6 +182,9 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
+        if (!CFG.Current.EnableTextEditor)
+            return;
+
         if (ImGui.BeginMenu("Data"))
         {
             FmgImporter.MenubarOptions();
@@ -198,6 +207,9 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableTextEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -277,6 +289,9 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableTextEditor)
+            return;
+
         SetupDifferenceTimer();
 
         if (Smithbox.ProjectType != ProjectType.Undefined)
@@ -300,6 +315,9 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void Save()
     {
+        if (!CFG.Current.EnableTextEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -318,6 +336,9 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void SaveAll()
     {
+        if (!CFG.Current.EnableTextEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 

@@ -115,7 +115,10 @@ public class VulkanGraphicsContext : IGraphicsContext
         mainWindowCommandList.ClearDepthStencil(0.0f);
         mainWindowCommandList.SetFullViewport(0);
 
-        focusedEditor.Draw(_gd, mainWindowCommandList);
+        if (focusedEditor != null)
+        {
+            focusedEditor.Draw(_gd, mainWindowCommandList);
+        }
         Fence fence = Renderer.Frame(mainWindowCommandList, false);
         mainWindowCommandList.SetFullViewport(0);
         mainWindowCommandList.SetFullScissorRects();

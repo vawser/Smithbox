@@ -604,9 +604,12 @@ public class Smithbox
         }
 
         // Global shortcut keys
-        if (!EditorHandler.FocusedEditor.InputCaptured())
+        if (EditorHandler.FocusedEditor != null)
         {
-            EditorHandler.HandleEditorShortcuts();
+            if (!EditorHandler.FocusedEditor.InputCaptured())
+            {
+                EditorHandler.HandleEditorShortcuts();
+            }
         }
 
         ProjectHandler.OnGui();

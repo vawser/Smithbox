@@ -85,12 +85,20 @@ public class CFG
 
     public bool System_EnableRecoveryFolder = true;
 
-    // Resource Banks
-    public bool AutoLoadBank_Cutscene = false;
-    public bool AutoLoadBank_Material = false;
-    public bool AutoLoadBank_Particle = true;
-    public bool AutoLoadBank_EventScript = false;
-    public bool AutoLoadBank_Behavior = false;
+    // Editors
+    public bool EnableMapEditor = true;
+    public bool EnableModelEditor = true;
+    public bool EnableParamEditor = true;
+    public bool EnableTextEditor = true;
+    public bool EnableTimeActEditor = true;
+    public bool EnableGparamEditor = true;
+    public bool EnableTextureViewer = true;
+    public bool EnableEmevdEditor = true;
+    public bool EnableEsdEditor = true;
+    public bool EnableCutsceneEditor = false;
+    public bool EnableHavokEditor = false;
+    public bool EnableMaterialEditor = false;
+    public bool EnableParticleEditor = false;
 
     //****************************
     // Settings: Viewport Grid

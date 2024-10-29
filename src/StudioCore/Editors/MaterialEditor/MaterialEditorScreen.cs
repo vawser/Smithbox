@@ -42,6 +42,9 @@ public class MaterialEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableMaterialEditor)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -79,16 +82,21 @@ public class MaterialEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-
+        if (!CFG.Current.EnableMaterialEditor)
+            return;
     }
 
     public void EditorUniqueDropdowns()
     {
-
+        if (!CFG.Current.EnableMaterialEditor)
+            return;
     }
 
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableMaterialEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -117,12 +125,9 @@ public class MaterialEditorScreen : EditorScreen
 
             if (!MaterialBank.IsLoaded)
             {
-                if (!CFG.Current.AutoLoadBank_Material)
+                if (ImGui.Button("Load Material Editor"))
                 {
-                    if (ImGui.Button("Load Material Editor"))
-                    {
-                        MaterialBank.LoadMaterials();
-                    }
+                    MaterialBank.LoadMaterials();
                 }
             }
 
@@ -183,14 +188,19 @@ public class MaterialEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        if (CFG.Current.AutoLoadBank_Material)
-            MaterialBank.LoadMaterials();
+        if (!CFG.Current.EnableMaterialEditor)
+            return;
+
+        MaterialBank.LoadMaterials();
 
         ResetActionManager();
     }
 
     public void Save()
     {
+        if (!CFG.Current.EnableMaterialEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -200,6 +210,9 @@ public class MaterialEditorScreen : EditorScreen
 
     public void SaveAll()
     {
+        if (!CFG.Current.EnableMaterialEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 

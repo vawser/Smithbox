@@ -171,6 +171,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void Update(float dt)
     {
+        if (!CFG.Current.EnableMapEditor)
+            return;
+
         if (GCNeedsCollection)
         {
             GC.Collect();
@@ -200,6 +203,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableMapEditor)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -584,6 +590,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void ViewDropdown()
     {
+        if (!CFG.Current.EnableMapEditor)
+            return;
 
         // Dropdown: View
         if (ImGui.BeginMenu("View"))
@@ -660,6 +668,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void EditorUniqueDropdowns()
     {
+        if (!CFG.Current.EnableMapEditor)
+            return;
+
         ToolSubMenu.DisplayMenu();
 
         ImGui.Separator();
@@ -897,6 +908,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableMapEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -1425,6 +1439,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
+        if (!CFG.Current.EnableMapEditor)
+            return;
+
         if (Viewport != null)
         {
             Viewport.Draw(device, cl);
@@ -1438,6 +1455,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableMapEditor)
+            return;
+
         _selection.ClearSelection();
         EditorActionManager.Clear();
 
@@ -1458,6 +1478,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void Save()
     {
+        if (!CFG.Current.EnableMapEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -1474,6 +1497,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void SaveAll()
     {
+        if (!CFG.Current.EnableMapEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 

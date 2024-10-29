@@ -63,6 +63,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableTextureViewer)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -100,6 +103,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void ViewDropdown()
     {
+        if (!CFG.Current.EnableTextureViewer)
+            return;
+
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Files"))
@@ -149,6 +155,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void EditorUniqueDropdowns()
     {
+        if (!CFG.Current.EnableTextureViewer)
+            return;
+
         ToolMenubar.Display();
     }
 
@@ -157,6 +166,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableTextureViewer)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -246,6 +258,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableTextureViewer)
+            return;
+
         EditorActionManager.Clear();
 
         FileContainerView.OnProjectChanged();
@@ -262,11 +277,17 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void Save()
     {
+        if (!CFG.Current.EnableTextureViewer)
+            return;
+
         // Nothing
     }
 
     public void SaveAll()
     {
+        if (!CFG.Current.EnableTextureViewer)
+            return;
+
         // Nothing
     }
 

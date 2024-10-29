@@ -95,21 +95,27 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-
+        if (!CFG.Current.EnableCutsceneEditor)
+            return;
     }
 
     public void ViewDropdown()
     {
-
+        if (!CFG.Current.EnableCutsceneEditor)
+            return;
     }
 
     public void EditorUniqueDropdowns()
     {
-
+        if (!CFG.Current.EnableCutsceneEditor)
+            return;
     }
 
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableCutsceneEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -137,12 +143,9 @@ public class CutsceneEditorScreen : EditorScreen
         {
             if (!CutsceneBank.IsLoaded)
             {
-                if (!CFG.Current.AutoLoadBank_Cutscene)
+                if (ImGui.Button("Load Cutscene Editor"))
                 {
-                    if (ImGui.Button("Load Cutscene Editor"))
-                    {
-                        CutsceneBank.LoadCutscenes();
-                    }
+                    CutsceneBank.LoadCutscenes();
                 }
             }
 
@@ -182,6 +185,9 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableCutsceneEditor)
+            return;
+
         CutsceneFileList.OnProjectChanged();
         CutsceneList.OnProjectChanged();
         CutsceneProperties.OnProjectChanged();
@@ -208,14 +214,16 @@ public class CutsceneEditorScreen : EditorScreen
 
         ResourceList.OnProjectChanged();
 
-        if (CFG.Current.AutoLoadBank_Cutscene)
-            CutsceneBank.LoadCutscenes();
+        CutsceneBank.LoadCutscenes();
 
         ResetActionManager();
     }
 
     public void Save()
     {
+        if (!CFG.Current.EnableCutsceneEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -225,6 +233,9 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void SaveAll()
     {
+        if (!CFG.Current.EnableCutsceneEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 

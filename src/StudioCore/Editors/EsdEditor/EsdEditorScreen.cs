@@ -59,6 +59,9 @@ public class EsdEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableEsdEditor)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -96,6 +99,9 @@ public class EsdEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
+        if (!CFG.Current.EnableEsdEditor)
+            return;
+
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Files"))
@@ -145,6 +151,9 @@ public class EsdEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
+        if (!CFG.Current.EnableEsdEditor)
+            return;
+
         ToolMenubar.Display();
     }
 
@@ -153,6 +162,9 @@ public class EsdEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableEsdEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -219,6 +231,9 @@ public class EsdEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableEsdEditor)
+            return;
+
         FileView.OnProjectChanged();
         ScriptView.OnProjectChanged();
         StateGroupView.OnProjectChanged();
@@ -236,6 +251,9 @@ public class EsdEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (!CFG.Current.EnableEsdEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -245,6 +263,9 @@ public class EsdEditorScreen : EditorScreen
 
     public void SaveAll()
     {
+        if (!CFG.Current.EnableEsdEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 

@@ -64,6 +64,9 @@ public class GparamEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
+        if (!CFG.Current.EnableGparamEditor)
+            return;
+
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -114,6 +117,9 @@ public class GparamEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
+        if (!CFG.Current.EnableGparamEditor)
+            return;
+
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Files"))
@@ -157,6 +163,9 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
+        if (!CFG.Current.EnableGparamEditor)
+            return;
+
         ToolMenubar.DisplayMenu();
     }
 
@@ -165,6 +174,9 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
+        if (!CFG.Current.EnableGparamEditor)
+            return;
+
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -238,6 +250,9 @@ public class GparamEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        if (!CFG.Current.EnableGparamEditor)
+            return;
+
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             ToolView.OnProjectChanged();
@@ -251,6 +266,9 @@ public class GparamEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (!CFG.Current.EnableGparamEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -260,6 +278,9 @@ public class GparamEditorScreen : EditorScreen
 
     public void SaveAll()
     {
+        if (!CFG.Current.EnableGparamEditor)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
