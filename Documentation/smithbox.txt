@@ -18,14 +18,16 @@ World Map:
  - ADD: the dungeon icons, add icon radius for the non-open world maps
  - ADD: support for large/medium/small tile overlays
  
-Time Act Editor
- - ADD: TAE Mass Edit tool
- - ADD: handling for event groups (currently copied events simply inherit the existing assignment)
- - ADD: Data export/import for TAE/Animation/Event
- - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
- - ADD: quicklink to TimeAct from param
- - ADD: make the TAE search a multiple-term search: each term is checked, and only if all terms are true then the associated result is included
- - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
+ESD Editor:
+ - ADD: 
+ 
+EMEVD Editor:
+ - DEV: instruction test: find missing instructions / missing or invalid arguments
+ 
+ - ADD: enum selection changes value
+ - ADD: Add ability to insert/delete/order events.
+ - ADD: Add ability to insert/delete/order instructions.
+ - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
  
 Behavior Editor:
  - ADD: behavior HKX editor
@@ -33,6 +35,9 @@ Behavior Editor:
  - ADD: skeleton HKX editor
  - ADD: collision HKX editor
  
+Material Editor
+ - ADD: Implement Material/MATBIN editor
+
 Map Editor: 
  - ADD: .ENTRYFILELIST support
  - ADD: enum support for the DS3 corpse poses
@@ -46,9 +51,6 @@ Map Editor:
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  - FIX: misc texture loads during map load can hang, causing the load window to never disppear. (e.g. Leyndell)
  
-Material Editor
- - ADD: Implement Material/MATBIN editor
-
 Param Editor
  - ADD: DES Meta
  - ADD: DS1 Meta
@@ -61,6 +63,35 @@ Param Editor
  - ADD: ItemGib for ER
  - ADD: option to include project-unique rows in Param Comparison Report
  - FIX: color picker throwing CTD on second param view
+ - FIX: shortcuts don't work with secondary overviews
+
+Model Editor:  
+ - ADD: Add DES Flver support for loading
+ - ADD: FBX Import into loose FLVER
+ - ADD: FBX Export of Loaded Model
+ - ADD: skeleton and skinning support for playing animations
+ - ADD: floating text for dummy poly ref IDs
+ - ADD: floating text for co-ordinate direction (X, Y, Z)
+ - ADD: render bone connections (use patrol route method)
+ - ADD: Add Collision section in hierarchy
+ - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
+ - ADD: GX Item mapping so the byte arrays are more comprehesible
+
+ - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
+ - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
+ - FIX: account for scale when displaying dummies/bones
+ 
+Text Editor:
+ - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
+ 
+Time Act Editor
+ - ADD: TAE Mass Edit tool
+ - ADD: handling for event groups (currently copied events simply inherit the existing assignment)
+ - ADD: Data export/import for TAE/Animation/Event
+ - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
+ - ADD: quicklink to TimeAct from param
+ - ADD: make the TAE search a multiple-term search: each term is checked, and only if all terms are true then the associated result is included
+ - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
  
 Gparam Editor:
  - ADD: GPARAM reloader
@@ -78,32 +109,11 @@ Texture Viewer:
  - ADD: icon inject (adds icon png to dds icon spritesheet)
  - ADD: support for tpfbdt files 
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
-
-Model Editor:  
- - ADD: Add DES Flver support for loading
- - ADD: FBX Import into loose FLVER
- - ADD: FBX Export of Loaded Model
- - ADD: skeleton and skinning support for playing animations
- - ADD: floating text for dummy poly ref IDs
- - ADD: floating text for co-ordinate direction (X, Y, Z)
- - ADD: render bone connections (use patrol route method)
- - ADD: Add Collision section in hierarchy
- - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
- - ADD: GX Item mapping so the byte arrays are more comprehesible
-
- - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
- - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
- - FIX: account for scale when displaying dummies/bones
-
-
-Text Editor:
- - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
- - FIX: issue with exporting modified/unique on container level
- - FIX: crash on multi-select in FMG list
  
 #--------------------------------------
 # Notes
 #--------------------------------------
-# Cur Entity ID
-160
-
+- ADD: global search: allow user to enter regex search term, then collate matches in ALL possible data 
+ - add quick-links if possible
+ - add toggles for data sources
+ - should be new menubar item as it is independant of any editor (after debugging)

@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Org.BouncyCastle.Utilities;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
@@ -85,39 +86,68 @@ public class EsdStateNodePropertyView
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                // Title
                 UIHelper.WrappedText("Command");
 
                 ImGui.TableSetColumnIndex(1);
 
-                var displayIdentifier = $"{cmd.CommandBank} [{cmd.CommandID}]";
+                DisplayCommandIdSection(node, commands, cmd);
 
-                UIHelper.WrappedText(displayIdentifier);
-
-                // Contents
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                // Title
-                UIHelper.WrappedText("Parameters");
-
-                ImGui.TableSetColumnIndex(1);
-
-                var byteStr = "";
-                foreach(var arg in cmd.Arguments)
-                {
-                    foreach (var entry in arg)
-                    {
-                        byteStr = $"{byteStr} {entry}";
-                    }
-                    byteStr = $" : ";
-                }
-                UIHelper.WrappedText(byteStr);
+                DisplayerCommandParameterSection(node, commands, cmd);
             }
 
             ImGui.EndTable();
         }
     }
+
+    private void DisplayCommandIdSection(ESD.State node, List<CommandCall> commands, CommandCall cmd)
+    {
+        var displayIdentifier = $"{cmd.CommandBank} [{cmd.CommandID}]";
+
+        UIHelper.WrappedText(displayIdentifier);
+
+        var cmdMeta = EsdMeta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
+        if (cmdMeta != null)
+        {
+            var displayAlias = cmdMeta.displayName;
+            UIHelper.DisplayAlias(displayAlias);
+        }
+
+        ImGui.SameLine();
+
+        // Go to State Group
+        if (cmd.CommandBank == 6)
+        {
+            if (ImGui.Button("Go To", new Vector2(80 * DPI.GetUIScale(), 18 * DPI.GetUIScale())))
+            {
+                var targetStateGroup = cmd.CommandID;
+                var groups = Selection._selectedEsdScript.StateGroups;
+
+                foreach(var (key, entry) in groups)
+                {
+                    if (key == targetStateGroup)
+                    {
+                        Selection.SetStateGroup(key, entry);
+                    }
+                }
+            }
+        }
+    }
+
+    private void DisplayerCommandParameterSection(ESD.State node, List<CommandCall> commands, CommandCall cmd)
+    {
+        UIHelper.WrappedText("Parameters");
+
+        ImGui.TableSetColumnIndex(1);
+
+        foreach (var arg in cmd.Arguments)
+        {
+            UIHelper.WrappedText(BitConverter.ToString(arg));
+        }
+    }
+
     public void DisplayConditions(ESD.State node, string imguiId)
     {
 

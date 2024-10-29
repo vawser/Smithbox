@@ -50,8 +50,6 @@ public class EsdEditorScreen : EditorScreen
         StateGroupView = new EsdStateGroupView(this);
         StateNodeView = new EsdStateNodeView(this);
         StateNodePropertyView = new EsdStateNodePropertyView(this);
-
-        EsdMeta.SetupMeta();
     }
 
     public string EditorName => "ESD Editor##TalkScriptEditor";
@@ -143,6 +141,7 @@ public class EsdEditorScreen : EditorScreen
             if (!EsdBank.IsLoaded)
             {
                 EsdBank.LoadEsdScripts();
+                EsdMeta.SetupMeta();
             }
 
             if (EsdBank.IsLoaded)
@@ -170,6 +169,7 @@ public class EsdEditorScreen : EditorScreen
         ToolMenubar.OnProjectChanged();
 
         EsdBank.LoadEsdScripts();
+        EsdMeta.SetupMeta();
 
         ResetActionManager();
     }

@@ -1,3 +1,5 @@
+Only ranges 2000, 3000, and 5000 are valid for map-relative event flags
+
 1000 	Unban flag at game start 	ゲーム開始時解禁フラグ
 1000 	Unban flag at game start 	ゲーム開始時解禁フラグ
 2000 	System reservation_participating in session 	システム予約_セッション参加中

@@ -18,55 +18,50 @@ namespace StudioCore.Editors.EsdEditor;
 /// </summary>
 public static class EsdMeta
 {
-    private static EsdMetaData TalkEsdBank;
+    private static EsdMeta_Root TalkEsdBank;
 
     public static void SetupMeta()
     {
-        var metaDir = $"{Smithbox.SmithboxDataRoot}\\ESD\\{MiscLocator.GetGameIDForDir()}";
+        TalkEsdBank = new EsdMeta_Root();
+        TalkEsdBank.commands = new List<EsdMeta_Command>();
+        TalkEsdBank.functions = new List<EsdMeta_Function>();
+        TalkEsdBank.enums = new List<EsdMeta_Enum>();
+
+        var metaDir = $"{AppContext.BaseDirectory}\\Assets\\ESD\\{MiscLocator.GetGameIDForDir()}";
 
         // Only supporting Talk ESD currently
         var resourcePath = $"{metaDir}\\Talk.json";
 
         if (File.Exists(resourcePath))
         {
-            string jsonString = JsonSerializer.Serialize(TalkEsdBank, typeof(AliasResource), AliasResourceSerializationContext.Default);
-
-            try
+            using (var stream = File.OpenRead(resourcePath))
             {
-                var fs = new FileStream(resourcePath, System.IO.FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(jsonString);
-                fs.Write(data, 0, data.Length);
-                fs.Flush();
-                fs.Dispose();
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"{ex}");
+                TalkEsdBank = JsonSerializer.Deserialize(stream, EsdMetaDataSerializationContext.Default.EsdMeta_Root);
             }
         }
     }
 
-    public static List<EsdCommandMetaData> GetAllCommandMeta()
+    public static List<EsdMeta_Command> GetAllCommandMeta()
     {
         return TalkEsdBank.commands;
     }
 
-    public static EsdCommandMetaData GetCommandMeta(long passedBank, long passedId)
+    public static EsdMeta_Command GetCommandMeta(long passedBank, long passedId)
     {
         return TalkEsdBank.commands.Where(e => e.bank == passedBank && e.id == passedId).FirstOrDefault();
     }
 
-    public static List<EsdFunctionMetaData> GetAllFunctionMeta()
+    public static List<EsdMeta_Function> GetAllFunctionMeta()
     {
         return TalkEsdBank.functions;
     }
 
-    public static EsdFunctionMetaData GetFunctionMeta(long passedId)
+    public static EsdMeta_Function GetFunctionMeta(long passedId)
     {
         return TalkEsdBank.functions.Where(e => e.id == passedId).FirstOrDefault();
     }
 
-    public static List<EsdArgMetaData> GetCommandArgMeta(long passedBank, long passedId)
+    public static List<EsdMeta_Arg> GetCommandArgMeta(long passedBank, long passedId)
     {
         if(HasCommandArgMeta(passedBank, passedId))
         {
@@ -75,7 +70,7 @@ public static class EsdMeta
         }
         else
         {
-            return new List<EsdArgMetaData>();
+            return new List<EsdMeta_Arg>();
         }
     }
 
@@ -93,7 +88,7 @@ public static class EsdMeta
         return false;
     }
 
-    public static List<EsdArgMetaData> GetFunctionArgMeta(long passedId)
+    public static List<EsdMeta_Arg> GetFunctionArgMeta(long passedId)
     {
         if (HasFunctionArgMeta(passedId))
         {
@@ -102,7 +97,7 @@ public static class EsdMeta
         }
         else
         {
-            return new List<EsdArgMetaData>();
+            return new List<EsdMeta_Arg>();
         }
     }
 
@@ -119,6 +114,59 @@ public static class EsdMeta
 
         return false;
     }
+    public static EsdMeta_Enum GetArgEnum(long passedBank, long passedId, int argIndex, string argEnumName)
+    {
+        var command = TalkEsdBank.commands.Where(e => e.bank == passedBank && e.id == passedId).FirstOrDefault();
+        if (command != null)
+        {
+            if (command.args != null && command.args.Count > 0)
+            {
+                for (int i = 0; i < command.args.Count; i++)
+                {
+                    var arg = command.args[i];
+                    if (i == argIndex)
+                    {
+                        var argEnumStr = arg.argEnum;
+
+                        var argEnum = TalkEsdBank.enums.Where(e => e.referenceName == argEnumName).FirstOrDefault();
+                        if (argEnum != null)
+                        {
+                            return argEnum;
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public static EsdMeta_ArgType GetArgType(long passedBank, long passedId, int argIndex)
+    {
+        var command = TalkEsdBank.commands.Where(e => e.bank == passedBank && e.id == passedId).FirstOrDefault();
+        if (command != null)
+        {
+            if (command.args != null && command.args.Count > 0)
+            {
+                for(int i = 0; i < command.args.Count; i++)
+                {
+                    var arg = command.args[i];
+
+                    if (i == argIndex)
+                    {
+                        try
+                        {
+                            EsdMeta_ArgType argType = (EsdMeta_ArgType)Enum.Parse(typeof(EsdMeta_ArgType), $"{arg.type}");
+                            return argType;
+                        }
+                        catch { }
+                    }
+                }
+            }
+        }
+
+        return EsdMeta_ArgType.invalid;
+    }
 }
 
 [JsonSourceGenerationOptions(
@@ -127,25 +175,24 @@ public static class EsdMeta
     IncludeFields = true,
     ReadCommentHandling = JsonCommentHandling.Skip)
 ]
-[JsonSerializable(typeof(EsdMetaData))]
-[JsonSerializable(typeof(EsdCommandMetaData))]
-[JsonSerializable(typeof(EsdFunctionMetaData))]
-[JsonSerializable(typeof(EsdArgMetaData))]
-[JsonSerializable(typeof(EsdEnumMetaData))]
-[JsonSerializable(typeof(EsdEnumMemberMetaData))]
-[JsonSerializable(typeof(EsdArgType))]
+[JsonSerializable(typeof(EsdMeta_Root))]
+[JsonSerializable(typeof(EsdMeta_Command))]
+[JsonSerializable(typeof(EsdMeta_Function))]
+[JsonSerializable(typeof(EsdMeta_Arg))]
+[JsonSerializable(typeof(EsdMeta_Enum))]
+[JsonSerializable(typeof(EsdMeta_EnumMember))]
 public partial class EsdMetaDataSerializationContext
     : JsonSerializerContext
 { }
 
-public class EsdMetaData
+public class EsdMeta_Root
 {
-    public List<EsdCommandMetaData> commands { get; set; }
-    public List<EsdFunctionMetaData> functions { get; set; }
-    public List<EsdEnumMetaData> enums { get; set; }
+    public List<EsdMeta_Command> commands { get; set; }
+    public List<EsdMeta_Function> functions { get; set; }
+    public List<EsdMeta_Enum> enums { get; set; }
 }
 
-public class EsdCommandMetaData
+public class EsdMeta_Command
 {
     public long id { get; set; }
     public long bank { get; set; }
@@ -153,47 +200,47 @@ public class EsdCommandMetaData
     public string displayName { get; set; }
     public string description { get; set; }
 
-    public List<EsdArgMetaData> args { get; set; }
+    public List<EsdMeta_Arg> args { get; set; }
 }
 
-public class EsdFunctionMetaData
+public class EsdMeta_Function
 {
     public long id { get; set; }
     public string name { get; set; }
     public string displayName { get; set; }
     public string description { get; set; }
 
-    public List<EsdArgMetaData> args { get; set; }
+    public List<EsdMeta_Arg> args { get; set; }
 }
 
-public class EsdEnumMetaData
+public class EsdMeta_Arg
+{
+    public string name { get; set; }
+    public string displayName { get; set; }
+    public string description { get; set; }
+    public int type { get; set; }
+    public string argEnum { get; set; }
+}
+
+public class EsdMeta_Enum
 {
     public string referenceName { get; set; }
     public string displayName { get; set; }
     public string description { get; set; }
 
-    public List<EsdEnumMemberMetaData> members { get; set; }
+    public List<EsdMeta_EnumMember> members { get; set; }
 }
 
-public class EsdEnumMemberMetaData
+public class EsdMeta_EnumMember
 {
     public string identifier { get; set; }
     public string displayName { get; set; }
     public string description { get; set; }
 }
 
-public class EsdArgMetaData
+public enum EsdMeta_ArgType
 {
-    public string name { get; set; }
-    public string displayName { get; set; }
-    public string description { get; set; }
-    public EsdArgType type { get; set; }
-
-    public EsdEnumMetaData argEnum { get; set; }
-}
-
-public enum EsdArgType
-{
+    [Display(Name = "invalid")] invalid = -1,
     [Display(Name = "s32")] s32 = 0,
     [Display(Name = "u32")] u32 = 1,
     [Display(Name = "f32")] f32 = 2,
