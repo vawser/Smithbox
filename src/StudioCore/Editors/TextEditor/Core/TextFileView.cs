@@ -37,6 +37,8 @@ public class TextFileView
     {
         if (ImGui.Begin("Files##FmgContainerFileList"))
         {
+            Selection.SwitchWindowContext(TextSelectionContext.File);
+
             if (TextBank.PrimaryBankLoaded)
             {
                 Filters.DisplayFileFilterSearch();
@@ -44,6 +46,7 @@ public class TextFileView
                 int index = 0;
 
                 ImGui.BeginChild("CategoryList");
+                Selection.SwitchWindowContext(TextSelectionContext.File);
 
                 // Categories
                 foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))

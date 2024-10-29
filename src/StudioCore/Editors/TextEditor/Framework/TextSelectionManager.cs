@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SoulsFormats;
 using HKLib.hk2018.hkaiCollisionAvoidance;
+using ImGuiNET;
+using StudioCore.Utilities;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -36,7 +38,7 @@ public class TextSelectionManager
 
     private KeyBind MultiSelectKey = KeyBindings.Current.TEXT_Multiselect;
 
-    public TextSelectionContext CurrentSelectionContext;
+    public TextSelectionContext CurrentWindowContext;
 
     public TextSelectionManager(TextEditorScreen screen)
     {
@@ -72,8 +74,6 @@ public class TextSelectionManager
     /// </summary>>
     public void SelectFileContainer(TextContainerWrapper info, int index)
     {
-        CurrentSelectionContext = TextSelectionContext.File;
-
         SelectedContainerKey = index;
         SelectedContainerWrapper = info;
 
@@ -92,9 +92,6 @@ public class TextSelectionManager
     /// </summary>
     public void SelectFmg(TextFmgWrapper fmgInfo, bool changeContext = true)
     {
-        if(changeContext)
-            CurrentSelectionContext = TextSelectionContext.Fmg;
-
         SelectedFmgWrapper = fmgInfo;
         SelectedFmgKey = fmgInfo.ID;
 
@@ -122,7 +119,7 @@ public class TextSelectionManager
 
             if (Screen.Filters.IsFmgFilterMatch(fmgName, displayName, id))
             {
-                SelectFmg(fmgInfo, false);
+                SelectFmg(fmgInfo);
                 break;
             }
         }
@@ -131,12 +128,9 @@ public class TextSelectionManager
     /// <summary>
     /// Set current FMG Entry selection
     /// </summary>
-    public void SelectFmgEntry(int index, FMG.Entry entry, bool changeContext = true)
+    public void SelectFmgEntry(int index, FMG.Entry entry)
     {
-        if(changeContext)
-            CurrentSelectionContext = TextSelectionContext.FmgEntry;
-
-        if (CurrentSelectionContext == TextSelectionContext.FmgEntry)
+        if (CurrentWindowContext == TextSelectionContext.FmgEntry)
         {
             FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
         }
@@ -156,7 +150,7 @@ public class TextSelectionManager
 
             if (Screen.Filters.IsFmgEntryFilterMatch(entry))
             {
-                SelectFmgEntry(i, entry, false);
+                SelectFmgEntry(i, entry);
                 break;
             }
         }
@@ -173,5 +167,18 @@ public class TextSelectionManager
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Switches the focus context to the passed value.
+    /// Use this on all windows (e.g. both Begin and BeginChild)
+    /// </summary>
+    public void SwitchWindowContext(TextSelectionContext newContext)
+    {
+        if (ImGui.IsWindowHovered())
+        {
+            CurrentWindowContext = newContext;
+            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
+        }
     }
 }

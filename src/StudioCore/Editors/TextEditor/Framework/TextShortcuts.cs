@@ -81,7 +81,7 @@ public class TextShortcuts
     public void HandleSelectAll()
     {
         var editor = Smithbox.EditorHandler.TextEditor;
-        var selectionContext = Selection.CurrentSelectionContext;
+        var selectionContext = Selection.CurrentWindowContext;
         var multiselect = Selection.FmgEntryMultiselect;
         var fmg = Selection.SelectedFmgWrapper.File;
 
@@ -109,7 +109,7 @@ public class TextShortcuts
     /// </summary>
     public void HandleCopyEntryText()
     {
-        var selectionContext = Selection.CurrentSelectionContext;
+        var selectionContext = Selection.CurrentWindowContext;
 
         // Copy Entry Contents
         if (selectionContext is TextSelectionContext.FmgEntry)

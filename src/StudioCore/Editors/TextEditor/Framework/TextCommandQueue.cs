@@ -45,7 +45,7 @@ public class TextCommandQueue
                                 if(fmg.Name == fmgName)
                                 {
                                     Screen.Selection.FocusFmgSelection = true;
-                                    Screen.Selection.SelectFmg(fmg, false);
+                                    Screen.Selection.SelectFmg(fmg);
 
                                     var entryIndex = 0;
 
@@ -54,7 +54,7 @@ public class TextCommandQueue
                                         if($"{entry.ID}" == fmgEntryId)
                                         {
                                             Screen.Selection.FocusFmgEntrySelection = true;
-                                            Screen.Selection.SelectFmgEntry(entryIndex, entry, false);
+                                            Screen.Selection.SelectFmgEntry(entryIndex, entry);
                                         }
 
                                         entryIndex++;
