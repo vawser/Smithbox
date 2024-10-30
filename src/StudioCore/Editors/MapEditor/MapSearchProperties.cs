@@ -2,6 +2,7 @@
 using SoulsFormats;
 using SoulsFormats.Util;
 using StudioCore.Editor;
+using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Utilities;
@@ -192,7 +193,7 @@ public class MapSearchProperties
                                     continue;
                                 }
 
-                                if (PropertyType.IsArray)
+                                if (PropertyType.IsArray && value.GetType().IsArray)
                                 {
                                     // Property is an array, scan through each index for value matches.
                                     foreach (var p in (Array)value)
