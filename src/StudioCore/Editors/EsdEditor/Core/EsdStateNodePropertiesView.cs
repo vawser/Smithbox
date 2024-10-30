@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
 using Org.BouncyCastle.Utilities;
+using Silk.NET.SDL;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.EsdEditor.Enums;
@@ -69,7 +70,7 @@ public class EsdStateNodePropertyView
 
             ImGui.Separator();
 
-            DisplayConditions(stateNode, "conditions");
+            DisplayConditions(stateNode, stateNode.Conditions, "conditions", "Conditions");
 
             ImGui.Separator();
         }
@@ -262,8 +263,215 @@ public class EsdStateNodePropertyView
         }
     }
 
-    public void DisplayConditions(ESD.State node, string imguiId)
+    public void DisplayConditions(ESD.State node, List<Condition> conditions, string imguiId, string displayTitle)
     {
+        ImGui.Separator();
+        UIHelper.WrappedText(displayTitle);
+        ImGui.Separator();
 
+        if (ImGui.BeginTable($"esdConditionTable_{imguiId}", 4, ImGuiTableFlags.SizingFixedFit))
+        {
+            ImGui.TableSetupColumn("Column1", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Column2", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Column3", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Column4", ImGuiTableColumnFlags.WidthStretch);
+
+            for (int i = 0; i < conditions.Count; i++)
+            {
+                var cond = conditions[i];
+
+                DisplayCondition(node, conditions, cond, $"{imguiId}{i}");
+            }
+
+            ImGui.EndTable();
+        }
+    }
+
+    private void DisplayCondition(ESD.State node, List<Condition> conditions, Condition cond, string imguiId)
+    {
+        ImGui.TableNextRow();
+
+        DisplayCondition_TargetState(node, conditions, cond, imguiId);
+
+        ImGui.TableNextRow();
+
+        DisplayCondition_Evaluator(node, conditions, cond, imguiId);
+
+        ImGui.TableNextRow();
+
+        DisplayCondition_PassCommands(node, conditions, cond, imguiId);
+
+        ImGui.TableNextRow();
+
+        DisplayCondition_Subconditions(node, conditions, cond, imguiId);
+    }
+
+    private void DisplayCondition_TargetState(ESD.State node, List<Condition> conditions, Condition cond, string imguiId)
+    {
+        ImGui.TableSetColumnIndex(0);
+
+        ImGui.AlignTextToFramePadding();
+        UIHelper.WrappedText("Target State");
+
+        ImGui.TableSetColumnIndex(1);
+
+        ImGui.Text($"{cond.TargetState}");
+    }
+
+    private void DisplayCondition_Evaluator(ESD.State node, List<Condition> conditions, Condition cond, string imguiId)
+    {
+        ImGui.TableSetColumnIndex(0);
+
+        ImGui.AlignTextToFramePadding();
+        UIHelper.WrappedText("Evaluator");
+
+        ImGui.TableSetColumnIndex(1);
+
+        var expr = EzInfixor.BytecodeToInfix(cond.Evaluator);
+
+        //ImGui.Text($"{expr.GetType()}");
+
+        // Value expr
+        if (expr is ConstExpr constExpr)
+        {
+            ImGui.AlignTextToFramePadding();
+            UIHelper.WrappedText($"{constExpr}");
+
+            ImGui.TableSetColumnIndex(2);
+
+            // Display quick-link button if applicable
+
+            ImGui.TableSetColumnIndex(3);
+
+            // Display alias
+        }
+
+        // Binary expr
+        if (expr is BinaryExpr binaryExpr)
+        {
+            ImGui.AlignTextToFramePadding();
+            UIHelper.WrappedText($"{binaryExpr}");
+
+            ImGui.TableSetColumnIndex(2);
+
+            // Display quick-link button if applicable
+
+            ImGui.TableSetColumnIndex(3);
+
+            // Display alias
+        }
+    }
+    private void DisplayCondition_PassCommands(ESD.State node, List<Condition> conditions, Condition cond, string imguiId)
+    {
+        ImGui.TableSetColumnIndex(0);
+
+        ImGui.AlignTextToFramePadding();
+        UIHelper.WrappedText("Pass Commands");
+
+        ImGui.TableSetColumnIndex(1);
+
+        foreach (var passCmd in cond.PassCommands)
+        {
+            var displayIdentifier = $"{passCmd.CommandBank} [{passCmd.CommandID}]";
+
+            ImGui.AlignTextToFramePadding();
+            UIHelper.WrappedText(displayIdentifier);
+
+            ImGui.TableSetColumnIndex(2);
+
+            // Go to State Group
+            if (passCmd.CommandBank == 6)
+            {
+                ImGui.AlignTextToFramePadding();
+                if (ImGui.ArrowButton($"idJumpLinkButton{imguiId}", ImGuiDir.Right))
+                {
+                    var targetStateGroup = passCmd.CommandID;
+                    var groups = Selection._selectedEsdScript.StateGroups;
+
+                    foreach (var (key, entry) in groups)
+                    {
+                        if (key == targetStateGroup)
+                        {
+                            Selection.ResetStateGroupNode();
+                            Selection.SetStateGroup(key, entry);
+                        }
+                    }
+                }
+                UIHelper.ShowHoverTooltip("View this state group.");
+            }
+
+            ImGui.TableSetColumnIndex(3);
+
+            // Alias
+            var cmdMeta = EsdMeta.GetCommandMeta(passCmd.CommandBank, passCmd.CommandID);
+            if (cmdMeta != null)
+            {
+                var displayAlias = cmdMeta.displayName;
+                ImGui.AlignTextToFramePadding();
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, displayAlias);
+            }
+
+            ImGui.TableNextRow();
+
+            var cmdArgMeta = EsdMeta.GetCommandArgMeta(passCmd.CommandBank, passCmd.CommandID);
+
+            for (int i = 0; i < passCmd.Arguments.Count; i++)
+            {
+                var arg = passCmd.Arguments[i];
+
+                var expr = EzInfixor.BytecodeToInfix(arg);
+
+                ImGui.TableSetColumnIndex(1);
+
+                // Value expr
+                if (expr is ConstExpr constExpr)
+                {
+                    ImGui.AlignTextToFramePadding();
+                    UIHelper.WrappedText($"{constExpr}");
+
+                    ImGui.TableSetColumnIndex(2);
+
+                    // Display quick-link button if applicable
+                    if (cmdArgMeta.Count > i)
+                    {
+                        var argMeta = cmdArgMeta[i];
+
+                        DisplayGoToButton(argMeta, constExpr, $"{imguiId}{i}");
+                    }
+
+                    ImGui.TableSetColumnIndex(3);
+
+                    // Display alias
+                    if (cmdArgMeta.Count > i)
+                    {
+                        var argMeta = cmdArgMeta[i];
+
+                        var displayAlias = argMeta.displayName;
+                        ImGui.AlignTextToFramePadding();
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, displayAlias);
+                    }
+                }
+
+                ImGui.TableNextRow();
+            }
+        }
+    }
+    private void DisplayCondition_Subconditions(ESD.State node, List<Condition> conditions, Condition cond, string imguiId)
+    {
+        ImGui.TableSetColumnIndex(0);
+
+        ImGui.AlignTextToFramePadding();
+        UIHelper.WrappedText("Subconditions");
+
+        ImGui.TableSetColumnIndex(1);
+
+        for (int i = 0; i < cond.Subconditions.Count; i++)
+        {
+            var subCond = conditions[i];
+
+            ImGui.Text($"Sub Condition {i}");
+                
+            //DisplayCondition(node, conditions, subCond, $"{imguiId}{i}");
+        }
     }
 }

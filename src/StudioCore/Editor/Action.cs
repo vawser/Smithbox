@@ -155,9 +155,10 @@ public class AddParamsAction : EditorAction
     private readonly List<int> RemovedIndex = new();
     private readonly bool replParams;
     private string ParamString;
+    private int DuplicateOffset;
 
     public AddParamsAction(Param param, string pstring, List<Param.Row> rows, bool appendOnly, bool replaceParams,
-        int index = -1)
+        int index = -1, int duplicateOffset = 1)
     {
         Param = param;
         Clonables.AddRange(rows);
@@ -165,6 +166,7 @@ public class AddParamsAction : EditorAction
         appOnly = appendOnly;
         replParams = replaceParams;
         InsertIndex = index;
+        DuplicateOffset = duplicateOffset;
     }
 
     public override ActionEvent Execute()
@@ -191,14 +193,14 @@ public class AddParamsAction : EditorAction
                     else
                     {
                         newrow.Name = row.Name != null ? row.Name + "_1" : "";
-                        var newID = row.ID + 1;
+                        var newID = row.ID + DuplicateOffset;
                         while (Param[newID] != null)
                         {
-                            newID++;
+                            newID += DuplicateOffset;
                         }
 
                         newrow.ID = newID;
-                        Param.InsertRow(Param.IndexOfRow(Param[newID - 1]) + 1, newrow);
+                        Param.InsertRow(Param.IndexOfRow(Param[newID - DuplicateOffset]) + 1, newrow);
                     }
                 }
 

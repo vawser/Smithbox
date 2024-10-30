@@ -1755,6 +1755,34 @@
                     "description": ""
                 }
             ]
+        },
+        {
+            "id": -1,
+            "bank": 6,
+            "name": "goToStateGroup",
+            "displayName": "Go to State Group",
+            "description": "",
+            "args": [
+                {
+                    "name": "stateGroupId",
+                    "displayName": "State Group ID",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": -1,
+            "bank": 7,
+            "name": "exitStateGroup",
+            "displayName": "Exit State Group",
+            "description": "",
+            "args": [
+                {
+                    "name": "returnState",
+                    "displayName": "Return State",
+                    "description": ""
+                }
+            ]
         }
     ],
     "functions": [

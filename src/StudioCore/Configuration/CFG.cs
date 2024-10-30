@@ -382,6 +382,7 @@ public class CFG
     public float Param_FieldContextMenu_ImagePreviewScale = 1.0f;
 
     public int Param_Toolbar_Duplicate_Amount = 1;
+    public int Param_Toolbar_Duplicate_Offset = 1;
 
     public bool Param_Toolbar_FindValueInstances_InitialMatchOnly = false;
 

@@ -72,7 +72,7 @@ public class ActionHandler
 
         for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
         {
-            actions.Add(new AddParamsAction(param, "legacystring", rowsToInsert, false, false));
+            actions.Add(new AddParamsAction(param, "legacystring", rowsToInsert, false, false, -1, CFG.Current.Param_Toolbar_Duplicate_Offset));
         }
 
         var compoundAction = new CompoundAction(actions);

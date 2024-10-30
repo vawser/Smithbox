@@ -87,6 +87,13 @@ public class ToolWindow
                     UIHelper.ShowHoverTooltip("The number of times the current selection will be duplicated.");
                     UIHelper.WrappedText("");
 
+                    UIHelper.WrappedText("Duplicate Offset:");
+
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    ImGui.InputInt("##Offset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
+                    UIHelper.ShowHoverTooltip("The ID offset to apply when duplicating.");
+                    UIHelper.WrappedText("");
+
                     if (ImGui.Button("Duplicate##duplicateRow", defaultButtonSize))
                     {
                         Handler.DuplicateHandler();

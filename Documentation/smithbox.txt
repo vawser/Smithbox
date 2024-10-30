@@ -5,3 +5,4 @@
 - Add EMEVD event parameter handling
 - Add ability to view ESD conditions (and adjust interface if they need to be aligned with commands in someway)
 - Add ability to edit ESD command parameters
+
