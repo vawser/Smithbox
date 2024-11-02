@@ -35,7 +35,7 @@
     <Field Def="s32 textId"></Field>
     <Field Def="s32 invalidFlag"></Field>
     <Field Def="s32 grayoutFlag"></Field>
-    <Field Def="s32 overrideActionButtonIdForRide"></Field>
+    <Field Def="s32 Unk0x40"></Field>
     <Field Def="f32 execInvalidTime"></Field>
     <Field Def="u8 useExecCircle"></Field>
     <Field Def="u8 Unk0x49"></Field>
@@ -43,11 +43,11 @@
     <Field Def="f32 UnkFloat0x4C"></Field>
     <Field Def="s32 actionButtonIconId"></Field>
     <Field Def="f32 UnkFloat0x54"></Field>
-    <Field Def="f32 UnkFloat0x58"></Field>
+    <Field Def="f32 interactionAngle"></Field>
     <Field Def="f32 UnkFloat0x5C"></Field>
-    <Field Def="f32 UnkFloat0x60"></Field>
-    <Field Def="f32 UnkFloat0x64"></Field>
-    <Field Def="f32 UnkFloat0x68"></Field>
+    <Field Def="f32 leftRightOffset"></Field>
+    <Field Def="f32 verticalOffset"></Field>
+    <Field Def="f32 frontBackOffset"></Field>
     <Field Def="s32 Unk0x6C"></Field>
   </Fields>
 </PARAMDEF>

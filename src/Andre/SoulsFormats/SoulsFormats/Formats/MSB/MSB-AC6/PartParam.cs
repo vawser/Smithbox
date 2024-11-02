@@ -1579,8 +1579,8 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown. Appears to be a secondary Entity ID?
                 /// </summary>
-                [IgnoreProperty]
-                public int Enemy_Unk40 { get; set; }
+                [EnemyProperty]
+                public int Enemy_LinkedEntityID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1843,7 +1843,7 @@ namespace SoulsFormats
                     br.AssertInt32(new int[1]);
                     BackupEventAnimID = br.ReadInt32();
                     Enemy_Unk3C = br.ReadInt32();
-                    Enemy_Unk40 = br.ReadInt32(); // Entity id?
+                    Enemy_LinkedEntityID = br.ReadInt32(); // Entity id?
                     Enemy_Unk44 = br.ReadInt32();
                     Enemy_Unk48 = br.ReadInt32();
                     br.AssertInt32(new int[1]);
@@ -1897,7 +1897,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(BackupEventAnimID);
                     bw.WriteInt32(Enemy_Unk3C);
-                    bw.WriteInt32(Enemy_Unk40);
+                    bw.WriteInt32(Enemy_LinkedEntityID);
                     bw.WriteInt32(Enemy_Unk44);
                     bw.WriteInt32(Enemy_Unk48);
                     bw.WriteInt32(0);
@@ -2675,8 +2675,7 @@ namespace SoulsFormats
                 /// Unknown.
                 /// 0, 560, 561, 562, 564
                 /// </summary>
-                [IgnoreProperty]
-                public int Asset_Unk48 { get; set; }
+                public int Asset_TalkID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3166,7 +3165,7 @@ namespace SoulsFormats
                     PartIndices = br.ReadInt32s(4);
                     br.AssertInt32(-1);
                     Asset_Unk44 = br.ReadInt32();
-                    Asset_Unk48 = br.ReadInt32();
+                    Asset_TalkID = br.ReadInt32();
                     Asset_Unk4C = br.ReadByte();
                     Asset_Unk4D = br.ReadByte();
                     Asset_Unk4E = br.ReadInt16();
@@ -3248,7 +3247,7 @@ namespace SoulsFormats
                     bw.WriteInt32s(PartIndices);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(Asset_Unk44);
-                    bw.WriteInt32(Asset_Unk48);
+                    bw.WriteInt32(Asset_TalkID);
                     bw.WriteByte(Asset_Unk4C);
                     bw.WriteByte(Asset_Unk4D);
                     bw.WriteInt16(Asset_Unk4E);
