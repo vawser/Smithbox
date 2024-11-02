@@ -34,19 +34,19 @@
     </Enum>
   </Enums>
   <Field>
-    <menuModelId AltName="Menu Model ID" TextureRef="Weapon/01_common/SB_PartsThumbnails/menuModelId/" />
-    <weight AltName="Weight" />
-    <energyCapacity AltName="Energy Capacity" />
-    <energyOutput AltName="Energy Output" />
-    <enLoad AltName="Energy Load" />
-    <enRecharge AltName="Energy Load Recharge" />
-    <supplyRecovery AltName="Energy Supply Recovery" />
-    <postRecoveryEnSupply AltName="Post Recovery Energy Supply" />
-    <energyFirearmSpec AltName="Energy Firearm Specialization" />
-    <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
+    <menuModelId AltName="Menu Model ID" TextureRef="Weapon/01_common/SB_PartsThumbnails/menuModelId/" Wiki="Menu Model to display." />
+    <weight AltName="Weight" Wiki="The weight of this part." />
+    <energyCapacity AltName="Energy Capacity" Wiki="The energy capacity this part grants." />
+    <energyOutput AltName="Energy Output" Wiki="The energy output this part grants." />
+    <enLoad AltName="Energy Load" Wiki="The energy load this part consumes." />
+    <enRecharge AltName="Energy Load Recharge" Wiki="The energy load recharge rate this part grants." />
+    <supplyRecovery AltName="Energy Supply Recovery" Wiki="The energy supply recovery this part grants. It an inverse multiplier. 1x == 1000 (base value), 4x == 250, etc. Game value == 1000/x." />
+    <postRecoveryEnSupply AltName="Post Recovery Energy Supply" Wiki="The energy supply post recovery this part grants. It an inverse multiplier. 1x == 1000 (base value), 4x == 250, etc. Game value == 1000/x." />
+    <energyFirearmSpec AltName="Energy Firearm Specialization" Wiki="The energy firearm specialization this part grants." />
+    <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" Wiki="The corporation texture displayed for this part." />
     <colorSfxType AltName="Color SFX Type" Enum="GeneratorColorSfxTypeEnum" Wiki="Determines SFX used by boosters. Coral also affects core expansion SFX."/> 
-    <expansionSfxType AltName="Expansion SFX Type" />
-    <inheritedGeneratorId AltName="Inherited Generator ID" Refs="EquipParamGenerator" />
+    <expansionSfxType AltName="Expansion SFX Type" Wiki="The sfx type for expansion parts that this part affects." />
+    <inheritedGeneratorId AltName="Inherited Generator ID" Refs="EquipParamGenerator" Wiki="The inherited data for this part." />
   </Field>
   <Self />
 </PARAMMETA>

@@ -639,27 +639,27 @@ Requires State Info 66" />
     <isCheckAboveShadowTest AltName="Apply outside of Rain Shield" Wiki="If it is , it will not be applied when it is judged to be shielded ( is always applied)" IsBool="" />
     <addBehaviorJudgeId_add AltName="Add Behavior Judgment ID - Addition Value" Wiki="If the addition value of the action judgment ID is 0, the action is not switched and the action is stopped." />
     <saReceiveDamageRate AltName="Absorption %: Poise Damage" Wiki="Multiplier for SA damage" />
-    <defPlayerDmgCorrectRate_Kinetic AltName="PVP Absorption %: Kinetic" Wiki="Damage correction for the damage value received from the player." />
-    <defPlayerDmgCorrectRate_Energy AltName="PVP Absorption %: Energy" Wiki="Damage correction for the damage value received from the player." />
-    <defPlayerDmgCorrectRate_Explosive AltName="PVP Absorption %: Explosive" Wiki="Damage correction for the damage value received from the player." />
-    <defPlayerDmgCorrectRate_Coral AltName="PVP Absorption %: Coral" Wiki="Damage correction for the damage value received from the player." />
-    <defPlayerDmgCorrectRate_Dark AltName="PVP Absorption %: Unknown" Wiki="Damage correction for the damage value received from the player." />
-    <defEnemyDmgCorrectRate_Kinetic AltName="Absorption %: Kinetic" Wiki="Damage correction for the damage value received from the enemy." />
-    <defEnemyDmgCorrectRate_Energy AltName="Absorption %: Energy" Wiki="Damage correction for the damage value received from the enemy." />
-    <defEnemyDmgCorrectRate_Explosive AltName="Absorption %: Explosive" Wiki="Damage correction for the damage value received from the enemy." />
-    <defEnemyDmgCorrectRate_Coral AltName="Absorption %: Coral" Wiki="Damage correction for the damage value received from the enemy." />
-    <defEnemyDmgCorrectRate_Dark AltName="Absorption %: Unknown" Wiki="Damage correction for the damage value received from the enemy." />
-    <defObjDmgCorrectRate AltName="Absorption %: Object" Wiki="Damage correction for the damage value received from OBJ." />
-    <atkPlayerDmgCorrectRate_Kinetic AltName="PVP Damage %: Kinetic" Wiki="Damage correction for the damage value given to the player." />
-    <atkPlayerDmgCorrectRate_Energy AltName="PVP Damage %: Energy" Wiki="Damage correction for the damage value given to the player." />
-    <atkPlayerDmgCorrectRate_Explosive AltName="PVP Damage %: Explosive" Wiki="Damage correction for the damage value given to the player." />
-    <atkPlayerDmgCorrectRate_Coral AltName="PVP Damage %: Coral" Wiki="Damage correction for the damage value given to the player." />
-    <atkPlayerDmgCorrectRate_Dark AltName="PVP Damage %: Unknown" Wiki="Damage correction for the damage value given to the player." />
-    <atkEnemyDmgCorrectRate_Kinetic AltName="Damage %: Kinetic" Wiki="Damage correction for the damage value given to the enemy." />
-    <atkEnemyDmgCorrectRate_Energy AltName="Damage %: Energy" Wiki="Damage correction for the damage value given to the enemy." />
-    <atkEnemyDmgCorrectRate_Explosive AltName="Damage %: Explosive" Wiki="Damage correction for the damage value given to the enemy." />
-    <atkEnemyDmgCorrectRate_Coral AltName="Damage %: Coral" Wiki="Damage correction for the damage value given to the enemy." />
-    <atkEnemyDmgCorrectRate_Dark AltName="Damage %: Unknown" Wiki="Damage correction for the damage value given to the enemy." />
+    <defPlayerDmgCorrectRate_Kinetic AltName="Absorption %: Kinetic" Wiki="Damage correction for the damage value received from the player." />
+    <defPlayerDmgCorrectRate_Energy AltName="Absorption %: Energy" Wiki="Damage correction for the damage value received from the player." />
+    <defPlayerDmgCorrectRate_Explosive AltName="Absorption %: Explosive" Wiki="Damage correction for the damage value received from the player." />
+    <defPlayerDmgCorrectRate_Coral AltName="Absorption %: Coral" Wiki="Damage correction for the damage value received from the player." />
+    <defPlayerDmgCorrectRate_Dark AltName="Absorption %: Unknown" Wiki="Damage correction for the damage value received from the player." />
+    <defEnemyDmgCorrectRate_Kinetic AltName="? - Absorption %: Kinetic" Wiki="Damage correction for the damage value received from the enemy." />
+    <defEnemyDmgCorrectRate_Energy AltName="? - Absorption %: Energy" Wiki="Damage correction for the damage value received from the enemy." />
+    <defEnemyDmgCorrectRate_Explosive AltName="? - Absorption %: Explosive" Wiki="Damage correction for the damage value received from the enemy." />
+    <defEnemyDmgCorrectRate_Coral AltName="? - Absorption %: Coral" Wiki="Damage correction for the damage value received from the enemy." />
+    <defEnemyDmgCorrectRate_Dark AltName="? - Absorption %: Unknown" Wiki="Damage correction for the damage value received from the enemy." />
+    <defObjDmgCorrectRate AltName="? - Absorption %: Object" Wiki="Damage correction for the damage value received from OBJ." />
+    <atkPlayerDmgCorrectRate_Kinetic AltName="Damage %: Kinetic" Wiki="Damage correction for the damage value given to the player." />
+    <atkPlayerDmgCorrectRate_Energy AltName="Damage %: Energy" Wiki="Damage correction for the damage value given to the player." />
+    <atkPlayerDmgCorrectRate_Explosive AltName="Damage %: Explosive" Wiki="Damage correction for the damage value given to the player." />
+    <atkPlayerDmgCorrectRate_Coral AltName="Damage %: Coral" Wiki="Damage correction for the damage value given to the player." />
+    <atkPlayerDmgCorrectRate_Dark AltName="Damage %: Unknown" Wiki="Damage correction for the damage value given to the player." />
+    <atkEnemyDmgCorrectRate_Kinetic AltName="? - Damage %: Kinetic" Wiki="Damage correction for the damage value given to the enemy." />
+    <atkEnemyDmgCorrectRate_Energy AltName="? - Damage %: Energy" Wiki="Damage correction for the damage value given to the enemy." />
+    <atkEnemyDmgCorrectRate_Explosive AltName="? - Damage %: Explosive" Wiki="Damage correction for the damage value given to the enemy." />
+    <atkEnemyDmgCorrectRate_Coral AltName="? - Damage %: Coral" Wiki="Damage correction for the damage value given to the enemy." />
+    <atkEnemyDmgCorrectRate_Dark AltName="? - Damage %: Unknown" Wiki="Damage correction for the damage value given to the enemy." />
     <registStatusChangeRate_Uranium AltName="Status Resist %: Uranium" Wiki="Multiply the cold resistance value by the set magnification" />
     <invocationConditionsStateChange1 AltName="Trigger on State Info [1]" Wiki="Trigger condition state change type 1" Enum="SP_EFFECT_TYPE" />
     <invocationConditionsStateChange2 AltName="Trigger on State Info [2]" Wiki="Trigger condition state change type 2" Enum="SP_EFFECT_TYPE" />
