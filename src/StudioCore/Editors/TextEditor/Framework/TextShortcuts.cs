@@ -83,6 +83,10 @@ public class TextShortcuts
         var editor = Smithbox.EditorHandler.TextEditor;
         var selectionContext = Selection.CurrentWindowContext;
         var multiselect = Selection.FmgEntryMultiselect;
+
+        if (Selection.SelectedFmgWrapper == null)
+            return;
+
         var fmg = Selection.SelectedFmgWrapper.File;
 
         // Select All
@@ -91,13 +95,17 @@ public class TextShortcuts
             if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
             {
                 multiselect.StoredEntries.Clear();
-                for (int j = 0; j < fmg.Entries.Count; j++)
-                {
-                    var tEntry = fmg.Entries[j];
 
-                    if (editor.Filters.IsFmgEntryFilterMatch(tEntry))
+                if (fmg != null)
+                {
+                    for (int j = 0; j < fmg.Entries.Count; j++)
                     {
-                        multiselect.StoredEntries.Add(j, tEntry);
+                        var tEntry = fmg.Entries[j];
+
+                        if (editor.Filters.IsFmgEntryFilterMatch(tEntry))
+                        {
+                            multiselect.StoredEntries.Add(j, tEntry);
+                        }
                     }
                 }
             }

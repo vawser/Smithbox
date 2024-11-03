@@ -145,14 +145,17 @@ public class TextSelectionManager
     /// </summary>
     public void AutoSelectFmgEntry()
     {
-        for (int i = 0; i < SelectedFmgWrapper.File.Entries.Count; i++)
+        if (SelectedFmgWrapper != null && SelectedFmgWrapper.File != null)
         {
-            var entry = SelectedFmgWrapper.File.Entries[i];
-
-            if (Screen.Filters.IsFmgEntryFilterMatch(entry))
+            for (int i = 0; i < SelectedFmgWrapper.File.Entries.Count; i++)
             {
-                SelectFmgEntry(i, entry);
-                break;
+                var entry = SelectedFmgWrapper.File.Entries[i];
+
+                if (Screen.Filters.IsFmgEntryFilterMatch(entry))
+                {
+                    SelectFmgEntry(i, entry);
+                    break;
+                }
             }
         }
     }

@@ -348,43 +348,46 @@ public class TextActionHandler
                 var AlterCopyTextAssignment = false;
                 var copyText = "";
 
-                for (int i = 0; i < editor.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
+                if (editor.Selection.SelectedFmgWrapper != null && editor.Selection.SelectedFmgWrapper.File != null)
                 {
-                    var entry = editor.Selection.SelectedFmgWrapper.File.Entries[i];
-
-                    if (editor.Filters.IsFmgEntryFilterMatch(entry))
+                    for (int i = 0; i < editor.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
                     {
-                        if (editor.Selection.FmgEntryMultiselect.IsMultiselected(i))
+                        var entry = editor.Selection.SelectedFmgWrapper.File.Entries[i];
+
+                        if (editor.Filters.IsFmgEntryFilterMatch(entry))
                         {
-                            var newText = $"{entry.Text}";
-
-                            if (CFG.Current.TextEditor_TextCopy_EscapeNewLines)
+                            if (editor.Selection.FmgEntryMultiselect.IsMultiselected(i))
                             {
-                                newText = $"{entry.Text}".Replace("\n", "\\n");
-                            }
+                                var newText = $"{entry.Text}";
 
-                            if (AlterCopyTextAssignment)
-                            {
-                                if (includeID)
+                                if (CFG.Current.TextEditor_TextCopy_EscapeNewLines)
                                 {
-                                    copyText = $"{copyText}\n{entry.ID} {newText}";
+                                    newText = $"{entry.Text}".Replace("\n", "\\n");
+                                }
+
+                                if (AlterCopyTextAssignment)
+                                {
+                                    if (includeID)
+                                    {
+                                        copyText = $"{copyText}\n{entry.ID} {newText}";
+                                    }
+                                    else
+                                    {
+                                        copyText = $"{copyText}\n{newText}";
+                                    }
                                 }
                                 else
                                 {
-                                    copyText = $"{copyText}\n{newText}";
-                                }
-                            }
-                            else
-                            {
-                                AlterCopyTextAssignment = true;
+                                    AlterCopyTextAssignment = true;
 
-                                if (includeID)
-                                {
-                                    copyText = $"{entry.ID} {newText}";
-                                }
-                                else
-                                {
-                                    copyText = $"{newText}";
+                                    if (includeID)
+                                    {
+                                        copyText = $"{entry.ID} {newText}";
+                                    }
+                                    else
+                                    {
+                                        copyText = $"{newText}";
+                                    }
                                 }
                             }
                         }

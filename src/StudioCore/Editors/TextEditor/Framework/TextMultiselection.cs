@@ -58,12 +58,15 @@ public class TextMultiselection
             {
                 if (!StoredEntries.ContainsKey(k))
                 {
-                    if(k < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
+                    if (Screen.Selection.SelectedFmgWrapper != null && Screen.Selection.SelectedFmgWrapper.File != null)
                     {
-                        var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[k];
-                        if (editor.Filters.IsFmgEntryFilterMatch(curEntry))
+                        if (k < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
                         {
-                            StoredEntries.Add(k, curEntry);
+                            var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[k];
+                            if (editor.Filters.IsFmgEntryFilterMatch(curEntry))
+                            {
+                                StoredEntries.Add(k, curEntry);
+                            }
                         }
                     }
                 }
@@ -80,10 +83,13 @@ public class TextMultiselection
             {
                 if (!StoredEntries.ContainsKey(currentIndex))
                 {
-                    if (currentIndex < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
+                    if (Screen.Selection.SelectedFmgWrapper != null &&  Screen.Selection.SelectedFmgWrapper.File != null)
                     {
-                        var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
-                        StoredEntries.Add(currentIndex, curEntry);
+                        if (currentIndex < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
+                        {
+                            var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
+                            StoredEntries.Add(currentIndex, curEntry);
+                        }
                     }
                 }
             }
@@ -92,10 +98,14 @@ public class TextMultiselection
         else
         {
             StoredEntries.Clear();
-            if (currentIndex < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
+
+            if (Screen.Selection.SelectedFmgWrapper != null && Screen.Selection.SelectedFmgWrapper.File != null)
             {
-                var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
-                StoredEntries.Add(currentIndex, curEntry);
+                if (currentIndex < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
+                {
+                    var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
+                    StoredEntries.Add(currentIndex, curEntry);
+                }
             }
         }
     }
