@@ -139,20 +139,24 @@ public static class TextFinder
                     {
                         if(Regex.IsMatch(searchText, @"^\d+$"))
                         {
-                            var id = int.Parse(searchText);
-                            if (fmgEntry.ID == id)
+                            try
                             {
-                                TextResult result = new();
-                                result.ContainerName = containerName;
-                                result.ContainerWrapper = entry;
-                                result.FmgID = fmg.ID;
-                                result.FmgName = fmg.Name;
-                                result.Fmg = fmg.File;
-                                result.FmgEntryID = fmgEntry.ID;
-                                result.Entry = fmgEntry;
+                                var id = int.Parse(searchText);
+                                if (fmgEntry.ID == id)
+                                {
+                                    TextResult result = new();
+                                    result.ContainerName = containerName;
+                                    result.ContainerWrapper = entry;
+                                    result.FmgID = fmg.ID;
+                                    result.FmgName = fmg.Name;
+                                    result.Fmg = fmg.File;
+                                    result.FmgEntryID = fmgEntry.ID;
+                                    result.Entry = fmgEntry;
 
-                                results.Add(result);
+                                    results.Add(result);
+                                }
                             }
+                            catch { }
                         }
                     }
                 }
@@ -227,20 +231,24 @@ public static class TextFinder
                     {
                         if (Regex.IsMatch(searchText, @"^\d+$"))
                         {
-                            var id = int.Parse(searchText);
-                            if (fmgEntry.ID == id)
+                            try
                             {
-                                ReplacementResult result = new();
-                                result.ContainerName = containerName;
-                                result.ContainerWrapper = entry;
-                                result.FmgID = fmg.ID;
-                                result.FmgName = fmg.Name;
-                                result.Fmg = fmg.File;
-                                result.FmgEntryID = fmgEntry.ID;
-                                result.Entry = fmgEntry;
+                                var id = int.Parse(searchText);
+                                if (fmgEntry.ID == id)
+                                {
+                                    ReplacementResult result = new();
+                                    result.ContainerName = containerName;
+                                    result.ContainerWrapper = entry;
+                                    result.FmgID = fmg.ID;
+                                    result.FmgName = fmg.Name;
+                                    result.Fmg = fmg.File;
+                                    result.FmgEntryID = fmgEntry.ID;
+                                    result.Entry = fmgEntry;
 
-                                results.Add(result);
+                                    results.Add(result);
+                                }
                             }
+                            catch { }
                         }
                     }
                 }

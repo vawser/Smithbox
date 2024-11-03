@@ -516,11 +516,11 @@
             ]
         },
         {
-            "name": "Condition - Unknown [2]",
+            "name": "Condition - Cutscene",
             "index": 2,
             "instrs": [
                 {
-                    "name": "Unknown Condition 2[0]",
+                    "name": "WAIT For Cutscene to End",
                     "index": 0,
                     "args": [
                         {
@@ -5292,25 +5292,67 @@
                     ]
                 },
                 {
-                    "name": "Unknown 4[1008]",
+                    "name": "IF Enemy Action Button",
                     "index": 1008,
                     "args": [
                         {
-                            "name": "Unknown",
-                            "type": 5,
-                            "enum_name": null,
+                            "name": "Result Condition Group",
+                            "type": 3,
+                            "enum_name": "Condition Group",
                             "default": 0,
                             "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
+                            "max": 0,
+                            "increment": 0,
                             "format_string": "%d",
-                            "unk1": 1,
+                            "unk1": 0,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
                         },
                         {
                             "name": "Unknown",
+                            "type": 3,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 3,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 3,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 0,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Entity ID",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -10069,7 +10111,7 @@
                     ]
                 },
                 {
-                    "name": "Initialize Local Event",
+                    "name": "Esd Triggered Event",
                     "index": 7,
                     "args": [
                         {
@@ -10118,7 +10160,7 @@
                     ]
                 },
                 {
-                    "name": "Initialize ESD Event",
+                    "name": "Esd Triggered Common Event",
                     "index": 8,
                     "args": [
                         {
@@ -10429,64 +10471,8 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Should Wait For Completion",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
-                            "min": 0,
-                            "max": 99,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Show Clock",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
-                            "min": 0,
-                            "max": 99,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Clock Startup Delay (s)",
-                            "type": 6,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": -1,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Clock Move Time (s)",
-                            "type": 6,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": -1,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Clock Finish Delay (s)",
-                            "type": 6,
+                            "name": "Unknown",
+                            "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": -1,
@@ -10817,16 +10803,16 @@
                     ]
                 },
                 {
-                    "name": "Play Cutscene to Player + UNKNOWN 2002[09]",
+                    "name": "Unknown 2002[09]",
                     "index": 9,
                     "args": []
                 },
                 {
-                    "name": "Play Cutscene to Player with Weather and Time",
+                    "name": "Unknown 2002[10]",
                     "index": 10,
                     "args": [
                         {
-                            "name": "Cutscene ID",
+                            "name": "Unknown",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -10840,41 +10826,13 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Playback Method",
-                            "type": 2,
-                            "enum_name": "Cutscene Play Mode",
-                            "default": 0,
-                            "min": 0,
-                            "max": 0,
-                            "increment": 0,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Player Entity ID",
-                            "type": 2,
+                            "name": "Unknown",
+                            "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
                             "max": 2000000000,
                             "increment": 1,
-                            "format_string": "%08d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Should Change Weather",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
-                            "min": 0,
-                            "max": 23,
-                            "increment": 1,
                             "format_string": "%d",
                             "unk1": 1,
                             "unk2": 0,
@@ -10882,40 +10840,12 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Weather",
-                            "type": 3,
-                            "enum_name": "Weather",
-                            "default": 0,
-                            "min": 0,
-                            "max": 99,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Weather Lifespan (seconds)",
-                            "type": 6,
+                            "name": "Unknown",
+                            "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 9999,
-                            "increment": 1,
-                            "format_string": "%0.3f",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Should Change Time",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
-                            "min": 0,
-                            "max": 99,
+                            "max": 2000000000,
                             "increment": 1,
                             "format_string": "%d",
                             "unk1": 1,
@@ -10924,12 +10854,12 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Hours",
-                            "type": 0,
+                            "name": "Unknown",
+                            "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 99,
+                            "max": 2000000000,
                             "increment": 1,
                             "format_string": "%d",
                             "unk1": 1,
@@ -10938,12 +10868,12 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Minutes",
-                            "type": 0,
+                            "name": "Unknown",
+                            "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 99,
+                            "max": 2000000000,
                             "increment": 1,
                             "format_string": "%d",
                             "unk1": 1,
@@ -10952,15 +10882,15 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Seconds",
-                            "type": 0,
+                            "name": "Unknown",
+                            "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 1,
-                            "increment": 59,
+                            "max": 2000000000,
+                            "increment": 1,
                             "format_string": "%d",
-                            "unk1": 0,
+                            "unk1": 1,
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
@@ -11040,43 +10970,15 @@
                             "unk2": 0,
                             "unk3": 0,
                             "unk4": 0
-                        },
-                        {
-                            "name": "Unknown14",
-                            "type": 5,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Unknown18",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
-                            "min": 0,
-                            "max": 0,
-                            "increment": 0,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
                         }
                     ]
                 },
                 {
-                    "name": "Play Cutscene to Player and Warp with Weather and Time",
+                    "name": "Unknown 2002[12]",
                     "index": 12,
                     "args": [
                         {
-                            "name": "Cutscene ID",
+                            "name": "Unknown",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -11090,35 +10992,7 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Playback Method",
-                            "type": 2,
-                            "enum_name": "Cutscene Play Mode",
-                            "default": 0,
-                            "min": 0,
-                            "max": 0,
-                            "increment": 0,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Area Entity ID",
-                            "type": 2,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Map ID",
+                            "name": "Unknown",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -11132,21 +11006,7 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Player Entity ID",
-                            "type": 2,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Unknown14",
+                            "name": "Unknown",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -11160,82 +11020,12 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Unknown18",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
-                            "min": 0,
-                            "max": 1,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Should Change Weather",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
-                            "min": 0,
-                            "max": 1,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Weather",
-                            "type": 3,
-                            "enum_name": "Weather",
-                            "default": 0,
-                            "min": 0,
-                            "max": 99,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Weather Lifespan (seconds)",
-                            "type": 6,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": -1,
-                            "max": 9999,
-                            "increment": 1,
-                            "format_string": "%0.3f",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Should Change Time",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
-                            "min": 0,
-                            "max": 99,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 0,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Hours",
-                            "type": 0,
+                            "name": "Unknown",
+                            "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 99,
+                            "max": 2000000000,
                             "increment": 1,
                             "format_string": "%d",
                             "unk1": 0,
@@ -11244,12 +11034,12 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Minutes",
-                            "type": 0,
+                            "name": "Unknown",
+                            "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 99,
+                            "max": 2000000000,
                             "increment": 1,
                             "format_string": "%d",
                             "unk1": 0,
@@ -11258,13 +11048,13 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Seconds",
-                            "type": 0,
+                            "name": "Unknown",
+                            "type": 5,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 1,
-                            "increment": 59,
+                            "max": 2000000000,
+                            "increment": 1,
                             "format_string": "%d",
                             "unk1": 0,
                             "unk2": 0,
@@ -11318,7 +11108,7 @@
                     "index": 1,
                     "args": [
                         {
-                            "name": "Unknown",
+                            "name": "Entity ID",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -14506,12 +14296,54 @@
                     "args": [
                         {
                             "name": "Unknown",
-                            "type": 5,
+                            "type": 0,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 0,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 0,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
+                            "format_string": "%d",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 0,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 0,
+                            "increment": 0,
                             "format_string": "%d",
                             "unk1": 1,
                             "unk2": 0,
@@ -14751,7 +14583,7 @@
                     ]
                 },
                 {
-                    "name": "Unknown 2003[1046]", // Set Player Spawnpoint?
+                    "name": "Unknown 2003[1046]",
                     "index": 1046,
                     "args": [
                         {
@@ -14821,7 +14653,7 @@
                     "args": [
                         {
                             "name": "Unknown",
-                            "type": 5,
+                            "type": 6,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
@@ -15624,13 +15456,13 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Is Invincible",
-                            "type": 0,
-                            "enum_name": "BOOL",
-                            "default": 0,
+                            "name": "Unknown",
+                            "type": 6,
+                            "enum_name": null,
+                            "default": 1,
                             "min": 0,
-                            "max": 0,
-                            "increment": 0,
+                            "max": 9999,
+                            "increment": 1,
                             "format_string": "%d",
                             "unk1": 1,
                             "unk2": 0,
@@ -15638,13 +15470,13 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Start In Stopped State",
-                            "type": 0,
-                            "enum_name": "BOOL",
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
                             "default": 0,
-                            "min": 0,
-                            "max": 0,
-                            "increment": 0,
+                            "min": -1,
+                            "max": 2000000000,
+                            "increment": 1,
                             "format_string": "%d",
                             "unk1": 1,
                             "unk2": 0,
@@ -16675,22 +16507,7 @@
                 {
                     "name": "Unknown 2004[51]",
                     "index": 51,
-                    "args": [
-                        {
-                            "name": "Unknown",
-                            "type": 5,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        }
-                    ]
+                    "args": [ ]
                 },
                 {
                     "name": "Change Character",
@@ -16781,11 +16598,11 @@
                     ]
                 },
                 {
-                    "name": "Connect Character To Caravan",
+                    "name": "Unknown 2004[60]",
                     "index": 60,
                     "args": [
                         {
-                            "name": "Character Entity ID",
+                            "name": "Unknown",
                             "type": 2,
                             "enum_name": null,
                             "default": 0,
@@ -16799,7 +16616,7 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Caravan Asset Entity ID",
+                            "name": "Unknown",
                             "type": 2,
                             "enum_name": null,
                             "default": 0,
@@ -16807,6 +16624,20 @@
                             "max": 2000000000,
                             "increment": 1,
                             "format_string": "%08d",
+                            "unk1": 0,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 9999,
+                            "increment": 1,
+                            "format_string": "%d",
                             "unk1": 0,
                             "unk2": 0,
                             "unk3": 0,
@@ -17644,35 +17475,8 @@
                             "unk1": 1,
                             "unk2": 0,
                             "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": 5,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": 5,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 2000000000,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
+                            "unk4": 0,
+                            "vararg": true
                         }
                     ]
                 },
@@ -18591,7 +18395,7 @@
                     "index": 1033,
                     "args": [
                         {
-                            "name": "Unknown", // Entity ID?
+                            "name": "Unknown",
                             "type": 5,
                             "enum_name": null,
                             "default": 0,
@@ -19413,11 +19217,11 @@
                     ]
                 },
                 {
-                    "name": "Create Big Damaging Asset",
+                    "name": "Unknown 2005[20]",
                     "index": 20,
                     "args": [
                         {
-                            "name": "Event Flag ID",
+                            "name": "Unknown",
                             "type": 2,
                             "enum_name": null,
                             "default": 0,
@@ -19431,7 +19235,7 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Entity ID",
+                            "name": "Unknown",
                             "type": 2,
                             "enum_name": null,
                             "default": 0,
@@ -19445,98 +19249,14 @@
                             "unk4": 0
                         },
                         {
-                            "name": "Starting Dummypoly ID",
-                            "type": 5,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 999,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Ending Dummypoly ID",
-                            "type": 5,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 999,
-                            "increment": 1,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Behavior ID",
-                            "type": 5,
+                            "name": "Unknown",
+                            "type": 2,
                             "enum_name": null,
                             "default": 0,
                             "min": 0,
                             "max": 2000000000,
                             "increment": 1,
                             "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Target",
-                            "type": 5,
-                            "enum_name": "Damage Target Type",
-                            "default": 1,
-                            "min": 0,
-                            "max": 0,
-                            "increment": 0,
-                            "format_string": "%d",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Radius",
-                            "type": 6,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 9999,
-                            "increment": 1,
-                            "format_string": "%0.3f",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Lifespan",
-                            "type": 6,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 9999,
-                            "increment": 1,
-                            "format_string": "%0.3f",
-                            "unk1": 1,
-                            "unk2": 0,
-                            "unk3": 0,
-                            "unk4": 0
-                        },
-                        {
-                            "name": "Repetition Time (s)",
-                            "type": 6,
-                            "enum_name": null,
-                            "default": 0,
-                            "min": 0,
-                            "max": 9999,
-                            "increment": 1,
-                            "format_string": "%0.3f",
                             "unk1": 1,
                             "unk2": 0,
                             "unk3": 0,
@@ -20539,6 +20259,20 @@
                             "max": 999,
                             "increment": 0,
                             "format_string": "%.3f",
+                            "unk1": 1,
+                            "unk2": 0,
+                            "unk3": 0,
+                            "unk4": 0
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": 5,
+                            "enum_name": null,
+                            "default": 0,
+                            "min": 0,
+                            "max": 2000000000,
+                            "increment": 1,
+                            "format_string": "%d",
                             "unk1": 1,
                             "unk2": 0,
                             "unk3": 0,
