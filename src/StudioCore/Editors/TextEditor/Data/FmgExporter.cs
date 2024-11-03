@@ -66,7 +66,7 @@ public static class FmgExporter
             UIHelper.ShowHoverTooltip("Export your currently selected File (including all of its Text Files and their Text Entries) to a export text file.");
 
             // FMG
-            if (ImGui.BeginMenu("Text File", editor.Selection.SelectedFmgWrapper.File != null))
+            if (ImGui.BeginMenu("Text File", editor.Selection.SelectedFmgWrapper != null))
             {
                 if (ImGui.Selectable("Export Selected Text File"))
                 {

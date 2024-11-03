@@ -42,7 +42,7 @@ public static class FmgImporter
             }
             UIHelper.ShowHoverTooltip("Import the selected text file on the container level, replacing all FMGs and their associated entries (if applicable).");
 
-            if (ImGui.BeginMenu("Text File", editor.Selection.SelectedFmgWrapper.File != null))
+            if (ImGui.BeginMenu("Text File", editor.Selection.SelectedFmgWrapper != null))
             {
                 DisplayImportList(ImportType.FMG);
 
