@@ -14,8 +14,8 @@
     <Field Def="s32 UnkInt0x14"></Field>
     <Field Def="s32 UnkInt0x18"></Field>
     <Field Def="s32 UnkInt0x1C"></Field>
-    <Field Def="s32 UnkInt0x20"></Field>
-    <Field Def="s32 UnkInt0x24"></Field>
+    <Field Def="s32 archiveInfoTextId"></Field>
+    <Field Def="s32 archiveInfoImageId"></Field>
     <Field Def="s32 UnkInt0x28"></Field>
     <Field Def="s32 UnkInt0x2C"></Field>
     <Field Def="s32 UnkInt0x30"></Field>

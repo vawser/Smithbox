@@ -1821,3 +1821,8 @@
 3043320 AI Interrupt
 4021021 AI Interrupt
 9100100 AC Test: Player Re-Supply Effect
+9991000 Mission: Adds Blue Diamond Marker
+9991001 Mission: Adds Yellow Exclamation Warning Marker
+9991002 Mission: Adds Blue Ally Marker
+9991003 Mission: Adds Red Target Marker
+9991004 Mission: Adds Blue Objective Marker

@@ -1,11 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="PARTS_CATEGORY" type="u8">
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Equipment" />
+        <Option Value="4" Name="Booster" />
+        <Option Value="5" Name="FCS" />
+        <Option Value="6" Name="Generator" />
+    </Enum>
+  </Enums>
   <Field>
-    <equipId AltName="Part ID" Refs="EquipParamBooster,EquipParamFcs,EquipParamGenerator,EquipParamProtector,EquipParamWeapon" />
-    <purchasePrice AltName="Purchase Cost" />
-    <unlockFlag AltName="Unlock Flag" FlagAlias="" />
-    <equipCategory AltName="Part Category" />
-    <logHunterRankUnlockValue AltName="Log Hunter Rank - Unlock Value" />
+    <equipId AltName="Part ID" Refs="EquipParamBooster(equipCategory=4),EquipParamFcs(equipCategory=5),EquipParamGenerator(equipCategory=6),EquipParamProtector(equipCategory=1),EquipParamWeapon(equipCategory=0)" Wiki="The part to add to the Parts menu."/>
+    <purchasePrice AltName="Purchase Cost" Wiki="The purchase cost of the part in the Parts Menu." />
+    <unlockFlag AltName="Unlock Flag" FlagAlias="" Wiki="The event flag required for this part to appear in the Parts menu." />
+    <equipCategory AltName="Part Category" Wiki="The category this part appears under in the Parts menu." Enum="PARTS_CATEGORY" />
+    <isBaseAddition AltName="Is Base Part" IsBool="" Wiki="This is 0 for the parts added by the 1.0.5 patch. Actual behavior of the field is unknown." />
+    <logHunterRankUnlockValue AltName="Log Hunter Rank - Unlock Value" Wiki="The log hunter rank required for this part to appear." />
+    
+    <middlePadding IsHidden="" />
+    <endPadding IsHidden="" />
   </Field>
   <Self />
 </PARAMMETA>

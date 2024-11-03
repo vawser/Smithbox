@@ -8,11 +8,10 @@
   <Fields>
     <Field Def="s32 menuLayout"></Field>
     <Field Def="s32 textId"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
+    <Field Def="s32 weaponTypeSortId"></Field>
     <Field Def="s32 sortId"></Field>
     <Field Def="s32 Unk0x10"></Field>
-    <Field Def="s32 Unk0x14"></Field>
-    <Field Def="s32 Unk0x18"></Field>
-    <Field Def="s32 Unk0x1C"></Field>
+    
+    <Field Def="dummy8 endPadding[12]"></Field>
   </Fields>
 </PARAMDEF>

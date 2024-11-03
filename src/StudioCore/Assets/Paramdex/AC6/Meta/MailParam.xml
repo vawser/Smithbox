@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <archiveInfoTextId AltName="Archive Info Text ID" FmgRef="Archive_Name" Wiki="Determines the archive info title and description used." />
+    <archiveInfoImageId AltName="Archive Info Image ID" Wiki="Determines the archive info image used." />
+  </Field>
   <Self />
 </PARAMMETA>
