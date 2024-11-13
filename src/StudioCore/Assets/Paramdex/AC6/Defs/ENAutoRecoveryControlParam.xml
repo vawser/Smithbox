@@ -6,93 +6,889 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 idleEnergyRecoveryRate"></Field>
-    <Field Def="s8 idleEnergyCapacityMax"></Field>
-    <Field Def="s8 idleEnergyCapacitySetAfterAction"></Field>
-    <Field Def="s8 Unk0x06"></Field>
-    <Field Def="s8 Unk0x07"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s8 concurrentEnergyUseMinimumTime"></Field>
-    <Field Def="s8 concurrentEnergyUseNoConsumeTime"></Field>
-    <Field Def="s8 UnkByte0x0E"></Field>
-    <Field Def="s8 Unk0x0F"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
-    <Field Def="s8 UnkByte0x14"></Field>
-    <Field Def="s8 UnkByte0x15"></Field>
-    <Field Def="s8 UnkByte0x16"></Field>
-    <Field Def="s8 Unk0x17"></Field>
-    <Field Def="s32 midairEnergyRecoveryRate"></Field>
-    <Field Def="s8 midairEnergyCapacityMax"></Field>
-    <Field Def="s8 midairEnergyCapacitySetAfterAction"></Field>
-    <Field Def="s8 UnkByte0x1E"></Field>
-    <Field Def="s8 Unk0x1F"></Field>
-    <Field Def="s32 boostEnergyRecoveryRate"></Field>
-    <Field Def="s8 boostEnergyCapacityMax"></Field>
-    <Field Def="s8 boostEnergyCapacitySetAfterAction"></Field>
-    <Field Def="s8 UnkByte0x26"></Field>
-    <Field Def="s8 Unk0x27"></Field>
-    <Field Def="s32 aerialBoostEnergyRecoveryRate"></Field>
-    <Field Def="s8 aerialBoostEnergyCapacityMax"></Field>
-    <Field Def="s8 aerialBoostEnergyCapacitySetAfterAction"></Field>
-    <Field Def="s8 UnkByte0x2E"></Field>
-    <Field Def="s8 Unk0x2F"></Field>
-    <Field Def="s32 tankDriftEnergyRecoveryRate"></Field>
-    <Field Def="s8 tankDriftEnergyCapacityMax"></Field>
-    <Field Def="s8 tankDriftEnergyCapacitySetAfterAction"></Field>
-    <Field Def="s8 Unk0x036"></Field>
-    <Field Def="s8 Unk0x037"></Field>
-    <Field Def="s32 stanceFireEnergyRecoveryRate"></Field>
-    <Field Def="s8 stanceFireEnergyCapacityMax"></Field>
-    <Field Def="s8 stanceFireEnergyCapacitySetAfterAction"></Field>
-    <Field Def="s8 Unk0x3E"></Field>
-    <Field Def="s8 Unk0x3F"></Field>
-    <Field Def="s32 Unk0x40"></Field>
-    <Field Def="s8 Unk0x44"></Field>
-    <Field Def="s8 Unk0x45"></Field>
-    <Field Def="s8 Unk0x46"></Field>
-    <Field Def="s8 Unk0x47"></Field>
-    <Field Def="s32 Unk0x48"></Field>
-    <Field Def="s8 Unk0x4C"></Field>
-    <Field Def="s8 Unk0x4D"></Field>
-    <Field Def="s8 Unk0x4E"></Field>
-    <Field Def="s8 Unk0x4F"></Field>
-    <Field Def="s32 Unk0x50"></Field>
-    <Field Def="s8 Unk0x54"></Field>
-    <Field Def="s8 Unk0x55"></Field>
-    <Field Def="s8 Unk0x56"></Field>
-    <Field Def="s8 Unk0x57"></Field>
-    <Field Def="s32 Unk0x58"></Field>
-    <Field Def="s8 Unk0x5C"></Field>
-    <Field Def="s8 Unk0x5D"></Field>
-    <Field Def="s8 Unk0x5E"></Field>
-    <Field Def="s8 Unk0x5F"></Field>
-    <Field Def="s32 Unk0x60"></Field>
-    <Field Def="s8 Unk0x64"></Field>
-    <Field Def="s8 Unk0x65"></Field>
-    <Field Def="s8 Unk0x66"></Field>
-    <Field Def="s8 Unk0x67"></Field>
-    <Field Def="s32 Unk0x68"></Field>
-    <Field Def="s8 Unk0x6C"></Field>
-    <Field Def="s8 Unk0x6D"></Field>
-    <Field Def="s8 Unk0x6E"></Field>
-    <Field Def="s8 Unk0x6F"></Field>
-    <Field Def="s32 Unk0x70"></Field>
-    <Field Def="s8 Unk0x74"></Field>
-    <Field Def="s8 Unk0x75"></Field>
-    <Field Def="s8 Unk0x76"></Field>
-    <Field Def="s8 Unk0x77"></Field>
-    <Field Def="s32 Unk0x78"></Field>
-    <Field Def="s8 Unk0x7C"></Field>
-    <Field Def="s8 Unk0x7D"></Field>
-    <Field Def="s8 Unk0x7E"></Field>
-    <Field Def="s8 Unk0x7F"></Field>
-    <Field Def="s32 Unk0x80"></Field>
-    <Field Def="s32 Unk0x84"></Field>
-    <Field Def="s32 Unk0x88"></Field>
-    <Field Def="s32 Unk0x8C"></Field>
-    <Field Def="s32 Unk0x90"></Field>
-    <Field Def="s32 Unk0x94"></Field>
-    <Field Def="s32 Unk0x98"></Field>
-    <Field Def="s32 Unk0x9C"></Field>
+    <Field Def="u32 ENRecoveryRate_1 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType000</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ000</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_1 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType000</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ000</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_1 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType000</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ000</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_1:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType000</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ000</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_1_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15401</SortID>
+      <UnkB8>enAutoRecoveryControlParamType000</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ000</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_1_2[1]">
+      <SortID>15402</SortID>
+      <UnkB8>enAutoRecoveryControlParamType000</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ000</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_2 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>1100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType001</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ001</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_2 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>1200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType001</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ001</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_2 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType001</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ001</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_2:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType001</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ001</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_2_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15403</SortID>
+      <UnkB8>enAutoRecoveryControlParamType001</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ001</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_2_2[1]">
+      <SortID>15404</SortID>
+      <UnkB8>enAutoRecoveryControlParamType001</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ001</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_3 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>2100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType002</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ002</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_3 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>2200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType002</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ002</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_3 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>2300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType002</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ002</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_3:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType002</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ002</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad1_3_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15405</SortID>
+      <UnkB8>enAutoRecoveryControlParamType002</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ002</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_3_2[1]">
+      <SortID>15406</SortID>
+      <UnkB8>enAutoRecoveryControlParamType002</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ002</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_4 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>3100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType003</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ003</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_4 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>3200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType003</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ003</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_4 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>3300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType003</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ003</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_4:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType003</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ003</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_4_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15407</SortID>
+      <UnkB8>enAutoRecoveryControlParamType003</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ003</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_4_2[1]">
+      <SortID>15408</SortID>
+      <UnkB8>enAutoRecoveryControlParamType003</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ003</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_5 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>4100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType004</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ004</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_5 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>4200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType004</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ004</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_5 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType004</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ004</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_5:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType004</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ004</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_5_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15409</SortID>
+      <UnkB8>enAutoRecoveryControlParamType004</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ004</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_5_2[1]">
+      <SortID>15410</SortID>
+      <UnkB8>enAutoRecoveryControlParamType004</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ004</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_6 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>5100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType005</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ005</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_6 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>5200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType005</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ005</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_6 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType005</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ005</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_6:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType005</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ005</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_6_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15411</SortID>
+      <UnkB8>enAutoRecoveryControlParamType005</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ005</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_6_2[1]">
+      <SortID>15412</SortID>
+      <UnkB8>enAutoRecoveryControlParamType005</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ005</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_7 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>6100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType006</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ006</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_7 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>6200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType006</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ006</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_7 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>6300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType006</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ006</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_7:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType006</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ006</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_7_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15413</SortID>
+      <UnkB8>enAutoRecoveryControlParamType006</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ006</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_7_2[1]">
+      <SortID>15414</SortID>
+      <UnkB8>enAutoRecoveryControlParamType006</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ006</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_8 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>7100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType007</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ007</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_8 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>7200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType007</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ007</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_8 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType007</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ007</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_8:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>7400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType007</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ007</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_8_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15415</SortID>
+      <UnkB8>enAutoRecoveryControlParamType007</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ007</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_8_2[1]">
+      <SortID>15416</SortID>
+      <UnkB8>enAutoRecoveryControlParamType007</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ007</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_9 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>8100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType008</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ008</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_9 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>8200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType008</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ008</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_9 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>8300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType008</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ008</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_9:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>8400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType008</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ008</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_9_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15417</SortID>
+      <UnkB8>enAutoRecoveryControlParamType008</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ008</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_9_2[1]">
+      <SortID>15418</SortID>
+      <UnkB8>enAutoRecoveryControlParamType008</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ008</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_10 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>9100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType009</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ009</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_10 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>9200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType009</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ009</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_10 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>9300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType009</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ009</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_10:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType009</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ009</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_10_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15419</SortID>
+      <UnkB8>enAutoRecoveryControlParamType009</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ009</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_10_2[1]">
+      <SortID>15420</SortID>
+      <UnkB8>enAutoRecoveryControlParamType009</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ009</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_11 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>10100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType010</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ010</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_11 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>10200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType010</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ010</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_11 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType010</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ010</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_11:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>10400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType010</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ010</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_11_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15421</SortID>
+      <UnkB8>enAutoRecoveryControlParamType010</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ010</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_11_2[1]">
+      <SortID>15422</SortID>
+      <UnkB8>enAutoRecoveryControlParamType010</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ010</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_12 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>11100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType011</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ011</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_12 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>11200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType011</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ011</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_12 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>11300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType011</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ011</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_12:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>11400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType011</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ011</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_12_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15423</SortID>
+      <UnkB8>enAutoRecoveryControlParamType011</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ011</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_12_2[1]">
+      <SortID>15424</SortID>
+      <UnkB8>enAutoRecoveryControlParamType011</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ011</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_13 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>12100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType012</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ012</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_13 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>12200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType012</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ012</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_13 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>12300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType012</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ012</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_13:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>12400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType012</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ012</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_13_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15425</SortID>
+      <UnkB8>enAutoRecoveryControlParamType012</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ012</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_13_2[1]">
+      <SortID>15426</SortID>
+      <UnkB8>enAutoRecoveryControlParamType012</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ012</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_14 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>13100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType013</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ013</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_14 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>13200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType013</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ013</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_14 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>13300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType013</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ013</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_14:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>13400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType013</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ013</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_14_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15427</SortID>
+      <UnkB8>enAutoRecoveryControlParamType013</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ013</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_14_2[1]">
+      <SortID>15428</SortID>
+      <UnkB8>enAutoRecoveryControlParamType013</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ013</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_15 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>14100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType014</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ014</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_15 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>14200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType014</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ014</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_15 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>14300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType014</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ014</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_15:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>14400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType014</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ014</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_15_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15429</SortID>
+      <UnkB8>enAutoRecoveryControlParamType014</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ014</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_15_2[1]">
+      <SortID>15430</SortID>
+      <UnkB8>enAutoRecoveryControlParamType014</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ014</UnkC8>
+    </Field>
+    <Field Def="u32 ENRecoveryRate_16 = 100">
+      <DisplayName>EN回復率[%]</DisplayName>
+      <Description>スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100000000</Maximum>
+      <SortID>15100</SortID>
+      <UnkB8>enAutoRecoveryControlParamType015</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ015</UnkC8>
+    </Field>
+    <Field Def="u8 ENMax_16 = 100">
+      <DisplayName>EN上限[%]</DisplayName>
+      <Description>スタミナの上限割合を指定する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>15200</SortID>
+      <UnkB8>enAutoRecoveryControlParamType015</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ015</UnkC8>
+    </Field>
+    <Field Def="s8 ENMin_16 = -1">
+      <DisplayName>EN下限[%]</DisplayName>
+      <Description>スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>15300</SortID>
+      <UnkB8>enAutoRecoveryControlParamType015</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ015</UnkC8>
+    </Field>
+    <Field Def="u8 DoDelayENRecovery_16:1">
+      <DisplayName>EN回復ディレイあり</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>15400</SortID>
+      <UnkB8>enAutoRecoveryControlParamType015</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ015</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_16_1:7">
+      <DisplayName>pad</DisplayName>
+      <SortID>15431</SortID>
+      <UnkB8>enAutoRecoveryControlParamType015</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ015</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_16_2[1]">
+      <SortID>15432</SortID>
+      <UnkB8>enAutoRecoveryControlParamType015</UnkB8>
+      <UnkC0>EN_AUTO_RECOVERY_CONTROL_PARAM_ST</UnkC0>
+      <UnkC8>タイプ015</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad_end[32]">
+      <DisplayName>pad_end[32]</DisplayName>
+      <SortID>15433</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

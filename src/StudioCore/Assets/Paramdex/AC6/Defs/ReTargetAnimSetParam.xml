@@ -6,21 +6,66 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
-    <Field Def="s32 UnkInt0x14"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
-    <Field Def="s32 UnkInt0x1C"></Field>
-    <Field Def="s32 UnkInt0x20"></Field>
-    <Field Def="s32 UnkInt0x24"></Field>
-    <Field Def="s32 UnkInt0x28"></Field>
-    <Field Def="s32 UnkInt0x2C"></Field>
-    <Field Def="s32 UnkInt0x30"></Field>
-    <Field Def="s32 UnkInt0x34"></Field>
-    <Field Def="s32 UnkInt0x38"></Field>
-    <Field Def="s32 UnkInt0x3C"></Field>
+    <Field Def="u32 BaseAnimId">
+      <DisplayName>ベースアニメID</DisplayName>
+      <Description>基準となるアニメID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u32 ReTargetAnimId_begin">
+      <DisplayName>リターゲット対象アニメID</DisplayName>
+      <Description>基準アニメを元にリターゲットするアニメID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u32 ReTargetAnimId_01">
+      <DisplayName>リターゲット対象アニメID</DisplayName>
+      <Description>基準アニメを元にリターゲットするアニメID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u32 ReTargetAnimId_02">
+      <DisplayName>リターゲット対象アニメID</DisplayName>
+      <Description>基準アニメを元にリターゲットするアニメID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="u32 ReTargetAnimId_03">
+      <DisplayName>リターゲット対象アニメID</DisplayName>
+      <Description>基準アニメを元にリターゲットするアニメID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="u32 ReTargetAnimId_04">
+      <DisplayName>リターゲット対象アニメID</DisplayName>
+      <Description>基準アニメを元にリターゲットするアニメID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1130</SortID>
+    </Field>
+    <Field Def="u32 ReTargetAnimId_05">
+      <DisplayName>リターゲット対象アニメID</DisplayName>
+      <Description>基準アニメを元にリターゲットするアニメID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1140</SortID>
+    </Field>
+    <Field Def="u32 ReTargetAnimId_06">
+      <DisplayName>リターゲット対象アニメID</DisplayName>
+      <Description>基準アニメを元にリターゲットするアニメID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1150</SortID>
+    </Field>
+    <Field Def="u32 ReTargetAnimId_end">
+      <DisplayName>リターゲット対象アニメID</DisplayName>
+      <Description>基準アニメを元にリターゲットするアニメID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="dummy8 tailPadding[28]">
+      <DisplayName>末尾パディング</DisplayName>
+      <Description>末尾パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>9001</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

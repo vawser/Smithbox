@@ -6,21 +6,82 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="f32 UnkFloat0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="f32 UnkFloat0x08"></Field>
-    <Field Def="f32 UnkFloat0x0C"></Field>
-    <Field Def="f32 UnkFloat0x10"></Field>
-    <Field Def="f32 UnkFloat0x14"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
-    <Field Def="f32 UnkFloat0x1C"></Field>
-    <Field Def="s32 UnkInt0x20"></Field>
-    <Field Def="s32 UnkInt0x24"></Field>
-    <Field Def="s32 UnkInt0x28"></Field>
-    <Field Def="s32 UnkInt0x2C"></Field>
-    <Field Def="s32 UnkInt0x30"></Field>
-    <Field Def="s32 UnkInt0x34"></Field>
-    <Field Def="s32 UnkInt0x38"></Field>
-    <Field Def="s32 UnkInt0x3C"></Field>
+    <Field Def="f32 inInterpolateTime">
+      <DisplayName>開始時補間時間[sec]</DisplayName>
+      <Description>開始時補間時間[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 outInterpolateTime">
+      <DisplayName>終了時補間時間[sec]</DisplayName>
+      <Description>終了時補間時間[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 offsetX_1">
+      <DisplayName>位置オフセットX</DisplayName>
+      <Description>位置オフセットX</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+      <UnkB8>normalPosOffset</UnkB8>
+      <UnkC0>OFFSET</UnkC0>
+    </Field>
+    <Field Def="f32 offsetY_1">
+      <DisplayName>位置オフセットY</DisplayName>
+      <Description>位置オフセットY</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+      <UnkB8>normalPosOffset</UnkB8>
+      <UnkC0>OFFSET</UnkC0>
+    </Field>
+    <Field Def="f32 offsetZ_1">
+      <DisplayName>位置オフセットZ</DisplayName>
+      <Description>位置オフセットZ</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+      <UnkB8>normalPosOffset</UnkB8>
+      <UnkC0>OFFSET</UnkC0>
+    </Field>
+    <Field Def="angle32 offsetX_2">
+      <DisplayName>角度オフセットX</DisplayName>
+      <Description>回転オフセットX</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+      <UnkB8>normalRotOffset</UnkB8>
+      <UnkC0>ROTOFFSET</UnkC0>
+    </Field>
+    <Field Def="angle32 offsetY_2">
+      <DisplayName>角度オフセットY</DisplayName>
+      <Description>回転オフセットY</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7</SortID>
+      <UnkB8>normalRotOffset</UnkB8>
+      <UnkC0>ROTOFFSET</UnkC0>
+    </Field>
+    <Field Def="angle32 offsetZ_2">
+      <DisplayName>角度オフセットZ</DisplayName>
+      <Description>回転オフセットZ</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8</SortID>
+      <UnkB8>normalRotOffset</UnkB8>
+      <UnkC0>ROTOFFSET</UnkC0>
+    </Field>
+    <Field Def="dummy8 reserved[32]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>10</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

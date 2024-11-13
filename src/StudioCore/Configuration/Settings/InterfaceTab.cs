@@ -56,7 +56,11 @@ public class InterfaceTab
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
             UIHelper.ShowHoverTooltip("Multiplies the user interface scale by your monitor's DPI setting.");
+        }
 
+        // Fonts
+        if (ImGui.CollapsingHeader("Fonts", ImGuiTreeNodeFlags.DefaultOpen))
+        {
             ImGui.SliderFloat("Font size", ref UI.Current.Interface_FontSize, 8.0f, 32.0f);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -64,11 +68,7 @@ public class InterfaceTab
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
             UIHelper.ShowHoverTooltip("Adjusts the size of the font in Smithbox.");
-        }
 
-        // Fonts
-        if (ImGui.CollapsingHeader("Fonts", ImGuiTreeNodeFlags.DefaultOpen))
-        {
             ImGui.Text("Current English Font:");
             ImGui.SameLine();
             ImGui.Text(Path.GetFileName(UI.Current.System_English_Font));
@@ -131,6 +131,13 @@ public class InterfaceTab
             UIHelper.ShowHoverTooltip("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
         }
 
+        // ImGui
+        if (ImGui.CollapsingHeader("ImGui", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            // Save current imgui.ini in AppData
+
+            // Restore imgui.ini from saved version in AppData
+        }
 
         if (ImGui.CollapsingHeader("Theme", ImGuiTreeNodeFlags.DefaultOpen))
         {

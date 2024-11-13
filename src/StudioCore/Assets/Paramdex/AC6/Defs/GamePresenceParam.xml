@@ -6,16 +6,33 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="u8 UnkByte0x00"></Field>
-    <Field Def="u8 UnkByte0x01"></Field>
-    <Field Def="u8 UnkByte0x02"></Field>
-    <Field Def="u8 Unk0x03"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
-    <Field Def="s32 UnkInt0x14"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
-    <Field Def="s32 UnkInt0x1C"></Field>
+    <Field Def="u8 canAutoNavigation">
+      <DisplayName>自動遷移が可能か</DisplayName>
+      <Enum>GAME_PRESENCE_PARAM_CIRCLECROSS_TYPE</Enum>
+      <Description>自動遷移が可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 canSystemErrorHandling">
+      <DisplayName>システムエラーハンドリングが可能か</DisplayName>
+      <Enum>GAME_PRESENCE_PARAM_CIRCLECROSS_TYPE</Enum>
+      <Description>システムエラーハンドリングが可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 requestPause">
+      <DisplayName>ポーズするか</DisplayName>
+      <Enum>GAME_PRESENCE_PARAM_CIRCLECROSS_TYPE</Enum>
+      <Description>ポーズするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[29]">
+      <DisplayName>----</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>5</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

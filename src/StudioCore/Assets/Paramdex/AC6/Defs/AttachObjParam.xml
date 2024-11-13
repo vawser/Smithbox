@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ATTACH_OBJ_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="fixstrW ObjName0[32]">
+      <DisplayName>関節名</DisplayName>
+      <Description>アタッチ元になる関節名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>1</SortID>
+      <UnkC8>グループ0</UnkC8>
+    </Field>
+    <Field Def="fixstrW ObjName1[32]">
+      <DisplayName>関節名</DisplayName>
+      <Description>アタッチ元になる関節名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>2</SortID>
+      <UnkC8>グループ1</UnkC8>
+    </Field>
+    <Field Def="fixstrW ObjName2[32]">
+      <DisplayName>関節名</DisplayName>
+      <Description>アタッチ元になる関節名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>3</SortID>
+      <UnkC8>グループ2</UnkC8>
+    </Field>
+    <Field Def="fixstrW ObjName3[32]">
+      <DisplayName>関節名</DisplayName>
+      <Description>アタッチ元になる関節名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>4</SortID>
+      <UnkC8>グループ3</UnkC8>
+    </Field>
+    <Field Def="fixstrW ObjName4[32]">
+      <DisplayName>関節名</DisplayName>
+      <Description>アタッチ元になる関節名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>5</SortID>
+      <UnkC8>グループ4</UnkC8>
+    </Field>
+    <Field Def="fixstrW ObjName5[32]">
+      <DisplayName>関節名</DisplayName>
+      <Description>アタッチ元になる関節名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>6</SortID>
+      <UnkC8>グループ5</UnkC8>
+    </Field>
+    <Field Def="fixstrW ObjName6[32]">
+      <DisplayName>関節名</DisplayName>
+      <Description>アタッチ元になる関節名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>7</SortID>
+      <UnkC8>グループ6</UnkC8>
+    </Field>
+    <Field Def="fixstrW ObjName7[32]">
+      <DisplayName>関節名</DisplayName>
+      <Description>アタッチ元になる関節名</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>8</SortID>
+      <UnkC8>グループ7</UnkC8>
+    </Field>
+    <Field Def="u32 attachDmyId0">
+      <DisplayName>アタッチダミポリID</DisplayName>
+      <Description>アタッチ先になるダミポリID</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>9</SortID>
+      <UnkC8>グループ0</UnkC8>
+    </Field>
+    <Field Def="u32 attachDmyId1">
+      <DisplayName>アタッチダミポリID</DisplayName>
+      <Description>アタッチ先になるダミポリID</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>10</SortID>
+      <UnkC8>グループ1</UnkC8>
+    </Field>
+    <Field Def="u32 attachDmyId2">
+      <DisplayName>アタッチダミポリID</DisplayName>
+      <Description>アタッチ先になるダミポリID</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>11</SortID>
+      <UnkC8>グループ2</UnkC8>
+    </Field>
+    <Field Def="u32 attachDmyId3">
+      <DisplayName>アタッチダミポリID</DisplayName>
+      <Description>アタッチ先になるダミポリID</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>12</SortID>
+      <UnkC8>グループ3</UnkC8>
+    </Field>
+    <Field Def="u32 attachDmyId4">
+      <DisplayName>アタッチダミポリID</DisplayName>
+      <Description>アタッチ先になるダミポリID</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>13</SortID>
+      <UnkC8>グループ4</UnkC8>
+    </Field>
+    <Field Def="u32 attachDmyId5">
+      <DisplayName>アタッチダミポリID</DisplayName>
+      <Description>アタッチ先になるダミポリID</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>14</SortID>
+      <UnkC8>グループ5</UnkC8>
+    </Field>
+    <Field Def="u32 attachDmyId6">
+      <DisplayName>アタッチダミポリID</DisplayName>
+      <Description>アタッチ先になるダミポリID</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>15</SortID>
+      <UnkC8>グループ6</UnkC8>
+    </Field>
+    <Field Def="u32 attachDmyId7">
+      <DisplayName>アタッチダミポリID</DisplayName>
+      <Description>アタッチ先になるダミポリID</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>16</SortID>
+      <UnkC8>グループ7</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

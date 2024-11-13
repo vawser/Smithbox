@@ -1,7 +1,11 @@
 #--------------------------------------
-# WEEKLY TODO
+# TODO
 #--------------------------------------
 - Add option to store imgui.ini in AppData.
 - Add option to replace install dir imgui.ini with stored one from AppData.
-- Fix up the AC6 emevd mappings (parameter mappings are still a bit scuffed)
 
+- Add two Name list options: Canon and Community: 
+ - Canon is any raw japanese/transcribed names
+ - Community is adjusted names based on the canon names but tailored for modding usage
+ 
+- Update AC6 paramdex to use released AC6 paramdefs + adjust other stuff based on discoveries

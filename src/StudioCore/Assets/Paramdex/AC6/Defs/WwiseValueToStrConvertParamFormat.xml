@@ -6,6 +6,12 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="fixstr ParamStr[32]"></Field>
+    <Field Def="fixstr ParamStr[32]">
+      <DisplayName>Wwiseパラメータ文字列</DisplayName>
+      <Description>Wwiseパラメータ文字列</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>1</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

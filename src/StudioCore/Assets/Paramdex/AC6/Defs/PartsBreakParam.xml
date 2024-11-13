@@ -6,25 +6,106 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
-    <Field Def="s32 UnkInt0x14"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
-    <Field Def="s32 UnkInt0x1C"></Field>
-    <Field Def="f32 UnkFloat0x20"></Field>
-    <Field Def="s32 UnkInt0x24"></Field>
-    <Field Def="s32 UnkInt0x28"></Field>
-    <Field Def="s32 UnkInt0x2C"></Field>
-    <Field Def="s32 UnkInt0x30"></Field>
-    <Field Def="s32 UnkInt0x34"></Field>
-    <Field Def="s32 UnkInt0x38"></Field>
-    <Field Def="s32 UnkInt0x3C"></Field>
-    <Field Def="s32 UnkInt0x40"></Field>
-    <Field Def="s32 UnkInt0x44"></Field>
-    <Field Def="s32 UnkInt0x48"></Field>
-    <Field Def="s32 UnkInt0x4C"></Field>
+    <Field Def="fixstr boneName[32]">
+      <DisplayName>関節名</DisplayName>
+      <Description>モデルの関節名を指定</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 partsWeight = -1">
+      <DisplayName>部品重量</DisplayName>
+      <Description>物理挙動のラグドール重さの上書き値。-1で上書きしない。0だと動かない剛体として処理されてしまうらしいので最低値1として処理する</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s32 bodySfxDmyId = -1">
+      <DisplayName>本体側SFXダミポリID</DisplayName>
+      <Description>エフェクト再生用のダミポリを指定。-1で原点</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>300</SortID>
+      <UnkC8>吹っ飛び</UnkC8>
+    </Field>
+    <Field Def="s32 partsSfxDmyId = -1">
+      <DisplayName>部品側SFXダミポリID</DisplayName>
+      <Description>エフェクト再生用のダミポリを指定。-1で原点</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>400</SortID>
+      <UnkC8>吹っ飛び</UnkC8>
+    </Field>
+    <Field Def="s32 bodySfxId = -1">
+      <DisplayName>本体側SFXID</DisplayName>
+      <Description>エフェクトを指定 -1で何も出さない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>500</SortID>
+      <UnkC8>吹っ飛び</UnkC8>
+    </Field>
+    <Field Def="s32 partsSfxId = -1">
+      <DisplayName>部品側SFXID</DisplayName>
+      <Description>エフェクトを指定 -1で何も出さない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>600</SortID>
+      <UnkC8>吹っ飛び</UnkC8>
+    </Field>
+    <Field Def="f32 baseSpeedWhenBreak">
+      <DisplayName>破損時基本速度[m/s]</DisplayName>
+      <Description>外れた瞬間、ちょっと本体側から離すための基本初速。重量に依らない速度であることに留意</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>800</SortID>
+      <UnkC8>吹っ飛び</UnkC8>
+    </Field>
+    <Field Def="u8 partsAnimeType">
+      <DisplayName>破損パーツアニメ再生タイプ</DisplayName>
+      <Enum>PARTS_BREAK_BROKEN_PARTS_ANIME_TYPE</Enum>
+      <Description>切り離されたパーツのアニメをどうするか。0:破損した瞬間のポーズで固定、1:そのまま再生し続ける、2:即ラグドール化</Description>
+      <Maximum>2</Maximum>
+      <SortID>700</SortID>
+      <UnkC8>吹っ飛び</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad[7]">
+      <SortID>1201</SortID>
+    </Field>
+    <Field Def="s32 partsExplosionSfxDmyId = -1">
+      <DisplayName>部品側爆散SFXダミポリID</DisplayName>
+      <Description>エフェクト再生用のダミポリを指定。-1で原点</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>900</SortID>
+      <UnkC8>爆散</UnkC8>
+    </Field>
+    <Field Def="s32 bodyExplosionSfxDmyId = -1">
+      <DisplayName>本体側爆散SFXダミポリID</DisplayName>
+      <Description>エフェクト再生用のダミポリを指定。-1で原点</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>1000</SortID>
+      <UnkC8>爆散</UnkC8>
+    </Field>
+    <Field Def="s32 partsExplosionSfxId = -1">
+      <DisplayName>部品側爆散SFXID</DisplayName>
+      <Description>エフェクトを指定 -1で何も出さない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>1100</SortID>
+      <UnkC8>爆散</UnkC8>
+    </Field>
+    <Field Def="s32 bodyExplosionSfxId = -1">
+      <DisplayName>本体側爆散SFXID</DisplayName>
+      <Description>エフェクトを指定 -1で何も出さない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>1200</SortID>
+      <UnkC8>爆散</UnkC8>
+    </Field>
   </Fields>
 </PARAMDEF>

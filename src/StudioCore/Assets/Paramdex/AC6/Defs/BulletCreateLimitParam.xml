@@ -6,9 +6,15 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="u8 limitNum_byGroup"></Field>
-    <Field Def="u8 isLimitEachOwner:1"></Field>
-    <Field Def="dummy8 pad2:7"></Field>
-    <Field Def="dummy8 pad[30]"></Field>
+    <Field Def="u8 limitNum_byGroup">
+      <DisplayName>グループ内上限弾数</DisplayName>
+      <Description>同一グループ内での作成上限数</Description>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="dummy8 pad[31]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング１</Description>
+      <SortID>10001</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

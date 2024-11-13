@@ -6,12 +6,33 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 fmgId">
-      <Description>Base FMG ID in NPC名 for the range of 10 strings determining character name and AC name.</Description>
+    <Field Def="s32 nameTextID">
+      <DisplayName>名前</DisplayName>
+      <Description>NPC Character.xlsm のIDを指定
+指定IDから下記オフセットでテキストを登録しておくこと
++0…FE機体名
++1…FEパイロット名
++2…メニュー機体名
++3…メニューパイロット名　/　会話話者名
++4…機体名/パイロット名</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1</SortID>
     </Field>
-    <Field Def="u16 menuDecalId">
-      <Description>ID of the MENU_Decal texture in 00_Solo to use for the character's emblem.</Description>
+    <Field Def="s32 emblemImageID">
+      <DisplayName>エンブレム</DisplayName>
+      <Description>エンブレムイメージのIDを指定</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2</SortID>
     </Field>
-    <Field Def="dummy8 pad08[10]"></Field>
+    <Field Def="dummy8 reserved[8]">
+      <DisplayName>予約</DisplayName>
+      <Description>-----</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>4</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

@@ -6,18 +6,61 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
-    <Field Def="s32 UnkInt0x14"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
-    <Field Def="s32 UnkInt0x1C"></Field>
-    <Field Def="s32 UnkInt0x20"></Field>
-    <Field Def="f32 UnkFloat0x24"></Field>
-    <Field Def="f32 UnkFloat0x28"></Field>
-    <Field Def="s32 UnkInt0x2C"></Field>
-    <Field Def="s32 UnkInt0x30"></Field>
+    <Field Def="fixstr baseBoneName[16]">
+      <DisplayName>ベースボーン名</DisplayName>
+      <Description>ベースの関節名</Description>
+      <DisplayFormat>%s</DisplayFormat>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr beltBoneName[16]">
+      <DisplayName>ベルトボーン名</DisplayName>
+      <Description>ベルトの関節名</Description>
+      <DisplayFormat>%s</DisplayFormat>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="u8 refSusAIndex_0">
+      <DisplayName>傾き算出用ホイール組み合わせAのインデックス前</DisplayName>
+      <Description>傾き算出するためのホイールのインデックス</Description>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="u8 refSusAIndex_1">
+      <DisplayName>傾き算出用ホイール組み合わせAのインデックス後</DisplayName>
+      <Description>傾き算出するためのホイールのインデックス</Description>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="u8 refSusBIndex_0">
+      <DisplayName>傾き算出用ホイール組み合わせBのインデックス前</DisplayName>
+      <Description>傾き算出するためのホイールのインデックス</Description>
+      <SortID>104</SortID>
+    </Field>
+    <Field Def="u8 refSusBIndex_1">
+      <DisplayName>傾き算出用ホイール組み合わせBのインデックス後</DisplayName>
+      <Description>傾き算出するためのホイールのインデックス</Description>
+      <SortID>105</SortID>
+    </Field>
+    <Field Def="f32 frontBackLength = 2">
+      <DisplayName>サスペンション間の長さ[m]</DisplayName>
+      <Description>サスペンション間の長さ</Description>
+      <Minimum>0.5</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>106</SortID>
+    </Field>
+    <Field Def="f32 applyRate = 1">
+      <DisplayName>適用率</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>107</SortID>
+    </Field>
+    <Field Def="u8 BoneAxis">
+      <DisplayName>ボーンの軸(0:X 1:Y 2:Z)</DisplayName>
+      <Maximum>2</Maximum>
+      <SortID>108</SortID>
+    </Field>
+    <Field Def="dummy8 pad7[7]">
+      <DisplayName>予約</DisplayName>
+      <SortID>999999</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

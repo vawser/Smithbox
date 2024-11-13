@@ -6,13 +6,16 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="f32 UnkFloat0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
-    <Field Def="s32 UnkInt0x14"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
-    <Field Def="s32 UnkInt0x1C"></Field>
+    <Field Def="f32 rotRate">
+      <DisplayName>固定する割合</DisplayName>
+      <Description>ワールドに対して固定する割合</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[28]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>101</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

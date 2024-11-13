@@ -6,78 +6,2413 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
-    <Field Def="u16 UnkUshort0x04"></Field>
-    <Field Def="s16 UnkShort0x06"></Field>
-    <Field Def="s8 UnkSbyte0x08"></Field>
-    <Field Def="u8 UnkByte0x09"></Field>
-    <Field Def="s16 UnkShort0x0A"></Field>
-    <Field Def="u8 Unk0x0C"></Field>
-    <Field Def="u8 UnkByte0x0D"></Field>
-    <Field Def="u8 Unk0x0E"></Field>
-    <Field Def="u8 Unk0x0F"></Field>
-    <Field Def="u16 UnkUshort0x10"></Field>
-    <Field Def="s16 UnkShort0x12"></Field>
-    <Field Def="s8 UnkSbyte0x14"></Field>
-    <Field Def="u8 UnkByte0x15"></Field>
-    <Field Def="s16 UnkShort0x16"></Field>
-    <Field Def="u8 Unk0x18"></Field>
-    <Field Def="u8 UnkByte0x19"></Field>
-    <Field Def="u8 Unk0x1A"></Field>
-    <Field Def="u8 Unk0x1B"></Field>
-    <Field Def="u16 UnkUshort0x1C"></Field>
-    <Field Def="s16 UnkShort0x1E"></Field>
-    <Field Def="s8 UnkSbyte0x20"></Field>
-    <Field Def="u8 UnkByte0x21"></Field>
-    <Field Def="s16 UnkShort0x22"></Field>
-    <Field Def="dummy8 Unk0x24[1]"></Field>
-    <Field Def="u8 UnkByte0x25"></Field>
-    <Field Def="u8 Unk0x26"></Field>
-    <Field Def="u8 Unk0x27"></Field>
-    <Field Def="u16 UnkUshort0x28"></Field>
-    <Field Def="s16 UnkShort0x2A"></Field>
-    <Field Def="s8 UnkSbyte0x2C"></Field>
-    <Field Def="u8 UnkByte0x2D"></Field>
-    <Field Def="s16 UnkShort0x2E"></Field>
-    <Field Def="u8 Unk0x30"></Field>
-    <Field Def="u8 UnkByte0x31"></Field>
-    <Field Def="u8 Unk0x32"></Field>
-    <Field Def="u8 Unk0x33"></Field>
-    <Field Def="s32 UnkInt0x34"></Field>
-    <Field Def="s32 UnkInt0x38"></Field>
-    <Field Def="s32 UnkInt0x3C"></Field>
-    <Field Def="s32 UnkInt0x40"></Field>
-    <Field Def="s32 UnkInt0x44"></Field>
-    <Field Def="s32 UnkInt0x48"></Field>
-    <Field Def="s32 UnkInt0x4C"></Field>
-    <Field Def="s32 UnkInt0x50"></Field>
-    <Field Def="s32 UnkInt0x54"></Field>
-    <Field Def="s32 UnkInt0x58"></Field>
-    <Field Def="s32 UnkInt0x5C"></Field>
-    <Field Def="s32 UnkInt0x60"></Field>
-    <Field Def="s32 UnkInt0x64"></Field>
-    <Field Def="s32 UnkInt0x68"></Field>
-    <Field Def="s32 UnkInt0x6C"></Field>
-    <Field Def="s32 UnkInt0x70"></Field>
-    <Field Def="s32 UnkInt0x74"></Field>
-    <Field Def="s32 UnkInt0x78"></Field>
-    <Field Def="s32 UnkInt0x7C"></Field>
-    <Field Def="s32 UnkInt0x80"></Field>
-    <Field Def="s32 UnkInt0x84"></Field>
-    <Field Def="s32 UnkInt0x88"></Field>
-    <Field Def="s32 UnkInt0x8C"></Field>
-    <Field Def="s32 UnkInt0x90"></Field>
-    <Field Def="s32 UnkInt0x94"></Field>
-    <Field Def="s32 UnkInt0x98"></Field>
-    <Field Def="s32 UnkInt0x9C"></Field>
-    <Field Def="s32 UnkInt0xA0"></Field>
-    <Field Def="s32 UnkInt0xA4"></Field>
-    <Field Def="s32 UnkInt0xA8"></Field>
-    <Field Def="s32 UnkInt0xAC"></Field>
-    <Field Def="s32 UnkInt0xB0"></Field>
-    <Field Def="s32 UnkInt0xB4"></Field>
-    <Field Def="s32 UnkInt0xB8"></Field>
-    <Field Def="s32 UnkInt0xBC"></Field>
-    <Field Def="s32 UnkInt0xC0"></Field>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>90000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>90010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>10000000</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>10000001</SortID>
+    </Field>
+    <Field Def="s16 beginCameraId_1 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_1 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_1:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_1:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_1:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_1:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_1:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_1:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_1:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_1">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_1 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_1 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_1">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_1 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet00</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID00</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_2 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_2 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_2:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_2:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_2:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_2:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_2:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_2:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_2:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_2">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_2 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_2 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_2">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_2 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet01</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID01</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_3 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_3 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_3:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_3:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_3:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_3:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_3:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_3:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_3:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_3">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_3 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_3 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_3">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_3 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet02</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID02</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_4 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_4 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_4:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_4:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_4:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_4:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_4:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_4:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_4:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_4">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_4 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_4 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_4">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_4 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet03</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID03</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_5 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_5 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_5:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_5:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_5:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_5:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_5:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_5:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_5:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_5">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_5 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_5 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_5">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_5 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet04</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID04</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_6 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_6 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_6:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_6:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_6:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_6:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_6:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_6:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_6:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_6">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_6 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_6 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_6">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_6 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet05</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID05</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_7 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_7 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_7:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_7:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_7:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_7:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_7:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_7:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_7:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_7">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_7 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_7 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_7">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_7 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet06</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID06</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_8 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_8 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_8:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_8:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_8:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_8:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_8:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_8:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_8:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_8">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_8 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_8 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_8">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_8 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet07</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID07</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_9 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_9 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_9:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_9:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_9:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_9:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_9:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_9:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_9:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_9">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_9 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_9 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_9">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_9 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet08</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID08</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_10 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_10 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_10:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_10:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_10:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_10:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_10:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_10:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_10:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_10">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_10 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_10 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_10">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_10 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet09</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID09</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_11 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_11 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_11:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_11:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_11:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_11:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_11:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_11:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_11:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_11">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_11 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_11 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_11">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_11 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet10</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID10</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_12 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_12 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_12:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_12:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_12:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_12:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_12:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_12:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_12:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_12">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_12 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_12 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_12">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_12 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet11</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID11</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_13 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_13 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_13:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_13:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_13:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_13:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_13:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_13:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_13:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_13">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_13 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_13 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_13">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_13 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet12</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID12</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_14 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_14 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_14:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_14:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_14:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_14:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_14:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_14:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_14:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_14">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_14 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_14 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_14">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_14 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet13</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID13</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_15 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_15 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_15:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_15:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_15:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_15:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_15:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_15:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_15:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_15">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_15 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_15 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_15">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_15 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet14</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID14</UnkC8>
+    </Field>
+    <Field Def="s16 beginCameraId_16 = -1">
+      <DisplayName>開始カメラID</DisplayName>
+      <Description>開始時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="s16 endCameraId_16 = -1">
+      <DisplayName>終了カメラID</DisplayName>
+      <Description>終了時に再生する振動カメラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="u8 bNoWait_16:1">
+      <DisplayName>すぐに再生</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>すぐに再生するか、再生しない場合はシステムのウェイト時間待機してから再生</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="u8 bFade_16:1">
+      <DisplayName>フェード</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてフェードイン、フェードアウトをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="u8 bBoke_16:1">
+      <DisplayName>ボケ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>カメラのアニメに合わせてぼかしをする（アニメがない場合はシステムの固定時間で処理)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="u8 bOtherAnimCancel_16:1">
+      <DisplayName>切替時に他のアニメは再生しない</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>このカメラを再生開始する前のカメラの終了再生をキャンセルするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="u8 bFilterAnimOnly_16:1">
+      <DisplayName>画面効果のみ</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>画面効果のアニメだけでカメラのアニメはアニメフレームだけ参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="u8 bCameraHightFixed_16:1">
+      <DisplayName>視点の高さを固定化</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>視点のダミポリの高さがアニメで移動しても基準になる高さからの差分となるようにします</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="dummy8 padbit_16:2">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999999</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamStartFrame_16">
+      <DisplayName>レーンカメラ初期フレーム</DisplayName>
+      <Description>カメラ切り替え時のレーンカメラアニメの初期フレーム</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>60</Maximum>
+      <SortID>115</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="s16 baseDmyPolyId_16 = -1">
+      <DisplayName>基準ダミポリID</DisplayName>
+      <Description>指定されたダミポリを基準にカメラを再生する（つまり再生位置オフセット)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>105</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="s8 laneCamLockAtEntityId_16 = -1">
+      <DisplayName>レーンカメラ視点エンティティID</DisplayName>
+      <Description>レーンカメラの視点のエンティティIDの(101700の下2桁の値) -1の場合は自機</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="u8 laneCamPointIdx_16">
+      <DisplayName>レーンカメラポイントID</DisplayName>
+      <Description>レーンカメラのポイントが参照するエンティティIDの(101600の下一桁の値)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>98</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
+    <Field Def="s16 laneCamLookAtDmyPolyId_16 = -1">
+      <DisplayName>レーンカメラ視点ダミポリID</DisplayName>
+      <Description>レーンカメラの視点のダミポリID(-1の場合は自機のヘッドパーツのダミポリ899)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+      <UnkB8>cameraAnimSet15</UnkB8>
+      <UnkC0>CameraAnimSet</UnkC0>
+      <UnkC8>カメラアニメID15</UnkC8>
+    </Field>
   </Fields>
 </PARAMDEF>

@@ -40,7 +40,7 @@ namespace SoulsFormats
                 return def;
             }
 
-            public static void Serialize(PARAMDEF def, XmlWriter xw, int xmlVersion)
+            public static void Serialize(PARAMDEF def, XmlWriter xw, int xmlVersion, bool includeOffsets)
             {
                 if (xmlVersion < 0 || xmlVersion > CURRENT_XML_VERSION)
                     throw new InvalidOperationException($"XML version {xmlVersion} not recognized.");
@@ -54,9 +54,20 @@ namespace SoulsFormats
                 xw.WriteElementString("Unicode", def.Unicode.ToString());
                 xw.WriteElementString(xmlVersion == 0 ? "Version" : "FormatVersion", def.FormatVersion.ToString());
 
+                int offset = 0;
                 xw.WriteStartElement("Fields");
-                foreach (Field field in def.Fields)
+                for (int i = 0; i < def.Fields.Count; i++)
                 {
+                    if (includeOffsets)
+                    {
+                        int currentSize = def.GetFieldsSize(i + 1);
+                        if (currentSize != offset)
+                        {
+                            xw.WriteComment($" +0x{offset:X} ");
+                            offset = currentSize;
+                        }
+                    }
+                    Field field = def.Fields[i];
                     xw.WriteStartElement("Field");
                     SerializeField(def, field, xw);
                     xw.WriteEndElement();
@@ -93,7 +104,7 @@ namespace SoulsFormats
                 Match outerMatch = defOuterRx.Match(fieldDef);
                 field.DisplayType = (DefType)Enum.Parse(typeof(DefType), outerMatch.Groups["type"].Value.Trim());
                 if (outerMatch.Groups["default"].Success)
-                    field.Default = float.Parse(outerMatch.Groups["default"].Value, CultureInfo.InvariantCulture);
+                    field.Default = ParseVariableValue(def, field.DisplayType, outerMatch.Groups["default"].Value);
                 else
                     field.Default = ParamUtil.GetDefaultDefault(def, field.DisplayType);
 

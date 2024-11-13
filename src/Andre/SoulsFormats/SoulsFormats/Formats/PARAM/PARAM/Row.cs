@@ -112,7 +112,7 @@ namespace SoulsFormats
                 var cells = new Cell[paramdef.Fields.Count];
 
                 int bitOffset = -1;
-                PARAMDEF.DefType bitType = PARAMDEF.DefType.u8;
+                int bitLimit = -1;
                 ulong bitValue = 0; // This is ulong so checkOrphanedBits doesn't fail on offsets of 32
                 const int BIT_VALUE_SIZE = 64;
 
@@ -134,11 +134,7 @@ namespace SoulsFormats
                     object value = null;
                     PARAMDEF.DefType type = field.DisplayType;
 
-                    if (type == PARAMDEF.DefType.s8)
-                        value = br.ReadSByte();
-                    else if (type == PARAMDEF.DefType.s16)
-                        value = br.ReadInt16();
-                    else if (type == PARAMDEF.DefType.s32 || type == PARAMDEF.DefType.b32)
+                    if (type == PARAMDEF.DefType.b32)
                         value = br.ReadInt32();
                     else if (type == PARAMDEF.DefType.f32 || type == PARAMDEF.DefType.angle32)
                         value = br.ReadSingle();
@@ -152,14 +148,17 @@ namespace SoulsFormats
                     {
                         if (field.BitSize == -1)
                         {
-                            if (type == PARAMDEF.DefType.u8)
-                                value = br.ReadByte();
-                            else if (type == PARAMDEF.DefType.u16)
-                                value = br.ReadUInt16();
-                            else if (type == PARAMDEF.DefType.u32)
-                                value = br.ReadUInt32();
-                            else if (type == PARAMDEF.DefType.dummy8)
-                                value = br.ReadBytes(field.ArrayLength);
+                            value = type switch
+                            {
+                                PARAMDEF.DefType.s8 => br.ReadSByte(),
+                                PARAMDEF.DefType.u8 => br.ReadByte(),
+                                PARAMDEF.DefType.s16 => br.ReadInt16(),
+                                PARAMDEF.DefType.u16 => br.ReadUInt16(),
+                                PARAMDEF.DefType.s32 => br.ReadInt32(),
+                                PARAMDEF.DefType.u32 => br.ReadUInt32(),
+                                PARAMDEF.DefType.dummy8 => br.ReadBytes(field.ArrayLength),
+                                _ => throw new InvalidOperationException($"Unexpected type in bitfield handling: {type}")
+                            };
                         }
                     }
                     else
@@ -172,35 +171,46 @@ namespace SoulsFormats
                     }
                     else
                     {
-                        PARAMDEF.DefType newBitType = type == PARAMDEF.DefType.dummy8 ? PARAMDEF.DefType.u8 : type;
-                        int bitLimit = ParamUtil.GetBitLimit(newBitType);
+                        if (bitOffset == -1 || ParamUtil.GetBitLimit(type) != bitLimit || bitOffset + field.BitSize > bitLimit)
+                        {
+                            checkOrphanedBits();
+                            bitOffset = 0;
+                            bitLimit = ParamUtil.GetBitLimit(type);
+                            // Always read unsigned to retain the exact bits; it will be sign-extended later if applicable
+                            bitValue = bitLimit switch
+                            {
+                                8 => br.ReadByte(),
+                                16 => br.ReadUInt16(),
+                                32 => br.ReadUInt32(),
+                                _ => throw new InvalidOperationException($"Unexpected bit limit in bitfield handling: {bitLimit}")
+                            };
+                        }
 
                         if (field.BitSize == 0)
                             throw new NotImplementedException($"Bit size 0 is not supported.");
                         if (field.BitSize > bitLimit)
-                            throw new InvalidDataException($"Bit size {field.BitSize} is too large to fit in type {newBitType}.");
-
-                        if (bitOffset == -1 || newBitType != bitType || bitOffset + field.BitSize > bitLimit)
-                        {
-                            checkOrphanedBits();
-                            bitOffset = 0;
-                            bitType = newBitType;
-                            if (bitType == PARAMDEF.DefType.u8)
-                                bitValue = br.ReadByte();
-                            else if (bitType == PARAMDEF.DefType.u16)
-                                bitValue = br.ReadUInt16();
-                            else if (bitType == PARAMDEF.DefType.u32)
-                                bitValue = br.ReadUInt32();
-                        }
-
-                        ulong shifted = bitValue << (BIT_VALUE_SIZE - field.BitSize - bitOffset) >> (BIT_VALUE_SIZE - field.BitSize);
+                            throw new InvalidDataException($"Bit size {field.BitSize} is too large to fit in type {type}.");
+                        long shifted;
+                        int leftShift = BIT_VALUE_SIZE - field.BitSize - bitOffset;
+                        int rightShift = BIT_VALUE_SIZE - field.BitSize;
+                        // Cast before shifting for sign extension
+                        if (ParamUtil.IsSignedBitType(type))
+                            shifted = (long)bitValue << leftShift >> rightShift;
+                        // Cast after shifting to avoid sign extension
+                        else
+                            shifted = (long)(bitValue << leftShift >> rightShift);
                         bitOffset += field.BitSize;
-                        if (bitType == PARAMDEF.DefType.u8)
-                            value = (byte)shifted;
-                        else if (bitType == PARAMDEF.DefType.u16)
-                            value = (ushort)shifted;
-                        else if (bitType == PARAMDEF.DefType.u32)
-                            value = (uint)shifted;
+                        value = type switch
+                        {
+                            PARAMDEF.DefType.s8 => (sbyte)shifted,
+                            PARAMDEF.DefType.u8 => (byte)shifted,
+                            PARAMDEF.DefType.s16 => (short)shifted,
+                            PARAMDEF.DefType.u16 => (ushort)shifted,
+                            PARAMDEF.DefType.s32 => (int)shifted,
+                            PARAMDEF.DefType.u32 => (uint)shifted,
+                            PARAMDEF.DefType.dummy8 => (byte)shifted,
+                            _ => throw new InvalidOperationException($"Unexpected type in bitfield handling: {type}")
+                        };
                     }
 
                     cells[i] = new Cell(field, value);
@@ -235,7 +245,7 @@ namespace SoulsFormats
                     bw.FillUInt32($"RowOffset{index}", (uint)bw.Position);
 
                 int bitOffset = -1;
-                PARAMDEF.DefType bitType = PARAMDEF.DefType.u8;
+                int bitLimit = -1;
                 ulong bitValue = 0;
                 const int BIT_VALUE_SIZE = 64;
 
@@ -246,11 +256,7 @@ namespace SoulsFormats
                     PARAMDEF.Field field = cell.Def;
                     PARAMDEF.DefType type = field.DisplayType;
 
-                    if (type == PARAMDEF.DefType.s8)
-                        bw.WriteSByte((sbyte)value);
-                    else if (type == PARAMDEF.DefType.s16)
-                        bw.WriteInt16((short)value);
-                    else if (type == PARAMDEF.DefType.s32 || type == PARAMDEF.DefType.b32)
+                    if (type == PARAMDEF.DefType.b32)
                         bw.WriteInt32((int)value);
                     else if (type == PARAMDEF.DefType.f32 || type == PARAMDEF.DefType.angle32)
                         bw.WriteSingle((float)value);
@@ -264,31 +270,38 @@ namespace SoulsFormats
                     {
                         if (field.BitSize == -1)
                         {
-                            if (type == PARAMDEF.DefType.u8)
-                                bw.WriteByte((byte)value);
-                            else if (type == PARAMDEF.DefType.u16)
-                                bw.WriteUInt16((ushort)value);
-                            else if (type == PARAMDEF.DefType.u32)
-                                bw.WriteUInt32((uint)value);
-                            else if (type == PARAMDEF.DefType.dummy8)
-                                bw.WriteBytes((byte[])value);
+                            switch (type)
+                            {
+                                case PARAMDEF.DefType.s8: bw.WriteSByte((sbyte)value); break;
+                                case PARAMDEF.DefType.u8: bw.WriteByte((byte)value); break;
+                                case PARAMDEF.DefType.s16: bw.WriteInt16((short)value); break;
+                                case PARAMDEF.DefType.u16: bw.WriteUInt16((ushort)value); break;
+                                case PARAMDEF.DefType.s32: bw.WriteInt32((int)value); break;
+                                case PARAMDEF.DefType.u32: bw.WriteUInt32((uint)value); break;
+                                case PARAMDEF.DefType.dummy8: bw.WriteBytes((byte[])value); break;
+                                default: throw new InvalidOperationException($"Unexpected type in bitfield handling: {type}");
+                            }
                         }
                         else
                         {
                             if (bitOffset == -1)
                             {
                                 bitOffset = 0;
-                                bitType = type == PARAMDEF.DefType.dummy8 ? PARAMDEF.DefType.u8 : type;
+                                bitLimit = ParamUtil.GetBitLimit(type);
                                 bitValue = 0;
                             }
 
-                            uint shifted = 0;
-                            if (bitType == PARAMDEF.DefType.u8)
-                                shifted = (byte)value;
-                            else if (bitType == PARAMDEF.DefType.u16)
-                                shifted = (ushort)value;
-                            else if (bitType == PARAMDEF.DefType.u32)
-                                shifted = (uint)value;
+                            ulong shifted = type switch
+                            {
+                                PARAMDEF.DefType.s8 => (byte)(sbyte)value,
+                                PARAMDEF.DefType.u8 => (byte)value,
+                                PARAMDEF.DefType.s16 => (ushort)(short)value,
+                                PARAMDEF.DefType.u16 => (ushort)value,
+                                PARAMDEF.DefType.s32 => (uint)(int)value,
+                                PARAMDEF.DefType.u32 => (uint)value,
+                                PARAMDEF.DefType.dummy8 => (byte)value,
+                                _ => throw new InvalidOperationException($"Unexpected type in bitfield handling: {type}")
+                            };
                             // Shift left first to clear any out-of-range bits
                             shifted = shifted << (BIT_VALUE_SIZE - field.BitSize) >> (BIT_VALUE_SIZE - field.BitSize - bitOffset);
                             bitValue |= shifted;
@@ -303,9 +316,8 @@ namespace SoulsFormats
                             {
                                 PARAMDEF.Field nextField = Cells[i + 1].Def;
                                 PARAMDEF.DefType nextType = nextField.DisplayType;
-                                int bitLimit = ParamUtil.GetBitLimit(bitType);
-                                if (!ParamUtil.IsBitType(nextType) || nextField.BitSize == -1 || bitOffset + nextField.BitSize > bitLimit
-                                    || (nextType == PARAMDEF.DefType.dummy8 ? PARAMDEF.DefType.u8 : nextType) != bitType)
+                                if (!ParamUtil.IsBitType(nextType) || nextField.BitSize == -1 || ParamUtil.GetBitLimit(nextType) != bitLimit
+                                     || bitOffset + nextField.BitSize > bitLimit)
                                 {
                                     write = true;
                                 }
@@ -314,12 +326,13 @@ namespace SoulsFormats
                             if (write)
                             {
                                 bitOffset = -1;
-                                if (bitType == PARAMDEF.DefType.u8)
-                                    bw.WriteByte((byte)bitValue);
-                                else if (bitType == PARAMDEF.DefType.u16)
-                                    bw.WriteUInt16((ushort)bitValue);
-                                else if (bitType == PARAMDEF.DefType.u32)
-                                    bw.WriteUInt32((uint)bitValue);
+                                switch (bitLimit)
+                                {
+                                    case 8: bw.WriteByte((byte)bitValue); break;
+                                    case 16: bw.WriteUInt16((ushort)bitValue); break;
+                                    case 32: bw.WriteUInt32((uint)bitValue); break;
+                                    default: throw new InvalidOperationException($"Unexpected bit limit in bitfield handling: {bitLimit}");
+                                }
                             }
                         }
                     }

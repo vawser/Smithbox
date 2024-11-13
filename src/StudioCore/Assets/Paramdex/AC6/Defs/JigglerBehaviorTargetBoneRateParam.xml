@@ -6,17 +6,35 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="fixstr boneName[24]"></Field>
-    
-    <Field Def="f32 UnkFloat0x18"></Field>
-    <Field Def="f32 UnkFloat0x1C"></Field>
-    <Field Def="f32 UnkFloat0x20"></Field>
-    <Field Def="s32 UnkInt0x24"></Field>
-    <Field Def="s32 UnkInt0x28"></Field>
-    <Field Def="s32 UnkInt0x2C"></Field>
-    <Field Def="s32 UnkInt0x30"></Field>
-    <Field Def="s32 UnkInt0x34"></Field>
-    <Field Def="s32 UnkInt0x38"></Field>
-    <Field Def="s32 UnkInt0x3C"></Field>
+    <Field Def="fixstr strTargetBoneName[24]">
+      <DisplayName>ターゲットボーン名</DisplayName>
+      <Description>ターゲットとなるボーン名</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 selfRotRateX">
+      <DisplayName>自分のX軸回転割合</DisplayName>
+      <Description>自分の回転量の割合（0の場合はターゲットボーンの姿勢になる）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 selfRotRateY">
+      <DisplayName>自分のY軸回転割合</DisplayName>
+      <Description>自分の回転量の割合（0の場合はターゲットボーンの姿勢になる）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 selfRotRateZ">
+      <DisplayName>自分のZ軸回転割合</DisplayName>
+      <Description>自分の回転量の割合（0の場合はターゲットボーンの姿勢になる）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[28]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>201</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ASSEM_EVALUATE_PARAM</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 propertyID">
+      <DisplayName>パラメータ</DisplayName>
+      <Enum>MENU_PROPERTY_ID</Enum>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 weight = 1">
+      <DisplayName>重み</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[8]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

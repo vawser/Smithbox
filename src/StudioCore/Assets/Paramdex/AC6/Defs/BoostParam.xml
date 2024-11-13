@@ -6,37 +6,91 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 Unk0x00"></Field>
-    <Field Def="s32 Unk0x04"></Field>
-    <Field Def="s32 Unk0x08"></Field>
-    <Field Def="s32 Unk0x0C"></Field>
-    <Field Def="s32 Unk0x10"></Field>
-    <Field Def="s32 Unk0x14"></Field>
-    <Field Def="s32 Unk0x18"></Field>
-    <Field Def="s32 Unk0x1C"></Field>
-    <Field Def="s32 Unk0x20"></Field>
-    <Field Def="s32 Unk0x24"></Field>
-    <Field Def="f32 Unk0x28"></Field>
-    <Field Def="s32 Unk0x2C"></Field>
-    <Field Def="f32 UnkFloat0x30"></Field>
-    <Field Def="f32 Unk0x34"></Field>
-    <Field Def="s32 Unk0x38"></Field>
-    <Field Def="s32 Unk0x3C"></Field>
-    <Field Def="s32 Unk0x40"></Field>
-    <Field Def="s32 Unk0x44"></Field>
-    <Field Def="s32 Unk0x48"></Field>
-    <Field Def="s32 Unk0x4C"></Field>
-    <Field Def="s32 Unk0x50"></Field>
-    <Field Def="s32 Unk0x54"></Field>
-    <Field Def="s32 Unk0x58"></Field>
-    <Field Def="s32 Unk0x5C"></Field>
-    <Field Def="s32 Unk0x60"></Field>
-    <Field Def="s32 Unk0x64"></Field>
-    <Field Def="s32 Unk0x68"></Field>
-    <Field Def="s32 Unk0x6C"></Field>
-    <Field Def="s32 Unk0x70"></Field>
-    <Field Def="s32 Unk0x74"></Field>
-    <Field Def="s32 Unk0x78"></Field>
-    <Field Def="s32 Unk0x7C"></Field>
+    <Field Def="s32 sfxId0 = -1">
+      <DisplayName>カウンターブーストsfxID0</DisplayName>
+      <Description>dmyPolyId0　から出るSfxのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="s32 sfxId1 = -1">
+      <DisplayName>カウンターブーストsfxID1</DisplayName>
+      <Description>dmyPolyId1　から出るSfxのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3010</SortID>
+    </Field>
+    <Field Def="s32 sfxId2 = -1">
+      <DisplayName>カウンターブーストsfxID2</DisplayName>
+      <Description>dmyPolyId2　から出るSfxのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3020</SortID>
+    </Field>
+    <Field Def="dummy8 padding1[8]">
+      <DisplayName>パディング1</DisplayName>
+      <SortID>7101</SortID>
+    </Field>
+    <Field Def="s32 dmyPolyId0 = -1">
+      <DisplayName>カウンターブーストsfxを出すダミポリID0</DisplayName>
+      <Description>sfxId0　で指定されたSfxを出すダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="s32 dmyPolyId1 = -1">
+      <DisplayName>カウンターブーストsfxを出すダミポリID1</DisplayName>
+      <Description>sfxId1　で指定されたSfxを出すダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2010</SortID>
+    </Field>
+    <Field Def="s32 dmyPolyId2 = -1">
+      <DisplayName>カウンターブーストsfxを出すダミポリID2</DisplayName>
+      <Description>sfxId2　で指定されたSfxを出すダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2020</SortID>
+    </Field>
+    <Field Def="dummy8 padding2[8]">
+      <DisplayName>パディング2</DisplayName>
+      <SortID>7102</SortID>
+    </Field>
+    <Field Def="f32 sfxScale = 1">
+      <DisplayName>Sfxの大きさ倍率</DisplayName>
+      <Description>Sfxの大きさの倍率 1.0でそのまま、0.5で半分</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u32 counterBoostActiveAngleDeg = 90">
+      <DisplayName>カウンターブーストが有効になる角度[Deg]</DisplayName>
+      <Description>カウンターブーストが有効になる角度の範囲、90で移動方向とダミポリ方向の内積が0以上の時に有効になる</Description>
+      <Maximum>180</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="f32 boostDirLerpRate = 0.1">
+      <DisplayName>ブースト方向補間率：通常[Rate/Frame]</DisplayName>
+      <Description>通常ブースト時のブースターの方向変換の補間率[Rate/Frame]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 counterBoostDirLerpRate = 0.17">
+      <DisplayName>ブースト方向補間率：カウンターブースト[Rate/Frame]</DisplayName>
+      <Description>カウンターブースト時のブースターの方向変換の補間率[Rate/Frame]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>7100</SortID>
+    </Field>
+    <Field Def="dummy8 tailPadding[72]">
+      <DisplayName>末尾パディング</DisplayName>
+      <Description>末尾パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>7103</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

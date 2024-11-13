@@ -6,47 +6,187 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 missionParamId">
-      <Description>MissionParam row ID; mainly determines which map to fight on.</Description>
+    <Field Def="s32 missionParamID">
+      <DisplayName>ミッションパラ</DisplayName>
+      <Description>ミッションパラのID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3</SortID>
+      <UnkC8>マップ</UnkC8>
     </Field>
-    <Field Def="s8 menuCategory">
-      <Description>Value determining which tab in the arena menu to use; can be set arbitrarily. Tab text FMG ID is 258010 + menuCategory in FNR_メニューテキスト.</Description>
+    <Field Def="s8 category">
+      <DisplayName>所属</DisplayName>
+      <Enum>NPC_ARENA_CATEGORY</Enum>
+      <Description>表示タブ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <SortID>1</SortID>
+      <UnkC8>メニュー</UnkC8>
     </Field>
-    <Field Def="dummy8 pad08[3]"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 accountParamId">
-      <Description>AccountParam row ID; opponent's name and emblem.</Description>
+    <Field Def="dummy8 reserved_1[3]">
+      <DisplayName>予約</DisplayName>
+      <Description>-----</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>202</SortID>
     </Field>
-    <Field Def="s32 charaInitParamId">
-      <Description>CharaInitParam row ID; opponent's loadout and customization.</Description>
+    <Field Def="u32 rewardTokenID">
+      <DisplayName>パーツトークン</DisplayName>
+      <Enum>PARTS_TOKEN_ID</Enum>
+      <Description>報酬パーツトークンのID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999999</Maximum>
+      <SortID>199</SortID>
+      <UnkC8>初回報酬</UnkC8>
     </Field>
-    <Field Def="s32 npcParamId">
-      <Description>NpcParam row ID; opponent's stats.</Description>
+    <Field Def="s32 rankTextID">
+      <DisplayName>ランク</DisplayName>
+      <Description>ランク表示用メニューテキストID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2</SortID>
+      <UnkC8>メニュー</UnkC8>
     </Field>
-    <Field Def="s32 npcThinkParamId">
-      <Description>NpcThinkParam row ID; opponent's AI.</Description>
+    <Field Def="s32 accountParamID">
+      <DisplayName>アカウントパラ</DisplayName>
+      <Enum>ACCOUNT_PARAM_ID</Enum>
+      <Description>アカウントパラのID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>4</SortID>
+      <UnkB8>ranker</UnkB8>
+      <UnkC0>RANKER</UnkC0>
+      <UnkC8>ランカー</UnkC8>
     </Field>
-    <Field Def="s32 initialCoamReward">
-      <Description>Money granted on first completion.</Description>
+    <Field Def="s32 chrInitParamID">
+      <DisplayName>アーキタイプパラ</DisplayName>
+      <Description>アーキタイプパラのID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>5</SortID>
+      <UnkB8>ranker</UnkB8>
+      <UnkC0>RANKER</UnkC0>
+      <UnkC8>ランカー</UnkC8>
     </Field>
-    <Field Def="dummy8 pad24[12]"></Field>
-    <Field Def="s32 repeatCoamReward">
-      <Description>Money granted on repeat completions.</Description>
+    <Field Def="s32 npcParamID">
+      <DisplayName>NPCパラ</DisplayName>
+      <Description>NPCパラのID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>6</SortID>
+      <UnkB8>ranker</UnkB8>
+      <UnkC0>RANKER</UnkC0>
+      <UnkC8>ランカー</UnkC8>
     </Field>
-    <Field Def="dummy8 pad34[12]"></Field>
-    <Field Def="s32 introCutsceneId">
-      <Description>Cutscene ID to play at the start of the mission.</Description>
+    <Field Def="s32 thinkParamID">
+      <DisplayName>NPC思考パラ</DisplayName>
+      <Description>NPC思考パラのID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>7</SortID>
+      <UnkB8>ranker</UnkB8>
+      <UnkC0>RANKER</UnkC0>
+      <UnkC8>ランカー</UnkC8>
     </Field>
-    <Field Def="s32 bgmSoundId">
-      <Description>Background music to play during the mission.</Description>
+    <Field Def="u32 initialCash">
+      <DisplayName>報酬額</DisplayName>
+      <Description>報酬金額</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999999</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>firstReward</UnkB8>
+      <UnkC0>REWARD</UnkC0>
+      <UnkC8>初回報酬</UnkC8>
     </Field>
-    <Field Def="s32 rankTextureId">
-      <Description>Texture ID defined in the SB_ArenaRank layout.</Description>
+    <Field Def="u32 initialOsExp">
+      <DisplayName>経験値</DisplayName>
+      <Description>経験値</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999999</Maximum>
+      <SortID>101</SortID>
+      <UnkB8>firstReward</UnkB8>
+      <UnkC0>REWARD</UnkC0>
+      <UnkC8>初回報酬</UnkC8>
     </Field>
-    <Field Def="s32 outroCutsceneId">
-      <Description>Cutscene ID to play at the end of the mission.</Description>
+    <Field Def="dummy8 reserved_2[8]">
+      <DisplayName>予約</DisplayName>
+      <Description>-----</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>203</SortID>
+      <UnkB8>firstReward</UnkB8>
+      <UnkC0>REWARD</UnkC0>
     </Field>
-    <Field Def="dummy8 pad50[16]"></Field>
+    <Field Def="u32 repeatCash">
+      <DisplayName>報酬額</DisplayName>
+      <Description>報酬金額</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999999</Maximum>
+      <SortID>200</SortID>
+      <UnkB8>rematchReward</UnkB8>
+      <UnkC0>REWARD</UnkC0>
+      <UnkC8>再戦報酬</UnkC8>
+    </Field>
+    <Field Def="u32 repeatOsExp">
+      <DisplayName>経験値</DisplayName>
+      <Description>経験値</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999999</Maximum>
+      <SortID>201</SortID>
+      <UnkB8>rematchReward</UnkB8>
+      <UnkC0>REWARD</UnkC0>
+      <UnkC8>再戦報酬</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserved_3[8]">
+      <DisplayName>予約</DisplayName>
+      <Description>-----</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>204</SortID>
+      <UnkB8>rematchReward</UnkB8>
+      <UnkC0>REWARD</UnkC0>
+    </Field>
+    <Field Def="s32 startCutsceneId = -1">
+      <DisplayName>登場時カットシーンID</DisplayName>
+      <Description>登場時カットシーンID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1999999999</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="s32 bgmId = -1">
+      <DisplayName>BGMID</DisplayName>
+      <Description>BGMID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1999999999</Maximum>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="s32 rankIconID">
+      <DisplayName>ランク</DisplayName>
+      <Description>ランク表示用アイコンID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>8</SortID>
+      <UnkC8>メニュー</UnkC8>
+    </Field>
+    <Field Def="s32 endCutsceneId = -1">
+      <DisplayName>終了時カットシーンID</DisplayName>
+      <Description>登場時カットシーンID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1999999999</Maximum>
+      <SortID>151</SortID>
+    </Field>
+    <Field Def="dummy8 pad[16]">
+      <DisplayName>予約</DisplayName>
+      <Description>-----</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>205</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>
