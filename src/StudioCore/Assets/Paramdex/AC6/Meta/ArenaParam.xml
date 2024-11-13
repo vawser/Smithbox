@@ -1,22 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <missionParamId AltName="Mission Param ID" Refs="MissionParam" Wiki="MissionParam row ID; mainly determines which map to fight on." />
-    <menuCategory AltName="Menu Category" Wiki="Value determining which tab in the arena menu to use; can be set arbitrarily. Tab text FMG ID is 258010 + menuCategory in FNR_メニューテキスト." />
-    <accountParamId AltName="Account Param ID" Refs="AccountParam" Wiki="AccountParam row ID; opponent's name and emblem." />
-    <charaInitParamId AltName="Character Param ID" Refs="CharaInitParam" Wiki="CharaInitParam row ID; opponent's loadout and customization." />
-    <npcParamId AltName="NPC Param ID" Refs="NpcParam" Wiki="NpcParam row ID; opponent's stats." />
-    <npcThinkParamId AltName="NPC Think Param ID" Refs="NpcThinkParam" Wiki="NpcThinkParam row ID; opponent's AI." />
-    <initialCoamReward AltName="Initial COAM Reward" Wiki="Money granted on first completion." />
-    <repeatCoamReward AltName="Repeat COAM Reward" Wiki="Money granted on repeat completions." />
-    <introCutsceneId AltName="Intro Cutscene ID" Wiki="Cutscene ID to play at the start of the mission." CutsceneAlias="" />
-    <bgmSoundId AltName="BGM Sound ID" Wiki="Background music to play during the mission." SoundAlias="" />
-    <rankTextureId AltName="Rank Texture ID" Wiki="Texture ID defined in the SB_ArenaRank layout." TextureRef="Direct/01_common/SB_ArenaRank/rankTextureId/ArenaRank_" />
-    <outroCutsceneId AltName="Outro Cutscene ID" Wiki="Cutscene ID to play at the end of the mission." CutsceneAlias="" />
-    <pad08 AltName="" IsHidden=""/>
-    <pad24 AltName="" IsHidden=""/>
-    <pad34 AltName="" IsHidden=""/>
-    <pad50 AltName="" IsHidden=""/>
+    <missionParamID AltName="Mission Param ID" Refs="MissionParam" Wiki="MissionParam row ID; mainly determines which map to fight on." />
+    <category AltName="Menu Category" Wiki="Value determining which tab in the arena menu to use; can be set arbitrarily. Tab text FMG ID is 258010 + menuCategory in FNR_メニューテキスト." />
+    
+    <ranker_accountParamID AltName="Account Param ID" Refs="AccountParam" Wiki="AccountParam row ID; opponent's name and emblem." />
+    <ranker_chrInitParamID AltName="Character Param ID" Refs="CharaInitParam" Wiki="CharaInitParam row ID; opponent's loadout and customization." />
+    <ranker_npcParamID AltName="NPC Param ID" Refs="NpcParam" Wiki="NpcParam row ID; opponent's stats." />
+    <ranker_thinkParamID AltName="NPC Think Param ID" Refs="NpcThinkParam" Wiki="NpcThinkParam row ID; opponent's AI." />
+    
+    <firstReward_cash AltName="Initial COAM Reward" Wiki="Money granted on first completion." />
+    <firstReward_osExp AltName="Initial OST Chips" Wiki="" />
+    
+    <firstReward_reserved IsHidden="" />
+    
+    <rematchReward_cash AltName="Repeat COAM Reward" Wiki="Money granted on repeat completions." />
+    <rematchReward_osExp AltName="Repeat OST Chips" Wiki="" />
+    
+    <rematchReward_reserved IsHidden="" />
+    
+    <startCutsceneId AltName="Intro Cutscene ID" Wiki="Cutscene ID to play at the start of the mission." CutsceneAlias="" />
+    <bgmId AltName="BGM Sound ID" Wiki="Background music to play during the mission." SoundAlias="" />
+    <rankIconID AltName="Rank Texture ID" Wiki="Texture ID defined in the SB_ArenaRank layout." TextureRef="Direct/01_common/SB_ArenaRank/rankTextureId/ArenaRank_" />
+    <endCutsceneId AltName="Outro Cutscene ID" Wiki="Cutscene ID to play at the end of the mission." CutsceneAlias="" />
+    
+    <endPad IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

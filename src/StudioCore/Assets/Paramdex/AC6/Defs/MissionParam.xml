@@ -301,7 +301,7 @@
       <SortID>503</SortID>
       <UnkC8>修理費</UnkC8>
     </Field>
-    <Field Def="s32 TextID_1">
+    <Field Def="s32 SpecialReward0_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬減算項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -312,7 +312,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬0</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_1">
+    <Field Def="s32 SpecialReward0_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -323,7 +323,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬0</UnkC8>
     </Field>
-    <Field Def="s32 TextID_2">
+    <Field Def="s32 SpecialReward1_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -334,7 +334,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬1</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_2">
+    <Field Def="s32 SpecialReward1_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -345,7 +345,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬1</UnkC8>
     </Field>
-    <Field Def="s32 TextID_3">
+    <Field Def="s32 SpecialReward2_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -356,7 +356,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬2</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_3">
+    <Field Def="s32 SpecialReward2_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -367,7 +367,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬2</UnkC8>
     </Field>
-    <Field Def="s32 TextID_4">
+    <Field Def="s32 SpecialReward3_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -378,7 +378,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬3</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_4">
+    <Field Def="s32 SpecialReward3_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -389,7 +389,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬3</UnkC8>
     </Field>
-    <Field Def="s32 TextID_5">
+    <Field Def="s32 SpecialReward4_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -400,7 +400,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬4</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_5">
+    <Field Def="s32 SpecialReward4_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -429,7 +429,7 @@
       <SortID>70001</SortID>
       <UnkC8>ロード画面</UnkC8>
     </Field>
-    <Field Def="f32 damage = 1">
+    <Field Def="f32 calcScoreCoef_damage = 1">
       <DisplayName>被ダメージ</DisplayName>
       <Description>被ダメージの補正係数</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -441,7 +441,7 @@
       <UnkC0>CALC_SCORE_COEF</UnkC0>
       <UnkC8>スコア算出用係数</UnkC8>
     </Field>
-    <Field Def="f32 bulletCost = 1">
+    <Field Def="f32 calcScoreCoef_bulletCost = 1">
       <DisplayName>使用弾薬費</DisplayName>
       <Description>使用弾数の補正係数</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -453,7 +453,7 @@
       <UnkC0>CALC_SCORE_COEF</UnkC0>
       <UnkC8>スコア算出用係数</UnkC8>
     </Field>
-    <Field Def="f32 enemyBonus = 1">
+    <Field Def="f32 calcScoreCoef_enemyBonus = 1">
       <DisplayName>敵撃破</DisplayName>
       <Description>敵撃破ボーナスの補正係数</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -465,7 +465,7 @@
       <UnkC0>CALC_SCORE_COEF</UnkC0>
       <UnkC8>スコア算出用係数</UnkC8>
     </Field>
-    <Field Def="f32 clearTime = 1">
+    <Field Def="f32 calcScoreCoef_clearTime = 1">
       <DisplayName>クリア時間</DisplayName>
       <Description>クリア時間の補正係数</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -498,7 +498,7 @@
       <SortID>5010</SortID>
       <UnkC8>クリア時間補正</UnkC8>
     </Field>
-    <Field Def="s32 RankS = 30000">
+    <Field Def="s32 calcRankThreshold_RankS = 30000">
       <DisplayName>ランクS</DisplayName>
       <Description>スコアがこの値未満なら ランクS</Description>
       <EditFlags>None</EditFlags>
@@ -509,7 +509,7 @@
       <UnkC0>CALC_RANK_THRESHOLD</UnkC0>
       <UnkC8>クリアランク算出用閾値</UnkC8>
     </Field>
-    <Field Def="s32 RankA = 40000">
+    <Field Def="s32 calcRankThreshold_RankA = 40000">
       <DisplayName>ランクA</DisplayName>
       <Description>スコアがこの値未満なら ランクA</Description>
       <EditFlags>None</EditFlags>
@@ -520,7 +520,7 @@
       <UnkC0>CALC_RANK_THRESHOLD</UnkC0>
       <UnkC8>クリアランク算出用閾値</UnkC8>
     </Field>
-    <Field Def="s32 RankB = 50000">
+    <Field Def="s32 calcRankThreshold_RankB = 50000">
       <DisplayName>ランクB</DisplayName>
       <Description>スコアがこの値未満なら ランクB</Description>
       <EditFlags>None</EditFlags>
@@ -531,7 +531,7 @@
       <UnkC0>CALC_RANK_THRESHOLD</UnkC0>
       <UnkC8>クリアランク算出用閾値</UnkC8>
     </Field>
-    <Field Def="s32 RankC = 60000">
+    <Field Def="s32 calcRankThreshold_RankC = 60000">
       <DisplayName>ランクC</DisplayName>
       <Description>スコアがこの値未満なら ランクC</Description>
       <EditFlags>None</EditFlags>
@@ -542,7 +542,7 @@
       <UnkC0>CALC_RANK_THRESHOLD</UnkC0>
       <UnkC8>クリアランク算出用閾値</UnkC8>
     </Field>
-    <Field Def="s32 TextID_6">
+    <Field Def="s32 SpecialReward5_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬減算項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -553,7 +553,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬5</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_6">
+    <Field Def="s32 SpecialReward5_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -564,7 +564,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬5</UnkC8>
     </Field>
-    <Field Def="s32 TextID_7">
+    <Field Def="s32 SpecialReward6_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -575,7 +575,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬6</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_7">
+    <Field Def="s32 SpecialReward6_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -586,7 +586,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬6</UnkC8>
     </Field>
-    <Field Def="s32 TextID_8">
+    <Field Def="s32 SpecialReward7_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -597,7 +597,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>特別報酬7</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_8">
+    <Field Def="s32 SpecialReward7_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -612,7 +612,7 @@
       <DisplayName>パディング</DisplayName>
       <SortID>90015</SortID>
     </Field>
-    <Field Def="s32 TextID_9">
+    <Field Def="s32 EnemyDestroyReward0_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬減算項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -623,7 +623,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬0</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_9">
+    <Field Def="s32 EnemyDestroyReward0_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -634,7 +634,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬0</UnkC8>
     </Field>
-    <Field Def="s32 TextID_10">
+    <Field Def="s32 EnemyDestroyReward1_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -645,7 +645,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬1</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_10">
+    <Field Def="s32 EnemyDestroyReward1_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -656,7 +656,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬1</UnkC8>
     </Field>
-    <Field Def="s32 TextID_11">
+    <Field Def="s32 EnemyDestroyReward2_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -667,7 +667,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬2</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_11">
+    <Field Def="s32 EnemyDestroyReward2_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -678,7 +678,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬2</UnkC8>
     </Field>
-    <Field Def="s32 TextID_12">
+    <Field Def="s32 EnemyDestroyReward3_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -689,7 +689,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬3</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_12">
+    <Field Def="s32 EnemyDestroyReward3_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -700,7 +700,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬3</UnkC8>
     </Field>
-    <Field Def="s32 TextID_13">
+    <Field Def="s32 EnemyDestroyReward4_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -711,7 +711,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬4</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_13">
+    <Field Def="s32 EnemyDestroyReward4_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -722,7 +722,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬4</UnkC8>
     </Field>
-    <Field Def="s32 TextID_14">
+    <Field Def="s32 EnemyDestroyReward5_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬減算項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -733,7 +733,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬5</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_14">
+    <Field Def="s32 EnemyDestroyReward5_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -744,7 +744,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬5</UnkC8>
     </Field>
-    <Field Def="s32 TextID_15">
+    <Field Def="s32 EnemyDestroyReward6_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -755,7 +755,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬6</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_15">
+    <Field Def="s32 EnemyDestroyReward6_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -766,7 +766,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬6</UnkC8>
     </Field>
-    <Field Def="s32 TextID_16">
+    <Field Def="s32 EnemyDestroyReward7_TextID">
       <DisplayName>項目名</DisplayName>
       <Description>リザルト画面で表示する報酬項目のイベントテキストID</Description>
       <EditFlags>None</EditFlags>
@@ -777,7 +777,7 @@
       <UnkC0>SPECIAL_REWARD</UnkC0>
       <UnkC8>敵撃破報酬7</UnkC8>
     </Field>
-    <Field Def="s32 UnitPrice_16">
+    <Field Def="s32 EnemyDestroyReward7_UnitPrice">
       <DisplayName>単価</DisplayName>
       <Description>報酬単価。負の値なら報酬減算</Description>
       <EditFlags>None</EditFlags>
@@ -825,7 +825,7 @@
       <SortID>8000</SortID>
       <UnkC8>アリーナ設定</UnkC8>
     </Field>
-    <Field Def="u32 movieID_1">
+    <Field Def="u32 ResultMovie0_movieID">
       <DisplayName>ムービーID</DisplayName>
       <Description>リザルト画面 の後に再生するムービーのID</Description>
       <EditFlags>None</EditFlags>
@@ -835,7 +835,7 @@
       <UnkC0>RESULT_MOVIE</UnkC0>
       <UnkC8>幕間ムービー0</UnkC8>
     </Field>
-    <Field Def="u32 eventFlagID_1">
+    <Field Def="u32 ResultMovie0_eventFlagID">
       <DisplayName>イベントフラグ</DisplayName>
       <Description>ムービー再生判定用イベントフラグのID。0 なら常に再生</Description>
       <DisplayFormat>%u</DisplayFormat>
@@ -846,7 +846,7 @@
       <UnkC0>RESULT_MOVIE</UnkC0>
       <UnkC8>幕間ムービー0</UnkC8>
     </Field>
-    <Field Def="u32 movieID_2">
+    <Field Def="u32 ResultMovie1_movieID">
       <DisplayName>ムービーID</DisplayName>
       <Description>幕間ムービー0 の後に再生するムービーのID</Description>
       <EditFlags>None</EditFlags>
@@ -856,7 +856,7 @@
       <UnkC0>RESULT_MOVIE</UnkC0>
       <UnkC8>幕間ムービー1</UnkC8>
     </Field>
-    <Field Def="u32 eventFlagID_2">
+    <Field Def="u32 ResultMovie1_eventFlagID">
       <DisplayName>イベントフラグ</DisplayName>
       <Description>ムービー再生判定用イベントフラグのID。0 なら常に再生</Description>
       <DisplayFormat>%u</DisplayFormat>

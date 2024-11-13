@@ -4,8 +4,11 @@
 - Add option to store imgui.ini in AppData.
 - Add option to replace install dir imgui.ini with stored one from AppData.
 
-- Add two Name list options: Canon and Community: 
- - Canon is any raw japanese/transcribed names
- - Community is adjusted names based on the canon names but tailored for modding usage
+- Add proper support for row index in Param Editor so dupe row IDs are handled properly
+
+- Add two Name list options: Developer and Community: 
+ - Developer is any raw japanese/transcribed names
+ - Community is adjusted names based on the developer names but tailored for modding usage
  
 - Update AC6 paramdex to use released AC6 paramdefs + adjust other stuff based on discoveries
+

@@ -20,7 +20,7 @@
       <Maximum>999999</Maximum>
       <SortID>101</SortID>
     </Field>
-    <Field Def="s32 texScrollmaterialID_1">
+    <Field Def="s32 paramL_texScrollmaterialID">
       <DisplayName>テクスチャスクロールのマテリアルID（左）</DisplayName>
       <Description>Matxmlで指定するマテリアルID</Description>
       <Minimum>0</Minimum>
@@ -29,7 +29,7 @@
       <UnkB8>paramL</UnkB8>
       <UnkC0>MaterialAnimST</UnkC0>
     </Field>
-    <Field Def="s32 texScrollMaterialParamID_1">
+    <Field Def="s32 paramL_texScrollMaterialParamID">
       <DisplayName>テクスチャスクロールのパラメータID（左）</DisplayName>
       <Description>マテリアル拡張パラメータ.xlsmのパラメータID</Description>
       <Minimum>0</Minimum>
@@ -38,7 +38,7 @@
       <UnkB8>paramL</UnkB8>
       <UnkC0>MaterialAnimST</UnkC0>
     </Field>
-    <Field Def="u32 forwardAnimID_1">
+    <Field Def="u32 paramL_forwardAnimID">
       <DisplayName>前進アニメID（左）</DisplayName>
       <Description>前進移動するときの車輪部分のアニメID</Description>
       <Maximum>999999</Maximum>
@@ -46,7 +46,7 @@
       <UnkB8>paramL</UnkB8>
       <UnkC0>MaterialAnimST</UnkC0>
     </Field>
-    <Field Def="u32 backAnimID_1">
+    <Field Def="u32 paramL_backAnimID">
       <DisplayName>後退アニメID（左）</DisplayName>
       <Description>後退移動するときの車輪部分のアニメID</Description>
       <Maximum>999999</Maximum>
@@ -54,7 +54,7 @@
       <UnkB8>paramL</UnkB8>
       <UnkC0>MaterialAnimST</UnkC0>
     </Field>
-    <Field Def="s32 texScrollmaterialID_2">
+    <Field Def="s32 paramR_texScrollmaterialID">
       <DisplayName>テクスチャスクロールのマテリアルID（右）</DisplayName>
       <Description>Matxmlで指定するマテリアルID</Description>
       <Minimum>0</Minimum>
@@ -63,7 +63,7 @@
       <UnkB8>paramR</UnkB8>
       <UnkC0>MaterialAnimST</UnkC0>
     </Field>
-    <Field Def="s32 texScrollMaterialParamID_2">
+    <Field Def="s32 paramR_texScrollMaterialParamID">
       <DisplayName>テクスチャスクロールのパラメータID（右）</DisplayName>
       <Description>マテリアル拡張パラメータ.xlsmのパラメータID</Description>
       <Minimum>0</Minimum>
@@ -72,7 +72,7 @@
       <UnkB8>paramR</UnkB8>
       <UnkC0>MaterialAnimST</UnkC0>
     </Field>
-    <Field Def="u32 forwardAnimID_2">
+    <Field Def="u32 paramR_forwardAnimID">
       <DisplayName>前進アニメID（右）</DisplayName>
       <Description>前進移動するときの車輪部分のアニメID</Description>
       <Maximum>999999</Maximum>
@@ -80,7 +80,7 @@
       <UnkB8>paramR</UnkB8>
       <UnkC0>MaterialAnimST</UnkC0>
     </Field>
-    <Field Def="u32 backAnimID_2">
+    <Field Def="u32 paramR_backAnimID">
       <DisplayName>後退アニメID（右）</DisplayName>
       <Description>後退移動するときの車輪部分のアニメID</Description>
       <Maximum>999999</Maximum>

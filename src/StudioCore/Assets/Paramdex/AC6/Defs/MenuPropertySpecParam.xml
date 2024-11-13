@@ -111,7 +111,7 @@
       <SortID>152</SortID>
       <UnkC8>プロパティ編集</UnkC8>
     </Field>
-    <Field Def="u16 Target_1">
+    <Field Def="u16 extract0_Target">
       <DisplayName>対象</DisplayName>
       <Enum>MENU_PROPERTY_EXTRACT_TARGET_TYPE</Enum>
       <Description>抽出対象パラメータ</Description>
@@ -119,7 +119,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ0</UnkC8>
     </Field>
-    <Field Def="u8 MemberType_1">
+    <Field Def="u8 extract0_MemberType">
       <DisplayName>型</DisplayName>
       <Enum>MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE</Enum>
       <Description>抽出型(数式で自動入力するので編集厳禁)</Description>
@@ -128,7 +128,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ0</UnkC8>
     </Field>
-    <Field Def="u8 Operation_1">
+    <Field Def="u8 extract0_Operation">
       <DisplayName>補正式</DisplayName>
       <Enum>MENU_PROPERTY_EXTRACT_OPERATION_TYPE</Enum>
       <Description>抽出したパラメータの補正方法</Description>
@@ -137,7 +137,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ0</UnkC8>
     </Field>
-    <Field Def="s32 MemberTailOffset_1 = -1">
+    <Field Def="s32 extract0_MemberTailOffset = -1">
       <DisplayName>位置</DisplayName>
       <Description>抽出位置(数式で自動入力するので編集厳禁)</Description>
       <Minimum>-1</Minimum>
@@ -147,7 +147,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ0</UnkC8>
     </Field>
-    <Field Def="f32 Constant0_1">
+    <Field Def="f32 extract0_Constant0">
       <DisplayName>補正用定数0</DisplayName>
       <Description>抽出したパラメータの補正用定数0</Description>
       <Minimum>-1E+09</Minimum>
@@ -158,7 +158,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ0</UnkC8>
     </Field>
-    <Field Def="f32 Constant1_1">
+    <Field Def="f32 extract0_Constant1">
       <DisplayName>補正用定数1</DisplayName>
       <Description>抽出したパラメータの補正用定数1</Description>
       <Minimum>-1E+09</Minimum>
@@ -169,7 +169,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ0</UnkC8>
     </Field>
-    <Field Def="dummy8 reserved_1[4]">
+    <Field Def="dummy8 extract0_reserved[4]">
       <DisplayName>予約</DisplayName>
       <Description>----</Description>
       <DisplayFormat>%d</DisplayFormat>
@@ -179,7 +179,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>パディング</UnkC8>
     </Field>
-    <Field Def="u16 Target_2">
+    <Field Def="u16 extract1_Target">
       <DisplayName>対象</DisplayName>
       <Enum>MENU_PROPERTY_EXTRACT_TARGET_TYPE</Enum>
       <Description>抽出対象パラメータ</Description>
@@ -188,7 +188,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ1</UnkC8>
     </Field>
-    <Field Def="u8 MemberType_2">
+    <Field Def="u8 extract1_MemberType">
       <DisplayName>型</DisplayName>
       <Enum>MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE</Enum>
       <Description>抽出型(数式で自動入力するので編集厳禁)</Description>
@@ -197,7 +197,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ1</UnkC8>
     </Field>
-    <Field Def="u8 Operation_2">
+    <Field Def="u8 extract1_Operation">
       <DisplayName>補正式</DisplayName>
       <Enum>MENU_PROPERTY_EXTRACT_OPERATION_TYPE</Enum>
       <Description>抽出したパラメータの補正方法</Description>
@@ -206,7 +206,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ1</UnkC8>
     </Field>
-    <Field Def="s32 MemberTailOffset_2 = -1">
+    <Field Def="s32 extract1_MemberTailOffset = -1">
       <DisplayName>位置</DisplayName>
       <Description>抽出位置(数式で自動入力するので編集厳禁)</Description>
       <Minimum>-1</Minimum>
@@ -216,7 +216,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ1</UnkC8>
     </Field>
-    <Field Def="f32 Constant0_2">
+    <Field Def="f32 extract1_Constant0">
       <DisplayName>補正用定数0</DisplayName>
       <Description>抽出したパラメータの補正用定数0</Description>
       <Minimum>-1E+09</Minimum>
@@ -227,7 +227,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ1</UnkC8>
     </Field>
-    <Field Def="f32 Constant1_2">
+    <Field Def="f32 extract1_Constant1">
       <DisplayName>補正用定数1</DisplayName>
       <Description>抽出したパラメータの補正用定数1</Description>
       <Minimum>-1E+09</Minimum>
@@ -238,7 +238,7 @@
       <UnkC0>EXTRACT_PARAM</UnkC0>
       <UnkC8>抽出パラメータ1</UnkC8>
     </Field>
-    <Field Def="dummy8 reserved_2[4]">
+    <Field Def="dummy8 extract1_reserved[4]">
       <DisplayName>予約</DisplayName>
       <Description>----</Description>
       <DisplayFormat>%d</DisplayFormat>

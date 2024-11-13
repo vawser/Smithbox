@@ -6,7 +6,7 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="f32 limitationTime_1">
+    <Field Def="f32 coop0_limitationTime">
       <DisplayName>制限時間（協力霊数0）</DisplayName>
       <Description>制限時間[sec]（協力霊数0）</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -19,7 +19,7 @@
       <UnkC0>LIMIT_BY_COOP_NUM</UnkC0>
       <UnkC8>協力霊数0</UnkC8>
     </Field>
-    <Field Def="f32 observeTime_1">
+    <Field Def="f32 coop0_observeTime">
       <DisplayName>監視時間（協力霊数0）</DisplayName>
       <Description>監視時間[sec]（協力霊数0）</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -32,7 +32,7 @@
       <UnkC0>LIMIT_BY_COOP_NUM</UnkC0>
       <UnkC8>協力霊数0</UnkC8>
     </Field>
-    <Field Def="f32 limitationTime_2">
+    <Field Def="f32 coop1_limitationTime">
       <DisplayName>制限時間（協力霊数1）</DisplayName>
       <Description>制限時間[sec]（協力霊数1）</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -45,7 +45,7 @@
       <UnkC0>LIMIT_BY_COOP_NUM</UnkC0>
       <UnkC8>協力霊数1</UnkC8>
     </Field>
-    <Field Def="f32 observeTime_2">
+    <Field Def="f32 coop1_observeTime">
       <DisplayName>監視時間（協力霊数1）</DisplayName>
       <Description>監視時間[sec]（協力霊数1）</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -58,7 +58,7 @@
       <UnkC0>LIMIT_BY_COOP_NUM</UnkC0>
       <UnkC8>協力霊数1</UnkC8>
     </Field>
-    <Field Def="f32 limitationTime_3">
+    <Field Def="f32 coop2_limitationTime">
       <DisplayName>制限時間（協力霊数2）</DisplayName>
       <Description>制限時間[sec]（協力霊数2）</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -71,7 +71,7 @@
       <UnkC0>LIMIT_BY_COOP_NUM</UnkC0>
       <UnkC8>協力霊数2</UnkC8>
     </Field>
-    <Field Def="f32 observeTime_3">
+    <Field Def="f32 coop2_observeTime">
       <DisplayName>監視時間（協力霊数2）</DisplayName>
       <Description>監視時間[sec]（協力霊数2）</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -84,7 +84,7 @@
       <UnkC0>LIMIT_BY_COOP_NUM</UnkC0>
       <UnkC8>協力霊数2</UnkC8>
     </Field>
-    <Field Def="f32 limitationTime_4">
+    <Field Def="f32 coop3_limitationTime">
       <DisplayName>制限時間（協力霊数3）</DisplayName>
       <Description>制限時間[sec]（協力霊数3）</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -97,7 +97,7 @@
       <UnkC0>LIMIT_BY_COOP_NUM</UnkC0>
       <UnkC8>協力霊数3</UnkC8>
     </Field>
-    <Field Def="f32 observeTime_4">
+    <Field Def="f32 coop3_observeTime">
       <DisplayName>監視時間（協力霊数3）</DisplayName>
       <Description>監視時間[sec]（協力霊数3）</Description>
       <DisplayFormat>%.2f</DisplayFormat>

@@ -48,7 +48,7 @@
       <Increment>0.1</Increment>
       <SortID>10</SortID>
     </Field>
-    <Field Def="f32 bulletPosX_1">
+    <Field Def="f32 pos0_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -60,7 +60,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸1</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_1">
+    <Field Def="f32 pos0_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -72,7 +72,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸1</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_1">
+    <Field Def="f32 pos0_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -84,7 +84,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸1</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_2">
+    <Field Def="f32 pos1_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -96,7 +96,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸2</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_2">
+    <Field Def="f32 pos1_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -108,7 +108,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸2</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_2">
+    <Field Def="f32 pos1_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -120,7 +120,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸2</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_3">
+    <Field Def="f32 pos2_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -132,7 +132,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸3</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_3">
+    <Field Def="f32 pos2_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -144,7 +144,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸3</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_3">
+    <Field Def="f32 pos2_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -156,7 +156,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸3</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_4">
+    <Field Def="f32 pos3_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -168,7 +168,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸4</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_4">
+    <Field Def="f32 pos3_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -180,7 +180,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸4</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_4">
+    <Field Def="f32 pos3_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -192,7 +192,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸4</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_5">
+    <Field Def="f32 pos4_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -204,7 +204,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸5</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_5">
+    <Field Def="f32 pos4_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -216,7 +216,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸5</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_5">
+    <Field Def="f32 pos4_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -228,7 +228,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸5</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_6">
+    <Field Def="f32 pos5_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -240,7 +240,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸6</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_6">
+    <Field Def="f32 pos5_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -252,7 +252,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸6</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_6">
+    <Field Def="f32 pos5_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -264,7 +264,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸6</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_7">
+    <Field Def="f32 pos6_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -276,7 +276,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸7</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_7">
+    <Field Def="f32 pos6_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -288,7 +288,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸7</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_7">
+    <Field Def="f32 pos6_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -300,7 +300,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸7</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_8">
+    <Field Def="f32 pos7_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -312,7 +312,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸8</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_8">
+    <Field Def="f32 pos7_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -324,7 +324,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸8</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_8">
+    <Field Def="f32 pos7_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -336,7 +336,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸8</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_9">
+    <Field Def="f32 pos8_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -348,7 +348,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸9</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_9">
+    <Field Def="f32 pos8_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -360,7 +360,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸9</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_9">
+    <Field Def="f32 pos8_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -372,7 +372,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸9</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_10">
+    <Field Def="f32 pos9_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -384,7 +384,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸10</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_10">
+    <Field Def="f32 pos9_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -396,7 +396,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸10</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_10">
+    <Field Def="f32 pos9_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -408,7 +408,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸10</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_11">
+    <Field Def="f32 pos10_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -420,7 +420,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸11</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_11">
+    <Field Def="f32 pos10_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -432,7 +432,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸11</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_11">
+    <Field Def="f32 pos10_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -444,7 +444,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸11</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_12">
+    <Field Def="f32 pos11_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -456,7 +456,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸12</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_12">
+    <Field Def="f32 pos11_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -468,7 +468,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸12</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_12">
+    <Field Def="f32 pos11_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -480,7 +480,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸12</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_13">
+    <Field Def="f32 pos12_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -492,7 +492,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸13</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_13">
+    <Field Def="f32 pos12_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -504,7 +504,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸13</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_13">
+    <Field Def="f32 pos12_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -516,7 +516,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸13</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_14">
+    <Field Def="f32 pos13_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -528,7 +528,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸14</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_14">
+    <Field Def="f32 pos13_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -540,7 +540,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸14</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_14">
+    <Field Def="f32 pos13_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -552,7 +552,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸14</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_15">
+    <Field Def="f32 pos14_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -564,7 +564,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸15</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_15">
+    <Field Def="f32 pos14_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -576,7 +576,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸15</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_15">
+    <Field Def="f32 pos14_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -588,7 +588,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸15</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_16">
+    <Field Def="f32 pos15_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -600,7 +600,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸16</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_16">
+    <Field Def="f32 pos15_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -612,7 +612,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸16</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_16">
+    <Field Def="f32 pos15_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -624,7 +624,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸16</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_17">
+    <Field Def="f32 pos16_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -636,7 +636,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸17</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_17">
+    <Field Def="f32 pos16_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -648,7 +648,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸17</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_17">
+    <Field Def="f32 pos16_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -660,7 +660,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸17</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_18">
+    <Field Def="f32 pos17_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -672,7 +672,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸18</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_18">
+    <Field Def="f32 pos17_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -684,7 +684,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸18</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_18">
+    <Field Def="f32 pos17_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -696,7 +696,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸18</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_19">
+    <Field Def="f32 pos18_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -708,7 +708,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸19</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_19">
+    <Field Def="f32 pos18_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -720,7 +720,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸19</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_19">
+    <Field Def="f32 pos18_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -732,7 +732,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸19</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_20">
+    <Field Def="f32 pos19_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -744,7 +744,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸20</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_20">
+    <Field Def="f32 pos19_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -756,7 +756,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸20</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_20">
+    <Field Def="f32 pos19_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -768,7 +768,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸20</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_21">
+    <Field Def="f32 pos20_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -780,7 +780,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸21</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_21">
+    <Field Def="f32 pos20_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -792,7 +792,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸21</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_21">
+    <Field Def="f32 pos20_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -804,7 +804,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸21</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_22">
+    <Field Def="f32 pos21_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -816,7 +816,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸22</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_22">
+    <Field Def="f32 pos21_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -828,7 +828,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸22</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_22">
+    <Field Def="f32 pos21_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -840,7 +840,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸22</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_23">
+    <Field Def="f32 pos22_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -852,7 +852,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸23</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_23">
+    <Field Def="f32 pos22_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -864,7 +864,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸23</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_23">
+    <Field Def="f32 pos22_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -876,7 +876,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸23</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_24">
+    <Field Def="f32 pos23_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -888,7 +888,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸24</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_24">
+    <Field Def="f32 pos23_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -900,7 +900,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸24</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_24">
+    <Field Def="f32 pos23_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -912,7 +912,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸24</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_25">
+    <Field Def="f32 pos24_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -924,7 +924,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸25</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_25">
+    <Field Def="f32 pos24_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -936,7 +936,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸25</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_25">
+    <Field Def="f32 pos24_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -948,7 +948,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸25</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_26">
+    <Field Def="f32 pos25_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -960,7 +960,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸26</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_26">
+    <Field Def="f32 pos25_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -972,7 +972,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸26</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_26">
+    <Field Def="f32 pos25_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -984,7 +984,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸26</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_27">
+    <Field Def="f32 pos26_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -996,7 +996,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸27</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_27">
+    <Field Def="f32 pos26_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1008,7 +1008,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸27</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_27">
+    <Field Def="f32 pos26_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1020,7 +1020,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸27</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_28">
+    <Field Def="f32 pos27_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1032,7 +1032,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸28</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_28">
+    <Field Def="f32 pos27_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1044,7 +1044,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸28</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_28">
+    <Field Def="f32 pos27_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1056,7 +1056,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸28</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_29">
+    <Field Def="f32 pos28_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1068,7 +1068,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸29</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_29">
+    <Field Def="f32 pos28_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1080,7 +1080,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸29</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_29">
+    <Field Def="f32 pos28_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1092,7 +1092,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸29</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_30">
+    <Field Def="f32 pos29_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1104,7 +1104,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸30</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_30">
+    <Field Def="f32 pos29_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1116,7 +1116,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸30</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_30">
+    <Field Def="f32 pos29_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1128,7 +1128,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸30</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_31">
+    <Field Def="f32 pos30_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1140,7 +1140,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸31</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_31">
+    <Field Def="f32 pos30_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1152,7 +1152,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸31</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_31">
+    <Field Def="f32 pos30_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1164,7 +1164,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸31</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_32">
+    <Field Def="f32 pos31_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1176,7 +1176,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸32</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_32">
+    <Field Def="f32 pos31_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1188,7 +1188,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸32</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_32">
+    <Field Def="f32 pos31_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1200,7 +1200,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸32</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_33">
+    <Field Def="f32 pos32_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1212,7 +1212,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸33</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_33">
+    <Field Def="f32 pos32_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1224,7 +1224,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸33</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_33">
+    <Field Def="f32 pos32_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1236,7 +1236,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸33</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_34">
+    <Field Def="f32 pos33_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1248,7 +1248,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸34</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_34">
+    <Field Def="f32 pos33_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1260,7 +1260,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸34</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_34">
+    <Field Def="f32 pos33_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1272,7 +1272,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸34</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_35">
+    <Field Def="f32 pos34_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1284,7 +1284,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸35</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_35">
+    <Field Def="f32 pos34_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1296,7 +1296,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸35</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_35">
+    <Field Def="f32 pos34_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1308,7 +1308,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸35</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosX_36">
+    <Field Def="f32 pos35_bulletPosX">
       <DisplayName>座標X(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1320,7 +1320,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸36</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosY_36">
+    <Field Def="f32 pos35_bulletPosY">
       <DisplayName>座標Y(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>
@@ -1332,7 +1332,7 @@
       <UnkC0>BulletPos</UnkC0>
       <UnkC8>弾丸36</UnkC8>
     </Field>
-    <Field Def="f32 bulletPosZ_36">
+    <Field Def="f32 pos35_bulletPosZ">
       <DisplayName>座標Z(m)</DisplayName>
       <DisplayFormat>%.1f</DisplayFormat>
       <EditFlags>None</EditFlags>

@@ -905,7 +905,7 @@
       <Increment>0.1</Increment>
       <SortID>8020</SortID>
     </Field>
-    <Field Def="f32 FE_CoralScrollSpeed_1 = -3">
+    <Field Def="f32 CoralFeWeak_FE_CoralScrollSpeed = -3">
       <DisplayName>FE:コーラル演出テクスチャスクロール速度</DisplayName>
       <Description>コーラルFE演出のテクスチャスクロール速度</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -917,7 +917,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル弱</UnkC8>
     </Field>
-    <Field Def="f32 FE_CoralDispWidth_1 = 352">
+    <Field Def="f32 CoralFeWeak_FE_CoralDispWidth = 352">
       <DisplayName>FE:コーラル演出表示幅(FHD基準）</DisplayName>
       <Description>コーラルFE演出の左右のテクスチャの表示幅のFHD基準の幅</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -930,7 +930,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル弱</UnkC8>
     </Field>
-    <Field Def="f32 FE_CoralDispFadeInTime_1 = 0.3">
+    <Field Def="f32 CoralFeWeak_FE_CoralDispFadeInTime = 0.3">
       <DisplayName>FE:コーラル演出フェードイン時間(秒）</DisplayName>
       <Description>演出が表示されるまでの時間</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -943,7 +943,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル弱</UnkC8>
     </Field>
-    <Field Def="u8 FE_CoralColorR_1 = 255">
+    <Field Def="u8 CoralFeWeak_FE_CoralColorR = 255">
       <DisplayName>FE:コーラル演出色 R</DisplayName>
       <Description>R</Description>
       <EditFlags>None</EditFlags>
@@ -952,7 +952,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル弱</UnkC8>
     </Field>
-    <Field Def="u8 FE_CoralColorG_1 = 255">
+    <Field Def="u8 CoralFeWeak_FE_CoralColorG = 255">
       <DisplayName>FE:コーラル演出色 G</DisplayName>
       <Description>G</Description>
       <EditFlags>None</EditFlags>
@@ -961,7 +961,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル弱</UnkC8>
     </Field>
-    <Field Def="u8 FE_CoralColorB_1 = 255">
+    <Field Def="u8 CoralFeWeak_FE_CoralColorB = 255">
       <DisplayName>FE:コーラル演出色 B</DisplayName>
       <Description>B</Description>
       <EditFlags>None</EditFlags>
@@ -970,7 +970,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル弱</UnkC8>
     </Field>
-    <Field Def="u8 FE_CoralColorA_1 = 255">
+    <Field Def="u8 CoralFeWeak_FE_CoralColorA = 255">
       <DisplayName>FE:コーラル演出色 A</DisplayName>
       <Description>A</Description>
       <EditFlags>None</EditFlags>
@@ -979,7 +979,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル弱</UnkC8>
     </Field>
-    <Field Def="f32 FE_CoralScrollSpeed_2 = -3">
+    <Field Def="f32 CoralFeStrength_FE_CoralScrollSpeed = -3">
       <DisplayName>FE:コーラル演出テクスチャスクロール速度</DisplayName>
       <Description>コーラルFE演出のテクスチャスクロール速度</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -991,7 +991,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル強</UnkC8>
     </Field>
-    <Field Def="f32 FE_CoralDispWidth_2 = 352">
+    <Field Def="f32 CoralFeStrength_FE_CoralDispWidth = 352">
       <DisplayName>FE:コーラル演出表示幅(FHD基準）</DisplayName>
       <Description>コーラルFE演出の左右のテクスチャの表示幅のFHD基準の幅</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -1004,7 +1004,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル強</UnkC8>
     </Field>
-    <Field Def="f32 FE_CoralDispFadeInTime_2 = 0.3">
+    <Field Def="f32 CoralFeStrength_FE_CoralDispFadeInTime = 0.3">
       <DisplayName>FE:コーラル演出フェードイン時間(秒）</DisplayName>
       <Description>演出が表示されるまでの時間</Description>
       <DisplayFormat>%.2f</DisplayFormat>
@@ -1017,7 +1017,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル強</UnkC8>
     </Field>
-    <Field Def="u8 FE_CoralColorR_2 = 255">
+    <Field Def="u8 CoralFeStrength_FE_CoralColorR = 255">
       <DisplayName>FE:コーラル演出色 R</DisplayName>
       <Description>R</Description>
       <EditFlags>None</EditFlags>
@@ -1026,7 +1026,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル強</UnkC8>
     </Field>
-    <Field Def="u8 FE_CoralColorG_2 = 255">
+    <Field Def="u8 CoralFeStrength_FE_CoralColorG = 255">
       <DisplayName>FE:コーラル演出色 G</DisplayName>
       <Description>G</Description>
       <EditFlags>None</EditFlags>
@@ -1035,7 +1035,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル強</UnkC8>
     </Field>
-    <Field Def="u8 FE_CoralColorB_2 = 255">
+    <Field Def="u8 CoralFeStrength_FE_CoralColorB = 255">
       <DisplayName>FE:コーラル演出色 B</DisplayName>
       <Description>FE_CoralDispFadeInTime</Description>
       <EditFlags>None</EditFlags>
@@ -1044,7 +1044,7 @@
       <UnkC0>CORAL_FE</UnkC0>
       <UnkC8>コーラル強</UnkC8>
     </Field>
-    <Field Def="u8 FE_CoralColorA_2 = 255">
+    <Field Def="u8 CoralFeStrength_FE_CoralColorA = 255">
       <DisplayName>FE:コーラル演出色 A</DisplayName>
       <Description>A</Description>
       <EditFlags>None</EditFlags>

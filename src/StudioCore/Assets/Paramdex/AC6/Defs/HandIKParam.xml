@@ -20,7 +20,7 @@
       <Maximum>9999</Maximum>
       <SortID>2</SortID>
     </Field>
-    <Field Def="f32 offsetX_1">
+    <Field Def="f32 normalPosOffset_offsetX">
       <DisplayName>位置オフセットX</DisplayName>
       <Description>位置オフセットX</Description>
       <Minimum>-9999</Minimum>
@@ -29,7 +29,7 @@
       <UnkB8>normalPosOffset</UnkB8>
       <UnkC0>OFFSET</UnkC0>
     </Field>
-    <Field Def="f32 offsetY_1">
+    <Field Def="f32 normalPosOffset_offsetY">
       <DisplayName>位置オフセットY</DisplayName>
       <Description>位置オフセットY</Description>
       <Minimum>-9999</Minimum>
@@ -38,7 +38,7 @@
       <UnkB8>normalPosOffset</UnkB8>
       <UnkC0>OFFSET</UnkC0>
     </Field>
-    <Field Def="f32 offsetZ_1">
+    <Field Def="f32 normalPosOffset_offsetZ">
       <DisplayName>位置オフセットZ</DisplayName>
       <Description>位置オフセットZ</Description>
       <Minimum>-9999</Minimum>
@@ -47,7 +47,7 @@
       <UnkB8>normalPosOffset</UnkB8>
       <UnkC0>OFFSET</UnkC0>
     </Field>
-    <Field Def="angle32 offsetX_2">
+    <Field Def="angle32 normalRotOffset_offsetX">
       <DisplayName>角度オフセットX</DisplayName>
       <Description>回転オフセットX</Description>
       <Minimum>-360</Minimum>
@@ -57,7 +57,7 @@
       <UnkB8>normalRotOffset</UnkB8>
       <UnkC0>ROTOFFSET</UnkC0>
     </Field>
-    <Field Def="angle32 offsetY_2">
+    <Field Def="angle32 normalRotOffset_offsetY">
       <DisplayName>角度オフセットY</DisplayName>
       <Description>回転オフセットY</Description>
       <Minimum>-360</Minimum>
@@ -67,7 +67,7 @@
       <UnkB8>normalRotOffset</UnkB8>
       <UnkC0>ROTOFFSET</UnkC0>
     </Field>
-    <Field Def="angle32 offsetZ_2">
+    <Field Def="angle32 normalRotOffset_offsetZ">
       <DisplayName>角度オフセットZ</DisplayName>
       <Description>回転オフセットZ</Description>
       <Minimum>-360</Minimum>

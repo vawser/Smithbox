@@ -1,10 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <boneName1 AltName="Bone [1]" />
-    <boneName2 AltName="Bone [2]" />
-    <boneName3 AltName="Bone [3]" />
-    <boneName4 AltName="Bone [4]" />
+    <strCtrlBoneName AltName="Control Bone Name [1]" />
+    <subCtrlBoneName1 AltName="Control Bone Name [2]" />
+    <subCtrlBoneName2 AltName="Control Bone Name [3]" />
+    <subCtrlBoneName3 AltName="Control Bone Name [4]" />
+    <reboundLength AltName="Recoil Distance" Wiki="In metres." />
+    <animFrame AltName="Recoil Distance Animation Scale" Wiki="Frame" />
+    
+    <dummy01 IsHidden="" />
+    
+    <boundKey1_boundFrame AltName="Recoil Key [1]" Wiki="Frame" />
+    <boundKey1_boundRate AltName="Recoil Percentage [1]" Wiki="" />
+    <boundKey1_dummy IsHidden="" />
+    
+    <boundKey2_boundFrame AltName="Recoil Key [2]" Wiki="Frame" />
+    <boundKey2_boundRate AltName="Recoil Percentage [2]" Wiki="" />
+    <boundKey2_dummy IsHidden="" />
+    
+    <boundKey3_boundFrame AltName="Recoil Key [3]" Wiki="Frame" />
+    <boundKey3_boundRate AltName="Recoil Percentage [3]" Wiki="" />
+    <boundKey3_dummy IsHidden="" />
+    
+    <boundKey4_boundFrame AltName="Recoil Key [4]" Wiki="Frame" />
+    <boundKey4_boundRate AltName="Recoil Percentage [4]" Wiki="" />
+    <boundKey4_dummy IsHidden="" />
+    
+    <boundKey5_boundFrame AltName="Recoil Key [5]" Wiki="Frame" />
+    <boundKey5_boundRate AltName="Recoil Percentage [5]" Wiki="" />
+    <boundKey5_dummy IsHidden="" />
+    
+    <boundKey6_boundFrame AltName="Recoil Key [6]" Wiki="Frame" />
+    <boundKey6_boundRate AltName="Recoil Percentage [6]" Wiki="" />
+    <boundKey6_dummy IsHidden="" />
+   
+    <boundKey7_boundFrame AltName="Recoil Key [7]" Wiki="Frame" />
+    <boundKey7_boundRate AltName="Recoil Percentage [7]" Wiki="" />
+    <boundKey7_dummy IsHidden="" />
+    
+    <boundKey8_boundFrame AltName="Recoil Key [8]" Wiki="Frame" />
+    <boundKey8_boundRate AltName="Recoil Percentage [8]" Wiki="" />
+    <boundKey8_dummy IsHidden="" />
+    
+    <boundKey9_boundFrame AltName="Recoil Key [9]" Wiki="Frame" />
+    <boundKey9_boundRate AltName="Recoil Percentage [9]" Wiki="" />
+    <boundKey9_dummy IsHidden="" />
+    
+    <boundKey10_boundFrame AltName="Recoil Key [10]" Wiki="Frame" />
+    <boundKey10_boundRate AltName="Recoil Percentage [10]" Wiki="" />
+    <boundKey10_dummy IsHidden="" />
     
     <endPadding IsHidden="" />
   </Field>

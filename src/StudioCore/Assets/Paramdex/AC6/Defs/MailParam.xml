@@ -48,7 +48,7 @@
       <Maximum>999999999</Maximum>
       <SortID>2</SortID>
     </Field>
-    <Field Def="dummy8 reserved[7]">
+    <Field Def="dummy8 attachedFile_reserved[7]">
       <DisplayName>---</DisplayName>
       <Description>----</Description>
       <SortID>90014</SortID>
@@ -56,7 +56,7 @@
       <UnkC0>ATTACHED_FILE</UnkC0>
       <UnkC8>添付ファイル</UnkC8>
     </Field>
-    <Field Def="u8 type">
+    <Field Def="u8 attachedFile_type">
       <DisplayName>カテゴリ</DisplayName>
       <Enum>MAIL_ATTACHED_FILE_TYPE</Enum>
       <Description>添付ファイルのデータ種別</Description>
@@ -65,7 +65,7 @@
       <UnkC0>ATTACHED_FILE</UnkC0>
       <UnkC8>添付ファイル</UnkC8>
     </Field>
-    <Field Def="u32 ID">
+    <Field Def="u32 attachedFile_ID">
       <Description>添付ファイルのデータID</Description>
       <Maximum>999999999</Maximum>
       <SortID>4</SortID>
@@ -73,7 +73,7 @@
       <UnkC0>ATTACHED_FILE</UnkC0>
       <UnkC8>添付ファイル</UnkC8>
     </Field>
-    <Field Def="u32 textID_1">
+    <Field Def="u32 page0_textID">
       <DisplayName>テキストID</DisplayName>
       <Description>1ページ目：本文のテキストID</Description>
       <Maximum>999999999</Maximum>
@@ -82,7 +82,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ1</UnkC8>
     </Field>
-    <Field Def="u32 imageID_1">
+    <Field Def="u32 page0_imageID">
       <DisplayName>画像ID</DisplayName>
       <Description>1ページ目：本文中の画像ID</Description>
       <Maximum>999999999</Maximum>
@@ -91,7 +91,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ1</UnkC8>
     </Field>
-    <Field Def="u8 layout_1 = 1">
+    <Field Def="u8 page0_layout = 1">
       <DisplayName>レイアウト</DisplayName>
       <Enum>MAIL_LAYOUT_TYPE</Enum>
       <Description>1ページ目：レイアウト</Description>
@@ -102,7 +102,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ1</UnkC8>
     </Field>
-    <Field Def="dummy8 reserved_1_1[3]">
+    <Field Def="dummy8 page0_reserved1[3]">
       <DisplayName>予約</DisplayName>
       <Description>----</Description>
       <DisplayFormat>%d</DisplayFormat>
@@ -112,7 +112,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ1</UnkC8>
     </Field>
-    <Field Def="u32 blockEffect_0_1">
+    <Field Def="u32 page0_blockEffect_0">
       <DisplayName>ブロック1</DisplayName>
       <Description>1ブロック目の負荷演出</Description>
       <Maximum>999999999</Maximum>
@@ -121,7 +121,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ1負荷演出</UnkC8>
     </Field>
-    <Field Def="u32 blockEffect_1_1">
+    <Field Def="u32 page0_blockEffect_1">
       <DisplayName>ブロック2</DisplayName>
       <Description>2ブロック目の負荷演出</Description>
       <Maximum>999999999</Maximum>
@@ -130,7 +130,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ1負荷演出</UnkC8>
     </Field>
-    <Field Def="u32 blockEffect_2_1">
+    <Field Def="u32 page0_blockEffect_2">
       <DisplayName>ブロック3</DisplayName>
       <Description>3ブロック目の負荷演出</Description>
       <Maximum>999999999</Maximum>
@@ -139,7 +139,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ1負荷演出</UnkC8>
     </Field>
-    <Field Def="dummy8 reserved_1_2[8]">
+    <Field Def="dummy8 page0_reserved2[8]">
       <DisplayName>予約</DisplayName>
       <Description>----</Description>
       <DisplayFormat>%d</DisplayFormat>
@@ -149,7 +149,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ1</UnkC8>
     </Field>
-    <Field Def="u32 textID_2">
+    <Field Def="u32 page1_textID">
       <DisplayName>テキストID</DisplayName>
       <Description>2ページ目：本文のテキストID</Description>
       <Maximum>999999999</Maximum>
@@ -158,7 +158,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ2</UnkC8>
     </Field>
-    <Field Def="u32 imageID_2">
+    <Field Def="u32 page1_imageID">
       <DisplayName>画像ID</DisplayName>
       <Description>2ページ目：本文中の画像ID</Description>
       <Maximum>999999999</Maximum>
@@ -167,7 +167,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ2</UnkC8>
     </Field>
-    <Field Def="u8 layout_2 = 1">
+    <Field Def="u8 page1_layout = 1">
       <DisplayName>レイアウト</DisplayName>
       <Enum>MAIL_LAYOUT_TYPE</Enum>
       <Description>2ページ目：レイアウト</Description>
@@ -178,7 +178,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ2</UnkC8>
     </Field>
-    <Field Def="dummy8 reserved_2_1[3]">
+    <Field Def="dummy8 page1_reserved1[3]">
       <DisplayName>予約</DisplayName>
       <Description>----</Description>
       <DisplayFormat>%d</DisplayFormat>
@@ -188,7 +188,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ2</UnkC8>
     </Field>
-    <Field Def="u32 blockEffect_0_2">
+    <Field Def="u32 page1_blockEffect_0">
       <DisplayName>ブロック1</DisplayName>
       <Description>1ブロック目の負荷演出</Description>
       <Maximum>999999999</Maximum>
@@ -197,7 +197,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ2負荷演出</UnkC8>
     </Field>
-    <Field Def="u32 blockEffect_1_2">
+    <Field Def="u32 page1_blockEffect_1">
       <DisplayName>ブロック2</DisplayName>
       <Description>2ブロック目の負荷演出</Description>
       <Maximum>999999999</Maximum>
@@ -206,7 +206,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ2負荷演出</UnkC8>
     </Field>
-    <Field Def="u32 blockEffect_2_2">
+    <Field Def="u32 page1_blockEffect_2">
       <DisplayName>ブロック3</DisplayName>
       <Description>3ブロック目の負荷演出</Description>
       <Maximum>999999999</Maximum>
@@ -215,7 +215,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ2負荷演出</UnkC8>
     </Field>
-    <Field Def="dummy8 reserved_2_2[8]">
+    <Field Def="dummy8 page1_reserved2[8]">
       <DisplayName>予約</DisplayName>
       <Description>----</Description>
       <DisplayFormat>%d</DisplayFormat>
@@ -225,7 +225,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ2</UnkC8>
     </Field>
-    <Field Def="u32 textID_3">
+    <Field Def="u32 page2_textID">
       <DisplayName>テキストID</DisplayName>
       <Description>3ページ目：本文のテキストID</Description>
       <Maximum>999999999</Maximum>
@@ -234,7 +234,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ3</UnkC8>
     </Field>
-    <Field Def="u32 imageID_3">
+    <Field Def="u32 page2_imageID">
       <DisplayName>画像ID</DisplayName>
       <Description>3ページ目：本文中の画像ID</Description>
       <Maximum>999999999</Maximum>
@@ -243,7 +243,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ3</UnkC8>
     </Field>
-    <Field Def="u8 layout_3 = 1">
+    <Field Def="u8 page2_layout = 1">
       <DisplayName>レイアウト</DisplayName>
       <Enum>MAIL_LAYOUT_TYPE</Enum>
       <Description>3ページ目：レイアウト</Description>
@@ -254,7 +254,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ3</UnkC8>
     </Field>
-    <Field Def="dummy8 reserved_3_1[3]">
+    <Field Def="dummy8 page2_reserved1[3]">
       <DisplayName>予約</DisplayName>
       <Description>----</Description>
       <DisplayFormat>%d</DisplayFormat>
@@ -264,7 +264,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ3</UnkC8>
     </Field>
-    <Field Def="u32 blockEffect_0_3">
+    <Field Def="u32 page2_blockEffect_0">
       <DisplayName>ブロック1</DisplayName>
       <Description>1ブロック目の負荷演出</Description>
       <Maximum>999999999</Maximum>
@@ -273,7 +273,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ3負荷演出</UnkC8>
     </Field>
-    <Field Def="u32 blockEffect_1_3">
+    <Field Def="u32 page2_blockEffect_1">
       <DisplayName>ブロック2</DisplayName>
       <Description>2ブロック目の負荷演出</Description>
       <Maximum>999999999</Maximum>
@@ -282,7 +282,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ3負荷演出</UnkC8>
     </Field>
-    <Field Def="u32 blockEffect_2_3">
+    <Field Def="u32 page2_blockEffect_2">
       <DisplayName>ブロック3</DisplayName>
       <Description>3ブロック目の負荷演出</Description>
       <Maximum>999999999</Maximum>
@@ -291,7 +291,7 @@
       <UnkC0>CONTENT</UnkC0>
       <UnkC8>ページ3負荷演出</UnkC8>
     </Field>
-    <Field Def="dummy8 reserved_3_2[8]">
+    <Field Def="dummy8 page2_reserved2[8]">
       <DisplayName>予約</DisplayName>
       <Description>----</Description>
       <DisplayFormat>%d</DisplayFormat>

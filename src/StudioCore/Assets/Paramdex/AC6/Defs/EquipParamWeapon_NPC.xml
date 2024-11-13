@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="3">
-  <ParamType>EQUIP_PARAM_WEAPON_ST_NPC</ParamType>
+  <ParamType>EQUIP_PARAM_WEAPON_ST</ParamType>
   <DataVersion>7</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>

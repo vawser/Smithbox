@@ -6,7 +6,7 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s16 Value_1 = -1">
+    <Field Def="s16 pair0_Value = -1">
       <DisplayName>判定値</DisplayName>
       <Description> -1は無効値</Description>
       <EditFlags>None</EditFlags>
@@ -17,7 +17,7 @@
       <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
       <UnkC8>パーツ破損0</UnkC8>
     </Field>
-    <Field Def="s16 Weight_1">
+    <Field Def="s16 pair0_Weight">
       <DisplayName>重み付け</DisplayName>
       <EditFlags>None</EditFlags>
       <Minimum>0</Minimum>
@@ -27,7 +27,7 @@
       <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
       <UnkC8>パーツ破損0</UnkC8>
     </Field>
-    <Field Def="s16 Value_2 = -1">
+    <Field Def="s16 pair1_Value = -1">
       <DisplayName>判定値</DisplayName>
       <Description> -1は無効値</Description>
       <EditFlags>None</EditFlags>
@@ -38,7 +38,7 @@
       <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
       <UnkC8>パーツ破損1</UnkC8>
     </Field>
-    <Field Def="s16 Weight_2">
+    <Field Def="s16 pair1_Weight">
       <DisplayName>重み付け</DisplayName>
       <EditFlags>None</EditFlags>
       <Minimum>0</Minimum>
@@ -48,7 +48,7 @@
       <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
       <UnkC8>パーツ破損1</UnkC8>
     </Field>
-    <Field Def="s16 Value_3 = -1">
+    <Field Def="s16 pair2_Value = -1">
       <DisplayName>判定値</DisplayName>
       <Description> -1は無効値</Description>
       <EditFlags>None</EditFlags>
@@ -59,7 +59,7 @@
       <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
       <UnkC8>パーツ破損2</UnkC8>
     </Field>
-    <Field Def="s16 Weight_3">
+    <Field Def="s16 pair2_Weight">
       <DisplayName>重み付け</DisplayName>
       <EditFlags>None</EditFlags>
       <Minimum>0</Minimum>
@@ -69,7 +69,7 @@
       <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
       <UnkC8>パーツ破損2</UnkC8>
     </Field>
-    <Field Def="s16 Value_4 = -1">
+    <Field Def="s16 pair3_Value = -1">
       <DisplayName>判定値</DisplayName>
       <Description> -1は無効値</Description>
       <EditFlags>None</EditFlags>
@@ -80,7 +80,7 @@
       <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
       <UnkC8>パーツ破損3</UnkC8>
     </Field>
-    <Field Def="s16 Weight_4">
+    <Field Def="s16 pair3_Weight">
       <DisplayName>重み付け</DisplayName>
       <EditFlags>None</EditFlags>
       <Minimum>0</Minimum>
@@ -90,7 +90,7 @@
       <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
       <UnkC8>パーツ破損3</UnkC8>
     </Field>
-    <Field Def="s16 Value_5 = -1">
+    <Field Def="s16 pair4_Value = -1">
       <DisplayName>判定値</DisplayName>
       <Description> -1は無効値</Description>
       <EditFlags>None</EditFlags>
@@ -101,7 +101,7 @@
       <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
       <UnkC8>パーツ破損4</UnkC8>
     </Field>
-    <Field Def="s16 Weight_5">
+    <Field Def="s16 pair4_Weight">
       <DisplayName>重み付け</DisplayName>
       <EditFlags>None</EditFlags>
       <Minimum>0</Minimum>

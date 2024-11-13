@@ -24,12 +24,34 @@
       <Option Value="90" Name="90 Degrees" />
     </Enum>
     
+    <Enum Name="ASSET_SLOD_CONVERT_TYPE" type="u8">
+    
+    </Enum>
+    
+    <Enum Name="ASSET_IMPOSTER_TYPE" type="u8">
+    
+    </Enum>
+    
   </Enums>
   <Field>
-    <assetEnvironmentGeometryParamID AltName="Asset Environment Geometry Param ID" Refs="AssetEnvironmentGeometryParam" />
-    <assetSlodTexSizeType AltName="Asset SLOD Texture Size" Enum="ASSET_SLOD_TEX_SIZE_TYPE" />
-    <assetSlodCapDirNumType AltName="Asset SLOD Directions" Enum="ASSET_SLOD_CAP_DIR_NUM_TYPE" />
-    <assetSlodCapAngleType AltName="Asset SLOD Angle Cap"  Enum="ASSET_SLOD_CAP_ANGLE_TYPE" />
+    <slodConvertType AltName="SLOD conversion settings" Wiki="Settings used in SLOD conversion, used to turn on/off model display during transcription." Enum="ASSET_SLOD_CONVERT_TYPE" />
+    <imposterCaptureType AltName="Imposter Capture Type" Wiki="How to display the imposter." Enum="ASSET_IMPOSTER_TYPE" />
+    <bakeAssetLodLv AltName="Bake Asset LOD Level" Wiki="LOD level of the destination model" />
+    <isHemiOctahedral AltName="Is Hemi-spherical Display" Wiki="Is it hemispherical display? (Only affected by LockCamBillboard)" IsBool="" />
+    
+    <pad IsHidden="" />
+    
+    <bakeAssetId AltName="Bake Asset ID" Wiki="If the SLOD transfer destination model-1 is the same ID as the original model" Refs="AssetEnvironmentGeometryParam" />
+    
+    <lockCamBillboard_imposterCamOffset AltName="Lock-cam Billboard: Camera Offset" Wiki="Camera offset distance (cm)" />
+    <lockCamBillboard_imposterTexSize AltName="Lock-cam Billboard: Texture Resolution" Wiki="This is the resolution for unidirectional display, and the overall texture size is this resolution x number of images." Enum="ASSET_SLOD_TEX_SIZE_TYPE" />
+    <lockCamBillboard_imposterTexNum_CapAngle AltName="Lock-cam Billboard: Capture Angle" Wiki="Number of shots to take" Enum="ASSET_SLOD_CAP_DIR_NUM_TYPE" />
+    <lockCamBillboard_imposterLockCamTexPad AltName="Lock-cam Billboard: Texture Padding" Wiki="Is there padding applied to the texture?" IsBool="" />
+    
+    <crossBillboard_imposterCamOffset AltName="Cross Billboard: Camera Offset" Wiki="Camera offset distance (cm)" />
+    <crossBillboard_imposterTexSize AltName="Cross Billboard: Texture Resolution" Wiki="This is the resolution for unidirectional display, and the overall texture size is this resolution x number of images." Enum="ASSET_SLOD_TEX_SIZE_TYPE" />
+    <crossBillboard_imposterTexNum_CapAngle AltName="Cross Billboard: Capture Angle" Wiki="Number of shots to take" Enum="ASSET_SLOD_CAP_DIR_NUM_TYPE" />
+    <crossBillboard_imposterLockCamTexPad AltName="Cross Billboard: Texture Padding" Wiki="Is there padding applied to the texture?" IsBool="" />
   </Field>
   <Self />
 </PARAMMETA>

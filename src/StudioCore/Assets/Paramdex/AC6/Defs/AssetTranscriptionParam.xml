@@ -43,7 +43,7 @@
       <Maximum>999999</Maximum>
       <SortID>110</SortID>
     </Field>
-    <Field Def="f32 imposterCamOffset_1">
+    <Field Def="f32 lockCamBillboard_imposterCamOffset">
       <DisplayName>カメラのオフセット距離(cm) </DisplayName>
       <Description>オフセット距離</Description>
       <Minimum>0</Minimum>
@@ -54,7 +54,7 @@
       <UnkC0>ImposterSetting</UnkC0>
       <UnkC8>LockCamBillboard</UnkC8>
     </Field>
-    <Field Def="u16 imposterTexSize_1 = 128">
+    <Field Def="u16 lockCamBillboard_imposterTexSize = 128">
       <DisplayName>テクスチャ出力解像度</DisplayName>
       <Enum>ASSET_SLOD_TEX_SIZE_TYPE</Enum>
       <Description>一方向撮影での解像度になります、全体のテクスチャサイズはこの解像度x枚数のサイズになります</Description>
@@ -66,7 +66,7 @@
       <UnkC0>ImposterSetting</UnkC0>
       <UnkC8>LockCamBillboard</UnkC8>
     </Field>
-    <Field Def="u8 imposterTexNum_CapAngle_1 = 16">
+    <Field Def="u8 lockCamBillboard_imposterTexNum_CapAngle = 16">
       <DisplayName>撮影枚数</DisplayName>
       <Enum>ASSET_SLOD_CAP_DIR_NUM_TYPE</Enum>
       <Description>撮影する枚数</Description>
@@ -77,7 +77,7 @@
       <UnkC0>ImposterSetting</UnkC0>
       <UnkC8>LockCamBillboard</UnkC8>
     </Field>
-    <Field Def="u8 imposterLockCamTexPad_1">
+    <Field Def="u8 lockCamBillboard_imposterLockCamTexPad">
       <DisplayName>テクスチャパディング</DisplayName>
       <Enum>ON_OFF</Enum>
       <Description> 余白があるかどうか</Description>
@@ -87,7 +87,7 @@
       <UnkC0>ImposterSetting</UnkC0>
       <UnkC8>LockCamBillboard</UnkC8>
     </Field>
-    <Field Def="f32 imposterCamOffset_2">
+    <Field Def="f32 crossBillboard_imposterCamOffset">
       <DisplayName>カメラのオフセット距離(cm) </DisplayName>
       <Description>オフセット距離</Description>
       <Minimum>0</Minimum>
@@ -98,7 +98,7 @@
       <UnkC0>ImposterSetting</UnkC0>
       <UnkC8>CrossBillboard</UnkC8>
     </Field>
-    <Field Def="u16 imposterTexSize_2 = 128">
+    <Field Def="u16 crossBillboard_imposterTexSize = 128">
       <DisplayName>テクスチャ出力解像度</DisplayName>
       <Enum>ASSET_SLOD_TEX_SIZE_TYPE</Enum>
       <Description>一方向撮影での解像度になります、全体のテクスチャサイズはこの解像度x枚数のサイズになります</Description>
@@ -110,7 +110,7 @@
       <UnkC0>ImposterSetting</UnkC0>
       <UnkC8>CrossBillboard</UnkC8>
     </Field>
-    <Field Def="u8 imposterTexNum_CapAngle_2 = 45">
+    <Field Def="u8 crossBillboard_imposterTexNum_CapAngle = 45">
       <DisplayName>撮影角度</DisplayName>
       <Enum>ASSET_SLOD_CAP_ANGLE_TYPE</Enum>
       <Description>撮影する角度</Description>
@@ -122,7 +122,7 @@
       <UnkC0>ImposterSetting</UnkC0>
       <UnkC8>CrossBillboard</UnkC8>
     </Field>
-    <Field Def="u8 imposterLockCamTexPad_2">
+    <Field Def="u8 crossBillboard_imposterLockCamTexPad">
       <DisplayName>テクスチャパディング</DisplayName>
       <Enum>ON_OFF</Enum>
       <Description> 余白があるかどうか</Description>

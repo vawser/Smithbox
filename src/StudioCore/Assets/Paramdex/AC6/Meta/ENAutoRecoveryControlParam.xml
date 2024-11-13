@@ -1,33 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <idleEnergyRecoveryRate AltName="No Boost: Energy Recovery Rate" Wiki="Percentage-based modifier that controls the rate at which the equipped generator recovers energy while the AC is not boosting. Also applies to standing still, walking, running and jumping." /> 
-    <idleEnergyCapacityMax AltName="No Boost: Energy Capacity Maximum" Wiki="Applies to any physical movement that isn't boosting. So, standing still, walking, running and jumping." />
-    <idleEnergyCapacitySetAfterAction AltName="No Boost: Energy Capacity Set after Action" Wiki="Applies to any physical movement that isn't boosting. So, standing still, walking, running and jumping." />
+    <entry000_ENRecoveryRate AltName="[Idle] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry000_ENMax AltName="[Idle] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry000_ENMin AltName="[Idle] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry000_DoDelayENRecovery AltName="[Idle] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry000_pad1 IsHidden="" />
+    <entry000_pad IsHidden="" />
+  
+    <entry001_ENRecoveryRate AltName="[Ground] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry001_ENMax AltName="[Ground] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry001_ENMin AltName="[Ground] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry001_DoDelayENRecovery AltName="[Ground] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry001_pad1 IsHidden="" />
+    <entry001_pad IsHidden="" />
     
-    <concurrentEnergyUseMinimumTime AltName="Concurrent Energy Use - Minimum Time" />
-    <concurrentEnergyUseNoConsumeTime AltName="Concurrent Energy Use - No Consumption Time" />
+    <entry002_ENRecoveryRate AltName="[?] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry002_ENMax AltName="[?] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry002_ENMin AltName="[?] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry002_DoDelayENRecovery AltName="[?] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry002_pad1 IsHidden="" />
+    <entry002_pad IsHidden="" />
     
-    <midairEnergyRecoveryRate AltName="Mid-air: Energy Recovery Rate" Wiki="The energy recovery rate during this action.\nAffects jumping and falling." />
-    <midairEnergyCapacityMax AltName="Mid-air: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action.\nAffects jumping and falling." />
-    <midairEnergyCapacitySetAfterAction AltName="Mid-air: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured.\nAffects jumping and falling." />
+    <entry003_ENRecoveryRate AltName="[Aerial] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry003_ENMax AltName="[Aerial] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry003_ENMin AltName="[Aerial] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry003_DoDelayENRecovery AltName="[Aerial] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry003_pad1 IsHidden="" />
+    <entry003_pad IsHidden="" />
     
-    <boostEnergyRecoveryRate AltName="Ground Boost: Energy Recovery Rate" Wiki="The energy recovery rate during this action." />
-    <boostEnergyCapacityMax AltName="Ground Boost: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action." />
-    <boostEnergyCapacitySetAfterAction AltName="Ground Boost: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured." />
+    <entry004_ENRecoveryRate AltName="[Ground Boost] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry004_ENMax AltName="[Ground Boost] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry004_ENMin AltName="[Ground Boost] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry004_DoDelayENRecovery AltName="[Ground Boost] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry004_pad1 IsHidden="" />
+    <entry004_pad IsHidden="" />
     
-    <aerialBoostEnergyRecoveryRate AltName="Mid-air Boost: Energy Recovery Rate" Wiki="The energy recovery rate during this action." />
-    <aerialBoostEnergyCapacityMax AltName="Mid-air Boost: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action." />
-    <aerialBoostEnergyCapacitySetAfterAction AltName="Mid-air Boost: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured." />
+    <entry005_ENRecoveryRate AltName="[Aerial Boost] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry005_ENMax AltName="[Aerial Boost] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry005_ENMin AltName="[Aerial Boost] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry005_DoDelayENRecovery AltName="[Aerial Boost] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry005_pad1 IsHidden="" />
+    <entry005_pad IsHidden="" />
     
-    <tankDriftEnergyRecoveryRate AltName="Tank Drift: Energy Recovery Rate" Wiki="The energy recovery rate during this action." />
-    <tankDriftEnergyCapacityMax AltName="Tank Drift: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action." />
-    <tankDriftEnergyCapacitySetAfterAction AltName="Tank Drift: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured." />
+    <entry006_ENRecoveryRate AltName="[Tank Drift] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry006_ENMax AltName="[Tank Drift] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry006_ENMin AltName="[Tank Drift] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry006_DoDelayENRecovery AltName="[Tank Drift] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry006_pad1 IsHidden="" />
+    <entry006_pad IsHidden="" />
     
-    <stanceFireEnergyRecoveryRate AltName="Weapon Stance: Energy Recovery Rate" Wiki="The energy recovery rate during this action.\nOccurs when firing a stanced weapon." />
-    <stanceFireEnergyCapacityMax AltName="Weapon Stance: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action.\nOccurs when firing a stanced weapon." />
-    <stanceFireEnergyCapacitySetAfterAction AltName="Weapon Stance: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured.\nOccurs when firing a stanced weapon." />
+    <entry007_ENRecoveryRate AltName="[Stance Firing] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry007_ENMax AltName="[Stance Firing] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry007_ENMin AltName="[Stance Firing] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry007_DoDelayENRecovery AltName="[Stance Firing] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry007_pad1 IsHidden="" />
+    <entry007_pad IsHidden="" />
     
+    <entry008_ENRecoveryRate AltName="[?] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry008_ENMax AltName="[?] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry008_ENMin AltName="[?] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry008_DoDelayENRecovery AltName="[?] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry008_pad1 IsHidden="" />
+    <entry008_pad IsHidden="" />
+    
+    <entry009_ENRecoveryRate AltName="[?] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry009_ENMax AltName="[?] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry009_ENMin AltName="[?] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry009_DoDelayENRecovery AltName="[?] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry009_pad1 IsHidden="" />
+    <entry009_pad IsHidden="" />
+    
+    <entry010_ENRecoveryRate AltName="[?] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry010_ENMax AltName="[?] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry010_ENMin AltName="[?] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry010_DoDelayENRecovery AltName="[?] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry010_pad1 IsHidden="" />
+    <entry010_pad IsHidden="" />
+    
+    <entry011_ENRecoveryRate AltName="[?] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry011_ENMax AltName="[?] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry011_ENMin AltName="[?] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry011_DoDelayENRecovery AltName="[?] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry011_pad1 IsHidden="" />
+    <entry011_pad IsHidden="" />
+    
+    <entry012_ENRecoveryRate AltName="[?] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry012_ENMax AltName="[?] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry012_ENMin AltName="[?] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry012_DoDelayENRecovery AltName="[?] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry012_pad1 IsHidden="" />
+    <entry012_pad IsHidden="" />
+    
+    <entry013_ENRecoveryRate AltName="[?] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry013_ENMax AltName="[?] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry013_ENMin AltName="[?] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry013_DoDelayENRecovery AltName="[?] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry013_pad1 IsHidden="" />
+    <entry013_pad IsHidden="" />
+    
+    <entry014_ENRecoveryRate AltName="[?] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry014_ENMax AltName="[?] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry014_ENMin AltName="[?] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry014_DoDelayENRecovery AltName="[?] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry014_pad1 IsHidden="" />
+    <entry014_pad IsHidden="" />
+    
+    <entry015_ENRecoveryRate AltName="[?] Energy Recovery Rate" Wiki="Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01" />
+    <entry015_ENMax AltName="[?] Energy Max " Wiki="Specify the maximum energy percentage" />
+    <entry015_ENMin AltName="[?] Energy Min" Wiki="Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value." />
+    <entry015_DoDelayENRecovery AltName="[?] Apply Energy Recovery Delay" Wiki="If enabled, energy recovery delay is applied." IsBool="" />
+    <entry015_pad1 IsHidden="" />
+    <entry015_pad IsHidden="" />
+    
+    <pad_end IsHidden="" />
   </Field>
   <Self />
 </PARAMMETA>
