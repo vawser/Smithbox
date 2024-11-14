@@ -447,11 +447,17 @@ public class EditorDecorations
 
             if(cont)
             {
-                TextResult result = TextFinder.GetTextResult(entry.fmg, oldval, entry.offset);
+                int searchValue = -1;
+                var validValue = int.TryParse(oldval, out searchValue);
 
-                if (result != null)
+                if (validValue)
                 {
-                    newTextResults.Add(result);
+                    TextResult result = TextFinder.GetTextResult(entry.fmg, searchValue, entry.offset);
+
+                    if (result != null)
+                    {
+                        newTextResults.Add(result);
+                    }
                 }
             }
         }

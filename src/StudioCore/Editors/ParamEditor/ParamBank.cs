@@ -373,9 +373,9 @@ public class ParamBank
             {
                 _usedTentativeParamTypes = new Dictionary<string, string>();
                 p = Param.ReadIgnoreCompression(f.Bytes);
-                if (!string.IsNullOrEmpty(p.ParamType))
+                if (!string.IsNullOrEmpty(p.ParamType) )
                 {
-                    if (!_paramdefs.ContainsKey(p.ParamType))
+                    if (!_paramdefs.ContainsKey(p.ParamType) || paramName == "EquipParamWeapon_Npc")
                     {
                         if (_tentativeParamType.TryGetValue(paramName, out var newParamType))
                         {

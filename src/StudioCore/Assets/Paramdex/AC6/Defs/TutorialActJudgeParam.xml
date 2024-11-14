@@ -6,7 +6,7 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="u8 ActionSlot">
+    <Field Def="u8 State0_ActionSlot">
       <DisplayName>スロット</DisplayName>
       <Enum>TUTORIAL_ACTJUDGE_SLOT_TYPE</Enum>
       <EditFlags>None</EditFlags>
@@ -16,7 +16,7 @@
       <UnkC0>STATE_PARAM</UnkC0>
       <UnkC8>状態0</UnkC8>
     </Field>
-    <Field Def="u8 ActionType">
+    <Field Def="u8 State0_ActionType">
       <DisplayName>行動タイプ</DisplayName>
       <Enum>ACTION_FE_STATE_TYPE_ENUM</Enum>
       <EditFlags>None</EditFlags>
@@ -26,7 +26,7 @@
       <UnkC0>STATE_PARAM</UnkC0>
       <UnkC8>状態0</UnkC8>
     </Field>
-    <Field Def="dummy8 reserve0[2]">
+    <Field Def="dummy8 State0_reserve0[2]">
       <DisplayName>予約</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <SortID>8</SortID>
@@ -34,7 +34,7 @@
       <UnkC0>STATE_PARAM</UnkC0>
       <UnkC8>状態0</UnkC8>
     </Field>
-    <Field Def="u8 ActionSlot">
+    <Field Def="u8 State1_ActionSlot">
       <DisplayName>スロット</DisplayName>
       <Enum>TUTORIAL_ACTJUDGE_SLOT_TYPE</Enum>
       <EditFlags>None</EditFlags>
@@ -44,7 +44,7 @@
       <UnkC0>STATE_PARAM</UnkC0>
       <UnkC8>状態1</UnkC8>
     </Field>
-    <Field Def="u8 ActionType">
+    <Field Def="u8 State1_ActionType">
       <DisplayName>行動タイプ</DisplayName>
       <Enum>ACTION_FE_STATE_TYPE_ENUM</Enum>
       <EditFlags>None</EditFlags>
@@ -54,7 +54,7 @@
       <UnkC0>STATE_PARAM</UnkC0>
       <UnkC8>状態1</UnkC8>
     </Field>
-    <Field Def="dummy8 reserve0[2]">
+    <Field Def="dummy8 State1_reserve0[2]">
       <DisplayName>予約</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <SortID>9</SortID>

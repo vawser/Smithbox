@@ -11,7 +11,7 @@
     <coop2_observeTime AltName="Observation Time: 2 Co-op Clients" Wiki="Monitoring time [sec] (number of cooperating spirits 2)" />
     
     <coop3_limitationTime AltName="Limitation Time: 3 Co-op Clients" Wiki="Time limit [sec] (number of cooperating spirits 3)" />
-    <coop3_observeTime="Observation Time: 3 Co-op Clients" Wiki="Monitoring time [sec] (number of cooperating spirits 3)" />
+    <coop3_observeTime AltName="Observation Time: 3 Co-op Clients" Wiki="Monitoring time [sec] (number of cooperating spirits 3)" />
     
   </Field>
   <Self />
