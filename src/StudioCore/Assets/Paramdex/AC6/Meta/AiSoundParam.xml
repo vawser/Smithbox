@@ -34,14 +34,16 @@
     <opposeTarget AltName="Target: Hostile" Wiki="Target:  Hostile" IsBool="" />
     <friendlyTarget AltName="Target: Friendly" Wiki="Target:  Allies" IsBool="" />
     <selfTarget AltName="Target: Self" Wiki="Target: myself" IsBool="" />
-    <disableOnTargetPCompany AltName="Disable on Targeting Player" Wiki="You can't listen while targeting your PC" IsBool="" />
+    <doSetSearchTarget AltName="Set Search Target" Wiki="" IsBool="" />
+	
+	<pad IsHidden="" />
+	
     <rank AltName="Rank" Wiki="Character behavior (former: sound type)" Enum="AI_SOUND_RANK" />
     <forgetTime AltName="Forget Time" Wiki="Time to forget the sound target (overwrite) [sec]" />
     <priority AltName="Priority" Wiki="AI sound priority" />
     <soundBehaviorId AltName="Sound Behavior ID" Wiki="Behavior ID" />
-    <aiSoundLevel AltName="AI Sound Level" Wiki="How hard it is to hear" />
-    <replaningState AltName="Replanning State" Wiki="AI state setting to run replanning when listening to AI sound" Enum="AI_SOUND_REPLANNING_STATE_TYPE" />
-    <pad1 AltName="" IsHidden=""/>
+    <searchPoint AltNane="Search Degree Increase" Wiki="Increased search degree for characters within the audible range of AI sounds" />
+	<combatPoint AltName="Combat Degree Increase" Wiki="Increased engagement of characters within the audible range of AI sounds" />
     
   </Field>
   <Self />

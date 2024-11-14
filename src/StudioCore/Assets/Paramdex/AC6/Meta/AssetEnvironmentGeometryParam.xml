@@ -112,35 +112,45 @@
     <FragmentInvisibleWaitTime AltName="Hidden Debris - Wait Time" Wiki="Hidden debris Waiting time (seconds)" />
     <FragmentInvisibleTime AltName="Hidden Debris - Time to Hide" Wiki="Time to hide debris (seconds)" />
     <BreakAiSoundID AltName="Destruction AI Sound ID" Wiki="AI sound ID generated at the time of destruction" Refs="AiSoundParam" />
-    <breakItemLotType AltName="Destruction Item Lot Type" Wiki="A type that decides how to obtain items drawn at the time of destruction" Enum="ASSET_BREAK_ITEM_LOT_TYPE_ENUM" />
+	
+	<reserve1 IsHidden="" />
+	
     <animBreakIdMax AltName="Anim Break ID Max" Wiki="What is the animation destruction ID from 0 to what?" />
-    <breakBulletAttributeDamageType AltName="Destruction Bullet Attribute Damage Type" Wiki="Generates a bullet if the last damage received when destroying an asset meets the conditions of this setting." Enum="ASSET_BREAK_ATTRIBUTE_DAMAGE_TYPE" />
+    
+	<updateGroupMaskLimitFrameNum AltName="Update Group Mask Limit Frame Number" Wiki="Number of frames for group mask switching time" />
+	
     <isBreakByPlayerCollide AltName="Is Destroyed on Player Collision" Wiki="Broken when the player touches (0: no, 1:)" />
     <isBreakByEnemyCollide AltName="Is Destroyed on Enemy Collision" Wiki="Broken when an enemy character touches (0: No, 1: Ru)" />
     <isBreak_ByChrRide AltName="Is Destroyed by Riding" Wiki="Will it break if the character gets on (0: it won't break 1: it will break)" />
     <isDisableBreakForFirstAppear AltName="Is Destroyed by Default" Wiki="Broken at the initial appearance of the player (0: ru, 1: no)" />
     <isAnimBreak AltName="Is Animated Destruction" Wiki="Is it animation destruction (0: physical destruction, 1: animation destruction)" />
+    <isForceHiActiveWhileAnim AltName="Set Update Frequency during Animation to HiActive." Wiki="During anime playback, set the update frequency to HiActive for Asset only" />
+	<isForceHiActive AltName="Set Update Frequency to HiActive" Wiki="Set the update frequency to HiActive" />
+	<isBreakSync AltName="Allow Synchronization Break" Wiki="Allow asset to break animation synchronization." />
     <isDamageCover AltName="Is Damage Transferred" Wiki="Whether to pass the damage to the other side when receiving damage (0: pass, 1: do not pass)" />
     <isAttackBacklash AltName="Is Attack Backlash" Wiki="Do you play the attack (0: do not play, 1: play)" />
-    <Reserve_2 AltName="" IsHidden=""/>
+	<isPenetrationBulletHit AltName="Disable Bullet Penetration" Wiki="Whether the bullet will hit (0: not hit, 1: hit)" />
     <isLadder AltName="Is Ladder" Wiki="Is it a ladder (0: different, 1: yes)" />
     <isMoveObj AltName="Is Moving Object" Wiki="Is it a moving object? It is a flag used for branching of movement processing at the time of multi (0: different, 1: yes)" />
-    <isSkydomeFlag AltName="Is Celestial Sphere" Wiki="Processing that treats the celestial sphere (player tracking, etc.) is performed (0: different, 1: yes)" />
+	
+	<isInsideGroupHit AltName="Is Inside Group Hit" Wiki="Hit interference in the asset or (0: don't, 1: do)" />
+	
     <isAnimPauseOnRemoPlay AltName="Is Paused during Cutscene" Wiki="Do you want to stop the animation during the poly play (0: not, 1: do)" />
     <isBurn AltName="Is Flammable" Wiki="Will it burn (0: not, 1:)" />
-    <isEnableRepick AltName="Is Repicked" Wiki="If this flag is , the parameter At the time of recollection _ *** will be used for the assets to be collected again in units of placement." IsBool="" />
-    <isBreakOnPickUp AltName="Is Destroyed on Pickup" Wiki="If , play the animation at the time of collection, if , destroy at the time of collection (destroy in all cases including replacement)" IsBool="" />
-    <isBreakByHugeenemyCollide AltName="Is Destroyed by Giant Collision" Wiki="Broken when a giant enemy touches (0: No, 1:)" />
+	
     <navimeshFlag AltName="Pre-destruction Navmesh Flag" Wiki="Navigation mesh flag set from assets before destruction" Enum="ASSET_NAVIMESH_FLAG" />
     <burnBulletInterval AltName="Burn Bullet Interval" Wiki="Interval (frame) to generate bullets for spreading fire" />
     <clothUpdateDist AltName="Camera Distance to Update Cloth" Wiki="Distance from the camera to update havokCloth (0: always update)" />
     <lifeTime_forRuntimeCreate AltName="Duration after Creation until Disappearance" Wiki="Runtime-generated time after creation until disappearance (0: does not disappear)" />
     <contactSeId AltName="Contact SE ID" Wiki="SE ID to play when touched by a local player operated by you (-1: Do not play)" />
-    <repickAnimIdOffset AltName="Repick Anim ID Offset" Wiki="When recollecting assets with Is there a change at the time of recollection? In units of placement, play the uncollected / collected animation with the anime ID offset by this value." />
+    
+	<fadeOutTime_forRuntimeCreate AltName="Fade Out Duration after Generation for Generated Assets" Wiki="Fade-out time when runtime-generated assets disappear after generation" />
+	
     <windEffectRate_0 AltName="Wind Effect Rate - Before Destruction" Wiki="Wind coefficient (before destruction)" />
     <windEffectRate_1 AltName="Wind Effect Rate - After Destruction" Wiki="Wind coefficient (after destruction)" />
     <windEffectType_0 AltName="Wind Effect Type - Before Destruction" Wiki="Wind effect type (before destruction)" Enum="ASSET_WIND_EFFECT_TYPE" />
     <windEffectType_1 AltName="Wind Effect Type - After Destruction" Wiki="Wind effect type (after destruction)" Enum="ASSET_WIND_EFFECT_TYPE" />
+	
     <overrideMaterialId AltName="Override Material ID" Wiki="Asset material ID overwrite setting (-1: Do not overwrite model material ID 0 or more: Material ID overwrite) On the ladder, the material ID is reflected only with this setting" />
     <autoCreateOffsetHeight AltName="Automatic Generation Height Offset" Wiki="Height offset of how much it floats from where the raycast hits the map when it is automatically generated [m]" />
     <burnTime AltName="Burn Time" Wiki="Burning time (seconds) (continues to burn at 0)" />
@@ -165,6 +175,9 @@
     <paintDecalTargetTextureSize AltName="Paint Decal Target Texture Size" Wiki="Paint decal target size 0: Decal disabled (0 to 4096 power of 2 0, 2, 4, 8, 2048 only valid)" />
     <navimeshFlag_after AltName="Post-destruction Navmesh Flag" Wiki="Navimesh flag set from the destroyed asset" Enum="ASSET_NAVIMESH_FLAG" />
     <camNearBehaviorType AltName="Near Camera Behavior Type" Wiki="Drawing settings when approaching the camera. [GR] SEQ07529" Enum="ASSET_CAM_NEAR_BEHAVIOR_TYPE" />
+    
+    
+    
     <breakItemLotParamId AltName="Destroyed Item Lot Param ID" Wiki="Item to be drawn at the time of destruction Lottery ID_for map-1: No lottery" Refs="ItemLotParam_map" />
     <pickUpActionButtonParamId AltName="Pickup Action Button Param ID" Wiki="Action button ID issued for collection-1: Collection function is disabled" Refs="ActionButtonParam" />
     <pickUpItemLotParamId AltName="Pickup Item Lot Param ID" Wiki="Item to be drawn at the time of collection For lottery ID_map-1: Collection function is invalid" Refs="ItemLotParam_map" />

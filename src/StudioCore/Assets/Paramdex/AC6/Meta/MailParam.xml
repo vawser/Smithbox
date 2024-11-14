@@ -3,11 +3,11 @@
   <Enums>
     <Enum Name="MAIL_LAYOUT_TYPE" type="u8">
         <Option Value="0" Name="Image Below" />
-        <Option Value="10" Name="Image Above" />
+        <Option Value="1" Name="Image Above" />
     </Enum> 
   </Enums>
   <Field>
-     <disableParam_NT AltName="Disable Param: Network Test Version" Wiki="Exclude from the NT version or mark the ones to be excluded." IsBool="" />
+    <disableParam_NT AltName="Disable Param: Network Test Version" Wiki="Exclude from the NT version or mark the ones to be excluded." IsBool="" />
     <disableParam_Product AltName="Disable Param: Release Version" Wiki="Exclude from the product version or mark the items to be excluded." IsBool="" />
     
     <disableParamReserve1 IsHidden="" />
