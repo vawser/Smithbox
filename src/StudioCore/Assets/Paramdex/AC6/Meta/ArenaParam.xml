@@ -7,35 +7,97 @@
     </Enum> 
   </Enums>
   <Field>
-    <missionParamID AltName="Mission Param ID" Refs="MissionParam" Wiki="MissionParam row ID; mainly determines which map to fight on." />
-    <category AltName="Display Category" Wiki="Display tab" Enum="NPC_ARENA_CATEGORY" />
+    <missionParamID 
+    AltName="Mission Param ID" 
+    Wiki="MissionParam row ID; mainly determines which map to fight on." 
+    Refs="MissionParam"/>
     
-	<reserved_1 IsHidden="" />
+    <category 
+    AltName="Display Category" 
+    Wiki="Display tab" 
+    Enum="NPC_ARENA_CATEGORY" />
     
-	<rewardTokenID AltName="Reward Token ID" Wiki="ID of reward parts token" Refs="PartsTokenParam" />
-	<rankTextID AltName="Rank Text ID" Wiki="Menu text ID for rank display" />
+	<reserved_1 
+    AltName=""
+    IsHidden="" />
+    
+	<rewardTokenID 
+    AltName="Reward Token ID" 
+    Wiki="ID of reward parts token" 
+    Refs="PartsTokenParam" />
+    
+	<rankTextID 
+    AltName="Rank Text ID" 
+    Wiki="Menu text ID for rank display" />
 	
-    <ranker_accountParamID AltName="Account Param ID" Wiki="AccountParam row ID; opponent's name and emblem." Refs="AccountParam"  />
-    <ranker_chrInitParamID AltName="Character Param ID" Refs="CharaInitParam" Wiki="CharaInitParam row ID; opponent's loadout and customization." />
-    <ranker_npcParamID AltName="NPC Param ID" Refs="NpcParam" Wiki="NpcParam row ID; opponent's stats." />
-    <ranker_thinkParamID AltName="NPC Think Param ID" Refs="NpcThinkParam" Wiki="NpcThinkParam row ID; opponent's AI." />
+    <ranker_accountParamID 
+    AltName="Account Param ID" 
+    Wiki="AccountParam row ID; opponent's name and emblem." 
+    Refs="AccountParam"  />
     
-    <firstReward_cash AltName="Initial COAM Reward" Wiki="Money granted on first completion." />
-    <firstReward_osExp AltName="Initial OST Reward"  Wiki="OS Tuning reward granted on first completion." />
+    <ranker_chrInitParamID 
+    AltName="Character Param ID" 
+    Wiki="CharaInitParam row ID; opponent's loadout and customization." 
+    Refs="CharaInitParam" />
     
-    <firstReward_reserved IsHidden="" />
+    <ranker_npcParamID 
+    AltName="NPC Param ID" 
+    Wiki="NpcParam row ID; opponent's stats." 
+    Refs="NpcParam" />
     
-    <rematchReward_cash AltName="Repeat COAM Reward" Wiki="Money granted on repeat completions." />
-    <rematchReward_osExp AltName="Repeat OST Reward" Wiki="OS Tuning reward granted on repeat completions." />
+    <ranker_thinkParamID 
+    AltName="NPC Think Param ID" 
+    Wiki="NpcThinkParam row ID; opponent's AI." 
+    Refs="NpcThinkParam" />
     
-    <rematchReward_reserved IsHidden="" />
+    <firstReward_cash 
+    AltName="Initial COAM Reward" 
+    Wiki="Money granted on first completion." />
     
-    <startCutsceneId AltName="Intro Cutscene ID" Wiki="Cutscene ID to play at the start of the mission." CutsceneAlias="" />
-    <bgmId AltName="BGM Sound ID" Wiki="Background music to play during the mission." SoundAlias="" />
-    <rankIconID AltName="Rank Texture ID" Wiki="Texture ID defined in the SB_ArenaRank layout." TextureRef="Direct/01_common/SB_ArenaRank/rankIconID/ArenaRank_" />
-    <endCutsceneId AltName="Outro Cutscene ID" Wiki="Cutscene ID to play at the end of the mission." CutsceneAlias="" />
+    <firstReward_osExp 
+    AltName="Initial OST Reward"  
+    Wiki="OS Tuning reward granted on first completion." />
     
-    <endPad IsHidden=""/>
+    <firstReward_reserved 
+    AltName=""
+    IsHidden="" />
+    
+    <rematchReward_cash 
+    AltName="Repeat COAM Reward" 
+    Wiki="Money granted on repeat completions." />
+    
+    <rematchReward_osExp 
+    AltName="Repeat OST Reward" 
+    Wiki="OS Tuning reward granted on repeat completions." />
+    
+    <rematchReward_reserved 
+    AltName=""
+    IsHidden="" />
+    
+    <startCutsceneId 
+    AltName="Intro Cutscene ID" 
+    Wiki="Cutscene ID to play at the start of the mission." 
+    CutsceneAlias="" />
+    
+    <bgmId 
+    AltName="BGM Sound ID" 
+    Wiki="Background music to play during the mission." 
+    SoundAlias="" />
+    
+    <rankIconID 
+    AltName="Rank Texture ID" 
+    Wiki="Texture ID defined in the SB_ArenaRank layout." 
+    TextureRef="Direct/01_common/SB_ArenaRank/rankIconID/ArenaRank_" />
+    
+    <endCutsceneId 
+    AltName="Outro Cutscene ID" 
+    Wiki="Cutscene ID to play at the end of the mission." 
+    CutsceneAlias="" />
+    
+    <endPad 
+    AltName=""
+    IsHidden=""/>
+    
   </Field>
   <Self />
 </PARAMMETA>

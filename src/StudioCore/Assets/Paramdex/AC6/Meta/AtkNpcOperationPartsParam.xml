@@ -9,38 +9,133 @@
     </Enum>
   </Enums>
   <Field>
-    <UnkByte0x00 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x01 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x02 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x03 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x04 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x05 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x06 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x07 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x08 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x09 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x0A AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x0B AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x0C AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x0D AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x0E AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x0F AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x10 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x11 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x12 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x13 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x14 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x15 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x16 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x17 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x18 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x19 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x1A AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x1B AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x1C AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x1D AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x1E AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
-    <UnkByte0x1F AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <parts0 
+    AltName="Weapon Enable Type [00]"
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts1 
+    AltName="Weapon Enable Type [01]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts2 
+    AltName="Weapon Enable Type [02]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts3 
+    AltName="Weapon Enable Type [03]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts4 
+    AltName="Weapon Enable Type [04]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts5 
+    AltName="Weapon Enable Type [05]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts6 
+    AltName="Weapon Enable Type [06]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts7 
+    AltName="Weapon Enable Type [07]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts8 
+    AltName="Weapon Enable Type [08]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts9 
+    AltName="Weapon Enable Type [09]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts10 
+    AltName="Weapon Enable Type [10]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts11 
+    AltName="Weapon Enable Type [11]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts12 
+    AltName="Weapon Enable Type [12]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts13 
+    AltName="Weapon Enable Type [13]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts14 
+    AltName="Weapon Enable Type [14]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts15 
+    AltName="Weapon Enable Type [15]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts16 
+    AltName="Weapon Enable Type [16]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts17 
+    AltName="Weapon Enable Type [17]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts18 
+    AltName="Weapon Enable Type [18]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts19 
+    AltName="Weapon Enable Type [19]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts20 
+    AltName="Weapon Enable Type [20]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts21 
+    AltName="Weapon Enable Type [21]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts22 
+    AltName="Weapon Enable Type [22]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts23 
+    AltName="Weapon Enable Type [23]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts24 
+    AltName="Weapon Enable Type [24]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts25 
+    AltName="Weapon Enable Type [25]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts26 
+    AltName="Weapon Enable Type [26]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts27 
+    AltName="Weapon Enable Type [27]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts28 
+    AltName="Weapon Enable Type [28]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts29 
+    AltName="Weapon Enable Type [29]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts30 
+    AltName="Weapon Enable Type [30]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts31 
+    AltName="Weapon Enable Type [31]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
   </Field>
   <Self />
 </PARAMMETA>
