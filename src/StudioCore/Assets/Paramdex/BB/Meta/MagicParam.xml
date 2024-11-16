@@ -104,7 +104,7 @@
     <refCategory Enum="BEHAVIOR_REF_TYPE" AltName="Reference Category" />
     <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="MAGIC_SCHOOL" />
     <refType AltName="Motion Category" Enum="MAGIC_MOTION_TYPE" />
-    <pad IsHidden="" />
+    <pad Padding="" />
     <opmeMenuType AltName="Open Menu Type" Wiki="Menu type to be displayed when using magic"/>
 	<hasSpEffectType AltName="Disabled by State Info" Wiki="Prevents casting when State Info is active. Set replaceMagicId to 1 to make icon grey out." />
     <replaceCategory AltName="Replace Category" />
@@ -127,7 +127,7 @@
     <enable_black AltName="Enable Black" Wiki="Can black ghost characters be used?" IsBool="" />
     <disableOffline AltName="Disable Offline" IsBool="" />
     <castResonanceMagic AltName="Cast Resonance Magic" IsBool="" />
-    <pad_1 IsHidden="" />
+    <pad_1 Padding="" />
     <vowType8 AltName="Vow Type 9" IsBool="" />
     <vowType9 AltName="Vow Type 10" IsBool="" />
     <vowType10 AltName="Vow Type 11" IsBool="" />

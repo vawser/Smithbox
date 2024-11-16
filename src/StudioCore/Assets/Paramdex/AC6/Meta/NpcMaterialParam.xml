@@ -4,7 +4,7 @@
     <ColorEditor Name="Material Color" Fields="colorRed,colorGreen,colorBlue" PlacedField="colorBlue" />
   </ColorEdit>
   <Field>
-    <Unk0x00 IsHidden="" />
+    <Unk0x00 Padding="" />
     <materialExParamId AltName="Material Ex Param ID" Refs="MaterialExParam"/>
     <colorRed AltName="Color: Red" />
     <colorGreen AltName="Color: Green" />

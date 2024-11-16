@@ -133,7 +133,7 @@
     
     <dummy2 
     AltName=""
-    IsHidden="" />
+    Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

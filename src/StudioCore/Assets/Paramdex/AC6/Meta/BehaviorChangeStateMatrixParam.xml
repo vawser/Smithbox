@@ -138,11 +138,11 @@
     
     <dummy0
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <dummy1
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <NoticeStateID
     AltName="AI Notification Transition ID"

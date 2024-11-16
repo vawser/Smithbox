@@ -87,7 +87,7 @@
     <transformLeggings AltName="Transform: Leggings" Wiki="Can I replace the leg ties with transformation armor ID +3000?" IsBool="" />
     <transformPriority AltName="Transform Priority" Wiki="Transformation priority (0: highest to 7: lowest)" />
     <transformWeaponId AltName="Transform: Weapon ID" Wiki="Transformation right hand weapon ID (-1: None)" Refs="EquipParamWeapon" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
   </Field>
   <Self Wiki="All Visual Effects for Special Effects"/>
 </PARAMMETA>

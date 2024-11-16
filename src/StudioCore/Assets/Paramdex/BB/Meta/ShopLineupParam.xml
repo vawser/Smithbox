@@ -18,7 +18,7 @@
     <shopType AltName="Shop Type" Wiki="" Enum="SHOP_LINEUP_SHOPTYPE" />
     <equipType AltName="Equipment Type" Wiki="Types of equipment for sale" Enum="SHOP_LINEUP_EQUIPTYPE" />
     <value_SAN AltName="Sale Price" Wiki="" />
-    <pad_0 AltName="" IsHidden=""/>
+    <pad_0 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Shop parameters."/>
 </PARAMMETA>

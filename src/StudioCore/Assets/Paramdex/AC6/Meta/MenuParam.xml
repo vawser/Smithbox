@@ -63,7 +63,7 @@
     <FE_MissionRegionLineAddBlend AltName="" Wiki="" />
     <FE_MissionRegionLineUseSfx AltName="" Wiki="" />
     
-    <pad_26 IsHidden="" />
+    <pad_26 Padding="" />
     
     <MiniMap_ChangeInterval AltName="" Wiki="" />
     <DoubleLockSightOffset AltName="" Wiki="" />
@@ -80,7 +80,7 @@
     <FE_LowHP_rate AltName="" Wiki="" />
     <FE_LowBarrier_rate AltName="" Wiki="" />
     
-    <pad_998 IsHidden="" />
+    <pad_998 Padding="" />
     
     <FE_LargeDamageDetect_HP_rate AltName="" Wiki="" />
     <FE_LargeDamageDetect_CollectTime AltName="" Wiki="" />
@@ -127,7 +127,7 @@
     <FE_VsFloatingInfo_Range AltName="" Wiki="" />
     <FE_ShowDamageAccumulationTimeSec AltName="" Wiki="" />
     
-    <pad_end IsHidden="" />
+    <pad_end Padding="" />
   </Field>
   
   

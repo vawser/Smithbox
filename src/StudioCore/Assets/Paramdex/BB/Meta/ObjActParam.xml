@@ -26,7 +26,7 @@
     <spQualifiedId2 AltName="Conditional Qualified ID [2]" Wiki="Special condition ID part 2" Refs="SpEffectParam(spQualifiedType2=2),EquipParamGoods(spQualifiedType2=1)" />
     <objDummyId AltName="Object Dummy Poly ID" Wiki="Damipoli ID that is the action position of the object" />
     
-    <pad0 IsHidden="" />
+    <pad0 Padding="" />
     
     <objAnimId AltName="Object Animation ID" Wiki="This is the animation ID for the action of the object." />
     <validPlayerAngle AltName="Valid Player Angle" Wiki="The effective angle of the player's action. Effective angle difference between the player's orientation vector and the orientation vector to the object" />
@@ -35,7 +35,7 @@
     <validObjAngle AltName="Valid Object Angle" Wiki="The action effective angle of the object. Effective angle difference between the action vector of the object and the character vector" />
     <chrSorbType AltName="Character Absorb Type" Wiki="It is a method of adsorbing characters during object action." Enum="OBJACT_CHR_SORB_TYPE" />
     <eventKickTiming AltName="Event Execution Timing" Wiki="Event execution timing" Enum="OBJACT_EVENT_KICK_TIMING" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
     <actionButtonParamId AltName="Action Button Param ID" Wiki="Action button parameter ID" Refs="ActionButtonParam" />
     <actionSuccessMsgId AltName="Action Success Text ID" FmgRef="Event_Text" />
   </Field>

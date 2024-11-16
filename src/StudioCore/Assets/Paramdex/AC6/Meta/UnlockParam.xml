@@ -26,8 +26,8 @@
   <Field>
     <unlockType AltName="Unlock Type" Enum="GAMEDATA_UNLOCK_TYPE" />
     <value AltName="Value" FlagAlias="unlockType=2" Refs="EquipParamGoods(unlockType=1),OsReinforcePoint(unlockType=3),MercenaryRankTable(unlockType=4),MissionParam(unlockType=5)" />
-    <pad1 IsHidden=""/>
-    <pad2 IsHidden=""/>
+    <pad1 Padding=""/>
+    <pad2 Padding=""/>
   </Field>
   <Self />
 </PARAMMETA>

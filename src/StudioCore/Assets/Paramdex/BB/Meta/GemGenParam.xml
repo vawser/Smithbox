@@ -11,7 +11,7 @@
   </Enums>
   <Field>
 	<isUnique AltName="Is Unique" Wiki="" IsBool="" /> />
-	<pad_0 IsHidden="" />
+	<pad_0 Padding="" />
 	<gemNameIdOffset AltName="Gem Name ID Offset" Wiki="" />
 	<disableSlotRateModify AltName="Disable Slot Apperance Rate Correction" Wiki="" IsBool="" />
 	<slotTypeRateA AltName="Slot Type A: Appearance Rate" Wiki="" />
@@ -22,7 +22,7 @@
 	<slotTypeRateF AltName="Slot Type F: Appearance Rate" Wiki="" />
 	<gemRankDoping AltName="Gem Rank" Wiki="" />
     
-    <pad_1 IsHidden="" />
+    <pad_1 Padding="" />
     
 	<gemeffectGenParamType_0 AltName=" [0] Gem Generation Param Type" Wiki="" Enum="GEMEFFECT_GEN_PT" />
 	<gemeffectGenParam_0 AltName=" [0] Gem Generation Param" Wiki="" Refs="GemeffectParam" />

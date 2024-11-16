@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <UnkInt0x00 IsHidden="" />
+    <UnkInt0x00 Padding="" />
     
     <model_Weapon01 AltName="Weapon Model [0]" Wiki="Refers to the wp_e_XXXX part models" />
     <model_Weapon02 AltName="Weapon Model [1]" Wiki="Refers to the wp_e_XXXX part models" />

@@ -12,7 +12,7 @@
     
     <reserve_0 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
     
     <sfxId_1 
     AltName="Particle: ID [1]" 
@@ -25,7 +25,7 @@
     
     <reserve_1 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
     
     <sfxId_2 
     AltName="Particle: ID [2]" 
@@ -38,7 +38,7 @@
     
     <reserve_2 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
     
     <sfxId_3 
     AltName="Particle: ID [3]" 
@@ -51,7 +51,7 @@
     
     <reserve_3 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
     
     <sfxId_4 
     AltName="Particle: ID [4]" 
@@ -64,7 +64,7 @@
     
     <reserve_4 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
     
     <sfxId_5 
     AltName="Particle: ID [5]" 
@@ -77,7 +77,7 @@
     
     <reserve_5 
     AltName=""
-    IsHidden=""/>
+    Padding=""/>
     
     <sfxId_6 
     AltName="Particle: ID [6]" 
@@ -90,7 +90,7 @@
     
     <reserve_6 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
     
     <sfxId_7 
     AltName="Particle: ID [7]" 
@@ -108,7 +108,7 @@
     
     <reserve_7 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
   </Field>
   <Self />
 </PARAMMETA>

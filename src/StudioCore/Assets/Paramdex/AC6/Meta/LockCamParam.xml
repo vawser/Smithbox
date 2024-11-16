@@ -30,7 +30,7 @@
     <ascentCamUpDistMax AltName="Ascent Camera: Vertical Distance Max" Wiki="Affects how far the camera can move up/down of character as they ascend.\nPositive values are up, negative values are down." />
     <ascentCamTrailAmount AltName="Ascent Camera: Trail Amount" Wiki="Affects how much camera trails behind character as they ascend." />
     
-    <endPadding IsHidden="" />
+    <endPadding Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

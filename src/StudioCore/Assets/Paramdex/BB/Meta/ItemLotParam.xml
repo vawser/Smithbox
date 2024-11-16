@@ -77,7 +77,7 @@
     <cumulateReset06 AltName="Item 6 Cumulative Chance Reset" IsBool="" />
     <cumulateReset07 AltName="Item 7 Cumulative Chance Reset" IsBool="" />
     <cumulateReset08 AltName="Item 8 Cumulative Chance Reset" IsBool="" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Defines item lots that can be rolled upon item pickup, enemy death or granted via script.\nWhen doing this, consecutive IDs are also rolled.\nA single result is produced by each row.\nA row will not be rolled if the flag is already set." ConsecutiveIDs="" />
 </PARAMMETA>

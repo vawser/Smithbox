@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <Unk0x00 IsHidden="" />
+    <Unk0x00 Padding="" />
     <logicId AltName="Logic ID" Wiki="Set the ID of the logic created by the script." />
     <battleGoalID AltName="Battle Goal ID" Wiki="Battle goal ID" />
     <searchEye_dist AltName="Vision - Distance" Wiki="Search range by visual search." />

@@ -397,7 +397,8 @@ public class ParamRowEditor
         ParamEnum Enum = cellMeta?.EnumType;
         var IsBool = cellMeta?.IsBool ?? false;
         var IsInvertedPercentage = cellMeta?.IsInvertedPercentage ?? false;
-        var IsHiddenField = cellMeta?.IsHidden ?? false;
+        var IsHiddenField = cellMeta?.IsPaddingField ?? false;
+        var IsObsoleteField = cellMeta?.IsObsoleteField ?? false;
 
         var displayRefTypes = !CFG.Current.Param_HideReferenceRows && RefTypes != null;
         var displayFmgRef = !CFG.Current.Param_HideReferenceRows && FmgRef != null;
@@ -434,6 +435,11 @@ public class ParamRowEditor
         object newval = null;
 
         if(CFG.Current.Param_HidePaddingFields && IsHiddenField)
+        {
+            return;
+        }
+
+        if (CFG.Current.Param_HidePaddingFields && IsObsoleteField)
         {
             return;
         }

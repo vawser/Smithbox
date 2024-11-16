@@ -13,22 +13,22 @@
     </Enum>
   </Enums>
   <Field>
-    <startPad IsHidden="" />
+    <startPad Padding="" />
     
     <overlayMapId AltName="Overlay Map ID" Wiki="The overlay map that contains this mission's specific MSB configuration. Represents the YY_ZZ parts in the following MSB template: mXX_YY_ZZ_AA" />
     <missionObjectiveTextId AltName="Objective Text ID" FmgRef="Mission_Objective" Wiki="The mission objective to display for this mission." />
     <baseMapId AltName="Base Map ID" Wiki="The base map that this mission takes place on." />
-    <pad1 IsHidden="" />
+    <pad1 Padding="" />
     <unkSkyLighting AltName="Sky Lighting" Wiki ="Determines basic lighting used in map. Possibly refers to gparam by index." />
-    <pad2 IsHidden="" />
+    <pad2 Padding="" />
     <missionType AltName="Mission Type" Enum ="MISSION_TYPE" Wiki="The type of mission this is."/>
     <missionAltType AltName="Mission Alt Type" Enum ="MISSION_ALT_TYPE" Wiki="Determine whether to appear during initial playthrough or subsequent playthroughs."/>
-    <pad3 IsHidden="" />
-    <Unk0x21 IsHidden="" />
-    <UnkInt0x24 IsHidden="" />
+    <pad3 Padding="" />
+    <Unk0x21 Padding="" />
+    <UnkInt0x24 Padding="" />
     <missionBriefingMovieId AltName="Mission Briefing Movie ID" Wiki="ID of .bk2 video file to play for mission briefing." MovieAlias="" /> 
     <currencyReward AltName="COAM Reward" Wiki="Amount of COAM given upon successful completion of the mission." />
-    <pad4 IsHidden="" />
+    <pad4 Padding="" />
     <ammoCostMultiplier AltName="Ammunition Cost Multiplier" Wiki="Multiplier to the cost of ammunition taken after mission completion." />
     <ammoCostMax AltName="Ammunition Cost Maximum" Wiki="Cap to the cost of ammunition taken after mission completion." />
     <damageCostMultiplier AltName="Repair Cost Multiplier" Wiki="Multiplier to the cost of repair taken after mission completion." />
@@ -56,7 +56,7 @@
     <eventObjectiveReward8 AltName="Event Objective Reward [9]" Wiki="Determines the amount of score given upon objective completion." />
     <eventObjectiveReward9 AltName="Event Objective Reward [10]" Wiki="Determines the amount of score given upon objective completion." />
     
-    <UnkInt0x84 IsHidden="" />
+    <UnkInt0x84 Padding="" />
     
     <damageScoreMultiplier AltName="Damage Score Multiplier" Wiki="Multiplier to the score based on damage." />
     <ammoScoreMultiplier AltName="Ammunition Score Multiplier" Wiki="Multiplier to the score based on ammunition consumption." />
@@ -108,7 +108,7 @@
     <menuWorldMapTexture AltName="Menu World Map Texture ID" />
     <menuWorldInfoTexture AltNAme="Menu World Info Texture ID" />
     
-    <endPad IsHidden="" />
+    <endPad Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

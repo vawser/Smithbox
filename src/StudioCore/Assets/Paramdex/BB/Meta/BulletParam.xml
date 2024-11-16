@@ -139,6 +139,6 @@
     <isInheritEffectToChild AltName="Is Effect Inherited by Child Bullet" Wiki="Take over the effect to replace the submunition. Ignore the speed set for the submunition" IsBool="" />
     <isInheritSpeedToChild AltName="Is Speed Inherited by Child Bullet" Wiki="Take over the speed of the timing to replace the submunition. Ignore the speed set for the submunition" IsBool="" />
     
-    <pad IsHidden=""/>
+    <pad Padding=""/>
   </Field>
 </PARAMMETA>

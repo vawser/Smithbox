@@ -577,10 +577,16 @@ public class FieldMetaData
             IsInvertedPercentage = true;
         }
 
-        XmlAttribute IsHide = fieldMeta.Attributes["IsHidden"];
-        if (IsHide != null)
+        XmlAttribute IsPadding = fieldMeta.Attributes["Padding"];
+        if (IsPadding != null)
         {
-            IsHidden = true;
+            IsPaddingField = true;
+        }
+
+        XmlAttribute Obsolete = fieldMeta.Attributes["Obsolete"];
+        if (Obsolete != null)
+        {
+            IsObsoleteField = true;
         }
 
         XmlAttribute ParticleAlias = fieldMeta.Attributes["ParticleAlias"];
@@ -671,9 +677,14 @@ public class FieldMetaData
     public bool IsBool { get; set; }
 
     /// <summary>
-    ///     Is this field hidden?
+    ///     Is this field considered padding?
     /// </summary>
-    public bool IsHidden { get; set; }
+    public bool IsPaddingField { get; set; }
+
+    /// <summary>
+    ///     Is this field considered obsolete (unused)?
+    /// </summary>
+    public bool IsObsoleteField { get; set; }
 
     /// <summary>
     ///     Is this float displayed as an inverted percentage

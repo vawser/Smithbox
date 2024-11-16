@@ -33,12 +33,12 @@
     <validObjAngle AltName="Valid Object Angle" Wiki="The action effective angle of the object. Effective angle difference between the action vector of the object and the character vector" />
     <chrSorbType AltName="Character Absorb Type" Wiki="It is a method of adsorbing characters during object action." Enum="OBJACT_CHR_SORB_TYPE" />
     <eventKickTiming AltName="Event Execution Timing" Wiki="Event execution timing" Enum="OBJACT_EVENT_KICK_TIMING" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
     <actionButtonParamId AltName="Action Button Param ID" Wiki="Action button parameter ID" Refs="ActionButtonParam" />
     <enableTreasureDelaySec AltName="Treasure Enable Delay" Wiki="The number of seconds from the execution of the object action to the activation of the treasure. A setting exclusively for the object type treasure box of the object act." />
     <preActionSfxDmypolyId AltName="Pre-action SFX Dummy Poly ID" Wiki="Issue SFX from this Damipoli ID before executing the object. If it is -1, start from the origin." />
     <preActionSfxId AltName="Pre-action SFX ID" Wiki="SFX issued before executing the object. If it is -1, it will not be issued." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <pad2 AltName="" IsHidden=""/>
+    <pad2 AltName="" Padding=""/>
     <spQualifiedId_new AltName="Conditional Qualified ID [1]" Wiki="Special condition ID" Refs="SpEffectParam(spQualifiedType=2),EquipParamGoods(spQualifiedType=1)" />
     <spQualifiedId2_new AltName="Conditional Qualified ID [2]" Wiki="Special condition ID part 2" Refs="SpEffectParam(spQualifiedType2=2),EquipParamGoods(spQualifiedType2=1)" />
   </Field>

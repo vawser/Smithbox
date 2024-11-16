@@ -19,7 +19,7 @@
     
 	<reserved_1 
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
 	<rewardTokenID 
     AltName="Reward Token ID" 
@@ -60,7 +60,7 @@
     
     <firstReward_reserved 
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <rematchReward_cash 
     AltName="Repeat COAM Reward" 
@@ -72,7 +72,7 @@
     
     <rematchReward_reserved 
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <startCutsceneId 
     AltName="Intro Cutscene ID" 
@@ -96,7 +96,7 @@
     
     <endPad 
     AltName=""
-    IsHidden=""/>
+    Padding=""/>
     
   </Field>
   <Self />

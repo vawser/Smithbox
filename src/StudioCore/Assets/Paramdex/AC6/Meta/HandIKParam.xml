@@ -9,7 +9,7 @@
     <normalRotOffset_offsetX AltName="Rotation Offset: X" Wiki="" />
     <normalRotOffset_offsetY AltName="Rotation Offset: Y" Wiki="" />
     <normalRotOffset_offsetZ AltName="Rotation Offset: Z" Wiki="" />
-    <reserved IsHidden=""/>
+    <reserved Padding=""/>
   </Field>
   <Self />
 </PARAMMETA>

@@ -139,6 +139,9 @@ public class ParamEditorTab
             ImGui.Checkbox("Hide padding fields", ref CFG.Current.Param_HidePaddingFields);
             UIHelper.ShowHoverTooltip("Hides fields that are considered 'padding' in the property editor view.");
 
+            ImGui.Checkbox("Hide obsolete fields", ref CFG.Current.Param_HideObsoleteFields);
+            UIHelper.ShowHoverTooltip("Hides fields that are obsolete in the property editor view.");
+
             ImGui.Checkbox("Show color preview", ref CFG.Current.Param_ShowColorPreview);
             UIHelper.ShowHoverTooltip("Show color preview in field column if applicable.");
 

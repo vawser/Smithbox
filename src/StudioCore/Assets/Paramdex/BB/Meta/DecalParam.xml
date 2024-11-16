@@ -32,7 +32,7 @@
     <pomHightScale AltName="POM Height Scale" Wiki="POM height scale" />
     <pomSampleMin AltName="POM Sample - Minimum Count" Wiki="Minimum number of POM samples" />
     <pomSampleMax AltName="POM Sample - Maximum Count" Wiki="Maximum number of POM samples" />
-    <pad_00 IsHidden=""/>
+    <pad_00 Padding=""/>
   </Field>
   <Self Wiki="Decal data - Used for blood splatter, arrow holes, etc"/>
 </PARAMMETA>

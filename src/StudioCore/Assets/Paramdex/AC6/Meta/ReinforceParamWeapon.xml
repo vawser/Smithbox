@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <UnkInt0x00 IsHidden="" />
+    <UnkInt0x00 Padding="" />
     
     <atkRate_Kinetic AltName="Damage %: Kinetic" Wiki="Physical attack power correction value" />
     <atkRate_Energy AltName="Damage %: Energy" Wiki="Magic attack power correction value" />
@@ -38,7 +38,7 @@
     <reinforcePriceRate AltName="Reinforce Price Rate" Wiki="Correction value to multiply the enhancement price of the weapon parameter" />
     <baseChangePriceRate AltName="Base Change Price Rate" Wiki="Correction value to multiply the evolution price of the weapon parameter" />
     
-    <endPadding IsHidden="" />
+    <endPadding Padding="" />
   </Field>
   <Self ConsecutiveIDs="" Wiki="Defines upgrades of weapons, include stat changes and upgrade cost (EquipMtrlSetParam id offset)" />
 </PARAMMETA>

@@ -230,7 +230,7 @@
     <disableInitializeDead AltName="Disable Init Dead" Wiki="If you do not make an initial death, TRUE, even if you kill and save it, the corpse will not be reproduced." IsBool="" />
     <isSoulGetByBoss AltName="Is Boss Soul Drop" Wiki="Do you get a boss in soul?" IsBool="" />
     <isMultilingual AltName="Is Multilingual" Wiki="" />
-    <pad3 IsHidden="" />
+    <pad3 Padding="" />
     <modelDispMask16 AltName="Model Display Mask [16]" Wiki="Displays the model corresponding to the display mask." />
     <modelDispMask17 AltName="Model Display Mask [17]" Wiki="Displays the model corresponding to the display mask." />
     <modelDispMask18 AltName="Model Display Mask [18]" Wiki="Displays the model corresponding to the display mask." />
@@ -250,7 +250,7 @@
 	<itemSearchRadius AltName="Item Pickup Radius" Wiki="Radius to be added as a correction to the cylinder radius of normal Item search judgment (applicable to enemy drop items. Used for large characters etc.)" />
     <normalChangeModelId AltName="Replacement Change - Model ID" Wiki="Normal replacement model, texture ID" />
     <clothUpdateOffset AltName="Cloth Update Offset" Wiki="Cross update priority offset [m]" />
-    <pad4 IsHidden="" />
+    <pad4 Padding="" />
     
     <subHitOffset AltName="Chr Capsule Offset" Wiki="Offset distance from the parent capsule to the rear direction" />
     <subHitHeight AltName="Chr Capsule Height" Wiki="The height of the capsule per character." />

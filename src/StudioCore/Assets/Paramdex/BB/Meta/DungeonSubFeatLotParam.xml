@@ -13,7 +13,7 @@
     <subFeatureId_8 AltName="Sub-feature ID [8]" Wiki="" Refs="DungeonFeatureParam" />
     <subFeatureId_9 AltName="Sub-feature ID [9]" Wiki="" Refs="DungeonFeatureParam" />
     <subFeatureId_10 AltName="Sub-feature ID [10]" Wiki="" Refs="DungeonFeatureParam" />
-    <pad_0 IsHidden="" />
+    <pad_0 Padding="" />
     <rate_1 AltName="Probability [1]" />
     <rate_2 AltName="Probability [2]" />
     <rate_3 AltName="Probability [3]" />

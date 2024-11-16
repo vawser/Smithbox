@@ -22,7 +22,7 @@
     <interestCategory AltName="Interest Category" />
     <useHitDamageTeam AltName="Is Hit Damage Team" IsBool="" />
     
-    <pad AltName="" IsHidden=""/>
+    <pad AltName="" Padding=""/>
   </Field>
   <Self Wiki="How AIs react to sound"/>
 </PARAMMETA>

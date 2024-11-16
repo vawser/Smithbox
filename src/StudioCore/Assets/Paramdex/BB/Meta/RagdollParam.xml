@@ -11,7 +11,7 @@
     <snapGain AltName="Snap Gain" Wiki="Adjustment value to get closer to the original pose. Effect similar to position gain" />
     <enable AltName="Enable Ragdoll" IsBool="" Wiki="Does it move during damage ragdoll?" />
     <partsHitMaskNo AltName="Mask Number per Site" Wiki="Mask number per site. -1: Mask disabled" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Ragdoll data"/>
 </PARAMMETA>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <Unk0x00 IsHidden="" />
+    <Unk0x00 Padding="" />
     
     <osInstallLevels AltName="OS Install - Number of Unlocks" Wiki="Number of unlocks that this OS tuning option has. 1 is Install, 2 and above are upgrades." />
     <osInstallImage AltName="OS Install - Image ID" Wiki="Refers to the icon ID from SB_OsIcon.layout" TextureRef="Direct/01_common/SB_OsIcon/osInstallImage/OsIcon_" />
@@ -27,12 +27,12 @@
     <osUpgrade4_DisplayText_OstChipCost AltName="OS Upgrade 4 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
     <osUpgrade4_DisplayText_Description AltName="OS Upgrade 4 - Effect Description" FmgRef="Modern_Menu_Text" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
     
-    <Unk0x06 IsHidden="" />
-    <Unk0x20 IsHidden="" />
-    <Unk0x38 IsHidden="" />
-    <Unk0x50 IsHidden="" />
-    <Unk0x68 IsHidden="" />
-    <Unk0x80 IsHidden="" />
+    <Unk0x06 Padding="" />
+    <Unk0x20 Padding="" />
+    <Unk0x38 Padding="" />
+    <Unk0x50 Padding="" />
+    <Unk0x68 Padding="" />
+    <Unk0x80 Padding="" />
   </Field>
   <Self Wiki="Determines the configuration for each OS Tuning install or upgrade." />
 </PARAMMETA>

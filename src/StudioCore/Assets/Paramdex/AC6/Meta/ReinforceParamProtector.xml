@@ -20,8 +20,8 @@
     <resistRate_Uranium AltName="Status Resist %: Uranium" Wiki="Cold resistance correction value" />
     <float_UnkC AltName="Unknown %: Unknown" />
     
-    <UnkInt0x00 IsHidden="" />
-    <UnkInt0x40 IsHidden="" />
+    <UnkInt0x00 Padding="" />
+    <UnkInt0x40 Padding="" />
   </Field>
   <Self ConsecutiveIDs="" Wiki="Defines upgrades of Armor. Unused in AC6." />
 </PARAMMETA>

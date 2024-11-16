@@ -6,7 +6,7 @@
     <weaponTypeSortId AltName="Weapon Type Sort ID" Wiki="Determines the order of this entry with the Weapon Type filter. 0 is the top." />
     <sortId AltName="Sort ID" Wiki="Determines the order of this entry within the menu. 0 is top." />
     
-    <endPadding IsHidden="" />
+    <endPadding Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

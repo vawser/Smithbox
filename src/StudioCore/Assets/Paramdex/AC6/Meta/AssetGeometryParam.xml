@@ -188,7 +188,7 @@
 	
 	<reserve1 
     AltName="" 
-    IsHidden="" />
+    Padding="" />
 	
     <animBreakIdMax 
     AltName="Anim Break ID Max" 
@@ -516,7 +516,7 @@
     
     <pad7 
     AltName="" 
-    IsHidden="" />
+    Padding="" />
     
     <breakCollideSpeed 
     AltName="Destruction Collision Speed" 
@@ -630,7 +630,7 @@
     
     <particle_Reserve_0
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <particle_size 
     AltName="Particle: Size" 
@@ -717,11 +717,11 @@
     
     <pad8 
     AltName="" 
-    IsHidden="" />
+    Padding="" />
     
     <Reserve_1 
     AltName="" 
-    IsHidden="" />
+    Padding="" />
     
   </Field>
   <Self />

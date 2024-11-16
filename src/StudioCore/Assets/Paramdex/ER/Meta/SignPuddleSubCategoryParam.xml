@@ -3,10 +3,10 @@
   <Enums>
   </Enums>
   <Field>
-    <startPad IsHidden="" />
+    <startPad Padding="" />
     <signPuddleCategoryText AltName="Sign Puddle Category Text ID" FmgRef="Modern_Menu_Text" />
     <signPuddleTabId AltName="Tab ID" Refs="SignPuddleTabParam" />
-    <endPad IsHidden="" />
+    <endPad Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

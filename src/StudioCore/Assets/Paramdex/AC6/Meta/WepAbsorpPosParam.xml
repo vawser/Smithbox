@@ -22,7 +22,7 @@
   <Field>
     <hangPosType AltName="Sheath Position Type" Wiki="The animation at the time of weapon sheathing changes depending on this value" Enum="WEP_HANG_POS_TYPE" />
     <isSkeletonBind AltName="Is Skeleton Bind" Wiki="Do you want to combine skeletons?" IsBool="" />
-    <pad0 IsHidden=""/>
+    <pad0 Padding=""/>
     
     <weaponDummyPoly_Right_1 AltName="Right Hand - Dummy Poly - Model [1]" Wiki="Model 1 dummy polygon when holding the weapon in one hand." />
     <weaponDummyPoly_Left_1 AltName="Left Hand - Dummy Poly - Model [1]" Wiki="Model 1 dummy polygon when holding the weapon in one hand." />

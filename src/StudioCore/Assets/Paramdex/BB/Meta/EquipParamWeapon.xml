@@ -211,7 +211,7 @@
     <antWeakA_DamageRate AltName="Damage Multiplier %: Type C (Hollow)" Wiki="Damage multiplier for special attack C" />
     <antWeakB_DamageRate AltName="Damage Multiplier %: Type D (Abyssal)" Wiki="Damage multiplier for special attack D" />
     <levelSyncCorrectId AltName="Level Sync Correction ID" Wiki="Level sync correction ID" Refs="CalcCorrectGraph" />
-    <pad IsHidden="" />
+    <pad Padding="" />
     <vagrantBonusEneDropItemLotId AltName="Vagrant Bonus Drop Itemlot ID" />
     <vagrantItemEneDropItemLotId AltName="Vagrant Enemy Drop Itemlot ID" />
     <equipModelId AltName="Weapon Model ID" Wiki="The part model ID. Determines the part model used by the weapon." />

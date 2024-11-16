@@ -56,14 +56,14 @@
     <accessoryCategory AltName="Accessory Type" Wiki="Armor category" Enum="ACCESSORY_TYPE" />
     <refCategory AltName="Reference Type" Wiki=" ID category [Attack, Projectile, Special]" Enum="BEHAVIOR_REF_TYPE" />
     <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="SP_EFFECT_CATEGORY" />
-    <pad IsHidden="" />
+    <pad Padding="" />
     <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1: No vagrant 0: No lottery 1 ~: With lottery" />
     <vagrantBonusEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1: No drop 0: No lottery 1 ~: With lottery" />
     <vagrantItemEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1: No drop 0: No lottery 1 ~: With lottery" />
     <isDeposit AltName="Can Deposit" IsBool="" />
     <isEquipOutBrake AltName="Break on Unequip" IsBool="" />
     <disableMultiDropShare AltName="Disable Multiplayer Sharing" Wiki="Prevents item from appearing to other players when dropped." IsBool="" />
-    <pad1 IsHidden="" />
+    <pad1 Padding="" />
     
   </Field>
 </PARAMMETA>

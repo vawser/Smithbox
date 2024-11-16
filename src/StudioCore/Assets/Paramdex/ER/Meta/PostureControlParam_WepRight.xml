@@ -93,7 +93,7 @@
     <a016_leftWristIO AltName="[a016] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
     <a016_lefttWeaponRotation AltName="[a016] Left Weapon Rotation" Wiki="" />
     
-    <endPad AltName="" IsHidden=""/>
+    <endPad AltName="" Padding=""/>
   </Field>
   <Self />
 </PARAMMETA>

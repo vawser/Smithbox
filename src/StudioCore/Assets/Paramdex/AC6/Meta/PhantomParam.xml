@@ -37,7 +37,7 @@
     <lightColorR AltName="Light Color: R" Wiki="Light color R." />
     <lightColorG AltName="Light Color: G" Wiki="Light color G." />
     <lightColorB AltName="Light Color: B" Wiki="Light color B." />
-    <reserve AltName="" IsHidden=""/>
+    <reserve AltName="" Padding=""/>
     <alpha AltName="Overall Alpha" Wiki="The overall transparency." />
     <blendRate AltName="Blend Rate" Wiki="The blend ratio." />
     <blendType AltName="Blend Type" Wiki="The type of alpha blend." Enum="PHANTOM_BLEN_TYPE_ENUM" />

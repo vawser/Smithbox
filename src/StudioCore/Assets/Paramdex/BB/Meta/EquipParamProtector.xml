@@ -185,8 +185,8 @@
     <invisibleFlag61 IsBool="" AltName="Model Mask 61"/>
     <invisibleFlag62 IsBool="" AltName="Model Mask 62"/>
     <repositoryCategory AltName="Repository Category" Wiki="" />
-    <pad2 IsHidden="" />
+    <pad2 Padding="" />
     <trophySeqId AltName="Achivement ID" />
-    <pad3 IsHidden="" />
+    <pad3 Padding="" />
   </Field>
 </PARAMMETA>

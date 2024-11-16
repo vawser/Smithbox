@@ -50,7 +50,7 @@
 	
     <padding1 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
 	
     <dummyPoly1 
     AltName="Dummy Poly [1]" 
@@ -91,7 +91,7 @@
 	
     <padding2 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
 	
     <allowAngle 
     AltName="Allowable Angle Difference" 
@@ -99,7 +99,7 @@
 	
     <padding3 
     AltName="" 
-    IsHidden=""/>
+    Padding=""/>
 	
     <textBoxType 
     AltName="Textbox Type" 
@@ -137,7 +137,7 @@
 	
 	<padding4 
     AltName=""
-    IsHidden="" />
+    Padding="" />
 	
 	<textId 
     AltName="Text ID" 

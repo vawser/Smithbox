@@ -14,7 +14,7 @@
     <mappingTextID AltName="Mapping Text ID" Wiki="Item name to be displayed in the operation list. 0  Do not display in the list" FmgRef="Modern_Menu_Text" />
     <viewPad AltName="View Pad" Wiki="Whether to display with key config (pad) (default display)" IsBool="" />
     <viewKeyboardMouse AltName="View Keyboard/Mouse" Wiki="Whether to display with key config (mouse / keyboard) (default display)" IsBool="" />
-    <padding AltName="" IsHidden=""/>
+    <padding AltName="" Padding=""/>
   </Field>
   <Self />
 </PARAMMETA>

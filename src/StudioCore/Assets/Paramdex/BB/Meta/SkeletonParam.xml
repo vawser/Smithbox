@@ -26,7 +26,7 @@
     <twistKneeAxisType AltName="Twist Knee Axis Type" Wiki="Axial direction of knee joint for twisting" Enum="SKELETON_PARAM_KNEE_AXIS_DIR" />
     <neckTurnPriority AltName="Neck Turn Priority" Wiki="The lower it is, the faster it will turn. -1 does not shake the head" />
     <neckTurnMaxAngle AltName="Neck Turn Max Angle" Wiki="Maximum rotation angle for this joint. Can't bend beyond this angle" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
   </Field>
   <Self Wiki=""/>
 </PARAMMETA>

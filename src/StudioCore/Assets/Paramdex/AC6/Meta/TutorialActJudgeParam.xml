@@ -43,11 +43,11 @@
   <Field>
     <State0_ActionSlot AltName="Slot [0]" Wiki="" Enum="TUTORIAL_ACTJUDGE_SLOT_TYPE" />
     <State0_ActionType AltName="Behavior Type [0]" Wiki="" Enum="ACTION_FE_STATE_TYPE_ENUM" />
-    <State0_reserve0 IsHidden="" />
+    <State0_reserve0 Padding="" />
     
     <State1_ActionSlot AltName="Slot [1]" Wiki="" Enum="TUTORIAL_ACTJUDGE_SLOT_TYPE" />
     <State1_ActionType AltName="Behavior Type [1" Wiki="" Enum="ACTION_FE_STATE_TYPE_ENUM" />
-    <State1_reserve0 IsHidden="" />
+    <State1_reserve0 Padding="" />
     
     <ExtActionType AltName="Extended Behavior Type" Wiki="" Enum="TUTORIAL_EXT_ACTJUDGE_TYPE" />
   </Field>

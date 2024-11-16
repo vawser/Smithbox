@@ -47,9 +47,9 @@
     <iconOffsetZ AltName="Icon Offset: Z" Wiki="Value to offset in the Z-axis direction from the dummy poly position specified in dummy poly 1" />
     <doneFlag AltName="Done Flag" Wiki="Event flag ID for flag management of whether it has been executed (-1: No management event flag)" FlagAlias="" />
     
-    <padding1 AltName="" IsHidden=""/>
-    <padding2 AltName="" IsHidden=""/>
-    <padding3 AltName="" IsHidden=""/>
+    <padding1 AltName="" Padding=""/>
+    <padding2 AltName="" Padding=""/>
+    <padding3 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Prompts near bonfires, ladders, etc."/>
 </PARAMMETA>

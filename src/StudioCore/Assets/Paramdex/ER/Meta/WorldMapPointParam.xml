@@ -107,8 +107,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName="" IsHidden=""/>
-    <disableParamReserve2 AltName="" IsHidden=""/>
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
     <eventFlagId AltName="Open - Event Flag ID" Wiki="Event flag ID of open condition" FlagAlias="" />
     <distViewEventFlagId AltName="Distant View - Event Flag ID" Wiki="Event flag ID to be set when found on the distant view" FlagAlias="" />
     <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_03_dlc/iconId/MENU_MAP_" />
@@ -116,7 +116,7 @@
     <isAreaIcon AltName="Is Area Icon" Wiki="Is it an icon that represents a range? Same size as the map" IsBool="" />
     <isOverrideDistViewMarkPos AltName="Overwrite Coordinates when Distant View Marker" Wiki="Whether to overwrite the coordinates when using it as a distant view marker" IsBool="" />
     <isEnableNoText AltName="Enable with No Text" Wiki="Do you want to display it even when there is no text? Basically, points are not displayed without text. Display without text when this flag is enabled" IsBool="" />
-    <pad3 AltName="" IsHidden=""/>
+    <pad3 AltName="" Padding=""/>
     <areaNo_forDistViewMark AltName="Distant View Marker - Map Area" Wiki="AA part of mAA_BB_CC_DD" />
     <gridXNo_forDistViewMark AltName="Distant View Marker - Map Block" Wiki="BB part of mAA_BB_CC_DD" />
     <gridZNo_forDistViewMark AltName="Distant View Marker - Map Region" Wiki="CC part of mAA_BB_CC_DD" />
@@ -124,14 +124,14 @@
     <dispMask00 AltName="Display Mask M00" Wiki="Whether to display with M00" IsBool="" />
     <dispMask01 AltName="Display Mask M01" Wiki="Whether to display with M01" IsBool="" />
     <dispMask02 AltName="Display Mask M02" Wiki="Whether to display with M02" IsBool="" />
-    <pad2_0 AltName="" IsHidden=""/>
-    <pad2 AltName="" IsHidden=""/>
+    <pad2_0 AltName="" Padding=""/>
+    <pad2 AltName="" Padding=""/>
     <distViewIconId AltName="Distant View - Icon ID" Wiki="Icon ID when distant view is found" />
     <angle AltName="Display Icon Angle" Wiki="Display icon rotation angle [deg]" />
     <areaNo AltName="Map Area" Wiki="AA part of mAA_BB_CC_DD" />
     <gridXNo AltName="Map Block" Wiki="BB part of mAA_BB_CC_DD" />
     <gridZNo AltName="Map Region" Wiki="CC part of mAA_BB_CC_DD" />
-    <pad AltName="" IsHidden=""/>
+    <pad AltName="" Padding=""/>
     <posX AltName="Map Coordinate: X" Wiki="X coordinate" />
     <posY AltName="Map Coordinate: Y" Wiki="Y coordinate (not used)" />
     <posZ AltName="Map Coordinate: Z" Wiki="Z coordinate" />
@@ -178,7 +178,7 @@
     <selectMinZoomStep AltName="Selection - Min Zoom Step" Wiki="Zoom step where map points can be selected (0 when zoomed out most, +1 for each zoom). Selectable when Selectable zoom step  Current enlargement stage. Default is 0 (always selectable)" />
     <entryFEType AltName="Entry FE Type" Wiki="Admission display format. Map points to be displayed at the time of admission Types of admission FE" Enum="WORLD_MAP_ENTRY_FE_TYPE" />
     <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
-    <pad4 AltName="" IsHidden=""/>
+    <pad4 AltName="" Padding=""/>
     <textEnableFlag2Id1 AltName="Text Enable Flag ID 2 [1]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
     <textEnableFlag2Id2 AltName="Text Enable Flag ID 2 [2]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
     <textEnableFlag2Id3 AltName="Text Enable Flag ID 2 [3]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />

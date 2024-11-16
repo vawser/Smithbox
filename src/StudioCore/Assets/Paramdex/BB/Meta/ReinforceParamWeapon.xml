@@ -28,7 +28,7 @@
     <residentSpEffectId2 AltName="Passive SpEffect [2] Offset" Wiki="Addition correction value for resident special effect ID2" />
     <residentSpEffectId3 AltName="Passive SpEffect [3] Offset" Wiki="Addition correction value for resident special effect ID3" />
     <materialSetId AltName="Reinforcement Material Set Offset" Wiki="Addition correction value of material parameter ID" />
-    <pad IsHidden="" />
+    <pad Padding="" />
   </Field>
   <Self ConsecutiveIDs="" Wiki="Defines upgrades of weapons, include stat changes and upgrade cost (EquipMtrlSetParam id offset)" />
 </PARAMMETA>

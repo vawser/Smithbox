@@ -21,7 +21,7 @@
     <TableID AltName="Table ID" Wiki="When the type is grid, the ID of the first list item; when the type is color, the ID of the first color palette"/>
 	<ViewCondition AltName="View Condition" Enum="CHARMAKEMENU_VIEW_CONDITION" />
 	<PreviewMode AltName="Preview Mode" Enum="CHARMAKEMENU_PREVIEW_MODE" />
-    <reserved IsHidden=""/>
+    <reserved Padding=""/>
     
   </Field>
   <Self Wiki="Layout Data for the Character Make Menu"/>

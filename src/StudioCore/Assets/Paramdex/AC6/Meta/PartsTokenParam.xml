@@ -14,12 +14,12 @@
     </Enum> 
   </Enums>
   <Field>
-    <pad1 IsHidden=""/>
+    <pad1 Padding=""/>
     <tokenGradeType AltName="Grade" Enum="PARTS_TOKEN_GRADE_TYPE" />
     <tokenUsageType AltName="Usage Type" Enum="PARTS_TOKEN_USAGE_TYPE" />
-    <pad2 IsHidden=""/>
-    <pad3 IsHidden=""/>
-    <pad4 IsHidden=""/>
+    <pad2 Padding=""/>
+    <pad3 Padding=""/>
+    <pad4 Padding=""/>
   </Field>
   <Self Wiki="Determines the configuration of a combat log dropped by an enemy. Linked via the PartTokenParamID field within an Enemy part in a MSB." />
 </PARAMMETA>

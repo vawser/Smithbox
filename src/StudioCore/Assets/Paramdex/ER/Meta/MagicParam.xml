@@ -57,8 +57,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName="" IsHidden=""/>
-    <disableParamReserve2 AltName="" IsHidden=""/>
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
     <yesNoDialogMessageId AltName="Dialog Message ID" Wiki="Message ID of Yes / No dialog issued when using magic" />
     <limitCancelSpEffectId AltName="Ignore Usage Restriction - SpEffect ID" Wiki="Usage restrictions can be ignored when the specified special effect ID is activated" />
     <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect)" />
@@ -111,7 +111,7 @@
     <enableRiding AltName="Usable while Riding" Wiki="Can it be used while riding?" IsBool="" />
     <disableRiding AltName="Not Usable while Riding" Wiki="Is it prohibited to use while not riding?" IsBool="" />
     <isUseNoAttackRegion AltName="Usable in No Attack Region" Wiki="Can it be used in an attack-prohibited area?" IsBool="" />
-    <pad_1 AltName="" IsHidden=""/>
+    <pad_1 AltName="" Padding=""/>
     <vowType8 AltName="Vow Type [8]" Wiki="Pledge 8" IsBool="" />
     <vowType9 AltName="Vow Type [9]" Wiki="Pledge 9" IsBool="" />
     <vowType10 AltName="Vow Type [10]" Wiki="Pledge 10" IsBool="" />
@@ -167,7 +167,7 @@
     <consumeType9 AltName="Consumption Type [9]" Wiki="When Reference ID [9] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
     <consumeType10 AltName="Consumption Type [10]" Wiki="When Reference ID [10] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
     <consumeLoopMP_forMenu AltName="FP Consumption Loop - For Menu Display" Wiki="MP consumption for menu supplement display" />
-    <pad AltName="" IsHidden=""/>
+    <pad AltName="" Padding=""/>
   </Field>
   <Self Wiki="Defines behaviour data of spells. Do not confuse with version in EquipParamGoods." AlternativeOrder="yesNoDialogMessageId,opmeMenuType,-,
 sortId,iconId,-,

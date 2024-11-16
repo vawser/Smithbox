@@ -261,6 +261,12 @@ public class ParamEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(!CFG.Current.Param_HidePaddingFields);
 
+            if (ImGui.MenuItem("Field: Obsolete"))
+            {
+                CFG.Current.Param_HideObsoleteFields = !CFG.Current.Param_HideObsoleteFields;
+            }
+            UIHelper.ShowActiveStatus(!CFG.Current.Param_HideObsoleteFields);
+
             if (ImGui.MenuItem("Field: Enum Helper"))
             {
                 CFG.Current.Param_HideEnums = !CFG.Current.Param_HideEnums;

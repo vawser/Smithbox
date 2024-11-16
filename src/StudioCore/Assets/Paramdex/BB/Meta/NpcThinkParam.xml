@@ -51,8 +51,8 @@
     <enableNaviFlg_Door AltName="Navigation - Door" Wiki="Can you pass through the node door? (def: 0)" IsBool="" />
     <enableNaviFlg_InSideWall AltName="Navigation - Ignore Navmesh Wall" Wiki="Can you pass through the node in the wall? (def: 0)" IsBool="" />
     <enableNaviFlg_EdgeOrdinary AltName="Navigation - Cliff Edge" Wiki="Can you pass the node cliff under normal / alert conditions? (def: 1)" IsBool="" />
-    <enableNaviFlg_reserve0 IsHidden="" />
-    <enableNaviFlg_reserve1 IsHidden="" />
+    <enableNaviFlg_reserve0 Padding="" />
+    <enableNaviFlg_reserve1 Padding="" />
     <eyeDist_forDark AltName="Vision Distance - In Darkness" />
     <battleStartDist_forDark AltName="Combat - Start Distance - In Darkness" />
     <eyeDist_forPitchDark AltName="Vision Distance - In Total Darkness" />
@@ -74,7 +74,7 @@
     <goalID_ToInterest AltName="Goal: Alert State (Interesting Sound)" />
     <changeStateAction_ToInterest AltName="Goal Action: Start Alert State (Interesting Sound)" />
     <changeStateAction_ToNormal AltName="Goal Action: Start Normal State" Wiki="Action when transitioning to the normal state" Enum="NPC_THINK_CHANGE_STATE_ACTION" />
-    <pad IsHidden="" />
+    <pad Padding="" />
     
   </Field>
   <Self Wiki="NPC AI data" />

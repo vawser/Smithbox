@@ -37,9 +37,9 @@
   </Enums>
   <Field>
     <seMaterialId AltName="SE Material ID" Wiki="Conversion from SFX material ID (3 digits) to SE material ID (2 digits)" Enum="MATERIAL_SE_TYPE" />
-    <pad1 IsHidden="" />
+    <pad1 Padding="" />
     <materialName AltName="Material Name" />
-    <endPadding IsHidden=""/>
+    <endPadding Padding=""/>
   </Field>
   <Self />
 </PARAMMETA>

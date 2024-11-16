@@ -4,12 +4,12 @@
     <disableParam_NT AltName="Disable Param: Network Test Version" Wiki="Exclude from the NT version or mark the ones to be excluded." IsBool="" />
     <disableParam_Product AltName="Disable Param: Release Version" Wiki="Exclude from the product version or mark the items to be excluded." IsBool="" />
     
-    <disableParamReserve1 IsHidden="" />
-    <disableParamReserve2 IsHidden="" />
+    <disableParamReserve1 Padding="" />
+    <disableParamReserve2 Padding="" />
     
     <coordErrorType AltName="Coordinate Error Direction" Wiki="" Enum="BULLET_SHOTGUN_COORD_ERROR_TYPE" />
     
-    <reserve IsHidden="" />
+    <reserve Padding="" />
     
     <coordErrorDist AltName="Coordinate Error Amount" Wiki="In metres." />
     

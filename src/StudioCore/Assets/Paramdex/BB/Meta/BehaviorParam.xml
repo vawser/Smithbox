@@ -159,7 +159,7 @@
     <ezStateBehaviorType_old AltName="State Behavior Type" Enum="STATE_BEHAVIOR_TYPE" Wiki="For ID calculation rules" />
     <refType AltName="Reference Type" Enum="BEHAVIOR_REF_TYPE" Wiki="Specify the reference ID so that it is correct." />
     
-    <pad0 IsHidden=""/>
+    <pad0 Padding=""/>
     
     <refId AltName="Reference ID" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType."/>
     <sfxVariationId AltName="SFX Variation ID" Wiki="SFX used for multiplayer session actions" />
@@ -168,7 +168,7 @@
     <category AltName="Category" Enum="BEHAVIOR_CATEGORY" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." />
     <heroPoint AltName="Humanity Cost" Wiki="Set the amount of humanity consumed during action" />
     
-    <pad1 IsHidden=""/>
+    <pad1 Padding=""/>
   </Field>
   <Self Row0Dummy="" Wiki="Handles animation events, including attack frames or firing bullets.\nResponsible for stamina consumption."/>
 </PARAMMETA>

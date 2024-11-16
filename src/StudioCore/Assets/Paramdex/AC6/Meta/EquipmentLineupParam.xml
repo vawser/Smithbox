@@ -17,8 +17,8 @@
     <isBaseAddition AltName="Is Base Part" IsBool="" Wiki="This is 0 for the parts added by the 1.0.5 patch. Actual behavior of the field is unknown." />
     <logHunterRankUnlockValue AltName="Log Hunter Rank - Unlock Value" Wiki="The log hunter rank required for this part to appear." />
     
-    <middlePadding IsHidden="" />
-    <endPadding IsHidden="" />
+    <middlePadding Padding="" />
+    <endPadding Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

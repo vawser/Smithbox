@@ -25,7 +25,7 @@
     <MoveCount AltName="Number of Scans" Wiki="The number of scans to perform." />
     <MoveType AltName="Draw Type" Wiki="The draw type used for this line." Enum="DEPTH_LINE_TYPE" />
     
-    <reserve0 IsHidden="" />
+    <reserve0 Padding="" />
     
     <R AltName="Color: R" Wiki="" />
     <G AltName="Color: G" Wiki="" />
@@ -38,7 +38,7 @@
     <texParam01_texScale AltName="Texture Param [1]: Texture Scale" Wiki="" />
     <texParam01_texOffsetSpeed AltName="Texture Param [1]: Texture Animation Speed" Wiki="U value animated in 1 second" />
     
-    <reserve1 IsHidden="" />
+    <reserve1 Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

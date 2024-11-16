@@ -306,11 +306,11 @@
     
     <disableParamReserve1 
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <disableParamReserve2 
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <hit0_Radius 
     AltName="Hit 0: Radius" 
@@ -1324,7 +1324,7 @@
     
     <pad4
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <shooterKnockbackMoveTimeSec
     AltName="Recoil Knockback: Acceleration Time"
@@ -1852,7 +1852,7 @@
     
     <pad10
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <multiHit_MaxCountBehavior
     AltName="Multi-Hit: Max Count Behavior"
@@ -1920,7 +1920,7 @@
     
     <pad_11
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <decalBaseId1
     AltName="Decal ID [1]"
@@ -1947,7 +1947,7 @@
     
     <pad_12
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <hit0_Fan_RotX
     AltName="Hit 0: Fan X-Axis Rotation"
@@ -2164,7 +2164,7 @@
     
     <pad_13
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <multiHitArmorHit_DamageRate
     AltName="Multi-Hit: Damage Correction on Armor Hit"
@@ -2172,7 +2172,7 @@
     
     <pad_end
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
   </Field>
   <Self />

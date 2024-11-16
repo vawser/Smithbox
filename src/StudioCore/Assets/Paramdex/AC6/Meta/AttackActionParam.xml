@@ -48,11 +48,11 @@
     
     <disableParamReserve1 
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <disableParamReserve2 
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <atkStateId
     AltName="Attack State ID"
@@ -68,7 +68,7 @@
     
     <pad_01
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <lookAtParamId
     AltName="Loot-At ID"
@@ -87,7 +87,7 @@
     
     <pad_02
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <triggerActionType_00
     AltName="Trigger Action Type [00]"
@@ -284,7 +284,7 @@
     
     <pad_04
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <shootIndicationType
     AltName="HUD: Incoming Shot Warning" 
@@ -298,7 +298,7 @@
     
     <pad_05
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <shootIndicationDmypolyId
     AltName="HUD: Incoming Shot Warning - Dummy Polygon ID"
@@ -306,7 +306,7 @@
     
     <pad_end
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     </Field>
   <Self />

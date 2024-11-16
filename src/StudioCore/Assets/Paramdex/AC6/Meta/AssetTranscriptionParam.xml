@@ -61,7 +61,7 @@
     
     <pad 
     AltName=""
-    IsHidden="" />
+    Padding="" />
     
     <bakeAssetId 
     AltName="Bake Asset ID" 

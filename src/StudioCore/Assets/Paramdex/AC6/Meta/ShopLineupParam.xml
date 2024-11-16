@@ -26,8 +26,8 @@
     <setNum AltName="Amount on Purchase" Wiki="Number of sets sold. Number of pieces you can get with one purchase (default: 1)" />
     <value_Add AltName="Price Addition" Wiki="Correction (addition) to the selling price of equipment. Equipment para selling price x magnification + addition" />
     
-    <pad3 IsHidden="" />
-    <pad1 IsHidden="" />
+    <pad3 Padding="" />
+    <pad1 Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

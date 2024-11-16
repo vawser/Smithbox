@@ -8,11 +8,11 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName="" IsHidden=""/>
-    <disableParamReserve2 AltName="" IsHidden=""/>
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
     <eventflagId AltName="Event Flag ID" Wiki="Release condition event flag ID" FlagAlias="" />
     <bonfireEntityId AltName="Bonfire Entity ID" Wiki="Bonfire entity ID" />
-    <pad4 AltName="" IsHidden=""/>
+    <pad4 AltName="" Padding=""/>
     
     <bonfireSubCategorySortId AltName="Sort ID" Wiki="Bonfire Warp Subcategory Sort ID. Specify the order (ascending order) in the same subcategory" />
     <forbiddenIconId AltName="Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_" />
@@ -25,12 +25,12 @@
     <dispMask00 AltName="Display Setting M00" Wiki="Whether to display with M00" IsBool="" />
     <dispMask01 AltName="Display Setting M01" Wiki="Whether to display with M01" IsBool="" />
     <dispMask02 AltName="Display Setting M02" Wiki="Whether to display with M02" IsBool="" />
-    <pad1 AltName="" IsHidden=""/>
-    <pad2 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
+    <pad2 AltName="" Padding=""/>
     <areaNo AltName="Map Area" Wiki="AA part of mAA_BB_CC_DD" />
     <gridXNo AltName="Map Block" Wiki="BB part of mAA_BB_CC_DD" />
     <gridZNo AltName="Map Region" Wiki="CC part of mAA_BB_CC_DD" />
-    <pad3 AltName="" IsHidden=""/>
+    <pad3 AltName="" Padding=""/>
     <posX AltName="Coordinate: X" Wiki="X coordinate" />
     <posY AltName="Coordinate: Y" Wiki="Y coordinate (not used)" />
     <posZ AltName="Coordinate: Z" Wiki="Z coordinate" />
@@ -88,7 +88,7 @@
     <textDisableFlag2Id8 AltName="Text Disable Flag ID 2 [8]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
     <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
     <altForbiddenIconId AltName="Alternate Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited, when certain conditions are met" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
-    <pad5 AltName="" IsHidden=""/>
+    <pad5 AltName="" Padding=""/>
   </Field>
   <Self />
 </PARAMMETA>

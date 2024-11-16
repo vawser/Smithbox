@@ -155,20 +155,20 @@
     <isEnchantLeftHand AltName="Enchant Left-Hand" Wiki="" IsBool="" />
     <isGuestDrop AltName="Is Droppable for Guest" Wiki="" IsBool="" />
     <isApplySpecialEffect AltName="Apply SpEffect Modifiers" Wiki="spCategory needs to not be 5" IsBool="" />
-    <pad0 IsHidden="" />
+    <pad0 Padding="" />
     <maxRepositoryNum AltName="Max Repository Count" />
     <properStrength AltName="Strength Requirement" />
     <properAgility AltName="Skill Requirement" />
     <properMagic AltName="Bloodtinge Requirement" />
     <properFaith AltName="Arcane Requirement" />
-    <pad IsHidden="" />
+    <pad Padding="" />
     <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1 No vagrant 0 No lottery 1  With lottery" />
     <vagrantBonusEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
     <vagrantItemEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
     <refVirtualWepId AltName="Weapon Reference ID" Wiki="Weapon ID to refer to when using the tool" Refs="EquipParamWeapon" />
     <bulletConsumeNum AltName="QS Bullet Consumption" Wiki="Number of bullets consumed when using the item" />
 	<useLimitCategory2 AltName="Disabled by State Info" ProjectEnum="SP_EFFECT_TYPE" />
-    <pad1 IsHidden="" />
+    <pad1 Padding="" />
     <replaceItemId_bySpEffect AltName="Replace Item ID - By SpEffect" Refs="EquipParamGoods" />
     <replaceTriggerSpEffectId AltName="Replace Item Trigger SpEffect ID" Refs="SpEffectParam" />
   </Field>

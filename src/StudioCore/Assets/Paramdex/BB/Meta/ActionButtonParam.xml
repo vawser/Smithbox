@@ -17,7 +17,7 @@
   <Field>
     <regionType AltName="Region Type" Wiki="Range shape (cylinder, prism, capsule)" Enum="ACTION_BUTTON_REGION_TYPE" />
     
-    <padding1 IsHidden="" />
+    <padding1 Padding="" />
     
     <dummyPoly1 AltName="Dummy Poly [1]" Wiki="Specify the Damipoli ID that is the center of the bottom of the range. If there is no Damipoly or -1 is entered, the center coordinates will be the reference." />
     <dummyPoly2 AltName="Dummy Poly [2]" Wiki="Used only when the range type is a capsule. Additional Damipoly (capsule) that creates a line segment with two Damipoly" />
@@ -29,12 +29,12 @@
     <baseHeightOffset AltName="Bottom Height Offset" Wiki="How much to raise or lower the Y coordinate of the bottom (cylinder / prism)" />
     <angleCheckType AltName="Angle Difference Check Type" Wiki="Angle difference judgment type (cylinder / prism)" Enum="ACTION_BUTTON_ANGLE_CHECK_TYPE" />
     
-    <padding2 IsHidden="" />
+    <padding2 Padding="" />
     
     <allowAngle AltName="Allowable Angle Difference" Wiki="Allowable angle difference (cylinder / prism)" />
     <textBoxType AltName="Textbox Type" Wiki="Text box type" Enum="ACTION_BUTTON_TEXT_BOX_TYPE" />
     
-    <padding3 IsHidden="" />
+    <padding3 Padding="" />
     
     <textId AltName="Text ID" Wiki="Text ID to display" FmgRef="Event_Text"/>
     <invalidFlag AltName="Invalid Flag" Wiki="If this flag is ON, the action button will not appear and no judgment will be made." />
@@ -43,7 +43,7 @@
     <execInvalidTime AltName="Execution Invalid Time" Wiki="Invalid time after execution (-infinite by value)" />
     <execButtonCircle AltName="Execution Button" />
     
-    <padding4 IsHidden=""/>
+    <padding4 Padding=""/>
     
   </Field>
   <Self Wiki="Prompts near bonfires, ladders, etc."/>

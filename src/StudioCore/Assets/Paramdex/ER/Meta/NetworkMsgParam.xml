@@ -5,7 +5,7 @@
   <Field>
     <priority AltName="Priority" Wiki="priority" />
     <forcePlay AltName="Force Play" Wiki="Forced interrupt" IsBool="" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
     <normalWhite AltName="White Phantom - Normal" Wiki="White spirit (white sign)" FmgRef="Network_Messages" />
     <umbasaWhite AltName="White Phantom - Gold" Wiki="Sun spirit (white sign)" FmgRef="Network_Messages" />
     <berserkerWhite AltName="White Phantom - Berseker" Wiki="Berserker spirit (white sign)" FmgRef="Network_Messages" />
@@ -46,7 +46,7 @@
     <forceJoinBlack_Npc AltName="NPC - Black Phantom - Invasion" Wiki="For intrusion_A_NPCs" FmgRef="Network_Messages" />
     <forceJoinBlack_B_Npc AltName="NPC - Black Phantom B - Invasion" Wiki="For intrusion_B_NPCs" FmgRef="Network_Messages" />
     <forceJoinBlack_C_Npc AltName="NPC - Black Phantom C - Invasion" Wiki="For intrusion_C_NPCs" FmgRef="Network_Messages" />
-    <pad2_new AltName="" IsHidden=""/>
+    <pad2_new AltName="" Padding=""/>
   </Field>
   <Self />
 </PARAMMETA>

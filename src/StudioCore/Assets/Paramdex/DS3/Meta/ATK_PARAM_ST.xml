@@ -252,17 +252,17 @@ Hit0_Radius,Hit0_DmyPoly1,Hit0_DmyPoly2,Hit0_hitType,Hit0_VfxId,Hit0_DummyPolyId
     <Hit13_hitType AltName="Hit 13: Hit Type" Wiki="Type of hit applied by hitbox." Enum="ATK_PARAM_HIT_TYPE" />
     <Hit14_hitType AltName="Hit 14: Hit Type" Wiki="Type of hit applied by hitbox." Enum="ATK_PARAM_HIT_TYPE" />
     <Hit15_hitType AltName="Hit 15: Hit Type" Wiki="Type of hit applied by hitbox." Enum="ATK_PARAM_HIT_TYPE" />
-	<pad10 IsHidden="" />
+	<pad10 Padding="" />
     <defMaterialVal0 AltName="Defence SFX Material [1]" Wiki="Used for SFX when guarding. 1"/>
     <defMaterialVal1 AltName="Defence SE Material [2]" Wiki="Used for SE when guarding 2" />
     <defMaterialVal2 AltName="Defence SFX Material [2]" Wiki="Used for SFX when guarding. 2" />
     <atkDarkCorrection AltName="Attack Correction: Dark" />
     <atkDark AltName="Damage: Dark" />
-    <pad9 IsHidden="" />
+    <pad9 Padding="" />
     <isDisableParry AltName="Is Disable Parry" Wiki="This is a flag to disable the new parry control. A process that determines that the damage on the attacking side has been parried when it comes into contact with a character in the parry state on the defending side." IsBool="" />
 	<isDisableBothHandsAtkBonus AltName="Is Disable 2H ATK Bonus" Wiki="Avoid using the 1.5x growth status adaptation with both hands" IsBool="" />
 	<isInvalidatedByNoDamageInAir AltName="Is Invalidated by No Damage in Air" Wiki="If Do you want to penetrate invincibility is , this setting will be ignored." IsBool="" />
-    <pad8 IsHidden="" />
+    <pad8 Padding="" />
     <dmgLevel_vsPlayer AltName="Damage Level - Vs. Player" Wiki="Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level." Enum="PLAYER_ATKPARAM_REP_DMGTYPE_UINT" />
     <statusAilmentAtkPowerCorrectRate AltName="Status Ailment Correction" Wiki="Magnification correction is performed for the abnormal state attack power of special effects." />
     <spEffectAtkPowerCorrectRate_byPoint AltName="Attack Correction - By SpEffect Point" Wiki="Magnification correction is performed for the special effect ~ ~ attack power [point]." />
@@ -273,6 +273,6 @@ Hit0_Radius,Hit0_DmyPoly1,Hit0_DmyPoly2,Hit0_hitType,Hit0_VfxId,Hit0_DummyPolyId
     <statusAilmentAtkPowerCorrectRate_byPoint AltName="Status Ailment Correction - By Point" Wiki="Magnification correction is performed for the special effect Whether to apply the abnormal state attack power magnification correction." />
     <atkElementCorrectId AltName="Attack Element Correct ID" Refs="AttackElementCorrectParam" Wiki="Override for stat scaling behaviour.\nIf -1, equipped weapon determines AttackElementCorrectParam instead." />
     
-    <pad2 AltName="" IsHidden=""/>
+    <pad2 AltName="" Padding=""/>
   </Field>
 </PARAMMETA>

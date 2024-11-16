@@ -8,7 +8,7 @@
    <variationNum AltName="Random Structure Generation Count" Wiki="" />
    <mainFeature_1 AltName="Main Feature ID" Wiki="" />
    
-   <pad_0 IsHidden="" />
+   <pad_0 Padding="" />
    
    <dungeonNameBaseId AltName="Dungeon Name Base ID" Wiki="" FmgRef="Title_Locations" />
    <uniqueBaseFlagId AltName="Unique Base Flag ID" Wiki="" />
@@ -60,7 +60,7 @@
    <isGenericHolygrail AltName="Is Generic" Wiki="" IsBool="" />
    <releaseFlagIdOffset AltName="Ban Event Flag Offset ID" Wiki="" />
    
-   <pad_3 IsHidden="" />
+   <pad_3 Padding="" />
    
    <groupSf_1_subFeatureLotId AltName="Group: Sub-Feature Lottery ID [1]" Wiki="" Refs="DungeonSubFeatLotParam" />
    <groupSf_2_subFeatureLotId AltName="Group: Sub-Feature Lottery ID [2]" Wiki="" Refs="DungeonSubFeatLotParam" />

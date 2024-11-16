@@ -4,7 +4,7 @@
     <Value AltName="Value" />
     <CaptionID AltName="Caption ID" FmgRef="Modern_Menu_Text"/>
     <IconID AltName="Icon ID" />
-    <reserved IsHidden=""/>
+    <reserved Padding=""/>
   </Field>
   <Self Wiki="List data for the Character Make Menu"/>
 </PARAMMETA>

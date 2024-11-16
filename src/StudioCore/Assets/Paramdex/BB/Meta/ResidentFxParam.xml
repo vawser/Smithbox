@@ -3,7 +3,7 @@
   <Field>
     <sfxId AltName="SFX ID" Wiki="" ParticleAlias="" />
     <dmypolyId AltName="Dummy Poly ID" Wiki="" />
-    <pad_0 IsHidden="" />
+    <pad_0 Padding="" />
   </Field>
   <Self Wiki=""/>
 </PARAMMETA>

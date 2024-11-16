@@ -27,8 +27,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName="" IsHidden=""/>
-    <disableParamReserve2 AltName="" IsHidden=""/>
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
     <iconId AltName="Icon ID" Wiki="Menu icon ID" TextureRef="Direct/01_common/SB_Icon_00/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_01/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_02/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_A/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_B/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_03/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_03_A/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_04/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_05/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_06/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc_A/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_08_dlc/iconId/MENU_ItemIcon_" /> />
     <rank AltName="Rank" Wiki="Magic stone rank" />
     <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." Enum="DISPLAY_CATEGORY_ID" />
@@ -74,11 +74,11 @@
     <disableMultiDropShare AltName="Is Drop Disabled in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
     <showLogCondType AltName="Item Acquisition Show Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
-    <pad AltName="" IsHidden=""/>
+    <pad AltName="" Padding=""/>
     <defaultWepAttr AltName="Default Weapon Affinity" Wiki="Default weapon attribute ID. Can be installed even with unopened weapon attributes" ProjectEnum="GEM_WEP_ATTR" />
     <isSpecialSwordArt AltName="Is Special Ash of War" Wiki="Determines whether this Ash of War is considered 'special'. Weapons with restrictSpecialSwordArt set to 1 will be unable to slot in these ashes of war." IsBool="" />
     
-    <pad2 AltName="" IsHidden=""/>
+    <pad2 AltName="" Padding=""/>
     <canMountWep_Dagger AltName="Available: Dagger" Wiki="Can it be attached to Weapon type: Dagger? No input becomes x" IsBool="" />
     <canMountWep_SwordNormal AltName="Available: Straight Sword" Wiki="Can it be attached to Weapon type: Straight sword? No input becomes x" IsBool="" />
     <canMountWep_SwordLarge AltName="Available: Greatsword" Wiki="Can it be attached to Weapon Type: Large Sword? No input becomes x" IsBool="" />
@@ -124,8 +124,8 @@
     <canMountWep_GreatKatana AltName="Available: Great Katana" Wiki="Can it be attached to Weapon type: Great Katana? No input becomes x" IsBool="" />
     <canMountWep_BeastClaw AltName="Available: Beast Claw" Wiki="Can it be attached to Weapon type: Beast Claw? No input becomes x" IsBool="" />
     
-    <reserved_canMountWep_0x3d_4 AltName="" IsHidden=""/>
-    <reserved2_canMountWep AltName="" IsHidden=""/>
+    <reserved_canMountWep_0x3d_4 AltName="" Padding=""/>
+    <reserved2_canMountWep AltName="" Padding=""/>
     
     <spEffectMsgId0 AltName="SpEffect Message ID [0]" Wiki="Effect text ID 00 (Gem_Effect). Magic stone effect text to display in status" />
     <spEffectMsgId1 AltName="SpEffect Message ID [1]" Wiki="Effect text ID 01 (Gem_Effect). Magic stone effect text to display in status" />
@@ -133,7 +133,7 @@
     <spEffectId_forAtk1 AltName="SpEffect ID - Attack Hit [1]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
     <spEffectId_forAtk2 AltName="SpEffect ID - Attack Hit [2]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
     <mountWepTextId AltName="Mount Weapon Text ID" Wiki="Corresponding Weapon Type Overwrite Text ID (-1: Do not overwrite) [Menu Text]" FmgRef="Modern_Menu_Text" />
-    <pad6 AltName="" IsHidden=""/>
+    <pad6 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Defines an Ash of War item. Determines what weapons it can be applied to and with what affinities.\nDoes not manage unique Ashes of War. Ashes of war may not immediately function on arbitrary weapons." AlternativeOrder="
 sortId,sortGroupId,rank,rarity,iconId,-,

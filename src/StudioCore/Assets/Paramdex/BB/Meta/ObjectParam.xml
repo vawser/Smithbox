@@ -82,9 +82,9 @@
 	<contactSeId AltName="Player Touch - SE ID" Wiki="SE ID to play when touched by a local player operated by you (-1 Do not play)" />
 	<breakLandingSfxId AltName="Landing Destruction - SFX ID" Wiki="Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1 does not occur)" />
     
-    <pad_1 AltName="" IsHidden=""/>
-    <pad_2 AltName="" IsHidden=""/>
-    <pad_3 AltName="" IsHidden=""/>
+    <pad_1 AltName="" Padding=""/>
+    <pad_2 AltName="" Padding=""/>
+    <pad_3 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Object destruction data" AlternativeOrder="hp,defense,-,
 defaultLodParamId,extRefTexId,materialId,LandTouchSfxId,contactSeId,-,

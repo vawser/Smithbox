@@ -4,8 +4,8 @@
      <disableParam_NT AltName="Disable Param: Network Test Version" Wiki="Exclude from the NT version or mark the ones to be excluded." IsBool="" />
     <disableParam_Product AltName="Disable Param: Release Version" Wiki="Exclude from the product version or mark the items to be excluded." IsBool="" />
     
-    <disableParamReserve1 IsHidden="" />
-    <disableParamReserve2 IsHidden="" />
+    <disableParamReserve1 Padding="" />
+    <disableParamReserve2 Padding="" />
     
     <set00_beginCameraId AltName="Start Camera ID [0]" Wiki="Camera ID to play at start." />
     <set00_endCameraId AltName="End Camera ID [0]" Wiki="Camera ID to play at end." />
@@ -15,7 +15,7 @@
     <set00_bOtherAnimCancel AltName="Cancel Current Playback if Reset [0]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set00_bFilterAnimOnly AltName="Is Filter Effects Only [0]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set00_bCameraHightFixed AltName="Is Camera Height Fixed [0]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set00_padbit IsHidden="" />
+    <set00_padbit Padding="" />
     <set00_laneCamStartFrame AltName="Lane Camera: Initial Frame [0]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set00_baseDmyPolyId AltName="Base Dummy Polygon ID [0]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set00_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [0]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -30,7 +30,7 @@
     <set01_bOtherAnimCancel AltName="Cancel Current Playback if Reset [1]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set01_bFilterAnimOnly AltName="Is Filter Effects Only [1]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set01_bCameraHightFixed AltName="Is Camera Height Fixed [1]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set01_padbit IsHidden="" />
+    <set01_padbit Padding="" />
     <set01_laneCamStartFrame AltName="Lane Camera: Initial Frame [1]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set01_baseDmyPolyId AltName="Base Dummy Polygon ID [1]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set01_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [1]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -45,7 +45,7 @@
     <set02_bOtherAnimCancel AltName="Cancel Current Playback if Reset [2]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set02_bFilterAnimOnly AltName="Is Filter Effects Only [2]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set02_bCameraHightFixed AltName="Is Camera Height Fixed [2]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set02_padbit IsHidden="" />
+    <set02_padbit Padding="" />
     <set02_laneCamStartFrame AltName="Lane Camera: Initial Frame [2]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set02_baseDmyPolyId AltName="Base Dummy Polygon ID [2]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set02_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [2]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -60,7 +60,7 @@
     <set03_bOtherAnimCancel AltName="Cancel Current Playback if Reset [3]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set03_bFilterAnimOnly AltName="Is Filter Effects Only [3]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set03_bCameraHightFixed AltName="Is Camera Height Fixed [3]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set03_padbit IsHidden="" />
+    <set03_padbit Padding="" />
     <set03_laneCamStartFrame AltName="Lane Camera: Initial Frame [3]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set03_baseDmyPolyId AltName="Base Dummy Polygon ID [3]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set03_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [3]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -75,7 +75,7 @@
     <set04_bOtherAnimCancel AltName="Cancel Current Playback if Reset [4]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set04_bFilterAnimOnly AltName="Is Filter Effects Only [4]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set04_bCameraHightFixed AltName="Is Camera Height Fixed [4]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set04_padbit IsHidden="" />
+    <set04_padbit Padding="" />
     <set04_laneCamStartFrame AltName="Lane Camera: Initial Frame [4]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set04_baseDmyPolyId AltName="Base Dummy Polygon ID [4]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set04_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [4]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -90,7 +90,7 @@
     <set05_bOtherAnimCancel AltName="Cancel Current Playback if Reset [5]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set05_bFilterAnimOnly AltName="Is Filter Effects Only [5]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set05_bCameraHightFixed AltName="Is Camera Height Fixed [5]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set05_padbit IsHidden="" />
+    <set05_padbit Padding="" />
     <set05_laneCamStartFrame AltName="Lane Camera: Initial Frame [5]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set05_baseDmyPolyId AltName="Base Dummy Polygon ID [5]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set05_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [5]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -105,7 +105,7 @@
     <set06_bOtherAnimCancel AltName="Cancel Current Playback if Reset [6]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set06_bFilterAnimOnly AltName="Is Filter Effects Only [6]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set06_bCameraHightFixed AltName="Is Camera Height Fixed [6]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set06_padbit IsHidden="" />
+    <set06_padbit Padding="" />
     <set06_laneCamStartFrame AltName="Lane Camera: Initial Frame [6]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set06_baseDmyPolyId AltName="Base Dummy Polygon ID [6]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set06_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [6]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -120,7 +120,7 @@
     <set07_bOtherAnimCancel AltName="Cancel Current Playback if Reset [7]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set07_bFilterAnimOnly AltName="Is Filter Effects Only [7]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set07_bCameraHightFixed AltName="Is Camera Height Fixed [7]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set07_padbit IsHidden="" />
+    <set07_padbit Padding="" />
     <set07_laneCamStartFrame AltName="Lane Camera: Initial Frame [7]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set07_baseDmyPolyId AltName="Base Dummy Polygon ID [7]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set07_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [7]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -135,7 +135,7 @@
     <set08_bOtherAnimCancel AltName="Cancel Current Playback if Reset [8]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set08_bFilterAnimOnly AltName="Is Filter Effects Only [8]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set08_bCameraHightFixed AltName="Is Camera Height Fixed [8]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set08_padbit IsHidden="" />
+    <set08_padbit Padding="" />
     <set08_laneCamStartFrame AltName="Lane Camera: Initial Frame [8]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set08_baseDmyPolyId AltName="Base Dummy Polygon ID [8]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set08_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [8]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -150,7 +150,7 @@
     <set09_bOtherAnimCancel AltName="Cancel Current Playback if Reset [9]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set09_bFilterAnimOnly AltName="Is Filter Effects Only [9]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set09_bCameraHightFixed AltName="Is Camera Height Fixed [9]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set09_padbit IsHidden="" />
+    <set09_padbit Padding="" />
     <set09_laneCamStartFrame AltName="Lane Camera: Initial Frame [9]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set09_baseDmyPolyId AltName="Base Dummy Polygon ID [9]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set09_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [9]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -165,7 +165,7 @@
     <set10_bOtherAnimCancel AltName="Cancel Current Playback if Reset [10]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set10_bFilterAnimOnly AltName="Is Filter Effects Only [10]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set10_bCameraHightFixed AltName="Is Camera Height Fixed [10]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set10_padbit IsHidden="" />
+    <set10_padbit Padding="" />
     <set10_laneCamStartFrame AltName="Lane Camera: Initial Frame [10]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set10_baseDmyPolyId AltName="Base Dummy Polygon ID [10]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set10_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [10]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -180,7 +180,7 @@
     <set11_bOtherAnimCancel AltName="Cancel Current Playback if Reset [11]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set11_bFilterAnimOnly AltName="Is Filter Effects Only [11]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set11_bCameraHightFixed AltName="Is Camera Height Fixed [11]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set11_padbit IsHidden="" />
+    <set11_padbit Padding="" />
     <set11_laneCamStartFrame AltName="Lane Camera: Initial Frame [11]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set11_baseDmyPolyId AltName="Base Dummy Polygon ID [11]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set11_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [11]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -195,7 +195,7 @@
     <set12_bOtherAnimCancel AltName="Cancel Current Playback if Reset [12]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set12_bFilterAnimOnly AltName="Is Filter Effects Only [12]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set12_bCameraHightFixed AltName="Is Camera Height Fixed [12]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set12_padbit IsHidden="" />
+    <set12_padbit Padding="" />
     <set12_laneCamStartFrame AltName="Lane Camera: Initial Frame [12]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set12_baseDmyPolyId AltName="Base Dummy Polygon ID [12]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set12_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [12]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -210,7 +210,7 @@
     <set13_bOtherAnimCancel AltName="Cancel Current Playback if Reset [13]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set13_bFilterAnimOnly AltName="Is Filter Effects Only [13]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set13_bCameraHightFixed AltName="Is Camera Height Fixed [13]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set13_padbit IsHidden="" />
+    <set13_padbit Padding="" />
     <set13_laneCamStartFrame AltName="Lane Camera: Initial Frame [13]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set13_baseDmyPolyId AltName="Base Dummy Polygon ID [13]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set13_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [13]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -225,7 +225,7 @@
     <set14_bOtherAnimCancel AltName="Cancel Current Playback if Reset [14]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set14_bFilterAnimOnly AltName="Is Filter Effects Only [14]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set14_bCameraHightFixed AltName="Is Camera Height Fixed [14]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set14_padbit IsHidden="" />
+    <set14_padbit Padding="" />
     <set14_laneCamStartFrame AltName="Lane Camera: Initial Frame [14]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set14_baseDmyPolyId AltName="Base Dummy Polygon ID [14]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set14_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [14]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
@@ -240,7 +240,7 @@
     <set15_bOtherAnimCancel AltName="Cancel Current Playback if Reset [15]" Wiki="Do you want to cancel the end playback of this camera before starting playback?" IsBool="" />
     <set15_bFilterAnimOnly AltName="Is Filter Effects Only [15]" Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." IsBool="" />
     <set15_bCameraHightFixed AltName="Is Camera Height Fixed [15]" Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." IsBool="" />
-    <set15_padbit IsHidden="" />
+    <set15_padbit Padding="" />
     <set15_laneCamStartFrame AltName="Lane Camera: Initial Frame [15]" Wiki="Initial frame of lane camera animation when switching cameras." />
     <set15_baseDmyPolyId AltName="Base Dummy Polygon ID [15]" Wiki="Play the camera based on the specified dummy poly (i.e. playback position offset)." />
     <set15_laneCamLockAtEntityId AltName="Lane Camera: Perspective Entity ID [15]" Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />

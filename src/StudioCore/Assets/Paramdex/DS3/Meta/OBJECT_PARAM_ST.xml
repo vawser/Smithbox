@@ -69,14 +69,14 @@
 	<BreakAiSoundID AltName="Destruction AI Sound ID" Wiki="AI sound ID generated at the time of destruction" Refs="AiSoundParam" />
     <FragmentInvisibleWaitTime AltName="Debris Fragments - Wait Time" Wiki="Material ID of debris (-1 Do not hide)" />
     <FragmentInvisibleTime AltName="Debris Fragments - Invisibility Time" Wiki="Time to hide debris (seconds)" />
-    <pad_3 AltName="" IsHidden=""/>
+    <pad_3 AltName="" Padding=""/>
 	<RigidPenetrationScale_Soft AltName="Rigid Body Collision - Soft" Wiki="Rigid body soft contact setting Collision point distance coefficient [soft]" />
     <RigidPenetrationScale_Normal AltName="Rigid Body Collision - Normal" Wiki="Rigid soft contact setting Collision point distance coefficient [Normal]" />
     <RigidPenetrationScale_Hard AltName="Rigid Body Collision - Hard" Wiki="Rigid soft contact setting Collision point distance coefficient [hard]" />
     <LandTouchSfxId AltName="Land Touch - SFX ID" Wiki="SFX ID at terrain contact (-1 offset by terrain material)" />
     
     <isDamageCover AltName="Is Damage blocked after Passing Through" Wiki="Whether to pass the damage to the other side when receiving damage (0 pass, 1 do not pass)" IsBool="" />
-    <pad_4 AltName="" IsHidden=""/>
+    <pad_4 AltName="" Padding=""/>
     
 	<paintDecalTargetTextureSize AltName="Paint Decal Size" Wiki="Paint decal target size (only powers of 0 to 4096 2 allowed)" />
     <lifeTime_forDC AltName="Dynamic Object Duration" Wiki="Time until dynamically generated Obj disappears after generation (0 does not disappear)" />
@@ -84,7 +84,7 @@
 	<contactSeId AltName="Player Touch - SE ID" Wiki="SE ID to play when touched by a local player operated by you (-1 Do not play)" />
 	<breakLandingSfxId AltName="Landing Destruction - SFX ID" Wiki="Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1 does not occur)" />
     
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Object destruction data" AlternativeOrder="hp,defense,-,
 defaultLodParamId,extRefTexId,materialId,LandTouchSfxId,contactSeId,-,

@@ -57,7 +57,7 @@
     <shadowDrawAlphaTestDist AltName="Shadow Draw Alpha Test Distance" Wiki="Distance to perform alpha test when drawing shadow [m]" />
     <fowardDrawEnvmapBlendType AltName="Forward Draw Envmap Blend Type" Wiki="Forward Drawing environment map Blend type" Enum="PARTS_DRAW_FOWARD_DRAW_ENVMAP_BLEND_TYPE" />
     <LBDrawDistScaleParamID AltName="Load Balancer - Draw Distance Scale Param ID" Wiki="Load balancer drawing distance scale parameter ID" />
-    <reserve AltName="" IsHidden=""/>
+    <reserve AltName="" Padding=""/>
   </Field>
   <Self />
 </PARAMMETA>

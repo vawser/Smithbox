@@ -778,8 +778,8 @@ Requires State Info 66" />
     <effectTargetBlackGhost AltName="Target Black Phantom" />
     <useSpEffectEffect AltName="Use SpEffect Effect" />
     
-    <pad3 AltName="" IsHidden=""/>
-    <pad10 AltName="" IsHidden=""/>
+    <pad3 AltName="" Padding=""/>
+    <pad10 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Defines various effects that can be applied to the player and to enemies.\nCan define passive, activated, single-use and repeated or continuous application effects with indefinite duration.\nSuccessful application may depend on spCategory or invocationConditions." Row0Dummy="" AlternativeOrder="iconId,-,
 effectEndurance,motionInterval,conditionHp,conditionHpRate,-,

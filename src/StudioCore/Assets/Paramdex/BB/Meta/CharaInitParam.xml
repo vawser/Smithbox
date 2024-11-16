@@ -135,7 +135,7 @@
     <secondaryItemNum_04 AltName="Pouch Item 4 Amount" />
     <secondaryItemNum_05 AltName="Pouch Item 5 Amount" />
     <secondaryItemNum_06 AltName="Pouch Item 6 Amount" />
-    <pad1 AIsHidden=""/>
+    <pad1 APadding=""/>
     
   </Field>
   <Self />

@@ -18,7 +18,7 @@
     <validObjAngle AltName="Valid Object Angle" Wiki="The action effective angle of the object. Effective angle difference between the action vector of the object and the character vector" />
     <chrSorbType AltName="Character Absorb Type" Wiki="It is a method of adsorbing characters during object action." Enum="OBJACT_CHR_SORB_TYPE" />
     <eventKickTiming AltName="Event Execution Timing" Wiki="Event execution timing" Enum="OBJACT_EVENT_KICK_TIMING" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
     <actionButtonParamId AltName="Action Button Param ID" Wiki="Action button parameter ID" Refs="ActionButtonParam" />
     <enableTreasureDelaySec AltName="Treasure Enable Delay" Wiki="The number of seconds from the execution of the object action to the activation of the treasure. A setting exclusively for the object type treasure box of the object act." />
   </Field>

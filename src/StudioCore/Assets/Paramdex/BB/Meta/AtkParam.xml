@@ -163,8 +163,8 @@
     <isChargeAtk AltName="Is Charge Attack" IsBool="" />
     <isShareHitList AltName="Is Hit List Shared" IsBool="" />
     <isCheckObjPenetration AltName="Is Object Penetration Checked" IsBool="" />
-    <pad IsHidden="" />
-    <pad2 IsHidden="" />
+    <pad Padding="" />
+    <pad2 Padding="" />
     <regainableSlotId AltName="Same Attack Judgment ID" Wiki="Same attack judgment ID" />
     <deathcauseId AltName="Death Cause ID" />
     <decalId1 AltName="Decal ID [1]" Wiki="Decal ID 1 (directly specified)" Refs="DecalParam" />

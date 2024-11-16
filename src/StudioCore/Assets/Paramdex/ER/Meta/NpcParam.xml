@@ -236,8 +236,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName="" IsHidden=""/>
-    <disableParamReserve2 AltName="" IsHidden=""/>
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
     <behaviorVariationId AltName="Behavior Variation ID" Wiki="Variation ID used when calculating the action ID." />
     <resistCorrectId_poison AltName="Resist Correction - Poison" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
     <nameId AltName="Name ID" Wiki="NPC Name Message Parameter ID" FmgRef="Title_Characters" />
@@ -469,7 +469,7 @@
     <maxAnklePitchAngle AltName="FootIK Ankle Pitch Limit Angle" Wiki="FootIK Ankle pitch limit angle (-1 no limit). If you have not set Foot End L S in HAT, this angle is used in common with rolls." />
     <resist_freeze AltName="Resist - Frostbite" Wiki="Difficulty in getting cold air condition abnormal" />
     <freezeGuardResist AltName="Guard Resist - Frostbite" Wiki="How much to cut the attack power against cold air (set as a special effect parameter)" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
     <hpBurnDamageRate AltName="HP Burn Damage %" Wiki="Adjusts the amount of HP Burn suffered from Destined Death/Black Flame sources." />
     <lockCameraParamId AltName="Lock Camera Param ID" Wiki="The ID of the lock camera parameter applied to the camera when locked on. Highest priority. Unused if -1" Refs="LockCamParam" />
     <spEffectID16 AltName="SpEffect ID [16]" Wiki="Resident special effects 16" Refs="SpEffectParam"/>
@@ -522,7 +522,7 @@
     <updateActivatePriolity AltName="Activation Update Priority" Wiki="Used to determine the activation / renewal level. The larger it is, the lower the update level will be even if you are far from the player." />
     <chrNavimeshFlag_Alive AltName="Chr Navmesh Flag - Alive" Wiki="Flag the value of the touching Nav Mesh while the character is alive. Does not follow the movement." Enum="NPC_NAVIMESH_FLAG" />
     <chrNavimeshFlag_Dead AltName="Chr Navmesh Flag - Dead" Wiki="Flag the value on the touching Nav Mesh while the character is dying. Does not follow the movement." Enum="NPC_NAVIMESH_FLAG" />
-    <pad7 AltName="" IsHidden=""/>
+    <pad7 AltName="" Padding=""/>
     <wheelRotType AltName="Wheel Rotation Type" Wiki="Wheel control type" Enum="NPC_WHEEL_ROT_TYPE" />
     <wheelRotRadius AltName="Wheel Rotation Radius" Wiki="Specify the radius of the wheel [m]" />
     <retargetMoveRate AltName="Retarget Movement Rate" Wiki="Magnification of movement amount at the time of retargeting" />
@@ -553,7 +553,7 @@
     <stepDispInterpolateTime AltName="Step Display Interpolation Time" Wiki="Step crossing display interpolation time" />
     <stepDispInterpolateTriggerValue AltName="Step Display Interpolation Trigger Value" Wiki="Step crossing display activation judgment value" />
     <lockScoreOffset AltName="Lock Score Offset" Wiki="Lock score correction value" />
-    <pad12 AltName="" IsHidden=""/>
+    <pad12 AltName="" Padding=""/>
     
     <isConsideredUndead AltName="Is Considered Undead" IsBool="" Wiki="Appears to determine whether an NPC is affected by anti-Undead effects." />
     <dlcGameClearSpEffectID AltName="DLC Completion SpEffect ID" Refs="SpEffectParam" Wiki="Game Clear SpEffect applied after completing the DLC. Only applies once, does not ramp up per NG+ cycle." />

@@ -11,7 +11,7 @@
     <snapGain AltName="Snap Gain" />
     <enable AltName="Enable" IsBool="" />
     <partsHitMaskNo AlTName="Parts Hit Mask ID" />
-    <endPadding IsHidden="" />
+    <endPadding Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

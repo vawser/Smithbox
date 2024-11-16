@@ -7,7 +7,7 @@
 	
 	<pad2_1 
     AltName=""
-    IsHidden="" />
+    Padding="" />
 	
 	<animId 
     AltName="Animation ID" 
@@ -40,7 +40,7 @@
     
 	<pad99 
     AltName=""
-    IsHidden="" />
+    Padding="" />
 	
   </Field>
   <Self />

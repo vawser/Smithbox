@@ -10,7 +10,7 @@
     <mainRustTextureBrightnessFactor AltName="Main Rust Texture: Brightness Factor" Wiki="0 is bright, higher values are darker" />
     <trimRustTextureBrightnessFactor AltName="Trim Rust Texture: Brightness Factor" Wiki="0 is bright, higher values are darker" />
     
-    <endPadding IsHidden="" />
+    <endPadding Padding="" />
   </Field>
   <Self Wiki="Defines the Weathering options for Armored Cores.\n\nRow ID links the Preset to the icon texture in SB_Weathering.dds and SB_Weathering.layout\n\nRow ID + 210801 links the Preset to the FMG name it uses in the menu."/>
 </PARAMMETA>

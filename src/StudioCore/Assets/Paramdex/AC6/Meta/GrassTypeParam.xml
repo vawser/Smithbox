@@ -34,7 +34,7 @@
     <lod0ClusterType AltName="LOD 0 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />
     <lod1ClusterType AltName="LOD 1 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />
     <lod2ClusterType AltName="LOD 2 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />
-    <pad0 AltName="" IsHidden=""/>
+    <pad0 AltName="" Padding=""/>
     <distributionType AltName="Placement Method" Wiki="" Enum="GRASS_DISTRIBUTION_TYPE_ENUM" />
     <baseDensity AltName="Base Density" Wiki="" />
     <model0Name AltName="Model Name [0]" Wiki="" />
@@ -59,13 +59,13 @@
     <flatRadius AltName="Plane Distance" Wiki="" />
     <castShadow AltName="Cast Shadow" Wiki="" Enum="GRASS_SHADOW_TYPE_ENUM" />
     <windAmplitude AltName="Wind Amplitude" Wiki="" />
-    <pad1 AltName="" IsHidden=""/>
+    <pad1 AltName="" Padding=""/>
     <windCycle AltName="Wind Speed" Wiki="" />
     <orientationAngle AltName="Direction" Wiki="Random for -1" />
     <orientationRange AltName="Direction Range" Wiki="" />
     <spacing AltName="Model Spacing" Wiki="" />
     <dithering AltName="Dithering" Wiki="" Enum="GRASS_DITHERING_TYPE_ENUM" />
-    <pad AltName="" IsHidden=""/>
+    <pad AltName="" Padding=""/>
     <simpleModelName AltName="Simple Model Name" Wiki="" />
     <model1Name AltName="Model Name [1]" Wiki="" />
   </Field>

@@ -137,7 +137,7 @@
   </Enums>
   
   <Field>
-    <pad1 IsHidden="" />
+    <pad1 Padding="" />
     
     <msgId AltName="Message ID" Wiki="FMG ID for the talk message." FmgRef="Talk_Messages" />
     <voiceId AltName="Voice ID" Wiki="Soundbank ID for the talk message." SoundAlias="" />
@@ -149,8 +149,8 @@
     <reactionId AltName="Reaction ID" Wiki="Conversation specification when returning-> Conversation" />
     <eventId AltName="Event ID" Wiki="Event ID-> Event" />
     
-    <UnkShort0x2C IsHidden="" />
-    <UnkShort0x2E IsHidden="" />
+    <UnkShort0x2C Padding="" />
+    <UnkShort0x2E Padding="" />
     
     <!-- This uses an enum instead of a FMG ref since the ID refers to a range, the actual name isn't actually present at the specific passed ID -->
     <characterNameTextId AltName="Character Name Text ID" Wiki="Name that appears with subtitles when character is talking. ID refers to base ID of the 10 ID range used for each character." Enum="CHARACTER_NAMES" />

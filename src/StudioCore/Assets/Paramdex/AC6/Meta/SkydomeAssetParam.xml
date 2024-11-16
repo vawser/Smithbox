@@ -9,8 +9,8 @@
     <assetEnvironmentGeometryParamId6 AltName="Asset Param ID [6]" Refs="AssetEnvironmentGeometryParam" />
     <assetEnvironmentGeometryParamId7 AltName="Asset Param ID [7]" Refs="AssetEnvironmentGeometryParam" />
     <assetEnvironmentGeometryParamId8 AltName="Asset Param ID [8]" Refs="AssetEnvironmentGeometryParam" />
-    <pad1 IsHidden="" />
-    <pad2 IsHidden="" />
+    <pad1 Padding="" />
+    <pad2 Padding="" />
   </Field>
   <Self />
 </PARAMMETA>

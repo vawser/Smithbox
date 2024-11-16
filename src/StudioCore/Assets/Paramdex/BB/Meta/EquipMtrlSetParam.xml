@@ -17,7 +17,7 @@
     <isDisableDispNum04 AltName="Disable Display Number 4" Wiki="Whether to disable the number display" IsBool="" />
     <isDisableDispNum05 AltName="Disable Display Number 5" Wiki="Whether to disable the number display" IsBool="" />
     <isDisableDispNum06 AltName="Disable Display Number 6" Wiki="Whether to disable the number display" IsBool="" />
-    <pad IsHidden="" />
+    <pad Padding="" />
   </Field>
   <Self Wiki="Upgrade Material data"/>
 </PARAMMETA>
