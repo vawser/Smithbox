@@ -152,16 +152,16 @@
     Wiki="Time from destruction to forced stop of rigid body (do not force stop at 0)" />
     
     <breakSfxId 
-    AltName="Destruction SFX: ID" 
+    AltName="Destruction Particle: ID" 
     Wiki="SFX ID on destruction (-1: default (810030))" 
     ParticleAlias="" />
     
     <breakSfxCpId 
-    AltName="Destruction SFX: Dummy Polygon ID" 
+    AltName="Destruction Particle: Dummy Polygon ID" 
     Wiki="SFX generation position at the time of destruction Dummy Polygon ID (-1: placement position)" />
     
     <breakLandingSfxId 
-    AltName="Destruction Landing SFX ID" 
+    AltName="Landing Destruction Particle: ID" 
     Wiki="Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1: does not occur)" 
     ParticleAlias="" />
     
@@ -338,55 +338,55 @@
     Wiki="Burnup threshold for switching to the ruptured state" />
     
     <burnSfxId 
-    AltName="Burn SFX ID [0]" 
+    AltName="Burn Particle: ID [0]" 
     Wiki="SFX ID at the time of combustion: 0 (-1: No SFX)" 
     ParticleAlias="" />
     
     <burnSfxId_1 
-    AltName="Burn SFX ID [1]" 
+    AltName="Burn Particle: ID [1]" 
     Wiki="SFX ID at the time of combustion: 1 (-1: No SFX)" 
     ParticleAlias="" />
     
     <burnSfxId_2 
-    AltName="Burn SFX ID [2]" 
+    AltName="Burn Particle: ID [2]" 
     Wiki="SFX ID at the time of combustion: 2 (-1: No SFX)" 
     ParticleAlias="" />
     
     <burnSfxId_3 
-    AltName="Burn SFX ID [3]"
+    AltName="Burn Particle: ID [3]"
     Wiki="SFX ID at the time of combustion: 3 (-1: No SFX)" 
     ParticleAlias="" />
     
     <burnSfxDelayTimeMin 
-    AltName="Burn SFX Minimum Delay Time [0]" 
+    AltName="Burn Particle: Minimum Delay Time [0]" 
     Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     
     <burnSfxDelayTimeMin_1 
-    AltName="Burn SFX Minimum Delay Time [1]" 
+    AltName="Burn Particle: Minimum Delay Time [1]" 
     Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     
     <burnSfxDelayTimeMin_2 
-    AltName="Burn SFX Minimum Delay Time [2]" 
+    AltName="Burn Particle: Minimum Delay Time [2]" 
     Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     
     <burnSfxDelayTimeMin_3 
-    AltName="Burn SFX Minimum Delay Time [3]" 
+    AltName="Burn Particle: Minimum Delay Time [3]" 
     Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     
     <burnSfxDelayTimeMax 
-    AltName="Burn SFX Maximum Delay Time [0]" 
+    AltName="Burn Particle: Maximum Delay Time [0]" 
     Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     
     <burnSfxDelayTimeMax_1 
-    AltName="Burn SFX Maximum Delay Time [1]" 
+    AltName="Burn Particle: Maximum Delay Time [1]" 
     Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     
     <burnSfxDelayTimeMax_2 
-    AltName="Burn SFX Maximum Delay Time [2]" 
+    AltName="Burn Particle: Maximum Delay Time [2]" 
     Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     
     <burnSfxDelayTimeMax_3 
-    AltName="Burn SFX Maximum Delay Time [3]" 
+    AltName="Burn Particle: Maximum Delay Time [3]" 
     Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     
     <burnBulletBehaviorId 
@@ -612,15 +612,15 @@
     Wiki="Dummy poly ID of the location where the destruction sound is played (-1: placement position)" />
     
     <breakSfxOffsetX 
-    AltName="Destruction SFX: Offset X" 
+    AltName="Destruction Particle: Offset X" 
     Wiki="Coordinates to offset for breakSfxCpId field" />
     
     <breakSfxOffsetY 
-    AltName="Destruction SFX: Offset Y" 
+    AltName="Destruction Particle: Offset Y" 
     Wiki="Coordinates to offset for breakSfxCpId field" />
     
     <breakSfxOffsetZ 
-    AltName="Destruction SFX: Offset Z" 
+    AltName="Destruction Particle: Offset Z" 
     Wiki="Coordinates to offset for breakSfxCpId field" />
     
     <particle_shape 

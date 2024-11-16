@@ -2,12 +2,12 @@
 <PARAMMETA XmlVersion="0">
   <Field>
     <sfxId_0 
-    AltName="SFX ID [0]" 
+    AltName="Particle: ID [0]" 
     Wiki="0: SfxID" 
     ParticleAlias="" />
     
     <dmypolyId_0 
-    AltName="Dummy Poly ID [0]" 
+    AltName="Particle: Dummy Polygon ID [0]" 
     Wiki="0: Dummy Polygon ID" />
     
     <reserve_0 
@@ -15,12 +15,12 @@
     IsHidden=""/>
     
     <sfxId_1 
-    AltName="SFX ID [1]" 
+    AltName="Particle: ID [1]" 
     Wiki="1: SfxID" 
     ParticleAlias="" />
     
     <dmypolyId_1 
-    AltName="Dummy Poly ID [1]" 
+    AltName="Particle: Dummy Polygon ID [1]" 
     Wiki="1: Dummy Polygon ID" />
     
     <reserve_1 
@@ -28,12 +28,12 @@
     IsHidden=""/>
     
     <sfxId_2 
-    AltName="SFX ID [2]" 
+    AltName="Particle: ID [2]" 
     Wiki="2: SfxID" 
     ParticleAlias="" />
     
     <dmypolyId_2 
-    AltName="Dummy Poly ID [2]" 
+    AltName="Particle: Dummy Polygon ID [2]" 
     Wiki="2: Dummy Polygon ID" />
     
     <reserve_2 
@@ -41,12 +41,12 @@
     IsHidden=""/>
     
     <sfxId_3 
-    AltName="SFX ID [3]" 
+    AltName="Particle: ID [3]" 
     Wiki="3: SfxID" 
     ParticleAlias="" />
     
     <dmypolyId_3 
-    AltName="Dummy Poly ID [3]" 
+    AltName="Particle: Dummy Polygon ID [3]" 
     Wiki="3: Dummy Polygon ID" />
     
     <reserve_3 
@@ -54,12 +54,12 @@
     IsHidden=""/>
     
     <sfxId_4 
-    AltName="SFX ID [4]" 
+    AltName="Particle: ID [4]" 
     Wiki="4: SfxID" 
     ParticleAlias="" />
     
     <dmypolyId_4 
-    AltName="Dummy Poly ID [4]" 
+    AltName="Particle: Dummy Polygon ID [4]" 
     Wiki="4: Dummy Polygon ID" />
     
     <reserve_4 
@@ -67,12 +67,12 @@
     IsHidden=""/>
     
     <sfxId_5 
-    AltName="SFX ID [5]" 
+    AltName="Particle: ID [5]" 
     Wiki="5: SfxID" 
     ParticleAlias="" />
     
     <dmypolyId_5 
-    AltName="Dummy Poly ID [5]" 
+    AltName="Particle: Dummy Polygon ID [5]" 
     Wiki="5: Dummy Polygon ID" />
     
     <reserve_5 
@@ -80,12 +80,12 @@
     IsHidden=""/>
     
     <sfxId_6 
-    AltName="SFX ID [6]" 
+    AltName="Particle: ID [6]" 
     Wiki="6: SfxID" 
     ParticleAlias="" />
     
     <dmypolyId_6 
-    AltName="Dummy Poly ID [6]" 
+    AltName="Particle: Dummy Polygon ID [6]" 
     Wiki="6: Dummy Polygon ID" />
     
     <reserve_6 
@@ -93,12 +93,12 @@
     IsHidden=""/>
     
     <sfxId_7 
-    AltName="SFX ID [7]" 
+    AltName="Particle: ID [7]" 
     Wiki="7: SfxID"
     ParticleAlias="" />
     
     <dmypolyId_7 
-    AltName="Dummy Poly ID [7]" 
+    AltName="Particle: Dummy Polygon ID [7]" 
     Wiki="7: Dummy Polygon ID" />
     
     <isDisableIV 

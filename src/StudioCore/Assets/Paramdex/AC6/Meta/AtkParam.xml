@@ -122,7 +122,7 @@
     </Enum>
     <Enum Name="ATKPARAM_MULTI_HIT_MAX_BEH_TYPE" type="u8">
         <Option Value="0" Name="No Hit" />
-        <Option Value="1" Name="Hit - No Damage" />
+        <Option Value="1" Name="Hit: Ignore Damage" />
     </Enum>
     <Enum Name="ATK_PARAM_MAP_HIT" type="u8">
         <Option Value="0" Name="Normal" />
@@ -288,7 +288,10 @@
         <Option Value="0" Name="Giver" />
         <Option Value="1" Name="Receiver" />
     </Enum>
-    
+    <Enum Name="NPC_SP_EFFECT_ADD_COND_PARTS_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Ice Worm Head" />
+    </Enum>
   </Enums>
   <Field>
     <disableParam_NT 
@@ -501,19 +504,19 @@
     Wiki="Hit part" 
     Enum="ATK_PARAM_HIT_TYPE" />
     
-    <hit0_Priority 
+    <hti0_Priority 
     AltName="Hit 0: Priority" 
     Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     
-    <hit1_Priority 
+    <hti1_Priority 
     AltName="Hit 1: Priority" 
     Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     
-    <hit2_Priority 
+    <hti2_Priority 
     AltName="Hit 2: Priority" 
     Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     
-    <hit3_Priority 
+    <hti3_Priority 
     AltName="Hit 3: Priority" 
     Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     
@@ -1114,7 +1117,7 @@
     Wiki="Behavior on friendly hit."
     Enum="ATKPARAM_BEHAVIOR_ON_HIT_TYPE" />
     
-    <behaviorOnHitFriendly
+    <behaviorOnHitSelf
     AltName="Behavior on Hit: Self"
     Wiki="Behavior on self hit."
     Enum="ATKPARAM_BEHAVIOR_ON_HIT_TYPE" />
@@ -1323,7 +1326,853 @@
     AltName=""
     IsHidden="" />
     
+    <shooterKnockbackMoveTimeSec
+    AltName="Recoil Knockback: Acceleration Time"
+    Wiki="The time it takes to start slowing down due to the recoil (knockback) you receive when shooting. In seconds." />
     
+    <shooterKnockbackBrakeTimeSec
+    AltName="Recoil Knockback: Deceleration Time"
+    Wiki="The time from when you start decelerating due to the recoil (knockback) you receive when shooting until you stop. In seconds." />
+    
+    <shooterKnockbackDecayRate
+    AltName="Recoil Knockback: Deceleration Decay Curve"
+    Wiki="Deceleration speed curve coefficient due to the recoil (knockback) received when shooting (the larger the value, the stronger the brake will be at the end)" />
+    
+    <shooterFlyKnockbackMPS
+    AltName="Aerial Recoil Knockback: Force"
+    Wiki="Recoil (knockback) speed received when shooting. In metres per second." />
+    
+    <shooterFlyKnockbackMoveTimeSec
+    AltName="Aerial Recoil Knockback: Acceleration Time"
+    Wiki="The time it takes to start slowing down due to the recoil (knockback) you receive when shooting. In seconds." />
+    
+    <shooterFlyKnockbackBrakeTimeSec
+    AltName="Aerial Recoil Knockback: Deceleration Time"
+    Wiki="The time from when you start decelerating due to the recoil (knockback) you receive when shooting until you stop. In seconds." />
+    
+    <shooterFlyKnockbackDecayRate
+    AltName="Aerial Recoil Knockback: Deceleration Decay Curve"
+    Wiki="Deceleration speed curve coefficient due to the recoil (knockback) received when shooting (the larger the value, the stronger the brake will be at the end)" />
+    
+    <statusAilmentAtkPowerCorrectRate
+    AltName="Attack Correction: Status Abnormality"
+    Wiki="Multiplying the special effect's status abnormality attack power." />
+    
+    <statusAilmentAtkPowerCorrectRate_byPoint
+    AltName="Attack Correction: Status Abnormality (by Point)"
+    Wiki="A multiplier correction will be applied to the special effect 'Do you apply the abnormal status attack power multiplier correction?'" />
+    
+    <spEffectAtkPowerCorrectRate_byPoint
+    AltName="Attack Correction: SpEffect Attack Power (by Point)"
+    Wiki="A multiplier correction is applied to the attack power [point] of the special effect." />
+    
+    <spEffectAtkPowerCorrectRate_byRate
+    AltName="Attack Correction: SpEffect Attack Power (by Rate)"
+    Wiki="Multiplier correction is applied to the attack power multiplier of special effects." />
+    
+    <spEffectAtkPowerCorrectRate_byDmg
+    AltName="Attack Correction: SpEffect Attack Power (by Damage)"
+    Wiki="Attacker side of special effects: Performs multiplier correction for damage multiplier." />
+    
+    <atkPa
+    AltName="Damage: Pulse Armor Interference"
+    Wiki="The base Pulse Armor attack power." />
+    
+    <impactPower
+    AltName="Damage: Impact"
+    Wiki="The base Impact attack power." />
+    
+    <damageLevelConvId
+    AltName="Damage Level Conversion ID: Hostile"
+    Wiki="ID of damage level conversion parameter" 
+    Refs="DamageLevelConvParam" />
+    
+    <damageLevelConvId_Friend
+    AltName="Damage Level Conversion ID: Friendly"
+    Wiki="ID of damage level conversion parameter" 
+    Refs="DamageLevelConvParam" />
+    
+    <bBodyTrunkBreakEnable
+    AltName="Is Core Break Possible"
+    Wiki="Can you do a core break?" 
+    IsBool="" />
+    
+    <addDamageAnimType
+    AltName="Additive Damage Animation Type"
+    Wiki="Additive damage animation type that the opponent regenerates" 
+    Enum="ATKPARAM_ADD_DAMAGE_ANIM_TYPE" />
+    
+    <addEndPermanentStunValue
+    AltName="Add End Permanent Stun Value (by Point)"
+    Wiki="" />
+    
+    <paPenetrationPower
+    AltName="Damage: Pulse Armor Penetration"
+    Wiki="Weapon para/NPC para: Used in conjunction with PA output to calculate PA cut rate." />
+    
+    <hit1_Fan_Radius
+    AltName="Hit 1: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit2_Fan_Radius
+    AltName="Hit 2: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit3_Fan_Radius
+    AltName="Hit 3: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit4_Fan_Radius
+    AltName="Hit 4: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit5_Fan_Radius
+    AltName="Hit 5: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit6_Fan_Radius
+    AltName="Hit 6: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit7_Fan_Radius
+    AltName="Hit 7: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit8_Fan_Radius
+    AltName="Hit 8: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit9_Fan_Radius
+    AltName="Hit 9: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit10_Fan_Radius
+    AltName="Hit 10: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit11_Fan_Radius
+    AltName="Hit 11: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit12_Fan_Radius
+    AltName="Hit 12: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit13_Fan_Radius
+    AltName="Hit 13: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit14_Fan_Radius
+    AltName="Hit 14: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit15_Fan_Radius
+    AltName="Hit 15: Fan Radius"
+    Wiki="In metres" />
+    
+    <hit0_Fan_RotY
+    AltName="Hit 0: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit1_Fan_RotY
+    AltName="Hit 1: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit2_Fan_RotY
+    AltName="Hit 2: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit3_Fan_RotY
+    AltName="Hit 3: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit4_Fan_RotY
+    AltName="Hit 4: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit5_Fan_RotY
+    AltName="Hit 5: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit6_Fan_RotY
+    AltName="Hit 6: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit7_Fan_RotY
+    AltName="Hit 7: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit8_Fan_RotY
+    AltName="Hit 8: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit9_Fan_RotY
+    AltName="Hit 9: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit10_Fan_RotY
+    AltName="Hit 10: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit11_Fan_RotY
+    AltName="Hit 11: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit12_Fan_RotY
+    AltName="Hit 12: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit13_Fan_RotY
+    AltName="Hit 13: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit14_Fan_RotY
+    AltName="Hit 14: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit15_Fan_RotY
+    AltName="Hit 15: Fan Y-Axis Rotation"
+    Wiki="Fan shape determination Y-axis rotation. In degrees." />
+    
+    <hit0_Fan_RotZ
+    AltName="Hit 0: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit1_Fan_RotZ
+    AltName="Hit 1: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit2_Fan_RotZ
+    AltName="Hit 2: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit3_Fan_RotZ
+    AltName="Hit 3: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit4_Fan_RotZ
+    AltName="Hit 4: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit5_Fan_RotZ
+    AltName="Hit 5: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit6_Fan_RotZ
+    AltName="Hit 6: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit7_Fan_RotZ
+    AltName="Hit 7: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit8_Fan_RotZ
+    AltName="Hit 8: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit9_Fan_RotZ
+    AltName="Hit 9: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit10_Fan_RotZ
+    AltName="Hit 10: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit11_Fan_RotZ
+    AltName="Hit 11: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit12_Fan_RotZ
+    AltName="Hit 12: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit13_Fan_RotZ
+    AltName="Hit 13: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit14_Fan_RotZ
+    AltName="Hit 14: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit15_Fan_RotZ
+    AltName="Hit 15: Fan Z-Axis Rotation"
+    Wiki="Fan shape determination Z-Axis rotation. In degrees." />
+    
+    <hit0_Fan_UpOffset
+    AltName="Hit 0: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit1_Fan_UpOffset
+    AltName="Hit 1: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit2_Fan_UpOffset
+    AltName="Hit 2: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit3_Fan_UpOffset
+    AltName="Hit 3: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit4_Fan_UpOffset
+    AltName="Hit 4: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit5_Fan_UpOffset
+    AltName="Hit 5: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit6_Fan_UpOffset
+    AltName="Hit 6: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit7_Fan_UpOffset
+    AltName="Hit 7: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit8_Fan_UpOffset
+    AltName="Hit 8: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit9_Fan_UpOffset
+    AltName="Hit 9: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit10_Fan_UpOffset
+    AltName="Hit 10: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit11_Fan_UpOffset
+    AltName="Hit 11: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit12_Fan_UpOffset
+    AltName="Hit 12: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit13_Fan_UpOffset
+    AltName="Hit 13: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit14_Fan_UpOffset
+    AltName="Hit 14: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit15_Fan_UpOffset
+    AltName="Hit 15: Fan Upward Offset"
+    Wiki="Fan shape determination Upward Offset. In metres." />
+    
+    <hit0_Fan_DownOffset
+    AltName="Hit 0: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit1_Fan_DownOffset
+    AltName="Hit 1: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit2_Fan_DownOffset
+    AltName="Hit 2: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit3_Fan_DownOffset
+    AltName="Hit 3: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit4_Fan_DownOffset
+    AltName="Hit 4: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit5_Fan_DownOffset
+    AltName="Hit 5: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit6_Fan_DownOffset
+    AltName="Hit 6: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit7_Fan_DownOffset
+    AltName="Hit 7: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit8_Fan_DownOffset
+    AltName="Hit 8: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit9_Fan_DownOffset
+    AltName="Hit 9: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit10_Fan_DownOffset
+    AltName="Hit 10: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit11_Fan_DownOffset
+    AltName="Hit 11: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit12_Fan_DownOffset
+    AltName="Hit 12: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit13_Fan_DownOffset
+    AltName="Hit 13: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit14_Fan_DownOffset
+    AltName="Hit 14: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit15_Fan_DownOffset
+    AltName="Hit 15: Fan Downward Offset"
+    Wiki="Fan shape determination Downward Offset. In metres." />
+    
+    <hit0_Fan_InternalAngle
+    AltName="Hit 0: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit1_Fan_InternalAngle
+    AltName="Hit 1: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit2_Fan_InternalAngle
+    AltName="Hit 2: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit3_Fan_InternalAngle
+    AltName="Hit 3: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit4_Fan_InternalAngle
+    AltName="Hit 4: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit5_Fan_InternalAngle
+    AltName="Hit 5: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit6_Fan_InternalAngle
+    AltName="Hit 6: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit7_Fan_InternalAngle
+    AltName="Hit 7: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit8_Fan_InternalAngle
+    AltName="Hit 8: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit9_Fan_InternalAngle
+    AltName="Hit 9: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit10_Fan_InternalAngle
+    AltName="Hit 10: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit11_Fan_InternalAngle
+    AltName="Hit 11: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit12_Fan_InternalAngle
+    AltName="Hit 12: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit13_Fan_InternalAngle
+    AltName="Hit 13: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit14_Fan_InternalAngle
+    AltName="Hit 14: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <hit15_Fan_InternalAngle
+    AltName="Hit 15: Fan Attack Range Angle"
+    Wiki="Fan shape determination Attack Range Angle. In degrees." />
+    
+    <brokenPartsBlowAwayAngleVertical
+    AltName="Part Destruction: Vertical Blow-off Angle"
+    Wiki="The reference direction changes depending on the setting of 'Blow-off direction correction type at the time of damage', and the horizontal direction is 0." />
+    
+    <brokenPartsBlowAwayAngleHorizontal
+    AltName="Part Destruction: Horizontal Blow-off Angle"
+    Wiki="The reference direction changes depending on the setting of 'Blow-off direction correction type at the time of damage'" />
+    
+    <brokenPartsBlowAwayForce
+    AltName="Part Destruction: Blow-off Force"
+    Wiki="In kilograms x metres per second" />
+    
+    <brokenPartsRotationAxisAngleVertical
+    AltName="Part Destruction: Vertical Axis Tilt"
+    Wiki="Regarding the tilt of the rotation axis, always calculate it based on the master direction of the target (Y direction in world space) without making any corrections based on the position of the bullet, and the Y direction is 0. In degrees." />
+    
+    <brokenPartsRotationAxisAngleHorizontal
+    AltName="Part Destruction: Horizontal Axis Tilt"
+    Wiki="Regarding the tilt of the rotation axis, always calculate it based on the master direction of the victim (Y direction in world space), without making any corrections based on the position of the victim." />
+    
+    <brokenPartsRotationForce
+    AltName="Part Destruction: Rotation Force"
+    Wiki="In kilograms x degrees per second" />
+    
+    <partsBreakLotteryId
+    AltName="Part Destruction: Damage Lot ID"
+    Wiki="The damage lot to roll upon part destruction." 
+    Refs="PartsBreakLotteryParam" />
+    
+    <brokenPartsBlowAwayDirectionCompensationType
+    AltName="Part Destruction: Blow-off Correction Type"
+    Wiki="Correction type applied to the blow-off direction." 
+    Enum="ATK_PARAM_BROKEN_PARTS_BLOW_AWAY_DIRECTION_COMPENSATION_TYPE" />
+    
+    <damageAnimAtkDir
+    AltName="Damage Animation Attack Direction"
+    Wiki="Values ​​referenced when playing damage animation"
+    Enum="ATKPARAM_DAMAGE_ANIM_ATK_DIR" />
+    
+    <atkObjDamage_Hp
+    AltName="Damage: Object HP"
+    Wiki="Damage to asset HP" />
+    
+    <knockbackDirType
+    AltName="Knockback Direction Correction Type"
+    Wiki="" 
+    Enum="ATKPARAM_KNOCKBACK_DIR_TYPE" />
+    
+    <knockbackDirAngAxisX
+    AltName="Knockback X-Axis Angle"
+    Wiki="Correction angle used in knockback direction correction type. In degrees." />
+    
+    <knockbackDirAngAxisY
+    AltName="Knockback Y-Axis Angle"
+    Wiki="Correction angle used in knockback direction correction type. In degrees." />
+    
+    <brokenPartsKnockbackRate
+    AltName="Part Destruction: Knockback Correction"
+    Wiki="Applied speed multiplier due to knockback when damaged parts are blown away." />
+    
+    <pad10
+    AltName=""
+    IsHidden="" />
+    
+    <multiHit_MaxCountBehavior
+    AltName="Multi-Hit: Max Count Behavior"
+    Wiki="Behavior when the number of multi-hit hits is at the upper limit" 
+    Enum="ATKPARAM_MULTI_HIT_MAX_BEH_TYPE" />
+    
+    <multiHit_MaxCount
+    AltName="Multi-Hit: Max Count"
+    Wiki="Upper limit of number of multi-hits" />
+    
+    <multiHit_ShareId
+    AltName="Multi-Hit: Shared Hit ID"
+    Wiki="Shared ID for multi-stage hit count" />
+    
+    <multiHit_ResetTimeSec
+    AltName="Multi-Hit: Count Reset Time"
+    Wiki="Time to reset multi-hit count. In seconds." />
+    
+    <hitSfx_RotAngDegZ
+    AltName="Hit Particle: Z-Axis Rotation"
+    Wiki="Hit SFX Z-axis rotation angle" />
+    
+    <hitSfx_RandRotAngDegZ
+    AltName="Hit Particle: Max Random Z-Axis Rotation"
+    Wiki="Hit SFX Z-axis rotation angle, max random degree offset" />
+    
+    <staggerCriticalRate_Phys
+    AltName="Direct Hit Correction: Kinetic"
+    Wiki="Direct Hit multiplier for Kinetic damage." />
+    
+    <staggerCriticalRate_Mag
+    AltName="Direct Hit Correction: Energy"
+    Wiki="Direct Hit multiplier for Energy damage." />
+    
+    <staggerCriticalRate_Fire
+    AltName="Direct Hit Correction: Explosive"
+    Wiki="Direct Hit multiplier for Explosive damage." />
+    
+    <staggerCriticalRate_Thun
+    AltName="Direct Hit Correction: Coral"
+    Wiki="Direct Hit multiplier for Coral damage." />
+    
+    <staggerCriticalRate_Dark
+    AltName="Direct Hit Correction: Dark"
+    Wiki="Direct Hit multiplier for Dark damage." />
+    
+    <spEffectAddCondParts_0
+    AltName="SpEffect Grant Condition [0]"
+    Wiki="Adds a special effect when hitting the specified area" 
+    Enum="NPC_SP_EFFECT_ADD_COND_PARTS_TYPE" />
+    
+    <isAdfPartsGroupNoHit
+    AltName="Ignore Hits to Parts tagged with TAE Disable Damage event"
+    Wiki="When ○, ignores hits to the specified part with the TAE flag 'Disable damage by specifying part (for ADF)'" 
+    IsBool="" />
+    
+    <isMultiHitArmorHit_DisableHitStop
+    AltName="Disable Hit Stop for Multi-Hit Armor Hits"
+    Wiki="Do you want to prevent hit stop when armor hits?" 
+    IsBool="" />
+    
+    <unk353_2
+    AltName="Unknown 353_2"
+    Wiki="" />
+    
+    <pad_11
+    AltName=""
+    IsHidden="" />
+    
+    <decalBaseId1
+    AltName="Decal ID [1]"
+    Wiki="Decal identifier 1 (5 digits)" 
+    Refs="DecalParam" />
+    
+    <decalBaseId2
+    AltName="Decal ID [2]"
+    Wiki="Decal identifier 2 (5 digits)" 
+    Refs="DecalParam" />
+    
+    <sfxId_Critical
+    AltName="Critical Hit: Particle ID"
+    Wiki="SFXID on critical hit. -1 does not occur." />
+    
+    <sfxId_CriticalSfxLevel
+    AltName="Critical Hit: Particle Strength"
+    Wiki="SFX strength on critical hit. does not occur without" 
+    Enum="ATKPARAM_CRITICAL_SFX_LEVEL_TYPE" />
+    
+    <HitRumblePriority
+    AltName="Hit Vibration Priority"
+    Wiki="The higher the priority value during vibration playback, the higher the priority." />
+    
+    <pad_12
+    AltName=""
+    IsHidden="" />
+    
+    <hit0_Fan_RotX
+    AltName="Hit 0: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit1_Fan_RotX
+    AltName="Hit 1: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit2_Fan_RotX
+    AltName="Hit 2: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit3_Fan_RotX
+    AltName="Hit 3: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit4_Fan_RotX
+    AltName="Hit 4: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit5_Fan_RotX
+    AltName="Hit 5: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit6_Fan_RotX
+    AltName="Hit 6: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit7_Fan_RotX
+    AltName="Hit 7: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit8_Fan_RotX
+    AltName="Hit 8: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit9_Fan_RotX
+    AltName="Hit 9: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit10_Fan_RotX
+    AltName="Hit 10: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit11_Fan_RotX
+    AltName="Hit 11: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit12_Fan_RotX
+    AltName="Hit 12: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit13_Fan_RotX
+    AltName="Hit 13: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit14_Fan_RotX
+    AltName="Hit 14: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit15_Fan_RotX
+    AltName="Hit 15: Fan X-Axis Rotation"
+    Wiki="Fan shape determination X-Axis rotation. In degrees." />
+    
+    <hit0_MeleeKnockbackDmyPoly
+    AltName="Hit 0: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit1_MeleeKnockbackDmyPoly
+    AltName="Hit 1: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit2_MeleeKnockbackDmyPoly
+    AltName="Hit 2: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit3_MeleeKnockbackDmyPoly
+    AltName="Hit 3: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit4_MeleeKnockbackDmyPoly
+    AltName="Hit 4: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit5_MeleeKnockbackDmyPoly
+    AltName="Hit 5: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit6_MeleeKnockbackDmyPoly
+    AltName="Hit 6: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit7_MeleeKnockbackDmyPoly
+    AltName="Hit 7: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit8_MeleeKnockbackDmyPoly
+    AltName="Hit 8: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit9_MeleeKnockbackDmyPoly
+    AltName="Hit 9: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit10_MeleeKnockbackDmyPoly
+    AltName="Hit 10: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit11_MeleeKnockbackDmyPoly
+    AltName="Hit 11: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit12_MeleeKnockbackDmyPoly
+    AltName="Hit 12: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit13_MeleeKnockbackDmyPoly
+    AltName="Hit 13: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit14_MeleeKnockbackDmyPoly
+    AltName="Hit 14: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <hit15_MeleeKnockbackDmyPoly
+    AltName="Hit 15: Melee Knockback - Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for melee attack knockback" />
+    
+    <HitHDRumbleId 
+    AltName="HD Vibration on Hit" 
+    Wiki="Vibration ID on hit (-1 disabled). This is the vibration ID when none of the following three apply." />
+    
+    <HitHDRumbleIdByNormal 
+    AltName="HD Vibration on Hit: Dummy Polygon Tip" 
+    Wiki="Hit vibration ID when hitting the tip of the dummy polygon (-1 disabled)" />
+    
+    <HitHDRumbleIdByMiddle 
+    AltName="HD Vibration on Hit: Dummy Polygon Center" 
+    Wiki="Hit vibration ID when hitting the center of the dummy polygon (-1 disabled)" />
+    
+    <HitHDRumbleIdByRoot 
+    AltName="HD Vibration on Hit: Dummy Polygon Root" 
+    Wiki="Hit vibration ID when hitting the root of the dummy polygon (-1 disabled)" />
+    
+    <padHDRumbleID
+    AltName="HD Vibration on Hit: Pad"
+    Wiki="ID of pad HD vibration when hitting player" />
+    
+    <padHDRumbleID
+    AltName="HD Pad Vibration on Hit"
+    Wiki="ID of pad HD vibration when hitting player" />
+    
+    <padHDRumbleDefenseID
+    AltName="HD Pad Vibration on Guarded Hit"
+    Wiki="ID of pad HD vibration upon guarded hit" />
+    
+    <soundRestrictionSec
+    AltName="Playback Time Limit for Firing Sound"
+    Wiki="Regeneration thinning time of various SEs due to attacks. In seconds." />
+    
+    <soundLandingRestrictionSec
+    AltName="Playback Time Limit for Impact Sound"
+    Wiki="Regeneration thinning time of various SEs due to impact. In seconds." />
+    
+    <soundFlyRestrictionSec
+    AltName="Playback Time Limit for Hovering Sound"
+    Wiki="Regeneration thinning time of various SEs due to impact. In seconds." />
+    
+    <damageReactionDisableGravityTimeSec
+    AltName="Damage Reacion: Gravity Disable Time"
+    Wiki="Time to erase gravity with damage reaction" />
+    
+    <PulseSpAtkBonusImpact_Guard
+    AltName="Pulse Special Attack: Bonus Impact on Guard"
+    Wiki="Pulse special attack bonus impact power" />
+    
+    <PulseSpAtkBonusImpact_JustGuard
+    AltName="Pulse Special Attack: Bonus Impact on Just Guard"
+    Wiki="Pulse special attack bonus impact power" />
+    
+    <PulseSpAtkImpactCutDown_Guard
+    AltName="Pulse Special Attack: Impact Absorption on Guard"
+    Wiki="Pulse special attack impact value cut rate nullification amount" />
+    
+    <PulseSpAtkImpactCutDown_JustGuard
+    AltName="Pulse Special Attack: Impact Absorption on Just Guard"
+    Wiki="Pulse special attack impact value cut rate nullification amount" />
+    
+    <residualImpactPower
+    AltName="Damage: Impact when Unguarded"
+    Wiki="Residual impact force when not guarded" />
+    
+    <hit0_sfxmodelId
+    AltName="Hit 0: Particle Model ID"
+    Wiki="SFX model parameter ID for bending laser" />
+    
+    <knockbackBladeAddDmgMPS
+    AltName="Knockback: Additional Power for Blade"
+    Wiki="Additional damage knockback power for blade (speed). In metres per second." />
+    
+    <playerToEneHitCamRumbleId
+    AltName="Player to Enemy Hit Camera Vibration ID"
+    Wiki="The pad vibration ID (-1 disabled) becomes the dynamic ID when the player's attack hits the enemy." 
+    Refs="CameraRumbleParam" />
+    
+    <criticalHitSfxRestrictionSec
+    AltName="Direct Hit: Surpressed Particle Time"
+    Wiki="Critical hit SFX continuous occurrence suppression time. In seconds." />
+    
+    <multiHitArmorHit_OneHitCount
+    AltName="Multi-Hit: Grouped Number on Armor Hit"
+    Wiki="How many times should the armor hit for multi-stage hit count +1?" />
+    
+    <pad_13
+    AltName=""
+    IsHidden="" />
+    
+    <multiHitArmorHit_DamageRate
+    AltName="Multi-Hit: Damage Correction on Armor Hit"
+    Wiki="Damage multiplier on armor hit" />
+    
+    <pad_end
+    AltName=""
+    IsHidden="" />
     
   </Field>
   <Self />
