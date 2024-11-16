@@ -4,13 +4,14 @@
 - Add option to store imgui.ini in AppData.
 - Add option to replace install dir imgui.ini with stored one from AppData.
 
-- Add proper support for row index in Param Editor so dupe row IDs are handled properly
-
-- Add two Name list options: Developer and Community: 
- - Developer is any raw japanese/transcribed names
- - Community is adjusted names based on the developer names but tailored for modding usage
- 
 - Update Andre.Param to include the signed bitfield changes from SoulsFormats 
 
+- Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
+
+- Change Name lists to a JSON format:
+ - Holds row ID, row index, source name and community name 
+ (source being leaked row name)
+- Update name export options so it is simple to update the name lists via editing the row names in the Param Editor and then exporting
+ 
 - Update AC6 paramdex to use released AC6 paramdefs + adjust other stuff based on discoveries
 

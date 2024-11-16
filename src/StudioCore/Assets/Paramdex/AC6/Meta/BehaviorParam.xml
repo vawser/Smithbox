@@ -41,10 +41,57 @@
     </Enum>
   </Enums>
   <Field>
-    <variationId AltName="Behavior Variation ID" Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." />
-    <behaviorJudgeId AltName="Behavior Judge ID" Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine." VRef="behaviorVariation" />
-    <refType AltName="Reference Type" Wiki="Which param type to reference for attack behavior." Enum="BEHAVIOR_REF_TYPE" />
-    <refId AltName="Reference ID" Wiki="ID of param to use for attack behavior. Param used determined by refType" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    IsHidden="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    IsHidden="" />
+    
+    <variationId 
+    AltName="Behavior Variation ID" 
+    Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." />
+    
+    <behaviorJudgeId 
+    AltName="Behavior Judgement ID" 
+    Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TAE." 
+    VRef="variationId" />
+    
+    <ezStateBehaviorType_old
+    AltName="ID Calculation Rule"
+    Wiki="" />
+    
+    <refType 
+    AltName="Reference ID Type" 
+    Wiki="Which param type to reference for attack behavior." 
+    Enum="BEHAVIOR_REF_TYPE" />
+    
+    <consumeSA
+    AltName="Poise Consumption"
+    Wiki="Set the amount of Poise consumed during action" />
+    
+    <refId 
+    AltName="Reference ID" 
+    Wiki="ID of param to use for attack behavior. Param used determined by refType" 
+    Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
+    
+    <sfxVariationId
+    AltName="Particle Variation ID"
+    Wiki="Offset applied to the particle ID invoked in the TAE event" />
+    
+    
+    
     <bulletShotgunParamId1 AltName="BulletShotgunParam ID (1)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
     <bulletShotgunParamId2 AltName="BulletShotgunParam ID (2)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
     <dummyPolyRange_Min AltName="Bullet Emit: DummyPoly Range (Min)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the start of a range that ends with dummyPolyRange_Max. If max is -1, then a single dummypoly will be used." />
