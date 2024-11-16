@@ -86,11 +86,11 @@
     Wiki="Behavior ID" />
     
     <searchPoint 
-    AltNane="Search Degree Increase" 
+    AltNane="Search Level Increase" 
     Wiki="Increased search degree for characters within the audible range of AI sounds" />
     
 	<combatPoint 
-    AltName="Combat Degree Increase" 
+    AltName="Engagement Level Increase" 
     Wiki="Increased engagement of characters within the audible range of AI sounds" />
     
   </Field>
