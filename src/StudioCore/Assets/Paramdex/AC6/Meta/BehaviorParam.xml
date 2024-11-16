@@ -113,32 +113,224 @@
     Wiki="Set the amount of humanity consumed during action" 
     Obsolete="" />
     
-    <bulletShotgunParamId1 AltName="BulletShotgunParam ID (1)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
-    <bulletShotgunParamId2 AltName="BulletShotgunParam ID (2)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
-    <dummyPolyRange_Min AltName="Bullet Emit: DummyPoly Range (Min)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the start of a range that ends with dummyPolyRange_Max. If max is -1, then a single dummypoly will be used." />
-    <dummyPolyRange_Max AltName="Bullet Emit: DummyPoly Range (Max)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the end of a range that starts with dummyPolyRange_Min. If max is -1, then a single dummypoly will be used." />
-    <weaponBulletNum AltName="Bullet Count" />
-    <burstFireInterval AltName="Burst Fire Interval" />
-    <rapidFireInterval AltName="Rapid Fire Interval" />
-    <weaponChargedAmmunitionConsumption AltName="Charged Ammunition Consumption" />
-    <weaponRecoil AltName="Recoil" />
-    <missileHomingLockTime AltName="Missile Homing Lock Time" />
-    <missileMaxLockCount AltName="Missile Max Lock Count" />
-    <unkBulletSpreadFocalDist AltName="Bullet Spread Focal Distance" />
-    <weaponAttackHeatBuildup AltName="Heat Build-up on Attack" />
-    <channelAttackHeatBuildup AltName="Heat Build-up on Channeled Attack" />
-    <heatBuildup AltName="Heat Build-up" />
-    <burstFireAmount AltName="Burst Fire Amount" />
-    <bulletEmit_VerticalAdjustment AltName="Bullet Emit: Vertical Angle Adjustment" Wiki="Adjusts the emitted angle of any bullets on the vertical axis. Values between 0 and 128 adjust upwards, values 129 to 255 adjust downwards." />
-    <bulletEmit_UnknownAdjustment AltName="Bullet Emit: Unknown Angle Adjustment" Wiki="Adjusts the emitted angle of any bullets, although exact behavior is not known." />
-    <bulletEmit_HorizontalAdjustment AltName="Bullet Emit: Horizontal Angle Adjustment" Wiki="Adjusts the emitted angle of any bullets on the horizontal axis. Values 0 to 126 adjust to the right, values 127 to 256 adjust to left." />
-    <bulletEmit_Orientation AltName="Bullet Emit: Orientation Angle" Wiki="Affects the emitted bullet's direction.\n0 - Across\n50 - Left Diagonal\n100 - Right Straight\n150 - Right Diagonal\n-50 - Right Diagonal\n-100 - Left Straight\n-150 - Left Diagonal" />
-    <bulletEmit_RandomAngleChance AltName="Bullet Emit: Random Angle Adjustment Chance" Wiki="0 is no never randomly adjust angle, 100 is always randomly adjust angle" />
-    <bulletEmit_ProjectileCurving AltName="Bullet Emit: Projectile Curve Angle" Wiki="Larger the value, the more aggressive the angle. Positive is right, negative is left.\nIgnores lock-on." />
-    <bulletEmit_InitialEmitHeight AltName="Bullet Emit: Initial Height" Wiki="The initial height the bullet will go to after being emitted. Negative goes below, positive above." />
-    <bulletEmit_BulletAccuracy AltName="Bullet Emit: Accuracy" Wiki="Assuming 0 is the target's location, positive values will land ahead of target, negative values will land behind." />
-    <postChargeFireDelay AltName="Delay after Charge Attack Fire" />
-    <orbitActiveHeatBuildup AltName="Active Orbit Continuous Heat Build-up" Wik="Rate at which an active Orbit weapon gradually builds up heat." />
+    <pad1
+    AltName=""
+    Padding="" />
+    
+    <shootDmyPolyId
+    AltName="Shoot: Dummy Polygon Range Start ID"
+    Wiki="The starting ID in a range of Dummy Polygons used for shooting." />
+    
+    <shootEndDmyPolyId
+    AltName="Shoot: Dummy Polygon Range End ID"
+    Wiki="The ending ID in a range of Dummy Polygons used for shooting." />
+    
+    <shootAngle
+    AltName="Shoot: Firing Angle"
+    Wiki="Specifies how far forward the projectile should be fired. In degrees." />
+    
+    <shootAngleInterval
+    AltName="Shoot: Firing Angle Interval (Y-Axis)"
+    Wiki="When firing multiple projectiles, specify the interval at which to fire. (Y axis). In degrees." />
+    
+    <shootAngleXZ
+    AltName="Shoot: Firing Elevation Angle (X-Axis)"
+    Wiki="Additional elevation angle from horizontal. In degrees." />
+    
+    <bUseNumShootBullet
+    AltName="Consume Multiple Bullets when Firing Simultaneously"
+    Wiki="Consumes bullets for several times when fired simultaneously"
+    IsBool="" />
+    
+    <isSequenceShootWhenSameTimeShoot
+    AltName="Fire Sequentially even when Firing Simultaneously"
+    Wiki="When firing sequentially using multiple dummy polys, are bullets fired at the same time considered to be fired sequentially?"
+    IsBool="" />
+    
+    <isShootAngOffsetDisable
+    AltName="Apply Offset only to Guided Targets"
+    Wiki="When OFF, offset is also applied to the shooting angle; when ON, offset is disabled."
+    IsBool="" />
+    
+    <pad2
+    AltName=""
+    Padding="" />
+    
+    <pad3
+    AltName=""
+    Padding="" />
+    
+    <shootAngleXInterval
+    AltName="Shoot: Launch Elevation Angle Interval (X-Axis)"
+    Wiki="When firing multiple projectiles, specify the interval at which to fire.(X-axis). In degrees." />
+    
+    <shootAngleZ
+    AltName="Shoot: Firing Angle Rotation (Z-Axis)"
+    Wiki="Specifies how many times to rotate in the Z-axis direction when launching a projectile. In degrees." />
+    
+    <shootAngleZInterval
+    AltName="Shoot: Firing Angle Rotation Interval (Z-Axis)"
+    Wiki="When firing multiple projectiles, specify the interval at which to fire (Z-axis). In degrees." />
+    
+    <bulletRollAngleZ
+    AltName="Shoot: Firing Roll Angle (Z-Axis)"
+    Wiki="Additional angle in drilling direction (Z axis). In degrees." />
+    
+    <bulletRollAngleZInterbal
+    AltName="Shoot: Firing Roll Angle Interval (Z-Axis)"
+    Wiki="When firing multiple projectiles, specify the interval at which to fire (Z-axis). In degrees." />
+    
+    <bulletRollAngleZRandom
+    AltName="Shoot: Firing Roll Angle - Random Max (Z-Axis)"
+    Wiki="Upper limit of firing torsion angle random number (0 to 360)" />
+    
+    <shootTargetXOffset
+    AltName="Shoot: Target Offset (X-Axis)"
+    Wiki="Left and right offset of impact position. Shifts the target position left and right during firing and homing." />
+    
+    <targetYOffsetRange
+    AltName="Shoot: Target Offset (Y-Axis)"
+    Wiki="Vertical offset of impact position. Shifts the target position up and down during firing and homing." />
+    
+    <shootTargetZOffset
+    AltName="Shoot: Target Offset (Z-Axis)"
+    Wiki="Front and rear offset of impact position. Shifts the target position forward and backward during firing and homing." />
+    
+    <numShoot
+    AltName="Number of Shots"
+    Wiki="Number of bullets produced per cartridge (emitter). Does not affect ammo consumption" />
+    
+    <numContinueShoot
+    AltName="Number of Consecutive Shots"
+    Wiki="Number of times to fire continuously. The total number of bullets fired is the number of simultaneous shots x the number of consecutive shots." />
+    
+    <cupsleRotationDeg
+    AltName="Horizontal Capsule: Initial Roll Angle"
+    Wiki="Rotation angle of horizontal capsule. In degrees." />
+    
+    <shootInterval
+    AltName="Shoot: Consecutive Shoot Interval"
+    Wiki="Number of seconds between shots when firing continuously" />
+    
+    <reloadTimeSecond
+    AltName="Reload Time"
+    Wiki="Interval between one shot and the next shot" />
+    
+    <targetZOffsetRange
+    AltName="Curved Shoot: Target Offset Range (Z-Axis)"
+    Wiki="Forward and backward offset of the impact position for curved shots. Shifts the target position toward the front or back during firing and homing. In metres." />
+    
+    <targetXOffsetRange
+    AltName="Curved Shoot: Target Offset Range (X-Axis)"
+    Wiki="Left and right offset of the impact position for curved shots. Shifts the target position toward the front or back during firing and homing. In metres." />
+    
+    <bTargetAutoOffset
+    AltName="Is Target Position Automatically Offset"
+    Wiki="Should you use automatic target position offset?"
+    IsBool="" />
+    
+    <pad4
+    AltName=""
+    Padding="" />
+    
+    <targetAutoOffsetBaseDmyPolyId
+    AltName="Target Position Automatic Offset: Dummy Polygon ID"
+    Wiki="Reference dummy poly ID used in target position automatic offset" />
+    
+    <pa_DrainVal
+    AltName="Action Cost: Pulse Armor"
+    Wiki="Set the amount of pulse armor consumed during action" />
+    
+    <pad5
+    AltName=""
+    Padding="" />
+    
+    <pa_OverwriteDelayTimeSec
+    AltName="Pulse Armor: Recovery Delay Time Override" 
+    Wiki="Amount to override Pulse Armor recovery time (-1 means no override)" />
+    
+    <consumeBulletNum
+    AltName="Action Cost: Ammunition"
+    Wiki="Number of ammunition consumed when an attack occurs" />
+    
+    <recoilBlurAddVal
+    AltName="Attack Recoil: Blur Accumulation "
+    Wiki="Attack recoil blur accumulation amount" />
+    
+    <lockTimeSec
+    AltName="Missle Lock: Lock Time"
+    Wiki="Time to secondary lock. In seconds." />
+    
+    <maxMissileLockNum
+    AltName="Missile Lock: Max Count"
+    Wiki="Maximum number of missile locks" />
+    
+    <shootEnableLockNum
+    AltName="Missle Lock: Firable Count" 
+    Wiki="If the lock count number is less than the specified value, firing will not be possible." />
+    
+    <pad6
+    AltName=""
+    Padding="" />
+    
+    <HdPadRumble_Atk_Id
+    AltName="HD Vibration on Hit"
+    Wiki="Vibration ID for haptic feedback" />
+    
+    <HdPadRumble_Hit_Id
+    AltName="HD Vibration on Impact"
+    Wiki="Impact vibration ID for haptic feedback" />
+    
+    <HdPadRumble_Priority
+    AltName="HD Vibration Priority"
+    Wiki="Playback priority for haptic feedback (0 is low priority, 10 is high priority)" />
+    
+    <pad7
+    AltName=""
+    Padding="" />
+    
+    <shotgunParamId
+    AltName="Shot Control: ID"
+    Wiki="Shot Control parameter to use."
+    Refs="BulletShotgunParam_PC,BulletShotgunParam_NPC" />
+    
+    <shotgunBaseDist
+    AltName="Shot Control: Base Distance"
+    Wiki="Diffusion reference distance" />
+    
+    <heat_AddValue
+    AltName="Heat: Build-up (by Point)"
+    Wiki="Heat value accumulated with each bullet" />
+    
+    <targetShotgunParamId
+    AltName="Target Position Shot Control: ID"
+    Wiki="Offset calculation for target position"
+    Refs="BulletShotgunParam_PC,BulletShotgunParam_NPC" />
+    
+    <chargeDelayTimeSec
+    AltName="Charge Attack: Start Delay"
+    Wiki="Delay time until charging starts after referring to action parameters. In seconds." />
+    
+    <continueShootConsumeBulletMaxTimeSec
+    AltName="Consecutive Shoot: Ammunition Consumption Max Time"
+    Wiki="Maximum time of bullets consumed by continuous consumption. In seconds." />
+    
+    <continueShootAddHeatMaxTimeSec
+    AltName="Consecutive Shoot: Heat Accumulation Max Time"
+    Wiki="Maximum amount of heat accumulated through continuous consumption. In seconds." />
+    
+    <continueShootAddHeatMaxValue
+    AltName="Consecutive Shoot: Heat Accumulation Max"
+    Wiki="Maximum amount of heat accumulated through continuous consumption" />
+    
+    <lockCountUpTimeSec
+    AltName="Lock Count: Add Time"
+    Wiki="Missile lock count up time (lock time from 2nd lock). In seconds." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
   </Field>
   <Self Row0Dummy="" />
 </PARAMMETA>
