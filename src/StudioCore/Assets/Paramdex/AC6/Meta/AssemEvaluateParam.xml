@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="TRIGGER_ACTION_TYPE_TYPE" type="u8">
+    
+    </Enum>  
+  </Enums>
+  <Field>
+    <propertyID
+    AltName="Parameter"
+    Wiki="The parameter to target."
+    Refs="MenuPropertySpecParam" />
+    
+    <weight
+    AltName="Weight"
+    Wiki="Weight applied to parameter." />
+    
+    <reserved
+    AltName=""
+    IsHidden="" />
+    
+  </Field>
+  <Self />
+</PARAMMETA>

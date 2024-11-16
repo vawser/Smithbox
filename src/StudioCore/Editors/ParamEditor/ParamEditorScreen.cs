@@ -227,6 +227,70 @@ public class ParamEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ParamEditor_ToolConfiguration);
 
+            ImGui.Separator();
+
+            // Quick toggles for some of the Param Editor field visibility options
+
+            if (ImGui.MenuItem("Field: Vanilla Comparison Column"))
+            {
+                CFG.Current.Param_ShowVanillaParams = !CFG.Current.Param_ShowVanillaParams;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowVanillaParams);
+
+            if (ImGui.MenuItem("Field: Source Names"))
+            {
+                CFG.Current.Param_ShowSecondaryNames = !CFG.Current.Param_ShowSecondaryNames;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowSecondaryNames);
+
+            if (ImGui.MenuItem("Field: Community Names"))
+            {
+                CFG.Current.Param_MakeMetaNamesPrimary = !CFG.Current.Param_MakeMetaNamesPrimary;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_MakeMetaNamesPrimary);
+
+            if (ImGui.MenuItem("Field: Offsets"))
+            {
+                CFG.Current.Param_ShowFieldOffsets = !CFG.Current.Param_ShowFieldOffsets;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowFieldOffsets);
+
+            if (ImGui.MenuItem("Field: Padding"))
+            {
+                CFG.Current.Param_HidePaddingFields = !CFG.Current.Param_HidePaddingFields;
+            }
+            UIHelper.ShowActiveStatus(!CFG.Current.Param_HidePaddingFields);
+
+            if (ImGui.MenuItem("Field: Enum Helper"))
+            {
+                CFG.Current.Param_HideEnums = !CFG.Current.Param_HideEnums;
+            }
+            UIHelper.ShowActiveStatus(!CFG.Current.Param_HideEnums);
+
+            if (ImGui.MenuItem("Field: Reference Helper"))
+            {
+                CFG.Current.Param_HideReferenceRows = !CFG.Current.Param_HideReferenceRows;
+            }
+            UIHelper.ShowActiveStatus(!CFG.Current.Param_HideReferenceRows);
+
+            if (ImGui.MenuItem("Field: Image Preview"))
+            {
+                CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn = !CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
+
+            if (ImGui.MenuItem("Field: Color Preview"))
+            {
+                CFG.Current.Param_ShowColorPreview = !CFG.Current.Param_ShowColorPreview;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowColorPreview);
+
+            if (ImGui.MenuItem("Field: Graph Visualisation"))
+            {
+                CFG.Current.Param_ShowColorPreview = !CFG.Current.Param_ShowGraphVisualisation;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowGraphVisualisation);
+
             ImGui.EndMenu();
         }
 

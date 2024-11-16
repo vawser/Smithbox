@@ -623,8 +623,8 @@
     Enum="ATKPARAM_SFX_ATK_DIR" />
     
     <hideHitFe
-    AltName="Is FE Hit Display Ignored"
-    Wiki="When hit, FE will not display Hit or Guard, so only special effects will be applied."
+    AltName="Is HUD Hit Display Ignored"
+    Wiki="When hit, HUD will not display Hit or Guard, so only special effects will be applied."
     IsBool="" />
     
     <isDisableDmgLvReplaceAddLv
