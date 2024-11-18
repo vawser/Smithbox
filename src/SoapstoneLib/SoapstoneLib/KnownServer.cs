@@ -14,19 +14,24 @@ namespace SoapstoneLib
     public sealed class KnownServer
     {
         /// <summary>
-        /// Standard server info for DSMapStudio.
+        /// Standard server info for DSMapStudio and DSMapStudio fork Smithbox.
         /// </summary>
-        public static readonly KnownServer DSMapStudio = new KnownServer(22720, "DSMapStudio");
+        public static readonly KnownServer DSMapStudio = new KnownServer(22720, "DSMapStudio", "Smithbox");
 
         /// <summary>
-        /// Standard server info for Smithbox.
+        /// Alternate name for DSMapstudio/Smithbox server info.
         /// </summary>
-        public static readonly KnownServer Smithbox = new KnownServer(22721, "Smithbox");
+        public static readonly KnownServer Smithbox = DSMapStudio;
 
         /// <summary>
-        /// Expected local process name of this server. This usually matches the exe name.
+        /// An expected local process name of this server. This usually matches the exe name.
         /// </summary>
-        public string ProcessName { get; }
+        public string ProcessName => ProcessNames.FirstOrDefault();
+
+        /// <summary>
+        /// All expected local process names of this server. This usually matches the exe name.
+        /// </summary>
+        public IReadOnlyList<string> ProcessNames { get; }
 
         /// <summary>
         /// Standard port for this server to run at. A different one may be selected if it's busy.
@@ -40,18 +45,18 @@ namespace SoapstoneLib
         /// Otherwise, the port is used directly, if non-zero. The port is also preferred
         /// if there are multiple ports associated with the given process name.
         /// </summary>
-        public KnownServer(ushort portHint, string processName)
+        public KnownServer(ushort portHint, params string[] processNames)
         {
-            if (portHint == 0 && processName == null)
+            if (portHint == 0 && processNames.Length == 0)
             {
                 throw new ArgumentException($"One of process or port must be provided in KnownServer");
             }
             PortHint = portHint;
-            ProcessName = processName;
+            ProcessNames = processNames.ToList().AsReadOnly();
         }
 
         /// <inheritdoc />
-        public override string ToString() => $"KnownServer[PortHint={PortHint},ProcessName={ProcessName}]";
+        public override string ToString() => $"KnownServer[PortHint={PortHint},ProcessNames={string.Join(",", ProcessNames)}]";
 
         /// <summary>
         /// Try to find a running server using heuristic info.
@@ -67,10 +72,14 @@ namespace SoapstoneLib
             MIB_TCP6ROW_OWNER_PID[] rows6 = GetAllTcpConnections<MIB_TCP6ROW_OWNER_PID>();
 
             // If process is given, always try to use it, and fail if not present
-            if (ProcessName != null)
+            if (ProcessNames.Count > 0)
             {
-                Process[] processes = Process.GetProcessesByName(ProcessName);
-                if (processes.Length == 0)
+                List<Process> processes = new();
+                foreach (string name in ProcessNames)
+                {
+                    processes.AddRange(Process.GetProcessesByName(name));
+                }
+                if (processes.Count == 0)
                 {
                     return false;
                 }
