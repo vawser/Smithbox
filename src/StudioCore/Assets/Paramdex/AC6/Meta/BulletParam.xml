@@ -306,7 +306,7 @@
     AltName="Maximum Velocity" 
     Wiki="The maximum speed of the bullet. In metres per second." />
     
-    <minVelocity 
+    <minVellocity 
     AltName="Minimum Velocity" 
     Wiki="The minimum speed of the bullet. In metres per second." />
     
@@ -412,7 +412,7 @@
     Wiki="Parameters used by the funnel to search for the target (e.g. soulmass)" 
     Refs="NpcThinkParam" />
     
-    <hitBulletID 
+    <HitBulletID 
     AltName="Hit Bullet ID" 
     Wiki="Bullet to generate when projectile expires." 
     Refs="Bullet" />
@@ -742,7 +742,8 @@
     
     <generateAssetNo
     AltName="Dynamically Created Asset"
-    Wiki="The number of assets to generate dynamically. -1: Not generated. The asset number is the last 6 digits of the asset. Example: AEG999_999 = 999999" />
+    Wiki="The number of assets to generate dynamically. -1: Not generated. The asset number is the last 6 digits of the asset. Example: AEG999_999 = 999999" 
+    Refs="AssetEnvironmentGeometryParam" />
     
     <homingBeginTime
     AltName="Homing Start Delay"
@@ -950,8 +951,9 @@
     Enum="BULLET_CHILDREN_EMITTE_POS_TYPE" />
     
     <createLimitGroupId
-    AltName="Creation Restruction Group ID"
-    Wiki="If it is 0, it is not used. If the upper limit is reached when creating bullets set to the same group ID, the bullets will not be created. (Bullets created synchronously on the network will come out regardless)" />
+    AltName="Creation Restriction Group ID"
+    Wiki="If it is 0, it is not used. If the upper limit is reached when creating bullets set to the same group ID, the bullets will not be created. (Bullets created synchronously on the network will come out regardless)" 
+    Refs="BulletCreateLimitParam" />
     
     <hitInterval
     AltName="Hit Interval"

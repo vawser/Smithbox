@@ -5,12 +5,12 @@
     AltName="VRAM: All" 
     Wiki="VRAM: ALL (unit is MB)" />
     
-    <vram_mapobj_tex 
-    AltName="VRAM: Map / Object Texture" 
+    <vram_mapasset_tex 
+    AltName="VRAM: Asset: Textures" 
     Wiki="VRAM: Map / Object Texture (Unit: MB)" />
     
-    <vram_mapobj_mdl 
-    AltName="VRAM: Map / Object Model" 
+    <vram_mapasset_mdl 
+    AltName="VRAM: Asset: Models" 
     Wiki="VRAM: Map / object model (in MB)" />
     
     <vram_map 
@@ -37,12 +37,20 @@
     AltName="VRAM: Characters: Models" 
     Wiki="VRAM: Character model (unit is MB)" />
     
-    <vram_parts_tex 
-    AltName="VRAM: Parts: Textures" 
+    <vram_ac_parts_tex 
+    AltName="VRAM: AC Parts: Textures" 
     Wiki="VRAM: Parts texture (unit is MB)" />
     
-    <vram_parts_mdl 
-    AltName="VRAM: Parts: Models" 
+    <vram_ac_parts_mdl 
+    AltName="VRAM: AC Parts: Models" 
+    Wiki="VRAM: Parts model (unit is MB)" />
+    
+    <vram_ene_parts_tex 
+    AltName="VRAM: Enemy Parts: Textures" 
+    Wiki="VRAM: Parts texture (unit is MB)" />
+    
+    <vram_ene_parts_mdl 
+    AltName="VRAM: Enemy Parts: Models" 
     Wiki="VRAM: Parts model (unit is MB)" />
     
     <vram_sfx_tex 
