@@ -21,6 +21,29 @@
     </Enum>
   </Enums>
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <baseRec_mp
+    AltName=""
+    Wiki="" />
+    
+    
     <equipWeaponRight AltName="Equipped Weapon: Front Right" Refs="EquipParamWeapon" />
     <equipWeaponLeft AltName="Equipped Weapon: Front Left" Refs="EquipParamWeapon" />
     <equipPartHead AltName="Equipped Part: Head" Refs="EquipParamProtector" />
