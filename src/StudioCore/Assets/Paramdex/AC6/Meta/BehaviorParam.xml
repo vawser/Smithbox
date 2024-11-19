@@ -118,23 +118,23 @@
     Padding="" />
     
     <shootDmyPolyId
-    AltName="Shoot: Dummy Polygon Range Start ID"
+    AltName="Firing: Dummy Polygon Range Start ID"
     Wiki="The starting ID in a range of Dummy Polygons used for shooting." />
     
     <shootEndDmyPolyId
-    AltName="Shoot: Dummy Polygon Range End ID"
+    AltName="Firing: Dummy Polygon Range End ID"
     Wiki="The ending ID in a range of Dummy Polygons used for shooting." />
     
     <shootAngle
-    AltName="Shoot: Firing Angle"
+    AltName="Firing: Firing Angle"
     Wiki="Specifies how far forward the projectile should be fired. In degrees." />
     
     <shootAngleInterval
-    AltName="Shoot: Firing Angle Interval (Y-Axis)"
+    AltName="Firing: Firing Angle Interval (Y-Axis)"
     Wiki="When firing multiple projectiles, specify the interval at which to fire. (Y axis). In degrees." />
     
     <shootAngleXZ
-    AltName="Shoot: Firing Elevation Angle (X-Axis)"
+    AltName="Firing: Firing Elevation Angle (X-Axis)"
     Wiki="Additional elevation angle from horizontal. In degrees." />
     
     <bUseNumShootBullet
@@ -161,39 +161,39 @@
     Padding="" />
     
     <shootAngleXInterval
-    AltName="Shoot: Launch Elevation Angle Interval (X-Axis)"
+    AltName="Firing: Launch Elevation Angle Interval (X-Axis)"
     Wiki="When firing multiple projectiles, specify the interval at which to fire.(X-axis). In degrees." />
     
     <shootAngleZ
-    AltName="Shoot: Firing Angle Rotation (Z-Axis)"
+    AltName="Firing: Firing Angle Rotation (Z-Axis)"
     Wiki="Specifies how many times to rotate in the Z-axis direction when launching a projectile. In degrees." />
     
     <shootAngleZInterval
-    AltName="Shoot: Firing Angle Rotation Interval (Z-Axis)"
+    AltName="Firing: Firing Angle Rotation Interval (Z-Axis)"
     Wiki="When firing multiple projectiles, specify the interval at which to fire (Z-axis). In degrees." />
     
     <bulletRollAngleZ
-    AltName="Shoot: Firing Roll Angle (Z-Axis)"
+    AltName="Firing: Firing Roll Angle (Z-Axis)"
     Wiki="Additional angle in drilling direction (Z axis). In degrees." />
     
     <bulletRollAngleZInterbal
-    AltName="Shoot: Firing Roll Angle Interval (Z-Axis)"
+    AltName="Firing: Firing Roll Angle Interval (Z-Axis)"
     Wiki="When firing multiple projectiles, specify the interval at which to fire (Z-axis). In degrees." />
     
     <bulletRollAngleZRandom
-    AltName="Shoot: Firing Roll Angle - Random Max (Z-Axis)"
+    AltName="Firing: Firing Roll Angle - Random Max (Z-Axis)"
     Wiki="Upper limit of firing torsion angle random number (0 to 360)" />
     
     <shootTargetXOffset
-    AltName="Shoot: Target Offset (X-Axis)"
-    Wiki="Left and right offset of impact position. Shifts the target position left and right during firing and homing." />
+    AltName="Firing: Target Offset (X-Axis)"
+    Wiki="Left and right offset of impact position. Shifts the target position left and right during firing and homing. In metres." />
     
     <targetYOffsetRange
-    AltName="Shoot: Target Offset (Y-Axis)"
-    Wiki="Vertical offset of impact position. Shifts the target position up and down during firing and homing." />
+    AltName="Firing: Target Offset (Y-Axis)"
+    Wiki="Vertical offset of impact position. Shifts the target position up and down during firing and homing. In metres." />
     
     <shootTargetZOffset
-    AltName="Shoot: Target Offset (Z-Axis)"
+    AltName="Firing: Target Offset (Z-Axis)"
     Wiki="Front and rear offset of impact position. Shifts the target position forward and backward during firing and homing." />
     
     <numShoot
@@ -209,7 +209,7 @@
     Wiki="Rotation angle of horizontal capsule. In degrees." />
     
     <shootInterval
-    AltName="Shoot: Consecutive Shoot Interval"
+    AltName="Firing: Consecutive Shoot Interval"
     Wiki="Number of seconds between shots when firing continuously" />
     
     <reloadTimeSecond
@@ -217,11 +217,11 @@
     Wiki="Interval between one shot and the next shot" />
     
     <targetZOffsetRange
-    AltName="Curved Shoot: Target Offset Range (Z-Axis)"
+    AltName="Curved Firing: Target Offset Range (Z-Axis)"
     Wiki="Forward and backward offset of the impact position for curved shots. Shifts the target position toward the front or back during firing and homing. In metres." />
     
     <targetXOffsetRange
-    AltName="Curved Shoot: Target Offset Range (X-Axis)"
+    AltName="Curved Firing: Target Offset Range (X-Axis)"
     Wiki="Left and right offset of the impact position for curved shots. Shifts the target position toward the front or back during firing and homing. In metres." />
     
     <bTargetAutoOffset
@@ -312,15 +312,15 @@
     Wiki="Delay time until charging starts after referring to action parameters. In seconds." />
     
     <continueShootConsumeBulletMaxTimeSec
-    AltName="Consecutive Shoot: Ammunition Consumption Max Time"
+    AltName="Consecutive Firing: Ammunition Consumption Max Time"
     Wiki="Maximum time of bullets consumed by continuous consumption. In seconds." />
     
     <continueShootAddHeatMaxTimeSec
-    AltName="Consecutive Shoot: Heat Accumulation Max Time"
+    AltName="Consecutive Firing: Heat Accumulation Max Time"
     Wiki="Maximum amount of heat accumulated through continuous consumption. In seconds." />
     
     <continueShootAddHeatMaxValue
-    AltName="Consecutive Shoot: Heat Accumulation Max"
+    AltName="Consecutive Firing: Heat Accumulation Max"
     Wiki="Maximum amount of heat accumulated through continuous consumption" />
     
     <lockCountUpTimeSec

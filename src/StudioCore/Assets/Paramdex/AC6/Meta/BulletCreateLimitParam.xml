@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <limitNum_byGroup AltName="Max Amount - By Group" Wiki="Maximum number of creations in the same group" />
-    <isLimitEachOwner AltName="Is Limited for each Owner" Wiki="Is it restricted for each owner?" IsBool="" />
-    <pad2 AltName="" Padding=""/>
-    <pad AltName="" Padding=""/>
+    <limitNum_byGroup 
+    AltName="Max Bullet Count in Group" 
+    Wiki="Maximum number of bullets in the same group" />
+    
+    <pad 
+    AltName="" 
+    Padding=""/>
+    
   </Field>
   <Self />
 </PARAMMETA>

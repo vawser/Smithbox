@@ -175,6 +175,7 @@ public static class TextBank
     {
         var name = Path.GetFileName(path);
 
+        // TODO: need a better method for building the relative path, this seems to cause issues with some people's setups, causing a crash as the resulting relative path is empty
         var containerRelPath = path;
         if (containerRelPath.Contains(Smithbox.ProjectRoot))
         {

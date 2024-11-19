@@ -533,7 +533,8 @@
     AltName="Guard Absorption Invalidation" 
     Wiki="Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become " />
     
-    <atkAttribute AltName="Live Bullet Attribute" 
+    <atkAttribute 
+    AltName="Live Bullet Attribute" 
     Wiki="Live bullet attribute to set for attack" 
     Enum="ATKPARAM_ATKATTR_TYPE" />
     
@@ -1260,8 +1261,8 @@
     IsBool="" />
     
     <isFSDP
-    AltName="Is FSDP"
-    Wiki="Is it FSDP (clog occurs when packet loss occurs instead of guaranteeing delivery)" 
+    AltName="Use FSDP"
+    Wiki="Use FSDP (clog occurs when packet loss occurs instead of guaranteeing delivery)" 
     IsBool="" />
     
     <isDisableSpEffectNoDead

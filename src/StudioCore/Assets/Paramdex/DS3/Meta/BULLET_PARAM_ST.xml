@@ -83,7 +83,7 @@
     <hitRadius AltName="Initial Hit Radius" Wiki="Initial hit radius of bullet projectile." />
     <hitRadiusMax AltName="Final Hit Radius" Wiki="Final hit radius of bullet projectile. Set to -1 if radius does not change, which is always coupled with a value of 0 for RadiusIncreaseDuration." />
     <spreadTime AltName="Radius Spread Time" Wiki="Time taken by bullet to transition from initial to final hit radius. Value of 0 are always coupled with values of -1 for RadiusIncreaseDuration." />
-    <expDelay AltName="Explosion Delay" Wiki="Delay between impact and 'explosion'." />
+    <expDelay AltName="Expansion Delay" Wiki="Delay between impact and 'expansion'." />
     <homingOffsetRange AltName="Homing Offset Range" Wiki="Offset homing position by this amount." />
     <dmgHitRecordLifeTime AltName="Hitbox Duration" Wiki="Duration of bullet impact hitbox. A value of zero means it is disabled immediately after first impact." />
     <spEffectIdForShooter Refs="SpEffectParam" AltName="Shooter Effect ID" Wiki="Special effect applied to owner when bullet is created." />

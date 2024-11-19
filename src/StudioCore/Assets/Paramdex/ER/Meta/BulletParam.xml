@@ -90,7 +90,7 @@
     <hitRadius AltName="Initial Hit Radius" Wiki="Set the radius of the hit ball." />
     <hitRadiusMax AltName="Final Hit Radius" Wiki="Maximum radius of the hit sphere (If -1, make it the same as the initial radius / default)" />
     <spreadTime AltName="Radius Spread Time" Wiki="The time when the radius of the range expands to a small extent." />
-    <expDelay AltName="Explosion Delay" Wiki="Time from landing to explosion (if 0, it explodes immediately)." />
+    <expDelay AltName="Expansion Delay" Wiki="Time from landing to expand (if 0, it expands immediately)." />
     <hormingOffsetRange AltName="Homing Offset Range" Wiki="It is accurate if it is 0. At the time of shooting, each component of XYZ should be aimed by shifting this amount." />
     <dmgHitRecordLifeTime AltName="Damage Hit Duration" Wiki="Damage hit history survival time [sec] ( 0.0f: indefinite)" />
     <externalForce AltName="External Force in Bullet Direction" Wiki="External force applied in the direction of shooting. (Y-axis is removed)" />
