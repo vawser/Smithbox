@@ -64,7 +64,7 @@
     Wiki="Behavior ID" />
     
     <searchPoint 
-    AltName="Search Level Increase" 
+    AltName="Awareness Increase" 
     Wiki="Increased search degree for characters within the audible range of AI sounds" />
     
 	<combatPoint 

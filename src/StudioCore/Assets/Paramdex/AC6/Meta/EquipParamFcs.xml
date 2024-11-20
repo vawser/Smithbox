@@ -53,5 +53,5 @@
     <aimAssistGrowVal_Stage4 AltName="Aim Assist Effectivity (Stage 4) (Long Range)" Wiki="Effectiveness of Aim Assist when target distance equals stage 4.\nIf target distance exceeds stage 4, value remains at stage 4 until target distance exceeds aimAssistMaxDist.\nValue is used for Long-Range Assist in UI. "/>
     <inheritanceFcsParamId AltName="FCS Inheritance" Refs="EquipParamFcs" Wiki="Inherits fields from referenced FCS." />
   </Field>
-  <Self CalcCorrectDef="aimAssistInputTargetDist_Stage0,aimAssistInputTargetDist_Stage1,aimAssistInputTargetDist_Stage2,aimAssistInputTargetDist_Stage3,aimAssistInputTargetDist_Stage4,aimAssistGrowVal_Stage0,aimAssistGrowVal_Stage1,aimAssistGrowVal_Stage2,aimAssistGrowVal_Stage3,aimAssistGrowVal_Stage4,aimAssistMaxDist"/>
+  <Self />
 </PARAMMETA>
