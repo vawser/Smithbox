@@ -662,11 +662,11 @@
     Wiki="If you are closer to the bullet than this distance, the bullet will not hit (for map-only)." />
     
     <barrierDrainEnergyPS
-    AltName="Deployable Barrier: Energy Consumption"
+    AltName="Pulse Barrier: Energy Consumption"
     Wiki="Energy consumed per second while deploying barrier." />
     
     <barrierDrainStaminaPS
-    AltName="Deployable Barrier: Stamina Consumption"
+    AltName="Pulse Barrier: Stamina Consumption"
     Wiki="Stamina consumed per second while deploying barrier." />
     
     <initCapsuleHitLength
@@ -740,11 +740,11 @@
     Wiki="Hit interval (for characters). In seconds." />
     
     <barrierDamageCutRate
-    AltName="Deployable Barrier: Absorption %"
+    AltName="Pulse Barrier: Absorption %"
     Wiki="Reduction rate of damage received during barrier deployment. 100 means all cuts" />
     
     <barrierHitType
-    AltName="Deployable Barrier: Impact Type"
+    AltName="Pulse Barrier: Impact Type"
     Wiki="Behavior when hitting the barrier. Set to the bullet that attacks the barrier." 
     Enum="BULLET_BARRIER_HIT_TYPE" />
     
@@ -759,25 +759,25 @@
     Enum="BULLET_FLARE_HIT_TYPE" />
     
     <sfxId_FollowingBarrier
-    AltName="Particle ID: Deployable Barrier"
+    AltName="Particle ID: Pulse Barrier"
     Wiki="Set on the barrier side. Sfx that always occurs at the position of the bullet when it is parallel to itself (barrier)."
     ParticleAlias="" />
     
     <sfxId_OnLeaveBarrier
-    AltName="Particle ID: Impact on Deployable Barrier"
+    AltName="Particle ID: Impact on Pulse Barrier"
     Wiki="Set on the side of the bullet that hits the barrier. Sfx that occurs when leaving the barrier."
     ParticleAlias="" />
     
     <onBarrierdSpeedRate
-    AltName="Deployable Barrier Impact: Speed %"
+    AltName="Pulse Barrier Impact: Speed %"
     Wiki="Value applied to the speed of the bullet when it hits the barrier (setting on the barrier side)" />
     
     <onBarrierdSpeedMin
-    AltName="Deployable Barrier Impact: Minimum Speed"
+    AltName="Pulse Barrier Impact: Minimum Speed"
     Wiki="Minimum speed of the bullet after hitting the barrier (setting on the barrier side). In metres per second." />
     
     <onBarrierdSpeedMax
-    AltName="Deployable Barrier Impact: Maximum Speed"
+    AltName="Pulse Barrier Impact: Maximum Speed"
     Wiki="Maximum speed of the bullet after hitting the barrier (setting on the barrier side). In metres per second." />
     
     <delayExplosionTimeSec
@@ -799,7 +799,7 @@
     ParticleAlias="" />
     
     <barrierFlowingMaxTime
-    AltName="Deployable Barrier: Maximum Travel Duration"
+    AltName="Pulse Barrier: Maximum Travel Duration"
     Wiki="Maximum time to continue along the barrier surface. Set as the attacker's bullet to the barrier. In seconds." />
     
     <homingFadeTime

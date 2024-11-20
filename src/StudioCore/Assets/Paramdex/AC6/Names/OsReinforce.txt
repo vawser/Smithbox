@@ -11,7 +11,7 @@
 30 Explosive Weapons - Fuse Control Tuning
 20 Energy Weapons - Output Control Tuning
 40 Melee Weapons - Drive Control Tuning
-50 Dirext Hit Modifier - Damage Tuning
+50 Direct Hit Modifier - Damage Tuning
 3010 Access Speed - Optimization
 1010 ACS - Dynamic Deflection Control Tuning - Kinetic
 1011 ACS - Dynamic Deflection Control Tuning - Energy
