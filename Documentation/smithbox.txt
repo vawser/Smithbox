@@ -13,5 +13,10 @@
  (source being leaked row name)
 - Update name export options so it is simple to update the name lists via editing the row names in the Param Editor and then exporting
  
+- These official defs don't match the actual param layout, need to adjust them:
+ - ThrustersLocomotionParam_PC
+ - ThrustersParam_NPC
+ - ThrustersParam_PC
+ 
 - Update AC6 paramdex to use released AC6 paramdefs + adjust other stuff based on discoveries
 
