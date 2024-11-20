@@ -411,7 +411,7 @@ public enum Menu_MsgBndID_BB
     [Display(Name = "Blood Gem Prefixes", ShortName = "Common", Description = "")]
     Prefix_Blood_Gem = 34,
 
-    [Display(Name = "Blood Gems", ShortName = "Effect", Description = "")]
+    [Display(Name = "Blood Gem Effects", ShortName = "Common", Description = "")]
     Effect_Blood_Gem = 35,
 
     [Display(Name = "In-game Text", ShortName = "Common", Description = "")]

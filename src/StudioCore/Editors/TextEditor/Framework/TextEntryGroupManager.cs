@@ -279,7 +279,7 @@ public class TextEntryGroupManager
                     Menu_MsgBndID_BB.Title_Blood_Gem,
                     Menu_MsgBndID_BB.Summary_Blood_Gem,
                     Menu_MsgBndID_BB.Description_Blood_Gem,
-                    Menu_MsgBndID_BB.Effect_Blood_Gem));
+                    null));
 
                 break;
 
