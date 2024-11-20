@@ -2518,11 +2518,11 @@
       <SortID>10070010</SortID>
       <UnkC8>弾丸寿命</UnkC8>
     </Field>
-    <Field Def="s32 unk34c" />
-    <Field Def="s32 unk350" />
-    <Field Def="s32 unk354" />
-    <Field Def="s32 unk358" />
-    <Field Def="s32 unk35c" />
+    <Field Def="s32 unknown_ClusterMissleRelatedBool" />
+    <Field Def="f32 unknown_ClusterMissleRelatedFloat1" />
+    <Field Def="f32 unknown_ClusterMissleRelatedFloat2" />
+    <Field Def="f32 unknown_ClusterMissleRelatedFloat3" />
+    <Field Def="f32 unknown_ClusterMissleRelatedFloat4" />
     <Field Def="dummy8 pad_end[4]">
       <DisplayName>パディング</DisplayName>
       <SortID>90000000</SortID>

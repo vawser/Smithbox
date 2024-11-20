@@ -1307,8 +1307,9 @@
     IsBool="" />
     
     <unk323_5
-    AltName="Unknown 323_5"
-    Wiki="" />
+    AltName="Unknown Boolean"
+    Wiki="" 
+    IsBool="" />
     
     <pad03
     AltName=""
@@ -1357,24 +1358,25 @@
     AltName="Random Max Duration for Duration"
     Wiki="Random maximum value added to distance lifetime" />
     
-    <unk34c
-    AltName="Unknown 34c"
+    <unknown_ClusterMissleRelatedBool
+    AltName="Unknown: Cluster Missle Related Boolean"
+    Wiki="" 
+    IsBool="" />
+    
+    <unknown_ClusterMissleRelatedFloat1
+    AltName="Unknown: Cluster Missle Related Value"
     Wiki="" />
     
-    <unk350
-    AltName="Unknown 350"
+    <unknown_ClusterMissleRelatedFloat2
+    AltName="Unknown: Cluster Missle Related Value"
     Wiki="" />
     
-    <unk354
-    AltName="Unknown 354"
+    <unknown_ClusterMissleRelatedFloat3
+    AltName="Unknown: Cluster Missle Related Value"
     Wiki="" />
     
-    <unk358
-    AltName="Unknown 358"
-    Wiki="" />
-    
-    <unk35c
-    AltName="Unknown 35c"
+    <unknown_ClusterMissleRelatedFloat4
+    AltName="Unknown: Cluster Missle Related Value"
     Wiki="" />
     
     <pad_end
