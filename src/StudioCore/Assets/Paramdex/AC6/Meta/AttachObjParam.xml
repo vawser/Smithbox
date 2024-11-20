@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the attachment points for joints." />
+  
   <Field>
     <ObjName0
     AltName="Joint Name [0]"
@@ -66,5 +69,4 @@
     Wiki="Dummy poly ID to be attached to" />
     
   </Field>
-  <Self />
 </PARAMMETA>

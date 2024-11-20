@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self Wiki="Determines the ejection behavior of ejected bullet cartridges."/>
   <Field>
     <disableParam_NT 
     AltName="Disable Param: Network Test Version" 
@@ -86,7 +87,7 @@
     <pad_end
     AltName=""
     Padding="" />
-    
   </Field>
-  <Self />
+  <Enums>
+  </Enums>
 </PARAMMETA>

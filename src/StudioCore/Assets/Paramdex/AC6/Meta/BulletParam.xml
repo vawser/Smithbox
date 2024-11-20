@@ -1,231 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="BULLET_LAUNCH_CONDITION_TYPE">
-      <Option Value="0" Name="Always" />
-      <Option Value="1" Name="Hit water" />
-      <Option Value="2" Name="Hit water or swamp" />
-      <Option Value="3" Name="Didn't hit enemy" />/>
-      <Option Value="4" Name="Hit enemy" />
-      <Option Value="254" Name="Expired" />
-      <Option Value="255" Name="Hit ground or enemy" />
-    </Enum>
-    <Enum Name="BULLET_EMITTE_POS_TYPE" type="u8">
-      <Option Value="0" Name="Default" />
-      <Option Value="1" Name="Shooter + randomCreateRadius" />
-      <Option Value="2" Name="Higher elevation" />
-      <Option Value="3" Name="Nearby enemy origin. If no enemies, targets bullet origin." />
-      <Option Value="4" Name="Nearest enemy + randomCreateRadius" />
-      <Option Value="5" Name="Parent bullet (instead of hit location)" />
-      <Option Value="6" Name="Aim straight up" />
-    </Enum>
-    <Enum Name="BULLET_FOLLOW_TYPE" type="u8">
-      <Option Value="0" Name="Do not follow" />
-      <Option Value="1" Name="Follow shooter" />
-      <Option Value="2" Name="Follow shooter's feet" />
-      <Option Value="3" Name="Follow target" />
-      <Option Value="4" Name="Slide along ground" />
-      <Option Value="5" Name="Keep same direction" />
-      <Option Value="6" Name="Follow target trail" />
-      <Option Value="7" Name="Follow parent bullet" />
-      <Option Value="8" Name="Follow ground" />
-      <Option Value="9" Name="Follow parent bullet (except for direction)" />
-      <Option Value="10" Name="Follow parent bullet position" />
-    </Enum>
-    <Enum Name="BULLET_HOMING_TYPE" type="u8">
-      <Option Value="0" Name="Normal" />
-      <Option Value="1" Name="Maintain altitude" />
-    </Enum>
-    <Enum Name="BULLET_ALERT_SHOW_TYPE" type="u8">
-      <Option Value="0" Name="Do not issue" />
-      <Option Value="1" Name="Tracking" />
-      <Option Value="2" Name="Alive" />
-    </Enum>
-    <Enum Name="BULLET_ATTACH_EFFECT_TYPE" type="u8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Force" />
-      <Option Value="2" Name="Missile Protection" />
-      <Option Value="3" Name="Dark Force" />
-      <Option Value="10" Name="FNR Barrier" />
-      <Option Value="20" Name="FNR Blade" />
-      <Option Value="30" Name="FNR Flare" />
-    </Enum>
-    <Enum Name="BULLET_BARRIER_HIT_TYPE" type="u8">
-      <Option Value="0" Name="No Hit" />
-      <Option Value="1" Name="Follow" />
-      <Option Value="2" Name="Landing" />
-    </Enum>
-    <Enum Name="BULLET_BLUR_RAND_EXPRESS_TYPE" type="u8">
-      <Option Value="0" Name="Uniform Distribution" />
-      <Option Value="1" Name="Normal Distribution" />
-    </Enum>
-    <Enum Name="BULLET_BLUR_RAND_TYPE" type="u8">
-      <Option Value="0" Name="Rectangle" />
-      <Option Value="1" Name="Oblong" />
-    </Enum>
-    <Enum Name="BULLET_CHARA_PENETRATE_TYPE" type="u8">
-      <Option Value="0" Name="No Penetration" />
-      <Option Value="1" Name="Low Penetration" />
-      <Option Value="2" Name="Normal Penetration" />
-    </Enum>
-    <Enum Name="BULLET_CHILDREN_EMITTE_POS_TYPE" type="u8">
-      <Option Value="0" Name="Impact Position" />
-      <Option Value="1" Name="Bullet Position" />
-    </Enum>
-    <Enum Name="BULLET_CHILDREN_EMITTE_PURPOSE_TYPE" type="u8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Impact" />
-      <Option Value="2" Name="Small Bullet" />
-    </Enum>
-    <Enum Name="BULLET_DEFLECT_TYPE" type="u8">
-      <Option Value="0" Name="No Deflect" />
-      <Option Value="1" Name="Simple" />
-      <Option Value="2" Name="Detail" />
-    </Enum>
-    <Enum Name="BULLET_DIST_ATK_POWER_RATE_CALC_GRAPH_PARAM_TYPE" type="s8">
-      <Option Value="-1" Name="None" />
-      <Option Value="0" Name="Self 0" />
-      <Option Value="1" Name="Self 1" />
-      <Option Value="2" Name="Self 2" />
-      <Option Value="3" Name="Self 3" />
-      <Option Value="4" Name="Self 4" />
-      <Option Value="5" Name="Self 5" />
-      <Option Value="6" Name="Self 6" />
-      <Option Value="7" Name="Self 7" />
-      <Option Value="8" Name="Self 8" />
-      <Option Value="9" Name="Self 9" />
-      <Option Value="50" Name="Enemy 0" />
-      <Option Value="51" Name="Enemy 1" />
-      <Option Value="52" Name="Enemy 2" />
-      <Option Value="53" Name="Enemy 3" />
-      <Option Value="54" Name="Enemy 4" />
-      <Option Value="55" Name="Enemy 5" />
-      <Option Value="56" Name="Enemy 6" />
-      <Option Value="57" Name="Enemy 7" />
-      <Option Value="58" Name="Enemy 8" />
-      <Option Value="59" Name="Enemy 9" />
-    </Enum>
-    <Enum Name="BULLET_FLARE_HIT_TYPE" type="u8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Target Overwrite" />
-    </Enum>
-    <Enum Name="BULLET_GUARD_RANGE_TYPE" type="u8">
-      <Option Value="0" Name="Bullet position" />
-      <Option Value="1" Name="Shooter position" />
-    </Enum>
-    <Enum Name="BULLET_HOMING_CORRECT_AXIS" type="u8">
-      <Option Value="0" Name="X-axis homing correction" />
-      <Option Value="1" Name="Y-axis homing correction" />
-      <Option Value="10" Name="X-axis limit only" />
-      <Option Value="11" Name="Y-axis limit only" />
-      <Option Value="20" Name="X-axis completion only" />
-      <Option Value="21" Name="Y-axis completion only" />
-    </Enum>
-    <Enum Name="BULLET_LAUNCH_CONDITION_GUARD_TYPE" type="u8">
-      <Option Value="0" Name="Always" />
-      <Option Value="1" Name="Only if not guarded" />
-    </Enum>
-    <Enum Name="BULLET_SHOTGUN_COORD_ERROR_TYPE" type="u8">
-      <Option Value="0" Name="Up/Down/Left/Right" />
-      <Option Value="1" Name="Front/Back/Left/Right" />
-      <Option Value="2" Name="Up/Down" />
-      <Option Value="3" Name="Omnidirectional" />
-    </Enum>
-    <Enum Name="BULLET_OBJ_GENERATE_TIMING" type="u8">
-      <Option Value="0" Name="On Shoot" />
-      <Option Value="1" Name="On Hit" />
-    </Enum>
-    <Enum Name="BULLET_SFX_CREATE_POSTURE_TYPE" type="s8">
-      <Option Value="0" Name="Parent" />
-      <Option Value="1" Name="Global Y Axis" />
-      <Option Value="2" Name="Impact" />
-    </Enum>
-    <Enum Name="BULLET_SFX_DELETE_TYPE" type="s8">
-      <Option Value="0" Name="Emitter Stopped" />
-      <Option Value="1" Name="Deletion" />
-    </Enum>
-    <Enum Name="BULLET_SHAPE_TYPE" type="u8">
-      <Option Value="0" Name="Sphere" />
-      <Option Value="1" Name="Capsule" />
-      <Option Value="2" Name="Horizontal Capsule" />
-      <Option Value="3" Name="Fan" />
-      <Option Value="4" Name="Capsule (opposite direction)" />
-    </Enum>
-    <Enum Name="BULLET_SHOOT_TARGET_TYPE" type="u8">
-      <Option Value="0" Name="Lock Target" />
-      <Option Value="1" Name="Point Specification" />
-      <Option Value="2" Name="Shooter" />
-    </Enum>
-    <Enum Name="BULLET_RICOCHET_HIT_SFX_SIZE" type="u8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Small" />
-      <Option Value="2" Name="Medium" />
-      <Option Value="3" Name="Large" />
-      <Option Value="3" Name="Giant" />
-    </Enum>
-    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Crush" />
-        <Option Value="2" Name="Pierce" />
-        <Option Value="3" Name="Push" />
-    </Enum>
-    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
-        <Option Value="0" Name="Do not overwrite" />
-        <Option Value="1" Name="None" />
-        <Option Value="2" Name="Flame" />
-        <Option Value="3" Name="Magic" />
-        <Option Value="4" Name="Poison" />
-        <Option Value="5" Name="Egg" />
-        <Option Value="6" Name="Electric Shock" />
-        <Option Value="7" Name="Petrification" />
-        <Option Value="8" Name="Crystallization" />
-        <Option Value="255" Name="Material 1" />
-    </Enum>
-    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Blow" />
-        <Option Value="2" Name="Thrust" />
-        <Option Value="3" Name="Explosion" />
-        <Option Value="4" Name="Bullet" />
-    </Enum>
-    <Enum Name="WEP_MATERIAL_ATK" type="u8">
-      <Option Value="0" Name="Standard" />
-      <Option Value="1" Name="Kinetic" />
-      <Option Value="2" Name="Energy" />
-      <Option Value="3" Name="Explosive" />
-      <Option Value="4" Name="Ice" />
-      <Option Value="5" Name="Green" />
-      <Option Value="6" Name="None" />
-      <Option Value="7" Name="Dmy1" />
-      <Option Value="8" Name="Dmy2" />
-      <Option Value="9" Name="Dmy3" />
-      <Option Value="10" Name="Dmy4" />
-      <Option Value="11" Name="Coral" />
-      <Option Value="12" Name="Assault Armor" />
-      <Option Value="20" Name="Pulse" />
-      <Option Value="21" Name="Laser" />
-      <Option Value="22" Name="Plasma" />
-      <Option Value="255" Name="None" />
-    </Enum>
-    <Enum Name="ATKPARAM_SFX_ATK_POW" type="s8">
-        <Option Value="0" Name="Small" />
-        <Option Value="1" Name="Medium" />
-        <Option Value="2" Name="Large" />
-        <Option Value="3" Name="Extra Large" />
-        <Option Value="4" Name="Very Large" />
-    </Enum>
-    <Enum Name="ATKPARAM_SE_ATK_POW" type="s8">
-        <Option Value="0" Name="Small" />
-        <Option Value="1" Name="Large" />
-        <Option Value="2" Name="Extra Large" />
-    </Enum>
-    <Enum Name="PREDICTION_ENABLE_SPEED_TYPE" type="s32">
-        <Option Value="99999999" Name="Unlimited" />
-        <Option Value="84" Name="Standard Machine: Walking" />
-        <Option Value="220" Name="Standard Machine: Boost" />
-        <Option Value="400" Name="Standard Machine: Large Quick Boost" />
-    </Enum>
-  </Enums>
+  <Self 
+  Wiki="Determines the parameters of projectiles." />
+  
   <Field>
     <disableParam_NT 
     AltName="Disable Param: Network Test Version" 
@@ -537,8 +314,7 @@
     <old_FollowType 
     AltName="Follow Type" 
     Wiki="Affects bullet position and behavior." 
-    Enum="BULLET_FOLLOW_TYPE" 
-    Obsolete="" />
+    Enum="BULLET_FOLLOW_TYPE" />
     
     <EmittePosType 
     AltName="Emitter Position Type" 
@@ -1610,5 +1386,230 @@
     Padding="" />
     
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="BULLET_LAUNCH_CONDITION_TYPE">
+      <Option Value="0" Name="Always" />
+      <Option Value="1" Name="Hit water" />
+      <Option Value="2" Name="Hit water or swamp" />
+      <Option Value="3" Name="Didn't hit enemy" />/>
+      <Option Value="4" Name="Hit enemy" />
+      <Option Value="254" Name="Expired" />
+      <Option Value="255" Name="Hit ground or enemy" />
+    </Enum>
+    <Enum Name="BULLET_EMITTE_POS_TYPE" type="u8">
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Shooter + randomCreateRadius" />
+      <Option Value="2" Name="Higher elevation" />
+      <Option Value="3" Name="Nearby enemy origin. If no enemies, targets bullet origin." />
+      <Option Value="4" Name="Nearest enemy + randomCreateRadius" />
+      <Option Value="5" Name="Parent bullet (instead of hit location)" />
+      <Option Value="6" Name="Aim straight up" />
+    </Enum>
+    <Enum Name="BULLET_FOLLOW_TYPE" type="u8">
+      <Option Value="0" Name="Do not follow" />
+      <Option Value="1" Name="Follow shooter" />
+      <Option Value="2" Name="Follow shooter's feet" />
+      <Option Value="3" Name="Follow target" />
+      <Option Value="4" Name="Slide along ground" />
+      <Option Value="5" Name="Keep same direction" />
+      <Option Value="6" Name="Follow target trail" />
+      <Option Value="7" Name="Follow parent bullet" />
+      <Option Value="8" Name="Follow ground" />
+      <Option Value="9" Name="Follow parent bullet (except for direction)" />
+      <Option Value="10" Name="Follow parent bullet position" />
+    </Enum>
+    <Enum Name="BULLET_HOMING_TYPE" type="u8">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Maintain altitude" />
+    </Enum>
+    <Enum Name="BULLET_ALERT_SHOW_TYPE" type="u8">
+      <Option Value="0" Name="Do not issue" />
+      <Option Value="1" Name="Tracking" />
+      <Option Value="2" Name="Alive" />
+    </Enum>
+    <Enum Name="BULLET_ATTACH_EFFECT_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Force" />
+      <Option Value="2" Name="Missile Protection" />
+      <Option Value="3" Name="Dark Force" />
+      <Option Value="10" Name="FNR Barrier" />
+      <Option Value="20" Name="FNR Blade" />
+      <Option Value="30" Name="FNR Flare" />
+    </Enum>
+    <Enum Name="BULLET_BARRIER_HIT_TYPE" type="u8">
+      <Option Value="0" Name="No Hit" />
+      <Option Value="1" Name="Follow" />
+      <Option Value="2" Name="Landing" />
+    </Enum>
+    <Enum Name="BULLET_BLUR_RAND_EXPRESS_TYPE" type="u8">
+      <Option Value="0" Name="Uniform Distribution" />
+      <Option Value="1" Name="Normal Distribution" />
+    </Enum>
+    <Enum Name="BULLET_BLUR_RAND_TYPE" type="u8">
+      <Option Value="0" Name="Rectangle" />
+      <Option Value="1" Name="Oblong" />
+    </Enum>
+    <Enum Name="BULLET_CHARA_PENETRATE_TYPE" type="u8">
+      <Option Value="0" Name="No Penetration" />
+      <Option Value="1" Name="Low Penetration" />
+      <Option Value="2" Name="Normal Penetration" />
+    </Enum>
+    <Enum Name="BULLET_CHILDREN_EMITTE_POS_TYPE" type="u8">
+      <Option Value="0" Name="Impact Position" />
+      <Option Value="1" Name="Bullet Position" />
+    </Enum>
+    <Enum Name="BULLET_CHILDREN_EMITTE_PURPOSE_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Impact" />
+      <Option Value="2" Name="Small Bullet" />
+    </Enum>
+    <Enum Name="BULLET_DEFLECT_TYPE" type="u8">
+      <Option Value="0" Name="No Deflect" />
+      <Option Value="1" Name="Simple" />
+      <Option Value="2" Name="Detail" />
+    </Enum>
+    <Enum Name="BULLET_DIST_ATK_POWER_RATE_CALC_GRAPH_PARAM_TYPE" type="s8">
+      <Option Value="-1" Name="None" />
+      <Option Value="0" Name="Self 0" />
+      <Option Value="1" Name="Self 1" />
+      <Option Value="2" Name="Self 2" />
+      <Option Value="3" Name="Self 3" />
+      <Option Value="4" Name="Self 4" />
+      <Option Value="5" Name="Self 5" />
+      <Option Value="6" Name="Self 6" />
+      <Option Value="7" Name="Self 7" />
+      <Option Value="8" Name="Self 8" />
+      <Option Value="9" Name="Self 9" />
+      <Option Value="50" Name="Enemy 0" />
+      <Option Value="51" Name="Enemy 1" />
+      <Option Value="52" Name="Enemy 2" />
+      <Option Value="53" Name="Enemy 3" />
+      <Option Value="54" Name="Enemy 4" />
+      <Option Value="55" Name="Enemy 5" />
+      <Option Value="56" Name="Enemy 6" />
+      <Option Value="57" Name="Enemy 7" />
+      <Option Value="58" Name="Enemy 8" />
+      <Option Value="59" Name="Enemy 9" />
+    </Enum>
+    <Enum Name="BULLET_FLARE_HIT_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Target Overwrite" />
+    </Enum>
+    <Enum Name="BULLET_GUARD_RANGE_TYPE" type="u8">
+      <Option Value="0" Name="Bullet position" />
+      <Option Value="1" Name="Shooter position" />
+    </Enum>
+    <Enum Name="BULLET_HOMING_CORRECT_AXIS" type="u8">
+      <Option Value="0" Name="X-axis homing correction" />
+      <Option Value="1" Name="Y-axis homing correction" />
+      <Option Value="10" Name="X-axis limit only" />
+      <Option Value="11" Name="Y-axis limit only" />
+      <Option Value="20" Name="X-axis completion only" />
+      <Option Value="21" Name="Y-axis completion only" />
+    </Enum>
+    <Enum Name="BULLET_LAUNCH_CONDITION_GUARD_TYPE" type="u8">
+      <Option Value="0" Name="Always" />
+      <Option Value="1" Name="Only if not guarded" />
+    </Enum>
+    <Enum Name="BULLET_SHOTGUN_COORD_ERROR_TYPE" type="u8">
+      <Option Value="0" Name="Up/Down/Left/Right" />
+      <Option Value="1" Name="Front/Back/Left/Right" />
+      <Option Value="2" Name="Up/Down" />
+      <Option Value="3" Name="Omnidirectional" />
+    </Enum>
+    <Enum Name="BULLET_OBJ_GENERATE_TIMING" type="u8">
+      <Option Value="0" Name="On Shoot" />
+      <Option Value="1" Name="On Hit" />
+    </Enum>
+    <Enum Name="BULLET_SFX_CREATE_POSTURE_TYPE" type="s8">
+      <Option Value="0" Name="Parent" />
+      <Option Value="1" Name="Global Y Axis" />
+      <Option Value="2" Name="Impact" />
+    </Enum>
+    <Enum Name="BULLET_SFX_DELETE_TYPE" type="s8">
+      <Option Value="0" Name="Emitter Stopped" />
+      <Option Value="1" Name="Deletion" />
+    </Enum>
+    <Enum Name="BULLET_SHAPE_TYPE" type="u8">
+      <Option Value="0" Name="Sphere" />
+      <Option Value="1" Name="Capsule" />
+      <Option Value="2" Name="Horizontal Capsule" />
+      <Option Value="3" Name="Fan" />
+      <Option Value="4" Name="Capsule (opposite direction)" />
+    </Enum>
+    <Enum Name="BULLET_SHOOT_TARGET_TYPE" type="u8">
+      <Option Value="0" Name="Lock Target" />
+      <Option Value="1" Name="Point Specification" />
+      <Option Value="2" Name="Shooter" />
+    </Enum>
+    <Enum Name="BULLET_RICOCHET_HIT_SFX_SIZE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Small" />
+      <Option Value="2" Name="Medium" />
+      <Option Value="3" Name="Large" />
+      <Option Value="3" Name="Giant" />
+    </Enum>
+    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Crush" />
+        <Option Value="2" Name="Pierce" />
+        <Option Value="3" Name="Push" />
+    </Enum>
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+        <Option Value="0" Name="Do not overwrite" />
+        <Option Value="1" Name="None" />
+        <Option Value="2" Name="Flame" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Poison" />
+        <Option Value="5" Name="Egg" />
+        <Option Value="6" Name="Electric Shock" />
+        <Option Value="7" Name="Petrification" />
+        <Option Value="8" Name="Crystallization" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Blow" />
+        <Option Value="2" Name="Thrust" />
+        <Option Value="3" Name="Explosion" />
+        <Option Value="4" Name="Bullet" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_ATK" type="u8">
+      <Option Value="0" Name="Standard" />
+      <Option Value="1" Name="Kinetic" />
+      <Option Value="2" Name="Energy" />
+      <Option Value="3" Name="Explosive" />
+      <Option Value="4" Name="Ice" />
+      <Option Value="5" Name="Green" />
+      <Option Value="6" Name="None" />
+      <Option Value="7" Name="Dmy1" />
+      <Option Value="8" Name="Dmy2" />
+      <Option Value="9" Name="Dmy3" />
+      <Option Value="10" Name="Dmy4" />
+      <Option Value="11" Name="Coral" />
+      <Option Value="12" Name="Assault Armor" />
+      <Option Value="20" Name="Pulse" />
+      <Option Value="21" Name="Laser" />
+      <Option Value="22" Name="Plasma" />
+      <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="ATKPARAM_SFX_ATK_POW" type="s8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Medium" />
+        <Option Value="2" Name="Large" />
+        <Option Value="3" Name="Extra Large" />
+        <Option Value="4" Name="Very Large" />
+    </Enum>
+    <Enum Name="ATKPARAM_SE_ATK_POW" type="s8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Large" />
+        <Option Value="2" Name="Extra Large" />
+    </Enum>
+    <Enum Name="PREDICTION_ENABLE_SPEED_TYPE" type="s32">
+        <Option Value="99999999" Name="Unlimited" />
+        <Option Value="84" Name="Standard Machine: Walking" />
+        <Option Value="220" Name="Standard Machine: Boost" />
+        <Option Value="400" Name="Standard Machine: Large Quick Boost" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

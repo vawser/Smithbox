@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the homing behavior of a melee blade attack." />
+  
   <Field>
     <maxSpeedKMPH
     AltName="Top Speed"
@@ -37,5 +40,4 @@
     AltName=""
     Padding="" />
   </Field>
-  <Self />
 </PARAMMETA>

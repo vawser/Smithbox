@@ -1,13 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" type="u8">
-        <Option Value="0" Name="Independent" />
-        <Option Value="1" Name="Not possible" />
-        <Option Value="2" Name="Interruption" />
-        <Option Value="3" Name="Simultaneous" />
-    </Enum>
-  </Enums>
+  <Self 
+  Wiki="Determines the operation state of various joints. For non-players." />
   <Field>
     <parts0 
     AltName="Weapon Enable Type [00]"
@@ -137,5 +131,12 @@
     AltName="Weapon Enable Type [31]" 
     Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" type="u8">
+        <Option Value="0" Name="Independent" />
+        <Option Value="1" Name="Not possible" />
+        <Option Value="2" Name="Interruption" />
+        <Option Value="3" Name="Simultaneous" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

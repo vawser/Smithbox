@@ -1,11 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="NPC_ARENA_CATEGORY" type="u8">
-        <Option Value="0" Name="Arena" />
-        <Option Value="10" Name="Simulator" />
-    </Enum> 
-  </Enums>
+  <Self 
+  Wiki="Determines the parameters used for Arena missions." />
+  
   <Field>
     <missionParamID 
     AltName="Mission Param ID" 
@@ -99,5 +96,10 @@
     Padding=""/>
     
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="NPC_ARENA_CATEGORY" type="u8">
+        <Option Value="0" Name="Arena" />
+        <Option Value="10" Name="Simulator" />
+    </Enum> 
+  </Enums>
 </PARAMMETA>

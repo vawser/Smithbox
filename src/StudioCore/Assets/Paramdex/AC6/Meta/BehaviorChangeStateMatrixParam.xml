@@ -1,35 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="ACTION_AI_TYPE_ENUM" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="10" Name="Jump" />
-        <Option Value="11" Name="Land" />
-        <Option Value="12" Name="Quick Boost" />
-        <Option Value="13" Name="Brake" />
-        <Option Value="14" Name="Fall" />
-        <Option Value="15" Name="Hover" />
-        <Option Value="20" Name="Assault Boost: Start" />
-        <Option Value="21" Name="Assault Boost: End" />
-        <Option Value="22" Name="Assault Boost" />
-        <Option Value="23" Name="Assault Boost: Kick" />
-        <Option Value="30" Name="Stagger: Small" />
-        <Option Value="31" Name="Stagger: Big" />
-        <Option Value="32" Name="Stagger: Explosion" />
-        <Option Value="33" Name="Guard Break" />
-        <Option Value="40" Name="Guard: Start" />
-        <Option Value="41" Name="Guard: End" />
-        <Option Value="50" Name="Melee: First Attack" />
-        <Option Value="51" Name="Melee: Combo Attack" />
-        <Option Value="60" Name="Prepare to Start Shooting" />
-        <Option Value="61" Name="Start Shooting" />
-        <Option Value="62" Name="Stop Shooting: Stage 1" />
-        <Option Value="63" Name="Stop Shooting: Stage 2" />
-        <Option Value="70" Name="Repair Kit" />
-        <Option Value="240" Name="AI Enemy Judgment: is target jumping" />
-        <Option Value="241" Name="AI Enemy Judgment: is target on special standby" />
-    </Enum>
-  </Enums>
+  <Self 
+  Wiki="Determines behavior change upon entering various states." />
+  
   <Field>
     <state00
     AltName="State: Above Ground"
@@ -149,5 +122,34 @@
     Wiki="" />
     
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="ACTION_AI_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="10" Name="Jump" />
+        <Option Value="11" Name="Land" />
+        <Option Value="12" Name="Quick Boost" />
+        <Option Value="13" Name="Brake" />
+        <Option Value="14" Name="Fall" />
+        <Option Value="15" Name="Hover" />
+        <Option Value="20" Name="Assault Boost: Start" />
+        <Option Value="21" Name="Assault Boost: End" />
+        <Option Value="22" Name="Assault Boost" />
+        <Option Value="23" Name="Assault Boost: Kick" />
+        <Option Value="30" Name="Stagger: Small" />
+        <Option Value="31" Name="Stagger: Big" />
+        <Option Value="32" Name="Stagger: Explosion" />
+        <Option Value="33" Name="Guard Break" />
+        <Option Value="40" Name="Guard: Start" />
+        <Option Value="41" Name="Guard: End" />
+        <Option Value="50" Name="Melee: First Attack" />
+        <Option Value="51" Name="Melee: Combo Attack" />
+        <Option Value="60" Name="Prepare to Start Shooting" />
+        <Option Value="61" Name="Start Shooting" />
+        <Option Value="62" Name="Stop Shooting: Stage 1" />
+        <Option Value="63" Name="Stop Shooting: Stage 2" />
+        <Option Value="70" Name="Repair Kit" />
+        <Option Value="240" Name="AI Enemy Judgment: is target jumping" />
+        <Option Value="241" Name="AI Enemy Judgment: is target on special standby" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

@@ -1,25 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="NPC_TYPE" type="u8">
-        <Option Value="0" Name="Standard" />
-        <Option Value="1" Name="Boss" />
-    </Enum>
-    <Enum Name="NPC_DRAW_TYPE" type="s8">
-        <Option Value="0" Name="Type 0" />
-    </Enum>
-    <Enum Name="CHARACTER_INIT_SEX" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-    </Enum>
-    <Enum Name="VOW_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-    </Enum>
-    <Enum Name="CHARA_INIT_WEP_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-    </Enum>
-  </Enums>
+  <Self 
+  Wiki="Determines the loadout parameters for Armored Core type characters." />
+  
   <Field>
     <disableParam_NT 
     AltName="Disable Param: Network Test Version" 
@@ -40,18 +23,235 @@
     Padding="" />
     
     <baseRec_mp
-    AltName=""
-    Wiki="" />
+    AltName="Base Recovery Speed: MP"
+    Wiki="MP recovery amount per second." 
+    Obsolete="" />
     
+    <baseRec_sp
+    AltName="Base Recovery Speed: Stamina"
+    Wiki="Stamina recovery amount per second." 
+    Obsolete="" />
     
-    <equipWeaponRight AltName="Equipped Weapon: Front Right" Refs="EquipParamWeapon" />
-    <equipWeaponLeft AltName="Equipped Weapon: Front Left" Refs="EquipParamWeapon" />
-    <equipPartHead AltName="Equipped Part: Head" Refs="EquipParamProtector" />
-    <equipPartCore AltName="Equipped Part: Core" Refs="EquipParamProtector" />
-    <equipPartArms AltName="Equipped Part: Arms" Refs="EquipParamProtector" />
-    <equipPartLegs AltName="Equipped Part: Legs" Refs="EquipParamProtector" />
-    <equipPartBackRight AltName="Equipped Weapon: Back Right" Refs="EquipParamWeapon" />
-    <equipPartBackLeft AltName="Equipped Weapon: Back Right" Refs="EquipParamWeapon" />
+    <red_Falldam
+    AltName="Fall Damage Correction %"
+    Wiki="Damage reduction amount (%) that can serve as a cushion when being attacked from above by another character." 
+    Obsolete="" />
+    
+    <soul
+    AltName="Souls"
+    Wiki="Amount of souls you have at the beginning." 
+    Obsolete="" />
+    
+    <equip_Wep_Right 
+    AltName="Equipped Weapon: Front Right" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Subwep_Right 
+    AltName="Equipped Weapon: Front Right (Sub)" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" 
+    Obsolete="" />
+    
+    <equip_Wep_Left 
+    AltName="Equipped Weapon: Front Left" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Subwep_Left 
+    AltName="Equipped Weapon: Front Left (Sub)" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" 
+    Obsolete="" />
+    
+    <equip_Helm 
+    AltName="Equipped Part: Head" 
+    Wiki="The equipment ID to use for this slot."
+    Refs="EquipParamProtector" />
+    
+    <equip_Armer 
+    AltName="Equipped Part: Core" 
+    Wiki="The equipment ID to use for this slot."
+    Refs="EquipParamProtector" />
+    
+    <equip_Gaunt 
+    AltName="Equipped Part: Arms" 
+    Wiki="The equipment ID to use for this slot."
+    Refs="EquipParamProtector" />
+    
+    <equip_Leg 
+    AltName="Equipped Part: Legs" 
+    Wiki="The equipment ID to use for this slot."
+    Refs="EquipParamProtector" />
+    
+    <equip_Arrow 
+    AltName="Equipped Weapon: Back Left" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_SubArrow 
+    AltName="Equipped Weapon: Back Left (Sub)" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Bolt 
+    AltName="Equipped Weapon: Back Right" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" 
+    Obsolete="" />
+    
+    <equip_SubBolt 
+    AltName="Equipped Weapon: Back Right (Sub)" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" 
+    Obsolete="" />
+    
+    <equip_Accessory01
+    AltName="Equipped Accessory: 1"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" 
+    Obsolete="" />
+    
+    <equip_Accessory02
+    AltName="Equipped Accessory: 2"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" 
+    Obsolete="" />
+    
+    <equip_Accessory03
+    AltName="Equipped Accessory: 3"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" 
+    Obsolete="" />
+    
+    <equip_Accessory04
+    AltName="Equipped Accessory: 4"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" 
+    Obsolete="" />
+    
+    <equip_Accessory05
+    AltName="Equipped Accessory: 5"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" 
+    Obsolete="" />
+    
+    <equip_Skill_01
+    AltName="Equipped Skill: 1"
+    Wiki="The skill ID to use for this slot." 
+    Obsolete="" />
+    
+    <equip_Skill_02
+    AltName="Equipped Skill: 2"
+    Wiki="The skill ID to use for this slot." 
+    Obsolete="" />
+    
+    <equip_Skill_03
+    AltName="Equipped Skill: 3"
+    Wiki="The skill ID to use for this slot." 
+    Obsolete="" />
+    
+    <equip_Spell_01
+    AltName="Equipped Spell: 1"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_02
+    AltName="Equipped Spell: 2"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_03
+    AltName="Equipped Spell: 3"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_04
+    AltName="Equipped Spell: 4"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_05
+    AltName="Equipped Spell: 5"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_06
+    AltName="Equipped Spell: 6"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_07
+    AltName="Equipped Spell: 7"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <item_01
+    AltName="Held Item: 1"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_02
+    AltName="Held Item: 2"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" 
+    Obsolete="" />
+    
+    <item_03
+    AltName="Held Item: 3"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" 
+    Obsolete="" />
+    
+    <item_04
+    AltName="Held Item: 4"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" 
+    Obsolete="" />
+    
+    <item_05
+    AltName="Held Item: 5"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" 
+    Obsolete="" />
+    
+    <item_06
+    AltName="Held Item: 6"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" 
+    Obsolete="" />
+    
+    <item_07
+    AltName="Held Item: 7"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" 
+    Obsolete="" />
+    
+    <item_08
+    AltName="Held Item: 8"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" 
+    Obsolete="" />
+    
+    <item_09
+    AltName="Held Item: 9"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" 
+    Obsolete="" />
+    
+    <item_10
+    AltName="Held Item: 10"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" 
+    Obsolete="" />
+    
     <equipPartBooster AltName="Equipped Part: Booster" Refs="EquipParamBooster" />
     <equipPartGenerator AltName="Equipped Part: Generator" Refs="EquipParamGenerator" />
     <equipPartFcs AltName="Equipped Part: FCS" Refs="EquipParamFcs" />
@@ -59,5 +259,24 @@
     <equippedItemId AltName="Repair Kit Item ID" Refs="EquipParamGoods" />
     <equippedItemNum AltName="Repair Kit Item Amount" />
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="NPC_TYPE" type="u8">
+        <Option Value="0" Name="Standard" />
+        <Option Value="1" Name="Boss" />
+    </Enum>
+    <Enum Name="NPC_DRAW_TYPE" type="s8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="CHARACTER_INIT_SEX" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="VOW_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="CHARA_INIT_WEP_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

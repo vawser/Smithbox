@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the shot spread for a bullet." />
+  
   <Field>
     <disableParam_NT AltName="Disable Param: Network Test Version" Wiki="Exclude from the NT version or mark the ones to be excluded." IsBool="" />
     <disableParam_Product AltName="Disable Param: Release Version" Wiki="Exclude from the product version or mark the items to be excluded." IsBool="" />
@@ -157,5 +160,4 @@
     <pos35_bulletPosY AltName="Bullet Position: Y [35]" Wiki="" />
     <pos35_bulletPosZ AltName="Bullet Position: Z [35]" Wiki="" />
   </Field>
-  <Self />
 </PARAMMETA>

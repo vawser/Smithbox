@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the homing cancellation behavior for a blade melee attack." />
+  
   <Field>
     <cancelAngDegR
     AltName="Tracking Interrupt: Right Angle"
@@ -34,5 +37,4 @@
     Padding="" />
   
   </Field>
-  <Self />
 </PARAMMETA>

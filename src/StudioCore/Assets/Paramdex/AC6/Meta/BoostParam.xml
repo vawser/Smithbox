@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the particle parameters used for boosting." />
+  
   <Field>
     <sfxId0
     AltName="Counter Boost: Particle ID [1]"
@@ -57,5 +60,4 @@
     Padding="" />
     
   </Field>
-  <Self />
 </PARAMMETA>

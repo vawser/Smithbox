@@ -1,45 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
-      <Option Value="0" Name="Attack" />
-      <Option Value="1" Name="Bullet" />
-      <Option Value="2" Name="SpEffect" />
-    </Enum>
-    <Enum Name="BEHAVIOR_ATK_STYLE" type="u8">
-      <Option Value="0" Name="Normal" />
-      <Option Value="1" Name="Charge" />
-      <Option Value="2" Name="2H Normal" />
-      <Option Value="3" Name="2H Charge" />
-      <Option Value="4" Name="Weak" />
-      <Option Value="5" Name="Guard" />
-      <Option Value="6" Name="Parry" />
-      <Option Value="7" Name="Close Range" />
-      <Option Value="8" Name="Long Range" />
-      <Option Value="9" Name="2H Close Range" />
-      <Option Value="10" Name="2H Long Range" />
-      <Option Value="11" Name="After Parry" />
-    </Enum>
-    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Blow" />
-        <Option Value="2" Name="Thrust" />
-        <Option Value="3" Name="Explosion" />
-        <Option Value="4" Name="Bullet" />
-    </Enum>
-    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Normal Attack" />
-      <Option Value="2" Name="Left-hand Attack" />
-      <Option Value="3" Name="Magic" />
-      <Option Value="4" Name="Miracle" />
-      <Option Value="5" Name="Body" />
-      <Option Value="6" Name="Enemy Attack 1" />
-      <Option Value="7" Name="Enemy Attack 2" />
-      <Option Value="8" Name="Enemy Attack 3" />
-      <Option Value="9" Name="Kick" />
-    </Enum>
-  </Enums>
+  <Self 
+  Row0Dummy="" 
+  Wiki="Determines the behavior parameters used when triggering projectiles and attacks." />
+  
   <Field>
     <disableParam_NT 
     AltName="Disable Param: Network Test Version" 
@@ -330,7 +294,45 @@
     <pad_end
     AltName=""
     Padding="" />
-    
   </Field>
-  <Self Row0Dummy="" />
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="Attack" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_STYLE" type="u8">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Charge" />
+      <Option Value="2" Name="2H Normal" />
+      <Option Value="3" Name="2H Charge" />
+      <Option Value="4" Name="Weak" />
+      <Option Value="5" Name="Guard" />
+      <Option Value="6" Name="Parry" />
+      <Option Value="7" Name="Close Range" />
+      <Option Value="8" Name="Long Range" />
+      <Option Value="9" Name="2H Close Range" />
+      <Option Value="10" Name="2H Long Range" />
+      <Option Value="11" Name="After Parry" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Blow" />
+        <Option Value="2" Name="Thrust" />
+        <Option Value="3" Name="Explosion" />
+        <Option Value="4" Name="Bullet" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Normal Attack" />
+      <Option Value="2" Name="Left-hand Attack" />
+      <Option Value="3" Name="Magic" />
+      <Option Value="4" Name="Miracle" />
+      <Option Value="5" Name="Body" />
+      <Option Value="6" Name="Enemy Attack 1" />
+      <Option Value="7" Name="Enemy Attack 2" />
+      <Option Value="8" Name="Enemy Attack 3" />
+      <Option Value="9" Name="Kick" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

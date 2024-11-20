@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines model particle parameters." />
+  
   <Field>
     <sfxId_0 
     AltName="Particle: ID [0]" 
@@ -110,5 +113,4 @@
     AltName="" 
     Padding=""/>
   </Field>
-  <Self />
 </PARAMMETA>

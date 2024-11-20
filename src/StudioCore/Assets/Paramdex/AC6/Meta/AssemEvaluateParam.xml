@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters used to evaluate assembly changes." />
+  
   <Field>
     <propertyID
     AltName="Parameter"
@@ -15,5 +18,4 @@
     Padding="" />
     
   </Field>
-  <Self />
 </PARAMMETA>

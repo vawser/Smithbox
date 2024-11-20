@@ -1,40 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="TRIGGER_ACTION_TYPE_TYPE" type="u8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Single Attack" />
-      <Option Value="2" Name="Continuous Attack" />
-      <Option Value="3" Name="Guard" />
-      <Option Value="4" Name="Melee Attack" />
-      <Option Value="5" Name="Charge Melee Attack" />
-      <Option Value="6" Name="Charge Shoot Attack" />
-      <Option Value="7" Name="Fast Single Attack" />
-    </Enum>  
-    <Enum Name="LOOK_AT_DIR_TYPE" type="u8">
-      <Option Value="0" Name="Target" />
-      <Option Value="1" Name="Top" />
-      <Option Value="2" Name="Camera" />
-    </Enum>  
-    <Enum Name="BULLET_SHOOT_DIR_TYPE" type="u8">
-      <Option Value="0" Name="Dummy Polygon" />
-      <Option Value="1" Name="Top" />
-      <Option Value="2" Name="Dummy Polygon (Ignore Target)" />
-    </Enum>  
-    <Enum Name="ATK_ACT_PARAM_ALERT_SHOW_TYPE" type="u8">
-      <Option Value="0" Name="Trigger" />
-      <Option Value="2" Name="Do not release" />
-    </Enum>  
-    <Enum Name="ATK_ACT_PARAM_SHOOT_INDICATION_TYPE" type="u8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Strong Shot Warning" />
-    </Enum>  
-    <Enum Name="ATK_ACT_PARAM_TRIGGER_ALERT_LEVEL" type="u8">
-      <Option Value="0" Name="Small" />
-      <Option Value="1" Name="Large" />
-      <Option Value="2" Name="Number of Levels" />
-    </Enum>  
-  </Enums>
+  <Self 
+  Wiki="Determines the behavior of an attack action." />
+  
   <Field>
     <disableParam_NT 
     AltName="Disable Param: Network Test Version" 
@@ -308,6 +276,40 @@
     AltName=""
     Padding="" />
     
-    </Field>
-  <Self />
+  </Field>
+  <Enums>
+    <Enum Name="TRIGGER_ACTION_TYPE_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Single Attack" />
+      <Option Value="2" Name="Continuous Attack" />
+      <Option Value="3" Name="Guard" />
+      <Option Value="4" Name="Melee Attack" />
+      <Option Value="5" Name="Charge Melee Attack" />
+      <Option Value="6" Name="Charge Shoot Attack" />
+      <Option Value="7" Name="Fast Single Attack" />
+    </Enum>  
+    <Enum Name="LOOK_AT_DIR_TYPE" type="u8">
+      <Option Value="0" Name="Target" />
+      <Option Value="1" Name="Top" />
+      <Option Value="2" Name="Camera" />
+    </Enum>  
+    <Enum Name="BULLET_SHOOT_DIR_TYPE" type="u8">
+      <Option Value="0" Name="Dummy Polygon" />
+      <Option Value="1" Name="Top" />
+      <Option Value="2" Name="Dummy Polygon (Ignore Target)" />
+    </Enum>  
+    <Enum Name="ATK_ACT_PARAM_ALERT_SHOW_TYPE" type="u8">
+      <Option Value="0" Name="Trigger" />
+      <Option Value="2" Name="Do not release" />
+    </Enum>  
+    <Enum Name="ATK_ACT_PARAM_SHOOT_INDICATION_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Strong Shot Warning" />
+    </Enum>  
+    <Enum Name="ATK_ACT_PARAM_TRIGGER_ALERT_LEVEL" type="u8">
+      <Option Value="0" Name="Small" />
+      <Option Value="1" Name="Large" />
+      <Option Value="2" Name="Number of Levels" />
+    </Enum>  
+  </Enums>
 </PARAMMETA>

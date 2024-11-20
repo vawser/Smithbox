@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines bonfire parameters. Obsolete."/>
+  
   <Field>
     <eventflagId
     AltName="Event Flag ID"
@@ -40,5 +43,4 @@
     Padding="" />
     
   </Field>
-  <Self />
 </PARAMMETA>

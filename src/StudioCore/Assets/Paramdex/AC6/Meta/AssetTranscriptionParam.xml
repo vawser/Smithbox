@@ -1,44 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-   <Enums>
-    <Enum Name="ASSET_SLOD_TEX_SIZE_TYPE" type="u16">
-        <Option Value="64" Name="64x64" />
-        <Option Value="128" Name="128x128" />
-        <Option Value="256" Name="256x256" />
-        <Option Value="512" Name="512x512" />
-        <Option Value="1024" Name="1024x1024" />
-        <Option Value="2048" Name="2048x2048" />
-        <Option Value="4096" Name="4096x4096" />
-    </Enum>
-    
-    <Enum Name="ASSET_SLOD_CAP_DIR_NUM_TYPE" type="u8">
-        <Option Value="16" Name="16 Directions" />
-        <Option Value="36" Name="32 Directions" />
-        <Option Value="64" Name="64 Directions" />
-    </Enum>
-    
-    <Enum Name="ASSET_SLOD_CAP_ANGLE_TYPE" type="u8">
-        <Option Value="20" Name="20 Degrees" />
-        <Option Value="30" Name="30 Degrees" />
-        <Option Value="45" Name="45 Degrees" />
-        <Option Value="90" Name="90 Degrees" />
-    </Enum>
-    
-    <Enum Name="ASSET_SLOD_CONVERT_TYPE" type="u8">
-        <Option Value="0" Name="Not Applicable to SLOD" />
-        <Option Value="1" Name="Join as is" />
-        <Option Value="2" Name="Transfer source" />
-        <Option Value="3" Name="Transfer destination" />
-        <Option Value="4" Name="Imposter" />
-        <Option Value="5" Name="Final result" />
-    </Enum>
-    
-    <Enum Name="ASSET_IMPOSTER_TYPE" type="u8">
-        <Option Value="0" Name="Lock-cam Billboard" />
-        <Option Value="1" Name="Cross Billboard" />
-    </Enum>
-    
-  </Enums>
+  <Self 
+  Wiki="Determines the Super-LOD behavior for assets." />
+  
   <Field>
     <slodConvertType 
     AltName="SLOD Conversion Settings" 
@@ -106,5 +70,38 @@
     Wiki="Is there padding applied to the texture?" 
     IsBool="" />
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="ASSET_SLOD_TEX_SIZE_TYPE" type="u16">
+        <Option Value="64" Name="64x64" />
+        <Option Value="128" Name="128x128" />
+        <Option Value="256" Name="256x256" />
+        <Option Value="512" Name="512x512" />
+        <Option Value="1024" Name="1024x1024" />
+        <Option Value="2048" Name="2048x2048" />
+        <Option Value="4096" Name="4096x4096" />
+    </Enum>
+    <Enum Name="ASSET_SLOD_CAP_DIR_NUM_TYPE" type="u8">
+        <Option Value="16" Name="16 Directions" />
+        <Option Value="36" Name="32 Directions" />
+        <Option Value="64" Name="64 Directions" />
+    </Enum>
+    <Enum Name="ASSET_SLOD_CAP_ANGLE_TYPE" type="u8">
+        <Option Value="20" Name="20 Degrees" />
+        <Option Value="30" Name="30 Degrees" />
+        <Option Value="45" Name="45 Degrees" />
+        <Option Value="90" Name="90 Degrees" />
+    </Enum>
+    <Enum Name="ASSET_SLOD_CONVERT_TYPE" type="u8">
+        <Option Value="0" Name="Not Applicable to SLOD" />
+        <Option Value="1" Name="Join as is" />
+        <Option Value="2" Name="Transfer source" />
+        <Option Value="3" Name="Transfer destination" />
+        <Option Value="4" Name="Imposter" />
+        <Option Value="5" Name="Final result" />
+    </Enum>
+    <Enum Name="ASSET_IMPOSTER_TYPE" type="u8">
+        <Option Value="0" Name="Lock-cam Billboard" />
+        <Option Value="1" Name="Cross Billboard" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the memory budget limits for various asset groups." />
+  
   <Field>
     <vram_all 
     AltName="VRAM: All" 
@@ -122,5 +125,4 @@
     Padding="" />
     
   </Field>
-  <Self />
 </PARAMMETA>

@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines buoyancy behavior for assets during wave simulation." />
+  
   <Field>
     <density
     AltName="Density"
@@ -29,5 +32,4 @@
     AltName=""
     Padding="" />
   </Field>
-  <Self />
 </PARAMMETA>

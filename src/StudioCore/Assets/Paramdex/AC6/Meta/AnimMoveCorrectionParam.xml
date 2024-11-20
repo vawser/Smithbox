@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the movement correction parameters for animations." />
+  
   <Field>
 	<charaId 
     AltName="Character ID" 
@@ -23,25 +26,23 @@
     Refs="CalcCorrectGraph" />
     
 	<charaWeightMax 
-    AltName="Character Weight: Max" 
+    AltName="Character Weight: Maximum" 
     Wiki="Upper limit of aircraft weight to be passed to the correction travel calculation control" />
     
 	<charaWeightMin 
-    AltName="Character Weight: Min" 
+    AltName="Character Weight: Minimum" 
     Wiki="Lower limit of aircraft weight to be passed to the correction travel calculation control" />
     
 	<moveMax 
-    AltName="Character Movement: Max" 
+    AltName="Character Movement: Maximum" 
     Wiki="Upper limit of the amount of travel passed to the compensating travel calculation control" />
     
 	<moveMin 
-    AltName="Character Movement: Min" 
+    AltName="Character Movement: Minimum" 
     Wiki="Lower limit of the amount of travel passed to the compensating travel calculation control" />
     
 	<pad99 
     AltName=""
     Padding="" />
-	
   </Field>
-  <Self />
 </PARAMMETA>

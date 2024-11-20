@@ -1,47 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="ACTION_BUTTON_REGION_TYPE" type="u8">
-        <Option Value="0" Name="Cylinder" />
-        <Option Value="1" Name="Prism" />
-        <Option Value="2" Name="Capsule" />
-    </Enum> 
-    <Enum Name="ACTION_BUTTON_CATEGORY" type="u8">
-        <Option Value="0" Name="Category 0" />
-        <Option Value="1" Name="Category 1" />
-        <Option Value="2" Name="Category 2" />
-        <Option Value="3" Name="Category 3" />
-        <Option Value="4" Name="Category 4" />
-        <Option Value="5" Name="Category 5" />
-        <Option Value="6" Name="Category 6" />
-        <Option Value="7" Name="Category 7" />
-        <Option Value="8" Name="Category 8" />
-        <Option Value="9" Name="Category 9" />
-        <Option Value="10" Name="Category 10" />
-        <Option Value="11" Name="Category 11" />
-        <Option Value="12" Name="Category 12" />
-        <Option Value="14" Name="Category 14" />
-    </Enum>
-    <Enum Name="ACTION_BUTTON_ANGLE_CHECK_TYPE" type="u8">
-        <Option Value="0" Name="Point" />
-        <Option Value="1" Name="Line" />
-    </Enum> 
-    <Enum Name="ACTION_BUTTON_TEXT_BOX_TYPE" type="u8">
-        <Option Value="0" Name="Action Button" />
-    </Enum>
-    <Enum Name="ACTION_BUTTON_EXEC_CIRCLE" type="u8">
-        <Option Value="0" Name="No" />
-        <Option Value="1" Name="Yes" />
-    </Enum>
-    <Enum Name="ACTION_BUTTON_ICON_ID" type="s32">
-        <Option Value="1" Name="Default" />
-        <Option Value="2" Name="Hacking Level 1" />
-        <Option Value="3" Name="Supply" />
-        <Option Value="4" Name="Container" />
-        <Option Value="5" Name="Hacking Level 2" />
-        <Option Value="6" Name="Hacking Level 3" />
-    </Enum>
-  </Enums>
+  <Self 
+  Wiki="Determines the parameters used for interactable prompts." />
+  
   <Field>
     <regionType 
     AltName="Region Type" 
@@ -212,7 +173,47 @@
 	<doneFlag 
     AltName="Done Flag" 
     Wiki="The event flag to apply upon execution. -1 means no flag is set." />
-    
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="ACTION_BUTTON_REGION_TYPE" type="u8">
+        <Option Value="0" Name="Cylinder" />
+        <Option Value="1" Name="Prism" />
+        <Option Value="2" Name="Capsule" />
+    </Enum> 
+    <Enum Name="ACTION_BUTTON_CATEGORY" type="u8">
+        <Option Value="0" Name="Category 0" />
+        <Option Value="1" Name="Category 1" />
+        <Option Value="2" Name="Category 2" />
+        <Option Value="3" Name="Category 3" />
+        <Option Value="4" Name="Category 4" />
+        <Option Value="5" Name="Category 5" />
+        <Option Value="6" Name="Category 6" />
+        <Option Value="7" Name="Category 7" />
+        <Option Value="8" Name="Category 8" />
+        <Option Value="9" Name="Category 9" />
+        <Option Value="10" Name="Category 10" />
+        <Option Value="11" Name="Category 11" />
+        <Option Value="12" Name="Category 12" />
+        <Option Value="14" Name="Category 14" />
+    </Enum>
+    <Enum Name="ACTION_BUTTON_ANGLE_CHECK_TYPE" type="u8">
+        <Option Value="0" Name="Point" />
+        <Option Value="1" Name="Line" />
+    </Enum> 
+    <Enum Name="ACTION_BUTTON_TEXT_BOX_TYPE" type="u8">
+        <Option Value="0" Name="Action Button" />
+    </Enum>
+    <Enum Name="ACTION_BUTTON_EXEC_CIRCLE" type="u8">
+        <Option Value="0" Name="No" />
+        <Option Value="1" Name="Yes" />
+    </Enum>
+    <Enum Name="ACTION_BUTTON_ICON_ID" type="s32">
+        <Option Value="1" Name="Default" />
+        <Option Value="2" Name="Hacking Level 1" />
+        <Option Value="3" Name="Supply" />
+        <Option Value="4" Name="Container" />
+        <Option Value="5" Name="Hacking Level 2" />
+        <Option Value="6" Name="Hacking Level 3" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

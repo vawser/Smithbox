@@ -1,11 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="MAIL_LAYOUT_TYPE" type="u8">
-        <Option Value="0" Name="Image Below" />
-        <Option Value="1" Name="Image Above" />
-    </Enum> 
-  </Enums>
+  <Self 
+  Wiki="Determines the parameters used to display Archive and Mail messages in-game." />
+  
   <Field>
     <disableParam_NT AltName="Disable Param: Network Test Version" Wiki="Exclude from the NT version or mark the ones to be excluded." IsBool="" />
     <disableParam_Product AltName="Disable Param: Release Version" Wiki="Exclude from the product version or mark the items to be excluded." IsBool="" />
@@ -49,7 +46,11 @@
     <page2_blockEffect_1 AltName="Page 3: Block 2" Wiki="" />
     <page2_blockEffect_2 AltName="Page 3: Block 3" Wiki="" />
     <page2_reserved2 Padding="" />
-    
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="MAIL_LAYOUT_TYPE" type="u8">
+        <Option Value="0" Name="Image Below" />
+        <Option Value="1" Name="Image Above" />
+    </Enum> 
+  </Enums>
 </PARAMMETA>

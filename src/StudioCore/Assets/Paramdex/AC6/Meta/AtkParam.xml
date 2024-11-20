@@ -1,298 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="ATKPARAM_HIT_CREATE_TYPE" type="u8">
-      <Option Value="0" Name="Connect between DummyPolys" />
-      <Option Value="1" Name="Extend same direction as DummyPoly 1" />
-      <Option Value="2" Name="Fan" />
-    </Enum>
-    <Enum Name="ATKPARAM_SHOOT_SE_CATEGORY" type="s8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Handgun" />
-      <Option Value="2" Name="Rifle" />
-      <Option Value="3" Name="Cannon" />
-      <Option Value="4" Name="Machinegun" />
-      <Option Value="5" Name="AssaultRifle" />
-      <Option Value="6" Name="Gatling" />
-      <Option Value="7" Name="Shotgun" />
-      <Option Value="8" Name="SniperRifle" />
-      <Option Value="9" Name="HandGrenade" />
-      <Option Value="10" Name="bazooka" />
-      <Option Value="11" Name="GrenadeCannon" />
-      <Option Value="12" Name="BombS" />
-      <Option Value="13" Name="BombM" />
-      <Option Value="14" Name="BombL" />
-      <Option Value="15" Name="Missile" />
-      <Option Value="16" Name="Rocket" />
-      <Option Value="17" Name="PulseHandgun" />
-      <Option Value="18" Name="PulseRifle" />
-      <Option Value="19" Name="PulseCannon" />
-      <Option Value="20" Name="PulseMachinegun" />
-      <Option Value="21" Name="PulseShotgun" />
-      <Option Value="22" Name="PulseBombS" />
-      <Option Value="23" Name="PulseBombM" />
-      <Option Value="24" Name="PulseBombL" />
-      <Option Value="25" Name="LaserRifle" />
-      <Option Value="26" Name="HighLaserRifle" />
-      <Option Value="27" Name="LaserSniperRifle" />
-      <Option Value="28" Name="LaserMachinegun" />
-      <Option Value="29" Name="PlasmaRifle" />
-      <Option Value="30" Name="PlasmaCannon" />
-      <Option Value="31" Name="PlasmaBombS" />
-      <Option Value="32" Name="PlasmaBombM" />
-      <Option Value="33" Name="PlasmaBombL" />
-      <Option Value="34" Name="Melee" />
-      <Option Value="100" Name="SpWeapon" />
-    </Enum>
-    <Enum Name="WEP_MATERIAL_ATK" type="u8">
-      <Option Value="0" Name="Standard" />
-      <Option Value="1" Name="Kinetic" />
-      <Option Value="2" Name="Energy" />
-      <Option Value="3" Name="Explosive" />
-      <Option Value="4" Name="Ice" />
-      <Option Value="5" Name="Green" />
-      <Option Value="6" Name="None" />
-      <Option Value="7" Name="Dmy1" />
-      <Option Value="8" Name="Dmy2" />
-      <Option Value="9" Name="Dmy3" />
-      <Option Value="10" Name="Dmy4" />
-      <Option Value="11" Name="Coral" />
-      <Option Value="12" Name="Assault Armor" />
-      <Option Value="20" Name="Pulse" />
-      <Option Value="21" Name="Laser" />
-      <Option Value="22" Name="Plasma" />
-      <Option Value="255" Name="None" />
-    </Enum>
-    <Enum Name="ATK_PATAM_THROWFLAG_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Throw transition" />
-        <Option Value="2" Name="Throw" />
-        <Option Value="3" Name="Throw transition (with dmgLevel)" />
-    </Enum>
-    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
-        <Option Value="0" Name="Do not overwrite" />
-        <Option Value="1" Name="None" />
-        <Option Value="2" Name="Flame" />
-        <Option Value="3" Name="Magic" />
-        <Option Value="4" Name="Poison" />
-        <Option Value="5" Name="Egg" />
-        <Option Value="6" Name="Electric Shock" />
-        <Option Value="7" Name="Petrification" />
-        <Option Value="8" Name="Crystallization" />
-        <Option Value="255" Name="Material 1" />
-    </Enum>
-    <Enum Name="ATKPARAM_SFX_ATK_POW" type="s8">
-        <Option Value="0" Name="Small" />
-        <Option Value="1" Name="Medium" />
-        <Option Value="2" Name="Large" />
-        <Option Value="3" Name="Extra Large" />
-        <Option Value="4" Name="Very Large" />
-    </Enum>
-    <Enum Name="ATKPARAM_SFX_ATK_DIR" type="s8">
-        <Option Value="0" Name="Front" />
-        <Option Value="1" Name="Top" />
-        <Option Value="2" Name="Bottom" />
-        <Option Value="3" Name="Left" />
-        <Option Value="4" Name="Right" />
-    </Enum>
-    <Enum Name="ATKPARAM_SE_ATK_POW" type="s8">
-        <Option Value="0" Name="Small" />
-        <Option Value="1" Name="Large" />
-        <Option Value="2" Name="Extra Large" />
-    </Enum>
-    <Enum Name="ATKPARAM_REP_DMGTYPE" type="s8">
-        <Option Value="0" Name="Default" />
-        <Option Value="1" Name="No Stagger" />
-        <Option Value="2" Name="Unavailable" />
-        <Option Value="3" Name="Addition" />
-        <Option Value="4" Name="Hit Stop" />
-        <Option Value="5" Name="Small Stagger" />
-        <Option Value="6" Name="Unavailable" />
-        <Option Value="7" Name="Large Stagger" />
-        <Option Value="8" Name="Unavailable" />
-        <Option Value="9" Name="Unavailable" />
-        <Option Value="10" Name="Blown Away" />
-        <Option Value="11" Name="Unavailable" />
-        <Option Value="12" Name="Unavailable" />
-    </Enum>
-    <Enum Name="ATKPARAM_ADD_DAMAGE_ANIM_TYPE" type="u8">
-        <Option Value="0" Name="Step Addition" />
-        <Option Value="1" Name="100% Addition" />
-        <Option Value="2" Name="Great Addition" />
-    </Enum>
-    <Enum Name="ATKPARAM_MULTI_HIT_MAX_BEH_TYPE" type="u8">
-        <Option Value="0" Name="No Hit" />
-        <Option Value="1" Name="Hit: Ignore Damage" />
-    </Enum>
-    <Enum Name="ATK_PARAM_MAP_HIT" type="u8">
-        <Option Value="0" Name="Normal" />
-        <Option Value="1" Name="Precision" />
-        <Option Value="2" Name="Not on the map" />
-        <Option Value="3" Name="Map, not an asset" />
-    </Enum>
-    <Enum Name="ATKPARAM_KNOCKBACK_STARTPOINT_TYPE" type="u8">
-        <Option Value="0" Name="Default" />
-        <Option Value="1" Name="Impact position" />
-        <Option Value="2" Name="Character who attacked" />
-        <Option Value="3" Name="Attack source" />
-    </Enum>
-    <Enum Name="ATKPARAM_KNOCKBACK_DIR_TYPE" type="u8">
-        <Option Value="0" Name="No correction" />
-        <Option Value="1" Name="Corrected by angle of attacker and victim" />
-        <Option Value="2" Name="Corrected by the angle of the attacker and victim in the horizontal direction only" />
-    </Enum>
-    <Enum Name="ATK_PARAM_HIT_TYPE" type="u8">
-        <Option Value="0" Name="Normal (tip)" />
-        <Option Value="1" Name="Middle" />
-        <Option Value="2" Name="Root" />
-        <Option Value="3" Name="Map Collision Detection" />
-    </Enum>
-    <Enum Name="ATK_PARAM_HIT_SOURCE" type="u8">
-        <Option Value="0" Name="Weapon" />
-        <Option Value="1" Name="Body" />
-        <Option Value="2" Name="Part 0" />
-        <Option Value="3" Name="Part 1" />
-        <Option Value="4" Name="Part 2" />
-        <Option Value="5" Name="Part 3" />
-        <Option Value="6" Name="Part 4" />
-        <Option Value="7" Name="Part 5" />
-        <Option Value="8" Name="Part 6" />
-        <Option Value="9" Name="Part 7" />
-        <Option Value="10" Name="Part 8" />
-        <Option Value="11" Name="Part 9" />
-        <Option Value="12" Name="Part 10" />
-        <Option Value="13" Name="Part 11" />
-        <Option Value="14" Name="Part 12" />
-        <Option Value="15" Name="Part 13" />
-        <Option Value="16" Name="Part 14" />
-        <Option Value="17" Name="Part 15" />
-        <Option Value="18" Name="Part 16" />
-        <Option Value="19" Name="Part 17" />
-        <Option Value="20" Name="Part 18" />
-        <Option Value="21" Name="Part 19" />
-        <Option Value="22" Name="Part 20" />
-        <Option Value="23" Name="Part 21" />
-        <Option Value="24" Name="Part 22" />
-        <Option Value="25" Name="Part 23" />
-        <Option Value="26" Name="Part 24" />
-        <Option Value="27" Name="Part 25" />
-        <Option Value="28" Name="Part 26" />
-        <Option Value="29" Name="Part 27" />
-        <Option Value="30" Name="Part 28" />
-        <Option Value="31" Name="Part 29" />
-        <Option Value="32" Name="Part 30" />
-        <Option Value="33" Name="Part 31" />
-    </Enum>
-    <Enum Name="ATKPARAM_ASSET_BREAK_ACTION_TYPE" type="u8">
-        <Option Value="0" Name="Normal" />
-        <Option Value="1" Name="Explosion" />
-        <Option Value="2" Name="Combustion" />
-        <Option Value="3" Name="Laser" />
-        <Option Value="4" Name="Ice Worm" />
-    </Enum>
-    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Crush" />
-        <Option Value="2" Name="Pierce" />
-        <Option Value="3" Name="Push" />
-    </Enum>
-    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Blow" />
-        <Option Value="2" Name="Thrust" />
-        <Option Value="3" Name="Explosion" />
-        <Option Value="4" Name="Bullet" />
-    </Enum>
-    <Enum Name="BEHAVIOR_ATK_SIZE" type="u8">
-        <Option Value="0" Name="Small" />
-        <Option Value="1" Name="Large" />
-    </Enum>
-    <Enum Name="ATKPARAM_BEHAVIOR_ID" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Continuous Attack" />
-        <Option Value="2" Name="Super huge blowout" />
-        <Option Value="3" Name="Delayed damage reaction" />
-        <Option Value="4" Name="Damage only FE" />
-        <Option Value="5" Name="[For AC only] Small stagger guarantee" />
-        <Option Value="10" Name="Start Grab" />
-        <Option Value="11" Name="Finish Grab" />
-        <Option Value="20" Name="[AC] Start Grab" />
-        <Option Value="21" Name="[AC] Midst Grab" />
-        <Option Value="22" Name="[AC] Finish Grab" />
-    </Enum>
-    <Enum Name="ATKPARAM_BEHAVIOR_ON_HIT_TYPE" type="u8">
-        <Option Value="0" Name="Hit" />
-        <Option Value="1" Name="No Hit" />
-        <Option Value="2" Name="Hit: Ignore Damage" />
-    </Enum>
-    <Enum Name="ATK_PARAM_BROKEN_PARTS_BLOW_AWAY_DIRECTION_COMPENSATION_TYPE" type="u8">
-        <Option Value="0" Name="No correction" />
-        <Option Value="1" Name="Corrected by angle of attacker and victim" />
-        <Option Value="2" Name="Corrected by the angle of the attacker and victim in the horizontal direction only" />
-    </Enum>
-    <Enum Name="ATKPARAM_CRITICAL_SFX_LEVEL_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Small" />
-        <Option Value="2" Name="Medium" />
-        <Option Value="3" Name="Large" />
-    </Enum>
-    <Enum Name="ATKPARAM_DAMAGE_ANIM_ATK_DIR" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Back" />
-        <Option Value="2" Name="Front" />
-        <Option Value="3" Name="Top" />
-        <Option Value="4" Name="Bottom" />
-        <Option Value="5" Name="Left" />
-        <Option Value="6" Name="Right" />
-    </Enum>
-    <Enum Name="ATKPARAM_DEAD_ANIM_TYPE" type="u8">
-        <Option Value="0" Name="Normal death" />
-        <Option Value="10" Name="Penetration death" />
-        <Option Value="20" Name="Explosion death" />
-        <Option Value="30" Name="Shattered death" />
-        <Option Value="40" Name="Blade Death (Yokonagi)" />
-        <Option Value="45" Name="Blade Death (Vertical Slash)" />
-        <Option Value="50" Name="Rolling death" />
-    </Enum>
-    <Enum Name="ATKPARAM_GRAB_ATTACH_DIR_TYPE" type="u8">
-        <Option Value="0" Name="Always match the dummy poly" />
-        <Option Value="1" Name="Correct before and after" />
-        <Option Value="2" Name="Correct forward/backward/left/right" />
-    </Enum>
-    <Enum Name="ATKPARAM_GUARD_JUDGE_TYPE" type="u8">
-        <Option Value="1" Name="Character who attacked" />
-        <Option Value="2" Name="Center of attack judgment" />
-        <Option Value="3" Name="Bullet movement direction" />
-        <Option Value="4" Name="Omnidirectional guard possible" />
-    </Enum>
-    <Enum Name="ATK_PATAM_GRABFLAG_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Grab Start" />
-        <Option Value="2" Name="Grab Finish" />
-    </Enum>
-    <Enum Name="ATKPARAM_SHOOTER_KNOCKBACK_DIR_TYPE" type="u8">
-        <Option Value="0" Name="Bullet Direction" />
-        <Option Value="1" Name="Muzzle Direction" />
-    </Enum>
-    <Enum Name="BULLET_SFX_DELETE_TYPE" type="s8">
-        <Option Value="0" Name="Emitter Stop" />
-        <Option Value="1" Name="Delete" />
-    </Enum>
-    <Enum Name="SOUND_REFLECT_LEVEL" type="s8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Level 1" />
-        <Option Value="2" Name="Level 2" />
-        <Option Value="-1" Name="Default" />
-    </Enum>
-    <Enum Name="DMG_CALC_SIDE_TYPE" type="u8">
-        <Option Value="0" Name="Giver" />
-        <Option Value="1" Name="Receiver" />
-    </Enum>
-    <Enum Name="NPC_SP_EFFECT_ADD_COND_PARTS_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Ice Worm Head" />
-    </Enum>
-  </Enums>
+  <Self 
+  Wiki="Determines the hitbox and damage parameters for attacks." />
+  
   <Field>
     <disableParam_NT 
     AltName="Disable Param: Network Test Version" 
@@ -1393,6 +1103,10 @@
     Wiki="ID of damage level conversion parameter" 
     Refs="DamageLevelConvParam" />
     
+    <bodyTrunkAttakcPower
+    AltName="Damage: Core"
+    Wiki="Damage applied to the core." />
+    
     <bBodyTrunkBreakEnable
     AltName="Is Core Break Possible"
     Wiki="Can you do a core break?" 
@@ -1410,6 +1124,10 @@
     <paPenetrationPower
     AltName="Damage: Pulse Armor Penetration"
     Wiki="Weapon para/NPC para: Used in conjunction with PA output to calculate PA cut rate." />
+    
+    <hit0_Fan_Radius
+    AltName="Hit 0: Fan Radius"
+    Wiki="In metres" />
     
     <hit1_Fan_Radius
     AltName="Hit 1: Fan Radius"
@@ -2176,5 +1894,297 @@
     Padding="" />
     
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="ATKPARAM_HIT_CREATE_TYPE" type="u8">
+      <Option Value="0" Name="Connect between DummyPolys" />
+      <Option Value="1" Name="Extend same direction as DummyPoly 1" />
+      <Option Value="2" Name="Fan" />
+    </Enum>
+    <Enum Name="ATKPARAM_SHOOT_SE_CATEGORY" type="s8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Handgun" />
+      <Option Value="2" Name="Rifle" />
+      <Option Value="3" Name="Cannon" />
+      <Option Value="4" Name="Machinegun" />
+      <Option Value="5" Name="AssaultRifle" />
+      <Option Value="6" Name="Gatling" />
+      <Option Value="7" Name="Shotgun" />
+      <Option Value="8" Name="SniperRifle" />
+      <Option Value="9" Name="HandGrenade" />
+      <Option Value="10" Name="bazooka" />
+      <Option Value="11" Name="GrenadeCannon" />
+      <Option Value="12" Name="BombS" />
+      <Option Value="13" Name="BombM" />
+      <Option Value="14" Name="BombL" />
+      <Option Value="15" Name="Missile" />
+      <Option Value="16" Name="Rocket" />
+      <Option Value="17" Name="PulseHandgun" />
+      <Option Value="18" Name="PulseRifle" />
+      <Option Value="19" Name="PulseCannon" />
+      <Option Value="20" Name="PulseMachinegun" />
+      <Option Value="21" Name="PulseShotgun" />
+      <Option Value="22" Name="PulseBombS" />
+      <Option Value="23" Name="PulseBombM" />
+      <Option Value="24" Name="PulseBombL" />
+      <Option Value="25" Name="LaserRifle" />
+      <Option Value="26" Name="HighLaserRifle" />
+      <Option Value="27" Name="LaserSniperRifle" />
+      <Option Value="28" Name="LaserMachinegun" />
+      <Option Value="29" Name="PlasmaRifle" />
+      <Option Value="30" Name="PlasmaCannon" />
+      <Option Value="31" Name="PlasmaBombS" />
+      <Option Value="32" Name="PlasmaBombM" />
+      <Option Value="33" Name="PlasmaBombL" />
+      <Option Value="34" Name="Melee" />
+      <Option Value="100" Name="SpWeapon" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_ATK" type="u8">
+      <Option Value="0" Name="Standard" />
+      <Option Value="1" Name="Kinetic" />
+      <Option Value="2" Name="Energy" />
+      <Option Value="3" Name="Explosive" />
+      <Option Value="4" Name="Ice" />
+      <Option Value="5" Name="Green" />
+      <Option Value="6" Name="None" />
+      <Option Value="7" Name="Dmy1" />
+      <Option Value="8" Name="Dmy2" />
+      <Option Value="9" Name="Dmy3" />
+      <Option Value="10" Name="Dmy4" />
+      <Option Value="11" Name="Coral" />
+      <Option Value="12" Name="Assault Armor" />
+      <Option Value="20" Name="Pulse" />
+      <Option Value="21" Name="Laser" />
+      <Option Value="22" Name="Plasma" />
+      <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="ATK_PATAM_THROWFLAG_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Throw transition" />
+        <Option Value="2" Name="Throw" />
+        <Option Value="3" Name="Throw transition (with dmgLevel)" />
+    </Enum>
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+        <Option Value="0" Name="Do not overwrite" />
+        <Option Value="1" Name="None" />
+        <Option Value="2" Name="Flame" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Poison" />
+        <Option Value="5" Name="Egg" />
+        <Option Value="6" Name="Electric Shock" />
+        <Option Value="7" Name="Petrification" />
+        <Option Value="8" Name="Crystallization" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="ATKPARAM_SFX_ATK_POW" type="s8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Medium" />
+        <Option Value="2" Name="Large" />
+        <Option Value="3" Name="Extra Large" />
+        <Option Value="4" Name="Very Large" />
+    </Enum>
+    <Enum Name="ATKPARAM_SFX_ATK_DIR" type="s8">
+        <Option Value="0" Name="Front" />
+        <Option Value="1" Name="Top" />
+        <Option Value="2" Name="Bottom" />
+        <Option Value="3" Name="Left" />
+        <Option Value="4" Name="Right" />
+    </Enum>
+    <Enum Name="ATKPARAM_SE_ATK_POW" type="s8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Large" />
+        <Option Value="2" Name="Extra Large" />
+    </Enum>
+    <Enum Name="ATKPARAM_REP_DMGTYPE" type="s8">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="No Stagger" />
+        <Option Value="2" Name="Unavailable" />
+        <Option Value="3" Name="Addition" />
+        <Option Value="4" Name="Hit Stop" />
+        <Option Value="5" Name="Small Stagger" />
+        <Option Value="6" Name="Unavailable" />
+        <Option Value="7" Name="Large Stagger" />
+        <Option Value="8" Name="Unavailable" />
+        <Option Value="9" Name="Unavailable" />
+        <Option Value="10" Name="Blown Away" />
+        <Option Value="11" Name="Unavailable" />
+        <Option Value="12" Name="Unavailable" />
+    </Enum>
+    <Enum Name="ATKPARAM_ADD_DAMAGE_ANIM_TYPE" type="u8">
+        <Option Value="0" Name="Step Addition" />
+        <Option Value="1" Name="100% Addition" />
+        <Option Value="2" Name="Great Addition" />
+    </Enum>
+    <Enum Name="ATKPARAM_MULTI_HIT_MAX_BEH_TYPE" type="u8">
+        <Option Value="0" Name="No Hit" />
+        <Option Value="1" Name="Hit: Ignore Damage" />
+    </Enum>
+    <Enum Name="ATK_PARAM_MAP_HIT" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Precision" />
+        <Option Value="2" Name="Not on the map" />
+        <Option Value="3" Name="Map, not an asset" />
+    </Enum>
+    <Enum Name="ATKPARAM_KNOCKBACK_STARTPOINT_TYPE" type="u8">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="Impact position" />
+        <Option Value="2" Name="Character who attacked" />
+        <Option Value="3" Name="Attack source" />
+    </Enum>
+    <Enum Name="ATKPARAM_KNOCKBACK_DIR_TYPE" type="u8">
+        <Option Value="0" Name="No correction" />
+        <Option Value="1" Name="Corrected by angle of attacker and victim" />
+        <Option Value="2" Name="Corrected by the angle of the attacker and victim in the horizontal direction only" />
+    </Enum>
+    <Enum Name="ATK_PARAM_HIT_TYPE" type="u8">
+        <Option Value="0" Name="Normal (tip)" />
+        <Option Value="1" Name="Middle" />
+        <Option Value="2" Name="Root" />
+        <Option Value="3" Name="Map Collision Detection" />
+    </Enum>
+    <Enum Name="ATK_PARAM_HIT_SOURCE" type="u8">
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Body" />
+        <Option Value="2" Name="Part 0" />
+        <Option Value="3" Name="Part 1" />
+        <Option Value="4" Name="Part 2" />
+        <Option Value="5" Name="Part 3" />
+        <Option Value="6" Name="Part 4" />
+        <Option Value="7" Name="Part 5" />
+        <Option Value="8" Name="Part 6" />
+        <Option Value="9" Name="Part 7" />
+        <Option Value="10" Name="Part 8" />
+        <Option Value="11" Name="Part 9" />
+        <Option Value="12" Name="Part 10" />
+        <Option Value="13" Name="Part 11" />
+        <Option Value="14" Name="Part 12" />
+        <Option Value="15" Name="Part 13" />
+        <Option Value="16" Name="Part 14" />
+        <Option Value="17" Name="Part 15" />
+        <Option Value="18" Name="Part 16" />
+        <Option Value="19" Name="Part 17" />
+        <Option Value="20" Name="Part 18" />
+        <Option Value="21" Name="Part 19" />
+        <Option Value="22" Name="Part 20" />
+        <Option Value="23" Name="Part 21" />
+        <Option Value="24" Name="Part 22" />
+        <Option Value="25" Name="Part 23" />
+        <Option Value="26" Name="Part 24" />
+        <Option Value="27" Name="Part 25" />
+        <Option Value="28" Name="Part 26" />
+        <Option Value="29" Name="Part 27" />
+        <Option Value="30" Name="Part 28" />
+        <Option Value="31" Name="Part 29" />
+        <Option Value="32" Name="Part 30" />
+        <Option Value="33" Name="Part 31" />
+    </Enum>
+    <Enum Name="ATKPARAM_ASSET_BREAK_ACTION_TYPE" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Explosion" />
+        <Option Value="2" Name="Combustion" />
+        <Option Value="3" Name="Laser" />
+        <Option Value="4" Name="Ice Worm" />
+    </Enum>
+    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Crush" />
+        <Option Value="2" Name="Pierce" />
+        <Option Value="3" Name="Push" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Blow" />
+        <Option Value="2" Name="Thrust" />
+        <Option Value="3" Name="Explosion" />
+        <Option Value="4" Name="Bullet" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_SIZE" type="u8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Large" />
+    </Enum>
+    <Enum Name="ATKPARAM_BEHAVIOR_ID" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Continuous Attack" />
+        <Option Value="2" Name="Super huge blowout" />
+        <Option Value="3" Name="Delayed damage reaction" />
+        <Option Value="4" Name="Damage only FE" />
+        <Option Value="5" Name="[For AC only] Small stagger guarantee" />
+        <Option Value="10" Name="Start Grab" />
+        <Option Value="11" Name="Finish Grab" />
+        <Option Value="20" Name="[AC] Start Grab" />
+        <Option Value="21" Name="[AC] Midst Grab" />
+        <Option Value="22" Name="[AC] Finish Grab" />
+    </Enum>
+    <Enum Name="ATKPARAM_BEHAVIOR_ON_HIT_TYPE" type="u8">
+        <Option Value="0" Name="Hit" />
+        <Option Value="1" Name="No Hit" />
+        <Option Value="2" Name="Hit: Ignore Damage" />
+    </Enum>
+    <Enum Name="ATK_PARAM_BROKEN_PARTS_BLOW_AWAY_DIRECTION_COMPENSATION_TYPE" type="u8">
+        <Option Value="0" Name="No correction" />
+        <Option Value="1" Name="Corrected by angle of attacker and victim" />
+        <Option Value="2" Name="Corrected by the angle of the attacker and victim in the horizontal direction only" />
+    </Enum>
+    <Enum Name="ATKPARAM_CRITICAL_SFX_LEVEL_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Small" />
+        <Option Value="2" Name="Medium" />
+        <Option Value="3" Name="Large" />
+    </Enum>
+    <Enum Name="ATKPARAM_DAMAGE_ANIM_ATK_DIR" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Back" />
+        <Option Value="2" Name="Front" />
+        <Option Value="3" Name="Top" />
+        <Option Value="4" Name="Bottom" />
+        <Option Value="5" Name="Left" />
+        <Option Value="6" Name="Right" />
+    </Enum>
+    <Enum Name="ATKPARAM_DEAD_ANIM_TYPE" type="u8">
+        <Option Value="0" Name="Normal death" />
+        <Option Value="10" Name="Penetration death" />
+        <Option Value="20" Name="Explosion death" />
+        <Option Value="30" Name="Shattered death" />
+        <Option Value="40" Name="Blade Death (Yokonagi)" />
+        <Option Value="45" Name="Blade Death (Vertical Slash)" />
+        <Option Value="50" Name="Rolling death" />
+    </Enum>
+    <Enum Name="ATKPARAM_GRAB_ATTACH_DIR_TYPE" type="u8">
+        <Option Value="0" Name="Always match the dummy poly" />
+        <Option Value="1" Name="Correct before and after" />
+        <Option Value="2" Name="Correct forward/backward/left/right" />
+    </Enum>
+    <Enum Name="ATKPARAM_GUARD_JUDGE_TYPE" type="u8">
+        <Option Value="1" Name="Character who attacked" />
+        <Option Value="2" Name="Center of attack judgment" />
+        <Option Value="3" Name="Bullet movement direction" />
+        <Option Value="4" Name="Omnidirectional guard possible" />
+    </Enum>
+    <Enum Name="ATK_PATAM_GRABFLAG_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Grab Start" />
+        <Option Value="2" Name="Grab Finish" />
+    </Enum>
+    <Enum Name="ATKPARAM_SHOOTER_KNOCKBACK_DIR_TYPE" type="u8">
+        <Option Value="0" Name="Bullet Direction" />
+        <Option Value="1" Name="Muzzle Direction" />
+    </Enum>
+    <Enum Name="BULLET_SFX_DELETE_TYPE" type="s8">
+        <Option Value="0" Name="Emitter Stop" />
+        <Option Value="1" Name="Delete" />
+    </Enum>
+    <Enum Name="SOUND_REFLECT_LEVEL" type="s8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Level 1" />
+        <Option Value="2" Name="Level 2" />
+        <Option Value="-1" Name="Default" />
+    </Enum>
+    <Enum Name="DMG_CALC_SIDE_TYPE" type="u8">
+        <Option Value="0" Name="Giver" />
+        <Option Value="1" Name="Receiver" />
+    </Enum>
+    <Enum Name="NPC_SP_EFFECT_ADD_COND_PARTS_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Ice Worm Head" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

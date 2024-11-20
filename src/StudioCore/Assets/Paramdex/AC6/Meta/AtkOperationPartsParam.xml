@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the operation state of various joints. For players." />
+  
   <Field>
     <parts0 
     AltName="Operation: Lower Body" 
@@ -134,6 +137,6 @@
     <dummy2 
     AltName=""
     Padding="" />
+    
   </Field>
-  <Self />
 </PARAMMETA>

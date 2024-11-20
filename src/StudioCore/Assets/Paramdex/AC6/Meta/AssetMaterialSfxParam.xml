@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines material particle parameters." />
+  
   <Field>
     <sfxId_00 
     AltName="Particle ID [00]" 
@@ -161,5 +164,4 @@
     Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" 
     ParticleAlias="" />
   </Field>
-  <Self />
 </PARAMMETA>
