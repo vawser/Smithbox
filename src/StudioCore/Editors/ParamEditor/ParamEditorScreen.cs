@@ -382,6 +382,25 @@ public class ParamEditorScreen : EditorScreen
                         }
                     }
 
+                    if (ImGui.MenuItem("Export all modified params to file"))
+                    {
+                        if (PlatformUtils.Instance.OpenFolderDialog("Choose CSV directory", out var path))
+                        {
+                            foreach (KeyValuePair<string, Param> param in ParamBank.PrimaryBank.Params)
+                            {
+                                var result = ParamBank.PrimaryBank.GetVanillaDiffRows(param.Key);
+
+                                if (result.Count > 0)
+                            {
+                                    IReadOnlyList<Param.Row> rows = param.Value.Rows;
+                                    TryWriteFile(
+                                        $@"{path}\{param.Key}.csv",
+                                        ParamIO.GenerateCSV(rows, param.Value, CFG.Current.Param_Export_Delimiter[0]));
+                                }
+                            }
+                        }
+                    }
+
                     ImGui.EndMenu();
                 }
 
