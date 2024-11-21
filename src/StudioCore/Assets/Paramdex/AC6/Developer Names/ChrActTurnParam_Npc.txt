@@ -1,0 +1,2124 @@
+0 AC - Normal -- AC - 通常時
+10 AC - When dashing -- AC - ダッシュ時
+15 AC - Fast dash -- AC - 高速ダッシュ時
+20 AC - when boosted -- AC - ブースト時
+21 AC - Boost during stealth -- AC - ステルス中ブースト時
+30 AC - when braking -- AC - ブレーキ時
+40 AC - when moving in the air -- AC - 空中移動時
+50 AC - Boost turning -- AC - ブースト旋回時
+55 AC - Air boost turning -- AC - 空中ブースト旋回時
+60 AC - 180 degree turn when turning boost -- AC - ブースト旋回時_180度ターン
+65 AC - 180 degree turn during air boost turning -- AC - 空中ブースト旋回時_180度ターン
+70 AC - When moving to Breho -- AC - ブレホ移動時
+75 AC - When moving in mid-air Breho -- AC - 空中ブレホ移動時
+80 AC - when cover is reversed -- AC - カバー反転時
+90 AC - large quick boost -- AC - 大クイックブースト時
+100 AC - Normal -- AC - 通常時
+110 AC - When dashing -- AC - ダッシュ時
+115 AC - Fast dash -- AC - 高速ダッシュ時
+120 AC - when boosted -- AC - ブースト時
+130 AC - when braking -- AC - ブレーキ時
+140 AC - when moving in the air -- AC - 空中移動時
+150 AC - Boost turning -- AC - ブースト旋回時
+155 AC - Air boost turning -- AC - 空中ブースト旋回時
+160 AC - 180 degree turn when turning boost -- AC - ブースト旋回時_180度ターン
+165 AC - 180 degree turn during air boost turning -- AC - 空中ブースト旋回時_180度ターン
+170 AC - When moving to Breho -- AC - ブレホ移動時
+175 AC - When moving in mid-air Breho -- AC - 空中ブレホ移動時
+180 AC - when cover is reversed -- AC - カバー反転時
+190 AC - large quick boost -- AC - 大クイックブースト時
+1000 AC_Quadrupod - Normal time -- AC_四脚 - 通常時
+1010 AC_quadruped - when dashing -- AC_四脚 - ダッシュ時
+1015 AC_Quadruped - During high speed dash -- AC_四脚 - 高速ダッシュ時
+1020 AC_quadruped - when boosted -- AC_四脚 - ブースト時
+1030 AC_quadruped - when braking -- AC_四脚 - ブレーキ時
+1040 AC_Quadruped - When moving in the air -- AC_四脚 - 空中移動時
+1050 AC_quadruped - when turning boost -- AC_四脚 - ブースト旋回時
+1055 AC_Quadruped - When turning with air boost -- AC_四脚 - 空中ブースト旋回時
+1060 AC_Quadruped - Boost turning_180 degree turn -- AC_四脚 - ブースト旋回時_180度ターン
+1065 AC_Quadruped - Air boost turning_180 degree turn -- AC_四脚 - 空中ブースト旋回時_180度ターン
+1070 AC_Quadruped - When moving Breho -- AC_四脚 - ブレホ移動時
+1075 AC_Quadruped - When moving in mid-air Breho -- AC_四脚 - 空中ブレホ移動時
+1080 AC_quadruped - when cover is reversed -- AC_四脚 - カバー反転時
+1090 AC_quadruped - at large quick boost -- AC_四脚 - 大クイックブースト時
+3000 AC_Tank - Normal time -- AC_タンク - 通常時
+3010 AC_Tank - When dashing -- AC_タンク - ダッシュ時
+3015 AC_Tank - During high speed dash -- AC_タンク - 高速ダッシュ時
+3020 AC_Tank - When boosted -- AC_タンク - ブースト時
+3030 AC_tank - during braking -- AC_タンク - ブレーキ時
+3040 AC_Tank - When moving in the air -- AC_タンク - 空中移動時
+3050 AC_Tank - When turning boost -- AC_タンク - ブースト旋回時
+3055 AC_Tank - Air boost turning -- AC_タンク - 空中ブースト旋回時
+3060 AC_Tank - Boost turning_180 degree turn -- AC_タンク - ブースト旋回時_180度ターン
+3065 AC_Tank - Air boost turning_180 degree turn -- AC_タンク - 空中ブースト旋回時_180度ターン
+3070 AC_Tank - When moving Breho -- AC_タンク - ブレホ移動時
+3075 AC_Tank - When moving in mid-air Breho -- AC_タンク - 空中ブレホ移動時
+3080 AC_Tank - When cover is reversed -- AC_タンク - カバー反転時
+3090 AC_Tank - Large quick boost -- AC_タンク - 大クイックブースト時
+9900 AC - Turn at QB start -- AC - QB開始時旋回
+9901 AC - Quadruped_QB movement -- AC - 四脚_QB移動時
+9910 AC - Reverse joint charging attack_charging stage -- AC - 逆関節溜め攻撃_溜め段階
+9911 AC - Reverse joint charge attack_stepping -- AC - 逆関節溜め攻撃_踏み込み
+800000 Vehicle - Normal -- ビークル - 通常時
+800009 Vehicle - Stopped -- ビークル - 停止中
+850000 bomber normal -- 爆撃機 通常時
+851000 Enemy - Strong - Normal time -- 敵 - 強ザコ - 通常時
+851010 Enemy - Strong Zako - When dashing -- 敵 - 強ザコ - ダッシュ時
+851020 Enemy - Strong Zako - When boosted -- 敵 - 強ザコ - ブースト時
+851030 Enemy - Strong - When braking -- 敵 - 強ザコ - ブレーキ時
+851040 Enemy - Strong Zako - When moving in the air -- 敵 - 強ザコ - 空中移動時
+851050 Enemy - Strong Zako - When turning boost -- 敵 - 強ザコ - ブースト旋回時
+851055 Enemy - Strong Zako - When turning in the air boost -- 敵 - 強ザコ - 空中ブースト旋回時
+851060 Enemy - Strong Zako - Boost turning_180 degree turn -- 敵 - 強ザコ - ブースト旋回時_180度ターン
+851065 Enemy - Strong Zako - 180 degree turn when turning in air boost -- 敵 - 強ザコ - 空中ブースト旋回時_180度ターン
+851070 Enemy - Strong Zako - When moving Breho -- 敵 - 強ザコ - ブレホ移動時
+851075 Enemy - Strong Zako - When moving in the air -- 敵 - 強ザコ - 空中ブレホ移動時
+854000 Enemy - Strong enemy (heavy class) - Normal time -- 敵 - 強敵（重量級） - 通常時
+854010 Enemy - Strong enemy (heavy class) - When dashing -- 敵 - 強敵（重量級） - ダッシュ時
+854020 Enemy - Strong enemy (heavy class) - When boosted -- 敵 - 強敵（重量級） - ブースト時
+854030 Enemy - Strong enemy (heavy class) - When braking -- 敵 - 強敵（重量級） - ブレーキ時
+854040 Enemies - Strong enemies (heavy class) - When moving in the air -- 敵 - 強敵（重量級） - 空中移動時
+854050 Enemy - Strong enemy (heavy class) - When turning boost -- 敵 - 強敵（重量級） - ブースト旋回時
+854055 Enemy - Strong enemy (heavy class) - When turning with air boost -- 敵 - 強敵（重量級） - 空中ブースト旋回時
+854060 Enemy - Strong enemy (heavy class) - Boost turning_180 degree turn -- 敵 - 強敵（重量級） - ブースト旋回時_180度ターン
+854065 Enemy - Strong enemy (heavy class) - 180 degree turn when turning with air boost -- 敵 - 強敵（重量級） - 空中ブースト旋回時_180度ターン
+854070 Enemies - Strong enemies (heavy class) - When moving Breho -- 敵 - 強敵（重量級） - ブレホ移動時
+854075 Enemy - Strong enemy (heavy class) - When moving in the air Breho -- 敵 - 強敵（重量級） - 空中ブレホ移動時
+880000 Enemies - Bug (Heavy class compatible rare) - Normal time -- 敵 - バグ(重量級対応レア) - 通常時
+880010 Enemy - Bug (heavy class compatible rare) - When dashing -- 敵 - バグ(重量級対応レア) - ダッシュ時
+880020 Enemies - Bug (Heavy class compatible rare) - When boosted -- 敵 - バグ(重量級対応レア) - ブースト時
+880030 Enemy - Bug (Heavy class compatible rare) - When braking -- 敵 - バグ(重量級対応レア) - ブレーキ時
+880040 Enemy - Bug (heavy class compatible rare) - When moving in the air -- 敵 - バグ(重量級対応レア) - 空中移動時
+880050 Enemy - Bug (heavy class compatible rare) - When turning boost -- 敵 - バグ(重量級対応レア) - ブースト旋回時
+880055 Enemy - Bug (heavy class compatible rare) - Air boost turning -- 敵 - バグ(重量級対応レア) - 空中ブースト旋回時
+880060 Enemy - Bug (Heavy class compatible rare) - 180 degree turn when turning boost -- 敵 - バグ(重量級対応レア) - ブースト旋回時_180度ターン
+880065 Enemy - Bug (Heavy class compatible rare) - 180 degree turn when turning with air boost -- 敵 - バグ(重量級対応レア) - 空中ブースト旋回時_180度ターン
+880070 Enemies - Bug (heavy class compatible rare) - When moving Breho -- 敵 - バグ(重量級対応レア) - ブレホ移動時
+880075 Enemy - Bug (heavy class compatible rare) - When moving in mid-air Breho -- 敵 - バグ(重量級対応レア) - 空中ブレホ移動時
+920100 Enemy - Reverse joint - Normal time -- 敵 - 逆関節 - 通常時
+920110 Enemy - Reverse joint - When dashing -- 敵 - 逆関節 - ダッシュ時
+920120 Enemy - Reverse joint - When boosted -- 敵 - 逆関節 - ブースト時
+920130 Enemy - Reverse joint - When braking -- 敵 - 逆関節 - ブレーキ時
+920140 Enemy - Reverse joint - When moving in the air -- 敵 - 逆関節 - 空中移動時
+920150 Enemy - Reverse joint - Boost turning -- 敵 - 逆関節 - ブースト旋回時
+920155 Enemy - Reverse joint - Air boost turning -- 敵 - 逆関節 - 空中ブースト旋回時
+920160 Enemy - Reverse joint - Boost turning_180 degree turn -- 敵 - 逆関節 - ブースト旋回時_180度ターン
+920165 Enemy - Reverse joint - Air boost turning_180 degree turn -- 敵 - 逆関節 - 空中ブースト旋回時_180度ターン
+920170 Enemy - Reverse joint - When moving Breho -- 敵 - 逆関節 - ブレホ移動時
+920175 Enemy - Reverse joint - When moving in mid-air Breho -- 敵 - 逆関節 - 空中ブレホ移動時
+999900 Enemy - No turning - Normal time -- 敵 - 旋回しない - 通常時
+999910 Enemies - Do not turn - When dashing -- 敵 - 旋回しない - ダッシュ時
+999920 Enemies - No turning - When boosted -- 敵 - 旋回しない - ブースト時
+999930 Enemy - Not turning - When braking -- 敵 - 旋回しない - ブレーキ時
+999940 Enemies - Do not turn - When moving in the air -- 敵 - 旋回しない - 空中移動時
+999950 Enemy - Not turning - Boost turning -- 敵 - 旋回しない - ブースト旋回時
+999955 Enemy - Not turning - Air boost turning -- 敵 - 旋回しない - 空中ブースト旋回時
+999960 Enemy - No turning - Boost turning_180 degree turn -- 敵 - 旋回しない - ブースト旋回時_180度ターン
+999965 Enemy - No turning - Air boost turning when turning_180 degrees -- 敵 - 旋回しない - 空中ブースト旋回時_180度ターン
+999970 Enemies - Do not turn - When moving Breho -- 敵 - 旋回しない - ブレホ移動時
+999975 Enemies - Do not turn - When moving in mid-air Breho -- 敵 - 旋回しない - 空中ブレホ移動時
+10000000 c1000 template normal time -- c1000　テンプレート　通常時
+10000010 c1000 template dash time -- c1000　テンプレート　ダッシュ時
+10000015 c1000 template high speed dash -- c1000　テンプレート　高速ダッシュ時
+10000020 c1000 template boost -- c1000　テンプレート　ブースト時
+10000030 c1000 template when braking -- c1000　テンプレート　ブレーキ時
+10000040 c1000 template when moving in the air -- c1000　テンプレート　空中移動時
+10000050 c1000 template when turning boost -- c1000　テンプレート　ブースト旋回時
+10000055 c1000 template during aerial boost turning -- c1000　テンプレート　空中ブースト旋回時
+10000060 c1000 template Boost turning_180 degree turn -- c1000　テンプレート　ブースト旋回時_180度ターン
+10000065 c1000 Template Aerial boost turning_180 degree turn -- c1000　テンプレート　空中ブースト旋回時_180度ターン
+10000070 c1000 template when moving Brejo -- c1000　テンプレート　ブレホ移動時
+10000075 c1000 Template When moving in the air -- c1000　テンプレート　空中ブレホ移動時
+10000080 c1000 template when cover is reversed -- c1000　テンプレート　カバー反転時
+10000090 c1000 template large quick boost -- c1000　テンプレート　大クイックブースト時
+11110000 c1111 Dress-up NPC (wingman) Mike Normal time -- c1111 着せ替えNPC(僚機) マイク　通常時
+11110010 c1111 Dress-up NPC (wingman) Mike when dashing -- c1111 着せ替えNPC(僚機) マイク　ダッシュ時
+11110015 c1111 Dress-up NPC (wingman) Mike during high-speed dash -- c1111 着せ替えNPC(僚機) マイク　高速ダッシュ時
+11110020 c1111 Dress-up NPC (wingman) microphone when boosted -- c1111 着せ替えNPC(僚機) マイク　ブースト時
+11110030 c1111 Dress-up NPC (wingman) microphone when braking -- c1111 着せ替えNPC(僚機) マイク　ブレーキ時
+11110040 c1111 Dress-up NPC (wingman) Mike when moving in the air -- c1111 着せ替えNPC(僚機) マイク　空中移動時
+11110050 c1111 Dress-up NPC (wingman) Mike when turning boost -- c1111 着せ替えNPC(僚機) マイク　ブースト旋回時
+11110055 c1111 Dress-up NPC (wingman) Mike during aerial boost turn -- c1111 着せ替えNPC(僚機) マイク　空中ブースト旋回時
+11110060 c1111 Dress-up NPC (wingman) Mike Boost turn_180 degree turn -- c1111 着せ替えNPC(僚機) マイク　ブースト旋回時_180度ターン
+11110065 c1111 Dress-up NPC (wingman) Mike _180 degree turn when turning in mid-air boost -- c1111 着せ替えNPC(僚機) マイク　空中ブースト旋回時_180度ターン
+11110070 c1111 Dress-up NPC (wingman) Mike when moving Breho -- c1111 着せ替えNPC(僚機) マイク　ブレホ移動時
+11110075 c1111 Dress-up NPC (wingman) Mike when moving in mid-air Breho -- c1111 着せ替えNPC(僚機) マイク　空中ブレホ移動時
+11110080 c1111 Dress-up NPC (wingman) when microphone cover is reversed -- c1111 着せ替えNPC(僚機) マイク　カバー反転時
+11110090 c1111 Dress-up NPC (wingman) Mike during large quick boost -- c1111 着せ替えNPC(僚機) マイク　大クイックブースト時
+11120000 c1112 Dress-up NPC (wingman) Daisy Normal time -- c1112 着せ替えNPC(僚機) デイジー　通常時
+11120010 c1112 Dress-up NPC (wingman) Daisy when dashing -- c1112 着せ替えNPC(僚機) デイジー　ダッシュ時
+11120015 c1112 Dress-up NPC (wingman) Daisy during high-speed dash -- c1112 着せ替えNPC(僚機) デイジー　高速ダッシュ時
+11120020 c1112 Dress-up NPC (wingman) Daisy when boosted -- c1112 着せ替えNPC(僚機) デイジー　ブースト時
+11120030 c1112 Dress-up NPC (wingman) Daisy when braking -- c1112 着せ替えNPC(僚機) デイジー　ブレーキ時
+11120040 c1112 Dress-up NPC (wingman) Daisy when moving in the air -- c1112 着せ替えNPC(僚機) デイジー　空中移動時
+11120050 c1112 Dress-up NPC (wingman) Daisy when turning boost -- c1112 着せ替えNPC(僚機) デイジー　ブースト旋回時
+11120055 c1112 Dress-up NPC (wingman) Daisy during air boost turn -- c1112 着せ替えNPC(僚機) デイジー　空中ブースト旋回時
+11120060 c1112 Dress-up NPC (wingman) Daisy Boost turn_180 degree turn -- c1112 着せ替えNPC(僚機) デイジー　ブースト旋回時_180度ターン
+11120065 c1112 Dress-up NPC (wingman) Daisy Aerial boost turn_180 degree turn -- c1112 着せ替えNPC(僚機) デイジー　空中ブースト旋回時_180度ターン
+11120070 c1112 Dress-up NPC (wingman) Daisy Breho when moving -- c1112 着せ替えNPC(僚機) デイジー　ブレホ移動時
+11120075 c1112 Dress-up NPC (wingman) Daisy when moving in mid-air Breho -- c1112 着せ替えNPC(僚機) デイジー　空中ブレホ移動時
+11120080 c1112 Dress-up NPC (wingman) Daisy when cover is reversed -- c1112 着せ替えNPC(僚機) デイジー　カバー反転時
+11120090 c1112 Dress-up NPC (wingman) Daisy during large quick boost -- c1112 着せ替えNPC(僚機) デイジー　大クイックブースト時
+11130000 c1113 Dress-up NPC (wingman) Boss Normal time -- c1113 着せ替えNPC(僚機) ボス　通常時
+11130010 c1113 Dress-up NPC (wingman) Boss when dashing -- c1113 着せ替えNPC(僚機) ボス　ダッシュ時
+11130015 c1113 Dress-up NPC (wingman) Boss during high-speed dash -- c1113 着せ替えNPC(僚機) ボス　高速ダッシュ時
+11130020 c1113 Dress-up NPC (wingman) Boss boost time -- c1113 着せ替えNPC(僚機) ボス　ブースト時
+11130030 c1113 Dress-up NPC (wingman) Boss when braking -- c1113 着せ替えNPC(僚機) ボス　ブレーキ時
+11130040 c1113 Dress-up NPC (wingman) Boss when moving in the air -- c1113 着せ替えNPC(僚機) ボス　空中移動時
+11130050 c1113 Dress-up NPC (wingman) Boss when turning boost -- c1113 着せ替えNPC(僚機) ボス　ブースト旋回時
+11130055 c1113 Dress-up NPC (wingman) Boss during air boost turn -- c1113 着せ替えNPC(僚機) ボス　空中ブースト旋回時
+11130060 c1113 Dress-up NPC (wingman) Boss Boost turn_180 degree turn -- c1113 着せ替えNPC(僚機) ボス　ブースト旋回時_180度ターン
+11130065 c1113 Dress-up NPC (wingman) Boss: 180 degree turn when turning in air boost -- c1113 着せ替えNPC(僚機) ボス　空中ブースト旋回時_180度ターン
+11130070 c1113 Dress-up NPC (wingman) Boss when moving Breho -- c1113 着せ替えNPC(僚機) ボス　ブレホ移動時
+11130075 c1113 Dress-up NPC (wingman) Boss When moving in mid-air Breho -- c1113 着せ替えNPC(僚機) ボス　空中ブレホ移動時
+11130080 c1113 Dress-up NPC (wingman) Boss when cover is reversed -- c1113 着せ替えNPC(僚機) ボス　カバー反転時
+11130090 c1113 Dress-up NPC (wingman) Boss large quick boost -- c1113 着せ替えNPC(僚機) ボス　大クイックブースト時
+11140000 c1114 Dress-up NPC (wingman) Patrick Normal time -- c1114 着せ替えNPC(僚機) パトリック　通常時
+11140010 c1114 Dress-up NPC (wingman) Patrick when dashing -- c1114 着せ替えNPC(僚機) パトリック　ダッシュ時
+11140015 c1114 Dress-up NPC (wingman) Patrick during high-speed dash -- c1114 着せ替えNPC(僚機) パトリック　高速ダッシュ時
+11140020 c1114 Dress-up NPC (wingman) Patrick when boosted -- c1114 着せ替えNPC(僚機) パトリック　ブースト時
+11140030 c1114 Dress-up NPC (wingman) Patrick when braking -- c1114 着せ替えNPC(僚機) パトリック　ブレーキ時
+11140040 c1114 Dress-up NPC (wingman) Patrick when moving in the air -- c1114 着せ替えNPC(僚機) パトリック　空中移動時
+11140050 c1114 Dress-up NPC (wingman) Patrick when turning boost -- c1114 着せ替えNPC(僚機) パトリック　ブースト旋回時
+11140055 c1114 Dress-up NPC (wingman) Patrick during air boost turn -- c1114 着せ替えNPC(僚機) パトリック　空中ブースト旋回時
+11140060 c1114 Dress-up NPC (wingman) Patrick: 180 degree turn when turning boost -- c1114 着せ替えNPC(僚機) パトリック　ブースト旋回時_180度ターン
+11140065 c1114 Dress-up NPC (wingman) Patrick: 180 degree turn during air boost turn -- c1114 着せ替えNPC(僚機) パトリック　空中ブースト旋回時_180度ターン
+11140070 c1114 Dress-up NPC (wingman) Patrick Brejo when moving -- c1114 着せ替えNPC(僚機) パトリック　ブレホ移動時
+11140075 c1114 Dress-up NPC (wingman) Patrick when moving in mid-air Brejo -- c1114 着せ替えNPC(僚機) パトリック　空中ブレホ移動時
+11140080 c1114 Dress-up NPC (wingman) Patrick when cover is reversed -- c1114 着せ替えNPC(僚機) パトリック　カバー反転時
+11140090 c1114 Dress-up NPC (wingman) Patrick during large quick boost -- c1114 着せ替えNPC(僚機) パトリック　大クイックブースト時
+11150000 c1115 Dress-up NPC (wingman) Yoffe Normal time -- c1115 着せ替えNPC(僚機) ヨッフェ　通常時
+11150010 c1115 Dress-up NPC (wingman) Yoffe when dashing -- c1115 着せ替えNPC(僚機) ヨッフェ　ダッシュ時
+11150015 c1115 Dress-up NPC (wingman) Yoffe during high-speed dash -- c1115 着せ替えNPC(僚機) ヨッフェ　高速ダッシュ時
+11150020 c1115 Dress-up NPC (wingman) Yoffe when boosted -- c1115 着せ替えNPC(僚機) ヨッフェ　ブースト時
+11150030 c1115 Dress-up NPC (wingman) Yoffe when braking -- c1115 着せ替えNPC(僚機) ヨッフェ　ブレーキ時
+11150040 c1115 Dress-up NPC (wingman) Yoffe when moving in the air -- c1115 着せ替えNPC(僚機) ヨッフェ　空中移動時
+11150050 c1115 Dress-up NPC (wingman) Yoffe when turning boost -- c1115 着せ替えNPC(僚機) ヨッフェ　ブースト旋回時
+11150055 c1115 Dress-up NPC (wingman) Yoffe during air boost turn -- c1115 着せ替えNPC(僚機) ヨッフェ　空中ブースト旋回時
+11150060 c1115 Dress-up NPC (wingman) Yoffe Boost turn_180 degree turn -- c1115 着せ替えNPC(僚機) ヨッフェ　ブースト旋回時_180度ターン
+11150065 c1115 Dress-up NPC (wingman) Yoffe Aerial boost turn when turning_180 degrees -- c1115 着せ替えNPC(僚機) ヨッフェ　空中ブースト旋回時_180度ターン
+11150070 c1115 Dress-up NPC (wingman) Joffe Breho when moving -- c1115 着せ替えNPC(僚機) ヨッフェ　ブレホ移動時
+11150075 c1115 Dress-up NPC (wingman) Joffe When moving in the air Breho -- c1115 着せ替えNPC(僚機) ヨッフェ　空中ブレホ移動時
+11150080 c1115 Dress-up NPC (wingman) Yoffe when cover is reversed -- c1115 着せ替えNPC(僚機) ヨッフェ　カバー反転時
+11150090 c1115 Dress-up NPC (wingman) Yoffe during large quick boost -- c1115 着せ替えNPC(僚機) ヨッフェ　大クイックブースト時
+11160000 c1116 Dress-up NPC (wingman) Estella Normal time -- c1116 着せ替えNPC(僚機) エステラ　通常時
+11160010 c1116 Dress-up NPC (wingman) Estella when dashing -- c1116 着せ替えNPC(僚機) エステラ　ダッシュ時
+11160015 c1116 Dress-up NPC (wingman) Estella during high-speed dash -- c1116 着せ替えNPC(僚機) エステラ　高速ダッシュ時
+11160020 c1116 Dress-up NPC (wingman) Estella when boosted -- c1116 着せ替えNPC(僚機) エステラ　ブースト時
+11160030 c1116 Dress-up NPC (wingman) Estella when braking -- c1116 着せ替えNPC(僚機) エステラ　ブレーキ時
+11160040 c1116 Dress-up NPC (wingman) Estella when moving in the air -- c1116 着せ替えNPC(僚機) エステラ　空中移動時
+11160050 c1116 Dress-up NPC (wingman) Estella when turning boost -- c1116 着せ替えNPC(僚機) エステラ　ブースト旋回時
+11160055 c1116 Dress-up NPC (wingman) Estella during air boost turn -- c1116 着せ替えNPC(僚機) エステラ　空中ブースト旋回時
+11160060 c1116 Dress-up NPC (wingman) Estella Boost turn_180 degree turn -- c1116 着せ替えNPC(僚機) エステラ　ブースト旋回時_180度ターン
+11160065 c1116 Dress-up NPC (wingman) Estella _180 degree turn when turning in air boost -- c1116 着せ替えNPC(僚機) エステラ　空中ブースト旋回時_180度ターン
+11160070 c1116 Dress-up NPC (wingman) Estela Brejo when moving -- c1116 着せ替えNPC(僚機) エステラ　ブレホ移動時
+11160075 c1116 Dress-up NPC (wingman) Estella when moving in mid-air Brejo -- c1116 着せ替えNPC(僚機) エステラ　空中ブレホ移動時
+11160080 c1116 Dress-up NPC (wingman) Estella when cover is reversed -- c1116 着せ替えNPC(僚機) エステラ　カバー反転時
+11160090 c1116 Dress-up NPC (wingman) Estella during large quick boost -- c1116 着せ替えNPC(僚機) エステラ　大クイックブースト時
+11170000 c1117 Dress-up NPC (wingman) Jonathan Normal time -- c1117 着せ替えNPC(僚機) ジョナサン　通常時
+11170010 c1117 Dress-up NPC (wingman) Jonathan when dashing -- c1117 着せ替えNPC(僚機) ジョナサン　ダッシュ時
+11170015 c1117 Dress-up NPC (wingman) Jonathan during high-speed dash -- c1117 着せ替えNPC(僚機) ジョナサン　高速ダッシュ時
+11170020 c1117 Dress-up NPC (wingman) Jonathan when boosted -- c1117 着せ替えNPC(僚機) ジョナサン　ブースト時
+11170030 c1117 Dress-up NPC (wingman) Jonathan when braking -- c1117 着せ替えNPC(僚機) ジョナサン　ブレーキ時
+11170040 c1117 Dress-up NPC (wingman) Jonathan when moving in the air -- c1117 着せ替えNPC(僚機) ジョナサン　空中移動時
+11170050 c1117 Dress-up NPC (wingman) Jonathan during boost turn -- c1117 着せ替えNPC(僚機) ジョナサン　ブースト旋回時
+11170055 c1117 Dress-up NPC (wingman) Jonathan during air boost turn -- c1117 着せ替えNPC(僚機) ジョナサン　空中ブースト旋回時
+11170060 c1117 Dress-up NPC (wingman) Jonathan Boost turn_180 degree turn -- c1117 着せ替えNPC(僚機) ジョナサン　ブースト旋回時_180度ターン
+11170065 c1117 Dress-up NPC (wingman) Jonathan: 180 degree turn during air boost turn -- c1117 着せ替えNPC(僚機) ジョナサン　空中ブースト旋回時_180度ターン
+11170070 c1117 Dress-up NPC (wingman) Jonathan Brejo when moving -- c1117 着せ替えNPC(僚機) ジョナサン　ブレホ移動時
+11170075 c1117 Dress-up NPC (wingman) Jonathan when moving in mid-air Brejo -- c1117 着せ替えNPC(僚機) ジョナサン　空中ブレホ移動時
+11170080 c1117 Dress-up NPC (wingman) Jonathan when cover is reversed -- c1117 着せ替えNPC(僚機) ジョナサン　カバー反転時
+11170090 c1117 Dress-up NPC (wingman) Jonathan during large quick boost -- c1117 着せ替えNPC(僚機) ジョナサン　大クイックブースト時
+11180000 c1118 Dress-up NPC (wingman) William Normal time -- c1118 着せ替えNPC(僚機) ウィリアム　通常時
+11180010 c1118 Dress-up NPC (wingman) William when dashing -- c1118 着せ替えNPC(僚機) ウィリアム　ダッシュ時
+11180015 c1118 Dress-up NPC (wingman) William during high-speed dash -- c1118 着せ替えNPC(僚機) ウィリアム　高速ダッシュ時
+11180020 c1118 Dress-up NPC (wingman) William when boosted -- c1118 着せ替えNPC(僚機) ウィリアム　ブースト時
+11180030 c1118 Dress-up NPC (wingman) William when braking -- c1118 着せ替えNPC(僚機) ウィリアム　ブレーキ時
+11180040 c1118 Dress-up NPC (wingman) William when moving in the air -- c1118 着せ替えNPC(僚機) ウィリアム　空中移動時
+11180050 c1118 Dress-up NPC (wingman) William when turning boost -- c1118 着せ替えNPC(僚機) ウィリアム　ブースト旋回時
+11180055 c1118 Dress-up NPC (wingman) William during air boost turn -- c1118 着せ替えNPC(僚機) ウィリアム　空中ブースト旋回時
+11180060 c1118 Dress-up NPC (wingman) William Boost turn_180 degree turn -- c1118 着せ替えNPC(僚機) ウィリアム　ブースト旋回時_180度ターン
+11180065 c1118 Dress-up NPC (wingman) William - 180 degree turn during air boost turn -- c1118 着せ替えNPC(僚機) ウィリアム　空中ブースト旋回時_180度ターン
+11180070 c1118 Dress-up NPC (wingman) William Brejo when moving -- c1118 着せ替えNPC(僚機) ウィリアム　ブレホ移動時
+11180075 c1118 Dress-up NPC (wingman) William when moving in mid-air Brejo -- c1118 着せ替えNPC(僚機) ウィリアム　空中ブレホ移動時
+11180080 c1118 Dress-up NPC (wingman) William when cover is reversed -- c1118 着せ替えNPC(僚機) ウィリアム　カバー反転時
+11180090 c1118 Dress-up NPC (wingman) William during large quick boost -- c1118 着せ替えNPC(僚機) ウィリアム　大クイックブースト時
+12100000 c1210 Dress-up NPC (enemy) Jotuel Normal time -- c1210 着せ替えNPC(敵) ヨトゥエル　通常時
+12100010 c1210 Dress-up NPC (enemy) Jotuel when dashing -- c1210 着せ替えNPC(敵) ヨトゥエル　ダッシュ時
+12100015 c1210 Dress-up NPC (enemy) Jotuel during high-speed dash -- c1210 着せ替えNPC(敵) ヨトゥエル　高速ダッシュ時
+12100020 c1210 Dress-up NPC (enemy) Jotuel when boosted -- c1210 着せ替えNPC(敵) ヨトゥエル　ブースト時
+12100030 c1210 Dress-up NPC (enemy) Jotuel when braking -- c1210 着せ替えNPC(敵) ヨトゥエル　ブレーキ時
+12100040 c1210 Dress-up NPC (enemy) Jotuel when moving in the air -- c1210 着せ替えNPC(敵) ヨトゥエル　空中移動時
+12100050 c1210 Dress-up NPC (enemy) Jotuel when turning boost -- c1210 着せ替えNPC(敵) ヨトゥエル　ブースト旋回時
+12100055 c1210 Dress-up NPC (enemy) Jotuel when turning in air boost -- c1210 着せ替えNPC(敵) ヨトゥエル　空中ブースト旋回時
+12100060 c1210 Dress-up NPC (enemy) Yotuel Boost turning_180 degree turn -- c1210 着せ替えNPC(敵) ヨトゥエル　ブースト旋回時_180度ターン
+12100065 c1210 Dress-up NPC (enemy) Yotuel　Air boost turn when turning_180 degrees -- c1210 着せ替えNPC(敵) ヨトゥエル　空中ブースト旋回時_180度ターン
+12100070 c1210 Dress-up NPC (enemy) Jotuel Brejo when moving -- c1210 着せ替えNPC(敵) ヨトゥエル　ブレホ移動時
+12100075 c1210 Dress-up NPC (enemy) Jotuel When moving in mid-air Breho -- c1210 着せ替えNPC(敵) ヨトゥエル　空中ブレホ移動時
+12100080 c1210 Dress-up NPC (enemy) Jotuel when cover is reversed -- c1210 着せ替えNPC(敵) ヨトゥエル　カバー反転時
+12100090 c1210 Dress-up NPC (enemy) Jotuel large quick boost -- c1210 着せ替えNPC(敵) ヨトゥエル　大クイックブースト時
+12140000 c1214 Dress-up NPC (enemy) Patrick Normal time -- c1214 着せ替えNPC(敵) パトリック　通常時
+12140010 c1214 Dress-up NPC (enemy) Patrick when dashing -- c1214 着せ替えNPC(敵) パトリック　ダッシュ時
+12140015 c1214 Dress-up NPC (enemy) Patrick during high-speed dash -- c1214 着せ替えNPC(敵) パトリック　高速ダッシュ時
+12140020 c1214 Dress-up NPC (enemy) Patrick when boosted -- c1214 着せ替えNPC(敵) パトリック　ブースト時
+12140030 c1214 Dress-up NPC (enemy) Patrick when braking -- c1214 着せ替えNPC(敵) パトリック　ブレーキ時
+12140040 c1214 Dress-up NPC (enemy) Patrick when moving in the air -- c1214 着せ替えNPC(敵) パトリック　空中移動時
+12140050 c1214 Dress-up NPC (enemy) Patrick when turning boost -- c1214 着せ替えNPC(敵) パトリック　ブースト旋回時
+12140055 c1214 Dress-up NPC (enemy) Patrick when turning in the air boost -- c1214 着せ替えNPC(敵) パトリック　空中ブースト旋回時
+12140060 c1214 Dress-up NPC (enemy) Patrick Boost turning _180 degree turn -- c1214 着せ替えNPC(敵) パトリック　ブースト旋回時_180度ターン
+12140065 c1214 Dress-up NPC (enemy) Patrick Aerial boost turn when turning_180 degrees -- c1214 着せ替えNPC(敵) パトリック　空中ブースト旋回時_180度ターン
+12140070 c1214 Dress-up NPC (enemy) Patrick Brejo when moving -- c1214 着せ替えNPC(敵) パトリック　ブレホ移動時
+12140075 c1214 Dress-up NPC (enemy) Patrick When moving in mid-air Breho -- c1214 着せ替えNPC(敵) パトリック　空中ブレホ移動時
+12140080 c1214 Dress-up NPC (enemy) Patrick When cover is reversed -- c1214 着せ替えNPC(敵) パトリック　カバー反転時
+12140090 c1214 Dress-up NPC (enemy) Patrick at large quick boost -- c1214 着せ替えNPC(敵) パトリック　大クイックブースト時
+12150000 c1215 Dress-up NPC (enemy) Yoffe Normal time -- c1215 着せ替えNPC(敵) ヨッフェ　通常時
+12150010 c1215 Dress-up NPC (enemy) Yoffe when dashing -- c1215 着せ替えNPC(敵) ヨッフェ　ダッシュ時
+12150015 c1215 Dress-up NPC (enemy) Yoffe during high-speed dash -- c1215 着せ替えNPC(敵) ヨッフェ　高速ダッシュ時
+12150020 c1215 Dress-up NPC (enemy) Yoffe when boosted -- c1215 着せ替えNPC(敵) ヨッフェ　ブースト時
+12150030 c1215 Dress-up NPC (enemy) Yoffe when braking -- c1215 着せ替えNPC(敵) ヨッフェ　ブレーキ時
+12150040 c1215 Dress-up NPC (enemy) Yoffe when moving in the air -- c1215 着せ替えNPC(敵) ヨッフェ　空中移動時
+12150050 c1215 Dress-up NPC (enemy) Yoffe when turning boost -- c1215 着せ替えNPC(敵) ヨッフェ　ブースト旋回時
+12150055 c1215 Dress-up NPC (enemy) Yoffe When turning in the air boost -- c1215 着せ替えNPC(敵) ヨッフェ　空中ブースト旋回時
+12150060 c1215 Dress-up NPC (enemy) Yoffe Boost turning_180 degree turn -- c1215 着せ替えNPC(敵) ヨッフェ　ブースト旋回時_180度ターン
+12150065 c1215 Dress-up NPC (enemy) Yoffe Air boost turn when turning_180 degrees -- c1215 着せ替えNPC(敵) ヨッフェ　空中ブースト旋回時_180度ターン
+12150070 c1215 Dress-up NPC (enemy) Joffe Breho when moving -- c1215 着せ替えNPC(敵) ヨッフェ　ブレホ移動時
+12150075 c1215 Dress-up NPC (enemy) Joffe When moving in mid-air Breho -- c1215 着せ替えNPC(敵) ヨッフェ　空中ブレホ移動時
+12150080 c1215 Dress-up NPC (enemy) Yoffe when cover is reversed -- c1215 着せ替えNPC(敵) ヨッフェ　カバー反転時
+12150090 c1215 Dress-up NPC (enemy) Yoffe large quick boost -- c1215 着せ替えNPC(敵) ヨッフェ　大クイックブースト時
+12160000 c1216 Dress-up NPC (enemy) Estella Normal time -- c1216 着せ替えNPC(敵) エステラ　通常時
+12160010 c1216 Dress-up NPC (enemy) Estella when dashing -- c1216 着せ替えNPC(敵) エステラ　ダッシュ時
+12160015 c1216 Dress-up NPC (enemy) Estella during high-speed dash -- c1216 着せ替えNPC(敵) エステラ　高速ダッシュ時
+12160020 c1216 Dress-up NPC (enemy) Estella when boosted -- c1216 着せ替えNPC(敵) エステラ　ブースト時
+12160030 c1216 Dress-up NPC (enemy) Estella when braking -- c1216 着せ替えNPC(敵) エステラ　ブレーキ時
+12160040 c1216 Dress-up NPC (enemy) Estella when moving in the air -- c1216 着せ替えNPC(敵) エステラ　空中移動時
+12160050 c1216 Dress-up NPC (enemy) Estella when turning boost -- c1216 着せ替えNPC(敵) エステラ　ブースト旋回時
+12160055 c1216 Dress-up NPC (enemy) Estella when turning in the air boost -- c1216 着せ替えNPC(敵) エステラ　空中ブースト旋回時
+12160060 c1216 Dress-up NPC (enemy) Estella Boost turn_180 degree turn -- c1216 着せ替えNPC(敵) エステラ　ブースト旋回時_180度ターン
+12160065 c1216 Dress-up NPC (enemy) Estella Aerial boost turn when turning_180 degrees -- c1216 着せ替えNPC(敵) エステラ　空中ブースト旋回時_180度ターン
+12160070 c1216 Dress-up NPC (enemy) Estella Brejo when moving -- c1216 着せ替えNPC(敵) エステラ　ブレホ移動時
+12160075 c1216 Dress-up NPC (enemy) Estella when moving in mid-air Brejo -- c1216 着せ替えNPC(敵) エステラ　空中ブレホ移動時
+12160080 c1216 Dress-up NPC (enemy) Estella when cover is reversed -- c1216 着せ替えNPC(敵) エステラ　カバー反転時
+12160090 c1216 Dress-up NPC (enemy) Estella at large quick boost -- c1216 着せ替えNPC(敵) エステラ　大クイックブースト時
+12170000 c1217 Dress-up NPC (enemy) Jonathan Normal time -- c1217 着せ替えNPC(敵) ジョナサン　通常時
+12170010 c1217 Dress-up NPC (enemy) Jonathan when dashing -- c1217 着せ替えNPC(敵) ジョナサン　ダッシュ時
+12170015 c1217 Dress-up NPC (enemy) Jonathan during high-speed dash -- c1217 着せ替えNPC(敵) ジョナサン　高速ダッシュ時
+12170020 c1217 Dress-up NPC (enemy) Jonathan when boosted -- c1217 着せ替えNPC(敵) ジョナサン　ブースト時
+12170030 c1217 Dress-up NPC (enemy) Jonathan when braking -- c1217 着せ替えNPC(敵) ジョナサン　ブレーキ時
+12170040 c1217 Dress-up NPC (enemy) Jonathan when moving in the air -- c1217 着せ替えNPC(敵) ジョナサン　空中移動時
+12170050 c1217 Dress-up NPC (enemy) Jonathan when turning boost -- c1217 着せ替えNPC(敵) ジョナサン　ブースト旋回時
+12170055 c1217 Dress-up NPC (enemy) Jonathan when turning in the air boost -- c1217 着せ替えNPC(敵) ジョナサン　空中ブースト旋回時
+12170060 c1217 Dress-up NPC (enemy) Jonathan Boost turning_180 degree turn -- c1217 着せ替えNPC(敵) ジョナサン　ブースト旋回時_180度ターン
+12170065 c1217 Dress-up NPC (enemy) Jonathan Aerial boost turning_180 degree turn -- c1217 着せ替えNPC(敵) ジョナサン　空中ブースト旋回時_180度ターン
+12170070 c1217 Dress-up NPC (enemy) Jonathan Breho when moving -- c1217 着せ替えNPC(敵) ジョナサン　ブレホ移動時
+12170075 c1217 Dress-up NPC (enemy) Jonathan When moving in mid-air Breho -- c1217 着せ替えNPC(敵) ジョナサン　空中ブレホ移動時
+12170080 c1217 Dress-up NPC (enemy) Jonathan when cover is reversed -- c1217 着せ替えNPC(敵) ジョナサン　カバー反転時
+12170090 c1217 Dress-up NPC (enemy) Jonathan at large quick boost -- c1217 着せ替えNPC(敵) ジョナサン　大クイックブースト時
+13100000 c1310 Dress-up NPC (Arena) Jotuel Normal time -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　通常時
+13100010 c1310 Dress-up NPC (Arena) Jotuel when dashing -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　ダッシュ時
+13100015 c1310 Dress-up NPC (Arena) Jotuel during high-speed dash -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　高速ダッシュ時
+13100020 c1310 Dress-up NPC (Arena) Jotuel when boosted -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　ブースト時
+13100030 c1310 Dress-up NPC (Arena) Jotuel when braking -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　ブレーキ時
+13100040 c1310 Dress-up NPC (Arena) Jotuel when moving in the air -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　空中移動時
+13100050 c1310 Dress-up NPC (Arena) Jotuel when turning boost -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　ブースト旋回時
+13100055 c1310 Dress-up NPC (Arena) Jotuel during air boost turning -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　空中ブースト旋回時
+13100060 c1310 Dress-up NPC (Arena) Yotuel Boost turning_180 degree turn -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　ブースト旋回時_180度ターン
+13100065 c1310 Dress-up NPC (Arena) Yotuel Aerial boost turn when turning_180 degrees -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　空中ブースト旋回時_180度ターン
+13100070 c1310 Dress-up NPC (Arena) Jotuel Breho when moving -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　ブレホ移動時
+13100075 c1310 Dress-up NPC (Arena) Jotuel when moving in mid-air Breho -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　空中ブレホ移動時
+13100080 c1310 Dress-up NPC (Arena) Jotuel when cover is reversed -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　カバー反転時
+13100090 c1310 Dress-up NPC (Arena) Jotuel large quick boost -- c1310 着せ替えNPC(アリーナ) ヨトゥエル　大クイックブースト時
+13110000 c1311 Dress-up NPC (Arena) Microphone Normal time -- c1311 着せ替えNPC(アリーナ) マイク　通常時
+13110010 c1311 Dress-up NPC (Arena) Mike when dashing -- c1311 着せ替えNPC(アリーナ) マイク　ダッシュ時
+13110015 c1311 Dress-up NPC (Arena) Mike during high-speed dash -- c1311 着せ替えNPC(アリーナ) マイク　高速ダッシュ時
+13110020 c1311 Dress-up NPC (Arena) Microphone boost -- c1311 着せ替えNPC(アリーナ) マイク　ブースト時
+13110030 c1311 Dress-up NPC (arena) microphone when braking -- c1311 着せ替えNPC(アリーナ) マイク　ブレーキ時
+13110040 c1311 Dress-up NPC (Arena) Mike when moving in the air -- c1311 着せ替えNPC(アリーナ) マイク　空中移動時
+13110050 c1311 Dress-up NPC (Arena) Mike when turning boost -- c1311 着せ替えNPC(アリーナ) マイク　ブースト旋回時
+13110055 c1311 Dress-up NPC (Arena) Mike during aerial boost turning -- c1311 着せ替えNPC(アリーナ) マイク　空中ブースト旋回時
+13110060 c1311 Dress-up NPC (Arena) Mike Boost turning_180 degree turn -- c1311 着せ替えNPC(アリーナ) マイク　ブースト旋回時_180度ターン
+13110065 c1311 Dress-up NPC (Arena) Mike Air boost turning when turning_180 degrees -- c1311 着せ替えNPC(アリーナ) マイク　空中ブースト旋回時_180度ターン
+13110070 c1311 Dress-up NPC (Arena) Mike when moving Brejo -- c1311 着せ替えNPC(アリーナ) マイク　ブレホ移動時
+13110075 c1311 Dress-up NPC (Arena) Mike when moving in the air -- c1311 着せ替えNPC(アリーナ) マイク　空中ブレホ移動時
+13110080 c1311 Dress-up NPC (Arena) Microphone cover flipped -- c1311 着せ替えNPC(アリーナ) マイク　カバー反転時
+13110090 c1311 Dress-up NPC (Arena) Mike at large quick boost -- c1311 着せ替えNPC(アリーナ) マイク　大クイックブースト時
+13120000 c1312 Dress-up NPC (Arena) Daisy Normal time -- c1312 着せ替えNPC(アリーナ) デイジー　通常時
+13120010 c1312 Dress-up NPC (Arena) Daisy when dashing -- c1312 着せ替えNPC(アリーナ) デイジー　ダッシュ時
+13120015 c1312 Dress-up NPC (Arena) Daisy at high speed dash -- c1312 着せ替えNPC(アリーナ) デイジー　高速ダッシュ時
+13120020 c1312 Dress-up NPC (Arena) Daisy when boosted -- c1312 着せ替えNPC(アリーナ) デイジー　ブースト時
+13120030 c1312 Dress-up NPC (Arena) Daisy when braking -- c1312 着せ替えNPC(アリーナ) デイジー　ブレーキ時
+13120040 c1312 Dress-up NPC (Arena) Daisy when moving in the air -- c1312 着せ替えNPC(アリーナ) デイジー　空中移動時
+13120050 c1312 Dress-up NPC (Arena) Daisy when turning boost -- c1312 着せ替えNPC(アリーナ) デイジー　ブースト旋回時
+13120055 c1312 Dress-up NPC (Arena) Daisy during air boost turning -- c1312 着せ替えNPC(アリーナ) デイジー　空中ブースト旋回時
+13120060 c1312 Dress-up NPC (Arena) Daisy Boost turn_180 degree turn -- c1312 着せ替えNPC(アリーナ) デイジー　ブースト旋回時_180度ターン
+13120065 c1312 Dress-up NPC (Arena) Daisy Aerial boost turn when turning_180 degrees -- c1312 着せ替えNPC(アリーナ) デイジー　空中ブースト旋回時_180度ターン
+13120070 c1312 Dress-up NPC (Arena) Daisy Breho when moving -- c1312 着せ替えNPC(アリーナ) デイジー　ブレホ移動時
+13120075 c1312 Dress-up NPC (Arena) Daisy when moving in the air -- c1312 着せ替えNPC(アリーナ) デイジー　空中ブレホ移動時
+13120080 c1312 Dress-up NPC (Arena) Daisy when cover is reversed -- c1312 着せ替えNPC(アリーナ) デイジー　カバー反転時
+13120090 c1312 Dress-up NPC (Arena) Daisy large quick boost -- c1312 着せ替えNPC(アリーナ) デイジー　大クイックブースト時
+13130000 c1313 Dress-up NPC (Arena) Boss Normal time -- c1313 着せ替えNPC(アリーナ) ボス　通常時
+13130010 c1313 Dress-up NPC (Arena) Boss dash time -- c1313 着せ替えNPC(アリーナ) ボス　ダッシュ時
+13130015 c1313 Dress-up NPC (Arena) Boss during high-speed dash -- c1313 着せ替えNPC(アリーナ) ボス　高速ダッシュ時
+13130020 c1313 Dress-up NPC (Arena) Boss boost time -- c1313 着せ替えNPC(アリーナ) ボス　ブースト時
+13130030 c1313 Dress-up NPC (Arena) Boss when braking -- c1313 着せ替えNPC(アリーナ) ボス　ブレーキ時
+13130040 c1313 Dress-up NPC (Arena) Boss when moving in the air -- c1313 着せ替えNPC(アリーナ) ボス　空中移動時
+13130050 c1313 Dress-up NPC (Arena) Boss when turning boost -- c1313 着せ替えNPC(アリーナ) ボス　ブースト旋回時
+13130055 c1313 Dress-up NPC (Arena) Boss when turning in the air boost -- c1313 着せ替えNPC(アリーナ) ボス　空中ブースト旋回時
+13130060 c1313 Dress-up NPC (Arena) Boss Boost turn_180 degree turn -- c1313 着せ替えNPC(アリーナ) ボス　ブースト旋回時_180度ターン
+13130065 c1313 Dress-up NPC (Arena) Boss Air boost turning when turning_180 degrees -- c1313 着せ替えNPC(アリーナ) ボス　空中ブースト旋回時_180度ターン
+13130070 c1313 Dress-up NPC (Arena) Boss When moving Brejo -- c1313 着せ替えNPC(アリーナ) ボス　ブレホ移動時
+13130075 c1313 Dress-up NPC (Arena) Boss When moving in mid-air Breho -- c1313 着せ替えNPC(アリーナ) ボス　空中ブレホ移動時
+13130080 c1313 Dress-up NPC (Arena) Boss when cover is reversed -- c1313 着せ替えNPC(アリーナ) ボス　カバー反転時
+13130090 c1313 Dress-up NPC (Arena) Boss large quick boost -- c1313 着せ替えNPC(アリーナ) ボス　大クイックブースト時
+13140000 c1314 Dress-up NPC (Arena) Patrick Normal time -- c1314 着せ替えNPC(アリーナ) パトリック　通常時
+13140010 c1314 Dress-up NPC (Arena) Patrick when dashing -- c1314 着せ替えNPC(アリーナ) パトリック　ダッシュ時
+13140015 c1314 Dress-up NPC (Arena) Patrick during high-speed dash -- c1314 着せ替えNPC(アリーナ) パトリック　高速ダッシュ時
+13140020 c1314 Dress-up NPC (Arena) Patrick when boosted -- c1314 着せ替えNPC(アリーナ) パトリック　ブースト時
+13140030 c1314 Dress-up NPC (Arena) Patrick when braking -- c1314 着せ替えNPC(アリーナ) パトリック　ブレーキ時
+13140040 c1314 Dress-up NPC (Arena) Patrick when moving in the air -- c1314 着せ替えNPC(アリーナ) パトリック　空中移動時
+13140050 c1314 Dress-up NPC (Arena) Patrick when turning boost -- c1314 着せ替えNPC(アリーナ) パトリック　ブースト旋回時
+13140055 c1314 Dress-up NPC (Arena) Patrick during air boost turning -- c1314 着せ替えNPC(アリーナ) パトリック　空中ブースト旋回時
+13140060 c1314 Dress-up NPC (Arena) Patrick Boost turning_180 degree turn -- c1314 着せ替えNPC(アリーナ) パトリック　ブースト旋回時_180度ターン
+13140065 c1314 Dress-up NPC (Arena) Patrick Aerial boost turn when turning_180 degrees -- c1314 着せ替えNPC(アリーナ) パトリック　空中ブースト旋回時_180度ターン
+13140070 c1314 Dress-up NPC (Arena) Patrick Brejo when moving -- c1314 着せ替えNPC(アリーナ) パトリック　ブレホ移動時
+13140075 c1314 Dress-up NPC (Arena) Patrick When moving in mid-air Breho -- c1314 着せ替えNPC(アリーナ) パトリック　空中ブレホ移動時
+13140080 c1314 Dress-up NPC (Arena) Patrick when cover is reversed -- c1314 着せ替えNPC(アリーナ) パトリック　カバー反転時
+13140090 c1314 Dress-up NPC (Arena) Patrick at large quick boost -- c1314 着せ替えNPC(アリーナ) パトリック　大クイックブースト時
+13150000 c1315 Dress-up NPC (Arena) Yoffe Normal time -- c1315 着せ替えNPC(アリーナ) ヨッフェ　通常時
+13150010 c1315 Dress-up NPC (Arena) Yoffe when dashing -- c1315 着せ替えNPC(アリーナ) ヨッフェ　ダッシュ時
+13150015 c1315 Dress-up NPC (Arena) Yoffe during high-speed dash -- c1315 着せ替えNPC(アリーナ) ヨッフェ　高速ダッシュ時
+13150020 c1315 Dress-up NPC (Arena) Yoffe boost time -- c1315 着せ替えNPC(アリーナ) ヨッフェ　ブースト時
+13150030 c1315 Dress-up NPC (Arena) Yoffe when braking -- c1315 着せ替えNPC(アリーナ) ヨッフェ　ブレーキ時
+13150040 c1315 Dress-up NPC (Arena) Yoffe when moving in the air -- c1315 着せ替えNPC(アリーナ) ヨッフェ　空中移動時
+13150050 c1315 Dress-up NPC (Arena) Yoffe when turning boost -- c1315 着せ替えNPC(アリーナ) ヨッフェ　ブースト旋回時
+13150055 c1315 Dress-up NPC (Arena) Yoffe during aerial boost turning -- c1315 着せ替えNPC(アリーナ) ヨッフェ　空中ブースト旋回時
+13150060 c1315 Dress-up NPC (Arena) Yoffe Boost turn_180 degree turn -- c1315 着せ替えNPC(アリーナ) ヨッフェ　ブースト旋回時_180度ターン
+13150065 c1315 Dress-up NPC (Arena) Yoffe Aerial boost turn when turning_180 degrees -- c1315 着せ替えNPC(アリーナ) ヨッフェ　空中ブースト旋回時_180度ターン
+13150070 c1315 Dress-up NPC (Arena) Joffe Breho when moving -- c1315 着せ替えNPC(アリーナ) ヨッフェ　ブレホ移動時
+13150075 c1315 Dress-up NPC (Arena) Yoffe When moving in mid-air Brejo -- c1315 着せ替えNPC(アリーナ) ヨッフェ　空中ブレホ移動時
+13150080 c1315 Dress-up NPC (Arena) Yoffe when cover is reversed -- c1315 着せ替えNPC(アリーナ) ヨッフェ　カバー反転時
+13150090 c1315 Dress-up NPC (Arena) Yoffe large quick boost -- c1315 着せ替えNPC(アリーナ) ヨッフェ　大クイックブースト時
+13160000 c1316 Dress-up NPC (Arena) Estella Normal time -- c1316 着せ替えNPC(アリーナ) エステラ　通常時
+13160010 c1316 Dress-up NPC (Arena) Estella when dashing -- c1316 着せ替えNPC(アリーナ) エステラ　ダッシュ時
+13160015 c1316 Dress-up NPC (Arena) Estella during high-speed dash -- c1316 着せ替えNPC(アリーナ) エステラ　高速ダッシュ時
+13160020 c1316 Dress-up NPC (Arena) Estella when boosted -- c1316 着せ替えNPC(アリーナ) エステラ　ブースト時
+13160030 c1316 Dress-up NPC (Arena) Estella when braking -- c1316 着せ替えNPC(アリーナ) エステラ　ブレーキ時
+13160040 c1316 Dress-up NPC (Arena) Estella when moving in the air -- c1316 着せ替えNPC(アリーナ) エステラ　空中移動時
+13160050 c1316 Dress-up NPC (Arena) Estella when turning boost -- c1316 着せ替えNPC(アリーナ) エステラ　ブースト旋回時
+13160055 c1316 Dress-up NPC (Arena) Estella Air boost turning -- c1316 着せ替えNPC(アリーナ) エステラ　空中ブースト旋回時
+13160060 c1316 Dress-up NPC (Arena) Estella Boost turn_180 degree turn -- c1316 着せ替えNPC(アリーナ) エステラ　ブースト旋回時_180度ターン
+13160065 c1316 Dress-up NPC (Arena) Estella Aerial boost turn when turning_180 degrees -- c1316 着せ替えNPC(アリーナ) エステラ　空中ブースト旋回時_180度ターン
+13160070 c1316 Dress-up NPC (Arena) Estela Brejo when moving -- c1316 着せ替えNPC(アリーナ) エステラ　ブレホ移動時
+13160075 c1316 Dress-up NPC (Arena) Estella When moving in mid-air Brejo -- c1316 着せ替えNPC(アリーナ) エステラ　空中ブレホ移動時
+13160080 c1316 Dress-up NPC (Arena) Estella when cover is reversed -- c1316 着せ替えNPC(アリーナ) エステラ　カバー反転時
+13160090 c1316 Dress-up NPC (Arena) Estella large quick boost -- c1316 着せ替えNPC(アリーナ) エステラ　大クイックブースト時
+13170000 c1317 Dress-up NPC (Arena) Jonathan Normal time -- c1317 着せ替えNPC(アリーナ) ジョナサン　通常時
+13170010 c1317 Dress-up NPC (Arena) Jonathan when dashing -- c1317 着せ替えNPC(アリーナ) ジョナサン　ダッシュ時
+13170015 c1317 Dress-up NPC (Arena) Jonathan during high-speed dash -- c1317 着せ替えNPC(アリーナ) ジョナサン　高速ダッシュ時
+13170020 c1317 Dress-up NPC (Arena) Jonathan when boosted -- c1317 着せ替えNPC(アリーナ) ジョナサン　ブースト時
+13170030 c1317 Dress-up NPC (Arena) Jonathan when braking -- c1317 着せ替えNPC(アリーナ) ジョナサン　ブレーキ時
+13170040 c1317 Dress-up NPC (Arena) Jonathan when moving in the air -- c1317 着せ替えNPC(アリーナ) ジョナサン　空中移動時
+13170050 c1317 Dress-up NPC (Arena) Jonathan when turning boost -- c1317 着せ替えNPC(アリーナ) ジョナサン　ブースト旋回時
+13170055 c1317 Dress-up NPC (Arena) Jonathan when turning in air boost -- c1317 着せ替えNPC(アリーナ) ジョナサン　空中ブースト旋回時
+13170060 c1317 Dress-up NPC (Arena) Jonathan Boost turn_180 degree turn -- c1317 着せ替えNPC(アリーナ) ジョナサン　ブースト旋回時_180度ターン
+13170065 c1317 Dress-up NPC (Arena) Jonathan Aerial boost turn when turning_180 degrees -- c1317 着せ替えNPC(アリーナ) ジョナサン　空中ブースト旋回時_180度ターン
+13170070 c1317 Dress-up NPC (Arena) Jonathan Brejo when moving -- c1317 着せ替えNPC(アリーナ) ジョナサン　ブレホ移動時
+13170075 c1317 Dress-up NPC (Arena) Jonathan when moving in mid-air Breho -- c1317 着せ替えNPC(アリーナ) ジョナサン　空中ブレホ移動時
+13170080 c1317 Dress-up NPC (Arena) Jonathan when cover is reversed -- c1317 着せ替えNPC(アリーナ) ジョナサン　カバー反転時
+13170090 c1317 Dress-up NPC (Arena) Jonathan during large quick boost -- c1317 着せ替えNPC(アリーナ) ジョナサン　大クイックブースト時
+13180000 c1318 Dress-up NPC (Arena) William Normal time -- c1318 着せ替えNPC(アリーナ) ウィリアム　通常時
+13180010 c1318 Dress-up NPC (Arena) William when dashing -- c1318 着せ替えNPC(アリーナ) ウィリアム　ダッシュ時
+13180015 c1318 Dress-up NPC (Arena) William during high-speed dash -- c1318 着せ替えNPC(アリーナ) ウィリアム　高速ダッシュ時
+13180020 c1318 Dress-up NPC (Arena) William when boosted -- c1318 着せ替えNPC(アリーナ) ウィリアム　ブースト時
+13180030 c1318 Dress-up NPC (Arena) William when braking -- c1318 着せ替えNPC(アリーナ) ウィリアム　ブレーキ時
+13180040 c1318 Dress-up NPC (Arena) William when moving in the air -- c1318 着せ替えNPC(アリーナ) ウィリアム　空中移動時
+13180050 c1318 Dress-up NPC (Arena) William when turning boost -- c1318 着せ替えNPC(アリーナ) ウィリアム　ブースト旋回時
+13180055 c1318 Dress-up NPC (Arena) William during air boost turning -- c1318 着せ替えNPC(アリーナ) ウィリアム　空中ブースト旋回時
+13180060 c1318 Dress-up NPC (Arena) William Boost turn_180 degree turn -- c1318 着せ替えNPC(アリーナ) ウィリアム　ブースト旋回時_180度ターン
+13180065 c1318 Dress-up NPC (Arena) William Aerial boost turning_180 degree turn -- c1318 着せ替えNPC(アリーナ) ウィリアム　空中ブースト旋回時_180度ターン
+13180070 c1318 Dress-up NPC (Arena) William Brejo when moving -- c1318 着せ替えNPC(アリーナ) ウィリアム　ブレホ移動時
+13180075 c1318 Dress-up NPC (Arena) William when moving in mid-air Brejo -- c1318 着せ替えNPC(アリーナ) ウィリアム　空中ブレホ移動時
+13180080 c1318 Dress-up NPC (Arena) William when cover is reversed -- c1318 着せ替えNPC(アリーナ) ウィリアム　カバー反転時
+13180090 c1318 Dress-up NPC (Arena) William large quick boost -- c1318 着せ替えNPC(アリーナ) ウィリアム　大クイックブースト時
+14010000 c1401 Dress-up NPC (test) Bipod aircraft normal time -- c1401 着せ替えNPC(テスト) 二脚機体　通常時
+14010010 c1401 Dress-up NPC (test) Bipedal aircraft when dashing -- c1401 着せ替えNPC(テスト) 二脚機体　ダッシュ時
+14010015 c1401 Dress-up NPC (test) Bipedal aircraft during high-speed dash -- c1401 着せ替えNPC(テスト) 二脚機体　高速ダッシュ時
+14010020 c1401 Dress-up NPC (test) Bipedal aircraft boost -- c1401 着せ替えNPC(テスト) 二脚機体　ブースト時
+14010030 c1401 Dress-up NPC (test) Bipedal aircraft during braking -- c1401 着せ替えNPC(テスト) 二脚機体　ブレーキ時
+14010040 c1401 Dress-up NPC (test) Bipedal aircraft when moving in the air -- c1401 着せ替えNPC(テスト) 二脚機体　空中移動時
+14010050 c1401 Dress-up NPC (test) Bipedal aircraft during boost turning -- c1401 着せ替えNPC(テスト) 二脚機体　ブースト旋回時
+14010055 c1401 Dress-up NPC (test) Bipedal aircraft during aerial boost turning -- c1401 着せ替えNPC(テスト) 二脚機体　空中ブースト旋回時
+14010060 c1401 Dress-up NPC (test) Bipod aircraft Boost turning_180 degree turn -- c1401 着せ替えNPC(テスト) 二脚機体　ブースト旋回時_180度ターン
+14010065 c1401 Dress-up NPC (test) Bipedal aircraft Aerial boost turn when turning_180 degrees -- c1401 着せ替えNPC(テスト) 二脚機体　空中ブースト旋回時_180度ターン
+14010070 c1401 Dress-up NPC (test) Bipedal aircraft when moving Breho -- c1401 着せ替えNPC(テスト) 二脚機体　ブレホ移動時
+14010075 c1401 Dress-up NPC (test) Bipedal aircraft when moving in the air -- c1401 着せ替えNPC(テスト) 二脚機体　空中ブレホ移動時
+14010080 c1401 Dress-up NPC (test) Bipod aircraft when cover is reversed -- c1401 着せ替えNPC(テスト) 二脚機体　カバー反転時
+14010090 c1401 Dress-up NPC (test) Bipedal aircraft large quick boost -- c1401 着せ替えNPC(テスト) 二脚機体　大クイックブースト時
+14020000 c1402 Dress-up NPC (test) Reverse leg aircraft normal time -- c1402 着せ替えNPC(テスト) 逆脚機体　通常時
+14020010 c1402 Dress-up NPC (test) Reverse legged aircraft when dashing -- c1402 着せ替えNPC(テスト) 逆脚機体　ダッシュ時
+14020015 c1402 Dress-up NPC (test) Reverse leg aircraft during high-speed dash -- c1402 着せ替えNPC(テスト) 逆脚機体　高速ダッシュ時
+14020020 c1402 Dress-up NPC (test) Reverse leg aircraft boost -- c1402 着せ替えNPC(テスト) 逆脚機体　ブースト時
+14020030 c1402 Dress-up NPC (test) Reverse leg aircraft when braking -- c1402 着せ替えNPC(テスト) 逆脚機体　ブレーキ時
+14020040 c1402 Dress-up NPC (test) Reverse leg aircraft when moving in the air -- c1402 着せ替えNPC(テスト) 逆脚機体　空中移動時
+14020050 c1402 Dress-up NPC (test) Reverse leg aircraft during boost turning -- c1402 着せ替えNPC(テスト) 逆脚機体　ブースト旋回時
+14020055 c1402 Dress-up NPC (test) Reverse leg aircraft during aerial boost turning -- c1402 着せ替えNPC(テスト) 逆脚機体　空中ブースト旋回時
+14020060 c1402 Dress-up NPC (Test) Reverse leg aircraft Boost turning_180 degree turn -- c1402 着せ替えNPC(テスト) 逆脚機体　ブースト旋回時_180度ターン
+14020065 c1402 Dress-up NPC (Test) Reverse leg aircraft air boost turn when turning_180 degrees -- c1402 着せ替えNPC(テスト) 逆脚機体　空中ブースト旋回時_180度ターン
+14020070 c1402 Dress-up NPC (test) Reverse leg aircraft when moving Breho -- c1402 着せ替えNPC(テスト) 逆脚機体　ブレホ移動時
+14020075 c1402 Dress-up NPC (test) Reverse legged aircraft when moving in mid-air Breho -- c1402 着せ替えNPC(テスト) 逆脚機体　空中ブレホ移動時
+14020080 c1402 Dress-up NPC (test) Reverse legged aircraft when cover is reversed -- c1402 着せ替えNPC(テスト) 逆脚機体　カバー反転時
+14020090 c1402 Dress-up NPC (test) Reverse leg aircraft large quick boost -- c1402 着せ替えNPC(テスト) 逆脚機体　大クイックブースト時
+14030000 c1403 Dress-up NPC (test) Quadruped aircraft normal time -- c1403 着せ替えNPC(テスト) 四脚機体　通常時
+14030010 c1403 Dress-up NPC (test) Quadruped aircraft when dashing -- c1403 着せ替えNPC(テスト) 四脚機体　ダッシュ時
+14030015 c1403 Dress-up NPC (test) Quadruped aircraft during high-speed dash -- c1403 着せ替えNPC(テスト) 四脚機体　高速ダッシュ時
+14030020 c1403 Dress-up NPC (test) Quadruped aircraft boost -- c1403 着せ替えNPC(テスト) 四脚機体　ブースト時
+14030030 c1403 Dress-up NPC (test) Quadruped aircraft when braking -- c1403 着せ替えNPC(テスト) 四脚機体　ブレーキ時
+14030040 c1403 Dress-up NPC (test) Quadruped aircraft when moving in the air -- c1403 着せ替えNPC(テスト) 四脚機体　空中移動時
+14030050 c1403 Dress-up NPC (test) Quadruped aircraft during boost turning -- c1403 着せ替えNPC(テスト) 四脚機体　ブースト旋回時
+14030055 c1403 Dress-up NPC (test) Quadruped aircraft during aerial boost turning -- c1403 着せ替えNPC(テスト) 四脚機体　空中ブースト旋回時
+14030060 c1403 Dress-up NPC (test) Quadruped aircraft Boost turning_180 degree turn -- c1403 着せ替えNPC(テスト) 四脚機体　ブースト旋回時_180度ターン
+14030065 c1403 Dress-up NPC (test) Quadruped aircraft Aerial boost turning _180 degree turn -- c1403 着せ替えNPC(テスト) 四脚機体　空中ブースト旋回時_180度ターン
+14030070 c1403 Dress-up NPC (test) Quadruped aircraft when moving Breho -- c1403 着せ替えNPC(テスト) 四脚機体　ブレホ移動時
+14030075 c1403 Dress-up NPC (test) Quadruped aircraft when moving in mid-air Breho -- c1403 着せ替えNPC(テスト) 四脚機体　空中ブレホ移動時
+14030080 c1403 Dress-up NPC (test) Quadruped aircraft when cover is reversed -- c1403 着せ替えNPC(テスト) 四脚機体　カバー反転時
+14030090 c1403 Dress-up NPC (test) Quadruped aircraft large quick boost -- c1403 着せ替えNPC(テスト) 四脚機体　大クイックブースト時
+14040000 c1404 Dress-up NPC (test) Tank aircraft normal time -- c1404 着せ替えNPC(テスト) タンク機体　通常時
+14040010 c1404 Dress-up NPC (test) Tank aircraft when dashing -- c1404 着せ替えNPC(テスト) タンク機体　ダッシュ時
+14040015 c1404 Dress-up NPC (test) Tank aircraft during high-speed dash -- c1404 着せ替えNPC(テスト) タンク機体　高速ダッシュ時
+14040020 c1404 Dress-up NPC (test) Tank aircraft boost time -- c1404 着せ替えNPC(テスト) タンク機体　ブースト時
+14040030 c1404 Dress-up NPC (test) Tank aircraft during braking -- c1404 着せ替えNPC(テスト) タンク機体　ブレーキ時
+14040040 c1404 Dress-up NPC (test) Tank aircraft when moving in the air -- c1404 着せ替えNPC(テスト) タンク機体　空中移動時
+14040050 c1404 Dress-up NPC (test) Tank aircraft during boost turning -- c1404 着せ替えNPC(テスト) タンク機体　ブースト旋回時
+14040055 c1404 Dress-up NPC (test) Tank aircraft during aerial boost turning -- c1404 着せ替えNPC(テスト) タンク機体　空中ブースト旋回時
+14040060 c1404 Dress-up NPC (test) Tank aircraft Boost turning_180 degree turn -- c1404 着せ替えNPC(テスト) タンク機体　ブースト旋回時_180度ターン
+14040065 c1404 Dress-up NPC (test) Tank aircraft Aerial boost turning when turning_180 degrees -- c1404 着せ替えNPC(テスト) タンク機体　空中ブースト旋回時_180度ターン
+14040070 c1404 Dress-up NPC (test) Tank aircraft when moving Breho -- c1404 着せ替えNPC(テスト) タンク機体　ブレホ移動時
+14040075 c1404 Dress-up NPC (test) Tank aircraft when moving in mid-air Breho -- c1404 着せ替えNPC(テスト) タンク機体　空中ブレホ移動時
+14040080 c1404 Dress-up NPC (test) Tank body when cover is reversed -- c1404 着せ替えNPC(テスト) タンク機体　カバー反転時
+14040090 c1404 Dress-up NPC (test) Tank aircraft large quick boost -- c1404 着せ替えNPC(テスト) タンク機体　大クイックブースト時
+14050000 c1405 Dress-up NPC (test) NPAC that appears in missile launch support Normal time -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　通常時
+14050010 c1405 Dress-up NPC (test) NPAC appearing in missile launch support when dashing -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　ダッシュ時
+14050015 c1405 Dress-up NPC (test) NPAC appearing in missile launch support during high-speed dash -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　高速ダッシュ時
+14050020 c1405 Dress-up NPC (test) NPAC that appears in missile launch support when boosted -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　ブースト時
+14050030 c1405 Dress-up NPC (test) NPAC appearing in missile launch support during braking -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　ブレーキ時
+14050040 c1405 Dress-up NPC (test) NPAC appearing in missile launch support, when moving in the air -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　空中移動時
+14050050 c1405 Dress-up NPC (test) NPAC that appears in missile launch support when turning boost -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　ブースト旋回時
+14050055 c1405 Dress-up NPC (test) NPAC appearing in missile launch support during air boost turning -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　空中ブースト旋回時
+14050060 c1405 Dress-up NPC (test) NPAC that appears in missile launch support _180 degree turn when turning boost -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　ブースト旋回時_180度ターン
+14050065 c1405 Dress-up NPC (Test) NPAC appearing in missile launch support _180 degree turn when turning in air boost -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　空中ブースト旋回時_180度ターン
+14050070 c1405 Dress-up NPC (test) NPAC that appears in missile launch support when moving Brejo -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　ブレホ移動時
+14050075 c1405 Dress-up NPC (test) NPAC that appears in missile launch support, when moving in the air -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　空中ブレホ移動時
+14050080 c1405 Dress-up NPC (test) NPAC that appears in missile launch support when cover is flipped -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　カバー反転時
+14050090 c1405 Dress-up NPC (test) NPAC appearing in missile launch support, large quick boost -- c1405 着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC　大クイックブースト時
+15000000 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A Normal time -- c1500　着せ替えNPC(敵) 決戦CのエースA　通常時
+15000010 c1500 Dress-up NPC (enemy) Ace A of decisive battle C when dashing -- c1500　着せ替えNPC(敵) 決戦CのエースA　ダッシュ時
+15000015 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A High Speed ​​Dash -- c1500　着せ替えNPC(敵) 決戦CのエースA　高速ダッシュ時
+15000020 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A boost time -- c1500　着せ替えNPC(敵) 決戦CのエースA　ブースト時
+15000030 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A Brake -- c1500　着せ替えNPC(敵) 決戦CのエースA　ブレーキ時
+15000040 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A When moving in the air -- c1500　着せ替えNPC(敵) 決戦CのエースA　空中移動時
+15000050 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A Boost Turning -- c1500　着せ替えNPC(敵) 決戦CのエースA　ブースト旋回時
+15000055 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A when turning in air boost -- c1500　着せ替えNPC(敵) 決戦CのエースA　空中ブースト旋回時
+15000060 c1500 Dress-up NPC (enemy) Ace A of decisive battle C _180 degree turn when turning boost -- c1500　着せ替えNPC(敵) 決戦CのエースA　ブースト旋回時_180度ターン
+15000065 c1500 Dress-up NPC (enemy) Ace A of decisive battle C _180 degree turn when turning in air boost -- c1500　着せ替えNPC(敵) 決戦CのエースA　空中ブースト旋回時_180度ターン
+15000070 c1500 Dress-up NPC (enemy) Ace A of decisive battle C When moving Breho -- c1500　着せ替えNPC(敵) 決戦CのエースA　ブレホ移動時
+15000075 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A When moving in mid-air Breho -- c1500　着せ替えNPC(敵) 決戦CのエースA　空中ブレホ移動時
+15000080 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A When cover is reversed -- c1500　着せ替えNPC(敵) 決戦CのエースA　カバー反転時
+15000090 c1500 Dress-up NPC (enemy) Decisive Battle C Ace A Big Quick Boost -- c1500　着せ替えNPC(敵) 決戦CのエースA　大クイックブースト時
+20000000 Car - normal time -- 車 - 通常時
+20000010 Car - when accelerating -- 車 - 加速時
+30000000 c3000 security MT (rifle) normal time -- c3000 警備MT（ライフル）　通常時
+30000010 c3000 security MT (rifle) when dashing -- c3000 警備MT（ライフル）　ダッシュ時
+30000015 c3000 security MT (rifle) during high speed dash -- c3000 警備MT（ライフル）　高速ダッシュ時
+30000020 c3000 Security MT (rifle) when boosted -- c3000 警備MT（ライフル）　ブースト時
+30000030 c3000 security MT (rifle) when braking -- c3000 警備MT（ライフル）　ブレーキ時
+30000040 c3000 security MT (rifle) when moving in the air -- c3000 警備MT（ライフル）　空中移動時
+30000050 c3000 security MT (rifle) when turning boost -- c3000 警備MT（ライフル）　ブースト旋回時
+30000055 c3000 security MT (rifle) during aerial boost turning -- c3000 警備MT（ライフル）　空中ブースト旋回時
+30000060 c3000 Security MT (rifle) Boost turning_180 degree turn -- c3000 警備MT（ライフル）　ブースト旋回時_180度ターン
+30000065 c3000 Security MT (Rifle) Air boost turning when turning_180 degrees -- c3000 警備MT（ライフル）　空中ブースト旋回時_180度ターン
+30000070 c3000 Security MT (rifle) when moving Brejo -- c3000 警備MT（ライフル）　ブレホ移動時
+30000075 c3000 Security MT (Rifle) When moving in mid-air Breho -- c3000 警備MT（ライフル）　空中ブレホ移動時
+30000080 c3000 security MT (rifle) when cover is reversed -- c3000 警備MT（ライフル）　カバー反転時
+30000090 c3000 security MT (rifle) large quick boost -- c3000 警備MT（ライフル）　大クイックブースト時
+30200000 c3020 Former communist country general purpose MT normal time -- c3020 旧共産圏汎用MT　通常時
+30200010 c3020 Former communist country general purpose MT dash time -- c3020 旧共産圏汎用MT　ダッシュ時
+30200015 c3020 General-purpose MT in former communist countries, high-speed dash -- c3020 旧共産圏汎用MT　高速ダッシュ時
+30200020 c3020 Former communist country general purpose MT boost time -- c3020 旧共産圏汎用MT　ブースト時
+30200030 c3020 Former communist country general-purpose MT when braking -- c3020 旧共産圏汎用MT　ブレーキ時
+30200040 c3020 Former communist area general-purpose MT when moving in the air -- c3020 旧共産圏汎用MT　空中移動時
+30200050 c3020 Former communist country general-purpose MT when turning boost -- c3020 旧共産圏汎用MT　ブースト旋回時
+30200055 c3020 Former communist region general-purpose MT during aerial boost turning -- c3020 旧共産圏汎用MT　空中ブースト旋回時
+30200060 c3020 Former communist country general purpose MT Boost turning_180 degree turn -- c3020 旧共産圏汎用MT　ブースト旋回時_180度ターン
+30200065 c3020 Former communist region general purpose MT when turning in air boost_180 degree turn -- c3020 旧共産圏汎用MT　空中ブースト旋回時_180度ターン
+30200070 c3020 Former communist area general-purpose MT when moving Brejo -- c3020 旧共産圏汎用MT　ブレホ移動時
+30200075 c3020 General-purpose MT in former communist countries, when moving in the air Breho -- c3020 旧共産圏汎用MT　空中ブレホ移動時
+30200080 c3020 Former communist country general purpose MT when cover is reversed -- c3020 旧共産圏汎用MT　カバー反転時
+30200090 c3020 Former communist country general purpose MT large quick boost -- c3020 旧共産圏汎用MT　大クイックブースト時
+30209000 c3020 Former communist region general purpose MT (for checking aerial damage behavior) -- c3020 旧共産圏汎用MT　（空中ダメージ挙動確認用）
+30500000 c3050 Regular Army MT_Normal Normal Time -- c3050 正規軍MT_ノーマル　通常時
+30500010 c3050 Regular Army MT_Normal Dash -- c3050 正規軍MT_ノーマル　ダッシュ時
+30500015 c3050 Regular Army MT_Normal High Speed ​​Dash -- c3050 正規軍MT_ノーマル　高速ダッシュ時
+30500020 c3050 Regular Army MT_Normal boost time -- c3050 正規軍MT_ノーマル　ブースト時
+30500030 c3050 regular army MT_normal braking -- c3050 正規軍MT_ノーマル　ブレーキ時
+30500040 c3050 Regular Army MT_Normal during air movement -- c3050 正規軍MT_ノーマル　空中移動時
+30500050 c3050 regular army MT_normal boost turning -- c3050 正規軍MT_ノーマル　ブースト旋回時
+30500055 c3050 Regular Army MT_Normal during air boost turning -- c3050 正規軍MT_ノーマル　空中ブースト旋回時
+30500060 c3050 Regular Army MT_Normal boost turning_180 degree turn -- c3050 正規軍MT_ノーマル　ブースト旋回時_180度ターン
+30500065 c3050 Regular Army MT_Normal Air boost turning time_180 degree turn -- c3050 正規軍MT_ノーマル　空中ブースト旋回時_180度ターン
+30500070 c3050 Regular Army MT_Normal Breho when moving -- c3050 正規軍MT_ノーマル　ブレホ移動時
+30500075 c3050 Regular Army MT_Normal when moving in the air Breho -- c3050 正規軍MT_ノーマル　空中ブレホ移動時
+30500080 c3050 Regular Army MT_Normal when cover is reversed -- c3050 正規軍MT_ノーマル　カバー反転時
+30500090 c3050 Regular army MT_Normal large quick boost -- c3050 正規軍MT_ノーマル　大クイックブースト時
+31000000 c3100 flight MT normal time -- c3100 飛行MT　通常時
+31000010 c3100 flight MT dash -- c3100 飛行MT　ダッシュ時
+31000015 c3100 flight MT high speed dash -- c3100 飛行MT　高速ダッシュ時
+31000020 c3100 flight MT boost -- c3100 飛行MT　ブースト時
+31000030 c3100 flight MT braking -- c3100 飛行MT　ブレーキ時
+31000040 c3100 flight MT when moving in the air -- c3100 飛行MT　空中移動時
+31000050 c3100 flight MT during boost turning -- c3100 飛行MT　ブースト旋回時
+31000055 c3100 flight MT during air boost turning -- c3100 飛行MT　空中ブースト旋回時
+31000060 c3100 flight MT boost turning_180 degree turn -- c3100 飛行MT　ブースト旋回時_180度ターン
+31000065 c3100 flight MT air boost turning_180 degree turn -- c3100 飛行MT　空中ブースト旋回時_180度ターン
+31000070 c3100 flight MT when moving Brejo -- c3100 飛行MT　ブレホ移動時
+31000075 c3100 flight MT when moving in mid-air Breho -- c3100 飛行MT　空中ブレホ移動時
+31000080 c3100 flight MT cover reversal -- c3100 飛行MT　カバー反転時
+31000090 c3100 flight MT large quick boost -- c3100 飛行MT　大クイックブースト時
+31500000 c3150 juggernaut normal time -- c3150 ジャガーノート　通常時
+31500010 c3150 juggernaut dash time -- c3150 ジャガーノート　ダッシュ時
+31500015 c3150 juggernaut high speed dash -- c3150 ジャガーノート　高速ダッシュ時
+31500020 c3150 juggernaut boost -- c3150 ジャガーノート　ブースト時
+31500030 c3150 juggernaut braking -- c3150 ジャガーノート　ブレーキ時
+31500040 c3150 Juggernaut when moving in the air -- c3150 ジャガーノート　空中移動時
+31500050 c3150 juggernaut boost turning -- c3150 ジャガーノート　ブースト旋回時
+31500055 c3150 juggernaut during air boost turning -- c3150 ジャガーノート　空中ブースト旋回時
+31500060 c3150 Juggernaut Boost turning_180 degree turn -- c3150 ジャガーノート　ブースト旋回時_180度ターン
+31500065 c3150 Juggernaut Aerial boost turning_180 degree turn -- c3150 ジャガーノート　空中ブースト旋回時_180度ターン
+31500070 c3150 Juggernaut Breho when moving -- c3150 ジャガーノート　ブレホ移動時
+31500075 c3150 Juggernaut during aerial brejo movement -- c3150 ジャガーノート　空中ブレホ移動時
+31500080 c3150 Juggernaut when cover is reversed -- c3150 ジャガーノート　カバー反転時
+31500090 c3150 juggernaut large quick boost -- c3150 ジャガーノート　大クイックブースト時
+32000000 c3200 Avalanche (base) normal time -- c3200 アバランチ（ベース）　通常時
+32000010 c3200 Avalanche (base) when dashing -- c3200 アバランチ（ベース）　ダッシュ時
+32000015 c3200 Avalanche (base) high speed dash -- c3200 アバランチ（ベース）　高速ダッシュ時
+32000020 c3200 Avalanche (base) at boost time -- c3200 アバランチ（ベース）　ブースト時
+32000030 c3200 Avalanche (base) when braking -- c3200 アバランチ（ベース）　ブレーキ時
+32000040 c3200 Avalanche (base) when moving in the air -- c3200 アバランチ（ベース）　空中移動時
+32000050 c3200 Avalanche (base) during boost turning -- c3200 アバランチ（ベース）　ブースト旋回時
+32000055 c3200 Avalanche (base) during aerial boost turning -- c3200 アバランチ（ベース）　空中ブースト旋回時
+32000060 c3200 Avalanche (base) Boost turning_180 degree turn -- c3200 アバランチ（ベース）　ブースト旋回時_180度ターン
+32000065 c3200 Avalanche (base) Air boost turning when turning_180 degrees -- c3200 アバランチ（ベース）　空中ブースト旋回時_180度ターン
+32000070 c3200 Avalanche (base) when moving Brejo -- c3200 アバランチ（ベース）　ブレホ移動時
+32000075 c3200 Avalanche (base) during aerial brejo movement -- c3200 アバランチ（ベース）　空中ブレホ移動時
+32000080 c3200 Avalanche (base) when cover is reversed -- c3200 アバランチ（ベース）　カバー反転時
+32000090 c3200 Avalanche (base) large quick boost -- c3200 アバランチ（ベース）　大クイックブースト時
+32500000 c3250 Regular Army AC (Normal) Normal time -- c3250 正規軍AC（ノーマル）　通常時
+32500010 c3250 Regular army AC (normal) when dashing -- c3250 正規軍AC（ノーマル）　ダッシュ時
+32500015 c3250 Regular army AC (normal) at high speed dash -- c3250 正規軍AC（ノーマル）　高速ダッシュ時
+32500020 c3250 Regular army AC (normal) at boost time -- c3250 正規軍AC（ノーマル）　ブースト時
+32500030 c3250 regular army AC (normal) when braking -- c3250 正規軍AC（ノーマル）　ブレーキ時
+32500040 c3250 Regular Army AC (Normal) when moving in the air -- c3250 正規軍AC（ノーマル）　空中移動時
+32500050 c3250 Regular army AC (normal) during boost turning -- c3250 正規軍AC（ノーマル）　ブースト旋回時
+32500055 c3250 Regular Army AC (Normal) Air boost turning -- c3250 正規軍AC（ノーマル）　空中ブースト旋回時
+32500060 c3250 Regular Army AC (Normal) Boost turning_180 degree turn -- c3250 正規軍AC（ノーマル）　ブースト旋回時_180度ターン
+32500065 c3250 Regular Army AC (Normal) Air boost turning when turning_180 degrees -- c3250 正規軍AC（ノーマル）　空中ブースト旋回時_180度ターン
+32500070 c3250 Regular Army AC (Normal) When moving Brejo -- c3250 正規軍AC（ノーマル）　ブレホ移動時
+32500075 c3250 Regular Army AC (Normal) When moving in the air Breho -- c3250 正規軍AC（ノーマル）　空中ブレホ移動時
+32500080 c3250 Regular army AC (normal) when cover is reversed -- c3250 正規軍AC（ノーマル）　カバー反転時
+32500090 c3250 Regular army AC (normal) large quick boost -- c3250 正規軍AC（ノーマル）　大クイックブースト時
+32500600 c3250 Regular Army AC (Normal) Normal time -- c3250 正規軍AC（ノーマル）　通常時
+32500610 c3250 Regular army AC (normal) when dashing -- c3250 正規軍AC（ノーマル）　ダッシュ時
+32500615 c3250 Regular army AC (normal) at high speed dash -- c3250 正規軍AC（ノーマル）　高速ダッシュ時
+32500620 c3250 Regular army AC (normal) at boost time -- c3250 正規軍AC（ノーマル）　ブースト時
+32500630 c3250 regular army AC (normal) when braking -- c3250 正規軍AC（ノーマル）　ブレーキ時
+32500640 c3250 Regular Army AC (Normal) when moving in the air -- c3250 正規軍AC（ノーマル）　空中移動時
+32500650 c3250 Regular army AC (normal) during boost turning -- c3250 正規軍AC（ノーマル）　ブースト旋回時
+32500655 c3250 Regular Army AC (Normal) Air boost turning -- c3250 正規軍AC（ノーマル）　空中ブースト旋回時
+32500660 c3250 Regular Army AC (Normal) Boost turning_180 degree turn -- c3250 正規軍AC（ノーマル）　ブースト旋回時_180度ターン
+32500665 c3250 Regular Army AC (Normal) Air boost turning when turning_180 degrees -- c3250 正規軍AC（ノーマル）　空中ブースト旋回時_180度ターン
+32500670 c3250 Regular Army AC (Normal) When moving Brejo -- c3250 正規軍AC（ノーマル）　ブレホ移動時
+32500675 c3250 Regular Army AC (Normal) When moving in the air Breho -- c3250 正規軍AC（ノーマル）　空中ブレホ移動時
+32500680 c3250 Regular army AC (normal) when cover is reversed -- c3250 正規軍AC（ノーマル）　カバー反転時
+32500690 c3250 Regular army AC (normal) large quick boost -- c3250 正規軍AC（ノーマル）　大クイックブースト時
+32600000 c3260 Regular Army Heavy AC (Base) Normal Time -- c3260 正規軍重AC（ベース）　通常時
+32600010 c3260 Regular army heavy AC (base) when dashing -- c3260 正規軍重AC（ベース）　ダッシュ時
+32600015 c3260 Regular army heavy AC (base) at high speed dash -- c3260 正規軍重AC（ベース）　高速ダッシュ時
+32600020 c3260 Regular army heavy AC (base) when boosted -- c3260 正規軍重AC（ベース）　ブースト時
+32600030 c3260 regular military heavy AC (base) when braking -- c3260 正規軍重AC（ベース）　ブレーキ時
+32600040 c3260 Regular army heavy AC (base) when moving in the air -- c3260 正規軍重AC（ベース）　空中移動時
+32600050 c3260 Regular army heavy AC (base) when turning boost -- c3260 正規軍重AC（ベース）　ブースト旋回時
+32600055 c3260 Regular army heavy AC (base) during air boost turning -- c3260 正規軍重AC（ベース）　空中ブースト旋回時
+32600060 c3260 Regular army heavy AC (base) Boost turning_180 degree turn -- c3260 正規軍重AC（ベース）　ブースト旋回時_180度ターン
+32600065 c3260 Regular army heavy AC (base) air boost turning_180 degree turn -- c3260 正規軍重AC（ベース）　空中ブースト旋回時_180度ターン
+32600070 c3260 Regular army heavy AC (base) when moving Brejo -- c3260 正規軍重AC（ベース）　ブレホ移動時
+32600075 c3260 Regular army heavy AC (base) when moving in the air Brejo -- c3260 正規軍重AC（ベース）　空中ブレホ移動時
+32600080 c3260 Regular army heavy AC (base) when cover is reversed -- c3260 正規軍重AC（ベース）　カバー反転時
+32600090 c3260 Regular army heavy AC (base) large quick boost -- c3260 正規軍重AC（ベース）　大クイックブースト時
+33000000 c3300 Ghost MT (Steleste) Normal time -- c3300 ゴーストMT（ステレス）　通常時
+33000010 c3300 Ghost MT (Steleste) when dashing -- c3300 ゴーストMT（ステレス）　ダッシュ時
+33000015 c3300 Ghost MT (Steres) at high speed dash -- c3300 ゴーストMT（ステレス）　高速ダッシュ時
+33000020 c3300 Ghost MT (Steele) when boosted -- c3300 ゴーストMT（ステレス）　ブースト時
+33000030 c3300 Ghost MT (Steleste) when braking -- c3300 ゴーストMT（ステレス）　ブレーキ時
+33000040 c3300 Ghost MT (Steres) when moving in the air -- c3300 ゴーストMT（ステレス）　空中移動時
+33000050 c3300 Ghost MT (Steres) when turning boost -- c3300 ゴーストMT（ステレス）　ブースト旋回時
+33000055 c3300 Ghost MT (Stereth) during aerial boost turning -- c3300 ゴーストMT（ステレス）　空中ブースト旋回時
+33000060 c3300 Ghost MT (Steres) Boost turning_180 degree turn -- c3300 ゴーストMT（ステレス）　ブースト旋回時_180度ターン
+33000065 c3300 Ghost MT (Steres) Aerial boost turning _180 degree turn -- c3300 ゴーストMT（ステレス）　空中ブースト旋回時_180度ターン
+33000070 c3300 Ghost MT (Steres) when moving Brejo -- c3300 ゴーストMT（ステレス）　ブレホ移動時
+33000075 c3300 Ghost MT (Steres) when moving in mid-air Breho -- c3300 ゴーストMT（ステレス）　空中ブレホ移動時
+33000080 c3300 Ghost MT (Stelless) when cover is reversed -- c3300 ゴーストMT（ステレス）　カバー反転時
+33000090 c3300 Ghost MT (Steele) large quick boost -- c3300 ゴーストMT（ステレス）　大クイックブースト時
+33100000 c3310 Dummy Ghost MT Normal time -- c3310 ダミーゴーストMT　通常時
+33100010 c3310 Dummy Ghost MT when dashing -- c3310 ダミーゴーストMT　ダッシュ時
+33100015 c3310 Dummy Ghost MT at high speed dash -- c3310 ダミーゴーストMT　高速ダッシュ時
+33100020 c3310 Dummy Ghost MT Boost -- c3310 ダミーゴーストMT　ブースト時
+33100030 c3310 Dummy Ghost MT when braking -- c3310 ダミーゴーストMT　ブレーキ時
+33100040 c3310 Dummy Ghost MT when moving in the air -- c3310 ダミーゴーストMT　空中移動時
+33100050 c3310 Dummy Ghost MT Boost turning -- c3310 ダミーゴーストMT　ブースト旋回時
+33100055 c3310 dummy ghost MT during aerial boost turning -- c3310 ダミーゴーストMT　空中ブースト旋回時
+33100060 c3310 Dummy Ghost MT Boost turning_180 degree turn -- c3310 ダミーゴーストMT　ブースト旋回時_180度ターン
+33100065 c3310 Dummy Ghost MT Aerial boost turning_180 degree turn -- c3310 ダミーゴーストMT　空中ブースト旋回時_180度ターン
+33100070 c3310 Dummy Ghost MT When moving Breho -- c3310 ダミーゴーストMT　ブレホ移動時
+33100075 c3310 Dummy Ghost MT When moving in mid-air Breho -- c3310 ダミーゴーストMT　空中ブレホ移動時
+33100080 c3310 Dummy Ghost MT when cover is reversed -- c3310 ダミーゴーストMT　カバー反転時
+33100090 c3310 Dummy Ghost MT large quick boost -- c3310 ダミーゴーストMT　大クイックブースト時
+34000000 c3400 quadruped MT normal time -- c3400 四脚MT　通常時
+34000010 c3400 quadruped MT when dashing -- c3400 四脚MT　ダッシュ時
+34000015 c3400 quadruped MT high speed dash -- c3400 四脚MT　高速ダッシュ時
+34000020 c3400 quadruped MT boost -- c3400 四脚MT　ブースト時
+34000030 c3400 Quadruped MT Braking -- c3400 四脚MT　ブレーキ時
+34000040 c3400 quadruped MT when moving in the air -- c3400 四脚MT　空中移動時
+34000050 c3400 Quadruped MT Boost turning -- c3400 四脚MT　ブースト旋回時
+34000055 c3400 quadruped MT during aerial boost turning -- c3400 四脚MT　空中ブースト旋回時
+34000060 c3400 Quadruped MT Boost turning_180 degree turn -- c3400 四脚MT　ブースト旋回時_180度ターン
+34000065 c3400 Quadruped MT Aerial boost turning_180 degree turn -- c3400 四脚MT　空中ブースト旋回時_180度ターン
+34000070 c3400 Quadruped MT when moving Brejo -- c3400 四脚MT　ブレホ移動時
+34000075 c3400 Quadruped MT when moving in the air -- c3400 四脚MT　空中ブレホ移動時
+34000080 c3400 Quadruped MT when cover is reversed -- c3400 四脚MT　カバー反転時
+34000090 c3400 quadruped MT large quick boost -- c3400 四脚MT　大クイックブースト時
+35000000 c3500 old world MT gray normal time -- c3500 旧世界MT グレ　通常時
+35000010 c3500 old world MT gray dash time -- c3500 旧世界MT グレ　ダッシュ時
+35000015 c3500 old world MT gray high speed dash -- c3500 旧世界MT グレ　高速ダッシュ時
+35000020 c3500 old world MT gray boost time -- c3500 旧世界MT グレ　ブースト時
+35000030 c3500 old world MT gray brake time -- c3500 旧世界MT グレ　ブレーキ時
+35000040 c3500 old world MT gray when moving in the air -- c3500 旧世界MT グレ　空中移動時
+35000050 c3500 old world MT gray boost turning -- c3500 旧世界MT グレ　ブースト旋回時
+35000055 c3500 old world MT gray during aerial boost turning -- c3500 旧世界MT グレ　空中ブースト旋回時
+35000060 c3500 old world MT gray boost turning_180 degree turn -- c3500 旧世界MT グレ　ブースト旋回時_180度ターン
+35000065 c3500 Old World MT Gray Aerial boost turning_180 degree turn -- c3500 旧世界MT グレ　空中ブースト旋回時_180度ターン
+35000070 c3500 Old World MT Gray Brejo when moving -- c3500 旧世界MT グレ　ブレホ移動時
+35000075 c3500 Old World MT Gray When moving in mid-air Brejo -- c3500 旧世界MT グレ　空中ブレホ移動時
+35000080 c3500 old world MT gray when cover is reversed -- c3500 旧世界MT グレ　カバー反転時
+35000090 c3500 old world MT gray large quick boost -- c3500 旧世界MT グレ　大クイックブースト時
+36000000 c3600 construction machine spider normal time -- c3600 建機クモ　通常時
+36000010 c3600 construction machine spider dash -- c3600 建機クモ　ダッシュ時
+36000015 c3600 construction machine spider high speed dash -- c3600 建機クモ　高速ダッシュ時
+36000020 c3600 construction machine spider boost time -- c3600 建機クモ　ブースト時
+36000030 c3600 construction machine spider braking -- c3600 建機クモ　ブレーキ時
+36000040 c3600 construction machine spider when moving in the air -- c3600 建機クモ　空中移動時
+36000050 c3600 construction machine spider when turning boost -- c3600 建機クモ　ブースト旋回時
+36000055 c3600 construction machine spider during aerial boost turning -- c3600 建機クモ　空中ブースト旋回時
+36000060 c3600 construction machine spider boost turning_180 degree turn -- c3600 建機クモ　ブースト旋回時_180度ターン
+36000065 c3600 construction machine spider aerial boost turning_180 degree turn -- c3600 建機クモ　空中ブースト旋回時_180度ターン
+36000070 c3600 construction machine spider when moving Breho -- c3600 建機クモ　ブレホ移動時
+36000075 c3600 construction machine spider when moving in the air -- c3600 建機クモ　空中ブレホ移動時
+36000080 c3600 construction machine spider when cover is reversed -- c3600 建機クモ　カバー反転時
+36000090 c3600 construction machine spider large quick boost -- c3600 建機クモ　大クイックブースト時
+37000000 c3700 deleter normal time -- c3700 デリーター　通常時
+37000010 c3700 deleter dash time -- c3700 デリーター　ダッシュ時
+37000015 c3700 Deleteer high speed dash -- c3700 デリーター　高速ダッシュ時
+37000020 c3700 deleter boost -- c3700 デリーター　ブースト時
+37000030 c3700 deleter when braking -- c3700 デリーター　ブレーキ時
+37000040 c3700 Deleteer when moving in the air -- c3700 デリーター　空中移動時
+37000050 c3700 deleter boost turning -- c3700 デリーター　ブースト旋回時
+37000055 c3700 Deleteer during aerial boost turning -- c3700 デリーター　空中ブースト旋回時
+37000060 c3700 Deleteer Boost turning_180 degree turn -- c3700 デリーター　ブースト旋回時_180度ターン
+37000065 c3700 Deleteer Aerial boost turning_180 degree turn -- c3700 デリーター　空中ブースト旋回時_180度ターン
+37000070 c3700 Deleteer when moving Brejo -- c3700 デリーター　ブレホ移動時
+37000075 c3700 Deleteer during aerial brejo movement -- c3700 デリーター　空中ブレホ移動時
+37000080 c3700 Deleteer when cover is reversed -- c3700 デリーター　カバー反転時
+37000090 c3700 Deleteer large quick boost -- c3700 デリーター　大クイックブースト時
+40000000 c4000 ADF Normal time -- c4000 ADF　通常時
+40000010 c4000 ADF when dashing -- c4000 ADF　ダッシュ時
+40000015 c4000 ADF at high speed dash -- c4000 ADF　高速ダッシュ時
+40000020 c4000 ADF boost -- c4000 ADF　ブースト時
+40000030 c4000 ADF during braking -- c4000 ADF　ブレーキ時
+40000040 c4000 ADF when moving in the air -- c4000 ADF　空中移動時
+40000050 c4000 ADF Boost turning -- c4000 ADF　ブースト旋回時
+40000055 c4000 ADF during air boost turning -- c4000 ADF　空中ブースト旋回時
+40000060 c4000 ADF Boost turning_180 degree turn -- c4000 ADF　ブースト旋回時_180度ターン
+40000065 c4000 ADF　Aerial boost turning_180 degree turn -- c4000 ADF　空中ブースト旋回時_180度ターン
+40000070 c4000 ADF when moving Brejo -- c4000 ADF　ブレホ移動時
+40000075 c4000 ADF when moving in the air -- c4000 ADF　空中ブレホ移動時
+40000080 c4000 ADF when cover is reversed -- c4000 ADF　カバー反転時
+40000090 c4000 ADF large quick boost -- c4000 ADF　大クイックブースト時
+41000000 c4100 Humanoid heavyweight boss normal time -- c4100 人型重量級ボス　通常時
+41000010 c4100 Humanoid heavyweight boss when dashing -- c4100 人型重量級ボス　ダッシュ時
+41000015 c4100 Humanoid heavyweight boss during high-speed dash -- c4100 人型重量級ボス　高速ダッシュ時
+41000020 c4100 Humanoid heavyweight boss when boosted -- c4100 人型重量級ボス　ブースト時
+41000030 c4100 Humanoid heavyweight boss during braking -- c4100 人型重量級ボス　ブレーキ時
+41000040 c4100 Humanoid heavyweight boss when moving in the air -- c4100 人型重量級ボス　空中移動時
+41000050 c4100 Humanoid heavyweight boss when turning boost -- c4100 人型重量級ボス　ブースト旋回時
+41000055 c4100 Humanoid heavyweight boss during aerial boost turning -- c4100 人型重量級ボス　空中ブースト旋回時
+41000060 c4100 Humanoid heavy boss Boost turning_180 degree turn -- c4100 人型重量級ボス　ブースト旋回時_180度ターン
+41000065 c4100 Humanoid heavyweight boss Aerial boost turning_180 degree turn -- c4100 人型重量級ボス　空中ブースト旋回時_180度ターン
+41000070 c4100 Humanoid heavyweight boss when moving Brejo -- c4100 人型重量級ボス　ブレホ移動時
+41000075 c4100 Humanoid heavyweight boss when moving in the air -- c4100 人型重量級ボス　空中ブレホ移動時
+41000080 c4100 Humanoid heavyweight boss when cover is reversed -- c4100 人型重量級ボス　カバー反転時
+41000090 c4100 Humanoid heavyweight boss large quick boost -- c4100 人型重量級ボス　大クイックブースト時
+41500000 c4150 Special attack MT normal time -- c4150 特攻MT　通常時
+41500010 c4150 Special attack MT when dashing -- c4150 特攻MT　ダッシュ時
+41500015 c4150 Special attack MT high speed dash -- c4150 特攻MT　高速ダッシュ時
+41500020 c4150 Special attack MT boost time -- c4150 特攻MT　ブースト時
+41500030 c4150 special attack MT braking -- c4150 特攻MT　ブレーキ時
+41500040 c4150 Special attack MT when moving in the air -- c4150 特攻MT　空中移動時
+41500050 c4150 Special attack MT when turning boost -- c4150 特攻MT　ブースト旋回時
+41500055 c4150 Special attack MT during air boost turning -- c4150 特攻MT　空中ブースト旋回時
+41500060 c4150 Special attack MT Boost turning_180 degree turn -- c4150 特攻MT　ブースト旋回時_180度ターン
+41500065 c4150 Special attack MT air boost turning when turning_180 degrees -- c4150 特攻MT　空中ブースト旋回時_180度ターン
+41500070 c4150 Special attack MT when moving Breho -- c4150 特攻MT　ブレホ移動時
+41500075 c4150 Special attack MT when moving in mid-air Breho -- c4150 特攻MT　空中ブレホ移動時
+41500080 c4150 Special attack MT when cover is reversed -- c4150 特攻MT　カバー反転時
+41500090 c4150 Special attack MT large quick boost -- c4150 特攻MT　大クイックブースト時
+42000000 c4200 next generation proto AC normal time -- c4200 次世代プロトAC　通常時
+42000010 c4200 next generation proto AC dash time -- c4200 次世代プロトAC　ダッシュ時
+42000015 c4200 next generation proto AC high speed dash -- c4200 次世代プロトAC　高速ダッシュ時
+42000020 c4200 next generation proto AC boost -- c4200 次世代プロトAC　ブースト時
+42000030 c4200 next generation proto AC braking -- c4200 次世代プロトAC　ブレーキ時
+42000040 c4200 next generation proto AC when moving in the air -- c4200 次世代プロトAC　空中移動時
+42000050 c4200 next generation proto AC boost turning -- c4200 次世代プロトAC　ブースト旋回時
+42000055 c4200 next generation proto AC during aerial boost turning -- c4200 次世代プロトAC　空中ブースト旋回時
+42000060 c4200 next generation proto AC Boost turning_180 degree turn -- c4200 次世代プロトAC　ブースト旋回時_180度ターン
+42000065 c4200 Next Generation Proto AC Aerial Boost Turning_180 degree turn -- c4200 次世代プロトAC　空中ブースト旋回時_180度ターン
+42000070 c4200 next generation proto AC when moving Brejo -- c4200 次世代プロトAC　ブレホ移動時
+42000075 c4200 Next Generation ProtoAC When moving in mid-air Breho -- c4200 次世代プロトAC　空中ブレホ移動時
+42000080 c4200 next generation proto AC cover reversal -- c4200 次世代プロトAC　カバー反転時
+42000090 c4200 next generation proto AC large quick boost -- c4200 次世代プロトAC　大クイックブースト時
+42100000 c4210 Next Generation ProtoAC_Phantom Normal Time -- c4210 次世代プロトAC_幻影　通常時
+42100010 c4210 Next generation proto AC_phantom dash time -- c4210 次世代プロトAC_幻影　ダッシュ時
+42100015 c4210 Next generation proto AC_phantom high speed dash -- c4210 次世代プロトAC_幻影　高速ダッシュ時
+42100020 c4210 Next generation proto AC_phantom boost time -- c4210 次世代プロトAC_幻影　ブースト時
+42100030 c4210 Next Generation Proto AC_Phantom Braking -- c4210 次世代プロトAC_幻影　ブレーキ時
+42100040 c4210 Next generation proto AC_phantom when moving in the air -- c4210 次世代プロトAC_幻影　空中移動時
+42100050 c4210 Next Generation Proto AC_Phantom Boost Turning -- c4210 次世代プロトAC_幻影　ブースト旋回時
+42100055 c4210 Next Generation ProtoAC_Phantom Air Boost Turning -- c4210 次世代プロトAC_幻影　空中ブースト旋回時
+42100060 c4210 Next generation proto AC_Phantom boost turning_180 degree turn -- c4210 次世代プロトAC_幻影　ブースト旋回時_180度ターン
+42100065 c4210 Next Generation Proto AC_Phantom Aerial Boost Turning_180 degree turn -- c4210 次世代プロトAC_幻影　空中ブースト旋回時_180度ターン
+42100070 c4210 Next generation proto AC_phantom when moving Breho -- c4210 次世代プロトAC_幻影　ブレホ移動時
+42100075 c4210 Next Generation ProtoAC_Phantom Aerial Breho when moving -- c4210 次世代プロトAC_幻影　空中ブレホ移動時
+42100080 c4210 Next generation proto AC_phantom when cover is reversed -- c4210 次世代プロトAC_幻影　カバー反転時
+42100090 c4210 Next generation proto AC_phantom large quick boost -- c4210 次世代プロトAC_幻影　大クイックブースト時
+42500000 c4250 Orbit seed normal time -- c4250 オービットシード　通常時
+42500010 c4250 Orbit Seed when dashing -- c4250 オービットシード　ダッシュ時
+42500015 c4250 Orbit Seed High Speed ​​Dash -- c4250 オービットシード　高速ダッシュ時
+42500020 c4250 Orbit Seed Boost -- c4250 オービットシード　ブースト時
+42500030 c4250 orbit seed braking -- c4250 オービットシード　ブレーキ時
+42500040 c4250 Orbit Seed When moving in the air -- c4250 オービットシード　空中移動時
+42500050 c4250 Orbit Seed Boost turning -- c4250 オービットシード　ブースト旋回時
+42500055 c4250 Orbit Seed during aerial boost turning -- c4250 オービットシード　空中ブースト旋回時
+42500060 c4250 Orbit Seed Boost turning_180 degree turn -- c4250 オービットシード　ブースト旋回時_180度ターン
+42500065 c4250 Orbit Seed Air boost turning _180 degree turn -- c4250 オービットシード　空中ブースト旋回時_180度ターン
+42500070 c4250 Orbit Seed When moving Breho -- c4250 オービットシード　ブレホ移動時
+42500075 c4250 Orbit Seed When moving in the air Breho -- c4250 オービットシード　空中ブレホ移動時
+42500080 c4250 Orbit seed when cover is reversed -- c4250 オービットシード　カバー反転時
+42500090 c4250 Orbit Seed Large Quick Boost -- c4250 オービットシード　大クイックブースト時
+42600000 c4260 Orbit control normal time -- c4260 オービット制御　通常時
+42600010 c4260 Orbit control when dashing -- c4260 オービット制御　ダッシュ時
+42600015 c4260 Orbit control during high-speed dash -- c4260 オービット制御　高速ダッシュ時
+42600020 c4260 Orbit control during boost -- c4260 オービット制御　ブースト時
+42600030 c4260 Orbit control during braking -- c4260 オービット制御　ブレーキ時
+42600040 c4260 Orbit control during aerial movement -- c4260 オービット制御　空中移動時
+42600050 c4260 Orbit control during boost turning -- c4260 オービット制御　ブースト旋回時
+42600055 c4260 Orbit control during aerial boost turning -- c4260 オービット制御　空中ブースト旋回時
+42600060 c4260 Orbit control Boost turning_180 degree turn -- c4260 オービット制御　ブースト旋回時_180度ターン
+42600065 c4260 Orbit control during aerial boost turning_180 degree turn -- c4260 オービット制御　空中ブースト旋回時_180度ターン
+42600070 c4260 Orbit control when moving Breho -- c4260 オービット制御　ブレホ移動時
+42600075 c4260 Orbit control during aerial Breho movement -- c4260 オービット制御　空中ブレホ移動時
+42600080 c4260 Orbit control when cover is reversed -- c4260 オービット制御　カバー反転時
+42600090 c4260 Orbit control large quick boost -- c4260 オービット制御　大クイックブースト時
+50000000 c5000 Guard Mecha (Aerial) Machine Gun Type Normal Time -- c5000 ガードメカ(空中) 機関銃タイプ　通常時
+50000010 c5000 guard mecha (air) machine gun type when dashing -- c5000 ガードメカ(空中) 機関銃タイプ　ダッシュ時
+50000015 c5000 Guard Mecha (Aerial) Machine Gun Type During High Speed ​​Dash -- c5000 ガードメカ(空中) 機関銃タイプ　高速ダッシュ時
+50000020 c5000 guard mecha (air) machine gun type boost -- c5000 ガードメカ(空中) 機関銃タイプ　ブースト時
+50000030 c5000 guard mechanism (aerial) machine gun type during braking -- c5000 ガードメカ(空中) 機関銃タイプ　ブレーキ時
+50000040 c5000 Guard Mecha (Aerial) Machine gun type when moving in the air -- c5000 ガードメカ(空中) 機関銃タイプ　空中移動時
+50000050 c5000 Guard Mecha (Aerial) Machine Gun Type Boost Turning -- c5000 ガードメカ(空中) 機関銃タイプ　ブースト旋回時
+50000055 c5000 Guard Mecha (Aerial) Machine Gun Type Air Boost Turning -- c5000 ガードメカ(空中) 機関銃タイプ　空中ブースト旋回時
+50000060 c5000 Guard Mecha (Aerial) Machine gun type Boost turning_180 degree turn -- c5000 ガードメカ(空中) 機関銃タイプ　ブースト旋回時_180度ターン
+50000065 c5000 Guard Mecha (Aerial) Machine gun type Air boost turning when turning_180 degrees -- c5000 ガードメカ(空中) 機関銃タイプ　空中ブースト旋回時_180度ターン
+50000070 c5000 Guard Mecha (Aerial) Machine gun type Brejo when moving -- c5000 ガードメカ(空中) 機関銃タイプ　ブレホ移動時
+50000075 c5000 Guard Mecha (Aerial) Machine gun type when moving in the air Breho -- c5000 ガードメカ(空中) 機関銃タイプ　空中ブレホ移動時
+50000080 c5000 guard mechanism (aerial) machine gun type when cover is reversed -- c5000 ガードメカ(空中) 機関銃タイプ　カバー反転時
+50000090 c5000 Guard Mecha (Aerial) Machine Gun Type Large Quick Boost -- c5000 ガードメカ(空中) 機関銃タイプ　大クイックブースト時
+50100000 c5010 Bug (work type A) Normal time -- c5010 バグ（作業タイプA）　通常時
+50100010 c5010 Bug (work type A) when dashing -- c5010 バグ（作業タイプA）　ダッシュ時
+50100015 c5010 Bug (work type A) during high speed dash -- c5010 バグ（作業タイプA）　高速ダッシュ時
+50100020 c5010 bug (work type A) when boosting -- c5010 バグ（作業タイプA）　ブースト時
+50100030 c5010 Bug (work type A) during braking -- c5010 バグ（作業タイプA）　ブレーキ時
+50100040 c5010 Bug (work type A) when moving in the air -- c5010 バグ（作業タイプA）　空中移動時
+50100050 c5010 bug (work type A) when turning boost -- c5010 バグ（作業タイプA）　ブースト旋回時
+50100055 c5010 Bug (Work Type A) During aerial boost turning -- c5010 バグ（作業タイプA）　空中ブースト旋回時
+50100060 c5010 Bug (work type A) Boost turning_180 degree turn -- c5010 バグ（作業タイプA）　ブースト旋回時_180度ターン
+50100065 c5010 Bug (Work Type A) Aerial boost turning when turning_180 degrees -- c5010 バグ（作業タイプA）　空中ブースト旋回時_180度ターン
+50100070 c5010 Bug (work type A) when moving Breho -- c5010 バグ（作業タイプA）　ブレホ移動時
+50100075 c5010 Bug (Work Type A) When moving in mid-air Breho -- c5010 バグ（作業タイプA）　空中ブレホ移動時
+50100080 c5010 Bug (work type A) when cover is reversed -- c5010 バグ（作業タイプA）　カバー反転時
+50100090 c5010 Bug (Work Type A) During large quick boost -- c5010 バグ（作業タイプA）　大クイックブースト時
+50200000 c5020 Heavy guard mechanism normal time -- c5020 重ガードメカ　通常時
+50200010 c5020 Heavy guard mecha when dashing -- c5020 重ガードメカ　ダッシュ時
+50200015 c5020 Heavy guard mech during high speed dash -- c5020 重ガードメカ　高速ダッシュ時
+50200020 c5020 Heavy Guard Mecha Boost -- c5020 重ガードメカ　ブースト時
+50200030 c5020 Heavy guard mechanism during braking -- c5020 重ガードメカ　ブレーキ時
+50200040 c5020 Heavy guard mecha when moving in the air -- c5020 重ガードメカ　空中移動時
+50200050 c5020 Heavy guard mechanism during boost turning -- c5020 重ガードメカ　ブースト旋回時
+50200055 c5020 Heavy guard mech during aerial boost turning -- c5020 重ガードメカ　空中ブースト旋回時
+50200060 c5020 Heavy guard mechanism Boost turning_180 degree turn -- c5020 重ガードメカ　ブースト旋回時_180度ターン
+50200065 c5020 Heavy Guard Mecha Aerial Boost Turning_180 degree turn -- c5020 重ガードメカ　空中ブースト旋回時_180度ターン
+50200070 c5020 Heavy guard mechanism when moving Brejo -- c5020 重ガードメカ　ブレホ移動時
+50200075 c5020 Heavy guard mecha when moving in the air -- c5020 重ガードメカ　空中ブレホ移動時
+50200080 c5020 Heavy guard mechanism when cover is reversed -- c5020 重ガードメカ　カバー反転時
+50200090 c5020 Heavy guard mecha large quick boost -- c5020 重ガードメカ　大クイックブースト時
+51000000 c5100 large transport helicopter normal time -- c5100 大型輸送ヘリ　通常時
+51000010 c5100 large transport helicopter dash -- c5100 大型輸送ヘリ　ダッシュ時
+51000015 c5100 large transport helicopter high speed dash -- c5100 大型輸送ヘリ　高速ダッシュ時
+51000020 c5100 large transport helicopter boost -- c5100 大型輸送ヘリ　ブースト時
+51000030 c5100 large transport helicopter during braking -- c5100 大型輸送ヘリ　ブレーキ時
+51000040 c5100 large transport helicopter during aerial movement -- c5100 大型輸送ヘリ　空中移動時
+51000050 c5100 large transport helicopter during boost turning -- c5100 大型輸送ヘリ　ブースト旋回時
+51000055 c5100 large transport helicopter during aerial boost turning -- c5100 大型輸送ヘリ　空中ブースト旋回時
+51000060 c5100 large transport helicopter boost turning_180 degree turn -- c5100 大型輸送ヘリ　ブースト旋回時_180度ターン
+51000065 c5100 large transport helicopter _180 degree turn during aerial boost turning -- c5100 大型輸送ヘリ　空中ブースト旋回時_180度ターン
+51000070 c5100 large transport helicopter when moving Brejo -- c5100 大型輸送ヘリ　ブレホ移動時
+51000075 c5100 large transport helicopter during aerial Brejo movement -- c5100 大型輸送ヘリ　空中ブレホ移動時
+51000080 c5100 large transport helicopter when cover is reversed -- c5100 大型輸送ヘリ　カバー反転時
+51000090 c5100 large transport helicopter large quick boost -- c5100 大型輸送ヘリ　大クイックブースト時
+51000100 c5100 large transport helicopter normal time -- c5100 大型輸送ヘリ　通常時
+51000110 c5100 large transport helicopter dash -- c5100 大型輸送ヘリ　ダッシュ時
+51000115 c5100 large transport helicopter high speed dash -- c5100 大型輸送ヘリ　高速ダッシュ時
+51000120 c5100 large transport helicopter boost -- c5100 大型輸送ヘリ　ブースト時
+51000130 c5100 large transport helicopter during braking -- c5100 大型輸送ヘリ　ブレーキ時
+51000140 c5100 large transport helicopter during aerial movement -- c5100 大型輸送ヘリ　空中移動時
+51000150 c5100 large transport helicopter during boost turning -- c5100 大型輸送ヘリ　ブースト旋回時
+51000155 c5100 large transport helicopter during aerial boost turning -- c5100 大型輸送ヘリ　空中ブースト旋回時
+51000160 c5100 large transport helicopter boost turning_180 degree turn -- c5100 大型輸送ヘリ　ブースト旋回時_180度ターン
+51000165 c5100 large transport helicopter _180 degree turn during aerial boost turning -- c5100 大型輸送ヘリ　空中ブースト旋回時_180度ターン
+51000170 c5100 large transport helicopter when moving Brejo -- c5100 大型輸送ヘリ　ブレホ移動時
+51000175 c5100 large transport helicopter during aerial Brejo movement -- c5100 大型輸送ヘリ　空中ブレホ移動時
+51000180 c5100 large transport helicopter when cover is reversed -- c5100 大型輸送ヘリ　カバー反転時
+51000190 c5100 large transport helicopter large quick boost -- c5100 大型輸送ヘリ　大クイックブースト時
+51010000 c5101 Large transport helicopter machine gun normal mode -- c5101 大型輸送ヘリ機銃　通常時
+51010010 c5101 large transport helicopter machine gun when dashing -- c5101 大型輸送ヘリ機銃　ダッシュ時
+51010015 c5101 Large transport helicopter machine gun during high speed dash -- c5101 大型輸送ヘリ機銃　高速ダッシュ時
+51010020 c5101 large transport helicopter machine gun boost -- c5101 大型輸送ヘリ機銃　ブースト時
+51010030 c5101 Large transport helicopter machine gun during braking -- c5101 大型輸送ヘリ機銃　ブレーキ時
+51010040 c5101 Large transport helicopter machine gun when moving in the air -- c5101 大型輸送ヘリ機銃　空中移動時
+51010050 c5101 Large transport helicopter machine gun during boost turning -- c5101 大型輸送ヘリ機銃　ブースト旋回時
+51010055 c5101 Large transport helicopter machine gun during aerial boost turning -- c5101 大型輸送ヘリ機銃　空中ブースト旋回時
+51010060 c5101 Large transport helicopter machine gun Boost turning_180 degree turn -- c5101 大型輸送ヘリ機銃　ブースト旋回時_180度ターン
+51010065 c5101 Large transport helicopter machine gun _180 degree turn when turning in air boost -- c5101 大型輸送ヘリ機銃　空中ブースト旋回時_180度ターン
+51010070 c5101 Large transport helicopter machine gun when moving Brejo -- c5101 大型輸送ヘリ機銃　ブレホ移動時
+51010075 c5101 Large transport helicopter machine gun during aerial Brejo movement -- c5101 大型輸送ヘリ機銃　空中ブレホ移動時
+51010080 c5101 Large transport helicopter machine gun when cover is reversed -- c5101 大型輸送ヘリ機銃　カバー反転時
+51010090 c5101 large transport helicopter machine gun large quick boost -- c5101 大型輸送ヘリ機銃　大クイックブースト時
+51200000 c5120 Military US Drone Normal Time -- c5120 軍事用USドローン　通常時
+51200010 c5120 military US drone dash -- c5120 軍事用USドローン　ダッシュ時
+51200015 c5120 military US drone at high speed dash -- c5120 軍事用USドローン　高速ダッシュ時
+51200020 c5120 military US drone boost -- c5120 軍事用USドローン　ブースト時
+51200030 c5120 military US drone braking -- c5120 軍事用USドローン　ブレーキ時
+51200040 c5120 military US drone when moving in the air -- c5120 軍事用USドローン　空中移動時
+51200050 c5120 military US drone during boost turning -- c5120 軍事用USドローン　ブースト旋回時
+51200055 c5120 military US drone during aerial boost turning -- c5120 軍事用USドローン　空中ブースト旋回時
+51200060 c5120 military US drone boost turning_180 degree turn -- c5120 軍事用USドローン　ブースト旋回時_180度ターン
+51200065 c5120 military US drone aerial boost turning_180 degree turn -- c5120 軍事用USドローン　空中ブースト旋回時_180度ターン
+51200070 c5120 Military US Drone Brejo when moving -- c5120 軍事用USドローン　ブレホ移動時
+51200075 c5120 military US drone during aerial Brejo movement -- c5120 軍事用USドローン　空中ブレホ移動時
+51200080 c5120 Military US Drone Cover Reversed -- c5120 軍事用USドローン　カバー反転時
+51200090 c5120 military US drone large quick boost -- c5120 軍事用USドローン　大クイックブースト時
+51500000 c5150 combat helicopter normal time -- c5150 戦闘ヘリ　通常時
+51500010 c5150 combat helicopter dash -- c5150 戦闘ヘリ　ダッシュ時
+51500015 c5150 combat helicopter high speed dash -- c5150 戦闘ヘリ　高速ダッシュ時
+51500020 c5150 combat helicopter boost -- c5150 戦闘ヘリ　ブースト時
+51500030 c5150 combat helicopter braking -- c5150 戦闘ヘリ　ブレーキ時
+51500040 c5150 combat helicopter during air movement -- c5150 戦闘ヘリ　空中移動時
+51500050 c5150 combat helicopter boost turning -- c5150 戦闘ヘリ　ブースト旋回時
+51500055 c5150 combat helicopter during air boost turning -- c5150 戦闘ヘリ　空中ブースト旋回時
+51500060 c5150 combat helicopter boost turning_180 degree turn -- c5150 戦闘ヘリ　ブースト旋回時_180度ターン
+51500065 c5150 combat helicopter air boost turning_180 degree turn -- c5150 戦闘ヘリ　空中ブースト旋回時_180度ターン
+51500070 c5150 combat helicopter Breho moving -- c5150 戦闘ヘリ　ブレホ移動時
+51500075 c5150 combat helicopter during aerial brejo movement -- c5150 戦闘ヘリ　空中ブレホ移動時
+51500080 c5150 combat helicopter cover reversal -- c5150 戦闘ヘリ　カバー反転時
+51500090 c5150 combat helicopter large quick boost -- c5150 戦闘ヘリ　大クイックブースト時
+52000000 c5200 tank normal time -- c5200 戦車　通常時
+52000010 c5200 tank dash time -- c5200 戦車　ダッシュ時
+52000015 c5200 tank high speed dash -- c5200 戦車　高速ダッシュ時
+52000020 c5200 tank boost -- c5200 戦車　ブースト時
+52000030 c5200 tank braking -- c5200 戦車　ブレーキ時
+52000040 c5200 tank during air movement -- c5200 戦車　空中移動時
+52000050 c5200 tank boost turning -- c5200 戦車　ブースト旋回時
+52000055 c5200 tank during aerial boost turning -- c5200 戦車　空中ブースト旋回時
+52000060 c5200 tank boost turning_180 degree turn -- c5200 戦車　ブースト旋回時_180度ターン
+52000065 c5200 tank air boost turn when turning_180 degrees -- c5200 戦車　空中ブースト旋回時_180度ターン
+52000070 c5200 tank Breho when moving -- c5200 戦車　ブレホ移動時
+52000075 c5200 tank during aerial brejo movement -- c5200 戦車　空中ブレホ移動時
+52000080 c5200 tank cover inverted -- c5200 戦車　カバー反転時
+52000090 c5200 tank large quick boost -- c5200 戦車　大クイックブースト時
+52500000 c5250 Sunflower Normal time -- c5250 サンフラワー　通常時
+52500010 c5250 Sunflower dash time -- c5250 サンフラワー　ダッシュ時
+52500015 c5250 Sunflower high speed dash -- c5250 サンフラワー　高速ダッシュ時
+52500020 c5250 Sunflower boost time -- c5250 サンフラワー　ブースト時
+52500030 c5250 Sunflower when braking -- c5250 サンフラワー　ブレーキ時
+52500040 c5250 Sunflower when moving in the air -- c5250 サンフラワー　空中移動時
+52500050 c5250 Sunflower boost turning -- c5250 サンフラワー　ブースト旋回時
+52500055 c5250 Sunflower during aerial boost turning -- c5250 サンフラワー　空中ブースト旋回時
+52500060 c5250 Sunflower Boost turning_180 degree turn -- c5250 サンフラワー　ブースト旋回時_180度ターン
+52500065 c5250 Sunflower Aerial boost turning_180 degree turn -- c5250 サンフラワー　空中ブースト旋回時_180度ターン
+52500070 c5250 Sunflower Breho when moving -- c5250 サンフラワー　ブレホ移動時
+52500075 c5250 Sunflower when moving in the air -- c5250 サンフラワー　空中ブレホ移動時
+52500080 c5250 Sunflower when cover is reversed -- c5250 サンフラワー　カバー反転時
+52500090 c5250 Sunflower large quick boost -- c5250 サンフラワー　大クイックブースト時
+53000000 c5300 suicide satellite normal time -- c5300 自爆衛星　通常時
+53000010 c5300 suicide satellite dash time -- c5300 自爆衛星　ダッシュ時
+53000015 c5300 suicide satellite high speed dash -- c5300 自爆衛星　高速ダッシュ時
+53000020 c5300 suicide satellite boost -- c5300 自爆衛星　ブースト時
+53000030 c5300 suicide satellite braking -- c5300 自爆衛星　ブレーキ時
+53000040 c5300 suicide satellite when moving in the air -- c5300 自爆衛星　空中移動時
+53000050 c5300 suicide satellite boost turning -- c5300 自爆衛星　ブースト旋回時
+53000055 c5300 suicide satellite during aerial boost turning -- c5300 自爆衛星　空中ブースト旋回時
+53000060 c5300 suicide satellite boost turning_180 degree turn -- c5300 自爆衛星　ブースト旋回時_180度ターン
+53000065 c5300 Suicide satellite - 180 degree turn when turning in air boost -- c5300 自爆衛星　空中ブースト旋回時_180度ターン
+53000070 c5300 Suicide satellite Breho moving -- c5300 自爆衛星　ブレホ移動時
+53000075 c5300 Suicide satellite when moving in mid-air Breho -- c5300 自爆衛星　空中ブレホ移動時
+53000080 c5300 suicide satellite cover inverted -- c5300 自爆衛星　カバー反転時
+53000090 c5300 Suicide satellite large quick boost -- c5300 自爆衛星　大クイックブースト時
+55000000 c5500 biological weapon normal time -- c5500 生体兵器　通常時
+55000010 c5500 biological weapon when dashing -- c5500 生体兵器　ダッシュ時
+55000015 c5500 biological weapon high speed dash -- c5500 生体兵器　高速ダッシュ時
+55000020 c5500 biological weapon boost -- c5500 生体兵器　ブースト時
+55000030 c5500 biological weapon during braking -- c5500 生体兵器　ブレーキ時
+55000040 c5500 biological weapon when moving in the air -- c5500 生体兵器　空中移動時
+55000050 c5500 biological weapon boost turning -- c5500 生体兵器　ブースト旋回時
+55000055 c5500 biological weapon air boost turning -- c5500 生体兵器　空中ブースト旋回時
+55000060 c5500 biological weapon Boost turning_180 degree turn -- c5500 生体兵器　ブースト旋回時_180度ターン
+55000065 c5500 Biological Weapon Air Boost Turning_180 degree turn -- c5500 生体兵器　空中ブースト旋回時_180度ターン
+55000070 c5500 Biological Weapon Brejo when moving -- c5500 生体兵器　ブレホ移動時
+55000075 c5500 Biological Weapon When moving in mid-air Breho -- c5500 生体兵器　空中ブレホ移動時
+55000080 c5500 biological weapon when cover is reversed -- c5500 生体兵器　カバー反転時
+55000090 c5500 biological weapon large quick boost -- c5500 生体兵器　大クイックブースト時
+55100000 c5510 Living Weapon (Large) Normal Time -- c5510 生体兵器（大）　通常時
+55100010 c5510 Living weapon (large) when dashing -- c5510 生体兵器（大）　ダッシュ時
+55100015 c5510 Biological Weapon (Large) During High Speed ​​Dash -- c5510 生体兵器（大）　高速ダッシュ時
+55100020 c5510 Biological weapon (large) when boosted -- c5510 生体兵器（大）　ブースト時
+55100030 c5510 Biological weapon (large) when braking -- c5510 生体兵器（大）　ブレーキ時
+55100040 c5510 Biological Weapon (Large) When moving in the air -- c5510 生体兵器（大）　空中移動時
+55100050 c5510 Biological weapon (large) when turning boost -- c5510 生体兵器（大）　ブースト旋回時
+55100055 c5510 Biological Weapon (Large) Air Boost Turning -- c5510 生体兵器（大）　空中ブースト旋回時
+55100060 c5510 Biological weapon (large) Boost turning_180 degree turn -- c5510 生体兵器（大）　ブースト旋回時_180度ターン
+55100065 c5510 Biological Weapon (Large) Air boost turning when turning_180 degrees -- c5510 生体兵器（大）　空中ブースト旋回時_180度ターン
+55100070 c5510 Living Weapon (Large) When moving Brejo -- c5510 生体兵器（大）　ブレホ移動時
+55100075 c5510 Biological Weapon (Large) When moving in mid-air Breho -- c5510 生体兵器（大）　空中ブレホ移動時
+55100080 c5510 Biological weapon (large) when cover is reversed -- c5510 生体兵器（大）　カバー反転時
+55100090 c5510 Biological Weapon (Large) Large Quick Boost -- c5510 生体兵器（大）　大クイックブースト時
+59000000 [End of 3rd edition] Stiglo - Normal time -- 【3末版】スティグロ - 通常時
+60000000 c6000 Necklace Keeper Normal Time -- c6000 首飾りの番人　通常時
+60000010 c6000 Necklace Keeper Dash -- c6000 首飾りの番人　ダッシュ時
+60000015 c6000 Necklace Keeper High Speed ​​Dash -- c6000 首飾りの番人　高速ダッシュ時
+60000020 c6000 Necklace Keeper Boost -- c6000 首飾りの番人　ブースト時
+60000030 c6000 Necklace Keeper Braking -- c6000 首飾りの番人　ブレーキ時
+60000040 c6000 Necklace Keeper When moving in the air -- c6000 首飾りの番人　空中移動時
+60000050 c6000 Necklace Keeper Boost Turning -- c6000 首飾りの番人　ブースト旋回時
+60000055 c6000 Necklace Keeper Air boost turning -- c6000 首飾りの番人　空中ブースト旋回時
+60000060 c6000 Necklace Keeper Boost turning_180 degree turn -- c6000 首飾りの番人　ブースト旋回時_180度ターン
+60000065 c6000 Necklace Keeper Air boost turn when turning_180 degrees -- c6000 首飾りの番人　空中ブースト旋回時_180度ターン
+60000070 c6000 Necklace Keeper - When moving Breho -- c6000 首飾りの番人　ブレホ移動時
+60000075 c6000 Keeper of the Necklace When moving in mid-air Breho -- c6000 首飾りの番人　空中ブレホ移動時
+60000080 c6000 Necklace Keeper Cover Reversed -- c6000 首飾りの番人　カバー反転時
+60000090 c6000 Necklace Keeper Large Quick Boost -- c6000 首飾りの番人　大クイックブースト時
+60100000 c6010 barrier unit normal time -- c6010 バリアユニット　通常時
+60100010 c6010 barrier unit when dashing -- c6010 バリアユニット　ダッシュ時
+60100015 c6010 barrier unit during high speed dash -- c6010 バリアユニット　高速ダッシュ時
+60100020 c6010 barrier unit boost -- c6010 バリアユニット　ブースト時
+60100030 c6010 Barrier unit during braking -- c6010 バリアユニット　ブレーキ時
+60100040 c6010 Barrier unit when moving in the air -- c6010 バリアユニット　空中移動時
+60100050 c6010 barrier unit during boost turning -- c6010 バリアユニット　ブースト旋回時
+60100055 c6010 barrier unit during aerial boost turning -- c6010 バリアユニット　空中ブースト旋回時
+60100060 c6010 Barrier unit Boost turning_180 degree turn -- c6010 バリアユニット　ブースト旋回時_180度ターン
+60100065 c6010 Barrier unit Aerial boost turning_180 degree turn -- c6010 バリアユニット　空中ブースト旋回時_180度ターン
+60100070 c6010 Barrier unit when moving Breho -- c6010 バリアユニット　ブレホ移動時
+60100075 c6010 Barrier unit during aerial Breho movement -- c6010 バリアユニット　空中ブレホ移動時
+60100080 c6010 Barrier unit when cover is reversed -- c6010 バリアユニット　カバー反転時
+60100090 c6010 barrier unit large quick boost -- c6010 バリアユニット　大クイックブースト時
+60500000 c6050 Pharaon Normal time -- c6050 ファラオン　通常時
+60500010 c6050 Pharaon when dashing -- c6050 ファラオン　ダッシュ時
+60500015 c6050 Pharaon high speed dash -- c6050 ファラオン　高速ダッシュ時
+60500020 c6050 Pharaon when boosted -- c6050 ファラオン　ブースト時
+60500030 c6050 Pharaon when braking -- c6050 ファラオン　ブレーキ時
+60500040 c6050 Pharaon when moving in the air -- c6050 ファラオン　空中移動時
+60500050 c6050 Pharaon boost turning -- c6050 ファラオン　ブースト旋回時
+60500055 c6050 Pharaon during air boost turning -- c6050 ファラオン　空中ブースト旋回時
+60500060 c6050 Pharaon Boost turning_180 degree turn -- c6050 ファラオン　ブースト旋回時_180度ターン
+60500065 c6050 Pharaon Aerial boost turning_180 degree turn -- c6050 ファラオン　空中ブースト旋回時_180度ターン
+60500070 c6050 Pharaon Breho when moving -- c6050 ファラオン　ブレホ移動時
+60500075 c6050 Pharaon when moving in mid-air Breho -- c6050 ファラオン　空中ブレホ移動時
+60500080 c6050 Pharaon when cover is reversed -- c6050 ファラオン　カバー反転時
+60500090 c6050 Pharaon large quick boost -- c6050 ファラオン　大クイックブースト時
+60501000 c6050 Pharaon For use in cities on the ocean -- c6050 ファラオン　洋上の都市対応用
+61000000 c6100 sea spider normal time -- c6100 ウミグモ　通常時
+61000010 c6100 sea spider when dashing -- c6100 ウミグモ　ダッシュ時
+61000015 c6100 sea spider high speed dash -- c6100 ウミグモ　高速ダッシュ時
+61000020 c6100 sea spider boost -- c6100 ウミグモ　ブースト時
+61000030 c6100 sea spider when braking -- c6100 ウミグモ　ブレーキ時
+61000040 c6100 sea spider when moving in the air -- c6100 ウミグモ　空中移動時
+61000050 c6100 sea spider boost turning -- c6100 ウミグモ　ブースト旋回時
+61000055 c6100 sea spider during aerial boost turning -- c6100 ウミグモ　空中ブースト旋回時
+61000060 c6100 Sea spider Boost turning_180 degree turn -- c6100 ウミグモ　ブースト旋回時_180度ターン
+61000065 c6100 Sea spider Aerial boost turning_180 degree turn -- c6100 ウミグモ　空中ブースト旋回時_180度ターン
+61000070 c6100 sea spider brejo when moving -- c6100 ウミグモ　ブレホ移動時
+61000075 c6100 Sea spider when moving in the air -- c6100 ウミグモ　空中ブレホ移動時
+61000080 c6100 sea spider when cover is reversed -- c6100 ウミグモ　カバー反転時
+61000090 c6100 sea spider large quick boost -- c6100 ウミグモ　大クイックブースト時
+61010000 c6101 Sea spider secondary gun normal time -- c6101 ウミグモ副砲　通常時
+61010010 c6101 Sea spider secondary gun when dashing -- c6101 ウミグモ副砲　ダッシュ時
+61010015 c6101 Sea spider secondary gun during high speed dash -- c6101 ウミグモ副砲　高速ダッシュ時
+61010020 c6101 Sea spider secondary gun boost -- c6101 ウミグモ副砲　ブースト時
+61010030 c6101 Sea spider secondary gun during braking -- c6101 ウミグモ副砲　ブレーキ時
+61010040 c6101 Sea spider secondary gun when moving in the air -- c6101 ウミグモ副砲　空中移動時
+61010050 c6101 Sea spider secondary gun during boost rotation -- c6101 ウミグモ副砲　ブースト旋回時
+61010055 c6101 Sea spider secondary gun during aerial boost turning -- c6101 ウミグモ副砲　空中ブースト旋回時
+61010060 c6101 Sea spider secondary gun Boost turning_180 degree turn -- c6101 ウミグモ副砲　ブースト旋回時_180度ターン
+61010065 c6101 Sea spider secondary gun Air boost turning when turning_180 degrees -- c6101 ウミグモ副砲　空中ブースト旋回時_180度ターン
+61010070 c6101 Sea spider secondary gun when moving Brejo -- c6101 ウミグモ副砲　ブレホ移動時
+61010075 c6101 Sea spider secondary gun when moving in mid-air Brejo -- c6101 ウミグモ副砲　空中ブレホ移動時
+61010080 c6101 Sea spider secondary gun when cover is reversed -- c6101 ウミグモ副砲　カバー反転時
+61010090 c6101 Sea spider secondary gun large quick boost -- c6101 ウミグモ副砲　大クイックブースト時
+62500000 c6250 Sandworm Normal time -- c6250 サンドワーム　通常時
+62500010 c6250 Sandworm when dashing -- c6250 サンドワーム　ダッシュ時
+62500015 c6250 Sandworm high speed dash -- c6250 サンドワーム　高速ダッシュ時
+62500020 c6250 sandworm boost -- c6250 サンドワーム　ブースト時
+62500030 c6250 sandworm when braking -- c6250 サンドワーム　ブレーキ時
+62500040 c6250 Sandworm when moving in the air -- c6250 サンドワーム　空中移動時
+62500050 c6250 Sandworm Boost turning -- c6250 サンドワーム　ブースト旋回時
+62500055 c6250 Sandworm during aerial boost turning -- c6250 サンドワーム　空中ブースト旋回時
+62500060 c6250 Sandworm Boost turning_180 degree turn -- c6250 サンドワーム　ブースト旋回時_180度ターン
+62500065 c6250 Sandworm Aerial boost turning when turning_180 degrees -- c6250 サンドワーム　空中ブースト旋回時_180度ターン
+62500070 c6250 Sandworm when moving Breho -- c6250 サンドワーム　ブレホ移動時
+62500075 c6250 Sandworm when moving in mid-air Breho -- c6250 サンドワーム　空中ブレホ移動時
+62500080 c6250 Sandworm when cover is reversed -- c6250 サンドワーム　カバー反転時
+62500090 c6250 Sandworm large quick boost -- c6250 サンドワーム　大クイックブースト時
+62600000 c6260 Sandworm small normal time -- c6260 サンドワーム小　通常時
+62600010 c6260 Sandworm small when dashing -- c6260 サンドワーム小　ダッシュ時
+62600015 c6260 Sandworm small high speed dash -- c6260 サンドワーム小　高速ダッシュ時
+62600020 c6260 Sandworm small when boosted -- c6260 サンドワーム小　ブースト時
+62600030 c6260 Sandworm small when braking -- c6260 サンドワーム小　ブレーキ時
+62600040 c6260 Sandworm small when moving in the air -- c6260 サンドワーム小　空中移動時
+62600050 c6260 Sandworm small when turning boost -- c6260 サンドワーム小　ブースト旋回時
+62600055 c6260 Sandworm small during aerial boost turning -- c6260 サンドワーム小　空中ブースト旋回時
+62600060 c6260 Sandworm small Boost turning_180 degree turn -- c6260 サンドワーム小　ブースト旋回時_180度ターン
+62600065 c6260 Sandworm small Aerial boost turning_180 degree turn -- c6260 サンドワーム小　空中ブースト旋回時_180度ターン
+62600070 c6260 Sandworm small when moving Brejo -- c6260 サンドワーム小　ブレホ移動時
+62600075 c6260 Sandworm small when moving in mid-air Breho -- c6260 サンドワーム小　空中ブレホ移動時
+62600080 c6260 Sandworm small when cover is reversed -- c6260 サンドワーム小　カバー反転時
+62600090 c6260 Sandworm small large quick boost -- c6260 サンドワーム小　大クイックブースト時
+63500000 c6350 Dora normal time -- c6350 ドーラ　通常時
+63500010 c6350 Dora dash time -- c6350 ドーラ　ダッシュ時
+63500015 c6350 Dora high speed dash -- c6350 ドーラ　高速ダッシュ時
+63500020 c6350 Dora boosted -- c6350 ドーラ　ブースト時
+63500030 c6350 Dora when braking -- c6350 ドーラ　ブレーキ時
+63500040 c6350 Dora when moving in the air -- c6350 ドーラ　空中移動時
+63500050 c6350 Dora boost turning -- c6350 ドーラ　ブースト旋回時
+63500055 c6350 Dora during aerial boost turning -- c6350 ドーラ　空中ブースト旋回時
+63500060 c6350 Dora boost turning_180 degree turn -- c6350 ドーラ　ブースト旋回時_180度ターン
+63500065 c6350 Dora Aerial boost turning_180 degree turn -- c6350 ドーラ　空中ブースト旋回時_180度ターン
+63500070 c6350 Dora Breho when moving -- c6350 ドーラ　ブレホ移動時
+63500075 c6350 Dora during aerial brejo movement -- c6350 ドーラ　空中ブレホ移動時
+63500080 c6350 Dora when cover is reversed -- c6350 ドーラ　カバー反転時
+63500090 c6350 Dora large quick boost -- c6350 ドーラ　大クイックブースト時
+63510000 c6351 Dora secondary gun normal time -- c6351 ドーラ副砲　通常時
+63510010 c6351 Dora secondary gun when dashing -- c6351 ドーラ副砲　ダッシュ時
+63510015 c6351 Dora secondary gun during high speed dash -- c6351 ドーラ副砲　高速ダッシュ時
+63510020 c6351 Dora secondary gun boost -- c6351 ドーラ副砲　ブースト時
+63510030 c6351 Dora secondary gun during braking -- c6351 ドーラ副砲　ブレーキ時
+63510040 c6351 Dora secondary gun when moving in the air -- c6351 ドーラ副砲　空中移動時
+63510050 c6351 Dora secondary gun during boost rotation -- c6351 ドーラ副砲　ブースト旋回時
+63510055 c6351 Dora secondary gun during aerial boost turning -- c6351 ドーラ副砲　空中ブースト旋回時
+63510060 c6351 Dora secondary gun Boost turning_180 degree turn -- c6351 ドーラ副砲　ブースト旋回時_180度ターン
+63510065 c6351 Dora secondary gun Air boost turning when turning_180 degrees -- c6351 ドーラ副砲　空中ブースト旋回時_180度ターン
+63510070 c6351 Dora secondary gun Breho when moving -- c6351 ドーラ副砲　ブレホ移動時
+63510075 c6351 Dora secondary gun during aerial Breho movement -- c6351 ドーラ副砲　空中ブレホ移動時
+63510080 c6351 Dora secondary gun when cover is reversed -- c6351 ドーラ副砲　カバー反転時
+63510090 c6351 Dora secondary gun large quick boost -- c6351 ドーラ副砲　大クイックブースト時
+63520000 c6352 Dora missile normal time -- c6352 ドーラミサイル　通常時
+63520010 c6352 Dora missile when dashing -- c6352 ドーラミサイル　ダッシュ時
+63520015 c6352 Dora missile high speed dash -- c6352 ドーラミサイル　高速ダッシュ時
+63520020 c6352 Dora missile boost -- c6352 ドーラミサイル　ブースト時
+63520030 c6352 Dora missile during braking -- c6352 ドーラミサイル　ブレーキ時
+63520040 c6352 Dora missile when moving in the air -- c6352 ドーラミサイル　空中移動時
+63520050 c6352 Dora missile boost turning -- c6352 ドーラミサイル　ブースト旋回時
+63520055 c6352 Dora missile during air boost turning -- c6352 ドーラミサイル　空中ブースト旋回時
+63520060 c6352 Dora missile boost turning_180 degree turn -- c6352 ドーラミサイル　ブースト旋回時_180度ターン
+63520065 c6352 Dora missile air boost turning_180 degree turn -- c6352 ドーラミサイル　空中ブースト旋回時_180度ターン
+63520070 c6352 Dora missile when moving Brejo -- c6352 ドーラミサイル　ブレホ移動時
+63520075 c6352 Dora missile during aerial Brejo movement -- c6352 ドーラミサイル　空中ブレホ移動時
+63520080 c6352 Dora missile when cover is reversed -- c6352 ドーラミサイル　カバー反転時
+63520090 c6352 Dora missile large quick boost -- c6352 ドーラミサイル　大クイックブースト時
+64000000 c6400 mining ship normal time -- c6400 採掘艦　通常時
+64000010 c6400 mining ship dash -- c6400 採掘艦　ダッシュ時
+64000015 c6400 mining ship high speed dash -- c6400 採掘艦　高速ダッシュ時
+64000020 c6400 mining ship boost -- c6400 採掘艦　ブースト時
+64000030 c6400 mining ship during braking -- c6400 採掘艦　ブレーキ時
+64000040 c6400 mining ship when moving in the air -- c6400 採掘艦　空中移動時
+64000050 c6400 mining ship boost turning -- c6400 採掘艦　ブースト旋回時
+64000055 c6400 mining ship during aerial boost turn -- c6400 採掘艦　空中ブースト旋回時
+64000060 c6400 mining ship boost turning_180 degree turn -- c6400 採掘艦　ブースト旋回時_180度ターン
+64000065 c6400 Mining ship Aerial boost turn when turning_180 degrees -- c6400 採掘艦　空中ブースト旋回時_180度ターン
+64000070 c6400 Mining Ship Breho when moving -- c6400 採掘艦　ブレホ移動時
+64000075 c6400 Mining ship during aerial Breho movement -- c6400 採掘艦　空中ブレホ移動時
+64000080 c6400 mining ship when cover is reversed -- c6400 採掘艦　カバー反転時
+64000090 c6400 mining ship large quick boost -- c6400 採掘艦　大クイックブースト時
+64010000 c6401 Mining ship Connecting part Weak point Normal time -- c6401 採掘艦 連結部 弱点　通常時
+64010010 c6401 Mining ship connection part weak point when dashing -- c6401 採掘艦 連結部 弱点　ダッシュ時
+64010015 c6401 Mining ship connection part Weak point during high speed dash -- c6401 採掘艦 連結部 弱点　高速ダッシュ時
+64010020 c6401 mining ship connection part weak point during boost -- c6401 採掘艦 連結部 弱点　ブースト時
+64010030 c6401 mining ship connection part weak point during braking -- c6401 採掘艦 連結部 弱点　ブレーキ時
+64010040 c6401 Mining ship Connecting part Weak point When moving in the air -- c6401 採掘艦 連結部 弱点　空中移動時
+64010050 c6401 mining ship connection part weak point during boost turning -- c6401 採掘艦 連結部 弱点　ブースト旋回時
+64010055 c6401 Mining ship connection part Weak point: Air boost turning -- c6401 採掘艦 連結部 弱点　空中ブースト旋回時
+64010060 c6401 Mining ship connection part weak point Boost turning_180 degree turn -- c6401 採掘艦 連結部 弱点　ブースト旋回時_180度ターン
+64010065 c6401 Mining ship connection part Weak point: Aerial boost turning_180 degree turn -- c6401 採掘艦 連結部 弱点　空中ブースト旋回時_180度ターン
+64010070 c6401 Mining ship connection part Weak point: When moving Breho -- c6401 採掘艦 連結部 弱点　ブレホ移動時
+64010075 c6401 Mining ship connection part Weak point: When moving in mid-air Breho -- c6401 採掘艦 連結部 弱点　空中ブレホ移動時
+64010080 c6401 Mining ship connection part weak point when cover is reversed -- c6401 採掘艦 連結部 弱点　カバー反転時
+64010090 c6401 Mining ship connection part Weak point: large quick boost -- c6401 採掘艦 連結部 弱点　大クイックブースト時
+64020000 c6402 mining ship wheel weakness normal time -- c6402 採掘艦 ホイール 弱点　通常時
+64020010 c6402 mining ship wheel weakness when dashing -- c6402 採掘艦 ホイール 弱点　ダッシュ時
+64020015 c6402 Mining ship Wheel Weak point: High speed dash -- c6402 採掘艦 ホイール 弱点　高速ダッシュ時
+64020020 c6402 mining ship wheel weakness when boosted -- c6402 採掘艦 ホイール 弱点　ブースト時
+64020030 c6402 Mining ship wheel Weak point: Braking -- c6402 採掘艦 ホイール 弱点　ブレーキ時
+64020040 c6402 Mining ship Wheel Weak point: When moving in the air -- c6402 採掘艦 ホイール 弱点　空中移動時
+64020050 c6402 Mining ship wheel Weak point: Boost turning -- c6402 採掘艦 ホイール 弱点　ブースト旋回時
+64020055 c6402 Mining ship wheel Weak point: Air boost turning -- c6402 採掘艦 ホイール 弱点　空中ブースト旋回時
+64020060 c6402 Mining ship wheel Weak point Boost turning_180 degree turn -- c6402 採掘艦 ホイール 弱点　ブースト旋回時_180度ターン
+64020065 c6402 Mining ship wheel Weak point: Air boost turning when turning_180 degrees -- c6402 採掘艦 ホイール 弱点　空中ブースト旋回時_180度ターン
+64020070 c6402 Mining ship wheel Weak point: Breho when moving -- c6402 採掘艦 ホイール 弱点　ブレホ移動時
+64020075 c6402 Mining ship wheel Weak point: When moving in mid-air Breho -- c6402 採掘艦 ホイール 弱点　空中ブレホ移動時
+64020080 c6402 Mining ship wheel weak point when cover is reversed -- c6402 採掘艦 ホイール 弱点　カバー反転時
+64020090 c6402 Mining ship wheel Weak point: large quick boost -- c6402 採掘艦 ホイール 弱点　大クイックブースト時
+64100000 c6410 mining drill normal time -- c6410 採掘ドリル　通常時
+64100010 c6410 mining drill dash -- c6410 採掘ドリル　ダッシュ時
+64100015 c6410 mining drill high speed dash -- c6410 採掘ドリル　高速ダッシュ時
+64100020 c6410 mining drill boost -- c6410 採掘ドリル　ブースト時
+64100030 c6410 Mining drill when braking -- c6410 採掘ドリル　ブレーキ時
+64100040 c6410 Mining drill when moving in the air -- c6410 採掘ドリル　空中移動時
+64100050 c6410 mining drill boost turning -- c6410 採掘ドリル　ブースト旋回時
+64100055 c6410 mining drill aerial boost turning -- c6410 採掘ドリル　空中ブースト旋回時
+64100060 c6410 Mining drill Boost turning_180 degree turn -- c6410 採掘ドリル　ブースト旋回時_180度ターン
+64100065 c6410 Mining drill Aerial boost turning when turning_180 degrees -- c6410 採掘ドリル　空中ブースト旋回時_180度ターン
+64100070 c6410 Mining drill when moving Brejo -- c6410 採掘ドリル　ブレホ移動時
+64100075 c6410 Mining drill when moving in mid-air Breho -- c6410 採掘ドリル　空中ブレホ移動時
+64100080 c6410 Mining drill when cover is reversed -- c6410 採掘ドリル　カバー反転時
+64100090 c6410 Mining drill large quick boost -- c6410 採掘ドリル　大クイックブースト時
+64200000 c6420 Mining ship Main feature Normal time -- c6420 採掘艦 目玉　通常時
+64200010 c6420 mining ship eyeball when dashing -- c6420 採掘艦 目玉　ダッシュ時
+64200015 c6420 mining ship highlight: high speed dash -- c6420 採掘艦 目玉　高速ダッシュ時
+64200020 c6420 mining ship highlight boost time -- c6420 採掘艦 目玉　ブースト時
+64200030 c6420 Mining ship Highlight Braking -- c6420 採掘艦 目玉　ブレーキ時
+64200040 c6420 Mining ship Main feature: When moving in the air -- c6420 採掘艦 目玉　空中移動時
+64200050 c6420 mining ship highlight boost turning -- c6420 採掘艦 目玉　ブースト旋回時
+64200055 c6420 Mining ship Highlight: Air boost turning -- c6420 採掘艦 目玉　空中ブースト旋回時
+64200060 c6420 mining ship highlight: 180 degree turn when turning boost -- c6420 採掘艦 目玉　ブースト旋回時_180度ターン
+64200065 c6420 Mining ship Highlight: Air boost turning when turning_180 degrees -- c6420 採掘艦 目玉　空中ブースト旋回時_180度ターン
+64200070 c6420 Mining ship Main feature: When moving Brejo -- c6420 採掘艦 目玉　ブレホ移動時
+64200075 c6420 Mining ship Main feature: When moving in mid-air Breho -- c6420 採掘艦 目玉　空中ブレホ移動時
+64200080 c6420 mining ship eyeball when cover is reversed -- c6420 採掘艦 目玉　カバー反転時
+64200090 c6420 mining ship highlight large quick boost -- c6420 採掘艦 目玉　大クイックブースト時
+72200000 c7220 field missile (repeat type) normal time -- c7220 野戦ミサイル（連射型）　通常時
+72200010 c7220 field missile (repeat type) when dashing -- c7220 野戦ミサイル（連射型）　ダッシュ時
+72200015 c7220 field missile (repeat type) during high-speed dash -- c7220 野戦ミサイル（連射型）　高速ダッシュ時
+72200020 c7220 field missile (repeat type) when boosted -- c7220 野戦ミサイル（連射型）　ブースト時
+72200030 c7220 field missile (repeat type) when braking -- c7220 野戦ミサイル（連射型）　ブレーキ時
+72200040 c7220 field missile (repeat type) when moving in the air -- c7220 野戦ミサイル（連射型）　空中移動時
+72200050 c7220 field missile (repeat type) during boost turning -- c7220 野戦ミサイル（連射型）　ブースト旋回時
+72200055 c7220 field missile (repeat type) during air boost turning -- c7220 野戦ミサイル（連射型）　空中ブースト旋回時
+72200060 c7220 Field missile (repeat type) Boost turning_180 degree turn -- c7220 野戦ミサイル（連射型）　ブースト旋回時_180度ターン
+72200065 c7220 Field Missile (Rapid Fire Type) Air Boost Turning_180 degree turn -- c7220 野戦ミサイル（連射型）　空中ブースト旋回時_180度ターン
+72200070 c7220 Field Missile (Rapid Fire Type) Brejo when moving -- c7220 野戦ミサイル（連射型）　ブレホ移動時
+72200075 c7220 Field Missile (Rapid Fire Type) During Air Brejo Movement -- c7220 野戦ミサイル（連射型）　空中ブレホ移動時
+72200080 c7220 field missile (repeat type) when cover is reversed -- c7220 野戦ミサイル（連射型）　カバー反転時
+72200090 c7220 field missile (repeat type) large quick boost -- c7220 野戦ミサイル（連射型）　大クイックブースト時
+72210000 c7221 field missile (vertical type) normal time -- c7221 野戦ミサイル（垂直型）　通常時
+72210010 c7221 field missile (vertical type) when dashing -- c7221 野戦ミサイル（垂直型）　ダッシュ時
+72210015 c7221 Field missile (vertical type) during high-speed dash -- c7221 野戦ミサイル（垂直型）　高速ダッシュ時
+72210020 c7221 field missile (vertical type) when boosted -- c7221 野戦ミサイル（垂直型）　ブースト時
+72210030 c7221 field missile (vertical type) when braking -- c7221 野戦ミサイル（垂直型）　ブレーキ時
+72210040 c7221 field missile (vertical type) when moving in the air -- c7221 野戦ミサイル（垂直型）　空中移動時
+72210050 c7221 field missile (vertical type) during boost turning -- c7221 野戦ミサイル（垂直型）　ブースト旋回時
+72210055 c7221 field missile (vertical type) during air boost turning -- c7221 野戦ミサイル（垂直型）　空中ブースト旋回時
+72210060 c7221 Field missile (vertical type) Boost turning_180 degree turn -- c7221 野戦ミサイル（垂直型）　ブースト旋回時_180度ターン
+72210065 c7221 Field missile (vertical type) Air boost turning when turning_180 degrees -- c7221 野戦ミサイル（垂直型）　空中ブースト旋回時_180度ターン
+72210070 c7221 Field missile (vertical type) when moving Brejo -- c7221 野戦ミサイル（垂直型）　ブレホ移動時
+72210075 c7221 Field missile (vertical type) during aerial Brejo movement -- c7221 野戦ミサイル（垂直型）　空中ブレホ移動時
+72210080 c7221 Field missile (vertical type) when cover is reversed -- c7221 野戦ミサイル（垂直型）　カバー反転時
+72210090 c7221 Field missile (vertical type) large quick boost -- c7221 野戦ミサイル（垂直型）　大クイックブースト時
+72230000 c7223 field missile (simultaneous launch type) normal time -- c7223 野戦ミサイル（同時発射型）　通常時
+72230010 c7223 field missile (simultaneous launch type) when dashing -- c7223 野戦ミサイル（同時発射型）　ダッシュ時
+72230015 c7223 Field missile (simultaneous launch type) during high-speed dash -- c7223 野戦ミサイル（同時発射型）　高速ダッシュ時
+72230020 c7223 field missile (simultaneous launch type) when boosted -- c7223 野戦ミサイル（同時発射型）　ブースト時
+72230030 c7223 field missile (simultaneous launch type) during braking -- c7223 野戦ミサイル（同時発射型）　ブレーキ時
+72230040 c7223 Field missile (simultaneous launch type) when moving in the air -- c7223 野戦ミサイル（同時発射型）　空中移動時
+72230050 c7223 field missile (simultaneous launch type) during boost turning -- c7223 野戦ミサイル（同時発射型）　ブースト旋回時
+72230055 c7223 Field missile (simultaneous launch type) during air boost turning -- c7223 野戦ミサイル（同時発射型）　空中ブースト旋回時
+72230060 c7223 Field missile (simultaneous launch type) Boost turning_180 degree turn -- c7223 野戦ミサイル（同時発射型）　ブースト旋回時_180度ターン
+72230065 c7223 Field missile (simultaneous launch type) Air boost turning when turning_180 degrees -- c7223 野戦ミサイル（同時発射型）　空中ブースト旋回時_180度ターン
+72230070 c7223 Field missile (simultaneous launch type) when moving Brejo -- c7223 野戦ミサイル（同時発射型）　ブレホ移動時
+72230075 c7223 Field missile (simultaneous launch type) during aerial Brejo movement -- c7223 野戦ミサイル（同時発射型）　空中ブレホ移動時
+72230080 c7223 Field missile (simultaneous launch type) when cover is reversed -- c7223 野戦ミサイル（同時発射型）　カバー反転時
+72230090 c7223 Field missile (simultaneous launch type) large quick boost -- c7223 野戦ミサイル（同時発射型）　大クイックブースト時
+72300000 c7230 Ground Force Battery Grenade (Large) Normal Time -- c7230 地上勢力砲台 グレネード(大)　通常時
+72300010 c7230 Ground force battery grenade (large) when dashing -- c7230 地上勢力砲台 グレネード(大)　ダッシュ時
+72300015 c7230 Ground force battery grenade (large) during high speed dash -- c7230 地上勢力砲台 グレネード(大)　高速ダッシュ時
+72300020 c7230 Ground force battery grenade (large) when boosted -- c7230 地上勢力砲台 グレネード(大)　ブースト時
+72300030 c7230 Ground force battery grenade (large) when braking -- c7230 地上勢力砲台 グレネード(大)　ブレーキ時
+72300040 c7230 Ground force battery grenade (large) when moving in the air -- c7230 地上勢力砲台 グレネード(大)　空中移動時
+72300050 c7230 Ground force battery grenade (large) when turning boost -- c7230 地上勢力砲台 グレネード(大)　ブースト旋回時
+72300055 c7230 Ground Force Artillery Grenade (Large) During Air Boost Turn -- c7230 地上勢力砲台 グレネード(大)　空中ブースト旋回時
+72300060 c7230 Ground force artillery grenade (large) Boost turning_180 degree turn -- c7230 地上勢力砲台 グレネード(大)　ブースト旋回時_180度ターン
+72300065 c7230 Ground Force Artillery Grenade (Large) Air boost turning when turning_180 degrees -- c7230 地上勢力砲台 グレネード(大)　空中ブースト旋回時_180度ターン
+72300070 c7230 Ground force battery grenade (large) when moving Brejo -- c7230 地上勢力砲台 グレネード(大)　ブレホ移動時
+72300075 c7230 Ground force artillery grenade (large) when moving in the air Brejo -- c7230 地上勢力砲台 グレネード(大)　空中ブレホ移動時
+72300080 c7230 Ground force battery grenade (large) when cover is reversed -- c7230 地上勢力砲台 グレネード(大)　カバー反転時
+72300090 c7230 Ground force battery grenade (large) large quick boost -- c7230 地上勢力砲台 グレネード(大)　大クイックブースト時
+72400000 c7240 Ground Force Artillery Bazooka (Large) Normal Time -- c7240 地上勢力砲台 バズーカ(大)　通常時
+72400010 c7240 Ground force artillery bazooka (large) when dashing -- c7240 地上勢力砲台 バズーカ(大)　ダッシュ時
+72400015 c7240 Ground Force Artillery Bazooka (Large) During High Speed ​​Dash -- c7240 地上勢力砲台 バズーカ(大)　高速ダッシュ時
+72400020 c7240 Ground force artillery bazooka (large) when boosted -- c7240 地上勢力砲台 バズーカ(大)　ブースト時
+72400030 c7240 Ground force artillery bazooka (large) when braking -- c7240 地上勢力砲台 バズーカ(大)　ブレーキ時
+72400040 c7240 Ground force artillery bazooka (large) when moving in the air -- c7240 地上勢力砲台 バズーカ(大)　空中移動時
+72400050 c7240 Ground force artillery bazooka (large) when turning boost -- c7240 地上勢力砲台 バズーカ(大)　ブースト旋回時
+72400055 c7240 Ground force artillery bazooka (large) during aerial boost turning -- c7240 地上勢力砲台 バズーカ(大)　空中ブースト旋回時
+72400060 c7240 Ground force artillery bazooka (large) Boost turning_180 degree turn -- c7240 地上勢力砲台 バズーカ(大)　ブースト旋回時_180度ターン
+72400065 c7240 Ground Force Artillery Bazooka (Large) Aerial boost turning_180 degree turn -- c7240 地上勢力砲台 バズーカ(大)　空中ブースト旋回時_180度ターン
+72400070 c7240 Ground force artillery bazooka (large) when moving Brejo -- c7240 地上勢力砲台 バズーカ(大)　ブレホ移動時
+72400075 c7240 Ground Force Artillery Bazooka (Large) When moving in the air Brejo -- c7240 地上勢力砲台 バズーカ(大)　空中ブレホ移動時
+72400080 c7240 Ground force artillery bazooka (large) when cover is reversed -- c7240 地上勢力砲台 バズーカ(大)　カバー反転時
+72400090 c7240 Ground force artillery bazooka (large) large quick boost -- c7240 地上勢力砲台 バズーカ(大)　大クイックブースト時
+72500000 c7250 Ground force battery Gatling (large) Normal time -- c7250 地上勢力砲台 ガトリング(大)　通常時
+72500010 c7250 Ground force battery Gatling (large) when dashing -- c7250 地上勢力砲台 ガトリング(大)　ダッシュ時
+72500015 c7250 Ground force artillery gatling (large) during high speed dash -- c7250 地上勢力砲台 ガトリング(大)　高速ダッシュ時
+72500020 c7250 Ground force artillery gatling (large) when boosted -- c7250 地上勢力砲台 ガトリング(大)　ブースト時
+72500030 c7250 Ground force battery Gatling (large) when braking -- c7250 地上勢力砲台 ガトリング(大)　ブレーキ時
+72500040 c7250 Ground force artillery gatling (large) when moving in the air -- c7250 地上勢力砲台 ガトリング(大)　空中移動時
+72500050 c7250 Ground force artillery gatling (large) when turning boost -- c7250 地上勢力砲台 ガトリング(大)　ブースト旋回時
+72500055 c7250 Ground force artillery gatling (large) during aerial boost turning -- c7250 地上勢力砲台 ガトリング(大)　空中ブースト旋回時
+72500060 c7250 Ground force artillery gatling (large) Boost turning_180 degree turn -- c7250 地上勢力砲台 ガトリング(大)　ブースト旋回時_180度ターン
+72500065 c7250 Ground Force Artillery Gatling (Large) Air boost turning when turning_180 degrees -- c7250 地上勢力砲台 ガトリング(大)　空中ブースト旋回時_180度ターン
+72500070 c7250 Ground force artillery gatling (large) when moving Brejo -- c7250 地上勢力砲台 ガトリング(大)　ブレホ移動時
+72500075 c7250 Ground force artillery gatling (large) when moving in the air Brejo -- c7250 地上勢力砲台 ガトリング(大)　空中ブレホ移動時
+72500080 c7250 Ground force battery Gatling (large) when cover is reversed -- c7250 地上勢力砲台 ガトリング(大)　カバー反転時
+72500090 c7250 Ground force artillery gatling (large) large quick boost -- c7250 地上勢力砲台 ガトリング(大)　大クイックブースト時
+72600000 c7260 Ground Force Artillery Missile (Large) Twin Load Normal Time -- c7260 地上勢力砲台 ミサイル(大) 連装　通常時
+72600010 c7260 Ground Force Artillery Missile (Large) Twin Dash -- c7260 地上勢力砲台 ミサイル(大) 連装　ダッシュ時
+72600015 c7260 Ground force artillery missile (large) twin high-speed dash -- c7260 地上勢力砲台 ミサイル(大) 連装　高速ダッシュ時
+72600020 c7260 Ground Force Artillery Missile (Large) Twin Boost -- c7260 地上勢力砲台 ミサイル(大) 連装　ブースト時
+72600030 c7260 Ground Force Artillery Missile (Large) Twin Brake -- c7260 地上勢力砲台 ミサイル(大) 連装　ブレーキ時
+72600040 c7260 Ground force artillery missile (large) twin when moving in the air -- c7260 地上勢力砲台 ミサイル(大) 連装　空中移動時
+72600050 c7260 Ground Force Artillery Missile (Large) Twin Boost Turning -- c7260 地上勢力砲台 ミサイル(大) 連装　ブースト旋回時
+72600055 c7260 Ground Force Artillery Missile (Large) Twin Air Boost Turning -- c7260 地上勢力砲台 ミサイル(大) 連装　空中ブースト旋回時
+72600060 c7260 Ground Force Artillery Missile (Large) Twin Boost Turning_180 degree turn -- c7260 地上勢力砲台 ミサイル(大) 連装　ブースト旋回時_180度ターン
+72600065 c7260 Ground Force Artillery Missile (Large) Twin Aerial Boost Turning_180 degree turn -- c7260 地上勢力砲台 ミサイル(大) 連装　空中ブースト旋回時_180度ターン
+72600070 c7260 Ground force artillery missile (large) twin when moving Brejo -- c7260 地上勢力砲台 ミサイル(大) 連装　ブレホ移動時
+72600075 c7260 Ground Force Artillery Missile (Large) Twin Mount Air Breho when moving -- c7260 地上勢力砲台 ミサイル(大) 連装　空中ブレホ移動時
+72600080 c7260 Ground force artillery missile (large) twin when cover is reversed -- c7260 地上勢力砲台 ミサイル(大) 連装　カバー反転時
+72600090 c7260 Ground force artillery missile (large) twin large quick boost -- c7260 地上勢力砲台 ミサイル(大) 連装　大クイックブースト時
+72610000 c7261 Ground Force Artillery Missile (Large) Vertical Normal Time -- c7261 地上勢力砲台 ミサイル(大) 垂直　通常時
+72610010 c7261 Ground Force Artillery Missile (Large) Vertical Dash -- c7261 地上勢力砲台 ミサイル(大) 垂直　ダッシュ時
+72610015 c7261 Ground Force Artillery Missile (Large) Vertical High Speed ​​Dash -- c7261 地上勢力砲台 ミサイル(大) 垂直　高速ダッシュ時
+72610020 c7261 Ground Force Artillery Missile (Large) Vertical Boost -- c7261 地上勢力砲台 ミサイル(大) 垂直　ブースト時
+72610030 c7261 Ground Force Artillery Missile (Large) Vertical Braking -- c7261 地上勢力砲台 ミサイル(大) 垂直　ブレーキ時
+72610040 c7261 Ground Force Artillery Missile (Large) Vertical when moving in the air -- c7261 地上勢力砲台 ミサイル(大) 垂直　空中移動時
+72610050 c7261 Ground Force Artillery Missile (Large) Vertical Boost Turning -- c7261 地上勢力砲台 ミサイル(大) 垂直　ブースト旋回時
+72610055 c7261 Ground Force Artillery Missile (Large) Vertical Air Boost Turning -- c7261 地上勢力砲台 ミサイル(大) 垂直　空中ブースト旋回時
+72610060 c7261 Ground force artillery missile (large) vertical boost turning_180 degree turn -- c7261 地上勢力砲台 ミサイル(大) 垂直　ブースト旋回時_180度ターン
+72610065 c7261 Ground Force Artillery Missile (Large) Vertical Air Boost Turning_180 degree turn -- c7261 地上勢力砲台 ミサイル(大) 垂直　空中ブースト旋回時_180度ターン
+72610070 c7261 Ground Force Artillery Missile (Large) Vertical Brejo movement -- c7261 地上勢力砲台 ミサイル(大) 垂直　ブレホ移動時
+72610075 c7261 Ground Force Artillery Missile (Large) Vertical when moving in the air Brejo -- c7261 地上勢力砲台 ミサイル(大) 垂直　空中ブレホ移動時
+72610080 c7261 Ground Force Artillery Missile (Large) Vertical when cover is reversed -- c7261 地上勢力砲台 ミサイル(大) 垂直　カバー反転時
+72610090 c7261 Ground force artillery missile (large) vertical large quick boost -- c7261 地上勢力砲台 ミサイル(大) 垂直　大クイックブースト時
+72620000 c7262 Ground Force Artillery Missile (Large) Horizontal Normal Time -- c7262 地上勢力砲台 ミサイル(大) 水平　通常時
+72620010 c7262 Ground force artillery missile (large) horizontal dash -- c7262 地上勢力砲台 ミサイル(大) 水平　ダッシュ時
+72620015 c7262 Ground Force Artillery Missile (Large) Horizontal High Speed ​​Dash -- c7262 地上勢力砲台 ミサイル(大) 水平　高速ダッシュ時
+72620020 c7262 Ground force artillery missile (large) horizontal boost -- c7262 地上勢力砲台 ミサイル(大) 水平　ブースト時
+72620030 c7262 Ground Force Artillery Missile (Large) Horizontal Brake -- c7262 地上勢力砲台 ミサイル(大) 水平　ブレーキ時
+72620040 c7262 Ground Force Artillery Missile (Large) Horizontal Air Movement -- c7262 地上勢力砲台 ミサイル(大) 水平　空中移動時
+72620050 c7262 Ground force artillery missile (large) horizontal boost turning -- c7262 地上勢力砲台 ミサイル(大) 水平　ブースト旋回時
+72620055 c7262 Ground Force Artillery Missile (Large) Horizontal Air Boost Turning -- c7262 地上勢力砲台 ミサイル(大) 水平　空中ブースト旋回時
+72620060 c7262 Ground force artillery missile (large) horizontal boost turning_180 degree turn -- c7262 地上勢力砲台 ミサイル(大) 水平　ブースト旋回時_180度ターン
+72620065 c7262 Ground force artillery missile (large) horizontal air boost turning_180 degree turn -- c7262 地上勢力砲台 ミサイル(大) 水平　空中ブースト旋回時_180度ターン
+72620070 c7262 Ground Force Artillery Missile (Large) Horizontally when moving Brejo -- c7262 地上勢力砲台 ミサイル(大) 水平　ブレホ移動時
+72620075 c7262 Ground Force Artillery Missile (Large) Horizontal when moving in the air Brejo -- c7262 地上勢力砲台 ミサイル(大) 水平　空中ブレホ移動時
+72620080 c7262 Ground Force Artillery Missile (Large) Horizontal when cover is reversed -- c7262 地上勢力砲台 ミサイル(大) 水平　カバー反転時
+72620090 c7262 Ground force artillery missile (large) horizontal large quick boost -- c7262 地上勢力砲台 ミサイル(大) 水平　大クイックブースト時
+72700000 c7270 Ground Force Battery Sniper (Large) Normal Time -- c7270 地上勢力砲台 スナイパー(大)　通常時
+72700010 c7270 Ground force artillery sniper (large) when dashing -- c7270 地上勢力砲台 スナイパー(大)　ダッシュ時
+72700015 c7270 Ground Force Battery Sniper (Large) During High Speed ​​Dash -- c7270 地上勢力砲台 スナイパー(大)　高速ダッシュ時
+72700020 c7270 Ground force battery Sniper (large) when boosted -- c7270 地上勢力砲台 スナイパー(大)　ブースト時
+72700030 c7270 Ground force artillery sniper (large) when braking -- c7270 地上勢力砲台 スナイパー(大)　ブレーキ時
+72700040 c7270 Ground Force Artillery Sniper (Large) When moving in the air -- c7270 地上勢力砲台 スナイパー(大)　空中移動時
+72700050 c7270 Ground force artillery sniper (large) when turning boost -- c7270 地上勢力砲台 スナイパー(大)　ブースト旋回時
+72700055 c7270 Ground Force Artillery Sniper (Large) During Air Boost Turn -- c7270 地上勢力砲台 スナイパー(大)　空中ブースト旋回時
+72700060 c7270 Ground force battery Sniper (large) Boost turning_180 degree turn -- c7270 地上勢力砲台 スナイパー(大)　ブースト旋回時_180度ターン
+72700065 c7270 Ground Force Artillery Sniper (Large) When turning in air boost_180 degree turn -- c7270 地上勢力砲台 スナイパー(大)　空中ブースト旋回時_180度ターン
+72700070 c7270 Ground Force Battery Sniper (Large) When moving Brejo -- c7270 地上勢力砲台 スナイパー(大)　ブレホ移動時
+72700075 c7270 Ground Force Artillery Sniper (Large) When moving in the air Brejo -- c7270 地上勢力砲台 スナイパー(大)　空中ブレホ移動時
+72700080 c7270 Ground force battery Sniper (large) when cover is reversed -- c7270 地上勢力砲台 スナイパー(大)　カバー反転時
+72700090 c7270 Ground force artillery sniper (large) large quick boost -- c7270 地上勢力砲台 スナイパー(大)　大クイックブースト時
+72800000 c7280 Ground Force Battery EN Rifle Normal Time -- c7280 地上勢力砲台 ENライフル　通常時
+72800010 c7280 Ground force battery EN rifle when dashing -- c7280 地上勢力砲台 ENライフル　ダッシュ時
+72800015 c7280 Ground force battery EN rifle during high speed dash -- c7280 地上勢力砲台 ENライフル　高速ダッシュ時
+72800020 c7280 Ground force battery EN rifle boosted -- c7280 地上勢力砲台 ENライフル　ブースト時
+72800030 c7280 Ground force battery EN rifle during braking -- c7280 地上勢力砲台 ENライフル　ブレーキ時
+72800040 c7280 Ground force battery EN rifle during air movement -- c7280 地上勢力砲台 ENライフル　空中移動時
+72800050 c7280 Ground Force Battery EN Rifle Boost Turning -- c7280 地上勢力砲台 ENライフル　ブースト旋回時
+72800055 c7280 Ground force battery EN rifle during air boost turning -- c7280 地上勢力砲台 ENライフル　空中ブースト旋回時
+72800060 c7280 Ground force battery EN rifle Boost turning_180 degree turn -- c7280 地上勢力砲台 ENライフル　ブースト旋回時_180度ターン
+72800065 c7280 Ground Force Artillery EN Rifle Air Boost Turn When Turning_180 degrees -- c7280 地上勢力砲台 ENライフル　空中ブースト旋回時_180度ターン
+72800070 c7280 Ground force battery EN rifle when moving Brejo -- c7280 地上勢力砲台 ENライフル　ブレホ移動時
+72800075 c7280 Ground force battery EN rifle when moving in the air Brejo -- c7280 地上勢力砲台 ENライフル　空中ブレホ移動時
+72800080 c7280 Ground force battery EN rifle when cover is reversed -- c7280 地上勢力砲台 ENライフル　カバー反転時
+72800090 c7280 Ground force battery EN rifle large quick boost -- c7280 地上勢力砲台 ENライフル　大クイックブースト時
+72900000 c7290 Old EN battery laser bazooka normal time -- c7290 旧式EN砲台 レーザーバズーカ　通常時
+72900010 c7290 Old EN turret laser bazooka when dashing -- c7290 旧式EN砲台 レーザーバズーカ　ダッシュ時
+72900015 c7290 Old EN turret laser bazooka at high speed dash -- c7290 旧式EN砲台 レーザーバズーカ　高速ダッシュ時
+72900020 c7290 old EN battery laser bazooka when boosted -- c7290 旧式EN砲台 レーザーバズーカ　ブースト時
+72900030 c7290 old EN battery laser bazooka when braking -- c7290 旧式EN砲台 レーザーバズーカ　ブレーキ時
+72900040 c7290 old EN battery laser bazooka when moving in the air -- c7290 旧式EN砲台 レーザーバズーカ　空中移動時
+72900050 c7290 old EN battery laser bazooka boost turning -- c7290 旧式EN砲台 レーザーバズーカ　ブースト旋回時
+72900055 c7290 Old EN turret laser bazooka aerial boost turning -- c7290 旧式EN砲台 レーザーバズーカ　空中ブースト旋回時
+72900060 c7290 Old EN turret laser bazooka Boost turning_180 degree turn -- c7290 旧式EN砲台 レーザーバズーカ　ブースト旋回時_180度ターン
+72900065 c7290 Old EN gun battery Laser bazooka Aerial boost turning when turning_180 degrees -- c7290 旧式EN砲台 レーザーバズーカ　空中ブースト旋回時_180度ターン
+72900070 c7290 Old EN turret laser bazooka when moving Brejo -- c7290 旧式EN砲台 レーザーバズーカ　ブレホ移動時
+72900075 c7290 Old EN turret laser bazooka when moving in mid-air Brejo -- c7290 旧式EN砲台 レーザーバズーカ　空中ブレホ移動時
+72900080 c7290 Old EN turret laser bazooka when cover is reversed -- c7290 旧式EN砲台 レーザーバズーカ　カバー反転時
+72900090 c7290 Old EN turret laser bazooka large quick boost -- c7290 旧式EN砲台 レーザーバズーカ　大クイックブースト時
+73000000 c7300 speaker antenna turret pulse normal time -- c7300 スピーカーアンテナ砲台 パルス　通常時
+73000010 c7300 speaker antenna turret pulse dash time -- c7300 スピーカーアンテナ砲台 パルス　ダッシュ時
+73000015 c7300 speaker antenna turret pulse high speed dash -- c7300 スピーカーアンテナ砲台 パルス　高速ダッシュ時
+73000020 c7300 speaker antenna turret pulse boost -- c7300 スピーカーアンテナ砲台 パルス　ブースト時
+73000030 c7300 speaker antenna turret pulse braking -- c7300 スピーカーアンテナ砲台 パルス　ブレーキ時
+73000040 c7300 speaker antenna turret pulse when moving in the air -- c7300 スピーカーアンテナ砲台 パルス　空中移動時
+73000050 c7300 speaker antenna turret pulse boost turning -- c7300 スピーカーアンテナ砲台 パルス　ブースト旋回時
+73000055 c7300 speaker antenna turret pulse aerial boost turning -- c7300 スピーカーアンテナ砲台 パルス　空中ブースト旋回時
+73000060 c7300 speaker antenna turret pulse boost turning_180 degree turn -- c7300 スピーカーアンテナ砲台 パルス　ブースト旋回時_180度ターン
+73000065 c7300 speaker antenna turret pulse aerial boost turning_180 degree turn -- c7300 スピーカーアンテナ砲台 パルス　空中ブースト旋回時_180度ターン
+73000070 c7300 speaker antenna turret pulse when moving Brejo -- c7300 スピーカーアンテナ砲台 パルス　ブレホ移動時
+73000075 c7300 speaker antenna turret pulse when moving in the air Breho -- c7300 スピーカーアンテナ砲台 パルス　空中ブレホ移動時
+73000080 c7300 speaker antenna turret pulse when cover is reversed -- c7300 スピーカーアンテナ砲台 パルス　カバー反転時
+73000090 c7300 speaker antenna turret pulse large quick boost -- c7300 スピーカーアンテナ砲台 パルス　大クイックブースト時
+73100000 c7310 State-of-the-art EN battery plasma rifle normal time -- c7310 最新鋭EN砲台 プラズマライフル　通常時
+73100010 c7310 State-of-the-art EN battery plasma rifle when dashing -- c7310 最新鋭EN砲台 プラズマライフル　ダッシュ時
+73100015 c7310 State-of-the-art EN battery plasma rifle during high-speed dash -- c7310 最新鋭EN砲台 プラズマライフル　高速ダッシュ時
+73100020 c7310 State-of-the-art EN battery plasma rifle boosted -- c7310 最新鋭EN砲台 プラズマライフル　ブースト時
+73100030 c7310 State-of-the-art EN battery plasma rifle during braking -- c7310 最新鋭EN砲台 プラズマライフル　ブレーキ時
+73100040 c7310 State-of-the-art EN battery plasma rifle when moving in the air -- c7310 最新鋭EN砲台 プラズマライフル　空中移動時
+73100050 c7310 State-of-the-art EN battery plasma rifle when turning boost -- c7310 最新鋭EN砲台 プラズマライフル　ブースト旋回時
+73100055 c7310 State-of-the-art EN battery plasma rifle during aerial boost turning -- c7310 最新鋭EN砲台 プラズマライフル　空中ブースト旋回時
+73100060 c7310 State-of-the-art EN battery plasma rifle Boost turning_180 degree turn -- c7310 最新鋭EN砲台 プラズマライフル　ブースト旋回時_180度ターン
+73100065 c7310 State-of-the-art EN battery Plasma rifle Aerial boost turning when turning_180 degrees -- c7310 最新鋭EN砲台 プラズマライフル　空中ブースト旋回時_180度ターン
+73100070 c7310 State-of-the-art EN battery plasma rifle when moving Brejo -- c7310 最新鋭EN砲台 プラズマライフル　ブレホ移動時
+73100075 c7310 State-of-the-art EN battery plasma rifle when moving in mid-air Brejo -- c7310 最新鋭EN砲台 プラズマライフル　空中ブレホ移動時
+73100080 c7310 State-of-the-art EN battery plasma rifle when cover is reversed -- c7310 最新鋭EN砲台 プラズマライフル　カバー反転時
+73100090 c7310 State-of-the-art EN battery plasma rifle large quick boost -- c7310 最新鋭EN砲台 プラズマライフル　大クイックブースト時
+73200000 c7320 State-of-the-art EN battery plasma missile normal time -- c7320 最新鋭EN砲台 プラズマミサイル　通常時
+73200010 c7320 State-of-the-art EN battery plasma missile when dashing -- c7320 最新鋭EN砲台 プラズマミサイル　ダッシュ時
+73200015 c7320 State-of-the-art EN battery plasma missile during high-speed dash -- c7320 最新鋭EN砲台 プラズマミサイル　高速ダッシュ時
+73200020 c7320 state-of-the-art EN battery plasma missile boost -- c7320 最新鋭EN砲台 プラズマミサイル　ブースト時
+73200030 c7320 state-of-the-art EN battery plasma missile during braking -- c7320 最新鋭EN砲台 プラズマミサイル　ブレーキ時
+73200040 c7320 State-of-the-art EN battery plasma missile during air movement -- c7320 最新鋭EN砲台 プラズマミサイル　空中移動時
+73200050 c7320 state-of-the-art EN battery plasma missile boost turning -- c7320 最新鋭EN砲台 プラズマミサイル　ブースト旋回時
+73200055 c7320 State-of-the-art EN battery plasma missile during aerial boost turning -- c7320 最新鋭EN砲台 プラズマミサイル　空中ブースト旋回時
+73200060 c7320 State-of-the-art EN battery Plasma missile Boost turning_180 degree turn -- c7320 最新鋭EN砲台 プラズマミサイル　ブースト旋回時_180度ターン
+73200065 c7320 State-of-the-art EN battery Plasma missile Aerial boost turning when turning_180 degrees -- c7320 最新鋭EN砲台 プラズマミサイル　空中ブースト旋回時_180度ターン
+73200070 c7320 State-of-the-art EN battery plasma missile when moving Brejo -- c7320 最新鋭EN砲台 プラズマミサイル　ブレホ移動時
+73200075 c7320 State-of-the-art EN battery plasma missile during aerial Breho movement -- c7320 最新鋭EN砲台 プラズマミサイル　空中ブレホ移動時
+73200080 c7320 state-of-the-art EN battery plasma missile when cover is reversed -- c7320 最新鋭EN砲台 プラズマミサイル　カバー反転時
+73200090 c7320 State-of-the-art EN battery plasma missile large quick boost -- c7320 最新鋭EN砲台 プラズマミサイル　大クイックブースト時
+73900000 c7390 D tier giant battery Anemone normal time -- c7390 D層巨大砲台 アネモネ　通常時
+73900010 c7390 D tier giant turret Anemone dash time -- c7390 D層巨大砲台 アネモネ　ダッシュ時
+73900015 c7390 D tier giant turret Anemone high speed dash -- c7390 D層巨大砲台 アネモネ　高速ダッシュ時
+73900020 c7390 D tier giant turret Anemone boost -- c7390 D層巨大砲台 アネモネ　ブースト時
+73900030 c7390 D-layer giant turret Anemone during braking -- c7390 D層巨大砲台 アネモネ　ブレーキ時
+73900040 c7390 D-tier giant gun battery Anemone when moving in the air -- c7390 D層巨大砲台 アネモネ　空中移動時
+73900050 c7390 D tier giant gun battery Anemone boost turning -- c7390 D層巨大砲台 アネモネ　ブースト旋回時
+73900055 c7390 D layer giant gun battery Anemone during aerial boost turning -- c7390 D層巨大砲台 アネモネ　空中ブースト旋回時
+73900060 c7390 D layer giant cannon Anemone boost turning_180 degree turn -- c7390 D層巨大砲台 アネモネ　ブースト旋回時_180度ターン
+73900065 c7390 D layer giant cannon Anemone aerial boost turning_180 degree turn -- c7390 D層巨大砲台 アネモネ　空中ブースト旋回時_180度ターン
+73900070 c7390 D layer giant cannon Anemone when moving Brejo -- c7390 D層巨大砲台 アネモネ　ブレホ移動時
+73900075 c7390 D layer giant cannon Anemone when moving in mid-air Breho -- c7390 D層巨大砲台 アネモネ　空中ブレホ移動時
+73900080 c7390 D layer giant turret Anemone when cover is reversed -- c7390 D層巨大砲台 アネモネ　カバー反転時
+73900090 c7390 D layer giant turret Anemone large quick boost -- c7390 D層巨大砲台 アネモネ　大クイックブースト時
+74000000 c7400 amphibious assault ship normal time -- c7400 強襲揚陸艦　通常時
+74000010 c7400 amphibious assault ship dash -- c7400 強襲揚陸艦　ダッシュ時
+74000015 c7400 amphibious assault ship high speed dash -- c7400 強襲揚陸艦　高速ダッシュ時
+74000020 c7400 amphibious assault ship boosted -- c7400 強襲揚陸艦　ブースト時
+74000030 c7400 amphibious assault ship during braking -- c7400 強襲揚陸艦　ブレーキ時
+74000040 c7400 amphibious assault ship during air movement -- c7400 強襲揚陸艦　空中移動時
+74000050 c7400 amphibious assault ship during boost turn -- c7400 強襲揚陸艦　ブースト旋回時
+74000055 c7400 amphibious assault ship during aerial boost turn -- c7400 強襲揚陸艦　空中ブースト旋回時
+74000060 c7400 amphibious assault ship Boost turning_180 degree turn -- c7400 強襲揚陸艦　ブースト旋回時_180度ターン
+74000065 c7400 amphibious assault ship _180 degree turn when turning in air boost -- c7400 強襲揚陸艦　空中ブースト旋回時_180度ターン
+74000070 c7400 amphibious assault ship Brejo moving -- c7400 強襲揚陸艦　ブレホ移動時
+74000075 c7400 amphibious assault ship during aerial Brejo movement -- c7400 強襲揚陸艦　空中ブレホ移動時
+74000080 c7400 amphibious assault ship when cover is reversed -- c7400 強襲揚陸艦　カバー反転時
+74000090 c7400 amphibious assault ship large quick boost -- c7400 強襲揚陸艦　大クイックブースト時
+74010000 c7401 amphibious assault ship main gun normal time -- c7401 強襲揚陸艦 主砲　通常時
+74010010 c7401 amphibious assault ship main gun dash -- c7401 強襲揚陸艦 主砲　ダッシュ時
+74010015 c7401 amphibious assault ship main gun during high speed dash -- c7401 強襲揚陸艦 主砲　高速ダッシュ時
+74010020 c7401 amphibious assault ship main gun boost -- c7401 強襲揚陸艦 主砲　ブースト時
+74010030 c7401 amphibious assault ship main gun during braking -- c7401 強襲揚陸艦 主砲　ブレーキ時
+74010040 c7401 amphibious assault ship main gun during air movement -- c7401 強襲揚陸艦 主砲　空中移動時
+74010050 c7401 amphibious assault ship main gun during boost turn -- c7401 強襲揚陸艦 主砲　ブースト旋回時
+74010055 c7401 amphibious assault ship main gun during air boost turning -- c7401 強襲揚陸艦 主砲　空中ブースト旋回時
+74010060 c7401 amphibious assault ship main gun boost turning_180 degree turn -- c7401 強襲揚陸艦 主砲　ブースト旋回時_180度ターン
+74010065 c7401 Amphibious Assault Ship Main Gun Air Boost Turning_180 degree turn -- c7401 強襲揚陸艦 主砲　空中ブースト旋回時_180度ターン
+74010070 c7401 Amphibious assault ship main gun when moving Brejo -- c7401 強襲揚陸艦 主砲　ブレホ移動時
+74010075 c7401 Amphibious assault ship main gun during aerial Brejo movement -- c7401 強襲揚陸艦 主砲　空中ブレホ移動時
+74010080 c7401 amphibious assault ship main gun when cover is reversed -- c7401 強襲揚陸艦 主砲　カバー反転時
+74010090 c7401 amphibious assault ship main gun large quick boost -- c7401 強襲揚陸艦 主砲　大クイックブースト時
+74020000 c7402 amphibious assault ship secondary gun normal time -- c7402 強襲揚陸艦 副砲　通常時
+74020010 c7402 amphibious assault ship secondary gun dash -- c7402 強襲揚陸艦 副砲　ダッシュ時
+74020015 c7402 Amphibious assault ship secondary gun during high speed dash -- c7402 強襲揚陸艦 副砲　高速ダッシュ時
+74020020 c7402 amphibious assault ship secondary gun boost -- c7402 強襲揚陸艦 副砲　ブースト時
+74020030 c7402 amphibious assault ship secondary gun during braking -- c7402 強襲揚陸艦 副砲　ブレーキ時
+74020040 c7402 Amphibious assault ship secondary gun during air movement -- c7402 強襲揚陸艦 副砲　空中移動時
+74020050 c7402 amphibious assault ship secondary gun during boost turn -- c7402 強襲揚陸艦 副砲　ブースト旋回時
+74020055 c7402 Amphibious assault ship secondary gun during aerial boost turn -- c7402 強襲揚陸艦 副砲　空中ブースト旋回時
+74020060 c7402 Amphibious assault ship secondary gun Boost turning_180 degree turn -- c7402 強襲揚陸艦 副砲　ブースト旋回時_180度ターン
+74020065 c7402 Amphibious assault ship secondary gun Aerial boost turn when turning_180 degrees -- c7402 強襲揚陸艦 副砲　空中ブースト旋回時_180度ターン
+74020070 c7402 Amphibious assault ship secondary gun Breho when moving -- c7402 強襲揚陸艦 副砲　ブレホ移動時
+74020075 c7402 Amphibious assault ship secondary gun during aerial Brejo movement -- c7402 強襲揚陸艦 副砲　空中ブレホ移動時
+74020080 c7402 Amphibious assault ship secondary gun when cover is reversed -- c7402 強襲揚陸艦 副砲　カバー反転時
+74020090 c7402 Amphibious assault ship secondary gun large quick boost -- c7402 強襲揚陸艦 副砲　大クイックブースト時
+74030000 c7403 Amphibious Assault Ship Missile Cannon Normal Time -- c7403 強襲揚陸艦 ミサイル砲　通常時
+74030010 c7403 Amphibious Assault Ship Missile Cannon Dash -- c7403 強襲揚陸艦 ミサイル砲　ダッシュ時
+74030015 c7403 Amphibious assault ship missile cannon during high speed dash -- c7403 強襲揚陸艦 ミサイル砲　高速ダッシュ時
+74030020 c7403 Amphibious Assault Ship Missile Cannon Boost -- c7403 強襲揚陸艦 ミサイル砲　ブースト時
+74030030 c7403 Amphibious Assault Ship Missile Cannon Braking -- c7403 強襲揚陸艦 ミサイル砲　ブレーキ時
+74030040 c7403 Amphibious assault ship missile cannon during air movement -- c7403 強襲揚陸艦 ミサイル砲　空中移動時
+74030050 c7403 Amphibious Assault Ship Missile Cannon Boost Turning -- c7403 強襲揚陸艦 ミサイル砲　ブースト旋回時
+74030055 c7403 Amphibious assault ship missile gun during air boost turning -- c7403 強襲揚陸艦 ミサイル砲　空中ブースト旋回時
+74030060 c7403 Amphibious Assault Ship Missile Cannon Boost Turning_180 degree turn -- c7403 強襲揚陸艦 ミサイル砲　ブースト旋回時_180度ターン
+74030065 c7403 Amphibious assault ship missile cannon air boost turning_180 degree turn -- c7403 強襲揚陸艦 ミサイル砲　空中ブースト旋回時_180度ターン
+74030070 c7403 Amphibious assault ship missile cannon when moving Brejo -- c7403 強襲揚陸艦 ミサイル砲　ブレホ移動時
+74030075 c7403 Amphibious Assault Ship Missile Cannon During Air Brejo Movement -- c7403 強襲揚陸艦 ミサイル砲　空中ブレホ移動時
+74030080 c7403 Amphibious Assault Ship Missile Cannon Cover Reversed -- c7403 強襲揚陸艦 ミサイル砲　カバー反転時
+74030090 c7403 Amphibious assault ship missile cannon large quick boost -- c7403 強襲揚陸艦 ミサイル砲　大クイックブースト時
+74100000 c7410 amphibious assault ship child unit normal time -- c7410 強襲揚陸艦 子機　通常時
+74100010 c7410 amphibious assault ship child unit dash -- c7410 強襲揚陸艦 子機　ダッシュ時
+74100015 c7410 amphibious assault ship slave unit during high speed dash -- c7410 強襲揚陸艦 子機　高速ダッシュ時
+74100020 c7410 amphibious assault ship child unit boost time -- c7410 強襲揚陸艦 子機　ブースト時
+74100030 c7410 amphibious assault ship slave unit during braking -- c7410 強襲揚陸艦 子機　ブレーキ時
+74100040 c7410 amphibious assault ship slave aircraft during air movement -- c7410 強襲揚陸艦 子機　空中移動時
+74100050 c7410 amphibious assault ship child unit during boost turn -- c7410 強襲揚陸艦 子機　ブースト旋回時
+74100055 c7410 amphibious assault ship slave aircraft during aerial boost turn -- c7410 強襲揚陸艦 子機　空中ブースト旋回時
+74100060 c7410 amphibious assault ship child unit boost turning_180 degree turn -- c7410 強襲揚陸艦 子機　ブースト旋回時_180度ターン
+74100065 c7410 Amphibious Assault Ship Child Unit Aerial Boost Turning_180 degree turn -- c7410 強襲揚陸艦 子機　空中ブースト旋回時_180度ターン
+74100070 c7410 amphibious assault ship child unit Breho when moving -- c7410 強襲揚陸艦 子機　ブレホ移動時
+74100075 c7410 Amphibious Assault Ship Child Unit During Air Brejo Movement -- c7410 強襲揚陸艦 子機　空中ブレホ移動時
+74100080 c7410 amphibious assault ship child unit cover reversal -- c7410 強襲揚陸艦 子機　カバー反転時
+74100090 c7410 amphibious assault ship child unit large quick boost -- c7410 強襲揚陸艦 子機　大クイックブースト時
+80300000 c8030 pile MT (shotgun - normal) -- c8030 パイルMT（ショットガン - 通常時
+80300010 c8030 pile MT (shotgun - when dashing) -- c8030 パイルMT（ショットガン - ダッシュ時
+80300015 c8030 pile MT (shotgun - during high speed dash) -- c8030 パイルMT（ショットガン - 高速ダッシュ時
+80300020 c8030 pile MT (shotgun - when boosted) -- c8030 パイルMT（ショットガン - ブースト時
+80300030 c8030 pile MT (shotgun - when braking) -- c8030 パイルMT（ショットガン - ブレーキ時
+80300040 c8030 Pile MT (shotgun - when moving in the air) -- c8030 パイルMT（ショットガン - 空中移動時
+80300050 c8030 pile MT (shotgun - when turning boost -- c8030 パイルMT（ショットガン - ブースト旋回時
+80300055 c8030 Pile MT (Shotgun - Air boost turning) -- c8030 パイルMT（ショットガン - 空中ブースト旋回時
+80300060 c8030 Pile MT (Shotgun - 180 degree turn when turning boost) -- c8030 パイルMT（ショットガン - ブースト旋回時_180度ターン
+80300065 c8030 Pile MT (Shotgun - Air boost turning when turning_180 degrees -- c8030 パイルMT（ショットガン - 空中ブースト旋回時_180度ターン
+80300070 c8030 Pile MT (Shotgun - When moving Brejo -- c8030 パイルMT（ショットガン - ブレホ移動時
+80300075 c8030 Pile MT (Shotgun - When moving in mid-air Breho -- c8030 パイルMT（ショットガン - 空中ブレホ移動時
+80300080 c8030 pile MT (shotgun - when cover is reversed) -- c8030 パイルMT（ショットガン - カバー反転時
+80300090 c8030 pile MT (shotgun - large quick boost) -- c8030 パイルMT（ショットガン - 大クイックブースト時
+80600000 c8060 Gunship (Strong Zako) -- c8060 ガンシップ（強ザコ
+80900000 c8090 fighter normal time -- c8090 戦闘機 通常時
+80900020 c8090 fighter jet boost -- c8090 戦闘機 ブースト時
+81000000 c8100 Shield Holder MT (Laser Whip - Normal -- c8100 盾持ちMT（レーザーウィップ - 通常時
+81000010 c8100 Shield holding MT (laser whip - when dashing) -- c8100 盾持ちMT（レーザーウィップ - ダッシュ時
+81000015 c8100 Shield Holder MT (Laser Whip - During High Speed ​​Dash) -- c8100 盾持ちMT（レーザーウィップ - 高速ダッシュ時
+81000020 c8100 Shield holding MT (laser whip - when boosted) -- c8100 盾持ちMT（レーザーウィップ - ブースト時
+81000030 c8100 Shield holding MT (laser whip - when braking) -- c8100 盾持ちMT（レーザーウィップ - ブレーキ時
+81000040 c8100 Shield holding MT (laser whip - when moving in the air) -- c8100 盾持ちMT（レーザーウィップ - 空中移動時
+81000050 c8100 Shield holding MT (laser whip - when turning boost -- c8100 盾持ちMT（レーザーウィップ - ブースト旋回時
+81000055 c8100 Shield Holder MT (Laser Whip - Air Boost Turning) -- c8100 盾持ちMT（レーザーウィップ - 空中ブースト旋回時
+81000060 c8100 Shield Holder MT (Laser Whip - 180 degree turn when turning boost) -- c8100 盾持ちMT（レーザーウィップ - ブースト旋回時_180度ターン
+81000065 c8100 Shield Holder MT (Laser Whip - 180 degree turn when turning in air boost) -- c8100 盾持ちMT（レーザーウィップ - 空中ブースト旋回時_180度ターン
+81000070 c8100 Shield Holder MT (Laser Whip - When moving Breho -- c8100 盾持ちMT（レーザーウィップ - ブレホ移動時
+81000075 c8100 Shield Holder MT (Laser Whip - When moving in mid-air Breho -- c8100 盾持ちMT（レーザーウィップ - 空中ブレホ移動時
+81000080 c8100 Shield holding MT (laser whip - when cover is reversed) -- c8100 盾持ちMT（レーザーウィップ - カバー反転時
+81000090 c8100 Shield holding MT (laser whip - large quick boost) -- c8100 盾持ちMT（レーザーウィップ - 大クイックブースト時
+81100000 c8110 Colorless MT - Normal -- c8110 無色MT - 通常時
+81100010 c8110 Colorless MT - When dashing -- c8110 無色MT - ダッシュ時
+81100015 c8110 Colorless MT - During high speed dash -- c8110 無色MT - 高速ダッシュ時
+81100020 c8110 Colorless MT - At boost time -- c8110 無色MT - ブースト時
+81100030 c8110 Colorless MT - When braking -- c8110 無色MT - ブレーキ時
+81100040 c8110 Colorless MT - When moving in the air -- c8110 無色MT - 空中移動時
+81100050 c8110 Colorless MT - When turning boost -- c8110 無色MT - ブースト旋回時
+81100055 c8110 Colorless MT - Air boost turning -- c8110 無色MT - 空中ブースト旋回時
+81100060 c8110 Colorless MT - Boost turning_180 degree turn -- c8110 無色MT - ブースト旋回時_180度ターン
+81100065 c8110 Colorless MT - Air boost turning_180 degree turn -- c8110 無色MT - 空中ブースト旋回時_180度ターン
+81100070 c8110 Colorless MT - When moving Breho -- c8110 無色MT - ブレホ移動時
+81100075 c8110 Colorless MT - When moving in mid-air Breho -- c8110 無色MT - 空中ブレホ移動時
+81100080 c8110 Colorless MT - When cover is reversed -- c8110 無色MT - カバー反転時
+81100090 c8110 Colorless MT - Large quick boost -- c8110 無色MT - 大クイックブースト時
+81110000 c8111 Colorless MT for control confirmation Normal time -- c8111 制御確認用無色MT　通常時
+81110010 c8111 Colorless MT for control confirmation when dashing -- c8111 制御確認用無色MT　ダッシュ時
+81110015 c8111 Colorless MT for control confirmation during high speed dash -- c8111 制御確認用無色MT　高速ダッシュ時
+81110020 c8111 Colorless MT for control confirmation during boost -- c8111 制御確認用無色MT　ブースト時
+81110030 c8111 Colorless MT for control confirmation during braking -- c8111 制御確認用無色MT　ブレーキ時
+81110040 c8111 Colorless MT for control confirmation when moving in the air -- c8111 制御確認用無色MT　空中移動時
+81110050 c8111 Colorless MT for control confirmation during boost turning -- c8111 制御確認用無色MT　ブースト旋回時
+81110055 c8111 Colorless MT for control confirmation during aerial boost turning -- c8111 制御確認用無色MT　空中ブースト旋回時
+81110060 c8111 Colorless MT for control confirmation Boost turning_180 degree turn -- c8111 制御確認用無色MT　ブースト旋回時_180度ターン
+81110065 c8111 Colorless MT for control confirmation Aerial boost turning_180 degree turn -- c8111 制御確認用無色MT　空中ブースト旋回時_180度ターン
+81110070 c8111 Colorless MT for control confirmation when moving Breho -- c8111 制御確認用無色MT　ブレホ移動時
+81110075 c8111 Colorless MT for control confirmation when moving in the air -- c8111 制御確認用無色MT　空中ブレホ移動時
+81110080 c8111 Colorless MT for control confirmation when cover is reversed -- c8111 制御確認用無色MT　カバー反転時
+81110090 c8111 Colorless MT for control confirmation during large quick boost -- c8111 制御確認用無色MT　大クイックブースト時
+81170000 c8117 Colorless MT Copy Test 3 Normal Time -- c8117 無色MT　コピーテスト3　通常時
+81170010 c8117 Colorless MT copy test 3 dash time -- c8117 無色MT　コピーテスト3　ダッシュ時
+81170015 c8117 Colorless MT Copy Test 3 High Speed ​​Dash -- c8117 無色MT　コピーテスト3　高速ダッシュ時
+81170020 c8117 Colorless MT copy test 3 boost -- c8117 無色MT　コピーテスト3　ブースト時
+81170030 c8117 Colorless MT Copy Test 3 Braking -- c8117 無色MT　コピーテスト3　ブレーキ時
+81170040 c8117 Colorless MT Copy Test 3 When moving in the air -- c8117 無色MT　コピーテスト3　空中移動時
+81170050 c8117 Colorless MT copy test 3 during boost turning -- c8117 無色MT　コピーテスト3　ブースト旋回時
+81170055 c8117 Colorless MT copy test 3 during aerial boost turning -- c8117 無色MT　コピーテスト3　空中ブースト旋回時
+81170060 c8117 Colorless MT Copy Test 3 Boost turning_180 degree turn -- c8117 無色MT　コピーテスト3　ブースト旋回時_180度ターン
+81170065 c8117 Colorless MT Copy Test 3 Aerial boost turning_180 degree turn -- c8117 無色MT　コピーテスト3　空中ブースト旋回時_180度ターン
+81170070 c8117 Colorless MT Copy Test 3 When moving Breho -- c8117 無色MT　コピーテスト3　ブレホ移動時
+81170075 c8117 Colorless MT Copy Test 3 When moving in mid-air Breho -- c8117 無色MT　コピーテスト3　空中ブレホ移動時
+81170080 c8117 Colorless MT Copy Test 3 When cover is reversed -- c8117 無色MT　コピーテスト3　カバー反転時
+81170090 c8117 Colorless MT Copy Test 3 Large Quick Boost -- c8117 無色MT　コピーテスト3　大クイックブースト時
+81180000 c8118 Colorless MT Copy Test 2 Normal Time -- c8118 無色MT　コピーテスト2　通常時
+81180010 c8118 Colorless MT copy test 2 dash time -- c8118 無色MT　コピーテスト2　ダッシュ時
+81180015 c8118 Colorless MT Copy Test 2 High Speed ​​Dash -- c8118 無色MT　コピーテスト2　高速ダッシュ時
+81180020 c8118 Colorless MT Copy Test 2 Boost -- c8118 無色MT　コピーテスト2　ブースト時
+81180030 c8118 Colorless MT Copy Test 2 Braking -- c8118 無色MT　コピーテスト2　ブレーキ時
+81180040 c8118 Colorless MT Copy Test 2 When moving in the air -- c8118 無色MT　コピーテスト2　空中移動時
+81180050 c8118 Colorless MT copy test 2 during boost turning -- c8118 無色MT　コピーテスト2　ブースト旋回時
+81180055 c8118 Colorless MT Copy Test 2 During aerial boost turning -- c8118 無色MT　コピーテスト2　空中ブースト旋回時
+81180060 c8118 Colorless MT Copy Test 2 Boost turning_180 degree turn -- c8118 無色MT　コピーテスト2　ブースト旋回時_180度ターン
+81180065 c8118 Colorless MT Copy Test 2 Aerial boost turning_180 degree turn -- c8118 無色MT　コピーテスト2　空中ブースト旋回時_180度ターン
+81180070 c8118 Colorless MT Copy Test 2 When moving Breho -- c8118 無色MT　コピーテスト2　ブレホ移動時
+81180075 c8118 Colorless MT Copy Test 2 When moving in mid-air Breho -- c8118 無色MT　コピーテスト2　空中ブレホ移動時
+81180080 c8118 Colorless MT Copy Test 2 When cover is reversed -- c8118 無色MT　コピーテスト2　カバー反転時
+81180090 c8118 Colorless MT Copy Test 2 Large Quick Boost -- c8118 無色MT　コピーテスト2　大クイックブースト時
+81190000 c8119 Colorless MT Copy Test Normal Time -- c8119 無色MT　コピーテスト　通常時
+81190010 c8119 Colorless MT copy test dash time -- c8119 無色MT　コピーテスト　ダッシュ時
+81190015 c8119 Colorless MT copy test during high speed dash -- c8119 無色MT　コピーテスト　高速ダッシュ時
+81190020 c8119 Colorless MT copy test boost time -- c8119 無色MT　コピーテスト　ブースト時
+81190030 c8119 Colorless MT copy test during braking -- c8119 無色MT　コピーテスト　ブレーキ時
+81190040 c8119 Colorless MT copy test during aerial movement -- c8119 無色MT　コピーテスト　空中移動時
+81190050 c8119 Colorless MT copy test during boost turning -- c8119 無色MT　コピーテスト　ブースト旋回時
+81190055 c8119 Colorless MT copy test during aerial boost turning -- c8119 無色MT　コピーテスト　空中ブースト旋回時
+81190060 c8119 Colorless MT copy test Boost turning_180 degree turn -- c8119 無色MT　コピーテスト　ブースト旋回時_180度ターン
+81190065 c8119 Colorless MT copy test Aerial boost turning_180 degree turn -- c8119 無色MT　コピーテスト　空中ブースト旋回時_180度ターン
+81190070 c8119 Colorless MT copy test when moving Breho -- c8119 無色MT　コピーテスト　ブレホ移動時
+81190075 c8119 Colorless MT Copy Test When moving in mid-air Breho -- c8119 無色MT　コピーテスト　空中ブレホ移動時
+81190080 c8119 Colorless MT copy test when cover is reversed -- c8119 無色MT　コピーテスト　カバー反転時
+81190090 c8119 Colorless MT copy test large quick boost -- c8119 無色MT　コピーテスト　大クイックブースト時
+81310000 c8131 Control prototype character normal time -- c8131 制御試作用キャラ　通常時
+81310010 c8131 Control prototype character dash -- c8131 制御試作用キャラ　ダッシュ時
+81310015 c8131 Control prototype character high speed dash -- c8131 制御試作用キャラ　高速ダッシュ時
+81310020 c8131 Control prototype character boost -- c8131 制御試作用キャラ　ブースト時
+81310030 c8131 Control prototype character during braking -- c8131 制御試作用キャラ　ブレーキ時
+81310040 c8131 Control prototype character when moving in the air -- c8131 制御試作用キャラ　空中移動時
+81310050 c8131 Control prototype character during boost turning -- c8131 制御試作用キャラ　ブースト旋回時
+81310055 c8131 Control prototype character during aerial boost turning -- c8131 制御試作用キャラ　空中ブースト旋回時
+81310060 c8131 Control prototype character Boost turning_180 degree turn -- c8131 制御試作用キャラ　ブースト旋回時_180度ターン
+81310065 c8131 Control prototype character: 180 degree turn during aerial boost turning -- c8131 制御試作用キャラ　空中ブースト旋回時_180度ターン
+81310070 c8131 Control prototype character when moving Breho -- c8131 制御試作用キャラ　ブレホ移動時
+81310075 c8131 Control prototype character during aerial breho movement -- c8131 制御試作用キャラ　空中ブレホ移動時
+81310080 c8131 Control prototype character when cover is reversed -- c8131 制御試作用キャラ　カバー反転時
+81310090 c8131 Control prototype character large quick boost -- c8131 制御試作用キャラ　大クイックブースト時
+81350000 c8135 Official Miyatake Strong Enemy Normal Time -- c8135 正式宮武強敵　通常時
+81350010 c8135 Official Miyatake strong enemy when dashing -- c8135 正式宮武強敵　ダッシュ時
+81350015 c8135 Official Miyatake Strong Enemy During High Speed ​​Dash -- c8135 正式宮武強敵　高速ダッシュ時
+81350020 c8135 Official Miyatake strong enemy boost time -- c8135 正式宮武強敵　ブースト時
+81350030 c8135 Official Miyatake strong enemy during braking -- c8135 正式宮武強敵　ブレーキ時
+81350040 c8135 Official Miyatake strong enemy when moving in the air -- c8135 正式宮武強敵　空中移動時
+81350050 c8135 Official Miyatake strong enemy when turning boost -- c8135 正式宮武強敵　ブースト旋回時
+81350055 c8135 Official Miyatake strong enemy during aerial boost turning -- c8135 正式宮武強敵　空中ブースト旋回時
+81350060 c8135 Official Miyatake strong enemy Boost turning_180 degree turn -- c8135 正式宮武強敵　ブースト旋回時_180度ターン
+81350065 c8135 Official Miyatake strong enemy Aerial boost turning _180 degree turn -- c8135 正式宮武強敵　空中ブースト旋回時_180度ターン
+81350070 c8135 Official Miyatake strong enemy when moving Breho -- c8135 正式宮武強敵　ブレホ移動時
+81350075 c8135 Official Miyatake strong enemy when moving in the air -- c8135 正式宮武強敵　空中ブレホ移動時
+81350080 c8135 Official Miyatake strong enemy when cover is reversed -- c8135 正式宮武強敵　カバー反転時
+81350090 c8135 Official Miyatake Strong Enemy Big Quick Boost -- c8135 正式宮武強敵　大クイックブースト時
+81450000 c8145 Official Miyatake Strong Enemy Toriashi Normal Time -- c8145 正式宮武強敵 鳥足　通常時
+81450010 c8145 Official Miyatake Strong Enemy Bird Foot Dash -- c8145 正式宮武強敵 鳥足　ダッシュ時
+81450015 c8145 Official Miyatake Strong Enemy Toritoki High Speed ​​Dash -- c8145 正式宮武強敵 鳥足　高速ダッシュ時
+81450020 c8145 Official Miyatake Formidable Enemy Torisaki Boosted -- c8145 正式宮武強敵 鳥足　ブースト時
+81450030 c8145 Official Miyatake strong enemy bird's foot during braking -- c8145 正式宮武強敵 鳥足　ブレーキ時
+81450040 c8145 Official Miyatake strong enemy Bird's foot when moving in the air -- c8145 正式宮武強敵 鳥足　空中移動時
+81450050 c8145 Official Miyatake Strong Enemy Toriashiki Boost Turning -- c8145 正式宮武強敵 鳥足　ブースト旋回時
+81450055 c8145 Official Miyatake Formidable Enemy Toriashiki Aerial Boost Turning -- c8145 正式宮武強敵 鳥足　空中ブースト旋回時
+81450060 c8145 Official Miyatake Strong Enemy Birdfoot Boost Turning_180 degree turn -- c8145 正式宮武強敵 鳥足　ブースト旋回時_180度ターン
+81450065 c8145 Official Miyatake Formidable Enemy Birdfoot Aerial Boost Turn _180 degree turn -- c8145 正式宮武強敵 鳥足　空中ブースト旋回時_180度ターン
+81450070 c8145 Official Miyatake Strong Enemy Birdfoot Breho when moving -- c8145 正式宮武強敵 鳥足　ブレホ移動時
+81450075 c8145 Official Miyatake strong enemy Bird's foot when moving in the air -- c8145 正式宮武強敵 鳥足　空中ブレホ移動時
+81450080 c8145 Official Miyatake Strong Enemy Toriashii Cover Reversal -- c8145 正式宮武強敵 鳥足　カバー反転時
+81450090 c8145 Official Miyatake Strong Enemy Toriashiki Big Quick Boost -- c8145 正式宮武強敵 鳥足　大クイックブースト時
+81500000 c8150 patrol vehicle normal time -- c8150 巡回車両　通常時
+81500010 c8150 patrol vehicle dash -- c8150 巡回車両　ダッシュ時
+81500020 c8150 patrol vehicle boost -- c8150 巡回車両　ブースト時
+82000000 c8200 Walla Walla Mushi Normal Time -- c8200　ワラワラ蟲　通常時
+82000010 c8200 Walla Walla Mushi when dashing -- c8200　ワラワラ蟲　ダッシュ時
+82000015 c8200 Walla Walla Mushi at high speed dash -- c8200　ワラワラ蟲　高速ダッシュ時
+82000020 c8200 Walla Walla Mushi when boosted -- c8200　ワラワラ蟲　ブースト時
+82000030 c8200 walla walla bug when braking -- c8200　ワラワラ蟲　ブレーキ時
+82000040 c8200 Walla Walla Mushi when moving in the air -- c8200　ワラワラ蟲　空中移動時
+82000050 c8200 Walla Walla Mushi when turning boost -- c8200　ワラワラ蟲　ブースト旋回時
+82000055 c8200 Walla Walla Mushi during aerial boost turning -- c8200　ワラワラ蟲　空中ブースト旋回時
+82000060 c8200 Walla Walla Mushi Boost turning_180 degree turn -- c8200　ワラワラ蟲　ブースト旋回時_180度ターン
+82000065 c8200 Walla Walla Mushi Aerial boost turning _180 degree turn -- c8200　ワラワラ蟲　空中ブースト旋回時_180度ターン
+82000070 c8200 Walla Walla Mushi Breho when moving -- c8200　ワラワラ蟲　ブレホ移動時
+82000075 c8200 Walla Walla Mushi when moving in the air -- c8200　ワラワラ蟲　空中ブレホ移動時
+82000080 c8200 Walla Walla Mushi When cover is reversed -- c8200　ワラワラ蟲　カバー反転時
+82000090 c8200 Walla Walla Mushi large quick boost -- c8200　ワラワラ蟲　大クイックブースト時
+82100000 c8210 Walla Walla Mushi (Large) Normal time -- c8210 ワラワラ蟲（大）　通常時
+82100010 c8210 Walla Walla Mushi (Large) When dashing -- c8210 ワラワラ蟲（大）　ダッシュ時
+82100015 c8210 Walla Walla Mushi (Large) During high speed dash -- c8210 ワラワラ蟲（大）　高速ダッシュ時
+82100020 c8210 Walla Walla Mushi (Large) when boosted -- c8210 ワラワラ蟲（大）　ブースト時
+82100030 c8210 Walla Walla Bug (Large) When braking -- c8210 ワラワラ蟲（大）　ブレーキ時
+82100040 c8210 Walla Walla Bug (Large) When moving in the air -- c8210 ワラワラ蟲（大）　空中移動時
+82100050 c8210 Walla Walla Mushi (Large) when turning boost -- c8210 ワラワラ蟲（大）　ブースト旋回時
+82100055 c8210 Walla Walla Mushi (Large) When turning in mid-air boost -- c8210 ワラワラ蟲（大）　空中ブースト旋回時
+82100060 c8210 Walla Walla Mushi (Large) Boost turning_180 degree turn -- c8210 ワラワラ蟲（大）　ブースト旋回時_180度ターン
+82100065 c8210 Walla Walla Mushi (Large) Aerial boost turning_180 degree turn -- c8210 ワラワラ蟲（大）　空中ブースト旋回時_180度ターン
+82100070 c8210 Walla Walla Bug (Large) When moving Breho -- c8210 ワラワラ蟲（大）　ブレホ移動時
+82100075 c8210 Walla Walla Bug (Large) When moving in the air -- c8210 ワラワラ蟲（大）　空中ブレホ移動時
+82100080 c8210 Walla Walla Mushi (Large) When cover is reversed -- c8210 ワラワラ蟲（大）　カバー反転時
+82100090 c8210 Walla Walla Mushi (Large) Large Quick Boost -- c8210 ワラワラ蟲（大）　大クイックブースト時
+82500000 c8250 D layer huge elevator normal time -- c8250 D層　巨大エレベータ　通常時
+82500010 c8250 D layer huge elevator dash -- c8250 D層　巨大エレベータ　ダッシュ時
+82500015 c8250 D layer huge elevator high speed dash -- c8250 D層　巨大エレベータ　高速ダッシュ時
+82500020 c8250 D layer huge elevator boost time -- c8250 D層　巨大エレベータ　ブースト時
+82500030 c8250 D layer huge elevator during braking -- c8250 D層　巨大エレベータ　ブレーキ時
+82500040 c8250 D layer giant elevator when moving in the air -- c8250 D層　巨大エレベータ　空中移動時
+82500050 c8250 D layer huge elevator boost turning -- c8250 D層　巨大エレベータ　ブースト旋回時
+82500055 c8250 D layer giant elevator when turning in mid-air boost -- c8250 D層　巨大エレベータ　空中ブースト旋回時
+82500060 c8250 D layer giant elevator boost turning_180 degree turn -- c8250 D層　巨大エレベータ　ブースト旋回時_180度ターン
+82500065 c8250 D layer giant elevator aerial boost turning_180 degree turn -- c8250 D層　巨大エレベータ　空中ブースト旋回時_180度ターン
+82500070 c8250 D layer huge elevator when moving to Brejo -- c8250 D層　巨大エレベータ　ブレホ移動時
+82500075 c8250 D layer giant elevator when moving in mid-air Breho -- c8250 D層　巨大エレベータ　空中ブレホ移動時
+82500080 c8250 D layer huge elevator when cover is reversed -- c8250 D層　巨大エレベータ　カバー反転時
+82500090 c8250 D layer huge elevator large quick boost -- c8250 D層　巨大エレベータ　大クイックブースト時
+82510000 c8251 Jump rope laser control character normal time -- c8251 縄跳びレーザー　制御用キャラ　通常時
+82510010 c8251 Jump rope laser control character dash -- c8251 縄跳びレーザー　制御用キャラ　ダッシュ時
+82510015 c8251 Jump rope laser control character high speed dash -- c8251 縄跳びレーザー　制御用キャラ　高速ダッシュ時
+82510020 c8251 Jump rope laser control character boost -- c8251 縄跳びレーザー　制御用キャラ　ブースト時
+82510030 c8251 Jump rope laser control character when braking -- c8251 縄跳びレーザー　制御用キャラ　ブレーキ時
+82510040 c8251 Jump rope laser control character when moving in the air -- c8251 縄跳びレーザー　制御用キャラ　空中移動時
+82510050 c8251 Jump rope laser control character boost turning -- c8251 縄跳びレーザー　制御用キャラ　ブースト旋回時
+82510055 c8251 Jump rope laser control character during aerial boost turning -- c8251 縄跳びレーザー　制御用キャラ　空中ブースト旋回時
+82510060 c8251 Jump rope laser control character boost turning_180 degree turn -- c8251 縄跳びレーザー　制御用キャラ　ブースト旋回時_180度ターン
+82510065 c8251 Jump rope laser control character Aerial boost turn when turning_180 degrees -- c8251 縄跳びレーザー　制御用キャラ　空中ブースト旋回時_180度ターン
+82510070 c8251 Jump rope laser control character when moving Brejo -- c8251 縄跳びレーザー　制御用キャラ　ブレホ移動時
+82510075 c8251 Jump rope laser control character when moving in mid-air Breho -- c8251 縄跳びレーザー　制御用キャラ　空中ブレホ移動時
+82510080 c8251 Jump rope laser control character when cover is reversed -- c8251 縄跳びレーザー　制御用キャラ　カバー反転時
+82510090 c8251 Jump rope laser control character large quick boost -- c8251 縄跳びレーザー　制御用キャラ　大クイックブースト時
+84100000 c8410 Floating giant battleship normal time -- c8410 浮遊巨大戦艦　通常時
+84100010 c8410 Floating giant battleship when dashing -- c8410 浮遊巨大戦艦　ダッシュ時
+84100020 c8410 Floating giant battleship when boosted -- c8410 浮遊巨大戦艦　ブースト時
+84200000 c8420 Marine carrier normal time -- c8420 海上母艦　通常時
+84200010 c8420 Marine carrier dash time -- c8420 海上母艦　ダッシュ時
+84200020 c8420 Marine carrier boost time -- c8420 海上母艦　ブースト時
+84300000 c8430 Battleship (far normal time) -- c8430 戦艦（遠　通常時
+84300010 c8430 Battleship (far dash) -- c8430 戦艦（遠　ダッシュ時
+84300020 c8430 Battleship (at far boost) -- c8430 戦艦（遠　ブースト時
+84400000 c8440 Battleship (near normal time) -- c8440 戦艦（近　通常時
+84400010 c8440 Battleship (near dash) -- c8440 戦艦（近　ダッシュ時
+84400020 c8440 battleship (near boost time) -- c8440 戦艦（近　ブースト時
+84500000 c8450 Stiglo (at sea, normal time) -- c8450 スティグロ（海上　通常時
+84500010 c8450 Stiglo (at sea dash) -- c8450 スティグロ（海上　ダッシュ時
+84500020 c8450 Stiglo (at sea boost) -- c8450 スティグロ（海上　ブースト時
+84600000 c8460 sea worm normal time -- c8460 シーワーム　通常時
+84600010 c8460 Seaworm Dash -- c8460 シーワーム　ダッシュ時
+84600020 c8460 sea worm boost -- c8460 シーワーム　ブースト時
+85100000 c8510 Strong Zako (bazooka for exit-san adjustment, normal time) -- c8510 強ザコ(バズーカ 出口さん調整用　通常時
+85100010 c8510 Strong Zako (bazooka for exit-san adjustment when dashing) -- c8510 強ザコ(バズーカ 出口さん調整用　ダッシュ時
+85100015 c8510 Strong Zako (bazooka for exit-san adjustment during high-speed dash) -- c8510 強ザコ(バズーカ 出口さん調整用　高速ダッシュ時
+85100020 c8510 Strong Zako (bazooka for Mr. Deguchi adjustment when boosting) -- c8510 強ザコ(バズーカ 出口さん調整用　ブースト時
+85100030 c8510 Strong Zako (bazooka for adjusting the exit when braking) -- c8510 強ザコ(バズーカ 出口さん調整用　ブレーキ時
+85100040 c8510 Strong Zako (bazooka for adjusting the exit when moving in the air) -- c8510 強ザコ(バズーカ 出口さん調整用　空中移動時
+85100050 c8510 Strong Zako (bazooka for adjusting the exit when turning boost) -- c8510 強ザコ(バズーカ 出口さん調整用　ブースト旋回時
+85100055 c8510 Strong Zako (Bazooka Exit adjustment for aerial boost turning) -- c8510 強ザコ(バズーカ 出口さん調整用　空中ブースト旋回時
+85100060 c8510 Strong Zako (Bazooka Exit adjustment for boost turning_180 degree turn -- c8510 強ザコ(バズーカ 出口さん調整用　ブースト旋回時_180度ターン
+85100065 c8510 Strong Zako (Bazooka for exit-san adjustment when turning in mid-air boost_180 degree turn -- c8510 強ザコ(バズーカ 出口さん調整用　空中ブースト旋回時_180度ターン
+85100070 c8510 Strong zako (bazooka for adjusting the exit when moving the brejo) -- c8510 強ザコ(バズーカ 出口さん調整用　ブレホ移動時
+85100075 c8510 Strong Zako (Bazooka for adjusting the exit when moving in the air) -- c8510 強ザコ(バズーカ 出口さん調整用　空中ブレホ移動時
+85100080 c8510 Strong Zako (bazooka for adjusting the exit when the cover is reversed) -- c8510 強ザコ(バズーカ 出口さん調整用　カバー反転時
+85100090 c8510 Strong Zako (Bazooka Deguchi-san adjustment for large quick boost) -- c8510 強ザコ(バズーカ 出口さん調整用　大クイックブースト時
+85110000 c8511 For strong pressure practice, normal time -- c8511 強ザコ練習用　通常時
+85110010 c8511 For practicing strong pressure, when dashing -- c8511 強ザコ練習用　ダッシュ時
+85110015 c8511 For strong zako practice, high speed dash -- c8511 強ザコ練習用　高速ダッシュ時
+85110020 c8511 For strong pressure practice, when boosting -- c8511 強ザコ練習用　ブースト時
+85110030 c8511 For practicing strong braking -- c8511 強ザコ練習用　ブレーキ時
+85110040 c8511 For training with strong force, when moving in the air -- c8511 強ザコ練習用　空中移動時
+85110050 c8511 For training with strong pressure during boost turning -- c8511 強ザコ練習用　ブースト旋回時
+85110055 c8511 For strong zako practice, during aerial boost turning -- c8511 強ザコ練習用　空中ブースト旋回時
+85110060 c8511 For training with strong pressure Boost turning_180 degree turn -- c8511 強ザコ練習用　ブースト旋回時_180度ターン
+85110065 c8511 For training with strong force Aerial boost turning _180 degree turn -- c8511 強ザコ練習用　空中ブースト旋回時_180度ターン
+85110070 c8511 For practicing strong pressure, when moving Brejo -- c8511 強ザコ練習用　ブレホ移動時
+85110075 c8511 For training with strong force, when moving in the air -- c8511 強ザコ練習用　空中ブレホ移動時
+85110080 c8511 For practicing strong pressure, when cover is reversed -- c8511 強ザコ練習用　カバー反転時
+85110090 c8511 For strong zako practice, large quick boost -- c8511 強ザコ練習用　大クイックブースト時
+90310000 c1000 template normal time -- c1000　テンプレート　通常時
+90310010 c1000 template dash time -- c1000　テンプレート　ダッシュ時
+90310015 c1000 template high speed dash -- c1000　テンプレート　高速ダッシュ時
+90310020 c1000 template boost -- c1000　テンプレート　ブースト時
+90310030 c1000 template when braking -- c1000　テンプレート　ブレーキ時
+90310040 c1000 template when moving in the air -- c1000　テンプレート　空中移動時
+90310050 c1000 template when turning boost -- c1000　テンプレート　ブースト旋回時
+90310055 c1000 template during aerial boost turning -- c1000　テンプレート　空中ブースト旋回時
+90310060 c1000 template Boost turning_180 degree turn -- c1000　テンプレート　ブースト旋回時_180度ターン
+90310065 c1000 Template Aerial boost turning_180 degree turn -- c1000　テンプレート　空中ブースト旋回時_180度ターン
+90310070 c1000 template when moving Brejo -- c1000　テンプレート　ブレホ移動時
+90310075 c1000 Template When moving in the air -- c1000　テンプレート　空中ブレホ移動時
+90310080 c1000 template when cover is reversed -- c1000　テンプレート　カバー反転時
+90310090 c1000 template large quick boost -- c1000　テンプレート　大クイックブースト時
+92010000 c9201 Reverse joint - normal -- c9201 逆関節 - 通常時
+92010010 c9201 Reverse joint - when sprinting -- c9201 逆関節 - ダッシュ時
+92010015 c9201 Reverse joint - during high speed dash -- c9201 逆関節 - 高速ダッシュ時
+92010020 c9201 Reverse joint - when boosted -- c9201 逆関節 - ブースト時
+92010030 c9201 Reverse joint - when braking -- c9201 逆関節 - ブレーキ時
+92010040 c9201 Reverse joint - when moving in the air -- c9201 逆関節 - 空中移動時
+92010050 c9201 Reverse joint - when turning boost -- c9201 逆関節 - ブースト旋回時
+92010055 c9201 Reverse joint - when turning in mid-air boost -- c9201 逆関節 - 空中ブースト旋回時
+92010060 c9201 Reverse joint - 180 degree turn when turning boost -- c9201 逆関節 - ブースト旋回時_180度ターン
+92010065 c9201 Reverse joint - 180 degree turn during aerial boost turning -- c9201 逆関節 - 空中ブースト旋回時_180度ターン
+92010070 c9201 Reverse joint - when moving Brejo -- c9201 逆関節 - ブレホ移動時
+92010075 c9201 Reverse joint - when moving in mid-air Breho -- c9201 逆関節 - 空中ブレホ移動時
+92010080 c9201 Reverse joint - when cover is reversed -- c9201 逆関節 - カバー反転時
+92010090 c9201 Reverse joint - large quick boost -- c9201 逆関節 - 大クイックブースト時
+92030000 c9203 Reverse joint damage Lv1 interval 2 seconds normal time -- c9203 逆関節 ダメージLv1 間隔2秒　通常時
+92030010 c9203 Reverse joint damage Lv1 interval 2 seconds when dashing -- c9203 逆関節 ダメージLv1 間隔2秒　ダッシュ時
+92030015 c9203 Reverse joint damage Lv1 interval 2 seconds during high speed dash -- c9203 逆関節 ダメージLv1 間隔2秒　高速ダッシュ時
+92030020 c9203 Reverse joint damage Lv1 interval 2 seconds when boosted -- c9203 逆関節 ダメージLv1 間隔2秒　ブースト時
+92030030 c9203 Reverse joint damage Lv1 interval 2 seconds when braking -- c9203 逆関節 ダメージLv1 間隔2秒　ブレーキ時
+92030040 c9203 Reverse joint damage Lv1 interval 2 seconds when moving in the air -- c9203 逆関節 ダメージLv1 間隔2秒　空中移動時
+92030050 c9203 Reverse joint damage Lv1 interval 2 seconds when turning boost -- c9203 逆関節 ダメージLv1 間隔2秒　ブースト旋回時
+92030055 c9203 Reverse joint damage Lv1 interval 2 seconds when turning in air boost -- c9203 逆関節 ダメージLv1 間隔2秒　空中ブースト旋回時
+92030060 c9203 Reverse joint damage Lv1 interval 2 seconds Boost turning_180 degree turn -- c9203 逆関節 ダメージLv1 間隔2秒　ブースト旋回時_180度ターン
+92030065 c9203 Reverse joint Damage Lv1 Interval 2 seconds Air boost turning when turning_180 degrees -- c9203 逆関節 ダメージLv1 間隔2秒　空中ブースト旋回時_180度ターン
+92030070 c9203 Reverse joint damage Lv1 interval 2 seconds when moving Breho -- c9203 逆関節 ダメージLv1 間隔2秒　ブレホ移動時
+92030075 c9203 Reverse joint damage Lv1 interval 2 seconds when moving in the air -- c9203 逆関節 ダメージLv1 間隔2秒　空中ブレホ移動時
+92030080 c9203 Reverse joint damage Lv1 interval 2 seconds when cover is reversed -- c9203 逆関節 ダメージLv1 間隔2秒　カバー反転時
+92030090 c9203 Reverse joint damage Lv1 interval 2 seconds large quick boost -- c9203 逆関節 ダメージLv1 間隔2秒　大クイックブースト時
+92040000 c9204 Reverse joint damage Lv1 interval 0.1 seconds normal time -- c9204 逆関節 ダメージLv1 間隔0.1秒　通常時
+92040010 c9204 Reverse joint damage Lv1 interval 0.1 seconds when dashing -- c9204 逆関節 ダメージLv1 間隔0.1秒　ダッシュ時
+92040015 c9204 Reverse joint damage Lv1 interval 0.1 seconds during high speed dash -- c9204 逆関節 ダメージLv1 間隔0.1秒　高速ダッシュ時
+92040020 c9204 Reverse joint damage Lv1 interval 0.1 seconds when boosted -- c9204 逆関節 ダメージLv1 間隔0.1秒　ブースト時
+92040030 c9204 Reverse joint damage Lv1 interval 0.1 seconds when braking -- c9204 逆関節 ダメージLv1 間隔0.1秒　ブレーキ時
+92040040 c9204 Reverse joint damage Lv1 interval 0.1 seconds when moving in the air -- c9204 逆関節 ダメージLv1 間隔0.1秒　空中移動時
+92040050 c9204 Reverse joint damage Lv1 interval 0.1 seconds Boost turning -- c9204 逆関節 ダメージLv1 間隔0.1秒　ブースト旋回時
+92040055 c9204 Reverse joint damage Lv1 interval 0.1 seconds when turning in the air boost -- c9204 逆関節 ダメージLv1 間隔0.1秒　空中ブースト旋回時
+92040060 c9204 Reverse joint damage Lv1 interval 0.1 seconds Boost turning_180 degree turn -- c9204 逆関節 ダメージLv1 間隔0.1秒　ブースト旋回時_180度ターン
+92040065 c9204 Reverse joint damage Lv1 Interval 0.1 seconds Aerial boost turning_180 degree turn -- c9204 逆関節 ダメージLv1 間隔0.1秒　空中ブースト旋回時_180度ターン
+92040070 c9204 Reverse joint damage Lv1 interval 0.1 seconds when moving Breho -- c9204 逆関節 ダメージLv1 間隔0.1秒　ブレホ移動時
+92040075 c9204 Reverse joint damage Lv1 interval 0.1 seconds when moving in the air -- c9204 逆関節 ダメージLv1 間隔0.1秒　空中ブレホ移動時
+92040080 c9204 Reverse joint damage Lv1 interval 0.1 seconds when cover is reversed -- c9204 逆関節 ダメージLv1 間隔0.1秒　カバー反転時
+92040090 c9204 Reverse joint damage Lv1 interval 0.1 seconds large quick boost -- c9204 逆関節 ダメージLv1 間隔0.1秒　大クイックブースト時
+93070000 c9307 Colorless pouring communist MT normal time -- c9307 無色流し込み共産MT　通常時
+93070010 c9307 Colorless pouring communist MT dash time -- c9307 無色流し込み共産MT　ダッシュ時
+93070015 c9307 Colorless pouring communist MT at high speed dash -- c9307 無色流し込み共産MT　高速ダッシュ時
+93070020 c9307 Colorless pouring communist MT boost time -- c9307 無色流し込み共産MT　ブースト時
+93070030 c9307 Colorless poured communist MT during braking -- c9307 無色流し込み共産MT　ブレーキ時
+93070040 c9307 Colorless pouring communist MT when moving in the air -- c9307 無色流し込み共産MT　空中移動時
+93070050 c9307 Colorless pouring communist MT when turning boost -- c9307 無色流し込み共産MT　ブースト旋回時
+93070055 c9307 Colorless pouring communist MT during aerial boost turning -- c9307 無色流し込み共産MT　空中ブースト旋回時
+93070060 c9307 Colorless poured communist MT Boost turning_180 degree turn -- c9307 無色流し込み共産MT　ブースト旋回時_180度ターン
+93070065 c9307 Colorless pouring Communist MT Aerial boost turning_180 degree turn -- c9307 無色流し込み共産MT　空中ブースト旋回時_180度ターン
+93070070 c9307 Colorless pouring communist MT when moving Brejo -- c9307 無色流し込み共産MT　ブレホ移動時
+93070075 c9307 Colorless pouring communist MT when moving in the air -- c9307 無色流し込み共産MT　空中ブレホ移動時
+93070080 c9307 Colorless pouring communist MT when cover is reversed -- c9307 無色流し込み共産MT　カバー反転時
+93070090 c9307 Colorless pouring communist MT large quick boost -- c9307 無色流し込み共産MT　大クイックブースト時
+93080000 c9308 Tank control verification normal time -- c9308 タンク制御検証用　通常時
+93080010 c9308 Tank control verification during dash -- c9308 タンク制御検証用　ダッシュ時
+93080015 c9308 Tank control verification during high speed dash -- c9308 タンク制御検証用　高速ダッシュ時
+93080020 c9308 Tank control verification at boost time -- c9308 タンク制御検証用　ブースト時
+93080030 c9308 Tank control verification during braking -- c9308 タンク制御検証用　ブレーキ時
+93080040 c9308 Tank control verification during aerial movement -- c9308 タンク制御検証用　空中移動時
+93080050 c9308 Tank control verification during boost turning -- c9308 タンク制御検証用　ブースト旋回時
+93080055 c9308 Tank control verification during aerial boost turning -- c9308 タンク制御検証用　空中ブースト旋回時
+93080060 c9308 For tank control verification Boost turning_180 degree turn -- c9308 タンク制御検証用　ブースト旋回時_180度ターン
+93080065 c9308 Tank control verification during aerial boost turning_180 degree turn -- c9308 タンク制御検証用　空中ブースト旋回時_180度ターン
+93080070 c9308 For tank control verification when moving Breho -- c9308 タンク制御検証用　ブレホ移動時
+93080075 c9308 For tank control verification, during aerial Breho movement -- c9308 タンク制御検証用　空中ブレホ移動時
+93080080 c9308 Tank control verification when cover is reversed -- c9308 タンク制御検証用　カバー反転時
+93080090 c9308 Tank control verification for large quick boost -- c9308 タンク制御検証用　大クイックブースト時
+93090000 c9309 For quadruped control test Normal time -- c9309 四脚制御テスト用　通常時
+93090010 c9309 For quadruped control test during dash -- c9309 四脚制御テスト用　ダッシュ時
+93090015 c9309 For four-legged control test, during high-speed dash -- c9309 四脚制御テスト用　高速ダッシュ時
+93090020 c9309 For quadruped control test at boost time -- c9309 四脚制御テスト用　ブースト時
+93090030 c9309 For quadruped control test during braking -- c9309 四脚制御テスト用　ブレーキ時
+93090040 c9309 For quadruped control test, when moving in the air -- c9309 四脚制御テスト用　空中移動時
+93090050 c9309 For quadruped control test during boost turning -- c9309 四脚制御テスト用　ブースト旋回時
+93090055 c9309 For quadruped control test, during aerial boost turning -- c9309 四脚制御テスト用　空中ブースト旋回時
+93090060 c9309 For quadruped control test Boost turning_180 degree turn -- c9309 四脚制御テスト用　ブースト旋回時_180度ターン
+93090065 c9309 For quadruped control test Aerial boost turning_180 degree turn -- c9309 四脚制御テスト用　空中ブースト旋回時_180度ターン
+93090070 c9309 For quadruped control test, when moving Brejo -- c9309 四脚制御テスト用　ブレホ移動時
+93090075 c9309 For quadruped control test, during aerial Breho movement -- c9309 四脚制御テスト用　空中ブレホ移動時
+93090080 c9309 For quadruped control test, when cover is reversed -- c9309 四脚制御テスト用　カバー反転時
+93090090 c9309 For quadruped control test, large quick boost -- c9309 四脚制御テスト用　大クイックブースト時
+93200000 c9320 planning training aircraft normal time -- c9320 企画練習機　通常時
+93200010 c9320 planning training aircraft dash time -- c9320 企画練習機　ダッシュ時
+93200015 c9320 planning training aircraft high speed dash -- c9320 企画練習機　高速ダッシュ時
+93200020 c9320 planning training aircraft at boost time -- c9320 企画練習機　ブースト時
+93200030 c9320 planning training aircraft during braking -- c9320 企画練習機　ブレーキ時
+93200040 c9320 planning training aircraft during air movement -- c9320 企画練習機　空中移動時
+93200050 c9320 planning training aircraft during boost turning -- c9320 企画練習機　ブースト旋回時
+93200055 c9320 planning training aircraft during aerial boost turning -- c9320 企画練習機　空中ブースト旋回時
+93200060 c9320 Planning training aircraft Boost turning_180 degree turn -- c9320 企画練習機　ブースト旋回時_180度ターン
+93200065 c9320 planning training aircraft _180 degree turn during aerial boost turning -- c9320 企画練習機　空中ブースト旋回時_180度ターン
+93200070 c9320 Planning training aircraft Brejo when moving -- c9320 企画練習機　ブレホ移動時
+93200075 c9320 planning training aircraft during aerial Breho movement -- c9320 企画練習機　空中ブレホ移動時
+93200080 c9320 planning training machine when cover is reversed -- c9320 企画練習機　カバー反転時
+93200090 c9320 planning training machine large quick boost -- c9320 企画練習機　大クイックブースト時
+93210000 c9321 Link test normal time -- c9321 リンクテスト　通常時
+93210010 c9321 Link test dash time -- c9321 リンクテスト　ダッシュ時
+93210015 c9321 Link test during high speed dash -- c9321 リンクテスト　高速ダッシュ時
+93210020 c9321 Link test at boost time -- c9321 リンクテスト　ブースト時
+93210030 c9321 Link test during braking -- c9321 リンクテスト　ブレーキ時
+93210040 c9321 Link test when moving in the air -- c9321 リンクテスト　空中移動時
+93210050 c9321 Link test during boost turning -- c9321 リンクテスト　ブースト旋回時
+93210055 c9321 Link test during aerial boost turning -- c9321 リンクテスト　空中ブースト旋回時
+93210060 c9321 Link test Boost turning_180 degree turn -- c9321 リンクテスト　ブースト旋回時_180度ターン
+93210065 c9321 Link test Aerial boost turning_180 degree turn -- c9321 リンクテスト　空中ブースト旋回時_180度ターン
+93210070 c9321 Link test when moving Breho -- c9321 リンクテスト　ブレホ移動時
+93210075 c9321 Link test during aerial Breho movement -- c9321 リンクテスト　空中ブレホ移動時
+93210080 c9321 Link test when cover is reversed -- c9321 リンクテスト　カバー反転時
+93210090 c9321 Link test large quick boost -- c9321 リンクテスト　大クイックブースト時
+93220000 c9322 Enomoto test normal time -- c9322 榎本テスト　通常時
+93220010 c9322 Enomoto test dash time -- c9322 榎本テスト　ダッシュ時
+93220015 c9322 Enomoto test during high speed dash -- c9322 榎本テスト　高速ダッシュ時
+93220020 c9322 Enomoto test at boost time -- c9322 榎本テスト　ブースト時
+93220030 c9322 Enomoto test during braking -- c9322 榎本テスト　ブレーキ時
+93220040 c9322 Enomoto test during aerial movement -- c9322 榎本テスト　空中移動時
+93220050 c9322 Enomoto test during boost turning -- c9322 榎本テスト　ブースト旋回時
+93220055 c9322 Enomoto test during aerial boost turning -- c9322 榎本テスト　空中ブースト旋回時
+93220060 c9322 Enomoto test Boost turning_180 degree turn -- c9322 榎本テスト　ブースト旋回時_180度ターン
+93220065 c9322 Enomoto test Aerial boost turning_180 degree turn -- c9322 榎本テスト　空中ブースト旋回時_180度ターン
+93220070 c9322 Enomoto test when moving Breho -- c9322 榎本テスト　ブレホ移動時
+93220075 c9322 Enomoto test during aerial Breho movement -- c9322 榎本テスト　空中ブレホ移動時
+93220080 c9322 Enomoto test when cover is reversed -- c9322 榎本テスト　カバー反転時
+93220090 c9322 Enomoto test large quick boost -- c9322 榎本テスト　大クイックブースト時
+93230000 c9323 Hagiya Test Normal Time -- c9323 はぎやてすと　通常時
+93230010 c9323 Hagiyatest dash time -- c9323 はぎやてすと　ダッシュ時
+93230015 c9323 Hagiya Testu High Speed ​​Dash -- c9323 はぎやてすと　高速ダッシュ時
+93230020 c9323 Hagiyatest boost time -- c9323 はぎやてすと　ブースト時
+93230030 c9323 Hagiya Test Braking -- c9323 はぎやてすと　ブレーキ時
+93230040 c9323 Hagiyatestu when moving in the air -- c9323 はぎやてすと　空中移動時
+93230050 c9323 Hagiya Test Boost Turning -- c9323 はぎやてすと　ブースト旋回時
+93230055 c9323 Hagiya Testu air boost turning -- c9323 はぎやてすと　空中ブースト旋回時
+93230060 c9323 Hagiya Test Boost turning_180 degree turn -- c9323 はぎやてすと　ブースト旋回時_180度ターン
+93230065 c9323 Hagiya Testu Air boost turning _180 degree turn -- c9323 はぎやてすと　空中ブースト旋回時_180度ターン
+93230070 c9323 Hagiyatestu Breho when moving -- c9323 はぎやてすと　ブレホ移動時
+93230075 c9323 Hagiyatestu when moving in the air -- c9323 はぎやてすと　空中ブレホ移動時
+93230080 c9323 Hagiyatest when cover is reversed -- c9323 はぎやてすと　カバー反転時
+93230090 c9323 Hagiya Test large quick boost -- c9323 はぎやてすと　大クイックブースト時
+93300000 c9330 For checking large ragdolls Normal time -- c9330 大型ラグドール確認用　通常時
+93300010 c9330 Large ragdoll confirmation when dashing -- c9330 大型ラグドール確認用　ダッシュ時
+93300015 c9330 For checking large ragdolls during high-speed dash -- c9330 大型ラグドール確認用　高速ダッシュ時
+93300020 c9330 Large ragdoll confirmation when boosting -- c9330 大型ラグドール確認用　ブースト時
+93300030 c9330 Large ragdoll confirmation when braking -- c9330 大型ラグドール確認用　ブレーキ時
+93300040 c9330 Large ragdoll confirmation when moving in the air -- c9330 大型ラグドール確認用　空中移動時
+93300050 c9330 Large ragdoll confirmation when turning boost -- c9330 大型ラグドール確認用　ブースト旋回時
+93300055 c9330 For checking large ragdolls, during aerial boost turning -- c9330 大型ラグドール確認用　空中ブースト旋回時
+93300060 c9330 For checking large ragdoll, boost turning_180 degree turn -- c9330 大型ラグドール確認用　ブースト旋回時_180度ターン
+93300065 c9330 For checking large ragdolls, during aerial boost turning_180 degree turn -- c9330 大型ラグドール確認用　空中ブースト旋回時_180度ターン
+93300070 c9330 For checking large ragdolls, when moving Brejo -- c9330 大型ラグドール確認用　ブレホ移動時
+93300075 c9330 For checking large ragdolls when moving in the air -- c9330 大型ラグドール確認用　空中ブレホ移動時
+93300080 c9330 For checking large ragdoll when cover is reversed -- c9330 大型ラグドール確認用　カバー反転時
+93300090 c9330 For large ragdoll confirmation, large quick boost -- c9330 大型ラグドール確認用　大クイックブースト時
+93400000 c9340 Link test normal time -- c9340 リンクテスト　通常時
+93400010 c9340 Link test dash time -- c9340 リンクテスト　ダッシュ時
+93400015 c9340 Link test during high speed dash -- c9340 リンクテスト　高速ダッシュ時
+93400020 c9340 link test boost -- c9340 リンクテスト　ブースト時
+93400030 c9340 Link test during braking -- c9340 リンクテスト　ブレーキ時
+93400040 c9340 Link test when moving in the air -- c9340 リンクテスト　空中移動時
+93400050 c9340 link test during boost turning -- c9340 リンクテスト　ブースト旋回時
+93400055 c9340 link test during aerial boost turning -- c9340 リンクテスト　空中ブースト旋回時
+93400060 c9340 Link test Boost turning_180 degree turn -- c9340 リンクテスト　ブースト旋回時_180度ターン
+93400065 c9340 Link test Aerial boost turning_180 degree turn -- c9340 リンクテスト　空中ブースト旋回時_180度ターン
+93400070 c9340 Link test when moving Breho -- c9340 リンクテスト　ブレホ移動時
+93400075 c9340 Link test during aerial Breho movement -- c9340 リンクテスト　空中ブレホ移動時
+93400080 c9340 Link test when cover is reversed -- c9340 リンクテスト　カバー反転時
+93400090 c9340 link test large quick boost -- c9340 リンクテスト　大クイックブースト時
+93410000 c9341 Link test normal time -- c9341 リンクテスト　通常時
+93410010 c9341 Link test dash time -- c9341 リンクテスト　ダッシュ時
+93410015 c9341 Link test during high speed dash -- c9341 リンクテスト　高速ダッシュ時
+93410020 c9341 Link test at boost time -- c9341 リンクテスト　ブースト時
+93410030 c9341 Link test during braking -- c9341 リンクテスト　ブレーキ時
+93410040 c9341 Link test when moving in the air -- c9341 リンクテスト　空中移動時
+93410050 c9341 Link test during boost turning -- c9341 リンクテスト　ブースト旋回時
+93410055 c9341 Link test during aerial boost turning -- c9341 リンクテスト　空中ブースト旋回時
+93410060 c9341 Link test Boost turning_180 degree turn -- c9341 リンクテスト　ブースト旋回時_180度ターン
+93410065 c9341 Link test Aerial boost turning_180 degree turn -- c9341 リンクテスト　空中ブースト旋回時_180度ターン
+93410070 c9341 Link test when moving Breho -- c9341 リンクテスト　ブレホ移動時
+93410075 c9341 Link test during aerial Breho movement -- c9341 リンクテスト　空中ブレホ移動時
+93410080 c9341 Link test when cover is reversed -- c9341 リンクテスト　カバー反転時
+93410090 c9341 Link test large quick boost -- c9341 リンクテスト　大クイックブースト時
+94000000 c9400 map team test bazooka battery small normal time -- c9400 マップ班テスト用 バズーカ砲台 小　通常時
+94000010 c9400 map team test bazooka turret small dash time -- c9400 マップ班テスト用 バズーカ砲台 小　ダッシュ時
+94000015 c9400 map team test bazooka turret small high speed dash -- c9400 マップ班テスト用 バズーカ砲台 小　高速ダッシュ時
+94000020 c9400 map team test bazooka turret small boost -- c9400 マップ班テスト用 バズーカ砲台 小　ブースト時
+94000030 c9400 map team test bazooka turret small during braking -- c9400 マップ班テスト用 バズーカ砲台 小　ブレーキ時
+94000040 c9400 map team test bazooka battery small during aerial movement -- c9400 マップ班テスト用 バズーカ砲台 小　空中移動時
+94000050 c9400 map team test bazooka turret small boost turning -- c9400 マップ班テスト用 バズーカ砲台 小　ブースト旋回時
+94000055 c9400 map team test bazooka turret small aerial boost turning -- c9400 マップ班テスト用 バズーカ砲台 小　空中ブースト旋回時
+94000060 c9400 map team test bazooka turret small boost turning_180 degree turn -- c9400 マップ班テスト用 バズーカ砲台 小　ブースト旋回時_180度ターン
+94000065 c9400 map team test bazooka turret small aerial boost turning_180 degree turn -- c9400 マップ班テスト用 バズーカ砲台 小　空中ブースト旋回時_180度ターン
+94000070 c9400 Map team test bazooka turret small Breho when moving -- c9400 マップ班テスト用 バズーカ砲台 小　ブレホ移動時
+94000075 c9400 map team test bazooka turret small when moving in the air -- c9400 マップ班テスト用 バズーカ砲台 小　空中ブレホ移動時
+94000080 c9400 map team test bazooka turret small when cover is reversed -- c9400 マップ班テスト用 バズーカ砲台 小　カバー反転時
+94000090 c9400 map team test bazooka turret small large quick boost -- c9400 マップ班テスト用 バズーカ砲台 小　大クイックブースト時
+94010000 c9401 Elevator side main turret normal time -- c9401 エレベータ側面メイン砲台　通常時
+94010010 c9401 Elevator side main turret during dash -- c9401 エレベータ側面メイン砲台　ダッシュ時
+94010015 c9401 Elevator side main turret during high speed dash -- c9401 エレベータ側面メイン砲台　高速ダッシュ時
+94010020 c9401 Elevator side main turret during boost -- c9401 エレベータ側面メイン砲台　ブースト時
+94010030 c9401 Elevator side main turret during braking -- c9401 エレベータ側面メイン砲台　ブレーキ時
+94010040 c9401 Elevator side main battery during air movement -- c9401 エレベータ側面メイン砲台　空中移動時
+94010050 c9401 Elevator side main turret during boost turning -- c9401 エレベータ側面メイン砲台　ブースト旋回時
+94010055 c9401 Elevator side main battery during aerial boost turn -- c9401 エレベータ側面メイン砲台　空中ブースト旋回時
+94010060 c9401 Elevator side main turret Boost turning_180 degree turn -- c9401 エレベータ側面メイン砲台　ブースト旋回時_180度ターン
+94010065 c9401 Main battery on the side of the elevator - 180 degree turn during aerial boost turning -- c9401 エレベータ側面メイン砲台　空中ブースト旋回時_180度ターン
+94010070 c9401 Elevator side main battery when moving Brejo -- c9401 エレベータ側面メイン砲台　ブレホ移動時
+94010075 c9401 Elevator side main turret during aerial Brejo movement -- c9401 エレベータ側面メイン砲台　空中ブレホ移動時
+94010080 c9401 Elevator side main turret when cover is reversed -- c9401 エレベータ側面メイン砲台　カバー反転時
+94010090 c9401 Elevator side main turret during large quick boost -- c9401 エレベータ側面メイン砲台　大クイックブースト時
+94100000 c9410 Elevator upper main turret normal time -- c9410 エレベータ上部メイン砲台　通常時
+94100010 c9410 Elevator upper main turret during dash -- c9410 エレベータ上部メイン砲台　ダッシュ時
+94100015 c9410 Elevator upper main turret during high speed dash -- c9410 エレベータ上部メイン砲台　高速ダッシュ時
+94100020 c9410 Elevator upper main battery during boost -- c9410 エレベータ上部メイン砲台　ブースト時
+94100030 c9410 Elevator upper main turret during braking -- c9410 エレベータ上部メイン砲台　ブレーキ時
+94100040 c9410 Elevator upper main battery during aerial movement -- c9410 エレベータ上部メイン砲台　空中移動時
+94100050 c9410 Elevator upper main battery during boost rotation -- c9410 エレベータ上部メイン砲台　ブースト旋回時
+94100055 c9410 Elevator upper main battery during aerial boost turning -- c9410 エレベータ上部メイン砲台　空中ブースト旋回時
+94100060 c9410 Elevator upper main turret Boost turning_180 degree turn -- c9410 エレベータ上部メイン砲台　ブースト旋回時_180度ターン
+94100065 c9410 Elevator upper main battery - 180 degree turn during aerial boost turn -- c9410 エレベータ上部メイン砲台　空中ブースト旋回時_180度ターン
+94100070 c9410 Elevator upper main battery when moving Brejo -- c9410 エレベータ上部メイン砲台　ブレホ移動時
+94100075 c9410 Elevator upper main battery during aerial Brejo movement -- c9410 エレベータ上部メイン砲台　空中ブレホ移動時
+94100080 c9410 Elevator upper main turret cover inverted -- c9410 エレベータ上部メイン砲台　カバー反転時
+94100090 c9410 Elevator upper main turret during large quick boost -- c9410 エレベータ上部メイン砲台　大クイックブースト時
+94110000 c9411 Map team test sniper battery large normal time -- c9411 マップ班テスト用 スナイパー砲台 大　通常時
+94110010 c9411 Map team test sniper turret large dash -- c9411 マップ班テスト用 スナイパー砲台 大　ダッシュ時
+94110015 c9411 Map team test sniper turret large high speed dash -- c9411 マップ班テスト用 スナイパー砲台 大　高速ダッシュ時
+94110020 c9411 Map team test sniper turret large boost -- c9411 マップ班テスト用 スナイパー砲台 大　ブースト時
+94110030 c9411 Map team test sniper turret large during braking -- c9411 マップ班テスト用 スナイパー砲台 大　ブレーキ時
+94110040 c9411 Map team test sniper battery large during aerial movement -- c9411 マップ班テスト用 スナイパー砲台 大　空中移動時
+94110050 c9411 Map team test sniper turret large boost turning -- c9411 マップ班テスト用 スナイパー砲台 大　ブースト旋回時
+94110055 c9411 Sniper battery for map team test Large aerial boost turning -- c9411 マップ班テスト用 スナイパー砲台 大　空中ブースト旋回時
+94110060 c9411 Map team test sniper turret large boost turn_180 degree turn -- c9411 マップ班テスト用 スナイパー砲台 大　ブースト旋回時_180度ターン
+94110065 c9411 Map team test sniper turret large aerial boost turning_180 degree turn -- c9411 マップ班テスト用 スナイパー砲台 大　空中ブースト旋回時_180度ターン
+94110070 c9411 Map team test sniper battery large Brejo when moving -- c9411 マップ班テスト用 スナイパー砲台 大　ブレホ移動時
+94110075 c9411 Sniper battery for map team test Large aerial Brejo movement -- c9411 マップ班テスト用 スナイパー砲台 大　空中ブレホ移動時
+94110080 c9411 Map team test sniper turret large cover reversal -- c9411 マップ班テスト用 スナイパー砲台 大　カバー反転時
+94110090 c9411 Map team test sniper turret large large quick boost -- c9411 マップ班テスト用 スナイパー砲台 大　大クイックブースト時
+94200000 c9420 missile turret for adjustment normal time -- c9420 ミサイル砲台 調整用　通常時
+94200010 c9420 Missile battery for adjustment during dash -- c9420 ミサイル砲台 調整用　ダッシュ時
+94200015 c9420 missile battery adjustment for high speed dash -- c9420 ミサイル砲台 調整用　高速ダッシュ時
+94200020 c9420 missile turret adjustment boost time -- c9420 ミサイル砲台 調整用　ブースト時
+94200030 c9420 Missile battery adjustment for braking -- c9420 ミサイル砲台 調整用　ブレーキ時
+94200040 c9420 Missile battery adjustment for air movement -- c9420 ミサイル砲台 調整用　空中移動時
+94200050 c9420 Missile battery adjustment for boost turning -- c9420 ミサイル砲台 調整用　ブースト旋回時
+94200055 c9420 Missile battery adjustment for air boost turning -- c9420 ミサイル砲台 調整用　空中ブースト旋回時
+94200060 c9420 missile battery adjustment boost turning_180 degree turn -- c9420 ミサイル砲台 調整用　ブースト旋回時_180度ターン
+94200065 c9420 Missile battery adjustment for air boost turning_180 degree turn -- c9420 ミサイル砲台 調整用　空中ブースト旋回時_180度ターン
+94200070 c9420 Missile battery adjustment for Brejo movement -- c9420 ミサイル砲台 調整用　ブレホ移動時
+94200075 c9420 Missile battery adjustment for aerial Brejo movement -- c9420 ミサイル砲台 調整用　空中ブレホ移動時
+94200080 c9420 missile turret for adjustment when cover is reversed -- c9420 ミサイル砲台 調整用　カバー反転時
+94200090 c9420 missile turret adjustment for large quick boost -- c9420 ミサイル砲台 調整用　大クイックブースト時
+94310000 c9431 Machine gun battery normal time -- c9431 マシンガン砲台　通常時
+94310010 c9431 Machine gun battery when dashing -- c9431 マシンガン砲台　ダッシュ時
+94310015 c9431 Machine gun battery during high speed dash -- c9431 マシンガン砲台　高速ダッシュ時
+94310020 c9431 machine gun turret boost -- c9431 マシンガン砲台　ブースト時
+94310030 c9431 Machine gun battery during braking -- c9431 マシンガン砲台　ブレーキ時
+94310040 c9431 Machine gun battery when moving in the air -- c9431 マシンガン砲台　空中移動時
+94310050 c9431 machine gun turret boost turning -- c9431 マシンガン砲台　ブースト旋回時
+94310055 c9431 Machine gun battery during aerial boost turning -- c9431 マシンガン砲台　空中ブースト旋回時
+94310060 c9431 Machine gun turret Boost turning_180 degree turn -- c9431 マシンガン砲台　ブースト旋回時_180度ターン
+94310065 c9431 Machine gun turret aerial boost turning_180 degree turn -- c9431 マシンガン砲台　空中ブースト旋回時_180度ターン
+94310070 c9431 Machine gun battery Brejo when moving -- c9431 マシンガン砲台　ブレホ移動時
+94310075 c9431 Machine gun battery during aerial Brejo movement -- c9431 マシンガン砲台　空中ブレホ移動時
+94310080 c9431 Machine gun turret cover inverted -- c9431 マシンガン砲台　カバー反転時
+94310090 c9431 Machine gun turret large quick boost -- c9431 マシンガン砲台　大クイックブースト時
+94320000 c9432 Machine gun battery predictive firing test_Bullet normal time -- c9432 マシンガン砲台予測射撃テスト_弾丸　通常時
+94320010 c9432 machine gun battery predictive firing test_bullet dash time -- c9432 マシンガン砲台予測射撃テスト_弾丸　ダッシュ時
+94320015 c9432 machine gun battery predictive firing test_bullet high speed dash -- c9432 マシンガン砲台予測射撃テスト_弾丸　高速ダッシュ時
+94320020 c9432 machine gun battery predictive firing test_bullet boost time -- c9432 マシンガン砲台予測射撃テスト_弾丸　ブースト時
+94320030 c9432 machine gun battery predictive firing test_bullet braking -- c9432 マシンガン砲台予測射撃テスト_弾丸　ブレーキ時
+94320040 c9432 machine gun battery predictive firing test_bullet air movement -- c9432 マシンガン砲台予測射撃テスト_弾丸　空中移動時
+94320050 c9432 machine gun battery predictive firing test_bullet boost turning -- c9432 マシンガン砲台予測射撃テスト_弾丸　ブースト旋回時
+94320055 c9432 machine gun battery predictive firing test_bullet during aerial boost turning -- c9432 マシンガン砲台予測射撃テスト_弾丸　空中ブースト旋回時
+94320060 c9432 Machine gun battery predictive firing test_Bullet boost turning_180 degree turn -- c9432 マシンガン砲台予測射撃テスト_弾丸　ブースト旋回時_180度ターン
+94320065 c9432 Machine gun battery predictive firing test_Bullet air boost turning time_180 degree turn -- c9432 マシンガン砲台予測射撃テスト_弾丸　空中ブースト旋回時_180度ターン
+94320070 c9432 Machine gun battery predictive firing test_Bullet when moving Brejo -- c9432 マシンガン砲台予測射撃テスト_弾丸　ブレホ移動時
+94320075 c9432 Machine gun battery predictive firing test_Bullet during aerial Brejo movement -- c9432 マシンガン砲台予測射撃テスト_弾丸　空中ブレホ移動時
+94320080 c9432 Machine gun battery predictive firing test_Bullet when cover is reversed -- c9432 マシンガン砲台予測射撃テスト_弾丸　カバー反転時
+94320090 c9432 machine gun battery predictive firing test_bullet large quick boost -- c9432 マシンガン砲台予測射撃テスト_弾丸　大クイックブースト時
+94330000 c9433 Machine gun battery predictive firing test_LookAt Normal time -- c9433 マシンガン砲台予測射撃テスト_LookAt　通常時
+94330010 c9433 Machine gun battery predictive firing test_LookAt when dashing -- c9433 マシンガン砲台予測射撃テスト_LookAt　ダッシュ時
+94330015 c9433 Machine gun battery predictive firing test_LookAt during high-speed dash -- c9433 マシンガン砲台予測射撃テスト_LookAt　高速ダッシュ時
+94330020 c9433 Machine gun battery predictive firing test_LookAt boost time -- c9433 マシンガン砲台予測射撃テスト_LookAt　ブースト時
+94330030 c9433 Machine gun battery predictive firing test_LookAt during braking -- c9433 マシンガン砲台予測射撃テスト_LookAt　ブレーキ時
+94330040 c9433 Machine gun battery predictive firing test_LookAt when moving in the air -- c9433 マシンガン砲台予測射撃テスト_LookAt　空中移動時
+94330050 c9433 Machine gun battery predictive firing test_LookAt during boost turning -- c9433 マシンガン砲台予測射撃テスト_LookAt　ブースト旋回時
+94330055 c9433 Machine gun battery predictive firing test_LookAt during aerial boost turning -- c9433 マシンガン砲台予測射撃テスト_LookAt　空中ブースト旋回時
+94330060 c9433 Machine gun battery predictive firing test_LookAt Boost turning_180 degree turn -- c9433 マシンガン砲台予測射撃テスト_LookAt　ブースト旋回時_180度ターン
+94330065 c9433 Machine gun battery predictive firing test_LookAt aerial boost turning_180 degree turn -- c9433 マシンガン砲台予測射撃テスト_LookAt　空中ブースト旋回時_180度ターン
+94330070 c9433 Machine gun battery predictive firing test_LookAt Breho when moving -- c9433 マシンガン砲台予測射撃テスト_LookAt　ブレホ移動時
+94330075 c9433 Machine gun battery predictive firing test_LookAt when moving in mid-air Brejo -- c9433 マシンガン砲台予測射撃テスト_LookAt　空中ブレホ移動時
+94330080 c9433 Machine gun battery predictive firing test_LookAt when cover is reversed -- c9433 マシンガン砲台予測射撃テスト_LookAt　カバー反転時
+94330090 c9433 Machine gun battery predictive firing test_LookAt large quick boost -- c9433 マシンガン砲台予測射撃テスト_LookAt　大クイックブースト時
+99600000 c9960 Bullet generation dummy character for VOB Normal time -- c9960 VOB用弾発生ダミーキャラ　通常時
+99600010 c9960 Bullet generation dummy character for VOB when dashing -- c9960 VOB用弾発生ダミーキャラ　ダッシュ時
+99600015 c9960 VOB bullet generation dummy character during high speed dash -- c9960 VOB用弾発生ダミーキャラ　高速ダッシュ時
+99600020 c9960 Bullet generation dummy character for VOB when boosted -- c9960 VOB用弾発生ダミーキャラ　ブースト時
+99600030 c9960 VOB bullet generation dummy character during braking -- c9960 VOB用弾発生ダミーキャラ　ブレーキ時
+99600040 c9960 VOB bullet generation dummy character when moving in the air -- c9960 VOB用弾発生ダミーキャラ　空中移動時
+99600050 c9960 Bullet generation dummy character for VOB when turning boost -- c9960 VOB用弾発生ダミーキャラ　ブースト旋回時
+99600055 c9960 Bullet generation dummy character for VOB during aerial boost turning -- c9960 VOB用弾発生ダミーキャラ　空中ブースト旋回時
+99600060 c9960 Bullet generation dummy character for VOB Boost turning_180 degree turn -- c9960 VOB用弾発生ダミーキャラ　ブースト旋回時_180度ターン
+99600065 c9960 Bullet generation dummy character for VOB Air boost turning _180 degree turn -- c9960 VOB用弾発生ダミーキャラ　空中ブースト旋回時_180度ターン
+99600070 c9960 VOB bullet generation dummy character when moving Breho -- c9960 VOB用弾発生ダミーキャラ　ブレホ移動時
+99600075 c9960 VOB bullet generation dummy character when moving in the air -- c9960 VOB用弾発生ダミーキャラ　空中ブレホ移動時
+99600080 c9960 VOB bullet generation dummy character when cover is reversed -- c9960 VOB用弾発生ダミーキャラ　カバー反転時
+99600090 c9960 VOB bullet generation dummy character large quick boost -- c9960 VOB用弾発生ダミーキャラ　大クイックブースト時
+99800000 c9980 Dummy character Group route patrol Normal time -- c9980 ダミーキャラ　集団ルート巡回　通常時
+99800010 c9980 Dummy character group route patrol when dashing -- c9980 ダミーキャラ　集団ルート巡回　ダッシュ時
+99800020 c9980 Dummy character group route patrol during boost -- c9980 ダミーキャラ　集団ルート巡回　ブースト時
+99800060 c9980 Dummy character for C-end platoon action -- c9980 ダミーキャラ　Cエンド小隊行動用
+99801000 c9980 Dummy character attack -- c9980 ダミーキャラ　攻撃用
+99900000 c9990 Insertion test *Weapon submission prohibited Normal time -- c9990 挿入テスト※武器提出禁止　通常時
+99900010 c9990 Insertion test *Weapon submission prohibited during dash -- c9990 挿入テスト※武器提出禁止　ダッシュ時
+99900015 c9990 Insertion test *Weapon submission prohibited during high-speed dash -- c9990 挿入テスト※武器提出禁止　高速ダッシュ時
+99900020 c9990 Insertion test *Weapon submission prohibited during boost -- c9990 挿入テスト※武器提出禁止　ブースト時
+99900030 c9990 Insertion test *Weapon submission prohibited During braking -- c9990 挿入テスト※武器提出禁止　ブレーキ時
+99900040 c9990 Insertion test *Weapon submission prohibited When moving in the air -- c9990 挿入テスト※武器提出禁止　空中移動時
+99900050 c9990 Insertion test *Weapon submission prohibited When turning boost -- c9990 挿入テスト※武器提出禁止　ブースト旋回時
+99900055 c9990 Insertion test *Weapon submission prohibited during aerial boost turning -- c9990 挿入テスト※武器提出禁止　空中ブースト旋回時
+99900060 c9990 Insertion test *Weapon submission prohibited Boost turning_180 degree turn -- c9990 挿入テスト※武器提出禁止　ブースト旋回時_180度ターン
+99900065 c9990 Insertion test *Weapon submission prohibited During aerial boost turning_180 degree turn -- c9990 挿入テスト※武器提出禁止　空中ブースト旋回時_180度ターン
+99900070 c9990 Insertion test *Weapon submission prohibited When moving Brejo -- c9990 挿入テスト※武器提出禁止　ブレホ移動時
+99900075 c9990 Insertion test *Weapon submission prohibited When moving in mid-air Breho -- c9990 挿入テスト※武器提出禁止　空中ブレホ移動時
+99900080 c9990 Insertion test *Weapon submission prohibited when cover is reversed -- c9990 挿入テスト※武器提出禁止　カバー反転時
+99900090 c9990 Insertion test *Weapon submission prohibited during large quick boost -- c9990 挿入テスト※武器提出禁止　大クイックブースト時
+99991000 *General-purpose type* For turrets, not rotating, normal time -- ※汎用系※　砲台用 旋回しない 通常時
+99991010 *General-purpose type* For turrets, not turning, when dashing -- ※汎用系※　砲台用 旋回しない ダッシュ時
+99991020 *General-purpose type* For turrets, no rotation, during boost -- ※汎用系※　砲台用 旋回しない ブースト時
+99991030 *General-purpose type* For turrets, not turning, when braking -- ※汎用系※　砲台用 旋回しない ブレーキ時
+99991040 *General-purpose type* For artillery batteries, does not rotate, when moving in the air -- ※汎用系※　砲台用 旋回しない 空中移動時
+99991050 *General-purpose type* For turrets No turning When turning with boost -- ※汎用系※　砲台用 旋回しない ブースト旋回時
+99991055 *General-purpose type* For gun turrets No turning When turning during aerial boost turning -- ※汎用系※　砲台用 旋回しない 空中ブースト旋回時
+99991060 *General-purpose type* For gun turrets, no turning, 180 degree turn during boost turning -- ※汎用系※　砲台用 旋回しない ブースト旋回時_180度ターン
+99991065 *General-purpose type* For artillery turrets, no turning, 180 degree turn during aerial boost turning -- ※汎用系※　砲台用 旋回しない 空中ブースト旋回時_180度ターン
+99991070 *General-purpose type* For turrets, does not rotate, when moving Breho -- ※汎用系※　砲台用 旋回しない ブレホ移動時
+99991075 *General-purpose type* For gun turrets, does not rotate, when moving in mid-air Breho -- ※汎用系※　砲台用 旋回しない 空中ブレホ移動時

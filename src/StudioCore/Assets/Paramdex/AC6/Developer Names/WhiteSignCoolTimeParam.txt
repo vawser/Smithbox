@@ -1,0 +1,10 @@
+1 white sign level 1 -- 白サインレベル1
+2 white sign level 2 -- 白サインレベル2
+3 white sign level 3 -- 白サインレベル3
+4 white sign level 4 -- 白サインレベル4
+5 white sign level 5 -- 白サインレベル5
+6 white sign level 6 -- 白サインレベル6
+7 white sign level 7 -- 白サインレベル7
+8 white sign level 8 -- 白サインレベル8
+9 white sign level 9 -- 白サインレベル9
+10 white sign level 10 -- 白サインレベル10

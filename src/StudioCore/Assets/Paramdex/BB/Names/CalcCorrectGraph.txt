@@ -1,44 +1,44 @@
-0 0:なし
-1 1:硬石
-2 2:鋭石
-3 3:みなぎ石
-4 4:にび石
-5 5:刃石
-6 6:蜘蛛糸鋼線
-7 7:水銀石
-8 8:竜石
-9 9:吸いつき石
-10 10:髄石
-11 11:月光石
-12 12:月影石
-13 13:微光石
-14 14:魔法盾石
-15 15:鉱石の精霊DS
-16 16:ＤＳ
-100 最大HP
-101 最大MP
-102 防御力
-110 毒
-111 疫病
-112 出血
-113 呪（発狂）
-114 獣化
-120 レベルシンク：HP
-121 レベルシンク：防御力
-122 レベルシンク：遅効毒耐性値
-123 レベルシンク：劇毒耐性値
-124 レベルシンク：スタミナ
-130 レベルシンク：武器右手ベース
-131 レベルシンク：武器左手ベース
-132 レベルシンク：武器左手：大砲
-133 レベルシンク：武器左手：火炎放射
-134 レベルシンク：武器左手：ロスマリヌス
-135 レベルシンク：投げ
-136 レベルシンク：投げナイフ
-137 レベルシンク：火炎瓶
-140 レベルシンク：先触れ
-141 レベルシンク：小トニ
-142 レベルシンク：手袋
-143 レベルシンク：彼方
-150 回復スポットの最大補充数
-200 成長消費ソウル
+0 0: none
+1 1: Hard Stone
+2 2: Sharp Stone
+3 3: Minagi Stone
+4 4: Nibi Stone
+5 5: Blade Stone
+6 6: Spider Thread Steel Wire
+7 7: Mercury stone
+8 8: Dragon Stone
+9 9: Suction stone
+10 10: Pith stone
+11 11: Moonlight Stone
+12 12: Moonlight Stone
+13 13: Glimmerstone
+14 14: Magic Shield Stone
+15 15: Ore Spirit DS
+16 16: D.S.
+100 maximum HP
+101 maximum MP
+102 Defense
+110 poison
+111 Epidemic
+112 bleeding
+113 Curse (Madness)
+114 Beastification
+120 Level Sync: HP
+121 Level Sync: Defense
+122 Level Sync: Slow Poison Resistance
+123 Level Sync: Poison Resistance
+124 Level Sync: Stamina
+130 Level Sync: Right-Hand Weapon Base
+131 Level Sync: Weapon Left Hand Base
+132 Level Sync: Left Hand Weapon: Cannon
+133 Level Sync: Left-Hand Weapon: Flamethrower
+134,Level Sync: Left Hand Weapon: Rosmarinus
+135 Level Sync: Throw
+136 Level Sync: Throwing Knife
+137 Level Sync: Molotov Cocktail
+140 Level Sync: Harbinger
+141 Level Sync: Little Tony
+142 Level Sync: Gloves
+143 Level Sync: Beyond
+150 Maximum number of refills for healing spots
+200 Growing Consumption Seoul

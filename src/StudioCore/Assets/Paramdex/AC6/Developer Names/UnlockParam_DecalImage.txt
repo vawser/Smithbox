@@ -1,0 +1,36 @@
+40 red gun 13 -- レッドガン13
+105 Number 7 (Reinforced Human Company B) Decal -- ナンバー7（強化人間中隊B）デカール
+110 Number 5 decal -- ナンバー5　デカール
+113 Number 6 decal -- ナンバー6　デカール
+116 Early Ash Decal -- アッシュ前期 デカール
+120 Number 4 decal -- ナンバー4　デカール
+123 Number 2 decal -- ナンバー2　デカール
+127 Number 1 Decal -- ナンバー1　デカール
+133 Number 3 decal -- ナンバー3　デカール
+135 Late Ash Decal -- アッシュ後期　デカール
+136 lester decal -- レスターデカール
+236 lester decal -- レスターデカール
+301 corporate emblem;overshear -- 企業系エンブレム;オーバーシアー
+302 Corporate emblem: Giken -- 企業系エンブレム:技研
+303 Corporate emblem: Blockade organization -- 企業系エンブレム:封鎖機構
+304 Corporate emblem: All Mind -- 企業系エンブレム:オールマインド
+305 Corporate emblem: Rubiconist -- 企業系エンブレム:ルビコニスト
+306 Corporate emblem: RaD -- 企業系エンブレム:RaD
+307 Corporate emblem:Archibus -- 企業系エンブレム:アーキバス
+310 Corporate emblem: Vesper -- 企業系エンブレム:ヴェスパー
+311 Corporate emblem: Bayram -- 企業系エンブレム:ベイラム
+313 Corporate emblem: Red gun -- 企業系エンブレム:レッドガン
+320 Corporate emblem:Archibus ADD -- 企業系エンブレム:アーキバスADD
+32 Verification F: Independent Mercenary -- 検証F：独立傭兵
+37 kate -- ケイト
+35 Rusty (late) -- ラスティ(後期)
+36 walter -- ウォルター
+1300 Emblem "High Mercenary" -- エンブレム「高等傭兵」
+1301 Emblem "Combat Skills Verification Program Completed" -- エンブレム「戦闘技能検証プログラム完了」
+1302 Emblem "Integration Program Completed" -- エンブレム「インテグレーション・プログラム完了」
+1303 Hunter Grade 15 All battle logs recovered -- ハンターグレード15　戦闘ログ全件回収完了
+1304 Rubicon Omniscience All information logs collected -- ルビコン全知　情報ログ全件回収完了
+1305 stargazer -- スターゲイザー
+1306 perfect mercenary -- パーフェクトマーセナリー
+1307 irregular -- イレギュラー
+1308 gift of air -- エアの贈り物

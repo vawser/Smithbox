@@ -1,0 +1,15 @@
+600000 Open test bonfire 01 -- オープンテスト篝火　01
+600001 Open test bonfire 02 -- オープンテスト篝火　02
+600002 Open test bonfire 03 -- オープンテスト篝火　03
+600003 Scanning Tower Bonfire 01 -- スキャニングタワー篝火　01
+600004 m60 initial position bonfire -- m60初期位置篝火
+600005 Fast Travel Mission 2A -- ファストトラベル　ミッション2A
+600006 Fast Travel Mission 2B -- ファストトラベル　ミッション2B
+600007 Fast travel mission 3 -- ファストトラベル　ミッション3
+600008 Fast Travel Bonus 1 -- ファストトラベル　おまけ1
+600009 Fast Travel Bonus 2 -- ファストトラベル　おまけ2
+600010 Fast Travel Vanguard Base -- ファストトラベル　前衛基地
+600011 Fast Travel Before M1 -- ファストトラベル　M1手前
+600012 Fast travel after M2 -- ファストトラベル　M2後
+600100 Snow mountain bonfire 01 -- 雪山篝火　01
+600101 Snow mountain bonfire 02 -- 雪山篝火　02

@@ -1,0 +1,4 @@
+0 Default data. Deletion prohibited. Used if no para -- デフォルトデータ。削除禁止。パラがない場合使用されます
+95150000 s95_15_0000 Cutscene test -- s95_15_0000 カットシーンテスト
+99000000 s99_00_0000 Initial test cutscene -- s99_00_0000 初期テストカットシーン
+99950010 s99_95_0010_Nomura test cutscene -- s99_95_0010_野村テストカットシーン

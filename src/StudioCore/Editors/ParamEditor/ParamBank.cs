@@ -258,7 +258,7 @@ public class ParamBank
         }
     }
 
-    public CompoundAction LoadParamDefaultNames(string param = null, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool useProjectNames = false, IEnumerable<Param.Row> affectedRows = null)
+    public CompoundAction LoadParamDefaultNames(string param = null, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool useProjectNames = false, bool useDeveloperNames = false, IEnumerable<Param.Row> affectedRows = null)
     {
         var dir = ParamLocator.GetParamNamesDir();
 
@@ -268,6 +268,15 @@ public class ParamBank
 
             // Fallback to Smithbox if the project ones don't exist
             if(!Directory.Exists(dir))
+                dir = ParamLocator.GetParamNamesDir();
+        }
+
+        if (useDeveloperNames && Smithbox.ProjectType != ProjectType.Undefined)
+        {
+            dir = $"{AppContext.BaseDirectory}\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Developer Names";
+
+            // Fallback to Smithbox if the developer ones don't exist
+            if (!Directory.Exists(dir))
                 dir = ParamLocator.GetParamNamesDir();
         }
 

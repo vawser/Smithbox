@@ -1,0 +1,31 @@
+0 none -- なし
+1 jump -- ジャンプ
+2 Boost increase -- ブースト上昇
+3 quick boost -- クイックブースト
+4 boost move -- ブースト移動
+5 assault boost -- アサルトブースト
+6 vertical catapult -- 垂直カタパルト
+8 Assault boost stop -- アサルトブースト停止
+10 repair -- 修復
+20 Target switching -- ターゲット切替
+21 Target assist ON/OFF -- ターゲットアシストON/OFF
+22 dabutori -- ダブトリ
+30 drift turn -- ドリフトターン
+31 hovering -- ホバリング
+100 Right hand: Normal shooting -- 右手：通常射撃
+101 Right hand: Charge shot -- 右手：チャージショット
+102 Right hand: Guard attack -- 右手：ガード攻撃
+103 Right hand: reload -- 右手：リロード
+110 Left hand: normal shooting -- 左手：通常射撃
+111 Left hand: Charge shot -- 左手：チャージショット
+112 blade -- ブレード
+113 Blade: continuous attack -- ブレード：連続攻撃
+114 Blade: Charge attack -- ブレード：チャージ攻撃
+115 Left hand: reload -- 左手：リロード
+116 Right hand: Charge interruption -- 右手：チャージ中断
+117 Left hand: Charge interruption -- 左手：チャージ中断
+120 Right back: Normal shooting -- 右背：通常射撃
+121 Right back: Guard attack -- 右背：ガード攻撃
+122 Right back: Multi-lock missile attack -- 右背：マルチロックミサイル攻撃
+130 Left back: Normal shooting -- 左背：通常射撃
+131 shield -- シールド

@@ -1,0 +1,1371 @@
+0 for testing -- テスト用
+1000 Battleship_Left battery (missile) -- 戦艦_左砲台(ミサイル)
+1100 Battleship_Right battery (missile) -- 戦艦_右砲台(ミサイル)
+1200 Battleship_Left battery (laser) -- 戦艦_左砲台(レーザー)
+1300 Battleship_Right battery (laser) -- 戦艦_右砲台(レーザー)
+1400 Battleship_front main gun -- 戦艦_正面主砲
+1500 Battleship_Front main gun (anime control ver) -- 戦艦_正面主砲（アニメ制御ver）
+1600 Battleship_Big Cannon (anime control) -- 戦艦_ビッグキャノン（アニメ制御）
+1700 Battleship_Blade rotation (anime control) -- 戦艦_刃の回転（アニメ制御）
+1800 Battleship_Small laser cannon (anime only) -- 戦艦_小レーザー砲台（アニメのみ）
+1900 Battleship_Right arm transformation laser -- 戦艦_右腕変形レーザー
+2000 Battery_Cannonball -- 砲台_砲弾
+2100 Artillery_Missile -- 砲台_ミサイル
+2200 Battery_Gato -- 砲台_ガト
+2300 Gun turret_laser -- 砲台_レーザー
+3000 Turret_Cannonball (for attachment) -- 砲台_砲弾(アタッチ用)
+3100 Battery_Missile (for attachment) -- 砲台_ミサイル(アタッチ用)
+3200 Turret_Gato (for attachment) -- 砲台_ガト(アタッチ用)
+3300 Turret_Laser (for attachment) -- 砲台_レーザー(アタッチ用)
+4000 Battleship_Left arm transformation laser -- 戦艦_左腕変形レーザー
+5000 Stiglo_Big Cannon -- スティグロ_ビッグキャノン
+5100 Stiglo_Right arm laser_[Extension] Beam A -- スティグロ_右腕レーザー_【伸】ビームA
+5200 Stiglo_Left arm laser_[Stretch] Beam A -- スティグロ_左腕レーザー_【伸】ビームA
+5500 Stiglo_4 lasers_random salvo -- スティグロ_4連レーザー_ランダム斉射
+5900 Stiglo_Both arm laser *Old blade control -- スティグロ_両腕レーザー※旧ブレード制御
+6000 Stiglo_Right arm laser_[Okonobu] Beam A -- スティグロ_右腕レーザー_【おこ伸】ビームA
+6100 Stiglo_Left arm laser_[Okonobu] Beam A -- スティグロ_左腕レーザー_【おこ伸】ビームA
+6200 Stiglo_Right arm laser_[Okonobu] Beam B -- スティグロ_右腕レーザー_【おこ伸】ビームB
+6300 Stiglo_Left arm laser_[Okonobu] Beam B -- スティグロ_左腕レーザー_【おこ伸】ビームB
+6400 Stiglo_Left arm laser_[Okonobu] Beam B-2 -- スティグロ_左腕レーザー_【おこ伸】ビームB-2
+6500 Stiglo_Left arm laser_[Okonobu] Beam B-2 -- スティグロ_左腕レーザー_【おこ伸】ビームB-2
+6600 Stiglo_Left Arm Laser_[Short] Beam A -- スティグロ_左腕レーザー_【おこ短】ビームA
+6700 Stiglo_Left Arm Laser_[Short] Beam A -- スティグロ_左腕レーザー_【おこ短】ビームA
+6800 Stiglo_Left arm laser_[Short height] Beam B -- スティグロ_左腕レーザー_【おこ短】ビームB
+6900 Stiglo_Left arm laser_[Short height] Beam B -- スティグロ_左腕レーザー_【おこ短】ビームB
+7000 Stiglo_Left arm laser_[Stretch] Beam A -- スティグロ_左腕レーザー_【伸】ビームA
+7100 Stiglo_Left arm laser_[Stretch] Beam A -- スティグロ_左腕レーザー_【伸】ビームA
+7200 Stiglo_Left arm laser_[Extension] Beam B -- スティグロ_左腕レーザー_【伸】ビームB
+7300 Stiglo_Left arm laser_[Extension] Beam B -- スティグロ_左腕レーザー_【伸】ビームB
+7400 Stiglo_Left arm laser_[Stretch] Beam B-2 -- スティグロ_左腕レーザー_【伸】ビームB-2
+7500 Stiglo_Left arm laser_[Stretch] Beam B-2 -- スティグロ_左腕レーザー_【伸】ビームB-2
+7600 Stiglo_Left arm laser_[Short] Beam A -- スティグロ_左腕レーザー_【短】ビームA
+7700 Stiglo_Left arm laser_[Short] Beam A -- スティグロ_左腕レーザー_【短】ビームA
+7800 Stiglo_Left arm laser_[Short] Beam B -- スティグロ_左腕レーザー_【短】ビームB
+7900 Stiglo_Left arm laser_[Short] Beam B -- スティグロ_左腕レーザー_【短】ビームB
+8000 Stiglo_4 lasers_front salvo -- スティグロ_4連レーザー_前方斉射
+8100 Stiglo_4 lasers_left and right salvo -- スティグロ_4連レーザー_左右斉射
+8200 Stiglo_4 lasers_random salvo -- スティグロ_4連レーザー_ランダム斉射
+930000 Ueda test machine_shooting weapon -- 上田テストマシン_射撃武器
+930100 Ueda test machine_fighting -- 上田テストマシン_格闘
+930200 Ueda test machine_shield -- 上田テストマシン_盾
+10000010 Machine gun for copying -- コピー用　マシンガン
+10000020 copy shotgun -- コピー用　ショットガン
+10000030 Bazooka for copying -- コピー用　バズーカ
+10000040 Copy sniper rifle -- コピー用　スナイパーライフル
+10000050 Missile for copying -- コピー用　ミサイル
+10000510 Proximity for copying -- コピー用　近接
+10000520 Extending proximity for copying -- コピー用　伸びる近接
+10000610 Shield for copying -- コピー用　シールド
+30000000 c3000 security MT (rifle) rifle -- c3000 警備MT（ライフル）　ライフル
+30000100 c3000 Security MT (EN Rifle) EN Rifle -- c3000 警備MT（ENライフル）　ENライフル
+30000200 c3000 Security MT (EN Rifle) EN Rifle Charge -- c3000 警備MT（ENライフル）　ENライフルチャージ
+30000300 c3000 security MT (missile) missile -- c3000 警備MT（ミサイル）　ミサイル
+30000400 c3000 Security MT (Rocket) Rocket -- c3000 警備MT（ロケット）　ロケット
+30000500 c3000 Security MT (enhanced type) Bazooka -- c3000 警備MT（強化タイプ）　バズーカ
+30000600 c3000 Security MT (Rocket) Rocket (Right) -- c3000 警備MT（ロケット）　ロケット（右）
+30000700 c3000 Security MT (reinforced type) Bazooka (aerial) -- c3000 警備MT（強化タイプ）　バズーカ（空中）
+30000800 c3000 security MT missile missile (right) -- c3000 警備MT ミサイル　ミサイル（右）
+30000900 c3000 Security MT Full Equipment Reinforced Rifle -- c3000 警備MT 全装備　強化ライフル
+30001000 c3000 Security MT Full Equipment Enhanced Rifle (different performance) -- c3000 警備MT 全装備　強化ライフル（性能違い）
+30002000 c3000 Security MT (reinforced type) One-shot attack -- c3000 警備MT（強化タイプ）　ワンショット攻撃
+30003000 c3000 Security MT Combat status switching -- c3000 警備MT　戦闘状態切替
+30003100 c3000 Security MT Always LookAt -- c3000 警備MT　常時LookAt
+30004000 c3000 Security MT (Rifle) Rifle Tutorial -- c3000 警備MT（ライフル）　ライフル　チュートリアル
+30004100 c3000 Security MT (Missile) Missile Tutorial -- c3000 警備MT（ミサイル）　ミサイル　チュートリアル
+30004200 c3000 Security MT Missile Missile (right) Tutorial -- c3000 警備MT ミサイル　ミサイル（右）　チュートリアル
+30010900 c3001 Security MT Enhancement A Firepower Enhancement Enhancement Rifle -- c3001 警備MT強化A火力強化　強化ライフル
+30200000 c3020 Former communist country general purpose MT machine gun -- c3020 旧共産圏汎用MT　マシンガン
+30200200 c3020 former communist country general purpose MT rifle -- c3020 旧共産圏汎用MT　ライフル
+30200300 c3020 Former communist country general purpose MT rifle/throwing gun cover shooting -- c3020 旧共産圏汎用MT　ライフル/投擲銃カバー射撃
+30200400 c3020 Former communist country general purpose MT for rifle one shot -- c3020 旧共産圏汎用MT　ライフルワンショット用
+30200500 c3020 Former communist country general purpose MT shotgun -- c3020 旧共産圏汎用MT　ショットガン
+30200600 c3020 Former communist area general purpose MT shield -- c3020 旧共産圏汎用MT　シールド
+30200800 c3020 Former communist country general purpose MT double machine gun -- c3020 旧共産圏汎用MT　ダブルマシンガン
+30200900 c3020 Former communist general-purpose MT throwing gun -- c3020 旧共産圏汎用MT　投擲銃
+30201000 c3020 Former communist country general purpose MT hand rocket -- c3020 旧共産圏汎用MT　ハンドロケット
+30201100 c3020 Former communist country general purpose MT grenade cannon -- c3020 旧共産圏汎用MT　グレネードキャノン
+30201200 c3020 former communist bloc general purpose MT missile -- c3020 旧共産圏汎用MT　ミサイル
+30201300 c3020 Former communist country general purpose MT camera -- c3020 旧共産圏汎用MT　カメラ
+30201400 c3020 Former communist country general purpose MT (for damage reaction confirmation) DL1 stage addition machine gun assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）　DL1　段階加算　マシンガン想定
+30201500 c3020 Former communist country general purpose MT (for damage reaction confirmation) DL1 100% addition Rifle assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）　DL1　100%加算　ライフル想定
+30201600 c3020 Former communist country general purpose MT (for damage reaction confirmation) DL2 hit stop machine gun assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）　DL2　ヒットストップ　マシンガン想定
+30201700 c3020 Former communist country general purpose MT (for damage reaction confirmation) DL3 Small stagger Bazooka assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）　DL3　小よろけ　バズーカ想定
+30201800 c3020 Former communist country general purpose MT (for damage reaction confirmation) DL4 Large stagger bazooka assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）　DL4　大よろけ　バズーカ想定
+30201900 c3020 General-purpose MT for former communist countries (for checking damage reactions) DL5 Blow-off grenade cannon assumed -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）　DL5　吹っ飛び　グレネードキャノン想定
+30202000 c3020 Former communist country general purpose MT one-shot attack -- c3020 旧共産圏汎用MT　ワンショット攻撃
+30203100 c3020 Former communist area general purpose MT Always Lookat -- c3020 旧共産圏汎用MT 常時Lookat
+30204000 c3020 Former communist country general purpose MT rifle/hand rocket cover shooting -- c3020 旧共産圏汎用MT　ライフル/ハンドロケットカバー射撃
+30204100 c3020 Former communist country general purpose MT machine gun/hand rocket cover shooting -- c3020 旧共産圏汎用MT　マシンガン/ハンドロケットカバー射撃
+30204200 c3020 Former communist country general purpose MT loading platform cannon cover shooting -- c3020 旧共産圏汎用MT　荷台キャノンカバー射撃
+30205000 c3020 Former communist country general purpose MT for missile one shot ① -- c3020 旧共産圏汎用MT　ミサイルワンショット用①
+30205100 c3020 Former communist country general purpose MT for missile one shot ② -- c3020 旧共産圏汎用MT　ミサイルワンショット用②
+30206000 c3020 Former communist country general purpose MT throwing gun fixed battery firing -- c3020 旧共産圏汎用MT　投擲銃　固定砲台射撃
+30206100 c3020 Former communist country general purpose MT hand rocket fixed battery firing -- c3020 旧共産圏汎用MT　ハンドロケット　固定砲台射撃
+30206200 c3020 Former communist country general purpose MT missile fixed battery firing -- c3020 旧共産圏汎用MT　ミサイル　固定砲台射撃
+30209000 c3020 Former communist country general purpose MT throwing gun for railroad -- c3020 旧共産圏汎用MT　投擲銃　レイルロード用
+30500000 c3050 Regular Army MT_Normal Laser Rifle -- c3050 正規軍MT_ノーマル　レーザーライフル
+30500100 c3050 Regular Army MT_Normal Right Shoulder Missile -- c3050 正規軍MT_ノーマル　右肩ミサイル
+30500200 c3050 Regular Army MT_Support Machine Gun -- c3050 正規軍MT_支援　マシンガン
+30500300 c3050 Regular Army MT_Support Throwing Gun -- c3050 正規軍MT_支援　投擲銃
+30500400 c3050 Regular Army MT_Flame radiation Flame radiation -- c3050 正規軍MT_火炎放射　火炎放射
+30500420 c3050 Regular Army MT_Flame radiation Flame radiation for one shot -- c3050 正規軍MT_火炎放射　火炎放射 ワンショット用
+30500500 c3050 Regular Army MT_Bombing Upper Grenade -- c3050 正規軍MT_爆撃　上位グレネード
+30500600 c3050 regular army MT_sniper sniper rifle -- c3050 正規軍MT_狙撃　スナイパーライフル
+30500700 c3050 Regular Army MT_Normal Laser Rifle Cover Shooting -- c3050 正規軍MT_ノーマル　レーザーライフルカバー射撃
+30500800 c3050 Regular Army MT_Normal Laser Rifle Fixed Battery Only -- c3050 正規軍MT_ノーマル　レーザーライフル固定砲台専用
+30500900 c3050 Regular Army MT_Support Throwing Gun Long Range -- c3050 正規軍MT_支援　投擲銃 遠距離用
+30501000 c3050 Regular Army MT_Support Throwing Gun For Separation 1 -- c3050 正規軍MT_支援　投擲銃　打ち分け用1
+30501100 c3050 Regular Army MT_Normal Left Shoulder Missile -- c3050 正規軍MT_ノーマル　左肩ミサイル
+30501200 c3050 Regular Army MT_Support Throwing Gun For Separation 2 -- c3050 正規軍MT_支援　投擲銃　打ち分け用2
+30501300 c3050 Regular Army MT_Support Throwing Gun For Separation 3 -- c3050 正規軍MT_支援　投擲銃　打ち分け用3
+30501400 c3050 Regular army MT_Flame radiation Flame radiation Charge -- c3050 正規軍MT_火炎放射　火炎放射　チャージ
+30501500 c3050 Regular Army MT_Bombing Upper Grenade Right -- c3050 正規軍MT_爆撃　上位グレネード 右
+30501600 c3050 Regular Army MT_Support Throwing Gun For Separation 4 -- c3050 正規軍MT_支援　投擲銃　打ち分け用4
+30502000 c3050 Regular Army MT_Normal One Shot 00 -- c3050 正規軍MT_ノーマル　ワンショット00
+30502500 c3050 Regular Army MT_Melee Blade 1 -- c3050 正規軍MT_近接　ブレード1
+30502600 c3050 Regular Army MT_Melee Blade 2 -- c3050 正規軍MT_近接　ブレード2
+30502700 c3050 Regular Army MT_Melee Blade 3 -- c3050 正規軍MT_近接　ブレード3
+31000100 c3100 flight MT machine gun -- c3100 飛行MT　マシンガン
+31000200 c3100 flight MT shooting type plasma cannon with recoil -- c3100 飛行MT 射撃タイプ　プラズマキャノン　反動有
+31000300 c3100 flight MT shooting type missile left -- c3100 飛行MT 射撃タイプ　ミサイル　左
+31000400 c3100 flight MT shooting type missile right -- c3100 飛行MT 射撃タイプ　ミサイル　右
+31000500 c3100 Flight MT Proximity Type EN Shotgun with Recoil -- c3100 飛行MT 近接タイプ　ENショットガン　反動有
+31000800 c3100 flight MT shooting type for landing -- c3100 飛行MT 射撃タイプ　着地用
+31001000 c3100 flight MT shooting type plasma cannon for fixed battery -- c3100 飛行MT 射撃タイプ　プラズマキャノン　固定砲台用
+31001100 c3100 flight MT shooting type plasma cannon no recoil -- c3100 飛行MT 射撃タイプ　プラズマキャノン　反動無
+31001200 c3100 Flight MT Proximity Type EN Shotgun No Recoil -- c3100 飛行MT 近接タイプ　ENショットガン　反動無
+31002000 c3100 flight MT shooting type one shot 00 -- c3100 飛行MT 射撃タイプ　ワンショット00
+31002100 c3100 flight MT shooting type one shot 01 -- c3100 飛行MT 射撃タイプ　ワンショット01
+31500000 c3150 Juggernaut main gun_cluster_right -- c3150 ジャガーノート　主砲_クラスタ_右
+31500100 c3150 Juggernaut main gun_cluster_left -- c3150 ジャガーノート　主砲_クラスタ_左
+31500200 c3150 juggernaut main gun_missile -- c3150 ジャガーノート　主砲_ミサイル
+31500300 c3150 Juggernaut secondary gun_right -- c3150 ジャガーノート　副砲_右
+31500400 c3150 Juggernaut secondary gun_left -- c3150 ジャガーノート　副砲_左
+31500500 c3150 juggernaut vertical missile -- c3150 ジャガーノート　垂直ミサイル
+31500600 c3150 juggernaut mine -- c3150 ジャガーノート　地雷
+31500700 c3150 juggernaut flare -- c3150 ジャガーノート　フレア
+31502000 c3150 Juggernaut One Shot_00 -- c3150 ジャガーノート　ワンショット_00
+31502100 c3150 Juggernaut One Shot_01 -- c3150 ジャガーノート　ワンショット_01
+32000000 c3200 avalanche one shot 1 -- c3200 アバランチ　ワンショット1
+32000100 c3200 avalanche base one shot formation -- c3200 アバランチ ベース　ワンショット フォーメーション
+32000200 c3200 Avalanche One Shot 2 -- c3200 アバランチ　ワンショット2
+32000500 c3200 avalanche base ace rescue request bullet -- c3200 アバランチ ベース　エース救援要請弾丸
+32000600 c3200 Avalanche Base Support A Rescue Request Bullet -- c3200 アバランチ ベース　サポA救援要請弾丸
+32000700 c3200 Avalanche Base Support B Rescue Request Bullet -- c3200 アバランチ ベース　サポB救援要請弾丸
+32001300 c3200 avalanche double machine gun -- c3200 アバランチ　ダブルマシンガン
+32001500 c3200 avalanche missile -- c3200 アバランチ　ミサイル
+32001700 c3200 avalanche plasma rifle -- c3200 アバランチ　プラズマライフル
+32001800 c3200 Avalanche Plasma Rifle (Snipe) -- c3200 アバランチ　プラズマライフル(スナイプ)
+32001900 c3200 avalanche missile -- c3200 アバランチ　ミサイル
+32002100 c3200 Avalanche Rifle (Ace) -- c3200 アバランチ　ライフル(エース)
+32002200 c3200 avalanche base assault formation movement start bullet -- c3200 アバランチ ベース　突撃フォーメーション移動開始弾丸
+32002300 c3200 avalanche base check formation movement start bullet -- c3200 アバランチ ベース　牽制フォーメーション移動開始弾丸
+32002400 c3200 avalanche base balance formation movement start bullet -- c3200 アバランチ ベース　バランスフォーメーション移動開始弾丸
+32002500 c3200 Avalanche Assault Formation A Action Start Bullet -- c3200 アバランチ　突撃フォーメーションA行動開始弾丸
+32002600 c3200 Avalanche Base Assault Formation B Action Start Bullet -- c3200 アバランチ ベース　突撃フォーメーションB行動開始弾丸
+32002700 c3200 Avalanche Base Check Formation A Action Start Bullet -- c3200 アバランチ ベース　牽制フォーメーションA行動開始弾丸
+32002800 c3200 Avalanche Base Check Formation B Action Start Bullet -- c3200 アバランチ ベース　牽制フォーメーションB行動開始弾丸
+32002900 c3200 Avalanche Base Balance Formation A Action Start Bullet -- c3200 アバランチ ベース　バランスフォーメーションA行動開始弾丸
+32003000 c3200 Avalanche Base Balance Formation B Action Start Bullet -- c3200 アバランチ ベース　バランスフォーメーションB行動開始弾丸
+32500000 c3250 Regular Army AC (Normal) Rifle A -- c3250 正規軍AC（ノーマル）　ライフルA
+32500100 c3250 regular army AC (normal) throwing gun -- c3250 正規軍AC（ノーマル）　投擲銃
+32500200 c3250 Regular Army AC (Normal) Missile B -- c3250 正規軍AC（ノーマル）　ミサイルB
+32500300 c3250 Regular Army AC (Heavy Firepower) Diffusion Buzz -- c3250 正規軍AC（重火力）　拡散バズ
+32500400 c3250 Regular Army AC (Heavy Firepower) Grenade -- c3250 正規軍AC（重火力）　グレネード
+32500500 c3250 Regular Army AC (Heavy Firepower) Flare -- c3250 正規軍AC（重火力）　フレア
+32500600 c3250 Regular Army AC (Support) Rifle B -- c3250 正規軍AC（支援）　ライフルB
+32500700 c3250 Regular Army AC (Support) Missile A -- c3250 正規軍AC（支援）　ミサイルA
+32500800 c3250 regular army AC (sniper) sniper rifle -- c3250 正規軍AC（狙撃）　スナイパーライフル
+32500900 c3250 Regular Army AC (Normal) Shield -- c3250 正規軍AC（ノーマル）　シールド
+32501000 c3250 regular army AC (sniper) sniper rifle floating -- c3250 正規軍AC（狙撃）　スナイパーライフル 浮遊
+32501100 c3250 Regular Army AC Enhanced Heavy Firepower Diffusion Bazooka Left Hand -- c3250 正規軍AC 強化重火力　拡散バズーカ 左手
+32501200 c3250 Regular Army AC (Sniper) Sniper Rifle Super Speed -- c3250 正規軍AC（狙撃）　スナイパーライフル 超速
+32501300 c3250 Regular Army AC (High Mobility) Missile (High Mobility Type) -- c3250 正規軍AC(高機動)　ミサイル（高機動タイプ）
+32501400 c3250 Regular army AC (enhanced heavy firepower) 6-barreled cannon (enhanced heavy firepower) -- c3250 正規軍AC（強化重火力）　6連キャノン砲（強化重火力）
+32501500 c3251 Regular army AC (enhanced heavy firepower) Enhanced missile (enhanced heavy firepower) -- c3251 正規軍AC（強化重火力）　強化ミサイル（強化重火力）
+32501600 c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力　6連キャノン砲（強化重火力）
+32501700 c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力　6連キャノン砲（強化重火力）
+32501800 c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力　6連キャノン砲（強化重火力）
+32501900 c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力　6連キャノン砲（強化重火力）
+32502000 c3250 Regular Army AC (Normal) One Shot -- c3250 正規軍AC（ノーマル）　ワンショット
+32502100 c3250 Regular army AC (sniper) Weapon change -- c3250 正規軍AC（狙撃）　武器持ち替え
+32502200 c3250 Regular Army AC Hover/Normal state transition -- c3250 正規軍AC　ホバー/通常状態移行
+32502300 c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力　6連キャノン砲（強化重火力）
+32503100 c3250 Regular Army AC (Normal) Always LookAt -- c3250 正規軍AC（ノーマル）　常時LookAt
+32504000 c3250 Regular Army AC (Normal) Rifle A High Mobility Type -- c3250 正規軍AC（ノーマル）　ライフルA　高機動タイプ
+32600000 c3260 Regular Army Heavy AC Heavy EN Rifle -- c3260 正規軍重AC　重ENライフル
+32600020 c3260 Regular Army Heavy AC Heavy EN Rifle 3-shot -- c3260 正規軍重AC　重ENライフル　3連用
+32600200 c3260 Regular Army Heavy AC Plasma Gun -- c3260 正規軍重AC　プラズマガン
+32600220 c3260 Regular Army Heavy AC Plasma Gun 3-shot -- c3260 正規軍重AC　プラズマガン　3連用
+32600300 c3260 regular army heavy AC missile -- c3260 正規軍重AC　ミサイル
+32600500 c3260 Regular Army Heavy AC AI Missile Left -- c3260 正規軍重AC　AIミサイル 左
+32600510 c3260 Regular Army Heavy AC AI Missile Right -- c3260 正規軍重AC　AIミサイル 右
+32600600 c3260 Regular Army Heavy AC Pulse Cannon -- c3260 正規軍重AC　パルスキャノン
+32600610 c3260 Regular Army Heavy AC Pulse Cannon CS Left 301 -- c3260 正規軍重AC　パルスキャノン　CS　左301
+32600620 c3260 Regular Army Heavy AC Pulse Cannon CS Right 300 -- c3260 正規軍重AC　パルスキャノン　CS　右300
+32601200 c3260 Regular army heavy AC normal siege missile left 1 -- c3260 正規軍重AC ノーマル　包囲ミサイル左 1
+32601210 c3260 Regular army heavy AC normal siege missile left 2 -- c3260 正規軍重AC ノーマル　包囲ミサイル左 2
+32601220 c3260 Regular army heavy AC normal siege missile left 3 -- c3260 正規軍重AC ノーマル　包囲ミサイル左 3
+32601230 c3260 Regular army heavy AC normal siege missile left 4 -- c3260 正規軍重AC ノーマル　包囲ミサイル左 4
+32601240 c3260 Regular army heavy AC normal siege missile right 1 -- c3260 正規軍重AC ノーマル　包囲ミサイル右 1
+32601250 c3260 Regular army heavy AC normal siege missile right 2 -- c3260 正規軍重AC ノーマル　包囲ミサイル右 2
+32601260 c3260 Regular army heavy AC normal siege missile right 3 -- c3260 正規軍重AC ノーマル　包囲ミサイル右 3
+32601270 c3260 Regular army heavy AC normal siege missile right 4 -- c3260 正規軍重AC ノーマル　包囲ミサイル右 4
+32601800 c3260 regular army heavy AC missile for the same anime -- c3260 正規軍重AC ミサイル　同一アニメ用
+32601900 c3260 Regular army heavy AC AI missile for the same anime left -- c3260 正規軍重AC AIミサイル　同一アニメ用　左
+32601910 c3260 Regular army heavy AC AI missile for the same anime right -- c3260 正規軍重AC AIミサイル　同一アニメ用　右
+32602000 c3260 Regular army heavy AC one shot attack 00 -- c3260 正規軍重AC　ワンショット攻撃00
+32602100 c3260 Regular army heavy AC one-shot attack 01 -- c3260 正規軍重AC　ワンショット攻撃01
+32602200 c3260 Regular Army Heavy AC One Shot Attack 02 -- c3260 正規軍重AC　ワンショット攻撃02
+32602300 c3260 Regular Army Heavy AC One Shot Attack 03 -- c3260 正規軍重AC　ワンショット攻撃03
+32602900 c3260 Regular Army Heavy AC PA Shield -- c3260 正規軍重AC　PAシールド
+32603000 c3260 Regular Army Heavy AC Bash Shield -- c3260 正規軍重AC　バッシュシールド
+32603100 c3260 Regular Army Heavy AC Always Lookat -- c3260 正規軍重AC　常時Lookat
+32607000 c3260 Regular army heavy AC cutting edge AI missile left 1 -- c3260 正規軍重AC 最先端　AIミサイル左 1
+32607010 c3260 Regular Army Heavy AC Advanced AI Missile Left 2 -- c3260 正規軍重AC 最先端　AIミサイル左 2
+32607020 c3260 Regular army heavy AC cutting edge AI missile left 3 -- c3260 正規軍重AC 最先端　AIミサイル左 3
+32607030 c3260 Regular army heavy AC cutting edge AI missile left 4 -- c3260 正規軍重AC 最先端　AIミサイル左 4
+32607040 c3260 Regular army heavy AC cutting edge AI missile right 1 -- c3260 正規軍重AC 最先端　AIミサイル右 1
+32607050 c3260 Regular Army Heavy AC Advanced AI Missile Right 2 -- c3260 正規軍重AC 最先端　AIミサイル右 2
+32607060 c3260 Regular army heavy AC cutting edge AI missile right 3 -- c3260 正規軍重AC 最先端　AIミサイル右 3
+32607070 c3260 Regular army heavy AC cutting edge AI missile right 4 -- c3260 正規軍重AC 最先端　AIミサイル右 4
+33000000 c3300 Ghost MT (Stealth) Laser Rifle -- c3300 ゴーストMT（ステルス）　レーザーライフル
+33000100 c3300 Ghost MT (Stealth) Laser Rifle Charge -- c3300 ゴーストMT（ステルス）　レーザーライフルチャージ
+33000200 c3300 Ghost MT (PA) Plasma Rifle -- c3300 ゴーストMT（PA）　プラズマライフル
+33000300 c3300 Ghost MT (PA) Plasma Rifle Charge -- c3300 ゴーストMT（PA）　プラズマライフルチャージ
+33000400 c3300 Ghost MT (Stealth) Mine Orbit Right ① -- c3300 ゴーストMT（ステルス）　機雷オービット右①
+33000500 c3300 Ghost MT (Stealth) Mine Orbit Right ② -- c3300 ゴーストMT（ステルス）　機雷オービット右②
+33000600 c3300 Ghost MT (Stealth) Mine Orbit Right ③ -- c3300 ゴーストMT（ステルス）　機雷オービット右③
+33000700 c3300 Ghost MT (Stealth) Mine Orbit Left ① -- c3300 ゴーストMT（ステルス）　機雷オービット左①
+33000800 c3300 Ghost MT (Stealth) Mine Orbit Left ② -- c3300 ゴーストMT（ステルス）　機雷オービット左②
+33000900 c3300 Ghost MT (Stealth) Mine Orbit Left ③ -- c3300 ゴーストMT（ステルス）　機雷オービット左③
+33001200 c3300 Ghost MT (Stealth) Chaff (Small) -- c3300 ゴーストMT（ステルス）　チャフ（小）
+33001300 c3300 Ghost MT (Stealth) Chaff (Large) -- c3300 ゴーストMT（ステルス）　チャフ（大）
+33001700 c3300 Ghost MT Stealth Mine Orbit 2 Right -- c3300 ゴーストMT ステルス　機雷オービット2右
+33001800 c3300 Ghost MT Stealth Mine Orbit 2 Left -- c3300 ゴーストMT ステルス　機雷オービット2左
+33001900 c3300 ghost MT stealth sniper shooting -- c3300 ゴーストMT ステルス　スナイパー射撃
+33001950 c3300 Ghost MT stealth sniper shooting for close range combat -- c3300 ゴーストMT ステルス　スナイパー射撃　近距離戦闘用
+33002000 c3300 Ghost MT (Stealth) Melee -- c3300 ゴーストMT（ステルス）　近接
+33002100 c3300 Ghost MT (Stealth) Melee -- c3300 ゴーストMT（ステルス）　近接
+33002200 c3300 Ghost MT (Stealth) Melee -- c3300 ゴーストMT（ステルス）　近接
+33002500 c3300 Ghost MT (Stealth) Wall mounted laser rifle -- c3300 ゴーストMT（ステルス）　壁張り付きレーザーライフル
+33003100 c3300 Ghost MT (PA type) PA -- c3300 ゴーストMT（PAタイプ）　PA
+33004000 c3300 Ghost MT (Stealth) Mine Orbit Right Front -- c3300 ゴーストMT（ステルス）　機雷オービット右手前
+33004100 c3300 Ghost MT (Stealth) Mine orbit left front -- c3300 ゴーストMT（ステルス）　機雷オービット左手前
+33004200 c3300 Ghost MT (Stealth) Mine Orbit Right Middle Bottom -- c3300 ゴーストMT（ステルス）　機雷オービット右中間下
+33004300 c3300 Ghost MT (Stealth) Mine Orbit Left Middle Bottom -- c3300 ゴーストMT（ステルス）　機雷オービット左中間下
+33004400 c3300 Ghost MT (Stealth) Mine Orbit Upper Right Middle -- c3300 ゴーストMT（ステルス）　機雷オービット右中間上
+33004500 c3300 Ghost MT (Stealth) Mine Orbit Upper Left Middle -- c3300 ゴーストMT（ステルス）　機雷オービット左中間上
+33005000 c3300 Ghost MT Iron ball explosion -- c3300 ゴーストMT　鉄球爆発
+34000000 c3400 Quadruped MT Triple Bazooka -- c3400 四脚MT　三連バズーカ
+34000100 c3400 Quadruped MT triple bazooka stance -- c3400 四脚MT　三連バズーカ構え
+34000200 c3400 quadruped MT machine gun -- c3400 四脚MT　マシンガン
+34000300 c3400 Quadruped MT Shield for communist countries 4 legs -- c3400 四脚MT　共産圏4脚用シールド
+34000400 c3400 Quadruped MT Nine Bazooka -- c3400 四脚MT　九連バズーカ
+34000500 c3400 Quadruped MT Nine Bazooka stance -- c3400 四脚MT　九連バズーカ構え
+34000600 c3400 Quadruped MT Double Gatling Gun -- c3400 四脚MT　ダブルガトリングガン
+34000700 c3400 Quadruped MT Double Gatling Gun (Full Burst) -- c3400 四脚MT　ダブルガトリングガン（フルバースト）
+34000800 c3400 quadruped MT sniper cannon -- c3400 四脚MT　スナイパーキャノン
+34000900 c3400 quadruped MT sniper cannon stance -- c3400 四脚MT　スナイパーキャノン構え
+34001000 c3400 quadruped MT blade -- c3400 四脚MT　ブレード
+34001100 c3400 quadruped MT smoke screen -- c3400 四脚MT　煙幕
+34001200 c3400 Quadruped MT Grenade Cannon -- c3400 四脚MT　グレネードキャノン
+34001300 c3400 quadruped MT grenade cannon stance -- c3400 四脚MT　グレネードキャノン構え
+34001400 c3400 quadruped MT throwing gun -- c3400 四脚MT　投擲銃
+34001500 c3400 quadruped MT shotgun -- c3400 四脚MT　ショットガン
+34001600 c3400 Quadruped MT Sniper Cannon (Aerial) -- c3400 四脚MT　スナイパーキャノン（空中）
+34001700 c3400 Quadruped MT Grenade Cannon (Aerial) -- c3400 四脚MT　グレネードキャノン（空中）
+34001800 c3400 quadruped MT guard shooting (machine gun) -- c3400 四脚MT　ガード射撃（マシンガン）
+34002000 c3400 Quadruped MT One Shot Attack 00 -- c3400 四脚MT　ワンショット攻撃00
+34002100 c3400 Quadruped MT One Shot Attack 01 -- c3400 四脚MT　ワンショット攻撃01
+34002200 c3400 Quadruped MT One Shot Attack 02 -- c3400 四脚MT　ワンショット攻撃02
+34002300 c3400 Quadruped MT for triple bazooka offset -- c3400 四脚MT　三連バズーカオフセット用
+34002400 c3400 Quadruped MT Nine-series Bazooka Offset 1 -- c3400 四脚MT　九連バズーカオフセット用1
+34002500 c3400 Quadruped MT 9 series bazooka offset 2 -- c3400 四脚MT　九連バズーカオフセット用2
+34002600 c3400 Quadruped MT Nine-series Bazooka Offset 3 -- c3400 四脚MT　九連バズーカオフセット用3
+34002700 c3400 Quadruped MT Nine-series Bazooka Offset 4 -- c3400 四脚MT　九連バズーカオフセット用4
+34002800 c3400 Quadruped MT Nine-series Bazooka Offset 5 -- c3400 四脚MT　九連バズーカオフセット用5
+34002900 c3400 Quadruped MT Nine-series Bazooka Offset 6 -- c3400 四脚MT　九連バズーカオフセット用6
+34003000 c3400 Quadruped MT Nine-series Bazooka Offset 7 -- c3400 四脚MT　九連バズーカオフセット用7
+34003100 c3400 Quadruped MT Quadruped MT Always Lookat -- c3400 四脚MT　四脚MT　常時Lookat
+35000000 c3500 old world MT 2 rapid fire gun -- c3500 旧世界MT　2連速射砲
+35000100 c3500 Old World MT Grenade Cannon -- c3500 旧世界MT　グレネードキャノン
+35000110 c3500 Old World MT Depleted Uranium Cannon -- c3500 旧世界MT　劣化ウランキャノン
+35000200 c3500 Old World MT Chest Micro Missile Right -- c3500 旧世界MT　胸部マイクロミサイル右
+35000300 c3500 Old World MT Chest Micro Missile Left -- c3500 旧世界MT　胸部マイクロミサイル左
+35000400 c3500 old world MT cluster missile side -- c3500 旧世界MT　クラスターミサイル横
+35000500 c3500 old world MT cluster missile vertical -- c3500 旧世界MT　クラスターミサイル縦
+35000600 c3500 Old World MT Grenade Cannon Fixed Battery Direct Fire -- c3500 旧世界MT　グレネードキャノン 固定砲台直射
+35000700 c3500 Old World MT Grenade Cannon Fixed Artillery Curved Fire Medium Range -- c3500 旧世界MT　グレネードキャノン 固定砲台曲射 中距離
+35000800 c3500 old world MT 2 rapid fire gun -- c3500 旧世界MT　2連速射砲
+35000900 c3500 Old World MT Grenade Cannon Fixed Battery Curved Fire Long Range -- c3500 旧世界MT　グレネードキャノン 固定砲台曲射 遠距離
+35001000 c3500 old world MT grenade cannon (for slalom) -- c3500 旧世界MT　グレネードキャノン(スラローム用
+35001200 c3500 old world MT base chest AI missile -- c3500 旧世界MT ベース　胸部AIミサイル
+35002000 c3500 Old World MT One Shot 01 -- c3500 旧世界MT　ワンショット01
+35002100 c3500 Old World MT One Shot 02 -- c3500 旧世界MT　ワンショット02
+35002200 c3500 Old World MT One Shot 03 -- c3500 旧世界MT　ワンショット03
+35002300 c3500 Old World MT One Shot 04 -- c3500 旧世界MT　ワンショット04
+35002500 c3500 old world MT kick -- c3500 旧世界MT　キック
+35002600 c3500 old world MT kick -- c3500 旧世界MT　キック
+35002700 c3500 old world MT kick -- c3500 旧世界MT　キック
+35003100 c3500 Old World MT Always LookAt -- c3500 旧世界MT 常時LookAt
+36000000 c3600 Construction Machinery Spider Hand Rocket_Left -- c3600 建機クモ　ハンドロケット_左
+36000100 c3600 Construction Machinery Spider Hand Rocket_Both hands -- c3600 建機クモ　ハンドロケット_両手
+36000200 c3600 construction machine spider submachine gun -- c3600 建機クモ　サブマシンガン
+36000300 c3600 construction machine spider mine thrower -- c3600 建機クモ　地雷投射機
+36000400 c3600 construction machine spider electromagnetic net injection machine -- c3600 建機クモ　電磁ネット射出機
+36000410 c3600 Construction machine spider electromagnetic net injection machine_heat sink -- c3600 建機クモ　電磁ネット射出機_放熱板
+36000500 c3600 construction machine spider cruise rocket -- c3600 建機クモ　巡行ロケット
+36000600 c3600 construction machine spider missile -- c3600 建機クモ　ミサイル
+36000610 c3600 Construction Machinery Spider Missile_Pattern B -- c3600 建機クモ　ミサイル_パターンB
+36000620 c3600 construction machine spider missile -- c3600 建機クモ　ミサイル
+36000630 c3600 Construction Machinery Spider Missile_Pattern B -- c3600 建機クモ　ミサイル_パターンB
+36000700 c3600 construction machine spider armor armor plate -- c3600 建機クモ 装甲　装甲板
+36002000 c3600 construction machine spider one shot attack -- c3600 建機クモ　ワンショット攻撃
+36008000 c3600 Construction Machinery Spider Laser Sight -- c3600 建機クモ　レーザーサイト
+36009000 c3600 Construction machine spider for hijacking the upper body -- c3600 建機クモ　上半身乗っ取り用
+37000000 c3700 Deleteer Vulcan -- c3700 デリーター　バルカン
+37000100 c3700 deleter laser rifle -- c3700 デリーター　レーザーライフル
+37000200 c3700 deleter laser machine gun -- c3700 デリーター　レーザーマシンガン
+37000300 c3700 deleter plasma missile -- c3700 デリーター　プラズマミサイル
+37000400 c3700 Deleteer dual rapid fire gun -- c3700 デリーター　二連速射砲
+37000500 c3700 Delete PA breaker -- c3700 デリーター　PAブレーカー
+37000600 c3700 Delete PA Shield -- c3700 デリーター　PAシールド
+37000700 c3700 deleter vertical missile low -- c3700 デリーター　垂直ミサイル　低い
+37000800 c3700 Deleteer Railgun -- c3700 デリーター　レールガン
+37001000 c3700 Deleteer Plasma Missile 2 -- c3700 デリーター　プラズマミサイル2
+37001100 c3700 deleter base side missile container -- c3700 デリーター ベース　サイドミサイルコンテナ
+37001200 c3700 deleter base side missile container right -- c3700 デリーター ベース　サイドミサイルコンテナ　右
+37001300 c3700 deleter base head missile container -- c3700 デリーター ベース　頭部ミサイルコンテナ
+37001400 c3700 Delete Laser Rifle for One Shot -- c3700 デリーター　レーザーライフル　ワンショット用
+37001500 c3700 deleter vertical missile high -- c3700 デリーター　垂直ミサイル　高い
+37002000 c3700 Deleteer One Shot 00 -- c3700 デリーター　ワンショット00
+37002100 c3700 Deleteer One Shot 01 -- c3700 デリーター  ワンショット01
+37002200 c3700 Deleteer One Shot 02 -- c3700 デリーター  ワンショット02
+37003100 c3700 Deleteer LookAt control -- c3700 デリーター　LookAt制御
+40000000 c4000 ADF turret gatling -- c4000 ADF　砲塔ガトリング
+40000300 c4000 ADF EN shotgun parts frame 1 -- c4000 ADF　ENショットガン　パーツ 枠1
+40000400 c4000 ADF horizontal missile ① -- c4000 ADF　水平ミサイル①
+40000600 c4000 ADF Gatling (left) -- c4000 ADF　ガトリング（左）
+40000700 c4000 ADF Gatling (right) -- c4000 ADF　ガトリング（右）
+40000900 c4000 ADF smoke screen frame 1 -- c4000 ADF　煙幕枠1
+40001000 c4000 ADF EN shotgun parts frame 2 -- c4000 ADF　ENショットガン　パーツ 枠2
+40001100 c4000 ADF EN shotgun parts frame 3 -- c4000 ADF　ENショットガン　パーツ 枠3
+40001200 c4000 ADF EN shotgun parts frame 4 -- c4000 ADF　ENショットガン　パーツ 枠4
+40001300 c4000 ADF EN shotgun parts frame 5 -- c4000 ADF　ENショットガン　パーツ 枠5
+40001400 c4000 ADF EN shotgun parts frame 6 -- c4000 ADF　ENショットガン　パーツ 枠6
+40001500 c4000 ADF EN shotgun parts frame 7 -- c4000 ADF　ENショットガン　パーツ 枠7
+40001600 c4000 ADF EN shotgun parts frame 8 -- c4000 ADF　ENショットガン　パーツ 枠8
+40001700 c4000 ADF EN shotgun parts frame 9 -- c4000 ADF　ENショットガン　パーツ 枠9
+40002000 c4000 ADF one shot (EN shotgun) -- c4000 ADF　ワンショット（ENショットガン）
+40002100 c4000 ADF one shot (EN shotgun) -- c4000 ADF　ワンショット（ENショットガン）
+40002200 c4000 ADF one shot (EN shotgun) -- c4000 ADF　ワンショット（ENショットガン）
+40002300 c4000 ADF one shot (EN shotgun) -- c4000 ADF　ワンショット（ENショットガン）
+40002400 c4000 ADF smoke screen frame 2 -- c4000 ADF　煙幕枠2
+40002500 c4000 ADF smoke screen frame 3 -- c4000 ADF　煙幕枠3
+40002600 c4000 ADF smoke screen frame 4 -- c4000 ADF　煙幕枠4
+40002700 c4000 ADF smoke screen frame 5 -- c4000 ADF　煙幕枠5
+40002800 c4000 ADF smoke screen frame 6 -- c4000 ADF　煙幕枠6
+40003100 c4000 ADF Always LookAt -- c4000 ADF　常時LookAt
+41000000 c4100 Humanoid heavy boss EN type single main gun -- c4100 人型重量級ボス ENタイプ　単体主砲
+41000100 c4100 Humanoid heavyweight boss shoulder missile -- c4100 人型重量級ボス　肩部ミサイル
+41000200 c4100 Humanoid heavyweight boss Gatling gun right hand -- c4100 人型重量級ボス　ガトリング砲 右手
+41000300 c4100 Humanoid heavyweight boss shotgun left hand -- c4100 人型重量級ボス　ショットガン 左手
+41000400 c4100 Humanoid heavyweight boss large pulse machine gun cannon -- c4100 人型重量級ボス　大型パルスマシンガンキャノン
+41000500 c4100 Humanoid heavyweight boss plasma rifle -- c4100 人型重量級ボス　プラズマライフル
+41000600 c4100 Humanoid heavyweight boss missile OW bullet A -- c4100 人型重量級ボス　ミサイルOW弾丸A
+41000700 c4100 Humanoid heavyweight boss missile OW bullet B -- c4100 人型重量級ボス　ミサイルOW弾丸B
+41000800 c4100 Humanoid heavyweight boss missile OW bullet C -- c4100 人型重量級ボス　ミサイルOW弾丸C
+41000900 c4100 Humanoid heavyweight boss missile OW bullet D -- c4100 人型重量級ボス　ミサイルOW弾丸D
+41001000 c4100 Humanoid heavyweight boss missile OW bullet E -- c4100 人型重量級ボス　ミサイルOW弾丸E
+41001100 c4100 Humanoid heavyweight boss missile OW bullet F -- c4100 人型重量級ボス　ミサイルOW弾丸F
+41001200 c4100 Humanoid heavyweight boss missile OW bullet G -- c4100 人型重量級ボス　ミサイルOW弾丸G
+41001300 c4100 Humanoid Heavyweight Boss Grenade Cannon -- c4100 人型重量級ボス　グレネードキャノン
+41001400 c4100 humanoid heavyweight boss (base ENOW main gun bullet -- c4100 人型重量級ボス(ベース　ENOW 主砲弾丸
+41001500 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41001600 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41001900 c4100 Humanoid heavyweight boss (base live ammunition OW flame radiation) -- c4100 人型重量級ボス(ベース　実弾OW 火炎放射
+41002000 c4100 Humanoid heavyweight boss one shot attack 00 -- c4100 人型重量級ボス　ワンショット攻撃00
+41002100 c4100 Humanoid heavyweight boss one shot attack 01 -- c4100 人型重量級ボス　ワンショット攻撃01
+41002200 c4100 Humanoid heavyweight boss one shot attack 02 -- c4100 人型重量級ボス　ワンショット攻撃02
+41002300 c4100 Humanoid heavyweight boss one shot attack 03 -- c4100 人型重量級ボス　ワンショット攻撃03
+41002400 c4100 Humanoid heavyweight boss PA redeployment -- c4100 人型重量級ボス　PA再展開
+41002500 c4100 Humanoid heavyweight boss missile OW bullet H -- c4100 人型重量級ボス　ミサイルOW弾丸H
+41002600 c4100 Humanoid heavyweight boss missile OW bullet I -- c4100 人型重量級ボス　ミサイルOW弾丸I
+41002700 c4100 Humanoid heavyweight boss missile OW bullet J -- c4100 人型重量級ボス　ミサイルOW弾丸J
+41002800 c4100 Humanoid heavyweight boss missile OW bullet K -- c4100 人型重量級ボス　ミサイルOW弾丸K
+41002900 c4100 Humanoid heavyweight boss missile OW bullet L -- c4100 人型重量級ボス　ミサイルOW弾丸L
+41003000 c4100 Humanoid heavyweight boss missile OW bullet M -- c4100 人型重量級ボス　ミサイルOW弾丸M
+41003100 c4100 Humanoid heavyweight boss missile OW bullet N -- c4100 人型重量級ボス　ミサイルOW弾丸N
+41003500 c4100 Humanoid heavyweight boss for downwash SFX -- c4100 人型重量級ボス　ダウンウォッシュSFX用
+41004000 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004010 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004020 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004030 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004040 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004050 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004060 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004070 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004080 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004090 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 右
+41004100 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41004110 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41004120 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41004130 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41004140 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41004150 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41004160 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41004170 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41004180 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41004190 c4100 Humanoid heavyweight boss (base ENOW pulse array bullet left) -- c4100 人型重量級ボス(ベース　ENOW パルスアレイ弾丸 左
+41009990 c4100 Humanoid heavyweight boss (base EN ring frame for parallel processing) -- c4100 人型重量級ボス(ベース　ENリングフレーム 並列処理用
+41500000 c4150 Special attack MT finger (double trigger) -- c4150 特攻MT　フィンガー（ダブルトリガー）
+41500010 c4150 Special attack MT finger (double trigger) (number of stages limited) -- c4150 特攻MT　フィンガー（ダブルトリガー）(段数制限)
+41500100 c4150 Special attack MT finger (left) -- c4150 特攻MT　フィンガー（左）
+41500110 c4150 Special attack MT finger (left) (limited number of stages) -- c4150 特攻MT　フィンガー（左）(段数制限)
+41500200 c4150 Special attack MT finger (right) -- c4150 特攻MT　フィンガー（右）
+41500210 c4150 Special attack MT finger (right) (limited number of stages) -- c4150 特攻MT　フィンガー（右）(段数制限)
+41500300 c4150 special attack MT rapid fire missile -- c4150 特攻MT　連射ミサイル
+41500400 c4150 special attack MT vertical missile -- c4150 特攻MT　垂直ミサイル
+41500500 c4150 Special Attack MT Surface Suppression Artillery -- c4150 特攻MT　面制圧火砲
+41500510 c4150 Special attack MT surface suppression artillery (number of stages limited) -- c4150 特攻MT　面制圧火砲(段数制限)
+41500600 c4150 special attack MT missile -- c4150 特攻MT　ミサイル
+41500700 c4150 Special attack MT rapid fire missile (different performance) -- c4150 特攻MT　連射ミサイル（性能違い）
+41500800 c4150 Special Attack MT (PA) Assault Armor -- c4150 特攻MT（PA）　アサルトアーマー
+41500900 c4150 special attack MT large missile large missile -- c4150 特攻MT 大型ミサイル　大型ミサイル
+41501000 c4150 Special attack MT rapid fire missile 2a -- c4150 特攻MT　連射ミサイル2a
+41501100 c4150 Special attack MT rapid fire missile 2b -- c4150 特攻MT　連射ミサイル2b
+41501200 c4150 Special attack MT finger (double trigger) -- c4150 特攻MT　フィンガー（ダブルトリガー）
+41501210 c4150 Special attack MT finger (double trigger) (number of stages limited) -- c4150 特攻MT　フィンガー（ダブルトリガー）(段数制限)
+41501300 c4150 Special attack MT finger (left) -- c4150 特攻MT　フィンガー（左）
+41501310 c4150 Special attack MT finger (left) (limited number of stages) -- c4150 特攻MT　フィンガー（左）(段数制限)
+41501400 c4150 Special attack MT finger (right) -- c4150 特攻MT　フィンガー（右）
+41501410 c4150 Special attack MT finger (right) (limited number of stages) -- c4150 特攻MT　フィンガー（右）(段数制限)
+41501500 c4150 Special attack MT rapid fire missile (limited number of stages) -- c4150 特攻MT　連射ミサイル(段数制限)
+41501600 c4150 Special attack MT rapid fire missile (different performance) (limited number of stages) -- c4150 特攻MT　連射ミサイル（性能違い）(段数制限)
+41502000 c4150 Special attack MT one shot attack -- c4150 特攻MT　ワンショット攻撃
+41503100 c4150 Special attack MT PA -- c4150 特攻MT　PA
+42000000 c4200 next generation proto AC laser rifle (left) -- c4200 次世代プロトACレーザーライフル（左）
+42000100 c4200 Next Generation ProtoAC Laser Rifle (Right) -- c4200 次世代プロトAC　レーザーライフル（右）
+42000200 c4200 Next Generation ProtoAC Laser Rifle (Charge Left) -- c4200 次世代プロトAC　レーザーライフル（チャージ左）
+42000300 c4200 Next Generation Proto AC Laser Rifle (Charge Right) -- c4200 次世代プロトAC　レーザーライフル（チャージ右）
+42000400 c4200 Next Generation ProtoAC Micro Missile (Left) -- c4200 次世代プロトAC　マイクロミサイル（左）
+42000500 c4200 Next Generation ProtoAC Micro Missile (Right) -- c4200 次世代プロトAC　マイクロミサイル（右）
+42000600 c4200 Next Generation Proto AC Melange Bullet (Small) -- c4200 次世代プロトAC　メランジ弾（小）
+42000700 c4200 next generation proto AC melange bullet (large right) -- c4200 次世代プロトAC　メランジ弾（大右）
+42000800 c4200 next generation proto AC melange bullet (large left) -- c4200 次世代プロトAC　メランジ弾（大左）
+42000900 c4200 Next Generation ProtoAC Melange Bullet Sign -- c4200 次世代プロトAC　メランジ弾予兆
+42001000 c4200 Next Generation ProtoAC Melange Bullet Sign -- c4200 次世代プロトAC　メランジ弾予兆
+42001100 c4200 Next Generation ProtoAC Micro Missile (Left) -- c4200 次世代プロトAC　マイクロミサイル（左）
+42001200 c4200 Next Generation ProtoAC Micro Missile (Right) -- c4200 次世代プロトAC　マイクロミサイル（右）
+42001300 c4200 next generation proto AC micro missile (different performance) -- c4200 次世代プロトAC　マイクロミサイル（性能違い）
+42001400 c4200 Next Generation ProtoAC Melange Bullet (Small) Simultaneous Firing ① -- c4200 次世代プロトAC　メランジ弾（小）同時発射①
+42001500 c4200 Next generation proto AC melange bullet (small) simultaneous firing ② -- c4200 次世代プロトAC　メランジ弾（小）同時発射②
+42001600 c4200 Next generation proto AC melange bullet (small) simultaneous firing ③ -- c4200 次世代プロトAC　メランジ弾（小）同時発射③
+42001700 c4200 Next generation proto AC melange bullet (small) simultaneous firing ④ -- c4200 次世代プロトAC　メランジ弾（小）同時発射④
+42001800 c4200 Next Generation Proto AC Laser Rifle (Owaza Offset Left) -- c4200 次世代プロトAC　レーザーライフル（大技オフセット左）
+42001900 c4200 Next Generation Proto AC Laser Rifle (Owaza Offset Right) -- c4200 次世代プロトAC　レーザーライフル（大技オフセット右）
+42002000 c4200 Next Generation ProtoAC One Shot Attack 1 -- c4200 次世代プロトAC　ワンショット攻撃1
+42002100 c4200 Next Generation ProtoAC One Shot Attack 2 -- c4200 次世代プロトAC　ワンショット攻撃2
+42002200 c4200 Next Generation ProtoAC One Shot Attack 3 -- c4200 次世代プロトAC　ワンショット攻撃3
+42002300 c4200 Next Generation ProtoAC One Shot Attack 4 -- c4200 次世代プロトAC　ワンショット攻撃4
+42002400 c4200 Next Generation ProtoAC Blade -- c4200 次世代プロトAC　ブレード
+42002500 c4200 Next Generation Proto AC Blade Charge -- c4200 次世代プロトAC　ブレードチャージ
+42002600 c4200 Next Generation ProtoAC Blade Gravity Field -- c4200 次世代プロトAC　ブレード重力場
+42002700 c4200 Next Generation ProtoAC Daiwaki Beam -- c4200 次世代プロトAC　大技ビーム
+42002800 c4200 Next Generation ProtoAC Great Technique Beam Impact -- c4200 次世代プロトAC　大技ビーム着弾
+42003000 c4200 next generation proto AC HU judgment bullet -- c4200 次世代プロトAC　HU判定弾丸
+42003100 c4200 next generation proto AC PA -- c4200 次世代プロトAC　PA
+42010000 c4201 Next Generation Proto AC C End Gatling (Left) -- c4201 次世代プロトAC　Cエンド　ガトリング（左）
+42010100 c4201 Next generation proto AC C end Gatling (right) -- c4201 次世代プロトAC　Cエンド　ガトリング（右）
+42010200 c4201 Next generation proto AC C end shot (left) -- c4201 次世代プロトAC　Cエンド　ショット（左）
+42010300 c4201 Next generation proto AC C-end shot (right) -- c4201 次世代プロトAC　Cエンド　ショット（右）
+42010400 c4201 Next generation proto AC C end arm parts hit -- c4201 次世代プロトAC　Cエンド　腕パーツヒット
+42010500 c4201 Next generation proto AC C end slamming shock wave -- c4201 次世代プロトAC　Cエンド　叩きつけ衝撃波
+42010600 c4201 Next generation proto AC C end Nagi Shockwave -- c4201 次世代プロトAC　Cエンド　薙ぎ衝撃波
+42010700 c4201 Next generation proto AC C end cut-up shock wave -- c4201 次世代プロトAC　Cエンド　斬り上げ衝撃波
+42010800 c4201 Next Generation Proto AC C End Aubade Continuous Explosion (3 Stages) -- c4201 次世代プロトAC　Cエンド　オーバード連爆(3段)
+42010900 c4201 Next generation proto AC C end linkage end flag -- c4201 次世代プロトAC　Cエンド　連携終了フラグ
+42011000 c4201 Next generation proto AC C end turret transformation -- c4201 次世代プロトAC　Cエンド　砲台変形
+42011100 c4201 Next generation proto AC C end sea spider instructions -- c4201 次世代プロトAC　Cエンド　ウミグモ指示
+42011200 c4201 Next generation proto AC C end huge time difference judgment -- c4201 次世代プロトAC　Cエンド　時間差巨大判定
+42011300 c4201 Next Generation Proto AC C End Time Difference Huge Judgment 2 -- c4201 次世代プロトAC　Cエンド　時間差巨大判定2
+42011400 c4201 Next generation proto AC C end cooperation flag 1 -- c4201 次世代プロトAC　Cエンド　連携フラグ1
+42011500 c4201 Next generation proto AC C end cooperation flag 2 -- c4201 次世代プロトAC　Cエンド　連携フラグ2
+42011600 c4201 Next generation proto AC C end cooperation flag 3 -- c4201 次世代プロトAC　Cエンド　連携フラグ3
+42011700 c4201 Next generation proto AC C end cooperation flag 4 -- c4201 次世代プロトAC　Cエンド　連携フラグ4
+42011800 c4201 Next generation proto AC C end cooperation flag 5 -- c4201 次世代プロトAC　Cエンド　連携フラグ5
+42011900 c4201 Next generation proto AC C end temporary AA -- c4201 次世代プロトAC　Cエンド　仮AA
+42012000 c4201 Next Generation Proto AC C End One Shot Attack 1 -- c4201 次世代プロトAC　Cエンド　ワンショット攻撃1
+42012100 c4201 Next Generation Proto AC C End One Shot Attack 2 -- c4201 次世代プロトAC　Cエンド　ワンショット攻撃2
+42012200 c4201 Next Generation Proto AC C End One Shot Attack 3 -- c4201 次世代プロトAC　Cエンド　ワンショット攻撃3
+42012300 c4201 Next Generation Proto AC C End One Shot Attack 4 -- c4201 次世代プロトAC　Cエンド　ワンショット攻撃4
+42012400 c4201 Next generation proto AC C-end laser blade (right) -- c4201 次世代プロトAC　Cエンド　レーザーブレード（右）
+42012500 c4201 Next generation proto AC C-end laser blade (left) -- c4201 次世代プロトAC　Cエンド　レーザーブレード（左）
+42012600 c4201 Next generation proto AC C-end pulse blade -- c4201 次世代プロトAC　Cエンド　パルスブレード
+42012700 c4201 Next generation proto AC C end overdo blade -- c4201 次世代プロトAC　Cエンド　オーバードブレード
+42012800 c4201 Next generation proto AC C end overdo blade large -- c4201 次世代プロトAC　Cエンド　オーバードブレード大
+42012900 c4201 Next Generation Proto AC C End Time Difference Huge Judgment (From the Main Unit) -- c4201 次世代プロトAC　Cエンド　時間差巨大判定（本体から）
+42013000 c4201 Next generation proto AC C end Daiwaki beam -- c4201 次世代プロトAC　Cエンド　大技ビーム
+42013001 c4201 Next generation proto AC C end big technique beam landing -- c4201 次世代プロトAC　Cエンド　大技ビーム着弾
+42019500 c4201 Next generation proto AC C end melange bullet (small right) -- c4201 次世代プロトAC　Cエンド　メランジ弾（小右）
+42019600 c4201 Next generation proto AC C end melange bullet (small left) -- c4201 次世代プロトAC　Cエンド　メランジ弾（小左）
+42019700 c4201 Next generation proto AC C-end melange bullet (large right) -- c4201 次世代プロトAC　Cエンド　メランジ弾（大右）
+42019800 c4201 Next generation proto AC C-end melange bullet (large left) -- c4201 次世代プロトAC　Cエンド　メランジ弾（大左）
+42100000 c4210 Next Generation ProtoAC Phantom HU Melange Particle -- c4210 次世代プロトAC　幻影　HUメランジ粒子
+42100100 c4210 Next Generation ProtoAC Phantom HU Melange Particle -- c4210 次世代プロトAC　幻影　HUメランジ粒子
+42100200 c4210 Next Generation ProtoAC Phantom HU Melange Particle -- c4210 次世代プロトAC　幻影　HUメランジ粒子
+42102000 c4200 Next Generation ProtoAC Phantom Blade -- c4200 次世代プロトAC　幻影　ブレード
+42102300 c4210 Next Generation Proto AC Phantom One Shot Attack 3 -- c4210 次世代プロトAC　幻影　ワンショット攻撃3
+42102400 c4210 Next Generation Proto AC Phantom One Shot Attack 4 -- c4210 次世代プロトAC　幻影　ワンショット攻撃4
+42102500 c4210 Next Generation ProtoAC Phantom Afterimage Fade Out -- c4210 次世代プロトAC　幻影　残像フェードアウト
+42102800 c4210 Next generation proto AC illusion melange residual (large) -- c4210 次世代プロトAC　幻影　メランジ残留（大）
+42500000 c4250 Orbit Seed Ob Jab Shoulder Pad Raise -- c4250 オービットシード　Obジャブ　肩パッド上げ
+42500100 c4250 Orbit Seed Ob Jab Manual Pay Left -- c4250 オービットシード　Obジャブ　手払い　左
+42500200 c4250 Orbit Seed Ob Jab Manual Pay Right -- c4250 オービットシード　Obジャブ　手払い　右
+42501300 c4250 orbit seed chest main gun -- c4250 オービットシード　胸主砲
+42502000 c4250 Orbit Seed One Shot 00 -- c4250 オービットシード　ワンショット00
+42502100 c4250 Orbit Seed One Shot 01 -- c4250 オービットシード　ワンショット01
+42502200 c4250 Orbit Seed One Shot 02 -- c4250 オービットシード　ワンショット02
+42505000 c4250 Orbit Seed Ob Left 344 -- c4250 オービットシード　Ob　左　344
+42505100 c4250 Orbit Seed Ob Left 342 -- c4250 オービットシード　Ob　左　342
+42505200 c4250 Orbit Seed Ob Left 340 -- c4250 オービットシード　Ob　左　340
+42505300 c4250 Orbit Seed Ob Left 341 -- c4250 オービットシード　Ob　左　341
+42505400 c4250 Orbit Seed Ob Left 343 -- c4250 オービットシード　Ob　左　343
+42505600 c4250 Orbit Seed Ob Right 314 -- c4250 オービットシード　Ob　右　314
+42505700 c4250 Orbit Seed Ob Right 312 -- c4250 オービットシード　Ob　右　312
+42505800 c4250 Orbit Seed Ob Right 310 -- c4250 オービットシード　Ob　右　310
+42505900 c4250 Orbit Seed Ob Right 311 -- c4250 オービットシード　Ob　右　311
+42506000 c4250 Orbit Seed Ob Right 313 -- c4250 オービットシード　Ob　右　313
+42507000 c4250 Orbit Seed Lightwave Emission Left Hand -- c4250 オービットシード　光波射出　左手
+42507010 c4250 Orbit Seed Lightwave Emission Right Hand -- c4250 オービットシード　光波射出　右手
+42600200 c4260 Orbit control wraparound sweep -- c4260 オービット制御　回り込み掃射
+42602000 c4260 Orbit control one shot 00 -- c4260 オービット制御　ワンショット00
+42602100 c4260 Orbit control one shot 01 -- c4260 オービット制御　ワンショット01
+42602200 c4260 Orbit control one shot 02 -- c4260 オービット制御　ワンショット02
+50000000 c5000 guard mechanism (aerial) machine gun type machine gun -- c5000 ガードメカ(空中) 機関銃タイプ　機関銃
+50000100 c5000 Guard Mecha (Aerial) Machine Gun Type Rocket -- c5000 ガードメカ(空中) 機関銃タイプ　ロケット
+50000200 c5000 Guard Mecha (Aerial) Machine gun type Suicide attack -- c5000 ガードメカ(空中) 機関銃タイプ　自爆特攻
+50000300 c5000 guard mechanism (air) machine gun type siren sound -- c5000 ガードメカ(空中) 機関銃タイプ　サイレン鳴らし
+50002000 c5000 Guard Mecha (Aerial) One Shot -- c5000 ガードメカ(空中) ワンショット
+50003100 c5000 guard mechanism (aerial) rotor control -- c5000 ガードメカ(空中) ローター制御
+50100000 c5010 bug (security type) laser gun -- c5010 バグ（警備タイプ）　レーザーガン
+50100100 c5010 Bug (Work Type B) Flamethrower -- c5010 バグ（作業タイプB）　火炎放射
+50100200 c5010 Bug (Work Type B) Grenade -- c5010 バグ（作業タイプB）　グレネード
+50100300 c5010 Bug (special type) Poison fog -- c5010 バグ（特殊タイプ）　毒霧
+50100310 c5010 Bug (special type) Poison fog_large range -- c5010 バグ（特殊タイプ）　毒霧_範囲大
+50100400 c5010 Bug (security type) laser gun charge -- c5010 バグ（警備タイプ）　レーザーガンチャージ
+50102000 c5010 Bug (Work Type A) One-shot attack -- c5010 バグ（作業タイプA）　ワンショット攻撃
+50103100 c5010 Bug (work type A) Always Lookat -- c5010 バグ（作業タイプA）　常時Lookat
+50200000 c5020 Heavy Guard Mecha Chest Main Gun -- c5020 重ガードメカ　胸部主砲
+50200100 c5020 Heavy guard mechanism main furnace_eruption -- c5020 重ガードメカ　本体炉_噴火
+50200200 c5020 Heavy guard mechanism upper body furnace_flame radiation -- c5020 重ガードメカ　上半身炉_火炎放射
+50200300 c5020 Heavy guard mechanism main reactor_eruption high altitude -- c5020 重ガードメカ　本体炉_噴火 高高度
+50200400 c5020 Heavy guard mechanism main body furnace_flame radiation_short range -- c5020 重ガードメカ　本体炉_火炎放射_近距離
+50200500 c5020 Heavy guard mechanism Main body furnace_Flame radiation_Long range -- c5020 重ガードメカ　本体炉_火炎放射_遠距離
+50200600 c5020 Heavy guard mechanism Main furnace_Eruption_Junk close range -- c5020 重ガードメカ　本体炉_噴火_ガラクタ近距離
+50200700 c5020 Heavy guard mechanism Main furnace_Eruption_Junk medium range -- c5020 重ガードメカ　本体炉_噴火_ガラクタ中距離
+50200800 c5020 Heavy guard mechanism upper body furnace door opening/closing test -- c5020 重ガードメカ　上半身炉 扉開閉 テスト
+50200900 c5020 Heavy guard mechanism upper body furnace door opening/closing -- c5020 重ガードメカ　上半身炉 扉開閉
+50201100 c5020 Heavy Guard Mecha Skirt Missile 1 -- c5020 重ガードメカ　スカートミサイル1
+50201200 c5020 Heavy Guard Mecha Skirt Missile 2 -- c5020 重ガードメカ　スカートミサイル2
+50201300 c5020 Heavy Guard Mecha Skirt Missile 3 -- c5020 重ガードメカ　スカートミサイル3
+50201400 c5020 Heavy Guard Mecha Skirt Missile 4 -- c5020 重ガードメカ　スカートミサイル4
+50201500 c5020 Heavy Guard Mecha Skirt Missile 5 -- c5020 重ガードメカ　スカートミサイル5
+50201600 c5020 Heavy Guard Mecha Skirt Missile 6 -- c5020 重ガードメカ　スカートミサイル6
+50201700 c5020 Heavy Guard Mecha Ceiling Destruction Cannon -- c5020 重ガードメカ　天井破壊砲
+50202000 c5020 Heavy Guard Mecha One Shot Attack -- c5020 重ガードメカ　ワンショット攻撃
+50202100 c5020 Heavy guard mechanism melee -- c5020 重ガードメカ　近接
+50202200 c5020 Heavy Guard Mecha One Shot Attack Attack 02 -- c5020 重ガードメカ　ワンショット攻撃攻撃02
+50203100 c5020 Heavy Guard Mecha For changing lock point upon death -- c5020 重ガードメカ　死亡時ロックポイント変更用
+51000000 c5100 large transport helicopter missile -- c5100 大型輸送ヘリ　ミサイル
+51000100 c5100 large transport helicopter missile left -- c5100 大型輸送ヘリ　ミサイル左
+51000200 c5100 large transport helicopter flare -- c5100 大型輸送ヘリ　フレア
+51002000 c5100 large transport helicopter one shot 0 -- c5100 大型輸送ヘリ　ワンショット0
+51002100 c5100 large transport helicopter one shot 1 -- c5100 大型輸送ヘリ　ワンショット1
+51003000 c5100 large transport helicopter rotor -- c5100 大型輸送ヘリ　ローター
+51003100 c5100 large transport helicopter shield -- c5100 大型輸送ヘリ　シールド
+51010000 c5101 large transport helicopter machine gun c5101 large transport helicopter_machine gun -- c5101 大型輸送ヘリ機銃　c5101大型輸送ヘリ_機銃
+51200000 c5120 Military US Drone Laser Rifle -- c5120 軍事用USドローン　レーザーライフル
+51200100 c5120 Military US Drone Pulse -- c5120 軍事用USドローン　パルス
+51200200 c5120 military US drone cluster missile -- c5120 軍事用USドローン　クラスターミサイル
+51201000 c5120 military US drone PA -- c5120 軍事用USドローン　PA
+51202000 c5120 military US drone one shot -- c5120 軍事用USドローン　ワンショット
+51500100 c5150 combat helicopter machine gun -- c5150 戦闘ヘリ　マシンガン
+51500200 c5150 combat helicopter machine gun -- c5150 戦闘ヘリ　機銃
+51500300 c5150 combat helicopter EN machine gun -- c5150 戦闘ヘリ　ENマシンガン
+51500400 c5150 combat helicopter napalm -- c5150 戦闘ヘリ　ナパーム
+51503100 c5150 combat helicopter rotor control -- c5150 戦闘ヘリ　ロータ制御
+52000100 c5200 tank firing while marching -- c5200 戦車　行進間射撃
+52000200 c5200 tank test machine gun turret shooting -- c5200 戦車　テストマシンガン砲塔射撃
+52000300 c5200 tank test missile turret firing -- c5200 戦車　テストミサイル砲塔射撃
+52000400 c5200 tank laser -- c5200 戦車　レーザー
+52000500 c5200 tank propagation -- c5200 戦車　伝播用
+52000600 c5200 tank for death -- c5200 戦車　死亡時用
+52001000 c5200 tank stop fire -- c5200 戦車　停止射撃
+52002000 c5200 tank test left turn -- c5200 戦車　テスト左旋回
+52002100 c5200 tank test right turn -- c5200 戦車　テスト右旋回
+52002900 c5200 tank combat state switching -- c5200 戦車　戦闘状態切替
+52003000 c5200 tank test 1 -- c5200 戦車　テスト用1
+52003100 c5200 tank test 2 -- c5200 戦車　テスト用2
+52500000 c5250 Sunflower straight line rush -- c5250 サンフラワー　直線突進
+52500100 c5250 Sunflower curve lunge left -- c5250 サンフラワー　カーブ突進左
+52500200 c5250 Sunflower curve lunge right -- c5250 サンフラワー　カーブ突進右
+52500300 c5250 Sunflower Switch and rush left -- c5250 サンフラワー　切り替えし突進左
+52500400 c5250 Sunflower Switch and rush right -- c5250 サンフラワー　切り替えし突進右
+52500500 c5250 Sunflower Drift turning left -- c5250 サンフラワー　ドリフト旋回左
+52500600 c5250 Sunflower Drift turning right -- c5250 サンフラワー　ドリフト旋回右
+52500700 c5250 Sunflower flame radiation -- c5250 サンフラワー　火炎放射
+52500800 c5250 Sunflower rising and turning left -- c5250 サンフラワー　起き上がり旋回左
+52500900 c5250 Sunflower rising and turning right -- c5250 サンフラワー　起き上がり旋回右
+52501000 c5250 Sunflower missile launch -- c5250 サンフラワー　ミサイル発射
+52501100 c5250 Sunflower playing -- c5250 サンフラワー　弾き
+52501200 c5250 Sunflower Drift Flame Radiation Left -- c5250 サンフラワー　ドリフト火炎放射左
+52501300 c5250 Sunflower Drift Flamethrower Right -- c5250 サンフラワー　ドリフト火炎放射右
+52501400 c5250 Sunflower Akira flame radiation left -- c5250 サンフラワー　アキラ火炎放射左
+52501500 c5250 Sunflower Akira Flamethrower Right -- c5250 サンフラワー　アキラ火炎放射右
+52501600 c5250 Sunflower Straight line charge (blow left) -- c5250 サンフラワー　直線突進（吹き飛ばし左）
+52501700 c5250 Sunflower Straight line charge (blow right) -- c5250 サンフラワー　直線突進（吹き飛ばし右）
+52501800 c5250 Sunflower large turn left -- c5250 サンフラワー　大回り左
+52501900 c5250 Sunflower large turn right -- c5250 サンフラワー　大回り右
+52502000 c5250 Sunflower Ground vehicle turning_left -- c5250 サンフラワー　地上車両旋回_左
+52502100 c5250 Sunflower ground vehicle turning_right -- c5250 サンフラワー　地上車両旋回_右
+52502200 c5250 Sunflower short drift left -- c5250 サンフラワー　ショートドリフト左
+52502300 c5250 Sunflower Short Drift Right -- c5250 サンフラワー　ショートドリフト右
+52502400 c5250 sunflower acceleration -- c5250 サンフラワー　加速
+52502500 c5250 Sunflower deceleration -- c5250 サンフラワー　減速
+52503100 c5250 Sunflower Always LookAt -- c5250 サンフラワー　常時LookAt
+53000000 c5300 suicide satellite laser gun -- c5300 自爆衛星　レーザーガン
+53000100 c5300 suicide satellite mine detachment -- c5300 自爆衛星　機雷切り離し
+53000200 c5300 suicide satellite suicide attack -- c5300 自爆衛星　自爆特攻
+53000300 c5300 Suicide satellite simultaneous suicide attack command -- c5300 自爆衛星　一斉自爆特攻命令
+53000400 c5300 suicide satellite SOL alert state bullet -- c5300 自爆衛星　SOL 警戒状態弾丸
+53000500 c5300 Suicide satellite special approach suicide explosion medium -- c5300 自爆衛星　特殊接近自爆　中
+53000600 c5300 Suicide Satellite Special Approach Suicide Destruction Near -- c5300 自爆衛星　特殊接近自爆　近
+53000700 c5300 suicide satellite satellite cannon body -- c5300 自爆衛星　衛星砲本体
+53000800 c5300 suicide satellite suicide attack mission use -- c5300 自爆衛星　自爆特攻 ミッション用
+53000900 c5300 Suicide Satellite Laser Gun Destroy Iceworm -- c5300 自爆衛星　レーザーガン　アイスワーム撃破
+53000910 c5300 Suicide satellite Suicide attack Iceworm defeated -- c5300 自爆衛星　自爆特攻　アイスワーム撃破
+53001000 c5300 self-destruct satellite SOL laser sight -- c5300 自爆衛星　SOLレーザーサイト
+53001100 c5300 suicide satellite satellite cannon body late landing -- c5300 自爆衛星　衛星砲本体 後着弾
+53001200 c5300 suicide satellite satellite cannon body front impact -- c5300 自爆衛星　衛星砲本体 前着弾
+53001300 c5300 suicide satellite mine B -- c5300 自爆衛星　機雷B
+53001400 c5300 suicide satellite mine C -- c5300 自爆衛星　機雷C
+53001500 c5300 suicide satellite mine D -- c5300 自爆衛星　機雷D
+53001600 c5300 suicide satellite mine E -- c5300 自爆衛星　機雷E
+53001700 c5300 suicide satellite mine F -- c5300 自爆衛星　機雷F
+53001800 c5300 suicide satellite mine G -- c5300 自爆衛星　機雷G
+53001900 c5300 suicide satellite mine H -- c5300 自爆衛星　機雷H
+53002000 c5300 suicide satellite proximity -- c5300 自爆衛星　近接
+53002100 c5300 suicide satellite proximity -- c5300 自爆衛星　近接
+53002300 c5300 suicide satellite mine I -- c5300 自爆衛星　機雷I
+53002400 c5300 suicide satellite mine J -- c5300 自爆衛星　機雷J
+53002500 c5300 suicide satellite mine K -- c5300 自爆衛星　機雷K
+53002600 c5300 suicide satellite mine L -- c5300 自爆衛星　機雷L
+55000000 c5500 Biological Weapon Right Bite -- c5500 生体兵器　右噛みつき
+55000100 c5500 Biological Weapon Left Bite -- c5500 生体兵器　左噛みつき
+55000200 c5500 Biological Weapon Jump and Bite -- c5500 生体兵器　飛びかかり噛みつき
+55000300 c5500 Biological Weapon Dash Bite -- c5500 生体兵器　ダッシュ噛みつき
+55000400 c5500 Biological Weapon Spit acid (straight line) -- c5500 生体兵器　酸を吐く（直線）
+55000401 c5500 Biological weapon Spit acid (straight line) 1 -- c5500 生体兵器　酸を吐く（直線）1
+55000402 c5500 Biological weapon spitting acid (straight line) 2 -- c5500 生体兵器　酸を吐く（直線）2
+55000500 c5500 Biological Weapon Spit acid (range) -- c5500 生体兵器　酸を吐く（範囲）
+55000600 c5500 Biological weapon threat (upper body arched) -- c5500 生体兵器　威嚇（上体反らし）
+55000700 c5500 Biological weapon threat (sideways shaking) -- c5500 生体兵器　威嚇（横揺らし）
+55000800 c5500 Biological Weapon Threat (3) -- c5500 生体兵器　威嚇（3）
+55000900 c5500 biological weapon self-destruction -- c5500 生体兵器　自爆
+55001000 c5500 biological weapon long-range self-destruction -- c5500 生体兵器　遠距離自爆
+55001100 c5500 Biological Weapon Spit acid (straight line) -- c5500 生体兵器　酸を吐く（直線）
+55001101 c5500 Biological weapon Spit acid (straight line) 1 -- c5500 生体兵器　酸を吐く（直線）1
+55001102 c5500 Biological weapon spitting acid (straight line) 2 -- c5500 生体兵器　酸を吐く（直線）2
+55003100 c5500 Biological weapon Always LookAt -- c5500 生体兵器　常時LookAt
+60000000 c6000 Necklace Keeper Main Gun -- c6000 首飾りの番人　主砲
+60000100 c6000 Necklace Keeper Extra Thick Laser -- c6000 首飾りの番人　極太レーザー
+60000200 c6000 Necklace Keeper Laser Arm A Front -- c6000 首飾りの番人　レーザー　アームA前面
+60000300 c6000 Necklace Keeper Secondary Gun Strong ① -- c6000 首飾りの番人　副砲強①
+60000400 c6000 Necklace Keeper Secondary Gun Weak ① -- c6000 首飾りの番人　副砲弱①
+60000500 c6000 Necklace Keeper Face Missile (favorite) -- c6000 首飾りの番人　面ミサイル（本命）
+60000600 c6000 Necklace Keeper Giant Missile -- c6000 首飾りの番人　巨大ミサイル
+60000700 c6000 Necklace Keeper Face Missile (Enthusiasm) -- c6000 首飾りの番人　面ミサイル（賑やかし）
+60000800 c6000 Necklace Keeper Secondary Gun Strong ② -- c6000 首飾りの番人　副砲強②
+60000900 c6000 Necklace Keeper Secondary Gun Strong ③ -- c6000 首飾りの番人　副砲強③
+60001000 c6000 Necklace Keeper Laser Arm A Back -- c6000 首飾りの番人　レーザー　アームA背面
+60001100 c6000 Necklace Keeper Laser Arm B Back -- c6000 首飾りの番人　レーザー　アームB背面
+60001300 c6000 Necklace Keeper Secondary Gun Strong ④ -- c6000 首飾りの番人　副砲強④
+60001400 c6000 Necklace Keeper Secondary Gun Weak ② -- c6000 首飾りの番人　副砲弱②
+60001500 c6000 Necklace Keeper Secondary Gun Weak ③ -- c6000 首飾りの番人　副砲弱③
+60001600 c6000 Necklace Keeper Secondary Gun Weak ④ -- c6000 首飾りの番人　副砲弱④
+60001700 c6000 Necklace Keeper Secondary Gun Weak ⑤ -- c6000 首飾りの番人　副砲弱⑤
+60001800 c6000 Necklace Keeper Secondary Gun Weak ⑥ -- c6000 首飾りの番人　副砲弱⑥
+60002000 c6000 Necklace Keeper One Shot 00 -- c6000 首飾りの番人　ワンショット00
+60002100 c6000 Necklace Keeper One Shot 01 -- c6000 首飾りの番人　ワンショット01
+60002200 c6000 Necklace Keeper One Shot 02 -- c6000 首飾りの番人　ワンショット02
+60100000 c6010 barrier unit laser machine gun -- c6010 バリアユニット　レーザーマシンガン
+60102000 c6010 barrier unit one shot -- c6010 バリアユニット　ワンショット
+60103000 c6010 barrier unit shield -- c6010 バリアユニット　シールド
+60500000 c6050 Pharaon Mega Gatling Gun -- c6050 ファラオン　メガ・ガトリングガン
+60500010 c6050 Pharaon Mega Gatling Gun_Tutorial use -- c6050 ファラオン　メガ・ガトリングガン_チュートリアル用
+60500100 c6050 Pharaon quadruple machine gun (right) -- c6050 ファラオン　4連機銃（右）
+60500110 c6050 Pharaon quadruple machine gun (right)_for tutorial -- c6050 ファラオン　4連機銃（右）_チュートリアル用
+60500120 c6050 Pharaon quadruple machine gun (right)_for appearance production -- c6050 ファラオン　4連機銃（右）_登場演出用
+60500200 c6050 Pharaon quadruple machine gun (left) -- c6050 ファラオン　4連機銃（左）
+60500210 c6050 Pharaon quadruple machine gun (left)_for tutorial -- c6050 ファラオン　4連機銃（左）_チュートリアル用
+60500220 c6050 Pharaon 4-barreled machine gun (left)_for appearance production -- c6050 ファラオン　4連機銃（左）_登場演出用
+60500300 c6050 Pharaon missile (right) -- c6050 ファラオン　ミサイル（右）
+60500350 c6050 Pharaon missile (right)_Ocean city -- c6050 ファラオン　ミサイル（右）_洋上の都市
+60500400 c6050 Pharaon missile (left) -- c6050 ファラオン　ミサイル（左）
+60500450 c6050 Pharaon missile (left)_City on the ocean -- c6050 ファラオン　ミサイル（左）_洋上の都市
+60500500 c6050 Pharaon Napalm -- c6050 ファラオン　ナパーム
+60500600 c6050 Pharaon needle gun (right) -- c6050 ファラオン　ニードルガン（右）
+60500700 c6050 Pharaon needle gun (left) -- c6050 ファラオン　ニードルガン（左）
+60501100 c6050 Pharaon whole body movement attack system -- c6050 ファラオン　全身移動攻撃系
+60501200 c6050 Pharaon offset repartition nose left -- c6050 ファラオン　オフセット仕切り直し　機首左
+60501500 c6050 Pharaon Side QB turn right move nose left -- c6050 ファラオン　横QB回り込み右移動旋回機首左
+60501600 c6050 Pharaon Side QB turn left move nose right -- c6050 ファラオン　横QB回り込み左移動旋回機首右
+60501700 c6050 Pharaon side step right movement -- c6050 ファラオン　サイドステップ右移動
+60501800 c6050 Pharaon side step left movement -- c6050 ファラオン　サイドステップ左移動
+60502000 c6050 Pharaon Repartition nose right (short) -- c6050 ファラオン　仕切り直し機首右（短）
+60502100 c6050 Pharaon Repartition nose left (short) -- c6050 ファラオン　仕切り直し機首左（短）
+60502500 c6050 Pharaon backward turning nose right direction -- c6050 ファラオン　後退旋回機首右方向
+60502600 c6050 Pharaon backward turning nose left direction -- c6050 ファラオン　後退旋回機首左方向
+60503000 c6050 Pharaon_Full equipment for downwash SFX -- c6050 ファラオン_全装備　ダウンウォッシュSFX用
+60503010 c6050 Pharaon_Full equipment for downwash SFX double amount -- c6050 ファラオン_全装備　ダウンウォッシュSFX用 倍量
+60504000 c6050 Pharaon Flare_Left -- c6050 ファラオン　フレア_左
+60504100 c6050 Pharaon Flare_Right -- c6050 ファラオン　フレア_右
+60505001 c6050 Pharaon Napalm_300_simultaneous firing -- c6050 ファラオン　ナパーム_300_同時発射
+60505002 c6050 Pharaon Napalm_301_Simultaneous launch -- c6050 ファラオン　ナパーム_301_同時発射
+60505003 c6050 Pharaon Napalm_302_Simultaneous launch -- c6050 ファラオン　ナパーム_302_同時発射
+60505004 c6050 Pharaon Napalm_303_Simultaneous launch -- c6050 ファラオン　ナパーム_303_同時発射
+60505005 c6050 Pharaon Napalm_304_Simultaneous launch -- c6050 ファラオン　ナパーム_304_同時発射
+60505006 c6050 Pharaon Napalm_305_Simultaneous launch -- c6050 ファラオン　ナパーム_305_同時発射
+60505007 c6050 Pharaon Napalm_306_Simultaneous launch -- c6050 ファラオン　ナパーム_306_同時発射
+60505008 c6050 Pharaon Napalm_307_Simultaneous launch -- c6050 ファラオン　ナパーム_307_同時発射
+61000000 c6100 sea spider multi-legged mode main gun -- c6100 ウミグモ　多脚モード　主砲
+61000100 c6100 sea spider flight mode main gun vertical -- c6100 ウミグモ　飛行モード　主砲　縦
+61000200 c6100 sea spider flight mode main gun left -- c6100 ウミグモ　飛行モード　主砲　左
+61000300 c6100 sea spider flight mode main gun right -- c6100 ウミグモ　飛行モード　主砲　右
+61000400 c6100 sea spider flight mode main gun vertical end -- c6100 ウミグモ　飛行モード　主砲　縦　終了
+61000500 c6100 sea spider flight mode main gun left end -- c6100 ウミグモ　飛行モード　主砲　左　終了
+61000600 c6100 sea spider flight mode main gun right end -- c6100 ウミグモ　飛行モード　主砲　右　終了
+61000700 c6100 sea spider multi-legged mode main gun scratch -- c6100 ウミグモ　多脚モード　主砲かすり
+61000800 c6100 sea spider multi-legged mode secondary gun -- c6100 ウミグモ　多脚モード　副砲
+61000900 c6100 sea spider multi-legged mode secondary gun -- c6100 ウミグモ　多脚モード　副砲
+61001000 c6100 sea spider secondary gun laser confirmed -- c6100 ウミグモ　副砲レーザー確認
+61001100 c6100 sea spider multi-legged mode secondary gun -- c6100 ウミグモ　多脚モード　副砲
+61001200 c6100 sea spider multi-legged mode secondary gun -- c6100 ウミグモ　多脚モード　副砲
+61001300 c6100 sea spider flight mode secondary gun -- c6100 ウミグモ　飛行モード　副砲
+61001400 c6100 sea spider multi-legged mode missile -- c6100 ウミグモ　多脚モード　ミサイル
+61001500 c6100 sea spider test -- c6100 ウミグモ　テスト
+61001600 c6100 Sea Spider Plasma Snow -- c6100 ウミグモ　プラズマスノー
+61001700 c6100 sea spider flight mode missile left -- c6100 ウミグモ　飛行モード　ミサイル左
+61001800 c6100 sea spider flight mode missile right -- c6100 ウミグモ　飛行モード　ミサイル右
+61002000 c6100 Sea spider diving trampling -- c6100 ウミグモ　飛び込み踏みつけ
+61002200 c6100 Sea spider trampling front length -- c6100 ウミグモ　踏みつけ　前　長
+61002300 c6100 Sea spider trampling front short -- c6100 ウミグモ　踏みつけ　前　短
+61002400 c6100 Sea spider trampling left rear long -- c6100 ウミグモ　踏みつけ　左後　長
+61002500 c6100 Sea spider trampling left rear short -- c6100 ウミグモ　踏みつけ　左後　短
+61002600 c6100 Sea spider trampling right rear long -- c6100 ウミグモ　踏みつけ　右後　長
+61002700 c6100 Sea spider deformation confirmed -- c6100 ウミグモ　変形確認
+61002800 c6100 sea spider secondary gun inactive -- c6100 ウミグモ　副砲非アクティブ
+61002900 c6100 sea spider flight mode main gun transparent bullet -- c6100 ウミグモ　飛行モード　主砲　透明弾丸
+61003000 c6100 sea spider flight mode secondary gun active -- c6100 ウミグモ　飛行モード　副砲アクティブ
+61003100 c6100 Sea spider HU deformation -- c6100 ウミグモ　ＨＵ変形
+61004100 c6100 Sea spider [C end] Flight mode Main gun -- c6100 ウミグモ　【Cエンド】　飛行モード　主砲
+61004200 c6100 Sea spider [C end] Flight mode secondary gun active -- c6100 ウミグモ　【Cエンド】　飛行モード　副砲アクティブ
+61004300 c6100 Sea spider [C end] Flight mode After missile -- c6100 ウミグモ　【Cエンド】　飛行モード　ミサイル後
+61004400 c6100 Sea spider [C end] Flight mode missile left -- c6100 ウミグモ　【Cエンド】　飛行モード　ミサイル左
+61004500 c6100 Sea spider [C end] Flight mode missile right -- c6100 ウミグモ　【Cエンド】　飛行モード　ミサイル右
+61004600 c6100 Sea spider [C end] Flight mode Main gun beam -- c6100 ウミグモ　【Cエンド】　飛行モード　主砲ビーム
+61004700 c6100 Sea spider [C end] Flight mode Main gun Transparent bullet -- c6100 ウミグモ　【Cエンド】　飛行モード　主砲　透明弾丸
+61010000 c6101 Sea spider secondary gun rapid fire -- c6101 ウミグモ副砲　連射
+61010100 c6101 Sea spider secondary gun random firing -- c6101 ウミグモ副砲　乱射
+61010200 c6101 Sea spider secondary gun diffusion gun -- c6101 ウミグモ副砲　拡散砲
+61012000 c6101 Sea Spider Secondary Cannon One Shot Attack 00 -- c6101 ウミグモ副砲　ワンショット攻撃　00
+61012100 c6101 Sea spider secondary gun one shot attack 01 -- c6101 ウミグモ副砲　ワンショット攻撃　01
+61012200 c6101 Sea Spider Secondary Cannon One Shot Attack 02 -- c6101 ウミグモ副砲　ワンショット攻撃　02
+61013100 c6101 Sea spider secondary gun Always LookAt -- c6101 ウミグモ副砲　常時LookAt
+61014200 c6101 Sea spider secondary cannon [C end] Diffusion cannon -- c6101 ウミグモ副砲　【Cエンド】　拡散砲
+61019999 c6101 Sea spider secondary cannon [C end] For decisive battle C light emitting part -- c6101 ウミグモ副砲　【Cエンド】　決戦C発光部用
+62500000 c6250 Sandworm body missile_right side -- c6250 サンドワーム　ボディミサイル_右側
+62500010 c6250 Sandworm body missile_left side -- c6250 サンドワーム　ボディミサイル_左側
+62500090 c6250 Sandworm Body Missile_400 -- c6250 サンドワーム　ボディミサイル_400
+62500091 c6250 Sandworm Body Missile_401 -- c6250 サンドワーム　ボディミサイル_401
+62500100 c6250 Sandworm Tail Missile_Upper left stage -- c6250 サンドワーム　テールミサイル_左上段
+62500110 c6250 Sandworm Tail Missile_Lower left row -- c6250 サンドワーム　テールミサイル_左下段
+62500200 c6250 Sandworm Tail Missile_Upper right row -- c6250 サンドワーム　テールミサイル_右上段
+62500210 c6250 Sandworm Tail Missile_Lower right row -- c6250 サンドワーム　テールミサイル_右下段
+62500900 c6250 Sandworm Omen SFX -- c6250 サンドワーム　予兆SFX
+62502000 c6250 Sandworm One Shot 00 -- c6250 サンドワーム　ワンショット00
+62502100 c6250 Sandworm One Shot 01 -- c6250 サンドワーム　ワンショット01
+62502200 c6250 Sandworm One Shot 02 -- c6250 サンドワーム　ワンショット02
+62502300 c6250 Sandworm Ground SFX -- c6250 サンドワーム　地面SFX
+62509000 c6250 Sandworm Dora cannon production bullet -- c6250 サンドワーム　ドーラ砲演出弾丸
+62509989 c6250 Sandworm Damage added while down -- c6250 サンドワーム　ダウン中ダメージ加算
+62509990 c6250 Sandworm Special damage addition -- c6250 サンドワーム　特殊ダメージ加算
+62600000 c6260 Sandworm small body missile -- c6260 サンドワーム小　ボディミサイル
+62600100 c6260 Sandworm small tail missile_left -- c6260 サンドワーム小　テールミサイル_左
+62600200 c6260 Sandworm small tail missile_right -- c6260 サンドワーム小　テールミサイル_右
+62602000 c6260 Sandworm Small One Shot Attack_00 -- c6260 サンドワーム小　ワンショット攻撃_00
+62602100 c6260 Sandworm Small One Shot Attack_01 -- c6260 サンドワーム小　ワンショット攻撃_01
+62602200 c6260 Sandworm Small One Shot Attack_02 -- c6260 サンドワーム小　ワンショット攻撃_02
+63500000 c6350 Dora Dora gun -- c6350 ドーラ　ドーラ砲
+63510000 c6351 Dora secondary gun secondary gun fire -- c6351 ドーラ副砲　副砲射撃
+63520000 c6352 Dora missile missile -- c6352 ドーラミサイル　ミサイル
+64000000 c6400 mining ship missile -- c6400 採掘艦　ミサイル
+64000100 c6400 mining ship foot bullet -- c6400 採掘艦　足元弾丸
+64000200 c6400 mining ship foot bullet -- c6400 採掘艦　足元弾丸
+64002000 c6400 mining ship damage judgment upon death -- c6400 採掘艦　死亡時ダメージ判定
+64200000 c6420 mining ship eyeball irradiation beam -- c6420 採掘艦 目玉　照射ビーム
+64200100 c6420 mining ship eyeball irradiation beam -- c6420 採掘艦 目玉　照射ビーム
+64200101 c6420 mining ship eyeball irradiation beam -- c6420 採掘艦 目玉　照射ビーム
+64200200 c6420 mining ship eyeball irradiation beam -- c6420 採掘艦 目玉　照射ビーム
+64200201 c6420 mining ship eyeball irradiation beam -- c6420 採掘艦 目玉　照射ビーム
+64200300 c6420 mining ship highlight missile -- c6420 採掘艦 目玉　ミサイル
+64200400 c6420 Mining ship Feature: Plasma ripple shock wave -- c6420 採掘艦 目玉　プラズマ波紋衝撃波
+64200500 c6420 mining ship highlight AA -- c6420 採掘艦 目玉　AA
+64200600 c6420 Mining ship Main feature: Irradiation beam ① -- c6420 採掘艦 目玉　照射ビーム①
+64200700 c6420 Mining ship Main feature: Irradiation beam ② -- c6420 採掘艦 目玉　照射ビーム②
+64200800 c6420 mining ship eyeball irradiation beam landing -- c6420 採掘艦 目玉　照射ビーム着弾
+64200900 c6420 Mining ship Highlight: Irradiation beam hits and explodes -- c6420 採掘艦 目玉　照射ビーム着弾大爆発
+64201000 c6420 mining ship highlight hit stop bullet -- c6420 採掘艦 目玉　ヒットストップ弾丸
+64201300 c6420 mining ship main feature missile (for enemy contact) -- c6420 採掘艦 目玉　ミサイル（接敵用）
+64202000 c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉　主砲 照射レーザー
+64202100 c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉　主砲 照射レーザー
+64202200 c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉　主砲 照射レーザー
+64202300 c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉　主砲 照射レーザー
+64202400 c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉　主砲 照射レーザー
+64202500 c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉　主砲 照射レーザー
+64202600 c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉　主砲 照射レーザー
+64202700 c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉　主砲 照射レーザー
+64202800 c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉　主砲 照射レーザー
+64203100 c6420 mining ship highlight PA -- c6420 採掘艦 目玉　PA
+72200000 c7220 field missile (repeat type) missile -- c7220 野戦ミサイル（連射型）　ミサイル
+72210000 c7221 field missile (vertical type) missile -- c7221 野戦ミサイル（垂直型）　ミサイル
+72230000 c7223 field missile (simultaneous launch type) missile -- c7223 野戦ミサイル（同時発射型）　ミサイル
+72300000 c7230 Ground Force Battery Grenade (Large) Grenade -- c7230 地上勢力砲台 グレネード(大)　グレネード
+72305000 c7230 Ground Force Battery Grenade (Large) Grenade for Mining Ship -- c7230 地上勢力砲台 グレネード(大)　グレネード　採掘艦用
+72400000 c7240 Ground Force Artillery Bazooka (Large) Bazooka -- c7240 地上勢力砲台 バズーカ(大)　バズーカ
+72500000 c7250 Ground force battery Gatling (large) machine gun -- c7250 地上勢力砲台 ガトリング(大)　マシンガン
+72500010 c7250 Ground force battery Gatling (large) machine gun tutorial use -- c7250 地上勢力砲台 ガトリング(大)　マシンガン　チュートリアル用
+72500020 c7250 Ground force artillery gatling (large) machine gun for large missiles firing adjustment -- c7250 地上勢力砲台 ガトリング(大)　マシンガン 大型ミサイル用　発し調整
+72600000 c7260 Ground Force Artillery Missile (Large) Twin Missile -- c7260 地上勢力砲台 ミサイル(大) 連装　ミサイル
+72600010 c7260 Ground Force Artillery Missile (Large) Twin missile simultaneous launch -- c7260 地上勢力砲台 ミサイル(大) 連装　ミサイル同時発射
+72610000 c7261 Ground Force Artillery Missile (Large) Vertical Missile -- c7261 地上勢力砲台 ミサイル(大) 垂直　ミサイル
+72610010 c7261 Ground Force Artillery Missile (Large) Vertical Missile Bullet Number Limit -- c7261 地上勢力砲台 ミサイル(大) 垂直　ミサイル弾数制限
+72610020 c7261 Ground Force Artillery Missile (Large) Vertical Missile Bullet Limit 10 -- c7261 地上勢力砲台 ミサイル(大) 垂直　ミサイル弾数制限10発
+72610030 c7261 Ground Force Artillery Missile (Large) Vertical Missile for Mining Ship -- c7261 地上勢力砲台 ミサイル(大) 垂直　ミサイル　採掘艦用
+72620000 c7262 Ground Force Artillery Missile (Large) Horizontal Missile -- c7262 地上勢力砲台 ミサイル(大) 水平　ミサイル
+72700000 c7270 Ground Force Battery Sniper (Large) Sniper Rifle -- c7270 地上勢力砲台 スナイパー(大)　スナイパーライフル
+72700100 c7270 Ground Force Battery Sniper (Large) Hacking Sniper Rifle Regular Battery -- c7270 地上勢力砲台 スナイパー(大) ハッキング　スナイパーライフル 通常砲台
+72800100 c7280 Ground Force Artillery Laser Rifle Laser Rifle -- c7280 地上勢力砲台 レーザーライフル　レーザーライフル
+72900000 c7290 Ground Force Artillery Laser Bazooka Laser Bazooka -- c7290 地上勢力砲台 レーザーバズーカ　レーザーバズーカ
+73000000 c7300 speaker antenna turret -- c7300 スピーカーアンテナ砲台
+73100000 c7310 State-of-the-art EN battery plasma rifle -- c7310 最新鋭EN砲台　プラズマライフル
+73100100 c7310 State-of-the-art EN battery plasma rifle for new B tier -- c7310 最新鋭EN砲台　プラズマライフル　新B層用
+73103000 c7310 State-of-the-art EN battery for PA deployment -- c7310 最新鋭EN砲台　PA展開用
+73200000 c7320 State-of-the-art EN battery plasma missile -- c7320 最新鋭EN砲台　プラズマミサイル
+73900000 c7390 D-layer giant cannon anemone laser 300 -- c7390 D層巨大砲台 アネモネ　レーザー　300
+73900100 c7390 D layer giant battery Anemone plasma missile -- c7390 D層巨大砲台 アネモネ　プラズマミサイル
+73900200 c7390 D-layer giant gun battery Anemone laser short range 300 -- c7390 D層巨大砲台 アネモネ　レーザー　近距離　300
+73900300 c7390 D layer giant cannon anemone laser 301 -- c7390 D層巨大砲台 アネモネ　レーザー　301
+73900400 c7390 D-layer giant cannon anemone laser 302 -- c7390 D層巨大砲台 アネモネ　レーザー　302
+73900500 c7390 D-layer giant cannon anemone laser 303 -- c7390 D層巨大砲台 アネモネ　レーザー　303
+73900600 c7390 D-layer giant cannon anemone laser 304 -- c7390 D層巨大砲台 アネモネ　レーザー　304
+73900700 c7390 D-layer giant cannon anemone laser 305 -- c7390 D層巨大砲台 アネモネ　レーザー　305
+73900800 c7390 D layer giant battery Anemone plasma missile -- c7390 D層巨大砲台 アネモネ　プラズマミサイル
+73900900 c7390 D layer giant cannon anemone laser CS -- c7390 D層巨大砲台 アネモネ　レーザー　CS
+73902000 c7390 D layer giant turret Anemone one shot attack -- c7390 D層巨大砲台 アネモネ　ワンショット攻撃
+74000000 c7400 amphibious assault ship vertical missile_top starboard side -- c7400 強襲揚陸艦　垂直ミサイル_上面右舷
+74000100 c7400 amphibious assault ship vertical missile_top port side -- c7400 強襲揚陸艦　垂直ミサイル_上面左舷
+74000200 c7400 amphibious assault ship railgun during air combat -- c7400 強襲揚陸艦　レールガン　空中戦時
+74000210 c7400 Amphibious Assault Ship Railgun Ground War Long Distance -- c7400 強襲揚陸艦　レールガン　地上戦時 遠距離
+74000230 c7400 amphibious assault ship railgun ground combat short range -- c7400 強襲揚陸艦　レールガン　地上戦時 近距離
+74000300 c7400 amphibious assault ship container/upper hatch -- c7400 強襲揚陸艦　コンテナ・上部ハッチ
+74000301 c7400 amphibious assault ship container/upper right hatch only the lid is deployed -- c7400 強襲揚陸艦　コンテナ・上部右側ハッチ　蓋のみ展開
+74000400 c7400 amphibious assault ship container/all hatches -- c7400 強襲揚陸艦　コンテナ・全部ハッチ
+74000500 c7400 amphibious assault ship forward fan-shaped laser single-shot A -- c7400 強襲揚陸艦　前方扇状レーザー・単発A
+74000600 c7400 amphibious assault ship forward fan laser single shot B -- c7400 強襲揚陸艦　前方扇状レーザー・単発B
+74000700 c7400 amphibious assault ship forward fan laser single shot C -- c7400 強襲揚陸艦　前方扇状レーザー・単発C
+74000800 c7400 amphibious assault ship container/lower hatch -- c7400 強襲揚陸艦　コンテナ・下部ハッチ
+74000900 c7400 amphibious assault ship vertical missile_bottom starboard side -- c7400 強襲揚陸艦　垂直ミサイル_下面右舷
+74001000 c7400 amphibious assault ship vertical missile_lower port side -- c7400 強襲揚陸艦　垂直ミサイル_下面左舷
+74001500 c7400 Amphibious Assault Ship Forward Fan Shotgun Single-shot A -- c7400 強襲揚陸艦　前方扇状ショットガン・単発A
+74001600 c7400 amphibious assault ship forward fan shotgun single shot B -- c7400 強襲揚陸艦　前方扇状ショットガン・単発B
+74001700 c7400 Amphibious Assault Ship Forward Fan Shotgun Single-shot C -- c7400 強襲揚陸艦　前方扇状ショットガン・単発C
+74002000 c7400 amphibious assault ship one shot 00 -- c7400 強襲揚陸艦　ワンショット00
+74002100 c7400 amphibious assault ship one shot 01 -- c7400 強襲揚陸艦　ワンショット01
+74010000 c7401 amphibious assault ship main gun main gun -- c7401 強襲揚陸艦 主砲　主砲
+74011000 c7401 amphibious assault ship main gun main gun for mining ship -- c7401 強襲揚陸艦 主砲　主砲　採掘艦用
+74020000 c7402 amphibious assault ship secondary gun secondary gun -- c7402 強襲揚陸艦 副砲　副砲
+74025000 c7402 Amphibious assault ship secondary gun secondary gun for mining ship -- c7402 強襲揚陸艦 副砲　副砲　採掘艦用
+74030000 c7403 amphibious assault ship missile cannon missile -- c7403 強襲揚陸艦 ミサイル砲　ミサイル
+74031000 c7403 amphibious assault ship missile cannon missile -- c7403 強襲揚陸艦 ミサイル砲　ミサイル
+74100000 c7410 amphibious assault ship slave unit laser -- c7410 強襲揚陸艦 子機　レーザー
+74100100 c7410 amphibious assault ship child unit suicide bombing attack -- c7410 強襲揚陸艦 子機　自爆特攻
+74100110 c7410 Amphibious Assault Ship Child Unit Suicide Attack_Atmospheric Breakthrough -- c7410 強襲揚陸艦 子機　自爆特攻_大気圏突破
+74100120 c7410 Amphibious Assault Ship Child Unit Suicide Special Attack_Atmospheric Breakthrough_Right -- c7410 強襲揚陸艦 子機　自爆特攻_大気圏突破_右
+74100130 c7410 Amphibious Assault Ship Child Unit Suicide Special Attack_Atmospheric Breakthrough_Left -- c7410 強襲揚陸艦 子機　自爆特攻_大気圏突破_左
+74100200 c7410 amphibious assault ship child unit suicide bombing attack -- c7410 強襲揚陸艦 子機　自爆特攻
+74102000 c7410 amphibious assault ship child unit irradiation laser -- c7410 強襲揚陸艦 子機　照射レーザー
+74109000 c7410 amphibious assault ship interception test -- c7410 強襲揚陸艦 子機　迎撃テスト
+80101000 c8010 high altitude sniper rifle -- c8010 高所スナ　スナイパーライフル
+80101010 c8010 High Place Sniper Rifle Underground -- c8010 高所スナ　スナイパーライフル 地下用
+80101100 c8010 High Altitude Sna Gatling -- c8010 高所スナ　ガトリング
+80101200 c8010 High altitude snapper laser sight -- c8010 高所スナ　レーザーサイト
+80201000 c8020 Mortar MT Cannon Mortar -- c8020 迫撃MT　キャノン迫撃
+80201100 c8020 Mortar MT hand rocket -- c8020 迫撃MT　ハンドロケット
+80201900 B layer naval gun fire substitute cannon mortar -- B層　艦砲射撃　代用　キャノン迫撃
+80210100 General-purpose state equipment for TEST Attack ID: 100 -- TEST用 汎用ステート装備 攻撃ID：100
+80210200 General-purpose state equipment for TEST Attack ID: 200 -- TEST用 汎用ステート装備 攻撃ID：200
+80210300 General-purpose state equipment for TEST Attack ID: 300 -- TEST用 汎用ステート装備 攻撃ID：300
+80210400 General-purpose state equipment for TEST Attack ID: 400 -- TEST用 汎用ステート装備 攻撃ID：400
+80210500 General-purpose state equipment for TEST Attack ID: 500 -- TEST用 汎用ステート装備 攻撃ID：500
+80210600 General-purpose state equipment for TEST Attack ID: 600 -- TEST用 汎用ステート装備 攻撃ID：600
+80210700 General-purpose state equipment for TEST Attack ID: 700 -- TEST用 汎用ステート装備 攻撃ID：700
+80210800 General-purpose state equipment for TEST Attack ID: 800 -- TEST用 汎用ステート装備 攻撃ID：800
+80210900 General-purpose state equipment for TEST Attack ID: 900 -- TEST用 汎用ステート装備 攻撃ID：900
+80220100 General-purpose state equipment for TEST Attack ID: 100 -- TEST用 汎用ステート装備 攻撃ID：100
+80220200 General-purpose state equipment for TEST Attack ID: 200 -- TEST用 汎用ステート装備 攻撃ID：200
+80220300 General-purpose state equipment for TEST Attack ID: 300 -- TEST用 汎用ステート装備 攻撃ID：300
+80220400 General-purpose state equipment for TEST Attack ID: 400 -- TEST用 汎用ステート装備 攻撃ID：400
+80220500 General-purpose state equipment for TEST Attack ID: 500 -- TEST用 汎用ステート装備 攻撃ID：500
+80220600 General-purpose state equipment for TEST Attack ID: 600 -- TEST用 汎用ステート装備 攻撃ID：600
+80220700 General-purpose state equipment for TEST Attack ID: 700 -- TEST用 汎用ステート装備 攻撃ID：700
+80220800 General-purpose state equipment for TEST Attack ID: 800 -- TEST用 汎用ステート装備 攻撃ID：800
+80220900 General-purpose state equipment for TEST Attack ID: 900 -- TEST用 汎用ステート装備 攻撃ID：900
+80301000 c8030 Pile MT (Shotgun Pile -- c8030 パイルMT（ショットガン パイル
+80301100 c8030 pile MT (shotgun shotgun -- c8030 パイルMT（ショットガン ショットガン
+80301200 c8030 pile MT (shotgun sliding) -- c8030 パイルMT（ショットガン スライディング
+80401000 c8040 Large drone (calling friends sonar) -- c8040 大ドローン（仲間呼び　ソナー
+80401100 c8040 Large drone (call for friends, call for friends) -- c8040 大ドローン（仲間呼び　仲間呼び
+80401200 c8040 Large drone (calling friends, barrier deployment) -- c8040 大ドローン（仲間呼び　バリア展開
+80409000 c8040 large drone (AI missile test) -- c8040 大ドローン(AIミサイルテスト
+80409100 c8040 large drone (orbit) -- c8040 大ドローン(オービット
+80501000 c8050 dropship dispatch -- c8050 ドロップシップ　出撃させる
+80501100 c8050 dropship machine gun -- c8050 ドロップシップ　機銃
+80601000 c8060 gunship (strong enemy diffusion missile left) -- c8060 ガンシップ（強敵 拡散ミサイル 左
+80601100 c8060 gunship (strong enemy rocket) -- c8060 ガンシップ（強敵 ロケット
+80601200 c8060 Gunship (Formidable Enemy Gatling) -- c8060 ガンシップ（強敵 ガトリング
+80601300 c8060 gunship (strong enemy diffusion missile right) -- c8060 ガンシップ（強敵 拡散ミサイル 右
+80701000 c8070 Irradiation laser Irradiation laser -- c8070 照射レーザー　照射レーザー
+80709000 c8070 Irradiation laser Irradiation laser For situation test -- c8070 照射レーザー　照射レーザー　シチュエーションテスト用
+80801000 c8080 fire blowing MT flame radiation straight line -- c8080 火吹きMT 火炎放射 直線
+80801100 c8080 Fire-breathing MT Flame radiation mowing down -- c8080 火吹きMT 火炎放射 薙ぎ払い
+80901000 c8090 fighter machine gun -- c8090 戦闘機　機銃
+80901900 c8090 fighter aircraft carrier-based aircraft beam -- c8090 戦闘機　艦載機　ビーム
+81000600 c8100 Shield Holder MT (Laser Whip Laser Whip 2nd stage -- c8100 盾持ちMT（レーザーウィップ　レーザーウィップ2段め
+81001000 c8100 Shield Holder MT (Laser Whip Handgun -- c8100 盾持ちMT（レーザーウィップ　ハンドガン
+81001100 c8100 Shield Holder MT (Laser Whip Laser Whip Rush -- c8100 盾持ちMT（レーザーウィップ　レーザーウィップ　突進
+81001200 c8100 Shield Holder MT (Laser Whip Guard -- c8100 盾持ちMT（レーザーウィップ　ガード
+81001300 c8100 Shield Holder MT (Laser Whip Laser Whip Combo -- c8100 盾持ちMT（レーザーウィップ　レーザーウィップ　コンボ
+81001400 c8100 Shield Holder MT (Laser Whip Guard Modified) -- c8100 盾持ちMT（レーザーウィップ　ガード改
+81100600 c8110 Colorless MT Reload Test -- c8110 無色MT　リロードテスト
+81101000 c8110 Colorless MT Rifle -- c8110 無色MT　ライフル
+81101010 c8110 Colorless MT Burst Rifle -- c8110 無色MT　バーストライフル
+81101100 c8110 Colorless MT blade -- c8110 無色MT　ブレード
+81101200 c8110 Colorless MT Cover Medium Rifle -- c8110 無色MT　カバー中ライフル
+81101300 c8110 Colorless MT blade 2nd stage test -- c8110 無色MT　ブレード 2段めテスト
+81101400 c8110 Colorless MT look around -- c8110 無色MT　キョロキョロ
+81102100 c8110_10 Colorless MT Addition Small (Lv1) -- c8110_10　無色MT 加算小（Lv1）
+81102200 c8110_10 Colorless MT Stagger Small (Lv1) -- c8110_10　無色MT よろけ小（Lv1）
+81102300 c8110_11 Colorless MT Additive Small (Lv1) Rapid Fire -- c8110_11　無色MT 加算小（Lv1） 連射
+81102400 c8110_11 Colorless MT Small stagger (Lv1) Rapid fire -- c8110_11　無色MT よろけ小（Lv1） 連射
+81102500 c8110_20 Colorless MT Addition Large (Lv2) -- c8110_20　無色MT 加算大（Lv2）
+81102600 c8110_20 Colorless MT Staggering (Lv2) -- c8110_20　無色MT よろけ中（Lv2）
+81102700 c8110_20 Colorless MT Addition Large (Lv2) Rapid Fire -- c8110_20　無色MT 加算大（Lv2）連射
+81102800 c8110_20 Colorless MT Staggering (Lv2) Rapid fire -- c8110_20　無色MT よろけ中（Lv2）連射
+81102900 c8110_30 Colorless MT Large stagger (Lv3) -- c8110_30　無色MT よろけ大（Lv3）
+81103000 c8110_30 Colorless MT Large stagger (Lv3) rapid fire -- c8110_30　無色MT よろけ大（Lv3）連射
+81103100 c8110_30 Colorless MT blown away (Lv4) -- c8110_30　無色MT 吹っ飛び（Lv4）
+81103200 c8110_30 Colorless MT blow away (Lv4) rapid fire -- c8110_30　無色MT 吹っ飛び（Lv4）連射
+81103300 c8110_30 Colorless MT Forced Break (Lv3) -- c8110_30　無色MT 強制ブレイク（Lv3）
+81103400 c8110_30 Colorless MT Forced Break (Lv3) Rapid Fire -- c8110_30　無色MT 強制ブレイク（Lv3）連射
+81103500 c8110_30 Colorless MT Blowout Break (Lv4) -- c8110_30　無色MT 吹っ飛びブレイク（Lv4）
+81103600 c8110_30 Colorless MT Blowout Break (Lv4) Rapid Fire -- c8110_30　無色MT 吹っ飛びブレイク（Lv4）連射
+81103700 c8110_80 Colorless MT Damage Lv8 -- c8110_80　無色MT ダメージLv8
+81110100 c8111 Colorless MT machine gun for control confirmation -- c8111 制御確認用無色MT　マシンガン
+81110200 c8111 Colorless MT normal machine gun for control confirmation -- c8111 制御確認用無色MT　通常マシンガン
+81170100 c8117 Colorless MT Copy Test 3 Sniper Rifle -- c8117 無色MT　コピーテスト3　スナイパーライフル
+81170200 c8117 Colorless MT Copy Test 3 Proximity -- c8117 無色MT　コピーテスト3　近接
+81170300 c8117 Colorless MT Copy Test 3 Missile -- c8117 無色MT　コピーテスト3　ミサイル
+81170400 c8117 Colorless MT Copy Test 3 Proximity -- c8117 無色MT　コピーテスト3　近接
+81190100 c8119 Colorless MT Copy Test Machine Gun -- c8119 無色MT　コピーテスト　マシンガン
+81190200 c8119 Colorless MT Copy Test Proximity -- c8119 無色MT　コピーテスト　近接
+81190300 c8119 Colorless MT Copy Test Missile -- c8119 無色MT　コピーテスト　ミサイル
+81190400 c8119 Colorless MT Copy Test Proximity -- c8119 無色MT　コピーテスト　近接
+81301000 c8130 Strong enemy (humanoid) short-range missile -- c8130 強敵（人型）　近距離ミサイル
+81301100 c8130 Strong enemy (humanoid) medium-range missile -- c8130 強敵（人型）　中距離ミサイル
+81301700 c8130 Strong enemy (humanoid) Pile shooting (repeat shooting) -- c8130 強敵（人型）　パイル射撃（連射）
+81301900 c8130 Strong enemy (humanoid) Pile shooting (single shot) -- c8130 強敵（人型）　パイル射撃（単射）
+81302000 c8130 Strong enemy (humanoid) close range pile -- c8130 強敵（人型）　近距離パイル
+81302100 c8130 Strong enemy (humanoid) medium range pile -- c8130 強敵（人型）　中距離パイル
+81302200 c8130 Strong enemy (humanoid) pile on the spot -- c8130 強敵（人型）　その場パイル
+81302300 c8130 Strong enemy (humanoid) Turning pile -- c8130 強敵（人型）　振り向きパイル
+81302400 c8130 Strong enemy (humanoid) small jump pile -- c8130 強敵（人型）　小ジャンプパイル
+81302500 c8130 Strong enemy (humanoid) large jump pile -- c8130 強敵（人型）　大ジャンプパイル
+81302600 c8130 Strong Enemy (Humanoid) Self-centered Explosive Pile -- c8130 強敵（人型）　自己中心爆発パイル
+81302700 c8130 Strong enemy (humanoid) wrap around small jump pile -- c8130 強敵（人型）　回り込み小ジャンプパイル
+81302900 c8130 Strong enemy (humanoid) close range combo -- c8130 強敵（人型）　至近距離コンボ
+81303900 c8130 Strong Enemy (Humanoid) Guard -- c8130 強敵（人型）　ガード
+81304000 c8130 Strong enemy (humanoid) Specified direction QB -- c8130 強敵（人型）　指定方向QB
+81304200 c8130 Strong enemy (humanoid) Previous step (combo compatible) -- c8130 強敵（人型）　前ステップ（コンボ対応）
+81308000 c8130 Strong enemy (humanoid) for exhaust heat production -- c8130 強敵（人型）　排熱演出用
+81309000 c8130 Strong enemy (humanoid) attachment dummy pile -- c8130 強敵（人型）　アタッチ用ダミー　パイル
+81309100 c8130 Strong enemy (humanoid) attachment dummy shield -- c8130 強敵（人型）　アタッチ用ダミー　シールド
+81310000 c8131 Control prototype character shield -- c8131 制御試作用キャラ　シールド
+81310100 c8131 Control prototype character machine gun -- c8131 制御試作用キャラ　マシンガン
+81310200 c8131 Control prototype character reload -- c8131 制御試作用キャラ　リロード
+81310300 c8131 control prototype character missile -- c8131 制御試作用キャラ　ミサイル
+81310400 c8131 Control prototype character Charge (Stance) -- c8131 制御試作用キャラ　チャージ（構え
+81310500 c8131 Control prototype character charge shot -- c8131 制御試作用キャラ　チャージショット
+81310600 c8131 Control prototype character charge pile -- c8131 制御試作用キャラ　チャージパイル
+81310700 c8131 Control prototype character melee basic combo 1 kesa -- c8131 制御試作用キャラ　近接　基本コンボ1　袈裟
+81310800 c8131 Control prototype character Melee basic combo 2 Sakanagi -- c8131 制御試作用キャラ　近接　基本コンボ2　逆薙
+81310900 c8131 Control prototype character melee basic combo 3 storage thrust -- c8131 制御試作用キャラ　近接　基本コンボ3　貯め突き
+81311000 c8131 Control prototype character melee test jump pile -- c8131 制御試作用キャラ　近接　テスト用ジャンプパイル
+81319000 c8131 Control prototype character lower body control state -- c8131 制御試作用キャラ　下半身制御ステート
+81319100 c8131 Control prototype character upper body control state -- c8131 制御試作用キャラ　上半身制御ステート
+81319200 c8131 Control prototype character shoulder weapon control state -- c8131 制御試作用キャラ　肩武器制御ステート
+81350000 c8135 Miyatake Strong Enemy (Humanoid) Laser Rifle -- c8135 宮武強敵（人型）　レーザーライフル
+81350100 c8135 Miyatake Strong Enemy (Humanoid) Pulse Gun -- c8135 宮武強敵（人型）　パルスガン
+81350200 c8135 Miyatake Strong Enemy (Humanoid) Missile_Vertical -- c8135 宮武強敵（人型）　ミサイル_縦
+81350300 c8135 Miyatake Strong Enemy (Humanoid) Missile_Horizontal -- c8135 宮武強敵（人型）　ミサイル_横
+81350400 c8135 Miyatake Strong Enemy (Humanoid) Missile_Vertical_V -- c8135 宮武強敵（人型）　ミサイル_縦_V
+81350500 c8135 Miyatake strong enemy (humanoid) missile_horizontal_fan -- c8135 宮武強敵（人型）　ミサイル_横_扇
+81350600 c8135 Miyatake Strong Enemy (Humanoid) Shield -- c8135 宮武強敵（人型）　シールド
+81351000 c8135 Miyatake Strong Enemy (Humanoid) Pile Continuous Fire Hovering in the Air -- c8135 宮武強敵（人型）　パイル連射　滞空
+81351100 c8135 Miyatake Strong Enemy (Humanoid) Pile Explosion -- c8135 宮武強敵（人型）　パイル　爆発
+81351200 c8135 Miyatake Strong Enemy (Humanoid) Pile Directional Explosion -- c8135 宮武強敵（人型）　パイル　指向性爆発
+81352000 c8135 Miyatake Strong Enemy (Humanoid) One Shot -- c8135 宮武強敵（人型）　ワンショット
+81352100 c8135 Miyatake Strong Enemy (Humanoid) One Shot 2 -- c8135 宮武強敵（人型）　ワンショット2
+81450000 c8145 Official Miyatake Formidable Enemy Birdfoot Laser Rifle -- c8145 正式宮武強敵 鳥足　レーザーライフル
+81450100 c8145 Official Miyatake Strong Enemy Bird Foot Missile -- c8145 正式宮武強敵 鳥足　ミサイル
+81452000 c8145 Miyatake Strong Enemy Bird Type Melee -- c8145 宮武強敵 鳥型　近接
+82000100 c8200 Walla Walla Insect Scratch -- c8200 ワラワラ蟲　引っかき
+82000200 c8200 Walla Walla Bug Pounce -- c8200 ワラワラ蟲　飛びかかり
+82000300 c8200 Walla Walla Mushi Attack -- c8200 ワラワラ蟲　突撃
+82100100 c8210 Walla Walla Bug (Large) Scratch -- c8210 ワラワラ蟲（大）　引っかき
+82100200 c8210 Walla Walla Insect (Large) Pounce -- c8210 ワラワラ蟲（大）　飛びかかり
+82100300 c8210 Walla Walla Insect (Large) Assault -- c8210 ワラワラ蟲（大）　突撃
+82100400 c8210 Walla Walla Insect (Large) Assault -- c8210 ワラワラ蟲（大）　突撃
+82100500 c8210 Walla Walla Bug (Large) Light Bullet -- c8210 ワラワラ蟲（大）　光弾
+82500000 c8250 D layer giant elevator missile -- c8250 D層　巨大エレベータ　ミサイル
+82500100 c8250 D layer huge elevator for transportation -- c8250 D層　巨大エレベータ　移動用
+82500200 c8250 D layer giant elevator weak point opening/closing -- c8250 D層　巨大エレベータ　弱点開閉
+82500900 c8250 D layer giant elevator laser sight -- c8250 D層　巨大エレベータ  レーザーサイト
+82501000 c8250 D layer giant elevator container missile -- c8250 D層　巨大エレベータ  コンテナミサイル
+82501100 c8250 D layer giant elevator container missile -- c8250 D層　巨大エレベータ  コンテナミサイル
+82501200 c8250 D layer giant elevator container missile -- c8250 D層　巨大エレベータ  コンテナミサイル
+82501300 c8250 D layer giant elevator container missile -- c8250 D層　巨大エレベータ  コンテナミサイル
+82502000 c8250 D layer giant elevator jump rope laser -- c8250 D層　巨大エレベータ  縄跳びレーザー
+82502100 c8250 D layer giant elevator jump rope laser -- c8250 D層　巨大エレベータ  縄跳びレーザー
+82502200 c8250 D layer giant elevator jump rope laser -- c8250 D層　巨大エレベータ  縄跳びレーザー
+82502300 c8250 D layer giant elevator jump rope laser -- c8250 D層　巨大エレベータ  縄跳びレーザー
+82512000 c8251 Jump rope laser control character Jump rope laser -- c8251  縄跳びレーザー制御用キャラ  縄跳びレーザー
+82512100 c8251 Jump rope laser control character Jump rope laser -- c8251  縄跳びレーザー制御用キャラ  縄跳びレーザー
+82512200 c8251 Jump rope laser control character Jump rope laser -- c8251  縄跳びレーザー制御用キャラ  縄跳びレーザー
+82512300 c8251 Jump rope laser control character Jump rope laser -- c8251  縄跳びレーザー制御用キャラ  縄跳びレーザー
+83001000 c8300 Sandworm Charge -- c8300 サンドワーム　突進
+83001100 c8300 Sandworm Straight Laser -- c8300 サンドワーム　直線レーザー
+83001200 c8300 Sandworm pouncing -- c8300 サンドワーム　飛びかかり
+83001300 c8300 sandworm -- c8300 サンドワーム
+83001400 c8300 Sandworm Rush Kai -- c8300 サンドワーム　突進改
+84001000 c8400 Maritime Super Huge Cannon Cannon -- c8400 海上超巨大砲台　キャノン
+84001100 c8400 Maritime super huge gun battery right missile -- c8400 海上超巨大砲台　右　ミサイル
+84001200 c8400 Maritime super huge gun battery left missile -- c8400 海上超巨大砲台　左　ミサイル
+84009000 c8400 Maritime super huge gun battery mining ship attach cannon -- c8400 海上超巨大砲台　採掘艦アタッチ　キャノン
+84009100 c8400 Maritime super huge gun battery mining ship attach right missile -- c8400 海上超巨大砲台　採掘艦アタッチ　右　ミサイル
+84009200 c8400 Maritime super huge gun battery mining ship attach left missile -- c8400 海上超巨大砲台　採掘艦アタッチ　左　ミサイル
+84201000 c8420 marine carrier -- c8420 海上母艦
+99800100 c9980 Dummy character for event pattern A -- c9980 ダミーキャラ　イベント用　パターンA
+99800200 c9980 Dummy character for event pattern B -- c9980 ダミーキャラ　イベント用　パターンB
+99800300 c9980 Dummy character for event pattern C -- c9980 ダミーキャラ　イベント用　パターンC
+99800400 c9980 Dummy character for event pattern D -- c9980 ダミーキャラ　イベント用　パターンD
+99802000 c9980 Dummy character event one shot -- c9980 ダミーキャラ　イベント用 ワンショット
+85000000 Bomber anti-aircraft gun left -- 爆撃機　対空砲　左
+85001000 Bomber anti-aircraft gun right -- 爆撃機　対空砲　右
+85002000 Bomber ground gun left -- 爆撃機　対地砲　左
+85003000 Bomber ground gun right -- 爆撃機　対地砲　右
+85004000 bomber bombing -- 爆撃機　爆撃
+85005000 Bomber sortie order -- 爆撃機　出撃命令
+85100000 Strong Zako Grenade -- 強ザコ　グレネード
+85101000 Strong Shield -- 強ザコ　シールド
+85102000 Strong Zako 8 consecutive vertical missiles_right shoulder -- 強ザコ　8連垂直ミサイル_右肩
+85102900 Strong Zako 8-barreled vertical missile_right shoulder guidance test -- 強ザコ　8連垂直ミサイル_右肩 誘導テスト
+85103000 Strong Zako 8 consecutive vertical missiles_left shoulder -- 強ザコ　8連垂直ミサイル_左肩
+85103900 Strong Zako 8-barreled vertical missile_Left shoulder guidance test -- 強ザコ　8連垂直ミサイル_左肩 誘導テスト
+85104000 Strong Zako Turning Boost -- 強ザコ　振り向きブースト
+85104100 c8510 Strong Zako (Bazooka for exit adjustment Bazooka -- c8510 強ザコ(バズーカ 出口さん調整用　バズーカ
+85104200 c8510 Strong Zako (Bazooka Deguchi-san adjustment missile) -- c8510 強ザコ(バズーカ 出口さん調整用　ミサイル
+85104300 c8510 Strong Zako (Bazooka for exit adjustment Bazooka -- c8510 強ザコ(バズーカ 出口さん調整用　バズーカ
+85104700 c8510 Strong Zako (Bazooka Deguchi-san adjustment missile) -- c8510 強ザコ(バズーカ 出口さん調整用　ミサイル
+85109000 Strong Zako Grenade -- 強ザコ　グレネード
+85350000 c8535 Mining ship main gun center -- c8535 採掘艦目玉 主砲中心
+85350100 c8535 Mining ship main gun inner frame -- c8535 採掘艦目玉 主砲内枠
+85350200 c8535 Mining ship main gun outer frame -- c8535 採掘艦目玉 主砲外枠
+85350300 c8535 mining ship eyeball missile long range -- c8535 採掘艦目玉 ミサイル 遠距離
+85350400 c8535 mining ship eyeball missile short range -- c8535 採掘艦目玉 ミサイル 近距離
+92012000 c9201 reverse joint machine gun -- c9201 逆関節　マシンガン
+92030100 c9203 Reverse joint damage Lv1 interval 2 seconds machine gun -- c9203 逆関節 ダメージLv1 間隔2秒　マシンガン
+92040100 c9204 Reverse joint damage Lv1 interval 0.1 seconds machine gun -- c9204 逆関節 ダメージLv1 間隔0.1秒　マシンガン
+93070100 c9307 Colorless poured communist MT machine gun -- c9307 無色流し込み共産MT　マシンガン
+93080100 c9308 Tank control verification missile -- c9308 タンク制御検証用　ミサイル
+93081000 c9308 Proximity for tank control verification -- c9308 タンク制御検証用　近接
+93081100 c9308 Proximity for tank control verification -- c9308 タンク制御検証用　近接
+93083100 c9308 Constant LookAt for tank control verification -- c9308 タンク制御検証用　常時LookAt
+93093100 c9309 Machine gun for quadruped control test -- c9309 四脚制御テスト用　マシンガン
+93200000 c9320 planning training aircraft shield -- c9320 企画練習機　シールド
+93200100 c9320 Planning training machine Bazooka -- c9320 企画練習機　バズーカ
+93200200 c9320 planning training aircraft missile right -- c9320 企画練習機　ミサイル右
+93200300 c9320 planning training aircraft missile left -- c9320 企画練習機　ミサイル左
+93200400 c9320 planning training machine machine gun -- c9320 企画練習機　マシンガン
+85110000 c8511 Bazooka for strong-strike practice -- c8511 強ザコ練習用　バズーカ
+85110100 c8511 Strong Zako practice missile -- c8511 強ザコ練習用　ミサイル
+85110200 c8511 Shield for strong zako practice -- c8511 強ザコ練習用　シールド
+85300000 Mining ship eyeball laser 1 -- 採掘艦 目玉レーザー　1
+85300100 Mining ship eyeball laser 2 -- 採掘艦 目玉レーザー　2
+85300200 Mining ship eyeball laser 3 -- 採掘艦 目玉レーザー　3
+85303000 Mining ship mining rock circular saw -- 採掘艦 採掘岩　丸ノコギリ
+85303100 Mining ship mining rock drill 1 -- 採掘艦 採掘岩　ドリル１
+85303200 Mining ship mining rock drill 2 -- 採掘艦 採掘岩　ドリル２
+85304000 mining ship missile -- 採掘艦 ミサイル
+85304100 mining ship missile -- 採掘艦 ミサイル
+85304200 mining ship missile -- 採掘艦 ミサイル
+85304300 mining ship missile -- 採掘艦 ミサイル
+85304400 mining ship missile -- 採掘艦 ミサイル
+85304500 mining ship missile -- 採掘艦 ミサイル
+85304600 mining ship missile -- 採掘艦 ミサイル
+85304700 mining ship missile -- 採掘艦 ミサイル
+85304800 mining ship missile -- 採掘艦 ミサイル
+85305000 Mining ship interceptor machine gun -- 採掘艦 迎撃マシンガン
+85308000 Mining ship mining rock eyeball death control 0 -- 採掘艦 採掘岩　目玉死亡制御　0
+85308100 Mining ship mining rock eyeball death control 1 -- 採掘艦 採掘岩　目玉死亡制御　1
+85308200 Mining ship mining rock eyeball death control 2 -- 採掘艦 採掘岩　目玉死亡制御　2
+85309000 Mining ship mining rock for movement control 0 -- 採掘艦 採掘岩　移動制御用　0
+85309100 Mining ship mining rock for movement control 1 -- 採掘艦 採掘岩　移動制御用　1
+85309200 Mining ship mining rock for movement control 2 -- 採掘艦 採掘岩　移動制御用　2
+85309300 Mining ship mining rock for movement control 3 -- 採掘艦 採掘岩　移動制御用　3
+85309400 Mining ship mining rock for movement control 4 -- 採掘艦 採掘岩　移動制御用　4
+85309500 Mining ship mining rock for movement control 5 -- 採掘艦 採掘岩　移動制御用　5
+85326000 Mining ship drill for opening and closing -- 採掘艦 ドリル　開閉用
+85327000 Mining ship launch catapult 1st car -- 採掘艦　発艦カタパルト　1両目
+85327100 Mining ship launch catapult 2nd car -- 採掘艦　発艦カタパルト　2両目
+85327200 Mining ship launch catapult 3rd car -- 採掘艦　発艦カタパルト　3両目
+85330000 c8533 Mining ship attach super huge gun battery -- c8533 採掘艦アタッチ　超巨大砲台
+85331000 c8533 Mining ship attach super huge gun battery -- c8533 採掘艦アタッチ　超巨大砲台
+85332000 c8533 Mining ship attach super huge gun battery map layout -- c8533 採掘艦アタッチ　超巨大砲台　マップ配置
+85351000 mining ship eyeball laser -- 採掘艦 目玉 レーザー
+85351100 Mining ship eyeball laser right -- 採掘艦 目玉 レーザー 右
+85351200 Mining ship eyeball laser left -- 採掘艦 目玉 レーザー 左
+85351300 Mining ship eyeball diffused beam -- 採掘艦 目玉 拡散ビーム
+85352100 mining ship eyeball blink -- 採掘艦 目玉 まばたき
+85352200 Mining ship eyeball stage destruction -- 採掘艦 目玉 段階破壊
+85360000 Mining ship drill -- 採掘艦　ドリル
+85361000 Mining Ship Drill Attack while standing -- 採掘艦　ドリル  立ったまま攻撃
+85362100 Mining ship drill for controlling part destruction -- 採掘艦　ドリル 部位破壊制御用
+85371000 Mining ship knee cover for deployment -- 採掘艦　膝カバー　展開用
+85371100 Mining ship knee cover for part destruction -- 採掘艦　膝カバー　部位破壊用
+85381000 Mining ship below control deployment use -- 採掘艦　下記管制　展開用
+85381100 Mining ship below control for destruction of parts -- 採掘艦　下記管制　部位破壊用
+85401000 Strong enemy (heavy class) Missile: Normal -- 強敵（重量級）　ミサイル：通常
+85401100 Formidable Enemy (Heavy Class) Missile: Review -- 強敵（重量級）　ミサイル：振り返り
+85401200 Strong enemy (heavy class) Rocket: Normal -- 強敵（重量級）　ロケット：通常
+85401300 Formidable Enemy (Heavyweight) Rocket: Review -- 強敵（重量級）　ロケット：振り返り
+85401400 Strong enemy (heavy class) Blade: Normal -- 強敵（重量級）　ブレード：通常
+85401500 Strong enemy (heavy class) Blade: Extraction attack -- 強敵（重量級）　ブレード：取出し攻撃
+85401600 Strong enemy (heavy class) Blade: Turn around attack -- 強敵（重量級）　ブレード：振り向き攻撃
+85401700 Strong enemy (heavy class) Blade: Giant blade -- 強敵（重量級）　ブレード：巨大ブレード
+85401800 Formidable Enemy (Heavy Class) Plasma Rifle -- 強敵（重量級）　プラズマライフル
+85401900 Strong Enemy (Heavyweight) Pulse Gun -- 強敵（重量級）　パルスガン
+85402000 Strong enemy (heavy class) Shield: Guard -- 強敵（重量級）　シールド：ガード
+85402100 Strong enemy (heavy class) Shield: Charge -- 強敵（重量級）　シールド：チャージ
+85402200 Strong enemy (heavy class) Shield: Short charge -- 強敵（重量級）　シールド：ショートチャージ
+85402300 Strong Enemy (Heavyweight) Heat Up -- 強敵（重量級）　ヒートアップ
+85402400 Strong Enemy (Heavyweight) Charge Plasma -- 強敵（重量級）　チャージプラズマ
+85402500 Strong enemy (heavyweight) QB -- 強敵（重量級）　QB
+85402600 Strong Enemy (Heavyweight) Plasma Rifle (Back Step) -- 強敵（重量級）　プラズマライフル（バックステップ）
+85402700 Strong enemy (heavy class) Left blade vertical slash -- 強敵（重量級）　左ブレード縦斬り
+85405000 Strong enemy (heavy class) Blade: Vertical slash -- 強敵（重量級）　ブレード：縦斬り
+85405100 Strong enemy (heavy class) Left blade: Normal -- 強敵（重量級）　左ブレード：通常
+85405200 Strong enemy (heavy class) Blade: Dual sword x-shaped slash -- 強敵（重量級）　ブレード：二刀流xの字斬り
+85405300 Formidable Enemy (Heavyweight) QB Pattern 2 -- 強敵（重量級）　QB パターン2
+85406000 Strong enemy (heavy class) extraction attack (no movement) -- 強敵（重量級）　取出し攻撃（移動なし）
+85406100 Strong enemy (heavy class) Right vertical slash (no movement) -- 強敵（重量級）　右縦斬り（移動なし）
+85406200 Strong enemy (heavy class) Left vertical slash (no movement) -- 強敵（重量級）　左縦斬り（移動なし）
+85406300 Strong enemy (heavy class) Blade (no movement) -- 強敵（重量級）　ブレード（移動なし）
+88000000 Bug (heavy class rare) -- バグ(重量級対応レア)
+88100000 Bug (normal type) -- バグ(通常タイプ)
+88200000 Bug (long leg jump type) -- バグ(長脚ジャンプタイプ)
+88300000 Bug (Flying type) -- バグ(飛行タイプ)
+88400000 Bug (wall-mounted type) -- バグ(壁張り付きタイプ)
+90100000 Test battery machine gun for mining ships -- テスト砲台　採掘艦用　マシンガン
+90310000 Flying enemy_small laser -- 飛行敵_小レーザー
+90311000 Flying enemy_scan laser -- 飛行敵_スキャンレーザー
+90312000 Reverse indirect_missile -- 逆間接_ミサイル
+90313000 Flying enemy_for charging shot confirmation (test) -- 飛行敵_チャージショット確認用(テスト)
+92010000 Reverse indirect machine gun -- 逆間接_マシンガン
+92010080 Reverse indirect_machine gun_anti-aircraft specification -- 逆間接_マシンガン_対空仕様
+92011000 Reverse indirect_missile -- 逆間接_ミサイル
+92019000 Reverse indirect machine gun test -- 逆間接_マシンガン テスト用
+92020100 c9202 reverse joint armament test missile -- c9202 逆関節　武装テスト用　ミサイル
+93010100 General-purpose state equipment for TEST Attack ID: 100 -- TEST用 汎用ステート装備 攻撃ID：100
+93010200 General-purpose state equipment for TEST Attack ID: 200 -- TEST用 汎用ステート装備 攻撃ID：200
+93010300 General-purpose state equipment for TEST Attack ID: 300 -- TEST用 汎用ステート装備 攻撃ID：300
+93010400 General-purpose state equipment for TEST Attack ID: 400 -- TEST用 汎用ステート装備 攻撃ID：400
+93010500 General-purpose state equipment for TEST Attack ID: 500 -- TEST用 汎用ステート装備 攻撃ID：500
+93010600 General-purpose state equipment for TEST Attack ID: 600 -- TEST用 汎用ステート装備 攻撃ID：600
+93010700 General-purpose state equipment for TEST Attack ID: 700 -- TEST用 汎用ステート装備 攻撃ID：700
+93010800 General-purpose state equipment for TEST Attack ID: 800 -- TEST用 汎用ステート装備 攻撃ID：800
+93010900 General-purpose state equipment for TEST Attack ID: 900 -- TEST用 汎用ステート装備 攻撃ID：900
+93050400 c9305 Morinaga Test Machine 2 Rifle -- c9305 森永テストマシーン2　ライフル
+93210000 c9321 link test machine gun -- c9321 リンクテスト　マシンガン
+93210100 c9321 link test machine gun reload -- c9321 リンクテスト　マシンガンリロード
+93210200 c9321 link test blade -- c9321 リンクテスト　ブレード
+93210300 c9321 link test missile -- c9321 リンクテスト　ミサイル
+93210400 c9321 Link Test Assault Armor -- c9321 リンクテスト　アサルトアーマー
+93211000 c9321 Link test LookAt test -- c9321 リンクテスト　LookAtテスト
+93213100 c9321 Link test Always LookAt -- c9321 リンクテスト　常時LookAt
+93221000 c9322 Enomoto test guard -- c9322 榎本テスト　ガード
+93221100 c9322 Enomoto test shooting -- c9322 榎本テスト　射撃
+93221300 c9322 Enomoto test missile -- c9322 榎本テスト　ミサイル
+93221400 c9322 Enomoto test missile -- c9322 榎本テスト　ミサイル
+93222000 c9322 Enomoto test cooling -- c9322 榎本テスト　冷却
+93222100 c9322 Enomoto test reload -- c9322 榎本テスト　リロード
+93222200 c9322 Enomoto test radome -- c9322 榎本テスト　レドーム
+93223000 c9322 Enomoto test diving pile -- c9322 榎本テスト　飛び込みパイル
+93224000 c9322 Enomoto Test Combo 1 1 1st stage -- c9322 榎本テスト　コンボ1　1　　　　1段目
+93224100 c9322 Enomoto Test Combo 1 2 2nd stage -- c9322 榎本テスト　コンボ1　2　　　　2段目
+93224200 c9322 Enomoto Test Combo 1 3-1 Thrust -- c9322 榎本テスト　コンボ1　3－1　　突き
+93224300 c9322 Enomoto Test Combo 1 3-2 Charge Thrust -- c9322 榎本テスト　コンボ1　3－2　　溜め突き
+93225000 c9322 Enomoto Test Thrust Combo 1 -- c9322 榎本テスト　突きコンボ　1
+93225100 c9322 Enomoto Test Thrust Combo 2 -- c9322 榎本テスト　突きコンボ　2
+93226000 c9322 Enomoto test side right -- c9322 榎本テスト　側面　右
+93226100 c9322 Enomoto test side left -- c9322 榎本テスト　側面　左
+93227000 c9322 Enomoto Test New Castle Knight Combo 1 -- c9322 榎本テスト　新王城騎士コンボ　1
+93227100 c9322 Enomoto Test New Castle Knight Combo 2 -- c9322 榎本テスト　新王城騎士コンボ　2
+93227200 c9322 Enomoto Test New Castle Knight Combo 3 -- c9322 榎本テスト　新王城騎士コンボ　3
+93228000 c9322 Enomoto test Supervisor rush cut -- c9322 榎本テスト　監視者突進切り
+93229000 c9322 Enomoto Test Thrust Combo Morinaga Test 1 -- c9322 榎本テスト　突きコンボ　森永さんテスト1
+93229100 c9322 Enomoto Test Thrust Combo Morinaga-san Test 2 -- c9322 榎本テスト　突きコンボ　森永さんテスト2
+93229800 c9322 Enomoto test mono-eye behavior -- c9322 榎本テスト　モノアイ挙動
+93229900 c9322 Enomoto test Always LookAt -- c9322 榎本テスト　常時LookAt
+93231000 c9323 Hagiya Test Guard -- c9323 はぎやてすと　ガード
+93231100 c9323 Hagiya Test Shooting -- c9323 はぎやてすと　射撃
+93231300 c9323 Hagiya Test Missile -- c9323 はぎやてすと　ミサイル
+93232000 c9323 Hagiya Test Cooling -- c9323 はぎやてすと　冷却
+93232100 c9323 Hagiya Test Reload -- c9323 はぎやてすと　リロード
+93232200 c9323 Hagiya Test Radome -- c9323 はぎやてすと　レドーム
+93233000 c9323 Hagiya Test Diving Pile -- c9323 はぎやてすと　飛び込みパイル
+93234000 c9323 Hagiya Test Combo 1 1 1st stage -- c9323 はぎやてすと　コンボ1　1　　　　1段目
+93234100 c9323 Hagiya Test Combo 1 2 2nd stage -- c9323 はぎやてすと　コンボ1　2　　　　2段目
+93234200 c9323 Hagiya Test Combo 1 3-1 Thrust -- c9323 はぎやてすと　コンボ1　3－1　　突き
+93234300 c9323 Hagiya Test Combo 1 3-2 Charge Thrust -- c9323 はぎやてすと　コンボ1　3－2　　溜め突き
+93235000 c9323 Hagiya Test Thrust Combo 1 -- c9323 はぎやてすと　突きコンボ　1
+93235100 c9323 Hagiya Test Thrust Combo 2 -- c9323 はぎやてすと　突きコンボ　2
+93236000 c9323 Hagiya Test Side Right -- c9323 はぎやてすと　側面　右
+93236100 c9323 Hagiya Test Side Left -- c9323 はぎやてすと　側面　左
+93236200 c9323 Hagiya Test Side Left 2 -- c9323 はぎやてすと　側面　左2
+93237000 c9323 Hagiya Test New Castle Knight Combo 1 -- c9323 はぎやてすと　新王城騎士コンボ　1
+93237100 c9323 Hagiya Test New Castle Knight Combo 2 -- c9323 はぎやてすと　新王城騎士コンボ　2
+93237200 c9323 Hagiya Test New Castle Knight Combo 2 -- c9323 はぎやてすと　新王城騎士コンボ　2
+93238000 c9323 Hagiya Test Watcher Rush Cut -- c9323 はぎやてすと　監視者突進切り
+93239000 c9323 Hagiya Test Thrust Combo Morinaga Test 1 -- c9323 はぎやてすと　突きコンボ　森永さんテスト1
+93239100 c9323 Hagiya Test Thrust Combo Morinaga-san Test 2 -- c9323 はぎやてすと　突きコンボ　森永さんテスト2
+93239800 c9323 Hagiya Test Mono-Eye Behavior -- c9323 はぎやてすと　モノアイ挙動
+93239900 c9323 Hagiya Test Always LookAt -- c9323 はぎやてすと　常時LookAt
+93300000 c9330 Large ragdoll confirmation confirmation dummy -- c9330 大型ラグドール確認用　確認用ダミー
+94000000 c9400 Map team test bazooka battery small test bazooka small 00 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　00
+94000100 c9400 Map team test bazooka battery small test bazooka small 01 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　01
+94000200 c9400 Map team test bazooka battery small test bazooka small 02 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　02
+94000300 c9400 Map team test bazooka battery small test bazooka small 03 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　03
+94000400 c9400 Map team test bazooka battery small test bazooka small 04 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　04
+94000500 c9400 Map team test bazooka battery small test bazooka small 05 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　05
+94000600 c9400 Map team test bazooka battery small test bazooka small 06 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　06
+94000700 c9400 Map team test bazooka battery small test bazooka small 07 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　07
+94000800 c9400 Map team test bazooka battery small test bazooka small 08 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　08
+94000900 c9400 Map team test bazooka battery small test bazooka small 09 -- c9400 マップ班テスト用 バズーカ砲台 小　テストバズーカ　小　09
+94010000 c9401 Map team test bazooka turret large test bazooka 00 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　00
+94010100 c9401 Map team test bazooka battery large test bazooka 01 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　01
+94010200 c9401 Map team test bazooka battery large test bazooka 02 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　02
+94010300 c9401 Map team test bazooka battery large test bazooka 03 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　03
+94010400 c9401 Map team test bazooka battery large test bazooka 04 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　04
+94010500 c9401 Map team test bazooka battery large test bazooka 05 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　05
+94010600 c9401 Map team test bazooka battery large test bazooka 06 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　06
+94010700 c9401 Map team test bazooka battery large test bazooka 07 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　07
+94010800 c9401 Map team test bazooka battery large test bazooka 08 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　08
+94010900 c9401 Map team test bazooka battery large test bazooka 09 -- c9401 マップ班テスト用 バズーカ砲台 大　テストバズーカ　09
+94100000 c9411 Map team test sniper battery small test sniper rifle 00 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　00
+94100100 c9411 Map team test sniper battery small test sniper rifle 01 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　01
+94100200 c9411 Map team test sniper battery small test sniper rifle 02 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　02
+94100300 c9411 Map team test sniper battery small test sniper rifle 03 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　03
+94100400 c9411 Map team test sniper battery small test sniper rifle 04 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　04
+94100500 c9411 Map team test sniper battery small test sniper rifle 05 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　05
+94100600 c9411 Map team test sniper battery small test sniper rifle 06 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　06
+94100700 c9411 Map team test sniper battery small test sniper rifle 07 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　07
+94100800 c9411 Map team test sniper battery small test sniper rifle 08 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　08
+94100900 c9411 Map team test sniper battery small test sniper rifle 09 -- c9411 マップ班テスト用 スナイパー砲台 小　テストスナイパーライフル　09
+94110000 c9411 Map team test sniper battery large test sniper rifle 00 -- c9411 マップ班テスト用 スナイパー砲台 大　テストスナイパーライフル　00
+94110100 c9411 Map team test sniper battery large test sniper rifle 01 -- c9411 マップ班テスト用 スナイパー砲台 大　テストスナイパーライフル　01
+94110200 c9411 Suna Battery_Large Vertical Hole Verification Exit Test -- c9411 スナ砲台_大 縦穴検証用 出口テスト
+94110300 c9411 Map team test sniper battery large test sniper rifle 03 -- c9411 マップ班テスト用 スナイパー砲台 大　テストスナイパーライフル　03
+94110400 c9411 Map team test sniper battery large test sniper rifle 04 -- c9411 マップ班テスト用 スナイパー砲台 大　テストスナイパーライフル　04
+94110500 c9411 Map team test sniper battery large test sniper rifle 05 -- c9411 マップ班テスト用 スナイパー砲台 大　テストスナイパーライフル　05
+94110600 c9411 Map team test sniper battery large test sniper rifle 06 -- c9411 マップ班テスト用 スナイパー砲台 大　テストスナイパーライフル　06
+94110700 c9411 Map team test sniper battery large test sniper rifle 07 -- c9411 マップ班テスト用 スナイパー砲台 大　テストスナイパーライフル　07
+94110800 c9411 Map team test sniper battery large test sniper rifle 08 -- c9411 マップ班テスト用 スナイパー砲台 大　テストスナイパーライフル　08
+94110900 c9411 Map team test sniper battery large test sniper rifle 09 -- c9411 マップ班テスト用 スナイパー砲台 大　テストスナイパーライフル　09
+94200000 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94200100 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94200200 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94200300 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94200400 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94200500 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94200600 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94200700 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94200800 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94200900 c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小　ミサイル
+94310000 c9431 machine gun battery machine gun -- c9431 マシンガン砲台　マシンガン
+99600000 c9960 Bullet generation dummy character Bullet generation A -- c9960 弾発生ダミーキャラ　弾発生A
+99600100 c9960 Bullet generation dummy character Bullet generation B -- c9960 弾発生ダミーキャラ　弾発生B
+99600200 c9960 Bullet generation dummy character Bullet generation C -- c9960 弾発生ダミーキャラ　弾発生C
+99600300 c9960 Bullet generation dummy character poison tank test -- c9960 弾発生ダミーキャラ　毒タンクテスト
+99600400 c9960 Bullet generation dummy character Treasure corpse exploding bullet -- c9960 弾発生ダミーキャラ　宝死体爆発弾丸
+99600600 c9960 Tail missile for sandworm_upper left_6560 -- c9960 サンドワーム用　テールミサイル_左上段_6560
+99600601 c9960 Tail missile for sandworm_lower left_6560 -- c9960 サンドワーム用　テールミサイル_左下段_6560
+99600602 c9960 Tail missile for sandworm_upper left_6504 -- c9960 サンドワーム用　テールミサイル_左上段_6504
+99600603 c9960 Tail missile for sandworm_lower left_6504 -- c9960 サンドワーム用　テールミサイル_左下段_6504
+99600604 c9960 Tail missile for sandworm_upper left_6505 -- c9960 サンドワーム用　テールミサイル_左上段_6505
+99600605 c9960 Tail missile for sandworm_lower left_6505 -- c9960 サンドワーム用　テールミサイル_左下段_6505
+99600610 c9960 Tail missile for sandworm_upper right stage_6560 -- c9960 サンドワーム用　テールミサイル_右上段_6560
+99600611 c9960 Tail missile for sandworm_lower right_6560 -- c9960 サンドワーム用　テールミサイル_右下段_6560
+99600612 c9960 Tail missile for sandworm_upper right_6503 -- c9960 サンドワーム用　テールミサイル_右上段_6503
+99600613 c9960 Tail missile for sandworm_lower right_6503 -- c9960 サンドワーム用　テールミサイル_右下段_6503
+99600614 c9960 Tail missile for sandworm_upper right_6505 -- c9960 サンドワーム用　テールミサイル_右上段_6505
+99600615 c9960 Tail missile for sandworm_lower right_6505 -- c9960 サンドワーム用　テールミサイル_右下段_6505
+99800050 c9980 Dummy character installation for PA generation -- c9980　ダミーキャラ　設置PA発生用
+99970000 Single-shot standard -- 単発系　標準
+99970100 Single shot system slow -- 単発系　遅い
+99970200 Single-shot type, fast -- 単発系　速い
+99970300 Single-shot type, super fast -- 単発系　超速い
+99970400 Single shot type with laser sight -- 単発系　レーザーサイト付き
+99970500 Single-shot system, no prediction -- 単発系　予測なし
+99970600 Single-shot shotgun -- 単発系　散弾
+99973000 Missile system standard -- ミサイル系　標準
+99973100 Missile series continuous firing -- ミサイル系　連続発射
+99973200 Missile system simultaneous launch -- ミサイル系　同時発射
+99973300 Missile type mountain trajectory -- ミサイル系　山なり弾道
+99973400 Missile type vertical -- ミサイル系　垂直
+99973500 Missile type: 1 tempo delay -- ミサイル系　1テンポ遅らせ
+99973600 Missile system VFT -- ミサイル系　VFT
+99973700 Missile type plasma -- ミサイル系　プラズマ
+99973800 Missile type AS missile -- ミサイル系　ASミサイル
+99973900 Missile system PM missile -- ミサイル系　PMミサイル
+99974000 Missile Stalker -- ミサイル系　ストーカー
+99974100 Missile container -- ミサイル系　コンテナ
+99974200 Missile type multi -- ミサイル系　マルチ
+99974300 Missile stealth -- ミサイル系　ステルス
+99974400 Missile type depth charge -- ミサイル系　爆雷
+99974500 Missile system ignition -- ミサイル系　発火
+99980000 General-purpose control Common attack ID 800 Head LookAt control -- 汎用制御用　共通攻撃ID　800　頭部LookAt制御
+99992090 enemy general purpose laser sight -- 敵汎用レーザーサイト

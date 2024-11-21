@@ -1,0 +1,4 @@
+0 reserved area -- 予約領域
+83090 WP_0230_Coral blade -- WP_0230_コーラルブレード
+83091 test model -- テストモデル
+83100 WP_2730_Coral Laser -- WP_2730_コーラルレーザー

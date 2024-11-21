@@ -1,0 +1,135 @@
+0 Default settings -- デフォルト設定
+1 L0 main -- L0メイン
+2 L1 main -- L1メイン
+3 No LOD -- LODしない
+4 testparm
+5 vignette test -- ヴィネットテスト
+6 AC_PC
+7 AC_NPC
+8 illusion -- 幻影
+10 For characters, small size (~20m) -- キャラ用 小型(～20m)
+11 Medium size for characters (~40m) -- キャラ用 中型(～40ｍ)
+12 Large size for characters (~100m) -- キャラ用 大型(～100m)
+13 Extra large for characters (~200m) -- キャラ用 特大(～200m)
+14 For characters, extra large ~ 500m) -- キャラ用 超特大～500ｍ)
+15 For characters extra large or larger (1000m~) -- キャラ用 超特大以上(1000m～)
+16 c4210_for illusions -- c4210_幻影用
+17 For characters (Ice Worm) -- キャラ用(アイスワーム）
+18 For characters (landing ship) -- キャラ用(揚陸艦）
+19 Does not switch to LOD model for character -- キャラ用 LODモデルに切り替わらない
+20 For wild animals, small (1.5m or less) -- 野生動物用 小型(1.5m以下)
+21 For wild animals, medium size (3m or less) -- 野生動物用 中型(3m以下)
+22 For wild animals, large (less than 6m) -- 野生動物用 大型(6m以下)
+23 Extra large for wild animals (12m or less) -- 野生動物用 特大(12m以下)
+24 For wild animals, huge (less than 25m) -- 野生動物用 巨大(25m以下)
+25 Fortress for wild animals (less than 50m) -- 野生動物用 要塞(50m以下)
+29 Does not switch to wildlife LOD model -- 野生動物用 LODモデルに切り替わらない
+30 FNR asset 201m~ (does not switch to low texture) -- FNR アセット　201m～(lowテクスチャに切り替わらない)
+38 FNR Asset 1001m~ (For models using base texture only) -- FNR アセット　1001m～(ベーステクスチャ使用モデル専用)
+39 FNR Asset　501m～1000m(For models using base texture only) -- FNR アセット　501m～1000m(ベーステクスチャ使用モデル専用)
+40 FNR asset 201m to 500m (only for models using base texture) -- FNR アセット　201m～500m(ベーステクスチャ使用モデル専用)
+41 FNR asset extra large 101-200m (only for models using base texture) -- FNR アセット超特大 101～200ｍ(ベーステクスチャ使用モデル専用)
+42 FNR asset extra large 61-100m (only for models using base texture) -- FNR アセット特大 61～100 ｍ(ベーステクスチャ使用モデル専用)
+43 FNR asset size 31-60m (only for models using base texture) -- FNR アセット大 31～60ｍ(ベーステクスチャ使用モデル専用)
+44 FNR asset 11-30m (only for models using base texture) -- FNR アセット中 11～30ｍ(ベーステクスチャ使用モデル専用)
+45 FNR asset small ~10m (only for models using base texture) -- FNR アセット小 ～10ｍ(ベーステクスチャ使用モデル専用)
+47 FNR　1500m～
+48 FNR　1001m～1500
+49 FNR　501m～1000
+50 FNR Asset extra large or larger 201m~ -- FNR アセット超特大以上　201m～
+51 FNR Asset Super Large 101-200m -- FNR アセット超特大 101～200ｍ
+52 FNR Asset Extra Large 61-100m -- FNR アセット特大 61～100 ｍ
+53 FNR Asset Large 31-60m -- FNR アセット大 31～60ｍ
+54 FNR asset middle 11-30m -- FNR アセット中 11～30ｍ
+55 FNR Asset Small ~10m -- FNR アセット小 ～10ｍ
+60 Does not switch to low texture -- lowテクスチャに切り替わらない
+61 Does not switch to LOD model Does not switch to low texture -- LODモデルに切り替わらない lowテクスチャに切り替わらない
+62 L2 only (reflection scene default) -- L2のみ（反射シーンデフォルト）
+63 Does not switch to LOD model (for polyplay) -- LODモデルに切り替わらない(ポリ劇用)
+70 For wood only -- 木専用
+75 Vignette for Imposter -- ヴィネット　インポスター用
+80 FNR c9420 missile battery provisional support -- FNR　ｃ9420ミサイル砲台　暫定対応
+81 FNR micro target test -- FNR　極小目標用　テスト
+82 FNR large target test -- FNR　大目標用　テスト
+83 FNR Emphasis Asset 500m -- FNR　強調用アセット　500ｍ
+84 FNR Emphasis Asset 4000m -- FNR　強調用アセット　4000ｍ
+85 FNR Emphasis Asset Entire Map -- FNR　強調用アセット　マップ全域
+86 FNR　FP version for strong enemies -- FNR　FP版 強敵用
+91 Includes up to SLOD_L2 for 20m or less -- 20m以下用SLOD_L2まで含める
+92 Includes up to SLOD_L2 for building size -- ビルサイズ用SLOD_L2まで含める
+93 Temporary A-layer line -- A層線路暫定用
+94 Huge map asset without SLOD_Includes up to L2 -- 巨大マップ・アセットSLOD無し_L2まで含める
+95 Includes huge asset SLOD_L2 -- 巨大アセットSLOD_L2まで含める
+96 Huge asset for distant view SLOD_Reverse LOD processing -- 遠景用巨大アセットSLOD_逆LOD処理
+97 A-layer supporting pillar L2 distance setting provisional -- A層支える柱　L2距離設定　暫定用
+99 FNR Proto Giant Boss Test -- FNR　プロト巨大ボス用テスト
+100 m60 temporary LOD test -- m60　一時LODテスト
+126 401～700m
+129 No TexLOD -- TexLOD無
+130 1~10m -- 1～10m
+131 11～30m
+132 31～60m
+133 61～100m
+134 101～200m
+135 201～400m
+136 401～700m
+137 701～1100m
+138 1101～1600m
+139 1601～2500m
+140 2501～5000m
+141 5001～10000m
+142 10000～20000m
+232 31～60m
+233 61～100m
+234 101～200m
+235 201～400m
+160 101-400 Small for mountain natural terrain only -- 101～400　山岳自然地形専用　小
+161 401-700m For mountain natural terrain only Medium -- 401～700m　山岳自然地形専用　中
+162 701-1100m For mountain natural terrain only Large (farthest view) -- 701～1100m　　山岳自然地形専用　大（最遠景）
+163 50-100m Small for mountain buildings (L1 proxy using shadow L1) -- 50～100ｍ　 山岳ビル用　小（影L1利用L1プロキシ）
+164 101-200m Large for mountain buildings (L1 proxy using shadow L1) (does not disappear) -- 101～200ｍ　 山岳ビル用　大（影L1利用L1プロキシ）（消えない）
+165 VOB2 Nomaru asset only (L1 proxy using shadow L0) -- VOB2ノ丸アセット専用（影Ｌ0利用Ｌ1プロキシ）
+166 10-50m Mountain L1 proxy extremely small (L1 proxy using shadow L1) -- 10～50ｍ　 山岳Ｌ１プロキシ　極小（影L1利用L1プロキシ）
+167 Mountain SLOD (no LOD, low texture switching) -- 山岳ＳＬＯＤ　（ＬＯＤなし　ローテクスチャ切り替え）
+147 FNR Asset extra large or larger 1101m to 1600m Proxy model included -- FNR アセット超特大以上　1101m～1600m　   プロキシーモデル込み
+148 FNR Asset extra large or larger 701m to 1100m Proxy model included -- FNR アセット超特大以上　701m～1100m　   プロキシーモデル込み
+149 FNR Asset extra large or larger 401m to 700m Proxy model included -- FNR アセット超特大以上　401m～700m　   プロキシーモデル込み
+150 FNR Asset extra large or larger 201m~ Proxy model included -- FNR アセット超特大以上　201m～　   プロキシーモデル込み
+151 FNR Asset Extra Large 101-200m Proxy model included -- FNR アセット超特大 101～200ｍ　     プロキシーモデル込み
+152 FNR Asset Extra Large 61-100m Proxy model included -- FNR アセット特大 61～100 ｍ　 プロキシーモデル込み
+153 FNR Asset size 31-60m including proxy model -- FNR アセット大 31～60ｍ  プロキシーモデル込み
+154 FNR asset 11-30m including proxy model -- FNR アセット中 11～30ｍ  プロキシーモデル込み
+155 FNR small asset ~10m including proxy model -- FNR アセット小 ～10ｍ  プロキシーモデル込み
+170 Archive AC remains only -- アーカイブＡＣ残骸専用
+200 For forced HiActive while playing the floating giant wall anime. -- 浮上巨大壁のアニメ再生中強制HiActive用
+300 FNR for small fry enemy characters -- FNR　雑魚敵キャラ用
+400 FNR huge asset for anime -- FNR 巨大アセットアニメ用
+850 For celestial sphere -- 天球用
+851 For the inner parts after the celestial sphere_A -- 天球の次に内側のパーツ用_A
+858 For parts outside the celestial sphere_A -- 天球より外側のパーツ用_A
+860 For inner parts treated as celestial sphere_01_A -- 天球扱いの内側のパーツ用_01_A
+861 For inner parts treated as celestial sphere_02_B -- 天球扱いの内側のパーツ用_02_B
+870 For distant view parts (clouds, etc.) -- 遠景用パーツ用(雲など）
+880 VR1
+881 VR2
+900 For shadow model -- 影モデル用
+5050 FNR Asset extra large or larger 201m~ (texture LOD distance priority) -- FNR アセット超特大以上　201m～(テクスチャLOD距離優先）
+5051 FNR asset extra large 101-200m (texture LOD distance priority) -- FNR アセット超特大 101～200ｍ(テクスチャLOD距離優先）
+5052 FNR asset extra large 61-100 m (texture LOD distance priority) -- FNR アセット特大 61～100 ｍ(テクスチャLOD距離優先）
+5053 FNR large asset 31-60m (texture LOD distance priority) -- FNR アセット大 31～60ｍ(テクスチャLOD距離優先）
+5054 FNR asset 11-30m (texture LOD distance priority) -- FNR アセット中 11～30ｍ(テクスチャLOD距離優先）
+5055 FNR small asset ~10m (texture LOD distance priority) -- FNR アセット小 ～10ｍ(テクスチャLOD距離優先）
+7000 No LOD (CS only) -- LODしない(CS専用)
+7001 No LOD_Reflection (CS_C end only) -- LODしない_映り込む(CS_Cエンド専用)
+7002 LOD_For super huge assets (CS only) -- LODする_超巨大アセット用(CS専用)
+7003 No LOD_New B layer level 1 for CS (only for Lester who was alive) -- LODしない_CS用新B層レベル1(生きていたレスター専用)
+7004 No LOD_New B layer level 2 for CS (only for Lester who was alive) -- LODしない_CS用新B層レベル2(生きていたレスター専用)
+7005 No LOD_New B layer level 3 for CS (only for Lester who was alive) -- LODしない_CS用新B層レベル3(生きていたレスター専用)
+7006 No LOD_Drops the shadow of a point light source (for exclusive sorties) -- LODしない_点光源のシャドウを落とす(専用出撃用)
+7007 No LOD_Do not receive shadows from point light sources (for exclusive sorties) -- LODしない_点光源のシャドウを受けない(専用出撃用)
+9999 For rough model testing (LOD processing disabled for all except shadows) -- ラフモデルテスト用（LOD処理を影以外全無効）
+10000 Includes up to LodMap1 for PG test -- PGテスト用 LodMap1まで含める
+99999 For ModelViewer (no LOD) -- ModelViewer用(LODしない)
+10001 Includes LodMap2 for PG test -- PGテスト用 LodMap2まで含める
+100000 For curse dummy objects. It uses TexLOD to generate damage. -- 呪いダミーオブジェ用。ダメージの発生にTexLODを利用している。
+999999 For LOD operation test, including up to L6 -- LOD動作テスト用　L6まで含める

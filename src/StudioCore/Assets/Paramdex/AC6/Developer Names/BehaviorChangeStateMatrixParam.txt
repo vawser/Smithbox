@@ -1,0 +1,227 @@
+1 Shouldn't be erased -- 消すべからず
+2 Ground movement completed -- 地上移動終了
+3 Ground boost movement begins -- 地上ブースト移動開始
+4 Ground boost movement completed -- 地上ブースト移動終了
+5 Ground guard starts -- 地上ガード開始
+6 Ground guard finished -- 地上ガード終了
+7 Air boost movement begins -- 空中ブースト移動開始
+8 Aerial boost movement completed -- 空中ブースト移動終了
+9 Air guard starts -- 空中ガード開始
+10 Aerial guard finished -- 空中ガード終了
+11 Big QB starts -- 大QB開始
+12 Big QB finished -- 大QB終了
+13 Aerial wall installation begins -- 空中壁張り付き開始
+14 triangle jump -- 三角跳び
+15 cover start -- カバー開始
+16 cover finished -- カバー終了
+17 Start moving cover -- カバー移動開始
+18 Cover movement completed -- カバー移動終了
+19 Cover shooting begins -- カバー射撃開始
+20 cover shooting finished -- カバー射撃終了
+21 Forced quick turn before attack -- 攻撃前強制クイックターン
+22 Ground quick boost -- 地上クイックブースト
+23 Air quick boost -- 空中クイックブースト
+24 jump -- ジャンプ
+25 Start falling -- 落下開始
+26 landing -- 着地
+27 ground damage -- 地上ダメージ
+28 air damage -- 空中ダメージ
+29 Additional damage -- 加算ダメージ
+30 death on earth -- 地上死亡
+31 death in the air -- 空中死亡
+32 Start crouching -- しゃがみ開始
+33 End of crouching -- しゃがみ終了
+34 Start crouching movement -- しゃがみ移動開始
+35 Crouching movement completed -- しゃがみ移動終了
+36 Start crouching boost movement -- しゃがみブースト移動開始
+37 Crouching boost movement completed -- しゃがみブースト移動終了
+38 Ground movement resumed -- 地上移動再開
+39 Ground boost resumed -- 地上ブースト再開
+40 Triangle jump wall hanging fall -- 三角跳び壁張り付き落下
+41 Start of slope slide -- 斜面滑り開始
+42 Slope slip completed -- 斜面滑り終了
+43 Start of ride -- 乗車開始
+44 End of ride -- 乗車終了
+45 dash turn -- ダッシュターン
+46 Aerial boost begins to rise -- 空中ブースト上昇開始
+47 Aerial boost increase finished -- 空中ブースト上昇終了
+48 Water boost movement begins -- 水上ブースト移動開始
+49 Water boost movement completed -- 水上ブースト移動終了
+50 Water guard starts -- 水上ガード開始
+51 Water guard finished -- 水上ガード終了
+52 Water boost begins to rise -- 水上ブースト上昇開始
+53 Water quick boost -- 水上クイックブースト
+54 water damage -- 水上ダメージ
+100 VOB start -- VOB開始
+101 End of VOB -- VOB終了
+20010200 Own machine base 2 legs homing dash -- 自機ベース　2脚　ホーミングダッシュ
+20010400 Own machine base reverse joint jump -- 自機ベース　逆関節　ジャンプ
+90000000 Own aircraft base common ground death -- 自機ベース　共通　地上死亡
+90000100 Own aircraft base common air death -- 自機ベース　共通　空中死亡
+90000200 Own machine base common water death -- 自機ベース　共通　水上死亡
+90001000 Own aircraft base common small ground damage -- 自機ベース　共通　地上小ダメージ
+90001001 Own aircraft base common large ground damage -- 自機ベース　共通　地上大ダメージ
+90001002 Own aircraft base common ground jump damage -- 自機ベース　共通　地上ふっとびダメージ
+90001013 Own aircraft base common ground guard break -- 自機ベース　共通　地上ガードブレイク
+90001020 Own aircraft base common ground additional damage -- 自機ベース　共通　地上加算ダメージ
+90001100 Own aircraft base common small air damage -- 自機ベース　共通　空中小ダメージ
+90001101 Own aircraft base common large air damage -- 自機ベース　共通　空中大ダメージ
+90001102 Own aircraft base common mid-air jump damage -- 自機ベース　共通　空中ふっとびダメージ
+90001113 Own aircraft base common aerial guard break -- 自機ベース　共通　空中ガードブレイク
+90001120 Own aircraft base common aerial additional damage -- 自機ベース　共通　空中加算ダメージ
+90001200 Own machine base common small water damage -- 自機ベース　共通　水上小ダメージ
+90001201 Own machine base common large water damage -- 自機ベース　共通　水上大ダメージ
+90001202 Own machine base common water jump damage -- 自機ベース　共通　水上ふっとびダメージ
+90001213 Own machine base common water guard break -- 自機ベース　共通　水上ガードブレイク
+90001220 Own machine base common water additional damage -- 自機ベース　共通　水上加算ダメージ
+90002000 Own aircraft base common Standby when ground animation ends -- 自機ベース　共通　地上アニメ終了時待機
+90002100 Own aircraft base common: Standby when aerial animation ends -- 自機ベース　共通　空中アニメ終了時待機
+90002200 Own machine base common Standby when the water animation ends -- 自機ベース　共通　水上アニメ終了時待機
+90002900 Own machine base common Standby when VOB animation ends -- 自機ベース　共通　VOBアニメ終了時待機
+90003000 Own machine base common fall -- 自機ベース　共通　落下
+90003010 Own aircraft base: common from ground to water -- 自機ベース　共通　地上から水上
+90003100 Own aircraft base common landing -- 自機ベース　共通　着地
+90003110 Own aircraft base common water landing -- 自機ベース　共通　着水
+90003200 Own aircraft base common landing -- 自機ベース　共通　上陸
+90003210 Own machine base common Falling from the water -- 自機ベース　共通　水上から落下
+90003900 Own machine base common VOB start -- 自機ベース　共通　VOB開始
+90003910 Own machine base common VOB purge -- 自機ベース　共通　VOBパージ
+90011900 Own machine base common quick boost during VOB -- 自機ベース　共通　VOB中クイックブースト
+90011910 Own machine base common Assault boost start -- 自機ベース　共通　アサルトブースト開始
+90011911 Own machine base common Assault boost end -- 自機ベース　共通　アサルトブースト終了
+90011912 Own machine base common Assault boost kick start -- 自機ベース　共通　アサルトブーストキック開始
+90011913 Own aircraft base common Assault boost shooting start -- 自機ベース　共通　アサルトブースト射撃開始
+90020000 Own machine base common guard start -- 自機ベース　共通　ガード開始
+90020100 Own machine base common Guard end -- 自機ベース　共通　ガード終了
+90021000 Own machine base common: Start of first stage of fighting -- 自機ベース　共通　格闘初段開始
+90021001 Own machine base common Fighting combo start -- 自機ベース　共通　格闘コンボ開始
+90022000 Own machine base common: Start shooting stance -- 自機ベース　共通　射撃構え始め
+90022001 Own machine base common - start shooting down -- 自機ベース　共通　射撃下ろし始め
+90022002 Own aircraft base common: 1st stage of stopping fire begins to prepare -- 自機ベース　共通　足止め射撃1段目構え始め
+90022003 Own machine base common: Start preparing for the second stage of stopping fire -- 自機ベース　共通　足止め射撃2段目構え始め
+90029000 Own machine base common recovery item -- 自機ベース　共通　回復アイテム
+91002000 Own machine base 2 legs Standby when quick boost animation ends -- 自機ベース　2脚　クイックブーストアニメ終了時待機
+91002010 Own machine base 2 legs quick boost acceleration finished -- 自機ベース　2脚　クイックブースト加速終了
+91002020 Own aircraft base, 2 legs, start triangular flight -- 自機ベース　2脚　三角飛び開始
+91003000 Own machine base 2 legs start sliding on slope -- 自機ベース　2脚　斜面滑り開始
+91003010 Own aircraft base 2 legs slope slip completed -- 自機ベース　2脚　斜面滑り終了
+91003100 Own machine base 2 legs crouching forced release -- 自機ベース　2脚　しゃがみ強制解除
+91003200 Own aircraft base 2 legs quick boost inertial flight landing -- 自機ベース　2脚　クイックブースト慣性飛行中着地
+91010000 Own aircraft base 2 legs Quick turn while waiting on the ground -- 自機ベース　2脚　地上待機中クイックターン
+91010001 Own aircraft base 2 legs Quick turn while waiting on the ground_For AI -- 自機ベース　2脚　地上待機中クイックターン_AI用
+91010010 Own machine base 2 legs dash turn -- 自機ベース　2脚　ダッシュターン
+91010020 Own aircraft base 2 legs Quick turn while boosting -- 自機ベース　2脚　ブースト走行中クイックターン
+91010021 Own machine base 2 legs Quick turn while driving boost_AI -- 自機ベース　2脚　ブースト走行中クイックターン_AI用
+91010100 Own aircraft base 2 legs ground movement start -- 自機ベース　2脚　地上移動開始
+91010110 Own aircraft base 2 legs ground movement completed -- 自機ベース　2脚　地上移動終了
+91010200 Own machine base 2 legs quick boost -- 自機ベース　2脚　クイックブースト
+91010201 Own machine base 2 legs quick boost during quick boost -- 自機ベース　2脚　クイックブースト中クイックブースト
+91010300 Own machine base 2 legs ground boost running start -- 自機ベース　2脚　地上ブースト走行開始
+91010301 Own aircraft base 2 legs ground boost running resumed -- 自機ベース　2脚　地上ブースト走行再開
+91010310 Own aircraft base 2 legs ground boost run completed -- 自機ベース　2脚　地上ブースト走行終了
+91010311 Own aircraft base 2 legs ground boost stop -- 自機ベース　2脚　地上ブースト停止
+91010400 Own aircraft base 2 legs jump -- 自機ベース　2脚　ジャンプ
+91010500 Own machine base 2 legs start crouching -- 自機ベース　2脚　しゃがみ開始
+91010510 Own machine base 2 legs crouching completed -- 自機ベース　2脚　しゃがみ終了
+91010520 Own machine base 2 legs start crouching movement -- 自機ベース　2脚　しゃがみ移動開始
+91010530 Own machine base 2 legs crouching movement completed -- 自機ベース　2脚　しゃがみ移動終了
+91011000 Own machine base 2 legs aerial quick turn -- 自機ベース　2脚　空中クイックターン
+91011001 Own machine base 2 legs aerial quick turn_for AI -- 自機ベース　2脚　空中クイックターン_AI用
+91011020 Own aircraft base 2 legs Quick turn during air boost -- 自機ベース　2脚　空中ブースト中クイックターン
+91011021 Own aircraft base 2 legs Quick turn during air boost_AI -- 自機ベース　2脚　空中ブースト中クイックターン_AI用
+91011300 Own aircraft base 2 legs aerial boost start -- 自機ベース　2脚　空中ブースト開始
+91011310 Own aircraft base 2 legs aerial boost finished -- 自機ベース　2脚　空中ブースト終了
+91011320 Own aircraft base 2 legs aerial boost flight begins -- 自機ベース　2脚　空中ブースト飛行開始
+91011330 Own aircraft base 2 legs aerial boost flight completed -- 自機ベース　2脚　空中ブースト飛行終了
+91011400 Own aircraft base 2 legs aerial boost start rising -- 自機ベース　2脚　空中ブースト上昇開始
+91011410 Own aircraft base 2 legs aerial boost rise finished -- 自機ベース　2脚　空中ブースト上昇終了
+91011420 Own aircraft base 2 legs Aerial boost ascending flight begins -- 自機ベース　2脚　空中ブースト上昇飛行開始
+91011430 Own aircraft base 2 legs Aerial boost ascent flight completed -- 自機ベース　2脚　空中ブースト上昇飛行終了
+91011500 Own machine base 2 legs aerial wall kick jump -- 自機ベース　2脚　空中壁蹴りジャンプ
+91012100 Own machine base 2 legs start moving on water -- 自機ベース　2脚　水上移動開始
+91012110 Own aircraft base 2 legs water movement completed -- 自機ベース　2脚　水上移動終了
+92011000 Own aircraft base quadruped aerial hover start -- 自機ベース　四脚　空中ホバー開始
+92011001 Own aircraft base quadruped aerial hover ends -- 自機ベース　四脚　空中ホバー終了
+93010000 Own base tank drift after assault boost kick -- 自機ベース タンク アサルトブーストキック後ドリフト
+990000000 Enemy base common additional damage -- 敵ベース　共通　加算ダメージ
+990001000 Enemy base common attack -- 敵ベース　共通　攻撃
+990010000 Enemy base 2 legs ground movement start -- 敵ベース　2脚　地上　移動開始
+990010001 Enemy base 2 legs ground movement finished -- 敵ベース　2脚　地上　移動終了
+990010002 Enemy base 2 legs ground boost movement start -- 敵ベース　2脚　地上　ブースト移動開始
+990010003 Enemy base 2 legs ground boost movement completed -- 敵ベース　2脚　地上　ブースト移動終了
+990010004 Enemy base 2 legs ground quick boost -- 敵ベース　2脚　地上　クイックブースト
+990010005 Enemy base 2 legs ground turn -- 敵ベース　2脚　地上　ターン
+990010100 Enemy base 2 legs ground jump storage -- 敵ベース　2脚　地上　ジャンプ溜め
+990010101 Enemy base 2 legs on the ground begins to fall -- 敵ベース　2脚　地上　落下開始
+990010102 Enemy base 2 legs ground landing -- 敵ベース　2脚　地上　着地
+990010103 Enemy base 2 legs ground jump crossing -- 敵ベース　2脚　地上　ジャンプ踏切
+990010110 Enemy base 2 legs ground jump edge jump -- 敵ベース　2脚　地上　ジャンプエッジジャンプ
+990011000 Enemy base 2 legs ground damage -- 敵ベース　2脚　地上　ダメージ
+990011100 Enemy base 2 legs ground death -- 敵ベース　2脚　地上　死亡
+990012000 Enemy base 2 legs ground guard start -- 敵ベース　2脚　地上　ガード開始
+990012001 Enemy base 2 legs ground guard finished -- 敵ベース　2脚　地上　ガード終了
+990012100 Enemy base 2 legs ground enemy base_cover start -- 敵ベース　2脚　地上　敵ベース_カバー開始
+990012101 Enemy base 2 legs ground enemy base_Cover finished -- 敵ベース　2脚　地上　敵ベース_カバー終了
+990012102 Enemy base 2 legs on the ground Enemy base_Start taking cover -- 敵ベース　2脚　地上　敵ベース_カバー乗り出し開始
+990012103 Enemy base 2 legs ground enemy base_cover launch completed -- 敵ベース　2脚　地上　敵ベース_カバー乗り出し終了
+990012104 Enemy base 2 legs on the ground Enemy base_Get cover and start rifle -- 敵ベース　2脚　地上　敵ベース_カバー乗り出しライフル開始
+990013000 Enemy base 2 legs ground normal rifle start -- 敵ベース　2脚　地上　通常ライフル開始
+990014000 Enemy base 2 legs ground whole body attack -- 敵ベース　2脚　地上　全身攻撃
+990020000 Enemy base 2 legs aerial movement start -- 敵ベース　2脚　空中　移動開始
+990020001 Enemy base 2 legs aerial movement finished -- 敵ベース　2脚　空中　移動終了
+990020002 Enemy base 2 legs aerial boost movement start -- 敵ベース　2脚　空中　ブースト移動開始
+990020003 Enemy base 2 legs aerial boost movement finished -- 敵ベース　2脚　空中　ブースト移動終了
+990020004 Enemy base 2 legs aerial quick boost -- 敵ベース　2脚　空中　クイックブースト
+990020005 Enemy base 2 legs aerial turn -- 敵ベース　2脚　空中　ターン
+990020006 Enemy base 2 legs aerial boost increase start -- 敵ベース　2脚　空中　ブースト上昇 開始
+990020007 Enemy base 2 legs aerial boost increase End -- 敵ベース　2脚　空中　ブースト上昇 終了
+990020008 Enemy base 2 legs aerial boost dash rise start -- 敵ベース　2脚　空中　ブーストダッシュ上昇 開始
+990020009 Enemy base 2 legs aerial boost dash rise End -- 敵ベース　2脚　空中　ブーストダッシュ上昇 終了
+990021000 Enemy base 2 legs aerial damage -- 敵ベース　2脚　空中　ダメージ
+990021100 Enemy base 2 legs aerial death -- 敵ベース　2脚　空中　死亡
+990022000 Enemy base 2 legs aerial guard start -- 敵ベース　2脚　空中　ガード開始
+990022001 Enemy base 2 legs aerial guard finished -- 敵ベース　2脚　空中　ガード終了
+990023000 Enemy base 2 legs aerial normal rifle start -- 敵ベース　2脚　空中　通常ライフル開始
+990024000 Enemy base 2 legs aerial full body attack -- 敵ベース　2脚　空中　全身攻撃
+990040000 Enemy base floating in the air begins movement -- 敵ベース　浮遊　空中　移動開始
+990040001 Enemy base floating in the air movement ends -- 敵ベース　浮遊　空中　移動終了
+990040002 Enemy base floating air boost movement start -- 敵ベース　浮遊　空中　ブースト移動開始
+990040003 Enemy base floating air boost movement finished -- 敵ベース　浮遊　空中　ブースト移動終了
+990040004 Enemy base floating air quick boost -- 敵ベース　浮遊　空中　クイックブースト
+990040005 Enemy base floating air turn -- 敵ベース　浮遊　空中　ターン
+990040006 Enemy base floating in the air uniform speed turn start -- 敵ベース　浮遊　空中　等速ターン開始
+990040007 Enemy base floating in the air uniform speed end of turn -- 敵ベース　浮遊　空中　等速ターン終了
+990041000 Enemy base floating air damage -- 敵ベース　浮遊　空中　ダメージ
+990041100 Enemy base floating air death -- 敵ベース　浮遊　空中　死亡
+990042000 Enemy base floating air guard start -- 敵ベース　浮遊　空中　ガード開始
+990042001 Enemy base floating air guard end -- 敵ベース　浮遊　空中　ガード終了
+990043000 Enemy base floating air normal rifle start -- 敵ベース　浮遊　空中　通常ライフル開始
+990050000 Enemy base vehicle ground movement begins -- 敵ベース　車輌　地上　移動開始
+990050001 Enemy base vehicle ground movement completed -- 敵ベース　車輌　地上　移動終了
+990050002 Enemy base vehicle ground boost movement start -- 敵ベース　車輌　地上　ブースト移動開始
+990050003 Enemy base vehicle ground boost movement completed -- 敵ベース　車輌　地上　ブースト移動終了
+990050004 Enemy base vehicle ground quick boost -- 敵ベース　車輌　地上　クイックブースト
+990050005 Enemy base vehicle ground turn -- 敵ベース　車輌　地上　ターン
+990050006 Enemy base vehicle ground uniform speed turn start -- 敵ベース　車輌　地上　等速ターン開始
+990050007 Enemy base vehicle ground uniform speed end of turn -- 敵ベース　車輌　地上　等速ターン終了
+990050100 Enemy base vehicle ground jump charge -- 敵ベース　車輌　地上　ジャンプ溜め
+990050101 Enemy base vehicle ground starts falling -- 敵ベース　車輌　地上　落下開始
+990050102 Enemy base vehicle ground landing -- 敵ベース　車輌　地上　着地
+990050103 Enemy base vehicle ground jump railroad crossing -- 敵ベース　車輌　地上　ジャンプ踏切
+990050110 Enemy base vehicle ground jump edge -- 敵ベース　車輌　地上　ジャンプエッジ
+990051000 Enemy base vehicle ground damage -- 敵ベース　車輌　地上　ダメージ
+990051100 Enemy base vehicle ground death -- 敵ベース　車輌　地上　死亡
+990052000 Enemy base vehicle ground guard start -- 敵ベース　車輌　地上　ガード開始
+990052001 Enemy base vehicle ground guard end -- 敵ベース　車輌　地上　ガード終了
+990053000 Enemy base vehicle ground normal rifle start -- 敵ベース　車輌　地上　通常ライフル開始
+990060000 Enemy base vehicle air movement start -- 敵ベース　車輌　空中　移動開始
+990060001 Enemy base vehicle air movement end -- 敵ベース　車輌　空中　移動終了
+990060002 Enemy base vehicle air boost movement start -- 敵ベース　車輌　空中　ブースト移動開始
+990060003 Enemy base vehicle air boost movement finished -- 敵ベース　車輌　空中　ブースト移動終了
+990060004 Enemy base vehicle air quick boost -- 敵ベース　車輌　空中　クイックブースト
+990060005 Enemy base vehicle air turn -- 敵ベース　車輌　空中　ターン
+990061000 Enemy base vehicle air damage -- 敵ベース　車輌　空中　ダメージ
+990061100 Enemy base vehicle air death -- 敵ベース　車輌　空中　死亡
+990062000 Enemy base vehicle air guard start -- 敵ベース　車輌　空中　ガード開始
+990062001 Enemy base vehicle aerial guard end -- 敵ベース　車輌　空中　ガード終了
+990063000 Enemy base vehicle air normal rifle start -- 敵ベース　車輌　空中　通常ライフル開始

@@ -1,138 +1,138 @@
-0 未設定
-1 
-2 
-100 ベース体型
-101 
-102 
-103 
-104 
-105 
-106 
-107 
-108 
-200 ベース顔 ※フレーム90~99はレンダリング画像専用のため、別IDに切り替え
-201 
-202 
-203 
-204 
-205 
-206 
-207 
-208 
-209 
-220 ベース顔　女性用表示
-221 
-222 
-223 
-224 
-225 
-226 
-227 
-228 
-229 
-300 瞳(右)
-301 
-302 
-400 瞳(左)
-401 
-402 
-500 眉
-501 
-502 
-503 
-504 
-505 
-506 
-507 
-508 
-509 
-510 
-600 髭
-601 
-602 
-603 
-604 
-605 
-606 
-607 
-608 
-609 
-610 
-611 
-612 
-613 
-614 
-615 
-616 
-620 髭　女性用の「なし」のみ
-700 髪型
-701 
-702 
-703 
-704 
-705 
-706 
-707 
-708 
-709 
-710 
-711 
-712 
-713 
-714 
-715 
-716 
-717 
-718 
-719 
-800 デカール
-801 
-802 
-803 
-804 
-805 
-806 
-900 アクセサリ
-901 
-902 
-903 
-904 
-905 
-906 
-907 
-908 
-1000 瞳(両瞳用）
-1001 
-1002 
-1100 まつげ
-1101 
-1102 
-1103 
-1104 
-100000 性別
-100001 
-100100 年齢層
-100101 
-100102 
-100200 素性
-100201 
-100202 
-100203 
-100204 
-100205 
-100206 
-100207 
-100208 
-100300 贈り物
-100301 
-100302 
-100303 
-100304 
-100305 
-100306 
-100307 
-100308 
-100309 
-100400 ボイス
-100401 
-100402 
+0 Not set
+1 null
+2 null
+100 Base body type
+101 null
+102 null
+103 null
+104 null
+105 null
+106 null
+107 null
+108 null
+200 Base face ※Frame 90~99 is for rendering images only so ID Switch to
+201 null
+202 null
+203 null
+204 null
+205 null
+206 null
+207 null
+208 null
+209 null
+220 Base face Female display
+221 null
+222 null
+223 null
+224 null
+225 null
+226 null
+227 null
+228 null
+229 null
+300 pupil ( right )
+301 null
+302 null
+400 pupil ( left )
+401 null
+402 null
+500 eyebrow
+501 null
+502 null
+503 null
+504 null
+505 null
+506 null
+507 null
+508 null
+509 null
+510 null
+600 beard
+601 null
+602 null
+603 null
+604 null
+605 null
+606 null
+607 null
+608 null
+609 null
+610 null
+611 null
+612 null
+613 null
+614 null
+615 null
+616 null
+620 Beard: Only "none" for women
+700 Hairstyle
+701 null
+702 null
+703 null
+704 null
+705 null
+706 null
+707 null
+708 null
+709 null
+710 null
+711 null
+712 null
+713 null
+714 null
+715 null
+716 null
+717 null
+718 null
+719 null
+800 Decals
+801 null
+802 null
+803 null
+804 null
+805 null
+806 null
+900 Accessories
+901 null
+902 null
+903 null
+904 null
+905 null
+906 null
+907 null
+908 null
+1000 pupil ( For both eyes)
+1001 null
+1002 null
+1100 eyelash
+1101 null
+1102 null
+1103 null
+1104 null
+100000 sex
+100001 null
+100100 Age group
+100101 null
+100102 null
+100200 Background
+100201 null
+100202 null
+100203 null
+100204 null
+100205 null
+100206 null
+100207 null
+100208 null
+100300 gift
+100301 null
+100302 null
+100303 null
+100304 null
+100305 null
+100306 null
+100307 null
+100308 null
+100309 null
+100400 voice
+100401 null
+100402 null

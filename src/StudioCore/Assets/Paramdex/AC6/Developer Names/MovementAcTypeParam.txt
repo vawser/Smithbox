@@ -1,0 +1,16 @@
+0 Default (for test AC) -- デフォルト（テストAC用）
+2 Default boost move_after -- デフォルト ブースト移動_後
+3 Default boost movement_guarding -- デフォルト ブースト移動_ガード中
+4 Default (rise boost) -- デフォルト（上昇ブースト）
+10 Default machine_water movement test -- デフォルト機_水上移動テスト
+100 Propeller plane (proto) test -- プロペラ機（プロト）テスト
+200 Heaviest boost speed test -- 最重量ブースト速度テスト
+210 Lightest boost speed test -- 最軽量ブースト速度テスト
+300 Tank_Baylum -- タンク_ベイラム
+310 Tank_Label -- タンク_ラベール
+320 Tank_Cuba -- タンク_キューバ
+500 reverse joint aircraft -- 逆関節機体
+501 Reverse joint aircraft_QB derived jump -- 逆関節機体_QB派生ジャンプ
+900 for c900 -- c900用
+901 Horizontal movement speed during jump for c900 -- c900用　ジャンプ中水平移動速度
+9999 Test AC: Brake ALL0 -- テストAC：ブレーキALL０

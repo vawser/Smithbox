@@ -1,0 +1,37 @@
+410000 [CS] [General purpose booster]_Normal (orange)_Short_Small No LOD -- 【CS】【汎用ブースター】_通常（橙系）_短_小　LODなし
+410001 [CS] [General purpose booster]_Normal (orange)_Short_Medium No LOD -- 【CS】【汎用ブースター】_通常（橙系）_短_中　LODなし
+410010 [CS] [General purpose booster]_Normal (orange)_Long_Small No LOD -- 【CS】【汎用ブースター】_通常（橙系）_長_小　LODなし
+410011 [CS] [General purpose booster]_Normal (orange)_Long_Medium No LOD -- 【CS】【汎用ブースター】_通常（橙系）_長_中　LODなし
+410021 [CS] [General purpose booster]_Normal (orange)_Idling_Medium -- 【CS】【汎用ブースター】_通常（橙系）_アイドリング_中
+410030 [CS] [General purpose booster]_Normal (orange)_Exhaust_Small -- 【CS】【汎用ブースター】_通常（橙系）_排気_小
+410031 [CS] [General purpose booster]_Normal (orange)_Exhaust_Medium -- 【CS】【汎用ブースター】_通常（橙系）_排気_中
+410032 [CS] [General purpose booster]_Normal (orange)_Exhaust_Large -- 【CS】【汎用ブースター】_通常（橙系）_排気_大
+411000 [CS] [General purpose booster]_EN (blue)_Short_Small No LOD -- 【CS】【汎用ブースター】_EN（青系）_短_小　LODなし
+411001 [CS] [General purpose booster]_EN (blue)_Short_Medium No LOD -- 【CS】【汎用ブースター】_EN（青系）_短_中 LODなし
+411010 [CS] [General purpose booster]_EN (blue)_Long_Small No LOD -- 【CS】【汎用ブースター】_EN（青系）_長_小　LODなし
+411011 [CS] [General purpose booster]_EN (blue)_Long_Medium No LOD -- 【CS】【汎用ブースター】_EN（青系）_長_中 LODなし
+411021 [CS] [General-purpose booster]_EN (blue)_Idling_Medium -- 【CS】【汎用ブースター】_EN（青系）_アイドリング_中
+411030 [General purpose booster]_EN (blue)_Exhaust_Small -- 【汎用ブースター】_EN（青系）_排気_小
+411031 [General-purpose booster]_EN (blue)_Exhaust_Medium -- 【汎用ブースター】_EN（青系）_排気_中
+411032 [General purpose booster]_EN (blue)_Exhaust_Large -- 【汎用ブースター】_EN（青系）_排気_大
+412000 [CS] [General purpose booster]_Melange (red)_Short_Small No LOD -- 【CS】【汎用ブースター】_メランジ（赤系）_短_小　LODなし
+412001 [CS] [General-purpose booster]_Melange (red)_Short_Medium No LOD -- 【CS】【汎用ブースター】_メランジ（赤系）_短_中 LODなし
+412010 [CS] [General-purpose booster]_Melange (red)_Long_Small No LOD -- 【CS】【汎用ブースター】_メランジ（赤系）_長_小　LODなし
+412011 [CS] [General purpose booster]_Melange (red)_Long_Medium No LOD -- 【CS】【汎用ブースター】_メランジ（赤系）_長_中 LODなし
+412021 [CS] [General-purpose booster]_Melange (red)_Idling_Medium -- 【CS】【汎用ブースター】_メランジ（赤系）_アイドリング_中
+412030 [General-purpose booster]_Melange (red)_Exhaust_Small -- 【汎用ブースター】_メランジ（赤系）_排気_小
+412031 [General-purpose booster]_Melange (red)_Exhaust_Medium -- 【汎用ブースター】_メランジ（赤系）_排気_中
+412032 [General-purpose booster]_Melange (red)_Exhaust_Large -- 【汎用ブースター】_メランジ（赤系）_排気_大
+430001 [CS] [General purpose thruster (counter boost)]_Normal (orange)_Medium -- 【CS】【汎用スラスター（カウンターブースト）】_通常（橙系）_中
+431001 [CS] [General Purpose Thruster (Counter Boost)]_EN (Blue)_Medium -- 【CS】【汎用スラスター（カウンターブースト）】_EN（青系）_中
+432001 [CS] [General purpose thruster (counter boost)]_Melange (red)_Medium -- 【CS】【汎用スラスター（カウンターブースト）】_メランジ（赤系）_中
+440001 [CS] [General Assault Boost]_Normal (Orange) Medium Start No LOD -- 【CS】【汎用アサルトブースト】_通常（橙系）中　開始　LODなし
+440011 [CS] [General Assault Boost]_Normal (Orange) Medium Loop No LOD -- 【CS】【汎用アサルトブースト】_通常（橙系）中　ループ　LODなし
+441001 [CS] [General Assault Boost]_EN (Blue) Medium Start No LOD -- 【CS】【汎用アサルトブースト】_EN（青系）中　開始　LODなし
+441011 [CS] [General Assault Boost]_EN (Blue) Medium Loop No LOD -- 【CS】【汎用アサルトブースト】_EN（青系）中　ループ　LODなし
+442001 [CS] [General Assault Boost]_Melange (red) Medium Start No LOD -- 【CS】【汎用アサルトブースト】_メランジ（赤系）中　開始　LODなし
+442011 [CS] [General Assault Boost]_Melange (red) Medium Loop No LOD -- 【CS】【汎用アサルトブースト】_メランジ（赤系）中　ループ　LODなし
+450000 [CS] [General purpose QB]_Normal (orange)_Small -- 【CS】【汎用QB】_通常（橙系）_小
+451000 [CS] [General purpose QB]_EN (blue)_Small -- 【CS】【汎用QB】_EN（青系）_小
+452000 [CS] [General-purpose QB]_Melange (red)_Small -- 【CS】【汎用QB】_メランジ（赤系）_小
+2050100 [CS] [Buff] White melange (EN infinite) Medium -- 【CS】【バフ】白メランジ（EN無限）　中

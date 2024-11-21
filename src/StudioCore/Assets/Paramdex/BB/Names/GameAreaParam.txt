@@ -1,26 +1,26 @@
-0 テスト
-1 テスト1
-2100800 m21_00拠点_拠点老人（覚醒）
-2100810 m21_00拠点_悪夢を継ぐもの
-2200800 m22_00墓地街_アイコレクター
-2300800 m23_00廃墟_血に渇いた獣
-2300810 m23_00廃墟_嵐の獣（骨）
-2400800 m24_00聖堂街A_聖女ビースト
-2410810 m24_01聖堂街B_ガスコイン神父
-2410811 m24_01聖堂街B_ガスコイン神父
-2410800 m24_01聖堂街B_教区長
-2420800 m24_02聖堂街C_月の落とし子
-2420811 m24_02聖堂街C_月からの使者たち
-2500800 m25_00古城_王の死神
-2600803 m26_00トラップロード_レッサーデーモン（死と闇）
-2600850 m26_00トラップロード_悪夢の主
-2700800 m27_00森_闇の旅団
-2800803 m28_00生贄の街_なりそこないの邪神
-2900100 m29_00ダンジョン_ボス(一般)
-3200800 m32_00大学_白痴の蜘蛛
-3300800 m33_00故郷_邪神
-3400801 m34_00聖堂街D_ルドウイーク
-3400850 m34_00聖堂街D_教区長Ω
-3500800 m35_00時計塔_時計塔ボス
-3500850 m35_00時計塔_患者B
-3600801 m36_00漁村_ラスボス
+0 test
+1 test 1
+2100800 m21_00 Location _ Base Elderly (Awakened)
+2100810 m21_00 Location _ Inheritor of Nightmares
+2200800 m22_00 Cemetery Street _ Eye Collector
+2300800 m23_00 ruins _ Bloodthirsty Beast
+2300810 m23_00 ruins _ Storm Beast (Bone)
+2400800 m24_00 Cathedral Quarter A_ Saint Beast
+2410810 m24_01 Cathedral Quarter B_ Father Gascoigne
+2410811 m24_01 Cathedral Quarter B_ Father Gascoigne
+2410800 m24_01 Cathedral Quarter B_ Parishioner
+2420800 m24_02 Cathedral Quarter C_ Child of the Moon
+2420811 m24_02 Cathedral Quarter C_ Messengers from the Moon
+2500800 m25_00 Old castle _ King's Reaper
+2600803 m26_00 Trap Lord _ Lesser Demon (Death and Darkness)
+2600850 m26_00 Trap Lord _ Lord of Nightmares
+2700800 m27_00 forest _ Dark Brigade
+2800803 m28_00 City of Sacrifice _ The failed evil god
+2900100,m29_00 Dungeons _ boss ( General )
+3200800 m32_00 University _ Idiot Spider
+3300800 m33_00 hometown _ Evil God
+3400801 m34_00 Cathedral Quarter D_ Ludwig
+3400850 m34_00 Cathedral Quarter D_ Parishioner Ω
+3500800 m35_00 Clock Tower _ Clock Tower Boss
+3500850 m35_00 Clock Tower _ patient B
+3600801 m36_00 fishing village _ Final Boss

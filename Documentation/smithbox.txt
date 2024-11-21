@@ -8,11 +8,6 @@
 
 - Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
 
-- Change Name lists to a JSON format:
- - Holds row ID, row index, source name and community name 
- (source being leaked row name)
-- Update name export options so it is simple to update the name lists via editing the row names in the Param Editor and then exporting
- 
 - These official defs don't match the actual param layout, need to adjust them:
  - ThrustersLocomotionParam_PC
  - ThrustersParam_NPC

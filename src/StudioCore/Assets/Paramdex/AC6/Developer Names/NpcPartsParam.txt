@@ -1,0 +1,109 @@
+0 Shouldn't be erased -- 消すべからず
+9999 TEST
+31500000 juggernaut armor -- ジャガーノート装甲
+31500010 juggernaut weakness -- ジャガーノート弱点
+36000010 Shell shield right -- シェルシールド　右
+36000020 Shell shield left -- シェルシールド　左
+40000010 c4000 Adolf humanoid body -- c4000 アードルフ人型本体
+40000020 c4000 Adolf tank part front (penetration during AA) -- c4000 アードルフタンク部位 前方(AA時貫通)
+40000030 c4000 Adolf tank part hind legs (hit when AA) -- c4000 アードルフタンク部位 後脚(AA時ヒット)
+41500010 Special attack MT arm armor -- 特攻MT腕装甲
+41500020 Special attack MTPA -- 特攻MTPA
+50200010 c5020 Heavy guard mechanism Inside the main furnace -- c5020 重ガードメカ 本体炉内部
+50200020 c5020 Heavy guard mecha Upper body armored part other than the furnace door (penetration at AA) -- c5020 重ガードメカ 上半身炉扉以外の装甲部分(AA時貫通)
+50200030 c5020 Heavy guard mecha Upper body armored part other than the furnace door Left arm (penetration during AA) -- c5020 重ガードメカ 上半身炉扉以外の装甲部分 左腕(AA時貫通)
+50200040 c5020 Heavy guard mechanism upper body furnace door -- c5020 重ガードメカ 上半身炉扉
+50200050 c5020 Heavy guard mechanism upper body furnace interior -- c5020 重ガードメカ 上半身炉内部
+50200060 c5020 Heavy guard mechanism Upper body except for the furnace door, arm joint part turns off when death -- c5020 重ガードメカ 上半身炉扉以外 腕関節部分死亡時消す
+50200080 c5020 Heavy guard mecha Upper body armored part other than the furnace door (hit during AA) -- c5020 重ガードメカ 上半身炉扉以外の装甲部分(AA時ヒット)
+51200010 c5120 military US drone PA -- c5120 軍事用USドローン　PA
+60500010 Pharaon engine right -- ファラオンエンジン右
+60500020 Pharaon engine left -- ファラオンエンジン左
+62500000 sandworm exterior -- サンドワーム外装
+62500010 sandworm mouth -- サンドワーム口
+62500020 Sandworm mouth_barrier -- サンドワーム口_バリア
+62500030 Sandworm body_01 -- サンドワーム体_01
+62500040 Sandworm body_02 -- サンドワーム体_02
+62500050 Sandworm body_03 -- サンドワーム体_03
+62500060 Sandworm body_04 -- サンドワーム体_04
+62500070 Sandworm body_05 -- サンドワーム体_05
+62500080 Sandworm body_06 -- サンドワーム体_06
+62500090 Sandworm body_07 -- サンドワーム体_07
+62500100 Sandworm body_08 -- サンドワーム体_08
+62500110 Sandworm body_09 -- サンドワーム体_09
+62500120 Sandworm body_10 -- サンドワーム体_10
+62500130 Sandworm body_11 -- サンドワーム体_11
+62500140 Sandworm body_12 -- サンドワーム体_12
+62500150 Sandworm body_13 -- サンドワーム体_13
+62500160 Sandworm body_14 -- サンドワーム体_14
+62500170 Sandworm body_15 -- サンドワーム体_15
+62500180 Sandworm body_reserve 1 -- サンドワーム体_予備1
+62500190 Sandworm body_reserve 2 -- サンドワーム体_予備2
+62500200 Sandworm body_reserve 3 -- サンドワーム体_予備3
+62500210 Sandworm body_reserve 4 -- サンドワーム体_予備4
+62500220 Sandworm body_Reserve 5 -- サンドワーム体_予備5
+62500230 Sandworm body_Reserve 6 -- サンドワーム体_予備6
+62500240 Sandworm body_preliminary 7 -- サンドワーム体_予備7
+62500250 Sandworm body_Reserve 8 -- サンドワーム体_予備8
+62500260 Sandworm body_Reserve 9 -- サンドワーム体_予備9
+62500270 Sandworm body_Reserve 10 -- サンドワーム体_予備10
+62500280 Sandworm body_Reserve 11 -- サンドワーム体_予備11
+62500290 sandworm barrier -- サンドワームバリア
+64000000 c6400 mining ship joint weakness -- c6400 採掘艦 関節弱点
+64000010 c6400 mining ship joint weakness -- c6400 採掘艦 関節弱点
+64200010 c6420 mining ship eyeball -- c6420 採掘艦目玉
+64200020 c6420 mining ship eyeball -- c6420 採掘艦目玉
+72700000 Sniper turret invincibility when shielded -- スナイパー　盾有時の砲塔無敵化
+73900000 c7390 D layer giant cannon Anemone except for the weak point of the neck -- c7390　D層巨大砲台 アネモネ　首の弱点以外
+73900010 c7390 D layer giant cannon anemone neck weakness -- c7390　D層巨大砲台 アネモネ　首の弱点
+74000000 Amphibious assault ship upper bridge -- 強襲揚陸艦　上部艦橋
+74000010 Amphibious assault ship bow -- 強襲揚陸艦　艦首
+74000020 Amphibious assault ship railgun -- 強襲揚陸艦　レールガン
+74000030 Amphibious assault ship lower bridge -- 強襲揚陸艦　下部艦橋
+74000040 Amphibious assault ship unused -- 強襲揚陸艦　未使用
+74000050 Amphibious assault ship no damage -- 強襲揚陸艦　ダメージ無し
+74000060 Amphibious assault ship upper bridge for large missile launch support -- 強襲揚陸艦　上部艦橋 大型ミサイル発射支援用
+84200000 c8420 marine carrier -- c8420 海上母艦
+84300000 c8430 battleship (far -- c8430 戦艦（遠
+84400000 c8440 battleship (near) -- c8440 戦艦（近
+85320110 c8532 Mining ship 1st car right elbow -- c8532 採掘艦　1両目　右肘
+85320111 c8532 Mining ship 1st car left elbow -- c8532 採掘艦　1両目　左肘
+85320120 c8532 Mining ship 2nd car right elbow -- c8532 採掘艦　2両目　右肘
+85320121 c8532 Mining ship 2nd car left elbow -- c8532 採掘艦　2両目　左肘
+85320130 c8532 Mining ship 3rd car right elbow -- c8532 採掘艦　3両目　右肘
+85320131 c8532 Mining ship 3rd car left elbow -- c8532 採掘艦　3両目　左肘
+85320210 c8532 Mining ship connection part 1-2 right -- c8532 採掘艦　接続部1－2　右
+85320211 c8532 Mining ship connection part 1-2 left -- c8532 採掘艦　接続部1－2　左
+85320220 c8532 Mining ship connection part 2-3 right -- c8532 採掘艦　接続部2－3　右
+85320221 c8532 Mining ship connection part 2-3 left -- c8532 採掘艦　接続部2－3　左
+85320310 c8532 mining ship 1st car core -- c8532 採掘艦　1両目　コア
+85320320 c8532 mining ship 2nd car core -- c8532 採掘艦　2両目　コア
+85320330 c8532 mining ship 3rd car core -- c8532 採掘艦　3両目　コア
+85350010 c8535 Mining ship Highlight Weakness -- c8535 採掘艦　目玉 弱点
+85350020 c8535 Mining ship eyeball part destruction -- c8535 採掘艦　目玉 部位破壊
+85350030 c8535 Mining ship eyeball part destruction -- c8535 採掘艦　目玉 部位破壊
+85350040 c8535 Mining ship eyeball part destruction -- c8535 採掘艦　目玉 部位破壊
+85350050 c8535 Mining ship eyeball part destruction -- c8535 採掘艦　目玉 部位破壊
+85360010 c8536 mining ship drill base -- c8536 採掘艦　ドリル 付け根
+85360020 c8536 Mining ship drill blade part -- c8536 採掘艦　ドリル 刃部分
+85360100 c8536 Mining ship drill part destruction front drill lower blade dp500 -- c8536 採掘艦　ドリル 部位破壊　前ドリル　下刃　ｄｐ500
+85360110 c8536 Mining ship drill part destruction front drill front blade dp501 -- c8536 採掘艦　ドリル 部位破壊　前ドリル　前刃　ｄｐ501
+85360120 c8536 Mining ship drill part destruction front drill left blade dp502 -- c8536 採掘艦　ドリル 部位破壊　前ドリル　左刃　ｄｐ502
+85360130 c8536 Mining ship drill part destruction front drill right blade dp503 -- c8536 採掘艦　ドリル 部位破壊　前ドリル　右刃　ｄｐ503
+85360140 c8536 Mining ship drill part destruction left drill lower blade dp504 -- c8536 採掘艦　ドリル 部位破壊　左ドリル　下刃　ｄｐ504
+85360150 c8536 Mining ship drill part destruction left drill front blade dp505 -- c8536 採掘艦　ドリル 部位破壊　左ドリル　前刃　ｄｐ505
+85360160 c8536 Mining ship drill part destruction left drill left blade dp506 -- c8536 採掘艦　ドリル 部位破壊　左ドリル　左刃　ｄｐ506
+85360170 c8536 Mining ship drill part destruction left drill right blade dp507 -- c8536 採掘艦　ドリル 部位破壊　左ドリル　右刃　ｄｐ507
+85360180 c8536 Mining ship drill part destruction right drill lower blade dp508 -- c8536 採掘艦　ドリル 部位破壊　右ドリル　下刃　ｄｐ508
+85360190 c8536 Mining ship drill part destruction right drill front blade dp509 -- c8536 採掘艦　ドリル 部位破壊　右ドリル　前刃　ｄｐ509
+85360200 c8536 Mining ship drill part destruction right drill left blade dp510 -- c8536 採掘艦　ドリル 部位破壊　右ドリル　左刃　ｄｐ510
+85360210 c8536 Mining ship drill part destruction right drill right blade dp511 -- c8536 採掘艦　ドリル 部位破壊　右ドリル　右刃　ｄｐ511
+85370010 c8536 Mining ship knee cover 1 -- c8536 採掘艦　膝カバー　1
+85370020 c8536 Mining ship knee cover 2 -- c8536 採掘艦　膝カバー　2
+85370030 c8536 Mining ship knee cover 3 -- c8536 採掘艦　膝カバー　3
+85370040 c8536 Mining ship knee cover 4 -- c8536 採掘艦　膝カバー　4
+85380010 c8536 mining ship fire control -- c8536 採掘艦　火器管制
+93000010 c9300 Ueda test machine part 1 -- c9300 上田テストマシン　部位 1
+93000020 c9300 Ueda test machine part 2 -- c9300 上田テストマシン　部位 2
+93000030 c9300 Ueda test machine part 3 -- c9300 上田テストマシン　部位 3
+93000040 c9300 Ueda test machine part 4 -- c9300 上田テストマシン　部位 4

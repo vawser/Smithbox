@@ -1,0 +1,51 @@
+1 test -- テスト
+700 Machine gun shooting_right -- マシンガン射撃_右
+710 Machine gun shooting_left -- マシンガン射撃_左
+800 Rifle shooting_right -- ライフル射撃_右
+810 Rifle shooting_left -- ライフル射撃_左
+1100 Hand gun_right -- ハンドガン_右
+1200 Handgun_Left -- ハンドガン_左
+2000 rifle_right -- ライフル_右
+2001 rifle_left -- ライフル_左
+2010 Assault rifle_right -- アサルトライフル_右
+2011 Assault rifle_left -- アサルトライフル_左
+2020 machine gun_right -- マシンガン_右
+2021 Machine gun_left -- マシンガン_左
+2030 Gatling gun_right -- ガトリングガン_右
+2031 Gatling gun_left -- ガトリングガン_左
+2040 Bazooka_right -- バズーカ_右
+2041 Bazooka_left -- バズーカ_左
+2050 shotgun_right -- ショットガン_右
+2051 shotgun_left -- ショットガン_左
+2060 Grenade rifle_right -- グレネードライフル_右
+2061 Grenade rifle_left -- グレネードライフル_左
+2070 Hand gun_right -- ハンドガン_右
+2071 Handgun_Left -- ハンドガン_左
+2080 Large caliber handgun_right -- 大口径ハンドガン_右
+2081 Large caliber handgun_left -- 大口径ハンドガン_左
+2090 Hand missile (burst)_right -- ハンドミサイル（バースト）_右
+2091 Hand missile (burst)_left -- ハンドミサイル（バースト）_左
+2100 Hand missile (single shot)_right -- ハンドミサイル（単発）_右
+2101 Hand missile (single shot)_left -- ハンドミサイル（単発）_左
+2110 Laser rifle_right -- レーザーライフル_右
+2111 Laser rifle_left -- レーザーライフル_左
+2120 Plasma rifle_right -- プラズマライフル_右
+2121 Plasma rifle_left -- プラズマライフル_左
+2130 Vibration pulse gun_right -- 振動パルスガン_右
+2131 Vibration pulse gun_left -- 振動パルスガン_左
+2140 Flame radiation_right -- 火炎放射_右
+2141 Flame radiation_left -- 火炎放射_左
+2150 Laser shotgun_right -- レーザーショットガン_右
+2151 Laser shotgun_left -- レーザーショットガン_左
+2160 Burst rifle (normal 3-point burst)_right -- バーストライフル（通常３点バースト）_右
+2161 Burst rifle (normal 3-point burst)_left -- バーストライフル（通常３点バースト）_左
+2170 Linear rifle (charge burst)_right -- リニアライフル（チャージバースト）_右
+2171 Linear rifle (charge burst)_left -- リニアライフル（チャージバースト）_左
+2180 Laser rifle (charge burst)_right -- レーザーライフル（チャージバースト）_右
+2181 Laser rifle (charge burst)_left -- レーザーライフル（チャージバースト）_左
+2190 Laser shotgun_right -- レーザーショットガン_右
+2191 laser shotgun)_left -- レーザーショットガン）_左
+2200 Laser rifle (melange)_right -- レーザーライフル（メランジ）_右
+2201 Laser rifle (melange)_left -- レーザーライフル（メランジ）_左
+2210 Shotgun (WP1510)_Right -- ショットガン（WP1510）_右
+2211 Shotgun (WP1510)_Left -- ショットガン（WP1510）_左

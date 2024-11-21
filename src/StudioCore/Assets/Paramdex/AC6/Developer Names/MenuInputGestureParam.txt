@@ -1,0 +1,172 @@
+10 help -- ヘルプ
+11 End of help -- ヘルプ終了
+20 Non-view mode: Model translation (up and down) -- 非ビューモード：モデル平行移動(上下)
+21 Non-view mode: Model translation (left and right) -- 非ビューモード：モデル平行移動(左右)
+22 Non-view mode: model scaling -- 非ビューモード：モデル拡縮
+100 Status display switching -- ステータス表示切替
+103 sort -- ソート
+104 previous tab -- 前のタブ
+105 Next tab -- 次のタブ
+106 Go to previous page -- 前のページへ移動
+107 Move to next page -- 次のページへ移動
+110 Start selecting all at once -- まとめて選択開始
+111 Deselect all -- まとめて選択解除
+112 (collectively) selection -- (まとめて)選択
+113 Help video playback -- ヘルプ動画再生
+200 ascending order -- 昇順
+201 descending order -- 降順
+210 close -- 閉じる
+220 Start view mode -- ビューモード起動
+221 Exit view mode -- ビューモード終了
+222 View mode Model translation (up and down) -- ビューモード モデル平行移動(上下)
+223 View mode Model translation (left and right) -- ビューモード モデル平行移動(左右)
+224 View mode Model scaling -- ビューモード モデル拡縮
+250 Color picker: H -- カラーピッカー：H
+251 Color picker: S -- カラーピッカー：S
+252 Color picker: V -- カラーピッカー：V
+300 remove equipment -- 装備を外す
+301 Change aircraft name -- 機体名の変更
+302 Attend AC test -- ACテストに出撃
+450 automatic adjustment -- 自動調整
+500 Purchase (in bulk) -- 購入(まとめて)
+510 Sale (in bulk) -- 売却(まとめて)
+520 Purchase (in bulk) -- 購入(まとめて)
+521 Try-on release -- 試着解除
+1000 peel off the image -- イメージを剥がす
+1001 Applying the pilot emblem -- パイロットエンブレムの適用
+1002 remove pilot emblem -- パイロットエンブレムを外す
+1100 Editing: Decal image selection -- 編集中：デカール画像選択
+1101 Layer selection: context menu -- レイヤ選択：コンテキストメニュー
+1102 Decal top: Arm: Reverse reproduction -- デカールトップ：腕：反転複製
+1103 Editing: Stamp -- 編集中：スタンプ
+1104 Editing: Invert image -- 編集中：イメージ反転
+1105 Editing: Paste detailed settings -- 編集中：貼付詳細設定
+1106 Decal display switching -- デカール表示切替
+1107 Decal top: Delete all decals -- デカールトップ：デカール全削除
+1108 Decal top: Decal deletion operation -- デカールトップ：デカール削除操作
+1110 Multiple selection: start -- 複数選択：開始
+1111 Multiple selection: selection -- 複数選択：選択
+1112 Multiple selection: deselect -- 複数選択：選択解除
+1113 Multiple selection: command list -- 複数選択：コマンドリスト
+1114 Multiple selection: Exit -- 複数選択：終了
+1150 Base point/position: Reset -- 基点/位置：リセット
+1151 Base point/position: X -- 基点/位置：X
+1152 Base point/position: Y -- 基点/位置：Y
+1153 Image: Scale shift operation -- 画像：スケールシフト操作
+1154 Image: Scale X -- 画像：スケールX
+1155 Image: Scale Y -- 画像：スケールY
+1156 Image: rotation -- 画像：回転
+1158 Image: Scale reset -- 画像：スケールリセット
+1198 Base point/rotation For resource placement key icon display -- 基点/回転 リソース配置キーアイコン表示用
+1199 Base point/rotation For resource placement key icon display -- 基点/回転 リソース配置キーアイコン表示用
+1200 Camouflage OFF -- カモフラージュOFF
+1201 Camouflage ON -- カモフラージュON
+1202 Color: copy -- カラー：コピー
+1203 Color: Paste -- カラー：ペースト
+1204 Color: Reset -- カラー：リセット
+1205 Color: Register -- カラー：登録
+1902 image manipulation -- イメージ操作
+1910 Image creation screen → Management screen -- イメージ作成画面→管理画面
+1911 Image creation screen ← Management screen -- イメージ作成画面←管理画面
+1911 〃〃Additional operations -- 〃　追加操作
+1912 Delete a shared image -- 共有済イメージの削除
+1913 Management screen: Displaying shared information -- 管理画面：共有情報の表示
+2000 Editing: context menu -- 編集中：コンテキストメニュー
+2001 previous tool -- 前のツール
+2002 Next tool -- 次のツール
+2003 Layer selection -- レイヤー選択
+2005 Open display settings -- 表示設定を開く
+2006 Close display settings -- 表示設定を閉じる
+2007 Grid switching -- グリッド切替
+2008 move up
+*Assigned key is empty as it is not used. -- 上に移動
+※使用しないため割り当てキーは空
+2009 move down
+*Assigned key is empty as it is not used. -- 下に移動
+※使用しないため割り当てキーは空
+2010 Single layer selection: Adjust -- 単一レイヤー選択：調整
+2011 piece delete -- ピース削除
+2012 command -- コマンド
+2013 piece duplication -- ピース複製
+2014 Piece display switching -- ピース表示切替
+2016 Piece Edit: Invert -- ピース編集：反転
+2017 Piece editing: Scale reset -- ピース編集：スケールリセット
+2018 Piece Edit: Scale X -- ピース編集：スケールX
+2019 Piece editing: Scale Y -- ピース編集：スケールY
+2020 Edit piece: Reset position -- ピース編集：位置リセット
+2021 Piece Edit: Move X -- ピース編集：移動X
+2022 Piece editing: Move Y -- ピース編集：移動Y
+2023 Piece editing: Rotate -- ピース編集：回転
+2024 Piece editing: Opacity -- ピース編集：不透明度
+2025 Piece editing: Scale shift operation -- ピース編集：スケールシフト操作
+2050 Multiple selection: start -- 複数選択：開始
+2051 Multiple selection: selection -- 複数選択：選択
+2052 Multiple selection: deselect -- 複数選択：選択解除
+2053 Multiple selection: command list -- 複数選択：コマンドリスト
+2054 Multiple selection: Exit -- 複数選択：終了
+2800 Aircraft data screen → management screen -- 機体データ画面→管理画面
+2801 Aircraft data screen ← Management screen -- 機体データ画面←管理画面
+2801 〃〃Additional operations -- 〃　追加操作
+2802 Deleting shared aircraft data -- 共有済機体データの削除
+2803 Management screen: Displaying shared information -- 管理画面：共有情報の表示
+2900 Reinforcement reset -- 強化リセット
+3000 Details: Attachment extraction -- 詳細：添付ファイル展開
+3001 Details: Close -- 詳細：閉じる
+3002 Details: Show next block -- 詳細：次のブロックを表示
+3003 Details: Show next page -- 詳細：次のページを表示
+3004 Details: Show previous page -- 詳細：前のページを表示
+3101 Details: Close (for archive screen) -- 詳細：閉じる(アーカイブ画面用)
+3102 Details: Close (for archive dialog) -- 詳細：閉じる(アーカイブダイアログ用)
+3103 Details: Show next page -- 詳細：次のページを表示
+3104 Details: Show previous page -- 詳細：前のページを表示
+7000 Hardcore mode switch -- ハードコアモード切替
+8000 close -- 閉じる
+8001 Detailed display -- 詳細表示
+8002 Details: Close -- 詳細：閉じる
+8002 Details: Close -- 詳細：閉じる
+8100 chat -- チャット
+8101 Member selection -- メンバ―選択
+8102 Exit -- 退出
+8103 Cancel ready -- 準備完了の取り消し
+8401 Gamer card/profile -- ゲーマーカード/プロフィール
+8500 Detailed display -- 詳細表示
+8501 Forced ejection -- 強制退出
+8502 Report -- 通報
+8503 Gamer card/profile -- ゲーマーカード/プロフィール
+8504 team change -- チーム変更
+8800 End of results screen -- リザルト画面終了
+8801 Match history: End of result screen -- 対戦履歴：リザルト画面終了
+8802 Member selection -- メンバ―選択
+8803 Spectator display -- 観戦者表示
+8900 close -- 閉じる
+8901 Gamer card/profile -- ゲーマーカード/プロフィール
+9000 Initialization -- 初期化
+9001 slider cancel -- スライダーキャンセル
+9002 Slider value operation -- スライダー値操作
+9100 Deallocate -- 割り当て解除
+9101 Initialization -- 初期化
+9102 Cancel assignment -- 割り当てキャンセル
+9103 Go to previous category -- 前のカテゴリへ移動
+9104 Move to next category -- 次のカテゴリへ移動
+9105 Delete custom settings -- カスタム設定の削除
+9201 HUD: Position X -- HUD：位置X
+9202 HUD: Position Y -- HUD：位置Y
+9204 HUD: Scale X -- HUD：スケールX
+9205 HUD: Scale Y -- HUD：スケールY
+9206 HUD: Opacity -- HUD：不透明度
+9300 Setting initialization -- 設定初期化
+9301 end -- 終了
+9301 end -- 終了
+9302 Start photo mode -- フォトモード起動
+9303 UI display switching -- UI表示切替
+9700 Save: Overwrite -- セーブ：上書き
+9701 Save: Create -- セーブ：作成
+9702 Save load: Delete -- セーブロード：削除
+9800 SYSTEM menu -- SYSTEMメニュー
+9801 SYSTEM menu: Back -- SYSTEMメニュー：戻る
+9802 Mercenary data details -- 傭兵データ詳細
+9803 Mercenary data details: Close -- 傭兵データ詳細：閉じる
+9803 Mercenary data details: Close -- 傭兵データ詳細：閉じる
+9900 Modal type: Close -- モーダルタイプ：閉じる
+11000 close -- 閉じる
+11000 close -- 閉じる

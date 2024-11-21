@@ -1,11 +1,11 @@
-0 なにもおこらない
-10 聖杯タイプグループテスト用
-1011 ダンジョンA【トゥメル】 儀式レベル1
-1012 ダンジョンA【トゥメル】 儀式レベル2
-1013 ダンジョンA【トゥメル】 儀式レベル3
-1014 ダンジョンA【トゥメル】 儀式レベル4
-1022 ダンジョンA'【僻墓】 儀式レベル2
-1023 ダンジョンA'【僻墓】 儀式レベル3
-1034 ダンジョンB【ローラン】 儀式レベル4
-1035 ダンジョンB【ローラン】 儀式レベル5
-1045 ダンジョンC【イズ】 儀式レベル5
+0 Nothing happens
+10 Holy Grail Type Group Test
+1011 Dungeons A [Thumel] Ritual level 1
+1012 Dungeons A [Thumel] Ritual level 2
+1013 Dungeons A [Thumel] Ritual level 3
+1014 Dungeons A [Thumel] Ritual level 4
+1022 Dungeons A' [Remote Tomb] Ritual Level 2
+1023 Dungeons A' [Remote Tomb] Ritual Level 3
+1034 Dungeons B [Roland] Ritual level 4
+1035 Dungeons B [Roland] Ritual level 5
+1045 Dungeons C [Izu] Ritual level 5

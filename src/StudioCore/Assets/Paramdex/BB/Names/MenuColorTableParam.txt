@@ -1,81 +1,81 @@
-0 使用しない
-1 通常テキスト_茶色
-2 インベントリで選択中のアイコン色
-3 パラメータテキスト（通常）
-4 パラメータテキスト（良い）
-5 パラメータテキスト（悪い）
-6 インフォメーションタイトル
-7 通常テキスト_白
-8 スクロースバー背景色
-9 背景プレート(濃度調整)
-10 背景プレート(色調整)
-11 一行ヘルプ
-12 キーガイド
-13 メニュープレート
-14 半透明プレート
-15 半透明グラデーションプレート
-16 スクロールバー
-17 血文字プレート
-18 SOSプレート
-19 項目ヘルプブラックアウト
-20 ブラックアウト
-21 グレーアウト
-22 ライン
-23 メニュータブ（インゲーム）
-24 メニュータブ（キャンプ）
-25 メニュータブ（血文字入力）
-26 メニュータブ（SOS入力）
-27 メニュータブ（プレイヤー評価）
-28 メニュータブ（タイトルメニュー）
-29 メニュータブ（ショップ）
-30 HPバー
-31 MPバー
-32 SPバー
-33 変動値バー
-34 バープレート
-35 攻撃力/防御力バー
-36 攻撃力/防御力バー（付加効果）
-37 攻撃力/防御力バープレート
-38 オプションバー
-39 ターゲットサイト
-40 半透明文字プレート（明）
-41 半透明文字プレート（暗）
-42 ボタンプレート
-43 オプションライン
-44 選択項目プレート（明）
-45 選択項目プレート（暗）
-46 選択項目プレート（決定ボタン）
-47 半透明グラデーションプレート（ボタン）
-48 大プレート（暗）
-49 フレーム（暗）
-50 スキルslot
-51 スペルslot
-52 白
-53 通常テキスト_黒
-36908 タイトル-顔作成用髪色08
-36909 タイトル-顔作成用髪色09
-36910 タイトル-顔作成用髪色10
-37908 タイトル顔作成用瞳色08
-37909 タイトル顔作成用瞳色09
-37910 タイトル顔作成用瞳色10
-60 FE人間性数値　亡者時グレーアウト用
-61 テストカラー11
-62 テストカラー12
-63 テストカラー13
-64 テストカラー14
-65 テキストカラー　青
-66 テキストカラー　赤
-36901 タイトル-顔作成用髪色01
-36902 タイトル-顔作成用髪色02
-36903 タイトル-顔作成用髪色03
-36904 タイトル-顔作成用髪色04
-36905 タイトル-顔作成用髪色05
-36906 タイトル-顔作成用髪色06
-36907 タイトル-顔作成用髪色07
-37901 タイトル顔作成用瞳色01
-37902 タイトル顔作成用瞳色02
-37903 タイトル顔作成用瞳色03
-37904 タイトル顔作成用瞳色04
-37905 タイトル顔作成用瞳色05
-37906 タイトル顔作成用瞳色06
-37907 タイトル顔作成用瞳色07
+0 Not Used
+1 Normal text _ brown
+2 Inventory selected icon color
+3 Parameter Text (normal)
+4 Parameter Text (Good)
+5 Parameter Text (bad)
+6 Information Title
+7 Normal text _ white
+8 Scroll bar background color
+9 Background plate ( Density adjustment )
+10 Background plate ( Color Adjustment )
+11 One Line Help
+12 Key Guide
+13 Menu plate
+14 Translucent Plate
+15 Semi-transparent gradient plate
+16 Scrollbar
+17 Plate with letters written in blood
+18 SOS plate
+19 Item Help Blackout
+20 Blackout
+21 Grayed out
+22 line
+23 Menu Tab (In-game)
+24 Menu tab (Camp)
+25 Menu tab (blood characters)
+26,On the Menu tab ( SOS input)
+27 Menu tab (player rating)
+28 Menu tab (title menu)
+29 Menu tab (shop)
+30 HP bar
+31 MP bar
+32 SP bar
+33 Fluctuation Bar
+34 Bar Plate
+35 Attack Power / Defense Bar
+36 Attack Power / Defense bar (additional effect)
+37 Attack Power / Defense Bar Plate
+38 Options Bar
+39 Target Site
+40 Translucent letter plate (light)
+41 Translucent letter plate (dark)
+42 Button Plate
+43 Option Line
+44 Selection Plate (Light)
+45 Selection Plate (Dark)
+46 Selection item plate (decision button)
+47 Translucent gradient plate (button)
+48 Large plate (dark)
+49 Frame (dark)
+50 skill slot
+51 spell slot
+52 white
+53,Normal text _ black
+36908 title - Hair color for face creation 08
+36909 title - Hair color for face creation 09
+36910 title - Hair color for face creation 10
+37908 Title: Eye color for face creation 08
+37909 Title: Eye color for face creation 09
+37910 Title: Eye color for face creation 10
+60 FE Humanity value (grayed out when dead)
+61 Test Colors 11
+62 Test Colors 12
+63 Test Colors 13
+64 Test Colors 14
+65 Text Color Blue
+66 Text Color Red
+36901 title - Hair color for face creation 01
+36902 title - Hair color for face creation 02
+36903 title - Hair color for face creation 03
+36904 title - Hair color for face creation 04
+36905 title - Hair color for face creation 05
+36906 title - Hair color for face creation 06
+36907 title -Hair color for face creation 07
+37901 Title: Eye color for face creation 01
+37902 Title: Eye color for face creation 02
+37903 Title: Eye color for face creation 03
+37904 Title: Eye color for face creation 04
+37905 Title: Eye color for face creation 05
+37906 Title: Eye color for face creation 06
+37907 Title: Eye color for face creation 07

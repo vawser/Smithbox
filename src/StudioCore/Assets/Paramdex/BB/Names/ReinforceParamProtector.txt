@@ -1,17 +1,17 @@
-0 通常
-1 通常＋1
-2 通常＋2
-3 通常＋3
-4 通常＋4
-5 通常＋5
-6 通常＋6
-7 通常＋7
-8 通常＋8
-9 通常＋9
-10 通常＋10
-100 特殊
-101 特殊＋1
-102 特殊＋2
-103 特殊＋3
-104 特殊＋4
-105 特殊＋5
+0 usually
+1 Normal + 1
+2 Normal + 2
+3 Normal + 3
+4 Normal + 4
+5 Normal + 5
+6 Normal + 6
+7 Normal + 7
+8 Normal + 8
+9 Normal + 9
+10 Normal + 10
+100 special
+101 Special + 1
+102 Special + 2
+103 Special + 3
+104 Special + 4
+105 Special + 5

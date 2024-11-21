@@ -1,186 +1,186 @@
-0 必要
-1 汎用扉サンプル
-10 汎用扉（開けっぱなし）サンプル
-20 両開き大扉サンプル
-30 両開き小扉サンプル_引いて開ける
-31 両開き小扉サンプル_押して開ける
-100 汎用レバーサンプル
-110 宝箱
-320 m24_00_レバー_孤児院_外
-470 m24_00_扉_聖堂
-471 m24_00_扉_孤児院2F
-472 m24_00_扉_孤児院1F
-490 m24_00_扉_聖堂大門鍵付き
-1010 test_扉テスト
-1011 test_扉テスト
-1012 test_扉テスト
-1200 m10_01_教会門レバー
-1202 m10_01_教会鐘レバー
-1305 m10_01_ハンマー塔扉（上）
-1306 m10_01_汎用扉_00（城下2接続）
-1308 m10_01_汎用扉_00（教会牢）
-1310 m10_01_汎用扉_00（鍵民家）
-1311 m10_01_汎用扉_01
-1312 m10_01_汎用扉_02
-1313 m10_01_汎用扉_03
-1314 m10_01_汎用扉_04（下層行）
-1315 m10_00_汎用扉_05
-1317 m10_01_汎用扉_07（監禁部屋）
-1318 m10_01_汎用扉_08
-1465 m10_02_リフト部屋の扉
-1550 ｍ11_00_汎用ハンドル
-1580 m11_00_汎用扉
-2000 汎用宝箱（小）
-2100 汎用宝箱（中）
-2200 汎用宝箱（大）
-2720 m12_01_ゴーを幽閉している扉
-2910 m24_00_最初の扉
-3011 m13_00_墓地レバー（押す）
-3012 m13_00_墓地レバー（引く）
-3060 m13_00_棺(入る)
-3061 m13_00_棺（出る）
-4560 m14_00_鐘レバー
-5310 m15_00_籠牢
-5720 m15_01_室内扉
-5721 m15_01_室内扉（内鍵）
-6100 m16_00_水門レバー
-6101 m16_00_深淵の汎用レバー
-6010 m16_00_小ロンド遺跡の扉
-7201 m17_00_結晶塔の汎用レバー
-7202 m17_00_警報レバー
-7401 m17_00_牢屋の扉A
-8537 m18_01_汎用扉（2F手前）
-8538 m18_01_汎用扉（内鍵）
-8539 m18_01_汎用扉（2F奥）
-8540 m18_01_汎用扉
-8541 m18_01_教会の扉（大）
-8544 m18_01_教会の扉（小）
-9800 大砲
-9902 m20_00 エレベータ呼び出しレバー
-9920 m20_00 B2への扉
-9921 m20_00 扉持ち上げ
-9922 m20_00 B4への扉
-9923 m20_00 ボス部屋前
-9924 m20_00 B2への扉
-9927 m29_02 1F　鍵付き扉
-9928 m29_02 2F　鍵付き扉
-9929 m29_02 3F　鍵付き扉
-9930 m29_ダンジョン 鍵付き扉
-9931 m29_01 1F上段鍵付き扉
-9932 m29_01 2F中段鍵付き扉
-9933 m29_01 3F中段鍵付き扉
-9934 m29_01 3Fボス前鍵付き扉
-9941 宝箱（小）
-9942 宝箱（中）
-9943 宝箱（大）
-10000 デフォルト（削除予定）
-11305 m10_01_ハンマー塔扉（下）
-11312 m10_01_汎用扉（鍵）
-11315 m10_00_汎用扉（鍵）
-16010 m16_00 水門レバーの扉
-17401 m17_00_牢屋の扉B
-19921 m20_10 扉持ち上げ
-19922 m20_00 B4への扉
-19923 m20_10 扉持ち上げ(一方通行)
-19924 m20_10 扉持ち上げ
-19930 m29_ダンジョン 鍵付き扉
-19931 m29_01 1F上段鍵付き扉
-19932 m29_01 2F中段鍵付き扉
-19933 m29_01 3F中段鍵付き扉
-19934 m29_01 3Fボス前鍵付き扉
-27401 m17_00_大牢屋
-1000000 デフォルト
-2010000 レバー（孤児院外/エレベーター上下）
-2010010 扉（スタート部屋）
-2010020 扉（聖堂）
-2010030 扉（孤児院1F/2F）
-2200010 m22_00_扉_入口
-2200020 m22_00_レバー
-2200030 m22_00_扉_ボス部屋後
-2300000 m23_00_一方通行扉_引いて開ける
-2300001 m23_00_一方通行扉_押して開ける
-2300010 m23_00_両開き_一方通行扉
-2300011 m23_00_両開き_警告の扉
-2400000 m24_00_レバー_孤児院_外
-2400010 m24_00_扉_聖堂
-2400020 m24_00_扉_孤児院2F
-2400030 m24_00_扉_孤児院1F
-2400040 m24_00_扉_聖堂大門鍵付き
-2400050 m24_00_後半最初の扉
-2400060 宝箱（中）
-2400070 宝箱（大）
-2400080 m24_00_森の扉
-2400090 m24_00_扉_現実拠点入口
-2400091 m24_00_扉_聖堂街AC接続塔最下層
-2400100 m24_00_扉_聖堂街C後半入口
-2400110 m24_00 扉_聖堂街Aと廃墟とのつなぎ扉
-2400999 m24_00_大砲発射（仮）
-2410000 m24_01_レバー_汎用
-2410001 m24_01_レバー_ボス鍵
-2410010 m24_01_両開き扉
-2410020 m24_01_大砲発射
-2410030 m24_01_両開き扉_E3版開始地点
-2410040 m24_01_小扉_押して開ける
-2410050 m24_01_小扉_開閉可能
-2410060 m24_01_扉_大橋奥
-2410070 m24_01_小扉_開閉可能_一方通行
-2410080 m24_01_扉_ガスコインボス部屋
-2410090 m24_01_扉_SC用鉄格子扉
-2420000 m24_02_レバー
-2420010 m24_02_孤児院2F小扉_鍵なし
-2420020 m24_02_鍵つき両開き扉_孤児院1F
-2420030 m24_02_両開き扉_孤児院2F
-2420040 m24_02_孤児院2F小扉_一方通行
-2500000 m25_00 書庫仕掛けレバー
-2500010 m25_00 SCエレベーターレバー
-2600000 m26_00_レバー
-2600010 m26_00_礼拝堂扉
-2600020 m26_00_邪眼橋扉_表
-2600021 m26_00_邪眼橋扉_裏
-2700000 レバー（ショートカット/エレベーター上下）
-2700010 m27_00_一方通行扉_風車小屋
-2700020 m27_00_大学への扉
-2700030 m27_00_ショートカットの門
-2800000 m28_00_一方通行の扉00
-2800010 m28_00_両開きの扉
-2800020 m28_00 両開き小04_屋内3_押す側
-2900000 m29_鍵付き扉_1Fメインブロック出口
-2900010 m29_鍵付き扉_2Fメインブロック出口
-2900020 m29_鍵付き扉_3Fメインブロック出口
-2900030 m29_鍵付き扉_4Fメインブロック出口
-2900100 m29_00 ブロック扉表
-2900101 m29_00 ブロック扉裏
-2901900 m29_00 大ボス扉
-2901910 m29_00 中ボス扉
-2901920 m29_00 小ボス扉
-2902000 m29_00 メインブロック扉レバー
-2910000 m20_00 扉持ち上げ_表
-2910010 m20_10 扉持ち上げ_裏
-2911000 m20_00 ブロック扉持ち上げ_表
-2911010 m20_10 ブロック扉持ち上げ_裏
-2923000 m29_ブロック宝箱
-2924000 m29_黒い宝箱
-2931100 m29_00_跳ね橋レバー
-2932000 m29_00_大砲発射
-3200000 m32_00_大扉_悪夢教室_故郷行き
-3200001 m32_00_大扉_悪夢教室_TR行き
-3200020 m32_00_小扉_引いて開ける
-3200021 m32_00_小扉_押して開ける
-3200030 m32_00_両開き小扉_引いて開ける_鍵付き
-3200040 m32_00_両開き小扉_テラス
-3400000 m34_00_両開き扉_大
-3400010 m34_00_両開き扉_小
-3400020 m34_00_レバー
-3500020 m35_00_大扉_患者B
-3500030 m35_00_大扉_女性ハンター
-3500040 m35_00_地下牢扉_通常鍵
-3500041 m35_00_地下牢扉_殺し屋鍵
-3500060 m35_00_汎用扉
-3500061 m35_00_汎用扉_一通
-3500062 m35_00_汎用扉_女医
-3500063 m35_00_汎用扉
-3500070 m35_00_特殊扉_鍵
-3500100 m35_00_レバー_鍵
-3500110 m35_00_回転レバー
-9900000 m99_XX_棺
-9999999 
+0 need
+1 General-purpose door sample
+10 General-purpose door (left open) sample
+20 Double door sample
+30 Double door sample _ Pull to open
+31 Double door sample _ Push to open
+100 General-purpose lever sample
+110 Treasure Chest
+320 m24_00_ lever _ Orphanage _ Outside
+470 m24_00_ door _ Cathedral
+471 m24_00_ door _ Orphanage 2F
+472 m24_00_ door _ Orphanage 1F
+490 m24_00_ door _ Cathedral gate with lock
+1010 test_ Door Test
+1011 test_ Door Test
+1012 test_ Door Test
+1200 m10_01_ Church Gate Lever
+1202 m10_01_ Church bell lever
+1305 m10_01_ Hammer Tower Door (top)
+1306 m10_01_ General-purpose door _00 (Castle town 2 connection)
+1308 m10_01_ General-purpose door _00 (Church Prison)
+1310 m10_01_ General-purpose door _00 (Kagiminka)
+1311 m10_01_ General-purpose door _01
+1312,m10_01_ General-purpose door _02
+1313 m10_01_ General-purpose door _03
+1314 m10_01_ General-purpose door _04 (Lower row)
+1315 m10_00_ General-purpose door _05
+1317 m10_01_ General-purpose door _07 (confinement room)
+1318 m10_01_ General-purpose door _08
+1465 m10_02_ Lift room door
+1550 m 11_00_ General Purpose Handle
+1580 m11_00_ General-purpose door
+2000 General-purpose treasure chest (small)
+2100 General purpose treasure chest (medium)
+2200 General-purpose treasure chest (large)
+2720 m12_01_ The door that imprisons Goh
+2910 m24_00_ First Door
+3011 m13_00_ Graveyard Lever (Push)
+3012 m13_00_ Graveyard Lever (Pull)
+3060 m13_00_ Coffin ( enter )
+3061 m13_00_ Coffin (coming out)
+4560 m14_00_ Bell Lever
+5310 m15_00_ Prison cell
+5720 m15_01_ Interior door
+5721 m15_01_ Interior door (inner lock)
+6100 m16_00_ Water gate lever
+6101 m16_00_ Abyssal General-Purpose Lever
+6010 m16_00_ Door to the Little Londo Ruins
+7201,m17_00_ Crystal Tower General Purpose Lever
+7202 m17_00_ Alarm lever
+7401 m17_00_ Jail Door A
+8537 m18_01_ General-purpose door ( 2F (Front)
+8538 m18_01_ General-purpose door (inner lock)
+8539 m18_01_ General-purpose door ( 2F Back)
+8540 m18_01_ General-purpose door
+8541 m18_01_ Large church door
+8544 m18_01_ Church Door (Small)
+9800 cannon
+9902 m20_00 Elevator call lever
+9920 m20_00 B2 Door to
+9921 m20_00 Door lift
+9922 m20_00 B4 Door to
+9923 m20_00 In front of the boss room
+9924 m20_00 B2 Door to
+9927 m29_02 1F Lockable door
+9928 m29_02 2F Lockable door
+9929 m29_02 3F Lockable door
+9930 m29_ Dungeon Locked Door
+9931 m29_01 1F Upper lockable door
+9932 m29_01 2F Middle lockable door
+9933 m29_01 3F Middle lockable door
+9934 m29_01 3F Locked door in front of the boss
+9941 Treasure Chest (Small)
+9942 Treasure Chest (Medium)
+9943 Treasure Chest (Large)
+10000,Default (to be removed)
+11305 m10_01_ Hammer Tower Door (bottom)
+11312 m10_01_ General-purpose door (lock)
+11315 m10_00_ General-purpose door (lock)
+16010 m16_00 Water gate lever door
+17401 m17_00_ Jail Door B
+19921 m20_10 Door lift
+19922 m20_00 B4 Door to
+19923 m20_10 Door lift ( One Way )
+19924 m20_10 Door lift
+19930 m29_ Dungeon Locked Door
+19931 m29_01 1F Upper lockable door
+19932 m29_01 2F Middle lockable door
+19933 m29_01 3F Middle lockable door
+19934 m29_01 3F Locked door in front of the boss
+27401 m17_00_ The Great Jail
+1000000 Defaults
+2010000 Lever (outside the orphanage) / Elevator up and down)
+2010010 Door (starting room)
+2010020 Door (Cathedral)
+2010030 Door (Orphanage 1F/2F )
+2200010 m22_00_ door _ entrance
+2200020 m22_00_ lever
+2200030 m22_00_ door _ After the boss room
+2300000 m23_00_ One-way door _ Pull to open
+2300001 m23_00_ One-way door _ Push to open
+2300010 m23_00_ Double door _ One-way door
+2300011 m23_00_ Double door _ Warning Door
+2400000 m24_00_ lever _ Orphanage _ Outside
+2400010 m24_00_ door _ Cathedral
+2400020 m24_00_ door _ Orphanage 2F
+2400030 m24_00_ door _ Orphanage 1F
+2400040 m24_00_ door _ Cathedral gate with lock
+2400050 m24_00_ First door of the second half
+2400060 Treasure Chest (Medium)
+2400070 Treasure Chest (Large)
+2400080 m24_00_Forest Door
+2400090 m24_00_ door _ Reality Base Entrance
+2400091 m24_00_ door _ Cathedral Quarter AC Connection Tower Bottom Floor
+2400100 m24_00_ door _ Cathedral Quarter C Second half entrance
+2400110 m24_00 door _ Cathedral Quarter A The connecting door between the ruins and the
+2400999 m24_00_ Cannon firing (tentative)
+2410000 m24_01_ lever _ General purpose
+2410001 m24_01_ lever _ Boss Key
+2410010 m24_01_ Double door
+2410020 m24_01_ Cannon firing
+2410030 m24_01_ Double door _E3 Version start point
+2410040 m24_01_ Small door _ Push to open
+2410050 m24_01_ Small door _ Openable
+2410060 m24_01_ door _ Ohashi Back
+2410070 m24_01_ Small door _ Openable _ One Way
+2410080 m24_01_ door _ Gascoigne Boss Room
+2410090 m24_01_ door _SC Iron bar door
+2420000 m24_02_ lever
+2420010 m24_02_ Orphanage2F Small door _ No key
+2420020 m24_02_ Double door with lock _ Orphanage 1F
+2420030 m24_02_ Double door _ Orphanage 2F
+2420040 m24_02_ Orphanage 2F Small door _ One Way
+2500000 m25_00 Bookshelf lock lever
+2500010 m25_00 SC Elevator lever
+2600000 m26_00_ lever
+2600010 m26_00_ Chapel Door
+2600020 m26_00_ Evil Eye Bridge Door _ table
+2600021 m26_00_ Evil Eye Bridge Door _ back
+2700000 Lever (Shortcut / Elevator up and down)
+2700010 m27_00_ One-way door _ Windmill
+2700020 m27_00_ Door to University
+2700030 m27_00_ Shortcut Gate
+2800000 m28_00_ One-way door 00
+2800010 m28_00_ Double door
+2800020 m28_00 Double door small 04_ indoor 3_ Pusher
+2900000 m29_ Lockable door _1F Main block exit
+2900010 m29_ Lockable door_2F Main block exit
+2900020 m29_ Lockable door _3F Main block exit
+2900030 m29_ Lockable door _4F Main block exit
+2900100 m29_00 Block door front
+2900101 m29_00 Back of block door
+2901900 m29_00 Big boss door
+2901910 m29_00 Mid-boss door
+2901920 m29_00 Small boss door
+2902000 m29_00 Main block door lever
+2910000 m20_00 Lift the door _ table
+2910010 m20_10 Lift the door _ back
+2911000 m20_00 Block door lift _ table
+2911010 m20_10 Block door lift _ back
+2923000 m29_ Block Treasure Chest
+2924000 m29_ Black Treasure Chest
+2931100 m29_00_ Drawbridge Lever
+2932000 m29_00_ Cannon firing
+3200000 m32_00_ Main Door _ Nightmare Classroom _ Hometown
+3200001 m32_00_ Main Door _ Nightmare Classroom _TR Go
+3200020 m32_00_ Small door _ Pull to open
+3200021,m32_00_ Small door _ Push to open
+3200030 m32_00_ Double door _ Pull to open _ With lock
+3200040 m32_00_ Double door _ terrace
+3400000 m34_00_ Double door _ large
+3400010 m34_00_ Double door _ small
+3400020 m34_00_ lever
+3500020 m35_00_ Main Door _ patient B
+3500030 m35_00_ Main Door _ Female Hunter
+3500040 m35_00_ Dungeon Door _ Normal key
+3500041 m35_00_ Dungeon Door _ Killer Key
+3500060 m35_00_ General-purpose door
+3500061 m35_00_ General-purpose door _ a letter
+3500062 m35_00_ General-purpose door _ Female doctor
+3500063 m35_00_ General-purpose door
+3500070 m35_00_ Special Door _ key
+3500100 m35_00_ lever _ key
+3500110 m35_00_ Rotating Lever
+9900000 m99_XX_ Coffin
+9999999 null

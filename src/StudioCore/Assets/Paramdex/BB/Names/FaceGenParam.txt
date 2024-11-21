@@ -1,147 +1,147 @@
 0 testData
-1 男性_試作1
-2 男性_試作2
-3 男性_試作3
-4 男性_試作4
-5 男性_試作5
-6 男性_試作6
-7 男性_試作7
-8 男性_試作8
-9 男性_試作9
-10 男性_試作10
-11 男性_試作11
-12 男性_試作12
-13 男性_試作13
-14 男性_試作14
-20 女性_試作1
-21 女性_試作2
-30 ４末版　戦士_男
-31 ４末版　騎士_男
-32 ４末版　魔法使い_女
-33 ４末版　呪術師_男
-34 E3　太陽騎士_男
-100 デフォルト顔テスト_01
-101 デフォルト顔テスト_02
-102 デフォルト顔テスト_03
-103 デフォルト顔テスト_04
-104 デフォルト顔テスト_05
-105 デフォルト顔テスト_06
-106 デフォルト顔テスト_07
-107 デフォルト顔テスト_08
-108 デフォルト顔テスト_09
-109 デフォルト顔テスト_10
-110 デフォルト顔テスト_11
-111 デフォルト顔テスト_12
-112 デフォルト顔テスト_13
-113 デフォルト顔テスト_14
-114 デフォルト顔テスト_15
-115 デフォルト顔テスト_16
-116 デフォルト顔テスト_17
-117 デフォルト顔テスト_18
-118 デフォルト顔テスト_19
-119 デフォルト顔テスト_20
-120 デフォルト顔テスト_21
-121 デフォルト顔テスト_22
-122 デフォルト顔テスト_23
-123 デフォルト顔テスト_24
-124 デフォルト顔テスト_25
-125 デフォルト顔テスト_26
-126 デフォルト顔テスト_27
-127 デフォルト顔テスト_28
-128 デフォルト顔テスト_29
-129 デフォルト顔テスト_30
-130 デフォルト顔テスト_31
-131 デフォルト顔テスト_32
-132 デフォルト顔テスト_33
-133 デフォルト顔テスト_34
-134 デフォルト顔テスト_35
-135 デフォルト顔テスト_36
-136 デフォルト顔テスト_37
-137 デフォルト顔テスト_38
-138 デフォルト顔テスト_39
-139 デフォルト顔テスト_40
-140 デフォルト顔テスト_41
-141 デフォルト顔テスト_42
-142 デフォルト顔テスト_43
-143 デフォルト顔テスト_44
-144 デフォルト顔テスト_45
-145 デフォルト顔テスト_46
-146 デフォルト顔テスト_47
-147 デフォルト顔テスト_48
-148 デフォルト顔テスト_49
-149 デフォルト顔テスト_50
-300 灰色の聖女
-1000 平民顔
-1001 五指河の農民顔
-1002 アストラの貴族顔
-1003 竜学院の書生顔
-1004 ソルロンドの聖者顔
-1005 カタリナの陽気顔
-1006 カリムの陰気顔
-1007 ゼナの古顔
-1008 大沼の異相
-1009 東の異人顔
-2000 平民顔
-2001 五指河の農民顔
-2002 アストラの貴族顔
-2003 竜学院の書生顔
-2004 ソルロンドの聖者顔
-2005 カタリナの陽気顔
-2006 カリムの陰気顔
-2007 ゼナの古顔
-2008 大沼の異相
-2009 東の異人顔
-6000 太陽の騎士
-6001 太陽の騎士（太陽虫Ver）
-6002 太陽の騎士（亡者）
-6010 暗月の騎士
-6020 騎士オストラ
-6021 騎士オストラ（敵対）
-6030 ”ビッグハット”ロガーン
-6031 ”ビッグハット”ロガーン（亡者）
-6040 ロガーンの弟子
-6041 ロガーンの弟子（亡者）
-6050 亡国の王女
-6060 灰色の聖女
-6070 白の聖女
-6071 白の聖女（亡者）
-6080 聖女の騎士A
-6090 聖女の騎士B
-6091 聖女の騎士B （亡者）
-6100 聖女の騎士C
-6101 聖女の騎士C （亡者）
-6130 壺の呪術師
-6131 壺の呪術師（亡者）
-6170 さまよう混沌
-6180 癒し手
-6220 鍛冶屋リッケルト
-6250 心折れた商人
-6260 トリックスター
-6270 心折れた戦士
-6271 心折れた戦士（亡者）
-6280 たまねぎ騎士
-6290 たまねぎ騎士の娘
-6300 抱かれ騎士ロートレク
-6310 野武士
-6320 墓地の卑怯者パッチ
-6370 ドラゴンの神官
-6390 黒騎士タルカス
-6400 ベルカ騎士
-6410 魔女マロース
-6420 忍者
-6490 ロートレクのお供１
-6500 ロートレクのお供２
-6530 沼女（NPCマルチ）
-6550 神殿騎士（NPCマルチ）
-6560 トゲ騎士（NPCマルチ）
-6570 黄衣（NPCマルチ）
-6580 城下塔のNPC（ハベル）
-6600 王城1塔のNPC（リカール）
-6610 結晶騎士
-6801 山賊A　門番
-6802 山賊B　戦士
-6803 山賊C　弓使い
-6804 山賊D　魔法（攻撃）
-6805 山賊E　魔法（回復）
-6806 山賊F　隠密
-9999 幻影（顔なし）
+1 male _ Prototype 1
+2 male _ Prototype 2
+3 male _ Prototype 3
+4 male _ Prototype 4
+5 male _ Prototype 5
+6 male _ Prototype 6
+7 male _ Prototype 7
+8 male _ Prototype 8
+9 male _ Prototype 9
+10 male _ Prototype 10
+11 male _ Prototype 11
+12 male _ Prototype 12
+13 male _ Prototype 13
+14 male _ Prototype 14
+20 woman _ Prototype 1
+21 woman _ Prototype 2
+30 4th Edition Warrior _ man
+31 4th Edition Knight _ man
+32 4th Edition Wizard _ woman
+33 4th Edition Sorcerer _ man
+34 E3 Sun Knight _ man
+100 Default face test _01
+101 Default face test _02
+102,Default face test _03
+103 Default face test _04
+104 Default face test _05
+105 Default face test _06
+106 Default face test _07
+107 Default face test _08
+108 Default face test _09
+109 Default face test _10
+110 Default face test _11
+111 Default face test _12
+112 Default face test _13
+113 Default face test _14
+114 Default face test _15
+115 Default face test _16
+116 Default face test _17
+117 Default face test _18
+118 Default face test _19
+119 Default face test _20
+120 Default face test _twenty one
+121 Default face test _twenty two
+122 Default face test _twenty three
+123 Default face test _twenty four
+124 Default face test _twenty five
+125,Default face test _26
+126 Default face test _27
+127 Default face test _28
+128 Default face test _29
+129 Default face test _30
+130 Default face test _31
+131 Default face test _32
+132 Default face test _33
+133 Default face test _34
+134 Default face test _35
+135 Default face test _36
+136 Default face test _37
+137 Default face test _38
+138 Default face test _39
+139 Default face test _40
+140 Default face test _41
+141 Default face test _42
+142 Default face test _43
+143 Default face test _44
+144 Default face test _45
+145 Default face test _46
+146 Default face test _47
+147 Default face test _48
+148,Default face test _49
+149 Default face test _50
+300 The Grey Saint
+1000 Commoner face
+1001 Farmers' faces in Wuzhihe
+1002 Astra's noble face
+1003 Dragon Academy Student Face
+1004 The Saint's Face of Solrond
+1005 Katarina's cheerful face
+1006 Karim's Gloomy Face
+1007 Xena's Old Face
+1008 The strange appearance of Onuma
+1009 Foreigner's Face in the East
+2000 Commoner face
+2001 Farmers' faces in Wuzhihe
+2002 Astra's noble face
+2003 Dragon Academy Student Face
+2004 The Saint's Face of Solrond
+2005 Katarina's cheerful face
+2006 Karim's Gloomy Face
+2007 Xena's Old Face
+2008 The strange appearance of Onuma
+2009 Foreigner's Face in the East
+6000 Sun Knight
+6001 Knight of the Sun (Sun Bug) Ver )
+6002 Knight of the Sun (Dead)
+6010 Darkmoon Knight
+6020 Knight Ostra
+6021 Knight Ostra (enemy)
+6030 "Big Hat" Rogan
+6031 "Big Hat" Rogan (Dead)
+6040 Rogann's Apprentice
+6041 Rogann's disciple (dead)
+6050 Exiled Princess
+6060 The Grey Saint
+6070 White Saint
+6071 White Saint (Dead)
+6080 Saint Knight A
+6090 Saint Knight B
+6091 Saint Knight B (Dead)
+6100 Saint Knight C
+6101 Saint Knight C (Dead)
+6130 Pot Sorcerer
+6131,Pot Sorcerer (Dead)
+6170 Wandering Chaos
+6180 Healer
+6220 Blacksmith Rickert
+6250 Broken-hearted Merchant
+6260 Trickster
+6270 Broken-hearted Warrior
+6271 Broken-hearted Warrior (Dead)
+6280 Onion Knight
+6290 Onion Knight's Daughter
+6300 Embraced Knight Lautrec
+6310 Samurai
+6320 Graveyard Coward Patch
+6370 Dragon Priest
+6390 Tarkus the Black Knight
+6400 Belka Knight
+6410 Witch Maros
+6420 ninja
+6490 Lautrec's Companion 1
+6500 Lautrec's Companion 2
+6530 Swamp Woman ( NPC Multi)
+6550 Temple Knight ( NPC Multi)
+6560 Thorn Knight ( NPC Multi)
+6570 Yellow Robe ( NPC Multi)
+6580 Castle Tower NPC (Hubbell)
+6600 Royal Castle 1 Tower NPC (Ricard)
+6610 Crystal Knight
+6801 Bandit A Gatekeeper
+6802 Bandit B Warrior
+6803 Bandit C Archer
+6804 Bandit DMagic (Attack)
+6805 Bandit E Magic (Recovery)
+6806 Bandit F Covert
+9999 Phantom (without face)

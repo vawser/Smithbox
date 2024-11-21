@@ -1,0 +1,189 @@
+1401000 Key guide_move -- キーガイド_移動
+1401010 Key guide_move + boost move -- キーガイド_移動+ブースト移動
+1401020 Key Guide_Move + Boost Move + Jump -- キーガイド_移動+ブースト移動+ジャンプ
+1401030 [TIPS available] Time stop_Looking back & EN -- [TIPS有]時止め_振り返り＆EN
+1401100 [TIPS available] Time stop_lock assist -- [TIPS有]時止め_ロックアシスト
+1401110 Key guide_lock assist + right hand shooting -- キーガイド_ロックアシスト+右手射撃
+1401111 target operation -- ターゲット操作
+1401112 Target operation key guide -- ターゲット操作キーガイド
+1401113 target assist -- ターゲットアシスト
+1401114 Target assist key guide -- ターゲットアシストキーガイド
+1401117 Key guide_Right shoulder weapon + multi-lock -- キーガイド_右肩武器+マルチロック
+1401120 Key guide_Left hand fighting + QB -- キーガイド_左手格闘+QB
+1401121 [No TIPS] Time stop_QB usage -- [TIPS無し]時止め_QB使い方
+1401122 Key Guide_Quick Boost -- キーガイド_クイックブースト
+1401126 [TIPS available] Time stop_How to use QB -- [TIPS有]時止め_QB使い方
+1401131 Key guide_Right shoulder weapon + multi-lock -- キーガイド_右肩武器+マルチロック
+1401140 Key guide_recovery -- キーガイド_回復
+1401141 [TIPS available] Time stop_How to recover -- [TIPS有]時止め_回復やりかた
+1401200 Time stop_Asab -- 時止め_アサブ
+1401201 Asabu key guide -- アサブキーガイド
+1401210 Key guide_Asabu + right hand + left hand (unnecessary, but leave it in case) -- キーガイド_アサブ+右手+左手(不要だが一応残す)
+1401126 [With TIPS] Key Guide_Quick Boost -- [TIPS有]キーガイド_クイックブースト
+1401270 Key Guide_Fighting Battle -- キーガイド_格闘戦
+1401280 Key guide_shooting battle -- キーガイド_射撃戦
+1401290 Key guide_QB avoidance -- キーガイド_QB回避
+1401300 [TIPS available] Time stop_Vertical catapult -- [TIPS有]時止め_垂直カタパルト
+1401310 Key guide_Vertical catapult -- キーガイド_垂直カタパルト
+1411000 [No TIPS] Time stop_Jailbreak_Starting time -- [TIPS無し]時止め_脱獄_開始時
+1411010 Key guide_Jailbreak_No jamming bullets -- キーガイド_脱獄_ジャミング弾なし
+1411100 [No TIPS] Time stop_Jailbreak_Jamming bullet explanation -- [TIPS無し]時止め_脱獄_ジャミング弾説明
+1411110 Key guide_Jailbreak_With jamming bullets -- キーガイド_脱獄_ジャミング弾有り
+1500000 [No TIPS] Lock on -- [TIPS無し]ロックオン
+1500001 lock-on key guide -- ロックオンキーガイド
+1500005 [With TIPS] Lock on -- [TIPS有り]ロックオン
+1500010 reload -- リロード
+1500011 reload key guide -- リロードキーガイド
+1500015 reload -- リロード
+1500100 [No TI] Missile lock -- [TI無し]ミサイルロック
+1500101 missile lock key guide -- ミサイルロックキーガイド
+1500105 [With TIPS] Missile lock -- [TIPS有り]ミサイルロック
+1500200 [With TIPS] Melee weapons -- [TIPS有り]ミ近接武器
+1500201 Melee weapon key guide -- 近接武器キーガイド
+1500205 [With TIPS] Melee weapons -- [TIPS有り]ミ近接武器
+1500300 [With TIPS] Wall Hack Radar -- [TIPS有り]ウォールハックレーダー
+1500301 wall hack radar key guide -- ウォールハックレーダーキーガイド
+1501000 Ranged weapons and charged attacks -- 射撃武器とチャージ攻撃
+1501001 Shooting weapons and charge attack key guide -- 射撃武器とチャージ攻撃キーガイド
+1501005 Ranged weapons and charged attacks -- 射撃武器とチャージ攻撃
+1501010 Shock value and stagger -- 衝撃値とスタッガー
+1501011 Shock value and stagger key guide -- 衝撃値とスタッガーキーガイド
+1501015 Shock value and stagger -- 衝撃値とスタッガー
+1501020 critical -- クリティカル
+1501021 critical key guide -- クリティカルキーガイド
+1501025 critical -- クリティカル
+1501100 Residual impact value -- 衝撃値の残留
+1501101 Impact value residual key guide -- 衝撃値の残留キーガイド
+1501105 Residual impact value -- 衝撃値の残留
+1501200 Defense by shield -- シールドによる防御
+1501201 Shield defense key guide -- シールドによる防御キーガイド
+1501205 Defense by shield -- シールドによる防御
+1501210 Danger attack and just guard -- 危険攻撃とジャストガード
+1501211 Danger Attack and Just Guard Key Guide -- 危険攻撃とジャストガードキーガイド
+1501215 Danger attack and just guard -- 危険攻撃とジャストガード
+1501300 Combat with Assault Boost -- アサルトブーストを使用した戦闘
+1501301 Combat key guide with assault boost -- アサルトブーストを使用した戦闘キーガイド
+1501305 Combat with Assault Boost -- アサルトブーストを使用した戦闘
+1501400 undiscovered bonus -- 未発見ボーナス
+1501401 Undiscovered Bonus Key Guide -- 未発見ボーナスキーガイド
+1501405 undiscovered bonus -- 未発見ボーナス
+1502000 Double trigger and shooting recoil -- ダブルトリガーと射撃反動
+1502001 Double trigger and shooting recoil key guide -- ダブルトリガーと射撃反動キーガイド
+1502005 Double trigger and shooting recoil -- ダブルトリガーと射撃反動
+1502011 reload key guide -- リロードキーガイド
+1502100 Changes in mobility due to assembly -- アセンブルによる機動力の変化
+1502101 Key guide for changing mobility through assembly -- アセンブルによる機動力の変化キーガイド
+1502105 Changes in mobility due to assembly -- アセンブルによる機動力の変化
+1502110 Change in EN efficiency due to assembly -- アセンブルによるEN効率の変化
+1502111 Key guide to changes in EN efficiency due to assembly -- アセンブルによるEN効率の変化キーガイド
+1502115 Change in EN efficiency due to assembly -- アセンブルによるEN効率の変化
+1502200 Weapon effective range and FCS -- 武装の有効距離とFCS
+1502201 Weapon effective range and FCS key guide -- 武装の有効距離とFCSキーガイド
+1502205 Weapon effective range and FCS -- 武装の有効距離とFCS
+1502300 Combat in high-mobility vehicles -- 高機動機体での戦闘
+1502301 Combat key guide for high-mobility vehicles -- 高機動機体での戦闘キーガイド
+1502305 Combat in high-mobility vehicles -- 高機動機体での戦闘
+1503000 Characteristics of reverse joint legs -- 逆関節脚部の特徴
+1503001 Features key guide of reverse joint legs -- 逆関節脚部の特徴キーガイド
+1503005 Characteristics of reverse joint legs -- 逆関節脚部の特徴
+1503010 explosive weapon -- 爆発系武装
+1503011 Explosive weapon key guide -- 爆発系武装キーガイド
+1503015 explosive weapon -- 爆発系武装
+1503100 Weapon attributes -- 武器の属性
+1503101 Weapon attribute key guide -- 武器の属性キーガイド
+1503105 Weapon attributes -- 武器の属性
+1503110 overheat armament -- オーバーヒート武装
+1503111 Overheat Armed Key Guide -- オーバーヒート武装キーガイド
+1503115 overheat armament -- オーバーヒート武装
+1503200 Weapon usage based on attributes -- 属性による武器の使い分け
+1503201 Key guide to how to use weapons based on attributes -- 属性による武器の使い分けキーガイド
+1503205 Weapon usage based on attributes -- 属性による武器の使い分け
+1503210 Ricochet -- 跳弾
+1504000 Features of quadrupeds -- 四脚の特徴
+1504001 Four-legged feature key guide -- 四脚の特徴キーガイド
+1504005 Features of quadrupeds -- 四脚の特徴
+1504011 Features of quadruped: key guide in the middle -- 四脚の特徴　中ほどのキーガイド
+1504100 Attack while hovering -- ホバリング中攻撃
+1504101 Hovering attack key guide -- ホバリング中攻撃キーガイド
+1504105 Attack while hovering -- ホバリング中攻撃
+1504111 Hovering Medium Attack Grenade Key Guide -- ホバリング中攻撃グレネードキーガイド
+1504112 Hovering mid-attack grenade key guide difference -- ホバリング中攻撃グレネードキーガイド 差分
+1504200 quadrupedal tactics -- 四脚の戦術
+1504201 quadruped tactical key guide -- 四脚の戦術キーガイド
+1504205 quadrupedal tactics -- 四脚の戦術
+1505000 Tank characteristics -- タンクの特徴
+1505001 Tank Features Key Guide -- タンクの特徴キーガイド
+1505005 Tank characteristics -- タンクの特徴
+1505002 drift turn -- ドリフトターン
+1505007 drift turn -- ドリフトターン
+1505011 Tank Features Key Guide 2 -- タンクの特徴キーガイド2
+1509090 Benefits of target assist off -- ターゲットアシストoffの利点
+1506000 final exam -- 最終試験
+1600000 Prolo when defeated -- プロロ 敗北時
+1601000 Over the wall, when defeated -- 壁越え　敗北時
+1602000 String Defeat -- 文字列　敗北時
+2000000 assemble tutorial -- アセンブルチュートリアル
+2001000 Story mission tutorial -- ストーリーミッションチュートリアル
+2001100 free mission tutorial -- フリーミッションチュートリアル
+2002000 Shop (purchase) tutorial -- ショップ(購入)チュートリアル
+2002010 Shop (Sell) Tutorial -- ショップ(売却)チュートリアル
+2003000 coloring tutorial -- カラーリングチュートリアル
+2003100 marking tutorial -- マーキングチュートリアル
+2003300 Image creation tutorial -- イメージ作成チュートリアル
+2004000 arena tutorial -- アリーナチュートリアル
+2004100 online arena tutorial -- オンラインアリーナチュートリアル
+2004110 online arena tutorial -- オンラインアリーナチュートリアル
+2005000 ACDATA tutorial -- ACDATAチュートリアル
+2006000 ACTEST tutorial -- ACTESTチュートリアル
+2007000 TRAININGTutorial -- TRAININGチュートリアル
+2008000 ARCHIVE tutorial -- ARCHIVEチュートリアル
+2008100 TIPS tutorial -- TIPSチュートリアル
+2009000 OS enhancement tutorial -- OS強化チュートリアル
+2010000 Pilot data tutorial -- パイロットデータチュートリアル
+2011000 nameplate tutorial -- ネームプレートチュートリアル
+2012000 nameplate shop tutorial -- ネームプレートショップチュートリアル
+2100000 Menu release announcement Parts shop related -- メニュー解放告知　パーツショップ関連
+2100010 Menu release announcement Parts shop update -- メニュー解放告知　パーツショップ更新
+2101000 Menu release announcement Arena related -- メニュー解放告知　アリーナ関連
+2101010 Menu release announcement Arena related 2 -- メニュー解放告知　アリーナ関連2
+2101020 Menu release announcement Arena related 3 -- メニュー解放告知　アリーナ関連3
+2101030 Menu release announcement Arena related 4 -- メニュー解放告知　アリーナ関連4
+2101040 Menu release announcement Arena related 4 -- メニュー解放告知　アリーナ関連4
+2102000 Menu release announcement Mission replay -- メニュー解放告知　ミッションリプレイ
+2103000 Menu release announcement Tremo release 1 -- メニュー解放告知　トレモ解禁1
+2103010 Menu release announcement Tremo release 2 -- メニュー解放告知　トレモ解禁2
+2103020 Menu release announcement Tremo release 3 -- メニュー解放告知　トレモ解禁3
+2104000 Menu release announcement Strong enemy token -- メニュー解放告知　強敵トークン
+2105000 Menu release announcement AC Design -- メニュー解放告知　ACデザイン
+2106000 ice worm -- アイスワーム
+2107000 Menu release announcement Tremo release 1 -- メニュー解放告知　トレモ解禁1
+2107010 Menu release announcement Tremo release 2 -- メニュー解放告知　トレモ解禁2
+2107020 Menu release announcement Tremo release 1 -- メニュー解放告知　トレモ解禁1
+2107030 Menu release announcement Tremo release 2 -- メニュー解放告知　トレモ解禁2
+2107040 Menu release announcement Tremo release 3 -- メニュー解放告知　トレモ解禁3
+2107050 Menu release announcement Strong enemy token -- メニュー解放告知　強敵トークン
+2107070 Menu release announcement AC Design -- メニュー解放告知　ACデザイン
+2200000 log hunt -- ログハント
+2201000 ARM UNIT parts -- ARM UNITパーツ
+2202000 BACK UNIT parts -- BACK UNITパーツ
+2203000 HEAD parts -- HEADパーツ
+2204000 CORE parts -- COREパーツ
+2205000 ARMS parts -- ＡＲＭＳパーツ
+2206000 LEGS parts -- LEGSパーツ
+2207000 BOOSTER parts -- BOOSTERパーツ
+2208000 FCS parts -- FCSパーツ
+2209000 GENERATOR parts -- GENERATORパーツ
+2210000 assault armor -- アサルトアーマー
+2211000 pulse armor -- パルスアーマー
+2212000 pulse protection -- パルスプロテクション
+2213000 terminal armor -- ターミナルアーマー
+2214000 weight control -- ウェイトコントロール
+2215000 boost kick -- ブーストキック
+2216000 weapon hanger -- ウェポンハンガー
+2217000 manual aim -- マニュアルエイム
+2218000 quick turn -- クイックターン
+2219000 up in flames -- 炎上
+2220000 Stan -- スタン
+2221000 Basic operations -- 基本操作
+2222000 Interrupt operation -- 中断操作
+2223000 System abnormality: camera interference -- システム異常：カメラ妨害

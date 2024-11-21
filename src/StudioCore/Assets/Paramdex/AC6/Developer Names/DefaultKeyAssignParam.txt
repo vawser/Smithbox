@@ -1,0 +1,84 @@
+0 Running (before) -- 走行(前)
+1 Running (after) -- 走行(後)
+2 Running (left) -- 走行(左)
+3 Running (right) -- 走行(右)
+4 jump -- ジャンプ
+5 Camera (top) -- カメラ(上)
+6 Camera (bottom) -- カメラ(下)
+7 Camera (left) -- カメラ(左)
+8 Camera (right) -- カメラ(右)
+9 Lock on/Camera reset -- ロックオン/カメラリセット
+10 stealth -- ステルス
+11 Tool switching -- 道具切替
+12 Right weapon switch -- 右武器切替
+13 Left weapon switch -- 左武器切替
+14 Use right hand weapon -- 右手武器使用
+15 QB/swooping QB -- QB/急降下QB
+16 Use left hand weapon -- 左手武器使用
+17 boost -- ブースト
+18 item use -- アイテム使用
+19 Two-handed switch/action panel switch -- 両手持ち切替/アクションパネル切替
+20 Auxiliary menu -- 補助メニュー
+21 Open menu -- メニュー開く
+22 Move cursor (up) -- カーソル移動（上）
+23 Move cursor (down) -- カーソル移動（下）
+24 Move cursor (left) -- カーソル移動（左）
+25 Move cursor (right) -- カーソル移動（右）
+26 decision -- 決定
+27 cancel -- キャンセル
+28 Menu:RU -- メニュー：RU
+29 Menu: RL -- メニュー：RL
+30 Menu: L1 -- メニュー：L1
+31 Menu: R1 -- メニュー：R1
+32 Menu: L2 -- メニュー：L2
+33 Menu: R2 -- メニュー：R2
+34 Menu: L3 -- メニュー：L3
+35 Menu: R3 -- メニュー：R3
+36 Menu: BACK -- メニュー：BACK
+37 Menu: Scroll (top) -- メニュー：スクロール(上)
+38 Menu: Scroll (bottom) -- メニュー：スクロール(下)
+39 Menu: Conversation response (left) -- メニュー：会話応答(左)
+40 Menu: Conversation response (right) -- メニュー：会話応答(右)
+41 Menu: Left stick (top) -- メニュー：左スティック(上)
+42 Menu: Left stick (down) -- メニュー：左スティック(下)
+43 Menu: Left stick (left) -- メニュー：左スティック(左)
+44 Menu: Left stick (right) -- メニュー：左スティック(右)
+45 Menu: Right stick (top) -- メニュー：右スティック(上)
+46 Menu: Right stick (down) -- メニュー：右スティック(下)
+47 Menu: Right stick (left) -- メニュー：右スティック(左)
+48 Menu: Right stick (right) -- メニュー：右スティック(右)
+49 Mouse: left button -- マウス：左ボタン
+50 Mouse: right button -- マウス：右ボタン
+51 context menu -- コンテキストメニュー
+52 Debugging: LU -- デバッグ：LU
+53 Debugging: LD -- デバッグ：LD
+54 Debug: LL -- デバッグ：LL
+55 Debug: LR -- デバッグ：LR
+56 Debug: RU -- デバッグ：RU
+57 Debugging: RD -- デバッグ：RD
+58 Debugging: RL -- デバッグ：RL
+59 Debug: RR -- デバッグ：RR
+60 Debug: L1 -- デバッグ：L1
+61 Debug: R1 -- デバッグ：R1
+62 Debug: L2 -- デバッグ：L2
+63 Debug: R2 -- デバッグ：R2
+64 Debugging: L3 -- デバッグ：L3
+65 Debug: R3 -- デバッグ：R3
+66 Player: Action -- プレイヤー：アクション
+67 Player: Shift operation -- プレイヤー：シフト操作
+68 Player: Precision shooting stance -- プレイヤー：精密射撃構え
+69 Text input: Confirm -- テキスト入力：決定
+70 Text input: Cancel -- テキスト入力：キャンセル
+71 Debugging: Map missing -- デバッグ：マップ抜け
+72 Debug: Debug Move OnOff -- デバッグ：デバッグ移動OnOff
+73 Debugging: super dash -- デバッグ：超ダッシュ
+74 Debugging: Camera mode switching (next) -- デバッグ：カメラモード切替(次)
+75 Debugging: Camera mode switching (previous) -- デバッグ：カメラモード切替(前)
+76 Player: Use left back weapon -- プレイヤー：左背武器使用
+77 Player: Use right back weapon -- プレイヤー：右背武器使用
+78 Conversation sending -- 会話送り
+79 Player: Use extension -- プレイヤー：エクステンション使用
+80 Player: Assault Boost -- プレイヤー：アサルトブースト
+81 Menu: Shift operation (left) -- メニュー：シフト操作(左)
+82 Menu: Shift operation (right) -- メニュー：シフト操作(右)
+83 Player: Purge -- プレイヤー：パージ

@@ -1,0 +1,163 @@
+0 Write a summoning sign with the password set -- 合言葉を設定した状態で召喚サインを書く
+100 Start of session establishment with host (host) -- ホストとのセッション確立開始（ホスト）
+101 Start of session establishment with host (new guest) -- ホストとのセッション確立開始（新規ゲスト）
+102 Start establishing session with host (existing guest) -- ホストとのセッション確立開始（既存ゲスト）
+103 Session established with host (new guest) -- ホストとのセッション確立完了（新規ゲスト）
+104 Searching for connection destination (intrusion destination) -- 接続先（侵入先）を検索中
+105 Session creation failed
+(host) -- セッション作成に失敗
+（ホスト）
+106 Failed to join session
+(guest) -- セッション参加に失敗
+（ゲスト）
+110 Host-New Guest
+Block list check NG
+(host) -- ホスト-新規ゲスト
+ブロックリストチェックNG
+（ホスト）
+111 Host-New Guest
+Block list check NG
+(New guest) -- ホスト-新規ゲスト
+ブロックリストチェックNG
+（新規ゲスト）
+112 Host-New Guest
+Block list check NG
+(Existing guest) -- ホスト-新規ゲスト
+ブロックリストチェックNG
+（既存ゲスト）
+120 Block list check NG
+(host) -- ブロックリストチェックNG
+（ホスト）
+121 Block list check NG
+(New guest) -- ブロックリストチェックNG
+（新規ゲスト）
+122 Block list check NG
+(Existing guest) -- ブロックリストチェックNG
+（既存ゲスト）
+130 new guest dies
+(host) -- 新規ゲストが死亡
+（ホスト）
+131 new guest dies
+(Existing guest) -- 新規ゲストが死亡
+（既存ゲスト）
+150 timeout
+(host) -- タイムアウト
+（ホスト）
+151 timeout
+(New guest) -- タイムアウト
+（新規ゲスト）
+152 timeout
+(Existing guest) -- タイムアウト
+（既存ゲスト）
+160 generic error
+(host) -- 汎用エラー
+（ホスト）
+161 generic error
+(New guest) -- 汎用エラー
+（新規ゲスト）
+162 generic error
+(Existing guest) -- 汎用エラー
+（既存ゲスト）
+200 Guest A was summoned
+(host) -- ゲストAが召喚された
+（ホスト）
+201 Guest A was summoned
+(Guest A) -- ゲストAが召喚された
+（ゲストA）
+202 Guest A was summoned
+(Existing guest: Self is a cooperating spirit) -- ゲストAが召喚された
+（既存ゲスト：自身が協力霊）
+203 Guest A was summoned
+(Existing guest: himself is a hostile spirit) -- ゲストAが召喚された
+（既存ゲスト：自身が敵対霊）
+204 Guest A was summoned
+(Guest A: The host is the king of non-firewood) -- ゲストAが召喚された
+（ゲストA：ホストが非薪の王）
+210 Guest A met the success conditions
+(host) -- ゲストAが成功条件を満たした
+（ホスト）
+211 Guest A met the success conditions
+(Guest A) -- ゲストAが成功条件を満たした
+（ゲストA）
+212 Guest A met the success conditions
+(Other guests) -- ゲストAが成功条件を満たした
+（その他ゲスト）
+214 Guest A met the success conditions
+(Guest A: The host is the king of non-firewood) -- ゲストAが成功条件を満たした
+（ゲストA：ホストが非薪の王）
+220 Guest A met success condition 2
+(host) -- ゲストAが成功条件2を満たした
+（ホスト）
+221 Guest A met success condition 2
+(Guest A) -- ゲストAが成功条件2を満たした
+（ゲストA）
+222 Guest A met success condition 2
+(Other guests) -- ゲストAが成功条件2を満たした
+（その他ゲスト）
+230 Guest A died
+(host) -- ゲストAが死亡した
+（ホスト）
+231 Guest A died
+(Guest A) -- ゲストAが死亡した
+（ゲストA）
+232 Guest A died
+(Other guests) -- ゲストAが死亡した
+（その他ゲスト）
+233 Guest A died
+(Guest: Berserker) -- ゲストAが死亡した
+（ゲスト：バーサーカー）
+234 Guest A died
+(Guest: Red Hunting Spirit) -- ゲストAが死亡した
+（ゲスト：赤狩り霊）
+240 Guest A self-repatriated
+(host) -- ゲストAが自己帰還した
+（ホスト）
+241 Guest A self-repatriated
+(Guest A) -- ゲストAが自己帰還した
+（ゲストA）
+242 Guest A self-repatriated
+(Other guests) -- ゲストAが自己帰還した
+（その他ゲスト）
+244 Guest A self-repatriated
+(Guest: Red Hunting Spirit) -- ゲストAが自己帰還した
+（ゲスト：赤狩り霊）
+250 The host repatriated Guest A.
+(host) -- ホストがゲストAを送還した
+（ホスト）
+251 The host repatriated Guest A.
+(Guest A) -- ホストがゲストAを送還した
+（ゲストA）
+252 The host repatriated Guest A.
+(Other guests) -- ホストがゲストAを送還した
+（その他ゲスト）
+260 host death
+(guest) -- ホスト死亡
+（ゲスト）
+261 The host passes through the boss door
+(Notification of permission to enter the boss room) -- ホストがボス扉を通過
+（ボス部屋進入許可通知）
+262 The host passes through the boss door
+(Kickout notification) -- ホストがボス扉を通過
+（キックアウト通知）
+264 The host passes through the boss door
+(Kick: The host is the king of non-firewood) -- ホストがボス扉を通過
+（キック：ホストが非薪の王）
+265 The host passes through the boss door
+<Cleared area>
+(Kickout notification) -- ホストがボス扉を通過
+＜クリア済エリア＞
+（キックアウト通知）
+266 The host passes through the boss door
+<Cleared area>
+(Kick: The host is the king of non-firewood) -- ホストがボス扉を通過
+＜クリア済エリア＞
+（キック：ホストが非薪の王）
+270 Guest A leaves due to general error
+(host) -- 汎用エラーでゲストAが離脱
+（ホスト）
+271 Guest A leaves due to general error
+(Guest A) -- 汎用エラーでゲストAが離脱
+（ゲストA）
+272 Guest A leaves due to general error
+(Other guests) -- 汎用エラーでゲストAが離脱
+（その他ゲスト）

@@ -1,0 +1,21 @@
+130 AP30% or less -- AP30%以下
+150 AP50% or less -- AP50%以下
+200 Left hand weapon remaining ammo 0% -- 左手武器残弾0%
+210 Left hand weapon remaining ammo 10% or less -- 左手武器残弾10%以下
+230 Left hand weapon remaining ammo 30% or less -- 左手武器残弾30%以下
+250 Left hand weapon remaining ammo 50% or less -- 左手武器残弾50%以下
+300 Right hand weapon remaining ammo 0% -- 右手武器残弾0%
+310 Right hand weapon remaining ammo 10% or less -- 右手武器残弾10%以下
+330 Right hand weapon remaining ammo 30% or less -- 右手武器残弾30%以下
+350 Right hand weapon remaining ammo 50% or less -- 右手武器残弾50%以下
+400 Left back weapon 0 bullets remaining -- 左背武器残弾0
+410 Left back weapon remaining ammo 10% or less -- 左背武器残弾10%以下
+430 Left back weapon remaining ammo 30% or less -- 左背武器残弾30%以下
+450 Left back weapon remaining ammo 50% or less -- 左背武器残弾50%以下
+500 Right back weapon remaining ammo 0% -- 右背武器残弾0%
+510 Right back weapon remaining ammo 10% or less -- 右背武器残弾10%以下
+530 Right back weapon remaining ammo 30% or less -- 右背武器残弾30%以下
+550 Right back weapon remaining ammo 50% or less -- 右背武器残弾50%以下
+1200 0 recovery items remaining -- 回復アイテム残り個数0
+1201 Number of recovery items remaining: 1 -- 回復アイテム残り個数1
+1202 Number of recovery items remaining: 2 -- 回復アイテム残り個数2

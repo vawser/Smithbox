@@ -1,0 +1,236 @@
+0 test -- テスト
+10 metalness texture test -- メタルネステクスチャテスト
+100 Test for putting out on the ground when destroying assets -- アセット破壊時に地面に出す用テスト
+1000 Test for putting it on the ground when destroying an enemy -- 敵破壊時に地面に出す用テスト
+470000 c4700 amphibious assault ship laser melting trace -- c4700　強襲揚陸艦　レーザー溶解跡
+630000 s30_00_0000_Next generation proto AC appearance iron drag trace back -- s30_00_0000_次世代プロトAC登場　鉄　引きずり跡　奥
+630001 s30_00_0000_Next generation proto AC appearance iron drag marks front -- s30_00_0000_次世代プロトAC登場　鉄　引きずり跡　手前
+800000 [Attack] Rifle_Bullet hole decal -- 【攻撃】ライフル_弾痕デカール
+800001 [Attack] Machine gun_bullet hole decal -- 【攻撃】マシンガン_弾痕デカール
+800002 [Attack] Bazooka_Bullet Hole Decal -- 【攻撃】バズーカ_弾痕デカール
+800003 [Attack] Cannon_Bullet Hole Decal -- 【攻撃】キャノン_弾痕デカール
+800004 [Attack] Laser rifle_bullet hole decal -- 【攻撃】レーザーライフル_弾痕デカール
+800005 [Attack] Laser Cannon_Bullet Hole Decal -- 【攻撃】レーザーキャノン_弾痕デカール
+800006 [Attack] Plasma Cannon_Bullet Hole Decal -- 【攻撃】プラズマキャノン_弾痕デカール
+800007 [Attack] Missile_Bullet hole decal -- 【攻撃】ミサイル_弾痕デカール
+800008 [ENE] [Attack] Stiglo small laser hits -- 【ENE】【攻撃】スティグロ小レーザー着弾
+800009 [ENE] [Attack] Stiglo large laser impact -- 【ENE】【攻撃】スティグロ大レーザー着弾
+800010 [ENE] [Attack] Stiglo diffusion laser impact (Reserve 9100020) -- 【ENE】【攻撃】スティグロ拡散レーザー着弾(予備9100020)
+300001501 [Stone] Death explosion medium -- 【石】　死亡爆発　中
+300001502 [Stone] Death explosion large -- 【石】　死亡爆発　大
+300003001 AC footprint [earth] trapezoid (medium) -- AC足跡　【土】　台形　（中）
+300003003 AC footprint [earth] trapezoid (extra large) -- AC足跡　【土】　台形　（特大）
+300003011 AC footprint [earth] general purpose drag (medium) -- AC足跡　【土】　汎用　引きずり　（中）
+300003013 AC footprint [earth] general purpose drag (extra large) -- AC足跡　【土】　汎用　引きずり　（特大）
+300003111 AC footprint [earth] nail shape (medium) -- AC足跡　【土】　爪型　（中）
+300003201 AC footprint [soil] crawler track (thin) -- AC足跡　【土】　履帯　（細）
+300003211 AC footprint [earth] track double (thin) -- AC足跡　【土】　履帯　二重　（細）
+300003221 AC footprint [earth] track double (thick) -- AC足跡　【土】　履帯　二重　（太）
+300003501 [Sat] Death explosion medium -- 【土】　死亡爆発　中
+300003502 [Sat] Death explosion large -- 【土】　死亡爆発　大
+300005001 AC footprint [sand] trapezoid (medium) -- AC足跡　【砂】　台形　（中）
+300005003 AC footprint [sand] trapezoid (extra large) -- AC足跡　【砂】　台形　（特大）
+300005011 AC footprint [sand] general purpose drag (medium) -- AC足跡　【砂】　汎用　引きずり　（中）
+300005013 AC footprint [sand] general purpose drag (extra large) -- AC足跡　【砂】　汎用　引きずり　（特大）
+300005111 AC footprint [sand] nail shape (medium) -- AC足跡　【砂】　爪型　（中）
+300005201 AC footprint [sand] crawler track (thin) -- AC足跡　【砂】　履帯　（細）
+300005211 AC footprint [sand] Crawler track double (thin) -- AC足跡　【砂】　履帯　二重　（細）
+300005221 AC footprint [Sand] Crawler track double (thick) -- AC足跡　【砂】　履帯　二重　（太）
+300005501 [Sand] Death explosion medium -- 【砂】　死亡爆発　中
+300005502 [Sand] Death explosion large -- 【砂】　死亡爆発　大
+300006001 AC footprint [ice] trapezoid (medium) -- AC足跡　【氷】　台形　（中）
+300006003 AC footprint [ice] trapezoid (extra large) -- AC足跡　【氷】　台形　（特大）
+300006011 AC footprint [ice] general purpose drag (medium) -- AC足跡　【氷】　汎用　引きずり　（中）
+300006013 AC footprint [ice] general purpose drag (extra large) -- AC足跡　【氷】　汎用　引きずり　（特大）
+300006111 AC footprint [Ice] Claw type (medium) -- AC足跡　【氷】　爪型　（中）
+300006201 AC footprint [ice] track (medium) -- AC足跡　【氷】　履帯　（中）
+300006211 AC footprint [ice] track double (thin) -- AC足跡　【氷】　履帯　二重　（細）
+300006221 AC footprint [Ice] Track double (thick) -- AC足跡　【氷】　履帯　二重　（太）
+300006501 [Ice] Death explosion medium -- 【氷】　死亡爆発　中
+300006502 [Ice] Death explosion large -- 【氷】　死亡爆発　大
+300007001 AC footprint [snow] trapezoid (medium) -- AC足跡　【雪】　台形　（中）
+300007003 AC footprint [snow] trapezoid (extra large) -- AC足跡　【雪】　台形　（特大）
+300007011 AC footprint [snow] general purpose drag (medium) -- AC足跡　【雪】　汎用　引きずり　（中）
+300007013 AC footprint [snow] general purpose drag (extra large) -- AC足跡　【雪】　汎用　引きずり　（特大）
+300007111 AC footprint [snow] claw shape (medium) -- AC足跡　【雪】　爪型　（中）
+300007201 AC footprint [snow] track (medium) -- AC足跡　【雪】　履帯　（中）
+300007211 AC footprint [snow] track double (thin) -- AC足跡　【雪】　履帯　二重　（細）
+300007221 AC footprint [snow] track double (thick) -- AC足跡　【雪】　履帯　二重　（太）
+300007501 [Snow] Death explosion medium -- 【雪】　死亡爆発　中
+300007502 [Snow] Death explosion large -- 【雪】　死亡爆発　大
+300008501 [Cloth] Death Explosion Medium -- 【布】　死亡爆発　中
+300008502 [Cloth] Death Explosion Large -- 【布】　死亡爆発　大
+300010501 [Concrete] Death explosion medium -- 【コンクリ】　死亡爆発　中
+300010502 [Concrete] Death explosion large -- 【コンクリ】　死亡爆発　大
+300011501 [Iron] Death explosion medium -- 【鉄】　死亡爆発　中
+300011502 [Iron] Death explosion large -- 【鉄】　死亡爆発　大
+600100010 Stone [P/DE shared] Live bullet hole, middle, front -- 石　【ぺ/デ共用】　実弾弾痕　中　正面
+600100110 Stone [Pe/De common use] Laser melting middle front -- 石　【ぺ/デ共用】　レーザー融解　中　正面
+600100200 Stone [Pe/De common use] Explosion burn scar small front -- 石　【ぺ/デ共用】　爆発焼け跡　小　正面
+600100210 Stone [P/DE shared] Explosion burnt area, middle front -- 石　【ぺ/デ共用】　爆発焼け跡　中　正面
+600100220 Stone [P/DE shared] Explosion scar large front -- 石　【ぺ/デ共用】　爆発焼け跡　大　正面
+600100230 Stone [Pe/De common use] Explosion burn scar extra large front -- 石　【ぺ/デ共用】　爆発焼け跡　特大　正面
+600100240 Stone [Pe/De common use] Explosion burn scar extra large front -- 石　【ぺ/デ共用】　爆発焼け跡　特特大　正面
+600100310 Stone [P/DE shared] Coral burnt remains, middle front -- 石　【ぺ/デ共用】　コーラル焼け跡　中　正面
+600100320 Stone [P/DE shared] Coral burnt remains Large Front -- 石　【ぺ/デ共用】　コーラル焼け跡　大　正面
+600100330 Stone [P/DE shared] Coral burn marks Extra large Front -- 石　【ぺ/デ共用】　コーラル焼け跡　特大　正面
+600100340 Stone [Pe/De common use] Coral burn marks extra large front -- 石　【ぺ/デ共用】　コーラル焼け跡　特特大　正面
+600100410 Stone [Pe/De common use] NE burnt ruins middle front -- 石　【ぺ/デ共用】　NE焼け跡　中　正面
+600100510 Stone [P/DE shared] Napalm bullet burn mark, middle, front -- 石　【ぺ/デ共用】　ナパーム弾焼け跡　中　正面
+600100600 Stone [P/DE shared] Electric burn marks, small, front -- 石　【ぺ/デ共用】　電気焼け跡　小　正面
+600100610 Stone [P/DE shared] Electric burn marks, middle front -- 石　【ぺ/デ共用】　電気焼け跡　中　正面
+600100620 Stone [P/DE shared] Electric burn marks large front -- 石　【ぺ/デ共用】　電気焼け跡　大　正面
+600100630 Stone [P/DE shared] Electric burn marks Extra large Front -- 石　【ぺ/デ共用】　電気焼け跡　特大　正面
+600100640 Stone [P/DE shared] Electric burn marks extra large front -- 石　【ぺ/デ共用】　電気焼け跡　特特大　正面
+600100700 Stone [Pe/De common use] Artificial coral burnt remains Small Front -- 石　【ぺ/デ共用】　人工コーラル焼け跡　小　正面
+600300010 Soil [P/DE shared] Live bullet hole Medium front -- 土　【ぺ/デ共用】　実弾弾痕　中　正面
+600300110 Soil [Pe/De shared] Laser melting middle front -- 土　【ぺ/デ共用】　レーザー融解　中　正面
+600300200 Soil [P/DE shared] Explosion burnout small front -- 土　【ぺ/デ共用】　爆発焼け跡　小　正面
+600300210 Soil [P/DE shared] Explosion burnt area, middle front -- 土　【ぺ/デ共用】　爆発焼け跡　中　正面
+600300220 Earth [P/DE shared] Explosion burnt remains Large Front -- 土　【ぺ/デ共用】　爆発焼け跡　大　正面
+600300230 Earth [P/DE shared] Explosion burnt remains Extra large Front -- 土　【ぺ/デ共用】　爆発焼け跡　特大　正面
+600300240 Soil [Pe/De common use] Explosion burn scar extra large front -- 土　【ぺ/デ共用】　爆発焼け跡　特特大　正面
+600300310 Soil [Pe/De shared] Coral burnt remains, middle front -- 土　【ぺ/デ共用】　コーラル焼け跡　中　正面
+600300320 Soil [P/DE shared] Coral burnt remains Large Front -- 土　【ぺ/デ共用】　コーラル焼け跡　大　正面
+600300330 Soil [P/DE shared] Coral burn marks Extra large Front -- 土　【ぺ/デ共用】　コーラル焼け跡　特大　正面
+600300340 Soil [P/DE shared] Coral burn marks extra large front -- 土　【ぺ/デ共用】　コーラル焼け跡　特特大　正面
+600300410 Soil [P/DE shared] NE burnt ruins middle front -- 土　【ぺ/デ共用】　NE焼け跡　中　正面
+600300510 Soil [Pe/De shared] Napalm bullet burn area, middle front -- 土　【ぺ/デ共用】　ナパーム弾焼け跡　中　正面
+600300600 Soil [P/DE shared] Electric burn marks, small, front -- 土　【ぺ/デ共用】　電気焼け跡　小　正面
+600300610 Soil [P/DE shared] Electric burn marks, middle front -- 土　【ぺ/デ共用】　電気焼け跡　中　正面
+600300620 Soil [P/DE shared] Electric burn marks Large front -- 土　【ぺ/デ共用】　電気焼け跡　大　正面
+600300630 Soil [P/DE shared] Electric burn marks Extra large Front -- 土　【ぺ/デ共用】　電気焼け跡　特大　正面
+600300640 Soil [P/DE shared] Electric burn marks extra large front -- 土　【ぺ/デ共用】　電気焼け跡　特特大　正面
+600300700 Soil [Pe/De shared] Artificial coral burnt remains Small Front -- 土　【ぺ/デ共用】　人工コーラル焼け跡　小　正面
+600500010 Sand [P/DE shared] Live bullet holes, middle, front -- 砂　【ぺ/デ共用】　実弾弾痕　中　正面
+600500110 Sand [P/DE shared] Laser melting middle front -- 砂　【ぺ/デ共用】　レーザー融解　中　正面
+600500200 Sand [Shared with Pe/De] Explosion burnout small front -- 砂　【ぺ/デ共用】　爆発焼け跡　小　正面
+600500210 Sand [P/DE shared] Explosion burnt area, middle front -- 砂　【ぺ/デ共用】　爆発焼け跡　中　正面
+600500220 Sand [Pe/De common use] Explosion burn scar large front -- 砂　【ぺ/デ共用】　爆発焼け跡　大　正面
+600500230 Sand [Pe/De common use] Explosion burn scar extra large front -- 砂　【ぺ/デ共用】　爆発焼け跡　特大　正面
+600500240 Sand [Pe/De common use] Explosion burn scar extra large front -- 砂　【ぺ/デ共用】　爆発焼け跡　特特大　正面
+600500310 Sand [Shared with Pe/De] Coral burnt remains Middle front -- 砂　【ぺ/デ共用】　コーラル焼け跡　中　正面
+600500320 Sand [P/DE shared] Coral burnt remains Large Front -- 砂　【ぺ/デ共用】　コーラル焼け跡　大　正面
+600500330 Sand [Pe/De common use] Coral burn marks Extra large Front -- 砂　【ぺ/デ共用】　コーラル焼け跡　特大　正面
+600500340 Sand [Pe/De common use] Coral burn marks extra large front -- 砂　【ぺ/デ共用】　コーラル焼け跡　特特大　正面
+600500410 Sand [P/DE shared] NE burnt ruins middle front -- 砂　【ぺ/デ共用】　NE焼け跡　中　正面
+600500510 Sand [Pe/De common use] Napalm bullet burn mark inside front -- 砂　【ぺ/デ共用】　ナパーム弾焼け跡　中　正面
+600500600 Sand [Shared with Pe/De] Electric burn marks Small Front -- 砂　【ぺ/デ共用】　電気焼け跡　小　正面
+600500610 Sand [Shared with Pe/De] Electric burn marks Middle front -- 砂　【ぺ/デ共用】　電気焼け跡　中　正面
+600500620 Sand [P/DE shared] Electric burn marks Large front -- 砂　【ぺ/デ共用】　電気焼け跡　大　正面
+600500630 Sand [P/DE shared] Electric burn marks Extra large Front -- 砂　【ぺ/デ共用】　電気焼け跡　特大　正面
+600500640 Sand [P/DE shared] Electric burn marks extra large front -- 砂　【ぺ/デ共用】　電気焼け跡　特特大　正面
+600500700 Sand [P/DE shared] Artificial coral burnt remains Small Front -- 砂　【ぺ/デ共用】　人工コーラル焼け跡　小　正面
+600600010 Ice [P/DE shared] Live bullet hole Medium front -- 氷　【ぺ/デ共用】　実弾弾痕　中　正面
+600600110 Ice [P/DE shared] Laser melting middle front -- 氷　【ぺ/デ共用】　レーザー融解　中　正面
+600600200 Ice [P/DE shared] Explosion scar small front -- 氷　【ぺ/デ共用】　爆発焼け跡　小　正面
+600600210 Ice [P/DE shared] Explosion burnout center front -- 氷　【ぺ/デ共用】　爆発焼け跡　中　正面
+600600220 Ice [P/DE shared] Explosion scar large front -- 氷　【ぺ/デ共用】　爆発焼け跡　大　正面
+600600230 Ice [Pe/De common use] Explosion burn scar extra large front -- 氷　【ぺ/デ共用】　爆発焼け跡　特大　正面
+600600240 Ice [P/DE shared] Explosion burn scar extra large front -- 氷　【ぺ/デ共用】　爆発焼け跡　特特大　正面
+600600310 Ice [Shared with Pe/De] Coral Burnt Remains Middle Front -- 氷　【ぺ/デ共用】　コーラル焼け跡　中　正面
+600600320 Ice [P/DE shared] Coral burnt remains Large Front -- 氷　【ぺ/デ共用】　コーラル焼け跡　大　正面
+600600330 Ice [P/DE shared] Coral burn marks Extra large Front -- 氷　【ぺ/デ共用】　コーラル焼け跡　特大　正面
+600600340 Ice [Pe/De common use] Coral burn marks extra large front -- 氷　【ぺ/デ共用】　コーラル焼け跡　特特大　正面
+600600410 Ice [P/DE shared] NE burnt ruins middle front -- 氷　【ぺ/デ共用】　NE焼け跡　中　正面
+600600510 Ice [P/DE shared] Napalm bullet burn mark, middle front -- 氷　【ぺ/デ共用】　ナパーム弾焼け跡　中　正面
+600600600 Ice [P/DE shared] Electric burn marks small front -- 氷　【ぺ/デ共用】　電気焼け跡　小　正面
+600600610 Ice [Shared with Pe/De] Electric burn mark Middle front -- 氷　【ぺ/デ共用】　電気焼け跡　中　正面
+600600620 Ice [P/DE shared] Electric burn marks large front -- 氷　【ぺ/デ共用】　電気焼け跡　大　正面
+600600630 Ice [P/DE shared] Electric burn marks Extra large Front -- 氷　【ぺ/デ共用】　電気焼け跡　特大　正面
+600600640 Ice [P/DE shared] Electric burn marks extra large front -- 氷　【ぺ/デ共用】　電気焼け跡　特特大　正面
+600600700 Ice [P/DE shared] Artificial coral burnt scars Small front -- 氷　【ぺ/デ共用】　人工コーラル焼け跡　小　正面
+600700010 Snow [P/DE shared] Live bullet hole Medium front -- 雪　【ぺ/デ共用】　実弾弾痕　中　正面
+600700110 Snow [P/DE shared] Laser melting middle front -- 雪　【ぺ/デ共用】　レーザー融解　中　正面
+600700200 Snow [P/DE shared] Explosion scar small front -- 雪　【ぺ/デ共用】　爆発焼け跡　小　正面
+600700210 Snow [P/DE shared] Explosion burnout center front -- 雪　【ぺ/デ共用】　爆発焼け跡　中　正面
+600700220 Snow [P/DE shared] Explosion scar large front -- 雪　【ぺ/デ共用】　爆発焼け跡　大　正面
+600700230 Snow [Pe/De common use] Explosion burn scar extra large front -- 雪　【ぺ/デ共用】　爆発焼け跡　特大　正面
+600700240 Snow [Pe/De common use] Explosion burn scar extra large front -- 雪　【ぺ/デ共用】　爆発焼け跡　特特大　正面
+600700310 Snow [Shared with Pe/De] Coral Burnt Area Middle Front -- 雪　【ぺ/デ共用】　コーラル焼け跡　中　正面
+600700320 Snow [P/DE shared] Coral burnt scars Large front -- 雪　【ぺ/デ共用】　コーラル焼け跡　大　正面
+600700330 Snow [Pe/De common use] Coral burn marks extra large front -- 雪　【ぺ/デ共用】　コーラル焼け跡　特大　正面
+600700340 Snow [P/DE shared] Coral burnt scar Extra large Front -- 雪　【ぺ/デ共用】　コーラル焼け跡　特特大　正面
+600700410 Snow [P/DE shared] NE burnt ruins middle front -- 雪　【ぺ/デ共用】　NE焼け跡　中　正面
+600700510 Snow [P/DE shared] Napalm bullet burn mark, middle front -- 雪　【ぺ/デ共用】　ナパーム弾焼け跡　中　正面
+600700600 Snow [P/DE shared] Electric burn marks small front -- 雪　【ぺ/デ共用】　電気焼け跡　小　正面
+600700610 Snow [P/DE shared] Electric burn marks, middle front -- 雪　【ぺ/デ共用】　電気焼け跡　中　正面
+600700620 Snow [P/DE shared] Electric burn marks Large front -- 雪　【ぺ/デ共用】　電気焼け跡　大　正面
+600700630 Snow [P/DE shared] Electric burn marks extra large front -- 雪　【ぺ/デ共用】　電気焼け跡　特大　正面
+600700640 Snow [P/DE shared] Electric burn marks extra large front -- 雪　【ぺ/デ共用】　電気焼け跡　特特大　正面
+600700700 Snow [P/DE shared] Artificial coral burnt remains Small Front -- 雪　【ぺ/デ共用】　人工コーラル焼け跡　小　正面
+600800010 Cloth [P/DE shared] Live bullet holes, middle, front -- 布　【ぺ/デ共用】　実弾弾痕　中　正面
+600800110 Cloth [P/DE common use] Laser melting Medium front -- 布　【ぺ/デ共用】　レーザー融解　中　正面
+600800200 Cloth [Pe/De common use] Explosion scar small front -- 布　【ぺ/デ共用】　爆発焼け跡　小　正面
+600800210 Cloth [Pe/De common use] Explosion burn marks, middle, front -- 布　【ぺ/デ共用】　爆発焼け跡　中　正面
+600800220 Cloth [Pe/De common use] Explosion scar large front -- 布　【ぺ/デ共用】　爆発焼け跡　大　正面
+600800230 Cloth [Pe/De common use] Explosion burn scar extra large front -- 布　【ぺ/デ共用】　爆発焼け跡　特大　正面
+600800240 Cloth [Pe/De common use] Explosion burn scar extra large front -- 布　【ぺ/デ共用】　爆発焼け跡　特特大　正面
+600800310 Cloth [Pe/De common use] Coral burn marks, middle, front -- 布　【ぺ/デ共用】　コーラル焼け跡　中　正面
+600800320 Cloth [Pe/De common use] Coral burn marks Large Front -- 布　【ぺ/デ共用】　コーラル焼け跡　大　正面
+600800330 Cloth [Pe/De common use] Coral burn marks Extra large Front -- 布　【ぺ/デ共用】　コーラル焼け跡　特大　正面
+600800340 Cloth [Pe/De common use] Coral burn marks extra large front -- 布　【ぺ/デ共用】　コーラル焼け跡　特特大　正面
+600800410 Cloth [Pe/De common use] NE burn marks middle front -- 布　【ぺ/デ共用】　NE焼け跡　中　正面
+600800510 Cloth [Pe/De common use] Napalm bullet burn marks, middle, front -- 布　【ぺ/デ共用】　ナパーム弾焼け跡　中　正面
+600800600 Cloth [P/DE shared] Electric burn marks, small, front -- 布　【ぺ/デ共用】　電気焼け跡　小　正面
+600800610 Cloth [P/DE shared] Electric burn marks, middle, front -- 布　【ぺ/デ共用】　電気焼け跡　中　正面
+600800620 Cloth [P/DE shared] Electric burn marks large front -- 布　【ぺ/デ共用】　電気焼け跡　大　正面
+600800630 Cloth [P/DE shared] Electric burn marks Extra large Front -- 布　【ぺ/デ共用】　電気焼け跡　特大　正面
+600800640 Cloth [P/DE common use] Electric burn marks extra large front -- 布　【ぺ/デ共用】　電気焼け跡　特特大　正面
+600800700 Cloth [Pe/De common use] Artificial coral burn marks small front -- 布　【ぺ/デ共用】　人工コーラル焼け跡　小　正面
+601000010 Concrete [P/DE shared] Live bullet holes, middle front -- コンクリ　【ぺ/デ共用】　実弾弾痕　中　正面
+601000110 Concrete [P/DE common use] Laser melting middle front -- コンクリ　【ぺ/デ共用】　レーザー融解　中　正面
+601000200 Concrete [P/DE shared] Explosion scar small front -- コンクリ　【ぺ/デ共用】　爆発焼け跡　小　正面
+601000210 Concrete [P/DE shared] Explosion burnt area, middle front -- コンクリ　【ぺ/デ共用】　爆発焼け跡　中　正面
+601000220 Concrete [P/DE shared] Explosion burn scar large front -- コンクリ　【ぺ/デ共用】　爆発焼け跡　大　正面
+601000230 Concrete [Pe/De common use] Explosion burn scar extra large front -- コンクリ　【ぺ/デ共用】　爆発焼け跡　特大　正面
+601000240 Concrete [Pe/De common use] Explosion burn scar extra large front -- コンクリ　【ぺ/デ共用】　爆発焼け跡　特特大　正面
+601000310 Concrete [P/DE shared] Coral burn marks, middle front -- コンクリ　【ぺ/デ共用】　コーラル焼け跡　中　正面
+601000320 Concrete [P/DE shared] Coral burn marks Large front -- コンクリ　【ぺ/デ共用】　コーラル焼け跡　大　正面
+601000330 Concrete [Pe/De common use] Coral burn marks extra large front -- コンクリ　【ぺ/デ共用】　コーラル焼け跡　特大　正面
+601000340 Concrete [Pe/De common use] Coral burn marks extra large front -- コンクリ　【ぺ/デ共用】　コーラル焼け跡　特特大　正面
+601000410 Concrete [P/DE shared] NE burnt ruins middle front -- コンクリ　【ぺ/デ共用】　NE焼け跡　中　正面
+601000510 Concrete [P/DE shared] Napalm bullet burn marks, middle front -- コンクリ　【ぺ/デ共用】　ナパーム弾焼け跡　中　正面
+601000600 Concrete [P/DE shared] Electric burn marks small front -- コンクリ　【ぺ/デ共用】　電気焼け跡　小　正面
+601000610 Concrete [P/DE shared] Electric burn marks, middle front -- コンクリ　【ぺ/デ共用】　電気焼け跡　中　正面
+601000620 Concrete [P/DE shared] Electric burn marks large front -- コンクリ　【ぺ/デ共用】　電気焼け跡　大　正面
+601000630 Concrete [P/DE shared] Electric burn marks extra large front -- コンクリ　【ぺ/デ共用】　電気焼け跡　特大　正面
+601000640 Concrete [P/DE shared] Electric burn marks extra large front -- コンクリ　【ぺ/デ共用】　電気焼け跡　特特大　正面
+601000700 Concrete [P/DE shared] Artificial coral burnt scars Small front -- コンクリ　【ぺ/デ共用】　人工コーラル焼け跡　小　正面
+601100010 Iron [Pe/De common use] Live bullet hole Medium front -- 鉄　【ぺ/デ共用】　実弾弾痕　中　正面
+601100110 Iron [P/DE common use] Laser melting middle front -- 鉄　【ぺ/デ共用】　レーザー融解　中　正面
+601100200 Iron [Pe/De common use] Explosion burn scar small front -- 鉄　【ぺ/デ共用】　爆発焼け跡　小　正面
+601100210 Iron [P/DE shared] Explosion burnt area, middle front -- 鉄　【ぺ/デ共用】　爆発焼け跡　中　正面
+601100220 Iron [Pe/De common use] Explosion scar large front -- 鉄　【ぺ/デ共用】　爆発焼け跡　大　正面
+601100230 Iron [Pe/De common use] Explosion burn marks extra large front -- 鉄　【ぺ/デ共用】　爆発焼け跡　特大　正面
+601100240 Iron [Pe/De common use] Explosion burn marks extra large front -- 鉄　【ぺ/デ共用】　爆発焼け跡　特々大　正面
+601100310 Iron [Pe/De common use] Coral burnt remains Middle front -- 鉄　【ぺ/デ共用】　コーラル焼け跡　中　正面
+601100320 Iron [Pe/De common use] Coral burn marks Large front -- 鉄　【ぺ/デ共用】　コーラル焼け跡　大　正面
+601100330 Iron [Pe/De common use] Coral burn marks extra large front -- 鉄　【ぺ/デ共用】　コーラル焼け跡　特大　正面
+601100340 Iron [Pe/De common use] Coral burn marks extra large front -- 鉄　【ぺ/デ共用】　コーラル焼け跡　特特大　正面
+601100410 Iron [Pe/De common use] NE burnt ruins middle front -- 鉄　【ぺ/デ共用】　NE焼け跡　中　正面
+601100510 Iron [P/DE shared] Napalm bullet burn marks, middle, front -- 鉄　【ぺ/デ共用】　ナパーム弾焼け跡　中　正面
+601100600 Iron [P/DE shared] Electric burn marks small front -- 鉄　【ぺ/デ共用】　電気焼け跡　小　正面
+601100610 Iron [P/DE shared] Electric burn marks, middle front -- 鉄　【ぺ/デ共用】　電気焼け跡　中　正面
+601100620 Iron [P/DE shared] Electric burn marks large front -- 鉄　【ぺ/デ共用】　電気焼け跡　大　正面
+601100630 Iron [P/DE shared] Electric burn marks Extra large front -- 鉄　【ぺ/デ共用】　電気焼け跡　特大　正面
+601100640 Iron [P/DE shared] Electric burn marks extra large front -- 鉄　【ぺ/デ共用】　電気焼け跡　特特大　正面
+601100700 Iron [P/DE shared] Artificial coral burnt scars Small front -- 鉄　【ぺ/デ共用】　人工コーラル焼け跡　小　正面
+610000010 Shield iron [Pe/De common use] Live bullet hole Medium front -- 盾鉄　【ぺ/デ共用】　実弾弾痕　中　正面
+610000110 Shield iron [P/DE common use] Laser melting medium front -- 盾鉄　【ぺ/デ共用】　レーザー融解　中　正面
+610000210 Shield iron [Pe/De common use] Explosion burn mark, middle front -- 盾鉄　【ぺ/デ共用】　爆発焼け跡　中　正面
+610100010 Heavy iron shield [P/DE shared] Live bullet hole, middle front -- 盾重鉄　【ぺ/デ共用】　実弾弾痕　中　正面
+610100110 Shield heavy iron [P/DE shared] Laser melting medium front -- 盾重鉄　【ぺ/デ共用】　レーザー融解　中　正面
+610100210 Heavy iron shield [P/DE shared] Explosion burn mark, middle front -- 盾重鉄　【ぺ/デ共用】　爆発焼け跡　中　正面
+610300010 Body iron [P/DE shared] Live bullet hole Medium front -- 体鉄　【ぺ/デ共用】　実弾弾痕　中　正面
+610300110 Body iron [P/DE shared] Laser melting middle front -- 体鉄　【ぺ/デ共用】　レーザー融解　中　正面
+610300210 Body iron [P/DE shared] Explosion burn mark, middle front -- 体鉄　【ぺ/デ共用】　爆発焼け跡　中　正面
+610400010 Weight iron [P/DE shared] Live bullet hole, middle front -- 体重鉄　【ぺ/デ共用】　実弾弾痕　中　正面
+610400110 Weight iron [P/DE common use] Laser melting middle front -- 体重鉄　【ぺ/デ共用】　レーザー融解　中　正面
+610400210 Weight iron [P/DE shared] Explosion burnt area, middle front -- 体重鉄　【ぺ/デ共用】　爆発焼け跡　中　正面
+610500010 Body flesh [P/DE shared] Live bullet hole Medium front -- 体肉　【ぺ/デ共用】　実弾弾痕　中　正面
+610500110 Body flesh [P/DE shared] Laser melting Medium front -- 体肉　【ぺ/デ共用】　レーザー融解　中　正面
+610500210 Body/Flesh [Shared by Pe/De] Explosion burn marks Medium Front -- 体肉　【ぺ/デ共用】　爆発焼け跡　中　正面
+610600010 Body cloth [P/DE shared] Live bullet holes, middle front -- 体布　【ぺ/デ共用】　実弾弾痕　中　正面
+610600110 Body cloth [P/DE shared] Laser melting middle front -- 体布　【ぺ/デ共用】　レーザー融解　中　正面
+610600210 Body cloth [P/DE shared] Explosion burn marks, middle, front -- 体布　【ぺ/デ共用】　爆発焼け跡　中　正面

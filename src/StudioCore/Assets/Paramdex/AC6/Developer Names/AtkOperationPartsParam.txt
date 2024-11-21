@@ -1,0 +1,91 @@
+0 Completely independent -- 完全独立
+1 whole body -- 全身
+2 lower body -- 下半身
+3 upper body -- 上半身
+4 Shield-tickable attack -- 盾チク可能攻撃
+5 guard -- ガード
+6 shoulder -- 肩
+7 quick boost -- クイックブースト
+8 [Main unit] Death_Cancel only -- 【本体】死亡_キャンセルのみする
+9 [Main unit] Event animation_Cancel only -- 【本体】イベントアニメ_キャンセルのみする
+10 [Body] Damage_cancel only -- 【本体】ダメージ_キャンセルのみする
+11 [Body] Guard damage_cancel only -- 【本体】ガードダメージ_キャンセルのみする
+12 [Main unit] Move_Cancel only -- 【本体】移動_キャンセルのみする
+13 [Main Unit] Quick Boost_Cancel only -- 【本体】クイックブースト_キャンセルのみする
+14 [Main unit] Jump_Cancel only -- 【本体】ジャンプ_キャンセルのみする
+15 [Main unit] Landing_cancel only -- 【本体】着地_キャンセルのみする
+16 [Main body] Thud landing_cancel only -- 【本体】ドッスン着地_キャンセルのみする
+17 [Body] Reposition the guard_Cancel only -- 【本体】ガード構え直し_キャンセルのみする
+18 [Main unit] Start sliding on slope_Cancel only -- 【本体】斜面滑り開始_キャンセルのみする
+19 [Right hand] Recoil small fire -- 【右手】反動小射撃
+20 [Left hand] Recoil small fire -- 【左手】反動小射撃
+21 [Right hand] Shooting during recoil -- 【右手】反動中射撃
+22 [Left hand] Shooting during recoil -- 【左手】反動中射撃
+23 [Right hand] Large recoil shot -- 【右手】反動大射撃
+24 [Left hand] Large recoil shot -- 【左手】反動大射撃
+25 [Right hand] Charging -- 【右手】チャージ中
+26 [Left hand] Charging -- 【左手】チャージ中
+27 [Right hand] Reload -- 【右手】リロード
+28 [Left hand] Reload -- 【左手】リロード
+29 [Right hand] Switch weapons -- 【右手】武器切り替え
+30 [Left hand] Switch weapons -- 【左手】武器切り替え
+31 [Right hand] Purge -- 【右手】パージ
+32 [Left hand] Purge -- 【左手】パージ
+33 [Right shoulder] Small recoil shot -- 【右肩】反動小射撃
+34 [Left shoulder] Recoil small fire -- 【左肩】反動小射撃
+35 [Right shoulder] Shooting during recoil -- 【右肩】反動中射撃
+36 [Left shoulder] Shooting during recoil -- 【左肩】反動中射撃
+37 [Right shoulder] Large recoil shot -- 【右肩】反動大射撃
+38 [Left shoulder] Large recoil shot -- 【左肩】反動大射撃
+39 [Attack] Guard -- 【攻撃】ガード
+40 [Fighting] Fighting attack -- 【格闘】格闘攻撃
+41 [Fighting] Fighting Charge -- 【格闘】格闘チャージ
+42 [Fighting] Charging -- 【格闘】チャージ中
+43 [Special] Assault Boost -- 【特殊】アサルトブースト
+44 [Right shoulder] Charging -- 【右肩】チャージ中
+45 [Left shoulder] Charging -- 【左肩】チャージ中
+46 [Right hand] Upper body recoil large shot -- 【右手】上半身反動大射撃
+47 [Left hand] Upper body recoil large shot -- 【左手】上半身反動大射撃
+48 [Both shoulders] Start shooting during recoil_Cancel only -- 【両肩】反動中射撃開始_キャンセルのみする
+49 [Both shoulders] Start large recoil fire_Cancel only -- 【両肩】反動大射撃開始_キャンセルのみする
+50 [Right shoulder] Shoulder weapon simultaneous shooting_one half -- 【右肩】肩武器同時射撃_片割れ
+51 [Left shoulder] Shoulder weapon simultaneous shooting_one half -- 【左肩】肩武器同時射撃_片割れ
+52 [Right hand] Multi-lock in progress -- 【右手】マルチロック中
+53 [Left hand] Multi-lock in progress -- 【左手】マルチロック中
+54 [Right shoulder] During multi-lock -- 【右肩】マルチロック中
+55 [Left shoulder] During multi-lock -- 【左肩】マルチロック中
+56 [Right shoulder] Minimal recoil shooting -- 【右肩】反動極小射撃
+57 [Left shoulder] Minimal recoil shooting -- 【左肩】反動極小射撃
+58 [Right hand] Minimal recoil shooting -- 【右手】反動極小射撃
+59 [Left hand] Minimal recoil shooting -- 【左手】反動極小射撃
+60 [Attack] Omnidirectional Guard -- 【攻撃】全方位ガード
+61 [Right hand] Quick turn before attack -- 【右手】攻撃前クイックターン
+62 [Left hand] Quick turn before attack -- 【左手】攻撃前クイックターン
+63 [Right shoulder] Quick turn before attack -- 【右肩】攻撃前クイックターン
+64 [Left shoulder] Quick turn before attack -- 【左肩】攻撃前クイックターン
+65 [Right shoulder] Exceed Orbit -- 【右肩】イクシードオービット
+66 [Left shoulder] Exceed Orbit -- 【左肩】イクシードオービット
+67 [Right hand] Shoulder weapon interference avoidance_Condition reference only -- 【右手】肩武器干渉回避_条件参照のみ
+68 [Left hand] Shoulder weapon interference avoidance_Condition reference only -- 【左手】肩武器干渉回避_条件参照のみ
+69 [Attack] Release guard -- 【攻撃】ガード解除
+70 [Right shoulder] Shooting during recoil_after cancellation -- 【右肩】反動中射撃_キャンセル後
+71 [Left shoulder] Shooting during recoil_after cancellation -- 【左肩】反動中射撃_キャンセル後
+72 [Main unit] Assault boost_cancel only -- 【本体】アサルトブースト_キャンセルのみする
+73 [Right hand] Waiting for cancellation of Asabu -- 【右手】アサブキャンセル待ち
+74 [Left hand] Waiting for Asabu cancellation -- 【左手】アサブキャンセル待ち
+75 [Right shoulder] Asabu waiting for cancellation -- 【右肩】アサブキャンセル待ち
+76 [Left shoulder] Asabu waiting for cancellation -- 【左肩】アサブキャンセル待ち
+100 Enemy base_completely independent -- 敵ベース_完全独立
+101 Enemy base_whole body -- 敵ベース_全身
+102 Enemy base_lower body -- 敵ベース_下半身
+103 Enemy base_upper body -- 敵ベース_上半身
+104 Enemy base_shield tick possible attack -- 敵ベース_盾チク可能攻撃
+105 enemy base_guard -- 敵ベース_ガード
+106 enemy base_shoulder -- 敵ベース_肩
+107 Enemy base_quick boost -- 敵ベース_クイックブースト
+108 Enemy base_guard damage -- 敵ベース_ガードダメージ
+109 Enemy base_special attack part 01 -- 敵ベース_特殊攻撃部位01
+110 Enemy base_special attack part 02 -- 敵ベース_特殊攻撃部位02
+111 Enemy base_special attack part 03 -- 敵ベース_特殊攻撃部位03
+112 Enemy base_Quick boost [Left arm duration] -- 敵ベース_クイックブースト【左腕持続】
+113 Enemy base_quick boost [right arm duration] -- 敵ベース_クイックブースト【右腕持続】

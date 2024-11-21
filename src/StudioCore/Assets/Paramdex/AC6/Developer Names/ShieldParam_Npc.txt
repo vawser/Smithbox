@@ -1,0 +1,5 @@
+0 test -- テスト
+10 test 2 -- テスト2
+3300 Ghost MT (PA) PA -- ゴーストMT（PA）PA
+4150 Special attack MT (PA) PA -- 特攻MT（PA）PA
+6050 Pharaon PA -- ファラオンPA

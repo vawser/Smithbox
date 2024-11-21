@@ -1,0 +1,691 @@
+10 wall slam damage -- 壁叩きつけダメージ
+101 [System] Attack magnification for menu display -- 【システム】メニュー表示用攻撃倍率
+700 [Bipod] Contact damage determination for enemies_walking/running -- 【二脚】敵用接触ダメージ判定_歩行・走行
+701 [Bipod] Enemy contact damage determination_Ground boost -- 【二脚】敵用接触ダメージ判定_地上ブースト
+702 [Bipod] Enemy contact damage judgment_Quick boost -- 【二脚】敵用接触ダメージ判定_クイックブースト
+703 [Bipod] Enemy contact damage judgment_Large QB -- 【二脚】敵用接触ダメージ判定_大ＱＢ
+704 [Bipod] Enemy contact damage judgment_brake -- 【二脚】敵用接触ダメージ判定_ブレーキ
+705 [Bipod] Enemy contact damage judgment_jump -- 【二脚】敵用接触ダメージ判定_ジャンプ
+706 [Bipod] Enemy contact damage determination_Falling -- 【二脚】敵用接触ダメージ判定_落下
+707 [Bipod] Enemy contact damage judgment_Flight boost -- 【二脚】敵用接触ダメージ判定_飛行ブースト
+708 [Bipod] Enemy contact damage judgment_landing -- 【二脚】敵用接触ダメージ判定_着地
+709 [Bipod] Enemy contact damage determination_Assault boost -- 【二脚】敵用接触ダメージ判定_アサルトブースト
+710 [Bipod] Enemy contact damage judgment_Stagger -- 【二脚】敵用接触ダメージ判定_よろけ
+711 [Bipod] Contact damage judgment for enemy_Stagger (while being blown away) -- 【二脚】敵用接触ダメージ判定_よろけ（吹っ飛び中）
+712 [Bipod] Enemy contact damage judgment_kick -- 【二脚】敵用接触ダメージ判定_キック
+729 [Reverse joint] Enemy contact damage judgment_Assault boost -- 【逆関節】敵用接触ダメージ判定_アサルトブースト
+732 [Reverse joint] Enemy contact damage judgment_kick -- 【逆関節】敵用接触ダメージ判定_キック
+740 [Quadruped] Contact damage determination for enemies_walking/running -- 【四脚】敵用接触ダメージ判定_歩行・走行
+741 [Quadruped] Enemy contact damage determination_Ground boost -- 【四脚】敵用接触ダメージ判定_地上ブースト
+742 [Quadruped] Enemy contact damage judgment_Quick boost -- 【四脚】敵用接触ダメージ判定_クイックブースト
+743 [Quadruped] Enemy contact damage judgment_Large QB -- 【四脚】敵用接触ダメージ判定_大ＱＢ
+744 [Quadruped] Enemy contact damage determination_Brake -- 【四脚】敵用接触ダメージ判定_ブレーキ
+745 [Quadruped] Contact damage judgment for enemies_Jump -- 【四脚】敵用接触ダメージ判定_ジャンプ
+746 [Quadruped] Contact damage judgment for enemy_Falling -- 【四脚】敵用接触ダメージ判定_落下
+747 [Quadruped] Enemy contact damage judgment_Flight boost -- 【四脚】敵用接触ダメージ判定_飛行ブースト
+748 [Quadruped] Contact damage judgment for enemy_landing -- 【四脚】敵用接触ダメージ判定_着地
+749 [Quadruped] Enemy contact damage judgment_Assault boost -- 【四脚】敵用接触ダメージ判定_アサルトブースト
+750 [Quadruped] Contact damage judgment for enemies_Stagger -- 【四脚】敵用接触ダメージ判定_よろけ
+751 [Quadruped] Contact damage judgment for enemies_Stagger (while being blown away) -- 【四脚】敵用接触ダメージ判定_よろけ（吹っ飛び中）
+752 [Quadruped] Contact damage judgment for enemies_Kick -- 【四脚】敵用接触ダメージ判定_キック
+760 [Tank] Enemy contact damage determination_walking/running -- 【タンク】敵用接触ダメージ判定_歩行・走行
+761 [Tank] Enemy contact damage determination_Ground boost -- 【タンク】敵用接触ダメージ判定_地上ブースト
+762 [Tank] Enemy contact damage judgment_Quick boost -- 【タンク】敵用接触ダメージ判定_クイックブースト
+763 [Tank] Enemy contact damage judgment_Large QB -- 【タンク】敵用接触ダメージ判定_大ＱＢ
+764 [Tank] Enemy contact damage judgment_brake -- 【タンク】敵用接触ダメージ判定_ブレーキ
+765 [Tank] Enemy contact damage judgment_Jump -- 【タンク】敵用接触ダメージ判定_ジャンプ
+766 [Tank] Enemy contact damage determination_Falling -- 【タンク】敵用接触ダメージ判定_落下
+767 [Tank] Enemy contact damage judgment_Flight boost -- 【タンク】敵用接触ダメージ判定_飛行ブースト
+768 [Tank] Enemy contact damage judgment_landing -- 【タンク】敵用接触ダメージ判定_着地
+769 [Tank] Enemy contact damage determination_Assault boost -- 【タンク】敵用接触ダメージ判定_アサルトブースト
+770 [Tank] Enemy contact damage judgment_Stagger -- 【タンク】敵用接触ダメージ判定_よろけ
+771 [Tank] Enemy contact damage judgment_Stagger (while being blown away) -- 【タンク】敵用接触ダメージ判定_よろけ（吹っ飛び中）
+772 [Tank] Enemy contact damage judgment_Kick -- 【タンク】敵用接触ダメージ判定_キック
+773 [Tank] Enemy contact damage determination_Kick boost push aside -- 【タンク】敵用接触ダメージ判定_キック後押しのけ
+998 [TEST] For determining rising boost activation EN consumption -- 【TEST】上昇ブースト発動EN消費判定用
+999 [TEST] For determining continuous EN consumption during rising boost -- 【TEST】上昇ブースト中継続EN消費判定用
+1010 [Proto] Right hand B_Attack 2 -- 【プロト】右手B_攻撃2
+1020 [Proto] Right hand B_Attack 3 -- 【プロト】右手B_攻撃3
+1030 [Proto] Right hand B_Attack 4 -- 【プロト】右手B_攻撃4
+1040 [Proto] Right hand B_Attack 5 -- 【プロト】右手B_攻撃5
+1050 [Proto] Right hand B_dash attack -- 【プロト】右手B_ダッシュ攻撃
+1060 [Proto] Right hand B_Attack from guard -- 【プロト】右手B_ガードからの攻撃
+1070 [Proto] Right hand B_ Rifle throwing grip -- 【プロト】右手B_ライフル投げつかみ
+1075 [Proto] Right hand B_Blade throwing grab -- 【プロト】右手B_ブレード投げつかみ
+1100 [FNR] Blade_Slash attack ① -- 【FNR】ブレード_斬り攻撃①
+1110 [FNR] Blade_Slash attack ② -- 【FNR】ブレード_斬り攻撃②
+1150 [FNR] Blade_Charged attack -- 【FNR】ブレード_溜め攻撃
+1200 [FNR] Blade_Front thrust -- 【FNR】ブレード_正面突き
+1220 [FNR] Blade_Left movement attack -- 【FNR】ブレード_左移動攻撃
+1230 [FNR] Blade_Right movement attack -- 【FNR】ブレード_右移動攻撃
+1240 [FNR] Blade_Cut up -- 【FNR】ブレード_斬り上げ
+1260 [FNR] Blade_Rotating Slash -- 【FNR】ブレード_回転斬り
+1400 [Proto] Weapon transformation attack (A⇒B) -- 【プロト】武器変形攻撃（Ａ⇒Ｂ）
+1410 [Proto] Weapon transformation attack (B⇒A) -- 【プロト】武器変形攻撃（Ｂ⇒Ａ）
+1500 [Proto] Shield Charge -- 【プロト】シールドチャージ
+1700 [Proto] Throwing attack (one hand)_Piercing -- 【プロト】投げ攻撃（片手）_突き刺し
+1701 [Proto] Throwing attack (one hand)_1st shot -- 【プロト】投げ攻撃（片手）_1発目
+1702 [Proto] Throwing attack (one hand)_2nd shot -- 【プロト】投げ攻撃（片手）_2発目
+1703 [Proto] Throwing attack (one hand)_3rd shot -- 【プロト】投げ攻撃（片手）_3発目
+1710 [Proto] Throwing attack (both hands) -- 【プロト】投げ攻撃（両手）
+1790 [Proto] SA break throw attack_1st stage -- 【プロト】SAブレイク投げ攻撃_1段目
+1791 [Proto] SA break throw attack_2nd stage -- 【プロト】SAブレイク投げ攻撃_2段目
+1792 [Proto] Stealth throwing attack_1st stage -- 【プロト】ステルス投げ攻撃_1段目
+1793 [Proto] Stealth throwing attack_2nd stage -- 【プロト】ステルス投げ攻撃_2段目
+1795 [Proto] Rifle throwing attack 2 -- 【プロト】ライフル投げ攻撃2
+1800 [Proto] Tank_QB attack -- 【プロト】タンク_QBアタック
+1810 [Proto] Tank_QB Stomp -- 【プロト】タンク_QBストンプ
+1990 [Proto] Weapon transformation shooting -- 【プロト】武器変形射撃
+2000 [Proto] Assault Rifle -- 【プロト】アサルトライフル
+2010 [Proto] Silencer Rifle -- 【プロト】サイレンサーライフル
+2020 [Proto] Guided bullet rifle -- 【プロト】誘導弾ライフル
+2030 [Proto] Rifle -- 【プロト】ライフル
+2100 [Proto] Shotgun -- 【プロト】ショットガン
+2200 [Proto] Machine gun -- 【プロト】マシンガン
+2300 [Proto] Bazooka -- 【プロト】バズーカ
+2310 [Proto] Bazooka_Burning test -- 【プロト】バズーカ_燃焼テスト
+2400 [Proto] Handgun -- 【プロト】ハンドガン
+2500 [Proto] Suna -- 【プロト】スナ
+2600 [Proto] Canon -- 【プロト】キャノン
+2601 [Proto] Cannon (explosion) -- 【プロト】キャノン（爆発）
+2700 [Proto] Laser -- 【プロト】レーザー
+2710 [Proto]Railgun -- 【プロト】レールガン
+2720 [Proto] Railgun (bullet after charging) -- 【プロト】レールガン（チャージ後弾丸）
+2800 [Proto] Combined Weapon_Railgun -- 【プロト】合体武器_レールガン
+2900 [Proto] Laser Whip -- 【プロト】レーザーウィップ
+2901 [Proto] Laser whip (equipment location: left hand 1) -- 【プロト】レーザーウィップ（装備個所：左手1）
+2910 [Proto] Chain Hammer ① -- 【プロト】チェインハンマー①
+2911 [Proto] Chain Hammer ② -- 【プロト】チェインハンマー②
+3000 [Proto] EN Shield_Assault Armor -- 【プロト】EN盾_アサルトアーマー
+3100 [Proto] Vertical missile -- 【プロト】垂直ミサイル
+3101 [Proto] Vertical missile (explosion) -- 【プロト】垂直ミサイル（爆発）
+3110 [Proto] 2-stage launch missile -- 【プロト】2段階発射ミサイル
+3111 [Proto] 2-stage launch missile (explosion) -- 【プロト】2段階発射ミサイル（爆発）
+3120 [Proto] Short-range missile -- 【プロト】近距離型ミサイル
+3121 [Proto] Short-range missile (explosion) -- 【プロト】近距離型ミサイル（爆発）
+3130 [Proto] Point-specific missile -- 【プロト】地点指定型ミサイル
+3131 [Proto] Point-specific missile (explosion) -- 【プロト】地点指定型ミサイル（爆発）
+3140 [Proto] AI missile -- 【プロト】AIミサイル
+3141 [Proto] AI missile (explosion) -- 【プロト】AIミサイル（爆発）
+3150 [Proto] Orbit Cannon Missile -- 【プロト】オービットキャノンミサイル
+3151 [Proto] Orbit Cannon Missile (launch bullet) -- 【プロト】オービットキャノンミサイル（発射弾丸）
+3160 [Proto] Surface control missile -- 【プロト】面制圧型ミサイル
+3161 [Proto] Surface control missile (explosion) -- 【プロト】面制圧型ミサイル（爆発）
+4000 [Proto] Stealth Shield_Guard Break Self-Inflicted Attack -- 【プロト】ステルス盾_ガードブレイク自傷攻撃
+5900 [Proto] Rezarai (high laser after charging) -- 【プロト】レザライ（チャージ後ハイレーザー）
+5910 [Proto] Rezarai (shotgun after charging) -- 【プロト】レザライ（チャージ後ショットガン）
+5920 [Proto] Rezarai (plasma gun after charging) -- 【プロト】レザライ（チャージ後プラズマガン）
+5921 [Proto] Reza Rai (Plasma gun_explosion after charging) -- 【プロト】レザライ（チャージ後プラズマガン_爆発）
+7000 [Proto] Core special function_Assault armor_Explosive body -- 【プロト】コア特殊機能_アサルトアーマー_爆発本体
+7001 [Proto] Core special function_Assault armor_Shockwave -- 【プロト】コア特殊機能_アサルトアーマー_衝撃波
+8000 Guard time_PA damage (tentative) -- ガード時_PAダメージ（仮）
+9000 [Proto] Barrier for own aircraft -- 【プロト】自機用バリア
+9100 [Proto] RECON -- 【プロト】RECON
+9101 [Proto] RECON (ground adsorption) -- 【プロト】RECON（地面吸着）
+9200 [Proto] Smoke grenade_bullet -- 【プロト】スモークグレネード_弾丸
+9201 [Proto] Smoke Grenade_Smoke -- 【プロト】スモークグレネード_煙
+9300 [Proto] Flare -- 【プロト】フレア
+9901 [Test] Rifle -- 【テスト】ライフル
+9902 [Test] Chain Hammer ① -- 【テスト】チェインハンマー①
+9903 [Test] Aerial_Blade attack 1 -- 【テスト】空中_ブレード攻撃1
+9904 [Test] Aerial_Blade attack 2 -- 【テスト】空中_ブレード攻撃2
+9905 [Test] Blade charge attack -- 【テスト】ブレード溜め攻撃
+9990 [Item Test] Throwing Orbit -- 【アイテムテスト】投擲オービット
+9991 Ground effect judgment [map] -- グラウンドエフェクト判定【マップ】
+9992 Ground effect judgment [own machine] -- グラウンドエフェクト判定【自機】
+100600 [Proto] Enemy missile test -- 【プロト】敵ミサイルテスト
+1111090 [Proto] Barrier -- 【プロト】バリア
+3000000 Blade_Light attack ① -- ブレード_弱攻撃①
+3000010 Blade_Light attack ② -- ブレード_弱攻撃②
+3000100 Blade_Strong attack -- ブレード_強攻撃
+3100000 Laser whip_light attack ① -- レーザーウィップ_弱攻撃①
+3100010 Laser whip_light attack ② -- レーザーウィップ_弱攻撃②
+3100020 Laser whip_light attack ③ -- レーザーウィップ_弱攻撃③
+3100100 Laser whip_strong attack -- レーザーウィップ_強攻撃
+3200000 Chain Hammer_Light Attack ① -- チェインハンマー_弱攻撃①
+3200010 Chain hammer_light attack ② -- チェインハンマー_弱攻撃②
+3200100 Chain hammer_strong attack -- チェインハンマー_強攻撃
+3300000 Pile_Light attack ① -- パイル_弱攻撃①
+3300100 Pile_Strong attack ①-1 -- パイル_強攻撃①-1
+3300101 Pile_Strong attack ①-2 -- パイル_強攻撃①-2
+3310000 Explosive pile_light attack ① -- 爆裂パイル_弱攻撃①
+3310100 Explosive pile_strong attack ①-1 -- 爆裂パイル_強攻撃①-1
+3310101 Explosive pile_strong attack ①-2 -- 爆裂パイル_強攻撃①-2
+3310102 Explosive pile_strong attack ①-3 -- 爆裂パイル_強攻撃①-3
+3400000 PA Breaker_Weak Attack① -- PAブレイカー_弱攻撃①
+3400010 PA Breaker_Weak attack ② -- PAブレイカー_弱攻撃②
+3400020 PA Breaker_Weak Attack③ -- PAブレイカー_弱攻撃③
+3400030 PA Breaker_Weak Attack④ -- PAブレイカー_弱攻撃④
+3400040 PA Breaker_Weak Attack⑤ -- PAブレイカー_弱攻撃⑤
+3400100 PA Breaker_Strong attack ① -- PAブレイカー_強攻撃①
+3400110 PA Breaker_Strong attack ② -- PAブレイカー_強攻撃②
+3400120 PA Breaker_Strong attack ③ -- PAブレイカー_強攻撃③
+3500000 Plasma broadsword_light attack ① -- プラズマブロードソード_弱攻撃①
+3500010 Plasma broadsword_weak attack ② -- プラズマブロードソード_弱攻撃②
+3500020 Plasma broadsword_weak attack③ -- プラズマブロードソード_弱攻撃③
+3500100 Plasma broadsword_strong attack -- プラズマブロードソード_強攻撃
+3600000 Beam naginata_light attack ① -- ビーム薙刀_弱攻撃①
+3600010 Beam naginata_light attack ② -- ビーム薙刀_弱攻撃②
+3600020 Beam naginata_light attack ③ -- ビーム薙刀_弱攻撃③
+3600030 Beam naginata_light attack ④ -- ビーム薙刀_弱攻撃④
+3600100 Beam naginata_strong attack ① -- ビーム薙刀_強攻撃①
+3600110 Beam naginata_strong attack ② -- ビーム薙刀_強攻撃②
+3600120 Beam Naginata_Strong attack ③ -- ビーム薙刀_強攻撃③
+3700000 Light continuous thrust rapier_light attack ① -- 軽量連突きレイピア_弱攻撃①
+3700010 Light continuous thrust rapier_light attack ② -- 軽量連突きレイピア_弱攻撃②
+3700020 Light continuous thrust rapier_weak attack ③ -- 軽量連突きレイピア_弱攻撃③
+3700100 Light continuous thrust rapier_strong attack -- 軽量連突きレイピア_強攻撃
+3800000 Laser Lance_Rushing -- レーザーランス_突進中
+3800010 Laser Lance_Rush finish, interruption derivative -- レーザーランス_突進フィニッシュ、中断派生
+3800020 Laser Lance_Light Attack ③ -- レーザーランス_弱攻撃③
+3800100 Laser Lance_Strong attack -- レーザーランス_強攻撃
+3900000 Chainsaw_pushing loop -- チェーンソー_押し当てループ
+3900010 Chainsaw_cut through -- チェーンソー_斬り抜け
+3900020 Chainsaw_Light attack ③ -- チェーンソー_弱攻撃③
+3900100 Chainsaw_Strong attack -- チェーンソー_強攻撃
+4000000 Dagger_Light attack① -- ダガー_弱攻撃①
+4000010 Dagger_Light attack ② -- ダガー_弱攻撃②
+4000020 Dagger_Light attack③ -- ダガー_弱攻撃③
+4000030 Dagger_light attack_interruption derivative -- ダガー_弱攻撃_中断派生
+4000100 Dagger_Strong attack① -- ダガー_強攻撃①
+4100000 Electromagnetic baton_light attack ① -- 電磁警棒_弱攻撃①
+4100010 Electromagnetic baton_light attack ② -- 電磁警棒_弱攻撃②
+4100020 Electromagnetic baton_light attack ③ -- 電磁警棒_弱攻撃③
+4100030 Electromagnetic baton_light attack ④ -- 電磁警棒_弱攻撃④
+4100040 Electromagnetic baton_light attack⑤ -- 電磁警棒_弱攻撃⑤
+4100100 Electromagnetic baton_strong attack ① -- 電磁警棒_強攻撃①
+4100110 Electromagnetic baton_strong attack ② -- 電磁警棒_強攻撃②
+4100120 Electromagnetic baton_strong attack③ -- 電磁警棒_強攻撃③
+5000000 rifle -- ライフル
+5010000 assault rifle -- アサルトライフル
+5020000 machine gun -- マシンガン
+5030000 gatling gun -- ガトリングガン
+5040000 bazooka -- バズーカ
+5040010 Bazooka (explosion) -- バズーカ（爆発）
+5050000 shotgun -- ショットガン
+5060000 hand missile -- ハンドミサイル
+5070000 hand rocket -- ハンドロケット
+5070010 Hand rocket (explosion) -- ハンドロケット（爆発）
+5080000 grenade rifle -- グレネードライフル
+5080010 Grenade rifle (explosive) -- グレネードライフル（爆発）
+5090000 laser rifle -- レーザーライフル
+5090100 Laser rifle (charge) -- レーザーライフル（チャージ）
+5100000 plasma rifle -- プラズマライフル
+5100010 Plasma rifle (explosion) -- プラズマライフル（爆発）
+5110000 hand gun -- ハンドガン
+5120000 large caliber hand gun -- 大口径ハンドガン
+5130000 vibrating pulse rifle -- 振動パルスライフル
+5140000 flamethrower -- 火炎放射器
+5140001 Flamethrower (spread) -- 火炎放射器（拡散）
+5150000 irradiation laser -- 照射レーザー
+5160000 bolt action rifle -- ボルトアクションライフル
+5170000 3 point burst rifle -- 3点バーストライフル
+5180000 [test] Semi-auto rifle (with charge shot) -- 【test】セミオートライフル（チャージショットあり）
+5180100 [Test] Semi-auto rifle (with charge shot)_After charging: 3 point burst -- 【test】セミオートライフル（チャージショットあり）_チャージ後：3点バースト
+5600000 [Test] Simultaneous hit confirmed weapon_Splitting missile (right shoulder)_Parent bullet -- 【test】同時hit確認武器_分裂ミサイル（右肩）_親弾丸
+5600001 [Test] Simultaneous hit confirmed weapon_Splitting missile (right shoulder)_Subbullet -- 【test】同時hit確認武器_分裂ミサイル（右肩）_子弾丸
+5600002 [Test] Simultaneous hit confirmed weapon_Splitting missile (right shoulder)_Ball explosion -- 【test】同時hit確認武器_分裂ミサイル（右肩）_球爆発
+5601000 [Test] Simultaneous hit confirmed weapon_double splitting missile (right shoulder)_parent bullet -- 【test】同時hit確認武器_2連分裂ミサイル（右肩）_親弾丸
+5601001 [Test] Simultaneous hit confirmed weapon_Double splitting missile (right shoulder)_Subbullet -- 【test】同時hit確認武器_2連分裂ミサイル（右肩）_子弾丸
+5601002 [Test] Simultaneous hit confirmed weapon_Dual fission missile (right shoulder)_Ball explosion -- 【test】同時hit確認武器_2連分裂ミサイル（右肩）_球爆発
+5602000 [Test] Simultaneous hit confirmed weapon_Splitting missile (left shoulder)_Parent bullet -- 【test】同時hit確認武器_分裂ミサイル（左肩）_親弾丸
+5602001 [Test] Simultaneous hit confirmed weapon _ Split missile (left shoulder) _ Sub-bullet -- 【test】同時hit確認武器_分裂ミサイル（左肩）_子弾丸
+5602002 [Test] Simultaneous hit confirmed weapon_Splitting missile (left shoulder)_Ball explosion -- 【test】同時hit確認武器_分裂ミサイル（左肩）_球爆発
+5603000 [Test] Simultaneous hit confirmed weapon_double splitting missile (left shoulder)_parent bullet -- 【test】同時hit確認武器_2連分裂ミサイル（左肩）_親弾丸
+5603001 [Test] Simultaneous hit confirmed weapon_Double splitting missile (left shoulder)_Subbullet -- 【test】同時hit確認武器_2連分裂ミサイル（左肩）_子弾丸
+5603002 [Test] Simultaneous hit confirmed weapon_Double splitting missile (left shoulder)_Ball explosion -- 【test】同時hit確認武器_2連分裂ミサイル（左肩）_球爆発
+5900000 [Test] Linear Rifle_3x critical when staggered -- 【test】リニアライフル_よろけ時クリティカル3倍
+5900100 [Test] Linear rifle_Critical rate x3 when staggered_Charge shooting -- 【test】リニアライフル_よろけ時クリティカル3倍_チャージ射撃
+5910000 [Test] PA Breaker_Critical x3 when staggered_Weak attack ① -- 【test】PAブレイカー_よろけ時クリティカル3倍_弱攻撃①
+5910010 [Test] PA Breaker_3x critical when staggered_Weak attack ② -- 【test】PAブレイカー_よろけ時クリティカル3倍_弱攻撃②
+5910100 [Test] PA Breaker_Critical x3 when staggered_Strong attack ① -- 【test】PAブレイカー_よろけ時クリティカル3倍_強攻撃①
+5910110 [Test] PA Breaker_Critical x3 when staggered_Strong attack ② -- 【test】PAブレイカー_よろけ時クリティカル3倍_強攻撃②
+6010000 Weapon arm_Rockman style: Right hand ①_Machine gun -- 武器腕_ロックマン式：右手①_マシンガン
+6010001 Weapon arm_Rockman style: Right hand①_Machine gun_Precision shooting -- 武器腕_ロックマン式：右手①_マシンガン_精密射撃
+6011005 Weapon arm_Rockman style: Right hand ②_Bazooka -- 武器腕_ロックマン式：右手②_バズーカ
+6011006 Weapon arm_Rockman style: Right hand②_Bazooka_Precision shooting -- 武器腕_ロックマン式：右手②_バズーカ_精密射撃
+6015000 Weapon arm_Rockman style: Left hand ①_Machine gun -- 武器腕_ロックマン式：左手①_マシンガン
+6015001 Weapon arm_Rockman style: Left hand ①_Machine gun_Precision shooting -- 武器腕_ロックマン式：左手①_マシンガン_精密射撃
+6016005 Weapon arm_Rockman style: Left hand ②_Bazooka -- 武器腕_ロックマン式：左手②_バズーカ
+6016006 Weapon arm_Rockman style: Left hand ②_Bazooka_Precision shooting -- 武器腕_ロックマン式：左手②_バズーカ_精密射撃
+6020000 Weapon Arm_Shoulder joint: Right hand①_Machine gun -- 武器腕_肩関節：右手①_マシンガン
+6020001 Weapon Arm_Shoulder joint: Right hand①_Machine gun_Precision shooting -- 武器腕_肩関節：右手①_マシンガン_精密射撃
+6021005 Weapon Arm_Shoulder joint: Right hand②_Bazooka -- 武器腕_肩関節：右手②_バズーカ
+6021006 Weapon Arm_Shoulder joint: Right hand②_Bazooka_Precision shooting -- 武器腕_肩関節：右手②_バズーカ_精密射撃
+6025000 Weapon Arm_Shoulder joint: Left hand ①_Machine gun -- 武器腕_肩関節：左手①_マシンガン
+6025001 Weapon Arm_Shoulder joint: Left hand①_Machine gun_Precision shooting -- 武器腕_肩関節：左手①_マシンガン_精密射撃
+6026005 Weapon arm_shoulder joint: left hand ②_bazooka -- 武器腕_肩関節：左手②_バズーカ
+6026006 Weapon arm_shoulder joint: left hand ②_bazooka_precision shooting -- 武器腕_肩関節：左手②_バズーカ_精密射撃
+7900000 [test] Hand gun for damage performance confirmation (DL_1) -- 【test】ダメージ演技確認用ハンドガン（DL_1）
+7901000 [test] Hand gun for damage performance confirmation (DL_2) -- 【test】ダメージ演技確認用ハンドガン（DL_2）
+7902000 [test] Hand gun for damage performance confirmation (DL_3) -- 【test】ダメージ演技確認用ハンドガン（DL_3）
+7903000 [test] Handgun for damage performance confirmation (DL_4) -- 【test】ダメージ演技確認用ハンドガン（DL_4）
+7904000 [test] Handgun for damage performance confirmation (DL_5) -- 【test】ダメージ演技確認用ハンドガン（DL_5）
+7905000 [test] Hand gun for damage performance confirmation (DL_6) -- 【test】ダメージ演技確認用ハンドガン（DL_6）
+7910000 [Test] For checking damage performance (impact value)_Machine gun (DL1: stage addition) -- 【test】ダメージ演技確認用（衝撃値）_マシンガン（DL1：段階加算）
+7911000 [Test] For checking damage performance (impact value)_Pulse gun (DL1: stage addition) -- 【test】ダメージ演技確認用（衝撃値）_パルスガン（DL1：段階加算）
+7912000 [Test] For checking damage performance (impact value)_Handgun (DL1: 100% addition) -- 【test】ダメージ演技確認用（衝撃値）_ハンドガン（DL1：100%加算）
+7913000 [Test] For checking damage performance (impact value)_Plasma rifle (DL1: 100% addition) -- 【test】ダメージ演技確認用（衝撃値）_プラズマライフル（DL1：100%加算）
+7913005 [Test] For checking damage performance (impact value)_Plasma rifle (explosion) (DL1: 100% addition) -- 【test】ダメージ演技確認用（衝撃値）_プラズマライフル（爆発）（DL1：100%加算）
+7914000 [Test] For checking damage performance (impact value)_Semi-automatic rifle (DL2: Stop hit) -- 【test】ダメージ演技確認用（衝撃値）_セミオートライフル（DL2：被弾ストップ）
+7914100 [Test] For checking damage performance (impact value)_Semi-automatic rifle_Charge shooting (DL2: Stop being hit) -- 【test】ダメージ演技確認用（衝撃値）_セミオートライフル_チャージ射撃（DL2：被弾ストップ）
+7915000 [Test] For checking damage performance (impact value)_Laser rifle (DL2: Stop being hit) -- 【test】ダメージ演技確認用（衝撃値）_レーザーライフル（DL2：被弾ストップ）
+7915100 [Test] For checking damage performance (impact value)_Laser rifle_Charge shooting (DL2: Stop being hit) -- 【test】ダメージ演技確認用（衝撃値）_レーザーライフル_チャージ射撃（DL2：被弾ストップ）
+7916000 [Test] For checking damage performance (impact value)_Bazooka (DL3: Small stagger) -- 【test】ダメージ演技確認用（衝撃値）_バズーカ（DL3：小よろけ）
+7917000 [Test] For checking damage performance (impact value)_Shotgun (DL3: Small stagger) -- 【test】ダメージ演技確認用（衝撃値）_ショットガン（DL3：小よろけ）
+7918000 [Test] For checking damage performance (impact value)_Grenade rifle (DL4: Great stagger) -- 【test】ダメージ演技確認用（衝撃値）_グレネードライフル（DL4：大よろけ）
+7918005 [test] For checking damage performance (impact value)_Grenade rifle (explosion) (DL4: Great stagger) -- 【test】ダメージ演技確認用（衝撃値）_グレネードライフル（爆発）（DL4：大よろけ）
+7919000 [Test] For checking damage performance (impact value)_Shoulder bazooka (DL5: blown away) -- 【test】ダメージ演技確認用（衝撃値）_肩バズーカ（DL5：吹っ飛び）
+7924000 [Test] For checking damage performance (DL Direct)_Semi-auto rifle (DL2: Stop being hit) -- 【test】ダメージ演技確認用（DL直）_セミオートライフル（DL2：被弾ストップ）
+7924100 [Test] For checking damage performance (DL direct)_Semi-automatic rifle_Charge shooting (DL2: Stop being hit) -- 【test】ダメージ演技確認用（DL直）_セミオートライフル_チャージ射撃（DL2：被弾ストップ）
+7925000 [Test] For checking damage performance (DL Direct)_Laser Rifle (DL2: Stop being hit) -- 【test】ダメージ演技確認用（DL直）_レーザーライフル（DL2：被弾ストップ）
+7925100 [Test] For checking damage performance (DL direct)_Laser rifle_Charge shooting (DL2: Stop being hit) -- 【test】ダメージ演技確認用（DL直）_レーザーライフル_チャージ射撃（DL2：被弾ストップ）
+7926000 [Test] For checking damage performance (DL direct)_Bazooka (DL3: Small stagger) -- 【test】ダメージ演技確認用（DL直）_バズーカ（DL3：小よろけ）
+7927000 [test] For checking damage performance (DL Direct)_Shotgun (DL3: Small stagger) -- 【test】ダメージ演技確認用（DL直）_ショットガン（DL3：小よろけ）
+7928000 [Test] For checking damage performance (DL Direct)_Grenade Rifle (DL4: Great Stagger) -- 【test】ダメージ演技確認用（DL直）_グレネードライフル（DL4：大よろけ）
+7928005 [Test] For checking damage performance (DL direct)_Grenade rifle (explosion) (DL4: Great stagger) -- 【test】ダメージ演技確認用（DL直）_グレネードライフル（爆発）（DL4：大よろけ）
+7929000 [Test] For checking damage performance (DL Direct)_Shoulder Bazooka (DL5: Blow-off) -- 【test】ダメージ演技確認用（DL直）_肩バズーカ（DL5：吹っ飛び）
+7930000 [test] Knockback confirmation rifle (DL3)_Power: 60 -- 【test】ノックバック確認用ライフル（DL3）_威力：60
+7930100 [Test] Knockback confirmation rifle (DL3)_Power: 90_Charge shooting -- 【test】ノックバック確認用ライフル（DL3）_威力：90_チャージ射撃
+7931000 [test] Knockback confirmation rifle (DL3)_Power: 120 -- 【test】ノックバック確認用ライフル（DL3）_威力：120
+7931100 [Test] Knockback confirmation rifle (DL3)_Power: 150_Charge shooting -- 【test】ノックバック確認用ライフル（DL3）_威力：150_チャージ射撃
+7932000 [test] Knockback confirmation rifle (DL3)_Power: 180 -- 【test】ノックバック確認用ライフル（DL3）_威力：180
+7932100 [Test] Knockback confirmation rifle (DL3)_Power: 210_Charge shooting -- 【test】ノックバック確認用ライフル（DL3）_威力：210_チャージ射撃
+7933000 [test] Knockback confirmation blade (DL3)_Power: 60_Weak attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：60_弱攻撃①
+7933010 [Test] Knockback confirmation blade (DL3)_Power: 60_Weak attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：60_弱攻撃②
+7933100 [Test] Knockback confirmation blade (DL3)_Power: 90_Strong attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：90_強攻撃①
+7933110 [Test] Knockback confirmation blade (DL3)_Power: 90_Strong attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：90_強攻撃②
+7934000 [Test] Knockback confirmation blade (DL3)_Power: 120_Weak attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：120_弱攻撃①
+7934010 [test] Knockback confirmation blade (DL3)_Power: 120_Weak attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：120_弱攻撃②
+7934100 [Test] Knockback confirmation blade (DL3)_Power: 150_Strong attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：150_強攻撃①
+7934110 [Test] Knockback confirmation blade (DL3)_Power: 150_Strong attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：150_強攻撃②
+7935000 [test] Knockback confirmation blade (DL3)_Power: 180_Weak attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：180_弱攻撃①
+7935010 [Test] Knockback confirmation blade (DL3)_Power: 180_Weak attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：180_弱攻撃②
+7935100 [Test] Knockback confirmation blade (DL3)_Power: 210_Strong attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：210_強攻撃①
+7935110 [Test] Knockback confirmation blade (DL3)_Power: 210_Strong attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：210_強攻撃②
+7940000 [test] Knockback confirmation rifle (DL4)_Power: 60 -- 【test】ノックバック確認用ライフル（DL4）_威力：60
+7940100 [Test] Knockback confirmation rifle (DL4)_Power: 90_Charge shooting -- 【test】ノックバック確認用ライフル（DL4）_威力：90_チャージ射撃
+7941000 [test] Knockback confirmation rifle (DL4)_Power: 120 -- 【test】ノックバック確認用ライフル（DL4）_威力：120
+7941100 [test] Knockback confirmation rifle (DL4)_Power: 150_Charge shooting -- 【test】ノックバック確認用ライフル（DL4）_威力：150_チャージ射撃
+7942000 [test] Knockback confirmation rifle (DL4)_Power: 180 -- 【test】ノックバック確認用ライフル（DL4）_威力：180
+7942100 [test] Knockback confirmation rifle (DL4)_Power: 210_Charge shooting -- 【test】ノックバック確認用ライフル（DL4）_威力：210_チャージ射撃
+7943000 [test] Knockback confirmation blade (DL4)_Power: 60_Weak attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：60_弱攻撃①
+7943010 [Test] Knockback confirmation blade (DL4)_Power: 60_Weak attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：60_弱攻撃②
+7943100 [test] Knockback confirmation blade (DL4)_Power: 90_Strong attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：90_強攻撃①
+7943110 [Test] Knockback confirmation blade (DL4)_Power: 90_Strong attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：90_強攻撃②
+7944000 [Test] Knockback confirmation blade (DL4)_Power: 120_Weak attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：120_弱攻撃①
+7944010 [Test] Knockback confirmation blade (DL4)_Power: 120_Weak attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：120_弱攻撃②
+7944100 [Test] Knockback confirmation blade (DL4)_Power: 150_Strong attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：150_強攻撃①
+7944110 [Test] Knockback confirmation blade (DL4)_Power: 150_Strong attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：150_強攻撃②
+7945000 [test] Knockback confirmation blade (DL4)_Power: 180_Weak attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：180_弱攻撃①
+7945010 [Test] Knockback confirmation blade (DL4)_Power: 180_Weak attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：180_弱攻撃②
+7945100 [test] Knockback confirmation blade (DL4)_Power: 210_Strong attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：210_強攻撃①
+7945110 [Test] Knockback confirmation blade (DL4)_Power: 210_Strong attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：210_強攻撃②
+7950000 [test] Knockback confirmation rifle (DL5)_Power: 60 -- 【test】ノックバック確認用ライフル（DL5）_威力：60
+7950100 [test] Knockback confirmation rifle (DL5)_Power: 90_Charge shooting -- 【test】ノックバック確認用ライフル（DL5）_威力：90_チャージ射撃
+7951000 [test] Knockback confirmation rifle (DL5)_Power: 120 -- 【test】ノックバック確認用ライフル（DL5）_威力：120
+7951100 [test] Knockback confirmation rifle (DL5)_Power: 150_Charge shooting -- 【test】ノックバック確認用ライフル（DL5）_威力：150_チャージ射撃
+7952000 [test] Knockback confirmation rifle (DL5)_Power: 180 -- 【test】ノックバック確認用ライフル（DL5）_威力：180
+7952100 [test] Knockback confirmation rifle (DL5)_Power: 210_Charge shooting -- 【test】ノックバック確認用ライフル（DL5）_威力：210_チャージ射撃
+7953000 [test] Knockback confirmation blade (DL5)_Power: 60_Weak attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：60_弱攻撃①
+7953010 [Test] Knockback confirmation blade (DL5)_Power: 60_Weak attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：60_弱攻撃②
+7953100 [Test] Knockback confirmation blade (DL5)_Power: 90_Strong attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：90_強攻撃①
+7953110 [Test] Knockback confirmation blade (DL5)_Power: 90_Strong attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：90_強攻撃②
+7954000 [test] Knockback confirmation blade (DL5)_Power: 120_Weak attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：120_弱攻撃①
+7954010 [Test] Knockback confirmation blade (DL5)_Power: 120_Weak attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：120_弱攻撃②
+7954100 [Test] Knockback confirmation blade (DL5)_Power: 150_Strong attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：150_強攻撃①
+7954110 [Test] Knockback confirmation blade (DL5)_Power: 150_Strong attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：150_強攻撃②
+7955000 [Test] Knockback confirmation blade (DL5)_Power: 180_Weak attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：180_弱攻撃①
+7955010 [Test] Knockback confirmation blade (DL5)_Power: 180_Weak attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：180_弱攻撃②
+7955100 [Test] Knockback confirmation blade (DL5)_Power: 210_Strong attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：210_強攻撃①
+7955110 [Test] Knockback confirmation blade (DL5)_Power: 210_Strong attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：210_強攻撃②
+7960000 [Test] Weapon for status abnormality confirmation_Flame -- 【test】状態異常確認用武器_炎上
+7961000 [test] Weapon for checking abnormal status_stun -- 【test】状態異常確認用武器_スタン
+7962000 [Test] Weapon for checking abnormal status_Plasma -- 【test】状態異常確認用武器_プラズマ
+7963000 [Test] Weapon for checking abnormal status_depleted uranium poison -- 【test】状態異常確認用武器_劣化ウラン毒
+7970000 [Stagger Test] PA Breaker_Weak Attack ① -- 【よろけテスト】PAブレイカー_弱攻撃①
+7970010 [Stagger Test] PA Breaker_Weak Attack ② -- 【よろけテスト】PAブレイカー_弱攻撃②
+7970100 [Stagger Test] PA Breaker_Strong Attack ① -- 【よろけテスト】PAブレイカー_強攻撃①
+7970110 [Stagger Test] PA Breaker_Strong Attack ② -- 【よろけテスト】PAブレイカー_強攻撃②
+7970800 [Stagger test] PA breaker_body hit -- 【よろけテスト】PAブレイカー_体当たり
+7980000 [test] For checking stagger_step addition -- 【test】よろけ確認用_段階加算
+7980009 [test] For checking stagger_step addition (dummy) -- 【test】よろけ確認用_段階加算（ダミー）
+7981000 [test] For checking stagger_100% addition -- 【test】よろけ確認用_100%加算
+7981009 [test] 100% addition for stagger confirmation (dummy) -- 【test】よろけ確認用_100%加算（ダミー）
+7982000 [Test] For checking stagger_Stop being hit -- 【test】よろけ確認用_被弾ストップ
+7982009 [Test] For checking stagger_Bullet stop (dummy) -- 【test】よろけ確認用_被弾ストップ（ダミー）
+7983000 [test] For checking wobbling_Small wobbling -- 【test】よろけ確認用_よろけ小
+7983009 [Test] For checking stagger_Small stagger (dummy) -- 【test】よろけ確認用_よろけ小（ダミー）
+7983100 [test] For stagger confirmation_Stagger small_Charge shooting -- 【test】よろけ確認用_よろけ小_チャージ射撃
+7984000 [test] For checking stagger_large stagger -- 【test】よろけ確認用_よろけ大
+7984009 [test] For checking stagger_large stagger (dummy) -- 【test】よろけ確認用_よろけ大（ダミー）
+7984100 [Test] For stagger confirmation_Large stagger_Charge shooting -- 【test】よろけ確認用_よろけ大_チャージ射撃
+7985000 [test] For checking stagger_blown away -- 【test】よろけ確認用_吹っ飛び
+7985009 [test] For checking stagger_blown away (dummy) -- 【test】よろけ確認用_吹っ飛び（ダミー）
+7985100 [Test] For stagger confirmation_Blowback_Charge shooting -- 【test】よろけ確認用_吹っ飛び_チャージ射撃
+7986000 [test] For stagger confirmation_forced blowback -- 【test】よろけ確認用_強制吹っ飛び
+7986009 [test] For stagger confirmation_forced blowback (dummy) -- 【test】よろけ確認用_強制吹っ飛び（ダミー）
+7986100 [Test] For stagger confirmation_Forced blowback_Charge shooting -- 【test】よろけ確認用_強制吹っ飛び_チャージ射撃
+90800000 Nakanishi test_single shot rifle -- 中西テスト_単発ライフル
+90800010 Nakanishi test_bazooka -- 中西テスト_バズーカ
+90800020 Nakanishi Test_Railgun -- 中西テスト_レールガン
+90800021 Nakanishi test_Railgun (bullet after charging) -- 中西テスト_レールガン（チャージ後弾丸）
+90800040 Nakanishi test_short-range missile -- 中西テスト_近距離型ミサイル
+90801000 Nakanishi test_air_blade attack 1 -- 中西テスト_空中_ブレード攻撃1
+90801100 Nakanishi test_air_blade attack 2 -- 中西テスト_空中_ブレード攻撃2
+90801500 Nakanishi test_blade charge attack -- 中西テスト_ブレード溜め攻撃
+10000000 Semi-auto rifle_n-point burst -- セミオートライフル_n点バースト
+10000100 Semi-auto rifle_n-point burst_charge shooting -- セミオートライフル_n点バースト_チャージ射撃
+10010000 Semi-auto rifle_standard type -- セミオートライフル_標準タイプ
+10010100 Semi-automatic rifle_Standard type_Charge shooting -- セミオートライフル_標準タイプ_チャージ射撃
+10020000 Semi-auto rifle_ Bullet speed ≒ Emphasis on power -- セミオートライフル_弾速≒威力重視
+10020100 Semi-automatic rifle_Bullet speed ≒ Emphasis on power_Charge shooting -- セミオートライフル_弾速≒威力重視_チャージ射撃
+10100000 Assault rifle_n-point burst -- アサルトライフル_n点バースト
+10110000 Assault rifle_standard type -- アサルトライフル_標準タイプ
+10120000 Assault rifle_bullet speed ≒ emphasis on power -- アサルトライフル_弾速≒威力重視
+10200000 Machine gun_n point burst -- マシンガン_n点バースト
+10210000 Machine gun_standard type -- マシンガン_標準タイプ
+10220000 Machine gun_Focus on bullet collection performance -- マシンガン_集弾性能重視
+10300000 Gatling gun_standard type -- ガトリングガン_標準タイプ
+10400000 Bazooka_light but low power -- バズーカ_軽めだが威力-低
+10400005 Bazooka_light but low power blast -- バズーカ_軽めだが威力-低 爆風
+10410000 Bazooka_Standard type -- バズーカ_標準タイプ
+10410005 Bazooka_Standard type blast -- バズーカ_標準タイプ 爆風
+10420000 Bazooka_heavy but powerful -- バズーカ_重いが威力-大
+10420005 Bazooka_heavy but powerful - large blast -- バズーカ_重いが威力-大 爆風
+10500000 Shotgun_Collection performance-Low Lucky 13 -- ショットガン_集弾性能-低　ラッキー13
+10510000 Shotgun_Standard type -- ショットガン_標準タイプ
+10520000 Shotgun_Collection performance-High -- ショットガン_集弾性能-高
+10600000 Grenade rifle_standard type -- グレネードライフル_標準タイプ
+10600005 Grenade rifle_standard type (explosive) -- グレネードライフル_標準タイプ（爆発）
+10610000 Grenade rifle_blast range-large -- グレネードライフル_爆発範囲-大
+10610005 Grenade Rifle_Explosion Range-Large (Explosion) -- グレネードライフル_爆発範囲-大（爆発）
+10700000 Handgun_Zero distance specialized pile driving -- ハンドガン_零距離特化 杭打ち
+10700005 Handgun_Zero distance specialized pile driving No damage for SFX -- ハンドガン_零距離特化 杭打ち SFX用ダメージ無し
+10710000 Handgun_Standard type 2 shots -- ハンドガン_標準タイプ 2連射
+10720000 Handgun_One shot is heavy -- ハンドガン_一発が重い
+10730000 Handgun_↑variation (silver edge) -- ハンドガン_↑のバリエーション（シルバーエッジ）
+10800000 Throwing gun_2 shots (smoke_body) -- 投擲銃_2連射（スモーク_本体）
+10800001 Throwing gun_2 shots (smoke_smoke) -- 投擲銃_2連射（スモーク_煙）
+10800100 Throwing gun_2 shots (smoke_body) Charge -- 投擲銃_2連射（スモーク_本体）　チャージ
+10810000 Throwing gun_standard type (napalm) -- 投擲銃_標準タイプ（ナパーム）
+10810005 Throwing gun_standard type (napalm) (explosive) -- 投擲銃_標準タイプ（ナパーム）（爆発）
+10810006 Throwing gun_Standard type (napalm) (flame continuous damage) -- 投擲銃_標準タイプ（ナパーム）（炎継続ダメージ）
+10810100 Throwing gun_standard type (napalm) charge -- 投擲銃_標準タイプ（ナパーム）　チャージ
+10820000 Throwing gun_large number of magazine bullets (stun mine) -- 投擲銃_マガジン弾数多い（スタン機雷）
+10820005 Throwing gun_large number of magazine bullets (stun mine) stun explosion -- 投擲銃_マガジン弾数多い（スタン機雷） スタン爆発
+10820100 Throwing gun _ Large number of magazine bullets (stun mine) Charge -- 投擲銃_マガジン弾数多い（スタン機雷）　チャージ
+10820105 Throwing gun _ Large number of magazine bullets (stun mine) Charge stun explosion -- 投擲銃_マガジン弾数多い（スタン機雷）　チャージ スタン爆発
+10900000 Hand missile_guided type -- ハンドミサイル_誘導タイプ
+10900005 Hand missile_guided type (explosion) -- ハンドミサイル_誘導タイプ（爆発）
+10910000 Hand missile ② -- ハンドミサイル②
+10910005 Hand missile ② (explosion) -- ハンドミサイル②（爆発）
+11000000 Grenade rifle_lightweight -- グレネードライフル_軽量
+11000005 Grenade rifle_lightweight (explosive) -- グレネードライフル_軽量（爆発）
+11100000 Laser Rifle_CS: Laser Machine Gun -- レーザーライフル_CS：レーザーマシンガン
+11100100 Laser Rifle_CS: Laser Machine Gun_Charge Shooting -- レーザーライフル_CS：レーザーマシンガン_チャージ射撃
+11110000 Laser rifle_standard type -- レーザーライフル_標準タイプ
+11110100 Laser rifle_standard type_charge shooting -- レーザーライフル_標準タイプ_チャージ射撃
+11111000 Laser rifle_standard type (dummy for menu display) -- レーザーライフル_標準タイプ（メニュー表示用ダミー）
+11111100 Laser rifle_Standard type_Charge shooting (dummy for menu display) -- レーザーライフル_標準タイプ_チャージ射撃（メニュー表示用ダミー）
+11120000 High Laser Rifle_K・AI Unique -- ハイレーザーライフル_K・AI ユニーク
+11120005 High Laser Rifle_K・AI Unique Blast -- ハイレーザーライフル_K・AI ユニーク 爆風
+11120100 High Laser Rifle_K・AI Unique_Single Charge Shooting -- ハイレーザーライフル_K・AI ユニーク_一段チャージ射撃
+11120105 High Laser Rifle_K・AI Unique_Single Charge Shooting Blast -- ハイレーザーライフル_K・AI ユニーク_一段チャージ射撃 爆風
+11120110 High Laser Rifle_K・AI Unique_Two-stage charge shooting (melee attack) -- ハイレーザーライフル_K・AI ユニーク_二段チャージ射撃（格闘攻撃）
+11120120 High Laser Rifle_K・AI Unique_Two-stage charge shooting (melee attack) Specifications for Decisive Battle B Leicester action -- ハイレーザーライフル_K・AI ユニーク_二段チャージ射撃（格闘攻撃） 決戦Bレスター用行動で仕様
+11130000 Laser rifle_fast bullet speed, deep charge limit -- レーザーライフル_弾速が速い、チャージ限界が深い
+11130100 Laser rifle_fast bullet speed, deep charge limit_charge shooting -- レーザーライフル_弾速が速い、チャージ限界が深い_チャージ射撃
+11200000 Plasma rifle_standard type -- プラズマライフル_標準タイプ
+11200005 Plasma rifle_standard type (explosion) -- プラズマライフル_標準タイプ（爆発）
+11200100 Plasma rifle_standard type_charge shooting -- プラズマライフル_標準タイプ_チャージ射撃
+11200105 Plasma rifle_Standard type_Charge shooting (explosion) -- プラズマライフル_標準タイプ_チャージ射撃（爆発）
+11210000 High Laser Rifle_Karasawa Plasma -- ハイレーザーライフル_カラサワ プラズマ
+11210005 High Laser Rifle_Karasawa Plasma Explosion -- ハイレーザーライフル_カラサワ プラズマ爆発
+11210100 High Laser Rifle_Karasawa_Single Charge Shooting Laser -- ハイレーザーライフル_カラサワ_一段チャージ射撃 レーザー
+11210110 High Laser Rifle_Karasawa_Two-stage charge shooting Laser + Plasma -- ハイレーザーライフル_カラサワ_二段チャージ射撃 レーザー+プラズマ
+11210111 High Laser Rifle_Karasawa_Two-stage charge shooting Laser + Plasma For plasma determination -- ハイレーザーライフル_カラサワ_二段チャージ射撃 レーザー+プラズマ プラズマ判定用
+11210115 High Laser Rifle_Karasawa_Two-stage charge shooting Laser + Plasma Plasma explosion -- ハイレーザーライフル_カラサワ_二段チャージ射撃 レーザー+プラズマ プラズマ爆発
+11300000 Pulse gun _ High rate of fire performance -- パルスガン_連射性能高い
+11310000 Pulse gun_standard type -- パルスガン_標準タイプ
+11400000 double laser rifle -- ダブルレーザーライフル
+11400100 Double laser rifle_charge attack -- ダブルレーザーライフル_チャージ攻撃
+11500000 Laser shotgun_zero distance recommended -- レーザーショットガン_零距離推奨
+11500100 Laser shotgun_zero distance recommended_charge shooting (melee attack) -- レーザーショットガン_零距離推奨_チャージ射撃（近接攻撃）
+11510000 Laser shotgun_wide laterally -- レーザーショットガン_横に広い
+11510100 Laser shotgun _ horizontally wide _ charge shooting -- レーザーショットガン_横に広い_チャージ射撃
+11510105 Laser shotgun _ horizontally wide _ charge shooting (explosion -- レーザーショットガン_横に広い_チャージ射撃（爆発
+11520000 Plasma rifle_M・AI unique -- プラズマライフル_M・AIユニーク
+11520005 Plasma rifle_M・AI unique (explosion) -- プラズマライフル_M・AIユニーク（爆発）
+11520100 Plasma rifle_M・AI unique_charge shooting -- プラズマライフル_M・AIユニーク_チャージ射撃
+11520105 Plasma rifle_M・AI unique_Charge shooting (explosion) -- プラズマライフル_M・AIユニーク_チャージ射撃（爆発）
+11530000 Plasma rifle_M・AI unique (red coral ver) -- プラズマライフル_M・AIユニーク（赤コーラルver）
+11530005 Plasma rifle_M・AI unique (red coral ver) (explosion) -- プラズマライフル_M・AIユニーク（赤コーラルver）（爆発）
+11530100 Plasma rifle_M・AI unique (red coral ver)_charge shooting -- プラズマライフル_M・AIユニーク（赤コーラルver）_チャージ射撃
+11530105 Plasma rifle_M・AI unique (red coral ver)_Charge shooting (explosion) -- プラズマライフル_M・AIユニーク（赤コーラルver）_チャージ射撃（爆発）
+11600000 flamethrower -- 火炎放射
+11700000 Degraded uranium bazooka rifle -- 劣化ウランバズーカライフル
+11700005 Degraded uranium bazooka rifle explosion -- 劣化ウランバズーカライフル 爆発
+11700006 Degraded uran bazooka rifle consecutive explosions -- 劣化ウランバズーカライフル 連爆発
+11800000 stun gun parent -- スタンガン　親
+11800001 stun gun child -- スタンガン　子
+11800005 Stun gun grandchild (explosion) -- スタンガン　孫（爆発）
+11900000 Stationary shooting weapons (multiple firing at the same time) -- 置き射撃武器（複数同時発射）
+11900005 Stationary shooting weapon (multiple fires at the same time) (explosion) -- 置き射撃武器（複数同時発射）　（爆発）
+12000000 Machine gun for jailbreak mission_Standard type -- 脱獄ミッション用マシンガン_標準タイプ
+12200000 Throwing gun for jailbreak mission_2 shots (smoke_body) -- 脱獄ミッション用投擲銃_2連射（スモーク_本体）
+12200001 Throwing gun for jailbreak mission_2 shots (smoke_smoke) -- 脱獄ミッション用投擲銃_2連射（スモーク_煙）
+12300000 For enemy damage animation confirmation_DL2 addition (right hand) -- 敵ダメージアニメ確認用_DL2加算（右手）
+12400000 For checking enemy damage animation_DL3 Small stagger (left hand) -- 敵ダメージアニメ確認用_DL3小よろけ（左手）
+12500000 For object destruction confirmation_obj attack power 510 -- オブジェクト破壊確認用_obj攻撃力510
+12510000 For object destruction confirmation_obj attack power 410 -- オブジェクト破壊確認用_obj攻撃力410
+20000000 Laser blade_light attack ① -- レーザーブレード_弱攻撃①
+20000010 Laser blade_light attack ② -- レーザーブレード_弱攻撃②
+20000100 Laser blade_strong attack -- レーザーブレード_強攻撃
+20010000 Laser Blade_K・AI Unique_Weak Attack① -- レーザーブレード_K・AI ユニーク_弱攻撃①
+20010010 Laser Blade_K・AI Unique_Weak attack ② -- レーザーブレード_K・AI ユニーク_弱攻撃②
+20010100 Laser Blade_K・AI Unique_Strong attack -- レーザーブレード_K・AI ユニーク_強攻撃
+20020000 Light Wave Blade__Weak Attack① -- 光波ブレード__弱攻撃①
+20020010 Light wave blade __ light attack ② -- 光波ブレード__弱攻撃②
+20020100 Light Wave Blade__Strong Attack① -- 光波ブレード__強攻撃①
+20030000 Light Wave Blade__Weak Attack ① (Red Coral ver) -- 光波ブレード__弱攻撃①（赤コーラルver）
+20030010 Light wave blade __ light attack ② (red coral ver) -- 光波ブレード__弱攻撃②（赤コーラルver）
+20030100 Light Wave Blade __ Strong Attack ① (Red Coral ver) -- 光波ブレード__強攻撃①（赤コーラルver）
+20100000 PA Breaker_Weak Attack① -- PAブレイカー_弱攻撃①
+20100010 PA Breaker_Weak attack ② -- PAブレイカー_弱攻撃②
+20100100 PA Breaker_Strong attack ① -- PAブレイカー_強攻撃①
+20100110 PA Breaker_Strong attack ② -- PAブレイカー_強攻撃②
+20100200 PA Breaker_QB weak attack ① -- PAブレイカー_QB弱攻撃①
+20100300 PA Breaker_QB Strong Attack ① -- PAブレイカー_QB強攻撃①
+20200000 Plasma broadsword_light attack ① -- プラズマブロードソード_弱攻撃①
+20200100 Plasma broadsword_strong attack ① -- プラズマブロードソード_強攻撃①
+20200110 Plasma broadsword_strong attack ② -- プラズマブロードソード_強攻撃②
+20300000 Beam naginata_light attack ① -- ビーム薙刀_弱攻撃①
+20300010 Beam naginata_light attack ② -- ビーム薙刀_弱攻撃②
+20300020 Beam naginata_light attack ③ -- ビーム薙刀_弱攻撃③
+20300030 Beam naginata_light attack ④ -- ビーム薙刀_弱攻撃④
+20300100 Beam naginata_strong attack ① -- ビーム薙刀_強攻撃①
+20300110 Beam naginata_strong attack ② -- ビーム薙刀_強攻撃②
+20300120 Beam Naginata_Strong attack ③ -- ビーム薙刀_強攻撃③
+20400000 Dagger_Light attack① -- ダガー_弱攻撃①
+20400010 Dagger_Light attack ② -- ダガー_弱攻撃②
+20400020 Dagger_Light attack③ -- ダガー_弱攻撃③
+20400100 Dagger_Strong attack① -- ダガー_強攻撃①
+20400101 Dagger_Strong attack①_During step -- ダガー_強攻撃①_踏み込み中
+20400200 Dagger_QB weak attack ① -- ダガー_QB弱攻撃①
+20400300 Dagger_QB strong attack ① -- ダガー_QB強攻撃①
+20500000 Laser Lance_Weak Thrust -- レーザーランス_弱突き
+20500100 Laser Lance_Rushing -- レーザーランス_突進中
+20500101 Laser Lance_Rush Finish -- レーザーランス_突進フィニッシュ
+20600000 Chainsaw_Light attack ① -- チェーンソー_弱攻撃①
+20600010 Chainsaw_Light attack ② -- チェーンソー_弱攻撃②
+20600020 Chainsaw_rotation loop -- チェーンソー_回転ループ
+20600100 Chainsaw_Strong attack loop -- チェーンソー_強攻撃ループ
+20600101 Chainsaw_Strong attack finish -- チェーンソー_強攻撃フィニッシュ
+20700000 Electromagnetic hammer_light attack ① -- 電磁ハンマー_弱攻撃①
+20700001 Electromagnetic hammer_light attack ② -- 電磁ハンマー_弱攻撃②
+20700009 Electromagnetic hammer_light attack①_hand -- 電磁ハンマー_弱攻撃①_手元
+20700010 Electromagnetic hammer_Swinging loop -- 電磁ハンマー_振り回しループ
+20700100 Electromagnetic hammer_strong attack ① -- 電磁ハンマー_強攻撃①
+20700101 Electromagnetic hammer_Strong attack①_Plasma explosion (base bullet) -- 電磁ハンマー_強攻撃①_プラズマ爆発（親弾丸）
+20700102 Electromagnetic hammer_Strong attack①_Plasma explosion (subbullet) -- 電磁ハンマー_強攻撃①_プラズマ爆発（子弾丸）
+20700109 Electromagnetic hammer_Strong attack①_Hand -- 電磁ハンマー_強攻撃①_手元
+20700900 Electromagnetic hammer_Bounce judgment -- 電磁ハンマー_弾かれ判定
+20800000 Explosive pile_light attack ① -- 爆裂パイル_弱攻撃①
+20800100 Explosive pile_strong attack ①-1 -- 爆裂パイル_強攻撃①-1
+20800101 Explosive pile_strong attack ①-2 (small bread) -- 爆裂パイル_強攻撃①-2（小パン）
+20900000 Electromagnetic baton_light attack ① -- 電磁警棒_弱攻撃①
+20900010 Electromagnetic baton_light attack ②-1 -- 電磁警棒_弱攻撃②-1
+20900011 Electromagnetic baton_light attack ②-2 -- 電磁警棒_弱攻撃②-2
+20900020 Electromagnetic baton_light attack ③-1 -- 電磁警棒_弱攻撃③-1
+20900021 Electromagnetic baton_light attack ③-2 -- 電磁警棒_弱攻撃③-2
+20900022 Electromagnetic baton_light attack ③-3 -- 電磁警棒_弱攻撃③-3
+20900100 Electromagnetic baton_strong attack ① -- 電磁警棒_強攻撃①
+20900110 Electromagnetic baton_Strong attack①_Pursuit -- 電磁警棒_強攻撃①_追撃
+20900111 Electromagnetic baton_strong attack①_pursuit_piercing bullet -- 電磁警棒_強攻撃①_追撃_刺さる弾丸
+20900115 Electromagnetic baton_Strong attack①_Pursuit_Explosion -- 電磁警棒_強攻撃①_追撃_爆発
+21000000 Proximity diffusion bullet_weak attack ① (main bullet) -- 近接拡散弾_弱攻撃①（親弾丸）
+21000005 Proximity diffusion bullet_weak attack ① (child bullet) -- 近接拡散弾_弱攻撃①（子弾丸）
+21000100 Proximity diffusion bullet_Strong attack ① (base bullet) -- 近接拡散弾_強攻撃①（親弾丸）
+21000105 Proximity diffusion bullet_Strong attack ① (child bullet) -- 近接拡散弾_強攻撃①（子弾丸）
+30000000 Plasma missile_standard type 3 series -- プラズマミサイル_標準タイプ 3連
+30000005 Plasma missile_standard type (explosion) 3 series -- プラズマミサイル_標準タイプ（爆発）　3連
+30010000 Plasma missile_spread diagonally and wrap -- プラズマミサイル_斜めに広がって包む
+30010005 Plasma missile_spreads diagonally and wraps (explosion) -- プラズマミサイル_斜めに広がって包む（爆発）
+30020000 Plasma missile_standard type 6 units -- プラズマミサイル_標準タイプ　6連
+30020005 Plasma missile_standard type (explosion) 6 rounds -- プラズマミサイル_標準タイプ（爆発）　6連
+30100000 AI missile_multi-stage guidance 2 series -- AIミサイル_多段誘導　2連
+30100005 AI missile_multi-stage guidance (explosion) -- AIミサイル_多段誘導（爆発）
+30110000 AI missile_multi-stage guidance right -- AIミサイル_多段誘導　右
+30110005 AI missile_multi-stage guidance (explosion) -- AIミサイル_多段誘導（爆発）
+30200000 6 twin missiles -- 連装ミサイル　6連
+30200005 Twin missiles (explosion) 6 series -- 連装ミサイル（爆発）　6連
+30210000 Twin missile 4 series -- 連装ミサイル　4連
+30210005 Twin missiles (explosion) 4 in a row -- 連装ミサイル（爆発）　4連
+30220000 10 twin missiles -- 連装ミサイル　10連
+30220005 Twin missiles (explosion) 10 in a row -- 連装ミサイル（爆発）　10連
+30300000 Special plasma missile_K・AI unique -- 特殊プラズマミサイル_K・AI ユニーク
+30300005 Special plasma missile_K・AI unique (explosion) -- 特殊プラズマミサイル_K・AI ユニーク（爆発）
+30300600 Special plasma missile_K・AI unique charge for menu display (cannot be deleted) -- 特殊プラズマミサイル_K・AI ユニーク　チャージ　メニュー表示用(削除不可)
+30300601 Special plasma missile_K・AI unique charge no damage -- 特殊プラズマミサイル_K・AI ユニーク　チャージ　ダメージ無し
+30300602 Special plasma missile_K・AI unique charge -- 特殊プラズマミサイル_K・AI ユニーク　チャージ
+30300605 Special plasma missile_K・AI unique charge (explosion) -- 特殊プラズマミサイル_K・AI ユニーク　チャージ（爆発）
+30300606 Special Plasma Missile_K・AI Unique Charge Coral Homing Laser -- 特殊プラズマミサイル_K・AI ユニーク　チャージ　コーラルホーミングレーザー
+30400000 Vertical missile 12 consecutive no damage -- 垂直ミサイル　12連　ダメージ無し
+30400001 Vertical missile 12 series -- 垂直ミサイル　12連
+30400005 Vertical missile (explosion) 12 series -- 垂直ミサイル（爆発）　12連
+30410000 Vertical missile 8 consecutive no damage -- 垂直ミサイル　8連　ダメージ無し
+30410001 Vertical missile 8 series -- 垂直ミサイル　8連
+30410005 Vertical missile (explosion) 8 series -- 垂直ミサイル（爆発）　8連
+30420000 Vertical missile 4 consecutive no damage -- 垂直ミサイル　4連　ダメージ無し
+30420001 Vertical missile 4 series -- 垂直ミサイル　4連
+30420005 Vertical missile (explosion) 4 series -- 垂直ミサイル（爆発）　4連
+30500000 Bakudo Explosive Missile Parent -- 爆導炸ミサイル 親
+30500002 explosive missile child -- 爆導炸ミサイル 子
+30500005 Explosion missile grandson (explosion) -- 爆導炸ミサイル 孫（爆発）
+30500010 Explosive Missile Bullet Kill -- 爆導炸ミサイル 弾丸殺し
+30600000 Large missile_extra large exposed one -- 大型ミサイル_特大むき出し一本
+30600005 Large missile_extra large exposed one (explosion) -- 大型ミサイル_特大むき出し一本（爆発）
+30700000 Raid Missile_M・AI Unique -- レイドミサイル_M・AI ユニーク
+30700005 Raid Missile_M・AI Unique (Explosion) -- レイドミサイル_M・AI ユニーク（爆発）
+30800000 Back missile_2Way 3 consecutive -- 背ミサイル_2Way　3連
+30800001 Back missile_2Way triple guidance -- 背ミサイル_2Way　3連 誘導
+30800005 Back missile_2Way (explosion) 3 consecutive -- 背ミサイル_2Way（爆発）　3連
+30810000 Back missile_2way 3-way type -- 背ミサイル_2Way　3連中型
+30810001 Back Missile_2Way 3-way type guidance -- 背ミサイル_2Way　3連中型 誘導
+30810005 Back missile_2Way (explosion) 3-way type -- 背ミサイル_2Way（爆発）　3連中型
+30820000 Back missile_2Way 2 series -- 背ミサイル_2Way　2連
+30820001 Back missile_2Way 2 series guidance -- 背ミサイル_2Way　2連 誘導
+30820005 Back missile_2Way (explosion) 2 consecutive -- 背ミサイル_2Way（爆発）　2連
+30900000 Back missile_split missile 2 consecutive 6 splits -- 背ミサイル_分裂ミサイル　2連6分裂
+30900005 Back missile_fission missile (explosion) 2 consecutive 6 fission -- 背ミサイル_分裂ミサイル（爆発）　2連6分裂
+30910000 Back missile_fission missile single shot -- 背ミサイル_分裂ミサイル　単発
+30910005 Back missile_fission missile (explosion) single shot -- 背ミサイル_分裂ミサイル（爆発）　単発
+30920000 Back missile_split missile 2 series 12 splits -- 背ミサイル_分裂ミサイル　2連12分裂
+30920005 Back missile_fission missile (explosion) 2 consecutive 12 fission -- 背ミサイル_分裂ミサイル（爆発）　2連12分裂
+31000000 Shoulder grenade_lightweight type -- 肩グレネード_軽量タイプ
+31000005 Shoulder grenade_lightweight type (explosive) -- 肩グレネード_軽量タイプ（爆発）
+31100000 needle missile -- ニードルミサイル
+31100005 Needle Missile No damage for SFX -- ニードルミサイル SFX用ダメージ無し
+31200000 container missile parent -- コンテナミサイル 親
+31200001 container missile child -- コンテナミサイル 子
+31200002 container missile grandchild -- コンテナミサイル 孫
+31200005 Container missile child (explosion) -- コンテナミサイル　子（爆発）
+31200006 Container missile Mason (explosion) -- コンテナミサイル　孫（爆発）
+31300000 Cluster Missile Parent: The one that cannot transition to explosion. -- クラスターミサイル 親 爆発に遷移できないやつ
+31300001 cluster missile parent -- クラスターミサイル 親
+31300002 cluster missile child -- クラスターミサイル 子
+31300005 Cluster missile parent (explosion) -- クラスターミサイル　親（爆発）
+31300006 Cluster missile child (explosion) -- クラスターミサイル　子（爆発）
+31410000 Single-shot funnel (3-point plasma burst) main body -- 単発式ファンネル（プラズマ3点バースト）　本体
+31410001 Single-shot funnel (3-point plasma burst) main body during free fall -- 単発式ファンネル（プラズマ3点バースト）　本体 自由落下時
+31410010 Single-shot funnel (3-point plasma burst) bullet -- 単発式ファンネル（プラズマ3点バースト）　弾丸
+31410100 Single-engine funnel (charge) main body 3 aircraft formation flight -- 単発式ファンネル（チャージ）　本体 3機編隊飛行
+31410101 Single-shot funnel (charge) main body after combination -- 単発式ファンネル（チャージ）　本体 合体後
+31410102 Single-shot funnel (charge) Main body After combining During free fall -- 単発式ファンネル（チャージ）　本体 合体後 自由落下時
+31410110 Single-shot funnel (charge) bullet -- 単発式ファンネル（チャージ）　弾丸
+31510000 Stationary shooting weapon (laser)_Body -- 置き射撃武器（レーザー）_本体
+31510010 Stationary shooting weapon (laser)_Irradiation laser -- 置き射撃武器（レーザー）_照射レーザー
+34000000 For checking enemy damage_DL4 Great stagger (right shoulder) -- 敵ダメージ確認用_DL4大よろけ（右肩）
+34100000 For checking enemy damage_DL5 blowback (left shoulder) -- 敵ダメージ確認用_DL5吹っ飛び（左肩）
+32000000 Shoulder bazooka_spread -- 肩バズーカ_スプレッド
+32000005 Shoulder Bazooka_Spread Explosion -- 肩バズーカ_スプレッド 爆発
+32100000 Shoulder grenade_explosion range-extra large -- 肩グレネード_爆発範囲-特大
+32100005 Shoulder grenade_explosion range-extra large (explosion) -- 肩グレネード_爆発範囲-特大（爆発）
+32200000 Shoulder high laser cannon_W laser -- 肩ハイレーザーキャノン_Wレーザー
+32200100 Shoulder High Laser Cannon_W Laser_Single Charge Shooting -- 肩ハイレーザーキャノン_Wレーザー_一段チャージ射撃
+32200200 Shoulder high laser cannon_W laser_two-stage charge shooting -- 肩ハイレーザーキャノン_Wレーザー_二段チャージ射撃
+32300000 Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft -- 肩プラズマキャノン_レイレナ機体向け軽量特化
+32300005 Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft (explosion) -- 肩プラズマキャノン_レイレナ機体向け軽量特化（爆発）
+32300100 Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft_Charge firing -- 肩プラズマキャノン_レイレナ機体向け軽量特化_チャージ射撃
+32300105 Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft_Charge firing (explosion) -- 肩プラズマキャノン_レイレナ機体向け軽量特化_チャージ射撃（爆発）
+32400000 Shoulder pulse gun_Continuously fire for a long time -- 肩パルスガン_長時間継続して浴びせ続ける
+32500000 Shoulder Laser Cannon_Can also be used by Mirage Power - Medium -- 肩レーザーキャノン_ミラージュでも扱える 威力-中
+32500100 Shoulder Laser Cannon_Can also be used by Mirage Power - Medium_Charge shooting -- 肩レーザーキャノン_ミラージュでも扱える 威力-中_チャージ射撃
+32600000 shoulder laser shotgun -- 肩レーザーショットガン
+32600100 Shoulder laser shotgun_charge shooting -- 肩レーザーショットガン_チャージ射撃
+32600105 Shoulder laser shotgun_Charge shooting (explosion) -- 肩レーザーショットガン_チャージ射撃（爆発）
+32700000 stun needle launcher parent -- スタンニードルランチャー 親
+32700001 Stun needle launcher child -- スタンニードルランチャー　子
+32700005 Stun needle launcher (explosion) -- スタンニードルランチャー（爆発）
+32700500 Stun Needle Launcher_For Sandworm Battle Parent -- スタンニードルランチャー_サンドワーム戦用 親
+32700501 Stun Needle Launcher_Sandworm Battle_Child -- スタンニードルランチャー_サンドワーム戦用_子
+32700505 Stun Needle Launcher_For Sandworm Battle (Explosive) -- スタンニードルランチャー_サンドワーム戦用（爆発）
+33000000 Exceed Orbit (live bullet) -- イクシードオービット（実弾）
+33010000 Exceed Orbit (EN) -- イクシードオービット（EN）
+33100000 shooting PA -- 射撃PA
+33100001 Shooting PA_PA activated -- 射撃PA_PA発動
+33100005 Shooting PA_Explosion -- 射撃PA_爆発
+33100006 Shooting PA_Explosion (for decal hit) -- 射撃PA_爆発（デカールhit用）
+33200000 Shoulder bazooka for jailbreak mission_spread -- 脱獄ミッション用肩バズーカ_スプレッド
+33500000 Auxiliary booster_M・AI unique (shooting weapon ver) -- 補助ブースター_M・AI ユニーク（射撃武器ver）
+70000000 Core special features_Assault armor_Explosive body -- コア特殊機能_アサルトアーマー_爆発本体
+70000001 Core special features_Assault armor_Shockwave -- コア特殊機能_アサルトアーマー_衝撃波
+70000010 Core special features_Assault Armor_Anti-PA -- コア特殊機能_アサルトアーマー_アンチPA
+70000011 Core special features_Assault armor_Anti installation PA -- コア特殊機能_アサルトアーマー_アンチ設置PA
+70000100 Core special features_Assault armor_Coral attribute_Explosive body -- コア特殊機能_アサルトアーマー_コーラル属性_爆発本体
+70000101 Core special features_Assault armor_Coral attribute_Shockwave -- コア特殊機能_アサルトアーマー_コーラル属性_衝撃波
+70000110 Core special features_Assault armor_Coral attribute_Anti-PA -- コア特殊機能_アサルトアーマー_コーラル属性_アンチPA
+70000111 Core special features_Assault armor_Coral attribute_Anti installation PA -- コア特殊機能_アサルトアーマー_コーラル属性_アンチ設置PA
+70100009 Core special features_Primal Armor_Shockwave -- コア特殊機能_プライマルアーマー_衝撃波
+70200000 Core special features_installation PA -- コア特殊機能_設置PA
+70200009 Core special features_Installed PA_Shock wave -- コア特殊機能_設置PA_衝撃波
+70300009 Core special functions_Emergency PA_Shockwave -- コア特殊機能_緊急時PA_衝撃波
+80000000 Bare-handed_Right-handed attack -- 素手_右手攻撃
+80000010 Bare-handed_Left-handed attack -- 素手_左手攻撃
+91200100 Plasma rifle_standard type_charge shooting -- プラズマライフル_標準タイプ_チャージ射撃
+91200105 Plasma rifle_Standard type_Charge shooting (explosion) -- プラズマライフル_標準タイプ_チャージ射撃（爆発）
+91210100 Plasma rifle_Large plasma diffusion Karasawa_Charge shooting -- プラズマライフル_プラズマ拡散大 カラサワ_チャージ射撃
+91210105 Plasma rifle_Large plasma diffusion Karasawa_Charge shooting (explosion) -- プラズマライフル_プラズマ拡散大 カラサワ_チャージ射撃（爆発）
+91500100 Laser shotgun_zero distance recommended_charge shooting -- レーザーショットガン_零距離推奨_チャージ射撃
+91510100 Laser shotgun _ horizontally wide _ charge shooting -- レーザーショットガン_横に広い_チャージ射撃
+91520100 Laser shotgun_M・AI unique_charge shooting -- レーザーショットガン_M・AI ユニーク_チャージ射撃
+92100000 PA Breaker_Weak Attack① -- PAブレイカー_弱攻撃①
+92100010 PA Breaker_Weak attack ② -- PAブレイカー_弱攻撃②
+92100020 PA Breaker_Weak Attack③ -- PAブレイカー_弱攻撃③
+92100030 PA Breaker_Weak Attack④ -- PAブレイカー_弱攻撃④
+92100040 PA Breaker_Weak Attack⑤ -- PAブレイカー_弱攻撃⑤
+92100100 PA Breaker_Strong attack ① -- PAブレイカー_強攻撃①
+92100110 PA Breaker_Strong attack ② -- PAブレイカー_強攻撃②
+92100120 PA Breaker_Strong attack ③ -- PAブレイカー_強攻撃③
+92100800 PA Breaker_Body hit -- PAブレイカー_体当たり

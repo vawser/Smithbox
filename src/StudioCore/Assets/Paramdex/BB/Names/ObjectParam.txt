@@ -1,2192 +1,2191 @@
-0 バリスタ
-300 m20_01霧の壁
-310 m20_01エレベータ
-320 m20_01レバー
-330 m20_01壊れる窓
-430 m20_01木の棺
-431 m20_01木の箱（小）
-432 m20_01木の箱（布被せ）
-433 m20_01台車
-434 プロト壊れる箱
-436 m20_01机
-437 m20_01椅子
-438 m20_01木の箱（中）
-442 m20_01タル
-443 m20_01壊れたタル
-446 m20_01棺（模様有）
-454 m20_01彫像_大
-455 m20_01彫像_中
-456 m20_01彫像_小
-457 m20_01彫像_布なし
-459 m20_01彫像_ちょっと大
-470 m20_01聖堂大扉
-471 m20_01屋敷2F扉
-472 m20_01屋敷1F扉
-473 m20_01聖堂前鉄格子
-474 m20_01屋敷前鉄格子
-475 m20_01屋敷小扉
-467 シャンデリア破壊
-513 プロト壺
-514 プロト壺
-515 プロト壺
-516 プロト壺
-600 ワープおっさん
-640 宝死体用汎用椅子（ボロ）
-642 宝死体用汎用椅子（きれい）
-700 書置き
-1000 テーブル
-1001 テーブル
-1002 テーブル
-1005 ベンチ
-1010 ドア
-1011 壊れたドア
-1020 はしご
-1030 崩れる天井
-1031 崩れる屋根
-1040 壊れる手すり
-1041 壊れる手すり
-1042 壊れる手すり
-1048 立てかけた車輪
-1049 壊れかけ箱
-1050 要石
-1055 隆起したヘドロ
-1056 隆起したヘドロ2
-1058 隆起したヘドロ3
-1100 拡散のモノ【ラスボス】
-1101 鳥群
-1102 要人OBJ
-1110 燃える死体の山
-1120 荷車A
-1122 荷車A(荷物あり)
-1129 物売りの小物
-1130 箱
-1132 長方形の箱
-1133 箱×3
-1134 長方形の箱（小物あり）
-1135 桶
-1140 籠
-1145 土嚢
-1146 荷袋
-1150 樽A
-1152 樽×3（縦）
-1153 樽×5（横）
-1154 不死者漬け樽
-1155 不死者漬け樽(蓋なし)
-1156 不死者漬け樽（物売り専用）
-1160 テーブル　椅子
-1162 テーブル　椅子(小物1)
-1163 テーブル　椅子(小物2)
-1170 棚
-1172 棚（荷物あり）
-1175 長椅子
-1176 長椅子（荷物あり）
-1190 城下2　ボス部屋の柱
-1200 教区のレバー
-1201 木造扉
-1202 釣鐘のレバー
-1205 梯子＠下水の復帰ルート
-1206 梯子＠スタートから落ちた時の復帰
-1207 梯子＠城郭から下層に下りる
-1208 梯子＠橋脚の中のスライド式
-1209 梯子＠城郭の塔
-1210 梯子＠倉庫
-1211 梯子＠倉庫
-1212 梯子＠教会
-1213 梯子＠教会
-1214 梯子＠教会
-1215 梯子＠教会
-1216 梯子＠教会
-1217 梯子＠拠点接合部
-1218 梯子＠城下の見張り台
-1219 梯子＠ヘルカイトを避けて橋の下
-1230 教会柱
-1231 教会柱
-1232 教会柱
-1233 教会柱
-1240 教会椅子
-1241 教会椅子背もたれ
-1242 椅子
-1243 テーブル１
-1244 テーブル２
-1250 鍛冶屋のテーブル
-1251 鍛冶屋の桶
-1252 鍛冶屋の金床及び椅子
-1270 机
-1300 教会屋根の像
-1305 城下1から森への扉
-1306 城下1から城下2への扉
-1308 扉（鉄格子）
-1309 扉
-1310 扉（木製）
-1312 扉（木製）
-1314 扉（鉄格子）
-1313 扉（木製）
-1315 扉（木製）
-1316 扉（木製）
-1317 扉（木製）
-1318 扉（木製）
-1319 扉（木製）
-1320 DS1棚
-1321 衝立
-1322 ネズミ箱
-1323 破壊扉
-1330 転げ落ちる樽
-1350 女神像
-1400 光る霧
-1401 光る霧
-1402 光る霧
-1403 光る霧
-1404 光る霧
-1405 光る霧
-1406 光る霧
-1407 光る霧
-1408 光る霧
-1409 光る霧
-1410 光る霧
-1411 光る霧
-1412 光る霧
-1413 光る霧
-1414 光る霧
-1415 光る霧
-1416 光る霧
-1417 光る霧
-1418 光る霧
-1419 光る霧
-1420 光る霧
-1421 光る霧
-1460 教会拠点エレベータ
-1465 鉄格子扉
-1470 王母像
-1480 大扉
-1490 はしご
-1495 擬態の壷
-1496 壷
-1497 壷
-1500 正面扉
-1510 梯子
-1511 梯子
-1512 梯子
-1513 梯子
-1520 ギミック扉
-1530 壊せる扉
-1540 ギミック石像
-1550 ハンドル
-1560 壊せる灯篭
-1570 死体を吊るす紐
-1571 死体を吊るす紐
-1580 扉
-1600 ボス部屋壁
-1601 光る霧
-1602 光る霧
-1603 光る霧
-1604 光る霧
-1605 光る霧
-1610 隠し扉
-1800 ドラゴンゾンビ　カメラ制御１
-1801 ドラゴンゾンビ　カメラ制御２
-1802 ドラゴンゾンビ　カメラ制御3
-1900 石牢
-1910 ベンチ
-1915 ベンチ（雪）
-1916 ベンチ（雪壊れ）
-1920 テーブル
-1930 椅子
-1940 樽
-1945 樽（雪）
-1946 樽（雪・横）
-1960 はやにえ（低）
-1965 はやにえ
-1966 はやにえ
-1967 はやにえ
-2000 宝箱・小
-2100 宝箱・中
-2200 宝箱・大
-2110 m12後半への扉
-2111 m12ボス扉
-2120 隠し扉
-2130 長い橋の壁（左）
-2131 長い橋の壁（右）
-2200 小木00
-2201 小木01
-2202 闇の木
-2203 闇の木(低い)
-2211 レバー（スイッチ）
-2221 レバー対応扉（正面）
-2231 城内部への扉
-2241 レバー対応扉（右）
-2250 鍛冶屋のテーブル
-2251 鍛冶屋の桶
-2252 鍛冶屋の金床及び椅子
-2253 ハンター荷物
-2261 扉（蹴破り）
-2271 ハシゴ
-2280 大型バリスタ【土台】
-2281 大型バリスタ【本体】
-2282 大型バリスタ【発射装置】
-2290 鉄球破壊木の板
-2291 鉄球破壊木の板
-2303 カラクリ階段
-2304 犬馬車
-2317 血だまり
-2318 壊れる木のでっぱり
-2320 落ちてくるワラ
-2321 鉄柵扉(サブイベント用）
-2322 落下馬車
-2323 ワラ人形
-2324 落下ワラ（単品）
-2325 破壊される柵
-2326 落下ワラ（単品）
-2328 木箱と樽
-2330 ボス部屋の石造(剣持ち）
-2331 ボス部屋の石造(盾持ち）
-2400 滝の横の梯子
-2401 滝の奥の梯子
-2420 剣立て
-2421 ベッド
-2422 タンス
-2423 机
-2424 テーブル
-2425 武器立てA
-2426 武器たてB
-2427 豪華いす
-2428 小箱A
-2429 小箱B
-2430 腰掛
-2431 長いす
-2432 矢よけ
-2433 矢よけ壊れ
-2434 壊れ荷車
-2435 壊れ荷車
-2440 王の間瓦礫
-2441 王の間瓦礫
-2442 王の間瓦礫
-2443 王の間瓦礫
-2444 王の間瓦礫
-2445 王の間瓦礫
-2446 王の間瓦礫
-2447 王の間瓦礫
-2448 王の間瓦礫
-2449 王の間瓦礫
-2450 対黒竜ブレス壁
-2451 旗
-2452 旗
-2455 奴隷兵士
-2456 歯車
-2460 王城４　地形破壊前
-2461 王城４　地形破壊中
-2462 王城４　地形破壊後
-2470 王城４　塔破壊前
-2471 王城４　塔破壊中
-2472 王城４　塔破壊後
-2480 王城ゴンドラ
-2490 馬
-2500 DLC　壊れる枝
-2501 要石（仮）
-2511 ボス部屋用魔法障壁（入口）
-2513 ボス部屋用魔法障壁（出口）
-2515 マルチ用魔法障壁（入口）
-2521 ボス部屋用魔法障壁（入口）
-2523 ボス部屋用魔法障壁（出口）
-2525 マルチ用魔法障壁（入口）
-2531 ボス部屋用魔法障壁（入口）
-2533 ボス部屋用魔法障壁（出口）
-2534 王城３用
-2535 マルチ用魔法障壁（入口）
-2541 ボス部屋用魔法障壁（入口）
-2543 ボス部屋用魔法障壁（出口）
-2545 マルチ用魔法障壁（入口）
-2551 光る霧
-2552 光る霧
-2553 光る霧
-2554 光る霧
-2600 落下地面
-2601 落下地面補填かけら
-2610 壊せる石柱1
-2611 壊せる石柱2
-2612 壊せる石柱3
-2613 壊せる石柱4
-2620 隠し扉
-2621 消える床
-2360 イベント円柱コリジョン
-2650 蜀台
-2700 エレベータ
-2701 エレベータ呼び出し
-2710 ワープ用ダミポリ（不要だった）
-2720 扉
-2730 隠し扉
-2731 隠し扉
-2732 隠し扉
-2740 机
-2750 いす
-2760 アルトリウスの墓
-2765 ゴーの弓
-2770 石像
-2780 対戦マップ落とし扉
-2785 対戦マップ落とし篭
-2790 はしご
-2791 はしご
-2795 死体を吊るす紐
-2900 光る霧
-2901 光る霧
-2902 光る霧
-2903 光る霧
-2904 光る霧
-2905 光る霧
-2906 光る霧
-2907 光る霧
-2909 光る霧
-2910 m20_01最初の扉（木製）
-2911 光る霧
-2912 光る霧
-2913 光る霧
-2914 光る霧
-2915 光る霧
-2916 光る霧
-2917 光る霧
-2918 光る霧
-2919 光る霧
-2920 光る霧
-2990 教区長死体
-3000 はし
-3001 はし
-3010 
-3011 
-3020 
-3021 
-3030 墓１崩れる足場
-3031 墓１崩れる足場
-3032 墓１崩れる足場
-3033 墓１崩れる足場
-3034 墓１崩れる足場
-3035 墓１崩れる足場
-3036 崩れる天井
-3040 梯子　ｍ0730B0
-3041 梯子　ｍ0780B0
-3042 梯子　ｍ0790B0
-3043 梯子　ｍ2500B0-1
-3044 梯子　ｍ2500B0-2
-3045 梯子　ｍ0680B0
-3046 梯子　ｍ0700B0
-3047 梯子　ｍ0500B0
-3048 はしご
-3060 イベント棺
-3100 閂扉（両開き）
-3101 ボス部屋入り口扉（両開き）
-3102 ボス部屋出口扉（両開き）
-3103 岩（SEQ9）
-3104 ボス部屋入り口イベント
-3105 牢屋扉
-3106 光る霧
-3107 光る霧
-3108 光る霧
-3110 梯子
-3120 
-3121 
-3122 
-3123 
-3124 
-3125 
-3126 
-3127 
-3128 
-3129 
-3130 
-3131 
-3132 
-3140 梯子
-3141 梯子
-3142 梯子
-3143 梯子
-3144 梯子
-3145 
-3146 
-3147 
-3148 
-3160 ボス部屋壊れる柱
-3200 石扉（両開き）
-3201 魔法の扉
-3210 鍵付き扉
-3211 魔法の扉
-3220 床スイッチ
-3221 
-3230 
-3231 
-3240 梯子　崩落棺内
-3241 梯子　ドラゴンゾンビ帰り
-3242 梯子　崩落棺のぼり
-3243 梯子　暗所ラスト
-3250 床板
-3251 
-3260 骸骨像
-3261 
-3270 デーモン像
-3271 
-3280 骸骨像
-3290 嵐の戦士
-3291 嵐の戦士すり替え用瓦礫
-3292 嵐の戦士置き物
-3300 白骨死体
-3301 白骨死体
-3302 つるされ
-3310 壷
-3311 壷
-3312 倒れたつぼ
-3320 墓守
-3321 墓守
-3350 ボス部屋壁
-3400 壊れる壁
-3410 壺Ａ
-3411 壺Ｂ
-3412 壺Ｃ
-3413 壺Ｄ
-3414 壺Ｅ
-3415 壺Ｆ
-3419 壊れた旗
-3420 旗
-3421 
-3422 
-3423 
-3430 
-3431 
-3432 
-3440 
-3450 隠し扉
-3451 隠し扉
-3452 隠し扉
-3460 破壊木
-3461 破壊木
-3462 破壊木
-3470 壊れた樽Ａ
-3471 樽Ｂ
-3500 枝
-3501 枝
-3511 枝
-3512 
-3515 
-3521 
-3522 
-3525 
-3531 
-3532 
-3535 
-3600 13_01ボス部屋前
-3601 13_01ボス部屋前
-3610 骨
-3611 骨
-3612 骨
-3650 大骨
-3651 大骨
-3652 大骨
-3653 大骨
-3654 大骨
-3660 隠し扉
-3661 隠し扉
-3662 
-3870 鍛冶
-3871 壁
-3872 壁裏
-3873 ポリ劇ブロック
-3890 ポリ劇机
-3900 墓王破壊
-3901 墓王破壊
-3902 墓王破壊
-3950 光の壁13-0
-3951 光の壁13-0
-3952 光の壁
-3953 光の壁
-3954 光の壁
-3955 光の壁
-3960 光の壁13-1
-3961 光の壁13-1
-3962 光の壁
-3963 光の壁
-3964 光の壁
-3965 光の壁
-3970 光の壁13-2
-3971 光の壁
-3972 光の壁
-3973 光の壁
-3998 死体宝箱
-3999 死体宝箱
-4000 水車
-4001 
-4002 
-4005 
-4006 
-4007 
-4010 
-4020 
-4030 
-4040 
-4050 崩れ板
-4060 
-4070 
-4080 
-4090 
-4100 
-4101 梯子
-4102 梯子
-4103 梯子
-4104 梯子
-4105 梯子
-4106 梯子
-4107 梯子
-4108 梯子
-4109 梯子
-4110 梯子
-4111 梯子
-4112 梯子
-4113 梯子
-4114 梯子
-4115 梯子
-4116 梯子
-4117 梯子
-4118 梯子
-4119 梯子
-4120 梯子
-4121 梯子
-4122 梯子
-4123 梯子
-4124 梯子
-4125 梯子
-4126 梯子
-4127 梯子
-4128 梯子
-4129 梯子
-4130 
-4140 
-4141 
-4150 
-4160 
-4161 
-4170 
-4180 
-4181 
-4182 
-4200 動く床
-4201 動く床
-4202 動く床
-4215 壷
-4300 柱
-4301 柱
-4302 柱
-4303 柱
-4304 柱
-4305 柱
-4350 障害木
-4351 障害木
-4352 障害木
-4353 障害木
-4360 破壊木
-4361 破壊木
-4362 破壊木
-4370 枝
-4400 壷
-4401 壷
-4402 車輪
-4403 車輪
-4404 
-4405 
-4406 壊れ板
-4407 壊れ板
-4408 壊れ板
-4409 壊れ扉
-4410 壊れ扉
-4411 壊れ板
-4412 
-4420 
-4421 
-4422 
-4423 
-4424 
-4430 
-4435 
-4436 
-4437 
-4438 
-4439 
-4440 
-4441 
-4442 
-4445 
-4446 
-4460 ポリ劇ボス
-4461 ポリ劇ボス
-4510 隠し扉
-4511 
-4512 
-4515 
-4521 
-4522 
-4525 
-4531 
-4532 
-4535 
-4550 スイッチ
-4560 鐘
-4570 隠し扉
-4600 エレベータ
-4610 封印のやり
-4611 突き破る枝
-4620 イザリス床
-4621 イザリス床
-4622 イザリス床
-4623 イザリス床
-4624 イザリス床
-4625 イザリス床
-4626 イザリス床
-4627 イザリス床
-4628 イザリス床
-4629 イザリス床
-4630 イザリス床
-4631 イザリス床
-4632 イザリス床
-4633 イザリス床
-4634 イザリス床
-4635 イザリス床
-4636 イザリス床
-4637 イザリス床
-4700 とびら
-4701 とびら
-4750 
-4751 
-4800 ウジ虫が隠れる壁
-4810 崩れる大床
-4820 変身つぼ1-0
-4830 変身石像14-1
-4840 イザリス枝
-4850 イザリス槍
-4900 
-4901 
-4910 
-4911 
-4950 光の壁14-0
-4951 光の壁14-0
-4952 光の壁14-0
-4953 光の壁14-0
-4954 光の壁
-4955 光の壁
-4956 光の壁
-4957 光の壁
-4958 光の壁
-4960 光の壁14-1
-4961 光の壁14-1
-4962 光の壁14-1
-4963 光の壁14-1
-4964 光の壁14-1
-4965 光の壁14-1
-4966 光の壁14-1
-4967 光の壁
-4968 光の壁
-4969 光の壁
-4970 光の壁
-4971 光の壁
-4972 光の壁
-4980 
-4998 
-4999 
-5000 ペンデュラム
-5010 ゴロゴロ
-5100 城門
-5110 壊れる壁1
-5120 壊れる壁2
-5130 魔法の隠し扉
-5140 格子扉
-5150 光の壁
-5151 光の壁
-5152 光の壁
-5153 光の壁
-5154 光の壁
-5155 光の壁
-5156 光の壁
-5200 ゴロゴロの回転レバー
-5300 罠エレベータ
-5301 篭牢エレベータ
-5310 篭牢
-5400 梯子
-5401 梯子
-5402 梯子
-5403 梯子
-5404 梯子
-5410 梯子
-5411 梯子
-5550 壷１
-5551 壷２
-5552 壷３
-5560 火炎壷
-5561 火炎壷(つんである物)
-5570 机
-5580 椅子
-5600 回転エレベータ
-5610 回転大橋（描画+レバーのヒット）
-5611 回転大橋のヒット
-5620 回転エレベータ（屋内）
-5630 回転エレベータ（屋内）
-5650 破壊柱（大・像つき）
-5651 破壊柱（大・像つき）
-5652 破壊柱（大）
-5653 破壊柱（大）
-5654 破壊柱（小）
-5655 破壊柱（小）
-5700 正門
-5710 格子扉
-5720 汎用扉
-5730 王母扉
-5740 隠し扉
-5760 正門を開けるレバー
-5800 シャンデリア
-5810 シャンデリアの鎖
-5850 でかい絵
-5860 光の壁
-5861 光の壁
-5862 光の壁
-5863 光の壁
-5864 光の壁
-5865 光の壁
-5866 光の壁
-5867 光の壁
-5868 光の壁
-5869 光の壁
-5870 光の壁
-5871 光の壁
-5900 騎士像
-5910 椅子
-5911 六目の椅子
-5920 丸テーブル
-5930 壷のある棚
-5940 袖机
-5950 礼拝堂のベンチ
-5951 ベンチ
-5952 ミニベンチ
-5960 作業台のベンチ
-5965 巨人鍛冶屋の椅子
-5967 巨人奴隷鍛冶屋の壷
-5968 巨人奴隷鍛冶屋の樽
-5969 巨人奴隷鍛冶屋の桶
-5970 机１（大）
-5971 机２（小）
-5972 机３（作業台）
-5980 巻物保管箱（大）
-5981 巻物保管箱（大・蓋あき）
-5982 巻物保管箱（小）
-5983 巻物保管箱（小・蓋あき）
-5990 高級壷
-6000 水門
-6010 格子扉
-6100 エレベータ呼びスイッチ
-6110 水門スイッチ
-6200 ｴﾚﾍﾞｰﾀｰ
-6400 はしご
-6401 縄ばしご
-6410 スライド式はしご
-6450 擬態の壷
-6451 壷
-6452 壷
-6455 擬態の壷(水没)
-6456 壷（水没）
-6457 壷（水没）
-6600 光の壁
-6601 光の壁
-6602 光の壁
-6603 光の壁
-6604 光の壁
-6605 光の壁
-6606 光の壁
-6607 光の壁
-6700 隠し扉
-7010 燭台【4面開放】
-7020 燭台【2面開放】
-7200 下がる階段
-7201 レバー
-7202 レバー（色違い）
-7230 回転階段
-7231 回転階段（ヒット）
-7240 シース部屋へのゴンドラ
-7241 最初のゴンドラ
-7250 移動本棚2階
-7251 移動本棚1階
-7300 牢の梯子
-7301 牢の見張り台の梯子
-7302 森の梯子
-7303 図書館後半の梯子
-7400 牢の扉
-7401 牢屋の扉
-7404 警報機
-7500 不死身結晶
-7510 固定結晶
-7511 ボス部屋用魔法障壁（入口）
-7512 ボス部屋用魔法障壁（出口）
-7515 マルチ用魔法障壁（入口）
-7521 ボス部屋用魔法障壁（入口）
-7522 ボス部屋用魔法障壁（出口）
-7525 マルチ用魔法障壁（入口）
-7531 ボス部屋用魔法障壁（入口）
-7532 ボス部屋用魔法障壁（出口）
-7535 マルチ用魔法障壁（入口）
-7600 天球儀A
-7601 天球儀B
-7610 移動式階段
-7620 机
-7630 椅子
-7621 机(本あり)
-7640 棚
-7650 壷
-7670 本立て（開き）
-7690 移動式本棚
-7700 女神像
-7900 光る霧
-7901 光る霧
-7902 光る霧
-7906 光る霧
-7907 光る霧
-7908 光る霧
-8000 テスト用オブジェ
-8050 光の壁18_00
-8051 光の壁18_00
-8100 はしご
-8110 魔法壁
-8111 光の壁（通常）
-8120 倒れた柱
-8150 擬態用の小さい柱
-8200 はしご（10度）
-8300 封印の扉
-8311 王の器
-8400 桶
-8401 袋１
-8402 袋２
-8403 壷
-8410 壷（教会）　縦
-8411 壷（教会）　横
-8420 ガーゴイル像
-8421 ガーゴイル像(首落ち)
-8422 ガーゴイル像(羽付き)
-8425 ガーゴイル像(反転)
-8500 はしご
-8501 はしご
-8510 教会床
-8511 教会床下
-8520 壁
-8521 壁裏
-8530 鉄球
-8531 鉄球のアタリ
-8540 鉄格子扉
-8541 教会扉(前)
-8542 教会格子
-8544 教会扉(奥)
-8550 教会扉
-8600 教会柱
-8601 教会柱
-8610 下水柱
-8611 下水柱
-8700 教会崩壊箇所
-8701 教会崩壊箇所
-8702 教会崩壊箇所
-8950 光の壁18-1
-8951 光の壁18-1
-8952 光の壁18-1
-8953 光の壁18-1
-9010 森の扉
-9120 柱01-01
-9121 柱01-02
-9122 柱01-03
-9123 柱02-01
-9124 柱01-04
-9125 柱03-01
-9140 燭台01-01
-9141 燭台02-01
-9150 かがり火
-9160 柱01-05
-9400 WP_A_0250 魔剣
-9401 WP_A_0450　柄なし
+0 Barista
+300 m20_01 Wall of Fog
+310 m20_01 Elevator
+320 m20_01 lever
+330 m20_01 Broken Windows
+430 m20_01 Wooden coffin
+431 m20_01 Wooden box (small)
+432 m20_01 Wooden box (covered with cloth)
+433 m20_01 Trolley
+434 Prototype breakable box
+436 m20_01 desk
+437 m20_01 chair
+438 m20_01 Wooden box (medium)
+442 m20_01 Tal
+443 m20_01 Broken Barrel
+446 m20_01 Coffin (with pattern)
+454 m20_01 Statue _ large
+455 m20_01 Statue _ Medium
+456 m20_01 Statue _ small
+457 m20_01 Statue _ No cloth
+459 m20_01 Statue _ A little big
+470 m20_01 Cathedral Door
+471 m20_01 Mansion 2F door
+472 m20_01 Mansion 1F door
+473 m20_01 Iron bars in front of the church
+474 m20_01 Iron bars in front of the house
+475 m20_01 Small door of the mansion
+467 Chandelier Destruction
+513,Prototype
+514,Prototype
+515,Prototype
+516,Prototype
+600 Warp Uncle
+640 General-purpose chair for treasure corpses (worn)
+642 General-purpose chair for treasure corpses (clean)
+700 Note
+1000 table
+1001 table
+1002 table
+1005 bench
+1010 door
+1011 Broken Door
+1020 Ladder
+1030 Collapsed ceiling
+1031 Collapsing roof
+1040 Broken handrail
+1041 Broken handrail
+1042 Broken handrail
+1048 Wheels standing upright
+1049 Broken Box
+1050 Keystone
+1055 Raised sludge
+1056 Raised sludge 2
+1058 Raised sludge 3
+1100 Diffusion Thing [Last Boss]
+1101 Birds
+1102 VIP OBJ
+1110 Pile of burning corpses
+1120 cart A
+1122 cart A( With luggage )
+1129 Small items for sale
+1130 box
+1132 Rectangular Box
+1133 box ×3
+1134 Rectangular box (with small items)
+1135 Bucket
+1140 basket
+1145 sandbag
+1146 Luggage bag
+1150 Barrel A
+1152 Barrel ×3 (vertical)
+1153 Barrel x5 (beside)
+1154 Barrel of Immortals
+1155 Barrel of Immortals ( No lid )
+1156 Barrel of Undead Pickles (for vendors only)
+1160,Tables and chairs
+1162 Tables and chairs ( Small items 1)
+1163 Tables and chairs ( Small items 2)
+1170 shelf
+1172 Shelf (with luggage)
+1175 Long chair
+1176 Long chair (with luggage)
+1190 Castle town 2 Boss room pillar
+1200 Parish Lever
+1201 Wooden door
+1202 Bell Lever
+1205 Ladder @ Sewer Return Route
+1206 Ladder @Recovery after falling from the start
+1207 Ladder @ Descending from the castle to the lower level
+1208 Ladder @ sliding type inside the bridge pier
+1209 Ladder @ Castle Tower
+1210 Ladder @ Warehouse
+1211 Ladder @ Warehouse
+1212 Ladder @ Church
+1213 Ladder @ Church
+1214 Ladder @ Church
+1215 Ladder @ Church
+1216 Ladder @ Church
+1217 Ladder @ base junction
+1218 Ladder @ Lookout Tower under the Castle
+1219 Ladder @ Avoid the Hellkite and go under the bridge
+1230 Church pillar
+1231 Church pillar
+1232 Church pillar
+1233 Church pillar
+1240 Church Chair
+1241 church chair back
+1242 chair
+1243 Table 1
+1244 Table 2
+1250 Blacksmith's table
+1251 Blacksmith's Bucket
+1252 Blacksmith's anvil and chair
+1270 desk
+1300 Statue on church roof
+1305 Castle town 1 Door to the forest
+1306,Castle town 1 From the castle town 2 Door to
+1308 Door (iron bars)
+1309 door
+1310 Door (wooden)
+1312 Door (wooden)
+1314 Door (iron bars)
+1313 Door (wooden)
+1315 Door (wooden)
+1316 Door (wooden)
+1317 Door (wooden)
+1318 Door (wooden)
+1319 Door (wooden)
+1320 DS1 shelf
+1321 screen
+1322 Mouse Box
+1323 Destructible Door
+1330 Rolling Barrel
+1350 Goddess Statue
+1400 Glowing Fog
+1401 Glowing Fog
+1402 Glowing Fog
+1403 Glowing Fog
+1404 Glowing Fog
+1405 Glowing Fog
+1406 Glowing Fog
+1407 Glowing Fog
+1408 Glowing Fog
+1409 Glowing Fog
+1410 Glowing Fog
+1411 Glowing Fog
+1412 Glowing Fog
+1413 Glowing Fog
+1414 Glowing Fog
+1415 Glowing Fog
+1416 Glowing Fog
+1417 Glowing Fog
+1418 Glowing Fog
+1419 Glowing Fog
+1420 Glowing Fog
+1421 Glowing Fog
+1460 Church Base Elevator
+1465 Iron Barred Door
+1470 Statue of Queen Mother
+1480 Main Door
+1490 Ladder
+1495 Mimicry Vase
+1496 pot
+1497 pot
+1500 Front door
+1510 ladder
+1511 ladder
+1512 ladder
+1513 ladder
+1520 Gimmick Door
+1530 Destructible Door
+1540 Gimmick stone statue
+1550 handle
+1560 Destructible Lantern
+1570 Rope for hanging a corpse
+1571 Rope for hanging a corpse
+1580 door
+1600 Boss room wall
+1601 Glowing Fog
+1602 Glowing Fog
+1603 Glowing Fog
+1604 Glowing Fog
+1605 Glowing Fog
+1610 Hidden Door
+1800 Dragon Zombie Camera Control 1
+1801 Dragon Zombie Camera Control 2
+1802 Dragon Zombie Camera Control 3
+1900 Stone Prison
+1910 bench
+1915 Bench (Snow)
+1916 Bench (broken by snow)
+1920 table
+1930 chair
+1940 Barrel
+1945 Barrel (Snow)
+1946 Barrel (Snow Horizontal)
+1960 Hayani (low)
+1965 Haya-nie
+1966 Haya-nie
+1967 Haya-nie
+2000 Treasure Chest Small
+2100 Treasure Chest - Medium
+2200 Treasure Chest Large
+2110 m12 Door to the second half
+2111 m12 Boss Door
+2120 Hidden Door
+2130 Long bridge wall (left)
+2131,Long bridge wall (right)
+2200 Ogi 00
+2201 Ogi 01
+2202 Dark Tree
+2203 Dark Tree ( low )
+2211 Lever (switch)
+2221 Lever-operated door (front)
+2231 Door to the castle interior
+2241 Lever-operated door (right)
+2250 Blacksmith's table
+2251 Blacksmith's Bucket
+2252 Blacksmith's anvil and chair
+2253 Hunter Luggage
+2261 Door (kick down)
+2271 Ladder
+2280 Large Barista [Base]
+2281 Large varistor [main body]
+2282 Large Ballista [Firing Device]
+2290 Iron ball breaking wooden board
+2291 Iron ball breaking wooden board
+2303 Trick Stairs
+2304 Dog carriage
+2317 Blood pool
+2318 Broken wooden protrusion
+2320 Falling straw
+2321 Iron fence door ( (For sub-events)
+2322 Falling Carriage
+2323 Straw doll
+2324 Falling straw (single item)
+2325 Destroyed fence
+2326 Falling straw (single item)
+2328 Wooden boxes and barrels
+2330 Boss room stonework ( Sword bearer)
+2331 Boss room stonework ( Shield holder)
+2400 Ladder next to the waterfall
+2401 Ladder behind the waterfall
+2420 Sword stand
+2421 bed
+2422 chest of drawers
+2423 desk
+2424 table
+2425 Weapon Stand A
+2426 Weapon Stand B
+2427,Luxury Chair
+2428 Small box A
+2429 Small box B
+2430 Seat
+2431 Bench
+2432 Arrow protection
+2433 Arrow guard broken
+2434 Broken Cart
+2435 Broken Cart
+2440 King's Hall Rubble
+2441 King's Hall Rubble
+2442 King's Hall Rubble
+2443 King's Hall Rubble
+2444 King's Hall Rubble
+2445 King's Hall Rubble
+2446 King's Hall Rubble
+2447 King's Hall Rubble
+2448 King's Hall Rubble
+2449 King's Hall Rubble
+2450 Anti-Black Dragon Breath Wall
+2451 flag
+2452 flag
+2455 Slave Soldier
+2456 gear
+2460 Royal Castle 4 Before Terrain Destruction
+2461 Castle 4 Terrain Destruction
+2462 Royal Castle 4 After Terrain Destruction
+2470 Royal Castle 4 Before the Tower Destruction
+2471 Royal Castle 4 Tower Destroyed
+2472 Royal Castle 4 After the Tower Destruction
+2480 Royal Castle Gondola
+2490 horse
+2500 DLC Broken Branch
+2501 Keystone (tentative)
+2511 Boss room magic barrier (entrance)
+2513 Boss room magic barrier (exit)
+2515 Multi-purpose magic barrier (entrance)
+2521 Boss room magic barrier (entrance)
+2523 Boss room magic barrier (exit)
+2525 Multi-purpose magic barrier (entrance)
+2531 Boss room magic barrier (entrance)
+2533 Boss room magic barrier (exit)
+2534 For Royal Castle 3
+2535 Multi-purpose magic barrier (entrance)
+2541 Boss room magic barrier (entrance)
+2543 Boss room magic barrier (exit)
+2545 Multi-purpose magic barrier (entrance)
+2551 Glowing Fog
+2552 Glowing Fog
+2553 Glowing Fog
+2554 Glowing Fog
+2600 Falling Ground
+2601 Falling Ground Compensation Pieces
+2610 Destructible stone pillar 1
+2611 Destructible stone pillar 2
+2612 Destructible stone pillar 3
+2613 Destructible stone pillar 4
+2620 Hidden Door
+2621 Disappearing Floor
+2360 Event Cylinder Collision
+2650 Shutai
+2700 Elevator
+2701 Elevator call
+2710 Warp dummy poly (not needed)
+2720 door
+2730 Hidden Door
+2731 Hidden Door
+2732 Hidden Door
+2740 desk
+2750,Chair
+2760 Tomb of Artorias
+2765 Goh's Bow
+2770 Stone statue
+2780 Battle Map Trap Door
+2785 Battle Map Drop
+2790 Ladder
+2791 Ladder
+2795 Rope for hanging a corpse
+2900 Glowing Fog
+2901 Glowing Fog
+2902 Glowing Fog
+2903 Glowing Fog
+2904 Glowing Fog
+2905 Glowing Fog
+2906 Glowing Fog
+2907 Glowing Fog
+2909 Glowing Fog
+2910 m20_01 First door (wooden)
+2911 Glowing Fog
+2912 Glowing Fog
+2913 Glowing Fog
+2914 Glowing Fog
+2915 Glowing Fog
+2916 Glowing Fog
+2917 Glowing Fog
+2918 Glowing Fog
+2919 Glowing Fog
+2920 Glowing Fog
+2990 Rector's Corpse
+3000 bridge
+3001 bridge
+3010 null
+3011 null
+3020 null
+3021 null
+3030 Grave 1: Collapsed Scaffolding
+3031 Grave 1: Collapsed Scaffolding
+3032 Grave 1: Collapsed Scaffolding
+3033 Grave 1: Collapsed Scaffolding
+3034 Grave 1: Collapsed Scaffolding
+3035 Grave 1: Collapsed Scaffolding
+3036 Collapsed ceiling
+3040 Ladder m 0730B0
+3041 Ladder m 0780B0
+3042 Ladder m 0790B0
+3043 Ladder m 2500B0-1
+3044 Ladder m 2500B0-2
+3045 Ladder m 0680B0
+3046 Ladder m 0700B0
+3047 Ladder m 0500B0
+3048 Ladder
+3060 Event coffin
+3100 Barred door (double door)
+3101 Boss room entrance door (double doors)
+3102 Boss room exit door (double doors)
+3103 rock( SEQ9 )
+3104 Boss room entrance event
+3105 Jail Door
+3106 Glowing Fog
+3107 Glowing Fog
+3108 Glowing Fog
+3110 ladder
+3120 null
+3121 null
+3122 null
+3123 null
+3124 null
+3125 null
+3126 null
+3127 null
+3128 null
+3129 null
+3130 null
+3131 null
+3132 null
+3140 ladder
+3141 ladder
+3142 ladder
+3143 ladder
+3144 ladder
+3145 null
+3146 null
+3147 null
+3148 null
+3160 Boss room collapsible pillar
+3200 Stone door (double door)
+3201 Magic Door
+3210 Lockable door
+3211 Magic Door
+3220 Floor switch
+3221 null
+3230 null
+3231 null
+3240 Ladder in the collapsed coffin
+3241 Ladder Dragon Zombie Return
+3242 Ladder Climbing the collapsed coffin
+3243 Ladder Dark Place Last
+3250 Floorboards
+3251 null
+3260,Skeleton statue
+3261 null
+3270 Demon Statue
+3271 null
+3280,Skeleton statue
+3290 Storm Warrior
+3291 Storm Warrior Replacement Rubble
+3292 Storm warrior figurine
+3300 Skeleton
+3301 Skeleton
+3302 Hanged
+3310 pot
+3311 pot
+3312 Fallen pot
+3320 Gravekeeper
+3321 Gravekeeper
+3350 Boss room wall
+3400 Collapsible Wall
+3410 Pot A
+3411 Pot B
+3412 Vase C
+3413 Pot D
+3414 Pot E
+3415 Pot F
+3419 Broken Flag
+3420 flag
+3421 null
+3422 null
+3423 null
+3430 null
+3431 null
+3432 null
+3440 null
+3450 Hidden Door
+3451 Hidden Door
+3452 Hidden Door
+3460 Destroyed Tree
+3461 Destroyed Tree
+3462 Destroyed Tree
+3470 Broken Barrel A
+3471 Barrel B
+3500 branch
+3501 branch
+3511 branch
+3512 null
+3515 null
+3521 null
+3522 null
+3525 null
+3531 null
+3532 null
+3535 null
+3600 13_01 In front of the boss room
+3601 13_01 In front of the boss room
+3610 bone
+3611 bone
+3612 bone
+3650 Large bone
+3651 Large bone
+3652 Large bone
+3653 Large bone
+3654 Large bone
+3660 Hidden Door
+3661 Hidden Door
+3662 null
+3870 Blacksmithing
+3871 wall
+3872 Behind the wall
+3873 Polythea Blocks
+3890 Polytheatrical play
+3900 Destroy the Gravelord
+3901 Destroy the Gravelord
+3902 Destroy the Gravelord
+3950 Wall of Light 13-0
+3951 Wall of Light 13-0
+3952 Wall of Light
+3953 Wall of Light
+3954 Wall of Light
+3955 Wall of Light
+3960 Wall of Light 13-1
+3961 Wall of Light 13-1
+3962 Wall of Light
+3963 Wall of Light
+3964 Wall of Light
+3965 Wall of Light
+3970 Wall of Light 13-2
+3971 Wall of Light
+3972 Wall of Light
+3973 Wall of Light
+3998 Corpse Treasure Chest
+3999 Corpse Treasure Chest
+4000 Waterwheel
+4001 null
+4002 null
+4005 null
+4006 null
+4007 null
+4010 null
+4020 null
+4030 null
+4040 null
+4050 Crumbling board
+4060 null
+4070 null
+4080 null
+4090 null
+4100 null
+4101 ladder
+4102 ladder
+4103 ladder
+4104 ladder
+4105 ladder
+4106 ladder
+4107 ladder
+4108 ladder
+4109 ladder
+4110 ladder
+4111 ladder
+4112 ladder
+4113 ladder
+4114 ladder
+4115 ladder
+4116 ladder
+4117 ladder
+4118 ladder
+4119 ladder
+4120 ladder
+4121 ladder
+4122 ladder
+4123 ladder
+4124 ladder
+4125 ladder
+4126 ladder
+4127 ladder
+4128 ladder
+4129 ladder
+4130 null
+4140 null
+4141 null
+4150 null
+4160 null
+4161 null
+4170 null
+4180 null
+4181 null
+4182 null
+4200 Moving floor
+4201 Moving floor
+4202 Moving floor
+4215 pot
+4300 Pillar
+4301 Pillar
+4302 Pillar
+4303 Pillar
+4304 Pillar
+4305 Pillar
+4350 Obstacle trees
+4351 Obstacle trees
+4352 Obstacle trees
+4353 Obstacle trees
+4360 Destroyed Tree
+4361 Destroyed Tree
+4362 Destroyed Tree
+4370 branch
+4400 pot
+4401 pot
+4402 wheel
+4403 wheel
+4404 null
+4405 null
+4406 Broken board
+4407 Broken board
+4408 Broken board
+4409 Broken Door
+4410 Broken Door
+4411 Broken board
+4412 null
+4420 null
+4421 null
+4422 null
+4423 null
+4424 null
+4430 null
+4435 null
+4436 null
+4437 null
+4438 null
+4439 null
+4440 null
+4441 null
+4442 null
+4445 null
+4446 null
+4460 Poly Drama Boss
+4461 Poly Drama Boss
+4510 Hidden Door
+4511 null
+4512 null
+4515 null
+4521 null
+4522 null
+4525 null
+4531 null
+4532 null
+4535 null
+4550 switch
+4560 bell
+4570 Hidden Door
+4600 Elevator
+4610 Sealing Spear
+4611 Breaking Branch
+4620 Izalith Floor
+4621 Izalith Floor
+4622 Izalith Floor
+4623 Izalith Floor
+4624 Izalith Floor
+4625 Izalith Floor
+4626 Izalith Floor
+4627 Izalith Floor
+4628 Izalith Floor
+4629 Izalith Floor
+4630 Izalith Floor
+4631 Izalith Floor
+4632 Izalith Floor
+4633 Izalith Floor
+4634 Izalith Floor
+4635 Izalith Floor
+4636 Izalith Floor
+4637 Izalith Floor
+4700 Door
+4701 Door
+4750 null
+4751 null
+4800 A wall where maggots hide
+4810 The collapsing floor
+4820 Transformation Pot 1-0
+4830 Transformation Statue 14-1
+4840,Izalith Branch
+4850 Izalith Spear
+4900 null
+4901 null
+4910 null
+4911 null
+4950 Wall of Light 14-0
+4951 Wall of Light 14-0
+4952 Wall of Light 14-0
+4953 Wall of Light 14-0
+4954 Wall of Light
+4955 Wall of Light
+4956 Wall of Light
+4957 Wall of Light
+4958 Wall of Light
+4960 Wall of Light 14-1
+4961 Wall of Light 14-1
+4962 Wall of Light 14-1
+4963 Wall of Light 14-1
+4964 Wall of Light 14-1
+4965 Wall of Light 14-1
+4966 Wall of Light 14-1
+4967 Wall of Light
+4968 Wall of Light
+4969 Wall of Light
+4970 Wall of Light
+4971 Wall of Light
+4972 Wall of Light
+4980 null
+4998 null
+4999 null
+5000 Pendulum
+5010 Rumbling
+5100 Castle gate
+5110 Collapsible Wall 1
+5120 Collapsible Wall 2
+5130 Magical hidden door
+5140 Lattice door
+5150 Wall of Light
+5151 Wall of Light
+5152 Wall of Light
+5153 Wall of Light
+5154 Wall of Light
+5155 Wall of Light
+5156 Wall of Light
+5200 Rumbling rotating lever
+5300 Trap elevator
+5301 Cage Elevator
+5310 Prison cell
+5400 ladder
+5401 ladder
+5402 ladder
+5403 ladder
+5404 ladder
+5410 ladder
+5411 ladder
+5550 Jar 1
+5551 Jar 2
+5552 Pot 3
+5560 Fire Pot
+5561 Fire Pot ( Something that is stuck )
+5570 desk
+5580 chair
+5600 Rotating elevator
+5610 Rotating bridge (drawing + Lever hit)
+5611 Hit of the rotating bridge
+5620 Rotating elevator (indoor)
+5630 Rotating elevator (indoor)
+5650 Destruction Pillar (Large with statue)
+5651 Destruction Pillar (Large with statue)
+5652 Destruction Pillar (Large)
+5653 Destruction Pillar (Large)
+5654 Destruction Pillar (Small)
+5655 Destruction Pillar (Small)
+5700 Main Gate
+5710 Lattice door
+5720 General-purpose door
+5730 Queen Mother Door
+5740 Hidden Door
+5760 Lever to open the main gate
+5800 chandelier
+5810 Chandelier Chain
+5850 Big picture
+5860 Wall of Light
+5861 Wall of Light
+5862 Wall of Light
+5863 Wall of Light
+5864 Wall of Light
+5865 Wall of Light
+5866 Wall of Light
+5867 Wall of Light
+5868 Wall of Light
+5869 Wall of Light
+5870 Wall of Light
+5871 Wall of Light
+5900 Knight statue
+5910 chair
+5911 Sixth Chair
+5920 Round table
+5930 Shelf with vases
+5940 Side desk
+5950 Chapel bench
+5951 bench
+5952 Mini bench
+5960,Worktable bench
+5965 Giant Blacksmith's Chair
+5967 Giant Slave Blacksmith's Jar
+5968 Giant Slave Blacksmith's Barrel
+5969 Giant Slave Blacksmith's Bucket
+5970 Desk 1 (large)
+5971 Desk 2 (small)
+5972 Desk 3 (workbench)
+5980 Scroll storage box (large)
+5981 Scroll storage box (large lid open)
+5982 Scroll storage box (small)
+5983 Scroll storage box (small lid open)
+5990 Luxury Vase
+6000 Watergate
+6010 Lattice door
+6100 Elevator call switch
+6110 Floodgate Switch
+6200 Elevator
+6400 Ladder
+6401 Rope ladder
+6410 Sliding ladder
+6450 Mimicry Vase
+6451 pot
+6452 pot
+6455 Mimicry Vase ( Submersion )
+6456 Vase (submerged)
+6457 Vase (submerged)
+6600 Wall of Light
+6601 Wall of Light
+6602 Wall of Light
+6603 Wall of Light
+6604 Wall of Light
+6605 Wall of Light
+6606 Wall of Light
+6607 Wall of Light
+6700 Hidden Door
+7010 Candlestick [ 4 Surface Opening】
+7020 Candlestick [ 2 Surface Opening】
+7200 Down stairs
+7201 lever
+7202 Lever (different colors)
+7230 Rotating staircase
+7231 Rotating Stairs (Hit)
+7240 Gondola to the Sheath Room
+7241 The first gondola
+7250 Mobile bookshelf 2 Floor
+7251 Mobile bookshelf 1 Floor
+7300 Prison ladder
+7301 Prison guard tower ladder
+7302,Forest ladder
+7303 Ladder in the back of the library
+7400 Prison Door
+7401 Jail Door
+7404 Alarm
+7500 Invulnerable Crystal
+7510 Fixed crystal
+7511 Boss room magic barrier (entrance)
+7512 Boss room magic barrier (exit)
+7515 Multi-purpose magic barrier (entrance)
+7521 Boss room magic barrier (entrance)
+7522 Boss room magic barrier (exit)
+7525 Multi-purpose magic barrier (entrance)
+7531 Boss room magic barrier (entrance)
+7532 Boss room magic barrier (exit)
+7535 Multi-purpose magic barrier (entrance)
+7600 Celestial globe A
+7601 Celestial globe B
+7610 Mobile staircase
+7620 desk
+7630 chair
+7621 desk ( Books available )
+7640 shelf
+7650 pot
+7670 Bookstand (open)
+7690 Mobile bookshelf
+7700 Goddess Statue
+7900 Glowing Fog
+7901 Glowing Fog
+7902 Glowing Fog
+7906 Glowing Fog
+7907 Glowing Fog
+7908 Glowing Fog
+8000 Test Object
+8050 Wall of Light 18_00
+8051 Wall of Light 18_00
+8100 Ladder
+8110 Magic Wall
+8111 Light Wall (Normal)
+8120 Fallen pillar
+8150 Small pillar for camouflage
+8200 Ladder ( 10 degrees)
+8300 Sealed Door
+8311 Royal Vessel
+8400 Bucket
+8401 Bag 1
+8402 Bag 2
+8403 pot
+8410 Urn (Church) Vertical
+8411 Vase (church) side
+8420 Gargoyle Statue
+8421 Gargoyle Statue ( Head fall )
+8422 Gargoyle Statue ( With wings )
+8425 Gargoyle Statue ( Invert )
+8500 Ladder
+8501 Ladder
+8510 Church Floor
+8511 Under the church floor
+8520 wall
+8521 Behind the wall
+8530 Iron ball
+8531 Hit by iron ball
+8540 Iron Barred Door
+8541 Church Door ( before )
+8542 Church lattice
+8544 Church Door ( Oku )
+8550 Church Door
+8600 Church pillar
+8601 Church pillar
+8610 Sewer column
+8611 Sewer column
+8700,The ruins of the church
+8701,The ruins of the church
+8702,The ruins of the church
+8950 Wall of Light 18-1
+8951 Wall of Light 18-1
+8952 Wall of Light 18-1
+8953 Wall of Light 18-1
+9010 Forest Door
+9120 Pillar 01-01
+9121 Pillar 01-02
+9122 Pillar 01-03
+9123 Pillar 02-01
+9124 Pillar 01-04
+9125 Pillar 03-01
+9140 Candlestick 01-01
+9141 Candlestick 02-01
+9150 Bonfire
+9160 Pillar 01-05
+9400 WP_A_0250 Magic Sword
+9401 WP_A_0450 No pattern
 9402 WP_A_0251
-9499 仮キャラ配置用
-9500 王の剣
-9501 炎の獣死体
-9502 c3100_岩石ミミズ
-9503 c3020_灰色狼
-9504 
-9505 
-9506 
-9507 
-9509 王の盾
-9570 ボス蜘蛛
-9580 忍者のドラゴン
-9599 キャラモデル確認用
-9700 爆発壺
-9710 樽(縦)
-9720 たき火
-9840 悪夢の主死体
-9900 ワープオブジェ
-9920 中下段はしご
-9921 奇数段はしご（アニメ確認用）
-9990 ミップマップテストモデル
-9999 背景
-10000 デフォルト（削除予定）
-210010 正面扉閉
-210011 正面扉開
-210012 テラス扉閉
-210013 テラス扉開
-210020 月
-210051 磔
-210200 商売オブジェ
-210201 主人公墓
-210500 ボスエリアゲート
-212000 破壊本
-212002 破壊本
-220000 扉
-220003 エレベータ
-220300 木の柵
-220301 木の柵
-220400 荷台
-220500 斧
-220501 クワ
-220502 燭台
-220503 箪笥
-220504 棚
-220505 棚
-220506 テーブル
-220507 椅子
-220900 霧の壁
-220901 霧の壁
-220902 霧の壁
-229950 イベント馬車
-230050 磔死体0
-230051 磔死体1
-230100 吊り下げ死体
-230101 吊り下げ死体
-230102 吊り下げ死体
-230150 煙の元となる死体
-231000 猟犬イベント扉
-231010 群衆イベント扉
-231500 籠牢
-231520 壺(大)
-231521 壺(小)
-231522 壺
-232100 ショートカット用扉　塔
-232110 ショートカット用扉　煙突
-232200 最初の建物の扉
-239000 聖堂街の長椅子
-239001 聖堂街の箪笥
-239002 聖堂街の棚
-239003 聖堂街の木箱
-239004 聖堂街の二重木箱
-239005 聖堂街の木箱2
-239006 聖堂街の木箱3
-239007 聖堂街の棺桶
-239008 聖堂街の二重棺桶
-239100 御神体
-239110 御神体イベント　火炎壺固定器具
-239111 御神体イベント　火炎壺
-239200 彫像の遮蔽物
-239210 彫像の遮蔽物（小）
-230300 霧の壁
-230301 霧の壁
-230302 霧の壁
-230303 霧の壁
-239734 土嚢
-239735 土嚢+箱
-239910 半壊した建物の梯子
-239911 聖堂街Aとの接続用梯子
-239912 時計塔への梯子　後半
-239913 ショートカットからの復帰用梯子
-239914 下層へのショートカット梯子
-239915 時計塔への梯子　前半
-240001 ゲートレバー
-240002 聖堂A　ゲート
-240012 聖堂A　ゲート(特殊）
-240003 車いす
-240004 乳母車
-240020 棺桶(木製飾り無)
-240021 棺桶(木製飾り有)
-240022 箱(金属、大)
-240023 箱(金属、小)
-240024 手押し車
-240025 木箱(小)
-240026 木箱(大)
-240027 ずた袋
-240028 樽(縦)
-240029 樽(横)
-240031 棺桶(金属)
-240032 馬車（中）ボス
-240034 燭台
-240035 壺(大)
-240036 壺(小)
-240037 下水小物D _木箱
-240038 血入りボトルセット
-240039 扉(聖堂AB接続）
-240040 扉（教会前）
-240045 スタート教会の彫像
-240046 血入りボトル単品
-240047 帽子（m009770)
-240048 靴（単品）m009771
-240049 路上の積荷_台車　m009743
-240050 処刑　猟犬（大）
-240051 処刑　人型（小）
-240052 紐付きかばん　m009744
-240053 紐なしかばん　m009745
-240054 路上の積荷_トランク_蓋開　m009746
-240055 木箱(二段)
-240060 積み荷の山
-240061 血入りボトルセットの山
-240062 樽セット
-240063 大小木箱セット
-240064 本の山
-240065 瓶セット　A　（持ち手付）
-240066 瓶セット　B
-240080 診療所_輸血器具
-240081 医療器具シャーレ
-240082 医療器具箱セット
-240083 医療器具試験管
-240084 注射バケツ
-240085 桶
-240086 棚
-240087 棚_シンプル
-240088 棚_ドック改造
-240089 棚_コーナー用
-240090 棚_曲タイプ
-240091 棚_シンプル_短
-240092 ベンチ
-240093 輸血台_布有
-240094 輸血台_布無
-240100 両開き扉（診療所内）
-240101 扉（広場建物）
-240102 扉（聖堂AB接続）
-240104 両開き扉(診療所内)不透明ガラス
-240180 診療所_輸血器具_カメラアタリなし
-240181 医療器具シャーレ_カメラアタリなし
-240193 輸血台_布有_カメラアタリなし
-240301 霧の壁
-240303 霧の壁
-240304 霧の壁
-240305 霧の壁
-240306 霧の壁
-240308 霧の壁
-240309 霧の壁
-240312 霧の壁
-240313 霧の壁
-240314 霧の壁
-240315 霧の壁
-240316 霧の壁
-240470 聖堂Aボス前門
-240500 聖堂B　森への扉
-240501 ゲート（小）
-240502 ゲート（診療所前）
-240510 梯子（金属）
-240511 梯子（金属）
-240512 梯子（金属）
-240513 梯子（金属）
-240514 梯子（金属）
-240515 梯子（金属）
-240516 梯子（金属）
-240517 梯子（金属）
-240524 梯子（金属）
-240525 梯子（金属）
-240530 梯子（m27接続に伴う移植）
-240531 梯子(木)
-240532 梯子(木)
-240533 梯子(木)
-240534 梯子(木)
-240540 大樹（聖堂C橋近辺　プロト移植）
-240612 吊るし宝死体の鎖
-241001 布かぶり石像(小)
-241002 布かぶり石像(中)
-241003 布かぶり石像(大)
-241009 布かぶり石像(中の大)
-241010 屋敷正門
-241011 屋敷扉（1F）
-241012 屋敷扉（2F）
-241013 屋敷通路ドア
-241014 椅子
-241020 壊れる窓
-241021 壊れる窓　(聖堂街C　大聖堂用)
-241030 シャンデリア
-241031 シャンデリア　落下後
-241040 エレベーター
-241050 テーブル
-241051 椅子
-241052 天球儀
-241053 棚
-241054 蓋
-242000 稼働式階段
-242001 破壊窓（聖堂街B）
-242010 墓(四角)
-242011 墓(三角)
-242012 墓(丸)
-243003 エレベーター
-243004 扉（森接続）
-243011 犬檻
-243014 犬檻_小
-244510 遮断荷車　（o2944510アレンジ）
-244511 遮断荷車　サイズ違い
-248015 ジェスチャー入手用死体
-249001 藁玉　（転がる）
-249002 藁玉　（アニメーション終了後）
-249997 延焼テストダミーデータ
-251000 玄関扉
-252000 宝箱・小
-252100 宝箱・中
-252200 宝箱・大
-253000 擬態本棚
-254000 椅子
-254010 書物台
-254200 控室テーブルウェア1
-254201 控室テーブルウェア2
-254202 控室テーブルウェア3
-254203 控室テーブルウェア4
-254204 控室テーブルウェア5
-254205 控室テーブルウェア6
-254206 控室テーブルウェア7
-254207 控室テーブルウェア8
-254500 燭台（高）
-254501 燭台（低）
-254600 蝋燭
-254601 蝋燭
-254602 蝋燭
-254700 積まれた本
-254701 積まれた本
-254702 積まれた本
-254703 積まれた本
-254704 積まれた本
-256000 はしごダミー
-256010 はしごダミー
-257000 石像
-257001 石像
-257002 石像
-257003 石像
-257004 石像
-257005 石像
-257006 石像
-257007 石像
-257008 石像
-257100 テーブル
-257200 書庫の階段オブジェ
-257400 屋根の上の玉座
-257410 玉座
-257420 玉座
-257600 玉座（蠢く肉片）
-259100 ボス部屋の接続蓋
-259800 書庫のエレベータ
-260000 ボス扉
-260010 図書館大エレベータ
-260011 図書館籠エレベータ
-260020 共通エレベータ図書館
-260021 共通エレベータ屋上
-260022 共通□エレベータ ボス部屋
-260030 屋上→中庭エレベータ
-260031 中庭→地面エレベータ
-260040 汎用レバー
-260041 大エレベータ起動レバー
-260042 邪眼停止レバー
-260050 図書館鉄柵
-260051 中ボスイベント扉
-260052 教会扉
-260100 石像
-260101 石像
-260102 石像
-260110 石像nolmap
-260111 石像nolmap
-260112 石像nolmap
-260200 カラス籠
-260201 カラス籠
-260202 カラス籠
-260300 遮蔽籠牢
-260301 遮蔽籠牢
-260304 遮蔽籠牢
-260310 鏡
-260311 鏡
-260313 鏡
-260900 霧の壁
-260901 霧の壁
-260902 霧の壁
-261000 破壊本
-261001 破壊本
-261002 破壊本
-261203 ゆれ籠牢
-261204 ゆれ籠牢
-261205 ゆれ籠牢
-261206 ゆれ籠牢
-261207 ゆれ籠牢
-261208 ゆれ籠牢
-261209 ゆれ籠牢
-261210 ゆれ籠牢
-261211 ゆれ籠牢
-261218 ゆれ籠牢
-261219 ゆれ籠牢
-261220 ゆれ籠牢
-261221 ゆれ籠牢
-261226 ゆれ籠牢
-261228 ゆれ籠牢
-262000 カットシーン乳母車
-270002 森用ゲート扉
-270010 梯子1
-270011 梯子2
-270012 梯子3
-270013 梯子4
-270014 梯子5
-270030 エレベーター
-270050 落とし穴板敷
-270051 落下する板敷
-270102 光源　鳥籠　吊り下げ
-270104 光源　鳥籠　床置き
-270300 霧の壁
-270301 霧の壁
-270302 霧の壁
-270303 霧の壁
-270530 柵
-270540 木箱と小物セット
-270541 樽と木箱(小)セット
-270542 樽10個セット
-270543 木箱4個セット
-270550 箒
-270551 鍬
-270552 木桶
-270553 木箱(小)
-270554 車輪
-270555 荷台
-270556 鉄輪
-270557 斧
-270558 梯子
-270559 薪
-270560 鳥籠
-270561 編み籠
-270562 スコップ
-270563 兎の干物
-270566 鉈(太)
-270567 鉈(細)
-270568 樽
-270569 油壷
-270570 カンテラ
-270571 木箱(大)
-270572 風車小屋部品
-270580 大砲遮蔽物
-271020 死体(男)
-271030 死体(女)
-271040 死体(子供)
-273002 大砲
-273011 犬檻
-278000 参考用オブジェ
-280300 霧の壁　ボスエリア
-280301 霧の壁
-280302 霧の壁
-281000 馬車
-281010 街灯
-281020 生贄死体（男）
-281021 生贄死体（男）_バリエーション1
-281022 生贄死体（男）_バリエーション2
-281023 生贄死体（男）_バリエーション3
-281024 生贄死体（男）_バリエーション4
-281030 生贄死体（女）
-281034 生贄死体（女）_バリエーション1
-281032 生贄死体（女）_バリエーション2
-281033 生贄死体（女）_バリエーション3
-281034 生贄死体（女）_バリエーション4
-281040 生贄死体（子供）
-281041 生贄死体（子供）_バリエーション1
-281042 生贄死体（子供）_バリエーション2
-281043 生贄死体（子供）_バリエーション3
-281050 生贄死体（奴隷）
-281051 生贄死体（奴隷）_バリエーション1
-281052 生贄死体（奴隷）_バリエーション2
-281060 人さらい死体0
-281061 人さらい死体1
-281062 人さらい死体2
-281070 悪夢の主死体0
-281071 悪夢の主死体1
-281072 悪夢の主死体2
-281073 悪夢の主死体3
-281090 奴隷列車
-281100 ミミック宝箱
-281101 ミミック宝箱_蓋
-281110 ミミック弱体化
-281510 燭台00
-281511 燭台01
-281520 壺(大)
-281521 壺(小)
-281522 壺
-281530 テーブル
-281531 椅子
-282000 エレベーター
-282010 大扉
-282020 鉄格子扉
-282022 汎用扉
-282030 梯子
-282040 ワープオブジェクト
-282050 鉄格子扉2
-282060 行き止まりの扉
-283000 鏡+布+邪神
-283001 鏡+布
-283002 鏡+邪神
-283003 鏡のみ
-283004 鏡+布×2
-283010 なりそこないの邪神A
-283011 なりそこないの邪神A　布あり
-283012 なりそこないの邪神B
-283013 なりそこないの邪神B　布あり
-283014 なりそこないの邪神
-283020 ランプシェード
-289000 ワープ椅子
-289900 人さらいの布袋(カットシーン)
-289910 聖女ビーストのペンダント（カットシーン）
-290000 階層移動エレベータ
-290002 　【嵐】
-290004 　【コズミック】
-290010 汎用レバー
-290012 　【嵐】
-290014 　【コズミック】
-290020 特殊レバー（ギミックブロック扉専用）
-290022 　【嵐】
-290024 　【コズミック】
-290100 祭壇エレベータ
-290102 　【嵐】
-290104 　【コズミック】
-290200 籠牢エレベータ
-290202 　【嵐】
-290204 　【コズミック】
-290250 籠牢：OBJ
-290252 　【嵐】
-290254 　【コズミック】
-290260 籠牢：OBJ
-290262 　【嵐】
-290264 　【コズミック】
-290270 籠牢：OBJ
-290272 　【嵐】
-290274 　【コズミック】
-290280 籠牢：落下
-290282 　【嵐】
-290284 　【コズミック】
-290350 籠牢：OBJ
-290352 　【嵐】
-290354 　【コズミック】
-290370 籠牢：OBJ
-290372 　【嵐】
-290374 　【コズミック】
-290470 籠牢：OBJ
-290472 　【嵐】
-290474 　【コズミック】
-290500 幹線通路の像
-290502 　【嵐】
-290504 　【コズミック】
-291000 汎用扉・格子
-291002 　【嵐】
-291004 　【コズミック】
-291010 汎用扉・格子（錆）
-291012 　【嵐】
-291014 　【コズミック】
-291050 汎用扉・木
-291052 　【嵐】
-291054 　【コズミック】
-291100 ブロック扉（幹線通路用）
-291102 　【嵐】
-291104 　【コズミック】
-291110 ブロック扉・ギミック（幹線通路用）
-291112 　【嵐】
-291114 　【コズミック】
-291150 ブロック扉・鍵付（幹線通路用）
-291152 　【嵐】
-291154 　【コズミック】
-291200 ブロック扉（上段用）
-291202 　【嵐】
-291204 　【コズミック】
-291210 ブロック扉（中段用）
-291212 　【嵐】
-291214 　【コズミック】
-291220 ブロック扉（下段用）
-291222 　【嵐】
-291224 　【コズミック】
-291250 ブロック扉・鍵付（上段用）
-291252 　【嵐】
-291254 　【コズミック】
-291260 ブロック扉・鍵付（中段用）
-291262 　【嵐】
-291264 　【コズミック】
-291270 ブロック扉・鍵付（下段用）
-291272 　【嵐】
-291274 　【コズミック】
-291300 一方通行扉
-291302 　【嵐】
-291304 　【コズミック】
-291400 鍵扉
-291402 　【嵐】
-291404 　【コズミック】
-291500 封印扉（魔法）
-291502 　【嵐】
-291504 　【コズミック】
-291510 封印扉（仕掛け）
-291512 　【嵐】
-291514 　【コズミック】
-291600 宝物庫の扉
-291602 　【嵐】
-291604 　【コズミック】
-291700 大きな接続の扉
-291702 　【嵐】
-291704 　【コズミック】
-291800 魔法の隠し扉（中段用）
-291802 　【嵐】
-291804 　【コズミック】
-291810 魔法の隠し扉（上段用）
-291812 　【嵐】
-291814 　【コズミック】
-291820 魔法の隠し扉（下段用）
-291822 　【嵐】
-291824 　【コズミック】
-291890 魔法の隠し扉（虫食い）
-291892 　【嵐】
-291894 　【コズミック】
-291900 大ボス扉
-291902 　【嵐】
-291904 　【コズミック】
-291910 中ボス扉
-291912 　【嵐】
-291914 　【コズミック】
-291920 小ボス扉
-291922 　【嵐】
-291924 　【コズミック】
-292000 宝箱・小
-292002 　【嵐】
-292004 　【コズミック】
-292050 宝箱・小・破壊可能
-292052 　【嵐】
-292054 　【コズミック】
-292100 宝箱・中
-292102 　【嵐】
-292104 　【コズミック】
-292150 宝箱・中・破壊可能
-292152 　【嵐】
-292154 　【コズミック】
-292110 宝箱・中（錆）
-292112 　【嵐】
-292114 　【コズミック】
-292160 宝箱・中（錆）・破壊可能
-292162 　【嵐】
-292164 　【コズミック】
-292200 宝箱・大
-292202 　【嵐】
-292204 　【コズミック】
-292250 宝箱・大・破壊可能
-292252 　【嵐】
-292254 　【コズミック】
-292300 ブロック宝箱
-292302 　【嵐】
-292304 　【コズミック】
-292400 黒い宝箱
-292402 　【嵐】
-292404 　【コズミック】
-292450 黒い宝箱・破壊可能
-292452 　【嵐】
-292454 　【コズミック】
-292500 宝箱の装飾A（敷物+蝋燭３つ）
-292502 　【嵐】
-292504 　【コズミック】
-292510 宝箱の装飾B（敷物+蝋燭１つ）
-292512 　【嵐】
-292514 　【コズミック】
-292520 宝箱の装飾C（敷物のみ　明かりなし）
-292522 　【嵐】
-292524 　【コズミック】
-292700 売買の水瓶
-292702 　【嵐】
-292704 　【コズミック】
-292850 吊られた宝死体の紐
-292852 　【嵐】
-292854 　【コズミック】
-293000 鐘
-293002 　【嵐】
-293004 　【コズミック】
-293010 鐘10ｍ
-293012 　【嵐】
-293014 　【コズミック】
-293020 鐘15ｍ
-293022 　【嵐】
-293024 　【コズミック】
-293050 クレバスの吊り橋
-293052 　【嵐】
-293054 　【コズミック】
-293100 跳ね橋
-293102 　【嵐】
-293104 　【コズミック】
-293110 跳ね橋レバー
-293112 　【嵐】
-293114 　【コズミック】
-293150 皮の橋
-293152 　【嵐】
-293154 　【コズミック】
-293160 沼の橋
-293162 　【嵐】
-293164 　【コズミック】
-293200 大砲
-293202 　【嵐】
-293204 　【コズミック】
-293300 石碑A
-293302 　【嵐】
-293304 　【コズミック】
-293310 石碑B
-293312 　【嵐】
-293314 　【コズミック】
-293400 通路ギロチン
-293402 　【嵐】
-293404 　【コズミック】
-293410 通路ギロチンの当たり
-293412 　【嵐】
-293414 　【コズミック】
-293500 ペンデュラム
-293502 　【嵐】
-293504 　【コズミック】
-293600 テレポーター
-293602 　【嵐】
-293604 　【コズミック】
-293700 火矢の像A１・破壊可
-293702 　【嵐】
-293704 　【コズミック】
-293710 火矢の像A2・破壊可
-293712 　【嵐】
-293714 　【コズミック】
-293720 火矢の像A3・破壊可
-293722 　【嵐】
-293724 　【コズミック】
-293730 火矢の像B1・破壊可
-293732 　【嵐】
-293734 　【コズミック】
-293740 火矢の像B2・破壊可
-293742 　【嵐】
-293744 　【コズミック】
-293750 火矢の像B3・破壊可
-293752 　【嵐】
-293754 　【コズミック】
-293760 火矢の像C1・破壊可
-293762 　【嵐】
-293764 　【コズミック】
-293770 火矢の像C2・破壊可
-293772 　【嵐】
-293774 　【コズミック】
-293780 火矢の像C3・破壊可
-293782 　【嵐】
-293784 　【コズミック】
-293800 踏みスイッチ（上段）
-293802 　【嵐】
-293804 　【コズミック】
-293810 踏みスイッチ（中段）
-293812 　【嵐】
-293814 　【コズミック】
-293820 踏みスイッチ（下段）
-293822 　【嵐】
-293824 　【コズミック】
-293900 ゴロゴロ鉄球
-293902 　【嵐】
-293904 　【コズミック】
-294000 骨の山A
-294002 　【嵐】
-294004 　【コズミック】
-294010 骨の山B
-294012 　【嵐】
-294014 　【コズミック】
-294020 骨の山C
-294022 　【嵐】
-294024 　【コズミック】
-294030 戦場跡の遺跡の柱（長）
-294032 　【嵐】
-294034 　【コズミック】
-294040 戦場跡の遺跡の柱（中）
-294042 　【嵐】
-294044 　【コズミック】
-294050 戦場跡の遺跡の柱（短）
-294052 　【嵐】
-294054 　【コズミック】
-294100 円形ボス部屋の柱
-294102 　【嵐】
-294104 　【コズミック】
-294110 円形ボス部屋の手すりA
-294112 　【嵐】
-294114 　【コズミック】
-294120 円形ボス部屋の手すりB
-294122 　【嵐】
-294124 　【コズミック】
-294130 円形ボス部屋の手すりC
-294132 　【嵐】
-294134 　【コズミック】
-294200 木箱×1
-294202 　【嵐】
-294204 　【コズミック】
-294210 木箱×2
-294212 　【嵐】
-294214 　【コズミック】
-294220 木箱×3
-294222 　【嵐】
-294224 　【コズミック】
-294230 木箱×2
-294232 　【嵐】
-294234 　【コズミック】
-294300 香炉
-294302 　【嵐】
-294304 　【コズミック】
-294310 吊り下げ香炉
-294312 　【嵐】
-294314 　【コズミック】
-294400 棺桶（敵が入ったオブジェ）
-294402 　【嵐】
-294404 　【コズミック】
-294410 棺桶・壁止め無し
-294412 　【嵐】
-294414 　【コズミック】
-294420 棺桶（聖堂街から）
-294422 　【嵐】
-294424 　【コズミック】
-294450 棺桶・ヒットのみ
-294452 　【嵐】
-294454 　【コズミック】
-294500 手押し車A
-294502 　【嵐】
-294504 　【コズミック】
-294510 手押し車B
-294512 　【嵐】
-294514 　【コズミック】
-294600 壺
-294602 　【嵐】
-294604 　【コズミック】
-294610 爆発壺
-294612 　【嵐】
-294614 　【コズミック】
-294620 小壺
-294622 　【嵐】
-294624 　【コズミック】
-294630 骨壺・高
-294632 　【嵐】
-294634 　【コズミック】
-294640 骨壺・低
-294642 　【嵐】
-294644 　【コズミック】
-294650 骨壺・盾つき
-294652 　【嵐】
-294654 　【コズミック】
-294660 骨壺・盾つき
-294662 　【嵐】
-294664 　【コズミック】
-294670 骨壺・高（何もなし）
-294672 　【嵐】
-294674 　【コズミック】
-294680 骨壺・低（何もなし）
-294682 　【嵐】
-294684 　【コズミック】
-294700 燭台・高
-294702 　【嵐】
-294704 　【コズミック】
-294710 燭台・低
-294712 　【嵐】
-294714 　【コズミック】
-294750 机と雑貨セット1
-294752 　【嵐】
-294754 　【コズミック】
-294760 机と雑貨セット2
-294762 　【嵐】
-294764 　【コズミック】
-294770 机と雑貨セット3
-294772 　【嵐】
-294774 　【コズミック】
-294800 ボス部屋死体１
-294802 　【嵐】
-294804 　【コズミック】
-294810 ボス部屋死体２
-294812 　【嵐】
-294814 　【コズミック】
-294820 ボス部屋死体３
-294822 　【嵐】
-294824 　【コズミック】
-294830 ボス部屋死体４
-294832 　【嵐】
-294834 　【コズミック】
-294840 ボス部屋死体５
-294842 　【嵐】
-294844 　【コズミック】
-294850 ボス部屋死体６
-294852 　【嵐】
-294854 　【コズミック】
-294860 ボス部屋死体７
-294862 　【嵐】
-294864 　【コズミック】
-294900 落とし穴の崩れる床(中段通路)
-294902 　【嵐】
-294904 　【コズミック】
-294910 落とし穴の崩れる床(普通の部屋AB)
-294912 　【嵐】
-294914 　【コズミック】
-294920 落とし穴の崩れる床(上段通路)
-294922 　【嵐】
-294924 　【コズミック】
-294930 落とし穴の崩れる床(上段部屋)
-294932 　【嵐】
-294934 　【コズミック】
-294940 落とし穴の崩れる床(ゴロゴロ通路)
-294942 　【嵐】
-294944 　【コズミック】
-294950 普通の部屋B柱
-294952 　【嵐】
-294954 　【コズミック】
-294960 広い通路柱
-294962 　【嵐】
-294964 　【コズミック】
-294970 段差部屋A柱
-294972 　【嵐】
-294974 　【コズミック】
-294980 飛び降り段差部屋柱
-294982 　【嵐】
-294984 　【コズミック】
-294990 普通の部屋B_柱(ボス部屋)
-294992 　【嵐】
-294994 　【コズミック】
-295700 ボス部屋の光の壁１
-295702 　【嵐】
-295704 　【コズミック】
-295710 ボス部屋の光の壁２
-295712 　【嵐】
-295714 　【コズミック】
-296100 シャンデリア（１段）
-296102 　【嵐】
-296104 　【コズミック】
-296110 シャンデリア（２段）
-296112 　【嵐】
-296114 　【コズミック】
-296120 シャンデリア（３段）
-296122 　【嵐】
-296124 　【コズミック】
-296130 シャンデリア（４段）
-296132 　【嵐】
-296134 　【コズミック】
-296400 たき火A
-296402 　【嵐】
-296404 　【コズミック】
-296410 たき火B
-296412 　【嵐】
-296414 　【コズミック】
-296500 かがり火
-296502 　【嵐】
-296504 　【コズミック】
-296600 蝋燭の束１
-296602 　【嵐】
-296604 　【コズミック】
-296610 蝋燭の束２
-296612 　【嵐】
-296614 　【コズミック】
-296620 蝋燭の束３
-296622 　【嵐】
-296624 　【コズミック】
-296800 ミミック弱体化
-296802 　【嵐】
-296804 　【コズミック】
-297100 動物の死体1
-297102 　【嵐】
-297104 　【コズミック】
-297110 動物の死体2
-297112 　【嵐】
-297114 　【コズミック】
-297120 動物の死体3
-297122 　【嵐】
-297124 　【コズミック】
-297130 動物の死体4
-297132 　【嵐】
-297134 　【コズミック】
-297140 動物の死体5
-297142 　【嵐】
-297144 　【コズミック】
-297200 動物の死体の山
-297202 　【嵐】
-297204 　【コズミック】
-297210 水死体の山
-297212 　【嵐】
-297214 　【コズミック】
-297250 汎用彫像・台座
-297252 　【嵐】
-297254 　【コズミック】
-297260 汎用彫像・台座低い
-297262 　【嵐】
-297264 　【コズミック】
-297300 汎用彫像A
-297302 　【嵐】
-297304 　【コズミック】
-297310 汎用彫像A・首なし
-297312 　【嵐】
-297314 　【コズミック】
-297350 汎用彫像A・台座低い
-297352 　【嵐】
-297354 　【コズミック】
-297360 汎用彫像A・首なし・台座低い
-297362 　【嵐】
-297364 　【コズミック】
-297400 汎用彫像B
-297402 　【嵐】
-297404 　【コズミック】
-297410 汎用彫像B・首なし
-297412 　【嵐】
-297414 　【コズミック】
-297450 汎用彫像B・低い
-297452 　【嵐】
-297454 　【コズミック】
-297500 墓石A1
-297502 　【嵐】
-297504 　【コズミック】
-297510 墓石A2
-297512 　【嵐】
-297514 　【コズミック】
-297520 墓石B1
-297522 　【嵐】
-297524 　【コズミック】
-297530 墓石B2
-297532 　【嵐】
-297534 　【コズミック】
-297540 墓石C1
-297542 　【嵐】
-297544 　【コズミック】
-297550 墓石C2
-297552 　【嵐】
-297554 　【コズミック】
-297560 墓石D1
-297562 　【嵐】
-297564 　【コズミック】
-297570 墓石D2
-297572 　【嵐】
-297574 　【コズミック】
-297600 上段部屋の木A
-297602 　【嵐】
-297604 　【コズミック】
-297610 上段部屋の木B
-297612 　【嵐】
-297614 　【コズミック】
-297650 ガーデンの大木A
-297652 　【嵐】
-297654 　【コズミック】
-297660 ガーデンの大木B
-297662 　【嵐】
-297664 　【コズミック】
-297700 広い下段通路墓石
-297702 　【嵐】
-297704 　【コズミック】
-297800 下段の戸口
-297802 　【嵐】
-297804 　【コズミック】
-297810 ボス部屋奥の壁
-297812 　【嵐】
-297814 　【コズミック】
-297820 円形ボス部屋奥の壁
-297822 　【嵐】
-297824 　【コズミック】
-297830 螺旋階段墓地の柵
-297832 　【嵐】
-297834 　【コズミック】
-297840 螺旋階段墓地の柵（オフセットなし）
-297842 　【嵐】
-297844 　【コズミック】
-297900 コズミック植生A
-297902 　【嵐】
-297904 　【コズミック】
-297910 コズミック植生B
-297912 　【嵐】
-297914 　【コズミック】
-298000 はしご（上-中段用　7m）
-298002 　【嵐】
-298004 　【コズミック】
-298010 はしご（上-中段用　7m）礼拝堂仕様
-298012 　【嵐】
-298014 　【コズミック】
-298100 はしご（中-下段用　6m）
-298102 　【嵐】
-298104 　【コズミック】
-298200 はしご（跳ね橋部屋↑）
-298202 　【嵐】
-298204 　【コズミック】
-298210 はしご（跳ね橋部屋↓）
-298212 　【嵐】
-298214 　【コズミック】
-299300 上段部屋　樹木：奥
-299310 上段部屋　樹木：手前
-299822 錆びた格子扉
-299842 錆びた宝箱　中
-299900 エレベータ
-299901 トラップスイッチ
-299902 レバー
-299910 上中段はしご
-299911 中下段はしご
-299912 奇数段はしご（アニメ確認用）
-299921 木の扉
-299922 格子扉
-299925 フロアドア
-299926 フロアドア前
-299928 魔法壁
-299929 魔法壁
-299935 彫像_大
-299936 彫像_中
-299937 彫像_小
-299940 宝箱
-299941 宝箱　小
-299942 宝箱　中
-299943 宝箱　大
-299950 宝死体
-299951 ボス部屋死体１
-299952 ボス部屋死体２
-299953 ボス部屋死体３
-299954 ボス部屋死体４
-299955 ボス部屋死体５
-299956 ボス部屋死体６
-299957 ボス部屋死体７
-299960 陶器の箱　２つ重ね
-299961 爆発壺
-299963 陶器の箱
-299965 燭台
-299966 骨壺
-299967 棺桶
-299968 木箱
-299969 樽
-299970 ペンデュラム
-299971 火矢の像
-299972 針山
-299974 落とし穴（中段）
-299975 落とし穴（上段）
-299976 落とし穴（下段）
-299979 回復の泉
-320010 燭台0
-320011 燭台1
-320300 霧の壁
-321000 旧校舎_机
-321001 旧校舎_机(悪夢校舎配置用改造)
-321010 旧校舎_椅子
-321020 教授の椅子
-321030 ソファ
-321060 天球儀シャンデリア
-321061 天球儀
-321070 ハンドル
-321080 天文台
-321090 梯子
-321100 扉
-321110 レバー
-322101 薬瓶01
-322102 薬瓶02
-322103 薬瓶03
-322104 薬瓶04
-322105 薬瓶05
-322106 薬瓶06
-322107 薬瓶07
-322108 薬瓶08
-322109 薬瓶09
-322000 新校舎_実験テーブル
-322001 新校舎_実験テーブル（破壊）
-322010 新校舎_汎用机
-322011 新校舎_汎用机（瓶なし）
-322012 新校舎_汎用机（瓶あり）
-322020 新校舎_汎用椅子00
-322021 新校舎_汎用椅子01
-322030 新校舎_講堂の椅子0
-322031 新校舎_講堂の椅子1
-322032 新校舎_講堂の椅子2
-322040 新校舎_壁掛けランプ
-322050 新校舎_廊下の棚　3段
-322051 新校舎_廊下の棚　2段
-322052 新校舎_廊下の棚　1段
-322053 新校舎_廊下の棚　4段
-322054 新校舎_廊下の棚　5段
-322055 新校舎_廊下の棚　6段
-322056 新校舎_廊下の棚　7段
-322070 新校舎_廊下の棚　3段　幅広
-322071 新校舎_廊下の棚　2段　幅広
-322060 新校舎_シャンデリア
-322100 玄関扉
-322110 教室扉
-322210 ホルマリンA
-322220 ホルマリンB
-322230 ホルマリンC
-322240 ホルマリンD
-322250 ホルマリンE
-322260 ホルマリンF
-322410 ホルマリン用トレー　1段
-322420 ホルマリン用トレー　2段
-322430 ホルマリン用トレー　3段
-322310 籠牢1
-322320 籠牢2
-323020 梁
-323030 梁の仕掛け
-323080 梁への階段
-323090 逆さ梯子
-323100 扉
-323110 扉のレバー
-324010 棺桶
-324020 箱
-324100 扉
-325000 ベンチ
-325010 街灯
-325100 扉
-325200 大扉
-326080 学長の壁
-326090 仕掛け梯子
-326100 蓋
-329000 ワープ椅子
-330000 エレベータ
-330001 イベント墓石
-330010 破壊可能な柱
-330200 積み石
-330201 積み石
-330202 積み石
-330300 霧の壁
-330301 霧の壁
-340100 悪夢岩A
-340101 悪夢岩B
-340102 悪夢岩C
-340113 車いす
-340114 棺桶（木製飾り無）
-340115 棺桶（木製飾り有）
-340116 箱（金属、大）
-340117 箱（金属、小）
-340118 樽（縦）
-340119 樽（横）
-340120 棺桶（金属）
-340121 下水汚物Ｄ
-340122 血入りペットボトル
-340123 帽子
-340124 靴
-340125 紐なしかばん
-340126 路上の積荷
-340127 木箱
-340128 瓶セットA
-340129 瓶セットB
-341000 燭台
-341001 壺
-341002 壺
-342000 教会脇扉
-342001 Ω扉
-342100 梯子A
-342101 梯子B
-342202 レバー
-343100 仕掛け銃　243007
-343200 藁だま　249001
-343201 藁だまざんがい　249001
-349000 光の壁
-349001 光の壁
-349002 光の壁
-349010 ルドウィークヘッド
-349011 ルドウィークヘッド(死亡後)
-350001 ボス部屋長椅子
-350010 階層表示パネル1階
-350011 階層表示パネル2階
-350012 階層表示パネル3階
-350013 階層表示パネル4階
-350014 階層表示パネル5階
-350102 棺桶(金属)
-350103 燭台
-350107 本の山
-350108 医療器具箱セット
-350109 医療器試験管
-350110 輸血瓶
-350120 輸血器具
-350121 医療器具シャーレ
-350122 棚
-350123 棚_布かけA
-350125 棚_コーナー用
-350126 棚_曲タイプ
-350127 棚_シンプル_短
-350128 立体階段_棚の瓶セット_少
-350129 立体階段_棚の瓶セット_多
-350130 輸血台
-350131 棚_布かけB
-350132 聖堂ベッド
-350133 聖堂ベッド_バリエーション
-350134 血液瓶セット
-350135 棺桶(装飾少_金属)
-350136 敵破壊用輸血台
-350137 敵破壊用ベッド
-350147 車いす
-350148 研究室_ベッド
-350149 研究室_ベッド
-350151 患者A宝死体
-350152 患者A宝死体
-350153 患者A宝死体
-350154 患者A宝死体
-350200 ボス部屋椅子
-350201 祭壇起動用ペンダント
-350202 ボス部屋サイドテーブル
-350242 ホルマリン漬けセットA
-350252 丸椅子
-350253 車いす老人の車いす
-350500 梯子
-350501 梯子
-350502 梯子
-350503 梯子
-350504 梯子
-351000 扉_立体階段
-351001 扉_地下牢
-351002 扉_研究室
-351003 扉_立体階段⇔向日葵畑
-351004 扉_地下牢階段入り口
-351010 扉_ボス部屋
-352000 レバー_研究室
-352001 レバー_汎用
-353001 壊れる窓
-353002 立体階段中央柱
-353003 ギミックパーツ
-353004 時計盤
-353005 エレベーター_向日葵畑
-353006 祭壇エレベーター
-353007 立体階段中央柱
-353008 立体階段中央踊り場
-353009 立体階段
-353010 ギミックレバー
-353011 祭壇下の頭蓋骨
-353012 時計盤ギミック
-353013 祭壇エレベーター_下
-353020 トラップスイッチ
-353100 親向日葵
-353101 向日葵
-353102 向日葵
-353500 エレベーター_研究室
-353501 エレベーター_研究室
-355000 時計塔ハンター死亡待機
-355001 時計塔ハンター血だまり
-355002 女医の椅子
-355003 女医の血だまり
-355004 教会の殺し屋死亡待機
-355100 聖堂NPC
-357700 クリア後天球
-359000 階段ギミックテスト用データ
-359001 階段ギミックテスト用データ
-359002 階段ギミックテスト用データ
-359003 階段ギミックテスト用データ
-360000 灯台エレベータ
-360010 灯台エレベータ_スイッチ
-361000 扉
-362010 舟
-363000 ヤドカリの殻
-363010 ヤドカリ本体
-363050 ヤドカリの殻（３段）
-363060 ヤドカリの殻（５段）
-363100 瀕死キャラ
-363110 瀕死キャラの血痕
-363200 揺れる橋（集落）
-363210 揺れる橋（集落）
-363230 揺れる橋（養殖漕）
-363240 揺れる橋（養殖漕）
-363500 時計塔の文字盤
-364000 生簀の柵4ｍ
-364010 生簀の柵2ｍ
-364020 生簀の柵1ｍ
-364100 ナメクジ壺A
-364110 ナメクジ壺A
-364150 ナメクジ壺B
-364160 ナメクジ壺B
-364200 ナメクジ樽
-364210 ナメクジ樽
-364220 ナメクジ樽
-364250 ナメクジ樽（２段）
-364300 火炎壺
-364500 さいの河原
-364510 さいの河原
-365000 SE用ダミー
-366000 燭台
-367000 マスト
-367100 流木
-367200 吊り死体
-367500 ボス母体
-367510 ボス胎盤（カットシーン用）
-367600 月
-367700 夜明けの空
-367800 岩（カットシーン用）
-368000 梯子
-368010 梯子
-368020 梯子
-368030 梯子
-368040 梯子
-368100 仕掛け梯子
-1000000 デフォルト
+9499 For temporary character placement
+9500 King's Sword
+9501 Flame Beast Corpse
+9502 c3100_ Rock worm
+9503 c3020_ Grey Wolf
+9504 null
+9505 null
+9506 null
+9507 null
+9509 King's Shield
+9570 Boss Spider
+9580 Ninja Dragon
+9599 For character model confirmation
+9700 Explosive Pot
+9710 Barrel ( vertical )
+9720 Bonfire
+9840 Nightmare Lord Corpse
+9900 Warp Object
+9920 Middle and lower ladder
+9921 Odd-numbered ladder (for animation confirmation)
+9990 Mipmap test model
+9999 background
+10000 Default (to be removed)
+210010 Front door closed
+210011 Front door open
+210012 Terrace door closed
+210013 Terrace door open
+210020 month
+210051 Crucifixion
+210200 Commercial Objects
+210201,Hero's Grave
+210500 Boss Area Gate
+212000 Destruction Book
+212002 Destruction Book
+220000 door
+220003 Elevator
+220300 Wooden fence
+220301 Wooden fence
+220400 Cargo bed
+220500 ax
+220501 Mulberry
+220502 Candlestick
+220503 Chest of drawers
+220504 shelf
+220505 shelf
+220506 table
+220507 chair
+220900 Wall of Fog
+220901 Wall of Fog
+220902 Wall of Fog
+229950 Event carriage
+230050 Crucified Corpse 0
+230051 Crucified Corpse 1
+230100 Hanging Corpse
+230101 Hanging Corpse
+230102 Hanging Corpse
+230150 Corpse causing smoke
+231000 Hound Event Door
+231010 Crowd Event Door
+231500 Prison cell
+231520 Vase ( large )
+231521 Vase ( small )
+231522 Vase
+232100 Shortcut door Tower
+232110 Shortcut door Chimney
+232200 Door to the first building
+239000 Cathedral Ward Bench
+239001 Cathedral Ward Chest
+239002 Cathedral Ward Shelf
+239003 Cathedral Ward Crates
+239004 Cathedral Ward Double Crate
+239005 Cathedral Ward Crates 2
+239006 Cathedral Ward Crates 3
+239007 Cathedral Ward Coffins
+239008 Cathedral Ward Double Coffin
+239100 Sacred object
+239110 Sacred object event Flame pot fixing device
+239111 Sacred Object Event Flame Pot
+239200 Statue Cover
+239210 Statue Cover (Small)
+230300 Wall of Fog
+230301 Wall of Fog
+230302 Wall of Fog
+230303 Wall of Fog
+239734 sandbag
+239735 sandbag + box
+239910,Ladder in a partially destroyed building
+239911 Cathedral Quarter A Ladder for connecting to
+239912 Ladder to the Clock Tower (Part 2)
+239913 Shortcut return ladder
+239914 Shortcut ladder to lower level
+239915 Ladder to the Clock Tower (first half)
+240001 Gate lever
+240002 Cathedral A gate
+240012 Cathedral A gate ( special)
+240003 Wheelchair
+240004 baby carriage
+240020 coffin ( No wooden decoration )
+240021 coffin ( Wooden decorations available )
+240022 box ( Metal large )
+240023 box ( Metal small )
+240024 Trucks
+240025 Wooden box ( small )
+240026 Wooden box ( large )
+240027 Ragged bag
+240028 Barrel ( vertical )
+240029 Barrel ( beside )
+240031 coffin ( metal )
+240032 Carriage (Medium) Boss
+240034 Candlestick
+240035 Vase ( large )
+240036 Vase ( small )
+240037 Sewer Accessories D_ Wooden box
+240038 Blood bottle set
+240039 door ( Cathedral A.B. connection)
+240040 Door (in front of the church)
+240045 Statues at Sturt Church
+240046,Single bottle of blood
+240047 hat( m009770)
+240048 Shoes (single item) m009771
+240049 Road load _ Trolley m009743
+240050 Execution Hound (Large)
+240051 Executioner Humanoid (Small)
+240052 Bag with drawstring m009744
+240053 Sack without strings m009745
+240054 Road load _ trunk _ Lid open m009746
+240055 Wooden box ( Two levels )
+240060 Mountain of cargo
+240061 Pile of blood bottles set
+240062 Barrel set
+240063 Large and small wooden box set
+240064 Mountain of books
+240065 Bottle set A (With handle)
+240066 Bottle set B
+240080 Clinic _ Blood Transfusion Equipment
+240081 Medical Instrument Petri Dish
+240082 Medical Instrument Box Set
+240083 Medical Instrument Test Tube
+240084 Injection Bucket
+240085 Bucket
+240086 shelf
+240087 shelf _ simple
+240088 shelf _ Dock Modification
+240089 shelf _ For corners
+240090 shelf _ Song Type
+240091 shelf _ simple _ Short
+240092 bench
+240093 Blood transfusion table_ Fabric available
+240094 Blood transfusion table _ No cloth
+240100 Double doors (inside the clinic)
+240101 Door (Square building)
+240102 Door (Cathedral A.B. connection)
+240104 Double door ( Inside the clinic ) Opaque glass
+240180 Clinic _ Blood Transfusion Equipment _ No camera hit
+240181 Medical Instrument Petri Dish _ No camera hit
+240193 Blood transfusion table _ Fabric available _ No camera hit
+240301 Wall of Fog
+240303 Wall of Fog
+240304 Wall of Fog
+240305 Wall of Fog
+240306 Wall of Fog
+240308 Wall of Fog
+240309 Wall of Fog
+240312 Wall of Fog
+240313 Wall of Fog
+240314 Wall of Fog
+240315 Wall of Fog
+240316 Wall of Fog
+240470 Cathedral A Boss Front Gate
+240500 Cathedral B Door to the forest
+240501 Gate (small)
+240502 Gate (in front of the clinic)
+240510 Ladder (metal)
+240511 Ladder (metal)
+240512 Ladder (metal)
+240513 Ladder (metal)
+240514 Ladder (metal)
+240515 Ladder (metal)
+240516 Ladder (metal)
+240517 Ladder (metal)
+240525 Ladder (metal)
+240530 ladder( m27 (Transplantation with connection)
+240531 ladder ( tree )
+240532 ladder ( tree )
+240533 ladder ( tree )
+240534 ladder ( tree )
+240540 Great Tree (Cathedral C (Prototype transplant near the bridge)
+240612 Hanging Treasure Corpse Chain
+241001 Cloth-covered stone statue ( small )
+241002 Cloth-covered stone statue ( Medium )
+241003 Cloth-covered stone statue ( large )
+241009 Cloth-covered stone statue (Medium Large )
+241010 Main gate of the mansion
+241011 Mansion door ( 1F )
+241012 Mansion door ( 2F )
+241013 Mansion passage door
+241014 chair
+241020 Broken Windows
+241021 Broken Windows ( Cathedral Quarter C For cathedrals )
+241030 chandelier
+241031 Chandelier after falling
+241040 Elevator
+241050 table
+241051 chair
+241052 Celestial globe
+241053 shelf
+241054 lid
+242000 Movable stairs
+242001 Smashed Window (Cathedral Ward) B )
+242010 Grave ( square )
+242011 Grave ( triangle )
+242012 Grave ( Circle )
+243003 Elevator
+243004 Door (Forest Connection)
+243011 Dog cage
+243014 Dog cage _ small
+244510 Barrier cart ( o2944510 Arrangement)
+244511 Blocking carts different sizes
+248015 Corpse for obtaining gestures
+249001 Straw ball (rolling)
+249002 Straw ball (after animation)
+249997 Fire spread test dummy data
+251000 Entrance door
+252000 Treasure Chest Small
+252100 Treasure Chest - Medium
+252200 Treasure Chest Large
+253000 Mimic Bookshelf
+254000 chair
+254010 Book stand
+254200 Waiting room tableware 1
+254201 Waiting room tableware 2
+254202 Waiting room tableware 3
+254203,Waiting room tableware 4
+254204 Waiting room tableware 5
+254205 Waiting room tableware 6
+254206 Waiting room tableware 7
+254207 Waiting room tableware 8
+254500 Candlestick (high)
+254501 Candlestick (low)
+254600 candle
+254601 candle
+254602 candle
+254700 Stacked books
+254701 Stacked books
+254702 Stacked books
+254703 Stacked books
+254704 Stacked books
+256000 Ladder Dummy
+256010 Ladder Dummy
+257000 Stone statue
+257001 Stone statue
+257002 Stone statue
+257003 Stone statue
+257004 Stone statue
+257005 Stone statue
+257006 Stone statue
+257007 Stone statue
+257008 Stone statue
+257100 table
+257200 Staircase object in the library
+257400 Throne on the roof
+257410 Throne
+257420 Throne
+257600 Throne (Writhing Flesh)
+259100 Boss room connection lid
+259800 Library elevator
+260000 Boss Door
+260010 Large Library Elevator
+260011 Library Cage Elevator
+260020 Common Elevator Library
+260021 Common elevator rooftop
+260022 Common Elevator Boss Room
+260030 Rooftop → Courtyard elevator
+260031 Courtyard → Ground elevator
+260040 General-purpose lever
+260041 Large elevator start lever
+260042 Evil eye stop lever
+260050 Library iron fence
+260051 Mid-boss event door
+260052 Church Door
+260100 Stone statue
+260101 Stone statue
+260102 Stone statue
+260110 Stone statue nolmap
+260111 Stone statue nolmap
+260112 Stone statue nolmap
+260200 Crow cage
+260201 Crow cage
+260202 Crow cage
+260300 Shielding Cage
+260301 Shielding Cage
+260304 Shielding Cage
+260310 mirror
+260311 mirror
+260313 mirror
+260900 Wall of Fog
+260901 Wall of Fog
+260902 Wall of Fog
+261000 Destruction Book
+261001 Destruction Book
+261002 Destruction Book
+261203 Shaking Cage
+261204 Shaking Cage
+261205 Shaking Cage
+261206 Shaking Cage
+261207 Shaking Cage
+261208 Shaking Cage
+261209 Shaking Cage
+261210 Shaking Cage
+261211 Shaking Cage
+261218 Shaking Cage
+261219 Shaking Cage
+261220 Shaking Cage
+261221 Shaking Cage
+261226 Shaking Cage
+261228 Shaking Cage
+262000 Cutscene Baby Carriage
+270002,Forest gate door
+270010 ladder 1
+270011 ladder 2
+270012 ladder 3
+270013 ladder 4
+270014 ladder 5
+270030 Elevator
+270050 Pitfall board
+270051 Falling planks
+270102 Light source birdcage hanging
+270104 Light source Birdcage Floor standing
+270300 Wall of Fog
+270301 Wall of Fog
+270302 Wall of Fog
+270303 Wall of Fog
+270530 fence
+270540 Wooden box and accessory set
+270541 Barrels and crates ( small ) set
+270542 Barrel 10 Set of 1
+270543 Wooden box 4 Set of 1
+270550 broom
+270551 hoe
+270552 Wooden barrel
+270553 Wooden box ( small )
+270554 wheel
+270555 Cargo bed
+270556 Iron wheel
+270557 ax
+270558 ladder
+270559 firewood
+270560 Birdcage
+270561 Woven Basket
+270562 scoop
+270563 Dried rabbit
+270566 Hatchet ( Thick )
+270567 Hatchet ( Thin )
+270568 Barrel
+270569 Oil bottle
+270570 Cantera
+270571 Wooden box ( large )
+270572 Windmill shed parts
+270580 Cannon Cover
+271020 cadaver ( man )
+271030 cadaver ( woman )
+271040 cadaver ( child )
+273002 cannon
+273011 Dog cage
+278000 Reference Objects
+280300 Fog Wall Boss Area
+280301 Wall of Fog
+280302 Wall of Fog
+281000 Horse-drawn carriage
+281010 Street lamp
+281020 Sacrificed Corpse (Male)
+281021 Sacrificed Corpse (Male) _ Variations 1
+281022,Sacrificed Corpse (Male) _ Variations 2
+281023 Sacrificed Corpse (Male) _ Variations 3
+281024 Sacrificed Corpse (Male) _ Variations 4
+281030 Sacrificed Corpse (Female)
+281034 Sacrificed Corpse (Female) _ Variations 1
+281032 Sacrificed Corpse (Female) _ Variations 2
+281033 Sacrificed Corpse (Female) _ Variations 3
+281034 Sacrificed Corpse (Female) _ Variations 4
+281040 Sacrificed corpse (child)
+281041 Sacrificed corpse (child) _ Variations 1
+281042 Sacrificed corpse (child) _ Variations 2
+281043 Sacrificed corpse (child) _ Variations 3
+281050 Sacrificed Corpse (Slave)
+281051 Sacrificed Corpse (Slave) _ Variations 1
+281052 Sacrificed Corpse (Slave) _ Variations 2
+281060 Kidnapper Corpse 0
+281061 Kidnapper Corpse1
+281062 Kidnapper Corpse 2
+281070 Nightmare Lord Corpse 0
+281071 Nightmare Lord Corpse 1
+281072 Nightmare Lord Corpse 2
+281073 Nightmare Lord Corpse 3
+281090 Slave Train
+281100 Mimic Treasure Chest
+281101 Mimic Treasure Chest _ lid
+281110 Mimic Weakened
+281510 Candlestick 00
+281511 Candlestick 01
+281520 Vase ( large )
+281521 Vase ( small )
+281522 Vase
+281530 table
+281531 chair
+282000 Elevator
+282010 Main Door
+282020 Iron Barred Door
+282022 General-purpose door
+282030 ladder
+282040 Warp Object
+282050 Iron Barred Door 2
+282060 Dead end door
+283000 mirror + cloth + Evil God
+283001 mirror + cloth
+283002 mirror + Evil God
+283003 Mirror only
+283004 mirror + cloth ×2
+283010 The failed evil god A
+283011 The failed evil god A With cloth
+283012 The failed evil god B
+283013 The failed evil god B With cloth
+283014 The failed evil god
+283020 Lampshade
+289000 Warp Chair
+289900 Kidnapper Hotei ( Cutscenes )
+289910 Saint Beast Pendant (cut scene)
+290000,Level moving elevator
+290002 【storm】
+290004 [Cosmic]
+290010 General-purpose lever
+290012 【storm】
+290014 [Cosmic]
+290020 Special lever (for gimmick block doors only)
+290022 【storm】
+290024 [Cosmic]
+290100 Altar Elevator
+290102 【storm】
+290104 [Cosmic]
+290200 Cage Elevator
+290202 【storm】
+290204 [Cosmic]
+290250 Cage: OBJ
+290252 【storm】
+290254 [Cosmic]
+290260 Cage: OBJ
+290262 【storm】
+290264 [Cosmic]
+290270 Cage: OBJ
+290272 【storm】
+290274 [Cosmic]
+290280 Cage: Fall
+290282 【storm】
+290284 [Cosmic]
+290350 Cage: OBJ
+290352 【storm】
+290354 [Cosmic]
+290370 Cage: OBJ
+290372 【storm】
+290374 [Cosmic]
+290470 Cage: OBJ
+290472 【storm】
+290474 [Cosmic]
+290500 Statues on the main passage
+290502 【storm】
+290504 [Cosmic]
+291000 General-purpose doors and lattices
+291002 【storm】
+291004 [Cosmic]
+291010 General-purpose door/grating (rust)
+291012 【storm】
+291014 [Cosmic]
+291050 General-purpose door wood
+291052 【storm】
+291054 [Cosmic]
+291100 Block door (for main passage)
+291102 【storm】
+291104 [Cosmic]
+291110 Block door gimmick (for main passage)
+291112 【storm】
+291114 [Cosmic]
+291150 Block door with lock (for main passage)
+291152 【storm】
+291154 [Cosmic]
+291200 Block door (for upper level)
+291202 【storm】
+291204 [Cosmic]
+291210 Block door (for middle shelf)
+291212 【storm】
+291214 [Cosmic]
+291220 Block door (for lower level)
+291222 【storm】
+291224 [Cosmic]
+291250 Block door with lock (for upper level)
+291252 【storm】
+291254 [Cosmic]
+291260 Block door with lock (for middle shelf)
+291262 【storm】
+291264 [Cosmic]
+291270 Block door with lock (for lower level)
+291272 【storm】
+291274 [Cosmic]
+291300 One-way door
+291302 【storm】
+291304 [Cosmic]
+291400 Locked door
+291402 【storm】
+291404 [Cosmic]
+291500 Sealed Door (Magic)
+291502 【storm】
+291504 [Cosmic]
+291510 Sealed door (mechanism)
+291512 【storm】
+291514 [Cosmic]
+291600 Treasure Vault Door
+291602 【storm】
+291604 [Cosmic]
+291700 Large connecting door
+291702 【storm】
+291704 [Cosmic]
+291800 Magical hidden door (for middle level)
+291802 【storm】
+291804 [Cosmic]
+291810 Magical hidden door (for upper level)
+291812 【storm】
+291814 [Cosmic]
+291820 Magical hidden door (for lower level)
+291822 【storm】
+291824 [Cosmic]
+291890,Magical Secret Door (worm-eaten)
+291892 【storm】
+291894 [Cosmic]
+291900 Big boss door
+291902 【storm】
+291904 [Cosmic]
+291910 Mid-boss door
+291912 【storm】
+291914 [Cosmic]
+291920 Small boss door
+291922 【storm】
+291924 [Cosmic]
+292000 Treasure Chest Small
+292002 【storm】
+292004 [Cosmic]
+292050 Treasure chest small destructible
+292052 【storm】
+292054 [Cosmic]
+292100 Treasure Chest - Medium
+292102 【storm】
+292104 [Cosmic]
+292150 Treasure Chest Medium Destructible
+292152 【storm】
+292154 [Cosmic]
+292110 Treasure Chest - Medium (Rust)
+292112 【storm】
+292114 [Cosmic]
+292160 Treasure Chest - Medium (Rusted) - Destructible
+292162 【storm】
+292164 [Cosmic]
+292200 Treasure Chest Large
+292202 【storm】
+292204 [Cosmic]
+292250 Treasure Chest Large Destructible
+292252 【storm】
+292254 [Cosmic]
+292300 Block Treasure Chest
+292302 【storm】
+292304 [Cosmic]
+292400 Black Treasure Chest
+292402 【storm】
+292404 [Cosmic]
+292450 Black Treasure Chest - Destructible
+292452 【storm】
+292454 [Cosmic]
+292500 Treasure chest decoration A (Rug + 3 candles)
+292502 【storm】
+292504 [Cosmic]
+292510 Treasure chest decoration B (Rug + (1 candle)
+292512 【storm】
+292514 [Cosmic]
+292520 Treasure chest decoration C (Rug only no lights)
+292522 【storm】
+292524 [Cosmic]
+292700 Aquarius for sale
+292702 【storm】
+292704 [Cosmic]
+292850 Hanging Treasure Corpse Rope
+292852 【storm】
+292854 [Cosmic]
+293000 bell
+293002 【storm】
+293004 [Cosmic]
+293010 bell 10 m
+293012 【storm】
+293014 [Cosmic]
+293020 bell 15 m
+293022 【storm】
+293024 [Cosmic]
+293050 Crevasse suspension bridge
+293052 【storm】
+293054 [Cosmic]
+293100 Drawbridge
+293102 【storm】
+293104 [Cosmic]
+293110 Drawbridge Lever
+293112 【storm】
+293114 [Cosmic]
+293150 Leather Bridge
+293152 【storm】
+293154 [Cosmic]
+293160 Swamp Bridge
+293162 【storm】
+293164 [Cosmic]
+293200 cannon
+293202 【storm】
+293204 [Cosmic]
+293300 Stone monument A
+293302 【storm】
+293304 [Cosmic]
+293310 Stone monument B
+293312 【storm】
+293314 [Cosmic]
+293400 Passage Guillotine
+293402 【storm】
+293404 [Cosmic]
+293410 Passage Guillotine Hit
+293412 【storm】
+293414 [Cosmic]
+293500 Pendulum
+293502 【storm】
+293504 [Cosmic]
+293600 Teleporter
+293602 【storm】
+293604 [Cosmic]
+293700 Fiery Arrow Statue A 1. Destructible
+293702 【storm】
+293704 [Cosmic]
+293710 Fiery Arrow Statue A2 Destructible
+293712 【storm】
+293714 [Cosmic]
+293720,Fiery Arrow Statue A3 Destructible
+293722 【storm】
+293724 [Cosmic]
+293730 Fiery Arrow Statue B1 Destructible
+293732 【storm】
+293734 [Cosmic]
+293740 Fiery Arrow Statue B2 Destructible
+293742 【storm】
+293744 [Cosmic]
+293750 Fiery Arrow Statue B3 Destructible
+293752 【storm】
+293754 [Cosmic]
+293760 Fiery Arrow Statue C1 Destructible
+293762 【storm】
+293764 [Cosmic]
+293770 Fiery Arrow Statue C2 Destructible
+293772 【storm】
+293774 [Cosmic]
+293780 Fiery Arrow Statue C3 Destructible
+293782 【storm】
+293784 [Cosmic]
+293800 Foot switch (upper row)
+293802 【storm】
+293804 [Cosmic]
+293810 Foot switch (middle)
+293812 【storm】
+293814 [Cosmic]
+293820 Foot switch (lower)
+293822 【storm】
+293824 [Cosmic]
+293900 Rolling iron ball
+293902 【storm】
+293904 [Cosmic]
+294000 Pile of bones A
+294002 【storm】
+294004 [Cosmic]
+294010 Pile of bones B
+294012 【storm】
+294014 [Cosmic]
+294020 Pile of bones C
+294022 【storm】
+294024 [Cosmic]
+294030 Battlefield Ruins Pillar (Long)
+294032 【storm】
+294034 [Cosmic]
+294040 Pillar in the ruins of the battlefield (middle)
+294042 【storm】
+294044 [Cosmic]
+294050 Battlefield ruins pillar (short)
+294052 【storm】
+294054 [Cosmic]
+294100 Pillars in the circular boss room
+294102 【storm】
+294104 [Cosmic]
+294110 Handrail in circular boss room A
+294112 【storm】
+294114 [Cosmic]
+294120 Handrail in circular boss room B
+294122 【storm】
+294124 [Cosmic]
+294130 Handrail in circular boss room C
+294132 【storm】
+294134 [Cosmic]
+294200 Wooden box ×1
+294202 【storm】
+294204 [Cosmic]
+294210 Wooden box ×2
+294212 【storm】
+294214 [Cosmic]
+294220 Wooden box ×3
+294222 【storm】
+294224 [Cosmic]
+294230 Wooden box ×2
+294232 【storm】
+294234 [Cosmic]
+294300 Incense burner
+294302 【storm】
+294304 [Cosmic]
+294310 Hanging Incense Burner
+294312 【storm】
+294314 [Cosmic]
+294400 Coffin (object containing an enemy)
+294402 【storm】
+294404 [Cosmic]
+294410 No coffin or wall stopper
+294412 【storm】
+294414 [Cosmic]
+294420,Coffin (from Cathedral Ward)
+294422 【storm】
+294424 [Cosmic]
+294450 Coffin/Hit only
+294452 【storm】
+294454 [Cosmic]
+294500 Trucks A
+294502 【storm】
+294504 [Cosmic]
+294510 Trucks B
+294512 【storm】
+294514 [Cosmic]
+294600 Vase
+294602 【storm】
+294604 [Cosmic]
+294610 Explosive Pot
+294612 【storm】
+294614 [Cosmic]
+294620 Small Jar
+294622 【storm】
+294624 [Cosmic]
+294630 Urn high
+294632 【storm】
+294634 [Cosmic]
+294640 Urn - Low
+294642 【storm】
+294644 [Cosmic]
+294650 With urn and shield
+294652 【storm】
+294654 [Cosmic]
+294660 With urn and shield
+294662 【storm】
+294664 [Cosmic]
+294670 Urn high (nothing)
+294672 【storm】
+294674 [Cosmic]
+294680 Urn - Low (nothing)
+294682 【storm】
+294684 [Cosmic]
+294700 Candlestick - High
+294702 【storm】
+294704 [Cosmic]
+294710 Candlestick - Low
+294712 【storm】
+294714 [Cosmic]
+294750 Desk and miscellaneous goods set 1
+294752 【storm】
+294754 [Cosmic]
+294760 Desk and miscellaneous goods set 2
+294762 【storm】
+294764 [Cosmic]
+294770 Desk and miscellaneous goods set 3
+294772 【storm】
+294774 [Cosmic]
+294800 Boss Room Corpse 1
+294802 【storm】
+294804 [Cosmic]
+294810 Boss Room Corpse 2
+294812 【storm】
+294814 [Cosmic]
+294820 Boss Room Corpse 3
+294822 【storm】
+294824 [Cosmic]
+294830 Boss Room Corpse 4
+294832 【storm】
+294834 [Cosmic]
+294840 Boss Room Corpse 5
+294842 【storm】
+294844 [Cosmic]
+294850 Boss Room Corpse 6
+294852 【storm】
+294854 [Cosmic]
+294860 Boss Room Corpse 7
+294862 【storm】
+294864 [Cosmic]
+294900 Collapsing floor of pitfall ( Middle aisle )
+294902 【storm】
+294904 [Cosmic]
+294910 Collapsing floor of pitfall ( Normal room A B)
+294912 【storm】
+294914 [Cosmic]
+294920 Collapsing floor of pitfall ( Upper aisle )
+294922 【storm】
+294924 [Cosmic]
+294930 Collapsing floor of pitfall ( Upper room )
+294932 【storm】
+294934 [Cosmic]
+294940 Collapsing floor of pitfall ( Rumbling Passage )
+294942 【storm】
+294944 [Cosmic]
+294950 Normal room B Pillar
+294952 【storm】
+294954 [Cosmic]
+294960 Wide passage pillar
+294962 【storm】
+294964 [Cosmic]
+294970,Step room A Pillar
+294972 【storm】
+294974 [Cosmic]
+294980 Jumping step room pillar
+294982 【storm】
+294984 [Cosmic]
+294990 Normal room B_ Pillar ( Boss Room )
+294992 【storm】
+294994 [Cosmic]
+295700 Boss room light wall 1
+295702 【storm】
+295704 [Cosmic]
+295710 Boss room light wall 2
+295712 【storm】
+295714 [Cosmic]
+296100 Chandelier (1 tier)
+296102 【storm】
+296104 [Cosmic]
+296110 Chandelier (2 tiers)
+296112 【storm】
+296114 [Cosmic]
+296120 Chandelier (3 tiers)
+296122 【storm】
+296124 [Cosmic]
+296130 Chandelier (4 tiers)
+296132 【storm】
+296134 [Cosmic]
+296400 Bonfire A
+296402 【storm】
+296404 [Cosmic]
+296410 Bonfire B
+296412 【storm】
+296414 [Cosmic]
+296500 Bonfire
+296502 【storm】
+296504 [Cosmic]
+296600 A bundle of candles
+296602 【storm】
+296604 [Cosmic]
+296610 Bundle of candles 2
+296612 【storm】
+296614 [Cosmic]
+296620 Candle bundle 3
+296622 【storm】
+296624 [Cosmic]
+296800 Mimic Weakened
+296802 【storm】
+296804 [Cosmic]
+297100 Animal carcasses 1
+297102 【storm】
+297104 [Cosmic]
+297110 Animal carcasses 2
+297112 【storm】
+297114 [Cosmic]
+297120 Animal carcasses 3
+297122 【storm】
+297124 [Cosmic]
+297130 Animal carcasses 4
+297132 【storm】
+297134 [Cosmic]
+297140 Animal carcasses 5
+297142 【storm】
+297144 [Cosmic]
+297200 pile of dead animals
+297202 【storm】
+297204 [Cosmic]
+297210 A pile of drowned bodies
+297212 【storm】
+297214 [Cosmic]
+297250 General-purpose statues and pedestals
+297252 【storm】
+297254 [Cosmic]
+297260 General-purpose statue low pedestal
+297262 【storm】
+297264 [Cosmic]
+297300 Generic Statue A
+297302 【storm】
+297304 [Cosmic]
+297310 Generic Statue A・Headless
+297312 【storm】
+297314 [Cosmic]
+297350 Generic Statue A・Low base
+297352 【storm】
+297354 [Cosmic]
+297360 Generic Statue A・No head ・Low base
+297362 【storm】
+297364 [Cosmic]
+297400 Generic Statue B
+297402 【storm】
+297404 [Cosmic]
+297410 Generic Statue B・Headless
+297412 【storm】
+297414 [Cosmic]
+297450 Generic Statue B·low
+297452 【storm】
+297454 [Cosmic]
+297500 Gravestone A1
+297502 【storm】
+297504 [Cosmic]
+297510 Gravestone A2
+297512 【storm】
+297514 [Cosmic]
+297520 Gravestone B1
+297522 【storm】
+297524 [Cosmic]
+297530 Gravestone B2
+297532 【storm】
+297534 [Cosmic]
+297540 Gravestone C1
+297542 【storm】
+297544 [Cosmic]
+297550 Gravestone C2
+297552 【storm】
+297554 [Cosmic]
+297560 Gravestone D1
+297562 【storm】
+297564 [Cosmic]
+297570 Gravestone D2
+297572 【storm】
+297574 [Cosmic]
+297600 Tree in the upper room A
+297602 【storm】
+297604 [Cosmic]
+297610 Tree in the upper room B
+297612 【storm】
+297614 [Cosmic]
+297650 Garden Tree A
+297652 【storm】
+297654 [Cosmic]
+297660 Garden Tree B
+297662 【storm】
+297664 [Cosmic]
+297700 Wide lower passage gravestone
+297702 【storm】
+297704 [Cosmic]
+297800 Lower doorway
+297802 【storm】
+297804 [Cosmic]
+297810 Boss room back wall
+297812 【storm】
+297814 [Cosmic]
+297820 The back wall of the circular boss room
+297822 【storm】
+297824 [Cosmic]
+297830 Spiral staircase cemetery fence
+297832 【storm】
+297834 [Cosmic]
+297840 Spiral staircase cemetery fence (no offset)
+297842 【storm】
+297844 [Cosmic]
+297900 Cosmic Vegetation A
+297902 【storm】
+297904 [Cosmic]
+297910 Cosmic Vegetation B
+297912 【storm】
+297914 [Cosmic]
+298000 Ladder (top - For middle shelf 7m )
+298002 【storm】
+298004 [Cosmic]
+298010 Ladder (top - For middle shelf 7m ) Chapel specifications
+298012 【storm】
+298014 [Cosmic]
+298100 Ladder (medium - For lower tier 6m )
+298102 【storm】
+298104 [Cosmic]
+298200 Ladder (Drawbridge room ↑)
+298202 【storm】
+298204 [Cosmic]
+298210 Ladder (Drawbridge Room ↓)
+298212 【storm】
+298214 [Cosmic]
+299300 Upper room trees: back
+299310 Upper room trees: in front
+299822 Rusty lattice door
+299842 Rusty Treasure Chest (M)
+299900 Elevator
+299901,Trap Switch
+299902 lever
+299910 Upper middle ladder
+299911 Middle and lower ladder
+299912 Odd-numbered ladder (for animation confirmation)
+299921 Wooden door
+299922 Lattice door
+299925 Floor door
+299926 In front of floor door
+299928 Magic Wall
+299929 Magic Wall
+299935 Statue _ large
+299936 Statue _ Medium
+299937 Statue _ small
+299940 Treasure Chest
+299941 Treasure Chest Small
+299942 Treasure Chest Medium
+299943 Large Treasure Chest
+299950 Treasure Corpse
+299951 Boss Room Corpse 1
+299952 Boss Room Corpse 2
+299953 Boss Room Corpse 3
+299954 Boss Room Corpse 4
+299955 Boss Room Corpse 5
+299956 Boss Room Corpse 6
+299957 Boss Room Corpse 7
+299960 Two stacked ceramic boxes
+299961 Explosive Pot
+299963 Ceramic box
+299965 Candlestick
+299966 Urn
+299967 coffin
+299968 Wooden box
+299969 Barrel
+299970 Pendulum
+299971 Fiery Arrow Statue
+299972 Pin pile
+299974 Pitfall (middle)
+299975 Pitfall (upper row)
+299976 Pitfall (lower row)
+299979 Fountain of Healing
+320010 Candlestick 0
+320011 Candlestick 1
+320300 Wall of Fog
+321000 Old school building _ desk
+321001 Old school building _ desk ( Nightmare School Building Layout Modification )
+321010 Old school building _ chair
+321020 Professor's Chair
+321030 Sofa
+321060 Celestial sphere chandelier
+321061 Celestial globe
+321070 handle
+321080 Observatory
+321090 ladder
+321100 door
+321110 lever
+322101 Medicine bottle 01
+322102 Medicine bottle 02
+322103 Medicine bottle 03
+322104 Medicine bottle 04
+322105 Medicine bottle 05
+322106 Medicine bottle 06
+322107 Medicine bottle 07
+322108 Medicine bottle 08
+322109 Medicine bottle 09
+322000,New School Building _ Experiment Table
+322001 New School Building _ Lab Table (destroyed)
+322010 New School Building _ General-purpose desk
+322011 New School Building _ General-purpose desk (without bottles)
+322012 New School Building _ General-purpose desk (with bottles)
+322020 New School Building _ General-purpose chair 00
+322021 New School Building _ General-purpose chair 01
+322030 New School Building _ Auditorium Chairs 0
+322031 New School Building _ Auditorium Chairs 1
+322032 New School Building _ Auditorium Chairs 2
+322040 New School Building _ Wall lamp
+322050 New School Building _ Hallway shelf 3 Stage
+322051 New School Building _ Hallway shelf 2 Stage
+322052 New School Building _ Hallway shelf 1 Stage
+322053 New School Building _ Hallway shelf 4 Stage
+322054 New School Building _ Hallway shelf 5 Stage
+322055 New School Building _ Hallway shelf 6 Stage
+322056 New School Building _ Hallway shelf 7 Stage
+322070,New School Building _ Hallway shelf 3 Tier Wide
+322071 New School Building _ Hallway shelf 2 Tier Wide
+322060 New School Building _ chandelier
+322100 Entrance door
+322110 Classroom door
+322210 formalin A
+322220 formalin B
+322230 formalin C
+322240 formalin D
+322250 formalin E
+322260 formalin F
+322410 Formalin tray 1 Stage
+322420 Formalin tray 2 Stage
+322430 Formalin tray 3 Stage
+322310 Prison cell 1
+322320 Prison cell 2
+323020 Beam
+323030 Beam mechanism
+323080 Stairs to the beam
+323090 Inverted ladder
+323100 door
+323110 Door lever
+324010 coffin
+324020 box
+324100 door
+325000 bench
+325010 Street lamp
+325100 door
+325200 Main Door
+326080 President's Wall
+326090 Trick ladder
+326100 lid
+329000 Warp Chair
+330000 Elevator
+330001 Event gravestone
+330010 Destructible pillars
+330200 Stone pile
+330201 Stone pile
+330202 Stone pile
+330300 Wall of Fog
+330301 Wall of Fog
+340100 Nightmare Rock A
+340101 Nightmare Rock B
+340102 Nightmare Rock C
+340113 Wheelchair
+340114 Coffin (without wooden decoration)
+340115 Coffin (with wooden decorations)
+340116 Box (metal large)
+340117 Box (metal small)
+340118 Barrel (vertical)
+340119,Barrel (horizontal)
+340120 Coffin (metal)
+340121 Sewage D
+340122 Plastic bottle with blood
+340123 hat
+340124 shoes
+340125 Sack without strings
+340126 Road load
+340127 Wooden box
+340128 Bottle set A
+340129 Bottle set B
+341000 Candlestick
+341001 Vase
+341002 Vase
+342000 Church side door
+342001 Ω door
+342100 ladder A
+342101 ladder B
+342202 lever
+343100 Trick Gun 243007
+343200 Straw ball 249001
+343201 Strawberry dumplings 249001
+349000 Wall of Light
+349001 Wall of Light
+349002 Wall of Light
+349010 Ludwig Head
+349011 Ludwig Head ( After Death )
+350001 Boss room bench
+350010 Hierarchical display panel 1 Floor
+350011 Hierarchical display panel 2 Floor
+350012 Hierarchical display panel 3 Floor
+350013 Hierarchical display panel 4 Floor
+350014 Hierarchical display panel 5 Floor
+350102 coffin ( metal )
+350103 Candlestick
+350107 Mountain of books
+350108 Medical Instrument Box Set
+350109 Medical Device Test Tube
+350110 Blood transfusion bottle
+350120 Blood Transfusion Equipment
+350121 Medical Instrument Petri Dish
+350122 shelf
+350123 shelf _ Cloth cover A
+350125 shelf _ For corners
+350126 shelf _ Song Type
+350127 shelf _ simple _ Short
+350128 Multi-level staircase _ Set of jars on shelf _ Few
+350129 Multi-level staircase _ Set of jars on shelf _ Many
+350130,Blood transfusion table
+350131 shelf _ Cloth cover B
+350132 Cathedral Bed
+350133 Cathedral Bed _ Variations
+350134 Blood bottle set
+350135 coffin ( Little decoration _ metal )
+350136 Enemy destruction blood transfusion station
+350137 Enemy Destruction Bed
+350147 Wheelchair
+350148 Laboratory _ bed
+350149 Laboratory _ bed
+350151 patient A Treasure Corpse
+350152 patient A Treasure Corpse
+350153 patient A Treasure Corpse
+350154 patient A Treasure Corpse
+350200 Boss room chair
+350201 Altar Activation Pendant
+350202 Boss room side table
+350242 Formalin Pickling Set A
+350252 Round chair
+350253 Wheelchair for elderly people
+350500 ladder
+350501 ladder
+350502 ladder
+350503 ladder
+350504 ladder
+351000 door _ Multi-level staircase
+351001 door _ Dungeon
+351002 door _ Laboratory
+351003 door _ Multi-level staircase ⇔ Sunflower field
+351004 door _ Dungeon stairs entrance
+351010 door _ Boss Room
+352000 lever _ Laboratory
+352001 lever _ General purpose
+353001 Broken Windows
+353002 Multi-level staircase central column
+353003 Gimmick parts
+353004 Clock face
+353005 Elevator _ Sunflower field
+353006,Altar elevator
+353007 Multi-level staircase central column
+353008 Multi-level staircase central landing
+353009 Multi-level staircase
+353010 Gimmick Lever
+353011 Skull under the altar
+353012 Clock face gimmick
+353013 Altar elevator _ under
+353020,Trap Switch
+353100 Parent Sunflower
+353101 sunflower
+353102 sunflower
+353500 Elevator _ Laboratory
+353501 Elevator _ Laboratory
+355000 Clock Tower Hunter Death Waiting
+355001 Clock Tower Hunter Blood Puddle
+355002 Female doctor's chair
+355003 Female doctor in a pool of blood
+355004 Church Killer Death Waiting
+355100 Cathedral NPC
+357700 Clear Acquired Sphere
+359000 Staircase gimmick test data
+359001 Staircase gimmick test data
+359002 Staircase gimmick test data
+359003 Staircase gimmick test data
+360000 Lighthouse Elevator
+360010 Lighthouse Elevator _ switch
+361000 door
+362010 boat
+363000 Hermit crab shell
+363010 Hermit crab body
+363050 Hermit crab shell (3 layers)
+363060 Hermit crab shell (5 layers)
+363100 Dying character
+363110 Bloodstains from dying characters
+363200 Swinging Bridge (Village)
+363210 Swinging Bridge (Village)
+363230 Swinging Bridge (Fish Farming Tank)
+363240 Swinging Bridge (Fish Farming Tank)
+363500 Clock Tower Dial
+364000 Fish tank fence 4 m
+364010 Fish tank fence 2 m
+364020 Fish tank fence 1m
+364100 Slug Pot A
+364110 Slug Pot A
+364150 Slug Pot B
+364160 Slug Pot B
+364200 Slug Barrel
+364210 Slug Barrel
+364220 Slug Barrel
+364250 Slug barrel (2 levels)
+364300 Flame Pot
+364500 Sainokawara
+364510 Sainokawara
+365000 SE For dummies
+366000 Candlestick
+367000 mast
+367100 Driftwood
+367200 Hanging Corpse
+367500 Boss Mother
+367510 Boss Placenta (for cutscene)
+367600 month
+367700 Dawn sky
+367800 Rock (for cutscenes)
+368000 ladder
+368010 ladder
+368020 ladder
+368030 ladder
+368040 ladder
+368100 Trick ladder
+1000000 Defaults

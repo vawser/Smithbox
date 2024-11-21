@@ -1,0 +1,20 @@
+1 Default FCS -- デフォFCS
+70000000 1st generation FCS -- 第1世代FCS
+70010000 2nd generation FCS A-1 -- 第2世代FCS A-1
+70010100 2nd generation FCS A-2 -- 第2世代FCS A-2
+70010200 2nd generation FCS A-3 -- 第2世代FCS A-3
+70010300 2nd generation FCS B-1 -- 第2世代FCS B-1
+70010400 2nd generation FCS B-2 -- 第2世代FCS B-2
+70020000 3rd generation FCS 1 -- 第3世代FCS 1
+70020100 3rd generation FCS 2 -- 第3世代FCS 2
+70030000 Melange type FCS 1 -- メランジ系FCS 1
+70030100 Melange type FCS 2 -- メランジ系FCS 2
+70900000 Event exclusive_FCS for jailbreak mission -- イベント専用_脱獄ミッション用FCS
+70900100 FCS01 for tremo -- トレモ用FCS01
+70900200 FCS02 for tremo -- トレモ用FCS02
+70900300 FCS03 for tremo -- トレモ用FCS03
+70900400 FCS04 for tremo -- トレモ用FCS04
+70900500 FCS05 for tremo -- トレモ用FCS05
+70900600 FCS06 for tremo -- トレモ用FCS06
+70901000 Event exclusive_FCS for jailbreak mission -- イベント専用_脱獄ミッション用FCS
+70901100 FCS for prologue -- プロローグ用FCS

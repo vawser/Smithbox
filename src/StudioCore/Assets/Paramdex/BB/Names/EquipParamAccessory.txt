@@ -1,41 +1,41 @@
-100 装備重量アップ
-101 ピンチ攻撃力アップ
-102 暗月神の指輪
-103 盗賊団の指輪
-104 スタミナ回復アップ
-105 炎耐性アップ
-106 雷耐性アップ
-107 魔法耐性アップ
-108 全耐性アップ1
-109 出血耐性アップ
-110 毒耐性アップ
-111 HP微増
-113 呪耐性アップ
-114 魔法スロットアップ
-115 魔法威力アップ
-116 MP偏重
-117 致命攻撃力アップ
-119 弓の達人
-120 物理防御力アップ
-121 アイテムドロップアップ
-122 取得ソウルアップ
-123 音消去
-124 石コロ帽子
-125 剛脚
-126 復活
-127 呪いからの復活
-128 軽業
-130 共鳴
-137 混沌の言葉
-138 闇歩き
-139 溶岩歩き
-141 補助魔法延長
-142 HPドレイン
-143 強者の呪い
-144 カウンター強化
-145 武器を大切に
-146 SAアップ
-147 ピンチ防御力アップ
-148 奇跡威力アップ
-149 魔法スロットアップB
-150 【DLC】黒竜の指輪
+100 Increase equipment weight
+101 Increased attack power in a pinch
+102 Darkmoon God's Ring
+103 Thieves' Ring
+104 Stamina recovery up
+105 Increased fire resistance
+106 Increases lightning resistance
+107 Magic Resistance Up
+108 All resistances up 1
+109 Increased bleeding resistance
+110 Increases poison resistance
+111 HP Slight increase
+113 Increased Curse Resistance
+114 Magic Slot Up
+115 Magic Power Up
+116 MP Overemphasis
+117 Increases critical attack power
+119 Archery Master
+120 Physical defense up
+121 Item Drop Up
+122 Acquired Soul Up
+123 Sound Cancellation
+124 Pebble Hat
+125 Strong Legs
+126 revival
+127 Resurrection from the Curse
+128 Acrobatics
+130 Resonance
+137 Words of Chaos
+138 Dark Walker
+139 Lava Walker
+141 Auxiliary Magic Extension
+142 HP drain
+143 Curse of the Strong
+144 Counter Enhancement
+145 Take care of your weapons
+146 SA up
+147 Increased defense in pinches
+148 Miracle Power Up
+149,Magic Slot Up B
+150 [ DLC 】Black Dragon Ring

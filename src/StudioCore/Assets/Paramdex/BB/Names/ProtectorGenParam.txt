@@ -1,5 +1,5 @@
-0 ぬのきれ
-770000 【プロト】ハンター_頭_新関節
-771000 【プロト】ハンター_胴_新関節
-772000 【プロト】ハンター_腕_新関節
-773000 【プロト】ハンター_脚_新関節
+0 Cloth
+770000 [Prototype] Hunter _ head _ New joint
+771000 [Prototype] Hunter _ Torso _ New joint
+772000 [Prototype] Hunter _ arm _ New joint
+773000 [Prototype] Hunter _ leg _ New joint

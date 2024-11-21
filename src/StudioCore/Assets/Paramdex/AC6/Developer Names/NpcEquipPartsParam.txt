@@ -1,0 +1,137 @@
+0 Shouldn't be erased -- 消すべからず
+9311 control prototype character -- 制御試作用キャラ
+81310000 control prototype character -- 制御試作用キャラ
+30000000 c3000 security MT (rifle) -- c3000 警備MT（ライフル）
+30001000 c3000 security MT (EN rifle) -- c3000 警備MT（ENライフル）
+30002000 c3000 security MT (missile) -- c3000 警備MT（ミサイル）
+30003000 c3000 security MT (rocket) -- c3000 警備MT（ロケット）
+30004000 c3000 Security MT (Enhanced) -- c3000 警備MT（強化）
+30009000 c3000 Security MT (all equipment) -- c3000　警備MT（全装備）
+30010000 c3001 Security MT Enhancement A -- c3001 警備MT強化A
+30020000 c3002 Security MT Enhancement B -- c3002 警備MT強化B
+30200000 rifle throwing gun -- ライフル　投擲銃
+30200100 double machine gun -- ダブルマシンガン
+30200200 rocket launcher machine gun -- ロケットランチャー　マシンガン
+30200300 shotgun shield -- ショットガン　シールド
+30200400 rifle missile -- ライフル　ミサイル
+30200500 cannon machine gun -- キャノン　マシンガン
+30200600 rifle shield -- ライフル　シールド
+30200700 rocket launcher rifle -- ロケットランチャー　ライフル
+30200800 machine gun shield -- マシンガン　シールド
+30200810 machine gun -- マシンガン
+30200820 shield -- シールド
+30200830 rifle camera -- ライフル　カメラ
+30200900 base -- ベース
+30201000 c3020 General purpose MT for former communist countries (for damage reaction confirmation) -- c3020　旧共産圏汎用MT(ダメージリアクション確認用）
+30500000 c3050 Regular Army MT_Normal -- c3050 正規軍MT_ノーマル
+30501000 c3050 Regular Army MT_Support -- c3050 正規軍MT_支援
+30502000 c3050 Regular Army MT_Melee -- c3050 正規軍MT_近接
+30503000 c3050 Regular Army MT_Flame -- c3050 正規軍MT_火炎
+30504000 c3050 Regular Army MT_Bombing -- c3050 正規軍MT_爆撃
+30505000 c3050 Regular Army MT_Sniper -- c3050 正規軍MT_狙撃
+30509900 c3050 Regular Army MT_All Weapons -- c3050 正規軍MT_全兵装
+31000000 c3100 flight MT medium distance -- c3100 飛行MT　中距離
+31001000 c3100 flight MT short distance -- c3100 飛行MT　近距離
+31009900 c3100 flight MT all weapons -- c3100 飛行MT　全兵装
+31500000 c3150 Jagano fully loaded -- c3150 ジャガノ　全乗せ
+31501000 c3150 Jagano assault type -- c3150 ジャガノ　突撃型
+31502000 c3150 Jagano defense type -- c3150 ジャガノ　防衛型
+32000000 c3200 Avalanche (Ace) -- c3200 アバランチ(エース)
+32000100 c3200 Avalanche (Support A) -- c3200 アバランチ(サポートA)
+32000200 c3200 Avalanche (Support B) -- c3200 アバランチ(サポートB)
+32000300 c3200 Avalanche (Support A2) -- c3200 アバランチ(サポートA2)
+32000900 c3200 avalanche (base) -- c3200 アバランチ(ベース)
+32500000 c3250 Regular Army AC (Normal) -- c3250 正規軍AC（ノーマル）
+32500100 c3250 regular army AC (heavy firepower) diffusion buzz -- c3250 正規軍AC（重火力）拡散バズ
+32500200 c3250 regular army AC (heavy firepower) grenade -- c3250 正規軍AC（重火力）グレネード
+32500300 c3250 Regular Army AC (Support) -- c3250 正規軍AC（支援）
+32500400 c3250 Regular Army AC (Sniper) -- c3250 正規軍AC（狙撃）
+32500600 c3250 regular army AC (enhanced heavy firepower) -- c3250 正規軍AC（強化重火力）
+32500700 c3250 regular army AC (high mobility) -- c3250 正規軍AC（高機動）
+32500900 c3250 regular army AC (base) -- c3250 正規軍AC（ベース）
+32500999 c3250 Regular Army AC (Normal) Combat Test -- c3250 正規軍AC（ノーマル） 戦闘テスト
+32600000 c3260 regular army heavy AC (base) -- c3260 正規軍重AC（ベース）
+32600100 c3260 Regular Army Heavy AC (Normal) -- c3260 正規軍重AC（ノーマル）
+32600200 c3260 Regular Army Heavy AC (Blade) -- c3260 正規軍重AC（ブレード）
+32600300 c3260 Regular Army Heavy AC (Support) -- c3260 正規軍重AC（支援）
+32600400 c3260 Regular Army Heavy AC (Advanced) -- c3260 正規軍重AC（先進）
+33000000 c3300 Ghost MT (Melee Orbit) -- c3300 ゴーストMT（近接オービット）
+33001000 c3300 Ghost MT (PA) -- c3300 ゴーストMT（PA）
+33002000 c3300 Ghost MT (Sniper Orbit) -- c3300 ゴーストMT（スナイパーオービット）
+33009000 c3300 Ghost MT (fully equipped) -- c3300　ゴーストMT（全装備）
+34000000 c3400 Quadruped MT (normal) -- c3400 四脚MT（ノーマル）
+34001000 c3400 quadruped MT (heavy) -- c3400 四脚MT（重装）
+34002000 c3400 Quadruped MT (Sniper) -- c3400 四脚MT（スナイパー）
+34003000 c3400 Quadruped MT (Grenade) -- c3400 四脚MT（グレネード）
+34008000 c3400 quadruped MT (for tutorial) -- c3400 四脚MT（チュートリアル用）
+34009000 c3400 quadruped MT (fully equipped) -- c3400 四脚MT（全装備）
+35000000 c3500 old world MT gray -- c3500 旧世界MT グレ
+35000100 c3500 old world MT poison gray -- c3500 旧世界MT 毒グレ
+35000200 c3500 old world MT cluster -- c3500 旧世界MT クラスター
+35000300 c3500 old world MT poison cluster -- c3500 旧世界MT 毒クラスター
+35000900 c3500 old world MT base -- c3500 旧世界MT ベース
+36000000 c3600 construction machine spider_all equipment -- c3600 建機クモ_全装備
+36001000 c3600 Construction Machinery Spider_Proximity Type -- c3600 建機クモ_近接型
+36002000 c3600 construction machinery spider_support type -- c3600 建機クモ_支援型
+36003000 c3600 construction machine spider_sniper type -- c3600 建機クモ_狙撃型
+36004000 c3600 construction machine spider_armored type -- c3600 建機クモ_装甲型
+36004100 c3600 construction machine spider_armored type_varie -- c3600 建機クモ_装甲型_バリエ
+37000000 c3700 deleter full loading test -- c3700 デリーター全のせテスト
+37001000 c3700 deleter normal -- c3700 デリーター 通常
+37002000 c3700 deleter fighting -- c3700 デリーター 格闘
+37003000 c3700 deleter sniper -- c3700 デリーター 狙撃
+37003100 c3700 deleter sniper no vertical missile -- c3700 デリーター 狙撃　垂直ミサイル無し
+37004000 c3700 Deleteer Ace Strong Enemy -- c3700 デリーター エース強敵
+37009900 c3700 Deleter Strong Enemy Test Normal -- c3700 デリーター 強敵テスト　通常
+37009901 c3700 Deleteer Strong Enemy Test Blade -- c3700 デリーター 強敵テスト　ブレード
+37009999 c3700 deleter para automatic input test -- c3700 デリーター　パラ自動入力テスト
+40000000 c4000 ADF (EN cannon type) -- c4000　ADF(ENキャノンタイプ)
+40001000 c4000 ADF (EN shotgun type) -- c4000　ADF(ENショットガンタイプ)
+40002000 c4000 ADF (sniper cannon type) -- c4000　ADF(スナイパーキャノンタイプ)
+40003000 c4000 ADF (bazooka type) -- c4000　ADF(バズーカタイプ)
+40004000 c4000 ADF (new model) -- c4000　ADF(新型)
+40009000 c4000 ADF (fully equipped) -- c4000　ADF(全装備)
+41500000 c4150 Special attack MT (normal) -- c4150　特攻MT(ノーマル)
+41501000 c4150 Special attack MT(PA) -- c4150　特攻MT(PA)
+41502000 c4150 special attack MT (large missile) -- c4150　特攻MT(大型ミサイル)
+41509000 c4150 Special attack MT (all equipment) -- c4150　特攻MT(全装備)
+42010000 c4201 Next Generation Prototype AC (C-end) -- c4201 次世代プロトタイプAC（Cエンド）
+50000000 c5000 guard mecha (aerial) machine gun -- ｃ5000 ガードメカ(空中)機関銃
+50000100 c5000 Guard Mecha (Aerial) Rocket -- ｃ5000 ガードメカ(空中)ロケット
+50000200 c5000 guard mecha (air) self-destruction -- ｃ5000 ガードメカ(空中)自爆
+50000300 c5000 Guard Mecha (Aerial) Enemy Search -- ｃ5000 ガードメカ(空中)索敵
+50000900 c5000 Guard Mecha (Aerial) Base -- ｃ5000 ガードメカ(空中)ベース
+50100000 c5010 Bug_Work Type A -- c5010 バグ_作業タイプA
+50100100 c5010 Bug_Work Type B -- c5010 バグ_作業タイプB
+50100200 c5010 Bug_Security type -- c5010 バグ_警備タイプ
+50100300 c5010 Bug_special type -- c5010 バグ_特殊タイプ
+50100900 c5010 Bug_All equipment for testing -- c5010 バグ_テスト用全装備
+51200000 c5120 military US drone for transportation -- ｃ5120 軍事用USドローン　輸送用
+51200100 c5120 military US drone laser -- ｃ5120 軍事用USドローン　レーザー
+51200200 c5120 military US drone cluster missile -- ｃ5120 軍事用USドローン　クラスターミサイル
+51200300 c5120 Military US Drone Pulse PA -- ｃ5120 軍事用USドローン　パルスPA
+51200900 c5120 military US drone fully equipped -- ｃ5120 軍事用USドローン　全装備
+51500000 c5150 combat helicopter machine gun & missile -- ｃ5150 戦闘ヘリ　機関銃&ミサイル
+51500100 c5150 combat helicopter machine gun & napalm -- ｃ5150 戦闘ヘリ　機関銃&ナパーム
+51500200 c5150 combat helicopter EN machine gun & missile -- ｃ5150 戦闘ヘリ　EN機関銃&ミサイル
+51500300 c5150 combat helicopter EN machine gun & napalm -- ｃ5150 戦闘ヘリ　EN機関銃&ナパーム
+51500900 c5150 combat helicopter base -- ｃ5150 戦闘ヘリ　ベース
+52000000 c5200 combat vehicle live cannon -- c5200　戦闘車輌　実弾キャノン
+52001000 c5200 combat vehicle machine gun -- c5200　戦闘車輌　マシンガン
+52002000 c5200 combat vehicle missile -- c5200　戦闘車輌　ミサイル
+52003000 c5200 combat vehicle laser -- c5200　戦闘車輌　レーザー
+52009000 c5200 combat vehicle fully equipped -- c5200　戦闘車輌　全装備
+60500000 c6050 Pharaon Gatling type -- c6050 ファラオン　ガトリングタイプ
+60501000 c6050 Pharaon napalm type -- c6050 ファラオン　ナパームタイプ
+60501100 c6050 Pharaon Napalm_Missile type -- c6050 ファラオン　ナパーム_ミサイルタイプ
+60501110 c6050 Pharaon Napalm_Missile type_Light movable -- c6050 ファラオン　ナパーム_ミサイルタイプ_ライト可動
+60509000 c6050 Pharaon fully equipped type -- c6050 ファラオン　全装備タイプ
+61000000 c6100 sea spider -- c6100 ウミグモ
+72700000 c7270 general purpose gun for laser sight -- c7270 砲台汎用　レーザーサイト用
+72800000 c7280 general purpose gun for laser sight -- c7280 砲台汎用　レーザーサイト用
+72801000 For underground facility recapture gun battery dummy, for laser sight -- 地下施設奪還砲台ダミー用　レーザーサイト用
+73100000 c7310 general purpose gun for laser sight -- c7310 砲台汎用　レーザーサイト用
+81110000 c8111 Colorless MT -- c8111 無色MT
+81350000 c8135 Miyatake Strong Enemy -- c8135 宮武強敵
+81450000 c8145 tank bird -- c8145 タンクバード
+85300000 resource excavation ship -- 資源発掘艦

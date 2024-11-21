@@ -1,0 +1,2 @@
+100 Test archive_garage acquisition_log -- テスト用アーカイブ_ガレージ入手_ログ
+101 Test archive_garage acquisition_terms -- テスト用アーカイブ_ガレージ入手_用語

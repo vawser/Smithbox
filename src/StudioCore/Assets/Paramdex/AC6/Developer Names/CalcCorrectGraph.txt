@@ -1,0 +1,161 @@
+0 0: None -- 0:なし
+1 1: hard stone -- 1:硬石
+2 2: Sharp stone -- 2:鋭石
+3 3: Minagishi -- 3:みなぎ石
+4 4: Nibiishi -- 4:にび石
+5 5: Blade stone -- 5:刃石
+6 6: Spider thread steel wire -- 6:蜘蛛糸鋼線
+7 7: Mercury stone -- 7:水銀石
+8 8: Dragon stone -- 8:竜石
+9 9: Suction stone -- 9:吸いつき石
+10 10: Pierre stone -- 10:髄石
+11 11:Moonlight stone -- 11:月光石
+12 12: Moonstone -- 12:月影石
+13 13: Faint stone -- 13:微光石
+14 14: Magic shield stone -- 14:魔法盾石
+15 15: Ore Spirit DS -- 15:鉱石の精霊DS
+16 16:DS -- 16:ＤＳ
+20 For animation movement amount correction -- アニメ移動量補正用
+50 The lower the equipment weight, the higher the attack power. -- 装備重量が低いほど攻撃力アップ
+51 The heavier the equipment, the higher the attack power. -- 装備重量が重いほど攻撃力アップ
+100 Max HP -- 最大HP
+101 Max MP -- 最大MP
+102 Defense power (soul level) -- 防御力（ソウルレベル）
+110 Poison resistance (soul level) -- 毒耐性（ソウルレベル）
+111 Plague resistance (soul level) -- 疫病耐性（ソウルレベル）
+112 Bleeding resistance (soul level) -- 出血耐性（ソウルレベル）
+113 Curse resistance (soul level) -- 呪い耐性（ソウルレベル）
+114 Cold resistance (soul level) -- 冷気耐性（ソウルレベル）
+120 Poison resistance (stamina) -- 毒耐性（体力）
+121 Plague resistance (stamina) -- 疫病耐性（体力）
+122 Bleeding resistance (endurance) -- 出血耐性（持久力）
+123 Curse resistance (luck) -- 呪い耐性（運）
+124 Cold resistance (vitality) -- 冷気耐性（生命力）
+130 Physical defense power (strength) -- 物理防御力（筋力）
+131 Physical defense power (stamina) -- 物理防御力（体力）
+132 Magic defense (faith) -- 魔法防御力（信仰）
+133 Fire defense (strength) -- 炎防御力（筋力）
+134 Lightning defense (endurance) -- 雷防御力（持久力）
+135 Dark defense power (faith) -- 闇防御力（信仰）
+140 Drop rate (luck) -- ドロップ率（運）
+150 Maximum number of recovery spots to replenish -- 回復スポットの最大補充数
+160 Shield status correction physical cut rate -- 盾ステータス補正 物理カット率
+161 Shield status correction attribute cut rate -- 盾ステータス補正 属性カット率
+162 Shield status correction resistance cut rate -- 盾ステータス補正 耐性カット率
+163 Shield status correction stamina cut rate -- 盾ステータス補正 スタミナカット率
+170 Arts point maximum value (strength) -- アーツポイント最大値（筋力）
+171 Arts point maximum value (skill) -- アーツポイント最大値（技量）
+172 Arts point maximum (magic) -- アーツポイント最大値（魔法）
+173 Arts point maximum (miracle) -- アーツポイント最大値（奇跡）
+200 growth consumption soul -- 成長消費ソウル
+205 OS enhancement level required experience points -- OS強化レベル必要経験値
+210 Fall damage base value -- 落下ダメージ基本値
+211 Fall damage weight percentage correction -- 落下ダメージ重量割合補正
+212 Fall damage vitality correction -- 落下ダメージ生命力補正
+213 Falling damage skill correction -- 落下ダメージ技量補正
+260 Total weight correction factor: Ground boost dash terminal speed [km/h] -- 総重量補正係数：地上ブーストダッシュ終端速度[km/h]
+261 Total weight correction factor: Air boost dash terminal speed [km/h] -- 総重量補正係数：空中ブーストダッシュ終端速度[km/h]
+262 Total weight correction factor: [Aerial B] Maximum climbing speed [km/h] -- 総重量補正係数：【空中B】上昇最高速度[km/h]
+263 Total weight correction factor: QB terminal speed [km/h] -- 総重量補正係数：QB終端速度[km/h]
+264 Total weight correction factor: QB initial speed [km/h] -- 総重量補正係数：QB初速[km/h]
+265 Total weight correction factor: [Vertical ascent B] Maximum ascent speed [km/h] -- 総重量補正係数：【垂直上昇B】上昇最高速度[km/h]
+266 Total weight correction factor: AB initial speed [km/h] -- 総重量補正係数：AB初速[km/h]
+267 Total weight correction factor: AB terminal speed [km/h] -- 総重量補正係数：AB終端速度[km/h]
+268 Total weight correction factor: Breho initial speed [km/h] -- 総重量補正係数：ブレホ初速[km/h]
+269 Total weight correction factor: Brejo terminal speed [km/h] -- 総重量補正係数：ブレホ終端速度[km/h]
+270 Total weight correction factor: Tank ground movement_walking_maximum speed [km/h] -- 総重量補正係数：タンク地上移動_歩行時_最高速度[km/h]
+271 Total weight correction factor: Tank ground movement_walking_acceleration [m/s^2] -- 総重量補正係数：タンク地上移動_歩行時_加速度[m/s^2]
+272 Total weight correction factor: Tank ground movement_driving_maximum speed [km/h] -- 総重量補正係数：タンク地上移動_走行時_最高速度[km/h]
+273 Total weight correction factor: Tank ground movement_driving_acceleration [m/s^2] -- 総重量補正係数：タンク地上移動_走行時_加速度[m/s^2]
+274 Total weight correction factor: Tank ground movement_Dashing_Maximum speed [km/h] -- 総重量補正係数：タンク地上移動_ダッシュ時_最高速度[km/h]
+275 Total weight correction factor: Tank ground movement_dashing_acceleration [m/s^2] -- 総重量補正係数：タンク地上移動_ダッシュ時_加速度[m/s^2]
+276 Total weight correction factor: Tank ground movement_Drifting_Maximum speed [km/h] -- 総重量補正係数：タンク地上移動_ドリフト時_最高速度[km/h]
+277 Total weight correction factor: Tank ground movement_drifting_acceleration [m/s^2] -- 総重量補正係数：タンク地上移動_ドリフト時_加速度[m/s^2]
+278 Total weight correction coefficient: Residual impact value volatilization speed correction magnification -- 総重量補正係数：残留衝撃値揮発速度補正倍率
+279 Total weight correction factor: Landing stiffness occurrence speed [km/h] -- 総重量補正係数：着地硬直発生速度[km/h]
+280 Total weight correction factor: Attack power multiplier -- 総重量補正係数：攻撃力倍率
+281 Total weight correction factor: quadruped hovering consumption EN correction -- 総重量補正係数：四脚ホバリング消費EN補正
+282 Total weight correction factor: Maximum horizontal speed when hovering on four legs -- 総重量補正係数：四脚ホバリング時_水平最高速度
+283 Total weight correction factor: Four-legged hovering_horizontal acceleration -- 総重量補正係数：四脚ホバリング時_水平加速度
+290 Excess weight correction factor: booster speed system -- 重量過多補正係数：ブースター速度系
+291 Excess weight correction factor: jump height [m] -- 重量過多補正係数：ジャンプ到達高度[m]
+292 Excess weight correction factor: Ground QB additional initial speed [km/h] -- 重量過多補正係数：地上QB追加初速[km/h]
+293 Excess weight correction factor: Hovering QB additional initial speed [km/h] -- 重量過多補正係数：ホバリングQB追加初速[km/h]
+294 Excess weight correction factor: Jump quick boost height reached [m] -- 重量過多補正係数：ジャンプクイックブースト到達高度[m]
+295 Excess weight correction factor: Quadruped hovering consumption EN correction factor -- 重量過多補正係数：四脚ホバリング消費EN補正係数
+296 Excess weight correction factor: Quadruped hovering horizontal maximum speed correction factor -- 重量過多補正係数：四脚ホバリング水平最高速度補正係数
+297 Excess weight correction factor: Quadruped hovering horizontal acceleration correction factor -- 重量過多補正係数：四脚ホバリング水平加速度補正係数
+300 Stability performance correction value -- 安定性能補正値
+310 Boost dash speed correction angle -- ブーストダッシュ速度補正角度
+320 Weight correction value: QB reload time -- 重量補正値：QBリロード時間
+321 Weight correction value: QB consumption EN amount -- 重量補正値：QB消費EN量
+322 Weight correction value: QB injection time -- 重量補正値：QB噴射時間
+323 Weight correction value: EN recovery speed -- 重量補正値：EN回復速度
+324 Weight correction value: EN recovery start time_normal time -- 重量補正値：EN回復開始時間_通常時
+325 Weight correction value: EN recovery start time_when in debt -- 重量補正値：EN回復開始時間_借金時
+330 Residual impact value_Volatilization rate when EN decreases [point/s] -- 残留衝撃値_EN減少時揮発速度[point/s]
+331 Residual impact value_EN maximum volatilization rate [point/s] -- 残留衝撃値_EN最大時揮発速度[point/s]
+332 Residual impact value_Volatilization rate [point/s] -- 残留衝撃値_揮発速度[point/s]
+350 Player EN recovery speed [EN value/sec] -- プレイヤーEN回復速度[EN値/sec]
+400 bullet distance attenuation -- 弾丸距離減衰
+410 ricochet distance -- 跳弾距離
+500 Enemy search level accumulated value -- エネミーの索敵度蓄積値
+510 Enemy search level: Upper limit for each distance -- 索敵度：距離ごとの上限値
+511 Search level: Attenuation value per distance (pt/sec) -- 索敵度：距離ごとの減衰値(pt/sec)
+515 Enemy search level: Basic value when completely discovered -- 索敵度：完全発見時の基礎値
+516 Enemy search level: Attenuation value when completely discovered (pt/sec) -- 索敵度：完全発見時の減衰値(pt/sec)
+520 Enemy search blur: Blur distance for each enemy search level (m) -- 索敵ブレ：索敵度ごとのブレ距離（m）
+530 Enemy engagement level accumulated value (visual) -- エネミーの交戦度蓄積値（視覚）
+535 Enemy engagement level accumulated value (radar) -- エネミーの交戦度蓄積値（レーダー）
+600 Quick booster output transfer efficiency (QB instantaneous consumption EN) -- クイックブースター出力伝達効率（QB瞬間消費EN）
+610 Generating output transmission efficiency (EN recovery amount_normal) -- ジェネ出力伝達効率（EN回復量_通常時）
+620 Gene cooling performance (EN recovery standby time) -- ジェネ冷却性能（EN回復待機時間）
+621 Gene cooling performance (EN recovery standby time_when in debt) -- ジェネ冷却性能（EN回復待機時間_借金時）
+700 Recoil control correction coefficient based on arm loading weight -- 腕部積載重量による反動制御補正係数
+701 Shooting motion performance correction coefficient based on arm loading weight -- 腕部積載重量による射撃運動性能補正係数
+702 Fighting aptitude correction coefficient based on arm loading weight -- 腕部積載重量による格闘適性補正係数
+703 EN weapon suitability correction coefficient based on arm loading weight -- 腕部積載重量によるEN武器適性補正係数
+800 lock grace time -- ロック猶予時間
+801 Lock maintenance time through walls -- 壁越しロック維持時間
+850 Attack recoil blur accumulation correction coefficient -- 攻撃反動ブレ蓄積量補正係数
+851 Attack recoil blur recovery speed [point/sec] -- 攻撃反動ブレ回復速度[point/sec]
+852 Attack recoil blur recovery cooldown time [sec] -- 攻撃反動ブレ回復クールタイム[sec]
+853 Maximum prediction rate decrease due to attack recoil blur -- 攻撃反動ブレによる予測率低下最大値
+860 Amount of prediction rate decrease due to attack recoil blur -- 攻撃反動ブレによる予測率低下量
+861 Launch angle random number increase rate due to attack recoil blur -- 攻撃反動ブレによる発射角度乱数増加割合
+862 Launch angle random number initial value correction coefficient by arm recoil control -- 腕部反動制御による発射角度乱数初期値補正 係数
+900 Acquisition degree reduction amount -- 捕捉度 減少量
+901 Proximity appropriate angular velocity correction amount -- 近接適正 角速度補正量
+950 Prediction rate addition amount (horizontal) -- 予測率加算量（水平）
+951 Prediction rate subtraction amount (horizontal) -- 予測率減算量（水平）
+960 Prediction rate addition amount (vertical) -- 予測率加算量（垂直）
+961 Prediction rate subtraction amount (vertical) -- 予測率減算量（垂直）
+970 Correction coefficient for prediction rate addition amount based on shooting motion performance -- 射撃運動性能による予測率加算量の補正係数
+971 Correction coefficient for prediction rate subtraction based on shooting motion performance -- 射撃運動性能による予測率減算量の補正係数
+980 Reload time correction factor based on fighting aptitude -- 格闘適性によるリロード時間補正係数
+981 Charge time correction factor based on fighting aptitude -- 格闘適性によるチャージ時間補正係数
+982 Basic attack power correction coefficient based on fighting aptitude -- 格闘適性による格闘適性による攻撃力基本値補正係数
+990 Reload time correction factor based on EN weapon aptitude -- EN武器適性によるリロード時間補正係数
+991 Charge time correction factor based on EN weapon aptitude -- EN武器適性によるチャージ時間補正係数
+992 Basic attack power correction coefficient based on EN weapon suitability -- EN武器適性による攻撃力基本値補正係数
+1000 Blast distance attenuation (00 for own aircraft) -- 爆風距離減衰（自機用00）
+1001 Blast distance attenuation (01 for own aircraft) -- 爆風距離減衰（自機用01）
+1002 Blast distance attenuation (for own aircraft 02) -- 爆風距離減衰（自機用02）
+1003 Blast distance attenuation (03 for own aircraft) -- 爆風距離減衰（自機用03）
+1004 Blast distance attenuation (04 for own aircraft) -- 爆風距離減衰（自機用04）
+1005 Blast distance attenuation (05 for own aircraft) -- 爆風距離減衰（自機用05）
+1006 Blast distance attenuation (06 for own aircraft) -- 爆風距離減衰（自機用06）
+1007 Blast distance attenuation (07 for own aircraft) -- 爆風距離減衰（自機用07）
+1008 Blast distance attenuation (08 for own aircraft) -- 爆風距離減衰（自機用08）
+1009 Blast distance attenuation (09 for own aircraft) -- 爆風距離減衰（自機用09）
+1010 Blast distance attenuation (10 for own aircraft) -- 爆風距離減衰（自機用10）
+1100 Blast distance attenuation (00 for enemy) -- 爆風距離減衰（敵用00）
+1101 Blast distance attenuation (01 for enemy) -- 爆風距離減衰（敵用01）
+1102 Blast distance attenuation (for enemy 02) -- 爆風距離減衰（敵用02）
+1103 Blast distance attenuation (for enemy 03) -- 爆風距離減衰（敵用03）
+1104 Blast distance attenuation (04 for enemy) -- 爆風距離減衰（敵用04）
+1105 Blast distance attenuation (05 for enemy) -- 爆風距離減衰（敵用05）
+1106 Blast distance attenuation (06 for enemy) -- 爆風距離減衰（敵用06）
+1107 Blast distance attenuation (07 for enemy) -- 爆風距離減衰（敵用07）
+1108 Blast distance attenuation (08 for enemy) -- 爆風距離減衰（敵用08）
+1109 Blast distance attenuation (09 for enemy) -- 爆風距離減衰（敵用09）

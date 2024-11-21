@@ -1,0 +1,417 @@
+0 none -- 無し
+1000 Default_Archibus_BASE -- デフォルト_アーキバス_BASE
+1000 Default_Archibus_SUB -- デフォルト_アーキバス_SUB
+1000 Default_Archibus_SUPPORT_1 -- デフォルト_アーキバス_SUPPORT_1
+1000 Default_Archibus_SUPPORT_2 -- デフォルト_アーキバス_SUPPORT_2
+1000 Default_Archibus_JOINT -- デフォルト_アーキバス_JOINT
+1000 Default_Archibus_EYE -- デフォルト_アーキバス_EYE
+1000 Default_Archibus_Rust -- デフォルト_アーキバス_錆
+2000 DEFAULT_BAILUM_BASE -- デフォルト_ベイラム_BASE
+2000 default_bayram_SUB -- デフォルト_ベイラム_SUB
+2000 Default_Baylum_SUPPORT_1 -- デフォルト_ベイラム_SUPPORT_1
+2000 Default_Baylum_SUPPORT_2 -- デフォルト_ベイラム_SUPPORT_2
+2000 Default_bayram_JOINT -- デフォルト_ベイラム_JOINT
+2000 Default_Baylum_EYE -- デフォルト_ベイラム_EYE
+2000 Default_Baylum_Rust -- デフォルト_ベイラム_錆
+3000 Default_Ash People_BASE -- デフォルト_灰の民_BASE
+3000 Default_Ash People_SUB -- デフォルト_灰の民_SUB
+3000 Default_Ash People_SUPPORT_1 -- デフォルト_灰の民_SUPPORT_1
+3000 Default_Ash People_SUPPORT_2 -- デフォルト_灰の民_SUPPORT_2
+3000 Default_Ash People_JOINT -- デフォルト_灰の民_JOINT
+3000 Default_Ash People_EYE -- デフォルト_灰の民_EYE
+3000 Default_Ash People_Rust -- デフォルト_灰の民_錆
+4000 Default_Block Mechanism_BASE -- デフォルト_封鎖機構_BASE
+4000 Default_Block Mechanism_SUB -- デフォルト_封鎖機構_SUB
+4000 Default_Block Mechanism_SUPPORT_1 -- デフォルト_封鎖機構_SUPPORT_1
+4000 Default_Block Mechanism_SUPPORT_2 -- デフォルト_封鎖機構_SUPPORT_2
+4000 Default_Block Mechanism_JOINT -- デフォルト_封鎖機構_JOINT
+4000 Default_blocking mechanism_EYE -- デフォルト_封鎖機構_EYE
+4000 Default_blocking mechanism_rust -- デフォルト_封鎖機構_錆
+5000 Default_Corporate_Association_BASE -- デフォルト_企業連合_BASE
+5000 Default_Corporate_Union_SUB -- デフォルト_企業連合_SUB
+5000 Default_Corporate Federation_SUPPORT_1 -- デフォルト_企業連合_SUPPORT_1
+5000 Default_Corporate Federation_SUPPORT_2 -- デフォルト_企業連合_SUPPORT_2
+5000 Default_Corporate_Union_JOINT -- デフォルト_企業連合_JOINT
+5000 Default_Corporate_Federation_EYE -- デフォルト_企業連合_EYE
+5000 Default_Corporate Federation_Rust -- デフォルト_企業連合_錆
+6000 Default_MelangeDrunker_BASE -- デフォルト_メランジドランカー_BASE
+6000 Default_MelangeDrunker_SUB -- デフォルト_メランジドランカー_SUB
+6000 Default_melange ranker_SUPPORT_1 -- デフォルト_メランジドランカー_SUPPORT_1
+6000 Default_melange ranker_SUPPORT_2 -- デフォルト_メランジドランカー_SUPPORT_2
+6000 Default_MelangeDrunker_JOINT -- デフォルト_メランジドランカー_JOINT
+6000 Default_Melange_Lunker_EYE -- デフォルト_メランジドランカー_EYE
+6000 Default_Melange Drunker_Rust -- デフォルト_メランジドランカー_錆
+7000 Default_JunkerCoyotes_BASE -- デフォルト_ジャンカーコヨーテス_BASE
+7000 Default_JunkerCoyotes_SUB -- デフォルト_ジャンカーコヨーテス_SUB
+7000 Default_JunkerCoyotes_SUPPORT_1 -- デフォルト_ジャンカーコヨーテス_SUPPORT_1
+7000 Default_Junker Coyotes_SUPPORT_2 -- デフォルト_ジャンカーコヨーテス_SUPPORT_2
+7000 Default_JunkerCoyotes_JOINT -- デフォルト_ジャンカーコヨーテス_JOINT
+7000 Default_JunkerCoyotes_EYE -- デフォルト_ジャンカーコヨーテス_EYE
+7000 Default_Junker Coyotes_Rust -- デフォルト_ジャンカーコヨーテス_錆
+30003000 Security MT_Battered_Rust 1 -- 警備MT_ボロボロ_錆用1
+30003000 Security MT_Battered_Rust 2 -- 警備MT_ボロボロ_錆用2
+30003000 Security MT_Battered_Rust 3 -- 警備MT_ボロボロ_錆用3
+30003000 Security MT_Battered_Rust 4 -- 警備MT_ボロボロ_錆用4
+30201000 Communist MT_Archibus_BASE -- 共産MT_アーキバス_BASE
+30201000 Communist MT_Archibus_SUB -- 共産MT_アーキバス_SUB
+30201000 Communist MT_Archibus_SUPPORT_1 -- 共産MT_アーキバス_SUPPORT_1
+30201000 Communist MT_Archibus_SUPPORT_2 -- 共産MT_アーキバス_SUPPORT_2
+30201000 Communist MT_Archibus_JOINT -- 共産MT_アーキバス_JOINT
+30201000 Communist MT_Archibus_Rust 4 -- 共産MT_アーキバス_錆用4
+30201010 Communist MT_Archibus (Green Monoeye)_BASE -- 共産MT_アーキバス(緑モノアイ)_BASE
+30201010 Communist MT_Archibus (Green Monoeye)_SUB -- 共産MT_アーキバス(緑モノアイ)_SUB
+30201010 Communist MT_Archibus (Green Monoeye)_SUPPORT_1 -- 共産MT_アーキバス(緑モノアイ)_SUPPORT_1
+30201010 Communist MT_Archibus(Green Monoeye)_SUPPORT_2 -- 共産MT_アーキバス(緑モノアイ)_SUPPORT_2
+30201010 Communist MT_Archibus (Green Monoeye)_JOINT -- 共産MT_アーキバス(緑モノアイ)_JOINT
+30201010 Communist MT_Archibus (Green Monoeye)_Rust 4 -- 共産MT_アーキバス(緑モノアイ)_錆用4
+30201010 Communist MT_Archibus (Green Monoeye)_Monoeye -- 共産MT_アーキバス(緑モノアイ)_モノアイ
+30202000 Communist MT_Bayram_BASE -- 共産MT_ベイラム_BASE
+30202000 Communist MT_Bayram_SUB -- 共産MT_ベイラム_SUB
+30202000 Communist MT_Beiram_SUPPORT_1 -- 共産MT_ベイラム_SUPPORT_1
+30202000 Communist MT_Beiram_SUPPORT_2 -- 共産MT_ベイラム_SUPPORT_2
+30202000 Communist MT_Bayram_JOINT -- 共産MT_ベイラム_JOINT
+30202000 Communist MT_Baylum_Rust 4 -- 共産MT_ベイラム_錆用4
+30202010 Communist MT_Baylum (Green Monoeye)_BASE -- 共産MT_ベイラム(緑モノアイ)_BASE
+30202010 Communist MT_Baylum (green mono eye)_SUB -- 共産MT_ベイラム(緑モノアイ)_SUB
+30202010 Communist MT_Bayram (Green Monoeye)_SUPPORT_1 -- 共産MT_ベイラム(緑モノアイ)_SUPPORT_1
+30202010 Communist MT_Bayram (Green Monoeye)_SUPPORT_2 -- 共産MT_ベイラム(緑モノアイ)_SUPPORT_2
+30202010 Communist MT_Bayram (Green Monoeye)_JOINT -- 共産MT_ベイラム(緑モノアイ)_JOINT
+30202010 Communist MT_ Bayram (Green Monoeye)_ Rust 4 -- 共産MT_ベイラム(緑モノアイ)_錆用4
+30202010 Communist MT_Bayram (Green Monoeye)_Monoeye -- 共産MT_ベイラム(緑モノアイ)_モノアイ
+30203000 Communist MT_Tattered_BASE -- 共産MT_ボロボロ_BASE
+30203000 Communist MT_Tattered_SUB -- 共産MT_ボロボロ_SUB
+30203000 Communist MT_Tattered_SUPPORT_1 -- 共産MT_ボロボロ_SUPPORT_1
+30203000 Communist MT_Tattered_SUPPORT_2 -- 共産MT_ボロボロ_SUPPORT_2
+30203000 Communist MT_Tattered_JOINT -- 共産MT_ボロボロ_JOINT
+30203000 Communist MT_tattered_rust 1 -- 共産MT_ボロボロ_錆用1
+30203000 Communist MT_tattered_rust 2 -- 共産MT_ボロボロ_錆用2
+30203000 Communist MT_tattered_rust 3 -- 共産MT_ボロボロ_錆用3
+30203000 Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4
+30203010 Communist MT_Battered (green mono eye)_BASE -- 共産MT_ボロボロ(緑色モノアイ)_BASE
+30203010 Communist MT_Tattered (green mono eye)_SUB -- 共産MT_ボロボロ(緑色モノアイ)_SUB
+30203010 Communist MT_Tattered (green mono eye)_SUPPORT_1 -- 共産MT_ボロボロ(緑色モノアイ)_SUPPORT_1
+30203010 Communist MT_Tattered (green mono eye)_SUPPORT_2 -- 共産MT_ボロボロ(緑色モノアイ)_SUPPORT_2
+30203010 Communist MT_Battered (green mono eye)_JOINT -- 共産MT_ボロボロ(緑色モノアイ)_JOINT
+30203010 Communist MT_Battered (green mono eye)_For rust 1 -- 共産MT_ボロボロ(緑色モノアイ)_錆用1
+30203010 Communist MT_Tattered (green mono eye)_Rust 2 -- 共産MT_ボロボロ(緑色モノアイ)_錆用2
+30203010 Communist MT_Battered (green mono eye)_Rust 3 -- 共産MT_ボロボロ(緑色モノアイ)_錆用3
+30203010 Communist MT_Battered (green mono eye)_For rust 4 -- 共産MT_ボロボロ(緑色モノアイ)_錆用4
+30203010 Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ
+30206000 Communist MT_Melange Drunker_BASE -- 共産MT_メランジドランカー_BASE
+30206000 Communist MT_Melange Drunker_SUB -- 共産MT_メランジドランカー_SUB
+30206000 Communist MT_Melange Drunker_SUPPORT_1 -- 共産MT_メランジドランカー_SUPPORT_1
+30206000 Communist MT_Melange Drunker_SUPPORT_2 -- 共産MT_メランジドランカー_SUPPORT_2
+30206000 Communist MT_Melange Drunker_JOINT -- 共産MT_メランジドランカー_JOINT
+30206000 Communist MT_Melange Drunker_Rust 1 -- 共産MT_メランジドランカー_錆用1
+30206000 Communist MT_Melange Drunker_Rust 2 -- 共産MT_メランジドランカー_錆用2
+30206000 Communist MT_Melange Drunker_Rust 3 -- 共産MT_メランジドランカー_錆用3
+30206000 Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4
+30206010 Communist MT_ Melange Drunker (Green Mono Eye)_BASE -- 共産MT_メランジドランカー(緑色モノアイ)_BASE
+30206010 Communist MT_ Melange Drunker (Green Mono Eye)_SUB -- 共産MT_メランジドランカー(緑色モノアイ)_SUB
+30206010 Communist MT_Melange Drunker (Green Mono Eye)_SUPPORT_1 -- 共産MT_メランジドランカー(緑色モノアイ)_SUPPORT_1
+30206010 Communist MT_ Melange Drunker (Green Mono Eye)_SUPPORT_2 -- 共産MT_メランジドランカー(緑色モノアイ)_SUPPORT_2
+30206010 Communist MT_ Melange Drunker (Green Mono Eye)_JOINT -- 共産MT_メランジドランカー(緑色モノアイ)_JOINT
+30206010 Communist MT_Melange Drunker (Green Mono Eye)_For Rust 1 -- 共産MT_メランジドランカー(緑色モノアイ)_錆用1
+30206010 Communist MT_Melange Drunker (Green Mono Eye)_For Rust 2 -- 共産MT_メランジドランカー(緑色モノアイ)_錆用2
+30206010 Communist MT_Melange Drunker (Green Mono Eye)_For Rust 3 -- 共産MT_メランジドランカー(緑色モノアイ)_錆用3
+30206010 Communist MT_Melange Drunker (Green Mono Eye)_For Rust 4 -- 共産MT_メランジドランカー(緑色モノアイ)_錆用4
+30206010 Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ
+30207000 Communist MT_Junker Coyotes_BASE -- 共産MT_ジャンカーコヨーテス_BASE
+30207000 Communist MT_Junker Coyotes_SUB -- 共産MT_ジャンカーコヨーテス_SUB
+30207000 Communist MT_Junker Coyotes_SUPPORT_1 -- 共産MT_ジャンカーコヨーテス_SUPPORT_1
+30207000 Communist MT_Junker Coyotes_SUPPORT_2 -- 共産MT_ジャンカーコヨーテス_SUPPORT_2
+30207000 Communist MT_Junker Coyotes_JOINT -- 共産MT_ジャンカーコヨーテス_JOINT
+30207000 Communist MT_Junker Coyotes_Rust 1 -- 共産MT_ジャンカーコヨーテス_錆用1
+30207000 Communist MT_Junker Coyotes_Rust 2 -- 共産MT_ジャンカーコヨーテス_錆用2
+30207000 Communist MT_Junker Coyotes_Rust 3 -- 共産MT_ジャンカーコヨーテス_錆用3
+30207000 Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4
+30207010 Communist MT_Junker Coyotes (green mono-eye)_BASE -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_BASE
+30207010 Communist MT_Junker Coyotes (green mono-eye)_SUB -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_SUB
+30207010 Communist MT_Junker Coyotes (green mono-eye)_SUPPORT_1 -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_SUPPORT_1
+30207010 Communist MT_Junker Coyotes (green mono-eye)_SUPPORT_2 -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_SUPPORT_2
+30207010 Communist MT_Junker Coyotes (green mono-eye)_JOINT -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_JOINT
+30207010 Communist MT_Junker Coyotes (green monoeye)_for rust 1 -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_錆用1
+30207010 Communist MT_Junker Coyotes (green mono-eye)_for rust 2 -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_錆用2
+30207010 Communist MT_Junker Coyotes (green mono-eye)_Rust 3 -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_錆用3
+30207010 Communist MT_Junker Coyotes (green mono-eye)_Rust 4 -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_錆用4
+30207010 Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ
+30209998 Rust test_nakama_rust -- 錆テスト_nakama_錆
+30209999 Test_nakama_BASE -- テスト_nakama_BASE
+30209999 Test_nakama_SUB -- テスト_nakama_SUB
+30209999 Test_nakama_SUPPORT_1 -- テスト_nakama_SUPPORT_1
+30209999 Test_nakama_SUPPORT_2 -- テスト_nakama_SUPPORT_2
+30209999 Test_nakama_JOINT -- テスト_nakama_JOINT
+30209999 Test_nakama_EYE -- テスト_nakama_EYE
+30209999 Test_nakama_rust -- テスト_nakama_錆
+30504000 Regular Army MT_Blockade Mechanism_BASE -- 正規軍MT_封鎖機構_BASE
+30504000 Regular Army MT_Blockade Mechanism_SUB -- 正規軍MT_封鎖機構_SUB
+30504000 Regular Army MT_Blockade Mechanism_SUPPORT_1 -- 正規軍MT_封鎖機構_SUPPORT_1
+30504000 Regular Army MT_Blockade Mechanism_SUPPORT_2 -- 正規軍MT_封鎖機構_SUPPORT_2
+30504000 Regular Army MT_Blockade Mechanism_JOINT -- 正規軍MT_封鎖機構_JOINT
+30504000 Regular Army MT_Blockade Mechanism_EYE -- 正規軍MT_封鎖機構_EYE
+30504000 Regular Army MT_Blockade Mechanism_Rust -- 正規軍MT_封鎖機構_錆
+30505000 Regular Army MT_Archibus_BASE -- 正規軍MT_アーキバス_BASE
+30505000 Regular Army MT_Archibus_SUB -- 正規軍MT_アーキバス_SUB
+30505000 Regular Army MT_Archibus_SUPPORT_1 -- 正規軍MT_アーキバス_SUPPORT_1
+30505000 Regular Army MT_Archibus_SUPPORT_2 -- 正規軍MT_アーキバス_SUPPORT_2
+30505000 Regular Army MT_Archibus_JOINT -- 正規軍MT_アーキバス_JOINT
+30505000 Regular Army MT_Archibus_EYE -- 正規軍MT_アーキバス_EYE
+30505000 Regular Army MT_Archibus_Rust -- 正規軍MT_アーキバス_錆
+31000010 Flight MT_default (green monoeye)_monoeye -- 飛行MT_デフォルト(緑色モノアイ)_モノアイ
+32004000 Avalanche_Blockdown Mechanism_BASE -- アバランチ_封鎖機構_BASE
+32004000 Avalanche_Blockdown Mechanism_SUB -- アバランチ_封鎖機構_SUB
+32004000 Avalanche_Blockdown Mechanism_SUPPORT_1 -- アバランチ_封鎖機構_SUPPORT_1
+32004000 Avalanche_Blockdown Mechanism_SUPPORT_2 -- アバランチ_封鎖機構_SUPPORT_2
+32004000 Avalanche_Blockdown Mechanism_JOINT -- アバランチ_封鎖機構_JOINT
+32004000 Avalanche_Blockdown Mechanism_EYE -- アバランチ_封鎖機構_EYE
+32004000 Avalanche_lockdown mechanism_rust -- アバランチ_封鎖機構_錆
+32504000 Regular Army AC_Blockade Mechanism_BASE -- 正規軍AC_封鎖機構_BASE
+32504000 Regular Army AC_Blockade Mechanism_SUB -- 正規軍AC_封鎖機構_SUB
+32504000 Regular Army AC_Blockade Mechanism_SUPPORT_1 -- 正規軍AC_封鎖機構_SUPPORT_1
+32504000 Regular Army AC_Blockade Mechanism_SUPPORT_2 -- 正規軍AC_封鎖機構_SUPPORT_2
+32504000 Regular Army AC_Blockade Mechanism_JOINT -- 正規軍AC_封鎖機構_JOINT
+32504000 Regular Army AC_Blockade Mechanism_EYE -- 正規軍AC_封鎖機構_EYE
+32504000 Regular Army AC_Blockade Mechanism_Rust -- 正規軍AC_封鎖機構_錆
+32505000 Regular Army AC_Archibus_BASE -- 正規軍AC_アーキバス_BASE
+32505000 Regular Army AC_Archibus_SUB -- 正規軍AC_アーキバス_SUB
+32505000 Regular Army AC_Archibus_SUPPORT_1 -- 正規軍AC_アーキバス_SUPPORT_1
+32505000 Regular Army AC_Archibus_SUPPORT_2 -- 正規軍AC_アーキバス_SUPPORT_2
+32505000 Regular Army AC_Archibus_JOINT -- 正規軍AC_アーキバス_JOINT
+32505000 Regular Army AC_Archibus_EYE -- 正規軍AC_アーキバス_EYE
+32505000 Regular Army AC_Archibus_Rust -- 正規軍AC_アーキバス_錆
+32604000 Regular Army AC Heavy Class_Blockade Mechanism_BASE -- 正規軍AC 重量級_封鎖機構_BASE
+32604000 Regular Army AC Heavy Class_Blockade Mechanism_SUB -- 正規軍AC 重量級_封鎖機構_SUB
+32604000 Regular Army AC Heavy Class_Blockade Mechanism_SUPPORT_1 -- 正規軍AC 重量級_封鎖機構_SUPPORT_1
+32604000 Regular Army AC Heavy Class_Blockade Mechanism_SUPPORT_2 -- 正規軍AC 重量級_封鎖機構_SUPPORT_2
+32604000 Regular Army AC Heavy Class_Blockade Mechanism_JOINT -- 正規軍AC 重量級_封鎖機構_JOINT
+32604000 Regular Army AC Heavy Class_Blockade Mechanism_EYE -- 正規軍AC 重量級_封鎖機構_EYE
+32604000 Regular Army AC Heavy Class_Block Mechanism_Rust -- 正規軍AC 重量級_封鎖機構_錆
+32605000 Regular Army AC Heavy Class_Archibus_BASE -- 正規軍AC 重量級_アーキバス_BASE
+32605000 Regular Army AC Heavy Class_Archibus_SUB -- 正規軍AC 重量級_アーキバス_SUB
+32605000 Regular Army AC Heavy Class_Archibus_SUPPORT_1 -- 正規軍AC 重量級_アーキバス_SUPPORT_1
+32605000 Regular Army AC Heavy Class_Archibus_SUPPORT_2 -- 正規軍AC 重量級_アーキバス_SUPPORT_2
+32605000 Regular Army AC Heavy Class_Archibus_JOINT -- 正規軍AC 重量級_アーキバス_JOINT
+32605000 Regular Army AC Heavy Class_Archibus_EYE -- 正規軍AC 重量級_アーキバス_EYE
+32605000 Regular Army AC Heavy Class_Archibus_Rust -- 正規軍AC 重量級_アーキバス_錆
+34001000 Quadruped MT_Archibus_BASE -- 四脚MT_アーキバス_BASE
+34001000 Quadruped MT_Archibus_SUB -- 四脚MT_アーキバス_SUB
+34001000 Quadruped MT_Archibus_SUPPORT_1 -- 四脚MT_アーキバス_SUPPORT_1
+34001000 Quadruped MT_Archibus_SUPPORT_2 -- 四脚MT_アーキバス_SUPPORT_2
+34001000 Quadruped MT_Archibus_JOINT -- 四脚MT_アーキバス_JOINT
+34001000 Quadruped MT_Archibus_Rust 4 -- 四脚MT_アーキバス_錆用4
+34001010 Quadruped MT_Archibus (green mono-eye)_BASE -- 四脚MT_アーキバス(緑色モノアイ)_BASE
+34001010 Quadruped MT_Archibus (green mono-eye)_SUB -- 四脚MT_アーキバス(緑色モノアイ)_SUB
+34001010 Quadruped MT_Archibus (green mono-eye)_SUPPORT_1 -- 四脚MT_アーキバス(緑色モノアイ)_SUPPORT_1
+34001010 Quadruped MT_Archibus (green mono-eye)_SUPPORT_2 -- 四脚MT_アーキバス(緑色モノアイ)_SUPPORT_2
+34001010 Quadruped MT_Archibus (green mono-eye)_JOINT -- 四脚MT_アーキバス(緑色モノアイ)_JOINT
+34001010 Quadruped MT_Archibus (green monoeye)_For rust 4 -- 四脚MT_アーキバス(緑色モノアイ)_錆用4
+34001010 Quadruped MT_Archibus (Green Monoeye)_Monoeye -- 四脚MT_アーキバス(緑色モノアイ)_モノアイ
+34002000 Quadruped MT_Baylum_BASE -- 四脚MT_ベイラム_BASE
+34002000 Quadruped MT_Baylum_SUB -- 四脚MT_ベイラム_SUB
+34002000 Quadruped MT_Baylum_SUPPORT_1 -- 四脚MT_ベイラム_SUPPORT_1
+34002000 Quadruped MT_Baylum_SUPPORT_2 -- 四脚MT_ベイラム_SUPPORT_2
+34002000 Quadruped MT_Baylum_JOINT -- 四脚MT_ベイラム_JOINT
+34002000 Quadruped MT_Baylum_Rust 4 -- 四脚MT_ベイラム_錆用4
+34002010 Quadruped MT_Baylum (green mono-eye)_BASE -- 四脚MT_ベイラム(緑色モノアイ)_BASE
+34002010 Quadruped MT_Baylum (green mono-eye)_SUB -- 四脚MT_ベイラム(緑色モノアイ)_SUB
+34002010 Quadruped MT_Baylum (green mono-eye)_SUPPORT_1 -- 四脚MT_ベイラム(緑色モノアイ)_SUPPORT_1
+34002010 Quadruped MT_Baylum (green mono-eye)_SUPPORT_2 -- 四脚MT_ベイラム(緑色モノアイ)_SUPPORT_2
+34002010 Quadruped MT_Baylum (green mono-eye)_JOINT -- 四脚MT_ベイラム(緑色モノアイ)_JOINT
+34002010 Quadruped MT_Bayram (green monoeye)_For rust 4 -- 四脚MT_ベイラム(緑色モノアイ)_錆用4
+34002010 Quadruped MT_Baylum (green monoeye)_Monoeye -- 四脚MT_ベイラム(緑色モノアイ)_モノアイ
+34003000 Quadruped MT_Tattered_BASE -- 四脚MT_ボロボロ_BASE
+34003000 Quadruped MT_Tattered_SUB -- 四脚MT_ボロボロ_SUB
+34003000 Quadruped MT_Tattered_SUPPORT_1 -- 四脚MT_ボロボロ_SUPPORT_1
+34003000 Quadruped MT_Tattered_SUPPORT_2 -- 四脚MT_ボロボロ_SUPPORT_2
+34003000 Quadruped MT_Tattered_JOINT -- 四脚MT_ボロボロ_JOINT
+34003000 Quadruped MT_Battered_Rust 1 -- 四脚MT_ボロボロ_錆用1
+34003000 Quadruped MT_Battered_Rust 2 -- 四脚MT_ボロボロ_錆用2
+34003000 Quadruped MT_Battered_Rust 3 -- 四脚MT_ボロボロ_錆用3
+34003000 Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4
+34003010 Quadruped MT_Tattered (green mono eye)_BASE -- 四脚MT_ボロボロ(緑色モノアイ)_BASE
+34003010 Quadruped MT_Tattered (green mono eye)_SUB -- 四脚MT_ボロボロ(緑色モノアイ)_SUB
+34003010 Quadruped MT_Tattered (green mono eye)_SUPPORT_1 -- 四脚MT_ボロボロ(緑色モノアイ)_SUPPORT_1
+34003010 Quadruped MT_Tattered (green mono eye)_SUPPORT_2 -- 四脚MT_ボロボロ(緑色モノアイ)_SUPPORT_2
+34003010 Quadruped MT_Tattered (green mono eye)_JOINT -- 四脚MT_ボロボロ(緑色モノアイ)_JOINT
+34003010 Quadruped MT_Battered (green mono eye)_For rust 1 -- 四脚MT_ボロボロ(緑色モノアイ)_錆用1
+34003010 Quadruped MT_Battered (green mono eye)_For rust 2 -- 四脚MT_ボロボロ(緑色モノアイ)_錆用2
+34003010 Quadruped MT_Battered (green mono eye)_For rust 3 -- 四脚MT_ボロボロ(緑色モノアイ)_錆用3
+34003010 Quadruped MT_Battered (green mono eye)_For rust 4 -- 四脚MT_ボロボロ(緑色モノアイ)_錆用4
+34003010 Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ
+34006000 Quadruped MT_Melange Drunker_BASE -- 四脚MT_メランジドランカー_BASE
+34006000 Quadruped MT_Melange Drunker_SUB -- 四脚MT_メランジドランカー_SUB
+34006000 Quadruped MT_Melange Drunker_SUPPORT_1 -- 四脚MT_メランジドランカー_SUPPORT_1
+34006000 Quadruped MT_Melange Drunker_SUPPORT_2 -- 四脚MT_メランジドランカー_SUPPORT_2
+34006000 Quadruped MT_Melange Drunker_JOINT -- 四脚MT_メランジドランカー_JOINT
+34006000 Quadruped MT_Melange Drunker_For Rust 1 -- 四脚MT_メランジドランカー_錆用1
+34006000 Quadruped MT_Melange Drunker_For Rust 2 -- 四脚MT_メランジドランカー_錆用2
+34006000 Quadruped MT_Melange Drunker_For Rust 3 -- 四脚MT_メランジドランカー_錆用3
+34006000 Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4
+34006010 Quadruped MT_Melange Drunker (Green Mono Eye)_BASE -- 四脚MT_メランジドランカー(緑色モノアイ)_BASE
+34006010 Quadruped MT_Melange Drunker (Green Mono Eye)_SUB -- 四脚MT_メランジドランカー(緑色モノアイ)_SUB
+34006010 Quadruped MT_Melange Drunker (Green Mono Eye)_SUPPORT_1 -- 四脚MT_メランジドランカー(緑色モノアイ)_SUPPORT_1
+34006010 Quadruped MT_Melange Drunker (Green Mono Eye)_SUPPORT_2 -- 四脚MT_メランジドランカー(緑色モノアイ)_SUPPORT_2
+34006010 Quadruped MT_Melange Drunker (Green Mono Eye)_JOINT -- 四脚MT_メランジドランカー(緑色モノアイ)_JOINT
+34006010 Quadruped MT_Melange Drunker (Green Mono Eye)_For Rust 1 -- 四脚MT_メランジドランカー(緑色モノアイ)_錆用1
+34006010 Quadruped MT_Melange Drunker (Green Mono Eye)_For Rust 2 -- 四脚MT_メランジドランカー(緑色モノアイ)_錆用2
+34006010 Quadruped MT_Melange Drunker (Green Mono Eye)_For Rust 3 -- 四脚MT_メランジドランカー(緑色モノアイ)_錆用3
+34006010 Quadruped MT_Melange Drunker (Green Mono Eye)_For Rust 4 -- 四脚MT_メランジドランカー(緑色モノアイ)_錆用4
+34006010 Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ
+34007000 Quadruped MT_Junker Coyotes_BASE -- 四脚MT_ジャンカーコヨーテス_BASE
+34007000 Quadruped MT_Junker Coyotes_SUB -- 四脚MT_ジャンカーコヨーテス_SUB
+34007000 Quadruped MT_Junker Coyotes_SUPPORT_1 -- 四脚MT_ジャンカーコヨーテス_SUPPORT_1
+34007000 Quadruped MT_Junker Coyotes_SUPPORT_2 -- 四脚MT_ジャンカーコヨーテス_SUPPORT_2
+34007000 Quadruped MT_Junker Coyotes_JOINT -- 四脚MT_ジャンカーコヨーテス_JOINT
+34007000 Quadruped MT_Junker Coyotes_Rust 1 -- 四脚MT_ジャンカーコヨーテス_錆用1
+34007000 Quadruped MT_Junker Coyotes_Rust 2 -- 四脚MT_ジャンカーコヨーテス_錆用2
+34007000 Quadruped MT_Junker Coyotes_Rust 3 -- 四脚MT_ジャンカーコヨーテス_錆用3
+34007000 Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4
+34007010 Quadruped MT_Junker Coyotes (green mono-eye)_BASE -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_BASE
+34007010 Quadruped MT_Junker Coyotes (green mono-eye)_SUB -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_SUB
+34007010 Quadruped MT_Junker Coyotes (green mono-eye)_SUPPORT_1 -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_SUPPORT_1
+34007010 Quadruped MT_Junker Coyotes (green mono-eye)_SUPPORT_2 -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_SUPPORT_2
+34007010 Quadruped MT_Junker Coyotes (green mono-eye)_JOINT -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_JOINT
+34007010 Quadruped MT_Junker Coyotes (green monoeye)_For rust 1 -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_錆用1
+34007010 Quadruped MT_Junker Coyotes (green monoeye)_For rust 2 -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_錆用2
+34007010 Quadruped MT_Junker Coyotes (green mono-eye)_for rust 3 -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_錆用3
+34007010 Quadruped MT_Junker Coyotes (green mono-eye)_for rust 4 -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_錆用4
+34007010 Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ
+35000010 Old World MT_Default (Green Monoeye)_Monoeye -- 旧世界MT_デフォルト(緑色モノアイ)_モノアイ
+36006000 Construction Machinery Spider_Melange Drunker_BASE -- 建機クモ_メランジドランカー_BASE
+36006000 Construction Machinery Spider_Melange Drunker_SUB -- 建機クモ_メランジドランカー_SUB
+36006000 Construction Machinery Spider_Melange Drunker_SUPPORT_1 -- 建機クモ_メランジドランカー_SUPPORT_1
+36006000 Construction Machinery Spider_Melange Drunker_SUPPORT_2 -- 建機クモ_メランジドランカー_SUPPORT_2
+36006000 Construction Machinery Spider_Melange Drunker_JOINT -- 建機クモ_メランジドランカー_JOINT
+36006000 Construction Machinery Spider_Melange Drunker_For Rust 1 -- 建機クモ_メランジドランカー_錆用1
+36006000 Construction Machinery Spider_Melange Drunker_For Rust 2 -- 建機クモ_メランジドランカー_錆用2
+36006000 Construction Machinery Spider_Melange Drunker_For Rust 3 -- 建機クモ_メランジドランカー_錆用3
+36006000 Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4
+36007000 Construction Machinery Spider_Junker Coyote_BASE -- 建機クモ_ジャンカーコヨーテス_BASE
+36007000 Construction Machine Spider_Junker Coyote_SUB -- 建機クモ_ジャンカーコヨーテス_SUB
+36007000 Construction Machinery Spider_Junker Coyotes_SUPPORT_1 -- 建機クモ_ジャンカーコヨーテス_SUPPORT_1
+36007000 Construction Machinery Spider_Junker Coyotes_SUPPORT_2 -- 建機クモ_ジャンカーコヨーテス_SUPPORT_2
+36007000 Construction Machinery Spider_Junker Coyotes_JOINT -- 建機クモ_ジャンカーコヨーテス_JOINT
+36007000 Construction Machinery Spider_Junker Coyotes_Rust 1 -- 建機クモ_ジャンカーコヨーテス_錆用1
+36007000 Construction Machine Spider_Junker Coyotes_Rust 2 -- 建機クモ_ジャンカーコヨーテス_錆用2
+36007000 Construction Machinery Spider_Junker Coyotes_Rust 3 -- 建機クモ_ジャンカーコヨーテス_錆用3
+36007000 Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4
+37000001 Deleter_default right arm no emissive_right arm -- デリーター_デフォルトで右腕エミッシブ無し_右腕
+37000010 Deleter_default(green monoeye)_monoeye -- デリーター_デフォルト(緑色モノアイ)_モノアイ
+37000011 Deleteter_No right arm emissive by default (green mono eye)_Right arm -- デリーター_デフォルトで右腕エミッシブ無し(緑色モノアイ)_右腕
+37000011 Deleter_No right arm emissive by default (green monoeye)_Monoeye -- デリーター_デフォルトで右腕エミッシブ無し(緑色モノアイ)_モノアイ
+37003000 Deleter_tattered_for rust 1 -- デリーター_ボロボロ_錆用1
+37003000 Deleter_tattered_for rust 2 -- デリーター_ボロボロ_錆用2
+37003000 Deleter_tattered_for rust 3 -- デリーター_ボロボロ_錆用3
+37003000 Deleter_tattered_rust 4 -- デリーター_ボロボロ_錆用4
+37003001 Deleteer _ Tattered and without right arm emissive _ For rust 1 -- デリーター_ボロボロで右腕エミッシブ無し_錆用1
+37003001 Deleteer_Rough and no emissive right arm_For rust 2 -- デリーター_ボロボロで右腕エミッシブ無し_錆用2
+37003001 Deleteer_Rough and no emissive right arm_For rust 3 -- デリーター_ボロボロで右腕エミッシブ無し_錆用3
+37003001 Deleteer_Ragged and no emissive right arm_For rust 4 -- デリーター_ボロボロで右腕エミッシブ無し_錆用4
+37003001 Deleteer_Rough and no emissive right arm_Right arm -- デリーター_ボロボロで右腕エミッシブ無し_右腕
+37003010 Deleteer_Battered (green mono eye)_For rust 1 -- デリーター_ボロボロ(緑色モノアイ)_錆用1
+37003010 Deleteer_Battered (green mono eye)_For rust 2 -- デリーター_ボロボロ(緑色モノアイ)_錆用2
+37003010 Deleteer_Battered (green mono eye)_For rust 3 -- デリーター_ボロボロ(緑色モノアイ)_錆用3
+37003010 Deleteer_Battered (green mono eye)_For rust 4 -- デリーター_ボロボロ(緑色モノアイ)_錆用4
+37003010 Deleteer_Battered(green monoeye)_Monoeye -- デリーター_ボロボロ(緑色モノアイ)_モノアイ
+37003011 Deleteer _ Tattered and without right arm emissive (green mono eye) _ For rust 1 -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_錆用1
+37003011 Deleteer _ Tattered and without right arm emissive (green mono eye) _ For rust 2 -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_錆用2
+37003011 Deleteer _ Tattered and without right arm emissive (green mono eye) _ For rust 3 -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_錆用3
+37003011 Deleteer _ Tattered and without right arm emissive (green mono eye) _ For rust 4 -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_錆用4
+37003011 Deleteer_Right arm is worn out and has no emissive (green mono eye)_Right arm -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_右腕
+37003011 Deleteter _ Tattered right arm without emissive (green mono-eye) _ Mono-eye -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_モノアイ
+40004000 Adolf_Blocking Mechanism_BASE -- アードルフ_封鎖機構_BASE
+40004000 Adolf_Blocking Mechanism_SUB -- アードルフ_封鎖機構_SUB
+40004000 Adolf_Blockdown Mechanism_SUPPORT_1 -- アードルフ_封鎖機構_SUPPORT_1
+40004000 Adolf_Blockdown Mechanism_SUPPORT_2 -- アードルフ_封鎖機構_SUPPORT_2
+40004000 Adolf_Blocking Mechanism_JOINT -- アードルフ_封鎖機構_JOINT
+40004000 Adolf_Blocking Mechanism_EYE -- アードルフ_封鎖機構_EYE
+40004000 Adolf_Blocking Mechanism_Rust -- アードルフ_封鎖機構_錆
+41004000 Valkyria live ammunition_blockade mechanism_BASE -- ヴァルキュリア実弾_封鎖機構_BASE
+41004000 Valkyria live ammunition_blockade mechanism_SUB -- ヴァルキュリア実弾_封鎖機構_SUB
+41004000 Valkyria Live Bullet_Block Mechanism_SUPPORT_1 -- ヴァルキュリア実弾_封鎖機構_SUPPORT_1
+41004000 Valkyria Live Bullet_Block Mechanism_SUPPORT_2 -- ヴァルキュリア実弾_封鎖機構_SUPPORT_2
+41004000 Valkyria Live Bullet_Block Mechanism_JOINT -- ヴァルキュリア実弾_封鎖機構_JOINT
+41004000 Valkyria Live Bullet_Block Mechanism_EYE -- ヴァルキュリア実弾_封鎖機構_EYE
+41004000 Valkyria live ammunition_blockage mechanism_rust -- ヴァルキュリア実弾_封鎖機構_錆
+41005000 Valkyria EN_Corporate Federation_BASE -- ヴァルキュリアEN_企業連合_BASE
+41005000 Valkyria EN_Corporate Union_SUB -- ヴァルキュリアEN_企業連合_SUB
+41005000 Valkyria EN_Corporate Union_SUPPORT_1 -- ヴァルキュリアEN_企業連合_SUPPORT_1
+41005000 Valkyria EN_Corporate Alliance_SUPPORT_2 -- ヴァルキュリアEN_企業連合_SUPPORT_2
+41005000 Valkyria EN_Corporate Federation_JOINT -- ヴァルキュリアEN_企業連合_JOINT
+41005000 Valkyria EN_Corporate Federation_EYE -- ヴァルキュリアEN_企業連合_EYE
+41005000 Valkyria EN_Corporate Federation_Rust -- ヴァルキュリアEN_企業連合_錆
+41506000 Special attack MT_Melange Drunker_BASE -- 特攻MT_メランジドランカー_BASE
+41506000 Special Attack MT_Melange Drunker_SUB -- 特攻MT_メランジドランカー_SUB
+41506000 Special attack MT_Melange Drunker_SUPPORT_1 -- 特攻MT_メランジドランカー_SUPPORT_1
+41506000 Special attack MT_Melange Drunker_SUPPORT_2 -- 特攻MT_メランジドランカー_SUPPORT_2
+41506000 Special attack MT_Melange Drunker_JOINT -- 特攻MT_メランジドランカー_JOINT
+41506000 Special Attack MT_Melange Drunker_Rust 1 -- 特攻MT_メランジドランカー_錆用1
+41506000 Special Attack MT_Melange Drunker_Rust 2 -- 特攻MT_メランジドランカー_錆用2
+41506000 Special attack MT_Melange Drunker_Rust 3 -- 特攻MT_メランジドランカー_錆用3
+41506000 Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4
+41507000 Special attack MT_Junker Coyotes_BASE -- 特攻MT_ジャンカーコヨーテス_BASE
+41507000 Special attack MT_Junker Coyotes_SUB -- 特攻MT_ジャンカーコヨーテス_SUB
+41507000 Special attack MT_Junker Coyotes_SUPPORT_1 -- 特攻MT_ジャンカーコヨーテス_SUPPORT_1
+41507000 Special attack MT_Junker Coyotes_SUPPORT_2 -- 特攻MT_ジャンカーコヨーテス_SUPPORT_2
+41507000 Special attack MT_Junker Coyotes_JOINT -- 特攻MT_ジャンカーコヨーテス_JOINT
+41507000 Special attack MT_Junker Coyotes_Rust 1 -- 特攻MT_ジャンカーコヨーテス_錆用1
+41507000 Special attack MT_Junker Coyotes_Rust 2 -- 特攻MT_ジャンカーコヨーテス_錆用2
+41507000 Special attack MT_Junker Coyotes_Rust 3 -- 特攻MT_ジャンカーコヨーテス_錆用3
+41507000 Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4
+51001000 Unique Defo_Green_Archibus_BASE -- ユニークデフォ_緑_アーキバス_BASE
+51001000 Unique Defo_Green_Archibus_SUB -- ユニークデフォ_緑_アーキバス_SUB
+51001000 Unique Defo_Green_Archibus_SUPPORT_1 -- ユニークデフォ_緑_アーキバス_SUPPORT_1
+51001000 Unique Default_Green_Archibus_SUPPORT_2 -- ユニークデフォ_緑_アーキバス_SUPPORT_2
+51001000 Unique Defo_Green_Archibus_JOINT -- ユニークデフォ_緑_アーキバス_JOINT
+51001000 Unique Defo_Green_Archibus_EYE -- ユニークデフォ_緑_アーキバス_EYE
+51001000 Unique Defo_Green_Archibus_Rust -- ユニークデフォ_緑_アーキバス_錆
+51002000 Unique Defo_Green_Baylum_BASE -- ユニークデフォ_緑_ベイラム_BASE
+51002000 Unique Defo_Green_Baylum_SUB -- ユニークデフォ_緑_ベイラム_SUB
+51002000 Unique Defo_Green_Baylum_SUPPORT_1 -- ユニークデフォ_緑_ベイラム_SUPPORT_1
+51002000 Unique Defo_Green_Baylum_SUPPORT_2 -- ユニークデフォ_緑_ベイラム_SUPPORT_2
+51002000 Unique Defo_Green_Baylum_JOINT -- ユニークデフォ_緑_ベイラム_JOINT
+51002000 Unique Defo_Green_Baylum_EYE -- ユニークデフォ_緑_ベイラム_EYE
+51002000 Unique Defo_Green_Baylum_Rust -- ユニークデフォ_緑_ベイラム_錆
+51003000 Escort target_Gray_Ash people_BASE -- 護衛対象_グレー_灰の民_BASE
+51003000 Escort target_Gray_Ash people_SUB -- 護衛対象_グレー_灰の民_SUB
+51003000 Escort target_Gray_Ash people_SUPPORT_1 -- 護衛対象_グレー_灰の民_SUPPORT_1
+51003000 Escort target_Gray_Ash people_SUPPORT_2 -- 護衛対象_グレー_灰の民_SUPPORT_2
+51003000 Escort target_Gray_Ash people_JOINT -- 護衛対象_グレー_灰の民_JOINT
+51003000 Escort target_Gray_Ash people_EYE -- 護衛対象_グレー_灰の民_EYE
+51003000 Escort target_Gray_Ash people_Rust -- 護衛対象_グレー_灰の民_錆
+60504000 Pharaon_Blockdown Mechanism_BASE -- ファラオン_封鎖機構_BASE
+60504000 Pharaon_Blocking Mechanism_SUB -- ファラオン_封鎖機構_SUB
+60504000 Pharaon_Blockdown Mechanism_SUPPORT_1 -- ファラオン_封鎖機構_SUPPORT_1
+60504000 Pharaon_Blockdown Mechanism_SUPPORT_2 -- ファラオン_封鎖機構_SUPPORT_2
+60504000 Pharaon_Blocking Mechanism_JOINT -- ファラオン_封鎖機構_JOINT
+60504000 Pharaon_Blockdown Mechanism_EYE -- ファラオン_封鎖機構_EYE
+60504000 Pharaon_Blocking Mechanism_Rust -- ファラオン_封鎖機構_錆
+61009000 Sea spider_C end 10_BASE -- ウミグモ_Cエンド　10_BASE
+61009000 Sea spider_C end 10_SUPPORT_1 -- ウミグモ_Cエンド　10_SUPPORT_1
+61009000 Sea spider_C end 10_for rust 1 -- ウミグモ_Cエンド　10_錆用1
+61009000 Sea spider_C end 10_for rust 3 -- ウミグモ_Cエンド　10_錆用3
+61009000 Sea spider_C end 10_for rust 4 -- ウミグモ_Cエンド　10_錆用4
+61009000 Sea spider_C end 20_BASE -- ウミグモ_Cエンド　20_BASE
+61009000 Sea spider_C end 20_SUPPORT_1 -- ウミグモ_Cエンド　20_SUPPORT_1
+61009000 Sea spider_C end 20_for rust 1 -- ウミグモ_Cエンド　20_錆用1
+61009000 Sea spider_C end 20_for rust 3 -- ウミグモ_Cエンド　20_錆用3
+61009000 Sea spider_C end 20_for rust 4 -- ウミグモ_Cエンド　20_錆用4
+61009000 Sea spider_C end 30_BASE -- ウミグモ_Cエンド　30_BASE
+61009000 Sea spider_C end 30_SUPPORT_1 -- ウミグモ_Cエンド　30_SUPPORT_1
+61009000 Sea spider_C end 30_for rust 1 -- ウミグモ_Cエンド　30_錆用1
+61009000 Sea spider_C end 30_for rust 3 -- ウミグモ_Cエンド　30_錆用3
+61009000 Sea spider_C end 30_for rust 4 -- ウミグモ_Cエンド　30_錆用4
+61009000 Sea spider_C end 40_BASE -- ウミグモ_Cエンド　40_BASE
+61009000 Sea spider_C end 40_SUPPORT_1 -- ウミグモ_Cエンド　40_SUPPORT_1
+61009000 Sea spider_C end 40_for rust 1 -- ウミグモ_Cエンド　40_錆用1
+61009000 Sea spider_C end 40_for rust 3 -- ウミグモ_Cエンド　40_錆用3
+61009000 Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド　40_錆用4
+72300100 Grenade turret_snow difference_entire -- グレネード砲台_雪差分_全体
+72400100 Bazooka Battery_Snow Difference_Overall -- バズーカ砲台_雪差分_全体
+72500100 Gatling gun battery_snow difference_whole -- ガトリング砲台_雪差分_全体
+72600100 Twin missile battery_Snow difference_Overall -- 連装ミサイル砲台_雪差分_全体
+72610100 Vertical missile battery_snow difference_entire -- 垂直ミサイル砲台_雪差分_全体
+72700100 Sniper battery_snow difference_entire -- スナイパー砲台_雪差分_全体
+73000100 Speaker turret_snow difference_whole -- スピーカー砲台_雪差分_全体
+74010100 Landing ship main gun_Snow difference_Overall -- 揚陸艦主砲_雪差分_全体
+74020100 Landing ship secondary gun_Snow difference_Overall -- 揚陸艦副砲_雪差分_全体

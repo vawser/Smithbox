@@ -93,37 +93,231 @@
     Wiki="The maximum number of this item held." 
     Obsolete="" />
     
-    <consumeHeroPoint AltName="Consume Humanity" Wiki="Consumer nature" />
-    <overDexterity AltName="Over Dexterity" Wiki="Skill over start value" />
-    <goodsType AltName="Goods Type" Wiki="Types of tools"/>
-    <refCategory AltName="Reference Type" Wiki=" ID category - Attack, Projectile, Special" />
-    <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." />
-    <pad3 AltName="" Padding=""/>
-    <goodsUseAnim AltName="Goods Use Animation" Wiki="Set the animation to play when using the tool" />
-    <opmeMenuType AltName="Interaction Menu Type" Wiki="Menu type that opens when using an item" />
-    <useLimitCategory AltName="Use Limit Category" Wiki="Specified to control whether it can be used by the special effect applied" />
-    <replaceCategory AltName="Replace Category" Wiki="Condition category to add to call ID" />
-    <reserve4 AltName="" Padding=""/>
+    <consumeHeroPoint 
+    AltName="Humanity Consumption" 
+    Wiki="The amount of humanity consumption on use." 
+    Obsolete="" />
     
-    <enable_live AltName="Enable Host Player" Wiki="Is it possible to use a surviving player?" IsBool="" />
-    <enable_gray AltName="Enable as Gray Phantom" Wiki="Can Gray Ghost be used?" IsBool="" />
-    <enable_white AltName="Enable as White Phantom" Wiki="Can white ghost be used?" IsBool="" />
-    <enable_black AltName="Enable as Black Phantom" Wiki="Is it possible to do a black ghost?" IsBool="" />
-    <enable_multi AltName="Enable in Multiplayer" Wiki="Can it be used during multiplayer?" IsBool="" />
-    <disable_offline AltName="Enable Online Only" Wiki="Is it unavailable while offline?" IsBool="" />
-    <isEquip AltName="Is Equippable" Wiki="Whether it can be equipped" IsBool="" />
-    <isConsume AltName="Is Consumed" Wiki="Will it be consumed when used (whether the number of possessions will decrease)" IsBool="" />
-    <isAutoEquip AltName="Is Auto Equipped" Wiki="Will it be equipped automatically when picked up?" IsBool="" />
-    <isEstablishment AltName="Is Guidance Item" Wiki="Is it a stationary item?" IsBool="" />
-    <isOnlyOne AltName="Is Unique Item" Wiki="Is it an item that you can only have one?" IsBool="" />
-    <isDiscard AltName="Can Discard" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
-    <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
-    <isDisableHand AltName="Disable if Right Hand is Empty" Wiki="Can't be used when the right-handed weapon is bare-handed?" IsBool="" />
-    <isRemoveItem_forGameClear AltName="Remove Item on Game Clear" Wiki="Whether to delete at the time of lap" IsBool="" />
-    <isSuppleItem AltName="Is Regenerative Item" Wiki="Used to determine replenishable items" IsBool="" />
-    <isFullSuppleItem AltName="Is Full Regenerative Item" Wiki="Used to determine replenished items" IsBool="" />
-    <isEnhance AltName="Is Enhancement Item" Wiki="Do you want to enchant your weapon?" IsBool="" />
-    <isFixItem AltName="Can Repair Item" Wiki="Is it an item to repair?" IsBool="" />
+    <overDexterity 
+    AltName="Dexterity over Start Value" 
+    Wiki="Skill over start value"
+    Obsolete="" />
+    
+    <goodsType 
+    AltName="Goods Type" 
+    Wiki="The type of item."
+    Enum="GOODS_TYPE" />
+    
+    <refCategory 
+    AltName="Reference Type" 
+    Wiki=" ID category [Attack, Projectile, Special]" 
+    Enum="BEHAVIOR_REF_TYPE" />
+    
+    <spEffectCategory 
+    AltName="Behavior Category" 
+    Wiki="There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so set the effect for each action so that it can correspond to an effect such as 'powering up only weapon attacks'. Set 'None' for items that do not require settings, such as ballistas." 
+    Enum="BEHAVIOR_CATEGORY" />
+    
+    <goodsCategory
+    AltName="Item Category"
+    Wiki="Category for this item."
+    Enum="GOODS_CATEGORY" />
+    
+    <goodsUseAnim 
+    AltName="Item Use Animation" 
+    Wiki="Set the animation to play when using the item." 
+    Enum="GOODS_USE_ANIM" />
+    
+    <opmeMenuType 
+    AltName="Interaction Menu Type"
+    Wiki="Menu type that opens when using an item." 
+    Enum="GOODS_OPEN_MENU" />
+    
+    <useLimitCategory 
+    AltName="Use Limit Category" 
+    Wiki="Limit usage based on applied SpEffect." 
+    Enum="SP_EFFECT_USELIMIT_CATEGORY" />
+    
+    <replaceCategory 
+    AltName="Replace Category" 
+    Wiki="Condition category to add to call ID" 
+    Enum="REPLACE_CATEGORY" />
+    
+    <vowType0
+    AltName="Pledge Type: 0"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType1
+    AltName="Pledge Type: 1"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType2
+    AltName="Pledge Type: 2"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType3
+    AltName="Pledge Type: 3"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType4
+    AltName="Pledge Type: 4"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType5
+    AltName="Pledge Type: 5"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType6
+    AltName="Pledge Type: 6"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType7
+    AltName="Pledge Type: 7"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType8
+    AltName="Pledge Type: 8"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType9
+    AltName="Pledge Type: 9"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType10
+    AltName="Pledge Type: 10"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType11
+    AltName="Pledge Type: 11"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType12
+    AltName="Pledge Type: 12"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType13
+    AltName="Pledge Type: 13"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType14
+    AltName="Pledge Type: 14"
+    Wiki="" 
+    IsBool="" />
+    
+    <vowType15
+    AltName="Pledge Type: 15"
+    Wiki="" 
+    IsBool="" />
+    
+    <enable_live 
+    AltName="Enable as Host Player" 
+    Wiki="If ON, this item is usable if the user is a host player." 
+    IsBool="" />
+    
+    <enable_gray 
+    AltName="Enable as Gray Phantom" 
+    Wiki="If ON, this item is usable if the user is a gray phantom player." 
+    IsBool="" />
+    
+    <enable_white 
+    AltName="Enable as White Phantom"
+    Wiki="If ON, this item is usable if the user is a white phantom player." 
+    IsBool="" />
+    
+    <enable_black 
+    AltName="Enable as Black Phantom" 
+    Wiki="If ON, this item is usable if the user is a black phantom player." 
+    IsBool="" />
+    
+    <enable_multi 
+    AltName="Enable in Multiplayer" 
+    Wiki="If ON, this item is usable in a multiplayer session." 
+    IsBool="" />
+    
+    <disable_offline 
+    AltName="Enable only in Multiplayer" 
+    Wiki="If ON, this item is only usable if in a multiplayer session." 
+    IsBool="" />
+    
+    <isEquip 
+    AltName="Is Equippable" 
+    Wiki="If ON, this item can be equipped."
+    IsBool="" />
+    
+    <isConsume 
+    AltName="Is Consumed" 
+    Wiki="If ON, this item can be consumed. This will remove one instance of the item upon consumption."
+    IsBool="" />
+    
+    <isAutoEquip 
+    AltName="Is Automatically Equipped" 
+    Wiki="If ON, this item is automaticlly equipped when picked up."
+    IsBool="" />
+    
+    <isEstablishment 
+    AltName="Is Guidance Item" 
+    Wiki="If ON, this item isa stationary item?" 
+    IsBool="" />
+    
+    <isOnlyOne 
+    AltName="Is Unique Item" 
+    Wiki="If ON, this item is an unique item."
+    IsBool="" />
+    
+    <isDiscard 
+    AltName="Can Discard" 
+    Wiki="If ON, this item can be discarded."
+    IsBool="" />
+    
+    <isDeposit 
+    AltName="Can Deposit" 
+    Wiki="If ON, this item can be deposited into the repository."
+    IsBool="" />
+    
+    <isDisableHand 
+    AltName="Disable if Right Hand is Empty" 
+    Wiki="If ON, this item cannot be used when the right-handed weapon is empty." 
+    IsBool="" />
+    
+    <IsTravelItem 
+    AltName="Is Travel Item" 
+    Wiki="If ON, this item is considered a 'travel' item."
+    IsBool="" />
+    
+    <isSuppleItem 
+    AltName="Is Replenishable Item" 
+    Wiki="If ON, this item is automatically replenished." 
+    IsBool="" />
+    
+    <isFullSuppleItem 
+    AltName="Is Restocked Item" 
+    Wiki="If ON, this item is automatically restocked." 
+    IsBool="" />
+    
+    <isEnhance 
+    AltName="Is Enhancement Source" 
+    Wiki="If ON, this item is used to apply an 'enhancement' to equipment or self." 
+    IsBool="" />
+    
+    <isFixItem 
+    AltName="Is Repairable Item" 
+    Wiki="IF ON, this item can be repaired." 
+    IsBool="" />
+    
     <disableMultiDropShare AltName="Disable Dropping in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
     <disableUseAtColiseum AltName="Disable Usage in Multiplayer Arena" Wiki="Is it prohibited to use in the arena?" IsBool="" />
     <disableUseAtOutOfColiseum AltName="Disable Usage outside of Multiplayer Arena" Wiki="Is it prohibited to use outside the arena?" IsBool="" />
@@ -159,4 +353,128 @@
     <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." />
     <isUseNoAttackRegion AltName="Enabled in No Attack Region" Wiki="Can it be used in an attack-prohibited area?" IsBool="" />
   </Field>
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="Behavior / None" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Normal Attack" />
+        <Option Value="2" Name="Left-hand Attack" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Miracle" />
+        <Option Value="5" Name="Body" />
+        <Option Value="6" Name="Enemy Attack 1" />
+        <Option Value="7" Name="Enemy Attack 2" />
+        <Option Value="8" Name="Enemy Attack 3" />
+        <Option Value="9" Name="Kick" />
+    </Enum>
+    <Enum Name="VOW_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+        <Option Value="6" Name="Type 6" />
+        <Option Value="7" Name="Type 7" />
+        <Option Value="8" Name="Type 8" />
+        <Option Value="9" Name="Type 9" />
+        <Option Value="10" Name="Type 10" />
+        <Option Value="11" Name="Type 11" />
+        <Option Value="12" Name="Type 12" />
+        <Option Value="13" Name="Type 13" />
+        <Option Value="14" Name="Type 14" />
+        <Option Value="15" Name="Type 15" />
+        <Option Value="16" Name="Type 16" />
+    </Enum>
+    <Enum Name="GOODS_CATEGORY" type="u8">
+        <Option Value="0" Name="Recovery" />
+    </Enum>
+    <Enum Name="GOODS_TYPE" type="u8">
+        <Option Value="0" Name="Consumable" />
+        <Option Value="1" Name="Event" />
+        <Option Value="2" Name="Material" />
+        <Option Value="3" Name="Soul" />
+        <Option Value="4" Name="Vagrant" />
+        <Option Value="5" Name="Scroll" />
+        <Option Value="6" Name="Ritual" />
+        <Option Value="7" Name="Archive" />
+        <Option Value="8" Name="Image" />
+        <Option Value="9" Name="COAM" />
+    </Enum>
+    <Enum Name="GOODS_USE_ANIM" type="u8">
+        <Option Value="0" Name="Recovery" />
+        <Option Value="1" Name="Weapon Enhancement" />
+        <Option Value="2" Name="Throwing Knife" />
+        <Option Value="3" Name="Throwing Bottle" />
+        <Option Value="4" Name="Telescope" />
+        <Option Value="5" Name="Repair" />
+        <Option Value="6" Name="Pledge" />
+        <Option Value="7" Name="Install" />
+        <Option Value="8" Name="Message" />
+        <Option Value="9" Name="Soul" />
+        <Option Value="10" Name="Drink" />
+        <Option Value="11" Name="Dragon Transformation (Head)" />
+        <Option Value="12" Name="Dragon Transformation (Body)" />
+        <Option Value="13" Name="Pledge (Secondary)" />
+        <Option Value="14" Name="Dark Force" />
+        <Option Value="15" Name="Amethyst" />
+        <Option Value="16" Name="Quick Enhancement" />
+        <Option Value="17" Name="Quick Throwing Knife" />
+        <Option Value="18" Name="Quick Throwing Bottle" />
+        <Option Value="19" Name="Drink (MP)" />
+        <Option Value="20" Name="Backwards Throwing Bottle" />
+        <Option Value="21" Name="Drink (Alcohol)" />
+        <Option Value="22" Name="Reserve 1" />
+        <Option Value="23" Name="Reserve 2" />
+        <Option Value="24" Name="Reserve 3" />
+        <Option Value="25" Name="Reserve 4" />
+        <Option Value="26" Name="Reserve 5" />
+        <Option Value="254" Name="Block Drink" />
+        <Option Value="255" Name="Block Animation" />
+    </Enum>
+    <Enum Name="GOODS_OPEN_MENU" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Yes/No" />
+        <Option Value="2" Name="Kick Other Players" />
+        <Option Value="3" Name="Leave Session" />
+        <Option Value="4" Name="White Phantom Summon" />
+        <Option Value="5" Name="Message" />
+        <Option Value="6" Name="Message List" />
+        <Option Value="7" Name="Bounty Ranking" />
+        <Option Value="8" Name="Izalith Ranking" />
+        <Option Value="9" Name="Ok/Cancel" />
+        <Option Value="10" Name="Invasion" />
+        <Option Value="11" Name="Selectable Warp" />
+        <Option Value="12" Name="Darkling" />
+    </Enum>
+    <Enum Name="SP_EFFECT_USELIMIT_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Weapon Change: Right" />
+        <Option Value="13" Name="Weapon Change: Left" />
+        <Option Value="2" Name="Body Change" />
+        <Option Value="3" Name="Head Change" />
+        <Option Value="4" Name="Head Change: Special" />
+        <Option Value="5" Name="Move" />
+        <Option Value="6" Name="Damage" />
+        <Option Value="7" Name="Status Abnormality 1" />
+        <Option Value="8" Name="Status Abnormality 2" />
+        <Option Value="9" Name="Status Abnormality 3" />
+        <Option Value="10" Name="Status Abnormality 4" />
+        <Option Value="11" Name="Body and Head Change" />
+        <Option Value="12" Name="Body and Head Change: Special" />
+        <Option Value="13" Name="Body and Head Change: Special" />
+    </Enum>
+    <Enum Name="REPLACE_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Coop Value Change" />
+        <Option Value="2" Name="Resonance Value" />
+        <Option Value="3" Name="Blue Covenant Value" />
+        <Option Value="4" Name="Black Covenant Value" />
+        <Option Value="5" Name="Dragon Covenant Value" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

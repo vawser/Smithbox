@@ -1,0 +1,4 @@
+0 Standard aircraft -- 標準機体
+1100000 Quadruped _ two-handed -- 四脚_両手持ち
+1100100 quadruped -- 四脚
+100 Standard head (speed: normal) -- 標準ヘッド（速度：普通）

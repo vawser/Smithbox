@@ -1,0 +1,6 @@
+0 "MoonSurface" Moon surface -- 「MoonSurface」月面
+1 "Concrete" stone -- 「Concrete」石
+2 "Iron" iron -- 「Iron」鉄
+3 "Water" water -- 「Water」水
+4 "Snow" snow -- 「Snow」雪
+4 "Dirt" mud -- 「Dirt」泥

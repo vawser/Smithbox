@@ -1,0 +1,24 @@
+0 won't disappear -- 消えない
+1 Assets (higher than PC) -- アセット(PCより高い)
+2 Assets (lower than PC) -- アセット(PCより低い)
+10 Distant view (A layer_h001000) -- 遠景（A層_h001000）
+11 Distant view (A layer_h001200) -- 遠景（A層_h001200）
+12 Distant view (A layer_h001700) -- 遠景（A層_h001700）
+13 Distant view (A layer_h003000) -- 遠景（A層_h003000）
+14 Distant view (A layer_h004000) -- 遠景（A層_h004000）
+15 Distant view (A layer_h005000) -- 遠景（A層_h005000）
+30 Distant view (fuel base_second half) -- 遠景（燃料基地_後半）
+32 Distant view (mining facility) -- 遠景（採掘施設）
+34 Debris after destroying the landing ship_Fragments -- 揚陸艦撃破後残骸_破片
+35 Distant view (Imperial base) -- 遠景（帝国基地）
+50 Distant view (mountains_falling ship) -- 遠景（山岳_落下船）
+51 Distant view (mountains_buildings) -- 遠景（山岳_ビル）
+55 Distant view (dam building) -- 遠景（ダム_建屋）
+60 Distant view (in front of the wall_building) -- 遠景（壁前_ビル）
+100 PC
+101 NPC
+102 ENE (same size as PC) -- ENE（PC同サイズ）
+104 ENE (size larger than PC) -- ENE（PC以上のサイズ）
+120 PC (for garage) -- PC(ガレージ用)
+125 garage assets -- ガレージ用アセット
+127 Material value reference -- マテリアルの値参照

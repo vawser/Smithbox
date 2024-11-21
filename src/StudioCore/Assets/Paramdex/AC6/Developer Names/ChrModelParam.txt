@@ -1,0 +1,62 @@
+0 dummy -- ダミー
+3000 Security MT -- 警備MT
+3001 Security MT Enhancement A Firepower Enhancement -- 警備MT 強化A 火力強化
+3002 Security MT Reinforcement B Leg Reinforcement -- 警備MT 強化B 脚部強化
+3020 Former communist country MT -- 旧共産圏MT
+3050 regular army MT -- 正規軍MT
+3100 Flying type MT -- 飛行型MT
+3150 juggernaut -- ジャガーノート
+3200 avalanche -- アバランチ
+3250 regular army AC -- 正規軍AC
+3260 Regular Army AC (Heavyweight) -- 正規軍AC（重量級）
+3300 ghost -- ゴースト
+3400 Quadruped MT -- 四脚MT
+3500 old world MT -- 旧世界MT
+3600 construction machinery spider -- 建機クモ
+3700 Deleter -- デリーター
+4000 Mobile armored infantry "Adolf" -- 機動装甲歩兵”アードルフ”
+4100 valkyria -- ヴァルキュリア
+4150 Special attack MT -- 特攻MT
+4200 Next generation proto AC -- 次世代プロトAC
+4201 next generation proto ac c route -- 次世代プロトAC cルート
+4210 Next generation proto AC illusion (retarget) -- 次世代プロトAC　幻影（リターゲット）
+4250 orbit seed -- オービットシード
+4260 Orbit control character -- オービット制御用キャラ
+5000 Guard mecha (air) -- ガードメカ（空中）
+5010 bug -- バグ
+5020 Heavy guard mechanism (ground) -- 重ガードメカ（地上）
+5100 large transport helicopter -- 大型輸送ヘリ
+5120 military us drone -- 軍事用USドローン
+5150 combat helicopter -- 戦闘ヘリ
+5200 combat vehicle -- 戦闘車両
+5250 sunflower -- サンフラワー
+5300 suicide satellite -- 自爆衛星
+5500 Biological weapon (insect) -- 生体兵器（虫）
+6050 Anti-AC large combat helicopter “Pharaon” -- 対AC大型戦闘ヘリ”ファラオン”
+6100 sea ​​spider -- ウミグモ
+6101 sea ​​spider secondary gun -- ウミグモ副砲
+6250 sand worm -- サンドワーム
+6400 huge mining ship -- 巨大採掘艦
+6420 Giant Mining Ship Eyeball Redesign Ver. -- 巨大採掘艦 目玉 リデザインVer
+7222 Field missile large (main body only) -- 野戦ミサイル　大型（本体のみ）
+7230 Ground Force Artillery Grenade (Large) -- 地上勢力砲台　グレネード(大)
+7240 Ground force artillery bazooka (medium) -- 地上勢力砲台　バズーカ(中)
+7250 Ground force artillery gatling (large) -- 地上勢力砲台　ガトリング(大)
+7260 Ground force artillery missile (medium) twin -- 地上勢力砲台　ミサイル(中) 連装
+7261 Ground Force Artillery Missile (Medium) Vertical -- 地上勢力砲台　ミサイル(中) 垂直
+7262 Ground force artillery missile (medium) horizontal -- 地上勢力砲台　ミサイル(中) 水平
+7270 Ground Force Artillery Sniper (Large) -- 地上勢力砲台　スナイパー(大)
+7280 Old style EN battery Rezarai (medium) -- 旧式EN砲台　レザライ(中)
+7290 Old style EN battery Reza Buzz (extra large) -- 旧式EN砲台　レザバズ(特大)
+7300 Speaker antenna turret pulse (medium) -- スピーカーアンテナ砲台　パルス(中)
+7310 State-of-the-art EN gun battery Plarai (extra large) -- 最新鋭EN砲台　プラライ(特大)
+7320 State-of-the-art EN battery Plamisa (medium) -- 最新鋭EN砲台　プラミサ(中)
+7390 D layer giant gun battery Anemone -- D層巨大砲台　アネモネ
+7400 amphibious assault ship -- 強襲揚陸艦
+7401 Amphibious assault ship main gun (medium) -- 強襲揚陸艦主砲(中)
+7402 Amphibious assault ship secondary gun (small) -- 強襲揚陸艦副砲(小)
+7403 Amphibious assault ship missile gun (small) -- 強襲揚陸艦ミサイル砲(小)
+7410 Amphibious assault ship_Slave aircraft -- 強襲揚陸艦_子機
+8135 Strong enemy (humanoid) -- 強敵(人型）
+8145 Strong enemy (bird type) -- 強敵(鳥型）
+10000 Enemy equipment parts start -- 敵の装備パーツ開始

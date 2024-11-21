@@ -1,0 +1,507 @@
+0 ----
+99 ----- ↓For items from here ----- -- ----- ↓ここからアイテム用 -----
+100 [Common items] Name -- 【アイテム共通】 名前
+101 [Common items] Description -- 【アイテム共通】 説明
+102 [Common items] Unchiku -- 【アイテム共通】 うんちく
+103 [Common items] Weight -- 【アイテム共通】 重量
+104 [Common for items] Sort ID within category -- 【アイテム共通】 カテゴリ内ソートID
+105 [Common items] Entering procedure (for sorting) -- 【アイテム共通】 入手順(ソート用)
+106 [Common items] Initial order (for sorting) -- 【アイテム共通】 初期順(ソート用)
+107 [Common items] Company -- 【アイテム共通】 企業
+108 [Common items] Menu management category -- 【アイテム共通】 メニュー管理カテゴリ
+110 [Common items] Number of possessions -- 【アイテム共通】 所持数
+111 [Common items] Number of possessions_maximum value -- 【アイテム共通】 所持数_最大値
+112 [Common items] Number of warehouse possessions -- 【アイテム共通】 倉庫所持数
+113 [Common items] Number of warehouse possession_maximum value -- 【アイテム共通】 倉庫所持数_最大値
+120 [Common items] Required soul -- 【アイテム共通】 必要ソウル
+121 [Common items] Obtained soul -- 【アイテム共通】 獲得ソウル
+122 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+123 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+124 [Common items] EN output -- 【アイテム共通】 EN出力
+1000 [Tools] Consumption type during use -- 【道具】 使用時消費タイプ
+1900 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+1901 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+1902 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+1903 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+1904 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+1970 [Weapon] Attack performance after charging (child bullet) -- 【武器】チャージ後攻撃性能（子弾丸）
+1971 [Weapon] Impact performance after charging (child bullet) -- 【武器】チャージ後衝撃性能（子弾丸）
+1972 [Weapon] Impact accumulation performance after charging (child bullet) -- 【武器】チャージ後衝撃蓄積性能（子弾丸）
+1973 [Weapon] Second attack performance after charging (child bullet) -- 【武器】チャージ後攻撃性能二段目（子弾丸）
+1974 [Weapon] Second stage impact performance after charging (child bullet) -- 【武器】チャージ後衝撃性能二段目（子弾丸）
+1975 [Weapon] Second stage of impact accumulation performance after charging (child bullet) -- 【武器】チャージ後衝撃蓄積性能二段目（子弾丸）
+1976 [Weapon] Attack performance after charging (grandchild bullet) -- 【武器】チャージ後攻撃性能（孫弾丸）
+1977 [Weapon] Impact performance after charging (grandchild bullet) -- 【武器】チャージ後衝撃性能（孫弾丸）
+1978 [Weapon] Impact accumulation performance after charging (grandson bullet) -- 【武器】チャージ後衝撃蓄積性能（孫弾丸）
+1979 [Weapon] Second attack performance after charging (grandchild bullet) -- 【武器】チャージ後攻撃性能二段目（孫弾丸）
+1980 [Weapon] Second stage impact performance after charging (grandchild bullet) -- 【武器】チャージ後衝撃性能二段目（孫弾丸）
+1981 [Weapon] Second stage of shock accumulation performance after charging (grandchild bullet) -- 【武器】チャージ後衝撃蓄積性能二段目（孫弾丸）
+1982 [Weapon] Attack performance after charging (great-grandchild bullet) -- 【武器】チャージ後攻撃性能（ひ孫弾丸）
+1983 [Weapon] Impact performance after charging (great-grandchild bullet) -- 【武器】チャージ後衝撃性能（ひ孫弾丸）
+1984 [Weapon] Impact accumulation performance after charging (great-grand bullet) -- 【武器】チャージ後衝撃蓄積性能（ひ孫弾丸）
+1985 [Weapon] Second attack performance after charging (great-grandchild bullet) -- 【武器】チャージ後攻撃性能二段目（ひ孫弾丸）
+1986 [Weapon] Second stage impact performance after charging (great-grandchild bullet) -- 【武器】チャージ後衝撃性能二段目（ひ孫弾丸）
+1987 [Weapon] Second stage of shock accumulation performance after charging (great-grandchild bullet) -- 【武器】チャージ後衝撃蓄積性能二段目（ひ孫弾丸）
+1990 [Weapon] Critical hit after charging -- 【武器】チャージ後クリティカル適正
+1991 [Weapon] PA interference after charging -- 【武器】チャージ後PA干渉
+1992 [Weapon] Explosion range after charging -- 【武器】チャージ後爆発範囲
+1993 [Weapon] Range limit after charging -- 【武器】チャージ後射程限界
+1994 [Weapon] Charge attack duration -- 【武器】チャージ攻撃継続時間
+2000 [Weapon] Number of bullets -- 【武器】装弾数
+2001 [Weapon] Number of magazine bullets -- 【武器】マガジン弾数
+2002 [Weapon] Lock-on distance -- 【武器】ロックオン距離
+2003 [Weapon] Defense power -- 【武器】防御力
+2004 [Weapon] Suitable for melee -- 【武器】近接適正
+2005 [Weapon] Size -- 【武器】サイズ
+2006 [Weapon] Attribute -- 【武器】属性
+2008 [Weapon] Charge multiplier -- 【武器】チャージ倍率
+2009 [Weapon] Impact value -- 【武器】衝撃値
+2010 [Weapon] Residual impact -- 【武器】残留衝撃
+2011 [Weapon] Rapid fire performance -- 【武器】連射性能
+2012 [Weapon] Magazine reload -- 【武器】マガジンリロード
+2013 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+2014 [Weapon] PA penetration power -- 【武器】PA貫通力
+2015 [Weapon] EN load while charging -- 【武器】チャージ中EN負荷
+2016 [Weapon] Reload type -- 【武器】リロードタイプ
+2017 [Weapon] Critical suitability -- 【武器】クリティカル適正
+2018 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+2019 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+2020 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+2021 [Weapon] Cooling performance -- 【武器】冷却性能
+2022 [Weapon] Explosion range -- 【武器】爆発範囲
+2023 [Weapon] Range limit -- 【武器】射程限界
+2024 [Weapon] Bullet unit price -- 【武器】弾単価
+2025 [Weapon] Impact force (subbullet) -- 【武器】衝撃力（子弾丸）
+2026 [Weapon] Impact force (grandchild bullet) -- 【武器】衝撃力（孫弾丸）
+2027 [Weapon] Residual impact (subbullet) -- 【武器】残留衝撃（子弾丸）
+2028 [Weapon] Residual impact (grandchild bullet) -- 【武器】残留衝撃（孫弾丸）
+2029 [Weapon] Explosion range (subbullet) -- 【武器】爆発範囲（子弾丸）
+2030 [Weapon] Explosion range (grandchild bullet) -- 【武器】爆発範囲（孫弾丸）
+2031 [Weapon] Critical suitability (subbullet) -- 【武器】クリティカル適正（子弾丸）
+2032 [Weapon] Critical suitability (grandchild bullet) -- 【武器】クリティカル適正（孫弾丸）
+2033 [Weapon] Critical suitability (great-grandchild bullet) -- 【武器】クリティカル適正（ひ孫弾丸）
+2034 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+2035 [Weapon] Second attack performance after charging -- 【武器】チャージ後攻撃性能二段目
+2036 [Weapon] Second stage impact performance after charging -- 【武器】チャージ後衝撃性能二段目
+2037 [Weapon] Second stage of impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能二段目
+2038 [Weapon] Second charge time -- 【武器】二段チャージ時間
+2039 [Weapon] Number of bullets consumed when charging -- 【武器】チャージ時消費弾数
+2040 [Weapon] Number of bullets consumed during second charge -- 【武器】二段チャージ時消費弾数
+2041 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+2042 [Weapon] Charge attack heat value increase amount -- 【武器】チャージ攻撃ヒート値上昇量
+2043 [Weapon] Two-stage charge attack heat value increase amount -- 【武器】二段チャージ攻撃ヒート値上昇量
+2044 [Weapon] Emergency cooling performance -- 【武器】緊急冷却性能
+2045 [Weapon] PA interference -- 【武器】PA干渉
+2046 [Weapon] Attack duration -- 【武器】攻撃継続時間
+2047 [Weapon] Number of bullets consumed -- 【武器】消費弾数
+2048 [Weapon] Number of fighting combos -- 【武器】格闘コンボ数
+2050 [Blade] Consumption EN during acceleration -- 【ブレード】加速時消費EN
+2051 [Blade] Blade range -- 【ブレード】ブレードレンジ
+2052 [Blade] Depressing performance -- 【ブレード】踏み込み性能
+2060 [Shield] Guard range -- 【シールド】ガード範囲
+2061 [Shield] Output -- 【シールド】出力
+2062 [Shield] Impact resistance performance -- 【シールド】耐衝撃性能
+2063 [Shield] Initial output performance -- 【シールド】初期出力性能
+2064 [Shield] Initial output maintenance time -- 【シールド】初期出力維持時間
+2065 [Shield] Durability -- 【シールド】耐久性能
+2066 [Shield] Cooling performance -- 【シールド】冷却性能
+2067 [Shield] Emergency cooling performance -- 【シールド】緊急冷却性能
+2068 [Shield] Heat generation amount when deployed -- 【シールド】展開時発熱量
+2069 [Shield] Initial output shock resistance performance -- 【シールド】初期出力耐衝撃性能
+2070 [Shield] Scutum attack reduction -- 【シールド】スクトゥム攻撃軽減
+2071 [Shield] Scutum impact reduction -- 【シールド】スクトゥム衝撃軽減
+2072 [Shield] Scutum Idol medium attack reduction -- 【シールド】スクトゥムアイドル中攻撃軽減
+2073 [Shield] Impact reduction during Scutum Idol -- 【シールド】スクトゥムアイドル中衝撃軽減
+2074 [Shield] Scutum Idle Time -- 【シールド】スクトゥムアイドル時間
+2090 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2091 [Melee attack] Attack performance -- 【格闘攻撃】攻撃性能
+2092 [Melee attack] Impact value -- 【格闘攻撃】衝撃値
+2093 [Melee attack] Residual impact -- 【格闘攻撃】残留衝撃
+2094 [Assault Armor] Attack performance -- 【アサルトアーマー】攻撃性能
+2100 [Weapon] Enhancement level (for sorting) -- 【武器】強化レベル( ソート用 )
+2110 [Weapon] Strong melee attack performance -- 【武器】強格闘攻撃性能
+2111 [Weapon] Strong melee attack critical hit -- 【武器】強格闘攻撃クリティカル適正
+2112 [Weapon] Strong melee attack impact performance -- 【武器】強格闘攻撃衝撃性能
+2113 [Weapon] Strong melee attack impact accumulation performance -- 【武器】強格闘攻撃衝撃蓄積性能
+2114 [Weapon] Strong melee attack PA interference -- 【武器】強格闘攻撃PA干渉
+2115 [Weapon] Number of bullets consumed for strong melee attacks -- 【武器】強格闘攻撃消費弾数
+2116 [Weapon] Strong melee attack heat value increase amount -- 【武器】強格闘攻撃ヒート値上昇量
+2200 [Assault Drive] Usable number of times -- 【アサルトドライヴ】使用可能回数
+2201 [Assault Drive] Impact force -- 【アサルトドライヴ】衝撃力
+2202 [Assault Drive] Effect range -- 【アサルトドライヴ】効果範囲
+2203 [Assault Drive] Guaranteed performance distance -- 【アサルトドライヴ】性能保証距離
+2204 [Assault Drive] Durability -- 【アサルトドライヴ】耐久性能
+2205 [Assault Drive] Maintenance time -- 【アサルトドライヴ】維持時間
+2206 [Assault Drive] Critical Aptitude -- 【アサルトドライヴ】クリティカル適性
+2207 [Assault Drive] Residual Impact -- 【アサルトドライヴ】残留衝撃
+3000 [Armor] AP -- 【防具】AP
+3001 [Armor] Defense power: Physical -- 【防具】 防御力：物理
+3002 [Armor] Defense power: EN -- 【防具】 防御力：EN
+3003 [Armor] Ammo recovery item capacity -- 【防具】弾薬回復アイテム容量
+3010 [Armor] KE-resistant armor -- 【防具】耐KE装甲
+3011 [Armor] Anti-TE armor -- 【防具】耐TE装甲
+3012 [Armor] CE-resistant armor -- 【防具】耐CE装甲
+3013 [Armor] Stable performance (text specified on layout side) -- 【防具】安定性能（レイアウト側でテキスト指定）
+3050 [HEAD] KE-resistant armor -- 【HEAD】耐KE装甲
+3051 [HEAD] TE-resistant armor -- 【HEAD】耐TE装甲
+3052 [HEAD] CE-resistant armor -- 【HEAD】耐CE装甲
+3060 [CORE] KE-resistant armor -- 【CORE】耐KE装甲
+3061 [CORE] TE-resistant armor -- 【CORE】耐TE装甲
+3062 [CORE] CE-resistant armor -- 【CORE】耐CE装甲
+3070 [ARM] KE-resistant armor -- 【ARM】耐KE装甲
+3071 [ARM] Anti-TE armor -- 【ARM】耐TE装甲
+3072 [ARM] CE-resistant armor -- 【ARM】耐CE装甲
+3080 [Legs] KE-resistant armor -- 【脚部】耐KE装甲
+3081 [Legs] Anti-TE armor -- 【脚部】耐TE装甲
+3082 [Legs] CE-resistant armor -- 【脚部】耐CE装甲
+3100 [HEAD] Stable calculation performance -- 【HEAD】安定演算性能
+3101 [HEAD] System restoration performance -- 【HEAD】システム復元性能
+3102 [HEAD] Camera performance -- 【HEAD】カメラ性能
+3103 [HEAD] Scan angle -- 【HEAD】スキャン角度
+3104 [HEAD] Scan distance -- 【HEAD】スキャン距離
+3105 [HEAD] Scan stiffness time -- 【HEAD】スキャン硬直時間
+3106 [HEAD] Scan standby time -- 【HEAD】スキャン待機時間
+3200 [CORE] Booster EN transmission efficiency -- 【CORE】ブースターEN伝達効率
+3201 [CORE] Stable performance -- 【CORE】安定性能
+3203 [CORE] Generating output transmission performance -- 【CORE】ジェネ出力伝達性能
+3204 [CORE] Radiator performance -- 【CORE】ラジエーター性能
+3300 [ARM] Arm loading capacity -- 【ARM】腕部積載許容量
+3301 [ARM] Recoil control -- 【ARM】反動制御
+3302 [ARM] Shooting movement performance -- 【ARM】射撃運動性能
+3303 [ARM] Suitable for fighting -- 【ARM】格闘適正
+3400 [Legs] Maximum loading capacity (unused) -- 【脚部】最大積載量（未使用）
+3401 [Legs] Stability performance -- 【脚部】安定性能
+3402 [Legs] Leg loading capacity -- 【脚部】脚部積載許容量
+3403 [Legs] Brake performance -- 【脚部】ブレーキ性能
+3404 [Legs] Walking performance -- 【脚部】歩行性能
+3405 [Legs] Leg movement performance -- 【脚部】脚部運動性能
+3406 [Legs] Jump performance -- 【脚部】ジャンプ性能
+3450 [Legs] Driving performance -- 【脚部】走行性能
+3451 [Legs] High-speed running performance -- 【脚部】高速走行性能
+3501 [GENE] Capacitor capacity -- 【GENE】コンデンサ容量
+3502 [GENE] Cooling performance -- 【GENE】冷却性能
+3503 [GENE] Emergency cooling performance -- 【GENE】緊急冷却性能
+3504 [GENE] Emergency EN recovery rate -- 【GENE】緊急時EN回復割合
+3505 [GENE] EN weapon suitability -- 【GENE】EN武器適正
+3600 [FCS] Missile lock performance -- 【FCS】ミサイルロック性能
+3601 [FCS] Secondary lock distance -- 【FCS】二次ロック距離
+3602 [FCS] Secondary lock performance -- 【FCS】二次ロック性能
+3603 [FCS] Multi-lock suitable -- 【FCS】マルチロック適正
+3604 [FCS] Assist suitable short distance -- 【FCS】アシスト適正近距離
+3605 [FCS] Suitable assist medium distance -- 【FCS】アシスト適正中距離
+3606 [FCS] Assist suitable long distance -- 【FCS】アシスト適正遠距離
+3700 [Booster] Cruise thrust (separate text for tanks) -- 【ブースター】巡航推力（タンクは別テキスト）
+3701 [Booster] Ascent thrust -- 【ブースター】上昇推力
+3702 [Booster] Increased consumption EN -- 【ブースター】上昇消費EN
+3703 [Booster] QB acceleration performance -- 【ブースター】QB加速性能
+3704 [Booster] QB injection time -- 【ブースター】QB噴射時間
+3705 [Booster] QB consumption EN -- 【ブースター】QB消費EN
+3706 [Booster] QB reload time -- 【ブースター】QBリロードタイム
+3707 [Booster] Assault boost performance -- 【ブースター】アサルトブースト性能
+3708 [Booster] Assault boost consumption EN -- 【ブースター】アサルトブースト消費EN
+3709 [Booster] QB load capacity -- 【ブースター】QB耐荷重性能
+3710 [Booster] Melee attack acceleration performance -- 【ブースター】格闘攻撃加速性能
+3711 [Booster] Melee attack acceleration consumption EN -- 【ブースター】格闘攻撃加速消費EN
+10000 [Bullet] Initial velocity -- 【弾丸】初速
+10001 [Bullet] Maximum speed -- 【弾丸】最高速度
+10002 [Bullet] EN consumption when shooting -- 【弾丸】射撃時消費EN
+10003 [Bullet] Guidance performance -- 【弾丸】誘導性能
+10004 [Bullets] Number of simultaneous shots -- 【弾丸】同時発射数
+10005 [Bullets] Number of consecutive shots -- 【弾丸】連続発射数
+10006 [Bullet] Reload time -- 【弾丸】リロード時間
+10007 [Bullet] Bullet collection performance (other than missiles) -- 【弾丸】集弾性能（ミサイル以外）
+10008 [Bullet] Maximum number of locks -- 【弾丸】最大ロック数
+10009 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+10010 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+10011 [Bullet] Effective range -- 【弾丸】有効射程
+10012 [Bullet] Consumption EN after shooting -- 【弾丸】射撃後消費EN
+10013 [Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）
+10014 [Bullet] Bullet speed -- 【弾丸】弾速
+10015 [Bullet] Bullet collection performance (missile) -- 【弾丸】集弾性能（ミサイル）
+10016 [Bullet] Missile lock time -- 【弾丸】ミサイルロック時間
+10017 [Bullet] Guidance performance (small bullet) -- 【弾丸】誘導性能（小弾丸）
+10018 [Bullet] Guidance performance after charging -- 【弾丸】チャージ後誘導性能
+10019 [Bullet] Effective range after charging -- 【弾丸】チャージ後有効射程
+11000 [Attack] Physical attack power -- 【攻撃】物理攻撃力
+19900 [For PG] Number of possessions for sorting (warehouse/inventory number of possessions automatically determined) -- 【PG用】 ソート用所持数( 倉庫/インベントリ 所持数 自動判別 )
+19998 ----- ↑For items up to this point ----- -- ----- ↑ここまでアイテム用 -----
+19999 ----- ↓For player status from here ----- -- ----- ↓ここからプレイヤーステータス用 -----
+20000 [PC Basics] Name -- 【PC基本】 名前
+20001 [PC Basics] Owned Souls -- 【PC基本】 所持ソウル
+20002 [PC Basics] Gender -- 【PC基本】 性別
+20007 [PC] Loading capacity -- 【PC】積載量
+20006 [PC] Maximum loading capacity -- 【PC】最大積載量
+20005 [PC] Total weight -- 【PC】総重量
+20008 [PC] Live bullet defense -- 【PC】実弾防御
+20009 [PC] EN defense -- 【PC】EN防御
+20010 [PC] Movement speed -- 【PC】移動速度
+20011 [PC] Total consumption EN -- 【PC】総消費EN
+20012 [PC] EN supply -- 【PC】EN供給
+20013 [PC] Armor total AP -- 【PC】防具総AP
+20014 [PC] Loading status -- 【PC】積載状況
+20015 [PC] EN consumption status -- 【PC】EN消費状況
+20016 [PC] Arm loading status -- 【PC】腕部積載状況
+20050 [Body] Total weight -- 【本体】総重量
+20051 [Body] AP -- 【本体】AP
+20052 [Body] KE-resistant armor -- 【本体】耐KE装甲
+20053 [Body] TE-resistant armor -- 【本体】耐TE装甲
+20054 [Body] CE-resistant armor -- 【本体】耐CE装甲
+20055 [Body] Bullet stability performance -- 【本体】被弾安定性能
+20056 [Body] Stable recovery correction -- 【本体】安定回復補正
+20057 [Body] Lock-on performance -- 【本体】ロックオン性能
+20058 [Body] EN capacity -- 【本体】EN容量
+20059 [Body] EN recovery performance -- 【本体】EN回復性能
+20060 [Body] Speed ​​performance -- 【本体】速度性能
+20061 [Body] Continuation ability -- 【本体】継戦能力
+20062 [Main body] Repair cost -- 【本体】修理費
+20063 [Body] QB consumption EN -- 【本体】QB消費EN
+20064 [Body] Total arm loading -- 【本体】腕部積載合計
+20065 [Body] Arm loading limit -- 【本体】腕部積載上限
+20066 [Body] QB speed performance -- 【本体】QB速度性能
+20067 [Body] QB reload time -- 【本体】QBリロード時間
+20068 [Body] Defense performance -- 【本体】防御性能
+20069 [Main unit] EN supply delay -- 【本体】EN供給遅延
+20100 [PC] AC name -- 【PC】AC名
+20110 [PC] Mercenary rank -- 【PC】傭兵ランク
+20111 [PC] Arena rank -- 【PC】アリーナランク
+20150 [PC] Play time -- 【PC】プレイ時間
+20190 [PC] Number of weapon parts owned -- 【PC】所持武器パーツ数
+20191 [PC] Number of frame parts owned -- 【PC】所持フレームパーツ数
+20192 [PC] Number of interior parts owned -- 【PC】所持内装パーツ数
+20200 [PC] Owned OS enhancement points -- 【PC】所持OS強化ポイント
+20210 [PC] Owned arena points -- 【PC】所持アリーナポイント
+21000 [Aircraft configuration] R-ARM UNIT parts name -- 【機体構成】R-ARM UNIT パーツ名
+21001 [Aircraft configuration] L-ARM UNIT parts name -- 【機体構成】L-ARM UNIT パーツ名
+21002 [Aircraft configuration] R-BACK UNIT parts name -- 【機体構成】R-BACK UNIT パーツ名
+21003 [Aircraft configuration] L-BACK UNIT parts name -- 【機体構成】L-BACK UNIT パーツ名
+21004 [Aircraft configuration] HEAD part name -- 【機体構成】HEAD パーツ名
+21005 [Aircraft configuration] CORE parts name -- 【機体構成】CORE パーツ名
+21006 [Aircraft configuration] ARMS parts name -- 【機体構成】ARMS パーツ名
+21007 [Aircraft configuration] LEGS parts name -- 【機体構成】LEGS パーツ名
+21008 [Aircraft configuration] BOOSTER parts name -- 【機体構成】BOOSTER パーツ名
+21009 [Aircraft configuration] FCS parts name -- 【機体構成】FCS パーツ名
+21010 [Aircraft configuration] GENERATOR parts name -- 【機体構成】GENERATOR パーツ名
+21011 [Aircraft configuration] EXPANSION parts name -- 【機体構成】EXPANSION パーツ名
+21100 [Aircraft] AC NAME -- 【機体】AC NAME
+29900 [PC] Insufficient EN output -- 【PC】EN出力不足
+29901 [PC] Loading limit exceeded -- 【PC】積載限界超過
+29902 [PC] Arm loading limit exceeded -- 【PC】腕部積載限界超過
+29999 ↑This is for player status -- ↑ここまでプレイヤーステータス用
+30000 [Image] Creation date and time -- 【イメージ】作成日時
+30001 [Image] Creator -- 【イメージ】作成者
+30002 [Image] UgcID -- 【イメージ】UgcID
+30010 [Image] Number of pieces used -- 【イメージ】使用ピース数
+40000 ----- ↓For decal settings from here ----- -- ----- ↓ここからデカール設定用 -----
+40001 [Decal] Base position: X -- 【デカール】基点位置：X
+40002 [Decal] Base position: Y -- 【デカール】基点位置：Y
+40003 [Decal] Base position: Z -- 【デカール】基点位置：Z
+40004 [Decal] Base angle: X -- 【デカール】基点角度：X
+40005 [Decal] Base angle: Y -- 【デカール】基点角度：Y
+40006 [Decal] Pasting direction correction: X -- 【デカール】貼付向き補正：X
+40007 [Decal] Pasting direction correction: Y -- 【デカール】貼付向き補正：Y
+40008 [Decal] Image angle: Z -- 【デカール】画像角度：Z
+40009 [Decal] Image position: X -- 【デカール】画像位置：X
+40010 [Decal] Image position: Y -- 【デカール】画像位置：Y
+40011 [Decal] Image size: X -- 【デカール】画像サイズ：X
+40012 [Decal] Image size: Y -- 【デカール】画像サイズ：Y
+40013 [Decal] Image reversal: left and right -- 【デカール】画像反転：左右
+40014 [Decal] Target for pasting -- 【デカール】貼付対象
+40015 [Decal] Pasting limit distance -- 【デカール】貼付限界距離
+40100 [Decal] Number of images used -- 【デカール】使用イメージ数
+40199 -----↑This is for decal setting ----- -- -----↑ここまでデカール設定用 -----
+50000 ----- ↓For OS enhancement from here ----- -- ----- ↓ここからOS強化用 -----
+50001 [OS enhancement] Live ammunition enhancement -- 【OS強化】実弾強化
+50002 [OS enhancement] EN bullet enhancement -- 【OS強化】EN弾強化
+50003 [OS enhancement] Explosive bullet enhancement -- 【OS強化】爆発弾強化
+50004 [OS Enhancement] Fighting Enhancement -- 【OS強化】格闘強化
+50005 [OS Enhancement] Critical Enhancement -- 【OS強化】クリティカル強化
+50100 [OS Enhancement] All attribute damage reduction -- 【OS強化】全属性ダメージ軽減
+50201 [OS enhancement] Increased recovery amount -- 【OS強化】回復量増加
+50300 [OS enhancement] Hacking performance enhancement -- 【OS強化】ハッキング性能強化
+50400 [OS enhancement] Overloaded sortie + manual purge lifted -- 【OS強化】 積載超過出撃＋手動パージ解禁
+50401 [OS enhancement] Kick ban lifted -- 【OS強化】キック解禁
+50402 [OS enhancement] Weapon hanger released -- 【OS強化】武器ハンガー解禁
+50403 [OS enhancement] Free aim lifted -- 【OS強化】フリーエイム解禁
+50404 [OS enhancement] Quick turn unlocked -- 【OS強化】クイックターン解禁
+50500 [OS Enhancement] Assault Armor -- 【OS強化】アサルトアーマー
+50501 [OS Enhancement] Follow Barrier -- 【OS強化】追従バリア
+50502 [OS enhancement] Installation barrier -- 【OS強化】設置バリア
+50503 [OS Enhancement] Emergency Barrier -- 【OS強化】緊急バリア
+50999 -----↑So far for OS enhancement ----- -- -----↑ここまでOS強化用 -----
+59000 ----- ↓For automatic assembly from here ----- -- ----- ↓ここから自動アセン用 -----
+59001 [Automatic assembly] Leg type -- 【自動アセン】脚部タイプ
+59002 [Auto Ascension] Ascension tendency -- 【自動アセン】アセン傾向
+59050 [Auto assemble] Excess load -- 【自動アセン】余剰積載
+59051 [Auto Assemble] Surplus EN -- 【自動アセン】余剰EN
+59999 -----↑For automatic assembly so far ----- -- -----↑ここまで自動アセン用 -----
+60000 ----- ↓For name plate from here ----- -- ----- ↓ここからネームプレート用 -----
+60001 [Name plate] frame -- 【ネームプレート】枠
+60002 [Name plate] Back plate -- 【ネームプレート】背後板
+60003 [Name plate] Background -- 【ネームプレート】背景
+60004 [Name plate] Color: Pilot name -- 【ネームプレート】カラー：パイロット名
+60005 [Name plate] Color: Aircraft name -- 【ネームプレート】カラー：機体名
+60006 [Name plate] Color: Online ID -- 【ネームプレート】カラー：オンラインID
+60050 [Name plate] Required points -- 【ネームプレート】必要ポイント
+60999 -----↑This is for name plate ----- -- -----↑ここまでネームプレート用 -----
+79000 ----- ↓For arena from here ----- -- ----- ↓ここからアリーナ用 -----
+79001 [Arena] Opponent: Rank -- 【アリーナ】相手：ランク
+79002 [Arena] Opponent: Pilot name (for menu) -- 【アリーナ】相手：パイロット名(メニュー用)
+79003 [Arena] Opponent: Machine name (for menu) -- 【アリーナ】相手：機体名(メニュー用)
+79004 [Arena] Opponent: Profile -- 【アリーナ】相手：プロフィール
+79005 [Arena] Amount earned -- 【アリーナ】獲得金額
+79006 [Arena] Obtained OS enhancement points -- 【アリーナ】獲得OS強化ポイント
+79007 [Arena] Opponent: Pilot name (for FE) -- 【アリーナ】相手：パイロット名(FE用)
+79008 [Arena] Opponent: Machine name (for FE) -- 【アリーナ】相手：機体名(FE用)
+79900 [Arena] Result: Battle time -- 【アリーナ】リザルト：対戦時間
+79901 [Arena] Result: Reward amount -- 【アリーナ】リザルト：報酬額
+79999 -----↑For Arena so far ----- -- -----↑ここまでアリーナ用 -----
+80000 ----- ↓For mission results from here ----- -- ----- ↓ここからミッションリザルト用 -----
+80001 [Result] Income: Basic compensation -- 【リザルト】収入：基本報酬
+80002 [Result] Income: Obtained items -- 【リザルト】収入：入手物
+80003 [Result] Income: Special addition total -- 【リザルト】収入：特別加算合計
+80004 [Result] Income: Special subtraction total -- 【リザルト】収入：特別減算合計
+80010 [Result] Income: Special addition 0 -- 【リザルト】収入：特別加算0
+80011 [Result] Income: Special addition 1 -- 【リザルト】収入：特別加算1
+80012 [Result] Income: Special addition 2 -- 【リザルト】収入：特別加算2
+80013 [Result] Income: Special addition 3 -- 【リザルト】収入：特別加算3
+80014 [Result] Income: Special addition 4 -- 【リザルト】収入：特別加算4
+80019 [Result] Income: Total -- 【リザルト】収入：合計
+80020 [Result] Cost: Repair cost -- 【リザルト】費用：修理費
+80021 [Result] Cost: Ammunition cost -- 【リザルト】費用：弾薬費
+80030 [Result] Cost: Special deduction 0 -- 【リザルト】費用：特別減算0
+80031 [Result] Cost: Special subtraction 1 -- 【リザルト】費用：特別減算1
+80032 [Result] Cost: Special subtraction 2 -- 【リザルト】費用：特別減算2
+80033 [Result] Cost: Special subtraction 3 -- 【リザルト】費用：特別減算3
+80034 [Result] Cost: Special subtraction 4 -- 【リザルト】費用：特別減算4
+80039 [Result] Cost: Total -- 【リザルト】費用：合計
+80040 [Result] Corporate contribution level 0 -- 【リザルト】企業貢献度0
+80041 [Result] Corporate contribution level 1 -- 【リザルト】企業貢献度1
+80042 [Result] Corporate contribution level 2 -- 【リザルト】企業貢献度2
+80043 [Result] Corporate contribution level 3 -- 【リザルト】企業貢献度3
+80044 [Result] Corporate contribution level 4 -- 【リザルト】企業貢献度4
+80050 [Result] Experience points gained -- 【リザルト】獲得経験値
+80090 [Result] Balance: Total -- 【リザルト】収支：合計
+80999 ↑For mission results so far -- ↑ここまでミッションリザルト用
+90000 [Game option] Automatic lock-on switching -- 【ゲームオプション】ロックオン自動切換
+90001 [Game options] Controller vibration -- 【ゲームオプション】コントローラ振動
+90002 [Game options] Boost operation -- 【ゲームオプション】ブースト操作
+90003 [Game options] Assault boost operation -- 【ゲームオプション】アサルトブースト操作
+90004 [Game options] Limiter release operation -- 【ゲームオプション】リミッター解除操作
+90005 [Game option] Auto purge -- 【ゲームオプション】オートパージ
+90010 [Camera options] Camera operation up and down -- 【カメラオプション】カメラ操作　上下
+90011 [Camera options] Camera operation left and right -- 【カメラオプション】カメラ操作　左右
+90012 [Camera option] Camera vertical reset -- 【カメラオプション】カメラ上下リセット
+90013 [Camera options] Camera speed -- 【カメラオプション】カメラ速度
+90020 [Display options] Subtitle display -- 【表示オプション】字幕表示
+90022 [Display options] HUD color (button) -- 【表示オプション】HUDカラー(ボタン)
+90023 [Display options] HUD layout (button) -- 【表示オプション】HUDレイアウト(ボタン)
+90024 [Display options] HDR -- 【表示オプション】HDR
+90025 [Display options] Brightness adjustment (button) -- 【表示オプション】輝度調整(ボタン)
+90026 [Display options] Image quality adjustment (button) -- 【表示オプション】画質調整(ボタン)
+90030 [Sound option] BGM volume -- 【音響オプション】BGM音量
+90031 [Sound option] SE volume -- 【音響オプション】SE音量
+90032 [Sound option] Voice volume -- 【音響オプション】ボイス音量
+90033 [Sound option] Overall volume -- 【音響オプション】全体音量
+90040 [Brightness adjustment] SDR brightness -- 【輝度調整】SDR輝度
+90050 [Image quality adjustment] HDR brightness -- 【画質調整】HDR輝度
+90051 [Image quality adjustment] HDR maximum brightness -- 【画質調整】HDR最大輝度
+90052 [Image quality adjustment] HDR saturation -- 【画質調整】HDR彩度
+90090 [Button settings] Button assignment -- 【ボタン設定】ボタン割り当て
+90091 [Button settings] Button assignment details settings (button) -- 【ボタン設定】ボタン割り当て詳細設定(ボタン)
+90100 [Input device settings] Devices targeted for operation guide -- 【入力機器設定】操作ガイド対象デバイス
+90101 [Input device settings] Mouse operation sensitivity -- 【入力機器設定】マウス操作 感度
+90102 [Input device settings] Mouse operation left and right -- 【入力機器設定】マウス操作 左右
+90103 [Input device settings] Mouse operation up and down -- 【入力機器設定】マウス操作 上下
+90104 [Input device settings] Key settings -- 【入力機器設定】キー設定
+90130 [Network settings] Matching region selection -- 【ネットワーク設定】マッチング地域選択
+90131 [Network settings] Voice chat -- 【ネットワーク設定】ボイスチャット
+90132 [Network settings] Player name display -- 【ネットワーク設定】プレイヤー名称表示
+90133 [Network settings] Title startup settings -- 【ネットワーク設定】タイトル起動設定
+90134 [Network settings] Consent regarding data use -- 【ネットワーク設定】データ使用に関する同意
+90135 [Network Settings] Software Terms of Use -- 【ネットワーク設定】ソフトウェア利用規約
+90136 [Network Settings] Privacy Policy -- 【ネットワーク設定】プライバシーポリシー
+90150 [Language settings] Text -- 【言語設定】テキスト
+90151 [Language settings] Voice -- 【言語設定】ボイス
+90200 [Graphic settings] Screen mode -- 【グラフィック設定】スクリーンモード
+90201 [Graphic settings] Screen resolution -- 【グラフィック設定】画面解像度
+90202 [Graphic settings] Automatic drawing adjustment -- 【グラフィック設定】自動描画調整
+90203 [Graphic settings] Quality settings -- 【グラフィック設定】品質設定
+90204 [Graphic settings] Detailed settings (button) -- 【グラフィック設定】詳細設定(ボタン)
+90205 [Graphic settings] Performance settings -- 【グラフィック設定】パフォーマンス設定
+90206 [Graphic settings] Ray tracing function (PS5/Scarlett) -- 【グラフィック設定】レイトレーシング機能 (PS5/Scarlett)
+90207 [Graphic settings] FPS limit -- 【グラフィック設定】FPS制限
+90208 [Graphic settings] Vsync -- 【グラフィック設定】Vsync
+90210 [Graphic details] Texture quality -- 【グラフィック詳細】テクスチャの品質
+90211 [Graphic details] Applying anti-aliasing -- 【グラフィック詳細】アンチエイリアスの適用
+90212 [Graphic details] SSAO -- 【グラフィック詳細】SSAO
+90213 [Graphic details] Depth of field -- 【グラフィック詳細】被写界深度
+90214 [Graphic details] Motion blur -- 【グラフィック詳細】モーションブラー
+90215 [Graphic details] Shadow quality -- 【グラフィック詳細】影の品質
+90216 [Graphic details] Writing quality -- 【グラフィック詳細】ライティングの品質
+90217 [Graphic details] Effect quality -- 【グラフィック詳細】エフェクトの品質
+90218 [Graphic details] Volumetric fog quality -- 【グラフィック詳細】ボリューメトリックフォグの品質
+90219 [Graphic details] Quality of reflective expression -- 【グラフィック詳細】反射表現の品質
+90220 [Graphic details] Water surface quality -- 【グラフィック詳細】水面の品質
+90221 [Graphic details] Shader quality -- 【グラフィック詳細】シェーダーの品質
+90222 [Graphic details] Ray tracing quality -- 【グラフィック詳細】レイトレーシング品質
+92000 [Tuning] Short-range lock suitable -- 【チューニング】近距離ロック適正
+92001 [Tuning] Long distance lock suitable -- 【チューニング】遠距離ロック適正
+92002 [Tuning] Missile lock appropriate -- 【チューニング】ミサイルロック適正
+92003 [Tuning] EN attack output -- 【チューニング】EN攻撃出力
+92004 [Tuning] Armor performance -- 【チューニング】装甲性能
+92005 [Tuning] EN capacity -- 【チューニング】EN容量
+92006 [Tuning] Stealth suitable -- 【チューニング】ステルス適正
+92007 [Tuning] Loading -- 【チューニング】積載
+100000 [Photo mode] Viewing angle -- 【フォトモード】視野角
+100001 [Photo mode] Tilt -- 【フォトモード】傾き
+100002 [Photo mode] Proximity strength -- 【フォトモード】近接強度
+100003 [Photo mode] Distance intensity -- 【フォトモード】遠方強度
+100004 [Photo mode] Focal length -- 【フォトモード】焦点距離
+100005 [Photo mode] F value -- 【フォトモード】F値
+100006 [Photo mode] Aperture value -- 【フォトモード】絞り値
+100007 [Photo mode] Exposure -- 【フォトモード】露出
+100008 [Photo mode] Hue -- 【フォトモード】色相
+100009 [Photo mode] Brightness -- 【フォトモード】明度
+100010 [Photo mode] Saturation -- 【フォトモード】彩度
+100011 [Photo mode] Contrast -- 【フォトモード】コントラスト
+100012 [Photo mode] Color scale R -- 【フォトモード】カラースケールR
+100013 [Photo mode] Color scale G -- 【フォトモード】カラースケールG
+100014 [Photo mode] Color scale B -- 【フォトモード】カラースケールB
+100015 [Photo Mode] Color Shift R -- 【フォトモード】カラーシフトR
+100016 [Photo mode] Color shift G -- 【フォトモード】カラーシフトG
+100017 [Photo mode] Color shift B -- 【フォトモード】カラーシフトB
+100018 [Photo mode] Luminous level -- 【フォトモード】発光レベル
+100019 [Photo mode] Smoothness of blur -- 【フォトモード】ぼかしの滑らかさ
+100020 [Photo mode] Degree of combination of light emission -- 【フォトモード】発光の合成度合い
+100021 [Photo mode] Blur -- 【フォトモード】ブラー
+100022 [Photo mode] Strength -- 【フォトモード】強度
+100023 [Photo mode] Blur range -- 【フォトモード】ぼかしの範囲
+100024 [Photo mode] Camera blur horizontal direction -- 【フォトモード】カメラブラー水平方向
+100025 [Photo mode] Camera blur vertical direction -- 【フォトモード】カメラブラー垂直方向
+100026 [Photo mode] Camera blur depth direction -- 【フォトモード】カメラブラー奥行方向
+100027 [Photo mode] Bloom: Brightness -- 【フォトモード】ブルーム：明るさ
+100028 [Photo mode] Bloom: Threshold -- 【フォトモード】ブルーム：閾値
+100029 [Photo mode] Bloom: Saturation -- 【フォトモード】ブルーム：彩度
+100030 [Photo Mode] Bloom: Smoothness -- 【フォトモード】ブルーム：滑らかさ
+110000 [ENEMY SETTING] Enemy pattern -- 【ENEMY SETTING】敵パターン
+110001 【ENEMY SETTING】AI
+120000 [Room settings] Number of people -- 【ルーム設定】人数
+120001 [Room Settings] Battle Rules -- 【ルーム設定】対戦ルール
+120002 [Room Settings] Time limit -- 【ルーム設定】制限時間
+120003 [Room Settings] Map -- 【ルーム設定】マップ
+120004 [Room Settings] Team participation method -- 【ルーム設定】チーム参加方式
+120005 [Room settings] Publication method -- 【ルーム設定】公開方式
+120006 [Room Settings] Keyword -- 【ルーム設定】キーワード
+120090 Room creation button -- ルーム作成ボタン
+120091 Room search button -- ルーム検索ボタン
+120092 Room settings change button -- ルーム設定変更ボタン
+120100 [Room search results] Host ID/Keyword -- 【ルーム検索結果】ホストID/キーワード
+120101 [Room search results] Current number of people in the room -- 【ルーム検索結果】ルーム現在人数
+180000 [Battle history] Battle mode -- 【対戦履歴】対戦モード
+180001 [Battle history] Battle rules -- 【対戦履歴】対戦ルール
+180002 [Match history] Match date and time -- 【対戦履歴】対戦日時
+190000 [Notification] Category -- 【通報】カテゴリ
+190001 [Notification] Reason 1 -- 【通報】理由1
+190002 [Notification] Reason 2 -- 【通報】理由2
+190003 [Notification] Reason 3 -- 【通報】理由3
+190010 [Report] Report button -- 【通報】通報ボタン

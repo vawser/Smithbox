@@ -1,0 +1,28 @@
+0 basic -- 基本
+1 Basic +1 -- 基本＋１
+2 Basic +2 -- 基本＋２
+3 Basic +3 -- 基本＋３
+4 Basic +4 -- 基本＋４
+5 Basic +5 -- 基本＋５
+10 [FNR] Replenishment bullet item (live bullet) -- 【FNR】補充用弾丸アイテム(実弾)
+11 [FNR] Replenishment bullet item (EN) -- 【FNR】補充用弾丸アイテム(EN)
+20 [FNR] Beacon -- 【FNR】ビーコン
+21 [FNR] Smoke grenade -- 【FNR】スモークグレネード
+22 [FNR] Flare -- 【FNR】フレア
+23 [FNR] Grenade -- 【FNR】手榴弾
+24 [FNR] Est bottle imitation test -- 【FNR】エスト瓶もどきテスト
+25 [FNR] Grenade_Kira test_Cracker -- 【FNR】手榴弾_吉良テスト_クラッカー
+26 [FNR] Grenade_Kira test_Throwing drone -- 【FNR】手榴弾_吉良テスト_投擲ドローン
+27 iron -- 鉄
+40 [FNR] +0 Unreinforced -- 【FNR】 +0　未強化
+41 [FNR] +1 -- 【FNR】 +1
+42 [FNR] +2 -- 【FNR】 +2
+43 [FNR] +3 -- 【FNR】 +3
+44 [FNR] +4 -- 【FNR】 +4
+45 [FNR] +5 -- 【FNR】 +5
+46 [FNR] +6 -- 【FNR】 +6
+47 [FNR] +7 -- 【FNR】 +7
+48 [FNR] +8 -- 【FNR】 +8
+49 [FNR] +9 -- 【FNR】 +9
+50 [FNR] +10 -- 【FNR】 +10
+60 [FNR test] Weapon synthesis -- 【FNRテスト】武器合成

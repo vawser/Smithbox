@@ -1,403 +1,403 @@
 0 test
-1 キャラメイクテスト
-100 デバッグ用　標準顔
-110 デバッグ用　最大負荷(自キャラ)
-111 デバッグ用　最大負荷(ゲスト１)
-112 デバッグ用　最大負荷(ゲスト２)
-113 デバッグ用　最大負荷(ゲスト３)
-114 デバッグ用　最大負荷(ゲスト４)
-190 190_2016TGS用_連盟の長_丸鋸/斧竿/長銃/火炎放射
-191 191_2016TGS用_古狩人_ノコ鞭/ノコナタ/短銃/獣狩り松明
-192 192_2016TGS用_秘密を探るもの_剣弓/剣大槌/ナックル/松明
-193 193_2016TGS用_メンシス学派_杖鞭/素手/噴霧器/素手
-1000 NewGameプリセット顔_男0
-1001 NewGameプリセット顔_男1
-1002 NewGameプリセット顔_男2
-1003 NewGameプリセット顔_男3
-1004 NewGameプリセット顔_男4
-1005 NewGameプリセット顔_男5
-1006 NewGameプリセット顔_男6
-1007 NewGameプリセット顔_男7
-1008 NewGameプリセット顔_男8
-1009 NewGameプリセット顔_男9
-2000 NewGameプリセット顔_女0
-2001 NewGameプリセット顔_女1
-2002 NewGameプリセット顔_女2
-2003 NewGameプリセット顔_女3
-2004 NewGameプリセット顔_女4
-2005 NewGameプリセット顔_女5
-2006 NewGameプリセット顔_女6
-2007 NewGameプリセット顔_女7
-2008 NewGameプリセット顔_女8
-2009 NewGameプリセット顔_女9
-3000 ベースボディ用0（男女共用）
-3001 ベースボディ用1（男女共用）
-3002 ベースボディ用2（男女共用）
-3003 ベースボディ用3（男女共用）
-3004 ベースボディ用4（男女共用）
-3005 ベースボディ用5（男女共用）
-3006 ベースボディ用6（男女共用）
-3007 ベースボディ用7（男女共用）
-3008 ベースボディ用8（男女共用）
-3009 ベースボディ用9（男女共用）
-4000 キャラメイクトップメニュー男性
-5000 キャラメイクトップメニュー女性
-6040 血族の女王
-6070 ニセ女医
-6380 悪夢の主
-6080 偏屈な老人
-6090 孤独な老婆
-6100 感染者の乞食
-6101 感染者の乞食
-6110 娼婦（通常）
-6111 娼婦（妊娠LV1）
-6112 娼婦（妊娠LV2）
-6113 娼婦（狂気）
-6140 囚われの尼僧（初回生贄）
-6141 囚われの尼僧（避難所）
-6142 囚われの尼僧（狂気）
-6300 獣の守護者
-6150 血族狩り
-6160 復讐者
-6310 敵NPC_廃墟のハンター
-6340 敵NPC_生贄の3人衆1
-6350 敵NPC_生贄の3人衆2
-6360 敵NPC_生贄の3人衆3
-6370 敵NPC_古城の血族
-6390 故郷侵入NPC1
-6395 故郷侵入NPC2
-6400 復讐者イベント用NPC1（ヘンリック）
-6410 復讐者イベント用NPC2
-6420 生贄接続NPC 近接
-6430 生贄接続NPC 射撃
-6440 トラップロード侵入NPC
-6450 大学聖歌隊NPC
-6500 6500_連盟の長
-6510 6510_秘密を探る者
-6520 6520_教会の殺し屋
-6521 6521_教会の殺し屋_弱っている本体
-6530 6530_連盟の狩人：和装
-6540 6540_連盟の狩人：処刑人
-6550 6550_上位者狩り
-6570 6570_完全獣化NPC
-6580 6580_聖堂NPC1
-6585 6585_聖堂NPC2
-6589 6589_聖堂NPC3_瀕死
-6590 6590_地下牢NPC（共闘）
-6600 6600_トップハット狩人
-6601 6601_トップハット狩人_死体
-6610 6610_地下牢敵対NPC
-6620 6620_恋人NPC
-6630 6630_守護者NPC
-6640 6640_巡礼者
-7040 ダンジョンNPC5
-7045 ダンジョンNPC5_2
-7060 ダンジョンNPC7
-7070 ダンジョンNPC8_1
-7075 ダンジョンNPC8_2
-7120 ダンジョンNPC11
-7150 ダンジョンNPC14
-7160 ダンジョンNPC15
-7300 7300_ダンジョンNPC：ノコ鞭
-7310 7310_異常者：多関節
-8000 一時保存枠1
-8001 一時保存枠2
-8002 一時保存枠3
-8003 一時保存枠4
-8004 一時保存枠5
-8005 一時保存枠6
-8006 一時保存枠7
-8007 一時保存枠8
-8008 一時保存枠9
-8009 一時保存枠10
-8010 一時保存枠11
-8011 一時保存枠12
-8012 一時保存枠13
-8013 一時保存枠14
-8014 一時保存枠15
-8015 一時保存枠16
-8016 一時保存枠17
-8017 一時保存枠18
-8018 一時保存枠19
-8019 一時保存枠20
-8020 一時保存枠21
-8021 一時保存枠22
-8022 一時保存枠23
-8023 一時保存枠24
-8024 一時保存枠25
-8025 一時保存枠26
-8026 一時保存枠27
-8027 一時保存枠28
-8028 一時保存枠29
-8029 一時保存枠30
-8030 一時保存枠31
-8031 一時保存枠32
-8032 一時保存枠33
-8033 一時保存枠34
-8034 一時保存枠35
-8035 一時保存枠36
-8036 一時保存枠37
-8037 一時保存枠38
-8038 一時保存枠39
-8039 一時保存枠40
-8040 一時保存枠41
-8041 一時保存枠42
-8042 一時保存枠43
-8043 一時保存枠44
-8044 一時保存枠45
-8045 一時保存枠46
-8046 一時保存枠47
-8047 一時保存枠48
-8048 一時保存枠49
-8049 一時保存枠50
-8050 一時保存枠51
-8051 一時保存枠52
-8052 一時保存枠53
-8053 一時保存枠54
-8054 一時保存枠55
-8055 一時保存枠56
-8056 一時保存枠57
-8057 一時保存枠58
-8058 一時保存枠59
-8059 一時保存枠60
-8060 一時保存枠61
-8061 一時保存枠62
-8062 一時保存枠63
-8063 一時保存枠64
-8064 一時保存枠65
-8065 一時保存枠66
-8066 一時保存枠67
-8067 一時保存枠68
-8068 一時保存枠69
-8069 一時保存枠70
-8070 一時保存枠71
-8071 一時保存枠72
-8072 一時保存枠73
-8073 一時保存枠74
-8074 一時保存枠75
-8075 一時保存枠76
-8076 一時保存枠77
-8077 一時保存枠78
-8078 一時保存枠79
-8079 一時保存枠80
-8080 一時保存枠81
-8081 一時保存枠82
-8082 一時保存枠83
-8083 一時保存枠84
-8084 一時保存枠85
-8085 一時保存枠86
-8086 一時保存枠87
-8087 一時保存枠88
-8088 一時保存枠89
-8089 一時保存枠90
-8090 一時保存枠91
-8091 一時保存枠92
-8092 一時保存枠93
-8093 一時保存枠94
-8094 一時保存枠95
-8095 一時保存枠96
-8096 一時保存枠97
-8097 一時保存枠98
-8098 一時保存枠99
-8099 一時保存枠100
-8100 一時保存枠101
-8101 一時保存枠102
-8102 一時保存枠103
-8103 一時保存枠104
-8104 一時保存枠105
-8105 一時保存枠106
-8106 一時保存枠107
-8107 一時保存枠108
-8108 一時保存枠109
-8109 一時保存枠110
-8110 一時保存枠111
-8111 一時保存枠112
-8112 一時保存枠113
-8113 一時保存枠114
-8114 一時保存枠115
-8115 一時保存枠116
-8116 一時保存枠117
-8117 一時保存枠118
-8118 一時保存枠119
-8119 一時保存枠120
-8120 一時保存枠121
-8121 一時保存枠122
-8122 一時保存枠123
-8123 一時保存枠124
-8124 一時保存枠125
-8125 一時保存枠126
-8126 一時保存枠127
-8127 一時保存枠128
-8128 一時保存枠129
-8129 一時保存枠130
-8130 一時保存枠131
-8131 一時保存枠132
-8132 一時保存枠133
-8133 一時保存枠134
-8134 一時保存枠135
-8135 一時保存枠136
-8136 一時保存枠137
-8137 一時保存枠138
-8138 一時保存枠139
-8139 一時保存枠140
-8140 一時保存枠141
-8141 一時保存枠142
-8142 一時保存枠143
-8143 一時保存枠144
-8144 一時保存枠145
-8145 一時保存枠146
-8146 一時保存枠147
-8147 一時保存枠148
-8148 一時保存枠149
-8149 一時保存枠150
-8150 一時保存枠151
-8151 一時保存枠152
-8152 一時保存枠153
-8153 一時保存枠154
-8154 一時保存枠155
-8155 一時保存枠156
-8156 一時保存枠157
-8157 一時保存枠158
-8158 一時保存枠159
-8159 一時保存枠160
-8160 一時保存枠161
-8161 一時保存枠162
-8162 一時保存枠163
-8163 一時保存枠164
-8164 一時保存枠165
-8165 一時保存枠166
-8166 一時保存枠167
-8167 一時保存枠168
-8168 一時保存枠169
-8169 一時保存枠170
-8170 一時保存枠171
-8171 一時保存枠172
-8172 一時保存枠173
-8173 一時保存枠174
-8174 一時保存枠175
-8175 一時保存枠176
-8176 一時保存枠177
-8177 一時保存枠178
-8178 一時保存枠179
-8179 一時保存枠180
-8180 一時保存枠181
-8181 一時保存枠182
-8182 一時保存枠183
-8183 一時保存枠184
-8184 一時保存枠185
-8185 一時保存枠186
-8186 一時保存枠187
-8187 一時保存枠188
-8188 一時保存枠189
-8189 一時保存枠190
-8190 一時保存枠191
-8191 一時保存枠192
-8192 一時保存枠193
-8193 一時保存枠194
-8194 一時保存枠195
-8195 一時保存枠196
-8196 一時保存枠197
-8197 一時保存枠198
-8198 一時保存枠199
-8199 一時保存枠200
-8200 一時保存枠201
-8201 一時保存枠202
-8202 一時保存枠203
-8203 一時保存枠204
-8204 一時保存枠205
-8205 一時保存枠206
-8206 一時保存枠207
-8207 一時保存枠208
-8208 一時保存枠209
-8209 一時保存枠210
-8210 一時保存枠211
-8211 一時保存枠212
-8212 一時保存枠213
-8213 一時保存枠214
-8214 一時保存枠215
-8215 一時保存枠216
-8216 一時保存枠217
-8217 一時保存枠218
-8218 一時保存枠219
-8219 一時保存枠220
-8220 一時保存枠221
-8221 一時保存枠222
-8222 一時保存枠223
-8223 一時保存枠224
-8224 一時保存枠225
-8225 一時保存枠226
-8226 一時保存枠227
-8227 一時保存枠228
-8228 一時保存枠229
-8229 一時保存枠230
-8230 一時保存枠231
-8231 一時保存枠232
-8232 一時保存枠233
-8233 一時保存枠234
-8234 一時保存枠235
-8235 一時保存枠236
-8236 一時保存枠237
-8237 一時保存枠238
-8238 一時保存枠239
-8239 一時保存枠240
-8240 一時保存枠241
-8241 一時保存枠242
-8242 一時保存枠243
-8243 一時保存枠244
-8244 一時保存枠245
-8245 一時保存枠246
-8246 一時保存枠247
-8247 一時保存枠248
-8248 一時保存枠249
-8249 一時保存枠250
-8250 一時保存枠251
-8251 一時保存枠252
-8252 一時保存枠253
-8253 一時保存枠254
-8254 一時保存枠255
-8255 一時保存枠256
-8256 一時保存枠257
-8257 一時保存枠258
-8258 一時保存枠259
-8259 一時保存枠260
-8260 一時保存枠261
-8261 一時保存枠262
-8262 一時保存枠263
-8263 一時保存枠264
-8264 一時保存枠265
-8265 一時保存枠266
-8266 一時保存枠267
-8267 一時保存枠268
-8268 一時保存枠269
-8269 一時保存枠270
-8270 一時保存枠271
-8271 一時保存枠272
-8272 一時保存枠273
-8273 一時保存枠274
-8274 一時保存枠275
-8275 一時保存枠276
-8276 一時保存枠277
-8277 一時保存枠278
-8278 一時保存枠279
-8279 一時保存枠280
-8280 一時保存枠281
-8281 一時保存枠282
-8282 一時保存枠283
-8283 一時保存枠284
-8284 一時保存枠285
-8285 一時保存枠286
-8286 一時保存枠287
-8287 一時保存枠288
-8288 一時保存枠289
-8289 一時保存枠290
-8290 一時保存枠291
-8291 一時保存枠292
-8292 一時保存枠293
-8293 一時保存枠294
-8294 一時保存枠295
-8295 一時保存枠296
-8296 一時保存枠297
-8297 一時保存枠298
-8298 一時保存枠299
-8299 一時保存枠300
-9999 幻影（顔なし）
+1 Character make test
+100 Standard face for debugging
+110 Debugging Maximum Load ( My character )
+111 Debugging Maximum Load ( Guest 1 )
+112 Debugging Maximum Load ( Guest 2 )
+113 Debugging Maximum Load ( Guest 3 )
+114 Debugging Maximum Load ( Guest 4 )
+190 190_2016TGS For _ Head of the Federation _ Circular saw / Axe pole / Long gun / Flamethrower
+191 191_2016TGS For _ Old Hunter _ Saw whip / Nokonata / Pistol / Beast Hunting Torch
+192 192_2016TGS For _ Secret seeker _ Sword and Bow / Sword Hammer / knuckle / torch
+193 193_2016TGS For _ School of Mensis _ Cane Whip / bare hands /Sprayer / bare hands
+1000 NewGame Preset Faces _ man 0
+1001 NewGame Preset Faces _ man 1
+1002 NewGame Preset Faces _ man 2
+1003 NewGame Preset Faces _ man 3
+1004 NewGame Preset Faces _ man 4
+1005 NewGame Preset Faces _ man 5
+1006 NewGame Preset Faces _ man 6
+1007 NewGame Preset Faces _ man 7
+1008 NewGame Preset Faces _ man 8
+1009 NewGame Preset Faces _ man 9
+2000 NewGame Preset Faces _ woman 0
+2001 NewGame Preset Faces _ woman 1
+2002 NewGame Preset Faces _ woman 2
+2003 NewGame Preset Faces _ woman 3
+2004 NewGame Preset Faces _ woman 4
+2005 NewGamePreset Faces _ woman 5
+2006 NewGame Preset Faces _ woman 6
+2007 NewGame Preset Faces _ woman 7
+2008 NewGame Preset Faces _ woman 8
+2009 NewGame Preset Faces _ woman 9
+3000 For base body 0 (Unisex)
+3001 For base body 1 (Unisex)
+3002 For base body 2 (Unisex)
+3003 For base body 3 (Unisex)
+3004 For base body 4 (Unisex)
+3005 For base body 5 (Unisex)
+3006 For base body 6 (Unisex)
+3007 For base body 7 (Unisex)
+3008 For base body 8 (Unisex)
+3009 For base body 9 (Unisex)
+4000 Character Make Top Menu Male
+5000 Character Make Top Menu Female
+6040,Queen of the Bloodline
+6070 Fake Female Doctor
+6380 Lord of Nightmares
+6080 Cranky old man
+6090 Lonely old woman
+6100 Infected beggars
+6101 Infected beggars
+6110 Prostitute (usually)
+6111 Prostitute (Pregnant LV1 )
+6112 Prostitute (Pregnant LV2 )
+6113 Whore (Madness)
+6140 Captive Nun (First Sacrifice)
+6141 Captive Nun (Refuge)
+6142 Captive Nun (Madness)
+6300 Guardian of the Beasts
+6150 Bloodline Hunt
+6160 Avenger
+6310 enemy NPC_ Hunter of the Ruins
+6340 enemy NPC_ Sacrificial 3 People 1
+6350 enemy NPC_ Sacrificial 3 People 2
+6360 enemy NPC_ Sacrificial 3 People 3
+6370 enemy NPC_ Old Castle Bloodline
+6390 Hometown Invasion NPC1
+6395 Hometown Invasion NPC2
+6400 For the Revenger event NPC1 (Henrik)
+6410 For the Revenger event NPC2
+6420 Sacrifice Connection NPC Proximity
+6430 Sacrifice Connection NPC shooting
+6440 Trap Lord InvasionNPC
+6450 University Choir NPC
+6500 6500_ Head of the Federation
+6510 6510_ Secret Seeker
+6520 6520_ The Church Killer
+6521 6521_ The Church Killer _ Weakened body
+6530 6530_ Federation Hunter: Japanese Clothing
+6540 6540_ League Hunter: Executioner
+6550 6550_ Top Hunter
+6570 6570_ Complete beast NPC
+6580 6580_ Cathedral NPC1
+6585 6585_ Cathedral NPC2
+6589 6589_ Cathedral NPC3_ dying
+6590 6590_ Dungeon NPC (Joint Struggle)
+6600 6600_ Top Hat Hunter
+6601 6601_ Top Hat Hunter _ cadaver
+6610 6610_ Dungeon hostility NPC
+6620 6620_ lover NPC
+6630 6630_ Guardian NPC
+6640 6640_ Pilgrim
+7040 Dungeons NPC5
+7045 Dungeons NPC5_2
+7060 Dungeons NPC7
+7070 Dungeons NPC8_1
+7075 Dungeons NPC8_2
+7120 Dungeons NPC11
+7150,Dungeons NPC14
+7160 Dungeons NPC15
+7300 7300_ Dungeons NPC : Saw whip
+7310 7310_ Abnormal: Multi-jointed
+8000 Temporary storage space 1
+8001 Temporary storage space 2
+8002 Temporary storage space 3
+8003 Temporary storage space 4
+8004 Temporary storage space 5
+8005 Temporary storage space 6
+8006 Temporary storage space 7
+8007 Temporary storage space 8
+8008 Temporary storage space 9
+8009 Temporary storage space 10
+8010 Temporary storage space 11
+8011 Temporary storage space 12
+8012 Temporary storage space 13
+8013 Temporary storage space 14
+8014 Temporary storage space 15
+8015 Temporary storage space 16
+8016 Temporary storage space 17
+8017 Temporary storage space 18
+8018 Temporary storage space 19
+8019 Temporary storage space 20
+8020 Temporary storage space twenty one
+8021 Temporary storage space twenty two
+8022 Temporary storage space twenty three
+8023 Temporary storage space twenty four
+8024 Temporary storage space twenty five
+8025 Temporary storage space 26
+8026 Temporary storage space 27
+8027 Temporary storage space 28
+8028,Temporary storage space 29
+8029 Temporary storage space 30
+8030 Temporary storage space 31
+8031 Temporary storage space 32
+8032 Temporary storage space 33
+8033 Temporary storage space 34
+8034 Temporary storage space 35
+8035 Temporary storage space 36
+8036 Temporary storage space 37
+8037 Temporary storage space 38
+8038 Temporary storage space 39
+8039 Temporary storage space 40
+8040 Temporary storage space 41
+8041 Temporary storage space 42
+8042 Temporary storage space 43
+8043 Temporary storage space 44
+8044 Temporary storage space 45
+8045 Temporary storage space 46
+8046 Temporary storage space 47
+8047 Temporary storage space 48
+8048 Temporary storage space 49
+8049 Temporary storage space 50
+8050 Temporary storage space 51
+8051 Temporary storage space 52
+8052 Temporary storage space 53
+8053 Temporary storage space 54
+8054 Temporary storage space 55
+8055 Temporary storage space 56
+8056 Temporary storage space 57
+8057 Temporary storage space 58
+8058 Temporary storage space 59
+8059 Temporary storage space 60
+8060 Temporary storage space 61
+8061,Temporary storage space 62
+8062 Temporary storage space 63
+8063 Temporary storage space 64
+8064 Temporary storage space 65
+8065 Temporary storage space 66
+8066 Temporary storage space 67
+8067 Temporary storage space 68
+8068 Temporary storage space 69
+8069 Temporary storage space 70
+8070 Temporary storage space 71
+8071 Temporary storage space 72
+8072 Temporary storage space 73
+8073 Temporary storage space 74
+8074 Temporary storage space 75
+8075 Temporary storage space 76
+8076 Temporary storage space 77
+8077 Temporary storage space 78
+8078 Temporary storage space 79
+8079 Temporary storage space 80
+8080 Temporary storage space 81
+8081 Temporary storage space 82
+8082 Temporary storage space 83
+8083 Temporary storage space 84
+8084 Temporary storage space 85
+8085 Temporary storage space 86
+8086 Temporary storage space 87
+8087 Temporary storage space 88
+8088 Temporary storage space 89
+8089 Temporary storage space 90
+8090 Temporary storage space 91
+8091 Temporary storage space 92
+8092 Temporary storage space 93
+8093 Temporary storage space 94
+8094,Temporary storage space 95
+8095 Temporary storage space 96
+8096 Temporary storage space 97
+8097 Temporary storage space 98
+8098 Temporary storage space 99
+8099 Temporary storage space 100
+8100 Temporary storage space 101
+8101 Temporary storage space 102
+8102 Temporary storage space 103
+8103 Temporary storage space 104
+8104 Temporary storage space 105
+8105 Temporary storage space 106
+8106 Temporary storage space 107
+8107 Temporary storage space 108
+8108 Temporary storage space 109
+8109 Temporary storage space 110
+8110 Temporary storage space 111
+8111 Temporary storage space 112
+8112 Temporary storage space 113
+8113 Temporary storage space 114
+8114 Temporary storage space 115
+8115 Temporary storage space 116
+8116 Temporary storage space 117
+8117 Temporary storage space 118
+8118 Temporary storage space 119
+8119 Temporary storage space 120
+8120 Temporary storage space 121
+8121 Temporary storage space 122
+8122 Temporary storage space one two three
+8123 Temporary storage space 124
+8124 Temporary storage space 125
+8125 Temporary storage space 126
+8126,Temporary storage space 127
+8127 Temporary storage space 128
+8128 Temporary storage space 129
+8129 Temporary storage space 130
+8130 Temporary storage space 131
+8131 Temporary storage space 132
+8132 Temporary storage space 133
+8133 Temporary storage space 134
+8134 Temporary storage space 135
+8135 Temporary storage space 136
+8136 Temporary storage space 137
+8137 Temporary storage space 138
+8138 Temporary storage space 139
+8139 Temporary storage space 140
+8140 Temporary storage space 141
+8141 Temporary storage space 142
+8142 Temporary storage space 143
+8143 Temporary storage space 144
+8144 Temporary storage space 145
+8145 Temporary storage space 146
+8146 Temporary storage space 147
+8147 Temporary storage space 148
+8148 Temporary storage space 149
+8149 Temporary storage space 150
+8150 Temporary storage space 151
+8151 Temporary storage space 152
+8152 Temporary storage space 153
+8153 Temporary storage space 154
+8154 Temporary storage space 155
+8155 Temporary storage space 156
+8156 Temporary storage space 157
+8157 Temporary storage space 158
+8158,Temporary storage space 159
+8159 Temporary storage space 160
+8160 Temporary storage space 161
+8161 Temporary storage space 162
+8162 Temporary storage space 163
+8163 Temporary storage space 164
+8164 Temporary storage space 165
+8165 Temporary storage space 166
+8166 Temporary storage space 167
+8167 Temporary storage space 168
+8168 Temporary storage space 169
+8169 Temporary storage space 170
+8170 Temporary storage space 171
+8171 Temporary storage space 172
+8172 Temporary storage space 173
+8173 Temporary storage space 174
+8174 Temporary storage space 175
+8175 Temporary storage space 176
+8176 Temporary storage space 177
+8177 Temporary storage space 178
+8178 Temporary storage space 179
+8179 Temporary storage space 180
+8180 Temporary storage space 181
+8181 Temporary storage space 182
+8182 Temporary storage space 183
+8183 Temporary storage space 184
+8184 Temporary storage space 185
+8185 Temporary storage space 186
+8186 Temporary storage space 187
+8187 Temporary storage space 188
+8188 Temporary storage space 189
+8189 Temporary storage space 190
+8190,Temporary storage space 191
+8191 Temporary storage space 192
+8192 Temporary storage space 193
+8193 Temporary storage space 194
+8194 Temporary storage space 195
+8195 Temporary storage space 196
+8196 Temporary storage space 197
+8197 Temporary storage space 198
+8198 Temporary storage space 199
+8199 Temporary storage space 200
+8200 Temporary storage space 201
+8201 Temporary storage space 202
+8202 Temporary storage space 203
+8203 Temporary storage space 204
+8204 Temporary storage space 205
+8205 Temporary storage space 206
+8206 Temporary storage space 207
+8207 Temporary storage space 208
+8208 Temporary storage space 209
+8209 Temporary storage space 210
+8210 Temporary storage space 211
+8211 Temporary storage space 212
+8212 Temporary storage space 213
+8213 Temporary storage space 214
+8214 Temporary storage space 215
+8215 Temporary storage space 216
+8216 Temporary storage space 217
+8217 Temporary storage space 218
+8218 Temporary storage space 219
+8219 Temporary storage space 220
+8220 Temporary storage space 221
+8221 Temporary storage space 222
+8222,Temporary storage space 223
+8223 Temporary storage space 224
+8224 Temporary storage space 225
+8225 Temporary storage space 226
+8226 Temporary storage space 227
+8227 Temporary storage space 228
+8228 Temporary storage space 229
+8229 Temporary storage space 230
+8230 Temporary storage space 231
+8231 Temporary storage space 232
+8232 Temporary storage space 233
+8233 Temporary storage space 234
+8234 Temporary storage space 235
+8235 Temporary storage space 236
+8236 Temporary storage space 237
+8237 Temporary storage space 238
+8238 Temporary storage space 239
+8239 Temporary storage space 240
+8240 Temporary storage space 241
+8241 Temporary storage space 242
+8242 Temporary storage space 243
+8243 Temporary storage space 244
+8244 Temporary storage space 245
+8245 Temporary storage space 246
+8246 Temporary storage space 247
+8247 Temporary storage space 248
+8248 Temporary storage space 249
+8249 Temporary storage space 250
+8250 Temporary storage space 251
+8251 Temporary storage space 252
+8252 Temporary storage space 253
+8253 Temporary storage space 254
+8254,Temporary storage space 255
+8255 Temporary storage space 256
+8256 Temporary storage space 257
+8257 Temporary storage space 258
+8258 Temporary storage space 259
+8259 Temporary storage space 260
+8260 Temporary storage space 261
+8261 Temporary storage space 262
+8262 Temporary storage space 263
+8263 Temporary storage space 264
+8264 Temporary storage space 265
+8265 Temporary storage space 266
+8266 Temporary storage space 267
+8267 Temporary storage space 268
+8268 Temporary storage space 269
+8269 Temporary storage space 270
+8270 Temporary storage space 271
+8271 Temporary storage space 272
+8272 Temporary storage space 273
+8273 Temporary storage space 274
+8274 Temporary storage space 275
+8275 Temporary storage space 276
+8276 Temporary storage space 277
+8277 Temporary storage space 278
+8278 Temporary storage space 279
+8279 Temporary storage space 280
+8280 Temporary storage space 281
+8281 Temporary storage space 282
+8282 Temporary storage space 283
+8283 Temporary storage space 284
+8284 Temporary storage space 285
+8285 Temporary storage space 286
+8286,Temporary storage space 287
+8287 Temporary storage space 288
+8288 Temporary storage space 289
+8289 Temporary storage space 290
+8290 Temporary storage space 291
+8291 Temporary storage space 292
+8292 Temporary storage space 293
+8293 Temporary storage space 294
+8294 Temporary storage space 295
+8295 Temporary storage space 296
+8296 Temporary storage space 297
+8297 Temporary storage space 298
+8298 Temporary storage space 299
+8299 Temporary storage space 300
+9999 Phantom (without face)

@@ -1,0 +1,105 @@
+2221000 Basic operations -- 基本操作
+1401100 [TIPS available] Time stop_lock assist -- [TIPS有]時止め_ロックアシスト
+1401111 target operation -- ターゲット操作
+1401113 target assist -- ターゲットアシスト
+1509090 Benefits of target assist off -- ターゲットアシストoffの利点
+1500000 [No TIPS] Lock on -- [TIPS無し]ロックオン
+1500005 [With TIPS] Lock on -- [TIPS有り]ロックオン
+1500100 [No TI] Missile lock -- [TI無し]ミサイルロック
+1401117 Key guide_Right shoulder weapon + multi-lock -- キーガイド_右肩武器+マルチロック
+1411000 [No TIPS] Time stop_Jailbreak_Starting time -- [TIPS無し]時止め_脱獄_開始時
+1411100 [No TIPS] Time stop_Jailbreak_Jamming bullet explanation -- [TIPS無し]時止め_脱獄_ジャミング弾説明
+1500105 [With TIPS] Missile lock -- [TIPS有り]ミサイルロック
+1401141 [TIPS available] Time stop_How to recover -- [TIPS有]時止め_回復やりかた
+1500300 [With TIPS] Wall Hack Radar -- [TIPS有り]ウォールハックレーダー
+1401030 [TIPS available] Time stop_Looking back & EN -- [TIPS有]時止め_振り返り＆EN
+1401121 [No TIPS] Time stop_QB usage -- [TIPS無し]時止め_QB使い方
+1401126 [TIPS available] Time stop_How to use QB -- [TIPS有]時止め_QB使い方
+1401200 Time stop_Asab -- 時止め_アサブ
+1501300 Combat with Assault Boost -- アサルトブーストを使用した戦闘
+1501305 Combat with Assault Boost -- アサルトブーストを使用した戦闘
+1600000 Prolo when defeated -- プロロ 敗北時
+1401300 [TIPS available] Time stop_Vertical catapult -- [TIPS有]時止め_垂直カタパルト
+1501010 Shock value and stagger -- 衝撃値とスタッガー
+1501015 Shock value and stagger -- 衝撃値とスタッガー
+1501020 critical -- クリティカル
+1501025 critical -- クリティカル
+1501100 Residual impact value -- 衝撃値の残留
+1501105 Residual impact value -- 衝撃値の残留
+1501400 undiscovered bonus -- 未発見ボーナス
+1501405 undiscovered bonus -- 未発見ボーナス
+1503100 Weapon attributes -- 武器の属性
+1503105 Weapon attributes -- 武器の属性
+1503200 Weapon usage based on attributes -- 属性による武器の使い分け
+1503205 Weapon usage based on attributes -- 属性による武器の使い分け
+1503210 Ricochet -- 跳弾
+1500010 reload -- リロード
+1500015 reload -- リロード
+1602000 String Defeat -- 文字列　敗北時
+1503110 overheat armament -- オーバーヒート武装
+1503115 overheat armament -- オーバーヒート武装
+1501000 Ranged weapons and charged attacks -- 射撃武器とチャージ攻撃
+1501005 Ranged weapons and charged attacks -- 射撃武器とチャージ攻撃
+2222000 Interrupt operation -- 中断操作
+1503010 explosive weapon -- 爆発系武装
+1503015 explosive weapon -- 爆発系武装
+1500200 [With TIPS] Melee weapons -- [TIPS有り]ミ近接武器
+1500205 [With TIPS] Melee weapons -- [TIPS有り]ミ近接武器
+1501200 Defense by shield -- シールドによる防御
+1501205 Defense by shield -- シールドによる防御
+1501210 Danger attack and just guard -- 危険攻撃とジャストガード
+1501215 Danger attack and just guard -- 危険攻撃とジャストガード
+1502000 Double trigger and shooting recoil -- ダブルトリガーと射撃反動
+1502005 Double trigger and shooting recoil -- ダブルトリガーと射撃反動
+1503000 Characteristics of reverse joint legs -- 逆関節脚部の特徴
+1503005 Characteristics of reverse joint legs -- 逆関節脚部の特徴
+1504000 Features of quadrupeds -- 四脚の特徴
+1504005 Features of quadrupeds -- 四脚の特徴
+1504100 Attack while hovering -- ホバリング中攻撃
+1504105 Attack while hovering -- ホバリング中攻撃
+1504200 quadrupedal tactics -- 四脚の戦術
+1504205 quadrupedal tactics -- 四脚の戦術
+1505000 Tank characteristics -- タンクの特徴
+1505005 Tank characteristics -- タンクの特徴
+1505002 drift turn -- ドリフトターン
+1505007 drift turn -- ドリフトターン
+1502100 Changes in mobility due to assembly -- アセンブルによる機動力の変化
+1502105 Changes in mobility due to assembly -- アセンブルによる機動力の変化
+1502200 Weapon effective range and FCS -- 武装の有効距離とFCS
+1502205 Weapon effective range and FCS -- 武装の有効距離とFCS
+1502110 Change in EN efficiency due to assembly -- アセンブルによるEN効率の変化
+1502115 Change in EN efficiency due to assembly -- アセンブルによるEN効率の変化
+1502300 Combat in high-mobility vehicles -- 高機動機体での戦闘
+1502305 Combat in high-mobility vehicles -- 高機動機体での戦闘
+1601000 Over the wall, when defeated -- 壁越え　敗北時
+1506000 final exam -- 最終試験
+2223000 camera jamming -- カメラ妨害
+2220000 Stan -- スタン
+2219000 up in flames -- 炎上
+2201000 ARM UNIT parts -- ARM UNITパーツ
+2202000 BACK UNIT parts -- BACK UNITパーツ
+2203000 HEAD parts -- HEADパーツ
+2204000 CORE parts -- COREパーツ
+2205000 ARMS parts -- ＡＲＭＳパーツ
+2206000 LEGS parts -- LEGSパーツ
+2207000 BOOSTER parts -- BOOSTERパーツ
+2208000 FCS parts -- FCSパーツ
+2209000 GENERATOR parts -- GENERATORパーツ
+2000000 assemble tutorial -- アセンブルチュートリアル
+2001000 Story mission tutorial -- ストーリーミッションチュートリアル
+2001100 free mission tutorial -- フリーミッションチュートリアル
+2002000 Shop (purchase) tutorial -- ショップ(購入)チュートリアル
+2002010 Shop (Sell) Tutorial -- ショップ(売却)チュートリアル
+2003000 coloring tutorial -- カラーリングチュートリアル
+2003100 marking tutorial -- マーキングチュートリアル
+2003300 Image creation tutorial -- イメージ作成チュートリアル
+2004000 arena tutorial -- アリーナチュートリアル
+2004100 online arena tutorial -- オンラインアリーナチュートリアル
+2005000 ACDATA tutorial -- ACDATAチュートリアル
+2006000 ACTEST tutorial -- ACTESTチュートリアル
+2007000 TRAININGTutorial -- TRAININGチュートリアル
+2008000 ARCHIVE tutorial -- ARCHIVEチュートリアル
+2008100 TIPS tutorial -- TIPSチュートリアル
+2009000 OS enhancement tutorial -- OS強化チュートリアル
+2011000 nameplate tutorial -- ネームプレートチュートリアル
+2012000 nameplate shop tutorial -- ネームプレートショップチュートリアル

@@ -1,309 +1,309 @@
-0 テスト用
-1 炎
-2 毒
-3 ヒル
-4 腐食
-5 疫病
-6 出血
-8 姿隠し
-9 グラビティ使用者
-10 状態異常回復【毒】
-11 状態異常回復【疫病】
-12 状態異常回復【出血】
-13 状態異常回復【万能】
-14 ソウルスティール
-15 ズーム
-16 ワープ
-17 デモンズソウル
-18 黒ゴースト退散
-19 強ゴースト
-20 ホワイト希望
-21 ブラック希望
-22 黒ゴースト化
-23 蘇生
-24 魔法使用禁止
-25 奇跡モーション延長
-26 砥石
-27 仮死蘇生
-28 武器強化
-29 防御シールド
-30 糸まみれ
-31 【システム】ゴーストパラム変化
-32 金縛り
-33 蠅たかり
-34 炎怪人_第１段階
-35 炎怪人_第２段階
-36 炎怪人_第３段階
-37 炎怪人_第４段階
-38 幻聴
-39 ソウルコイン
-40 強防御シールド
-41 火耐性シールド
-42 HP回復状態
-43 強制ゴースト化 第1段階
-44 強制ゴースト化 第2段階
-45 強制ゴースト化 第3段階
-46 フェロモン
-47 猫着地
-48 ピンチ攻撃力アップ
-49 ピンチ防御力アップ
-50 リジェネレイト
-51 たいまつ
-52 弱リジェネレイト
-53 弱ゴーストカムフラージュ
-54 弱姿隠し
-55 ヒント血文字
-56 ヒル足
-57 黄衣
-58 点光源
-59 血文字評価
-60 武器強化【中】
-61 武器強化【大】
-62 炎強化
-63 炎強化【大】
-64 魔法強化
-65 キメラ強化
-66 アイテムドロップ補正
-67 MPリジェネレイト
-68 弱MPリジェネレイト
-69 死んだとき復活
-70 毒耐性UP
-71 魔法威力UP
-72 魔法防御UP
-73 出血耐性UP
-74 疫病耐性UP
-75 スタミナ回復UP
-76 ソウル取得UP
-77 炎耐性UP
-78 王の盾1段階左足
-79 王の盾2段階左足
-80 王の盾3段階左足
-91 王の盾1段階右足
-92 王の盾2段階右足
-93 王の盾3段階右足
-94 審判者腹出血
-95 擬態
-96 変身
-97 ガスマン
-98 探知
-99 協力待ち
-100 協力
-101 協力送信
-102 グラビティ
-103 邪眼
-104 状態解除【協力待ち】
-105 エフェクトLv1
-106 エフェクトLv2
-107 エフェクトLv3
-108 邪眼Lv1
-109 邪眼Lv2
-110 カウンター
-111 植卵スタンバイ
-112 植卵
-113 卵頭スタンバイ
-114 卵頭
-115 超軽量移動
-116 呪い
-117 石化
-118 呪い解除
-119 人間性ダメージ
-120 ダメージアニメ変化_SA時限定
-121 ダメージアニメ変化_追加
-122 水中挙動
-123 武器頭
-124 武器胴
-125 武器手
-126 武器脚
-127 眠り
-128 ミミック_擬態
-129 ミミック_擬態眠り
-130 ミミック_通常
-131 ミミック_通常眠り
-132 魅了
-133 血文字取得
-134 はじき変化
-135 ミミック_通常眠り始め
-136 結晶化
-137 共鳴Lv0
-138 共鳴Lv1
-139 共鳴Lv2
-140 共鳴Lv3
-141 共鳴Lv4
-142 行動ID指定
-143 敵_不死
-144 敵_仮死
-145 聖属性
-146 全身砥石
-147 ライト魔法
-148 救援要請
-149 白救援
-150 黒救援
-151 雷強化
-152 毒強化
-153 疫病強化
-154 エスト使用不可
-155 SA強化
-156 耐久度減少無効
-157 対霊強化
-158 【SP】松明_炎エフェクト
-159 通常死んだとき指輪復活
-160 呪いで死んだとき指輪復活
-161 ワープB
-162 ワープC
-163 ワープD
-164 ワープE
-165 ワープA
-166 誓約破棄
-167 【SP】全身変身
-168 精密強化
-169 共鳴強化
-170 因果応報
-171 因果応報爆発
-172 シース無敵１
-173 シース無敵２
-174 シース無敵３
-175 人間性復活
-176 ソウルコイン(不死系)
-177 ソウルコイン(獣系)
-178 味方強化魔法
-179 呪い効果Lv1
-180 呪い効果Lv2
-181 呪い効果Lv3
-182 呪い効果Lv4
-183 SOS可視
-184 インビジブルウェポン
-185 ニト効果
-186 炎キック
-187 死神化
-188 シームレス協力希望
-189 シームレス協力要請
-190 シームレス侵入希望
-191 シームレス侵入許可
-192 卵頭_二段目
-193 寿命延長
-194 魔法使用回数アップ
-195 ドラゴンニュートサイン
-196 賞金首サイン
-197 カウンターアップ
-198 卵くだし
-199 HPドレイン
-200 狂気の力
-201 魔法禁止エフェクト用
-202 竜咆哮
-203 魔法使用回数ダウン
-204 ガード強化【大】
-205 【DLC】闇強化
-206 闘技場1対1【小】テリトリ内
-207 闘技場2対2【小】テリトリ内
-208 闘技場バトルロイヤル【小】テリトリ内
-209 闘技場1対1【小】召喚希望A
-210 闘技場1対1【小】召喚希望B
-211 闘技場2対2【小】召喚希望A1
-212 闘技場2対2【小】召喚希望A2
-213 闘技場2対2【小】召喚希望B1
-214 闘技場2対2【小】召喚希望B2
-215 闘技場バトルロイヤル【小】召喚希望A
-216 闘技場バトルロイヤル【小】召喚希望B
-217 闘技場バトルロイヤル【小】召喚希望C
-218 闘技場バトルロイヤル【小】召喚希望D
-219 闘技場1対1【大】テリトリ内
-220 闘技場2対2【大】テリトリ内
-221 闘技場バトルロイヤル【大】テリトリ内
-222 闘技場1対1【大】召喚希望A
-223 闘技場1対1【大】召喚希望B
-224 闘技場2対2【大】召喚希望A1
-225 闘技場2対2【大】召喚希望A2
-226 闘技場2対2【大】召喚希望B1
-227 闘技場2対2【大】召喚希望B2
-228 闘技場バトルロイヤル【大】召喚希望A
-229 闘技場バトルロイヤル【大】召喚希望B
-230 闘技場バトルロイヤル【大】召喚希望C
-231 闘技場バトルロイヤル【大】召喚希望D
-232 闘技場使用禁止アイテム使用禁止
-233 闘技場死亡
-234 闘技場暫定１位
-235 闘技場NoDead
-236 闘技場同率１位
-237 黒竜の指輪
-238 闘技場10勝以上
-239 闘技場30勝以上
-240 闘技場50勝以上
-241 闘技場100勝以上
-242 血材質上書き
-243 血材質_血
-244 血材質_炎
-245 血材質_血少
-246 重ね掛け魔法A_LV1
-247 重ね掛け魔法A_LV2
-248 重ね掛け魔法A_LV3
-249 重ね掛け魔法B_LV1
-250 重ね掛け魔法B_LV2
-251 重ね掛け魔法B_LV3
-252 油まみれ
-253 火だるま
-254 取り憑かれ中
-255 暗闇魔法
-256 焼死体燃焼レベル1
-257 焼死体燃焼レベル2
-258 群衆女_焼きごて赤熱
-260 獣化
-261 状態異常回復【獣化】
-262 闇の旅団_武器強化
-263 太陽協力要請
-264 太陽協力希望
-266 裏切り侵入希望
-267 裏切り発動
-268 獣化エフェクト
-270 教会の殺し屋　オーラ
-272 役割光源_協力プレイ中
-276 役割光源_敵対プレイ中
-290 拳獣_モードA
-291 拳獣_モードB
-292 敵ドロップソウル保持
-294 獣化許可中
-295 銃弾強化
-298 月からの使者（小）_強化 
-299 医療教会のフランケン_両手の炎
-300 ダンジョン_動物系_毒纏い小 
-301 ダンジョン_動物系_毒纏い大
-302 ダンジョン_周囲強化司祭_髑髏発光 
-303 【SP】D属性　火エンチャント３ 
-304 【SP】D属性　火エンチャント４
-305 【SP】D属性　火エンチャント５
-306 【SP】D属性　火エンチャント６
-307 【SP】D属性　毒エンチャント２
-308 【SP】D属性　毒エンチャント３
-309 【SP】D属性　毒エンチャント４
-310 【SP】D属性　毒エンチャント５
-311 【SP】D属性　毒エンチャント６
-312 教会の使者_鎌の青い炎 
-313 教会の使者_十字架の怨霊 
-318 拠点老人（覚醒）_強化
-320 幽霊敵カムフラージュ
-321 幽霊敵カムフラージュ効果オン
-322 メッセンジャー評価通知
-323 役割光源_天敵（血族）プレイ中
-324 役割光源_天敵（血族狩り）プレイ中
-325 役割光源_天敵（狩人狩り）プレイ中
-327 世界移動直後の石ころ帽子効果
-337 ガンハンマ
-338 処刑人（悪夢）　顔面定着SFX
-339 処刑人（悪夢）　エンチャントSFX
-340 闇堕ちハンター_爆鎚
-341 闇堕ちハンター 松明
-344 c402X_下水ネズミ_目の光
-345 c402X_聖堂NPCの声
-346 魚人Bの杖発光
-347 患者A（二足）の毒手VFX
-348 闇堕ちハンター_光る目
-349 患者B_宇宙召喚MAX
-350 月光剣モードB
-351 獣半変身
-352 獣全変身
-353 ナメクジ半変身
-354 ナメクジ全変身
-356 獣武器変身
-357 なめくじ武器変身
-358 なめくじ武器判定
-59999 実装テスト用
-60000 最大数(選択禁止)
+0 For testing
+1 flame
+2 poison
+3 Hill
+4 corrosion
+5 Epidemic
+6 bleeding
+8 Hiding
+9 Gravity User
+10 Status Abnormality Recovery [Poison]
+11 Status Abnormality Recovery [Plague]
+12 Status Abnormal Recovery [Bleeding]
+13 Status Abnormality Recovery [Universal]
+14 Soul Steal
+15 zoom
+16 warp
+17 Demon's Souls
+18 Black Ghost Disappears
+19 Strong Ghost
+20 White Hope
+21 Black Hope
+22 Black Ghosting
+23 resuscitation
+24 No magic allowed
+25 Miracle Motion Extended
+26 Grindstone
+27 Asphyxiation Resuscitation
+28 Weapon Enhancement
+29 Defensive Shield
+30 Covered in threads
+31 [System] Ghost Param Change
+32 Sleep paralysis
+33 Swarm of flies
+34 Flame Monster _ Phase 1
+35 Flame Monster _ Second Phase
+36 Flame Monster _ Third Stage
+37 Flame Monster _ Phase 4
+38 Auditory hallucinations
+39 Soul Coin
+40 Strong Defense Shield
+41,Fire Resistant Shield
+42 HP Recovery Status
+43 Forced Ghosting Part 1 step
+44 Forced Ghosting Part 2 step
+45 Forced Ghosting Part 3 step
+46 Pheromones
+47 Cat Landing
+48 Increased attack power in a pinch
+49 Increased defense in pinches
+50 Regenerate
+51 Torch
+52 Weak Regenerate
+53 Weak Ghost Camouflage
+54 Hiding a Weak Appearance
+55 Hint: Blood characters
+56 Leech leg
+57 Yellow Robe
+58 Point Light
+59 Blood writing evaluation
+60 Weapon Enhancement [Medium]
+61 Weapon Enhancement [Large]
+62 Fire Enhancement
+63 Fire Enhancement [Large]
+64 Magic Enhancement
+65 Chimera Enhancement
+66 Item Drop Modifier
+67 MP Regenerate
+68 weak MP Regenerate
+69 Resurrected when dead
+70 Poison Resistance UP
+71 Magic Power UP
+72 Magic Defense UP
+73 Bleed Resistance UP
+74 Resistance to plague UP
+75 Stamina Recovery UP
+76,Get Soul UP
+77 Fire Resistance UP
+78 King's Shield 1 Stage left foot
+79 King's Shield 2 Stage left foot
+80 King's Shield 3 Stage left foot
+91 King's Shield 1 Stage Right Foot
+92 King's Shield 2 Stage Right Foot
+93 King's Shield 3 Stage Right Foot
+94 Judge Abdominal Hemorrhage
+95 Mimicry
+96 Transformation
+97 Gasman
+98 Detect
+99 Waiting for cooperation
+100 cooperation
+101 Collaborative Transmission
+102 Gravity
+103 Evil Eye
+104 Status canceled [Waiting for cooperation]
+105 effect Lv1
+106 effect Lv2
+107 effect Lv3
+108 Evil Eye Lv1
+109 Evil Eye Lv2
+110 counter
+111 Egg planting standby
+112 Egg planting
+113 Egg head standby
+114 Egg Head
+115 Ultra-lightweight travel
+116 curse
+117 Petrification
+118 Remove Curse
+119 Damage to humanity
+120 Damage animation change _SA Time limited
+121 Damage animation change _ addition
+122 Underwater behavior
+123 Weapon Head
+124 Weapon Body
+125,Weapon Holder
+126 Weapon Legs
+127 sleep
+128 mimic _ Mimicry
+129 mimic _ Mimic Sleep
+130 mimic _ usually
+131 mimic _ Normal sleep
+132 Fascinating
+133 Blood writing obtained
+134 Flip Change
+135 mimic _ Usually starts to fall asleep
+136 Crystallization
+137 Resonance Lv0
+138 Resonance Lv1
+139 Resonance Lv2
+140 Resonance Lv3
+141 Resonance Lv4
+142 Actions ID designation
+143 enemy _ Immortality
+144 enemy _ Asphyxiation
+145 Holy Attribute
+146 Full Body Whetstone
+147 Light Magic
+148 Request for help
+149 White Rescue
+150 Black Rescue
+151 Lightning Enhancement
+152 Poison Boost
+153 Epidemic Strengthening
+154 Est cannot be used
+155 SA Enhancement
+156 Durability reduction immunity
+157 Strengthening Anti-Spirit
+158 [ SP 】torch _ Flame Effect
+159 Ring revives when you die normally
+160 Ring revived when killed by curse
+161 warp B
+162 warp C
+163 warpD
+164 warp E
+165 warp A
+166 Breaking the Pledge
+167 [ SP 】Full body transformation
+168 Precision Reinforcement
+169 Resonance Enhancement
+170 What goes around comes around
+171 Karma Explosion
+172 Sheath Invincible 1
+173 Sheath Invincible 2
+174 Sheath Invincible 3
+175 Restoration of humanity
+176 Soul Coin ( Immortal )
+177 Soul Coin ( Beast )
+178 Ally Strengthening Magic
+179 Curse Effect Lv1
+180 Curse Effect Lv2
+181 Curse Effect Lv3
+182 Curse Effect Lv4
+183 SOS Visibility
+184 Invisible Weapon
+185 Nitto effect
+186 Flame Kick
+187 Death
+188 Hope for seamless cooperation
+189 Seamless cooperation request
+190 Seamless Intrusion Request
+191 Seamless Entry Permit
+192 Egg Head _ Second tier
+193 Life extension
+194 Increased number of magic uses
+195 Dragon Newt Sign
+196 Bounty Sign
+197 Counter Up
+198 Eggs
+199 HP drain
+200,The Power of Madness
+201 For magic ban effect
+202 Dragon Roar
+203 Reduces the number of times magic is used
+204 Guard Strengthening [Large]
+205 [ DLC 】 Darkness Enhancement
+206 Arena 1 versus 1 [Small] Within the territory
+207 Arena 2 versus 2 [Small] Within the territory
+208 Arena Battle Royale [Small] Territory
+209 Arena 1 versus 1 [Small] Summon request A
+210 Arena 1 versus 1 [Small] Summon request B
+211 Arena 2 versus 2 [Small] Summon request A1
+212 Arena 2 versus 2 [Small] Summon request A2
+213 Arena 2 versus 2 [Small] Summon request B1
+214 Arena 2 versus 2 [Small] Summon request B2
+215 Arena Battle Royale [Small] Summon Request A
+216 Arena Battle Royale [Small] Summon Request B
+217,Arena Battle Royale [Small] Summon Request C
+218 Arena Battle Royale [Small] Summon Request D
+219 Arena 1 versus 1 [Large] Within the territory
+220 Arena 2 versus 2 [Large] Within the territory
+221 Within the Arena Battle Royale [Large] Territory
+222 Arena 1 versus 1 [Large] Summon Request A
+223 Arena 1 versus 1 [Large] Summon Request B
+224 Arena 2 versus 2 [Large] Summon Request A1
+225 Arena 2 versus 2 [Large] Summon Request A2
+226 Arena 2 versus 2 [Large] Summon Request B1
+227 Arena 2 versus 2 [Large] Summon Request B2
+228 Arena Battle Royale [Large] Summon Request A
+229 Arena Battle Royale [Large] Summon Request B
+230 Arena Battle Royale [Large] Summon Request C
+231,Arena Battle Royale [Large] Summon Request D
+232 Prohibited items in the Arena are prohibited
+233 Arena Death
+234 Arena provisional No. 1
+235 Arena NoDead
+236 Tied for 1st place in the Arena
+237 Black Dragon Ring
+238 Arena 10 Win or more
+239 Arena 30 Win or more
+240 Arena 50 Win or more
+241 Arena 100 Win or more
+242 Blood Material Overwrite
+243 Blood Material _ blood
+244 Blood Material _ flame
+245 Blood Material _ Low blood
+246 Stacking Magic A_LV1
+247 Stacking Magic A_LV2
+248 Stacking Magic A_LV3
+249 Stacking Magic B_LV1
+250 Stacking Magic B_LV2
+251 Stacking Magic B_LV3
+252 Covered in oil
+253 Fireman
+254 Possessed
+255 Darkness Magic
+256 Burned corpse combustion level 1
+257 Burned corpse combustion level 2
+258 Crowd Woman _ Branding iron red hot
+260 Beastification
+261 Status Abnormality Recovery [Beast Form]
+262,Dark Brigade _ Weapon Enhancement
+263 Solar Cooperation Request
+264 Hope for solar cooperation
+266 Betrayal Invasion Hope
+267 Betrayal Activated
+268 Beast Effect
+270 Church Killer Aura
+272 Role Light Source _ During cooperative play
+276 Role Light Source _ During hostile play
+290 Fist Beast _ mode A
+291 Fist Beast _ mode B
+292 Enemy Drop Soul Hold
+294 Beastification permitted
+295 Bullet Enhancement
+298 Messenger from the Moon (small) _ Enhancement
+299 Frankenstein of the Medical Church _ Flames in Both Hands
+300 Dungeons _ Animal _ Poison Scarlet
+301 Dungeons _ Animal _ Poison Coat Large
+302 Dungeons _ Periphery Strengthening Priest _ Skull glow
+303 [ SP 】 D Attribute Fire Enchantment 3
+304 [ SP 】 D Attribute Fire Enchantment 4
+305 [ SP 】 DAttribute Fire Enchantment 5
+306 [ SP 】 D Attribute Fire Enchantment 6
+307 [ SP 】 D Attribute Poison Enchantment 2
+308 [ SP 】 D Attribute Poison Enchantment 3
+309 [ SP 】 D Attribute Poison Enchantment 4
+310 [ SP 】 D Attribute Poison Enchantment 5
+311 [ SP 】 D Attribute Poison Enchantment 6
+312 Church Emissary _ Scythe blue flame
+313 Church Emissary _ Ghost of the Cross
+318 Base Elderly (Awakened) _ Enhancement
+320 Ghost Enemy Camouflage
+321 Ghost enemy camouflage effect on
+322 Messenger rating notification
+323 Role Light Source _ Playing as Nemesis (Bloodline)
+324 Role Light Source _ Currently playing Natural Enemy (Bloodline Hunting)
+325 Role Light Source _ Playing Natural Enemy (Hunter Hunt)
+327,The stone cap effect immediately after the world shift
+337 Gunhammer
+338 Executioner (Nightmare) Face Fixation SFX
+339 Executioner (Nightmare) Enchantment SFX
+340 Fallen Hunter _ Bomber
+341 Dark Hunter Torch
+344 c402X_ Sewer rat _ Eye light
+345 c402X_ Cathedral NPC Voices
+346 Fishman B Wand glow
+347 patient A (Bipedal) Poison Claws VFX
+348 Fallen Hunter _ Glowing Eyes
+349 patient B_ Space Summoning MAX
+350 Moonlight Sword Mode B
+351 Half-beast transformation
+352 Beast Full Transformation
+353 Slug semi-transformation
+354 Slug full transformation
+356 Beast Weapon Transformation
+357 Slug Weapon Transformation
+358 Slug Weapon Check
+59999 For implementation testing
+60000 Maximum number ( Do not select )

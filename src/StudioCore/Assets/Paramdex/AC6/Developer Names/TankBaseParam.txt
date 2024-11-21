@@ -1,0 +1,8 @@
+0 reservation -- 予約
+300 personal tank -- 自機タンク
+302 Own tank (LG_M_7510) -- 自機タンク(LG_M_7510)
+3150 juggernaut -- ジャガーノート
+4000 ADF
+5200 combat vehicle -- 戦闘車輌
+5250 sunflower -- サンフラワー
+9999 enemy general purpose -- 敵の汎用

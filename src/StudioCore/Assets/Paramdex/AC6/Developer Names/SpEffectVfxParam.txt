@@ -1,0 +1,791 @@
+0 for testing -- テスト用
+1 flame -- 炎
+2 poison -- 毒
+3 hill -- ヒル
+4 corrosion -- 腐食
+5 plague -- 疫病
+6 bleeding -- 出血
+8 Hiding -- 姿隠し
+9 gravity user -- グラビティ使用者
+10 Status abnormality recovery [poison] -- 状態異常回復【毒】
+11 Abnormal status recovery [plague] -- 状態異常回復【疫病】
+12 Abnormal status recovery [bleeding] -- 状態異常回復【出血】
+13 Abnormal status recovery [all-purpose] -- 状態異常回復【万能】
+14 soul steal -- ソウルスティール
+15 zoom -- ズーム
+16 warp -- ワープ
+17 demon's souls -- デモンズソウル
+18 black ghost exorcism -- 黒ゴースト退散
+19 strong ghost -- 強ゴースト
+20 white hope -- ホワイト希望
+21 black hope -- ブラック希望
+22 black ghosting -- 黒ゴースト化
+23 resuscitation -- 蘇生
+24 Prohibition of using magic -- 魔法使用禁止
+25 miracle motion extension -- 奇跡モーション延長
+26 whetstone -- 砥石
+27 Asphyxia resuscitation -- 仮死蘇生
+28 Weapon enhancement -- 武器強化
+29 defensive shield -- 防御シールド
+30 Covered in thread -- 糸まみれ
+31 [System] Ghost param change -- 【システム】ゴーストパラム変化
+32 money bondage -- 金縛り
+33 Fly hunting -- 蠅たかり
+34 [GR Proto] Freezing slime -- 【GRプロト】スライム凍結
+35 Flame Monster_Second Stage -- 炎怪人_第２段階
+36 Flame monster_3rd stage -- 炎怪人_第３段階
+37 Flame monster_4th stage -- 炎怪人_第４段階
+38 auditory hallucination -- 幻聴
+39 soul coin -- ソウルコイン
+40 Strong defense shield -- 強防御シールド
+41 fire resistant shield -- 火耐性シールド
+42 HP recovery state -- HP回復状態
+43 Forced Ghosting Stage 1 -- 強制ゴースト化 第1段階
+44 Forced Ghosting Stage 2 -- 強制ゴースト化 第2段階
+45 Forced Ghosting Stage 3 -- 強制ゴースト化 第3段階
+46 pheromones -- フェロモン
+47 cat landing -- 猫着地
+48 Increases pinch attack power -- ピンチ攻撃力アップ
+49 Increases pinch defense power -- ピンチ防御力アップ
+50 regenerate -- リジェネレイト
+51 torch -- たいまつ
+52 Weak regenerate -- 弱リジェネレイト
+53 weak ghost camouflage -- 弱ゴーストカムフラージュ
+54 hide your weak appearance -- 弱姿隠し
+55 tips blood letters -- ヒント血文字
+56 leech foot -- ヒル足
+57 Yellow coat -- 黄衣
+58 point light source -- 点光源
+59 blood letter evaluation -- 血文字評価
+60 Weapon reinforcement [medium] -- 武器強化【中】
+61 Weapon enhancement [Large] -- 武器強化【大】
+62 flame reinforcement -- 炎強化
+63 Flame Enhancement [Large] -- 炎強化【大】
+64 Magic enhancement -- 魔法強化
+65 Chimera reinforcement -- キメラ強化
+66 Item drop correction -- アイテムドロップ補正
+67 MP regenerate -- MPリジェネレイト
+68 Weak MP regenerate -- 弱MPリジェネレイト
+69 resurrection when dead -- 死んだとき復活
+70 Poison resistance UP -- 毒耐性UP
+71 Magic power UP -- 魔法威力UP
+72 Magic defense UP -- 魔法防御UP
+73 Bleeding resistance UP -- 出血耐性UP
+74 Epidemic resistance UP -- 疫病耐性UP
+75 Stamina recovery UP -- スタミナ回復UP
+76 Soul acquisition UP -- ソウル取得UP
+77 Fire resistance UP -- 炎耐性UP
+78 King's Shield Level 1 Left Foot -- 王の盾1段階左足
+79 King's Shield Level 2 Left Foot -- 王の盾2段階左足
+80 King's Shield Level 3 Left Foot -- 王の盾3段階左足
+91 King's Shield Level 1 Right Foot -- 王の盾1段階右足
+92 King's Shield Stage 2 Right Leg -- 王の盾2段階右足
+93 King's Shield Stage 3 Right Leg -- 王の盾3段階右足
+94 Referee abdominal bleeding -- 審判者腹出血
+95 mimicry -- 擬態
+96 [SP] Transformation -- 【SP】変身
+97 Gasman -- ガスマン
+98 detection -- 探知
+99 Waiting for cooperation -- 協力待ち
+100 cooperation -- 協力
+101 cooperation sending -- 協力送信
+102 gravity -- グラビティ
+103 evil eye -- 邪眼
+104 Status release [waiting for cooperation] -- 状態解除【協力待ち】
+105 Effect Lv1 -- エフェクトLv1
+106 Effect Lv2 -- エフェクトLv2
+107 Effect Lv3 -- エフェクトLv3
+108 Evil eye Lv1 -- 邪眼Lv1
+109 Evil eye Lv2 -- 邪眼Lv2
+110 counter -- カウンター
+111 Egg planting standby -- 植卵スタンバイ
+112 Egg planting -- 植卵
+113 egg head standby -- 卵頭スタンバイ
+114 egg head -- 卵頭
+115 ultralight travel -- 超軽量移動
+116 curse -- 呪い
+117 petrification -- 石化
+118 curse removed -- 呪い解除
+119 human nature damage -- 人間性ダメージ
+120 Damage animation change_SA time only -- ダメージアニメ変化_SA時限定
+121 Damage animation change_added -- ダメージアニメ変化_追加
+122 Underwater behavior -- 水中挙動
+123 weapon head -- 武器頭
+124 weapon body -- 武器胴
+125 weapon hand -- 武器手
+126 weapon legs -- 武器脚
+127 sleep -- 眠り
+128 Mimic_mimicry -- ミミック_擬態
+129 Mimic_mimetic sleep -- ミミック_擬態眠り
+130 Mimic_Normal -- ミミック_通常
+131 Mimic_normal sleep -- ミミック_通常眠り
+132 Fascinating -- 魅了
+133 Blood letter acquisition -- 血文字取得
+134 Repulsion change -- はじき変化
+135 Mimic_starts to sleep normally -- ミミック_通常眠り始め
+136 crystallization -- 結晶化
+137 Resonance Lv0 -- 共鳴Lv0
+138 Resonance Lv1 -- 共鳴Lv1
+139 Resonance Lv2 -- 共鳴Lv2
+140 Resonance Lv3 -- 共鳴Lv3
+141 Resonance Lv4 -- 共鳴Lv4
+142 Action ID specification -- 行動ID指定
+143 enemy_immortality -- 敵_不死
+144 Enemy_Asphyxia -- 敵_仮死
+145 holy attribute -- 聖属性
+146 whole body whetstone -- 全身砥石
+147 light magic -- ライト魔法
+148 Relief request -- 救援要請
+149 white relief -- 白救援
+150 black relief -- 黒救援
+151 Lightning enhancement -- 雷強化
+152 Poison enhancement -- 毒強化
+153 Epidemic reinforcement -- 疫病強化
+154 Est cannot be used -- エスト使用不可
+155 SA reinforcement -- SA強化
+156 Durability reduction disabled -- 耐久度減少無効
+157 Anti-spirit enhancement -- 対霊強化
+158 Guard reinforcement -- ガード強化
+159 Ring usually revives when you die -- 通常死んだとき指輪復活
+160 Ring revives when you die due to curse -- 呪いで死んだとき指輪復活
+161 Warp B -- ワープB
+162 Warp C -- ワープC
+163 Warp D -- ワープD
+164 Warp E -- ワープE
+165 Warp A -- ワープA
+166 Abandonment of vows -- 誓約破棄
+167 [SP] Whole body transformation -- 【SP】全身変身
+168 precision reinforcement -- 精密強化
+169 resonance enhancement -- 共鳴強化
+170 cause and effect -- 因果応報
+171 cause and effect explosion -- 因果応報爆発
+172 sheath invincible 1 -- シース無敵１
+173 sheath invincible 2 -- シース無敵２
+174 sheath invincible 3 -- シース無敵３
+175 revival of humanity -- 人間性復活
+176 Soul coin (immortal type) -- ソウルコイン(不死系)
+177 Soul coin (beast type) -- ソウルコイン(獣系)
+178 Ally strengthening magic -- 味方強化魔法
+179 Curse effect Lv1 -- 呪い効果Lv1
+180 Curse effect Lv2 -- 呪い効果Lv2
+181 Curse effect Lv3 -- 呪い効果Lv3
+182 Curse effect Lv4 -- 呪い効果Lv4
+183 SOS visible -- SOS可視
+184 invisible weapon -- インビジブルウェポン
+185 nit effect -- ニト効果
+186 flame kick -- 炎キック
+187 Grim reaper -- 死神化
+188 Request to summon forest thieves -- 森の盗賊団召喚希望
+189 Inside the Forest Thieves Territory -- 森の盗賊団テリトリ内
+190 Hope to summon the queen's younger brother -- 王母弟召喚希望
+191 In the queen mother's younger brother's territory -- 王母弟テリトリ内
+192 Egg head_second stage -- 卵頭_二段目
+193 Life extension -- 寿命延長
+194 Increase number of magic uses -- 魔法使用回数アップ
+195 dragon newt sign -- ドラゴンニュートサイン
+196 bounty head sign -- 賞金首サイン
+197 counter up -- カウンターアップ
+198 Egg soup -- 卵くだし
+199 HP drain -- HPドレイン
+200 power of madness -- 狂気の力
+201 For magic ban effect -- 魔法禁止エフェクト用
+202 dragon roar -- 竜咆哮
+203 Reduces number of magic uses -- 魔法使用回数ダウン
+204 Guard reinforcement [Large] -- ガード強化【大】
+205 [DLC] Dark reinforcement -- 【DLC】闇強化
+206 Arena 1v1 [Small] Inside the territory -- 闘技場1対1【小】テリトリ内
+207 Arena 2 vs 2 [Small] Inside the territory -- 闘技場2対2【小】テリトリ内
+208 Arena Battle Royale [Small] Inside the territory -- 闘技場バトルロイヤル【小】テリトリ内
+209 Arena 1v1 [Small] Summoning Request A -- 闘技場1対1【小】召喚希望A
+210 Arena 1v1 [Small] Summoning Request B -- 闘技場1対1【小】召喚希望B
+211 Arena 2 vs 2 [Small] Summoning request A1 -- 闘技場2対2【小】召喚希望A1
+212 Arena 2 vs 2 [Small] Summoning request A2 -- 闘技場2対2【小】召喚希望A2
+213 Arena 2 vs 2 [Small] Summoning Hope B1 -- 闘技場2対2【小】召喚希望B1
+214 Arena 2 vs 2 [Small] Summoning request B2 -- 闘技場2対2【小】召喚希望B2
+215 Arena Battle Royale [Small] Summoning Request A -- 闘技場バトルロイヤル【小】召喚希望A
+216 Arena Battle Royale [Small] Summoning Request B -- 闘技場バトルロイヤル【小】召喚希望B
+217 Arena Battle Royale [Small] Summoning Request C -- 闘技場バトルロイヤル【小】召喚希望C
+218 Arena Battle Royale [Small] Summoning Hope D -- 闘技場バトルロイヤル【小】召喚希望D
+219 Arena 1v1 [Large] Inside the territory -- 闘技場1対1【大】テリトリ内
+220 Arena 2v2 [Large] Inside the territory -- 闘技場2対2【大】テリトリ内
+221 Arena Battle Royale [Large] Inside the territory -- 闘技場バトルロイヤル【大】テリトリ内
+222 Arena 1v1 [Large] Summoning Hope A -- 闘技場1対1【大】召喚希望A
+223 Arena 1v1 [Large] Summoning Request B -- 闘技場1対1【大】召喚希望B
+224 Arena 2 vs 2 [Large] Summoning Hope A1 -- 闘技場2対2【大】召喚希望A1
+225 Arena 2 vs 2 [Large] Summoning Hope A2 -- 闘技場2対2【大】召喚希望A2
+226 Arena 2 vs 2 [Large] Summoning Hope B1 -- 闘技場2対2【大】召喚希望B1
+227 Arena 2 vs 2 [Large] Summoning Hope B2 -- 闘技場2対2【大】召喚希望B2
+228 Arena Battle Royale [Large] Summoning Request A -- 闘技場バトルロイヤル【大】召喚希望A
+229 Arena Battle Royale [Large] Summoning Request B -- 闘技場バトルロイヤル【大】召喚希望B
+230 Arena Battle Royale [Large] Summoning Hope C -- 闘技場バトルロイヤル【大】召喚希望C
+231 Arena Battle Royale [Large] Summoning Hope D -- 闘技場バトルロイヤル【大】召喚希望D
+232 Prohibited to use arena items Prohibited to use items -- 闘技場使用禁止アイテム使用禁止
+233 death in arena -- 闘技場死亡
+234 Tentative 1st place in the arena -- 闘技場暫定１位
+235 Arena NoDead -- 闘技場NoDead
+236 Arena tie for 1st place -- 闘技場同率１位
+237 black dragon ring -- 黒竜の指輪
+238 10 or more wins in the arena -- 闘技場10勝以上
+239 30 or more wins in the arena -- 闘技場30勝以上
+240 50 wins or more in the arena -- 闘技場50勝以上
+241 100 wins or more in the arena -- 闘技場100勝以上
+242 Blood material overwrite -- 血材質上書き
+243 Blood material_blood -- 血材質_血
+244 Blood material_flame -- 血材質_炎
+245 Blood material_little blood -- 血材質_血少
+246 Layered magic A_LV1 -- 重ね掛け魔法A_LV1
+247 Layered magic A_LV2 -- 重ね掛け魔法A_LV2
+248 Layered magic A_LV3 -- 重ね掛け魔法A_LV3
+249 Layered magic B_LV1 -- 重ね掛け魔法B_LV1
+250 Layered magic B_LV2 -- 重ね掛け魔法B_LV2
+251 Layered magic B_LV3 -- 重ね掛け魔法B_LV3
+252 covered in oil -- 油まみれ
+253 Fire Daruma -- 火だるま
+254 being possessed -- 取り憑かれ中
+255 darkness magic -- 暗闇魔法
+256 Burnt corpse combustion level 1 -- 焼死体燃焼レベル1
+257 Burnt corpse combustion level 2 -- 焼死体燃焼レベル2
+258 Sound magnification change -- 音倍率変更
+259 Target down -- ターゲットダウン中
+260 eclipse -- 蝕
+261 Maggot -- 蛆
+262 Status abnormality recovery [Maggot] -- 状態異常回復【蛆】
+263 bleeding condition -- 出血状態
+264 Ceremony possible -- 儀式可能
+265 quick match request -- クイックマッチリクエスト
+266 Death while falling is disabled -- 落下中死亡無効
+267 Visual range change -- 視覚範囲変更
+268 eclipse death -- 蝕死亡
+269 Double chanting in progress -- 二重詠唱中
+270 General Avatar Buff 1 -- 汎用アバターバフ1
+271 General Avatar Buff 2 -- 汎用アバターバフ2
+272 General Avatar Buff 3 -- 汎用アバターバフ3
+273 General Avatar Buff 4 -- 汎用アバターバフ4
+274 General Avatar Buff 5 -- 汎用アバターバフ5
+275 nerve load noise -- 神経負荷ノイズ
+5000 Torch_flame effect -- 松明_炎エフェクト
+5001 Torch, effect when raised -- 松明、掲げた時のエフェクト
+8000 Fire weapon enhancement -- 炎武器強化
+8010 Regeneration double chant -- リジェネ二重詠唱
+8020 Recovery double chant -- 回復二重詠唱
+8030 sun sword -- 太陽剣
+9000 Eclipse_Attraction -- 蝕_引き寄せ
+9001 Eclipse_escape -- 蝕_逃げる
+9002 Abnormal status recovery [eclipse] -- 状態異常回復【蝕】
+9900 VOB equipment -- VOB装備
+40002 Poison (body-centered effect) -- 毒（体中心エフェクト）
+40253 Fire Daruma -- 火だるま
+40260 Eclipse (body-centered effect) -- 蝕（体中心エフェクト）
+50000 Demon Priest_Magic Small -- デーモン司祭_呪術小
+50001 Demon priest_curse -- デーモン司祭_呪術中
+50002 Demon Priest_Magic Great -- デーモン司祭_呪術大
+50003 Demon Priest_Flame Enchantment -- デーモン司祭_炎エンチャント
+50004 Demon Priest_ -- デーモン司祭_
+50010 Crystal Elder_Ally -- 結晶の古老_味方
+50020 Wax Dead_Covered in wax -- 蝋の死人_蝋まみれ
+50021 Wax Dead Man_Head of Flame -- 蝋の死人_頭の炎
+50030 Firewood Demon_Head (Resident SFX) -- 薪のデーモン_頭（常駐ＳＦＸ）
+50031 Firewood Demon_Chest (Resident SFX) -- 薪のデーモン_胸（常駐ＳＦＸ）
+50032 Firewood Demon_Back (Resident SFX) -- 薪のデーモン_背中（常駐ＳＦＸ）
+50033 Firewood Demon_Weapon (Resident SFX) -- 薪のデーモン_武器（常駐ＳＦＸ）
+50034 Firewood Demon HU_Head (Resident SFX) -- 薪のデーモンHU_頭（常駐ＳＦＸ）
+50035 Firewood Demon HU_Chest (Resident SFX) -- 薪のデーモンHU_胸 （常駐ＳＦＸ）
+50036 Firewood Demon HU_Back (Resident SFX) -- 薪のデーモンHU_背中（常駐ＳＦＸ）
+50037 Firewood Demon HU_Weapon (Resident SFX) -- 薪のデーモンHU_武器（常駐ＳＦＸ）
+50040 New skeleton torch (resident SFX) -- 新スケルトン松明（常駐ＳＦＸ）
+50050 Sullivan's Reaper_Sword Enchantment -- サリヴァーンの死神_剣エンチャント
+50051 Sullivan's Grim Reaper_Sickle Enchantment -- サリヴァーンの死神_鎌エンチャント
+50052 Sullivan's Grim Reaper (Resident SFX) -- サリヴァーンの死神（常駐SFX)
+50053 Sullivan's Grim Reaper_(Resident SFX) -- サリヴァーンの死神_(常駐ＳＦＸ)
+50055 Tindalos_Eyelight -- ティンダロス_眼光
+50058 gargoyle torch -- ガーゴイルトーチ
+50060 King of the Dead: Miasma Pneumothorax Resident SFX -- 死霊の王 瘴気胸 常駐SFX
+50061 King of the dead miasma -- 死霊の王 瘴気
+50070 Old King of Eclipse Eclipse Aura Resident SFX -- 蝕の老王 蝕オーラ 常駐SFX
+50071 Old King of Eclipse Eclipse Aura Hu Resident SFX -- 蝕の老王 蝕オーラHu 常駐SFX
+50072 Old King of Eclipses Eclipse Feather Resident SFX -- 蝕の老王 蝕羽根 常駐SFX
+50073 Old King of Eclipses Eclipse Feather Resident SFX -- 蝕の老王 蝕羽根 常駐SFX
+50074 Old King of Eclipses Kaze Resident SFX -- 蝕の老王 風 常駐SFX
+50080 Eclipse Butterfly Scale Powder Resident -- 蝕の蝶鱗粉常駐
+50090 Ash Demon_Weapon Smoke (Resident SFX) -- 灰のデーモン_武器の煙（常駐ＳＦＸ）
+50091 Ash Demon_Full body smoke (Resident SFX) -- 灰のデーモン_全身煙（常駐ＳＦＸ）
+50092 Ash Demon_Joint 1 (Resident SFX) -- 灰のデーモン_関節１（常駐ＳＦＸ）
+50093 Ash Demon_Joint 2 (Resident SFX) -- 灰のデーモン_関節２（常駐ＳＦＸ）
+50094 Ash Demon_Joint 3 (Resident SFX) -- 灰のデーモン_関節３（常駐ＳＦＸ）
+50095 Ash Demon_Joint 4 (Resident SFX) -- 灰のデーモン_関節４（常駐ＳＦＸ）
+50096 Ash Demon_Distortion 1 (Resident SFX) -- 灰のデーモン_歪み１（常駐ＳＦＸ）
+50097 Ash Demon_Distortion 2 (Resident SFX) -- 灰のデーモン_歪み２（常駐ＳＦＸ）
+50098 Ash Demon_Distortion 3 (Resident SFX) -- 灰のデーモン_歪み３（常駐ＳＦＸ）
+50100 c4300_Grave Revealer Torch SFX -- c4300_墓暴きの貴人　松明SFX
+50102 c4300_Grave Revealing Nobleman Staff Cantera SFX -- c4300_墓暴きの貴人　杖カンテラSFX
+50103 c4300_Grave Revealer Waist Cantera SFX -- c4300_墓暴きの貴人　腰カンテラSFX
+50110 c4300_Grave Revealing Nobleman Shield -- c4300_墓暴きの貴人　シールド
+50120 c4020_Nazgul (Grandworm) Resident SFX -- c4020_ナズグル(地虫)　常駐SFX
+50150 New Castle Knight: Akame (Resident SFX) -- 新王城騎士：赤目（常駐ＳＦＸ）
+50200 Dark Knight Beast_Head (Resident SFX) -- ダークナイトビースト_頭（常駐SFX）
+50201 Dark Night Beast_Torso (Resident SFX) -- ダークナイトビースト_胴（常駐SFX）
+50202 Dark Knight Beast_Left Arm (Resident SFX) -- ダークナイトビースト_左腕（常駐SFX）
+50203 Dark Knight Beast_Right Arm (Resident SFX) -- ダークナイトビースト_右腕（常駐SFX）
+50204 Dark Night Beast_Right Leg (Resident SFX) -- ダークナイトビースト_右足（常駐SFX）
+50205 Dark Night Beast_Left Foot (Resident SFX) -- ダークナイトビースト_左足（常駐SFX）
+50206 Dark Knight Beast_Weapon (Resident SFX) -- ダークナイトビースト_武器（常駐SFX）
+50300 c7000_buddy (general purpose) composition shader (when it appears) -- c7000_バディ（汎用）　組成シェーダ（出現時）
+50301 c7000_buddy (general purpose) composition shader (appearing → materialized) -- c7000_バディ（汎用）　組成シェーダ（出現中→実体化）
+50302 c7000_buddy (general purpose) composition shader (entity → disappearing) -- c7000_バディ（汎用）　組成シェーダ（実体→消滅中）
+50303 c7000_buddy (general purpose) composition shader (when destroyed) -- c7000_バディ（汎用）　組成シェーダ（消滅時）
+54050 c4050_Warlord's Warrior_Warcry -- c4050_戦王の戦士_ウォークライ
+54100 c41xx_gray demi-human_general purpose_red eyes -- c41xx_灰色の亜人_汎用_赤目
+54200 [GR] For mowing item acquisition effect -- 【GR】草刈りアイテム取得エフェクト用
+57000 Buddy for pre-battle_hidden -- バディ戦闘前用_姿隠し
+58000 c7100_Buddy unique crazy cold air -- c7100_バディユニーク狂化冷気
+58001 c7100_Buddy Unique Crazy Cold Air_Feet -- c7100_バディユニーク狂化冷気_足元
+58100 c7100_Buddy Unique Normal Cold Air -- c7100_バディユニーク通常冷気
+58101 c7100_Buddy Unique Normal Cold Air -- c7100_バディユニーク通常冷気
+6300 flaming small -- 炎上 小
+6301 Under fire -- 炎上 中
+6302 Large flame -- 炎上 大
+6303 flaming extra large -- 炎上 特大
+6500 Melange (weak/silver) -- メランジ (弱/銀色)
+6510 Melange (strong/red) -- メランジ (強/赤色)
+6600 Stan small -- スタン 小
+6601 Stun Medium -- スタン 中
+6602 Stan big -- スタン 大
+6603 Stan extra large -- スタン 特大
+7300 flaming small -- 炎上 小
+7301 Under fire -- 炎上 中
+7302 Large flame -- 炎上 大
+7303 flaming extra large -- 炎上 特大
+7500 Melange (weak/silver) -- メランジ (弱/銀色)
+7510 Melange (strong/red) -- メランジ (強/赤色)
+7600 Stan small -- スタン 小
+7601 Stun Medium -- スタン 中
+7602 Stan big -- スタン 大
+7603 Stan extra large -- スタン 特大
+12200 WP_2200_EN shield_luminescence -- WP_2200_ENシールド_発光
+12300 WP_2300_EN shield_luminescence -- WP_2300_ENシールド_発光
+12301 WP_2300_EN shield_landing -- WP_2300_ENシールド_着弾
+12310 WP_2300_EN shield_luminescence_fade out -- WP_2300_ENシールド_発光_フェードアウト
+12311 WP_2300_EN shield_landing_fade out -- WP_2300_ENシールド_着弾_フェードアウト
+22200 WP_2200_EN Shield_Stop -- WP_2200_ENシールド_停止
+30000 Recovery system_loop ver -- 回復システム_ループver
+30001 Recovery system_one shot ver -- 回復システム_ワンショットver
+30010 Recovery system_Spark_HEAD -- 回復システム_火花_HEAD
+30011 Recovery system_Spark_CORE -- 回復システム_火花_CORE
+30012 Recovery system_Spark_ARMS -- 回復システム_火花_ARMS
+30013 Recovery system_Spark_LEGS -- 回復システム_火花_LEGS
+30100 EN recovery enhancement item_loop ver -- EN回復強化アイテム_ループver
+40000 [Your machine] Core special function_Blade reinforcement_Active -- 【自機】コア特殊機能_ブレード強化_発動中
+49000 [Test] Own machine: Core special function_Genki ball gauge increase bullet_landing -- 【test】自機：コア特殊機能_元気玉ゲージ増加弾丸_着弾
+49001 [Test] Own machine: Core special function_Genki ball gauge increase bullet_Defeated -- 【test】自機：コア特殊機能_元気玉ゲージ増加弾丸_撃破
+59000 Stiglo_Monoeye strength increases -- スティグロ_モノアイ強度が上がる
+59001 Stiglo_Monoeye strength returns -- スティグロ_モノアイ強度が戻る
+59002 Stiglo_MonoEye lights out -- スティグロ_モノアイ消灯
+59010 Stiglo_Heat sink combustion -- スティグロ_ヒートシンク燃焼
+59011 Stiglo_Heat Sink Back -- スティグロ_ヒートシンク戻る
+59020 Stiglo_barrier front -- スティグロ_バリア正面
+59021 Stiglo_barrier bottom -- スティグロ_バリア底面
+59022 Stiglo_barrier left -- スティグロ_バリア左
+59023 Stiglo_barrier right -- スティグロ_バリア右
+60000 c3300 Ghost hiding special effects -- c3300 ゴースト姿隠し用特殊効果
+60001 c3300 Special effects for removing ghost appearance -- c3300 ゴースト姿隠し解除用特殊効果
+60002 c3300 Ghost hidden special effects dark -- c3300 ゴースト姿隠し用特殊効果 濃い
+92000 Reverse joint dying SFX -- 逆関節　瀕死SFX
+93000 Collapse A layer enemy laser -- 崩落A層敵レーザー
+99000 Laser impact combustion -- レーザー着弾燃焼
+99001 Laser impact combustion ends -- レーザー着弾燃焼終了
+99010 Start of stealth -- ステルス発動開始
+99011 Cancel stealth activation -- ステルス発動解除
+99020 Stealth fog airflow SFX1 -- ステルス霧用気流SFX1
+99021 Stealth fog airflow SFX2 -- ステルス霧用気流SFX2
+99022 Stealth fog airflow SFX3 -- ステルス霧用気流SFX3
+99023 Stealth fog airflow SFX4 -- ステルス霧用気流SFX4
+99024 Stealth fog airflow SFX4 -- ステルス霧用気流SFX4
+99030 Additional SFX occurs during fog (machine gun) -- 霧時追加SFX発生（マシンガン）
+99040 own aircraft spotlight -- 自機スポットライト
+99050 Dummy effect on own aircraft -- 自機にダミーエフェクト
+99051 explosion effect -- 爆発エフェクト
+99060 Own aircraft light SFX -- 自機ライトSFX
+99100 Reverse load effect -- 逆負荷エフェクト
+99900 Client rescue test -- クライアント救出テスト
+99901 Client Rescue Tess 2 -- クライアント救出テス2
+99902 Client Rescue Tess 3 -- クライアント救出テス3
+99903 Client Rescue Tess 4 -- クライアント救出テス4
+99904 Client Rescue Tess 5 -- クライアント救出テス5
+99905 Client Rescue Tess 6 -- クライアント救出テス6
+99910 [Test] Poison fog -- 【テスト】毒霧
+99913 [Test] Defeating Ice Worm for Railgun Landing -- 【テスト】アイスワーム撃破　レールガン着弾用
+99914 [Test] Defeat Ice Worm Mob Temporary Searchlight -- 【テスト】アイスワーム撃破 モブ仮サーチライト
+99915 [Test] Melange cloud breaking through the atmosphere -- 【テスト】大気圏突破メランジ雲
+99916 [Test] Strike street reverse run bullet SFX -- 【テスト】スト街逆走着弾SFX
+99917 [Test] Laser sight -- 【テスト】レーザーサイト
+99918 [Test] Mine Dot damage -- 【テスト】坑道Dotダメージ
+99920 [Test] Visibility trial_Camera eye 00 -- 【テスト】視認性トライアル_カメラアイ00
+99921 [Test] Visibility trial_Camera eye 01 -- 【テスト】視認性トライアル_カメラアイ01
+99922 Camera eye_regular implementation_for wingman -- カメラアイ_正規実装_僚機用
+99990 [Test] Chinese Communist Party MT Spotlight -- 【テスト】中共産MTスポットライト
+99991 [Test] Right Communist MT Spotlight -- 【テスト】右共産MTスポットライト
+99992 [Test] Left Communist MT Spotlight -- 【テスト】左共産MTスポットライト
+315000 Juggernaut Damage Hit Back -- ジャガーノート　ダメージヒット　背面
+315001 Juggernaut resident light -- ジャガーノート　常駐ライト
+625000 Sandworm Damage Hit Mouth -- サンドワーム　ダメージヒット　口
+625001 Sandworm Damage Hit Body_01 -- サンドワーム　ダメージヒット　体_01
+625002 Sandworm Damage Hit Body_02 -- サンドワーム　ダメージヒット　体_02
+625003 Sandworm Damage Hit Body_03 -- サンドワーム　ダメージヒット　体_03
+625004 Sandworm Damage Hit Body_04 -- サンドワーム　ダメージヒット　体_04
+625005 Sandworm Damage Hit Body_05 -- サンドワーム　ダメージヒット　体_05
+625006 Sandworm Damage Hit Body_06 -- サンドワーム　ダメージヒット　体_06
+625007 Sandworm Damage Hit Body_07 -- サンドワーム　ダメージヒット　体_07
+625008 Sandworm Damage Hit Body_08 -- サンドワーム　ダメージヒット　体_08
+625009 Sandworm Damage Hit Body_09 -- サンドワーム　ダメージヒット　体_09
+625010 Sandworm Damage Hit Body_10 -- サンドワーム　ダメージヒット　体_10
+625011 Sandworm Damage Hit Body_11 -- サンドワーム　ダメージヒット　体_11
+625012 Sandworm Damage Hit Body_12 -- サンドワーム　ダメージヒット　体_12
+625013 Sandworm Damage Hit Body_13 -- サンドワーム　ダメージヒット　体_13
+625014 Sandworm Damage Hit Body_14 -- サンドワーム　ダメージヒット　体_14
+625015 Sandworm damage hit body_15 -- サンドワーム　ダメージヒット　体_15
+625016 Sandworm Damage Hit Body_16 -- サンドワーム　ダメージヒット　体_16
+625017 Sandworm damage hit body_17 -- サンドワーム　ダメージヒット　体_17
+625018 Sandworm damage hit body_18 -- サンドワーム　ダメージヒット　体_18
+625019 Sandworm Damage Hit Body_19 -- サンドワーム　ダメージヒット　体_19
+625020 Sandworm damage hit body_20 -- サンドワーム　ダメージヒット　体_20
+625021 Sandworm Damage Hit Body_21 -- サンドワーム　ダメージヒット　体_21
+625022 Sandworm Damage Hit Body_22 -- サンドワーム　ダメージヒット　体_22
+625023 Sandworm Damage Hit Body_23 -- サンドワーム　ダメージヒット　体_23
+625024 Sandworm Damage Hit Body_24 -- サンドワーム　ダメージヒット　体_24
+625025 Sandworm damage hit body_25 -- サンドワーム　ダメージヒット　体_25
+625026 Sandworm damage hit body_26 -- サンドワーム　ダメージヒット　体_26
+625027 Sandworm Damage Hit Body_27 -- サンドワーム　ダメージヒット　体_27
+625028 Sandworm damage hit body_28 -- サンドワーム　ダメージヒット　体_28
+625100 Sandworm body spark after HU -- サンドワーム　HU後本体スパーク
+625110 Sandworm Charge Spark after HU_801 -- サンドワーム　HU後チャージスパーク_801
+625111 Sandworm Charge Spark after HU_802 -- サンドワーム　HU後チャージスパーク_802
+625112 Sandworm Charge Spark after HU_803 -- サンドワーム　HU後チャージスパーク_803
+625200 Sandworm Dora reception status_1 -- サンドワーム　ドーラ受付状態_1
+625201 Sandworm Dora reception status_2 -- サンドワーム　ドーラ受付状態_2
+625202 Sandworm Dora reception status_3 -- サンドワーム　ドーラ受付状態_3
+625203 Sandworm Dora reception status_4 -- サンドワーム　ドーラ受付状態_4
+625210 Sandworm secondary barrier is being deployed -- サンドワーム　二次バリア展開中
+625300 Sandworm underground moving marker -- サンドワーム　地中移動中マーカー
+813500 Miyatake Strong Enemy, Pal Charged State -- 宮武強敵　溜めパルチャージ状態
+813510 Miyatake Strong Enemy HU_Body -- 宮武強敵　HU_本体
+813511 Miyatake Strong Enemy HU_Pile -- 宮武強敵　HU_パイル
+813512 Miyatake Strong Enemy HU1_3 -- 宮武強敵　HU1_3
+813520 Miyatake Strong Enemy HU2_1 -- 宮武強敵　HU2_1
+813521 Miyatake Strong Enemy HU2_2 -- 宮武強敵　HU2_2
+813522 Miyatake Strong Enemy HU2_3 -- 宮武強敵　HU2_3
+814500 Miyatake Strong Enemy_Bird Leg Charge -- 宮武強敵_鳥脚　チャージ
+820000 hidden test -- 姿隠しテスト
+820001 Toton test -- 土遁テスト
+820010 Dust smoke SFX test -- 土煙SFXテスト
+851000 c8510 Resident SFX -- c8510　常駐SFX
+852000 Radar resident SFX -- レーダー　常駐SFX
+853000 Mining ship weak point 1st right shoulder -- 採掘艦　弱点部位　1基目　右肩
+853001 Mining ship weak point 1st left shoulder -- 採掘艦　弱点部位　1基目　左肩
+853002 Mining ship weak point 1st right elbow -- 採掘艦　弱点部位　1基目　右肘
+853003 Mining ship weak point 1st left elbow -- 採掘艦　弱点部位　1基目　左肘
+853010 Mining ship weak point 2nd right shoulder -- 採掘艦　弱点部位　2基目　右肩
+853011 Mining ship weak point 2nd left shoulder -- 採掘艦　弱点部位　2基目　左肩
+853012 Mining ship weak point 2nd right elbow -- 採掘艦　弱点部位　2基目　右肘
+853013 Mining ship weak point 2nd left elbow -- 採掘艦　弱点部位　2基目　左肘
+853020 Mining ship weak point 3rd right shoulder -- 採掘艦　弱点部位　3基目　右肩
+853021 Mining ship weak point 3rd left shoulder -- 採掘艦　弱点部位　3基目　左肩
+853022 Mining ship weak point 3rd right elbow -- 採掘艦　弱点部位　3基目　右肘
+853023 Mining ship weak point 3rd left elbow -- 採掘艦　弱点部位　3基目　左肘
+853070 Mining ship Weak spot Highlight 1 -- 採掘艦　弱点部位　目玉　1
+853071 Mining ship Weak spot Eyeball 2 -- 採掘艦　弱点部位　目玉　2
+853072 Mining ship Weak spot Eyeball 3 -- 採掘艦　弱点部位　目玉　3
+853080 Mining ship weak point core 1 -- 採掘艦　弱点部位　コア　1
+853081 Mining ship weak point core 2 -- 採掘艦　弱点部位　コア　2
+853082 Mining ship weak point core 3 -- 採掘艦　弱点部位　コア　3
+853090 Mining ship weak point connection part 1-2 right -- 採掘艦　弱点部位　接続部　1-2 右
+853091 Mining ship weak point connection part 1-2 left -- 採掘艦　弱点部位　接続部　1-2 左
+853092 Mining ship weak point connection part 2-3 right -- 採掘艦　弱点部位　接続部　2-3 右
+853093 Mining ship weak point connection part 2-3 left -- 採掘艦　弱点部位　接続部　2-3 左
+853100 Mining ship weak point hit 1st right shoulder -- 採掘艦　弱点ヒット　1基目　右肩
+853101 Mining ship weak point hit 1st left shoulder -- 採掘艦　弱点ヒット　1基目　左肩
+853102 Mining ship weak point hit 1st right elbow -- 採掘艦　弱点ヒット　1基目　右肘
+853103 Mining ship weak point hit 1st left elbow -- 採掘艦　弱点ヒット　1基目　左肘
+853110 Mining ship weak point hit 2nd right shoulder -- 採掘艦　弱点ヒット　2基目　右肩
+853111 Mining ship weak point hit 2nd left shoulder -- 採掘艦　弱点ヒット　2基目　左肩
+853112 Mining ship weak point hit 2nd right elbow -- 採掘艦　弱点ヒット　2基目　右肘
+853113 Mining ship weak point hit 2nd left elbow -- 採掘艦　弱点ヒット　2基目　左肘
+853120 Mining ship weak point hit 3rd unit right shoulder -- 採掘艦　弱点ヒット　3基目　右肩
+853121 Mining ship weak point hit 3rd unit left shoulder -- 採掘艦　弱点ヒット　3基目　左肩
+853122 Mining ship weak point hit 3rd right elbow -- 採掘艦　弱点ヒット　3基目　右肘
+853123 Mining ship weak point hit 3rd left elbow -- 採掘艦　弱点ヒット　3基目　左肘
+853170 Mining ship weak point hit eyeball 1 -- 採掘艦　弱点ヒット　目玉　1
+853171 Mining ship weak point hit eyeball 2 -- 採掘艦　弱点ヒット　目玉　2
+853172 Mining ship weak point hit eyeball 3 -- 採掘艦　弱点ヒット　目玉　3
+853180 Mining ship weak point hit core 1 -- 採掘艦　弱点ヒット　コア　1
+853181 Mining ship weak point hit core 2 -- 採掘艦　弱点ヒット　コア　2
+853182 Mining ship weak point hit core 3 -- 採掘艦　弱点ヒット　コア　3
+853190 Mining ship weak point hit connection part 1-2 right -- 採掘艦　弱点ヒット　接続部　1-2 右
+853191 Mining ship weak point hit connection part 1-2 left -- 採掘艦　弱点ヒット　接続部　1-2 左
+853192 Mining ship weak point hit connection part 2-3 right -- 採掘艦　弱点ヒット　接続部　2-3 右
+853193 Mining ship weak point hit connection part 2-3 left -- 採掘艦　弱点ヒット　接続部　2-3 左
+853200 Mining ship weak point destruction 1st unit right shoulder -- 採掘艦　弱点破壊　1基目　右肩
+853201 Mining ship weak point destruction 1st unit left shoulder -- 採掘艦　弱点破壊　1基目　左肩
+853202 Mining ship weak point destruction 1st right elbow -- 採掘艦　弱点破壊　1基目　右肘
+853203 Mining ship weak point destruction 1st left elbow -- 採掘艦　弱点破壊　1基目　左肘
+853210 Mining ship weak point destruction 2nd unit right shoulder -- 採掘艦　弱点破壊　2基目　右肩
+853211 Mining ship weak point destruction 2nd unit left shoulder -- 採掘艦　弱点破壊　2基目　左肩
+853212 Mining ship weak point destruction 2nd right elbow -- 採掘艦　弱点破壊　2基目　右肘
+853213 Mining ship weak point destruction 2nd left elbow -- 採掘艦　弱点破壊　2基目　左肘
+853220 Mining ship weak point destruction 3rd unit right shoulder -- 採掘艦　弱点破壊　3基目　右肩
+853221 Mining ship weak point destruction 3rd unit left shoulder -- 採掘艦　弱点破壊　3基目　左肩
+853222 Mining ship weak point destruction 3rd unit right elbow -- 採掘艦　弱点破壊　3基目　右肘
+853223 Mining ship weak point destruction 3rd unit left elbow -- 採掘艦　弱点破壊　3基目　左肘
+853270 Mining ship weak point destruction highlight 1 -- 採掘艦　弱点破壊　目玉　1
+853271 Mining ship weak point destruction eyeball 2 -- 採掘艦　弱点破壊　目玉　2
+853272 Mining ship weak point destruction eyeball 3 -- 採掘艦　弱点破壊　目玉　3
+853280 Mining ship weak point destruction core 1 -- 採掘艦　弱点破壊　コア　1
+853281 Mining ship weak point destruction core 2 -- 採掘艦　弱点破壊　コア　2
+853282 Mining ship weak point destruction core 3 -- 採掘艦　弱点破壊　コア　3
+853290 Mining ship weak point destruction connection part 1-2 right -- 採掘艦　弱点破壊　接続部　1-2　右
+853291 Mining ship weak point destruction connection part 1-2 left -- 採掘艦　弱点破壊　接続部　1-2　左
+853292 Mining ship weak point destruction connection part 2-3 right -- 採掘艦　弱点破壊　接続部　2-3　右
+853293 Mining ship weak point destruction connection part 2-3 left -- 採掘艦　弱点破壊　接続部　2-3　左
+853300 Mining ship floating eyeball 1st unit -- 採掘艦　目玉浮遊中　1基目
+853301 Mining ship floating eyeball 2nd unit -- 採掘艦　目玉浮遊中　2基目
+853302 Mining ship floating eyeball 3rd unit -- 採掘艦　目玉浮遊中　3基目
+853400 Mining ship weak point emphasis 1st right shoulder -- 採掘艦　弱点部位強調　1基目　右肩
+853401 Mining ship weak point emphasis 1st left shoulder -- 採掘艦　弱点部位強調　1基目　左肩
+853402 Mining ship weak point emphasis 1st right elbow -- 採掘艦　弱点部位強調　1基目　右肘
+853403 Mining ship weak point emphasis 1st left elbow -- 採掘艦　弱点部位強調　1基目　左肘
+853410 Mining ship weak point emphasis 2nd unit right shoulder -- 採掘艦　弱点部位強調　2基目　右肩
+853411 Mining ship weak point emphasis 2nd left shoulder -- 採掘艦　弱点部位強調　2基目　左肩
+853412 Mining ship weak point emphasis 2nd right elbow -- 採掘艦　弱点部位強調　2基目　右肘
+853413 Mining ship weak point emphasis 2nd left elbow -- 採掘艦　弱点部位強調　2基目　左肘
+853420 Mining ship weak point emphasis 3rd unit right shoulder -- 採掘艦　弱点部位強調　3基目　右肩
+853421 Mining ship weak point emphasis 3rd unit left shoulder -- 採掘艦　弱点部位強調　3基目　左肩
+853422 Mining ship weak point emphasis 3rd unit right elbow -- 採掘艦　弱点部位強調　3基目　右肘
+853423 Mining ship weak point emphasis 3rd left elbow -- 採掘艦　弱点部位強調　3基目　左肘
+853500 Mining ship production machine gun 1st right 1 -- 採掘艦　演出マシンガン　1基目　右1
+853501 Mining ship production machine gun 1st right 2 -- 採掘艦　演出マシンガン　1基目　右2
+853502 Mining ship production machine gun 1st right 3 -- 採掘艦　演出マシンガン　1基目　右3
+853503 Mining ship production machine gun 1st right 4 -- 採掘艦　演出マシンガン　1基目　右4
+853504 Mining ship production machine gun 1st right 5 -- 採掘艦　演出マシンガン　1基目　右5
+853505 Mining ship production machine gun 1st right 6 -- 採掘艦　演出マシンガン　1基目　右6
+853506 Mining ship production machine gun 1st right 7 -- 採掘艦　演出マシンガン　1基目　右7
+853507 Mining ship production machine gun 1st right 8 -- 採掘艦　演出マシンガン　1基目　右8
+853590 Mining ship performance machine gun for battery -- 採掘艦　演出マシンガン　砲台用
+853600 Mining ship drill weak point HIT -- 採掘艦　ドリル　弱点HIT
+853610 Mining ship drill weak point HIT -- 採掘艦　ドリル　弱点HIT
+853700 Mining ship part destruction smoke 1st unit right shoulder -- 採掘艦　部位破壊　煙　1基目　右肩
+853701 Mining ship part destruction smoke 1st left shoulder -- 採掘艦　部位破壊　煙　1基目　左肩
+853702 Mining ship part destruction smoke 1st right elbow -- 採掘艦　部位破壊　煙　1基目　右肘
+853703 Mining ship Part destruction Smoke 1st left elbow -- 採掘艦　部位破壊　煙　1基目　左肘
+853710 Mining ship part destruction smoke 2nd right shoulder -- 採掘艦　部位破壊　煙　2基目　右肩
+853711 Mining ship part destruction smoke 2nd left shoulder -- 採掘艦　部位破壊　煙　2基目　左肩
+853712 Mining ship Part destruction Smoke 2nd right elbow -- 採掘艦　部位破壊　煙　2基目　右肘
+853713 Mining ship Part destruction Smoke 2nd left elbow -- 採掘艦　部位破壊　煙　2基目　左肘
+853720 Mining ship part destruction smoke 3rd unit right shoulder -- 採掘艦　部位破壊　煙　3基目　右肩
+853721 Mining ship part destruction smoke 3rd unit left shoulder -- 採掘艦　部位破壊　煙　3基目　左肩
+853722 Mining ship part destruction smoke 3rd unit right elbow -- 採掘艦　部位破壊　煙　3基目　右肘
+853723 Mining ship part destruction smoke 3rd unit left elbow -- 採掘艦　部位破壊　煙　3基目　左肘
+903100 c9031 Resident SFX -- c9031　常駐SFX
+920100 c9201 Resident SFX -- c9201　常駐SFX
+940000 c9400 Resident SFX -- c9400　常駐SFX
+941000 c9410 Resident SFX -- c9410　常駐SFX
+942000 c9420 Resident SFX -- c9420　常駐SFX
+2140000 c5100_large transport helicopter_slightly damaged -- c5100_大型輸送ヘリ_小破
+2140010 c5100_large transport helicopter_medium damaged -- c5100_大型輸送ヘリ_中破
+2170000 Security MTSFX -- 警備MTSFX
+2170001 4 leg light SFX -- 4脚ライトSFX
+2170002 communist light sfx -- 共産ライトSFX
+2170003 communist light sfx -- 共産ライトSFX
+2170004 tank light sfx -- 戦車ライトSFX
+2170005 combat heli light sfx -- 戦闘ヘリライトSFX
+2170006 communist light sfx -- 共産ライトSFX
+4200000 communist light sfx -- 共産ライトSFX
+4200001 4 leg light SFX -- 4脚ライトSFX
+5040000 [Test] Atmospheric breakthrough: resident SFX of own aircraft when in EN infinite state -- 【テスト】大気圏突破：EN無限状態であるときに自機の常駐SFX
+6010000 In front of the camera effect for production -- 演出用カメラ前効果
+9991000 Special effects for markers 01 Moving target -- マーカー用特殊効果　01　移動目標
+9991001 Special effects for markers 02 Attention target -- マーカー用特殊効果　02　注意目標
+9991002 Special effects for markers 03 Defense target -- マーカー用特殊効果　03　防衛目標
+9991003 Special effects for markers for events -- マーカー用特殊効果　イベント用
+9991004 Special effects for markers TGT -- マーカー用特殊効果　TGT
+9991005 Special effects for markers, special standby -- マーカー用特殊効果　特殊待機用
+9991006 Special effects for markers 03 Attention target Lock-on dummy poly designation -- マーカー用特殊効果　03　注意目標　ロックオンダミポリ指定
+9991007 Special effects for markers Check TGT -- マーカー用特殊効果　調べるTGT
+9992000 Screen effect for final effect_Blur -- とどめ演出用画面効果_ブラー
+9992001 Screen effect for final effect_Blur -- とどめ演出用画面効果_ブラー
+9992002 searchlight -- サーチライト
+9992003 Searchlight for combat helicopters -- サーチライト　戦闘ヘリ用
+10605040 [Test] Visibility Trial Atmospheric Breakthrough Ash Late Asab -- 【テスト】視認性トライアル　大気圏突破　アッシュ後期アサブ
+10605041 [Test] Visibility Trial Atmospheric Breakthrough Ash Late Asab -- 【テスト】視認性トライアル　大気圏突破　アッシュ後期アサブ
+31003200 [Test] Visibility trial_Flight MT camera eye 01 -- 【テスト】視認性トライアル_飛行MTカメラアイ01
+320010000 c3200 resident SFX -- c3200　常駐SFX
+32509910 c3250 camera eye -- c3250　カメラアイ
+32509920 c3250 Camera eye_Token enemy use -- c3250　カメラアイ_トークン敵用
+330000 c3300 Ghost hiding special effects -- c3300 ゴースト姿隠し用特殊効果
+330001 c3300 Special effects for removing ghost appearance -- c3300 ゴースト姿隠し解除用特殊効果
+330002 c3300 Ghost special standby concealment special effects -- c3300 ゴースト特殊待機姿隠し用特殊効果
+330003 c3300 Ghost forced hiding special effects -- c3300 ゴースト強制姿隠し用特殊効果
+33003100 c3300 Ghost MT (PA) PA -- c3300　ゴーストMT（PA）PA
+33003200 [Test] Visibility trial_Ghost camera eye 01 -- 【テスト】視認性トライアル_ゴーストカメラアイ01
+33003210 [Test] Visibility trial_Ghost camera eye 02 -- 【テスト】視認性トライアル_ゴーストカメラアイ02
+33003220 [Test] Visibility trial_Ghost camera eye 03 -- 【テスト】視認性トライアル_ゴーストカメラアイ03
+33006000 c3300 Always-on PA special effects 1 -- c3300 常時展開PA特殊効果1
+33006001 c3300 Always-on PA special effects 2 -- c3300 常時展開PA特殊効果2
+340010000 c3400 resident SFX -- c3400　常駐SFX
+35005000 c3500 Self-playing SFX -- c3500　自己再生SFX
+36002100 c3600 heat sink -- ｃ3600　放熱板
+37009400 c3700 Deleter Tattered camera eye -- c3700　デリーター　ボロボロ用カメラアイ
+40000000 ADF Damage Hit Weakness -- ADF　ダメージヒット　弱点
+40000100 ADF　HU temporary -- ADF　HU仮
+41000000 c4100 Humanoid heavyweight boss for live bullet HU -- c4100　人型重量級ボス 実弾HU用
+41000100 c4100 Humanoid heavyweight boss for ENHU -- c4100　人型重量級ボス ENHU用
+41000500 c4100 Humanoid heavyweight boss resident ring frame thruster SFX for live ammunition -- c4100　人型重量級ボス 実弾用常駐リングフレームスラスターSFX
+41000501 c4100 Humanoid Heavyweight Boss Resident Ring Frame Thruster SFX for EN -- c4100　人型重量級ボス EN用常駐リングフレームスラスターSFX
+41001000 c4100 Humanoid heavyweight boss PA Crackling SFX -- c4100　人型重量級ボス PA　バチバチSFX
+41503100 c4150 Special attack MT (PA) PA -- c4150　特攻MT（PA）PA
+42000100 c4200 Next Generation ProtoAC HU2 -- c4200　次世代プロトAC　HU2
+42000101 c4200 Next Generation ProtoAC HU2 -- c4200　次世代プロトAC　HU2
+42000102 c4200 Next Generation ProtoAC HU2 -- c4200　次世代プロトAC　HU2
+42000103 c4200 Next Generation ProtoAC HU2 -- c4200　次世代プロトAC　HU2
+42000104 c4200 Next Generation ProtoAC HU2 -- c4200　次世代プロトAC　HU2
+42006000 c4200 Next Generation Proto AC PA Spark -- c4200　次世代プロトAC　PAスパーク
+42102000 c4210 Next generation ProtoAC special effects for hiding afterimage -- c4210　次世代プロトAC残像姿隠し用特殊効果
+42103000 c4210 Next Generation ProtoAC Special Effects for Afterimage Hidden Release -- c4210　次世代プロトAC残像姿隠し解除用特殊効果
+425020000 c4250 Orbit Seed After HU Melange Wing Left -- c4250　オービットシード　HU後　メランジ翅　左
+425020001 c4250 Orbit Seed After HU Melange Wings Right -- c4250　オービットシード　HU後　メランジ翅　右
+500090000 c5000 Guard Mecha (Aerial) Rotor SFX -- c5000　ガードメカ(空中)　ローターSFX
+501000000 c5010 For attitude maintenance thruster -- c5010　姿勢維持スラスター用
+501000100 c5010 For expanded poison fog range version -- c5010　毒霧範囲拡大版用
+502000000 c5020 Heavy guard mechanism main body furnace upper attack judgment SFX -- c5020　重ガードメカ本体炉上部攻撃判定SFX
+502010000 c5020 Heavy guard mecha body furnace weak point hit SFX -- c5020　重ガードメカ本体炉弱点ヒットSFX
+502010001 c5020 Heavy guard mech upper body furnace weak point hit SFX -- c5020　重ガードメカ上半身炉弱点ヒットSFX
+502020000 c5020 Heavy Guard Mecha HU Right Arm Spark -- c5020　重ガードメカHU右腕火花
+502021000 c5020 Heavy Guard Mecha HU Left Arm Spark -- c5020　重ガードメカHU左腕火花
+502030000 c5020 Heavy Guard Mecha HU Right Arm Aura -- c5020　重ガードメカHU右腕オーラ
+502031000 c5020 Heavy Guard Mecha HU Left Arm Aura -- c5020　重ガードメカHU左腕オーラ
+502032000 c5020 Heavy Guard Mecha HU Upper Body Furnace Aura -- c5020　重ガードメカHU上半身炉オーラ
+502033000 c5020 Heavy guard mechanism HU main body furnace upper aura -- c5020　重ガードメカHU本体炉上部オーラ
+510080000 c5100 Large transport helicopter damage expression_1 -- c5100　大型輸送ヘリ　ダメージ表現_1
+510081000 c5100 Large transport helicopter damage expression_2 -- c5100　大型輸送ヘリ　ダメージ表現_2
+510090000 c5100 large transport helicopter rotor SFX clockwise rotation front -- c5100　大型輸送ヘリ　ローターSFX　右回転　前
+512080000 c5120 US Drone Rotor SFX -- ｃ5120 USドローン　ローターSFX
+512090000 c5120 US drone searchlight -- ｃ5120 USドローン　サーチライト
+51500000 c5150 combat helicopter -- ｃ5150 戦闘ヘリ
+515090000 c5150 combat helicopter rotor SFX -- ｃ5150 戦闘ヘリ　ローターSFX
+515090001 c5150 combat helicopter rotor SFX tail rotor -- ｃ5150 戦闘ヘリ　ローターSFX　テールローター
+55009900 c5500 biological weapon charred after death -- ｃ5500 生体兵器 死亡後焦げ
+605001000 c6050 Pharaon Searchlight_Prologue -- ｃ6050 ファラオン サーチライト_プロローグ
+605001001 c6050 Pharaon Searchlight_Prologue_Strong -- ｃ6050 ファラオン サーチライト_プロローグ_強
+605001002 c6050 Pharaon Searchlight_Prologue_Strong_On the Road -- ｃ6050 ファラオン サーチライト_プロローグ_強_道中
+605001010 c6050 Pharaon Searchlight_Ocean City -- ｃ6050 ファラオン サーチライト_洋上の都市
+605001100 c6050 Pharaon wing tip lights_red -- ｃ6050 ファラオン 翼端灯_赤
+605001101 c6050 Pharaon wingtip lights_blue -- ｃ6050 ファラオン 翼端灯_青
+605001102 c6050 Pharaon wing tip lights_yellow -- ｃ6050 ファラオン 翼端灯_黄
+605090000 c6050 Pharaon Rotor SFX -- ｃ6050 ファラオン　ローターSFX
+605090001 c6050 Pharaon Rotor SFX left -- ｃ6050 ファラオン　ローターSFX　左
+605010000 c6050 Pharaon PA -- ｃ6050 ファラオン PA
+610010000 c6100 resident SFX -- c6100　常駐SFX
+64000000 c6400 Part destruction instant SFX -- c6400　部位破壊 瞬間SFX
+64000001 c6400 Part destruction SFX during standby transition -- c6400　部位破壊 待機遷移中SFX
+64000005 c6400 Part destruction AP remaining half -- c6400　部位破壊 AP残り半分
+64000100 c6400 Part hit SFX -- c6400　部位被弾SFX
+64000200 c6400 Part weakness expression SFX -- c6400　部位弱点表現SFX
+64009000 c6400 sideways downloop SFX1 -- c6400　横倒しダウンループSFX1
+64009001 c6400 Sideways downloop SFX2 -- c6400　横倒しダウンループSFX2
+64009002 c6400 Sideways downloop SFX3 -- c6400　横倒しダウンループSFX3
+64009003 c6400 sideways downloop SFX4 -- c6400　横倒しダウンループSFX4
+64009004 c6400 sideways downloop SFX5 -- c6400　横倒しダウンループSFX5
+64009005 c6400 sideways downloop SFX6 -- c6400　横倒しダウンループSFX6
+64009006 c6400 sideways downloop SFX7 -- c6400　横倒しダウンループSFX7
+64009007 c6400 sideways downloop SFX8 -- c6400　横倒しダウンループSFX8
+64200010 c6420 Mining Ship Highlight Damage Hit Weakness -- c6420採掘艦目玉　ダメージヒット　弱点
+731010000 c7310 Prarai PA -- ｃ7310 プラライ PA
+739040000 c7390 D layer giant cannon anemone neck weak point hit SFX -- c7390　D層巨大砲台アネモネ　首元弱点ヒットSFX
+740000000 C7400 Amphibious Assault Ship Fracture Hole Explosion upon Death Front 810 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　前部　810
+740000001 C7400 Amphibious Assault Ship Fracture Hole Explosion upon Death Front 811 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　前部　811
+740000002 C7400 Amphibious Assault Ship Fracture Hole Explosion upon Death Front 812 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　前部　812
+740000010 c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 813 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　中央部　813
+740000011 c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 814 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　中央部　814
+740000012 c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 815 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　中央部　815
+740000013 c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 816 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　中央部　816
+740000020 C7400 Amphibious Assault Ship Fracture hole explosion upon death Rear 817 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　後部　817
+740000021 C7400 Amphibious Assault Ship Fracture hole explosion upon death Rear 818 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　後部　818
+740000022 C7400 Amphibious Assault Ship Fracture Hole Explosion Upon Death Rear 819 -- c7400　強襲揚陸艦　死亡時破砕孔爆発　後部　819
+801009900 c8010 Resident SFX -- c8010　常駐SFX
+802009900 c8020 Resident SFX -- c8020　常駐SFX
+803009900 c8030 Resident SFX -- c8030　常駐SFX
+804001000 c8040 Barrier -- c8040　バリア
+804009900 c8040 Resident SFX -- c8040　常駐SFX
+805009900 c8050 resident SFX -- c8050　常駐SFX
+806009900 c8060 Resident SFX -- c8060　常駐SFX
+807009900 c8070 Resident SFX -- c8070　常駐SFX
+808009900 c8080 Resident SFX -- c8080　常駐SFX
+809000000 c8090 Resident SFX -- c8090　常駐SFX
+809009900 c8090 Resident SFX -- c8090　常駐SFX
+810009900 c8100 Resident SFX -- c8100　常駐SFX
+811009900 c8110 Resident SFX -- c8110　常駐SFX
+812009900 c8120 Resident SFX -- c8120　常駐SFX
+813009900 c8130 Resident SFX -- c8130　常駐SFX
+814009900 c8140 Resident SFX -- c8140　常駐SFX
+840009900 c8400 resident SFX -- c8400　常駐SFX
+841009900 c8410 Resident SFX -- c8410　常駐SFX
+842009900 c8420 Resident SFX -- c8420　常駐SFX
+843009900 c8430 Resident SFX -- c8430　常駐SFX
+844009900 c8440 Resident SFX -- c8440　常駐SFX
+853501000 Mining ship centerpiece shooting barrier -- 採掘艦　目玉　射撃バリア
+853601100 Mining Ship Drill Weaknesses -- 採掘艦　ドリル　弱点
+853601110 Mining ship drill weak point HIT -- 採掘艦　ドリル　弱点HIT
+853702010 Mining ship knee cover damage part 1 -- 採掘艦　膝カバー　ダメージ　部位1
+853702020 Mining ship knee cover damage part 2 -- 採掘艦　膝カバー　ダメージ　部位2
+853702030 Mining ship knee cover damage part 3 -- 採掘艦　膝カバー　ダメージ　部位3
+853702040 Mining ship knee cover damage part 4 -- 採掘艦　膝カバー　ダメージ　部位4
+853703010 Mining ship knee cover black smoke part 1 -- 採掘艦　膝カバー　黒煙　部位1
+853703020 Mining ship knee cover black smoke part 2 -- 採掘艦　膝カバー　黒煙　部位2
+853703030 Mining ship knee cover black smoke part 3 -- 採掘艦　膝カバー　黒煙　部位3
+853703040 Mining ship knee cover black smoke part 4 -- 採掘艦　膝カバー　黒煙　部位4
+853802010 Mining ship fire control damage -- 採掘艦　火器管制　ダメージ
+853803010 Mining ship fire control black smoke -- 採掘艦　火器管制　黒煙
+854000010 c8540_Strong enemy_Blade resident SFX_Development -- c8540_強敵_ブレード常駐SFX_展開
+854000012 c8540_Strong enemy_Resident SFX when limit is released_Deployment -- c8540_強敵_リミット解除時常駐SFX_展開
+998000000 c9980 Resident SFX for environmental effects Under the wall -- c9980　環境効果用常駐SFX　壁下
+998000010 c9980 Resident SFX for environmental effects Wall-mounted -- c9980　環境効果用常駐SFX　壁上
+998000020 c9980 Resident SFX B layer for environmental effects -- c9980　環境効果用常駐SFX　B層
+998000040 FP version special effects in front of screen snowy mountain -- FP版　画面前用特殊効果　雪山
+998000050 FP version Special effects for screen front Grakyani -- FP版　画面前用特殊効果　グラキャニ
+998000060 FP version Special effects in front of the screen Communist town -- FP版　画面前用特殊効果　共産党街
+998000070 FP version Special effects for screen A layer -- FP版　画面前用特殊効果　A層
+998000100 General-purpose emphasis SFX red -- 汎用強調SFX　赤色
+998000110 Persistent nerve load -- 神経負荷永続
+998000200 Special effects for markers 01 Moving target -- マーカー用特殊効果　01　移動目標
+998000201 Special effects for markers 02 Attention target -- マーカー用特殊効果　02　注意目標
+998000202 Special effects for markers 03 Defense target -- マーカー用特殊効果　03　防衛目標
+998000203 Special effects for markers for events -- マーカー用特殊効果　イベント用
+998000204 Special effects for markers TGT -- マーカー用特殊効果　TGT
+998000205 Special effects for markers, special standby -- マーカー用特殊効果　特殊待機用
+998000206 Special effects for markers 03 Attention target Lock-on dummy poly designation -- マーカー用特殊効果　03　注意目標　ロックオンダミポリ指定
+998000210 TGT01 for mining ships -- 採掘艦用TGT01
+998000211 TGT02 for mining ships -- 採掘艦用TGT02
+998000212 TGT03333333 for mining ships -- 採掘艦用TGT03333333
+998000300 Hacking SFX -- ハッキング中SFX
+998000301 Hacking SFX -- ハッキング中SFX
+998000302 Hacking SFX -- ハッキング中SFX
+998000303 Hacking completed SFX -- ハッキング完了SFX
+998000304 Hacking completed SFX -- ハッキング完了SFX
+998000305 Hacking completed SFX -- ハッキング完了SFX
+998000310 Fabricated red light 1 -- でっち上げ赤色灯1
+998000311 Fabricated red light 2 -- でっち上げ赤色灯2
+998000312 Fabricated red light 3 -- でっち上げ赤色灯3
+998000313 Transport helicopter red light test 1 -- 輸送ヘリ用赤色灯テスト1
+998000314 Transport helicopter red light test 2 -- 輸送ヘリ用赤色灯テスト2
+998000315 Red light test for transport helicopter 3 -- 輸送ヘリ用赤色灯テスト3
+998000316 Transport helicopter red light test 4 -- 輸送ヘリ用赤色灯テスト4
+998000317 Test underground facility recapture bomb SFX -- テスト用　地下施設奪還爆弾SFX
+998000318 For testing, guard mechanism flashing -- テスト用　ガードメカ点滅用
+998000320 Spotlight for transport helicopter_310 -- 輸送ヘリ用スポットライト_310
+998000321 Spotlight for transport helicopter_312 -- 輸送ヘリ用スポットライト_312
+998000322 Spotlight for transport helicopter_314 -- 輸送ヘリ用スポットライト_314
+998000323 Spotlight for transport helicopter_316 -- 輸送ヘリ用スポットライト_316
+998000400 Screen effect for final effect_Blur -- とどめ演出用画面効果_ブラー
+998000401 Screen effect for final effect_Blur -- とどめ演出用画面効果_ブラー
+998000500 Hacking continuation distance SFX -- ハッキング継続距離SFX
+998000501 Suppression area VFX -- 制圧領域VFX
+998000600 searchlight -- サーチライト
+998000601 Searchlight for combat helicopters -- サーチライト　戦闘ヘリ用

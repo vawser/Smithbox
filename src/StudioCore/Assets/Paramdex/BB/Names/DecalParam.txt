@@ -1,131 +1,131 @@
-0 テスト
-1 【テスト】血糊
-2 【テスト】焦げ跡
-3 【テスト】キューブテスト
-100 血糊正面　敵-マップ
-101 血糊左　   敵-マップ
-102 血糊右　   敵-マップ
-150 死亡時吐血　マップ
-200 血糊正面  キャラ
-201 血糊左　   キャラ
-202 血糊右　   キャラ
-210 血糊投げ  キャラ
-211 血糊パリィ投げ  敵-PC
-212 血糊パリィ投げ  敵-PC
-300 血糊正面  マップ
-301 血糊左　   マップ
-302 血糊右　   マップ
-310 血糊投げ　マップ
-311 血糊パリィ投げ　PC-マップ
-312 血糊パリィ投げ　PC-マップ
-313 血糊パリィ投げ　PC-マップ
-350 血糊教区長　マップ
-351 血糊教区長　マップ
-352 血糊教区長　マップ
-353 血糊教区長　マップ
-354 血糊教区長　マップ
-355 血糊教区長　マップ
-356 血糊教区長　マップ
-357 血糊教区長　マップ
-358 血糊教区長　マップ
-359 血糊教区長　マップ
-360 血糊教区長_顔1　キャラ,マップ
-361 血糊教区長_顔2　キャラ,マップ
-363 血糊教区長_右腕　キャラ,マップ
-367 血糊教区長_左腕　キャラ,マップ
-368 血糊教区長_右膝　キャラ,マップ
-369 血糊教区長_左膝　キャラ,マップ
-400 油まみれ
-500 ひび割れ
-501 ひび割れ
-502 ひび割れ
-503 ひび割れ
-504 ひび割れ
-505 ひび割れ
-510 ひび割れ
-511 ひび割れ
-512 ひび割れ
-513 ひび割れ
-514 ひび割れ
-520 ひび割れ
-521 ひび割れ
-522 ひび割れ
-523 ひび割れ
-524 ひび割れ
-530 ひび割れ　近接2撃目
-531 ひび割れ　近接2撃目
-532 ひび割れ　近接2撃目
-533 ひび割れ　近接2撃目
-534 ひび割れ　近接2撃目
-540 ひび割れ　近接2撃目
-541 ひび割れ　近接2撃目
-542 ひび割れ　近接2撃目
-543 ひび割れ　近接2撃目
-544 ひび割れ　近接2撃目
-600 焦げ跡　中
-601 焦げ跡 敵-PC　中
-602 焦げ跡 小
-603 焦げ跡 敵-PC　小
-700 POMテスト
-800 血糊月の落とし子（右腕）　PC-マップ
-801 血糊月の落とし子（左腕）　PC-マップ
-802 血糊月の落とし子（右方0）　PC-マップ
-803 血糊月の落とし子（右方1）　PC-マップ
-804 血糊月の落とし子（後方0）　PC-マップ
-805 血糊月の落とし子（後方1）　PC-マップ
-806 血糊月の落とし子（左方0）　PC-マップ
-807 血糊月の落とし子（左方1）　PC-マップ
-808 血糊月の落とし子（右足0）　PC-マップ
-809 血糊月の落とし子（左足0）　PC-マップ
-810 血糊月の落とし子（頭0）　PC-マップ
-811 血糊月の落とし子（正面破壊0）　PC-マップ
-812 血糊月の落とし子（正面破壊1）　PC-マップ
-813 血糊月の落とし子（右破壊0）　PC-マップ
-814 血糊月の落とし子（右破壊1）　PC-マップ
-815 血糊月の落とし子（左破壊0）　PC-マップ
-816 血糊月の落とし子（左破壊1）　PC-マップ
-817 血糊月の落とし子（頭破壊）　PC-マップ
-911 なりそこないの邪神（支柱破壊0）　PC-マップ
-912 なりそこないの邪神（支柱破壊1）　PC-マップ
-913 なりそこないの邪神（支柱破壊2）　PC-マップ
-914 なりそこないの邪神（右破壊0）　PC-マップ
-915 なりそこないの邪神（右破壊1）　PC-マップ
-916 なりそこないの邪神（右破壊2）　PC-マップ
-917 なりそこないの邪神（左破壊0）　PC-マップ
-918 なりそこないの邪神（左破壊1）　PC-マップ
-919 なりそこないの邪神（左破壊2）　PC-マップ
-920 なりそこないの邪神（頭破壊0）　PC-マップ
-921 なりそこないの邪神（頭破壊1）　PC-マップ
-922 なりそこないの邪神（頭破壊2）　PC-マップ
-1000 パリィ投げ_胴1_血　マップ
-1001 パリィ投げ_胴2_血　マップ
-1002 パリィ投げ_胴3_血　マップ
-1003 パリィ投げ_胴4_血 キャラ
-1004 パリィ投げ_顔1_血　キャラ,マップ
-1005 背面投げ（1002の左右反転版）　マップ
-1010 パリィ投げ_胴1_粘液　マップ
-1011 パリィ投げ_胴2_粘液　マップ
-1012 パリィ投げ_胴3_粘液　マップ
-1013 パリィ投げ_胴4_粘液 キャラ
-1014 パリィ投げ_顔1_粘液　キャラ,マップ
-1015 背面投げ（1012の左右反転版）　マップ
-1100 血舐め（小）_血袋破裂_上　PC-マップ
-1101 血舐め（小）_血袋破裂_下　PC-マップ
-1102 血舐め（中）_血袋破裂_上　PC-マップ
-1103 血舐め（中）_血袋破裂_下　PC-マップ
-1104 血舐め（大）_血袋破裂_上　PC-マップ
-1105 血舐め（大）_血袋破裂_下　PC-マップ
-1106 血舐め（特大）_血袋破裂_上　PC-マップ
-1107 血舐め（特大）_血袋破裂_下　PC-マップ
-1200 生贄の街_血しぶき沸き上向き　キャラ
-1201 生贄の街_血しぶき沸き下向き　キャラ、マップ
-1202 生贄の街_血しぶき沸き下向き(大)　マップ
-1300 邪神_腕を引き抜く　キャラ
-1301 邪神_腕を引き抜く　キャラ
-1400 女ハンター_ヒートアップ（中央）_マップ
-1401 女ハンター_ヒートアップ（前）_マップ
-1402 女ハンター_ヒートアップ（左）_マップ
-1403 女ハンター_ヒートアップ（後）_マップ
-1404 女ハンター_ヒートアップ（右）_マップ
-1405 女ハンター_攻撃（前）_マップ
+0 test
+1 [Test] Blood paste
+2 [Test] Burn marks
+3 [Test] Cube Test
+100 Bloody front Enemy - map
+101 Blood splatter left enemy - map
+102 Bloody Right Enemy - map
+150 Death Hematemesis Map
+200 Blood front character
+201 Blood paste left character
+202 Blood paste right character
+210 Blood throwing character
+211 Blood Parry Throw Enemy -PC
+212 Blood Parry Throw Enemy -PC
+300 Blood stain front map
+301 Blood stain left map
+302 Blood stain right map
+310 Blood Throwing Map
+311 Blood Parry Throw PC- map
+312 Blood Parry Throw PC- map
+313 Blood Parry Throw PC- map
+350 Bloody Parishioner Map
+351 Bloody Parishioner Map
+352 Bloody Parishioner Map
+353 Bloody Parishioner Map
+354 Bloody Parishioner Map
+355 Bloody Parishioner Map
+356 Bloody Parishioner Map
+357 Bloody Parishioner Map
+358 Bloody Parishioner Map
+359 Bloody Parishioner Map
+360 Bloody Parishioner _ face 1 Character - map
+361 Bloody Parishioner _ face 2 Character - map
+363 Bloody Parishioner _ Right arm character - map
+367 Bloody Parishioner _ Left Arm Character -map
+368 Bloody Parishioner _ Right knee character - map
+369 Bloody Parishioner _ Left knee character - map
+400 Covered in oil
+500 Cracks
+501 Cracks
+502 Cracks
+503 Cracks
+504 Cracks
+505 Cracks
+510 Cracks
+511 Cracks
+512 Cracks
+513 Cracks
+514 Cracks
+520 Cracks
+521 Cracks
+522 Cracks
+523 Cracks
+524 Cracks
+530 Crack Proximity 2 Attack
+531 Crack Proximity 2 Attack
+532 Crack Proximity 2 Attack
+533 Crack Proximity 2 Attack
+534 Crack Proximity 2 Attack
+540 Crack Proximity 2 Attack
+541 Crack Proximity 2 Attack
+542 Crack Proximity 2 Attack
+543 Crack Proximity 2 Attack
+544 Crack Proximity 2 Attack
+600 Burn marks Medium
+601 Scorch marks Enemy -PC Medium
+602 Small burn marks
+603 Scorch marks Enemy -PC small
+700 POM test
+800 Child of the Blood Moon (Right Arm) PC- map
+801 Child of the Blood Moon (left arm) PC- map
+802 Child of the Bloody Moon (right) 0 ) PC- map
+803 Child of the Bloody Moon (right 1 ) PC- map
+804 Child of the Blood Moon (rear 0 ) PC- map
+805 Child of the Blood Moon (rear 1 ) PC- map
+806 Child of the Bloody Moon (left) 0 ) PC- map
+807,Child of the Blood Moon (left) 1 ) PC- map
+808 Child of the Bloody Moon (Right Foot 0 ) PC- map
+809 Child of the Bloody Moon (Left leg 0 ) PC- map
+810 Child of the Blood Moon (Head 0 ) PC- map
+811 Child of the Blood Moon (Front Destruction 0 ) PC- map
+812 Child of the Blood Moon (Front Destruction 1 ) PC- map
+813 Child of the Blood Moon (Right Destroy 0 ) PC- map
+814 Child of the Blood Moon (Right Destroy 1 ) PC- map
+815 Child of the Blood Moon (Left Destroy 0 ) PC- map
+816 Child of the Blood Moon (Left Destroy 1 ) PC- map
+817 Child of the Blood Moon (Head Destroyed) PC- map
+911 The failed evil god (destruction of the pillars) 0) PC- map
+912 The failed evil god (destruction of the pillars) 1 ) PC- map
+913 The failed evil god (destruction of the pillars) 2 ) PC- map
+914 The Evil God of Failure (Right Destruction 0 ) PC- map
+915 The Evil God of Failure (Right Destruction 1 ) PC- map
+916 The Evil God of Failure (Right Destruction 2 ) PC- map
+917 The Evil God of Failure (Left Destruction 0 ) PC- map
+918 The Evil God of Failure (Left Destruction 1 ) PC- map
+919 The Evil God of Failure (Left Destruction 2 ) PC- map
+920 The failed evil god (head destroyed) 0 ) PC- map
+921 The failed evil god (head destroyed) 1 ) PC- map
+922 The failed evil god (head destroyed) 2) PC- map
+1000 Parry Throw _ Torso 1_ Blood Map
+1001 Parry Throw _ Torso 2_ Blood Map
+1002 Parry Throw _ Torso 3_ Blood Map
+1003 Parry Throw _ Torso 4_ Blood Character
+1004 Parry Throw _ face 1_ Blood Character - map
+1005 Back Throw ( 1002 (Flip version) Map
+1010 Parry Throw _ Torso 1_ Mucus Map
+1011 Parry Throw _ Torso 2_ Mucus Map
+1012 Parry Throw _ Torso 3_ Mucus Map
+1013 Parry Throw _ Torso 4_ Mucus character
+1014 Parry Throw _ face 1_ Mucus character - map
+1015 Back Throw ( 1012 (Flip version) Map
+1100 Licking blood (small) _ Blood bag rupture _ abovePC- map
+1101 Licking blood (small) _ Blood bag rupture _ under PC- map
+1102 Licking blood (medium) _ Blood bag rupture _ above PC- map
+1103 Licking blood (medium) _ Blood bag rupture _ under PC- map
+1104 Licking blood (large) _ Blood bag rupture _ above PC- map
+1105 Licking blood (large) _ Blood bag rupture _ under PC- map
+1106 Blood licking (extra large) _ Blood bag rupture _ above PC- map
+1107 Blood licking (extra large) _ Blood bag rupture _ under PC- map
+1200 City of Sacrifice _ Blood splash boiling upward character
+1201 City of Sacrifice _ Blood splash boiling downwards Character map
+1202 City of Sacrifice _ Blood splash boiling downwards ( large ) map
+1300 Evil God _Arm Pulling Character
+1301 Evil God _Arm Pulling Character
+1400 Woman Hunter _ Heat Up (center) _ map
+1401 Woman Hunter _ Heat Up (Front) _ map
+1402 Woman Hunter _ Heat Up (Left) _ map
+1403 Woman Hunter _ Heat Up (After) _ map
+1404 Woman Hunter _ Heat Up (Right) _ map
+1405 Woman Hunter _ Attack (front) _ map
 9999 test

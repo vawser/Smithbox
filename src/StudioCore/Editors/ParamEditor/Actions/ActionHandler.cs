@@ -32,7 +32,8 @@ public enum TargetType
 public enum SourceType
 {
     [Display(Name = "Smithbox")] Smithbox,
-    [Display(Name = "Project")] Project
+    [Display(Name = "Project")] Project,
+    [Display(Name = "Developer")] Developer
 }
 
 public class ActionHandler
@@ -171,6 +172,7 @@ public class ActionHandler
         if (selectedParam.ActiveParamExists())
         {
             bool _rowNameImport_useProjectNames = CurrentSourceCategory == SourceType.Project;
+            bool _rowNameImport_useDeveloperNames = CurrentSourceCategory == SourceType.Developer;
 
             if (ParamBank.PrimaryBank.Params != null)
             {
@@ -184,6 +186,7 @@ public class ActionHandler
                                 _rowNameImporter_EmptyOnly,
                                 _rowNameImporter_VanillaOnly,
                                 _rowNameImport_useProjectNames,
+                                _rowNameImport_useDeveloperNames,
                                 rows)
                         );
                         break;
@@ -193,7 +196,8 @@ public class ActionHandler
                                 selectedParam.GetActiveParam(),
                                 _rowNameImporter_EmptyOnly,
                                 _rowNameImporter_VanillaOnly,
-                                _rowNameImport_useProjectNames)
+                                _rowNameImport_useProjectNames,
+                                _rowNameImport_useDeveloperNames)
                         );
                         break;
                     case TargetType.AllParams:
@@ -202,7 +206,8 @@ public class ActionHandler
                                 null,
                                 _rowNameImporter_EmptyOnly,
                                 _rowNameImporter_VanillaOnly,
-                                _rowNameImport_useProjectNames)
+                                _rowNameImport_useProjectNames,
+                                _rowNameImport_useDeveloperNames)
                         );
                         break;
                     default:

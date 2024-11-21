@@ -1,6 +1,6 @@
-0 通常
-1 通常＋1
-2 通常＋2
-3 通常＋3
-4 通常＋4
-5 通常＋5
+0 usually
+1 Normal + 1
+2 Normal + 2
+3 Normal + 3
+4 Normal + 4
+5 Normal + 5

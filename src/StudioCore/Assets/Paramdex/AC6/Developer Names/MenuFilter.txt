@@ -1,0 +1,28 @@
+0 invalid value -- 無効値
+1 loading -- ローディング
+2 Movie/cutscene -- ムービー/カットシーン
+100 Title screen -- タイトル画面
+1000 FE default -- FEデフォルト
+2000 menu default -- メニューデフォルト
+10000 Effects in TAE -- TAEでのエフェクト
+10001 Effects in TAE -- TAEでのエフェクト
+99510000 [Test] Medium stagger RGB shifting noise 01 -- 【テスト】中よろけ　RGBずらしノイズ 01
+99510001 [Test] Medium stagger RGB shift noise 02 -- 【テスト】中よろけ　RGBずらしノイズ 02
+99510002 [Test] Medium stagger RGB shift noise 03 -- 【テスト】中よろけ　RGBずらしノイズ 03
+99510099 [Test] Medium stagger sandstorm noise -- 【テスト】中よろけ　砂嵐ノイズ
+99520000 [Test] Large stagger RGB shift noise 01 -- 【テスト】大よろけ　RGBずらしノイズ 01
+99520001 [Test] Big stagger RGB shift noise 02 -- 【テスト】大よろけ　RGBずらしノイズ 02
+99520002 [Test] Large stagger RGB shift noise 03 -- 【テスト】大よろけ　RGBずらしノイズ 03
+99520003 [Test] Big stagger RGB shift noise 04 -- 【テスト】大よろけ　RGBずらしノイズ 04
+99520004 [Test] Large stagger RGB shift noise 05 -- 【テスト】大よろけ　RGBずらしノイズ 05
+99520005 [Test] Large stagger RGB shift noise 06 -- 【テスト】大よろけ　RGBずらしノイズ 06
+99520006 [Test] Large stagger RGB shift noise 07 -- 【テスト】大よろけ　RGBずらしノイズ 07
+99520007 [Test] Large stagger RGB shift noise 08 -- 【テスト】大よろけ　RGBずらしノイズ 08
+99520008 [Test] Large stagger RGB shift noise 09 -- 【テスト】大よろけ　RGBずらしノイズ 09
+99520009 [Test] Large stagger RGB shift noise 10 -- 【テスト】大よろけ　RGBずらしノイズ 10
+99520010 [Test] Large stagger RGB shift noise 11 -- 【テスト】大よろけ　RGBずらしノイズ 11
+99520011 [Test] Large stagger RGB shift noise 12 -- 【テスト】大よろけ　RGBずらしノイズ 12
+99520020 [Test] Big stagger RGB shift noise last -- 【テスト】大よろけ　RGBずらしノイズ ラスト
+99520099 [Test] Large stagger sandstorm noise -- 【テスト】大よろけ　砂嵐ノイズ
+99540000 [Test] Additive stagger RGB shift noise 01 -- 【テスト】加算よろけ　RGBずらしノイズ 01
+99540099 [Test] Additive stagger sandstorm noise -- 【テスト】加算よろけ　砂嵐ノイズ

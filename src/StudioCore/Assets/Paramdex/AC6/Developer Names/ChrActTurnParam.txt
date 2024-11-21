@@ -1,0 +1,258 @@
+0 AC - Normal -- AC - 通常時
+9 AC - normal turn before firing -- AC - 通常時射撃前旋回
+10 AC - When dashing -- AC - ダッシュ時
+15 AC - Fast dash -- AC - 高速ダッシュ時
+20 AC - when boosted -- AC - ブースト時
+21 AC - Boost during stealth -- AC - ステルス中ブースト時
+29 AC - Turn before firing when boosting -- AC - ブースト時射撃前旋回
+30 AC - when braking -- AC - ブレーキ時
+40 AC - when moving in the air -- AC - 空中移動時
+49 AC - Turn before firing when moving in the air -- AC - 空中移動時射撃前旋回
+50 AC - Boost turning -- AC - ブースト旋回時
+55 AC - Air boost turning -- AC - 空中ブースト旋回時
+60 AC - 180 degree turn when turning boost -- AC - ブースト旋回時_180度ターン
+65 AC - 180 degree turn during air boost turning -- AC - 空中ブースト旋回時_180度ターン
+70 AC - When moving to Breho -- AC - ブレホ移動時
+75 AC - When moving in mid-air Breho -- AC - 空中ブレホ移動時
+80 AC - when cover is reversed -- AC - カバー反転時
+90 AC - large quick boost -- AC - 大クイックブースト時
+95 AC - QB time -- AC - QB時
+100 AC - When kicking against a wall -- AC - 壁蹴り時
+1000 AC_Quadrupod - Normal time -- AC_四脚 - 通常時
+1010 AC_quadruped - when dashing -- AC_四脚 - ダッシュ時
+1015 AC_Quadruped - During high speed dash -- AC_四脚 - 高速ダッシュ時
+1020 AC_quadruped - when boosted -- AC_四脚 - ブースト時
+1030 AC_quadruped - when braking -- AC_四脚 - ブレーキ時
+1040 AC_Quadruped - When moving in the air -- AC_四脚 - 空中移動時
+1050 AC_quadruped - when turning boost -- AC_四脚 - ブースト旋回時
+1055 AC_Quadruped - When turning with air boost -- AC_四脚 - 空中ブースト旋回時
+1060 AC_Quadruped - Boost turning_180 degree turn -- AC_四脚 - ブースト旋回時_180度ターン
+1065 AC_Quadruped - Air boost turning_180 degree turn -- AC_四脚 - 空中ブースト旋回時_180度ターン
+1070 AC_Quadruped - When moving Breho -- AC_四脚 - ブレホ移動時
+1075 AC_Quadruped - When moving in mid-air Breho -- AC_四脚 - 空中ブレホ移動時
+1080 AC_quadruped - when cover is reversed -- AC_四脚 - カバー反転時
+1090 AC_quadruped - at large quick boost -- AC_四脚 - 大クイックブースト時
+1095 AC Quadruped - QB -- AC 四脚 - QB時
+3000 AC_Tank - Normal time -- AC_タンク - 通常時
+3009 AC_Tank - Turn before firing normally -- AC_タンク - 通常時射撃前旋回
+3010 AC_Tank - When dashing -- AC_タンク - ダッシュ時
+3015 AC_Tank - During high speed dash -- AC_タンク - 高速ダッシュ時
+3020 AC_Tank - When boosted -- AC_タンク - ブースト時
+3029 AC_Tank - Turn before firing when boosting -- AC_タンク - ブースト時射撃前旋回
+3030 AC_tank - during braking -- AC_タンク - ブレーキ時
+3040 AC_Tank - When moving in the air -- AC_タンク - 空中移動時
+3049 AC_Tank - Turn before firing when moving in the air -- AC_タンク - 空中移動時射撃前旋回
+3050 AC_Tank - When turning boost -- AC_タンク - ブースト旋回時
+3055 AC_Tank - Air boost turning -- AC_タンク - 空中ブースト旋回時
+3060 AC_Tank - Boost turning_180 degree turn -- AC_タンク - ブースト旋回時_180度ターン
+3065 AC_Tank - Air boost turning_180 degree turn -- AC_タンク - 空中ブースト旋回時_180度ターン
+3070 AC_Tank - When moving Breho -- AC_タンク - ブレホ移動時
+3075 AC_Tank - When moving in mid-air Breho -- AC_タンク - 空中ブレホ移動時
+3080 AC_Tank - When cover is reversed -- AC_タンク - カバー反転時
+3090 AC_Tank - Large quick boost -- AC_タンク - 大クイックブースト時
+3095 AC Tank - At QB -- AC タンク - QB時
+3100 AC_Tank - Drift -- AC_タンク - ドリフト
+9900 AC - Turn at QB start -- AC - QB開始時旋回
+9901 AC - Quadruped_QB movement -- AC - 四脚_QB移動時
+9910 AC - Reverse joint charging attack_charging stage -- AC - 逆関節溜め攻撃_溜め段階
+9911 AC - Reverse joint charge attack_stepping -- AC - 逆関節溜め攻撃_踏み込み
+10000000 Bipod_Basic - Normal time -- 二脚_基本 - 通常時
+10000001 Bipod_Basic - Normal time_Cannot rotate -- 二脚_基本 - 通常時_旋回不可
+10000009 Bipod_Basic - Normal time_Rapid turning -- 二脚_基本 - 通常時_急速旋回
+10000010 Bipod_Basics - Walking/running -- 二脚_基本 - 歩行・走行時
+10000015 Bipod_Basic - Asabu time -- 二脚_基本 - アサブ時
+10000020 Bipod_Basics - Boost running/braking -- 二脚_基本 - ブースト走行/ブレーキ
+10000021 Bipod_Basic - Boost running/Brake_Turning not possible -- 二脚_基本 - ブースト走行/ブレーキ_旋回不可
+10000029 Bipod_Basics - Boost running/Brake_Rapid turning -- 二脚_基本 - ブースト走行/ブレーキ_急速旋回
+10000030 Bipod_Basics - Slope sliding -- 二脚_基本 - 斜面滑り
+10000031 Bipod_Basic - Slope sliding_Cannot turn -- 二脚_基本 - 斜面滑り_旋回不可
+10000039 Bipod_Basics - Slope sliding_Rapid turning -- 二脚_基本 - 斜面滑り_急速旋回
+10000040 Bipod_Basics - General aerial movement -- 二脚_基本 - 空中移動全般
+10000041 Bipod_Basics - General aerial movement_Turning not possible -- 二脚_基本 - 空中移動全般_旋回不可
+10000049 Bipod_Basics - General aerial movement_Rapid turning -- 二脚_基本 - 空中移動全般_急速旋回
+10000050 Bipod_Basics - Quick turn rotation_Basics -- 二脚_基本 - クイックターン旋回_基本
+10000051 Bipod_Basics - Quick turn turning_Asab start -- 二脚_基本 - クイックターン旋回_アサブ開始
+10000052 Bipod_Basics - Quick turn rotation_Camera QT -- 二脚_基本 - クイックターン旋回_カメラQT
+10000080 Bipod_Basic - Whole body attack turning brake -- 二脚_基本 - 全身攻撃旋回ブレーキ
+10000090 Bipod_Basic - Cannot rotate -- 二脚_基本 - 旋回不可
+10100000 Bipod_Lightweight - Normal time -- 二脚_軽量 - 通常時
+10100001 Bipod_Lightweight - Normal time_Cannot rotate -- 二脚_軽量 - 通常時_旋回不可
+10100009 Bipod_Lightweight - Normal time_Rapid turning -- 二脚_軽量 - 通常時_急速旋回
+10100010 Bipod_lightweight - when walking/running -- 二脚_軽量 - 歩行・走行時
+10100015 Bipod_Basic - Asabu time -- 二脚_基本 - アサブ時
+10100020 Bipod_lightweight - boost running/braking -- 二脚_軽量 - ブースト走行/ブレーキ
+10100021 Bipod_Lightweight - Boost running/Brake_Cannot turn -- 二脚_軽量 - ブースト走行/ブレーキ_旋回不可
+10100029 Bipod_lightweight - boost running/brake_rapid turning -- 二脚_軽量 - ブースト走行/ブレーキ_急速旋回
+10100030 Bipod_Lightweight - Slope sliding -- 二脚_軽量 - 斜面滑り
+10100031 Bipod_Lightweight - Slope sliding_Cannot turn -- 二脚_軽量 - 斜面滑り_旋回不可
+10100039 Bipod_Lightweight - Slope sliding_Rapid turning -- 二脚_軽量 - 斜面滑り_急速旋回
+10100040 Bipod_Lightweight - General aerial movement -- 二脚_軽量 - 空中移動全般
+10100041 Bipod_Lightweight - General aerial movement_Cannot turn -- 二脚_軽量 - 空中移動全般_旋回不可
+10100049 Bipod_Lightweight - General aerial movement_Rapid turning -- 二脚_軽量 - 空中移動全般_急速旋回
+10100050 Bipod_Lightweight - Quick turn rotation_Basics -- 二脚_軽量 - クイックターン旋回_基本
+10100051 Bipod_Lightweight - Quick turn turning_Asab start -- 二脚_軽量 - クイックターン旋回_アサブ開始
+10100052 Bipod_Lightweight - Quick turn rotation_Camera QT -- 二脚_軽量 - クイックターン旋回_カメラQT
+10100080 Bipod_Lightweight - Whole body attack turning brake -- 二脚_軽量 - 全身攻撃旋回ブレーキ
+10100090 Bipod_lightweight - cannot rotate -- 二脚_軽量 - 旋回不可
+10200000 Bipod_Weight - Normal -- 二脚_重量 - 通常時
+10200001 Bipod_Weight - Normal time_Cannot rotate -- 二脚_重量 - 通常時_旋回不可
+10200009 Bipod_Weight - Normal time_Rapid turning -- 二脚_重量 - 通常時_急速旋回
+10200010 Bipod_Weight - Walking/running -- 二脚_重量 - 歩行・走行時
+10200015 Bipod_Basic - Asabu time -- 二脚_基本 - アサブ時
+10200020 Bipod_Weight - Boost travel/brake -- 二脚_重量 - ブースト走行/ブレーキ
+10200021 Bipod_weight - boost running/brake_unable to turn -- 二脚_重量 - ブースト走行/ブレーキ_旋回不可
+10200029 Bipod_weight - boost running/brake_rapid turning -- 二脚_重量 - ブースト走行/ブレーキ_急速旋回
+10200030 Bipod_weight - Slope sliding -- 二脚_重量 - 斜面滑り
+10200031 Bipod_weight - Slope slipping_unable to turn -- 二脚_重量 - 斜面滑り_旋回不可
+10200039 Bipod_weight - Slope sliding_rapid turning -- 二脚_重量 - 斜面滑り_急速旋回
+10200040 Bipod_weight - General aerial movement -- 二脚_重量 - 空中移動全般
+10200041 Bipod_weight - General aerial movement_no turning -- 二脚_重量 - 空中移動全般_旋回不可
+10200049 Bipod_Weight - General aerial movement_Rapid turning -- 二脚_重量 - 空中移動全般_急速旋回
+10200050 Bipod_Weight - Quick turn rotation_Basics -- 二脚_重量 - クイックターン旋回_基本
+10200051 Bipod_weight - Quick turn turning_assab start -- 二脚_重量 - クイックターン旋回_アサブ開始
+10200052 Bipod_weight - quick turn rotation_camera QT -- 二脚_重量 - クイックターン旋回_カメラQT
+10200080 Bipod_weight - Whole body attack turning brake -- 二脚_重量 - 全身攻撃旋回ブレーキ
+10200090 Bipod_weight - cannot rotate -- 二脚_重量 - 旋回不可
+11000000 Reverse joint_basics - normal time -- 逆関節_基本 - 通常時
+11000001 Reverse joint_basic - Normal time_unable to rotate -- 逆関節_基本 - 通常時_旋回不可
+11000009 Reverse joint_Basics - Normal time_Rapid turning -- 逆関節_基本 - 通常時_急速旋回
+11000010 Reverse joint_basics - Walking/running -- 逆関節_基本 - 歩行・走行時
+11000015 Reverse joint_basics - Asabu time -- 逆関節_基本 - アサブ時
+11000020 Reverse joint_basics - boost driving/braking -- 逆関節_基本 - ブースト走行/ブレーキ
+11000021 Reverse joint_basics - boost running/brake_turning not possible -- 逆関節_基本 - ブースト走行/ブレーキ_旋回不可
+11000029 Reverse joint_basics - boost driving/brake_rapid turning -- 逆関節_基本 - ブースト走行/ブレーキ_急速旋回
+11000030 Reverse joint_basics - slope sliding -- 逆関節_基本 - 斜面滑り
+11000031 Reverse joint_basics - Slope sliding_unable to turn -- 逆関節_基本 - 斜面滑り_旋回不可
+11000039 Reverse joint_basics - Slope sliding_rapid turning -- 逆関節_基本 - 斜面滑り_急速旋回
+11000040 Reverse joint_basics - General aerial movement -- 逆関節_基本 - 空中移動全般
+11000041 Reverse joints_Basics - General aerial movement_No turning possible -- 逆関節_基本 - 空中移動全般_旋回不可
+11000049 Reverse joint_Basics - General aerial movement_Rapid turning -- 逆関節_基本 - 空中移動全般_急速旋回
+11000050 Reverse joint_basics - Quick turn rotation_basics -- 逆関節_基本 - クイックターン旋回_基本
+11000051 Reverse joint_basics - quick turn rotation_assab start -- 逆関節_基本 - クイックターン旋回_アサブ開始
+11000052 Reverse joint_Basics - Quick turn rotation_Camera QT -- 逆関節_基本 - クイックターン旋回_カメラQT
+11000080 Reverse joint_basics - whole body attack turning brake -- 逆関節_基本 - 全身攻撃旋回ブレーキ
+11000090 Reverse joint_basics - cannot rotate -- 逆関節_基本 - 旋回不可
+12000000 Quadruped_Basic - Normal time -- 四脚_基本 - 通常時
+12000001 Quadruped_Basic - Normal time_Cannot turn -- 四脚_基本 - 通常時_旋回不可
+12000009 Quadruped_Basics - Normal_Rapid turning -- 四脚_基本 - 通常時_急速旋回
+12000010 Quadruped_Basics - Walking/running -- 四脚_基本 - 歩行・走行時
+12000015 Quadruped_Basic - Asabu time -- 四脚_基本 - アサブ時
+12000020 Quadruped_Basics - Boost running/braking -- 四脚_基本 - ブースト走行/ブレーキ
+12000021 Quadruped_Basic - Boost running/Brake_Turning not possible -- 四脚_基本 - ブースト走行/ブレーキ_旋回不可
+12000029 Quadruped_Basics - Boost running/Brake_Rapid turning -- 四脚_基本 - ブースト走行/ブレーキ_急速旋回
+12000030 Quadruped_Basics - Slope sliding -- 四脚_基本 - 斜面滑り
+12000031 Quadruped_Basic - Slope sliding_Cannot turn -- 四脚_基本 - 斜面滑り_旋回不可
+12000039 Quadruped_Basics - Slope sliding_Rapid turning -- 四脚_基本 - 斜面滑り_急速旋回
+12000040 Quadruped_Basics - General aerial movement -- 四脚_基本 - 空中移動全般
+12000041 Quadrupeds_Basics - General aerial movement_No turning possible -- 四脚_基本 - 空中移動全般_旋回不可
+12000049 Quadruped_Basics - General aerial movement_Rapid turning -- 四脚_基本 - 空中移動全般_急速旋回
+12000050 Quadruped_Basics - Quick Turn Rotation_Basics -- 四脚_基本 - クイックターン旋回_基本
+12000051 Quadruped_Basic - Quick turn rotation_Assab start -- 四脚_基本 - クイックターン旋回_アサブ開始
+12000052 Quadruped_Basics - Quick turn rotation_Camera QT -- 四脚_基本 - クイックターン旋回_カメラQT
+12000053 Quadruped_Basics - Quick turn turning_Spot turning -- 四脚_基本 - クイックターン旋回_その場旋回
+12000080 Quadruped_Basic - Whole body attack turning brake -- 四脚_基本 - 全身攻撃旋回ブレーキ
+12000090 Quadruped_Basic - Cannot rotate -- 四脚_基本 - 旋回不可
+13000000 Tank_Basic - Normal time -- タンク_基本 - 通常時
+13000001 Tank_Basic - Normal time_Cannot turn -- タンク_基本 - 通常時_旋回不可
+13000009 Tank_Basics-Normal_Rapid turning -- タンク_基本 - 通常時_急速旋回
+13000010 Tank_Basics - Walking/running -- タンク_基本 - 歩行・走行時
+13000011 Tank_Basics - Boost driving_Turning not possible -- タンク_基本 - ブースト走行_旋回不可
+13000015 Tank_Basic - Asabu time -- タンク_基本 - アサブ時
+13000019 Tank_Basics - Boost driving_Rapid turning -- タンク_基本 - ブースト走行_急速旋回
+13000020 Tank_Basics - Boost driving -- タンク_基本 - ブースト走行
+13000021 Tank_Basics - Boost driving_Turning not possible -- タンク_基本 - ブースト走行_旋回不可
+13000029 Tank_Basics - Boost driving_Rapid turning -- タンク_基本 - ブースト走行_急速旋回
+13000040 Tank_Basics - General aerial movement -- タンク_基本 - 空中移動全般
+13000041 Tank_Basics - General aerial movement_No turning possible -- タンク_基本 - 空中移動全般_旋回不可
+13000049 Tank_Basics - General air movement_Rapid turning -- タンク_基本 - 空中移動全般_急速旋回
+13000050 Tank_Basics - Quick turn rotation_Basics -- タンク_基本 - クイックターン旋回_基本
+13000051 Tank_Basics - Quick turn turning_Asab start -- タンク_基本 - クイックターン旋回_アサブ開始
+13000052 Tank_Basics - Quick turn rotation_Camera QT -- タンク_基本 - クイックターン旋回_カメラQT
+13000053 Tank_Basics - Quick turn turning_Turning on the spot -- タンク_基本 - クイックターン旋回_その場旋回
+13000080 Tank_Basics - Whole body attack turning brake -- タンク_基本 - 全身攻撃旋回ブレーキ
+13000090 Tank_Basic - Cannot turn -- タンク_基本 - 旋回不可
+13000100 Tank_Basics - Drift -- タンク_基本 - ドリフト
+13000101 Tank_Basic - Drift_Cannot turn -- タンク_基本 - ドリフト_旋回不可
+13000109 Tank_Basics - Drift_Rapid turning -- タンク_基本 - ドリフト_急速旋回
+13100000 Tank_Hover - Normal -- タンク_ホバー - 通常時
+13100001 Tank_Hover - Normal time_Cannot turn -- タンク_ホバー - 通常時_旋回不可
+13100009 Tank_Hover - Normal_Rapid turning -- タンク_ホバー - 通常時_急速旋回
+13100010 Tank_Hover - When walking/running -- タンク_ホバー - 歩行・走行時
+13100011 Tank_Hover - Boost running_Cannot turn -- タンク_ホバー - ブースト走行_旋回不可
+13100015 Tank_Hover - Asabu time -- タンク_ホバー - アサブ時
+13100019 Tank_Hover - Boost driving_Rapid turning -- タンク_ホバー - ブースト走行_急速旋回
+13100020 Tank_Hover - Boost driving -- タンク_ホバー - ブースト走行
+13100021 Tank_Hover - Boost running_Cannot turn -- タンク_ホバー - ブースト走行_旋回不可
+13100029 Tank_Hover - Boost driving_Rapid turning -- タンク_ホバー - ブースト走行_急速旋回
+13100040 Tank_Hover - General aerial movement -- タンク_ホバー - 空中移動全般
+13100041 Tank_Hover - General aerial movement_Cannot turn -- タンク_ホバー - 空中移動全般_旋回不可
+13100049 Tank_Hover - General aerial movement_Rapid turning -- タンク_ホバー - 空中移動全般_急速旋回
+13100050 Tank_Hover - Quick Turn Turn_Basics -- タンク_ホバー - クイックターン旋回_基本
+13100051 Tank_Hover - Quick turn rotation_Asab start -- タンク_ホバー - クイックターン旋回_アサブ開始
+13100052 Tank_Hover - Quick Turn Turn_Camera QT -- タンク_ホバー - クイックターン旋回_カメラQT
+13100053 Tank_Hover - Quick Turn Turn_Turn on the spot -- タンク_ホバー - クイックターン旋回_その場旋回
+13100080 Tank_Hover - Full body attack turning brake -- タンク_ホバー - 全身攻撃旋回ブレーキ
+13100090 Tank_Hover - Cannot rotate -- タンク_ホバー - 旋回不可
+13100100 Tank_Hover - Drift -- タンク_ホバー - ドリフト
+13100101 Tank_Hover - Drift_Cannot turn -- タンク_ホバー - ドリフト_旋回不可
+13100109 Tank_Hover - Drift_Rapid Turn -- タンク_ホバー - ドリフト_急速旋回
+13200000 Tank_Wheelchair - Normal time -- タンク_車椅子 - 通常時
+13200001 Tank_Wheelchair - Normal time_Cannot turn -- タンク_車椅子 - 通常時_旋回不可
+13200009 Tank_Wheelchair - Normal time_Rapid turning -- タンク_車椅子 - 通常時_急速旋回
+13200010 Tank_Wheelchair - Walking/running -- タンク_車椅子 - 歩行・走行時
+13200011 Tank_Wheelchair - Boost running_Cannot turn -- タンク_車椅子 - ブースト走行_旋回不可
+13200015 Tank_Wheelchair - At Asab -- タンク_車椅子 - アサブ時
+13200019 Tank_Wheelchair - Boost running_Rapid turning -- タンク_車椅子 - ブースト走行_急速旋回
+13200020 Tank_Wheelchair - Boost running -- タンク_車椅子 - ブースト走行
+13200021 Tank_Wheelchair - Boost running_Cannot turn -- タンク_車椅子 - ブースト走行_旋回不可
+13200029 Tank_Wheelchair - Boost running_Rapid turning -- タンク_車椅子 - ブースト走行_急速旋回
+13200040 Tank_Wheelchair - General aerial movement -- タンク_車椅子 - 空中移動全般
+13200041 Tank_Wheelchair - General aerial movement_Cannot turn -- タンク_車椅子 - 空中移動全般_旋回不可
+13200049 Tank_Wheelchair - General aerial movement_Rapid turning -- タンク_車椅子 - 空中移動全般_急速旋回
+13200050 Tank_Wheelchair - Quick turn rotation_Basics -- タンク_車椅子 - クイックターン旋回_基本
+13200051 Tank_Wheelchair - Quick turn rotation_Asab start -- タンク_車椅子 - クイックターン旋回_アサブ開始
+13200052 Tank_Wheelchair - Quick turn rotation_Camera QT -- タンク_車椅子 - クイックターン旋回_カメラQT
+13200053 Tank_Wheelchair - Quick turn turning_Turning on the spot -- タンク_車椅子 - クイックターン旋回_その場旋回
+13200080 Tank_Wheelchair - Full body attack turning brake -- タンク_車椅子 - 全身攻撃旋回ブレーキ
+13200090 Tank_Wheelchair - cannot turn -- タンク_車椅子 - 旋回不可
+13200100 Tank_Wheelchair - Drift -- タンク_車椅子 - ドリフト
+13200101 Tank_Wheelchair - Drift_Cannot turn -- タンク_車椅子 - ドリフト_旋回不可
+13200109 Tank_Wheelchair - Drift_Rapid turning -- タンク_車椅子 - ドリフト_急速旋回
+19000000 Common legs - Rapid turning_Normal -- 脚部共通 - 急速旋回_通常時
+19000010 Common legs - rapid turning_boost driving -- 脚部共通 - 急速旋回_ブースト走行
+19000020 Common legs - Rapid turning_boost running/braking -- 脚部共通 - 急速旋回_ブースト走行/ブレーキ
+19000030 Common legs - rapid turning_slope sliding -- 脚部共通 - 急速旋回_斜面滑り
+19000040 Common legs - Rapid turning_Aerial movement in general -- 脚部共通 - 急速旋回_空中移動全般
+19000050 Common legs - Rapid turning_Quick turn turning -- 脚部共通 - 急速旋回_クイックターン旋回
+19000052 Common legs - Rapid turning_Quick turn turning (Camera QT) -- 脚部共通 - 急速旋回_クイックターン旋回（カメラQT）
+19000100 Common legs - rapid turning_drift -- 脚部共通 - 急速旋回_ドリフト
+20000080 Common to tanks - Brejo turning ① -- タンク共通 - ブレホ旋回①
+20000081 Common to tanks - Brejo turning ② -- タンク共通 - ブレホ旋回②
+20000082 Common to tanks - Brejo turning ③ -- タンク共通 - ブレホ旋回③
+20400000 Hand weapon_Buzz type - Stance_Normal (walking/running) -- 手武器_バズ系 - 構え_通常時（歩行・走行）
+20400015 Hand weapon_buzz type - stance_assab -- 手武器_バズ系 - 構え_アサブ時
+20400020 Hand Weapon_Buzz Type - Stance_Boost Travel/Brake -- 手武器_バズ系 - 構え_ブースト走行/ブレーキ
+20400030 Hand Weapon_Buzz Type - Stance_Slope Slip -- 手武器_バズ系 - 構え_斜面滑り
+20400040 Hand weapons_Buzz type - Stance_Aerial movement in general -- 手武器_バズ系 - 構え_空中移動全般
+20400050 Hand Weapon_Buzz Type - Stance_Quick Turn Rotation_Basic -- 手武器_バズ系 - 構え_クイックターン旋回_基本
+20400052 Hand weapon_Buzz type - Stance_Quick turn rotation_Camera QT -- 手武器_バズ系 - 構え_クイックターン旋回_カメラQT
+20400080 Hand weapon_Buzz type - stance_Full body attack -- 手武器_バズ系 - 構え_全身攻撃中
+20400090 Hand weapon_buzz type - Stance_unable to turn -- 手武器_バズ系 - 構え_旋回不可
+20600000 Hand Weapon_Gray-Stance_Normal (Walking/Running) -- 手武器_グレ系 - 構え_通常時（歩行・走行）
+20600015 Hand weapon_Gre type - Stance_Assab -- 手武器_グレ系 - 構え_アサブ時
+20600020 Hand Weapon_Gray Series - Stance_Boost Travel/Brake -- 手武器_グレ系 - 構え_ブースト走行/ブレーキ
+20600030 Hand Weapon_Gray-Stance_Slope Slip -- 手武器_グレ系 - 構え_斜面滑り
+20600040 Hand Weapon_Gre type - Stance_Aerial movement in general -- 手武器_グレ系 - 構え_空中移動全般
+20600050 Hand Weapon_Gre type - Stance_Quick Turn Rotation_Basic -- 手武器_グレ系 - 構え_クイックターン旋回_基本
+20600052 Hand Weapon_Gray Series - Stance_Quick Turn Rotation_Camera QT -- 手武器_グレ系 - 構え_クイックターン旋回_カメラQT
+20600080 Hand weapon_Gre type - Stance_Full body attack -- 手武器_グレ系 - 構え_全身攻撃中
+20600090 Hand weapon_Gray type - Stance_Cannot turn -- 手武器_グレ系 - 構え_旋回不可
+30100000 Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Normal (walking/running) -- 肩武器_実弾（バズ、グレ）系 - 構え_通常時（歩行・走行）
+30100015 Shoulder weapon_live ammunition (buzz, gray) type - stance_assab -- 肩武器_実弾（バズ、グレ）系 - 構え_アサブ時
+30100020 Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Boost running/brake -- 肩武器_実弾（バズ、グレ）系 - 構え_ブースト走行/ブレーキ
+30100030 Shoulder Weapons_Live Bullets (Buzz, Gray) - Stance_Slope Slip -- 肩武器_実弾（バズ、グレ）系 - 構え_斜面滑り
+30100040 Shoulder weapons_Live bullets (buzz, gray) - Stance_Aerial movement in general -- 肩武器_実弾（バズ、グレ）系 - 構え_空中移動全般
+30100050 Shoulder Weapons_Live Bullets (Buzz, Gray) - Stance_Quick Turn Rotation_Basics -- 肩武器_実弾（バズ、グレ）系 - 構え_クイックターン旋回_基本
+30100052 Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Quick turn rotation_Camera QT -- 肩武器_実弾（バズ、グレ）系 - 構え_クイックターン旋回_カメラQT
+30100080 Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Full body attack -- 肩武器_実弾（バズ、グレ）系 - 構え_全身攻撃中
+30100090 Shoulder weapon_Live ammunition (buzz, gray) type - Stance_Cannot turn -- 肩武器_実弾（バズ、グレ）系 - 構え_旋回不可

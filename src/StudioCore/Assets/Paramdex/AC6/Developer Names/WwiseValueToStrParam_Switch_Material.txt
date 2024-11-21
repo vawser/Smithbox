@@ -1,0 +1,115 @@
+0 No 00 -- 00なし
+1 January surface -- 01月面
+2 Missing number -- 欠番
+3 heavyiron
+4 04 wood -- 04木材
+5 05 sand -- 05砂
+6 06 ice -- 06氷
+7 07 snow -- 07雪
+8 08 cloth -- 08布
+9 09 electricity -- 09電気
+10 10 concrete -- 10コンクリ
+11 11 iron -- 11鉄
+12 12 glass -- 12ガラス
+13 13 missing numbers -- 13欠番
+14 14 missing numbers -- 14欠番
+15 15 missing numbers -- 15欠番
+16 16 missing numbers -- 16欠番
+17 17 missing numbers -- 17欠番
+18 18 missing numbers -- 18欠番
+19 19 missing number -- 19欠番
+20 20 water (about a puddle) -- 20水（水溜り程度）
+21 21 water (around ankle) -- 21水（足首程度）
+22 22 water (below the knee) -- 22水（膝下）
+23 23 water (waist and above) -- 23水（腰以上）
+24 24 underwater -- 24水底
+25 25 Swamp (Puddle size) -- 25沼（水溜り程度）
+26 26 Swamp (around ankle) -- 26沼（足首程度）
+27 27 Swamp (below the knee) -- 27沼（膝下）
+28 28 Swamp (above waist) -- 28沼（腰以上）
+29 29 missing number -- 29欠番
+30 Heavy oil (about ankle size) -- 重油（足首程度）
+31 Heavy oil (below the knee) -- 重油（膝下）
+32 32 missing numbers -- 32欠番
+33 33 missing numbers -- 33欠番
+34 Coral water surface (about ankle level) -- コーラル水面（足首程度）
+35 Coral water surface (below the knees) -- コーラル水面（膝下）
+36 36 missing numbers -- 36欠番
+37 37 missing numbers -- 37欠番
+38 38 missing numbers -- 38欠番
+39 39 missing number -- 39欠番
+40 40 test: Steam generation on hit -- 40テスト：ヒット時蒸気発生
+41 41 stealth fog -- 41ステルス霧
+42 42 snow -- 42雪
+43 43 acceleration floor -- 43加速床
+44 44PA barrier -- 44PAバリア
+45 45 missing number -- 45欠番
+46 46 missing numbers -- 46欠番
+47 47 missing number -- 47欠番
+48 48 missing numbers -- 48欠番
+49 49 missing number -- 49欠番
+50 50 missing numbers -- 50欠番
+51 51 missing number -- 51欠番
+52 52 missing numbers -- 52欠番
+53 53 missing number -- 53欠番
+54 54 missing number -- 54欠番
+55 55 missing number -- 55欠番
+56 56 missing numbers -- 56欠番
+57 57 missing number -- 57欠番
+58 58 missing number -- 58欠番
+59 59 missing number -- 59欠番
+60 60 missing numbers -- 60欠番
+61 61 missing number -- 61欠番
+62 62 missing numbers -- 62欠番
+63 63 missing numbers -- 63欠番
+64 64 missing numbers -- 64欠番
+65 65 missing number -- 65欠番
+66 66 missing numbers -- 66欠番
+67 67 missing number -- 67欠番
+68 68 missing numbers -- 68欠番
+69 69 missing number -- 69欠番
+70 70 missing numbers -- 70欠番
+71 71 missing number -- 71欠番
+72 72 missing numbers -- 72欠番
+73 73 missing number -- 73欠番
+74 74 missing number -- 74欠番
+75 75 missing number -- 75欠番
+76 76 missing numbers -- 76欠番
+77 77 missing number -- 77欠番
+78 78 missing number -- 78欠番
+79 79 missing number -- 79欠番
+80 80 missing numbers -- 80欠番
+81 81 missing number -- 81欠番
+82 82 missing number -- 82欠番
+83 83 missing number -- 83欠番
+84 84 missing number -- 84欠番
+85 85 missing number -- 85欠番
+86 86 missing number -- 86欠番
+87 87 missing number -- 87欠番
+88 88 missing number -- 88欠番
+89 89 missing number -- 89欠番
+90 90 missing numbers -- 90欠番
+91 91 missing number -- 91欠番
+92 92 missing number -- 92欠番
+93 93 missing number -- 93欠番
+94 94 missing number -- 94欠番
+95 95 missing number -- 95欠番
+96 96 missing number -- 96欠番
+97 97 missing number -- 97欠番
+98 98 missing number -- 98欠番
+99 99 missing number -- 99欠番
+100 100_shield iron -- 100_盾鉄
+101 101_shield heavy iron -- 101_盾重鉄
+102 102_Shield Energy -- 102_盾エネルギー
+103 103_body iron -- 103_身体鉄
+104 104_Body heavy iron -- 104_身体重鉄
+105 105_body meat -- 105_身体肉
+106 106_body cloth -- 106_身体布
+107 107_Plasma Shield -- 107_プラズマ盾
+108 108_PA_enemy large_white_hit ripple -- 108_PA_敵大_白_被弾波紋
+109 109_generator_normal -- 109_ジェネレーター_通常
+110 110_generator_coral -- 110_ジェネレーター_コーラル
+111 111_PA_Enemy extra large_Coral_Ripples hit -- 111_PA_敵特大_コーラル_被弾波紋
+112 112_Shield Coral -- 112_盾コーラル
+254 254_Preliminary 3 -- 254_予備３
+255 255_Material 1 -- 255_材質１

@@ -1,0 +1,55 @@
+0 need -- 必要
+110 treasure chest -- 宝箱
+200 treasure chest -- 宝箱
+350 m93_01_door_candle room -- m93_01_扉_蝋燭部屋
+351 m93_01_door_candle room -- m93_01_扉_蝋燭部屋
+360 m96_00 Door Concept Map_Entrance -- m96_00 扉 コンセプトマップ_入口
+370 m96_00 Door Concept Map_Cathedral Entrance -- m96_00 扉 コンセプトマップ_聖堂入口
+371 m96_00 Door Concept Map_Long View Entrance -- m96_00 扉 コンセプトマップ_遠景入口
+475 m20_01_Door_Orphanage 2F_Small -- m20_01_扉_孤児院2F_小
+1011 test_door test -- test_扉テスト
+1012 test_door test -- test_扉テスト
+300300 m30_00_door_mausoleum shortcut -- m30_00_扉_霊廟ショートカット
+300310 m30_00_door_castle wall shortcut -- m30_00_扉_城壁ショートカット
+300311 m30_00_door_castle wall shortcut -- m30_00_扉_城壁ショートカット
+300312 m30_00_door_mausoleum shortcut -- m30_00_扉_霊廟ショートカット
+300320 m30_01_door_old garden building -- m30_01_扉_旧ガーデン建物
+300371 m30_00_door_mausoleum exit door -- m30_00_扉_霊廟出口扉
+300500 m30_00_lever_mausoleum front elevator -- m30_00_レバー_霊廟正面エレベータ
+300510 m30_00_lever_castle wall elevator -- m30_00_レバー_城壁エレベーター
+304873 m30_01_Lever_Large elevator -- m30_01_レバー_大広間エレベータ
+302420 m30_02_lever_archive elevator -- m30_02_レバー_書庫エレベータ
+314027 m31_00_door_in front of boss room -- m31_00_扉_ボス部屋前
+324012 m32_00 lever_big bell -- m32_00 レバー_大鐘
+324051 m32_00 lever_bridge elevator -- m32_00 レバー_橋エレベーター
+331312 m33_00 Lever Poison Swamp Forest Elevator -- m33_00 レバー 毒沼の森エレベーター
+331321 m33_00 Double door in front of boss -- m33_00 両開き扉 ボス前
+350003 m35_00 lever_elevator -- m35_00 レバー_エレベーター
+350005 m35_00 Large door_Both sides of the cathedral -- m35_00 大扉_聖堂両脇
+350021 m35_00 Lever_Shutter -- m35_00 レバー_シャッター
+350206 m35_00 Big door_Cathedral main gate -- m35_00 大扉_聖堂正門
+351000 m35_00 double door -- m35_00 両開き扉
+360320 m36_00 Double door in front of middle boss -- m36_00 両開き扉 中ボス前
+360330 m36_00 Double door shotoka -- m36_00 両開き扉 ショトカ
+370301 m37_00_door_Landmark church square -- m37_00_扉_ランドマーク教会前広場
+370502 m37_00_lever -- m37_00_レバー
+390301 m39_00 Shotka door -- m39_00 ショトカ扉
+394051 m39_00_Dungeon Shotka Elevator -- m39_00_地下牢ショトカエレベーター
+394027 m39_00_Underground prison door -- m39_00_地下牢獄扉
+394028 m39_01_dungeon shotka door -- m39_01_地下牢ショトカ扉
+400340 m40_00_Last boss room door -- m40_00_ラスボス部屋扉
+10000 default -- デフォルト
+1300311 m30_00_door_castle wall shortcut 1 -- m30_00_扉_城壁ショートカット1
+2300311 m30_00_door_castle wall shortcut 2 -- m30_00_扉_城壁ショートカット2
+90000 GR_Test_General purpose door (double door) -- GR_テスト用_汎用扉（両開き）
+90001 GR_Test_Door with key (double door) -- GR_テスト用_鍵付扉（両開き）
+90002 GR_Test_Inner key door -- GR_テスト用_内鍵扉
+90010 GR_For testing_General purpose door (single opening) -- GR_テスト用_汎用扉（片開き）
+90011 GR_Test_Door with key (single opening) -- GR_テスト用_鍵付扉（片開き）
+90012 GR_For testing_Inner key door (single opening) -- GR_テスト用_内鍵扉（片開き）
+90013 GR_For testing_Playable operation confirmation A -- GR_テスト用_プレイアブル動作確認Ａ
+90014 GR_For testing_Playable operation confirmation B -- GR_テスト用_プレイアブル動作確認Ｂ
+90015 GR_For testing_Playable operation confirmation B -- GR_テスト用_プレイアブル動作確認Ｂ
+90016 GR_For testing_For hanging event response -- GR_テスト用_ぶら下がりイベント対応用
+990000 FNR_Test_Door (temporary model) -- FNR_テスト用_扉（仮モデル）
+990001 FNR_Test_Door (temporary model) -- FNR_テスト用_扉（仮モデル）

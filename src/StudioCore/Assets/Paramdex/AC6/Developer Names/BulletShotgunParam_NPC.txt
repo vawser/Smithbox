@@ -1,0 +1,91 @@
+0 dummy -- ダミー
+1 Test (it's okay to erase or overwrite) -- テスト(消すなり、上書きするなりして大丈夫)
+2 Test (it's okay to erase or overwrite) -- テスト(消すなり、上書きするなりして大丈夫)
+1000 Default shotgun -- デフォルト散弾
+1100 EN shotgun (spread) -- ENショットガン（拡散）
+1200 EN shotgun (vertical) -- ENショットガン（垂直）
+1300 shotgun (napalm) -- 散弾銃（ナパーム）
+1310 Shotgun (napalm) charge -- 散弾銃（ナパーム）チャージ
+1400 pulse shotgun -- パルスショットガン
+1500 stun machine electric -- スタン機電
+30200500 Former communist country general purpose MT shotgun -- 旧共産圏汎用MT　ショットガン
+30201200 Former Communist bloc general purpose MT missile -- 旧共産圏汎用MT　ミサイル
+32500310 Regular Army AC (Heavy Firepower) Diffusion Buzz Diffusion -- 正規軍AC（重火力）　拡散バズ 拡散
+32504000 Regular army AC (high mobility) for appearance production -- 正規軍AC(高機動)　登場演出用
+32600300 Regular army heavy AC missile rapid fire left -- 正規軍重AC　ミサイル　連射　左
+32600310 Regular army heavy AC missile rapid fire right -- 正規軍重AC　ミサイル　連射　右
+32600560 Regular Army Heavy AC AI Missile Jab Ejection Left -- 正規軍重AC　AIミサイル　ジャブ　射出　左
+32600561 Regular Army Heavy AC AI Missile Jab Deployment Left -- 正規軍重AC　AIミサイル　ジャブ　展開　左
+32600570 Regular Army Heavy AC AI Missile Jab Ejection Right -- 正規軍重AC　AIミサイル　ジャブ　射出　右
+32600571 Regular Army Heavy AC AI Missile Jab Deployment Right -- 正規軍重AC　AIミサイル　ジャブ　展開　右
+32601200 Regular army heavy AC missile Gadob from standby left -- 正規軍重AC　ミサイル　ガドブ　待機から　左
+32601201 Regular army heavy AC missile Gadob from standby right -- 正規軍重AC　ミサイル　ガドブ　待機から　右
+32601202 Regular Army Heavy AC Missile Gadobu Right from shield stance -- 正規軍重AC　ミサイル　ガドブ　シールド構えから　右
+32601300 Regular army heavy AC missile close spread -- 正規軍重AC　ミサイル　至近拡散
+32601400 Regular army heavy AC missile check start left -- 正規軍重AC　ミサイル　牽制開始　左
+32601410 Regular Army Heavy AC Missile Check Start Right -- 正規軍重AC　ミサイル　牽制開始　右
+32601500 Regular army heavy AC missile mountain retreat -- 正規軍重AC　ミサイル　山なり後退
+32601600 Regular Army Heavy AC Missile Dynamic CS -- 正規軍重AC　ミサイル　ダイナミックCS
+32608000 Regular Army Heavy AC AI Missile Gadob Ejection Left -- 正規軍重AC　AIミサイル　ガドブ　射出　左
+32608001 Regular Army Heavy AC AI Missile Gadob Deployment Left -- 正規軍重AC　AIミサイル　ガドブ　展開　左
+32608010 Regular Army Heavy AC AI Missile Gadob Ejection Right -- 正規軍重AC　AIミサイル　ガドブ　射出　右
+32608011 Regular Army Heavy AC AI Missile Gadob Deployment Right -- 正規軍重AC　AIミサイル　ガドブ　展開　右
+32608100 Regular Army Heavy AC AI Missile Dynamic CS Ejection Left -- 正規軍重AC　AIミサイル　ダイナミックCS　射出　左
+32608101 Regular Army Heavy AC AI Missile Dynamic CS Deployment Left -- 正規軍重AC　AIミサイル　ダイナミックCS　展開　左
+32608110 Regular Army Heavy AC AI Missile Dynamic CS Ejection Right -- 正規軍重AC　AIミサイル　ダイナミックCS　射出　右
+32608111 Regular Army Heavy AC AI Missile Dynamic CS Deployment Right -- 正規軍重AC　AIミサイル　ダイナミックCS　展開　右
+32609200 Regular Army Heavy AC Missile Side Steer -- 正規軍重AC　ミサイル　横ステ
+32609300 Regular Army Heavy AC AI Missile Side Steer Ejection Left -- 正規軍重AC　AIミサイル　横ステ　射出　左
+32609301 Regular army heavy AC AI missile sideways deployment left -- 正規軍重AC　AIミサイル　横ステ　展開　左
+32609310 Regular Army Heavy AC AI Missile Side Steer Ejection Right -- 正規軍重AC　AIミサイル　横ステ　射出　右
+32609311 Regular army heavy AC AI missile sideways deployment right -- 正規軍重AC　AIミサイル　横ステ　展開　右
+34000000 Quadruped MT shotgun -- 四脚MT ショットガン
+34000001 Quadruped MT for shotgun zigzag -- 四脚MT ショットガンジグザグ用
+34000100 Quadruped MT Throwing Gun Master -- 四脚MT 投擲銃親
+34000101 Quadruped MT throwing gun -- 四脚MT 投擲銃子
+35000000 Old World MT Chest Missile Left Ejection -- 旧世界MT 胸部ミサイル 左 射出
+35000001 Old world MT chest missile left guidance -- 旧世界MT 胸部ミサイル 左 誘導
+35000010 Old World MT Chest Missile Right Ejection -- 旧世界MT 胸部ミサイル 右 射出
+35000011 Old world MT chest missile right guidance -- 旧世界MT 胸部ミサイル 右 誘導
+40000020 c4000 ADF EN shotgun opening -- c4000 ADF　ENショットガン 開き
+41000300 valkyria shotgun single shot -- ヴァルキュリア ショットガン 単発
+41000320 Valkyria shotgun 2 guns at the same time -- ヴァルキュリア ショットガン 2門同時
+41000330 Valkyria shotgun 4 guns at the same time -- ヴァルキュリア ショットガン 4門同時
+42000400 c4200 Next Generation ProtoAC Micro Missile (Left) -- c4200 次世代プロトAC　マイクロミサイル（左）
+42000401 c4200 Next Generation ProtoAC Micro Missile (Glide Shooting Left) -- c4200 次世代プロトAC　マイクロミサイル（滑空射撃左）
+42000402 c4200 Next Generation ProtoAC Micro Missile (Flight Throw Left) -- c4200 次世代プロトAC　マイクロミサイル（飛行投げ左）
+42000500 c4200 Next Generation ProtoAC Micro Missile (Right) -- c4200 次世代プロトAC　マイクロミサイル（右）
+42000501 c4200 Next Generation ProtoAC Micro Missile (Glide Shooting Right) -- c4200 次世代プロトAC　マイクロミサイル（滑空射撃右）
+42000502 c4200 Next Generation ProtoAC Micro Missile (Flight Throw Right) -- c4200 次世代プロトAC　マイクロミサイル（飛行投げ右）
+42503100 Orbit Seed Ob Active Jab -- オービットシード　Ob　能動ジャブ
+42505004 Orbit Seed Ob Left HA Left Approach -- オービットシード　Ob　左HA　左　接近
+42505005 Orbit Seed Ob Left HA Right Approach -- オービットシード　Ob　左HA　右　接近
+42505104 Orbit Seed Ob Left HA Left 2nd Stage Follow -- オービットシード　Ob　左HA　左　2段目　追従
+42505105 Orbit Seed Ob Left HA Right 2nd Stage Follow -- オービットシード　Ob　左HA　右　2段目　追従
+42505800 Orbit Seed Ob Large Turn Back Left New -- オービットシード　Ob　大回り後退　左　新
+42505810 Orbit Seed Ob Large Turn Back Right New -- オービットシード　Ob　大回り後退　右　新
+42506300 Orbit Seed Ob Assault Left Retreat Counter Deployment -- オービットシード　Obアサルト　左　後退カウンター　展開
+42506301 Orbit Seed Ob Assault Right Retreat Counter Deployment -- オービットシード　Obアサルト　右　後退カウンター　展開
+42506302 Orbit Seed Ob Assault Left Retreat Counter Approach -- オービットシード　Obアサルト　左　後退カウンター　接近
+42506303 Orbit Seed Ob Assault Right Retreat Counter Approach -- オービットシード　Obアサルト　右　後退カウンター　接近
+42506306 Orbit Seed Ob Assault Left Retreat Counter Redirection -- オービットシード　Obアサルト　左　後退カウンター　再誘導
+42506307 Orbit Seed Ob Assault Right Retreat Counter Redirection -- オービットシード　Obアサルト　右　後退カウンター　再誘導
+42508005 Orbit Seed Old Ob HU Dispensing Left Seed Tracking -- オービットシード　古Ob　HU　小出し左　シード追尾
+42508015 Orbit Seed Old Ob HU Dispensing Right Seed Tracking -- オービットシード　古Ob　HU　小出し右　シード追尾
+42508204 Orbit Seed Old Ob HU Doba Spring A surfacing -- オービットシード　古Ob　HU　ドバ湧きA　浮上
+42508205 Orbit Seed Old Ob HU Doba Spring A Cling -- オービットシード　古Ob　HU　ドバ湧きA　纏わりつき
+42508206 Orbit Seed Old Ob HU Doba Spring A Approach -- オービットシード　古Ob　HU　ドバ湧きA　接近
+42508214 Orbit Seed Old Ob HU Doba Spring B Surfacing -- オービットシード　古Ob　HU　ドバ湧きB　浮上
+42508215 Orbit Seed Old Ob HU Doba Spring B Clinging -- オービットシード　古Ob　HU　ドバ湧きB　纏わりつき
+42508216 Orbit Seed Old Ob HU Doba Spring B Approach -- オービットシード　古Ob　HU　ドバ湧きB　接近
+42508224 Orbit Seed Old Ob HU Doba Spring C Surfacing -- オービットシード　古Ob　HU　ドバ湧きC　浮上
+42508225 Orbit Seed Old Ob HU Doba Spring C Tangled -- オービットシード　古Ob　HU　ドバ湧きC　纏わりつき
+42508226 Orbit Seed Old Ob HU Doba Spring C Approach -- オービットシード　古Ob　HU　ドバ湧きC　接近
+42508432 Orbit Seed Old Ob Active Jab New Ver Right Deployment Emerging -- オービットシード　古Ob　能動ジャブ　新ver　右　展開浮上
+42508433 Orbit Seed Old Ob Active Jab New ver Right Movement -- オービットシード　古Ob　能動ジャブ　新ver　右　移動
+42508605 Orbit Seed Old Ob Long Distance Approach Follow-up Seed Tracking -- オービットシード　古Ob　遠距離接近　追従　シード追尾
+61010200 sea ​​spider diffusion gun -- ウミグモ 拡散砲
+64201300 Mining ship highlight missile -- 採掘艦目玉　ミサイル
+73200000 6 plasma missiles -- プラズマミサイル 6連
+73900000 D layer giant cannon anemone laser fire -- D層巨大砲台 アネモネ　レーザー連射
+73900110 D-layer giant battery Anemone Placon Misako -- D層巨大砲台 アネモネ　プラコンミサ　子

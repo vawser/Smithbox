@@ -1,0 +1,359 @@
+3100001 Antenna facility -- アンテナ　施設
+5100000 giant mining machine -- 巨大採掘機
+13160000 searchlight -- サーチライト
+13161000 searchlight -- サーチライト
+13161001 Searchlight (lightweight) -- サーチライト(軽量）
+13310000 AEG013_310 Power generation facility -- AEG013_310 発電施設
+13318000 AEG013_318 Power generation facility -- AEG013_318 発電施設
+13411000 Parabolic facility -- パラボラ施設
+13513000 wall gate -- 壁　ゲート
+13540000 MT wreckage -- MT残骸
+16010000 AEG016_010 AC debris raising smoke -- AEG016_010　AC残骸　狼煙上げ
+22140000 Light_for wide range -- ライト_広範囲用
+22140001 Light_for wide range (lightweight) -- ライト_広範囲用(軽量）
+22141000 Light_1 light -- ライト_1灯
+22141001 Light_1 light (lightweight) -- ライト_1灯(軽量）
+22142000 Search light_enemy search light -- サーチライト_索敵ライト
+22142001 Searchlight_Small light -- サーチライト_小ライト
+22142002 Searchlight_Indoor use_With light source -- サーチライト_室内用_光源あり
+22143000 hydro power cube -- ハイドロパワーキューブ
+22144000 mounted light -- 設置型ライト
+22144001 Installed light (no light source) -- 設置型ライト(光源なし）
+22144002 Installed light (lightweight) -- 設置型ライト(軽量）
+22146000 Lighting (red light_large) -- 照明（赤色灯_大）
+22146001 Lighting (red light_large) -- 照明（赤色灯_大）
+22146002 Lighting (red light_large) -- 照明（赤色灯_大）
+22150000 Light_for wide range (snow) -- ライト_広範囲用(雪）
+22150001 Light_for wide range (snow) (lightweight) -- ライト_広範囲用(雪）(軽量）
+22151000 Light_1 light (snow) -- ライト_1灯(雪)
+22151001 Light_1 light (snow) (lightweight) -- ライト_1灯(雪)(軽量）
+22152000 Searchlight (snow) -- サーチライト(雪)
+22152001 Searchlight (snow)_Small light -- サーチライト(雪)_小ライト
+22153000 Hydro power cube (snow) -- ハイドロパワーキューブ（雪）
+22154000 Installed light (snow) -- 設置型ライト（雪)
+22154001 Installed light (snow) (no light source) -- 設置型ライト（雪)(光源なし）
+22154002 Installed light (snow) (lightweight) -- 設置型ライト（雪)(軽量）
+23102000 Factory equipment_Watchtower 3 -- 工場設備_監視塔3
+23110000 Factory equipment_watchtower 1 snow -- 工場設備_監視塔1雪
+23110001 Factory equipment_Watchtower 1 snow (light) -- 工場設備_監視塔1雪(軽量)
+23112000 Factory equipment_watchtower 3 snow -- 工場設備_監視塔3雪
+23120000 small truss antenna -- トラス型アンテナ小
+23120001 small truss antenna -- トラス型アンテナ小
+23130000 truss antenna koyuki -- トラス型アンテナ小雪
+23650000 heliport -- ヘリポート
+23660000 helipad with snow -- ヘリポート雪付き
+23661000 With helipad hatch for missions -- ヘリポートハッチ付き　ミッション用
+27640000 Heavy oil splash -- 重油飛沫
+32212000 Sortie production assets (contact destruction) -- 出撃演出アセット（接触破壊）
+32270000 Lift (tilt) -- 昇降機（傾斜）
+33321000 PP (control rod) -- PP（制御棒)
+33322000 PP (nuclear reactor) -- PP（原子炉)
+33323000 PP (control rod_after destruction) -- PP（制御棒_破壊後)
+33400000 Landing ship (after crash) -- 揚陸艦（墜落後）
+33500000 Chimney (high) -- 煙突（高）
+33510000 Chimney (middle) -- 煙突（中）
+33520000 chimney (low) -- 煙突（低）
+33530000 Chimney (thick) -- 煙突（太）
+33640000 gantry crane -- ガントリークレーン
+33770000 Wind power generation (middle_windmill) -- 風力発電（中_風車）
+33820000 Ice field mining area_elevator -- 氷原採掘エリア＿エレベーター
+34100000 Power equipment (second generator) -- 電力装置（第2ジェネレータ）
+34101000 1st generator (core connection) -- 第１ジェネレータ（基幹接続）
+34110000 1st generator (base) -- 第１ジェネレータ（土台）
+34121000 1st generator (cable) -- 第１ジェネレータ（ケーブル）
+34150000 Power equipment (1st generator) -- 電力装置（第1ジェネレータ）
+34201000 Reinforced pile (broken) -- 補強杭（破断）
+34202000 Reinforced pile (broken) -- 補強杭（破断）
+34203000 Reinforced pile (broken) -- 補強杭（破断）
+34236000 Elevator code (destruction_back) -- 昇降機コード(破壊_裏)
+34281000 Protective pillar (low) -- 防護柱（低）
+34284000 Protective pillar lighting (with light source) -- 防護柱照明(光源あり)
+34288000 Protective pillar lighting (high_damaged) -- 防護柱照明(高_破損)
+34521000 Lighting (District 2_Damaged) -- 照明（第2地区_破損）
+34522000 Lighting_With light source (Second District) -- 照明_光源あり（第2地区）
+34048000 Swamp_table -- 沼_表
+34049000 Swamp_back -- 沼_裏
+34581000 Daimon_back -- 大門_裏
+35270000 Cable (broken) -- ケーブル（破断）
+35560000 Landing ship wreckage_front 1 -- 揚陸艦残骸_前1
+35570000 Landing ship wreckage_middle 1 -- 揚陸艦残骸_中1
+35580000 Landing ship wreckage_back 1 -- 揚陸艦残骸_後1
+35593000 For landing ship back missions_for distant views) -- 揚陸艦裏ミッション用_遠景用）
+39110000 Melange tank (stationary) -- メランジタンク（据え置き）
+39470000 Lighting (downward) -- 照明（下向き）
+39471000 Lighting (upward) -- 照明（上向き）
+39473000 Lighting (red light_large) -- 照明（赤色灯_大）
+39473001 Lighting (red light_large) -- 照明（赤色灯_大）
+39474000 Hanging lighting (white light_flashing) -- 吊型照明（白色灯_点滅）
+39474001 Hanging lighting (white light_flashing) -- 吊型照明（白色灯_点滅）
+39475000 Lighting (for humans) -- 照明（人間用）
+39585000 Cable (broken) -- ケーブル（破断）
+39586000 Cable (broken) -- ケーブル（破断）
+39587000 Cable (broken) -- ケーブル（破断）
+39588000 Cable (broken) -- ケーブル（破断）
+39980000 For effect placement (ground blizzard) -- エフェクト配置用（地吹雪）
+39981000 For effect placement (smoke) -- エフェクト配置用（煙）
+39982000 For effect placement (after the barrier is destroyed) -- エフェクト配置用（防壁破壊後）
+39982001 For effect placement (after the barrier is destroyed) -- エフェクト配置用（防壁破壊後）
+39982002 For effect placement (after the barrier is destroyed) -- エフェクト配置用（防壁破壊後）
+39982003 For effect placement (after the barrier is destroyed) -- エフェクト配置用（防壁破壊後）
+39983000 For effect placement (decontamination flame) -- エフェクト配置用（除染炎）
+39983001 For effect placement (decontamination flame) -- エフェクト配置用（除染炎）
+39983002 For effect placement (decontamination flame) -- エフェクト配置用（除染炎）
+39984000 For effect placement (barrier sparks) -- エフェクト配置用（防壁火花）
+39989000 For effect placement (white smoke) -- エフェクト配置用（白煙）
+53001000 Lakeside base_building_1 -- 湖畔の拠点_建物_1
+53002000 Lakeside base_building_2 -- 湖畔の拠点_建物_2
+53070000 Lakeside Twin Towers -- 湖畔　ツインタワー
+53071000 In front of the lakeside twin tower foundation -- 湖畔　ツインタワー土台　前
+53072000 Lakeside twin tower foundation rear -- 湖畔　ツインタワー土台　後ろ
+53201000 Lakeside large facility -- 湖畔　大型施設
+53100000 Lakeside base_Boss area watchtower -- 湖畔の拠点_ボスエリア監視塔
+53701000 Lakeside boss area building -- 湖畔　ボスエリア建物
+53701001 Lakeside boss area building -- 湖畔　ボスエリア建物
+53900000 Search light_enemy search light -- サーチライト_索敵ライト
+53900001 Searchlight_Enemy search light lightweight -- サーチライト_索敵ライト軽量
+53919000 Lakeside battery light -- 湖畔　砲台用ライト
+53905000 Lakeside data center bottom -- 湖畔　データセンター底
+54418000 Lakeside boss area building -- 湖畔　ボスエリア建物
+54700000 Lakeside Boss Area Flaming Asset -- 湖畔　ボスエリア　炎上アセット
+62000000 Lighting tower A -- 照明塔A
+62001000 Lighting tower B -- 照明塔B
+62001001 Lighting tower B (lightweight) -- 照明塔B(軽量）
+62004000 ceiling lighting -- 天井照明
+62320000 crane -- クレーン
+62323000 Wincher crane balance -- ウィンチャークレーン　天秤
+62800000 [VOB] Smoke dummy poly -- 【VOB】煙ダミポリ
+63225000 VOB insertion port -- VOB差込入口
+65630000 c3020 communist MT_original form_remains -- c3020共産MT_原形_残骸
+65631000 c3400 quadruped MT_original form_remains -- c3400四脚MT_原形_残骸
+65632000 c3020 Communist MT_Scattered_No snow -- c3020共産MT_飛散_雪無し
+65632001 c3021 Communist MT_Scattered_No snow -- c3021共産MT_飛散_雪無し
+65500000 [Snowy Mountain] Large helicopter wreckage -- 【雪山】残骸ヘリ大
+65513000 [Snowy Mountain] Large helicopter wreckage (non-destructive)_Normal -- 【雪山】残骸ヘリ大(非破壊）_通常
+65600000 [Snowy Mountain] Jagano remains (non-destructive) -- 【雪山】残骸ジャガノ（非破壊）
+65650000 Wreckage_c3050 regular army MT_original form -- 残骸_c3050正規軍MT_原形
+65651000 Wreckage_c3050 Regular Army MT_Scattered -- 残骸_c3050正規軍MT_飛散
+65660000 Wreckage_c3250 regular army AC_original form -- 残骸_c3250正規軍AC_原形
+65661000 Wreckage_c3250 Regular Army AC_Scattered -- 残骸_c3250正規軍AC_飛散
+65800000 [Snowy Mountain] Flaming Damipoli -- 【雪山】炎上ダミポリ
+65801000 [Snowy Mountain] Flaming Damipoli -- 【雪山】炎上ダミポリ
+65802000 [Snowy Mountain] Flaming Damipori (for building smoke) -- 【雪山】炎上ダミポリ(ビル煙用）
+65802001 [Snowy Mountain] Flaming Damipori (for building smoke) -- 【雪山】炎上ダミポリ(ビル煙用）
+65802002 [Snowy Mountain] Flaming Damipori (for building smoke) -- 【雪山】炎上ダミポリ(ビル煙用）
+65803000 [Snowy Mountain] Flaming Damipoli -- 【雪山】炎上ダミポリ
+65810000 [Snowy Mountain] Damipoly for flowing smoke -- 【雪山】流れる煙用ダミポリ
+66201000 [VOB] Melange water surface smoke -- 【VOB】メランジ水面煙
+100009000 A tier station -- A層　駅
+100811000 Light source for A layer orange -- A層用光源 オレンジ
+100812000 Light source for A layer white -- A層用光源 白
+100810000 catapult aerial point light -- カタパルト空中ポイントライト
+100900000 Communist MT wreckage -- 共産MT残骸
+101050001 8 consecutive lighting_short_no light source -- 8連照明_短_光源なし
+101050002 8 consecutive lighting_short_with light source -- 8連照明_短_光源あり
+101050003 8 consecutive lighting_long_no light source -- 8連照明_長_光源なし
+101050004 8 consecutive lighting_long_with light source -- 8連照明_長_光源あり
+101051001 Ceiling lighting (yellow)_no light source -- 天井照明（黄）_光源なし
+101051002 Ceiling lighting (yellow)_with light source -- 天井照明（黄）_光源あり
+101052001 Ceiling lighting (small)_no light source -- 天井照明（小）_光源なし
+101052002 Ceiling lighting (small)_with light source -- 天井照明（小）_光源あり
+101053000 Side lighting (white) -- 側面照明（白色）
+101053001 Side lighting (white) -- 側面照明（白色）
+101053002 Side lighting (white) -- 側面照明（白色）
+101054000 red light -- 赤色灯
+101055000 Lighting (downward) -- 照明（下向き）
+101056000 Lighting (upward) -- 照明（上向き）
+101057000 Side lighting (yellow) -- 側面照明（黄色）
+101058000 Ceiling lighting (small_flashing) -- 天井照明（小_点滅）
+101090000 Shielding asset (red light) -- 遮蔽アセット（赤色灯）
+101100000 Melange tank (hanging) -- メランジタンク（吊り下げ）
+101110000 Melange tank (stationary) -- メランジタンク（据え置き）
+101112000 Big bridge_small crane -- ビックブリッジ_小クレーン
+101113000 Exhaust port (BB) -- 排気口（BB）
+101113001 Exhaust port (tutorial) -- 排気口（チュートリアル）
+101210000 Railroad bulletin board -- 線路脇掲示板
+101260000 street light -- 街灯
+101261000 Street light_pillar side -- 街灯_柱側面
+101142000 On the continental shell_Electric warhead for injection -- 大陸殻上_射出用通電弾頭
+101440000 Transmission (placed) -- トランスミッション（置）
+101441000 Transmission (position_gear) -- トランスミッション（置_歯車）
+101909000 Distant view_after destroying the mining ship -- 遠景_採掘艦破壊後
+102340000 Heavy oil splash -- 重油飛沫
+109980009 Ceiling collapse rubble -- 天井崩落瓦礫
+109981000 plume -- 噴煙
+109981001 plume -- 噴煙
+109982000 spark -- 火花
+109988000 collapse -- 崩落
+109989000 collapse -- 崩落
+120095000 A layer tutorial_exit lighting -- A層チュートリアル_出口照明
+120106000 Crane (red light) -- クレーン（赤色灯）
+120109000 spotlight -- スポットライト
+120153001 Ceiling lighting (minimum)_no light source -- 天井照明（最小）_光源なし
+120153002 Ceiling lighting (minimum)_with light source -- 天井照明（最小）_光源あり
+120153001 Ceiling lighting (minimum_weak) -- 天井照明（最小_弱）
+120154000 Ceiling lighting (white_long)_no light source -- 天井照明（白_長）_光源なし
+120154001 Ceiling lighting (white)_no light source -- 天井照明（白）_光源なし
+120154002 Ceiling lighting (white)_with light source -- 天井照明（白）_光源あり
+120155000 stage lighting -- 演出照明
+101240000 Side tank (red light) -- 側面タンク（赤色灯）
+120262000 smoke after landing -- 着地後煙
+120268000 tank hanging device -- タンク吊り下げ装置
+120298000 chimney smoke -- 煙突煙
+120298001 Chimney (red light) -- 煙突（赤色灯）
+120303000 Damaged cable earth leakage -- 破損ケーブル漏電
+120329000 A layer__point light source -- A層__点光源
+120487000 Overhang -- 張り出し
+120682000 mining crane -- 採掘クレーン
+120618000 Aisle (long) -- 通路（長）
+120807000 up in flames -- 炎上
+120847000 blast furnace -- 溶鉱炉
+120961000 Elevator door red light -- エレベーター扉　赤色灯
+120962000 Passage in front of elevator lighting -- エレベーター前通路　照明
+120963001 Elevator lighting_no light source -- エレベーター　照明_光源なし
+120963002 Elevator lighting_with light source -- エレベーター　照明_光源あり
+120969000 Ground floor with continental shell elevator switch -- 大陸殻エレベータスイッチがある地面
+120960000 Wall with continental shell elevator switch -- 大陸殻エレベータスイッチがある壁
+200004000 wall breakwater large -- 壁 防波堤 大
+200055000 city ​​facility large antenna -- 街 施設 大アンテナ
+200063000 bridge -- 橋
+200070000 Facility parts small -- 施設パーツ 小
+200071000 Facility parts small with antenna -- 施設パーツ 小 アンテナ有
+200071001 Facility parts small with antenna -- 施設パーツ 小 アンテナ有
+200120000 Antenna small A -- アンテナ　小　A
+200500000 orbital elevator -- 軌道エレベーター
+203402000 Power supply facility_damage -- 電力供給施設_破損
+204512000 Half-destructed power equipment -- 半壊電力装置
+204521000 rotating water device -- 回転水装置
+223010000 [B tier] Sailor building (column building) -- 【B層】帆ビル（円柱ビル）
+223425000 Dome floor for invasion lower level destruction A -- ドーム 床　侵攻用　下段　破壊A
+223426000 Dome floor for invasion upper level destruction A -- ドーム 床　侵攻用　上段　破壊A
+223800000 [B layer] Spotlight 1st grade -- 【B層】スポットライト 小1
+223801000 [B layer] Spotlight 2nd grade -- 【B層】スポットライト 小2
+224900000 [B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット
+224901000 [B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット
+224902000 [B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット
+233110000 [B layer] General purpose_Construction scaffolding_35m -- 【B層】汎用_建設足場_35m
+233115000 [B layer] General purpose_Construction scaffolding_20m -- 【B層】汎用_建設足場_20m
+233980000 [B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット
+234970000 c3600 construction machine spider_normal debris -- c3600建機クモ_通常残骸
+234971000 c3600 construction machine spider_scattering type -- c3600建機クモ_飛散型
+234980000 c4150 special attack MT_normal wreckage -- c4150特攻MT_通常残骸
+234981000 c4150 special attack MT_scattering type -- c4150特攻MT_飛散型
+300270000 C layer communication device -- C層通信装置
+300271000 C layer communication device -- C層通信装置
+410170000 [D layer] EV_red light -- 【D層】EV_赤色灯
+410208000 [D layer] Passage_Truss -- 【D層】通路_トラス
+410312000 [D layer] Crane -- 【D層】クレーン
+410361000 [D layer] Under the floor_white smoke -- 【D層】床下_白煙
+410381000 [D layer] Living weapon ceiling -- 【D層】生体兵器天井
+410386000 [D layer] Biological weapon ceiling_code -- 【D層】生体兵器天井_コード
+410420000 [D layer] EV_red light -- 【D層】EV_赤色灯
+410450000 [D layer] Power plant_furnace -- 【D層】発電所_炉
+410470000 [D layer] Vertical hole_Beam upward + 100m column -- 【D層】縦穴_梁上向き+100m柱
+410471000 [D layer] Vertical hole_beam downward + 100m column -- 【D層】縦穴_梁下向き+100m柱
+410474000 [D layer] Vertical hole_small room + 100m wall -- 【D層】縦穴_小部屋+100m壁
+410551000 [D layer] Piping -- 【D層】配管
+410602000 [D layer] Overhead crane -- 【D層】天井クレーン
+410776000 [D layer] Vertical hole_Beam upward + 100m column -- 【D層】縦穴_梁上向き+100m柱
+410776001 [D layer] Vertical hole_beam downward + 100m column -- 【D層】縦穴_梁下向き+100m柱
+410777000 [D layer] Vertical hole_small room + 100m wall -- 【D層】縦穴_小部屋+100m壁
+410861000 [D layer] Destruction target -- 【D層】破壊目標
+410862000 [D layer] Destruction target -- 【D層】破壊目標
+410920000 [D layer] General purpose_Construction scaffolding_35m -- 【D層】汎用_建設足場_35m
+410921000 [D layer] General purpose_Construction scaffolding_20m -- 【D層】汎用_建設足場_20m
+410930000 [D layer] Light_for wide range -- 【D層】ライト_広範囲用
+410931000 [D layer] Light_1 light -- 【D層】ライト_1灯
+410933000 [D layer] Lighting (red light_large) -- 【D層】照明（赤色灯_大）
+410932001 [D layer] 8 consecutive lighting_no light source -- 【D層】8連照明_光源なし
+410932002 [D layer] 8 consecutive lighting_with light source -- 【D層】8連照明_光源あり
+410934000 [D layer] Searchlight -- 【D層】サーチライト
+410937000 [D layer] Lighting -- 【D層】照明
+411574000 [Geo] Large pipe -- 【ジオ】大パイプ
+411581000 [Geo] Pipe passage T-junction -- 【ジオ】パイプ通路T字路
+411582000 [Geo] Pipe passage -- 【ジオ】パイプ通路
+500240000 bucket wheel excavator -- バケットホイールエクスカベーター
+500411001 Mining ship 1st car A -- 採掘艦1両目　A
+500412001 Mining ship 1st car B -- 採掘艦1両目　B
+500420001 3rd mining ship -- 採掘艦3両目
+500421001 2nd mining ship -- 採掘艦2両目
+500631000 Large ground wall light -- 地表大壁　ライト
+500632000 Ground surface large wall door light -- 地表大壁扉　ライト
+500633000 Large ground wall elevator light -- 地表大壁　エレベーター　ライト
+501800000 blizzard -- 地吹雪
+501801000 smoke -- 煙
+501810000 Flaming Damipoli -- 炎上ダミポリ
+501811000 Flaming Damipoli -- 炎上ダミポリ
+501812000 Flaming Damipoly (for building smoke) -- 炎上ダミポリ(ビル煙用）
+501812001 Flaming Damipoly (for building smoke) -- 炎上ダミポリ(ビル煙用）
+501812002 Flaming Damipoly (for building smoke) -- 炎上ダミポリ(ビル煙用）
+501813000 Flaming Damipoli -- 炎上ダミポリ
+506830000 Wreckage_c3000 security MT_original form -- 残骸_c3000警備MT_原形
+506831000 Wreckage_c3000 Security MT_Scattered -- 残骸_c3000警備MT_飛散
+506840000 Wreckage_c3020 communist MT_original form -- 残骸_c3020共産MT_原形
+506841000 Wreckage_c3020 Communist MT_Scattered -- 残骸_c3020共産MT_飛散
+506845000 Wreckage_c3020 Communist MT_Original form_No snow -- 残骸_c3020共産MT_原形_雪無し
+506846000 Wreckage_c3020 Communist MT_Scattered_No snow -- 残骸_c3020共産MT_飛散_雪無し
+506850000 Wreckage_c3400 quadruped MT_original form -- 残骸_c3400四脚MT_原形
+506851000 Wreckage_c3400 quadruped MT_scattered -- 残骸_c3400四脚MT_飛散
+506855000 Wreckage_c3400 quadruped MT_original form_no snow -- 残骸_c3400四脚MT_原形_雪無し
+506856000 Wreckage_c3400 quadruped MT_scattered_no snow -- 残骸_c3400四脚MT_飛散_雪無し
+506880000 Wreckage_Armed helicopter_Original form -- 残骸_武装ヘリ_原形
+506890000 Wreckage_Combat vehicle_Original form -- 残骸_戦闘車両_原形
+511020000 AEG511_020 Management facility light -- AEG511_020 管理施設　ライト
+840250000 recon assets -- リコンアセット
+860011000 Planets with coral resonance -- コーラル共鳴している惑星
+860013000 Planets with strong coral resonance -- コーラル共鳴が強い惑星
+980104000 container -- コンテナ
+986010000 Planning light source test D layer (orange) -- 企画用光源テストD層（オレンジ）
+986010001 Planning light source test D layer (blue) -- 企画用光源テストD層（ブルー）
+986010002 Planning light source test D layer (red) -- 企画用光源テストD層（レッド）
+986010003 Planning light source test D layer A (white) -- 企画用光源テストD層A（ホワイト)
+995020000 Ground supply facility -- 地上補給施設
+995801000 A layer floating island -- A層浮き島
+995810000 B layer connection -- B層接続
+995811000 B layer connection elevator -- B層接続 エレベーター
+997995000 light bulb barrier -- 電球バリア
+998351000 Lakeside temporary boss area -- 湖畔　仮ボスエリア
+998600000 test -- テスト
+999278000 scaffolding test -- 足場テスト
+999523000 [Medium] Target object -- 【中】目標用オブジェクト
+999530000 B tier giant gun pedestal -- B層巨大砲台台座
+999530001 B tier giant gun pedestal -- B層巨大砲台台座
+999580000 watat test -- watatテスト
+999600000 192204sfx for placement -- 192204sfx配置用
+999640000 building smoke test -- 建物煙テスト
+999710000 Cliff_Building_Ironwall -- 崖_建築物_鉄壁
+999710000 Cliff_Building_Ironwall -- 崖_建築物_鉄壁
+999712000 Cliff_Building_Small -- 崖_建築物_小
+999713000 Cliff_Building_Factory -- 崖_建築物_工場
+999713001 Cliff_Building_Factory -- 崖_建築物_工場
+999714000 Cliff_Building_Bridge_Steel frame_Three steps -- 崖_建築物_橋_鉄骨_三段
+999715000 Cliff_Architecture_Bridge -- 崖_建築物_橋
+999715001 Cliff_Architecture_Bridge -- 崖_建築物_橋
+999716000 Cliff_Building_Bridge_Steel frame -- 崖_建築物_橋_鉄骨
+999717000 Cliff_Crane_A -- 崖_クレーン_A
+999717001 Cliff_Crane_A -- 崖_クレーン_A
+999722000 Cliff_Building_Steel elevator -- 崖_建築物_鉄骨エレベーター
+999723000 Cliff_Crane_B -- 崖_クレーン_B
+999723001 Cliff_Crane_B -- 崖_クレーン_B
+999724000 Cliff_Building_Small_A -- 崖_建築物_小_A
+999725000 Cliff_Building_Scaffolding -- 崖_建築物_足場
+999728000 Cliff_Building_Bridge pillar -- 崖_建築物_橋柱
+999730000 small lookout tower -- 小型見張り台
+999754000 storage tank -- 貯蔵タンク
+999760000 Cliff_Crane_C -- 崖_クレーン_C
+999771000 Light_for wide range -- ライト_広範囲用
+999772000 Light_1 light -- ライト_1灯
+999778000 Light_vertical red light -- ライト_縦長赤色灯
+999781000 bridge_damaged -- 橋_破損
+999782000 bridge -- 橋
+999783000 work scaffolding -- 作業用足場
+999784000 work scaffolding -- 作業用足場
+999784001 work scaffolding -- 作業用足場
+999795000 ground supply pod -- 地上補給ポッド
+999796000 repair facility -- 修理施設
+999797000 floating scaffolding -- 浮遊足場
+999825000 elevator -- エレベーター
+999830000 Assets for spotlight -- スポットライト用アセット
+999831000 flashing light assets -- 点滅灯アセット
+999833000 [B layer] Dummy assets for sfx generation -- 【B層】sfx生成用ダミーアセット

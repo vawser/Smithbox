@@ -1,0 +1,7 @@
+100000 garage -- ガレージ
+100000100 Garage_(Chapter 1/Chapter 2) -- ガレージ_(チャプター1・チャプター2）
+100000200 Garage 2_(Chapter 3) -- ガレージ2_(チャプター3）
+100000300 Garage 3_(Chapter 4) -- ガレージ3_(チャプター4）
+100000400 Garage 4_(Chapter 5) -- ガレージ4_(チャプター5）
+100000500 garage 5 -- ガレージ5
+100001000 For conversation production -- 会話演出用

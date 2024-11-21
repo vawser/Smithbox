@@ -1,22 +1,22 @@
-0 何もしない
-1000 蛇兵士
-1100 肉をなめるヘビ兵士
-1001 蛇弓兵士（砦外　0000）
-1002 蛇弓兵士（砦やぐら　0001　0002）
-1003 蛇弓兵士（砦出窓　0003）
-1004 蛇弓兵士（溶岩広場）
-1020 プロトドラゴンデーモン
-1040 ワニ
-100 騎士
-200 隠密
-300 腐敗ヒト
-900 インターン用ザコ敵
-901 インターン用普通敵
-902 インターン用ボス敵
-2020 騎士【仮】
-2030 隠密【仮】
-2100 腐敗ヒト【仮】
-3070 ナメクジ【仮】
-1200 疫病ネズミ
-9051 テストマップ用待機敵
-9000 プロトタイプデブ中ボス
+0 Do nothing
+1000 Snake Soldier
+1100 Snake soldier licking meat
+1001 Snakebow Soldier (Outside the Fort 0000 )
+1002 Snake Bow Soldier (Fort Yagura 0001 0002 )
+1003 Snake Bow Soldier (Fort Bay Window) 0003 )
+1004 Snake Bow Soldier (Lava Square)
+1020 Proto Dragon Demon
+1040 Crocodile
+100 Knight
+200 Covert
+300 Rotten Human
+900 Intern's Weak Enemy
+901 Normal enemies for interns
+902 Intern Boss Enemy
+2020 Knight [temporary]
+2030 Covert [temporary]
+2100 Corrupted Person [provisional]
+3070 Slug [temporary]
+1200 Plague rats
+9051 Test map waiting enemies
+9000 Prototype Fat Mid-Boss

@@ -1,0 +1,130 @@
+1000 [old] Rifle throwing PC → c9300_Ueda test machine -- 【old】ライフル投げ　PC→c9300_上田テスト機
+1010 [old] Blade throwing PC→c9300_Ueda test machine -- 【old】ブレード投げ　PC→c9300_上田テスト機
+1100 Trunk break PC→c8510_strong zako -- 体幹ブレイク　PC→c8510_強ザコ
+1110 [old] Blade throwing PC → c8510_strong zako -- 【old】ブレード投げ　PC→c8510_強ザコ
+1200 Trunk break PC→c8100_strong zako_whip -- 体幹ブレイク　PC→c8100_強ザコ_ウィップ
+1210 [old] Blade Throw PC → c8100_Strong Zako_Whip -- 【old】ブレード投げ　PC→c8100_強ザコ_ウィップ
+1300 [old] Rifle throwing PC → c8540_Formidable fat enemy -- 【old】ライフル投げ　PC→c8540_強敵デブ
+1400 Trunk break throw PC→c9320_trainer machine -- 体幹ブレイク投げ　PC→c9320_練習機
+1410 [old] Blade throwing PC → c9320_trainer machine -- 【old】ブレード投げ　PC→c9320_練習機
+1500 [old] Blade throwing PC → c8131 control prototype strong enemy -- 【old】ブレード投げ　PC→c8131 制御試作強敵
+1600 [old] Blade throwing PC → c8135 Miyatake strong enemy -- 【old】ブレード投げ　PC→c8135 宮武強敵
+2000 Trunk break throw PC→c8110_colorless MT -- 体幹ブレイク投げ　PC→c8110_無色MT
+2010 Stealth throw PC→c8110_colorless MT -- ステルス投げ　　PC→c8110_無色MT
+2100 Trunk break throw PC→c9201_reverse joint -- 体幹ブレイク投げ　PC→c9201_逆関節
+2110 Stealth throw PC→c9201_reverse joint -- ステルス投げ　　PC→c9201_逆関節
+3020 Trunk break throw PC→c3020_former communist MT -- 体幹ブレイク投げ　PC→c3020_旧共産MT
+3200 [Test] Avalanche Throw Enemy → PC -- 【テスト】アバランチ 投げ 敵→PC
+40500 Stealth PC → Mercenary of the North -- ステルス　PC→北の傭兵
+43000 Stealth PC → Grave Revealer Nobleman -- ステルス　PC→墓暴きの貴人
+60500 Falling from a horse PC → Mercenary of the North -- 落馬　PC→北の傭兵
+110400 Back PC → deceased -- 背面　PC→亡者
+110401 Back PC → deceased -- 背面　PC→亡者
+110402 Back PC → deceased -- 背面　PC→亡者
+107000 Back PC → Skeleton -- 背面　PC→スケルトン
+111000 Back PC → Dead Soldier -- 背面　PC→亡者兵士
+111050 Back PC → Dead Soldier (Large) -- 背面　PC→亡者兵士（大）
+111100 Back PC → Dark Knight -- 背面　PC→ダークナイト
+111200 Back PC → Dead Knight -- 背面　PC→亡者騎士
+111500 Back PC → Dead Monk -- 背面　PC→亡者僧兵
+111800 Back PC → Skeleton frontier -- 背面　PC→スケルトン辺境
+112000 Back PC → dwarf -- 背面　PC→矮小人
+112100 Back PC → Blue -- 背面　PC→ブルー
+112200 Back PC → Revival -- 背面　PC→よみがえり
+112300 Back PC → Missionary -- 背面　PC→宣教師
+112300 Back PC → Poor people -- 背面　PC→貧民亡者
+112500 Back PC → Poor Elite -- 背面　PC→貧民亡者エリート
+112800 Back PC → New Castle Knight -- 背面　PC→新王城騎士
+113000 Back PC → Black Knight -- 背面　PC→黒騎士
+113400 Back PC → Wax Dead Man -- 背面　PC→蝋の死人
+113600 Back PC → Crucified A -- 背面　PC→磔亡者A
+113700 Back PC → Crucified B -- 背面　PC→磔亡者B
+113900 Back PC → Serpent Assassin -- 背面　PC→蛇人の暗殺者
+120300 Back PC → Sullivan's Grim Reaper -- 背面　PC→サリヴァーンの死神
+121600 Back side PC → Things that cause eclipse (small) -- 背面　PC→蝕を呼ぶもの（小）
+140500 Back PC → Mercenary of the North -- 背面　PC→北の傭兵
+143000 Back PC → Grave Revealing Nobleman -- 背面　PC→墓暴きの貴人
+195010 Back PC → Black Knight -- 背面　PC→黒騎士
+195030 Back PC → White Knight -- 背面　PC→ホワイトナイト
+195040 Back PC → Guardian of the painting -- 背面　PC→絵画の守り人
+199900 Back PC → Eclipse Vanguard 1 -- 背面　PC→蝕の尖兵1
+199910 Back PC → Eclipse Vanguard 2 -- 背面　PC→蝕の尖兵2
+199920 Back PC → Eclipse Vanguard 3 -- 背面　PC→蝕の尖兵3
+199930 Back PC → Eclipse Vanguard 4 -- 背面　PC→蝕の尖兵4
+199980 Back PC→Tango! -- 背面　PC→Tango!
+210400 Parry PC → Dead -- パリィ　PC→亡者
+210701 Parry PC → Skeleton -- パリィ　PC→スケルトン
+211000 Parry PC → Dead Soldier -- パリィ　PC→亡者兵士
+211050 Parry PC → Dead Soldier (Large) -- パリィ　PC→亡者兵士（大）
+211100 Parry PC → Dark Knight -- パリィ　PC→ダークナイト
+211200 Parry PC → Dead Knight -- パリィ　PC→亡者騎士
+211500 Parry PC → Dead Monk Soldier -- パリィ　PC→亡者僧兵
+211800 Parry PC → Skeleton frontier -- パリィ　PC→スケルトン辺境
+212000 Parry PC → Dwarf -- パリィ　PC→矮小人
+212100 Parry PC → Blue -- パリィ　PC→ブルー
+212300 Parry PC → Missionary -- パリィ　PC→宣教師
+212300 Parry PC→Destitute -- パリィ　PC→貧民亡者
+212500 Parry PC → Poor Elite -- パリィ　PC→貧民亡者エリート
+212600 Parry PC → Poor servant -- パリィ　PC→貧民亡者下男
+212800 Parry PC → New Castle Knight -- パリィ　PC→新王城騎士
+213000 Parry PC → Black Knight -- パリィ　PC→黒騎士
+213900 Parry PC → Serpent Assassin -- パリィ　PC→蛇人の暗殺者
+221600 Parry PC → The one who calls the eclipse (small) -- パリィ　PC→蝕を呼ぶもの（小）
+220300 Parry PC → Black Knight -- パリィ　PC→黒騎士
+240500 Parry PC → Mercenary of the North -- パリィ　PC→北の傭兵
+243000 Parry PC → Grave Revealer Nobleman -- パリィ　PC→墓暴きの貴人
+295011 Parry PC → Black Knight -- パリィ　PC→黒騎士
+295031 Parry PC → White Knight -- パリィ　PC→ホワイトナイト
+295041 Parry PC → Guardian of the Picture -- パリィ　PC→絵の守り人
+299900 Parry PC → Eclipse Vanguard 1 -- パリィ　PC→蝕の尖兵1
+299910 Parry PC → Eclipse Vanguard 2 -- パリィ　PC→蝕の尖兵2
+299920 Parry PC → Eclipse Vanguard 3 -- パリィ　PC→蝕の尖兵3
+299930 Parry PC → Eclipse Vanguard 4 -- パリィ　PC→蝕の尖兵4
+299980 Parry PC→Tango! -- パリィ　PC→Tango!
+399900 Back Throw Eclipse Vanguard → PC -- 背面投げ　蝕の尖兵→PC
+399920 Back Throw Eclipse Vanguard → PC -- 背面投げ　蝕の尖兵→PC
+399930 Back Throw Eclipse Vanguard → PC -- 背面投げ　蝕の尖兵→PC
+413900 Parry Serpent Assassin (Shotel) → PC Throw -- パリィ　蛇人の暗殺者(ショーテル)→PC 投げ
+495010 Parry Black Knight → PC -- パリィ　黒騎士→PC
+499900 Parry Eclipse Vanguard → PC -- パリィ　蝕の尖兵→PC
+499900 Parry Eclipse Vanguard → PC -- パリィ　蝕の尖兵→PC
+499900 Parry Eclipse Vanguard → PC -- パリィ　蝕の尖兵→PC
+505000 Wolf → PC Throw -- ウルフ→PC　投げ
+505001 Chaser → PC Throw -- 追跡者→PC　投げ
+505002 Chaser → PC Throw -- 追跡者→PC　投げ
+505110 Gunda → PC throw -- グンダ→PC　投げ
+505111 Gunda (snake spirit possession) → PC throw -- グンダ（蛇霊憑き）→PC　投げ
+510900 Dead Soldier: Gunda state → PC throw -- 亡者兵士:グンダ状態→PC　投げ
+511000 Dead Soldier: Dagger → PC Throw -- 亡者兵士:短剣→PC　投げ
+511310 Eclipse slug → PC throw -- 蝕ナメクジ→PC　投げ
+511312 Eclipse slug (dead dumpling) → PC throw -- 蝕ナメクジ（亡者団子）→PC　投げ
+512000 Dwarf → PC Throw -- 矮小人→PC 投げ
+512100 Blue → PC throw -- ブルー→PC 投げ
+512200 Revival → PC Throw -- よみがえり→PC　投げ
+512300 Missionary → PC throw -- 宣教師→PC 投げ
+512400 Poor Man (double sword) → PC throw -- 貧民亡者（双小剣）→PC 投げ
+513200 Crystal Elder → PC Throw -- 結晶の古老→PC 投げ
+513600 Crucified A→PC Throw -- 磔亡者A→PC 投げ
+513910 Serpent assassin (kusarigama) → PC throw -- 蛇人の暗殺者(鎖鎌)→PC 投げ
+520400 Hungry Jack (small) → PC throw -- はらぺこジャック（小）→PC　投げ
+520600 Revival (main body) → PC throw -- よみがえり（本体）→PC　投げ
+520800 Dead Dog (Maggot Belly) → PC Throw -- 亡者犬（蛆腹）→PC　投げ
+521000 Floating things → PC throw -- 漂うもの→PC　投げ
+521001 Drifting → PC Throwing variation -- 漂うもの→PC　投げバリエーション
+521300 Writhing carrion → PC Throw when falling -- 蠢く腐肉→PC　落下時投げ
+521301 Writhing carrion → PC collapse throw -- 蠢く腐肉→PC　倒れこみ投げ
+522000 Sandworm → PC Throw -- サンドワーム→PC　投げ
+522010 Sandworm (parent) → PC throw -- サンドワーム（親）→PC　投げ
+522500 Tindalos → PC throw -- ティンダロス→PC　投げ
+530200 Golem → PC Exploration action -- ゴーレム→PC　探りアクション
+530201 Golem → PC Throw from searching -- ゴーレム→PC　探りからの投げ
+530210 Golem (large) → PC throw -- ゴーレム（大）→PC 投げ
+530400 Observer → PC Throw -- 監視者→PC　投げ
+530800 Eclipse Butterfly → PC Throw -- 蝕の蝶→PC　投げ
+550100 Storm King → PC Throw -- 嵐の王→PC　投げ
+551400 Old King of Eclipses → PC Throw -- 蝕の老王→PC　投げ
+551800 Colossus → PC Throw -- 巨像→PC　投げ
+552700 Chaser → PC Throw -- 追跡者→PC　投げ
+552701 Chaser HU → PC throw -- 追跡者HU→PC　投げ
+640500 Fall Horse Throw: Mercenary of the North → PC -- 落馬投げ　北の傭兵→PC
+941100 Ajin Chibi → PC Throw -- 亜人チビ→PC　投げ

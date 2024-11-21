@@ -1,0 +1,33 @@
+0 PS4
+1 XboxOne
+2 Win64
+3 XboxOneX
+10 For PS4 movie playback -- PS4 ムービー再生用
+11 For XboxOne movie playback -- XboxOne ムービー再生用
+12 For Win64 movie playback -- Win64 ムービー再生用
+20 For PS4 battle -- PS4 対戦用
+21 XboxOne Competitive -- XboxOne 対戦用
+22 For Win64 matches -- Win64 対戦用
+23 For XboxOneX battle -- XboxOneX 対戦用
+30 PS5 image quality priority mode -- PS5 画質優先モード
+31 PS5 performance priority mode -- PS5 パフォーマンス優先モード
+32 PS5 late training mode -- PS5 レイトレモード
+33 PS5 Image quality priority mode for battle -- PS5 画質優先モード 対戦用
+34 PS5 performance priority mode for competition -- PS5 パフォーマンス優先モード 対戦用
+35 PS5 late training mode for competition -- PS5 レイトレモード 対戦用
+40 XSX image quality priority mode -- XSX 画質優先モード
+41 XSX Performance Priority Mode -- XSX パフォーマンス優先モード
+42 XSX late trading mode -- XSX レイトレモード
+43 XSX Image quality priority mode for competition -- XSX 画質優先モード 対戦用
+44 XSX performance priority mode for competition -- XSX パフォーマンス優先モード 対戦用
+45 XSX late training mode for competition -- XSX レイトレモード 対戦用
+50 XSS image quality priority mode -- XSS 画質優先モード
+51 XSS performance priority mode -- XSS パフォーマンス優先モード
+52 XSS late trading mode -- XSS レイトレモード
+53 XSS image quality priority mode for competition -- XSS 画質優先モード 対戦用
+54 XSS performance priority mode for competition -- XSS パフォーマンス優先モード 対戦用
+55 XSS late trading mode -- XSS レイトレモード
+100 For PS4 cutscene playback -- PS4 カットシーン再生用
+101 For XboxOne cutscene playback -- XboxOne カットシーン再生用
+102 For Win64 cutscene playback -- Win64 カットシーン再生用
+103 For XboxOneX cutscene playback -- XboxOneX カットシーン再生用

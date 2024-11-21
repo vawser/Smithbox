@@ -1,1288 +1,1283 @@
-1 消すべからず
-2000 ノコナタ
-2001 斧竿
-2002 杖鞭
-2010 工房短銃
-2011 工房長銃
-100000 輸血液
-100001 水銀弾
-100002 火炎瓶
-100003 石ころ
-100004 ヤーナムの狩帽子（下級ハンター_頭）
-100005 ヤーナムの狩装束（下級ハンター_胴）
-100006 ヤーナムの狩手袋（下級ハンター_腕）
-100007 ヤーナムの狩ズボン（下級ハンター_脚）
-100008 儀式の血【1】
-100009 儀式の血【2】
-100010 儀式の血【3】
-100011 儀式の血【4】
-100012 儀式の血【5】
-100013 墓所カビ【1】
-100014 墓所カビ【2】
-100015 墓所カビ【3】
-100016 墓所カビ【4】
-100017 墓所カビ【5】
-100100 ノコギリ鉈（ノコナタ）
-100101 異質のノコギリ鉈
-100102 失われたノコギリ鉈
-100103 獣狩りの斧（斧竿）
-100104 異質の獣狩り斧
-100105 失われた獣狩り斧
-100106 仕込み杖（杖鞭）
-100107 異質の仕込み杖
-100108 失われた仕込み杖
-100109 ノコギリ槍（ノコヤリ）
-100110 異質のノコギリ槍
-100111 失われたノコギリ槍
-100112 獣狩りの短銃（工房短銃）
-100113 獣狩りの散弾銃（工房長銃）
-100114 スローイングナイフ
-100115 匂いたつ血の酒
-100200 パイルハンマー（剣杭）
-100201 異質のパイルハンマー
-100202 失われたパイルハンマー
-100203 銃槍（銃槍）
-100204 異質の銃槍
-100205 失われた銃槍
-100206 油壺
-100207 縄付き火炎瓶
-100300 葬送の刃（剣鎌）
-100301 異質の葬送刃
-100302 失われた葬送刃
-100303 ゲールマンの狩帽子（拠点老人_頭）
-100304 ゲールマンの狩装束（拠点老人_胴）
-100305 ゲールマンの狩ズボン（拠点老人_脚）
-100400 慈悲の刃（双剣）
-100401 異質の慈悲刃
-100402 失われた慈悲刃
-100403 嘴の仮面（切り裂きジャック_頭）
-100404 鴉羽の狩装束（切り裂きジャック_胴）
-100405 鴉羽の腕帯（切り裂きジャック_腕）
-100406 鴉羽のズボン（切り裂きジャック_脚）
-100500 トニトルス（爆槌）
-100501 異質のトニトルス
-100502 失われたトニトルス
-100503 雷光ヤスリ
-100600 教会の石槌（剣槌）
-100601 異質の教会石槌
-100602 失われた教会石槌
-100603 教会の連装銃（教会短銃）
-100604 白い丸薬
-100605 狩人の確かな徴
-100606 携帯ランタン
-100607 狩長の印
-100700 ルドウイークの聖剣（剣大剣）
-100701 異質の聖剣
-100702 失われた聖剣
-100703 ルドウイークの長銃（教会長銃）
-100704 火炎放射器（火炎放射器）
-100705 発火ヤスリ
-100706 骨髄の灰
-100707 輝く硬貨
-100708 血石の欠片
-100709 墓暴きのフード（教会ハンター_頭）
-100710 墓暴きの装束（教会ハンター_胴）
-100711 墓暴きの手袋（教会ハンター_腕）
-100712 墓暴きのズボン（教会ハンター_脚）
-100800 ローゲリウスの車輪（車輪）
-100801 異質の車輪
-100802 失われた車輪
-100803 金のアルデオ（血族狩り_頭）
-100900 レイテルパラッシュ（銃剣）
-100901 異質のレイテルパラッシュ
-100902 失われたレイテルパラッシュ
-100903 千景（刀）
-100904 異質の血刀
-100905 失われた血刀
-100906 エヴェリン（ヴァンパイア短銃）
-100907 カインの兜（ヴァンパイア騎士_頭）
-100908 カインの鎧（ヴァンパイア騎士_胴）
-100909 カインの手甲（ヴァンパイア騎士_腕）
-100910 カインの足甲（ヴァンパイア騎士_脚）
-101000 ロスマリヌス（噴霧器）
-101001 毒メス
-101002 鎮静剤
-101003 血石の二欠片
-101020 貫通銃（貫通銃）
-101021 時限爆発瓶
-101022 縄付き時限爆発瓶
-101100 獣の爪（拳獣）
-101101 異質の獣爪
-101102 失われた獣爪
-101103 大砲（大筒）
-101104 獣狩りの松明（狩人の松明）
-101110 獣狩りの曲刀（ノコ曲剣）
-101111 異質の獣狩り曲刀
-101112 失われた獣狩り曲刀
-101113 獣肉断ち（ノコ鞭）
-101114 異質の獣肉断ち
-101115 失われた獣肉断ち
-101116 教会の杭（ウォーピック）
-101117 異質の教会杭
-101118 失われた教会杭
-101119 シモンの弓剣（変形弓）
-101120 異質の弓剣
-101121 失われた弓剣
-101122 月光の聖剣（月光剣）
-101123 異質の月光聖剣
-101124 失われた月光聖剣
-101125 落葉（双刃）
-101126 異質の落葉
-101127 失われた落葉
-101128 回転ノコギリ（丸鋸チェンソー）
-101129 異質の回転ノコギリ
-101130 失われた回転ノコギリ
-101131 爆発金槌（ガンハンマー）
-101132 異質の爆発金槌
-101133 失われた爆発金槌
-101134 瀉血の槌（十字メイス）
-101135 異質の瀉血槌
-101136 失われた瀉血槌
-101137 小アメンの腕（多関節）
-101138 異質の小アメン腕
-101139 失われた小アメン腕
-101140 ゴースの寄生虫（なめくじ）
-101141 異質の寄生虫
-101142 失われた寄生虫
-101143 ガトリング銃（ガトリング）
-101144 教会砲（グレネード）
-101145 ガラシャの拳（ナックル）
-101146 湖の盾（属性盾）
-110000 輸血液
-110001 水銀弾
-110002 火炎瓶
-110003 石ころ
-110004 ヤーナムの狩帽子（下級ハンター_頭）
-110005 ヤーナムの狩装束（下級ハンター_胴）
-110006 ヤーナムの狩手袋（下級ハンター_腕）
-110007 ヤーナムの狩ズボン（下級ハンター_脚）
-110008 儀式の血【1】
-110009 儀式の血【2】
-110010 儀式の血【3】
-110011 儀式の血【4】
-110012 儀式の血【5】
-110013 墓所カビ【1】
-110014 墓所カビ【2】
-110015 墓所カビ【3】
-110016 墓所カビ【4】
-110017 墓所カビ【5】
-110100 ノコギリ鉈（ノコナタ）
-110101 異質のノコギリ鉈
-110102 失われたノコギリ鉈
-110103 獣狩りの斧（斧竿）
-110104 異質の獣狩り斧
-110105 失われた獣狩り斧
-110106 仕込み杖（杖鞭）
-110107 異質の仕込み杖
-110108 失われた仕込み杖
-110109 ノコギリ槍（ノコヤリ）
-110110 異質のノコギリ槍
-110111 失われたノコギリ槍
-110112 獣狩りの短銃（工房短銃）
-110113 獣狩りの散弾銃（工房長銃）
-110114 スローイングナイフ
-110115 匂いたつ血の酒
-110200 パイルハンマー（剣杭）
-110201 異質のパイルハンマー
-110202 失われたパイルハンマー
-110203 銃槍（銃槍）
-110204 異質の銃槍
-110205 失われた銃槍
-110206 油壺
-110207 縄付き火炎瓶
-110300 葬送の刃（剣鎌）
-110301 異質の葬送刃
-110302 失われた葬送刃
-110303 ゲールマンの狩帽子（拠点老人_頭）
-110304 ゲールマンの狩装束（拠点老人_胴）
-110305 ゲールマンの狩ズボン（拠点老人_脚）
-110400 慈悲の刃（双剣）
-110401 異質の慈悲刃
-110402 失われた慈悲刃
-110403 嘴の仮面（切り裂きジャック_頭）
-110404 鴉羽の狩装束（切り裂きジャック_胴）
-110405 鴉羽の腕帯（切り裂きジャック_腕）
-110406 鴉羽のズボン（切り裂きジャック_脚）
-110500 トニトルス（爆槌）
-110501 異質のトニトルス
-110502 失われたトニトルス
-110503 雷光ヤスリ
-110600 教会の石槌（剣槌）
-110601 異質の教会石槌
-110602 失われた教会石槌
-110603 教会の連装銃（教会短銃）
-110604 白い丸薬
-110605 狩人の確かな徴
-110606 携帯ランタン
-110607 狩長の印
-110700 ルドウイークの聖剣（剣大剣）
-110701 異質の聖剣
-110702 失われた聖剣
-110703 ルドウイークの長銃（教会長銃）
-110704 火炎放射器（火炎放射器）
-110705 発火ヤスリ
-110706 骨髄の灰
-110707 輝く硬貨
-110708 血石の欠片
-110709 墓暴きのフード（教会ハンター_頭）
-110710 墓暴きの装束（教会ハンター_胴）
-110711 墓暴きの手袋（教会ハンター_腕）
-110712 墓暴きのズボン（教会ハンター_脚）
-110800 ローゲリウスの車輪（車輪）
-110801 異質の車輪
-110802 失われた車輪
-110803 金のアルデオ（血族狩り_頭）
-110900 レイテルパラッシュ（銃剣）
-110901 異質のレイテルパラッシュ
-110902 失われたレイテルパラッシュ
-110903 千景（刀）
-110904 異質の血刀
-110905 失われた血刀
-110906 エヴェリン（ヴァンパイア短銃）
-110907 カインの兜（ヴァンパイア騎士_頭）
-110908 カインの鎧（ヴァンパイア騎士_胴）
-110909 カインの手甲（ヴァンパイア騎士_腕）
-110910 カインの足甲（ヴァンパイア騎士_脚）
-111000 ロスマリヌス（噴霧器）
-111001 毒メス
-111002 鎮静剤
-111003 血石の二欠片
-111020 貫通銃（貫通銃）
-111021 時限爆発瓶
-111022 縄付き時限爆発瓶
-111100 獣の爪（拳獣）
-111101 異質の獣爪
-111102 失われた獣爪
-111103 大砲（大筒）
-111104 獣狩りの松明（狩人の松明）
-111110 獣狩りの曲刀（ノコ曲剣）
-111111 異質の獣狩り曲刀
-111112 失われた獣狩り曲刀
-111113 獣肉断ち（ノコ鞭）
-111114 異質の獣肉断ち
-111115 失われた獣肉断ち
-111116 教会の杭（ウォーピック）
-111117 異質の教会杭
-111118 失われた教会杭
-111119 シモンの弓剣（変形弓）
-111120 異質の弓剣
-111121 失われた弓剣
-111122 月光の聖剣（月光剣）
-111123 異質の月光聖剣
-111124 失われた月光聖剣
-111125 落葉（双刃）
-111126 異質の落葉
-111127 失われた落葉
-111128 回転ノコギリ（丸鋸チェンソー）
-111129 異質の回転ノコギリ
-111130 失われた回転ノコギリ
-111131 爆発金槌（ガンハンマー）
-111132 異質の爆発金槌
-111133 失われた爆発金槌
-111134 瀉血の槌（十字メイス）
-111135 異質の瀉血槌
-111136 失われた瀉血槌
-111137 小アメンの腕（多関節）
-111138 異質の小アメン腕
-111139 失われた小アメン腕
-111140 ゴースの寄生虫（なめくじ）
-111141 異質の寄生虫
-111142 失われた寄生虫
-111143 ガトリング銃（ガトリング）
-111144 教会砲（グレネード）
-111145 ガラシャの拳（ナックル）
-111146 湖の盾（属性盾）
-120000 輸血液
-120001 水銀弾
-120002 火炎瓶
-120003 石ころ
-120004 ヤーナムの狩帽子（下級ハンター_頭）
-120005 ヤーナムの狩装束（下級ハンター_胴）
-120006 ヤーナムの狩手袋（下級ハンター_腕）
-120007 ヤーナムの狩ズボン（下級ハンター_脚）
-120008 儀式の血【1】
-120009 儀式の血【2】
-120010 儀式の血【3】
-120011 儀式の血【4】
-120012 儀式の血【5】
-120013 墓所カビ【1】
-120014 墓所カビ【2】
-120015 墓所カビ【3】
-120016 墓所カビ【4】
-120017 墓所カビ【5】
-120100 ノコギリ鉈（ノコナタ）
-120101 異質のノコギリ鉈
-120102 失われたノコギリ鉈
-120103 獣狩りの斧（斧竿）
-120104 異質の獣狩り斧
-120105 失われた獣狩り斧
-120106 仕込み杖（杖鞭）
-120107 異質の仕込み杖
-120108 失われた仕込み杖
-120109 ノコギリ槍（ノコヤリ）
-120110 異質のノコギリ槍
-120111 失われたノコギリ槍
-120112 獣狩りの短銃（工房短銃）
-120113 獣狩りの散弾銃（工房長銃）
-120114 スローイングナイフ
-120115 匂いたつ血の酒
-120200 パイルハンマー（剣杭）
-120201 異質のパイルハンマー
-120202 失われたパイルハンマー
-120203 銃槍（銃槍）
-120204 異質の銃槍
-120205 失われた銃槍
-120206 油壺
-120207 縄付き火炎瓶
-120300 葬送の刃（剣鎌）
-120301 異質の葬送刃
-120302 失われた葬送刃
-120303 ゲールマンの狩帽子（拠点老人_頭）
-120304 ゲールマンの狩装束（拠点老人_胴）
-120305 ゲールマンの狩ズボン（拠点老人_脚）
-120400 慈悲の刃（双剣）
-120401 異質の慈悲刃
-120402 失われた慈悲刃
-120403 嘴の仮面（切り裂きジャック_頭）
-120404 鴉羽の狩装束（切り裂きジャック_胴）
-120405 鴉羽の腕帯（切り裂きジャック_腕）
-120406 鴉羽のズボン（切り裂きジャック_脚）
-120500 トニトルス（爆槌）
-120501 異質のトニトルス
-120502 失われたトニトルス
-120503 雷光ヤスリ
-120600 教会の石槌（剣槌）
-120601 異質の教会石槌
-120602 失われた教会石槌
-120603 教会の連装銃（教会短銃）
-120604 白い丸薬
-120605 狩人の確かな徴
-120606 携帯ランタン
-120607 狩長の印
-120700 ルドウイークの聖剣（剣大剣）
-120701 異質の聖剣
-120702 失われた聖剣
-120703 ルドウイークの長銃（教会長銃）
-120704 火炎放射器（火炎放射器）
-120705 発火ヤスリ
-120706 骨髄の灰
-120707 輝く硬貨
-120708 血石の欠片
-120709 墓暴きのフード（教会ハンター_頭）
-120710 墓暴きの装束（教会ハンター_胴）
-120711 墓暴きの手袋（教会ハンター_腕）
-120712 墓暴きのズボン（教会ハンター_脚）
-120800 ローゲリウスの車輪（車輪）
-120801 異質の車輪
-120802 失われた車輪
-120803 金のアルデオ（血族狩り_頭）
-120900 レイテルパラッシュ（銃剣）
-120901 異質のレイテルパラッシュ
-120902 失われたレイテルパラッシュ
-120903 千景（刀）
-120904 異質の血刀
-120905 失われた血刀
-120906 エヴェリン（ヴァンパイア短銃）
-120907 カインの兜（ヴァンパイア騎士_頭）
-120908 カインの鎧（ヴァンパイア騎士_胴）
-120909 カインの手甲（ヴァンパイア騎士_腕）
-120910 カインの足甲（ヴァンパイア騎士_脚）
-121000 ロスマリヌス（噴霧器）
-121001 毒メス
-121002 鎮静剤
-121003 血石の二欠片
-121020 貫通銃（貫通銃）
-121021 時限爆発瓶
-121022 縄付き時限爆発瓶
-121100 獣の爪（拳獣）
-121101 異質の獣爪
-121102 失われた獣爪
-121103 大砲（大筒）
-121104 獣狩りの松明（狩人の松明）
-121110 獣狩りの曲刀（ノコ曲剣）
-121111 異質の獣狩り曲刀
-121112 失われた獣狩り曲刀
-121113 獣肉断ち（ノコ鞭）
-121114 異質の獣肉断ち
-121115 失われた獣肉断ち
-121116 教会の杭（ウォーピック）
-121117 異質の教会杭
-121118 失われた教会杭
-121119 シモンの弓剣（変形弓）
-121120 異質の弓剣
-121121 失われた弓剣
-121122 月光の聖剣（月光剣）
-121123 異質の月光聖剣
-121124 失われた月光聖剣
-121125 落葉（双刃）
-121126 異質の落葉
-121127 失われた落葉
-121128 回転ノコギリ（丸鋸チェンソー）
-121129 異質の回転ノコギリ
-121130 失われた回転ノコギリ
-121131 爆発金槌（ガンハンマー）
-121132 異質の爆発金槌
-121133 失われた爆発金槌
-121134 瀉血の槌（十字メイス）
-121135 異質の瀉血槌
-121136 失われた瀉血槌
-121137 小アメンの腕（多関節）
-121138 異質の小アメン腕
-121139 失われた小アメン腕
-121140 ゴースの寄生虫（なめくじ）
-121141 異質の寄生虫
-121142 失われた寄生虫
-121143 ガトリング銃（ガトリング）
-121144 教会砲（グレネード）
-121145 ガラシャの拳（ナックル）
-121146 湖の盾（属性盾）
-130000 輸血液
-130001 水銀弾
-130002 火炎瓶
-130003 石ころ
-130004 ヤーナムの狩帽子（下級ハンター_頭）
-130005 ヤーナムの狩装束（下級ハンター_胴）
-130006 ヤーナムの狩手袋（下級ハンター_腕）
-130007 ヤーナムの狩ズボン（下級ハンター_脚）
-130008 儀式の血【1】
-130009 儀式の血【2】
-130010 儀式の血【3】
-130011 儀式の血【4】
-130012 儀式の血【5】
-130013 墓所カビ【1】
-130014 墓所カビ【2】
-130015 墓所カビ【3】
-130016 墓所カビ【4】
-130017 墓所カビ【5】
-130100 ノコギリ鉈（ノコナタ）
-130101 異質のノコギリ鉈
-130102 失われたノコギリ鉈
-130103 獣狩りの斧（斧竿）
-130104 異質の獣狩り斧
-130105 失われた獣狩り斧
-130106 仕込み杖（杖鞭）
-130107 異質の仕込み杖
-130108 失われた仕込み杖
-130109 ノコギリ槍（ノコヤリ）
-130110 異質のノコギリ槍
-130111 失われたノコギリ槍
-130112 獣狩りの短銃（工房短銃）
-130113 獣狩りの散弾銃（工房長銃）
-130114 スローイングナイフ
-130115 匂いたつ血の酒
-130200 パイルハンマー（剣杭）
-130201 異質のパイルハンマー
-130202 失われたパイルハンマー
-130203 銃槍（銃槍）
-130204 異質の銃槍
-130205 失われた銃槍
-130206 油壺
-130207 縄付き火炎瓶
-130300 葬送の刃（剣鎌）
-130301 異質の葬送刃
-130302 失われた葬送刃
-130303 ゲールマンの狩帽子（拠点老人_頭）
-130304 ゲールマンの狩装束（拠点老人_胴）
-130305 ゲールマンの狩ズボン（拠点老人_脚）
-130400 慈悲の刃（双剣）
-130401 異質の慈悲刃
-130402 失われた慈悲刃
-130403 嘴の仮面（切り裂きジャック_頭）
-130404 鴉羽の狩装束（切り裂きジャック_胴）
-130405 鴉羽の腕帯（切り裂きジャック_腕）
-130406 鴉羽のズボン（切り裂きジャック_脚）
-130500 トニトルス（爆槌）
-130501 異質のトニトルス
-130502 失われたトニトルス
-130503 雷光ヤスリ
-130600 教会の石槌（剣槌）
-130601 異質の教会石槌
-130602 失われた教会石槌
-130603 教会の連装銃（教会短銃）
-130604 白い丸薬
-130605 狩人の確かな徴
-130606 携帯ランタン
-130607 狩長の印
-130700 ルドウイークの聖剣（剣大剣）
-130701 異質の聖剣
-130702 失われた聖剣
-130703 ルドウイークの長銃（教会長銃）
-130704 火炎放射器（火炎放射器）
-130705 発火ヤスリ
-130706 骨髄の灰
-130707 輝く硬貨
-130708 血石の欠片
-130709 墓暴きのフード（教会ハンター_頭）
-130710 墓暴きの装束（教会ハンター_胴）
-130711 墓暴きの手袋（教会ハンター_腕）
-130712 墓暴きのズボン（教会ハンター_脚）
-130800 ローゲリウスの車輪（車輪）
-130801 異質の車輪
-130802 失われた車輪
-130803 金のアルデオ（血族狩り_頭）
-130900 レイテルパラッシュ（銃剣）
-130901 異質のレイテルパラッシュ
-130902 失われたレイテルパラッシュ
-130903 千景（刀）
-130904 異質の血刀
-130905 失われた血刀
-130906 エヴェリン（ヴァンパイア短銃）
-130907 カインの兜（ヴァンパイア騎士_頭）
-130908 カインの鎧（ヴァンパイア騎士_胴）
-130909 カインの手甲（ヴァンパイア騎士_腕）
-130910 カインの足甲（ヴァンパイア騎士_脚）
-131000 ロスマリヌス（噴霧器）
-131001 毒メス
-131002 鎮静剤
-131003 血石の二欠片
-131020 貫通銃（貫通銃）
-131021 時限爆発瓶
-131022 縄付き時限爆発瓶
-131100 獣の爪（拳獣）
-131101 異質の獣爪
-131102 失われた獣爪
-131103 大砲（大筒）
-131104 獣狩りの松明（狩人の松明）
-131110 獣狩りの曲刀（ノコ曲剣）
-131111 異質の獣狩り曲刀
-131112 失われた獣狩り曲刀
-131113 獣肉断ち（ノコ鞭）
-131114 異質の獣肉断ち
-131115 失われた獣肉断ち
-131116 教会の杭（ウォーピック）
-131117 異質の教会杭
-131118 失われた教会杭
-131119 シモンの弓剣（変形弓）
-131120 異質の弓剣
-131121 失われた弓剣
-131122 月光の聖剣（月光剣）
-131123 異質の月光聖剣
-131124 失われた月光聖剣
-131125 落葉（双刃）
-131126 異質の落葉
-131127 失われた落葉
-131128 回転ノコギリ（丸鋸チェンソー）
-131129 異質の回転ノコギリ
-131130 失われた回転ノコギリ
-131131 爆発金槌（ガンハンマー）
-131132 異質の爆発金槌
-131133 失われた爆発金槌
-131134 瀉血の槌（十字メイス）
-131135 異質の瀉血槌
-131136 失われた瀉血槌
-131137 小アメンの腕（多関節）
-131138 異質の小アメン腕
-131139 失われた小アメン腕
-131140 ゴースの寄生虫（なめくじ）
-131141 異質の寄生虫
-131142 失われた寄生虫
-131143 ガトリング銃（ガトリング）
-131144 教会砲（グレネード）
-131145 ガラシャの拳（ナックル）
-131146 湖の盾（属性盾）
-140000 輸血液
-140001 水銀弾
-140002 火炎瓶
-140003 石ころ
-140004 ヤーナムの狩帽子（下級ハンター_頭）
-140005 ヤーナムの狩装束（下級ハンター_胴）
-140006 ヤーナムの狩手袋（下級ハンター_腕）
-140007 ヤーナムの狩ズボン（下級ハンター_脚）
-140008 儀式の血【1】
-140009 儀式の血【2】
-140010 儀式の血【3】
-140011 儀式の血【4】
-140012 儀式の血【5】
-140013 墓所カビ【1】
-140014 墓所カビ【2】
-140015 墓所カビ【3】
-140016 墓所カビ【4】
-140017 墓所カビ【5】
-140100 ノコギリ鉈（ノコナタ）
-140101 異質のノコギリ鉈
-140102 失われたノコギリ鉈
-140103 獣狩りの斧（斧竿）
-140104 異質の獣狩り斧
-140105 失われた獣狩り斧
-140106 仕込み杖（杖鞭）
-140107 異質の仕込み杖
-140108 失われた仕込み杖
-140109 ノコギリ槍（ノコヤリ）
-140110 異質のノコギリ槍
-140111 失われたノコギリ槍
-140112 獣狩りの短銃（工房短銃）
-140113 獣狩りの散弾銃（工房長銃）
-140114 スローイングナイフ
-140115 匂いたつ血の酒
-140200 パイルハンマー（剣杭）
-140201 異質のパイルハンマー
-140202 失われたパイルハンマー
-140203 銃槍（銃槍）
-140204 異質の銃槍
-140205 失われた銃槍
-140206 油壺
-140207 縄付き火炎瓶
-140300 葬送の刃（剣鎌）
-140301 異質の葬送刃
-140302 失われた葬送刃
-140303 ゲールマンの狩帽子（拠点老人_頭）
-140304 ゲールマンの狩装束（拠点老人_胴）
-140305 ゲールマンの狩ズボン（拠点老人_脚）
-140400 慈悲の刃（双剣）
-140401 異質の慈悲刃
-140402 失われた慈悲刃
-140403 嘴の仮面（切り裂きジャック_頭）
-140404 鴉羽の狩装束（切り裂きジャック_胴）
-140405 鴉羽の腕帯（切り裂きジャック_腕）
-140406 鴉羽のズボン（切り裂きジャック_脚）
-140500 トニトルス（爆槌）
-140501 異質のトニトルス
-140502 失われたトニトルス
-140503 雷光ヤスリ
-140600 教会の石槌（剣槌）
-140601 異質の教会石槌
-140602 失われた教会石槌
-140603 教会の連装銃（教会短銃）
-140604 白い丸薬
-140605 狩人の確かな徴
-140606 携帯ランタン
-140607 狩長の印
-140700 ルドウイークの聖剣（剣大剣）
-140701 異質の聖剣
-140702 失われた聖剣
-140703 ルドウイークの長銃（教会長銃）
-140704 火炎放射器（火炎放射器）
-140705 発火ヤスリ
-140706 骨髄の灰
-140707 輝く硬貨
-140708 血石の欠片
-140709 墓暴きのフード（教会ハンター_頭）
-140710 墓暴きの装束（教会ハンター_胴）
-140711 墓暴きの手袋（教会ハンター_腕）
-140712 墓暴きのズボン（教会ハンター_脚）
-140800 ローゲリウスの車輪（車輪）
-140801 異質の車輪
-140802 失われた車輪
-140803 金のアルデオ（血族狩り_頭）
-140900 レイテルパラッシュ（銃剣）
-140901 異質のレイテルパラッシュ
-140902 失われたレイテルパラッシュ
-140903 千景（刀）
-140904 異質の血刀
-140905 失われた血刀
-140906 エヴェリン（ヴァンパイア短銃）
-140907 カインの兜（ヴァンパイア騎士_頭）
-140908 カインの鎧（ヴァンパイア騎士_胴）
-140909 カインの手甲（ヴァンパイア騎士_腕）
-140910 カインの足甲（ヴァンパイア騎士_脚）
-141000 ロスマリヌス（噴霧器）
-141001 毒メス
-141002 鎮静剤
-141003 血石の二欠片
-141020 貫通銃（貫通銃）
-141021 時限爆発瓶
-141022 縄付き時限爆発瓶
-141100 獣の爪（拳獣）
-141101 異質の獣爪
-141102 失われた獣爪
-141103 大砲（大筒）
-141104 獣狩りの松明（狩人の松明）
-141110 獣狩りの曲刀（ノコ曲剣）
-141111 異質の獣狩り曲刀
-141112 失われた獣狩り曲刀
-141113 獣肉断ち（ノコ鞭）
-141114 異質の獣肉断ち
-141115 失われた獣肉断ち
-141116 教会の杭（ウォーピック）
-141117 異質の教会杭
-141118 失われた教会杭
-141119 シモンの弓剣（変形弓）
-141120 異質の弓剣
-141121 失われた弓剣
-141122 月光の聖剣（月光剣）
-141123 異質の月光聖剣
-141124 失われた月光聖剣
-141125 落葉（双刃）
-141126 異質の落葉
-141127 失われた落葉
-141128 回転ノコギリ（丸鋸チェンソー）
-141129 異質の回転ノコギリ
-141130 失われた回転ノコギリ
-141131 爆発金槌（ガンハンマー）
-141132 異質の爆発金槌
-141133 失われた爆発金槌
-141134 瀉血の槌（十字メイス）
-141135 異質の瀉血槌
-141136 失われた瀉血槌
-141137 小アメンの腕（多関節）
-141138 異質の小アメン腕
-141139 失われた小アメン腕
-141140 ゴースの寄生虫（なめくじ）
-141141 異質の寄生虫
-141142 失われた寄生虫
-141143 ガトリング銃（ガトリング）
-141144 教会砲（グレネード）
-141145 ガラシャの拳（ナックル）
-141146 湖の盾（属性盾）
-200000 共鳴する小さな鐘
-200001 共鳴する不吉な鐘
-200002 匂いたつ血の酒
-200003 発火ヤスリ
-200004 獣血の丸薬
-200005 青い秘薬
-200006 雷光ヤスリ
-200007 感覚麻痺の霧
-200008 血石の欠片
-200009 鉛の秘薬
-200010 血石の二欠片
-200011 祭祀者の骨の刃
-200012 死血花の芽生え
-200013 死血花のつぼみ
-200014 大輪の死血花
-200015 真珠ナメクジ
-200016 レッドゼリー
-200017 聖者の手首
-200018 聖者の頭蓋
-200019 病巣の臓器
-200020 黄色い背骨
-200021 ローランの赤子
-200022 血走った目玉
-200023 生きているひも
-200024 血石の塊
-200025 血の岩
-200030 ヘンリックの狩帽子（上級ハンター_頭）
-200031 ヘンリックの狩装束（上級ハンター_胴）
-200032 ヘンリックの狩手袋（上級ハンター_腕）
-200033 ヘンリックの狩ズボン（上級ハンター_脚）
-200040 神父の狩帽子（ガスコイン神父_頭）
-200041 神父の狩装束（ガスコイン神父_胴）
-200042 神父の狩手袋（ガスコイン神父_腕）
-200043 神父の狩ズボン（ガスコイン神父_脚）
-200050 灰狼の帽子（狼の帽子）
-200051 灰の狩装束（隠密_胴）
-200052 灰の狩手袋（隠密_腕）
-200053 灰の狩ズボン（隠密_脚）
-200060 骨炭の仮面（滅びの炎の眷属_頭）
-200061 骨炭の鎧（滅びの炎の眷属_胴）
-200062 骨炭の手甲（滅びの炎の眷属_腕）
-200063 骨炭の足甲（滅びの炎の眷属_脚）
-200064 異常者のフード（狂った邪教徒_頭）
-200065 異常者の装束（狂った邪教徒_胴）
-200066 異常者の腕帯（狂った邪教徒_腕）
-200067 異常者の脚帯（狂った邪教徒_脚）
-200070 略式儀式の汎聖杯
-200090 マリアの狩帽子（女性ハンター_頭）
-200091 マリアの狩装束（女性ハンター_胴）
-200092 マリアの狩手袋（女性ハンター_腕）
-200093 マリアの狩ズボン（女性ハンター_脚）
-210000 共鳴する小さな鐘
-210001 共鳴する不吉な鐘
-210002 匂いたつ血の酒
-210003 発火ヤスリ
-210004 獣血の丸薬
-210005 青い秘薬
-210006 雷光ヤスリ
-210007 感覚麻痺の霧
-210008 血石の欠片
-210009 鉛の秘薬
-210010 血石の二欠片
-210011 祭祀者の骨の刃
-210012 死血花の芽生え
-210013 死血花のつぼみ
-210014 大輪の死血花
-210015 真珠ナメクジ
-210016 レッドゼリー
-210017 聖者の手首
-210018 聖者の頭蓋
-210019 病巣の臓器
-210020 黄色い背骨
-210021 ローランの赤子
-210022 血走った目玉
-210023 生きているひも
-210024 血石の塊
-210025 血の岩
-210030 ヘンリックの狩帽子（上級ハンター_頭）
-210031 ヘンリックの狩装束（上級ハンター_胴）
-210032 ヘンリックの狩手袋（上級ハンター_腕）
-210033 ヘンリックの狩ズボン（上級ハンター_脚）
-210040 神父の狩帽子（ガスコイン神父_頭）
-210041 神父の狩装束（ガスコイン神父_胴）
-210042 神父の狩手袋（ガスコイン神父_腕）
-210043 神父の狩ズボン（ガスコイン神父_脚）
-210050 灰狼の帽子（狼の帽子）
-210051 灰の狩装束（隠密_胴）
-210052 灰の狩手袋（隠密_腕）
-210053 灰の狩ズボン（隠密_脚）
-210060 骨炭の仮面（滅びの炎の眷属_頭）
-210061 骨炭の鎧（滅びの炎の眷属_胴）
-210062 骨炭の手甲（滅びの炎の眷属_腕）
-210063 骨炭の足甲（滅びの炎の眷属_脚）
-210064 異常者のフード（狂った邪教徒_頭）
-210065 異常者の装束（狂った邪教徒_胴）
-210066 異常者の腕帯（狂った邪教徒_腕）
-210067 異常者の脚帯（狂った邪教徒_脚）
-210070 略式儀式の汎聖杯
-210090 マリアの狩帽子（女性ハンター_頭）
-210091 マリアの狩装束（女性ハンター_胴）
-210092 マリアの狩手袋（女性ハンター_腕）
-210093 マリアの狩ズボン（女性ハンター_脚）
-220000 共鳴する小さな鐘
-220001 共鳴する不吉な鐘
-220002 匂いたつ血の酒
-220003 発火ヤスリ
-220004 獣血の丸薬
-220005 青い秘薬
-220006 雷光ヤスリ
-220007 感覚麻痺の霧
-220008 血石の欠片
-220009 鉛の秘薬
-220010 血石の二欠片
-220011 祭祀者の骨の刃
-220012 死血花の芽生え
-220013 死血花のつぼみ
-220014 大輪の死血花
-220015 真珠ナメクジ
-220016 レッドゼリー
-220017 聖者の手首
-220018 聖者の頭蓋
-220019 病巣の臓器
-220020 黄色い背骨
-220021 ローランの赤子
-220022 血走った目玉
-220023 生きているひも
-220024 血石の塊
-220025 血の岩
-220030 上級ハンター_頭
-220031 上級ハンター_胴
-220032 上級ハンター_腕
-220033 上級ハンター_脚
-220040 ガスコイン神父_頭
-220041 ガスコイン神父_胴
-220042 ガスコイン神父_腕
-220043 ガスコイン神父_脚
-220050 狼の帽子
-220051 隠密_胴
-220052 隠密_腕
-220053 隠密_脚
-220060 滅びの炎の眷属_頭
-220061 滅びの炎の眷属_胴
-220062 滅びの炎の眷属_腕
-220063 滅びの炎の眷属_脚
-220064 狂った邪教徒_頭
-220065 狂った邪教徒_胴
-220066 狂った邪教徒_腕
-220067 狂った邪教徒_脚
-220070 略式儀式の汎聖杯
-220090 女性ハンター_頭
-220091 女性ハンター_胴
-220092 女性ハンター_腕
-220093 女性ハンター_脚
-230000 共鳴する小さな鐘
-230001 共鳴する不吉な鐘
-230002 匂いたつ血の酒
-230003 発火ヤスリ
-230004 獣血の丸薬
-230005 青い秘薬
-230006 雷光ヤスリ
-230007 感覚麻痺の霧
-230008 血石の欠片
-230009 鉛の秘薬
-230010 血石の二欠片
-230011 祭祀者の骨の刃
-230012 死血花の芽生え
-230013 死血花のつぼみ
-230014 大輪の死血花
-230015 真珠ナメクジ
-230016 レッドゼリー
-230017 聖者の手首
-230018 聖者の頭蓋
-230019 病巣の臓器
-230020 黄色い背骨
-230021 ローランの赤子
-230022 血走った目玉
-230023 生きているひも
-230024 血石の塊
-230025 血の岩
-230030 上級ハンター_頭
-230031 上級ハンター_胴
-230032 上級ハンター_腕
-230033 上級ハンター_脚
-230040 ガスコイン神父_頭
-230041 ガスコイン神父_胴
-230042 ガスコイン神父_腕
-230043 ガスコイン神父_脚
-230050 狼の帽子
-230051 隠密_胴
-230052 隠密_腕
-230053 隠密_脚
-230060 滅びの炎の眷属_頭
-230061 滅びの炎の眷属_胴
-230062 滅びの炎の眷属_腕
-230063 滅びの炎の眷属_脚
-230064 狂った邪教徒_頭
-230065 狂った邪教徒_胴
-230066 狂った邪教徒_腕
-230067 狂った邪教徒_脚
-230070 略式儀式の汎聖杯
-230090 女性ハンター_頭
-230091 女性ハンター_胴
-230092 女性ハンター_腕
-230093 女性ハンター_脚
-240000 共鳴する小さな鐘
-240001 共鳴する不吉な鐘
-240002 匂いたつ血の酒
-240003 発火ヤスリ
-240004 獣血の丸薬
-240005 青い秘薬
-240006 雷光ヤスリ
-240007 感覚麻痺の霧
-240008 血石の欠片
-240009 鉛の秘薬
-240010 血石の二欠片
-240011 祭祀者の骨の刃
-240012 死血花の芽生え
-240013 死血花のつぼみ
-240014 大輪の死血花
-240015 真珠ナメクジ
-240016 レッドゼリー
-240017 聖者の手首
-240018 聖者の頭蓋
-240019 病巣の臓器
-240020 黄色い背骨
-240021 ローランの赤子
-240022 血走った目玉
-240023 生きているひも
-240024 血石の塊
-240025 血の岩
-240030 上級ハンター_頭
-240031 上級ハンター_胴
-240032 上級ハンター_腕
-240033 上級ハンター_脚
-240040 ガスコイン神父_頭
-240041 ガスコイン神父_胴
-240042 ガスコイン神父_腕
-240043 ガスコイン神父_脚
-240050 狼の帽子
-240051 隠密_胴
-240052 隠密_腕
-240053 隠密_脚
-240060 滅びの炎の眷属_頭
-240061 滅びの炎の眷属_胴
-240062 滅びの炎の眷属_腕
-240063 滅びの炎の眷属_脚
-240064 狂った邪教徒_頭
-240065 狂った邪教徒_胴
-240066 狂った邪教徒_腕
-240067 狂った邪教徒_脚
-240070 略式儀式の汎聖杯
-240090 女性ハンター_頭
-240091 女性ハンター_胴
-240092 女性ハンター_腕
-240093 女性ハンター_脚
-510000 輸血液
-510001 銃弾
-510002 解毒薬
-510003 火炎瓶
-510004 油壺
-510005 背後火炎瓶
-510006 投げナイフ
-510007 毒ナイフ
-510008 石ころ
-510009 帰還
-510010 道標
-510011 不吉なトゥメルの汎聖杯（３）
-510012 不吉な僻墓の汎聖杯（３）
-510013 不吉なトゥメル＝イルの汎聖杯（５）
-510014 不吉な病めるローランの汎聖杯（５）
-510015 不吉なイズの汎聖杯（５）
-510100 異質の獣狩り曲刀
-510101 失われた獣狩り曲刀
-510102 異質の獣肉断ち
-510103 失われた獣肉断ち
-510104 異質の教会杭
-510105 失われた教会杭
-510106 異質の弓剣
-510107 失われた弓剣
-510108 異質の月光聖剣
-510109 失われた月光聖剣
-510110 異質の落葉
-510111 失われた落葉
-510112 異質の回転ノコギリ
-510113 失われた回転ノコギリ
-510114 異質の爆発金槌
-510115 失われた爆発金槌
-510116 異質の瀉血槌
-510117 失われた瀉血槌
-510118 異質の小アメン腕
-510119 失われた小アメン腕
-510120 異質の寄生虫
-510121 失われた寄生虫
-520000 輸血液
-520001 銃弾
-520002 解毒薬
-520003 火炎瓶
-520004 油壺
-520005 背後火炎瓶
-520006 投げナイフ
-520007 毒ナイフ
-520008 石ころ
-520009 帰還
-520010 道標
-520011 不吉なトゥメルの汎聖杯（３）
-520012 不吉な僻墓の汎聖杯（３）
-520013 不吉なトゥメル＝イルの汎聖杯（５）
-520014 不吉な病めるローランの汎聖杯（５）
-520015 不吉なイズの汎聖杯（５）
-520100 異質の獣狩り曲刀
-520101 失われた獣狩り曲刀
-520102 異質の獣肉断ち
-520103 失われた獣肉断ち
-520104 異質の教会杭
-520105 失われた教会杭
-520106 異質の弓剣
-520107 失われた弓剣
-520108 異質の月光聖剣
-520109 失われた月光聖剣
-520110 異質の落葉
-520111 失われた落葉
-520112 異質の回転ノコギリ
-520113 失われた回転ノコギリ
-520114 異質の爆発金槌
-520115 失われた爆発金槌
-520116 異質の瀉血槌
-520117 失われた瀉血槌
-520118 異質の小アメン腕
-520119 失われた小アメン腕
-520120 異質の寄生虫
-520121 失われた寄生虫
-530000 輸血液
-530001 銃弾
-530002 解毒薬
-530003 火炎瓶
-530004 油壺
-530005 背後火炎瓶
-530006 投げナイフ
-530007 毒ナイフ
-530008 石ころ
-530009 帰還
-530010 道標
-530011 不吉なトゥメルの汎聖杯（３）
-530012 不吉な僻墓の汎聖杯（３）
-530013 不吉なトゥメル＝イルの汎聖杯（５）
-530014 不吉な病めるローランの汎聖杯（５）
-530015 不吉なイズの汎聖杯（５）
-530100 異質の獣狩り曲刀
-530101 失われた獣狩り曲刀
-530102 異質の獣肉断ち
-530103 失われた獣肉断ち
-530104 異質の教会杭
-530105 失われた教会杭
-530106 異質の弓剣
-530107 失われた弓剣
-530108 異質の月光聖剣
-530109 失われた月光聖剣
-530110 異質の落葉
-530111 失われた落葉
-530112 異質の回転ノコギリ
-530113 失われた回転ノコギリ
-530114 異質の爆発金槌
-530115 失われた爆発金槌
-530116 異質の瀉血槌
-530117 失われた瀉血槌
-530118 異質の小アメン腕
-530119 失われた小アメン腕
-530120 異質の寄生虫
-530121 失われた寄生虫
-540000 輸血液
-540001 銃弾
-540002 解毒薬
-540003 火炎瓶
-540004 油壺
-540005 背後火炎瓶
-540006 投げナイフ
-540007 毒ナイフ
-540008 石ころ
-540009 帰還
-540010 道標
-540011 不吉なトゥメルの汎聖杯（３）
-540012 不吉な僻墓の汎聖杯（３）
-540013 不吉なトゥメル＝イルの汎聖杯（５）
-540014 不吉な病めるローランの汎聖杯（５）
-540015 不吉なイズの汎聖杯（５）
-540100 異質の獣狩り曲刀
-540101 失われた獣狩り曲刀
-540102 異質の獣肉断ち
-540103 失われた獣肉断ち
-540104 異質の教会杭
-540105 失われた教会杭
-540106 異質の弓剣
-540107 失われた弓剣
-540108 異質の月光聖剣
-540109 失われた月光聖剣
-540110 異質の落葉
-540111 失われた落葉
-540112 異質の回転ノコギリ
-540113 失われた回転ノコギリ
-540114 異質の爆発金槌
-540115 失われた爆発金槌
-540116 異質の瀉血槌
-540117 失われた瀉血槌
-540118 異質の小アメン腕
-540119 失われた小アメン腕
-540120 異質の寄生虫
-540121 失われた寄生虫
-610000 輸血液
-610001 銃弾
-610002 解毒薬
-610003 火炎瓶
-610004 油壺
-610005 背後火炎瓶
-610006 投げナイフ
-610007 毒ナイフ
-610008 狂気回復
-610009 石ころ
-610010 帰還
-610011 道標
-610012 エンチャント【炎】
-610013 エンチャント【雷】
-610014 銃威力アップ
-610015 獣誘い
-610100 異質の獣狩り曲刀
-610101 失われた獣狩り曲刀
-610102 異質の獣肉断ち
-610103 失われた獣肉断ち
-610104 異質の教会杭
-610105 失われた教会杭
-610106 異質の弓剣
-610107 失われた弓剣
-610108 異質の月光聖剣
-610109 失われた月光聖剣
-610110 異質の落葉
-610111 失われた落葉
-610112 異質の回転ノコギリ
-610113 失われた回転ノコギリ
-610114 異質の爆発金槌
-610115 失われた爆発金槌
-610116 異質の瀉血槌
-610117 失われた瀉血槌
-610118 異質の小アメン腕
-610119 失われた小アメン腕
-610120 異質の寄生虫
-610121 失われた寄生虫
-620000 輸血液
-620001 銃弾
-620002 解毒薬
-620003 火炎瓶
-620004 油壺
-620005 背後火炎瓶
-620006 投げナイフ
-620007 毒ナイフ
-620008 狂気回復
-620009 石ころ
-620010 帰還
-620011 道標
-620012 エンチャント【炎】
-620013 エンチャント【雷】
-620014 銃威力アップ
-620015 獣誘い
-620100 異質の獣狩り曲刀
-620101 失われた獣狩り曲刀
-620102 異質の獣肉断ち
-620103 失われた獣肉断ち
-620104 異質の教会杭
-620105 失われた教会杭
-620106 異質の弓剣
-620107 失われた弓剣
-620108 異質の月光聖剣
-620109 失われた月光聖剣
-620110 異質の落葉
-620111 失われた落葉
-620112 異質の回転ノコギリ
-620113 失われた回転ノコギリ
-620114 異質の爆発金槌
-620115 失われた爆発金槌
-620116 異質の瀉血槌
-620117 失われた瀉血槌
-620118 異質の小アメン腕
-620119 失われた小アメン腕
-620120 異質の寄生虫
-620121 失われた寄生虫
-630000 輸血液
-630001 銃弾
-630002 解毒薬
-630003 火炎瓶
-630004 油壺
-630005 背後火炎瓶
-630006 投げナイフ
-630007 毒ナイフ
-630008 狂気回復
-630009 石ころ
-630010 帰還
-630011 道標
-630012 エンチャント【炎】
-630013 エンチャント【雷】
-630014 銃威力アップ
-630015 獣誘い
-630100 異質の獣狩り曲刀
-630101 失われた獣狩り曲刀
-630102 異質の獣肉断ち
-630103 失われた獣肉断ち
-630104 異質の教会杭
-630105 失われた教会杭
-630106 異質の弓剣
-630107 失われた弓剣
-630108 異質の月光聖剣
-630109 失われた月光聖剣
-630110 異質の落葉
-630111 失われた落葉
-630112 異質の回転ノコギリ
-630113 失われた回転ノコギリ
-630114 異質の爆発金槌
-630115 失われた爆発金槌
-630116 異質の瀉血槌
-630117 失われた瀉血槌
-630118 異質の小アメン腕
-630119 失われた小アメン腕
-630120 異質の寄生虫
-630121 失われた寄生虫
-640000 輸血液
-640001 銃弾
-640002 解毒薬
-640003 火炎瓶
-640004 油壺
-640005 背後火炎瓶
-640006 投げナイフ
-640007 毒ナイフ
-640008 狂気回復
-640009 石ころ
-640010 帰還
-640011 道標
-640012 エンチャント【炎】
-640013 エンチャント【雷】
-640014 銃威力アップ
-640015 獣誘い
-640100 異質の獣狩り曲刀
-640101 失われた獣狩り曲刀
-640102 異質の獣肉断ち
-640103 失われた獣肉断ち
-640104 異質の教会杭
-640105 失われた教会杭
-640106 異質の弓剣
-640107 失われた弓剣
-640108 異質の月光聖剣
-640109 失われた月光聖剣
-640110 異質の落葉
-640111 失われた落葉
-640112 異質の回転ノコギリ
-640113 失われた回転ノコギリ
-640114 異質の爆発金槌
-640115 失われた爆発金槌
-640116 異質の瀉血槌
-640117 失われた瀉血槌
-640118 異質の小アメン腕
-640119 失われた小アメン腕
-640120 異質の寄生虫
-640121 失われた寄生虫
-900000 ノコナタ_スロットタイプ1
-900001 ノコナタ_スロットタイプ2
-900002 ノコナタ_スロットタイプ3
+1 Must not be erased
+2000 Nokonata
+2001 Axe pole
+2002 Cane Whip
+2010 Workshop pistol
+2011 Workshop Long Gun
+100000 Blood transfusion
+100001 Mercury bullets
+100002 Molotov cocktail
+100003 Stone
+100004 Yharnam Hunting Hat (Junior Hunter _ head)
+100005 Yharnam Hunting Gear (Junior Hunter _ Torso)
+100006 Yharnam Hunting Gloves (Junior Hunter _ arm)
+100007 Yharnam Hunting Pants (Junior Hunter _ leg)
+100008 Ritual Blood 1 】
+100009 Ritual Blood 2 】
+100010 Ritual Blood 3 】
+100011 Ritual Blood 4 】
+100012 Ritual Blood 5 】
+100013 Grave Mold [ 1 】
+100014 Grave Mold [ 2 】
+100015 Grave Mold [ 3 】
+100016 Grave Mold [ 4 】
+100017 Grave Mold [ 5 】
+100100 Saw blade
+100101 Alien Saw Hatchet
+100102 Lost Saw Blade
+100103 Beast hunting axe (axe pole)
+100104,Alien Beast Hunting Axe
+100105 Lost Beast Hunting Axe
+100106 Cane (whip)
+100107 Heterogenous Wand
+100108 Lost Cane
+100109 Saw spear (Nokoyari)
+100110 Alien Saw Spear
+100111 Lost Saw Spear
+100112 Beast hunting pistol (workshop pistol)
+100113 Beast hunting shotgun (workshop long gun)
+100114 Throwing Knife
+100115 Smelling Blood Wine
+100200 Pile hammer (sword pile)
+100201 Heterogenous Pile Hammer
+100202 Lost Pile Hammer
+100203 Gunlance (Gunlance)
+100204 Alien Gunlance
+100205 Lost Gunlance
+100206 Oil bottle
+100207 Molotov cocktail with rope
+100300 Funeral Blade (Scythe)
+100301 Alien Funeral Blade
+100302 Lost Funeral Blade
+100303 Gehrman's Hunting Hat (Base Elderly _ head)
+100304 Gehrman's Hunting Attire (Base Elder _ Torso)
+100305 Gehrman's Hunting Pants (Base Elderly _ leg)
+100400 Blade of Mercy (Dual Swords)
+100401 Alien Mercy Blade
+100402 Lost Blade of Mercy
+100403,Beak Mask (Jack the Ripper _ head)
+100404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
+100405 Crow Feather Armband (Jack the Ripper _ arm)
+100406 Raven Feather Trousers (Jack the Ripper) _ leg)
+100500 Tonitrus (Bomb Hammer)
+100501 Alien Tonitrus
+100502 The Lost Tonitrus
+100503 Lightning File
+100600 Church Stone Hammer (Sword Hammer)
+100601 Heterogenous Church Stone Hammer
+100602 Lost Church Stone Hammer
+100603 Church pistol (church pistol)
+100604 White pill
+100605 Sure Sign of a Hunter
+100606 Portable lantern
+100607 Hunter's Mark
+100700 Ludwig's Holy Sword (Great Sword)
+100701 Heterogenous Holy Sword
+100702 Lost Holy Sword
+100703 Ludwig's rifle (Church rifle)
+100704 Flamethrower (Flamethrower)
+100705 Ignition File
+100706 Marrow Ash
+100707 Shiny coins
+100708 Bloodstone Shard
+100709 Grave Robber Hood (Church Hunter _ head)
+100710 Grave Raider's Outfit (Church Hunter _Torso)
+100711 Grave Robber's Gloves (Church Hunter _ arm)
+100712 Grave Robber's Pants (Church Hunter _ leg)
+100800 Logarius' Wheel (Wheel)
+100801 Alien Wheels
+100802 The Lost Wheel
+100803 Golden Aldeo (Bloodline Hunter _ head)
+100900 Reiterpallasch (bayonet)
+100901 Different Reiterpallasch
+100902 Lost Reiterpallasch
+100903 Chikage (sword)
+100904 Alien Blood Sword
+100905 Lost Blood Sword
+100906 Evelyn (Vampire pistol)
+100907 Cain's Helmet (Vampire Knight _ head)
+100908 Cain's Armor (Vampire Knight _ Torso)
+100909 Cain's Gauntlets (Vampire Knight _ arm)
+100910 Cain's Leggings (Vampire Knight _ leg)
+101000 Rosmarinus (atomizer)
+101001 Poison Scalpel
+101002 Sedatives
+101003 Two Bloodstone Fragments
+101020 Piercing gun (piercing gun)
+101021 Timed Explosion Bottle
+101022 Timed explosion bottle with rope
+101100,Beast Claws (Fist Beast)
+101101 Alien Beast Claws
+101102 Lost Claws
+101103 Cannon (cannon)
+101104 Beast Hunting Torch (Hunter's Torch)
+101110 Beast hunting curved sword (saw curved sword)
+101111 Alien Beast Hunting Knife
+101112 Lost Beast Hunting Knife
+101113 Cutting off animal meat (saw whip)
+101114 Abstinence from foreign meat
+101115 Lost Flesh Abstinence
+101116 Church Stake (Warpick)
+101117 Heterogenous Church Stakes
+101118 Lost Church Stake
+101119 Simon's Bow Sword (Transformed Bow)
+101120 Alien Bow Sword
+101121 Lost Bow Sword
+101122 Moonlight Holy Sword (Moonlight Sword)
+101123 Heterogeneous Moonlight Holy Sword
+101124 Lost Moonlight Sword
+101125 Fallen leaves (double-edged)
+101126 Alien leaf litter
+101127 Lost leaves
+101128 Circular saw (chain saw)
+101129 Heterogeneous Circular Saw
+101130 Lost Circular Saw
+101131 Explosive hammer (Gunhammer)
+101132 Alien Explosive Hammer
+101133 Lost Explosive Hammer
+101134 Bloodletting Hammer (Cross Mace)
+101135 Alien Bloodletting Hammer
+101136 Lost Bloodletting Hammer
+101137,Arm of Lesser Amun (multi-jointed)
+101138 Heterogeneous Small Amun Arm
+101139 The Lost Lesser Arm of Amun
+101140 Parasites of the Goss (slugs)
+101141 Alien parasites
+101142 The lost parasite
+101143 Gatling gun (Gatling)
+101144 Church Cannon (Grenade)
+101145 Gracia's Fist (Knuckle)
+101146 Lake Shield (Elemental Shield)
+110000 Blood transfusion
+110001 Mercury bullets
+110002 Molotov cocktail
+110003 Stone
+110004 Yharnam Hunting Hat (Junior Hunter _ head)
+110005 Yharnam Hunting Gear (Junior Hunter _ Torso)
+110006 Yharnam Hunting Gloves (Junior Hunter _ arm)
+110007 Yharnam Hunting Pants (Junior Hunter _ leg)
+110008 Ritual Blood 1 】
+110009 Ritual Blood 2 】
+110010 Ritual Blood 3 】
+110011 Ritual Blood 4 】
+110012 Ritual Blood 5 】
+110013 Grave Mold [ 1 】
+110014 Grave Mold [ 2 】
+110015 Grave Mold [ 3 】
+110016 Grave Mold [ 4 】
+110017 Grave Mold [ 5 】
+110100 Saw blade
+110101 Alien Saw Hatchet
+110102 Lost Saw Blade
+110103 Beast hunting axe (axe pole)
+110104,Alien Beast Hunting Axe
+110105 Lost Beast Hunting Axe
+110106 Cane (whip)
+110107 Heterogenous Wand
+110108 Lost Cane
+110109 Saw spear (Nokoyari)
+110110 Alien Saw Spear
+110111 Lost Saw Spear
+110112 Beast hunting pistol (workshop pistol)
+110113 Beast hunting shotgun (workshop long gun)
+110114 Throwing Knife
+110115 Smelling Blood Wine
+110200 Pile hammer (sword pile)
+110201 Heterogenous Pile Hammer
+110202 Lost Pile Hammer
+110203 Gunlance (Gunlance)
+110204 Alien Gunlance
+110205 Lost Gunlance
+110206 Oil bottle
+110207 Molotov cocktail with rope
+110300 Funeral Blade (Scythe)
+110301 Alien Funeral Blade
+110302 Lost Funeral Blade
+110303 Gehrman's Hunting Hat (Base Elderly _ head)
+110304 Gehrman's Hunting Attire (Base Elder _ Torso)
+110305 Gehrman's Hunting Pants (Base Elderly _ leg)
+110400 Blade of Mercy (Dual Swords)
+110401 Alien Mercy Blade
+110402 Lost Blade of Mercy
+110403,Beak Mask (Jack the Ripper _ head)
+110404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
+110405 Crow Feather Armband (Jack the Ripper _ arm)
+110406 Raven Feather Trousers (Jack the Ripper) _ leg)
+110500 Tonitrus (Bomb Hammer)
+110501 Alien Tonitrus
+110502 The Lost Tonitrus
+110503 Lightning File
+110600 Church Stone Hammer (Sword Hammer)
+110601 Heterogenous Church Stone Hammer
+110602 Lost Church Stone Hammer
+110603 Church pistol (church pistol)
+110604 White pill
+110605 Sure Sign of a Hunter
+110606 Portable lantern
+110607 Hunter's Mark
+110700 Ludwig's Holy Sword (Great Sword)
+110701 Heterogenous Holy Sword
+110702 Lost Holy Sword
+110703 Ludwig's rifle (Church rifle)
+110704 Flamethrower (Flamethrower)
+110705 Ignition File
+110706 Marrow Ash
+110707 Shiny coins
+110708 Bloodstone Shard
+110709 Grave Robber Hood (Church Hunter _ head)
+110710 Grave Raider's Outfit (Church Hunter _Torso)
+110711 Grave Robber's Gloves (Church Hunter _ arm)
+110712 Grave Robber's Pants (Church Hunter _ leg)
+110800 Logarius' Wheel (Wheel)
+110801 Alien Wheels
+110802 The Lost Wheel
+110803 Golden Aldeo (Bloodline Hunter _ head)
+110900 Reiterpallasch (bayonet)
+110901 Different Reiterpallasch
+110902 Lost Reiterpallasch
+110903 Chikage (sword)
+110904 Alien Blood Sword
+110905 Lost Blood Sword
+110906 Evelyn (Vampire pistol)
+110907 Cain's Helmet (Vampire Knight _ head)
+110908 Cain's Armor (Vampire Knight _ Torso)
+110909 Cain's Gauntlets (Vampire Knight _ arm)
+110910 Cain's Leggings (Vampire Knight _ leg)
+111000 Rosmarinus (atomizer)
+111001 Poison Scalpel
+111002 Sedatives
+111003 Two Bloodstone Fragments
+111020 Piercing gun (piercing gun)
+111021 Timed Explosion Bottle
+111022 Timed explosion bottle with rope
+111100,Beast Claws (Fist Beast)
+111101 Alien Beast Claws
+111102 Lost Claws
+111103 Cannon (cannon)
+111104 Beast Hunting Torch (Hunter's Torch)
+111110 Beast hunting curved sword (saw curved sword)
+111111 Alien Beast Hunting Knife
+111112 Lost Beast Hunting Knife
+111113 Cutting off animal meat (saw whip)
+111114 Abstinence from foreign meat
+111115 Lost Flesh Abstinence
+111116 Church Stake (Warpick)
+111117 Heterogenous Church Stakes
+111118 Lost Church Stake
+111119 Simon's Bow Sword (Transformed Bow)
+111120 Alien Bow Sword
+111121 Lost Bow Sword
+111122 Moonlight Holy Sword (Moonlight Sword)
+111123 Heterogeneous Moonlight Holy Sword
+111124 Lost Moonlight Sword
+111125 Fallen leaves (double-edged)
+111126 Alien leaf litter
+111127 Lost leaves
+111128 Circular saw (chain saw)
+111129 Heterogeneous Circular Saw
+111130 Lost Circular Saw
+111131 Explosive hammer (Gunhammer)
+111132 Alien Explosive Hammer
+111133 Lost Explosive Hammer
+111134 Bloodletting Hammer (Cross Mace)
+111135 Alien Bloodletting Hammer
+111136 Lost Bloodletting Hammer
+111137,Arm of Lesser Amun (multi-jointed)
+111138 Heterogeneous Small Amun Arm
+111139 The Lost Lesser Arm of Amun
+111140 Parasites of the Goss (slugs)
+111141 Alien parasites
+111142 The lost parasite
+111143 Gatling gun (Gatling)
+111144 Church Cannon (Grenade)
+111145 Gracia's Fist (Knuckle)
+111146 Lake Shield (Elemental Shield)
+120000 Blood transfusion
+120001 Mercury bullets
+120002 Molotov cocktail
+120003 Stone
+120004 Yharnam Hunting Hat (Junior Hunter _ head)
+120005 Yharnam Hunting Gear (Junior Hunter _ Torso)
+120006 Yharnam Hunting Gloves (Junior Hunter _ arm)
+120007 Yharnam Hunting Pants (Junior Hunter _ leg)
+120008 Ritual Blood 1 】
+120009 Ritual Blood 2 】
+120010 Ritual Blood 3 】
+120011 Ritual Blood 4 】
+120012 Ritual Blood 5 】
+120013 Grave Mold [ 1 】
+120014 Grave Mold [ 2 】
+120015 Grave Mold [ 3 】
+120016 Grave Mold [ 4 】
+120017 Grave Mold [ 5 】
+120100 Saw blade
+120101 Alien Saw Hatchet
+120102 Lost Saw Blade
+120103 Beast hunting axe (axe pole)
+120104,Alien Beast Hunting Axe
+120105 Lost Beast Hunting Axe
+120106 Cane (whip)
+120107 Heterogenous Wand
+120108 Lost Cane
+120109 Saw spear (Nokoyari)
+120110 Alien Saw Spear
+120111 Lost Saw Spear
+120112 Beast hunting pistol (workshop pistol)
+120113 Beast hunting shotgun (workshop long gun)
+120114 Throwing Knife
+120115 Smelling Blood Wine
+120200 Pile hammer (sword pile)
+120201 Heterogenous Pile Hammer
+120202 Lost Pile Hammer
+120203 Gunlance (Gunlance)
+120204 Alien Gunlance
+120205 Lost Gunlance
+120206 Oil bottle
+120207 Molotov cocktail with rope
+120300 Funeral Blade (Scythe)
+120301 Alien Funeral Blade
+120302 Lost Funeral Blade
+120303 Gehrman's Hunting Hat (Base Elderly _ head)
+120304 Gehrman's Hunting Attire (Base Elder _ Torso)
+120305 Gehrman's Hunting Pants (Base Elderly _ leg)
+120400 Blade of Mercy (Dual Swords)
+120401 Alien Mercy Blade
+120402 Lost Blade of Mercy
+120403,Beak Mask (Jack the Ripper _ head)
+120404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
+120405 Crow Feather Armband (Jack the Ripper _ arm)
+120406 Raven Feather Trousers (Jack the Ripper) _ leg)
+120500 Tonitrus (Bomb Hammer)
+120501 Alien Tonitrus
+120502 The Lost Tonitrus
+120503 Lightning File
+120600 Church Stone Hammer (Sword Hammer)
+120601 Heterogenous Church Stone Hammer
+120602 Lost Church Stone Hammer
+120603 Church pistol (church pistol)
+120604 White pill
+120605 Sure Sign of a Hunter
+120606 Portable lantern
+120607 Hunter's Mark
+120700 Ludwig's Holy Sword (Great Sword)
+120701 Heterogenous Holy Sword
+120702 Lost Holy Sword
+120703 Ludwig's rifle (Church rifle)
+120704 Flamethrower (Flamethrower)
+120705 Ignition File
+120706 Marrow Ash
+120707 Shiny coins
+120708 Bloodstone Shard
+120709 Grave Robber Hood (Church Hunter _ head)
+120710 Grave Raider's Outfit (Church Hunter _Torso)
+120711 Grave Robber's Gloves (Church Hunter _ arm)
+120712 Grave Robber's Pants (Church Hunter _ leg)
+120800 Logarius' Wheel (Wheel)
+120801 Alien Wheels
+120802 The Lost Wheel
+120803 Golden Aldeo (Bloodline Hunter _ head)
+120900 Reiterpallasch (bayonet)
+120901 Different Reiterpallasch
+120902 Lost Reiterpallasch
+120903 Chikage (sword)
+120904 Alien Blood Sword
+120905 Lost Blood Sword
+120906 Evelyn (Vampire pistol)
+120907 Cain's Helmet (Vampire Knight _ head)
+120908 Cain's Armor (Vampire Knight _ Torso)
+120909 Cain's Gauntlets (Vampire Knight _ arm)
+120910 Cain's Leggings (Vampire Knight _ leg)
+121000 Rosmarinus (atomizer)
+121001 Poison Scalpel
+121002 Sedatives
+121003 Two Bloodstone Fragments
+121020 Piercing gun (piercing gun)
+121021 Timed Explosion Bottle
+121022 Timed explosion bottle with rope
+121100,Beast Claws (Fist Beast)
+121101 Alien Beast Claws
+121102 Lost Claws
+121103 Cannon (cannon)
+121104 Beast Hunting Torch (Hunter's Torch)
+121110 Beast hunting curved sword (saw curved sword)
+121111 Alien Beast Hunting Knife
+121112 Lost Beast Hunting Knife
+121113 Cutting off animal meat (saw whip)
+121114 Abstinence from foreign meat
+121115 Lost Flesh Abstinence
+121116 Church Stake (Warpick)
+121117 Heterogenous Church Stakes
+121118 Lost Church Stake
+121119 Simon's Bow Sword (Transformed Bow)
+121120 Alien Bow Sword
+121121 Lost Bow Sword
+121122 Moonlight Holy Sword (Moonlight Sword)
+121123 Heterogeneous Moonlight Holy Sword
+121124 Lost Moonlight Sword
+121125 Fallen leaves (double-edged)
+121126 Alien leaf litter
+121127 Lost leaves
+121128 Circular saw (chain saw)
+121129 Heterogeneous Circular Saw
+121130 Lost Circular Saw
+121131 Explosive hammer (Gunhammer)
+121132 Alien Explosive Hammer
+121133 Lost Explosive Hammer
+121134 Bloodletting Hammer (Cross Mace)
+121135 Alien Bloodletting Hammer
+121136 Lost Bloodletting Hammer
+121137,Arm of Lesser Amun (multi-jointed)
+121138 Heterogeneous Small Amun Arm
+121139 The Lost Lesser Arm of Amun
+121140 Parasites of the Goss (slugs)
+121141 Alien parasites
+121142 The lost parasite
+121143 Gatling gun (Gatling)
+121144 Church Cannon (Grenade)
+121145 Gracia's Fist (Knuckle)
+121146 Lake Shield (Elemental Shield)
+130000 Blood transfusion
+130001 Mercury bullets
+130002 Molotov cocktail
+130003 Stone
+130004 Yharnam Hunting Hat (Junior Hunter _ head)
+130005 Yharnam Hunting Gear (Junior Hunter _ Torso)
+130006 Yharnam Hunting Gloves (Junior Hunter _ arm)
+130007 Yharnam Hunting Pants (Junior Hunter _ leg)
+130008 Ritual Blood 1 】
+130009 Ritual Blood 2 】
+130010 Ritual Blood 3 】
+130011 Ritual Blood 4 】
+130012 Ritual Blood 5 】
+130013 Grave Mold [ 1 】
+130014 Grave Mold [ 2 】
+130015 Grave Mold [ 3 】
+130016 Grave Mold [ 4 】
+130017 Grave Mold [ 5 】
+130100 Saw blade
+130101 Alien Saw Hatchet
+130102 Lost Saw Blade
+130103 Beast hunting axe (axe pole)
+130104,Alien Beast Hunting Axe
+130105 Lost Beast Hunting Axe
+130106 Cane (whip)
+130107 Heterogenous Wand
+130108 Lost Cane
+130109 Saw spear (Nokoyari)
+130110 Alien Saw Spear
+130111 Lost Saw Spear
+130112 Beast hunting pistol (workshop pistol)
+130113 Beast hunting shotgun (workshop long gun)
+130114 Throwing Knife
+130115 Smelling Blood Wine
+130200 Pile hammer (sword pile)
+130201 Heterogenous Pile Hammer
+130202 Lost Pile Hammer
+130203 Gunlance (Gunlance)
+130204 Alien Gunlance
+130205 Lost Gunlance
+130206 Oil bottle
+130207 Molotov cocktail with rope
+130300 Funeral Blade (Scythe)
+130301 Alien Funeral Blade
+130302 Lost Funeral Blade
+130303 Gehrman's Hunting Hat (Base Elderly _ head)
+130304 Gehrman's Hunting Attire (Base Elder _ Torso)
+130305 Gehrman's Hunting Pants (Base Elderly _ leg)
+130400 Blade of Mercy (Dual Swords)
+130401 Alien Mercy Blade
+130402 Lost Blade of Mercy
+130403,Beak Mask (Jack the Ripper _ head)
+130404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
+130405 Crow Feather Armband (Jack the Ripper _ arm)
+130406 Raven Feather Trousers (Jack the Ripper) _ leg)
+130500 Tonitrus (Bomb Hammer)
+130501 Alien Tonitrus
+130502 The Lost Tonitrus
+130503 Lightning File
+130600 Church Stone Hammer (Sword Hammer)
+130601 Heterogenous Church Stone Hammer
+130602 Lost Church Stone Hammer
+130603 Church pistol (church pistol)
+130604 White pill
+130605 Sure Sign of a Hunter
+130606 Portable lantern
+130607 Hunter's Mark
+130700 Ludwig's Holy Sword (Great Sword)
+130701 Heterogenous Holy Sword
+130702 Lost Holy Sword
+130703 Ludwig's rifle (Church rifle)
+130704 Flamethrower (Flamethrower)
+130705 Ignition File
+130706 Marrow Ash
+130707 Shiny coins
+130708 Bloodstone Shard
+130709 Grave Robber Hood (Church Hunter _ head)
+130710 Grave Raider's Outfit (Church Hunter _Torso)
+130711 Grave Robber's Gloves (Church Hunter _ arm)
+130712 Grave Robber's Pants (Church Hunter _ leg)
+130800 Logarius' Wheel (Wheel)
+130801 Alien Wheels
+130802 The Lost Wheel
+130803 Golden Aldeo (Bloodline Hunter _ head)
+130900 Reiterpallasch (bayonet)
+130901 Different Reiterpallasch
+130902 Lost Reiterpallasch
+130903 Chikage (sword)
+130904 Alien Blood Sword
+130905 Lost Blood Sword
+130906 Evelyn (Vampire pistol)
+130907 Cain's Helmet (Vampire Knight _ head)
+130908 Cain's Armor (Vampire Knight _ Torso)
+130909 Cain's Gauntlets (Vampire Knight _ arm)
+130910 Cain's Leggings (Vampire Knight _ leg)
+131000 Rosmarinus (atomizer)
+131001 Poison Scalpel
+131002 Sedatives
+131003 Two Bloodstone Fragments
+131020 Piercing gun (piercing gun)
+131021 Timed Explosion Bottle
+131022 Timed explosion bottle with rope
+131100,Beast Claws (Fist Beast)
+131101 Alien Beast Claws
+131102 Lost Claws
+131103 Cannon (cannon)
+131104 Beast Hunting Torch (Hunter's Torch)
+131110 Beast hunting curved sword (saw curved sword)
+131111 Alien Beast Hunting Knife
+131112 Lost Beast Hunting Knife
+131113 Cutting off animal meat (saw whip)
+131114 Abstinence from foreign meat
+131115 Lost Flesh Abstinence
+131116 Church Stake (Warpick)
+131117 Heterogenous Church Stakes
+131118 Lost Church Stake
+131119 Simon's Bow Sword (Transformed Bow)
+131120 Alien Bow Sword
+131121 Lost Bow Sword
+131122 Moonlight Holy Sword (Moonlight Sword)
+131123 Heterogeneous Moonlight Holy Sword
+131124 Lost Moonlight Sword
+131125 Fallen leaves (double-edged)
+131126 Alien leaf litter
+131127 Lost leaves
+131128 Circular saw (chain saw)
+131129 Heterogeneous Circular Saw
+131130 Lost Circular Saw
+131131 Explosive hammer (Gunhammer)
+131132 Alien Explosive Hammer
+131133 Lost Explosive Hammer
+131134 Bloodletting Hammer (Cross Mace)
+131135 Alien Bloodletting Hammer
+131136 Lost Bloodletting Hammer
+131137,Arm of Lesser Amun (multi-jointed)
+131138 Heterogeneous Small Amun Arm
+131139 The Lost Lesser Arm of Amun
+131140 Parasites of the Goss (slugs)
+131141 Alien parasites
+131142 The lost parasite
+131143 Gatling gun (Gatling)
+131144 Church Cannon (Grenade)
+131145 Gracia's Fist (Knuckle)
+131146 Lake Shield (Elemental Shield)
+140000 Blood transfusion
+140001 Mercury bullets
+140002 Molotov cocktail
+140003 Stone
+140004 Yharnam Hunting Hat (Junior Hunter _ head)
+140005 Yharnam Hunting Gear (Junior Hunter _ Torso)
+140006 Yharnam Hunting Gloves (Junior Hunter _ arm)
+140007 Yharnam Hunting Pants (Junior Hunter _ leg)
+140008 Ritual Blood 1 】
+140009 Ritual Blood 2 】
+140010 Ritual Blood 3 】
+140011 Ritual Blood 4 】
+140012 Ritual Blood 5 】
+140013 Grave Mold [ 1 】
+140014 Grave Mold [ 2 】
+140015 Grave Mold [ 3 】
+140016 Grave Mold [ 4 】
+140017 Grave Mold [ 5 】
+140100 Saw blade
+140101 Alien Saw Hatchet
+140102 Lost Saw Blade
+140103 Beast hunting axe (axe pole)
+140104,Alien Beast Hunting Axe
+140105 Lost Beast Hunting Axe
+140106 Cane (whip)
+140107 Heterogenous Wand
+140108 Lost Cane
+140109 Saw spear (Nokoyari)
+140110 Alien Saw Spear
+140111 Lost Saw Spear
+140112 Beast hunting pistol (workshop pistol)
+140113 Beast hunting shotgun (workshop long gun)
+140114 Throwing Knife
+140115 Smelling Blood Wine
+140200 Pile hammer (sword pile)
+140201 Heterogenous Pile Hammer
+140202 Lost Pile Hammer
+140203 Gunlance (Gunlance)
+140204 Alien Gunlance
+140205 Lost Gunlance
+140206 Oil bottle
+140207 Molotov cocktail with rope
+140300 Funeral Blade (Scythe)
+140301 Alien Funeral Blade
+140302 Lost Funeral Blade
+140303 Gehrman's Hunting Hat (Base Elderly _ head)
+140304 Gehrman's Hunting Attire (Base Elder _ Torso)
+140305 Gehrman's Hunting Pants (Base Elderly _ leg)
+140400 Blade of Mercy (Dual Swords)
+140401 Alien Mercy Blade
+140402 Lost Blade of Mercy
+140403,Beak Mask (Jack the Ripper _ head)
+140404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
+140405 Crow Feather Armband (Jack the Ripper _ arm)
+140406 Raven Feather Trousers (Jack the Ripper) _ leg)
+140500 Tonitrus (Bomb Hammer)
+140501 Alien Tonitrus
+140502 The Lost Tonitrus
+140503 Lightning File
+140600 Church Stone Hammer (Sword Hammer)
+140601 Heterogenous Church Stone Hammer
+140602 Lost Church Stone Hammer
+140603 Church pistol (church pistol)
+140604 White pill
+140605 Sure Sign of a Hunter
+140606 Portable lantern
+140607 Hunter's Mark
+140700 Ludwig's Holy Sword (Great Sword)
+140701 Heterogenous Holy Sword
+140702 Lost Holy Sword
+140703 Ludwig's rifle (Church rifle)
+140704 Flamethrower (Flamethrower)
+140705 Ignition File
+140706 Marrow Ash
+140707 Shiny coins
+140708 Bloodstone Shard
+140709 Grave Robber Hood (Church Hunter _ head)
+140710 Grave Raider's Outfit (Church Hunter _Torso)
+140711 Grave Robber's Gloves (Church Hunter _ arm)
+140712 Grave Robber's Pants (Church Hunter _ leg)
+140800 Logarius' Wheel (Wheel)
+140801 Alien Wheels
+140802 The Lost Wheel
+140803 Golden Aldeo (Bloodline Hunter _ head)
+140900 Reiterpallasch (bayonet)
+140901 Different Reiterpallasch
+140902 Lost Reiterpallasch
+140903 Chikage (sword)
+140904 Alien Blood Sword
+140905 Lost Blood Sword
+140906 Evelyn (Vampire pistol)
+140907 Cain's Helmet (Vampire Knight _ head)
+140908 Cain's Armor (Vampire Knight _ Torso)
+140909 Cain's Gauntlets (Vampire Knight _ arm)
+140910 Cain's Leggings (Vampire Knight _ leg)
+141000 Rosmarinus (atomizer)
+141001 Poison Scalpel
+141002 Sedatives
+141003 Two Bloodstone Fragments
+141020 Piercing gun (piercing gun)
+141021 Timed Explosion Bottle
+141022 Timed explosion bottle with rope
+141100,Beast Claws (Fist Beast)
+141101 Alien Beast Claws
+141102 Lost Claws
+141103 Cannon (cannon)
+141104 Beast Hunting Torch (Hunter's Torch)
+141110 Beast hunting curved sword (saw curved sword)
+141111 Alien Beast Hunting Knife
+141112 Lost Beast Hunting Knife
+141113 Cutting off animal meat (saw whip)
+141114 Abstinence from foreign meat
+141115 Lost Flesh Abstinence
+141116 Church Stake (Warpick)
+141117 Heterogenous Church Stakes
+141118 Lost Church Stake
+141119 Simon's Bow Sword (Transformed Bow)
+141120 Alien Bow Sword
+141121 Lost Bow Sword
+141122 Moonlight Holy Sword (Moonlight Sword)
+141123 Heterogeneous Moonlight Holy Sword
+141124 Lost Moonlight Sword
+141125 Fallen leaves (double-edged)
+141126 Alien leaf litter
+141127 Lost leaves
+141128 Circular saw (chain saw)
+141129 Heterogeneous Circular Saw
+141130 Lost Circular Saw
+141131 Explosive hammer (Gunhammer)
+141132 Alien Explosive Hammer
+141133 Lost Explosive Hammer
+141134 Bloodletting Hammer (Cross Mace)
+141135 Alien Bloodletting Hammer
+141136 Lost Bloodletting Hammer
+141137,Arm of Lesser Amun (multi-jointed)
+141138 Heterogeneous Small Amun Arm
+141139 The Lost Lesser Arm of Amun
+141140 Parasites of the Goss (slugs)
+141141 Alien parasites
+141142 The lost parasite
+141143 Gatling gun (Gatling)
+141144 Church Cannon (Grenade)
+141145 Gracia's Fist (Knuckle)
+141146 Lake Shield (Elemental Shield)
+200000 Resonating Small Bell
+200001 Resonating Ominous Bell
+200002 Smelling Blood Wine
+200003 Ignition File
+200004 Beast Blood Pill
+200005 Blue Elixir
+200006 Lightning File
+200007 Numbing Fog
+200008 Bloodstone Shard
+200009 Lead Elixir
+200010 Two Bloodstone Fragments
+200011 Ritualist Bone Blade
+200012 Sprouting of the Blood Flower
+200013 Bloody Flower Bud
+200014 Large Blood-Flower
+200015 Pearl Slug
+200016 Red Jelly
+200017 Saint's Wrist
+200018 Saint's Skull
+200019 Organ of involvement
+200020 Yellow spine
+200021 Laurent's Baby
+200022 Bloodshot eyes
+200023 Living String
+200024 Bloodstone Chunk
+200030 Henrik's Hunting Hat (Advanced Hunter _ head)
+200031 Henrik's Hunting Attire (Advanced Hunter _ Torso)
+200032,Henrik's Hunting Gloves (Advanced Hunter _ arm)
+200033 Henrik's Hunting Pants (Advanced Hunter _ leg)
+200040 Priest's Hunting Hat (Father Gascoigne _ head)
+200041 Priest's Hunting Attire (Father Gascoigne _ Torso)
+200042 Father Gascoigne's Hunting Gloves _ arm)
+200043 Priest's Hunting Trousers (Father Gascoigne _ leg)
+200050 Grey Wolf Hat (Wolf Hat)
+200051 Ash Hunting Attire (Stealth _ Torso)
+200052 Ash Hunting Gloves (Stealth _ arm)
+200053 Ash Hunting Pants (Stealth _ leg)
+200060 Bone Charcoal Mask (Family of the Ruined Flame _ head)
+200061 Bone Charcoal Armor (Family of the Ruined Flame _ Torso)
+200062 Bone Charcoal Gauntlets (Family of the Ruined Flame _ arm)
+200063 Bone Charcoal Leggings (Family of the Ruined Flame _ leg)
+200064 The Hood of the Madman (Mad Cultist) _ head)
+200065 Abnormal Costume (Mad Cultist _Torso)
+200066 Abnormal Armband (Mad Cultist _ arm)
+200067 The Madman's Leg Belt (Mad Heretic _ leg)
+200070 Informal Ritual Universal Chalice
+200090 Maria's Hunting Hat (Female Hunter _ head)
+200091 Maria's Hunting Attire (Female Hunter _ Torso)
+200092 Maria's Hunting Gloves (Female Hunter _ arm)
+200093 Maria's Hunting Pants (Female Hunter _ leg)
+210000 Resonating Small Bell
+210001 Resonating Ominous Bell
+210002 Smelling Blood Wine
+210003 Ignition File
+210004 Beast Blood Pill
+210005 Blue Elixir
+210006 Lightning File
+210007 Numbing Fog
+210008 Bloodstone Shard
+210009 Lead Elixir
+210010 Two Bloodstone Fragments
+210011 Ritualist Bone Blade
+210012 Sprouting of the Blood Flower
+210013 Bloody Flower Bud
+210014 Large Blood-Flower
+210015 Pearl Slug
+210016 Red Jelly
+210017 Saint's Wrist
+210018 Saint's Skull
+210019 Organ of involvement
+210020 Yellow spine
+210021 Laurent's Baby
+210022 Bloodshot eyes
+210023 Living String
+210024 Bloodstone Chunk
+210030 Henrik's Hunting Hat (Advanced Hunter _ head)
+210031 Henrik's Hunting Attire (Advanced Hunter _ Torso)
+210032,Henrik's Hunting Gloves (Advanced Hunter _ arm)
+210033 Henrik's Hunting Pants (Advanced Hunter _ leg)
+210040 Priest's Hunting Hat (Father Gascoigne _ head)
+210041 Priest's Hunting Attire (Father Gascoigne _ Torso)
+210042 Father Gascoigne's Hunting Gloves _ arm)
+210043 Priest's Hunting Trousers (Father Gascoigne _ leg)
+210050 Grey Wolf Hat (Wolf Hat)
+210051 Ash Hunting Attire (Stealth _ Torso)
+210052 Ash Hunting Gloves (Stealth _ arm)
+210053 Ash Hunting Pants (Stealth _ leg)
+210060 Bone Charcoal Mask (Family of the Ruined Flame _ head)
+210061 Bone Charcoal Armor (Family of the Ruined Flame _ Torso)
+210062 Bone Charcoal Gauntlets (Family of the Ruined Flame _ arm)
+210063 Bone Charcoal Leggings (Family of the Ruined Flame _ leg)
+210064 The Hood of the Madman (Mad Cultist) _ head)
+210065 Abnormal Costume (Mad Cultist _Torso)
+210066 Abnormal Armband (Mad Cultist _ arm)
+210067 The Madman's Leg Belt (Mad Heretic _ leg)
+210070 Informal Ritual Universal Chalice
+210090 Maria's Hunting Hat (Female Hunter _ head)
+210091 Maria's Hunting Attire (Female Hunter _ Torso)
+210092 Maria's Hunting Gloves (Female Hunter _ arm)
+210093 Maria's Hunting Pants (Female Hunter _ leg)
+220000 Resonating Small Bell
+220001 Resonating Ominous Bell
+220002 Smelling Blood Wine
+220003 Ignition File
+220004 Beast Blood Pill
+220005 Blue Elixir
+220006 Lightning File
+220007 Numbing Fog
+220008 Bloodstone Shard
+220009 Lead Elixir
+220010 Two Bloodstone Fragments
+220011 Ritualist Bone Blade
+220012 Sprouting of the Blood Flower
+220013 Bloody Flower Bud
+220014 Large Blood-Flower
+220015 Pearl Slug
+220016 Red Jelly
+220017 Saint's Wrist
+220018 Saint's Skull
+220019 Organ of involvement
+220020 Yellow spine
+220021 Laurent's Baby
+220022 Bloodshot eyes
+220023 Living String
+220024 Bloodstone Chunk
+220030 Advanced Hunter _ head
+220031 Advanced Hunter _ Torso
+220032 Advanced Hunter _ arm
+220033 Advanced Hunter _ leg
+220040 Father Gascoigne _ head
+220041 Father Gascoigne _ Torso
+220042 Father Gascoigne _ arm
+220043 Father Gascoigne _ leg
+220050 Wolf hat
+220051 Covert _ Torso
+220052 Covert _ arm
+220053 Covert _ leg
+220060 Kin of the Flame of Destruction _ head
+220061 Kin of the Flame of Destruction _ Torso
+220062,Kin of the Flame of Destruction _ arm
+220063 Kin of the Flame of Destruction _ leg
+220064 The mad cultist _ head
+220065 The mad cultist _ Torso
+220066 The mad cultist _ arm
+220067 The mad cultist _ leg
+220070 Informal Ritual Universal Chalice
+220090 Female Hunter _ head
+220091 Female Hunter _ Torso
+220092 Female Hunter _ arm
+220093 Female Hunter _ leg
+230000 Resonating Small Bell
+230001 Resonating Ominous Bell
+230002 Smelling Blood Wine
+230003 Ignition File
+230004 Beast Blood Pill
+230005 Blue Elixir
+230006 Lightning File
+230007 Numbing Fog
+230008 Bloodstone Shard
+230009 Lead Elixir
+230010 Two Bloodstone Fragments
+230011 Ritualist Bone Blade
+230012 Sprouting of the Blood Flower
+230013 Bloody Flower Bud
+230014 Large Blood-Flower
+230015 Pearl Slug
+230016 Red Jelly
+230017 Saint's Wrist
+230018 Saint's Skull
+230019 Organ of involvement
+230020 Yellow spine
+230021 Laurent's Baby
+230022 Bloodshot eyes
+230023 Living String
+230024 Bloodstone Chunk
+230030 Advanced Hunter _ head
+230031 Advanced Hunter _ Torso
+230032 Advanced Hunter _ arm
+230033 Advanced Hunter _ leg
+230040 Father Gascoigne _ head
+230041 Father Gascoigne _ Torso
+230042 Father Gascoigne _ arm
+230043 Father Gascoigne _ leg
+230050 Wolf hat
+230051 Covert _ Torso
+230052 Covert _ arm
+230053 Covert _ leg
+230060 Kin of the Flame of Destruction _ head
+230061 Kin of the Flame of Destruction _ Torso
+230062,Kin of the Flame of Destruction _ arm
+230063 Kin of the Flame of Destruction _ leg
+230064 The mad cultist _ head
+230065 The mad cultist _ Torso
+230066 The mad cultist _ arm
+230067 The mad cultist _ leg
+230070 Informal Ritual Universal Chalice
+230090 Female Hunter _ head
+230091 Female Hunter _ Torso
+230092 Female Hunter _ arm
+230093 Female Hunter _ leg
+240000 Resonating Small Bell
+240001 Resonating Ominous Bell
+240002 Smelling Blood Wine
+240003 Ignition File
+240004 Beast Blood Pill
+240005 Blue Elixir
+240006 Lightning File
+240007 Numbing Fog
+240008 Bloodstone Shard
+240009 Lead Elixir
+240010 Two Bloodstone Fragments
+240011 Ritualist Bone Blade
+240012 Sprouting of the Blood Flower
+240013 Bloody Flower Bud
+240014 Large Blood-Flower
+240015 Pearl Slug
+240016 Red Jelly
+240017 Saint's Wrist
+240018 Saint's Skull
+240019 Organ of involvement
+240020 Yellow spine
+240021 Laurent's Baby
+240022 Bloodshot eyes
+240023 Living String
+240024 Bloodstone Chunk
+240030 Advanced Hunter _ head
+240031 Advanced Hunter _ Torso
+240032 Advanced Hunter _ arm
+240033 Advanced Hunter _ leg
+240040 Father Gascoigne _ head
+240041 Father Gascoigne _ Torso
+240042 Father Gascoigne _ arm
+240043 Father Gascoigne _ leg
+240050 Wolf hat
+240051 Covert _ Torso
+240052 Covert _ arm
+240053 Covert _ leg
+240060 Kin of the Flame of Destruction _ head
+240061 Kin of the Flame of Destruction _ Torso
+240062,Kin of the Flame of Destruction _ arm
+240063 Kin of the Flame of Destruction _ leg
+240064 The mad cultist _ head
+240065 The mad cultist _ Torso
+240066 The mad cultist _ arm
+240067 The mad cultist _ leg
+240070 Informal Ritual Universal Chalice
+240090 Female Hunter _ head
+240091 Female Hunter _ Torso
+240092 Female Hunter _ arm
+240093 Female Hunter _ leg
+510000 Blood transfusion
+510001 bullet
+510002 Antidotes
+510003 Molotov cocktail
+510004 Oil bottle
+510005 Molotov cocktail behind
+510006 Throwing Knife
+510007 Poison Knife
+510008 Stone
+510009 Return
+510010 Signpost
+510011 The Ominous Universal Grail of Thumel (3)
+510012 The Holy Grail of the Sinister Tomb (3)
+510013 The Ominous Universal Grail of Tumer-Il (5)
+510014 The Holy Grail of the Ominous Sick Roland (5)
+510015 The Holy Grail of Ominous Izu (5)
+510100 Alien Beast Hunting Knife
+510101 Lost Beast Hunting Knife
+510102 Abstinence from foreign meat
+510103 Lost Flesh Abstinence
+510104 Heterogenous Church Stakes
+510105 Lost Church Stake
+510106 Alien Bow Sword
+510107 Lost Bow Sword
+510108 Heterogeneous Moonlight Holy Sword
+510109 Lost Moonlight Sword
+510110 Alien leaf litter
+510111 Lost leaves
+510112 Heterogeneous Circular Saw
+510113 Lost Circular Saw
+510114 Alien Explosive Hammer
+510115 Lost Explosive Hammer
+510116 Alien Bloodletting Hammer
+510117 Lost Bloodletting Hammer
+510118 Heterogeneous Small Amun Arm
+510119 The Lost Lesser Arm of Amun
+510120 Alien parasites
+510121 The lost parasite
+520000 Blood transfusion
+520001 bullet
+520002 Antidotes
+520003 Molotov cocktail
+520004 Oil bottle
+520005 Molotov cocktail behind
+520006 Throwing Knife
+520007 Poison Knife
+520008 Stone
+520009 Return
+520010 Signpost
+520011 The Ominous Universal Grail of Thumel (3)
+520012 The Holy Grail of the Sinister Tomb (3)
+520013 The Ominous Universal Grail of Tumer-Il (5)
+520014 The Holy Grail of the Ominous Sick Roland (5)
+520015 The Holy Grail of Ominous Izu (5)
+520100 Alien Beast Hunting Knife
+520101 Lost Beast Hunting Knife
+520102 Abstinence from foreign meat
+520103 Lost Flesh Abstinence
+520104 Heterogenous Church Stakes
+520105 Lost Church Stake
+520106 Alien Bow Sword
+520107 Lost Bow Sword
+520108 Heterogeneous Moonlight Holy Sword
+520109 Lost Moonlight Sword
+520110 Alien leaf litter
+520111 Lost leaves
+520112 Heterogeneous Circular Saw
+520113 Lost Circular Saw
+520114 Alien Explosive Hammer
+520115 Lost Explosive Hammer
+520116 Alien Bloodletting Hammer
+520117 Lost Bloodletting Hammer
+520118 Heterogeneous Small Amun Arm
+520119 The Lost Lesser Arm of Amun
+520120 Alien parasites
+520121 The lost parasite
+530000 Blood transfusion
+530001 bullet
+530002 Antidotes
+530003 Molotov cocktail
+530004 Oil bottle
+530005 Molotov cocktail behind
+530006 Throwing Knife
+530007 Poison Knife
+530008 Stone
+530009 Return
+530010 Signpost
+530011 The Ominous Universal Grail of Thumel (3)
+530012 The Holy Grail of the Sinister Tomb (3)
+530013 The Ominous Universal Grail of Tumer-Il (5)
+530014 The Holy Grail of the Ominous Sick Roland (5)
+530015 The Holy Grail of Ominous Izu (5)
+530100 Alien Beast Hunting Knife
+530101 Lost Beast Hunting Knife
+530102 Abstinence from foreign meat
+530103 Lost Flesh Abstinence
+530104 Heterogenous Church Stakes
+530105 Lost Church Stake
+530106 Alien Bow Sword
+530107 Lost Bow Sword
+530108 Heterogeneous Moonlight Holy Sword
+530109 Lost Moonlight Sword
+530110 Alien leaf litter
+530111 Lost leaves
+530112 Heterogeneous Circular Saw
+530113 Lost Circular Saw
+530114 Alien Explosive Hammer
+530115 Lost Explosive Hammer
+530116 Alien Bloodletting Hammer
+530117 Lost Bloodletting Hammer
+530118 Heterogeneous Small Amun Arm
+530119 The Lost Lesser Arm of Amun
+530120 Alien parasites
+530121 The lost parasite
+540000 Blood transfusion
+540001 bullet
+540002 Antidotes
+540003 Molotov cocktail
+540004 Oil bottle
+540005 Molotov cocktail behind
+540006 Throwing Knife
+540007 Poison Knife
+540008 Stone
+540009 Return
+540010 Signpost
+540011 The Ominous Universal Grail of Thumel (3)
+540012 The Holy Grail of the Sinister Tomb (3)
+540013 The Ominous Universal Grail of Tumer-Il (5)
+540014 The Holy Grail of the Ominous Sick Roland (5)
+540015 The Holy Grail of Ominous Izu (5)
+540100 Alien Beast Hunting Knife
+540101 Lost Beast Hunting Knife
+540102 Abstinence from foreign meat
+540103 Lost Flesh Abstinence
+540104 Heterogenous Church Stakes
+540105 Lost Church Stake
+540106 Alien Bow Sword
+540107 Lost Bow Sword
+540108 Heterogeneous Moonlight Holy Sword
+540109 Lost Moonlight Sword
+540110 Alien leaf litter
+540111 Lost leaves
+540112 Heterogeneous Circular Saw
+540113 Lost Circular Saw
+540114 Alien Explosive Hammer
+540115 Lost Explosive Hammer
+540116 Alien Bloodletting Hammer
+540117 Lost Bloodletting Hammer
+540118 Heterogeneous Small Amun Arm
+540119 The Lost Lesser Arm of Amun
+540120 Alien parasites
+540121 The lost parasite
+610000 Blood transfusion
+610001 bullet
+610002 Antidotes
+610003 Molotov cocktail
+610004 Oil bottle
+610005 Molotov cocktail behind
+610006 Throwing Knife
+610007 Poison Knife
+610008 Madness Recovery
+610009 Stone
+610010 Return
+610011 Signpost
+610012 Enchantment [Fire]
+610013 Enchantment [Lightning]
+610014 Gun power up
+610015 Beast Seduction
+610100 Alien Beast Hunting Knife
+610101 Lost Beast Hunting Knife
+610102 Abstinence from foreign meat
+610103 Lost Flesh Abstinence
+610104 Heterogenous Church Stakes
+610105 Lost Church Stake
+610106 Alien Bow Sword
+610107 Lost Bow Sword
+610108 Heterogeneous Moonlight Holy Sword
+610109 Lost Moonlight Sword
+610110 Alien leaf litter
+610111 Lost leaves
+610112 Heterogeneous Circular Saw
+610113 Lost Circular Saw
+610114 Alien Explosive Hammer
+610115 Lost Explosive Hammer
+610116 Alien Bloodletting Hammer
+610117 Lost Bloodletting Hammer
+610118 Heterogeneous Small Amun Arm
+610119 The Lost Lesser Arm of Amun
+610120 Alien parasites
+610121 The lost parasite
+620000 Blood transfusion
+620001 bullet
+620002 Antidotes
+620003 Molotov cocktail
+620004 Oil bottle
+620005 Molotov cocktail behind
+620006 Throwing Knife
+620007 Poison Knife
+620008 Madness Recovery
+620009 Stone
+620010 Return
+620011 Signpost
+620012 Enchantment [Fire]
+620013 Enchantment [Lightning]
+620014 Gun power up
+620015 Beast Seduction
+620100 Alien Beast Hunting Knife
+620101 Lost Beast Hunting Knife
+620102 Abstinence from foreign meat
+620103 Lost Flesh Abstinence
+620104 Heterogenous Church Stakes
+620105 Lost Church Stake
+620106 Alien Bow Sword
+620107 Lost Bow Sword
+620108 Heterogeneous Moonlight Holy Sword
+620109 Lost Moonlight Sword
+620110 Alien leaf litter
+620111 Lost leaves
+620112 Heterogeneous Circular Saw
+620113 Lost Circular Saw
+620114 Alien Explosive Hammer
+620115 Lost Explosive Hammer
+620116 Alien Bloodletting Hammer
+620117 Lost Bloodletting Hammer
+620118 Heterogeneous Small Amun Arm
+620119 The Lost Lesser Arm of Amun
+620120 Alien parasites
+620121 The lost parasite
+630000 Blood transfusion
+630001 bullet
+630002 Antidotes
+630003 Molotov cocktail
+630004 Oil bottle
+630005 Molotov cocktail behind
+630006 Throwing Knife
+630007 Poison Knife
+630008 Madness Recovery
+630009 Stone
+630010 Return
+630011 Signpost
+630012 Enchantment [Fire]
+630013 Enchantment [Lightning]
+630014 Gun power up
+630015 Beast Seduction
+630100 Alien Beast Hunting Knife
+630101 Lost Beast Hunting Knife
+630102 Abstinence from foreign meat
+630103 Lost Flesh Abstinence
+630104 Heterogenous Church Stakes
+630105 Lost Church Stake
+630106 Alien Bow Sword
+630107 Lost Bow Sword
+630108 Heterogeneous Moonlight Holy Sword
+630109 Lost Moonlight Sword
+630110 Alien leaf litter
+630111 Lost leaves
+630112 Heterogeneous Circular Saw
+630113 Lost Circular Saw
+630114 Alien Explosive Hammer
+630115 Lost Explosive Hammer
+630116 Alien Bloodletting Hammer
+630117 Lost Bloodletting Hammer
+630118 Heterogeneous Small Amun Arm
+630119 The Lost Lesser Arm of Amun
+630120 Alien parasites
+630121 The lost parasite
+640000 Blood transfusion
+640001 bullet
+640002 Antidotes
+640003 Molotov cocktail
+640004 Oil bottle
+640005 Molotov cocktail behind
+640006 Throwing Knife
+640007 Poison Knife
+640008 Madness Recovery
+640009 Stone
+640010 Return
+640011 Signpost
+640012 Enchantment [Fire]
+640013 Enchantment [Lightning]
+640014 Gun power up
+640015 Beast Seduction
+640100 Alien Beast Hunting Knife
+640101 Lost Beast Hunting Knife
+640102 Abstinence from foreign meat
+640103 Lost Flesh Abstinence
+640104 Heterogenous Church Stakes
+640105 Lost Church Stake
+640106 Alien Bow Sword
+640107 Lost Bow Sword
+640108 Heterogeneous Moonlight Holy Sword
+640109 Lost Moonlight Sword
+640110 Alien leaf litter
+640111 Lost leaves
+640112 Heterogeneous Circular Saw
+640113 Lost Circular Saw
+640114 Alien Explosive Hammer
+640115 Lost Explosive Hammer
+640116 Alien Bloodletting Hammer
+640117 Lost Bloodletting Hammer
+640118 Heterogeneous Small Amun Arm
+640119 The Lost Lesser Arm of Amun
+640120 Alien parasites
+640121 The lost parasite
+900000 Nokonata _ Slot Type 1
+900001 Nokonata _Slot Type 2
+900002 Nokonata _ Slot Type 3

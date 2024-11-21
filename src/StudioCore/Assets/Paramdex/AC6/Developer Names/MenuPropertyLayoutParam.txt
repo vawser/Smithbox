@@ -1,0 +1,2446 @@
+10 [PC Basics] Owned Souls -- 【PC基本】 所持ソウル
+10 ------------- Termination ------------- -- -------------   終端   -------------
+100 ----
+101 ----
+102 ----
+103 ----
+104 ----
+105 ----
+106 ----
+107 ----
+108 ----
+109 ----
+110 ----
+111 ----
+112 ----
+113 ----
+114 ----
+115 ----
+116 ----
+117 ----
+118 ----
+119 ----
+120 ----
+121 ----
+122 ----
+123 ----
+124 ----
+125 ----
+126 [Common items] Weight -- 【アイテム共通】 重量
+127 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+128 ----
+129 ----
+130 ----
+131 ----
+132 ----
+133 [Common items] Weight -- 【アイテム共通】 重量
+134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+135 ----
+136 ----
+137 ----
+138 ----
+139 ----
+140 ------------- Termination ------------- -- -------------   終端   -------------
+900 [Common items] Initial order (for sorting) -- 【アイテム共通】 初期順(ソート用)
+901 [Common items] Entering procedure (for sorting) -- 【アイテム共通】 入手順(ソート用)
+902 [Common items] Weight -- 【アイテム共通】 重量
+903 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+904 [Armor] AP -- 【防具】AP
+905 [Armor] KE-resistant armor -- 【防具】耐KE装甲
+906 [Armor] Anti-TE armor -- 【防具】耐TE装甲
+907 [Armor] CE-resistant armor -- 【防具】耐CE装甲
+908 [HEAD] KE-resistant armor -- 【HEAD】耐KE装甲
+909 [HEAD] TE-resistant armor -- 【HEAD】耐TE装甲
+910 [HEAD] CE-resistant armor -- 【HEAD】耐CE装甲
+911 [CORE] KE-resistant armor -- 【CORE】耐KE装甲
+912 [CORE] TE-resistant armor -- 【CORE】耐TE装甲
+913 [CORE] CE-resistant armor -- 【CORE】耐CE装甲
+914 [ARM] KE-resistant armor -- 【ARM】耐KE装甲
+915 [ARM] Anti-TE armor -- 【ARM】耐TE装甲
+916 [ARM] CE-resistant armor -- 【ARM】耐CE装甲
+917 [Legs] KE-resistant armor -- 【脚部】耐KE装甲
+918 [Legs] Anti-TE armor -- 【脚部】耐TE装甲
+919 [Legs] CE-resistant armor -- 【脚部】耐CE装甲
+920 [HEAD] Stable calculation performance -- 【HEAD】安定演算性能
+921 [HEAD] System restoration performance -- 【HEAD】システム復元性能
+922 [HEAD] Scan distance -- 【HEAD】スキャン距離
+923 [HEAD] Scan stiffness time -- 【HEAD】スキャン硬直時間
+924 [CORE] Stable performance -- 【CORE】安定性能
+925 [CORE] Booster EN transmission efficiency -- 【CORE】ブースターEN伝達効率
+926 [CORE] Generating output transmission performance -- 【CORE】ジェネ出力伝達性能
+927 [CORE] Radiator performance -- 【CORE】ラジエーター性能
+928 [ARM] Arm loading capacity -- 【ARM】腕部積載許容量
+929 [ARM] Recoil control -- 【ARM】反動制御
+930 [ARM] Shooting movement performance -- 【ARM】射撃運動性能
+931 [ARM] Suitable for fighting -- 【ARM】格闘適正
+932 [Legs] Stability performance -- 【脚部】安定性能
+933 [Legs] Leg loading capacity -- 【脚部】脚部積載許容量
+934 [Booster] Cruise thrust (separate text for tanks) -- 【ブースター】巡航推力（タンクは別テキスト）
+935 [Booster] Ascent thrust -- 【ブースター】上昇推力
+936 [Booster] Increased consumption EN -- 【ブースター】上昇消費EN
+937 [Booster] QB acceleration performance -- 【ブースター】QB加速性能
+938 [Booster] QB injection time -- 【ブースター】QB噴射時間
+939 [Booster] QB consumption EN -- 【ブースター】QB消費EN
+940 [Booster] QB reload time -- 【ブースター】QBリロードタイム
+941 [Booster] QB load capacity -- 【ブースター】QB耐荷重性能
+942 [Booster] Assault boost performance -- 【ブースター】アサルトブースト性能
+943 [Booster] Assault boost consumption EN -- 【ブースター】アサルトブースト消費EN
+944 [Booster] Melee attack acceleration performance -- 【ブースター】格闘攻撃加速性能
+945 [Booster] Melee attack acceleration consumption EN -- 【ブースター】格闘攻撃加速消費EN
+946 [FCS] Secondary lock distance -- 【FCS】二次ロック距離
+947 [FCS] Secondary lock performance -- 【FCS】二次ロック性能
+948 [FCS] Missile lock performance -- 【FCS】ミサイルロック性能
+949 [FCS] Multi-lock suitable -- 【FCS】マルチロック適正
+950 [FCS] Assist suitable short distance -- 【FCS】アシスト適正近距離
+951 [FCS] Suitable assist medium distance -- 【FCS】アシスト適正中距離
+952 [FCS] Assist suitable long distance -- 【FCS】アシスト適正遠距離
+953 [Common items] EN output -- 【アイテム共通】 EN出力
+954 [GENE] Capacitor capacity -- 【GENE】コンデンサ容量
+955 [GENE] Cooling performance -- 【GENE】冷却性能
+956 [GENE] Emergency cooling performance -- 【GENE】緊急冷却性能
+957 [GENE] Emergency EN recovery rate -- 【GENE】緊急時EN回復割合
+958 [GENE] EN weapon suitability -- 【GENE】EN武器適正
+959 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+960 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+961 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+962 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+963 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+964 [Weapon] Impact value -- 【武器】衝撃値
+965 [Weapon] Residual impact -- 【武器】残留衝撃
+966 [Weapon] Critical suitability -- 【武器】クリティカル適正
+967 [Weapon] Number of bullets -- 【武器】装弾数
+968 [Weapon] Bullet unit price -- 【武器】弾単価
+969 ------------- Termination ------------- -- -------------   終端   -------------
+1000 [Common items] Name -- 【アイテム共通】 名前
+1001 [Tools] Consumption type during use -- 【道具】 使用時消費タイプ
+1002 [Common items] Number of possessions -- 【アイテム共通】 所持数
+1003 [Common items] Number of possessions_maximum value -- 【アイテム共通】 所持数_最大値
+1004 [Common items] Number of warehouse possessions -- 【アイテム共通】 倉庫所持数
+1005 [Common items] Number of warehouse possession_maximum value -- 【アイテム共通】 倉庫所持数_最大値
+1006 ----
+1007 [Common items] Description -- 【アイテム共通】 説明
+1008 ----
+1009 ----
+1010 ----
+1011 ----
+1012 Data is not usable -- 使用できないデータです
+1013 Data is not usable -- 使用できないデータです
+1014 ------------- Termination ------------- -- -------------   終端   -------------
+2000 [Common items] Name -- 【アイテム共通】 名前
+2001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+2002 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2003 [Weapon] Impact value -- 【武器】衝撃値
+2004 [Weapon] Residual impact -- 【武器】残留衝撃
+2005 ----
+2006 ----
+2007 ----
+2008 ----
+2009 ----
+2010 ----
+2011 ----
+2012 ----
+2013 ----
+2014 [Weapon] Critical suitability -- 【武器】クリティカル適正
+2015 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+2016 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+2017 [Bullet] Effective range -- 【弾丸】有効射程
+2018 [Weapon] Rapid fire performance -- 【武器】連射性能
+2019 [Weapon] Number of magazine bullets -- 【武器】マガジン弾数
+2020 [Weapon] Number of bullets -- 【武器】装弾数
+2021 [Weapon] Magazine reload -- 【武器】マガジンリロード
+2022 [Weapon] Bullet unit price -- 【武器】弾単価
+2023 ----
+2024 ----
+2025 ----
+2026 [Common items] Weight -- 【アイテム共通】 重量
+2027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2028 [Common items] Description -- 【アイテム共通】 説明
+2029 [Common items] Description -- 【アイテム共通】 説明
+2030 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2031 [Weapon] Impact value -- 【武器】衝撃値
+2032 [Weapon] Number of bullets -- 【武器】装弾数
+2033 [Common items] Weight -- 【アイテム共通】 重量
+2034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2035 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+2036 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+2037 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+2038 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+2039 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+2040 ------------- Termination ------------- -- -------------   終端   -------------
+2100 [Common items] Name -- 【アイテム共通】 名前
+2101 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+2102 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2103 [Weapon] Impact value -- 【武器】衝撃値
+2104 [Weapon] Residual impact -- 【武器】残留衝撃
+2105 ----
+2106 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+2107 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+2108 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+2109 ----
+2110 ----
+2111 ----
+2112 ----
+2113 ----
+2114 [Weapon] Critical suitability -- 【武器】クリティカル適正
+2115 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+2116 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+2117 [Bullet] Effective range -- 【弾丸】有効射程
+2118 [Weapon] Rapid fire performance -- 【武器】連射性能
+2119 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+2120 [Weapon] Number of magazine bullets -- 【武器】マガジン弾数
+2121 [Weapon] Number of bullets -- 【武器】装弾数
+2122 [Weapon] Magazine reload -- 【武器】マガジンリロード
+2123 [Weapon] Bullet unit price -- 【武器】弾単価
+2124 ----
+2125 ----
+2126 [Common items] Weight -- 【アイテム共通】 重量
+2127 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2128 [Common items] Description -- 【アイテム共通】 説明
+2129 [Common items] Description -- 【アイテム共通】 説明
+2130 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2131 [Weapon] Impact value -- 【武器】衝撃値
+2132 [Weapon] Number of bullets -- 【武器】装弾数
+2133 [Common items] Weight -- 【アイテム共通】 重量
+2134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2135 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+2136 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+2137 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+2138 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+2139 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+2140 ------------- Termination ------------- -- -------------   終端   -------------
+2200 [Common items] Name -- 【アイテム共通】 名前
+2201 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+2202 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2203 [Weapon] Impact value -- 【武器】衝撃値
+2204 [Weapon] Residual impact -- 【武器】残留衝撃
+2205 ----
+2206 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+2207 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+2208 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+2209 [Weapon] Charge attack heat value increase amount -- 【武器】チャージ攻撃ヒート値上昇量
+2210 ----
+2211 ----
+2212 ----
+2213 ----
+2214 [Weapon] Critical suitability -- 【武器】クリティカル適正
+2215 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+2216 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+2217 [Bullet] Effective range -- 【弾丸】有効射程
+2218 [Weapon] Rapid fire performance -- 【武器】連射性能
+2219 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+2220 [Weapon] Number of magazine bullets -- 【武器】マガジン弾数
+2221 [Weapon] Number of bullets -- 【武器】装弾数
+2222 [Weapon] Magazine reload -- 【武器】マガジンリロード
+2223 [Weapon] Cooling performance -- 【武器】冷却性能
+2224 [Weapon] Bullet unit price -- 【武器】弾単価
+2225 ----
+2226 [Common items] Weight -- 【アイテム共通】 重量
+2227 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2228 [Common items] Description -- 【アイテム共通】 説明
+2229 [Common items] Description -- 【アイテム共通】 説明
+2230 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2231 [Weapon] Impact value -- 【武器】衝撃値
+2232 [Weapon] Number of bullets -- 【武器】装弾数
+2233 [Common items] Weight -- 【アイテム共通】 重量
+2234 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2235 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+2236 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+2237 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+2238 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+2239 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+2240 ------------- Termination ------------- -- -------------   終端   -------------
+2300 [Common items] Name -- 【アイテム共通】 名前
+2301 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+2302 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2303 [Weapon] Impact value -- 【武器】衝撃値
+2304 [Weapon] Residual impact -- 【武器】残留衝撃
+2305 [Weapon] Explosion range -- 【武器】爆発範囲
+2306 ----
+2307 ----
+2308 ----
+2309 ----
+2310 ----
+2311 ----
+2312 ----
+2313 ----
+2314 [Weapon] Critical suitability -- 【武器】クリティカル適正
+2315 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+2316 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+2317 [Weapon] Rapid fire performance -- 【武器】連射性能
+2318 [Weapon] Number of magazine bullets -- 【武器】マガジン弾数
+2319 [Weapon] Number of bullets -- 【武器】装弾数
+2320 [Weapon] Number of bullets -- 【武器】装弾数
+2321 [Weapon] Magazine reload -- 【武器】マガジンリロード
+2322 [Weapon] Bullet unit price -- 【武器】弾単価
+2323 ----
+2324 ----
+2325 ----
+2326 [Common items] Weight -- 【アイテム共通】 重量
+2327 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2328 [Common items] Description -- 【アイテム共通】 説明
+2329 [Common items] Description -- 【アイテム共通】 説明
+2330 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2331 [Weapon] Impact value -- 【武器】衝撃値
+2332 [Weapon] Number of bullets -- 【武器】装弾数
+2333 [Common items] Weight -- 【アイテム共通】 重量
+2334 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2335 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+2336 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+2337 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+2338 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+2339 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+2340 ------------- Termination ------------- -- -------------   終端   -------------
+2400 [Common items] Name -- 【アイテム共通】 名前
+2401 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+2402 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2403 [Weapon] Impact value -- 【武器】衝撃値
+2404 [Weapon] Residual impact -- 【武器】残留衝撃
+2405 [Weapon] Explosion range -- 【武器】爆発範囲
+2406 ----
+2407 ----
+2408 ----
+2409 ----
+2410 ----
+2411 ----
+2412 ----
+2413 ----
+2414 [Weapon] Critical suitability -- 【武器】クリティカル適正
+2415 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+2416 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+2417 [Weapon] Number of bullets -- 【武器】装弾数
+2418 [Weapon] Magazine reload -- 【武器】マガジンリロード
+2419 [Weapon] Bullet unit price -- 【武器】弾単価
+2420 ----
+2421 ----
+2422 ----
+2423 ----
+2424 ----
+2425 ----
+2426 [Common items] Weight -- 【アイテム共通】 重量
+2427 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2428 [Common items] Description -- 【アイテム共通】 説明
+2429 [Common items] Description -- 【アイテム共通】 説明
+2430 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+2431 [Weapon] Impact value -- 【武器】衝撃値
+2432 [Weapon] Number of bullets -- 【武器】装弾数
+2433 [Common items] Weight -- 【アイテム共通】 重量
+2434 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+2435 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+2436 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+2437 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+2438 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+2439 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+2440 ------------- Termination ------------- -- -------------   終端   -------------
+3000 [Common items] Name -- 【アイテム共通】 名前
+3001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+3002 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3003 [Weapon] Impact value -- 【武器】衝撃値
+3004 [Weapon] Residual impact -- 【武器】残留衝撃
+3005 ----
+3006 ----
+3007 ----
+3008 ----
+3009 ----
+3010 ----
+3011 ----
+3012 ----
+3013 ----
+3014 [Weapon] Critical suitability -- 【武器】クリティカル適正
+3015 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+3016 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+3017 [Bullet] Effective range -- 【弾丸】有効射程
+3018 [Weapon] Number of bullets -- 【武器】装弾数
+3019 [Weapon] Magazine reload -- 【武器】マガジンリロード
+3020 [Weapon] Bullet unit price -- 【武器】弾単価
+3021 ----
+3022 ----
+3023 ----
+3024 ----
+3025 ----
+3026 [Common items] Weight -- 【アイテム共通】 重量
+3027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3028 [Common items] Description -- 【アイテム共通】 説明
+3029 [Common items] Description -- 【アイテム共通】 説明
+3030 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3031 [Weapon] Impact value -- 【武器】衝撃値
+3032 [Weapon] Number of bullets -- 【武器】装弾数
+3033 [Common items] Weight -- 【アイテム共通】 重量
+3034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3035 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+3036 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+3037 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+3038 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+3039 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+3040 ------------- Termination ------------- -- -------------   終端   -------------
+3100 [Common items] Name -- 【アイテム共通】 名前
+3101 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+3102 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3103 [Weapon] Impact value -- 【武器】衝撃値
+3104 [Weapon] Residual impact -- 【武器】残留衝撃
+3105 [Weapon] Explosion range -- 【武器】爆発範囲
+3106 ----
+3107 ----
+3108 ----
+3109 ----
+3110 ----
+3111 ----
+3112 ----
+3113 ----
+3114 [Weapon] Critical suitability -- 【武器】クリティカル適正
+3115 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+3116 [Bullet] Effective range -- 【弾丸】有効射程
+3117 [Weapon] Number of bullets -- 【武器】装弾数
+3118 [Weapon] Magazine reload -- 【武器】マガジンリロード
+3119 [Weapon] Bullet unit price -- 【武器】弾単価
+3120 ----
+3121 ----
+3122 ----
+3123 ----
+3124 ----
+3125 ----
+3126 [Common items] Weight -- 【アイテム共通】 重量
+3127 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3128 [Common items] Description -- 【アイテム共通】 説明
+3129 [Common items] Description -- 【アイテム共通】 説明
+3130 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3131 [Weapon] Impact value -- 【武器】衝撃値
+3132 [Weapon] Number of bullets -- 【武器】装弾数
+3133 [Common items] Weight -- 【アイテム共通】 重量
+3134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3135 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+3136 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+3137 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+3138 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+3139 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+3140 ------------- Termination ------------- -- -------------   終端   -------------
+3200 [Common items] Name -- 【アイテム共通】 名前
+3201 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+3202 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3203 [Weapon] Impact value -- 【武器】衝撃値
+3204 [Weapon] Residual impact -- 【武器】残留衝撃
+3205 [Weapon] Explosion range -- 【武器】爆発範囲
+3206 ----
+3207 ----
+3208 ----
+3209 ----
+3210 ----
+3211 ----
+3212 ----
+3213 ----
+3214 [Weapon] Critical suitability -- 【武器】クリティカル適正
+3215 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+3216 [Bullet] Effective range -- 【弾丸】有効射程
+3217 [Weapon] Rapid fire performance -- 【武器】連射性能
+3218 [Weapon] Number of bullets -- 【武器】装弾数
+3219 [Weapon] Magazine reload -- 【武器】マガジンリロード
+3220 [Weapon] Bullet unit price -- 【武器】弾単価
+3221 ----
+3222 ----
+3223 ----
+3224 ----
+3225 ----
+3226 [Common items] Weight -- 【アイテム共通】 重量
+3227 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3228 [Common items] Description -- 【アイテム共通】 説明
+3229 [Common items] Description -- 【アイテム共通】 説明
+3230 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3231 [Weapon] Impact value -- 【武器】衝撃値
+3232 [Weapon] Number of bullets -- 【武器】装弾数
+3233 [Common items] Weight -- 【アイテム共通】 重量
+3234 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3235 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+3236 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+3237 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+3238 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+3239 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+3240 ------------- Termination ------------- -- -------------   終端   -------------
+3300 [Common items] Name -- 【アイテム共通】 名前
+3301 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+3302 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3303 [Weapon] Impact value -- 【武器】衝撃値
+3304 [Weapon] Residual impact -- 【武器】残留衝撃
+3305 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+3306 ----
+3307 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+3308 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+3309 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+3310 [Weapon] Explosion range after charging -- 【武器】チャージ後爆発範囲
+3311 [Weapon] Charge attack heat value increase amount -- 【武器】チャージ攻撃ヒート値上昇量
+3312 ----
+3313 ----
+3314 [Weapon] Critical suitability -- 【武器】クリティカル適正
+3315 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+3316 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+3317 [Bullet] Effective range -- 【弾丸】有効射程
+3318 [Weapon] Rapid fire performance -- 【武器】連射性能
+3319 [Weapon] EN load while charging -- 【武器】チャージ中EN負荷
+3320 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+3321 [Weapon] Number of bullets consumed when charging -- 【武器】チャージ時消費弾数
+3322 [Weapon] Number of bullets -- 【武器】装弾数
+3323 [Weapon] Cooling performance -- 【武器】冷却性能
+3324 [Weapon] Bullet unit price -- 【武器】弾単価
+3325 ----
+3326 [Common items] Weight -- 【アイテム共通】 重量
+3327 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3328 [Common items] Description -- 【アイテム共通】 説明
+3329 [Common items] Description -- 【アイテム共通】 説明
+3330 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3331 [Weapon] Impact value -- 【武器】衝撃値
+3332 [Weapon] Number of bullets -- 【武器】装弾数
+3333 [Common items] Weight -- 【アイテム共通】 重量
+3334 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3335 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+3336 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+3337 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+3338 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+3339 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+3340 ------------- Termination ------------- -- -------------   終端   -------------
+3400 [Common items] Name -- 【アイテム共通】 名前
+3401 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+3402 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3403 [Weapon] Impact value -- 【武器】衝撃値
+3404 [Weapon] Residual impact -- 【武器】残留衝撃
+3405 [Weapon] Explosion range -- 【武器】爆発範囲
+3406 ----
+3407 ----
+3408 ----
+3409 ----
+3410 ----
+3411 ----
+3412 ----
+3413 ----
+3414 [Weapon] Critical suitability -- 【武器】クリティカル適正
+3415 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+3416 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+3417 [Bullet] Effective range -- 【弾丸】有効射程
+3418 [Weapon] Number of bullets -- 【武器】装弾数
+3419 [Weapon] Magazine reload -- 【武器】マガジンリロード
+3420 [Weapon] Bullet unit price -- 【武器】弾単価
+3421 ----
+3422 ----
+3423 ----
+3424 ----
+3425 ----
+3426 [Common items] Weight -- 【アイテム共通】 重量
+3427 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3428 [Common items] Description -- 【アイテム共通】 説明
+3429 [Common items] Description -- 【アイテム共通】 説明
+3430 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+3431 [Weapon] Impact value -- 【武器】衝撃値
+3432 [Weapon] Number of bullets -- 【武器】装弾数
+3433 [Common items] Weight -- 【アイテム共通】 重量
+3434 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+3435 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+3436 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+3437 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+3438 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+3439 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+3440 ------------- Termination ------------- -- -------------   終端   -------------
+4000 [Common items] Name -- 【アイテム共通】 名前
+4001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+4002 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4003 [Weapon] Impact value -- 【武器】衝撃値
+4004 [Weapon] Residual impact -- 【武器】残留衝撃
+4005 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+4006 ----
+4007 ----
+4008 ----
+4009 ----
+4010 ----
+4011 ----
+4012 ----
+4013 ----
+4014 [Weapon] Critical suitability -- 【武器】クリティカル適正
+4015 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+4016 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+4017 [Bullet] Effective range -- 【弾丸】有効射程
+4018 [Weapon] Rapid fire performance -- 【武器】連射性能
+4019 [Weapon] Number of bullets -- 【武器】装弾数
+4020 [Weapon] Cooling performance -- 【武器】冷却性能
+4021 [Weapon] Bullet unit price -- 【武器】弾単価
+4022 ----
+4023 ----
+4024 ----
+4025 ----
+4026 [Common items] Weight -- 【アイテム共通】 重量
+4027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4028 [Common items] Description -- 【アイテム共通】 説明
+4029 [Common items] Description -- 【アイテム共通】 説明
+4030 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4031 [Weapon] Impact value -- 【武器】衝撃値
+4032 [Weapon] Number of bullets -- 【武器】装弾数
+4033 [Common items] Weight -- 【アイテム共通】 重量
+4034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4035 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+4036 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+4037 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+4038 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+4039 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+4040 ------------- Termination ------------- -- -------------   終端   -------------
+4100 [Common items] Name -- 【アイテム共通】 名前
+4101 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+4102 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4103 [Weapon] Impact value -- 【武器】衝撃値
+4104 [Weapon] Residual impact -- 【武器】残留衝撃
+4105 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+4106 ----
+4107 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+4108 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+4109 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+4110 [Weapon] Charge attack heat value increase amount -- 【武器】チャージ攻撃ヒート値上昇量
+4111 ----
+4112 ----
+4113 ----
+4114 [Weapon] Critical suitability -- 【武器】クリティカル適正
+4115 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+4116 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+4117 [Bullet] Effective range -- 【弾丸】有効射程
+4118 [Weapon] Rapid fire performance -- 【武器】連射性能
+4119 [Weapon] EN load while charging -- 【武器】チャージ中EN負荷
+4120 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+4121 [Weapon] Number of bullets consumed when charging -- 【武器】チャージ時消費弾数
+4122 [Weapon] Number of bullets -- 【武器】装弾数
+4123 [Weapon] Cooling performance -- 【武器】冷却性能
+4124 [Weapon] Bullet unit price -- 【武器】弾単価
+4125 ----
+4126 [Common items] Weight -- 【アイテム共通】 重量
+4127 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4128 [Common items] Description -- 【アイテム共通】 説明
+4129 [Common items] Description -- 【アイテム共通】 説明
+4130 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4131 [Weapon] Impact value -- 【武器】衝撃値
+4132 [Weapon] Number of bullets -- 【武器】装弾数
+4133 [Common items] Weight -- 【アイテム共通】 重量
+4134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4135 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+4136 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+4137 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+4138 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+4139 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+4140 ------------- Termination ------------- -- -------------   終端   -------------
+4200 [Common items] Name -- 【アイテム共通】 名前
+4201 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+4202 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4203 [Weapon] Impact value -- 【武器】衝撃値
+4204 [Weapon] Residual impact -- 【武器】残留衝撃
+4205 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+4206 ----
+4207 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+4208 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+4209 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+4210 [Weapon] Charge attack heat value increase amount -- 【武器】チャージ攻撃ヒート値上昇量
+4211 ----
+4212 ----
+4213 ----
+4214 [Weapon] Critical suitability -- 【武器】クリティカル適正
+4215 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+4216 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+4217 [Bullet] Effective range -- 【弾丸】有効射程
+4218 [Weapon] Rapid fire performance -- 【武器】連射性能
+4219 [Weapon] EN load while charging -- 【武器】チャージ中EN負荷
+4220 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+4221 [Weapon] Number of bullets -- 【武器】装弾数
+4222 [Weapon] Cooling performance -- 【武器】冷却性能
+4223 [Weapon] Bullet unit price -- 【武器】弾単価
+4224 ----
+4225 ----
+4226 [Common items] Weight -- 【アイテム共通】 重量
+4227 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4228 [Common items] Description -- 【アイテム共通】 説明
+4229 [Common items] Description -- 【アイテム共通】 説明
+4230 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4231 [Weapon] Impact value -- 【武器】衝撃値
+4232 [Weapon] Number of bullets -- 【武器】装弾数
+4233 [Common items] Weight -- 【アイテム共通】 重量
+4234 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4235 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+4236 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+4237 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+4238 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+4239 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+4240 ------------- Termination ------------- -- -------------   終端   -------------
+4300 [Common items] Name -- 【アイテム共通】 名前
+4301 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+4302 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4303 [Weapon] Impact value -- 【武器】衝撃値
+4304 [Weapon] Residual impact -- 【武器】残留衝撃
+4305 [Weapon] Explosion range -- 【武器】爆発範囲
+4306 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+4307 ----
+4308 Full charge attack power -- フルチャージ攻撃力
+4309 Full charge impact force -- フルチャージ衝撃力
+4310 Full charge impact residual -- フルチャージ衝撃残留
+4311 Full charge explosion range -- フルチャージ爆発範囲
+4312 Heat generated during full charge attack -- フルチャージ攻撃時発熱
+4313 ----
+4314 [Weapon] Critical suitability -- 【武器】クリティカル適正
+4315 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+4316 [Bullet] Effective range -- 【弾丸】有効射程
+4317 [Weapon] Rapid fire performance -- 【武器】連射性能
+4318 [Weapon] EN load while charging -- 【武器】チャージ中EN負荷
+4319 Full charge time -- フルチャージ時間
+4320 Full charge consumption bullets -- フルチャージ消費弾数
+4321 [Weapon] Number of bullets -- 【武器】装弾数
+4322 [Weapon] Cooling performance -- 【武器】冷却性能
+4323 [Weapon] Bullet unit price -- 【武器】弾単価
+4324 ----
+4325 ----
+4326 [Common items] Weight -- 【アイテム共通】 重量
+4327 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4328 [Common items] Description -- 【アイテム共通】 説明
+4329 [Common items] Description -- 【アイテム共通】 説明
+4330 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4331 [Weapon] Impact value -- 【武器】衝撃値
+4332 [Weapon] Number of bullets -- 【武器】装弾数
+4333 [Common items] Weight -- 【アイテム共通】 重量
+4334 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4335 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+4336 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+4337 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+4338 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+4339 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+4340 ------------- Termination ------------- -- -------------   終端   -------------
+4400 [Common items] Name -- 【アイテム共通】 名前
+4401 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+4402 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4403 [Weapon] Impact value -- 【武器】衝撃値
+4404 [Weapon] Residual impact -- 【武器】残留衝撃
+4405 [Weapon] Explosion range -- 【武器】爆発範囲
+4406 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+4407 ----
+4408 Full charge attack power -- フルチャージ攻撃力
+4409 Full charge impact force -- フルチャージ衝撃力
+4410 Full charge impact residual -- フルチャージ衝撃残留
+4411 Heat generated during full charge attack -- フルチャージ攻撃時発熱
+4412 ----
+4413 ----
+4414 [Weapon] Critical suitability -- 【武器】クリティカル適正
+4415 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+4416 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+4417 [Bullet] Effective range -- 【弾丸】有効射程
+4418 [Weapon] Rapid fire performance -- 【武器】連射性能
+4419 [Weapon] EN load while charging -- 【武器】チャージ中EN負荷
+4420 Full charge time -- フルチャージ時間
+4421 Full charge consumption bullets -- フルチャージ消費弾数
+4422 [Weapon] Number of bullets -- 【武器】装弾数
+4423 [Weapon] Cooling performance -- 【武器】冷却性能
+4424 [Weapon] Bullet unit price -- 【武器】弾単価
+4425 ----
+4426 [Common items] Weight -- 【アイテム共通】 重量
+4427 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4428 [Common items] Description -- 【アイテム共通】 説明
+4429 [Common items] Description -- 【アイテム共通】 説明
+4430 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4431 [Weapon] Impact value -- 【武器】衝撃値
+4432 [Weapon] Number of bullets -- 【武器】装弾数
+4433 [Common items] Weight -- 【アイテム共通】 重量
+4434 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4435 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+4436 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+4437 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+4438 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+4439 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+4440 ------------- Termination ------------- -- -------------   終端   -------------
+4500 [Common items] Name -- 【アイテム共通】 名前
+4501 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+4502 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4503 [Weapon] Impact value -- 【武器】衝撃値
+4504 [Weapon] Residual impact -- 【武器】残留衝撃
+4505 [Weapon] Explosion range -- 【武器】爆発範囲
+4506 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+4507 ----
+4508 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+4509 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+4510 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+4511 [Weapon] Explosion range after charging -- 【武器】チャージ後爆発範囲
+4512 [Weapon] Charge attack heat value increase amount -- 【武器】チャージ攻撃ヒート値上昇量
+4513 ----
+4514 [Weapon] Critical suitability -- 【武器】クリティカル適正
+4515 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+4516 [Bullet] Effective range -- 【弾丸】有効射程
+4517 [Weapon] Rapid fire performance -- 【武器】連射性能
+4518 [Weapon] EN load while charging -- 【武器】チャージ中EN負荷
+4519 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+4520 [Weapon] Number of bullets consumed when charging -- 【武器】チャージ時消費弾数
+4521 [Weapon] Number of bullets -- 【武器】装弾数
+4522 [Weapon] Cooling performance -- 【武器】冷却性能
+4523 [Weapon] Bullet unit price -- 【武器】弾単価
+4528 [Common items] Description -- 【アイテム共通】 説明
+4529 [Common items] Description -- 【アイテム共通】 説明
+4530 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4531 [Weapon] Impact value -- 【武器】衝撃値
+4532 [Weapon] Number of bullets -- 【武器】装弾数
+4533 [Common items] Weight -- 【アイテム共通】 重量
+4534 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4535 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+4536 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+4537 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+4538 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+4539 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+4540 ------------- Termination ------------- -- -------------   終端   -------------
+4600 [Common items] Name -- 【アイテム共通】 名前
+4601 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+4602 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4603 [Weapon] Impact value -- 【武器】衝撃値
+4604 [Weapon] Residual impact -- 【武器】残留衝撃
+4605 [Weapon] Explosion range -- 【武器】爆発範囲
+4606 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+4607 ----
+4608 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+4609 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+4610 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+4611 [Weapon] Explosion range after charging -- 【武器】チャージ後爆発範囲
+4612 [Weapon] Charge attack heat value increase amount -- 【武器】チャージ攻撃ヒート値上昇量
+4613 ----
+4614 [Weapon] Critical suitability -- 【武器】クリティカル適正
+4615 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+4616 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+4617 [Bullet] Effective range -- 【弾丸】有効射程
+4618 [Weapon] Rapid fire performance -- 【武器】連射性能
+4619 [Weapon] EN load while charging -- 【武器】チャージ中EN負荷
+4620 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+4621 [Weapon] Number of bullets consumed when charging -- 【武器】チャージ時消費弾数
+4622 [Weapon] Number of bullets -- 【武器】装弾数
+4623 [Weapon] Cooling performance -- 【武器】冷却性能
+4624 [Weapon] Bullet unit price -- 【武器】弾単価
+4625 ----
+4626 [Common items] Weight -- 【アイテム共通】 重量
+4627 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4628 [Common items] Description -- 【アイテム共通】 説明
+4629 [Common items] Description -- 【アイテム共通】 説明
+4630 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4631 [Weapon] Impact value -- 【武器】衝撃値
+4632 [Weapon] Number of bullets -- 【武器】装弾数
+4633 [Common items] Weight -- 【アイテム共通】 重量
+4634 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4635 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+4636 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+4637 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+4638 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+4639 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+4640 ------------- Termination ------------- -- -------------   終端   -------------
+4700 [Common items] Name -- 【アイテム共通】 名前
+4701 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+4702 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4703 [Weapon] Impact value -- 【武器】衝撃値
+4704 [Weapon] Residual impact -- 【武器】残留衝撃
+4705 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+4706 ----
+4707 ----
+4708 ----
+4709 ----
+4710 ----
+4711 ----
+4712 ----
+4713 ----
+4714 [Weapon] Critical suitability -- 【武器】クリティカル適正
+4715 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+4716 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+4717 [Bullet] Effective range -- 【弾丸】有効射程
+4718 [Weapon] Rapid fire performance -- 【武器】連射性能
+4719 [Weapon] Number of bullets -- 【武器】装弾数
+4720 [Weapon] Cooling performance -- 【武器】冷却性能
+4721 [Weapon] Bullet unit price -- 【武器】弾単価
+4722 ----
+4723 ----
+4724 ----
+4725 ----
+4726 [Common items] Weight -- 【アイテム共通】 重量
+4727 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4728 [Common items] Description -- 【アイテム共通】 説明
+4729 [Common items] Description -- 【アイテム共通】 説明
+4730 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4731 [Weapon] Impact value -- 【武器】衝撃値
+4732 [Weapon] Number of bullets -- 【武器】装弾数
+4733 [Common items] Weight -- 【アイテム共通】 重量
+4734 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4735 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+4736 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+4737 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+4738 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+4739 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+4740 ------------- Termination ------------- -- -------------   終端   -------------
+4800 [Common items] Name -- 【アイテム共通】 名前
+4801 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+4802 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4803 [Weapon] Impact value -- 【武器】衝撃値
+4804 [Weapon] Residual impact -- 【武器】残留衝撃
+4805 [Weapon] Heat value increase amount -- 【武器】ヒート値上昇量
+4806 ----
+4807 ----
+4808 ----
+4809 ----
+4810 ----
+4811 ----
+4812 ----
+4813 ----
+4814 [Weapon] Critical suitability -- 【武器】クリティカル適正
+4815 [Bullet] Shooting recoil -- 【弾丸】射撃反動
+4816 [Bullet] Effective range -- 【弾丸】有効射程
+4817 [Weapon] Rapid fire performance -- 【武器】連射性能
+4818 [Weapon] Number of bullets -- 【武器】装弾数
+4819 [Weapon] Cooling performance -- 【武器】冷却性能
+4820 [Weapon] Bullet unit price -- 【武器】弾単価
+4821 ----
+4822 ----
+4823 ----
+4824 ----
+4825 ----
+4826 [Common items] Weight -- 【アイテム共通】 重量
+4827 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4828 [Common items] Description -- 【アイテム共通】 説明
+4829 [Common items] Description -- 【アイテム共通】 説明
+4830 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+4831 [Weapon] Impact value -- 【武器】衝撃値
+4832 [Weapon] Number of bullets -- 【武器】装弾数
+4833 [Common items] Weight -- 【アイテム共通】 重量
+4834 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+4835 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+4836 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+4837 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+4838 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+4839 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+4840 ------------- Termination ------------- -- -------------   終端   -------------
+5000 [Common items] Name -- 【アイテム共通】 名前
+5001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5002 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5003 [Weapon] Impact value -- 【武器】衝撃値
+5004 [Weapon] Residual impact -- 【武器】残留衝撃
+5005 ----
+5006 ----
+5007 ----
+5008 ----
+5009 ----
+5010 ----
+5011 ----
+5012 ----
+5013 ----
+5014 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5015 [Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）
+5016 [Bullet] Effective range -- 【弾丸】有効射程
+5017 [Bullet] Missile lock time -- 【弾丸】ミサイルロック時間
+5018 [Bullet] Maximum number of locks -- 【弾丸】最大ロック数
+5019 [Weapon] Number of bullets -- 【武器】装弾数
+5020 [Weapon] Magazine reload -- 【武器】マガジンリロード
+5021 [Weapon] Bullet unit price -- 【武器】弾単価
+5022 ----
+5023 ----
+5024 ----
+5025 ----
+5026 [Common items] Weight -- 【アイテム共通】 重量
+5027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5028 [Common items] Description -- 【アイテム共通】 説明
+5029 [Common items] Description -- 【アイテム共通】 説明
+5030 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5031 [Weapon] Impact value -- 【武器】衝撃値
+5032 [Weapon] Number of bullets -- 【武器】装弾数
+5033 [Common items] Weight -- 【アイテム共通】 重量
+5034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5035 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5036 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5037 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5038 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5039 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5040 ------------- Termination ------------- -- -------------   終端   -------------
+5100 [Common items] Name -- 【アイテム共通】 名前
+5101 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5102 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5103 [Weapon] Impact value -- 【武器】衝撃値
+5104 [Weapon] Residual impact -- 【武器】残留衝撃
+5105 [Weapon] Explosion range -- 【武器】爆発範囲
+5106 ----
+5107 ----
+5108 ----
+5109 ----
+5110 ----
+5111 ----
+5112 ----
+5113 ----
+5114 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5115 [Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）
+5116 [Bullet] Effective range -- 【弾丸】有効射程
+5117 [Bullet] Missile lock time -- 【弾丸】ミサイルロック時間
+5118 [Bullet] Maximum number of locks -- 【弾丸】最大ロック数
+5119 [Weapon] Number of bullets -- 【武器】装弾数
+5120 [Weapon] Magazine reload -- 【武器】マガジンリロード
+5121 [Weapon] Bullet unit price -- 【武器】弾単価
+5122 ----
+5123 ----
+5128 [Common items] Description -- 【アイテム共通】 説明
+5129 [Common items] Description -- 【アイテム共通】 説明
+5130 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5131 [Weapon] Impact value -- 【武器】衝撃値
+5132 [Weapon] Number of bullets -- 【武器】装弾数
+5133 [Common items] Weight -- 【アイテム共通】 重量
+5134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5135 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5136 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5137 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5138 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5139 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5140 ------------- Termination ------------- -- -------------   終端   -------------
+5200 [Common items] Name -- 【アイテム共通】 名前
+5201 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5102 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5103 [Weapon] Impact value -- 【武器】衝撃値
+5104 [Weapon] Residual impact -- 【武器】残留衝撃
+5105 [Weapon] Explosion range -- 【武器】爆発範囲
+5106 ----
+5107 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+5108 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+5109 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+5110 [Weapon] Explosion range after charging -- 【武器】チャージ後爆発範囲
+5111 ----
+5112 ----
+5113 ----
+5114 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5115 [Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）
+5116 [Bullet] Effective range -- 【弾丸】有効射程
+5117 [Bullet] Missile lock time -- 【弾丸】ミサイルロック時間
+5118 [Bullet] Maximum number of locks -- 【弾丸】最大ロック数
+5119 [Weapon] EN load while charging -- 【武器】チャージ中EN負荷
+5120 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+5121 [Weapon] Number of bullets consumed when charging -- 【武器】チャージ時消費弾数
+5122 [Weapon] Number of bullets -- 【武器】装弾数
+5123 [Weapon] Magazine reload -- 【武器】マガジンリロード
+5124 [Weapon] Bullet unit price -- 【武器】弾単価
+5125 ----
+5126 [Common items] Weight -- 【アイテム共通】 重量
+5127 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5128 [Common items] Description -- 【アイテム共通】 説明
+5129 [Common items] Description -- 【アイテム共通】 説明
+5130 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5131 [Weapon] Impact value -- 【武器】衝撃値
+5132 [Weapon] Number of bullets -- 【武器】装弾数
+5133 [Common items] Weight -- 【アイテム共通】 重量
+5134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5135 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5136 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5137 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5138 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5139 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5140 ------------- Termination ------------- -- -------------   終端   -------------
+5300 [Common items] Name -- 【アイテム共通】 名前
+5301 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5302 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5303 [Weapon] Impact value -- 【武器】衝撃値
+5304 [Weapon] Residual impact -- 【武器】残留衝撃
+5305 [Weapon] Explosion range -- 【武器】爆発範囲
+5306 ----
+5307 ----
+5308 ----
+5309 ----
+5310 ----
+5311 ----
+5312 ----
+5313 ----
+5314 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5315 [Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）
+5316 [Bullet] Effective range -- 【弾丸】有効射程
+5317 [Bullet] Missile lock time -- 【弾丸】ミサイルロック時間
+5318 [Bullet] Maximum number of locks -- 【弾丸】最大ロック数
+5319 [Weapon] Number of bullets -- 【武器】装弾数
+5320 [Weapon] Magazine reload -- 【武器】マガジンリロード
+5321 [Weapon] Bullet unit price -- 【武器】弾単価
+5322 ----
+5323 ----
+5324 ----
+5325 ----
+5326 [Common items] Weight -- 【アイテム共通】 重量
+5327 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5328 [Common items] Description -- 【アイテム共通】 説明
+5329 [Common items] Description -- 【アイテム共通】 説明
+5330 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5331 [Weapon] Impact value -- 【武器】衝撃値
+5332 [Weapon] Number of bullets -- 【武器】装弾数
+5333 [Common items] Weight -- 【アイテム共通】 重量
+5334 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5335 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5336 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5337 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5338 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5339 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5340 ------------- Termination ------------- -- -------------   終端   -------------
+5400 [Common items] Name -- 【アイテム共通】 名前
+5401 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5402 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5403 [Weapon] Impact value -- 【武器】衝撃値
+5404 [Weapon] Residual impact -- 【武器】残留衝撃
+5405 ----
+5406 ----
+5407 ----
+5408 ----
+5409 ----
+5410 ----
+5411 ----
+5412 ----
+5413 ----
+5414 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5415 [Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）
+5416 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+5417 [Bullet] Effective range -- 【弾丸】有効射程
+5418 [Bullet] Missile lock time -- 【弾丸】ミサイルロック時間
+5419 [Bullet] Maximum number of locks -- 【弾丸】最大ロック数
+5420 [Weapon] Number of bullets -- 【武器】装弾数
+5421 [Weapon] Magazine reload -- 【武器】マガジンリロード
+5422 [Weapon] Bullet unit price -- 【武器】弾単価
+5423 ----
+5424 ----
+5425 ----
+5426 [Common items] Weight -- 【アイテム共通】 重量
+5427 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5428 [Common items] Description -- 【アイテム共通】 説明
+5429 [Common items] Description -- 【アイテム共通】 説明
+5430 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5431 [Weapon] Impact value -- 【武器】衝撃値
+5432 [Weapon] Number of bullets -- 【武器】装弾数
+5433 [Common items] Weight -- 【アイテム共通】 重量
+5434 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5435 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5436 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5437 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5438 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5439 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5440 ------------- Termination ------------- -- -------------   終端   -------------
+5500 [Common items] Name -- 【アイテム共通】 名前
+5501 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5502 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5503 [Weapon] Impact value -- 【武器】衝撃値
+5504 [Weapon] Residual impact -- 【武器】残留衝撃
+5505 ----
+5506 ----
+5507 ----
+5508 ----
+5509 ----
+5510 ----
+5511 ----
+5512 ----
+5513 ----
+5514 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5515 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+5516 [Bullet] Effective range -- 【弾丸】有効射程
+5517 [Weapon] Rapid fire performance -- 【武器】連射性能
+5518 [Weapon] Number of bullets -- 【武器】装弾数
+5519 [Weapon] Cooling performance -- 【武器】冷却性能
+5520 [Weapon] Bullet unit price -- 【武器】弾単価
+5521 ----
+5522 ----
+5523 ----
+5524 ----
+5525 ----
+5526 [Common items] Weight -- 【アイテム共通】 重量
+5527 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5528 [Common items] Description -- 【アイテム共通】 説明
+5529 [Common items] Description -- 【アイテム共通】 説明
+5530 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5531 [Weapon] Impact value -- 【武器】衝撃値
+5532 [Weapon] Number of bullets -- 【武器】装弾数
+5533 [Common items] Weight -- 【アイテム共通】 重量
+5534 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5535 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5536 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5537 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5538 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5539 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5540 ------------- Termination ------------- -- -------------   終端   -------------
+5600 [Common items] Name -- 【アイテム共通】 名前
+5601 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5602 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5603 [Weapon] Impact value -- 【武器】衝撃値
+5604 [Weapon] Residual impact -- 【武器】残留衝撃
+5605 ----
+5606 ----
+5607 ----
+5608 ----
+5609 ----
+5610 ----
+5611 ----
+5612 ----
+5613 ----
+5614 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5615 [Bullet] Guaranteed performance range -- 【弾丸】性能保証射程
+5616 [Bullet] Effective range -- 【弾丸】有効射程
+5617 [Weapon] Rapid fire performance -- 【武器】連射性能
+5618 [Weapon] Number of magazine bullets -- 【武器】マガジン弾数
+5619 [Weapon] Number of bullets -- 【武器】装弾数
+5620 [Weapon] Magazine reload -- 【武器】マガジンリロード
+5621 [Weapon] Bullet unit price -- 【武器】弾単価
+5622 ----
+5623 ----
+5624 ----
+5625 ----
+5626 [Common items] Weight -- 【アイテム共通】 重量
+5627 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5628 [Common items] Description -- 【アイテム共通】 説明
+5629 [Common items] Description -- 【アイテム共通】 説明
+5630 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5631 [Weapon] Impact value -- 【武器】衝撃値
+5632 [Weapon] Number of bullets -- 【武器】装弾数
+5633 [Common items] Weight -- 【アイテム共通】 重量
+5634 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5635 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5636 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5637 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5638 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5639 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5640 ------------- Termination ------------- -- -------------   終端   -------------
+5700 [Common items] Name -- 【アイテム共通】 名前
+5701 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5702 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5703 [Weapon] Impact value -- 【武器】衝撃値
+5704 [Weapon] Residual impact -- 【武器】残留衝撃
+5705 ----
+5706 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+5707 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+5708 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+5709 ----
+5710 ----
+5711 ----
+5712 ----
+5713 ----
+5714 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5715 [Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）
+5716 [Bullet] Effective range -- 【弾丸】有効射程
+5717 [Bullet] Missile lock time -- 【弾丸】ミサイルロック時間
+5718 [Bullet] Maximum number of locks -- 【弾丸】最大ロック数
+5719 [Weapon] Maximum charge time -- 【武器】最大チャージ時間
+5720 [Weapon] Number of bullets -- 【武器】装弾数
+5721 [Weapon] Magazine reload -- 【武器】マガジンリロード
+5722 [Weapon] Bullet unit price -- 【武器】弾単価
+5723 ----
+5724 ----
+5725 ----
+5726 [Common items] Weight -- 【アイテム共通】 重量
+5727 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5728 [Common items] Description -- 【アイテム共通】 説明
+5729 [Common items] Description -- 【アイテム共通】 説明
+5730 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5731 [Weapon] Impact value -- 【武器】衝撃値
+5732 [Weapon] Number of bullets -- 【武器】装弾数
+5733 [Common items] Weight -- 【アイテム共通】 重量
+5734 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5735 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5736 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5737 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5738 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5739 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5740 ------------- Termination ------------- -- -------------   終端   -------------
+5800 [Common items] Name -- 【アイテム共通】 名前
+5801 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5802 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5803 [Weapon] Impact value -- 【武器】衝撃値
+5804 [Weapon] Residual impact -- 【武器】残留衝撃
+5805 ----
+5806 ----
+5807 ----
+5808 ----
+5809 ----
+5810 ----
+5811 ----
+5812 ----
+5813 ----
+5814 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5815 [Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）
+5816 [Bullet] Effective range -- 【弾丸】有効射程
+5817 [Weapon] Number of bullets -- 【武器】装弾数
+5818 [Weapon] Magazine reload -- 【武器】マガジンリロード
+5819 [Weapon] Bullet unit price -- 【武器】弾単価
+5820 ----
+5821 ----
+5822 ----
+5823 ----
+5824 ----
+5825 ----
+5826 [Common items] Weight -- 【アイテム共通】 重量
+5827 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5828 [Common items] Description -- 【アイテム共通】 説明
+5829 [Common items] Description -- 【アイテム共通】 説明
+5830 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5831 [Weapon] Impact value -- 【武器】衝撃値
+5832 [Weapon] Number of bullets -- 【武器】装弾数
+5833 [Common items] Weight -- 【アイテム共通】 重量
+5834 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5835 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5836 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5837 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5838 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5839 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5840 ------------- Termination ------------- -- -------------   終端   -------------
+5900 [Common items] Name -- 【アイテム共通】 名前
+5901 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+5902 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5903 [Weapon] Impact value -- 【武器】衝撃値
+5904 [Weapon] Residual impact -- 【武器】残留衝撃
+5905 ----
+5906 ----
+5907 ----
+5908 ----
+5909 ----
+5910 ----
+5911 ----
+5912 ----
+5913 ----
+5914 [Weapon] Critical suitability -- 【武器】クリティカル適正
+5915 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+5916 [Bullet] Guidance performance (for those who can use it) -- 【弾丸】誘導性能（使える方）
+5917 [Bullet] Effective range -- 【弾丸】有効射程
+5918 [Bullet] Missile lock time -- 【弾丸】ミサイルロック時間
+5919 [Bullet] Maximum number of locks -- 【弾丸】最大ロック数
+5920 [Weapon] Number of bullets -- 【武器】装弾数
+5921 [Weapon] Magazine reload -- 【武器】マガジンリロード
+5922 [Weapon] Bullet unit price -- 【武器】弾単価
+5923 ----
+5924 ----
+5925 ----
+5926 [Common items] Weight -- 【アイテム共通】 重量
+5927 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5928 [Common items] Description -- 【アイテム共通】 説明
+5929 [Common items] Description -- 【アイテム共通】 説明
+5930 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+5931 [Weapon] Impact value -- 【武器】衝撃値
+5932 [Weapon] Number of bullets -- 【武器】装弾数
+5933 [Common items] Weight -- 【アイテム共通】 重量
+5934 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+5935 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+5936 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+5937 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+5938 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+5939 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+5940 ------------- Termination ------------- -- -------------   終端   -------------
+6000 [Common items] Name -- 【アイテム共通】 名前
+6001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+6002 [Shield] Output -- 【シールド】出力
+6003 [Shield] Impact resistance performance -- 【シールド】耐衝撃性能
+6004 ----
+6005 [Shield] Initial output performance -- 【シールド】初期出力性能
+6006 [Shield] Initial output shock resistance performance -- 【シールド】初期出力耐衝撃性能
+6007 [Shield] Initial output maintenance time -- 【シールド】初期出力維持時間
+6008 [Shield] Heat generation amount when deployed -- 【シールド】展開時発熱量
+6009 ----
+6010 ----
+6011 ----
+6012 ----
+6013 ----
+6014 [Shield] Guard range -- 【シールド】ガード範囲
+6015 [Shield] Cooling performance -- 【シールド】冷却性能
+6016 ----
+6017 ----
+6018 ----
+6019 ----
+6020 ----
+6021 ----
+6022 ----
+6023 ----
+6024 ----
+6025 ----
+6026 [Common items] Weight -- 【アイテム共通】 重量
+6027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+6028 [Common items] Description -- 【アイテム共通】 説明
+6029 [Common items] Description -- 【アイテム共通】 説明
+6030 [Shield] Output -- 【シールド】出力
+6031 [Shield] Impact resistance performance -- 【シールド】耐衝撃性能
+6032 [Shield] Guard range -- 【シールド】ガード範囲
+6033 [Common items] Weight -- 【アイテム共通】 重量
+6034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+6035 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+6036 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+6037 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+6038 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+6039 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+6040 ------------- Termination ------------- -- -------------   終端   -------------
+6100 [Common items] Name -- 【アイテム共通】 名前
+6101 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+6102 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+6103 [Weapon] Impact value -- 【武器】衝撃値
+6104 [Weapon] Residual impact -- 【武器】残留衝撃
+6105 [Weapon] Number of fighting combos -- 【武器】格闘コンボ数
+6106 ----
+6107 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+6108 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+6109 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+6110 ----
+6111 ----
+6112 ----
+6113 ----
+6114 [Weapon] Critical suitability -- 【武器】クリティカル適正
+6115 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+6116 [Weapon] Cooling performance -- 【武器】冷却性能
+6117 ----
+6118 ----
+6119 ----
+6120 ----
+6121 ----
+6122 ----
+6123 ----
+6124 ----
+6125 ----
+6126 [Common items] Weight -- 【アイテム共通】 重量
+6127 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+6128 [Common items] Description -- 【アイテム共通】 説明
+6129 [Common items] Description -- 【アイテム共通】 説明
+6130 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+6131 [Weapon] Impact value -- 【武器】衝撃値
+6132 [Weapon] Number of fighting combos -- 【武器】格闘コンボ数
+6133 [Common items] Weight -- 【アイテム共通】 重量
+6134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+6135 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+6136 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+6137 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+6138 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+6139 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+6140 ------------- Termination ------------- -- -------------   終端   -------------
+6200 [Common items] Name -- 【アイテム共通】 名前
+6201 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+6202 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+6203 [Weapon] Impact value -- 【武器】衝撃値
+6204 [Weapon] Residual impact -- 【武器】残留衝撃
+6205 [Weapon] Number of fighting combos -- 【武器】格闘コンボ数
+6206 ----
+6207 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+6208 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+6209 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+6210 ----
+6211 ----
+6212 ----
+6213 ----
+6214 [Weapon] Critical suitability -- 【武器】クリティカル適正
+6215 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+6216 [Weapon] Cooling performance -- 【武器】冷却性能
+6217 ----
+6218 ----
+6219 ----
+6220 ----
+6221 ----
+6222 ----
+6223 ----
+6224 ----
+6225 ----
+6226 [Common items] Weight -- 【アイテム共通】 重量
+6227 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+6228 [Common items] Description -- 【アイテム共通】 説明
+6229 [Common items] Description -- 【アイテム共通】 説明
+6230 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+6231 [Weapon] Impact value -- 【武器】衝撃値
+6232 [Weapon] Number of fighting combos -- 【武器】格闘コンボ数
+6233 [Common items] Weight -- 【アイテム共通】 重量
+6234 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+6235 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+6236 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+6237 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+6238 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+6239 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+6240 ------------- Termination ------------- -- -------------   終端   -------------
+6300 [Common items] Name -- 【アイテム共通】 名前
+6301 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+6302 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+6303 [Weapon] Impact value -- 【武器】衝撃値
+6304 [Weapon] Residual impact -- 【武器】残留衝撃
+6305 [Weapon] Number of fighting combos -- 【武器】格闘コンボ数
+6306 ----
+6307 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+6308 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+6309 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+6310 ----
+6311 ----
+6312 ----
+6313 ----
+6314 [Weapon] Critical suitability -- 【武器】クリティカル適正
+6315 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+6316 [Bullet] Effective range -- 【弾丸】有効射程
+6317 [Weapon] Cooling performance -- 【武器】冷却性能
+6318 ----
+6319 ----
+6320 ----
+6321 ----
+6322 ----
+6323 ----
+6324 ----
+6325 ----
+6326 [Common items] Weight -- 【アイテム共通】 重量
+6327 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+6328 [Common items] Description -- 【アイテム共通】 説明
+6329 [Common items] Description -- 【アイテム共通】 説明
+6330 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+6331 [Weapon] Impact value -- 【武器】衝撃値
+6332 [Weapon] Number of fighting combos -- 【武器】格闘コンボ数
+6333 [Common items] Weight -- 【アイテム共通】 重量
+6334 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+6335 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+6336 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+6337 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+6338 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+6339 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+6340 ------------- Termination ------------- -- -------------   終端   -------------
+7000 [Common items] Name -- 【アイテム共通】 名前
+7001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+7002 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+7003 [Weapon] Impact value -- 【武器】衝撃値
+7004 [Weapon] Residual impact -- 【武器】残留衝撃
+7005 [Weapon] Explosion range -- 【武器】爆発範囲
+7006 ----
+7007 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+7008 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+7009 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+7010 [Weapon] Explosion range after charging -- 【武器】チャージ後爆発範囲
+7011 ----
+7012 ----
+7013 ----
+7014 [Weapon] Critical suitability -- 【武器】クリティカル適正
+7015 [Bullet] Effective range -- 【弾丸】有効射程
+7016 [Weapon] Number of bullets -- 【武器】装弾数
+7017 [Weapon] Magazine reload -- 【武器】マガジンリロード
+7018 [Weapon] Bullet unit price -- 【武器】弾単価
+7019 ----
+7020 ----
+7021 ----
+7022 ----
+7023 ----
+7024 ----
+7025 ----
+7026 [Common items] Weight -- 【アイテム共通】 重量
+7027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+7028 [Common items] Description -- 【アイテム共通】 説明
+7029 [Common items] Description -- 【アイテム共通】 説明
+7030 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+7031 [Weapon] Impact value -- 【武器】衝撃値
+7032 [Weapon] Number of bullets -- 【武器】装弾数
+7033 [Common items] Weight -- 【アイテム共通】 重量
+7034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+7035 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+7036 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+7037 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+7038 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+7039 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+7040 ------------- Termination ------------- -- -------------   終端   -------------
+7100 [Common items] Name -- 【アイテム共通】 名前
+7101 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+7102 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+7103 [Weapon] Impact value -- 【武器】衝撃値
+7104 [Weapon] Residual impact -- 【武器】残留衝撃
+7105 [Weapon] Number of fighting combos -- 【武器】格闘コンボ数
+7106 ----
+7107 [Weapon] Attack performance after charging -- 【武器】チャージ後攻撃性能
+7108 [Weapon] Impact performance after charging -- 【武器】チャージ後衝撃性能
+7109 [Weapon] Impact accumulation performance after charging -- 【武器】チャージ後衝撃蓄積性能
+7110 [Weapon] Explosion range after charging -- 【武器】チャージ後爆発範囲
+7111 ----
+7112 ----
+7113 ----
+7114 [Weapon] Critical suitability -- 【武器】クリティカル適正
+7115 [Weapon] PA interference (FNR-32348 compatible, weak and strong unified version) -- 【武器】PA干渉(FNR-32348対応、弱強統一版)
+7116 [Bullet] Effective range -- 【弾丸】有効射程
+7117 [Weapon] Cooling performance -- 【武器】冷却性能
+7118 ----
+7119 ----
+7120 ----
+7121 ----
+7122 ----
+7123 ----
+7124 ----
+7125 ----
+7126 [Common items] Weight -- 【アイテム共通】 重量
+7127 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+7128 [Common items] Description -- 【アイテム共通】 説明
+7129 [Common items] Description -- 【アイテム共通】 説明
+7130 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+7131 [Weapon] Impact value -- 【武器】衝撃値
+7132 [Weapon] Number of fighting combos -- 【武器】格闘コンボ数
+7133 [Common items] Weight -- 【アイテム共通】 重量
+7134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+7135 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+7136 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+7137 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+7138 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+7139 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+7140 ------------- Termination ------------- -- -------------   終端   -------------
+7200 [Common items] Name -- 【アイテム共通】 名前
+7201 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+7202 [Shield] Output -- 【シールド】出力
+7203 [Shield] Impact resistance performance -- 【シールド】耐衝撃性能
+7204 ----
+7205 Idling attack reduction -- アイドリング攻撃軽減
+7206 Idling shock reduction -- アイドリング衝撃軽減
+7207 [Shield] Scutum Idle Time -- 【シールド】スクトゥムアイドル時間
+7208 [Shield] Heat generation amount when deployed -- 【シールド】展開時発熱量
+7209 ----
+7210 ----
+7211 ----
+7212 ----
+7213 ----
+7214 [Shield] Guard range -- 【シールド】ガード範囲
+7215 [Shield] Cooling performance -- 【シールド】冷却性能
+7216 ----
+7217 ----
+7218 ----
+7219 ----
+7220 ----
+7221 ----
+7222 ----
+7223 ----
+7224 ----
+7225 ----
+7226 [Common items] Weight -- 【アイテム共通】 重量
+7227 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+7228 [Common items] Description -- 【アイテム共通】 説明
+7229 [Common items] Description -- 【アイテム共通】 説明
+7230 [Shield] Scutum attack reduction -- 【シールド】スクトゥム攻撃軽減
+7231 [Shield] Scutum impact reduction -- 【シールド】スクトゥム衝撃軽減
+7232 [Shield] Guard range -- 【シールド】ガード範囲
+7233 [Common items] Weight -- 【アイテム共通】 重量
+7234 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+7235 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+7236 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+7237 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+7238 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+7239 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+7240 ------------- Termination ------------- -- -------------   終端   -------------
+9000 [Common items] Name -- 【アイテム共通】 名前
+9001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+9002 ----
+9003 ----
+9004 ----
+9005 ----
+9006 ----
+9007 ----
+9008 ----
+9009 ----
+9010 ----
+9011 ----
+9012 ----
+9013 ----
+9014 ----
+9015 ----
+9016 ----
+9017 ----
+9018 ----
+9019 ----
+9020 ----
+9021 ----
+9022 ----
+9023 ----
+9024 ----
+9025 ----
+9026 [Common items] Weight -- 【アイテム共通】 重量
+9027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+9028 [Common items] Description -- 【アイテム共通】 説明
+9029 [Common items] Description -- 【アイテム共通】 説明
+9030 ----
+9031 ----
+9032 ----
+9033 [Common items] Weight -- 【アイテム共通】 重量
+9034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+9035 [Weapon] Attribute_Icon -- 【武器】属性_アイコン
+9036 [Weapon] Shooting type_icon -- 【武器】射撃タイプ_アイコン
+9037 [Weapon] Reload type_icon -- 【武器】リロードタイプ_アイコン
+9038 [Weapon] Status abnormal_icon -- 【武器】状態異常_アイコン
+9039 [Weapon] Characteristics_Icon -- 【武器】特性_アイコン
+9040 ------------- Termination ------------- -- -------------   終端   -------------
+10000 [Common items] Name -- 【アイテム共通】 名前
+10001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+10002 [Armor] AP -- 【防具】AP
+10003 [HEAD] KE-resistant armor -- 【HEAD】耐KE装甲
+10004 [HEAD] TE-resistant armor -- 【HEAD】耐TE装甲
+10005 [HEAD] CE-resistant armor -- 【HEAD】耐CE装甲
+10006 ----
+10007 [HEAD] Stable calculation performance -- 【HEAD】安定演算性能
+10008 [HEAD] System restoration performance -- 【HEAD】システム復元性能
+10009 [HEAD] Scan distance -- 【HEAD】スキャン距離
+10010 [HEAD] Scan stiffness time -- 【HEAD】スキャン硬直時間
+10011 [HEAD] Scan standby time -- 【HEAD】スキャン待機時間
+10012 ----
+10013 ----
+10014 ----
+10015 ----
+10016 ----
+10017 ----
+10018 ----
+10019 ----
+10020 ----
+10021 ----
+10022 ----
+10023 ----
+10024 ----
+10025 ----
+10026 [Common items] Weight -- 【アイテム共通】 重量
+10027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+10028 [Common items] Description -- 【アイテム共通】 説明
+10029 [Common items] Description -- 【アイテム共通】 説明
+10030 [Armor] AP -- 【防具】AP
+10031 [HEAD] Stable calculation performance -- 【HEAD】安定演算性能
+10032 [HEAD] System restoration performance -- 【HEAD】システム復元性能
+10033 [Common items] Weight -- 【アイテム共通】 重量
+10034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+10035 ----
+10036 ----
+10037 ----
+10038 ----
+10039 ----
+10040 ------------- Termination ------------- -- -------------   終端   -------------
+11000 [Common items] Name -- 【アイテム共通】 名前
+11001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+11002 [Armor] AP -- 【防具】AP
+11003 [CORE] KE-resistant armor -- 【CORE】耐KE装甲
+11004 [CORE] TE-resistant armor -- 【CORE】耐TE装甲
+11005 [CORE] CE-resistant armor -- 【CORE】耐CE装甲
+11006 ----
+11007 [CORE] Stable performance -- 【CORE】安定性能
+11008 [CORE] Booster EN transmission efficiency -- 【CORE】ブースターEN伝達効率
+11009 [CORE] Generating output transmission performance -- 【CORE】ジェネ出力伝達性能
+11010 [CORE] Radiator performance -- 【CORE】ラジエーター性能
+11011 ----
+11012 ----
+11013 ----
+11014 ----
+11015 ----
+11016 ----
+11017 ----
+11018 ----
+11019 ----
+11020 ----
+11021 ----
+11022 ----
+11023 ----
+11024 ----
+11025 ----
+11026 [Common items] Weight -- 【アイテム共通】 重量
+11027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+11028 [Common items] Description -- 【アイテム共通】 説明
+11029 [Common items] Description -- 【アイテム共通】 説明
+11030 [Armor] AP -- 【防具】AP
+11031 [CORE] Stable performance -- 【CORE】安定性能
+11032 [CORE] Generating output transmission performance -- 【CORE】ジェネ出力伝達性能
+11033 [Common items] Weight -- 【アイテム共通】 重量
+11034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+11035 ----
+11036 ----
+11037 ----
+11038 ----
+11039 ----
+11040 ------------- Termination ------------- -- -------------   終端   -------------
+12000 [Common items] Name -- 【アイテム共通】 名前
+12001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+12002 [Armor] AP -- 【防具】AP
+12003 [ARM] KE-resistant armor -- 【ARM】耐KE装甲
+12004 [ARM] Anti-TE armor -- 【ARM】耐TE装甲
+12005 [ARM] CE-resistant armor -- 【ARM】耐CE装甲
+12006 ----
+12007 [ARM] Arm loading capacity -- 【ARM】腕部積載許容量
+12008 [ARM] Recoil control -- 【ARM】反動制御
+12009 [ARM] Shooting movement performance -- 【ARM】射撃運動性能
+12010 [ARM] Suitable for fighting -- 【ARM】格闘適正
+12011 ----
+12012 ----
+12013 ----
+12014 ----
+12015 ----
+12016 ----
+12017 ----
+12018 ----
+12019 ----
+12020 ----
+12021 ----
+12022 ----
+12023 ----
+12024 ----
+12025 ----
+12026 [Common items] Weight -- 【アイテム共通】 重量
+12027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+12028 [Common items] Description -- 【アイテム共通】 説明
+12029 [Common items] Description -- 【アイテム共通】 説明
+12030 [Armor] AP -- 【防具】AP
+12031 [ARM] Arm loading capacity -- 【ARM】腕部積載許容量
+12032 [ARM] Shooting movement performance -- 【ARM】射撃運動性能
+12033 [Common items] Weight -- 【アイテム共通】 重量
+12034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+12035 ----
+12036 ----
+12037 ----
+12038 ----
+12039 ----
+12040 ------------- Termination ------------- -- -------------   終端   -------------
+13000 [Common items] Name -- 【アイテム共通】 名前
+13001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+13002 [Armor] AP -- 【防具】AP
+13003 [Legs] KE-resistant armor -- 【脚部】耐KE装甲
+13004 [Legs] Anti-TE armor -- 【脚部】耐TE装甲
+13005 [Legs] CE-resistant armor -- 【脚部】耐CE装甲
+13006 ----
+13007 [Legs] Stability performance -- 【脚部】安定性能
+13008 [Legs] Leg loading capacity -- 【脚部】脚部積載許容量
+13009 [Legs] Leg movement performance -- 【脚部】脚部運動性能
+13010 [Legs] Jump performance -- 【脚部】ジャンプ性能
+13011 ----
+13012 ----
+13013 ----
+13014 ----
+13015 ----
+13016 ----
+13017 ----
+13018 ----
+13019 ----
+13020 ----
+13021 ----
+13022 ----
+13023 ----
+13024 ----
+13025 ----
+13026 [Common items] Weight -- 【アイテム共通】 重量
+13027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+13028 [Common items] Description -- 【アイテム共通】 説明
+13029 [Common items] Description -- 【アイテム共通】 説明
+13030 [Armor] AP -- 【防具】AP
+13031 [Legs] Stability performance -- 【脚部】安定性能
+13032 [Legs] Leg loading capacity -- 【脚部】脚部積載許容量
+13033 [Common items] Weight -- 【アイテム共通】 重量
+13034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+13035 ----
+13036 ----
+13037 ----
+13038 ----
+13039 ----
+13040 ------------- Termination ------------- -- -------------   終端   -------------
+13100 [Common items] Name -- 【アイテム共通】 名前
+13101 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+13102 [Armor] AP -- 【防具】AP
+13103 [Legs] KE-resistant armor -- 【脚部】耐KE装甲
+13104 [Legs] Anti-TE armor -- 【脚部】耐TE装甲
+13105 [Legs] CE-resistant armor -- 【脚部】耐CE装甲
+13106 ----
+13107 [Legs] Stability performance -- 【脚部】安定性能
+13108 [Legs] Leg loading capacity -- 【脚部】脚部積載許容量
+13109 [Legs] Driving performance -- 【脚部】走行性能
+13110 [Legs] High-speed running performance -- 【脚部】高速走行性能
+13111 ----
+13112 [Booster] Cruise thrust (separate text for tanks) -- 【ブースター】巡航推力（タンクは別テキスト）
+13113 [Booster] Ascent thrust -- 【ブースター】上昇推力
+13114 [Booster] Increased consumption EN -- 【ブースター】上昇消費EN
+13115 [Booster] QB acceleration performance -- 【ブースター】QB加速性能
+13116 [Booster] QB injection time -- 【ブースター】QB噴射時間
+13117 [Booster] QB consumption EN -- 【ブースター】QB消費EN
+13118 [Booster] QB reload time -- 【ブースター】QBリロードタイム
+13119 [Booster] QB load capacity -- 【ブースター】QB耐荷重性能
+13120 [Booster] Assault boost performance -- 【ブースター】アサルトブースト性能
+13121 [Booster] Assault boost consumption EN -- 【ブースター】アサルトブースト消費EN
+13122 ----
+13123 ----
+13124 ----
+13125 ----
+13126 [Common items] Weight -- 【アイテム共通】 重量
+13127 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+13128 [Common items] Description -- 【アイテム共通】 説明
+13129 [Common items] Description -- 【アイテム共通】 説明
+13130 [Armor] AP -- 【防具】AP
+13131 [Legs] Stability performance -- 【脚部】安定性能
+13132 [Legs] Leg loading capacity -- 【脚部】脚部積載許容量
+13133 [Common items] Weight -- 【アイテム共通】 重量
+13134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+13135 ----
+13136 ----
+13137 ----
+13138 ----
+13139 ----
+13140 ------------- Termination ------------- -- -------------   終端   -------------
+14000 [Common items] Name -- 【アイテム共通】 名前
+14001 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+14002 [Booster] Cruise thrust (separate text for tanks) -- 【ブースター】巡航推力（タンクは別テキスト）
+14003 [Booster] Ascent thrust -- 【ブースター】上昇推力
+14004 [Booster] Increased consumption EN -- 【ブースター】上昇消費EN
+14005 ----
+14006 [Booster] QB acceleration performance -- 【ブースター】QB加速性能
+14007 [Booster] QB injection time -- 【ブースター】QB噴射時間
+14008 [Booster] QB consumption EN -- 【ブースター】QB消費EN
+14009 [Booster] QB load capacity -- 【ブースター】QB耐荷重性能
+14010 ----
+14011 [Booster] QB reload time -- 【ブースター】QBリロードタイム
+14012 [Booster] Assault boost performance -- 【ブースター】アサルトブースト性能
+14013 [Booster] Assault boost consumption EN -- 【ブースター】アサルトブースト消費EN
+14014 ----
+14015 [Booster] Melee attack acceleration performance -- 【ブースター】格闘攻撃加速性能
+14016 [Booster] Melee attack acceleration consumption EN -- 【ブースター】格闘攻撃加速消費EN
+14017 ----
+14018 ----
+14019 ----
+14020 ----
+14021 ----
+14022 ----
+14023 ----
+14024 ----
+14025 ----
+14026 [Common items] Weight -- 【アイテム共通】 重量
+14027 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+14028 [Common items] Description -- 【アイテム共通】 説明
+14029 [Common items] Description -- 【アイテム共通】 説明
+14030 [Booster] Cruise thrust (separate text for tanks) -- 【ブースター】巡航推力（タンクは別テキスト）
+14031 [Booster] Ascent thrust -- 【ブースター】上昇推力
+14032 [Booster] QB acceleration performance -- 【ブースター】QB加速性能
+14033 [Common items] Weight -- 【アイテム共通】 重量
+14034 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+14035 ----
+14036 ----
+14037 ----
+14038 ----
+14039 ----
+14040 ------------- Termination ------------- -- -------------   終端   -------------
+14100 [Common items] Name -- 【アイテム共通】 名前
+14101 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+14102 [FCS] Assist suitable short distance -- 【FCS】アシスト適正近距離
+14103 [FCS] Suitable assist medium distance -- 【FCS】アシスト適正中距離
+14104 [FCS] Assist suitable long distance -- 【FCS】アシスト適正遠距離
+14105 ----
+14106 [FCS] Missile lock performance -- 【FCS】ミサイルロック性能
+14107 [FCS] Multi-lock suitable -- 【FCS】マルチロック適正
+14108 ----
+14109 ----
+14110 ----
+14111 ----
+14112 ----
+14113 ----
+14114 ----
+14115 ----
+14116 ----
+14117 ----
+14118 ----
+14119 ----
+14120 ----
+14121 ----
+14122 ----
+14123 ----
+14124 ----
+14125 ----
+14126 [Common items] Weight -- 【アイテム共通】 重量
+14127 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+14128 [Common items] Description -- 【アイテム共通】 説明
+14129 [Common items] Description -- 【アイテム共通】 説明
+14130 [FCS] Assist suitable short distance -- 【FCS】アシスト適正近距離
+14131 [FCS] Suitable assist medium distance -- 【FCS】アシスト適正中距離
+14132 [FCS] Assist suitable long distance -- 【FCS】アシスト適正遠距離
+14133 [Common items] Weight -- 【アイテム共通】 重量
+14134 [Common items] Consumption EN -- 【アイテム共通】 消費EN
+14135 ----
+14136 ----
+14137 ----
+14138 ----
+14139 ----
+14140 ------------- Termination ------------- -- -------------   終端   -------------
+14200 [Common items] Name -- 【アイテム共通】 名前
+14201 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+14202 [GENE] Capacitor capacity -- 【GENE】コンデンサ容量
+14203 [GENE] Cooling performance -- 【GENE】冷却性能
+14204 [GENE] Emergency cooling performance -- 【GENE】緊急冷却性能
+14205 [GENE] Emergency EN recovery rate -- 【GENE】緊急時EN回復割合
+14206 [GENE] EN weapon suitability -- 【GENE】EN武器適正
+14207 ----
+14208 ----
+14209 ----
+14210 ----
+14211 ----
+14212 ----
+14213 ----
+14214 ----
+14215 ----
+14216 ----
+14217 ----
+14218 ----
+14219 ----
+14220 ----
+14221 ----
+14222 ----
+14223 ----
+14224 ----
+14225 ----
+14226 [Common items] Weight -- 【アイテム共通】 重量
+14227 [Common items] EN output -- 【アイテム共通】 EN出力
+14228 [Common items] Description -- 【アイテム共通】 説明
+14229 [Common items] Description -- 【アイテム共通】 説明
+14230 [GENE] Capacitor capacity -- 【GENE】コンデンサ容量
+14231 [GENE] Cooling performance -- 【GENE】冷却性能
+14232 [GENE] Emergency cooling performance -- 【GENE】緊急冷却性能
+14233 [Common items] Weight -- 【アイテム共通】 重量
+14234 [Common items] EN output -- 【アイテム共通】 EN出力
+14235 ----
+14236 ----
+14237 ----
+14238 ----
+14239 ----
+14240 ------------- Termination ------------- -- -------------   終端   -------------
+14300 [Common items] Name -- 【アイテム共通】 名前
+14301 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+14302 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+14303 [Weapon] Impact value -- 【武器】衝撃値
+14304 [Weapon] Residual impact -- 【武器】残留衝撃
+14305 [Weapon] Explosion range -- 【武器】爆発範囲
+14306 [Assault Drive] Effect range -- 【アサルトドライヴ】効果範囲
+14307 ----
+14308 [Weapon] Critical suitability -- 【武器】クリティカル適正
+14309 ----
+14310 ----
+14311 ----
+14312 ----
+14313 ----
+14314 ----
+14315 ----
+14316 ----
+14317 ----
+14318 ----
+14319 ----
+14320 ----
+14321 ----
+14322 ----
+14323 ----
+14324 ----
+14325 ----
+14326 ----
+14327 ----
+14328 [Common items] Description -- 【アイテム共通】 説明
+14329 [Common items] Description -- 【アイテム共通】 説明
+14330 [Shooting attack] Attack performance -- 【射撃攻撃】攻撃性能
+14331 [Weapon] Impact value -- 【武器】衝撃値
+14332 [Weapon] Explosion range -- 【武器】爆発範囲
+14333 ----
+14334 ----
+14335 ----
+14336 ----
+14337 ----
+14338 ----
+14339 ----
+14340 ------------- Termination ------------- -- -------------   終端   -------------
+14400 [Common items] Name -- 【アイテム共通】 名前
+14401 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+14402 [Assault Drive] Durability -- 【アサルトドライヴ】耐久性能
+14403 [Assault Drive] Maintenance time -- 【アサルトドライヴ】維持時間
+14404 ----
+14405 ----
+14406 ----
+14407 ----
+14408 ----
+14409 ----
+14410 ----
+14411 ----
+14412 ----
+14413 ----
+14414 ----
+14415 ----
+14416 ----
+14417 ----
+14418 ----
+14419 ----
+14420 ----
+14421 ----
+14422 ----
+14423 ----
+14424 ----
+14425 ----
+14426 ----
+14427 ----
+14428 [Common items] Description -- 【アイテム共通】 説明
+14429 [Common items] Description -- 【アイテム共通】 説明
+14430 [Assault Drive] Durability -- 【アサルトドライヴ】耐久性能
+14431 [Assault Drive] Maintenance time -- 【アサルトドライヴ】維持時間
+14432 ----
+14433 ----
+14434 ----
+14435 ----
+14436 ----
+14437 ----
+14438 ----
+14439 ----
+14440 ------------- Termination ------------- -- -------------   終端   -------------
+14500 [Common items] Name -- 【アイテム共通】 名前
+14501 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+14502 [Assault Drive] Durability -- 【アサルトドライヴ】耐久性能
+14503 [Assault Drive] Maintenance time -- 【アサルトドライヴ】維持時間
+14504 ----
+14505 ----
+14506 ----
+14507 ----
+14508 ----
+14509 ----
+14510 ----
+14511 ----
+14512 ----
+14513 ----
+14514 ----
+14515 ----
+14516 ----
+14517 ----
+14518 ----
+14519 ----
+14520 ----
+14521 ----
+14522 ----
+14523 ----
+14524 ----
+14525 ----
+14526 ----
+14527 ----
+14528 [Common items] Description -- 【アイテム共通】 説明
+14529 [Common items] Description -- 【アイテム共通】 説明
+14530 [Assault Drive] Durability -- 【アサルトドライヴ】耐久性能
+14531 [Assault Drive] Maintenance time -- 【アサルトドライヴ】維持時間
+14532 ----
+14533 ----
+14534 ----
+14535 ----
+14536 ----
+14537 ----
+14538 ----
+14539 ----
+14540 ------------- Termination ------------- -- -------------   終端   -------------
+14600 [Common items] Name -- 【アイテム共通】 名前
+14601 [Common items] Category name -- 【アイテム共通】 カテゴリ名
+14602 [Assault Drive] Durability -- 【アサルトドライヴ】耐久性能
+14603 [Assault Drive] Maintenance time -- 【アサルトドライヴ】維持時間
+14604 ----
+14605 ----
+14606 ----
+14607 ----
+14608 ----
+14609 ----
+14610 ----
+14611 ----
+14612 ----
+14613 ----
+14614 ----
+14615 ----
+14616 ----
+14617 ----
+14618 ----
+14619 ----
+14620 ----
+14621 ----
+14622 ----
+14623 ----
+14624 ----
+14625 ----
+14626 ----
+14627 ----
+14628 [Common items] Description -- 【アイテム共通】 説明
+14629 [Common items] Description -- 【アイテム共通】 説明
+14630 [Assault Drive] Durability -- 【アサルトドライヴ】耐久性能
+14631 [Assault Drive] Maintenance time -- 【アサルトドライヴ】維持時間
+14632 ----
+14633 ----
+14634 ----
+14635 ----
+14636 ----
+14637 ----
+14638 ----
+14639 ----
+14640 ------------- Termination ------------- -- -------------   終端   -------------
+15000 [PC] Insufficient EN output -- 【PC】EN出力不足
+15001 [PC] Loading limit exceeded -- 【PC】積載限界超過
+15002 [PC] Arm loading limit exceeded -- 【PC】腕部積載限界超過
+15003 ------------- Termination ------------- -- -------------   終端   -------------
+16000 [PC] Armor total AP -- 【PC】防具総AP
+16001 [Body] Defense performance -- 【本体】防御性能
+16002 [Body] Bullet stability performance -- 【本体】被弾安定性能
+16003 [Body] Speed ​​performance -- 【本体】速度性能
+16004 [PC] Armor total AP -- 【PC】防具総AP
+16005 [Body] Defense performance -- 【本体】防御性能
+16006 [Body] Bullet stability performance -- 【本体】被弾安定性能
+16007 [Body] Speed ​​performance -- 【本体】速度性能
+16008 [PC] Loading status -- 【PC】積載状況
+16009 [PC] EN consumption status -- 【PC】EN消費状況
+16010 [PC] Insufficient EN output -- 【PC】EN出力不足
+16011 [PC] Loading limit exceeded -- 【PC】積載限界超過
+16012 [PC] Arm loading limit exceeded -- 【PC】腕部積載限界超過
+16013 ------------- Termination ------------- -- -------------   終端   -------------
+17000 [Body] AP -- 【本体】AP
+17001 [Body] KE-resistant armor -- 【本体】耐KE装甲
+17002 [Body] TE-resistant armor -- 【本体】耐TE装甲
+17003 [Body] CE-resistant armor -- 【本体】耐CE装甲
+17004 [Body] Bullet stability performance -- 【本体】被弾安定性能
+17005 [Body] Stable recovery correction -- 【本体】安定回復補正
+17006 ----
+17007 [Body] Lock-on performance -- 【本体】ロックオン性能
+17008 ----
+17009 [Body] Speed ​​performance -- 【本体】速度性能
+17010 [Body] QB speed performance -- 【本体】QB速度性能
+17011 [Body] QB consumption EN -- 【本体】QB消費EN
+17012 [Body] QB reload time -- 【本体】QBリロード時間
+17013 ----
+17014 [Body] EN capacity -- 【本体】EN容量
+17015 [Body] EN recovery performance -- 【本体】EN回復性能
+17016 [Main unit] EN supply delay -- 【本体】EN供給遅延
+17017 ----
+17018 [Body] Total weight -- 【本体】総重量
+17019 ----
+17020 [Body] Total arm loading -- 【本体】腕部積載合計
+17021 [Body] Arm loading limit -- 【本体】腕部積載上限
+17022 [PC] Loading capacity -- 【PC】積載量
+17023 [PC] Maximum loading capacity -- 【PC】最大積載量
+17024 [PC] Total consumption EN -- 【PC】総消費EN
+17025 [PC] EN supply -- 【PC】EN供給
+17026 ----
+17027 [PC] Loading status -- 【PC】積載状況
+17028 [PC] Arm loading status -- 【PC】腕部積載状況
+17029 [PC] EN consumption status -- 【PC】EN消費状況
+17030 [PC] Insufficient EN output -- 【PC】EN出力不足
+17031 [PC] Loading limit exceeded -- 【PC】積載限界超過
+17032 [PC] Arm loading limit exceeded -- 【PC】腕部積載限界超過
+17033 ------------- Termination ------------- -- -------------   終端   -------------
+18000 [Aircraft configuration] EXPANSION parts name -- 【機体構成】EXPANSION パーツ名
+18001 [Aircraft configuration] R-ARM UNIT parts name -- 【機体構成】R-ARM UNIT パーツ名
+18002 [Aircraft configuration] L-ARM UNIT parts name -- 【機体構成】L-ARM UNIT パーツ名
+18003 [Aircraft configuration] R-BACK UNIT parts name -- 【機体構成】R-BACK UNIT パーツ名
+18004 [Aircraft configuration] L-BACK UNIT parts name -- 【機体構成】L-BACK UNIT パーツ名
+18005 [Aircraft configuration] HEAD part name -- 【機体構成】HEAD パーツ名
+18006 [Aircraft configuration] CORE parts name -- 【機体構成】CORE パーツ名
+18007 [Aircraft configuration] ARMS parts name -- 【機体構成】ARMS パーツ名
+18008 [Aircraft configuration] LEGS parts name -- 【機体構成】LEGS パーツ名
+18009 [Aircraft configuration] BOOSTER parts name -- 【機体構成】BOOSTER パーツ名
+18010 [Aircraft configuration] FCS parts name -- 【機体構成】FCS パーツ名
+18011 [Aircraft configuration] GENERATOR parts name -- 【機体構成】GENERATOR パーツ名
+18012 ----
+18013 ----
+18014 ----
+18015 ----
+18016 [Body] Total weight -- 【本体】総重量
+18017 [Body] Arm loading limit -- 【本体】腕部積載上限
+18018 [Main body] Maximum load on arm -- 【本体】腕部最大積載
+18019 [PC] Loading capacity -- 【PC】積載量
+18020 [PC] Maximum loading capacity -- 【PC】最大積載量
+18021 [PC] Total consumption EN -- 【PC】総消費EN
+18022 [PC] EN supply -- 【PC】EN供給
+18023 [PC] Loading status -- 【PC】積載状況
+18024 [PC] Arm loading status -- 【PC】腕部積載状況
+18025 [PC] EN consumption status -- 【PC】EN消費状況
+18026 [PC] Insufficient EN output -- 【PC】EN出力不足
+18027 [PC] Loading limit exceeded -- 【PC】積載限界超過
+18028 [PC] Arm loading limit exceeded -- 【PC】腕部積載限界超過
+18029 ------------- Termination ------------- -- -------------   終端   -------------
+20100 [PC Basics] Owned Souls -- 【PC基本】 所持ソウル
+20101 [Common items] Required soul -- 【アイテム共通】 必要ソウル
+20102 [PC] AC name -- 【PC】AC名
+20103 ------------- Termination ------------- -- -------------   終端   -------------
+20200 [PC Basics] Owned Souls -- 【PC基本】 所持ソウル
+20201 [Common items] Obtained soul -- 【アイテム共通】 獲得ソウル
+20202 [PC] AC name -- 【PC】AC名
+20203 ------------- Termination ------------- -- -------------   終端   -------------
+20300 ----
+20301 ----
+20302 [PC] AC name -- 【PC】AC名
+20303 ------------- Termination ------------- -- -------------   終端   -------------
+20400 [PC] Owned arena points -- 【PC】所持アリーナポイント
+20401 [Name plate] Required points -- 【ネームプレート】必要ポイント
+20402 ------------- Termination ------------- -- -------------   終端   -------------
+30000 [Tuning] Short-range lock suitable -- 【チューニング】近距離ロック適正
+30001 [Tuning] Long distance lock suitable -- 【チューニング】遠距離ロック適正
+30002 [Tuning] Missile lock appropriate -- 【チューニング】ミサイルロック適正
+30003 [Tuning] EN attack output -- 【チューニング】EN攻撃出力
+30004 [Tuning] Armor performance -- 【チューニング】装甲性能
+30005 [Tuning] EN capacity -- 【チューニング】EN容量
+30006 [Tuning] Stealth suitable -- 【チューニング】ステルス適正
+30007 [Tuning] Loading -- 【チューニング】積載
+30008 ------------- Termination ------------- -- -------------   終端   -------------
+40000 camera operation -- カメラ操作
+40001 [Photo mode] Viewing angle -- 【フォトモード】視野角
+40002 [Photo mode] Tilt -- 【フォトモード】傾き
+40003 ------------- Termination ------------- -- -------------   終端   -------------
+40100 lens operation -- レンズ操作
+40103 [Photo mode] Focal length -- 【フォトモード】焦点距離
+40104 [Photo mode] F value -- 【フォトモード】F値
+40106 ------------- Termination ------------- -- -------------   終端   -------------
+40200 color -- カラー
+40201 [Photo mode] Exposure -- 【フォトモード】露出
+40202 [Photo mode] Hue -- 【フォトモード】色相
+40203 [Photo mode] Brightness -- 【フォトモード】明度
+40204 [Photo mode] Saturation -- 【フォトモード】彩度
+40205 [Photo mode] Contrast -- 【フォトモード】コントラスト
+40206 ------------- Termination ------------- -- -------------   終端   -------------
+40300 filter -- フィルター
+40301 [Photo Mode] Color Shift R -- 【フォトモード】カラーシフトR
+40302 [Photo mode] Color shift G -- 【フォトモード】カラーシフトG
+40303 [Photo mode] Color shift B -- 【フォトモード】カラーシフトB
+40304 ------------- Termination ------------- -- -------------   終端   -------------
+40400 luminescence -- 発光
+40401 [Photo mode] Luminous level -- 【フォトモード】発光レベル
+40402 [Photo mode] Smoothness of blur -- 【フォトモード】ぼかしの滑らかさ
+40403 [Photo mode] Degree of combination of light emission -- 【フォトモード】発光の合成度合い
+40404 ------------- Termination ------------- -- -------------   終端   -------------
+40500 blur -- ブラー
+40501 [Photo mode] Blur -- 【フォトモード】ブラー
+40502 [Photo mode] Strength -- 【フォトモード】強度
+40503 [Photo mode] Blur range -- 【フォトモード】ぼかしの範囲
+40504 [Photo mode] Camera blur horizontal direction -- 【フォトモード】カメラブラー水平方向
+40505 [Photo mode] Camera blur vertical direction -- 【フォトモード】カメラブラー垂直方向
+40506 [Photo mode] Camera blur depth direction -- 【フォトモード】カメラブラー奥行方向
+40507 ------------- Termination ------------- -- -------------   終端   -------------
+40600 glare/bloom -- グレア / ブルーム
+40601 [Photo mode] Bloom: Brightness -- 【フォトモード】ブルーム：明るさ
+40602 [Photo mode] Bloom: Threshold -- 【フォトモード】ブルーム：閾値
+40603 [Photo mode] Bloom: Saturation -- 【フォトモード】ブルーム：彩度
+40604 [Photo Mode] Bloom: Smoothness -- 【フォトモード】ブルーム：滑らかさ
+40605 ------------- Termination ------------- -- -------------   終端   -------------
+50000 [PC Basics] Owned Souls -- 【PC基本】 所持ソウル
+50001 [PC] Owned OS enhancement points -- 【PC】所持OS強化ポイント
+50002 [PC] AC name -- 【PC】AC名
+50003 ------------- Termination ------------- -- -------------   終端   -------------
+70000 MERCENARY LICENSE
+70001 [PC Basics] Name -- 【PC基本】 名前
+70002 EMBLEM
+70003 EMBLEM
+70004 [PC] Play time -- 【PC】プレイ時間
+70005 EMBLEM
+70006 [PC] Mercenary rank -- 【PC】傭兵ランク
+70007 [PC] Arena rank -- 【PC】アリーナランク
+70008 ------------- Termination ------------- -- -------------   終端   -------------
+78000 [Arena] Opponent: Rank -- 【アリーナ】相手：ランク
+78001 [Arena] Opponent: Pilot name (for menu) -- 【アリーナ】相手：パイロット名(メニュー用)
+78002 [Arena] Opponent: Machine name (for menu) -- 【アリーナ】相手：機体名(メニュー用)
+78003 [Arena] Opponent: Profile -- 【アリーナ】相手：プロフィール
+78004 [Arena] Amount earned -- 【アリーナ】獲得金額
+78005 [Arena] Obtained OS enhancement points -- 【アリーナ】獲得OS強化ポイント
+78006 ------------- Termination ------------- -- -------------   終端   -------------
+79000 [Arena] Opponent: Rank -- 【アリーナ】相手：ランク
+79001 [Arena] Opponent: Pilot name (for menu) -- 【アリーナ】相手：パイロット名(メニュー用)
+79003 [Arena] Opponent: Machine name (for menu) -- 【アリーナ】相手：機体名(メニュー用)
+79004 [Arena] Opponent: Profile -- 【アリーナ】相手：プロフィール
+79005 [Arena] Amount earned -- 【アリーナ】獲得金額
+79006 [Arena] Obtained OS enhancement points -- 【アリーナ】獲得OS強化ポイント
+79007 [PC] AC name -- 【PC】AC名
+79008 ------------- Termination ------------- -- -------------   終端   -------------
+79100 [Arena] Opponent: Rank -- 【アリーナ】相手：ランク
+79101 [Arena] Opponent: Pilot name (for FE) -- 【アリーナ】相手：パイロット名(FE用)
+79102 [Arena] Opponent: Machine name (for FE) -- 【アリーナ】相手：機体名(FE用)
+79103 [Arena] Opponent: Profile -- 【アリーナ】相手：プロフィール
+79104 [Arena] Amount earned -- 【アリーナ】獲得金額
+79105 [Arena] Obtained OS enhancement points -- 【アリーナ】獲得OS強化ポイント
+79106 [Arena] Opponent: Pilot name (for FE) -- 【アリーナ】相手：パイロット名(FE用)
+79107 [Arena] Opponent: Machine name (for FE) -- 【アリーナ】相手：機体名(FE用)
+79108 ------------- Termination ------------- -- -------------   終端   -------------
+79900 [Arena] Opponent: Rank -- 【アリーナ】相手：ランク
+79901 [Arena] Opponent: Pilot name (for menu) -- 【アリーナ】相手：パイロット名(メニュー用)
+79902 [Arena] Opponent: Machine name (for menu) -- 【アリーナ】相手：機体名(メニュー用)
+79903 [Arena] Result: Battle time -- 【アリーナ】リザルト：対戦時間
+79904 [Arena] Result: Reward amount -- 【アリーナ】リザルト：報酬額
+79905 ------------- Termination ------------- -- -------------   終端   -------------
+80000 [Result] Balance: Total -- 【リザルト】収支：合計
+80001 [Result] Income: Total -- 【リザルト】収入：合計
+80002 [Result] Income: Basic compensation -- 【リザルト】収入：基本報酬
+80003 [Result] Income: Special addition total -- 【リザルト】収入：特別加算合計
+80005 [Result] Cost: Total -- 【リザルト】費用：合計
+80006 [Result] Cost: Repair cost -- 【リザルト】費用：修理費
+80007 [Result] Cost: Ammunition cost -- 【リザルト】費用：弾薬費
+80008 [Result] Income: Special subtraction total -- 【リザルト】収入：特別減算合計
+80009 ------------- Termination ------------- -- -------------   終端   -------------
+90000 [Image] Creation date and time -- 【イメージ】作成日時
+90001 [Image] UgcID -- 【イメージ】UgcID
+90002 [Image] Number of pieces used -- 【イメージ】使用ピース数
+90003 ------------- Termination ------------- -- -------------   終端   -------------
+100000 position -- 位置
+100000 [Decal] Image position: X -- 【デカール】画像位置：X
+100001 [Decal] Image position: Y -- 【デカール】画像位置：Y
+100000 size -- サイズ
+100002 [Decal] Image size: X -- 【デカール】画像サイズ：X
+100003 [Decal] Image size: Y -- 【デカール】画像サイズ：Y
+100004 [Decal] Image angle: Z -- 【デカール】画像角度：Z
+100005 [Decal] Image reversal: left and right -- 【デカール】画像反転：左右
+100006 ------------- Termination ------------- -- -------------   終端   -------------
+100100 position -- 位置
+100101 [Decal] Base position: X -- 【デカール】基点位置：X
+100102 [Decal] Base position: Y -- 【デカール】基点位置：Y
+100102 [Decal] Base position: Z -- 【デカール】基点位置：Z
+100103 angle -- 角度
+100104 [Decal] Base angle: X -- 【デカール】基点角度：X
+100105 [Decal] Base angle: Y -- 【デカール】基点角度：Y
+100106 ------------- Termination ------------- -- -------------   終端   -------------
+100200 [Decal] Target for pasting -- 【デカール】貼付対象
+100201 [Decal] Pasting limit distance -- 【デカール】貼付限界距離
+100202 Orientation correction -- 向き補正
+100203 [Decal] Pasting direction correction: X -- 【デカール】貼付向き補正：X
+100204 [Decal] Pasting direction correction: Y -- 【デカール】貼付向き補正：Y
+100205 ------------- Termination ------------- -- -------------   終端   -------------
+100300 [Decal] Number of images used -- 【デカール】使用イメージ数
+100301 ------------- Termination ------------- -- -------------   終端   -------------
+110000 [PC] Owned OS enhancement points -- 【PC】所持OS強化ポイント
+110001 [PC Basics] Owned Souls -- 【PC基本】 所持ソウル
+110002 ------------- Termination ------------- -- -------------   終端   -------------
+111100 SYSTEM UNLOCK
+111101 [OS enhancement] Kick ban lifted -- 【OS強化】キック解禁
+111102 [OS enhancement] Weapon hanger released -- 【OS強化】武器ハンガー解禁
+111103 [OS enhancement] Overloaded sortie + manual purge lifted -- 【OS強化】 積載超過出撃＋手動パージ解禁
+111104 [OS enhancement] Free aim lifted -- 【OS強化】フリーエイム解禁
+111105 [OS enhancement] Quick turn unlocked -- 【OS強化】クイックターン解禁
+111106 ------------- Termination ------------- -- -------------   終端   -------------
+111200 CORE EXPANSION
+111201 [OS Enhancement] Assault Armor -- 【OS強化】アサルトアーマー
+111202 [OS enhancement] Installation barrier -- 【OS強化】設置バリア
+111203 [OS Enhancement] Follow Barrier -- 【OS強化】追従バリア
+111204 [OS Enhancement] Emergency Barrier -- 【OS強化】緊急バリア
+111205 ------------- Termination ------------- -- -------------   終端   -------------
+111300 ATTACK CONTROL
+111301 [OS enhancement] Live ammunition enhancement -- 【OS強化】実弾強化
+111302 [OS enhancement] Explosive bullet enhancement -- 【OS強化】爆発弾強化
+111303 [OS enhancement] EN bullet enhancement -- 【OS強化】EN弾強化
+111304 [OS Enhancement] Fighting Enhancement -- 【OS強化】格闘強化
+111305 [OS Enhancement] Critical Enhancement -- 【OS強化】クリティカル強化
+111306 [OS enhancement] Hacking performance enhancement -- 【OS強化】ハッキング性能強化
+111307 ------------- Termination ------------- -- -------------   終端   -------------
+111400 DAMAGE CONTROL
+111401 [OS Enhancement] All attribute damage reduction -- 【OS強化】全属性ダメージ軽減
+111402 [OS enhancement] Increased recovery amount -- 【OS強化】回復量増加
+111403 ------------- Termination ------------- -- -------------   終端   -------------
+111500 ALL
+111501 ------------- Termination ------------- -- -------------   終端   -------------
+200000 [Room settings] Number of people -- 【ルーム設定】人数
+200001 [Room Settings] Battle Rules -- 【ルーム設定】対戦ルール
+200002 [Room Settings] Time limit -- 【ルーム設定】制限時間
+200003 [Room Settings] Map -- 【ルーム設定】マップ
+200004 [Room Settings] Team participation method -- 【ルーム設定】チーム参加方式
+200005 [Room settings] Publication method -- 【ルーム設定】公開方式
+200006 [Room Settings] Keyword -- 【ルーム設定】キーワード
+200007 ------------- Termination ------------- -- -------------   終端   -------------
+201000 [Room settings] Number of people -- 【ルーム設定】人数
+201001 [Room Settings] Battle Rules -- 【ルーム設定】対戦ルール
+201002 [Room Settings] Time limit -- 【ルーム設定】制限時間
+201003 [Room Settings] Map -- 【ルーム設定】マップ
+201004 [Room Settings] Team participation method -- 【ルーム設定】チーム参加方式
+201006 [Room Settings] Keyword -- 【ルーム設定】キーワード
+201007 ------------- Termination ------------- -- -------------   終端   -------------
+201100 [Room Settings] Keyword -- 【ルーム設定】キーワード
+201101 [Room Settings] Battle Rules -- 【ルーム設定】対戦ルール
+201102 [Room Settings] Map -- 【ルーム設定】マップ
+201103 [Room Settings] Time limit -- 【ルーム設定】制限時間
+201104 [Room settings] Number of people -- 【ルーム設定】人数
+201105 [Room search results] Host ID/Keyword -- 【ルーム検索結果】ホストID/キーワード
+201105 [Room Settings] Team participation method -- 【ルーム設定】チーム参加方式
+201106 [Room Settings] Battle Rules -- 【ルーム設定】対戦ルール
+201107 [Room Settings] Map -- 【ルーム設定】マップ
+201108 [Room Settings] Time limit -- 【ルーム設定】制限時間
+201109 [Room search results] Current number of people in the room -- 【ルーム検索結果】ルーム現在人数
+201109 [Room settings] Number of people -- 【ルーム設定】人数
+201110 ------------- Termination ------------- -- -------------   終端   -------------
+201200 [Room Settings] Battle Rules -- 【ルーム設定】対戦ルール
+201201 [Room Settings] Time limit -- 【ルーム設定】制限時間
+201202 [Room Settings] Team participation method -- 【ルーム設定】チーム参加方式
+201203 [Room Settings] Map -- 【ルーム設定】マップ
+201204 ------------- Termination ------------- -- -------------   終端   -------------
+201300 [Aircraft] AC NAME -- 【機体】AC NAME
+201301 [Aircraft configuration] R-ARM UNIT parts name -- 【機体構成】R-ARM UNIT パーツ名
+201302 [Aircraft configuration] L-ARM UNIT parts name -- 【機体構成】L-ARM UNIT パーツ名
+201303 [Aircraft configuration] R-BACK UNIT parts name -- 【機体構成】R-BACK UNIT パーツ名
+201304 [Aircraft configuration] L-BACK UNIT parts name -- 【機体構成】L-BACK UNIT パーツ名
+201305 [Aircraft configuration] HEAD part name -- 【機体構成】HEAD パーツ名
+201306 [Aircraft configuration] CORE parts name -- 【機体構成】CORE パーツ名
+201307 [Aircraft configuration] ARMS parts name -- 【機体構成】ARMS パーツ名
+201308 [Aircraft configuration] LEGS parts name -- 【機体構成】LEGS パーツ名
+201309 [Aircraft configuration] BOOSTER parts name -- 【機体構成】BOOSTER パーツ名
+201310 [Aircraft configuration] FCS parts name -- 【機体構成】FCS パーツ名
+201311 [Aircraft configuration] GENERATOR parts name -- 【機体構成】GENERATOR パーツ名
+201312 [Aircraft configuration] EXPANSION parts name -- 【機体構成】EXPANSION パーツ名
+201313 ------------- Termination ------------- -- -------------   終端   -------------
+201900 [Room Settings] Time limit -- 【ルーム設定】制限時間
+201901 [Room Settings] Map -- 【ルーム設定】マップ
+201902 [Room Settings] Team participation method -- 【ルーム設定】チーム参加方式
+201903 ------------- Termination ------------- -- -------------   終端   -------------
+202000 [Battle history] Battle mode -- 【対戦履歴】対戦モード
+202001 [Battle history] Battle rules -- 【対戦履歴】対戦ルール
+202002 [Match history] Match date and time -- 【対戦履歴】対戦日時
+202003 [Room Settings] Map -- 【ルーム設定】マップ
+202004 ------------- Termination ------------- -- -------------   終端   -------------
+203000 [Battle history] Battle mode -- 【対戦履歴】対戦モード
+203001 [Battle history] Battle rules -- 【対戦履歴】対戦ルール
+203002 [Match history] Match date and time -- 【対戦履歴】対戦日時
+203003 [Room Settings] Map -- 【ルーム設定】マップ
+203004 ------------- Termination ------------- -- -------------   終端   -------------

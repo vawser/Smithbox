@@ -108,6 +108,48 @@ public class ToolSubMenu
             // Import
             if (ImGui.BeginMenu("Import Row Names"))
             {
+                if (Smithbox.ProjectType is ProjectType.BB or ProjectType.AC6)
+                {
+                    if (ImGui.BeginMenu("Developer"))
+                    {
+                        if (ImGui.MenuItem("Selected Rows"))
+                        {
+                            if (Screen._activeView._selection.RowSelectionExists())
+                            {
+                                Handler.CurrentSourceCategory = SourceType.Developer;
+                                Handler.CurrentTargetCategory = TargetType.SelectedRows;
+                                Handler.ImportRowNameHandler();
+                            }
+                        }
+                        UIHelper.ShowHoverTooltip("Import names for the specific rows currently selected.");
+
+                        if (ImGui.MenuItem("Selected Param"))
+                        {
+                            if (Screen._activeView._selection.RowSelectionExists())
+                            {
+                                Handler.CurrentSourceCategory = SourceType.Developer;
+                                Handler.CurrentTargetCategory = TargetType.SelectedParam;
+                                Handler.ImportRowNameHandler();
+                            }
+                        }
+                        UIHelper.ShowHoverTooltip("Import names for the specific param currently selected.");
+
+                        if (ImGui.MenuItem("All Params"))
+                        {
+                            if (Screen._activeView._selection.RowSelectionExists())
+                            {
+                                Handler.CurrentSourceCategory = SourceType.Developer;
+                                Handler.CurrentTargetCategory = TargetType.AllParams;
+                                Handler.ImportRowNameHandler();
+                            }
+                        }
+                        UIHelper.ShowHoverTooltip("Import names for all params.");
+
+                        ImGui.EndMenu();
+                    }
+                    UIHelper.ShowHoverTooltip("Draw row names from the in-built Developer name lists. These are the Japanese and machine-translated english row names supplied with leaked paramdefs.");
+                }
+
                 if (ImGui.BeginMenu("Smithbox"))
                 {
                     if (ImGui.MenuItem("Selected Rows"))
@@ -119,7 +161,7 @@ public class ToolSubMenu
                             Handler.ImportRowNameHandler();
                         }
                     }
-                    UIHelper.ShowHoverTooltip("Import names for the specific rows currently selected.");
+                    UIHelper.ShowHoverTooltip("Import row names for the specific rows currently selected.");
 
                     if (ImGui.MenuItem("Selected Param"))
                     {
@@ -145,7 +187,7 @@ public class ToolSubMenu
 
                     ImGui.EndMenu();
                 }
-                UIHelper.ShowHoverTooltip("Draw names from the in-built Smithbox name lists.");
+                UIHelper.ShowHoverTooltip("Draw names from the in-built Smithbox name lists. These are curated row names maintained by Smithbox.");
 
                 if (ImGui.BeginMenu("Project"))
                 {
@@ -184,7 +226,7 @@ public class ToolSubMenu
 
                     ImGui.EndMenu();
                 }
-                UIHelper.ShowHoverTooltip("Draw names from your Project-specific name lists.");
+                UIHelper.ShowHoverTooltip("Draw names from your Project-specific name lists. These are curated row names you've exported for your project.");
 
                 ImGui.EndMenu();
             }

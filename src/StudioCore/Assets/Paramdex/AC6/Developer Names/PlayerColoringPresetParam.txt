@@ -1,0 +1,6 @@
+0 default -- デフォルト
+1 red -- 赤
+2 blue -- 青
+3 yellow -- 黄
+4 peach -- 桃
+5 green -- 緑

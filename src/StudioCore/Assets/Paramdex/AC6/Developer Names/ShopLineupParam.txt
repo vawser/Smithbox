@@ -1,0 +1,248 @@
+1 Shouldn't be erased -- 消すべからず
+1000 [Bay Ram] Bay Ram_HEAD_Full Set -- [ベイラム]ベイラム_HEAD_フルセット
+1010 [Bay Ram] Bay Ram_HEAD_Head A -- [ベイラム]ベイラム_HEAD_頭A
+1020 [Heavy Crest] Heavy Crest_HEAD_Full Set -- [重クレスト]重クレスト_HEAD_フルセット
+1030 [Ray Leonard] Ray Leonard_HEAD_Full set -- [レイレナード]レイレナード_HEAD_フルセット
+1040 [Ray Leonard] Ray Leonard_HEAD_Head A -- [レイレナード]レイレナード_HEAD_頭A
+1050 [Mirage] Mirage_HEAD_Full set -- [ミラージュ]ミラージュ_HEAD_フルセット
+1060 [Mirage] Mirage_HEAD_Head A -- [ミラージュ]ミラージュ_HEAD_頭A
+1070 [Label] Label_HEAD_Full set -- [ラベール]ラベール_HEAD_フルセット
+1080 [Label] Label_HEAD_Head A -- [ラベール]ラベール_HEAD_頭A
+1090 [Iqbal] Iqbal_HEAD_Full set -- [イクバール]イクバール_HEAD_フルセット
+1100 [Iqbal]Iqbal_HEAD_Head A -- [イクバール]イクバール_HEAD_頭A
+1110 [Cuba] Cuba_HEAD_Full set -- [キューバ]キューバ_HEAD_フルセット
+1120 [PBA]JUDO_HEAD_Full set -- [PBA]JUDO_HEAD_フルセット
+1130 [Troll] Troll_HEAD_Full set -- [トロル]トロル_HEAD_フルセット
+1140 [R&D] Scavenger (old)_HEAD_Full set -- [R&D]スカベンジャー(旧)_HEAD_フルセット
+1150 [R&D] Scavenger (new)_HEAD_Head A -- [R&D]スカベンジャー(新)_HEAD_頭A
+1160 [One-off] Kawamori_HEAD_Full set -- [ワンオフ]カワモリ_HEAD_フルセット
+1170 [One-off] Yanase_HEAD_Full set -- [ワンオフ]ヤナセ_HEAD_フルセット
+1180 [PBA] JUDO_HEAD_Full set for jailbreak mission -- 脱獄ミッション用[PBA]JUDO_HEAD_フルセット
+2000 [Bay Ram] Bay Ram_CORE_Full Set -- [ベイラム]ベイラム_CORE_フルセット
+2010 [Heavy Crest] Heavy Crest_CORE_Full Set -- [重クレスト]重クレスト_CORE_フルセット
+2020 [Ray Leonard] Ray Leonard_CORE_Full Set -- [レイレナード]レイレナード_CORE_フルセット
+2030 [Mirage] Mirage_CORE_Full set -- [ミラージュ]ミラージュ_CORE_フルセット
+2040 [Label] Label_CORE_Full set -- [ラベール]ラベール_CORE_フルセット
+2050 [Iqbal] Iqbal_CORE_Full set -- [イクバール]イクバール_CORE_フルセット
+2060 [Cuba] Cuba_CORE_Full set -- [キューバ]キューバ_CORE_フルセット
+2070 [PBA]JUDO_CORE_Full set -- [PBA]JUDO_CORE_フルセット
+2080 [Troll] Troll_CORE_Full set -- [トロル]トロル_CORE_フルセット
+2090 [R&D] Scavenger (old)_CORE_Full set -- [R&D]スカベンジャー(旧)_CORE_フルセット
+2100 [One-off] Kawamori_CORE_Full set -- [ワンオフ]カワモリ_CORE_フルセット
+2110 [One-off] Yanase_CORE_Full set -- [ワンオフ]ヤナセ_CORE_フルセット
+3000 [Bayram] Bayram_ARMS_Full set -- [ベイラム]ベイラム_ARMS_フルセット
+3010 [Heavy Crest] Heavy Crest_ARMS_Full Set -- [重クレスト]重クレスト_ARMS_フルセット
+3020 [Ray Leonard] Ray Leonard_ARMS_Full Set -- [レイレナード]レイレナード_ARMS_フルセット
+3030 [Mirage] Mirage_ARMS_Full set -- [ミラージュ]ミラージュ_ARMS_フルセット
+3040 [Mirage] Mirage_ARMS_Arm A -- [ミラージュ]ミラージュ_ARMS_腕A
+3050 [Label] Label_ARMS_Full set -- [ラベール]ラベール_ARMS_フルセット
+3060 [Iqbal] Iqbal_ARMS_Full set -- [イクバール]イクバール_ARMS_フルセット
+3070 [Cuba] Cuba_ARMS_Full set -- [キューバ]キューバ_ARMS_フルセット
+3080 [PBA]JUDO_ARMS_Full set -- [PBA]JUDO_ARMS_フルセット
+3090 [Troll] Troll_ARMS_Full set -- [トロル]トロル_ARMS_フルセット
+3100 [R&D] Scavenger (old)_ARMS_Full set -- [R&D]スカベンジャー(旧)_ARMS_フルセット
+3110 [One-off] Kawamori_ARMS_Full set -- [ワンオフ]カワモリ_ARMS_フルセット
+3120 [One-off] Yanase_ARMS_Full set -- [ワンオフ]ヤナセ_ARMS_フルセット
+4000 [Bay Lamb] Bay Lamb_LEGS_Bipod -- [ベイラム]ベイラム_LEGS_二脚
+4010 [Heavy Crest] Heavy Crest_LEGS_Bipod -- [重クレスト]重クレスト_LEGS_二脚
+4020 [Ray Leonard] Ray Leonard_LEGS_Bipod -- [レイレナード]レイレナード_LEGS_二脚
+4030 [Mirage] Mirage_LEGS_bipod -- [ミラージュ]ミラージュ_LEGS_二脚
+4040 [Label] Labelle_LEGS_Bipod -- [ラベール]ラベール_LEGS_二脚
+4050 [Iqbal]Iqbal_LEGS_bipod -- [イクバール]イクバール_LEGS_二脚
+4060 [Cuba] Cuba_LEGS_bipod -- [キューバ]キューバ_LEGS_二脚
+4070 [PBA]JUDO_LEGS_Bipod -- [PBA]JUDO_LEGS_二脚
+4080 [Troll]Troll_LEGS_Bipod -- [トロル]トロル_LEGS_二脚
+4090 [R&D] Scavenger (old)_LEGS_Bipod -- [R&D]スカベンジャー(旧)_LEGS_二脚
+4100 [One-off] Kawamori_LEGS_bipod -- [ワンオフ]カワモリ_LEGS_二脚
+4110 [One-off] Yanase_LEGS_bipod -- [ワンオフ]ヤナセ_LEGS_二脚
+5000 [Ray Leonard] Ray Leonard_LEGS_Reverse joint -- [レイレナード]レイレナード_LEGS_逆関節
+5010 [Iqbal]Iqbal_LEGS_reverse joint -- [イクバール]イクバール_LEGS_逆関節
+5020 [R&D]Scavenger_LEGS_Reverse joint -- [R&D]スカベンジャー_LEGS_逆関節
+6000 [Mirage] Mirage_LEGS_quadruped -- [ミラージュ]ミラージュ_LEGS_四脚
+7000 [Bay Ram] Bay Ram_LEGS_Tank -- [ベイラム]ベイラム_LEGS_タンク
+7010 [Label] Labelle_LEGS_Tank -- [ラベール]ラベール_LEGS_タンク
+7020 [Cuba] Cuba_LEGS_Tank -- [キューバ]キューバ_LEGS_タンク
+8000 BS_A_1010 Bayrum Booster -- BS_A_1010 ベイラムブースター
+8010 BS_A_1080 Hekanto Cale Booster -- BS_A_1080 へカントケイルブースター
+8020 BS_A_2010 Heavy Crest Booster -- BS_A_2010 重クレストブースター
+8030 BS_A_3010 Rayleonard Booster -- BS_A_3010 レイレナードブースター
+8040 BS_A_4010 Mirage Booster -- BS_A_4010 ミラージュブースター
+8050 BS_A_5010 Label Booster -- BS_A_5010 ラベールブースター
+8060 BS_A_6010 Iqbal Booster -- BS_A_6010 イクバールブースター
+8070 BS_A_7010 Cuba Booster -- BS_A_7010 キューバブースター
+8080 BS_A_8010 Kawamori Booster -- BS_A_8010 カワモリブースター
+8090 BS_A_8020 Miyatake Booster -- BS_A_8020 ミヤタケブースター
+8100 BS_A_8030 PBA Booster -- BS_A_8030 PBAブースター
+8110 BS_A_8040 ​​Troll Booster -- BS_A_8040 トロルブースター
+8120 BS_A_8050 R&D Booster -- BS_A_8050 R＆Dブースター
+8130 BS_A_8060 Yanase Booster -- BS_A_8060 ヤナセブースター
+9000 1st generation generator -- 第1世代ジェネレータ
+9010 2nd generation generator A-1 -- 第2世代ジェネレータ A-1
+9020 2nd generation generator A-2 -- 第2世代ジェネレータ A-2
+9030 2nd generation generator B-1 -- 第2世代ジェネレータ B-1
+9040 2nd generation generator B-2 -- 第2世代ジェネレータ B-2
+9050 2nd generation generator C -- 第2世代ジェネレータ C
+9060 3rd generation generator 1 -- 第3世代ジェネレータ 1
+9070 3rd generation generator 2 -- 第3世代ジェネレータ 2
+9080 Melange generator 1 -- メランジ系ジェネレータ 1
+9090 Melange generator 2 -- メランジ系ジェネレータ 2
+10000 1st generation FCS -- 第1世代FCS
+10010 2nd generation FCS A-1 -- 第2世代FCS A-1
+10020 2nd generation FCS A-2 -- 第2世代FCS A-2
+10030 2nd generation FCS A-3 -- 第2世代FCS A-3
+10040 2nd generation FCS B-1 -- 第2世代FCS B-1
+10050 2nd generation FCS B-2 -- 第2世代FCS B-2
+10060 3rd generation FCS 1 -- 第3世代FCS 1
+10070 3rd generation FCS 2 -- 第3世代FCS 2
+10080 Melange type FCS 1 -- メランジ系FCS 1
+10090 Melange type FCS 2 -- メランジ系FCS 2
+11000 Semi-auto rifle_n-point burst -- セミオートライフル_n点バースト
+11010 Semi-auto rifle_standard type -- セミオートライフル_標準タイプ
+11020 Semi-auto rifle_ Bullet speed ≒ Emphasis on power -- セミオートライフル_弾速≒威力重視
+11030 Assault rifle_n-point burst -- アサルトライフル_n点バースト
+11040 Assault rifle_standard type -- アサルトライフル_標準タイプ
+11050 Assault rifle_bullet speed ≒ emphasis on power -- アサルトライフル_弾速≒威力重視
+11060 Machine gun_n point burst -- マシンガン_n点バースト
+11070 Machine gun_standard type -- マシンガン_標準タイプ
+11080 Machine gun_Focus on bullet collection performance -- マシンガン_集弾性能重視
+11090 Gatling gun_standard type -- ガトリングガン_標準タイプ
+11100 Bazooka_light but low power -- バズーカ_軽めだが威力-低
+11110 Bazooka_Standard type -- バズーカ_標準タイプ
+11120 Bazooka_heavy but powerful -- バズーカ_重いが威力-大
+11130 Shotgun_Collection performance-low Lucky 13 -- ショットガン_集弾性能-低 ラッキー13
+11140 Shotgun_Standard type -- ショットガン_標準タイプ
+11150 Shotgun_Collection performance-High -- ショットガン_集弾性能-高
+11160 Grenade rifle_standard type -- グレネードライフル_標準タイプ
+11170 Grenade rifle_blast range-large -- グレネードライフル_爆発範囲-大
+11180 Handgun_Zero distance specialized pile driving -- ハンドガン_零距離特化 杭打ち
+11190 Handgun_Standard type 2 shots -- ハンドガン_標準タイプ 2連射
+11200 Handgun_One shot is heavy -- ハンドガン_一発が重い
+11210 Handgun_↑variation (silver edge) -- ハンドガン_↑のバリエーション（シルバーエッジ）
+11220 Throwing gun_2 shots (smoke) -- 投擲銃_2連射（スモーク）
+11230 Throwing gun_standard type (napalm) -- 投擲銃_標準タイプ（ナパーム）
+11240 Throwing gun_large number of magazine bullets (stun mine) -- 投擲銃_マガジン弾数多い（スタン機雷）
+11250 Grenade_Lightweight type -- グレネード_軽量タイプ
+11260 Laser Rifle_CS: Laser Machine Gun -- レーザーライフル_CS：レーザーマシンガン
+11270 Laser rifle_standard type -- レーザーライフル_標準タイプ
+11280 Laser rifle_fast bullet speed, deep charge limit -- レーザーライフル_弾速が速い、チャージ限界が深い
+11290 Plasma rifle_standard type -- プラズマライフル_標準タイプ
+11300 Pulse gun _ High rate of fire performance -- パルスガン_連射性能高い
+11310 Plasma rifle_weight type -- プラズマライフル_重量タイプ
+11320 flamethrower -- 火炎放射
+11330 Degraded uranium bazooka rifle -- 劣化ウランバズーカライフル
+11340 Machine gun for escape mission_Standard type -- 脱出ミッション用マシンガン_標準タイプ
+11350 Shotgun for escape mission_Lucky 13 -- 脱出ミッション用ショットガン_ラッキー13
+11360 Semi-auto rifle_n-point burst -- セミオートライフル_n点バースト
+11370 Semi-auto rifle_standard type -- セミオートライフル_標準タイプ
+11380 Semi-auto rifle_ Bullet speed ≒ Emphasis on power -- セミオートライフル_弾速≒威力重視
+11390 Assault rifle_n-point burst -- アサルトライフル_n点バースト
+11400 Assault rifle_standard type -- アサルトライフル_標準タイプ
+11410 Assault rifle_bullet speed ≒ emphasis on power -- アサルトライフル_弾速≒威力重視
+11420 Machine gun_n point burst -- マシンガン_n点バースト
+11430 Machine gun_standard type -- マシンガン_標準タイプ
+11440 Machine gun_Focus on bullet collection performance -- マシンガン_集弾性能重視
+11450 Gatling gun_standard type -- ガトリングガン_標準タイプ
+11460 Bazooka_light but low power -- バズーカ_軽めだが威力-低
+11470 Bazooka_Standard type -- バズーカ_標準タイプ
+11480 Bazooka_heavy but powerful -- バズーカ_重いが威力-大
+11490 Shotgun_Collection performance-low Lucky 13 -- ショットガン_集弾性能-低 ラッキー13
+11500 Shotgun_Standard type -- ショットガン_標準タイプ
+11510 Shotgun_Collection performance-High -- ショットガン_集弾性能-高
+11520 Grenade rifle_standard type -- グレネードライフル_標準タイプ
+11530 Grenade rifle_blast range-large -- グレネードライフル_爆発範囲-大
+11540 Handgun_Zero distance specialized pile driving -- ハンドガン_零距離特化 杭打ち
+11550 Handgun_Standard type 2 shots -- ハンドガン_標準タイプ 2連射
+11560 Handgun_One shot is heavy -- ハンドガン_一発が重い
+11570 Handgun_↑variation (silver edge) -- ハンドガン_↑のバリエーション（シルバーエッジ）
+11580 Throwing gun_2 shots (smoke) -- 投擲銃_2連射（スモーク）
+11590 Throwing gun_standard type (napalm) -- 投擲銃_標準タイプ（ナパーム）
+11600 Throwing gun_large number of magazine bullets (stun mine) -- 投擲銃_マガジン弾数多い（スタン機雷）
+11610 Grenade_Lightweight type -- グレネード_軽量タイプ
+11620 Laser Rifle_CS: Laser Machine Gun -- レーザーライフル_CS：レーザーマシンガン
+11630 Laser rifle_standard type -- レーザーライフル_標準タイプ
+11640 Laser rifle_fast bullet speed, deep charge limit -- レーザーライフル_弾速が速い、チャージ限界が深い
+11650 Plasma rifle_standard type -- プラズマライフル_標準タイプ
+11660 Pulse gun _ High rate of fire performance -- パルスガン_連射性能高い
+11670 Plasma rifle_weight type -- プラズマライフル_重量タイプ
+11680 flamethrower -- 火炎放射
+11690 Degraded uranium bazooka rifle -- 劣化ウランバズーカライフル
+11700 Bazooka for jailbreak mission_Standard type -- 脱獄ミッション用バズーカ_標準タイプ
+11710 Throwing gun for jailbreak mission_2 shots (smoke) -- 脱獄ミッション用投擲銃_2連射（スモーク）
+11720 Laser Blade_M・AI Unique -- レーザーブレード_M・AI ユニーク
+11730 PA breaker -- PAブレイカー
+11740 plasma broadsword -- プラズマブロードソード
+11750 laser naginata -- レーザー薙刀
+11760 laser dagger -- レーザーダガー
+11770 chainsaw -- チェーンソー
+11780 electromagnetic hammer -- 電磁ハンマー
+11790 exploding pile -- 爆裂パイル
+11800 electromagnetic baton -- 電磁警棒
+11810 [test] Proximity diffusion bullet -- 【test】近接拡散弾
+12000 PA Buckler_High instantaneous output Jasga Shield -- PAバックラー_瞬間出力高い ジャスガシールド
+12010 PA shield_standard type -- PAシールド_標準タイプ
+13000 Plasma missile_standard type -- プラズマミサイル_標準タイプ
+13010 Plasma missile_spread diagonally and wrap -- プラズマミサイル_斜めに広がって包む
+13020 AI missile_multi-stage guidance -- AIミサイル_多段誘導
+13030 twin missiles -- 連装ミサイル
+13040 vertical missile -- 垂直ミサイル
+13050 explosive cable missile -- 爆導索ミサイル
+13060 Back missile_2Way -- 背ミサイル_2Way
+13070 Back missile_fission missile -- 背ミサイル_分裂ミサイル
+13080 Shoulder grenade_lightweight type -- 肩グレネード_軽量タイプ
+13090 Shoulder bazooka_spread -- 肩バズーカ_スプレッド
+13100 Shoulder grenade_explosion range-extra large -- 肩グレネード_爆発範囲-特大
+13110 Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft -- 肩プラズマキャノン_レイレナ機体向け軽量特化
+13120 Shoulder pulse gun_Continuously fire for a long time -- 肩パルスガン_長時間継続して浴びせ続ける
+13130 Anti-worm firearm -- 対ワーム用火器
+13140 Plasma missile_standard type -- プラズマミサイル_標準タイプ
+13150 Plasma missile_spread diagonally and wrap -- プラズマミサイル_斜めに広がって包む
+13160 AI missile_multi-stage guidance -- AIミサイル_多段誘導
+13170 twin missiles -- 連装ミサイル
+13180 vertical missile -- 垂直ミサイル
+13190 depleted uranium missile -- 劣化ウランミサイル
+13200 Back missile_2Way -- 背ミサイル_2Way
+13210 Back missile_fission missile -- 背ミサイル_分裂ミサイル
+13220 Shoulder grenade_lightweight type -- 肩グレネード_軽量タイプ
+13230 [test] Needle missile_typeA -- 【test】ニードルミサイル_typeA
+13240 [test] Needle missile_typeB -- 【test】ニードルミサイル_typeB
+13250 [test] Container missile_typeA -- 【test】コンテナミサイル_typeA
+13260 [test] Container missile_typeB -- 【test】コンテナミサイル_typeB
+13270 [test] Cluster missile_typeA -- 【test】クラスターミサイル_typeA
+13280 [test] Cluster missile_typeB -- 【test】クラスターミサイル_typeB
+13290 [test] Single-shot funnel (live bullet 3-point burst) -- 【test】単発式ファンネル（実弾3点バースト）
+13300 [test] Single-shot funnel (laser) -- 【test】単発式ファンネル（レーザー）
+13310 [test] Stationary shooting weapon (live bullet bazooka) -- 【test】置き射撃武器（実弾バズーカ）
+13320 [test] Stationary shooting weapon (laser) -- 【test】置き射撃武器（レーザー）
+13330 Shoulder bazooka_spread -- 肩バズーカ_スプレッド
+13340 Shoulder grenade_explosion range-extra large -- 肩グレネード_爆発範囲-特大
+13350 Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft -- 肩プラズマキャノン_レイレナ機体向け軽量特化
+13360 Shoulder pulse gun_Continuously fire for a long time -- 肩パルスガン_長時間継続して浴びせ続ける
+13370 Anti-worm firearm -- 対ワーム用火器
+13380 Auxiliary booster_EN silhouette -- 補助ブースター_EN系シルエット
+13390 Auxiliary Booster_M・AI Unique -- 補助ブースター_M・AI ユニーク
+13400 Auxiliary booster_live bullet silhouette -- 補助ブースター_実弾系シルエット
+900000 BS_A_3010 Rayleonard Booster -- BS_A_3010 レイレナードブースター
+900001 BS_A_4010 Mirage Booster -- BS_A_4010 ミラージュブースター
+900002 BS_A_6010 Iqbal Booster -- BS_A_6010 イクバールブースター
+900003 BS_A_8050 R&D Booster -- BS_A_8050 R＆Dブースター
+900004 1st generation FCS -- 第1世代FCS
+900005 2nd generation FCS A-1 -- 第2世代FCS A-1
+900006 1st generation generator -- 第1世代ジェネレータ
+900007 2nd generation generator A-1 -- 第2世代ジェネレータ A-1
+900008 [For Ascentest] Mirage AC_SB(HD)2 -- 【アセンテスト用】ミラージュAC_SB(HD)2
+900009 [For Ascentest] Mirage AC_SB(BD)2 -- 【アセンテスト用】ミラージュAC_SB(BD)2
+900010 [For Ascentest] Mirage AC_SB(AM)2 -- 【アセンテスト用】ミラージュAC_SB(AM)2
+900011 [For Ascentest] Mirage AC_TR(LG)2_M -- 【アセンテスト用】ミラージュAC_TR(LG)2_M
+900012 [For Ascentest] Heavy bullet AC_SB(HD)2 -- 【アセンテスト用】重量実弾AC_SB(HD)2
+900013 [For Ascentest] Heavy bullet AC_SB(BD)2 -- 【アセンテスト用】重量実弾AC_SB(BD)2
+900014 [For Ascentest] Heavy live bullet AC_SB(AM)2 -- 【アセンテスト用】重量実弾AC_SB(AM)2
+900015 [For Ascentest] Heavy bullet AC_TR(LG)2_M -- 【アセンテスト用】重量実弾AC_TR(LG)2_M
+900016 FNR left shoulder_orbit cannon -- FNR　左肩_オービットキャノン
+900017 FNR　Left shoulder_surface control missile -- FNR　左肩_面制圧型ミサイル
+900018 FNR right hand_silencer rifle -- FNR　右手_サイレンサーライフル
+900019 FNR　Both shoulders_Vertical missile (left dummy) -- FNR　両肩_垂直ミサイル(左ダミー)
+900020 FNR left hand_blade -- FNR　左手_ブレード
+900021 FNR left hand_laser whip -- FNR　左手_レーザーウィップ
+900022 FNR left hand_chain hammer (WP_A_9210) -- FNR　左手_チェインハンマー（WP_A_9210）
+900023 FNR left hand pile -- FNR　左手パイル
+900024 80_Nakanishi test shield -- 80_中西テスト用　シールド
