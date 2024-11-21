@@ -64,7 +64,9 @@ public class PropertiesChangedAction : ViewportAction
             var a = (Array)value;
             change.OldValue = a.GetValue(index);
         }
-        else if (value.GetType().IsGenericType && index != -1 && value is IList list)
+        else if (value != null &&
+            value.GetType().IsGenericType && 
+            index != -1 && value is IList list)
         {
             change.OldValue = list[index];
         }
@@ -84,12 +86,15 @@ public class PropertiesChangedAction : ViewportAction
         change.Property = prop;
 
         var value = change.Property.GetValue(ChangedObject);
+
         if (index != -1 && prop.PropertyType.IsArray)
         {
             var a = (Array)value;
             change.OldValue = a.GetValue(index);
         }
-        else if (value.GetType().IsGenericType && index != -1 && value is IList list)
+        else if (value != null &&
+            value.GetType().IsGenericType && 
+            index != -1 && value is IList list)
         {
             change.OldValue = list[index];
         }
@@ -113,14 +118,18 @@ public class PropertiesChangedAction : ViewportAction
         foreach (PropertyChange change in Changes)
         {
             var value = change.Property.GetValue(ChangedObject);
-            var valType = value.GetType();
+
+            Type valType = null;
+                
+            if(value != null)
+                valType = value.GetType();
 
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
                 a.SetValue(change.NewValue, change.ArrayIndex);
             }
-            else if (valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
+            else if (value != null && valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
             {
                 list[change.ArrayIndex] = change.NewValue;
             }
@@ -143,14 +152,18 @@ public class PropertiesChangedAction : ViewportAction
         foreach (PropertyChange change in Changes)
         {
             var value = change.Property.GetValue(ChangedObject);
-            var valType = value.GetType();
+
+            Type valType = null;
+
+            if (value != null)
+                valType = value.GetType();
 
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
                 a.SetValue(change.OldValue, change.ArrayIndex);
             }
-            else if (valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
+            else if (value != null &&  valType != null &&  valType.IsGenericType &&  change.ArrayIndex != -1 &&  value is IList list)
             {
                 list[change.ArrayIndex] = change.OldValue;
             }
@@ -289,14 +302,20 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
                 };
 
                 var value = change.Property.GetValue(propObj);
-                var valType = value.GetType();
+
+                Type valType = null;
+
+                if (value != null)
+                {
+                    valType = value.GetType();
+                }
 
                 if (index != -1 && prop.PropertyType.IsArray)
                 {
                     var a = (Array)value;
                     change.OldValue = a.GetValue(index);
                 }
-                else if (valType != null && valType.IsGenericType && index != -1 && value is IList list)
+                else if (value != null && valType != null && valType.IsGenericType && index != -1 && value is IList list)
                 {
                     change.OldValue = list[index];
                 }
@@ -315,14 +334,20 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
         foreach (PropertyChange change in Changes)
         {
             var value = change.Property.GetValue(change.ChangedObj);
-            var valType = value.GetType();
+
+            Type valType = null;
+
+            if (value != null)
+            {
+                valType = value.GetType();
+            }
 
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
                 a.SetValue(change.NewValue, change.ArrayIndex);
             }
-            else if (valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
+            else if (value != null && valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
             {
                 list[change.ArrayIndex] = change.NewValue;
             }
@@ -354,14 +379,20 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
         foreach (PropertyChange change in Changes)
         {
             var value = change.Property.GetValue(change.ChangedObj);
-            var valType = value.GetType();
+
+            Type valType = null;
+
+            if (value != null)
+            {
+                valType = value.GetType();
+            }
 
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
                 a.SetValue(change.OldValue, change.ArrayIndex);
             }
-            else if (valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
+            else if (value != null && valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
             {
                 list[change.ArrayIndex] = change.OldValue;
             }

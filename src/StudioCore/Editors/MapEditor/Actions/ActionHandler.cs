@@ -96,6 +96,7 @@ public class ActionHandler
     {
         var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
         MsbEntity obj = new(map, newent, etype);
+
         parent ??= map.RootObject;
 
         AddMapObjectsAction act = new(Screen.Universe, map, Screen.RenderScene, new List<MsbEntity> { obj }, true, parent);
