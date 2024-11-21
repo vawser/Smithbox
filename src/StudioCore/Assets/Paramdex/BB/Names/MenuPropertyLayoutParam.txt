@@ -24,7 +24,7 @@
 1102 Inventory: [Weapon] List display _2
 1103 Inventory: [Weapon] List display _3
 1104 Inventory: [Weapon] List display _4
-1105,Inventory: [Weapon] List display _5
+1105 Inventory: [Weapon] List display _5
 1106 Inventory: [Weapon] List display _6 Gem Molecules
 1107 Inventory: [Weapon] List display _6 Gem Denominator
 1108 Inventory: [Weapon] List display _ Termination
@@ -60,7 +60,7 @@
 1300 Inventory: [Weapon] Detailed display _0 Physical ATK
 1301 PhysicalATKAdd
 1302 BluntATKAdd
-1303,ThrustATKAdd
+1303 ThrustATKAdd
 1304 BloodATK
 1305 BloodATKAdd
 1306 ArcaneATK
@@ -116,7 +116,7 @@
 2207 BoltCut
 2208 SlowPoisonRES
 2209 RapidPoisonRES
-2210,FrenzyRES
+2210 FrenzyRES
 2211 Beasthood
 2212 Inventory: [Armor] Normal display _ Termination
 3100 Inventory: [Magic Stone] List display _0 Param_0_Desc
@@ -151,7 +151,7 @@
 5101 Param_0_T
 5102 Param_1
 5103 Inventory: [Holy Grail] List display _ Termination
-5200,Inventory: [Holy Grail] Normal display _0 Item_0
+5200 Inventory: [Holy Grail] Normal display _0 Item_0
 5201 Item_0_TP_Base
 5202 Item_0_TP_Add
 5203 Item_1
@@ -230,7 +230,7 @@
 10007 Item_2
 10008 Item_2_P
 10009 Item_3
-10010,Item_3_P
+10010 Item_3_P
 10011 Item_4
 10012 Item_4_P
 10013 Item_5
@@ -256,7 +256,7 @@
 10107 Item_2
 10108 Item_2_P
 10109 Item_3
-10110,Item_3_P
+10110 Item_3_P
 10111 Item_4
 10112 Item_4_P
 10113 Item_5
@@ -282,7 +282,7 @@
 10207 Item_2
 10208 Item_2_P
 10209 Item_3
-10210,Item_3_P
+10210 Item_3_P
 10211 Item_4
 10212 Item_4_P
 10213 Item_5
@@ -327,9 +327,9 @@
 20019 DEF
 20020 SlowPoisonRES
 20021 RapidPoisonRES
-20022,FrenzyRES
+20022 FrenzyRES
 20023 Beasthood
-20024,Page 1_Top of right pane CarylLabel
+20024 Page 1_Top of right pane CarylLabel
 20025 Effect1
 20026 Effect 2
 20027 Effect3
@@ -395,7 +395,7 @@
 30123 R_Item_11
 30124 R_Item_12
 30125 Level up screen: Player status right _ Termination
-30200,Level up: [Weapon] Details display _0C_0_Base
+30200 Level up: [Weapon] Details display _0C_0_Base
 30201 C_0_Add
 30202 C_1_Base_DI
 30203 C_1_Add

@@ -20,7 +20,7 @@
 29 Sub-feature: Surrounding enemies with strengthened abilities & immortal enemies
 30 Sub-feature: Shop
 31 Sub-feature: Strong enemy that can kill allies
-32,Sub-feature: Rare Shop
+32 Sub-feature: Rare Shop
 33 Sub-feature: Shop + strong friendly enemy
 34 Sub-feature: Rare shop + strong friendly enemies
 35 Sub-feature: Unique items
@@ -53,7 +53,7 @@
 79 Sub-characteristics: No special characters
 80 Sub-feature: Shop
 81 Sub-feature: Strong enemy that can kill allies
-82,Sub-feature: Rare Shop
+82 Sub-feature: Rare Shop
 83 Sub-feature: Shop + strong friendly enemy
 84 Sub-feature: Rare shop + strong friendly enemies
 85 Fixed dungeon: Multi-grail 1

@@ -22,7 +22,7 @@
 34 E3 Sun Knight _ man
 100 Default face test _01
 101 Default face test _02
-102,Default face test _03
+102 Default face test _03
 103 Default face test _04
 104 Default face test _05
 105 Default face test _06
@@ -45,7 +45,7 @@
 122 Default face test _twenty three
 123 Default face test _twenty four
 124 Default face test _twenty five
-125,Default face test _26
+125 Default face test _26
 126 Default face test _27
 127 Default face test _28
 128 Default face test _29
@@ -68,7 +68,7 @@
 145 Default face test _46
 146 Default face test _47
 147 Default face test _48
-148,Default face test _49
+148 Default face test _49
 149 Default face test _50
 300 The Grey Saint
 1000 Commoner face
@@ -111,7 +111,7 @@
 6100 Saint Knight C
 6101 Saint Knight C (Dead)
 6130 Pot Sorcerer
-6131,Pot Sorcerer (Dead)
+6131 Pot Sorcerer (Dead)
 6170 Wandering Chaos
 6180 Healer
 6220 Blacksmith Rickert

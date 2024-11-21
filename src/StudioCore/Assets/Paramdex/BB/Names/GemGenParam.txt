@@ -20,7 +20,7 @@
 55 [Test] Non-removable For testing (non-removable)
 56 [Test] Magic stone exchange ticket sales test
 57 [Test] Body Gem Voucher Sales Test
-60,[Test] Magic stone sales price test _ Magic Stone 00
+60 [Test] Magic stone sales price test _ Magic Stone 00
 61 [Test] Magic stone sales price test _ Magic Stone 01
 62 [Test] Magic stone sales price test _ Magic Stone 02
 63 [Test] Magic stone sales price test _ body 00
@@ -33,7 +33,7 @@
 70 [Test] Magic Stone Sorting Test _ body 00
 71 [Test] Magic Stone Sorting Test _ body 01
 72 [Test] Magic Stone Sorting Test _ body 02
-73,[Test] Magic Stone Sorting Test _ body 03
+73 [Test] Magic Stone Sorting Test _ body 03
 74 [Test] Magic stone appearance rank range test
 100 Magic Stone Effect Test _ Positive Effects _ Attack power [slash] (fixed value)
 101 Magic Stone Effect Test _ Positive Effects _ Attack power [Strike] (fixed value)
@@ -53,7 +53,7 @@
 115 Magic Stone Effect Test _ Positive Effects _ Attack power [Lightning] (multiplier)
 116 Magic Stone Effect Test _ Positive Effects _ Attack power [Physical] (multiplier)
 117 Magic Stone Effect Test _ Positive Effects _ Attack power [all] (multiplier)
-118,Magic Stone Effect Test _ Positive Effects _ Attack power correction [Strength] (multiplier)
+118 Magic Stone Effect Test _ Positive Effects _ Attack power correction [Strength] (multiplier)
 119 Magic Stone Effect Test _ Positive Effects _ Attack power correction [skill] (multiplier)
 120 Magic Stone Effect Test _ Positive Effects _ Attack power correction [Shooting] (multiplier)
 121 Magic Stone Effect Test _ Positive Effects _ Attack power correction [Magic] (multiplier)
@@ -62,7 +62,7 @@
 124 Magic Stone Effect Test _ Positive Effects _ Abnormal Status Attack Power [Poison] (Fixed Value)
 125 Magic Stone Effect Test _ Positive Effects _ Abnormal Status Attack Power [Bleeding] (fixed value)
 126 Magic Stone Effect Test _ Positive Effects _ Counter Damage (Multiplier)
-127,Magic Stone Effect Test _ Positive Effects _ Stamina consumption when attacking (multiplier)
+127 Magic Stone Effect Test _ Positive Effects _ Stamina consumption when attacking (multiplier)
 128 Magic Stone Effect Test _ Positive Effects _ Charged attack power (multiplier)
 129 Magic Stone Effect Test _ Positive Effects _HP Regenerate
 130 Magic Stone Effect Test _ Positive Effects _ Regain recovery amount (fixed value)
@@ -121,7 +121,7 @@
 225 Magic Stone Effect Test _ Positive effects with drawbacks _ Abnormal Status Attack Power [Bleeding] (fixed value)
 226 Magic Stone Effect Test _ Positive effects with drawbacks _ Counter Damage (Multiplier)
 227 Magic Stone Effect Test _ Positive effects with drawbacks _ Stamina consumption when attacking (multiplier)
-228,Magic Stone Effect Test _ Positive effects with drawbacks _ Charged attack power (multiplier)
+228 Magic Stone Effect Test _ Positive effects with drawbacks _ Charged attack power (multiplier)
 229 Magic Stone Effect Test _ Positive effects with drawbacks _HP Regenerate
 230 Magic Stone Effect Test _ Positive effects with drawbacks _ Regain recovery amount (fixed value)
 231 Magic Stone Effect Test _ Positive effects with drawbacks _ Weapon durability (fixed value)
@@ -135,7 +135,7 @@
 239 Magic Stone Effect Test _ Positive effects with drawbacks _HP Regen [Physical] HP When near death:
 240 Magic Stone Effect Test _ Positive effects with drawbacks _HP Regeneration [Physical] [Other] PC Boss Defeat Broadcast】
 241 Magic Stone Effect Test _ Positive effects with drawbacks _ Attack sound removal
-242,Magic Stone Effect Test _ Positive effects with drawbacks _ maximum HP (magnification)
+242 Magic Stone Effect Test _ Positive effects with drawbacks _ maximum HP (magnification)
 243 Magic Stone Effect Test _ Positive effects with drawbacks _ maximum MP (magnification)
 244 Magic Stone Effect Test _ Positive effects with drawbacks _ Maximum stamina (multiplier)
 245 Magic Stone Effect Test _ Positive effects with drawbacks _ Magic Attribute Conversion
@@ -155,7 +155,7 @@
 411 Magic Stone Effect Test _ Positive Effects _ Damage cut [gun] (multiplier)
 412 Magic Stone Effect Test _ Positive Effects _ Damage cut [Fire] (multiplier)
 413 Magic Stone Effect Test _ Positive Effects _ Damage Cut [Magic] (Multiplier)
-414,Magic Stone Effect Test _ Positive Effects _ Damage cut [Lightning] (multiplier)
+414 Magic Stone Effect Test _ Positive Effects _ Damage cut [Lightning] (multiplier)
 415 Magic Stone Effect Test _ Positive Effects _ Damage cut [Physical] (multiplier)
 416 Magic Stone Effect Test _ Positive Effects _ Damage cut [all] (multiplier)
 417 Magic Stone Effect Test _ Positive Effects _ Resistance Value [Poison]
@@ -295,7 +295,7 @@
 51720 Kin of the Flame of Destruction D boss】
 51800 Silver Beast's Kin
 51810 Silver Beast's Kin [Boss]
-51900,Messenger from the Moon
+51900 Messenger from the Moon
 51901 Messenger from the Moon (Tentacle)
 51906 Messenger from the Moon (Tentacle) [Random Enemy]
 52020 Child of the Moon D boss】
@@ -316,7 +316,7 @@
 52601 Dungeon Man (Fat) - Gun
 52605 Dungeon Man (Fat) [Strengthened Enemy]
 52606 Dungeon Man (Fat) - Gun [Strengthened Enemy]
-52607,Dungeon Man (Fat) [Random Enemy]
+52607 Dungeon Man (Fat) [Random Enemy]
 52608 Dungeon Man (Fat) - Gun [Random Enemy]
 52620 Dungeon Man (Fat) [Boss]
 52710 Dungeon Lord - Dual Swords [Boss]
@@ -342,7 +342,7 @@
 53410 Founder Beast [Boss]
 53411 Founder Beast Headless [Boss]
 53420 Founder Beast [ D boss】
-53421,Founder Beast Headless D boss】
+53421 Founder Beast Headless D boss】
 53510 Idiot Spider [Boss]
 53520 Idiot Spider D boss】
 53620 Evil God [ D boss】
@@ -371,7 +371,7 @@
 80311 Random Treasure Chest Laurent 1F
 80320 Random Treasure Chest Laurent 2F-3F
 80321 Random Treasure Chest Laurent 2F-3F
-80340,Random Treasure Chest Laurent 4F
+80340 Random Treasure Chest Laurent 4F
 80410 Random Treasure Chest Izu 1F
 80420 Random Treasure Chest Izu 2F-3F
 80440 Random Treasure Chest Izu 4F
@@ -400,7 +400,7 @@
 90020 Strange Beast [Thumel Series]
 90030 Strange Beast - Red Eyes [Thumel]
 90040 Strange Beast - Female [Thumel]
-90050,Crowd Woman [Remote Grave Series]
+90050 Crowd Woman [Remote Grave Series]
 90060 Snake Ball (Baby) Small [Thumel Series]
 90070 Snake Ball (Baby) [Thumel Line]
 90080 Messenger from the Snake Swamp [Thumel]
@@ -450,7 +450,7 @@
 100403 Max Stamina Lv3
 100501 Throw [Damage] Lv1
 100502 Throw [Damage] Lv2
-100503,Throw [Damage] Lv3
+100503 Throw [Damage] Lv3
 100601 Throw [ HP recovery】 Lv1
 100602 Throw [ HP recovery】 Lv2
 100603 Throw [ HP recovery】 Lv3
@@ -472,7 +472,7 @@
 101403 Damage Cut [Fire] + Lv3
 101500 Damage Cut [Fire] -
 101601 Damage Cut [Lightning] Lv1
-101602,Damage Cut [Lightning] Lv2
+101602 Damage Cut [Lightning] Lv2
 101603 Damage Cut [Lightning] Lv3
 101701 Damage Cut [Physical] Lv1
 101702 Damage Cut [Physical] Lv2
@@ -498,7 +498,7 @@
 102403 Beast Transformation Extension Lv3
 102500 Poison Reduction
 102600 Relief of bleeding
-102700,Transfusion recovery amount +
+102700 Transfusion recovery amount +
 102800 Transfusion recovery amount -
 102901 Blood transfusion possession limit + Lv0.3
 102902 Blood transfusion possession limit + Lv0.5
@@ -523,7 +523,7 @@
 110003 Radiation Magic Stone Ore Level 3
 110004 Radiation Magic Stone Ore Level 4
 110005 Radiation Magic Stone Ore Level 5
-110006,Radiation Magic Stone Ore Level 6
+110006 Radiation Magic Stone Ore Level 6
 110007 Radiation Magic Stone Ore Level 7
 110011 Triangular Magic Stone Ore Level 1
 110012 Triangular Magic Stone Ore Level 2
@@ -543,7 +543,7 @@
 110032 Round Magic Stone Ore Level 2
 110033 Round Magic Stone Ore Level 3
 110034 Round Magic Stone Ore Level 4
-110035,Round Magic Stone Ore Level 5
+110035 Round Magic Stone Ore Level 5
 110036 Round Magic Stone Ore Level 6
 110037 Round Magic Stone Ore Level 7
 110041 Droplet-shaped Magic Stone Ore Level 1
@@ -594,7 +594,7 @@
 136005 Fixed placement _ Fishing Village Rank 17
 136006 Fixed placement _ Fishing Village Rank 17
 150000 Bright red brooch
-150001,Doll's Tears
+150001 Doll's Tears
 150002 Gold pendants
 190010 Unique Magic Stone Lv1 Thumel
 190020 Unique Magic Stone Lv2 Thumel
@@ -636,7 +636,7 @@
 980007 For play debugging: Attack power [Physical] fixed value + cost4 rank7
 980008 For play debugging: Attack power [Physical] fixed value + cost4 rank8
 980009 For play debugging: Attack power [Physical] fixed value + cost4 rank9
-980010,For play debugging: Attack power [Physical] fixed value + cost4 rank10
+980010 For play debugging: Attack power [Physical] fixed value + cost4 rank10
 980011 For play debugging: Attack power [Physical] fixed value + cost4 rank11
 980012 For play debugging: Attack power [Physical] fixed value + cost4 rank12
 980013 For play debugging: Attack power [Physical] fixed value + cost4 rank13
@@ -648,7 +648,7 @@
 980019 For play debugging: Attack power [Physical] fixed value + cost4 rank19
 980020 For play debugging: Attack power [Physical] fixed value + cost4 rank20
 980101 For play debugging: Attack power [physical] multiplier + cost4 rank1
-980102,For play debugging: Attack power [physical] multiplier + cost4 rank2
+980102 For play debugging: Attack power [physical] multiplier + cost4 rank2
 980103 For play debugging: Attack power [physical] multiplier + cost4 rank3
 980104 For play debugging: Attack power [physical] multiplier + cost4 rank4
 980105 For play debugging: Attack power [physical] multiplier + cost4 rank5
@@ -660,7 +660,7 @@
 980111 For play debugging: Attack power [physical] multiplier + cost4 rank11
 980112 For play debugging: Attack power [physical] multiplier + cost4 rank12
 980113 For play debugging: Attack power [physical] multiplier + cost4 rank13
-980114,For play debugging: Attack power [physical] multiplier + cost4 rank14
+980114 For play debugging: Attack power [physical] multiplier + cost4 rank14
 980115 For play debugging: Attack power [physical] multiplier + cost4 rank15
 980116 For play debugging: Attack power [physical] multiplier + cost4 rank16
 980117 For play debugging: Attack power [physical] multiplier + cost4 rank17
@@ -678,11 +678,11 @@
 1001111 Curse Total Cost 3
 1001200 Curse Total Cost 2
 1001210 Curse Total Cost 3
-1001211,Curse Total Cost 4
-1001220,Curse Total Cost 4
+1001211 Curse Total Cost 4
+1001220 Curse Total Cost 4
 1001300 Curse Total Cost 3
-1001310,Curse Total Cost 4
-1001400,Curse Total Cost 4
+1001310 Curse Total Cost 4
+1001400 Curse Total Cost 4
 1002100 Curse [Gun] Total Cost 1
 1002110 Curse [Gun] Total Cost 2
 1002111 Curse [Gun] Total Cost 3
@@ -735,7 +735,7 @@
 1051720 Kin of the Flame of Destruction D boss】
 1051800 Silver Beast's Kin
 1051810 Silver Beast's Kin [Boss]
-1051900,Messenger from the Moon
+1051900 Messenger from the Moon
 1051901 Messenger from the Moon (Tentacle)
 1051906 Messenger from the Moon (Tentacle) [Random Enemy]
 1052020 Child of the Moon D boss】
@@ -756,7 +756,7 @@
 1052601 Dungeon Man (Fat) - Gun
 1052605 Dungeon Man (Fat) [Strengthened Enemy]
 1052606 Dungeon Man (Fat) - Gun [Strengthened Enemy]
-1052607,Dungeon Man (Fat) [Random Enemy]
+1052607 Dungeon Man (Fat) [Random Enemy]
 1052608 Dungeon Man (Fat) - Gun [Random Enemy]
 1052620 Dungeon Man (Fat) [Boss]
 1052710 Dungeon Lord - Dual Swords [Boss]
@@ -782,7 +782,7 @@
 1053410 Founder Beast [Boss]
 1053411 Founder Beast Headless [Boss]
 1053420 Founder Beast [ D boss】
-1053421,Founder Beast Headless D boss】
+1053421 Founder Beast Headless D boss】
 1053510 Idiot Spider [Boss]
 1053520 Idiot Spider D boss】
 1053620 Evil God [ D boss】
@@ -811,7 +811,7 @@
 1080311 Random Treasure Chest Laurent 1F
 1080320 Random Treasure Chest Laurent 2F-3F
 1080321 Random Treasure Chest Laurent 2F-3F
-1080340,Random Treasure Chest Laurent 4F
+1080340 Random Treasure Chest Laurent 4F
 1080410 Random Treasure Chest Izu 1F
 1080420 Random Treasure Chest Izu 2F-3F
 1080440 Random Treasure Chest Izu 4F
@@ -840,7 +840,7 @@
 1090020 Strange Beast [Thumel Series]
 1090030 Strange Beast - Red Eyes [Thumel]
 1090040 Strange Beast - Female [Thumel]
-1090050,Crowd Woman [Remote Grave Series]
+1090050 Crowd Woman [Remote Grave Series]
 1090060 Snake Ball (Baby) Small [Thumel Series]
 1090070 Snake Ball (Baby) [Thumel Line]
 1090080 Messenger from the Snake Swamp [Thumel]
@@ -866,7 +866,7 @@
 1100403 Max Stamina Lv3
 1100501 Throw [Damage] Lv1
 1100502 Throw [Damage] Lv2
-1100503,Throw [Damage] Lv3
+1100503 Throw [Damage] Lv3
 1100601 Throw [ HP recovery】 Lv1
 1100602 Throw [ HP recovery】 Lv2
 1100603 Throw [ HP recovery】 Lv3
@@ -888,7 +888,7 @@
 1101403 Damage Cut [Fire] + Lv3
 1101500 Damage Cut [Fire] -
 1101601 Damage Cut [Lightning] Lv1
-1101602,Damage Cut [Lightning] Lv2
+1101602 Damage Cut [Lightning] Lv2
 1101603 Damage Cut [Lightning] Lv3
 1101701 Damage Cut [Physical] Lv1
 1101702 Damage Cut [Physical] Lv2
@@ -914,7 +914,7 @@
 1102403 Beast Transformation Extension Lv3
 1102500 Poison Reduction
 1102600 Relief of bleeding
-1102700,Transfusion recovery amount +
+1102700 Transfusion recovery amount +
 1102800 Transfusion recovery amount -
 1102901 Blood transfusion possession limit + Lv0.3
 1102902 Blood transfusion possession limit + Lv0.5
@@ -936,7 +936,7 @@
 1110003 Radiation Magic Stone Ore Level 3
 1110004 Radiation Magic Stone Ore Level 4
 1110005 Radiation Magic Stone Ore Level 5
-1110006,Radiation Magic Stone Ore Level 6
+1110006 Radiation Magic Stone Ore Level 6
 1110007 Radiation Magic Stone Ore Level 7
 1110011 Triangular Magic Stone Ore Level 1
 1110012 Triangular Magic Stone Ore Level 2
@@ -956,7 +956,7 @@
 1110032 Round Magic Stone Ore Level 2
 1110033 Round Magic Stone Ore Level 3
 1110034 Round Magic Stone Ore Level 4
-1110035,Round Magic Stone Ore Level 5
+1110035 Round Magic Stone Ore Level 5
 1110036 Round Magic Stone Ore Level 6
 1110037 Round Magic Stone Ore Level 7
 1110041 Droplet-shaped Magic Stone Ore Level 1
@@ -990,7 +990,7 @@
 1128000 Fixed placement Sacrifice
 1132000 Fixed placement University (Nightmare Classroom)
 1150000 Bright red brooch
-1150001,Doll's Tears
+1150001 Doll's Tears
 1150002 Gold pendants
 1190010 Unique Magic Stone Lv1 Thumel
 1190020 Unique Magic Stone Lv2 Thumel
@@ -1066,7 +1066,7 @@
 2051720 Kin of the Flame of Destruction D boss】
 2051800 Silver Beast's Kin
 2051810 Silver Beast's Kin [Boss]
-2051900,Messenger from the Moon
+2051900 Messenger from the Moon
 2051901 Messenger from the Moon (Tentacle)
 2051906 Messenger from the Moon (Tentacle) [Random Enemy]
 2052020 Child of the Moon D boss】
@@ -1087,7 +1087,7 @@
 2052601 Dungeon Man (Fat) - Gun
 2052605 Dungeon Man (Fat) [Strengthened Enemy]
 2052606 Dungeon Man (Fat) - Gun [Strengthened Enemy]
-2052607,Dungeon Man (Fat) [Random Enemy]
+2052607 Dungeon Man (Fat) [Random Enemy]
 2052608 Dungeon Man (Fat) - Gun [Random Enemy]
 2052620 Dungeon Man (Fat) [Boss]
 2052710 Dungeon Lord - Dual Swords [Boss]
@@ -1113,7 +1113,7 @@
 2053410 Founder Beast [Boss]
 2053411 Founder Beast Headless [Boss]
 2053420 Founder Beast [ D boss】
-2053421,Founder Beast Headless D boss】
+2053421 Founder Beast Headless D boss】
 2053510 Idiot Spider [Boss]
 2053520 Idiot Spider D boss】
 2053620 Evil God [ D boss】
@@ -1142,7 +1142,7 @@
 2080311 Random Treasure Chest Laurent 1F
 2080320 Random Treasure Chest Laurent 2F-3F
 2080321 Random Treasure Chest Laurent 2F-3F
-2080340,Random Treasure Chest Laurent 4F
+2080340 Random Treasure Chest Laurent 4F
 2080410 Random Treasure Chest Izu 1F
 2080420 Random Treasure Chest Izu 2F-3F
 2080440 Random Treasure Chest Izu 4F
@@ -1171,7 +1171,7 @@
 2090020 Strange Beast [Thumel Series]
 2090030 Strange Beast - Red Eyes [Thumel]
 2090040 Strange Beast - Female [Thumel]
-2090050,Crowd Woman [Remote Grave Series]
+2090050 Crowd Woman [Remote Grave Series]
 2090060 Snake Ball (Baby) Small [Thumel Series]
 2090070 Snake Ball (Baby) [Thumel Line]
 2090080 Messenger from the Snake Swamp [Thumel]
@@ -1197,7 +1197,7 @@
 2100403 Max Stamina Lv3
 2100501 Throw [Damage] Lv1
 2100502 Throw [Damage] Lv2
-2100503,Throw [Damage] Lv3
+2100503 Throw [Damage] Lv3
 2100601 Throw [ HP recovery】 Lv1
 2100602 Throw [ HP recovery】 Lv2
 2100603 Throw [ HP recovery】 Lv3
@@ -1219,7 +1219,7 @@
 2101403 Damage Cut [Fire] + Lv3
 2101500 Damage Cut [Fire] -
 2101601 Damage Cut [Lightning] Lv1
-2101602,Damage Cut [Lightning] Lv2
+2101602 Damage Cut [Lightning] Lv2
 2101603 Damage Cut [Lightning] Lv3
 2101701 Damage Cut [Physical] Lv1
 2101702 Damage Cut [Physical] Lv2
@@ -1245,7 +1245,7 @@
 2102403 Beast Transformation Extension Lv3
 2102500 Poison Reduction
 2102600 Relief of bleeding
-2102700,Transfusion recovery amount +
+2102700 Transfusion recovery amount +
 2102800 Transfusion recovery amount -
 2102901 Blood transfusion possession limit + Lv0.3
 2102902 Blood transfusion possession limit + Lv0.5
@@ -1267,7 +1267,7 @@
 2110003 Radiation Magic Stone Ore Level 3
 2110004 Radiation Magic Stone Ore Level 4
 2110005 Radiation Magic Stone Ore Level 5
-2110006,Radiation Magic Stone Ore Level 6
+2110006 Radiation Magic Stone Ore Level 6
 2110007 Radiation Magic Stone Ore Level 7
 2110011 Triangular Magic Stone Ore Level 1
 2110012 Triangular Magic Stone Ore Level 2
@@ -1287,7 +1287,7 @@
 2110032 Round Magic Stone Ore Level 2
 2110033 Round Magic Stone Ore Level 3
 2110034 Round Magic Stone Ore Level 4
-2110035,Round Magic Stone Ore Level 5
+2110035 Round Magic Stone Ore Level 5
 2110036 Round Magic Stone Ore Level 6
 2110037 Round Magic Stone Ore Level 7
 2110041 Droplet-shaped Magic Stone Ore Level 1
@@ -1321,7 +1321,7 @@
 2128000 Fixed placement Sacrifice
 2132000 Fixed placement University (Nightmare Classroom)
 2150000 Bright red brooch
-2150001,Doll's Tears
+2150001 Doll's Tears
 2150002 Gold pendants
 2190010 Unique Magic Stone Lv1 Thumel
 2190020 Unique Magic Stone Lv2 Thumel

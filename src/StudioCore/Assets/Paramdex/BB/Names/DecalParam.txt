@@ -74,7 +74,7 @@
 804 Child of the Blood Moon (rear 0 ) PC- map
 805 Child of the Blood Moon (rear 1 ) PC- map
 806 Child of the Bloody Moon (left) 0 ) PC- map
-807,Child of the Blood Moon (left) 1 ) PC- map
+807 Child of the Blood Moon (left) 1 ) PC- map
 808 Child of the Bloody Moon (Right Foot 0 ) PC- map
 809 Child of the Bloody Moon (Left leg 0 ) PC- map
 810 Child of the Blood Moon (Head 0 ) PC- map

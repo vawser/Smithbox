@@ -21,7 +21,7 @@
 1308 m10_01_ General-purpose door _00 (Church Prison)
 1310 m10_01_ General-purpose door _00 (Kagiminka)
 1311 m10_01_ General-purpose door _01
-1312,m10_01_ General-purpose door _02
+1312 m10_01_ General-purpose door _02
 1313 m10_01_ General-purpose door _03
 1314 m10_01_ General-purpose door _04 (Lower row)
 1315 m10_00_ General-purpose door _05
@@ -46,7 +46,7 @@
 6100 m16_00_ Water gate lever
 6101 m16_00_ Abyssal General-Purpose Lever
 6010 m16_00_ Door to the Little Londo Ruins
-7201,m17_00_ Crystal Tower General Purpose Lever
+7201 m17_00_ Crystal Tower General Purpose Lever
 7202 m17_00_ Alarm lever
 7401 m17_00_ Jail Door A
 8537 m18_01_ General-purpose door ( 2F (Front)
@@ -73,7 +73,7 @@
 9941 Treasure Chest (Small)
 9942 Treasure Chest (Medium)
 9943 Treasure Chest (Large)
-10000,Default (to be removed)
+10000 Default (to be removed)
 11305 m10_01_ Hammer Tower Door (bottom)
 11312 m10_01_ General-purpose door (lock)
 11315 m10_00_ General-purpose door (lock)
@@ -165,7 +165,7 @@
 3200000 m32_00_ Main Door _ Nightmare Classroom _ Hometown
 3200001 m32_00_ Main Door _ Nightmare Classroom _TR Go
 3200020 m32_00_ Small door _ Pull to open
-3200021,m32_00_ Small door _ Push to open
+3200021 m32_00_ Small door _ Push to open
 3200030 m32_00_ Double door _ Pull to open _ With lock
 3200040 m32_00_ Double door _ terrace
 3400000 m34_00_ Double door _ large

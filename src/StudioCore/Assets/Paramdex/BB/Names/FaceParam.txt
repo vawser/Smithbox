@@ -42,7 +42,7 @@
 3009 For base body 9 (Unisex)
 4000 Character Make Top Menu Male
 5000 Character Make Top Menu Female
-6040,Queen of the Bloodline
+6040 Queen of the Bloodline
 6070 Fake Female Doctor
 6380 Lord of Nightmares
 6080 Cranky old man
@@ -96,7 +96,7 @@
 7070 Dungeons NPC8_1
 7075 Dungeons NPC8_2
 7120 Dungeons NPC11
-7150,Dungeons NPC14
+7150 Dungeons NPC14
 7160 Dungeons NPC15
 7300 7300_ Dungeons NPC : Saw whip
 7310 7310_ Abnormal: Multi-jointed
@@ -128,7 +128,7 @@
 8025 Temporary storage space 26
 8026 Temporary storage space 27
 8027 Temporary storage space 28
-8028,Temporary storage space 29
+8028 Temporary storage space 29
 8029 Temporary storage space 30
 8030 Temporary storage space 31
 8031 Temporary storage space 32
@@ -161,7 +161,7 @@
 8058 Temporary storage space 59
 8059 Temporary storage space 60
 8060 Temporary storage space 61
-8061,Temporary storage space 62
+8061 Temporary storage space 62
 8062 Temporary storage space 63
 8063 Temporary storage space 64
 8064 Temporary storage space 65
@@ -194,7 +194,7 @@
 8091 Temporary storage space 92
 8092 Temporary storage space 93
 8093 Temporary storage space 94
-8094,Temporary storage space 95
+8094 Temporary storage space 95
 8095 Temporary storage space 96
 8096 Temporary storage space 97
 8097 Temporary storage space 98
@@ -226,7 +226,7 @@
 8123 Temporary storage space 124
 8124 Temporary storage space 125
 8125 Temporary storage space 126
-8126,Temporary storage space 127
+8126 Temporary storage space 127
 8127 Temporary storage space 128
 8128 Temporary storage space 129
 8129 Temporary storage space 130
@@ -258,7 +258,7 @@
 8155 Temporary storage space 156
 8156 Temporary storage space 157
 8157 Temporary storage space 158
-8158,Temporary storage space 159
+8158 Temporary storage space 159
 8159 Temporary storage space 160
 8160 Temporary storage space 161
 8161 Temporary storage space 162
@@ -290,7 +290,7 @@
 8187 Temporary storage space 188
 8188 Temporary storage space 189
 8189 Temporary storage space 190
-8190,Temporary storage space 191
+8190 Temporary storage space 191
 8191 Temporary storage space 192
 8192 Temporary storage space 193
 8193 Temporary storage space 194
@@ -322,7 +322,7 @@
 8219 Temporary storage space 220
 8220 Temporary storage space 221
 8221 Temporary storage space 222
-8222,Temporary storage space 223
+8222 Temporary storage space 223
 8223 Temporary storage space 224
 8224 Temporary storage space 225
 8225 Temporary storage space 226
@@ -354,7 +354,7 @@
 8251 Temporary storage space 252
 8252 Temporary storage space 253
 8253 Temporary storage space 254
-8254,Temporary storage space 255
+8254 Temporary storage space 255
 8255 Temporary storage space 256
 8256 Temporary storage space 257
 8257 Temporary storage space 258
@@ -386,7 +386,7 @@
 8283 Temporary storage space 284
 8284 Temporary storage space 285
 8285 Temporary storage space 286
-8286,Temporary storage space 287
+8286 Temporary storage space 287
 8287 Temporary storage space 288
 8288 Temporary storage space 289
 8289 Temporary storage space 290

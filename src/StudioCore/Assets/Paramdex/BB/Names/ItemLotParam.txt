@@ -40,7 +40,7 @@
 20000 President _ Items dropped when killed
 20001 President _ Items dropped when killed ( For replacement)
 21000 Lord of Nightmares _ Items dropped when defeated
-22000,Blind person in evacuation shelter _ Items offered when hitting
+22000 Blind person in evacuation shelter _ Items offered when hitting
 22010 Blind person in evacuation shelter _ Items dropped on death
 22011 Blind person in evacuation shelter _ Death drop items (replacement )
 23000 Female doctor at clinic _ Items given under the door
@@ -154,7 +154,7 @@
 43840 forest _ Federation Executioner NPC_ Items dropped when killed
 43850 Clock Tower _ Cathedral NPC_ Sword Great Sword
 43860 Clock Tower _ Cathedral NPC_ Cosmic Arrow
-43870,Clock Tower _ lover NPC
+43870 Clock Tower _ lover NPC
 47000 enemy NPC_ Hometown 1 Axe Pole
 48000 enemy NPC_ Hometown 2: Whip
 49000 enemy NPC_ Trap Lord
@@ -182,7 +182,7 @@
 64010 Dungeons NPC5 When using multiple summons
 64100 Dungeons NPC5_2 Normal
 64110 Dungeons NPC5_2 When using multiple summons
-65000,Dungeons NPC6 Normal
+65000 Dungeons NPC6 Normal
 65010 Dungeons NPC6 When using multiple summons
 66000 Dungeons NPC7 Normal
 66010 Dungeons NPC7 When using multiple summons
@@ -199,7 +199,7 @@
 72000 Dungeons NPC11_2 Normal
 72010 Dungeons NPC11_2 When using multiple summons
 73000 Dungeons NPC12 Normal
-73010,Dungeons NPC12 When using multiple summons
+73010 Dungeons NPC12 When using multiple summons
 74000 Dungeons NPC13 Normal
 74010 Dungeons NPC13 When using multiple summons
 75000 Dungeons NPC14 Normal
@@ -241,7 +241,7 @@
 101140 Defective Magic Stone Ore Level 1
 101150 Defective Magic Stone Ore Level 2
 101160 Defective Magic Stone Ore Level 3
-101170,Defective Magic Stone Ore Level 4
+101170 Defective Magic Stone Ore Level 4
 101180 Defective Magic Stone Ore Level 5
 101190 Defective Magic Stone Ore Level 6
 101200 Defective Magic Stone Ore Level 7
@@ -262,7 +262,7 @@
 2000000 Channel Proto Treasure Chest 00
 2000010 Channel Proto Treasure Chest 01
 2000020 Channel Proto Treasure Chest 02
-2000030,Channel Proto Treasure Chest 03
+2000030 Channel Proto Treasure Chest 03
 2000040 Channel Proto Treasure Chest 04
 2000050 Channel Proto Treasure Chest 05
 2000060 Channel Proto Treasure Chest 06
@@ -285,7 +285,7 @@
 2000510 Channel Proto Treasure Corpse 01
 2000520 Channel Proto Treasure Corpse 02
 2000530 Channel Proto Treasure Corpse 03
-2000540,Channel Proto Treasure Corpse 04
+2000540 Channel Proto Treasure Corpse 04
 2000550 Channel Proto Treasure Corpse 05
 2000560 Channel Proto Treasure Corpse 06
 2000570 Channel Proto Treasure Corpse 07
@@ -307,7 +307,7 @@
 2000730 Channel Proto Treasure Corpse twenty three
 2000740 Channel Proto Treasure Corpse twenty four
 2000750 Channel Proto Treasure Corpse twenty five
-2000760,Channel Proto Treasure Corpse 26
+2000760 Channel Proto Treasure Corpse 26
 2000770 Channel Proto Treasure Corpse 27
 2000780 Channel Proto Treasure Corpse 28
 2000790 Channel Proto Treasure Corpse 29
@@ -316,7 +316,7 @@
 2009510 Channel Proto Treasure Corpse 01
 2009520 Channel Proto Treasure Corpse 02
 2009530 Channel Proto Treasure Corpse 03
-2009540,Channel Proto Treasure Corpse 04
+2009540 Channel Proto Treasure Corpse 04
 2009550 Channel Proto Treasure Corpse 05
 2009560 Channel Proto Treasure Corpse 06
 2009570 Channel Proto Treasure Corpse 07
@@ -377,7 +377,7 @@
 2200190 Treasure Corpse 09
 2200200 Treasure Corpse 10_1
 2200210 Treasure Corpse 11
-2200220,Treasure Corpse 12
+2200220 Treasure Corpse 12
 2200230 Treasure Corpse 13
 2200240 Treasure Corpse 14
 2200250 Treasure Corpse 15
@@ -411,7 +411,7 @@
 2300090 Treasure Corpse 09
 2300100 Treasure Corpse 10
 2300110 Treasure Corpse 11
-2300120,Treasure Corpse 12
+2300120 Treasure Corpse 12
 2300130 Treasure Corpse 13
 2300140 Treasure Corpse 14
 2300150 Treasure Corpse 15
@@ -446,7 +446,7 @@
 2300420 Treasure Corpse 42
 2300430 Treasure Corpse 43
 2300440 Treasure Corpse 44
-2300450,Treasure Corpse 45
+2300450 Treasure Corpse 45
 2300460 Treasure Corpse 46
 2300470 Treasure Corpse 47
 2300480 Treasure Corpse 48
@@ -470,7 +470,7 @@
 2400190 Treasure Corpse 09
 2400200 Treasure Corpse 10
 2400210 Treasure Corpse 11
-2400220,Treasure Corpse 12
+2400220 Treasure Corpse 12
 2400230 Treasure Corpse 13
 2400240 Treasure Corpse 14
 2400250 Treasure Corpse 15
@@ -506,7 +506,7 @@
 2400510 Treasure Chest 01
 2400511 Treasure Chest 02
 2400540 Treasure Corpse 38-1_ Saint C before
-2400541,Treasure Corpse 38-2_ Saint C before
+2400541 Treasure Corpse 38-2_ Saint C before
 2400550 Treasure Corpse 30
 2400560 Treasure Corpse 31
 2400570 Treasure Corpse 32
@@ -527,7 +527,7 @@
 2400700 Treasure Corpse 42 Sacrifice Connection
 2400710 Treasure Corpse 43 Sacrifice Connection
 2400720 Treasure Corpse 44
-2400730,Treasure Corpse 45
+2400730 Treasure Corpse 45
 2400740 Treasure Corpse 46
 2400750 Treasure Corpse 47
 2400760 Treasure Chest 06
@@ -544,7 +544,7 @@
 2410180 Treasure Corpse 08 first half
 2410190 Treasure Corpse 09 first half
 2410200 Treasure Corpse 10 first half
-2410210,Treasure Corpse 11 first half
+2410210 Treasure Corpse 11 first half
 2410220 Treasure Corpse 12 first half
 2410230 Treasure Corpse 13
 2410240 Treasure Corpse 14 Second Half
@@ -578,7 +578,7 @@
 2410520 Treasure Corpse 42first half
 2410530 Treasure Corpse 43 first half
 2410540 Treasure Corpse 44 first half
-2410550,Treasure Corpse 45
+2410550 Treasure Corpse 45
 2410560 Treasure Corpse 46 first half
 2410570 Treasure Corpse 47 first half
 2410580 Treasure Chest 01
@@ -615,7 +615,7 @@
 2420190 Treasure Corpse 09
 2420200 Treasure Corpse 10
 2420210 Treasure Corpse 11
-2420220,Treasure Corpse 12
+2420220 Treasure Corpse 12
 2420230 Treasure Corpse 13-1
 2420231 Treasure Corpse 13-2
 2420232 Treasure Corpse13-3
@@ -645,7 +645,7 @@
 2500190 Treasure Corpse 09
 2500200 Treasure Corpse 10
 2500210 Treasure Corpse 11
-2500220,Treasure Corpse 12
+2500220 Treasure Corpse 12
 2500230 Treasure Corpse 13
 2500240 Treasure Corpse 14
 2500250 Treasure Corpse 15
@@ -678,7 +678,7 @@
 2600180 Treasure Corpse 08 first half
 2600190 Treasure Corpse 09 first half
 2600200 Treasure Corpse 10 first half
-2600210,Treasure Corpse 11 first half
+2600210 Treasure Corpse 11 first half
 2600220 Treasure Corpse 12 first half
 2600230 Treasure Corpse 13 Boss Room
 2600240 Treasure Corpse 14 first half
@@ -686,7 +686,7 @@
 2600260 Treasure Corpse 16 Boss Room
 2600270 Treasure Corpse 17 Boss Room
 2600280 Treasure Corpse 18 Boss Room
-2600290,Treasure Corpse 19 first half
+2600290 Treasure Corpse 19 first half
 2600300 Treasure Corpse 20 first half
 2600305 Treasure Corpse 20 First half (replacement)
 2600310 Treasure Corpse twenty one first half
@@ -744,7 +744,7 @@
 2700200 Treasure Corpse 10
 2700205 Treasure Corpse 10 (Replacement)
 2700210 Treasure Corpse 11
-2700220,Treasure Corpse 12
+2700220 Treasure Corpse 12
 2700230 Treasure Corpse 13
 2700240 Treasure Corpse 14
 2700250 Treasure Corpse 15
@@ -781,7 +781,7 @@
 2700530 Treasure Corpse 43
 2700540 Treasure Corpse 44
 2700545 Treasure Corpse 44 (Replacement)
-2700550,Treasure Corpse 45
+2700550 Treasure Corpse 45
 2700560 Treasure Corpse 46
 2700570 Treasure Corpse 47
 2700575 Treasure Corpse 47 (Replacement)
@@ -839,7 +839,7 @@
 2800090 Treasure Corpse 09
 2800100 Treasure Corpse 10
 2800110 Treasure Corpse 11
-2800120,Treasure Corpse 12
+2800120 Treasure Corpse 12
 2800130 Treasure Corpse 13
 2800140 Treasure Corpse 14
 2800145 Treasure Corpse 14 (Replacement)
@@ -902,7 +902,7 @@
 2904300 Fixed: Magic: 1/2F Sub-Terminal
 2904310 Fixed: Magic: 3F Defeat the boss
 2904320 Fixed: Magic: 4F Defeat the boss
-2904400,Fixation: Auxiliary: 1/2F Sub-Terminal
+2904400 Fixation: Auxiliary: 1/2F Sub-Terminal
 2904410 Fixation: Auxiliary: 3F Defeat the boss
 2904420 Fixation: Auxiliary: 4F Defeat the boss
 2909800 Presentation Dungeon Enemy Drop
@@ -963,7 +963,7 @@
 3300090 Treasure Corpse 09
 3300100 Treasure Corpse 10
 3300110 Treasure Corpse 11
-3300120,Treasure Corpse 12
+3300120 Treasure Corpse 12
 3300130 Treasure Corpse 13
 3300140 Treasure Corpse 14
 3300150 Treasure Corpse 15
@@ -1006,7 +1006,7 @@
 3400090 Treasure Corpse 09
 3400100 Treasure Corpse 10
 3400110 Treasure Corpse 11
-3400120,Treasure Corpse 12
+3400120 Treasure Corpse 12
 3400130 Treasure Corpse 13
 3400140 Treasure Corpse 14
 3400150 Treasure Corpse 15
@@ -1039,7 +1039,7 @@
 3400420 Treasure Corpse 42
 3400430 Treasure Corpse 43
 3400440 Treasure Corpse 44
-3400450,Treasure Corpse 45
+3400450 Treasure Corpse 45
 3400460 Treasure Corpse 46
 3400470 Treasure Corpse 47
 3400480 Treasure Corpse 48
@@ -1074,7 +1074,7 @@
 3401120 T.G.S. Treasure Corpse 13
 3401130 T.G.S. Treasure Corpse 14
 3401700 Defeat the Bloodthirsty Beast
-3401710,Wandering Madness (Small) Cathedral Ward D00
+3401710 Wandering Madness (Small) Cathedral Ward D00
 3401720 Wandering Madness (Small) Cathedral Ward D01
 3401730 Fallen Hunter Ace of the Saw Blade Cathedral Ward D
 3401731 Fallen Hunter Ace of the Saw Blade Cathedral Ward D
@@ -1105,7 +1105,7 @@
 3500240 Treasure Corpse [Clock Tower 14 】
 3500250 Treasure Corpse [Clock Tower 15 】 _3F Right doctor's room
 3500260 Treasure Corpse [Clock Tower 16 】 _4F Hanging corpse in the dark room on the left
-3500270,Treasure Corpse [Clock Tower 17 】 _ Blood transfusion table at the back of the first-time room
+3500270 Treasure Corpse [Clock Tower 17 】 _ Blood transfusion table at the back of the first-time room
 3500280 Treasure Corpse [Clock Tower 18 】 _5F Left protrusion
 3500290 Treasure Corpse [Clock Tower 19 】
 3500300 Treasure Corpse [Clock Tower 20 】 _4F Left protrusion
@@ -1202,7 +1202,7 @@
 99052100 Level Dependent Test 2
 99052500 Magic stone drop test
 99052600 Unique Drop Test _1
-99052610,Unique Drop Test _2
+99052610 Unique Drop Test _2
 9905300 crowd B
 9905310 Gimmick Test _ Weapon Magic Stone
 9905320 Gimmick Test _ Body Magic Stone
@@ -1258,7 +1258,7 @@
 9906550 Item drop correction test
 9906555 Magic Stone Exchange Ticket Test
 9906560 Body Magic Stone Exchange Ticket Test
-9906565,Weapon Slot Test 00
+9906565 Weapon Slot Test 00
 9906570 Weapon Slot Test 01
 9906575 Weapon Slot Test 02
 9906580 Magic Stone Effect Sort Test _ Magic Stone 03
@@ -1271,7 +1271,7 @@
 9906602 Magic Stone Effect Test _ Positive Effects _ Attack power [Piercing] (fixed value)
 9906603 Magic Stone Effect Test _ Positive Effects _ Attack power [slash] (multiplier)
 9906604 Magic Stone Effect Test _ Positive Effects _ Attack power [Strike] (multiplier)
-9906605,Magic Stone Effect Test _ Positive Effects _ Attack power [pierce] (multiplier)
+9906605 Magic Stone Effect Test _ Positive Effects _ Attack power [pierce] (multiplier)
 9906610 Magic Stone Effect Test _ Positive Effects _ Attack power [Physical] (fixed value)
 9906611 Magic Stone Effect Test _ Positive Effects _ Attack power [Physical] (multiplier)
 9906612 Magic Stone Effect Test _ Positive Effects _ Attack power [Physical] HP Maximum (fixed value)
@@ -1362,7 +1362,7 @@
 9906870 Magic Stone Effect Test _ Negative effects _ Souls acquired
 9906871 Magic Stone Effect Test _ Negative effects _ Est effect amount
 9906872 Magic Stone Effect Test _ Negative effects _ Estus possession limit
-9906873,Magic Stone Effect Test _ Negative effects _ Stamina recovery speed
+9906873 Magic Stone Effect Test _ Negative effects _ Stamina recovery speed
 9906900 Fixed placement _ Cathedral Quarter D
 9906901 Fixed placement _ Cathedral Quarter D
 9906902 Fixed placement _ Cathedral Quarter D
@@ -1431,7 +1431,7 @@
 10102999 Priest Dungeon Past
 10202202 crowd A Leader Cemetery Street
 10202400 crowd A Torch Cathedral A
-10202402,crowd A Sabre Cathedral A
+10202402 crowd A Sabre Cathedral A
 10202404 crowd A Leader Cathedral Ward A
 10202406 crowd A shield / Knife / Sickle / Spade Cathedral A
 10202410 crowd A Torch Cathedral B
@@ -1447,7 +1447,7 @@
 10202702 crowd A Sabre Forest
 10202704 crowd A Leader Mori
 10202706 crowd A shield / Knife / Sickle / Plow Forest
-10202708,crowd A Throwing Molotov Cocktail Forest
+10202708 crowd A Throwing Molotov Cocktail Forest
 10202710 crowd A Throwing Oil Pot Forest
 10202800 crowd A Sacrifice Torch & Axe ( 1 Number one)
 10202810 crowd A Sacrifice Shield & Torch ( 1 Number one)
@@ -1490,7 +1490,7 @@
 10502962 Wandering Widow Multi Summon (Strong): Rare Material B
 10502950 Wandering Widow Multi Summon (Weak): Physical
 10502952 Wandering Widow Multi Summon (Weak): Gun
-10502954,Wandering Widow Multi Summon (Weak): Fire and Lightning
+10502954 Wandering Widow Multi Summon (Weak): Fire and Lightning
 10502956 Wandering Widow Multi-Summon (Weak): Magic
 10502958 Wandering Widow Multi Summon (Weak): Support
 10502960 Wandering Widow Multi Summon (Weak): Rare Material A
@@ -1533,7 +1533,7 @@
 10902900 Strange Beast Dungeon
 10902902 Strange Beast _ Red Eye Dungeon
 10902910 Strange Beast Dungeon Storm
-10902912,Strange Beast _ Red Eye Dungeon Storm
+10902912 Strange Beast _ Red Eye Dungeon Storm
 10902940 Abnormal Beast Dungeon Poison
 10903400 Aberrant Beast Cathedral Ward D
 11002410 Sewer Rat Cathedral Ward B
@@ -1551,7 +1551,7 @@
 11102910 Death and Darkness Family (Spider) Headless Dungeon Storm
 11102920 Death and Darkness Family (Spider) Headless Dungeon Space
 11102940 Kin of Death and Darkness (Spider) Headed Dungeon Poison
-11102942,Death and Darkness (Spider) Headless Dungeon Poison
+11102942 Death and Darkness (Spider) Headless Dungeon Poison
 11102944 Death and Darkness (Spider) Headless (Generate) Dungeon Poison
 11202420 Drowned Beast Cathedral Quarter B
 11202700 Drowned Beast Forest
@@ -1572,7 +1572,7 @@
 11502940 Slime Dungeon Poison
 11602900 Demon Dog Dungeon
 11602940 Demon Dog Dungeon Poison
-11702200,Carrion Bird Cemetery Street
+11702200 Carrion Bird Cemetery Street
 11702300 Carrion Bird Ruins
 11702400 Carrion Bird Cathedral Quarter A
 11702410 Carrion Bird Cathedral Quarter B
@@ -1603,10 +1603,10 @@
 11800400 Wandering Madness (Small) Cemetery Town ○
 11800410 Wandering Madness (Small) Cemetery Town ○
 11800420 Wandering Madness (Small) Cemetery District ×
-11800500,Wandering Madness (Small) Forest ×
-11800510,Wandering Madness (Small) Forest ×
+11800500 Wandering Madness (Small) Forest ×
+11800510 Wandering Madness (Small) Forest ×
 11800520 Wandering Madness (Small) Forest ○
-11800530,Wandering Madness (Small) Forest ×
+11800530 Wandering Madness (Small) Forest ×
 11800600 Wandering Madness (small) University ×
 11800700 Wandering Madness (Small) Cathedral Ward C (Second Half) ○
 11800800 Wandering Madness (Small) Old Castle ×
@@ -1659,7 +1659,7 @@
 11891000 Wandering Madness (Small) Ruins
 11801005 Wandering Madness (Small) Ruins Magic Stone
 11800070 Wandering Madness (Small) Mori Est & bullet
-11800090,Wandering Madness (Small) Dungeon Esto & bullet
+11800090 Wandering Madness (Small) Dungeon Esto & bullet
 11899900 Wandering Madness (Small) Test Map
 11900000 Wandering Madness (part 2) Hometown ×
 11900010 Wandering Madness (part 2) Hometown ×
@@ -1723,7 +1723,7 @@
 12702900 Vampire Pig Dungeon
 12702910 Vampire Pig Dungeon Storm
 12702920 Vampire pig dungeon space
-12702940,Vampire pig dungeon poison
+12702940 Vampire pig dungeon poison
 12902300 Strange Beast (female) Ruins
 12902900 Strange Beast (Female) Dungeon
 12903400 Strange Beast (female) Cathedral Ward D
@@ -1743,7 +1743,7 @@
 20102910 Dungeon Man (Grave Digger) Hook Dungeon Storm
 20102920 Dungeon Man (Grave Digger) Hook Dungeon Space
 20102940 Dungeon Man (Grave Digger) Hook Dungeon Poison
-20102950,Dungeon Man (Grave Digger) Hook Dungeon Strong Enemy
+20102950 Dungeon Man (Grave Digger) Hook Dungeon Strong Enemy
 20102970 Dungeon Man (Grave Digger) Hook Dungeon Doctor
 20102980 Dungeon Man (Grave Digger) Hook Dungeon Ritual
 20102902 Dungeon Man (Grave Digger) Pickaxe Dungeon
@@ -1816,7 +1816,7 @@
 21000000 icollector cemetery town seoul
 21002500 Eye Collector Old Castle
 21002800 Eye Collector Sacrifice
-21002810,Eye Collector Sacrifice First Time
+21002810 Eye Collector Sacrifice First Time
 21002900 Eye Collector Dungeon
 21002910 Eye Collector Dungeon Storm
 21002920 Eye Collector Dungeon Space
@@ -1837,7 +1837,7 @@
 21202900 Dark Brigade Sword Dungeon
 21202910 Dark Brigade Sword Dungeon Storm
 21202920 Dark Brigade Sword Dungeon Space
-21202940,Dark Brigade Sword Dungeon Poison
+21202940 Dark Brigade Sword Dungeon Poison
 21202902 Dark Brigade Sword and Candle Dungeon
 21202912 Dark Brigade Sword & Candle Dungeon Storm
 21202922 Dark Brigade Swords and Candles Dungeon Space
@@ -1876,7 +1876,7 @@
 21801600 Silver Beast's Kin
 21801700 Silver Beast's Kin
 21801800 Silver Beast's Kin
-21802600,Silver Beast's Kin (Torch) TR
+21802600 Silver Beast's Kin (Torch) TR
 21802602 Silver Beast's Kin (Parasite) TR
 21802604 Silver Beast Family (Four Legs) TR
 21802900 Silver Beast's Kin Dungeon
@@ -1896,7 +1896,7 @@
 22502610 Jailer A Dropping off TR
 22502900 Jailer A Dungeons
 22502940 Jailer A Dungeon Poison
-22602600,Jailer B Chain Whip TR
+22602600 Jailer B Chain Whip TR
 22602602 Jailer B Orb TR
 22602900 Jailer B Chain Whip Dungeon
 22602940 Jailer B Chain Whip Dungeon Poison
@@ -1926,7 +1926,7 @@
 25101600 Child of the Moon
 25101700 Child of the Moon
 25101800 Child of the Moon
-25202410,Moon Larva Cathedral Ward B Moonlit Night
+25202410 Moon Larva Cathedral Ward B Moonlit Night
 25202420 Moon Larva Cathedral Ward C
 25202900 Moon Hatchery Dungeon
 25202910 Moon Larva Dungeon Space
@@ -1960,7 +1960,7 @@
 26002700 Terrifying Crowd Forest
 26102200 Crowd Woman Torch Cemetery Street
 26102202 Crowd Woman Scythe Cemetery Street
-26102204,Crowd Woman Branding Iron Cemetery Street
+26102204 Crowd Woman Branding Iron Cemetery Street
 26102206 Crowd Woman Hammer Graveyard
 26102208 Crowd Woman Throwing Cemetery Street
 26102800 Crowd Woman Sacrifice Sickle ( 1 Number one)
@@ -1977,7 +1977,7 @@
 26202422 Crowd (wheelchairs) _ Flame Thrower Cathedral Ward C
 26202424 Crowd (wheelchairs) _ Gatling Cathedral C
 26202800 Crowd (wheelchairs) Sacrifice Rifle (1 First )
-26202810,Crowd (wheelchairs) Sacrifice Short gun (1 First )
+26202810 Crowd (wheelchairs) Sacrifice Short gun (1 First )
 26202820 Crowd (wheelchairs) Sacrifice Gatling (1 First )
 26202830 Crowd (wheelchairs) Sacrifice Flame thrower (1 First )
 26202900 Crowd (wheelchair) Dungeon
@@ -2001,7 +2001,7 @@
 27002426 Church Messenger Cross Cathedral Quarter A
 27002428 Church Messenger Scythe Cathedral Quarter A
 27002430 Church Emissary Flamethrower Cathedral Ward A
-27003200,Church Messenger Staff University
+27003200 Church Messenger Staff University
 27003202 Church Messenger Gun University
 27003204 Church Messenger Lantern University
 27003206 Church Messenger Cross University
@@ -2021,7 +2021,7 @@
 30002905 Dungeon Man (Priest) Dungeon Fighting Type
 30002910 Dungeon Man (Priest) Dungeon Storm
 30002920 Dungeon Man (Priest) Dungeon Space
-30002940,Dungeon Man (Priest) Dungeon Poison
+30002940 Dungeon Man (Priest) Dungeon Poison
 30002950 Dungeon Man (Priest) Dungeon Strong Enemy
 30102700 Dungeon Man (Slave) Lantern Forest
 30102900 Dungeon Man (Slave) Sword Hatchet Dungeon
@@ -2035,7 +2035,7 @@
 30102950 Dungeon Man (Slave) Sword Hatchet Dungeon Strong Enemy
 30102960 Dungeon Man (Slave) Sword Hatchet Dungeon Warrior
 30102970 Dungeon Man (Slave) Sword Hatchet Dungeon Strong Slave
-30102980,Dungeon Man (Slave) Sword Hatchet Dungeon Ritual
+30102980 Dungeon Man (Slave) Sword Hatchet Dungeon Ritual
 30102990 Dungeon Man (Slave) Sword Hatchet Dungeon Poison + Formidable Opponent
 30102902 Dungeon Man (Slave) Lantern Dungeon
 30102912 Dungeon Man (Slave) Lantern Dungeon Storm
@@ -2048,7 +2048,7 @@
 30102992 Dungeon Man (Slave) Lantern Dungeon Poison + Formidable Opponent
 30102904 Dungeon Man (Slave) Axe Pole Dungeon
 30102914 Dungeon Man (Slave) Axe Pole Dungeon Storm
-30102924,Dungeon Man (Slave) Axe Pole Dungeon Space
+30102924 Dungeon Man (Slave) Axe Pole Dungeon Space
 30102944 Dungeon Man (Slave) Axe Pole Dungeon Poison
 30102954 Dungeon Man (Slave) Axe Pole Dungeon Strong Enemy
 30102964 Dungeon Man (Slave) Axe Pole Dungeon Warrior
@@ -2061,7 +2061,7 @@
 30102946 Dungeon Man (Slave) Axe/Axe Dungeon Poison
 30102956 Dungeon Man (Slave) Axe/Axe Dungeon Strong Enemy
 30102966 Dungeon Man (Slave) Axe/Axe Dungeon Warrior
-30102976,Dungeon Man (Slave) Axe/Axe Dungeon Doctor
+30102976 Dungeon Man (Slave) Axe/Axe Dungeon Doctor
 30102986 Dungeon Man (Slave) Axe/Axe Dungeon Ritual
 30102996 Dungeon Man (Slave) Axe/Axe Dungeon Poison + Formidable Opponent
 30102908 Dungeon Man (Slave) Sword/Clothing Dungeon
@@ -2074,7 +2074,7 @@
 30102988 Dungeon Man (Slave) Sword/Clothing Dungeon Ritual
 30102998 Dungeon Man (Slave) Sword/Clothing Dungeon Poison + Formidable Opponent
 30202900 Dungeon Person (Guardian) Dungeon
-30202910,Dungeon Person (Guardian) Dungeon Storm
+30202910 Dungeon Person (Guardian) Dungeon Storm
 30202920 Dungeon Man (Guardian) Dungeon Space
 30202940 Dungeon Man (Guardian) Dungeon Poison
 30202950 Dungeon Man (Guardian) Dungeon Strong Enemy
@@ -2088,7 +2088,7 @@
 30202952 Dungeon Guardian Crossbow Dungeon Strong Enemy
 30202962 Dungeon Guardian Crossbow Dungeon Warrior
 30202972 Dungeon Guardian Crossbow Dungeon Doctor
-30202982,Dungeon Guardian Crossbow Dungeon Ritual
+30202982 Dungeon Guardian Crossbow Dungeon Ritual
 30300001 Dungeon Man (Madman) Dungeon Magic Stone
 30302900 Dungeon Man (Madman) Dungeon
 30302910 Dungeon Man (Madman) Dungeon Storm
@@ -2103,7 +2103,7 @@
 30302922 Dungeon Man (Madman) Corpse Carrier Dungeon Space
 30302942 Dungeon Man (Madman) Corpse Carrier Dungeon Poison
 30302952 Dungeon Man (Madman) Corpse Carrier Dungeon Strong Enemy
-30302962,Dungeon Man (Madman) Corpse Carrier Dungeon Warrior
+30302962 Dungeon Man (Madman) Corpse Carrier Dungeon Warrior
 30302972 Dungeon Man (Madman) Corpse Carrier Dungeon Doctor
 30302982 Dungeon Man (Madman) Corpse Bearer Dungeon Ritual
 30304000 Dungeon Man (Madman) Dungeon Curse
@@ -2126,7 +2126,7 @@
 30402950 Dungeon Man (Fat) Dungeon Strong Enemy
 30402960 Dungeon Man (Fat) Dungeon Warrior
 30402970 Dungeon Man (Fat) Dungeon Doctor
-30402980,Dungeon Man (Fat) Dungeon Ritual
+30402980 Dungeon Man (Fat) Dungeon Ritual
 30402902 Dungeon Man (Fat) Gun Dungeon
 30402912 Dungeon Man (fat) Gun Dungeon Storm
 30402922 Dungeon Man (fat) Gun Dungeon Space
@@ -2140,7 +2140,7 @@
 30402924 Dungeon Man (Fat) Iron Ball Dungeon Space
 30402944 Dungeon Man (Fat) Iron Ball Dungeon Poison
 30402954 Dungeon Man (Fat) Iron Ball Dungeon Strong Enemy
-30402964,Dungeon Man (Fat) Iron Ball Dungeon Warrior
+30402964 Dungeon Man (Fat) Iron Ball Dungeon Warrior
 30402974 Dungeon Man (Fat) Iron Ball Dungeon Doctor
 30402984 Dungeon Man (Fat) Iron Ball Dungeon Ritual
 30404000 Dungeon Man (Fat) Dungeon Curse
@@ -2185,15 +2185,15 @@
 30514800 Dungeon Man (Lord ) Staff Floor Boss
 30505000 Dungeon Man (Lord ) Dual Swords Treated as a Weakling
 30515000 Dungeon Man (Lord ) Cane: Treated like a weakling
-30601000,Dungeon Person (Bride)
-30601100,Dungeon Person (Bride)
-30601200,Dungeon Person (Bride)
-30601300,Dungeon Person (Bride)
-30601400,Dungeon Person (Bride)
-30601500,Dungeon Person (Bride)
-30601600,Dungeon Person (Bride)
-30601700,Dungeon Person (Bride)
-30601800,Dungeon Person (Bride)
+30601000 Dungeon Person (Bride)
+30601100 Dungeon Person (Bride)
+30601200 Dungeon Person (Bride)
+30601300 Dungeon Person (Bride)
+30601400 Dungeon Person (Bride)
+30601500 Dungeon Person (Bride)
+30601600 Dungeon Person (Bride)
+30601700 Dungeon Person (Bride)
+30601800 Dungeon Person (Bride)
 31002800 Mimic Sacrifice
 31002900 Mimic Dungeon
 31002902 Mimic Long-range type Dungeon
@@ -2223,7 +2223,7 @@
 31302400 Fresh Golem Cathedral Ward A
 31302900 Fresh Golem Dungeon
 31302997 Fresh Golem Dungeon Storm
-31302998,Fresh Golem Dungeon Space
+31302998 Fresh Golem Dungeon Space
 31302999 Fresh Golem Dungeon Poison
 31302980 Fresh Golem Dungeon Ritual
 31302910 Fresh Golem Cannon Dungeon
@@ -2323,15 +2323,15 @@
 50801600 Storm Beast (Bone)
 50801700 Storm Beast (Bone)
 50801800 Storm Beast (Bone)
-50901000,Founder Beast Dungeon Boss
-50901100,Founder Beast Dungeon Boss
-50901200,Founder Beast Dungeon Boss
-50901300,Founder Beast Dungeon Boss
-50901400,Founder Beast Dungeon Boss
-50901500,Founder Beast Dungeon Boss
-50901600,Founder Beast Dungeon Boss
-50901700,Founder Beast Dungeon Boss
-50901800,Founder Beast Dungeon Boss
+50901000 Founder Beast Dungeon Boss
+50901100 Founder Beast Dungeon Boss
+50901200 Founder Beast Dungeon Boss
+50901300 Founder Beast Dungeon Boss
+50901400 Founder Beast Dungeon Boss
+50901500 Founder Beast Dungeon Boss
+50901600 Founder Beast Dungeon Boss
+50901700 Founder Beast Dungeon Boss
+50901800 Founder Beast Dungeon Boss
 50911000 Founder Beast Headless Dungeon Boss
 50911100 Founder Beast Headless Dungeon Boss
 50911200 Founder Beast Headless Dungeon Boss
@@ -2431,7 +2431,7 @@
 75002405 Enemy Avatar Cathedral Ward C
 75002900 Enemy Avatar Dungeons
 75002910 Enemy Avatar Dungeon Storm
-75002920,Enemy Avatar Dungeon Space
+75002920 Enemy Avatar Dungeon Space
 75002940 Enemy Avatar Dungeon Poison
 80000000 Fixed Grail When defeating the Ruins Boss
 80000100 Fixed Grail [Level 2 】gun
@@ -2473,7 +2473,7 @@
 80200000 Automatically generated chalice [Level 2 】Thumel
 80201000 Automatically generated chalice [Level 2 】Thumel _ curse
 80202000 Automatically generated chalice [Level 2 】Thumel _ Multi
-80210000,Automatically generated chalice [Level 2 】 Remote Grave
+80210000 Automatically generated chalice [Level 2 】 Remote Grave
 80211000 Automatically generated chalice [Level 2 】 Remote Grave _ curse
 80212000 Automatically generated chalice [Level 2 】 Remote Grave _ Multi
 80300000 Automatically generated chalice [Level 3 】Thumel
@@ -2486,7 +2486,7 @@
 80321000 Automatically generated chalice [Level 3 】 Laurent _ curse
 80322000 Automatically generated chalice [Level 3 】 Laurent _ Multi
 80350000 Automatically generated chalice [Level 3 】Rare material A
-80351000,Automatically generated chalice [Level 3 】Rare material A_ curse
+80351000 Automatically generated chalice [Level 3 】Rare material A_ curse
 80352000 Automatically generated chalice [Level 3 】Rare material A_ Multi
 80400000 Automatically generated chalice [Level 4 】Thumel
 80401000 Automatically generated chalice [Level 4 】Thumel _ curse
@@ -2498,7 +2498,7 @@
 80413000 Automatically generated chalice [Level 4 】 Remote Grave _ A terrible curse
 80420000 Automatically generated chalice [Level 4 】 Laurent
 80421000 Automatically generated chalice [Level 4 】 Laurent _ curse
-80422000,Automatically generated chalice [Level 4 】 Laurent _ Multi
+80422000 Automatically generated chalice [Level 4 】 Laurent _ Multi
 80423000 Automatically generated chalice [Level 4 】 Laurent _ A terrible curse
 80430000 Automatically generated chalice [Level 4 】Is
 80431000 Automatically generated chalice [Level 4 】Is _ curse
@@ -2539,7 +2539,7 @@
 80550000 Automatically generated chalice [Level 5 】Rare material A
 80551000 Automatically generated chalice [Level 5 】Rare material A_ curse
 80552000 Automatically generated chalice [Level 5 】Rare material A_ Multi
-80553000,Automatically generated chalice [Level 5 】Rare material A_ A terrible curse
+80553000 Automatically generated chalice [Level 5 】Rare material A_ A terrible curse
 80560000 Automatically generated chalice [Level 5 】Rare material B
 80561000 Automatically generated chalice [Level 5 】Rare material B_ curse
 80562000 Automatically generated chalice [Level 5 】Rare material B_ Multi
@@ -2551,7 +2551,7 @@
 80610000 Automatically generated chalice [Level 6 】 Remote Grave
 80611000 Automatically generated chalice [Level 6 】 Remote Grave _ curse
 80612000 Automatically generated chalice [Level 6 】 Remote Grave _ Multi
-80613000,Automatically generated chalice [Level 6 】 Remote Grave _ A terrible curse
+80613000 Automatically generated chalice [Level 6 】 Remote Grave _ A terrible curse
 80620000 Automatically generated chalice [Level 6 】 Laurent
 80621000 Automatically generated chalice [Level 6 】 Laurent _ curse
 80622000 Automatically generated chalice [Level 6 】 Laurent _ Multi
@@ -2575,7 +2575,7 @@
 80700000 Automatically generated chalice [Level 7 】Thumel
 80701000 Automatically generated chalice [Level 7 】Thumel _ curse
 80702000 Automatically generated chalice [Level 7 】Thumel _ Multi
-80703000,Automatically generated chalice [Level 7 】Thumel _ A terrible curse
+80703000 Automatically generated chalice [Level 7 】Thumel _ A terrible curse
 80710000 Automatically generated chalice [Level 7 】 Remote Grave
 80711000 Automatically generated chalice [Level 7 】 Remote Grave _ curse
 80712000 Automatically generated chalice [Level 7 】 Remote Grave _ Multi
@@ -2605,7 +2605,7 @@
 81200000 Automatically generated chalice [Level 2 】Thumel
 81201000 Automatically generated chalice [Level 2 】Thumel _ curse
 81202000 Automatically generated chalice [Level 2 】Thumel _ Multi
-81210000,Automatically generated chalice [Level 2 】 Remote Grave
+81210000 Automatically generated chalice [Level 2 】 Remote Grave
 81211000 Automatically generated chalice [Level 2 】 Remote Grave _ curse
 81212000 Automatically generated chalice [Level 2 】 Remote Grave _ Multi
 81300000 Automatically generated chalice [Level 3 】Thumel
@@ -2618,7 +2618,7 @@
 81321000 Automatically generated chalice [Level 3 】 Laurent _ curse
 81322000 Automatically generated chalice [Level 3 】 Laurent _ Multi
 81350000 Automatically generated chalice [Level 3 】Rare material A
-81351000,Automatically generated chalice [Level 3 】Rare material A_ curse
+81351000 Automatically generated chalice [Level 3 】Rare material A_ curse
 81352000 Automatically generated chalice [Level 3 】Rare material A_ Multi
 81400000 Automatically generated chalice [Level 4 】Thumel
 81401000 Automatically generated chalice [Level 4 】Thumel _ curse
@@ -2630,7 +2630,7 @@
 81413000 Automatically generated chalice [Level 4 】 Remote Grave _ A terrible curse
 81420000 Automatically generated chalice [Level 4 】 Laurent
 81421000 Automatically generated chalice [Level 4 】 Laurent _ curse
-81422000,Automatically generated chalice [Level 4 】 Laurent _ Multi
+81422000 Automatically generated chalice [Level 4 】 Laurent _ Multi
 81423000 Automatically generated chalice [Level 4 】 Laurent _ A terrible curse
 81430000 Automatically generated chalice [Level 4 】Is
 81431000 Automatically generated chalice [Level 4 】Is _ curse
@@ -2671,7 +2671,7 @@
 81550000 Automatically generated chalice [Level 5 】Rare material A
 81551000 Automatically generated chalice [Level 5 】Rare material A_ curse
 81552000 Automatically generated chalice [Level 5 】Rare material A_ Multi
-81553000,Automatically generated chalice [Level 5 】Rare material A_ A terrible curse
+81553000 Automatically generated chalice [Level 5 】Rare material A_ A terrible curse
 81560000 Automatically generated chalice [Level 5 】Rare material B
 81561000 Automatically generated chalice [Level 5 】Rare material B_ curse
 81562000 Automatically generated chalice [Level 5 】Rare material B_ Multi
@@ -2683,7 +2683,7 @@
 81610000 Automatically generated chalice [Level 6 】 Remote Grave
 81611000 Automatically generated chalice [Level 6 】 Remote Grave _ curse
 81612000 Automatically generated chalice [Level 6 】 Remote Grave _ Multi
-81613000,Automatically generated chalice [Level 6 】 Remote Grave _ A terrible curse
+81613000 Automatically generated chalice [Level 6 】 Remote Grave _ A terrible curse
 81620000 Automatically generated chalice [Level 6 】 Laurent
 81621000 Automatically generated chalice [Level 6 】 Laurent _ curse
 81622000 Automatically generated chalice [Level 6 】 Laurent _ Multi
@@ -2707,7 +2707,7 @@
 81700000 Automatically generated chalice [Level 7 】Thumel
 81701000 Automatically generated chalice [Level 7 】Thumel _ curse
 81702000 Automatically generated chalice [Level 7 】Thumel _ Multi
-81703000,Automatically generated chalice [Level 7 】Thumel _ A terrible curse
+81703000 Automatically generated chalice [Level 7 】Thumel _ A terrible curse
 81710000 Automatically generated chalice [Level 7 】 Remote Grave
 81711000 Automatically generated chalice [Level 7 】 Remote Grave _ curse
 81712000 Automatically generated chalice [Level 7 】 Remote Grave _ Multi
@@ -2737,7 +2737,7 @@
 82200000 Automatically generated chalice [Level 2 】Thumel
 82201000 Automatically generated chalice [Level 2 】Thumel _ curse
 82202000 Automatically generated chalice [Level 2 】Thumel _ Multi
-82210000,Automatically generated chalice [Level 2 】 Remote Grave
+82210000 Automatically generated chalice [Level 2 】 Remote Grave
 82211000 Automatically generated chalice [Level 2 】 Remote Grave _ curse
 82212000 Automatically generated chalice [Level 2 】 Remote Grave _ Multi
 82300000 Automatically generated chalice [Level 3 】Thumel
@@ -2750,7 +2750,7 @@
 82321000 Automatically generated chalice [Level 3 】 Laurent _ curse
 82322000 Automatically generated chalice [Level 3 】 Laurent _ Multi
 82350000 Automatically generated chalice [Level 3 】Rare material A
-82351000,Automatically generated chalice [Level 3 】Rare material A_ curse
+82351000 Automatically generated chalice [Level 3 】Rare material A_ curse
 82352000 Automatically generated chalice [Level 3 】Rare material A_ Multi
 82400000 Automatically generated chalice [Level 4 】Thumel
 82401000 Automatically generated chalice [Level 4 】Thumel _ curse
@@ -2762,7 +2762,7 @@
 82413000 Automatically generated chalice [Level 4 】 Remote Grave _ A terrible curse
 82420000 Automatically generated chalice [Level 4 】 Laurent
 82421000 Automatically generated chalice [Level 4 】 Laurent _ curse
-82422000,Automatically generated chalice [Level 4 】 Laurent _ Multi
+82422000 Automatically generated chalice [Level 4 】 Laurent _ Multi
 82423000 Automatically generated chalice [Level 4 】 Laurent _ A terrible curse
 82430000 Automatically generated chalice [Level 4 】Is
 82431000 Automatically generated chalice [Level 4 】Is _ curse
@@ -2803,7 +2803,7 @@
 82550000 Automatically generated chalice [Level 5 】Rare material A
 82551000 Automatically generated chalice [Level 5 】Rare material A_ curse
 82552000 Automatically generated chalice [Level 5 】Rare material A_ Multi
-82553000,Automatically generated chalice [Level 5 】Rare material A_ A terrible curse
+82553000 Automatically generated chalice [Level 5 】Rare material A_ A terrible curse
 82560000 Automatically generated chalice [Level 5 】Rare material B
 82561000 Automatically generated chalice [Level 5 】Rare material B_ curse
 82562000 Automatically generated chalice [Level 5 】Rare material B_ Multi
@@ -2815,7 +2815,7 @@
 82610000 Automatically generated chalice [Level 6 】 Remote Grave
 82611000 Automatically generated chalice [Level 6 】 Remote Grave _ curse
 82612000 Automatically generated chalice [Level 6 】 Remote Grave _ Multi
-82613000,Automatically generated chalice [Level 6 】 Remote Grave _ A terrible curse
+82613000 Automatically generated chalice [Level 6 】 Remote Grave _ A terrible curse
 82620000 Automatically generated chalice [Level 6 】 Laurent
 82621000 Automatically generated chalice [Level 6 】 Laurent _ curse
 82622000 Automatically generated chalice [Level 6 】 Laurent _ Multi
@@ -2839,7 +2839,7 @@
 82700000 Automatically generated chalice [Level 7 】Thumel
 82701000 Automatically generated chalice [Level 7 】Thumel _ curse
 82702000 Automatically generated chalice [Level 7 】Thumel _ Multi
-82703000,Automatically generated chalice [Level 7 】Thumel _ A terrible curse
+82703000 Automatically generated chalice [Level 7 】Thumel _ A terrible curse
 82710000 Automatically generated chalice [Level 7 】 Remote Grave
 82711000 Automatically generated chalice [Level 7 】 Remote Grave _ curse
 82712000 Automatically generated chalice [Level 7 】 Remote Grave _ Multi
@@ -2904,7 +2904,7 @@
 101010370 Block Treasure Chest [Level 1_ Tumer 4F candidate 8
 101010380 Block Treasure Chest [Level 1_ Tumer 4F candidate 9
 101010390 Block Treasure Chest [Level 1_ Tumer 4F candidate 10
-101020000,Block Treasure Chest [Level 2_ Tumer 1F candidate 1
+101020000 Block Treasure Chest [Level 2_ Tumer 1F candidate 1
 101020010 Block Treasure Chest [Level 2_ Tumer 1F candidate 2
 101020020 Block Treasure Chest [Level 2_ Tumer 1F candidate 3
 101020030 Block Treasure Chest [Level 2_ Tumer 1F candidate 4
@@ -2914,7 +2914,7 @@
 101020070 Block Treasure Chest [Level 2_ Tumer 1F candidate 8
 101020080 Block Treasure Chest [Level 2_ Tumer 1F candidate 9
 101020090 Block Treasure Chest [Level 2_ Tumer 1F candidate 10
-101020100,Block Treasure Chest [Level 2_ Tumer 2F candidate 1
+101020100 Block Treasure Chest [Level 2_ Tumer 2F candidate 1
 101020110 Block Treasure Chest [Level 2_ Tumer 2F candidate 2
 101020120 Block Treasure Chest [Level 2_ Tumer 2F candidate 3
 101020130 Block Treasure Chest [Level 2_ Tumer 2F candidate 4
@@ -2924,7 +2924,7 @@
 101020170 Block Treasure Chest [Level 2_ Tumer 2F candidate 8
 101020180 Block Treasure Chest [Level 2_ Tumer 2F candidate 9
 101020190 Block Treasure Chest [Level 2_ Tumer 2F candidate 10
-101020200,Block Treasure Chest [Level 2_ Tumer 3F candidate 1
+101020200 Block Treasure Chest [Level 2_ Tumer 3F candidate 1
 101020210 Block Treasure Chest [Level 2_ Tumer 3F candidate 2
 101020220 Block Treasure Chest [Level 2_ Tumer 3F candidate 3
 101020230 Block Treasure Chest [Level 2_ Tumer 3F candidate 4
@@ -2934,7 +2934,7 @@
 101020270 Block Treasure Chest [Level 2_ Tumer 3F candidate 8
 101020280 Block Treasure Chest [Level 2_ Tumer 3F candidate 9
 101020290 Block Treasure Chest [Level 2_ Tumer 3F candidate 10
-101020300,Block Treasure Chest [Level 2_ Tumer 4F candidate 1
+101020300 Block Treasure Chest [Level 2_ Tumer 4F candidate 1
 101020310 Block Treasure Chest [Level 2_ Tumer 4F candidate 2
 101020320 Block Treasure Chest [Level 2_ Tumer 4F candidate 3
 101020330 Block Treasure Chest [Level 2_ Tumer 4F candidate 4
@@ -2944,7 +2944,7 @@
 101020370 Block Treasure Chest [Level 2_ Tumer 4F candidate 8
 101020380 Block Treasure Chest [Level 2_ Tumer 4F candidate 9
 101020390 Block Treasure Chest [Level 2_ Tumer 4F candidate 10
-101021000,Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 1
+101021000 Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 1
 101021010 Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 2
 101021020 Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 3
 101021030 Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 4
@@ -2976,7 +2976,7 @@
 101021290 Block Treasure Chest [Level 2_ Remote Tomb 3F candidate 10
 101021300 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 1
 101021310 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 2
-101021320,Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 3
+101021320 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 3
 101021330 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 4
 101021340 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 5
 101021350 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 6
@@ -3048,7 +3048,7 @@
 101031210 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 2
 101031220 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 3
 101031230 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 4
-101031240,Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 5
+101031240 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 5
 101031250 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 6
 101031260 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 7
 101031270 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 8
@@ -3069,7 +3069,7 @@
 101040020 Block Treasure Chest [Level 4_ Tumer 1F candidate 3
 101040030 Block Treasure Chest [Level 4_ Tumer 1F candidate 4
 101040040 Block Treasure Chest [Level 4_ Tumer 1F candidate 5
-101040050,Block Treasure Chest [Level 4_ Tumer 1F candidate 6
+101040050 Block Treasure Chest [Level 4_ Tumer 1F candidate 6
 101040060 Block Treasure Chest [Level 4_ Tumer 1F candidate 7
 101040070 Block Treasure Chest [Level 4_ Tumer 1F candidate 8
 101040080 Block Treasure Chest [Level 4_ Tumer 1F candidate 9
@@ -3079,7 +3079,7 @@
 101040120 Block Treasure Chest [Level 4_ Tumer 2F candidate 3
 101040130 Block Treasure Chest [Level 4_ Tumer 2F candidate 4
 101040140 Block Treasure Chest [Level 4_ Tumer 2F candidate 5
-101040150,Block Treasure Chest [Level 4_ Tumer 2F candidate 6
+101040150 Block Treasure Chest [Level 4_ Tumer 2F candidate 6
 101040160 Block Treasure Chest [Level 4_ Tumer 2F candidate 7
 101040170 Block Treasure Chest [Level 4_ Tumer 2F candidate 8
 101040180 Block Treasure Chest [Level 4_ Tumer 2F candidate 9
@@ -3089,7 +3089,7 @@
 101040220 Block Treasure Chest [Level 4_ Tumer 3F candidate 3
 101040230 Block Treasure Chest [Level 4_ Tumer 3F candidate 4
 101040240 Block Treasure Chest [Level 4_ Tumer 3F candidate 5
-101040250,Block Treasure Chest [Level 4_ Tumer 3F candidate 6
+101040250 Block Treasure Chest [Level 4_ Tumer 3F candidate 6
 101040260 Block Treasure Chest [Level 4_ Tumer 3F candidate 7
 101040270 Block Treasure Chest [Level 4_ Tumer 3F candidate 8
 101040280 Block Treasure Chest [Level 4_ Tumer 3F candidate 9
@@ -3099,7 +3099,7 @@
 101040320 Block Treasure Chest [Level 4_ Tumer 4F candidate 3
 101040330 Block Treasure Chest [Level 4_ Tumer 4F candidate 4
 101040340 Block Treasure Chest [Level 4_ Tumer 4F candidate 5
-101040350,Block Treasure Chest [Level 4_ Tumer 4F candidate 6
+101040350 Block Treasure Chest [Level 4_ Tumer 4F candidate 6
 101040360 Block Treasure Chest [Level 4_ Tumer 4F candidate 7
 101040370 Block Treasure Chest [Level 4_ Tumer 4F candidate 8
 101040380 Block Treasure Chest [Level 4_ Tumer 4F candidate 9
@@ -3109,7 +3109,7 @@
 101042020 Block Treasure Chest [Level 4_ Laurent] 1F candidate 3
 101042030 Block Treasure Chest [Level 4_ Laurent] 1F candidate 4
 101042040 Block Treasure Chest [Level 4_ Laurent] 1F candidate 5
-101042050,Block Treasure Chest [Level 4_ Laurent] 1F candidate 6
+101042050 Block Treasure Chest [Level 4_ Laurent] 1F candidate 6
 101042060 Block Treasure Chest [Level 4_ Laurent] 1F candidate 7
 101042070 Block Treasure Chest [Level 4_ Laurent] 1F candidate 8
 101042080 Block Treasure Chest [Level 4_ Laurent] 1F candidate 9
@@ -3120,7 +3120,7 @@
 101042120 Block Treasure Chest [Level 4_ Laurent] 2F candidate 3
 101042130 Block Treasure Chest [Level 4_ Laurent] 2F candidate 4
 101042140 Block Treasure Chest [Level 4_ Laurent] 2F candidate 5
-101042150,Block Treasure Chest [Level 4_ Laurent] 2F candidate 6
+101042150 Block Treasure Chest [Level 4_ Laurent] 2F candidate 6
 101042160 Block Treasure Chest [Level 4_ Laurent] 2F candidate 7
 101042170 Block Treasure Chest [Level 4_ Laurent] 2F candidate 8
 101042180 Block Treasure Chest [Level 4_ Laurent] 2F candidate 9
@@ -3130,7 +3130,7 @@
 101042220 Block Treasure Chest [Level 4_ Laurent] 3F candidate 3
 101042230 Block Treasure Chest [Level 4_ Laurent] 3F candidate 4
 101042240 Block Treasure Chest [Level 4_ Laurent] 3F candidate 5
-101042250,Block Treasure Chest [Level 4_ Laurent] 3F candidate 6
+101042250 Block Treasure Chest [Level 4_ Laurent] 3F candidate 6
 101042260 Block Treasure Chest [Level 4_ Laurent] 3F candidate 7
 101042270 Block Treasure Chest [Level 4_ Laurent] 3F candidate 8
 101042280 Block Treasure Chest [Level 4_ Laurent] 3F candidate 9
@@ -3140,7 +3140,7 @@
 101042320 Block Treasure Chest [Level 4_ Laurent] 4F candidate 3
 101042330 Block Treasure Chest [Level 4_ Laurent] 4F candidate 4
 101042340 Block Treasure Chest [Level 4_ Laurent] 4F candidate 5
-101042350,Block Treasure Chest [Level 4_ Laurent] 4F candidate 6
+101042350 Block Treasure Chest [Level 4_ Laurent] 4F candidate 6
 101042360 Block Treasure Chest [Level 4_ Laurent] 4F candidate 7
 101042370 Block Treasure Chest [Level 4_ Laurent] 4F candidate 8
 101042380 Block Treasure Chest [Level 4_ Laurent] 4F candidate 9
@@ -3150,7 +3150,7 @@
 101050020 Block Treasure Chest [Level 5_ Tumer 1F candidate 3
 101050030 Block Treasure Chest [Level 5_ Tumer 1F candidate 4
 101050040 Block Treasure Chest [Level 5_ Tumer 1F candidate 5
-101050050,Block Treasure Chest [Level 5_ Tumer 1F candidate 6
+101050050 Block Treasure Chest [Level 5_ Tumer 1F candidate 6
 101050060 Block Treasure Chest [Level 5_ Tumer 1F candidate 7
 101050070 Block Treasure Chest [Level 5_ Tumer 1F candidate 8
 101050080 Block Treasure Chest [Level 5_ Tumer 1F candidate 9
@@ -3160,7 +3160,7 @@
 101050120 Block Treasure Chest [Level 5_ Tumer 2F candidate 3
 101050130 Block Treasure Chest [Level 5_ Tumer 2F candidate 4
 101050140 Block Treasure Chest [Level 5_ Tumer 2F candidate 5
-101050150,Block Treasure Chest [Level 5_ Tumer 2F candidate 6
+101050150 Block Treasure Chest [Level 5_ Tumer 2F candidate 6
 101050160 Block Treasure Chest [Level 5_ Tumer 2F candidate 7
 101050170 Block Treasure Chest [Level 5_ Tumer 2F candidate 8
 101050180 Block Treasure Chest [Level 5_ Tumer 2F candidate 9
@@ -3170,7 +3170,7 @@
 101050220 Block Treasure Chest [Level 5_ Tumer 3F candidate 3
 101050230 Block Treasure Chest [Level 5_ Tumer 3F candidate 4
 101050240 Block Treasure Chest [Level 5_ Tumer 3F candidate 5
-101050250,Block Treasure Chest [Level 5_ Tumer 3F candidate 6
+101050250 Block Treasure Chest [Level 5_ Tumer 3F candidate 6
 101050260 Block Treasure Chest [Level 5_ Tumer 3F candidate 7
 101050270 Block Treasure Chest [Level 5_ Tumer 3F candidate 8
 101050280 Block Treasure Chest [Level 5_ Tumer 3F candidate 9
@@ -3180,7 +3180,7 @@
 101050320 Block Treasure Chest [Level 5_ Tumer 4F candidate 3
 101050330 Block Treasure Chest [Level 5_ Tumer 4F candidate 4
 101050340 Block Treasure Chest [Level 5_ Tumer 4F candidate 5
-101050350,Block Treasure Chest [Level 5_ Tumer 4F candidate 6
+101050350 Block Treasure Chest [Level 5_ Tumer 4F candidate 6
 101050360 Block Treasure Chest [Level 5_ Tumer 4F candidate 7
 101050370 Block Treasure Chest [Level 5_ Tumer 4F candidate 8
 101050380 Block Treasure Chest [Level 5_ Tumer 4F candidate 9
@@ -3190,7 +3190,7 @@
 101052020 Block Treasure Chest [Level 5_ Laurent] 1F candidate 3
 101052030 Block Treasure Chest [Level 5_ Laurent] 1F candidate 4
 101052040 Block Treasure Chest [Level 5_ Laurent] 1F candidate 5
-101052050,Block Treasure Chest [Level 5_ Laurent] 1F candidate 6
+101052050 Block Treasure Chest [Level 5_ Laurent] 1F candidate 6
 101052060 Block Treasure Chest [Level 5_ Laurent] 1F candidate 7
 101052070 Block Treasure Chest [Level 5_ Laurent] 1F candidate 8
 101052080 Block Treasure Chest [Level 5_ Laurent] 1F candidate 9
@@ -3200,7 +3200,7 @@
 101052120 Block Treasure Chest [Level 5_ Laurent] 2F candidate 3
 101052130 Block Treasure Chest [Level 5_ Laurent] 2F candidate 4
 101052140 Block Treasure Chest [Level 5_ Laurent] 2F candidate 5
-101052150,Block Treasure Chest [Level 5_ Laurent] 2F candidate 6
+101052150 Block Treasure Chest [Level 5_ Laurent] 2F candidate 6
 101052160 Block Treasure Chest [Level 5_ Laurent] 2F candidate 7
 101052170 Block Treasure Chest [Level 5_ Laurent] 2F candidate 8
 101052180 Block Treasure Chest [Level 5_ Laurent] 2F candidate 9
@@ -3210,7 +3210,7 @@
 101052220 Block Treasure Chest [Level 5_ Laurent] 3F candidate 3
 101052230 Block Treasure Chest [Level 5_ Laurent] 3F candidate 4
 101052240 Block Treasure Chest [Level 5_ Laurent] 3F candidate 5
-101052250,Block Treasure Chest [Level 5_ Laurent] 3F candidate 6
+101052250 Block Treasure Chest [Level 5_ Laurent] 3F candidate 6
 101052260 Block Treasure Chest [Level 5_ Laurent] 3F candidate 7
 101052270 Block Treasure Chest [Level 5_ Laurent] 3F candidate 8
 101052280 Block Treasure Chest [Level 5_ Laurent] 3F candidate 9
@@ -3220,7 +3220,7 @@
 101052320 Block Treasure Chest [Level 5_ Laurent] 4F candidate 3
 101052330 Block Treasure Chest [Level 5_ Laurent] 4F candidate 4
 101052340 Block Treasure Chest [Level 5_ Laurent] 4F candidate 5
-101052350,Block Treasure Chest [Level 5_ Laurent] 4F candidate 6
+101052350 Block Treasure Chest [Level 5_ Laurent] 4F candidate 6
 101052360 Block Treasure Chest [Level 5_ Laurent] 4F candidate 7
 101052370 Block Treasure Chest [Level 5_ Laurent] 4F candidate 8
 101052380 Block Treasure Chest [Level 5_ Laurent] 4F candidate 9
@@ -3241,7 +3241,7 @@
 101053130 Block Treasure Chest [Level 5_ Size: 2F candidate 4
 101053140 Block Treasure Chest [Level 5_ Size: 2F candidate 5
 101053150 Block Treasure Chest [Level 5_ Size: 2F candidate 6
-101053160,Block Treasure Chest [Level 5_ Size: 2F candidate 7
+101053160 Block Treasure Chest [Level 5_ Size: 2F candidate 7
 101053170 Block Treasure Chest [Level 5_ Size: 2F candidate 8
 101053180 Block Treasure Chest [Level 5_ Size: 2F candidate 9
 101053190 Block Treasure Chest [Level 5_ Size: 2F candidate 10
@@ -3273,7 +3273,7 @@
 101110050 Black Treasure Chest [Level 1_ Tumer 1F candidate 6
 101110060 Black Treasure Chest [Level 1_ Tumer 1F candidate 7
 101110070 Black Treasure Chest [Level 1_ Tumer 1F candidate 8
-101110080,Black Treasure Chest [Level 1_ Tumer 1F candidate 9
+101110080 Black Treasure Chest [Level 1_ Tumer 1F candidate 9
 101110090 Black Treasure Chest [Level 1_ Tumer 1F candidate 10
 101110100 Black Treasure Chest [Level 1_ Tumer 2F candidate 1
 101110110 Black Treasure Chest [Level 1_ Tumer 2F candidate 2
@@ -3305,7 +3305,7 @@
 101110370 Black Treasure Chest [Level 1_ Tumer 4F candidate 8
 101110380 Black Treasure Chest [Level 1_ Tumer 4F candidate 9
 101110390 Black Treasure Chest [Level 1_ Tumer 4F candidate 10
-101120000,Black Treasure Chest [Level 2_ Tumer 1F candidate 1
+101120000 Black Treasure Chest [Level 2_ Tumer 1F candidate 1
 101120010 Black Treasure Chest [Level 2_ Tumer 1F candidate 2
 101120020 Black Treasure Chest [Level 2_ Tumer 1F candidate 3
 101120030 Black Treasure Chest [Level 2_ Tumer 1F candidate 4
@@ -3337,7 +3337,7 @@
 101120290 Black Treasure Chest [Level 2_ Tumer 3F candidate 10
 101120300 Black Treasure Chest [Level 2_ Tumer 4F candidate 1
 101120310 Black Treasure Chest [Level 2_ Tumer 4F candidate 2
-101120320,Black Treasure Chest [Level 2_ Tumer 4F candidate 3
+101120320 Black Treasure Chest [Level 2_ Tumer 4F candidate 3
 101120330 Black Treasure Chest [Level 2_ Tumer 4F candidate 4
 101120340 Black Treasure Chest [Level 2_ Tumer 4F candidate 5
 101120350 Black Treasure Chest [Level 2_ Tumer 4F candidate 6
@@ -3348,7 +3348,7 @@
 101121000 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 1
 101121010 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 2
 101121020 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 3
-101121030,Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 4
+101121030 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 4
 101121040 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 5
 101121050 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 6
 101121060 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 7
@@ -3371,7 +3371,7 @@
 101121230 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 4
 101121240 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 5
 101121250 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 6
-101121260,Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 7
+101121260 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 7
 101121270 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 8
 101121280 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 9
 101121290 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 10
@@ -3404,7 +3404,7 @@
 101130160 Black Treasure Chest [Level 3_ Tumer 2F candidate 7
 101130170 Black Treasure Chest [Level 3_ Tumer 2F candidate 8
 101130180 Black Treasure Chest [Level 3_ Tumer 2F candidate 9
-101130190,Black Treasure Chest [Level 3_ Tumer 2F candidate 10
+101130190 Black Treasure Chest [Level 3_ Tumer 2F candidate 10
 101130200 Black Treasure Chest [Level 3_ Tumer 3F candidate 1
 101130210 Black Treasure Chest [Level 3_ Tumer 3F candidate 2
 101130220 Black Treasure Chest [Level 3_ Tumer 3F candidate 3
@@ -3437,7 +3437,7 @@
 101131090 Black Treasure Chest [Level 3_ Remote Tomb 1F candidate 10
 101131100 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 1
 101131110 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 2
-101131120,Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 3
+101131120 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 3
 101131130 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 4
 101131140 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 5
 101131150 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 6
@@ -3460,7 +3460,7 @@
 101131320 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 3
 101131330 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 4
 101131340 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 5
-101131350,Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 6
+101131350 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 6
 101131360 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 7
 101131370 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 8
 101131380 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 9
@@ -3471,7 +3471,7 @@
 101140030 Black Treasure Chest [Level 4_ Tumer 1F candidate 4
 101140040 Black Treasure Chest [Level 4_ Tumer 1F candidate 5
 101140050 Black Treasure Chest [Level 4_ Tumer 1F candidate 6
-101140060,Black Treasure Chest [Level 4_ Tumer 1F candidate 7
+101140060 Black Treasure Chest [Level 4_ Tumer 1F candidate 7
 101140070 Black Treasure Chest [Level 4_ Tumer 1F candidate 8
 101140080 Black Treasure Chest [Level 4_ Tumer 1F candidate 9
 101140090 Black Treasure Chest [Level 4_ Tumer 1F candidate 10
@@ -3503,7 +3503,7 @@
 101140350 Black Treasure Chest [Level 4_ Tumer 4F candidate 6
 101140360 Black Treasure Chest [Level 4_ Tumer 4F candidate 7
 101140370 Black Treasure Chest [Level 4_ Tumer 4F candidate 8
-101140380,Black Treasure Chest [Level 4_ Tumer 4F candidate 9
+101140380 Black Treasure Chest [Level 4_ Tumer 4F candidate 9
 101140390 Black Treasure Chest [Level 4_ Tumer 4F candidate 10
 101142000 Black Treasure Chest [Level 4_ Laurent] 1F candidate 1
 101142010 Black Treasure Chest [Level 4_ Laurent] 1F candidate 2
@@ -3535,7 +3535,7 @@
 101142270 Black Treasure Chest [Level 4_ Laurent] 3F candidate 8
 101142280 Black Treasure Chest [Level 4_ Laurent] 3F candidate 9
 101142290 Black Treasure Chest [Level 4_ Laurent] 3F candidate 10
-101142300,Black Treasure Chest [Level 4_ Laurent] 4F candidate 1
+101142300 Black Treasure Chest [Level 4_ Laurent] 4F candidate 1
 101142310 Black Treasure Chest [Level 4_ Laurent] 4F candidate 2
 101142320 Black Treasure Chest [Level 4_ Laurent] 4F candidate 3
 101142330 Black Treasure Chest [Level 4_ Laurent] 4F candidate 4
@@ -3567,7 +3567,7 @@
 101150190 Black Treasure Chest [Level 5_ Tumer 2F candidate 10
 101150200 Black Treasure Chest [Level 5_ Tumer 3F candidate 1
 101150210 Black Treasure Chest [Level 5_ Tumer 3F candidate 2
-101150220,Black Treasure Chest [Level 5_ Tumer 3F candidate 3
+101150220 Black Treasure Chest [Level 5_ Tumer 3F candidate 3
 101150230 Black Treasure Chest [Level 5_ Tumer 3F candidate 4
 101150240 Black Treasure Chest [Level 5_ Tumer 3F candidate 5
 101150250 Black Treasure Chest [Level 5_ Tumer 3F candidate 6
@@ -3599,7 +3599,7 @@
 101152110 Black Treasure Chest [Level 5_ Laurent] 2F candidate 2
 101152120 Black Treasure Chest [Level 5_ Laurent] 2F candidate 3
 101152130 Black Treasure Chest [Level 5_ Laurent] 2F candidate 4
-101152140,Black Treasure Chest [Level 5_ Laurent] 2F candidate 5
+101152140 Black Treasure Chest [Level 5_ Laurent] 2F candidate 5
 101152150 Black Treasure Chest [Level 5_ Laurent] 2F candidate 6
 101152160 Black Treasure Chest [Level 5_ Laurent] 2F candidate 7
 101152170 Black Treasure Chest [Level 5_ Laurent] 2F candidate 8
@@ -3643,7 +3643,7 @@
 101153150 Black Treasure Chest [Level 5_ Size: 2F candidate 6
 101153160 Black Treasure Chest [Level 5_ Size: 2F candidate 7
 101153170 Black Treasure Chest [Level 5_ Size: 2F candidate 8
-101153180,Black Treasure Chest [Level 5_ Size: 2F candidate 9
+101153180 Black Treasure Chest [Level 5_ Size: 2F candidate 9
 101153190 Black Treasure Chest [Level 5_ Size: 2F candidate 10
 101153200 Black Treasure Chest [Level 5_ Size: 3F candidate 1
 101153210 Black Treasure Chest [Level 5_ Size: 3F candidate 2
@@ -3676,7 +3676,7 @@
 101210080 Treasure Chest (Large) [Level 1_ Tumer 1F candidate 9
 101210090 Treasure Chest (Large) [Level 1_ Tumer 1F candidate 10
 101210100 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 1
-101210110,Treasure Chest (Large) [Level 1_ Tumer 2F candidate 2
+101210110 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 2
 101210120 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 3
 101210130 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 4
 101210140 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 5
@@ -3729,7 +3729,7 @@
 101220202 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 1
 101220210 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 2
 101220220 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 3
-101220230,Treasure Chest (Large) [Level 2_ Tumer 3F candidate 4
+101220230 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 4
 101220240 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 5
 101220250 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 6
 101220260 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 7
@@ -3750,7 +3750,7 @@
 101221010 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 2
 101221020 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 3
 101221030 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 4
-101221040,Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 5
+101221040 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 5
 101221050 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 6
 101221060 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 7
 101221070 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 8
@@ -3761,7 +3761,7 @@
 101221120 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 3
 101221130 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 4
 101221140 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 5
-101221150,Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 6
+101221150 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 6
 101221160 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 7
 101221170 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 8
 101221180 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 9
@@ -3773,7 +3773,7 @@
 101221230 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 4
 101221240 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 5
 101221250 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 6
-101221260,Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 7
+101221260 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 7
 101221270 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 8
 101221280 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 9
 101221290 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 10
@@ -3784,7 +3784,7 @@
 101221340 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 5
 101221350 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 6
 101221360 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 7
-101221370,Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 8
+101221370 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 8
 101221380 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 9
 101221390 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 10
 101230000 Treasure Chest (Large) [Level 3_ Tumer 1F candidate 1
@@ -3805,7 +3805,7 @@
 101230150 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 6
 101230160 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 7
 101230170 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 8
-101230180,Treasure Chest (Large) [Level 3_ Tumer 2F candidate 9
+101230180 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 9
 101230190 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 10
 101230200 Treasure Chest (Large) [Level 3_ Tumer 3F candidate 1
 101230210 Treasure Chest (Large) [Level 3_ Tumer 3F candidate 2
@@ -3837,7 +3837,7 @@
 101231070 Treasure Chest (Large) [Level 3_ Remote Tomb 1F candidate 8
 101231080 Treasure Chest (Large) [Level 3_ Remote Tomb 1F candidate 9
 101231090 Treasure Chest (Large) [Level 3_ Remote Tomb 1F candidate 10
-101231100,Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 1
+101231100 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 1
 101231110 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 2
 101231120 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 3
 101231130 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 4
@@ -3848,7 +3848,7 @@
 101231180 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 9
 101231190 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 10
 101231200 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 1
-101231210,Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 2
+101231210 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 2
 101231220 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 3
 101231230 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 4
 101231240 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 5
@@ -3859,7 +3859,7 @@
 101231290 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 10
 101231300 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 1
 101231310 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 2
-101231320,Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 3
+101231320 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 3
 101231330 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 4
 101231340 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 5
 101231350 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 6
@@ -3901,7 +3901,7 @@
 101240310 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 2
 101240320 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 3
 101240330 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 4
-101240340,Treasure Chest (Large) [Level 4_ Tumer 4F candidate 5
+101240340 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 5
 101240350 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 6
 101240360 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 7
 101240370 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 8
@@ -3953,7 +3953,7 @@
 101250030 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 4
 101250040 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 5
 101250050 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 6
-101250060,Treasure Chest (Large) [Level 5_ Tumer 1F candidate 7
+101250060 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 7
 101250070 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 8
 101250080 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 9
 101250090 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 10
@@ -4005,7 +4005,7 @@
 101252150 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 6
 101252160 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 7
 101252170 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 8
-101252180,Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 9
+101252180 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 9
 101252190 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 10
 101252200 Treasure Chest (Large) [Level 5_ Laurent] 3F candidate 1
 101252210 Treasure Chest (Large) [Level 5_ Laurent] 3F candidate 2
@@ -4037,7 +4037,7 @@
 101253070 Treasure Chest (Large) [Level 5_ Size: 1F candidate 8
 101253080 Treasure Chest (Large) [Level 5_ Size: 1F candidate 9
 101253090 Treasure Chest (Large) [Level 5_ Size: 1F candidate 10
-101253100,Treasure Chest (Large) [Level 5_ Size: 2F candidate 1
+101253100 Treasure Chest (Large) [Level 5_ Size: 2F candidate 1
 101253110 Treasure Chest (Large) [Level 5_ Size: 2F candidate 2
 101253120 Treasure Chest (Large) [Level 5_ Size: 2F candidate 3
 101253130 Treasure Chest (Large) [Level 5_ Size: 2F candidate 4
@@ -4048,7 +4048,7 @@
 101253180 Treasure Chest (Large) [Level 5_ Size: 2F candidate 9
 101253190 Treasure Chest (Large) [Level 5_ Size: 2F candidate 10
 101253200 Treasure Chest (Large) [Level 5_ Size: 3F candidate 1
-101253210,Treasure Chest (Large) [Level 5_ Size: 3F candidate 2
+101253210 Treasure Chest (Large) [Level 5_ Size: 3F candidate 2
 101253220 Treasure Chest (Large) [Level 5_ Size: 3F candidate 3
 101253230 Treasure Chest (Large) [Level 5_ Size: 3F candidate 4
 101253240 Treasure Chest (Large) [Level 5_ Size: 3F candidate 5
@@ -4059,7 +4059,7 @@
 101253290 Treasure Chest (Large) [Level 5_ Size: 3F candidate 10
 101253300 Treasure Chest (Large) [Level 5_ Size: 4F candidate 1
 101253310 Treasure Chest (Large) [Level 5_ Size: 4F candidate 2
-101253320,Treasure Chest (Large) [Level 5_ Size: 4F candidate 3
+101253320 Treasure Chest (Large) [Level 5_ Size: 4F candidate 3
 101253330 Treasure Chest (Large) [Level 5_ Size: 4F candidate 4
 101253340 Treasure Chest (Large) [Level 5_ Size: 4F candidate 5
 101253350 Treasure Chest (Large) [Level 5_ Size: 4F candidate 6
@@ -4101,7 +4101,7 @@
 101310310 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 2
 101310320 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 3
 101310330 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 4
-101310340,Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 5
+101310340 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 5
 101310350 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 6
 101310360 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 7
 101310370 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 8
@@ -4187,7 +4187,7 @@
 101321370 Treasure Chest (Medium) [Level 2_ Remote Tomb 4F candidate 8
 101321380 Treasure Chest (Medium) [Level 2_ Remote Tomb 4F candidate 9
 101321390 Treasure Chest (Medium) [Level 2_ Remote Tomb 4F candidate 10
-101330000,Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 1
+101330000 Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 1
 101330010 Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 2
 101330020 Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 3
 101330030 Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 4
@@ -4240,7 +4240,7 @@
 101331100 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 1
 101331110 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 2
 101331120 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 3
-101331130,Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 4
+101331130 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 4
 101331140 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 5
 101331150 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 6
 101331160 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 7
@@ -4251,7 +4251,7 @@
 101331210 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 2
 101331220 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 3
 101331230 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 4
-101331240,Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 5
+101331240 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 5
 101331250 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 6
 101331260 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 7
 101331270 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 8
@@ -4262,7 +4262,7 @@
 101331320 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 3
 101331330 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 4
 101331340 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 5
-101331350,Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 6
+101331350 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 6
 101331360 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 7
 101331370 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 8
 101331380 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 9
@@ -4283,7 +4283,7 @@
 101340130 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 4
 101340140 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 5
 101340150 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 6
-101340160,Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 7
+101340160 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 7
 101340170 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 8
 101340180 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 9
 101340190 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 10
@@ -4336,7 +4336,7 @@
 101342250 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 6
 101342260 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 7
 101342270 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 8
-101342280,Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 9
+101342280 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 9
 101342290 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 10
 101342300 Treasure Chest (Medium) [Level 4_ Laurent] 4F candidate 1
 101342310 Treasure Chest (Medium) [Level 4_ Laurent] 4F candidate 2
@@ -4388,7 +4388,7 @@
 101350370 Treasure Chest (Medium) [Level 5_ Tumer 4F candidate 8
 101350380 Treasure Chest (Medium) [Level 5_ Tumer 4F candidate 9
 101350390 Treasure Chest (Medium) [Level 5_ Tumer 4F candidate 10
-101352000,Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 1
+101352000 Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 1
 101352010 Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 2
 101352020 Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 3
 101352030 Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 4
@@ -4441,7 +4441,7 @@
 101353100 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 1
 101353110 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 2
 101353120 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 3
-101353130,Treasure Chest (Medium) [Level 5_ Size: 2F candidate 4
+101353130 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 4
 101353140 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 5
 101353150 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 6
 101353160 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 7
@@ -4452,7 +4452,7 @@
 101353210 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 2
 101353220 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 3
 101353230 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 4
-101353240,Treasure Chest (Medium) [Level 5_ Size: 3F candidate 5
+101353240 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 5
 101353250 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 6
 101353260 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 7
 101353270 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 8
@@ -4463,7 +4463,7 @@
 101353320 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 3
 101353330 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 4
 101353340 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 5
-101353350,Treasure Chest (Medium) [Level 5_ Size: 4F candidate 6
+101353350 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 6
 101353360 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 7
 101353370 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 8
 101353380 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 9
@@ -4484,7 +4484,7 @@
 101410130 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 4
 101410140 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 5
 101410150 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 6
-101410160,Treasure Chest (Small) [Level 1_ Tumer 2F candidate 7
+101410160 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 7
 101410170 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 8
 101410180 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 9
 101410190 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 10
@@ -4537,7 +4537,7 @@
 101420252 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 6
 101420260 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 7
 101420270 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 8
-101420280,Treasure Chest (Small) [Level 2_ Tumer 3F candidate 9
+101420280 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 9
 101420290 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 10
 101420300 Treasure Chest (Small) [Level 2_ Tumer 4F candidate 1
 101420310 Treasure Chest (Small) [Level 2_ Tumer 4F candidate 2
@@ -4602,7 +4602,7 @@
 101430100 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 1
 101430110 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 2
 101430120 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 3
-101430130,Treasure Chest (Small) [Level 3_ Tumer 2F candidate 4
+101430130 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 4
 101430140 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 5
 101430150 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 6
 101430160 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 7
@@ -4668,7 +4668,7 @@
 101431350 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 6
 101431360 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 7
 101431370 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 8
-101431380,Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 9
+101431380 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 9
 101431390 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 10
 101440000 Treasure Chest (Small) [Level 4_ Tumer 1F candidate 1
 101440010 Treasure Chest (Small) [Level 4_ Tumer 1F candidate 2
@@ -4720,7 +4720,7 @@
 101442070 Treasure Chest (Small) [Level 4_ Laurent] 1F candidate 8
 101442080 Treasure Chest (Small) [Level 4_ Laurent] 1F candidate 9
 101442090 Treasure Chest (Small) [Level 4_ Laurent] 1F candidate 10
-101442100,Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 1
+101442100 Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 1
 101442110 Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 2
 101442120 Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 3
 101442130 Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 4
@@ -4772,7 +4772,7 @@
 101450190 Treasure Chest (Small) [Level 5_ Tumer 2F candidate 10
 101450200 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 1
 101450210 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 2
-101450220,Treasure Chest (Small) [Level 5_ Tumer 3F candidate 3
+101450220 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 3
 101450230 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 4
 101450240 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 5
 101450250 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 6
@@ -4824,7 +4824,7 @@
 101452310 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 2
 101452320 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 3
 101452330 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 4
-101452340,Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 5
+101452340 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 5
 101452350 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 6
 101452360 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 7
 101452370 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 8
@@ -4857,7 +4857,7 @@
 101453240 Treasure Chest (Small) [Level 5_ Size: 3F candidate 5
 101453250 Treasure Chest (Small) [Level 5_ Size: 3F candidate 6
 101453260 Treasure Chest (Small) [Level 5_ Size: 3F candidate 7
-101453270,Treasure Chest (Small) [Level 5_ Size: 3F candidate 8
+101453270 Treasure Chest (Small) [Level 5_ Size: 3F candidate 8
 101453280 Treasure Chest (Small) [Level 5_ Size: 3F candidate 9
 101453290 Treasure Chest (Small) [Level 5_ Size: 3F candidate 10
 101453300 Treasure Chest (Small) [Level 5_ Size: 4F candidate 1
@@ -4868,7 +4868,7 @@
 101453350 Treasure Chest (Small) [Level 5_ Size: 4F candidate 6
 101453360 Treasure Chest (Small) [Level 5_ Size: 4F candidate 7
 101453370 Treasure Chest (Small) [Level 5_ Size: 4F candidate 8
-101453380,Treasure Chest (Small) [Level 5_ Size: 4F candidate 9
+101453380 Treasure Chest (Small) [Level 5_ Size: 4F candidate 9
 101453390 Treasure Chest (Small) [Level 5_ Size: 4F candidate 10
 101510000 Treasure Corpse _ Reward [Level 1_ Tumer 1F candidate 1
 101510010 Treasure Corpse _ Reward [Level 1_ Tumer 1F candidate 2
@@ -4886,7 +4886,7 @@
 101510130 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 4
 101510140 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 5
 101510150 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 6
-101510160,Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 7
+101510160 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 7
 101510170 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 8
 101510180 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 9
 101510190 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 10
@@ -4925,7 +4925,7 @@
 101520080 Treasure Corpse _ Reward [Level 2_ Tumer 1F candidate 9
 101520090 Treasure Corpse _ Reward [Level 2_ Tumer 1F candidate 10
 101520100 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 1
-101520110,Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 2
+101520110 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 2
 101520120 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 3
 101520130 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 4
 101520140 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 5
@@ -5002,7 +5002,7 @@
 101521310 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 2
 101521320 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 3
 101521330 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 4
-101521340,Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 5
+101521340 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 5
 101521350 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 6
 101521360 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 7
 101521370 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 8
@@ -5025,8 +5025,8 @@
 101530090 Treasure Corpse _ Reward [Level 3_ Tumer 1F candidate 10
 101530100 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 1
 101530110 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 2
-101530120,Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 3
-101530122,Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 3
+101530120 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 3
+101530122 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 3
 101530130 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 4
 101530132 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 4
 101530134 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 4
@@ -5119,7 +5119,7 @@
 101531320 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 3
 101531330 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 4
 101531340 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 5
-101531350,Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 6
+101531350 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 6
 101531360 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 7
 101531370 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 8
 101531380 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 9
@@ -5129,7 +5129,7 @@
 101540012 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 2
 101540020 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 3
 101540030 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 4
-101540040,Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 5
+101540040 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 5
 101540050 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 6
 101540060 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 7
 101540062 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 7
@@ -5174,7 +5174,7 @@
 101540360 Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 7
 101540370 Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 8
 101540380 Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 9
-101540390,Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 10
+101540390 Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 10
 101542000 Treasure Corpse _ Reward [Level 4_ Laurent] 1F candidate 1
 101542000 Treasure Corpse _ Reward [Level 4_ Laurent] 1F candidate 1
 101542010 Treasure Corpse _ Reward [Level 4_ Laurent] 1F candidate 2
@@ -5224,7 +5224,7 @@
 101542310 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 2
 101542320 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 3
 101542330 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 4
-101542340,Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 5
+101542340 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 5
 101542350 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 6
 101542360 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 7
 101542370 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 8
@@ -5289,7 +5289,7 @@
 101550260 Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 7
 101550270 Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 8
 101550280 Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 9
-101550290,Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 10
+101550290 Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 10
 101550300 Treasure Corpse _ Reward [Level 5_ Tumer 4F candidate 1
 101550310 Treasure Corpse _ Reward [Level 5_ Tumer 4F candidate 2
 101550320 Treasure Corpse _ Reward [Level 5_ Tumer 4F candidate 3
@@ -5331,7 +5331,7 @@
 101552210 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 2
 101552220 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 3
 101552230 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 4
-101552240,Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 5
+101552240 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 5
 101552250 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 6
 101552260 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 7
 101552270 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 8
@@ -5365,7 +5365,7 @@
 101553080 Treasure Corpse _ Reward [Level 5_ Size: 1F candidate 9
 101553090 Treasure Corpse _ Reward [Level 5_ Size: 1F candidate 10
 101553100 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 1
-101553110,Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 2
+101553110 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 2
 101553120 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 3
 101553122 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 3
 101553130 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 4
@@ -5420,7 +5420,7 @@
 101610130 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 4
 101610140 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 5
 101610150 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 6
-101610160,Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 7
+101610160 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 7
 101610170 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 8
 101610180 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 9
 101610190 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 10
@@ -6215,46 +6215,46 @@
 130511160 Dungeon Man (Lord ) Cane
 130512160 Dungeon Man (Lord ) Cane
 130513160 Dungeon Man (Lord ) Cane
-130600000,Dungeon Person (Bride)
-130601000,Dungeon Person (Bride)
-130602000,Dungeon Person (Bride)
-130603000,Dungeon Person (Bride)
-130600010,Dungeon Person (Bride)
-130601010,Dungeon Person (Bride)
-130602010,Dungeon Person (Bride)
-130603010,Dungeon Person (Bride)
-130600020,Dungeon Person (Bride)
-130601020,Dungeon Person (Bride)
-130602020,Dungeon Person (Bride)
-130603020,Dungeon Person (Bride)
-130600100,Dungeon Person (Bride)
-130601100,Dungeon Person (Bride)
-130602100,Dungeon Person (Bride)
-130603100,Dungeon Person (Bride)
-130600110,Dungeon Person (Bride)
-130601110,Dungeon Person (Bride)
-130602110,Dungeon Person (Bride)
-130603110,Dungeon Person (Bride)
-130600120,Dungeon Person (Bride)
-130601120,Dungeon Person (Bride)
-130602120,Dungeon Person (Bride)
-130603120,Dungeon Person (Bride)
-130600130,Dungeon Person (Bride)
-130601130,Dungeon Person (Bride)
-130602130,Dungeon Person (Bride)
-130603130,Dungeon Person (Bride)
-130600140,Dungeon Person (Bride)
-130601140,Dungeon Person (Bride)
-130602140,Dungeon Person (Bride)
-130603140,Dungeon Person (Bride)
-130600150,Dungeon Person (Bride)
-130601150,Dungeon Person (Bride)
-130602150,Dungeon Person (Bride)
-130603150,Dungeon Person (Bride)
-130600160,Dungeon Person (Bride)
-130601160,Dungeon Person (Bride)
-130602160,Dungeon Person (Bride)
-130603160,Dungeon Person (Bride)
+130600000 Dungeon Person (Bride)
+130601000 Dungeon Person (Bride)
+130602000 Dungeon Person (Bride)
+130603000 Dungeon Person (Bride)
+130600010 Dungeon Person (Bride)
+130601010 Dungeon Person (Bride)
+130602010 Dungeon Person (Bride)
+130603010 Dungeon Person (Bride)
+130600020 Dungeon Person (Bride)
+130601020 Dungeon Person (Bride)
+130602020 Dungeon Person (Bride)
+130603020 Dungeon Person (Bride)
+130600100 Dungeon Person (Bride)
+130601100 Dungeon Person (Bride)
+130602100 Dungeon Person (Bride)
+130603100 Dungeon Person (Bride)
+130600110 Dungeon Person (Bride)
+130601110 Dungeon Person (Bride)
+130602110 Dungeon Person (Bride)
+130603110 Dungeon Person (Bride)
+130600120 Dungeon Person (Bride)
+130601120 Dungeon Person (Bride)
+130602120 Dungeon Person (Bride)
+130603120 Dungeon Person (Bride)
+130600130 Dungeon Person (Bride)
+130601130 Dungeon Person (Bride)
+130602130 Dungeon Person (Bride)
+130603130 Dungeon Person (Bride)
+130600140 Dungeon Person (Bride)
+130601140 Dungeon Person (Bride)
+130602140 Dungeon Person (Bride)
+130603140 Dungeon Person (Bride)
+130600150 Dungeon Person (Bride)
+130601150 Dungeon Person (Bride)
+130602150 Dungeon Person (Bride)
+130603150 Dungeon Person (Bride)
+130600160 Dungeon Person (Bride)
+130601160 Dungeon Person (Bride)
+130602160 Dungeon Person (Bride)
+130603160 Dungeon Person (Bride)
 131300000 Fresh Golem
 131301000 Fresh Golem
 131302000 Fresh Golem
@@ -6648,7 +6648,7 @@
 200100330 Unique [Level 1 】Thumel _ Alternative 13
 200100340 Unique [Level 1 】Thumel _ Alternative 14
 200200000 Unique [Level 2 】Thumel 00
-200200010,Unique [Level 2 】Thumel 01
+200200010 Unique [Level 2 】Thumel 01
 200200020 Unique [Level 2 】Thumel 02
 200200030 Unique [Level 2 】Thumel 03
 200200040 Unique [Level 2 】Thumel 04
@@ -6688,7 +6688,7 @@
 200210080 Unique [Level 2 】 Remote Grave 08
 200210090 Unique [Level 2 】 Remote Grave 09
 200210100 Unique [Level 2 】 Remote Grave 10
-200210110,Unique [Level 2 】 Remote Grave 11
+200210110 Unique [Level 2 】 Remote Grave 11
 200210120 Unique [Level 2 】 Remote Grave 12
 200210130 Unique [Level 2 】 Remote Grave 13
 200210140 Unique [Level 2 】 Remote Grave 14
@@ -6701,7 +6701,7 @@
 200210260 Unique [Level 2 】 Remote Grave _ Alternative 06
 200210270 Unique [Level 2 】 Remote Grave _ Alternative 07
 200210280 Unique [Level 2 】 Remote Grave _ Alternative 08
-200210290,Unique [Level 2 】 Remote Grave _ Alternative 09
+200210290 Unique [Level 2 】 Remote Grave _ Alternative 09
 200210300 Unique [Level 2 】 Remote Grave _ Alternative 10
 200210310 Unique [Level 2 】 Remote Grave _ Alternative 11
 200210320 Unique [Level 2 】 Remote Grave _ Alternative 12
@@ -6714,7 +6714,7 @@
 200300040 Unique [Level 3 】Thumel 04
 200300050 Unique [Level 3 】Thumel 05
 200300060 Unique [Level 3 】Thumel 06
-200300070,Unique [Level 3 】Thumel 07
+200300070 Unique [Level 3 】Thumel 07
 200300080 Unique [Level 3 】Thumel 08
 200300090 Unique [Level 3 】Thumel 09
 200300100 Unique [Level 3 】Thumel 10
@@ -6727,7 +6727,7 @@
 200300220 Unique [Level 3 】Thumel _ Alternative 02
 200300230 Unique [Level 3 】Thumel _ Alternative 03
 200300240 Unique [Level 3 】Thumel _ Alternative 04
-200300250,Unique [Level 3 】Thumel _ Alternative 05
+200300250 Unique [Level 3 】Thumel _ Alternative 05
 200300260 Unique [Level 3 】Thumel _ Alternative 06
 200300270 Unique [Level 3 】Thumel _ Alternative 07
 200300280 Unique [Level 3 】Thumel _ Alternative 08
@@ -6754,7 +6754,7 @@
 200310140 Unique [Level 3 】 Remote Grave 14
 200310200 Unique [Level 3 】 Remote Grave _ Alternative 00
 200310210 Unique [Level 3 】 Remote Grave _ Alternative 01
-200310220,Unique [Level 3 】 Remote Grave _ Alternative 02
+200310220 Unique [Level 3 】 Remote Grave _ Alternative 02
 200310230 Unique [Level 3 】 Remote Grave _ Alternative 03
 200310240 Unique [Level 3 】 Remote Grave _ Alternative 04
 200310250 Unique [Level 3 】 Remote Grave _ Alternative 05
@@ -6766,7 +6766,7 @@
 200310310 Unique [Level 3 】 Remote Grave _ Alternative 11
 200310320 Unique [Level 3 】 Remote Grave _ Alternative 12
 200310330 Unique [Level 3 】 Remote Grave _ Alternative 13
-200310340,Unique [Level 3 】 Remote Grave _ Alternative 14
+200310340 Unique [Level 3 】 Remote Grave _ Alternative 14
 200400000 Unique [Level 4 】Thumel 00
 200400010 Unique [Level 4 】Thumel 01
 200400020 Unique [Level 4 】Thumel 02
@@ -6792,7 +6792,7 @@
 200400270 Unique [Level 4 】Thumel _ Alternative 07
 200400280 Unique [Level 4 】Thumel _ Alternative 08
 200400290 Unique [Level 4 】Thumel _ Alternative 09
-200400300,Unique [Level 4 】Thumel _ Alternative 10
+200400300 Unique [Level 4 】Thumel _ Alternative 10
 200400310 Unique [Level 4 】Thumel _ Alternative 11
 200400320 Unique [Level 4 】Thumel _ Alternative 12
 200400330 Unique [Level 4 】Thumel _ Alternative 13
@@ -6805,7 +6805,7 @@
 200420050 Unique [Level 4 】 Laurent 05
 200420060 Unique [Level 4 】 Laurent 06
 200420070 Unique [Level 4 】 Laurent 07
-200420080,Unique [Level 4 】 Laurent 08
+200420080 Unique [Level 4 】 Laurent 08
 200420090 Unique [Level 4 】 Laurent 09
 200420100 Unique [Level 4 】 Laurent 10
 200420110 Unique [Level 4 】 Laurent 11
@@ -6855,7 +6855,7 @@
 200500300 Unique [Level 5 】Thumel _ Alternative 10
 200500310 Unique [Level 5 】Thumel _ Alternative 11
 200500320 Unique [Level 5 】Thumel _ Alternative 12
-200500330,Unique [Level 5 】Thumel _ Alternative 13
+200500330 Unique [Level 5 】Thumel _ Alternative 13
 200500340 Unique [Level 5 】Thumel _ Alternative 14
 200520000 Unique [Level 5 】 Laurent 00
 200520010 Unique [Level 5 】 Laurent 01
@@ -6869,7 +6869,7 @@
 200520090 Unique [Level 5 】 Laurent 09
 200520100 Unique [Level 5 】 Laurent 10
 200520110 Unique [Level 5 】 Laurent 11
-200520120,Unique [Level 5 】 Laurent 12
+200520120 Unique [Level 5 】 Laurent 12
 200520130 Unique [Level 5 】 Laurent 13
 200520140 Unique [Level 5 】 Laurent 14
 200520200 Unique [Level 5 】 Laurent _ Alternative 00
@@ -6881,7 +6881,7 @@
 200520260 Unique [Level 5 】 Laurent _ Alternative 06
 200520270 Unique [Level 5 】 Laurent _ Alternative 07
 200520280 Unique [Level 5 】 Laurent _ Alternative 08
-200520290,Unique [Level 5 】 Laurent _ Alternative 09
+200520290 Unique [Level 5 】 Laurent _ Alternative 09
 200520300 Unique [Level 5 】 Laurent _ Alternative 10
 200520310 Unique [Level 5 】 Laurent _ Alternative 11
 200520320 Unique [Level 5 】 Laurent _ Alternative 12
@@ -6957,7 +6957,7 @@
 201010370 Block Treasure Chest [Level 1_ Tumer 4F candidate 8
 201010380 Block Treasure Chest [Level 1_ Tumer 4F candidate 9
 201010390 Block Treasure Chest [Level 1_ Tumer 4F candidate 10
-201020000,Block Treasure Chest [Level 2_ Tumer 1F candidate 1
+201020000 Block Treasure Chest [Level 2_ Tumer 1F candidate 1
 201020010 Block Treasure Chest [Level 2_ Tumer 1F candidate 2
 201020020 Block Treasure Chest [Level 2_ Tumer 1F candidate 3
 201020030 Block Treasure Chest [Level 2_ Tumer 1F candidate 4
@@ -6967,7 +6967,7 @@
 201020070 Block Treasure Chest [Level 2_ Tumer 1F candidate 8
 201020080 Block Treasure Chest [Level 2_ Tumer 1F candidate 9
 201020090 Block Treasure Chest [Level 2_ Tumer 1F candidate 10
-201020100,Block Treasure Chest [Level 2_ Tumer 2F candidate 1
+201020100 Block Treasure Chest [Level 2_ Tumer 2F candidate 1
 201020110 Block Treasure Chest [Level 2_ Tumer 2F candidate 2
 201020120 Block Treasure Chest [Level 2_ Tumer 2F candidate 3
 201020130 Block Treasure Chest [Level 2_ Tumer 2F candidate 4
@@ -6977,7 +6977,7 @@
 201020170 Block Treasure Chest [Level 2_ Tumer 2F candidate 8
 201020180 Block Treasure Chest [Level 2_ Tumer 2F candidate 9
 201020190 Block Treasure Chest [Level 2_ Tumer 2F candidate 10
-201020200,Block Treasure Chest [Level 2_ Tumer 3F candidate 1
+201020200 Block Treasure Chest [Level 2_ Tumer 3F candidate 1
 201020210 Block Treasure Chest [Level 2_ Tumer 3F candidate 2
 201020220 Block Treasure Chest [Level 2_ Tumer 3F candidate 3
 201020230 Block Treasure Chest [Level 2_ Tumer 3F candidate 4
@@ -6987,7 +6987,7 @@
 201020270 Block Treasure Chest [Level 2_ Tumer 3F candidate 8
 201020280 Block Treasure Chest [Level 2_ Tumer 3F candidate 9
 201020290 Block Treasure Chest [Level 2_ Tumer 3F candidate 10
-201020300,Block Treasure Chest [Level 2_ Tumer 4F candidate 1
+201020300 Block Treasure Chest [Level 2_ Tumer 4F candidate 1
 201020310 Block Treasure Chest [Level 2_ Tumer 4F candidate 2
 201020320 Block Treasure Chest [Level 2_ Tumer 4F candidate 3
 201020330 Block Treasure Chest [Level 2_ Tumer 4F candidate 4
@@ -6997,7 +6997,7 @@
 201020370 Block Treasure Chest [Level 2_ Tumer 4F candidate 8
 201020380 Block Treasure Chest [Level 2_ Tumer 4F candidate 9
 201020390 Block Treasure Chest [Level 2_ Tumer 4F candidate 10
-201021000,Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 1
+201021000 Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 1
 201021010 Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 2
 201021020 Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 3
 201021030 Block Treasure Chest [Level 2_ Remote Tomb 1F candidate 4
@@ -7029,7 +7029,7 @@
 201021290 Block Treasure Chest [Level 2_ Remote Tomb 3F candidate 10
 201021300 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 1
 201021310 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 2
-201021320,Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 3
+201021320 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 3
 201021330 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 4
 201021340 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 5
 201021350 Block Treasure Chest [Level 2_ Remote Tomb 4F candidate 6
@@ -7101,7 +7101,7 @@
 201031210 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 2
 201031220 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 3
 201031230 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 4
-201031240,Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 5
+201031240 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 5
 201031250 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 6
 201031260 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 7
 201031270 Block Treasure Chest [Level 3_ Remote Tomb 3F candidate 8
@@ -7122,7 +7122,7 @@
 201040020 Block Treasure Chest [Level 4_ Tumer 1F candidate 3
 201040030 Block Treasure Chest [Level 4_ Tumer 1F candidate 4
 201040040 Block Treasure Chest [Level 4_ Tumer 1F candidate 5
-201040050,Block Treasure Chest [Level 4_ Tumer 1F candidate 6
+201040050 Block Treasure Chest [Level 4_ Tumer 1F candidate 6
 201040060 Block Treasure Chest [Level 4_ Tumer 1F candidate 7
 201040070 Block Treasure Chest [Level 4_ Tumer 1F candidate 8
 201040080 Block Treasure Chest [Level 4_ Tumer 1F candidate 9
@@ -7132,7 +7132,7 @@
 201040120 Block Treasure Chest [Level 4_ Tumer 2F candidate 3
 201040130 Block Treasure Chest [Level 4_ Tumer 2F candidate 4
 201040140 Block Treasure Chest [Level 4_ Tumer 2F candidate 5
-201040150,Block Treasure Chest [Level 4_ Tumer 2F candidate 6
+201040150 Block Treasure Chest [Level 4_ Tumer 2F candidate 6
 201040160 Block Treasure Chest [Level 4_ Tumer 2F candidate 7
 201040170 Block Treasure Chest [Level 4_ Tumer 2F candidate 8
 201040180 Block Treasure Chest [Level 4_ Tumer 2F candidate 9
@@ -7142,7 +7142,7 @@
 201040220 Block Treasure Chest [Level 4_ Tumer 3F candidate 3
 201040230 Block Treasure Chest [Level 4_ Tumer 3F candidate 4
 201040240 Block Treasure Chest [Level 4_ Tumer 3F candidate 5
-201040250,Block Treasure Chest [Level 4_ Tumer 3F candidate 6
+201040250 Block Treasure Chest [Level 4_ Tumer 3F candidate 6
 201040260 Block Treasure Chest [Level 4_ Tumer 3F candidate 7
 201040270 Block Treasure Chest [Level 4_ Tumer 3F candidate 8
 201040280 Block Treasure Chest [Level 4_ Tumer 3F candidate 9
@@ -7152,7 +7152,7 @@
 201040320 Block Treasure Chest [Level 4_ Tumer 4F candidate 3
 201040330 Block Treasure Chest [Level 4_ Tumer 4F candidate 4
 201040340 Block Treasure Chest [Level 4_ Tumer 4F candidate 5
-201040350,Block Treasure Chest [Level 4_ Tumer 4F candidate 6
+201040350 Block Treasure Chest [Level 4_ Tumer 4F candidate 6
 201040360 Block Treasure Chest [Level 4_ Tumer 4F candidate 7
 201040370 Block Treasure Chest [Level 4_ Tumer 4F candidate 8
 201040380 Block Treasure Chest [Level 4_ Tumer 4F candidate 9
@@ -7162,7 +7162,7 @@
 201042020 Block Treasure Chest [Level 4_ Laurent] 1F candidate 3
 201042030 Block Treasure Chest [Level 4_ Laurent] 1F candidate 4
 201042040 Block Treasure Chest [Level 4_ Laurent] 1F candidate 5
-201042050,Block Treasure Chest [Level 4_ Laurent] 1F candidate 6
+201042050 Block Treasure Chest [Level 4_ Laurent] 1F candidate 6
 201042060 Block Treasure Chest [Level 4_ Laurent] 1F candidate 7
 201042070 Block Treasure Chest [Level 4_ Laurent] 1F candidate 8
 201042080 Block Treasure Chest [Level 4_ Laurent] 1F candidate 9
@@ -7172,7 +7172,7 @@
 201042120 Block Treasure Chest [Level 4_ Laurent] 2F candidate 3
 201042130 Block Treasure Chest [Level 4_ Laurent] 2F candidate 4
 201042140 Block Treasure Chest [Level 4_ Laurent] 2F candidate 5
-201042150,Block Treasure Chest [Level 4_ Laurent] 2F candidate 6
+201042150 Block Treasure Chest [Level 4_ Laurent] 2F candidate 6
 201042160 Block Treasure Chest [Level 4_ Laurent] 2F candidate 7
 201042170 Block Treasure Chest [Level 4_ Laurent] 2F candidate 8
 201042180 Block Treasure Chest [Level 4_ Laurent] 2F candidate 9
@@ -7182,7 +7182,7 @@
 201042220 Block Treasure Chest [Level 4_ Laurent] 3F candidate 3
 201042230 Block Treasure Chest [Level 4_ Laurent] 3F candidate 4
 201042240 Block Treasure Chest [Level 4_ Laurent] 3F candidate 5
-201042250,Block Treasure Chest [Level 4_ Laurent] 3F candidate 6
+201042250 Block Treasure Chest [Level 4_ Laurent] 3F candidate 6
 201042260 Block Treasure Chest [Level 4_ Laurent] 3F candidate 7
 201042270 Block Treasure Chest [Level 4_ Laurent] 3F candidate 8
 201042280 Block Treasure Chest [Level 4_ Laurent] 3F candidate 9
@@ -7192,7 +7192,7 @@
 201042320 Block Treasure Chest [Level 4_ Laurent] 4F candidate 3
 201042330 Block Treasure Chest [Level 4_ Laurent] 4F candidate 4
 201042340 Block Treasure Chest [Level 4_ Laurent] 4F candidate 5
-201042350,Block Treasure Chest [Level 4_ Laurent] 4F candidate 6
+201042350 Block Treasure Chest [Level 4_ Laurent] 4F candidate 6
 201042360 Block Treasure Chest [Level 4_ Laurent] 4F candidate 7
 201042370 Block Treasure Chest [Level 4_ Laurent] 4F candidate 8
 201042380 Block Treasure Chest [Level 4_ Laurent] 4F candidate 9
@@ -7202,7 +7202,7 @@
 201050020 Block Treasure Chest [Level 5_ Tumer 1F candidate 3
 201050030 Block Treasure Chest [Level 5_ Tumer 1F candidate 4
 201050040 Block Treasure Chest [Level 5_ Tumer 1F candidate 5
-201050050,Block Treasure Chest [Level 5_ Tumer 1F candidate 6
+201050050 Block Treasure Chest [Level 5_ Tumer 1F candidate 6
 201050060 Block Treasure Chest [Level 5_ Tumer 1F candidate 7
 201050070 Block Treasure Chest [Level 5_ Tumer 1F candidate 8
 201050080 Block Treasure Chest [Level 5_ Tumer 1F candidate 9
@@ -7212,7 +7212,7 @@
 201050120 Block Treasure Chest [Level 5_ Tumer 2F candidate 3
 201050130 Block Treasure Chest [Level 5_ Tumer 2F candidate 4
 201050140 Block Treasure Chest [Level 5_ Tumer 2F candidate 5
-201050150,Block Treasure Chest [Level 5_ Tumer 2F candidate 6
+201050150 Block Treasure Chest [Level 5_ Tumer 2F candidate 6
 201050160 Block Treasure Chest [Level 5_ Tumer 2F candidate 7
 201050170 Block Treasure Chest [Level 5_ Tumer 2F candidate 8
 201050180 Block Treasure Chest [Level 5_ Tumer 2F candidate 9
@@ -7222,7 +7222,7 @@
 201050220 Block Treasure Chest [Level 5_ Tumer 3F candidate 3
 201050230 Block Treasure Chest [Level 5_ Tumer 3F candidate 4
 201050240 Block Treasure Chest [Level 5_ Tumer 3F candidate 5
-201050250,Block Treasure Chest [Level 5_ Tumer 3F candidate 6
+201050250 Block Treasure Chest [Level 5_ Tumer 3F candidate 6
 201050260 Block Treasure Chest [Level 5_ Tumer 3F candidate 7
 201050270 Block Treasure Chest [Level 5_ Tumer 3F candidate 8
 201050280 Block Treasure Chest [Level 5_ Tumer 3F candidate 9
@@ -7232,7 +7232,7 @@
 201050320 Block Treasure Chest [Level 5_ Tumer 4F candidate 3
 201050330 Block Treasure Chest [Level 5_ Tumer 4F candidate 4
 201050340 Block Treasure Chest [Level 5_ Tumer 4F candidate 5
-201050350,Block Treasure Chest [Level 5_ Tumer 4F candidate 6
+201050350 Block Treasure Chest [Level 5_ Tumer 4F candidate 6
 201050360 Block Treasure Chest [Level 5_ Tumer 4F candidate 7
 201050370 Block Treasure Chest [Level 5_ Tumer 4F candidate 8
 201050380 Block Treasure Chest [Level 5_ Tumer 4F candidate 9
@@ -7242,7 +7242,7 @@
 201052020 Block Treasure Chest [Level 5_ Laurent] 1F candidate 3
 201052030 Block Treasure Chest [Level 5_ Laurent] 1F candidate 4
 201052040 Block Treasure Chest [Level 5_ Laurent] 1F candidate 5
-201052050,Block Treasure Chest [Level 5_ Laurent] 1F candidate 6
+201052050 Block Treasure Chest [Level 5_ Laurent] 1F candidate 6
 201052060 Block Treasure Chest [Level 5_ Laurent] 1F candidate 7
 201052070 Block Treasure Chest [Level 5_ Laurent] 1F candidate 8
 201052080 Block Treasure Chest [Level 5_ Laurent] 1F candidate 9
@@ -7252,7 +7252,7 @@
 201052120 Block Treasure Chest [Level 5_ Laurent] 2F candidate 3
 201052130 Block Treasure Chest [Level 5_ Laurent] 2F candidate 4
 201052140 Block Treasure Chest [Level 5_ Laurent] 2F candidate 5
-201052150,Block Treasure Chest [Level 5_ Laurent] 2F candidate 6
+201052150 Block Treasure Chest [Level 5_ Laurent] 2F candidate 6
 201052160 Block Treasure Chest [Level 5_ Laurent] 2F candidate 7
 201052170 Block Treasure Chest [Level 5_ Laurent] 2F candidate 8
 201052180 Block Treasure Chest [Level 5_ Laurent] 2F candidate 9
@@ -7262,7 +7262,7 @@
 201052220 Block Treasure Chest [Level 5_ Laurent] 3F candidate 3
 201052230 Block Treasure Chest [Level 5_ Laurent] 3F candidate 4
 201052240 Block Treasure Chest [Level 5_ Laurent] 3F candidate 5
-201052250,Block Treasure Chest [Level 5_ Laurent] 3F candidate 6
+201052250 Block Treasure Chest [Level 5_ Laurent] 3F candidate 6
 201052260 Block Treasure Chest [Level 5_ Laurent] 3F candidate 7
 201052270 Block Treasure Chest [Level 5_ Laurent] 3F candidate 8
 201052280 Block Treasure Chest [Level 5_ Laurent] 3F candidate 9
@@ -7272,7 +7272,7 @@
 201052320 Block Treasure Chest [Level 5_ Laurent] 4F candidate 3
 201052330 Block Treasure Chest [Level 5_ Laurent] 4F candidate 4
 201052340 Block Treasure Chest [Level 5_ Laurent] 4F candidate 5
-201052350,Block Treasure Chest [Level 5_ Laurent] 4F candidate 6
+201052350 Block Treasure Chest [Level 5_ Laurent] 4F candidate 6
 201052360 Block Treasure Chest [Level 5_ Laurent] 4F candidate 7
 201052370 Block Treasure Chest [Level 5_ Laurent] 4F candidate 8
 201052380 Block Treasure Chest [Level 5_ Laurent] 4F candidate 9
@@ -7293,7 +7293,7 @@
 201053130 Block Treasure Chest [Level 5_ Size: 2F candidate 4
 201053140 Block Treasure Chest [Level 5_ Size: 2F candidate 5
 201053150 Block Treasure Chest [Level 5_ Size: 2F candidate 6
-201053160,Block Treasure Chest [Level 5_ Size: 2F candidate 7
+201053160 Block Treasure Chest [Level 5_ Size: 2F candidate 7
 201053170 Block Treasure Chest [Level 5_ Size: 2F candidate 8
 201053180 Block Treasure Chest [Level 5_ Size: 2F candidate 9
 201053190 Block Treasure Chest [Level 5_ Size: 2F candidate 10
@@ -7325,7 +7325,7 @@
 201110050 Black Treasure Chest [Level 1_ Tumer 1F candidate 6
 201110060 Black Treasure Chest [Level 1_ Tumer 1F candidate 7
 201110070 Black Treasure Chest [Level 1_ Tumer 1F candidate 8
-201110080,Black Treasure Chest [Level 1_ Tumer 1F candidate 9
+201110080 Black Treasure Chest [Level 1_ Tumer 1F candidate 9
 201110090 Black Treasure Chest [Level 1_ Tumer 1F candidate 10
 201110100 Black Treasure Chest [Level 1_ Tumer 2F candidate 1
 201110110 Black Treasure Chest [Level 1_ Tumer 2F candidate 2
@@ -7357,7 +7357,7 @@
 201110370 Black Treasure Chest [Level 1_ Tumer 4F candidate 8
 201110380 Black Treasure Chest [Level 1_ Tumer 4F candidate 9
 201110390 Black Treasure Chest [Level 1_ Tumer 4F candidate 10
-201120000,Black Treasure Chest [Level 2_ Tumer 1F candidate 1
+201120000 Black Treasure Chest [Level 2_ Tumer 1F candidate 1
 201120010 Black Treasure Chest [Level 2_ Tumer 1F candidate 2
 201120020 Black Treasure Chest [Level 2_ Tumer 1F candidate 3
 201120030 Black Treasure Chest [Level 2_ Tumer 1F candidate 4
@@ -7389,7 +7389,7 @@
 201120290 Black Treasure Chest [Level 2_ Tumer 3F candidate 10
 201120300 Black Treasure Chest [Level 2_ Tumer 4F candidate 1
 201120310 Black Treasure Chest [Level 2_ Tumer 4F candidate 2
-201120320,Black Treasure Chest [Level 2_ Tumer 4F candidate 3
+201120320 Black Treasure Chest [Level 2_ Tumer 4F candidate 3
 201120330 Black Treasure Chest [Level 2_ Tumer 4F candidate 4
 201120340 Black Treasure Chest [Level 2_ Tumer 4F candidate 5
 201120350 Black Treasure Chest [Level 2_ Tumer 4F candidate 6
@@ -7400,7 +7400,7 @@
 201121000 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 1
 201121010 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 2
 201121020 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 3
-201121030,Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 4
+201121030 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 4
 201121040 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 5
 201121050 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 6
 201121060 Black Treasure Chest [Level 2_ Remote Tomb 1F candidate 7
@@ -7423,7 +7423,7 @@
 201121230 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 4
 201121240 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 5
 201121250 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 6
-201121260,Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 7
+201121260 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 7
 201121270 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 8
 201121280 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 9
 201121290 Black Treasure Chest [Level 2_ Remote Tomb 3F candidate 10
@@ -7456,7 +7456,7 @@
 201130160 Black Treasure Chest [Level 3_ Tumer 2F candidate 7
 201130170 Black Treasure Chest [Level 3_ Tumer 2F candidate 8
 201130180 Black Treasure Chest [Level 3_ Tumer 2F candidate 9
-201130190,Black Treasure Chest [Level 3_ Tumer 2F candidate 10
+201130190 Black Treasure Chest [Level 3_ Tumer 2F candidate 10
 201130200 Black Treasure Chest [Level 3_ Tumer 3F candidate 1
 201130210 Black Treasure Chest [Level 3_ Tumer 3F candidate 2
 201130220 Black Treasure Chest [Level 3_ Tumer 3F candidate 3
@@ -7489,7 +7489,7 @@
 201131090 Black Treasure Chest [Level 3_ Remote Tomb 1F candidate 10
 201131100 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 1
 201131110 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 2
-201131120,Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 3
+201131120 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 3
 201131130 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 4
 201131140 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 5
 201131150 Black Treasure Chest [Level 3_ Remote Tomb 2F candidate 6
@@ -7512,7 +7512,7 @@
 201131320 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 3
 201131330 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 4
 201131340 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 5
-201131350,Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 6
+201131350 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 6
 201131360 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 7
 201131370 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 8
 201131380 Black Treasure Chest [Level 3_ Remote Tomb 4F candidate 9
@@ -7523,7 +7523,7 @@
 201140030 Black Treasure Chest [Level 4_ Tumer 1F candidate 4
 201140040 Black Treasure Chest [Level 4_ Tumer 1F candidate 5
 201140050 Black Treasure Chest [Level 4_ Tumer 1F candidate 6
-201140060,Black Treasure Chest [Level 4_ Tumer 1F candidate 7
+201140060 Black Treasure Chest [Level 4_ Tumer 1F candidate 7
 201140070 Black Treasure Chest [Level 4_ Tumer 1F candidate 8
 201140080 Black Treasure Chest [Level 4_ Tumer 1F candidate 9
 201140090 Black Treasure Chest [Level 4_ Tumer 1F candidate 10
@@ -7555,7 +7555,7 @@
 201140350 Black Treasure Chest [Level 4_ Tumer 4F candidate 6
 201140360 Black Treasure Chest [Level 4_ Tumer 4F candidate 7
 201140370 Black Treasure Chest [Level 4_ Tumer 4F candidate 8
-201140380,Black Treasure Chest [Level 4_ Tumer 4F candidate 9
+201140380 Black Treasure Chest [Level 4_ Tumer 4F candidate 9
 201140390 Black Treasure Chest [Level 4_ Tumer 4F candidate 10
 201142000 Black Treasure Chest [Level 4_ Laurent] 1F candidate 1
 201142010 Black Treasure Chest [Level 4_ Laurent] 1F candidate 2
@@ -7587,7 +7587,7 @@
 201142270 Black Treasure Chest [Level 4_ Laurent] 3F candidate 8
 201142280 Black Treasure Chest [Level 4_ Laurent] 3F candidate 9
 201142290 Black Treasure Chest [Level 4_ Laurent] 3F candidate 10
-201142300,Black Treasure Chest [Level 4_ Laurent] 4F candidate 1
+201142300 Black Treasure Chest [Level 4_ Laurent] 4F candidate 1
 201142310 Black Treasure Chest [Level 4_ Laurent] 4F candidate 2
 201142320 Black Treasure Chest [Level 4_ Laurent] 4F candidate 3
 201142330 Black Treasure Chest [Level 4_ Laurent] 4F candidate 4
@@ -7619,7 +7619,7 @@
 201150190 Black Treasure Chest [Level 5_ Tumer 2F candidate 10
 201150200 Black Treasure Chest [Level 5_ Tumer 3F candidate 1
 201150210 Black Treasure Chest [Level 5_ Tumer 3F candidate 2
-201150220,Black Treasure Chest [Level 5_ Tumer 3F candidate 3
+201150220 Black Treasure Chest [Level 5_ Tumer 3F candidate 3
 201150230 Black Treasure Chest [Level 5_ Tumer 3F candidate 4
 201150240 Black Treasure Chest [Level 5_ Tumer 3F candidate 5
 201150250 Black Treasure Chest [Level 5_ Tumer 3F candidate 6
@@ -7651,7 +7651,7 @@
 201152110 Black Treasure Chest [Level 5_ Laurent] 2F candidate 2
 201152120 Black Treasure Chest [Level 5_ Laurent] 2F candidate 3
 201152130 Black Treasure Chest [Level 5_ Laurent] 2F candidate 4
-201152140,Black Treasure Chest [Level 5_ Laurent] 2F candidate 5
+201152140 Black Treasure Chest [Level 5_ Laurent] 2F candidate 5
 201152150 Black Treasure Chest [Level 5_ Laurent] 2F candidate 6
 201152160 Black Treasure Chest [Level 5_ Laurent] 2F candidate 7
 201152170 Black Treasure Chest [Level 5_ Laurent] 2F candidate 8
@@ -7695,7 +7695,7 @@
 201153150 Black Treasure Chest [Level 5_ Size: 2F candidate 6
 201153160 Black Treasure Chest [Level 5_ Size: 2F candidate 7
 201153170 Black Treasure Chest [Level 5_ Size: 2F candidate 8
-201153180,Black Treasure Chest [Level 5_ Size: 2F candidate 9
+201153180 Black Treasure Chest [Level 5_ Size: 2F candidate 9
 201153190 Black Treasure Chest [Level 5_ Size: 2F candidate 10
 201153200 Black Treasure Chest [Level 5_ Size: 3F candidate 1
 201153210 Black Treasure Chest [Level 5_ Size: 3F candidate 2
@@ -7728,7 +7728,7 @@
 201210080 Treasure Chest (Large) [Level 1_ Tumer 1F candidate 9
 201210090 Treasure Chest (Large) [Level 1_ Tumer 1F candidate 10
 201210100 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 1
-201210110,Treasure Chest (Large) [Level 1_ Tumer 2F candidate 2
+201210110 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 2
 201210120 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 3
 201210130 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 4
 201210140 Treasure Chest (Large) [Level 1_ Tumer 2F candidate 5
@@ -7780,7 +7780,7 @@
 201220200 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 1
 201220210 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 2
 201220220 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 3
-201220230,Treasure Chest (Large) [Level 2_ Tumer 3F candidate 4
+201220230 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 4
 201220240 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 5
 201220250 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 6
 201220260 Treasure Chest (Large) [Level 2_ Tumer 3F candidate 7
@@ -7801,7 +7801,7 @@
 201221010 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 2
 201221020 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 3
 201221030 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 4
-201221040,Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 5
+201221040 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 5
 201221050 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 6
 201221060 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 7
 201221070 Treasure Chest (Large) [Level 2_ Remote Tomb 1F candidate 8
@@ -7812,7 +7812,7 @@
 201221120 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 3
 201221130 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 4
 201221140 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 5
-201221150,Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 6
+201221150 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 6
 201221160 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 7
 201221170 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 8
 201221180 Treasure Chest (Large) [Level 2_ Remote Tomb 2F candidate 9
@@ -7823,7 +7823,7 @@
 201221230 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 4
 201221240 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 5
 201221250 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 6
-201221260,Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 7
+201221260 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 7
 201221270 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 8
 201221280 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 9
 201221290 Treasure Chest (Large) [Level 2_ Remote Tomb 3F candidate 10
@@ -7834,7 +7834,7 @@
 201221340 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 5
 201221350 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 6
 201221360 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 7
-201221370,Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 8
+201221370 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 8
 201221380 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 9
 201221390 Treasure Chest (Large) [Level 2_ Remote Tomb 4F candidate 10
 201230000 Treasure Chest (Large) [Level 3_ Tumer 1F candidate 1
@@ -7855,7 +7855,7 @@
 201230150 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 6
 201230160 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 7
 201230170 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 8
-201230180,Treasure Chest (Large) [Level 3_ Tumer 2F candidate 9
+201230180 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 9
 201230190 Treasure Chest (Large) [Level 3_ Tumer 2F candidate 10
 201230200 Treasure Chest (Large) [Level 3_ Tumer 3F candidate 1
 201230210 Treasure Chest (Large) [Level 3_ Tumer 3F candidate 2
@@ -7887,7 +7887,7 @@
 201231070 Treasure Chest (Large) [Level 3_ Remote Tomb 1F candidate 8
 201231080 Treasure Chest (Large) [Level 3_ Remote Tomb 1F candidate 9
 201231090 Treasure Chest (Large) [Level 3_ Remote Tomb 1F candidate 10
-201231100,Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 1
+201231100 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 1
 201231110 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 2
 201231120 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 3
 201231130 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 4
@@ -7898,7 +7898,7 @@
 201231180 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 9
 201231190 Treasure Chest (Large) [Level 3_ Remote Tomb 2F candidate 10
 201231200 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 1
-201231210,Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 2
+201231210 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 2
 201231220 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 3
 201231230 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 4
 201231240 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 5
@@ -7909,7 +7909,7 @@
 201231290 Treasure Chest (Large) [Level 3_ Remote Tomb 3F candidate 10
 201231300 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 1
 201231310 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 2
-201231320,Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 3
+201231320 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 3
 201231330 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 4
 201231340 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 5
 201231350 Treasure Chest (Large) [Level 3_ Remote Tomb 4F candidate 6
@@ -7951,7 +7951,7 @@
 201240310 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 2
 201240320 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 3
 201240330 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 4
-201240340,Treasure Chest (Large) [Level 4_ Tumer 4F candidate 5
+201240340 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 5
 201240350 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 6
 201240360 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 7
 201240370 Treasure Chest (Large) [Level 4_ Tumer 4F candidate 8
@@ -8003,7 +8003,7 @@
 201250030 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 4
 201250040 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 5
 201250050 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 6
-201250060,Treasure Chest (Large) [Level 5_ Tumer 1F candidate 7
+201250060 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 7
 201250070 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 8
 201250080 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 9
 201250090 Treasure Chest (Large) [Level 5_ Tumer 1F candidate 10
@@ -8055,7 +8055,7 @@
 201252150 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 6
 201252160 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 7
 201252170 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 8
-201252180,Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 9
+201252180 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 9
 201252190 Treasure Chest (Large) [Level 5_ Laurent] 2F candidate 10
 201252200 Treasure Chest (Large) [Level 5_ Laurent] 3F candidate 1
 201252210 Treasure Chest (Large) [Level 5_ Laurent] 3F candidate 2
@@ -8087,7 +8087,7 @@
 201253070 Treasure Chest (Large) [Level 5_ Size: 1F candidate 8
 201253080 Treasure Chest (Large) [Level 5_ Size: 1F candidate 9
 201253090 Treasure Chest (Large) [Level 5_ Size: 1F candidate 10
-201253100,Treasure Chest (Large) [Level 5_ Size: 2F candidate 1
+201253100 Treasure Chest (Large) [Level 5_ Size: 2F candidate 1
 201253110 Treasure Chest (Large) [Level 5_ Size: 2F candidate 2
 201253120 Treasure Chest (Large) [Level 5_ Size: 2F candidate 3
 201253130 Treasure Chest (Large) [Level 5_ Size: 2F candidate 4
@@ -8098,7 +8098,7 @@
 201253180 Treasure Chest (Large) [Level 5_ Size: 2F candidate 9
 201253190 Treasure Chest (Large) [Level 5_ Size: 2F candidate 10
 201253200 Treasure Chest (Large) [Level 5_ Size: 3F candidate 1
-201253210,Treasure Chest (Large) [Level 5_ Size: 3F candidate 2
+201253210 Treasure Chest (Large) [Level 5_ Size: 3F candidate 2
 201253220 Treasure Chest (Large) [Level 5_ Size: 3F candidate 3
 201253230 Treasure Chest (Large) [Level 5_ Size: 3F candidate 4
 201253240 Treasure Chest (Large) [Level 5_ Size: 3F candidate 5
@@ -8109,7 +8109,7 @@
 201253290 Treasure Chest (Large) [Level 5_ Size: 3F candidate 10
 201253300 Treasure Chest (Large) [Level 5_ Size: 4F candidate 1
 201253310 Treasure Chest (Large) [Level 5_ Size: 4F candidate 2
-201253320,Treasure Chest (Large) [Level 5_ Size: 4F candidate 3
+201253320 Treasure Chest (Large) [Level 5_ Size: 4F candidate 3
 201253330 Treasure Chest (Large) [Level 5_ Size: 4F candidate 4
 201253340 Treasure Chest (Large) [Level 5_ Size: 4F candidate 5
 201253350 Treasure Chest (Large) [Level 5_ Size: 4F candidate 6
@@ -8151,7 +8151,7 @@
 201310310 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 2
 201310320 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 3
 201310330 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 4
-201310340,Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 5
+201310340 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 5
 201310350 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 6
 201310360 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 7
 201310370 Treasure Chest (Medium) [Level 1_ Tumer 4F candidate 8
@@ -8237,7 +8237,7 @@
 201321370 Treasure Chest (Medium) [Level 2_ Remote Tomb 4F candidate 8
 201321380 Treasure Chest (Medium) [Level 2_ Remote Tomb 4F candidate 9
 201321390 Treasure Chest (Medium) [Level 2_ Remote Tomb 4F candidate 10
-201330000,Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 1
+201330000 Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 1
 201330010 Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 2
 201330020 Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 3
 201330030 Treasure Chest (Medium) [Level 3_ Tumer 1F candidate 4
@@ -8290,7 +8290,7 @@
 201331100 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 1
 201331110 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 2
 201331120 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 3
-201331130,Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 4
+201331130 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 4
 201331140 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 5
 201331150 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 6
 201331160 Treasure Chest (Medium) [Level 3_ Remote Tomb 2F candidate 7
@@ -8301,7 +8301,7 @@
 201331210 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 2
 201331220 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 3
 201331230 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 4
-201331240,Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 5
+201331240 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 5
 201331250 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 6
 201331260 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 7
 201331270 Treasure Chest (Medium) [Level 3_ Remote Tomb 3F candidate 8
@@ -8312,7 +8312,7 @@
 201331320 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 3
 201331330 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 4
 201331340 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 5
-201331350,Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 6
+201331350 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 6
 201331360 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 7
 201331370 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 8
 201331380 Treasure Chest (Medium) [Level 3_ Remote Tomb 4F candidate 9
@@ -8333,7 +8333,7 @@
 201340130 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 4
 201340140 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 5
 201340150 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 6
-201340160,Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 7
+201340160 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 7
 201340170 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 8
 201340180 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 9
 201340190 Treasure Chest (Medium) [Level 4_ Tumer 2F candidate 10
@@ -8385,7 +8385,7 @@
 201342250 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 6
 201342260 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 7
 201342270 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 8
-201342280,Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 9
+201342280 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 9
 201342290 Treasure Chest (Medium) [Level 4_ Laurent] 3F candidate 10
 201342300 Treasure Chest (Medium) [Level 4_ Laurent] 4F candidate 1
 201342310 Treasure Chest (Medium) [Level 4_ Laurent] 4F candidate 2
@@ -8437,7 +8437,7 @@
 201350370 Treasure Chest (Medium) [Level 5_ Tumer 4F candidate 8
 201350380 Treasure Chest (Medium) [Level 5_ Tumer 4F candidate 9
 201350390 Treasure Chest (Medium) [Level 5_ Tumer 4F candidate 10
-201352000,Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 1
+201352000 Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 1
 201352010 Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 2
 201352020 Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 3
 201352030 Treasure Chest (Medium) [Level 5_ Laurent] 1F candidate 4
@@ -8490,7 +8490,7 @@
 201353100 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 1
 201353110 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 2
 201353120 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 3
-201353130,Treasure Chest (Medium) [Level 5_ Size: 2F candidate 4
+201353130 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 4
 201353140 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 5
 201353150 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 6
 201353160 Treasure Chest (Medium) [Level 5_ Size: 2F candidate 7
@@ -8501,7 +8501,7 @@
 201353210 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 2
 201353220 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 3
 201353230 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 4
-201353240,Treasure Chest (Medium) [Level 5_ Size: 3F candidate 5
+201353240 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 5
 201353250 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 6
 201353260 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 7
 201353270 Treasure Chest (Medium) [Level 5_ Size: 3F candidate 8
@@ -8512,7 +8512,7 @@
 201353320 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 3
 201353330 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 4
 201353340 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 5
-201353350,Treasure Chest (Medium) [Level 5_ Size: 4F candidate 6
+201353350 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 6
 201353360 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 7
 201353370 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 8
 201353380 Treasure Chest (Medium) [Level 5_ Size: 4F candidate 9
@@ -8533,7 +8533,7 @@
 201410130 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 4
 201410140 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 5
 201410150 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 6
-201410160,Treasure Chest (Small) [Level 1_ Tumer 2F candidate 7
+201410160 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 7
 201410170 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 8
 201410180 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 9
 201410190 Treasure Chest (Small) [Level 1_ Tumer 2F candidate 10
@@ -8585,7 +8585,7 @@
 201420250 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 6
 201420260 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 7
 201420270 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 8
-201420280,Treasure Chest (Small) [Level 2_ Tumer 3F candidate 9
+201420280 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 9
 201420290 Treasure Chest (Small) [Level 2_ Tumer 3F candidate 10
 201420300 Treasure Chest (Small) [Level 2_ Tumer 4F candidate 1
 201420310 Treasure Chest (Small) [Level 2_ Tumer 4F candidate 2
@@ -8650,7 +8650,7 @@
 201430100 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 1
 201430110 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 2
 201430120 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 3
-201430130,Treasure Chest (Small) [Level 3_ Tumer 2F candidate 4
+201430130 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 4
 201430140 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 5
 201430150 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 6
 201430160 Treasure Chest (Small) [Level 3_ Tumer 2F candidate 7
@@ -8715,7 +8715,7 @@
 201431350 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 6
 201431360 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 7
 201431370 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 8
-201431380,Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 9
+201431380 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 9
 201431390 Treasure Chest (Small) [Level 3_ Remote Tomb 4F candidate 10
 201440000 Treasure Chest (Small) [Level 4_ Tumer 1F candidate 1
 201440010 Treasure Chest (Small) [Level 4_ Tumer 1F candidate 2
@@ -8767,7 +8767,7 @@
 201442070 Treasure Chest (Small) [Level 4_ Laurent] 1F candidate 8
 201442080 Treasure Chest (Small) [Level 4_ Laurent] 1F candidate 9
 201442090 Treasure Chest (Small) [Level 4_ Laurent] 1F candidate 10
-201442100,Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 1
+201442100 Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 1
 201442110 Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 2
 201442120 Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 3
 201442130 Treasure Chest (Small) [Level 4_ Laurent] 2F candidate 4
@@ -8819,7 +8819,7 @@
 201450190 Treasure Chest (Small) [Level 5_ Tumer 2F candidate 10
 201450200 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 1
 201450210 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 2
-201450220,Treasure Chest (Small) [Level 5_ Tumer 3F candidate 3
+201450220 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 3
 201450230 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 4
 201450240 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 5
 201450250 Treasure Chest (Small) [Level 5_ Tumer 3F candidate 6
@@ -8871,7 +8871,7 @@
 201452310 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 2
 201452320 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 3
 201452330 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 4
-201452340,Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 5
+201452340 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 5
 201452350 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 6
 201452360 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 7
 201452370 Treasure Chest (Small) [Level 5_ Laurent] 4F candidate 8
@@ -8904,7 +8904,7 @@
 201453240 Treasure Chest (Small) [Level 5_ Size: 3F candidate 5
 201453250 Treasure Chest (Small) [Level 5_ Size: 3F candidate 6
 201453260 Treasure Chest (Small) [Level 5_ Size: 3F candidate 7
-201453270,Treasure Chest (Small) [Level 5_ Size: 3F candidate 8
+201453270 Treasure Chest (Small) [Level 5_ Size: 3F candidate 8
 201453280 Treasure Chest (Small) [Level 5_ Size: 3F candidate 9
 201453290 Treasure Chest (Small) [Level 5_ Size: 3F candidate 10
 201453300 Treasure Chest (Small) [Level 5_ Size: 4F candidate 1
@@ -8915,7 +8915,7 @@
 201453350 Treasure Chest (Small) [Level 5_ Size: 4F candidate 6
 201453360 Treasure Chest (Small) [Level 5_ Size: 4F candidate 7
 201453370 Treasure Chest (Small) [Level 5_ Size: 4F candidate 8
-201453380,Treasure Chest (Small) [Level 5_ Size: 4F candidate 9
+201453380 Treasure Chest (Small) [Level 5_ Size: 4F candidate 9
 201453390 Treasure Chest (Small) [Level 5_ Size: 4F candidate 10
 201510000 Treasure Corpse _ Reward [Level 1_ Tumer 1F candidate 1
 201510010 Treasure Corpse _ Reward [Level 1_ Tumer 1F candidate 2
@@ -8933,7 +8933,7 @@
 201510130 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 4
 201510140 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 5
 201510150 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 6
-201510160,Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 7
+201510160 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 7
 201510170 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 8
 201510180 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 9
 201510190 Treasure Corpse _ Reward [Level 1_ Tumer 2F candidate 10
@@ -8968,7 +8968,7 @@
 201520080 Treasure Corpse _ Reward [Level 2_ Tumer 1F candidate 9
 201520090 Treasure Corpse _ Reward [Level 2_ Tumer 1F candidate 10
 201520100 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 1
-201520110,Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 2
+201520110 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 2
 201520120 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 3
 201520130 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 4
 201520140 Treasure Corpse _ Reward [Level 2_ Tumer 2F candidate 5
@@ -9031,7 +9031,7 @@
 201521310 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 2
 201521320 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 3
 201521330 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 4
-201521340,Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 5
+201521340 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 5
 201521350 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 6
 201521360 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 7
 201521370 Treasure Corpse _ Reward [Level 2_ Remote Tomb 4F candidate 8
@@ -9049,7 +9049,7 @@
 201530090 Treasure Corpse _ Reward [Level 3_ Tumer 1F candidate 10
 201530100 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 1
 201530110 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 2
-201530120,Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 3
+201530120 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 3
 201530130 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 4
 201530140 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 5
 201530150 Treasure Corpse _ Reward [Level 3_ Tumer 2F candidate 6
@@ -9112,7 +9112,7 @@
 201531320 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 3
 201531330 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 4
 201531340 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 5
-201531350,Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 6
+201531350 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 6
 201531360 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 7
 201531370 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 8
 201531380 Treasure Corpse _ Reward [Level 3_ Remote Tomb 4F candidate 9
@@ -9121,7 +9121,7 @@
 201540010 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 2
 201540020 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 3
 201540030 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 4
-201540040,Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 5
+201540040 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 5
 201540050 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 6
 201540060 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 7
 201540070 Treasure Corpse _ Reward [Level 4_ Tumer 1F candidate 8
@@ -9156,7 +9156,7 @@
 201540360 Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 7
 201540370 Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 8
 201540380 Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 9
-201540390,Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 10
+201540390 Treasure Corpse _ Reward [Level 4_ Tumer 4F candidate 10
 201542000 Treasure Corpse _ Reward [Level 4_ Laurent] 1F candidate 1
 201542010 Treasure Corpse _ Reward [Level 4_ Laurent] 1F candidate 2
 201542020 Treasure Corpse _ Reward [Level 4_ Laurent] 1F candidate 3
@@ -9191,7 +9191,7 @@
 201542310 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 2
 201542320 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 3
 201542330 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 4
-201542340,Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 5
+201542340 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 5
 201542350 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 6
 201542360 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 7
 201542370 Treasure Corpse _ Reward [Level 4_ Laurent] 4F candidate 8
@@ -9226,7 +9226,7 @@
 201550260 Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 7
 201550270 Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 8
 201550280 Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 9
-201550290,Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 10
+201550290 Treasure Corpse _ Reward [Level 5_ Tumer 3F candidate 10
 201550300 Treasure Corpse _ Reward [Level 5_ Tumer 4F candidate 1
 201550310 Treasure Corpse _ Reward [Level 5_ Tumer 4F candidate 2
 201550320 Treasure Corpse _ Reward [Level 5_ Tumer 4F candidate 3
@@ -9261,7 +9261,7 @@
 201552210 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 2
 201552220 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 3
 201552230 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 4
-201552240,Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 5
+201552240 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 5
 201552250 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 6
 201552260 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 7
 201552270 Treasure Corpse _ Reward [Level 5_ Laurent] 3F candidate 8
@@ -9288,7 +9288,7 @@
 201553080 Treasure Corpse _ Reward [Level 5_ Size: 1F candidate 9
 201553090 Treasure Corpse _ Reward [Level 5_ Size: 1F candidate 10
 201553100 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 1
-201553110,Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 2
+201553110 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 2
 201553120 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 3
 201553130 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 4
 201553140 Treasure Corpse _ Reward [Level 5_ Size: 2F candidate 5
@@ -9333,7 +9333,7 @@
 201610130 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 4
 201610140 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 5
 201610150 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 6
-201610160,Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 7
+201610160 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 7
 201610170 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 8
 201610180 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 9
 201610190 Treasure Corpse _ Fishing arrangement [Level 1_ Tumer 2F candidate 10

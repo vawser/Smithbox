@@ -31,7 +31,7 @@
 31000 Gravekeeper _ Torso
 32000 Gravekeeper _ arm
 33000 Gravekeeper _ leg
-40000,Kin of the Flame of Destruction _ head
+40000 Kin of the Flame of Destruction _ head
 41000 Kin of the Flame of Destruction _ Torso
 42000 Kin of the Flame of Destruction _ arm
 43000 Kin of the Flame of Destruction _ leg
@@ -54,7 +54,7 @@
 90000 Vampire Princess _ head
 91000 Vampire Princess _ Torso
 100000 Vampire Knight _ head
-101000,Vampire Knight _ Torso
+101000 Vampire Knight _ Torso
 102000 Vampire Knight _ arm
 103000 Vampire Knight _ leg
 110000 Servant of the Church _ head
@@ -125,7 +125,7 @@
 343000 Beggar Hunter _ leg
 350000 Dark Hunter (with cape) _ head
 351000 Dark Hunter (with cape) _ Torso
-352000,Dark Hunter (with cape) _ arm
+352000 Dark Hunter (with cape) _ arm
 353000 Dark Hunter (with cape) _ leg
 360000 Dark Hunter (without cape) _ head
 361000 Dark Hunter (without cape) _ Torso
@@ -149,7 +149,7 @@
 410000 Beastification _ head
 411000 Beastification _ Torso
 412000 Beastification _ arm
-420000,Slug _ head
+420000 Slug _ head
 421000 Slug _ Torso
 422000 Slug _ arm
 430000 Clock Tower Patient _ head

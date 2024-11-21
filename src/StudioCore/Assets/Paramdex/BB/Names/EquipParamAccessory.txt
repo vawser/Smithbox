@@ -37,5 +37,5 @@
 146 SA up
 147 Increased defense in pinches
 148 Miracle Power Up
-149,Magic Slot Up B
+149 Magic Slot Up B
 150 [ DLC 】Black Dragon Ring

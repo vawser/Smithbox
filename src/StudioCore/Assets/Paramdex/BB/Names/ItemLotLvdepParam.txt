@@ -105,15 +105,15 @@
 700540 Ritual Materials [Common A 】level 1
 700550 Ritual Materials [Common A 】level 6
 700560 Ritual Materials [Common A 】level 7
-701000,Replacement Items
-701010,Replacement Items
+701000 Replacement Items
+701010 Replacement Items
 701020 Ritual Materials [Common B 】level 3
 701030 Ritual Materials [Common B 】level 3
 701040 Ritual Materials [Common B 】level 5
 701050 Ritual Materials [Common B 】level 6
 701060 Ritual Materials [Common B 】level 7
-701100,Replacement Items
-701110,Replacement Items
+701100 Replacement Items
+701110 Replacement Items
 701120 Ritual Materials [Common B 】level 3
 701130 Ritual Materials [Common B 】level 4
 701140 Ritual Materials [Common B 】level 5
@@ -126,42 +126,42 @@
 702040 Ritual Materials [Common C 】level 5
 702050 Ritual Materials [Common C 】level 6
 702060 Ritual Materials [Common C 】level 7
-710000,Replacement Items
-710010,Replacement Items
-710020,Replacement Items
-710030,Replacement Items
+710000 Replacement Items
+710010 Replacement Items
+710020 Replacement Items
+710030 Replacement Items
 710040 Ritual Materials [Uncommon A 】level 1
 710050 Ritual Materials [Uncommon A 】level 3
 710060 Ritual Materials [Uncommon A 】level 3
-710100,Replacement Items
-710110,Replacement Items
-710120,Replacement Items
-710130,Replacement Items
+710100 Replacement Items
+710110 Replacement Items
+710120 Replacement Items
+710130 Replacement Items
 710140 Ritual Materials [Uncommon A 】level 1
 710150 Ritual Materials [Uncommon A 】level 3
 710160 Ritual Materials [Uncommon A 】level 3
-711000,Replacement Items
-711010,Replacement Items
-711020,Replacement Items
-711030,Replacement Items
+711000 Replacement Items
+711010 Replacement Items
+711020 Replacement Items
+711030 Replacement Items
 711040 Ritual Materials [Uncommon B 】level1
 711050 Ritual Materials [Uncommon B 】level 3
 711060 Ritual Materials [Uncommon B 】level 3
-711100,Replacement Items
-711110,Replacement Items
-711120,Replacement Items
-711130,Replacement Items
+711100 Replacement Items
+711110 Replacement Items
+711120 Replacement Items
+711130 Replacement Items
 711140 Ritual Materials [Uncommon B 】level1
 711150 Ritual Materials [Uncommon B 】level 3
 711160 Ritual Materials [Uncommon B 】level 3
-712000,Replacement Items
+712000 Replacement Items
 712010 Ritual Materials [Uncommon C 】level 1
 712020 Ritual Materials [Uncommon C 】level 1
 712030 Ritual Materials [Uncommon C 】level 2
 712040 Ritual Materials [Uncommon C 】level 2
 712050 Ritual Materials [Uncommon C 】level 3
 712060 Ritual Materials [Uncommon C 】level 3
-712100,Replacement Items
+712100 Replacement Items
 712110 Ritual Materials [Uncommon C 】level 1
 712120 Ritual Materials [Uncommon C 】level 1
 712130 Ritual Materials [Uncommon C 】level 2
@@ -175,39 +175,39 @@
 713040 Ritual Materials [Uncommon D 】level 2
 713050 Ritual Materials [Uncommon D 】level 3
 713060 Ritual Materials [Uncommon D 】level 3
-713100,Replacement Items
-713110,Replacement Items
+713100 Replacement Items
+713110 Replacement Items
 713120 Ritual Materials [Uncommon D 】level 1
 713130 Ritual Materials [Uncommon D 】level 1
 713140 Ritual Materials [Uncommon D 】level 2
 713150 Ritual Materials [Uncommon D 】level 3
 713160 Ritual Materials [Uncommon D 】level 3
-714000,Replacement Items
-714010,Replacement Items
-714020,Replacement Items
+714000 Replacement Items
+714010 Replacement Items
+714020 Replacement Items
 714030 Ritual Materials [Uncommon E 】level 1
-714040,Replacement Items
+714040 Replacement Items
 714050 Ritual Materials [Uncommon E 】level 3
 714060 Ritual Materials [Uncommon E 】level 3
-714100,Replacement Items
-714110,Replacement Items
-714120,Replacement Items
+714100 Replacement Items
+714110 Replacement Items
+714120 Replacement Items
 714130 Ritual Materials [Uncommon E 】level 1
-714140,Replacement Items
+714140 Replacement Items
 714150 Ritual Materials [Uncommon E 】level 3
 714160 Ritual Materials [Uncommon E 】level 3
-715100,Replacement Items
+715100 Replacement Items
 715110 Ritual Materials [Uncommon F 】level 1
 715120 Ritual Materials [Uncommon F 】level 1
-715130,Replacement Items
-715140,Replacement Items
+715130 Replacement Items
+715140 Replacement Items
 715150 Ritual Materials [Uncommon F 】level 1
 715160 Ritual Materials [Uncommon F 】level 1
 900000 Operation check test: Lv00 : Wine of Life
 900020 Operation check test: Lv20 : Pile Bunker
 900040 Operation check test: Lv40 : Immortal Pilgrim _ head
 900060 Operation check test: Lv60 : Dark Walk
-900099,Operation check test: Lv99 ：Attack power up
+900099 Operation check test: Lv99 ：Attack power up
 900100 Operation check test 2 : Lv00 : Wine of Life
 900120 Operation check test 2 : Lv20 : Green flowers and grass
 900140 Operation check test 2 : Lv40 : Flame Pot

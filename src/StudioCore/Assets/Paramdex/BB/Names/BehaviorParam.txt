@@ -16,7 +16,7 @@
 207 [QWC] Area _ NPC _ - 2
 208 [QWC] Area _ NPC _ - 3
 211 [QWC] Area _ black _ + 1
-212,[QWC] Area _ black _ + 2
+212 [QWC] Area _ black _ + 2
 221 [QWC] Area _ white _ + 1
 222 [QWC] Area _ white _ + 2
 231 [QWC] Area _ Grey _ + 1
@@ -28,7 +28,7 @@
 321 [QWC] Player _ white _ + 1
 322 [QWC] Player _ white _ + 2
 331 [QWC] Player _ Grey _ + 1
-332,[QWC] Player _ Grey _ + 2
+332 [QWC] Player _ Grey _ + 2
 336 [QWC] Player _ Grey _ - 1
 337 [QWC] Player _ Grey _ - 2
 5000 Castle town 1 Burning Corpse (Former Royal Castle Bonfire Small)
@@ -43,7 +43,7 @@
 5071 [ SP 】 Cathedral District A Trick Gun
 5080 Royal Castle 1 Fire-breathing gargoyle
 5090 Abandoned City Lava Damage [Nullified by Ring]
-5091,Abandoned City Lava Damage [Penetrates rings]
+5091 Abandoned City Lava Damage [Penetrates rings]
 5100 Cemetery 1 Thorn Bridge Needles
 5110 [ SP 】 Dungeon Iron Ball
 5120 Cemetery 1 Stone Statue Needle
@@ -100,7 +100,7 @@
 6057 [ SP 】 Dungeon _ Bell for attracting people 50m
 6058 [ SP 】 Dungeon _ Bell for attracting people 60m
 6059 [ SP 】 Dungeon _ Bell for attracting people 70m
-6060,[ SP 】 Dungeon _ Bell for attracting people 80m
+6060 [ SP 】 Dungeon _ Bell for attracting people 80m
 6061 [ SP 】 Dungeon _ Bell for attracting people 90m
 6062 [ SP 】 Dungeon _ Bell for attracting people 100m
 6063 [ SP 】 Dungeon _ Bell for attracting people _ Alarm clock 100m
@@ -114,7 +114,7 @@
 6090 [ SP 】 Incense burner covered in oil
 6100 [ SP 】 Forest Pendulum (Log)
 6101 [ SP 】 Forest Trap
-6110,Cathedral Quarter B bonfire
+6110 Cathedral Quarter B bonfire
 6111 Cathedral Quarter B Firewood cart
 6112 Cathedral Quarter B Firewood cart stopper
 6120 [ SP 】 Dungeon Incense Burner Poison Ritual Level 1
@@ -269,7 +269,7 @@
 20107 Common attack [Blow away/humanoid]
 20108 Common attack [Step/Humanoid]
 20109 Common attack [Step c2520 Immortal Thief】
-20110,Common attack [Fall/four-legged type]
+20110 Common attack [Fall/four-legged type]
 20111 Common attack [landing/four-legged type]
 20112 Common attack [Blow away・c 1200 Dog and Mouse】
 20113 Common attack [Step c2950 Skeleton (beast)】
@@ -298,7 +298,7 @@
 20136 Common attack [Blow away・c 3300 Crystal Lizard】
 20137 Common attack [Step c 3340 The Envoy's Black Dog
 20138 Common attack [Blow away・c 3340 The Envoy's Black Dog
-20139,Common attack [Fall c3350 Moving Tree】
+20139 Common attack [Fall c3350 Moving Tree】
 20140 Common attack [Landing c3350 Moving Tree】
 20141 Common attack [Fall c3380 Big leech]
 20142 Common attack [Landing c3380 Big leech]
@@ -312,7 +312,7 @@
 20150 Common attack [Step (right foot) c2320 Iron Golem】
 20151 Common attack [Step (left foot) c2320 Iron Golem】
 20152 Common attack [Fall/c 2320 Iron Golem】
-20153,Common attack [Landing・c 2320 Iron Golem】
+20153 Common attack [Landing・c 2320 Iron Golem】
 20154 Common attack [Step c5210 Holy Sword Wolf】
 20155 Common attack: Step (hind leg only) c5210 Holy Sword Wolf】
 20156 Common attack [Fall c5210 Holy Sword Wolf】
@@ -351,7 +351,7 @@
 20189 Common attack [Landing c3250 Izalith Queen】
 20190 Common attack [Blow away c3250 Izalith Queen】
 20191 Common attack [Small blow away c3250 Izalith Queen】
-20192 Common attack [Fall,c3330 Bishacha]
+20192 Common attack [Fall c3330 Bishacha]
 20193 Common attack [Fall backwards c3330 Bishacha]
 20194 Common attack [Falling face down c3330 Bishacha]
 20195 Common attack [Landing c3330 Bishacha]
@@ -364,7 +364,7 @@
 20202 Common attack [Blow away・c 2830 Immortal Phalanx]
 20203 Common attack [Fall c3400 Crag Spider Child
 20204 Common attack [Landing c3400 Crag Spider Child
-20205,Common attack [Blow away c3400 Crag Spider Child
+20205 Common attack [Blow away c3400 Crag Spider Child
 20206 Common attack [Step c3400 Crag Spider Child
 20207 Common attack [Step c3480 Sun Bug】
 20208 Common attack [Fall c2300 Wandering Demon】
@@ -377,7 +377,7 @@
 20215 Common attack [Blow away c2930 Skeleton (wheels)
 20216 Common attack [Blow away (wheel) c2930 Skeleton (wheels)
 20217 Common attack [Fall/c 3370 Tree-climbing lizard】
-20218,Common attack [Landing・c 3370 Tree-climbing lizard】
+20218 Common attack [Landing・c 3370 Tree-climbing lizard】
 20219 Common attack [Blow away・c 3370 Tree-climbing lizard】
 20220 Common attack [Step c 3370 Tree-climbing lizard】
 20221 Common attack [Fall/c 3390 Burrowing Maggots
@@ -390,7 +390,7 @@
 20228 Common attack [Fall/c 3500 Big Jelly】
 20229 Common attack [Landing・c 3500 Big Jelly】
 20230 Common attack [Fall/c 3520 Wyvern]
-20231,Common attack [Landing・c 3520 Wyvern]
+20231 Common attack [Landing・c 3520 Wyvern]
 20232 Common attack [Step c 3520 Wyvern]
 20233 Common attack [Fall/c 5200 Centipede Demon】
 20234 Common attack [Landing・c 5200 Centipede Demon】
@@ -416,7 +416,7 @@
 20254 Common attack [Fall c2230 Fat Demon】
 20255 Common attack [Thud landing c2230 Fat Demon】
 20256 Common attack [Step c2230 Fat Demon】
-20257,Common attack [Fall c2250 Hammer Demon】
+20257 Common attack [Fall c2250 Hammer Demon】
 20258 Common attack [Step c2250 Hammer Demon】
 20259 Common attack [Step c2400 Assassin】
 20260 Common attack [Thud landing c5271 Griffith (Large)
@@ -442,7 +442,7 @@
 20313 Common attack [Blow away c1000 Hound】
 20314 Common attack [Step (right foot) c5000 Parishioner】
 20315 Common attack [Step (left foot) c5000 Parishioner】
-20316,Common attack [Step (left hand) c5000 Parishioner】
+20316 Common attack [Step (left hand) c5000 Parishioner】
 20317 Common attack [Fall/c 5000 Parishioner】
 20318 Common attack [Landing・c 5000 Parishioner】
 20319 Common attack [step in (right foot) c5000 Parishioner】
@@ -456,7 +456,7 @@
 20327 Common attack [Blow away c1100 Sewer rats】
 20328 Common attack [Step c1170 Carrion Bird】
 20329 Common attack [Fall c1170 Carrion Bird】
-20330,Common attack [Landing c1170 Carrion Bird】
+20330 Common attack [Landing c1170 Carrion Bird】
 20331 Common attack [Blow away c1170 Carrion Bird】
 20332 Common attack [Step (right foot) c5020 Saint Beast】
 20333 Common attack [Step (left foot) c5020 Saint Beast】
@@ -471,7 +471,7 @@
 20342 Common attack [Landing no damage c5520 Lesser Demon Variation】
 20343 Common attack [Landing c2510 Child of the Moon
 20344 Common attack [Step c2130 Licking blood】
-20345,Common attack [Fall c2130 Licking blood】
+20345 Common attack [Fall c2130 Licking blood】
 20346 Common attack [Landing c2130 Licking blood】
 20347 Common attack [Blow away c2130 Licking blood】
 20348 Common attack [Step c2530 Star Flower】
@@ -484,7 +484,7 @@
 20361 Common attack [Step (left rear leg) c45100 Ludwig:
 20362 Common attack [Step (right front leg) c45100 Ludwig:
 20363 Common attack [Step (left front leg) c45100 Ludwig:
-30000,Common attack [Throw damage stagger surroundings grab]
+30000 Common attack [Throw damage stagger surroundings grab]
 30001 Common attack [Throw damage flinch surroundings knock them away]
 210000100 c1000_ Hound _ scratch 1
 210000101 c1000_ Hound _ scratch 2
@@ -541,7 +541,7 @@
 210100900 c1010_ Priest _ Fire-spreading attack
 210200100 c1020_ crowd A_ Swinging an axe
 210200110 c1020_ crowd A_2 Continuous attack ( 1 Attack)
-210200120,c1020_ crowd A_2 Continuous attack ( 2 Attack)
+210200120 c1020_ crowd A_2 Continuous attack ( 2 Attack)
 210200130 c1020_ crowd A_ Swing it up and slam it down
 210200140 c1020_ crowd A_ Run and swing down
 210200150 c1020_ crowd A_ Hit with a torch ( Right hand)
@@ -629,7 +629,7 @@
 210300190 c1030_ crowd B_ Swing down with both hands
 210300191 c1030_ crowd B_ Swing down with both hands (ground shock wave)
 210300200 c1030_ crowd B_ Pay to the side
-210300210,c1030_ crowd B_ Hammer state ( 1 Attack)
+210300210 c1030_ crowd B_ Hammer state ( 1 Attack)
 210300211 c1030_ crowd B_ Hammer state ( 2 Attack)
 210300212 c1030_ crowd B_ Hammer state ( 3 Attack)
 210300213 c1030_ crowd B_ Hammer state ( 1-2 Attack Ground Shock Wave)
@@ -876,7 +876,7 @@
 211500150 c1150_ Slime _ Shield Bash
 211500160 c1150_ Slime _ Collapse
 211500162 c1150_ Slime _ Collapse (early start)
-211500170,c1150_ Slime _ Vertical punch
+211500170 c1150_ Slime _ Vertical punch
 211500180 c1150_ Slime _ Giant Side Smash
 211500190 c1150_ Slime _ Continuous punch ( 1 Attack)
 211500191 c1150_ Slime _ Continuous punch ( 2 Attack)
@@ -1016,7 +1016,7 @@
 212300180 c1230_ Digging _ Swallowing Attack (Reversed)
 212300220 c1230_ Digging _ Fold Suction Attack (Reversed)
 212300230 c1230_ Digging _ Throwing Body (Reverse Position)
-212400100,c1240_ Mad dog _ Right Bite on the Spot
+212400100 c1240_ Mad dog _ Right Bite on the Spot
 212400101 c1240_ Mad dog _ Running right bite
 212400102 c1240_ Mad dog _ Combo Left Bite
 212400110 c1240_ Mad dog _ Left Bite on the Spot
@@ -1040,7 +1040,7 @@
 212500104 c1250_ Snake ball (child) _ Bite 1_ Left thin neck (Damipoly 12 )
 212500105 c1250_ Snake ball (child) _ Bite 1_ Thin front neck (Damipoly 14 )
 212500106 c1250_ Snake ball (child) _ Bite 1_ Thin front neck (Damipoly 17 )
-212500107,c1250_ Snake ball (child) _ Bite 1_ Left thin neck (Damipoly twenty one )
+212500107 c1250_ Snake ball (child) _ Bite 1_ Left thin neck (Damipoly twenty one )
 212500108 c1250_ Snake ball (child) _ Bite 1_ Left thin neck (Damipoly twenty three )
 212500110 c1250_ Snake ball (child) _ Bite 2_ Right Thick Neck (Damipoli 16 )
 212500111 c1250_ Snake ball (child) _ Bite 2_ Medium Thick Neck (Damipoly 13 )
@@ -1155,7 +1155,7 @@
 212900200 c1290_ Abnormal Beast (female) - bare hands claw thrust
 212900210 c1290_ Abnormal Beast (female) - Bare-handed power scratch
 212900220 c1290_ Abnormal Beast (female) - Bare-handed Speed Scratch
-212900230,c1290_ Strange Beast (female) _ bare hands scratching
+212900230 c1290_ Strange Beast (female) _ bare hands scratching
 212900240 c1290_ Strange Beast (female) - bare hands jumping and scratching with right hand
 212900250 c1290_ Strange Beast (female) - bare hands flying left hand scratch
 212900260 c1290_ Strange beast (female) - bare hands run approach and scratch
@@ -1220,7 +1220,7 @@
 220000240 c2000_ Executioner _ Headhunting [Throw]
 220000250 c2000_ Executioner _ Great Axe Throwing
 220000600 c2000_ Executioner _ guard
-220100100,c2010_ Grave Digger _ Hook Combo 1
+220100100 c2010_ Grave Digger _ Hook Combo 1
 220100101 c2010_ Grave Digger _ Hook Combo 2
 220100102 c2010_ Grave Digger _ Hook Combo 3-1
 220100103 c2010_ Grave Digger _ Hook Combo 3-2 (Throw)
@@ -1304,7 +1304,7 @@
 220300221 c2030_ Cathedral Knight _ Payment Combo 2
 220300223 c2030_ Cathedral Knight _ Payment Combo 3
 220300230 c2030_ Cathedral Knight _ Spin Pay Combo 1
-220300231,c2030_ Cathedral Knight _ Spin Pay Combo 2
+220300231 c2030_ Cathedral Knight _ Spin Pay Combo 2
 220300240 c2030_ Cathedral Knight _ Dash payment
 220300250 c2030_ Cathedral Knight _ Jump payment
 220300260 c2030_ Cathedral Knight _ Thrust up slash down ( 1 Attack)
@@ -1319,7 +1319,7 @@
 220400140 c2040_ Manipulated Corpse _ Both hands slammed
 220400150 c2040_ Manipulated Corpse _ Charge punch
 220400160 c2040_ Manipulated Corpse _ Swinging arms _1 Attack
-220400161,c2040_ Manipulated Corpse _ Swinging arms _2 Attack
+220400161 c2040_ Manipulated Corpse _ Swinging arms _2 Attack
 220400162 c2040_ Manipulated Corpse _ Swinging arms _3 Attack
 220400163 c2040_ Manipulated Corpse _ Swinging arms _4 Attack
 220400164 c2040_ Manipulated Corpse _ Swinging arms _5 Attack
@@ -1385,7 +1385,7 @@
 220900110 c2090_ Bloodthirsty Beast _ Charge ( 1 Attack)
 220900111 c2090_ Bloodthirsty Beast _ Charge ( 2 Attack)
 220900112 c2090_ Bloodthirsty Beast _ Charge ( 3 Attack)
-220900113,c2090_ Bloodthirsty Beast _ Charge ( 4 Attack)
+220900113 c2090_ Bloodthirsty Beast _ Charge ( 4 Attack)
 220900120 c2090_ Bloodthirsty Beast _ Bite forward ( 1 Attack)
 220900121 c2090_ Bloodthirsty Beast _ Bite forward ( 2 Attack)
 220900122 c2090_ Bloodthirsty Beast _ Bite forward ( 3 Attack)
@@ -1436,7 +1436,7 @@
 220900271 c2090_ Bloodthirsty Beast _ Jump high and attack ( 2 Shot) (Bleeding)
 220900280 c2090_ Bloodthirsty Beast _ Continuous attack ( 1 Shot) (Bleeding)
 220900281 c2090_ Bloodthirsty Beast _ Continuous attack ( 2 Shot) (Bleeding)
-220900282,c2090_ Bloodthirsty Beast _ Continuous attack ( 3 Shot) (Bleeding)
+220900282 c2090_ Bloodthirsty Beast _ Continuous attack ( 3 Shot) (Bleeding)
 220900300 c2090_ Bloodthirsty Beast _ Selfish Poison Fog Explosion _ explosion
 220900301 c2090_ Bloodthirsty Beast _ Selfish Poison Fog Explosion _ Poison Mist
 220900500 c2090_ Bloodthirsty Beast _ Poison (bleeding)
@@ -1528,7 +1528,7 @@
 221200300 c2120_ Dark Brigade (Forest Boss) _ One-handed combo 1①
 221200301 c2120_ Dark Brigade (Forest Boss) _ One-handed combo 2
 221200302 c2120_ Dark Brigade (Forest Boss) _ One-handed combo 3①
-221200303,c2120_ Dark Brigade (Forest Boss) _ One-handed combo 4
+221200303 c2120_ Dark Brigade (Forest Boss) _ One-handed combo 4
 221200304 c2120_ Dark Brigade (Forest Boss) _ One-handed combo 1②
 221200305 c2120_ Dark Brigade (Forest Boss) _ One-handed combo 3②
 221200306 c2120_ Dark Brigade (Forest Boss) _ One-handed combo 3③
@@ -1539,7 +1539,7 @@
 221200325 c2120_ Dark Brigade (Forest Boss) _ Sword Rush (1 Attack )
 221200326 c2120_ Dark Brigade (Forest Boss) _ Sword Rush (2 Attack )
 221200327 c2120_ Dark Brigade (Forest Boss) _ Sword Rush (3 Attack )
-221200328,c2120_ Dark Brigade (Forest Boss) _ Sword Rush (4 Attack )
+221200328 c2120_ Dark Brigade (Forest Boss) _ Sword Rush (4 Attack )
 221200329 c2120_ Dark Brigade (Forest Boss) _ Sword Rush (5 Attack )
 221200330 c2120_ Dark Brigade (Forest Boss) _ Sword Rush Pursuit
 221200335 c2120_ Dark Brigade (Forest Boss) _ Dash Slash
@@ -1645,7 +1645,7 @@
 221600211 c2160_ Kin of the Flame of Destruction _ Jump in and ignite [Impact]
 221600220 c2160_ Kin of the Flame of Destruction _ Flame Sweeping (First Half)
 221600221 c2160_ Kin of the Flame of Destruction _ Flame sweep (second half)
-221600230,c2160_ Kin of the Flame of Destruction _ Pillar of Fire [Bullet]
+221600230 c2160_ Kin of the Flame of Destruction _ Pillar of Fire [Bullet]
 221600231 c2160_ Kin of the Flame of Destruction _ Pillar of Fire [Impact]
 221600240 c2160_ Kin of the Flame of Destruction _ Fire Enchantment
 221600250 c2160_ Kin of the Flame of Destruction _ Sword combo start _ Sword Pressure [Bullet]
@@ -1717,7 +1717,7 @@
 221800230 c2180_ Silver Beast's Kin _4 Leg scratching 1
 221800240 c2180_ Silver Beast's Kin _4 Leg scratching 2
 221800250 c2180_ Silver Beast's Kin _4 Strong leg bite 1 Attack
-221800260,c2180_ Silver Beast's Kin _4 Strong leg bite 2 Attack
+221800260 c2180_ Silver Beast's Kin _4 Strong leg bite 2 Attack
 221800270 c2180_ Silver Beast's Kin _4 Strong leg bite 3 Attack
 221800280 c2180_ Silver Beast's Kin _4 Strong leg bite 4 Attack
 221800290 c2180_ Silver Beast's Kin _4 Leg biting
@@ -1800,7 +1800,7 @@
 222320260 c2232_ Mini Fat Demon _ Mezzanine Attack
 222400100 c2240_ Nata Demon _ Swing down (right)
 222400110 c2240_ Nata Demon _ Swing down (left)
-222400120,c2240_ Nata Demon _ Charged down swing (right)
+222400120 c2240_ Nata Demon _ Charged down swing (right)
 222400130 c2240_ Nata Demon _ Sweep (left)
 222400140 c2240_ Nata Demon _ Step in and swing down (right)
 222400150 c2240_ Nata Demon _ Two consecutive slashes
@@ -2045,7 +2045,7 @@
 223600400 c2360_ Four Knights C (Thunder) _ Train Track Rush (Short) _ hammer
 223600401 c2360_ Four Knights C (Thunder) _ Train Track Rush (Short) _ Lower Body
 223600402 c2360_ Four Knights C (Thunder) _ Train Track Rush (Short) _ Win
-223700100,c2370_ Four Horsemen D _ Thrust 1
+223700100 c2370_ Four Horsemen D _ Thrust 1
 223700110 c2370_ Four Horsemen D _ Thrust 2
 223700120 c2370_ Four Horsemen D _ Payment
 223700130 c2370_ Four Horsemen D _ Sweep 1
@@ -2102,7 +2102,7 @@
 224000284 c2400_ Foundling Giant _ Slamming Rush 5 (large)
 224000290 c2400_ Foundling Giant _ Both hands down (large)
 224000300 c2400_ Foundling Giant _ Left hand swing attack (large)
-224000310,c2400_ Foundling Giant _ Jump slam (large)
+224000310 c2400_ Foundling Giant _ Jump slam (large)
 224000320 c2400_ Foundling Giant _ Turn around and punch left (large)
 224000330 c2400_ Foundling Giant _ Rock Throwing - Close Range (Large)
 224000340 c2400_ Foundling Giant _ Rock Throw - Medium Distance (Large)
@@ -2139,7 +2139,7 @@
 224100280 c2410_ White Knight (spear) _ Stab (spear)
 224100290 c2410_ White Knight (spear) _ Approach and stab (spear)
 224100300 c2410_ White Knight _ Great Bow Firing
-224100500,c2410_ White Knight _ guard
+224100500 c2410_ White Knight _ guard
 224100600 c2410_ White Knight _ Back Throw
 224300100 c2430_ Moving Stone Statue _ Bracelet (front long)
 224300110 c2430_ Moving Stone Statue _ Breath (head swing)
@@ -2151,7 +2151,7 @@
 225000130 c2500_ Messenger from the Moon _ Side scratch combo 1
 225000140 c2500_ Messenger from the Moon _ Side scratch combo 2
 225000141 c2500_ Messenger from the Moon _ Side scratch combo 2( From waiting )
-225000150,c2500_ Messenger from the Moon _ Running and scratching with both hands (1 Attack )
+225000150 c2500_ Messenger from the Moon _ Running and scratching with both hands (1 Attack )
 225000151 c2500_ Messenger from the Moon _ Running and scratching with both hands (2 Attack )
 225000160 c2500_ Messenger from the Moon _ rush (1 Attack )
 225000161 c2500_ Messenger from the Moon _ rush (2 Attack )
@@ -2173,7 +2173,7 @@
 225100101 c2510_ Child of the Moon _ Tentacle Combo 1 Top right tentacle
 225100102 c2510_ Child of the Moon _ Tentacle Combo 1 Lower right tentacle
 225100110 c2510_ Child of the Moon _ Tentacle Combo 2 Left arm
-225100111,c2510_ Child of the Moon _ Tentacle Combo 2 Upper left tentacle
+225100111 c2510_ Child of the Moon _ Tentacle Combo 2 Upper left tentacle
 225100112 c2510_ Child of the Moon _ Tentacle Combo 2 Lower left tentacle
 225100130 c2510_ Child of the Moon _ Tentacle Combo 3 Right Arm
 225100131 c2510_ Child of the Moon _ Tentacle Combo 3 Left arm
@@ -2220,7 +2220,7 @@
 225100330 c2510_ Child of the Moon _ Forward rush left arm
 225100331 c2510_ Child of the Moon _ Forward rush upper left tentacle
 225100332 c2510_ Child of the Moon _ Forward rush right arm
-225100333,c2510_ Child of the Moon _ Forward rush upper right tentacle
+225100333 c2510_ Child of the Moon _ Forward rush upper right tentacle
 225100340 c2510_ Child of the Moon _ Go wild _ first half 1_ Right Arm
 225100341 c2510_ Child of the Moon _ Go wild _ first half 2_ Upper left tentacle
 225100342 c2510_ Child of the Moon _ Go wild _ first half 3_ Left arm
@@ -2273,7 +2273,7 @@
 225400127 c2540_ Failed Messenger (Crawler) (Small) _ Damipoli rampaging with tentacles 40_3 Attack
 225400130 c2540_ Failed Messenger (Crawler) (Small) _ Vomiting bodily fluids
 225400140 c2550_ Failed Messenger (Crawler) (Small) _ magic
-225500100,c2550_ Failed Messenger (Large) _ Weak bite
+225500100 c2550_ Failed Messenger (Large) _ Weak bite
 225500110 c2550_ Failed Messenger (Large) _ Strong bite
 225500120 c2550_ Failed Messenger (Large) _ Damipoli rampaging with tentacles 10_1 Attack
 225500121 c2550_ Failed Messenger (Large) _ Damipoli rampaging with tentacles 10_2 Attack
@@ -2288,7 +2288,7 @@
 225500300 c2550_ Immortal (Heavy Warrior) _ Small Attack 1 (Long Sword)
 225500310 c2550_ Immortal (Heavy Warrior) _ Small Attack 2 (Long Sword)
 225500320 c2550_ Immortal (Heavy Warrior) _ Final Thrust (Long Sword)
-225500330,c2550_ Immortal (Heavy Warrior) _ Continuous thrust (long sword)
+225500330 c2550_ Immortal (Heavy Warrior) _ Continuous thrust (long sword)
 225500340 c2550_ Immortal (Heavy Warrior) _ Charged thrust (long sword)
 225500350 c2550_ Immortal (Heavy Warrior) _ Run-up thrust (long sword)
 225500400 c2550_ Immortal (Heavy Warrior) _ Crossbow Shooting
@@ -2306,7 +2306,7 @@
 225600160 c25600_ The Failed Messenger (Hozuki) _ Rear Attack _ left
 225600161 c25600_ The Failed Messenger (Hozuki) _ Rear Attack _ right
 225600170 c25600_ The Failed Messenger (Hozuki) _ Extends right tentacle and stabs
-225600180,c25600_ The Failed Messenger (Hozuki) _ Throw
+225600180 c25600_ The Failed Messenger (Hozuki) _ Throw
 225600181 c25600_ The Failed Messenger (Hozuki) _ Throwing Body
 225600200 c25600_ The Failed Messenger (Hozuki) _ Evil eye test
 225600695 c25600_ The Failed Messenger (Hozuki) _ Evil Eye Substitute Close Range
@@ -2388,7 +2388,7 @@
 226000330 c2600_ The fearsome crowd (hoe) _ Rush Swing (1 Attack )
 226000331 c2600_ The fearsome crowd (hoe) _ Rush Swing (2 Attack )
 226000332 c2600_ The fearsome crowd (hoe) _ Rush Swing (3 Attack )
-226000333,c2600_ The fearsome crowd (hoe) _ Rush Swing (4 Attack )
+226000333 c2600_ The fearsome crowd (hoe) _ Rush Swing (4 Attack )
 226000340 c2600_ Terrible crowd (fence) _ Stab (from launch)
 226000500 c2600_ Terrifying crowd (saw + torch) _ Fire spread effect (medium)
 226000510 c2600_ Terrifying crowd (saw + torch) _ Fire spread effect (medium to large)
@@ -2567,7 +2567,7 @@
 226400162 c2640_ crowd B (large) _ Rampage (damage to right hand from right)
 226400170 c2640_ crowd B (large) _ Jump Punch
 226400171 c2640_ crowd B (large) _ Jumping punch (ground shock wave)
-226400180,c2640_ crowd B (large) _ Hit with a stone statue 1
+226400180 c2640_ crowd B (large) _ Hit with a stone statue 1
 226400181 c2640_ crowd B (large) _ Hit with a stone statue 2 ( 1 Attack)
 226400182 c2640_ crowd B (large) _ Hit with a stone statue 2 ( 2 Attack)
 226400190 c2640_ crowd B (large) _ Swing down with both hands
@@ -2643,7 +2643,7 @@
 227000241 c2700_ Church Emissary _ Gun Firing 2 First Impression
 227000250 c2700_ Church Emissary _ For testing _ Gun firing snipe
 227000260 c2700_ Church Emissary _ Lantern Magic A1
-227000270,c2700_ Church Emissary _ Lantern Magic A2
+227000270 c2700_ Church Emissary _ Lantern Magic A2
 227000280 c2700_ Church Emissary _ Lantern Magic B
 227000290 c2700_ Church Emissary _ Lantern Magic C
 227000300 c2700_ Church Emissary _ Lantern Magic D
@@ -2711,7 +2711,7 @@
 227100160 c2710_ Father Gascoigne (axe + gun) _ Axe Raising
 227100170 c2710_ Father Gascoigne (axe + gun) _ Axe Backing
 227100180 c2710_ Father Gascoigne (axe + gun) _ Back kick
-227100190,c2710_ Father Gascoigne (axe + gun) _ Jump Slam
+227100190 c2710_ Father Gascoigne (axe + gun) _ Jump Slam
 227100200 c2710_ Father Gascoigne (axe + gun) _ Crouching Slam
 227100210 c2710_ Father Gascoigne (axe + gun) _ Crouching Launch
 227100220 c2710_ Father Gascoigne (axe + gun) _ Rolling Launch
@@ -2844,7 +2844,7 @@
 227800600 c2780_ mimic _ Hug Throw
 227800610 c2780_ mimic _ Throw from Mimicry
 227900100 c2790_ Black Knight (Sword) Left Cross Slash
-227900110,c2790_ Black Knight (Sword) Right Slash
+227900110 c2790_ Black Knight (Sword) Right Slash
 227900120 c2790_ Black Knight (Sword) Thrust
 227900130 c2790_ Black Knight (Sword) Swings Down
 227900140 c2790_ Black Knight (Sword) Charge Slash Combo
@@ -2861,7 +2861,7 @@
 227900270 c2790_ Black Knight (Extra Great Sword) Thrust/Single
 227900280 c2790_ Black Knight (Extra Large Sword) Thrust Combo
 227900290 c2790_ Black Knight (Extra Large Sword): Spins once and thrusts
-227900300,c2790_ Black Knight (Extra Large Sword): Take two or three steps forward and swing down
+227900300 c2790_ Black Knight (Extra Large Sword): Take two or three steps forward and swing down
 227900310 c2790_ Black Knight (Extra Large Sword): Take two or three steps forward and thrust
 227900320 c2790_ Black Knight (Extra Large Sword) hits with a shield
 227900330 c2790_ Black Knight (Extra Large Sword) Dragon Hunter - One-handed Thrust Up
@@ -2932,14 +2932,14 @@
 228000801 c2800 Burned Corpse Variation (Poison) _ Pain transmission _ Medium Damage
 228000802 c2800 Burned Corpse Variation (Poison) _ Pain transmission _ Heavy damage
 228000900 c2800 Burned Corpse Variation (Poison) _ guard
-228100100,c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ One-handed slash combo 1
+228100100 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ One-handed slash combo 1
 228100101 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ One-handed slash combo 2
 228100102 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ One-handed slash combo 3
 228100110 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ Rush Slash 1 Attack
 228100111 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ Rush Slash 2 Attack
 228100112 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ Rush Slash 3 Attack
 228100113 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ Rush Slash 4 Attack
-228100120,c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ Dash Slash
+228100120 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ Dash Slash
 228100130 c2810_ Burnt Corpse Warrior ( large )_ Sword and Shield _ Sword and Bow _ Jumping Thrust
 228100140 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow )_ Sweep
 228100150 c2810_ Burnt Corpse Warrior ( large )( Sword and Shield / Sword and Bow / ax / Front kick )_ Front kick
@@ -3063,7 +3063,7 @@
 228700790 c2870_ Giant (Guard) _ Crush with Shield (Weak) [For upper attack]
 228700791 c2870_ Giant (Guard) _ Crush with Shield (Weak) _ Blast [For upward attacks]
 228700795 c2870_ Giant (Guard) _ Crush with Shield (Strong) [For upper attack]
-228700796,c2870_ Giant (Guard) _ Crush with Shield (Strong) _ Blast [For upward attacks]
+228700796 c2870_ Giant (Guard) _ Crush with Shield (Strong) _ Blast [For upward attacks]
 228700800 c2870_ Giant (Guard) _ Close range sweep 1 [for down attacks]
 228700810 c2870_ Giant (Guard) _ Close range/sweep 2 [for down attacks]
 228700820 c2870_ Giant (Guard) _ Thrust [For downward attacks]
@@ -3137,7 +3137,7 @@
 229000370 c2900_ skeleton _ Large curved sword _ Diving Attack ( Long Distance )
 229000380 c2900_ skeleton _ Large curved sword run-up slash _ First row
 229000381 c2900_ skeleton _ Large curved sword run-up slash _ Second row
-229000400,c2900_ skeleton _ rolling
+229000400 c2900_ skeleton _ rolling
 229000500 c2900_ skeleton _ guard
 229000501 c2900_ skeleton _ Guard (for parrying)
 229000600 c2900_ skeleton _ Parry Throw
@@ -3384,7 +3384,7 @@
 230200440 c3020_ Dungeon Guardian _ Counter Thrust
 230200450 c3020_ Dungeon Guardian _ Shield Swing
 230200460 c3020_ Dungeon Guardian _ Spin Thrust
-230200470,c3020_ Dungeon Guardian _ Back Slash
+230200470 c3020_ Dungeon Guardian _ Back Slash
 230200475 c3020_ Dungeon Guardian _ Both hands slashed up
 230200480 c3020_ Dungeon Guardian _ Two-handed thrust
 230200490 c3020_ Dungeon Guardian _ Two-handed side slash
@@ -3430,7 +3430,7 @@
 230300311 c3030_ Dungeon Man (Madman/Corpse) _ Corpse Combo B2_ Raise
 230300312 c3030_ Dungeon Man (Madman/Corpse) _ Corpse Combo B2_ Swinging
 230300320 c3030_ Dungeon Man (Madman/Corpse) _ Continuous Swing _ Right rotation
-230300321,c3030_ Dungeon Man (Madman/Corpse) _ Continuous Swing _ Left rotation
+230300321 c3030_ Dungeon Man (Madman/Corpse) _ Continuous Swing _ Left rotation
 230300322 c3030_ Dungeon Man (Madman/Corpse) _ Continuous Swing _ Slam
 230300330 c3030_ Dungeon Man (Madman/Corpse) _ Dash Swing
 230300340 c3030_ Dungeon Man (Madman/Corpse) _ Dash Slam
@@ -3629,7 +3629,7 @@
 230500519 c3050_ Dungeon Lord _ Skewering Rod _ Induction 10
 230500520 c3050_ Dungeon Lord _ Skewering Rod _ Induction 11
 230500521 c3050_ Dungeon Lord _ Skewering Rod _ Induction 12
-230500522,c3050_ Dungeon Lord _ Skewering Rod _ Induction 13
+230500522 c3050_ Dungeon Lord _ Skewering Rod _ Induction 13
 230500523 c3050_ Dungeon Lord _ Skewering Rod _ Induction 14
 230500524 c3050_ Dungeon Lord _ Skewering Rod _ Induction 15
 230600100 c3060_ Dungeon Person (Bride) _ Ranged Magic Bullet
@@ -3728,7 +3728,7 @@
 231000193 c3100_ mimic _ eat 3
 231000194 c3100_ mimic _ eat 4
 231000195 c3100_ mimic _ eat 5
-231000196,c3100_ mimic _ eat 6
+231000196 c3100_ mimic _ eat 6
 231000197 c3100_ mimic _ eat 7
 231000210 c3100_ mimic _ Running Attack _ Right upper arm
 231000211 c3100_ mimic _ Running Attack _ Left side upper arm
@@ -3773,7 +3773,7 @@
 231300230 c3130_ Fresh Golem _ Chain Attack Turn Right 1
 231300231 c3130_ Fresh Golem _ Chain Attack Turn Right 2
 231300232 c3130_ Fresh Golem _ Chain Attack Turn Right ( Meat chunk )
-231300240,c3130_ Fresh Golem _ Hook _ Roaring with force
+231300240 c3130_ Fresh Golem _ Hook _ Roaring with force
 231300250 c3130_ Fresh Golem _ Swing your elbow sword
 231300251 c3130_ Fresh Golem _ Swing Elbow Sword (Fire)
 231300260 c3130_ Fresh Golem _ Swing the tip sword after the elbow sword
@@ -3805,7 +3805,7 @@
 231300393 c3130_ Fresh Golem _ Fire-Spreading Bullet _ right
 231300394 c3130_ Fresh Golem _ Fire-Spreading Bullet _ General purpose _ Extra Large
 231300400 c3130_ Fresh Golem _ Shoot in front with a cannon _ For center
-231300401,c3130_ Fresh Golem _ Shoot in front with a cannon _ For peripheral use
+231300401 c3130_ Fresh Golem _ Shoot in front with a cannon _ For peripheral use
 231300405 c3130_ Fresh Golem _ Shoot in front with a cannon _ Close range _ For center
 231300406 c3130_ Fresh Golem _ Shoot in front with a cannon _ Close range _ For peripheral use
 231300410 c3130_ Fresh Golem _ Shoot upwards with a cannon _ For center
@@ -3813,7 +3813,7 @@
 231300415 c3130_ Fresh Golem _ cannon _ blast _ Wall avoidance _ For center
 231300416 c3130_ Fresh Golem _ cannon _ blast _ Blast Body _ For center
 231300417 c3130_ Fresh Golem _ cannon _ blast _ Wall avoidance _ For surrounding explosions
-231300418,c3130_ Fresh Golem _ cannon _ blast _ Blast-generating bullets _ For surrounding explosions
+231300418 c3130_ Fresh Golem _ cannon _ blast _ Blast-generating bullets _ For surrounding explosions
 231300419 c3130_ Fresh Golem _ cannon _ blast _ Blast Body _ For peripheral use
 231300420 c3130_ Fresh Golem _ Shoot down with a cannon
 231300421 c3130_ Fresh Golem _ cannon _ Long Distance _ Fire-Spreading Bullet
@@ -3846,7 +3846,7 @@
 232000160 c3200_ Writhing Carrion _ Protruding bones③
 232000170 c3200_ Writhing Carrion _ Protruding bones ④
 232000180 c3200_ Barista test character _ Giant Arrow
-232000190,c3200_ Barista test character _ Barrage of Arrows 1
+232000190 c3200_ Barista test character _ Barrage of Arrows 1
 232000191 c3200_ Barista test character _ Barrage of Arrows 2
 232000192 c3200_ Barista test character _ Barrage of Arrows 3
 232000193 c3200_ Barista test character _ Barrage of Arrows 4
@@ -3859,7 +3859,7 @@
 232100110 c3210_ Egg Carrying _ Grab the leg
 232100600 c3210_ Egg Carrying _ Parasite egg laying
 232200100 c3220_ Parasites _ Prick with a mouth needle
-232200110,c3220_ Parasites _ Pierce with a mouth needle②
+232200110 c3220_ Parasites _ Pierce with a mouth needle②
 232200120 c3220_ Parasites _ Spit liquid
 232300100 c3230_ Mayfly Dragon _ Magic Spear
 232300101 c3230_ Mayfly Dragon _ Magic spear (for effect)
@@ -3987,7 +3987,7 @@
 234100100 c3410_ Frog ray _ Tongue attack 1
 234100110 c3410_ Frog ray _ Tongue attack - side
 234100120 c3410_ Frog ray _ Tongue Attack - Long Range
-234100200,c3410_ Frog ray _ Tongue attack 1 (Mizuno)
+234100200 c3410_ Frog ray _ Tongue attack 1 (Mizuno)
 234100210 c3410_ Frog ray _ Tongue attack - side (above water)
 234100220 c3410_ Frog ray _ Tongue attack - long distance (on water)
 234100230 c3410_ Frog ray _ Poison Spitting (Water)
@@ -4031,7 +4031,7 @@
 234210132 c3421_ Dragon Zombie (lower body) _ Trampling/foot ( Right blast )
 234210133 c3421_ Dragon Zombie (lower body) _ Trampling/foot ( Left blast )
 234210140 c3421_ Dragon Zombie (lower body) _ Stomp Right
-234210141,c3421_ Dragon Zombie (lower body) _ Stomp Right ( blast )
+234210141 c3421_ Dragon Zombie (lower body) _ Stomp Right ( blast )
 234210150 c3421_ Dragon Zombie (lower body) _ Trample Left
 234210151 c3421_ Dragon Zombie (lower body) _ Trample Left ( blast )
 234210160 c3421_ Dragon Zombie (lower body) _ Vertical jump attack
@@ -4040,7 +4040,7 @@
 234210171 c3421_ Dragon Zombie (lower body) _ Diagonal forward jump attack ( blast )
 234210180 c3421_ Dragon Zombie (lower body) _ Destroy moving objects ( Right Foot )
 234210181 c3421_ Dragon Zombie (lower body) _ Destroy moving objects ( left foot )
-234300110,c3430_ Hellkite _ Get off at the bridge _ Direct hit
+234300110 c3430_ Hellkite _ Get off at the bridge _ Direct hit
 234300111 c3430_ Hellkite _ Get off at the bridge _ blast
 234300120 c3430_ Hellkite _a7012 Direct hit
 234300121 c3430_ Hellkite _a7012 Enveloping blast ( OBJ destruction)
@@ -4087,7 +4087,7 @@
 234300305 c3430_ Hellkite _ Fire Breath 6
 234300310 c3430_ Hellkite _ Fire Breath (Strong) 1
 234300311 c3430_ Hellkite _ Fire Breath (Strong) 2
-234300312,c3430_ Hellkite _ Fire Breath (Strong) 3
+234300312 c3430_ Hellkite _ Fire Breath (Strong) 3
 234300313 c3430_ Hellkite _ Fire Breath (Strong) 4
 234300314 c3430_ Hellkite _ Fire Breath (Strong) 5
 234300315 c3430_ Hellkite _ Fire Breath (Strong) 6
@@ -4137,7 +4137,7 @@
 234300414 c3430_ Hellkite _ Rise and fall _ Breath 5
 234300415 c3430_ Hellkite _ Rise and fall _ Breath 6
 234300420 c3430_ Hellkite _ Forward flight & inversion _ Crush
-234300421,c3430_ Hellkite _ Forward flight & inversion _ head
+234300421 c3430_ Hellkite _ Forward flight & inversion _ head
 234300422 c3430_ Hellkite _ Forward flight & inversion _ neck
 234300423 c3430_ Hellkite _ Forward flight & inversion _ blast
 234300430 c3430_ Hellkite _ Forward flight & inversion _ Breath 1
@@ -4169,7 +4169,7 @@
 234600170 c 3460_ Armored Tusk _ Small dash headbutt (from dash)
 234600180 c 3460_ Armored Tusk _ Knock it up with your fangs (from a dash)
 234700100 × c 3470_ Golden Chimera _ Corner Climb 1
-234700110,× c 3470_ Golden Chimera _ Corner Climb 2
+234700110 × c 3470_ Golden Chimera _ Corner Climb 2
 234700120 × c 3470_ Golden Chimera _ Tail attack (forward)
 234700130 × c 3470_ Golden Chimera _ Tail attack (rear)
 234700140 × c 3470_ Golden Chimera _ Scratch with leg 1
@@ -4181,7 +4181,7 @@
 234710110 c 3471_ Golden Chimera _ Corner Climb 2
 234710120 c 3471_ Golden Chimera _ Tail attack (forward)
 234710130 c 3471_ Golden Chimera _ Tail attack (rear)
-234710140,c3471_ Golden Chimera _ Right Slam
+234710140 c3471_ Golden Chimera _ Right Slam
 234710150 c 3471_ Golden Chimera _ Left slap
 234710160 c3471_ Golden Chimera _ Create wind with wings
 234710170 c 3471_ Golden Chimera _ Breath 1
@@ -4256,7 +4256,7 @@
 235300200 c3530_ Lake Animals _ Bite① _ neck 1
 235300210 c3530_ Lake Animals _ Bite② _ neck 1
 235300220 c3530_ Lake Animals _ Bite③ _ neck 1
-235300230,c3530_ Lake Animals _ Breath nearby _ Neck 1
+235300230 c3530_ Lake Animals _ Breath nearby _ Neck 1
 235300240 c3530_ Lake Animals _ Breathe far away _ Neck 1
 235300250 c3530_ Lake Animals _ Move from point A to point B _ Breath _ Neck 1
 235300260 c3530_ Lake Animals _ Move from point B to point A _ Breath _ Neck 1
@@ -4313,7 +4313,7 @@
 235300760 c3530_ Lake Animals _ Move from point B to point A _ Breath _ Neck 7
 235300770 c3530_ Lake Animals _ Faraway Breath 2 _ Neck 7
 235300780 c3530_ Lake Animals _ Bite (long distance) _ Neck 7 _ The first blow
-235300790,c3530_ Lake Animals _ Bite (long distance) _ Neck 7
+235300790 c3530_ Lake Animals _ Bite (long distance) _ Neck 7
 235300795 c3530_ Lake Animals _ Sand bullets _ Neck 7
 235300800 c3530_ Lake Animals _ Diving Underwater
 235300810 c3530_ Lake Animals _ Move from point A to point B
@@ -4537,7 +4537,7 @@
 240220923 c4022_ patient A (Head only) _ Tentacle attack strong (tentacle 4 ) _2
 240220924 c4022_ patient A (Head only) _ Tentacle attack strong (tentacle 4 ) _3
 240220925 c4022_ patient A (Head only) _ Tentacle attack strong (tentacle 4 ) _4
-240220926,c4022_ patient A (Head only) _ Tentacle attack strong (tentacle 5 ) _1
+240220926 c4022_ patient A (Head only) _ Tentacle attack strong (tentacle 5 ) _1
 240220927 c4022_ patient A (Head only) _ Tentacle attack strong (tentacle 5 ) _2
 240220928 c4022_ patient A (Head only) _ Tentacle attack strong (tentacle 5 ) _3
 240220929 c4022_ patient A (Head only) _ Tentacle attack strong (tentacle 5 ) _4
@@ -4594,7 +4594,7 @@
 240400130 c4040_ Fishman A (harpoon) _ Forward Step Thrust
 240400140 c4040_ Fishman A (harpoon) _ Back Thrust
 240400150 c4040_ Fishman A (harpoon) _ Step by step progress _1
-240400151,c4040_ Fishman A (harpoon) _ Step by step progress _2
+240400151 c4040_ Fishman A (harpoon) _ Step by step progress _2
 240400152 c4040_ Fishman A (harpoon) _ Step by step progress _3
 240400160 c4040_ Fishman A (harpoon) _ Harpoon Throwing
 240400170 c4040_ Fishman A (harpoon) _ Slash back _1
@@ -4749,7 +4749,7 @@
 241000190 c4100_ Artorias _ Moving Sweep
 241000200 c4100_ Artorias _ Back twist slash
 241000210 c4100_ Artorias _ Backflip Slash
-241000220,c4100_ Artorias _ Circling Slash _1HIT
+241000220 c4100_ Artorias _ Circling Slash _1HIT
 241000230 c4100_ Artorias _ Circling Slash _2HIT
 241000240 c4100_ Artorias _ Thrust
 241000500 c4100_ Artorias _ left hand
@@ -4780,7 +4780,7 @@
 241300140 c4130 Old Treeman (Hoe) _ Charge
 241300150 c4130 Old Treeman (Hoe) _ Scooping
 241300160 c4130 Old Treeman (Hoe) _ Scooping 2
-241300170,c4130 Old Treeman (Hoe) _ Move forward and thrust 2
+241300170 c4130 Old Treeman (Hoe) _ Move forward and thrust 2
 241300180 c4130 Old Treeman (Hoe) _ Charge 2
 241300200 c4130 Old Treeman (Hoe) _ Cut
 241300210 c4130 Old Tree Man (Scissors) _ Cut ( 2 Stage)
@@ -4949,7 +4949,7 @@
 245000723 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ front _ Medium
 245000724 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ right _ Medium
 245000725 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ left _ Medium
-245000726,c4500_ Parishioner Ω_ Lava Breath _ Breath part _ front _ Short
+245000726 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ front _ Short
 245000727 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ right _ Short
 245000728 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ left _ Short
 245000730 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ No lava _ front _ Long
@@ -5040,7 +5040,7 @@
 245100110 c4510_ Ludwig _ Scratch Combo 2A (Right arm)
 245100111 c4510_ Ludwig _ Scratch Combo 2A (face)
 245100120 c4510_ Ludwig _ Scratch Combo 3 (Right arm 1 )
-245100121,c4510_ Ludwig _ Scratch Combo 3 (face 1 )
+245100121 c4510_ Ludwig _ Scratch Combo 3 (face 1 )
 245100122 c4510_ Ludwig _ Scratch Combo 3 (Right arm 2 )
 245100123 c4510_ Ludwig _ Scratch Combo 3 (face 2 )
 245100130 c4510_ Ludwig _ Scratch Combo 2B (Left arm)
@@ -5072,7 +5072,7 @@
 245100233 c4510_ Ludwig _ Mid-range combo 4 (Light waves SFX )
 245100240 c4510_ Ludwig _ Mid-range combo 3B
 245100241 c4510_ Ludwig _ Mid-range combo 3B (Light Waves)
-245100250,c4510_ Ludwig _ Mid-range combo 2B
+245100250 c4510_ Ludwig _ Mid-range combo 2B
 245100251 c4510_ Ludwig _ Mid-range combo 2B (Light Waves)
 245100260 c4510_ Ludwig _ Close-range combo 1
 245100270 c4510_ Ludwig _ Close-range combo 2A
@@ -5121,7 +5121,7 @@
 245100441 c4510_ Ludwig _ Wide breath (left arm)
 245100442 c4510_ Ludwig _ Wide breath (bullet) 1
 245100443 c4510_ Ludwig _ Wide breath (bullet) 2
-245100444,c4510_ Ludwig _ Wide breath (bullet) 3
+245100444 c4510_ Ludwig _ Wide breath (bullet) 3
 245100450 c4510_ Ludwig _ Gobble forward (stomp on left arm) one two three )
 245100451 c4510_ Ludwig _ Gobble forward (stomp on left arm) 4 )
 245100452 c4510_ Ludwig _ Gobble forward (bite) 1 )
@@ -5157,7 +5157,7 @@
 245200150 c4520_ Clock Tower Boss _ shooting
 245200160 c4520_ Clock Tower Boss _ Transformed attack (sword → dual swords)
 245200170 c4520_ Clock Tower Boss _ self-harm
-245200200,c4520_ Clock Tower Boss _ Right robe
+245200200 c4520_ Clock Tower Boss _ Right robe
 245200210 c4520_ Clock Tower Boss _ Left slash
 245200220 c4520_ Clock Tower Boss _ Left and Right Attack _ right
 245200221 c4520_ Clock Tower Boss _ Left and Right Attack _ left
@@ -5199,7 +5199,7 @@
 245200461 c4520_ Clock Tower Boss _ Continuous thrusts on the spot 1_ left
 245200462 c4520_ Clock Tower Boss _ Continuous thrusts on the spot 2
 245200470 c4520_ Clock Tower Boss _ Vertical Swing Down
-245200480,c4520_ Clock Tower Boss _× Character cutting
+245200480 c4520_ Clock Tower Boss _× Character cutting
 245200490 c4520_ Clock Tower Boss _ Close-range blood explosion
 245200500 c4520_ Clock Tower Boss _ Breaking Throw
 245200510 c4520_ Clock Tower Boss _ Rush through
@@ -5237,7 +5237,7 @@
 245200661 c4520_ Clock Tower Boss _ Continuous thrusts on the spot 1_ left
 245200662 c4520_ Clock Tower Boss _ Continuous thrusts on the spot 2
 245200670 c4520_ Clock Tower Boss _ Vertical Swing Down
-245200680,c4520_ Clock Tower Boss _× Character cutting
+245200680 c4520_ Clock Tower Boss _× Character cutting
 245200690 c4520_ Clock Tower Boss _ Close-range blood explosion
 245200700 c4520_ Clock Tower Boss _ Breaking Throw
 245200701 c4520_ Clock Tower Boss _ Breaking Throw _ Main unit 1
@@ -5262,7 +5262,7 @@
 245200744 c4520_ Clock Tower Boss _ High Speed Combat 5_ Two-handed thrust
 245200750 c4520_ Clock Tower Boss _ High-speed combo attack (pursuit)
 245200760 c4520_ Clock Tower Boss _ Big jump attack
-245200761,c4520_ Clock Tower Boss _ Big jump attack _ flame
+245200761 c4520_ Clock Tower Boss _ Big jump attack _ flame
 245200770 c4520_ Clock Tower Boss _ Big jump attack _ Left when rising
 245200780 c4520_ Clock Tower Boss _ Big jump attack _ Rising right
 245200790 c4520_ Clock Tower Boss _ Spin attack 1_ left 1
@@ -5461,7 +5461,7 @@
 250100165 c5010_ Flame Beast _ Hot-blooded attack (high damage first mover)
 250100166 c5010_ Flame Beast _ Hot-blooded attack (high damage intermediate hitter)
 250100167 c5010_ Flame Beast _ Hot-blooded attack (high damage reduced)
-250100170,c5010_ Flame Beast _ Return from body part destruction (head starter)
+250100170 c5010_ Flame Beast _ Return from body part destruction (head starter)
 250100171 c5010_ Flame Beast _ Part destruction recovery (head interim)
 250100172 c5010_ Flame Beast _ Body part destruction recovery (head restraint)
 250100180 c5010_ Flame Beast _ Returned due to injury (foot starter)
@@ -5475,7 +5475,7 @@
 250100201 c5010_ Flame Beast _ Footsteps 1 (Left hind leg)
 250100202 c5010_ Flame Beast _ Footsteps 1 (Left front leg)
 250100203 c5010_ Flame Beast _ Footsteps 1 (Right hind leg)
-250100210,c5010_ Flame Beast _ Footsteps 2 (Right front leg)
+250100210 c5010_ Flame Beast _ Footsteps 2 (Right front leg)
 250100211 c5010_ Flame Beast _ Footsteps 2 (Left hind leg)
 250100212 c5010_ Flame Beast _ Footsteps 2 (Left front leg)
 250100213 c5010_ Flame Beast _ Footsteps 2 (Right hind leg)
@@ -5502,7 +5502,7 @@
 250200190 c5020_ Saint Beast _ Right vertical scratch _1 Stage
 250200191 c5020_ Saint Beast _ Right vertical scratch _2 Stage
 250200200 c5020_ Saint Beast _ Forward continuous attack _1 Stage
-250200201,c5020_ Saint Beast _ Forward continuous attack _2 Stage
+250200201 c5020_ Saint Beast _ Forward continuous attack _2 Stage
 250200202 c5020_ Saint Beast _ Forward continuous attack _3 Stage
 250200203 c5020_ Saint Beast _ Forward continuous attack _4 Stage
 250200210 c5020_ Saint Beast _ Right hand knockdown
@@ -5514,7 +5514,7 @@
 250200240 c5020_ Saint Beast _ Two-handed attack _ Right hand
 250200241 c5020_ Saint Beast _ Two-handed attack _ left hand
 250200250 c5020_ Saint Beast _ Jump back attack
-250200260,c5020_ Saint Beast _ Jumping two-handed attack (short) _ Right hand
+250200260 c5020_ Saint Beast _ Jumping two-handed attack (short) _ Right hand
 250200261 c5020_ Saint Beast _ Jumping two-handed attack (short) _ left hand
 250200270 c5020_ Saint Beast _ Jumping two-handed attack (long) _ Right hand
 250200271 c5020_ Saint Beast _ Jumping two-handed attack (long) _ left hand
@@ -5537,7 +5537,7 @@
 250200330 c5020_ Saint Beast _ Left turn attack
 250200340 c5020_ Saint Beast _ Right turn attack
 250200350 c5020_ Saint Beast _ Part regeneration
-250200360,c5020_ Saint Beast _ Two-handed attack (single shot) _ Right hand
+250200360 c5020_ Saint Beast _ Two-handed attack (single shot) _ Right hand
 250200361 c5020_ Saint Beast _ Two-handed attack (single shot) _ left hand
 250200370 c5020_ Saint Beast _ Bite attack
 250200600 c5020_ Saint Beast _ Throw from attack
@@ -5725,7 +5725,7 @@
 250700120 c5070_ The failed evil god _ combo C1_ Right arm slam
 250700121 c5070_ The failed evil god _ combo C2_ Right arm sweep
 250700130 c5070_ The failed evil god _ One-off _ Left arm slam
-250700131,c5070_ The failed evil god _ One-off _ Left arm slide
+250700131 c5070_ The failed evil god _ One-off _ Left arm slide
 250700140 c5070_ The failed evil god _ One-off _ Slamming both arms
 250700150 c5070_ The failed evil god _ One-off _ Charge _ Front left arm
 250700151 c5070_ The failed evil god _ One-off _ Charge _ Front right arm
@@ -5797,7 +5797,7 @@
 250800122 c5080_ Storm Beast (Bone) _ Left step scratch ( PC (Assuming front view)
 250800123 c5080_ Storm Beast (Bone) _ Right step scratch ( PC (Assuming front view)
 250800131 c5080_ Storm Beast (Bone) _ Pounce (transition from standby)
-250800150,c5080_ Storm Beast (Bone) _ Running and jumping
+250800150 c5080_ Storm Beast (Bone) _ Running and jumping
 250800170 c5080_ Storm Beast (Bone) _ Right scratch ( Long reach )
 250800171 c5080_ Storm Beast (Bone) _ Left scratch ( Long reach )
 250800180 c5080_ Storm Beast (Bone) _ Wearing Shiden (left hand)
@@ -5933,7 +5933,7 @@
 250900180 c5090_ Founder Beast _ Scratch 3
 250900190 c5090_ Founder Beast _ Additional Slam
 250900200 c5090_ Founder Beast _ Additional Pounce
-250900201,c5090_ Founder Beast _ Additional Jump Body
+250900201 c5090_ Founder Beast _ Additional Jump Body
 250900210 c5090_ Founder Beast _ Falling scratch
 250900220 c5090_ Founder Beast _ Large Slash
 250900230 c5090_ Founder Beast _ Insect bite
@@ -5946,7 +5946,7 @@
 250900260 c5090_ Founder Beast _ Shake it off (right)
 250900270 c5090_ Founder Beast _ Predator Throw
 250900271 c5090_ Founder Beast _ Predatory Throw Slam
-250900280,c5090_ Founder Beast _ Back Steps
+250900280 c5090_ Founder Beast _ Back Steps
 250900281 c5090_ Founder Beast _ Left Step
 250900282 c5090_ Founder Beast _ Right Step
 250900290 c5090_ Founder Beast _ Slamming at the feet _ Both arms
@@ -6078,7 +6078,7 @@
 251200344 c5120_ Evil God _ Swing back (left arm 2 )
 251200345 c5120_ Evil God _ Swing back (left arm 3 )
 251200350 c5120_ Evil God _ Continuous thrusts (right arm 1 )
-251200351,c5120_ Evil God _ Continuous thrusts (right arm 2 )
+251200351 c5120_ Evil God _ Continuous thrusts (right arm 2 )
 251200352 c5120_ Evil God _ Continuous thrusts (left arm 1 )
 251200353 c5120_ Evil God _ Continuous thrusts (left arm 2 )
 251200354 c5120_ Evil God _ Continuous thrusts (right arm 1・Slamming)
@@ -6089,7 +6089,7 @@
 251200361 c5120_ Evil God _ Big Jump Attack (Right Arm 2 )
 251200362 c5120_ Evil God _ Big Jump Attack (Right Arm 3 )
 251200363 c5120_ Evil God _ Big Jump Attack (Right Arm 4 )
-251200364,c5120_ Evil God _ Big Jump Attack (Left Arm 1 )
+251200364 c5120_ Evil God _ Big Jump Attack (Left Arm 1 )
 251200365 c5120_ Evil God _ Big Jump Attack (Left Arm 2 )
 251200366 c5120_ Evil God _ Big Jump Attack (Left Arm 3 )
 251200367 c5120_ Evil God _ Big jump attack (foot)
@@ -6133,7 +6133,7 @@
 251200633 c5120_ Evil God _ Continuous left hand sweep 2 (Left arm 2 ) _ Arm Pullout
 251200640 c5120_ Evil God _ Reach out and hit (right arm 1 ) _ Arm Pullout
 251200641 c5120_ Evil God _ Reach out and hit (right arm 4 ) _ Arm Pullout
-251200642,c5120_ Evil God _ Reach out and hit (left arm 1 ) _ Arm Pullout
+251200642 c5120_ Evil God _ Reach out and hit (left arm 1 ) _ Arm Pullout
 251200643 c5120_ Evil God _ Reach out and hit (left arm 3 ) _ Arm Pullout
 251200644 c5120_ Evil God _ Reach out and hit (chest/head) _ Arm Pullout
 251200650 c5120_ Evil God _ Big Jump Attack (Right Arm 1 ) _ Arm Pullout
@@ -6296,7 +6296,7 @@
 252400201 c5240_ Prince Izalith _ Leg attack (cliff) ( leg B)
 252400202 c5240_ Prince Izalith _ Leg attack (cliff) ( leg C)
 252400210 c5240_ Prince Izalith _ Leg attack 2 (cliff)
-252400220,c5240_ Prince Izalith _ Leg attack 3 (cliff)
+252400220 c5240_ Prince Izalith _ Leg attack 3 (cliff)
 252400300 c5240_ Prince Izalith _ Tail attack (downward)
 252400310 c5240_ Prince Izalith _ Leg attack (downward) ( leg A)
 252400311 c5240_ Prince Izalith _ Leg attack (downward) ( leg B)
@@ -6306,7 +6306,7 @@
 252400322 c5240_ Prince Izalith _ Tentacle attack (downward) ( Tentacles C)
 252400330 c5240_ Prince Izalith _ Leg attack 2 (downward)
 252400340 c5240_ Prince Izalith _ Leg attack 3 (downward)
-252500100,c5250_ sore _ Close-range crushing upper stage (arms retracted) Arm B1
+252500100 c5250_ sore _ Close-range crushing upper stage (arms retracted) Arm B1
 252500101 c5250_ sore _ Close-range crushing upper stage (arm retracted) Arm B blast 1
 252500102 c5250_ sore _ Close-range crushing upper stage (arms retracted) Arm B2
 252500103 c5250_ sore _ Close-range crushing upper stage (arm retracted) Arm C1
@@ -6316,7 +6316,7 @@
 252500107 c5250_ sore _ Close-range crushing upper stage (arm retracted) Arm C blast 2
 252500110 c5250_ sore _ Piercing with nails - upper row (arms retracted) Arm A
 252500111 c5250_ sore _ Claw stab: Upper stage (arm retracted) Arm A small explosion
-252500112,c5250_ sore _ Piercing with nails - upper row (arms retracted) Arm B
+252500112 c5250_ sore _ Piercing with nails - upper row (arms retracted) Arm B
 252500113 c5250_ sore _ Claw stab: Upper stage (arm retracted) Arm B small explosion
 252500114 c5250_ sore _ Piercing with claws - upper row (arms retracted) Arm C
 252500115 c5250_ sore _ Claw stab: Upper stage (arm retracted) Arm C small explosion
@@ -6355,7 +6355,7 @@
 252500156 c5250_ sore _ Slam 2 - 1. Upper level (arm storage) Arm C 2
 252500157 c5250_ sore _ Slam 2 - 1. Upper level (arms stored) Arm C blast 2
 252500170 c5250_ sore _ Sweeping to Crushing Upper Level (Arms Retracted) Arm B 1
-252500171,c5250_ sore _ Sweeping to crushing upper stage (arm retracted) Arm B blast 1
+252500171 c5250_ sore _ Sweeping to crushing upper stage (arm retracted) Arm B blast 1
 252500172 c5250_ sore _ Sweeping to Crushing Upper Level (Arms Retracted) Arm C 1
 252500173 c5250_ sore _ Sweeping to crushing upper stage (arm retracted) Arm C blast 1
 252500174 c5250_ sore _ Sweeping to Crushing Upper Level (Arms Retracted) Arm B 2
@@ -6373,7 +6373,7 @@
 252500188 c5250_ sore _ Slam (final shot) - upper stage (arm retracted) Arm B 2
 252500189 c5250_ sore _ Slam (final shot) - upper stage (arm retracted) Arm C 2
 252500190 c5250_ sore _ Slam (final shot) - upper stage (arm retracted) Arm B blast 2
-252500191,c5250_ sore _ Slam (final shot) - upper stage (arm retracted) Arm C blast 2
+252500191 c5250_ sore _ Slam (final shot) - upper stage (arm retracted) Arm C blast 2
 252500200 c5250_ Something that continues to fester _ Hit with left hand _ First Shot
 252500210 c5250_ Something that continues to fester _ Hit with left hand _ Second Attack 1
 252500211 c5250_ Something that continues to fester _ Hit with left hand _ Second Attack 2
@@ -6508,7 +6508,7 @@
 252800160 c 5280 Crag Spider _ Strong Breath
 252800161 c 5280 Crag Spider _ Strong Breath _ For magma impact generation
 252800163 c 5280 Crag Spider _ Strong Breath 1
-252800164,c 5280 Crag Spider _ Strong Breath 2
+252800164 c 5280 Crag Spider _ Strong Breath 2
 252800165 c 5280 Crag Spider _ Strong Breath 3
 252800170 c 5280 Crag Spider _ Leg attack (front) _ leg
 252800171 c 5280 Crag Spider _ Leg attack (front) _ body
@@ -6573,7 +6573,7 @@
 253000230 × c5300_ Ja'Ir the Immortal King _ Soul Energy Explosion
 253000600 × c5300_ Ja'Ir the Immortal King _ Soul Throw
 253200100 c5320_ Queen's sister _ bow
-253200101,c5320_ Queen's sister _ Bow 2
+253200101 c5320_ Queen's sister _ Bow 2
 253200102 c5320_ Queen's sister _ Bow 3
 253200103 c5320_ Queen's sister _ Bow 4
 253200104 c5320_ Queen's sister _ Bow 5
@@ -6667,7 +6667,7 @@
 253510260 c5351_ Gargoyle (different colors) _ Swing the tail backwards・1
 253510270 c5351_ Gargoyle (different colors) _ Step back and pay
 253510280 c5351_ Gargoyle (different colors) _ Soaring up and swinging both hands down
-253510290,× c5351_ Gargoyle (different colors) _ Flying up and sweeping with both hands
+253510290 × c5351_ Gargoyle (different colors) _ Flying up and sweeping with both hands
 253510300 c5351_ Gargoyle (different colors) _ Flying: Approach and swing down (far)
 253510310 × c5351_ Gargoyle (different colors) _ Flying Close Sweep (Far)
 253510320 c5351_ Gargoyle (different colors) _ Jump over and reverse attack (base and tip)
@@ -6706,7 +6706,7 @@
 253700200 c5370_ King of Firewood _ One-handed stepping slash
 253700210 c5370_ King of Firewood _ Two-handed strong slash (from stepping forward)
 253700220 c5370_ King of Firewood _ Two-handed slash 1
-253700230,c5370_ King of Firewood _ Two-handed slash 2
+253700230 c5370_ King of Firewood _ Two-handed slash 2
 253700240 c5370_ King of Firewood _ Two-handed strong slash
 253700250 c5370_ King of Firewood _ Two-handed thrust
 253700260 c5370_ King of Firewood _ Scooping up with both hands
@@ -6794,7 +6794,7 @@
 254200112 c5420_ Inheritor of Nightmares (Final Form) _ Collision (Ground) _ Tentacles 3
 254200113 c5420_ Inheritor of Nightmares (Final Form) _ Collision (Ground) _ Tentacles 4
 254200114 c5420_ Inheritor of Nightmares (Final Form) _ Collision (Ground) _ Tentacles 5
-254200115,c5420_ Inheritor of Nightmares (Final Form) _ Collision (Ground) _ Right Arm
+254200115 c5420_ Inheritor of Nightmares (Final Form) _ Collision (Ground) _ Right Arm
 254200116 c5420_ Inheritor of Nightmares (Final Form) _ Collision (Ground) _ Left arm
 254200117 c5420_ Inheritor of Nightmares (Final Form) _ Collision (Ground) _ body
 254200120 c5420_ Inheritor of Nightmares (Final Form) _ Crawl 1-1_ Tentacles 1
@@ -6812,7 +6812,7 @@
 254200142 c5420_ Inheritor of Nightmares (Final Form) _ Crawl 2-1_ Tentacles 3
 254200143 c5420_ Inheritor of Nightmares (Final Form) _ Crawl 2-1_ Tentacles 4
 254200144 c5420_ Inheritor of Nightmares (Final Form) _ Crawl 2-1_ Tentacles 5
-254200150,c5420_ Inheritor of Nightmares (Final Form) _ Crawl 2-2_ Tentacles 1
+254200150 c5420_ Inheritor of Nightmares (Final Form) _ Crawl 2-2_ Tentacles 1
 254200151 c5420_ Inheritor of Nightmares (Final Form) _ Crawl 2-2_ Tentacles 2
 254200152 c5420_ Inheritor of Nightmares (Final Form) _ Crawl 2-2_ Tentacles 3
 254200153 c5420_ Inheritor of Nightmares (Final Form) _ Crawl 2-2_ Tentacles 4
@@ -6821,7 +6821,7 @@
 254200161 c5420_ Inheritor of Nightmares (Final Form) _ Rear attack _ Tentacles 2
 254200162 c5420_ Inheritor of Nightmares (Final Form) _ Rear attack _ Tentacles 3
 254200163 c5420_ Inheritor of Nightmares (Final Form) _ Rear attack _ Tentacles 4
-254200164,c5420_ Inheritor of Nightmares (Final Form) _ Rear attack _ Tentacles 5
+254200164 c5420_ Inheritor of Nightmares (Final Form) _ Rear attack _ Tentacles 5
 254200170 c5420_ Inheritor of Nightmares (Final Form) _ On the spot rush _ Tentacles 1
 254200171 c5420_ Inheritor of Nightmares (Final Form) _ On the spot rush _ Tentacles 2
 254200172 c5420_ Inheritor of Nightmares (Final Form) _ On the spot rush _ Tentacles 3
@@ -6896,7 +6896,7 @@
 255100115 c5510_ Lesser Demon (Death and Darkness) _ Running Slash ( Right hand _ Upper row _2 Stage)
 255100116 c5510_ Lesser Demon (Death and Darkness) _ Running Slash ( Right hand _ Upper row _3 Stage)
 255100117 c5510_ Lesser Demon (Death and Darkness) _ High Speed Strong Slash 2( Right hand _ Top row)
-255100118,c5510_ Lesser Demon (Death and Darkness) _ High Speed Strong Slash 3( Right hand _ Top row)
+255100118 c5510_ Lesser Demon (Death and Darkness) _ High Speed Strong Slash 3( Right hand _ Top row)
 255100200 c5510_ Lesser Demon (Death and Darkness) _ Random Slash 1 (Right hand _ Middle row 1 Stage)
 255100201 c5510_ Lesser Demon (Death and Darkness) _ Random Slash 1 (Right hand _ Middle row 2 Stage)
 255100202 c5510_ Lesser Demon (Death and Darkness) _ Random Slash 2 (Right hand _ Middle row _1 Stage)
@@ -6991,7 +6991,7 @@
 255100632 c5510_ Lesser Demon (Death and Darkness) _ Arm stretch thrust (left hand _ Top row)
 255100633 c5510_ Lesser Demon (Death and Darkness) _ Stretched arm thrust (right hand _ Top row)
 255100700 c5510_ Lesser Demon (Death and Darkness) _ Dark Magic 1
-255200100,c5520_ Lesser Demon Variation _ Sweep Combo 1
+255200100 c5520_ Lesser Demon Variation _ Sweep Combo 1
 255200101 c5520_ Lesser Demon Variation _ Sweep Combo 2
 255200102 c5520_ Lesser Demon Variation _ Sweep Combo 3
 255200110 c5520_ Lesser Demon Variation _ Downward Slash Combo 1
@@ -7088,7 +7088,7 @@
 275000205 c7500 Enemy Avatar Splash Magic 6
 275000206 c7500 Enemy Avatar Splash Magic 7
 275000207 c7500 Enemy Avatar Splash Magic 8
-275000208,c7500 Enemy Avatar Splash Magic 9
+275000208 c7500 Enemy Avatar Splash Magic 9
 275000209 c7500 Enemy Avatar Splash Magic 10
 275000210 c7500 Enemy avatar throw attack
 275000220 c7500 Scratch enemy avatar 3

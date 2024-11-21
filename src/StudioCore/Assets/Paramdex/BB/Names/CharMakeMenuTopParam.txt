@@ -99,7 +99,7 @@
 100 Chin length
 101 Chin protrusion
 102 Chin Depth
-103,Chin size
+103 Chin size
 104 Chin height
 105 Chin width
 106 ｝ -----
@@ -170,16 +170,16 @@
 171 Load Favorites
 172 Save as favorite
 173 Initialization
-174,
-175,
-176,
-177,
-178,
-179,
-180,
-181,
-182,
-183,
-184,
-185,
-186,
+174 
+175 
+176 
+177 
+178 
+179 
+180 
+181 
+182 
+183 
+184 
+185 
+186 

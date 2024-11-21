@@ -44,7 +44,7 @@
 6031 Search (Queen of the Foul Bloodline Altar)
 6100 Start the chair
 6101 Sit on a chair
-6102,Sit on a chair _360 Degree
+6102 Sit on a chair _360 Degree
 6110 Touching a corpse (Yharnam)
 6111 Touching a corpse (frontier)
 6112 Touching a Corpse (Hidden Lands)
@@ -80,7 +80,7 @@
 7300 Take the remains _ Front 180 Degree only
 7310 Take the remains _1.50m Lower
 7311 Take the remains _2.00m Lower
-7400,Progression Tips __01 Right after the start
+7400 Progression Tips __01 Right after the start
 7401 Progression Tips _03 Cathedral Quarter B Inside the building
 7402 Progression Tips _04 Crazy tips from the Church of Odon _①
 7403 Progression Tips _05 Crazy tips from the Church of Odon _②
@@ -141,7 +141,7 @@
 2400010 Examine the skull
 2400020 A letter from a lonely old woman
 2400030 Gate to the Circular Plaza
-2400031,Gate to the Circular Plaza _ back
+2400031 Gate to the Circular Plaza _ back
 2400040 Cathedral B Open the door to
 2400050 Opening the Gate _ Trick door _ origin
 2400051 Opening the Gate _ Trick door _ Damipoli 200
@@ -217,7 +217,7 @@
 3500800 Wall of Fog _ boss 1 before
 3500850 Wall of Fog _ boss 2 before
 3500900 Talk to me (assassin) _ High Priority
-3500901,Talk to me (assassin) _ Low priority
+3500901 Talk to me (assassin) _ Low priority
 3500902 talk ( Hitman )_ Close range
 3500903 talk ( Hitman )_ Long Distance _ High
 3500904 talk ( Hitman )_ Long Distance _ Low

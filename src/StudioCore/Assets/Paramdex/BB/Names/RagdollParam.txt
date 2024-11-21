@@ -33,7 +33,7 @@
 2001 Gargoyle (different color) tail
 2101 White Dragon Sheath's Tail
 2201 Golden Chimera's Tail
-2301,Black Dragon's Tail
+2301 Black Dragon's Tail
 11200 Drowned Beast _ Both arms
 21300 Licking blood _ Blood Bag S
 21301 Licking blood _ Blood Bag M

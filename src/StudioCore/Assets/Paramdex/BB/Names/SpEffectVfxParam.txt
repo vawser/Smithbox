@@ -38,7 +38,7 @@
 38 Auditory hallucinations
 39 Soul Coin
 40 Strong Defense Shield
-41,Fire Resistant Shield
+41 Fire Resistant Shield
 42 HP Recovery Status
 43 Forced Ghosting Part 1 step
 44 Forced Ghosting Part 2 step
@@ -73,7 +73,7 @@
 73 Bleed Resistance UP
 74 Resistance to plague UP
 75 Stamina Recovery UP
-76,Get Soul UP
+76 Get Soul UP
 77 Fire Resistance UP
 78 King's Shield 1 Stage left foot
 79 King's Shield 2 Stage left foot
@@ -112,7 +112,7 @@
 122 Underwater behavior
 123 Weapon Head
 124 Weapon Body
-125,Weapon Holder
+125 Weapon Holder
 126 Weapon Legs
 127 sleep
 128 mimic _ Mimicry
@@ -187,7 +187,7 @@
 197 Counter Up
 198 Eggs
 199 HP drain
-200,The Power of Madness
+200 The Power of Madness
 201 For magic ban effect
 202 Dragon Roar
 203 Reduces the number of times magic is used
@@ -204,7 +204,7 @@
 214 Arena 2 versus 2 [Small] Summon request B2
 215 Arena Battle Royale [Small] Summon Request A
 216 Arena Battle Royale [Small] Summon Request B
-217,Arena Battle Royale [Small] Summon Request C
+217 Arena Battle Royale [Small] Summon Request C
 218 Arena Battle Royale [Small] Summon Request D
 219 Arena 1 versus 1 [Large] Within the territory
 220 Arena 2 versus 2 [Large] Within the territory
@@ -218,7 +218,7 @@
 228 Arena Battle Royale [Large] Summon Request A
 229 Arena Battle Royale [Large] Summon Request B
 230 Arena Battle Royale [Large] Summon Request C
-231,Arena Battle Royale [Large] Summon Request D
+231 Arena Battle Royale [Large] Summon Request D
 232 Prohibited items in the Arena are prohibited
 233 Arena Death
 234 Arena provisional No. 1
@@ -248,7 +248,7 @@
 258 Crowd Woman _ Branding iron red hot
 260 Beastification
 261 Status Abnormality Recovery [Beast Form]
-262,Dark Brigade _ Weapon Enhancement
+262 Dark Brigade _ Weapon Enhancement
 263 Solar Cooperation Request
 264 Hope for solar cooperation
 266 Betrayal Invasion Hope
@@ -285,7 +285,7 @@
 323 Role Light Source _ Playing as Nemesis (Bloodline)
 324 Role Light Source _ Currently playing Natural Enemy (Bloodline Hunting)
 325 Role Light Source _ Playing Natural Enemy (Hunter Hunt)
-327,The stone cap effect immediately after the world shift
+327 The stone cap effect immediately after the world shift
 337 Gunhammer
 338 Executioner (Nightmare) Face Fixation SFX
 339 Executioner (Nightmare) Enchantment SFX

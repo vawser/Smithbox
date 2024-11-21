@@ -117,7 +117,7 @@
 1101 [ 1stPub [Version] Oil Pot Damage
 1102 [Pre α Perfume bottle damage
 1200 [Test] Soul Coin (normal)
-1201,[Test] Soul Coin (Beast)
+1201 [Test] Soul Coin (Beast)
 1202 Soul Coin (Immortality)
 1203 [Test] Auditory hallucinations
 2000 Normal Arrow
@@ -149,7 +149,7 @@
 14020 Proximity Fire 3
 15000 Goss's Wrath 1
 15010 Calling to the Other Side [Bullet]
-15011,Calling to the Other Side [Impression]
+15011 Calling to the Other Side [Impression]
 15020 chaos _ Firestorm
 15030 chaos _ Firestorm [Lava]
 15040 [ DLC 】Cosmic Arrow
@@ -197,7 +197,7 @@
 22000 Flame Whip
 23000 chaos _ Flame Whip
 23010 chaos _ Flame Whip [Lava]
-24000,Cain's Impact
+24000 Cain's Impact
 25000 [ DLC 】Dark Ball
 26000 [ DLC 】 Splash of Darkness
 27000 [ DLC 】The Pursuers
@@ -212,7 +212,7 @@
 80837 Throwing Virtual Weapons _ common _ First step +7
 80838 Throwing Virtual Weapons _ common _ First step +8
 80839 Throwing Virtual Weapons _ common _ First step +9
-80840,Throwing Virtual Weapons _ common _ First step +10
+80840 Throwing Virtual Weapons _ common _ First step +10
 80845 Throwing Virtual Weapons _ usually _ Second tier +0
 80846 Throwing Virtual Weapons _ usually _ Second tier +1
 80847 Throwing Virtual Weapons _ usually _ Second tier +2
@@ -463,7 +463,7 @@
 400901 Dual Swords _ guard _ left hand
 400930 Dual Swords _ mode B_L large 1
 500000 Axe pole _ mode A_ small 1
-500010,Axe pole _ mode A_ small 2
+500010 Axe pole _ mode A_ small 2
 500020 Axe pole _ mode A_ small 3
 500030 Axe pole _ mode A_ small 4
 500100 Axe pole _ mode A_ large 1
@@ -490,7 +490,7 @@
 500390 Axe pole _ mode A_ Mode change attack _ right
 500395 Axe pole _ mode A_ Mode change attack _ left
 500400 Axe pole _ mode B_ small 1
-500410,Axe pole _ mode B_ small 2
+500410 Axe pole _ mode B_ small 2
 500420 Axe pole _ mode B_ small 3
 500430 Axe pole _ mode B_ small 4
 500440 Axe pole _ mode B_ small 5
@@ -603,7 +603,7 @@
 700150 Nokonata _ mode A_ Charge Small _ right 1
 700155 Nokonata _ mode A_ Charge Small _ left 1
 700170 Nokonata _ mode A_ Large Charge _ right 1
-700175,Nokonata _ mode A_ Large Charge _ left 1
+700175 Nokonata _ mode A_ Large Charge _ left 1
 700180 Nokonata _ mode A_ Large Charge _ right 2
 700185 Nokonata _ mode A_ Large Charge _ left 2
 700200 Nokonata _ mode A_ Back step small
@@ -627,7 +627,7 @@
 700400 Nokonata _ mode B_ small 1
 700410 Nokonata _ mode B_ small 2
 700420 Nokonata _ mode B_ small 3
-700500,Nokonata _ mode B_ large 1
+700500 Nokonata _ mode B_ large 1
 700510 Nokonata _ mode B_ large 2
 700550 Nokonata _ mode B_ Charge Small _ right 1
 700555 Nokonata _ mode B_ Charge Small _ left 1
@@ -716,7 +716,7 @@
 710790 Saw Spear _ mode B_ Mode change attack _ right
 710795 Saw Spear _ mode B_ Mode change attack _ left
 710800 Saw Spear _ left hand _ small 1
-710900,Saw Spear _ guard _ mode B
+710900 Saw Spear _ guard _ mode B
 710901 Saw Spear _ guard _ left hand
 800000 Sword Hammer _ mode A_ small 1
 800010 Sword Hammer _ mode A_ small 2
@@ -743,7 +743,7 @@
 800320 Sword Hammer _ mode A_ Dash Small
 800330 Sword Hammer _ mode A_ Dash Large
 800340 Sword Hammer _ mode A_ Falling Attack _ Falling
-800341,Sword Hammer _ mode A_ Falling Attack _ Landing
+800341 Sword Hammer _ mode A_ Falling Attack _ Landing
 800380 Sword Hammer _ mode A_ Unsheathing Small Attack
 800385 Sword Hammer _ mode A_ Sword Attack
 800390 Sword Hammer _ mode A_ Mode change attack _ right
@@ -1099,7 +1099,7 @@
 1100800 Pile Bunker _ left hand _ small 1
 1100901 Pile Bunker _ guard _ left hand
 1100910 Pile Bunker _ Charge attack activated
-1100930,Pile Bunker _ Charge attack activation (strong)
+1100930 Pile Bunker _ Charge attack activation (strong)
 1200000 wheel _ mode A_ small 1
 1200010 wheel _ mode A_ small 2
 1200020 wheel _ mode A_ small 3
@@ -1137,7 +1137,7 @@
 1200420 wheel _ mode B_ small 3_ first
 1200421 wheel _ mode B_ small 3_ During
 1200422 wheel _ mode B_ small 3_ last
-1200430,wheel _ mode B_ small 4_ first
+1200430 wheel _ mode B_ small 4_ first
 1200431 wheel _ mode B_ small 4_ During
 1200432 wheel _ mode B_ small 4_ last
 1200440 wheel _ mode B_ small 5
@@ -1274,7 +1274,7 @@
 2000500 torch _ mode B_ large 1
 2000510 torch _ mode B_ large 2
 2000620 torch _ mode B_ Small Evasion _ before
-2000700,torch _ mode B_ Close range
+2000700 torch _ mode B_ Close range
 2000710 torch _ mode B_ Jump
 2000720 torch _ mode B_ Dash Small
 2000721 torch _ mode B_ Dash Small _ addition 1
@@ -1289,7 +1289,7 @@
 2200010 Cane Whip _ mode A_ small 2
 2200020 Cane Whip _ mode A_ small 3
 2200030 Cane Whip _ mode A_ small 4
-2200040,Cane Whip _ mode A_ small 5
+2200040 Cane Whip _ mode A_ small 5
 2200100 Cane Whip _ mode A_ large 1
 2200110 Cane Whip _ mode A_ large 2
 2200120 Cane Whip _ mode A_ large 3
@@ -1366,7 +1366,7 @@
 2300320 Sawtooth Curved Sword _ mode A_ Dash Small
 2300330 Sawtooth Curved Sword _ mode A_ Dash Large
 2300340 Sawtooth Curved Sword _ mode A_ Falling Attack _ Falling
-2300341,Sawtooth Curved Sword _ mode A_ Falling Attack _ Landing
+2300341 Sawtooth Curved Sword _ mode A_ Falling Attack _ Landing
 2300390 Sawtooth Curved Sword _ mode A_ Mode change attack _ right
 2300395 Sawtooth Curved Sword _ mode A_ Mode change attack _ left
 2300400 Sawtooth Curved Sword _ mode B_ small 1
@@ -1425,7 +1425,7 @@
 2400730 Saw Whip _ mode B_ Dash Large
 2400740 Saw Whip _ mode B_ Falling Attack _ Falling
 2400741 Saw Whip _ mode B_ Falling Attack _ Landing
-2400790,Saw Whip _ mode B_ Mode change attack _ right
+2400790 Saw Whip _ mode B_ Mode change attack _ right
 2400795 Saw Whip _ mode B_ Mode change attack _ left
 2500000 Articulated _ mode A_ small 1
 2500010 Articulated _ mode A_ small 2
@@ -1450,7 +1450,7 @@
 2500400 Articulated _ mode B_ small 1
 2500410 Articulated _ mode B_ small 2
 2500420 Articulated _ mode B_ small 3
-2500430,Articulated _ mode B_ small 4
+2500430 Articulated _ mode B_ small 4
 2500550 Articulated _ mode B_ Charge Small _ Main unit
 2500551 Articulated _ mode B_ Charge Small _ Pursuit
 2500570 Articulated _ mode B_ Large Charge _ Main unit
@@ -1475,7 +1475,7 @@
 2600030 Moonlight Sword _ mode A_ small 4
 2600150 Moonlight Sword _ mode A_ Charge Small _ right 1
 2600170 Moonlight Sword _ mode A_ Large Charge _ right 1
-2600180,Moonlight Sword _ mode A_ Large Charge _ right 2
+2600180 Moonlight Sword _ mode A_ Large Charge _ right 2
 2600200 Moonlight Sword _ mode A_ Back step small
 2600210 Moonlight Sword _ mode A_ Back Step Large
 2600220 Moonlight Sword _ mode A_ Small Evasion _ before
@@ -1525,7 +1525,7 @@
 2600932 Moonlight Sword _ left hand _ Large (without bullets)
 2700000 Double Blade _ mode A_ small 1
 2700010 Double Blade _ mode A_ small 2
-2700020,Double Blade _ mode A_ small 3
+2700020 Double Blade _ mode A_ small 3
 2700030 Double Blade _ mode A_ small 4
 2700150 Double Blade _ mode A_ Charge Small _ right 1
 2700170 Double Blade _ mode A_ Large Charge _ right 1
@@ -1587,7 +1587,7 @@
 2800390 Gunhammer _ mode A_ Mode change attack _ right
 2800395 Gunhammer _ mode A_ Mode change attack _ left
 2800400 Gunhammer _ mode B_ small 1
-2800550,Gunhammer _ mode B_ Charge Small 1
+2800550 Gunhammer _ mode B_ Charge Small 1
 2800570 Gunhammer _ mode B_ Large Charge 1_ Main unit
 2800571 Gunhammer _ mode B_ Large Charge 1_ explosion
 2800600 Gunhammer _ mode B_ Back step small
@@ -1610,7 +1610,7 @@
 2900020 Cross Mace _ mode A_ small 3
 2900030 Cross Mace _ mode A_ small 4
 2900150 Cross Mace _ mode A_ Charge Small _ right 1
-2900170,Cross Mace _ mode A_ Large Charge _ right 1
+2900170 Cross Mace _ mode A_ Large Charge _ right 1
 2900200 Cross Mace _ mode A_ Back step small
 2900210 Cross Mace _ mode A_ Back Step Large
 2900220 Cross Mace _ mode A_ Small Evasion _ before
@@ -1634,7 +1634,7 @@
 2900571 Cross Mace _ mode B_ Large Charge 1_ Impact range
 2900600 Cross Mace _ mode B_ Back step small
 2900610 Cross Mace _ mode B_ Back Step Large
-2900620,Cross Mace _ mode B_ Small Evasion _ before
+2900620 Cross Mace _ mode B_ Small Evasion _ before
 2900630 Cross Mace _ mode B_ Small Evasion _ rear
 2900640 Cross Mace _ mode B_ Small Evasion _ left
 2900650 Cross Mace _ mode B_ Small Evasion _ right
@@ -1657,7 +1657,7 @@
 3000210 War Pick _ mode A_ Back Step Large
 3000220 War Pick _ mode A_ Small Evasion _ before
 3000230 War Pick _ mode A_ Small Evasion _ rear
-3000240,War Pick _ mode A_ Small Evasion _ left
+3000240 War Pick _ mode A_ Small Evasion _ left
 3000250 War Pick _ mode A_ Small Evasion _ right
 3000310 War Pick _ mode A_ Jump
 3000320 War Pick _ mode A_ Dash Small
@@ -1691,7 +1691,7 @@
 3100010 Circular saw chainsaw _ mode A_ small 2
 3100020 Circular saw chainsaw _ mode A_ small 3
 3100030 Circular saw chainsaw _ mode A_ small 4
-3100150,Circular saw chainsaw _ mode A_ Charge Small _ right 1
+3100150 Circular saw chainsaw _ mode A_ Charge Small _ right 1
 3100170 Circular saw chainsaw _ mode A_ Large Charge _ right 1
 3100200 Circular saw chainsaw _ mode A_ Back step small
 3100210 Circular saw chainsaw _ mode A_ Back Step Large
@@ -1712,7 +1712,7 @@
 3100430 Circular saw chainsaw _ mode B_ small 4
 3100550 Circular saw chainsaw _ mode B_ Charge Small _ right 1
 3100570 Circular saw chainsaw _ mode B_ Large Charge _ right 1
-3100600,Circular saw chainsaw _ mode B_ Back step small
+3100600 Circular saw chainsaw _ mode B_ Back step small
 3100610 Circular saw chainsaw _ mode B_ Back Step Large
 3100620 Circular saw chainsaw _ mode B_ Small Evasion _ before
 3100630 Circular saw chainsaw _ mode B_ Small Evasion _ rear

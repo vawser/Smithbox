@@ -17,7 +17,7 @@
 511 Hirai Test Parry Skeleton
 512 Hirai Test New Immortal (Heavy Warrior/Spear)
 513 Hirai Test Guard Lover
-514,Wyvern/Bird Control Test
+514 Wyvern/Bird Control Test
 515 Wyvern bird control test (2nd bird)
 520 NPC Player Test
 530 DS2Test For upstream testing 0
@@ -37,7 +37,7 @@
 551 DS2 Testing Automatic test wandering reservation ( Watanabe Management )
 600 Homing Test Regular Soldier_Sword
 601 Homing Test Regular Soldier_Sword (Flame)
-602,Homing Test Regular Soldier_Bow
+602 Homing Test Regular Soldier_Bow
 603 Homing Test Knight_Sword
 700 Beggar for call-to-friend test
 701 Snake man for calling friends test A
@@ -66,7 +66,7 @@
 6340 Sacrificial NPC 1
 6350 Sacrificial NPC 2
 6360 Sacrificial NPC 3
-6380,Trap Lord: Lord of Nightmares
+6380 Trap Lord: Lord of Nightmares
 6390 Hometown Invasion NPC1
 6395 Hometown Invasion NPC2
 6400 For the Revenger event NPC1 (Henrik)
@@ -126,7 +126,7 @@
 7070 Dungeons NPC8_1
 7075 Dungeons NPC8_2
 7120 Dungeons NPC11
-7121,Dungeons NPC11 (Joint Struggle)
+7121 Dungeons NPC11 (Joint Struggle)
 7150 Dungeons NPC14
 7160 Dungeons NPC15
 7161 Dungeons NPC15 (Wheels & Cannons) Joint Struggle m29_40_90_01 2F
@@ -222,7 +222,7 @@
 102066 SP Proto Crowd A Throwing & Shield (No Molotov cocktail alert)
 102067 SP Proto Crowd A Throwing & Shield (Defensive) 10 m)
 102068 SP Proto Crowd A Throwing & Shield (Oil Flask)
-102069,SP Proto Crowd A Throwing & Shield (no oil bottle alert action)
+102069 SP Proto Crowd A Throwing & Shield (no oil bottle alert action)
 102070 SP Proto Crowd A Long handles (hoe)
 102071 SP Proto Crowd A Long weapon with both hands (hoe only) 10m )
 102072 SP Proto Crowd A Long-handed (short combat range approach slowly)
@@ -244,7 +244,7 @@
 102100 Cemetery Street _ crowd A gun
 102200 Cathedral Quarter _ crowd A Torch & Axe Running
 102201 Cathedral Quarter _ crowd A Torch & Shield Vision: Usually comes running when heard.
-102202,Cathedral Quarter _ crowd A Poker & Shield Vision usually comes running at sound.
+102202 Cathedral Quarter _ crowd A Poker & Shield Vision usually comes running at sound.
 102203 Cathedral Quarter _ crowd A Sabre Vision Usually comes running at sound.
 102204 Cathedral Quarter _ crowd A Knife Vision Usually comes running at sound.
 102205 Cathedral Quarter _ crowd A Scythe comes walking with sound
@@ -252,7 +252,7 @@
 102207 Cathedral Ward [Test] SP crowd A Leader: Short field of vision
 102210 Cathedral Quarter _ crowd A Torch & Axe Platoon Delay Don't forget
 102211 Cathedral Quarter _ crowd A Torch & Shield Vision: Usually comes running when heard.
-102212,Cathedral Quarter _ crowd A Poker & Shield Vision usually comes running at sound.
+102212 Cathedral Quarter _ crowd A Poker & Shield Vision usually comes running at sound.
 102213 Cathedral Quarter _ crowd A Sabre Vision Usually comes running at sound.
 102214 Cathedral Quarter _ crowd A Knife Vision Usually comes running at sound.
 102215 Cathedral Quarter _ crowd A Scythe: Wide view up and down _ Sudden attack from above coming running at the sound. 9m
@@ -271,7 +271,7 @@
 102411 Cathedral Quarter _B crowd A Shield & Torch: Short search distance
 102430 Cathedral Quarter _B crowd A Weapon (sabre)
 102431 Cathedral Quarter _B crowd A Square Snipe
-102440,Cathedral Quarter _B crowd A Weapons (knives)
+102440 Cathedral Quarter _B crowd A Weapons (knives)
 102450 Cathedral Quarter _B crowd A Weapon (Scythe)
 102451 Cathedral Quarter _B crowd A Weapon (Scythe) Surprise Attack
 102470 Cathedral Quarter _B crowd A Long handles (hoe)
@@ -396,7 +396,7 @@
 105002 SP Wandering Widow
 105010 SP Proto Wandering Widow New Logic
 105050 SP Proto Wandering Widow _ The Demon Substitute of the Old Castle
-105080,Wandering Widow for Dungeon
+105080 Wandering Widow for Dungeon
 105090 Wandering Widow BOSS 】 For dungeons
 105100 Ruins: Wandering Widow
 105200 Cathedral Ward B Wandering Widow
@@ -420,10 +420,10 @@
 106022 Cathedral Quarter C Brain Eater Throw
 106030 Cathedral Quarter B Brain Eater
 106080 Brain Eater for Dungeon
-106090,Brain Eater Throw Dungeon
+106090 Brain Eater Throw Dungeon
 106095 Brain Eater Throw [ BOSS 】 For dungeons
 106180 Brain Eater for Dungeon
-106190,Brain Eater Throw Dungeon
+106190 Brain Eater Throw Dungeon
 106200 University Brain Eater
 107000 SP Proto Screamer
 107001 SP Proto Screamer Dull 10m
@@ -436,7 +436,7 @@
 108005 SP Prototype Burnt Corpse (Warrior/Sword) For Events
 108006 SP Proto Burned Corpse (Warrior/Sword) Defensive 10m
 108007 SP Proto Burned Corpse (Warrior/Sword _ Flame Pot) Defensive 10m
-108008,SP Proto Burned Corpse (Warrior/Sword _ Two-handed) Defensive 10m
+108008 SP Proto Burned Corpse (Warrior/Sword _ Two-handed) Defensive 10m
 108009 SP Proto Burned Corpse (Warrior/Sword _ Flame Pot) Easy to forget
 108010 SP Proto Burned Corpse (Warrior/Spear)
 108011 SP Proto Burned Corpse (Warrior/Halberd)
@@ -462,7 +462,7 @@
 109003 Ruins strange beast no vision
 109004 Ruins Strange Beasts High Angle View
 109005 Ruins Beast Platoon Delay 1 ~ 2
-109006,Ruins Beast Platoon Delay 2 ~ 3
+109006 Ruins Beast Platoon Delay 2 ~ 3
 109007 Ruins Beast Platoon Delay 3 ~ 4
 109008 Ruins Strange Beast Olfactory Type
 109009 Ruins Strange Beasts Low Vision Low Angle of View
@@ -512,7 +512,7 @@
 111095 Kin of Death and Darkness _ Small fry _ Generate Dungeon
 111096 Kin of Death and Darkness _ Small fry _ Generate for close proximity AI For dungeons
 111600 Trap Lord: Kin of Death and Darkness
-111610,Trap Lord: Kin of Death and Darkness Headless
+111610 Trap Lord: Kin of Death and Darkness Headless
 112000 SP Drowned Beast
 112071 Forest Drowned Beast Curse Attack
 112080 Drowned Beast for Dungeon
@@ -581,7 +581,7 @@
 118500 Old Castle: Wandering Madness ( small )
 118600 Trap Lord Wandering Madness ( small )
 118700 SP Wandering Madness ( small ) For forest
-118800,Clock Tower Wandering Madness ( small ) Vision 10m Edition
+118800 Clock Tower Wandering Madness ( small ) Vision 10m Edition
 118900 Fishing Village Wandering Madness ( small )
 119000 Hometown Wandering Madness ( Medium )
 119070 SP Wandering Madness ( Medium ) Snake ball (child) (small) for substitute enemy
@@ -593,7 +593,7 @@
 121001 Gravekeeper Scorpion Large Childless Claws
 121010 Gravekeeper Scorpion with Small Scissors
 121011 Gravekeeper Scorpion with Large Claws
-121080,Gravekeeper Scorpion Small Childless Scissors for Dungeon
+121080 Gravekeeper Scorpion Small Childless Scissors for Dungeon
 121081 Gravekeeper Scorpion Large Childless Claws for Dungeon
 121090 Gravekeeper Scorpion Small Scissors with Baby for Dungeon
 121091 Gravekeeper Scorpion Large Claws for Dungeon
@@ -611,7 +611,7 @@
 124050 SP No mad dog alert
 124080 Mad Dog Alert Dungeon Use
 124081 Mad Dog no alert for dungeons incense burner for surprise attacks
-124085,Mad Dog No Caution Dungeon Use
+124085 Mad Dog No Caution Dungeon Use
 124090 For generation Mad Dog Alert For dungeons
 124095 For generation Mad Dog No alert For dungeon
 124300 Cathedral Quarter _A Mad dog sleeping
@@ -666,7 +666,7 @@
 140085 Idiot Spider (baby) For dungeons High jump attack frequency
 140090 Idiot Spider (baby) Dungeon boss companion
 200000 Cemetery Town Executioner
-200001,Cemetery Town Executioner Visual 18m
+200001 Cemetery Town Executioner Visual 18m
 200070 Cathedral Quarter _SP Executioner Cathedral Ward Smell Addition
 200071 Cathedral Quarter _SP Executioner Cathedral Ward Smell Addition
 200072 Cathedral Quarter _SP Executioner No vision or hearing
@@ -687,7 +687,7 @@
 202000 Sacrifice Town Kidnapper
 202001 Sacrifice Town Kidnapper Visual Height Low
 202080 Kidnapper for dungeons
-202082,Kidnapper for surprise attacks for dungeons
+202082 Kidnapper for surprise attacks for dungeons
 202084 Kidnapper Push out enemies Dungeons
 203000 SP Cathedral Knight (sword shield cloak)
 203001 SP Cathedral Knight (sword shield cloak) 10m Exclusively defensive
@@ -707,7 +707,7 @@
 205011 Cemetery Town Crazy Evil Spirit SAN Value occurrence
 205020 Ruins Crazy Demon SAN Value occurrence
 205030 Hometown Crazy Demon SAN Value occurrence
-205050,Old Castle Crazy Demon SAN Value occurrence
+205050 Old Castle Crazy Demon SAN Value occurrence
 205060 Trap Lord: Crazy Demon SAN Value occurrence
 205070 Forest Crazy Spirit
 205080 Crazy Evil Spirit for Dungeon
@@ -724,7 +724,7 @@
 210001 Sacrifice Eye Collector ( ObjAct Initiator)
 210002 Sacrifice Eye Collector (ambush personnel)
 210020 Cemetery Street Eye Collector ( Boss For 1 Body size)
-210021,Cemetery Street Eye Collector ( Boss For 2 Body size)
+210021 Cemetery Street Eye Collector ( Boss For 2 Body size)
 210025 SP Eye Collector for Old Castles
 210030 Cathedral Quarter D Eye Collector
 210080 SP Eye Collector for Dungeon
@@ -743,7 +743,7 @@
 212030 Sacrifice Town Dark Brigade Gun
 212080 Dark Brigade Sword Dungeon
 212081 Dark Brigade Sword and Candle for Dungeon
-212082,Dark Brigade Orb Hammer Dungeon
+212082 Dark Brigade Orb Hammer Dungeon
 212083 Dark Brigade Gun Dungeon
 212600 Trap Lord Dark Brigade Sword
 212610 Trap Lord Dark Brigade Sword and Candle
@@ -785,7 +785,7 @@
 218083 Sacrifice Silver Beast's Kin ( 4 Legs) (parasites)
 218085 Silver Beast's Kin Special Standby Dungeon Use
 218090 Silver Beast's Kin BOSS 】 For dungeons
-218091,Silver Beast's Kin (Parasite) BOSS 】 For dungeons
+218091 Silver Beast's Kin (Parasite) BOSS 】 For dungeons
 218092 Silver Beast's Kin ( 4 leg)【 BOSS 】 For dungeons
 218093 Silver Beast's Kin ( 4 Legs) (Parasites) 【 BOSS 】 For dungeons
 218180 Silver Beast's Kin for Dungeon
@@ -804,7 +804,7 @@
 219300 Hometown Parasite
 219400 forest / Saint B Connection Parasite
 219500 Old Castle Parasite
-219600,Trap Road Parasite
+219600 Trap Road Parasite
 225000 Trap Lord Jailer A Sword only + Crossbow
 225010 Trap Lord Jailer A Sword + Shield
 225020 Trap Lord Jailer A Whip (Cat of Nine Tails)
@@ -827,7 +827,7 @@
 226002 Trap Lord Jailer B Chain Whip Visual Distance Reduction 1
 226003 Trap Lord Jailer B Chain Whip Visual Distance Reduction 2
 226004 Trap Lord Jailer B Chain Whip Visual Distance Reduction 3 For mid-boss room
-226010,Trap Lord Jailer B Orb
+226010 Trap Lord Jailer B Orb
 226011 Trap Lord Jailer B Orb Visual Distance Reduction
 226080 SP Jailer B Chain Whip for Dungeon
 226081 SP Jailer B Orb for Dungeon
@@ -854,7 +854,7 @@
 233020 SP King's servant (scepter + candlestick)
 233021 SP King's Servant (Staff + Candlestick) Old Castle _ archive 2F_ For sniping
 233022 SP King's Servant (Staff + Candlestick) Old Castle _ archive 1F_ For sniping
-240000,Hometown: Foundling Giant
+240000 Hometown: Foundling Giant
 240010 Hometown Foundling Titan Throwing Vision 40m
 240011 Hometown Foundling Titan Throwing Vision 50m
 240098 Hometown: Foundling Giant _ I'm going to wake up _13m
@@ -903,7 +903,7 @@
 255010 Hometown Creeping Thing (Large) Long-range magic type
 256000 Hometown Failed Messenger (Hozuki)
 256100 Hometown - The Failed Messenger _ Dummy character for firing bullets
-256600,Trap Lord: The Failed Messenger (Hozuki)
+256600 Trap Lord: The Failed Messenger (Hozuki)
 256601 Trap Lord Failed Messenger (Hozuki) Visual Distance Extension
 256610 Trap Lord: The Failed Messenger _ Dummy character for firing bullets
 256699 Trap Lord Failed Messenger (Hozuki) Evil Eye Substitute
@@ -916,7 +916,7 @@
 257100 Messenger from the Moon (Large) Tentacles
 260000 Terrifying crowd (saw + torch)
 260001 Cathedral Quarter A_ Terrifying crowd (saw + torch)
-260010,Terrible crowd (fence)
+260010 Terrible crowd (fence)
 260011 Cathedral Quarter A_ Terrible crowd (fence)
 260012 Terrible crowd (fence) Super sense of smell
 260013 Ruins Terrible crowd (fence) Visibility 25m Edition
@@ -934,7 +934,7 @@
 261000 Cemetery Town Crowd Woman Scythe
 261001 Cemetery Town Crowd Woman Scythe Back Throw
 261002 Cemetery Town Crowd Woman Scythe Vigilance and Do Nothing
-261003,Cemetery Town Crowd Woman Scythe Approaching with Caution
+261003 Cemetery Town Crowd Woman Scythe Approaching with Caution
 261010 Cemetery Street Crowd Woman Hatchet Torch
 261011 Cemetery Street Crowd Woman Hatchet Torch Vision 14m
 261020 Cemetery Town Crowd Woman Branding Iron
@@ -954,7 +954,7 @@
 261840 Sacrifice Crowd Woman Hatchet Throwing
 262000 Cathedral Quarter _A Crowd (wheelchair) Rifle
 262010 Cathedral Quarter _A Crowd (wheelchair) Short gun
-262011,Cathedral Quarter _A Crowd (wheelchair) Short gun Hawk's eye
+262011 Cathedral Quarter _A Crowd (wheelchair) Short gun Hawk's eye
 262020 Cathedral Quarter _A Crowd (wheelchair) Gatling
 262030 Cathedral Quarter _A Crowd (wheelchairs) Flame thrower
 262200 Cathedral Quarter _C Crowd (wheelchair) Rifle
@@ -969,7 +969,7 @@
 262410 Cathedral Quarter _B Crowd (wheelchair) Short gun
 262425 Cathedral Quarter _B Crowd (wheelchair) Gatling _ Fixed gun
 262800 Sacrificial City Crowd (wheelchair) Rifle
-262810,Sacrificial Street Crowd (wheelchair) Short barrel
+262810 Sacrificial Street Crowd (wheelchair) Short barrel
 262820 Sacrificial City Crowd (wheelchair) Gatling
 262830 Sacrificial City Crowd (wheelchair) Flame Thrower
 262850 Cathedral District - Sacrifice District Crowd (wheelchair) Rifle
@@ -985,7 +985,7 @@
 262912 Clock Tower Crowd (wheelchair) Short gun Dungeon After enemy is found
 262913 Clock Tower Crowd (wheelchair) Short gun False hearing
 262920 Clock Tower Crowd (wheelchairs) Gatling
-262921,Clock Tower Crowd (wheelchair) Gatling gun Long-range gun
+262921 Clock Tower Crowd (wheelchair) Gatling gun Long-range gun
 262925 Clock Tower Crowd (wheelchairs) Gatling _ Fixed gun
 262930 Clock Tower Crowd (wheelchairs) Sprayer spray
 262931 Clock Tower Crowd (wheelchair) Sprayer Insensitive
@@ -1054,7 +1054,7 @@
 263498 Cathedral Quarter _B crowd A (Large) Bare-handed only
 263499 Cathedral Quarter _B crowd A (Large) Sleeping
 263500 Cathedral Quarter C crowd A (Large) Torch & Axe
-263510,Cathedral Quarter C crowd A (Large) Shield & Torch
+263510 Cathedral Quarter C crowd A (Large) Shield & Torch
 263520 Cathedral Quarter C crowd A (Large) Poker & Shield
 263530 Cathedral Quarter C crowd A (Large) Weapon (Sabre)
 263531 Cathedral Quarter C crowd A (Large) Weapon (Sabre) Approach the source of the sound
@@ -1105,7 +1105,7 @@
 263870 Sacrifice Crowd A (Large) Long handle with both hands (hoe)
 263890 First Sacrifice Crowd A (Large) Bare hands
 263899 First Sacrifice Crowd A (Large) Bare hands Sleeping
-263900,Test Crowd A (large) _ cannon
+263900 Test Crowd A (large) _ cannon
 264000 Cathedral Quarter A crowd B (Large) Brick
 264010 Cathedral Quarter A crowd B (Large) Stone statue
 264100 Cemetery Street Crowd B (Large) Brick
@@ -1171,7 +1171,7 @@
 273150 Cathedral Quarter A The Frankenstein of Medical Society _ Iron ball _ Sleeping
 273400 forest / Saint B Connection of the Medical Church of Frankenstein _ fist
 273410 forest / Saint B Connection of the Medical Church of Frankenstein _ fist _ I'm going to wake up
-273420,forest / Saint B Connection of the Medical Church of Frankenstein _ fist _ Sleeping
+273420 forest / Saint B Connection of the Medical Church of Frankenstein _ fist _ Sleeping
 274000 SP University Student
 274001 SP University students on special standby
 274010 SP University Student (Bottle Carrier)
@@ -1185,7 +1185,7 @@
 281020 Sacrifice Burned Corpse Warrior (Large) _ ax
 281021 Sacrifice Burned Corpse Warrior (Large) _ ax _ Exclusively defensive
 281030 Sacrifice Burned Corpse Warrior (Large) _ Two-handed sword
-281031,Sacrifice Burned Corpse Warrior (Large) _ Two-handed sword _ Exclusively defensive
+281031 Sacrifice Burned Corpse Warrior (Large) _ Two-handed sword _ Exclusively defensive
 281100 Ruins Burnt Corpse (Axe)
 291000 SP Skeleton King
 300000 Dungeon Man (Priest)
@@ -1201,7 +1201,7 @@
 301002 Dungeon Man (Slave/Sword Only) for Surprise Attacks
 301004 Dungeon Man (Slaves/Swords only) for pushing enemies out
 301005 Dungeon Person (Slave/Sword Only) Black Clothes/White Clothes
-301006,Dungeon Person (Slave/Sword Only) Incense Burner for Surprise Attack
+301006 Dungeon Person (Slave/Sword Only) Incense Burner for Surprise Attack
 301007 Dungeon People (Slaves/Swordsmen _ Stealth Throwing Knife)
 301009 Dungeon Man (Slave/Bare Hands) Apathy
 301010 Dungeon Man (Slave/Machete only)
@@ -1237,7 +1237,7 @@
 301800 Dungeon people for generation (slaves and swords only)
 301801 Dungeon Man (Slave Sword) _ (Bare-handed throw)
 301802 For generating Dungeon people (slaves sword only) for surprise attacks
-301804,For generating dungeon people (slaves and swords only) for pushing enemies
+301804 For generating dungeon people (slaves and swords only) for pushing enemies
 301810 For generating Dungeon Man (Slave Hatchet only)
 301811 Dungeon Man (Slave Hatchet) _ (Bare-handed throw)
 301815 For generating Dungeon people (for slaves and surprise attacks)
@@ -1249,11 +1249,11 @@
 301850 For generation Dungeon people (Slaves Pole Weapons )
 301900 【ruins _ Substitute for Throwing Character] Dungeon Man (Slave Sword) _ (Bare-handed throw)
 302000 Dungeon Person (Guardian/Sword Shield)
-302010,Dungeon Person (Guardian Morning Star)
+302010 Dungeon Person (Guardian Morning Star)
 302020 Dungeon Guardian (Sword Crossbow)
 302030 Dungeon Man (Guardian Great Sword)
 302100 Dungeon Person (Guardian/Sword Shield)
-302110,Dungeon Person (Guardian Morning Star)
+302110 Dungeon Person (Guardian Morning Star)
 302120 Dungeon Guardian (Sword Crossbow)
 302130 Dungeon Man (Guardian Great Sword)
 302630 University Dungeon Person (Guardian Great Sword)
@@ -1272,7 +1272,7 @@
 304020 Dungeon Man (Fat Shotgun Lantern Machete)
 304021 Dungeon Man (Fat Shotgun Lantern Hatchet) BOSS 】's entourage
 304040 Dungeon Man (Fat Saw)
-304041,Dungeon Man (Fat Saw) BOSS 】's entourage
+304041 Dungeon Man (Fat Saw) BOSS 】's entourage
 304042 Dungeon Man (Fat Saw) for wall use
 304050 Dungeon Man (fat iron balls in both hands naked)
 304090 Dungeon Man (Fat Nata Lantern) BOSS 】
@@ -1348,7 +1348,7 @@
 402000 Clock Tower Patient A_ Blood Transfusion Equipment
 402001 Clock Tower Patient A_ Blood transfusion equipment for first-look performance
 402002 Clock Tower Patient A_ Transfusion equipment responds to sound
-402003,Clock Tower Patient A_ Transfusion equipment unresponsive to sound
+402003 Clock Tower Patient A_ Transfusion equipment unresponsive to sound
 402005 Clock Tower Patient A_ Blood transfusion equipment Supersensory
 402010 Clock Tower Patient A_ Arm tumor
 402011 Clock Tower Patient A_ Arm bump for surprise attacks
@@ -1364,7 +1364,7 @@
 402027 Clock Tower Patient A_ Bare hands Aggressive B (Charge)
 402028 Clock Tower Patient A_ Unarmed Throwing
 402030 Clock Tower Patient A (four legs) Good jumping ability
-402033,Clock Tower Patient A (Four legs) Unresponsive to sound Doesn't fly much
+402033 Clock Tower Patient A (Four legs) Unresponsive to sound Doesn't fly much
 402035 Clock Tower Patient A (Four-legged) Doesn't jump much
 402040 Clock Tower Patient A General purpose Special standby
 402050 Clock Tower Patient A_ Unarmed Moon Envoy Magic
@@ -1409,7 +1409,7 @@
 404040 Fishman A_ harpoon _ Suneo
 405000 Fishman B_ village 2_1_PC When is on top
 405001 Fishman B_ village 2_1_PC When you are below
-405002,Fishman B_ village 2_2
+405002 Fishman B_ village 2_2
 405003 Fishman B_ Slug culture tank upper layer 1
 405004 Fishman B_ Slug culture tank upper layer 2
 405005 Fishman B_ Slug culture tank upper layer 3
@@ -1427,7 +1427,7 @@
 406005 Fishman Large _ bare hands _ strength
 406010 Fishman Large _ Anchor
 406015 Fishman Large _ Anchor _ strength
-407000,Hermit crab _ Small (without shell)
+407000 Hermit crab _ Small (without shell)
 407001 Hermit crab _ Small (without shell) _ The one who runs away
 407002 Hermit crab _ Small (without shell) _ First encounter only
 407003 Hermit crab _ Small (without shell) _ Bottom layer of the aquaculture tank 1
@@ -1442,7 +1442,7 @@
 408000 Fishing dog
 408004 Fishing dog _ village 2 Lower
 412000 Clock Tower Patient A_ Blood Transfusion Equipment
-450000,Parishioner Ω
+450000 Parishioner Ω
 451000 Ludwig
 452000 Clock Tower Boss
 454000 Final Boss
@@ -1466,7 +1466,7 @@
 507100 The failed evil god _ Senior
 507200 The failed evil god _ Bullet Officer
 508000 Ruins Storm Beast (Bone)
-508090,Storm Beast (Bone) BOSS 】 For dungeons
+508090 Storm Beast (Bone) BOSS 】 For dungeons
 509000 Founder Beast [ BOSS 】 For dungeons
 509010 Founder Beast (headless) BOSS 】 For dungeons
 509011 Founder Beast (headless) _ No vision BOSS 】 For dungeons
@@ -1500,7 +1500,7 @@
 550101 Lesser Demon's Left Head
 550102 Lesser Demon's Left Head (Swamp)
 551000 Lesser Demon ( Death and Darkness )
-551090,Lesser Demon ( Death and Darkness ) [ BOSS 】 Dungeon
+551090 Lesser Demon ( Death and Darkness ) [ BOSS 】 Dungeon
 552000 Lesser Demon Variation
 552100 Lesser Demon Variation Left Neck
 700000 SP Proto Avatar A Basic Wolf Warrior [Normal]
@@ -1522,7 +1522,7 @@
 701001 SP Proto Avatar B Arrogant Pig King 【 GO 】
 701002 SP Proto Avatar B Arrogant Pig King 【 STOP 】
 701003 SP Proto Avatar B Arrogant Pig King Religious District [Normal]
-701004,SP Proto Avatar B Arrogant Pig King Religious Town 【 GO 】
+701004 SP Proto Avatar B Arrogant Pig King Religious Town 【 GO 】
 701005 SP Proto Avatar B Arrogant Pig King Religious Town 【 STOP 】
 701010 SP Proto Avatar B Berserker Pig [Normal]
 701011 SP Proto Avatar B Berserker Pig 【 GO 】
@@ -1537,7 +1537,7 @@
 750080 Enemy Avatars for Dungeons
 750081 Enemy Avatar for Dungeon Sleeping
 750082 Enemy avatar for dungeons
-750090,Enemy Avatar [ BOSS 】 For dungeons
+750090 Enemy Avatar [ BOSS 】 For dungeons
 802000 SP Princess Slug
 803000 Doll Heroine
 805000 Base Elderly (Awakened)

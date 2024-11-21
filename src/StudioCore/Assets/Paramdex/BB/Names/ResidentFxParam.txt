@@ -187,7 +187,7 @@
 36001 General purpose _ Candle (with light source)
 36002 Floating ball lighting (with light source)
 36003 Ignition OBJ (with light source)
-36004,Light source only: Candle slug
+36004 Light source only: Candle slug
 36005 Insect-infested corpse SE
 99000 PG For research purposes
 99999 null

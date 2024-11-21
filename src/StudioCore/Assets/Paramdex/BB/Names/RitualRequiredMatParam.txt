@@ -42,7 +42,7 @@
 50200 Automatically generated chalice [Level 5 】 A : Tumer _ Multi
 50240 Automatically generated chalice [Level 5 】 A : Tumer _ Multiplayer: Hostile Multiplayer
 52000 Automatically generated chalice [Level 5 】 C : Laurent
-52010,Automatically generated chalice [Level 5 】 C : Roland: Enemy Strengthening
+52010 Automatically generated chalice [Level 5 】 C : Roland: Enemy Strengthening
 52020 Automatically generated chalice [Level 5 】 C : Laurent: Special Strong Enemy
 52070 Automatically generated chalice [Level 5 】 C : Laurent: Curse
 52200 Automatically generated chalice [Level 5 】 C : Laurent _ Multi
@@ -61,7 +61,7 @@
 62110 Automatically generated chalice [Level 6 】 C : Laurent _ Curse: Enemy Strengthening
 62120 Automatically generated chalice [Level 6 】 C : Laurent _ Curse: Special Strong Enemy
 62170 Automatically generated chalice [Level 6 】 C : Laurent _ Curse: Curse
-63100,Automatically generated chalice [Level 6 】 D ：Is _ curse
+63100 Automatically generated chalice [Level 6 】 D ：Is _ curse
 63110 Automatically generated chalice [Level 6 】 D ：Is _ Curse: Enemy Strengthening
 63120 Automatically generated chalice [Level 6 】 D ：Is _ Curse: Special Strong Enemy
 63170 Automatically generated chalice [Level 6 】 D ：Is _ Curse: Curse
@@ -70,7 +70,7 @@
 70120 Automatically generated chalice [Level 7 】 A : Tumer _ Curse: Special Strong Enemy
 70170 Automatically generated chalice [Level 7 】 A : Tumer _ Curse: Curse
 70200 Automatically generated chalice [Level 7 】 A : Tumer _ Multi
-70240,Automatically generated chalice [Level 7 】 A : Tumer _ Multiplayer: Hostile Multiplayer
+70240 Automatically generated chalice [Level 7 】 A : Tumer _ Multiplayer: Hostile Multiplayer
 70300 Automatically generated chalice [Level 7 】 A : Tumer _ A terrible curse
 70310 Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Enemy Strengthening
 70320 Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Special Strong Enemy

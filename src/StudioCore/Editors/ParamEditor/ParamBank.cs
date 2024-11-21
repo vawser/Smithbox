@@ -312,6 +312,7 @@ public class ParamBank
 
             (var result, CompoundAction action) =
                 ParamIO.ApplySingleCSV(this, names, fName, "Name", ' ', true, onlyAffectEmptyNames, onlyAffectVanillaNames, true);
+
             if (action == null)
             {
                 TaskLogs.AddLog($"Could not apply name files for {fName}",

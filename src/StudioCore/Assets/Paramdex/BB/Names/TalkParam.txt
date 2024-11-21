@@ -25,12 +25,12 @@
 1400500 Have you met Mr. Gehrman?
 1400501 He is an old hunter and advisor to hunters.
 1400502 It's all a bit vague now and I can't even see you...
-1400503,But still you are in this dream
+1400503 But still you are in this dream
 1400504 …That is his role…
 1400550 Have you met Mr. Gehrman?
 1400551 He is an old hunter and advisor to hunters.
 1400552 It's all a bit vague now and I can't even see you...
-1400553,But still you are in this dream
+1400553 But still you are in this dream
 1400554 …That is his role…
 1400600 Ah the little ones who live in this dream
 1400601 I will find a hunter like you admire you and follow you...
@@ -60,9 +60,9 @@
 1400855 If it were the other way around I would understand
 1400856 I love you
 1400857 The Creator makes his creations that way...
-1400900,Hunter-sama... you make me feel nostalgic...
+1400900 Hunter-sama... you make me feel nostalgic...
 1400901 Hunters are indeed those who carry on the ancient will...
-1400950,Hunter-sama... you make me feel nostalgic...
+1400950 Hunter-sama... you make me feel nostalgic...
 1400951 Hunters are indeed those who carry on the ancient will...
 1401000 What is this...?
 1401001 I I have nothing I don't know I don't know
@@ -140,12 +140,12 @@
 1401953 Please feel free to ask us anything.
 1402000 (closes eyes and hums quietly)
 1402100 (Closing eyes and breathing as if asleep)
-1402200,Hunter-sama is it alright to ask you something strange?
+1402200 Hunter-sama is it alright to ask you something strange?
 1402201 …Have I changed in any way?
 1402202 I felt it just now. Somewhere somewhere inside of me a heavy shackle was being lifted.
 1402203 It's strange. To begin with I didn't have any shackles anywhere on me.
 1402204 *giggle*
-1402250,Hunter-sama is it alright to ask you something strange?
+1402250 Hunter-sama is it alright to ask you something strange?
 1402251 …Have I changed in any way?
 1402252 I felt it just now. Somewhere somewhere inside of me a heavy shackle was being lifted.
 1402253 It's strange. To begin with I didn't have any shackles anywhere on me.
@@ -165,13 +165,13 @@
 1409103 I will make it your strength your blood will.
 1409300 Okay. Then let the blood will be your strength.
 1500000 Hey you're the new hunter?
-1500001,Welcome to the Hunter's Dream. This will be your home even if only for a little while.
+1500001 Welcome to the Hunter's Dream. This will be your home even if only for a little while.
 1500002 I am... Gehrman. I am your hunter's advisor.
 1500003 You may not understand anything right now but don't think too hard about it.
 1500004 You just have to hunt the beast. That will ultimately serve your purpose.
 1500005 That's what it's like to be a hunter. You quickly get used to it...
 1500050 Hey you're the new hunter?
-1500051,Welcome to the Hunter's Dream. This will be your home even if only for a little while.
+1500051 Welcome to the Hunter's Dream. This will be your home even if only for a little while.
 1500052 I am... Gehrman. I am your hunter's advisor.
 1500053 You may not understand anything right now but don't think too hard about it.
 1500054 You just have to hunt the beast. That will ultimately serve your purpose.
@@ -184,7 +184,7 @@
 1500200 The moon is close tonight. It's going to be a long night of hunting.
 1500201 If the beast is too big and too terrifying for your hands seek the Holy Grail.
 1500202 Many hunters have done so in the past.
-1500203,The Holy Grail uncovers the tomb of the god and his blood becomes food for the hunter.
+1500203 The Holy Grail uncovers the tomb of the god and his blood becomes food for the hunter.
 1500204 …to receive Holy Communion…
 1500300 …I've been dreaming for a long time now…
 1500301 I may no longer be able to hunt but that is my role...
@@ -203,7 +203,7 @@
 1500700 Ah Lawrence.
 1500701 How is it? It's burning well isn't it?
 1500702 I will forever hold the hunter captive impose a horrible hunt on him and corrupt him with blood and madness.
-1500703,This cursed house is no longer needed. Isn't purification the work of fire?
+1500703 This cursed house is no longer needed. Isn't purification the work of fire?
 1500704 (off-key husky laughter)
 1500800 (off-key husky laughter)
 1500801 The whole damn thing is on fire...
@@ -219,7 +219,7 @@
 1501000 Many of the Holy Grails are found in the tomb of the gods themselves...
 1501001 Very few Holy Grails have been brought back to Earth
 1501002 There are many things for which we don't know where they're going...
-1501003 If the stories of the nostalgic hunters are still the same today,
+1501003 If the stories of the nostalgic hunters are still the same today 
 1501004 Holy Grail 1One is supposed to be enshrined in the city in the valley.
 1501005 But now it’s…
 1501006 I heard that it was a city of beasts an abandoned and burned ruin where the beast disease was rampant.
@@ -227,7 +227,7 @@
 1501050 Many of the Holy Grails are found in the tomb of the gods themselves...
 1501051 Very few Holy Grails have been brought back to Earth
 1501052 There are many things for which we don't know where they're going...
-1501053 If the stories of the nostalgic hunters are still the same today,
+1501053 If the stories of the nostalgic hunters are still the same today 
 1501054 Holy Grail 1One is supposed to be enshrined in the city in the valley.
 1501055 But now it’s…
 1501056 I heard that it was a city of beasts an abandoned and burned ruin where the beast disease was rampant.
@@ -248,7 +248,7 @@
 1501400 Coo coo
 1501401 ...Oh Lawrence... Professor Willem... Someone please help me...
 1501402 Whoever it is please release me...
-1501403,…I am tired of dreaming. I can no longer see anything in this night…
+1501403 …I am tired of dreaming. I can no longer see anything in this night…
 1501404 …Ah someone…
 1501405 Ugh ahh...
 1501500 Haha
@@ -284,7 +284,7 @@
 1501900 Hehehe.
 1501901 So you too have been consumed by something. The hunt the blood or a nightmare?
 1501902 Well any is fine.
-1501903,It is the advisor's role to eliminate such people...
+1501903 It is the advisor's role to eliminate such people...
 1501904 …Learn about Gehrman's hunt
 1502000 (The sounds made when attacking. A curved sword and a long-handled sickle. "Humph!" "Haah!" "Kieee!" and many others.)
 1502100 (The sound made when damage is received. There are several types such as "Kuh" "Guh" and "Tsssh!")
@@ -305,7 +305,7 @@
 1502602 Too late Lawrence...
 1502700 …But still hunting is necessary
 1502701 For everyone to continue pretending to be someone else
-1502702,...Goodbye Lawrence.
+1502702 ...Goodbye Lawrence.
 1502703 Blood medicine is waiting to be realized
 1502704 …
 1600000 ...Hehehe
@@ -347,7 +347,7 @@
 1600403 So... well I do look at them often but there's no point in talking to them right?
 1600404 Hehehehehe
 1600500 ...Hehehe
-1600501,Thank you. You're so kind big brother...
+1600501 Thank you. You're so kind big brother...
 1600502 …Hehehe…
 1600503 That's right brother do you know the story of the church workshop?
 1600504 Apparently the upper levels of Cathedral Ward are where the elderly members of the Healing Church live.
@@ -366,7 +366,7 @@
 1609104 That's right sister if you're a hunter how about we talk about the Holy Grail?
 1609110 Well my sister is a hunter so I'm sure it'll be fine.
 1609204 Well my sister is a hunter so I'm sure it'll be fine.
-1609301,Are you someone from outside sister?
+1609301 Are you someone from outside sister?
 1609401 Sis what do you say to that doll sometimes?
 1609501 Thank you. You're so kind Sis...
 1609503 That's right sister do you know the story of the church workshop?
@@ -382,13 +382,13 @@
 1700101 I'm Annaliese the queen of this castle Cainhurst.
 1700102 Heh heh...
 1700103 Head of the family i.e. enemy of the church
-1700104 But even after killing his entire clan and taking him prisoner under the Iron Man's orders,
+1700104 But even after killing his entire clan and taking him prisoner under the Iron Man's orders 
 1700105 What do you want from me?
 1700150 …You visitor… Moon-scented hunter
 1700151 I'm Annaliese the queen of this castle Cainhurst.
 1700152 Heh heh...
 1700153 Head of the family i.e. enemy of the church
-1700154 But even after killing his entire clan and taking him prisoner under the Iron Man's orders,
+1700154 But even after killing his entire clan and taking him prisoner under the Iron Man's orders 
 1700155 What do you want from me?
 1700200 My lord anything else?
 1700300 Oh… that’s…
@@ -397,14 +397,14 @@
 1700303 But I was tired of the idle nights.
 1700304 You will become a curse on our family and an enemy of the Church as a heretic.
 1700305 If you dare to wish for it
-1700306,Suck my tainted blood
+1700306 Suck my tainted blood
 1700350 Oh… that’s…
 1700351 So you're a heretic hunter...
 1700352 …
 1700353 But I was tired of the idle nights.
 1700354 You will become a curse on our family and an enemy of the Church as a heretic.
 1700355 If you dare to wish for it
-1700356,Suck my tainted blood
+1700356 Suck my tainted blood
 1700400 Yes.
 1700401 Now sip it.
 1700410 It is tainted blood. Therefore it is hot for you.
@@ -445,11 +445,11 @@
 1701300 …Let’s accept it gratefully.
 1701310 And a reward for you
 1701311 Now sip my blood without spilling it.
-1701320,(seductive laugh)
+1701320 (seductive laugh)
 1701350 …Let’s accept it gratefully.
 1701360 And a reward for you
 1701361 Now sip my blood without spilling it.
-1701370,(seductive laugh)
+1701370 (seductive laugh)
 1701400 Oh... that's a stroke of luck.
 1701401 I won't resist. Go ahead and try it.
 1701402 If this could come true for you it would be a great relief...
@@ -494,7 +494,7 @@
 1702400 (When I was hit / few screams as they were slashed Don't speak too loudly but try to keep your voice down.)
 1702500 My lord how sad.
 1702501 That alone won't be enough for my life to end...
-1702600,Sir that's enough.
+1702600 Sir that's enough.
 1702601 That alone won't be enough for my life to end...
 1702602 If it's too hard just stop...
 1702700 …Kneel down…
@@ -558,7 +558,7 @@
 1801102 I need blood crystals...
 1801200 Hehe... you smell...
 1801201 It's so rich... (exaggeratedly licks his lips)... I can almost taste it...
-1801202,Hey hurry give it to me quickly...!
+1801202 Hey hurry give it to me quickly...!
 1801300 Hehehehehe...
 1801301 (Exaggerated licking of the tongue)
 1801302 …
@@ -599,12 +599,12 @@
 1900100 Ok now your pledge is complete.
 1900101 So let's start with you and give you a blood transfusion... Don't worry there's nothing to worry about.
 1900102 Soon I'll forget all about my illness... like a bad dream...
-1900103,… Heehee heehee heeheehee…
+1900103 … Heehee heehee heeheehee…
 1900104 … Hehehehe…
 1900150 Ok now your pledge is complete.
 1900151 So let's start with you and give you a blood transfusion... Don't worry there's nothing to worry about.
 1900152 Soon I'll forget all about my illness... like a bad dream...
-1900153,… Heehee heehee heeheehee…
+1900153 … Heehee heehee heeheehee…
 1900154 … Hehehehe…
 1900200 …Oh stranger
 1900201 Welcome to the ancient city of Yharnam from afar.
@@ -615,12 +615,12 @@
 1900300 Ok now your pledge is complete.
 1900301 So let's start the transfusion... Don't worry there's nothing to be worried about.
 1900302 Soon I'll forget all about my illness... like a bad dream...
-1900303,… Heehee heehee heeheehee…
+1900303 … Heehee heehee heeheehee…
 1900304 … Hehehehe…
 1900350 Ok now your pledge is complete.
 1900351 So let's start the transfusion... Don't worry there's nothing to be worried about.
 1900352 Soon I'll forget all about my illness... like a bad dream...
-1900353,… Heehee heehee heeheehee…
+1900353 … Heehee heehee heeheehee…
 1900354 … Hehehehe…
 1900400 Ah... "pale blood" huh...
 1900401 … Hehehe
@@ -633,16 +633,16 @@
 1900500 Ok now your pledge is complete.
 1900501 So let's start the transfusion... Don't worry there's nothing to be worried about.
 1900502 Whatever happens... it's just a bad dream...
-1900503,… Heehee heehee heeheehee…
+1900503 … Heehee heehee heeheehee…
 1900504 … Hehehehe…
 1909000 … Ufufu ufufu ufufufufu…
 1909001 ...Oh you're lucky. This is special blood.
 1909002 Certainly this would be very effective for your illness.
-1909003,So let’s get started on creating the pledge…
+1909003 So let’s get started on creating the pledge…
 1909050 … Ufufu ufufu ufufufufu…
 1909051 ...Oh you're lucky. This is special blood.
 1909052 Certainly this would be very effective for your illness.
-1909053,So let’s get started on creating the pledge…
+1909053 So let’s get started on creating the pledge…
 1909100 ...Very well. The pledge is complete.
 1909101 So shall we start the transfusion? Don't worry.
 1909102 I'm sure my illness will clear up completely... just like a bad dream...
@@ -702,11 +702,11 @@
 2100055 If only in my dreams I could do that!
 2100056 here we go!
 2100100 Hahaha!
-2100101,Oh how wonderful! Even in my dreams I am a hunter!
+2100101 Oh how wonderful! Even in my dreams I am a hunter!
 2100102 But but
 2100103 The nightmare will continue and never end!
 2100150 Hahaha!
-2100151,Oh how wonderful! Even in my dreams I am a hunter!
+2100151 Oh how wonderful! Even in my dreams I am a hunter!
 2100152 But but
 2100153 The nightmare will continue and never end!
 2100200 Ah...
@@ -741,7 +741,7 @@
 2100401 Can't you hear our prayers?
 2100402 !
 2100403 But we won't give up on our dreams!
-2100404,Nothing can catch us or stop us!
+2100404 Nothing can catch us or stop us!
 2100405 (laughing maniacally)
 2100500 (There are several types of attack sounds. Eyaah Doryah etc.)
 2100600 (Several types of strange laughter and shouts when using magic. Ehyahya Keeey etc.)
@@ -768,7 +768,7 @@
 2109019 Uaaaaaaaaaaaaaaaaaaaahhhh!
 2109100 Oh oh my dear friend!
 2109101 Look into my eyes
-2109102,Let me see...
+2109102 Let me see...
 2109200 Oh that's terrible!
 2109201 My dear friend it's too late now
 2109202 There’s no need to be embarrassed…
@@ -776,7 +776,7 @@
 2109251 My dear friend it's too late now
 2109252 There’s no need to be embarrassed…
 2109300 …Look into my eyes…
-2109301,Let me see...
+2109301 Let me see...
 2109400 (When I was hit / few screams as they were slashed (e.g. being slashed shot with a shotgun etc.)
 2109500 (After being punched / After being slashed there were several incomprehensible roars. Oooooh! Woahhhh! etc.)
 2109600 (Death throes at the time of death
@@ -787,7 +787,7 @@
 2200004 Just like before just like always I'm waiting for it all to end
 2200005 ...But this time is abnormal. In fact the people who are locked up are starting to suffer.
 2200006 For a while now the screams of women and the moans of animals have only increased.
-2200007,Maybe Yharnam is finished... hee hee...
+2200007 Maybe Yharnam is finished... hee hee...
 2200008 But if you find a decent survivor
 2200009 I want you to tell me about this place "Odon Church."
 2200010 It's safe here. Incense is burning to ward off animals.
@@ -800,7 +800,7 @@
 2200054 Just like before just like always I'm waiting for it all to end
 2200055 ...But this time is abnormal. In fact the people who are locked up are starting to suffer.
 2200056 For a while now the screams of women and the moans of animals have only increased.
-2200057,Maybe Yharnam is finished... hee hee...
+2200057 Maybe Yharnam is finished... hee hee...
 2200058 But if you find a decent survivor
 2200059 I want you to tell me about this place "Odon Church."
 2200060 It's safe here. Incense is burning to ward off animals.
@@ -813,12 +813,12 @@
 2200200 ...Ah you're a hunter. I'm glad you're safe.
 2200201 It's safe here. Have a good rest.
 2200202 So if... you ever go out hunting again please remember my request.
-2200203,If there are any sane survivors they should flee to the Odon Church.
+2200203 If there are any sane survivors they should flee to the Odon Church.
 2200204 It's safe here... hee hee...
 2200250 ...Ah you're a hunter. I'm glad you're safe.
 2200251 It's safe here. Have a good rest.
 2200252 So if... you ever go out hunting again please remember my request.
-2200253,If there are any sane survivors they should flee to the Odon Church.
+2200253 If there are any sane survivors they should flee to the Odon Church.
 2200254 It's safe here... hee hee...
 2200300 Oh Hunter!
 2200301 Thank you. You were the one who told him about this place weren't you?
@@ -864,7 +864,7 @@
 2202201 That's the first time in my life that I've ever done that...
 2202202 Oh I'm so happy... heehee!
 2202203 Hehehehe...
-2200400,And if you find any decent survivors
+2200400 And if you find any decent survivors
 2200401 Tell them to flee to the Odon Church.
 2200402 Hehehe...
 2200500 Oh Hunter! I'm glad you're safe.
@@ -877,7 +877,7 @@
 2200507 Hehehehehehe.
 2200508 So recently I've been thinking that after this night ends maybe I'll be able to change a little bit.
 2200509 With that in mind it's not so hard to just be patient.
-2200510,…It's all thanks to you. Thank you.
+2200510 …It's all thanks to you. Thank you.
 2200550 Oh Hunter! I'm glad you're safe.
 2200551 The person you told me about here has come again.
 2200552 This place has become a haven for everyone. Thanks to you.
@@ -888,7 +888,7 @@
 2200557 Hehehehehehe.
 2200558 So recently I've been thinking that after this night ends maybe I'll be able to change a little bit.
 2200559 With that in mind it's not so hard to just be patient.
-2200560,…It's all thanks to you. Thank you.
+2200560 …It's all thanks to you. Thank you.
 2200600 Hey Hunter-san
 2200601 Once this night of hunting is over maybe we could become friends...?
 2200602 No I know I don't have the qualifications. But...
@@ -925,7 +925,7 @@
 2200857 Hehehehe...
 2200858 Hehehehehe!
 2200900 There are no sane survivors left...
-2200901,Yharnam is finished...
+2200901 Yharnam is finished...
 2200902 Hehehehe...
 2200903 Hehehehehe!
 2201000 Ah Hunter...
@@ -996,7 +996,7 @@
 2201376 …But because of me…my…
 2201377 Eek...
 2201330 Ah Hunter...
-2201331,That old woman you helped...
+2201331 That old woman you helped...
 2201332 He died... he was murdered...
 2201333 …Why…
 2201334 …Is it an animal? …Or is it someone from outside?
@@ -1004,7 +1004,7 @@
 2201336 …But because of me…my…
 2201337 Eek...
 2201380 Ah Hunter...
-2201381,That old woman you helped...
+2201381 That old woman you helped...
 2201382 He died... he was murdered...
 2201383 …Why…
 2201384 …Is it an animal? …Or is it someone from outside?
@@ -1147,7 +1147,7 @@
 2207302 No I don't even get to talk to people but
 2207303 I'm glad if someone was able to help
 2207310 Ah Hunter...
-2207311,That old woman you helped...
+2207311 That old woman you helped...
 2207312 He died... he was murdered...
 2207313 …Why…
 2207314 …Is it an animal? …Or is it someone from outside?
@@ -1189,13 +1189,13 @@
 2300060 So there you have it…
 2300061 I pray for success in your hunt.
 2300100 …You were safe. I'm glad.
-2300101,But... no matter how many times you come it doesn't change. The door won't open.
+2300101 But... no matter how many times you come it doesn't change. The door won't open.
 2300102 Of course I'll do what I can
 2300103 I hope it will be of some help to you
 2300110 So there you have it…
 2300111 I hope you are safe.
 2300150 …You were safe. I'm glad.
-2300151,But... no matter how many times you come it doesn't change. The door won't open.
+2300151 But... no matter how many times you come it doesn't change. The door won't open.
 2300152 Of course I'll do what I can
 2300153 I hope it will be of some help to you
 2300160 So there you have it…
@@ -1205,15 +1205,15 @@
 2300202 I'm sorry but please understand
 2300203 I pray for success in your hunt.
 2300300 …You were safe. I'm glad.
-2300301,But... no matter how many times you come it doesn't change. The door won't open.
+2300301 But... no matter how many times you come it doesn't change. The door won't open.
 2300302 I'm sorry but please understand
 2300303 I hope you are safe.
 2300350 …You were safe. I'm glad.
-2300351,But... no matter how many times you come it doesn't change. The door won't open.
+2300351 But... no matter how many times you come it doesn't change. The door won't open.
 2300352 I'm sorry but please understand
 2300353 I hope you are safe.
 2300400 …Ah you’re safe. I’m glad…
-2300401,But... no matter how many times you come it doesn't change. The door won't open.
+2300401 But... no matter how many times you come it doesn't change. The door won't open.
 2300402 Of course I'll do what I can
 2300403 I hope it will be of some help to you
 2300410 ...This night will be long but it won't end forever.
@@ -1223,7 +1223,7 @@
 2300414 It may be inappropriate but I'm kind of looking forward to it.
 2300415 …Please please stay safe…
 2300450 …Ah you’re safe. I’m glad…
-2300451,But... no matter how many times you come it doesn't change. The door won't open.
+2300451 But... no matter how many times you come it doesn't change. The door won't open.
 2300452 Of course I'll do what I can
 2300453 I hope it will be of some help to you
 2300460 ...This night will be long but it won't end forever.
@@ -1268,9 +1268,9 @@
 2400000 …Oh dear…
 2400001 I'm glad you're safe. I have a favor to ask of you.
 2400002 Are you going out to hunt animals now?
-2400003 So if you find someone somewhere who is not yet a beast,
+2400003 So if you find someone somewhere who is not yet a beast 
 2400004 Please tell me about this "Iosefka's Clinic"
-2400005,…If they were still human I would protect them as a medical professional. I could treat them.
+2400005 …If they were still human I would protect them as a medical professional. I could treat them.
 2400006 I want you to tell me that I no longer have to fear animals or disease.
 2400007 ...This night is going to be long. I want to do as much as I can not just stay cooped up.
 2400008 I'll thank you. It's not a bad idea for you is it?
@@ -1278,9 +1278,9 @@
 2400050 …Oh dear…
 2400051 I'm glad you're safe. I have a favor to ask of you.
 2400052 Are you going out to hunt animals now?
-2400053 So if you find someone somewhere who is not yet a beast,
+2400053 So if you find someone somewhere who is not yet a beast 
 2400054 Please tell me about this "Iosefka's Clinic"
-2400055,…If they were still human I would protect them as a medical professional. I could treat them.
+2400055 …If they were still human I would protect them as a medical professional. I could treat them.
 2400056 I want you to tell me that I no longer have to fear animals or disease.
 2400057 ...This night is going to be long. I want to do as much as I can not just stay cooped up.
 2400058 I'll thank you. It's not a bad idea for you is it?
@@ -1300,28 +1300,28 @@
 2400254 Please I beg of you...
 2400300 ...Oh you... you're safe. I'm glad.
 2400301 I rescued him just now. You told me didn't you?
-2400302,The treatment is going well and I'm feeling much better now. I'm so happy...
+2400302 The treatment is going well and I'm feeling much better now. I'm so happy...
 2400303 This is a thank you for the promise.
 2400310 Oh I'm glad you were there
 2400311 I look forward to your continued support...
 2400312 Hehehe...
 2400350 ...Oh you... you're safe. I'm glad.
 2400351 I rescued him just now. You told me didn't you?
-2400352,The treatment is going well and I'm feeling much better now. I'm so happy...
+2400352 The treatment is going well and I'm feeling much better now. I'm so happy...
 2400353 This is a thank you for the promise.
 2400360 Oh I'm glad you were there
 2400361 I look forward to your continued support...
 2400362 Hehehe...
 2400320 ...Oh you... you're safe. I'm glad.
 2400321 I rescued her just now. You told me didn't you?
-2400322,The treatment is going well and I'm feeling much better now. I'm so happy...
+2400322 The treatment is going well and I'm feeling much better now. I'm so happy...
 2400323 This is a thank you for the promise.
 2400330 Oh I'm glad you were there
 2400331 I look forward to your continued support...
 2400332 Hehehe...
 2400370 ...Oh you... you're safe. I'm glad.
 2400371 I rescued her just now. You told me didn't you?
-2400372,The treatment is going well and I'm feeling much better now. I'm so happy...
+2400372 The treatment is going well and I'm feeling much better now. I'm so happy...
 2400373 This is a thank you for the promise.
 2400380 Oh I'm glad you were there
 2400381 I look forward to your continued support...
@@ -1341,7 +1341,7 @@
 2400504 And then you help I save we'll get back to normal.
 2400505 If you don't want to turn back...
 2400506 But I wonder if a hunter's clinical trial is hard to come by...
-2400507,Uh-huh uh-huh uh-huh...
+2400507 Uh-huh uh-huh uh-huh...
 2400508 Uhuhuhuhuhu...
 2400550 ...Ah the scent of the moon...
 2400551 How did you get in?
@@ -1350,60 +1350,60 @@
 2400554 And then you help I save we'll get back to normal.
 2400555 If you don't want to turn back...
 2400556 But I wonder if a hunter's clinical trial is hard to come by...
-2400557,Uh-huh uh-huh uh-huh...
+2400557 Uh-huh uh-huh uh-huh...
 2400558 Uhuhuhuhuhu...
 2400510 ...Ah the scent of the moon...
 2400511 How did you get in?
 2400512 If you understand the significance of what you just saw please turn back.
 2400513 If you don't want to turn back...
 2400514 But I wonder if a hunter's clinical trial is hard to come by...
-2400515,Uh-huh uh-huh uh-huh...
+2400515 Uh-huh uh-huh uh-huh...
 2400516 Uhuhuhuhuhu...
 2400560 ...Ah the scent of the moon...
 2400561 How did you get in?
 2400562 If you understand the significance of what you just saw please turn back.
 2400563 If you don't want to turn back...
 2400564 But I wonder if a hunter's clinical trial is hard to come by...
-2400565,Uh-huh uh-huh uh-huh...
+2400565 Uh-huh uh-huh uh-huh...
 2400566 Uhuhuhuhuhu...
 2400600 ...Oh you... you're safe.
 2400601 There still aren't enough test subjects.
 2400602 There may not be many people who aren't beasts anymore but if there are please
 2400603 We must move beyond stupidity
 2400604 You know what? It's really meaningful.
-2400605,Uh-huh uh-huh uh-huh...
+2400605 Uh-huh uh-huh uh-huh...
 2400650 ...Oh you... you're safe.
 2400651 There still aren't enough test subjects.
 2400652 There may not be many people who aren't beasts anymore but if there are please
 2400653 We must move beyond stupidity
 2400654 You know what? It's really meaningful.
-2400655,Uh-huh uh-huh uh-huh...
+2400655 Uh-huh uh-huh uh-huh...
 2400700 ...Oh you... you're safe. I'm glad.
 2400701 I just accepted a patient for the trial. Now I'm going to try some old blood.
 2400702 Either way it will be a worthwhile clinical trial. Thanks to you.
 2400703 This is a thank you
 2400710 Specially made. Because now you're in the same boat.
 2400711 Isn't that right?
-2400712,Uh-huh uh-huh uh-huh...
+2400712 Uh-huh uh-huh uh-huh...
 2400750 ...Oh you... you're safe. I'm glad.
 2400751 I just accepted a patient for the trial. Now I'm going to try some old blood.
 2400752 Either way it will be a worthwhile clinical trial. Thanks to you.
 2400753 This is a thank you
 2400760 Specially made. Because now you're in the same boat.
 2400761 Isn't that right?
-2400762,Uh-huh uh-huh uh-huh...
+2400762 Uh-huh uh-huh uh-huh...
 2400800 There may not be many people who aren't beasts anymore but if there are please
-2400801,Uh-huh uh-huh uh-huh...
+2400801 Uh-huh uh-huh uh-huh...
 2400900 If there is anyone else who is not an animal please
 2400901 I'm counting on you
-2400902,Uh-huh uh-huh uh-huh...
+2400902 Uh-huh uh-huh uh-huh...
 2400950 If there is anyone else who is not an animal please
 2400951 I'm counting on you
-2400952,Uh-huh uh-huh uh-huh...
+2400952 Uh-huh uh-huh uh-huh...
 2401000 ...Oh that's gross...can you understand?
 2401001 I've finally come this far I can see it...
 2401002 I am different after all. I am not a beast.
-2401003,So... ah it feels so bad... I'm being chosen...
+2401003 So... ah it feels so bad... I'm being chosen...
 2401004 Do you understand? It's stirring in my head...
 2401005 I'm happy...
 2401006 Hehehehehehehe...
@@ -1436,7 +1436,7 @@
 2401352 There may not be anyone left in this town who isn't a beast...
 2401353 It can't be helped but oh what a shame...
 2401400 Hi…
-2401500,...What a disappointing man...
+2401500 ...What a disappointing man...
 2401501 I don't need you anymore
 2401502 Where should I go to die?
 2401510 ...What a disappointing woman...
@@ -1463,7 +1463,7 @@
 2402050 You fool who knows nothing...
 2402100 …Oh I'm looking forward to it.
 2402101 This is the first time we've ever had a hunter clinical trial.
-2402110,Uh-huh uh-huh uh-huh...
+2402110 Uh-huh uh-huh uh-huh...
 2402150 …Oh I'm looking forward to it.
 2402151 This is the first time we've ever had a hunter clinical trial.
 2402200 I'm not scared of anything...
@@ -1475,11 +1475,11 @@
 2409500 ...What a disappointing woman...
 2500000 …You…are a stranger.
 2500001 Outsiders hunting animals...it's probably not going to be a good thing.
-2500002,What's wrong am I the beast or are you the beast?
+2500002 What's wrong am I the beast or are you the beast?
 2500003 Get outta my house!
 2500050 …You…are a stranger.
 2500051 Outsiders hunting animals...it's probably not going to be a good thing.
-2500052,What's wrong am I the beast or are you the beast?
+2500052 What's wrong am I the beast or are you the beast?
 2500053 Get outta my house!
 2500100 ...You're so persistent...
 2500101 Those kind of people are always a mass of malice.
@@ -1507,9 +1507,9 @@
 2500453 Women if you're not young you're nothing but a nuisance
 2500454 Hahahaha
 2500500 ...And what lies have you a cowardly stranger told me?
-2500501,You want to trick me? Come on let me hear it.
+2500501 You want to trick me? Come on let me hear it.
 2500550 ...And what lies have you a cowardly stranger told me?
-2500551,You want to trick me? Come on let me hear it.
+2500551 You want to trick me? Come on let me hear it.
 2500600 …Hmph
 2500601 Too bad I'm smart. Who would believe such nonsense?
 2500602 That's a lie an ignorant outsider would come up with.
@@ -1541,7 +1541,7 @@
 2501100 …Ah so noisy.
 2501101 I'm short of blood I'm frustrated
 2501102 There's no use in lying
-2501103,Get out get out
+2501103 Get out get out
 2501104 Go away!
 2501105 2 Don't ever talk to me!
 2501200 …Ah shut up.
@@ -1569,7 +1569,7 @@
 2501404 I know what you mean. That guy is jealous of the Saintess.
 2501405 You probably know better than anyone else how filthy and rotten you are how everyone hates you
 2501406 Ah that's why women's jealousy is so scary. It's so frightening.
-2501407,Spread your legs you should just get out of here...
+2501407 Spread your legs you should just get out of here...
 2501500 …Hehe that’s fine.
 2501501 Of course a stranger is a stranger. There's no way he'll be saved in this town...
 2501502 ...But well I'll tell you one good thing.
@@ -1588,17 +1588,17 @@
 2501608 There's no way something like that could have lived a normal life...
 2501700 …What?
 2501701 After all you're just a stranger so can't you even apologize?
-2501702,Get out get out
+2501702 Get out get out
 2501703 Go away!
 2501704 2 Don't ever talk to me!
 2501750 …What?
 2501751 After all you're just a stranger so can't you even apologize?
-2501752,Get out get out
+2501752 Get out get out
 2501753 Go away!
 2501754 2 Don't ever talk to me!
 2501800 …Oh don’t lie…
 2501801 I know it all...
-2501802,Even without education I I...
+2501802 Even without education I I...
 2501803 There is a special wisdom...
 2501900 (Pathetic screams when attacked. Hiii Hie etc. Several types.)
 2502000 Uhehehehehe...
@@ -1634,7 +1634,7 @@
 2509250 ...It's you
 2509251 Did you bring blood?
 2509210 ...It's you
-2509300,Oh oh oh. Right right.
+2509300 Oh oh oh. Right right.
 2509301 ...So is there anything you'd like to ask?
 2509400 "Wise Man's Blood"? ... Hmm I don't know. I don't know anything about it.
 2509401 Since I don’t know it’s probably just a lie or…
@@ -1691,7 +1691,7 @@
 2600055 Especially to an unpleasant outsider.
 2600056 So what happened?
 2600057 A hunter? Don't let a beast eat you.
-2600100,…Just disappear somewhere quickly.
+2600100 …Just disappear somewhere quickly.
 2600101 Oh damn it damn it
 2600200 ...Oh you're a hunter aren't you?
 2600201 So don't you know somewhere safe?
@@ -1724,12 +1724,12 @@
 2600400 What is that?
 2600401 You're useless. Or maybe you just don't need an old hag?
 2600402 Ah that's what outsiders are like.
-2600403,You probably think we're crazy or something!
+2600403 You probably think we're crazy or something!
 2600404 Just disappear! I know!
 2600450 What is that?
 2600451 You're useless. Or maybe you just don't need an old hag?
 2600452 Ah that's what outsiders are like.
-2600453,You probably think we're crazy or something!
+2600453 You probably think we're crazy or something!
 2600454 Just disappear! I know!
 2600500 ...I don't need you anymore.
 2600501 So what happened?
@@ -1749,13 +1749,13 @@
 2600801 I know that!
 2600900 …Oh how did it end up like this…
 2600901 Hehehehehe...
-2600902,Yes my dear. I guess you just don't have enough blood...
+2600902 Yes my dear. I guess you just don't have enough blood...
 2600903 But I can't see the doctor
 2600904 I wonder what to do...
 2600905 Hehehehehe...
 2600950 …Oh how did it end up like this…
 2600951 Hehehehehe...
-2600952,Yes my dear. I guess you just don't have enough blood...
+2600952 Yes my dear. I guess you just don't have enough blood...
 2600953 But I can't see the doctor
 2600954 I wonder what to do...
 2600955 Hehehehehe...
@@ -1793,13 +1793,13 @@
 2601602 That was quick my dear.
 2601603 Are you okay?
 2601604 If there's something painful...
-2601605,Mom will sort it out somehow...
+2601605 Mom will sort it out somehow...
 2601650 … Hehehe hehehehe…
 2601651 ...Ah welcome home.
 2601652 That was quick my dear.
 2601653 Are you okay?
 2601654 If there's something painful...
-2601655,Mom will sort it out somehow...
+2601655 Mom will sort it out somehow...
 2601700 What's wrong my dear?
 2601701 Is there something still bothering you?
 2601702 Hehehehehe...
@@ -1849,12 +1849,12 @@
 2602300 Oh is that so? That's good to hear.
 2602301 Because you're excellent
 2602302 But if something is bothering you don't hold it in say it.
-2602303,You've always been like that since you were little.
+2602303 You've always been like that since you were little.
 2602304 Hehehehehe...
 2602350 Oh is that so? That's good to hear.
 2602351 Because you're excellent
 2602352 But if something is bothering you don't hold it in say it.
-2602353,You've always been like that since you were little.
+2602353 You've always been like that since you were little.
 2602354 Hehehehehe...
 2602400 (Screams when attacked. Several types.)
 2602500 Hii
@@ -1897,11 +1897,11 @@
 2700064 I was stuck here scared and shaking. Thank goodness.
 2700100 Wow is that so? Thank you!
 2700101 I'll head there somehow too. I guess it's a little scary being alone...
-2700102,Ah but I'm glad there's hope...thanks to you
+2700102 Ah but I'm glad there's hope...thanks to you
 2700103 Please keep this as a token of my gratitude.
 2700150 Wow is that so? Thank you!
 2700151 I'll head there somehow too. I guess it's a little scary being alone...
-2700152,Ah but I'm glad there's hope...thanks to you
+2700152 Ah but I'm glad there's hope...thanks to you
 2700153 Please keep this as a token of my gratitude.
 2700200 I see... That's unfortunate. But it can't be helped.
 2700201 Is something terrible going to happen to this town again?
@@ -1921,11 +1921,11 @@
 2700600 Yes I'll share it with you.
 2700601 It's my treasured possession. It's a fine piece...
 2700700 Ah you...
-2700701,I'm really thankful to you...
+2700701 I'm really thankful to you...
 2700702 Such an easy place to live...
 2700703 Kkkkkkk...
 2700710 Ah you...
-2700711,I'm really thankful to you...
+2700711 I'm really thankful to you...
 2700800 Oh it's you. That one's gone now.
 2700801 Out of stock. Sorry.
 2700802 But yeah... if I get the chance I'll get it...
@@ -1950,7 +1950,7 @@
 2701100 (Battle cries. "Eryah!" "Uryah!" etc. There are several types.)
 2701101 (Damage sounds for battle. "Guu!" "Tsu!" etc. Several types.)
 2701102 (The roars of battle beasts. "Grrr!" "Gaaah!" etc. Several types.)
-2701103,(Roars of battle beasts. "GROOOOOOOOOO!" "UOOOOOOON!" etc. Several types.)
+2701103 (Roars of battle beasts. "GROOOOOOOOOO!" "UOOOOOOON!" etc. Several types.)
 2701104 (Damage sounds for battle beasts. "Guuuuh!" "Guwaah!" etc.)
 2701105 (The death throes of a combat beast. It roars loudly and dies. There are several types.)
 2701200 (Several pathetic screams when attacked. Acted.)
@@ -2000,7 +2000,7 @@
 2800301 Well then let's meet there next time.
 2800302 Ufufutsu
 2800400 Yeah... that's a shame
-2800401,But if you find a safe place please let me know. Please.
+2800401 But if you find a safe place please let me know. Please.
 2800402 There's no one else here. You're the only one I can rely on.
 2800403 See you understand right?
 2800500 Oh dear you came.
@@ -2021,7 +2021,7 @@
 2800701 Well yeah I get it.
 2800702 …
 2800703 But then I'll thank you after dawn
-2800704 Unless you don't mind that,
+2800704 Unless you don't mind that 
 2800705 Ufufutsu
 2800800 …Right. Thank goodness.
 2800801 Well then come over here.
@@ -2031,7 +2031,7 @@
 2800901 Sorry. Not right away.
 2800902 I have low blood count you know?
 2801000 Oh dear...
-2801001,Do you want my blood again?
+2801001 Do you want my blood again?
 2801100 Right. I'm glad.
 2801101 Well then come over here.
 2801102 I'm glad you asked me
@@ -2042,7 +2042,7 @@
 2801301 Sorry. I'm not sure I can be of any help to you right now.
 2801302 Or maybe... you've changed your mind?
 2801400 If so I'll thank you after dawn
-2801401 Unless you don't mind that,
+2801401 Unless you don't mind that 
 2801402 Ufufutsu
 2802000 Oh you smell strange...
 2802001 But it was good. I hate the smell of animals and blood.
@@ -2059,7 +2059,7 @@
 2802300 Thank you my love. I appreciate it.
 2802301 Well then let's meet there next time.
 2802400 Yeah... that's a shame
-2802401,But if you find a safe place please let me know. Please.
+2802401 But if you find a safe place please let me know. Please.
 2802402 There's no one else here. You're the only one I can rely on.
 2802403 See you understand right?
 2802500 Oh dear you came.
@@ -2089,7 +2089,7 @@
 2802901 Sorry. Not right away.
 2802902 I have low blood count you know?
 2803000 Oh dear...
-2803001,Do you want my blood again?
+2803001 Do you want my blood again?
 2803100 Right. I'm glad.
 2803101 Well then come over here.
 2803102 I'm glad if it helps you
@@ -2099,7 +2099,7 @@
 2803301 Sorry. I don't think I'm any good for you.
 2803302 Or maybe... you've changed your mind?
 2803400 Yeah right…
-2803401,I'm sorry. I've asked so many strange questions.
+2803401 I'm sorry. I've asked so many strange questions.
 2803402 I'm so grateful to you...
 2803500 Oh dear...
 2803501 Is the whole city dangerous now?
@@ -2158,7 +2158,7 @@
 2804200 How happy I am...
 2804201 Uh-huh uh-huh
 2804202 Uhuhuhuhu...
-2804300,(Screams made when damage is received. There are several types such as "Ahh!" "Uah!" and "Kyaah!")
+2804300 (Screams made when damage is received. There are several types such as "Ahh!" "Uah!" and "Kyaah!")
 2804400 (The pitiful screams of death. "Aaah..." "No way..." and many other types.)
 2804500 What did I do?
 2900000 …Ah you’re the beast hunter.
@@ -2194,7 +2194,7 @@
 2900110 It's hunting night. Or maybe it's an opportunity...
 2900200 Across the valley from the city of Yharnam on the eastern side there is a town called the Cathedral Ward...
 2900201 At its deepest depths lies an old cathedral where the source of blood is said to be.
-2900202 "Pale blood/Paleblood I don't know what that is,
+2900202 "Pale blood/Paleblood I don't know what that is 
 2900203 Whatever it is if it's about special blood that might be a clue.
 2900204 Cough cough
 2900300 I see…
@@ -2211,7 +2211,7 @@
 2900401 Across the bridge on the south side of the city there should have been a sewer bridge to the Cathedral District.
 2900402 Normally this is not a place where outsiders would enter.
 2900403 If the bridge gate is closed that's understandable...
-2900500,"Bilgenworth" you say?
+2900500 "Bilgenworth" you say?
 2900501 Hmm... sorry I've never heard of it
 2900502 It is no longer something that outsiders can know...
 2900503 Cough cough
@@ -2230,7 +2230,7 @@
 2900713 I've survived this long even though I depended on dubious blood.
 2900714 Enough already. I'm actually grateful that I'm not infected with animal diseases.
 2900715 At least I can die as a human...
-2900800,...Ah you don't have to worry about me anymore.
+2900800 ...Ah you don't have to worry about me anymore.
 2900801 Cough cough cough cough
 2900900 Ugh... ugh...
 2900901 Cough cough cough cough
@@ -2262,7 +2262,7 @@
 2901201 …Stop it…I’m not…
 2901202 Don't come... Don't come...
 2901203 …I don’t like blood…
-2901204,… I don’t like it…
+2901204 … I don’t like it…
 2901300 Huh!
 2901301 What's wrong?
 2901302 Cough cough
@@ -2292,7 +2292,7 @@
 3000103 So so
 3000104 When you find my mother please give her this music box.
 3000110 It's my dad's favorite song it brings back memories
-3000111,Even if you've forgotten about us this song will remind you
+3000111 Even if you've forgotten about us this song will remind you
 3000112 …But still forgetting about it? What a clumsy mother you are.
 3000200 …got it
 3000201 Sorry Beast Hunter thanks for talking to me.
@@ -2320,12 +2320,12 @@
 3000701 But can I stay here forever?
 3000702 Maybe Mom and Dad can't go home either.
 3000703 If so should I go and pick you up?
-3000704,Hey beast hunter what do you think?
+3000704 Hey beast hunter what do you think?
 3000750 …Yeah I get it. I can wait.
 3000751 But can I stay here forever?
 3000752 Maybe Mom and Dad can't go home either.
 3000753 If so should I go and pick you up?
-3000754,Hey beast hunter what do you think?
+3000754 Hey beast hunter what do you think?
 3000800 Yeah I get it!
 3000801 Thank you Beast Hunter
 3000802 I love you next to my mom dad and grandpa.
@@ -2368,14 +2368,14 @@
 3100002 The people who rose up to hunt are now all beasts
 3100003 …Don't hesitate
 3100004 If you see it it's a beast
-3100005,…If they don't they will eventually become beasts...
+3100005 …If they don't they will eventually become beasts...
 3100006 Hahaha
 3100050 ...You're a hunter.
 3100051 Oh this time is not normal
 3100052 The people who rose up to hunt are now all beasts
 3100053 …Don't hesitate
 3100054 If you see it it's a beast
-3100055,…If they don't they will eventually become beasts...
+3100055 …If they don't they will eventually become beasts...
 3100056 Hahaha
 3100100 …Not just animals…
 3100101 It's going to be an unbearable hunt...
@@ -2398,7 +2398,7 @@
 3100500 (Battle cries. "Haa!" "Douryaa!" etc. There are several types.)
 3100501 (Damage sounds for battle. "Guu!" "Tsu!" etc. Several types.)
 3100502 (The roars of battle beasts. "Grrr!" "Gaaah!" etc. Several types.)
-3100503,(Roars of battle beasts. "GROOOOOOOOOO!" "UOOOOOOON!" etc. Several types.)
+3100503 (Roars of battle beasts. "GROOOOOOOOOO!" "UOOOOOOON!" etc. Several types.)
 3100504 (Damage sounds for battle beasts. "Guuuuh!" "Guwaah!" etc.)
 3100505 (The death throes of a combat beast. It roars loudly and dies. There are several types.)
 3100510 Woohooooo!
@@ -2408,7 +2408,7 @@
 3109003 Woohoo...
 3109100 Smelly blood...
 3109101 The smell is irresistible...
-3109102,It makes me vomit...
+3109102 It makes me vomit...
 3109103 Woohoo...
 3109200 Woohoo!
 3109201 Oughhhhhh!
@@ -2433,12 +2433,12 @@
 3200201 …You will save me right?
 3200202 Ah thank you.
 3200203 I don't have words to thank you...
-3200204,Please take this.
+3200204 Please take this.
 3200250 …Ah you… of the Medical Church…
 3200251 …You will save me right?
 3200252 Ah thank you.
 3200253 I don't have words to thank you...
-3200254,Please take this.
+3200254 Please take this.
 3200210 If you're a church member this might be helpful to you.
 3200211 Oh thank you. God
 3200260 If you're a church member this might be helpful to you.
@@ -2519,7 +2519,7 @@
 3200975 If you want a secular body...
 3201000 Understood
 3201001 Please come here.
-3201002,Now... a blood donation...
+3201002 Now... a blood donation...
 3201100 Hunter-sama please give me a little more time.
 3201101 Others need charity too
 3201150 Hunter-sama please give me a little more time.
@@ -2556,12 +2556,12 @@
 3201951 Would you like to give some blood?
 3201952 I want to help you
 3202000 Ah Hunter-sama. Please come back safely again...
-3202001,I'll be waiting for you... Hehehehe...
+3202001 I'll be waiting for you... Hehehehe...
 3202050 Ah Hunter-sama. Please come back safely again...
-3202051,I'll be waiting for you... Hehehehe...
+3202051 I'll be waiting for you... Hehehehe...
 3202100 Uhh... uhh...
 3202101 Uhuhuhu...
-3202200,(Screams made when damage is received. There are several types such as "Ahh!" "Uah!" and "Kyaah!")
+3202200 (Screams made when damage is received. There are several types such as "Ahh!" "Uah!" and "Kyaah!")
 3202300 (Pitiful screams when dying. "Aaahhh..." "Oh my God..." and several other types.)
 3202400 What did I…
 3202450 What did I…
@@ -2594,7 +2594,7 @@
 3300150 ...You're a good hunter.
 3300151 He is skilled at hunting ruthless and blood-drunk. He is a good hunter.
 3300160 That is why I must hunt you down!
-3300200,Do you still dream my lord?
+3300200 Do you still dream my lord?
 3300201 If so you should reconsider that.
 3300300 Remember my lord you are not hunting any beasts.
 3300400 ...Oh my lord...where did you come from?
@@ -2618,7 +2618,7 @@
 3300504 You are not hunting animals. That is... a human.
 3300505 You too will remember someday...
 3300506 …Now go away.
-3300507,This is a farewell gift for my junior. In any case I don't need it anymore.
+3300507 This is a farewell gift for my junior. In any case I don't need it anymore.
 3300600 What's wrong? A hunter needs no repetition.
 3300601 Come on go already.
 3300602 Dreaming is for one night. Don't regret it.
@@ -2640,11 +2640,11 @@
 3300950 …Your Excellency are you drunk with blood or madness?
 3300951 The weak-hearted should not be hunters.
 3300952 Let me hunt!
-3301000,Do you still dream my lord?
+3301000 Do you still dream my lord?
 3301001 …You can come as many times as you like. Each time I'll reduce the pain of death.
 3301010 Even animals will eventually learn pain
 3301100 ...You... you are the beast...
-3301101,You should realize this sooner. You're already going crazy...
+3301101 You should realize this sooner. You're already going crazy...
 3301200 (The sound made when attacking. A saw-tooth hatchet. There are several types such as "Humph!" "Haah!" and "Kieee!".)
 3301300 (The sound made when damage is received. There are several types such as "Kuh" "Guh" and "Tsssh!")
 3301400 (Death throes upon death. There are several types such as "Giiiiiiiiiiii!" and "Ugyaaaaah!")
@@ -2678,7 +2678,7 @@
 3400053 Now I follow the teachings of Master Logarius and hunt down the corrupted bloodline.
 3400054 What do you think? Although our targets are different we are both hunters.
 3400055 What do you mean by cooperating and exchanging information from now on?
-3400100,Oh! Well then thank you very much.
+3400100 Oh! Well then thank you very much.
 3400105 This is a sign of familiarity.
 3400110 Hunting animals is a noble profession. May the blessings of blood be upon you.
 3400120 Oh you were safe.
@@ -2699,7 +2699,7 @@
 3400600 As you know the Medical Church is the bearer of blood salvation.
 3400601 However a hunter like me doesn't know much about the inner workings of the church...
 3400602 I have heard that the blood of salvation and its source the Eucharist is enshrined in the Cathedral.
-3400603,The upper levels of Cathedral Ward are also home to the leaders of the old church.
+3400603 The upper levels of Cathedral Ward are also home to the leaders of the old church.
 3400604 If you are seeking blood salvation and are forgiven I think it would be a good idea to visit.
 3400700 Byrgenwerth is an old school
 3400701 Hunters know that the Graveyard of the Gods lies deep beneath Yharnam.
@@ -2710,7 +2710,7 @@
 3400706 …And Byrgenwerth is off-limits to the Healing Church.
 3400707 It is unclear how many of these former students are still alive.
 3400708 The gatekeepers will not open the gate unless you give them the password that only they know.
-3400800,…The old town was once a place ravaged by animal disease and abandoned.
+3400800 …The old town was once a place ravaged by animal disease and abandoned.
 3400801 It has been sealed off ever since with no traffic and only the roars of beasts being heard.
 3400802 It is said that one of the Holy Grails that opens the Graveyard of the Gods remains in that place.
 3400803 The Holy Grail in the Old Town has long been one of the Church's aims...
@@ -2722,7 +2722,7 @@
 3400904 And so a non-human impure bloodline was born.
 3400905 …Bloodline people are an unforgivable presence that taints and infringes on the blood salvation of the Medical Church.
 3400906 The family the head of the family is still alive today.
-3400907,That's why I'm searching to carry on my master's wishes.
+3400907 That's why I'm searching to carry on my master's wishes.
 3400908 On the road to Cainhurst...
 3401000 Master Logarius once led an execution squad to cleanse the bloodline at Cainhurst Castle.
 3401001 However all of his wishes were unfulfilled and so he became a martyr to serve as a weight of salvation.
@@ -2735,12 +2735,12 @@
 3401103 I'll be out soon. Before that I want to give you a token of my appreciation.
 3401110 …Ah perhaps this is also my master's will…
 3401111 Thank you for the protection of blood
-3401112,Let's keep this city clean together...
+3401112 Let's keep this city clean together...
 3401200 Until next time. It was a fun conversation.
 3401201 May the blessings of blood be upon you.
 3401300 It was nice meeting you. Goodbye.
 3401301 May the blessings of blood be upon you.
-3401302,Let's keep this city clean together...
+3401302 Let's keep this city clean together...
 3401400 Behold Master! I have done it I have done it!
 3401401 I crushed and crushed and crushed this filthy woman turning her into a pink lump of flesh!
 3401402 How about that you whore!
@@ -2751,7 +2751,7 @@
 3401500 (laughing tiredly)
 3401501 …Oh it was you!
 3401502 Look! Thanks to you I finally did it!
-3401503,How about that? Isn't that wonderful? Now we can canonize our master as a sainted martyr!
+3401503 How about that? Isn't that wonderful? Now we can canonize our master as a sainted martyr!
 3401504 Haha hahaha
 3401505 I did it!!
 3401506 Hahahahahaha!
@@ -2782,7 +2782,7 @@
 3402120 How embarrassing!
 3402121 May your reward be!
 3402130 Blood!
-3402131,There's blood coming out!
+3402131 There's blood coming out!
 3402150 Whore!
 3402151 Dirty whore!
 3402160 Fool!
@@ -2790,7 +2790,7 @@
 3402170 How embarrassing!
 3402171 May your reward be!
 3402180 Blood!
-3402181,There's blood coming out!
+3402181 There's blood coming out!
 3402200 (Death throes upon death. There are several types such as "Giiiiiiiiiiii!" and "Ugyaaaaah!")
 3402300 You... you'll regret it...
 3402310 You... you'll regret it...
@@ -2827,10 +2827,10 @@
 3500151 What's wrong? Are you afraid of the hunter or the beast?
 3500152 Hehe
 3500153 Oh well. What difference does a fearless hunter make to a beast?
-3500200,What's up with you? You're so persistent.
+3500200 What's up with you? You're so persistent.
 3500201 No matter how scary it may be you are a hunter.
 3500202 I have no choice but to hunt the beast...
-3500250,What's up with you? You're so persistent.
+3500250 What's up with you? You're so persistent.
 3500251 No matter how scary it may be you are a hunter.
 3500252 I have no choice but to hunt the beast...
 3500300 Oh it's you
@@ -2861,7 +2861,7 @@
 3500557 You are a hunter. You have to hunt the beast.
 3500558 You can leave the hunter-hunting to me...
 3500559 Hehehehehe
-3500600,Haa... haa...
+3500600 Haa... haa...
 3500601 ...You're being an unnecessary help...
 3500602 But hey I'm grateful.
 3500603 I'm glad we're both alive. You do it too.
@@ -2872,7 +2872,7 @@
 3500608 You are a hunter. You have to hunt the beast.
 3500609 You can leave the hunter-hunting to me...
 3500610 Hehehehehe
-3500650,Haa... haa...
+3500650 Haa... haa...
 3500651 ...You're being an unnecessary help...
 3500652 But hey I'm grateful.
 3500653 I'm glad we're both alive. You do it too.
@@ -2896,7 +2896,7 @@
 3500900 ...From here on out my prey is
 3500901 You go back. Don't lay hands on me...
 3501000 ...You should listen to what the elderly have to say...
-3501001,Well it's true that you helped me.
+3501001 Well it's true that you helped me.
 3501002 …But maybe it’s time for me to move on too…
 3501003 Lately I've been reminiscing a lot about the past...
 3501004 …
@@ -2908,7 +2908,7 @@
 3501013 Sorry but I'm going to get some sleep...
 3501014 Just a little bit...
 3501050 ...You should listen to what the elderly have to say...
-3501051,Well it's true that you helped me.
+3501051 Well it's true that you helped me.
 3501052 …But maybe it’s time for me to move on too…
 3501053 Lately I've been reminiscing a lot about the past...
 3501054 …
@@ -2940,7 +2940,7 @@
 3501354 That's my job...
 3501355 Hehehehehe
 3501356 Kukukukukuku
-3501400,(The sound of an attack. A large knife. "Humph!" "Haah!" "Kieee!" and several other types.)
+3501400 (The sound of an attack. A large knife. "Humph!" "Haah!" "Kieee!" and several other types.)
 3501500 (The sound made when damage is received. There are several types such as "Kuh" "Guh" and "Tsssh!")
 3501600 (Death throes upon death. There are several types such as "Giiiiiiiiiiii!" and "Ugyaaaaah!")
 3501700 How embarrassing you drunk.
@@ -2982,10 +2982,10 @@
 3502100 ...Ahh... you guys...
 3502101 Death to you hunters!
 3502102 (Laughing before death)
-3502200,All hunters get drunk on the hunt...
+3502200 All hunters get drunk on the hunt...
 3502201 Hehehehehe
 3600000 Get the Holy Blood
-3600001 If you desire blessings and pray well,
+3600001 If you desire blessings and pray well 
 3600002 Communion is not given
 3600003 Communion is not given
 3600004 Secret Holy Blood
@@ -3006,14 +3006,14 @@
 3700202 Come on go away go away!
 3700300 …I don’t know why the hunter would know the password but I’ll give you a warning.
 3700301 Beyond the city walls and the forest is your destination Byrgenwerth.
-3700302,However,
+3700302 However 
 3700303 There is no need for something new. What is unknown is best left unknown.
 3700304 The old school is no longer that kind of place.
 3700305 No visitors returned. At least not in a normal way.
 3700306 … Something to keep in mind…
 3700350 …I don’t know why the hunter would know the password but I’ll give you a warning.
 3700351 Beyond the city walls and the forest is your destination Byrgenwerth.
-3700352,However,
+3700352 However 
 3700353 There is no need for something new. What is unknown is best left unknown.
 3700354 The old school is no longer that kind of place.
 3700355 No visitors returned. At least not in a normal way.
@@ -3053,7 +3053,7 @@
 3701000 (Death throes upon death. There are several types such as "Giiiiiiiiiiii!" and "Ugyaaaaah!")
 3701100 …Ohhhhhh…
 3701101 …I will do my duty…
-3701102,…I'm sorry Professor Willem…
+3701102 …I'm sorry Professor Willem…
 3800000 Professor Willem I came to say goodbye.
 3800001 …You remain unchanged and stubborn.
 3800002 But I won't forget the warning
@@ -3076,7 +3076,7 @@
 3900002 …But unfortunately
 3900003 The nights are long the animals multiply and the hunt never ends.
 3900004 Soon you too will die and rot or drown in blood.
-3900005,It's horrible and sad.
+3900005 It's horrible and sad.
 3900006 So I'll just tell you
 3900007 Visit the hidden ancient church to the right of the cathedral
 3900008 ...It's a mysterious thing and it will surely help you hunt.
@@ -3086,7 +3086,7 @@
 3900013 …But unfortunately
 3900014 The nights are long the animals multiply and the hunt never ends.
 3900015 Soon you too will die and rot or drown in blood.
-3900016,It's horrible and sad.
+3900016 It's horrible and sad.
 3900017 So I'll just tell you
 3900018 Visit the hidden ancient church to the right of the cathedral
 3900019 ...It's a mysterious thing and it will surely help you hunt.
@@ -3096,7 +3096,7 @@
 3900024 …But unfortunately
 3900025 The nights are long the animals multiply and the hunt never ends.
 3900026 Soon you too will die and rot or drown in blood.
-3900027,It's horrible and sad.
+3900027 It's horrible and sad.
 3900028 So I'll just tell you
 3900029 Visit the hidden ancient church to the right of the cathedral
 3900030 ...It's a mysterious thing and it will surely help you hunt.
@@ -3106,7 +3106,7 @@
 3900052 …But unfortunately
 3900053 The nights are long the animals multiply and the hunt never ends.
 3900054 Soon you too will die and rot or drown in blood.
-3900055,It's horrible and sad.
+3900055 It's horrible and sad.
 3900056 So I'll just tell you
 3900057 Visit the hidden ancient church to the right of the cathedral
 3900058 ...It's a mysterious thing and it will surely help you hunt.
@@ -3116,7 +3116,7 @@
 3900063 …But unfortunately
 3900064 The nights are long the animals multiply and the hunt never ends.
 3900065 Soon you too will die and rot or drown in blood.
-3900066,It's horrible and sad.
+3900066 It's horrible and sad.
 3900067 So I'll just tell you
 3900068 Visit the hidden ancient church to the right of the cathedral
 3900069 ...It's a mysterious thing and it will surely help you hunt.
@@ -3126,7 +3126,7 @@
 3900074 …But unfortunately
 3900075 The nights are long the animals multiply and the hunt never ends.
 3900076 Soon you too will die and rot or drown in blood.
-3900077,It's horrible and sad.
+3900077 It's horrible and sad.
 3900078 So I'll just tell you
 3900079 Visit the hidden ancient church to the right of the cathedral
 3900080 ...It's a mysterious thing and it will surely help you hunt.
@@ -3171,16 +3171,16 @@
 3900501 See a shortcut.
 3900502 Let me kindly help you.
 3900503 Oink so hard...
-3900600,Oooohhhhh!
+3900600 Oooohhhhh!
 3900601 Don't be so whiny you lucky one!
 3900602 Come on! The mystery you desire will come!
 3900603 Woo hoo! Woo hoo!
-3900604,Oooohhhhh!
-3900650,Oooohhhhh!
+3900604 Oooohhhhh!
+3900650 Oooohhhhh!
 3900651 Don't be so whiny you lucky one!
 3900652 Come on! The mystery you desire will come!
 3900653 Woo hoo! Woo hoo!
-3900654,Oooohhhhh!
+3900654 Oooohhhhh!
 3900700 ...Huh?
 3900701 Why why are you here?
 3900702 You're the one who brought Amendoz...
@@ -3215,12 +3215,12 @@
 3901100 …Well okay.
 3901101 The details don't matter. You're my friend now.
 3901102 As proof of that I present this to you.
-3901110,Hmm? Wondering? But friends... always come across each other don't they?
+3901110 Hmm? Wondering? But friends... always come across each other don't they?
 3901111 Oink so hard...
 3901150 …Well okay.
 3901151 The details don't matter. You're my friend now.
 3901152 As proof of that I present this to you.
-3901160,Hmm? Wondering? But friends... always come across each other don't they?
+3901160 Hmm? Wondering? But friends... always come across each other don't they?
 3901161 Oink so hard...
 3901200 …Oh it's you.
 3901201 Sorry I'm just thinking about something.
@@ -3259,11 +3259,11 @@
 3901551 What a strange coincidence but that's what makes us friends
 3901552 That's perfect. I think I can help you.
 3901553 Oink so hard...
-3901600,Well goodbye then.
+3901600 Well goodbye then.
 3901601 If we're lucky let's meet again somewhere.
 3901602 Farewell my friend.
 3901603 Oink so hard...
-3901650,Well goodbye then.
+3901650 Well goodbye then.
 3901651 If we're lucky let's meet again somewhere.
 3901652 Farewell my friend.
 3901653 Oink so hard...
@@ -3309,7 +3309,7 @@
 4200300 Ah how lovely...
 4200301 Uh-huh uh-huh-huh.
 4200400 …I see. I understand.
-4200401,But if you find out anything could you let me know?
+4200401 But if you find out anything could you let me know?
 4200402 A little girl with a big white ribbon
 4200403 …She’s my precious little sister…
 4200500 …Oh what's wrong?
@@ -3327,7 +3327,7 @@
 4300203 This epidemic is crazy. It's never been this bad before.
 4300204 How many people have been infected?
 4300205 …Maybe it's time to start relying on outsiders like you.
-4300206,I'll give this to you so you can receive help as a hunter.
+4300206 I'll give this to you so you can receive help as a hunter.
 4300207 …I’m sorry this is our problem…
 4300300 …Let me give you a word of advice.
 4300301 You want to go to East Town?
@@ -3341,7 +3341,7 @@
 4300309 I guess it can't be helped since that happened...
 4300400 …There's no end to it
 4300401 Everyone everyone is turning into a beast. How many people do I have to kill?
-4300402,It's driving me crazy...
+4300402 It's driving me crazy...
 4300403 Ah I wonder if that child is safe...
 4300404 …Stay safe…please…
 4300500 …Ahh ahh…
@@ -3361,7 +3361,7 @@
 4400001 Wow yeah wow!
 4400002 It's the end for this town. It's finally time for revenge.
 4400003 This is retribution for burning Valley Town burning the patients burning my wife and children and burning the beasts!
-4400004,Oh joy this is the curse of the Holy Grail!
+4400004 Oh joy this is the curse of the Holy Grail!
 4400005 Gyahahahaha wow
 4400100 Wow yeah you still want to listen?
 4400101 I see the fire I hear the burning I smell the meat roasting.
@@ -3379,7 +3379,7 @@
 4400301 The white hollow grave keeper howls in a squishy manner.
 4400302 Thou shalt not disturb the tomb of the Holy Grail. Thou shalt not disturb the tomb of the Holy Grail.
 4400303 Blood relatives do not seek blood.
-4400304,Thou shalt not seek blood
+4400304 Thou shalt not seek blood
 4500000 Oh good. You're awake aren't you? But don't push yourself just yet.
 4500001 From treatment 1 You've been asleep for months your body is still not used to it right?
 4500002 And tonight is another night of hunting.
@@ -3391,7 +3391,7 @@
 4500200 Oh poor thing. But I'm in trouble. I've been hunting animals for so long and I've got nothing left to eat.
 4500201 ...Yes here you go. It's nutritious and I think it will fill you up.
 4500202 This may seem weird to outsiders but I'm sorry.
-4500300,Really? If you'd like the same thing I'm sorry.
+4500300 Really? If you'd like the same thing I'm sorry.
 4500400 Well you see... sometimes a bad disease spreads in this town.
 4500401 It's a disease of beast possession.
 4500402 So when a disease spreads they hunt the animals.
@@ -3406,7 +3406,7 @@
 4500601 Maybe someone smarter than you knows this...
 4500602 Sorry I couldn't be of any help
 4500700 Ah Mr. Lawrence! That's your friend.
-4500701,Oh my how careless I was!
+4500701 Oh my how careless I was!
 4500702 Mr Lawrence went to find a doctor for you.
 4500703 already 2 A week ago
 4500704 But the hunt started soon after that so maybe he's hiding somewhere?
@@ -3425,7 +3425,7 @@
 4600002 Great Lord to indulge in that thought.
 4600003 Ufufufufufu
 4600100 ...Hey don't you know?
-4600101,Have you seen my head somewhere?
+4600101 Have you seen my head somewhere?
 4600102 I can't find it for ages I just can't find it it's getting to me
 4600103 Hey don't you know?
 4600104 Oh I see! That's good. If you know that's good.
@@ -3440,7 +3440,7 @@
 4600203 ...Well then comrades be careful.
 4600204 Everyone else is our enemy. They're after knowledge.
 4600205 Knowledge that no one knows that we don't know either... it's frightening and useless.
-4600206,What is known is no longer divine knowledge...forget everything...
+4600206 What is known is no longer divine knowledge...forget everything...
 4600207 Don't forget that...
 4600300 Wow! Wow!
 4600301 Do you know the great universe? Do you know it?
@@ -3461,7 +3461,7 @@
 4600502 Uh... Uh uhhhh...
 4600503 Ouch… ouch ouch ouch…
 4600600 (When I was hit / few screams as they were slashed Being slashed shot with a shotgun etc. (Exaggerated)
-4600700,(After being punched / After being slashed some incomprehensible roars (Ooooohhh! Uwaaaaahhhh! etc.)
+4600700 (After being punched / After being slashed some incomprehensible roars (Ooooohhh! Uwaaaaahhhh! etc.)
 4600800 (After being punched / Some incomprehensible laughter after being slashed (Ihihihihi! Ufufufufufufu... etc.)
 4600900 (Death throes at the time of death (They may groan and collapse or die with a loud scream etc.)
 4700000 Ufufufufufu
@@ -3478,7 +3478,7 @@
 4700106 You'll be back soon very soon...
 4700107 Surely soon...
 4700200 …Ah it rots. Slowly...
-4700201,… I can hear the sound of my brain rotting…
+4700201 … I can hear the sound of my brain rotting…
 4700202 Hey man do something. My brain is rotting...
 4700203 Hey dude please...
 4700204 …You’re so kind…
@@ -3490,7 +3490,7 @@
 4700302 Uh... Uh uhhhh...
 4700303 Ouch… ouch ouch ouch…
 4700400 (When I was hit / few screams as they were slashed Being slashed shot with a shotgun etc. (Exaggerated)
-4700500,(After being punched / After being slashed some incomprehensible roars (Ooooohhh! Uwaaaaahhhh! etc.)
+4700500 (After being punched / After being slashed some incomprehensible roars (Ooooohhh! Uwaaaaahhhh! etc.)
 4700600 (After being punched / Some incomprehensible laughter after being slashed (Ihihihihi! Ufufufufufufu... etc.)
 4700700 (Death throes at the time of death (They may groan and collapse or die with a loud scream etc.)
 5000000 …A stranger
@@ -3529,12 +3529,12 @@
 5400455 Hehehehehe
 5500500 Hehehehehe
 5500501 Thank you for your hard work everyone at the church...
-5500502,Good luck with your animal hunting...
+5500502 Good luck with your animal hunting...
 5500503 Uh
 5500504 Hehehehehe
 5500550 Hehehehehe
 5500551 Thank you for your hard work everyone at the church...
-5500552,Good luck with your animal hunting...
+5500552 Good luck with your animal hunting...
 5500553 Uh
 5500554 Hehehehehe
 5600600 …Give us the blessing of blood…
@@ -3588,10 +3588,10 @@
 6501500 (Insane lamentations and crying. Several kinds.)
 6501550 (Insane lamentations and crying. Several kinds.)
 7000000 …Stranger
-7000001,Is there any door you can open?
+7000001 Is there any door you can open?
 7000002 Oh no it's so dirty.
 7000050 …Stranger
-7000051,Is there any door you can open?
+7000051 Is there any door you can open?
 7000052 Oh no it's so dirty.
 7100100 …What? You're a stranger.
 7100101 It's a pity to see him wandering around on a night out hunting.
@@ -3631,13 +3631,13 @@
 7700701 That ominous voice
 7700702 Don't do anything cruel...
 7700703 (sobbing)
-7700704,That's cruel towards the elderly...
+7700704 That's cruel towards the elderly...
 7700705 (sobbing)
 7700750 …Hey…Stop it…
 7700751 That ominous voice
 7700752 Don't do anything cruel...
 7700753 (sobbing)
-7700754,That's cruel towards the elderly...
+7700754 That's cruel towards the elderly...
 7700755 (sobbing)
 7800800 …Too many bodies tonight
 7800801 That's why my grave is so shallow
@@ -3690,44 +3690,44 @@
 11000050 ...Oh a visitor. That's quite unusual.
 11000051 You have seen the secrets of the Church.
 11000100 You hunter wandering in a nightmare
-11000101,Did you see it? The heroic beast and the poor patients of the church?
+11000101 Did you see it? The heroic beast and the poor patients of the church?
 11000102 …And then he killed him…
 11000103 Ah I don't blame them. They were trapped in a nightmare and that was a relief.
 11000104 So what do you think? Did you get anything out of it my lord?
 11000150 You hunter wandering in a nightmare
-11000151,Did you see it? The heroic beast and the poor patients of the church?
+11000151 Did you see it? The heroic beast and the poor patients of the church?
 11000152 …And then he killed him…
 11000153 Ah I don't blame them. They were trapped in a nightmare and that was a relief.
 11000154 So what do you think? Did you get anything out of it my lord?
 11000200 ...Oh I see. That's good to hear.
 11000201 Then leave this nightmare now
-11000202 If you know the thoughts of Gehrman the beast hunter,
+11000202 If you know the thoughts of Gehrman the beast hunter 
 11000203 …Your enemies are not here.
 11000204 And the relic in this room is a parting gift.
 11000205 Let it be yours and return to the hunt hunter.
 11000250 ...Oh I see. That's good to hear.
 11000251 Then leave this nightmare now
-11000252 If you know the thoughts of Gehrman the beast hunter,
+11000252 If you know the thoughts of Gehrman the beast hunter 
 11000253 …Your enemies are not here.
 11000254 And the relic in this room is a parting gift.
 11000255 Let it be yours and return to the hunt hunter.
 11000300 …I guess so
 11000301 Nightmares and the secrets they hold are just that.
 11000302 But then leave this nightmare now.
-11000303 If you know the thoughts of Gehrman the beast hunter,
+11000303 If you know the thoughts of Gehrman the beast hunter 
 11000304 …Your enemies are not here.
 11000305 And the relic in this room is a parting gift.
 11000306 Let it be yours and return to the hunt hunter.
 11000350 …I guess so
 11000351 Nightmares and the secrets they hold are just that.
 11000352 But then leave this nightmare now.
-11000353 If you know the thoughts of Gehrman the beast hunter,
+11000353 If you know the thoughts of Gehrman the beast hunter 
 11000354 …Your enemies are not here.
 11000355 And the relic in this room is a parting gift.
 11000356 Let it be yours and return to the hunt hunter.
 11000400 ...What's wrong? Isn't hunting the hunter's mission?
 11000401 Or are you still searching for something? Deep inside this nightmare
-11000402,Yes even if it means killing me...
+11000402 Yes even if it means killing me...
 11000500 ...Oh my lord you have a frightening look in your eyes
 11000550 ...Oh my lord you have a frightening look in your eyes
 11001000 You're a terrible man sir.
@@ -3762,10 +3762,10 @@
 11200200 Eek eek eek eek...
 11200300 …Church hunter tell me.
 11200301 Are you guys seeing the light?
-11200302,Are you as I once hoped the honored swords of the Church?
+11200302 Are you as I once hoped the honored swords of the Church?
 11200350 …Church hunter tell me.
 11200351 Are you guys seeing the light?
-11200352,Are you as I once hoped the honored swords of the Church?
+11200352 Are you as I once hoped the honored swords of the Church?
 11200400 Oh I see… that’s good…
 11200401 Mockery and abuse but I still managed to achieve it
 11200402 Thank you. Now I can sleep soundly.
@@ -3783,7 +3783,7 @@
 11300001 And from the looks of it he's a good hunter.
 11300002 Kkukkukku...
 11300003 Yes I'm Valtor head of the Federation.
-11300004,The League is a pact to eradicate all the filth that lurks on the night of the hunt.
+11300004 The League is a pact to eradicate all the filth that lurks on the night of the hunt.
 11300005 If you're a hunter you probably feel the same way right?
 11300006 Aren't you all sick of filthy beasts disgusting slugs and crazy medical professionals?
 11300007 That's why I'm going to kill them all. The hunters of the Federation will cooperate with you.
@@ -3792,7 +3792,7 @@
 11300051 And from the looks of it he's a good hunter.
 11300052 Kkukkukku...
 11300053 Yes I'm Valtor head of the Federation.
-11300054,The League is a pact to eradicate all the filth that lurks on the night of the hunt.
+11300054 The League is a pact to eradicate all the filth that lurks on the night of the hunt.
 11300055 If you're a hunter you probably feel the same way right?
 11300056 Aren't you all sick of filthy beasts disgusting slugs and crazy medical professionals?
 11300057 That's why I'm going to kill them all. The hunters of the Federation will cooperate with you.
@@ -3821,10 +3821,10 @@
 11300174 Kkukkukku...
 11300200 ...Oh I see... Well I won't force you.
 11300201 You're a hunter too you'll find out eventually whether you like it or not.
-11300202,On hunting night or any other night there's shit and filth everywhere...
+11300202 On hunting night or any other night there's shit and filth everywhere...
 11300250 ...Oh I see... Well I won't force you.
 11300251 You're a hunter too you'll find out eventually whether you like it or not.
-11300252,On hunting night or any other night there's shit and filth everywhere...
+11300252 On hunting night or any other night there's shit and filth everywhere...
 11300300 …What's wrong? Have you figured it out yet?
 11300301 So you'll also become a member of our alliance?
 11300350 …What's wrong? Have you figured it out yet?
@@ -3849,10 +3849,10 @@
 11300458 Please don't forget
 11300500 Ah how is the hunt going?
 11300501 But don't forget the League's mission.
-11300502,Work together with your comrades to find and crush the "bugs"...
+11300502 Work together with your comrades to find and crush the "bugs"...
 11300550 Ah how is the hunt going?
 11300551 But don't forget the League's mission.
-11300552,Work together with your comrades to find and crush the "bugs"...
+11300552 Work together with your comrades to find and crush the "bugs"...
 11300600 ...Oh you. It looks like you've crushed the "bug".
 11300601 I'm the head of the federation you can tell that by looking at my eyes
 11300602 But thank goodness. Now you are a true member of the Federation.
@@ -3894,13 +3894,13 @@
 11300753 Kkukkukku...
 11300754 Coo ha ha ha!
 11300800 …Ah comrades. You're getting better.
-11300801,Crush crush crush crush crush the "bugs"... and learn about the filthy human world...
+11300801 Crush crush crush crush crush the "bugs"... and learn about the filthy human world...
 11300802 But the hunter's eyes remain unbroken
 11300803 …The Federation was fortunate to have you.
 11300804 It was my last big job...
 11300805 Hmph heh heh...
 11300850 …Ah comrades. You're getting better.
-11300851,Crush crush crush crush crush the "bugs"... and learn about the filthy human world...
+11300851 Crush crush crush crush crush the "bugs"... and learn about the filthy human world...
 11300852 But the hunter's eyes remain unbroken
 11300853 …The Federation was fortunate to have you.
 11300854 It was my last big job...
@@ -3924,14 +3924,14 @@
 11301200 ...What a pity...
 11301201 To my fellow members of the Federation be proud...
 11400000 …Are you a proper hunter? Maybe you got lost?
-11400001,Good I'm the same.
+11400001 Good I'm the same.
 11400002 This is a hunter's nightmare. A final resting place for blood-drunk hunters.
 11400003 Have you seen them? The hunters wandering about like beasts.
 11400004 It's a pity that something like that has to end up like this...
 11400005 So honey I'm just saying this but come back before you get captured.
 11400006 ...Or maybe you're interested in nightmares?
 11400050 …Are you a proper hunter? Maybe you got lost?
-11400051,Good I'm the same.
+11400051 Good I'm the same.
 11400052 This is a hunter's nightmare. A final resting place for blood-drunk hunters.
 11400053 Have you seen them? The hunters wandering about like beasts.
 11400054 It's a pity that something like that has to end up like this...
@@ -3955,11 +3955,11 @@
 11400251 …If that's embarrassing all the more so.
 11400300 …Yeah that’s fine.
 11400301 Hunt the beast and forget all about the night
-11400302,That is the hunter's way of being happy at least.
+11400302 That is the hunter's way of being happy at least.
 11400303 Hey hey. Don't get drunk on blood...
 11400350 …Yeah that’s fine.
 11400351 Hunt the beast and forget all about the night
-11400352,That is the hunter's way of being happy at least.
+11400352 That is the hunter's way of being happy at least.
 11400353 Hey hey. Don't get drunk on blood...
 11400400 What's wrong? I'm not trying to be mean but come back before you get captured.
 11400401 …Or maybe you're just interested in nightmares?
@@ -3994,12 +3994,12 @@
 11400701 This nightmare is born from the hunter's work.
 11400702 …and some try desperately to hide their deeds
 11400703 A pitiful and arrogant story
-11400704,…That is why the secret must be revealed…
+11400704 …That is why the secret must be revealed…
 11400750 Do you know why the hunter is trapped in this nightmare?
 11400751 This nightmare is born from the hunter's work.
 11400752 …and some try desperately to hide their deeds
 11400753 A pitiful and arrogant story
-11400754,…That is why the secret must be revealed…
+11400754 …That is why the secret must be revealed…
 11400800 Come on go ahead.
 11400801 You're interested in nightmares and their secrets aren't you?
 11400850 Come on go ahead.
@@ -4035,13 +4035,13 @@
 11401211 …I can still hear the bells…
 11401212 ...the beast-skinned assassin is coming to kill me...
 11401213 ...Forever and ever...
-11401214,…never ending…
+11401214 …never ending…
 11401215 …Gugh…Ugh…
 11401260 …Ah my dear it seems I messed up…
 11401261 …I can still hear the bells…
 11401262 ...the beast-skinned assassin is coming to kill me...
 11401263 ...Forever and ever...
-11401264,…never ending…
+11401264 …never ending…
 11401265 …Gugh…Ugh…
 11401300 …Hey please…
 11401301 ...This village is a secret. Traces of sin...
@@ -4105,12 +4105,12 @@
 11401850 …I guess this is just disappointing after all…
 11401860 …I guess this is just disappointing after all…
 11401870 …I guess this is just disappointing after all…
-11401900,...You are the same... a pathetic bloody hypocrite...
-11401910,...You are the same... a pathetic bloody hypocrite...
-11401920,...You are the same... a pathetic bloody hypocrite...
-11401950,...You are the same... a pathetic bloody hypocrite...
-11401960,...You are the same... a pathetic bloody hypocrite...
-11401970,...You are the same... a pathetic bloody hypocrite...
+11401900 ...You are the same... a pathetic bloody hypocrite...
+11401910 ...You are the same... a pathetic bloody hypocrite...
+11401920 ...You are the same... a pathetic bloody hypocrite...
+11401950 ...You are the same... a pathetic bloody hypocrite...
+11401960 ...You are the same... a pathetic bloody hypocrite...
+11401970 ...You are the same... a pathetic bloody hypocrite...
 11500000 ...Oh a hunter. You always appear in strange places.
 11500001 Can you hear the bells now?
 11500050 ...Oh a hunter. You always appear in strange places.
@@ -4149,10 +4149,10 @@
 11500452 Endless death to those foolish enough to approach the secret
 11500453 The church's assassins will pursue you wherever you go.
 11500454 (coughing laughter)
-11500500,Be afraid of the sound of the bell
+11500500 Be afraid of the sound of the bell
 11500501 The assassin will follow you wherever you go.
 11500502 (coughing laughter)
-11500550,Be afraid of the sound of the bell
+11500550 Be afraid of the sound of the bell
 11500551 The assassin will follow you wherever you go.
 11500552 (coughing laughter)
 11500600 …Oh this is…
@@ -4182,19 +4182,19 @@
 11600000 …Lady Mary? Or someone else?
 11600010 Hey honey could I ask you a favor?
 11600011 I want some brain fluid. Some dark melted brain fluid.
-11600012,Because I haven't heard a damp sound in ages...
+11600012 Because I haven't heard a damp sound in ages...
 11600100 Hey honey could I ask you a favor?
 11600101 I want brain fluid. Dark melted brain fluid...
 11600150 Hey honey could I ask you a favor?
 11600151 I want brain fluid. Dark melted brain fluid...
-11600200 Ah thank you,
+11600200 Ah thank you 
 11600202 (The sound of slurping brain fluid)
 11600204 Ahh... so delicious
 11600205 And you know I hear a wet noise. Do you hear that?
 11600206 … Uhuhuhu
 11600207 Yes thanks. How about some of my blood as thanks?
 11600208 Even though I look like this I was the "Blood Saint."
-11600210 Ah thank you,
+11600210 Ah thank you 
 11600212 (The sound of slurping brain fluid)
 11600214 Ahh... so delicious
 11600215 And you know I hear a wet noise. Do you hear that?
@@ -4202,14 +4202,14 @@
 11600217 Yes thanks. How about some of my blood as thanks?
 11600218 Even though I look like this I was the "Blood Saint."
 11600219 So once you run out of Saint Blood please come back...
-11600250 Ah thank you,
+11600250 Ah thank you 
 11600252 (The sound of slurping brain fluid)
 11600254 Ahh... so delicious
 11600255 And you know I hear a wet noise. Do you hear that?
 11600256 … Uhuhuhu
 11600257 Yes thanks. How about some of my blood as thanks?
 11600258 Even though I look like this I was the "Blood Saint."
-11600260 Ah thank you,
+11600260 Ah thank you 
 11600262 (The sound of slurping brain fluid)
 11600264 Ahh... so delicious
 11600265 And you know I hear a wet noise. Do you hear that?
@@ -4291,14 +4291,14 @@
 11601304 Ah... Ah... I heard it. A voice guiding me.
 11601305 Ah... Ah...
 11601306 Thank you thank you for helping me.
-11601307,This is a charm. I received it from Maria but this is the only thing I can give you in return other than the blood.
+11601307 This is a charm. I received it from Maria but this is the only thing I can give you in return other than the blood.
 11601310 Please don't abandon me... I can still be of use...
 11601350 Ah that's it. Give me that.
 11601352 (The sound of slurping brain fluid)
 11601354 Ah... Ah... I heard it. A voice guiding me.
 11601355 Ah... Ah...
 11601356 Thank you thank you for helping me.
-11601357,This is a charm. I received it from Maria but this is the only thing I can give you in return other than the blood.
+11601357 This is a charm. I received it from Maria but this is the only thing I can give you in return other than the blood.
 11601360 Please don't abandon me... I can still be of use...
 11601400 Oh can you hear me?
 11601401 A wet sound rings in my ears. Trick trickle...
@@ -4403,7 +4403,7 @@
 11700101 May your children even your future children be cursed by blood for all eternity...
 11700102 Born in misfortune live in dismay and discontent...
 11700103 Screech! Screech...
-11700200,...save the poor old baby...
+11700200 ...save the poor old baby...
 11700201 I hope that Goss's stench and motherly love will finally reach her...
 11700202 Creak creak creak...
 11700300 …Cursers cursers. No matter how many there are it's never enough
@@ -4436,13 +4436,13 @@
 11700601 The curse and the sea have no bottom so they accept everything.
 11700602 Creak... Creak...
 11700603 Grrrrrr...
-12000000,…Oh oh you…help me…
+12000000 …Oh oh you…help me…
 12000001 There it is... a horrible ugly beast is coming...
 12000002 Ah! Cursed Ludwig!
 12000003 Forgive me! Forgive me!
 12000004 Hyahihihihi...
 12000010 Hyahihihihi...
-12000020,…Oh oh you…help me…
+12000020 …Oh oh you…help me…
 12000021 That guy...
 12000022 A horrible ugly beast is coming...
 12000023 Ah! Cursed Ludwig!
@@ -4469,7 +4469,7 @@
 12000402 Otherwise I'll just... drown...
 12000500 Ah my head feels like it's melting...
 12000501 It's about to melt...
-12000502,Hehehehe.
+12000502 Hehehehe.
 12000600 Does anyone know my eyes?
 12000601 It's like I dropped it in a puddle
 12000602 It's always pale blue here...
@@ -4500,7 +4500,7 @@
 12100200 ...Ah Lady Maria...
 12100201 Help me...Help me...I can't hear anything...
 12100210 It was impossible for me...
-12100211,Please Maria...
+12100211 Please Maria...
 12100212 Woo hoo wooo...
 12100300 …Ah it feels so good
 12100301 It's so hot so hot I'm melting...
@@ -4522,7 +4522,7 @@
 12100902 What have you done!
 12101000 Ah this this is the love of God...
 12101001 So you I give it to you too
-12101002,Hey you. Let's melt together...
+12101002 Hey you. Let's melt together...
 12101100 (Different sounds used when attacking. Blood donation stand or bare hands. Meaningless mad screams.)
 12101101 (Different sounds to use when attacking. Blood donation stand or bare hands. Insane meaningless laughter.)
 13000000 So let's curse them

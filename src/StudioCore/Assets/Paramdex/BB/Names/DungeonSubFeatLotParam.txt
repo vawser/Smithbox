@@ -97,7 +97,7 @@
 60120 Automatically generated chalice [Level 6 】Thumel _ Curse: Special Strong Enemy
 60170 Automatically generated chalice [Level 6 】Thumel _ Curse: Curse
 62110 Automatically generated chalice [Level 6 】 Laurent _ Curse: Enemy Strengthening
-62120,Automatically generated chalice [Level 6 】 Laurent _ Curse: Special Strong Enemy
+62120 Automatically generated chalice [Level 6 】 Laurent _ Curse: Special Strong Enemy
 62170 Automatically generated chalice [Level 6 】 Laurent _ Curse: Curse
 63110 Automatically generated chalice [Level 6 】Is _ Curse: Enemy Strengthening
 63120 Automatically generated chalice [Level 6 】Is _ Curse: Special Strong Enemy
@@ -107,7 +107,7 @@
 70170 Automatically generated chalice [Level 7 】Thumel _ Curse: Curse
 70240 Automatically generated chalice [Level 7 】Thumel _ Multiplayer: Hostile Multiplayer
 70310 Automatically generated chalice [Level 7 】Thumel _ Terrible Curse: Enemy Strengthening
-70320,Automatically generated chalice [Level 7 】Thumel _ Terrible Curse: Special Strong Enemy
+70320 Automatically generated chalice [Level 7 】Thumel _ Terrible Curse: Special Strong Enemy
 70370 Automatically generated chalice [Level 7 】Thumel _ Terrible Curse: Curse
 70380 Automatically generated chalice [Level 7 】Thumel _ Terrible Curse: Terrible Curse
 72110 Automatically generated chalice [Level 7 】 Laurent _ Curse: Enemy Strengthening
@@ -127,7 +127,7 @@
 73370 Automatically generated chalice [Level 7 】Is _ Terrible Curse: Curse
 73380 Automatically generated chalice [Level 7 】Is _ Terrible Curse: Terrible Curse
 991000000 Sub-feature candidate: Poison: Fixed only
-994500000,Fixed dungeon: Unique dungeon
+994500000 Fixed dungeon: Unique dungeon
 995010110 Sub-characteristic candidate: Magic stone correction 1011
 995010120 Sub-characteristic candidate: Magic stone correction 1012
 995010130 Sub-characteristic candidate: Magic stone correction 1013

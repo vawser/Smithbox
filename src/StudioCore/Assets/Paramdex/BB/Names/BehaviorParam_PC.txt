@@ -15,7 +15,7 @@
 412 Common attack [Blow forward] _ Attack Armor
 413 Common attack [After push] _ Attack Armor
 420 Common attack [throw] _ Attack Armor
-421,Common attack [Strong Throw] _ Attack Armor
+421 Common attack [Strong Throw] _ Attack Armor
 422 Common attack: Parry slam _ Attack Armor
 442 Common attack [Ladder _ Sliding Down】Attack Armor
 500 Common attack [Fall]
@@ -37,7 +37,7 @@
 531 Common attack [Ladder _ Right Kick】
 540 Common attack [Ladder _ Left Punch】
 541 Common attack [Ladder _ Left kick】
-542,Common attack [Ladder _ Slide down】
+542 Common attack [Ladder _ Slide down】
 600 Fall Radius 1 m
 601 Blow Away (Weak) Radius 1 m
 602 Blow away (strong) radius 1 m
@@ -118,7 +118,7 @@
 100100610 bare hands _ mode B_ Back Step Large
 100100620 bare hands _ mode B_ Small Evasion _ before
 100100630 bare hands _ mode B_ Small Evasion _ rear
-100100640,bare hands _ mode B_ Small Evasion _ left
+100100640 bare hands _ mode B_ Small Evasion _ left
 100100650 bare hands _ mode B_ Small Evasion _ right
 100100660 bare hands _ mode B_ Large Evasion _ before
 100100670 bare hands _ mode B_ Large Evasion _ rear
@@ -168,7 +168,7 @@
 100101440 Bare hands (slugs) _ mode B_ small 5
 100101500 Bare hands (slugs) _ mode B_L21
 100101510 Bare hands (slugs) _ mode B_L22
-100101520,Bare hands (slugs) _ mode B_L23
+100101520 Bare hands (slugs) _ mode B_L23
 100101550 Bare hands (slugs) _ mode B_ Charge Small _ right 1
 100101570 Bare hands (slugs) _ mode B_ Large Charge _ right 1
 100101600 Bare hands (slugs) _ mode B_ Back step small
@@ -179,7 +179,7 @@
 100101650 Bare hands (slugs) _ mode B_ Small Evasion _ right
 100101710 Bare hands (slugs) _ mode B_ Jump
 100101720 Bare hands (slugs) _ mode B_ Dash Small
-100101730,Bare hands (slugs) _ mode B_ Dash Large
+100101730 Bare hands (slugs) _ mode B_ Dash Large
 100101740 Bare hands (slugs) _ mode B_ Falling Attack _ Falling
 100101741 Bare hands (slugs) _ mode B_ Falling Attack _ Landing
 100101790 Bare hands (slugs) _ mode B_ Mode change attack _ right
@@ -290,7 +290,7 @@
 100400660 Dual Swords _ mode B_ Large Evasion _ before
 100400670 Dual Swords _ mode B_ Large Evasion _ rear
 100400680 Dual Swords _ mode B_ Large Evasion _ left
-100400690,Dual Swords _ mode B_ Large Evasion _ right
+100400690 Dual Swords _ mode B_ Large Evasion _ right
 100400700 Dual Swords _ mode B_ Close range
 100400710 Dual Swords _ mode B_ Jump
 100400720 Dual Swords _ mode B_ Dash Small
@@ -304,7 +304,7 @@
 100400930 Dual Swords _ mode B_L large 1
 100500000 Axe pole _ mode A_ small 1
 100500010 Axe pole _ mode A_ small 2
-100500020,Axe pole _ mode A_ small 3
+100500020 Axe pole _ mode A_ small 3
 100500030 Axe pole _ mode A_ small 4
 100500100 Axe pole _ mode A_ large 1
 100500110 Axe pole _ mode A_ large 2
@@ -345,7 +345,7 @@
 100500650 Axe pole _ mode B_ Small Evasion _ right
 100500660 Axe pole _ mode B_ Large Evasion _ before
 100500670 Axe pole _ mode B_ Large Evasion _ rear
-100500680,Axe pole _ mode B_ Large Evasion _ left
+100500680 Axe pole _ mode B_ Large Evasion _ left
 100500690 Axe pole _ mode B_ Large Evasion _ right
 100500700 Axe pole _ mode B_ Close range
 100500710 Axe pole _ mode B_ Jump
@@ -401,7 +401,7 @@
 100510530 Sickle and sword _ mode B_ large 4
 100510600 Sickle and sword _ mode B_ Back step small
 100510610 Sickle and sword _ mode B_ Back Step Large
-100510620,Sickle and sword _ mode B_ Small Evasion _ before
+100510620 Sickle and sword _ mode B_ Small Evasion _ before
 100510630 Sickle and sword _ mode B_ Small Evasion _ rear
 100510640 Sickle and sword _ mode B_ Small Evasion _ left
 100510650 Sickle and sword _ mode B_ Small Evasion _ right
@@ -443,7 +443,7 @@
 100700150 Nokonata _ mode A_ Charge Small _ right 1
 100700170 Nokonata _ mode A_ Large Charge _ right 1
 100700200 Nokonata _ mode A_ Back step small
-100700210,Nokonata _ mode A_ Back Step Large
+100700210 Nokonata _ mode A_ Back Step Large
 100700220 Nokonata _ mode A_ Small Evasion _ before
 100700230 Nokonata _ mode A_ Small Evasion _ rear
 100700240 Nokonata _ mode A_ Small Evasion _ left
@@ -602,7 +602,7 @@
 100800660 Key case _ mode B_ Large Evasion _ before
 100800670 Key case _ mode B_ Large Evasion _ rear
 100800680 Key case _ mode B_ Large Evasion _ left
-100800690,Key case _ mode B_ Large Evasion _ right
+100800690 Key case _ mode B_ Large Evasion _ right
 100800700 Key case _ mode B_ Close range
 100800710 Key case _ mode B_ Jump
 100800720 Key case _ mode B_ Dash Small
@@ -630,7 +630,7 @@
 100810170 Hammer Sword _ mode A_ Large Charge _ right 1
 100810200 Hammer Sword _ mode A_ Back step small
 100810210 Hammer Sword _ mode A_ Back Step Large
-100810220,Hammer Sword _ mode A_ Small Evasion _ before
+100810220 Hammer Sword _ mode A_ Small Evasion _ before
 100810230 Hammer Sword _ mode A_ Small Evasion _ rear
 100810240 Hammer Sword _ mode A_ Small Evasion _ left
 100810250 Hammer Sword _ mode A_ Small Evasion _ right
@@ -822,7 +822,7 @@
 101010250 bayonet _ mode A_ Small Evasion _ right
 101010260 bayonet _ mode A_ Large Evasion _ before
 101010270 bayonet _ mode A_ Large Evasion _ rear
-101010280,bayonet _ mode A_ Large Evasion _ left
+101010280 bayonet _ mode A_ Large Evasion _ left
 101010290 bayonet _ mode A_ Large Evasion _ right
 101010300 bayonet _ mode A_ Close range
 101010310 bayonet _ mode A_ Jump
@@ -886,7 +886,7 @@
 101100310 Pile Bunker _ mode A_ Jump
 101100320 Pile Bunker _ mode A_ Dash Small
 101100330 Pile Bunker _ mode A_ Dash Large
-101100340,Pile Bunker _ mode A_ Falling Attack _ Falling
+101100340 Pile Bunker _ mode A_ Falling Attack _ Falling
 101100341 Pile Bunker _ mode A_ Falling Attack _ Landing
 101100390 Pile Bunker _ mode A_ Mode change attack _ right
 101100395 Pile Bunker _ mode A_ Mode change attack _ left
@@ -972,7 +972,7 @@
 101200510 wheel _ mode B_ large 2_ first
 101200511 wheel _ mode B_ large 2_ During
 101200512 wheel _ mode B_ large 2_ last
-101200520,wheel _ mode B_ large 3_ first
+101200520 wheel _ mode B_ large 3_ first
 101200521 wheel _ mode B_ large 3_ During
 101200522 wheel _ mode B_ large 3_ last
 101200600 wheel _ mode B_ Back step small
@@ -1023,7 +1023,7 @@
 101300210 Explosive Hammer _ mode A_ Back Step Large
 101300220 Explosive Hammer _ mode A_ Small Evasion _ before
 101300230 Explosive Hammer _ mode A_ Small Evasion _ rear
-101300240,Explosive Hammer _ mode A_ Small Evasion _ left
+101300240 Explosive Hammer _ mode A_ Small Evasion _ left
 101300250 Explosive Hammer _ mode A_ Small Evasion _ right
 101300260 Explosive Hammer _ mode A_ Large Evasion _ before
 101300270 Explosive Hammer _ mode A_ Large Evasion _ rear
@@ -1097,7 +1097,7 @@
 102000341 torch _ mode A_ Falling Attack _ Landing
 102000400 torch _ mode B_ small 1
 102000410 torch _ mode B_ small 2
-102000420,torch _ mode B_ small 3
+102000420 torch _ mode B_ small 3
 102000500 torch _ mode B_ large 1
 102000510 torch _ mode B_ large 2
 102000620 torch _ mode B_ Small Evasion _ before
@@ -1191,7 +1191,7 @@
 102300330 Sawtooth Curved Sword _ mode A_ Dash Large
 102300340 Sawtooth Curved Sword _ mode A_ Falling Attack _ Falling
 102300341 Sawtooth Curved Sword _ mode A_ Falling Attack _ Landing
-102300390,Sawtooth Curved Sword _ mode A_ Mode change attack _ right
+102300390 Sawtooth Curved Sword _ mode A_ Mode change attack _ right
 102300395 Sawtooth Curved Sword _ mode A_ Mode change attack _ left
 102300400 Sawtooth Curved Sword _ mode B_ small 1
 102300410 Sawtooth Curved Sword _ mode B_ small 2
@@ -1215,7 +1215,7 @@
 102300950 Sawtooth Curved Sword _ Throw Judgment
 102400000 Saw Whip _ mode A_ small 1
 102400010 Saw Whip _ mode A_ small 2
-102400020,Saw Whip _ mode A_ small 3
+102400020 Saw Whip _ mode A_ small 3
 102400030 Saw Whip _ mode A_ small 4
 102400040 Saw Whip _ mode A_ small 5
 102400150 Saw Whip _ mode A_ Charge Small _ right 1
@@ -1227,7 +1227,7 @@
 102400240 Saw Whip _ mode A_ Small Evasion _ left
 102400250 Saw Whip _ mode A_ Small Evasion _ right
 102400310 Saw Whip _ mode A_ Jump
-102400320,Saw Whip _ mode A_ Dash Small
+102400320 Saw Whip _ mode A_ Dash Small
 102400330 Saw Whip _ mode A_ Dash Large
 102400340 Saw Whip _ mode A_ Falling Attack _ Falling
 102400341 Saw Whip _ mode A_ Falling Attack _ Landing
@@ -1251,7 +1251,7 @@
 102400740 Saw Whip _ mode B_ Falling Attack _ Falling
 102400741 Saw Whip _ mode B_ Falling Attack _ Landing
 102400790 Saw Whip _ mode B_ Mode change attack _ right
-102400795,Saw Whip _ mode B_ Mode change attack _ left
+102400795 Saw Whip _ mode B_ Mode change attack _ left
 102500000 Articulated _ mode A_ small 1
 102500010 Articulated _ mode A_ small 2
 102500020 Articulated _ mode A_ small 3
@@ -1340,7 +1340,7 @@
 102600712 Moonlight Sword _ mode B_ Jump _ Light Waves
 102600720 Moonlight Sword _ mode B_ Dash Small
 102600730 Moonlight Sword _ mode B_ Dash Large
-102600731,Moonlight Sword _ mode B_ Large dash (with bullets)
+102600731 Moonlight Sword _ mode B_ Large dash (with bullets)
 102600732 Moonlight Sword _ mode B_ Dash Large _ Light Waves
 102600740 Moonlight Sword _ mode B_ Falling Attack _ Falling
 102600741 Moonlight Sword _ mode B_ Falling Attack _ Landing
@@ -1352,7 +1352,7 @@
 102600931 Moonlight Sword _ mode B_ left hand _ large _ Ammo consumption dummy
 102600932 Moonlight Sword _ left hand _ large ( No bullets )
 102700000 Double Blade _ mode A_ small 1
-102700010,Double Blade _ mode A_ small 2
+102700010 Double Blade _ mode A_ small 2
 102700020 Double Blade _ mode A_ small 3
 102700030 Double Blade _ mode A_ small 4
 102700150 Double Blade _ mode A_ Charge Small _ right 1
@@ -1404,7 +1404,7 @@
 102800170 Gunhammer _ mode A_ Large Charge _ right 1
 102800200 Gunhammer _ mode A_ Back step small
 102800210 Gunhammer _ mode A_ Back Step Large
-102800220,Gunhammer _ mode A_ Small Evasion _ before
+102800220 Gunhammer _ mode A_ Small Evasion _ before
 102800230 Gunhammer _ mode A_ Small Evasion _ rear
 102800240 Gunhammer _ mode A_ Small Evasion _ left
 102800250 Gunhammer _ mode A_ Small Evasion _ right
@@ -1427,7 +1427,7 @@
 102800650 Gunhammer _ mode B_ Small Evasion _ right
 102800710 Gunhammer _ mode B_ Jump _ Main unit
 102800711 Gunhammer _ mode B_ Jump _ explosion
-102800720,Gunhammer _ mode B_ Dash Small
+102800720 Gunhammer _ mode B_ Dash Small
 102800730 Gunhammer _ mode B_ Dash Large _ Main unit
 102800731 Gunhammer _ mode B_ Dash Large _ explosion
 102800740 Gunhammer _ mode B_ Falling Attack _ Falling
@@ -1439,7 +1439,7 @@
 102900010 Cross Mace _ mode A_ small 2
 102900020 Cross Mace _ mode A_ small 3
 102900030 Cross Mace _ mode A_ small 4
-102900150,Cross Mace _ mode A_ Charge Small _ right 1
+102900150 Cross Mace _ mode A_ Charge Small _ right 1
 102900170 Cross Mace _ mode A_ Large Charge _ right 1
 102900200 Cross Mace _ mode A_ Back step small
 102900210 Cross Mace _ mode A_ Back Step Large
@@ -1498,7 +1498,7 @@
 103000395 War Pick _ mode A_ Mode change attack _ left
 103000400 War Pick _ mode B_ small 1
 103000410 War Pick _ mode B_ small 2
-103000420,War Pick _ mode B_ small 3
+103000420 War Pick _ mode B_ small 3
 103000430 War Pick _ mode B_ small 4
 103000550 War Pick _ mode B_ Charge Small _ right 1
 103000570 War Pick _ mode B_ Large Charge _ right 1
@@ -1556,7 +1556,7 @@
 103100741 Circular saw chainsaw _ mode B_ Falling Attack _ Landing
 103100790 Circular saw chainsaw _ mode B_ Mode change attack _ right
 103100795 Circular saw chainsaw _ mode B_ Mode change attack _ left
-103100930,Circular saw chainsaw _ mode B_L large 1_ First Attack
+103100930 Circular saw chainsaw _ mode B_L large 1_ First Attack
 103100931 Circular saw chainsaw _ mode B_L large 1_ loop 1
 103100932 Circular saw chainsaw _ mode B_L large 1_ loop 2
 103100951 Circular saw chainsaw _ mode A_ Skinny performance DL8
@@ -1621,7 +1621,7 @@
 103700250 Beastification _ mode A_ Small Evasion _ right
 103700310 Beastification _ mode A_ Jump
 103700320 Beastification _ mode A_ Dash Small
-103700330,Beastification _ mode A_ Dash Large
+103700330 Beastification _ mode A_ Dash Large
 103700340 Beastification _ mode A_ Falling Attack _ Falling
 103700341 Beastification _ mode A_ Falling Attack _ Landing
 103700390 Beastification _ mode A_ Mode change attack _ right _ First Attack
@@ -1691,5 +1691,5 @@
 103800741 Slug _ mode B_ Falling Attack _ Landing
 103800790 Slug _ mode B_ Mode change attack _ right
 103800795 Slug _ mode B_ Mode change attack _ left
-103800796,Slug _ mode B_ Mode change
+103800796 Slug _ mode B_ Mode change
 103800930 Slug _ mode B_L large 1_ First Blow

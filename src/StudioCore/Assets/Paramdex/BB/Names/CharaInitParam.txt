@@ -56,7 +56,7 @@
 141 141_ [ E3 Screenshot character: City Hunter Nokonata / bare hands / Long gun / torch
 142 142_ [ E3 Version] Recovery Items 99 Character City Hunter Nokonata / bare hands / Long gun / torch
 150 150_ [ GamesCom Version] Initial character ① City Hunter Nokonata / bare hands / Long gun / torch
-151,151_ [ GamesCom Version] Initial character ① City Hunter Nokonata / bare hands / Long gun / torch
+151 151_ [ GamesCom Version] Initial character ① City Hunter Nokonata / bare hands / Long gun / torch
 152 152_ [ GamesCom Version] Initial character ② City Hunter Axe Pole / bare hands / Pistol / shield
 153 153_ [ GamesCom Version] Initial character ④ Bare arms
 154 154_ [ GamesCom Version] Initial character ⑤ Barefoot
@@ -92,7 +92,7 @@
 281 281_ woman _ Advanced Hunter
 290 290_ man _ Junior Hunter
 291 291_ woman _ Junior Hunter
-300,300_ man _ Urban Hunter
+300 300_ man _ Urban Hunter
 301 301_ woman _ Urban Hunter
 310 310_ man _ Vampire
 311 311_ woman _ Vampire
@@ -209,7 +209,7 @@
 2314 Female face type 4
 2315 Female face type 5
 2316 Female face type 6
-2317,Female face type 7
+2317 Female face type 7
 2318 Female face type 8
 2319 Female face type 9
 2400 gift 0
@@ -232,7 +232,7 @@
 3007 For character creation screen 7 Cruel Fate
 3008 For character creation screen 8 I should never have been born
 3009 Initial Character _ For character creation screen 9
-3500,Character Make Top Menu Male
+3500 Character Make Top Menu Male
 3501 Character Make Top Menu Female
 5000 5000_ Warp chair activation illusion _ Hunter
 6040 6040_ Princess of the Bloodline
@@ -251,7 +251,7 @@
 6142 6140_ Captive Nun (Madness)
 6143 6140_ Captive Nun (Refuge) / He killed a prostitute.)
 6144 6140_ Captive Nun (Madness / He killed a prostitute.)
-6150,6150_ Bloodline Hunt (Wheel & Gun)
+6150 6150_ Bloodline Hunt (Wheel & Gun)
 6151 6150_ Bloodline Hunt (Sword Hammer)
 6152 6150_ Bloodline Hunt (Sword Hammer / Joint Struggle ver ) _ Cathedral B
 6153 6150_ Bloodline Hunt (Sword Hammer / Joint Struggle ver ) _ ruins
@@ -280,7 +280,7 @@
 6502 6500_ Head of the Federation vs Parishioner Ω With helmet
 6504 6500_ Head of the Federation vs Ludwig without helmet
 6505 6500_ Head of the Federation vs Parishioner Ω Without helmet
-6510,6510_ Secret Seeker _ First meeting
+6510 6510_ Secret Seeker _ First meeting
 6511 6510_ Secret Seeker _ Room
 6512 6510_ Secret Seeker _ Clock Tower
 6513 6511_ Secret Seeker _ dying
@@ -325,7 +325,7 @@
 7051 Dungeons NPC5_1 (Sword Hammer & Church Pistol) Joint Fight m29_50_90_01 2F
 7060 Dungeons NPC7 (Fist Beast & Bare Hands)
 7061 Dungeons NPC7 (Fist Beast & Bare Hands) Joint Fight m29_42_90_01 3F
-7062,Dungeons NPC7 (Fist Beast & Bare Hands) Joint Fight m29_52_90_01 3F
+7062 Dungeons NPC7 (Fist Beast & Bare Hands) Joint Fight m29_52_90_01 3F
 7070 Dungeons NPC8_1 (Sword Great Sword & Church Rifle): Boss
 7075 Dungeons NPC8_2 (Sword Hammer & Flamethrower): Boss
 7120 Dungeons NPC11 (Saw spear & workshop pistol)
@@ -337,7 +337,7 @@
 7163 Dungeons NPC15 (Wheels & Cannons) Joint Struggle m29_50_90_01 3F
 7300 Dungeons NPC (Saw whip) Joint struggle m29_42_90_01 3F
 7301 Dungeons NPC (Saw whip) Joint struggle m29_52_90_01 3F
-7310,Dungeons NPC : Abnormal (multi-jointed) Joint Fight m29_30_90_013F
+7310 Dungeons NPC : Abnormal (multi-jointed) Joint Fight m29_30_90_013F
 7311 Dungeons NPC : Abnormal (multi-jointed) Joint Fight m29_30_90_01 4F
 7312 Dungeons NPC : Abnormal (multi-jointed) Joint Fight m29_40_90_01 3F
 7313 Dungeons NPC : Abnormal (multi-jointed) Joint Fight m29_50_90_01 3F
@@ -382,7 +382,7 @@
 9321 Damage Check: Bayonet & Vampire Pistol: lv.5 : Cathedral B・Parish priest
 9322 Damage Check: Bayonet (Low Blood Quality): lv.5 : Cathedral B・Parish priest
 9323 Damage Check: Blood Sword & Workshop Rifle: lv.5 : Cathedral B・Parish priest
-9324,Damage Check: Blood Sword & Vampire Pistol: lv.5 : Cathedral B・Parish priest
+9324 Damage Check: Blood Sword & Vampire Pistol: lv.5 : Cathedral B・Parish priest
 9325 Damage Check: Bloody Blade (Low Blood Quality): lv.5 : Cathedral B・Parish priest
 9326 Damage Check: Gunlance & Workshop Rifle: lv.5 : Cathedral B・Parish priest
 9327 Damage Check: Gunlance & Vampire Pistol: lv.5 : Cathedral B・Parish priest
@@ -391,7 +391,7 @@
 9330 Damage Check: Bombardment (Low Mystic): lv.5 : Cathedral B・Parish priest
 9331 Damage Check: Blast Hammer (High Mystic): lv.5 : Cathedral B・Parish priest
 9332 Damage Check: Wheel (Low Mystic): lv.5 : Cathedral B・Parish priest
-9333,Damage Check: Wheel (High Mystic): lv.5 : Cathedral B・Parish priest
+9333 Damage Check: Wheel (High Mystic): lv.5 : Cathedral B・Parish priest
 9334 Damage Check: Fist Beast: lv.5 : Cathedral B・Parish priest
 9335 Damage Check: Long Gun (Workshop/Church): lv.5 : Cathedral B・Parish priest
 9336 Damage Check: Handgun (Workshop Vamp): lv.5 : Cathedral B・Parish priest
@@ -400,7 +400,7 @@
 9339 Damage Check: Sprayer (Low Mystic): lv.5 : Cathedral B・Parish priest
 9340 Damage Check: Sprayer (High Mystic): lv.5 : Cathedral B・Parish priest
 9341 Damage Check: Torch (Beast/Normal): lv.5 : Cathedral B・Parish priest
-9342,Damage Check: Nokonata: Lv.30 : Cathedral A・Saint Beast
+9342 Damage Check: Nokonata: Lv.30 : Cathedral A・Saint Beast
 9343 Damage Check: Saw Spear: Lv.30 : Cathedral A・Saint Beast
 9344 Damage Check: Axe Pole: Lv.30 : Cathedral A・Saint Beast
 9345 Damage Check: Whip Lv.30 : Cathedral A・Saint Beast
@@ -417,7 +417,7 @@
 9356 Damage Check: Blood Sword & Vampire Pistol: Lv.30 : Cathedral A・Saint Beast
 9357 Damage Check: Bloody Blade (Low Blood Quality): Lv.30 : Cathedral A・Saint Beast
 9358 Damage Check: Gunlance & Workshop Rifle: Lv.30 : Cathedral A・Saint Beast
-9359,Damage Check: Gunlance & Vampire Pistol: Lv.30 : Cathedral A・Saint Beast
+9359 Damage Check: Gunlance & Vampire Pistol: Lv.30 : Cathedral A・Saint Beast
 9360 Damage Check: Gunlance (Low Blood): Lv.30 : Cathedral A・Saint Beast
 9361 Damage Check: Sword Stake: Lv.30 : Cathedral A・Saint Beast
 9362 Damage Check: Bombardment (Low Mystic): Lv.30 : Cathedral A・Saint Beast
@@ -447,7 +447,7 @@
 9386 Damage Check: Bayonet (Low Blood Quality): lv.42 : forest
 9387 Damage Check: Blood Sword & Workshop Rifle: lv.42 : forest
 9388 Damage Check: Blood Sword & Vampire Pistol: lv.42 : forest
-9389,Damage Check: Bloody Blade (Low Blood Quality): lv.42 : forest
+9389 Damage Check: Bloody Blade (Low Blood Quality): lv.42 : forest
 9390 Damage Check: Gunlance & Workshop Rifle: lv.42 : forest
 9391 Damage Check: Gunlance & Vampire Pistol: lv.42 : forest
 9392 Damage Check: Gunlance (Low Blood): lv.42 : forest
@@ -459,7 +459,7 @@
 9398 Damage Check: Fist Beast: lv.42 : forest
 9399 Damage Check: Long Gun (Workshop/Church): lv.42 : forest
 9400 Damage Check: Handgun (Workshop Vamp): lv.42 : forest
-9401,Damage Check: Handgun (Workshop/Church): lv.42 : forest
+9401 Damage Check: Handgun (Workshop/Church): lv.42 : forest
 9402 Damage Check: Cannon: lv.42 : forest
 9403 Damage Check: Sprayer (Low Mystic): lv.42 : forest
 9404 Damage Check: Sprayer (High Mystic): lv.42 : forest
@@ -481,7 +481,7 @@
 9420 Damage Check: Blood Sword & Vampire Pistol: Lv.88 ： Base Nightmare
 9421 Damage Check: Bloody Blade (Low Blood Quality): Lv.88 ： Base Nightmare
 9422 Damage Check: Gunlance & Workshop Rifle: Lv.88 ： Base Nightmare
-9423,Damage Check: Gunlance & Vampire Pistol: Lv.88 ： Base Nightmare
+9423 Damage Check: Gunlance & Vampire Pistol: Lv.88 ： Base Nightmare
 9424 Damage Check: Gunlance (Low Blood): Lv.88 ： Base Nightmare
 9425 Damage Check: Sword Stake: Lv.88 ： Base Nightmare
 9426 Damage Check: Bombardment (Low Mystic): Lv.88 ： Base Nightmare
@@ -513,7 +513,7 @@
 9452 Damage Check: Blood Sword & Vampire Pistol: Lv.110 ： Opponent character
 9453 Damage Check: Bloody Blade (Low Blood Quality): Lv.110 ： Opponent character
 9454 Damage Check: Gunlance & Workshop Rifle: Lv.110 ： Opponent character
-9455,Damage Check: Gunlance & Vampire Pistol: Lv.110 ： Opponent character
+9455 Damage Check: Gunlance & Vampire Pistol: Lv.110 ： Opponent character
 9456 Damage Check: Gunlance (Low Blood): Lv.110 ： Opponent character
 9457 Damage Check: Sword Stake: Lv.110 ： Opponent character
 9458 Damage Check: Bombardment (Low Mystic): Lv.110 ： Opponent character
@@ -534,7 +534,7 @@
 9473 Damage Check: Whip Lv.130 : Play after clearing
 9474 Damage Check: Sword Scythe (Low Mystic): Lv.130 : Play after clearing
 9475 Damage Check: Sword Scythe (High Mystic): Lv.130 : Play after clearing
-9476,Damage Check: Dual Blades (Low Mystic): Lv.130 : Play after clearing
+9476 Damage Check: Dual Blades (Low Mystic): Lv.130 : Play after clearing
 9477 Damage Check: Dual Blades (High Mystic): Lv.130 : Play after clearing
 9478 Damage Check: Stone Hammer: Lv.130 : Play after clearing
 9479 Damage Check: Great Sword: Lv.130 : Play after clearing
@@ -605,7 +605,7 @@
 9544 Damage Check: Bayonets & Workshop Rifles: Lv.140 : 3 Week - usually
 9545 Damage Check: Bayonet & Vampire Pistol: Lv.140 : 3 Week - usually
 9546 Damage Check: Bayonet (Low Blood Quality): Lv.140 : 3 Week - usually
-9547,Damage Check: Blood Sword & Workshop Rifle: Lv.140 : 3 Week - usually
+9547 Damage Check: Blood Sword & Workshop Rifle: Lv.140 : 3 Week - usually
 9548 Damage Check: Blood Sword & Vampire Pistol: Lv.140 : 3 Week - usually
 9549 Damage Check: Bloody Blade (Low Blood Quality): Lv.140 : 3 Week - usually
 9550 Damage Check: Gunlance & Workshop Rifle: Lv.140 : 3 Week - usually
@@ -613,7 +613,7 @@
 9552 Damage Check: Gunlance (Low Blood): Lv.140 : 3 Week - usually
 9553 Damage Check: Sword Stake: Lv.140 : 3 Week - usually
 9554 Damage Check: Bombardment (Low Mystic): Lv.140 : 3 Week - usually
-9555,Damage Check: Blast Hammer (High Mystic): Lv.140 : 3 Week - usually
+9555 Damage Check: Blast Hammer (High Mystic): Lv.140 : 3 Week - usually
 9556 Damage Check: Wheel (Low Mystic): Lv.140 : 3 Week - usually
 9557 Damage Check: Wheel (High Mystic): Lv.140 : 3 Week - usually
 9558 Damage Check: Fist Beast: Lv.140 : 3 Week - usually
@@ -621,7 +621,7 @@
 9560 Damage Check: Handgun (Workshop Vamp): Lv.140 : 3 Week - usually
 9561 Damage Check: Handgun (Workshop/Church): Lv.140 : 3 Week - usually
 9562 Damage Check: Cannon: Lv.140 : 3 Week - usually
-9563,Damage Check: Sprayer (Low Mystic): Lv.140 : 3 Week - usually
+9563 Damage Check: Sprayer (Low Mystic): Lv.140 : 3 Week - usually
 9564 Damage Check: Sprayer (High Mystic): Lv.140 : 3 Week - usually
 9565 Damage Check: Torch (Beast/Normal): Lv.140 : 3 Week - usually
 9566 Damage Check: Nokonata: Lv.209 : 7 Week - usually
@@ -638,7 +638,7 @@
 9577 Damage Check: Bayonet & Vampire Pistol: Lv.209 : 7 Week - usually
 9578 Damage Check: Bayonet (Low Blood Quality): Lv.209 : 7 Week - usually
 9579 Damage Check: Blood Sword & Workshop Rifle: Lv.209 : 7 Week - usually
-9580,Damage Check: Blood Sword & Vampire Pistol: Lv.209 : 7 Week - usually
+9580 Damage Check: Blood Sword & Vampire Pistol: Lv.209 : 7 Week - usually
 9581 Damage Check: Bloody Blade (Low Blood Quality): Lv.209 : 7 Week - usually
 9582 Damage Check: Gunlance & Workshop Rifle: Lv.209 : 7 Week - usually
 9583 Damage Check: Gunlance & Vampire Pistol: Lv.209 : 7 Week - usually
@@ -646,7 +646,7 @@
 9585 Damage Check: Sword Stake: Lv.209 : 7 Week - usually
 9586 Damage Check: Bombardment (Low Mystic): Lv.209 : 7 Week - usually
 9587 Damage Check: Blast Hammer (High Mystic): Lv.209 : 7 Week - usually
-9588,Damage Check: Wheel (Low Mystic): Lv.209 : 7 Week - usually
+9588 Damage Check: Wheel (Low Mystic): Lv.209 : 7 Week - usually
 9589 Damage Check: Wheel (High Mystic): Lv.209 : 7 Week - usually
 9590 Damage Check: Fist Beast: Lv.209 : 7 Week - usually
 9591 Damage Check: Long Gun (Workshop/Church): Lv.209 : 7 Week - usually
@@ -654,7 +654,7 @@
 9593 Damage Check: Handgun (Workshop/Church): Lv.209 : 7 Week - usually
 9594 Damage Check: Cannon: Lv.209 : 7 Week - usually
 9595 Damage Check: Sprayer (Low Mystic): Lv.209 : 7 Week - usually
-9596,Damage Check: Sprayer (High Mystic): Lv.209 : 7 Week - usually
+9596 Damage Check: Sprayer (High Mystic): Lv.209 : 7 Week - usually
 9597 Damage Check: Torch (Beast/Normal): Lv.209 : 7 Week - usually
 9598 Damage Check: Nokonata: Lv.532 : 7 Week - Max
 9599 Damage Check: Saw Spear: Lv.532 : 7 Week - Max
@@ -662,7 +662,7 @@
 9601 Damage Check: Whip Lv.532 : 7 Week - Max
 9602 Damage Check: Sword Scythe (Low Mystic): Lv.532 : 7 Week - Max
 9603 Damage Check: Sword Scythe (High Mystic): Lv.532 : 7 Week - Max
-9604,Damage Check: Dual Blades (Low Mystic): Lv.532 : 7 Week - Max
+9604 Damage Check: Dual Blades (Low Mystic): Lv.532 : 7 Week - Max
 9605 Damage Check: Dual Blades (High Mystic): Lv.532 : 7 Week - Max
 9606 Damage Check: Stone Hammer: Lv.532 : 7 Week - Max
 9607 Damage Check: Great Sword: Lv.532 : 7 Week - Max
@@ -670,7 +670,7 @@
 9609 Damage Check: Bayonet & Vampire Pistol: Lv.532 : 7 Week - Max
 9610 Damage Check: Bayonet (Low Blood Quality): Lv.532 : 7 Week - Max
 9611 Damage Check: Blood Sword & Workshop Rifle: Lv.532 : 7 Week - Max
-9612,Damage Check: Blood Sword & Vampire Pistol: Lv.532 : 7 Week - Max
+9612 Damage Check: Blood Sword & Vampire Pistol: Lv.532 : 7 Week - Max
 9613 Damage Check: Bloody Blade (Low Blood Quality): Lv.532 : 7 Week - Max
 9614 Damage Check: Gunlance & Workshop Rifle: Lv.532 : 7 Week - Max
 9615 Damage Check: Gunlance & Vampire Pistol: Lv.532 : 7 Week - Max
@@ -706,7 +706,7 @@
 9715 Equipment Test: Hammer & shield: Lv.74 : TR Lord of Nightmares
 9716 Equipment Test: Hammer & shield: Lv.75 : TR ·daemon
 9717 Equipment Test: Hammer & shield: Lv.84 ：Base・Awakened Old Man
-9718,Equipment Test: Hammer & shield: Lv.88 : Base Nightmare
+9718 Equipment Test: Hammer & shield: Lv.88 : Base Nightmare
 9719 Equipment Test: Hammer & shield: Lv.117 : After clearing the game PvP characters
 9720 Equipment Test: Hammer & shield: Lv.228 : Competitive character
 9721 Equipment Test: Dual Swords & Katana: lv.8 :start
@@ -718,7 +718,7 @@
 9727 Equipment Test: Dual Swords & Katana: lv.39 : Cemetery
 9728 Equipment Test: Dual Swords & Katana: Lv.43 : Sacrificial City - First Episode
 9729 Equipment Test: Dual Swords & Katana: Lv.48 :forest
-9730,Equipment Test: Dual Swords & Katana: Lv.52 :hometown
+9730 Equipment Test: Dual Swords & Katana: Lv.52 :hometown
 9731 Equipment Test: Dual Swords & Katana: Lv.56 : University
 9732 Equipment Test: Dual Swords & Katana: Lv.61 ：Ancient Castle
 9733 Equipment Test: Dual Swords & Katana: Lv.66 : Sacrifice Town
@@ -730,7 +730,7 @@
 9739 Equipment Test: Dual Swords & Katana: Lv.94 : Base Nightmare
 9740 Equipment Test: Dual Swords & Katana: Lv.126 : After clearing the game PvP characters
 9741 Equipment Test: Dual Swords & Katana: Lv.218 : Characters
-9742,Equipment Test: Swords and Saws: Lv.10 :start
+9742 Equipment Test: Swords and Saws: Lv.10 :start
 9743 Equipment Test: Swords and Saws: Lv.15 : Cathedral B・Parish priest
 9744 Equipment Test: Swords and Saws: Lv.24 : Cathedral B Priest
 9745 Equipment Test: Swords and Saws: Lv.32 :ruins
@@ -743,7 +743,7 @@
 9752 Equipment Test: Swords and Saws: Lv.77 : University
 9753 Equipment Test: Swords and Saws: Lv.85 ：Ancient Castle
 9754 Equipment Test: Swords and Saws: Lv.92 : Sacrifice Town
-9755,Equipment Test: Swords and Saws: Lv.97 : Cathedral C・Second half
+9755 Equipment Test: Swords and Saws: Lv.97 : Cathedral C・Second half
 9756 Equipment Test: Swords and Saws: Lv.100 : Cathedral C・Second Half・Hidden
 9757 Equipment Test: Swords and Saws: Lv.106 : TR Lord of Nightmares
 9758 Equipment Test: Swords and Saws: Lv.113 : TR ·daemon
@@ -754,7 +754,7 @@
 9763 Equipment Test: Scythe and Saw Spear: lv.0 :start
 9764 Equipment Test: Scythe and Saw Spear: lv.5 : Cathedral B・Parish priest
 9765 Equipment Test: Scythe and Saw Spear: Lv.12 : Cathedral B Priest
-9766,Equipment Test: Scythe and Saw Spear: Lv.18 :ruins
+9766 Equipment Test: Scythe and Saw Spear: Lv.18 :ruins
 9767 Equipment Test: Scythe and Saw Spear: Lv.30 : Cathedral A
 9768 Equipment Test: Scythe and Saw Spear: Lv.33 : Cathedral C ·first half
 9769 Equipment Test: Scythe and Saw Spear: Lv.33 : Cemetery
@@ -766,7 +766,7 @@
 9775 Equipment Test: Scythe and Saw Spear: Lv.60 : Sacrifice Town
 9776 Equipment Test: Scythe and Saw Spear: Lv.63 : Cathedral C・Second half
 9777 Equipment Test: Scythe and Saw Spear: Lv.65 : Cathedral C・Second Half・Hidden
-9778,Equipment Test: Scythe and Saw Spear: Lv.70 : TR Lord of Nightmares
+9778 Equipment Test: Scythe and Saw Spear: Lv.70 : TR Lord of Nightmares
 9779 Equipment Test: Scythe and Saw Spear: Lv.75 : TR ·daemon
 9780 Equipment Test: Scythe and Saw Spear: Lv.84 ：Base・Awakened Old Man
 9781 Equipment Test: Scythe and Saw Spear: Lv.88 : Base Nightmare
@@ -801,7 +801,7 @@
 9810 Equipment Test: Sword Greatsword & Sword Great Hammer: Lv.33 : Cathedral C ·first half
 9811 Equipment Test: Sword Greatsword & Sword Great Hammer: Lv.33 : Cemetery
 9812 Equipment Test: Sword Greatsword & Sword Great Hammer: lv.37 : Sacrificial City - First Episode
-9813,Equipment Test: Sword Greatsword & Sword Great Hammer: lv.42 :forest
+9813 Equipment Test: Sword Greatsword & Sword Great Hammer: lv.42 :forest
 9814 Equipment Test: Sword Greatsword & Sword Great Hammer: lv.47 :hometown
 9815 Equipment Test: Sword Greatsword & Sword Great Hammer: lv.51 : University
 9816 Equipment Test: Sword Greatsword & Sword Great Hammer: Lv.55 ：Ancient Castle
@@ -855,7 +855,7 @@
 9864 Equipment Test: Axe Pole & Stake Sword: Lv.84 ：Base・Awakened Old Man
 9865 Equipment Test: Axe Pole & Stake Sword: Lv.88 : Base Nightmare
 9866 Equipment Test: Axe Pole & Stake Sword: Lv.122 : After clearing the game PvP characters
-9867,Equipment Test: Axe Pole & Stake Sword: Lv.218 : Competitive character
+9867 Equipment Test: Axe Pole & Stake Sword: Lv.218 : Competitive character
 9868 Equipment Test: Fist Beast & Bayonet: Lv.10 :start
 9869 Equipment Test: Fist Beast & Bayonet: Lv.14 : Cathedral B・Parish priest
 9870 Equipment Test: Fist Beast & Bayonet: lv.21 : Cathedral B Priest
@@ -867,7 +867,7 @@
 9876 Equipment Test: Fist Beast & Bayonet: lv.51 :forest
 9877 Equipment Test: Fist Beast & Bayonet: Lv.54 :hometown
 9878 Equipment Test: Fist Beast & Bayonet: Lv.62 : University
-9879,Equipment Test: Fist Beast & Bayonet: Lv.67 ：Ancient Castle
+9879 Equipment Test: Fist Beast & Bayonet: Lv.67 ：Ancient Castle
 9880 Equipment Test: Fist Beast & Bayonet: Lv.76 : Sacrifice Town
 9881 Equipment Test: Fist Beast & Bayonet: Lv.76 : Cathedral C・Second half
 9882 Equipment Test: Fist Beast & Bayonet: Lv.77 : Cathedral C・Second Half・Hidden
@@ -901,7 +901,7 @@
 9910 Equipment Test: Gun Workshop & Church: Lv.2 :start
 9911 Equipment Test: Gun Workshop & Church: Lv.11 : Cathedral B・Parish priest
 9912 Equipment Test: Gun Workshop & Church: Lv.24 : Cathedral B Priest
-9913,Equipment Test: Gun Workshop & Church: Lv.32 :ruins
+9913 Equipment Test: Gun Workshop & Church: Lv.32 :ruins
 9914 Equipment Test: Gun Workshop & Church: lv.49 : Cathedral A
 9915 Equipment Test: Gun Workshop & Church: Lv.53 : Cathedral C ·first half
 9916 Equipment Test: Gun Workshop & Church: Lv.53 : Cemetery
@@ -913,7 +913,7 @@
 9922 Equipment Test: Gun Workshop & Church: Lv.92 : Sacrifice Town
 9923 Equipment Test: Gun Workshop & Church: Lv.97 : Cathedral C・Second half
 9924 Equipment Test: Gun Workshop & Church: Lv.100 : Cathedral C・Second Half・Hidden
-9925,Equipment Test: Gun Workshop & Church: Lv.106 : TR Lord of Nightmares
+9925 Equipment Test: Gun Workshop & Church: Lv.106 : TR Lord of Nightmares
 9926 Equipment Test: Gun Workshop & Church: Lv.113 : TR ·daemon
 9927 Equipment Test: Gun Workshop & Church: Lv.126 ：Base・Awakened Old Man
 9928 Equipment Test: Gun Workshop & Church: Lv.132 : Base Nightmare
@@ -958,7 +958,7 @@
 9967 Equipment Test: Swords & Workshop Guns: Lv.106 : TR Lord of Nightmares
 9968 Equipment Test: Swords & Workshop Guns: Lv.113 : TR ·daemon
 9969 Equipment Test: Swords & Workshop Guns: Lv.126 ：Base・Awakened Old Man
-9970,Equipment Test: Swords & Workshop Guns: Lv.132 : Base Nightmare
+9970 Equipment Test: Swords & Workshop Guns: Lv.132 : Base Nightmare
 9971 Equipment Test: Swords & Workshop Guns: Lv.146 : After clearing the game PvP characters
 9972 Equipment Test: Swords & Workshop Guns: Lv.218 : Competitive character
 9973 Equipment Test: Cannon & Vamp Pistol: Lv.20 :start
@@ -969,7 +969,7 @@
 9978 Equipment Test: Cannon & Vamp Pistol: Lv.50 : Cathedral C ·first half
 9979 Equipment Test: Cannon & Vamp Pistol: lv.49 : Cemetery
 9980 Equipment Test: Cannon & Vamp Pistol: Lv.53 : Sacrificial City - First Episode
-9981,Equipment Test: Cannon & Vamp Pistol: lv.59 :forest
+9981 Equipment Test: Cannon & Vamp Pistol: lv.59 :forest
 9982 Equipment Test: Cannon & Vamp Pistol: lv.59 :hometown
 9983 Equipment Test: Cannon & Vamp Pistol: Lv.69 : University
 9984 Equipment Test: Cannon & Vamp Pistol: Lv.77 ：Ancient Castle
@@ -991,7 +991,7 @@
 10000 Equipment Test: Wheel & Sword Hammer: lv.37 : Cemetery
 10001 Equipment Test: Wheel & Sword Hammer: lv.41 : Sacrificial City - First Episode
 10002 Equipment Test: Wheel & Sword Hammer: lv.46 :forest
-10003,Equipment Test: Wheel & Sword Hammer: lv.51 :hometown
+10003 Equipment Test: Wheel & Sword Hammer: lv.51 :hometown
 10004 Equipment Test: Wheel & Sword Hammer: Lv.56 : University
 10005 Equipment Test: Wheel & Sword Hammer: Lv.60 ：Ancient Castle
 10006 Equipment Test: Wheel & Sword Hammer: Lv.66 : Sacrifice Town
@@ -1028,7 +1028,7 @@
 10037 Equipment Test: Sprayers & Flamethrowers: Lv.9 : Cathedral B・Parish priest
 10038 Equipment Test: Sprayers & Flamethrowers: Lv.22 : Cathedral B Priest
 10039 Equipment Test: Sprayers & Flamethrowers: Lv.30 :ruins
-10040,Equipment Test: Sprayers & Flamethrowers: lv.47 : Cathedral A
+10040 Equipment Test: Sprayers & Flamethrowers: lv.47 : Cathedral A
 10041 Equipment Test: Sprayers & Flamethrowers: lv.51 : Cathedral C ·first half
 10042 Equipment Test: Sprayers & Flamethrowers: lv.51 : Cemetery
 10043 Equipment Test: Sprayers & Flamethrowers: Lv.56 : Sacrificial City - First Episode
@@ -1039,7 +1039,7 @@
 10048 Equipment Test: Sprayers & Flamethrowers: Lv.90 : Sacrifice Town
 10049 Equipment Test: Sprayers & Flamethrowers: Lv.95 : Cathedral C・Second half
 10050 Equipment Test: Sprayers & Flamethrowers: Lv.98 : Cathedral C・Second Half・Hidden
-10051,Equipment Test: Sprayers & Flamethrowers: Lv.104 : TR Lord of Nightmares
+10051 Equipment Test: Sprayers & Flamethrowers: Lv.104 : TR Lord of Nightmares
 10052 Equipment Test: Sprayers & Flamethrowers: Lv.111 : TR ·daemon
 10053 Equipment Test: Sprayers & Flamethrowers: Lv.124 ：Base・Awakened Old Man
 10054 Equipment Test: Sprayers & Flamethrowers: Lv.130 : Base Nightmare
@@ -1049,7 +1049,7 @@
 10058 Gear Test: Stalker & Cain: Lv.9 : Cathedral B・Parish priest
 10059 Gear Test: Stalker & Cain: Lv.22 : Cathedral B Priest
 10060 Gear Test: Stalker & Cain: Lv.30 :ruins
-10061,Gear Test: Stalker & Cain: lv.47 : Cathedral A
+10061 Gear Test: Stalker & Cain: lv.47 : Cathedral A
 10062 Gear Test: Stalker & Cain: lv.51 : Cathedral C ·first half
 10063 Gear Test: Stalker & Cain: lv.51 : Cemetery
 10064 Gear Test: Stalker & Cain: Lv.56 : Sacrificial City - First Episode
@@ -1060,7 +1060,7 @@
 10069 Gear Test: Stalker & Cain: Lv.90 : Sacrifice Town
 10070 Gear Test: Stalker & Cain: Lv.95 : Cathedral C・Second half
 10071 Gear Test: Stalker & Cain: Lv.98 : Cathedral C・Second Half・Hidden
-10072,Gear Test: Stalker & Cain: Lv.104 : TR Lord of Nightmares
+10072 Gear Test: Stalker & Cain: Lv.104 : TR Lord of Nightmares
 10073 Gear Test: Stalker & Cain: Lv.111 : TR ·daemon
 10074 Gear Test: Stalker & Cain: Lv.124 ：Base・Awakened Old Man
 10075 Gear Test: Stalker & Cain: Lv.130 : Base Nightmare
@@ -1083,7 +1083,7 @@
 10092 Gear Test: Spellman: Lv.96 : Cathedral C・Second Half・Hidden
 10093 Gear Test: Spellman: Lv.104 : TR Lord of Nightmares
 10094 Gear Test: Spellman: Lv.111 : TR ·daemon
-10095,Gear Test: Spellman: Lv.124 ：Base・Awakened Old Man
+10095 Gear Test: Spellman: Lv.124 ：Base・Awakened Old Man
 10096 Gear Test: Spellman: Lv.130 : Base Nightmare
 10097 Gear Test: Spellman: Lv.169 : After clearing the game PvP characters 60
 10098 Gear Test: Spellman: Lv.179 : After clearing the game PvP characters 70
@@ -1092,14 +1092,14 @@
 10101 Dungeon Quick Check: Nokonata & Hammer: twenty one Fixed Grail [Level 1 】Thumel
 10102 Dungeon Quick Check: Nokonata & Hammer: 33 Fixed Grail [Level 2 】Thumel
 10103 Dungeon Quick Check: Nokonata & Hammer: 33 Fixed Grail [Level 2 】 Remote Grave
-10104,Dungeon Quick Check: Nokonata & Hammer: 67 Fixed Grail [Level 3 】Thumel
+10104 Dungeon Quick Check: Nokonata & Hammer: 67 Fixed Grail [Level 3 】Thumel
 10105 Dungeon Quick Check: Nokonata & Hammer: 67 Fixed Grail [Level 3 】 Remote Grave
 10106 Dungeon Quick Check: Nokonata & Hammer: 126 Fixed Grail [Level 4 】Thumel _ curse
 10107 Dungeon Quick Check: Nokonata & Hammer: 126 Fixed Grail [Level 4 】 Laurent
 10108 Dungeon Quick Check: Nokonata & Hammer: 145 Fixed Grail [Level 5 】Thumel
 10109 Dungeon Quick Check: Nokonata & Hammer: 145 Fixed Grail [Level 5 】 Laurent
 10110 Dungeon Quick Check: Nokonata & Hammer: 145 Fixed Grail [Level 5 】Is
-10111,Dungeon Quick Check: Nokonata & Hammer: twenty one Automatically generated chalice [Level 1 】Thumel
+10111 Dungeon Quick Check: Nokonata & Hammer: twenty one Automatically generated chalice [Level 1 】Thumel
 10112 Dungeon Quick Check: Nokonata & Hammer: 33 Automatically generated chalice [Level 2 】Thumel
 10113 Dungeon Quick Check: Nokonata & Hammer: 33 Automatically generated chalice [Level 2 】 Remote Grave
 10114 Dungeon Quick Check: Nokonata & Hammer: 67 Automatically generated chalice [Level 3 】Thumel
@@ -1127,7 +1127,7 @@
 10136 Dungeon Check: Nokonata & Hammer: lv.21 : Automatically generated chalice [Level 1 】Thumel
 10137 Dungeon Check: Nokonata & Hammer: Lv.33 : Automatically generated chalice [Level 2 】Thumel
 10138 Dungeon Check: Nokonata & Hammer: Lv.33 : Automatically generated chalice [Level 2 】 Remote Grave
-10139,Dungeon Check: Nokonata & Hammer: Lv.61 : Automatically generated chalice [Level 3 】Thumel
+10139 Dungeon Check: Nokonata & Hammer: Lv.61 : Automatically generated chalice [Level 3 】Thumel
 10140 Dungeon Check: Nokonata & Hammer: Lv.61 : Automatically generated chalice [Level 3 】Thumel _ Multi
 10141 Dungeon Check: Nokonata & Hammer: Lv.61 : Automatically generated chalice [Level 3 】 Remote Grave
 10142 Dungeon Check: Nokonata & Hammer: Lv.61 : Automatically generated chalice [Level 3 】 Remote Grave _ Multi
@@ -1143,7 +1143,7 @@
 10152 Magic Stone Check: Forest: Hammer
 10153 Magic Stone Check: Forest: Sword
 10154 Magic Stone Check: Forest: Explosive Hammer
-10155,Magic Stone Check: Forest: Wheel
+10155 Magic Stone Check: Forest: Wheel
 10156 Magic Stone Check: Forest: Gunlance & Bayonet
 10157 Magic stone check: 100 Level range: For punching bags
 10158 Magic stone check: 214 Level range: Nokonata & Sword Hammer
@@ -1157,7 +1157,7 @@
 10166 Magic stone check: 204 Level range: Explosive hammer & wheel
 10167 Magic stone check: 204 Level range: Pile & Fist Beast
 10168 Magic stone check: 204 Level range: Gunlance & Bayonet
-10169,Magic stone check: 140 Level range: For punching bags
+10169 Magic stone check: 140 Level range: For punching bags
 10170 Magic stone check: 224 Level range: Nokonata & Sword Hammer
 10171 Magic stone check: 224 Level range: Swords and axes
 10172 Magic stone check: 224 Level range: Explosive hammer & wheel
@@ -1170,7 +1170,7 @@
 10179 Magic stone check: 269 Level range: Pile & Fist Beast
 10180 Magic stone check: 269 Level range: Gunlance & Bayonet
 10181 Magic stone check: 180 Level range: For punching bags
-10182,Magic stone check: 314 Level range: Nokonata & Sword Hammer
+10182 Magic stone check: 314 Level range: Nokonata & Sword Hammer
 10183 Magic stone check: 314 Level range: Swords and axes
 10184 Magic stone check: 314 Level range: Explosive hammer & wheel
 10185 Magic stone check: 314 Level range: Pile & Fist Beast
@@ -1183,7 +1183,7 @@
 10192 Magic stone check: 339 Level range: Gunlance & Bayonet
 10193 Magic stone check: 220 Level range: For punching bags
 10194 Magic stone check: 364 Level range: Nokonata & Sword Hammer
-10195,Magic stone check: 364 Level range: Swords and axes
+10195 Magic stone check: 364 Level range: Swords and axes
 10196 Magic stone check: 364 Level range: Explosive hammer & wheel
 10197 Magic stone check: 364 Level range: Pile & Fist Beast
 10198 Magic stone check: 364 Level range: Gunlance & Bayonet
@@ -1230,7 +1230,7 @@
 10239 Balance Base: Nokonata & Sword Hammer: lv.38 : Cathedral C ·first half
 10240 Balance Base: Nokonata & Sword Hammer: lv.38 : Reality base
 10241 Balance Base: Nokonata & Sword Hammer: Lv.45 : Cemetery
-10242,Balance Base: Nokonata & Sword Hammer: Lv.50 : Cemetery night
+10242 Balance Base: Nokonata & Sword Hammer: Lv.50 : Cemetery night
 10243 Balance Base: Nokonata & Sword Hammer: Lv.50 : Cathedral B ·night
 10244 Balance Base: Nokonata & Sword Hammer: Lv.50 : Cathedral A ·night
 10245 Balance Base: Nokonata & Sword Hammer: Lv.52 : Sacrificial City - First Episode
@@ -1241,7 +1241,7 @@
 10250 Balance Base: Nokonata & Sword Hammer: Lv.57 : Hometown first half
 10251 Balance Base: Nokonata & Sword Hammer: Lv.60 : Hometown Part 2
 10252 Balance Base: Nokonata & Sword Hammer: Lv.62 : University
-10253,Balance Base: Nokonata & Sword Hammer: Lv.67 ：Ancient Castle
+10253 Balance Base: Nokonata & Sword Hammer: Lv.67 ：Ancient Castle
 10254 Balance Base: Nokonata & Sword Hammer: Lv.72 : Sacrifice Town
 10255 Balance Base: Nokonata & Sword Hammer: Lv.72 : Cathedral C First half night
 10256 Balance Base: Nokonata & Sword Hammer: Lv.75 : Cathedral C・Second half
@@ -1251,7 +1251,7 @@
 10260 Balance Base: Nokonata & Sword Hammer: Lv.92 : TR ·daemon
 10261 Balance Base: Nokonata & Sword Hammer: Lv.96 ：Base・Awakened Old Man
 10262 Balance Base: Nokonata & Sword Hammer: Lv.100 : Base Nightmare
-10263,Balance Base: Nokonata & Sword Hammer: Lv.129 : After clearing the game PvP characters
+10263 Balance Base: Nokonata & Sword Hammer: Lv.129 : After clearing the game PvP characters
 10264 Balance Base: Nokonata & Sword Hammer: Lv.221 : Competitive character
 10265 Balance Base: Nokonata & Sword Hammer: Lv.100 : 1 After clearing the first round
 10266 Balance Base: Nokonata & Sword Hammer: Lv.100 : 2 Week - Somewhat weak
@@ -1260,7 +1260,7 @@
 10269 Balance Base: Nokonata & Sword Hammer: Lv.152 : 3 Week
 10270 Balance Base: Nokonata & Sword Hammer: Lv.172 : 4 Week
 10271 Balance Base: Nokonata & Sword Hammer: Lv.192 : 5 Week
-10272,Balance Base: Nokonata & Sword Hammer: Lv.212 : 6 Week
+10272 Balance Base: Nokonata & Sword Hammer: Lv.212 : 6 Week
 10273 Balance Base: Nokonata & Sword Hammer: Lv.228 : 7 Week
 10274 Balance Base: Nokonata & Sword Hammer: Lv.544 : 7 Week - Max
 10300 DLC Balance base: Fine (standard): Lv.10 :start
@@ -1317,7 +1317,7 @@
 10355 DLC Balance Base: Mystic (Standard): Lv.22 : Cathedral A ·first half
 10356 DLC Balance Base: Mystic (Standard): lv.26 : Cathedral A Mid-game
 10357 DLC Balance Base: Mystic (Standard): lv.28 : Cathedral A・Saint Beast
-10358,DLC Balance Base: Mystic (Standard): lv.26 : Cathedral C ·first half
+10358 DLC Balance Base: Mystic (Standard): lv.26 : Cathedral C ·first half
 10359 DLC Balance Base: Mystic (Standard): lv.26 : Reality base
 10360 DLC Balance Base: Mystic (Standard): Lv.30 : Cemetery
 10361 DLC Balance Base: Mystic (Standard): Lv.32 : Dungeon 2
@@ -1346,7 +1346,7 @@
 10384 DLC Balance Base: Mystic (Standard): Lv.75 : 1 After clearing the first round
 10385 DLC Balance Base: Mystic (Standard): Lv.75 : 2 Week - Somewhat weak
 10386 DLC Balance Base: Mystic (Standard): Lv.85 : 2 Week - usually
-10387,DLC Balance Base: Mystic (Standard): Lv.105 : 2 Week - strong
+10387 DLC Balance Base: Mystic (Standard): Lv.105 : 2 Week - strong
 10388 DLC Balance Base: Mystic (Standard): Lv.105 : Dungeon 4
 10389 DLC Balance Base: Mystic (Standard): Lv.125 : 3 Week
 10390 DLC Balance Base: Mystic (Standard): Lv.125 : Dungeon 5
@@ -1376,7 +1376,7 @@
 10421 DLC Balance-based: Skill-specific: Lv.18 :ruins
 10422 DLC Balance-based: Skill-specific: lv.28 : Cathedral A・Saint Beast
 10423 DLC Balance-based: Skill-specific: Lv.30 : Cemetery
-10424,DLC Balance-based: Skill-specific: Lv.40 :forest
+10424 DLC Balance-based: Skill-specific: Lv.40 :forest
 10425 DLC Balance-based: Skill-specific: Lv.50 : University
 10426 DLC Balance-based: Skill-specific: Lv.60 : Sacrifice Town
 10427 DLC Balance-based: Skill-specific: Lv.70 : TR Lord of Nightmares
@@ -1397,7 +1397,7 @@
 10446 DLC Balance base: Blood type specialization: Lv.60 : Sacrifice Town
 10447 DLC Balance base: Blood type specialization: Lv.70 : TR Lord of Nightmares
 10448 DLC Balance base: Blood type specialization: Lv.75 ：Base・Awakened Old Man
-10449,DLC Balance base: Blood type specialization: Lv.85 : 2 Week - usually
+10449 DLC Balance base: Blood type specialization: Lv.85 : 2 Week - usually
 10450 DLC Balance base: Blood type specialization: Lv.105 : 2 Week - strong
 10451 DLC Balance base: Blood type specialization: Lv.125 : 3 Week
 10452 DLC Balance base: Blood type specialization: Lv.140 : 4 Week
@@ -1428,7 +1428,7 @@
 10485 DLC Balance-based: Physical strength-focused: Lv.50 : University
 10486 DLC Balance-based: Physical strength-focused: Lv.60 : Sacrifice Town
 10487 DLC Balance-based: Physical strength-focused: Lv.70 : TR Lord of Nightmares
-10488,DLC Balance-based: Physical strength-focused: Lv.75 ：Base・Awakened Old Man
+10488 DLC Balance-based: Physical strength-focused: Lv.75 ：Base・Awakened Old Man
 10489 DLC Balance-based: Physical strength-focused: Lv.85 : 2 Week - usually
 10490 DLC Balance-based: Physical strength-focused: Lv.105 : 2 Week - strong
 10491 DLC Balance-based: Physical strength-focused: Lv.125 : 3 Week
@@ -1609,7 +1609,7 @@
 30331 30331_ For internal review _ forest _ Moonlight Sword / Sword Great Sword / torch / Long gun
 30400 30400_ For internal review _ First Lap _ Mystic
 30401 30401_ For internal review _ First Lap _ Mystic _ Add torches
-30410,30410_ For internal review _2 Lap (immediately after clearing) _ Mystic
+30410 30410_ For internal review _2 Lap (immediately after clearing) _ Mystic
 30411 30411_ For internal review _2 Lap (immediately after clearing) _ Mystic _ Add torches
 30420 30420_ For internal review _2 Shuume (Veteran) _ Mystic
 30421 30421_ For internal review _2 Shuume (Veteran) _ Mystic _ Add torches
@@ -1648,7 +1648,7 @@
 30822 30822_ For internal review _2 Shuume (Veteran) _ Saw Curved Sword / Nokonata / Piercing gun / Long gun
 30823 30823_ For internal review _2 Shuume (Veteran) _ Saw Curved Sword / Nokonata / torch / Long gun
 30832 30832_ For internal review _ forest _ Saw Curved Sword / Nokonata / Piercing gun / Long gun
-30833,30833_ For internal review _ forest _ Saw Curved Sword / Nokonata / torch / Long gun
+30833 30833_ For internal review _ forest _ Saw Curved Sword / Nokonata / torch / Long gun
 30900 30900_ For internal review _ First Lap _ Saw whip / Cane Whip / Gatling / Long gun
 30901 30901_ For internal review _ First Lap _ Saw whip / Cane Whip / Grenades / Long gun
 30902 30902_ For internal review _ First Lap _ Saw whip / Cane Whip / Piercing gun / Long gun

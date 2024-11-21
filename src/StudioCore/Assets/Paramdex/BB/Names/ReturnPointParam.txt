@@ -12,7 +12,7 @@
 2102960 Location 10_ Gravestone _ Channel Dungeon 6
 2102961 Location 11_ Restart point when you die at the base
 2102962 Location 12_ After the first police death drama
-2112950,Reality Base _ Inside the building
+2112950 Reality Base _ Inside the building
 2202950 Cemetery Street _ chair _ start
 2202951 Cemetery Street _ chair _ Defeat the Eye Collector
 2302950 ruins _ chair _ start

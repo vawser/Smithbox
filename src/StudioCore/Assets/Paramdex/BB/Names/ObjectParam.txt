@@ -26,10 +26,10 @@
 474 m20_01 Iron bars in front of the house
 475 m20_01 Small door of the mansion
 467 Chandelier Destruction
-513,Prototype
-514,Prototype
-515,Prototype
-516,Prototype
+513 Prototype
+514 Prototype
+515 Prototype
+516 Prototype
 600 Warp Uncle
 640 General-purpose chair for treasure corpses (worn)
 642 General-purpose chair for treasure corpses (clean)
@@ -73,7 +73,7 @@
 1154 Barrel of Immortals
 1155 Barrel of Immortals ( No lid )
 1156 Barrel of Undead Pickles (for vendors only)
-1160,Tables and chairs
+1160 Tables and chairs
 1162 Tables and chairs ( Small items 1)
 1163 Tables and chairs ( Small items 2)
 1170 shelf
@@ -114,7 +114,7 @@
 1270 desk
 1300 Statue on church roof
 1305 Castle town 1 Door to the forest
-1306,Castle town 1 From the castle town 2 Door to
+1306 Castle town 1 From the castle town 2 Door to
 1308 Door (iron bars)
 1309 door
 1310 Door (wooden)
@@ -205,7 +205,7 @@
 2111 m12 Boss Door
 2120 Hidden Door
 2130 Long bridge wall (left)
-2131,Long bridge wall (right)
+2131 Long bridge wall (right)
 2200 Ogi 00
 2201 Ogi 01
 2202 Dark Tree
@@ -248,7 +248,7 @@
 2424 table
 2425 Weapon Stand A
 2426 Weapon Stand B
-2427,Luxury Chair
+2427 Luxury Chair
 2428 Small box A
 2429 Small box B
 2430 Seat
@@ -317,7 +317,7 @@
 2731 Hidden Door
 2732 Hidden Door
 2740 desk
-2750,Chair
+2750 Chair
 2760 Tomb of Artorias
 2765 Goh's Bow
 2770 Stone statue
@@ -417,11 +417,11 @@
 3243 Ladder Dark Place Last
 3250 Floorboards
 3251 null
-3260,Skeleton statue
+3260 Skeleton statue
 3261 null
 3270 Demon Statue
 3271 null
-3280,Skeleton statue
+3280 Skeleton statue
 3290 Storm Warrior
 3291 Storm Warrior Replacement Rubble
 3292 Storm warrior figurine
@@ -654,7 +654,7 @@
 4810 The collapsing floor
 4820 Transformation Pot 1-0
 4830 Transformation Statue 14-1
-4840,Izalith Branch
+4840 Izalith Branch
 4850 Izalith Spear
 4900 null
 4901 null
@@ -758,7 +758,7 @@
 5950 Chapel bench
 5951 bench
 5952 Mini bench
-5960,Worktable bench
+5960 Worktable bench
 5965 Giant Blacksmith's Chair
 5967 Giant Slave Blacksmith's Jar
 5968 Giant Slave Blacksmith's Barrel
@@ -807,7 +807,7 @@
 7251 Mobile bookshelf 1 Floor
 7300 Prison ladder
 7301 Prison guard tower ladder
-7302,Forest ladder
+7302 Forest ladder
 7303 Ladder in the back of the library
 7400 Prison Door
 7401 Jail Door
@@ -878,9 +878,9 @@
 8601 Church pillar
 8610 Sewer column
 8611 Sewer column
-8700,The ruins of the church
-8701,The ruins of the church
-8702,The ruins of the church
+8700 The ruins of the church
+8701 The ruins of the church
+8702 The ruins of the church
 8950 Wall of Light 18-1
 8951 Wall of Light 18-1
 8952 Wall of Light 18-1
@@ -929,7 +929,7 @@
 210020 month
 210051 Crucifixion
 210200 Commercial Objects
-210201,Hero's Grave
+210201 Hero's Grave
 210500 Boss Area Gate
 212000 Destruction Book
 212002 Destruction Book
@@ -985,7 +985,7 @@
 230303 Wall of Fog
 239734 sandbag
 239735 sandbag + box
-239910,Ladder in a partially destroyed building
+239910 Ladder in a partially destroyed building
 239911 Cathedral Quarter A Ladder for connecting to
 239912 Ladder to the Clock Tower (Part 2)
 239913 Shortcut return ladder
@@ -1016,7 +1016,7 @@
 240039 door ( Cathedral A.B. connection)
 240040 Door (in front of the church)
 240045 Statues at Sturt Church
-240046,Single bottle of blood
+240046 Single bottle of blood
 240047 hat( m009770)
 240048 Shoes (single item) m009771
 240049 Road load _ Trolley m009743
@@ -1131,7 +1131,7 @@
 254200 Waiting room tableware 1
 254201 Waiting room tableware 2
 254202 Waiting room tableware 3
-254203,Waiting room tableware 4
+254203 Waiting room tableware 4
 254204 Waiting room tableware 5
 254205 Waiting room tableware 6
 254206 Waiting room tableware 7
@@ -1216,7 +1216,7 @@
 261226 Shaking Cage
 261228 Shaking Cage
 262000 Cutscene Baby Carriage
-270002,Forest gate door
+270002 Forest gate door
 270010 ladder 1
 270011 ladder 2
 270012 ladder 3
@@ -1271,7 +1271,7 @@
 281010 Street lamp
 281020 Sacrificed Corpse (Male)
 281021 Sacrificed Corpse (Male) _ Variations 1
-281022,Sacrificed Corpse (Male) _ Variations 2
+281022 Sacrificed Corpse (Male) _ Variations 2
 281023 Sacrificed Corpse (Male) _ Variations 3
 281024 Sacrificed Corpse (Male) _ Variations 4
 281030 Sacrificed Corpse (Female)
@@ -1326,7 +1326,7 @@
 289000 Warp Chair
 289900 Kidnapper Hotei ( Cutscenes )
 289910 Saint Beast Pendant (cut scene)
-290000,Level moving elevator
+290000 Level moving elevator
 290002 【storm】
 290004 [Cosmic]
 290010 General-purpose lever
@@ -1428,7 +1428,7 @@
 291820 Magical hidden door (for lower level)
 291822 【storm】
 291824 [Cosmic]
-291890,Magical Secret Door (worm-eaten)
+291890 Magical Secret Door (worm-eaten)
 291892 【storm】
 291894 [Cosmic]
 291900 Big boss door
@@ -1539,7 +1539,7 @@
 293710 Fiery Arrow Statue A2 Destructible
 293712 【storm】
 293714 [Cosmic]
-293720,Fiery Arrow Statue A3 Destructible
+293720 Fiery Arrow Statue A3 Destructible
 293722 【storm】
 293724 [Cosmic]
 293730 Fiery Arrow Statue B1 Destructible
@@ -1626,7 +1626,7 @@
 294410 No coffin or wall stopper
 294412 【storm】
 294414 [Cosmic]
-294420,Coffin (from Cathedral Ward)
+294420 Coffin (from Cathedral Ward)
 294422 【storm】
 294424 [Cosmic]
 294450 Coffin/Hit only
@@ -1722,7 +1722,7 @@
 294960 Wide passage pillar
 294962 【storm】
 294964 [Cosmic]
-294970,Step room A Pillar
+294970 Step room A Pillar
 294972 【storm】
 294974 [Cosmic]
 294980 Jumping step room pillar
@@ -1898,7 +1898,7 @@
 299822 Rusty lattice door
 299842 Rusty Treasure Chest (M)
 299900 Elevator
-299901,Trap Switch
+299901 Trap Switch
 299902 lever
 299910 Upper middle ladder
 299911 Middle and lower ladder
@@ -1963,7 +1963,7 @@
 322107 Medicine bottle 07
 322108 Medicine bottle 08
 322109 Medicine bottle 09
-322000,New School Building _ Experiment Table
+322000 New School Building _ Experiment Table
 322001 New School Building _ Lab Table (destroyed)
 322010 New School Building _ General-purpose desk
 322011 New School Building _ General-purpose desk (without bottles)
@@ -1981,7 +1981,7 @@
 322054 New School Building _ Hallway shelf 5 Stage
 322055 New School Building _ Hallway shelf 6 Stage
 322056 New School Building _ Hallway shelf 7 Stage
-322070,New School Building _ Hallway shelf 3 Tier Wide
+322070 New School Building _ Hallway shelf 3 Tier Wide
 322071 New School Building _ Hallway shelf 2 Tier Wide
 322060 New School Building _ chandelier
 322100 Entrance door
@@ -2031,7 +2031,7 @@
 340116 Box (metal large)
 340117 Box (metal small)
 340118 Barrel (vertical)
-340119,Barrel (horizontal)
+340119 Barrel (horizontal)
 340120 Coffin (metal)
 340121 Sewage D
 340122 Plastic bottle with blood
@@ -2079,7 +2079,7 @@
 350127 shelf _ simple _ Short
 350128 Multi-level staircase _ Set of jars on shelf _ Few
 350129 Multi-level staircase _ Set of jars on shelf _ Many
-350130,Blood transfusion table
+350130 Blood transfusion table
 350131 shelf _ Cloth cover B
 350132 Cathedral Bed
 350133 Cathedral Bed _ Variations
@@ -2118,7 +2118,7 @@
 353003 Gimmick parts
 353004 Clock face
 353005 Elevator _ Sunflower field
-353006,Altar elevator
+353006 Altar elevator
 353007 Multi-level staircase central column
 353008 Multi-level staircase central landing
 353009 Multi-level staircase
@@ -2126,7 +2126,7 @@
 353011 Skull under the altar
 353012 Clock face gimmick
 353013 Altar elevator _ under
-353020,Trap Switch
+353020 Trap Switch
 353100 Parent Sunflower
 353101 sunflower
 353102 sunflower

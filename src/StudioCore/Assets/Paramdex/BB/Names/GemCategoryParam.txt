@@ -29,7 +29,7 @@
 60600 Attack power [Fire] (fixed value) Cost 6 Sub
 70100 Attack power [Lightning] (fixed value) Cost 1 Sub
 70200 Attack power [Lightning] (fixed value) Cost 2 Sub
-70300,Attack power [Lightning] (fixed value) Cost 3 Sub
+70300 Attack power [Lightning] (fixed value) Cost 3 Sub
 70400 Attack power [Lightning] (fixed value) Cost 4 Sub
 70500 Attack power [Lightning] (fixed value) Cost 5 Sub
 70600 Attack power [Lightning] (fixed value) Cost 6 Sub
@@ -66,7 +66,7 @@
 141100 Attack power [Magic] (multiplier) Cost 1 main
 141200 Attack power [Magic] (multiplier) Cost 2 main
 141300 Attack power [Magic] (multiplier) Cost 3 main
-141400,Attack power [Magic] (multiplier) Cost 4 main
+141400 Attack power [Magic] (multiplier) Cost 4 main
 141500 Attack power [Magic] (multiplier) Cost 5 main
 141600 Attack power [Magic] (multiplier) Cost 6 main
 151100 Attack power [Fire] (multiplier) Cost 1 main
@@ -78,7 +78,7 @@
 152100 Attack power [Fire] (multiplier) Cost 1 Main Dungeon C
 152200 Attack power [Fire] (multiplier) Cost 2 Main Dungeon C
 152300 Attack power [Fire] (multiplier) Cost 3 Main Dungeon C
-152400,Attack power [Fire] (multiplier) Cost 4 Main Dungeon C
+152400 Attack power [Fire] (multiplier) Cost 4 Main Dungeon C
 152500 Attack power [Fire] (multiplier) Cost 5 Main Dungeon C
 152600 Attack power [Fire] (multiplier) Cost 6 Main Dungeon C
 161100 Attack power [Lightning] (multiplier) Cost 1 main
@@ -121,7 +121,7 @@
 181200 Attack power [all] (multiplier) + cost 2 main
 181300 Attack power [all] (multiplier) + cost 3 main
 181400 Attack power [all] (multiplier) + cost 4 main
-181500,Attack power [all] (multiplier) + cost 5 main
+181500 Attack power [all] (multiplier) + cost 5 main
 181600 Attack power [all] (multiplier) + cost 6 main
 190100 Attack power [all] (multiplier) - cost 1 Sub
 190200 Attack power [all] (multiplier) - cost 2 Sub
@@ -164,7 +164,7 @@
 231300 Attack power correction [Magic] (multiplier) Cost 3 main
 231400 Attack power correction [Magic] (multiplier) Cost 4 main
 231500 Attack power correction [Magic] (multiplier) Cost 5 main
-231600,Attack power correction [Magic] (multiplier) Cost 6 main
+231600 Attack power correction [Magic] (multiplier) Cost 6 main
 239100 Special Attack Damage [Beast] (Multiplier) + cost 1 Sub-dungeon B
 239200 Special Attack Damage [Beast] (Multiplier) + cost 2 Sub-dungeon B
 239300 Special Attack Damage [Beast] (Multiplier) + cost 3 Sub-dungeon B
@@ -173,7 +173,7 @@
 239600 Special Attack Damage [Beast] (Multiplier) + cost 6 Sub-dungeon B
 240100 Special Attack Damage [Beast] (Multiplier) + cost 1 Sub
 240200 Special Attack Damage [Beast] (Multiplier) + cost 2 Sub
-240300,Special Attack Damage [Beast] (Multiplier) + cost 3 Sub
+240300 Special Attack Damage [Beast] (Multiplier) + cost 3 Sub
 240400 Special Attack Damage [Beast] (Multiplier) + cost 4 Sub
 240500 Special Attack Damage [Beast] (Multiplier) + cost 5 Sub
 240600 Special Attack Damage [Beast] (Multiplier) + cost 6 Sub
@@ -183,7 +183,7 @@
 241400 Special Attack Damage [Beast] (Multiplier) + cost 4 main
 241500 Special Attack Damage [Beast] (Multiplier) + cost 5 main
 241600 Special Attack Damage [Beast] (Multiplier) + cost 6 main
-242100,Special Attack Damage [Beast] (Multiplier) + cost 1 Main Dungeon B
+242100 Special Attack Damage [Beast] (Multiplier) + cost 1 Main Dungeon B
 242200 Special Attack Damage [Beast] (Multiplier) + cost 2 Main Dungeon B
 242300 Special Attack Damage [Beast] (Multiplier) + cost 3 Main Dungeon B
 242400 Special Attack Damage [Beast] (Multiplier) + cost 4 Main Dungeon B
@@ -211,7 +211,7 @@
 261200 Special Attack Damage [Moon] (Multiplier) + cost 2 main
 261300 Special Attack Damage [Moon] (Multiplier) + cost 3 main
 261400 Special Attack Damage [Moon] (Multiplier) + cost 4 main
-261500,Special Attack Damage [Moon] (Multiplier) + cost 5 main
+261500 Special Attack Damage [Moon] (Multiplier) + cost 5 main
 261600 Special Attack Damage [Moon] (Multiplier) + cost 6 main
 262100 Special Attack Damage [Moon] (Multiplier) + cost 1 Main Dungeon B
 262200 Special Attack Damage [Moon] (Multiplier) + cost 2 Main Dungeon B
@@ -250,7 +250,7 @@
 282500 Status Abnormality Attack Power [Poison] (Fixed Value) Cost 5 Main Dungeon B
 282600 Status Abnormality Attack Power [Poison] (Fixed Value) Cost 6 Main Dungeon B
 289100 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 1 Sub-dungeon B
-289200,Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 2 Sub-dungeon B
+289200 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 2 Sub-dungeon B
 289300 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 3 Sub-dungeon B
 289400 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 4 Sub-dungeon B
 289500 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 5 Sub-dungeon B
@@ -260,7 +260,7 @@
 290300 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 3 Sub
 290400 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 4 Sub
 290500 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 5 Sub
-290600,Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 6 Sub
+290600 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 6 Sub
 291100 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 1 main
 291200 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 2 main
 291300 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 3 main
@@ -270,7 +270,7 @@
 292100 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 1 Main Dungeon B
 292200 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 2 Main Dungeon B
 292300 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 3 Main Dungeon B
-292400,Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 4 Main Dungeon B
+292400 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 4 Main Dungeon B
 292500 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 5 Main Dungeon B
 292600 Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 6 Main Dungeon B
 300100 Counter Damage (Multiplier) Cost 1 Sub
@@ -291,7 +291,7 @@
 311400 Stamina consumption when attacking (multiplier) + cost 4 main
 311500 Stamina consumption when attacking (multiplier) + cost 5 main
 311600 Stamina consumption when attacking (multiplier) + cost 6 main
-320100,Stamina consumption when attacking (multiplier) - cost 1 Sub
+320100 Stamina consumption when attacking (multiplier) - cost 1 Sub
 320200 Stamina consumption when attacking (multiplier) - cost 2 Sub
 320300 Stamina consumption when attacking (multiplier) - cost 3 Sub
 320400 Stamina consumption when attacking (multiplier) - cost 4 Sub
@@ -303,7 +303,7 @@
 330400 Charged attack power (multiplier) Cost 4 Sub
 330500 Charged attack power (multiplier) Cost 5 Sub
 330600 Charged attack power (multiplier) Cost 6 Sub
-331100,Charged attack power (multiplier) Cost 1 main
+331100 Charged attack power (multiplier) Cost 1 main
 331200 Charged attack power (multiplier) Cost 2 main
 331300 Charged attack power (multiplier) Cost 3 main
 331400 Charged attack power (multiplier) Cost 4 main
@@ -329,7 +329,7 @@
 350600 HP Regenerate - cost 6 Sub
 360100 Regain Recovery Amount (Multiplier) Cost 1 Sub
 360200 Regain Recovery Amount (Multiplier) Cost 2 Sub
-360300,Regain Recovery Amount (Multiplier) Cost 3 Sub
+360300 Regain Recovery Amount (Multiplier) Cost 3 Sub
 360400 Regain Recovery Amount (Multiplier) Cost 4 Sub
 360500 Regain Recovery Amount (Multiplier) Cost 5 Sub
 360600 Regain Recovery Amount (Multiplier) Cost 6 Sub
@@ -341,7 +341,7 @@
 370600 Weapon durability (fixed value) + cost 6 Sub
 380100 Weapon durability (fixed value) - cost 1 Sub
 380200 Weapon durability (fixed value) - cost 2 Sub
-380300,Weapon durability (fixed value) - cost 3 Sub
+380300 Weapon durability (fixed value) - cost 3 Sub
 380400 Weapon durability (fixed value) - cost 4 Sub
 380500 Weapon durability (fixed value) - cost 5 Sub
 380600 Weapon durability (fixed value) - cost 6 Sub
@@ -377,7 +377,7 @@
 401600 Attack power [Physical] HP When near death: (multiplier) Cost 6 main
 402100 Attack power [Physical] HP When near death: (multiplier) Cost 1 Main Dungeon A'
 402200 Attack power [Physical] HP When near death: (multiplier) Cost 2 Main Dungeon A'
-402300,Attack power [Physical] HP When near death: (multiplier) Cost 3 Main Dungeon A'
+402300 Attack power [Physical] HP When near death: (multiplier) Cost 3 Main Dungeon A'
 402400 Attack power [Physical] HP When near death: (multiplier) Cost 4 Main Dungeon A'
 402500 Attack power [Physical] HP When near death: (multiplier) Cost 5 Main Dungeon A'
 402600 Attack power [Physical] HP When near death: (multiplier) Cost 6 Main Dungeon A'
@@ -395,7 +395,7 @@
 421600 Attack power [all] HP Maximum (multiplier) Cost 6 main
 430100 Attack power [all] HP When near death: (multiplier) Cost 1 Sub
 430200 Attack power [all] HP When near death: (multiplier) Cost 2 Sub
-430300,Attack power [all] HP When near death: (multiplier) Cost 3 Sub
+430300 Attack power [all] HP When near death: (multiplier) Cost 3 Sub
 430400 Attack power [all] HP When near death: (multiplier) Cost 4 Sub
 430500 Attack power [all] HP When near death: (multiplier) Cost 5 Sub
 430600 Attack power [all] HP When near death: (multiplier) Cost 6 Sub

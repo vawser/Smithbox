@@ -32,7 +32,7 @@
 131 Level Sync: Weapon Left Hand Base
 132 Level Sync: Left Hand Weapon: Cannon
 133 Level Sync: Left-Hand Weapon: Flamethrower
-134,Level Sync: Left Hand Weapon: Rosmarinus
+134 Level Sync: Left Hand Weapon: Rosmarinus
 135 Level Sync: Throw
 136 Level Sync: Throwing Knife
 137 Level Sync: Molotov Cocktail

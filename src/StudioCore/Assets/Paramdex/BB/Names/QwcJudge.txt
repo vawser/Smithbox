@@ -30,7 +30,7 @@
 2001 The Gray Ghost becomes stronger ( LV2 )
 2100 Gray ghost becomes weaker ( LV1 )
 2101 Gray ghost becomes weaker ( LV2 )
-2102,Unlock Grey Ghost's player transformation
+2102 Unlock Grey Ghost's player transformation
 2200 The black ghost becomes stronger ( LV1 )
 2201 The black ghost becomes stronger ( LV2 )
 2202 Unlock Black Ghost's player transformation
@@ -47,7 +47,7 @@
 20200 The spirit of the ore appears
 20300 The Black Ghost of Miralda the Judge appears
 20400 The flying dragon is gone
-20500,Miralda the Condemner appears
+20500 Miralda the Condemner appears
 20600 The prison door is open
 30100 The enemy Black Ghost appears
 30110 The spirit of the ore appears

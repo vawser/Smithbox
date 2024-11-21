@@ -27,7 +27,7 @@
 5102 Dungeons _ Bell for attracting people 15m
 5103 Dungeons _ Bell for attracting people 20m
 5104 Dungeons _ Bell for attracting people 25m
-5105,Dungeons _ Bell for attracting people 30m
+5105 Dungeons _ Bell for attracting people 30m
 5106 Dungeons _ Bell for attracting people 40m
 5107 Dungeons _ Bell for attracting people 50m
 5108 Dungeons _ Bell for attracting people 60m

@@ -64,7 +64,7 @@
 301 Useful Stone [Child]
 310 Fascinating
 320 Iron Body [Repelling/Changes damage amount]
-321,Iron Body [Movement Transformation]
+321 Iron Body [Movement Transformation]
 322 Iron Body [Damage animation change]
 330 Sound [Throw]
 331 Sound [Impact]
@@ -90,7 +90,7 @@
 419 Cain's Impact 9 Landing】
 420 Cain's Impact 10 Landing】
 421 Cain's Impact 11 Landing】
-422,Cain's Impact 12 Landing】
+422 Cain's Impact 12 Landing】
 423 Cain's Impact 13 Landing】
 424 Cain's Impact 14 Landing】
 425 Cain's Impact 15 Landing】
@@ -170,7 +170,7 @@
 901 bayonet _ bullet _ Close range
 902 bayonet _ bullet _ Mid-distance
 903 bayonet _ bullet _ Long Distance
-904,bayonet _ bullet _ Impact
+904 bayonet _ bullet _ Impact
 910 Flamethrower _ Close range
 911 Flamethrower _ Close range
 912 Flamethrower _ Mid-distance
@@ -212,7 +212,7 @@
 1130 Moonlight Sword _ mode B_ Back Step Large _ firing
 1131 Moonlight Sword _ mode B_ Back Step Large _ Bullet
 1140 Moonlight Sword _ mode B_ Jump _ firing
-1141,Moonlight Sword _ mode B_ Jump _ Bullet
+1141 Moonlight Sword _ mode B_ Jump _ Bullet
 1150 Moonlight Sword _ mode B_ Dash Large _ firing
 1151 Moonlight Sword _ mode B_ Dash Large _ Bullet
 1160 Moonlight Sword _ mode B_ left hand _ Ammo consumption dummy
@@ -225,7 +225,7 @@
 22305 c2230_ Fat Demon _ Self-centered Magic [Throw]
 22306 c2230_ Fat Demon _ Self-centered Magic [Impact]
 22310 c2231_ Snow Demon _ Forward Magic [Throw]
-22311,c2231_ Snow Demon _ Forward Magic [Impact]
+22311 c2231_ Snow Demon _ Forward Magic [Impact]
 22312 c2231_ Snow Demon _ Self-centered Magic [Throw]
 22313 c2231_ Snow Demon _ Self-centered Magic [Impact]
 22600 c2260_ Yari Demon _ Javelin Throw 1
@@ -251,7 +251,7 @@
 25600 c2560_ Immortal (Light Knight) _ Crossbow Shooting
 25900 × c2590_ King's Envoy (Sniper) _ shooting
 26500 c2650_ Immortal (Gravekeeper) _ Firing magic from the skeleton
-26501,× c2650_ Immortal (Gravekeeper) _ Scattering Ashes
+26501 × c2650_ Immortal (Gravekeeper) _ Scattering Ashes
 26700 × c2670_ Dead Man _ Magic Shooting
 26800 c2680_ Dead Woman _ Pushing the baby out
 27000 c2700_ Snake Man B_ Spit venom
@@ -425,7 +425,7 @@
 35365 c3530_ Lake Animals _ Faraway Breath 2 _ Neck 3
 35366 c3530_ Lake Animals _ Faraway Breath 2 _ Neck 4
 35367 c3530_ Lake Animals _ Faraway Breath 2 _ Neck 5
-35368,c3530_ Lake Animals _ Faraway Breath 2 _ Neck 6
+35368 c3530_ Lake Animals _ Faraway Breath 2 _ Neck 6
 35369 c3530_ Lake Animals _ Faraway Breath 2 _ Neck 7
 35370 c3530_ Lake Animals _ Sand dust SFX For generation _ Neck 1
 35371 c3530_ Lake Animals _ Sand dust SFX For generation _ Neck 2
@@ -437,7 +437,7 @@
 35377 c3530_ Lake Animals _ Sand dust SFX For generation [Impact]
 40900 c4090_ Sniper A_ arrow
 40901 c4090_ Sniper A_ rose
-41500,c4100_ Artorias _ Left hand tackle [main body]
+41500 c4100_ Artorias _ Left hand tackle [main body]
 41501 c4100_ Artorias _ Left hand tackle [landing]
 41510 c4100_ Artorias _ Self-reinforcement
 41600 c4160_ Abyssal Magician _ magic 1
@@ -504,12 +504,12 @@
 52810 c 5280_ Crag _ Forward jump breath and magma impact generation
 52900 c5290_ White Dragon Sheath _ Breath (Close-distance sweep)
 52901 c5290_ White Dragon Sheath _ Breath (Close-distance sweep) [Immediate impact]
-52902,c5290_ White Dragon Sheath _ Breath (long-distance sweep)
+52902 c5290_ White Dragon Sheath _ Breath (long-distance sweep)
 52903 c5290_ White Dragon Sheath _ Breath (long-distance sweep) [Immediate impact]
 52904 c5290_ White Dragon Sheath _ Breath (front)
 52905 c5290_ White Dragon Sheath _ Breath (front) [Impact]
 52906 c5290_ White Dragon Sheath _ Breath (front): slow in the middle ver.
-52907,c5290_ White Dragon Sheath _ Breath (long-distance sweep)
+52907 c5290_ White Dragon Sheath _ Breath (long-distance sweep)
 52908 c5290_ White Dragon Sheath _ Self-centered explosion
 52909 c5290_ White Dragon Sheath _ Self-centered Explosion [Grandchild]
 52910 c5290_ White Dragon Sheath _ Egocentric Explosion (for continued damage) [Parent]
@@ -542,7 +542,7 @@
 54003 c5400_ Boss Izaris _ Magma Bullet
 54004 c5400_ Boss Izaris _ Remaining magma
 54005 c5400_ Boss Izaris _ Throws flames [Impact]
-54010,c5400_ Boss Izaris _ Firestorm _ Point-deciding shot
+54010 c5400_ Boss Izaris _ Firestorm _ Point-deciding shot
 54011 c5401_ Boss Izaris _ Firestorm _ parent
 54012 c5402_ Boss Izaris _ Firestorm _ child
 54013 c5400_ Boss Izaris _ Magma Bullet 2
@@ -589,7 +589,7 @@
 102059 c1020_ crowd A_ bullet _ Close range
 102062 c1020 crowd A_ Oil bottle
 102063 c1020 crowd A_ Oil Pot Lands
-102067,c1021 crowd A_PC Discover
+102067 c1021 crowd A_PC Discover
 102068 c1020 crowd A_ Sonic Bomb
 102069 c1020 crowd A_ Sonic Bomb Landing
 102070 c1020_ crowd A (Throwing Shield) _ Throwing
@@ -600,7 +600,7 @@
 102075 c1020_ crowd A (Throwing Shield) _ Throwing _ Impact → Oil swamp fire spreads 4
 102076 c1020_ crowd A (Throwing Shield) _ Throwing _ Impact → Oil swamp fire spreads 5
 102090 forest c1020_ crowd A_ bullet _ Close range
-102091,forest c1020_ crowd A_ bullet _ Close range
+102091 forest c1020_ crowd A_ bullet _ Close range
 102092 forest c1020_ crowd A_ bullet _ Mid-distance
 102093 forest c1020_ crowd A_ bullet _ Long Distance
 102094 forest c1020_ crowd A_ Bullet impact
@@ -612,7 +612,7 @@
 104300 c1040_ Burned corpse _ Shoot a bow
 104301 c1040_ Evil Eye _ Provisional (burned corpse _ Shooting a bow) [Parent]
 104302 c1040_ Evil Eye _ Provisional (burned corpse _ Shooting a bow) [Child]
-104400,c1040_ Burned corpse _ Possess
+104400 c1040_ Burned corpse _ Possess
 104500 c1040_ Burned corpse _ Great Magic Test
 105040 c1050_ Wandering Widow _ Magic Attack [Throw]
 105041 c1050_ Wandering Widow _ Magic Attack [Impact]
@@ -649,7 +649,7 @@
 113061 c1130 Demon Fanatic _ Ashing _1 [Landing]
 113070 c1130 Demon Fanatic _ Ashing _2 [Bullet]
 113071 c1130 Demon Fanatic _ Ashing _2 [Landing]
-113080,c 1130_ Demon Fanatic _ Raise your wand and cast a spell (summon)
+113080 c 1130_ Demon Fanatic _ Raise your wand and cast a spell (summon)
 113081 c 1130_ Demon Fanatic _ Raise your wand and cast a spell (enhanced)
 115015 c1150_ Slime _ Javelin
 115050 c1150_ Slime _ Splashing bodily fluids
@@ -903,7 +903,7 @@
 262023 c2620_ Crowd (wheelchairs) _ Gatling Shot _ parent
 262024 c2620_ Crowd (wheelchairs) _ Gatling Shot _ child
 262025 c2620_ Crowd (wheelchairs) _ Gatling Cathedral B Long-range version _ parent
-262026,c2620_ Crowd (wheelchairs) _ Gatling Cathedral B Long-range version _ child
+262026 c2620_ Crowd (wheelchairs) _ Gatling Cathedral B Long-range version _ child
 262030 c2620_ Crowd (wheelchairs) _ Forward flamethrower
 262031 c2620_ Crowd (wheelchairs) _ Area Flame Thrower
 262230 c2620_ Crowd (wheelchairs) _ Forward sprayer emission
@@ -976,7 +976,7 @@
 274058 c2740_ student _ Spit slug fluid _ Give birth to children and grandchildren until the end [Child]
 274059 c2740_ student _ Spit slug fluid _ Give birth to children until the end [Grandchildren]
 274060 c2740_ student _ Spit slug fluid _ Give birth to children who will give birth to grandchildren until the end [Great-grandchildren]
-274061,c2740_ student _ Spit slug fluid _ Give birth to grandchildren until the end [great-grandchildren] Remain
+274061 c2740_ student _ Spit slug fluid _ Give birth to grandchildren until the end [great-grandchildren] Remain
 274080 c2740_ student _ Chemical splash
 274081 c2740_ student _ Chemical splash (on impact)
 274090 c2740_ student _ Continuous chemical splash ( 1 Attack)
@@ -1062,7 +1062,7 @@
 305521 c3050_ Dungeon Lord _ Skewering Rod _ Induction 12
 305522 c3050_ Dungeon Lord _ Skewering Rod _ Induction 13
 305523 c3050_ Dungeon Lord _ Skewering Rod _ Induction 14
-305524,c3050_ Dungeon Lord _ Skewering Rod _ Induction 15
+305524 c3050_ Dungeon Lord _ Skewering Rod _ Induction 15
 305530 c3050_ Dungeon Lord _ Skewering Rod _ Directly below the guidance
 305531 c3050_ Dungeon Lord _ Skewering Rod _ Guidance performance
 306000 c3060_ Dungeon Person (Bride) _ Ranged Magic Bullet
@@ -1099,7 +1099,7 @@
 306058 c3060_ Dungeon Person (Bride) _ Bloody Spear Forest _ Main unit 13
 306059 c3060_ Dungeon Person (Bride) _ Bloody Spear Forest _ Main unit 14
 306095 c3060_ Dungeon Person (Bride) _ Bloodstorm
-306096,c3060_ Dungeon Person (Bride) _ Bloodstorm _ rain
+306096 c3060_ Dungeon Person (Bride) _ Bloodstorm _ rain
 306100 c3061_ Dungeon Bride Fetus _ Fetal bullet
 310040 c3100_ mimic _ Bloody Skewered Spear (Facing)
 310041 c3100_ mimic _ Bloody Skewer Spear _ Corpse present (facing each other)
@@ -1251,7 +1251,7 @@
 403420 [ SP 】 DLC_ Clock Tower _c4030_ patient B_ meteorite _ Impact
 403450 [ SP 】 DLC_ Clock Tower _c4030_ patient B_ meteorite _ For performance
 403451 [ SP 】 DLC_ Clock Tower _c4030_ patient B_ meteorite _ Impact _ For performance
-404160,c4040_ Fishman A_ Harpoon Throwing
+404160 c4040_ Fishman A_ Harpoon Throwing
 404460 c4040 Fishman A_ Slug Flame Pot (close) _1
 404461 c4030_ Fishman A_ Slug Flame Pot _2_ Impact
 404462 c4040 Fishman A_ Slug Flame Pot _3_ Water spread fire occurrence judgment dummy
@@ -1362,7 +1362,7 @@
 450734 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ No lava _ right _ Medium
 450735 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ No lava _ left _ Medium
 450736 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ No lava _ front _ Short
-450737,c4500_ Parishioner Ω_ Lava Breath _ Breath part _ No lava _ right _ Short
+450737 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ No lava _ right _ Short
 450738 c4500_ Parishioner Ω_ Lava Breath _ Breath part _ No lava _ left _ Short
 450800 c4500_ Parishioner Ω_ Right hook (flame part)
 450801 c4500_ Parishioner Ω_ Right hook (flame part) (alternative)
@@ -1383,7 +1383,7 @@
 450835 c4500_ Parishioner Ω_ Close throw (flame part)
 450840 c4500_ Parishioner Ω_ Close-combat punches 1 Shot [right hand] (flame part)
 450841 c4500_ Parishioner Ω_ Close-combat punches 2 Shot [left hand] (flame part)
-450842,c4500_ Parishioner Ω_ Close-combat punches 3 Attack [Both hands] (Flame part)
+450842 c4500_ Parishioner Ω_ Close-combat punches 3 Attack [Both hands] (Flame part)
 450845 c4500_ Parishioner Ω_ Rush Throw (Flame Part)
 450850 c4500_ Parishioner Ω_ Left turn (flame part)
 450855 c4500_ Parishioner Ω_ Right turn (flame part)
@@ -1404,7 +1404,7 @@
 450895 c4500_ Parishioner Ω_ Additional close payout (flame part)
 450900 c4500_ Parishioner Ω_ Pole vault (small) 1 Shot [left hand] (flame part)
 450901 c4500_ Parishioner Ω_ Pole Vault (Small) Landing [Landing] (flame part)
-450902,c4500_ Parishioner Ω_ Pole vault (small) 2 Shot [right hand] (flame part)
+450902 c4500_ Parishioner Ω_ Pole vault (small) 2 Shot [right hand] (flame part)
 450905 c4500_ Parishioner Ω_ Backstep attack: Left hand (flame part)
 450906 c4500_ Parishioner Ω_ Backstep attack landing (flame part)
 450910 c4500_ Parishioner Ω_ Swinging both hands [right hand] (flame part)
@@ -1588,7 +1588,7 @@
 453963 c4541_ Final Boss ( Awakening )_ Funnel spread search 4
 453964 c4541_ Final Boss ( Awakening )_ Funnel spread search 5
 453965 c4541_ Final Boss ( Awakening )_ Funnel spread search 6
-453966,c4541_ Final Boss ( Awakening )_ Funnel spread search 7
+453966 c4541_ Final Boss ( Awakening )_ Funnel spread search 7
 453967 c4541_ Final Boss ( Awakening )_ Funnel spread search 8
 453968 c4541_ Final Boss ( Awakening )_ Funnel spread search 9
 453970 c4541_ Final Boss ( Awakening )_ Funnel diffusion body 1
@@ -1834,7 +1834,7 @@
 552110 c5521_ Lesser Demon Variation Left Neck _ Breath (far)
 552120 c5521_ Lesser Demon Variation Left Neck _ Breath (wide)
 700008 c7000_ Avatar A (magic) _ Right hand magic fire line
-700009,c7000_ Avatar A (magic) _ Right hand magic fireball [bullet]
+700009 c7000_ Avatar A (magic) _ Right hand magic fireball [bullet]
 700023 c7000_ Avatar A_ Throwing a bottle
 700025 c7000_ Avatar A (recovery) _ Recovery Items
 700030 c7000_ Avatar A_ Periphery reinforcement
@@ -1880,7 +1880,7 @@
 805181 c8050_ Base Elderly (Awakened) _ Zantetsu Kama (Sickle) _ dummy _ Omen 2
 805182 c8050_ Base Elderly (Awakened) _ Zantetsu Kama (Sickle) _ dummy _ Omen 3
 805183 c8050_ Base Elderly (Awakened) _ Zantetsu Kama (Sickle) _ dummy _ Omen 4
-805184,c8050_ Base Elderly (Awakened) _ Zantetsu Kama (Sickle) _ dummy _ Omen 5
+805184 c8050_ Base Elderly (Awakened) _ Zantetsu Kama (Sickle) _ dummy _ Omen 5
 805185 c8050_ Base Elderly (Awakened) _ Zantetsu Kama (Sickle) _ dummy _ Omen 6
 805186 c8050_ Base Elderly (Awakened) _ Zantetsu Kama (Sickle) _ dummy _ Omen 7
 805187 c8050_ Base Elderly (Awakened) _ Zantetsu Kama (Sickle) _ dummy _ Omen 8
@@ -1904,7 +1904,7 @@
 2400012 [ SP 】 Cathedral District A_ Cannon (Shots) Medium Range _SC
 2400013 [ SP 】 Cathedral District A_ Cannon (Shots) Long Range _SC
 2400015 [ SP 】 Cathedral District A_ Cannon (bullet) guidance test
-2400020,Cannon (hit) _ Grandson Dangan
+2400020 Cannon (hit) _ Grandson Dangan
 2400021 c2700_ Church Emissary _ For testing _ Cannon firing _40m ~
 2400022 c2700_ Church Emissary _ For testing _ Cannon firing _30 ~ 40m
 2400023 c2700_ Church Emissary _ For testing _ Cannon firing _20 ~ 30m
@@ -1915,7 +1915,7 @@
 2400051 [ SP 】Cathedral District A_ Trick Gun _ Close range
 2400052 [ SP 】Cathedral District A_ Trick Gun _ Mid-distance
 2400053 [ SP 】Cathedral District A_ Trick Gun _ Long Distance
-2400054,[ SP 】Cathedral District A_ Trick Gun _ Impact
+2400054 [ SP 】Cathedral District A_ Trick Gun _ Impact
 2400060 [ SP 】 Cathedral District _ Special effects when opening the gate
 2400090 [ SP 】 Cathedral District A_ Oil barrel trap
 2400091 [ SP 】 Cathedral District A_ Oil barrel trap _ Impact
@@ -2090,7 +2090,7 @@
 2900701 [ SP 】 Dungeon: Oil Swamp Fire _ General purpose _ Extra Large _ Fire-Spreading Effect
 2900702 [ SP 】 Dungeon: Oil Swamp Fire _ General purpose _ Extra Large _ Ciro-Ciro Fire-Spreading Bullet
 2900703 [ SP 】 Dungeon: Oil Swamp Fire _ General purpose _ Extra Large _ Clinking fire spread body
-2900704,[ SP 】 Dungeon: Oil Swamp Fire _ General purpose _ Extra Large _ The fire spreads
+2900704 [ SP 】 Dungeon: Oil Swamp Fire _ General purpose _ Extra Large _ The fire spreads
 2900705 [ SP 】 Dungeon: Oil Swamp Fire _ General purpose _ Oil Swamp Spread 1 (Damaged)
 2900706 [ SP 】 Dungeon: Oil Swamp Fire _ General purpose _ Oil Swamp Spread 2 (Damaged)
 2900707 [ SP 】 Dungeon: Oil Swamp Fire _ General purpose _ Oil Swamp Spread 3 (Damaged)
@@ -2130,7 +2130,7 @@
 3600020 [ SP 】 DLC_ fishing village _ Slug Fire Pot _1
 3600021 [ SP 】 DLC_ fishing village _ Slug Fire Pot _2_ Impact
 3600022 [ SP 】 DLC_ fishing village _ Slug Fire Pot _3_ Water spread fire occurrence judgment dummy
-3600023,[ SP 】 DLC_ fishing village _ Slug Fire Pot _4_ Water spread fire
+3600023 [ SP 】 DLC_ fishing village _ Slug Fire Pot _4_ Water spread fire
 3600024 [ SP 】 DLC_ fishing village _ Slug Fire Pot _5_ Swamp fire spread occurrence judgment dummy
 3600025 [ SP 】 DLC_ fishing village _ Slug Fire Pot _6_ Swamp Fire Spread
 3600030 [ SP 】 DLC_ fishing village _ Water landing _AI sound

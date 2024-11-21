@@ -32,7 +32,7 @@
 12170 Back collapse PC → Messenger from Snake Swamp
 12180 Back collapse PC → Silver Beast's Kin
 12250 Back collapse PC → Jailer A
-12260,Back collapse PC → Jailer B
+12260 Back collapse PC → Jailer B
 12320 Back collapse PC → King's Reaper
 12330 Back collapse PC → The King's Servant
 12400 Back collapse PC → Foundling Giant
@@ -64,7 +64,7 @@
 14020 Back collapse PC → patient A
 14030 Back collapse PC → patient B
 14040 Back collapse PC → Fishman A
-14050,Back collapse PC → Fishman B
+14050 Back collapse PC → Fishman B
 14060 Back collapse PC → Fishman Large
 14110 Back collapse PC → crowd A (Great) Saint D
 14120 Back collapse PC → patient A (Blood transfusion table)
@@ -116,7 +116,7 @@
 22630 Gun Breaker PC → crowd A (large)
 22631 Gun Breaker PC → crowd A (Large) Executioner Costume
 22632 Gun Breaker PC → crowd A (Large) Mori Costume
-22640,Gun Breaker PC → crowd B (large)
+22640 Gun Breaker PC → crowd B (large)
 22700 Gun Breaker PC → Church Emissary
 22710 Gun Breaker PC → Father Gascoigne
 22720 Gun Breaker PC → Father Gascoigne (Beast)
@@ -132,7 +132,7 @@
 23060 Gun Breaker PC → Dungeon Person (Bride)
 23110 Gun Breaker PC → Evil spirit (male)
 23120 Gun Breaker PC → Evil spirit (female)
-24000,Gun Breaker PC → Fallen Hunter
+24000 Gun Breaker PC → Fallen Hunter
 24010 Gun Breaker PC → The Executioner (Nightmare)
 24020 Gun Breaker PC → patient A
 24030 Gun Breaker PC → patient B
@@ -150,7 +150,7 @@
 27500 Gun Breaker PC → Enemy Avatar
 28050 Gun Breaker PC → Base Elderly (Awakened)
 32510 Special Throw PC → Child of the Moon
-32730,Special Throw PC → Frankenstein of the Medical Church
+32730 Special Throw PC → Frankenstein of the Medical Church
 33130 Special Throw PC → Fresh Golem
 34500 Special Throw PC → Parishioner Ω
 34510 Special Throw PC → Ludwig (Beast)
@@ -167,7 +167,7 @@
 1000001 Sacrificial Hound → PC Throw
 1060000 Brain Eater → PC Throw
 1150000 Slime → PC Drop Throw
-1150010,Slime → PC Falling throw
+1150010 Slime → PC Falling throw
 1220000 Young Fruit Bat → PC Falling Jump Throw
 1220010 Young Fruit Bat → PC Jumping Throw
 1230000 Digging → PC Throw
@@ -181,7 +181,7 @@
 2100010 Eye Collector → PC Back Throw
 2100050 Eye Collector Saint D → PC Throw
 2100060 Eye Collector Saint D → PC Back Throw
-2110000,Spider Cthulhu → PC Throw
+2110000 Spider Cthulhu → PC Throw
 2150000 The Evil Spirit of the Old Castle → PC Throw
 2150010 The Evil Spirit of the Old Castle → PC Back Throw
 2170000 Messenger from Snake Swamp → PC Throw
@@ -212,7 +212,7 @@
 5000010 Rector → PC Throw (Rush)
 5020000 Saint Beast → PC Throw (normal)
 5020010 Saint Beast → PC Throw (Anger)
-5030000,Snake Ball → PC Throw
+5030000 Snake Ball → PC Throw
 5090000 Primordial Beast → PC Throw
 5140000 Evil God ( large ) → PC Throw
 5140005 Evil God ( large ) → PC Throw 3 Cathedral Quarter A

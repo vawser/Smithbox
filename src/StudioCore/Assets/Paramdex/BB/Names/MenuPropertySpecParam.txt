@@ -24,7 +24,7 @@
 312 [Weapon] Magic attack power
 313 [Weapon] Fire attack power
 314 [Weapon] Lightning attack power
-320,[Weapon] Physical attack power
+320 [Weapon] Physical attack power
 321 [Weapon] Gunfire additional attack power
 322 [Weapon] Magical attack power
 323 [Weapon] Fire attack power
@@ -50,7 +50,7 @@
 361 [Weapon] Maximum durability
 370 [Weapon] Number of magic stones equipped
 371 [Weapon] Number of magic stone slots
-380,[Weapon] Magic Stone Effect 1
+380 [Weapon] Magic Stone Effect 1
 381 [Weapon] Magic Stone Effect 2
 382 [Weapon] Magic Stone Effect 3
 383 [Weapon] Magic Stone Effect 4
@@ -76,7 +76,7 @@
 503 [Magic Stone] Effect 1
 504 [Magic Stone] Effect 2
 505 [Magic Stone] Effect 3
-506,[Magic Stone] Effect 4
+506 [Magic Stone] Effect 4
 507 [Magic Stone] Effect 5
 600 [Weapon Magic Stone] Slot Shape
 700 [Body Gem] Type

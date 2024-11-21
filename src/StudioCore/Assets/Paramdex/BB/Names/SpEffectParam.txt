@@ -18,7 +18,7 @@
 17 【system】 l Exit the Arena
 20 [System] Evaluation effect
 21 [System] Point light source equipment
-22,[System] Diving Judgment
+22 [System] Diving Judgment
 23 test_change_wep1
 24 [System] Request for Help
 25 [System] Revival Effects
@@ -42,7 +42,7 @@
 44 Resonance L v 4
 50 Gun destruction judgment (for gun throwing)
 51 Gun Break Judgment (for Gun Throw)
-52,Gunshot collapse state (for gun throw)
+52 Gunshot collapse state (for gun throw)
 53 Damage animation change [One step up] (for gun throws)
 55 Back breaking judgment (for back throw)
 56 Back break judgment (for back throw)
@@ -67,7 +67,7 @@
 111 Respawn recovery effect 2
 112 Respawn recovery effect 3
 113 Respawn recovery effect 4
-114,Respawn recovery effect 5
+114 Respawn recovery effect 5
 115 Respawn recovery effect 6
 116 Respawn recovery effect 7
 117 Respawn recovery effect 8
@@ -110,7 +110,7 @@
 219 Attack animation _ Big Attack 2 For judging the stage (only for saw whips)
 220 Falling state destination judgment effect
 221 Left hand addition animation invalidation judgment
-222,Additional throw cancel judgement
+222 Additional throw cancel judgement
 230 Beast Effect 0
 231 Beast Effect 1
 232 Beast Effect 2
@@ -170,7 +170,7 @@
 483 Boss Part Damage 4
 484 Boss Part Damage 5
 485 Boss Part Damage 6
-486,Boss Part Damage 7
+486 Boss Part Damage 7
 487 Boss Part Damage 8
 488 Boss Part Damage 9
 489 Boss Part Damage Prohibited
@@ -196,7 +196,7 @@
 580 Return [Waiting for activation]
 581 Return [Activate]
 600 Anti-Magic
-610,Anti-Magic (for user) [Effect]
+610 Anti-Magic (for user) [Effect]
 611 Anti-Magic (for user) [Effect]
 620 Light
 640 Falling Control
@@ -225,7 +225,7 @@
 1300 Universal Treatment [Condition Recovery]
 1301 Universal treatment [Bleeding resistance recovery]
 1302 Universal treatment [poison resistance recovery]
-1303,Universal Treatment [Recovery of Poison Resistance]
+1303 Universal Treatment [Recovery of Poison Resistance]
 1320 Poison Treatment [Status Recovery]
 1321 Poison Treatment [Recovery of Resistance]
 1330 Weapon and Armor Repair
@@ -248,7 +248,7 @@
 1430 HP recovery 4
 1431 HP recovery 4_ Resonance LV1
 1432 HP recovery 4_ Resonance LV2
-1433,HP recovery 4_ Resonance LV3
+1433 HP recovery 4_ Resonance LV3
 1434 HP recovery 4_ Resonance LV4
 1500 Mimicry
 1510 Mimicry [Slow movement effect]
@@ -281,7 +281,7 @@
 1916 Increases lightning resistance
 1917 Magic Resistance Up
 1918 Physical Resistance
-1919,All resistances up 1
+1919 All resistances up 1
 1920 Bleed Resistance
 1921 Poison Resistance
 1922 Increased Curse Resistance
@@ -321,7 +321,7 @@
 2011 Lantern turned off
 2012 Temporary Bullet Recovery (Non-Item)
 2013 Fascinating
-2014,Stone Hat
+2014 Stone Hat
 2015 Hidden Moon
 2016 Regain Up
 2017 insect
@@ -372,7 +372,7 @@
 3242 Beast transformation (added when using an item)
 3251 Beastification Treatment [Resistance Recovery]
 3390 Magical Stone of the Scarlet Brooch
-3391,Magical stone of doll's tears
+3391 Magical stone of doll's tears
 3392 Magical stone of gold pendant
 3400 BJ The rough diamond of "clockwise perversion"
 3401 BJ The rough diamond of "counterclockwise perversion"
@@ -395,7 +395,7 @@
 3455 Radiation Magic Stone Ore Level 6
 3456 Radiation Magic Stone Ore Level 7
 3457 Triangular Magic Stone Ore Level 1
-3458,Triangular Magic Stone Ore Level 2
+3458 Triangular Magic Stone Ore Level 2
 3459 Triangular Magic Stone Ore Level 3
 3460 Triangular Magic Stone Ore Level 4
 3461 Triangular Magic Stone Ore Level 5
@@ -415,7 +415,7 @@
 3475 Round Magic Stone Ore Level 5
 3476 Round Magic Stone Ore Level 6
 3477 Round Magic Stone Ore Level 7
-3478,Droplet-shaped Magic Stone Ore Level 1
+3478 Droplet-shaped Magic Stone Ore Level 1
 3479 Droplet-shaped Magic Stone Ore Level 2
 3480 Droplet-shaped Magic Stone Ore Level 3
 3481 Droplet-shaped Magic Stone Ore Level 4
@@ -435,7 +435,7 @@
 3520 Soul Unique Ritual Level 4-2
 3521 Soul Unique Ritual Level 4-3
 3522 Soul Unique Ritual Level 5-1
-3523,Soul Unique Ritual Level 5-2
+3523 Soul Unique Ritual Level 5-2
 3524 Soul Unique Ritual Level 5-3
 3525 Soul Unique Ritual Level 6-1
 3526 Soul Unique Ritual Level 6-2
@@ -465,7 +465,7 @@
 3953 Cannot use Esto [Mimic Sleep]
 3954 Est cannot be used. [Est cannot be used.]
 3955 Weapon Lightning Enhancement
-3956,Weapon Anti-Spirit Enhancement
+3956 Weapon Anti-Spirit Enhancement
 3957 Weapon plague [put on weapons]
 3958 Weapon poisoning [When attacking poisons the opponent]
 3959 Weapon poisoning [When carrying a weapon it becomes highly poisonous]
@@ -490,7 +490,7 @@
 4006 PC Black Ghost [Old Man in Yellow] Head SFX
 4011 Continuous Damage Floor _ Later [Leech Swamp]
 4012 Continuous Damage Floor _ After [Poison]
-4013,Continuous Damage Floor _ Later [Blood Swamp]
+4013 Continuous Damage Floor _ Later [Blood Swamp]
 4014 Rolling Cannonball Doping
 4015 Powder Keg Doping
 4016 Continuous damage floor [Mine 2 lava]
@@ -509,7 +509,7 @@
 4500 Within the Forest Bandits' Territory
 4501 Within the Queen Mother's Brother's Territory
 4510 Arena 1 versus 1 [Small] Within the territory
-4511,Arena 2 versus 2 [Small] Within the territory
+4511 Arena 2 versus 2 [Small] Within the territory
 4512 Arena Battle Royale [Small] Territory
 4513 Arena 1 versus 1 [Small] Summon request A
 4514 Arena 1 versus 1 [Small] Summon request B
@@ -523,7 +523,7 @@
 4522 Arena Battle Royale [Small] Summon Request D
 4523 Arena 1 versus 1 [Large] Within the territory
 4524 Arena 2 versus 2 [Large] Within the territory
-4525,Within the Arena Battle Royale [Large] Territory
+4525 Within the Arena Battle Royale [Large] Territory
 4526 Arena 1 versus 1 [Large] Summon Request A
 4527 Arena 1 versus 1 [Large] Summon Request B
 4528 Arena 2 versus 2 [Large] Summon Request A1
@@ -597,7 +597,7 @@
 5004 Non-combat actions: Smooth ignore
 5005 Non-combat behavior: Call-for-combat response
 5006 Non-combat actions: No calls to friends
-5007,Non-combat actions: Wandering around
+5007 Non-combat actions: Wandering around
 5010 During Guard Break
 5020 General-purpose effect for logic judgment 1
 5021 General-purpose effect for logic judgment 2
@@ -618,7 +618,7 @@
 5036 General-purpose effect for logic judgment 17
 5037 General-purpose effect for logic judgment 18
 5038 General-purpose effect for logic judgment 19
-5039,General-purpose effect for logic judgment 20
+5039 General-purpose effect for logic judgment 20
 5100 Enemy Drop Soul Hold
 5220 Madness damage 1 Life extension during invincibility
 5221 Madness Damage 2 Invincible Life Extension
@@ -674,7 +674,7 @@
 5291 Madness Damage 2 Resistance Reduction
 5292 Madness Damage 3 Resistance Reduction
 5293 Madness Damage 4 Resistance Reduction
-5294,Madness Damage 5 Resistance Reduction
+5294 Madness Damage 5 Resistance Reduction
 5295 Madness Damage 6 Resistance Reduction
 5296 Madness Damage 4 Resistance Reduction _ For Cross Mace
 5299 Frenzy Damage 10 Resistance Sharpening
@@ -689,7 +689,7 @@
 5308 Permanent damage animation change [Medium and above]
 5309 Permanent damage animation change [Medium or higher with push]
 5310 Permanent damage animation change [Damage Lv1 down】
-5311,Permanent damage animation change [Invalid except for large large → press]
+5311 Permanent damage animation change [Invalid except for large large → press]
 5312 Persistent damage animation change [large → small blown away]
 5313 Permanent damage animation change [small invalid] (only for a moment)
 5314 Permanent damage animation change [Small Disabled] ( Duration -1 Edition)
@@ -701,7 +701,7 @@
 5320 Permanent damage animation change [Large only]
 5321 Persistent damage animation change [Medium Large Slam only]
 5322 Permanent damage animation change [No knockback]
-5323,Persistent damage animation change [No knockback or slam]
+5323 Persistent damage animation change [No knockback or slam]
 5324 Permanent damage animation change [Very small small medium large only]
 5325 Persistent damage animation change [No knockback or push]
 5326 Permanent damage animation change [Small and Medium only]
@@ -728,7 +728,7 @@
 5347 Permanent damage animation change [Minimal → None]
 5348 Permanent damage animation change [Very small → Small Small → Medium Medium → Large Pushed out → Large]
 5349 Permanent damage animation change [No minimum no knockback]
-5350,Permanent damage animation change [Large only medium otherwise]
+5350 Permanent damage animation change [Large only medium otherwise]
 5360 Damage animation change during SA [All no animation]
 5361 Damage animation change during SA [Small only]
 5362 Damage animation change during SA [Medium only]
@@ -760,7 +760,7 @@
 5510 Sacrifice Touched by the flames of purification
 5511 Sacrifice: Mimic has been weakened by the purifying flames.
 5512 c2090_ Bloodthirsty Beast _SA Activation
-5513,c2090_ Bloodthirsty Beast _SA Adjustment
+5513 c2090_ Bloodthirsty Beast _SA Adjustment
 5514 For branching the ancestral beast combo 2
 5515 c2700 Church Messenger: Defense power reduction during back throw
 5516 c3030_ Dungeon Person (Bride) Action Para Offset 1
@@ -813,7 +813,7 @@
 5571 c5400_ Inheritor of Nightmares _ Staring Activation
 5572 c5400_ Inheritor of Nightmares _ Gazing at the Regain Doubled
 5573 c5140 Cathedral of the Evil God (Great) A For throwing _ Madness Accumulation
-5574,c5140 Cathedral of the Evil God (Great) A For throwing _ Madness value body
+5574 c5140 Cathedral of the Evil God (Great) A For throwing _ Madness value body
 5575 c3030_ Dungeon Man (Madman/Corpse) Ground Slamming Poison Smoke
 5576 c5400_ Inheritor of Nightmares _ Increases defense power when staring
 5577 c5140_ Evil God (Large) Slow Throw Blackout
@@ -863,7 +863,7 @@
 5622 c1040 Burned corpse Possession
 5623 Mimic Shooting Check
 5624 SA Up (enemy _ (unlimited time) SA value 27
-5625,c2040_ Manipulated Corpse _ revival
+5625 c2040_ Manipulated Corpse _ revival
 5626 c2040_ Manipulated Corpse _ death
 5627 Strange Beast _ Weak resistance to fire damage
 5628 Foundling Giant _ Weak resistance to fire damage
@@ -940,7 +940,7 @@
 5702 Dungeon attribute effect Item use (recovery) - Terms of Use
 5703 Dungeon attribute effect Item use (recovery) - Effect body
 5704 Dungeon Attribute Effect Poison Attribute Enchantment - Activation Conditions
-5705,Dungeon Attribute Effect Poison Attribute Enchantment - Effect
+5705 Dungeon Attribute Effect Poison Attribute Enchantment - Effect
 5706 Dungeon Attribute Effect Poison Attribute Enchantment (Appearance)
 5707 Dungeon Attribute Effect Fire Attribute Enchantment
 5708 Dungeon Attribute Effect Berserk
@@ -988,7 +988,7 @@
 5800 Enemy Weakness Attribute: Magic
 5801 Enemy Weakness Attribute: Magic + Fire
 5802 Enemy weak attributes: magic + fire + lightning
-5810,Enemy Weakness Attribute: Fire
+5810 Enemy Weakness Attribute: Fire
 5811 Enemy weak attribute: Fire + Lightning
 5820 Enemy weak attribute: Lightning
 5821 Enemy Weakness Attribute: Lightning + Magic
@@ -1011,7 +1011,7 @@
 5911 Maintain collapsed state _ Silver Beast Edition
 5912 Pseudo-death transition _ For dungeons
 5913 Maintaining a state of apparent death _ For dungeons
-5914,Suspended death state (for events)
+5914 Suspended death state (for events)
 5915 Death transitions exclusive to cages
 5916 Easily intimidated by gunfire (for a moment)
 5917 Maintaining a shelled state
@@ -1134,7 +1134,7 @@
 6900 [Father's Mask] Equipment weight increased slightly
 6910 [Mother's Mask] HP Slight increase
 6920 [Child Mask] Slightly increases stamina recovery
-6930,[Crown of Dusk] Magical Sharpness
+6930 [Crown of Dusk] Magical Sharpness
 6940 [Shadow Sun Crown] Strengthens all magic
 6950 [Sun Bug] Light
 6960 [Brand of the Greedy] Increases soul absorption and item discovery rate
@@ -1154,7 +1154,7 @@
 7011 level 11-1 : Hometown first half
 7013 level 13 : University
 7014 level 14 ：Ancient Castle
-7015,level 15 : Sacrifice Town
+7015 level 15 : Sacrifice Town
 7016 level 16 : Cathedral C・Second half
 7017 level 17 : Cathedral C・Second Half・Hidden
 7019 level 19 Trap Lord Lord of Nightmares
@@ -1209,7 +1209,7 @@
 7423 Orbital Power Up _ level 11 : Cathedral C・Second Half・Hidden
 7424 Orbital Power Up _ level 12 : Trapload Demon
 7425 Orbital Power Up _ level 13 ：Base・Awakened Old Man
-7426,Orbital Power Up _ level 3 : Cathedral A ·first half
+7426 Orbital Power Up _ level 3 : Cathedral A ·first half
 7427 Orbital Power Up _ level 3 : Cathedral A Mid-game
 7428 Orbital Power Up _ level 5 : Cemetery night
 7429 Orbital Power Up _ level 7 : Hometown Part 2
@@ -1377,7 +1377,7 @@
 8000 Wandering Doping Test ( Center)
 8001 Wandering Doping Test ( strength)
 8010 c4010 Executioner (Nightmare) Axe Bell Enchantment
-8011,c4030_ patient B_ Healing SA Adjustment
+8011 c4030_ patient B_ Healing SA Adjustment
 8012 c4030_ patient B_ Regeneration effect
 8013 c4000_ Fallen Hunter Blood Transfusion
 8014 c402X_ Sewer rat _ Eye light
@@ -1409,7 +1409,7 @@
 8041 c4510 Ludwig _ The effect of making you want to keep your distance
 8050 c454X_ Final Boss _ For judging consecutive down shots after launch
 8051 c454X_ Final Boss _ For deciding whether to counterattack
-8052,c454X_ Final Boss _ Attack SA Enhancement
+8052 c454X_ Final Boss _ Attack SA Enhancement
 8053 c454X_ Final Boss _PC Bullet Destruction
 8054 c454X_ Final Boss _ crush
 8055 c454X_ Final Boss _ Regain Up
@@ -1427,7 +1427,7 @@
 9005 Regular cooperation wanted
 9006 During regular cooperative guest play
 9008 Regular cooperation request icon (multiple possible)
-9009,Regular cooperation request icon (multiplayer not allowed)
+9009 Regular cooperation request icon (multiplayer not allowed)
 9020 Normal entry permitted
 9025 Normal invasion wanted
 9026 Normal intrusion guest play
@@ -1448,7 +1448,7 @@
 9930 Messenger evaluation reward
 9993 β Test version _ Prohibition of host play due to defeating a boss
 9994 gamescom Edition _ Initial Ammo Adjustment A
-9995,gamescom Edition _ Initial Ammo Adjustment B
+9995 gamescom Edition _ Initial Ammo Adjustment B
 9996 gamescom Magic Stone _ maximum MP1.852 Double up
 9997 E3 Edition MP+20
 9998 E3 For printing SAN value +1
@@ -1469,7 +1469,7 @@
 10013 Attack power [Magic] multiplier +10%
 10014 Attack power [Fire] multiplier +10%
 10015 Attack power [Lightning] multiplier +10%
-10016,Attack power [physical] multiplier +10%
+10016 Attack power [physical] multiplier +10%
 10017 Attack power [all] multiplier +10%
 10018 Weapon Modifier [Strength] +100
 10019 Weapon Modification [Skill] +100
@@ -1546,7 +1546,7 @@
 10211 Attack power [slashing] fixed value + cost2 rank11
 10212 Attack power [slashing] fixed value + cost2 rank12
 10213 Attack power [slashing] fixed value + cost2 rank13
-10214,Attack power [slashing] fixed value + cost2 rank14
+10214 Attack power [slashing] fixed value + cost2 rank14
 10215 Attack power [slashing] fixed value + cost2 rank15
 10216 Attack power [slashing] fixed value + cost2 rank16
 10217 Attack power [slashing] fixed value + cost2 rank17
@@ -1581,7 +1581,7 @@
 10406 Attack power [slashing] fixed value + cost4 rank6
 10407 Attack power [slashing] fixed value + cost4 rank7
 10408 Attack power [slashing] fixed value + cost4 rank8
-10409,Attack power [slashing] fixed value + cost4 rank9
+10409 Attack power [slashing] fixed value + cost4 rank9
 10410 Attack power [slashing] fixed value + cost4 rank10
 10411 Attack power [slashing] fixed value + cost4 rank11
 10412 Attack power [slashing] fixed value + cost4 rank12
@@ -1616,7 +1616,7 @@
 10601 Attack power [slashing] fixed value + cost6 rank1
 10602 Attack power [slashing] fixed value + cost6 rank2
 10603 Attack power [slashing] fixed value + cost6 rank3
-10604,Attack power [slashing] fixed value + cost6 rank4
+10604 Attack power [slashing] fixed value + cost6 rank4
 10605 Attack power [slashing] fixed value + cost6 rank5
 10606 Attack power [slashing] fixed value + cost6 rank6
 10607 Attack power [slashing] fixed value + cost6 rank7
@@ -1651,7 +1651,7 @@
 11116 Attack power [Strike] Fixed value + cost1 rank16
 11117 Attack power [Strike] Fixed value + cost1 rank17
 11118 Attack power [Strike] Fixed value + cost1 rank18
-11119,Attack power [Strike] Fixed value + cost1 rank19
+11119 Attack power [Strike] Fixed value + cost1 rank19
 11120 Attack power [Strike] Fixed value + cost1 rank20
 11201 Attack power [Strike] Fixed value + cost2 rank1
 11202 Attack power [Strike] Fixed value + cost2 rank2
@@ -1686,7 +1686,7 @@
 11311 Attack power [Strike] Fixed value + cost3 rank11
 11312 Attack power [Strike] Fixed value + cost3 rank12
 11313 Attack power [Strike] Fixed value + cost3 rank13
-11314,Attack power [Strike] Fixed value + cost3 rank14
+11314 Attack power [Strike] Fixed value + cost3 rank14
 11315 Attack power [Strike] Fixed value + cost3 rank15
 11316 Attack power [Strike] Fixed value + cost3 rank16
 11317 Attack power [Strike] Fixed value + cost3 rank17
@@ -1721,7 +1721,7 @@
 11506 Attack power [Strike] Fixed value + cost5 rank6
 11507 Attack power [Strike] Fixed value + cost5 rank7
 11508 Attack power [Strike] Fixed value + cost5 rank8
-11509,Attack power [Strike] Fixed value + cost5 rank9
+11509 Attack power [Strike] Fixed value + cost5 rank9
 11510 Attack power [Strike] Fixed value + cost5 rank10
 11511 Attack power [Strike] Fixed value + cost5 rank11
 11512 Attack power [Strike] Fixed value + cost5 rank12
@@ -1756,7 +1756,7 @@
 12101 Attack power [pierce] fixed value + cost1 rank1
 12102 Attack power [pierce] fixed value + cost1 rank2
 12103 Attack power [pierce] fixed value + cost1 rank3
-12104,Attack power [pierce] fixed value + cost1 rank4
+12104 Attack power [pierce] fixed value + cost1 rank4
 12105 Attack power [pierce] fixed value + cost1 rank5
 12106 Attack power [pierce] fixed value + cost1 rank6
 12107 Attack power [pierce] fixed value + cost1 rank7
@@ -1791,7 +1791,7 @@
 12216 Attack power [pierce] fixed value + cost2 rank16
 12217 Attack power [pierce] fixed value + cost2 rank17
 12218 Attack power [pierce] fixed value + cost2 rank18
-12219,Attack power [pierce] fixed value + cost2 rank19
+12219 Attack power [pierce] fixed value + cost2 rank19
 12220 Attack power [pierce] fixed value + cost2 rank20
 12301 Attack power [pierce] fixed value + cost3 rank1
 12302 Attack power [pierce] fixed value + cost3 rank2
@@ -1826,7 +1826,7 @@
 12411 Attack power [pierce] fixed value + cost4 rank11
 12412 Attack power [pierce] fixed value + cost4 rank12
 12413 Attack power [pierce] fixed value + cost4 rank13
-12414,Attack power [pierce] fixed value + cost4 rank14
+12414 Attack power [pierce] fixed value + cost4 rank14
 12415 Attack power [pierce] fixed value + cost4 rank15
 12416 Attack power [pierce] fixed value + cost4 rank16
 12417 Attack power [pierce] fixed value + cost4 rank17
@@ -1861,7 +1861,7 @@
 12606 Attack power [pierce] fixed value + cost6 rank6
 12607 Attack power [pierce] fixed value + cost6 rank7
 12608 Attack power [pierce] fixed value + cost6 rank8
-12609,Attack power [pierce] fixed value + cost6 rank9
+12609 Attack power [pierce] fixed value + cost6 rank9
 12610 Attack power [pierce] fixed value + cost6 rank10
 12611 Attack power [pierce] fixed value + cost6 rank11
 12612 Attack power [pierce] fixed value + cost6 rank12
@@ -1879,7 +1879,7 @@
 13104 Attack power [gun] fixed value + cost1 rank4
 13105 Attack power [gun] fixed value + cost1 rank5
 13106 Attack power [gun] fixed value + cost1 rank6
-13107,Attack power [gun] fixed value + cost1 rank7
+13107 Attack power [gun] fixed value + cost1 rank7
 13108 Attack power [gun] fixed value + cost1 rank8
 13109 Attack power [gun] fixed value + cost1 rank9
 13110 Attack power [gun] fixed value + cost1 rank10
@@ -1916,7 +1916,7 @@
 13301 Attack power [gun] fixed value + cost3 rank1
 13302 Attack power [gun] fixed value + cost3 rank2
 13303 Attack power [gun] fixed value + cost3 rank3
-13304,Attack power [gun] fixed value + cost3 rank4
+13304 Attack power [gun] fixed value + cost3 rank4
 13305 Attack power [gun] fixed value + cost3 rank5
 13306 Attack power [gun] fixed value + cost3 rank6
 13307 Attack power [gun] fixed value + cost3 rank7
@@ -1953,7 +1953,7 @@
 13418 Attack power [gun] fixed value + cost4 rank18
 13419 Attack power [gun] fixed value + cost4 rank19
 13420 Attack power [gun] fixed value + cost4 rank20
-13501,Attack power [gun] fixed value + cost5 rank1
+13501 Attack power [gun] fixed value + cost5 rank1
 13502 Attack power [gun] fixed value + cost5 rank2
 13503 Attack power [gun] fixed value + cost5 rank3
 13504 Attack power [gun] fixed value + cost5 rank4
@@ -1990,7 +1990,7 @@
 13615 Attack power [gun] fixed value + cost6 rank15
 13616 Attack power [gun] fixed value + cost6 rank16
 13617 Attack power [gun] fixed value + cost6 rank17
-13618,Attack power [gun] fixed value + cost6 rank18
+13618 Attack power [gun] fixed value + cost6 rank18
 13619 Attack power [gun] fixed value + cost6 rank19
 13620 Attack power [gun] fixed value + cost6 rank20
 14101 Attack power [Magic] Fixed value + cost1 rank1
@@ -2008,7 +2008,7 @@
 14113 Attack power [Magic] Fixed value + cost1 rank13
 14114 Attack power [Magic] Fixed value + cost1 rank14
 14115 Attack power [Magic] Fixed value + cost1 rank15
-14116,Attack power [Magic] Fixed value + cost1 rank16
+14116 Attack power [Magic] Fixed value + cost1 rank16
 14117 Attack power [Magic] Fixed value + cost1 rank17
 14118 Attack power [Magic] Fixed value + cost1 rank18
 14119 Attack power [Magic] Fixed value + cost1 rank19
@@ -2043,7 +2043,7 @@
 14308 Attack power [Magic] Fixed value + cost3 rank8
 14309 Attack power [Magic] Fixed value + cost3 rank9
 14310 Attack power [Magic] Fixed value + cost3 rank10
-14311,Attack power [Magic] Fixed value + cost3 rank11
+14311 Attack power [Magic] Fixed value + cost3 rank11
 14312 Attack power [Magic] Fixed value + cost3 rank12
 14313 Attack power [Magic] Fixed value + cost3 rank13
 14314 Attack power [Magic] Fixed value + cost3 rank14
@@ -2078,7 +2078,7 @@
 14503 Attack power [Magic] Fixed value + cost5 rank3
 14504 Attack power [Magic] Fixed value + cost5 rank4
 14505 Attack power [Magic] Fixed value + cost5 rank5
-14506,Attack power [Magic] Fixed value + cost5 rank6
+14506 Attack power [Magic] Fixed value + cost5 rank6
 14507 Attack power [Magic] Fixed value + cost5 rank7
 14508 Attack power [Magic] Fixed value + cost5 rank8
 14509 Attack power [Magic] Fixed value + cost5 rank9
@@ -2113,7 +2113,7 @@
 14618 Attack power [Magic] Fixed value + cost6 rank18
 14619 Attack power [Magic] Fixed value + cost6 rank19
 14620 Attack power [Magic] Fixed value + cost6 rank20
-15101,Attack power [Fire] fixed value + cost1 rank1
+15101 Attack power [Fire] fixed value + cost1 rank1
 15102 Attack power [Fire] fixed value + cost1 rank2
 15103 Attack power [Fire] fixed value + cost1 rank3
 15104 Attack power [Fire] fixed value + cost1 rank4
@@ -2150,7 +2150,7 @@
 15215 Attack power [Fire] fixed value + cost2 rank15
 15216 Attack power [Fire] fixed value + cost2 rank16
 15217 Attack power [Fire] fixed value + cost2 rank17
-15218,Attack power [Fire] fixed value + cost2 rank18
+15218 Attack power [Fire] fixed value + cost2 rank18
 15219 Attack power [Fire] fixed value + cost2 rank19
 15220 Attack power [Fire] fixed value + cost2 rank20
 15301 Attack power [Fire] fixed value + cost3 rank1
@@ -2187,7 +2187,7 @@
 15412 Attack power [Fire] fixed value + cost4 rank12
 15413 Attack power [Fire] fixed value + cost4 rank13
 15414 Attack power [Fire] fixed value + cost4 rank14
-15415,Attack power [Fire] fixed value + cost4 rank15
+15415 Attack power [Fire] fixed value + cost4 rank15
 15416 Attack power [Fire] fixed value + cost4 rank16
 15417 Attack power [Fire] fixed value + cost4 rank17
 15418 Attack power [Fire] fixed value + cost4 rank18
@@ -2224,7 +2224,7 @@
 15609 Attack power [Fire] fixed value + cost6 rank9
 15610 Attack power [Fire] fixed value + cost6 rank10
 15611 Attack power [Fire] fixed value + cost6 rank11
-15612,Attack power [Fire] fixed value + cost6 rank12
+15612 Attack power [Fire] fixed value + cost6 rank12
 15613 Attack power [Fire] fixed value + cost6 rank13
 15614 Attack power [Fire] fixed value + cost6 rank14
 15615 Attack power [Fire] fixed value + cost6 rank15
@@ -2261,7 +2261,7 @@
 16206 Attack power [Lightning] Fixed value + cost2 rank6
 16207 Attack power [Lightning] Fixed value + cost2 rank7
 16208 Attack power [Lightning] Fixed value + cost2 rank8
-16209,Attack power [Lightning] Fixed value + cost2 rank9
+16209 Attack power [Lightning] Fixed value + cost2 rank9
 16210 Attack power [Lightning] Fixed value + cost2 rank10
 16211 Attack power [Lightning] Fixed value + cost2 rank11
 16212 Attack power [Lightning] Fixed value + cost2 rank12
@@ -2298,7 +2298,7 @@
 16403 Attack power [Lightning] Fixed value + cost4 rank3
 16404 Attack power [Lightning] Fixed value + cost4 rank4
 16405 Attack power [Lightning] Fixed value + cost4 rank5
-16406,Attack power [Lightning] Fixed value + cost4 rank6
+16406 Attack power [Lightning] Fixed value + cost4 rank6
 16407 Attack power [Lightning] Fixed value + cost4 rank7
 16408 Attack power [Lightning] Fixed value + cost4 rank8
 16409 Attack power [Lightning] Fixed value + cost4 rank9
@@ -2335,7 +2335,7 @@
 16520 Attack power [Lightning] Fixed value + cost5 rank20
 16601 Attack power [Lightning] Fixed value + cost6 rank1
 16602 Attack power [Lightning] Fixed value + cost6 rank2
-16603,Attack power [Lightning] Fixed value + cost6 rank3
+16603 Attack power [Lightning] Fixed value + cost6 rank3
 16604 Attack power [Lightning] Fixed value + cost6 rank4
 16605 Attack power [Lightning] Fixed value + cost6 rank5
 16606 Attack power [Lightning] Fixed value + cost6 rank6
@@ -2371,7 +2371,7 @@
 17116 Attack power [Physical] Fixed value + cost1 rank16
 17117 Attack power [Physical] Fixed value + cost1 rank17
 17118 Attack power [Physical] Fixed value + cost1 rank18
-17119,Attack power [Physical] Fixed value + cost1 rank19
+17119 Attack power [Physical] Fixed value + cost1 rank19
 17120 Attack power [Physical] Fixed value + cost1 rank20
 17201 Attack power [Physical] Fixed value + cost2 rank1
 17202 Attack power [Physical] Fixed value + cost2 rank2
@@ -2406,7 +2406,7 @@
 17311 Attack power [Physical] Fixed value + cost3 rank11
 17312 Attack power [Physical] Fixed value + cost3 rank12
 17313 Attack power [Physical] Fixed value + cost3 rank13
-17314,Attack power [Physical] Fixed value + cost3 rank14
+17314 Attack power [Physical] Fixed value + cost3 rank14
 17315 Attack power [Physical] Fixed value + cost3 rank15
 17316 Attack power [Physical] Fixed value + cost3 rank16
 17317 Attack power [Physical] Fixed value + cost3 rank17
@@ -2441,7 +2441,7 @@
 17506 Attack power [Physical] Fixed value + cost5 rank6
 17507 Attack power [Physical] Fixed value + cost5 rank7
 17508 Attack power [Physical] Fixed value + cost5 rank8
-17509,Attack power [Physical] Fixed value + cost5 rank9
+17509 Attack power [Physical] Fixed value + cost5 rank9
 17510 Attack power [Physical] Fixed value + cost5 rank10
 17511 Attack power [Physical] Fixed value + cost5 rank11
 17512 Attack power [Physical] Fixed value + cost5 rank12
@@ -2495,7 +2495,7 @@
 18120 Attack power [all] fixed value + cost1 rank20
 18201 Attack power [all] fixed value + cost2 rank1
 18202 Attack power [all] fixed value + cost2 rank2
-18203,Attack power [all] fixed value + cost2 rank3
+18203 Attack power [all] fixed value + cost2 rank3
 18204 Attack power [all] fixed value + cost2 rank4
 18205 Attack power [all] fixed value + cost2 rank5
 18206 Attack power [all] fixed value + cost2 rank6
@@ -2532,7 +2532,7 @@
 18317 Attack power [all] fixed value + cost3 rank17
 18318 Attack power [all] fixed value + cost3 rank18
 18319 Attack power [all] fixed value + cost3 rank19
-18320,Attack power [all] fixed value + cost3 rank20
+18320 Attack power [all] fixed value + cost3 rank20
 18401 Attack power [all] fixed value + cost4 rank1
 18402 Attack power [all] fixed value + cost4 rank2
 18403 Attack power [all] fixed value + cost4 rank3
@@ -2569,7 +2569,7 @@
 18514 Attack power [all] fixed value + cost5 rank14
 18515 Attack power [all] fixed value + cost5 rank15
 18516 Attack power [all] fixed value + cost5 rank16
-18517,Attack power [all] fixed value + cost5 rank17
+18517 Attack power [all] fixed value + cost5 rank17
 18518 Attack power [all] fixed value + cost5 rank18
 18519 Attack power [all] fixed value + cost5 rank19
 18520 Attack power [all] fixed value + cost5 rank20
@@ -2606,7 +2606,7 @@
 19111 Attack power [slash] multiplier + cost1 rank11
 19112 Attack power [slash] multiplier + cost1 rank12
 19113 Attack power [slash] multiplier + cost1 rank13
-19114,Attack power [slash] multiplier + cost1 rank14
+19114 Attack power [slash] multiplier + cost1 rank14
 19115 Attack power [slash] multiplier + cost1 rank15
 19116 Attack power [slash] multiplier + cost1 rank16
 19117 Attack power [slash] multiplier + cost1 rank17
@@ -2643,7 +2643,7 @@
 19308 Attack power [slash] multiplier + cost3 rank8
 19309 Attack power [slash] multiplier + cost3 rank9
 19310 Attack power [slash] multiplier + cost3 rank10
-19311,Attack power [slash] multiplier + cost3 rank11
+19311 Attack power [slash] multiplier + cost3 rank11
 19312 Attack power [slash] multiplier + cost3 rank12
 19313 Attack power [slash] multiplier + cost3 rank13
 19314 Attack power [slash] multiplier + cost3 rank14
@@ -2680,7 +2680,7 @@
 19505 Attack power [slash] multiplier + cost5 rank5
 19506 Attack power [slash] multiplier + cost5 rank6
 19507 Attack power [slash] multiplier + cost5 rank7
-19508,Attack power [slash] multiplier + cost5 rank8
+19508 Attack power [slash] multiplier + cost5 rank8
 19509 Attack power [slash] multiplier + cost5 rank9
 19510 Attack power [slash] multiplier + cost5 rank10
 19511 Attack power [slash] multiplier + cost5 rank11
@@ -2717,7 +2717,7 @@
 20102 Attack power [strike] multiplier + cost1 rank2
 20103 Attack power [strike] multiplier + cost1 rank3
 20104 Attack power [strike] multiplier + cost1 rank4
-20105,Attack power [strike] multiplier + cost1 rank5
+20105 Attack power [strike] multiplier + cost1 rank5
 20106 Attack power [strike] multiplier + cost1 rank6
 20107 Attack power [strike] multiplier + cost1 rank7
 20108 Attack power [strike] multiplier + cost1 rank8
@@ -2754,7 +2754,7 @@
 20219 Attack power [strike] multiplier + cost2 rank19
 20220 Attack power [strike] multiplier + cost2 rank20
 20301 Attack power [strike] multiplier + cost3 rank1
-20302,Attack power [strike] multiplier + cost3 rank2
+20302 Attack power [strike] multiplier + cost3 rank2
 20303 Attack power [strike] multiplier + cost3 rank3
 20304 Attack power [strike] multiplier + cost3 rank4
 20305 Attack power [strike] multiplier + cost3 rank5
@@ -2791,7 +2791,7 @@
 20416 Attack power [strike] multiplier + cost4 rank16
 20417 Attack power [strike] multiplier + cost4 rank17
 20418 Attack power [strike] multiplier + cost4 rank18
-20419,Attack power [strike] multiplier + cost4 rank19
+20419 Attack power [strike] multiplier + cost4 rank19
 20420 Attack power [strike] multiplier + cost4 rank20
 20501 Attack power [strike] multiplier + cost5 rank1
 20502 Attack power [strike] multiplier + cost5 rank2
@@ -2828,7 +2828,7 @@
 20613 Attack power [strike] multiplier + cost6 rank13
 20614 Attack power [strike] multiplier + cost6 rank14
 20615 Attack power [strike] multiplier + cost6 rank15
-20616,Attack power [strike] multiplier + cost6 rank16
+20616 Attack power [strike] multiplier + cost6 rank16
 20617 Attack power [strike] multiplier + cost6 rank17
 20618 Attack power [strike] multiplier + cost6 rank18
 20619 Attack power [strike] multiplier + cost6 rank19
@@ -2865,7 +2865,7 @@
 21210 Attack power [pierce] multiplier + cost2 rank10
 21211 Attack power [pierce] multiplier + cost2 rank11
 21212 Attack power [pierce] multiplier + cost2 rank12
-21213,Attack power [pierce] multiplier + cost2 rank13
+21213 Attack power [pierce] multiplier + cost2 rank13
 21214 Attack power [pierce] multiplier + cost2 rank14
 21215 Attack power [pierce] multiplier + cost2 rank15
 21216 Attack power [pierce] multiplier + cost2 rank16
@@ -2902,7 +2902,7 @@
 21407 Attack power [pierce] multiplier + cost4 rank7
 21408 Attack power [pierce] multiplier + cost4 rank8
 21409 Attack power [pierce] multiplier + cost4 rank9
-21410,Attack power [pierce] multiplier + cost4 rank10
+21410 Attack power [pierce] multiplier + cost4 rank10
 21411 Attack power [pierce] multiplier + cost4 rank11
 21412 Attack power [pierce] multiplier + cost4 rank12
 21413 Attack power [pierce] multiplier + cost4 rank13
@@ -2939,7 +2939,7 @@
 21604 Attack power [pierce] multiplier + cost6 rank4
 21605 Attack power [pierce] multiplier + cost6 rank5
 21606 Attack power [pierce] multiplier + cost6 rank6
-21607,Attack power [pierce] multiplier + cost6 rank7
+21607 Attack power [pierce] multiplier + cost6 rank7
 21608 Attack power [pierce] multiplier + cost6 rank8
 21609 Attack power [pierce] multiplier + cost6 rank9
 21610 Attack power [pierce] multiplier + cost6 rank10
@@ -2958,7 +2958,7 @@
 22103 Attack power [gun] multiplier + cost1 rank3
 22104 Attack power [gun] multiplier + cost1 rank4
 22105 Attack power [gun] multiplier + cost1 rank5
-22106,Attack power [gun] multiplier + cost1 rank6
+22106 Attack power [gun] multiplier + cost1 rank6
 22107 Attack power [gun] multiplier + cost1 rank7
 22108 Attack power [gun] multiplier + cost1 rank8
 22109 Attack power [gun] multiplier + cost1 rank9
@@ -2997,7 +2997,7 @@
 22302 Attack power [gun] multiplier + cost3 rank2
 22303 Attack power [gun] multiplier + cost3 rank3
 22304 Attack power [gun] multiplier + cost3 rank4
-22305,Attack power [gun] multiplier + cost3 rank5
+22305 Attack power [gun] multiplier + cost3 rank5
 22306 Attack power [gun] multiplier + cost3 rank6
 22307 Attack power [gun] multiplier + cost3 rank7
 22308 Attack power [gun] multiplier + cost3 rank8
@@ -3036,7 +3036,7 @@
 22501 Attack power [gun] multiplier + cost5 rank1
 22502 Attack power [gun] multiplier + cost5 rank2
 22503 Attack power [gun] multiplier + cost5 rank3
-22504,Attack power [gun] multiplier + cost5 rank4
+22504 Attack power [gun] multiplier + cost5 rank4
 22505 Attack power [gun] multiplier + cost5 rank5
 22506 Attack power [gun] multiplier + cost5 rank6
 22507 Attack power [gun] multiplier + cost5 rank7
@@ -3075,7 +3075,7 @@
 22620 Attack power [gun] multiplier + cost6 rank20
 23101 Attack power [Magic] multiplier + cost1 rank1
 23102 Attack power [Magic] multiplier + cost1 rank2
-23103,Attack power [Magic] multiplier + cost1 rank3
+23103 Attack power [Magic] multiplier + cost1 rank3
 23104 Attack power [Magic] multiplier + cost1 rank4
 23105 Attack power [Magic] multiplier + cost1 rank5
 23106 Attack power [Magic] multiplier + cost1 rank6
@@ -3112,7 +3112,7 @@
 23217 Attack power [Magic] multiplier + cost2 rank17
 23218 Attack power [Magic] multiplier + cost2 rank18
 23219 Attack power [Magic] multiplier + cost2 rank19
-23220,Attack power [Magic] multiplier + cost2 rank20
+23220 Attack power [Magic] multiplier + cost2 rank20
 23301 Attack power [Magic] multiplier + cost3 rank1
 23302 Attack power [Magic] multiplier + cost3 rank2
 23303 Attack power [Magic] multiplier + cost3 rank3
@@ -3149,7 +3149,7 @@
 23414 Attack power [Magic] multiplier + cost4 rank14
 23415 Attack power [Magic] multiplier + cost4 rank15
 23416 Attack power [Magic] multiplier + cost4 rank16
-23417,Attack power [Magic] multiplier + cost4 rank17
+23417 Attack power [Magic] multiplier + cost4 rank17
 23418 Attack power [Magic] multiplier + cost4 rank18
 23419 Attack power [Magic] multiplier + cost4 rank19
 23420 Attack power [Magic] multiplier + cost4 rank20
@@ -3186,7 +3186,7 @@
 23611 Attack power [Magic] multiplier + cost6 rank11
 23612 Attack power [Magic] multiplier + cost6 rank12
 23613 Attack power [Magic] multiplier + cost6 rank13
-23614,Attack power [Magic] multiplier + cost6 rank14
+23614 Attack power [Magic] multiplier + cost6 rank14
 23615 Attack power [Magic] multiplier + cost6 rank15
 23616 Attack power [Magic] multiplier + cost6 rank16
 23617 Attack power [Magic] multiplier + cost6 rank17
@@ -3205,7 +3205,7 @@
 24110 Attack power [Fire] multiplier + cost1 rank10
 24111 Attack power [Fire] multiplier + cost1 rank11
 24112 Attack power [Fire] multiplier + cost1 rank12
-24113,Attack power [Fire] multiplier + cost1 rank13
+24113 Attack power [Fire] multiplier + cost1 rank13
 24114 Attack power [Fire] multiplier + cost1 rank14
 24115 Attack power [Fire] multiplier + cost1 rank15
 24116 Attack power [Fire] multiplier + cost1 rank16
@@ -3244,7 +3244,7 @@
 24309 Attack power [Fire] multiplier + cost3 rank9
 24310 Attack power [Fire] multiplier + cost3 rank10
 24311 Attack power [Fire] multiplier + cost3 rank11
-24312,Attack power [Fire] multiplier + cost3 rank12
+24312 Attack power [Fire] multiplier + cost3 rank12
 24313 Attack power [Fire] multiplier + cost3 rank13
 24314 Attack power [Fire] multiplier + cost3 rank14
 24315 Attack power [Fire] multiplier + cost3 rank15
@@ -3283,7 +3283,7 @@
 24508 Attack power [Fire] multiplier + cost5 rank8
 24509 Attack power [Fire] multiplier + cost5 rank9
 24510 Attack power [Fire] multiplier + cost5 rank10
-24511,Attack power [Fire] multiplier + cost5 rank11
+24511 Attack power [Fire] multiplier + cost5 rank11
 24512 Attack power [Fire] multiplier + cost5 rank12
 24513 Attack power [Fire] multiplier + cost5 rank13
 24514 Attack power [Fire] multiplier + cost5 rank14
@@ -3322,7 +3322,7 @@
 25107 Attack power [Lightning] multiplier + cost1 rank7
 25108 Attack power [Lightning] multiplier + cost1 rank8
 25109 Attack power [Lightning] multiplier + cost1 rank9
-25110,Attack power [Lightning] multiplier + cost1 rank10
+25110 Attack power [Lightning] multiplier + cost1 rank10
 25111 Attack power [Lightning] multiplier + cost1 rank11
 25112 Attack power [Lightning] multiplier + cost1 rank12
 25113 Attack power [Lightning] multiplier + cost1 rank13
@@ -3361,7 +3361,7 @@
 25306 Attack power [Lightning] multiplier + cost3 rank6
 25307 Attack power [Lightning] multiplier + cost3 rank7
 25308 Attack power [Lightning] multiplier + cost3 rank8
-25309,Attack power [Lightning] multiplier + cost3 rank9
+25309 Attack power [Lightning] multiplier + cost3 rank9
 25310 Attack power [Lightning] multiplier + cost3 rank10
 25311 Attack power [Lightning] multiplier + cost3 rank11
 25312 Attack power [Lightning] multiplier + cost3 rank12
@@ -3400,7 +3400,7 @@
 25505 Attack power [Lightning] multiplier + cost5 rank5
 25506 Attack power [Lightning] multiplier + cost5 rank6
 25507 Attack power [Lightning] multiplier + cost5 rank7
-25508,Attack power [Lightning] multiplier + cost5 rank8
+25508 Attack power [Lightning] multiplier + cost5 rank8
 25509 Attack power [Lightning] multiplier + cost5 rank9
 25510 Attack power [Lightning] multiplier + cost5 rank10
 25511 Attack power [Lightning] multiplier + cost5 rank11
@@ -3439,7 +3439,7 @@
 26104 Attack power [physical] multiplier + cost1 rank4
 26105 Attack power [physical] multiplier + cost1 rank5
 26106 Attack power [physical] multiplier + cost1 rank6
-26107,Attack power [physical] multiplier + cost1 rank7
+26107 Attack power [physical] multiplier + cost1 rank7
 26108 Attack power [physical] multiplier + cost1 rank8
 26109 Attack power [physical] multiplier + cost1 rank9
 26110 Attack power [physical] multiplier + cost1 rank10
@@ -3476,7 +3476,7 @@
 26301 Attack power [physical] multiplier + cost3 rank1
 26302 Attack power [physical] multiplier + cost3 rank2
 26303 Attack power [physical] multiplier + cost3 rank3
-26304,Attack power [physical] multiplier + cost3 rank4
+26304 Attack power [physical] multiplier + cost3 rank4
 26305 Attack power [physical] multiplier + cost3 rank5
 26306 Attack power [physical] multiplier + cost3 rank6
 26307 Attack power [physical] multiplier + cost3 rank7
@@ -3513,7 +3513,7 @@
 26418 Attack power [physical] multiplier + cost4 rank18
 26419 Attack power [physical] multiplier + cost4 rank19
 26420 Attack power [physical] multiplier + cost4 rank20
-26501,Attack power [physical] multiplier + cost5 rank1
+26501 Attack power [physical] multiplier + cost5 rank1
 26502 Attack power [physical] multiplier + cost5 rank2
 26503 Attack power [physical] multiplier + cost5 rank3
 26504 Attack power [physical] multiplier + cost5 rank4
@@ -3550,7 +3550,7 @@
 26615 Attack power [physical] multiplier + cost6 rank15
 26616 Attack power [physical] multiplier + cost6 rank16
 26617 Attack power [physical] multiplier + cost6 rank17
-26618,Attack power [physical] multiplier + cost6 rank18
+26618 Attack power [physical] multiplier + cost6 rank18
 26619 Attack power [physical] multiplier + cost6 rank19
 26620 Attack power [physical] multiplier + cost6 rank20
 27101 Attack power [all] multiplier + cost1 rank1
@@ -3589,7 +3589,7 @@
 27214 Attack power [all] multiplier + cost2 rank14
 27215 Attack power [all] multiplier + cost2 rank15
 27216 Attack power [all] multiplier + cost2 rank16
-27217,Attack power [all] multiplier + cost2 rank17
+27217 Attack power [all] multiplier + cost2 rank17
 27218 Attack power [all] multiplier + cost2 rank18
 27219 Attack power [all] multiplier + cost2 rank19
 27220 Attack power [all] multiplier + cost2 rank20
@@ -3628,7 +3628,7 @@
 27413 Attack power [all] multiplier + cost4 rank13
 27414 Attack power [all] multiplier + cost4 rank14
 27415 Attack power [all] multiplier + cost4 rank15
-27416,Attack power [all] multiplier + cost4 rank16
+27416 Attack power [all] multiplier + cost4 rank16
 27417 Attack power [all] multiplier + cost4 rank17
 27418 Attack power [all] multiplier + cost4 rank18
 27419 Attack power [all] multiplier + cost4 rank19
@@ -3667,7 +3667,7 @@
 27612 Attack power [all] multiplier + cost6 rank12
 27613 Attack power [all] multiplier + cost6 rank13
 27614 Attack power [all] multiplier + cost6 rank14
-27615,Attack power [all] multiplier + cost6 rank15
+27615 Attack power [all] multiplier + cost6 rank15
 27616 Attack power [all] multiplier + cost6 rank16
 27617 Attack power [all] multiplier + cost6 rank17
 27618 Attack power [all] multiplier + cost6 rank18
@@ -3706,7 +3706,7 @@
 28211 Attack power [all] multiplier - cost2 rank11
 28212 Attack power [all] multiplier - cost2 rank12
 28213 Attack power [all] multiplier - cost2 rank13
-28214,Attack power [all] multiplier - cost2 rank14
+28214 Attack power [all] multiplier - cost2 rank14
 28215 Attack power [all] multiplier - cost2 rank15
 28216 Attack power [all] multiplier - cost2 rank16
 28217 Attack power [all] multiplier - cost2 rank17
@@ -3745,7 +3745,7 @@
 28410 Attack power [all] multiplier - cost4 rank10
 28411 Attack power [all] multiplier - cost4 rank11
 28412 Attack power [all] multiplier - cost4 rank12
-28413,Attack power [all] multiplier - cost4 rank13
+28413 Attack power [all] multiplier - cost4 rank13
 28414 Attack power [all] multiplier - cost4 rank14
 28415 Attack power [all] multiplier - cost4 rank15
 28416 Attack power [all] multiplier - cost4 rank16
@@ -3784,7 +3784,7 @@
 28609 Attack power [all] multiplier - cost6 rank9
 28610 Attack power [all] multiplier - cost6 rank10
 28611 Attack power [all] multiplier - cost6 rank11
-28612,Attack power [all] multiplier - cost6 rank12
+28612 Attack power [all] multiplier - cost6 rank12
 28613 Attack power [all] multiplier - cost6 rank13
 28614 Attack power [all] multiplier - cost6 rank14
 28615 Attack power [all] multiplier - cost6 rank15
@@ -4779,7 +4779,7 @@
 37204 Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank4
 37205 Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank5
 37206 Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank6
-37207,Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank7
+37207 Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank7
 37208 Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank8
 37209 Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank9
 37210 Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank10
@@ -4794,7 +4794,7 @@
 37219 Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank19
 37220 Status Abnormality Attack Power [Poison] Fixed Value + cost2 rank20
 37301 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank1
-37302,Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank2
+37302 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank2
 37303 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank3
 37304 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank4
 37305 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank5
@@ -4809,7 +4809,7 @@
 37314 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank14
 37315 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank15
 37316 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank16
-37317,Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank17
+37317 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank17
 37318 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank18
 37319 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank19
 37320 Status Abnormality Attack Power [Poison] Fixed Value + cost3 rank20
@@ -4824,7 +4824,7 @@
 37409 Status Abnormality Attack Power [Poison] Fixed Value + cost4 rank9
 37410 Status Abnormality Attack Power [Poison] Fixed Value + cost4 rank10
 37411 Status Abnormality Attack Power [Poison] Fixed Value + cost4 rank11
-37412,Status Abnormality Attack Power [Poison] Fixed Value + cost4 rank12
+37412 Status Abnormality Attack Power [Poison] Fixed Value + cost4 rank12
 37413 Status Abnormality Attack Power [Poison] Fixed Value + cost4 rank13
 37414 Status Abnormality Attack Power [Poison] Fixed Value + cost4 rank14
 37415 Status Abnormality Attack Power [Poison] Fixed Value + cost4 rank15
@@ -4839,7 +4839,7 @@
 37504 Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank4
 37505 Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank5
 37506 Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank6
-37507,Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank7
+37507 Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank7
 37508 Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank8
 37509 Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank9
 37510 Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank10
@@ -4854,7 +4854,7 @@
 37519 Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank19
 37520 Status Abnormality Attack Power [Poison] Fixed Value + cost5 rank20
 37601 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank1
-37602,Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank2
+37602 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank2
 37603 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank3
 37604 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank4
 37605 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank5
@@ -4869,7 +4869,7 @@
 37614 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank14
 37615 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank15
 37616 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank16
-37617,Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank17
+37617 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank17
 37618 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank18
 37619 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank19
 37620 Status Abnormality Attack Power [Poison] Fixed Value + cost6 rank20
@@ -4884,7 +4884,7 @@
 38109 Abnormal Status Attack Power [Bleeding] Fixed Value + cost1 rank9
 38110 Abnormal Status Attack Power [Bleeding] Fixed Value + cost1 rank10
 38111 Abnormal Status Attack Power [Bleeding] Fixed Value + cost1 rank11
-38112,Abnormal Status Attack Power [Bleeding] Fixed Value + cost1 rank12
+38112 Abnormal Status Attack Power [Bleeding] Fixed Value + cost1 rank12
 38113 Abnormal Status Attack Power [Bleeding] Fixed Value + cost1 rank13
 38114 Abnormal Status Attack Power [Bleeding] Fixed Value + cost1 rank14
 38115 Abnormal Status Attack Power [Bleeding] Fixed Value + cost1 rank15
@@ -4913,7 +4913,7 @@
 38218 Abnormal Status Attack Power [Bleeding] Fixed Value + cost2 rank18
 38219 Abnormal Status Attack Power [Bleeding] Fixed Value + cost2 rank19
 38220 Abnormal Status Attack Power [Bleeding] Fixed Value + cost2 rank20
-38301,Abnormal Status Attack Power [Bleeding] Fixed Value + cost3 rank1
+38301 Abnormal Status Attack Power [Bleeding] Fixed Value + cost3 rank1
 38302 Abnormal Status Attack Power [Bleeding] Fixed Value + cost3 rank2
 38303 Abnormal Status Attack Power [Bleeding] Fixed Value + cost3 rank3
 38304 Abnormal Status Attack Power [Bleeding] Fixed Value + cost3 rank4
@@ -4942,7 +4942,7 @@
 38407 Abnormal Status Attack Power [Bleeding] Fixed Value + cost4 rank7
 38408 Abnormal Status Attack Power [Bleeding] Fixed Value + cost4 rank8
 38409 Abnormal Status Attack Power [Bleeding] Fixed Value + cost4 rank9
-38410,Abnormal Status Attack Power [Bleeding] Fixed Value + cost4 rank10
+38410 Abnormal Status Attack Power [Bleeding] Fixed Value + cost4 rank10
 38411 Abnormal Status Attack Power [Bleeding] Fixed Value + cost4 rank11
 38412 Abnormal Status Attack Power [Bleeding] Fixed Value + cost4 rank12
 38413 Abnormal Status Attack Power [Bleeding] Fixed Value + cost4 rank13
@@ -4971,7 +4971,7 @@
 38516 Abnormal Status Attack Power [Bleeding] Fixed Value + cost5 rank16
 38517 Abnormal Status Attack Power [Bleeding] Fixed Value + cost5 rank17
 38518 Abnormal Status Attack Power [Bleeding] Fixed Value + cost5 rank18
-38519,Abnormal Status Attack Power [Bleeding] Fixed Value + cost5 rank19
+38519 Abnormal Status Attack Power [Bleeding] Fixed Value + cost5 rank19
 38520 Abnormal Status Attack Power [Bleeding] Fixed Value + cost5 rank20
 38601 Abnormal Status Attack Power [Bleeding] Fixed Value + cost6 rank1
 38602 Abnormal Status Attack Power [Bleeding] Fixed Value + cost6 rank2
@@ -5001,7 +5001,7 @@
 39106 Counter Damage Multiplier + cost1 rank6
 39107 Counter Damage Multiplier + cost1 rank7
 39108 Counter Damage Multiplier + cost1 rank8
-39109,Counter Damage Multiplier + cost1 rank9
+39109 Counter Damage Multiplier + cost1 rank9
 39110 Counter Damage Multiplier + cost1 rank10
 39111 Counter Damage Multiplier + cost1 rank11
 39112 Counter Damage Multiplier + cost1 rank12
@@ -5034,7 +5034,7 @@
 39219 Counter Damage Multiplier + cost2 rank19
 39220 Counter Damage Multiplier + cost2 rank20
 39301 Counter Damage Multiplier + cost3 rank1
-39302,Counter Damage Multiplier + cost3 rank2
+39302 Counter Damage Multiplier + cost3 rank2
 39303 Counter Damage Multiplier + cost3 rank3
 39304 Counter Damage Multiplier + cost3 rank4
 39305 Counter Damage Multiplier + cost3 rank5
@@ -5051,7 +5051,7 @@
 39316 Counter Damage Multiplier + cost3 rank16
 39317 Counter Damage Multiplier + cost3 rank17
 39318 Counter Damage Multiplier + cost3 rank18
-39319,Counter Damage Multiplier + cost3 rank19
+39319 Counter Damage Multiplier + cost3 rank19
 39320 Counter Damage Multiplier + cost3 rank20
 39401 Counter Damage Multiplier + cost4 rank1
 39402 Counter Damage Multiplier + cost4 rank2
@@ -5068,7 +5068,7 @@
 39413 Counter Damage Multiplier + cost4 rank13
 39414 Counter Damage Multiplier + cost4 rank14
 39415 Counter Damage Multiplier + cost4 rank15
-39416,Counter Damage Multiplier + cost4 rank16
+39416 Counter Damage Multiplier + cost4 rank16
 39417 Counter Damage Multiplier + cost4 rank17
 39418 Counter Damage Multiplier + cost4 rank18
 39419 Counter Damage Multiplier + cost4 rank19
@@ -5085,7 +5085,7 @@
 39510 Counter Damage Multiplier + cost5 rank10
 39511 Counter Damage Multiplier + cost5 rank11
 39512 Counter Damage Multiplier + cost5 rank12
-39513,Counter Damage Multiplier + cost5 rank13
+39513 Counter Damage Multiplier + cost5 rank13
 39514 Counter Damage Multiplier + cost5 rank14
 39515 Counter Damage Multiplier + cost5 rank15
 39516 Counter Damage Multiplier + cost5 rank16
@@ -5102,7 +5102,7 @@
 39607 Counter Damage Multiplier + cost6 rank7
 39608 Counter Damage Multiplier + cost6 rank8
 39609 Counter Damage Multiplier + cost6 rank9
-39610,Counter Damage Multiplier + cost6 rank10
+39610 Counter Damage Multiplier + cost6 rank10
 39611 Counter Damage Multiplier + cost6 rank11
 39612 Counter Damage Multiplier + cost6 rank12
 39613 Counter Damage Multiplier + cost6 rank13
@@ -5143,7 +5143,7 @@
 40208 Stamina consumption - cost2 rank8
 40209 Stamina consumption - cost2 rank9
 40210 Stamina consumption - cost2 rank10
-40211,Stamina consumption - cost2 rank11
+40211 Stamina consumption - cost2 rank11
 40212 Stamina consumption - cost2 rank12
 40213 Stamina consumption - cost2 rank13
 40214 Stamina consumption - cost2 rank14
@@ -5188,7 +5188,7 @@
 40413 Stamina consumption - cost4 rank13
 40414 Stamina consumption - cost4 rank14
 40415 Stamina consumption - cost4 rank15
-40416,Stamina consumption - cost4 rank16
+40416 Stamina consumption - cost4 rank16
 40417 Stamina consumption - cost4 rank17
 40418 Stamina consumption - cost4 rank18
 40419 Stamina consumption - cost4 rank19
@@ -5233,7 +5233,7 @@
 40618 Stamina consumption - cost6 rank18
 40619 Stamina consumption - cost6 rank19
 40620 Stamina consumption - cost6 rank20
-41101,Stamina consumption + cost1 rank1
+41101 Stamina consumption + cost1 rank1
 41102 Stamina consumption + cost1 rank2
 41103 Stamina consumption + cost1 rank3
 41104 Stamina consumption + cost1 rank4
@@ -5278,7 +5278,7 @@
 41303 Stamina consumption + cost3 rank3
 41304 Stamina consumption + cost3 rank4
 41305 Stamina consumption + cost3 rank5
-41306,Stamina consumption + cost3 rank6
+41306 Stamina consumption + cost3 rank6
 41307 Stamina consumption + cost3 rank7
 41308 Stamina consumption + cost3 rank8
 41309 Stamina consumption + cost3 rank9
@@ -5323,7 +5323,7 @@
 41508 Stamina consumption + cost5 rank8
 41509 Stamina consumption + cost5 rank9
 41510 Stamina consumption + cost5 rank10
-41511,Stamina consumption + cost5 rank11
+41511 Stamina consumption + cost5 rank11
 41512 Stamina consumption + cost5 rank12
 41513 Stamina consumption + cost5 rank13
 41514 Stamina consumption + cost5 rank14
@@ -5384,7 +5384,7 @@
 42209 Attack power [charge] multiplier + cost2 rank9
 42210 Attack power [charge] multiplier + cost2 rank10
 42211 Attack power [charge] multiplier + cost2 rank11
-42212,Attack power [charge] multiplier + cost2 rank12
+42212 Attack power [charge] multiplier + cost2 rank12
 42213 Attack power [charge] multiplier + cost2 rank13
 42214 Attack power [charge] multiplier + cost2 rank14
 42215 Attack power [charge] multiplier + cost2 rank15
@@ -5421,7 +5421,7 @@
 42406 Attack power [charge] multiplier + cost4 rank6
 42407 Attack power [charge] multiplier + cost4 rank7
 42408 Attack power [charge] multiplier + cost4 rank8
-42409,Attack power [charge] multiplier + cost4 rank9
+42409 Attack power [charge] multiplier + cost4 rank9
 42410 Attack power [charge] multiplier + cost4 rank10
 42411 Attack power [charge] multiplier + cost4 rank11
 42412 Attack power [charge] multiplier + cost4 rank12
@@ -5458,7 +5458,7 @@
 42603 Attack power [charge] multiplier + cost6 rank3
 42604 Attack power [charge] multiplier + cost6 rank4
 42605 Attack power [charge] multiplier + cost6 rank5
-42606,Attack power [charge] multiplier + cost6 rank6
+42606 Attack power [charge] multiplier + cost6 rank6
 42607 Attack power [charge] multiplier + cost6 rank7
 42608 Attack power [charge] multiplier + cost6 rank8
 42609 Attack power [charge] multiplier + cost6 rank9
@@ -5730,7 +5730,7 @@
 45115 Regain Multiplier + cost1 rank15
 45116 Regain Multiplier + cost1 rank16
 45117 Regain Multiplier + cost1 rank17
-45118,Regain Multiplier + cost1 rank18
+45118 Regain Multiplier + cost1 rank18
 45119 Regain Multiplier + cost1 rank19
 45120 Regain Multiplier + cost1 rank20
 45201 Regain Multiplier + cost2 rank1
@@ -5775,7 +5775,7 @@
 45320 Regain Multiplier + cost3 rank20
 45401 Regain Multiplier + cost4 rank1
 45402 Regain Multiplier + cost4 rank2
-45403,Regain Multiplier + cost4 rank3
+45403 Regain Multiplier + cost4 rank3
 45404 Regain Multiplier + cost4 rank4
 45405 Regain Multiplier + cost4 rank5
 45406 Regain Multiplier + cost4 rank6
@@ -5820,7 +5820,7 @@
 45605 Regain Multiplier + cost6 rank5
 45606 Regain Multiplier + cost6 rank6
 45607 Regain Multiplier + cost6 rank7
-45608,Regain Multiplier + cost6 rank8
+45608 Regain Multiplier + cost6 rank8
 45609 Regain Multiplier + cost6 rank9
 45610 Regain Multiplier + cost6 rank10
 45611 Regain Multiplier + cost6 rank11
@@ -5843,7 +5843,7 @@
 46108 Weapon Durability + cost1 rank8
 46109 Weapon Durability + cost1 rank9
 46110 Weapon Durability + cost1 rank10
-46111,Weapon Durability + cost1 rank11
+46111 Weapon Durability + cost1 rank11
 46112 Weapon Durability + cost1 rank12
 46113 Weapon Durability + cost1 rank13
 46114 Weapon Durability + cost1 rank14
@@ -5867,7 +5867,7 @@
 46212 Weapon Durability + cost2 rank12
 46213 Weapon Durability + cost2 rank13
 46214 Weapon Durability + cost2 rank14
-46215,Weapon Durability + cost2 rank15
+46215 Weapon Durability + cost2 rank15
 46216 Weapon Durability + cost2 rank16
 46217 Weapon Durability + cost2 rank17
 46218 Weapon Durability + cost2 rank18
@@ -5891,7 +5891,7 @@
 46316 Weapon Durability + cost3 rank16
 46317 Weapon Durability + cost3 rank17
 46318 Weapon Durability + cost3 rank18
-46319,Weapon Durability + cost3 rank19
+46319 Weapon Durability + cost3 rank19
 46320 Weapon Durability + cost3 rank20
 46401 Weapon Durability + cost4 rank1
 46402 Weapon Durability + cost4 rank2
@@ -5915,7 +5915,7 @@
 46420 Weapon Durability + cost4 rank20
 46501 Weapon Durability + cost5 rank1
 46502 Weapon Durability + cost5 rank2
-46503,Weapon Durability + cost5 rank3
+46503 Weapon Durability + cost5 rank3
 46504 Weapon Durability + cost5 rank4
 46505 Weapon Durability + cost5 rank5
 46506 Weapon Durability + cost5 rank6
@@ -5939,7 +5939,7 @@
 46604 Weapon Durability + cost6 rank4
 46605 Weapon Durability + cost6 rank5
 46606 Weapon Durability + cost6 rank6
-46607,Weapon Durability + cost6 rank7
+46607 Weapon Durability + cost6 rank7
 46608 Weapon Durability + cost6 rank8
 46609 Weapon Durability + cost6 rank9
 46610 Weapon Durability + cost6 rank10
@@ -5963,7 +5963,7 @@
 47108 Weapon Durability - cost1 rank8
 47109 Weapon Durability - cost1 rank9
 47110 Weapon Durability - cost1 rank10
-47111,Weapon Durability - cost1 rank11
+47111 Weapon Durability - cost1 rank11
 47112 Weapon Durability - cost1 rank12
 47113 Weapon Durability - cost1 rank13
 47114 Weapon Durability - cost1 rank14
@@ -5987,7 +5987,7 @@
 47212 Weapon Durability - cost2 rank12
 47213 Weapon Durability - cost2 rank13
 47214 Weapon Durability - cost2 rank14
-47215,Weapon Durability - cost2 rank15
+47215 Weapon Durability - cost2 rank15
 47216 Weapon Durability - cost2 rank16
 47217 Weapon Durability - cost2 rank17
 47218 Weapon Durability - cost2 rank18
@@ -6011,7 +6011,7 @@
 47316 Weapon Durability - cost3 rank16
 47317 Weapon Durability - cost3 rank17
 47318 Weapon Durability - cost3 rank18
-47319,Weapon Durability - cost3 rank19
+47319 Weapon Durability - cost3 rank19
 47320 Weapon Durability - cost3 rank20
 47401 Weapon Durability - cost4 rank1
 47402 Weapon Durability - cost4 rank2
@@ -6035,7 +6035,7 @@
 47420 Weapon Durability - cost4 rank20
 47501 Weapon Durability - cost5 rank1
 47502 Weapon Durability - cost5 rank2
-47503,Weapon Durability - cost5 rank3
+47503 Weapon Durability - cost5 rank3
 47504 Weapon Durability - cost5 rank4
 47505 Weapon Durability - cost5 rank5
 47506 Weapon Durability - cost5 rank6
@@ -6059,7 +6059,7 @@
 47604 Weapon Durability - cost6 rank4
 47605 Weapon Durability - cost6 rank5
 47606 Weapon Durability - cost6 rank6
-47607,Weapon Durability - cost6 rank7
+47607 Weapon Durability - cost6 rank7
 47608 Weapon Durability - cost6 rank8
 47609 Weapon Durability - cost6 rank9
 47610 Weapon Durability - cost6 rank10
@@ -6078,7 +6078,7 @@
 48103 Attack power [Physical] ( HP Maximum magnification + cost1 rank3
 48104 Attack power [Physical] ( HP Maximum magnification + cost1 rank4
 48105 Attack power [Physical] ( HP Maximum magnification + cost1 rank5
-48106,Attack power [Physical] ( HP Maximum magnification + cost1 rank6
+48106 Attack power [Physical] ( HP Maximum magnification + cost1 rank6
 48107 Attack power [Physical] ( HP Maximum magnification + cost1 rank7
 48108 Attack power [Physical] ( HP Maximum magnification + cost1 rank8
 48109 Attack power [Physical] ( HP Maximum magnification + cost1 rank9
@@ -6090,7 +6090,7 @@
 48115 Attack power [Physical] ( HP Maximum magnification + cost1 rank15
 48116 Attack power [Physical] ( HP Maximum magnification + cost1 rank16
 48117 Attack power [Physical] ( HP Maximum magnification + cost1 rank17
-48118,Attack power [Physical] ( HP Maximum magnification + cost1 rank18
+48118 Attack power [Physical] ( HP Maximum magnification + cost1 rank18
 48119 Attack power [Physical] ( HP Maximum magnification + cost1 rank19
 48120 Attack power [Physical] ( HP Maximum magnification + cost1 rank20
 48201 Attack power [Physical] ( HP Maximum magnification + cost2 rank1
@@ -6102,7 +6102,7 @@
 48207 Attack power [Physical] ( HP Maximum magnification + cost2 rank7
 48208 Attack power [Physical] ( HP Maximum magnification + cost2 rank8
 48209 Attack power [Physical] ( HP Maximum magnification + cost2 rank9
-48210,Attack power [Physical] ( HP Maximum magnification + cost2 rank10
+48210 Attack power [Physical] ( HP Maximum magnification + cost2 rank10
 48211 Attack power [Physical] ( HP Maximum magnification + cost2 rank11
 48212 Attack power [Physical] ( HP Maximum magnification + cost2 rank12
 48213 Attack power [Physical] ( HP Maximum magnification + cost2 rank13
@@ -6293,7 +6293,7 @@
 49518 Attack power [Physical] ( HP When near death) Multiplier + cost5 rank18
 49519 Attack power [Physical] ( HP When near death) Multiplier + cost5 rank19
 49520 Attack power [Physical] ( HP When near death) Multiplier + cost5 rank20
-49601,Attack power [Physical] ( HP When near death) Multiplier + cost6 rank1
+49601 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank1
 49602 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank2
 49603 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank3
 49604 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank4
@@ -6305,7 +6305,7 @@
 49610 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank10
 49611 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank11
 49612 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank12
-49613,Attack power [Physical] ( HP When near death) Multiplier + cost6 rank13
+49613 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank13
 49614 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank14
 49615 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank15
 49616 Attack power [Physical] ( HP When near death) Multiplier + cost6 rank16
@@ -6317,7 +6317,7 @@
 50102 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank2
 50103 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank3
 50104 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank4
-50105,Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank5
+50105 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank5
 50106 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank6
 50107 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank7
 50108 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank8
@@ -6329,7 +6329,7 @@
 50114 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank14
 50115 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank15
 50116 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank16
-50117,Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank17
+50117 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank17
 50118 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank18
 50119 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank19
 50120 Attack power [Physical] (Boss defeat stream) Fixed value + cost1 rank20
@@ -6341,7 +6341,7 @@
 50206 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank6
 50207 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank7
 50208 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank8
-50209,Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank9
+50209 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank9
 50210 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank10
 50211 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank11
 50212 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank12
@@ -6353,7 +6353,7 @@
 50218 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank18
 50219 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank19
 50220 Attack power [Physical] (Boss defeat stream) Fixed value + cost2 rank20
-50301,Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank1
+50301 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank1
 50302 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank2
 50303 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank3
 50304 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank4
@@ -6365,7 +6365,7 @@
 50310 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank10
 50311 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank11
 50312 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank12
-50313,Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank13
+50313 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank13
 50314 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank14
 50315 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank15
 50316 Attack power [Physical] (Boss defeat stream) Fixed value + cost3 rank16
@@ -6377,7 +6377,7 @@
 50402 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank2
 50403 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank3
 50404 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank4
-50405,Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank5
+50405 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank5
 50406 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank6
 50407 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank7
 50408 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank8
@@ -6389,7 +6389,7 @@
 50414 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank14
 50415 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank15
 50416 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank16
-50417,Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank17
+50417 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank17
 50418 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank18
 50419 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank19
 50420 Attack power [Physical] (Boss defeat stream) Fixed value + cost4 rank20
@@ -6401,7 +6401,7 @@
 50506 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank6
 50507 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank7
 50508 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank8
-50509,Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank9
+50509 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank9
 50510 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank10
 50511 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank11
 50512 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank12
@@ -6413,7 +6413,7 @@
 50518 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank18
 50519 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank19
 50520 Attack power [Physical] (Boss defeat stream) Fixed value + cost5 rank20
-50601,Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank1
+50601 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank1
 50602 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank2
 50603 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank3
 50604 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank4
@@ -6425,7 +6425,7 @@
 50610 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank10
 50611 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank11
 50612 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank12
-50613,Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank13
+50613 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank13
 50614 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank14
 50615 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank15
 50616 Attack power [Physical] (Boss defeat stream) Fixed value + cost6 rank16
@@ -6462,7 +6462,7 @@
 51207 Attack power [all] ( HP Maximum magnification + cost2 rank7
 51208 Attack power [all] ( HP Maximum magnification + cost2 rank8
 51209 Attack power [all] ( HP Maximum magnification + cost2 rank9
-51210,Attack power [all] ( HP Maximum magnification + cost2 rank10
+51210 Attack power [all] ( HP Maximum magnification + cost2 rank10
 51211 Attack power [all] ( HP Maximum magnification + cost2 rank11
 51212 Attack power [all] ( HP Maximum magnification + cost2 rank12
 51213 Attack power [all] ( HP Maximum magnification + cost2 rank13
@@ -6499,7 +6499,7 @@
 51404 Attack power [all] ( HP Maximum magnification + cost4 rank4
 51405 Attack power [all] ( HP Maximum magnification + cost4 rank5
 51406 Attack power [all] ( HP Maximum magnification + cost4 rank6
-51407,Attack power [all] ( HP Maximum magnification + cost4 rank7
+51407 Attack power [all] ( HP Maximum magnification + cost4 rank7
 51408 Attack power [all] ( HP Maximum magnification + cost4 rank8
 51409 Attack power [all] ( HP Maximum magnification + cost4 rank9
 51410 Attack power [all] ( HP Maximum magnification + cost4 rank10
@@ -6536,7 +6536,7 @@
 51601 Attack power [all] ( HP Maximum magnification + cost6 rank1
 51602 Attack power [all] ( HP Maximum magnification + cost6 rank2
 51603 Attack power [all] ( HP Maximum magnification + cost6 rank3
-51604,Attack power [all] ( HP Maximum magnification + cost6 rank4
+51604 Attack power [all] ( HP Maximum magnification + cost6 rank4
 51605 Attack power [all] ( HP Maximum magnification + cost6 rank5
 51606 Attack power [all] ( HP Maximum magnification + cost6 rank6
 51607 Attack power [all] ( HP Maximum magnification + cost6 rank7
@@ -6573,7 +6573,7 @@
 52118 Attack power [all] ( HP When near death) Multiplier + cost1 rank18
 52119 Attack power [all] ( HP When near death) Multiplier + cost1 rank19
 52120 Attack power [all] ( HP When near death) Multiplier + cost1 rank20
-52201,Attack power [all] ( HP When near death) Multiplier + cost2 rank1
+52201 Attack power [all] ( HP When near death) Multiplier + cost2 rank1
 52202 Attack power [all] ( HP When near death) Multiplier + cost2 rank2
 52203 Attack power [all] ( HP When near death) Multiplier + cost2 rank3
 52204 Attack power [all] ( HP When near death) Multiplier + cost2 rank4
@@ -6610,7 +6610,7 @@
 52315 Attack power [all] ( HP When near death) Multiplier + cost3 rank15
 52316 Attack power [all] ( HP When near death) Multiplier + cost3 rank16
 52317 Attack power [all] ( HP When near death) Multiplier + cost3 rank17
-52318,Attack power [all] ( HP When near death) Multiplier + cost3 rank18
+52318 Attack power [all] ( HP When near death) Multiplier + cost3 rank18
 52319 Attack power [all] ( HP When near death) Multiplier + cost3 rank19
 52320 Attack power [all] ( HP When near death) Multiplier + cost3 rank20
 52401 Attack power [all] ( HP When near death) Multiplier + cost4 rank1
@@ -6647,7 +6647,7 @@
 52512 Attack power [all] ( HP When near death) Multiplier + cost5 rank12
 52513 Attack power [all] ( HP When near death) Multiplier + cost5 rank13
 52514 Attack power [all] ( HP When near death) Multiplier + cost5 rank14
-52515,Attack power [all] ( HP When near death) Multiplier + cost5 rank15
+52515 Attack power [all] ( HP When near death) Multiplier + cost5 rank15
 52516 Attack power [all] ( HP When near death) Multiplier + cost5 rank16
 52517 Attack power [all] ( HP When near death) Multiplier + cost5 rank17
 52518 Attack power [all] ( HP When near death) Multiplier + cost5 rank18
@@ -6855,7 +6855,7 @@
 54320 HP Regenerate + ( HP At maximum cost3 rank20
 54401 HP Regenerate + ( HP At maximum cost4 rank1
 54402 HP Regenerate + ( HP At maximum cost4 rank2
-54403,HP Regenerate + ( HP At maximum cost4 rank3
+54403 HP Regenerate + ( HP At maximum cost4 rank3
 54404 HP Regenerate + ( HP At maximum cost4 rank4
 54405 HP Regenerate + ( HP At maximum cost4 rank5
 54406 HP Regenerate + ( HP At maximum cost4 rank6
@@ -6866,7 +6866,7 @@
 54411 HP Regenerate + ( HP At maximum cost4 rank11
 54412 HP Regenerate + ( HP At maximum cost4 rank12
 54413 HP Regenerate + ( HP At maximum cost4 rank13
-54414,HP Regenerate + ( HP At maximum cost4 rank14
+54414 HP Regenerate + ( HP At maximum cost4 rank14
 54415 HP Regenerate + ( HP At maximum cost4 rank15
 54416 HP Regenerate + ( HP At maximum cost4 rank16
 54417 HP Regenerate + ( HP At maximum cost4 rank17
@@ -6877,7 +6877,7 @@
 54502 HP Regenerate + ( HP At maximum cost5 rank2
 54503 HP Regenerate + ( HP At maximum cost5 rank3
 54504 HP Regenerate + ( HP At maximum cost5 rank4
-54505,HP Regenerate + ( HP At maximum cost5 rank5
+54505 HP Regenerate + ( HP At maximum cost5 rank5
 54506 HP Regenerate + ( HP At maximum cost5 rank6
 54507 HP Regenerate + ( HP At maximum cost5 rank7
 54508 HP Regenerate + ( HP At maximum cost5 rank8
@@ -6888,7 +6888,7 @@
 54513 HP Regenerate + ( HP At maximum cost5 rank13
 54514 HP Regenerate + ( HP At maximum cost5 rank14
 54515 HP Regenerate + ( HP At maximum cost5 rank15
-54516,HP Regenerate + ( HP At maximum cost5 rank16
+54516 HP Regenerate + ( HP At maximum cost5 rank16
 54517 HP Regenerate + ( HP At maximum cost5 rank17
 54518 HP Regenerate + ( HP At maximum cost5 rank18
 54519 HP Regenerate + ( HP At maximum cost5 rank19
@@ -6899,7 +6899,7 @@
 54604 HP Regenerate + ( HP At maximum cost6 rank4
 54605 HP Regenerate + ( HP At maximum cost6 rank5
 54606 HP Regenerate + ( HP At maximum cost6 rank6
-54607,HP Regenerate + ( HP At maximum cost6 rank7
+54607 HP Regenerate + ( HP At maximum cost6 rank7
 54608 HP Regenerate + ( HP At maximum cost6 rank8
 54609 HP Regenerate + ( HP At maximum cost6 rank9
 54610 HP Regenerate + ( HP At maximum cost6 rank10
@@ -7042,7 +7042,7 @@
 56107 HP Regenerate + (Boss defeat broadcast) cost1 rank7
 56108 HP Regenerate + (Boss defeat broadcast) cost1 rank8
 56109 HP Regenerate + (Boss defeat broadcast) cost1 rank9
-56110,HP Regenerate + (Boss defeat broadcast) cost1 rank10
+56110 HP Regenerate + (Boss defeat broadcast) cost1 rank10
 56111 HP Regenerate + (Boss defeat broadcast) cost1 rank11
 56112 HP Regenerate + (Boss defeat broadcast) cost1 rank12
 56113 HP Regenerate + (Boss defeat broadcast) cost1 rank13
@@ -7089,7 +7089,7 @@
 56314 HP Regenerate + (Boss defeat broadcast) cost3 rank14
 56315 HP Regenerate + (Boss defeat broadcast) cost3 rank15
 56316 HP Regenerate + (Boss defeat broadcast) cost3 rank16
-56317,HP Regenerate + (Boss defeat broadcast) cost3 rank17
+56317 HP Regenerate + (Boss defeat broadcast) cost3 rank17
 56318 HP Regenerate + (Boss defeat broadcast) cost3 rank18
 56319 HP Regenerate + (Boss defeat broadcast) cost3 rank19
 56320 HP Regenerate + (Boss defeat broadcast) cost3 rank20
@@ -7148,7 +7148,7 @@
 56613 HP Regenerate + (Boss defeat broadcast) cost6 rank13
 56614 HP Regenerate + (Boss defeat broadcast) cost6 rank14
 56615 HP Regenerate + (Boss defeat broadcast) cost6 rank15
-56616,HP Regenerate + (Boss defeat broadcast) cost6 rank16
+56616 HP Regenerate + (Boss defeat broadcast) cost6 rank16
 56617 HP Regenerate + (Boss defeat broadcast) cost6 rank17
 56618 HP Regenerate + (Boss defeat broadcast) cost6 rank18
 56619 HP Regenerate + (Boss defeat broadcast) cost6 rank19
@@ -7162,7 +7162,7 @@
 57107 Attack HP Reduction rate - cost1 rank7
 57108 Attack HP Reduction rate - cost1 rank8
 57109 Attack HP Reduction rate - cost1 rank9
-57110,Attack HP Reduction rate - cost1 rank10
+57110 Attack HP Reduction rate - cost1 rank10
 57111 Attack HP Reduction rate - cost1 rank11
 57112 Attack HP Reduction rate - cost1 rank12
 57113 Attack HP Reduction rate - cost1 rank13
@@ -7193,7 +7193,7 @@
 57218 Attack HP Reduction rate - cost2 rank18
 57219 Attack HP Reduction rate - cost2 rank19
 57220 Attack HP Reduction rate - cost2 rank20
-57301,Attack HP Reduction rate - cost3 rank1
+57301 Attack HP Reduction rate - cost3 rank1
 57302 Attack HP Reduction rate - cost3 rank2
 57303 Attack HP Reduction rate - cost3 rank3
 57304 Attack HP Reduction rate - cost3 rank4
@@ -7240,7 +7240,7 @@
 57505 Attack HP Reduction rate - cost5 rank5
 57506 Attack HP Reduction rate - cost5 rank6
 57507 Attack HP Reduction rate - cost5 rank7
-57508,Attack HP Reduction rate - cost5 rank8
+57508 Attack HP Reduction rate - cost5 rank8
 57509 Attack HP Reduction rate - cost5 rank9
 57510 Attack HP Reduction rate - cost5 rank10
 57511 Attack HP Reduction rate - cost5 rank11
@@ -7271,7 +7271,7 @@
 57616 Attack HP Reduction rate - cost6 rank16
 57617 Attack HP Reduction rate - cost6 rank17
 57618 Attack HP Reduction rate - cost6 rank18
-57619,Attack HP Reduction rate - cost6 rank19
+57619 Attack HP Reduction rate - cost6 rank19
 57620 Attack HP Reduction rate - cost6 rank20
 58101 Attack HP Reduction rate - cost1 rank1
 58102 Attack HP Reduction rate - cost1 rank2
@@ -7282,7 +7282,7 @@
 58107 Attack HP Reduction rate - cost1 rank7
 58108 Attack HP Reduction rate - cost1 rank8
 58109 Attack HP Reduction rate - cost1 rank9
-58110,Attack HP Reduction rate - cost1 rank10
+58110 Attack HP Reduction rate - cost1 rank10
 58111 Attack HP Reduction rate - cost1 rank11
 58112 Attack HP Reduction rate - cost1 rank12
 58113 Attack HP Reduction rate - cost1 rank13
@@ -7313,7 +7313,7 @@
 58218 Attack HP Reduction rate - cost2 rank18
 58219 Attack HP Reduction rate - cost2 rank19
 58220 Attack HP Reduction rate - cost2 rank20
-58301,Attack HP Reduction rate - cost3 rank1
+58301 Attack HP Reduction rate - cost3 rank1
 58302 Attack HP Reduction rate - cost3 rank2
 58303 Attack HP Reduction rate - cost3 rank3
 58304 Attack HP Reduction rate - cost3 rank4
@@ -7360,7 +7360,7 @@
 58505 Attack HP Reduction rate - cost5 rank5
 58506 Attack HP Reduction rate - cost5 rank6
 58507 Attack HP Reduction rate - cost5 rank7
-58508,Attack HP Reduction rate - cost5 rank8
+58508 Attack HP Reduction rate - cost5 rank8
 58509 Attack HP Reduction rate - cost5 rank9
 58510 Attack HP Reduction rate - cost5 rank10
 58511 Attack HP Reduction rate - cost5 rank11
@@ -7391,7 +7391,7 @@
 58616 Attack HP Reduction rate - cost6 rank16
 58617 Attack HP Reduction rate - cost6 rank17
 58618 Attack HP Reduction rate - cost6 rank18
-58619,Attack HP Reduction rate - cost6 rank19
+58619 Attack HP Reduction rate - cost6 rank19
 58620 Attack HP Reduction rate - cost6 rank20
 59000 Attack sound removal
 100000 Souls acquired +10%
@@ -7430,7 +7430,7 @@
 104202 maximum HP (magnification) - cost2 rank2
 104203 maximum HP (magnification) - cost2 rank3
 104204 maximum HP (magnification) - cost2 rank4
-104205,maximum HP (magnification) - cost2 rank5
+104205 maximum HP (magnification) - cost2 rank5
 104206 maximum HP (magnification) - cost2 rank6
 104207 maximum HP (magnification) - cost2 rank7
 104208 maximum HP (magnification) - cost2 rank8
@@ -7480,7 +7480,7 @@
 104412 maximum HP (magnification) - cost4 rank12
 104413 maximum HP (magnification) - cost4 rank13
 104414 maximum HP (magnification) - cost4 rank14
-104415,maximum HP (magnification) - cost4 rank15
+104415 maximum HP (magnification) - cost4 rank15
 104416 maximum HP (magnification) - cost4 rank16
 104417 maximum HP (magnification) - cost4 rank17
 104418 maximum HP (magnification) - cost4 rank18
@@ -7532,7 +7532,7 @@
 106101 Maximum stamina (multiplier) - cost1 rank1
 106102 Maximum stamina (multiplier) - cost1 rank2
 106103 Maximum stamina (multiplier) - cost1 rank3
-106104,Maximum stamina (multiplier) - cost1 rank4
+106104 Maximum stamina (multiplier) - cost1 rank4
 106105 Maximum stamina (multiplier) - cost1 rank5
 106106 Maximum stamina (multiplier) - cost1 rank6
 106107 Maximum stamina (multiplier) - cost1 rank7
@@ -7567,7 +7567,7 @@
 106216 Maximum stamina (multiplier) - cost2 rank16
 106217 Maximum stamina (multiplier) - cost2 rank17
 106218 Maximum stamina (multiplier) - cost2 rank18
-106219,Maximum stamina (multiplier) - cost2 rank19
+106219 Maximum stamina (multiplier) - cost2 rank19
 106220 Maximum stamina (multiplier) - cost2 rank20
 106301 Maximum stamina (multiplier) - cost3 rank1
 106302 Maximum stamina (multiplier) - cost3 rank2
@@ -7602,7 +7602,7 @@
 106411 Maximum stamina (multiplier) - cost4 rank11
 106412 Maximum stamina (multiplier) - cost4 rank12
 106413 Maximum stamina (multiplier) - cost4 rank13
-106414,Maximum stamina (multiplier) - cost4 rank14
+106414 Maximum stamina (multiplier) - cost4 rank14
 106415 Maximum stamina (multiplier) - cost4 rank15
 106416 Maximum stamina (multiplier) - cost4 rank16
 106417 Maximum stamina (multiplier) - cost4 rank17
@@ -7637,7 +7637,7 @@
 106606 Maximum stamina (multiplier) - cost6 rank6
 106607 Maximum stamina (multiplier) - cost6 rank7
 106608 Maximum stamina (multiplier) - cost6 rank8
-106609,Maximum stamina (multiplier) - cost6 rank9
+106609 Maximum stamina (multiplier) - cost6 rank9
 106610 Maximum stamina (multiplier) - cost6 rank10
 106611 Maximum stamina (multiplier) - cost6 rank11
 106612 Maximum stamina (multiplier) - cost6 rank12
@@ -7690,7 +7690,7 @@
 116002 Damage Cut [Pierce] +10%
 117000 Damage Cut [Gun] +5%
 117001 Damage Cut [Gun] +7%
-117002,Damage Cut [Gun] +10%
+117002 Damage Cut [Gun] +10%
 118000 Damage Cut [Magic] +5%
 118001 Damage Cut [Magic] +7%
 118002 Damage Cut [Magic] +10%
@@ -7711,7 +7711,7 @@
 123002 Damage Cut [All] +5%
 124000 Damage Cut [All] -3%
 124001 Damage Cut [All] -4%
-124002,Damage Cut [All] -5%
+124002 Damage Cut [All] -5%
 125000 Resistance Value [Poison] +100
 125001 Resistance Value [Poison] +200
 125002 Resistance Value [Poison] +300
@@ -7738,7 +7738,7 @@
 132002 Transfusion recovery amount +30 %
 133000 Transfusion recovery amount -10 %
 133001 Transfusion recovery amount -20 %
-133002,Transfusion recovery amount -30 %
+133002 Transfusion recovery amount -30 %
 134000 Blood transfusion possession limit +1
 134001 Blood transfusion possession limit +2
 134002 Blood transfusion possession limit +3
@@ -7764,7 +7764,7 @@
 138002 Stamina recovery speed +10 %
 139000 Stamina recovery speed -3 %
 139001 Stamina recovery speed -5 %
-139002,Stamina recovery speed -10 %
+139002 Stamina recovery speed -10 %
 140000 Landing damage reduction +50 %
 140001 Landing damage reduction +75 %
 140002 Landing damage reduction +100 %
@@ -7788,12 +7788,12 @@
 190008 Throw [Bullet Recovery] buff
 190009 Throw [Soul Acquisition] +10%
 190010 Throw [Soul Acquisition] buff
-190011,Throw [Recovery from abnormal conditions]
+190011 Throw [Recovery from abnormal conditions]
 190012 Throw [Recovery from abnormal conditions] buff
 190013 Damage Cut [Slash] +10%
 190014 Damage Cut [Strike] +10%
 190015 Damage Cut [Pierce] +10%
-190016,Damage Cut [Gun] +10%
+190016 Damage Cut [Gun] +10%
 190017 Damage Cut [Fire] +10%
 190018 Damage Cut [Magic] +10%
 190019 Damage Cut [Lightning] +10%

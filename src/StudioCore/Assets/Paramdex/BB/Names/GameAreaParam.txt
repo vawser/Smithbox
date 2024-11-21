@@ -16,7 +16,7 @@
 2600850 m26_00 Trap Lord _ Lord of Nightmares
 2700800 m27_00 forest _ Dark Brigade
 2800803 m28_00 City of Sacrifice _ The failed evil god
-2900100,m29_00 Dungeons _ boss ( General )
+2900100 m29_00 Dungeons _ boss ( General )
 3200800 m32_00 University _ Idiot Spider
 3300800 m33_00 hometown _ Evil God
 3400801 m34_00 Cathedral Quarter D_ Ludwig

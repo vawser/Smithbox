@@ -24,7 +24,7 @@
 23 Menu Tab (In-game)
 24 Menu tab (Camp)
 25 Menu tab (blood characters)
-26,On the Menu tab ( SOS input)
+26 On the Menu tab ( SOS input)
 27 Menu tab (player rating)
 28 Menu tab (title menu)
 29 Menu tab (shop)
@@ -51,7 +51,7 @@
 50 skill slot
 51 spell slot
 52 white
-53,Normal text _ black
+53 Normal text _ black
 36908 title - Hair color for face creation 08
 36909 title - Hair color for face creation 09
 36910 title - Hair color for face creation 10

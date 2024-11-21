@@ -17,7 +17,7 @@
 514 Wyvern/Bird Control
 520 DS2Test For upstream
 521 DS2Test Kawakami's ally
-522,DS2Test For upstream 2
+522 DS2Test For upstream 2
 540 Automatic patrol test Walking
 541 Automatic patrol test run
 542 Automated Patrol Test Super Dash
@@ -42,7 +42,7 @@
 6141 Captive Nun (Refuge)
 6142 Captive Nun (Madness)
 6143 Captive Nun (Refuge) / Murder of a prostitute)
-6144,Captive Nun (Madness / Murder of a prostitute)
+6144 Captive Nun (Madness / Murder of a prostitute)
 6150 Kin Hunt (Wheel)
 6151 Bloodline Hunt (Sword Hammer) _ After moving
 6152 Bloodline Hunt (Sword Hammer / Joint Struggle ver ) _ Cathedral B
@@ -64,7 +64,7 @@
 6390 Hometown Invasion NPC1
 6395 Hometown Invasion NPC2
 6400 For the Revenger event NPC1 (Henrik)
-6401,Alliance Hunter : Henrik vs Shadow of Yharnam
+6401 Alliance Hunter : Henrik vs Shadow of Yharnam
 6402 Alliance Hunter : Henrik vs Roma
 6410 For the Revenger event NPC2
 6420 Cathedral Quarter A Sacrifice type Close range type NPC
@@ -80,7 +80,7 @@
 6510 Secret Seeker _ Normal conversation
 6511 Secret Seeker _ Dying Conversation
 6520 The Church Killer _ Doppelganger
-6521,The Church Killer _ Weakened main conversation
+6521 The Church Killer _ Weakened main conversation
 6530 Alliance Hunter : Japanese clothing _ Joint Struggle 1vs Pearl
 6531 Alliance Hunter : Japanese clothing _ Joint Struggle 2vs Reborn
 6532 Alliance Hunter : Japanese clothing _ Joint Struggle 3vsDLC Ludwig
@@ -91,7 +91,7 @@
 6545 Alliance Hunter : Executioner _ Hostile
 6550 Top Hunter _ Joint Struggle 1vs Ebriatas
 6551 Top Hunter _ Joint Struggle 2vs Dungeon Eviltas m29_53_90_01 3F
-6552,Top Hunter _ Joint Struggle 3vs Roma
+6552 Top Hunter _ Joint Struggle 3vs Roma
 6570 Complete beast NPC
 6580 Cathedral NPC1 (Proximity)
 6585 Cathedral NPC2 (Long distance)
@@ -165,7 +165,7 @@
 23030 Yoshida Test: Enemy Doping: Ruins
 23040 Yoshida Test: Enemy Doping: Dungeon Holy Grail 1
 23050 Yoshida Test: Enemy Doping: Cathedral A
-23060,Yoshida Test: Enemy Doping: Cathedral C ·first half
+23060 Yoshida Test: Enemy Doping: Cathedral C ·first half
 23070 Yoshida Test: Enemy Doping: Graveyard
 23080 Yoshida Test: Enemy Doping: City of Sacrifice - First Time
 23090 Yoshida Test: Enemy Doping: Cemetery - Night
@@ -269,7 +269,7 @@
 101000 Priest
 101001 Priest: Smooth Patrol Ignored
 101010 Priest Ruins Sniper
-101100,Priest Cathedral
+101100 Priest Cathedral
 101120 Priest Cathedral C
 101600 Priest Trap Lord
 101700 Priest Mori
@@ -334,8 +334,8 @@
 102142 crowd A Cathedral Ward Weapon (Knife) Clothing Pattern 3
 102150 crowd A Cathedral Ward Weapon (Scythe) Clothing Pattern 1
 102151 crowd A Cathedral Ward Weapon (Scythe) Clothing Pattern 4
-102152,crowd A Cathedral Ward Weapon (Scythe) Clothing Pattern 5
-102153,crowd A Cathedral Ward Weapon (Scythe) Clothing Pattern 5
+102152 crowd A Cathedral Ward Weapon (Scythe) Clothing Pattern 5
+102153 crowd A Cathedral Ward Weapon (Scythe) Clothing Pattern 5
 102160 crowd A Cathedral Ward Throwing & Shield Clothing Pattern 2
 102161 crowd A Cathedral Ward Throwing & Shield Clothing Pattern 3
 102162 crowd A Cathedral Ward Throwing & Shield Clothing Pattern 6
@@ -415,7 +415,7 @@
 104031 Burned Corpse (Sword) Hometown Shadow Man Model
 104032 Burnt corpse (axe) Hometown Shadow model
 104033 Burned corpse (bow) Hometown Shadow model
-104090,Burnt corpse (bare hands) SP 1 F Model pattern 5: With corpse
+104090 Burnt corpse (bare hands) SP 1 F Model pattern 5: With corpse
 104091 Burnt corpse (bare hands) SP 2 F Model Pattern 4 Corpse
 104092 Burnt Corpse (Sword) SP 1 F Model pattern 8: With corpse
 104093 Burnt Corpse (Sword) SP 2 F Model pattern 2: With corpse
@@ -425,7 +425,7 @@
 104097 Burnt Corpse (Bow) SP 2 F Model pattern 3: With corpse
 104100 Burned corpse (bare hands) Ruins Damage pattern 0
 104101 Burned corpse (bare hands) Ruins Damage pattern 1
-104102,Burned corpse (bare hands) Ruins Damage pattern 2
+104102 Burned corpse (bare hands) Ruins Damage pattern 2
 104103 Burned corpse (bare hands) Ruins Damage pattern 3
 104104 Burned corpse (bare hands) Ruins Damage pattern 4
 104105 Burned corpse (bare hands) Ruins Damage pattern 5
@@ -440,7 +440,7 @@
 104805 Burned corpse (bare hands) Sacrifice Damage pattern 5
 104806 Burned corpse (bare hands) Sacrifice Damage pattern 6
 104807 Burned corpse (bare hands) Sacrifice Damage pattern 7
-104810,Burnt Corpse (Sword) Sacrifice Damage Pattern 0
+104810 Burnt Corpse (Sword) Sacrifice Damage Pattern 0
 104811 Burnt Corpse (Sword) Sacrifice Damage Pattern 1
 104812 Burnt Corpse (Sword) Sacrifice Damage Pattern 6
 104813 Burnt Corpse (Sword) Sacrifice Damage Pattern 7
@@ -456,7 +456,7 @@
 105050 Wandering Widow _ Demon Substitute in the Old Castle (with special effects)
 105051 Wandering Widow _ Old Castle's Demon Substitute (No special effects)
 105099 Wandering Widow GD For testing
-105100,Wandering Widow Ruins
+105100 Wandering Widow Ruins
 105200 Wandering Widow Cathedral District B
 105220 Wandering Widow (Intrusion PC Summon) Cemetery
 105230 Wandering Widow (Intrusion PC Summon) Ruins
@@ -471,7 +471,7 @@
 105330 Wandering Widow (Intrusion PC Summon) Hometown
 105340 Wandering Widow (Intrusion PC Summoning) Cathedral Ward D
 105350 Wandering Widow (Intrusion PC Summon) Clock Tower
-105360,Wandering Widow (Intrusion PC Summon) Fishing Village
+105360 Wandering Widow (Intrusion PC Summon) Fishing Village
 105800 Wandering Widow Sacrifice
 105810 Wandering Widow Sacrifice Boss Companion
 106000 Brain Eater Cathedral Quarter C
@@ -493,7 +493,7 @@
 108001 Burned Corpse (Warrior/Sword) 2F
 108002 Burned Corpse (Warrior/Sword) 3F Full Armor
 108003 Burned Corpse (Warrior Sword _ Both hands) 1F
-108004,Burned Corpse (Warrior Sword _ Both hands) 2F
+108004 Burned Corpse (Warrior Sword _ Both hands) 2F
 108005 Burned Corpse (Warrior Sword _ Both hands) 3F Full Armor
 108006 Burned Corpse (Warrior Sword _ Flame Pot) 1F
 108007 Burned Corpse (Warrior Sword _ Flame Pot) 2F
@@ -524,7 +524,7 @@
 108035 Burned corpse (Warrior Ha _ Both hands) 3F Full Armor
 108036 Burnt corpse (Warrior Morning Star) 1F
 108037 Burnt corpse (Warrior Morning Star) 2F
-108038,Burnt corpse (Warrior Morning Star) 3F Full Armor
+108038 Burnt corpse (Warrior Morning Star) 3F Full Armor
 108039 Burned Corpse (Warrior Morning Star _ Both hands) 1F
 108040 Burned Corpse (Warrior Morning Star _ Both hands) 2F
 108041 Burned Corpse (Warrior Morning Star _ Both hands) 3F Full Armor
@@ -565,7 +565,7 @@
 112000 Drowned Beast
 112070 Drowned Beast Mori [City Folk]
 112071 Drowned Beast Forest [Beast]
-112400,Drowned Beast [Weak] Cathedral Quarter _ B
+112400 Drowned Beast [Weak] Cathedral Quarter _ B
 112401 Drowned Beast [Youth] Cathedral Quarter _ B
 112402 Drowned Beast [City Folk] Cathedral District _ B
 112403 Drowned Beast [Dharma] Cathedral District _ B
@@ -624,7 +624,7 @@
 118070 Wandering Madness ( small ) Cathedral Quarter C
 118080 Wandering Madness ( small ) Old castle 00
 118081 Wandering Madness ( small ) Old castle 01
-118082,Wandering Madness ( small ) Old castle 02
+118082 Wandering Madness ( small ) Old castle 02
 118083 Wandering Madness ( small ) Old castle 03
 118084 Wandering Madness ( small ) Old castle 04
 118090 Wandering Madness ( small ) City of Sacrifice 00
@@ -708,7 +708,7 @@
 124000 Mad dog
 124060 Mad Dog University
 124080 Mad Dog Sacrifice First Time
-124400,Mad Dog Cathedral B
+124400 Mad Dog Cathedral B
 124401 Mad Dog Cathedral B For use inside a cage (assuming they won't come out)
 124410 Mad Dog Cathedral A Early stage
 124411 Mad Dog Cathedral A Mid-game
@@ -729,7 +729,7 @@
 127000 Vampire pig
 127300 Vampire Pig Cathedral Quarter A
 127400 Vampire Pig Forest
-127500,Vampire Pig Cathedral Quarter B( Dropping the girl's ribbon
+127500 Vampire Pig Cathedral Quarter B( Dropping the girl's ribbon
 127600 Vampire Pig Trap Lord Nightmare Head
 127800 Vampire Pig Sacrifice First Time
 129000 Strange Beast (female) Ruins
@@ -753,7 +753,7 @@
 202000 Kidnapper Sacrifice First Time
 202005 Kidnapper Temporary placement in Cathedral Ward
 202006 Kidnapper Forest map placement
-203000,Cathedral Knight (sword shield cloak)
+203000 Cathedral Knight (sword shield cloak)
 203005 Cathedral Knight (Sword Shield Cloak) for Cathedral Ward
 203010 Cathedral Knight (Halberd Shield Cloak)
 203020 Cathedral Knight (Halberd _ Both hands)
@@ -790,7 +790,7 @@
 210025 Eye Collector for Old Castles
 210030 Eye Collector (Jailer Granny) Cathedral Ward D
 211000 Spider Cthulhu University
-211041,Cthulhu the Spider Cathedral B month
+211041 Cthulhu the Spider Cathedral B month
 211070 Spider Cthulhu Forest
 212000 Dark Brigade Sword Dungeon
 212001 Dark Brigade Sword and Candle Dungeon
@@ -811,7 +811,7 @@
 213030 Blood licking (extra large blood bag)
 213050 Licking blood (blood bag size) _ Cathedral Quarter D
 213500 Blood Licking (Small Blood Bag) Old Castle
-213510,Blood Licking (Blood Bag) Old Castle
+213510 Blood Licking (Blood Bag) Old Castle
 213520 Blood Licking (Blood Bag Size) Old Castle
 213530 Blood Licking (Extra Large Blood Bag) Old Castle
 215000 Old Castle Evil Spirit (Knife)
@@ -830,10 +830,10 @@
 218020 Silver Beast's Kin ( 4 Legs) Sacrifice
 218030 Silver Beast's Kin ( 4 Legs) (Parasite) Sacrifice
 218300 Silver Beast's Hometown
-218310,Silver Beast's Family (Parasite) Hometown
+218310 Silver Beast's Family (Parasite) Hometown
 218320 Silver Beast's Kin ( 4 Legs) Hometown
 218400 Silver Beast's Hometown
-218410,Silver Beast's Family (Parasite) Hometown
+218410 Silver Beast's Family (Parasite) Hometown
 218420 Silver Beast's Kin ( 4 Legs) Hometown
 218600 Trap Lord the Silver Beast's Kin
 218610 Silver Beast's Kin (Parasite) Trap Lord
@@ -851,7 +851,7 @@
 226000 Jailer B Chain Whip Trap Lord
 226010 Jailer B Orb Trap Lord
 230000 King's Evil Spirit Lesser King ( spear )
-230010,King's Evil Spirit Lesser King ( Sword Orb )
+230010 King's Evil Spirit Lesser King ( Sword Orb )
 230020 King's Evil Spirit Lesser King ( Sword and Shield )
 230030 King's Evil Spirit Lesser King ( Sword only )
 231000 The King's Evil Spirit The King in Blue
@@ -871,7 +871,7 @@
 240610 Foundling Giant Rock Bearer Trap Lord
 240620 Foundling Giant Stone Bearer Trap Lord
 240630 Foundling Giant Large Stone-bearer Trap Lord
-250000,Messenger from the Moon (Clinic)
+250000 Messenger from the Moon (Clinic)
 250060 Messenger from the Moon Cathedral B Original conversation NPC Was
 250061 Messenger from the Moon Cathedral B Original conversation NPC Was
 250062 Messenger from the Moon Cathedral B Original conversation NPC Was
@@ -913,7 +913,7 @@
 256610 Narisokonai Messenger (Hozuki) Trap Road Dummy character for firing bullets
 256699 Failed Messenger (Hozuki) Evil Eye Substitute Trap Lord
 256900 The Failed Messenger (Hozuki) Fishing Village
-256910,Narisokonai Messenger (Hozuki) Fishing Village Dummy character for firing bullets
+256910 Narisokonai Messenger (Hozuki) Fishing Village Dummy character for firing bullets
 257000 Messenger from the Moon (Large) University
 257010 Messenger from the Moon (Large) Cathedral Ward C boss
 257100 For the lower tentacles of the Messenger from the Moon (large)
@@ -930,7 +930,7 @@
 260120 The Terrible Mob (Hoe) Cathedral Quarter C
 260240 Terrifying Mob (torches saws) Cathedral Ward B
 260241 The Terrible Crowd (Fence) Cathedral Quarter B
-260242,The Terrible Crowd (Fence) Cathedral Quarter B Heavy doping
+260242 The Terrible Crowd (Fence) Cathedral Quarter B Heavy doping
 260300 Terrifying Crowd (torches/saws) Cathedral Ward A Mid-game
 260310 The Terrible Crowd (Fence) Cathedral Quarter A Mid-game
 260320 Terrible Crowd (Hoe) Cathedral City A Mid-game
@@ -948,7 +948,7 @@
 262001 Crowd (wheelchair) Rifle _ Fixed Artillery Battery Cathedral Quarter A
 262010 Crowd (wheelchair) Short gun Cathedral Quarter A
 262011 Crowd (wheelchair) Short gun Eagle Eye Cathedral Quarter A
-262020,Crowd (wheelchair) Gatling Cathedral Quarter A
+262020 Crowd (wheelchair) Gatling Cathedral Quarter A
 262030 Crowd (wheelchair) Flame Thrower Cathedral Quarter C
 262031 Crowd (wheelchair) Flame Thrower Cathedral Quarter A
 262100 Crowd (wheelchairs) Rifle Cathedral Quarter C
@@ -964,7 +964,7 @@
 262420 Crowd (wheelchair) Gatling Cathedral Quarter B
 262500 Crowd (wheelchair) Rifle University
 262505 Crowd (wheelchair) Rifle _ Fixed Artillery University
-262510,Crowd (wheelchair) Short gun University
+262510 Crowd (wheelchair) Short gun University
 262520 Crowd (wheelchairs) Gatling University
 262530 Crowd (wheelchair) Flame thrower University
 262700 Crowd (wheelchairs) for cutscenes
@@ -979,7 +979,7 @@
 262860 Crowd (wheelchair) Short gun Cathedral District - Sacrifice District
 262861 Crowd (wheelchair) Short gun _ Fixed Artillery: Cathedral Ward - Sacrifice Ward
 262870 Crowd (wheelchair) Gatling Cathedral District - Sacrifice District
-262871,Crowd (wheelchairs) Gatling _ Fixed Artillery: Cathedral Ward - Sacrifice Ward
+262871 Crowd (wheelchairs) Gatling _ Fixed Artillery: Cathedral Ward - Sacrifice Ward
 262880 Crowd (wheelchair) Flamethrower Cathedral Ward - Sacrifice Ward
 262900 Crowd (wheelchair) Rifle _ Fixed Gun Turret Clock Tower
 262910 Crowd (wheelchair) Short barrel Clock tower
@@ -994,7 +994,7 @@
 263040 crowd A (Large) Weapon (Knife) Forest
 263050 crowd A (Large) Weapon (Scythe) Forest
 263060 crowd A (Large) Molotov Cocktail Throwing Forest
-263061,crowd A (Large) Molotov Cocktail Thrower Random Firing Cannon Forest
+263061 crowd A (Large) Molotov Cocktail Thrower Random Firing Cannon Forest
 263065 crowd A (Large) Oil Pot Throwing Mori
 263066 crowd A (Large) Oil Pot Throwing Firing Cannon Forest
 263070 crowd A (Large) Long handle (hoe) Forest
@@ -1063,7 +1063,7 @@
 263472 crowd A (Large) Long two-handed (hoe) clothing pattern 3 Cathedral Quarter B
 263490 crowd A (Large) Unarmed Cathedral Ward B
 263491 crowd A (Large) Unarmed Clinic Corpse Cathedral Ward B
-263500,crowd A (Large) Torch & Axe Cathedral Ward C
+263500 crowd A (Large) Torch & Axe Cathedral Ward C
 263510 crowd A (Large) Shield & Torch Cathedral Ward C
 263520 crowd A (Large) Poker and Shield Cathedral Ward C
 263530 crowd A (Large) Weapon (Sabre) Cathedral Ward C
@@ -1110,7 +1110,7 @@
 263850 crowd A (Large) Burned corpse Weapon (scythe) Clothing pattern 1 Sacrifice
 263851 crowd A (Large) Burned corpse Weapon (scythe) Clothing pattern 2 Sacrifice
 263852 crowd A (Large) Burned corpse Weapon (scythe) Clothing pattern 3 Sacrifice
-263860,crowd A (Large) Burned Corpse Throwing
+263860 crowd A (Large) Burned Corpse Throwing
 263870 crowd A (Large) Burnt corpse Long two-handed (hoe) Clothing pattern 1 Sacrifice
 263871 crowd A (Large) Burnt corpse Long two-handed (hoe) Clothing pattern 2 Sacrifice
 263872 crowd A (Large) Burnt corpse Long two-handed (hoe) Clothing pattern 3 Sacrifice
@@ -1144,7 +1144,7 @@
 264401 crowd B (Large) Brick with Cloak Cathedral Quarter B
 264410 crowd B (Large) Stone Statue Cathedral Quarter B
 264601 crowd B (Large) Brick with Cloak Cathedral Quarter C
-264800,crowd B (Large) Burnt Corpse Brick Sacrifice
+264800 crowd B (Large) Burnt Corpse Brick Sacrifice
 264801 crowd B (Large) Burnt Corpse Brick with Cloak Sacrifice
 264810 crowd B (Large) Burnt corpse stone statue sacrifice
 264811 crowd B (Large) Burnt corpse stone statue cloaked sacrifice
@@ -1172,7 +1172,7 @@
 270141 Messenger of the Church (Cross) Cathedral Quarter A Mid-game
 270142 Messenger of the Church (Cross) Cathedral Quarter A・Second half
 270150 Church Messenger (Staff - Sickle) Cathedral Quarter A
-270151,Church Messenger (Staff - Sickle) Cathedral Quarter A Mid-game
+270151 Church Messenger (Staff - Sickle) Cathedral Quarter A Mid-game
 270152 Church Messenger (Staff - Sickle) Cathedral Quarter A・Second half
 270160 Church Messenger (Staff - Flame Thrower) Cathedral Quarter A
 270161 Church Messenger (Staff - Flame Thrower) Cathedral Quarter A Mid-game
@@ -1207,7 +1207,7 @@
 274011 Student (Bottle Carrier) Nightmare Classroom 1F (Fixed gun turret)
 274100 Student Nightmare Classroom 2F
 274101 Student Nightmare Classroom 2F Ceiling Mounted
-274110,Student (Bottle Carrier) Nightmare Classroom 2F
+274110 Student (Bottle Carrier) Nightmare Classroom 2F
 274111 Student (Bottle Carrier) Nightmare Classroom 2F (Fixed gun turret)
 275099 Substitute Grey Saint
 278099 Substitute Mimic
@@ -1227,7 +1227,7 @@
 286099 Substitute Giant Slave (Flame Pot)
 287099 Substitute Giant Guard
 290050 Substitute Skeleton_Curved Sword
-291000,Skeleton King
+291000 Skeleton King
 291050 Substitute Skeleton (Large) - Great Sword
 295900 SP For skeletons (beasts)
 300000 Dungeon Man (Priest) - Crawling
@@ -1242,7 +1242,7 @@
 301040 Dungeon Man (Slave) (Black Clothes Axe _ ax )
 301050 Dungeon Man (Slave) (Black Suit Pole Weapon )
 301510 Dungeon Man (Slave) (Naked Hatchet Only) Cathedral Ward B
-301610,Dungeon Man (Slave) (Naked Hatchet Only) University
+301610 Dungeon Man (Slave) (Naked Hatchet Only) University
 301630 Dungeon People (Slaves) (White Clothes Lantern _ Hatchet) University
 301700 Dungeon Man (Slave) Naked Sword Dungeon Forest
 301701 Dungeon Man (Slave) (Naked Sword _ Bare-handed throw) Mori
@@ -1254,7 +1254,7 @@
 301750 Dungeon Man (Slave) (Black Suit Pole Weapon ) forest
 301900 【ruins _ Substitute for throwing character: Dungeon person (slave) (nude sword _ (Bare-handed throw)
 302000 Dungeon Guardian (Sword and Shield)
-302010,Dungeon Guardian (Morning Star)
+302010 Dungeon Guardian (Morning Star)
 302020 Dungeon Guardian (Sword Crossbow)
 302030 Dungeon Guardian (Extra Large Sword)
 302630 Dungeon Guardian (Extra Large Sword) University
@@ -1287,7 +1287,7 @@
 311200 Evil spirit bullet firing dummy character
 312000 Evil spirit (female) dungeon
 313000 Fresh Golem (Tip Sword + Elbow Sword) No Weakness University
-313001,Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
+313001 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
 313002 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Butt
 313010 Fresh Golem (Axe + Cannon) No weaknesses
 313011 Flesh Golem (Axe + Cannon) Weakness _ Left knee side
@@ -1296,7 +1296,7 @@
 313021 Flesh Golem (Meat + Hook) Weakness _ Left knee side (previously right knee side)
 313022 Flesh Golem (Meat + Hook) Weakness _ Butt
 313900 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-313901,Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
+313901 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
 313902 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Butt
 313910 Fresh Golem (Axe + Cannon) No weaknesses
 313911 Flesh Golem (Axe + Cannon) Weakness _ Left knee side
@@ -1306,7 +1306,7 @@
 313922 Flesh Golem (Meat + Hook) Weakness _ Butt
 320001 SP Barista test character
 320099 Substitute Writhing Carrion
-330099,Substitute Crystal Lizard
+330099 Substitute Crystal Lizard
 400000 Fallen Hunter _ Saw Curved Sword (initial placement saw)
 400001 Fallen Hunter _ Saw Curved Sword (initial placement curved sword)
 400002 Fallen Hunter _ Saw Curved Sword _ Gun Specialization (Initial Curved Sword)
@@ -1317,7 +1317,7 @@
 400008 Fallen Hunter _ Saw Curved Sword & Secret (initial placement saw)
 400009 Fallen Hunter _ Saw Curved Sword & Secret (initial curved sword)
 400010 Fallen Hunter _ Saw Whip (initial saw)
-400011,Fallen Hunter _ Saw Whip (initial placement whip)
+400011 Fallen Hunter _ Saw Whip (initial placement whip)
 400020 Fallen Hunter _ Bomber (initial position before transformation)
 400021 Fallen Hunter _ Bomber (after initial position transformation)
 400022 Fallen Hunter _ Bomber (initial position before transformation) _ Torch down state
@@ -1330,7 +1330,7 @@
 401010 The Executioner (Nightmare) _ cannon
 401011 The Executioner (Nightmare) _ cannon _ Fixed gun
 402000 Clock Tower Patient A_ Blood Transfusion Equipment
-402001,Clock Tower Patient A_ Blood transfusion equipment for first-look performance
+402001 Clock Tower Patient A_ Blood transfusion equipment for first-look performance
 402010 Clock Tower Patient A_ Arm tumor
 402020 Clock Tower Patient A_ Bare hands Passive
 402021 Clock Tower Patient A_ Bare hands For performance HP1 Seoul 0
@@ -1413,7 +1413,7 @@
 411070 crowd A (Large) Long Handle (Hoe) Cathedral Ward D
 411090 crowd A (Large) Unarmed Cathedral Ward D
 412000 Clock Tower Patient A_ Blood Transfusion Equipment
-412001,Clock Tower Patient A_ Blood transfusion equipment for first-look performance
+412001 Clock Tower Patient A_ Blood transfusion equipment for first-look performance
 413000 Licking blood (blood bag size) _ Cathedral Quarter D
 414000 Aberrant Beast Cathedral Ward D Friendly Fire
 414001 Aberrant Beast Cathedral Ward D Friendly fire
@@ -1422,7 +1422,7 @@
 416900 SP For Abyssal Magician
 450000 Parishioner Ω
 451000 Ludwig (Beast Mode)
-451001,Ludwig (human mode)
+451001 Ludwig (human mode)
 451002 Ludwig ( HU (First half of the cut scene)
 451003 Ludwig ( HU (Later cut scene)
 451100 Ludwig (head only)
@@ -1446,7 +1446,7 @@
 503200 Snake Ball (Single Head Medium) Mori
 503300 Snake ball (single head large) Mori
 504000 Storm Beast Dungeon
-504010,Storm Beast Ruins
+504010 Storm Beast Ruins
 504020 Storm Beast Infected Beggar _ For transformation
 504030 Storm Beast Infected Beggar _ For transformation
 507000 The failed evil god _ Lower person Sacrifice
@@ -1467,7 +1467,7 @@
 514000 Evil God (Large) Sacrifice 1 Body size
 514010 Evil God (Large) Second Sacrifice
 514020 Evil God (Large) Cathedral Ward A
-514030,Evil God (Large) Cathedral Ward - Sacrifice Connection
+514030 Evil God (Large) Cathedral Ward - Sacrifice Connection
 515000 Evil Eye Trap Lord
 516000 Evil Eye (Crush) Trap Lord
 540000 Inheritor of Nightmares (Part 2 form)
@@ -1483,7 +1483,7 @@
 550200 Lesser Demon's right neck (just cut off)
 551000 Lesser Demon (Death and Darkness)
 552000 Lesser Demon Variation
-552009,Lesser Demon Variation Ruins
+552009 Lesser Demon Variation Ruins
 552100 Lesser Demon Variation Left Neck
 552200 Lesser Demon Variation's right neck (just cut off)
 700000 Avatar A Basic Wolf Warrior [Test] Bare Hands
@@ -1503,7 +1503,7 @@
 801240 Kind Old Woman Cathedral B
 802000 Princess Slug
 803000 Doll Heroine
-803001,Doll Heroine _ Reality Base
+803001 Doll Heroine _ Reality Base
 804000 Base Elderly
 805000 Base Old Man (Awakened) Base
 805001 Base Old Man (Awakened) Animation Confirmation (Sword & Gun Mode)
@@ -1522,7 +1522,7 @@
 901120 Dummy character (head) for the church killer's treasure
 901121 Dummy character (torso) for the church killer's treasure
 901122 Dummy character (arm) for the church killer's treasure
-901123,Dummy character (legs) for the church killer's treasure
+901123 Dummy character (legs) for the church killer's treasure
 901124 The Church Killer _ Weakened body dummy ( 1010 Nakanishi adds:
 901240 Elderly couple (husband) Cathedral Street B
 901900 Cannon firing dummy character
@@ -1538,7 +1538,7 @@
 903000 Group Patrol Dummy Leader
 903010 Group patrol dummy leader small collision _ Cathedral Quarter A Used in
 903100 PC Dummy leader for sound bullet owners
-903241,Mass Patrol Dummy Leader Cathedral Ward B
+903241 Mass Patrol Dummy Leader Cathedral Ward B
 903900 Clock Tower Altar Action Button Character
 904000 Base Right Hand Weapon Set
 905000 Base Left Hand Weapon Set
@@ -1560,7 +1560,7 @@
 10105090 Wandering Widow Dungeon Use BOSS 】
 10105093 Wandering Widow Dungeon Use BOSS 】 Storm attribute
 10105202 Wandering Widow Dungeon Storm Attribute
-10105800,Wandering Widow Multi Summon (Strong): Physical
+10105800 Wandering Widow Multi Summon (Strong): Physical
 10105810 Wandering Widow Multi Summon (Strong): Gun
 10105820 Wandering Widow Multi Summon (Strong): Fire and Lightning
 10105830 Wandering Widow Multi Summon (Strong): Magic
@@ -1592,7 +1592,7 @@
 10111091 Kin of Death and Darkness _ Generate (pre-speed movement) Dungeon
 10111095 Death and Darkness Family Headless Generation Dungeon
 10111096 Kin of Death and Darkness _ Generate (pre-speed movement) Headless Dungeon
-10111102,Kin of Death and Darkness Headed Dungeon Storm Attribute
+10111102 Kin of Death and Darkness Headed Dungeon Storm Attribute
 10111122 Kin of Death and Darkness (Pre-speed Movement) Dungeon Storm Attribute
 10111200 Kin of Death and Darkness Headless Dungeon
 10112080 Drowned Beast Dungeon
@@ -1611,7 +1611,7 @@
 10118083 Wandering Madness ( small ) Rare Dungeon
 10119080 Wandering Madness ( Medium ) Dungeons
 10121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-10121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+10121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 10121090 Gravekeeper Scorpion with children Small scissors Dungeon
 10121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 10121180 Gravekeeper Scorpion Child (Swarm) Dungeon
@@ -1629,7 +1629,7 @@
 10125000 Snake ball (child) 1 Only the book is thick Dungeon
 10125010 Snake Ball (Baby) Poison Fog Dungeon
 10125102 Snake Ball (Baby) Right Thick Neck Dungeon Storm Attribute
-10126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+10126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 10126102 Snake Ball (Baby) Small Right Thick Neck Dungeon Storm Attribute
 10127000 Vampire Pig Dungeon
 10127090 Vampire Pig Dungeon 【 Boss 】
@@ -1648,7 +1648,7 @@
 10201092 Grave Digger (Gun) _ Patrol
 10201102 Grave Digger (Hook) Dungeon Storm Attribute
 10201108 Grave Digger (Hook) Doctor Dungeon
-10201109,Grave Digger (Hook) Ritual Dungeon
+10201109 Grave Digger (Hook) Ritual Dungeon
 10201122 Grave Digger (Pickaxe) Dungeon Storm Attribute
 10201128 Grave Digger (Pickaxe) Doctor Dungeon
 10201200 Grave Digger (Gun)
@@ -1669,7 +1669,7 @@
 10209090 Blood-thirsty beast Boss 】 Dungeon
 10209095 Bloodthirsty beasts treated like minions in the dungeon
 10209096 Blood-thirsty beast Boss 】 Dungeon Boss Dungeon
-10210080,Eye Collector Dungeon
+10210080 Eye Collector Dungeon
 10210102 Eye Collector Dungeon Storm Attribute
 10210180 Eye Collector Jailer Granny Dungeon
 10211080 Spider Cthulhu Dungeon
@@ -1690,7 +1690,7 @@
 10213162 Blood Licker (Extra Large Blood Bag) Dungeon Storm Attribute
 10216000 Kin of the Flame of Destruction Dungeon
 10216001 Kin of the Flame of Destruction (without hat) Dungeon
-10216090,Kin of the Flame of Destruction Boss 】 Dungeon
+10216090 Kin of the Flame of Destruction Boss 】 Dungeon
 10216091 Kin of the Flame of Destruction (without hat) Boss 】 Dungeon
 10218000 Silver Beast's Kin Dungeon
 10218010 Silver Beast's Family Parasite Dungeon
@@ -1705,7 +1705,7 @@
 10225082 Jailer A Sword Only Dungeon
 10226080 Jailer B Chain Whip for Dungeon
 10226081 Jailer B Orb for Dungeon
-10250080,Messenger from the Moon Tentacle-free Dungeon
+10250080 Messenger from the Moon Tentacle-free Dungeon
 10250081 Messenger from the Moon Tentacle Dungeon
 10250100 Tentacles of the Messenger from the Moon Dungeon
 10250150 Tentacles of the Messenger from the Moon Dungeon
@@ -1724,7 +1724,7 @@
 10253000 Star Flower Dungeon
 10253010 Star Flower (Upper body on ground) Dungeon
 10253020 Star Flower (Upper Body Ceiling) Dungeon
-10253030,Star Flower (Head Only) Dungeon
+10253030 Star Flower (Head Only) Dungeon
 10253098 Star Flower Dungeon *For confirmation
 10253099 Star Flower Dungeon *For confirmation
 10253104 Star Flower Cosmic Attribute Bullet Change Dungeon
@@ -1740,7 +1740,7 @@
 10300144 Dungeon Man (Priest) Fixed Cannon Dungeon _ Dungeon cannon Cosmic attribute bullet transformation
 10301000 Dungeon Man (Slave) Naked Sword Dungeon
 10301001 Dungeon Man (Slave) (Naked Sword _ (Bare-handed throw)
-10301005,Dungeon Man (Slave) Naked Sword Stealth Throwing Knife Dungeon
+10301005 Dungeon Man (Slave) Naked Sword Stealth Throwing Knife Dungeon
 10301009 Dungeon Man (Slave) Naked Bare Hands Apathy Dungeon
 10301010 Dungeon Man (Slave) Naked Hatchet Dungeon
 10301011 Dungeon Man (Slave) Naked Hatchet Throwing Dungeon
@@ -1777,7 +1777,7 @@
 10301262 Dungeon Man (Slave) (Black Clothes Sword Only) Storm Attribute
 10301267 Dungeon Man (Slave) Black Clothes Sword Warrior Dungeon
 10301269 Dungeon Man (Slave) Black Clothes Sword Ritual Dungeon
-10301329,Dungeon Man (Slave) White Clothes Double Axe Ritual Dungeon
+10301329 Dungeon Man (Slave) White Clothes Double Axe Ritual Dungeon
 10301349 Dungeon people (slaves) White clothing Pole weapons Ritual Dungeon
 10301369 Dungeon Man (Slave) White Clothes Sword Ritual Dungeon
 10301500 For generating Dungeon Man (Slave) Naked Sword Dungeon
@@ -1788,7 +1788,7 @@
 10301530 For creation: Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon
 10301540 For creation Dungeon Man (Slave) Black Clothes Dual Axe Dungeon
 10301550 For creation Dungeon people (slaves) Black clothes Pole weapons Dungeon
-10301602,For creation Dungeon Man (Slave) Naked Sword Dungeon Storm attribute
+10301602 For creation Dungeon Man (Slave) Naked Sword Dungeon Storm attribute
 10301607 For generating Dungeon Man (Slave) Naked Sword Dungeon Warrior
 10301609 For generating Dungeon Man (Slave) Naked Sword Dungeon Ritual
 10301622 Dungeon Man (Slave) (Naked Sword) _ Unarmed Throwing) Storm Attribute
@@ -1799,7 +1799,7 @@
 10301649 For generating Dungeon Man (Slave) Naked Hatchet Ritual Dungeon
 10301662 For generation Dungeon Man (Slave) (Naked Hatchet _ Unarmed Throwing) Storm Attribute
 10301667 For generating Dungeon Man (Slave) Naked Hatchet Throwing Warrior Dungeon
-10301669,For generating Dungeon Man (Slave) Naked Hatchet Throwing Ritual Dungeon
+10301669 For generating Dungeon Man (Slave) Naked Hatchet Throwing Ritual Dungeon
 10301682 Dungeon Man (Slave) (White Clothes Lantern) _ Sword) Storm attribute
 10301687 Dungeon Man (Slave) (White Clothes Lantern) _ Sword) Warrior
 10301689 Dungeon Man (Slave) (White Clothes Lantern) _ Sword) Ritual
@@ -1809,7 +1809,7 @@
 10301722 Dungeon Man (Slave) (Black Clothes Axe) _ ax ) Storm Attribute
 10301727 For generation Dungeon Man (Slave) Black Clothes Dual Axe Warrior Dungeon
 10301729 For creation Dungeon Man (Slave) Black Clothes Double Axe Ritual Dungeon
-10301742,Dungeon Man (Slave) (Black Suit Pole Weapon) ) Storm Attribute
+10301742 Dungeon Man (Slave) (Black Suit Pole Weapon) ) Storm Attribute
 10301747 For generation Dungeon people (slave) Black clothes Pole weapon Warrior Dungeon
 10301749 For creation Dungeon people (slaves) Black clothes Pole weapons Ritual Dungeon
 10301762 For creation Dungeon Man (Slave) Black Clothes Sword Dungeon Storm Attribute
@@ -1826,7 +1826,7 @@
 10302030 Dungeon Guardian Great Sword Dungeon
 10302102 Dungeon Guardian (Sword and Shield) Storm attribute
 10302107 Dungeon Guardian (Sword and Shield) Warrior
-10302108,Dungeon Guardian Sword and Shield Doctor Dungeon
+10302108 Dungeon Guardian Sword and Shield Doctor Dungeon
 10302109 Dungeon Guardian Sword and Shield Ritual Dungeon
 10302122 Dungeon Person (Guardian) (Morning Star) Storm Attribute
 10302127 Dungeon Guardian (Morning Star) Warrior
@@ -1839,7 +1839,7 @@
 10302162 Dungeon Guardian (Extra Large Sword) Storm Attribute
 10302167 Dungeon Guardian (Extra Large Sword) Warrior
 10302168 Dungeon Man (Guardian) Great Sword Doctor Dungeon
-10302169,Dungeon Guardian Great Sword Ritual Dungeon
+10302169 Dungeon Guardian Great Sword Ritual Dungeon
 10303000 Dungeon Man (Madman) One-handed scythe Dungeon
 10303001 Dungeon Man (Madman) One-handed broken sword Dungeon
 10303010 Dungeon Man (Madman) Corpse Carrier Dungeon
@@ -1852,7 +1852,7 @@
 10303149 Dungeon Man (Madman) (Corpse Bearer) Ritual
 10303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 10303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-10304000,Dungeon Man (Fat) Machete Dungeon
+10304000 Dungeon Man (Fat) Machete Dungeon
 10304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 10304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 10304040 Dungeon Man (Fat) Saw Dungeon
@@ -1865,7 +1865,7 @@
 10304098 Dungeon Man (Fat) Machete Shotgun 【 Boss 】 Dungeon
 10304102 Dungeon Man (Fat) (Hattan/Lantern) Storm Attribute
 10304108 Dungeon Man (Fat) Machete Dungeon Doctor
-10304122,Dungeon Man (Fat) (Red Hot Hatchet Lantern) Storm Attribute
+10304122 Dungeon Man (Fat) (Red Hot Hatchet Lantern) Storm Attribute
 10304128 Dungeon Man (Fat) Red Hot Hatchet Dungeon Doctor
 10304142 Dungeon Man (Fat) (Shotgun Lantern Hatchet) Storm Attribute
 10304148 Dungeon Man (Fat) Machete Shotgun Dungeon Doctor
@@ -1877,7 +1877,7 @@
 10304208 Dungeon Man (Fat) (Wreck Ball in Both Hands Gentleman) Doctor
 10305000 Dungeon Lord Dual Swords 【 Boss 】 Dungeon
 10305001 Dungeon Lord Boss 】 Sword (two swords) *Two swords for animation confirmation
-10305005,Dungeon Lord Dual Swords Treated as a weakling Dungeon
+10305005 Dungeon Lord Dual Swords Treated as a weakling Dungeon
 10305006 Dungeon Lord Dual Swords 【 Boss 】 Dungeon Boss Dungeon
 10305010 Dungeon Lord Staff 【 Boss 】 Dungeon
 10305015 Dungeon Man (Lord) Staff Treated as a weakling Dungeon
@@ -1888,7 +1888,7 @@
 10306006 Dungeon Person (Bride) 【 Boss 】 Dungeon Boss Dungeon
 10306010 Dungeon Person (Bride) Pregnant Woman 【 Boss 】 Dungeon
 10306015 Dungeon Person (Bride) Pregnant Woman Split Body
-10306016,Dungeon Person (Bride) Pregnant Woman 【 Boss 】 Dungeon Boss Dungeon
+10306016 Dungeon Person (Bride) Pregnant Woman 【 Boss 】 Dungeon Boss Dungeon
 10306020 Dungeon Person (Bride) After Heat Up *For animation confirmation
 10306030 Dungeon Person (Bride) (Pregnant Woman) After Heat Up *For animation confirmation
 10306100 Dungeon Bride's Fetus
@@ -1909,7 +1909,7 @@
 10313002 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Dungeon
 10313010 Fresh Golem (Axe + Cannon) No Weakness Dungeon
 10313011 Fresh Golem (Axe + Cannon) Weak spot: Left knee Dungeon
-10313012,Fresh Golem (Axe + Cannon) Weak Point Front Dungeon
+10313012 Fresh Golem (Axe + Cannon) Weak Point Front Dungeon
 10313020 Fresh Golem (Meat + Hook) No Weakness Dungeon
 10313021 Fresh Golem (Meat + Hook) Weak spot: Left knee Dungeon
 10313022 Fresh Golem (Meat + Hook) Weak Point: Butt Dungeon
@@ -1918,7 +1918,7 @@
 10313090 Fresh Golem (Tip Sword + Elbow Sword) Boss 】 Weak spot: Left knee Dungeon
 10313091 Fresh Golem (Tip Sword + Elbow Sword) Boss 】 Weak Point Butt Dungeon
 10313093 Fresh Golem (Tip Sword + Elbow Sword) Boss 】 Storm attribute dungeon
-10313109,Fresh Golem (Tip Sword + Elbow Sword) No Weakness Fire Enchantment Dungeon
+10313109 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Fire Enchantment Dungeon
 10313129 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Fire enchantment Dungeon
 10313149 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Fire Enchantment Dungeon
 10313200 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Fire enchantment Dungeon
@@ -1932,7 +1932,7 @@
 10504102 Storm Beast Dungeon Storm Attribute 【 Boss 】
 10508000 Storm Beast (Bone) 【 Boss 】 Dungeon
 10508006 Storm Beast (Bone) 【 Boss 】 Dungeon Boss Dungeon
-10508102,Storm Beast (Bone) Dungeon Storm Attribute 【 Boss 】
+10508102 Storm Beast (Bone) Dungeon Storm Attribute 【 Boss 】
 10509000 Founder Beast 【 Boss 】 Dungeon
 10509005 Founder Beast: Dungeon
 10509006 Founder Beast 【 Boss 】 Dungeon Boss Dungeon
@@ -1946,7 +1946,7 @@
 10510102 Idiot Spider 【 Boss 】 Dungeon Storm Attribute
 10511000 Silver Beast Dungeon 【 Boss 】
 10511006 Silver Beast Dungeon _ Dungeon Boss 【 Boss 】
-10511010,Golden Beast Dungeon
+10511010 Golden Beast Dungeon
 10511016 Golden Beast Dungeon _ Dungeon Boss 【 Boss 】
 10511100 Silver Beast Dummy character for lightning generation Dungeon
 10511102 Silver Beast Dungeon Storm Attribute 【 Boss 】
@@ -1964,7 +1964,7 @@
 10701104 Avatar B Enemy Cosmic Attribute Bullet Change
 10750080 Enemy Avatar Dungeons
 10750090 Enemy Avatar 【 BOSS 】 ※Damage doping dungeon
-19304000,Dungeon Man (Fat) Machete Dungeon
+19304000 Dungeon Man (Fat) Machete Dungeon
 19304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 19304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 19304040 Dungeon Man (Fat) Saw Dungeon
@@ -1981,7 +1981,7 @@
 20100180 Hound _ month _ Dungeons
 20100185 Hound _ month _ Dungeons _ Cosmic Attribute Invisibility
 20101080 Priest Dungeon
-20101090,Priest Dungeon Boss Expected Boss 】
+20101090 Priest Dungeon Boss Expected Boss 】
 20101095 Priest Dungeon Guardian
 20104000 Burned corpse (bare hands) model pattern 1
 20105080 Wandering Widow for Dungeon
@@ -2013,7 +2013,7 @@
 20118083 Wandering Madness ( small ) Rare Dungeon
 20119080 Wandering Madness ( Medium ) Dungeons
 20121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-20121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+20121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 20121090 Gravekeeper Scorpion with children Small scissors Dungeon
 20121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 20121180 Gravekeeper Scorpion Child (Swarm) Dungeon
@@ -2024,7 +2024,7 @@
 20124090 Mad Dog Dungeon
 20125000 Snake ball (child) 1 Only the book is thick Dungeon
 20125010 Snake Ball (Baby) Poison Fog Dungeon
-20126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+20126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 20126001 Snake ball (baby) small 2 Book thick
 20126002 Snake ball (baby) small 2 Real thick burr
 20126010 Snake ball (baby) small poison color
@@ -2048,7 +2048,7 @@
 20208080 Moonlight Ghost with Staff Dungeon
 20208090 Moonlight Ghost Wandless Dungeon
 20209090 Blood-thirsty beast Boss 】 Dungeon
-20210080,Eye Collector Dungeon
+20210080 Eye Collector Dungeon
 20211080 Spider Cthulhu Dungeon
 20212080 Dark Brigade Sword Dungeon
 20212081 Dark Brigade Sword and Candle Dungeon
@@ -2072,7 +2072,7 @@
 20225082 Jailer A Sword Only Dungeon
 20226080 Jailer B Chain Whip for Dungeon
 20226081 Jailer B Orb for Dungeon
-20250080,Messenger from the Moon Tentacle-free Dungeon
+20250080 Messenger from the Moon Tentacle-free Dungeon
 20250081 Messenger from the Moon Tentacle Dungeon
 20250100 Tentacles of the Messenger from the Moon Dungeon
 20250150 Tentacles of the Messenger from the Moon Dungeon
@@ -2083,7 +2083,7 @@
 20253000 Star Flower Dungeon
 20253010 Star Flower (Upper body on ground) Dungeon
 20253020 Star Flower (Upper Body Ceiling) Dungeon
-20253030,Star Flower (Head Only) Dungeon
+20253030 Star Flower (Head Only) Dungeon
 20253104 Star Flower Cosmic Attribute Bullet Change Dungeon
 20255000 Creeping Thing (Large) Dungeon
 20256000 The Messenger of Noritake (Hozuki) Dungeon
@@ -2108,7 +2108,7 @@
 20301020 Dungeon People (Slaves) (White Clothes Lantern _ sword)
 20301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon
 20301040 Dungeon Man (Slave) Black Clothes Dual Axe Dungeon
-20301042,Dungeon Man (Slave) (Black Clothes Axe _ ax )_ Generated
+20301042 Dungeon Man (Slave) (Black Clothes Axe _ ax )_ Generated
 20301050 Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon
 20301052 Dungeon Man (Slave) (Black Suit Pole Weapon )_ Generated
 20301060 Dungeon Man (Slave) Black Clothes Sword Dungeon
@@ -2129,7 +2129,7 @@
 20303001 Dungeon Man (Madman) One-handed broken sword Dungeon
 20303010 Dungeon Man (Madman) Corpse Carrier Dungeon
 20303020 Dungeon Man (Madman) Dual Scythe Dungeon
-20304000,Dungeon Man (Fat) Machete Dungeon
+20304000 Dungeon Man (Fat) Machete Dungeon
 20304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 20304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 20304040 Dungeon Man (Fat) Saw Dungeon
@@ -2151,7 +2151,7 @@
 20310080 Mimic Dungeon
 20312000 Evil spirit (female) dungeon
 20313000 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-20313001,Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
+20313001 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
 20313002 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Butt
 20313010 Fresh Golem (Axe + Cannon) No weaknesses
 20313011 Flesh Golem (Axe + Cannon) Weakness _ Left knee side
@@ -2191,13 +2191,13 @@
 21111096 Kin of Death and Darkness _ Generate (pre-speed movement) Headless Dungeon
 21114080 Fanatic Beast Dungeon
 21121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-21121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+21121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 21121090 Gravekeeper Scorpion with children Small scissors Dungeon
 21121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 21124090 Mad Dog Dungeon
 21125000 Snake ball (child) 1 Only the book is thick Dungeon
 21125010 Snake Ball (Baby) Poison Fog Dungeon
-21126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+21126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 21127000 Vampire Pig Dungeon
 21130000 Kin of Death and Darkness (Large) Dungeon
 21140000 Idiot Spider (baby) Dungeon
@@ -2206,7 +2206,7 @@
 21253000 Star Flower Dungeon
 21253010 Star Flower (Upper body on ground) Dungeon
 21253020 Star Flower (Upper Body Ceiling) Dungeon
-21253030,Star Flower (Head Only) Dungeon
+21253030 Star Flower (Head Only) Dungeon
 21253104 Star Flower Cosmic Attribute Bullet Change Dungeon
 21300000 Dungeon Man (Priest) Fixed Cannon Dungeon Poison
 21300001 Dungeon Priest - Standing Poison
@@ -2218,7 +2218,7 @@
 21301020 Dungeon People (Slaves) (White Clothes Lantern _ Sword) Poison
 21301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Poison
 21301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Poison
-21301050,Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
+21301050 Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
 21301060 Dungeon Man (Slave) Black Clothes Sword Dungeon Poison
 21301070 Dungeon Man (Slave) Naked Dual Swords Strong Slave Dungeon
 21301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Poison
@@ -2234,7 +2234,7 @@
 21302020 Dungeon Guardian Sword Crossbow Dungeon
 21302030 Dungeon Guardian Great Sword Dungeon
 21303000 Dungeon Man (Madman) One-handed scythe Poison Dungeon
-21303001,Dungeon Man (Madman) One-handed broken sword Poison Dungeon
+21303001 Dungeon Man (Madman) One-handed broken sword Poison Dungeon
 21303010 Dungeon Man (Madman) Corpse Carrier Poison Dungeon
 21303020 Dungeon Man (Madman) Dual Scythes Poison Dungeon
 21304000 Dungeon Man (Fat) Hatchet Poison Dungeon
@@ -2244,7 +2244,7 @@
 21304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Poison Dungeon
 21304051 Dungeon Man (Fat) (Wreck Ball Handed Gentleman) Poison
 21313000 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-21313001,Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
+21313001 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
 21313002 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Butt
 21313010 Fresh Golem (Axe + Cannon) No weaknesses
 21313011 Flesh Golem (Axe + Cannon) Weakness _ Left knee side
@@ -2267,13 +2267,13 @@
 22111096 Kin of Death and Darkness _ Generate (pre-speed movement) Headless Dungeon
 22114080 Fanatic Beast Dungeon
 22121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-22121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+22121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 22121090 Gravekeeper Scorpion with children Small scissors Dungeon
 22121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 22124090 Mad Dog Dungeon
 22125000 Snake ball (child) 1 Only the book is thick Dungeon
 22125010 Snake Ball (Baby) Poison Fog Dungeon
-22126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+22126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 22127000 Vampire Pig Dungeon
 22130000 Kin of Death and Darkness (Large) Dungeon
 22140000 Idiot Spider (baby) Dungeon
@@ -2282,11 +2282,11 @@
 22253000 Star Flower Dungeon
 22253010 Star Flower (Upper body on ground) Dungeon
 22253020 Star Flower (Upper Body Ceiling) Dungeon
-22253030,Star Flower (Head Only) Dungeon
+22253030 Star Flower (Head Only) Dungeon
 22253104 Star Flower Cosmic Attribute Bullet Change Dungeon
 22300000 Dungeon Man (Priest) Fixed Cannon Dungeon Doping Strong Enemy
 22300001 Dungeon Man (Priest) - Standing Doping Strong Enemy
-22300010,Dungeon Man (Priest) Fixed Cannon Dungeon _ Dungeon Cannon Doping Strong Enemy
+22300010 Dungeon Man (Priest) Fixed Cannon Dungeon _ Dungeon Cannon Doping Strong Enemy
 22301000 Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 22301001 Dungeon Man (Slave) (Naked Sword _ Bare-handed throwing) Doping formidable opponent
 22301010 Dungeon Man (Slave) Naked Hatchet Dungeon Doping Strong Enemy
@@ -2295,7 +2295,7 @@
 22301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 22301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 22301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-22301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+22301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 22301070 Dungeon Man (Slave) Naked Dual Swords Strong Slave Dungeon
 22301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 22301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
@@ -2305,7 +2305,7 @@
 22301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 22301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 22301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-22302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+22302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 22302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 22302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 22302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -2315,12 +2315,12 @@
 22303020 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
 22304000 Dungeon Man (Fat) Machete Doping Strong Enemy Dungeon
 22304010 Dungeon Man (Fat) Red Hot Hatchet Doping Strong Enemy Dungeon
-22304020,Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
+22304020 Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
 22304040 Dungeon Man (Fat) Saw Doping Strong Enemy Dungeon
 22304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Doping Strong Opponent Dungeon
 22304051 Dungeon Man (Fat) (Wrong Handed Iron Ball Gentleman) Doping Nemesis
 22313000 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-22313001,Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
+22313001 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
 22313002 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Butt
 22313010 Fresh Golem (Axe + Cannon) No weaknesses
 22313011 Flesh Golem (Axe + Cannon) Weakness _ Left knee side
@@ -2343,13 +2343,13 @@
 23111096 Kin of Death and Darkness _ Generate (pre-speed movement) Headless Dungeon
 23114080 Fanatic Beast Dungeon
 23121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-23121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+23121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 23121090 Gravekeeper Scorpion with children Small scissors Dungeon
 23121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 23124090 Mad Dog Dungeon
 23125000 Snake ball (child) 1 Only the book is thick Dungeon
 23125010 Snake Ball (Baby) Poison Fog Dungeon
-23126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+23126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 23127000 Vampire Pig Dungeon
 23130000 Kin of Death and Darkness (Large) Dungeon
 23140000 Idiot Spider (baby) Dungeon
@@ -2358,7 +2358,7 @@
 23253000 Star Flower Dungeon
 23253010 Star Flower (Upper body on ground) Dungeon
 23253020 Star Flower (Upper Body Ceiling) Dungeon
-23253030,Star Flower (Head Only) Dungeon
+23253030 Star Flower (Head Only) Dungeon
 23253104 Star Flower Cosmic Attribute Bullet Change Dungeon
 23301000 Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 23301001 Dungeon Man (Slave) (Naked Sword _ Bare-handed throwing) Doping formidable opponent
@@ -2368,7 +2368,7 @@
 23301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 23301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 23301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-23301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+23301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 23301070 Dungeon Man (Slave) Naked Dual Swords Strong Slave Dungeon
 23301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 23301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
@@ -2378,7 +2378,7 @@
 23301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 23301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 23301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-23302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+23302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 23302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 23302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 23302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -2388,12 +2388,12 @@
 23303020 Dungeon Man (Madman) Dual-wielding Scythe Poison Doping Strong Enemy Dungeon
 23304000 Dungeon Man (Fat) Hatchet Poison Doping Strong Enemy Dungeon
 23304010 Dungeon Man (Fat) Red Hot Hatchet Poison Doping Strong Enemy Dungeon
-23304020,Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
+23304020 Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
 23304040 Dungeon Man (Fat) Saw Poison Doping Strong Enemy Dungeon
 23304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Poisoned Doping Strong Enemy Dungeon
 23304051 Dungeon Man (Fat) (Iron Ball in Both Hands Gentleman) Poisoning + Doping Strong Enemy
 23313000 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-23313001,Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
+23313001 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Left knee side (previously right knee side)
 23313002 Fresh Golem (Tip Sword + Elbow Sword) Weakness _ Butt
 23313010 Fresh Golem (Axe + Cannon) No weaknesses
 23313011 Flesh Golem (Axe + Cannon) Weakness _ Left knee side
@@ -2418,7 +2418,7 @@
 25303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 25303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 25303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-25304000,Dungeon Man (Fat) Machete Dungeon
+25304000 Dungeon Man (Fat) Machete Dungeon
 25304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 25304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 25304040 Dungeon Man (Fat) Saw Dungeon
@@ -2446,7 +2446,7 @@
 26303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 26303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 26303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-26304000,Dungeon Man (Fat) Machete Dungeon
+26304000 Dungeon Man (Fat) Machete Dungeon
 26304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 26304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 26304040 Dungeon Man (Fat) Saw Dungeon
@@ -2474,7 +2474,7 @@
 27303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 27303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 27303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-27304000,Dungeon Man (Fat) Machete Dungeon
+27304000 Dungeon Man (Fat) Machete Dungeon
 27304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 27304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 27304040 Dungeon Man (Fat) Saw Dungeon
@@ -2502,7 +2502,7 @@
 28303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 28303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 28303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-28304000,Dungeon Man (Fat) Machete Dungeon
+28304000 Dungeon Man (Fat) Machete Dungeon
 28304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 28304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 28304040 Dungeon Man (Fat) Saw Dungeon
@@ -2524,13 +2524,13 @@
 30111085 Kin of Death and Darkness Headless Dungeon
 30114080 Fanatic Beast Dungeon
 30121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-30121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+30121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 30121090 Gravekeeper Scorpion with children Small scissors Dungeon
 30121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 30124090 Mad Dog Dungeon
 30125000 Snake ball (child) 1 Only the book is thick Dungeon
 30125010 Snake Ball (Baby) Poison Fog Dungeon
-30126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+30126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 30127000 Vampire Pig Dungeon
 30130000 Kin of Death and Darkness (Large) Dungeon
 30201080 Grave Digger (Hook) Dungeon
@@ -2563,7 +2563,7 @@
 30303001 Dungeon Man (Madman) One-handed broken sword Dungeon
 30303010 Dungeon Man (Madman) Corpse Carrier Dungeon
 30303020 Dungeon Man (Madman) Dual Scythe Dungeon
-30304000,Dungeon Man (Fat) Machete Dungeon
+30304000 Dungeon Man (Fat) Machete Dungeon
 30304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 30304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 30304040 Dungeon Man (Fat) Saw Dungeon
@@ -2576,13 +2576,13 @@
 31111085 Kin of Death and Darkness Headless Dungeon
 31114080 Fanatic Beast Dungeon
 31121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-31121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+31121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 31121090 Gravekeeper Scorpion with children Small scissors Dungeon
 31121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 31124090 Mad Dog Dungeon
 31125000 Snake ball (child) 1 Only the book is thick Dungeon
 31125010 Snake Ball (Baby) Poison Fog Dungeon
-31126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+31126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 31127000 Vampire Pig Dungeon
 31130000 Kin of Death and Darkness (Large) Dungeon
 31201080 Grave Digger (Hook) Dungeon
@@ -2594,7 +2594,7 @@
 31301020 Dungeon People (Slaves) (White Clothes Lantern _ Sword) Poison
 31301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Poison
 31301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Poison
-31301050,Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
+31301050 Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
 31301060 Dungeon Man (Slave) Black Clothes Sword Dungeon Poison
 31301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Poison
 31301501 Dungeon Man (Slave) (Naked Sword) _ (Thrown with bare hands) Poison
@@ -2609,7 +2609,7 @@
 31302020 Dungeon Guardian Sword Crossbow Dungeon
 31302030 Dungeon Guardian Great Sword Dungeon
 31303000 Dungeon Man (Madman) One-handed scythe Poison Dungeon
-31303001,Dungeon Man (Madman) One-handed broken sword Poison Dungeon
+31303001 Dungeon Man (Madman) One-handed broken sword Poison Dungeon
 31303010 Dungeon Man (Madman) Corpse Carrier Poison Dungeon
 31303020 Dungeon Man (Madman) Dual Scythes Poison Dungeon
 31304000 Dungeon Man (Fat) Hatchet Poison Dungeon
@@ -2625,13 +2625,13 @@
 32111085 Kin of Death and Darkness Headless Dungeon
 32114080 Fanatic Beast Dungeon
 32121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-32121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+32121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 32121090 Gravekeeper Scorpion with children Small scissors Dungeon
 32121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 32124090 Mad Dog Dungeon
 32125000 Snake ball (child) 1 Only the book is thick Dungeon
 32125010 Snake Ball (Baby) Poison Fog Dungeon
-32126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+32126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 32127000 Vampire Pig Dungeon
 32130000 Kin of Death and Darkness (Large) Dungeon
 32201080 Grave Digger (Hook) Dungeon
@@ -2644,7 +2644,7 @@
 32301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 32301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 32301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-32301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+32301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 32301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 32301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
 32301510 For generating Dungeon people (slaves) Naked Hatchet Dungeon Doping Strong enemy
@@ -2653,7 +2653,7 @@
 32301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 32301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 32301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-32302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+32302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 32302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 32302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 32302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -2663,7 +2663,7 @@
 32303020 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
 32304000 Dungeon Man (Fat) Machete Doping Strong Enemy Dungeon
 32304010 Dungeon Man (Fat) Red Hot Hatchet Doping Strong Enemy Dungeon
-32304020,Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
+32304020 Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
 32304040 Dungeon Man (Fat) Saw Doping Strong Enemy Dungeon
 32304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Doping Strong Opponent Dungeon
 32304051 Dungeon Man (Fat) (Wrong Handed Iron Ball Gentleman) Doping Nemesis
@@ -2674,13 +2674,13 @@
 33111085 Kin of Death and Darkness Headless Dungeon
 33114080 Fanatic Beast Dungeon
 33121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-33121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+33121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 33121090 Gravekeeper Scorpion with children Small scissors Dungeon
 33121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 33124090 Mad Dog Dungeon
 33125000 Snake ball (child) 1 Only the book is thick Dungeon
 33125010 Snake Ball (Baby) Poison Fog Dungeon
-33126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+33126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 33127000 Vampire Pig Dungeon
 33130000 Kin of Death and Darkness (Large) Dungeon
 33201080 Grave Digger (Hook) Dungeon
@@ -2693,7 +2693,7 @@
 33301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 33301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 33301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-33301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+33301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 33301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 33301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
 33301510 For generating Dungeon people (slaves) Naked Hatchet Dungeon Doping Strong enemy
@@ -2702,7 +2702,7 @@
 33301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 33301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 33301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-33302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+33302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 33302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 33302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 33302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -2712,7 +2712,7 @@
 33303020 Dungeon Man (Madman) Dual-wielding Scythe Poison Doping Strong Enemy Dungeon
 33304000 Dungeon Man (Fat) Hatchet Poison Doping Strong Enemy Dungeon
 33304010 Dungeon Man (Fat) Red Hot Hatchet Poison Doping Strong Enemy Dungeon
-33304020,Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
+33304020 Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
 33304040 Dungeon Man (Fat) Saw Poison Doping Strong Enemy Dungeon
 33304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Poisoned Doping Strong Enemy Dungeon
 33304051 Dungeon Man (Fat) (Iron Ball in Both Hands Gentleman) Poisoning + Doping Strong Enemy
@@ -2729,7 +2729,7 @@
 35303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 35303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 35303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-35304000,Dungeon Man (Fat) Machete Dungeon
+35304000 Dungeon Man (Fat) Machete Dungeon
 35304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 35304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 35304040 Dungeon Man (Fat) Saw Dungeon
@@ -2757,7 +2757,7 @@
 36303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 36303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 36303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-36304000,Dungeon Man (Fat) Machete Dungeon
+36304000 Dungeon Man (Fat) Machete Dungeon
 36304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 36304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 36304040 Dungeon Man (Fat) Saw Dungeon
@@ -2785,7 +2785,7 @@
 37303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 37303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 37303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-37304000,Dungeon Man (Fat) Machete Dungeon
+37304000 Dungeon Man (Fat) Machete Dungeon
 37304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 37304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 37304040 Dungeon Man (Fat) Saw Dungeon
@@ -2813,7 +2813,7 @@
 38303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 38303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 38303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-38304000,Dungeon Man (Fat) Machete Dungeon
+38304000 Dungeon Man (Fat) Machete Dungeon
 38304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 38304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 38304040 Dungeon Man (Fat) Saw Dungeon
@@ -2903,7 +2903,7 @@
 110111081 【floor 2 】 Kin of Death and Darkness (Pre-speed Movement) Dungeon
 110111085 【floor 2 】 Kin of Death and Darkness Headless Dungeon
 110111086 【floor 2 】 Kin of Death and Darkness (Pre-speed movement) Headless Dungeon
-110111090,【floor 2 】 Kin of Death and Darkness Head Generated Dungeon
+110111090 【floor 2 】 Kin of Death and Darkness Head Generated Dungeon
 110111091 【floor 2 】 Kin of Death and Darkness _ Generate (pre-speed movement) Dungeon
 110111095 【floor 2 】 Death and Darkness Family Headless Generation Dungeon
 110111096 【floor 2 】 Kin of Death and Darkness _ Generate (pre-speed movement) Headless Dungeon
@@ -2954,7 +2954,7 @@
 110201200 【floor 2 】 Grave Digger (Gun)
 110201210 【floor 2 】 Grave Digger (Hook) Dungeon
 110201220 【floor 2 】 Grave Digger (Pickaxe) Dungeon
-110202080,【floor 2 】 Kidnapper Dungeon
+110202080 【floor 2 】 Kidnapper Dungeon
 110204080 【floor 2 】 Manipulated Corpse Dungeon
 110205080 【floor 2 】 Crazy Evil Spirit Dungeon
 110205290 Crazy Demon SAN Value Dungeon
@@ -2978,7 +2978,7 @@
 110216090 【floor 2 】 Kin of the Flame of Destruction 【 Boss 】 Dungeon
 110216091 【floor 2 】 Kin of the Flame of Destruction (without hat)【 Boss 】 Dungeon
 110218000 【floor 2 】 Silver Beast's Kin Dungeon
-110218010,【floor 2 】 Silver Beast's Family Parasite Dungeon
+110218010 【floor 2 】 Silver Beast's Family Parasite Dungeon
 110218090 【floor 2 】 Silver Beast's Kin 【 Boss 】 Dungeon
 110219000 【floor 2 】 Parasite Dungeon
 110250080 【floor 2 】 Messenger from the Moon Tentacle-free Dungeon
@@ -2990,8 +2990,8 @@
 110250204 【floor 2 】 Messenger from the Moon Cosmic Attribute Bullet Transformation
 110250205 【floor 2 】 Messenger from the Moon with tentacles Cosmic attribute dungeon
 110250206 【floor 2 】 Messenger from the Moon Tentacles Cosmic Attribute Bullet Change Dungeon
-110250213,【floor 2 】 Tentacles of the Messenger from the Moon Dungeon Cosmic Attribute Invisibility
-110250215,【floor 2 】 Tentacles of the Messenger from the Moon Dungeon Cosmic Attribute Invisibility
+110250213 【floor 2 】 Tentacles of the Messenger from the Moon Dungeon Cosmic Attribute Invisibility
+110250215 【floor 2 】 Tentacles of the Messenger from the Moon Dungeon Cosmic Attribute Invisibility
 110250216 【floor 2 】 Tentacles of the messenger from the moon Tentacles Dungeon Cosmic attribute invisibility
 110251090 【floor 2 】 Child of the Moon 【 Boss 】 Dungeon
 110251096 【floor 2 】 Child of the Moon 【 Boss 】 Dungeon Boss Dungeon
@@ -3028,7 +3028,7 @@
 110301109 【floor 2 】 Dungeon Man (Slave) Naked Sword Dungeon Ritual
 110301127 【floor 2 】 Dungeon Man (Slave) (Naked Sword _ (Bare-handed throw) Warrior
 110301129 【floor 2 】 Dungeon Man (Slave) (Naked Sword _ Bare-handed throwing) Ritual
-110301147,【floor 2 】 Dungeon Man (Slave) Naked Hatchet Warrior Dungeon
+110301147 【floor 2 】 Dungeon Man (Slave) Naked Hatchet Warrior Dungeon
 110301149 【floor 2 】 Dungeon people (slaves) Naked Hatchet Ritual Dungeon
 110301167 【floor 2 】 Dungeon Man (Slave) Naked Hatchet Throwing Warrior Dungeon
 110301169 【floor 2 】 Dungeon Man (Slave) Naked Hatchet Throwing Ritual Dungeon
@@ -3045,7 +3045,7 @@
 110301329 【floor 2 】 Dungeon Man (Slave) White Clothes Double Axe Ritual Dungeon
 110301349 【floor 2 】 Dungeon people (slaves) White clothes Pole weapons Ritual Dungeon
 110301369 【floor 2 】 Dungeon people (slaves) White clothes Sword Ritual Dungeon
-110301500,【floor 2 】 For generating Dungeon Man (Slave) Naked Sword Dungeon
+110301500 【floor 2 】 For generating Dungeon Man (Slave) Naked Sword Dungeon
 110301501 【floor 2 】 For generation Dungeon Man (Slave) (Naked Sword _ (Bare-handed throw)
 110301510 【floor 2 】 For generation Dungeon people (slaves) Naked Hatchet Dungeon
 110301511 【floor 2 】 For generation Dungeon people (slaves) Naked Hatchet Throwing Dungeon
@@ -3109,7 +3109,7 @@
 110304096 【floor 2 】 Dungeon Man (Fat) Saw 【 Boss 】 Dungeon
 110304098 【floor 2 】 Dungeon Man (Fat) Machete Shotgun 【 Boss 】 Dungeon
 110304108 【floor 2 】 Dungeon Man (Fat) Machete Dungeon Doctor
-110304128,【floor 2 】 Dungeon Man (Fat) Red Hot Hatchet Dungeon Doctor
+110304128 【floor 2 】 Dungeon Man (Fat) Red Hot Hatchet Dungeon Doctor
 110304148 【floor 2 】 Dungeon Man (Fat) Machete Shotgun Dungeon Doctor
 110304168 【floor 2 】 Dungeon Man (Fat) Saw Dungeon Doctor
 110304188 【floor 2 】 Dungeon Man (Fat) Naked Iron Ball in Both Hands Dungeon Doctor
@@ -3136,7 +3136,7 @@
 110312010 【floor 2 】 Evil spirit (female) Stalker Dungeon
 110312011 【floor 2 】 Evil spirit (female) Stalker Appears from treasure chest Dungeon
 110313000 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-110313001,【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
+110313001 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
 110313002 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Dungeon
 110313010 【floor 2 】 Fresh Golem (Axe + Cannon) No Weakness Dungeon
 110313011 【floor 2 】 Fresh Golem (Axe + Cannon) Weak point: Left knee Dungeon
@@ -3151,7 +3151,7 @@
 110313093 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) 【 Boss 】 Storm attribute dungeon
 110313109 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Fire Enchantment Dungeon
 110313129 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee side Fire enchantment Dungeon
-110313149,【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Fire Enchantment Dungeon
+110313149 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Fire Enchantment Dungeon
 110313200 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee side Fire enchantment Dungeon
 110501000 【floor 2 】 Flame Beast 【 Boss 】 Dungeon
 110501005 【floor 2 】 Fire Beasts Treated as Small Dungeon
@@ -3184,7 +3184,7 @@
 110551096 【floor 2 】 Lesser Demon (Death and Darkness) 【 Boss 】 Dungeon Boss Dungeon
 110750080 【floor 2 】 Enemy Avatar Dungeon
 110750090 【floor 2 】 Enemy Avatar 【 BOSS 】 ※Damage doping dungeon
-119304000,Dungeon Man (Fat) Machete Dungeon
+119304000 Dungeon Man (Fat) Machete Dungeon
 119304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 119304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 119304040 Dungeon Man (Fat) Saw Dungeon
@@ -3236,7 +3236,7 @@
 120301040 【floor 2 】 Dungeon Man (Slave) Black Clothes Dual Axe Dungeon
 120301050 【floor 2 】 Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon
 120301060 【floor 2 】 Dungeon Man (Slave) Black Clothes Sword Dungeon
-120301500,【floor 2 】 For generating Dungeon Man (Slave) Naked Sword Dungeon
+120301500 【floor 2 】 For generating Dungeon Man (Slave) Naked Sword Dungeon
 120301501 【floor 2 】 For generation Dungeon Man (Slave) (Naked Sword _ (Bare-handed throw)
 120301510 【floor 2 】 For generation Dungeon people (slaves) Naked Hatchet Dungeon
 120301511 【floor 2 】 For generation Dungeon people (slaves) Naked Hatchet Throwing Dungeon
@@ -3259,7 +3259,7 @@
 120304050 【floor 2 】 Dungeon Man (Fat) Naked Two-handed iron ball Dungeon
 120304051 【floor 2 】 Dungeon Man (Fat) (Wreck Ball Handed Gentleman)
 120313000 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-120313001,【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
+120313001 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
 120313002 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Dungeon
 120313010 【floor 2 】 Fresh Golem (Axe + Cannon) No Weakness Dungeon
 120313011 【floor 2 】 Fresh Golem (Axe + Cannon) Weak point: Left knee Dungeon
@@ -3330,7 +3330,7 @@
 121304050 【floor 2 】 Dungeon Man (Fat) Naked Two-handed iron ball Dungeon
 121304051 【floor 2 】 Dungeon Man (Fat) (Wreck Ball Handed Gentleman)
 121313000 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-121313001,【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
+121313001 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
 121313002 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Dungeon
 121313010 【floor 2 】 Fresh Golem (Axe + Cannon) No Weakness Dungeon
 121313011 【floor 2 】 Fresh Golem (Axe + Cannon) Weak point: Left knee Dungeon
@@ -3401,7 +3401,7 @@
 122304050 【floor 2 】 Dungeon Man (Fat) Naked Iron Ball in Both Hands Doping Strong Enemy Dungeon
 122304051 【floor 2 】 Dungeon Man (Fat) (Wrong Handed Iron Ball Gentleman) Doping Nemesis
 122313000 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-122313001,【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
+122313001 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
 122313002 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Dungeon
 122313010 【floor 2 】 Fresh Golem (Axe + Cannon) No Weakness Dungeon
 122313011 【floor 2 】 Fresh Golem (Axe + Cannon) Weak point: Left knee Dungeon
@@ -3472,7 +3472,7 @@
 123304050 【floor 2 】 Dungeon Man (Fat) Naked Iron Ball in Both Hands Doping Strong Enemy Dungeon
 123304051 【floor 2 】 Dungeon Man (Fat) (Wrong Handed Iron Ball Gentleman) Doping Nemesis
 123313000 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
-123313001,【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
+123313001 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
 123313002 【floor 2 】 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Dungeon
 123313010 【floor 2 】 Fresh Golem (Axe + Cannon) No Weakness Dungeon
 123313011 【floor 2 】 Fresh Golem (Axe + Cannon) Weak point: Left knee Dungeon
@@ -3497,7 +3497,7 @@
 125303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 125303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 125303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-125304000,Dungeon Man (Fat) Machete Dungeon
+125304000 Dungeon Man (Fat) Machete Dungeon
 125304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 125304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 125304040 Dungeon Man (Fat) Saw Dungeon
@@ -3525,7 +3525,7 @@
 126303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 126303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 126303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-126304000,Dungeon Man (Fat) Machete Dungeon
+126304000 Dungeon Man (Fat) Machete Dungeon
 126304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 126304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 126304040 Dungeon Man (Fat) Saw Dungeon
@@ -3553,7 +3553,7 @@
 127303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 127303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 127303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-127304000,Dungeon Man (Fat) Machete Dungeon
+127304000 Dungeon Man (Fat) Machete Dungeon
 127304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 127304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 127304040 Dungeon Man (Fat) Saw Dungeon
@@ -3581,7 +3581,7 @@
 128303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 128303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 128303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-128304000,Dungeon Man (Fat) Machete Dungeon
+128304000 Dungeon Man (Fat) Machete Dungeon
 128304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 128304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 128304040 Dungeon Man (Fat) Saw Dungeon
@@ -3602,13 +3602,13 @@
 130111085 Kin of Death and Darkness Headless Dungeon
 130114080 Fanatic Beast Dungeon
 130121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-130121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+130121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 130121090 Gravekeeper Scorpion with children Small scissors Dungeon
 130121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 130124090 Mad Dog Dungeon
 130125000 Snake ball (child) 1 Only the book is thick Dungeon
 130125010 Snake Ball (Baby) Poison Fog Dungeon
-130126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+130126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 130127000 Vampire Pig Dungeon
 130130000 Kin of Death and Darkness (Large) Dungeon
 130201080 Grave Digger (Hook) Dungeon
@@ -3641,7 +3641,7 @@
 130303001 Dungeon Man (Madman) One-handed broken sword Dungeon
 130303010 Dungeon Man (Madman) Corpse Carrier Dungeon
 130303020 Dungeon Man (Madman) Dual Scythe Dungeon
-130304000,Dungeon Man (Fat) Machete Dungeon
+130304000 Dungeon Man (Fat) Machete Dungeon
 130304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 130304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 130304040 Dungeon Man (Fat) Saw Dungeon
@@ -3653,13 +3653,13 @@
 131111085 Kin of Death and Darkness Headless Dungeon
 131114080 Fanatic Beast Dungeon
 131121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-131121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+131121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 131121090 Gravekeeper Scorpion with children Small scissors Dungeon
 131121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 131124090 Mad Dog Dungeon
 131125000 Snake ball (child) 1 Only the book is thick Dungeon
 131125010 Snake Ball (Baby) Poison Fog Dungeon
-131126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+131126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 131127000 Vampire Pig Dungeon
 131130000 Kin of Death and Darkness (Large) Dungeon
 131201080 Grave Digger (Hook) Dungeon
@@ -3671,7 +3671,7 @@
 131301020 Dungeon People (Slaves) (White Clothes Lantern _ Sword) Poison
 131301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Poison
 131301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Poison
-131301050,Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
+131301050 Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
 131301060 Dungeon Man (Slave) Black Clothes Sword Dungeon Poison
 131301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Poison
 131301501 Dungeon Man (Slave) (Naked Sword) _ (Thrown with bare hands) Poison
@@ -3686,7 +3686,7 @@
 131302020 Dungeon Guardian Sword Crossbow Dungeon
 131302030 Dungeon Guardian Great Sword Dungeon
 131303000 Dungeon Man (Madman) One-handed scythe Poison Dungeon
-131303001,Dungeon Man (Madman) One-handed broken sword Poison Dungeon
+131303001 Dungeon Man (Madman) One-handed broken sword Poison Dungeon
 131303010 Dungeon Man (Madman) Corpse Carrier Poison Dungeon
 131303020 Dungeon Man (Madman) Dual Scythes Poison Dungeon
 131304000 Dungeon Man (Fat) Hatchet Poison Dungeon
@@ -3701,13 +3701,13 @@
 132111085 Kin of Death and Darkness Headless Dungeon
 132114080 Fanatic Beast Dungeon
 132121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-132121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+132121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 132121090 Gravekeeper Scorpion with children Small scissors Dungeon
 132121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 132124090 Mad Dog Dungeon
 132125000 Snake ball (child) 1 Only the book is thick Dungeon
 132125010 Snake Ball (Baby) Poison Fog Dungeon
-132126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+132126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 132127000 Vampire Pig Dungeon
 132130000 Kin of Death and Darkness (Large) Dungeon
 132201080 Grave Digger (Hook) Dungeon
@@ -3720,7 +3720,7 @@
 132301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 132301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 132301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-132301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+132301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 132301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 132301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
 132301510 For generating Dungeon people (slaves) Naked Hatchet Dungeon Doping Strong enemy
@@ -3729,7 +3729,7 @@
 132301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 132301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 132301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-132302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+132302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 132302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 132302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 132302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -3739,7 +3739,7 @@
 132303020 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
 132304000 Dungeon Man (Fat) Machete Doping Strong Enemy Dungeon
 132304010 Dungeon Man (Fat) Red Hot Hatchet Doping Strong Enemy Dungeon
-132304020,Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
+132304020 Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
 132304040 Dungeon Man (Fat) Saw Doping Strong Enemy Dungeon
 132304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Doping Strong Opponent Dungeon
 132304051 Dungeon Man (Fat) (Wrong Handed Iron Ball Gentleman) Doping Nemesis
@@ -3749,13 +3749,13 @@
 133111085 Kin of Death and Darkness Headless Dungeon
 133114080 Fanatic Beast Dungeon
 133121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-133121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+133121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 133121090 Gravekeeper Scorpion with children Small scissors Dungeon
 133121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 133124090 Mad Dog Dungeon
 133125000 Snake ball (child) 1 Only the book is thick Dungeon
 133125010 Snake Ball (Baby) Poison Fog Dungeon
-133126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+133126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 133127000 Vampire Pig Dungeon
 133130000 Kin of Death and Darkness (Large) Dungeon
 133201080 Grave Digger (Hook) Dungeon
@@ -3768,7 +3768,7 @@
 133301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 133301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 133301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-133301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+133301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 133301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 133301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
 133301510 For generating Dungeon people (slaves) Naked Hatchet Dungeon Doping Strong enemy
@@ -3777,7 +3777,7 @@
 133301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 133301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 133301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-133302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+133302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 133302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 133302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 133302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -3787,7 +3787,7 @@
 133303020 Dungeon Man (Madman) Dual-wielding Scythe Poison Doping Strong Enemy Dungeon
 133304000 Dungeon Man (Fat) Hatchet Poison Doping Strong Enemy Dungeon
 133304010 Dungeon Man (Fat) Red Hot Hatchet Poison Doping Strong Enemy Dungeon
-133304020,Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
+133304020 Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
 133304040 Dungeon Man (Fat) Saw Poison Doping Strong Enemy Dungeon
 133304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Poisoned Doping Strong Enemy Dungeon
 133304051 Dungeon Man (Fat) (Iron Ball in Both Hands Gentleman) Poisoning + Doping Strong Enemy
@@ -3804,7 +3804,7 @@
 135303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 135303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 135303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-135304000,Dungeon Man (Fat) Machete Dungeon
+135304000 Dungeon Man (Fat) Machete Dungeon
 135304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 135304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 135304040 Dungeon Man (Fat) Saw Dungeon
@@ -3832,7 +3832,7 @@
 136303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 136303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 136303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-136304000,Dungeon Man (Fat) Machete Dungeon
+136304000 Dungeon Man (Fat) Machete Dungeon
 136304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 136304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 136304040 Dungeon Man (Fat) Saw Dungeon
@@ -3860,7 +3860,7 @@
 137303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 137303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 137303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-137304000,Dungeon Man (Fat) Machete Dungeon
+137304000 Dungeon Man (Fat) Machete Dungeon
 137304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 137304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 137304040 Dungeon Man (Fat) Saw Dungeon
@@ -3888,7 +3888,7 @@
 138303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 138303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 138303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-138304000,Dungeon Man (Fat) Machete Dungeon
+138304000 Dungeon Man (Fat) Machete Dungeon
 138304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 138304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 138304040 Dungeon Man (Fat) Saw Dungeon
@@ -3906,7 +3906,7 @@
 200006201 【floor 3 】 Spider Man Patch _ Dungeons
 200007000 【floor 3 】 NPC1 Blood Hunter Vito Normal
 200007001 【floor 3 】 NPC1 Blood Hunter Vito Multi Summoning Agent
-200007010,【floor 3 】 NPC2 Gremia's Blood Hunter Normal
+200007010 【floor 3 】 NPC2 Gremia's Blood Hunter Normal
 200007011 【floor 3 】 NPC2 Gremia's Blood Hunter Multi Summon Agent
 200007030 【floor 3 】 NPC4 Healing Church Hunter Normal Time
 200007031 【floor 3 】 NPC4 Healing Church Hunter Multi Summoning Agent
@@ -3916,7 +3916,7 @@
 200007046 【floor 3 】 NPC5_2 Blood Hunter of the Medical Church Multi Summoning Agent
 200007050 【floor 3 】 NPC6 Choir Normal time
 200007051 【floor 3 】 NPC6 Choir Multi-Summoning Agent
-200007060,【floor 3 】 NPC7 Old Hunter Normal Time
+200007060 【floor 3 】 NPC7 Old Hunter Normal Time
 200007061 【floor 3 】 NPC7 Old Hunter Multi Summoning Agent
 200007070 【floor 3 】 NPC8 Gremia Madman Normal time [ Boss 】
 200007071 【floor 3 】 NPC8 Gremia Madman Multi Summon Agent Boss 】
@@ -3966,7 +3966,7 @@
 210105950 【floor 3 】 Wandering Widow Multi Summon (Weak): Rare Material A
 210105960 【floor 3 】 Wandering Widow Multi Summon (Weak): Rare Material B
 210106080 【floor 3 Brain Eater Dungeon
-210106085,【floor 3 Brain Eater Food Dungeon
+210106085 【floor 3 Brain Eater Food Dungeon
 210106090 【floor 3 】 Brain Eater Food 【 BOSS 】 Dungeon
 210109080 【floor 3 】 Strange Beast Unarmed _ No Vigilance Action Dungeon
 210109102 【floor 3 】 Strange Beast Storm Attribute Dungeon
@@ -3977,7 +3977,7 @@
 210111080 【floor 3 】 Kin of Death and Darkness Headless Dungeon
 210111081 【floor 3 】 Kin of Death and Darkness (Pre-speed Movement) Dungeon
 210111085 【floor 3 】 Kin of Death and Darkness Headless Dungeon
-210111086,【floor 3 】 Kin of Death and Darkness (Pre-speed movement) Headless Dungeon
+210111086 【floor 3 】 Kin of Death and Darkness (Pre-speed movement) Headless Dungeon
 210111090 【floor 3 】 Kin of Death and Darkness Head Generated Dungeon
 210111091 【floor 3 】 Kin of Death and Darkness _ Generate (pre-speed movement) Dungeon
 210111095 【floor 3 】 Death and Darkness Family Headless Generation Dungeon
@@ -4110,7 +4110,7 @@
 210301187 【floor 3 】 Dungeon Person (Slave) (White Clothes Lantern _ Sword) Warrior
 210301189 【floor 3 】 Dungeon Person (Slave) (White Clothes Lantern _ Sword) Ritual
 210301207 【floor 3 】 Dungeon Man (Slave) White Clothes Hatchet Lantern Warrior Dungeon
-210301209,【floor 3 】 Dungeon people (slaves) White clothes Hatchet Lantern Ritual Dungeon
+210301209 【floor 3 】 Dungeon people (slaves) White clothes Hatchet Lantern Ritual Dungeon
 210301227 【floor 3 】 Dungeon Man (Slave) Black Clothes Dual Axe Warrior Dungeon
 210301229 【floor 3 】 Dungeon Man (Slave) Black Clothes Double Axe Ritual Dungeon
 210301247 【floor 3 】 Dungeon Man (Slave) Black Clothes Pole Weapon Warrior Dungeon
@@ -4142,7 +4142,7 @@
 210301709 【floor 3 】 For creation Dungeon people (slave) White clothes Hatchet Lantern Ritual Dungeon
 210301727 【floor 3 】 For generation Dungeon Man (Slave) Black Clothes Dual Axe Warrior Dungeon
 210301729 【floor 3 】 For creation Dungeon Man (Slave) Black Clothes Double Axe Ritual Dungeon
-210301747,【floor 3 】 For generation Dungeon people (slave) Black clothes Pole weapon Warrior Dungeon
+210301747 【floor 3 】 For generation Dungeon people (slave) Black clothes Pole weapon Warrior Dungeon
 210301749 【floor 3 】 For creation Dungeon people (slaves) Black clothes Pole weapons Ritual Dungeon
 210301762 【floor 3 】 For generation Dungeon people (slave) Black clothes Sword Dungeon Storm attribute
 210301767 【floor 3 】 For generation Dungeon Man (Slave) Black Clothes Sword Warrior Dungeon
@@ -4209,7 +4209,7 @@
 210311200 【floor 3 】 Evil spirit bullet firing dummy character
 210312000 【floor 3 】 Evil spirit (female) dungeon
 210312010 【floor 3 】 Evil spirit (female) Stalker Dungeon
-210312011,【floor 3 】 Evil spirit (female) Stalker Appears from treasure chest Dungeon
+210312011 【floor 3 】 Evil spirit (female) Stalker Appears from treasure chest Dungeon
 210313000 【floor 3 】 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
 210313001 【floor 3 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
 210313002 【floor 3 】 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Dungeon
@@ -4259,7 +4259,7 @@
 210551096 【floor 3 】 Lesser Demon (Death and Darkness) 【 Boss 】 Dungeon Boss Dungeon
 210750080 【floor 3 】 Enemy Avatar Dungeon
 210750090 【floor 3 】 Enemy Avatar 【 BOSS 】 ※Damage doping dungeon
-219304000,Dungeon Man (Fat) Machete Dungeon
+219304000 Dungeon Man (Fat) Machete Dungeon
 219304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 219304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 219304040 Dungeon Man (Fat) Saw Dungeon
@@ -4385,7 +4385,7 @@
 221301500 【floor 3 】 For generating Dungeon Man (Slave) Naked Sword Dungeon Poison
 221301501 【floor 3 】 For generation Dungeon Man (Slave) (Naked Sword _ (Thrown with bare hands) Poison
 221301510 【floor 3 】 For creation Dungeon Man (Slave) Naked Hatchet Dungeon Poison
-221301511,【floor 3 】 For creation Dungeon people (slaves) Naked Hatchet Throwing Dungeon Poison
+221301511 【floor 3 】 For creation Dungeon people (slaves) Naked Hatchet Throwing Dungeon Poison
 221301520 【floor 3 】 For generation Dungeon people (slave) (white clothes lantern _ Sword) Poison
 221301530 【floor 3 】 For creation Dungeon people (slave) White clothes Hatchet Lantern Dungeon Poison
 221301540 【floor 3 】 For creation Dungeon Man (Slave) Black Clothes Double Axe Dungeon Poison
@@ -4468,7 +4468,7 @@
 222303000 【floor 3 】 Dungeon Man (Madman) One-handed scythe Doping Strong Enemy Dungeon
 222303001 【floor 3 】 Dungeon Man (Madman) One-handed broken sword Doping Strong enemy Dungeon
 222303010 【floor 3 】 Dungeon Man (Madman) Corpse Carrier Doping Strong Enemy Dungeon
-222303020,【floor 3 】 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
+222303020 【floor 3 】 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
 222304000 【floor 3 】 Dungeon Man (Fat) Machete Doping Strong Enemy Dungeon
 222304010 【floor 3 】 Dungeon Man (Fat) Red Hot Hatchet Doping Strong Enemy Dungeon
 222304020 【floor 3 】 Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
@@ -4539,7 +4539,7 @@
 223303000 【floor 3 】 Dungeon Man (Madman) One-handed scythe Doping Strong Enemy Dungeon
 223303001 【floor 3 】 Dungeon Man (Madman) One-handed broken sword Doping Strong enemy Dungeon
 223303010 【floor 3 】 Dungeon Man (Madman) Corpse Carrier Doping Strong Enemy Dungeon
-223303020,【floor 3 】 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
+223303020 【floor 3 】 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
 223304000 【floor 3 】 Dungeon Man (Fat) Machete Doping Strong Enemy Dungeon
 223304010 【floor 3 】 Dungeon Man (Fat) Red Hot Hatchet Doping Strong Enemy Dungeon
 223304020 【floor 3 】 Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
@@ -4572,7 +4572,7 @@
 225303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 225303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 225303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-225304000,Dungeon Man (Fat) Machete Dungeon
+225304000 Dungeon Man (Fat) Machete Dungeon
 225304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 225304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 225304040 Dungeon Man (Fat) Saw Dungeon
@@ -4600,7 +4600,7 @@
 226303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 226303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 226303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-226304000,Dungeon Man (Fat) Machete Dungeon
+226304000 Dungeon Man (Fat) Machete Dungeon
 226304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 226304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 226304040 Dungeon Man (Fat) Saw Dungeon
@@ -4628,7 +4628,7 @@
 227303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 227303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 227303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-227304000,Dungeon Man (Fat) Machete Dungeon
+227304000 Dungeon Man (Fat) Machete Dungeon
 227304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 227304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 227304040 Dungeon Man (Fat) Saw Dungeon
@@ -4656,7 +4656,7 @@
 228303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 228303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 228303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-228304000,Dungeon Man (Fat) Machete Dungeon
+228304000 Dungeon Man (Fat) Machete Dungeon
 228304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 228304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 228304040 Dungeon Man (Fat) Saw Dungeon
@@ -4677,13 +4677,13 @@
 230111085 Kin of Death and Darkness Headless Dungeon
 230114080 Fanatic Beast Dungeon
 230121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-230121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+230121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 230121090 Gravekeeper Scorpion with children Small scissors Dungeon
 230121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 230124090 Mad Dog Dungeon
 230125000 Snake ball (child) 1 Only the book is thick Dungeon
 230125010 Snake Ball (Baby) Poison Fog Dungeon
-230126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+230126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 230127000 Vampire Pig Dungeon
 230130000 Kin of Death and Darkness (Large) Dungeon
 230201080 Grave Digger (Hook) Dungeon
@@ -4716,7 +4716,7 @@
 230303001 Dungeon Man (Madman) One-handed broken sword Dungeon
 230303010 Dungeon Man (Madman) Corpse Carrier Dungeon
 230303020 Dungeon Man (Madman) Dual Scythe Dungeon
-230304000,Dungeon Man (Fat) Machete Dungeon
+230304000 Dungeon Man (Fat) Machete Dungeon
 230304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 230304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 230304040 Dungeon Man (Fat) Saw Dungeon
@@ -4728,13 +4728,13 @@
 231111085 Kin of Death and Darkness Headless Dungeon
 231114080 Fanatic Beast Dungeon
 231121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-231121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+231121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 231121090 Gravekeeper Scorpion with children Small scissors Dungeon
 231121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 231124090 Mad Dog Dungeon
 231125000 Snake ball (child) 1 Only the book is thick Dungeon
 231125010 Snake Ball (Baby) Poison Fog Dungeon
-231126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+231126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 231127000 Vampire Pig Dungeon
 231130000 Kin of Death and Darkness (Large) Dungeon
 231201080 Grave Digger (Hook) Dungeon
@@ -4746,7 +4746,7 @@
 231301020 Dungeon People (Slaves) (White Clothes Lantern _ Sword) Poison
 231301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Poison
 231301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Poison
-231301050,Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
+231301050 Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
 231301060 Dungeon Man (Slave) Black Clothes Sword Dungeon Poison
 231301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Poison
 231301501 Dungeon Man (Slave) (Naked Sword) _ (Thrown with bare hands) Poison
@@ -4761,7 +4761,7 @@
 231302020 Dungeon Guardian Sword Crossbow Dungeon
 231302030 Dungeon Guardian Great Sword Dungeon
 231303000 Dungeon Man (Madman) One-handed scythe Poison Dungeon
-231303001,Dungeon Man (Madman) One-handed broken sword Poison Dungeon
+231303001 Dungeon Man (Madman) One-handed broken sword Poison Dungeon
 231303010 Dungeon Man (Madman) Corpse Carrier Poison Dungeon
 231303020 Dungeon Man (Madman) Dual Scythes Poison Dungeon
 231304000 Dungeon Man (Fat) Hatchet Poison Dungeon
@@ -4776,13 +4776,13 @@
 232111085 Kin of Death and Darkness Headless Dungeon
 232114080 Fanatic Beast Dungeon
 232121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-232121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+232121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 232121090 Gravekeeper Scorpion with children Small scissors Dungeon
 232121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 232124090 Mad Dog Dungeon
 232125000 Snake ball (child) 1 Only the book is thick Dungeon
 232125010 Snake Ball (Baby) Poison Fog Dungeon
-232126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+232126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 232127000 Vampire Pig Dungeon
 232130000 Kin of Death and Darkness (Large) Dungeon
 232201080 Grave Digger (Hook) Dungeon
@@ -4795,7 +4795,7 @@
 232301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 232301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 232301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-232301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+232301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 232301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 232301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
 232301510 For generating Dungeon people (slaves) Naked Hatchet Dungeon Doping Strong enemy
@@ -4804,7 +4804,7 @@
 232301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 232301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 232301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-232302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+232302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 232302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 232302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 232302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -4814,7 +4814,7 @@
 232303020 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
 232304000 Dungeon Man (Fat) Machete Doping Strong Enemy Dungeon
 232304010 Dungeon Man (Fat) Red Hot Hatchet Doping Strong Enemy Dungeon
-232304020,Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
+232304020 Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
 232304040 Dungeon Man (Fat) Saw Doping Strong Enemy Dungeon
 232304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Doping Strong Opponent Dungeon
 232304051 Dungeon Man (Fat) (Wrong Handed Iron Ball Gentleman) Doping Nemesis
@@ -4824,13 +4824,13 @@
 233111085 Kin of Death and Darkness Headless Dungeon
 233114080 Fanatic Beast Dungeon
 233121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-233121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+233121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 233121090 Gravekeeper Scorpion with children Small scissors Dungeon
 233121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 233124090 Mad Dog Dungeon
 233125000 Snake ball (child) 1 Only the book is thick Dungeon
 233125010 Snake Ball (Baby) Poison Fog Dungeon
-233126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+233126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 233127000 Vampire Pig Dungeon
 233130000 Kin of Death and Darkness (Large) Dungeon
 233201080 Grave Digger (Hook) Dungeon
@@ -4843,7 +4843,7 @@
 233301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 233301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 233301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-233301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+233301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 233301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 233301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
 233301510 For generating Dungeon people (slaves) Naked Hatchet Dungeon Doping Strong enemy
@@ -4852,7 +4852,7 @@
 233301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 233301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 233301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-233302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+233302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 233302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 233302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 233302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -4862,7 +4862,7 @@
 233303020 Dungeon Man (Madman) Dual-wielding Scythe Poison Doping Strong Enemy Dungeon
 233304000 Dungeon Man (Fat) Hatchet Poison Doping Strong Enemy Dungeon
 233304010 Dungeon Man (Fat) Red Hot Hatchet Poison Doping Strong Enemy Dungeon
-233304020,Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
+233304020 Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
 233304040 Dungeon Man (Fat) Saw Poison Doping Strong Enemy Dungeon
 233304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Poisoned Doping Strong Enemy Dungeon
 233304051 Dungeon Man (Fat) (Iron Ball in Both Hands Gentleman) Poisoning + Doping Strong Enemy
@@ -4879,7 +4879,7 @@
 235303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 235303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 235303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-235304000,Dungeon Man (Fat) Machete Dungeon
+235304000 Dungeon Man (Fat) Machete Dungeon
 235304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 235304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 235304040 Dungeon Man (Fat) Saw Dungeon
@@ -4907,7 +4907,7 @@
 236303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 236303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 236303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-236304000,Dungeon Man (Fat) Machete Dungeon
+236304000 Dungeon Man (Fat) Machete Dungeon
 236304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 236304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 236304040 Dungeon Man (Fat) Saw Dungeon
@@ -4935,7 +4935,7 @@
 237303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 237303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 237303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-237304000,Dungeon Man (Fat) Machete Dungeon
+237304000 Dungeon Man (Fat) Machete Dungeon
 237304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 237304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 237304040 Dungeon Man (Fat) Saw Dungeon
@@ -4963,7 +4963,7 @@
 238303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 238303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 238303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-238304000,Dungeon Man (Fat) Machete Dungeon
+238304000 Dungeon Man (Fat) Machete Dungeon
 238304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 238304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 238304040 Dungeon Man (Fat) Saw Dungeon
@@ -5015,7 +5015,7 @@
 300007151 【floor 4 】 NPC14 : Strong enemy Cain's Blood Knights Multi-Summoning Agent
 300007160 【floor 4 】 NPC15 ：Strong enemy Bloodline hunter ※Head only Normal
 300007161 【floor 4 】 NPC15 ：Strong enemy Bloodline hunter ※Head only When using multi-summoning agent
-300007200,【floor 4 】 Fixed dungeon boss NPC1 [ Boss 】
+300007200 【floor 4 】 Fixed dungeon boss NPC1 [ Boss 】
 300007210 【floor 4 】 Fixed dungeon boss NPC2 [ Boss 】
 300902030 Base Messenger (Shop)
 300902031 Base Messenger (Shop 2 )
@@ -5185,7 +5185,7 @@
 310301187 【floor 4 】 Dungeon Person (Slave) (White Clothes Lantern _ Sword) Warrior
 310301189 【floor 4 】 Dungeon Person (Slave) (White Clothes Lantern _ Sword) Ritual
 310301207 【floor 4 】 Dungeon Man (Slave) White Clothes Hatchet Lantern Warrior Dungeon
-310301209,【floor 4 】 Dungeon people (slaves) White clothes Hatchet Lantern Ritual Dungeon
+310301209 【floor 4 】 Dungeon people (slaves) White clothes Hatchet Lantern Ritual Dungeon
 310301227 【floor 4 】 Dungeon Man (Slave) Black Clothes Dual Axe Warrior Dungeon
 310301229 【floor 4 】 Dungeon Man (Slave) Black Clothes Double Axe Ritual Dungeon
 310301247 【floor 4 】 Dungeon Man (Slave) Black Clothes Pole Weapon Warrior Dungeon
@@ -5217,7 +5217,7 @@
 310301709 【floor 4 】 For creation Dungeon people (slave) White clothes Hatchet Lantern Ritual Dungeon
 310301727 【floor 4 】 For generation Dungeon Man (Slave) Black Clothes Dual Axe Warrior Dungeon
 310301729 【floor 4 】 For creation Dungeon Man (Slave) Black Clothes Double Axe Ritual Dungeon
-310301747,【floor 4 】 For generation Dungeon people (slave) Black clothes Pole weapon Warrior Dungeon
+310301747 【floor 4 】 For generation Dungeon people (slave) Black clothes Pole weapon Warrior Dungeon
 310301749 【floor 4 】 For creation Dungeon people (slaves) Black clothes Pole weapons Ritual Dungeon
 310301762 【floor 4 】 For generation Dungeon people (slave) Black clothes Sword Dungeon Storm attribute
 310301767 【floor 4 】 For generation Dungeon Man (Slave) Black Clothes Sword Warrior Dungeon
@@ -5284,7 +5284,7 @@
 310311200 【floor 4 】 Evil spirit bullet firing dummy character
 310312000 【floor 4 】 Evil spirit (female) dungeon
 310312010 【floor 4 】 Evil spirit (female) Stalker Dungeon
-310312011,【floor 4 】 Evil spirit (female) Stalker Appears from treasure chest Dungeon
+310312011 【floor 4 】 Evil spirit (female) Stalker Appears from treasure chest Dungeon
 310313000 【floor 4 】 Fresh Golem (Tip Sword + Elbow Sword) No Weakness Dungeon
 310313001 【floor 4 】 Fresh Golem (Tip Sword + Elbow Sword) Weak point: Left knee Dungeon
 310313002 【floor 4 】 Fresh Golem (Tip Sword + Elbow Sword) Weak Point Butt Dungeon
@@ -5334,7 +5334,7 @@
 310551096 【floor 4 】 Lesser Demon (Death and Darkness) 【 Boss 】 Dungeon Boss Dungeon
 310750080 【floor 4 】 Enemy Avatar Dungeon
 310750090 【floor 4 】 Enemy Avatar 【 BOSS 】 ※Damage doping dungeon
-319304000,Dungeon Man (Fat) Machete Dungeon
+319304000 Dungeon Man (Fat) Machete Dungeon
 319304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 319304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 319304040 Dungeon Man (Fat) Saw Dungeon
@@ -5460,7 +5460,7 @@
 321301500 【floor 4 】 For generating Dungeon Man (Slave) Naked Sword Dungeon Poison
 321301501 【floor 4 】 For generation Dungeon Man (Slave) (Naked Sword _ (Thrown with bare hands) Poison
 321301510 【floor 4 】 For creation Dungeon Man (Slave) Naked Hatchet Dungeon Poison
-321301511,【floor 4 】 For creation Dungeon people (slaves) Naked Hatchet Throwing Dungeon Poison
+321301511 【floor 4 】 For creation Dungeon people (slaves) Naked Hatchet Throwing Dungeon Poison
 321301520 【floor 4 】 For generation Dungeon people (slave) (white clothes lantern _ Sword) Poison
 321301530 【floor 4 】 For creation Dungeon people (slave) White clothes Hatchet Lantern Dungeon Poison
 321301540 【floor 4 】 For creation Dungeon Man (Slave) Black Clothes Double Axe Dungeon Poison
@@ -5543,7 +5543,7 @@
 322303000 【floor 4 】 Dungeon Man (Madman) One-handed scythe Doping Strong Enemy Dungeon
 322303001 【floor 4 】 Dungeon Man (Madman) One-handed broken sword Doping Strong enemy Dungeon
 322303010 【floor 4 】 Dungeon Man (Madman) Corpse Carrier Doping Strong Enemy Dungeon
-322303020,【floor 4 】 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
+322303020 【floor 4 】 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
 322304000 【floor 4 】 Dungeon Man (Fat) Machete Doping Strong Enemy Dungeon
 322304010 【floor 4 】 Dungeon Man (Fat) Red Hot Hatchet Doping Strong Enemy Dungeon
 322304020 【floor 4 】 Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
@@ -5614,7 +5614,7 @@
 323303000 【floor 4 】 Dungeon Man (Madman) One-handed scythe Doping Strong Enemy Dungeon
 323303001 【floor 4 】 Dungeon Man (Madman) One-handed broken sword Doping Strong enemy Dungeon
 323303010 【floor 4 】 Dungeon Man (Madman) Corpse Carrier Doping Strong Enemy Dungeon
-323303020,【floor 4 】 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
+323303020 【floor 4 】 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
 323304000 【floor 4 】 Dungeon Man (Fat) Machete Doping Strong Enemy Dungeon
 323304010 【floor 4 】 Dungeon Man (Fat) Red Hot Hatchet Doping Strong Enemy Dungeon
 323304020 【floor 4 】 Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
@@ -5647,7 +5647,7 @@
 325303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 325303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 325303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-325304000,Dungeon Man (Fat) Machete Dungeon
+325304000 Dungeon Man (Fat) Machete Dungeon
 325304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 325304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 325304040 Dungeon Man (Fat) Saw Dungeon
@@ -5675,7 +5675,7 @@
 326303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 326303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 326303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-326304000,Dungeon Man (Fat) Machete Dungeon
+326304000 Dungeon Man (Fat) Machete Dungeon
 326304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 326304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 326304040 Dungeon Man (Fat) Saw Dungeon
@@ -5703,7 +5703,7 @@
 327303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 327303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 327303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-327304000,Dungeon Man (Fat) Machete Dungeon
+327304000 Dungeon Man (Fat) Machete Dungeon
 327304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 327304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 327304040 Dungeon Man (Fat) Saw Dungeon
@@ -5731,7 +5731,7 @@
 328303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 328303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 328303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-328304000,Dungeon Man (Fat) Machete Dungeon
+328304000 Dungeon Man (Fat) Machete Dungeon
 328304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 328304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 328304040 Dungeon Man (Fat) Saw Dungeon
@@ -5752,13 +5752,13 @@
 330111085 Kin of Death and Darkness Headless Dungeon
 330114080 Fanatic Beast Dungeon
 330121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-330121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+330121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 330121090 Gravekeeper Scorpion with children Small scissors Dungeon
 330121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 330124090 Mad Dog Dungeon
 330125000 Snake ball (child) 1 Only the book is thick Dungeon
 330125010 Snake Ball (Baby) Poison Fog Dungeon
-330126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+330126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 330127000 Vampire Pig Dungeon
 330130000 Kin of Death and Darkness (Large) Dungeon
 330201080 Grave Digger (Hook) Dungeon
@@ -5791,7 +5791,7 @@
 330303001 Dungeon Man (Madman) One-handed broken sword Dungeon
 330303010 Dungeon Man (Madman) Corpse Carrier Dungeon
 330303020 Dungeon Man (Madman) Dual Scythe Dungeon
-330304000,Dungeon Man (Fat) Machete Dungeon
+330304000 Dungeon Man (Fat) Machete Dungeon
 330304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 330304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 330304040 Dungeon Man (Fat) Saw Dungeon
@@ -5803,13 +5803,13 @@
 331111085 Kin of Death and Darkness Headless Dungeon
 331114080 Fanatic Beast Dungeon
 331121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-331121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+331121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 331121090 Gravekeeper Scorpion with children Small scissors Dungeon
 331121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 331124090 Mad Dog Dungeon
 331125000 Snake ball (child) 1 Only the book is thick Dungeon
 331125010 Snake Ball (Baby) Poison Fog Dungeon
-331126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+331126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 331127000 Vampire Pig Dungeon
 331130000 Kin of Death and Darkness (Large) Dungeon
 331201080 Grave Digger (Hook) Dungeon
@@ -5821,7 +5821,7 @@
 331301020 Dungeon People (Slaves) (White Clothes Lantern _ Sword) Poison
 331301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Poison
 331301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Poison
-331301050,Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
+331301050 Dungeon Man (Slave) Black Clothes Pole Weapon Dungeon Poison
 331301060 Dungeon Man (Slave) Black Clothes Sword Dungeon Poison
 331301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Poison
 331301501 Dungeon Man (Slave) (Naked Sword) _ (Thrown with bare hands) Poison
@@ -5836,7 +5836,7 @@
 331302020 Dungeon Guardian Sword Crossbow Dungeon
 331302030 Dungeon Guardian Great Sword Dungeon
 331303000 Dungeon Man (Madman) One-handed scythe Poison Dungeon
-331303001,Dungeon Man (Madman) One-handed broken sword Poison Dungeon
+331303001 Dungeon Man (Madman) One-handed broken sword Poison Dungeon
 331303010 Dungeon Man (Madman) Corpse Carrier Poison Dungeon
 331303020 Dungeon Man (Madman) Dual Scythes Poison Dungeon
 331304000 Dungeon Man (Fat) Hatchet Poison Dungeon
@@ -5851,13 +5851,13 @@
 332111085 Kin of Death and Darkness Headless Dungeon
 332114080 Fanatic Beast Dungeon
 332121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-332121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+332121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 332121090 Gravekeeper Scorpion with children Small scissors Dungeon
 332121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 332124090 Mad Dog Dungeon
 332125000 Snake ball (child) 1 Only the book is thick Dungeon
 332125010 Snake Ball (Baby) Poison Fog Dungeon
-332126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+332126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 332127000 Vampire Pig Dungeon
 332130000 Kin of Death and Darkness (Large) Dungeon
 332201080 Grave Digger (Hook) Dungeon
@@ -5870,7 +5870,7 @@
 332301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 332301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 332301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-332301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+332301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 332301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 332301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
 332301510 For generating Dungeon people (slaves) Naked Hatchet Dungeon Doping Strong enemy
@@ -5879,7 +5879,7 @@
 332301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 332301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 332301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-332302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+332302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 332302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 332302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 332302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -5889,7 +5889,7 @@
 332303020 Dungeon Man (Madman) Dual Scythe Doping Strong Enemy Dungeon
 332304000 Dungeon Man (Fat) Machete Doping Strong Enemy Dungeon
 332304010 Dungeon Man (Fat) Red Hot Hatchet Doping Strong Enemy Dungeon
-332304020,Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
+332304020 Dungeon Man (Fat) Machete Shotgun Doping Strong Enemy Dungeon
 332304040 Dungeon Man (Fat) Saw Doping Strong Enemy Dungeon
 332304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Doping Strong Opponent Dungeon
 332304051 Dungeon Man (Fat) (Wrong Handed Iron Ball Gentleman) Doping Nemesis
@@ -5899,13 +5899,13 @@
 333111085 Kin of Death and Darkness Headless Dungeon
 333114080 Fanatic Beast Dungeon
 333121080 Gravekeeper Scorpion Childless Small Scissors Dungeon
-333121081,Gravekeeper Scorpion Childless Large Claws Dungeon
+333121081 Gravekeeper Scorpion Childless Large Claws Dungeon
 333121090 Gravekeeper Scorpion with children Small scissors Dungeon
 333121091 Gravekeeper Scorpion with Children Large Claws Dungeon
 333124090 Mad Dog Dungeon
 333125000 Snake ball (child) 1 Only the book is thick Dungeon
 333125010 Snake Ball (Baby) Poison Fog Dungeon
-333126000,Snake ball (baby) small 1 Only the book is thick Dungeon
+333126000 Snake ball (baby) small 1 Only the book is thick Dungeon
 333127000 Vampire Pig Dungeon
 333130000 Kin of Death and Darkness (Large) Dungeon
 333201080 Grave Digger (Hook) Dungeon
@@ -5918,7 +5918,7 @@
 333301030 Dungeon Man (Slave) White Clothes Hatchet Lantern Dungeon Doping Strong Enemy
 333301040 Dungeon Man (Slave) Black Clothes Double Axe Dungeon Doping Strong Enemy
 333301050 Dungeon Man (Slave) Black Suit Pole Weapon Dungeon Doping Strong Enemy
-333301060,Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
+333301060 Dungeon Man (Slave) Black Suit Sword Dungeon Doping Strong Enemy
 333301500 For generating Dungeon Man (Slave) Naked Sword Dungeon Doping Strong Enemy
 333301501 Dungeon Man (Slave) (Naked Sword) _ Bare-handed throwing) Doping formidable opponent
 333301510 For generating Dungeon people (slaves) Naked Hatchet Dungeon Doping Strong enemy
@@ -5927,7 +5927,7 @@
 333301530 For generation Dungeon people (slaves) White clothes Hatchet Lantern Dungeon Doping Strong enemy
 333301540 For generation Dungeon people (slaves) Black clothes Double axe Dungeon Doping strong enemy
 333301550 For generation Dungeon people (slaves) Black clothes Pole weapons Dungeon Doping Strong enemy
-333302000,Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
+333302000 Dungeon Man (Guardian) Sword and Shield Doping Strong Enemy Dungeon
 333302010 Dungeon Man (Guardian) Morning Star Doping Strong Enemy Dungeon
 333302020 Dungeon Man (Guardian) Sword Crossbow Doping Strong Enemy Dungeon
 333302030 Dungeon Man (Guardian) Great Sword Doping Strong Enemy Dungeon
@@ -5937,7 +5937,7 @@
 333303020 Dungeon Man (Madman) Dual-wielding Scythe Poison Doping Strong Enemy Dungeon
 333304000 Dungeon Man (Fat) Hatchet Poison Doping Strong Enemy Dungeon
 333304010 Dungeon Man (Fat) Red Hot Hatchet Poison Doping Strong Enemy Dungeon
-333304020,Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
+333304020 Dungeon Man (Fat) Machete Shotgun Poison Doping Strong Enemy Dungeon
 333304040 Dungeon Man (Fat) Saw Poison Doping Strong Enemy Dungeon
 333304050 Dungeon Man (Fat) Naked Iron Ball in Both Hands Poisoned Doping Strong Enemy Dungeon
 333304051 Dungeon Man (Fat) (Iron Ball in Both Hands Gentleman) Poisoning + Doping Strong Enemy
@@ -5954,7 +5954,7 @@
 335303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 335303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 335303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-335304000,Dungeon Man (Fat) Machete Dungeon
+335304000 Dungeon Man (Fat) Machete Dungeon
 335304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 335304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 335304040 Dungeon Man (Fat) Saw Dungeon
@@ -5982,7 +5982,7 @@
 336303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 336303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 336303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-336304000,Dungeon Man (Fat) Machete Dungeon
+336304000 Dungeon Man (Fat) Machete Dungeon
 336304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 336304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 336304040 Dungeon Man (Fat) Saw Dungeon
@@ -6010,7 +6010,7 @@
 337303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 337303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 337303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-337304000,Dungeon Man (Fat) Machete Dungeon
+337304000 Dungeon Man (Fat) Machete Dungeon
 337304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 337304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 337304040 Dungeon Man (Fat) Saw Dungeon
@@ -6038,7 +6038,7 @@
 338303142 Dungeon Man (Madman) Corpse Owner Storm Attribute Dungeon
 338303162 Dungeon Man (Madman) Dual Scythe Storm Attribute Dungeon
 338303169 Dungeon Man (Madman) Dual Scythe Ritual Dungeon
-338304000,Dungeon Man (Fat) Machete Dungeon
+338304000 Dungeon Man (Fat) Machete Dungeon
 338304010 Dungeon Man (Fat) Red Hot Hatchet Dungeon
 338304020 Dungeon Man (Fat) Machete Shotgun Dungeon
 338304040 Dungeon Man (Fat) Saw Dungeon

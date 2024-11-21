@@ -28,7 +28,7 @@
 6530 Automatically generated chalice [Level 5 】Is
 6532 Automatically generated chalice [Level 5 】Is _ Multi
 6601 Automatically generated chalice [Level 6 】Thumel _ curse
-6621,Automatically generated chalice [Level 6 】 Laurent _ curse
+6621 Automatically generated chalice [Level 6 】 Laurent _ curse
 6631 Automatically generated chalice [Level 6 】Is _ curse
 6701 Automatically generated chalice [Level 7 】Thumel _ curse
 6702 Automatically generated chalice [Level 7 】Thumel _ Multi
@@ -40,4 +40,4 @@
 6732 Automatically generated chalice [Level 7 】Is _ Multi
 6733 Automatically generated chalice [Level 7 】Is _ A terrible curse
 6900 For character debugging 1
-6901,For character debugging 2
+6901 For character debugging 2

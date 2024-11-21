@@ -33,7 +33,7 @@
 812 Hey hey hey
 813 Fist pump
 814 Praise
-815,roar
+815 roar
 816 Pleading for your life
 817 Dust off
 818 religion A (Simple)
@@ -71,7 +71,7 @@
 1500 SAN Value Recovery + 1
 1501 SAN Value Recovery + 2
 1510 Seoul 0 】
-1511,Seoul 1 】
+1511 Seoul 1 】
 1512 Seoul 2 】
 1513 Seoul 3 】
 1514 Seoul 4 】
@@ -117,7 +117,7 @@
 1666 Defective Magic Stone Ore Level 3
 1667 Defective Magic Stone Ore Level 4
 1668 Defective Magic Stone Ore Level 5
-1669,Defective Magic Stone Ore Level 6
+1669 Defective Magic Stone Ore Level 6
 1670 Defective Magic Stone Ore Level 7
 1671 Round Magic Stone Ore Level 1
 1672 Round Magic Stone Ore Level 2
@@ -144,7 +144,7 @@
 2080 Guided missile
 2090 Friendly Fire
 2110 Messenger Mimicry
-2120,Cosmic Arrow
+2120 Cosmic Arrow
 2130 Ghost Bullet
 2140 Snake Summoning
 3000 Weapon Enhancement Material [Common]
@@ -172,7 +172,7 @@
 4103 Magic stone removal unlock item
 4104 Body gem removable items
 4105 Quick Dungeon Unlocking Items
-4110,Shop Opening Workshop Shop A
+4110 Shop Opening Workshop Shop A
 4111 Shop Opening Workshop Shop D
 4112 Shop Opening Workshop Shop B
 4113 Shop Opening Workshop Shop C
@@ -265,7 +265,7 @@
 11100 Poison/bleeding recovery potion
 11101 Madness/Beast Transformation Recovery Potion
 11110 Beastification Potion
-11130,Regain Up
+11130 Regain Up
 11200 Flame Pot
 11201 Timed Explosion Bottle
 11210 Poison Knife
@@ -290,6 +290,6 @@
 12080 Guided missile
 12090 Friendly Fire
 12110 Messenger Mimicry
-12120,Cosmic Arrow
+12120 Cosmic Arrow
 12130 Ghost Bullet
 12140 Snake Summoning

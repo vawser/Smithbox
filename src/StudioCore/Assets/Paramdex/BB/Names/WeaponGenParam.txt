@@ -33,7 +33,7 @@
 13100 Sword Sickle +9 _LV96_ Standard (character after clearing the game)
 13200 Sword Sickle +10 _LV120_ People who play PvP
 14000 Workshop Long Gun +9 _LV75_ First week (playing from the beginning character at current expected level)
-14100,Workshop Long Gun +9 _LV96_ Standard (character after clearing the game)
+14100 Workshop Long Gun +9 _LV96_ Standard (character after clearing the game)
 14200 Workshop Long Gun +10 _LV120_ People who play PvP
 15000 Church Rifle +9 _LV75_ First week (playing from the beginning character at current expected level)
 15100 Church Rifle +9 _LV96_ Standard (character after clearing the game)
@@ -93,7 +93,7 @@
 34200 Hunter's Torch +10 _LV120_ People who play PvP
 35000 Cane Whip +9 _LV75_ First week (playing from the beginning character at current expected level)
 35100 Cane Whip +9 _LV96_ Standard (character after clearing the game)
-35200,Cane Whip +10 _LV120_ People who play PvP
+35200 Cane Whip +10 _LV120_ People who play PvP
 36000 Sawtooth Curved Sword +9 _LV75_ First week (playing from the beginning character at current expected level)
 36100 Sawtooth Curved Sword +9 _LV96_ Standard (character after clearing the game)
 36200 Sawtooth Curved Sword +10 _LV120_ People who play PvP
@@ -103,7 +103,7 @@
 38000 Multi-joint +9 _LV75_ First week (playing from the beginning character at current expected level)
 38100 Multi-joint +9 _LV96_ Standard (character after clearing the game)
 38200 Multi-joint +10 _LV120_ People who play PvP
-39000,Moonlight Sword +9 _LV75_ First week (playing from the beginning character at current expected level)
+39000 Moonlight Sword +9 _LV75_ First week (playing from the beginning character at current expected level)
 39100 Moonlight Sword +9 _LV96_ Standard (character after clearing the game)
 39200 Moonlight Sword +10 _LV120_ People who play PvP
 40000 Double Blade +9 _LV75_ First week (playing from the beginning character at current expected level)
@@ -113,7 +113,7 @@
 41100 Gunhammer +9 _LV96_ Standard (character after clearing the game)
 41200 Gun Hammer +10 _LV120_ People who play PvP
 42000 Cross Mace +9 _LV75_ First week (playing from the beginning character at current expected level)
-42100,Cross Mace +9 _LV96_ Standard (character after clearing the game)
+42100 Cross Mace +9 _LV96_ Standard (character after clearing the game)
 42200 Cross Mace +10 _LV120_ People who play PvP
 43000 War Pick +9 _LV75_ First week (playing from the beginning character at current expected level)
 43100 War Pick +9 _LV96_ Standard (character after clearing the game)
@@ -123,7 +123,7 @@
 44200 Circular saw chainsaw +10 _LV120_ People who play PvP
 45000 Transform Bow +9 _LV75_ First week (playing from the beginning character at current expected level)
 45001 Transform Bow +9 _LV75__ Charged Blood Crystal Equipment
-45100,Transform Bow +9 _LV96_ Standard (character after clearing the game)
+45100 Transform Bow +9 _LV96_ Standard (character after clearing the game)
 45200 Transform Bow +10 _LV120_ People who play PvP
 46000 Gatling +9 _LV75_ First week (playing from the beginning character at current expected level)
 46100 Gatling +9 _LV96_ Standard (character after clearing the game)
@@ -153,7 +153,7 @@
 2000500 Japanese Sword +5
 2000600 Japanese Sword +6
 2000700 Japanese Sword +7
-2000800,Japanese Sword +8
+2000800 Japanese Sword +8
 2000900 Japanese Sword +9
 2001000 Japanese Sword +10
 2010000 Japanese sword
@@ -164,7 +164,7 @@
 2010500 Japanese Sword +5
 2010600 Japanese Sword +6
 2010700 Japanese Sword +7
-2010800,Japanese Sword +8
+2010800 Japanese Sword +8
 2010900 Japanese Sword +9
 2011000 Japanese Sword +10
 2020000 Japanese sword
@@ -175,7 +175,7 @@
 2020500 Japanese Sword +5
 2020600 Japanese Sword +6
 2020700 Japanese Sword +7
-2020800,Japanese Sword +8
+2020800 Japanese Sword +8
 2020900 Japanese Sword +9
 2021000 Japanese Sword +10
 2090000 Wandering Sword
@@ -292,7 +292,7 @@
 6000800 Workshop Long Gun +8
 6000900 Workshop Long Gun +9
 6001000 Workshop Long Gun +10
-6090000,Wandering Workshop Long Gun
+6090000 Wandering Workshop Long Gun
 6100000 Church rifle
 6100100 Church Rifle +1
 6100200 Church Rifle +2
@@ -316,7 +316,7 @@
 6180900 [ NPC Exclusive: Church Gun (Blood Paste) +9
 6181000 [ NPC Exclusive: Church Gun (Blood Paste) +10
 6190000 Wandering Church Long Gun
-7000000,Nokonata
+7000000 Nokonata
 7000100 Nokonata +1
 7000200 Nokonata +2
 7000300 Nokonata +3
@@ -327,7 +327,7 @@
 7000800 Nokonata +8
 7000900 Nokonata +9
 7001000 Nokonata +10
-7010000,Nokonata
+7010000 Nokonata
 7010100 Nokonata +1
 7010200 Nokonata +2
 7010300 Nokonata +3
@@ -338,7 +338,7 @@
 7010800 Nokonata +8
 7010900 Nokonata +9
 7011000 Nokonata +10
-7020000,Nokonata
+7020000 Nokonata
 7020100 Nokonata +1
 7020200 Nokonata +2
 7020300 Nokonata +3
@@ -428,7 +428,7 @@
 8100700 Hammer Sword +7
 8100800 Hammer Great Sword +8
 8100900 Hammer Sword +9
-8101000,Hammer Sword +10
+8101000 Hammer Sword +10
 8110000 Hammer Sword
 8110100 Hammer Sword +1
 8110200 Hammer Sword +2
@@ -439,7 +439,7 @@
 8110700 Hammer Sword +7
 8110800 Hammer Great Sword +8
 8110900 Hammer Sword +9
-8111000,Hammer Sword +10
+8111000 Hammer Sword +10
 8120000 Hammer Sword
 8120100 Hammer Sword +1
 8120200 Hammer Sword +2
@@ -450,7 +450,7 @@
 8120700 Hammer Sword +7
 8120800 Hammer Great Sword +8
 8120900 Hammer Sword +9
-8121000,Hammer Sword +10
+8121000 Hammer Sword +10
 8190000 Wandering Hammer Great Sword
 9000000 Fist Beast
 9000100 Fist Beast +1
@@ -563,7 +563,7 @@
 11000600 Pile Bunker +6
 11000700 Pile Bunker +7
 11000800 Pile Bunker +8
-11000900,Pile Bunker +9
+11000900 Pile Bunker +9
 11001000 Pile Bunker +10
 11010000 Pile Bunker
 11010100 Pile Bunker +1
@@ -574,7 +574,7 @@
 11010600 Pile Bunker +6
 11010700 Pile Bunker +7
 11010800 Pile Bunker +8
-11010900,Pile Bunker +9
+11010900 Pile Bunker +9
 11011000 Pile Bunker +10
 11020000 Pile Bunker
 11020100 Pile Bunker +1
@@ -585,7 +585,7 @@
 11020600 Pile Bunker +6
 11020700 Pile Bunker +7
 11020800 Pile Bunker +8
-11020900,Pile Bunker +9
+11020900 Pile Bunker +9
 11021000 Pile Bunker +10
 11090000 Wandering Pile Bunker
 12000000 wheel
@@ -683,7 +683,7 @@
 14100100 Vampire pistol +1
 14100200 Vampire pistol +2
 14100300 Vampire pistol +3
-14100400,Vampire pistol +4
+14100400 Vampire pistol +4
 14100500 Vampire pistol +5
 14100600 Vampire pistol +6
 14100700 Vampire pistol +7
@@ -724,7 +724,7 @@
 18000600 Sprayer +6
 18000700 Sprayer +7
 18000800 Sprayer +8
-18000900,Sprayer +9
+18000900 Sprayer +9
 18001000 Sprayer +10
 18090000 Wandering Sprayer
 18100000 Sprayer _ Flamethrower
@@ -754,7 +754,7 @@
 20000800 Hunter's Torch +8
 20000900 Hunter's Torch +9
 20001000 Hunter's Torch +10
-20090000,Wandering Hunter Torch
+20090000 Wandering Hunter Torch
 20100000 Just a torch
 22000000 Cane Whip
 22000100 Cane Whip +1
@@ -859,7 +859,7 @@
 24020900 Saw Whip +9
 24021000 Saw Whip +10
 24090000 Wandering Saw Whip
-24099000,[For events] Saw whip
+24099000 [For events] Saw whip
 25000000 Articulated
 25000100 Multi-joint +1
 25000200 Multi-joint +2
@@ -969,7 +969,7 @@
 28000100 Gun Hammer +1
 28000200 Gunhammer +2
 28000300 Gun Hammer +3
-28000400,Gun Hammer +4
+28000400 Gun Hammer +4
 28000500 Gunhammer +5
 28000600 Gun Hammer +6
 28000700 Gunhammer +7
@@ -980,7 +980,7 @@
 28010100 Gun Hammer +1
 28010200 Gunhammer +2
 28010300 Gun Hammer +3
-28010400,Gun Hammer +4
+28010400 Gun Hammer +4
 28010500 Gunhammer +5
 28010600 Gun Hammer +6
 28010700 Gunhammer +7
@@ -991,7 +991,7 @@
 28020100 Gun Hammer +1
 28020200 Gunhammer +2
 28020300 Gun Hammer +3
-28020400,Gun Hammer +4
+28020400 Gun Hammer +4
 28020500 Gunhammer +5
 28020600 Gun Hammer +6
 28020700 Gunhammer +7
@@ -1069,7 +1069,7 @@
 30020900 War Pick +9
 30021000 War Pick +10
 30090000 Wandering Warpick
-30990000,[Event] War Pick
+30990000 [Event] War Pick
 31000000 Circular saw chainsaw
 31000100 Circular saw chainsaw + 1
 31000200 Circular saw chainsaw + 2
@@ -1111,7 +1111,7 @@
 32000300 Transform Bow +3
 32000400 Transform Bow +4
 32000500 Transform Bow +5
-32000600,Transform Bow +6
+32000600 Transform Bow +6
 32000700 Transform Bow +7
 32000800 Transform Bow +8
 32000900 Transform Bow +9
@@ -1122,7 +1122,7 @@
 32010300 Transform Bow +3
 32010400 Transform Bow +4
 32010500 Transform Bow +5
-32010600,Transform Bow +6
+32010600 Transform Bow +6
 32010700 Transform Bow +7
 32010800 Transform Bow +8
 32010900 Transform Bow +9
@@ -1133,7 +1133,7 @@
 32020300 Transform Bow +3
 32020400 Transform Bow +4
 32020500 Transform Bow +5
-32020600,Transform Bow +6
+32020600 Transform Bow +6
 32020700 Transform Bow +7
 32020800 Transform Bow +8
 32020900 Transform Bow +9
@@ -1169,7 +1169,7 @@
 35000000 Grenade Launcher
 35000100 Grenade Launcher +1
 35000200 Grenade Launcher +2
-35000300,Grenade Launcher +3
+35000300 Grenade Launcher +3
 35000400 Grenade Launcher +4
 35000500 Grenade Launcher +5
 35000600 Grenade Launcher +6

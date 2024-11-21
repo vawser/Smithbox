@@ -26,7 +26,7 @@
 100101 Alien Saw Hatchet
 100102 Lost Saw Blade
 100103 Beast hunting axe (axe pole)
-100104,Alien Beast Hunting Axe
+100104 Alien Beast Hunting Axe
 100105 Lost Beast Hunting Axe
 100106 Cane (whip)
 100107 Heterogenous Wand
@@ -55,7 +55,7 @@
 100400 Blade of Mercy (Dual Swords)
 100401 Alien Mercy Blade
 100402 Lost Blade of Mercy
-100403,Beak Mask (Jack the Ripper _ head)
+100403 Beak Mask (Jack the Ripper _ head)
 100404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
 100405 Crow Feather Armband (Jack the Ripper _ arm)
 100406 Raven Feather Trousers (Jack the Ripper) _ leg)
@@ -106,7 +106,7 @@
 101020 Piercing gun (piercing gun)
 101021 Timed Explosion Bottle
 101022 Timed explosion bottle with rope
-101100,Beast Claws (Fist Beast)
+101100 Beast Claws (Fist Beast)
 101101 Alien Beast Claws
 101102 Lost Claws
 101103 Cannon (cannon)
@@ -138,7 +138,7 @@
 101134 Bloodletting Hammer (Cross Mace)
 101135 Alien Bloodletting Hammer
 101136 Lost Bloodletting Hammer
-101137,Arm of Lesser Amun (multi-jointed)
+101137 Arm of Lesser Amun (multi-jointed)
 101138 Heterogeneous Small Amun Arm
 101139 The Lost Lesser Arm of Amun
 101140 Parasites of the Goss (slugs)
@@ -170,7 +170,7 @@
 110101 Alien Saw Hatchet
 110102 Lost Saw Blade
 110103 Beast hunting axe (axe pole)
-110104,Alien Beast Hunting Axe
+110104 Alien Beast Hunting Axe
 110105 Lost Beast Hunting Axe
 110106 Cane (whip)
 110107 Heterogenous Wand
@@ -199,7 +199,7 @@
 110400 Blade of Mercy (Dual Swords)
 110401 Alien Mercy Blade
 110402 Lost Blade of Mercy
-110403,Beak Mask (Jack the Ripper _ head)
+110403 Beak Mask (Jack the Ripper _ head)
 110404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
 110405 Crow Feather Armband (Jack the Ripper _ arm)
 110406 Raven Feather Trousers (Jack the Ripper) _ leg)
@@ -250,7 +250,7 @@
 111020 Piercing gun (piercing gun)
 111021 Timed Explosion Bottle
 111022 Timed explosion bottle with rope
-111100,Beast Claws (Fist Beast)
+111100 Beast Claws (Fist Beast)
 111101 Alien Beast Claws
 111102 Lost Claws
 111103 Cannon (cannon)
@@ -282,7 +282,7 @@
 111134 Bloodletting Hammer (Cross Mace)
 111135 Alien Bloodletting Hammer
 111136 Lost Bloodletting Hammer
-111137,Arm of Lesser Amun (multi-jointed)
+111137 Arm of Lesser Amun (multi-jointed)
 111138 Heterogeneous Small Amun Arm
 111139 The Lost Lesser Arm of Amun
 111140 Parasites of the Goss (slugs)
@@ -314,7 +314,7 @@
 120101 Alien Saw Hatchet
 120102 Lost Saw Blade
 120103 Beast hunting axe (axe pole)
-120104,Alien Beast Hunting Axe
+120104 Alien Beast Hunting Axe
 120105 Lost Beast Hunting Axe
 120106 Cane (whip)
 120107 Heterogenous Wand
@@ -343,7 +343,7 @@
 120400 Blade of Mercy (Dual Swords)
 120401 Alien Mercy Blade
 120402 Lost Blade of Mercy
-120403,Beak Mask (Jack the Ripper _ head)
+120403 Beak Mask (Jack the Ripper _ head)
 120404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
 120405 Crow Feather Armband (Jack the Ripper _ arm)
 120406 Raven Feather Trousers (Jack the Ripper) _ leg)
@@ -394,7 +394,7 @@
 121020 Piercing gun (piercing gun)
 121021 Timed Explosion Bottle
 121022 Timed explosion bottle with rope
-121100,Beast Claws (Fist Beast)
+121100 Beast Claws (Fist Beast)
 121101 Alien Beast Claws
 121102 Lost Claws
 121103 Cannon (cannon)
@@ -426,7 +426,7 @@
 121134 Bloodletting Hammer (Cross Mace)
 121135 Alien Bloodletting Hammer
 121136 Lost Bloodletting Hammer
-121137,Arm of Lesser Amun (multi-jointed)
+121137 Arm of Lesser Amun (multi-jointed)
 121138 Heterogeneous Small Amun Arm
 121139 The Lost Lesser Arm of Amun
 121140 Parasites of the Goss (slugs)
@@ -458,7 +458,7 @@
 130101 Alien Saw Hatchet
 130102 Lost Saw Blade
 130103 Beast hunting axe (axe pole)
-130104,Alien Beast Hunting Axe
+130104 Alien Beast Hunting Axe
 130105 Lost Beast Hunting Axe
 130106 Cane (whip)
 130107 Heterogenous Wand
@@ -487,7 +487,7 @@
 130400 Blade of Mercy (Dual Swords)
 130401 Alien Mercy Blade
 130402 Lost Blade of Mercy
-130403,Beak Mask (Jack the Ripper _ head)
+130403 Beak Mask (Jack the Ripper _ head)
 130404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
 130405 Crow Feather Armband (Jack the Ripper _ arm)
 130406 Raven Feather Trousers (Jack the Ripper) _ leg)
@@ -538,7 +538,7 @@
 131020 Piercing gun (piercing gun)
 131021 Timed Explosion Bottle
 131022 Timed explosion bottle with rope
-131100,Beast Claws (Fist Beast)
+131100 Beast Claws (Fist Beast)
 131101 Alien Beast Claws
 131102 Lost Claws
 131103 Cannon (cannon)
@@ -570,7 +570,7 @@
 131134 Bloodletting Hammer (Cross Mace)
 131135 Alien Bloodletting Hammer
 131136 Lost Bloodletting Hammer
-131137,Arm of Lesser Amun (multi-jointed)
+131137 Arm of Lesser Amun (multi-jointed)
 131138 Heterogeneous Small Amun Arm
 131139 The Lost Lesser Arm of Amun
 131140 Parasites of the Goss (slugs)
@@ -602,7 +602,7 @@
 140101 Alien Saw Hatchet
 140102 Lost Saw Blade
 140103 Beast hunting axe (axe pole)
-140104,Alien Beast Hunting Axe
+140104 Alien Beast Hunting Axe
 140105 Lost Beast Hunting Axe
 140106 Cane (whip)
 140107 Heterogenous Wand
@@ -631,7 +631,7 @@
 140400 Blade of Mercy (Dual Swords)
 140401 Alien Mercy Blade
 140402 Lost Blade of Mercy
-140403,Beak Mask (Jack the Ripper _ head)
+140403 Beak Mask (Jack the Ripper _ head)
 140404 Crow Feather Hunting Attire (Jack the Ripper _ Torso)
 140405 Crow Feather Armband (Jack the Ripper _ arm)
 140406 Raven Feather Trousers (Jack the Ripper) _ leg)
@@ -682,7 +682,7 @@
 141020 Piercing gun (piercing gun)
 141021 Timed Explosion Bottle
 141022 Timed explosion bottle with rope
-141100,Beast Claws (Fist Beast)
+141100 Beast Claws (Fist Beast)
 141101 Alien Beast Claws
 141102 Lost Claws
 141103 Cannon (cannon)
@@ -714,7 +714,7 @@
 141134 Bloodletting Hammer (Cross Mace)
 141135 Alien Bloodletting Hammer
 141136 Lost Bloodletting Hammer
-141137,Arm of Lesser Amun (multi-jointed)
+141137 Arm of Lesser Amun (multi-jointed)
 141138 Heterogeneous Small Amun Arm
 141139 The Lost Lesser Arm of Amun
 141140 Parasites of the Goss (slugs)
@@ -751,7 +751,7 @@
 200024 Bloodstone Chunk
 200030 Henrik's Hunting Hat (Advanced Hunter _ head)
 200031 Henrik's Hunting Attire (Advanced Hunter _ Torso)
-200032,Henrik's Hunting Gloves (Advanced Hunter _ arm)
+200032 Henrik's Hunting Gloves (Advanced Hunter _ arm)
 200033 Henrik's Hunting Pants (Advanced Hunter _ leg)
 200040 Priest's Hunting Hat (Father Gascoigne _ head)
 200041 Priest's Hunting Attire (Father Gascoigne _ Torso)
@@ -801,7 +801,7 @@
 210024 Bloodstone Chunk
 210030 Henrik's Hunting Hat (Advanced Hunter _ head)
 210031 Henrik's Hunting Attire (Advanced Hunter _ Torso)
-210032,Henrik's Hunting Gloves (Advanced Hunter _ arm)
+210032 Henrik's Hunting Gloves (Advanced Hunter _ arm)
 210033 Henrik's Hunting Pants (Advanced Hunter _ leg)
 210040 Priest's Hunting Hat (Father Gascoigne _ head)
 210041 Priest's Hunting Attire (Father Gascoigne _ Torso)
@@ -863,7 +863,7 @@
 220053 Covert _ leg
 220060 Kin of the Flame of Destruction _ head
 220061 Kin of the Flame of Destruction _ Torso
-220062,Kin of the Flame of Destruction _ arm
+220062 Kin of the Flame of Destruction _ arm
 220063 Kin of the Flame of Destruction _ leg
 220064 The mad cultist _ head
 220065 The mad cultist _ Torso
@@ -913,7 +913,7 @@
 230053 Covert _ leg
 230060 Kin of the Flame of Destruction _ head
 230061 Kin of the Flame of Destruction _ Torso
-230062,Kin of the Flame of Destruction _ arm
+230062 Kin of the Flame of Destruction _ arm
 230063 Kin of the Flame of Destruction _ leg
 230064 The mad cultist _ head
 230065 The mad cultist _ Torso
@@ -963,7 +963,7 @@
 240053 Covert _ leg
 240060 Kin of the Flame of Destruction _ head
 240061 Kin of the Flame of Destruction _ Torso
-240062,Kin of the Flame of Destruction _ arm
+240062 Kin of the Flame of Destruction _ arm
 240063 Kin of the Flame of Destruction _ leg
 240064 The mad cultist _ head
 240065 The mad cultist _ Torso
