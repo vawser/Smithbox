@@ -25,11 +25,12 @@
     <iconId 
     AltName="Icon ID" 
     Wiki="The menu icon texture ID." 
-    TextureRef="Booster/01_common/SB_PartsThumbnails/equipModelId/" />
+    Obsolete="" />
     
     <modelId
     AltName="Model ID"
-    Wiki="The model ID." />
+    Wiki="The model ID." 
+    TextureRef="Booster/01_common/SB_PartsThumbnails/modelId/" />
     
     <sortId
     AltName="Sort ID"
@@ -40,11 +41,11 @@
     Wiki="Weight of the part." />
     
     <energyMax
-    AltName="Energy Maximum"
-    Wiki="The energy max of this booster." />
+    AltName="Energy Capacity"
+    Wiki="The energy capacity of this booster." />
     
     <energyRecoveryPerSec
-    AltName="Energy Recovery"
+    AltName="Energy Output"
     Wiki="The energy recovery rate. In points per second." />
     
     <consumeEN
@@ -52,7 +53,7 @@
     Wiki="The consumption rate of energy. In points per second." />
     
     <energyRecoveryDelayTimeSec
-    AltName="Energy Recovery Delay"
+    AltName="Energy Output Delay"
     Wiki="The delay before energy recovery starts. In seconds." />
     
     <f00_dashBoostMaxSpeedKMPH
@@ -149,11 +150,11 @@
     
     <sellValue
     AltName="Sell Value"
-    Wiki="" />
+    Wiki="Price to sell the item for." />
     
     <saleValue
     AltName="Sale Value"
-    Wiki="" />
+    Wiki="Price the item is on sale for." />
     
     <QB_ReloadTimeSec
     AltName="Quick Boost: Reload Time"

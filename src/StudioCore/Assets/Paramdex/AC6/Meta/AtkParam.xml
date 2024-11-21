@@ -2186,5 +2186,41 @@
         <Option Value="0" Name="None" />
         <Option Value="1" Name="Ice Worm Head" />
     </Enum>
+    <Enum Name="WEP_MATERIAL_DEF" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Kinetic" />
+        <Option Value="101" Name="Shield: Strong Kinetic" />
+        <Option Value="102" Name="Shield: Energy" />
+        <Option Value="103" Name="Body: Kinetic" />
+        <Option Value="104" Name="Body: Strong Kinetic" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="106" Name="Body: Cloth" />
+        <Option Value="107" Name="Shield: Plamsa" />
+        <Option Value="108" Name="Pulse Armor: Large Energy - White Hit Ripple" />
+        <Option Value="109" Name="Generator: Normal" />
+        <Option Value="110" Name="Generator: Coral" />
+        <Option Value="111" Name="Pulse Armor: Extra-Large Enemy - Coral Hit Ripple" />
+        <Option Value="112" Name="Shield: Coral" />
+        <Option Value="254" Name="Reserve 3" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Kinetic" />
+        <Option Value="101" Name="Shield: Strong Kinetic" />
+        <Option Value="102" Name="Shield: Energy" />
+        <Option Value="103" Name="Body: Kinetic" />
+        <Option Value="104" Name="Body: Strong Kinetic" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="106" Name="Shield: Energy - Initial Guard" />
+        <Option Value="107" Name="Shield: Coral - Initial; Guard" />
+        <Option Value="108" Name="Pulse Armor: Large Energy - White Hit Ripple" />
+        <Option Value="109" Name="Generator: Normal" />
+        <Option Value="110" Name="Generator: Coral" />
+        <Option Value="111" Name="Pulse Armor: Extra-Large Enemy - Coral Hit Ripple" />
+        <Option Value="112" Name="Shield: Coral" />
+        <Option Value="254" Name="Reserve 3" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
   </Enums>
 </PARAMMETA>

@@ -1,5 +1,185 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of generator parts."  />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="The icon ID to use."
+    Obsolete="" />
+    
+    <modelId
+    AltName="Model ID"
+    Wiki="The model ID to use for this part." 
+    TextureRef="Weapon/01_common/SB_PartsThumbnails/modelId/" />
+    
+    <sortId
+    AltName="Sort ID"
+    Wiki="Determines the order of this part in the menu." />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="The weight of this part." />
+    
+    <energyMax
+    AltName="Energy Capacity"
+    Wiki="The energy capacity of this generator." />
+    
+    <energyRecoveryPerSec
+    AltName="Energy Output"
+    Wiki="The energy recovery rate. In points per second." />
+    
+    <consumeEN
+    AltName="Energy Consumption"
+    Wiki="The consumption rate of energy. In points per second." />
+    
+    <energyRecoveryDelayTimeSec
+    AltName="Energy Output Delay"
+    Wiki="The delay before energy recovery starts. In seconds." />
+    
+    <energyRecoveryDelayTimeForEmptySec
+    AltName="Energy Output Delay (when Empty)"
+    Wiki="The delay before energy recovery starts (when empty). In seconds." />
+    
+    <energyRecoverValForEmpty
+    AltName="Energy Output (when Empty)"
+    Wiki="The energy capacity of this generator (when empty)." />
+    
+    <AppropriateType_Energy
+    AltName="Energy Weapon Suitability"
+    Wiki="Suitability for energy weapons with this generator." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+    <Maker
+    AltName="Corporation Texture ID"  
+    Wiki="The corporation texture displayed for this part."
+    Enum="EQUIP_MAKER_TYPE" 
+    TextureRef="Direct/01_common/SB_MakerLogo/Maker/MakerLogo_" />
+    
+    <sellValue
+    AltName="Sell Value"
+    Wiki="Price to sell the item for." />
+    
+    <saleValue
+    AltName="Sale Value"
+    Wiki="Price the item is on sale for." />
+
+    <computed_f00
+    AltName="Menu Display - Value 0"
+    Wiki="Value for menu display only." />
+    
+    <computed_f01
+    AltName="Menu Display - Value 1"
+    Wiki="Value for menu display only." />
+    
+    <computed_f02
+    AltName="Menu Display - Value 2"
+    Wiki="Value for menu display only." />
+    
+    <computed_f03
+    AltName="Menu Display - Value 3"
+    Wiki="Value for menu display only." />
+    
+    <computed_f04
+    AltName="Menu Display - Value 4"
+    Wiki="Value for menu display only." />
+    
+    <computed_f05
+    AltName="Menu Display - Value 5"
+    Wiki="Value for menu display only." />
+    
+    <computed_f06
+    AltName="Menu Display - Value 6"
+    Wiki="Value for menu display only." />
+    
+    <computed_f07
+    AltName="Menu Display - Value 7"
+    Wiki="Value for menu display only." />
+    
+    <computed_f08
+    AltName="Menu Display - Value 8"
+    Wiki="Value for menu display only." />
+    
+    <computed_f09
+    AltName="Menu Display - Value 9"
+    Wiki="Value for menu display only." />
+    
+    <computed_f10
+    AltName="Menu Display - Value 10"
+    Wiki="Value for menu display only." />
+    
+    <computed_f11
+    AltName="Menu Display - Value 11"
+    Wiki="Value for menu display only." />
+    
+    <computed_f12
+    AltName="Menu Display - Value 12"
+    Wiki="Value for menu display only." />
+    
+    <computed_f13
+    AltName="Menu Display - Value 13"
+    Wiki="Value for menu display only." />
+    
+    <computed_f14
+    AltName="Menu Display - Value 14"
+    Wiki="Value for menu display only." />
+    
+    <computed_f_last
+    AltName="Menu Display - Value 15"
+    Wiki="Value for menu display only." />
+    
+    <pad_end2
+    AltName=""
+    Padding="" />
+    
+    <criticalDefSfxMaterial
+    AltName="Additiona Particles: Direct Hit"
+    Wiki="Defense material when receiving a critical hit"
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <thrustersColorType AltName="Thruster Particle Color Type" 
+    Wiki="Determines SFX used by boosters. Coral also affects core expansion SFX."
+    Enum="THRUSTER_PARTICLE_GENERATOR_COLOR_TYPE" /> 
+    
+    <pad07
+    AltName=""
+    Padding="" />
+    
+    <refId 
+    AltName="Inherited Generator ID" 
+    Wiki="The inherited data for this part." 
+    Refs="EquipParamGenerator" />
+    
+    <pad08
+    AltName=""
+    Padding="" />
+    
+    <pad_end3
+    AltName=""
+    Padding="" />
+  </Field>
   <Enums>
     <Enum Name="EQUIP_MAKER_TYPE" type="u16">
         <Option Value="0" Name="None" />
@@ -26,27 +206,29 @@
         <Option Value="102" Name="Unused - RRI(旧)" />
         <Option Value="104" Name="Unused - オルマイ(本性)" />
     </Enum>
-    <Enum Name="GeneratorColorSfxTypeEnum" type="s8">
+    <Enum Name="THRUSTER_PARTICLE_GENERATOR_COLOR_TYPE" type="s8">
         <Option Value="-1" Name="None" />
         <Option Value="0" Name="Fire Orange" />
         <Option Value="1" Name="Arquebus Blue" />
         <Option Value="2" Name="Coral Red" />
     </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Kinetic" />
+        <Option Value="101" Name="Shield: Strong Kinetic" />
+        <Option Value="102" Name="Shield: Energy" />
+        <Option Value="103" Name="Body: Kinetic" />
+        <Option Value="104" Name="Body: Strong Kinetic" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="106" Name="Shield: Energy - Initial Guard" />
+        <Option Value="107" Name="Shield: Coral - Initial; Guard" />
+        <Option Value="108" Name="Pulse Armor: Large Energy - White Hit Ripple" />
+        <Option Value="109" Name="Generator: Normal" />
+        <Option Value="110" Name="Generator: Coral" />
+        <Option Value="111" Name="Pulse Armor: Extra-Large Enemy - Coral Hit Ripple" />
+        <Option Value="112" Name="Shield: Coral" />
+        <Option Value="254" Name="Reserve 3" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
   </Enums>
-  <Field>
-    <menuModelId AltName="Menu Model ID" TextureRef="Weapon/01_common/SB_PartsThumbnails/menuModelId/" Wiki="Menu Model to display." />
-    <weight AltName="Weight" Wiki="The weight of this part." />
-    <energyCapacity AltName="Energy Capacity" Wiki="The energy capacity this part grants." />
-    <energyOutput AltName="Energy Output" Wiki="The energy output this part grants." />
-    <enLoad AltName="Energy Load" Wiki="The energy load this part consumes." />
-    <enRecharge AltName="Energy Load Recharge" Wiki="The energy load recharge rate this part grants." />
-    <supplyRecovery AltName="Energy Supply Recovery" Wiki="The energy supply recovery this part grants. It an inverse multiplier. 1x == 1000 (base value), 4x == 250, etc. Game value == 1000/x." />
-    <postRecoveryEnSupply AltName="Post Recovery Energy Supply" Wiki="The energy supply post recovery this part grants. It an inverse multiplier. 1x == 1000 (base value), 4x == 250, etc. Game value == 1000/x." />
-    <energyFirearmSpec AltName="Energy Firearm Specialization" Wiki="The energy firearm specialization this part grants." />
-    <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" Wiki="The corporation texture displayed for this part." />
-    <colorSfxType AltName="Color SFX Type" Enum="GeneratorColorSfxTypeEnum" Wiki="Determines SFX used by boosters. Coral also affects core expansion SFX."/> 
-    <expansionSfxType AltName="Expansion SFX Type" Wiki="The sfx type for expansion parts that this part affects." />
-    <inheritedGeneratorId AltName="Inherited Generator ID" Refs="EquipParamGenerator" Wiki="The inherited data for this part." />
-  </Field>
-  <Self />
 </PARAMMETA>

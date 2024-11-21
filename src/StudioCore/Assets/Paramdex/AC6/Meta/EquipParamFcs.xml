@@ -1,5 +1,227 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of fire control system parts." 
+  CalcCorrectDef="stageMaxVal0,stageMaxVal1,stageMaxVal2,stageMaxVal3,stageMaxVal4,stageMaxGrowVal0,stageMaxGrowVal1,stageMaxGrowVal2,stageMaxGrowVal3,stageMaxGrowVal4" />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="The icon ID to use."
+    Obsolete="" />
+    
+    <modelId
+    AltName="Model ID"
+    Wiki="The model ID to use for this part." 
+    TextureRef="Weapon/01_common/SB_PartsThumbnails/modelId/" />
+    
+    <sortId
+    AltName="Sort ID"
+    Wiki="Determines the order of this part in the menu." />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="The weight of this part." />
+    
+    <energyMax
+    AltName="Energy Capacity"
+    Wiki="The energy capacity of this FCS." />
+    
+    <energyRecoveryPerSec
+    AltName="Energy Output"
+    Wiki="The energy recovery rate. In points per second." />
+    
+    <consumeEN
+    AltName="Energy Consumption"
+    Wiki="The consumption rate of energy. In points per second." />
+    
+    <energyRecoveryDelayTimeSec
+    AltName="Energy Output Delay"
+    Wiki="The delay before energy recovery starts. In seconds." />
+    
+    <predictionShoot_BulletSpeedMPS
+    AltName="Prediction: Bullet Velocity"
+    Wiki="Parameters for calculating the predicted position in a separate frame from the weapon." />
+    
+    <predictionShoot_MaxShootOffset
+    AltName="Prediction: Maximum Firing Offset"
+    Wiki="The value that reaches a ceiling when the prediction difference becomes too large." />
+    
+    <predictionShoot_StartPredDist
+    AltName="Prediction: Starting Distance"
+    Wiki="Distance to start calculating prediction rate." />
+    
+    <energyRecoveryDelayTimeForEmptySec
+    AltName="Energy Output Delay (when Empty)"
+    Wiki="The delay before energy recovery starts if empty. In seconds." />
+    
+    <missileLockPerf
+    AltName="Missle Lock Performance"
+    Wiki="Correction value for missile lock time." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+    <Maker 
+    AltName="Corporation Texture ID" 
+    Enum="EQUIP_MAKER_TYPE" TextureRef="Direct/01_common/SB_MakerLogo/Maker/MakerLogo_" />
+    
+    <sellValue
+    AltName="Sell Value"
+    Wiki="Price to sell the item for." />
+    
+    <saleValue
+    AltName="Sale Value"
+    Wiki="Price the item is on sale for." />
+
+    <computed_f00
+    AltName="Menu Display - Value 0"
+    Wiki="Value for menu display only." />
+    
+    <computed_f01
+    AltName="Menu Display - Value 1"
+    Wiki="Value for menu display only." />
+    
+    <computed_f02
+    AltName="Menu Display - Value 2"
+    Wiki="Value for menu display only." />
+    
+    <computed_f03
+    AltName="Menu Display - Value 3"
+    Wiki="Value for menu display only." />
+    
+    <computed_f04
+    AltName="Menu Display - Value 4"
+    Wiki="Value for menu display only." />
+    
+    <computed_f05
+    AltName="Menu Display - Value 5"
+    Wiki="Value for menu display only." />
+    
+    <computed_f06
+    AltName="Menu Display - Value 6"
+    Wiki="Value for menu display only." />
+    
+    <computed_f07
+    AltName="Menu Display - Value 7"
+    Wiki="Value for menu display only." />
+    
+    <computed_f08
+    AltName="Menu Display - Value 8"
+    Wiki="Value for menu display only." />
+    
+    <computed_f09
+    AltName="Menu Display - Value 9"
+    Wiki="Value for menu display only." />
+    
+    <computed_f10
+    AltName="Menu Display - Value 10"
+    Wiki="Value for menu display only." />
+    
+    <computed_f11
+    AltName="Menu Display - Value 11"
+    Wiki="Value for menu display only." />
+    
+    <computed_f12
+    AltName="Menu Display - Value 12"
+    Wiki="Value for menu display only." />
+    
+    <computed_f13
+    AltName="Menu Display - Value 13"
+    Wiki="Value for menu display only." />
+    
+    <computed_f14
+    AltName="Menu Display - Value 14"
+    Wiki="Value for menu display only." />
+    
+    <computed_f_last
+    AltName="Menu Display - Value 15"
+    Wiki="Value for menu display only." />
+    
+    <missileLockTimeRate
+    AltName="Missle Lock Time Correction"
+    Wiki="Coefficient for missile lock time." />
+    
+    <missileMultiLockTimeRate
+    AltName="Missle Multi-Lock Time Correction"
+    Wiki="Coefficient for missile multi-lock time." />
+    
+    <refId
+    AltName="Inherited FCS ID"
+    Wiki="FCS ID to inherit parameters from."
+    Refs="EquipParamFcs" />
+    
+    <perfRateAddScale
+    AltName="Prediction Addition Correction"
+    Wiki="Correction multiplier for the prediction rate addition amount" />
+    
+    <perfRateSubScale
+    AltName="Prediction Subtraction Correction"
+    Wiki="Correction multiplier for the prediction rate subtraction amount" />
+    
+    <stageMaxVal0 
+    AltName="Distance Threshold Point [0]" 
+    Wiki="Distance threshold. In metres." />
+    
+    <stageMaxVal1 
+    AltName="Distance Threshold Point [1]" 
+    Wiki="Distance threshold. In metres." />
+    
+    <stageMaxVal2 
+    AltName="Distance Distance Threshold Point [2]" 
+    Wiki="Distance threshold. In metres." />
+    
+    <stageMaxVal3 
+    AltName="Distance Threshold Point [3]" 
+    Wiki="Distance threshold. In metres." />
+    
+    <stageMaxVal4 
+    AltName="Distance Threshold Point [4]" 
+    Wiki="Distance threshold. In metres." />
+    
+    <stageMaxGrowVal0 
+    AltName="Distance Threshold Coefficient [0]" 
+    Wiki="Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field." />
+    
+    <stageMaxGrowVal1 
+    AltName="Distance Threshold Coefficient [1]" 
+    Wiki="Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field." />
+    
+    <stageMaxGrowVal2 
+    AltName="Distance Threshold Coefficient [2]" 
+    Wiki="Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field." />
+    
+    <stageMaxGrowVal3 
+    AltName="Distance Threshold Coefficient [3]" 
+    Wiki="Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field." />
+    
+    <stageMaxGrowVal4 
+    AltName="Distance Threshold Coefficient [4]" 
+    Wiki="Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field." />
+    
+    <pad_end2
+    AltName=""
+    Padding="" />
+  </Field>
   <Enums>
     <Enum Name="EQUIP_MAKER_TYPE" type="u16">
         <Option Value="0" Name="None" />
@@ -27,31 +249,4 @@
         <Option Value="104" Name="Unused - オルマイ(本性)" />
     </Enum>
   </Enums>
-  <Field>
-    <menuModelId AltName="Menu Model ID" TextureRef="Weapon/01_common/SB_PartsThumbnails/menuModelId/" />
-    <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
-    <sortId AltName="Sort ID" />
-    <weight AltName="Weight" />
-    <energyCapacity AltName="Energy Capacity" />
-    <energyOutput AltName="Energy Output" />
-    <energyLoad AltName="Energy Load" />
-    <energyRechargeDelay AltName="Energy Recharge Delay" />
-    <aimAssistMaxDist AltName="Aim Assist: Max Distance" />
-    <missileLockCorrection AltName="Missile Lock Correction" />
-    <multiLockCorrection AltName="Multi-Lock Correction" />
-    <targetTrackingCorrection AltName="Target Tracking Multiplier" Wiki="Affects Target Tracking stat, which affects aim assist ability."/>
-    <aimAssistMaxDist AltName="Aim Assist: Max Distance (Red Lock)" Wiki="Determines maximum distance before aim assist will no longer occur."/>
-    <aimAssistInputTargetDist_Stage0 AltName="Aim Assist: Input Target Distance (Stage 0)" Wiki="Determines which target distance ranges will use which aim assist values."/>
-    <aimAssistInputTargetDist_Stage1 AltName="Aim Assist: Input Target Distance (Stage 1)" Wiki="Determines which target distance ranges will use which aim assist values."/>
-    <aimAssistInputTargetDist_Stage2 AltName="Aim Assist: Input Target Distance (Stage 2)" Wiki="Determines which target distance ranges will use which aim assist values."/>
-    <aimAssistInputTargetDist_Stage3 AltName="Aim Assist: Input Target Distance (Stage 3)" Wiki="Determines which target distance ranges will use which aim assist values."/>
-    <aimAssistInputTargetDist_Stage4 AltName="Aim Assist: Input Target Distance (Stage 4)" Wiki="Determines which target distance ranges will use which aim assist values."/>
-    <aimAssistGrowVal_Stage0 AltName="Aim Assist Effectivity (Stage 0)" Wiki="Effectiveness of Aim Assist when target distance equals stage 0.\nValue will grow from stage 0 to stage 1 until stage 1 target distance is met."/>
-    <aimAssistGrowVal_Stage1 AltName="Aim Assist Effectivity (Stage 1) (Close Range)" Wiki="Effectiveness of Aim Assist when target distance equals stage 1.\nValue will grow from stage 1 to stage 2 until stage 2 target distance is met.\nValue is used for Close-Range Assist in UI. "/>
-    <aimAssistGrowVal_Stage2 AltName="Aim Assist Effectivity (Stage 2)" Wiki="Effectiveness of Aim Assist when target distance equals stage 2.\nValue will grow from stage 2 to stage 3 until stage 3 target distance is met."/>
-    <aimAssistGrowVal_Stage3 AltName="Aim Assist Effectivity (Stage 3) (Medium Range)" Wiki="Effectiveness of Aim Assist when target distance equals stage 3.\nValue will grow from stage 3 to stage 4 until stage 4 target distance is met.\nValue is used for Medium-Range Assist in UI. "/>
-    <aimAssistGrowVal_Stage4 AltName="Aim Assist Effectivity (Stage 4) (Long Range)" Wiki="Effectiveness of Aim Assist when target distance equals stage 4.\nIf target distance exceeds stage 4, value remains at stage 4 until target distance exceeds aimAssistMaxDist.\nValue is used for Long-Range Assist in UI. "/>
-    <inheritanceFcsParamId AltName="FCS Inheritance" Refs="EquipParamFcs" Wiki="Inherits fields from referenced FCS." />
-  </Field>
-  <Self />
 </PARAMMETA>
