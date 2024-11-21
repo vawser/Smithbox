@@ -1,24 +1,219 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <refId 
+    AltName="Reference ID" 
+    Wiki="Reference ID to use for this accessory." 
+    Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
+    
+    <sfxVariationId 
+    AltName="Particle Variation ID" 
+    Wiki="Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)" />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight [kg]" />
+    
+    <behaviorId 
+    AltName="Behavior ID" 
+    Wiki="Action ID (= Skill)" />
+    
+    <basicPrice 
+    AltName="Base Price" 
+    Wiki="Basic price" />
+    
+    <sellValue 
+    AltName="Sell Value" 
+    Wiki="Selling price" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The ordering within the menu." />
+    
+    <qwcId 
+    AltName="QWC ID" 
+    Wiki="" 
+    Obsolete="" />
+    
+    <equipModelId 
+    AltName="Model ID" 
+    Wiki="Equipment model number" />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="Menu icon ID" />
+    
+    <shopLv 
+    AltName="Shop Level" 
+    Wiki="Level that can be sold at the store" />
+    
+    <trophySGradeId 
+    AltName="Achievement: S-Grade ID" 
+    Wiki="" />
+    
+    <trophySeqId 
+    AltName="Achievement: SEQ ID" 
+    Wiki="Trophy SEQ number" />
+    
+    <equipModelCategory 
+    AltName="Model Category" 
+    Wiki="Equipment model type" 
+    Enum="EQUIP_MODEL_CATEGORY" />
+    
+    <equipModelGender 
+    AltName="Model Gender" 
+    Wiki="Gender of equipment model" Enum="EQUIP_MODEL_GENDER" />
+    
+    <accessoryCategory 
+    AltName="Accessory Type" 
+    Wiki="Armor category" 
+    Enum="ACCESSORY_CATEGORY" />
+    
+    <refCategory 
+    AltName="Reference Type" 
+    Wiki=" ID category [Attack, Projectile, Special]" 
+    Enum="BEHAVIOR_REF_TYPE" />
+    
+    <spEffectCategory 
+    AltName="Behavior Category" 
+    Wiki="There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so set the effect for each action so that it can correspond to an effect such as 'powering up only weapon attacks'. Set 'None' for items that do not require settings, such as ballistas." 
+    Enum="BEHAVIOR_CATEGORY" />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+    <vagrantItemLotId 
+    AltName="Vagrant Item Lot ID" 
+    Wiki="-1: No vagrant 0: No lottery 1 ~: With lottery" 
+    Obsolete="" />
+    
+    <vagrantBonusEneDropItemLotId 
+    AltName="Vagrant Bonus Item Lot ID" 
+    Wiki="-1: No drop 0: No lottery 1 ~: With lottery" 
+    Obsolete="" />
+    
+    <vagrantItemEneDropItemLotId 
+    AltName="Vagrant Enemy Item Lot ID" 
+    Wiki="-1: No drop 0: No lottery 1 ~: With lottery" 
+    Obsolete="" />
+    
+    <isDeposit 
+    AltName="Is Depositable" 
+    Wiki="Can be deposited in the repository." 
+    IsBool="" />
+    
+    <isEquipOutBrake 
+    AltName="Destroy on Unequip" 
+    Wiki="Is destroyed when unequipped." 
+    IsBool="" />
+    
+    <disableMultiDropShare 
+    AltName="Block Drop in Multiplayer" 
+    Wiki="Block the ability to drop in multiplayer sessions." 
+    IsBool="" />
+    
+    <isDiscard 
+    AltName="Is Discardable" 
+    Wiki="Can be discarded." IsBool="" />
+    
+    <isDrop 
+    AltName="Is Droppable" 
+    Wiki="Can be dropped." 
+    IsBool="" />
+    
+    <pad3
+    AltName=""
+    Padding="" />
+    
+    <pad2 
+    AltName="" 
+    Padding=""/>
+    
+    <saleValue 
+    AltName="Sell Price" 
+    Wiki="Selling price" />
+    
+    <accessoryGroup 
+    AltName="Accessory Group" 
+    Wiki="Items of the same group cannot be equipped at the same time" />
+    
+    <vowType
+    AltName="Pledge Type"
+    Wiki="The pledge type that can use this accessory."
+    Enum="VOW_TYPE" />
+    
+    <compTrophySedId 
+    AltName="Number of Completed Achievement ID" 
+    Wiki="SEQ number of complete trophy" />
+    
+    <residentSpEffectId1 
+    AltName="SpEffect ID: 1" 
+    Wiki="The SpEffect present on this accessory." 
+    Refs="SpEffectParam" />
+    
+    <residentSpEffectId2
+    AltName="SpEffect ID: 2" 
+    Wiki="The SpEffect present on this accessory." 
+    Refs="SpEffectParam" />
+    
+    <residentSpEffectId3
+    AltName="SpEffect ID: 3" 
+    Wiki="The SpEffect present on this accessory." 
+    Refs="SpEffectParam" />
+    
+    <residentSpEffectId4 
+    AltName="SpEffect ID: 4" 
+    Wiki="The SpEffect present on this accessory." 
+    Refs="SpEffectParam" />
+    
+    <pad1 
+    AltName="" 
+    Padding=""/>
+    
+  </Field>
   <Enums>
     <Enum Name="EQUIP_MODEL_CATEGORY" type="u8">
         <Option Value="0" Name="None" />
         <Option Value="1" Name="Arms" />
         <Option Value="2" Name="Body" />
+        <Option Value="3" Name="Face" />
         <Option Value="4" Name="Hair" />
         <Option Value="5" Name="Head" />
         <Option Value="6" Name="Legs" />
         <Option Value="7" Name="Weapon" />
     </Enum>
     <Enum Name="EQUIP_MODEL_GENDER" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Male" />
-        <Option Value="2" Name="Female" />
-        <Option Value="3" Name="Unknown" />
-        <Option Value="4" Name="No Gender" />
+        <Option Value="0" Name="Unisex (A)" />
+        <Option Value="1" Name="Male only (M)" />
+        <Option Value="2" Name="Female only (F)" />
+        <Option Value="3" Name="Male and Female" />
+        <Option Value="4" Name="Unisex (M)" />
+        <Option Value="5" Name="Enemy only (E)" />
     </Enum>
     <Enum Name="ACCESSORY_CATEGORY" type="u8">
-        <Option Value="0" Name="Category 0" />
+        <Option Value="0" Name="Ring" />
+        <Option Value="1" Name="Talisman" />
     </Enum>
     <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
       <Option Value="0" Name="Behavior / None" />
@@ -27,59 +222,34 @@
     </Enum>
     <Enum Name="BEHAVIOR_CATEGORY" type="u8">
         <Option Value="0" Name="None" />
+        <Option Value="1" Name="Normal Attack" />
+        <Option Value="2" Name="Left-hand Attack" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Miracle" />
+        <Option Value="5" Name="Body" />
+        <Option Value="6" Name="Enemy Attack 1" />
+        <Option Value="7" Name="Enemy Attack 2" />
+        <Option Value="8" Name="Enemy Attack 3" />
+        <Option Value="9" Name="Kick" />
     </Enum>
-    <Enum Name="GET_DIALOG_CONDITION_TYPE" type="u8">
-      <Option Value="0" Name="Type 0" />
-      <Option Value="2" Name="Type 2" />
-    </Enum>
-    <Enum Name="RARITY" type="u8">
-      <Option Value="0" Name="Default" />
-      <Option Value="1" Name="Common" />
-      <Option Value="2" Name="Rare" />
-      <Option Value="3" Name="Legendary" />
+    <Enum Name="VOW_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+        <Option Value="6" Name="Type 6" />
+        <Option Value="7" Name="Type 7" />
+        <Option Value="8" Name="Type 8" />
+        <Option Value="9" Name="Type 9" />
+        <Option Value="10" Name="Type 10" />
+        <Option Value="11" Name="Type 11" />
+        <Option Value="12" Name="Type 12" />
+        <Option Value="13" Name="Type 13" />
+        <Option Value="14" Name="Type 14" />
+        <Option Value="15" Name="Type 15" />
+        <Option Value="16" Name="Type 16" />
     </Enum>
   </Enums>
-  <Field>
-    <refId AltName="Reference ID" Wiki="ID called from decorations" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
-    <sfxVariationId AltName="SFX Variation ID" Wiki="Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)" />
-    <weight AltName="Weight" Wiki="Weight [kg]" />
-    <behaviorId AltName="Behavior ID" Wiki="Action ID (= Skill)" />
-    <basicPrice AltName="Basic Price" Wiki="Basic price" />
-    <sellValue AltName="Sell Value" Wiki="Selling price" />
-    <sortId AltName="Sort ID" Wiki="" />
-    <qwcId AltName="QWC ID" Wiki="" />
-    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number" />
-    <iconId AltName="Icon ID" Wiki="Menu icon ID" ExtRefs="hi,menu\hi\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds;low,menu\low\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds" />
-    <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
-    <trophySGradeId AltName="Achievement Grade ID" Wiki="" />
-    <trophySeqId AltName="Achievement Sequential ID" Wiki="Trophy SEQ number" />
-    <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type" Enum="EQUIP_MODEL_CATEGORY" />
-    <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model" Enum="EQUIP_MODEL_GENDER" />
-    <accessoryCategory AltName="Accessory Type" Wiki="Armor category" Enum="ACCESSORY_CATEGORY" />
-    <refCategory AltName="Reference Type" Wiki=" ID category [Attack, Projectile, Special]" Enum="BEHAVIOR_REF_TYPE" />
-    <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="BEHAVIOR_CATEGORY" />
-    <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."/>
-    <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1: No vagrant 0: No lottery 1 ~: With lottery" />
-    <vagrantBonusEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1: No drop 0: No lottery 1 ~: With lottery" />
-    <vagrantItemEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1: No drop 0: No lottery 1 ~: With lottery" />
-    <isDeposit AltName="Is Depositable" Wiki="Can you deposit it in the warehouse?" IsBool="" />
-    <isEquipOutBrake AltName="Is Destroyed on Unequip" Wiki="Will it break when equipped and removed?" IsBool="" />
-    <disableMultiDropShare AltName="Is Dropping Disabled in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
-    <isDiscard AltName="Is Discardable" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
-    <isDrop AltName="Is Droppable" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
-    <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
-    <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
-    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
-    <pad2 AltName="" Padding=""/>
-    <saleValue AltName="Sale Price" Wiki="Selling price" />
-    <accessoryGroup AltName="Accessory Group" Wiki="Items of the same group cannot be equipped at the same time" />
-    <pad3 AltName="" Padding=""/>
-    <compTrophySedId AltName="Number of Completed Achievement ID" Wiki="SEQ number of complete trophy" />
-    <residentSpEffectId1 AltName="SpEffect ID [1]" Wiki="Resident special effect ID1" Refs="SpEffectParam" />
-    <residentSpEffectId2 AltName="SpEffect ID [2]" Wiki="Resident special effect ID2" Refs="SpEffectParam" />
-    <residentSpEffectId3 AltName="SpEffect ID [3]" Wiki="Resident special effect ID3" Refs="SpEffectParam" />
-    <residentSpEffectId4 AltName="SpEffect ID [4]" Wiki="Resident special effect ID4" Refs="SpEffectParam" />
-    <pad1 AltName="" Padding=""/>
-  </Field>
-  <Self />
 </PARAMMETA>

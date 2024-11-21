@@ -145,7 +145,7 @@
     <Enum Name="GAITEM_CATEGORY" type="u8">
         <Option Value="0" Name="Weapon" />
         <Option Value="1" Name="Equipment" />
-        <Option Value="2" Name="Decoration" />
+        <Option Value="2" Name="Accessory" />
         <Option Value="4" Name="Tool" />
         <Option Value="5" Name="Generator" />
         <Option Value="6" Name="Booster" />
