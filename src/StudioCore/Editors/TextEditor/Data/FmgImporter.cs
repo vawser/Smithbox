@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
@@ -285,7 +286,7 @@ public static class FmgImporter
                 }
                 catch(Exception e)
                 {
-                    TaskLogs.AddLog($"Failed to read JSON file for Text Import: {e.Message}");
+                    TaskLogs.AddLog($"Failed to read JSON file for Text Import: {e.Message}", LogLevel.Warning);
                 }
 
                 return wrapper;

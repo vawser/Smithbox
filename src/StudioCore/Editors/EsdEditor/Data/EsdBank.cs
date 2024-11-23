@@ -181,29 +181,47 @@ public static class EsdBank
 
         if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
-            binder = BND3.Read(DCX.Decompress(path));
+            try
+            {
+                binder = BND3.Read(DCX.Decompress(path));
+            }
+            catch(Exception ex)
+            {
+                TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+            }
         }
         else
         {
-            binder = BND4.Read(DCX.Decompress(path));
-        }
-        foreach (var file in binder.Files)
-        {
-            if (file.Name.Contains(".esd"))
+            try
             {
-                try
-                {
-                    ESD eFile = ESD.Read(file.Bytes);
-                    talkInfo.EsdFiles.Add(eFile);
-                }
-                catch (Exception ex)
-                {
-                    TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
-                }
+                binder = BND4.Read(DCX.Decompress(path));
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
             }
         }
 
-        TalkBank.Add(talkInfo, binder);
+        if (binder != null)
+        {
+            foreach (var file in binder.Files)
+            {
+                if (file.Name.Contains(".esd"))
+                {
+                    try
+                    {
+                        ESD eFile = ESD.Read(file.Bytes);
+                        talkInfo.EsdFiles.Add(eFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    }
+                }
+            }
+
+            TalkBank.Add(talkInfo, binder);
+        }
     }
 
     public class EsdScriptInfo

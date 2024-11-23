@@ -1,127 +1,302 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="EQUIP_MAKER_TYPE" type="u16">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Overseer" />
-        <Option Value="2" Name="Rubicon Research Institute" />
-        <Option Value="3" Name="PCA" />
-        <Option Value="4" Name="ALLMIND" />
-        <Option Value="5" Name="Rubiconist" />
-        <Option Value="6" Name="RaD" />
-        <Option Value="7" Name="Arquebus" />
-        <Option Value="8" Name="Schneider" />
-        <Option Value="9" Name="VCPL" />
-        <Option Value="10" Name="Vesper" />
-        <Option Value="11" Name="Balam" />
-        <Option Value="12" Name="Dafeng" />
-        <Option Value="13" Name="Redgun" />
-        <Option Value="14" Name="Unused - 協商" />
-        <Option Value="15" Name="BAWS" />
-        <Option Value="16" Name="Furlong" />
-        <Option Value="17" Name="Takigawa Harmonics" />
-        <Option Value="18" Name="Melinite" />
-        <Option Value="19" Name="Elcano" />
-        <Option Value="20" Name="Arquebus ADD" />
-        <Option Value="102" Name="Unused - RRI(旧)" />
-        <Option Value="104" Name="Unused - オルマイ(本性)" />
-    </Enum>
-    <Enum Name="MENU_CHARGE_STATE_CATEGORY" type="s16">
-        <Option Value="0" Name="Base Charge" />
-        <Option Value="100" Name="Full Charge" />
-        <Option Value="110" Name="Full Charge (Two-Stage)" />
-    </Enum>
-    <Enum Name="TAE_MOTION_CATEGORIES" type="s16">
-        <Option Value="0" Name="None" />
-        <Option Value="200" Name="BURST RIFLE / LINEAR RIFLE" />
-        <Option Value="201" Name="BURST ASSAULT RIFLE / ASSAULT RIFLE / HEAVY MACHINE GUN" />
-        <Option Value="202" Name="BURST MACHINE GUN / MACHINE GUN" />
-        <Option Value="203" Name="GATLING GUN" />
-        <Option Value="204" Name="BAZOOKA" />
-        <Option Value="205" Name="SHOTGUN" />
-        <Option Value="206" Name="GRENADE LAUNCHER" />
-        <Option Value="207" Name="NEEDLE GUN / BURST HANDGUN / BOMB LAUNCHER / STUN GUN" />
-        <Option Value="208" Name="HANDGUN" />
-        <Option Value="209" Name="MISSILE LAUNCHER / SIEGE MISSILE LAUNCHER" />
-        <Option Value="210" Name="SPLIT MISSILE LAUNCHER / PULSE MISSILE LAUNCHER" />
-        <Option Value="211" Name="LASER HANDGUN / CORAL RIFLE / LASER RIFLE / MULTI ENERGY RIFLE" />
-        <Option Value="212" Name="PLASMA RIFLE / CORAL RIFLE" />
-        <Option Value="213" Name="PULSE GUN" />
-        <Option Value="214" Name="FLAMETHROWER" />
-        <Option Value="215" Name="LASER SHOTGUN" />
-        <Option Value="250" Name="LIGHT WAVE BLADE / CORAL OSCILLATOR" />
-        <Option Value="251" Name="CORAL OSCILLATOR" />
-        <Option Value="252" Name="PLASMA THROWER" />
-        <Option Value="253" Name="PILE BUNKER" />
-        <Option Value="254" Name="PULSE BLADE" />
-        <Option Value="255" Name="LASER BLADE" />
-        <Option Value="256" Name="LASER SLICER" />
-        <Option Value="257" Name="LASER DAGGER" />
-        <Option Value="258" Name="LASER LANCE" />
-        <Option Value="259" Name="CHAINSAW" />
-        <Option Value="260" Name="STUN BATON" />
-        <Option Value="261" Name="EXPLOSIVE THROWER" />
-        <Option Value="262" Name="FISTS" />
-    </Enum>
-  </Enums>
+  <Self 
+  Wiki="Determines the parameters of weapons."  />
+  
   <Field>
-    <variationId AltName="Behavior Variation ID" Wiki="Used to link weapon with BehaviorParam, and from there projectiles/attacks. Corresponds with variationId in BehaviorParam." />
-    <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect) (7 digits is the limit in s32 to add the enhancement level in the program)" />
-    <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." />
-    <weight AltName="Weight" Wiki="Weight [kg]." />
-    <weaponWeightRate AltName="Weapon Weight %" Wiki="Equipment weight ratio" />
-    <fixPrice AltName="Repair Price" Wiki="Basic repair price" />
-    <basicPrice AltName="Basic Price" Wiki="Enhanced price" />
-    <sellValue AltName="Sell Price" Wiki="Selling price" />
-    <correctStrength AltName="Correction: STR" Wiki="Charapara correction value." />
-    <correctAgility AltName="Correction: DEX" Wiki="Charapara correction value." />
-    <corretMagic AltName="Correction: INT" Wiki="Charapara correction value." />
-    <corretFaith AltName="Correction: FTH" Wiki="Charapara correction value." />
-    <damageMitigation_Kinetic AltName="Damage Mitigation: Kinetic" />
-    <damageMitigation_Energy AltName="Damage Mitigation: Energy" />
-    <damageMitigation_Explosive AltName="Damage Mitigation: Explosive" />
-    <damageMitigation_Coral AltName="Damage Mitigation: Coral" />
-    <spEffectBehaviorId0 AltName="Behavior SpEffect 1" Wiki="Register when adding special effects to weapons" Refs="SpEffectParam" />
-    <spEffectBehaviorId1 AltName="Behavior SpEffect 2" Wiki="Register when adding special effects to weapons" Refs="SpEffectParam"/>
-    <spEffectBehaviorId2 AltName="Behavior SpEffect 3" Wiki="Register when adding special effects to weapons" Refs="SpEffectParam"/>
-    <residentSpEffectId0 AltName="Passive SpEffect 1" Wiki="Resident special effect ID0" Refs="SpEffectParam"/>
-    <residentSpEffectId1 AltName="Passive SpEffect 2" Wiki="Resident special effect ID1" Refs="SpEffectParam"/>
-    <residentSpEffectId2 AltName="Passive SpEffect 3" Wiki="Resident special effect ID2" Refs="SpEffectParam"/>
-    <materialSetId AltName="Reinforcement Material Set ID" Wiki="Material parameter ID required for weapon enhancement" Refs="EquipMtrlSetParam"/>
-    <originEquipWep0 AltName="Origin Weapon +0" Wiki="This weapon's enhancement source weapon ID" Refs="EquipParamWeapon"/>
-    <originEquipWep1 AltName="Origin Weapon +1" Wiki="This weapon's enhancement source weapon ID1" Refs="EquipParamWeapon"/>
-    <originEquipWep2 AltName="Origin Weapon +2" Wiki="This weapon's enhancement source weapon ID2" Refs="EquipParamWeapon"/>
-    <originEquipWep3 AltName="Origin Weapon +3" Wiki="This weapon's enhancement source weapon ID3" Refs="EquipParamWeapon"/>
-    <originEquipWep4 AltName="Origin Weapon +4" Wiki="This weapon's enhancement source weapon ID 4" Refs="EquipParamWeapon"/>
-    <originEquipWep5 AltName="Origin Weapon +5" Wiki="This weapon's enhancement source weapon ID 5" Refs="EquipParamWeapon"/>
-    <originEquipWep6 AltName="Origin Weapon +6" Wiki="This weapon's enhancement source weapon ID 6" Refs="EquipParamWeapon"/>
-    <originEquipWep7 AltName="Origin Weapon +7" Wiki="This weapon's enhancement source weapon ID 7" Refs="EquipParamWeapon"/>
-    <originEquipWep8 AltName="Origin Weapon +8" Wiki="This weapon's enhancement source weapon ID8" Refs="EquipParamWeapon"/>
-    <originEquipWep9 AltName="Origin Weapon +9" Wiki="This weapon's enhancement source weapon ID 9" Refs="EquipParamWeapon"/>
-    <originEquipWep10 AltName="Origin Weapon +10" Wiki="This weapon's enhancement source weapon ID 10" Refs="EquipParamWeapon"/>
-    <originEquipWep11 AltName="Origin Weapon +11" Wiki="This weapon's enhancement source weapon ID 11" Refs="EquipParamWeapon"/>
-    <originEquipWep12 AltName="Origin Weapon +12" Wiki="This weapon's enhancement source weapon ID 12" Refs="EquipParamWeapon"/>
-    <originEquipWep13 AltName="Origin Weapon +13" Wiki="This weapon's enhancement source weapon ID 13" Refs="EquipParamWeapon"/>
-    <originEquipWep14 AltName="Origin Weapon +14" Wiki="This weapon's enhancement source weapon ID14" Refs="EquipParamWeapon" />
-    <originEquipWep15 AltName="Origin Weapon +15" Wiki="This weapon's enhancement source weapon ID 15" Refs="EquipParamWeapon"/>
-    <shieldPart_DamageRate AltName="Damage Multiplier %: Shield Part" Wiki="Damage multiplier for shield parts" />
-    <weakB_DamageRate AltName="Damage Multiplier %: Type B" Wiki="Damage multiplier for special attack B" />
-    <weakC_DamageRate AltName="Damage Multiplier %: Type C" Wiki="Damage multiplier for special attack C" />
-    <weakD_DamageRate AltName="Damage Multiplier %: Type D" Wiki="Damage multiplier for special attack D" />
-    <vagrantItemLotId AltName="Vagrant: Item Lot ID" />
-    <vagrantBonusEneDropItemLotId AltName="Vagrant Bonus Enemy: Item Lot ID" />
-    <vagrantItemEneDropItemLotId AltName="Vagrant Item Enemy: Item Lot ID" />
-    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number." TextureRef="Weapon/01_common/SB_PartsThumbnails/equipModelId/" />
-    <durability AltName="Durability" Wiki="Initial durability." />
-    <durabilityMax AltName="Max Durability" Wiki="New durability." />
-    <attackThrowEscape AltName="Throw Escape Damage" Wiki="Basic value of throw-through attack power" />
-    <parryDamageLife AltName="Parry Occurrence Duration" Wiki="Limit the life of parry damage. It does not last longer than it is set in TimeAct." />
-    <baseAttack_Kinetic AltName="Damage: Kinetic" />
-    <baseAttack_Energy AltName="Damage: Energy" />
-    <baseAttack_Explosive AltName="Damage: Explosive" />
-    <baseAttack_Coral AltName="Damage: Coral" />
-    <baseAttack_Stamina AltName="Damage: Stamina" />
-    <baseAttack_Poise AltName="Damage: Poise" />
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <behaviorVariationId 
+    AltName="Behavior Variation ID" 
+    Wiki="Used to determine the action parameters to use for this weapon's attacks." 
+    VRef="BehaviorParam,BehaviorParam_PC" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The ordering ID used to sort this part in the menu." />
+    
+    <wanderingEquipId 
+    AltName="Wandering Equip ID" 
+    Wiki="Replacement part ID for wandering ghosts." 
+    Obsolete="" />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight [kg]." />
+    
+    <weaponWeightRate 
+    AltName="Equipment Weight Ratio" 
+    Wiki="Equipment weight ratio" 
+    Obsolete="" />
+    
+    <fixPrice 
+    AltName="Repair Value" 
+    Wiki="The price required to repair this part." />
+    
+    <basicPrice 
+    AltName="Base Value" 
+    Wiki="The base price for this part." />
+    
+    <sellValue 
+    AltName="Sell Value" 
+    Wiki="The sell value for this part." />
+    
+    <correctStrength 
+    AltName="Correction: STR" 
+    Wiki="Multiplier to the damage derived from the specified stat." 
+    Obsolete="" />
+    
+    <correctAgility 
+    AltName="Correction: DEX" 
+    Wiki="Multiplier to the damage derived from the specified stat." 
+    Obsolete="" />
+    
+    <corretMagic 
+    AltName="Correction: INT" 
+    Wiki="Multiplier to the damage derived from the specified stat." 
+    Obsolete="" />
+    
+    <corretFaith 
+    AltName="Correction: FTH" 
+    Wiki="Multiplier to the damage derived from the specified stat." 
+    Obsolete="" />
+    
+    <physGuardCutRate 
+    AltName="Guard Absorption %: Kinetic" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <magGuardCutRate 
+    AltName="Guard Absorption %: Energy" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <fireGuardCutRate 
+    AltName="Guard Absorption %: Explosive" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <thunGuardCutRate 
+    AltName="Guard Absorption %: Coral" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <spEffectBehaviorId0 
+    AltName="SpEffect on Hit: 1" 
+    Wiki="A SpEffect to apply when this weapon hits." 
+    Refs="SpEffectParam" />
+    
+    <spEffectBehaviorId1
+    AltName="SpEffect on Hit: 2" 
+    Wiki="A SpEffect to apply when this weapon hits." 
+    Refs="SpEffectParam" />
+    
+    <spEffectBehaviorId2 
+    AltName="SpEffect on Hit: 3" 
+    Wiki="A SpEffect to apply when this weapon hits." 
+    Refs="SpEffectParam" />
+    
+    <residentSpEffectId 
+    AltName="Resident SpEffect: 1" 
+    Wiki="A SpEffect to apply to the wielder of this weapon." 
+    Refs="SpEffectParam" />
+    
+    <residentSpEffectId1
+    AltName="Resident SpEffect: 2" 
+    Wiki="A SpEffect to apply to the wielder of this weapon." 
+    Refs="SpEffectParam" />
+    
+    <residentSpEffectId2
+    AltName="Resident SpEffect: 3" 
+    Wiki="A SpEffect to apply to the wielder of this weapon." 
+    Refs="SpEffectParam" />
+    
+    <materialSetId 
+    AltName="Upgrade Material ID" 
+    Wiki="The material requirements for improving this part." 
+    Refs="EquipMtrlSetParam" />
+    
+    <originEquipWep 
+    AltName="Source ID: +0" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep1
+    AltName="Source ID: +1" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep2
+    AltName="Source ID: +2" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep3
+    AltName="Source ID: +3" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep4
+    AltName="Source ID: +4" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep5
+    AltName="Source ID: +5" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep6
+    AltName="Source ID: +6" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep7
+    AltName="Source ID: +7" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep8
+    AltName="Source ID: +8" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep9
+    AltName="Source ID: +9" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep10
+    AltName="Source ID: +10" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep11
+    AltName="Source ID: +11" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep12
+    AltName="Source ID: +12" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep13
+    AltName="Source ID: +13" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep14
+    AltName="Source ID: +14" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <originEquipWep15
+    AltName="Source ID: +15" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamWeapon" />
+    
+    <weakA_DamageRate
+    AltName="Damage Adjustment %: Type A"
+    Wiki="Damage multiplier applied to targets that are classified as Type A." />
+    
+    <weakB_DamageRate
+    AltName="Damage Adjustment %: Type B"
+    Wiki="Damage multiplier applied to targets that are classified as Type B." />
+    
+    <weakC_DamageRate
+    AltName="Damage Adjustment %: Type C"
+    Wiki="Damage multiplier applied to targets that are classified as Type C." />
+    
+    <weakD_DamageRate
+    AltName="Damage Adjustment %: Type D"
+    Wiki="Damage multiplier applied to targets that are classified as Type D." />
+    
+    <vagrantItemLotId
+    AltName="Vagrant Item Lot ID" 
+    Wiki="-1 No vagrant 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantBonusEneDropItemLotId 
+    AltName="Vagrant Enemy Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantItemEneDropItemLotId 
+    AltName="Vagrant Bonus Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <equipModelId 
+    AltName="Model ID" 
+    Wiki="The model ID to use for this part. Also determines the menu preview icon." 
+    TextureRef="Weapon/01_common/SB_PartsThumbnails/equipModelId/" />
+    
+    <iconId 
+    AltName="Icon ID " 
+    Wiki="The icon ID to use for this part." 
+    Obsolete="" />
+    
+    <durability 
+    AltName="Durability" 
+    Wiki="The initial durability of this part." 
+    Obsolete="" />
+    
+    <durabilityMax 
+    AltName="Max Durability" 
+    Wiki="The maximum durability of this part." 
+    Obsolete="" />
+    
+    <attackThrowEscape 
+    AltName="Damage: Throw Attack" 
+    Wiki="The base damage for throw attack power" 
+    Obsolete="" />
+    
+    <parryDamageLife 
+    AltName="Parry Damage Duration" 
+    Wiki="The duration of parry damage. It is capped by the duration set in the TAE. In frames." 
+    Obsolete="" />
+    
+    <attackBasePhysics 
+    AltName="Damage: Kinetic" 
+    Wiki="The base Kinetic attack power." />
+    
+    <attackBaseMagic 
+    AltName="Damage: Energy" 
+    Wiki="The base Energy attack power." />
+    
+    <attackBaseFire 
+    AltName="Damage: Explosive" 
+    Wiki="The base Explosive attack power." />
+    
+    <attackBaseThunder 
+    AltName="Damage: Coral" 
+    Wiki="The base Coral attack power." />
+    
+    <attackBaseStamina 
+    AltName="Damage: Stamina" 
+    Wiki="The base stamina attack power." />
+    
+    <saWeaponDamage 
+    AltName="Damage: Poise" 
+    Wiki="The base poise attack power." />
+    
+    <saDurability 
+    AltName="Damage: Durability" 
+    Wiki="The base durability attack power." />
+    
     <guardAngle AltName="Guard Angle" Wiki="Defense occurrence range angle when guarding weapons" />
     <poiseDurability AltName="Poise Durability" Wiki="Additional SA durability used during attack motion" />
     <staminaGuardDef AltName="Guard Stability" Wiki="Defense against enemy stamina attacks when guarding successfully" />
@@ -415,5 +590,68 @@
     <weaponMotionCategory AltName="Weapon Motion Category" Wiki="Refers to the TAE used by this weapon." Enum="TAE_MOTION_CATEGORIES" />
     
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="EQUIP_MAKER_TYPE" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Overseer" />
+        <Option Value="2" Name="Rubicon Research Institute" />
+        <Option Value="3" Name="PCA" />
+        <Option Value="4" Name="ALLMIND" />
+        <Option Value="5" Name="Rubiconist" />
+        <Option Value="6" Name="RaD" />
+        <Option Value="7" Name="Arquebus" />
+        <Option Value="8" Name="Schneider" />
+        <Option Value="9" Name="VCPL" />
+        <Option Value="10" Name="Vesper" />
+        <Option Value="11" Name="Balam" />
+        <Option Value="12" Name="Dafeng" />
+        <Option Value="13" Name="Redgun" />
+        <Option Value="14" Name="Unused - 協商" />
+        <Option Value="15" Name="BAWS" />
+        <Option Value="16" Name="Furlong" />
+        <Option Value="17" Name="Takigawa Harmonics" />
+        <Option Value="18" Name="Melinite" />
+        <Option Value="19" Name="Elcano" />
+        <Option Value="20" Name="Arquebus ADD" />
+        <Option Value="102" Name="Unused - RRI(旧)" />
+        <Option Value="104" Name="Unused - オルマイ(本性)" />
+    </Enum>
+    <Enum Name="MENU_CHARGE_STATE_CATEGORY" type="s16">
+        <Option Value="0" Name="Base Charge" />
+        <Option Value="100" Name="Full Charge" />
+        <Option Value="110" Name="Full Charge (Two-Stage)" />
+    </Enum>
+    <Enum Name="TAE_MOTION_CATEGORIES" type="s16">
+        <Option Value="0" Name="None" />
+        <Option Value="200" Name="BURST RIFLE / LINEAR RIFLE" />
+        <Option Value="201" Name="BURST ASSAULT RIFLE / ASSAULT RIFLE / HEAVY MACHINE GUN" />
+        <Option Value="202" Name="BURST MACHINE GUN / MACHINE GUN" />
+        <Option Value="203" Name="GATLING GUN" />
+        <Option Value="204" Name="BAZOOKA" />
+        <Option Value="205" Name="SHOTGUN" />
+        <Option Value="206" Name="GRENADE LAUNCHER" />
+        <Option Value="207" Name="NEEDLE GUN / BURST HANDGUN / BOMB LAUNCHER / STUN GUN" />
+        <Option Value="208" Name="HANDGUN" />
+        <Option Value="209" Name="MISSILE LAUNCHER / SIEGE MISSILE LAUNCHER" />
+        <Option Value="210" Name="SPLIT MISSILE LAUNCHER / PULSE MISSILE LAUNCHER" />
+        <Option Value="211" Name="LASER HANDGUN / CORAL RIFLE / LASER RIFLE / MULTI ENERGY RIFLE" />
+        <Option Value="212" Name="PLASMA RIFLE / CORAL RIFLE" />
+        <Option Value="213" Name="PULSE GUN" />
+        <Option Value="214" Name="FLAMETHROWER" />
+        <Option Value="215" Name="LASER SHOTGUN" />
+        <Option Value="250" Name="LIGHT WAVE BLADE / CORAL OSCILLATOR" />
+        <Option Value="251" Name="CORAL OSCILLATOR" />
+        <Option Value="252" Name="PLASMA THROWER" />
+        <Option Value="253" Name="PILE BUNKER" />
+        <Option Value="254" Name="PULSE BLADE" />
+        <Option Value="255" Name="LASER BLADE" />
+        <Option Value="256" Name="LASER SLICER" />
+        <Option Value="257" Name="LASER DAGGER" />
+        <Option Value="258" Name="LASER LANCE" />
+        <Option Value="259" Name="CHAINSAW" />
+        <Option Value="260" Name="STUN BATON" />
+        <Option Value="261" Name="EXPLOSIVE THROWER" />
+        <Option Value="262" Name="FISTS" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

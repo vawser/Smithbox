@@ -96,30 +96,43 @@ public static class ParticleBank
 
             if (realPath != "")
             {
-                IBinder binder = BND4.Read(DCX.Decompress(realPath));
+                IBinder binder = null;
+
+                try
+                {
+                    BND4.Read(DCX.Decompress(realPath));
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"{realPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                }
+
                 List<string> fxrFiles = new List<string>();
                 List<string> resourceFiles = new List<string>();
 
-                foreach (var file in binder.Files)
+                if (binder != null)
                 {
-                    // FXR
-                    if (file.Name.Contains(".fxr"))
+                    foreach (var file in binder.Files)
                     {
-                        fxrFiles.Add(file.Name);
+                        // FXR
+                        if (file.Name.Contains(".fxr"))
+                        {
+                            fxrFiles.Add(file.Name);
+                        }
+
+                        // FFXRESLIST
+                        if (file.Name.Contains(".ffxreslist"))
+                        {
+                            resourceFiles.Add(file.Name);
+                        }
                     }
 
-                    // FFXRESLIST
-                    if (file.Name.Contains(".ffxreslist"))
+                    var fileInfo = new ParticleFileInfo(name, realPath, binder, fxrFiles, resourceFiles);
+
+                    if (!FileBank.Contains(fileInfo))
                     {
-                        resourceFiles.Add(file.Name);
+                        FileBank.Add(fileInfo);
                     }
-                }
-
-                var fileInfo = new ParticleFileInfo(name, realPath, binder, fxrFiles, resourceFiles);
-
-                if(!FileBank.Contains(fileInfo))
-                {
-                    FileBank.Add(fileInfo);
                 }
             }
         }
@@ -160,7 +173,7 @@ public static class ParticleBank
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
+                    TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
                 }
             }
         }

@@ -488,7 +488,7 @@ public static class TimeActBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{name} {path} - Failed to read.\n{ex.ToString()}");
+                TaskLogs.AddLog($"{name} {path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
             }
         }
         // Within .anibnd.dcx
@@ -526,7 +526,7 @@ public static class TimeActBank
                             }
                             catch (Exception ex)
                             {
-                                TaskLogs.AddLog($"{name} {file.Name} - Failed to read.\n{ex.ToString()}");
+                                TaskLogs.AddLog($"{name} {file.Name} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
                             }
                         }
                     }
@@ -589,7 +589,7 @@ public static class TimeActBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{name} {path} - Failed to read.\n{ex.ToString()}");
+                TaskLogs.AddLog($"{name} {path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
             }
         }
         // Within .anibnd.dcx
@@ -646,7 +646,7 @@ public static class TimeActBank
                                         }
                                         catch (Exception ex)
                                         {
-                                            TaskLogs.AddLog($"{name} {aniFile.Name} - Failed to read.\n{ex.ToString()}");
+                                            TaskLogs.AddLog($"{name} {aniFile.Name} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
                                         }
                                     }
                                 }

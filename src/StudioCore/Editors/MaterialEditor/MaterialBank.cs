@@ -154,11 +154,6 @@ public static class MaterialBank
             return;
         }
 
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        MaterialFileInfo fileStruct = new MaterialFileInfo(name, path);
-
-        IBinder binder = BND4.Read(DCX.Decompress(path));
-
         var fileExt = @".mtd";
 
         if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
@@ -166,23 +161,40 @@ public static class MaterialBank
             fileExt = @".matbin";
         }
 
-        foreach (var file in binder.Files)
+        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+        MaterialFileInfo fileStruct = new MaterialFileInfo(name, path);
+
+        IBinder binder = null;
+
+        try
         {
-            if (file.Name.Contains($"{fileExt}"))
-            {
-                try
-                {
-                    MTD cFile = MTD.Read(file.Bytes);
-                    fileStruct.MaterialFiles.Add(cFile);
-                }
-                catch (Exception ex)
-                {
-                    TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
-                }
-            }
+            binder = BND4.Read(DCX.Decompress(path));
+        }
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
         }
 
-        FileBank.Add(fileStruct, binder);
+        if (binder != null)
+        {
+            foreach (var file in binder.Files)
+            {
+                if (file.Name.Contains($"{fileExt}"))
+                {
+                    try
+                    {
+                        MTD cFile = MTD.Read(file.Bytes);
+                        fileStruct.MaterialFiles.Add(cFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    }
+                }
+            }
+
+            FileBank.Add(fileStruct, binder);
+        }
     }
 
     public class MaterialFileInfo

@@ -173,9 +173,8 @@
     Wiki="The duration to wait for energy recovery (when energy is empty)." />
     
     <thrustersParamIDForPC
-    AltName="Thruster Configuration (for Player)"
-    Wiki="For player, specify the ID of the thruster parameter (0 means no thruster)." 
-    Refs="ThrusterParam_PC" />
+    AltName="Thruster Configuration Offset (for Player)"
+    Wiki="For player, specify the ID offset of the thruster parameter (0 means no thruster)."/>
     
     <pad_end
     AltName=""

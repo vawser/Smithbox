@@ -300,7 +300,7 @@ public static class EmevdBank
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to read {path}");
+            TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
         }
     }
 

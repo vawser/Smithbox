@@ -149,13 +149,13 @@ public static class CutsceneBank
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Mqb file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading MQB file.",
                     LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Mqb file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading MQB file.",
                     LogLevel.Warning);
             return;
         }
@@ -163,25 +163,52 @@ public static class CutsceneBank
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
         CutsceneFileInfo fileStruct = new CutsceneFileInfo(name, path);
 
-        IBinder binder = BND4.Read(DCX.Decompress(path));
+        IBinder binder = null;
 
-        foreach (var file in binder.Files)
+
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
-            if (file.Name.Contains(".mqb"))
+            try
             {
-                try
-                {
-                    MQB cFile = MQB.Read(file.Bytes);
-                    fileStruct.CutsceneFiles.Add(cFile);
-                }
-                catch (Exception ex)
-                {
-                    TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
-                }
+                binder = BND3.Read(DCX.Decompress(path));
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+            }
+        }
+        else
+        {
+            try
+            {
+                binder = BND4.Read(DCX.Decompress(path));
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
             }
         }
 
-        FileBank.Add(fileStruct, binder);
+        if (binder != null)
+        {
+            foreach (var file in binder.Files)
+            {
+                if (file.Name.Contains(".mqb"))
+                {
+                    try
+                    {
+                        MQB cFile = MQB.Read(file.Bytes);
+                        fileStruct.CutsceneFiles.Add(cFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    }
+                }
+            }
+
+            FileBank.Add(fileStruct, binder);
+        }
     }
 
     public class CutsceneFileInfo

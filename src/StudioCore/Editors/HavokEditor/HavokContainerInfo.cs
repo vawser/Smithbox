@@ -2,6 +2,7 @@
 using HKLib.hk2018.hkAsyncThreadPool;
 using HKLib.Serialization.hk2018.Binary;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editors.HavokEditor.Enums;
@@ -81,11 +82,18 @@ public class HavokContainerInfo
             {
                 //TaskLogs.AddLog($"Loaded: {ModBinderPath}");
 
-                Container = BND4.Read(Data);
-                InternalFileList = new();
-                foreach (var entry in Container.Files)
+                try
                 {
-                    InternalFileList.Add(entry.Name.ToLower());
+                    Container = BND4.Read(Data);
+                    InternalFileList = new();
+                    foreach (var entry in Container.Files)
+                    {
+                        InternalFileList.Add(entry.Name.ToLower());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"{ModBinderPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
                 }
             }
             // Otherwise load root
@@ -93,11 +101,18 @@ public class HavokContainerInfo
             {
                 //TaskLogs.AddLog($"Loaded: {RootBinderPath}");
 
-                Container = BND4.Read(Data);
-                InternalFileList = new();
-                foreach (var entry in Container.Files)
+                try
                 {
-                    InternalFileList.Add(entry.Name.ToLower());
+                    Container = BND4.Read(Data);
+                    InternalFileList = new();
+                    foreach (var entry in Container.Files)
+                    {
+                        InternalFileList.Add(entry.Name.ToLower());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"{RootBinderPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
                 }
             }
         }
@@ -108,11 +123,18 @@ public class HavokContainerInfo
             {
                 //TaskLogs.AddLog($"Loaded: {ModBinderPath}");
 
-                Container = BND4.Read(DCX.Decompress(ModBinderPath));
-                InternalFileList = new();
-                foreach (var entry in Container.Files)
+                try
                 {
-                    InternalFileList.Add(entry.Name.ToLower());
+                    Container = BND4.Read(DCX.Decompress(ModBinderPath));
+                    InternalFileList = new();
+                    foreach (var entry in Container.Files)
+                    {
+                        InternalFileList.Add(entry.Name.ToLower());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"{ModBinderPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
                 }
             }
             // Otherwise load root
@@ -120,11 +142,18 @@ public class HavokContainerInfo
             {
                 //TaskLogs.AddLog($"Loaded: {RootBinderPath}");
 
-                Container = BND4.Read(DCX.Decompress(RootBinderPath));
-                InternalFileList = new();
-                foreach (var entry in Container.Files)
+                try
                 {
-                    InternalFileList.Add(entry.Name.ToLower());
+                    Container = BND4.Read(DCX.Decompress(RootBinderPath));
+                    InternalFileList = new();
+                    foreach (var entry in Container.Files)
+                    {
+                        InternalFileList.Add(entry.Name.ToLower());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"{RootBinderPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
                 }
             }
         }

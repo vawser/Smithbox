@@ -207,11 +207,25 @@ public static class GparamParamBank
 
             if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
-                gStruct.Gparam = GPARAM.Read(path);
+                try
+                {
+                    gStruct.Gparam = GPARAM.Read(path);
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                }
             }
             else
             {
-                gStruct.Gparam = GPARAM.Read(DCX.Decompress(path));
+                try
+                {
+                    gStruct.Gparam = GPARAM.Read(DCX.Decompress(path));
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                }
             }
 
             VanillaParamBank.Add(name, gStruct);
