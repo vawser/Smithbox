@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,8 @@ public class InterfaceTab
 
     public void Display()
     {
+        var buttonSize = new Vector2(200, 24);
+
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Show tooltips", ref UI.Current.System_Show_UI_Tooltips);
@@ -31,6 +34,7 @@ public class InterfaceTab
             ImGui.Checkbox("Wrap alias text", ref UI.Current.System_WrapAliasDisplay);
             UIHelper.ShowHoverTooltip("Makes the alias text display wrap instead of being cut off.");
 
+            ImGui.AlignTextToFramePadding();
             ImGui.SliderFloat("UI scale", ref _tempScale, 0.5f, 4.0f);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -42,7 +46,9 @@ public class InterfaceTab
             UIHelper.ShowHoverTooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
 
             ImGui.SameLine();
-            if (ImGui.Button("Reset"))
+
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button("Reset", buttonSize))
             {
                 UI.Current.System_UI_Scale = UI.Default.System_UI_Scale;
                 _tempScale = UI.Current.System_UI_Scale;
@@ -73,7 +79,7 @@ public class InterfaceTab
             ImGui.SameLine();
             ImGui.Text(Path.GetFileName(UI.Current.System_English_Font));
 
-            if (ImGui.Button("Set English font"))
+            if (ImGui.Button("Set English font", buttonSize))
             {
                 PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                 if (File.Exists(path))
@@ -88,7 +94,7 @@ public class InterfaceTab
             ImGui.SameLine();
             ImGui.Text(Path.GetFileName(UI.Current.System_Other_Font));
 
-            if (ImGui.Button("Set Non-English font"))
+            if (ImGui.Button("Set Non-English font", buttonSize))
             {
                 PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                 if (File.Exists(path))
@@ -99,7 +105,7 @@ public class InterfaceTab
             }
             UIHelper.ShowHoverTooltip("Use the following font for Non-English characters. .ttf and .otf expected.");
 
-            if (ImGui.Button("Restore Default Fonts"))
+            if (ImGui.Button("Restore Default Fonts", buttonSize))
             {
                 UI.Current.System_English_Font = "Assets\\Fonts\\RobotoMono-Light.ttf";
                 UI.Current.System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
@@ -132,15 +138,79 @@ public class InterfaceTab
         }
 
         // ImGui
-        if (ImGui.CollapsingHeader("ImGui", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader("Interface Layout", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            // Save current imgui.ini in AppData
-            if(ImGui.Button("Store Current ImGui Layout in AppData"))
-            {
+            var storedDir =$@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Smithbox\";
+            var storedPath = $@"{storedDir}\imgui.ini";
 
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Store the current imgui.ini in the AppData folder for future usage.");
+
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button("Store##storeImguiIni", buttonSize))
+            {
+                var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
+
+                if (Directory.Exists(storedDir))
+                {
+                    if (File.Exists(storedPath))
+                    {
+                        File.Copy(curImgui, storedPath, true);
+                    }
+                    else
+                    {
+                        File.Copy(curImgui, storedPath, true);
+                    }
+                }
+
+                PlatformUtils.Instance.MessageBox($"Stored at {storedPath}.", "Information", MessageBoxButtons.OK);
+            }
+            ImGui.SameLine();
+            if (ImGui.Button("Open Folder##openImguiIniFolder", buttonSize))
+            {
+                Process.Start("explorer.exe", storedDir);
             }
 
-            // Restore imgui.ini from saved version in AppData
+            if (File.Exists(storedPath))
+            {
+                ImGui.Separator();
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Set the current imgui.ini to the version you stored within the AppData folder.");
+
+                ImGui.AlignTextToFramePadding();
+
+                if (ImGui.Button("Set##setImguiIni", buttonSize))
+                {
+                    var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
+
+                    if (File.Exists(storedPath))
+                    {
+                        File.Copy(storedPath, curImgui, true);
+                    }
+
+                    PlatformUtils.Instance.MessageBox("Applied imgui.ini change. Restart Smithbox to apply changes.", "Information", MessageBoxButtons.OK);
+                }
+            }
+
+            ImGui.Separator();
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Reset the imgui.ini to the default version.");
+
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button("Reset##resetImguiIni", buttonSize))
+            {
+                var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
+                var defaultImgui = $@"{AppContext.BaseDirectory}\imgui.default";
+
+                if (Directory.Exists(storedDir))
+                {
+                    File.Copy(defaultImgui, curImgui, true);
+                }
+
+                PlatformUtils.Instance.MessageBox("Applied imgui.ini change. Restart Smithbox to apply changes.", "Information", MessageBoxButtons.OK);
+            }
         }
 
         if (ImGui.CollapsingHeader("Theme", ImGuiTreeNodeFlags.DefaultOpen))
