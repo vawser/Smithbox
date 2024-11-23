@@ -171,7 +171,9 @@ namespace SoulsFormats
                     }
                     else
                     {
-                        if (bitOffset == -1 || ParamUtil.GetBitLimit(type) != bitLimit || bitOffset + field.BitSize > bitLimit)
+                        if (bitOffset == -1 || 
+                            ParamUtil.GetBitLimit(type) != bitLimit || 
+                            bitOffset + field.BitSize > bitLimit)
                         {
                             checkOrphanedBits();
                             bitOffset = 0;
@@ -187,19 +189,32 @@ namespace SoulsFormats
                         }
 
                         if (field.BitSize == 0)
+                        {
                             throw new NotImplementedException($"Bit size 0 is not supported.");
+                        }
+
                         if (field.BitSize > bitLimit)
+                        {
                             throw new InvalidDataException($"Bit size {field.BitSize} is too large to fit in type {type}.");
+                        }
+
                         long shifted;
                         int leftShift = BIT_VALUE_SIZE - field.BitSize - bitOffset;
                         int rightShift = BIT_VALUE_SIZE - field.BitSize;
+
                         // Cast before shifting for sign extension
                         if (ParamUtil.IsSignedBitType(type))
+                        {
                             shifted = (long)bitValue << leftShift >> rightShift;
+                        }
                         // Cast after shifting to avoid sign extension
                         else
+                        {
                             shifted = (long)(bitValue << leftShift >> rightShift);
+                        }
+
                         bitOffset += field.BitSize;
+
                         value = type switch
                         {
                             PARAMDEF.DefType.s8 => (sbyte)shifted,

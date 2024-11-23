@@ -39,12 +39,12 @@
     Padding="" />
     
     <lookAtParamId
-    AltName="Loot-At ID"
+    AltName="LookAt ID"
     Wiki="Parameter ID of LookAt to use"
     Refs="LookAtParam,LookAtParam_Npc" />
     
     <lookAtDirType 
-    AltName="Look-At Direction Type"
+    AltName="LookAt Direction Type"
     Wiki="Direction to point with LookAt"
     Enum="LOOK_AT_DIR_TYPE" />
     

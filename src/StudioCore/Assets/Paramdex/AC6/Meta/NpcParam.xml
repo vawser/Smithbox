@@ -541,20 +541,20 @@
     <npcAttackActionId30 AltName="Attack Action ID [30]" Refs="AttackActionParam_NPC" />
     <npcAttackActionId31 AltName="Attack Action ID [31]" Refs="AttackActionParam_NPC" />
     
-    <lookAtParamNpcId_0 AltName="Look-at Param ID [0]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_0 AltName="LookAt Param ID [0]" Refs="LookAtParam_Npc" />
     
     <shieldPartHp AltName="Shield Part HP" />
     
     <showStabilityBar AltName="Show Stability Bar" Wiki="If stability bar should appear in UI." IsBool="" />
     <damageLevelConvThresholdParamId AltName="Stability Threshold Ref (DamageLevelConvThresholdParam ID)" Refs="DamageLevelConvThresholdParam" Wiki="Determines attitude stability behavior." />
     
-    <lookAtParamNpcId_1 AltName="Look-at Param ID [1]" Refs="LookAtParam_Npc" />
-    <lookAtParamNpcId_2 AltName="Look-at Param ID [2]" Refs="LookAtParam_Npc" />
-    <lookAtParamNpcId_3 AltName="Look-at Param ID [3]" Refs="LookAtParam_Npc" />
-    <lookAtParamNpcId_4 AltName="Look-at Param ID [4]" Refs="LookAtParam_Npc" />
-    <lookAtParamNpcId_5 AltName="Look-at Param ID [5]" Refs="LookAtParam_Npc" />
-    <lookAtParamNpcId_6 AltName="Look-at Param ID [6]" Refs="LookAtParam_Npc" />
-    <lookAtParamNpcId_7 AltName="Look-at Param ID [7]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_1 AltName="LookAt Param ID [1]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_2 AltName="LookAt Param ID [2]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_3 AltName="LookAt Param ID [3]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_4 AltName="LookAt Param ID [4]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_5 AltName="LookAt Param ID [5]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_6 AltName="LookAt Param ID [6]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_7 AltName="LookAt Param ID [7]" Refs="LookAtParam_Npc" />
     
     <pulseArmorReapplyDelaySeconds AltName="Pulse Armor: Reapplication Delay" Wiki="In seconds" />
     <pulseArmorRicochetedDamageCorrection AltName="Pulse Armor: Ricocheted Damage Correction" />

@@ -30,7 +30,7 @@
     
     <modelId
     AltName="Model ID"
-    Wiki="The model ID to use for this part." 
+    Wiki="The model ID for this part. Also determines the menu preview icon." 
     TextureRef="Weapon/01_common/SB_PartsThumbnails/modelId/" />
     
     <sortId

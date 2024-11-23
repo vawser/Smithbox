@@ -382,8 +382,11 @@ public class Param : SoulsFile<Param>
         {
             if (def.VersionAware && !field.IsValidForRegulationVersion(regulationVersion))
                 continue;
+
             PARAMDEF.DefType type = field.DisplayType;
+
             var isBitType = ParamUtil.IsBitType(type);
+
             if (!isBitType || (isBitType && field.BitSize == -1))
             {
                 // Advance the offset if we were last reading bits
@@ -393,6 +396,7 @@ public class Param : SoulsFile<Param>
                 columns.Add(ParamUtil.IsArrayType(type)
                     ? new Column(field, byteOffset, (uint)field.ArrayLength)
                     : new Column(field, byteOffset));
+
                 switch (type)
                 {
                     case PARAMDEF.DefType.s8:
@@ -432,16 +436,23 @@ public class Param : SoulsFile<Param>
                 var bitLimit = ParamUtil.GetBitLimit(newBitType);
 
                 if (field.BitSize == 0)
+                {
                     throw new NotImplementedException("Bit size 0 is not supported.");
+                }
+
                 if (field.BitSize > bitLimit)
+                {
                     throw new InvalidDataException(
                         $"Bit size {field.BitSize} is too large to fit in type {newBitType}.");
+                }
 
                 lastSize = (uint)ParamUtil.GetValueSize(newBitType);
+
                 if (bitOffset == -1 || newBitType != bitType || bitOffset + field.BitSize > bitLimit)
                 {
                     if (bitOffset != -1)
                         byteOffset += lastSize;
+
                     bitOffset = 0;
                     bitType = newBitType;
                 }

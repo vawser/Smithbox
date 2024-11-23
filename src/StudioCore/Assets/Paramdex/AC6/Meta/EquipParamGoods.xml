@@ -23,7 +23,7 @@
     Padding="" />
     
     <refId_default 
-    AltName="Reference ID" 
+    AltName="Reference ID: 1" 
     Wiki="ID used for the item." 
     Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
     
@@ -36,7 +36,7 @@
     Wiki="Weight. In kilograms." />
     
     <basicPrice 
-    AltName="Base Price" 
+    AltName="Base Value" 
     Wiki="Base price" />
     
     <sellValue 
@@ -318,40 +318,167 @@
     Wiki="IF ON, this item can be repaired." 
     IsBool="" />
     
-    <disableMultiDropShare AltName="Disable Dropping in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
-    <disableUseAtColiseum AltName="Disable Usage in Multiplayer Arena" Wiki="Is it prohibited to use in the arena?" IsBool="" />
-    <disableUseAtOutOfColiseum AltName="Disable Usage outside of Multiplayer Arena" Wiki="Is it prohibited to use outside the arena?" IsBool="" />
-    <isEnableFastUseItem AltName="Can Cancel Application Early" Wiki="Is it possible to cancel early?" IsBool="" />
-    <isApplySpecialEffect AltName="Apply SpEffect Modifiers" Wiki="Whether to reflect special effects (such as ability value correction)" IsBool="" />
-    <syncNumVaryId AltName="Synchronized Item Usage ID" Wiki="When the number of items is changed, the items with the same ID will be changed at the same time. 0 Not synchronized" />
-    <refId_1 AltName="Reference ID - Left Hand" Wiki="ID1 called from the item" Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
-    <refVirtualWepId AltName="Weapon Reference ID" Wiki="Weapon ID to refer to when using the tool" Refs="EquipParamWeapon" />
-    <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1 No vagrant 0 No lottery 1  With lottery" />
-    <vagrantBonusEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
-    <vagrantItemEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
-    <castSfxId AltName="Usage VFX - Cast" Wiki="SFXID until the effect is activated when you try to use the item" ParticleAlias="" />
-    <fireSfxId AltName="Usage VFX  - Activate" Wiki="SFX ID when the item is activated" ParticleAlias="" />
-    <effectSfxId AltName="Usage VFX - Effect" Wiki="After the item is activated, the SFX ID in effect" ParticleAlias="" />
-    <enable_ActiveBigRune AltName="Usable with Great Rune Active" Wiki="Can it be used with a large rune activated?" IsBool="" />
-    <isBonfireWarpItem AltName="Is Bonfire Warp Item" Wiki="If the state change type Warp Prohibition is applied when TRUE, remove the function to disable the item." IsBool="" />
-    <enable_Ladder AltName="Enable on Ladder" Wiki="Check here for items available in the ladder" IsBool="" />
-    <isUseMultiPlayPreparation AltName="Usable before Multiplayer Session" Wiki="Whether items can be used between session probability and initial synchronization" IsBool="" />
-    <canMultiUse AltName="Usable in Multiplayer" Wiki="Can it be used together?" IsBool="" />
-    <isShieldEnchant AltName="Is Shield Enchantment" Wiki="Is it a shield enchantment?" IsBool="" />
-    <isWarpProhibited AltName="Is Warp Prohibited" Wiki="When this is TRUE, disable the item if the state change type Warp Prohibition is applied." IsBool="" />
-    <isUseMultiPenaltyOnly AltName="Usable if Disconnect Penalty is Active" Wiki="A flag that allows you to determine if an item is only available when a client disconnect penalty is incurred." IsBool="" />
-    <suppleType AltName="Regenerative Item Type" Wiki="Replenishment item / Replenishment type when replenishing a replenished item." />
-    <autoReplenishType AltName="Auto Replenishment Type" Wiki="Controls whether or not to automatically replenish and default settings" />
-    <isDrop AltName="Can be Dropped" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
-    <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered )" IsBool="" />
-    <isSummonHorse AltName="Is Horse Summon" Wiki="Is it an item that summons a horse? Cannot be used if the horse died or the PC is in a horse-prohibited area" IsBool="" />
-    <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered new only)" />
-    <isSleepCollectionItem AltName="Is Sleep Collection Item" Wiki="Is it a Nemuri collection item?" IsBool="" />
-    <enableRiding AltName="Enabled while Riding" Wiki="Can it be used while riding?" IsBool="" />
-    <disableRiding AltName="Disabled while Riding" Wiki="Is it prohibited to use while not riding?" IsBool="" />
-    <maxRepositoryNum AltName="Max Number Stored in Itembox" Wiki="Number of warehouses" />
-    <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." />
-    <isUseNoAttackRegion AltName="Enabled in No Attack Region" Wiki="Can it be used in an attack-prohibited area?" IsBool="" />
+    <disableMultiDropShare 
+    AltName="Is Drop Disabled in Multiplayer" 
+    Wiki="If ON, this item cannot be dropped in a multiplayer session." 
+    IsBool="" />
+    
+    <disableUseAtColiseum 
+    AltName="Is Disabled in PvP Arena" 
+    Wiki="If ON, this item cannot be used when in the PvP arena." 
+    IsBool="" />
+    
+    <disableUseAtOutOfColiseum 
+    AltName="Is Enabled only in PvP Arena" 
+    Wiki="If ON, this item can only be used in the PvP arena." 
+    IsBool="" />
+    
+    <isEnableFastUseItem 
+    AltName="Is Early Cancel Enabled" 
+    Wiki="If ON, this item's usage can be cancelled early." 
+    IsBool="" />
+    
+    <isApplySpecialEffect 
+    AltName="Are SpEffect Modifiers Applied" 
+    Wiki="If ON, SpEffect modifiers are applied." 
+    IsBool="" />
+    
+    <syncNumVaryId 
+    AltName="Synchronized Item ID" 
+    Wiki="If the item count is changed, items with the same ID will be changed at the same time. 0 means no item is synchronzied." />
+    
+    <refId_1 
+    AltName="Reference ID: 2" 
+    Wiki="ID used for the item." 
+    Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    
+    <refVirtualWepId 
+    AltName="Weapon ID" 
+    Wiki="Weapon ID to use to populate weapon parameters for offensive items." 
+    Refs="EquipParamWeapon" />
+    
+    <vagrantItemLotId
+    AltName="Vagrant Item Lot ID" 
+    Wiki="-1 No vagrant 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantBonusEneDropItemLotId 
+    AltName="Vagrant Enemy Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantItemEneDropItemLotId 
+    AltName="Vagrant Bonus Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <castSfxId 
+    AltName="Particle ID: Cast" 
+    Wiki="SFX ID triggered when the item is casted." 
+    ParticleAlias="" />
+    
+    <fireSfxId 
+    AltName="Particle ID: Fire" 
+    Wiki="SFX ID triggered when the item is fired." 
+    ParticleAlias="" />
+    
+    <effectSfxId 
+    AltName="Particle ID: Effect" 
+    Wiki="SFX ID triggered after the item is fired." 
+    ParticleAlias="" />
+    
+    <isMedalEnmblemCondition
+    AltName="Obtain Medal Emblem"
+    Wiki="Is it a condition to obtain the medal emblem?" 
+    IsBool="" />
+    
+    <isBonfireWarpItem 
+    AltName="Is Bonfire Warp Item" 
+    Wiki="If ON, item usage is blocked if warp prohibition is active." 
+    IsBool="" />
+    
+    <enable_Ladder 
+    AltName="Is Usable on Ladder" 
+    Wiki="If ON, the item can be used whilst on a ladder." 
+    IsBool="" />
+    
+    <isUseMultiPlayPreparation 
+    AltName="Usable before Multiplayer Session" 
+    Wiki="Whether items can be used between session probability and initial synchronization" 
+    IsBool="" />
+    
+    <canMultiUse 
+    AltName="Can Use Multiple" 
+    Wiki="If ON, multiple instances can be used simultaneously." 
+    IsBool="" />
+    
+    <isUseRefId1ForEnchant
+    AltName="Use Reference ID 2 when Duel-Wielding"
+    Wiki="If ON, apply the reference ID 2 parameter if duel-wielding a weapon."
+    IsBool="" />
+    
+    <isWarpProhibited 
+    AltName="Is Affected by Warp Prohibition" 
+    Wiki="If ON, then warp prohibition will disable this item." 
+    IsBool="" />
+    
+    <isUseMultiPenaltyOnly 
+    AltName="Is Usable when Multiplayer Penalty is Active" 
+    Wiki="If ON, then this item is usable when a multiplayer penalty has been applied. Otherwise, it is not usable." 
+    IsBool="" />
+    
+    <suppleType 
+    AltName="Replenishment Type" 
+    Wiki="The type of replenishment to apply when replenishing this item." 
+    Enum="GOODS_SUPPLE_TYPE" />
+    
+    <autoReplenishType 
+    AltName="Automatic Replenishment Type" 
+    Wiki="The type of automatic replenishment available, and whether it is enabled or disabled by default." 
+    Enum="AUTO_REPLENISH_TYPE" />
+    
+    <isDrop 
+    AltName="Can be Dropped" 
+    Wiki="If ON, this item can be dropped." 
+    IsBool="" />
+    
+    <isPlaySeLocalPlayerOnly
+    AltName="Is Local Player Sound Playback Only"
+    Wiki="Is the sound playback when used only played for the using player."
+    IsBool="" />
+    
+    <pad0
+    AltName=""
+    Padding="" />
+    
+    <maxRepositoryNum 
+    AltName="Max Repository Count" 
+    Wiki="The maximum number of this item that can be stored in the repository system." />
+    
+    <reserve
+    AltName=""
+    Padding="" />
+    
+    <equipPanelIconID
+    AltName="HUD Icon ID"
+    Wiki="The icon ID for the the weapon panel GUI." 
+    Enum="FE_EQUIPPANEL_ICON_ID" />
+    
+    <saleValue
+    AltName="Sale Value"
+    Wiki="Price the item is on sale for." />
+    
+    <reuseTimeSec
+    AltName="Re-use Time"
+    Wiki="The usage cooldown. In seconds." />
+    
+    <beginSeId
+    AltName="Sound ID: On Use"
+    Wiki="The sound ID to play when the item is used." />
+    
+    <reserve2
+    AltName=""
+    Padding="" />
   </Field>
   <Enums>
     <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
@@ -475,6 +602,34 @@
         <Option Value="3" Name="Blue Covenant Value" />
         <Option Value="4" Name="Black Covenant Value" />
         <Option Value="5" Name="Dragon Covenant Value" />
+    </Enum>
+    <Enum Name="GOODS_SUPPLE_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Fill to HP Flask Limit" />
+        <Option Value="2" Name="Fill to MP Flask Limit" />
+        <Option Value="3" Name="Fill to Inventory Limit" />
+    </Enum>
+    <Enum Name="AUTO_REPLENISH_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Allow Automatic Replenishment: Default to Disabled" />
+        <Option Value="2" Name="Allow Automatic Replenishment: Default to Enabled" />
+    </Enum>
+    <Enum Name="FE_EQUIPPANEL_ICON_ID" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Handgun" />
+        <Option Value="2" Name="Shotgun" />
+        <Option Value="3" Name="Rifle" />
+        <Option Value="4" Name="Bazooka" />
+        <Option Value="5" Name="Sniper Rifle" />
+        <Option Value="6" Name="Hand Missile" />
+        <Option Value="7" Name="Melee Weapon" />
+        <Option Value="8" Name="Shield" />
+        <Option Value="9" Name="Missile" />
+        <Option Value="10" Name="Cannon" />
+        <Option Value="11" Name="Grenade" />
+        <Option Value="12" Name="Smoke Grenade" />
+        <Option Value="13" Name="Flare" />
+        <Option Value="14" Name="Other" />
     </Enum>
   </Enums>
 </PARAMMETA>
