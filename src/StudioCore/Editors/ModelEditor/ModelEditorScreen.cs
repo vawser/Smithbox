@@ -21,6 +21,7 @@ using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ModelEditor.Core;
 using StudioCore.Editors.ModelEditor.Core.Properties;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.Extensions.Logging;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -477,7 +478,7 @@ public class ModelEditorScreen : EditorScreen
 
         if (Smithbox.ProjectType == ProjectType.DES)
         {
-            TaskLogs.AddLog("Model Editor is not supported for DES.");
+            TaskLogs.AddLog("Model Editor is not supported for DES.", LogLevel.Warning);
             return;
         }
 
@@ -494,7 +495,7 @@ public class ModelEditorScreen : EditorScreen
 
         if (Smithbox.ProjectType == ProjectType.DES)
         {
-            TaskLogs.AddLog("Model Editor saving is not supported for DES.");
+            TaskLogs.AddLog("Model Editor saving is not supported for DES.", LogLevel.Warning);
             return;
         }
 

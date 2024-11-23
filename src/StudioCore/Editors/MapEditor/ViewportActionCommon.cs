@@ -325,8 +325,6 @@ public static class ViewportActionCommon
                         // Name is a AEG reference
                         if (name.Contains(modelName) && name.Contains("AEG"))
                         {
-                            TaskLogs.AddLog($"{name}");
-
                             name = partName;
                         }
                     }
@@ -358,8 +356,6 @@ public static class ViewportActionCommon
                         // Name is a AEG reference
                         if (name.Contains(modelName) && name.Contains("AEG"))
                         {
-                            TaskLogs.AddLog($"{name}");
-
                             name = partName;
                         }
                     }

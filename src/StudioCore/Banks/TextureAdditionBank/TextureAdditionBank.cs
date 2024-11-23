@@ -1,4 +1,5 @@
-﻿using StudioCore.Banks.AliasBank;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
 using StudioCore.UserProject;
 using System;
@@ -31,15 +32,12 @@ namespace StudioCore.Banks.TextureAdditionBank
             try
             {
                 TextureAdditions = BankUtils.LoadTextureAdditionJSON(AliasDirectory, AliasFileName);
+                TaskLogs.AddLog($"Successfully setup texture addition resource bank.");
             }
             catch (Exception e)
             {
-#if DEBUG
-                TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
-#endif
+                TaskLogs.AddLog($"Failed to setup texture addition resource bank:\n{e}", LogLevel.Error);
             }
-
-            TaskLogs.AddLog($"Texture Addition Bank: Loaded Additions");
         }
 
         public bool HasAdditionalTextures(string modelid)

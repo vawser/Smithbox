@@ -96,6 +96,10 @@ public class InterfaceThemeConfig
     public List<float> ImGui_TextEditor_ModifiedRow_Text { get; set; }
     public List<float> ImGui_TextEditor_UniqueRow_Text { get; set; }
 
+    public List<float> ImGui_Logger_Information_Color { get; set; }
+    public List<float> ImGui_Logger_Warning_Color { get; set; }
+    public List<float> ImGui_Logger_Error_Color { get; set; }
+
     public List<float> DisplayGroupEditor_Border_Highlight { get; set; }
     public List<float> DisplayGroupEditor_DisplayActive_Frame { get; set; }
     public List<float> DisplayGroupEditor_DisplayActive_Checkbox { get; set; }

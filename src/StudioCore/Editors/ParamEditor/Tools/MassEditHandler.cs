@@ -56,10 +56,7 @@ public class MassEditHandler
         {
             _lastMEditRegexInput = _currentMEditRegexInput;
             _currentMEditRegexInput = "";
-            TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-                TaskManager.RequeueType.Repeat,
-                true, LogPriority.Low,
-                () => ParamBank.RefreshAllParamDiffCaches(false)));
+            ParamBank.RefreshParamDifferenceCacheTask();
         }
 
         _mEditRegexResult = r.Information;
@@ -95,6 +92,8 @@ public class MassEditHandler
         // Check both so the name is unique everywhere
         if (!File.Exists(scriptPath))
         {
+            var filename = Path.GetFileNameWithoutExtension(scriptPath);
+
             try
             {
                 var fs = new FileStream(scriptPath, System.IO.FileMode.Create);
@@ -102,10 +101,12 @@ public class MassEditHandler
                 fs.Write(data, 0, data.Length);
                 fs.Flush();
                 fs.Dispose();
+
+                TaskLogs.AddLog($"Successfully saved mass edit script: {filename} at {scriptPath}.");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                TaskLogs.AddLog($"Failed to save mass edit script: {filename} at {scriptPath}\n{ex}");
             }
         }
         else

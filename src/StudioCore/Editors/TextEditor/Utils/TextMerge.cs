@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Core.Project;
@@ -83,7 +84,7 @@ public static class TextMerge
     {
         if(TargetProjectDir == "")
         {
-            TaskLogs.AddLog("Specified target directory is invalid!");
+            TaskLogs.AddLog("Specified target directory is invalid.", LogLevel.Warning);
             return;
         }
 
@@ -138,7 +139,7 @@ public static class TextMerge
             }
         }
 
-        TaskLogs.AddLog($"Applied Text Merge.");
+        TaskLogs.AddLog($"Successfully applied Text Merge.");
     }
 
     private static void ProcessFmg(TextFmgWrapper sourceWrapper, TextFmgWrapper targetWrapper)

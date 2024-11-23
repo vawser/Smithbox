@@ -299,16 +299,35 @@ public class Smithbox
 
         if (CFG.Current.Enable_Soapstone_Server)
         {
-            TaskManager.RunPassiveTask(new TaskManager.LiveTask("Soapstone Server",
-                TaskManager.RequeueType.None, true,
-                () => SoapstoneServer.RunAsync(KnownServer.DSMapStudio, _soapstoneService).Wait()));
+            TaskManager.LiveTask task = new(
+                "system_setupSoapstoneServer",
+                "System",
+                "The soapstone server is running.",
+                "The soapstone server is not running.",
+                TaskManager.RequeueType.None,
+                false,
+                () =>
+                {
+                    SoapstoneServer.RunAsync(KnownServer.DSMapStudio, _soapstoneService).Wait();
+                }
+            );
+
+            TaskManager.RunPassiveTask(task);
         }
 
         if (CFG.Current.System_Check_Program_Update)
         {
-            TaskManager.Run(new TaskManager.LiveTask("Check Program Updates",
-                TaskManager.RequeueType.None, true,
-                () => CheckProgramUpdate()));
+            TaskManager.LiveTask task = new(
+                "system_checkProgramUpdate",
+                "System",
+                "The program update check has run.",
+                "The program update check has failed to run.",
+                TaskManager.RequeueType.None,
+                true,
+                CheckProgramUpdate
+            );
+
+            TaskManager.Run(task);
         }
 
         long previousFrameTicks = 0;
@@ -520,9 +539,14 @@ public class Smithbox
 
             WindowHandler.SmithboxUpdateButton();
 
-            TaskLogs.DisplayLoggerBar();
+            TaskLogs.DisplayActionLoggerBar();
+            TaskLogs.DisplayActionLoggerWindow();
             ImGui.Separator();
-            TaskLogs.DisplayWindow();
+
+            TaskLogs.DisplayWarningLoggerBar();
+            TaskLogs.DisplayWarningLoggerWindow();
+            ImGui.Separator();
+
 
             ImGui.EndMainMenuBar();
         }

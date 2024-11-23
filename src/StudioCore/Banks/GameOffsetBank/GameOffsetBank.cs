@@ -30,12 +30,11 @@ public class GameOffsetBank
         try
         {
             Offsets = BankUtils.LoadGameOffsetJSON(OffsetDirectory, OffsetFileName);
+            TaskLogs.AddLog($"Successfully setup game offsets for Param Reloader.");
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to load Game Offset Bank: {e.Message}");
+            TaskLogs.AddLog($"Failed to setup game offsets for Param Reloader: {e.Message}");
         }
-
-        TaskLogs.AddLog($"Game Offset Bank: Loaded Offsets");
     }
 }

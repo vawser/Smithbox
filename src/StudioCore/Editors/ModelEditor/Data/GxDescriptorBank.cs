@@ -1,4 +1,5 @@
-﻿using StudioCore.Banks;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ public class GxDescriptorBank
 {
     private ModelEditorScreen Screen;
 
-    private string DescriptorPath = $"{Smithbox.SmithboxDataRoot}\\GX Items\\GXItemDescriptors.json";
+    private string DescriptorPath = $"{AppContext.BaseDirectory}\\Assets\\GX Items\\GXItemDescriptors.json";
 
     public GXDescriptorList Descriptors = new GXDescriptorList();
 
@@ -25,15 +26,12 @@ public class GxDescriptorBank
         try
         {
             Descriptors = LoadJson(DescriptorPath);
+            TaskLogs.AddLog($"Successfully setup GX item descriptor bank.");
         }
         catch (Exception e)
         {
-#if DEBUG
-            TaskLogs.AddLog($"Failed to load: GX Item Descriptors Bank: {e.Message}");
-#endif
+            TaskLogs.AddLog($"Failed to setup GX item descriptor bank: {DescriptorPath}\n{e}", LogLevel.Error);
         }
-
-        TaskLogs.AddLog($"GX Item Descriptors: Loaded Bank");
     }
 
     public GXDescriptorList LoadJson(string path)

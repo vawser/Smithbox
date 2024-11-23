@@ -66,7 +66,6 @@ public static class EsdBank
                     fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
                     break;
                 default:
-                    TaskLogs.AddLog($"Invalid ProjectType during SaveESDScript");
                     return;
             }
         }
@@ -92,7 +91,6 @@ public static class EsdBank
                     fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                     break;
                 default:
-                    TaskLogs.AddLog($"Invalid ProjectType during SaveESDScript");
                     return;
             }
         }
@@ -151,8 +149,6 @@ public static class EsdBank
 
         IsLoaded = true;
         IsLoading = false;
-
-        TaskLogs.AddLog($"ESD Script Bank - Load Complete");
     }
 
     private static void LoadEsdScript(string path)
@@ -187,7 +183,8 @@ public static class EsdBank
             }
             catch(Exception ex)
             {
-                TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                var filename = Path.GetFileNameWithoutExtension(path);
+                TaskLogs.AddLog($"Failed to read ESD file: {filename} at {path}.\n{ex}", LogLevel.Error);
             }
         }
         else
@@ -198,7 +195,8 @@ public static class EsdBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                var filename = Path.GetFileNameWithoutExtension(path);
+                TaskLogs.AddLog($"Failed to read ESD file: {filename} at {path}.\n{ex}", LogLevel.Error);
             }
         }
 
@@ -215,7 +213,7 @@ public static class EsdBank
                     }
                     catch (Exception ex)
                     {
-                        TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                        TaskLogs.AddLog($"Failed to read ESD script: {file.ID}.\n{ex}", LogLevel.Error);
                     }
                 }
             }

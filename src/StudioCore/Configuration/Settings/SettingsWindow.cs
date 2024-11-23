@@ -255,9 +255,6 @@ public class SettingsWindow
             {
                 foreach (var entry in Smithbox.BankHandler.CharacterAliases.Aliases.list)
                 {
-                    TaskLogs.AddLog(entry.id);
-                    TaskLogs.AddLog(TargetChrID);
-
                     if (entry.id == TargetChrID)
                     {
                         CharacterAliasTab._newRefId = "";

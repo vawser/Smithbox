@@ -1,4 +1,5 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
+using Microsoft.Extensions.Logging;
 using Silk.NET.OpenGL;
 using StudioCore.Core.Project;
 using StudioCore.Editors.TextEditor.Enums;
@@ -82,7 +83,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -94,7 +95,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DES: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DES: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSampleContainer(info))
@@ -106,7 +107,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Sample_MsgBndID_DES: {id} not defined");
+                        TaskLogs.AddLog($"Sample_MsgBndID_DES: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -121,7 +122,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -133,7 +134,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -189,7 +190,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_BB: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_BB: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -201,7 +202,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_BB: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_BB: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -215,7 +216,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -227,7 +228,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -239,7 +240,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -253,7 +254,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -265,7 +266,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -277,7 +278,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"SellRegion_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -291,7 +292,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -303,7 +304,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -315,7 +316,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -327,7 +328,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"SellRegion_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -341,7 +342,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -353,7 +354,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -365,7 +366,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -395,7 +396,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -407,7 +408,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DES: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DES: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -422,7 +423,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -434,7 +435,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -475,7 +476,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_BB: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_BB: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -487,7 +488,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_BB: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_BB: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -501,7 +502,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -513,7 +514,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -525,7 +526,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -539,7 +540,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -551,7 +552,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -563,7 +564,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"SellRegion_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -577,7 +578,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -589,7 +590,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -601,7 +602,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -613,7 +614,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"SellRegion_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -627,7 +628,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -639,7 +640,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -651,7 +652,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -681,7 +682,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -693,7 +694,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSampleContainer(info))
@@ -705,7 +706,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Sample_MsgBndID_DES: {id} not defined");
+                        TaskLogs.AddLog($"Sample_MsgBndID_DES: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -720,7 +721,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -732,7 +733,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -788,7 +789,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_BB: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_BB: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -800,7 +801,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_BB: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_BB: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -814,7 +815,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -826,7 +827,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -838,7 +839,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -852,7 +853,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -864,7 +865,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -876,7 +877,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"SellRegion_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -890,7 +891,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -902,7 +903,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -914,7 +915,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -926,7 +927,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"SellRegion_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -940,7 +941,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -952,7 +953,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -964,7 +965,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -994,7 +995,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1006,7 +1007,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSampleContainer(info))
@@ -1018,7 +1019,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Sample_MsgBndID_DES: {id} not defined");
+                        TaskLogs.AddLog($"Sample_MsgBndID_DES: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -1033,7 +1034,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1045,7 +1046,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -1101,7 +1102,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_BB: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_BB: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1113,7 +1114,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_BB: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_BB: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -1127,7 +1128,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1139,7 +1140,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1151,7 +1152,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_DS3: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -1165,7 +1166,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1177,7 +1178,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -1189,7 +1190,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_SDT: {id} not defined");
+                        TaskLogs.AddLog($"SellRegion_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -1203,7 +1204,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1215,7 +1216,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1227,7 +1228,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -1239,7 +1240,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_ER: {id} not defined");
+                        TaskLogs.AddLog($"SellRegion_MsgBndID_ER: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -1253,7 +1254,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"Item_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1265,7 +1266,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"Menu_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1277,7 +1278,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_AC6: {id} not defined");
+                        TaskLogs.AddLog($"NgWord_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;

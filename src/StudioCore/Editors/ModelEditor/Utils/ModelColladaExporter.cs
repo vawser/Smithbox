@@ -1,4 +1,5 @@
 ﻿using Assimp;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -23,11 +24,11 @@ public static class ModelColladaExporter
 
         if (success)
         {
-            TaskLogs.AddLog($"Model exported successfully: {path}");
+            TaskLogs.AddLog($"Successfully exported DAE file: {path}");
         }
         else
         {
-            TaskLogs.AddLog($"Model was not exported.");
+            TaskLogs.AddLog($"Model was not exported.", LogLevel.Error);
         }
     }
 

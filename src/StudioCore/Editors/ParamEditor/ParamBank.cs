@@ -315,7 +315,7 @@ public class ParamBank
 
             if (action == null)
             {
-                TaskLogs.AddLog($"Could not apply name files for {fName}",
+                TaskLogs.AddLog($"Could not apply name files for {fName}\nFile path: {f}",
                     LogLevel.Warning);
             }
             else
@@ -393,7 +393,7 @@ public class ParamBank
                             p.ParamType = newParamType;
                             TaskLogs.AddLog(
                                 $"Couldn't find ParamDef for {paramName}, but tentative ParamType \"{newParamType}\" exists.",
-                                LogLevel.Debug);
+                                LogLevel.Warning);
                         }
                         else
                         {
@@ -412,7 +412,7 @@ public class ParamBank
                         p.ParamType = newParamType;
                         TaskLogs.AddLog(
                             $"Couldn't read ParamType for {paramName}, but tentative ParamType \"{newParamType}\" exists.",
-                            LogLevel.Debug);
+                            LogLevel.Warning);
                     }
                     else
                     {
@@ -796,7 +796,7 @@ public class ParamBank
             }
             else
             {
-                TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, LogPriority.Normal);
+                TaskLogs.AddLog("Graphics Params file could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
             }
         }
 
@@ -1085,7 +1085,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, LogPriority.Normal);
+            TaskLogs.AddLog("System Params could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
         }
 
         var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
@@ -1095,7 +1095,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, LogPriority.Normal);
+            TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
         }
 
         LoadExternalRowNames();
@@ -1176,7 +1176,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, LogPriority.Normal);
+            TaskLogs.AddLog("System Params could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
         }
 
         var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
@@ -1186,7 +1186,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, LogPriority.Normal);
+            TaskLogs.AddLog("Graphic Params could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
         }
 
         var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
@@ -1196,7 +1196,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, LogPriority.Normal);
+            TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
         }
 
         LoadExternalRowNames();
@@ -1267,19 +1267,34 @@ public class ParamBank
 
         UICache.ClearCaches();
 
-        TaskManager.Run(new TaskManager.LiveTask("Param - Load Params", TaskManager.RequeueType.WaitThenRequeue,
-            false, () =>
+        TaskManager.LiveTask task = new(
+            "paramEditor_loadParams",
+            "Param Editor",
+            "Successfully loaded the params.",
+            "Failed to load the param.",
+            TaskManager.RequeueType.WaitThenRequeue,
+            false,
+            () =>
             {
                 if (Smithbox.ProjectType != ProjectType.Undefined)
                 {
                     List<(string, PARAMDEF)> defPairs = LoadParamdefs();
                     IsDefsLoaded = true;
-                    TaskManager.Run(new TaskManager.LiveTask("Param - Load Meta",
-                        TaskManager.RequeueType.WaitThenRequeue, false, () =>
+
+                    TaskManager.LiveTask metaTask = new(
+                        "paramEditor_loadParamMeta",
+                        "Param Editor",
+                        "Successfully loaded the param META.",
+                        "Failed to load the param META.",
+                        TaskManager.RequeueType.WaitThenRequeue,
+                        false,
+                        () =>
                         {
                             LoadParamMeta(defPairs);
                             IsMetaLoaded = true;
-                        }));
+                        });
+
+                    TaskManager.Run(metaTask);
                 }
 
                 if (Smithbox.ProjectType == ProjectType.DES)
@@ -1327,8 +1342,16 @@ public class ParamBank
 
                 VanillaBank.IsLoadingParams = true;
                 VanillaBank._params = new Dictionary<string, Param>();
-                TaskManager.Run(new TaskManager.LiveTask("Param - Load Vanilla Params",
-                    TaskManager.RequeueType.WaitThenRequeue, false, () =>
+
+
+                TaskManager.LiveTask vanillaTask = new(
+                    "paramEditor_loadVanillaParams",
+                    "Param Editor",
+                    "Successfully loaded the vanilla params.",
+                    "Failed to load the vanilla params.",
+                    TaskManager.RequeueType.WaitThenRequeue,
+                    false,
+                    () =>
                     {
                         if (Smithbox.ProjectType == ProjectType.DES)
                         {
@@ -1372,10 +1395,10 @@ public class ParamBank
 
                         VanillaBank.IsLoadingParams = false;
 
-                        TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-                            TaskManager.RequeueType.WaitThenRequeue, false,
-                            () => RefreshAllParamDiffCaches(true)));
-                    }));
+                        ParamBank.RefreshParamDifferenceCacheTask();
+                    });
+
+                TaskManager.Run(vanillaTask);
 
                 if (Smithbox.ProjectHandler.ImportRowNames)
                 {
@@ -1392,7 +1415,9 @@ public class ParamBank
                             LogLevel.Warning);
                     }
                 }
-            }));
+            });
+
+        TaskManager.Run(task);
     }
 
     public static void LoadAuxBank(string path, string looseDir, string enemyPath)
@@ -1455,6 +1480,23 @@ public class ParamBank
             _vanillaDiffCache.Add(param, new HashSet<int>());
             _primaryDiffCache.Add(param, new HashSet<int>());
         }
+    }
+
+    public static void RefreshParamDifferenceCacheTask(bool checkAuxVanillaDiff = false)
+    {
+        // Refresh diff cache
+        TaskManager.LiveTask task = new(
+            "paramEditor_refreshDifferenceCache",
+            "Param Editor",
+            "Difference cache between param banks has been refreshed.",
+            "Param Editor param bank difference cache refresh has failed.",
+            TaskManager.RequeueType.Repeat,
+            true,
+            LogPriority.Low,
+            () => ParamBank.RefreshAllParamDiffCaches(checkAuxVanillaDiff)
+        );
+
+        TaskManager.Run(task);
     }
 
     public static void RefreshAllParamDiffCaches(bool checkAuxVanillaDiff)
@@ -1619,10 +1661,11 @@ public class ParamBank
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
-        if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd"))
+        var savePath = $@"{dir}\\param\GameParam\GameParam.parambnd";
+
+        if (!File.Exists(savePath))
         {
-            TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, LogPriority.High);
+            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -1681,10 +1724,11 @@ public class ParamBank
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
-        if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd.dcx"))
+        var savePath = $@"{dir}\\param\GameParam\GameParam.parambnd.dcx";
+
+        if (!File.Exists(savePath))
         {
-            TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, LogPriority.High);
+            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -1743,10 +1787,11 @@ public class ParamBank
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
-        if (!File.Exists($@"{dir}\enc_regulation.bnd.dcx"))
+        var savePath = $@"{dir}\enc_regulation.bnd.dcx";
+
+        if (!File.Exists(savePath))
         {
-            TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, LogPriority.High);
+            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -1906,10 +1951,11 @@ public class ParamBank
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
-        if (!File.Exists($@"{dir}\Data0.bdt"))
+        var savePath = $@"{dir}\Data0.bdt";
+
+        if (!File.Exists(savePath))
         {
-            TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, LogPriority.High);
+            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -1991,10 +2037,11 @@ public class ParamBank
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
-        if (!File.Exists($@"{dir}\\param\gameparam\gameparam.parambnd.dcx"))
+        var savePath = $@"{dir}\\param\gameparam\gameparam.parambnd.dcx";
+
+        if (!File.Exists(savePath))
         {
-            TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, LogPriority.High);
+            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -2046,10 +2093,11 @@ public class ParamBank
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
-        if (!File.Exists($@"{dir}\\param\gameparam\gameparam.parambnd.dcx"))
+        var savePath = $@"{dir}\\param\gameparam\gameparam.parambnd.dcx";
+
+        if (!File.Exists(savePath))
         {
-            TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, LogPriority.High);
+            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -2104,8 +2152,7 @@ public class ParamBank
 
         if (!File.Exists(param))
         {
-            TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, LogPriority.High);
+            TaskLogs.AddLog($"Save failed. Cannot locate param files: {param}", LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -2204,10 +2251,11 @@ public class ParamBank
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
-        if (!File.Exists($@"{dir}\\regulation.bin"))
+        var savePath = $@"{dir}\\regulation.bin";
+
+        if (!File.Exists(savePath))
         {
-            TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, LogPriority.High);
+            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -2289,10 +2337,12 @@ public class ParamBank
 
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
-        if (!File.Exists($@"{dir}\\regulation.bin"))
+
+        var savePath = $@"{dir}\\regulation.bin";
+
+        if (!File.Exists(savePath))
         {
-            TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, LogPriority.High);
+            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
             return;
         }
 

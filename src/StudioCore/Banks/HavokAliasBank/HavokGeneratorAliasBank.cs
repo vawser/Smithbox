@@ -1,4 +1,5 @@
-﻿using StudioCore.Banks.AliasBank;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
 using System;
 using System.Collections.Generic;
@@ -31,13 +32,12 @@ public class HavokGeneratorAliasBank
         try
         {
             HavokAliases = BankUtils.LoadHavokAliasJSON(HavokAliasFileName);
+            TaskLogs.AddLog($"Successfully setup {HavokAliasTitle} havok resource bank.");
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to load: {HavokAliasTitle} Bank: {e.Message}");
+            TaskLogs.AddLog($"Failed to setup {HavokAliasTitle} havok resource bank:\n{e}", LogLevel.Error);
         }
-
-        TaskLogs.AddLog($"Havok Alias Bank: Loaded {HavokAliasTitle} Bank");
     }
 
     public Dictionary<string, HavokAliasReference> GetEntries()

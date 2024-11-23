@@ -1,4 +1,5 @@
-﻿using StudioCore.Banks;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
@@ -33,13 +34,12 @@ public class SelectionGroupBank
         try
         {
             Groups = LoadSelectionGroupJSON(GroupDirectory, GroupFileName);
+            TaskLogs.AddLog($"Successfully setup Selection Group bank.");
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to load Selection Group Bank: {e.Message}");
+            TaskLogs.AddLog($"Failed to setup Selection Group bank:\n{e}", LogLevel.Error);
         }
-
-        TaskLogs.AddLog($"Selection Group Bank: Loaded Selection Groups");
     }
 
     public void CreateSelectionGroups()
@@ -61,7 +61,7 @@ public class SelectionGroupBank
             }
             catch
             {
-                TaskLogs.AddLog($"Failed to create selection groups directory: {SelectionDirectory}");
+                TaskLogs.AddLog($"Failed to create selection groups directory: {SelectionDirectory}", LogLevel.Error);
                 return;
             }
 
@@ -76,7 +76,7 @@ public class SelectionGroupBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                TaskLogs.AddLog($"Failed to write selection group resource file: {SelectionPath}\n{ex}");
             }
         }
     }
@@ -168,7 +168,7 @@ public class SelectionGroupBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                TaskLogs.AddLog($"Failed to save selection group resource file: {SelectionPath}\n{ex}");
             }
         }
         else
@@ -193,7 +193,7 @@ public class SelectionGroupBank
         }
         else
         {
-            TaskLogs.AddLog($"{smithboxResource} does not exist!");
+            TaskLogs.AddLog($"{smithboxResource} does not exist!", LogLevel.Error);
         }
 
         return smithboxResource;

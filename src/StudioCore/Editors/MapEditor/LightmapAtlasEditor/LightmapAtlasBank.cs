@@ -1,4 +1,5 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
@@ -50,7 +51,9 @@ public class LightmapAtlasBank
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"Failed to load BTAB file: {entry.AssetPath} - {e.Message}");
+                    var filename = Path.GetFileNameWithoutExtension(entry.AssetPath);
+
+                    TaskLogs.AddLog($"Failed to load BTAB file: {filename} at {entry.AssetPath}\n{e.Message}", LogLevel.Error);
                 }
             }
 
@@ -85,11 +88,11 @@ public class LightmapAtlasBank
                     }
 
                     File.WriteAllBytes(projectFilePath, fileBytes);
-                    TaskLogs.AddLog($"Saved {mapid} Lightmap Atlas file: {projectFilePath}");
+                    TaskLogs.AddLog($"Saved BTAB file: {fileName} at {projectFilePath}");
                 }
                 else
                 {
-                    TaskLogs.AddLog($"Failed to save {mapid} Lightmap Atlas file: {projectFilePath}");
+                    TaskLogs.AddLog($"Failed BTAB file: {fileName} at {projectFilePath}", LogLevel.Error);
                 }
             }
         }

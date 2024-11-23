@@ -466,7 +466,8 @@ public class PinGroups
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"{ex}");
+            var filename = Path.GetFileNameWithoutExtension(readPath);
+            TaskLogs.AddLog($"Failed to load param pin group: {filename} at {readPath}\n{ex}");
         }
     }
     public void LoadRowPinGroup(string groupName)
@@ -482,7 +483,8 @@ public class PinGroups
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"{ex}");
+            var filename = Path.GetFileNameWithoutExtension(readPath);
+            TaskLogs.AddLog($"Failed to load row pin group: {filename} at {readPath}\n{ex}");
         }
     }
     public void LoadFieldPinGroup(string groupName)
@@ -498,7 +500,8 @@ public class PinGroups
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"{ex}");
+            var filename = Path.GetFileNameWithoutExtension(readPath);
+            TaskLogs.AddLog($"Failed to load field pin group: {filename} at {readPath}\n{ex}");
         }
     }
 
@@ -533,11 +536,11 @@ public class PinGroups
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Saved {groupName}: {writePath}");
+                TaskLogs.AddLog($"Successfully saved pin group: {filename} at {writePath}.");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                TaskLogs.AddLog($"Failed to save pin group: {filename} at {writePath}\n{ex}");
             }
 
             RefreshGroupList = true;

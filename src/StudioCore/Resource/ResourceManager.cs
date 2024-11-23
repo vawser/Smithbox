@@ -98,8 +98,8 @@ public static class ResourceManager
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"Failed to load TPF \"{action._filePath}\": {e.Message}",
-                    LogLevel.Warning, LogPriority.Normal, e);
+                TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtpathbase}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
+
                 return new LoadTPFTextureResourceRequest[] { };
             }
         }
@@ -182,7 +182,15 @@ public static class ResourceManager
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to load TPF \"{tpfName}\"", LogLevel.Warning, LogPriority.Normal, e);
+                        
+                        TaskLogs.AddLog("" +
+                            $"Failed to load TPF:\nName: {tpfName}" +
+                            $"\nBinder Path: {action.BinderAbsolutePath}" +
+                            $"\nBinder Virtual Path: {action.BinderVirtualPath}" +
+                            $"\nAccess Level: {action.AccessLevel}" +
+                            $"\n{e}", 
+                            LogLevel.Warning, LogPriority.Normal);
+
                         i--;
                     }
 
@@ -191,8 +199,11 @@ public static class ResourceManager
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to load binder \"{action.BinderVirtualPath}\"",
-                LogLevel.Warning, LogPriority.Normal, e);
+            TaskLogs.AddLog($"Failed to load binder: {action.BinderVirtualPath}" +
+                            $"\nBinder Virtual Path: {action.BinderVirtualPath}" +
+                            $"\nAccess Level: {action.AccessLevel}" +
+                            $"\n{e}",
+                            LogLevel.Warning, LogPriority.Normal);
         }
 
         if (action.Binder != null)

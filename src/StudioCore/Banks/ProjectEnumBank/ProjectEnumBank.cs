@@ -1,4 +1,5 @@
-﻿using StudioCore.Banks.AliasBank;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
@@ -39,15 +40,12 @@ public class ProjectEnumBank
             {
                 entry.Options.Sort();
             }
+            TaskLogs.AddLog($"Successfully setup {EnumTitle} enum bank.");
         }
         catch (Exception e)
         {
-#if DEBUG
-            TaskLogs.AddLog($"Failed to load: {EnumTitle} Bank: {e.Message}");
-#endif
+            TaskLogs.AddLog($"Failed to setup {EnumTitle} enum bank:\n{e}", LogLevel.Error);
         }
-
-        TaskLogs.AddLog($"Alias Bank: Loaded {EnumTitle} Bank");
     }
 
     public Dictionary<string, ProjectEnumEntry> GetEntries()
@@ -106,7 +104,7 @@ public class ProjectEnumBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                TaskLogs.AddLog($"Failed to write enum resource file:\n{ex}");
             }
         }
     }
@@ -197,8 +195,6 @@ public class ProjectEnumBank
                 {
                     var newEntry = new ProjectEnumEntry();
 
-                    TaskLogs.AddLog($"entry: {entry.Name}");
-
                     foreach (var bEntry in baseResource.List)
                     {
                         if (entry.Name == bEntry.Name)
@@ -227,7 +223,6 @@ public class ProjectEnumBank
                         }
                     }
 
-                    TaskLogs.AddLog($"newEntry: {newEntry.Name}");
                     newResource.List.Add(newEntry);
                 }
                 else

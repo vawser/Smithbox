@@ -445,7 +445,13 @@ public class TexturePool
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($@"Error loading texture: {tex.Name} {e.Message}");
+                TaskLogs.AddLog(""+
+                    $"Error loading texture:\n" +
+                    $"Name: {tex.Name}\n" +
+                    $"Format: {tex.Format}\n" +
+                    $"{e}",
+                    Microsoft.Extensions.Logging.LogLevel.Warning);
+
                 return;
             }
 

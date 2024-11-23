@@ -44,6 +44,24 @@ public class SystemTab
             Smithbox.UpdateSoulsFormatsToggles();
         }
 
+        if (ImGui.CollapsingHeader("Loggers"))
+        {
+            ImGui.Checkbox("Show Action Logger", ref UI.Current.System_ShowActionLogger);
+            UIHelper.ShowHoverTooltip("If enabled, the action logger will be visible in the menu bar.");
+
+            ImGui.InputInt("Action Log Visibility Duration", ref CFG.Current.System_ActionLogger_FadeTime);
+            UIHelper.ShowHoverTooltip("The number of frames for which the action logger message stays visible in the menu bar.");
+
+            ImGui.Separator();
+
+            ImGui.Checkbox("Show Warning Logger", ref UI.Current.System_ShowWarningLogger);
+            UIHelper.ShowHoverTooltip("If enabled, the warning logger will be visible in the menu bar.");
+
+            ImGui.InputInt("Warning Log Visibility Duration", ref CFG.Current.System_WarningLogger_FadeTime);
+            UIHelper.ShowHoverTooltip("The number of frames for which the warning logger message stays visible in the menu bar.");
+
+        }
+
         if (ImGui.CollapsingHeader("Editors"))
         {
             UIHelper.WrappedText("Determine which editors are enabled." +

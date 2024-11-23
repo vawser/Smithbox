@@ -341,63 +341,72 @@ public class TextActionHandler
         if (!IsCurrentlyCopyingContents)
         {
             IsCurrentlyCopyingContents = true;
-            TaskManager.Run(
-                new TaskManager.LiveTask($"Copy Text Entry Text to Clipboard", TaskManager.RequeueType.None, false,
-            () =>
-            {
-                var AlterCopyTextAssignment = false;
-                var copyText = "";
 
-                if (editor.Selection.SelectedFmgWrapper != null && editor.Selection.SelectedFmgWrapper.File != null)
+            TaskManager.LiveTask task = new(
+                "textEditor_copyTextEntryContents",
+                "Text Editor",
+                "The selected text entry has been copied to the clipboard.",
+                "The clipboard copy failed.",
+                TaskManager.RequeueType.None,
+                false,
+                () =>
                 {
-                    for (int i = 0; i < editor.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
+                    var AlterCopyTextAssignment = false;
+                    var copyText = "";
+
+                    if (editor.Selection.SelectedFmgWrapper != null && editor.Selection.SelectedFmgWrapper.File != null)
                     {
-                        var entry = editor.Selection.SelectedFmgWrapper.File.Entries[i];
-
-                        if (editor.Filters.IsFmgEntryFilterMatch(entry))
+                        for (int i = 0; i < editor.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
                         {
-                            if (editor.Selection.FmgEntryMultiselect.IsMultiselected(i))
+                            var entry = editor.Selection.SelectedFmgWrapper.File.Entries[i];
+
+                            if (editor.Filters.IsFmgEntryFilterMatch(entry))
                             {
-                                var newText = $"{entry.Text}";
-
-                                if (CFG.Current.TextEditor_TextCopy_EscapeNewLines)
+                                if (editor.Selection.FmgEntryMultiselect.IsMultiselected(i))
                                 {
-                                    newText = $"{entry.Text}".Replace("\n", "\\n");
-                                }
+                                    var newText = $"{entry.Text}";
 
-                                if (AlterCopyTextAssignment)
-                                {
-                                    if (includeID)
+                                    if (CFG.Current.TextEditor_TextCopy_EscapeNewLines)
                                     {
-                                        copyText = $"{copyText}\n{entry.ID} {newText}";
+                                        newText = $"{entry.Text}".Replace("\n", "\\n");
+                                    }
+
+                                    if (AlterCopyTextAssignment)
+                                    {
+                                        if (includeID)
+                                        {
+                                            copyText = $"{copyText}\n{entry.ID} {newText}";
+                                        }
+                                        else
+                                        {
+                                            copyText = $"{copyText}\n{newText}";
+                                        }
                                     }
                                     else
                                     {
-                                        copyText = $"{copyText}\n{newText}";
-                                    }
-                                }
-                                else
-                                {
-                                    AlterCopyTextAssignment = true;
+                                        AlterCopyTextAssignment = true;
 
-                                    if (includeID)
-                                    {
-                                        copyText = $"{entry.ID} {newText}";
-                                    }
-                                    else
-                                    {
-                                        copyText = $"{newText}";
+                                        if (includeID)
+                                        {
+                                            copyText = $"{entry.ID} {newText}";
+                                        }
+                                        else
+                                        {
+                                            copyText = $"{newText}";
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
 
-                PlatformUtils.Instance.SetClipboardText(copyText);
-                PlatformUtils.Instance.MessageBox("Text Entry Contents copied to clipboard", "Clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                IsCurrentlyCopyingContents = false;
-            }));
+                    PlatformUtils.Instance.SetClipboardText(copyText);
+                    PlatformUtils.Instance.MessageBox("Text Entry Contents copied to clipboard", "Clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    IsCurrentlyCopyingContents = false;
+                }
+            );
+
+            TaskManager.Run(task);
         }
     }
 }

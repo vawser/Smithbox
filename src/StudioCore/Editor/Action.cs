@@ -232,11 +232,8 @@ public class AddParamsAction : EditorAction
             Clones.Add(newrow);
         }
 
-        // Refresh diff cache
-        TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-            TaskManager.RequeueType.Repeat, true,
-            LogPriority.Low,
-            () => ParamBank.RefreshAllParamDiffCaches(false)));
+        ParamBank.RefreshParamDifferenceCacheTask();
+
         return ActionEvent.NoEvent;
     }
 
@@ -303,11 +300,8 @@ public class DeleteParamsAction : EditorAction
         {
         }
 
-        // Refresh diff cache
-        TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-            TaskManager.RequeueType.Repeat, true,
-            LogPriority.Low,
-            () => ParamBank.RefreshAllParamDiffCaches(false)));
+        ParamBank.RefreshParamDifferenceCacheTask();
+
         return ActionEvent.NoEvent;
     }
 }

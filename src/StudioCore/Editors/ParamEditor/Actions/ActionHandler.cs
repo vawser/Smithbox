@@ -365,10 +365,7 @@ public class ActionHandler
 
         if (r.Type == MassEditResultType.SUCCESS)
         {
-            TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-                TaskManager.RequeueType.Repeat,
-                true, LogPriority.Low,
-                () => ParamBank.RefreshAllParamDiffCaches(false)));
+            ParamBank.RefreshParamDifferenceCacheTask();
         }
     }
 

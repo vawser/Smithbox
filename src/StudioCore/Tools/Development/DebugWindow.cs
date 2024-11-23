@@ -15,6 +15,7 @@ using static SoulsFormats.MSB_AC6;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using SoapstoneLib;
+using static StudioCore.Editor.TaskManager;
 
 namespace StudioCore.Tools.Development;
 
@@ -195,9 +196,13 @@ public class DebugWindow
 
         if (TaskManager.GetLiveThreads().Count > 0)
         {
-            foreach (var task in TaskManager.GetLiveThreads())
+            foreach ((string taskName, LiveTask task) in TaskManager.GetTasks())
             {
-                ImGui.Text(task);
+                ImGui.Text("" +
+                    $"ID: {task.TaskId}\n" +
+                    $"Location: {task.TaskName}\n" +
+                    $"Success Message: {task.TaskCompletedMessage}\n" +
+                    $"Failure Message: {task.TaskFailedMessage}");
             }
         }
 

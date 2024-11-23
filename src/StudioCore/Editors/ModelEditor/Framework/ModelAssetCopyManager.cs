@@ -412,7 +412,6 @@ public class ModelAssetCopyManager
                         fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
                         break;
                     default:
-                        TaskLogs.AddLog($"Invalid ProjectType during AssetCopy");
                         return;
                 }
             }
@@ -461,7 +460,6 @@ public class ModelAssetCopyManager
                         fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                         break;
                     default:
-                        TaskLogs.AddLog($"Invalid ProjectType during AssetCopy");
                         return;
                 }
             }

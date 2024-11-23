@@ -37,43 +37,51 @@ public static class TextBank
         FmgBank = new();
         VanillaFmgBank = new();
 
-        TaskManager.Run(
-            new TaskManager.LiveTask($"Setup Text Editor - Primary Bank", TaskManager.RequeueType.None, false,
-        () =>
-        {
-            if (Smithbox.ProjectType is not ProjectType.Undefined)
+        TaskManager.LiveTask task = new(
+            "textEditor_primaryBankSetup",
+            "Text Editor",
+            "The primary text bank has been setup successfully.",
+            "The primary text bank setup has failed.",
+            TaskManager.RequeueType.None,
+            false,
+            () =>
             {
-                if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                if (Smithbox.ProjectType is not ProjectType.Undefined)
                 {
-                    var fmgList = TextLocator.GetFmgs("menu\\text\\");
-
-                    foreach (var path in fmgList)
+                    if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                     {
-                        LoadFmg(path, FmgBank);
+                        var fmgList = TextLocator.GetFmgs("menu\\text\\");
+
+                        foreach (var path in fmgList)
+                        {
+                            LoadFmg(path, FmgBank);
+                        }
+                    }
+                    else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                    {
+                        var fmgList = TextLocator.GetFmgs("lang\\");
+
+                        foreach (var path in fmgList)
+                        {
+                            LoadFmg(path, FmgBank);
+                        }
+                    }
+                    else
+                    {
+                        var fmgContainerList = TextLocator.GetFmgContainers();
+
+                        foreach (var path in fmgContainerList)
+                        {
+                            LoadFmgContainer(path, FmgBank);
+                        }
                     }
                 }
-                else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-                {
-                    var fmgList = TextLocator.GetFmgs("lang\\");
 
-                    foreach (var path in fmgList)
-                    {
-                        LoadFmg(path, FmgBank);
-                    }
-                }
-                else
-                {
-                    var fmgContainerList = TextLocator.GetFmgContainers();
-
-                    foreach (var path in fmgContainerList)
-                    {
-                        LoadFmgContainer(path, FmgBank);
-                    }
-                }
+                PrimaryBankLoaded = true;
             }
+        );
 
-            PrimaryBankLoaded = true;
-        }));
+        TaskManager.Run(task);
     }
 
     /// <summary>
@@ -131,41 +139,49 @@ public static class TextBank
             return;
         }
 
-        TaskManager.Run(
-            new TaskManager.LiveTask($"Setup Text Editor - Vanilla Bank", TaskManager.RequeueType.None, false,
-        () =>
-        {
-            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        TaskManager.LiveTask task = new(
+            "textEditor_vanillaBankSetup",
+            "Text Editor",
+            "The vanilla text bank has been setup successfully.",
+            "The vanilla text bank setup has failed.",
+            TaskManager.RequeueType.None,
+            false,
+            () =>
             {
-                var fmgList = TextLocator.GetFmgs("menu\\text\\", true);
-
-                foreach (var path in fmgList)
+                if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
-                    LoadFmg(path, VanillaFmgBank);
-                }
-            }
-            else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-            {
-                var fmgList = TextLocator.GetFmgs("lang\\", true);
+                    var fmgList = TextLocator.GetFmgs("menu\\text\\", true);
 
-                foreach (var path in fmgList)
+                    foreach (var path in fmgList)
+                    {
+                        LoadFmg(path, VanillaFmgBank);
+                    }
+                }
+                else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
-                    LoadFmg(path, VanillaFmgBank);
-                }
-            }
-            else if (Smithbox.ProjectType is not ProjectType.Undefined)
-            {
-                var fmgContainerList = TextLocator.GetFmgContainers(true);
+                    var fmgList = TextLocator.GetFmgs("lang\\", true);
 
-                foreach (var path in fmgContainerList)
+                    foreach (var path in fmgList)
+                    {
+                        LoadFmg(path, VanillaFmgBank);
+                    }
+                }
+                else if (Smithbox.ProjectType is not ProjectType.Undefined)
                 {
-                    LoadFmgContainer(path, VanillaFmgBank);
-                }
-            }
+                    var fmgContainerList = TextLocator.GetFmgContainers(true);
 
-            VanillaBankLoaded = true;
-            VanillaBankLoading = false;
-        }));
+                    foreach (var path in fmgContainerList)
+                    {
+                        LoadFmgContainer(path, VanillaFmgBank);
+                    }
+                }
+
+                VanillaBankLoaded = true;
+                VanillaBankLoading = false;
+            }
+        );
+
+        TaskManager.Run(task);
     }
 
     /// <summary>
@@ -247,7 +263,8 @@ public static class TextBank
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to load FMG: {ex}");
+            var filename = Path.GetFileNameWithoutExtension(path);
+            TaskLogs.AddLog($"Failed to load FMG: {filename} at {path}\n{ex}");
         }
     }
 
@@ -363,7 +380,8 @@ public static class TextBank
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to load FMG container: {ex}");
+            var filename = Path.GetFileNameWithoutExtension(path);
+            TaskLogs.AddLog($"Failed to load FMG container: {filename} at {path}\n{ex}");
         }
     }
 
@@ -458,7 +476,7 @@ public static class TextBank
                     }
                     catch (Exception ex)
                     {
-                        TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                        TaskLogs.AddLog($"Failed to write FMG file: {file.ID}\n{ex}");
                     }
                 }
             }
@@ -496,16 +514,21 @@ public static class TextBank
     {
         if (data != null)
         {
+            var filename = Path.GetFileNameWithoutExtension(path);
+
             try
             {
                 PathUtils.BackupPrevFile(path);
                 PathUtils.BackupFile(path);
                 File.WriteAllBytes(path, data);
-                TaskLogs.AddLog($"Saved file at: {Path.GetFileName(path)}");
+
+
+
+                TaskLogs.AddLog($"Successfully saved FMG container file: {filename} at {path}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to save file at: {Path.GetFileName(path)}\n{ex}");
+                TaskLogs.AddLog($"Failed to save FMG container file: {filename} at {path}\n{ex}");
             }
         }
     }

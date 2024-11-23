@@ -80,6 +80,10 @@
     "ImGui_TextEditor_ModifiedRow_Text": [ 1.0, 1.0, 0.0, 1 ],
     "ImGui_TextEditor_UniqueRow_Text": [ 0.409, 0.967, 0.693, 1.0 ],
     
+    "ImGui_Logger_Information_Color": [0.0, 1.0, 0.0, 1.0],
+    "ImGui_Logger_Warning_Color": [1.0, 0.5, 0.5, 1.0],
+    "ImGui_Logger_Error_Color": [1.0, 0.0, 0.0, 1.0],
+    
     "DisplayGroupEditor_Border_Highlight": [1.0, 0.2, 0.2, 1.0],
     "DisplayGroupEditor_DisplayActive_Frame": [0.4, 0.06, 0.06, 1.0],
     "DisplayGroupEditor_DisplayActive_Checkbox": [1.0, 0.2, 0.2, 1.0],

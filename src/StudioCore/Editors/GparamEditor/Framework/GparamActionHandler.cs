@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Data;
@@ -91,7 +92,7 @@ public class GparamActionHandler
         }
         else
         {
-            TaskLogs.AddLog($"{newFilePath} already exists!");
+            TaskLogs.AddLog($"{newFilePath} already exists!", LogLevel.Warning);
         }
 
         GparamParamBank.LoadGraphicsParams();
@@ -131,7 +132,7 @@ public class GparamActionHandler
             }
             else
             {
-                TaskLogs.AddLog($"{newFilePath} already exists!");
+                TaskLogs.AddLog($"{newFilePath} already exists!", LogLevel.Warning);
                 tryFileName = currentfileName;
             }
         }

@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Text;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
+using Microsoft.Extensions.Logging;
 
 namespace StudioCore.Banks.AliasBank;
 
@@ -38,15 +39,13 @@ public class AliasBank
         try
         {
             Aliases = BankUtils.LoadAliasJSON(AliasFileName, AliasDirectory);
+            TaskLogs.AddLog($"Successfully setup {AliasTitle} alias bank.");
         }
         catch (Exception e)
         {
-#if DEBUG
-            TaskLogs.AddLog($"Failed to load: {AliasTitle} Bank: {e.Message}");
-#endif
+            TaskLogs.AddLog($"Failed to setup {AliasTitle} alias bank:\n{e}", LogLevel.Error);
         }
 
-        TaskLogs.AddLog($"Alias Bank: Loaded {AliasTitle} Bank");
     }
 
     public Dictionary<string, AliasReference> GetEntries()
@@ -111,7 +110,7 @@ public class AliasBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                TaskLogs.AddLog($"Failed to write alias bank:\n{ex}", LogLevel.Error);
             }
         }
     }

@@ -159,7 +159,7 @@ public class ModelResourceManager : IResourceEventListener
     {
         if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -180,7 +180,7 @@ public class ModelResourceManager : IResourceEventListener
     {
         if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -201,7 +201,7 @@ public class ModelResourceManager : IResourceEventListener
     {
         if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -221,7 +221,7 @@ public class ModelResourceManager : IResourceEventListener
     {
         if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -257,7 +257,7 @@ public class ModelResourceManager : IResourceEventListener
     {
         if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -277,7 +277,7 @@ public class ModelResourceManager : IResourceEventListener
     {
         if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -683,19 +683,19 @@ public class ModelResourceManager : IResourceEventListener
     {
         if (LoadedFlverContainer == null)
         {
-            TaskLogs.AddLog("Failed to save FLVER as LoadedFlverContainer is null.");
+            TaskLogs.AddLog("Failed to save FLVER as LoadedFlverContainer is null.", LogLevel.Error);
             return;
         }
 
         if (LoadedFlverContainer.CurrentInternalFlver == null)
         {
-            TaskLogs.AddLog("Failed to save FLVER as CurrentInternalFlver is null.");
+            TaskLogs.AddLog("Failed to save FLVER as CurrentInternalFlver is null.", LogLevel.Error);
             return;
         }
 
         if (LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER == null)
         {
-            TaskLogs.AddLog("Failed to save FLVER as CurrentFLVER is null.");
+            TaskLogs.AddLog("Failed to save FLVER as CurrentFLVER is null.", LogLevel.Error);
             return;
         }
 
@@ -831,7 +831,7 @@ public class ModelResourceManager : IResourceEventListener
                         }
                         catch (Exception ex)
                         {
-                            TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                            TaskLogs.AddLog($"Failed to write FLVER file: {file.ID}.\n{ex}", LogLevel.Error);
                         }
                     }
                 }
@@ -883,7 +883,7 @@ public class ModelResourceManager : IResourceEventListener
                         }
                         catch (Exception ex)
                         {
-                            TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                            TaskLogs.AddLog($"Failed to write FLVER file: {file.ID}.\n{ex}", LogLevel.Error);
                         }
                     }
                 }
@@ -928,7 +928,7 @@ public class ModelResourceManager : IResourceEventListener
                         }
                         catch (Exception ex)
                         {
-                            TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                            TaskLogs.AddLog($"Failed to write FLVER file: {file.ID}.\n{ex}", LogLevel.Error);
                         }
                     }
                 }
@@ -954,11 +954,12 @@ public class ModelResourceManager : IResourceEventListener
             try
             {
                 File.WriteAllBytes(path, data);
-                TaskLogs.AddLog($"Saved model at: {path}");
+                TaskLogs.AddLog($"Saved FLVER file at: {path}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to save model: {path}\n{ex.ToString()}");
+                var filename = Path.GetFileNameWithoutExtension(path);
+                TaskLogs.AddLog($"Failed to save FLVER file: {filename} at {path}\n{ex}");
             }
         }
     }

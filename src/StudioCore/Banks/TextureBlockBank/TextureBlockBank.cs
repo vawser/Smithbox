@@ -1,4 +1,5 @@
-﻿using StudioCore.Banks.FormatBank;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Editor;
@@ -32,15 +33,12 @@ namespace StudioCore.Banks.TextureBlockBank
             try
             {
                 TextureBlocks = BankUtils.LoadTextureBlockJSON(AliasDirectory, AliasFileName);
+                TaskLogs.AddLog($"Successfully setup texture block resource bank.");
             }
             catch (Exception e)
             {
-#if DEBUG
-                TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
-#endif
+                TaskLogs.AddLog($"Failed to setup texture block resource bank:\n{e}", LogLevel.Error);
             }
-
-            TaskLogs.AddLog($"Texture Block Bank: Loaded Blocks");
         }
 
         public bool IsBlockedTexture(string virtualPath)

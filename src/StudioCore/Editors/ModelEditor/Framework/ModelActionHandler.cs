@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.AllSkeleton;
@@ -252,13 +253,13 @@ public class ModelActionHandler
 
         if (model == null)
         {
-            TaskLogs.AddLog("No FLVER loaded.");
+            TaskLogs.AddLog("No FLVER loaded in Model Editor.", LogLevel.Error);
             return;
         }
 
         if (selectedMesh == -1)
         {
-            TaskLogs.AddLog("No mesh selected.");
+            TaskLogs.AddLog("No mesh selected in Model Editor", LogLevel.Error);
             return;
         }
 
@@ -295,19 +296,19 @@ public class ModelActionHandler
 
         if (model == null)
         {
-            TaskLogs.AddLog("No FLVER loaded.");
+            TaskLogs.AddLog("No FLVER loaded in Model Editor.", LogLevel.Error);
             return;
         }
 
         if (selectedMesh == -1)
         {
-            TaskLogs.AddLog("No mesh selected.");
+            TaskLogs.AddLog("No mesh selected in Model Editor", LogLevel.Error);
             return;
         }
 
         if (selectedFaceSet == -1)
         {
-            TaskLogs.AddLog("No face set selected.");
+            TaskLogs.AddLog("No face set selected in Model Editor", LogLevel.Error);
             return;
         }
 
@@ -335,7 +336,7 @@ public class ModelActionHandler
 
         if(model == null)
         {
-            TaskLogs.AddLog("No FLVER loaded.");
+            TaskLogs.AddLog("No FLVER loaded in Model Editor.", LogLevel.Error);
             return;
         }
 

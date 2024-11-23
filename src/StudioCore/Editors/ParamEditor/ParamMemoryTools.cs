@@ -27,12 +27,12 @@ public static class ParamMemoryTools
             }
             else
             {
-                TaskLogs.AddLog("Param Reloader: No param has been selected.");
+                TaskLogs.AddLog("No param has been selected yet for the Param Reloder.");
             }
         }
         else
         {
-            TaskLogs.AddLog("Param Reloader: Cannot reload.");
+            TaskLogs.AddLog("Param Reloader cannot reload for this project.");
         }
     }
 
@@ -46,7 +46,7 @@ public static class ParamMemoryTools
         }
         else
         {
-            TaskLogs.AddLog("Param Reloader: Cannot reload.");
+            TaskLogs.AddLog("Param Reloader cannot reload for this project.");
         }
     }
 
@@ -74,7 +74,7 @@ public static class ParamMemoryTools
         }
         else
         {
-            TaskLogs.AddLog("Item Gib: no param selected.");
+            TaskLogs.AddLog("No param selected yet for Item Gib.");
         }
     }
 }

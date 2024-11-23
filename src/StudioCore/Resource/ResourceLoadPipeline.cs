@@ -57,10 +57,8 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
         // PIPELINE: Byte Requests
         _loadByteResourcesTransform = new ActionBlock<LoadByteResourceRequest>(r =>
         {
-#if !DEBUG
             try
             {
-#endif
                 var res = new T();
 
                 // PIPELINE: Load the byte resource (as the <T> type)
@@ -73,24 +71,20 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
 
                     _loadedResources.Post(request);
                 }
-#if !DEBUG
             }
             catch(Exception ex)
             {
-                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, ex);
+                TaskLogs.AddLog($"Resource pipeline load error:\nFile path request\nValue: {r.Data.Value}\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{ex}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
             }
-#endif
             r.Data.Dispose();
         }, options);
 
         // PIPELINE: File Requests
         _loadFileResourcesTransform = new ActionBlock<LoadFileResourceRequest>(r =>
         {
-#if !DEBUG
             try
             {
-#endif
-            var res = new T();
+                var res = new T();
 
                 // PIPELINE: Load the byte resource (as the <T> type)
                 var success = res._Load(r.File, r.AccessLevel, r.VirtualPath);
@@ -102,20 +96,20 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
 
                     _loadedResources.Post(request);
                 }
-#if !DEBUG
             }
-            catch (FileNotFoundException e1) 
-            { 
-                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, e1); 
+            catch (FileNotFoundException e1)
+            {
+                TaskLogs.AddLog($"Resource pipeline load error:\nFile bytes request\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{e1}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
             }
-            catch (DirectoryNotFoundException e2) { 
-                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, e2); 
+            catch (DirectoryNotFoundException e2)
+            {
+                TaskLogs.AddLog($"Resource pipeline load error:\nFile bytes request\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{e2}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
             }
             // Some DSR FLVERS can't be read due to mismatching layout and vertex sizes
-            catch (InvalidDataException e3) { 
-                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, e3); 
+            catch (InvalidDataException e3)
+            {
+                TaskLogs.AddLog($"Resource pipeline load error:\nFile bytes request\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{e3}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
             }
-#endif
         }, options);
 
     }

@@ -1,4 +1,5 @@
-﻿using StudioCore.Banks.AliasBank;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.HavokAliasBank;
@@ -159,7 +160,8 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
+            TaskLogs.AddLog($"Failed to load format information resource: {filename} at {baseResourcePath}", LogLevel.Error);
         }
 
         return baseResource;
@@ -185,7 +187,8 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
+            TaskLogs.AddLog($"Failed to load format enum resource: {filename} at {baseResourcePath}", LogLevel.Error);
         }
 
         return baseResource;
@@ -211,7 +214,8 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
+            TaskLogs.AddLog($"Failed to load format mask resource: {filename} at {baseResourcePath}", LogLevel.Error);
         }
 
         return baseResource;
@@ -234,7 +238,8 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
+            TaskLogs.AddLog($"Failed to load texture addition resource: {filename} at {baseResourcePath}", LogLevel.Error);
         }
 
         return baseResource;
@@ -257,7 +262,8 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
+            TaskLogs.AddLog($"Failed to load texture block resource: {filename} at {baseResourcePath}", LogLevel.Error);
         }
 
         return baseResource;
@@ -280,7 +286,8 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
+            TaskLogs.AddLog($"Failed to load texture correction resource: {filename} at {baseResourcePath}", LogLevel.Error);
         }
 
         return baseResource;
@@ -301,7 +308,7 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            TaskLogs.AddLog($"Failed to load {baseResourcePath} game offset resource for Param Reloader.", LogLevel.Error);
         }
 
         return baseResource;

@@ -55,8 +55,14 @@ internal class ParamReloader
 
     public static void ReloadMemoryParams(ParamBank bank, string[] paramNames)
     {
-        TaskManager.Run(new TaskManager.LiveTask("Param - Hot Reload", TaskManager.RequeueType.WaitThenRequeue,
-            true, () =>
+        TaskManager.LiveTask task = new(
+            "paramEditor_reloadParamData",
+            "Param Editor",
+            "The param reloader has successfully updated the in-game params.",
+            "The param reloader has failed.",
+            TaskManager.RequeueType.None,
+            false,
+            () =>
             {
                 GameOffsetsEntry offsets = GetGameOffsets();
                 if (offsets == null)
@@ -81,7 +87,10 @@ internal class ParamReloader
                 {
                     throw new Exception("Unable to find running game");
                 }
-            }));
+            }
+        );
+
+        TaskManager.Run(task);
     }
 
     private static void ReloadMemoryParamsThreads(ParamBank bank, GameOffsetsEntry offsets, string[] paramNames,
@@ -107,7 +116,7 @@ internal class ParamReloader
         {
             if (!offsets.paramOffsets.TryGetValue(param, out var pOffset) || param == null)
             {
-                TaskLogs.AddLog($"Hot reload: Cannot find param offset for {param}", LogLevel.Warning, LogPriority.Normal);
+                TaskLogs.AddLog($"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
                 continue;
             }
 
@@ -170,7 +179,7 @@ internal class ParamReloader
 
         if (RowCount <= 0)
         {
-            TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType} has invalid offset or no rows", LogLevel.Warning, LogPriority.Low);
+            TaskLogs.AddLog($"ParamType {param.ParamType} has invalid offset or no rows for Param Reloader.", LogLevel.Warning, LogPriority.Low);
             return;
         }
 
@@ -202,7 +211,7 @@ internal class ParamReloader
             }
             else
             {
-                TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor. Try saving params and restarting game.", LogLevel.Warning, LogPriority.Normal);
+                TaskLogs.AddLog($"ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor during Param Reloader opeation.\nTry saving params and restarting game.", LogLevel.Warning, LogPriority.Normal);
                 return;
             }
         }
@@ -474,7 +483,7 @@ internal class ParamReloader
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("Unable to create GameOffsets for param hot reloader.", LogLevel.Error,
+                TaskLogs.AddLog("Unable to create GameOffsets for Param Reloader.", LogLevel.Error,
                     LogPriority.High, e);
                 return null;
             }

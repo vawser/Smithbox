@@ -18,173 +18,230 @@ namespace StudioCore;
 /// </summary>
 public static class TaskLogs
 {
-    private static volatile List<LogEntry> _log = new();
+    private static volatile List<LogEntry> _actionLog = new();
+    private static volatile List<LogEntry> _warningLog = new();
+
     private static volatile HashSet<string> _warningList = new();
 
-    private static volatile LogEntry _lastLogEntry;
+    private static volatile LogEntry _lastActionLogEntry;
+    private static volatile LogEntry _lastWarningLogEntry;
 
-#if DEBUG
-    private static bool _showDebugLogs = true;
-# else
-    private static bool _showDebugLogs = false;
-#endif
-
-    /// <summary>
-    ///     Multiply text color values. Mult transitions from 0 to 1 during transition timer.
-    /// </summary>
     private static float _timerColorMult = 1.0f;
 
-    private static bool _loggerWindowOpen;
-    private static bool _scrollToEnd;
-    private static SpinLock _spinlock = new(false);
+    private static bool _actionLog_ScrollToEnd;
+    private static bool _warningLog_ScrollToEnd;
 
-    public static void ToggleLoggerVisibility()
-    {
-        _loggerWindowOpen = !_loggerWindowOpen;
-    }
+    private static SpinLock _spinLock = new(false);
+
+    private static int _actionShowTime = 0;
+    private static int _warningShowTime = 0;
 
     /// <summary>
-    ///     Adds a new entry to task logger.
+    /// Adds a new entry to task logger.
     /// </summary>
-    /// <param name="text">Text to add to log.</param>
-    /// <param name="level">Type of entry. Affects text color.</param>
-    public static void AddLog(string text, LogLevel level = LogLevel.Information,
-        LogPriority priority = LogPriority.Normal, Exception ex = null)
+    public static void AddLog(string text, LogLevel level = LogLevel.Information, LogPriority priority = LogPriority.Normal, Exception ex = null)
     {
-        if (level == LogLevel.Debug && !_showDebugLogs)
-        {
-            return;
-        }
-
         Task.Run(() =>
         {
             var lockTaken = false;
             try
             {
                 // Wait until no other threads are using spinlock
-                _spinlock.Enter(ref lockTaken);
+                _spinLock.Enter(ref lockTaken);
 
-                LogEntry lastLog = _log.LastOrDefault();
-                if (lastLog != null)
+                if (level is LogLevel.Warning or LogLevel.Error)
                 {
-                    if (lastLog.Message == text)
+                    _warningShowTime = CFG.Current.System_WarningLogger_FadeTime;
+
+                    LogEntry lastLog = _warningLog.LastOrDefault();
+                    if (lastLog != null)
                     {
-                        lastLog.MessageCount++;
-                        if (priority != LogPriority.Low)
+                        if (lastLog.Message == text)
                         {
-                            ResetColorTimer();
+                            lastLog.MessageCount++;
+                            if (priority != LogPriority.Low)
+                            {
+                                ResetColorTimer();
+                            }
+                            return;
                         }
-                        return;
                     }
-                }
 
-                LogEntry entry = new(text, level, priority);
+                    LogEntry entry = new(text, level, priority);
 
-                if (ex != null)
-                {
-                    if (text != ex.Message)
+                    if (ex != null)
                     {
-                        entry.Message += $": {ex.Message}";
+                        if (text != ex.Message)
+                        {
+                            entry.Message += $": {ex.Message}";
+                        }
+
+                        _warningLog.Add(entry);
+                        _warningLog.Add(new LogEntry($"{ex.StackTrace}",
+                            level, LogPriority.Low));
+                    }
+                    else
+                    {
+                        _warningLog.Add(entry);
                     }
 
-                    _log.Add(entry);
-                    _log.Add(new LogEntry($"{ex.StackTrace}",
-                        level, LogPriority.Low));
+                    _warningLog_ScrollToEnd = true;
+
+                    if (priority != LogPriority.Low)
+                    {
+                        _lastWarningLogEntry = entry;
+
+                        if (priority == LogPriority.High)
+                        {
+                            var popupMessage = entry.Message;
+                            if (ex != null)
+                            {
+                                popupMessage += $"\n{ex.StackTrace}";
+                            }
+
+                            PlatformUtils.Instance.MessageBox(popupMessage, level.ToString(),
+                                MessageBoxButtons.OK);
+                        }
+
+                        ResetColorTimer();
+                    }
                 }
                 else
                 {
-                    _log.Add(entry);
-                }
+                    _actionShowTime = CFG.Current.System_ActionLogger_FadeTime;
 
-                _scrollToEnd = true;
-
-                if (priority != LogPriority.Low)
-                {
-                    _lastLogEntry = entry;
-                    if (level is LogLevel.Warning or LogLevel.Error)
+                    LogEntry lastLog = _actionLog.LastOrDefault();
+                    if (lastLog != null)
                     {
-                        _warningList.Add(text);
+                        if (lastLog.Message == text)
+                        {
+                            lastLog.MessageCount++;
+                            if (priority != LogPriority.Low)
+                            {
+                                ResetColorTimer();
+                            }
+                            return;
+                        }
                     }
 
-                    if (priority == LogPriority.High)
+                    LogEntry entry = new(text, level, priority);
+
+                    if (ex != null)
                     {
-                        var popupMessage = entry.Message;
-                        if (ex != null)
+                        if (text != ex.Message)
                         {
-                            popupMessage += $"\n{ex.StackTrace}";
+                            entry.Message += $": {ex.Message}";
                         }
 
-                        PlatformUtils.Instance.MessageBox(popupMessage, level.ToString(),
-                            MessageBoxButtons.OK);
+                        _actionLog.Add(entry);
+                        _actionLog.Add(new LogEntry($"{ex.StackTrace}",
+                            level, LogPriority.Low));
+                    }
+                    else
+                    {
+                        _actionLog.Add(entry);
                     }
 
-                    ResetColorTimer();
+                    _actionLog_ScrollToEnd = true;
+
+                    if (priority != LogPriority.Low)
+                    {
+                        _lastActionLogEntry = entry;
+                        if (level is LogLevel.Warning or LogLevel.Error)
+                        {
+                            _warningList.Add(text);
+                        }
+
+                        if (priority == LogPriority.High)
+                        {
+                            var popupMessage = entry.Message;
+                            if (ex != null)
+                            {
+                                popupMessage += $"\n{ex.StackTrace}";
+                            }
+
+                            PlatformUtils.Instance.MessageBox(popupMessage, level.ToString(),
+                                MessageBoxButtons.OK);
+                        }
+
+                        ResetColorTimer();
+                    }
                 }
             }
             finally
             {
                 if (lockTaken)
                 {
-                    _spinlock.Exit(false);
+                    _spinLock.Exit(false);
                 }
             }
         });
     }
 
-    private static ImGuiDir CurrentDir = ImGuiDir.Right;
+    private static ImGuiDir ActionLogger_CurrentDir = ImGuiDir.Right;
+    private static bool ActionLogger_WindowOpen = false;
 
     /// <summary>
-    /// Status Bar (Top bar)
+    /// Top Bar Logger: Actions
     /// </summary>
-    public static void DisplayLoggerBar()
+    public static void DisplayActionLoggerBar()
     {
-        if (ImGui.ArrowButton("##loggerToggle", CurrentDir))
+        if (UI.Current.System_ShowActionLogger)
         {
-            if(CurrentDir == ImGuiDir.Right) 
+            if (ImGui.ArrowButton("##actionLoggerToggle", ActionLogger_CurrentDir))
             {
-                CurrentDir = ImGuiDir.Down;
-                _loggerWindowOpen = true;
+                if (ActionLogger_CurrentDir == ImGuiDir.Right)
+                {
+                    ActionLogger_CurrentDir = ImGuiDir.Down;
+                    ActionLogger_WindowOpen = true;
+                }
+                else
+                {
+                    ActionLogger_CurrentDir = ImGuiDir.Right;
+                    ActionLogger_WindowOpen = false;
+                }
             }
-            else
-            {
-                CurrentDir = ImGuiDir.Right;
-                _loggerWindowOpen = false;
-            }
-        }
+            UIHelper.ShowHoverTooltip("Toggle the display of the action logger.");
 
-        if (_lastLogEntry != null)
-        {
-            Vector4 color = PickColor(null);
-            ImGui.TextColored(color, _lastLogEntry.FormattedMessage);
+            // Only show the warning for X frames in the menu bar
+            if (_lastActionLogEntry != null)
+            {
+                if (_actionShowTime > 0)
+                {
+                    _actionShowTime--;
+
+                    Vector4 color = PickColor(_lastActionLogEntry.Level);
+                    ImGui.TextColored(color, _lastActionLogEntry.FormattedMessage);
+                }
+            }
         }
     }
 
     /// <summary>
-    /// Logger Window
+    /// Action Logger window
     /// </summary>
-    public static void DisplayWindow()
+    public static void DisplayActionLoggerWindow()
     {
-        if (_loggerWindowOpen)
+        if (ActionLogger_WindowOpen)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
             ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.Imgui_Moveable_TitleBg);
             ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
             ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-            if (ImGui.Begin("Logger##TaskLogger", ref _loggerWindowOpen, ImGuiWindowFlags.NoDocking))
+            if (ImGui.Begin("Action Logs##actionTaskLogger", ref ActionLogger_WindowOpen, ImGuiWindowFlags.NoDocking))
             {
-                if (ImGui.Button("Clear##TaskLogger"))
+                if (ImGui.Button("Clear##actionTaskLogger"))
                 {
-                    _log.Clear();
-                    _lastLogEntry = null;
-                    AddLog("Log cleared");
+                    _actionLog.Clear();
+                    _lastActionLogEntry = null;
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Copy to Clipboard##TaskLogger"))
+                if (ImGui.Button("Copy to Clipboard##actionTaskLogger"))
                 {
                     string contents = "";
-                    foreach (var entry in _log)
+                    foreach (var entry in _actionLog)
                     {
                         contents = contents + $"{entry.FormattedMessage}\n";
                     }
@@ -192,22 +249,114 @@ public static class TaskLogs
                     PlatformUtils.Instance.SetClipboardText($"{contents}");
                 }
 
-                ImGui.SameLine();
-                ImGui.Checkbox("Log debug messages", ref _showDebugLogs);
-
-                ImGui.BeginChild("##LogItems");
+                ImGui.BeginChild("##actionLogItems");
                 ImGui.Spacing();
-                for (var i = 0; i < _log.Count; i++)
+                for (var i = 0; i < _actionLog.Count; i++)
                 {
                     ImGui.Indent();
-                    ImGui.TextColored(PickColor(_log[i].Level), _log[i].FormattedMessage);
+                    ImGui.TextColored(PickColor(_actionLog[i].Level), _actionLog[i].FormattedMessage);
                     ImGui.Unindent();
                 }
 
-                if (_scrollToEnd)
+                if (_actionLog_ScrollToEnd)
                 {
                     ImGui.SetScrollHereY();
-                    _scrollToEnd = false;
+                    _actionLog_ScrollToEnd = false;
+                }
+
+                ImGui.Spacing();
+                ImGui.EndChild();
+            }
+
+            ImGui.End();
+            ImGui.PopStyleColor(5);
+        }
+    }
+
+    private static ImGuiDir WarningLogger_CurrentDir = ImGuiDir.Right;
+    private static bool WarningLogger_WindowOpen = false;
+
+    /// <summary>
+    /// Top Bar Logger: Warnings
+    /// </summary>
+    public static void DisplayWarningLoggerBar()
+    {
+        if (UI.Current.System_ShowWarningLogger)
+        {
+            if (ImGui.ArrowButton("##warningLoggerToggle", WarningLogger_CurrentDir))
+            {
+                if (WarningLogger_CurrentDir == ImGuiDir.Right)
+                {
+                    WarningLogger_CurrentDir = ImGuiDir.Down;
+                    WarningLogger_WindowOpen = true;
+                }
+                else
+                {
+                    WarningLogger_CurrentDir = ImGuiDir.Right;
+                    WarningLogger_WindowOpen = false;
+                }
+            }
+            UIHelper.ShowHoverTooltip("Toggle the display of the warning logger.");
+
+            if (_lastWarningLogEntry != null)
+            {
+                // Only show the warning for X frames in the menu bar
+                if (_warningShowTime > 0)
+                {
+                    _warningShowTime--;
+
+                    Vector4 color = PickColor(_lastWarningLogEntry.Level);
+                    ImGui.TextColored(color, _lastWarningLogEntry.FormattedMessage);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Action Logger window
+    /// </summary>
+    public static void DisplayWarningLoggerWindow()
+    {
+        if (WarningLogger_WindowOpen)
+        {
+            ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
+            ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.Imgui_Moveable_TitleBg);
+            ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
+            ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+            if (ImGui.Begin("Warning Logs##warningTaskLogger", ref WarningLogger_WindowOpen, ImGuiWindowFlags.NoDocking))
+            {
+                if (ImGui.Button("Clear##warningTaskLogger"))
+                {
+                    _warningLog.Clear();
+                    _lastWarningLogEntry = null;
+                }
+
+                ImGui.SameLine();
+                if (ImGui.Button("Copy to Clipboard##warningTaskLogger"))
+                {
+                    string contents = "";
+                    foreach (var entry in _warningLog)
+                    {
+                        contents = contents + $"{entry.FormattedMessage}\n";
+                    }
+
+                    PlatformUtils.Instance.SetClipboardText($"{contents}");
+                }
+
+                ImGui.BeginChild("##warningLogItems");
+                ImGui.Spacing();
+                for (var i = 0; i < _warningLog.Count; i++)
+                {
+                    ImGui.Indent();
+                    ImGui.TextColored(PickColor(_warningLog[i].Level), _warningLog[i].FormattedMessage);
+                    ImGui.Unindent();
+                }
+
+                if (_warningLog_ScrollToEnd)
+                {
+                    ImGui.SetScrollHereY();
+                    _warningLog_ScrollToEnd = false;
                 }
 
                 ImGui.Spacing();
@@ -224,7 +373,7 @@ public static class TaskLogs
         var mult = 0.0f;
         if (level == null)
         {
-            level = _lastLogEntry.Level;
+            level = LogLevel.Information;
             mult = _timerColorMult;
         }
 
@@ -232,34 +381,34 @@ public static class TaskLogs
         if (level is LogLevel.Information)
         {
             return new Vector4(
-                UI.Current.ImGui_Benefit_Text_Color.X + (0.1f * mult),
-                UI.Current.ImGui_Benefit_Text_Color.Y - (0.1f * mult),
-                UI.Current.ImGui_Benefit_Text_Color.Z + (0.5f * mult),
+                UI.Current.ImGui_Logger_Information_Color.X + (0.1f * mult),
+                UI.Current.ImGui_Logger_Information_Color.Y - (0.1f * mult),
+                UI.Current.ImGui_Logger_Information_Color.Z + (0.5f * mult),
                 alpha);
         }
 
         if (level is LogLevel.Warning)
         {
             return new Vector4(
-                UI.Current.ImGui_Warning_Text_Color.X - (0.1f * mult),
-                UI.Current.ImGui_Warning_Text_Color.Y - (0.1f * mult),
-                UI.Current.ImGui_Warning_Text_Color.Z + (0.6f * mult),
+                UI.Current.ImGui_Logger_Warning_Color.X - (0.1f * mult),
+                UI.Current.ImGui_Logger_Warning_Color.Y - (0.1f * mult),
+                UI.Current.ImGui_Logger_Warning_Color.Z + (0.6f * mult),
                 alpha);
         }
 
         if (level is LogLevel.Error or LogLevel.Critical)
         {
             return new Vector4(
-                UI.Current.ImGui_Warning_Text_Color.X - (0.1f * mult),
-                UI.Current.ImGui_Warning_Text_Color.Y + (0.6f * mult),
-                UI.Current.ImGui_Warning_Text_Color.Z + (0.6f * mult),
+                UI.Current.ImGui_Logger_Error_Color.X - (0.1f * mult),
+                UI.Current.ImGui_Logger_Error_Color.Y + (0.6f * mult),
+                UI.Current.ImGui_Logger_Error_Color.Z + (0.6f * mult),
                 alpha);
         }
 
         return new Vector4(
-            UI.Current.ImGui_Default_Text_Color.X - (0.1f * mult),
-            UI.Current.ImGui_Default_Text_Color.Y - (0.1f * mult),
-            UI.Current.ImGui_Default_Text_Color.Z - (0.1f * mult),
+            UI.Current.ImGui_Logger_Information_Color.X - (0.1f * mult),
+            UI.Current.ImGui_Logger_Information_Color.Y - (0.1f * mult),
+            UI.Current.ImGui_Logger_Information_Color.Z - (0.1f * mult),
             alpha);
     }
 

@@ -47,6 +47,9 @@ public class UI
     // System
     //**************
     public bool System_Show_UI_Tooltips = true;
+    public bool System_ShowActionLogger = true;
+    public bool System_ShowWarningLogger = true;
+
     public bool System_WrapAliasDisplay = true;
     public float System_UI_Scale = 1.0f;
     public bool System_ScaleByDPI = true;
@@ -266,6 +269,10 @@ public class UI
 
     public Vector4 ImGui_TextEditor_ModifiedRow_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
     public Vector4 ImGui_TextEditor_UniqueRow_Text = new Vector4(0.409f, 0.967f, 0.693f, 1.0f);
+
+    public Vector4 ImGui_Logger_Information_Color = new Vector4(0.0f, 1.0f, 0.0f, 1.0f);
+    public Vector4 ImGui_Logger_Warning_Color = new Vector4(1.0f, 0f, 0f, 1.0f);
+    public Vector4 ImGui_Logger_Error_Color = new Vector4(1.0f, 0.5f, 0.5f, 1.0f); 
 
     //**************
     // Interface Styles

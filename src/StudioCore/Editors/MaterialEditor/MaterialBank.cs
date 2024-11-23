@@ -71,7 +71,6 @@ public static class MaterialBank
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveMaterial");
                 return;
         }
 
@@ -135,21 +134,19 @@ public static class MaterialBank
 
         IsLoaded = true;
         IsLoading = false;
-
-        TaskLogs.AddLog($"Material File Bank - Load Complete");
     }
 
     public static void LoadMaterial(string path)
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Mtd file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading material file.",
                     LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Mtd file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading material file.",
                     LogLevel.Warning);
             return;
         }
@@ -172,7 +169,8 @@ public static class MaterialBank
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+            var filename = Path.GetFileNameWithoutExtension(path);
+            TaskLogs.AddLog($"Failed to read Material file: {filename} at {path}.\n{ex}", LogLevel.Error);
         }
 
         if (binder != null)
@@ -188,7 +186,7 @@ public static class MaterialBank
                     }
                     catch (Exception ex)
                     {
-                        TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                        TaskLogs.AddLog($"Failed to read Material file: {file.ID}.\n{ex}", LogLevel.Error);
                     }
                 }
             }

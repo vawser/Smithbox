@@ -46,7 +46,8 @@ public class ShoeboxLayoutContainer
             }
             else
             {
-                TaskLogs.AddLog($"Failed to load Shoebox Layout: {sourcePath}");
+                var filename = Path.GetFileNameWithoutExtension(sourcePath);
+                TaskLogs.AddLog($"Failed to load Shoebox Layout: {filename} at {sourcePath}");
             }
         }
     }
@@ -74,7 +75,9 @@ public class ShoeboxLayoutContainer
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to load Shoebox Layout Container: {e.Message}");
+            var filename = Path.GetFileNameWithoutExtension(filepath);
+
+            TaskLogs.AddLog($"Failed to load Shoebox Layout Container: {filename} at {filepath}\n{e.Message}");
         }
     }
 

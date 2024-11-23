@@ -1,4 +1,5 @@
 ﻿using HKLib.hk2018;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Enums;
@@ -121,7 +122,7 @@ public class FlverContainer
         }
         else
         {
-            TaskLogs.AddLog($"Container path does not exist:\nRoot: {rootPath}\nProject: {modPath}");
+            TaskLogs.AddLog($"FLVER container file path does not exist:\nRoot: {rootPath}\nProject: {modPath}", LogLevel.Warning);
             return false;
         }
 
@@ -152,7 +153,7 @@ public class FlverContainer
         }
         else
         {
-            TaskLogs.AddLog($"Container path does not exist:\nRoot: {rootPath}\nProject: {modPath}");
+            TaskLogs.AddLog($"FLVER container file path does not exist:\nRoot: {rootPath}\nProject: {modPath}", LogLevel.Warning);
             return false;
         }
 

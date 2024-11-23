@@ -1,4 +1,5 @@
-﻿using StudioCore.Editor;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Editor;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -31,15 +32,12 @@ namespace StudioCore.Banks.TextureCorrectionBank
             try
             {
                 TextureCorrections = BankUtils.LoadTextureCorrectionJSON(AliasDirectory, AliasFileName);
+                TaskLogs.AddLog($"Successfully setup texture correction resource bank.");
             }
             catch (Exception e)
             {
-#if DEBUG
-                TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
-#endif
+                TaskLogs.AddLog($"Failed to setup texture correction resource bank:\n{e}", LogLevel.Error);
             }
-
-            TaskLogs.AddLog($"Texture Correction Bank: Loaded Corrections");
         }
 
         /// <summary>

@@ -60,7 +60,7 @@ public class PrefabEditor
     {
         if (prefabs.ContainsKey(name))
         {
-            TaskLogs.AddLog($"Failed to create prefab {name}: There is already a prefab by that name", LogLevel.Error);
+            TaskLogs.AddLog($"Failed to create prefab {name}: prefab already exists with this name.", LogLevel.Error);
             return;
         }
         var newPrefab = Prefab.New(Smithbox.ProjectType);

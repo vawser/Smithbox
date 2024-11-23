@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.HighPerformance;
 using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
@@ -245,7 +246,7 @@ public class MapQuerySearchEngine : IMapQueryEngine
             }
             catch
             {
-                TaskLogs.AddLog($"Failed to add filter pattern due to invalid regex expression: {input}");
+                TaskLogs.AddLog($"Failed to add filter pattern due to invalid regex expression: {input}", LogLevel.Warning);
             }
         }
 

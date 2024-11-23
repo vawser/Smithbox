@@ -52,12 +52,17 @@ public static class TimeActBank
         {
             if (!IsTemplatesLoaded)
             {
-                TaskManager.Run(
-                    new TaskManager.LiveTask($"Setup Time Act Editor: Templates", TaskManager.RequeueType.None, false,
-                () =>
-                {
-                    LoadTimeActTemplates();
-                }));
+                TaskManager.LiveTask task = new(
+                    "timeActEditor_templateSetup",
+                    "Time Act Editor",
+                    "The TAE templates have been setup successfully.",
+                    "The TAE template setup has failed.",
+                    TaskManager.RequeueType.None,
+                    false,
+                    LoadTimeActTemplates
+                );
+
+                TaskManager.Run(task);
             }
 
             // Project - Character Time Acts
@@ -65,12 +70,17 @@ public static class TimeActBank
             {
                 if (!IsCharacterTimeActsLoaded)
                 {
-                    TaskManager.Run(
-                        new TaskManager.LiveTask($"Setup Time Act Editor: Characters", TaskManager.RequeueType.None, false,
-                    () =>
-                    {
-                        LoadProjectCharacterTimeActs();
-                    }));
+                    TaskManager.LiveTask task = new(
+                        "timeActEditor_characterTaeSetup",
+                        "Time Act Editor",
+                        "The Character TAE containers have been setup successfully.",
+                        "The Character TAE container setup has failed.",
+                        TaskManager.RequeueType.None,
+                        false,
+                        LoadProjectCharacterTimeActs
+                    );
+
+                    TaskManager.Run(task);
                 }
             }
             else
@@ -82,12 +92,17 @@ public static class TimeActBank
             {
                 if (!IsVanillaCharacterTimeActsLoaded)
                 {
-                    TaskManager.Run(
-                        new TaskManager.LiveTask($"Setup Time Act Editor: Characters (Vanilla)", TaskManager.RequeueType.None, false,
-                    () =>
-                    {
-                        LoadVanillaCharacterTimeActs();
-                    }));
+                    TaskManager.LiveTask task = new(
+                        "timeActEditor_characterVanillaTaeSetup",
+                        "Time Act Editor",
+                        "The vanilla Character TAE containers have been setup successfully.",
+                        "The vanilla Character TAE container setup has failed.",
+                        TaskManager.RequeueType.None,
+                        false,
+                        LoadVanillaCharacterTimeActs
+                    );
+
+                    TaskManager.Run(task);
                 }
             }
             else
@@ -100,12 +115,17 @@ public static class TimeActBank
             {
                 if (!IsObjectTimeActsLoaded)
                 {
-                    TaskManager.Run(
-                        new TaskManager.LiveTask($"Setup Time Act Editor: {title}", TaskManager.RequeueType.None, false,
-                    () =>
-                    {
-                        LoadProjectObjectTimeActs();
-                    }));
+                    TaskManager.LiveTask task = new(
+                        "timeActEditor_objectTaeSetup",
+                        "Time Act Editor",
+                        "The Object TAE containers have been setup successfully.",
+                        "The Object TAE container setup has failed.",
+                        TaskManager.RequeueType.None,
+                        false,
+                        LoadProjectObjectTimeActs
+                    );
+
+                    TaskManager.Run(task);
                 }
             }
             else
@@ -118,12 +138,17 @@ public static class TimeActBank
             {
                 if (!IsVanillaObjectTimeActsLoaded)
                 {
-                    TaskManager.Run(
-                        new TaskManager.LiveTask($"Setup Time Act Editor: {title} (Vanilla)", TaskManager.RequeueType.None, false,
-                    () =>
-                    {
-                        LoadProjectObjectTimeActs();
-                    }));
+                    TaskManager.LiveTask task = new(
+                        "timeActEditor_objectVanillaTaeSetup",
+                        "Time Act Editor",
+                        "The vanilla Object TAE containers have been setup successfully.",
+                        "The vanilla Object TAE container setup has failed.",
+                        TaskManager.RequeueType.None,
+                        false,
+                        LoadProjectObjectTimeActs
+                    );
+
+                    TaskManager.Run(task);
                 }
             }
             else
@@ -456,13 +481,13 @@ public static class TimeActBank
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading TAE file.",
                     LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading TAE file.",
                     LogLevel.Warning);
             return;
         }
@@ -488,7 +513,7 @@ public static class TimeActBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{name} {path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                TaskLogs.AddLog($"Failed to read TAE file: {name} at {path}\n{ex}", LogLevel.Error);
             }
         }
         // Within .anibnd.dcx
@@ -526,7 +551,7 @@ public static class TimeActBank
                             }
                             catch (Exception ex)
                             {
-                                TaskLogs.AddLog($"{name} {file.Name} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                                TaskLogs.AddLog($"Failed to read TAE file: {file.ID}\n{ex}", LogLevel.Error);
                             }
                         }
                     }
@@ -550,13 +575,13 @@ public static class TimeActBank
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading TAE file.",
                     LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading TAE file.",
                     LogLevel.Warning);
             return;
         }
@@ -589,7 +614,7 @@ public static class TimeActBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{name} {path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                TaskLogs.AddLog($"Failed to read TAE file: {name} at {path}\n{ex}", LogLevel.Error);
             }
         }
         // Within .anibnd.dcx
@@ -646,7 +671,7 @@ public static class TimeActBank
                                         }
                                         catch (Exception ex)
                                         {
-                                            TaskLogs.AddLog($"{name} {aniFile.Name} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                                            TaskLogs.AddLog($"Failed to read TAE file: {aniFile.ID}\n{ex}", LogLevel.Error);
                                         }
                                     }
                                 }
@@ -734,7 +759,9 @@ public static class TimeActBank
         if (fileBytes != null)
         {
             File.WriteAllBytes(assetMod, fileBytes);
-            TaskLogs.AddLog($"Saved at: {assetMod}");
+
+            var filename = Path.GetFileNameWithoutExtension(assetMod);
+            TaskLogs.AddLog($"Successfully saved TAE file: {filename} at {assetMod}");
         }
     }
 
@@ -903,11 +930,12 @@ public static class TimeActBank
                 }
 
                 File.WriteAllBytes(assetMod, fileBytes);
-                TaskLogs.AddLog($"Saved {info.Name} - {assetMod}.");
+
+                TaskLogs.AddLog($"Successfully saved TAE container: {info.Name} at {assetMod}");
             }
             else
             {
-                TaskLogs.AddLog($"Failed to save {info.Name} - {assetMod}.");
+                TaskLogs.AddLog($"Failed to save TAE container: {info.Name} at {assetMod}.");
             }
         }
 
@@ -966,10 +994,10 @@ public static class TimeActBank
                     return writeBinder.Write(DCX.Type.DCX_KRAK);
                 case ProjectType.AC6:
                     return writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                default:
+                    break;
             }
         }
-
-        TaskLogs.AddLog($"Invalid Project Type during Save Time Act");
 
         return null;
     }

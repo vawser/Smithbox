@@ -106,6 +106,10 @@ namespace StudioCore.Interface
             UI.Current.ImGui_TextEditor_ModifiedRow_Text = UI.Default.ImGui_TextEditor_ModifiedRow_Text;
             UI.Current.ImGui_TextEditor_UniqueRow_Text = UI.Default.ImGui_TextEditor_UniqueRow_Text;
 
+            UI.Current.ImGui_Logger_Information_Color = UI.Default.ImGui_Logger_Information_Color;
+            UI.Current.ImGui_Logger_Warning_Color = UI.Default.ImGui_Logger_Warning_Color;
+            UI.Current.ImGui_Logger_Error_Color = UI.Default.ImGui_Logger_Error_Color;
+
             // Misc
             UI.Current.DisplayGroupEditor_Border_Highlight = UI.Default.DisplayGroupEditor_Border_Highlight;
             UI.Current.DisplayGroupEditor_DisplayActive_Frame = UI.Default.DisplayGroupEditor_DisplayActive_Frame;
@@ -269,6 +273,10 @@ namespace StudioCore.Interface
             theme.ImGui_TextEditor_ModifiedRow_Text = InterfaceUtils.GetFloatList(UI.Current.ImGui_TextEditor_ModifiedRow_Text);
             theme.ImGui_TextEditor_UniqueRow_Text = InterfaceUtils.GetFloatList(UI.Current.ImGui_TextEditor_UniqueRow_Text);
 
+            theme.ImGui_Logger_Information_Color = InterfaceUtils.GetFloatList(UI.Current.ImGui_Logger_Information_Color);
+            theme.ImGui_Logger_Warning_Color = InterfaceUtils.GetFloatList(UI.Current.ImGui_Logger_Warning_Color);
+            theme.ImGui_Logger_Error_Color = InterfaceUtils.GetFloatList(UI.Current.ImGui_Logger_Error_Color);
+
             theme.DisplayGroupEditor_Border_Highlight = InterfaceUtils.GetFloatList(UI.Current.DisplayGroupEditor_Border_Highlight);
             theme.DisplayGroupEditor_DisplayActive_Frame = InterfaceUtils.GetFloatList(UI.Current.DisplayGroupEditor_DisplayActive_Frame);
             theme.DisplayGroupEditor_DisplayActive_Checkbox = InterfaceUtils.GetFloatList(UI.Current.DisplayGroupEditor_DisplayActive_Checkbox);
@@ -281,6 +289,8 @@ namespace StudioCore.Interface
             {
                 string jsonString = JsonSerializer.Serialize(theme, typeof(InterfaceThemeConfig), InterfaceThemeSerializationContext.Default);
 
+                var filename = Path.GetFileNameWithoutExtension(path);
+
                 try
                 {
                     var fs = new FileStream(path, System.IO.FileMode.Create);
@@ -288,10 +298,12 @@ namespace StudioCore.Interface
                     fs.Write(data, 0, data.Length);
                     fs.Flush();
                     fs.Dispose();
+
+                    TaskLogs.AddLog($"Successfully saved Theme resource file: {filename} at {path}");
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{ex}");
+                    TaskLogs.AddLog($"Failed to save Theme resource file: {filename} at {path}\n{ex}");
                 }
             }
 
@@ -414,6 +426,10 @@ namespace StudioCore.Interface
             UI.Current.ImGui_AliasName_Text = InterfaceUtils.GetVectorValue(theme.ImGui_AliasName_Text);
             UI.Current.ImGui_TextEditor_ModifiedRow_Text = InterfaceUtils.GetVectorValue(theme.ImGui_TextEditor_ModifiedRow_Text);
             UI.Current.ImGui_TextEditor_UniqueRow_Text = InterfaceUtils.GetVectorValue(theme.ImGui_TextEditor_UniqueRow_Text);
+
+            UI.Current.ImGui_Logger_Information_Color = InterfaceUtils.GetVectorValue(theme.ImGui_Logger_Information_Color);
+            UI.Current.ImGui_Logger_Warning_Color = InterfaceUtils.GetVectorValue(theme.ImGui_Logger_Warning_Color);
+            UI.Current.ImGui_Logger_Error_Color = InterfaceUtils.GetVectorValue(theme.ImGui_Logger_Error_Color);
 
             // Misc
             UI.Current.DisplayGroupEditor_Border_Highlight = InterfaceUtils.GetVectorValue(theme.DisplayGroupEditor_Border_Highlight);

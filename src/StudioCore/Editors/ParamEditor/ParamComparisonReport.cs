@@ -224,12 +224,16 @@ public static class ParamComparisonReport
 
             if (ImGui.Button("Re-generate", buttonSize))
             {
-                TaskManager.Run(
-                    new TaskManager.LiveTask($"Generate Param Difference Report", TaskManager.RequeueType.None, false,
-                () =>
-                {
-                    GenerateReport();
-                }));
+                TaskManager.LiveTask task = new(
+                    "paramEditor_generateComparisonReport",
+                    "Param Editor",
+                    "The comparison report has been generated successfully.",
+                    "The comparison report failed to be generated.",
+                    TaskManager.RequeueType.None,
+                    false,
+                    GenerateReport);
+
+                TaskManager.Run(task);
             }
             ImGui.SameLine();
             if (ImGui.Button("Copy", buttonSize))
@@ -260,12 +264,17 @@ public static class ParamComparisonReport
 
             if (ImGui.Button("Generate", buttonSize))
             {
-                TaskManager.Run(
-                    new TaskManager.LiveTask($"Generate Param Difference Report", TaskManager.RequeueType.None, false,
-                () =>
-                {
-                    GenerateReport();
-                }));
+                TaskManager.LiveTask task = new(
+                    "paramEditor_generateComparisonReport",
+                    "Param Editor",
+                    "The comparison report has been generated successfully.",
+                    "The comparison report failed to be generated.",
+                    TaskManager.RequeueType.None,
+                    false,
+                    GenerateReport
+                );
+
+                TaskManager.Run(task);
             }
             ImGui.SameLine();
             if (ImGui.Button("Close", buttonSize))

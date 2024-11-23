@@ -50,7 +50,7 @@ public static class RowNamer
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to parse {rowIDstr}: {ex.Message}");
+            TaskLogs.AddLog($"Failed to parse referenced row string: {rowIDstr}\n{ex.Message}");
         }
     }
 
@@ -133,7 +133,7 @@ public static class RowNamer
                     if (activeParam == "BehaviorParam" && row.ID > 100000)
                     {
                         var chrID = $"c{row.ID.ToString().Substring(1, 4)}";
-                        TaskLogs.AddLog(chrID);
+
                         var result = Smithbox.BankHandler.CharacterAliases.Aliases.list.Where(e => e.id == chrID).FirstOrDefault();
                         if(result != null)
                         {

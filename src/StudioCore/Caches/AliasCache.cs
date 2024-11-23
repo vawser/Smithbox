@@ -100,7 +100,5 @@ public class AliasCache
         }
 
         UpdateCacheComplete = true;
-
-        TaskLogs.AddLog($"Name Cache: Loaded Asset Browser Names");
     }
 }

@@ -1,4 +1,5 @@
-﻿using StudioCore.Core.Project;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Core.Project;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ public class TextNamingTemplateManager
         }
         else
         {
-            TaskLogs.AddLog("Invalid generator name!");
+            TaskLogs.AddLog("Invalid name for Naming template.", LogLevel.Warning);
             return null;
         }
     }

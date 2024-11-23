@@ -72,6 +72,11 @@ public class TaskManager
         return new List<string>(_liveTasks.Keys);
     }
 
+    public static ConcurrentDictionary<string, LiveTask> GetTasks()
+    {
+        return _liveTasks;
+    }
+
     public static void ThrowTaskExceptions()
     {
         // Allows exceptions in tasks to be caught by crash handler.
@@ -109,6 +114,10 @@ public class TaskManager
         /// </summary>
         public readonly string TaskId;
 
+        public readonly string TaskName;
+        public readonly string TaskCompletedMessage;
+        public readonly string TaskFailedMessage;
+
         /// <summary>
         ///     If true, task will run again after finishing.
         /// </summary>
@@ -121,19 +130,26 @@ public class TaskManager
 
         public LiveTask() { }
 
-        public LiveTask(string taskId, RequeueType requeueType, bool silentFail, Action act)
+        public LiveTask(string taskId, string taskName, string taskCompletedMessage, string taskFailedMessage, RequeueType requeueType, bool silentFail, Action act)
         {
             TaskId = taskId;
+            TaskName = taskName;
+            TaskCompletedMessage = taskCompletedMessage;
+            TaskFailedMessage = taskFailedMessage;
+
             RequeueBehavior = requeueType;
             SilentFail = silentFail;
             LogPriority = LogPriority.Normal;
             TaskAction = act;
         }
 
-        public LiveTask(string taskId, RequeueType requeueType, bool silentFail, LogPriority logPriority,
+        public LiveTask(string taskId, string taskName, string taskCompletedMessage, string taskFailedMessage, RequeueType requeueType, bool silentFail, LogPriority logPriority,
             Action act)
         {
             TaskId = taskId;
+            TaskName = taskName;
+            TaskCompletedMessage = taskCompletedMessage;
+            TaskFailedMessage = taskFailedMessage;
             RequeueBehavior = requeueType;
             SilentFail = silentFail;
             LogPriority = logPriority;
@@ -178,14 +194,14 @@ public class TaskManager
             {
                 if (PassiveTask)
                 {
-                    TaskLogs.AddLog($"Running passive task: {TaskId}",
+                    TaskLogs.AddLog($"{TaskName}: {TaskCompletedMessage}",
                         LogLevel.Information, LogPriority);
                 }
 
                 try
                 {
                     TaskAction.Invoke();
-                    TaskLogs.AddLog($"Task Completed: {TaskId}",
+                    TaskLogs.AddLog($"{TaskName}: {TaskCompletedMessage}",
                         LogLevel.Information, LogPriority);
                 }
                 catch (Exception e)
@@ -196,7 +212,7 @@ public class TaskManager
                         {
                             e = e.InnerException;
                         }
-                        TaskLogs.AddLog($"Task Failed: {TaskId}",
+                        TaskLogs.AddLog($"{TaskName}: {TaskFailedMessage}",
                             LogLevel.Error, LogPriority, e);
                     }
                     else

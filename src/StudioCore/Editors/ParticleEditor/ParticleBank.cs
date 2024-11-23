@@ -104,7 +104,8 @@ public static class ParticleBank
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{realPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    var filename = Path.GetFileNameWithoutExtension(realPath);
+                    TaskLogs.AddLog($"Failed to read FFXBND file: {filename} at {realPath}.\n{ex}", LogLevel.Error);
                 }
 
                 List<string> fxrFiles = new List<string>();
@@ -139,8 +140,6 @@ public static class ParticleBank
 
         IsLoaded = true;
         IsLoading = false;
-
-        TaskLogs.AddLog($"Particle File Bank - Load Complete");
     }
 
     public static bool LoadParticle(string name, ParticleFileInfo info)
@@ -173,7 +172,7 @@ public static class ParticleBank
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    TaskLogs.AddLog($"Failed to read FXR file: {file.ID}.\n{ex}", LogLevel.Error);
                 }
             }
         }
@@ -235,7 +234,6 @@ public static class ParticleBank
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveParticle");
                 return;
         }
 
@@ -300,7 +298,6 @@ public static class ParticleBank
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveResourceList");
                 return;
         }
 

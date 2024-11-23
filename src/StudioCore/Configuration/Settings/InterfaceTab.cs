@@ -135,6 +135,10 @@ public class InterfaceTab
         if (ImGui.CollapsingHeader("ImGui", ImGuiTreeNodeFlags.DefaultOpen))
         {
             // Save current imgui.ini in AppData
+            if(ImGui.Button("Store Current ImGui Layout in AppData"))
+            {
+
+            }
 
             // Restore imgui.ini from saved version in AppData
         }
@@ -259,6 +263,10 @@ public class InterfaceTab
 
                 ImGui.ColorEdit4("Text Editor: Modified Row", ref UI.Current.ImGui_TextEditor_ModifiedRow_Text);
                 ImGui.ColorEdit4("Text Editor: Unique Row", ref UI.Current.ImGui_TextEditor_UniqueRow_Text);
+
+                ImGui.ColorEdit4("Logger: Information", ref UI.Current.ImGui_Logger_Information_Color);
+                ImGui.ColorEdit4("Logger: Warning", ref UI.Current.ImGui_Logger_Warning_Color);
+                ImGui.ColorEdit4("Logger: Error", ref UI.Current.ImGui_Logger_Error_Color);
             }
 
             if (ImGui.CollapsingHeader("Miscellaneous", ImGuiTreeNodeFlags.DefaultOpen))

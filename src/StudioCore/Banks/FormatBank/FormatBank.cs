@@ -3,6 +3,7 @@ using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using HKLib.hk2018.hkReflect;
+using Microsoft.Extensions.Logging;
 
 namespace StudioCore.Banks.FormatBank;
 
@@ -34,15 +35,14 @@ public class FormatBank
             Information = BankUtils.LoadFormatResourceJSON(FormatTitle, IsGameSpecific);
             Enums = BankUtils.LoadFormatEnumJSON(FormatTitle, IsGameSpecific);
             Masks = BankUtils.LoadFormatMaskJSON(FormatTitle, IsGameSpecific);
+
+            TaskLogs.AddLog($"Successfully setup {FormatTitle} format bank.");
         }
         catch (Exception e)
         {
-#if DEBUG
-            TaskLogs.AddLog($"Failed to load Format Bank {FormatTitle}: {e.Message}");
-#endif
+            TaskLogs.AddLog($"Failed to setup {FormatTitle} format bank:\n{e}", LogLevel.Error);
         }
 
-        TaskLogs.AddLog($"Format Bank: Loaded {FormatTitle} Bank");
     }
 
     public Dictionary<string, FormatReference> GetInformationEntries()

@@ -22,6 +22,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
 using ActionManager = StudioCore.Editor.ActionManager;
@@ -451,10 +452,7 @@ public class ParamEditorScreen : EditorScreen
                                     EditorActionManager.ExecuteAction(action);
                                 }
 
-                                TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-                                    TaskManager.RequeueType.Repeat, true,
-                                    LogPriority.Low,
-                                    () => ParamBank.RefreshAllParamDiffCaches(false)));
+                                ParamBank.RefreshParamDifferenceCacheTask();
                             }
                             else
                             {
@@ -479,10 +477,7 @@ public class ParamEditorScreen : EditorScreen
                                 PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
                             }
 
-                            TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-                                TaskManager.RequeueType.Repeat,
-                                true, LogPriority.Low,
-                                () => ParamBank.RefreshAllParamDiffCaches(false)));
+                            ParamBank.RefreshParamDifferenceCacheTask();
                         }
                     }
 
@@ -508,10 +503,7 @@ public class ParamEditorScreen : EditorScreen
                                         PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
                                     }
 
-                                    TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-                                        TaskManager.RequeueType.Repeat,
-                                        true, LogPriority.Low,
-                                        () => ParamBank.RefreshAllParamDiffCaches(false)));
+                                    ParamBank.RefreshParamDifferenceCacheTask();
                                 }
                             }
                         }
@@ -1049,10 +1041,29 @@ public class ParamEditorScreen : EditorScreen
 
         ClearFmgDecorators();
 
-        TaskManager.Run(new TaskManager.LiveTask("Param - Load MassEdit Scripts", TaskManager.RequeueType.Repeat,
-            true, () => MassEditScript.ReloadScripts()));
-        TaskManager.Run(new TaskManager.LiveTask("Param - Load Upgrader Data", TaskManager.RequeueType.Repeat, true,
-            () => LoadUpgraderData()));
+        // Mass Edit Scripts
+        TaskManager.LiveTask massEditTask = new(
+            "paramEditor_massEditScriptSetup",
+            "Mass Edit",
+            "The mass edit scripts have been setup successfully.",
+            "The mass edit scripts setup has failed.",
+            TaskManager.RequeueType.Repeat,
+            true, 
+            MassEditScript.ReloadScripts
+        );
+        TaskManager.Run(massEditTask);
+
+        // Param Upgrader
+        TaskManager.LiveTask paramUpgradeTask = new(
+            "paramEditor_upgraderSetup",
+            "Param Upgrade",
+            "The param upgrader has been setup successfully.",
+            "The param upgrader setup has failed.",
+            TaskManager.RequeueType.Repeat,
+            true,
+            LoadUpgraderData
+        );
+        TaskManager.Run(paramUpgradeTask);
     }
 
     public void Save()
@@ -1066,7 +1077,7 @@ public class ParamEditorScreen : EditorScreen
         try
         {
             ParamBank.PrimaryBank.SaveParams();
-            TaskLogs.AddLog("Saved params");
+            TaskLogs.AddLog("Params saved successfully.");
         }
         catch (SavingFailedException e)
         {
@@ -1091,7 +1102,7 @@ public class ParamEditorScreen : EditorScreen
         try
         {
             ParamBank.PrimaryBank.SaveParams();
-            TaskLogs.AddLog("Saved params");
+            TaskLogs.AddLog("Params saved successfully.");
         }
         catch (SavingFailedException e)
         {
@@ -1468,28 +1479,19 @@ public class ParamEditorScreen : EditorScreen
     private void ParamUndo()
     {
         EditorActionManager.UndoAction();
-        TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-            TaskManager.RequeueType.Repeat, true,
-            LogPriority.Low,
-            () => ParamBank.RefreshAllParamDiffCaches(false)));
+        ParamBank.RefreshParamDifferenceCacheTask();
     }
 
     private void ParamUndoAll()
     {
         EditorActionManager.UndoAllAction();
-        TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-            TaskManager.RequeueType.Repeat, true,
-            LogPriority.Low,
-            () => ParamBank.RefreshAllParamDiffCaches(false)));
+        ParamBank.RefreshParamDifferenceCacheTask();
     }
 
     private void ParamRedo()
     {
         EditorActionManager.RedoAction();
-        TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-            TaskManager.RequeueType.Repeat, true,
-            LogPriority.Low,
-            () => ParamBank.RefreshAllParamDiffCaches(false)));
+        ParamBank.RefreshParamDifferenceCacheTask();
     }
 
     private IReadOnlyList<Param.Row> CsvExportGetRows(ParamBank.RowGetType rowType)
@@ -1712,10 +1714,7 @@ public class ParamEditorScreen : EditorScreen
                 {
                     _lastMEditRegexInput = _currentMEditRegexInput;
                     _currentMEditRegexInput = "";
-                    TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-                        TaskManager.RequeueType.Repeat,
-                        true, LogPriority.Low,
-                        () => ParamBank.RefreshAllParamDiffCaches(false)));
+                    ParamBank.RefreshParamDifferenceCacheTask();
                 }
 
                 _mEditRegexResult = r.Information;
@@ -1782,10 +1781,7 @@ public class ParamEditorScreen : EditorScreen
                         EditorActionManager.ExecuteAction(action);
                     }
 
-                    TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
-                        TaskManager.RequeueType.Repeat, true,
-                        LogPriority.Low,
-                        () => ParamBank.RefreshAllParamDiffCaches(false)));
+                    ParamBank.RefreshParamDifferenceCacheTask();
                 }
 
                 _mEditCSVResult = result;

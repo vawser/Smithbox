@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.BufferLayout;
@@ -247,7 +248,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                var filename = Path.GetFileNameWithoutExtension(readPath);
+                TaskLogs.AddLog($"Failed to read Buffer Layout Group resource file: {filename} at {readPath}.\n{ex}", LogLevel.Error);
             }
 
             return newBufferLayoutList;
@@ -284,11 +286,13 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     fs.Flush();
                     fs.Dispose();
 
-                    TaskLogs.AddLog($"Saved Buffer Layout Group: {writePath}");
+                    var writeFilename = Path.GetFileNameWithoutExtension(writePath);
+                    TaskLogs.AddLog($"Saved Buffer Layout Group resource file: {writeFilename} at {writePath}");
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{ex}");
+                    var writeFilename = Path.GetFileNameWithoutExtension(writePath);
+                    TaskLogs.AddLog($"Failed to save Buffer Layout Group resource file: {writeFilename} at {writePath}.\n{ex}", LogLevel.Error);
                 }
 
                 RefreshBufferLayoutGroupList = true;

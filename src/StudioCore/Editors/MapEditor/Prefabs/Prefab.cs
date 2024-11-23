@@ -52,7 +52,7 @@ public abstract class Prefab : PrefabAttributes
     {
         if (targetMap is null)
         {
-            TaskLogs.AddLog($"Failed to create prefab {PrefabName}: target map invalid", LogLevel.Error);
+            TaskLogs.AddLog($"Failed to create prefab {PrefabName}: Target map is null.", LogLevel.Error);
             return;
         }
 

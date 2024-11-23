@@ -53,7 +53,12 @@ public static class GparamMemoryTools
     {
         var offsets_Name = "eldenring.exe";
 
-        TaskManager.Run(new TaskManager.LiveTask("Param - Hot Reload", TaskManager.RequeueType.WaitThenRequeue,
+        TaskManager.LiveTask task = new(
+            "gparamReloader_ReloadGparams",
+            "Gparam Reloader",
+            "Gparams have been reloaded successfully in-game.",
+            "Gparams reload has failed.",
+            TaskManager.RequeueType.WaitThenRequeue,
             true, () =>
             {
                 Process[] processArray = Process.GetProcessesByName(offsets_Name);
@@ -73,7 +78,10 @@ public static class GparamMemoryTools
                 {
                     throw new Exception("Unable to find running game");
                 }
-            }));
+            }
+        );
+
+        TaskManager.Run(task);
     }
 
     public static void HandleGparamReload(GparamInfo info, SoulsMemoryHandler handler)
@@ -100,7 +108,7 @@ public static class GparamMemoryTools
         // Try and find match for the GPARAM
         if (!TryFindGparamOffsetFromAOB(handler, $"GparamPtr_{name}", originalGparamBytes, out var gparamBase))
         {
-            TaskLogs.AddLog("Failed to find GPARAM offset");
+            TaskLogs.AddLog("Failed to find GPARAM offset", LogLevel.Error);
             return;
         }
 
@@ -138,13 +146,13 @@ public static class GparamMemoryTools
                 if (matched)
                 {
                     outOffset = offset;
-                    TaskLogs.AddLog($"Found AOB in memory for {offsetName}. Offset: 0x{offset:X2}", LogLevel.Debug);
+                    //TaskLogs.AddLog($"Found AOB in memory for {offsetName}. Offset: 0x{offset:X2}");
                     return true;
                 }
             }
         }
 
-        TaskLogs.AddLog($"Unable to find AOB in memory for {offsetName}", LogLevel.Warning);
+        TaskLogs.AddLog($"Unable to find AOB in memory for {offsetName}", LogLevel.Error);
         outOffset = -1;
         return false;
     }

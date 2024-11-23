@@ -76,7 +76,6 @@ public static class CutsceneBank
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveCutscene");
                 return;
         }
 
@@ -141,8 +140,6 @@ public static class CutsceneBank
 
         IsLoaded = true;
         IsLoading = false;
-
-        TaskLogs.AddLog($"Cutscene File Bank - Load Complete");
     }
 
     public static void LoadCutscene(string path)
@@ -174,7 +171,8 @@ public static class CutsceneBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                var filename = Path.GetFileNameWithoutExtension(path);
+                TaskLogs.AddLog($"Failed to read MQB file: {filename} at {path}.\n{ex}", LogLevel.Error);
             }
         }
         else
@@ -185,7 +183,8 @@ public static class CutsceneBank
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                var filename = Path.GetFileNameWithoutExtension(path);
+                TaskLogs.AddLog($"Failed to read MQB file: {filename} at {path}.\n{ex}", LogLevel.Error);
             }
         }
 
@@ -202,7 +201,7 @@ public static class CutsceneBank
                     }
                     catch (Exception ex)
                     {
-                        TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                        TaskLogs.AddLog($"Failed to read MQB file: {file.ID}.\n{ex}", LogLevel.Error);
                     }
                 }
             }

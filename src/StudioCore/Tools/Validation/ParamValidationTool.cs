@@ -49,46 +49,55 @@ namespace StudioCore.Tools.Validation
             var currentParam = ParamBank.VanillaBank.Params[selectedParamName];
             var currentRow = 0;
 
-            TaskManager.Run(new TaskManager.LiveTask($"Validate {selectedParamName} Padding", TaskManager.RequeueType.None, false,
-            () =>
-            {
-                foreach (var row in currentParam.Rows)
+            TaskManager.LiveTask task = new(
+                "system_runParamValidation",
+                "System",
+                "The param validation has run.",
+                "The param validation has failed to run.",
+                TaskManager.RequeueType.None,
+                false,
+                () =>
                 {
-                    currentRow = row.ID;
-
-                    foreach (var cell in row.Cells)
+                    foreach (var row in currentParam.Rows)
                     {
-                        if (cell.Def.InternalType == "dummy8")
+                        currentRow = row.ID;
+
+                        foreach (var cell in row.Cells)
                         {
-                            //TaskLogs.AddLog(cell.Value.GetType().Name);
-
-                            if (cell.Value.GetType() == typeof(byte[]))
+                            if (cell.Def.InternalType == "dummy8")
                             {
-                                // TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
+                                //TaskLogs.AddLog(cell.Value.GetType().Name);
 
-                                byte[] bytes = (byte[])cell.Value;
-                                foreach (var b in bytes)
+                                if (cell.Value.GetType() == typeof(byte[]))
                                 {
+                                    // TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
+
+                                    byte[] bytes = (byte[])cell.Value;
+                                    foreach (var b in bytes)
+                                    {
+                                        if (b != 0)
+                                        {
+                                            TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
+                                        }
+                                    }
+                                }
+                                else if (cell.Value.GetType() == typeof(byte))
+                                {
+                                    //TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
+
+                                    byte b = (byte)cell.Value;
                                     if (b != 0)
                                     {
                                         TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
                                     }
                                 }
                             }
-                            else if (cell.Value.GetType() == typeof(byte))
-                            {
-                                //TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
-
-                                byte b = (byte)cell.Value;
-                                if (b != 0)
-                                {
-                                    TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
-                                }
-                            }
                         }
                     }
                 }
-            }));
+            );
+
+            TaskManager.Run(task);
         }
 
         public static void ValidateParamdef()

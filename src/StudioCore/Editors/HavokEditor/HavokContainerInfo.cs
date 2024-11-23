@@ -93,7 +93,8 @@ public class HavokContainerInfo
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{ModBinderPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    var filename = Path.GetFileNameWithoutExtension(ModBinderPath);
+                    TaskLogs.AddLog($"Failed to read HKX file: {filename} at {ModBinderPath}\n{ex}", LogLevel.Error);
                 }
             }
             // Otherwise load root
@@ -112,7 +113,8 @@ public class HavokContainerInfo
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{RootBinderPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    var filename = Path.GetFileNameWithoutExtension(ModBinderPath);
+                    TaskLogs.AddLog($"Failed to read HKX file: {filename} at {ModBinderPath}\n{ex}", LogLevel.Error);
                 }
             }
         }
@@ -134,7 +136,8 @@ public class HavokContainerInfo
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{ModBinderPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    var filename = Path.GetFileNameWithoutExtension(ModBinderPath);
+                    TaskLogs.AddLog($"Failed to read HKX file: {filename} at {ModBinderPath}\n{ex}", LogLevel.Error);
                 }
             }
             // Otherwise load root
@@ -153,7 +156,8 @@ public class HavokContainerInfo
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{RootBinderPath} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    var filename = Path.GetFileNameWithoutExtension(ModBinderPath);
+                    TaskLogs.AddLog($"Failed to read HKX file: {filename} at {ModBinderPath}\n{ex}", LogLevel.Error);
                 }
             }
         }
@@ -245,7 +249,7 @@ public class HavokContainerInfo
         }
         else
         {
-            TaskLogs.AddLog($"Container path does not exist: {RootBinderPath}");
+            TaskLogs.AddLog($"HKX container filepath does not exist: {RootBinderPath}", LogLevel.Error);
             return false;
         }
 

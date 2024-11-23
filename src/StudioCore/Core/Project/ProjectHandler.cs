@@ -60,7 +60,7 @@ public class ProjectHandler
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog("Failed to load recent project.");
+                TaskLogs.AddLog("Failed to load recent project.", LogLevel.Error);
             }
         }
 
@@ -117,7 +117,7 @@ public class ProjectHandler
         Smithbox.SmithboxDataRoot = $"{Smithbox.ProjectRoot}\\.smithbox";
 
         if (Smithbox.ProjectRoot == "")
-            TaskLogs.AddLog("Smithbox.ProjectRoot is empty!");
+            TaskLogs.AddLog("The ProjectRoot directory used by Smithbox is empty!", LogLevel.Warning);
 
         Smithbox.SetProgramTitle($"{CurrentProject.Config.ProjectName} - Smithbox");
 
@@ -228,7 +228,7 @@ public class ProjectHandler
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                TaskLogs.AddLog($"Failed to write project.json file:\n{ex}", LogLevel.Error);
             }
         }
     }
@@ -292,7 +292,7 @@ public class ProjectHandler
             if (targetProject.Config.GameType is ProjectType.DS1 or ProjectType.DS2S or ProjectType.DS2)
             {
                 TaskLogs.AddLog(
-                    $"The files for {targetProject.Config.GameType} do not appear to be unpacked. Please use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files",
+                    $"The files for {targetProject.Config.GameType} do not appear to be unpacked.\nPlease use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files",
                     LogLevel.Error, LogPriority.High);
             }
 
@@ -314,7 +314,7 @@ public class ProjectHandler
 
         if (Current.PTDE_Collision_Root == "" && Current.PTDE_Collision_Root_Warning)
         {
-            TaskLogs.AddLog("No directory is set for Dark Souls 1 collision files. No collision functionality will be available. You can set the directory or disable this warning under Project Status in settings.",
+            TaskLogs.AddLog("No directory is set for Dark Souls 1 collision files. No collision functionality will be available.\nYou can set the directory or disable this warning under Project Status in settings.",
                 LogLevel.Warning, LogPriority.High);
         }
         else if (!Directory.Exists(Current.PTDE_Collision_Root))

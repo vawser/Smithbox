@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
@@ -369,7 +370,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             }
             else
             {
-                TaskLogs.AddLog($"Quick Edit could not be applied.");
+                TaskLogs.AddLog($"Quick Edit could not be applied.", LogLevel.Warning);
             }
         }
 

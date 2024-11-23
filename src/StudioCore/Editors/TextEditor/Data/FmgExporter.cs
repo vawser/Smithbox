@@ -495,11 +495,11 @@ public static class FmgExporter
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Exported text as {wrapper.Name} at: {writePath}");
+                TaskLogs.AddLog($"Successfully exported text: {wrapper.Name} at {writePath}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                TaskLogs.AddLog($"Failed to export text: {wrapper.Name} at {writePath}\n{ex}");
             }
         }
     }

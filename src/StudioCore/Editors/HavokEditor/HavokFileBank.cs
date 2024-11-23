@@ -132,7 +132,6 @@ public static class HavokFileBank
                     binderBytes = info.Container.Write(DCX.Type.DCX_KRAK);
                     break;
                 default:
-                    TaskLogs.AddLog($"Invalid Project Type during Save Havok File");
                     return;
             }
 
@@ -143,8 +142,10 @@ public static class HavokFileBank
 
             if (binderBytes != null)
             {
+                var filename = Path.GetFileNameWithoutExtension(info.ModBinderPath);
+
                 File.WriteAllBytes(info.ModBinderPath, binderBytes);
-                TaskLogs.AddLog($"Saved at: {info.ModBinderPath}");
+                TaskLogs.AddLog($"Saved HKX container file: {filename} at {info.ModBinderPath}");
             }
         }
     }

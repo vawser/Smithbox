@@ -125,13 +125,13 @@ public class SoulsMemoryHandler
 
                     outOffset = offset;
                     _processOffsets.Add(offsetName, offset);
-                    TaskLogs.AddLog($"Found AOB in memory for {offsetName}. Offset: 0x{offset:X2}", LogLevel.Debug);
+                    //TaskLogs.AddLog($"Found AOB in memory for {offsetName}. Offset: 0x{offset:X2}");
                     return true;
                 }
             }
         }
 
-        TaskLogs.AddLog($"Unable to find AOB in memory for {offsetName}", LogLevel.Warning);
+        TaskLogs.AddLog($"Unable to find AOB in memory for {offsetName}.", LogLevel.Warning);
         return false;
     }
 

@@ -126,7 +126,6 @@ public static class EmevdBank
                 fileBytes = script.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveEventScript");
                 return;
         }
 
@@ -152,7 +151,7 @@ public static class EmevdBank
         {
             // Write to GameModDirectory
             File.WriteAllBytes(assetMod, fileBytes);
-            TaskLogs.AddLog($"Saved at: {assetMod}");
+            TaskLogs.AddLog($"Saved EMEVD file: {info.Name} at {assetMod}");
         }
     }
 
@@ -267,10 +266,6 @@ public static class EmevdBank
 
             IsLoaded = true;
             IsLoading = false;
-
-
-
-            TaskLogs.AddLog($"Event Script Bank - Load Complete");
         }
     }
 
@@ -300,7 +295,8 @@ public static class EmevdBank
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+            var filename = Path.GetFileNameWithoutExtension(path);
+            TaskLogs.AddLog($"Failed to read EMEVD file: {filename} at {path}.\n{ex}", LogLevel.Error);
         }
     }
 
@@ -378,8 +374,6 @@ public static class EmevdBank
 
         IsLoaded = true;
         IsLoading = false;
-
-        TaskLogs.AddLog($"Event Script Bank - Load Complete");
     }
 
     public class EventScriptInfo : IComparable<EventScriptInfo>

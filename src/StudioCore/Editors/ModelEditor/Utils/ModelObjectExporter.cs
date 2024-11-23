@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Utilities;
+﻿using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Utilities;
 using Pfim;
 using SoulsFormats;
 using StudioCore.Core.Project;
@@ -36,11 +37,11 @@ public static class ModelObjectExporter
 
         if (success)
         {
-            TaskLogs.AddLog($"Model exported successfully: {path}");
+            TaskLogs.AddLog($"Successfully exported OBJ file: {path}");
         }
         else
         {
-            TaskLogs.AddLog($"Model was not exported.");
+            TaskLogs.AddLog($"Model was not exported.", LogLevel.Error);
         }
     }
 

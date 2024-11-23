@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.BaseSkeleton;
@@ -257,7 +258,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{ex}");
+                var filename = Path.GetFileNameWithoutExtension(readPath);
+                TaskLogs.AddLog($"Failed to read Base Skeleton Group resource file: {filename} at {readPath}.\n{ex}", LogLevel.Error);
             }
 
             return newBaseSkeletonList;
@@ -294,11 +296,13 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     fs.Flush();
                     fs.Dispose();
 
-                    TaskLogs.AddLog($"Saved Base Skeleton Bone Group: {writePath}");
+                    var writeFilename = Path.GetFileNameWithoutExtension(writePath);
+                    TaskLogs.AddLog($"Saved Base Skeleton Bone Group resource file: {writeFilename} at {writePath}");
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{ex}");
+                    var writeFilename = Path.GetFileNameWithoutExtension(writePath);
+                    TaskLogs.AddLog($"Failed to save Base Skeleton Bone Group resource file: {writeFilename} at {writePath}.\n{ex}", LogLevel.Error);
                 }
 
                 RefreshBaseSkeletonGroupList = true;

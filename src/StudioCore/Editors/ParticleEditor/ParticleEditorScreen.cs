@@ -325,7 +325,7 @@ public class ParticleEditorScreen : EditorScreen
                         }
                         else
                         {
-                            TaskLogs.AddLog($"LoadedFXR does not contain FxrInfo for {name}", LogLevel.Warning);
+                            TaskLogs.AddLog($"LoadedFXR does not contain FXRInfo for {name}", LogLevel.Warning);
                         }
                     }
 

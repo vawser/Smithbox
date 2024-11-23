@@ -24,12 +24,20 @@ public class MaterialResourceBank
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        TaskManager.Run(new TaskManager.LiveTask("Resource - Load Materials", TaskManager.RequeueType.WaitThenRequeue, false,
-        () =>
-        {
-            LoadMatBins();
-            LoadMtds();
-        }));
+        TaskManager.LiveTask task = new(
+            "materialBank_SetupBank",
+            "Material Bank",
+            "Successfully setup the Material bank.",
+            "Failed to setup the Material bank.",
+            TaskManager.RequeueType.WaitThenRequeue,
+            false, () =>
+            {
+                LoadMatBins();
+                LoadMtds();
+            }
+        );
+
+        TaskManager.Run(task);
     }
 
     public void LoadMatBins()

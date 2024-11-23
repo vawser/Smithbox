@@ -38,8 +38,6 @@ public static class GparamParamBank
 
         GPARAM param = info.Gparam;
 
-        TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
-
         byte[] fileBytes = null;
 
         switch (Smithbox.ProjectType)
@@ -62,7 +60,6 @@ public static class GparamParamBank
                 fileBytes = param.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveGraphicsParam");
                 return;
         }
 
@@ -99,7 +96,7 @@ public static class GparamParamBank
                 //TaskLogs.AddLog($"Saved at: {assetMod}");
             }
 
-            TaskLogs.AddLog($"Saved {info.Name} to {assetMod}");
+            TaskLogs.AddLog($"Saved GPARAM File: {info.Name} at {assetMod}");
         }
     }
 
@@ -177,9 +174,10 @@ public static class GparamParamBank
 
             ParamBank.Add(name, gStruct);
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to load {path}: {e.Message}");
+            var filename = Path.GetFileNameWithoutExtension(path);
+            TaskLogs.AddLog($"Failed to read GPARAM file: {filename} at {path}.\n{ex}", LogLevel.Error);
         }
     }
 
@@ -213,7 +211,8 @@ public static class GparamParamBank
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    var filename = Path.GetFileNameWithoutExtension(path);
+                    TaskLogs.AddLog($"Failed to read GPARAM file: {filename} at {path}.\n{ex}", LogLevel.Error);
                 }
             }
             else
@@ -224,15 +223,17 @@ public static class GparamParamBank
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{path} - Failed to read.\n{ex.ToString()}", LogLevel.Warning);
+                    var filename = Path.GetFileNameWithoutExtension(path);
+                    TaskLogs.AddLog($"Failed to read GPARAM file: {filename} at {path}.\n{ex}", LogLevel.Error);
                 }
             }
 
             VanillaParamBank.Add(name, gStruct);
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to load {path}: {e.Message}");
+            var filename = Path.GetFileNameWithoutExtension(path);
+            TaskLogs.AddLog($"Failed to read GPARAM file: {filename} at {path}.\n{ex}", LogLevel.Error);
         }
     }
 

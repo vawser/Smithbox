@@ -286,7 +286,7 @@ public static class FmgImporter
                 }
                 catch(Exception e)
                 {
-                    TaskLogs.AddLog($"Failed to read JSON file for Text Import: {e.Message}", LogLevel.Warning);
+                    TaskLogs.AddLog($"Failed to read JSON file: {filename} at {path}\n{e.Message}", LogLevel.Warning);
                 }
 
                 return wrapper;

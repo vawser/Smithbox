@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
@@ -154,7 +155,7 @@ public static class ModelMaskToggler
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to parse Mask ID: {e.Message}");
+                        TaskLogs.AddLog($"Failed to parse Mask ID: {e.Message}", LogLevel.Warning);
                     }
                 }
                 else

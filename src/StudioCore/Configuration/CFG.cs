@@ -85,6 +85,9 @@ public class CFG
 
     public bool System_EnableRecoveryFolder = true;
 
+    public int System_ActionLogger_FadeTime = 1500;
+    public int System_WarningLogger_FadeTime = 1500;
+
     // Editors
     public bool EnableMapEditor = true;
     public bool EnableModelEditor = true;
