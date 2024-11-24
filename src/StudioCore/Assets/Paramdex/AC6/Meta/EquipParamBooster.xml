@@ -174,7 +174,8 @@
     
     <thrustersParamIDForPC
     AltName="Thruster Configuration Offset (for Player)"
-    Wiki="For player, specify the ID offset of the thruster parameter (0 means no thruster)."/>
+    Wiki="For player, specify the ID of the thruster parameter (0 means no thruster)."
+    Refs="ThrusterParam_PC" />
     
     <pad_end
     AltName=""

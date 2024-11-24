@@ -68,12 +68,12 @@
     Wiki="Level that can be sold at the store" />
     
     <trophySGradeId 
-    AltName="Achievement: S-Grade ID" 
-    Wiki="" />
+    AltName="Achievement ID" 
+    Wiki="The achievement ID this part is associated with, if any." />
     
     <trophySeqId 
-    AltName="Achievement: SEQ ID" 
-    Wiki="Trophy SEQ number" />
+    AltName="Sequential Achievement ID" 
+    Wiki="The sequential achievement ID this part is associated with, if any." />
     
     <equipModelCategory 
     AltName="Model Category" 
