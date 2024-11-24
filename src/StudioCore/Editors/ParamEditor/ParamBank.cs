@@ -1270,8 +1270,8 @@ public class ParamBank
         TaskManager.LiveTask task = new(
             "paramEditor_loadParams",
             "Param Editor",
-            "Successfully loaded the params.",
-            "Failed to load the param.",
+            "loaded the params.",
+            "failed to load the param.",
             TaskManager.RequeueType.WaitThenRequeue,
             false,
             () =>
@@ -1284,8 +1284,8 @@ public class ParamBank
                     TaskManager.LiveTask metaTask = new(
                         "paramEditor_loadParamMeta",
                         "Param Editor",
-                        "Successfully loaded the param META.",
-                        "Failed to load the param META.",
+                        "loaded the param META.",
+                        "failed to load the param META.",
                         TaskManager.RequeueType.WaitThenRequeue,
                         false,
                         () =>
@@ -1347,8 +1347,8 @@ public class ParamBank
                 TaskManager.LiveTask vanillaTask = new(
                     "paramEditor_loadVanillaParams",
                     "Param Editor",
-                    "Successfully loaded the vanilla params.",
-                    "Failed to load the vanilla params.",
+                    "loaded the vanilla params.",
+                    "failed to load the vanilla params.",
                     TaskManager.RequeueType.WaitThenRequeue,
                     false,
                     () =>
@@ -1488,8 +1488,8 @@ public class ParamBank
         TaskManager.LiveTask task = new(
             "paramEditor_refreshDifferenceCache",
             "Param Editor",
-            "Difference cache between param banks has been refreshed.",
-            "Param Editor param bank difference cache refresh has failed.",
+            "difference cache between param banks has been refreshed.",
+            "difference cache refresh has failed.",
             TaskManager.RequeueType.Repeat,
             true,
             LogPriority.Low,

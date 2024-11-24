@@ -33,11 +33,11 @@ namespace StudioCore.Banks.TextureBlockBank
             try
             {
                 TextureBlocks = BankUtils.LoadTextureBlockJSON(AliasDirectory, AliasFileName);
-                TaskLogs.AddLog($"Successfully setup texture block resource bank.");
+                TaskLogs.AddLog($"Banks: setup texture block resource bank.");
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"Failed to setup texture block resource bank:\n{e}", LogLevel.Error);
+                TaskLogs.AddLog($"Banks: failed to setup texture block resource bank:\n{e}", LogLevel.Error);
             }
         }
 

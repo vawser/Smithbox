@@ -302,8 +302,8 @@ public class Smithbox
             TaskManager.LiveTask task = new(
                 "system_setupSoapstoneServer",
                 "System",
-                "The soapstone server is running.",
-                "The soapstone server is not running.",
+                "soapstone server is running.",
+                "soapstone server is not running.",
                 TaskManager.RequeueType.None,
                 false,
                 () =>
@@ -320,8 +320,8 @@ public class Smithbox
             TaskManager.LiveTask task = new(
                 "system_checkProgramUpdate",
                 "System",
-                "The program update check has run.",
-                "The program update check has failed to run.",
+                "program update check has run.",
+                "program update check has failed to run.",
                 TaskManager.RequeueType.None,
                 true,
                 CheckProgramUpdate
@@ -541,12 +541,19 @@ public class Smithbox
 
             TaskLogs.DisplayActionLoggerBar();
             TaskLogs.DisplayActionLoggerWindow();
-            ImGui.Separator();
+
+            if (UI.Current.System_ShowActionLogger)
+            {
+                ImGui.Separator();
+            }
 
             TaskLogs.DisplayWarningLoggerBar();
             TaskLogs.DisplayWarningLoggerWindow();
-            ImGui.Separator();
 
+            if (UI.Current.System_ShowWarningLogger)
+            {
+                ImGui.Separator();
+            }
 
             ImGui.EndMainMenuBar();
         }

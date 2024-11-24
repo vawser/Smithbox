@@ -56,8 +56,8 @@ public static class GparamMemoryTools
         TaskManager.LiveTask task = new(
             "gparamReloader_ReloadGparams",
             "Gparam Reloader",
-            "Gparams have been reloaded successfully in-game.",
-            "Gparams reload has failed.",
+            "gparams have been reloaded in-game.",
+            "gparams reload has failed.",
             TaskManager.RequeueType.WaitThenRequeue,
             true, () =>
             {

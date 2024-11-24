@@ -536,11 +536,11 @@ public class PinGroups
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Successfully saved pin group: {filename} at {writePath}.");
+                TaskLogs.AddLog($"Pin Group: saved pin group: {filename} at {writePath}.");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to save pin group: {filename} at {writePath}\n{ex}");
+                TaskLogs.AddLog($"Pin Group: failed to save pin group: {filename} at {writePath}\n{ex}");
             }
 
             RefreshGroupList = true;

@@ -116,8 +116,11 @@ public class ParamEditorTab
         }
 
         // Fields
-        if (ImGui.CollapsingHeader("Fields", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader("Field Layout", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
+            UIHelper.ShowHoverTooltip("Allow the field order to be changed by an alternative order as defined within the Paramdex META file.");
+
             ImGui.Checkbox("Show community field names first", ref CFG.Current.Param_MakeMetaNamesPrimary);
             UIHelper.ShowHoverTooltip("Crowd-sourced names will appear before the canonical name in the Field View list.");
 
@@ -132,9 +135,6 @@ public class ParamEditorTab
 
             ImGui.Checkbox("Hide field enums", ref CFG.Current.Param_HideEnums);
             UIHelper.ShowHoverTooltip("Hide the crowd-sourced namelist for index-based enum fields.");
-
-            ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
-            UIHelper.ShowHoverTooltip("Allow the field order to be changed by an alternative order as defined within the Paramdex META file.");
 
             ImGui.Checkbox("Hide padding fields", ref CFG.Current.Param_HidePaddingFields);
             UIHelper.ShowHoverTooltip("Hides fields that are considered 'padding' in the property editor view.");
@@ -153,6 +153,22 @@ public class ParamEditorTab
 
             ImGui.Checkbox("Show view model button", ref CFG.Current.Param_ViewModelOption);
             UIHelper.ShowHoverTooltip("Show the view model if applicable.");
+        }
+
+        if (ImGui.CollapsingHeader("Field Information", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Help Icon: Show field description", ref CFG.Current.Param_ShowFieldDescription_onIcon);
+            UIHelper.ShowHoverTooltip("Display the description for the field when hovering over the help icon.");
+
+            ImGui.Checkbox("Help Icon: Show field limits", ref CFG.Current.Param_ShowFieldLimits_onIcon);
+            UIHelper.ShowHoverTooltip("Display the minimum and maximum limits for the field when hovering over the help icon.");
+
+            ImGui.Checkbox("Name: Show field description", ref CFG.Current.Param_ShowFieldDescription_onName);
+            UIHelper.ShowHoverTooltip("Display the description for the field when hovering over the name.");
+
+            ImGui.Checkbox("Name: Show field limits", ref CFG.Current.Param_ShowFieldLimits_onName);
+            UIHelper.ShowHoverTooltip("Display the minimum and maximum limits for the field when hovering over the name.");
+
         }
 
         // Values

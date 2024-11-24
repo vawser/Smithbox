@@ -39,11 +39,11 @@ public class AliasBank
         try
         {
             Aliases = BankUtils.LoadAliasJSON(AliasFileName, AliasDirectory);
-            TaskLogs.AddLog($"Successfully setup {AliasTitle} alias bank.");
+            TaskLogs.AddLog($"Banks: setup {AliasTitle} alias bank.");
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to setup {AliasTitle} alias bank:\n{e}", LogLevel.Error);
+            TaskLogs.AddLog($"Banks: failed to setup {AliasTitle} alias bank:\n{e}", LogLevel.Error);
         }
 
     }

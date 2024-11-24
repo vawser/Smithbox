@@ -37,11 +37,11 @@ public static class ModelObjectExporter
 
         if (success)
         {
-            TaskLogs.AddLog($"Successfully exported OBJ file: {path}");
+            TaskLogs.AddLog($"Model Exporter: exported OBJ file: {path}");
         }
         else
         {
-            TaskLogs.AddLog($"Model was not exported.", LogLevel.Error);
+            TaskLogs.AddLog($"Model Exporter: model was not exported.", LogLevel.Error);
         }
     }
 

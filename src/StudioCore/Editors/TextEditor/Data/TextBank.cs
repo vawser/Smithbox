@@ -40,8 +40,8 @@ public static class TextBank
         TaskManager.LiveTask task = new(
             "textEditor_primaryBankSetup",
             "Text Editor",
-            "The primary text bank has been setup successfully.",
-            "The primary text bank setup has failed.",
+            "primary text bank has been setup.",
+            "primary text bank setup has failed.",
             TaskManager.RequeueType.None,
             false,
             () =>
@@ -142,8 +142,8 @@ public static class TextBank
         TaskManager.LiveTask task = new(
             "textEditor_vanillaBankSetup",
             "Text Editor",
-            "The vanilla text bank has been setup successfully.",
-            "The vanilla text bank setup has failed.",
+            "vanilla text bank has been setup.",
+            "vanilla text bank setup has failed.",
             TaskManager.RequeueType.None,
             false,
             () =>
@@ -522,13 +522,11 @@ public static class TextBank
                 PathUtils.BackupFile(path);
                 File.WriteAllBytes(path, data);
 
-
-
-                TaskLogs.AddLog($"Successfully saved FMG container file: {filename} at {path}");
+                TaskLogs.AddLog($"Banks: saved FMG container file: {filename} at {path}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to save FMG container file: {filename} at {path}\n{ex}");
+                TaskLogs.AddLog($"Banks: failed to save FMG container file: {filename} at {path}\n{ex}");
             }
         }
     }

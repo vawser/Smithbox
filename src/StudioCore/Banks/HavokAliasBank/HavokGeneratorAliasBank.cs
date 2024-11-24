@@ -32,11 +32,11 @@ public class HavokGeneratorAliasBank
         try
         {
             HavokAliases = BankUtils.LoadHavokAliasJSON(HavokAliasFileName);
-            TaskLogs.AddLog($"Successfully setup {HavokAliasTitle} havok resource bank.");
+            TaskLogs.AddLog($"Banks: setup {HavokAliasTitle} havok resource bank.");
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to setup {HavokAliasTitle} havok resource bank:\n{e}", LogLevel.Error);
+            TaskLogs.AddLog($"Banks: failed to setup {HavokAliasTitle} havok resource bank:\n{e}", LogLevel.Error);
         }
     }
 

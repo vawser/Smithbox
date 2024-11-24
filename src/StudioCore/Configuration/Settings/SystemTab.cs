@@ -50,7 +50,7 @@ public class SystemTab
             UIHelper.ShowHoverTooltip("If enabled, the action logger will be visible in the menu bar.");
 
             ImGui.InputInt("Action Log Visibility Duration", ref CFG.Current.System_ActionLogger_FadeTime);
-            UIHelper.ShowHoverTooltip("The number of frames for which the action logger message stays visible in the menu bar.");
+            UIHelper.ShowHoverTooltip("The number of frames for which the action logger message stays visible in the menu bar.\n-1 means the message never disappears.");
 
             ImGui.Separator();
 
@@ -58,7 +58,7 @@ public class SystemTab
             UIHelper.ShowHoverTooltip("If enabled, the warning logger will be visible in the menu bar.");
 
             ImGui.InputInt("Warning Log Visibility Duration", ref CFG.Current.System_WarningLogger_FadeTime);
-            UIHelper.ShowHoverTooltip("The number of frames for which the warning logger message stays visible in the menu bar.");
+            UIHelper.ShowHoverTooltip("The number of frames for which the warning logger message stays visible in the menu bar.\n-1 means the message never disappears.");
 
         }
 

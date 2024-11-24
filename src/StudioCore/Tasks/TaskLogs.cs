@@ -206,9 +206,12 @@ public static class TaskLogs
             // Only show the warning for X frames in the menu bar
             if (_lastActionLogEntry != null)
             {
-                if (_actionShowTime > 0)
+                if (_actionShowTime > 0 || CFG.Current.System_ActionLogger_FadeTime < 0)
                 {
-                    _actionShowTime--;
+                    if (CFG.Current.System_ActionLogger_FadeTime > 0)
+                    {
+                        _actionShowTime--;
+                    }
 
                     Vector4 color = PickColor(_lastActionLogEntry.Level);
                     ImGui.TextColored(color, _lastActionLogEntry.FormattedMessage);
@@ -301,9 +304,12 @@ public static class TaskLogs
             if (_lastWarningLogEntry != null)
             {
                 // Only show the warning for X frames in the menu bar
-                if (_warningShowTime > 0)
+                if (_warningShowTime > 0 || CFG.Current.System_WarningLogger_FadeTime < 0)
                 {
-                    _warningShowTime--;
+                    if (CFG.Current.System_WarningLogger_FadeTime > 0)
+                    {
+                        _warningShowTime--;
+                    }
 
                     Vector4 color = PickColor(_lastWarningLogEntry.Level);
                     ImGui.TextColored(color, _lastWarningLogEntry.FormattedMessage);

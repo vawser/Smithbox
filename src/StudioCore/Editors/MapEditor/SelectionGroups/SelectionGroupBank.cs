@@ -34,11 +34,11 @@ public class SelectionGroupBank
         try
         {
             Groups = LoadSelectionGroupJSON(GroupDirectory, GroupFileName);
-            TaskLogs.AddLog($"Successfully setup Selection Group bank.");
+            TaskLogs.AddLog($"Banks: setup Selection Group bank.");
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to setup Selection Group bank:\n{e}", LogLevel.Error);
+            TaskLogs.AddLog($"Banks: failed to setup Selection Group bank:\n{e}", LogLevel.Error);
         }
     }
 

@@ -299,11 +299,11 @@ namespace StudioCore.Interface
                     fs.Flush();
                     fs.Dispose();
 
-                    TaskLogs.AddLog($"Successfully saved Theme resource file: {filename} at {path}");
+                    TaskLogs.AddLog($"UI: saved Theme resource file: {filename} at {path}");
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"Failed to save Theme resource file: {filename} at {path}\n{ex}");
+                    TaskLogs.AddLog($"UI: failed to save Theme resource file: {filename} at {path}\n{ex}");
                 }
             }
 

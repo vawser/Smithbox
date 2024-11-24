@@ -345,8 +345,8 @@ public class TextActionHandler
             TaskManager.LiveTask task = new(
                 "textEditor_copyTextEntryContents",
                 "Text Editor",
-                "The selected text entry has been copied to the clipboard.",
-                "The clipboard copy failed.",
+                "selected text entry has been copied to the clipboard.",
+                "clipboard copy failed.",
                 TaskManager.RequeueType.None,
                 false,
                 () =>

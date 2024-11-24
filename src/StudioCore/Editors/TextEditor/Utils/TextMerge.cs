@@ -139,7 +139,7 @@ public static class TextMerge
             }
         }
 
-        TaskLogs.AddLog($"Successfully applied Text Merge.");
+        TaskLogs.AddLog($"Text Merge: applied merge.");
     }
 
     private static void ProcessFmg(TextFmgWrapper sourceWrapper, TextFmgWrapper targetWrapper)

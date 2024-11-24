@@ -55,8 +55,8 @@ public static class TimeActBank
                 TaskManager.LiveTask task = new(
                     "timeActEditor_templateSetup",
                     "Time Act Editor",
-                    "The TAE templates have been setup successfully.",
-                    "The TAE template setup has failed.",
+                    "TAE templates have been setup.",
+                    "TAE template setup has failed.",
                     TaskManager.RequeueType.None,
                     false,
                     LoadTimeActTemplates
@@ -73,8 +73,8 @@ public static class TimeActBank
                     TaskManager.LiveTask task = new(
                         "timeActEditor_characterTaeSetup",
                         "Time Act Editor",
-                        "The Character TAE containers have been setup successfully.",
-                        "The Character TAE container setup has failed.",
+                        "character TAE containers have been setup.",
+                        "character TAE container setup has failed.",
                         TaskManager.RequeueType.None,
                         false,
                         LoadProjectCharacterTimeActs
@@ -95,8 +95,8 @@ public static class TimeActBank
                     TaskManager.LiveTask task = new(
                         "timeActEditor_characterVanillaTaeSetup",
                         "Time Act Editor",
-                        "The vanilla Character TAE containers have been setup successfully.",
-                        "The vanilla Character TAE container setup has failed.",
+                        "vanilla character TAE containers have been setup.",
+                        "vanilla character TAE container setup has failed.",
                         TaskManager.RequeueType.None,
                         false,
                         LoadVanillaCharacterTimeActs
@@ -118,8 +118,8 @@ public static class TimeActBank
                     TaskManager.LiveTask task = new(
                         "timeActEditor_objectTaeSetup",
                         "Time Act Editor",
-                        "The Object TAE containers have been setup successfully.",
-                        "The Object TAE container setup has failed.",
+                        "object TAE containers have been setup.",
+                        "object TAE container setup has failed.",
                         TaskManager.RequeueType.None,
                         false,
                         LoadProjectObjectTimeActs
@@ -141,8 +141,8 @@ public static class TimeActBank
                     TaskManager.LiveTask task = new(
                         "timeActEditor_objectVanillaTaeSetup",
                         "Time Act Editor",
-                        "The vanilla Object TAE containers have been setup successfully.",
-                        "The vanilla Object TAE container setup has failed.",
+                        "vanilla object TAE containers have been setup.",
+                        "vanilla object TAE container setup has failed.",
                         TaskManager.RequeueType.None,
                         false,
                         LoadProjectObjectTimeActs
@@ -761,7 +761,7 @@ public static class TimeActBank
             File.WriteAllBytes(assetMod, fileBytes);
 
             var filename = Path.GetFileNameWithoutExtension(assetMod);
-            TaskLogs.AddLog($"Successfully saved TAE file: {filename} at {assetMod}");
+            TaskLogs.AddLog($"Time Act Editor: saved TAE file: {filename} at {assetMod}");
         }
     }
 
@@ -931,11 +931,11 @@ public static class TimeActBank
 
                 File.WriteAllBytes(assetMod, fileBytes);
 
-                TaskLogs.AddLog($"Successfully saved TAE container: {info.Name} at {assetMod}");
+                TaskLogs.AddLog($"Time Act Editor: saved TAE container: {info.Name} at {assetMod}");
             }
             else
             {
-                TaskLogs.AddLog($"Failed to save TAE container: {info.Name} at {assetMod}.");
+                TaskLogs.AddLog($"Time Act Editor: failed to save TAE container: {info.Name} at {assetMod}.");
             }
         }
 

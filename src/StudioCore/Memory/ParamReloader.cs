@@ -58,8 +58,8 @@ internal class ParamReloader
         TaskManager.LiveTask task = new(
             "paramEditor_reloadParamData",
             "Param Editor",
-            "The param reloader has successfully updated the in-game params.",
-            "The param reloader has failed.",
+            "param reloader has updated the in-game params.",
+            "param reloader has failed.",
             TaskManager.RequeueType.None,
             false,
             () =>

@@ -40,11 +40,11 @@ public class ProjectEnumBank
             {
                 entry.Options.Sort();
             }
-            TaskLogs.AddLog($"Successfully setup {EnumTitle} enum bank.");
+            TaskLogs.AddLog($"Banks: setup {EnumTitle} enum bank.");
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to setup {EnumTitle} enum bank:\n{e}", LogLevel.Error);
+            TaskLogs.AddLog($"Banks: failed to setup {EnumTitle} enum bank:\n{e}", LogLevel.Error);
         }
     }
 

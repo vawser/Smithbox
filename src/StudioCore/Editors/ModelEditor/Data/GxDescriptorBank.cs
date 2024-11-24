@@ -26,11 +26,11 @@ public class GxDescriptorBank
         try
         {
             Descriptors = LoadJson(DescriptorPath);
-            TaskLogs.AddLog($"Successfully setup GX item descriptor bank.");
+            TaskLogs.AddLog($"Banks: setup GX item descriptor bank.");
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to setup GX item descriptor bank: {DescriptorPath}\n{e}", LogLevel.Error);
+            TaskLogs.AddLog($"Banks: failed to setup GX item descriptor bank: {DescriptorPath}\n{e}", LogLevel.Error);
         }
     }
 

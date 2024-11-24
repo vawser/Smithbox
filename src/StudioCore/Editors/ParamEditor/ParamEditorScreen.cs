@@ -1045,8 +1045,8 @@ public class ParamEditorScreen : EditorScreen
         TaskManager.LiveTask massEditTask = new(
             "paramEditor_massEditScriptSetup",
             "Mass Edit",
-            "The mass edit scripts have been setup successfully.",
-            "The mass edit scripts setup has failed.",
+            "mass edit scripts have been setup.",
+            "mass edit scripts setup has failed.",
             TaskManager.RequeueType.Repeat,
             true, 
             MassEditScript.ReloadScripts
@@ -1057,8 +1057,8 @@ public class ParamEditorScreen : EditorScreen
         TaskManager.LiveTask paramUpgradeTask = new(
             "paramEditor_upgraderSetup",
             "Param Upgrade",
-            "The param upgrader has been setup successfully.",
-            "The param upgrader setup has failed.",
+            "param upgrader has been setup.",
+            "param upgrader setup has failed.",
             TaskManager.RequeueType.Repeat,
             true,
             LoadUpgraderData
@@ -1077,7 +1077,7 @@ public class ParamEditorScreen : EditorScreen
         try
         {
             ParamBank.PrimaryBank.SaveParams();
-            TaskLogs.AddLog("Params saved successfully.");
+            TaskLogs.AddLog("Params saved.");
         }
         catch (SavingFailedException e)
         {
@@ -1102,7 +1102,7 @@ public class ParamEditorScreen : EditorScreen
         try
         {
             ParamBank.PrimaryBank.SaveParams();
-            TaskLogs.AddLog("Params saved successfully.");
+            TaskLogs.AddLog("Params saved.");
         }
         catch (SavingFailedException e)
         {

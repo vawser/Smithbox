@@ -380,6 +380,7 @@ public class ParamRowEditor
             selection);
     }
 
+
     private void PropEditorPropRow(ParamBank bank, object oldval, object compareval, object vanillaval,
         List<object> auxVals, ref int imguiId, string fieldOffset, string internalName, FieldMetaData cellMeta,
         Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, ParamMetaData? meta, string activeParam,
@@ -448,23 +449,81 @@ public class ParamRowEditor
 
         if (ImGui.TableNextColumn())
         {
-            ImGui.AlignTextToFramePadding();
-            if (Wiki != null)
+            // Help icon text
+            if (CFG.Current.Param_ShowFieldDescription_onIcon || CFG.Current.Param_ShowFieldLimits_onIcon)
             {
-                if (EditorDecorations.HelpIcon(internalName, ref Wiki, true))
+                ImGui.AlignTextToFramePadding();
+
+                if (Wiki != null)
                 {
-                    cellMeta.Wiki = Wiki;
+                    var helpIconText = "";
+
+                    if(CFG.Current.Param_ShowFieldDescription_onIcon)
+                    {
+                        helpIconText = Wiki;
+                    }
+
+                    if (CFG.Current.Param_ShowFieldLimits_onIcon)
+                    {
+                        if (CFG.Current.Param_ShowFieldDescription_onIcon)
+                        {
+                            helpIconText = helpIconText +
+                                "\n" +
+                                "-----\n";
+                        }
+
+                        helpIconText = helpIconText +
+                        $"Minimum: {col.Def.Minimum}\n" +
+                        $"Maximum: {col.Def.Maximum}\n" +
+                        $"Increment: {col.Def.Increment}";
+                    }
+
+                    if (EditorDecorations.HelpIcon(internalName, ref helpIconText, true))
+                    {
+                        cellMeta.Wiki = Wiki;
+                    }
+
+                    ImGui.SameLine();
                 }
-
-                ImGui.SameLine();
-            }
-            else
-            {
-                ImGui.Text(" ");
-                ImGui.SameLine();
+                else
+                {
+                    ImGui.Text(" ");
+                    ImGui.SameLine();
+                }
             }
 
+            // Field selection
             ImGui.Selectable("", false, ImGuiSelectableFlags.AllowItemOverlap);
+
+            // Help hover text
+            if (CFG.Current.Param_ShowFieldDescription_onName || CFG.Current.Param_ShowFieldLimits_onName)
+            {
+                if (Wiki != null)
+                {
+                    var helpIconText = "";
+
+                    if (CFG.Current.Param_ShowFieldDescription_onName)
+                    {
+                        helpIconText = Wiki;
+                    }
+                    if (CFG.Current.Param_ShowFieldLimits_onName)
+                    {
+                        if (CFG.Current.Param_ShowFieldDescription_onName)
+                        {
+                            helpIconText = helpIconText + 
+                                "\n" + 
+                                "-----\n";
+                        }
+
+                        helpIconText = helpIconText +
+                        $"Minimum: {col.Def.Minimum}\n" +
+                        $"Maximum: {col.Def.Maximum}\n" +
+                        $"Increment: {col.Def.Increment}";
+                    }
+
+                    UIHelper.ShowHoverTooltip(helpIconText);
+                }
+            }
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
@@ -480,6 +539,7 @@ public class ParamRowEditor
 
             ImGui.SameLine();
 
+            // Name column
             PropertyRowName(fieldOffset, ref internalName, cellMeta);
 
             if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset)

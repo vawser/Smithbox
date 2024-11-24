@@ -24,11 +24,11 @@ public static class ModelColladaExporter
 
         if (success)
         {
-            TaskLogs.AddLog($"Successfully exported DAE file: {path}");
+            TaskLogs.AddLog($"Model Exporter: exported DAE file: {path}");
         }
         else
         {
-            TaskLogs.AddLog($"Model was not exported.", LogLevel.Error);
+            TaskLogs.AddLog($"Model Exporter: model was not exported.", LogLevel.Error);
         }
     }
 

@@ -227,8 +227,8 @@ public static class ParamComparisonReport
                 TaskManager.LiveTask task = new(
                     "paramEditor_generateComparisonReport",
                     "Param Editor",
-                    "The comparison report has been generated successfully.",
-                    "The comparison report failed to be generated.",
+                    "comparison report has been generated.",
+                    "comparison report failed to be generated.",
                     TaskManager.RequeueType.None,
                     false,
                     GenerateReport);
@@ -267,8 +267,8 @@ public static class ParamComparisonReport
                 TaskManager.LiveTask task = new(
                     "paramEditor_generateComparisonReport",
                     "Param Editor",
-                    "The comparison report has been generated successfully.",
-                    "The comparison report failed to be generated.",
+                    "comparison report has been generated.",
+                    "comparison report failed to be generated.",
                     TaskManager.RequeueType.None,
                     false,
                     GenerateReport

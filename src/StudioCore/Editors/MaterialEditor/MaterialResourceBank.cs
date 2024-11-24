@@ -26,9 +26,9 @@ public class MaterialResourceBank
 
         TaskManager.LiveTask task = new(
             "materialBank_SetupBank",
-            "Material Bank",
-            "Successfully setup the Material bank.",
-            "Failed to setup the Material bank.",
+            "Banks",
+            "setup the Material bank.",
+            "failed to setup the Material bank.",
             TaskManager.RequeueType.WaitThenRequeue,
             false, () =>
             {

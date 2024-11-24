@@ -102,11 +102,11 @@ public class MassEditHandler
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Successfully saved mass edit script: {filename} at {scriptPath}.");
+                TaskLogs.AddLog($"Mass Edit: saved mass edit script: {filename} at {scriptPath}.");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to save mass edit script: {filename} at {scriptPath}\n{ex}");
+                TaskLogs.AddLog($"Mass Edit: to save mass edit script: {filename} at {scriptPath}\n{ex}");
             }
         }
         else

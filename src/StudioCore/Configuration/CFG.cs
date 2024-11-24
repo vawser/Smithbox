@@ -358,6 +358,11 @@ public class CFG
     public bool Param_ViewInMapOption = true;
     public bool Param_ViewModelOption = true;
 
+    public bool Param_ShowFieldDescription_onIcon = true;
+    public bool Param_ShowFieldLimits_onIcon = true;
+    public bool Param_ShowFieldDescription_onName = true;
+    public bool Param_ShowFieldLimits_onName = true;
+
     public bool Param_ShowTraditionalPercentages = false;
 
     public bool Param_MassEdit_ShowAddButtons = true;

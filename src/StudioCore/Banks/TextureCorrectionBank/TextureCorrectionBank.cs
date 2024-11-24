@@ -32,11 +32,11 @@ namespace StudioCore.Banks.TextureCorrectionBank
             try
             {
                 TextureCorrections = BankUtils.LoadTextureCorrectionJSON(AliasDirectory, AliasFileName);
-                TaskLogs.AddLog($"Successfully setup texture correction resource bank.");
+                TaskLogs.AddLog($"Banks: setup texture correction resource bank.");
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"Failed to setup texture correction resource bank:\n{e}", LogLevel.Error);
+                TaskLogs.AddLog($"Banks: failed to setup texture correction resource bank:\n{e}", LogLevel.Error);
             }
         }
 

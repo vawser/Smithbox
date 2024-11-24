@@ -32,11 +32,11 @@ namespace StudioCore.Banks.TextureAdditionBank
             try
             {
                 TextureAdditions = BankUtils.LoadTextureAdditionJSON(AliasDirectory, AliasFileName);
-                TaskLogs.AddLog($"Successfully setup texture addition resource bank.");
+                TaskLogs.AddLog($"Banks: setup texture addition resource bank.");
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"Failed to setup texture addition resource bank:\n{e}", LogLevel.Error);
+                TaskLogs.AddLog($"Banks: failed to setup texture addition resource bank:\n{e}", LogLevel.Error);
             }
         }
 

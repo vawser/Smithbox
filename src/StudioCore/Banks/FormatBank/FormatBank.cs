@@ -36,11 +36,11 @@ public class FormatBank
             Enums = BankUtils.LoadFormatEnumJSON(FormatTitle, IsGameSpecific);
             Masks = BankUtils.LoadFormatMaskJSON(FormatTitle, IsGameSpecific);
 
-            TaskLogs.AddLog($"Successfully setup {FormatTitle} format bank.");
+            TaskLogs.AddLog($"Banks: setup {FormatTitle} format bank.");
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to setup {FormatTitle} format bank:\n{e}", LogLevel.Error);
+            TaskLogs.AddLog($"Banks: failed to setup {FormatTitle} format bank:\n{e}", LogLevel.Error);
         }
 
     }
