@@ -126,11 +126,11 @@ public static class ParamLocator
 
     public static string GetMassEditScriptCommonDir()
     {
-        return @"Assets\MassEditScripts\Common";
+        return @"Assets\Scripts\Common";
     }
 
     public static string GetMassEditScriptGameDir()
     {
-        return $@"Assets\MassEditScripts\{MiscLocator.GetGameIDForDir()}";
+        return $@"Assets\Scripts\{MiscLocator.GetGameIDForDir()}";
     }
 }

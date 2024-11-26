@@ -305,7 +305,7 @@
     AltName="Guard Stability" 
     Wiki="Defense power against stamina drain from enemy attacks when guarding correctly." />
     
-    <<reinforceTypeId 
+    <reinforceTypeId 
     AltName="Reinforcement Type ID"
     Wiki="The reinforcement progression to use for this part." 
     Refs="ReinforceParamProtector"/>
@@ -429,7 +429,6 @@
     Wiki="The base repel value when guarding. Compared against enemy repel attack value." 
     Obsolete="" />
     
-    <attackBaseRepel 
     <guardBaseRepel 
     AltName="Base Repel: Attack" 
     Wiki="The base repel value when attacking. Compared against enemy repel attack value." 
@@ -1649,7 +1648,7 @@
     <wepMotionCategoryIdSpecify
     AltName="Weapon Animation Set"
     Wiki="The weapon animation category. Determines the base animation set the weapon uses." 
-    Enum="WEPMOTION_CATEGORY" 
+    Enum="WEPMOTION_CATEGORY" />
     
     <pad01
     AltName=""
@@ -2559,5 +2558,5 @@
         <Option Value="0" Name="Constantly Updated" />
         <Option Value="1" Name="Only at Moment of Use" />
     </Enum>
-  <Enums>
+  </Enums>
 </PARAMMETA>

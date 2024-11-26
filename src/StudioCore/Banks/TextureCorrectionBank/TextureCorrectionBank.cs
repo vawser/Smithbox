@@ -23,8 +23,8 @@ namespace StudioCore.Banks.TextureCorrectionBank
 
         public TextureCorrectionBank()
         {
-            AliasDirectory = "Mappings";
-            AliasFileName = "CorrectedTextures";
+            AliasDirectory = "Textures";
+            AliasFileName = "Corrections";
         }
 
         public void LoadBank()

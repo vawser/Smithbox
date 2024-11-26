@@ -238,8 +238,8 @@
     <None Update="Assets\Aliases\TimeActs\**" CopyToOutputDirectory="PreserveNewest" />
     
     <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Mappings\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\MassEditScripts\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Textures\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Scripts\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Themes\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Shoebox\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Workflow\**" CopyToOutputDirectory="PreserveNewest" />

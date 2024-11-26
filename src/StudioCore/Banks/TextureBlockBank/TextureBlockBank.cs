@@ -24,8 +24,8 @@ namespace StudioCore.Banks.TextureBlockBank
 
         public TextureBlockBank()
         {
-            AliasDirectory = "Mappings";
-            AliasFileName = "BlockedTextures";
+            AliasDirectory = "Textures";
+            AliasFileName = "Blocks";
         }
 
         public void LoadBank()

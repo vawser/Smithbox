@@ -23,8 +23,8 @@ namespace StudioCore.Banks.TextureAdditionBank
 
         public TextureAdditionBank()
         {
-            AliasDirectory = "Mappings";
-            AliasFileName = "AdditionalTextures";
+            AliasDirectory = "Textures";
+            AliasFileName = "Additions";
         }
 
         public void LoadBank()

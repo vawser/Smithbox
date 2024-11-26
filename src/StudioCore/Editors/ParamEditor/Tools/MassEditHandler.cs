@@ -86,7 +86,7 @@ public class MassEditHandler
             return;
         }
 
-        var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\MassEditScripts\\";
+        var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Scripts\\";
         var scriptPath = $"{projectScriptDir}{_newScriptName}.txt";
 
         // Check both so the name is unique everywhere
@@ -111,7 +111,7 @@ public class MassEditHandler
         }
         else
         {
-            PlatformUtils.Instance.MessageBox($"{_newScriptName}.txt already exists within the MassEditScripts folder.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox($"{_newScriptName}.txt already exists within the Scripts folder.", "Smithbox", MessageBoxButtons.OK);
         }
 
         MassEditScript.ReloadScripts();

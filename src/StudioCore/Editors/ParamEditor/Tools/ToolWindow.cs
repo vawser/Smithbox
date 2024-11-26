@@ -465,7 +465,7 @@ public class ToolWindow
                 ImGui.SameLine();
                 if (ImGui.Button("Open Script Folder", halfButtonSize))
                 {
-                    var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\MassEditScripts\\";
+                    var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Scripts\\";
 
                     Process.Start("explorer.exe", projectScriptDir);
                 }

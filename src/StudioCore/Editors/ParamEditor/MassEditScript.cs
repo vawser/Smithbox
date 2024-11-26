@@ -65,7 +65,7 @@ public class MassEditScript
         LoadScriptsFromDir(cdir);
         LoadScriptsFromDir(dir);
 
-        var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\MassEditScripts\\";
+        var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Scripts\\";
 
         if (Directory.Exists(projectScriptDir))
         {
