@@ -32,7 +32,7 @@
     
     <connectPartsSlotIndex
     AltName="Connected Part Slot Index"
-    Wiki="Part number that works with this equipment when it is an enemy" />
+    Wiki="Part number that works with this equipment when it is an enemy. This determines the slot used for the attack action." />
     
     <pad_01
     AltName=""

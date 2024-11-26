@@ -261,6 +261,7 @@
   <ItemGroup>
     <PackageReference Include="AssimpNet" Version="4.1.0" />
     <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />
+    <PackageReference Include="CsvHelper" Version="33.0.1" />
     <PackageReference Include="DirectXTexNet" Version="1.0.7" />
     <PackageReference Include="DotNext.IO" Version="4.15.0" />
     <PackageReference Include="NativeFileDialogSharp" Version="0.6.0-alpha" />

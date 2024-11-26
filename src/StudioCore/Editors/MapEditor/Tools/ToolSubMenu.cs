@@ -4,6 +4,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
+using StudioCore.Platform;
 using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;
@@ -197,9 +198,30 @@ public class ToolSubMenu
                             ImGui.EndCombo();
                         }
 
-                        if (ImGui.MenuItem("Apply Names"))
+                        if (ImGui.MenuItem("Apply Japanese Names"))
                         {
-                            Handler.ApplyMapObjectNames();
+                            DialogResult result = PlatformUtils.Instance.MessageBox(
+                            $"This will apply the developer map object names (in Japanese) for this map.\nNote, this will not work if you have edited the map as the name list is based on the index of the map object", 
+                            "Warning",
+                            MessageBoxButtons.YesNo);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                Handler.ApplyMapObjectNames(true);
+                            }
+                        }
+
+                        if (ImGui.MenuItem("Apply English Names"))
+                        {
+                            DialogResult result = PlatformUtils.Instance.MessageBox(
+                            $"This will apply the developer map object names (in machine translated English) for this map.\nNote, this will not work if you have edited the map as the name list is based on the index of the map object",
+                            "Warning",
+                            MessageBoxButtons.YesNo);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                Handler.ApplyMapObjectNames(false);
+                            }
                         }
                     }
 

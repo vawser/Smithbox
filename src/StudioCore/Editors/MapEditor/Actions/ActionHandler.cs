@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using CsvHelper;
+using ImGuiNET;
 using Silk.NET.SDL;
 using SoulsFormats;
 using StudioCore.Core.Project;
@@ -13,6 +14,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -1503,7 +1505,7 @@ public class ActionHandler
     /// <summary>
     /// Map Object Namer
     /// </summary>
-    public void ApplyMapObjectNames()
+    public void ApplyMapObjectNames(bool useJapaneseNames)
     {
         if (Screen.Universe.LoadedObjectContainers == null)
             return;
@@ -1513,175 +1515,84 @@ public class ActionHandler
 
         if (_targetMap != (null, null))
         {
-            var loadedMap = (MapContainer)_targetMap.Item2;
-
             var actionList = new List<ViewportAction>();
 
-            // Entity ID
-            foreach (var e in loadedMap?.Objects)
+            var loadedMap = (MapContainer)_targetMap.Item2;
+            var mapid = _targetMap.Item1;
+
+            List<MapObjectNameInfo> partNames = GetNameListInfo(mapid, "Part");
+
+            // Parts
+            for (int i = 0; i < loadedMap.Parts.Count; i++)
             {
-                var changeName = false;
-                var newName = "";
+                var ent = loadedMap.Parts[i];
 
-                if(e.IsEvent() || e.IsRegion())
+                var name = partNames.Where(e => e.Index == i).FirstOrDefault();
+
+                if (name != null)
                 {
-                    var name = e.GetPropertyValue("Name").ToString();
-                    // Only apply to those with empty names (post deambiguation)
-                    if (Regex.IsMatch(name, @" \{\d+\}"))
+                    var newName = name.EnglishName;
+
+                    if (useJapaneseNames)
                     {
-                        changeName = true;
-
-                        // Events
-                        if (e.WrappedObject is MSB_AC6.Event.Treasure)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.Treasure), "Treasure");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Event.Generator)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.Generator), "Generator");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Event.MapOffset)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.MapOffset), "Map Offset");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Event.PatrolRoute)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.PatrolRoute), "Patrol Route");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Event.PlatoonInfo)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.PlatoonInfo), "Platoon Info");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Event.MapGimmick)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.MapGimmick), "Map Gimmick");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Event.Other)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.Other), "Event");
-                        }
-
-                        // Regions
-                        if (e.WrappedObject is MSB_AC6.Region.EntryPoint)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.EntryPoint), "Entry Point");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.EnvMapPoint)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.EnvMapPoint), "Env Map Point");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.Sound)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.Sound), "Sound");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.SFX)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.SFX), "SFX");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.WindSFX)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.WindSFX), "Wind SFX");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.EnvMapEffectBox)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.EnvMapEffectBox), "Env Map Effect Box");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.WindPlacement)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.WindPlacement), "Wind Placement");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.MufflingBox)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.MufflingBox), "Muffling Box");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.MufflingPortal)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.MufflingPortal), "Muffling Portal");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.SoundOverride)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.SoundOverride), "Sound Override");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.Patrol)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.Patrol), "Patrol");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.FeMapDisplay)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.FeMapDisplay), "Map Display");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.OperationalArea)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.OperationalArea), "Operational Area");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.AiInformationSharing)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.AiInformationSharing), "AI Information Sharing");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.AiTarget)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.AiTarget), "AI Target");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.WwiseEnvironmentSound)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.WwiseEnvironmentSound), "Wwise Environment Sound");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.NaviGeneration)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.NaviGeneration), "Navigation Generation");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.TopdownView)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.TopdownView), "Topdown View");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.CharacterFollowing)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.CharacterFollowing), "Character Following");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.NavmeshCostControl)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.NavmeshCostControl), "Navmesh Cost Control");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.ArenaControl)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.ArenaControl), "Arena Control");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.ArenaAppearance)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.ArenaAppearance), "Arena Appearance");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.GarageCamera)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.GarageCamera), "Garage Camera");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.JumpEdgeRestriction)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.JumpEdgeRestriction), "Jump Edge Restriction");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.CutscenePlayback)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.CutscenePlayback), "Cutscene Playback");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.FallPreventionWallRemoval)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.FallPreventionWallRemoval), "Fall Prevention Wall Removal");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.BigJump)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.BigJump), "Big Jump");
-                        }
-                        if (e.WrappedObject is MSB_AC6.Region.Other)
-                        {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.Other), "Region");
-                        }
+                        newName = name.JapaneseName;
                     }
-                }
 
-                if(changeName)
-                {
                     actionList.Add(new RenameObjectsAction(
-                        new List<MsbEntity> { e as MsbEntity },
-                        new List<string> { newName },
+                        new List<MsbEntity> { ent as MsbEntity },
+                        new List<string> { $"{ent.Name} -- {newName}" },
+                        true
+                    ));
+                }
+            }
+
+            List<MapObjectNameInfo> regionNames = GetNameListInfo(mapid, "Point");
+
+            // Regions
+            for (int i = 0; i < loadedMap.Regions.Count; i++)
+            {
+                var ent = loadedMap.Regions[i];
+
+                var name = regionNames.Where(e => e.Index == i).FirstOrDefault();
+
+                if (name != null)
+                {
+                    var newName = name.EnglishName;
+
+                    if (useJapaneseNames)
+                    {
+                        newName = name.JapaneseName;
+                    }
+
+                    actionList.Add(new RenameObjectsAction(
+                        new List<MsbEntity> { ent as MsbEntity },
+                        new List<string> { $"{ent.Name} -- {newName}" },
+                        true
+                    ));
+                }
+            }
+
+            List<MapObjectNameInfo> eventNames = GetNameListInfo(mapid, "Event");
+
+            // Events
+            for (int i = 0; i < loadedMap.Events.Count; i++)
+            {
+                var ent = loadedMap.Events[i];
+
+                var name = eventNames.Where(e => e.Index == i).FirstOrDefault();
+
+                if (name != null)
+                {
+                    var newName = name.EnglishName;
+
+                    if (useJapaneseNames)
+                    {
+                        newName = name.JapaneseName;
+                    }
+
+                    actionList.Add(new RenameObjectsAction(
+                        new List<MsbEntity> { ent as MsbEntity },
+                        new List<string> { $"{ent.Name} -- {newName}" },
                         true
                     ));
                 }
@@ -1692,28 +1603,53 @@ public class ActionHandler
         }
     }
 
-    private Dictionary<Type, int> TrackedObjectUsage = new Dictionary<Type, int>();
-
-    private string ApplyMapObjectRename(Entity ent, Type targetType, string namePart)
+    private List<MapObjectNameInfo> GetNameListInfo(string mapId, string type)
     {
-        var newName = ent.Name;
-        var trackedId = 0;
+        var list = new List<MapObjectNameInfo>();
 
-        if (ent.WrappedObject.GetType() == targetType)
+        var dir = $"{AppContext.BaseDirectory}\\Assets\\MSB\\{MiscLocator.GetGameIDForDir()}\\namelist.csv";
+
+        if (File.Exists(dir))
         {
-            if (!TrackedObjectUsage.ContainsKey(targetType))
-            {
-                TrackedObjectUsage.Add(targetType, 0);
-            }
-            else
-            {
-                TrackedObjectUsage[targetType] = TrackedObjectUsage[targetType] + 1;
-                trackedId = TrackedObjectUsage[targetType];
-            }
+            var file = File.ReadAllLines(dir);
 
-            newName = $"{namePart} {{{trackedId}}}";
+            for (int i = 0; i < file.Length; i++)
+            {
+                var entry = file[i];
+
+                if (i == 0)
+                    continue;
+
+                var line = entry.Split(",");
+
+                var curMapId = line[0];
+                var typeName = line[1];
+                var index = line[2];
+                var japaneseName = line[3];
+                var translatedName = line[4];
+
+                if (mapId == curMapId && typeName == type)
+                {
+                    var newInfo = new MapObjectNameInfo();
+                    newInfo.Index = int.Parse(index);
+                    newInfo.JapaneseName = japaneseName;
+                    newInfo.EnglishName = translatedName;
+
+                    list.Add(newInfo);
+                }
+            }
         }
 
-        return newName;
+        return list;
     }
+}
+
+
+public class MapObjectNameInfo
+{
+    public int Index { get; set; }
+    public string JapaneseName { get; set; }
+    public string EnglishName { get; set; }
+
+    public MapObjectNameInfo() { }
 }

@@ -33,6 +33,10 @@ public class MapContainer : ObjectContainer
     // can be byte perfect
     private readonly Dictionary<string, IMsbModel> LoadedModels = new();
 
+    public List<Entity> Parts = new();
+    public List<Entity> Events = new();
+    public List<Entity> Regions = new();
+
     public MapContainer(Universe u, string mapid)
     {
         Name = mapid;
@@ -75,6 +79,7 @@ public class MapContainer : ObjectContainer
         foreach (IMsbPart p in msb.Parts.GetEntries())
         {
             var n = new MsbEntity(this, p, MsbEntity.MsbEntityType.Part);
+            Parts.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
         }
@@ -82,6 +87,7 @@ public class MapContainer : ObjectContainer
         foreach (IMsbRegion p in msb.Regions.GetEntries())
         {
             var n = new MsbEntity(this, p, MsbEntity.MsbEntityType.Region);
+            Regions.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
         }
@@ -89,6 +95,8 @@ public class MapContainer : ObjectContainer
         foreach (IMsbEvent p in msb.Events.GetEntries())
         {
             var n = new MsbEntity(this, p, MsbEntity.MsbEntityType.Event);
+            Events.Add(n);
+
             if (p is MSB2.Event.MapOffset mo1)
             {
                 var t = Transform.Default;
