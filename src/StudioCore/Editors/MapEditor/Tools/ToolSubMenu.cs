@@ -227,7 +227,7 @@ public class ToolSubMenu
 
                     ImGui.EndMenu();
                 }
-                UIHelper.ShowHoverTooltip("Applies descriptive name (based on the map object class) to map objects with blank names by default.");
+                UIHelper.ShowHoverTooltip("Applies descriptive name for map objects from developer name list.");
             }
 
             ImGui.EndMenu();
