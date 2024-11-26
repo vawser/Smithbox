@@ -1,0 +1,14 @@
+0 Test -- テストデータ
+204310 Fist_Both Hands_Stance -- 拳_両手_構え
+214310 Dagger_Both Hands_Stance -- 短剣_両手_構え
+244310 Double-edged sword_both hands_stance -- 双刃剣_両手_構え
+254310 Spear_Both Hands_Stance -- 槍_両手_構え
+294310 Straight sword_both hands_stance -- 直剣_両手_構え
+364310 Two-handed axe_both hands_stance -- 両手斧_両手_構え
+364311 Two-handed axe_both-handed_stance_thick weapon -- 両手斧_両手_構え_太い武器
+404310 Two-handed bow_both-handed_stance -- 両手弓_両手_構え
+414310 Two hands large bow_both hands_stance -- 両手大弓_両手_構え
+424310 One-handed bow_both hands_stance -- 片手ボウ_両手_構え
+444310 Small shield_both hands_stance -- 小盾_両手_構え
+454310 Medium Shield_Both Hands_Stance -- 中盾_両手_構え
+464310 Large shield_both hands_stance -- 大盾_両手_構え

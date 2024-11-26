@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>FOOT_EFFECT_SFX_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 foot_sfx_0" />
+    <Field Def="s32 foot_sfx_1" />
+    <Field Def="s32 foot_sfx_2" />
+    <Field Def="s32 foot_sfx_3" />
+    <Field Def="s32 foot_sfx_4" />
+    <Field Def="s32 foot_sfx_5" />
+    <Field Def="s32 foot_sfx_6" />
+    <Field Def="s32 foot_sfx_7" />
+    <Field Def="s32 foot_sfx_8" />
+    <Field Def="s32 foot_sfx_9" />
+    <Field Def="s32 foot_sfx_10" />
+    <Field Def="s32 foot_sfx_11" />
+    <Field Def="s32 foot_sfx_12" />
+    <Field Def="s32 foot_sfx_13" />
+    <Field Def="s32 foot_sfx_14" />
+    <Field Def="s32 foot_sfx_15" />
+    <Field Def="s32 foot_sfx_16" />
+    <Field Def="s32 foot_sfx_17" />
+    <Field Def="s32 foot_sfx_18" />
+    <Field Def="s32 foot_sfx_19" />
+    <Field Def="s32 foot_sfx_20" />
+    <Field Def="s32 foot_sfx_21" />
+    <Field Def="s32 foot_sfx_22" />
+    <Field Def="s32 foot_sfx_23" />
+    <Field Def="s32 foot_sfx_24" />
+    <Field Def="s32 foot_sfx_25" />
+    <Field Def="s32 foot_sfx_26" />
+    <Field Def="s32 foot_sfx_27" />
+    <Field Def="s32 foot_sfx_28" />
+    <Field Def="s32 foot_sfx_29" />
+    <Field Def="s32 foot_sfx_30" />
+    <Field Def="s32 foot_sfx_31" />
+    <Field Def="s32 foot_sfx_32" />
+    <Field Def="s32 foot_sfx_33" />
+    <Field Def="s32 foot_sfx_34" />
+    <Field Def="s32 foot_sfx_35" />
+    <Field Def="s32 foot_sfx_36" />
+    <Field Def="s32 foot_sfx_37" />
+    <Field Def="s32 foot_sfx_38" />
+    <Field Def="s32 foot_sfx_39" />
+    <Field Def="s32 foot_sfx_40" />
+    <Field Def="s32 foot_sfx_41" />
+    <Field Def="s32 foot_sfx_42" />
+  </Fields>
+</PARAMDEF>

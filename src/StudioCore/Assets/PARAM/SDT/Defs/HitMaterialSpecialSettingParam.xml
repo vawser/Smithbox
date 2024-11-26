@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>CS_HIT_MATERIAL_SPECIAL_SETTING_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>201</FormatVersion>
+  <Fields>
+    <Field Def="u8 GroundMaterialType" />
+    <Field Def="u8 Unk1 = 1" />
+    <Field Def="dummy8 pad1[2]" />
+    <Field Def="s32 SpEffectId = -1" />
+  </Fields>
+</PARAMDEF>

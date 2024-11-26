@@ -1,0 +1,85 @@
+0 Fixed target -- ターゲット固定
+1 Thrust attack -- 突き攻撃
+2 Step -- ステップ
+3 Closeout -- 見切り
+4 Items used -- 使用アイテム
+5 Dash jump -- ダッシュジャンプ
+6 Trampling -- 踏みつけ
+7 Breaking back -- 崩し裏回り
+8 Eavesdropping -- 盗み聞き
+9 Dash slash -- ダッシュ斬り
+10 Avoid rolling -- 転がり回避
+11 Lightning return -- 雷返し
+12 Relic acquisition -- 遺物取得
+13 Gourd seeds -- 瓢箪の種
+14 Growth of physical strength -- 身体力の成長
+15 Growth of offensive power -- 攻め力の成長
+16 Stealth effect -- 隠密効果
+17 HP and core -- HPと体幹
+18 On fire -- 炎上
+19 Warning display -- 警戒表示
+20 Demon Buddha -- 鬼仏
+21 Night eyes -- 夜目
+22 The power of regeneration -- 回生の力
+23 Toxic -- 病毒
+24 Scary -- 怖気
+25 Thunder -- 打雷
+26 Skill acquisition -- スキル習得
+27 Stealth technique -- 忍び技
+28 Ninja prosthetic hand style -- 忍び義手流
+29 Ashina style -- 葦名流
+30 Senmineji Kenpo -- 仙峯寺拳法
+31 Strengthening prosthetic hand ninja -- 義手忍具の強化
+32 Demon Buddha warehouse function -- 鬼仏の倉庫機能
+33 Revenge spirit -- 復讐霊
+34 Form fee -- 形代
+35 Crawling on the ground -- 地を這うヤモリ
+36 Stop Shinobi -- とどめ忍殺
+37 Regenerative surgery recurrence -- 回生の術の再発動
+38 Help probability -- 冥助確率
+39 Coughing sound -- 咳の音
+40 Flow Hitohira -- 流れひとひら
+41 Dragon cough -- 竜咳
+42 A school technique that consumes form charges -- 形代を消費する流派技
+43 Enemy thrust attack -- 敵の突き攻撃
+44 Enemy lower attack -- 敵の下段攻撃
+45 Enemy grab attack -- 敵の掴み攻撃
+46 Continuous playing -- 連続弾き
+47 Training -- 修練
+48 Reinforced prosthetic hand ninja -- 強化義手忍具
+49 Trunk and shinobi -- 体幹と忍殺
+50 Play -- 弾き
+51 Slash back attack -- 斬り返し攻撃
+52 Wound medicine gourd -- 傷薬瓢箪
+53 Hanging shinobi -- ぶら下がり忍殺
+54 Shinobi with wall -- 壁張り付き忍殺
+55 Proper use of artificial hand ninja -- 義手忍具の使い分け
+56 Red eyes -- 赤目
+57 Distant grappling hook target -- 遠くの鉤縄ターゲット
+58 beast -- 獣
+59 Destruction of wooden shield -- 木盾の破壊
+60 Armor -- 鎧剝ぎ
+61 Recovery speed of the trunk -- 体幹の回復速度
+62 Blue rust poison -- 青錆の毒
+63 Shuriken -- 手裏剣
+64 candy -- 飴
+65 School technique -- 流派技
+66 Skill classification -- スキルの分類
+67 Playing is a moment -- 弾きは刹那
+68 Those who live in poisonous areas -- 毒地で暮らすもの
+69 Dealing with missiles -- 飛び道具への対処
+70 Enemy core recovery -- 敵の体幹回復
+71 Derived attack -- 派生攻撃
+72 Derivative attack / chasing slash -- 派生攻撃・追い斬り
+73 Memorial -- 供養衆
+74 Immortal warrior -- 不死落武者
+75 Treasure carp -- 宝鯉
+76 Buddhist priest -- 仏師
+77 Message -- 伝書
+78 Sharp attack -- 鋭利な攻撃
+79 Jump to the first slot of the item used -- 使用アイテムの先頭スロットへのジャンプ
+80 Afterglow -- 残影
+81 Rematch with a rare strong man -- 類稀な強者との再戦
+82 A series of battles with a rare strong man -- 類稀な強者との連戦
+83 Another memory -- 別の記憶
+84 Jump hanging tips -- ジャンプぶら下がりのコツ

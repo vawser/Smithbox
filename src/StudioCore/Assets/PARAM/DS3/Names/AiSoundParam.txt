@@ -1,0 +1,40 @@
+0 Default (do not edit)
+1 Walk
+2 Run
+3 Dash
+4 Rolling
+5 Landing
+6 A covert walk
+7 Covert Run
+8 Object Destruction
+1000 Walk
+1010 Run
+1020 Dash
+1030 Rolling
+1040 Minimal landing
+1050 Small landing
+1060 Normal landing
+1070 Large Landing
+2000 Small attack sound
+2010 During the attack sound
+2020 Attack music
+2030 Attack Sound Oversized
+2100 Attack Sound Small
+2110 In the sound of an attack
+2120 Attack music
+2200 Attack sound small (normal sound)
+3000 Object Destruction Sound Small
+3010 Object Breaking Sound
+3020 Object Destruction Music
+4000 Wake Up Sound
+4010 Buddy Call Sound: Medium
+4020 Companions Call Sound: Small
+5000 Anxious Sound One
+6000 Companion: Dead Soldier lantern
+9002 Mate call Test: Blue
+9003 Unused
+9004 Per bullet
+9005 Per wall
+9006 Soul Coins
+9007 Hallucinations
+9008 Allure

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  	<Enum Name="SpellClass" type="s32">
+		<Option Value="0" Name="Sorcery" />
+		<Option Value="1" Name="Miracle" />
+		<Option Value="2" Name="Pyromancy" />
+		<Option Value="3" Name="Hex (Staff)" />
+		<Option Value="4" Name="Hex (Chime)" />
+	</Enum>
+  	<Enum Name="SpellFunction" type="s8">
+		<Option Value="0" Name="Default" />
+		<Option Value="1" Name="Weapon Buff" />
+		<Option Value="2" Name="Shield Buff" />
+		<Option Value="3" Name="Homeward" />
+		<Option Value="4" Name="Guidance" />
+	</Enum>
+  </Enums>
+  <Self Wiki="Defines parameters relating to spells." Row0Dummy="" AlternativeOrder="right_bullet_id,right_damage_id,left_bullet_id,left_damage_id,-,
+  spell_class,spell_function,spell_soul_consume_id,-,
+  int_requirement,fth_requirement,-,
+  startup_speed,cast_speed,-,
+  slots_used,casts_tier_1,casts_tier_2,casts_tier_3,casts_tier_4,casts_tier_5,casts_tier_6,casts_tier_7,casts_tier_8,casts_tier_9,casts_tier_10,-,
+  staff_sfx,staff_sfx_dmy_poly_id_1,staff_sfx_dmy_poly_id_2,body_sfx,body_sfx_dmy_poly_id_1,body_sfx_dmy_poly_id_2,is_spawn_on_body,is_spawn_on_weapon,-,
+  left_1h_startup_duration,left_1h_unknown_duration,left_1h_anim_startup,left_1h_anim_cast,left_1h_stamina_cost,-,
+  right_1h_startup_duration,right_1h_unknown_duration,right_1h_anim_startup,right_1h_anim_cast,right_1h_stamina_cost,-,
+  left_2h_startup_duration,left_2h_unknown_duration,left_2h_anim_startup,left_2h_anim_cast,left_2h_stamina_cost,-,
+  right_2h_startup_duration,right_2h_unknown_duration,right_2h_anim_startup,right_2h_anim_cast,right_2h_stamina_cost,-,
+  left_unkA_startup_duration,left_unkA_unknown_duration,left_unkA_anim_startup,left_unkA_anim_cast,left_unkA_stamina_cost,-,
+  right_unkA_startup_duration,right_unkA_unknown_duration,right_unkA_anim_startup,right_unkA_anim_cast,right_unkA_stamina_cost,-,
+  left_unkB_startup_duration,left_unkB_unknown_duration,left_unkB_anim_startup,left_unkB_anim_cast,left_unkB_stamina_cost,-,
+  right_unkB_startup_duration,right_unkB_unknown_duration,right_unkB_anim_startup,right_unkB_anim_cast,right_unkB_stamina_cost,-,
+  Unk30a,is_area_of_effect_spell,Unk30c,Unk30d,
+  "/>
+  <Field>
+    <spell_class AltName="Spell Class" Enum="SpellClass" />
+    <spell_function AltName="Spell Function" Enum="SpellFunction" />
+    
+    <int_requirement AltName="INT Requirement" />
+    <fth_requirement AltName="FTH Requirement" />
+    
+    <right_bullet_id AltName="Bullet ID - Right Hand" Refs="BulletParam" />
+    <right_damage_id AltName="Damage ID - Right Hand" Refs="PlayerDamageParam"/>
+    
+    <left_1h_startup_duration AltName="Left 1H - Startup Duration" />
+    <left_1h_unknown_duration AltName="Left 1H - Unknown Duration" />
+    <left_1h_anim_startup AltName="Left 1H - Startup Anim ID" />
+    <left_1h_anim_cast AltName="Left 1H - Cast Anim ID" />
+    <left_1h_stamina_cost AltName="Left 1H - Stamina Cost" />
+    
+    <right_1h_startup_duration AltName="Right 1H - Startup Duration" />
+    <right_1h_unknown_duration AltName="Right 1H - Unknown Duration" />
+    <right_1h_anim_startup AltName="Right 1H - Startup Anim ID" />
+    <right_1h_anim_cast AltName="Right 1H - Cast Anim ID" />
+    <right_1h_stamina_cost AltName="Right 1H - Stamina Cost" />
+    
+    <left_2h_startup_duration AltName="Left 2H - Startup Duration" />
+    <left_2h_unknown_duration AltName="Left 2H - Unknown Duration" />
+    <left_2h_anim_startup AltName="Left 2H - Startup Anim ID" />
+    <left_2h_anim_cast AltName="Left 2H - Cast Anim ID" />
+    <left_2h_stamina_cost AltName="Left 2H - Stamina Cost" />
+    
+    <right_2h_startup_duration AltName="Right 2H - Startup Duration" />
+    <right_2h_unknown_duration AltName="Right 2H - Unknown Duration" />
+    <right_2h_anim_startup AltName="Right 2H - Startup Anim ID" />
+    <right_2h_anim_cast AltName="Right 2H - Cast Anim ID" />
+    <right_2h_stamina_cost AltName="Right 2H - Stamina Cost" />
+    
+    <left_unkA_startup_duration AltName="Left Unknown - Startup Duration" />
+    <left_unkA_unknown_duration AltName="Left Unknown - Unknown Duration" />
+    <left_unkA_anim_startup AltName="Left Unknown - Startup Anim ID" />
+    <left_unkA_anim_cast AltName="Left Unknown - Cast Anim ID" />
+    <left_unkA_stamina_cost AltName="Left Unknown - Stamina Cost" />
+    
+    <right_unkA_startup_duration AltName="Right Unknown - Startup Duration" />
+    <right_unkA_unknown_duration AltName="Right Unknown - Unknown Duration" />
+    <right_unkA_anim_startup AltName="Right Unknown - Startup Anim ID" />
+    <right_unkA_anim_cast AltName="Right Unknown - Cast Anim ID" />
+    <right_unkA_stamina_cost AltName="Right Unknown - Stamina Cost" />
+    
+    <left_unkB_startup_duration AltName="Left Unknown - Startup Duration" />
+    <left_unkB_unknown_duration AltName="Left Unknown - Unknown Duration" />
+    <left_unkB_anim_startup AltName="Left Unknown - Startup Anim ID" />
+    <left_unkB_anim_cast AltName="Left Unknown - Cast Anim ID" />
+    <left_unkB_stamina_cost AltName="Left Unknown - Stamina Cost" />
+    
+    <right_unkB_startup_duration AltName="Right Unknown - Startup Duration" />
+    <right_unkB_unknown_duration AltName="Right Unknown - Unknown Duration" />
+    <right_unkB_anim_startup AltName="Right Unknown - Startup Anim ID" />
+    <right_unkB_anim_cast AltName="Right Unknown - Cast Anim ID" />
+    <right_unkB_stamina_cost AltName="Right Unknown - Stamina Cost" />
+    
+    <is_area_of_effect_spell AltName="Is Area of Effect Spell" IsBool="" />
+    
+    <staff_sfx AltName="Staff SFX" />
+    <is_spawn_on_body AltName="Spawn on Body" IsBool="" />
+    <staff_sfx_dmy_poly_id_1 AltName="Staff SFX Dummy Poly ID [1]" />
+    <staff_sfx_dmy_poly_id_2 AltName="Staff SFX DummyPoly ID [2]" />
+    <body_sfx AltName="Body SFX" />
+    <is_spawn_on_weapon AltName="Spawn on Weapon" IsBool="" />
+    <body_sfx_dmy_poly_id_1 AltName="Body SFX DummyPoly ID [1]" />
+    <body_sfx_dmy_poly_id_2 AltName="Body SFX DummyPoly ID [2]" />
+    <startup_speed AltName="Startup Speed" />
+    <cast_speed AltName="Cast Speed" />
+    <slots_used AltName="Slots Used" />
+    <casts_tier_1 AltName="Casts (Tier 1)" />
+    <casts_tier_2 AltName="Casts (Tier 2)" />
+    <casts_tier_3 AltName="Casts (Tier 3)" />
+    <casts_tier_4 AltName="Casts (Tier 4)" />
+    <casts_tier_5 AltName="Casts (Tier 5)" />
+    <casts_tier_6 AltName="Casts (Tier 6)" />
+    <casts_tier_7 AltName="Casts (Tier 7)" />
+    <casts_tier_8 AltName="Casts (Tier 8)" />
+    <casts_tier_9 AltName="Casts (Tier 9)" />
+    <casts_tier_10 AltName="Casts (Tier 10)" />
+    <spell_soul_consume_id AltName="Spell Soul Consume ID" Refs="SpellSoulConsumeParam" />
+    <left_bullet_id AltName="Bullet ID - Left Hand" Refs="BulletParam"  />
+    <left_damage_id AltName="Damage ID - Left Hand" Refs="PlayerDamageParam"/>
+  </Field>
+</PARAMMETA>

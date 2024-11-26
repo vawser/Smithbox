@@ -1,0 +1,38 @@
+0 test -- テスト
+1254010 Light attack first hit interruption judgment -- 弱攻撃初段中断判定
+1254100 Heavy attack first hit interruption judgment -- 強攻撃初段中断判定
+1210000 Assault boost interruption determination -- アサルトブースト中断判定
+125000100 Light Wave Blade_Weak Attack 1st Stage_Interruption Judgment -- 光波ブレード_弱攻撃1段目_中断判定
+125000200 Light wave blade_2nd stage of weak attack_interruption judgment -- 光波ブレード_弱攻撃2段目_中断判定
+125001100 Light Wave Blade_Strong attack 1st stage_Interruption judgment -- 光波ブレード_強攻撃1段目_中断判定
+125100100 K blade_light attack 1st stage_interruption judgment -- Kブレード_弱攻撃1段目_中断判定
+125101100 K Blade_Strong attack 1st stage_Interruption judgment -- Kブレード_強攻撃1段目_中断判定
+125200100 Chain hammer_light attack 1st stage_interruption judgment -- チェインハンマー_弱攻撃1段目_中断判定
+125200200 Chain Hammer_Light attack 2nd stage_Interruption judgment -- チェインハンマー_弱攻撃2段目_中断判定
+125201100 Chain Hammer_Strong attack 1st stage_Interruption judgment -- チェインハンマー_強攻撃1段目_中断判定
+125300100 Pile Bunker_Light attack 1st stage_Interruption judgment -- パイルバンカー_弱攻撃1段目_中断判定
+125301100 Pile Bunker_Strong attack 1st stage_Interruption judgment -- パイルバンカー_強攻撃1段目_中断判定
+125400100 PA Breaker_Light attack 1st stage_Interruption judgment -- PAブレイカー_弱攻撃1段目_中断判定
+125400200 PA Breaker_Low attack 2nd stage_Interruption judgment -- PAブレイカー_弱攻撃2段目_中断判定
+125401100 PA Breaker_Strong attack 1st stage_Interruption judgment -- PAブレイカー_強攻撃1段目_中断判定
+125500100 Broadsword_Weak attack 1st stage_Interruption judgment -- ブロードソード_弱攻撃1段目_中断判定
+125501100 Broadsword_Strong attack 1st stage_Interruption judgment -- ブロードソード_強攻撃1段目_中断判定
+125600100 Beam Naginata_Light attack 1st stage_Interruption judgment -- ビームナギナタ_弱攻撃1段目_中断判定
+125600200 Beam Naginata_Weak attack 2nd stage_Interruption judgment -- ビームナギナタ_弱攻撃2段目_中断判定
+125601100 Beam Naginata_Strong attack 1st stage_Interruption judgment -- ビームナギナタ_強攻撃1段目_中断判定
+125700100 Laser dagger_light attack 1st stage_interruption judgment -- レーザーダガー_弱攻撃1段目_中断判定
+125700200 Laser dagger_light attack 2nd stage_interruption judgment -- レーザーダガー_弱攻撃2段目_中断判定
+125700300 Laser dagger_3rd stage of weak attack_interruption judgment -- レーザーダガー_弱攻撃3段目_中断判定
+125701100 Laser dagger_Strong attack 1st stage_Interruption judgment -- レーザーダガー_強攻撃1段目_中断判定
+125800100 Laser Lance_Light attack 1st stage_Interruption judgment -- レーザーランス_弱攻撃1段目_中断判定
+125801100 Laser Lance_Strong attack 1st stage_Interruption judgment -- レーザーランス_強攻撃1段目_中断判定
+125900100 Chainsaw_Light attack 1st stage_Interruption judgment -- チェーンソー_弱攻撃1段目_中断判定
+125900200 Chainsaw_Light attack 2nd stage_Interruption judgment -- チェーンソー_弱攻撃2段目_中断判定
+125901100 Chainsaw_Strong attack 1st stage_Interruption judgment -- チェーンソー_強攻撃1段目_中断判定
+126000100 Nightstick_Light attack 1st stage_Interruption judgment -- 警棒_弱攻撃1段目_中断判定
+126000200 Nightstick_Light attack 2nd stage_Interruption judgment -- 警棒_弱攻撃2段目_中断判定
+126000300 Nightstick_Light attack 3rd stage_Interruption judgment -- 警棒_弱攻撃3段目_中断判定
+126001100 Nightstick_Strong attack 1st stage_Interruption judgment -- 警棒_強攻撃1段目_中断判定
+126100100 Phalanx_Light attack 1st stage_Interruption judgment -- ファランクス_弱攻撃1段目_中断判定
+126101100 Phalanx_Strong attack 1st stage_Interruption judgment -- ファランクス_強攻撃1段目_中断判定
+126200100 Bare-handed_Light attack 1st stage_Interruption judgment -- 素手_弱攻撃1段目_中断判定

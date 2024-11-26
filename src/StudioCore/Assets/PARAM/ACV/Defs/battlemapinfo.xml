@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BATTLE_MAP_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 ID">
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 RankingFlag">
+      <DisplayName>ランキングフラグ</DisplayName>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 MapID">
+      <DisplayName>マップID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 MapMinX = -100">
+      <DisplayName>マップの最小値(X)</DisplayName>
+      <Description>地図の左上のマップでのX座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 MapMinZ = -100">
+      <DisplayName>マップの最小値(Z)</DisplayName>
+      <Description>地図の左上のマップでのZ座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 MapMaxX = 100">
+      <DisplayName>マップの最大値(X)</DisplayName>
+      <Description>地図の右下のマップでのX座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 MapMaxZ = 100">
+      <DisplayName>マップの最大値(Z)</DisplayName>
+      <Description>地図の右下のマップでのZ座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 DuelMapScal = 1">
+      <DisplayName>デュエル時の拡大率</DisplayName>
+      <Description>対戦形式がデュエルのときに表示するマップのデフォルトの拡大率</Description>
+      <Minimum>0.1</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 DuelMapCenterX">
+      <DisplayName>デュエル時のマップ中心(X)</DisplayName>
+      <Description>対戦形式がデュエルのときに表示するマップのデフォルトの中心点X</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="f32 DuelMapCenterZ">
+      <DisplayName>デュエル時のマップ中心(Z)</DisplayName>
+      <Description>対戦形式がデュエルのときに表示するマップのデフォルトの中心点Z</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="f32 BattleRoyalMapScal = 1">
+      <DisplayName>バトルロイヤル時の拡大率</DisplayName>
+      <Description>対戦形式がバトルロイヤルのときに表示するマップのデフォルトの拡大率</Description>
+      <Minimum>0.1</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="f32 SizeForMenuX">
+      <DisplayName>サイズ：X</DisplayName>
+      <Description>メニューで表示するマップサイズ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 SizeForMenuY">
+      <DisplayName>サイズ：Y</DisplayName>
+      <Description>メニューで表示するマップサイズ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 SizeForMenuZ">
+      <DisplayName>サイズ：Z</DisplayName>
+      <Description>メニューで表示するマップサイズ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 BattleRoyalMapCenterX">
+      <DisplayName>バトルロイヤル時のマップ中心(X)</DisplayName>
+      <Description>対戦形式がバトルロイヤルのときに表示するマップのデフォルトの中心点X</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 BattleRoyalMapCenterZ">
+      <DisplayName>バトルロイヤル時のマップ中心(Z)</DisplayName>
+      <Description>対戦形式がバトルロイヤルのときに表示するマップのデフォルトの中心点Z</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="s8 DispRotation">
+      <DisplayName>表示の回転角度</DisplayName>
+      <Description>マップが縦長の時に表示上横長にするための角度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>90</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 padding1[3]">
+      <DisplayName>予約領域1</DisplayName>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="f32 MapMinY">
+      <DisplayName>マップの最小値(Y)</DisplayName>
+      <Description>地図のマップでの最も低いY座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 MapMaxY = 100">
+      <DisplayName>マップの最大値(Y)</DisplayName>
+      <Description>地図のマップでの最も高いX座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u32 BeginPlaygID">
+      <DisplayName>開始ポリ劇ID</DisplayName>
+      <Description>対戦の開始ポリ劇ID</Description>
+      <Maximum>999999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="dummy8 padding[12]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>34</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

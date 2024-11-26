@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FILTER_LINE_NOISE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s16 NoiseCount">
+      <DisplayName>ノイズ発生数</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s8 Contrast">
+      <DisplayName>コントラスト</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s8 OffsetR">
+      <DisplayName>ずれピクセル R</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-127</Minimum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s8 OffsetG">
+      <DisplayName>ずれピクセル G</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-127</Minimum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s8 OffsetB">
+      <DisplayName>ずれピクセル B</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-127</Minimum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s8 MinLength">
+      <DisplayName>ライン長さ(最小)</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>64</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s8 MaxLength">
+      <DisplayName>ライン長さ(最大)</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>64</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s8 TexID">
+      <DisplayName>ノイズテクスチャID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>7</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s8 TextureBlend">
+      <DisplayName>ノイズテクスチャブレンド値</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 TextureOffsUpdateFrame">
+      <DisplayName>ノイズテクスチャ更新フレーム</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>300</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 NextRefParamID = -1">
+      <DisplayName>連続再生時に参照するID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 bFixDrawTime">
+      <DisplayName>描画時間の固定するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="dummy8 dummy[1]">
+      <DisplayName>ダミー</DisplayName>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="f32 NextTime = -1">
+      <DisplayName>連続再生待機時間(秒)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>30</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 MaxDrawTime">
+      <DisplayName>ライン描画時間(秒)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>30</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 FadeTime">
+      <DisplayName>フェードイン時間(秒)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>30</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 MinPow">
+      <DisplayName>ずれピクセル(最小)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>1</Increment>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="f32 MaxPow">
+      <DisplayName>ずれピクセル(最大)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>1</Increment>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="f32 LineWidth = 1">
+      <DisplayName>ノイズ縦幅</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="f32 TexScaleX">
+      <DisplayName>テクスチャスケール値Ｘ</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="f32 TexScaleY">
+      <DisplayName>テクスチャスケール値Y</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>20</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

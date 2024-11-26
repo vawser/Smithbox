@@ -1,0 +1,1272 @@
+10 Empty
+100 Empty
+1000000 Dagger
+1010000 Bandit's Knife
+1040000 Mytha's Bent Blade
+1050000 Shadow Dagger
+1060000 Thief Dagger
+1070000 Broken Thief Sword
+1100000 Parrying Dagger
+1110000 Manikin Knife
+1130000 Royal Dirk
+1140000 Blue Dagger
+1150000 Umbral Dagger
+1160000 Retainer's Short Sword
+1200000 Broken Straight Sword
+1210000 Shortsword
+1220000 Longsword
+1230000 Broadsword
+1240000 Foot Soldier Sword
+1250000 Puzzling Stone Sword
+1260000 Possessed Armor Sword
+1270000 Varangian Sword
+1280000 Blue Flame
+1290000 Fume Sword
+1320000 Heide Knight Sword
+1330000 Red Rust Sword
+1350000 Black Dragon Sword
+1360000 Sun Sword
+1370000 Drakekeeper's Sword
+1380000 Ashen Warrior Sword
+1390000 Ivory Straight Sword
+1400000 Estoc
+1410000 Mail Breaker
+1420000 Chaos Rapier
+1430000 Spider's Silk
+1440000 Espada Ropera
+1500000 Rapier
+1520000 Black Scorpion Stinger
+1530000 Ricard's Rapier
+1580000 Ice Rapier
+1600000 Falchion
+1610000 Shotel
+1620000 Warped Sword
+1630000 Eleum Loyce
+1640000 Manikin Sabre
+1650000 Scimitar
+1660000 Red Rust Scimitar
+1670000 Spider Fang
+1680000 Melu Scimitar
+1690000 Monastery Scimitar
+1700000 Uchigatana
+1710000 Washing Pole
+1720000 Chaos Blade
+1730000 Blacksteel Katana
+1740000 Manslayer
+1760000 Darkdrift
+1770000 Berserker Blade
+1790000 Bewitched Alonne Sword
+1800000 Bastard Sword
+1810000 Flamberge
+1820000 Claymore
+1830000 Majestic Greatsword
+1831000 Majestic Greatsword
+1850000 Drangleic Sword
+1860000 Thorned Greatsword
+1870000 Bluemoon Greatsword
+1871000 Moonlight Greatsword
+1880000 Mastodon Greatsword
+1900000 Ruler's Sword
+1910000 Mirrah Greatsword
+1911000 Old Mirrah Greatsword
+1920000 Black Dragon Greatsword
+1930000 Black Knight Greatsword
+1940000 Royal Greatsword
+1950000 Old Knight Greatsword
+1960000 Defender Greatsword
+1970000 Watcher Greatsword
+1980000 Key to the Embedded
+1990000 Drakeblood Greatsword
+1995000 Loyce Greatsword
+1996000 Charred Loyce Greatsword
+1997000 Greatsword of the Forlorn
+2000000 Hand Axe
+2010000 Battle Axe
+2020000 Bandit Axe
+2030000 Infantry Axe
+2070000 Gyrm Axe
+2080000 Dragonslayer's Crescent Axe
+2090000 Butcher's Knife
+2100000 Silverblack Sickle
+2200000 Crescent Axe
+2210000 Greataxe
+2220000 Bandit Greataxe
+2240000 Lion Greataxe
+2250000 Giant Stone Axe
+2260000 Gyrm Greataxe
+2290000 Black Dragon Greataxe
+2300000 Black Knight Greataxe
+2310000 Drakekeeper's Greataxe
+2400000 Club
+2410000 Mace
+2420000 Morning Star
+2430000 Reinforced Club
+2440000 Craftsman's Hammer
+2470000 Mace of the Insolent
+2500000 Handmaid's Ladle
+2520000 Blacksmith's Hammer
+2530000 Black Dragon Warpick
+2540000 Aldia Hammer
+2560000 Barbed Club
+2600000 Large Club
+2610000 Pickaxe
+2620000 Great Club
+2630000 Gyrm Great Hammer
+2660000 Iron King Hammer
+2670000 Malformed Skull
+2680000 Dragon Tooth
+2690000 Giant Warrior Club
+2700000 Malformed Shell
+2710000 Demon's Great Hammer
+2720000 Archdrake Mace
+2730000 Old Knight Hammer
+2740000 Drakekeeper's Great Hammer
+2750000 Sacred Chime Hammer
+2760000 Sanctum Mace
+2800000 Spear
+2810000 Winged Spear
+2820000 Pike
+2830000 Partizan
+2840000 Stone Soldier Spear
+2850000 Spitfire Spear
+2855000 Yorgh's Spear
+2860000 Silverblack Spear
+2870000 Heide Spear
+2880000 Pate's Spear
+2890000 Channeler's Trident
+2895000 Gargoyle Bident
+2896000 Dragonslayer Spear
+2900000 Heide Lance
+2920000 Heide Greatlance
+2930000 Grand Lance
+2940000 Chariot Lance
+2950000 Rampart Golem Lance
+2960000 Smelter Hammer
+3000000 Great Scythe
+3010000 Great Machete
+3020000 Full Moon Sickle
+3040000 Crescent Sickle
+3050000 Scythe of Nahr Alma
+3060000 Bone Scythe
+3070000 Scythe of Want
+3080000 Scythe of the Forlorn
+3200000 Lucerne
+3210000 Scythe
+3220000 Halberd
+3240000 Helix Halberd
+3250000 Santier's Spear
+3251000 Santier's Spear
+3270000 Mastodon Halberd
+3280000 Blue Knight's Halberd
+3290000 Dragonrider's Halberd
+3300000 Black Knight Halberd
+3310000 Syan's Halberd
+3320000 Roaring Halberd
+3330000 Old Knight Halberd
+3340000 Old Knight Pike
+3350000 Drakekeeper's Warpick
+3370000 Wrathful Axe
+3400000 UNKNOWN
+3401000 UNKNOWN
+3410000 Claws
+3420000 Malformed Claws
+3430000 Manikin Claws
+3440000 Work Hook
+3500000 Caestus
+3530000 Bone Fist
+3600000 Whip
+3610000 Notched Whip
+3620000 Bloodied Whip
+3630000 Spotted Whip
+3660000 Old Whip
+3800000 Sorcerer's Staff
+3810000 Staff of Amana
+3820000 Witchtree Branch
+3830000 Lizard Staff
+3850000 Olenford's Staff
+3860000 Archdrake Staff
+3870000 Bat Staff
+3880000 Bone Staff
+3890000 Staff of Wisdom
+3900000 Sunset Staff
+3910000 Pilgrim's Spontoon
+3930000 Azal's Staff
+3940000 Retainer Staff
+4010000 Cleric's Sacred Chime
+4020000 Witchtree Bellvine
+4030000 Priest's Chime
+4040000 Dragon Chime
+4050000 Chime of Want
+4060000 Archdrake Chime
+4080000 Idol's Chime
+4090000 Caitha's Chime
+4100000 Protective Chime
+4110000 Disc Chime
+4120000 Chime of Screams
+4150000 Black Witch's Staff
+4200000 Short Bow
+4210000 Long Bow
+4220000 Composite Bow
+4230000 Sea Bow
+4240000 Dragonrider Bow
+4270000 Bell Keeper Bow
+4280000 Bow of Want
+4290000 Hunter's Blackbow
+4400000 Alonne Greatbow
+4420000 Dragonslayer Greatbow
+4430000 Possessed Armor Greatbow
+4440000 Twin-headed Greatbow
+4600000 Light Crossbow
+4610000 Heavy Crossbow
+4630000 Shield Crossbow
+4660000 Avelyn
+4670000 Sanctum Crossbow
+4680000 Sanctum Repeating Crossbow
+5000000 Murakumo
+5010000 Arced Sword
+5040000 Curved Dragon Greatsword
+5050000 Curved Nil Greatsword
+5200000 Zweihander
+5210000 Greatsword
+5220000 Smelter Sword
+5225000 Aged Smelter Sword
+5230000 Drakewing Ultra Greatsword
+5240000 King's Ultra Greatsword
+5250000 Fume Ultra Greatsword
+5255000 Ivory King Ultra Greatsword
+5270000 Pursuer's Ultra Greatsword
+5275000 Drakekeeper's Ultra Greatsword
+5280000 Crypt Blacksword
+5285000 Old Knight Ultra Greatsword
+5290000 Black Knight Ultra Greatsword
+5295000 Lost Sinner's Sword
+5310000 Stone Twinblade
+5330000 Dragonrider Twinblade
+5340000 Twinblade
+5350000 Red Iron Twinblade
+5360000 Curved Twinblade
+5370000 Sorcerer's Twinblade
+5400000 Pyromancy Flame
+5410000 Dark Pyromancy Flame
+5500000 Black Flamestone Dagger
+5510000 Yellow Quartz Longsword
+5520000 Bound Hand Axe
+5530000 Homunculus Mace
+5540000 Transgressor's Staff
+5600000 Longsword
+5610000 Murakumo
+5620000 Blacksteel Katana
+5630000 Rapier
+5640000 Greataxe
+5650000 Great Club
+5660000 Caestus
+6100000 Binoculars
+11000000 Buckler
+11005000 Benhart's Parma
+11010000 Small Leather Shield
+11020000 Iron Parma
+11030000 Foot Soldier Shield
+11040000 Target Shield
+11050000 Golden Falcon Shield
+11070000 Manikin Shield
+11080000 Llewellyn Shield
+11091000 Crimson Parma
+11110000 Cleric's Parma
+11120000 Cleric's Small Shield
+11130000 Magic Shield
+11140000 Cursed Bone Shield
+11150000 Sanctum Shield
+11160000 Varangian Shield
+11185000 Watcher's Shield
+11200000 Large Leather Shield
+11210000 Blue Wooden Shield
+11220000 Silver Eagle Kite Shield
+11230000 Drangleic Shield
+11240000 Lion Clan Shield
+11250000 Archdrake Shield
+11260000 King's Shield
+11270000 Mirrah Shield
+11280000 Old Knight's Shield
+11290000 Loyce Shield
+11295000 Charred Loyce Shield
+11300000 Spirit Tree Shield
+11310000 Golden Wing Shield
+11320000 Vessel Shield
+11330000 Shield of the Insolent
+11350000 Silverblack Shield
+11360000 Stone Parma
+11370000 Grand Spirit Tree Shield
+11380000 Moon Butterfly Shield
+11390000 Slumbering Dragon Shield
+11395000 Chaos Shield
+11400000 Wooden Shield
+11420000 Hollow Soldier Shield
+11430000 Royal Kite Shield
+11450000 Red Rust Shield
+11455000 Rampart Golem Shield
+11470000 Bell Keeper Shield
+11475000 Defender's Shield
+11480000 Black Dragon Shield
+11485000 Drakekeeper's Shield
+11490000 Porcine Shield
+11495000 Bone Shield
+11500000 Twin Dragon Greatshield
+11510000 Tower Shield
+11530000 Orma's Greatshield
+11540000 Reeve's Greatshield
+11550000 King's Mirror
+11560000 Dragonrider Greatshield
+11570000 Mastodon Greatshield
+11590000 Havel's Greatshield
+11600000 Gyrm Greatshield
+11610000 Pursuer's Greatshield
+11620000 Pate's Shield
+11630000 Old Knight Greatshield
+11640000 Drakekeeper's Greatshield
+11650000 Greatshield of Glory
+11700000 Phoenix Parma
+11710000 Sunlight Parma
+11720000 Watchdragon Parma
+11730000 Blossom Kite Shield
+11740000 Rebel's Greatshield
+11750000 Wicked Eye Greatshield
+11800000 Black Flamestone Parma
+11810000 Yellow Quartz Shield
+11820000 Bound Wooden Shield
+11830000 Homunculus Wooden Shield
+11840000 Transgressor's Leather Shield
+21001100 UNKNOWN
+21001101 UNKNOWN
+21001102 UNKNOWN
+21001103 UNKNOWN
+21010100 Pate's Helm
+21010101 Pate's Armor
+21010102 Pate's Gloves
+21010103 Pate's Trousers
+21020100 Thief Mask
+21020101 Black Leather Armor
+21020102 Black Leather Gloves
+21020103 Black Leather Boots
+21030100 Wanderer Hood
+21030101 Wanderer Coat
+21030102 Wanderer Manchettes
+21030103 Wanderer Boots
+21040100 Hunter's Hat
+21040101 Leather Armor
+21040102 Leather Gloves
+21040103 Leather Boots
+21050100 Knight Helm
+21050101 Knight Armor
+21050102 Knight Gauntlets
+21050103 Knight Leggings
+21060100 Elite Knight Helm
+21060101 Elite Knight Armor
+21060102 Elite Knight Gloves
+21060103 Elite Knight Leggings
+21070100 Tattered Cloth Hood
+21070101 Tattered Cloth Robe
+21070102 Tattered Cloth Manchettes
+21070103 Heavy Boots
+21080100 Brigand Hood
+21080101 Brigand Armor
+21080102 Brigand Gauntlets
+21080103 Brigand Trousers
+21100100 Imported Hood
+21100101 Imported Tunic
+21100102 Imported Manchettes
+21100103 Imported Trousers
+21140100 Traveling Merchant Hat
+21140101 Traveling Merchant Coat
+21140102 Traveling Merchant Gloves
+21140103 Traveling Merchant Boots
+21160100 Havel's Helm
+21160101 Havel's Armor
+21160102 Havel's Gauntlets
+21160103 Havel's Leggings
+21210100 Jester's Cap
+21210101 Jester's Robes
+21210102 Jester's Gloves
+21210103 Jester's Tights
+21230100 Moon Hat
+21230101 Astrologist's Robe
+21230102 Astrologist's Gauntlets
+21230103 Astrologist's Bottoms
+21320100 Faraam Helm
+21320101 Faraam Armor
+21320102 Faraam Gauntlets
+21320103 Faraam Boots
+21330100 Black Dragon Helm
+21330101 Black Dragon Armor
+21330102 Black Dragon Gauntlets
+21330103 Black Dragon Leggings
+21340100 Xanthous Crown
+21340101 Xanthous Overcoat
+21340102 Xanthous Gloves
+21340103 Xanthous Waistcloth
+21350100 Mask of Judgment
+21350101 Robe of Judgment
+21350102 Manchettes of Judgment
+21350103 Tights of Judgment
+21360100 Helm of Aurous
+21360101 Armor of Aurous
+21360102 Gauntlets of Aurous
+21360103 Leggings of Aurous
+21361100 Helm of Aurous
+21361101 Armor of Aurous
+21361102 Gauntlets of Aurous
+21361103 Leggings of Aurous
+21370100 Monastery Headcloth
+21370101 Monastery Longshirt
+21370102 Monastery Long Gloves
+21370103 Monastery Skirt
+21390100 Dingy Hood
+21390101 Dingy Robe
+21390102 Dingy Cuffs
+21390103 Blood-Stained Skirt
+21430100 Durgo's Hat
+21440102 Engraved Gauntlets
+21460103 Flying Feline Boots
+21470100 Moon Butterfly Hat
+21470101 Moon Butterfly Wings
+21470102 Moon Butterfly Cuffs
+21470103 Moon Butterfly Skirt
+21480100 Catarina Helm
+21480101 Catarina Armor
+21480102 Catarina Gauntlets
+21480103 Catarina Leggings
+21490100 Alva Helm
+21490101 Alva Armor
+21490102 Alva Gauntlets
+21490103 Alva Leggings
+21500100 Black Witch Veil
+21500101 Black Witch Robe
+21500102 Black Witch Gloves
+21500103 Black Witch Trousers
+21501100 Black Witch Hat
+21502100 Black Witch Domino Mask
+21600000 UNKNOWN
+21600100 Drakeblood Helm
+21600101 Drakeblood Armor
+21600102 Drakeblood Gauntlets
+21600103 Drakeblood Leggings
+21610000 UNKNOWN
+21610100 Northwarder Hood
+21610101 Northwarder Robe
+21610102 Northwarder Manchettes
+21610103 Northwarder Trousers
+21620000 UNKNOWN
+21630000 UNKNOWN
+21630100 Crown of the Old Iron King
+21640000 UNKNOWN
+21640100 Crown of the Ivory King
+21650000 UNKNOWN
+21650100 Crown of the Sunken King
+21660000 UNKNOWN
+21660100 Old Bell Helm
+21670000 UNKNOWN
+21670100 Hollow Skin
+21680000 UNKNOWN
+21680100 Pharros Mask
+21690000 UNKNOWN
+21690103 Flower Skirt
+21700000 UNKNOWN
+21700100 Minotaur Helm
+21710000 UNKNOWN
+21710100 Symbol of Avarice
+22020100 Hollow Soldier Helm
+22020101 Hollow Soldier Armor
+22020102 Hollow Soldier Gauntlets
+22020103 Hollow Soldier Leggings
+22021100 Royal Soldier Helm
+22021101 Royal Soldier Armor
+22021102 Royal Soldier Gauntlets
+22021103 Royal Soldier Leggings
+22030100 Hollow Infantry Helm
+22030101 Hollow Infantry Armor
+22030102 Hollow Infantry Gloves
+22030103 Hollow Infantry Boots
+22031100 Infantry Helm
+22031101 Infantry Armor
+22031102 Infantry Gloves
+22031103 Infantry Boots
+22060100 White Priest Headpiece
+22060101 White Priest Robe
+22060102 White Priest Gloves
+22060103 White Priest Skirt
+22062100 Priestess Headpiece
+22062101 Priestess Robe
+22062102 Priestess Gloves
+22062103 Priestess Skirt
+22080100 Rogue Hood
+22080101 Rogue Armor
+22080102 Rogue Gauntlets
+22080103 Rogue Leggings
+22110100 Spiked Bandit Helm
+22110101 Bandit Armor
+22110102 Bandit Gauntlets
+22110103 Bandit Boots
+22130100 Varangian Helm
+22130101 Varangian Armor
+22130102 Varangian Cuffs
+22130103 Varangian Leggings
+22180100 Black Hollow Mage Hood
+22180101 Black Hollow Mage Robe
+22182100 White Hollow Mage Hood
+22182101 White Hollow Mage Robe
+22190101 Lion Mage Robe
+22190102 Lion Mage Cuffs
+22190103 Lion Mage Skirt
+22220100 Steel Helm
+22220101 Steel Armor
+22220102 Steel Gauntlets
+22220103 Steel Leggings
+22230100 Shadow Mask
+22230101 Shadow Top
+22230102 Shadow Gauntlets
+22230103 Shadow Leggings
+22240100 Manikin Mask
+22240101 Manikin Top
+22240102 Manikin Gloves
+22240103 Manikin Boots
+22270100 Prisoner's Hood
+22270101 Prisoner's Tatters
+22270102 Prisoner's Gloves
+22270103 Prisoner's Waistcloth
+22271100 Prisoner's Hood
+22271101 Prisoner's Tatters
+22310100 Archdrake Helm
+22310101 Archdrake Robes
+22310102 Archdrake Gloves
+22310103 Archdrake Boots
+22340100 Gyrm Helm
+22340101 Gyrm Armor
+22340102 Gyrm Gloves
+22340103 Gyrm Boots
+22350100 Gyrm Warrior Helm
+22350101 Gyrm Warrior Armor
+22350102 Gyrm Warrior Gloves
+22350103 Gyrm Warrior Boots
+22351100 Gyrm Warrior Greathelm
+22360100 Dark Mask
+22360101 Dark Armor
+22360102 Dark Gauntlets
+22360103 Dark Leggings
+22370100 Warlock Mask
+22460100 Tseldora Cap
+22460101 Tseldora Robe
+22460102 Tseldora Manchettes
+22460103 Tseldora Trousers
+22480100 Peasant Hat
+22480101 Peasant Attire
+22480102 Peasant Long Gloves
+22480103 Peasant Trousers
+22510100 Ironclad Helm
+22510101 Ironclad Armor
+22510102 Ironclad Gauntlets
+22510103 Ironclad Leggings
+22512100 Old Ironclad Helm
+22512101 Old Ironclad Armor
+22512102 Old Ironclad Gauntlets
+22512103 Old Ironclad Leggings
+22520100 Royal Swordsman Helm
+22520101 Royal Swordsman Armor
+22520102 Royal Swordsman Gloves
+22520103 Royal Swordsman Leggings
+22530100 Syan's Helm
+22530101 Syan's Armor
+22530102 Syan's Gauntlets
+22530103 Syan's Leggings
+22540100 Bone Crown
+22540101 Bone King Robe
+22540102 Bone King Cuffs
+22540103 Bone King Skirt
+23010100 Heide Knight Greathelm
+23010101 Heide Knight Chainmail
+23010102 Heide Knight Gauntlets
+23010103 Heide Knight Leggings
+23011100 Heide Knight Iron Mask
+23040101 Singer's Dress
+23050100 Smelter Demon Helm
+23050101 Smelter Demon Armor
+23050102 Smelter Demon Gauntlets
+23050103 Smelter Demon Leggings
+23060100 Alonne Captain Helm
+23060101 Alonne Captain Armor
+23061100 Alonne Knight Helm
+23061101 Alonne Knight Armor
+23061102 Alonne Knight Gauntlets
+23061103 Alonne Knight Leggings
+23070100 Vengarl's Helm
+23070101 Vengarl's Armor
+23070102 Vengarl's Gloves
+23070103 Vengarl's Boots
+23080101 Lion Warrior Cape
+23080102 Lion Warrior Cuffs
+23080103 Lion Warrior Skirt
+23081100 Lion Warrior Helm
+23081101 Red Lion Warrior Cape
+23120100 Grave Warden Mask
+23120101 Grave Warden Top
+23120102 Grave Warden Cuffs
+23120103 Grave Warden Bottoms
+23130100 Falconer Helm
+23130101 Falconer Armor
+23130102 Falconer Gloves
+23130103 Falconer Boots
+23140100 Rusted Mastodon Helm
+23140101 Rusted Mastodon Armor
+23140102 Rusted Mastodon Gauntlets
+23140103 Rusted Mastodon Leggings
+23150100 Mastodon Helm
+23150101 Mastodon Armor
+23150102 Mastodon Gauntlets
+23150103 Mastodon Leggings
+23160100 Desert Sorceress Hood
+23160101 Desert Sorceress Top
+23160102 Desert Sorceress Gloves
+23160103 Desert Sorceress Skirt
+23170100 Dragon Acolyte Mask
+23170101 Dragon Acolyte Robe
+23170102 Dragon Acolyte Gloves
+23170103 Dragon Acolyte Boots
+23171100 Dragon Sage Hood
+23250100 Ruin Helm
+23250101 Ruin Armor
+23250102 Ruin Gauntlets
+23250103 Ruin Leggings
+23300100 Old Knight Helm
+23300101 Old Knight Armor
+23300102 Old Knight Gauntlets
+23300103 Old Knight Leggings
+23310100 Drakekeeper Helm
+23310101 Drakekeeper Armor
+23310102 Drakekeeper Gauntlets
+23310103 Drakekeeper Boots
+23320100 Throne Defender Helm
+23320101 Throne Defender Armor
+23320102 Throne Defender Gauntlets
+23320103 Throne Defender Leggings
+23330100 Velstadt's Helm
+23330101 Velstadt's Armor
+23330102 Velstadt's Gauntlets
+23330103 Velstadt's Leggings
+23340100 Throne Watcher Helm
+23340101 Throne Watcher Armor
+23340102 Throne Watcher Gauntlets
+23340103 Throne Watcher Leggings
+25040100 Looking Glass Mask
+25040101 Looking Glass Armor
+25040102 Looking Glass Gauntlets
+25040103 Looking Glass Leggings
+25060101 Agdayne's Black Robe
+25060102 Agdayne's Cuffs
+25060103 Agdayne's Kilt
+25090100 Leydia Black Hood
+25090101 Leydia Black Robe
+25100100 Insolent Helm
+25100101 Insolent Armor
+25100102 Insolent Gloves
+25100103 Insolent Boots
+25110100 Imperious Helm
+25110101 Imperious Armor
+25110102 Imperious Gloves
+25110103 Imperious Leggings
+25120100 Leydia White Hood
+25120101 Leydia White Robe
+25120102 Leydia Gauntlets
+25130100 King's Crown
+25130101 King's Armor
+25130102 King's Gauntlets
+25130103 King's Leggings
+26100100 Dragonrider Helm
+26100101 Dragonrider Armor
+26100102 Dragonrider Gauntlets
+26100103 Dragonrider Leggings
+26180100 Executioner Helm
+26180101 Executioner Armor
+26180102 Executioner Gauntlets
+26180103 Executioner Leggings
+26260100 Penal Mask
+26260101 Penal Straightjacket
+26260102 Penal Handcuffs
+26260103 Penal Skirt
+26510100 Fume Sorcerer Mask
+26510101 Fume Sorcerer Robes
+26510102 Fume Sorcerer Gloves
+26510103 Fume Sorcerer Boots
+26590000 UNKNOWN
+26590100 Rampart Golem Helm
+26590101 Rampart Golem Armor
+26590102 Rampart Golem Gauntlets
+26590103 Rampart Golem Leggings
+26650100 Sanctum Knight Helm
+26650101 Sanctum Knight Armor
+26650102 Sanctum Knight Gauntlets
+26650103 Sanctum Knight Leggings
+26660102 Sanctum Soldier Gauntlet
+26700100 Sanctum Priestess Tiara
+26750000 UNKNOWN
+26750100 Raime's Helm
+26750101 Raime's Armor
+26750102 Raime's Gauntlets
+26750103 Raime's Leggings
+26770000 UNKNOWN
+26770101 Retainer Robe
+26800000 UNKNOWN
+26800100 Alonne's Helm
+26800101 Alonne's Armor
+26800102 Alonne's Gauntlets
+26800103 Alonne's Leggings
+26880100 Loyce Helm
+26880101 Loyce Armor
+26880102 Loyce Gauntlets
+26880103 Loyce Leggings
+26890100 Charred Loyce Helm
+26890101 Charred Loyce Armor
+26890102 Charred Loyce Gauntlets
+26890103 Charred Loyce Leggings
+26900000 UNKNOWN
+26900100 Ivory King Helm
+26900101 Ivory King Armor
+26900102 Ivory King Gauntlets
+26900103 Ivory King Leggings
+26940000 UNKNOWN
+26940100 Hood of the Forlorn
+26940101 Armor of the Forlorn
+26940102 Gauntlets of the Forlorn
+26940103 Leggings of the Forlorn
+27210101 Llewellyn Armor
+27210102 Llewellyn Gloves
+27210103 Llewellyn Shoes
+27240100 Drangleic Helm
+27240101 Drangleic Mail
+27240102 Drangleic Gauntlets
+27240103 Drangleic Leggings
+27420100 Creighton's Steel Mask
+27420101 Creighton's Chainmail
+27420102 Creighton's Chain Gloves
+27420103 Creighton's Chain Leggings
+27430100 Benhart's Knight Helm
+27430101 Benhart's Armor
+27430102 Benhart's Gauntlets
+27430103 Benhart's Boots
+27440100 Standard Helm
+27440101 Hard Leather Armor
+27440102 Hard Leather Gauntlets
+27440103 Hard Leather Boots
+27510100 Cale's Helm
+27510101 Cale's Leather Armor
+27510103 Cale's Shoes
+27520100 Lucatiel's Mask
+27520101 Lucatiel's Vest
+27520102 Lucatiel's Gloves
+27520103 Lucatiel's Trousers
+27521000 UNKNOWN
+27521100 Mirrah Hat
+27530100 Bell Keeper Helmet
+27530101 Bell Keeper Bellyband
+27530102 Bell Keeper Cuffs
+27530103 Bell Keeper Trousers
+27550100 Mad Warrior Mask
+27550101 Mad Warrior Armor
+27550102 Mad Warrior Gauntlets
+27550103 Mad Warrior Leggings
+27680100 Black Hood
+27680101 Black Robes
+27680102 Black Gloves
+27680103 Black Boots
+27690100 Saint's Hood
+27690101 Saint's Dress
+27690102 Saint's Long Gloves
+27690103 Saint's Trousers
+27700100 Hexer's Hood
+27700101 Hexer's Robes
+27700102 Hexer's Gloves
+27700103 Hexer's Boots
+27710100 Chaos Hood
+27710101 Chaos Robe
+27710102 Chaos Gloves
+27710103 Chaos Boots
+27830100 Nahr Alma Hood
+27830101 Nahr Alma Robes
+27950100 Targray's Helm
+27950101 Targray's Armor
+27950102 Targray's Manifers
+27950103 Targray's Leggings
+31010000 Soul Arrow
+31020000 Great Soul Arrow
+31030000 Heavy Soul Arrow
+31040000 Great Heavy Soul Arrow
+31050000 Homing Soul Arrow
+31060000 Heavy Homing Soul Arrow
+31070000 Homing Soulmass
+31080000 Homing Crystal Soulmass
+31090000 Soul Spear
+31100000 Crystal Soul Spear
+31110000 Shockwave
+31120000 Soul Spear Barrage
+31130000 Soul Shower
+31140000 Soul Greatsword
+31150000 Soul Vortex
+31160000 Soul Bolt
+31170000 Soul Geyser
+31180000 Magic Weapon
+31190000 Great Magic Weapon
+31200000 Crystal Magic Weapon
+31210000 Strong Magic Shield
+31220000 Yearn
+31230000 Hush
+31240000 Fall Control
+31250000 Hidden Weapon
+31260000 Repair
+31270000 Cast Light
+31280000 Chameleon
+31290000 Unleash Magic
+31300000 Soul Flash
+31310000 Focus Souls
+32010000 Heal
+32020000 Med Heal
+32030000 Great Heal Excerpt
+32040000 Great Heal
+32050000 Soothing Sunlight
+32060000 Replenishment
+32070000 Resplendent Life
+32080000 Bountiful Sunlight
+32090000 Caressing Prayer
+32100000 Force
+32110000 Wrath of the Gods
+32120000 Emit Force
+32130000 Heavenly Thunder
+32140000 Lightning Spear
+32150000 Great Lightning Spear
+32160000 Sunlight Spear
+32170000 Soul Appease
+32180000 Blinding Bolt
+32190000 Magic Barrier
+32200000 Great Magic Barrier
+32210000 Homeward
+32220000 Guidance
+32230000 Sacred Oath
+32240000 Unveil
+32250000 Perseverance
+32260000 Sunlight Blade
+32300000 Denial
+32310000 Splintering Lightning Spear
+33010000 Fireball
+33020000 Fire Orb
+33030000 Great Fireball
+33040000 Great Chaos Fireball
+33050000 Firestorm
+33060000 Fire Tempest
+33070000 Chaos Storm
+33080000 Combustion
+33090000 Great Combustion
+33100000 Fire Whip
+33110000 Poison Mist
+33120000 Toxic Mist
+33130000 Acid Surge
+33140000 Lingering Flame
+33150000 Flame Swathe
+33160000 Forbidden Sun
+33170000 Flame Weapon
+33180000 Flash Sweat
+33190000 Iron Flesh
+33200000 Warmth
+33210000 Immolation
+33300000 Fire Snake
+33310000 Dance of Fire
+33320000 Outcry
+34010000 Dark Orb
+34020000 Dark Hail
+34030000 Dark Fog
+34040000 Affinity
+34050000 Dead Again
+34060000 Dark Weapon
+34070000 Whisper of Despair
+34080000 Repel
+34090000 Twisted Barricade
+34100000 Numbness
+34300000 Dark Greatsword
+34310000 Recollection
+35010000 Scraps of Life
+35020000 Darkstorm
+35030000 Resonant Soul
+35040000 Great Resonant Soul
+35050000 Climax
+35060000 Resonant Flesh
+35070000 Resonant Weapon
+35080000 Lifedrain Patch
+35090000 Profound Still
+35300000 Promised Walk of Peace
+35310000 Dark Dance
+40010000 Life Ring
+40010001 Life Ring+1
+40010002 Life Ring+2
+40010003 Life Ring+3
+40020000 Chloranthy Ring
+40020001 Chloranthy Ring+1
+40020002 Chloranthy Ring+2
+40030000 Royal Soldier's Ring
+40030001 Royal Soldier's Ring+1
+40030002 Royal Soldier's Ring+2
+40040000 First Dragon Ring
+40040001 Second Dragon Ring
+40040002 Third Dragon Ring
+40050000 Ring of Steel Protection
+40050001 Ring of Steel Protection+1
+40050002 Ring of Steel Protection+2
+40060000 Spell Quartz Ring
+40060001 Spell Quartz Ring+1
+40060002 Spell Quartz Ring+2
+40060003 Spell Quartz Ring+3
+40070000 Flame Quartz Ring
+40070001 Flame Quartz Ring+1
+40070002 Flame Quartz Ring+2
+40070003 Flame Quartz Ring+3
+40080000 Thunder Quartz Ring
+40080001 Thunder Quartz Ring+1
+40080002 Thunder Quartz Ring+2
+40080003 Thunder Quartz Ring+3
+40090000 Dark Quartz Ring
+40090001 Dark Quartz Ring+1
+40090002 Dark Quartz Ring+2
+40090003 Dark Quartz Ring+3
+40100000 Poisonbite Ring
+40100001 Poisonbite Ring+1
+40110000 Bloodbite Ring
+40110001 Bloodbite Ring+1
+40120000 Bracing Knuckle Ring
+40120001 Bracing Knuckle Ring+1
+40120002 Bracing Knuckle Ring+2
+40130000 Cursebite Ring
+40135000 Ash Knuckle Ring
+40140000 Dispelling Ring
+40140001 Dispelling Ring+1
+40150000 Ring of Resistance
+40150001 Ring of Resistance+1
+40160000 Ring of Blades
+40160001 Ring of Blades+1
+40160002 Ring of Blades+2
+40210000 Ring of Knowledge
+40220000 Ring of Prayer
+40230000 Stone Ring
+40260000 Red Tearstone Ring
+40280000 Blue Tearstone Ring
+40290000 Ring of Giants
+40290001 Ring of Giants+1
+40290002 Ring of Giants+2
+40295000 Old Leo Ring
+40300000 Ring of Soul Protection
+40310000 Ring of Life Protection
+40320000 Lingering Dragoncrest Ring
+40320001 Lingering Dragoncrest Ring+1
+40320002 Lingering Dragoncrest Ring+2
+40330000 Clear Bluestone Ring
+40330001 Clear Bluestone Ring+1
+40330002 Clear Bluestone Ring+2
+40340000 Northern Ritual Band
+40340001 Northern Ritual Band+1
+40340002 Northern Ritual Band+2
+40350000 Southern Ritual Band
+40350001 Southern Ritual Band+1
+40350002 Southern Ritual Band+2
+40360000 Covetous Gold Serpent Ring
+40360001 Covetous Gold Serpent Ring+1
+40360002 Covetous Gold Serpent Ring+2
+40370000 Covetous Silver Serpent Ring
+40370001 Covetous Silver Serpent Ring+1
+40370002 Covetous Silver Serpent Ring+2
+40390000 Ring of the Evil Eye
+40390001 Ring of the Evil Eye+1
+40390002 Ring of the Evil Eye+2
+40400000 Ring of Restoration
+40410000 Ring of Binding
+40420000 Silvercat Ring
+40430000 Redeye Ring
+40440000 Gower's Ring of Protection
+40450000 Name-engraved Ring
+40460000 Slumbering Dragoncrest Ring
+40470000 Hawk Ring
+40480000 Old Sun Ring
+40500000 Illusory Ring of a Conqueror
+40510000 King's Ring
+40520000 Ring of the Dead
+40530000 Ring of Thorns
+40530001 Ring of Thorns+1
+40530002 Ring of Thorns+2
+40540000 Delicate String
+40550000 White Ring
+40610000 Ring of Whispers
+40620000 Illusory Ring of the Exalted
+40700000 Crest of the Rat
+40710000 Bell Keeper's Seal
+40720000 Guardian's Seal
+40730000 Crest of Blood
+40740000 Blue Seal
+40750000 Abyss Seal
+40760000 Vanquisher's Seal
+40770000 Sun Seal
+40780000 Ancient Dragon Seal
+41000000 Simpleton's Ring
+41010000 Strength Ring
+41020000 Dexterity Ring
+41030000 Ivory Warrior Ring
+41040000 Sorcery Clutch Ring
+41050000 Lightning Clutch Ring
+41060000 Fire Clutch Ring
+41070000 Dark Clutch Ring
+41090000 Baneful Bird Ring
+41100000 Flynn's Ring
+41110000 Ring of the Embedded
+41120000 Ring of the Living
+41130000 Yorgh's Ring
+42000000 Agape Ring
+50600000 Soldier Key
+50610000 Key to King's Passage
+50800000 Bastille Key
+50810000 Iron Key
+50820000 Forgotten Key
+50830000 Brightstone Key
+50840000 Antiquated Key
+50850000 Fang Key
+50860000 House Key
+50870000 Lenigrast's Key
+50880000 Smooth & Silky Stone
+50885000 Small Smooth & Silky Stone
+50890000 Rotunda Lockstone
+50900000 Giant's Kinship
+50910000 Ashen Mist Heart
+50920000 Soul of a Giant
+50930000 Tseldora Den Key
+50940000 Champion's Tablet
+50950000 Ladder Miniature
+50960000 Soul Vessel
+50970000 Undead Lockaway Key
+50990000 Dull Ember
+51000000 Crushed Eye Orb
+51010000 Simpleton's Spice
+51020000 Skeptic's Spice
+51030000 Aldia Key
+52000000 Dragon Talon
+52100000 Heavy Iron Key
+52200000 Frozen Flower
+52300000 Eternal Sanctum Key
+52400000 Tower Key
+52500000 Garrison Ward Key
+52650000 Dragon Stone
+53100000 Scorching Iron Scepter
+53200000 Smelter Wedge
+53300000 Soul of Nadalia- Bride of Ash
+53600000 Eye of the Priestess
+60010000 Lifegem
+60020000 Radiant Lifegem
+60030000 Old Radiant Lifegem
+60035000 Elizabeth Mushroom
+60036000 Dried Root
+60040000 Amber Herb
+60050000 Twilight Herb
+60060000 Wilted Dusk Herb
+60070000 Poison Moss
+60090000 Monastery Charm
+60100000 Dragon Charm
+60105000 Divine Blessing
+60110000 Rouge Water
+60120000 Crimson Water
+60151000 Human Effigy
+60155000 Estus Flask
+60155010 Estus Flask
+60155020 Estus Flask
+60155030 Estus Flask
+60160000 Small Blue Burr
+60170000 Small Yellow Burr
+60180000 Small Orange Burr
+60190000 Dark Troches
+60200000 Common Fruit
+60210000 Red Leech Troches
+60230000 Triclops Snake Troches
+60235000 Old Growth Balm
+60236000 Vine Balm
+60237000 Blackweed Balm
+60238000 Goldenfruit Balm
+60239000 Brightbug
+60240000 Aromatic Ooze
+60250000 Gold Pine Resin
+60260000 Charcoal Pine Resin
+60270000 Dark Pine Resin
+60280000 Rotten Pine Resin
+60290000 Bleeding Serum
+60310000 Green Blossom
+60320000 Rusted Coin
+60350000 Homeward Bone
+60355000 Aged Feather
+60360000 Darksign
+60370000 Silver Talisman
+60375000 UNKNOWN
+60405000 Dragon Head Stone
+60405010 Dragon Head Stone
+60406000 Dragon Torso Stone
+60406010 Dragon Torso Stone
+60410000 Repair Powder
+60420000 Torch
+60430000 Flame Butterfly
+60450000 Prism Stone
+60470000 Hello Carving
+60480000 Thank You Carving
+60490000 I'm Sorry Carving
+60500000 Very Good! Carving
+60510000 Rubbish
+60511000 Petrified Something
+60525000 Estus Flask Shard
+60526000 Sublime Bone Dust
+60527000 Bonfire Ascetic
+60530000 Alluring Skull
+60531000 Lloyd's Talisman
+60536000 Pharros' Lockstone
+60537000 Fragrant Branch of Yore
+60538000 Fire Seed
+60540000 Throwing Knife
+60550000 Witching Urn
+60560000 Lightning Urn
+60570000 Firebomb
+60575000 Black Firebomb
+60580000 Hexing Urn
+60590000 Poison Throwing Knife
+60595000 Dung Pie
+60600000 Lacerating Knife
+60610000 Corrosive Urn
+60620000 Holy Water Urn
+60625000 Fading Soul
+60630000 Soul of a Lost Undead
+60640000 Large Soul of a Lost Undead
+60650000 Soul of a Nameless Soldier
+60660000 Large Soul of a Nameless Soldier
+60670000 Soul of a Proud Knight
+60680000 Large Soul of a Proud Knight
+60690000 Soul of a Brave Warrior
+60700000 Large Soul of a Brave Warrior
+60710000 Soul of a Hero
+60720000 Soul of a Great Hero
+60760000 Wood Arrow
+60770000 Iron Arrow
+60780000 Magic Arrow
+60790000 Lightning Arrow
+60800000 Fire Arrow
+60810000 Dark Arrow
+60820000 Poison Arrow
+60830000 Lacerating Arrow
+60850000 Iron Greatarrow
+60870000 Lightning Greatarrow
+60880000 Fire Greatarrow
+60900000 Destructive Greatarrow
+60910000 Wood Bolt
+60920000 Heavy Bolt
+60930000 Magic Bolt
+60940000 Lightning Bolt
+60950000 Fire Bolt
+60960000 Dark Bolt
+60970000 Titanite Shard
+60975000 Large Titanite Shard
+60980000 Titanite Chunk
+60990000 Titanite Slab
+61000000 Twinkling Titanite
+61030000 Petrified Dragon Bone
+61060000 Faintstone
+61070000 Boltstone
+61080000 Firedrake Stone
+61090000 Darknight Stone
+61100000 Poison Stone
+61110000 Bleed Stone
+61130000 Raw Stone
+61140000 Magic Stone
+61150000 Old Mundane Stone
+61160000 Palestone
+62000000 Dried Fingers
+62020000 Bone of Order
+62030000 White Sign Soapstone
+62040000 Small White Sign Soapstone
+62045000 Red Sign Soapstone
+62050000 Cracked Blue Eye Orb
+62060000 Cracked Red Eye Orb
+62070000 Dragon Eye
+62100000 Token of Fidelity
+62110000 Token of Spite
+62120000 Sunlight Medal
+62130000 Dragon Scale
+62140000 Rat Tail
+62150000 Awestone
+62160000 Black Separation Crystal
+62170000 Seed of a Tree of Giants
+62190000 Petrified Egg
+63000000 "Point" Gesture
+63001000 "I won't bite" Gesture
+63003000 "Bow" Gesture
+63004000 "Welcome" Gesture
+63005000 "Duel bow" Gesture
+63006000 "Wave" Gesture
+63007000 "Pumped up" Gesture
+63008000 "Joy" Gesture
+63009000 "Warcry" Gesture
+63010000 "Warmup" Gesture
+63011000 "Hurrah!" Gesture
+63012000 "Righty-ho!" Gesture
+63013000 "No way" Gesture
+63014000 "This one's me" Gesture
+63015000 "Have mercy!" Gesture
+63016000 "Prostration" Gesture
+63017000 "Decapitate" Gesture
+63018000 "Fist pump" Gesture
+63019000 "Mock" Gesture
+63021000 "Praise the Sun" Gesture
+64000000 Soul of the Pursuer
+64010000 Soul of the Last Giant
+64020000 Dragonrider Soul
+64030000 Old Dragonslayer Soul
+64040000 Flexile Sentry Soul
+64050000 Ruin Sentinel Soul
+64060000 Soul of the Lost Sinner
+64070000 Executioner's Chariot Soul
+64080000 Skeleton Lord's Soul
+64090000 Covetous Demon Soul
+64100000 Mytha- the Baneful Queen Soul
+64110000 Smelter Demon Soul
+64120000 Old Iron King Soul
+64130000 Royal Rat Vanguard Soul
+64140000 Soul of the Rotten
+64150000 Scorpioness Najka Soul
+64160000 Royal Rat Authority Soul
+64170000 Soul of the Duke's Dear Freja
+64180000 Looking Glass Knight Soul
+64190000 Demon of Song Soul
+64200000 Soul of Velstadt
+64210000 Soul of the King
+64220000 Guardian Dragon Soul
+64230000 Ancient Dragon Soul
+64240000 Giant Lord Soul
+64250000 Soul of Nashandra
+64260000 Throne Defender Soul
+64270000 Throne Watcher Soul
+64280000 Darklurker Soul
+64290000 Belfry Gargoyle Soul
+64300000 Old Witch Soul
+64310000 Old King Soul
+64320000 Old Dead One Soul
+64330000 Old Paledrake Soul
+64500000 Soul of Sinh- the Slumbering Dragon
+64510000 Soul of the Fume Knight
+64520000 Soul of Aava- the King's Pet
+64530000 Soul of Elana- Squalid Queen
+64540000 Soul of Nadalia- Bride of Ash
+64550000 Soul of Alsanna- Silent Oracle
+64560000 Soul of Sir Alonne
+64580000 Soul of the Ivory King
+64590000 Soul of Zallen- the King's Pet
+64600000 Loyce Soul
+64610000 Soul of Lud- the King's Pet
+65240000 UNKNOWN
+65250000 UNKNOWN
+65260000 UNKNOWN
+65270000 UNKNOWN
+65280000 UNKNOWN
+65290000 UNKNOWN
+900008182 UNKNOWN
+900008183 UNKNOWN

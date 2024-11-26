@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <abrasedTextureId AltName="Abrased Texture ID" Wiki="-1 is default" />
+    <abrasedTextureCoverageFactor AltName="Abrased Texture: Coverage Factor" Wiki="The amount of abrased texture to show on parts." />
+    <mainRustTextureCoverageFactor AltName="Main Rust Texture: Coverage Factor" Wiki="The amount of rust to show on metal parts (excluding trim details)." />
+    <trimRustTextureCoverageFactor AltName="Trim Rust Texture: Coverage Factor" Wiki="The amount of rust to show on trim detail metal parts." />
+    
+    <abrasedTextureBrightnessFactor AltName="Abrased Texture: Brightness Factor" Wiki="0 is bright, higher values are darker" />
+    <mainRustTextureBrightnessFactor AltName="Main Rust Texture: Brightness Factor" Wiki="0 is bright, higher values are darker" />
+    <trimRustTextureBrightnessFactor AltName="Trim Rust Texture: Brightness Factor" Wiki="0 is bright, higher values are darker" />
+    
+    <endPadding Padding="" />
+  </Field>
+  <Self Wiki="Defines the Weathering options for Armored Cores.\n\nRow ID links the Preset to the icon texture in SB_Weathering.dds and SB_Weathering.layout\n\nRow ID + 210801 links the Preset to the FMG name it uses in the menu."/>
+</PARAMMETA>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>NETWORK_AREA_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 LimitationTime0" />
+    <Field Def="f32 LimitationTime1" />
+    <Field Def="f32 LimitationTime2" />
+    <Field Def="dummy8 pad1[12]" />
+    <Field Def="u8 enableBloodstain:1 = 1" />
+    <Field Def="u8 enableBloodMessage:1 = 1" />
+    <Field Def="u8 enableGhost:1 = 1" />
+    <Field Def="u8 enableMultiPlay:1 = 1" />
+    <Field Def="u8 enableRingSearch:1 = 1" />
+    <Field Def="u8 enableBreakInSearch:1 = 1" />
+    <Field Def="u8 unkb4:1 = 1" />
+    <Field Def="u8 unkb5:1 = 1" />
+    <Field Def="dummy8 pad2[3]" />
+  </Fields>
+</PARAMDEF>

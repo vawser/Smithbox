@@ -1,0 +1,131 @@
+0 test
+1 [Test] Blood paste
+2 [Test] Burn marks
+3 [Test] Cube Test
+100 Bloody front Enemy - map
+101 Blood splatter left enemy - map
+102 Bloody Right Enemy - map
+150 Death Hematemesis Map
+200 Blood front character
+201 Blood paste left character
+202 Blood paste right character
+210 Blood throwing character
+211 Blood Parry Throw Enemy -PC
+212 Blood Parry Throw Enemy -PC
+300 Blood stain front map
+301 Blood stain left map
+302 Blood stain right map
+310 Blood Throwing Map
+311 Blood Parry Throw PC- map
+312 Blood Parry Throw PC- map
+313 Blood Parry Throw PC- map
+350 Bloody Parishioner Map
+351 Bloody Parishioner Map
+352 Bloody Parishioner Map
+353 Bloody Parishioner Map
+354 Bloody Parishioner Map
+355 Bloody Parishioner Map
+356 Bloody Parishioner Map
+357 Bloody Parishioner Map
+358 Bloody Parishioner Map
+359 Bloody Parishioner Map
+360 Bloody Parishioner _ face 1 Character - map
+361 Bloody Parishioner _ face 2 Character - map
+363 Bloody Parishioner _ Right arm character - map
+367 Bloody Parishioner _ Left Arm Character -map
+368 Bloody Parishioner _ Right knee character - map
+369 Bloody Parishioner _ Left knee character - map
+400 Covered in oil
+500 Cracks
+501 Cracks
+502 Cracks
+503 Cracks
+504 Cracks
+505 Cracks
+510 Cracks
+511 Cracks
+512 Cracks
+513 Cracks
+514 Cracks
+520 Cracks
+521 Cracks
+522 Cracks
+523 Cracks
+524 Cracks
+530 Crack Proximity 2 Attack
+531 Crack Proximity 2 Attack
+532 Crack Proximity 2 Attack
+533 Crack Proximity 2 Attack
+534 Crack Proximity 2 Attack
+540 Crack Proximity 2 Attack
+541 Crack Proximity 2 Attack
+542 Crack Proximity 2 Attack
+543 Crack Proximity 2 Attack
+544 Crack Proximity 2 Attack
+600 Burn marks Medium
+601 Scorch marks Enemy -PC Medium
+602 Small burn marks
+603 Scorch marks Enemy -PC small
+700 POM test
+800 Child of the Blood Moon (Right Arm) PC- map
+801 Child of the Blood Moon (left arm) PC- map
+802 Child of the Bloody Moon (right) 0 ) PC- map
+803 Child of the Bloody Moon (right 1 ) PC- map
+804 Child of the Blood Moon (rear 0 ) PC- map
+805 Child of the Blood Moon (rear 1 ) PC- map
+806 Child of the Bloody Moon (left) 0 ) PC- map
+807 Child of the Blood Moon (left) 1 ) PC- map
+808 Child of the Bloody Moon (Right Foot 0 ) PC- map
+809 Child of the Bloody Moon (Left leg 0 ) PC- map
+810 Child of the Blood Moon (Head 0 ) PC- map
+811 Child of the Blood Moon (Front Destruction 0 ) PC- map
+812 Child of the Blood Moon (Front Destruction 1 ) PC- map
+813 Child of the Blood Moon (Right Destroy 0 ) PC- map
+814 Child of the Blood Moon (Right Destroy 1 ) PC- map
+815 Child of the Blood Moon (Left Destroy 0 ) PC- map
+816 Child of the Blood Moon (Left Destroy 1 ) PC- map
+817 Child of the Blood Moon (Head Destroyed) PC- map
+911 The failed evil god (destruction of the pillars) 0) PC- map
+912 The failed evil god (destruction of the pillars) 1 ) PC- map
+913 The failed evil god (destruction of the pillars) 2 ) PC- map
+914 The Evil God of Failure (Right Destruction 0 ) PC- map
+915 The Evil God of Failure (Right Destruction 1 ) PC- map
+916 The Evil God of Failure (Right Destruction 2 ) PC- map
+917 The Evil God of Failure (Left Destruction 0 ) PC- map
+918 The Evil God of Failure (Left Destruction 1 ) PC- map
+919 The Evil God of Failure (Left Destruction 2 ) PC- map
+920 The failed evil god (head destroyed) 0 ) PC- map
+921 The failed evil god (head destroyed) 1 ) PC- map
+922 The failed evil god (head destroyed) 2) PC- map
+1000 Parry Throw _ Torso 1_ Blood Map
+1001 Parry Throw _ Torso 2_ Blood Map
+1002 Parry Throw _ Torso 3_ Blood Map
+1003 Parry Throw _ Torso 4_ Blood Character
+1004 Parry Throw _ face 1_ Blood Character - map
+1005 Back Throw ( 1002 (Flip version) Map
+1010 Parry Throw _ Torso 1_ Mucus Map
+1011 Parry Throw _ Torso 2_ Mucus Map
+1012 Parry Throw _ Torso 3_ Mucus Map
+1013 Parry Throw _ Torso 4_ Mucus character
+1014 Parry Throw _ face 1_ Mucus character - map
+1015 Back Throw ( 1012 (Flip version) Map
+1100 Licking blood (small) _ Blood bag rupture _ abovePC- map
+1101 Licking blood (small) _ Blood bag rupture _ under PC- map
+1102 Licking blood (medium) _ Blood bag rupture _ above PC- map
+1103 Licking blood (medium) _ Blood bag rupture _ under PC- map
+1104 Licking blood (large) _ Blood bag rupture _ above PC- map
+1105 Licking blood (large) _ Blood bag rupture _ under PC- map
+1106 Blood licking (extra large) _ Blood bag rupture _ above PC- map
+1107 Blood licking (extra large) _ Blood bag rupture _ under PC- map
+1200 City of Sacrifice _ Blood splash boiling upward character
+1201 City of Sacrifice _ Blood splash boiling downwards Character map
+1202 City of Sacrifice _ Blood splash boiling downwards ( large ) map
+1300 Evil God _Arm Pulling Character
+1301 Evil God _Arm Pulling Character
+1400 Woman Hunter _ Heat Up (center) _ map
+1401 Woman Hunter _ Heat Up (Front) _ map
+1402 Woman Hunter _ Heat Up (Left) _ map
+1403 Woman Hunter _ Heat Up (After) _ map
+1404 Woman Hunter _ Heat Up (Right) _ map
+1405 Woman Hunter _ Attack (front) _ map
+9999 test

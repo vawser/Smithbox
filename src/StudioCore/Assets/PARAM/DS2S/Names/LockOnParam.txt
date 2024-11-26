@@ -1,0 +1,54 @@
+0 Lock-on -- ロックオン
+1010 Base - Very Short -- ベース-極短
+1020 Base - Short -- ベース-短
+1030 Base - Medium -- ベース-中
+1040 Base-Length -- ベース-長
+1050 Base - Extreme Length -- ベース-極長
+9900 Base value -- ベース値
+9905 Previous version -- 旧バージョン
+9910 Light and dark Lv. 0 -- 明暗Ｌｖ．０
+9920 Light and dark Lv. 1 -- 明暗Ｌｖ．１
+9930 Light and dark Lv. 2 -- 明暗Ｌｖ．２
+9940 Light and dark Lv. 3 -- 明暗Ｌｖ．３
+9950 Light and dark Lv. 4 -- 明暗Ｌｖ．４
+9960 For bosses -- ボス用
+9961 For bosses - forgotten sinners - 0 lights -- ボス用-忘れられた罪人-ライト０個
+9962 For bosses - forgotten sinners - one light -- ボス用-忘れられた罪人-ライト１個
+9963 For Bosses - Old Dragon -- ボス用-古龍
+9964 For Bosses - Wyvern -- ボス用-ワイバーン
+9965 For bosses - super oversized -- ボス用-超特大
+9966 For the Boss - Warrior in the Mirror -- ボス用-鏡の中の戦士
+9967 For Bosses - Agaduran Stand -- ボス用-アガドゥランのスタンド
+106000 m10_14 Gerdra Zakos 1 -- m10_14　ジェルドラ・ザコボス戦１
+154000 m10_23 Skeleton Aristocracy -- m10_23　スケルトン貴族
+212000 m10_15 Wyburn -- m10_15　ワイバーン
+223500 m10_33 Giant Rat -- m10_33　巨大ネズミ
+226100 m10_34 Dog Mouse: Color (2) -- m10_34　犬ネズミ：色②
+303300 m10_18 Double-sided warrior: Snake head -- m10_18　両面戦士：ヘビ頭
+305000 m10_19 Daemon Knight -- m10_19　デーモンナイト
+309600 m10_10 New Giant Senior Soldier (Deceased) -- m10_10　新・巨人上級兵士（亡者）
+309610 m20_21 Heavy Cavalry: Soldiers Only 2 Bodies -- m20_21　重騎馬兵：兵士のみ　2体戦
+309700 m20_10 New Giant Senior Soldier (Live) -- m20_10　新・巨人上級兵士（生者）
+318000 m10_10 Bay grant -- m10_10　ベイグラント
+324000 m10_16 Against Gargoil -- m10_16　ガーゴイル戦
+325000 m10_16 Warrior in the Mirror -- m10_16　鏡の中の戦士
+326000 m10_25 Butcher -- m10_25　ブッチャー
+332000 m20_21 Queen Knight A -- m20_21　王妃の騎士A
+333000 m20_24 Queen Knight B -- m20_24　王妃の騎士B
+500000 m10_17 Javazahat -- m10_17　ジャバザハット
+501000 m10_17- N. Sa. -- m10_17　ナーガ
+503000 m10_32 Manscorpion ♀ -- m10_32　マンスコーピオン♀
+504000 m20_21 Mirror Night -- m20_21　ミラーナイト
+506100 m40_03 Agaduran Stand -- m40_03　アガドゥランのスタンド
+514600 m20_24 The Old King -- m20_24　年老いた王
+600000 m10_27 The Old Dragon -- m10_27　古の龍
+602000 m20_11 Beautiful Frog -- m20_11　美声カエル
+603000 m10_14 The Spider Queen- the same for the first half. -- m10_14　蜘蛛の女王　前半戦も同じ
+607000 m10_19 Iron Daemon -- m10_19　熔鉄デーモン
+611000 m10_31 Heavy Cavalry: Soldiers Only -- m10_31　重騎馬兵：兵士のみ
+619100 m10_23 Silver Chariot -- m10_23　シルバーチャリオット
+625000 m10_31 Ornstein -- m10_31　オーンスタイン
+626000 m10_16 Forgotten Sinners - 0 Lights -- m10_16　忘れられた罪人-ライト０個
+626001 m10_16 Forgotten Sinners - One Light -- m10_16　忘れられた罪人-ライト１個
+626002 m10_16 Forgotten Sinners - Two Lights -- m10_16　忘れられた罪人-ライト２個
+627000 m20_21 Queen's Armor -- m20_21　王妃の鎧形態

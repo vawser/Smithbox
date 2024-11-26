@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>PLAY_REGION_PARAM_ST</ParamType>
+  <DataVersion>9</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1000000</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1000001</SortID>
+    </Field>
+    <Field Def="s32 matchAreaId">
+      <DisplayName>簡易マッチエリアID</DisplayName>
+      <Description>簡易マッチエリアID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u32 multiPlayStartLimitEventFlagId">
+      <DisplayName>マルチプレイ開始制限イベントフラグID</DisplayName>
+      <Description>マルチプレイ開始制限イベントフラグID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1040</SortID>
+    </Field>
+    <Field Def="f32 otherDisableDistance">
+      <DisplayName>その他霊侵入不可能距離</DisplayName>
+      <Description>その他霊侵入不可能距離。ホスト位置から「その他霊侵入不可能距離」～「その他霊侵入範囲上限」以内の侵入ポイントを対象に侵入位置検索を行う。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u32 pcPositionSaveLimitEventFlagId">
+      <DisplayName>PC位置セーブ制限イベントフラグID</DisplayName>
+      <Description>PC位置セーブ制限イベントフラグID　（フラグON：PC位置セーブ有効　フラグOFF：PC位置セーブ無効　0：PC位置セーブ常に有効）</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u32 bossAreaId">
+      <DisplayName>ボスエリアID</DisplayName>
+      <Description>このIDが同じものを設定された領域同士は、同一のボスエリアとして扱う。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1030</SortID>
+    </Field>
+    <Field Def="s16 cultNpcWhiteGhostEntityId_byFree = -1">
+      <DisplayName>NPC白霊召喚儀式の召還NPCのエンティティIDの自由枠ID</DisplayName>
+      <Description>NPC白霊召喚儀式の召還NPCのエンティティIDとして使われる自由枠IDの先頭</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="u8 bMapGuradianRegion">
+      <DisplayName>マップ守護領域か？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>マップ守護領域の枠の増減にするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1130</SortID>
+    </Field>
+    <Field Def="u8 bYellowCostumeRegion:1">
+      <DisplayName>黄衣の翁サイン領域か？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>黄衣の翁サイン領域か？</Description>
+      <Maximum>1</Maximum>
+      <SortID>1140</SortID>
+    </Field>
+    <Field Def="u8 multiPlayStartLimitEventFlagId_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「マルチプレイ開始制限イベントフラグID」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1041</SortID>
+    </Field>
+    <Field Def="u8 breakInLimitEventFlagId_1_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「侵入制限イベントフラグID1」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1051</SortID>
+    </Field>
+    <Field Def="u8 whiteSignLimitEventFlagId_1_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「白サイン制限イベントフラグID1」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1061</SortID>
+    </Field>
+    <Field Def="u8 redSignLimitEventFlagId_1_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「赤サイン制限イベントフラグID1」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1071</SortID>
+    </Field>
+    <Field Def="u8 breakInLimitEventFlagId_2_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「侵入制限イベントフラグID2」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1053</SortID>
+    </Field>
+    <Field Def="u8 breakInLimitEventFlagId_3_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「侵入制限イベントフラグID3」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1055</SortID>
+    </Field>
+    <Field Def="u8 whiteSignLimitEventFlagId_2_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「白サイン制限イベントフラグID2」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1063</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_1">
+      <DisplayName>ワープアイテム許可篝火ID1</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID1</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_2">
+      <DisplayName>ワープアイテム許可篝火ID2</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID2</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4010</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_3">
+      <DisplayName>ワープアイテム許可篝火ID3</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID3</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4020</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_4">
+      <DisplayName>ワープアイテム許可篝火ID4</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID4</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4030</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_5">
+      <DisplayName>ワープアイテム許可篝火ID5</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID5</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4040</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_1">
+      <DisplayName>ワープアイテム禁止イベントフラグID1</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID1。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_2">
+      <DisplayName>ワープアイテム禁止イベントフラグID2</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID2。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4110</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_3">
+      <DisplayName>ワープアイテム禁止イベントフラグID3</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID3。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4120</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_4">
+      <DisplayName>ワープアイテム禁止イベントフラグID4</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID4。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4130</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_5">
+      <DisplayName>ワープアイテム禁止イベントフラグID5</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID5。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>4140</SortID>
+    </Field>
+    <Field Def="u8 enableBloodstain:1 = 1">
+      <DisplayName>血痕・死亡幻影有効</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>血痕・死亡幻影有効</Description>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 enableBloodMessage:1 = 1">
+      <DisplayName>血文字有効</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>血文字有効</Description>
+      <Maximum>1</Maximum>
+      <SortID>5010</SortID>
+    </Field>
+    <Field Def="u8 enableGhost:1 = 1">
+      <DisplayName>幻影有効</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>幻影有効</Description>
+      <Maximum>1</Maximum>
+      <SortID>5020</SortID>
+    </Field>
+    <Field Def="u8 dispMask00:1">
+      <DisplayName>地図表示用_表示設定M00</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>地図M00で表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="u8 dispMask01:1">
+      <DisplayName>地図表示用_表示設定M01</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>地図M01で表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>5910</SortID>
+    </Field>
+    <Field Def="u8 whiteSignLimitEventFlagId_3_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「白サイン制限イベントフラグID3」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1065</SortID>
+    </Field>
+    <Field Def="u8 redSignLimitEventFlagId_2_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「赤サイン制限イベントフラグID2」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1073</SortID>
+    </Field>
+    <Field Def="u8 redSignLimitEventFlagId_3_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>「赤サイン制限イベントフラグID3」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1075</SortID>
+    </Field>
+    <Field Def="u8 isAutoIntrudePoint:1">
+      <DisplayName>侵入ポイント自動生成か</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>侵入ポイント自動生成か。○にした場合は自動生成された侵入ポイント用のロジックで侵入位置を検索。</Description>
+      <Maximum>1</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    
+    <Field Def="dummy8 pad1_old:7" RemovedVersion="11210015" />
+    
+    <Field Def="u8 unknown_0x45_1:1" FirstVersion="11210015" />
+    <Field Def="dummy8 pad1:6" FirstVersion="11210015" >
+      <SortID>1000002</SortID>
+    </Field>
+    
+    <Field Def="dummy8 pad2[2]">
+      <SortID>1000003</SortID>
+    </Field>
+    <Field Def="u32 multiPlayHASHostLimitEventFlagId">
+      <DisplayName>黄衣の翁ホスト制限イベントフラグ</DisplayName>
+      <Description>黄衣の翁ホスト制限イベントフラグ：このフラグがONになると黄衣の翁のホストとしてのマルチプレイが禁止される。ブロッククリアフラグを入れる想定。0：制限しない</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="f32 otherMaxDistance = 1000">
+      <DisplayName>その他霊侵入範囲上限</DisplayName>
+      <Description>その他霊侵入範囲上限。ホスト位置から「その他霊侵入不可能距離」～「その他霊侵入範囲上限」以内の侵入ポイントを対象に侵入位置検索を行う。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2010</SortID>
+    </Field>
+    <Field Def="u32 signPuddleOpenEventFlagId">
+      <DisplayName>サイン溜まり解放イベントフラグID</DisplayName>
+      <Description>サイン溜まり解放イベントフラグID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="u8 areaNo">
+      <DisplayName>地図表示用_エリア番号（mXX_00_00_00）</DisplayName>
+      <Description>エリア番号（mXX_00_00_00）。地図メニューでの表示位置を指定するためのデータ</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="u8 gridXNo">
+      <DisplayName>地図表示用_グリッドX番号（m00_XX_00_00）</DisplayName>
+      <Description>グリッドX番号（m00_XX_00_00）。地図メニューでの表示位置を指定するためのデータ</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>6010</SortID>
+    </Field>
+    <Field Def="u8 gridZNo">
+      <DisplayName>地図表示用_グリッドZ番号（m00_00_XX_00）</DisplayName>
+      <Description>グリッドZ番号（m00_00_XX_00）。地図メニューでの表示位置を指定するためのデータ</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>6020</SortID>
+    </Field>
+    <Field Def="dummy8 pad4[1]">
+      <SortID>1000004</SortID>
+    </Field>
+    <Field Def="f32 posX">
+      <DisplayName>地図表示用_X座標</DisplayName>
+      <Description>X座標（指定したマップからの相対座標）。地図メニューでの表示位置を指定するためのデータ</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="f32 posY">
+      <DisplayName>地図表示用_Y座標</DisplayName>
+      <Description>Y座標（指定したマップからの相対座標）。地図メニューでの表示位置を指定するためのデータ。実際には使われていないがXYZ一揃えにしておく</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>6110</SortID>
+    </Field>
+    <Field Def="f32 posZ">
+      <DisplayName>地図表示用_Z座標</DisplayName>
+      <Description>Z座標（指定したマップからの相対座標）。地図メニューでの表示位置を指定するためのデータ</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>6120</SortID>
+    </Field>
+    <Field Def="u32 breakInLimitEventFlagId_1">
+      <DisplayName>侵入制限イベントフラグID1</DisplayName>
+      <Description>侵入制限イベントフラグID1</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1050</SortID>
+    </Field>
+    <Field Def="u32 whiteSignLimitEventFlagId_1">
+      <DisplayName>白サイン制限イベントフラグID1</DisplayName>
+      <Description>白サイン制限イベントフラグID1</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1060</SortID>
+    </Field>
+    <Field Def="u32 matchAreaSignCreateLimitEventFlagId">
+      <DisplayName>サイン溜まり登録制限イベントフラグID</DisplayName>
+      <Description>サイン溜まり登録制限イベントフラグID　（フラグON：サイン溜まり登録を許可　フラグOFF：サイン溜まり登録を禁止　0：サイン溜まり登録を常に許可）</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1020</SortID>
+    </Field>
+    <Field Def="u32 signAimId_1">
+      <DisplayName>マルチ目的ID01</DisplayName>
+      <Description>目的設定時にリストに表示するマルチ目的ID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="u32 signAimId_2">
+      <DisplayName>マルチ目的ID02</DisplayName>
+      <Description>目的設定時にリストに表示するマルチ目的ID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="u32 signAimId_3">
+      <DisplayName>マルチ目的ID03</DisplayName>
+      <Description>目的設定時にリストに表示するマルチ目的ID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="u32 signAimId_4">
+      <DisplayName>マルチ目的ID04</DisplayName>
+      <Description>目的設定時にリストに表示するマルチ目的ID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="u32 signAimId_5">
+      <DisplayName>マルチ目的ID05</DisplayName>
+      <Description>目的設定時にリストに表示するマルチ目的ID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="u32 signAimId_6">
+      <DisplayName>マルチ目的ID06</DisplayName>
+      <Description>目的設定時にリストに表示するマルチ目的ID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="u32 signAimId_7">
+      <DisplayName>マルチ目的ID07</DisplayName>
+      <Description>目的設定時にリストに表示するマルチ目的ID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="u32 signAimId_8">
+      <DisplayName>マルチ目的ID08</DisplayName>
+      <Description>目的設定時にリストに表示するマルチ目的ID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="u32 redSignLimitEventFlagId_1">
+      <DisplayName>赤サイン制限イベントフラグID1</DisplayName>
+      <Description>赤サイン制限イベントフラグID1</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1070</SortID>
+    </Field>
+    <Field Def="u32 breakInLimitEventFlagId_2">
+      <DisplayName>侵入制限イベントフラグID2</DisplayName>
+      <Description>侵入制限イベントフラグID2</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1052</SortID>
+    </Field>
+    <Field Def="u32 breakInLimitEventFlagId_3">
+      <DisplayName>侵入制限イベントフラグID3</DisplayName>
+      <Description>侵入制限イベントフラグID3</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1054</SortID>
+    </Field>
+    <Field Def="u32 whiteSignLimitEventFlagId_2">
+      <DisplayName>白サイン制限イベントフラグID2</DisplayName>
+      <Description>白サイン制限イベントフラグID2</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1062</SortID>
+    </Field>
+    <Field Def="u32 whiteSignLimitEventFlagId_3">
+      <DisplayName>白サイン制限イベントフラグID3</DisplayName>
+      <Description>白サイン制限イベントフラグID3</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1064</SortID>
+    </Field>
+    <Field Def="u32 redSignLimitEventFlagId_2">
+      <DisplayName>赤サイン制限イベントフラグID2</DisplayName>
+      <Description>赤サイン制限イベントフラグID2</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1072</SortID>
+    </Field>
+    <Field Def="u32 redSignLimitEventFlagId_3">
+      <DisplayName>赤サイン制限イベントフラグID3</DisplayName>
+      <Description>赤サイン制限イベントフラグID3</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1074</SortID>
+    </Field>
+    <Field Def="u32 bossId_1">
+      <DisplayName>領域内ボスID01</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2110</SortID>
+    </Field>
+    <Field Def="u32 bossId_2">
+      <DisplayName>領域内ボスID02</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2111</SortID>
+    </Field>
+    <Field Def="u32 bossId_3">
+      <DisplayName>領域内ボスID03</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2112</SortID>
+    </Field>
+    <Field Def="u32 bossId_4">
+      <DisplayName>領域内ボスID04</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2113</SortID>
+    </Field>
+    <Field Def="u32 bossId_5">
+      <DisplayName>領域内ボスID05</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2114</SortID>
+    </Field>
+    <Field Def="u32 bossId_6">
+      <DisplayName>領域内ボスID06</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2115</SortID>
+    </Field>
+    <Field Def="u32 bossId_7">
+      <DisplayName>領域内ボスID07</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2116</SortID>
+    </Field>
+    <Field Def="u32 bossId_8">
+      <DisplayName>領域内ボスID08</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2117</SortID>
+    </Field>
+    <Field Def="u32 bossId_9">
+      <DisplayName>領域内ボスID09</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2118</SortID>
+    </Field>
+    <Field Def="u32 bossId_10">
+      <DisplayName>領域内ボスID10</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2119</SortID>
+    </Field>
+    <Field Def="u32 bossId_11">
+      <DisplayName>領域内ボスID11</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2120</SortID>
+    </Field>
+    <Field Def="u32 bossId_12">
+      <DisplayName>領域内ボスID12</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2121</SortID>
+    </Field>
+    <Field Def="u32 bossId_13">
+      <DisplayName>領域内ボスID13</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2122</SortID>
+    </Field>
+    <Field Def="u32 bossId_14">
+      <DisplayName>領域内ボスID14</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2123</SortID>
+    </Field>
+    <Field Def="u32 bossId_15">
+      <DisplayName>領域内ボスID15</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2124</SortID>
+    </Field>
+    <Field Def="u32 bossId_16">
+      <DisplayName>領域内ボスID16</DisplayName>
+      <Description>領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2125</SortID>
+    </Field>
+    <Field Def="u32 mapMenuUnlockEventId">
+      <DisplayName>地図表示用_イベントフラグID</DisplayName>
+      <Description>地図表示用_イベントフラグID(0:常に表示)。このイベントフラグが立っているときだけ、マップメニューに賑わい表示される</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>5800</SortID>
+    </Field>
+    <Field Def="dummy8 pad5[32]">
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>1000005</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

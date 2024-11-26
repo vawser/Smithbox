@@ -1,0 +1,17 @@
+1 Basic color -- 基本色
+2 Used to change the color of gray characters -- グレー・文字の色変えに使用
+100 Title text -- タイトルテキスト
+101 Content (description text) -- 内容（説明テキスト）
+10000 Without -- なし
+10001 Sun Warrior -- 太陽の戦士
+10002 Guardian Knight -- 守護の騎士
+10003 The Dark Spirit of Blood -- 血の闇霊
+10004 Seikyo -- 青教
+10005 The King of Rats -- ネズミの王
+10006 Bell Guard -- 鐘守
+10007 The Road to the Old Dragon -- 古竜への道
+10008 Strong -- 強者
+10009 Pilgrimage to the Abyss -- 深淵への巡礼
+20000 Without -- なし
+20001 Red -- 赤
+20002 Blue -- 青

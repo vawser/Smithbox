@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENU_INPUTGESTURE_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 key = -1">
+      <DisplayName>メイン</DisplayName>
+      <Enum>CS_MENU_KEY_forParamDef</Enum>
+      <Description>メイン入力判定キー</Description>
+      <Minimum>-1</Minimum>
+      <SortID>1</SortID>
+      <UnkC8>キー割り当て</UnkC8>
+    </Field>
+    <Field Def="s16 shiftInput">
+      <DisplayName>シフト</DisplayName>
+      <Enum>CS_MENU_SHIFTINPUT_TYPE</Enum>
+      <Description>シフト入力判定キー</Description>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <UnkC8>キー割り当て</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserved1[3]">
+      <DisplayName>----</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="u8 enableSimpleGuide">
+      <DisplayName>簡易表示</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>簡易キーガイドに表示するか
+×：詳細キーガイドのみ表示</Description>
+      <Maximum>999</Maximum>
+      <SortID>101</SortID>
+      <UnkC8>キーガイド</UnkC8>
+    </Field>
+    <Field Def="s32 guideTextID">
+      <DisplayName>テキストID</DisplayName>
+      <Description>キーガイドに表示するテキストのID
+-1： 「データ説明」を表示(デバッグ用機能)
+-1以外の負の値：SystemMessageのID</Description>
+      <Minimum>-99999999</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+      <UnkC8>キーガイド</UnkC8>
+    </Field>
+    <Field Def="s32 seID">
+      <DisplayName>SE ID</DisplayName>
+      <Description>入力時に再生するSEのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

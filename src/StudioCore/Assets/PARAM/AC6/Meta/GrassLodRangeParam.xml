@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <LOD0_range AltName="LOD 0 - Distance" Wiki="" />
+    <LOD0_play AltName="LOD 0 - Play" Wiki="" />
+    <LOD1_range AltName="LOD 1 - Distance" Wiki="" />
+    <LOD1_play AltName="LOD 1 - Play" Wiki="" />
+    <LOD2_range AltName="LOD 2 - Distance" Wiki="" />
+    <LOD2_play AltName="LOD 2 - Play" Wiki="" />
+  </Field>
+  <Self />
+</PARAMMETA>

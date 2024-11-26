@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the wet aspects." Row0Dummy="" />
+  <Field>
+    <wet_aspect_id AltName="Wet Aspect ID" Refs="ChrWetAspectParam"/>
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,196 @@
+0 for test
+1 for doing nothing
+500 Hirai Test Knight
+501 Hirai Test Knight 2
+520 NPC player test
+600 Homecoming Test General Soldier_Sword
+601 Homecoming Test General Soldier_Sword (Flame)
+602 Homecoming Test General Soldier_Bow
+603 Homecoming Test Knight_Sword
+103000 Fat Demon Tutorial
+103001 Fat Demon main story
+200000 slave soldier _ sword
+200001 Slave soldier _ sword (exclusive)
+200003 slave trader
+200004 Slave Soldier_Sword (I like Chew Guard)
+200005 Slave Soldier_Sword (Tutorial/Weak)
+200006 Slave soldier _ sword (dedicated guard, no sound response)
+200007 Slave soldier _ sword (prince siege)
+200010 General Soldier_Sword (Tutorial)
+200011 General Soldier_Bow (Tutorial)
+200012 General soldier _ sword (flame)
+200020 Knight_Sword (Tutorial)
+200021 Knight_Sword (Tutorial/Exclusive)
+201000 General soldier _ sword
+201001 General soldier _ sword (flame)
+201002 General Soldier_Bow (Fixed)
+201003 General Soldier _ Bow
+201004 General Soldier _ Sword (Exclusive)
+201005 General soldier _ sword (flame / sound no reaction)
+201006 General Soldier _ Spear
+201007 General soldier _ Ax
+201008 General Soldier_Halvard
+201009 General Soldier _ Spear (Exclusive)
+201010 General soldier _ Ax (dedicated)
+201011 General Soldier_Halvard (Exclusive)
+201012 General Soldier_Bow (Fixed/Standing Only)
+202000 knight _ sword
+202001 Knight _ Sword (Exclusive)
+202002 Knight_Claymore
+202003 Knight _ Spear
+202004 Knight_Claymore (Exclusive)
+202005 Knight_Spear (Exclusive)
+203000 assassin
+207000 captive
+207001 Prisoner (Kamisama believer)
+207002 Captive (prison castle 2)
+207003 Prisoner (stab sword, spear)
+207004 Prisoner (Sword/Poison)
+207500 Captive Ball (Prison Castle 1)
+207501 Captive Ball (Prison Castle 2)
+208000 jailer
+208001 Jailer (no response)
+208002 Jailer (club) Tunnel I don't see the area
+208003 Jailer (club) Tunnel View area 2165
+208004 Jailer (club) Tunnel View area 2166
+208005 Jailer (club) Tunnel View area 2167
+209000 former aristocratic lady
+210000 corrupt human
+210002 Corrupted Human (Spear)
+210003 Corruption Human (Sorcerer)
+210004 Corrupted Human Unclean 2
+210005 Corrupted Human Impure 3
+210100 big rot human
+211000 Scale miner (ice ax)
+211001 Scale Miner (Bag)
+211002 Scale miner (stiletto)
+211003 Scale miner (great sword)
+211004 Scale Miner (Prisoner Henchman)
+211006 Scale Miner (Hammer)
+211007 Scale miner (bare hands)
+211008 Scale miner (attack pickaxe)
+211009 Scale Miner (Rock Throwing Bare Hands)
+211010 Scale Miner (Rock Throwing Bare Hands Part 2)
+211011 Scale Miner (Rock Throwing Bare Hands Part 3)
+211012 Scale Miner (Rock Throwing Bare Hands 4)
+212000 Kagehito
+212001 Kagehito (strong light)
+212002 Kagehito (exclusive)
+213000 Kagejo (Area A 2460)
+213001 Kagejo (Area B 2461)
+301000 military dog
+301001 Military dog modification for tunnels
+303000 hawk
+304000 Chimera
+305000 Gargoyle (Sword) Prison See no realm
+305001 Gargoyle (Bow)
+305094 Gargoyle (Sword) Prison See realm 2265
+305095 Gargoyle (Sword) Prison See realm 2264
+305096 Gargoyle (Sword) Prison See realm 2263
+305097 Gargoyle (Sword) Prison See realm 2262
+305098 Gargoyle (Sword) Prison See realm 2261
+305099 Gargoyle (Sword) Prison See realm 2260
+306000 plague rat
+307000 large slug
+307100 Large slug (light)
+308000 cloudy jellyfish
+309000 large mosquito
+310000 rock earthworm
+310001 Rock worm (lava shower)
+310002 Rock earthworm (non-throwing Ver.)
+311000 crystal lizard
+311001 Crystal lizard (for event)
+311010 Crystal lizard (general purpose)
+312000 magma gecko
+313000 Large bear beetle
+313001 Okutamushi (for events)
+313002 Large bear (for maze)
+313004 feather tardigrade
+313006 Feather tardigrade (for specific positions)
+318000 big blood tick
+400000 unsuccessful
+401000 Wizard (Exclusive)
+401001 Wizard (exclusively slow to react)
+402003 gold skeleton
+402004 Gold Skeleton (Exclusive)
+402100 White skeleton _ sword
+402101 White skeleton _ bow
+402102 White skeleton _ sword (narrow)
+402103 White Skeleton _ Sword (Exclusive)
+402104 White skeleton _ bow (fixed)
+402200 Black skeleton _ dual wielding
+402201 Black Skeleton _ Dual Sword Style (Exclusive)
+403000 octopus man
+405000 flame monster
+500000 Phalanx (Chibi)
+500001 Phalanx (Chibi) For strays
+500100 Phalanx (body)
+501000 king's shield
+502000 King's sword
+503000 storm beast
+503100 Child Ai Boss Battle
+503101 Baby ray single use
+503102 Baby ray single use (high-rise)
+503103 Child ray single use (middle layer)
+503104 Child ray single use (low-rise)
+504000 referee
+506000 Kami-sama
+506001 fake god
+507000 chimera ball
+507100 chimera ball
+508000 Flies
+509000 Leech Demon
+510000 big spider
+511000 ore spirit
+512000 Flying dragon
+513000 Hiryu's descendant
+602000 storm warrior
+604000 Saint Libra
+604100 impure
+605000 Dragon Demon (Tutorial)
+605001 Dragon Demon (Mine Tunnel)
+708000 important person
+710000 beggar
+711000 beggar (female)
+713000 blacksmith (pit)
+713100 blacksmith (stone pillar)
+715000 heroine
+723000 King Lendl
+801000 Ojo 4 Three Musketeers A
+802000 Ojo 4 Three Musketeers B
+803000 Ojo 4 Three Musketeers C
+804000 Old Fort 2 Uru-sama Confined Warrior
+805000 broken heart warrior
+807000 Prince Lendl
+807001 Prince Lendl (Black Ghost)
+808000 Björngurm
+808001 Björn Grum (for fighting flying dragons)
+809000 patch
+810000 Patch (Old Fort)
+811000 Prisoner of Water Prison (Blige)
+814000 Urbain
+815000 half hand
+816000 Gargold Run
+817000 Sage Logan
+818000 Yurt, Lord of Silence
+819000 Lord Villaidel in Black
+819002 Lord Villaidel in Black, Black
+820000 princess knight selenium
+820002 Princess Knight Selene Black
+821000 witch
+822000 old king doran
+823000 sorcerer
+824000 Believers of God Part 1
+825000 Believers of God Part 2
+826000 Believers of God Part 3
+828000 Savvy
+829000 big bag thomas
+830000 Master Satsuki
+831000 Mephistopheles
+832000 Miralda the Condemned
+832002 Condemned Miralda Black
+833000 Prison Castle 3 Older Summoning NPC
+834000 Tunnel 2 Barbarian Warrior Black
+835000 For tutorial wandering ghost
+836000 Prison Castle 1 Warrior in front of the church Black
+837000 unholy 1 black ghost

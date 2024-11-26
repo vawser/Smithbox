@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <luster AltName="Luster" Wiki="Intensity of the reflection" />
+    <reflectiveness AltName="Reflectiveness" Wiki="Reflection factor" />
+    <colorIntensity AltName="Color Intensity" Wiki="Alters the intensity of the base texture color.\n\n0 is black." />
+  </Field>
+  <Self Wiki="Defines the Material options for Armored Cores.\n\nRow ID links the Preset to the icon texture in SB_Material.dds and SB_Material.layout\n\nRow ID + 210900 links the Preset to the FMG name it uses in the menu."/>
+</PARAMMETA>

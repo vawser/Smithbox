@@ -1,0 +1,98 @@
+205 [GEN:205] Emerald Herald
+600 [GEN:600] Royal Sorcerer Navlaan
+601 [GEN:601] Dragonfang Villard
+602 [GEN:602] Black Dragon Knight
+603 [GEN:603] Black Dragon Knight
+604 [GEN:604] Bashful Ray
+606 [GEN:606] Vengarl
+607 [GEN:607] Melinda the Butcher
+608 [GEN:608] Transcendent Edde
+609 [GEN:609] Fencer Sharron
+800 [GEN:800] Ancient Dragon
+916 [GEN:916] Aldia- Scholar of the First Sin
+950 [GEN:950] Invisible Hollow
+1100 [GEN:1100] Guardian Dragon
+1101 [GEN:1101] Guardian Dragon
+1102 [GEN:1102] Guardian Dragon
+1200 [GEN:1200] Crystal Lizard
+1300 [GEN:1300] Crystal Lizard
+1400 [GEN:1400] Crystal Lizard
+1401 [GEN:1401] Crystal Lizard
+1402 [GEN:1402] Crystal Lizard
+1403 [GEN:1403] Crystal Lizard
+1404 [GEN:1404] Crystal Lizard
+1500 [GEN:1500] Crystal Lizard
+1501 [GEN:1501] Crystal Lizard
+1600 [GEN:1600] Crystal Lizard
+1601 [GEN:1601] Crystal Lizard
+2005 [GEN:2005] Drakekeeper
+2010 [GEN:2010] Drakekeeper
+2030 [GEN:2030] Drakekeeper
+2031 [GEN:2031] NO MATCH
+2033 [GEN:2033] Drakekeeper
+2035 [GEN:2035] NO MATCH
+2036 [GEN:2036] NO MATCH
+2040 [GEN:2040] NO MATCH
+2041 [GEN:2041] NO MATCH
+3001 [GEN:3001] NO MATCH
+3005 [GEN:3005] NO MATCH
+3010 [GEN:3010] NO MATCH
+3100 [GEN:3100] Drakekeeper
+3101 [GEN:3101] Drakekeeper
+3102 [GEN:3102] Drakekeeper
+3103 [GEN:3103] Drakekeeper
+3104 [GEN:3104] Drakekeeper
+3105 [GEN:3105] Drakekeeper
+3106 [GEN:3106] Drakekeeper
+3107 [GEN:3107] Drakekeeper
+4000 [GEN:4000] Black Dragon Knight
+4001 [GEN:4001] Black Dragon Knight
+4002 [GEN:4002] NO MATCH
+4003 [GEN:4003] NO MATCH
+4004 [GEN:4004] NO MATCH
+4005 [GEN:4005] Black Dragon Knight
+4006 [GEN:4006] NO MATCH
+4007 [GEN:4007] NO MATCH
+4008 [GEN:4008] NO MATCH
+4009 [GEN:4009] Black Dragon Knight
+4010 [GEN:4010] Black Dragon Knight
+4011 [GEN:4011] Black Dragon Knight
+4020 [GEN:4020] Black Dragon Knight
+4030 [GEN:4030] Black Dragon Knight
+4031 [GEN:4031] Black Dragon Knight
+4032 [GEN:4032] Black Dragon Knight
+4033 [GEN:4033] Black Dragon Knight
+4034 [GEN:4034] NO MATCH
+4035 [GEN:4035] NO MATCH
+4036 [GEN:4036] Black Dragon Knight
+4037 [GEN:4037] Black Dragon Knight
+4038 [GEN:4038] Black Dragon Knight
+4039 [GEN:4039] Black Dragon Knight
+4040 [GEN:4040] Black Dragon Knight
+4041 [GEN:4041] Black Dragon Knight
+4042 [GEN:4042] Black Dragon Knight
+4050 [GEN:4050] NO MATCH
+4051 [GEN:4051] NO MATCH
+4052 [GEN:4052] NO MATCH
+4053 [GEN:4053] NO MATCH
+5000 [GEN:5000] NO MATCH
+6000 [GEN:6000] Undead Traveler
+6100 [GEN:6100] Dark Priestess
+9000 [GEN:9000] NO MATCH
+9001 [GEN:9001] NO MATCH
+9002 [GEN:9002] NO MATCH
+9003 [GEN:9003] NO MATCH
+9004 [GEN:9004] NO MATCH
+9005 [GEN:9005] NO MATCH
+9006 [GEN:9006] NO MATCH
+9007 [GEN:9007] NO MATCH
+9008 [GEN:9008] NO MATCH
+9009 [GEN:9009] NO MATCH
+9010 [GEN:9010] NO MATCH
+9011 [GEN:9011] NO MATCH
+9012 [GEN:9012] NO MATCH
+9100 [GEN:9100] NO MATCH
+9101 [GEN:9101] NO MATCH
+9102 [GEN:9102] NO MATCH
+9103 [GEN:9103] NO MATCH
+9106 [GEN:9106] NO MATCH

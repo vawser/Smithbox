@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ITEMLOT_ITEMCATEGORY" type="x32">
+      <Option Value="0" Name="Weapon" />
+      <Option Value="1" Name="Equipment" />
+      <Option Value="2" Name="Accessory" />
+      <Option Value="3" Name="TODO" />
+      <Option Value="4" Name="Goods" />
+      <Option Value="5" Name="Generator" />
+      <Option Value="6" Name="Booster" />
+      <Option Value="7" Name="FCS" />
+    </Enum>
+  </Enums>
+  <Field>
+    <lotItemId01 AltName="1 - Item ID" Wiki="Item ID that can be obtained" Refs="EquipParamAccessory(lotItemCategory01=2),EquipParamBooster(lotItemCategory01=6),EquipParamGoods(lotItemCategory01=4),EquipParamProtector(lotItemCategory01=1),EquipParamWeapon(lotItemCategory01=0),EquipParamFcs(lotItemCategory01=7),EquipParamGenerator(lotItemCategory01=5)" />
+    <lotItemId02 AltName="2 - Item ID" Wiki="Item ID that can be obtained" Refs="EquipParamAccessory(lotItemCategory02=2),EquipParamBooster(lotItemCategory02=6),EquipParamGoods(lotItemCategory02=4),EquipParamProtector(lotItemCategory02=1),EquipParamWeapon(lotItemCategory02=0),EquipParamFcs(lotItemCategory02=7),EquipParamGenerator(lotItemCategory02=5)" />
+    <lotItemId03 AltName="3 - Item ID" Wiki="Item ID that can be obtained" Refs="EquipParamAccessory(lotItemCategory03=2),EquipParamBooster(lotItemCategory03=6),EquipParamGoods(lotItemCategory03=4),EquipParamProtector(lotItemCategory03=1),EquipParamWeapon(lotItemCategory03=0),EquipParamFcs(lotItemCategory03=7),EquipParamGenerator(lotItemCategory03=5)" />
+    <lotItemId04 AltName="4 - Item ID" Wiki="Item ID that can be obtained" Refs="EquipParamAccessory(lotItemCategory04=2),EquipParamBooster(lotItemCategory04=6),EquipParamGoods(lotItemCategory04=4),EquipParamProtector(lotItemCategory04=1),EquipParamWeapon(lotItemCategory04=0),EquipParamFcs(lotItemCategory04=7),EquipParamGenerator(lotItemCategory04=5)" />
+    <lotItemId05 AltName="5 - Item ID" Wiki="Item ID that can be obtained" Refs="EquipParamAccessory(lotItemCategory05=2),EquipParamBooster(lotItemCategory05=6),EquipParamGoods(lotItemCategory05=4),EquipParamProtector(lotItemCategory05=1),EquipParamWeapon(lotItemCategory05=0),EquipParamFcs(lotItemCategory05=7),EquipParamGenerator(lotItemCategory05=5)" />
+    <lotItemId06 AltName="6 - Item ID" Wiki="Item ID that can be obtained" Refs="EquipParamAccessory(lotItemCategory06=2),EquipParamBooster(lotItemCategory06=6),EquipParamGoods(lotItemCategory06=4),EquipParamProtector(lotItemCategory06=1),EquipParamWeapon(lotItemCategory06=0),EquipParamFcs(lotItemCategory06=7),EquipParamGenerator(lotItemCategory06=5)" />
+    <lotItemId07 AltName="7 - Item ID" Wiki="Item ID that can be obtained" Refs="EquipParamAccessory(lotItemCategory07=2),EquipParamBooster(lotItemCategory07=6),EquipParamGoods(lotItemCategory07=4),EquipParamProtector(lotItemCategory07=1),EquipParamWeapon(lotItemCategory07=0),EquipParamFcs(lotItemCategory07=7),EquipParamGenerator(lotItemCategory07=5)" />
+    <lotItemId08 AltName="8 - Item ID" Wiki="Item ID that can be obtained" Refs="EquipParamAccessory(lotItemCategory08=2),EquipParamBooster(lotItemCategory08=6),EquipParamGoods(lotItemCategory08=4),EquipParamProtector(lotItemCategory08=1),EquipParamWeapon(lotItemCategory08=0),EquipParamFcs(lotItemCategory08=7),EquipParamGenerator(lotItemCategory08=5)" />
+    <lotItemCategory01 AltName="1 - Item Category" Wiki="Category of items that can be obtained" Enum="ITEMLOT_ITEMCATEGORY" />
+    <lotItemCategory02 AltName="2 - Item Category" Wiki="Category of items that can be obtained" Enum="ITEMLOT_ITEMCATEGORY" />
+    <lotItemCategory03 AltName="3 - Item Category" Wiki="Category of items that can be obtained" Enum="ITEMLOT_ITEMCATEGORY" />
+    <lotItemCategory04 AltName="4 - Item Category" Wiki="Category of items that can be obtained" Enum="ITEMLOT_ITEMCATEGORY" />
+    <lotItemCategory05 AltName="5 - Item Category" Wiki="Category of items that can be obtained" Enum="ITEMLOT_ITEMCATEGORY" />
+    <lotItemCategory06 AltName="6 - Item Category" Wiki="Category of items that can be obtained" Enum="ITEMLOT_ITEMCATEGORY" />
+    <lotItemCategory07 AltName="7 - Item Category" Wiki="Category of items that can be obtained" Enum="ITEMLOT_ITEMCATEGORY" />
+    <lotItemCategory08 AltName="8 - Item Category" Wiki="Category of items that can be obtained" Enum="ITEMLOT_ITEMCATEGORY" />
+  </Field>
+  <Self />
+</PARAMMETA>

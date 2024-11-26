@@ -1,0 +1,36 @@
+10340710 Brazier
+10340711 Brazier
+10340712 Brazier
+10340713 Brazier
+10340714 Brazier
+10340715 Brazier
+10340716 Brazier
+10340717 Brazier
+10340718 Brazier
+10340719 Brazier
+10340720 Brazier
+10340721 Brazier
+10340722 Brazier
+10340723 Brazier
+10340724 Brazier
+10340725 Brazier
+10340726 Brazier
+10340727 Brazier
+10340728 Brazier
+10340729 Brazier
+10340730 Brazier
+10345000 [Chest] Treasure
+10345010 [Chest] Treasure
+10345020 [Chest] Treasure
+10346000 [Corpse] Treasure
+10346010 [Corpse] Treasure
+10346020 [Corpse] Treasure
+10346030 [Corpse] Treasure
+10346040 [Corpse] Treasure
+10346050 [Corpse] Treasure
+10346060 [Corpse] Treasure
+10346070 [Corpse] Treasure
+10346080 [Corpse] Treasure
+10346090 [Corpse] Treasure
+10346100 [Corpse] Treasure
+10346110 [Corpse] Treasure

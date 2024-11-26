@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters used when a character turns." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <baseTurnSpeedDPS
+    AltName="Base - Turn Speed"
+    Wiki="Standard turning speed for normal turning, the speed and time turning rate are applied to this value. In degrees per second." />
+    
+    <speedTurnRate_MinSpeedKMPH
+    AltName="Base - Turn Speed Rate: Minimum Speed"
+    Wiki="The minimum turning speed that will be used. In kilometres per hour." />
+    
+    <speedTurnRate_MaxSpeedKMPH
+    AltName="Base - Turn Speed Rate: Maximum Speed"
+    Wiki="The maximum turning speed that will be used. In kilometres per hour." />
+    
+    <speedTurnRate_MinSpeedTurnRate
+    AltName="Base - Turn Speed Rate: % at Minimum Speed"
+    Wiki="Speed ​​turning rate at minimum speed." />
+    
+    <speedTurnRate_MaxSpeedTurnRate
+    AltName="Base - Turn Speed Rate: % at Maximum Speed"
+    Wiki="Speed ​​turning rate at maximum speed." />
+    
+    <timeTurnRate_MinTimeSec
+    AltName="Base - Turn Time Rate: Minimum Time"
+    Wiki="The minimum time turning rate will be reached within this time after the parameter is switched. In seconds." />
+    
+    <timeTurnRate_MaxTimeSec
+    AltName="Base - Turn Time Rate: Maximum Time"
+    Wiki="The maximum time turning rate will be reached within this time after the parameter is switched. In seconds." />
+    
+    <timeTurnRate_MinTimeTurnRate
+    AltName="Base - Turn Time Rate: % at Minimum Time"
+    Wiki="Time turning rate at minimum time." />
+    
+    <timeTurnRate_MaxTimeTurnRate
+    AltName="Base - Turn Time Rate: % at Maximum Time"
+    Wiki="Time turning rate at maximum time." />
+    
+    <lookTargetModeTurnSpeedDPS
+    AltName="Look Target - Turn Speed"
+    Wiki="Turning speed in the mode facing the target direction, reference turning speed is not used. In degrees per second." />
+    
+    <lookTargetModeTurnSpeedDPSAtLowDeltaAngle
+    AltName="Look Target - Turn Speed with Low Delta"
+    Wiki="Turning speed in the mode facing the target when the angle difference is small, the reference turning speed is not used. In degrees per second." />
+    
+    <judgeTurnSpeedThresholdAngleDeg
+    AltName="Look Target - Low Delta Judgment Angle"
+    Wiki="If the angle is smaller than this, the low delta angle speed will be used. In degrees." />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+    <lookTargetMode_SpeedTurnRate_MinSpeedKMPH
+    AltName="Look Target - Turn Speed Rate: Minimum Speed"
+    Wiki="The minimum turning speed that will be used. In kilometres per hour." />
+    
+    <lookTargetMode_SpeedTurnRate_MaxSpeedKMPH
+    AltName="Look Target - Turn Speed Rate: Maximum Speed"
+    Wiki="The maximum turning speed that will be used. In kilometres per hour." />
+    
+    <lookTargetMode_SpeedTurnRate_MinSpeedTurnRate
+    AltName="Look Target - Turn Speed Rate: % at Minimum Speed"
+    Wiki="Speed ​​turning rate at minimum speed." />
+    
+    <lookTargetMode_SpeedTurnRate_MaxSpeedTurnRate
+    AltName="Look Target - Turn Speed Rate: % at Maximum Speed"
+    Wiki="Speed ​​turning rate at maximum speed." />
+    
+    <lookTargetMode_TimeTurnRate_MinTimeSec
+    AltName="Look Target - Turn Time Rate: Minimum Time"
+    Wiki="The minimum time turning rate will be reached within this time after the parameter is switched. In seconds." />
+    
+    <lookTargetMode_TimeTurnRate_MaxTimeSec
+    AltName="Look Target - Turn Time Rate: Maximum Time"
+    Wiki="The maximum time turning rate will be reached within this time after the parameter is switched. In seconds." />
+    
+    <lookTargetMode_TimeTurnRate_MinTimeTurnRate
+    AltName="Look Target - Turn Time Rate: % at Minimum Time"
+    Wiki="Time turning rate at minimum time." />
+    
+    <lookTargetMode_TimeTurnRate_MaxTimeTurnRate
+    AltName="Look Target - Turn Time Rate: % at Maximum Time"
+    Wiki="Time turning rate at maximum time." />
+    
+    <turnAccelDPSS
+    AltName="Turn Acceleration"
+    Wiki="Acceleration to reach turning speed. If you want to set the turning speed from the beginning, set a large value. In degrees per second ^ 2" />
+    
+    <lookTargetMode_LookAheadSecond
+    AltName="Look Target - Look Ahead Time"
+    Wiki="How many seconds after the target do you try to look when facing the target (for AI)." />
+    
+    <timeTurnRate_MinTimeSec_Accel
+    AltName="Base - Time Turn Acceleration Rate: Minimum Time"
+    Wiki="The minimum time angular acceleration rate is reached within this time after the parameter is switched. In seconds." />
+    
+    <timeTurnRate_MaxTimeSec_Accel
+    AltName="Base - Time Turn Acceleration Rate: Maximum Time"
+    Wiki="The maximum time angular acceleration rate is reached within this time after the parameter is switched. In seconds." />
+    
+    <timeTurnRate_MinTimeTurnAccelRate
+    AltName="Base - Time Turn Acceleration Rate: Minimum Acceleration Rate"
+    Wiki="Time angular acceleration rate at minimum time" />
+    
+    <timeTurnRate_MaxTimeTurnAccelRate
+    AltName="Base - Time Turn Acceleration Rate: Maximum Acceleration Rate"
+    Wiki="Time angular acceleration rate at maximum time" />
+    
+    <lookTargetMode_TimeTurnRate_MinTimeSec_Accel
+    AltName="Look Target - Time Turn Acceleration Rate: Minimum Time"
+    Wiki="The minimum time angular acceleration rate is reached within this time after the parameter is switched. In seconds." />
+    
+    <lookTargetMode_TimeTurnRate_MaxTimeSec_Accel
+    AltName="Look Target - Time Turn Acceleration Rate: Maximum Time"
+    Wiki="The maximum time angular acceleration rate is reached within this time after the parameter is switched. In seconds." />
+    
+    <lookTargetMode_TimeTurnRate_MinTimeTurnAccelRate
+    AltName="Look Target - Time Turn Acceleration Rate: Minimum Acceleration Rate"
+    Wiki="Time angular acceleration rate at minimum time" />
+    
+    <lookTargetMode_TimeTurnRate_MaxTimeTurnAccelRate
+    AltName="Look Target - Time Turn Acceleration Rate: Maximum Acceleration Rate"
+    Wiki="Time angular acceleration rate at maximum time" />
+    
+    <pad_2
+    AltName=""
+    Padding="" />
+    
+    <paramEndIntpTimeSec
+    AltName="Angular Acceleration Interpolation Time at Parameter End"
+    Wiki="Time to interpolate acceleration when parameters switch and exit. In seconds." />
+    
+    <reverseTurnBrakeDPSS
+    AltName="Reverse Turn Brake Peformance"
+    Wiki="Brake when turning in the opposite direction (disabled at -1). In degrees per second ^ 2" />
+    
+    <animBlendMaxSpeedDPS_LR
+    AltName="Angular Velocity for Left/Right Blend Ratio"
+    Wiki="When the angular velocity exceeds this speed, the blend ratio of left and right animation becomes 1. In degrees per second." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

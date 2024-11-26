@@ -1,0 +1,12 @@
+1 Enemies - Generic
+10 Generic: 1.0 x 
+15 Versatile: 1.5 x 
+20 Generic: 2.0 X 
+25 General Purpose: 2.5 x 
+30 Generic: 3.0 x 
+100 Attack: one hand: weak 
+101 Attack: one hand: weak: Minimum warranty 
+110 Attack: one hand: Strong 
+111 Attack: one hand: strong: Minimum security 
+120 Attack: one hand: Strong Max Infuser 
+121 Attack: one hand: Strong max Infuser: Minimum security 

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <coop0_limitationTime 
+    AltName="Limitation Time: 0 Co-op Clients" 
+    Wiki="Time limit [sec] (number of cooperating spirits 0)" />
+    
+    <coop0_observeTime_0 
+    AltName="Observation Time: 0 Co-op Clients" 
+    Wiki="Monitoring time [sec] (number of cooperating spirits 0)" />
+    
+    <coop1_limitationTime 
+    AltName="Limitation Time: 1 Co-op Clients" 
+    Wiki="Time limit [sec] (number of cooperating spirits 1)" />
+    
+    <coop1_observeTime 
+    AltName="Observation Time: 1 Co-op Clients" 
+    Wiki="Monitoring time [sec] (number of cooperating spirits 1)" />
+    
+    <coop2_limitationTime 
+    AltName="Limitation Time: 2 Co-op Clients" 
+    Wiki="Time limit [sec] (number of cooperating spirits 2)" />
+    
+    <coop2_observeTime 
+    AltName="Observation Time: 2 Co-op Clients" 
+    Wiki="Monitoring time [sec] (number of cooperating spirits 2)" />
+    
+    <coop3_limitationTime 
+    AltName="Limitation Time: 3 Co-op Clients" 
+    Wiki="Time limit [sec] (number of cooperating spirits 3)" />
+    
+    <coop3_observeTime 
+    AltName="Observation Time: 3 Co-op Clients" 
+    Wiki="Monitoring time [sec] (number of cooperating spirits 3)" />
+    
+  </Field>
+</PARAMMETA>

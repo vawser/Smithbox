@@ -1,0 +1,3 @@
+0 Normal: Time lapse -- 通常：時間経過
+10 Water -- 水
+20 Wind -- 風

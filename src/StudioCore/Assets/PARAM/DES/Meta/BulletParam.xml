@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <atkId_Bullet AltName="atkId_Bullet" Refs="AtkParam_Npc,AtkParam_Pc"/>
+    <sfxId_Bullet AltName="sfxId_Bullet" />
+    <sfxId_Hit AltName="sfxId_Hit" />
+    <EmittePosType AltName="EmittePosType" />
+    <FollowType AltName="FollowType" />
+    <isAttackSFX AltName="isAttackSFX" />
+    <isEndlessHit AltName="isEndlessHit" />
+    <life AltName="life" />
+    <dist AltName="dist" />
+    <numShoot AltName="numShoot" />
+    <shootInterval AltName="shootInterval" />
+    <shootAngle AltName="shootAngle" />
+    <shootAngleInterval AltName="shootAngleInterval" />
+    <gravityInRange AltName="gravityInRange" />
+    <gravityOutRange AltName="gravityOutRange" />
+    <damageDamp AltName="damageDamp" />
+    <spelDamageDamp AltName="spelDamageDamp" />
+    <fireDamageDamp AltName="fireDamageDamp" />
+    <staminaDamp AltName="staminaDamp" />
+    <knockbackDamp AltName="knockbackDamp" />
+    <shootAngleXZ AltName="shootAngleXZ" />
+    <lockShootLimitAng AltName="lockShootLimitAng" />
+    <hormingStopRange AltName="hormingStopRange" />
+    <initVellocity AltName="initVellocity" />
+    <accelInRange AltName="accelInRange" />
+    <accelOutRange AltName="accelOutRange" />
+    <maxVellocity AltName="maxVellocity" />
+    <minVellocity AltName="minVellocity" />
+    <accelTime AltName="accelTime" />
+    <homingAngle AltName="homingAngle" />
+    <homingBeginDist AltName="homingBeginDist" />
+    <hitRadius AltName="hitRadius" />
+    <hitRadiusMax AltName="hitRadiusMax" />
+    <spreadTime AltName="spreadTime" />
+    <expDelay AltName="expDelay" />
+    <isPenetrate AltName="isPenetrate" />
+    <Material_AttackType AltName="Material_AttackType" />
+    <Material_AttackMaterial AltName="Material_AttackMaterial" />
+    <Material_Size AltName="Material_Size" />
+    <isPenetrateMap AltName="isPenetrateMap" />
+    <isHitBothTeam AltName="isHitBothTeam" />
+    <hormingOffsetRange AltName="hormingOffsetRange" />
+    <spEffectIDForShooter AltName="spEffectIDForShooter" />
+    <autoSearchNPCThinkID AltName="autoSearchNPCThinkID" />
+    <HitBulletID AltName="HitBulletID" Refs="Bullet"/>
+    <spEffectId0 AltName="spEffectId0" Refs="SpEffectParam"/>
+    <spEffectId1 AltName="spEffectId1" Refs="SpEffectParam"/>
+    <spEffectId2 AltName="spEffectId2" Refs="SpEffectParam"/>
+    <spEffectId3 AltName="spEffectId3" Refs="SpEffectParam"/>
+    <spEffectId4 AltName="spEffectId4" Refs="SpEffectParam"/>
+  </Field>
+  <Self />
+</PARAMMETA>

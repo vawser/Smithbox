@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENU_TUTORIAL_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 viewType = -1">
+      <DisplayName>表示タイミング</DisplayName>
+      <Enum>MENU_TUTORIAL_PARAM_TYPE</Enum>
+      <Description>タブを開いたタイミングで表示する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+    </Field>
+    <Field Def="s32 beginEventFlagId = -1">
+      <DisplayName>起動イベントフラグ</DisplayName>
+      <Description>起動するイベントフラグ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 endEventFlagId = -1">
+      <DisplayName>終了イベントフラグ</DisplayName>
+      <Description>終了するイベントフラグ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 titleMessageId = -1">
+      <DisplayName>タイトルメッセージＩＤ</DisplayName>
+      <Description>タイトルメッセージのテキストID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 descMessageId = -1">
+      <DisplayName>説明メッセージＩＤ</DisplayName>
+      <Description>説明メッセージのテキストＩＤ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s32 textureId = -1">
+      <DisplayName>テクスチャーＩＤ</DisplayName>
+      <Description>テクスチャのＩＤ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="dummy8 pad[8] = -1">
+      <DisplayName>padding</DisplayName>
+      <Description>padding</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <Increment>1</Increment>
+      <SortID>9999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

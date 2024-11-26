@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related NPC events and conversations." Row0Dummy="" />
+  <Field>
+    <shopLineupStartRow AltName="Shop Lineup - Start Row ID" Refs="ShopLineupParam" />
+    <shopLineupEndRow AltName="Shop Lineup - End Row ID" Refs="ShopLineupParam" />
+    <displayItemTextId AltName="NPC Menu - Item Text ID" Wiki="The text ID for 'Offer X' option within the menu." WikiFmgRef="itemname" />
+    <shopLineupParamId AltName="Unknown Shop Lineup ID" Refs="ShopLineupParam" />
+    <npcMenu_NameID AltName="NPC Menu - Name Text ID" Wiki="The text ID for the NPC's name within the menu." FmgRef="itemname" />
+    
+  </Field>
+</PARAMMETA>

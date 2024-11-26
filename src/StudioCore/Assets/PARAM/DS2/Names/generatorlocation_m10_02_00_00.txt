@@ -1,0 +1,57 @@
+15 [GEN:15] Milibeth
+16 [GEN:16] Milibeth
+17 [GEN:17] Milibeth
+210 [GEN:210] Strowen
+211 [GEN:211] Strowen
+212 [GEN:212] Strowen
+215 [GEN:215] Griant
+216 [GEN:216] Griant
+217 [GEN:217] Griant
+220 [GEN:220] Morrel
+221 [GEN:221] Morrel
+222 [GEN:222] Morrel
+320 [GEN:320] Dyna & Tillo
+1000 [GEN:1000] Kobold
+1001 [GEN:1001] Kobold
+1002 [GEN:1002] Kobold
+1003 [GEN:1003] Kobold
+1010 [GEN:1010] Kobold
+1012 [GEN:1012] Kobold
+1600 [GEN:1600] Ogre
+3000 [GEN:3000] Undead Traveler
+3010 [GEN:3010] Undead Traveler
+3020 [GEN:3020] Undead Traveler
+3030 [GEN:3030] Undead Traveler
+3040 [GEN:3040] Greatsword Foreigner Phantom
+3041 [GEN:3041] Undead Traveler
+3050 [GEN:3050] Greatsword Foreigner Phantom
+3051 [GEN:3051] Undead Traveler
+3100 [GEN:3100] Undead Traveler
+3101 [GEN:3101] Foreign Wanderer
+3110 [GEN:3110] Foreign Wanderer
+3111 [GEN:3111] Foreign Wanderer
+3211 [GEN:3211] Goblin Phantom
+3220 [GEN:3220] Undead Traveler
+3230 [GEN:3230] Goblin Phantom
+3240 [GEN:3240] Basilisk
+3241 [GEN:3241] Basilisk
+3242 [GEN:3242] Basilisk
+3250 [GEN:3250] Basilisk
+3251 [GEN:3251] Basilisk
+3252 [GEN:3252] Basilisk
+3300 [GEN:3300] Ogre
+3301 [GEN:3301] Ogre
+3302 [GEN:3302] Ogre
+3303 [GEN:3303] Ogre
+3304 [GEN:3304] Ogre
+3350 [GEN:3350] The Pursuer
+3500 [GEN:3500] Undead Traveler
+4000 [GEN:4000] Hollow Falconer
+4001 [GEN:4001] Hollow Falconer
+4002 [GEN:4002] Hollow Falconer
+4003 [GEN:4003] Hollow Falconer
+7000 [GEN:7000] Forest Grotesque
+7010 [GEN:7010] Forest Grotesque
+8170 [GEN:8170] Foreign Wanderer Phantom
+9000 [GEN:9000] Imported Hollow
+9500 [GEN:9500] Player Character

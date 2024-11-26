@@ -1,0 +1,5 @@
+0 Without -- なし
+1 Stabbing Test -- 刺剣テスト
+2 Two-handed sword test -- 両手剣テスト
+3 Spear Test -- 槍テスト
+4 Two-handed ax test -- 両手長斧テスト

@@ -1,0 +1,501 @@
+0 Shouldn't be erased -- 消すべからず
+1000001 NPC default -- NPCデフォルト
+30000000 main thruster -- メインスラスター
+30000000 main thruster -- メインスラスター
+30000000 ascent thruster -- 上昇用スラスター
+30000000 ascent thruster -- 上昇用スラスター
+30200000 main thruster -- メインスラスター
+30200000 main thruster -- メインスラスター
+30200000 ascent thruster -- 上昇用スラスター
+30200000 ascent thruster -- 上昇用スラスター
+30500000 Ascent & QB thruster (left shoulder) -- 上昇&QBスラスター(左肩)
+30500000 Ascent & QB thruster (right shoulder) -- 上昇&QBスラスター(右肩)
+30500000 Hovering thruster (left booster) -- ホバリング用スラスター(左ブースター)
+30500000 Hovering thruster (right booster) -- ホバリング用スラスター(右ブースター)
+30500000 Hovering thruster (above left shoulder) -- ホバリング用スラスター(左肩上)
+30500000 Hovering thruster (above right shoulder) -- ホバリング用スラスター(右肩上)
+30500000 Left leg sub thruster -- 左脚部サブスラスター
+30500000 Right leg sub thruster -- 右脚部サブスラスター
+30500000 Left leg shin sub thruster hovering -- 左脚部脛サブスラスターホバリング
+30500000 Right leg shin sub thruster hovering -- 右脚部脛サブスラスターホバリング
+30500000 main thruster -- メインスラスター
+30500000 main thruster -- メインスラスター
+30500000 main thruster -- メインスラスター
+30500000 main thruster -- メインスラスター
+31000000 main thruster -- メインスラスター
+31000000 main thruster -- メインスラスター
+31000000 QB front thruster -- QB前スラスター
+31000000 QB left thruster -- QB左スラスター
+31000000 QB right thruster -- QB右スラスター
+31000000 ascent thruster -- 上昇用スラスター
+31000000 lift fan -- リフトファン
+31500000 ascent thruster -- 上昇用スラスター
+31500000 ascent thruster -- 上昇用スラスター
+31500000 ascent thruster -- 上昇用スラスター
+31500000 ascent thruster -- 上昇用スラスター
+31500000 ascent thruster -- 上昇用スラスター
+31500000 ascent thruster -- 上昇用スラスター
+32000000 main thruster -- メインスラスター
+32000000 main thruster -- メインスラスター
+32000000 For after sub thruster -- サブスラスター後用
+32000000 For after sub thruster -- サブスラスター後用
+32000000 QB left thruster -- QB左スラスター
+32000000 QB right thruster -- QB右スラスター
+32000000 ascent thruster -- 上昇用スラスター
+32000000 ascent thruster -- 上昇用スラスター
+32000000 Ace parts thruster -- エース用パーツ スラスター
+32000000 Ace parts thruster -- エース用パーツ スラスター
+32000000 Ace parts thruster -- エース用パーツ スラスター
+32000000 Ace parts thruster -- エース用パーツ スラスター
+32000000 Ace parts thruster -- エース用パーツ スラスター
+32000000 Ace parts thruster -- エース用パーツ スラスター
+32000000 Ace parts thruster -- エース用パーツ スラスター
+32000000 Ace parts thruster -- エース用パーツ スラスター
+32000000 Ace parts thruster -- エース用パーツ スラスター
+32500000 main thruster -- メインスラスター
+32500000 main thruster -- メインスラスター
+32500000 For after sub thruster -- サブスラスター後用
+32500000 For after sub thruster -- サブスラスター後用
+32500000 Sub thruster right front dual use -- サブスラスター右前兼用
+32500000 Sub thruster right rear dual use -- サブスラスター右後兼用
+32500000 Sub thruster right -- サブスラスター右用
+32500000 Sub thruster right -- サブスラスター右用
+32500000 Sub thruster left front dual use -- サブスラスター左前兼用
+32500000 Sub thruster left rear dual use -- サブスラスター左後兼用
+32500000 Sub thruster left -- サブスラスター左用
+32500000 Sub thruster left -- サブスラスター左用
+32500000 Thruster after QB -- QB後スラスター
+32500000 Thruster after QB -- QB後スラスター
+32500000 Thruster right offset after QB -- QB後スラスター右オフセット
+32500000 Thruster right offset after QB -- QB後スラスター右オフセット
+32500000 Offset on thruster after QB -- QB後スラスター上オフセット
+32500000 Offset on thruster after QB -- QB後スラスター上オフセット
+32500000 QB right thruster -- QB右スラスター
+32500000 QB left thruster -- QB左スラスター
+32500000 ascent thruster -- 上昇用スラスター
+32500000 ascent thruster -- 上昇用スラスター
+32500600 main thruster -- メインスラスター
+32500600 main thruster -- メインスラスター
+32500600 For after sub thruster -- サブスラスター後用
+32500600 For after sub thruster -- サブスラスター後用
+32500600 Sub thruster right front dual use -- サブスラスター右前兼用
+32500600 Sub thruster right rear dual use -- サブスラスター右後兼用
+32500600 Sub thruster right -- サブスラスター右用
+32500600 Sub thruster right -- サブスラスター右用
+32500600 Sub thruster left front dual use -- サブスラスター左前兼用
+32500600 Sub thruster left rear dual use -- サブスラスター左後兼用
+32500600 Sub thruster left -- サブスラスター左用
+32500600 Sub thruster left -- サブスラスター左用
+32500600 Thruster after QB -- QB後スラスター
+32500600 Thruster after QB -- QB後スラスター
+32500000 Thruster right offset after QB -- QB後スラスター右オフセット
+32500000 Thruster right offset after QB -- QB後スラスター右オフセット
+32500000 Offset on thruster after QB -- QB後スラスター上オフセット
+32500000 Offset on thruster after QB -- QB後スラスター上オフセット
+32500600 QB right thruster -- QB右スラスター
+32500600 QB left thruster -- QB左スラスター
+32500600 ascent thruster -- 上昇用スラスター
+32500600 ascent thruster -- 上昇用スラスター
+32500700 main thruster -- メインスラスター
+32500700 main thruster -- メインスラスター
+32500700 For after sub thruster -- サブスラスター後用
+32500700 For after sub thruster -- サブスラスター後用
+32500700 Sub thruster right front dual use -- サブスラスター右前兼用
+32500700 Sub thruster right rear dual use -- サブスラスター右後兼用
+32500700 Sub thruster right -- サブスラスター右用
+32500700 Sub thruster right -- サブスラスター右用
+32500700 Sub thruster left front dual use -- サブスラスター左前兼用
+32500700 Sub thruster left rear dual use -- サブスラスター左後兼用
+32500700 Sub thruster left -- サブスラスター左用
+32500700 Sub thruster left -- サブスラスター左用
+32500700 Thruster after QB -- QB後スラスター
+32500700 Thruster after QB -- QB後スラスター
+32500700 QB right thruster -- QB右スラスター
+32500700 QB left thruster -- QB左スラスター
+32500700 ascent thruster -- 上昇用スラスター
+32500700 ascent thruster -- 上昇用スラスター
+32500700 Additional main central thruster -- 追加メイン中央スラスター
+32500700 Additional main right thruster -- 追加メイン右スラスター
+32500700 Additional main left thruster -- 追加メイン左スラスター
+32500700 Additional right wing main thruster -- 追加右翼メインスラスター
+32500700 Additional left wing main thruster -- 追加左翼メインスラスター
+32500700 Additional right wing sub-thruster -- 追加右翼サブスラスター
+32500700 Additional left wing sub-thruster -- 追加左翼サブスラスター
+32500700 Additional right wing side thruster -- 追加右翼サイドスラスター
+32500700 Additional left wing side thruster -- 追加左翼サイドスラスター
+32500700 Additional right wing elevation thruster -- 追加右翼上昇スラスター
+32500700 Additional left wing elevation thruster -- 追加左翼上昇スラスター
+32500700 Additional right hovering thruster -- 追加右ホバリングスラスター
+32500700 Additional left hovering thruster -- 追加左ホバリングスラスター
+32600000 Main thruster_left_back wing -- メインスラスター_左_背中翼
+32600000 Main thruster_right_back wing -- メインスラスター_右_背中翼
+32600000 QB left_left_shoulder -- ＱＢ左_左_肩先
+32600000 QB right_right_shoulder -- ＱＢ右_右_肩先
+32600000 QB front left_front left_belly -- QB前左_左前_腹
+32600000 QB back left_left back_belly -- QB後左_左後_腹
+32600000 QB front right_right front_belly -- QB前右_右前_腹
+32600000 QB back right_right back_belly -- QB後右_右後_腹
+32600000 Climb thruster_left_sole -- 上昇用スラスター_左_足裏
+32600000 Climb thruster_right_sole -- 上昇用スラスター_右_足裏
+33000000 main thruster -- メインスラスター
+33000000 main thruster -- メインスラスター
+33000000 right sub thruster -- 右サブスラスター
+33000000 left sub thruster -- 左サブスラスター
+33000000 rear QB -- 後QB
+33000000 rear QB -- 後QB
+33000000 Former QB -- 前QB
+33000000 Former QB -- 前QB
+33000000 ascent thruster -- 上昇スラスター
+33000000 ascent thruster -- 上昇スラスター
+34000000 main thruster -- メインスラスター
+34000000 main thruster -- メインスラスター
+34000000 main thruster -- メインスラスター
+34000000 main thruster -- メインスラスター
+34000000 before sub -- サブ前
+34000000 after sub -- サブ後
+34000000 sub left -- サブ左
+34000000 sub right -- サブ右
+35000000 Main/sub/QB combined front right -- ﾒｲﾝ・ｻﾌﾞ・QB兼用 前右
+35000000 Main/sub/QB combined front left -- ﾒｲﾝ・ｻﾌﾞ・QB兼用 前左
+35000000 Main/sub/QB combined rear right -- ﾒｲﾝ・ｻﾌﾞ・QB兼用 後右
+35000000 Main/sub/QB combined rear left -- ﾒｲﾝ・ｻﾌﾞ・QB兼用 後左
+36000000 main thruster -- メインスラスター
+36000000 main thruster -- メインスラスター
+36000000 main thruster -- メインスラスター
+36000000 main thruster -- メインスラスター
+37000000 main thruster -- メインスラスター
+37000000 main thruster -- メインスラスター
+37000000 Sub thruster left front -- サブスラスター左前
+37000000 Sub thruster right front -- サブスラスター右前
+37000000 Sub thruster left rear -- サブスラスター左後
+37000000 Sub thruster right rear -- サブスラスター右後
+37000000 ascent thruster -- 上昇用スラスター
+37000000 ascent thruster -- 上昇用スラスター
+40000000 humanoid 1 -- 人型1
+40000000 humanoid 2 -- 人型2
+40000000 humanoid 3 -- 人型3
+40000000 humanoid 4 -- 人型4
+40000000 Inside left foot 1 -- 左足内1
+40000000 inside left foot 2 -- 左足内2
+40000000 inside left foot 3 -- 左足内3
+40000000 inside left foot 4 -- 左足内4
+40000000 Inside right foot 1 -- 右足内1
+40000000 inside right foot 2 -- 右足内2
+40000000 inside right foot 3 -- 右足内3
+40000000 inside right foot 4 -- 右足内4
+40000000 Left foot outside 1 -- 左足外1
+40000000 Left foot outside 2 -- 左足外2
+40000000 left foot outside 3 -- 左足外3
+40000000 left foot outside 4 -- 左足外4
+40000000 Right foot outside 1 -- 右足外1
+40000000 Right foot outside 2 -- 右足外2
+40000000 Right foot outside 3 -- 右足外3
+40000000 outside right foot 4 -- 右足外4
+40000000 Bottom left 1 -- 底面左1
+40000000 Bottom left 2 -- 底面左2
+40000000 Bottom left 3 -- 底面左3
+40000000 Bottom left 4 -- 底面左4
+40000000 Bottom right 1 -- 底面右1
+40000000 Bottom right 2 -- 底面右2
+40000000 Bottom right 3 -- 底面右3
+40000000 Bottom right 4 -- 底面右4
+40000000 Bottom rear 1 -- 底面後1
+40000000 Bottom rear 2 -- 底面後2
+40000000 bottom rear 3 -- 底面後3
+40000000 Bottom rear 4 -- 底面後4
+41000000 OW backwards -- OW 後方
+41000000 OW backwards -- OW 後方
+41000000 Ring frame rear side -- リングフレーム後側
+41000000 Ring frame left front side -- リングフレーム左前側
+41000000 ring frame left side -- リングフレーム左側
+41000000 ring frame left side -- リングフレーム左側
+41000000 Ring frame left rear side -- リングフレーム左後側
+41000000 OW left side -- OW 左側
+41000000 OW left side -- OW 左側
+41000000 Front left side of center frame -- 中央フレーム前方左側
+41000000 Front left side of center frame -- 中央フレーム前方左側
+41000000 Ring frame right front side -- リングフレーム右前側
+41000000 ring frame right side -- リングフレーム右側
+41000000 ring frame right side -- リングフレーム右側
+41000000 Ring frame right rear side -- リングフレーム右後側
+41000000 OW right side -- OW 右側
+41000000 OW right side -- OW 右側
+41000000 Front right side of center frame -- 中央フレーム前方右側
+41000000 Front right side of center frame -- 中央フレーム前方右側
+41000000 OW directly behind -- OW 真後
+41000200 Ring frame rear side -- リングフレーム後側
+41000200 Ring frame left front side -- リングフレーム左前側
+41000200 ring frame left side -- リングフレーム左側
+41000200 ring frame left side -- リングフレーム左側
+41000200 Ring frame left rear side -- リングフレーム左後側
+41000200 Ring frame right front side -- リングフレーム右前側
+41000200 ring frame right side -- リングフレーム右側
+41000200 ring frame right side -- リングフレーム右側
+41000200 Ring frame right rear side -- リングフレーム右後側
+41000200 Front left side of center frame -- 中央フレーム前方左側
+41000200 Front right side of center frame -- 中央フレーム前方右側
+41000200 OW upper back -- OW 上後方
+41000200 OW upper back -- OW 上後方
+41000200 OW backwards -- OW 後方
+41000200 OW backwards -- OW 後方
+41000200 OW backwards -- OW 後方
+41000200 OW backwards -- OW 後方
+41000200 OW left rear -- OW 左後方
+41000200 OW backwards -- OW 後方
+41000200 OW right rear -- OW 右後方
+41000200 OW left side -- OW 左側
+41000200 OW right side -- OW 右側
+41000200 OW left tip -- OW 左先端
+41000200 OW right tip -- OW 右先端
+41000200 OW main -- OWメイン
+41000200 OW main -- OWメイン
+41500000 For front sub thruster -- サブスラスター前用
+41500000 For front sub thruster -- サブスラスター前用
+41500000 Sub thruster left -- サブスラスター左用
+41500000 Sub thruster left -- サブスラスター左用
+41500000 Sub thruster right -- サブスラスター右用
+41500000 Sub thruster right -- サブスラスター右用
+42000000 Arm armament right 1 -- 腕武装右1
+42000000 Arm armament right 2 -- 腕武装右2
+42000000 Arm armed left 1 -- 腕武装左1
+42000000 Arm armed left 2 -- 腕武装左2
+42000000 Shoulder weapon right 1 -- 肩武装右1
+42000000 Shoulder weapon right 2 -- 肩武装右2
+42000000 Shoulder weapon left 1 -- 肩武装左1
+42000000 Shoulder weapon left 2 -- 肩武装左2
+42000000 right foot 1 -- 右足1
+42000000 right foot 2 -- 右足2
+42000000 right foot 3 -- 右足3
+42000000 right foot 4 -- 右足4
+42000000 left foot 1 -- 左足1
+42000000 left foot 2 -- 左足2
+42000000 left foot 3 -- 左足3
+42000000 left foot 4 -- 左足4
+42000000 main thruster -- メインスラスター
+42000000 main thruster -- メインスラスター
+42000000 Under left backpack -- 左バックパック下
+42000000 Under the right backpack -- 右バックパック下
+42000000 For front sub thruster -- サブスラスター前用
+42000000 For after sub thruster -- サブスラスター後用
+42000000 Sub thruster left -- サブスラスター左用
+42000000 Sub thruster right -- サブスラスター右用
+42000000 For front QB (right leg stabilizer) -- QB前用(右脚部スタビライザー)
+42000000 For front QB (left leg stabilizer) -- QB前用(左脚部スタビライザー)
+42000000 For after QB (right leg stabilizer) -- QB後用(右脚部スタビライザー)
+42000000 For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)
+42000000 QB left -- QB左用
+42000000 For QB right -- QB右用
+42000000 ascent thruster -- 上昇用スラスター
+42000000 Cannon transformer arm armament right 1 -- 砲台変形腕武装右1
+42000000 Cannon transformer arm armed right 2 -- 砲台変形腕武装右2
+42000000 Cannon transformer arm armed left 1 -- 砲台変形腕武装左1
+42000000 Cannon transformer arm armed left 2 -- 砲台変形腕武装左2
+42000000 Turret deformed shoulder armament right 1 -- 砲台変形肩武装右1
+42000000 Turret deformed shoulder armament right 2 -- 砲台変形肩武装右2
+42000000 Turret deformed shoulder armament left 1 -- 砲台変形肩武装左1
+42000000 Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2
+42010000 right foot 1 -- 右足1
+42010000 right foot 2 -- 右足2
+42010000 right foot 3 -- 右足3
+42010000 right foot 4 -- 右足4
+42010000 left foot 1 -- 左足1
+42010000 left foot 2 -- 左足2
+42010000 left foot 3 -- 左足3
+42010000 left foot 4 -- 左足4
+42010000 main thruster -- メインスラスター
+42010000 main thruster -- メインスラスター
+42010000 For front sub thruster -- サブスラスター前用
+42010000 For after sub thruster -- サブスラスター後用
+42010000 Sub thruster left -- サブスラスター左用
+42010000 Sub thruster right -- サブスラスター右用
+42010000 For front QB (right leg stabilizer) -- QB前用(右脚部スタビライザー)
+42010000 For front QB (left leg stabilizer) -- QB前用(左脚部スタビライザー)
+42010000 For after QB (right leg stabilizer) -- QB後用(右脚部スタビライザー)
+42010000 For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)
+42010000 QB left -- QB左用
+42010000 For QB right -- QB右用
+42010000 ascent thruster -- 上昇用スラスター
+42010000 Cannon transformer arm armament right 1 -- 砲台変形腕武装右1
+42010000 Cannon transformer arm armed right 2 -- 砲台変形腕武装右2
+42010000 Cannon transformer arm armed left 1 -- 砲台変形腕武装左1
+42010000 Cannon transformer arm armed left 2 -- 砲台変形腕武装左2
+42010000 Turret deformed shoulder armament right 1 -- 砲台変形肩武装右1
+42010000 Turret deformed shoulder armament right 2 -- 砲台変形肩武装右2
+42010000 Turret deformed shoulder armament left 1 -- 砲台変形肩武装左1
+42010000 Turret deformed shoulder armament left 2 -- 砲台変形肩武装左2
+42010000 Shoulder additional weapon right -- 肩追加武装右
+42010000 Shoulder additional weapon left -- 肩追加武装左
+42100000 main thruster -- メインスラスター
+42100000 main thruster -- メインスラスター
+42100000 For front sub thruster -- サブスラスター前用
+42100000 For front sub thruster -- サブスラスター前用
+42100000 For after sub thruster -- サブスラスター後用
+42100000 For after sub thruster -- サブスラスター後用
+42100000 For after sub thruster -- サブスラスター後用
+42100000 For after sub thruster -- サブスラスター後用
+42100000 For front QB (right leg stabilizer) -- QB前用(右脚部スタビライザー)
+42100000 For front QB (left leg stabilizer) -- QB前用(左脚部スタビライザー)
+42100000 For QB right -- QB右用
+42100000 QB left -- QB左用
+42100000 For after QB (right leg stabilizer) -- QB後用(右脚部スタビライザー)
+42100000 For after QB (left leg stabilizer) -- QB後用(左脚部スタビライザー)
+42500000 main thruster -- メインスラスター
+42500000 main thruster -- メインスラスター
+42500000 For front sub thruster -- サブスラスター前用
+42500000 For front sub thruster -- サブスラスター前用
+42500000 Sub thruster left -- サブスラスター左用
+42500000 Sub thruster right -- サブスラスター右用
+42500000 Sub thruster for left ascending (unique) -- サブスラスター左上昇用（ユニーク）
+42500000 Sub thruster for right rise (unique) -- サブスラスター右上昇用（ユニーク）
+42500000 Sub thruster left lower stage -- サブスラスター左用下段
+42500000 Sub thruster right lower stage -- サブスラスター右用下段
+42500000 for ascent thrusters -- 上昇スラスター用
+42500000 for ascent thrusters -- 上昇スラスター用
+42500000 For overdo boost -- オーバードブースト用
+50100000 for ascent thrusters -- 上昇スラスター用
+50200000 For QB/sub front -- QB・サブ前用
+50200000 For QB/sub front -- QB・サブ前用
+50200000 For QB/sub front -- QB・サブ前用
+50200000 For QB/sub front -- QB・サブ前用
+51000000 For main thruster front -- メインスラスター前用
+51000000 For front sub thruster -- サブスラスター前用
+51000000 For front sub thruster -- サブスラスター前用
+51200000 ascent thruster -- 上昇用スラスター
+51200000 ascent thruster -- 上昇用スラスター
+51200000 ascent thruster -- 上昇用スラスター
+51200000 ascent thruster -- 上昇用スラスター
+51200000 For front sub thruster -- サブスラスター前用
+51200000 For front sub thruster -- サブスラスター前用
+51200000 For front sub thruster -- サブスラスター前用
+51200000 For front sub thruster -- サブスラスター前用
+53000000 For main thruster -- メインスラスター用
+53000000 For main thruster -- メインスラスター用
+53000000 For main thruster -- メインスラスター用
+53000000 For main thruster -- メインスラスター用
+53000000 For main thruster -- メインスラスター用
+53000000 For main thruster -- メインスラスター用
+53000000 For main thruster -- メインスラスター用
+53000000 For main thruster -- メインスラスター用
+53000000 For front sub thruster -- サブスラスター前用
+53000000 For after sub thruster -- サブスラスター後用
+53000000 Sub thruster left -- サブスラスター左用
+53000000 Sub thruster right -- サブスラスター右用
+53000000 ascent thruster -- 上昇用スラスター
+60500000 Bottom thruster left front A -- 底面スラスター　左前A
+60500000 Bottom thruster left front B -- 底面スラスター　左前B
+60500000 Bottom thruster left rear A -- 底面スラスター　左後A
+60500000 Bottom thruster left rear B -- 底面スラスター　左後B
+60500000 Bottom thruster right front A -- 底面スラスター　右前A
+60500000 Bottom thruster right front B -- 底面スラスター　右前B
+60500000 Bottom thruster right rear A -- 底面スラスター　右後A
+60500000 Bottom thruster right rear B -- 底面スラスター　右後B
+61000000 Leg F root thruster -- 脚F根本スラスター
+61000000 Leg F intermediate thruster -- 脚F中間スラスター
+61000000 Leg F intermediate thruster -- 脚F中間スラスター
+61000000 Leg F ankle thruster -- 脚F足首スラスター
+61000000 Leg F tip left thruster -- 脚F先左側スラスター
+61000000 Leg F tip right thruster -- 脚F先右側スラスター
+61000000 Leg E root thruster -- 脚E根本スラスター
+61000000 Leg E intermediate thruster -- 脚E中間スラスター
+61000000 Leg E intermediate thruster -- 脚E中間スラスター
+61000000 Leg E ankle thruster -- 脚E足首スラスター
+61000000 Leg E tip left thruster -- 脚E先左側スラスター
+61000000 Leg E tip right thruster -- 脚E先右側スラスター
+61000000 Leg D root thruster -- 脚D根本スラスター
+61000000 Leg D intermediate thruster -- 脚D中間スラスター
+61000000 Leg D intermediate thruster -- 脚D中間スラスター
+61000000 leg D ankle thruster -- 脚D足首スラスター
+61000000 Leg D end left thruster -- 脚D先左側スラスター
+61000000 Leg D end right thruster -- 脚D先右側スラスター
+61000000 Leg C root thruster -- 脚C根本スラスター
+61000000 Leg C intermediate thruster -- 脚C中間スラスター
+61000000 Leg C intermediate thruster -- 脚C中間スラスター
+61000000 Leg C ankle thruster -- 脚C足首スラスター
+61000000 Leg C end left thruster -- 脚C先左側スラスター
+61000000 Leg C tip right thruster -- 脚C先右側スラスター
+61000000 Leg B root thruster -- 脚B根本スラスター
+61000000 Leg B intermediate thruster -- 脚B中間スラスター
+61000000 Leg B intermediate thruster -- 脚B中間スラスター
+61000000 Leg B ankle thruster -- 脚B足首スラスター
+61000000 Leg B end left thruster -- 脚B先左側スラスター
+61000000 Leg B tip right thruster -- 脚B先右側スラスター
+61000000 Leg A root thruster -- 脚A根本スラスター
+61000000 Leg A intermediate thruster -- 脚A中間スラスター
+61000000 Leg A intermediate thruster -- 脚A中間スラスター
+61000000 Leg A ankle thruster -- 脚A足首スラスター
+61000000 Leg A left thruster -- 脚A先左側スラスター
+61000000 Leg A tip right thruster -- 脚A先右側スラスター
+61000099 Leg F root thruster -- 脚F根本スラスター
+61000099 Leg F ankle thruster -- 脚F足首スラスター
+61000099 Leg F tip left thruster -- 脚F先左側スラスター
+61000099 Leg F tip right thruster -- 脚F先右側スラスター
+61000099 Leg E root thruster -- 脚E根本スラスター
+61000099 Leg E ankle thruster -- 脚E足首スラスター
+61000099 Leg E tip left thruster -- 脚E先左側スラスター
+61000099 Leg E tip right thruster -- 脚E先右側スラスター
+61000099 Leg D root thruster -- 脚D根本スラスター
+61000099 leg D ankle thruster -- 脚D足首スラスター
+61000099 Leg D end left thruster -- 脚D先左側スラスター
+61000099 Leg D end right thruster -- 脚D先右側スラスター
+61000099 Leg C root thruster -- 脚C根本スラスター
+61000099 Leg C ankle thruster -- 脚C足首スラスター
+61000099 Leg C end left thruster -- 脚C先左側スラスター
+61000099 Leg C tip right thruster -- 脚C先右側スラスター
+61000099 Leg B root thruster -- 脚B根本スラスター
+61000099 Leg B ankle thruster -- 脚B足首スラスター
+61000099 Leg B end left thruster -- 脚B先左側スラスター
+61000099 Leg B tip right thruster -- 脚B先右側スラスター
+61000099 Leg A root thruster -- 脚A根本スラスター
+61000099 Leg A ankle thruster -- 脚A足首スラスター
+61000099 Leg A left thruster -- 脚A先左側スラスター
+61000099 Leg A tip right thruster -- 脚A先右側スラスター
+74000000 main thruster -- メインスラスター
+74000000 main thruster -- メインスラスター
+74000000 main thruster -- メインスラスター
+74000000 main thruster -- メインスラスター
+74000000 For front sub thruster -- サブスラスター前用
+74000000 Sub thruster left front dual use -- サブスラスター左前兼用
+74000000 Sub thruster left -- サブスラスター左用
+74000000 Sub thruster right front dual use -- サブスラスター右前兼用
+74000000 Sub thruster right -- サブスラスター右用
+74000000 Unique for airborne use -- 滞空用ユニーク
+74100000 main thruster -- メインスラスター
+74100000 main thruster -- メインスラスター
+74100000 main thruster -- メインスラスター
+74100000 main thruster -- メインスラスター
+74100000 For front sub thruster -- サブスラスター前用
+74100000 For front sub thruster -- サブスラスター前用
+74100000 For after sub thruster -- サブスラスター後用
+74100000 For after sub thruster -- サブスラスター後用
+81350000 Main thruster (large back) -- メインスラスター（背面大)
+81350000 For left leg elevation (main) -- 左足上昇用（メイン）
+81350000 For left leg elevation (sub) -- 左足上昇用（サブ）
+81350000 For raising the right leg (main) -- 右足上昇用（メイン）
+81350000 For right foot elevation (sub) -- 右足上昇用（サブ）
+81350000 left shin -- 左脛
+81350000 right shin -- 右脛
+81350000 Right shin 1 (BB) -- 右脛1（BB）
+81350000 Right shin 2 (BB) -- 右脛2（BB）
+81350000 Right shin 3 (BB) -- 右脛3（BB）
+81350000 Right shin 4 (BB) -- 右脛4（BB）
+81350000 Left shin 1 (BB) -- 左脛1（BB）
+81350000 Left shin 2 (BB) -- 左脛2（BB）
+81350000 Left shin 3 (BB) -- 左脛3（BB）
+81350000 Left shin 4 (BB) -- 左脛4（BB）
+81350000 Left side (BB) -- 左脇（BB）
+81350000 Right side (BB) -- 右脇（BB）
+81350000 Left side (SB) -- 左脇（SB）
+81350000 Right side (SB) -- 右脇（SB）
+81350000 Left shoulder (tip) -- 左肩（先端）
+81350000 Left shoulder (diagonally below) -- 左肩（斜め下）
+81350000 Right shoulder (tip) -- 右肩（先端）
+81350000 Right shoulder (diagonally below) -- 右肩（斜め下）
+81450000 Main thruster (large back) -- メインスラスター（背面大)
+81450000 left palm -- 左掌
+81450000 right palm -- 右掌
+81450000 Left side (SB) -- 左脇（SB）
+81450000 Right side (SB) -- 右脇（SB）
+81450000 Left shoulder (tip) -- 左肩（先端）
+81450000 Left shoulder (diagonally below) -- 左肩（斜め下）
+81450000 Right shoulder (tip) -- 右肩（先端）
+81450000 Right shoulder (diagonally below) -- 右肩（斜め下）

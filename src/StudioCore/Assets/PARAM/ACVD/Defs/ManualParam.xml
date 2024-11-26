@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MANUAL_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 DlgType">
+      <DisplayName>表示ダイアログタイプ</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 padding[3]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 TexID1 = -1">
+      <DisplayName>テクスチャID１</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 TexID2 = -1">
+      <DisplayName>テクスチャID２</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 KeyGuideId = -1">
+      <DisplayName>キーガイドID</DisplayName>
+      <Description>キーガイド.xls のID。これを使う場合には表示ダイアログタイプを「3」にする必要がある</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

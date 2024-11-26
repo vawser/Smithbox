@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <pcAttrB AltName="PC: Black" Wiki="PC black attribute change value" />
+    <pcAttrW AltName="PC: White" Wiki="PC white attribute change value" />
+    <pcAttrL AltName="PC: Left" Wiki="PC left attribute change value" />
+    <pcAttrR AltName="PC: Right" Wiki="PC right attribute change value" />
+    <areaAttrB AltName="Area: Black" Wiki="Area black attribute change value" />
+    <areaAttrW AltName="Area: White" Wiki="Area white attribute change value" />
+    <areaAttrL AltName="Area: Left" Wiki="Area left attribute change value" />
+    <areaAttrR AltName="Area: Right" Wiki="Area right attribute change value" />
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

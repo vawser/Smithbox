@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters used for player and humanoid character movement." Row0Dummy="" />
+  <Field>
+    <walk_acceleration AltName="Walk Acceleration"/>
+    <auto_walk_speed AltName="Auto-Walk Speed Trigger"/>
+    <walk_speed AltName="Walk Speed"/>
+    <walk_deceleration AltName="Walk Deceleration"/>
+    <slow_walk_turn_rate AltName="Slow Walk Turn Rate"/>
+    <walk_turn_rate AltName="Walk Turn Rate"/>
+    <dash_speed AltName="Dash Speed"/>
+    <auto_dash_speed AltName="Auto-Dash Speed Trigger"/>
+    <dash_max_speed AltName="Dash Max Speed"/>
+    <dash_deceleration AltName="Dash Deceleration"/>
+    <Unk12 Wiki="Running Turning Related"/>
+    <Unk13 Wiki="Running Turning Related"/>
+    <lock_on_walk_acceleration AltName="Lock-on - Walk Acceleration"/>
+    <lock_on_auto_walk_speed AltName="Lock-on - Auto-Walk Speed Trigger"/>
+    <lock_on_walk_speed AltName="Lock-on - Walk Speed"/>
+    <lock_on_walk_deceleration AltName="Lock-on - Walk Deceleration"/>
+    <lock_on_walk_turn_rate AltName="Lock-on - Walk Turn Rate"/>
+    <lock_on_run_speed AltName="Lock-on - Run Speed"/>
+    <lock_on_auto_dash_speed AltName="Lock-on - Auto-Dash Speed Trigger"/>
+    <lock_on_dash_max_speed AltName="Lock-on - Dash Max Speed"/>
+    <lock_on_dash_deceleration AltName="Lock-on - Dash Deceleration"/>
+    <Unk27 Wiki="Locked-on Running Attack Aiming Related"/>
+    <Unk28 Wiki="Locked-on Running Attack Aiming Related"/>
+    <Unk29 Wiki="Turning Rate While Attacking Related"/>
+    <Unk30 Wiki="Turning Rate While Attacking Related"/>
+    <backstep_speed AltName="Backstep Speed"/>
+    <backstep_distance AltName="Backstep Distance"/>
+    <fat_backstep_distance AltName="Fat Backstep Distance"/>
+    <roll_speed AltName="Roll Speed"/>
+    <jump_height AltName="Jump Height"/>
+    <jump_length_min AltName="Jump Length - Min"/>
+    <jump_length_max AltName="Jump Length - Max"/>
+    <jump_gravity_min AltName="Jump Gravity - Min"/>
+    <jump_gravity_max AltName="Jump Gravity - Max"/>
+    <fall_death_timer AltName="Fall Death Timer"/>
+    <escape_min_height AltName="Escape Minimum Height"/>
+    <fall_min_vertical_speed AltName="Fall State - Minimum Vertical Speed"/>
+    <fall_distance_breakpoint_1 AltName="Fall Distance - Breakpoint 1"/>
+    <fall_distance_breakpoint_2 AltName="Fall Distance - Breakpoint 2"/>
+    <fall_distance_breakpoint_3 AltName="Fall Distance - Breakpoint 3"/>
+    <fall_distance_max AltName="Fall Distance - Max"/>
+    <ladder_climb_speed AltName="Ladder Climbing Speed"/>
+    <ladder_fast_climb_speed AltName="Ladder Fast Climbing Speed"/>
+    <ladder_slide_speed AltName="Ladder Sliding Speed"/>
+    <Unk107 Wiki="Ladder Grab Speed Related"/>
+    <Unk108 Wiki="Ladder Grab Speed Related"/>
+  </Field>
+</PARAMMETA>

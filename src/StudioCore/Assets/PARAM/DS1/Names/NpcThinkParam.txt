@@ -1,0 +1,476 @@
+0 For testing-For testing
+1 For not doing anything-for nothing
+2 Atarisawari data (copy and paste recommended)-Unobtrusive data (copy and paste recommended)
+100 Automatic patrol (default)-For automatic patrol (default)
+200 DS2 for easy logic test
+500 Hirai test I love ladder
+501 Hirai test help
+502 Hirai Test-Laddy Love NPC
+503 Skeleton for coffin throwing (large)
+505 Dead spirit (male) Calling friend
+506 Dead spirit (woman) Calling friends
+510 Return Test Immortal
+511 Hirai test Parry exclusive skeleton
+512 Hirai Test New Type of Immortal (Heavy Warrior / Spear)
+513 Hirai Test I Love Guards
+514 Wyvern Bird Control Test
+515 Wyvern Bird Control Test (2nd)
+520 NPC player test
+530 DS2Test 0 for upstream test
+531 DS2Test 1 for upstream test
+532 DS2Test for upstream test 2
+533 DS2Test 3 for upstream test
+534 DS2Test 4 for upstream test
+535 DS2Test 5 for upstream test
+536 DS2Test 6 for upstream test
+537 DS2Test 7 for upstream test
+538 DS2Test 8 for upstream test
+539 DS2Test 9 for upstream test
+540 For automatic patrol (running)-For automatic patrol (running)
+541 Automatic patrol (walking)-For automatic patrol (walking)
+550 DS2 test wandering for automatic test (Watanabe management)
+551 DS2 test wandering reservation for automatic test (Watanabe management)
+600 Return Test @ General Soldier _ Sword
+601 Return Test @ General Soldier _ Sword (Fire)
+602 Homecoming Test @ General Soldier _ Bow
+603 Return Test @ Knight _ Sword
+700 Calling Test Beggar
+701 Snake A for Calling Friends
+702 Room for Calling Buddy for Buddy
+6000 Sun Knight
+6010 Dark Moon Knight
+6020 Knight Ostra
+6030 "Big Hat" Logan II First Stage
+6031 "Big Hat" Logan II Stage 2
+6032 "Big Hat" Logan III Stage
+6040 Logan Disciple
+6050 Princess of the Exiled
+6060 Gray Saint
+6070 White Saint
+6080 Saint Knight A
+6090 Saint Knight B
+6091 Saint Knight B (dead)
+6100 Saint Knight C
+6101 Saint Knight C (dead)
+6130 Vase Sorcerer
+6170 Wandering chaos
+6180 Healer
+6220 Blacksmith Rickert
+6250 A Broken Merchant
+6260 trickster
+6270 A Broken Warrior
+6271 Broken warrior (dead)
+6280 Onion Knight
+6290 Onion Knight's Daughter
+6300 Hugged Knight Lautrek
+6310 Field Takeshi
+6320 Cemetery Coward Patch
+6350 Elle Amis
+6370 Dragon Priest
+6390 Black Knight Tarcus
+6400 Belka Knight
+6410 Witch Mallows
+6420 Ninja
+6490 Lautrek companion 1 (Black Knight Tarcus)
+6500 Lautrek companion (Ninja)
+6510 Black Iron Knight
+6511 Black Iron Knight (Enemy)
+6520 Witch @ Abyss
+6521 Witch Moriniwa
+6530 Swamp Aunt @ Kagecho
+6531 Swamp Aunt @ Kagecho (Invasion)
+6540 Sun Knight II Castle 1
+6541 Sun Knight Castle 2
+6542 Sun Knight Closed City
+6543 Sun Knight, Ojo 2
+6544 Sun Knight Great Tomb
+6550 Temple Knight Cemetery 1
+6551 Temple Knight II Cemetery 2 (Invasion)
+6560 Barb Knight Closed City 1 (Invasion)
+6561 Barb Knight: Closed City 2 (Invasion)
+6562 Barb Knight II Castle 2 (Invasion)
+6570 Yellow Cloth: Painting World (Invasion)
+6580 Lookout Tower NPC (Havel)
+6590 Lautrek Castle 1 (NPC Multi)
+6591 Lautrec Castle 2 (NPC Multi)
+6600 Royal Castle 1 Tower NPC (Ricard)
+6610 Crystal Knight
+6620 Krag's sister (enemy)
+6640 Dark Moon Sword (Heavy Knight)
+6650 Dark Moon Sword (Light Knight)
+6700 Princess of the Exiled (Past Forest)
+6740 Kiarlan
+6801 Bandit A Gatekeeper
+6802 Bandit B Warrior
+6803 Bandit C Bow Master
+6804 Bandit D Magic (Attack)
+6805 Bandit E Magic (Recovery)
+6806 Bandit F Stealth
+6810 Tutorial Prisoner 1
+6811 Tutorial Prisoner 2
+7100 Castle 2_Vagrant NPC_Warrior
+7110 Castle 1 ・ First half_Vagrant NPC_Voyeur
+7111 Castle 1st & 2nd half_Vagrant NPC_Voyeur
+7120 Painting world_Vagrant NPC_Wanderer
+7130 Moriwaba, first half_Vagrant NPC_Hunter
+7131 Moriwaba, latter half_Vagrant NPC_Hunter
+7140 Cemetery 1_Vagrant NPC_Cleric
+7150 Cemetery 2_Vagrant NPC_Cleric
+7160 Underground Lake_Vagrant NPC_Dragon Newt
+7170 Kagemachi_Vagrant NPC_Wanderer
+7180 Closed city, first half_Vagrant NPC_Sorcerer
+7190 Royal Castle 1_Vagrant NPC_Warrior
+7200 Royal Castle 2_Vagrant NPC_Knight
+7210 Abyss_Vagrant NPC_Bandit
+7220 Crystal Tower_Vagrant NPC_Sorcerer
+7230 Great tomb_Vagrant NPC_Not possessed
+7240 Tutorial_Vagrant NPC_What You Don't Have
+10000 Patrol Leader
+10001 Patrol Leader - DLC
+120000 Rat
+120001 Rat
+120010 Rat
+120100 Small Rat
+120101 Small Rat
+120102 Small Rat
+120103 Small Rat
+120110 Small Rat
+120200 Giant Rat
+120300 Plague Rat
+206000 Infested Ghoul
+206001 Infested Ghoul
+206002 Infested Ghoul
+223000 Stray Demon
+223001 Stray Demon
+223100 Firesage Demon
+223200 Asylum Demon
+224000 Capra Demon
+224001 Capra Demon
+224002 Capra Demon
+224003 Capra Demon
+224004 Capra Demon
+225000 Taurus Demon
+225001 Taurus Demon
+225002 Taurus Demon - Demon Ruins
+225003 Taurus Demon - Demon Ruins
+226000 Batwing Demon
+226001 Batwing Demon
+227000 Mushroom Parent
+227001 Mushroom Parent
+228000 Mushroom Child
+228001 Mushroom Child
+229000 Salivan watchdog (Large) -- サリヴァーンの番犬（大）
+230000 Prowling Demon - Catacombs
+230001 Prowling Demon - Sen's Fortress
+230002 Prowling Demon - Sen's Fortress
+230003 Prowling Demon - Undead Parish
+230004 Prowling Demon - Anor Londo
+230005 Prowling Demon - Demon Ruins
+231000 Crow Demon
+232000 Iron Golem
+233000 Demonic Foliage
+236000 Smough
+236001 Smough
+237000 Channeler
+237001 Channeler
+237002 Channeler
+238000 Stone Knight
+239000 Darkwraith
+239001 Darkwraith
+240000 Painting Guardian
+240001 Painting Guardian
+241000 Silver Knight
+241003 Silver Knight
+241004 Silver Knight
+241010 Silver Knight
+241013 Silver Knight
+241014 Silver Knight
+241023 Silver Knight
+243000 Moving Statue
+243001 Moving Statue
+250000 Hollow
+250001 Hollow
+250002 Hollow
+250004 Hollow
+250005 Hollow
+250006 Hollow
+250007 Hollow
+250008 Hollow
+250010 Hollow
+250011 Hollow
+250012 Hollow
+250013 Hollow
+250020 Hollow
+250021 Hollow
+250030 Hollow
+251000 Undead Merchant
+251001 Undead Merchant
+252000 Undead Assassin
+252001 Undead Assassin
+252010 Undead Assassin
+253000 Blowdart Hollow
+253001 Blowdart Hollow
+253002 Blowdart Hollow
+253100 Blowdart Hollow
+254000 Hollow Warrior
+254001 Hollow Warrior
+254002 Hollow Warrior
+254006 Hollow Warrior
+254007 Hollow Warrior
+254008 Hollow Warrior
+254009 Hollow Warrior
+254010 Hollow Warrior
+254011 Hollow Warrior
+254020 Hollow Warrior
+254030 Hollow Warrior
+255000 Hollow Soldier
+255001 Hollow Soldier
+255002 Hollow Soldier
+255003 Hollow Soldier
+255004 Hollow Soldier
+255005 Hollow Soldier
+255006 Hollow Soldier
+255007 Hollow Soldier
+255008 Hollow Soldier
+255011 Hollow Soldier
+255012 Hollow Soldier
+255020 Hollow Soldier
+255030 Hollow Soldier
+255040 Hollow Soldier
+256000 Balder Knight
+256001 Balder Knight
+256002 Balder Knight
+256003 Balder Knight
+256004 Balder Knight
+256005 Balder Knight
+256006 Balder Knight
+256007 Balder Knight
+256008 Balder Knight
+257000 Heavy Knight
+257001 Heavy Knight
+257010 Heavy Knight
+257011 Heavy Knight
+257012 Heavy Knight
+259000 King's Secretary Sniper
+259100 King's Secretary Sniper, Anger
+264000 Andre of Astora
+265000 Necromancer
+266000 Butcher
+267000 Ghost (Male)
+267001 Ghost (Male)
+267002 Ghost (Male)
+267010 Ghost (Male)
+267011 Ghost (Male)
+267020 Ghost (Male)
+267021 Ghost (Male)
+267030 Ghost (Male)
+267031 Ghost (Male)
+267040 Ghost (Male)
+267041 Ghost (Male)
+267050 Ghost (Male)
+268000 Ghost (Female)
+268001 Ghost (Female)
+269000 Serpent Soldier
+269001 Serpent Soldier
+269010 Serpent Soldier
+270000 Serpent Mage
+270001 Serpent Mage
+270002 Serpent Mage
+271000 Crystal Golem
+271001 Crystal Golem
+271002 Crystal Golem
+271100 Crystal Golem (Gold)
+271101 Crystal Golem (Gold)
+273000 Priscilla
+273100 Priscilla's Tail
+275000 Anastacia of Astora
+278000 Mimic
+278001 Mimic
+278002 Mimic
+279000 Black Knight
+279001 Black Knight
+279002 Black Knight
+279003 Black Knight
+279004 Black Knight
+279010 Black Knight
+279100 Black Knight (Ghost)
+280000 Crystal Hollow
+280001 Crystal Hollow
+280002 Crystal Hollow
+281000 Infested Barbarian (Club)
+281001 Infested Barbarian (Club)
+281100 Infested Barbarian (Boulder)
+282000 Immortals (Krug followers)
+283010 Hollow Phalanx
+284000 Engorged Hollow
+284001 Engorged Hollow
+286000 Giant
+286001 Giant
+287000 Royal Sentinel
+287010 Royal Sentinel
+287011 Royal Sentinel
+287012 Royal Sentinel
+287013 Royal Sentinel
+290000 Skeleton
+290001 Skeleton
+290002 Skeleton
+290003 Skeleton
+290004 Skeleton
+290005 Skeleton
+290006 Skeleton
+290007 Skeleton
+291000 Giant Skeleton
+291001 Giant Skeleton
+291002 Giant Skeleton
+291003 Giant Skeleton
+292000 Vamos
+292001 Vamos
+293000 Bonewheel Skeleton
+293010 Bonewheel Skeleton
+294000 Skeleton Baby
+295000 Skeleton Beast
+295001 Skeleton Beast
+296000 Bone Tower
+296001 Bone Tower
+309000 Mosquito
+320000 Slime
+321000 Egg Carrier
+321001 Egg Carrier - NPC
+322000 Chaos Bug
+323000 Moonlight Butterfly
+323001 Moonlight Butterfly
+324000 Chaos Eater
+324001 Chaos Eater
+324002 Chaos Eater
+325000 Maneater Clam
+327000 Basilisk
+327001 Basilisk
+329000 king bugs and mosquitoes
+330000 Crystal Lizard
+330001 Crystal Lizard
+332000 Pinwheel
+332001 Pinwheel
+332002 Pinwheel
+332003 Pinwheel
+333000 Pisaca
+333001 Pisaca
+333002 Pisaca
+333003 Pisaca
+333004 Pisaca
+333005 Pisaca
+334000 Undead Attack Dog
+334001 Undead Attack Dog
+334010 Undead Attack Dog
+334011 Undead Attack Dog
+334100 Flaming Attack Dog
+334101 Flaming Attack Dog
+335000 Walking Tree
+337000 Tree Lizard
+338000 Leech
+339000 Burrower
+339001 Burrower
+339002 Burrower
+339003 Burrower
+340000 Cragspider
+341000 Frog-Ray
+342000 Undead Dragon
+342001 Undead Dragon
+342002 Undead Dragon
+342100 Undead Dragon - Legs
+343000 Hellkite Drake
+343001 Hellkite Drake
+345000 Stone Dragon
+346000 Armored Tusk
+346100 Armored Tusk - Reinforced
+347000 Sanctuary Guardian (Old)
+347100 Sanctuary Guardian
+347101 Sanctuary Guardian
+348000 Chaos Bug
+349000 Vagrant (Passive)
+349100 Vagrant (Aggressive)
+350000 Mass Of Souls
+350100 Wisp
+350101 Wisp
+351000 Giant Crow
+352000 Drake
+352001 Drake
+352002 Drake
+352003 Drake
+352005 Drake
+352006 Drake
+353000 Hydra
+353001 Hydra
+353100 Hydra's Head
+353200 Hydra's Head
+409000 Marvellous Chester
+410000 Knight Artorias
+411000 Hawkeye Gough
+411001 Hawkeye Gough
+412000 Stone Guardian
+412001 Stone Guardian
+413000 Scarecrow
+413001 Scarecrow
+413002 Scarecrow
+413010 Scarecrow
+413011 Scarecrow
+413012 Scarecrow
+414000 Elizabeth
+415000 Bloathead
+415001 Bloathead
+415002 Bloathead
+415010 Bloathead
+415011 Bloathead
+415012 Bloathead
+415020 Bloathead
+415021 Bloathead
+415022 Bloathead
+416000 Bloathead Sorcerer
+416001 Bloathead Sorcerer
+416002 Bloathead Sorcerer
+416003 Bloathead Sorcerer
+416020 Bloathead Sorcerer
+416021 Bloathead Sorcerer
+416022 Bloathead Sorcerer
+417000 Humanity Phantom (Large)
+417100 Humanity Phantom (Medium)
+417101 Humanity Phantom (Medium)
+417200 Humanity Phantom (Small)
+418000 Chained Prisoner
+418001 Chained Prisoner
+419000 Undead Attack Dog (DLC)
+419001 Undead Attack Dog (DLC)
+450000 Manus, Father of the Abyss
+451000 Kalameet
+452000 Great Grey Wolf Sif (DLC)
+520000 Centipede Demon
+520100 Centipede Demon's Arm
+520200 Centipede Demon's Tail
+521000 Great Grey Wolf Sif
+522000 Gravelord Nito
+523000 Bed Of Chaos
+523100 Bed Of Chaos (Moving)
+524000 Parasitic Wall Hugger
+525000 Ceaseless Discharge
+526000 Gaping Dragon
+527000 Dragonslayer Ornstein
+527100 Dragonslayer Ornstein (Giant)
+528000 Chaos Witch Quelaag
+529000 Seath the Scaleless
+529001 Seath the Scaleless
+530000 Undead King Jar-Eel
+531000 Gwynevere
+532000 Gwyndolin
+533000 Kingseeker Frampt
+533001 Darkstalker Kaathe
+533002 Darkstalker Kaathe
+534000 The Fair Lady
+535000 Gargoyle
+535001 Gargoyle
+535100 Gargoyle - Anor Londo
+536000 Great Feline
+536100 Alvina
+537000 Gwyn, Lord of Cinder
+539000 Four Kings
+540000 Bed of Chaos Arm
+540100 Bed of Chaos Worm
+807000 Used for test NPC

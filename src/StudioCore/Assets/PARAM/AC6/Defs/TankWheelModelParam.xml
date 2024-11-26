@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TANK_WHEEL_MODEL_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="fixstr baseBoneName[16]">
+      <DisplayName>参照関節名</DisplayName>
+      <Description>ホイールモデルの関節名</Description>
+      <DisplayFormat>%s</DisplayFormat>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 refSusAIndex_0">
+      <DisplayName>レイキャスト参照用ホイールインデックス前</DisplayName>
+      <Description>ホイール内部制御のインデックス</Description>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="u8 refSusAIndex_1">
+      <DisplayName>レイキャスト参照用ホイールインデックス後</DisplayName>
+      <Description>ホイール内部制御のインデックス</Description>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="u8 BoneAxis">
+      <DisplayName>上下移動するためのボーンの軸(0:X 1:Y 2:Z)</DisplayName>
+      <Description>ホイールモデルの関節の上下に移動させるための軸</Description>
+      <Maximum>2</Maximum>
+      <SortID>104</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[1]">
+      <DisplayName>予約</DisplayName>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="f32 applyRate">
+      <DisplayName>ホイール前後の参照割合率</DisplayName>
+      <Description>ホイールインデックス前、後の適用割合(０なら前１００％、１なら後ろ１００％）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="dummy8 pad7[4]">
+      <DisplayName>予約</DisplayName>
+      <SortID>999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,6 @@
+"LOCK_CAM_OVER_SHOULDER_DIRECTION_CHANGE_TYPE"
+"u8"
+"変換しない","0"
+"押し続ける（角度）","1"
+"押し続ける（時間）","2"
+"短く弾く","3"

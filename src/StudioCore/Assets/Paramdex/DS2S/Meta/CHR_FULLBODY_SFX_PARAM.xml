@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters used for fully body visual effects."  Row0Dummy="" />
-  <Field>
-    <sfx_id AltName= "SFX ID" Wiki="Corresponds to the numeric ID used in the title of the .FFX file." />
-  </Field>
-</PARAMMETA>

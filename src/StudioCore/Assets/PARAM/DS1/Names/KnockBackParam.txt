@@ -1,0 +1,3 @@
+0 Generic
+1 Player
+10 Generic (old)

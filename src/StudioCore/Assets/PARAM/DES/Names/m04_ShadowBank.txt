@@ -1,0 +1,9 @@
+0 B0
+1 B1
+2 B2
+10 scn040001_c00
+11 scn040001_c05
+15 For poly drama (p040201-c07-shadowOff
+16 For poly drama (p040201-c08
+50 cut scene 1
+51 cut scene 2

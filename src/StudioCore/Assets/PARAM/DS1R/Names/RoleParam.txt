@@ -1,0 +1,26 @@
+0 Survival player -- 生存プレイヤ
+1 White Ghost -- 白ゴースト
+2 Black Ghost -- 黒ゴースト
+3 Wandering -- 徘徊
+4 Wandering NPC -- 徘徊NPC
+5 Normal enemy -- 通常敵
+6 Animal enemies -- 動物敵
+7 Boss Enemy -- ボス敵
+8 Grey Ghost -- グレイゴースト
+9 Npc -- NPC
+10 Replay -- リプレイ
+11 Display -- 表示
+12 Intruders -- 侵入者
+13 For the Arena -- 闘技場用
+10001 White Ghost (Red Hunt white pledge) -- 白ゴースト（赤狩り白誓約）
+10002 Black Ghost (Red Hunt white pledge) -- 黒ゴースト（赤狩り白誓約）
+20001 White Ghost (Sun Pledge) -- 白ゴースト（太陽誓約）
+20002 Black Ghost (Sun Pledge) -- 黒ゴースト（太陽誓約）
+30001 White Ghost (Berserker Pledge) -- 白ゴースト（バーサーカー誓約）
+30002 Black Ghost (Berserker Pledge) -- 黒ゴースト（バーサーカー誓約）
+40001 White Ghost (Sinner Hero Pledge) -- 白ゴースト（罪人英雄誓約）
+40002 Black Ghost (Sinner Hero Pledge) -- 黒ゴースト（罪人英雄誓約）
+50001 White Ghost (Boss Guardian Pledge (Rosalia)) -- 白ゴースト（ボス守護者誓約(ロザリア)）
+50002 Black Ghost (Boss Guardian Pledge (Rosalia)) -- 黒ゴースト（ボス守護者誓約(ロザリア)）
+60001 White Ghost (Map Guardian pledge (bridge)) -- 白ゴースト（マップ守護者誓約(橋)）
+60002 Black Ghost (Map Guardian pledge (bridge)) -- 黒ゴースト（マップ守護者誓約(橋)）

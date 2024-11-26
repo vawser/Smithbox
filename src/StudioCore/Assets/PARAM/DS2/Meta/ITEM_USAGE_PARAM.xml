@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to item usage." Row0Dummy="" />
+  <Field>
+    <item_no_trade AltName="No Trade"/>
+    <item_can_discard AltName="Can Discard"/>
+  </Field>
+</PARAMMETA>

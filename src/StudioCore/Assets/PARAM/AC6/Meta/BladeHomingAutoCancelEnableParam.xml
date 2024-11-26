@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the homing cancellation behavior for a blade melee attack." />
+  
+  <Field>
+    <cancelAngDegR
+    AltName="Tracking Interrupt: Right Angle"
+    Wiki="Interrupt above the specified right angle. In degrees." />
+    
+    <cancelAngDegL
+    AltName="Tracking Interrupt: Left Angle"
+    Wiki="Interrupt above the specified left angle. In degrees." />
+    
+    <cancelAngDegU
+    AltName="Tracking Interrupt: Upward Angle"
+    Wiki="Interrupt above the specified upward angle. In degrees." />
+    
+    <cancelAngDegD
+    AltName="Tracking Interrupt: Downward Angle"
+    Wiki="Interrupt above the specified downward angle. In degrees." />
+    
+    <cancelDist
+    AltName="Tracking Interrupt: Cancel Distance"
+    Wiki="Interrupted within this distance. -1 = infinity = no interruption at distance. In metres." />
+    
+    <nolockMinTimeSec
+    AltName="Minimum Time without Lock"
+    Wiki="Minimum time without no lock. In seconds." />
+    
+    <outTargetDist
+    AltName="Blade Homing Effective Distance"
+    Wiki="When the target is outside this distance, the behavior is non-locking. -1 always behaves when locked" />
+    
+    <reserved
+    AltName=""
+    Padding="" />
+  
+  </Field>
+</PARAMMETA>

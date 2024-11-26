@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>MAP_OBJECT_PLAY_GO_DOOR_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 Unk00" />
+    <Field Def="s32 Unk01" />
+    <Field Def="f32 Unk02" />
+    <Field Def="f32 Unk03" />
+    <Field Def="f32 Unk04" />
+    <Field Def="f32 Unk05" />
+    <Field Def="f32 Unk06" />
+    <Field Def="f32 Unk07" />
+  </Fields>
+</PARAMDEF>

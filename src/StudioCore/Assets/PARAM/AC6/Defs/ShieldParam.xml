@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SHIELD_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 shieldGuardBaseDmyId = -1">
+      <DisplayName>シールド_ガード基準ダミポリID</DisplayName>
+      <Description>方向の基準となるダミポリ（-1でマスター）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 shieldGuardIsPosMaster = 1">
+      <DisplayName>シールド_ガード判定位置をマスターで上書き</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>判定位置をダミポリ位置ではなくキャラのマスター位置とするかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="dummy8 reserved1[3]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="s16 shieldGuardDirAngDegH">
+      <DisplayName>シールド_ガード方向_水平[deg]</DisplayName>
+      <Description>シールドを展開する方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 shieldGuardDirAngDegV">
+      <DisplayName>シールド_ガード方向_垂直[deg]</DisplayName>
+      <Description>シールドを展開する方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 shieldGuardRangeAngDegH">
+      <DisplayName>シールド_ガード範囲_水平[deg]</DisplayName>
+      <Description>シールドの範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 shieldGuardRangeAngDegV">
+      <DisplayName>シールド_ガード範囲_垂直[deg]</DisplayName>
+      <Description>シールドの範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 pa1GuardBaseDmyId = -1">
+      <DisplayName>PA_1_ガード基準ダミポリID</DisplayName>
+      <Description>方向の基準となるダミポリ（-1でマスター）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 pa1GuardIsPosMaster = 1">
+      <DisplayName>PA_1_ガード判定位置をマスターで上書き</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>判定位置をダミポリ位置ではなくキャラのマスター位置とするかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 reserved2[3]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>302</SortID>
+    </Field>
+    <Field Def="s16 pa1GuardDirAngDegH">
+      <DisplayName>PA_1_ガード方向_水平[deg]</DisplayName>
+      <Description>PAを展開する方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 pa1GuardDirAngDegV">
+      <DisplayName>PA_1_ガード方向_垂直[deg]</DisplayName>
+      <Description>PAを展開する方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 pa1GuardRangeAngDegH">
+      <DisplayName>PA_1_ガード範囲_水平[deg]</DisplayName>
+      <Description>PAの範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 pa1GuardRangeAngDegV">
+      <DisplayName>PA_1_ガード範囲_垂直[deg]</DisplayName>
+      <Description>PAの範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s32 pa2GuardBaseDmyId = -1">
+      <DisplayName>PA_2_ガード基準ダミポリID</DisplayName>
+      <Description>方向の基準となるダミポリ（-1でマスター）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 pa2GuardIsPosMaster = 1">
+      <DisplayName>PA_2_ガード判定位置をマスターで上書き</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>判定位置をダミポリ位置ではなくキャラのマスター位置とするかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="dummy8 reserved3[3]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>303</SortID>
+    </Field>
+    <Field Def="s16 pa2GuardDirAngDegH">
+      <DisplayName>PA_2_ガード方向_水平[deg]</DisplayName>
+      <Description>PAを展開する方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 pa2GuardDirAngDegV">
+      <DisplayName>PA_2_ガード方向_垂直[deg]</DisplayName>
+      <Description>PAを展開する方向</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 pa2GuardRangeAngDegH">
+      <DisplayName>PA_2_ガード範囲_水平[deg]</DisplayName>
+      <Description>PAの範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 pa2GuardRangeAngDegV">
+      <DisplayName>PA_2_ガード範囲_垂直[deg]</DisplayName>
+      <Description>PAの範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="dummy8 reserved4[16]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>304</SortID>
+    </Field>
+    <Field Def="u16 paReuseEnableThreshold">
+      <DisplayName>PA復帰ガード値</DisplayName>
+      <Description>ガードブレイク後、PAを再度展開できるようになるタイミングを指定するパラメータ</Description>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="dummy8 reserved_end[30]">
+      <DisplayName>パディング3</DisplayName>
+      <SortID>305</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

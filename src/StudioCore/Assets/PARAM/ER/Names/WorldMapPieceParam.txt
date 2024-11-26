@@ -1,0 +1,34 @@
+0 Limgrave West
+1 Weeping Peninsula
+2 Limgrave East
+3 Liurnia East
+4 Liurnia North
+5 Liurnia West
+6 Altus Plateau
+7 Leyndell Royal Capital
+8 Mt. Gelmir
+9 Caelid
+10 Dragonbarrow
+11 Mountaintops of the Giants West
+12 Mountaintops of the Giants East
+13 Consecrated Snowfield
+14 
+15 Starfall Crater
+16 
+17 
+18 
+19 
+20 
+70 Allow Map Display: Lands Between
+100 Ainsel River
+101 Lake of Rot
+102 Mohgwyn Palace
+103 Siofra River
+104 Deeproot Depths
+105 
+1000 Gravesite Plain
+1001 Scadu Altus
+1002 Southern Shore
+1003 Rauh Ruins
+1004 Abyss
+1070 Allow Map Display: Shadow of the Erdtree

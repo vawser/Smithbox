@@ -1,0 +1,162 @@
+0 Default (EMEVD weather enum 0)
+1 Cloudless (EMEVD weather enum 5)
+10 Flat Clouds (EMEVD weather enum 6)
+11 Puffy Clouds (EMEVD weather enum 7)
+20 Rain (EMEVD weather enum 1)
+21 Rainy Clouds (EMEVD weather enum 8)
+30 Windy Rain (EMEVD weather enum 3)
+31 Windy Fog (EMEVD weather enum 9)
+40 Snow (EMEVD weather enum 2)
+41 Heavy Snow (EMEVD weather enum 10)
+50 Fog (EMEVD weather enum 4)
+51 Heavy Fog (EMEVD weather enum 11)
+52 Rainy Heavy Fog (EMEVD weather enum 15)
+60 Windy Puffy Clouds (EMEVD weather enum 12)
+81 Snowy Heavy Fog (EMEVD weather enum 16)
+82 Scattered Rain (EMEVD weather enum 17)
+83 Unk18 (EMEVD weather enum 18)
+84 ThisDoesntExistInVanilla (EMEVD weather enum 19)
+85 ThisDoesntExistInVanilla (EMEVD weather enum 20)
+86 ThisDoesntExistInVanilla (EMEVD weather enum 21)
+87 ThisDoesntExistInVanilla (EMEVD weather enum 22)
+88 ThisDoesntExistInVanilla (EMEVD weather enum 23)
+99 
+1001 
+1010 
+1011 
+1020 
+1021 
+1040 
+1050 
+1051 
+1052 
+2010 
+2011 
+2020 
+2021 
+2110 
+2111 
+3010 
+3011 
+3101 
+3110 
+3111 
+3120 
+4000 
+4010 
+4011 
+4040 
+4110 
+4111 
+4140 
+4201 
+4210 
+4211 
+4220 
+4221 
+4230 
+4231 
+4240 
+4241 
+4250 
+4251 
+4252 
+4260 
+5001 
+5010 
+5011 
+5020 
+5021 
+5030 
+5050 
+5051 
+5060 
+5084 
+5085 
+5501 
+5511 
+5520 
+5521 
+5530 
+5540 
+5541 
+5550 
+5582 
+6000 
+6001 
+6010 
+6011 
+6020 
+6021 
+6030 
+6050 
+6051 
+6084 
+6501 
+6550 
+6551 
+7001 
+7030 
+7031 
+7060 
+7082 
+7084 
+7501 
+7585 
+7810 
+7811 
+7820 
+7821 
+7830 
+7850 
+7851 
+100030 
+100031 
+110020 
+110021 
+110521 
+111001 
+111060 
+117111 
+120311 
+130001 
+130010 
+130011 
+130030 
+130060 
+140001 
+140020 
+150040 
+200000 
+200010 
+200011 
+200041 
+200082 
+200110 
+200111 
+200140 
+200141 
+200182 
+280000 
+280060 
+341021 
+341051 
+341121 
+341151 
+341251 
+341351 
+341421 
+341450 
+341451 
+341501 
+341510 
+341511 
+341520 
+341521 
+341550 
+341551 
+392010 
+392011 
+392020 
+392021 
+392030 

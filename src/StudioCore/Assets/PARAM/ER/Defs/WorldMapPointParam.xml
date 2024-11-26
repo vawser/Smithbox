@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>WORLD_MAP_POINT_PARAM_ST</ParamType>
+  <DataVersion>6</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>2901</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>2902</SortID>
+    </Field>
+    <Field Def="u32 eventFlagId">
+      <DisplayName>開放イベントフラグID</DisplayName>
+      <Description>開放条件のイベントフラグID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u32 distViewEventFlagId">
+      <DisplayName>遠見台発見イベントフラグID</DisplayName>
+      <Description>遠見台で発見した際に立てるイベントフラグID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>2100</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="u16 iconId">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>アイコンID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 bgmPlaceType">
+      <DisplayName>BGM用場所情報（入場領域内）</DisplayName>
+      <Enum>SOUND_BGM_MAP_PLACE_TYPE</Enum>
+      <Description>Bgm場所タイプ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 isAreaIcon:1">
+      <DisplayName>範囲アイコンか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>範囲を表すアイコンか。地図に対して等倍になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="u8 isOverrideDistViewMarkPos:1">
+      <DisplayName>遠見台目印_座標上書きするか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>遠見台目印として使うときに座標を上書きするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>2300</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="u8 isEnableNoText:1">
+      <DisplayName>テキストが無いときに表示するか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>テキストが無いときにも表示するか。基本的にはテキストがなければポイントは表示しない。このフラグが有効なときにはテキストがなくても表示する</Description>
+      <Maximum>1</Maximum>
+      <SortID>710</SortID>
+    </Field>
+    <Field Def="dummy8 pad3:5">
+      <DisplayName>パッド3</DisplayName>
+      <SortID>2903</SortID>
+    </Field>
+    <Field Def="u8 areaNo_forDistViewMark">
+      <DisplayName>遠見台目印上書き_エリア番号</DisplayName>
+      <Description>mAA_BB_CC_DD の AA 部分</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>2400</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="u8 gridXNo_forDistViewMark">
+      <DisplayName>遠見台目印上書き_グリッドX番号</DisplayName>
+      <Description>mAA_BB_CC_DD の BB 部分</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>2500</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="u8 gridZNo_forDistViewMark">
+      <DisplayName>遠見台目印上書き_グリッドZ番号</DisplayName>
+      <Description>mAA_BB_CC_DD の CC 部分</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>2600</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="u32 clearedEventFlagId">
+      <DisplayName>クリア済イベントフラグID</DisplayName>
+      <Description>クリア済みイベントフラグID(0:常にクリア済み扱い)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="u8 dispMask00:1">
+      <DisplayName>表示設定M00</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>M00で表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="u8 dispMask01:1">
+      <DisplayName>表示設定M01</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>M01で表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>810</SortID>
+    </Field>
+    
+    <Field Def="dummy8 pad2_0:6" RemovedVersion="11210015"/>
+    
+    <Field Def="u8 dispMask02:1" FirstVersion="11210015"/>
+    <Field Def="dummy8 pad2_0:5" FirstVersion="11210015" >
+      <DisplayName>パッド</DisplayName>
+      <Description>pad2_0</Description>
+      <SortID>2904</SortID>
+    </Field>
+    
+    <Field Def="dummy8 pad2[1]">
+      <DisplayName>パッド</DisplayName>
+      <Description>pad2</Description>
+      <SortID>2905</SortID>
+    </Field>
+    <Field Def="u16 distViewIconId">
+      <DisplayName>遠見台発見時アイコンID</DisplayName>
+      <Description>遠見台発見時アイコンID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>2200</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="f32 angle">
+      <DisplayName>アイコン角度[deg]</DisplayName>
+      <Description>表示アイコンの回転角度[deg]</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="u8 areaNo">
+      <DisplayName>エリア番号</DisplayName>
+      <Description>mAA_BB_CC_DD の AA 部分</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 gridXNo">
+      <DisplayName>グリッドX番号</DisplayName>
+      <Description>mAA_BB_CC_DD の BB 部分</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 gridZNo">
+      <DisplayName>グリッドZ番号</DisplayName>
+      <Description>mAA_BB_CC_DD の CC 部分</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="dummy8 pad[1]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>2906</SortID>
+    </Field>
+    <Field Def="f32 posX">
+      <DisplayName>X座標</DisplayName>
+      <Description>X座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="f32 posY">
+      <DisplayName>Y座標</DisplayName>
+      <Description>Y座標（使っていない）</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 posZ">
+      <DisplayName>Z座標</DisplayName>
+      <Description>Z座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="s32 textId1 = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID。無効値(-1)なら、何も表示しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>210</SortID>
+      <UnkC8>テキストID01</UnkC8>
+    </Field>
+    <Field Def="u32 textEnableFlagId1">
+      <DisplayName>出現イベントフラグID</DisplayName>
+      <Description>テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(0)なら、On扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>215</SortID>
+      <UnkC8>テキストID01</UnkC8>
+    </Field>
+    <Field Def="u32 textDisableFlagId1">
+      <DisplayName>非表示イベントフラグID</DisplayName>
+      <Description>テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(0)なら、Off扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>216</SortID>
+      <UnkC8>テキストID01</UnkC8>
+    </Field>
+    <Field Def="s32 textId2 = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID。無効値(-2)なら、何も表示しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>220</SortID>
+      <UnkC8>テキストID02</UnkC8>
+    </Field>
+    <Field Def="u32 textEnableFlagId2">
+      <DisplayName>出現イベントフラグID</DisplayName>
+      <Description>テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(1)なら、On扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>225</SortID>
+      <UnkC8>テキストID02</UnkC8>
+    </Field>
+    <Field Def="u32 textDisableFlagId2">
+      <DisplayName>非表示イベントフラグID</DisplayName>
+      <Description>テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(1)なら、Off扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>226</SortID>
+      <UnkC8>テキストID02</UnkC8>
+    </Field>
+    <Field Def="s32 textId3 = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID。無効値(-3)なら、何も表示しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>230</SortID>
+      <UnkC8>テキストID03</UnkC8>
+    </Field>
+    <Field Def="u32 textEnableFlagId3">
+      <DisplayName>出現イベントフラグID</DisplayName>
+      <Description>テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(2)なら、On扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>235</SortID>
+      <UnkC8>テキストID03</UnkC8>
+    </Field>
+    <Field Def="u32 textDisableFlagId3">
+      <DisplayName>非表示イベントフラグID</DisplayName>
+      <Description>テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(2)なら、Off扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>236</SortID>
+      <UnkC8>テキストID03</UnkC8>
+    </Field>
+    <Field Def="s32 textId4 = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID。無効値(-4)なら、何も表示しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>240</SortID>
+      <UnkC8>テキストID04</UnkC8>
+    </Field>
+    <Field Def="u32 textEnableFlagId4">
+      <DisplayName>出現イベントフラグID</DisplayName>
+      <Description>テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(3)なら、On扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>245</SortID>
+      <UnkC8>テキストID04</UnkC8>
+    </Field>
+    <Field Def="u32 textDisableFlagId4">
+      <DisplayName>非表示イベントフラグID</DisplayName>
+      <Description>テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(3)なら、Off扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>246</SortID>
+      <UnkC8>テキストID04</UnkC8>
+    </Field>
+    <Field Def="s32 textId5 = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID。無効値(-5)なら、何も表示しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>250</SortID>
+      <UnkC8>テキストID05</UnkC8>
+    </Field>
+    <Field Def="u32 textEnableFlagId5">
+      <DisplayName>出現イベントフラグID</DisplayName>
+      <Description>テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(4)なら、On扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>255</SortID>
+      <UnkC8>テキストID05</UnkC8>
+    </Field>
+    <Field Def="u32 textDisableFlagId5">
+      <DisplayName>非表示イベントフラグID</DisplayName>
+      <Description>テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(4)なら、Off扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>256</SortID>
+      <UnkC8>テキストID05</UnkC8>
+    </Field>
+    <Field Def="s32 textId6 = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID。無効値(-6)なら、何も表示しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>260</SortID>
+      <UnkC8>テキストID06</UnkC8>
+    </Field>
+    <Field Def="u32 textEnableFlagId6">
+      <DisplayName>出現イベントフラグID</DisplayName>
+      <Description>テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(5)なら、On扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>265</SortID>
+      <UnkC8>テキストID06</UnkC8>
+    </Field>
+    <Field Def="u32 textDisableFlagId6">
+      <DisplayName>非表示イベントフラグID</DisplayName>
+      <Description>テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(5)なら、Off扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>266</SortID>
+      <UnkC8>テキストID06</UnkC8>
+    </Field>
+    <Field Def="s32 textId7 = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID。無効値(-7)なら、何も表示しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>270</SortID>
+      <UnkC8>テキストID07</UnkC8>
+    </Field>
+    <Field Def="u32 textEnableFlagId7">
+      <DisplayName>出現イベントフラグID</DisplayName>
+      <Description>テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(6)なら、On扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>275</SortID>
+      <UnkC8>テキストID07</UnkC8>
+    </Field>
+    <Field Def="u32 textDisableFlagId7">
+      <DisplayName>非表示イベントフラグID</DisplayName>
+      <Description>テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(6)なら、Off扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>276</SortID>
+      <UnkC8>テキストID07</UnkC8>
+    </Field>
+    <Field Def="s32 textId8 = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID。無効値(-8)なら、何も表示しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>280</SortID>
+      <UnkC8>テキストID08</UnkC8>
+    </Field>
+    <Field Def="u32 textEnableFlagId8">
+      <DisplayName>出現イベントフラグID</DisplayName>
+      <Description>テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(7)なら、On扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>285</SortID>
+      <UnkC8>テキストID08</UnkC8>
+    </Field>
+    <Field Def="u32 textDisableFlagId8">
+      <DisplayName>非表示イベントフラグID</DisplayName>
+      <Description>テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(7)なら、Off扱いされる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>286</SortID>
+      <UnkC8>テキストID08</UnkC8>
+    </Field>
+    <Field Def="u8 textType1">
+      <DisplayName>テキスト種別</DisplayName>
+      <Enum>WORLD_MAP_POINT_TEXT_TYPE</Enum>
+      <Description>テキストの種別(地名,NPC名,...)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>211</SortID>
+      <UnkC8>テキストID01</UnkC8>
+    </Field>
+    <Field Def="u8 textType2">
+      <DisplayName>テキスト種別</DisplayName>
+      <Enum>WORLD_MAP_POINT_TEXT_TYPE</Enum>
+      <Description>テキストの種別(地名,NPC名,...)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>221</SortID>
+      <UnkC8>テキストID02</UnkC8>
+    </Field>
+    <Field Def="u8 textType3">
+      <DisplayName>テキスト種別</DisplayName>
+      <Enum>WORLD_MAP_POINT_TEXT_TYPE</Enum>
+      <Description>テキストの種別(地名,NPC名,...)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>231</SortID>
+      <UnkC8>テキストID03</UnkC8>
+    </Field>
+    <Field Def="u8 textType4">
+      <DisplayName>テキスト種別</DisplayName>
+      <Enum>WORLD_MAP_POINT_TEXT_TYPE</Enum>
+      <Description>テキストの種別(地名,NPC名,...)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>241</SortID>
+      <UnkC8>テキストID04</UnkC8>
+    </Field>
+    <Field Def="u8 textType5">
+      <DisplayName>テキスト種別</DisplayName>
+      <Enum>WORLD_MAP_POINT_TEXT_TYPE</Enum>
+      <Description>テキストの種別(地名,NPC名,...)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>251</SortID>
+      <UnkC8>テキストID05</UnkC8>
+    </Field>
+    <Field Def="u8 textType6">
+      <DisplayName>テキスト種別</DisplayName>
+      <Enum>WORLD_MAP_POINT_TEXT_TYPE</Enum>
+      <Description>テキストの種別(地名,NPC名,...)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>261</SortID>
+      <UnkC8>テキストID06</UnkC8>
+    </Field>
+    <Field Def="u8 textType7">
+      <DisplayName>テキスト種別</DisplayName>
+      <Enum>WORLD_MAP_POINT_TEXT_TYPE</Enum>
+      <Description>テキストの種別(地名,NPC名,...)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>271</SortID>
+      <UnkC8>テキストID07</UnkC8>
+    </Field>
+    <Field Def="u8 textType8">
+      <DisplayName>テキスト種別</DisplayName>
+      <Enum>WORLD_MAP_POINT_TEXT_TYPE</Enum>
+      <Description>テキストの種別(地名,NPC名,...)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>281</SortID>
+      <UnkC8>テキストID08</UnkC8>
+    </Field>
+    <Field Def="s32 distViewId = -1">
+      <DisplayName>遠見台ID0</DisplayName>
+      <Description>遠見台ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2000</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="f32 posX_forDistViewMark">
+      <DisplayName>遠見台目印上書き_X座標</DisplayName>
+      <Description>X座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>2700</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="f32 posY_forDistViewMark">
+      <DisplayName>遠見台目印上書きY座標</DisplayName>
+      <Description>Y座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>2800</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="f32 posZ_forDistViewMark">
+      <DisplayName>遠見台目印上書きZ座標</DisplayName>
+      <Description>Z座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>2900</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="s32 distViewId1 = -1">
+      <DisplayName>遠見台ID1</DisplayName>
+      <Description>遠見台ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2010</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="s32 distViewId2 = -1">
+      <DisplayName>遠見台ID2</DisplayName>
+      <Description>遠見台ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2020</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="s32 distViewId3 = -1">
+      <DisplayName>遠見台ID3</DisplayName>
+      <Description>遠見台ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2030</SortID>
+      <UnkC8>遠見台</UnkC8>
+    </Field>
+    <Field Def="u8 dispMinZoomStep">
+      <DisplayName>表示ズームステップ</DisplayName>
+      <Description>地図ポイントを表示するズームステップ（一番ズームアウトした状態が0、ズームするごとに+1）。「《表示ズームステップ》≦ 現在のズームステップ 」のときに表示される。デフォルトは 0（常に表示）</Description>
+      <Maximum>128</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="u8 selectMinZoomStep">
+      <DisplayName>選択可能ズームステップ</DisplayName>
+      <Description>地図ポイントを選択可能なズームステップ（一番ズームアウトした状態が0、ズームするごとに+1）。「《選択可能ズームステップ》≦ 現在の拡大段階 」のときに選択可能。デフォルトは 0（常に選択可能）</Description>
+      <Maximum>128</Maximum>
+      <SortID>910</SortID>
+    </Field>
+    <Field Def="u8 entryFEType">
+      <DisplayName>入場表示形式</DisplayName>
+      <Enum>WORLD_MAP_ENTRY_FE_TYPE</Enum>
+      <Description>入場表示形式。入場時に表示する地図ポイント入場FEの種類</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>1900</SortID>
+      <UnkC8>FE</UnkC8>
+    </Field>
+    
+    <Field Def="dummy8 pad4_old[9]" RemovedVersion="11210015" />
+    
+    <Field Def="u8 unknown_0xb7" FirstVersion="11210015" />
+    <Field Def="u16 altIconId" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad4[6]" FirstVersion="11210015" >
+      <DisplayName>パッド</DisplayName>
+      <Description>pad3</Description>
+      <SortID>2907</SortID>
+    </Field>
+    
+    <Field Def="s32 textEnableFlag2Id1" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id2" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id3" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id4" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id5" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id6" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id7" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id8" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id1" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id2" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id3" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id4" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id5" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id6" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id7" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id8" FirstVersion="10310059" />
+  </Fields>
+</PARAMDEF>

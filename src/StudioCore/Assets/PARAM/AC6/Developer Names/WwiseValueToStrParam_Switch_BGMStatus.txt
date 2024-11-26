@@ -1,0 +1,8 @@
+0 usually -- 通常
+2 in battle -- 戦闘中
+10 Heating up 1 -- ヒートアップ中1
+11 Heat up 2 -- ヒートアップ中2
+12 Heat up 3 -- ヒートアップ中3
+13 Heat up 4 -- ヒートアップ中4
+14 heating up 5 -- ヒートアップ中5
+999 death -- 死亡

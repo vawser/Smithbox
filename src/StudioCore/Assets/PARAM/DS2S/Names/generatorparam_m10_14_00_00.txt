@@ -1,0 +1,189 @@
+55 [GEN:55] Creighton the Wanderer
+56 [GEN:56] Creighton the Wanderer
+57 [GEN:57] Creighton the Wanderer
+58 [GEN:58] Creighton the Wanderer
+65 [GEN:65] Mild Mannered Pate
+66 [GEN:66] Mild Mannered Pate
+265 [GEN:265] Weaponsmith Ornifex
+266 [GEN:266] Weaponsmith Ornifex
+310 [GEN:310] Cromwell the Pardoner
+311 [GEN:311] Cromwell the Pardoner
+520 [GEN:520] Bowman Guthry
+521 [GEN:521] Royal Sorcerer Navlaan
+526 [GEN:526] Benhart of Jugo
+527 [GEN:527] Ashen Knight Boyd
+528 [GEN:528] Manhunter O'Harrah
+529 [GEN:529] Bashful Ray
+803 [GEN:803] The Duke's Dear Freja
+911 [GEN:911] Aldia- Scholar of the First Sin
+926 [GEN:926] Forlorn
+1000 [GEN:1000] The Duke's Dear Freja
+1110 [GEN:1110] Hollow Falconer
+1111 [GEN:1111] Hollow Falconer
+1112 [GEN:1112] Hollow Falconer
+1113 [GEN:1113] Hollow Falconer
+1115 [GEN] Undead Boar
+1116 [GEN] Hollow Falconer
+1117 [GEN] Hollow Falconer
+1118 [GEN] Hollow Falconer
+1119 [GEN] Hollow Falconer
+1120 [GEN:1120] Undead Boar
+1121 [GEN:1121] Undead Boar
+1122 [GEN:1122] Small Boar
+1140 [GEN:1140] Undead Peasant
+1160 [GEN:1160] Hollow Falconer
+1161 [GEN:1161] Hollow Falconer
+1162 [GEN:1162] Hollow Falconer
+1165 [GEN] Hollow Falconer
+1166 [GEN] Hollow Falconer
+1167 [GEN] Hollow Falconer
+1180 [GEN:1180] Giant Undead Boar
+1181 [GEN:1181] Giant Undead Boar
+1190 [GEN:1190] Undead Boar
+1195 [GEN:1195] Mimic
+1200 [GEN:1200] Undead Peasant
+1210 [GEN:1210] Undead Peasant
+1220 [GEN:1220] Undead Peasant
+1230 [GEN:1230] Undead Peasant
+1240 [GEN:1240] Undead Peasant
+1250 [GEN:1250] Undead Peasant
+1260 [GEN:1260] Undead Peasant
+1280 [GEN:1280] Undead Peasant
+1301 [GEN:1301] Undead Peasant
+1310 [GEN:1310] Undead Peasant
+1320 [GEN:1320] Undead Peasant
+2010 [GEN:2010] Parasite Spider
+2020 [GEN:2020] Parasite Spider
+2050 [GEN:2050] Parasite Spider
+2100 [GEN:2100] Parasite Spider
+2102 [GEN:2102] Parasite Spider
+2104 [GEN:2104] Parasite Spider
+2108 [GEN:2108] Parasite Spider
+2113 [GEN:2113] Parasite Spider
+2114 [GEN:2114] Parasite Spider
+2115 [GEN:2115] Parasite Spider
+2116 [GEN:2116] Parasite Spider
+2117 [GEN:2117] Parasite Spider
+2200 [GEN:2200] Hollow Priest
+2250 [GEN:2250] Parasite Spider
+2260 [GEN:2260] Parasite Spider
+2300 [GEN:2300] Parasite Spider
+2310 [GEN:2310] Parasite Spider
+2320 [GEN:2320] Parasite Spider
+2500 [GEN:2500] Dragon Acolyte
+2510 [GEN:2510] Hollow Priest
+2511 [GEN:2511] Hollow Priest
+2520 [GEN:2520] Undead Supplicant
+2521 [GEN:2521] Undead Supplicant
+2522 [GEN:2522] Undead Supplicant
+2530 [GEN:2530] Captive Undead
+2531 [GEN:2531] Captive Undead
+2532 [GEN:2532] Captive Undead
+2533 [GEN:2533] Captive Undead
+2534 [GEN:2534] Captive Undead
+2700 [GEN:2700] Parasite Spider
+2720 [GEN:2720] Parasite Spider
+3000 [GEN:3000] White Hollow Mage
+3010 [GEN:3010] Parasite Spider
+3011 [GEN:3011] Parasite Spider
+3012 [GEN:3012] Parasite Spider
+3013 [GEN:3013] Parasite Spider
+3020 [GEN:3020] White Hollow Mage
+3030 [GEN:3030] White Hollow Mage
+3050 [GEN:3050] Parasite Spider
+3060 [GEN:3060] Parasite Spider
+3090 [GEN:3090] Crystal Lizard
+3110 [GEN:3110] Parasite Spider
+3130 [GEN:3130] Parasite Spider
+3150 [GEN:3150] Parasite Spider
+3200 [GEN:3200] Parasite Spider
+3500 [GEN:3500] White Hollow Mage
+3510 [GEN:3510] White Hollow Mage
+3552 [GEN:3552] Parasite Spider
+3553 [GEN:3553] Parasite Spider
+3557 [GEN:3557] Parasite Spider
+3590 [GEN:3590] Parasite Spider
+3591 [GEN:3591] Parasite Spider
+4000 [GEN:4000] Basilisk
+4010 [GEN:4010] Parasite Spider
+4012 [GEN:4012] Parasite Spider
+4013 [GEN:4013] Parasite Spider
+4090 [GEN:4090] Red Crystal Lizard
+4500 [GEN:4500] Parasite Spider
+4501 [GEN:4501] Parasite Spider
+4502 [GEN:4502] Parasite Spider
+4600 [GEN:4600] Parasite Spider
+4610 [GEN:4610] Parasitized Undead
+5010 [GEN:5010] Parasite Spider
+5011 [GEN:5011] Parasite Spider
+5013 [GEN:5013] Parasite Spider
+5020 [GEN:5020] Basilisk
+5030 [GEN:5030] Parasitized Undead
+5110 [GEN:5110] Dual Wielding Swordsman Phantom
+5251 [GEN:5251] Undead Peasant
+5252 [GEN:5252] Undead Peasant
+5253 [GEN:5253] Undead Peasant
+5254 [GEN:5254] Undead Peasant
+5300 [GEN:5300] Parasitized Undead
+5390 [GEN:5390] Crystal Lizard
+5500 [GEN:5500] Parasitized Undead
+5510 [GEN:5510] Parasitized Undead
+5520 [GEN:5520] Parasite Spider
+5530 [GEN:5530] Parasite Spider
+5700 [GEN:5700] Parasite Spider
+5702 [GEN:5702] Parasite Spider
+5703 [GEN:5703] Parasite Spider
+5705 [GEN:5705] Parasite Spider
+6000 [GEN:6000] Parasite Spider
+6001 [GEN:6001] Parasite Spider
+6003 [GEN:6003] Parasite Spider
+6005 [GEN:6005] Parasite Spider
+6006 [GEN:6006] Parasite Spider
+6007 [GEN:6007] Parasite Spider
+6008 [GEN:6008] Parasite Spider
+6009 [GEN:6009] Parasite Spider
+6010 [GEN:6010] Parasite Spider
+6011 [GEN:6011] Parasite Spider
+6020 [GEN:6020] Parasitized Undead
+6050 [GEN:6050] Porcine Peasant Phantom
+6101 [GEN:6101] Parasite Spider
+6102 [GEN:6102] Parasite Spider
+6103 [GEN:6103] Parasite Spider
+6104 [GEN:6104] Parasite Spider
+6105 [GEN:6105] Parasite Spider
+6202 [GEN:6202] Parasite Spider
+6203 [GEN:6203] Parasite Spider
+6206 [GEN:6206] Parasite Spider
+7000 [GEN:7000] Parasite Spider
+7001 [GEN:7001] Parasite Spider
+7002 [GEN:7002] Parasite Spider
+7003 [GEN:7003] Parasite Spider
+7004 [GEN:7004] Parasite Spider
+7005 [GEN:7005] Parasite Spider
+7006 [GEN:7006] Parasite Spider
+7007 [GEN:7007] Parasite Spider
+7008 [GEN:7008] Parasite Spider
+7009 [GEN:7009] Parasite Spider
+7010 [GEN:7010] Parasite Spider
+7030 [GEN:7030] Parasite Spider
+7032 [GEN:7032] Parasite Spider
+7040 [GEN:7040] Parasite Spider
+7300 [GEN:7300] Undead Peasant
+7301 [GEN:7301] Undead Peasant
+7303 [GEN:7303] Undead Peasant
+7501 [GEN:7501] Parasite Spider
+8000 [GEN:8000] Parasite Spider
+8001 [GEN:8001] Parasite Spider
+8002 [GEN:8002] Parasite Spider
+8003 [GEN:8003] Parasite Spider
+8004 [GEN:8004] Parasite Spider
+8005 [GEN:8005] Parasite Spider
+8010 [GEN:8010] Parasite Spider
+8011 [GEN:8011] Parasite Spider
+8012 [GEN:8012] Parasite Spider
+8013 [GEN:8013] Parasite Spider
+8014 [GEN:8014] Parasite Spider
+8015 [GEN:8015] Parasite Spider
+8500 [GEN:8500] Lord Tseldora
+9000 [GEN:9000] Voice Marker (Creighton/Pate)
+9500 [GEN:9500] Poison Moth

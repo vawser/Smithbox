@@ -1,0 +1,55 @@
+0 For testing
+10 General environment wind (weak)
+11 General purpose environment wind (medium)
+12 General environment wind (strong)
+50000 General purpose one shot wind (weak)
+50001 General purpose one-shot style (medium)
+50002 General purpose one shot wind (strong)
+120100000 m20_01 Starting area (door OPEN rear)
+120100001 m20_01 Starting room - Ohashi Bridge
+120100002 m20_01 Bridge
+120100003 m20_01 In front of the orphanage
+120100004 m20_01 Next to the orphanage
+120100005 m20_01 Orphanage corridor (after breaking the window)
+120100006 m20_01 Orphanage Hall
+120100007 m20_01 Orphanage Terrace
+120100008 m20_01 Orphanage ~ Cathedral Terrace
+120100009 m20_01 Cathedral Terrace
+120100010 m20_01 In front of the church
+120100011 m20_01 Boss Passage (Door OPEN rear)
+120100012 m20_01 Boss Room
+120150000 m20_01 Open the small door and blow in
+120150001 m20_01 Open the big door and let in
+120150002 m20_01 The window breaks and the wind blows in
+120150003 m20_01 Boss appearance style
+129100000 m29 Boss front stairs 20°Wind
+200000000 For testing ( TAE wind)
+200000010 Generic character style (weak)
+200000011 Generic character style (medium)
+200000012 Generic character style (strong)
+200000100 PC_ front _ wind
+200000101 PC_ Left front _ wind
+200000102 PC_ Right front _ wind
+200000103 PC_ Left rear _ wind
+200000104 PC_ Right rear _ wind
+200000810 PC_ body _ before _ wind
+200000811 PC_ body _ rear _ wind
+200000812 PC_ body _ left _ wind
+200000813 PC_ body _ right _ wind
+200000814 Debugging Tests
+200001000 SFX Player collision for interference _ body
+200001010 SFX Player collision for interference _ Right Arm
+200001020 SFX Player collision for interference _ Left arm
+200001030 SFX Player collision for interference _ Right Foot
+200001040 SFX Player collision for interference _ left foot
+200001050 SFXPlayer collision for interference _ Weapons (common)
+350000100 Parishioner _ front _ wind
+350000101 Parishioner _ Left front _ wind
+350000102 Parishioner _ Right front _ wind
+350000103 Parishioner _ Left rear _ wind
+350000104 Parishioner _ Right rear _ wind
+350000810 Parishioner _ body _ before _ wind
+350000811 Parishioner _ body _ rear _ wind
+350000812 Parishioner _ body _ left _ wind
+350000813 Parishioner _ body _ right _ wind
+350000900 Parishioner _ foot

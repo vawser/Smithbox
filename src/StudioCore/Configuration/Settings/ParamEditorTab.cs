@@ -35,7 +35,7 @@ public class ParamEditorTab
 
                 ParamBank.ReloadParams();
             }
-            UIHelper.ShowHoverTooltip("Use project-specific Paramdex meta instead of Smithbox's base version.");
+            UIHelper.ShowHoverTooltip("Use project-specific PARAM meta instead of Smithbox's base version.");
 
             ImGui.Checkbox("Use compact param editor", ref CFG.Current.UI_CompactParams);
             UIHelper.ShowHoverTooltip("Reduces the line height within the the Param Editor screen.");
@@ -112,14 +112,14 @@ public class ParamEditorTab
             UIHelper.ShowHoverTooltip("Disable the grouping of connected rows in certain params, such as ItemLotParam within the Row View list.");
 
             ImGui.Checkbox("Allow row reordering", ref CFG.Current.Param_AllowRowReorder);
-            UIHelper.ShowHoverTooltip("Allow the row order to be changed by an alternative order as defined within the Paramdex META file.");
+            UIHelper.ShowHoverTooltip("Allow the row order to be changed by an alternative order as defined within the PARAM META file.");
         }
 
         // Fields
         if (ImGui.CollapsingHeader("Field Layout", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
-            UIHelper.ShowHoverTooltip("Allow the field order to be changed by an alternative order as defined within the Paramdex META file.");
+            UIHelper.ShowHoverTooltip("Allow the field order to be changed by an alternative order as defined within the PARAM META file.");
 
             ImGui.Checkbox("Show community field names first", ref CFG.Current.Param_MakeMetaNamesPrimary);
             UIHelper.ShowHoverTooltip("Crowd-sourced names will appear before the canonical name in the Field View list.");

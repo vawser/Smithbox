@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Skin Color" Fields="skinColor_R,skinColor_G,skinColor_B" PlacedField="skinColor_B" />
+    <ColorEditor Name="Right Eye Color" Fields="eyeRColor_R,eyeRColor_G,eyeRColor_B" PlacedField="eyeRColor_B" />
+    <ColorEditor Name="Left Eye Color" Fields="eyeLColor_R,eyeLColor_G,eyeLColor_B" PlacedField="eyeLColor_B" />
+    <ColorEditor Name="Hair Color" Fields="hairColor_R,hairColor_G,hairColor_B" PlacedField="hairColor_B" />
+    <ColorEditor Name="Eyebrow Color" Fields="eyebrowColor_R,eyebrowColor_G,eyebrowColor_B" PlacedField="eyebrowColor_B" />
+    <ColorEditor Name="Eyelash Color" Fields="eyelashColor_R,eyelashColor_G,eyelashColor_B" PlacedField="eyelashColor_B" />
+    <ColorEditor Name="Accessories Color" Fields="accessoriesColor_R,accessoriesColor_G,accessoriesColor_B" PlacedField="accessoriesColor_B" />
+    <ColorEditor Name="Decal Color" Fields="decalColor_R,decalColor_G,decalColor_B" PlacedField="decalColor_B" />
+    <ColorEditor Name="Beard Color" Fields="beardColor_R,beardColor_G,beardColor_B" PlacedField="beardColor_B" />
+  </ColorEdit>
+  <Field></Field>
+  <Self />
+</PARAMMETA>

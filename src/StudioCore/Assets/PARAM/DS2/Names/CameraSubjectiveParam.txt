@@ -1,0 +1,7 @@
+0 Dummy (not allowed) -- ダミー（使用禁止）
+10 Bow: Precision Shooting Camera -- 弓：精密射撃カメラ
+20 Two-handed bow: Precision shooting camera -- 両手弓：精密射撃カメラ
+30 Crossbow: Precision Shooting Camera -- クロスボウ：精密射撃カメラ
+40 Spelling: Precision Shooting Camera -- スペル：精密射撃カメラ
+50 Binoculars: Precision Shooting Camera -- 双眼鏡：精密射撃カメラ
+100 Precision Shooting Camera_Backup -- 精密射撃カメラ_バックアップ

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CUSTOM_GARAGE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 Price">
+      <DisplayName>値段</DisplayName>
+      <Description>このガレージの値段</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 NameID = -1">
+      <DisplayName>名前ID</DisplayName>
+      <Description>名前のテキストID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 ModelID = -1">
+      <DisplayName>モデルID</DisplayName>
+      <Description>モデルID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 FloorType = -1">
+      <DisplayName>床タイプ</DisplayName>
+      <Description>ガレージの床タイプ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 ReverbType = -1">
+      <DisplayName>リバーブタイプ</DisplayName>
+      <Description>ガレージのリバーブタイプ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 InitType">
+      <DisplayName>初期状態</DisplayName>
+      <Enum>EMBLEM_PIECE_INIT_TYPE</Enum>
+      <Description>初期状態</Description>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 GroupID">
+      <DisplayName>グループID</DisplayName>
+      <Description>グループID</Description>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s16 ThumbnailTextureID">
+      <DisplayName>テクスチャID</DisplayName>
+      <Description>このガレージに含まれるパーツのサムネイルテクスチャのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 GarageThumbnailID">
+      <DisplayName>ガレージサムネイルID</DisplayName>
+      <Description>ガレージ本体のサムネイルテクスチャのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 CameraDistMax = 25">
+      <DisplayName>カメラ稼働距離(m)</DisplayName>
+      <Description>最大この値までカメラが引けます</Description>
+      <Minimum>1</Minimum>
+      <Maximum>80</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s16 CameraLookAtMoveDist = 10">
+      <DisplayName>視点の移動距離(m)</DisplayName>
+      <Description>視点の移動距離を指定します</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="s16 CameraMinHeight = 50">
+      <DisplayName>カメラ最小高さ(cm)</DisplayName>
+      <Description>地面からこの値以上離れます</Description>
+      <Minimum>50</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[4]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>43</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

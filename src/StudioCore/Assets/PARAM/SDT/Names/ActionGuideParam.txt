@@ -1,0 +1,16 @@
+0 Don&#39;t erase -- 消すべからず
+1 Dummy1 -- Dummy1
+2 Dummy2 -- Dummy2
+3 Dummy3 -- Dummy3
+10 Stick -- 張りつく
+11 Leave -- 離れる
+20 Hanging -- ぶら下がる
+21 Climb -- よじ登る
+22 get off -- 降りる
+30 dive -- 潜る
+40 acceleration -- 加速
+41 Rise -- 上昇
+42 Descent -- 下降
+43 Ascend -- 浮上
+90 Resurrection -- 復活する
+91 die -- 死ぬ

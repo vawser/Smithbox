@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Color Shade 1" Fields="colorShade1_r,colorShade1_g,colorShade1_b" PlacedField="colorShade1_b" />
+    <ColorEditor Name="Color Shade 2" Fields="colorShade2_r,colorShade2_g,colorShade2_b" PlacedField="colorShade2_b" />
+  </ColorEdit>
+  <Field></Field>
+  <Self />
+</PARAMMETA>

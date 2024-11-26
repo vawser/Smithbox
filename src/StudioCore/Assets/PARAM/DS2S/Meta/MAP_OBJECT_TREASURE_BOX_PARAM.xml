@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ChestType">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Trapped" />
+    </Enum>
+  </Enums>
+  <Self Row0Dummy="" />
+  <Field>
+    <chest_type AltName="Chest Type" Enum="ChestType"/>
+    <bullet_id_1 AltName="Trapped Chest Bullet [1]" Refs="SystemBulletParam"/>
+    <bullet_id_2 AltName="Trapped Chest Bullet [2]" Refs="SystemBulletParam"/>
+    <bullet_id_3 AltName="Trapped Chest Bullet [3]" Refs="SystemBulletParam"/>
+    <bullet_id_4 AltName="Trapped Chest Bullet [4]" Refs="SystemBulletParam"/>
+  </Field>
+</PARAMMETA>

@@ -1,6 +1,0 @@
-0 Basic -- 基本
-1 Basic + 1 -- 基本＋１
-2 Basic + 2 -- 基本＋２
-3 Basic + 3 -- 基本＋３
-4 Basic + 4 -- 基本＋４
-5 Basic + 5 -- 基本＋５

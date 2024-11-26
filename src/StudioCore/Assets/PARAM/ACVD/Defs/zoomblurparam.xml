@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FILTER_ZOOMBLUR_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="f32 Offset">
+      <DisplayName>オフセット</DisplayName>
+      <Description>ズームブラーのずれのオフセット</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s32 Alpha">
+      <DisplayName>アルファ</DisplayName>
+      <Description>ズームブラーのかかる強さ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+    </Field>
+    <Field Def="f32 CenterThin">
+      <DisplayName>中央の薄め値</DisplayName>
+      <Description>-１で中央付近はかからない、１で中央もブラーします</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 CenterX">
+      <DisplayName>中央位置X</DisplayName>
+      <Description>0で画面中央、-1で画面左、1で画面右を中心にブラーします</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 CenterY">
+      <DisplayName>中央位置Y</DisplayName>
+      <Description>0で画面中央、-1で画面上、1で画面下を中心にブラーします</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 dumy[12]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

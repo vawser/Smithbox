@@ -1,0 +1,182 @@
+0 Default
+100 Item common name
+101 Item Common - Description
+102 Item common - Unchiku
+103 Weight
+110 No. Held
+111 Max No. Held
+112 Stored
+113 Max Stored
+120 Required souls
+121 Soul value
+200 Item Type
+201 STR Scaling
+202 DEX Scaling
+203 INT Scaling
+204 FTH Scaling
+205 FP cost
+300 Weapon category
+301 Attack type
+302 Skill Type
+310 Physical Damage
+311 Magic Damage
+312 Fire Damage
+313 Lightning Damage
+314 Dark Damage
+315 Additional Physical Damage
+316 Additional Magic Damage
+317 Additional Fire Damage
+318 Additional Lightning Damage
+319 Additional Dark Damage
+320 Range
+321 Spell Buff
+322 Critical
+330 Poison
+331 Bleed
+332 Sacred
+333 Curse
+334 Frost
+340 Physical Absorption
+341 Magic Absorption
+342 Fire Absorption
+343 Lightning Absorption
+344 Dark Absorption
+345 Physical Defense
+346 Magic Defense
+347 Fire Defense
+348 Lightning Defense
+349 Dark Defense
+350 Stability
+351 Stability Value
+360 STR Requirement
+361 DEX Requirement
+362 INT Requirement
+363 FTH Requirement
+365 STR Requirement Value - Curse
+366 DEX Requirement Value
+367 INT Requirement Value
+368 FTH Requirement Value
+370 STR Scaling
+371 DEX Scaling
+372 INT Scaling
+373 FTH Scaling
+380 Durability
+381 Max Durability
+390 FP cost L1
+391 FP cost L2
+392 FP cost R1
+393 FP cost R2
+400 Armor - Physical Defence
+401 Armor - Physical Strike Defence
+402 Armor - Physical Slash Defence
+403 Armor - Physical Thrust Defence
+404 Armor - Magic Defence
+405 Armor - Fire Defence
+406 Armor - Lightning Defence
+410 Armor - Poise
+411 Armor - Poison
+412 Armor - Bleed
+413 Armor - Curse
+414 Armor - Frost
+415 Armor - Poise
+420 Armor - Durability
+421 Armor - Max Durability
+430 Armor - Physical Absorption
+431 Armor - Physical Strike Absorption
+432 Armor - Physical Slash Absorption
+433 Armor - Physical Thrust Absorption
+434 Armor - Magic Absorption
+435 Armor - Fire Absorption
+436 Armor - Lightning Absorption
+437 Armor - Dark Absorption
+500 Spell - Type
+501 Spell - Attack Attribute
+502 Spell - Slots Used
+503 Spell - Number of Uses
+504 Spell - INT Requirement
+505 Spell - FTH Requirement
+520 Spell - FP Consumption
+600 Arrow - Weapon type
+601 Arrow - Attack attribute
+610 Arrow - Physical Damage
+611 Arrow - Magic Damage
+612 Arrow - Fire Damage
+613 Arrow - Lightning Damage
+614 Arrow - Critical
+615 Arrow - Dark Damage
+620 Arrow - Poison
+621 Arrow - Bleed
+622 Arrow - <Sacred>
+623 Arrow - <Voodoo>
+624 Arrow - Frost
+10000 PC Basic Name
+10001 PC Basic - Sex
+10002 Basic PC - Feature
+10003 PC Basic - Gift
+10004 Basic PC - Body type
+10005 PC Basic - Face
+10006 PC Basic - Hairstyle
+10007 Basic PC - hair and pupil color
+10008 Basic PC Level
+10009 PC Basic - Possession Soul
+10010 PC Basic - required Seoul
+10011 Basic PC Pledge
+10012 Basic PC - age group
+10013 PC basic - dead degree
+10100 PC1 Next - life force
+10101 PC1 Next - Endurance
+10102 PC1 Next - Memory
+10103 PC1 Next - muscular strength
+10104 PC1 Next - Workmanship
+10105 PC1 Next - Physical fitness
+10106 PC1 Next - power of science
+10107 PC1 Next - Faith
+10108 PC1 Next - human nature
+10109 PC1 Next - Luck
+10200 PC2 Next - HP Current Value
+10201 PC2 Next - HP Max Value
+10202 PC2 Next - MP Current Value
+10203 PC2 Next - MP Max Value
+10204 PC2 Next - Stamina
+10205 PC2 Next - equipment weight current value
+10206 PC2 Next - equipment weight maximum
+10207 PC2 Next - Right weapon 1 attack force
+10208 PC2 Next - Right Weapon 2 attack force
+10209 PC2 Next - Right Weapon 3 attack force
+10210 PC2 Next - left Weapon 1 attack force
+10211 PC2 Next - left Weapon 2 attack force
+10212 PC2 Next - left Weapon 3 attack force
+10213 PC2 Next - Defense Force: Physical
+10214 PC2 - defensive force: physical versus blow
+10215 PC2 - Defense Force: Physics vs. slashing
+10216 PC2 - Defense Force: Physical vs. piercing
+10217 PC2 Next - Defense Force: Magic
+10218 PC2 - Defense Force: Flame
+10219 PC2 - Defense Force: Thunder
+10220 PC2 - Resistant: Poison
+10221 PC2 - Resistant: bleeding
+10222 PC2 - Resistance: Curse
+10223 PC2 Next - strong degree
+10224 PC2 - Number of memory slots
+10225 PC2 Next - Item discovery Power
+10242 PC2 Next - armor damage cut: physical
+10243 PC2 Next - Armor damage Cut: Magic
+10244 PC2 Next - armor damage cut: Flame
+10245 PC2 Next - Armor damage Cut: Thunder
+10258 PC2 Next - Dark Defense Force
+10259 PC2 Next - armor damage cut: physical versus blow
+10260 PC2 Next - Armor damage cut: Physics vs slashing
+10261 PC2 Next - armor damage cut: physical vs. piercing
+10262 PC2 Next - Armor damage Cut: Darkness
+10263 PC2 Next - Resistance: cold air
+10264 PC2 - Armor resistance: bleeding
+10265 PC2 - Armor Resistant: Poison
+10266 PC2 Next - armor resistant: cold air
+10270 【 PC2 Next 】 Arts point: Muscular strength Current value
+10271 【 PC2 Next 】 Arts point: Skill present Value
+10272 【 PC2 Next 】 Arts point: Magic present Value
+10273 【 PC2 Next 】 Arts point: Miracle present Value
+10280 【 PC2 Next 】 Arts point: Maximum muscle value
+10281 【 PC2 Next 】 Arts point: Maximum skill level
+10282 【 PC2 Next 】 Arts point: Magic Max
+10283 【 PC2 Next 】 Arts point: Miracle Maximum

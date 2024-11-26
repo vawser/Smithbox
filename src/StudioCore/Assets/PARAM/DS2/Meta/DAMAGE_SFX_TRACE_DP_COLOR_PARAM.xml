@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to SFX trace dummy polygon color." Row0Dummy="" />
+  <Field>
+    <color_r AltName="Color: R" />
+    <color_g AltName="Color: G" />
+    <color_b AltName="Color: B" />
+    <color_a AltName="Color: Alpha" />
+  </Field>
+</PARAMMETA>

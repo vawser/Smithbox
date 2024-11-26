@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <materialId01 AltName="materialId01" Refs="EquipParamGoods" />
+    <itemNum01 AltName="itemNum01" />
+    <materialId02 AltName="materialId02" Refs="EquipParamGoods" />
+    <itemNum02 AltName="itemNum02" />
+    <materialId03 AltName="materialId03" Refs="EquipParamGoods" />
+    <itemNum03 AltName="itemNum03" />
+    <materialId04 AltName="materialId04" Refs="EquipParamGoods" />
+    <itemNum04 AltName="itemNum04" />
+    <materialId05 AltName="materialId05" Refs="EquipParamGoods" />
+    <itemNum05 AltName="itemNum05" />
+    <pad AltName="pad" />
+  </Field>
+  <Self />
+</PARAMMETA>

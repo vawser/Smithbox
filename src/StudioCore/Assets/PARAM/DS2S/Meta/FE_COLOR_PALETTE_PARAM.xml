@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the color palette of the character face editor." Row0Dummy="" />
+  <Field>
+    <palette_R AltName="Palette: R"/>
+    <palette_G AltName="Palette: G"/>
+    <palette_B AltName="Palette: B"/>
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to weapons when the player lacks the stats to equip." Row0Dummy="" />
+  <Field>
+    <lack_stats_min_penalty AltName="Insufficient Stats Penalty - Minimum %"/>
+    <lack_stats_max_penalty AltName="Insufficient Stats Penalty - Maximum %"/>
+    <lack_stamina_min_penalty AltName="Insufficient Stamina Penalty - Minimum %"/>
+    <lack_stamina_max_penalty AltName="Insufficient Stamina Penalty - Maximum %"/>
+  </Field>
+</PARAMMETA>

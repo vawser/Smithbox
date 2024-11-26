@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <patternScaleSmall AltName="Pattern Scale: Small Part" Wiki="The UV scale to use with the pattern texture when applied to 'Small' parts."/>
+    <patternScaleMedium AltName="Pattern Scale: Medium Part" Wiki="The UV scale to use with the pattern texture when applied to 'Medium' parts."/>
+    <patternScaleLarge AltName="Pattern Scale: Large Part" Wiki="The UV scale to use with the pattern texture when applied to 'Large' parts."/>
+  </Field>
+  <Self Wiki="Defines the Pattern options for Armored Cores.\n\nRow ID links the Preset to the icon texture in SB_Camouflage.dds and SB_Camouflage.layout\n\nRow ID + 210701 links the Preset to the FMG name it uses in the menu."/>
+</PARAMMETA>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MOVEMENT_FLY_ENEMY_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>990011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>990012</SortID>
+    </Field>
+    <Field Def="f32 moveMaxSpeedKMPH_H">
+      <DisplayName>水平方向最高速度[km/h]</DisplayName>
+      <Description>水平方向の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 moveAccelMPSS_H">
+      <DisplayName>水平方向加速度[m/s^2]</DisplayName>
+      <Description>水平方向の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="f32 moveMaxSpeedKMPH_V">
+      <DisplayName>垂直方向最高速度[km/h]</DisplayName>
+      <Description>垂直方向の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 moveAccelMPSS_V">
+      <DisplayName>垂直方向加速度[m/s^2]</DisplayName>
+      <Description>垂直方向の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="f32 flyHorizontalBrakeMPSS">
+      <DisplayName>空中最高水平速度超過時ブレーキ[m/s^2] </DisplayName>
+      <Description>空中で最高水平速度を超えた際に、最高速度へ丸めようとするブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 flyVerticalBrakeMPSS">
+      <DisplayName>空中最高垂直速度超過時ブレーキ[m/s^2] </DisplayName>
+      <Description>空中で最高垂直速度を超えた際に、最高速度へ丸めようとするブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="f32 realVelocityFeedBackRate">
+      <DisplayName>実際の移動量を反映する割合</DisplayName>
+      <Description>この値が小さいほど重量感が増す</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>90000</SortID>
+    </Field>
+    <Field Def="f32 landDeadBrakeMPSS">
+      <DisplayName>死亡時地上ブレーキ量[m/s^2]</DisplayName>
+      <Description>死亡しているときの地上ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 flyDeadBrakeMPSS">
+      <DisplayName>死亡時空中ブレーキ量[m/s^2]</DisplayName>
+      <Description>死亡しているときの空中ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2010</SortID>
+    </Field>
+    <Field Def="f32 damageBrake_BeginBrakeMPSS">
+      <DisplayName>【ダメージブレーキ】開始時ブレーキ[m/s^2]</DisplayName>
+      <Description>ダメージブレーキ開始時のブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="f32 damageBrake_PeakBrakeMPSS">
+      <DisplayName>【ダメージブレーキ】ピーク時ブレーキ[m/s^2]</DisplayName>
+      <Description>ダメージブレーキのピークブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1810</SortID>
+    </Field>
+    <Field Def="f32 damageBrake_BeginToPeakTimeSec">
+      <DisplayName>【ダメージブレーキ】開始からピークまでの時間[sec]</DisplayName>
+      <Description>ダメージブレーキ開始からピークまでかかる時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1820</SortID>
+    </Field>
+    <Field Def="f32 damageBrake_TimerResetDelayTime">
+      <DisplayName>【ダメージブレーキ】経過時間リセット猶予時間[sec]</DisplayName>
+      <Description>ノックバック速度が0になってからダメージブレーキ用タイマーがリセットするまでの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1850</SortID>
+    </Field>
+    <Field Def="f32 minAnimMoveAccelMPSS = 300">
+      <DisplayName>最低保証アニメ移動加速度[m/s^2]</DisplayName>
+      <Description>アニメ移動するときの最低保証加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>21000</SortID>
+    </Field>
+    <Field Def="f32 SlowBrakeAnimKMPH">
+      <DisplayName>低速ブレーキアニメ再生[km/h]</DisplayName>
+      <Description>この値以下の水平速度のときにで低速用ブレーキアニメ切り替えを行います</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1020</SortID>
+    </Field>
+    <Field Def="f32 blowDeadBrake_BeginBrakeMPSS">
+      <DisplayName>【吹っ飛び死亡ブレーキ】開始時ブレーキ[m/s^2]</DisplayName>
+      <Description>吹っ飛び死亡待機ブレーキ開始時のブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1850</SortID>
+    </Field>
+    <Field Def="f32 blowDeadBrake_PeakBrakeMPSS">
+      <DisplayName>【吹っ飛び死亡ブレーキ】ピーク時ブレーキ[m/s^2]</DisplayName>
+      <Description>吹っ飛び死亡待機ブレーキのピークブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1850</SortID>
+    </Field>
+    <Field Def="f32 blowDeadBrake_BeginToPeakTimeSec">
+      <DisplayName>【吹っ飛び死亡ブレーキ】開始からピークまでの時間[sec]</DisplayName>
+      <Description>吹っ飛び死亡待機ブレーキ開始からピークまでかかる時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1850</SortID>
+    </Field>
+    <Field Def="f32 blowDeadBrake_TimerResetDelayTime">
+      <DisplayName>【吹っ飛び死亡ブレーキ】経過時間リセット猶予時間[sec]</DisplayName>
+      <Description>ノックバック速度が0になってから吹っ飛び死亡待機ブレーキ用タイマーがリセットするまでの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1850</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[32]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990013</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

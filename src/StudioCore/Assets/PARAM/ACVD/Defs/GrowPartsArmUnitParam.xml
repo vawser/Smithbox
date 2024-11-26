@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GROW_PARTS_ARMUNIT_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 damagePower_Min">
+      <DisplayName>ダメージ威力（成長最低）</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 damagePower_Org">
+      <DisplayName>ダメージ威力（成長前）</DisplayName>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 damagePower_Max">
+      <DisplayName>ダメージ威力（成長最大）</DisplayName>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 damageRecoil_Min">
+      <DisplayName>ダメージ衝撃力（成長最低）</DisplayName>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 damageRecoil_Org">
+      <DisplayName>ダメージ衝撃力（成長前）</DisplayName>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u16 damageRecoil_Max">
+      <DisplayName>ダメージ衝撃力（成長最大）</DisplayName>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u16 reloadTime_Min">
+      <DisplayName>リロード時間（成長最低）</DisplayName>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u16 reloadTime_Org">
+      <DisplayName>リロード時間（成長前）</DisplayName>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u16 reloadTime_Max">
+      <DisplayName>リロード時間（成長最大）</DisplayName>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u16 missileLockTime_Min">
+      <DisplayName>ロック時間（成長最低）</DisplayName>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u16 missileLockTime_Org">
+      <DisplayName>ロック時間（成長前）</DisplayName>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u16 missileLockTime_Max">
+      <DisplayName>ロック時間（成長最大）</DisplayName>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u16 initSpeed_Min">
+      <DisplayName>初速度（成長最低）</DisplayName>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u16 initSpeed_Org">
+      <DisplayName>初速度（成長前）</DisplayName>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u16 initSpeed_Max">
+      <DisplayName>初速度（成長最大）</DisplayName>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u16 noDecayRange_Min">
+      <DisplayName>威力保証距離（成長最低）</DisplayName>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u16 noDecayRange_Org">
+      <DisplayName>威力保証距離（成長前）</DisplayName>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u16 noDecayRange_Max">
+      <DisplayName>威力保証距離（成長最大）</DisplayName>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u16 shootPrecisionX_Min">
+      <DisplayName>射撃精度X（成長最低）</DisplayName>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u16 shootPrecisionX_Org">
+      <DisplayName>射撃精度X（成長前）</DisplayName>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u16 shootPrecisionX_Max">
+      <DisplayName>射撃精度X（成長最大）</DisplayName>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u16 shootPrecisionY_Min">
+      <DisplayName>射撃精度Y（成長最低）</DisplayName>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u16 shootPrecisionY_Org">
+      <DisplayName>射撃精度Y（成長前）</DisplayName>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="u16 shootPrecisionY_Max">
+      <DisplayName>射撃精度Y（成長最大）</DisplayName>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u16 enDrain_Min">
+      <DisplayName>射撃消費EN（成長最低）</DisplayName>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="u16 enDrain_Org">
+      <DisplayName>射撃消費EN（成長前）</DisplayName>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="u16 enDrain_Max">
+      <DisplayName>射撃消費EN（成長最大）</DisplayName>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="u16 chargeFrame_Min">
+      <DisplayName>ためフレーム（成長最低）</DisplayName>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="u16 chargeFrame_Org">
+      <DisplayName>ためフレーム（成長前）</DisplayName>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="u16 chargeFrame_Max">
+      <DisplayName>ためフレーム（成長最大）</DisplayName>
+      <SortID>30</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

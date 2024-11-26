@@ -1,0 +1,11 @@
+1 《FE SEMI switching time》 -- 《FE SEMI切替時間》
+2 《FE HIDE switching time》 -- 《FE HIDE切替時間》
+3 《Item Retrieval Window Closing Time》 -- 《アイテム取得ウィンドウクローズ時間》
+4 《Blood character window closing time》 -- 《血文字ウィンドウクローズ時間》
+5 "FE Seoul Increase and Decrease Rate" -- 《ＦＥ ソウル増減速度》
+6 《Enemy HP Close Time》 -- 《エネミーHP　クローズ時間》
+7 《Blood character window closing time》 -- 《血文字ウィンドウクローズ時間》
+8 "Multiplayer Notification Minimum Display Time" -- 《マルチプレイ通知　最低表示時間》
+9 "Multiplayer Notification Normal Display Time" -- 《マルチプレイ通知　通常表示時間》
+10 "Multiplayer Notification Flashing Interval" -- 《マルチプレイ通知　明滅間隔》
+11 《Event message display time》 -- 《イベントメッセージ表示時間》

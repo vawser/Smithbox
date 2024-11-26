@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to player statistics in the menu. Note this does not affect the acutal stats for each level, only the display values." Row0Dummy="" />
+  <Field>
+    <stat_hp AltName="HP"/>
+    <stat_stamina AltName="Stamina"/>
+    <stat_poise AltName="Poise"/>
+    <stat_cast_tier AltName="Cast Tier"/>
+    <stat_attunement_slots AltName="Attunement Slots"/>
+    <stat_cast_speed AltName="Cast Speed"/>
+    <stat_strength_bonus AltName="Bonus: Strength"/>
+    <stat_dexterity_bonus AltName="Bonus: Dexterity"/>
+    <stat_magic_bonus AltName="Bonus: Magic"/>
+    <stat_lightning_bonus AltName="Bonus: Lightning"/>
+    <stat_fire_bonus AltName="Bonus: Fire"/>
+    <stat_dark_bonus AltName="Bonus: Dark"/>
+    <stat_poison_bonus AltName="Bonus: Poison"/>
+    <stat_bleed_bonus AltName="Bonus: Bleed"/>
+    <stat_physical_defence AltName="Defence: Physical"/>
+    <stat_magic_defence AltName="Defence: Magic"/>
+    <stat_lightning_defence AltName="Defence: Lightning"/>
+    <stat_fire_defence AltName="Defence: Fire"/>
+    <stat_dark_defence AltName="Defence: Dark"/>
+    <stat_poison_defence AltName="Resist: Poison"/>
+    <stat_bleed_defence AltName="Resist: Bleed"/>
+    <stat_petrify_defence AltName="Resist: Petrify"/>
+    <stat_curse_defence AltName="Resist: Curse"/>
+    <stat_agility AltName="Agility"/>
+    <stat_mundane_bonus AltName="Bonus: Mundane"/>
+    <stat_equip_load AltName="Max Equip Load"/>
+  </Field>
+</PARAMMETA>

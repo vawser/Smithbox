@@ -1,0 +1,1279 @@
+0 Don&#39;t erase -- 消すべからず
+1 Non-touch data (recommended by copy / paste) -- あたりさわりのないデータ（コピペ元推奨）
+10 Treasure test 1 -- 宝テスト１
+11 Treasure test 2 -- 宝テスト２
+12 Treasure test 3 -- 宝テスト３
+100 For automatic patrol (default) -- 自動巡回用（デフォルト）
+540 For automatic patrol (running) -- 自動巡回用（走り）
+541 For automatic patrol (walking) -- 自動巡回用（歩き）
+542 For automatic patrol (super dash) -- 自動巡回用（スーパーダッシュ）
+10000000 Group patrol dummy leader -- 集団巡回ダミーリーダー
+10000100 Group patrol dummy leader (for underwater) -- 集団巡回ダミーリーダー　（水中用）
+10001000 Dummy character for drop items -- ドロップアイテム用ダミーキャラ
+10002000 General-purpose dummy character for conversation -- 会話用汎用ダミーキャラ
+10002010 For conversation: Carp feeding: Bell dummy character -- 会話用：鯉の餌やり：鐘ダミーキャラ
+10002020 For conversation: Dummy character for strengthening prosthetic hand ninja equipment when Tokugawa attacks -- 会話用：徳川襲来時義手忍具強化用ダミーキャラ
+10002220 For conversation: Chigo: Telepathic dummy character -- 会話用：稚児：念話ダミーキャラ
+10002280 For conversation: Sick village priest: Dummy character for the door -- 会話用：病み村神主：扉用ダミーキャラ
+10003000 Dummy character for large snake visibility -- 大蛇視界用ダミーキャラ
+10004000 Okiryu Dummy Leader -- 翁竜ダミーリーダー
+10005000 Sick Village Village Mayor&#39;s House Target Dummy Character -- 病み村　村長の家　ターゲット用ダミーキャラ
+10006000 Sword of the sickbed_Dummy character for bullet owners -- 病床の剣聖_弾丸オーナー用ダミーキャラ
+10007000 Gunpowder Box_Dummy Character for Bullet Owner -- 火薬箱_弾丸オーナー用ダミーキャラ
+10008000 Straw bundle _ Dummy character for burning trap -- 藁束_炎上トラップ用ダミーキャラ
+10010000 Dummy character for demon Buddha -- 鬼仏用ダミーキャラ
+10010001 Dummy character for the Great Demon Buddha -- 大鬼仏用ダミーキャラ
+10010005 Dummy character for Unkai Demon Buddha -- 雲海鬼仏用ダミーキャラ
+10010010 Dummy character for camera inside / outside judgment -- カメラ内外判定用ダミーキャラ
+10011000 Mermaid Dragon Battle Tentacle Warp Position -- 人魚竜戦触手ワープ位置
+10100000 Ochimusha Castle One-handed Sword -- 落武者　城下　片手刀
+10100001 Ochimusha Castle One-handed Sword Stopper -- 落武者　城下　片手刀　ストッパー
+10100002 Ochimusha Castle One-handed sword One-handed death -- 落武者　城下　片手刀　被一撃死
+10100003 Ochimusha Castle One-handed Sword Stopper Fixed -- 落武者　城下　片手刀　ストッパー　固定
+10100004 Ochimusha Castle One-handed Sword Indoor -- 落武者　城下　片手刀　屋内
+10100005 Ochimusha Castle One-handed Sword Strong -- 落武者　城下　片手刀　強
+10100006 Ochimusha Castle One-handed Sword Strong Indoor -- 落武者　城下　片手刀　強　屋内
+10100010 Ochimusha Castle One-handed sword No drop -- 落武者　城下　片手刀　ドロップなし
+10100020 Ochimusha Castle One-handed Sword Required Drop -- 落武者　城下　片手刀　必須ドロップ
+10100030 Ochimusha Castle One-handed sword Assisted by stone throwing -- 落武者　城下　片手刀　石投げで援護
+10100080 Ochimusha Castle One-handed Sword The voice of the end of the bridge [Conversation] -- 落武者　城下　片手刀　橋にいる末期の声【会話】
+10100090 Ochimusha Castle One-Handed Sword Tutorial Immortality -- 落武者　城下　片手刀　チュートリアル不死
+10100100 Ochimusha Castle Weak Eight Phases No Mino Varie 1 -- 落武者　城下　弱八相　蓑なし バリエ１
+10100101 Ochimusha Castle Weak Eight Phases No Mino Required Drop -- 落武者　城下　弱八相　蓑なし　必須ドロップ
+10100102 Ochimusha Castle Weak Eight Phases No Mino Varie 2 -- 落武者　城下　弱八相　蓑なし　バリエ２
+10100110 Ochimusha Castle Eight Phases Guard -- 落武者　城下　八相　ガードする
+10100111 Ochimusha Castle Eight Phases Guarded by Akaoni Assisted by throwing stones -- 落武者　城下　八相　ガードする　赤鬼付近　石投げで援護
+10100200 Ochimusha Castle Spear -- 落武者　城下　槍
+10100201 Ochimusha Castle Spear Indoor -- 落武者　城下　槍　屋内
+10100202 Ochimusha Castle Spear Strong -- 落武者　城下　槍　強
+10100203 Ochimusha Castle Spear Strong Indoor -- 落武者　城下　槍　強　屋内
+10100300 Ochimusha Castle Matchlock -- 落武者　城下　火縄銃
+10100301 Ochimusha Castle Matchlock Indoor -- 落武者　城下　火縄銃　屋内
+10100302 Ochimusha Castle Matchlock Strong -- 落武者　城下　火縄銃　強
+10100303 Ochimusha Castle Matchlock Strong Indoors -- 落武者　城下　火縄銃　強　屋内
+10100320 Ochimusha Castle Matchlock Mandatory Drop -- 落武者　城下　火縄銃　必須ドロップ
+10101000 Ochimusha Honjo One-handed sword -- 落武者　本城　片手刀
+10101010 Ochimusha Honjo One-handed sword (blown by a fire cow) -- 落武者　本城　片手刀　（火牛にふっ飛ばされる）
+10101100 Ochimusha Honjo Yaso -- 落武者　本城　八相
+10101110 Ochimusha Honjo Yaso Guard -- 落武者　本城　八相　ガードする
+10101120 Ochimusha Honjo Weak Eight Phases No Mino Varie 1 -- 落武者　本城　弱八相　蓑なし バリエ１
+10101200 Ochimusha Honjo Spear -- 落武者　本城　槍
+10101210 Ochimusha Honjo Spear (Blown off by a fire cow) -- 落武者　本城　槍　（火牛にふっ飛ばされる）
+10101300 Ochimusha Honjo Matchlock -- 落武者　本城　火縄銃
+10102000 Ochimusha Honjo_One-handed sword when the Ninja army invades -- 落武者　本城_忍軍襲来時　片手刀
+10102010 Ochimusha Honjo_ Ninja army invasion One-handed sword (escape) -- 落武者　本城_忍軍襲来時　片手刀　(逃走)
+10102011 Ochimusha Honjo_Ninja Army Invasion One-handed Sword Red Demon Hostile -- 落武者　本城_忍軍襲来時　片手刀　赤鬼敵対用
+10102012 Ochimusha Honjo _ One-handed sword when the Ninja army invades (voice of the final stage) -- 落武者　本城_忍軍襲来時　片手刀　（末期の声）
+10102013 Ochimusha Honjo_ One-handed sword is killed when the Ninja army invades -- 落武者　本城_忍軍襲来時　片手刀　殺される
+10102014 Ochimusha Honjo_ Ninja army invasion One-handed sword (dying) -- 落武者　本城_忍軍襲来時　片手刀　（死にかけ）
+10102100 Ochimusha Honjo_ Eight phases when the Ninja army invades -- 落武者　本城_忍軍襲来時　八相
+10102110 Ochimusha Honjo_ When the Ninja Army invades, guards eight phases -- 落武者　本城_忍軍襲来時　八相　ガードする
+10102111 Ochimusha Honjo_Ninja Army Invasion Eight Phase Red Demon Hostile -- 落武者　本城_忍軍襲来時　八相　赤鬼敵対用
+10102120 Ochimusha Honjo_Ninja Army Invasion Weak Eight Phases No Mino Barrier 1 -- 落武者　本城_忍軍襲来時　弱八相　蓑なし バリエ１
+10102121 Ochimusha Honjo_Ninja Army Invasion Weak Eight Phases No Mino Barrier 1 Killed -- 落武者　本城_忍軍襲来時　弱八相　蓑なし バリエ１　殺される
+10102200 Ochimusha Honjo_Ninja Army Invasion Spear -- 落武者　本城_忍軍襲来時　槍
+10102210 Ochimusha Honjo_Ninja Army Invasion Spear (Escape) -- 落武者　本城_忍軍襲来時　槍 （逃走）
+10102220 Ochimusha Honjo_Ninja Army Invasion Spear (Dying) -- 落武者　本城_忍軍襲来時　槍 （死にかけ）
+10102230 Ochimusha Honjo_ Spear is killed when the Ninja army invades -- 落武者　本城_忍軍襲来時　槍 殺される
+10102300 Ochimusha Honjo_ Matchlock when the Ninja army invades -- 落武者　本城_忍軍襲来時　火縄銃
+10102310 Ochimusha Honjo_Ninja Army Invasion Matchlock Gun (Late Voice) -- 落武者　本城_忍軍襲来時　火縄銃 （末期の声）
+10102311 Ochimusha Honjo_Ninja army invasion Matchlock gun (dying) -- 落武者　本城_忍軍襲来時　火縄銃 （死にかけ）
+10103000 Ochimusha Honjo_One-handed sword when Tokugawa attacks -- 落武者　本城_徳川襲来時　片手刀
+10103010 Ochimusha Honjo_When Tokugawa attacks One-handed sword (for being killed by Tokugawa) -- 落武者　本城_徳川襲来時　片手刀(徳川に殺される用)
+10103011 Ochimusha Honjo_When Tokugawa attacks One-handed sword Combat state (for being killed by Tokugawa) -- 落武者　本城_徳川襲来時　片手刀　戦闘状態　(徳川に殺される用)
+10103012 Ochimusha Honjo_Tokugawa invasion One-handed sword (voice of the end) -- 落武者　本城_徳川襲来時　片手刀 （末期の声)
+10103013 Ochimusha Honjo_When Tokugawa attacks One-handed sword (dying) -- 落武者　本城_徳川襲来時　片手刀 (死にかけ)
+10103100 Ochimusha Honjo_At the time of the Tokugawa invasion Eight phases -- 落武者　本城_徳川襲来時　八相
+10103110 Ochimusha Honjo_When Tokugawa invades Yaso (for being killed by Tokugawa) -- 落武者　本城_徳川襲来時　八相　(徳川に殺される用)
+10103111 Ochimusha Honjo_When Tokugawa invades Eight-phase battle state (for being killed by Tokugawa) -- 落武者　本城_徳川襲来時　八相　戦闘状態　(徳川に殺される用)
+10103112 Ochimusha Honjo_At the time of the Tokugawa invasion Eight phases (dying) -- 落武者　本城_徳川襲来時　八相　(死にかけ)
+10103120 Ochimusha Honjo_ When Tokugawa invades, guards eight phases -- 落武者　本城_徳川襲来時　八相　ガードする
+10103130 Ochimusha Honjo_At the time of the Tokugawa invasion -- 落武者　本城_徳川襲来時　弱八相　蓑なし バリエ１
+10103200 Ochimusha Honjo_Tokugawa invasion spear -- 落武者　本城_徳川襲来時　槍
+10103210 Ochimusha Honjo_When Tokugawa attacks Spear (dying) -- 落武者　本城_徳川襲来時　槍　（死にかけ）
+10103300 Ochimusha Honjo_When Tokugawa attacks Matchlock gun -- 落武者　本城_徳川襲来時　火縄銃
+10103310 Ochimusha Honjo_At the time of the Tokugawa invasion Matchlock gun (voice of the end) -- 落武者　本城_徳川襲来時　火縄銃　（末期の声）
+10103311 Ochimusha Honjo_When Tokugawa attacks Matchlock gun (dying) -- 落武者　本城_徳川襲来時　火縄銃　（死にかけ）
+10104000 Ochimusha E3 Castle One-handed Sword -- 落武者　E3城下　片手刀
+10104001 Ochimusha E3 Castle One-handed Sword For First Battle (High Trunk) -- 落武者　E3城下　片手刀 初回戦闘用（体幹高い）
+10104100 Ochimusha E3 Castle Eight Phases -- 落武者　E3城下　八相
+10104110 Ochimusha E3 Castle Eight Phases Guard -- 落武者　E3城下　八相　ガードする
+10104200 Ochimusha E3 Castle Spear -- 落武者　E3城下　槍
+10104300 Ochimusha E3 Castle Matchlock -- 落武者　E3城下　火縄銃
+10105000 Ochimusha Hidden Prison_Tutorial Matchlock -- 落武者　隠し牢_チュートリアル　火縄銃
+10105100 Ochimusha Hidden Prison One-handed Sword -- 落武者　隠し牢　片手刀
+10105200 Ochimusha Hidden Prison Eight Phases -- 落武者　隠し牢　八相
+10105210 Ochimusha Hidden Prison Weak Eight Phases No Mino Barrier 1 -- 落武者　隠し牢　弱八相　蓑なし バリエ１
+10105300 Ochimusha Hidden Prison Spear -- 落武者　隠し牢　槍
+10105400 Ochimusha Hidden Prison Matchlock -- 落武者　隠し牢　火縄銃
+10106100 Ochimusha Dungeon Weak Eight Phases No Mino Varie 1 -- 落武者　地下牢　弱八相　蓑なし バリエ１
+10106200 Ochimusha Dungeon Spear -- 落武者　地下牢　槍
+10106300 Ochimusha Dungeon Matchlock -- 落武者　地下牢　火縄銃
+10109000 Ochimusha sample one-handed sword -- 落武者　サンプル　片手刀
+10109009 Ochimusha sample for one-handed sword shape drop -- 落武者　サンプル　片手刀　形代ドロップ用
+10109010 Ochimusha sample One-handed sword corpse discovery test -- 落武者　サンプル　片手刀　死体発見テスト
+10109080 Ochimusha LookAt test [conversation] -- 落武者　LookAtテスト用 【会話】
+10109099 Ochimusha Sample One-handed Sword Item Acquisition / Resource Item Acquisition Test -- 落武者　サンプル　片手刀　アイテム入手/リソースアイテム入手テスト
+10109100 Ochimusha sample eight phases -- 落武者　サンプル　八相
+10109101 Ochimusha sample eight phases always weakly played -- 落武者　サンプル　八相　常に弱弾き
+10109102 Ochimusha sample eight phases always strong -- 落武者　サンプル　八相　常に強弾き
+10109200 Ochimusha sample spear -- 落武者　サンプル　槍
+10109300 Ochimusha sample matchlock -- 落武者　サンプル　火縄銃
+10109900 Ochimusha sample flaming reaction test -- 落武者　サンプル　炎上リアクションテスト
+10110000 Tutorial Ochimusha Hidden Prison One-handed Sword Face 1 -- チュートリアル落武者　隠し牢　片手刀　顔1
+10110001 Tutorial Ochimusha Hidden Prison One-handed Sword Face 2 -- チュートリアル落武者　隠し牢　片手刀　顔2
+10110002 Tutorial Ochimusha Hidden Prison One-handed Sword Face 3 -- チュートリアル落武者　隠し牢　片手刀　顔3
+10110003 Tutorial Ochimusha Hidden Prison One-handed Sword Face 4 -- チュートリアル落武者　隠し牢　片手刀　顔4
+10110010 Tutorial Ochimusha Hidden Prison One-handed Sword Face 3 First lateral movement -- チュートリアル落武者　隠し牢　片手刀　顔3　初回横移動
+10110011 Tutorial Ochimusha Hidden Prison One-handed Sword Face 4 -- チュートリアル落武者　隠し牢　片手刀　顔4
+10110100 Tutorial Ochimusha Hidden Prison Yaso Face 1 -- チュートリアル落武者　隠し牢　八相　顔1
+10110101 Tutorial Ochimusha Hidden Prison Yaso Face 2 -- チュートリアル落武者　隠し牢　八相　顔2
+10110102 Tutorial Ochimusha Hidden Prison Yaso Face 3 -- チュートリアル落武者　隠し牢　八相　顔3
+10110103 Tutorial Ochimusha Hidden Prison Yaso Face 4 -- チュートリアル落武者　隠し牢　八相　顔4
+10120000 Ochimusha (Immortal NPC) Castle One-Handed Sword Tutorial Immortality -- 落武者(不死NPC)　城下　片手刀　チュートリアル不死
+10120080 Ochimusha (Immortal NPC) Castle One-Handed Sword Tutorial Immortality [Conversation] -- 落武者(不死NPC)　城下　片手刀　チュートリアル不死【会話】
+10120200 Ochimusha (Immortal NPC) Castle Spear Tutorial Immortality -- 落武者(不死NPC)　城下　槍　チュートリアル不死
+10120300 Ochimusha (Immortal NPC) Castle Matchlock Tutorial Immortality -- 落武者(不死NPC)　城下　火縄銃　チュートリアル不死
+10120500 Ochimusha (Immortal NPC) For castle one-handed sword breaking &amp; playing shinobi -- 落武者(不死NPC)　　城下　片手刀　崩し&弾き忍殺用
+10129000 Ochimusha (Immortal NPC) Sample Castle One-Handed Sword Tutorial Immortality -- 落武者(不死NPC)　サンプル　城下　片手刀　チュートリアル不死
+10130000 Ochimusha (Immortal NPC) Bug Castle -- 落武者(不死NPC)の蟲　城下
+10139000 Ochimusha (Immortal NPC) Bug Castle -- 落武者(不死NPC)の蟲　城下
+10200000 Samurai General Castle -- 侍大将　城下
+10200010 Samurai General Castle with Haori -- 侍大将　城下　陣羽織あり
+10201000 Tutorial Samurai General Hidden Prison -- チュートリアル侍大将　隠し牢
+10202000 Samurai General Honjo Jinhaori -- 侍大将　本城　陣羽織あり
+10202060 Samurai General Honjo Internal Work -- 侍大将　本城　内勤
+10202070 Samurai General Honjo Jinhaori None (for being killed by the lonely people) -- 侍大将　本城　陣羽織なし　（孤影衆に殺される用）
+10203010 Samurai General Honjo_At the time of the Tokugawa invasion No camp haori -- 侍大将　本城_徳川襲来時　陣羽織なし
+10204010 Samurai General E3 Castle Jin Haori -- 侍大将　E3城下　陣羽織あり
+10205000 Samurai General Hidden Prison_When Tokugawa Invades No Jinhaori -- 侍大将　隠し牢_徳川襲来時　陣羽織なし
+10209000 Samurai General Sample -- 侍大将　サンプル
+10209010 Samurai General Sample with Jinhaori -- 侍大将　サンプル　陣羽織あり
+10209020 Tutorial Samurai General Sample Hidden Prison -- チュートリアル侍大将　サンプル　隠し牢
+10209800 Samurai General Burning Reaction Test -- 侍大将　炎上リアクションテスト
+10209900 Samurai General Hit Stop Test_Do a little -- 侍大将　ヒットストップテスト_少しする
+10209901 Samurai General Hit Stop Test _ Do it properly -- 侍大将　ヒットストップテスト_ちゃんとする
+10209990 Samurai General for underwater test -- 侍大将　水中テスト用
+10209999 Samurai General For damage confirmation -- 侍大将　ダメージ確認用
+10210000 Samurai General Ashina Shitenno Hidden Prison _ Normal Tsukimi Tower -- 侍大将　葦名四天王　隠し牢_平常時　月見櫓
+10211000 Samurai General Ashina Shitenno Hidden Prison _ When Tokugawa Invades -- 侍大将　葦名四天王　隠し牢_徳川襲来時
+10219000 Samurai General Ashina Four Tenno Sample -- 侍大将　葦名四天王　サンプル
+10219090 Samurai General Ashina Four Tenno Sample Combat State Start -- 侍大将　葦名四天王　サンプル　戦闘状態スタート
+10219900 Samurai General Ashina Shitenno Sample Flame Reaction Test -- 侍大将　葦名四天王　サンプル　炎上リアクションテスト
+10300000 Centipede Kodera Close Quarters Battle -- ムカデ小　寺　近接戦闘
+10300001 Centipede Kodera Horakutama -- ムカデ小　寺　ほうらく玉
+10301000 Centipede Small Valley Close Quarters Battle -- ムカデ小　渓谷　近接戦闘
+10301001 Centipede Small Valley Horakutama -- ムカデ小　渓谷　ほうらく玉
+10309000 Centipede Small Sample Close Quarters Battle -- ムカデ小　サンプル　近接戦闘
+10309001 Centipede small sample -- ムカデ小　サンプル　ほうらく玉
+10400000 Centipede Temple -- ムカデ大　寺
+10401000 Centipede Canyon -- ムカデ大　渓谷
+10409000 Centipede large sample -- ムカデ大　サンプル
+10500000 Spear Monk Soldier Appearance 1 Samurai Residence -- 槍僧兵 見た目1　武家屋敷
+10500001 Spear Monk Soldier Appearance 2 Samurai Residence -- 槍僧兵 見た目2　武家屋敷
+10500002 Spear Monk Soldier Appearance 3 Samurai Residence -- 槍僧兵 見た目3　武家屋敷
+10500010 Spear Monk Soldier Appearance 1 Samurai Residence -- 槍僧兵 見た目1　武家屋敷
+10500012 Spear Monk Soldier Appearance 3 Samurai Residence -- 槍僧兵 見た目3　武家屋敷
+10501000 Spear Monk Soldier Appearance 1 Honjo -- 槍僧兵 見た目1　本城
+10502000 Spear Monk Appearance 1 E3 -- 槍僧兵 見た目1　E3
+10503000 Spear Monk Soldier Appearance 1 Honjo_Ninja Army Invasion -- 槍僧兵 見た目1　本城_忍軍襲来時
+10504000 Spear Monk Soldier Appearance 1 When Honjo_Tokugawa invades -- 槍僧兵 見た目1　本城_徳川襲来時
+10505000 Spear Monk Soldier Appearance 1 Samurai Residence Truth -- 槍僧兵 見た目1　武家屋敷真相
+10505002 Spear Monk Soldier Appearance 3 Samurai Residence Truth -- 槍僧兵 見た目3　武家屋敷真相
+10509000 Spear Monk Sample 1 -- 槍僧兵 サンプル1
+10509001 Spear Monk Sample 2 -- 槍僧兵 サンプル2
+10509002 Spear Monk Sample 3 -- 槍僧兵 サンプル3
+10600000 Rotating Spearman Temple -- 回転槍術師　寺
+10600010 Rotating Spearman Temple -- 回転槍術師　寺
+10605000 Rotating Spearman For Revenge Spirit -- 回転槍術師　復讐霊用
+10609000 Rotating Spearman Sample -- 回転槍術師　サンプル
+10609001 Rotating Spearman Sample Combat State Start -- 回転槍術師　サンプル　戦闘状態スタート
+10609002 Rotating spearman sample Appearance variation difference -- 回転槍術師　サンプル　見た目バリエーション違い
+10609003 Rotating Spearman Sample Running during patrol -- 回転槍術師　サンプル　巡回時に走行
+10700000 Shura Samurai Samurai Residence -- 修羅侍　武家屋敷
+10701000 Shura Samurai Castle Tokugawa Shura Samurai -- 修羅侍　城下　徳川修羅侍
+10702000 Shura Samurai E3 Castle (based on samurai residence) -- 修羅侍　E3城下（武家屋敷ベース）
+10703000 Shura Samurai Sick Village -- 修羅侍　病み村
+10704000 Shura Samurai Samurai Residence_Truth Edition -- 修羅侍　武家屋敷_真相編
+10709000 Shura Samurai Sample -- 修羅侍　サンプル
+10709090 Shura Samurai Sample Combat State Start -- 修羅侍　サンプル　戦闘状態スタート
+10800000 Seven-sided warrior dungeon -- 七面武者　地下牢
+10801000 Seven-sided warrior submerged city -- 七面武者　水没都
+10802000 Seven-sided warrior valley lower layer -- 七面武者　渓谷下層
+10809000 Seven-sided warrior sample -- 七面武者　サンプル
+10809001 Seven-sided warrior_battle state start sample -- 七面武者_戦闘状態スタート　サンプル
+11000000 Gecko valley -- ヤモリ　渓谷
+11000010 Gecko Valley No FE -- ヤモリ　渓谷　ＦＥ無し
+11001000 Gecko dungeon -- ヤモリ　地下牢
+11002000 Gecko sick village -- ヤモリ　病み村
+11003050 White gecko submerged city -- 白ヤモリ　水没都
+11003060 White gecko submerged city without audiovisual -- 白ヤモリ　水没都　視聴覚なし
+11004000 Gecko Castle -- ヤモリ　城下
+11005000 Gecko Temple -- ヤモリ　寺
+11006000 Gecko Hidden Prison -- ヤモリ　隠し牢
+11006100 Gecko Hidden Prison Do not vomit poison -- ヤモリ　隠し牢　毒を吐かない
+11007000 Gecko main castle -- ヤモリ　本城
+11007100 Gecko Honjo Do not vomit poison -- ヤモリ　本城　毒を吐かない
+11007200 Gecko Honjo When the Ninja army invades (does not hostile to the lonely people) -- ヤモリ　本城　忍軍襲来時（孤影衆と敵対しない）
+11009000 Gecko sample -- ヤモリ　サンプル
+11009001 Gecko sample first bite -- ヤモリ　サンプル　初回噛みつき
+11009002 Gecko sample Does not spit poison during special standby -- ヤモリ　サンプル　特殊待機時に毒を吐かない
+11009003 Gecko sample Always spit poison_ground type -- ヤモリ　サンプル　常に毒を吐く_地面タイプ
+11009050 White gecko sample -- 白ヤモリ　サンプル
+11009090 Gecko sample treasure carp test -- ヤモリ　サンプル　宝鯉テスト
+11009190 Gecko sample treasure carp test (on the water) -- ヤモリ　サンプル　宝鯉テスト（水上）
+11100000 Handmaiden Aunt Castle White Nun 1 -- 侍女おば　城下　白尼1
+11100001 Handmaiden Aunt Castle White Nun 2 -- 侍女おば　城下　白尼2
+11100002 Handmaiden Aunt Castle Purple 1 -- 侍女おば　城下　紫1
+11100003 Handmaiden Aunt Castle Purple 2 -- 侍女おば　城下　紫2
+11101000 Handmaiden Aunt Valley White Nun 1 -- 侍女おば　渓谷　白尼1
+11101100 Handmaiden Aunt Samurai Residence White Nun 1 -- 侍女おば　武家屋敷　白尼1
+11101180 Handmaiden Aunt Samurai Residence Suzubaa [Conversation] -- 侍女おば　武家屋敷　鈴ばばあ【会話】
+11105010 Handmaiden Aunt Honjo Castle Tower 4F -- 侍女おば　本城　　天守閣4F
+11105100 Handmaiden Aunt Honjo Yayobioka Nun -- 侍女おば　本城　　八百比丘尼
+11105180 Handmaiden Aunt Honjo Yaohioka Nun [Conversation] -- 侍女おば　本城　　八百比丘尼【会話】
+11106000 Handmaiden Aunt E3 Castle White Nun 1 -- 侍女おば　E3城下　白尼1
+11109000 Handmaiden Aunt White Nun 1 Sample 1 -- 侍女おば　白尼1　サンプル1
+11109001 Handmaiden Aunt White Nun 2 Sample 2 -- 侍女おば　白尼2　サンプル2
+11109002 Handmaiden Aunt Purple 1 Sample 3 -- 侍女おば　紫1　サンプル3
+11109003 Handmaiden Aunt Purple 2 Sample 4 -- 侍女おば　紫2　サンプル4
+11109080 Handmaiden Aunt LookAt Test [Conversation] -- 侍女おば　LookAtテスト用 【会話】
+11110000 Handmaiden Aunt Valley -- 侍女おば　渓谷
+11119000 Handmaiden Aunt Normal Sample 1 -- 侍女おば　通常　サンプル1
+11200000 Lookout Castle Castle Mino -- 見張り番　城下　全身蓑
+11200001 Lookout Castle Castle Body Mino -- 見張り番　城下　体蓑
+11200002 Lookout guard Castle Mino -- 見張り番　城下　蓑なし
+11200010 Lookout Castle Castle Visual distance enhancement Full body Mino -- 見張り番　城下　視覚距離強化　全身蓑
+11201000 Lookout Castle _ At the time of the Tokugawa invasion -- 見張り番　城下_徳川襲来時　蓑あり
+11201001 Watchman Castle_When Tokugawa invades No Mino -- 見張り番　城下_徳川襲来時　蓑なし
+11202000 Lookout Honjo Body Mino -- 見張り番　本城　体蓑
+11202010 Watchman Honjo Body Mino Does not make an AI sound when hitting a bell -- 見張り番　本城　体蓑　鐘を叩く時のAI音を出さない
+11203000 Lookout E3 Castle Whole Body Mino -- 見張り番　E3城下　全身蓑
+11204000 Lookout Hidden Prison Body Mino -- 見張り番　隠し牢　体蓑
+11209000 Lookout sample Whole body Mino -- 見張り番　サンプル　全身蓑
+11209001 Lookout sample body -- 見張り番　サンプル　体蓑
+11209002 Lookout sample No Mino -- 見張り番　サンプル　蓑なし
+11209003 Lookout sample There is a mino when the Tokugawa invades -- 見張り番　サンプル　徳川襲来時　蓑あり
+11209004 Lookout sample No mino when Tokugawa invades -- 見張り番　サンプル　徳川襲来時　蓑なし
+11300000 Nanban Armor Temple -- 南蛮甲冑　寺
+11309000 Nanban armor sample -- 南蛮甲冑　サンプル
+11400000 Earthen wall soldier valley lower layer -- 土塀兵　渓谷下層
+11400001 Earthen wall soldiers Lower valley_First earthen wall soldiers -- 土塀兵　渓谷下層_最初の土塀兵
+11409000 Earthen wall soldier sample -- 土塀兵　サンプル
+11409001 Earthen wall soldier sample Step up situation -- 土塀兵　サンプル　段差上りシチュエーション
+11409002 Earthen wall soldier sample sticking peeping situation -- 土塀兵　サンプル　張り付き覗き込みシチュエーション
+11409003 Earth wall soldier sample in front of the treasure chest -- 土塀兵　サンプル　宝箱前
+11409090 Earthen wall soldier sample Combat state start -- 土塀兵　サンプル　戦闘状態スタート
+11500000 Dog castle -- イヌ　城下
+11500100 Dog Castle Combat Tutorial Real Drop Control -- イヌ　城下　戦闘チュートリリアル　ドロップ制御
+11501000 Dog hidden prison -- イヌ　隠し牢
+11502000 Ninja dog Honjo_When the Ninja army invades -- 忍犬　本城_忍軍襲来時
+11502001 Ninja dog Honjo_When the Ninja army invades (for reeds hostile) -- 忍犬　本城_忍軍襲来時　（葦名勢敵対用）
+11502100 Ninja dog Honjo_When Tokugawa invades (for monkey hostility) (prevents earning) -- 忍犬　本城_徳川襲来時　（猿敵対用）（稼ぎ防止）
+11503000 Ninja Dog Samurai Residence Truth Edition Summoning Hidden -- 忍犬　武家屋敷真相編　召喚用　姿隠し
+11503001 Ninja dog samurai residence truth edition (for reeds hostile) -- 忍犬　武家屋敷真相編　（葦名勢敵対用）
+11504000 Dog samurai residence -- イヌ　武家屋敷
+11504100 Dog samurai residence LOD invalid -- イヌ　武家屋敷 LOD無効
+11505000 Dog sick village hidden -- イヌ　病み村　姿隠し
+11505010 Dog sick village usually -- イヌ　病み村　通常
+11506000 Inu temple -- イヌ　寺
+11507000 Inu Honjo -- イヌ　本城
+11507010 Inu Honjo_Normal time Biting during the first action -- イヌ　本城_平常時　初回行動時噛みつき
+11507100 Inu Honjo When the Ninja Army invades -- イヌ　本城　忍軍襲来時
+11509000 Dog sample -- イヌ　サンプル
+11509001 Dog sample ninja dog -- イヌ　サンプル　忍犬
+11509002 Dog sample illusion -- イヌ　サンプル　幻影
+11510000 Innsmouth dog submerged city -- インスマス犬　水没都
+11510001 Innsmouth dog submerged city without magatama -- インスマス犬　水没都　勾玉なし
+11519000 Innsmouth dog sample -- インスマス犬　サンプル
+11800000 Lower man mallet -- 下男　木槌
+11800010 Lower man mallet crying start -- 下男　木槌　泣き状態スタート
+11800100 Younger man gold crushing stick -- 下男　金砕棒
+11800110 Younger man gold crushing stick crying start -- 下男　金砕棒　泣き状態スタート
+11801000 Lower man mallet main castle -- 下男　木槌　本城
+11801100 Lower man bell with string (armor) Honjo -- 下男　紐付き鐘(鎧)　本城
+11803000 Lower man mallet temple -- 下男　木槌　寺
+11803100 Younger man Kanabō Temple -- 下男　金砕棒　寺
+11803400 Use weak special effects for the younger man Shield Temple EvE -- 下男　盾　寺 EvE用の弱体特殊効果使用
+11804000 Lower man mallet hidden prison -- 下男　木槌　隠し牢
+11804100 Younger man Kanabō Hidden prison -- 下男　金砕棒　隠し牢
+11804280 Lower man tie bell Castle castle kidnapped lower man merging with a bandit [conversation] -- 下男　紐付き鐘　城下　さらわれ下男　物売り野盗と合流【会話】
+11804281 Lower man tie bell Castle castle kidnapped lower man After Tokugawa invades [Conversation] -- 下男　紐付き鐘　城下　さらわれ下男　徳川襲来後【会話】
+11805000 Lower man mallet samurai residence -- 下男　木槌　武家屋敷
+11805010 Lower man mallet crying start samurai residence -- 下男　木槌　泣き状態スタート　武家屋敷
+11805100 Younger man Kanabō samurai residence -- 下男　金砕棒　武家屋敷
+11805110 Lower man gold crushing stick crying start samurai residence -- 下男　金砕棒　泣き状態スタート　武家屋敷
+11806010 Lower man mallet crying start -- 下男　木槌　泣き状態スタート
+11806110 Younger man Kanabō Honjo_Tokugawa &quot;Start crying at the time of attack -- 下男　金砕棒　本城_徳川「襲来時　泣き状態スタート
+11807000 Lower man mallet samurai residence _ truth -- 下男　木槌　武家屋敷_真相
+11807010 Lower man mallet crying start Samurai residence _ truth -- 下男　木槌　泣き状態スタート　武家屋敷_真相
+11807100 Lower man Kanabō samurai residence _ truth -- 下男　金砕棒　武家屋敷_真相
+11807101 Lower man gold crushing stick (armor) Samurai residence _ truth -- 下男　金砕棒（鎧）　武家屋敷_真相
+11807110 Younger man Kanabō start crying Samurai residence _ truth -- 下男　金砕棒　泣き状態スタート　武家屋敷_真相
+11807400 Lower man shield samurai residence _ truth -- 下男　盾　武家屋敷_真相
+11809000 Lower man mallet sample -- 下男　木槌　サンプル
+11809090 Lower man mallet battle state start sample -- 下男　木槌　戦闘状態スタート サンプル
+11809099 Lower man mallet item drop test (disappearance type) -- 下男　木槌　アイテムドロップテスト（消滅タイプ）
+11809100 Younger man gold crusher sample -- 下男　金砕棒　サンプル
+11809190 Lower man gold crusher battle state start sample -- 下男　金砕棒　戦闘状態スタート　サンプル
+11809200 Lower man tie bell (naked) sample -- 下男　紐付き鐘(裸)　サンプル
+11809210 Lower man tie bell (armor) sample -- 下男　紐付き鐘(鎧)　サンプル
+11809290 Lower man tie bell (naked) Combat state start sample -- 下男　紐付き鐘(裸)　戦闘状態スタート　サンプル
+11809400 Lower man shield sample -- 下男　盾　サンプル
+11810000 Younger zombie sick village mallet -- 下男ゾンビ　病み村　木槌
+11810100 Younger Zombie Sick Village Kanabō -- 下男ゾンビ　病み村　金砕棒
+11810200 Younger zombie sick village bell with tie -- 下男ゾンビ　病み村　紐付き鐘
+11810210 Younger Zombie Sick Village Bell with String (Armor) -- 下男ゾンビ　病み村　紐付き鐘(鎧)
+11819000 Younger zombie mallet sample -- 下男ゾンビ　木槌　サンプル
+11819090 Younger zombie mallet combat state start sample -- 下男ゾンビ　木槌　戦闘状態スタート サンプル
+11819100 Younger zombie gold crusher sample -- 下男ゾンビ　金砕棒　サンプル
+11819190 Younger Zombie Gold Crusher Combat State Start Sample -- 下男ゾンビ　金砕棒　戦闘状態スタート サンプル
+11819200 Younger zombie tie bell sample -- 下男ゾンビ　紐付き鐘　サンプル
+11819290 Younger zombie tie bell Combat state start sample -- 下男ゾンビ　紐付き鐘　戦闘状態スタート　サンプル
+11900000 Valley Enemy Valley Normal -- 谷敵　渓谷　通常
+11900001 Valley Enemy Valley Usually drawn at any distance -- 谷敵　渓谷　通常 どんな距離でも描画される
+11900200 Valley Enemy Valley Shotgun -- 谷敵　渓谷　散弾
+11900300 Valley enemy valley lower cannon -- 谷敵　渓谷下層　大砲
+11900301 Valley Enemy Valley Lower Cannon [Voice of the end] -- 谷敵　渓谷下層　大砲【末期の声】
+11901300 Valley enemy castle cannon -- 谷敵　城下　大砲
+11902300 Valley enemy Honjo cannon -- 谷敵　本城　大砲
+11905000 Valley Enemy Revenge Spirit Normal -- 谷敵　復讐霊　通常
+11905200 Valley Enemy Revenge Spirit Shotgun -- 谷敵　復讐霊　散弾
+11905300 Valley Enemy Revenge Spirit Cannon -- 谷敵　復讐霊　大砲
+11909000 Valley enemy sample normal -- 谷敵　サンプル　通常
+11909090 Valley enemy sample Normal battle state start -- 谷敵　サンプル　通常　戦闘状態スタート
+11909200 Valley enemy sample shotgun -- 谷敵　サンプル　散弾
+11909290 Valley Enemy Sample Shotgun Combat State Start -- 谷敵　サンプル　散弾　戦闘状態スタート
+11909300 Valley enemy sample cannon -- 谷敵　サンプル　大砲
+11909390 Valley Enemy Sample Cannon Combat State Start -- 谷敵　サンプル　大砲　戦闘状態スタート
+11910000 Valley Enemy Valley Female Sniper -- 谷敵　渓谷　女スナイパー
+11911000 Valley enemy Valley lower layer female sniper -- 谷敵　渓谷下層　女スナイパー
+11915000 Valley Enemy Revenge Spirit Female Sniper -- 谷敵　復讐霊　女スナイパー
+11919000 Valley enemy sample female sniper -- 谷敵　サンプル　女スナイパー
+11919090 Valley Enemy Sample Female Sniper Combat State Start -- 谷敵　サンプル　女スナイパー　戦闘状態スタート
+12000000 Sokushinbutsu Temple -- 即身仏　寺
+12009000 Sokushinbutsu sample -- 即身仏　サンプル
+12009090 Sokushinbutsu sample battle state start -- 即身仏　サンプル　戦闘状態スタート
+12100000 Sokushinbutsu_Centipede Temple -- 即身仏_ムカデなし　寺
+12100001 Sokushinbutsu_No Centipede Temple FE No -- 即身仏_ムカデなし　寺 FE無し
+12102080 Sokushinbutsu_No centipede [Conversation] -- 即身仏_ムカデなし【会話】
+12109000 Sokushinbutsu_No centipede sample -- 即身仏_ムカデなし　サンプル
+12109090 Sokushinbutsu_No centipede sample Combat state start -- 即身仏_ムカデなし　サンプル　戦闘状態スタート
+12110000 Cricket Temple -- コオロギ　寺
+12110001 Cricket Temple Do not attack -- コオロギ　寺　攻撃しない
+12111000 Cricket dungeon -- コオロギ　地下牢
+12111001 Cricket Dungeon Do not attack -- コオロギ　地下牢　攻撃しない
+12118000 Hallucinatory character _ cricket -- 幻覚キャラ_コオロギ
+12118090 Hallucinatory character_cricket Combat state start -- 幻覚キャラ_コオロギ　戦闘状態スタート
+12119000 Cricket sample -- コオロギ　サンプル
+12119090 Cricket Combat State Start Sample -- コオロギ　戦闘状態スタート　サンプル
+12200000 Temple foundation Zako Temple fist Hoi only Kasaya -- 寺基礎ザコ　寺　拳　　　法衣のみ袈裟無
+12200010 Temple foundation Zako Temple fist Hoi only Kasaya (reading sutra during patrol) -- 寺基礎ザコ　寺　拳　　　法衣のみ袈裟無（巡回時読経）
+12200020 Temple foundation Zako Temple fist Hoi only licking Kasaya candy with the first hand -- 寺基礎ザコ　寺　拳　　　法衣のみ袈裟無　飴を初手で舐める
+12200080 Temple Foundation Zako Temple Fist Shirtless Infinite Corridor Hint Character [Conversation] -- 寺基礎ザコ　寺　拳　上半身裸　無限回廊ヒントキャラ【会話】
+12200100 Temple foundation Zako Temple stick art Kasaya (red) Yes -- 寺基礎ザコ　寺　棒術　袈裟（赤）有
+12200110 Temple foundation Zako Temple stick art Kasaya (red) Yes (reading sutra during patrol) -- 寺基礎ザコ　寺　棒術　袈裟（赤）有　（巡回時読経）
+12200111 Temple foundation Zako Temple stick art Khakkhara alert (reading sutra during patrol) -- 寺基礎ザコ　寺　棒術　錫杖アラート　（巡回時読経）
+12200120 Temple foundation Zako Temple stick art Kasaya (red) Yes Licking candy with the first hand -- 寺基礎ザコ　寺　棒術　袈裟（赤）有　初手で飴を舐める
+12200200 Temple foundation Zako Temple magic Kasaya (purple) with hood -- 寺基礎ザコ　寺　魔法　袈裟（紫）頭巾有
+12200210 Temple foundation Zako Temple magic Kasaya (purple) with hood (patrol over time) -- 寺基礎ザコ　寺　魔法　袈裟（紫）頭巾有（読経時巡回）
+12201180 Temple Foundation Zako Dungeon Magical Immortality Experiment Medical Monk Kasaya (Purple) Kasaya [Conversation] -- 寺基礎ザコ　地下牢　魔法　不死実験の医僧　袈裟（紫）頭巾有【会話】
+12202080 Temple foundation Zako Sick village fist Sick village priest Hoi only Kasaya [Conversation] -- 寺基礎ザコ　病み村　拳　病み村神主　　法衣のみ袈裟無【会話】
+12202081 Temple foundation Zako Sick village fist Kiri no Mori priest [conversation] -- 寺基礎ザコ　病み村　拳　霧の森の住職【会話】
+12205000 Temple foundation Zako Revenge spirit fist Hoi only Kasaya -- 寺基礎ザコ　復讐霊　拳　　　法衣のみ袈裟無
+12205100 Temple Foundation Zako Revenge Spirit Stick Art Kasaya (Red) Yes -- 寺基礎ザコ　復讐霊　棒術　袈裟（赤）有
+12205200 Temple Foundation Zako Revenge Spirit Magic Kasaya (Purple) With hood -- 寺基礎ザコ　復讐霊　魔法　袈裟（紫）頭巾有
+12209000 Temple Foundation Zako Fist Sample 1 -- 寺基礎ザコ　拳　サンプル1
+12209001 Temple Foundation Zako Fist Sample 2 -- 寺基礎ザコ　拳　サンプル2
+12209002 Temple foundation Zako magic sample -- 寺基礎ザコ　魔法　サンプル
+12209090 Temple foundation Zako fist battle state start sample -- 寺基礎ザコ　拳　戦闘状態スタート　サンプル
+12209100 Temple foundation Zako stick art sample -- 寺基礎ザコ　棒術　サンプル
+12209190 Temple foundation Zako stick art battle state start sample -- 寺基礎ザコ　棒術　戦闘状態スタート　サンプル
+12400000 Shamo chicken castle -- 軍鶏　城下
+12400010 Shamo chicken castle battle tutorial -- 軍鶏　城下　戦闘チュートリアル
+12401000 Shamo chicken_sick village -- 軍鶏_病み村
+12401001 Shamo chicken _ sick village _ first jump -- 軍鶏_病み村_初回飛び掛かり
+12402000 Shamo chicken_samurai residence -- 軍鶏_武家屋敷
+12409000 Shamo chicken sample -- 軍鶏　サンプル
+12409090 Shamo chicken sample battle state start -- 軍鶏　サンプル　戦闘状態スタート
+12500000 Monkey Valley bare hands -- 猿　渓谷　素手
+12500010 Monkey Valley Bare Hand Snake Burrow Puppet -- 猿　渓谷　素手　蛇の巣穴傀儡
+12500020 Monkey Valley Bare hands No sanding No foot effect -- 猿　渓谷　素手　砂かけしない　フットエフェクト無し
+12500030 Monkey Valley Bare Hand Poisoner -- 猿　渓谷　素手　毒使い
+12500050 Monkey Valley Bare Hands Lower Layer Appearance (Baldness) -- 猿　渓谷　素手　下層の見た目（ハゲ）
+12500100 Monkey Valley Shooting Normal Kasa -- 猿　渓谷　射撃　通常　笠
+12500110 Monkey Valley Shooting Jump -- 猿　渓谷　射撃　跳躍
+12500120 Monkey Valley Shooting Sniper Kasa -- 猿　渓谷　射撃　狙撃　笠
+12500121 Monkey Valley Shooting Sniper Kasa Foot Without SFX -- 猿　渓谷　射撃　狙撃　笠　フットSFX無し
+12500130 Monkey Valley Shooting Sniper Kasa Escape Shooting -- 猿　渓谷　射撃　狙撃　笠　逃げ撃ち
+12500150 Monkey Valley Shooting Jumping Lower Layer Appearance (Bald) -- 猿　渓谷　射撃　跳躍　下層の見た目（ハゲ）
+12500200 Monkey Valley Sword Helmet -- 猿　渓谷　刀　　　　　　 兜
+12500201 Monkey Valley Sword Helmet -- 猿　渓谷　刀　　　　　　 兜
+12500202 Monkey Valley Sword Helmet No foot effect -- 猿　渓谷　刀　　　　　　 兜　フットエフェクト無し
+12500250 Monkey Valley Sword Helmet Lower layer appearance (baldness) -- 猿　渓谷　刀　　　　　　 兜　下層の見た目（ハゲ）
+12500251 Monkey Valley Sword Helmet Lower Layer Appearance (Bald) Poisoner -- 猿　渓谷　刀　　　　　　 兜　下層の見た目（ハゲ）　毒使い
+12500300 Monkey Valley Two Swords -- 猿　渓谷　二刀
+12501000 Monkey temple bare hands -- 猿　寺　　 素手
+12501099 Monkey Temple Demon Monkey (bare hands) A little stronger -- 猿　寺　　鬼猿（素手）　ちょっと強め
+12502000 Monkey bare hand main castle -- 猿　素手　本城
+12503000 Monkey bare hand Honjo_When Tokugawa invades -- 猿　素手　本城_徳川襲来時
+12503100 Monkey Honjo_Tokugawa Invasion Shooting Normal Kasa -- 猿　本城_徳川襲来時　射撃　通常　笠
+12503200 Monkey Honjo_At the time of the Tokugawa invasion Sword helmet -- 猿　本城_徳川襲来時　刀　　　　　　 兜
+12503300 Monkey Honjo_Tokugawa invasion Two swords -- 猿　本城_徳川襲来時　二刀
+12504000 Monkey sick village bare hands -- 猿　病み村　素手
+12504100 Monkey Sick Village Shooting Normal Kasa -- 猿　病み村　射撃　通常　笠
+12504120 Monkey Sick Village Shooting Sniper Kasa -- 猿　病み村　射撃　狙撃　笠
+12504121 Monkey Sick Village Shooting Sniper Kasa Fixed Battery -- 猿　病み村　射撃　狙撃　笠　固定砲台
+12504200 Monkey Sick Village Sword Helmet -- 猿　病み村　刀　　　　　　 兜
+12505000 Apes Revenge Bare Hands -- 猿　復讐霊　素手
+12505100 Apes Revenge Shooting Normal Kasa -- 猿　復讐霊　射撃　通常　笠
+12505200 Monkey Revenge Spirit Sword Helmet -- 猿　復讐霊　刀　　　　　　 兜
+12505300 Apes Revenge Two Swords -- 猿　復讐霊　二刀
+12509000 Monkey bare hand brown hair sample -- 猿　素手　茶毛　サンプル
+12509001 Monkey bare hand black hair sample -- 猿　素手　黒毛　サンプル
+12509060 A sample that runs when the monkey bare hands patrol -- 猿　素手　巡回時に走る　サンプル
+12509070 Monkey Bare Hand Snake Burrow Puppet Test Sample -- 猿　素手　蛇の巣穴傀儡テスト　サンプル
+12509080 Monkey bare hand jump control test sample -- 猿　素手　ジャンプ制御テスト　サンプル
+12509090 Monkey bare hand sample battle state start -- 猿　素手　サンプル　戦闘状態スタート
+12509100 Monkey shooting normal Kasa brown hair sample -- 猿　射撃　通常　笠　茶毛　サンプル
+12509101 Monkey shooting normal Kasa black hair sample -- 猿　射撃　通常　笠　黒毛　サンプル
+12509190 Monkey shooting jumping sample combat state start -- 猿　射撃　跳躍　サンプル　戦闘状態スタート
+12509200 Monkey shooting sniper Kasa brown hair sample -- 猿　射撃　狙撃　笠　茶毛　サンプル
+12509201 Monkey shooting sniper Kasa black hair sample -- 猿　射撃　狙撃　笠　黒毛　サンプル
+12509290 Monkey shooting sniper sample combat state start -- 猿　射撃　狙撃　サンプル　戦闘状態スタート
+12509300 Monkey sword helmet brown hair sample -- 猿　刀　兜　茶毛　サンプル
+12509301 Monkey sword helmet black hair sample -- 猿　刀　兜　黒毛　サンプル
+12509390 Monkey sword sample battle state start -- 猿　刀　サンプル　戦闘状態スタート
+12509400 Monkey dual wield sample -- 猿　二刀　サンプル
+12509480 Two monkey swords Sample running during patrol -- 猿　二刀　巡回時に走る　サンプル
+12509490 Monkey dual wield sample battle state start -- 猿　二刀　サンプル　戦闘状態スタート
+12600000 Chigo monkey_monkey -- 稚児猿＿見猿
+12600010 Chigo monkey_monkey -- 稚児猿＿聞猿
+12600020 Chigo monkey _ saying monkey -- 稚児猿＿言う猿
+12600030 Chigo monkey _ visible monkey -- 稚児猿＿見え猿
+12600050 Chigo monkey boss HP display dummy character -- 稚児猿ボスＨＰ表示用ダミーキャラ
+12609000 Monkey Bare-handed Chigo Monkey_Monkey Sample -- 猿　素手　稚児猿＿見猿　サンプル
+12609010 Monkey Bare hand Chigo monkey _ Hearing monkey sample -- 猿　素手　稚児猿＿聞猿　サンプル
+12609020 Monkey Bare hand Chigo monkey _ Say monkey sample -- 猿　素手　稚児猿＿言う猿　サンプル
+12609030 Monkey bare hand chigo monkey _ visible monkey sample -- 猿　素手　稚児猿＿見え猿　サンプル
+12609040 Monkey Bare Hands Chigo Monkey_Seeing Monkey Sample_For New Route -- 猿　素手　稚児猿＿見猿　サンプル_新ルート用
+13000000 Japanese style Innsmouth submerged city weak -- 和風インスマス　水没都 弱
+13000001 Japanese-style Innsmouth Submerged City Strong -- 和風インスマス　水没都 強
+13000002 Japanese-style Innsmouth Submerged City Weak [Conversation] -- 和風インスマス　水没都 弱【会話】
+13001000 Inside the Japanese-style Innsmouth Sick Village Temple -- 和風インスマス　病み村　寺内部
+13001080 Japanese style Innsmouth Sick village Sick village priest _ After Innsmouth [Non-conversation] -- 和風インスマス　病み村 病み村神主_インスマス後【非会話】
+13002080 Scale shop clerk_Samurai residence [Conversation] -- 鱗ショップ店員_武家屋敷【会話】
+13002081 Scale shop clerk_Shell state_Samurai residence [Conversation] -- 鱗ショップ店員_抜け殻状態_武家屋敷【会話】
+13003080 Scale shop clerk_submerged city [conversation] -- 鱗ショップ店員_水没都【会話】
+13003081 Scale shop clerk_Shell state_Submerged city [Conversation] -- 鱗ショップ店員_抜け殻状態_水没都【会話】
+13009000 Japanese style Innsmouth sample weak -- 和風インスマス　サンプル　弱
+13009001 Japanese style Innsmouth sample strong -- 和風インスマス　サンプル　強
+13009090 Japanese style Innsmouth sample strong battle state start -- 和風インスマス　サンプル　強　戦闘状態スタート
+13009091 Japanese style Innsmouth sample Strong rejuvenation start -- 和風インスマス　サンプル　強　若返り状態スタート
+13100000 Genpei warrior _ sword -- 源平武者_刀
+13100001 Genpei Warrior_Sword_Run -- 源平武者_刀_走る
+13100002 Genpei Samurai_Sword_Path Search If you fail, bow -- 源平武者_刀_パス検索失敗したら弓
+13100010 Genpei Samurai_Sword: Thunder -- 源平武者_刀：雷
+13100100 Genpei Samurai_Naginata -- 源平武者_薙刀
+13100110 Genpei Samurai_Naginata: Thunder -- 源平武者_薙刀：雷
+13100200 Genpei Warrior_Bow -- 源平武者_弓
+13100201 Genpei Samurai_Bow: Sword Sub -- 源平武者_弓:刀サブ
+13100202 Genpei Samurai_Bow: A type that always switches to a sword when the sword sub PC comes on the roof -- 源平武者_弓:刀サブ PCが屋根の上に来たら刀に必ず切り替えるタイプ
+13100300 Genpei Samurai_Kemari -- 源平武者_蹴鞠
+13100310 Genpei Samurai_Kemari: Thunder Sniper -- 源平武者_蹴鞠：雷スナイパー
+13100320 Genpei Samurai_Kemari: Thunder -- 源平武者_蹴鞠：雷
+13109000 Genpei samurai sword sample -- 源平武者　刀　サンプル
+13109001 Genpei Samurai Sword Strong Sample -- 源平武者　刀　 強　サンプル
+13109080 Genpei Samurai Sword Sample running during patrol -- 源平武者　刀　巡回時に走る　サンプル
+13109090 Genpei Samurai Sword Sample Combat State Start -- 源平武者　刀　サンプル　戦闘状態スタート
+13109100 Genpei Samurai Naginata Sample -- 源平武者　薙刀　サンプル
+13109101 Genpei Samurai Naginata Strong Sample -- 源平武者　薙刀　強　サンプル
+13109190 Genpei Samurai Naginata Sample Combat State Start -- 源平武者　薙刀　サンプル　戦闘状態スタート
+13109200 Genpei Samurai Bow Sample -- 源平武者　弓　サンプル
+13109290 Genpei Samurai Bow Sample Combat State Start -- 源平武者　弓　サンプル　戦闘状態スタート
+13109300 Genpei Samurai Kemari Sample -- 源平武者　蹴鞠　サンプル
+13109301 Genpei Samurai Kemari Strong Sample -- 源平武者　蹴鞠　強　サンプル
+13109380 Genpei Samurai Sample running during Kemari patrol -- 源平武者　蹴鞠　巡回時に走る　サンプル
+13109390 Genpei Samurai Kemari Sample Combat State Start -- 源平武者　蹴鞠　サンプル　戦闘状態スタート
+13200000 Treasure carp samurai residence -- 宝鯉　武家屋敷
+13200010 Piranha treasure carp samurai residence -- ピラニア宝鯉　武家屋敷
+13200100 Treasure carp samurai residence on the water -- 宝鯉　武家屋敷　水上
+13200110 Piranha treasure carp samurai residence on the water -- ピラニア宝鯉　武家屋敷　水上
+13201000 Treasure carp main castle -- 宝鯉　本城
+13201001 Treasure carp Honjo Uchibori -- 宝鯉　本城　内堀
+13201010 Piranha treasure carp main castle -- ピラニア宝鯉　本城
+13201100 Treasure carp Honjo water -- 宝鯉　本城　水上
+13201110 Piranha treasure carp Honjo water -- ピラニア宝鯉　本城　水上
+13202000 Treasure carp valley -- 宝鯉　渓谷
+13202010 Piranha Treasure Carp Valley -- ピラニア宝鯉　渓谷
+13202100 Treasure carp valley water -- 宝鯉　渓谷　水上
+13202110 Piranha treasure carp valley water -- ピラニア宝鯉　渓谷　水上
+13203000 Treasure carp temple -- 宝鯉　寺
+13203100 Treasure carp temple water -- 宝鯉　寺　水上
+13204000 Treasure carp illness village -- 宝鯉　病み村
+13204010 Piranha Treasure Carp Sick Village -- ピラニア宝鯉　病み村
+13204100 Treasure carp illness village water -- 宝鯉　病み村　水上
+13204110 Piranha Treasure Carp Sick Village Water -- ピラニア宝鯉　病み村　水上
+13204200 Special treasure carp illness village underwater -- 特別宝鯉　病み村　水中
+13205000 Treasure carp submerged city -- 宝鯉　水没都
+13205010 Piranha treasure carp submerged city -- ピラニア宝鯉　水没都
+13205100 Treasure carp submerged city on the water -- 宝鯉　水没都　水上
+13205110 Piranha treasure carp submerged city on the water -- ピラニア宝鯉　水没都　水上
+13206010 Piranha treasure carp dungeon -- ピラニア宝鯉　地下牢
+13206110 Piranha treasure carp dungeon water -- ピラニア宝鯉　地下牢　水上
+13208000 Treasure carp group patrol dummy leader underwater -- 宝鯉　集団巡回ダミーリーダー　水中
+13208100 Treasure carp group patrol dummy leader water -- 宝鯉　集団巡回ダミーリーダー　水上
+13209000 Treasure carp sample -- 宝鯉　サンプル
+13209090 Treasure carp sample battle state start -- 宝鯉　サンプル　戦闘状態スタート
+13209100 Treasure carp water sample -- 宝鯉　水上　サンプル
+13209190 Treasure carp water sample battle state start -- 宝鯉　水上　サンプル　戦闘状態スタート
+13209200 Treasure carp group patrol dummy leader underwater sample -- 宝鯉　集団巡回ダミーリーダー　水中　サンプル
+13209300 Treasure carp group patrol dummy leader water sample -- 宝鯉　集団巡回ダミーリーダー　水上　サンプル
+13210000 Scale shop clerk _ carp samurai residence -- 鱗ショップ店員_鯉化　武家屋敷
+13211000 Scale shop clerk_Carp submerged city -- 鱗ショップ店員_鯉化　水没都
+13400000 Underwater headless Honjo_Ninja army invasion -- 水中首なし　本城_忍軍襲来
+13401000 Underwater neckless submerged city -- 水中首なし　水没都
+13401001 Underwater neckless submerged city illusion -- 水中首なし　水没都　幻影
+13409000 Underwater neckless sample -- 水中首なし　サンプル
+13409090 Underwater neckless sample Combat state start -- 水中首なし　サンプル　戦闘状態スタート
+13500000 Neckless castle -- 首なし　城下
+13500100 Neckless Castle E3 -- 首なし　城下　E3
+13501000 Neckless valley -- 首なし　渓谷
+13502000 Neckless sick village -- 首なし　病み村
+13509000 Neckless sample -- 首なし　サンプル
+13509001 Neckless sample for miasma confirmation -- 首なし　サンプル　瘴気確認用
+13509090 Neckless sample Combat state start -- 首なし　サンプル　戦闘状態スタート
+13600000 Rappa Temple Normal Appearance 1 -- らっぱ　寺　通常　　　　見た目1
+13600001 Rappa Temple Puppet Use a kite for ninja killing -- らっぱ　寺　傀儡忍殺で凧使う
+13600010 Rappa Temple Ambush -- らっぱ　寺　待ち伏せ
+13600020 Rappa Temple reeds skipping -- らっぱ　寺　葦飛ばし
+13600030 Rappa Temple Reeds Flying_Shugendo -- らっぱ　寺　葦飛ばし_修験道
+13600040 Rappa Temple Reeds Flying_Poison Type -- らっぱ　寺　葦飛ばし_毒タイプ
+13600100 Rappa Kigasa Temple -- らっぱ　木笠　寺
+13601000 Rappa Hidden Prison Normal Appearance 1 -- らっぱ　隠し牢　通常　　　　見た目1
+13601010 Rappa Hidden Prison Ambush -- らっぱ　隠し牢　待ち伏せ
+13601020 Rappa Hidden Prison_Tutorial Time Under the Bridge -- らっぱ　隠し牢_チュートリアル時　橋の下
+13601030 Rappa Hidden Prison Reed-skipping type -- らっぱ　隠し牢　葦飛ばしタイプ
+13601040 Rappa Hidden Prison Reeds Flying_Poison Type -- らっぱ　隠し牢　葦飛ばし_毒タイプ
+13601100 Rappa Hidden Prison Kigasa -- らっぱ　隠し牢　木笠
+13602000 Rappa Castle Normal Appearance 1 -- らっぱ　城下　通常　　　　見た目1
+13602010 Rappa Castle Normal role -- らっぱ　城下　通常　やられ役
+13604000 Rappa Valley_Normal_Late Voice -- らっぱ　渓谷_通常_末期の声
+13604080 Rappa Valley_Normal_Late Voice [Conversation] -- らっぱ　渓谷_通常_末期の声【会話】
+13605000 Rappa Honjo Normal appearance 1 -- らっぱ　本城　通常　　　　見た目1
+13605010 Rappa Honjo Reeds Flying_Poison Type -- らっぱ　本城　葦飛ばし_毒タイプ
+13605100 Rappa Honjo Kigasa -- らっぱ　本城　木笠
+13609000 Rappa Appearance 1 Sample -- らっぱ　見た目1　サンプル
+13609001 Rappa Appearance 2 Sample -- らっぱ　見た目2　サンプル
+13609002 Rappa Appearance 3 Samples -- らっぱ　見た目3　サンプル
+13609003 Rappa Appearance 4 Samples -- らっぱ　見た目4　サンプル
+13609010 Rappa Kigasa sample -- らっぱ　木笠　サンプル
+13609080 A sample that runs during a patrol -- らっぱ　巡回時に走る　サンプル
+13609081 For Rappa LookAt test [conversation] -- らっぱ LookAtテスト用 【会話】
+13609090 Rappa battle state start sample -- らっぱ　戦闘状態スタート　サンプル
+13609100 Rappa_Ambush Sample -- らっぱ_待ち伏せ　サンプル
+13609190 Rappa_Ambush Combat State Start Sample -- らっぱ_待ち伏せ　戦闘状態スタート　サンプル
+13610000 Tokugawa Rappa_Honjo -- 徳川らっぱ_本城
+13610010 Tokugawa Rappa_Honjo_Reeds -- 徳川らっぱ_本城_葦飛ばし
+13610100 Tokugawa Rappa_Honjo_When the Ninja Army invades -- 徳川らっぱ_本城_忍軍襲来時
+13610110 Tokugawa Rappa_Honjo_Ashibashi_When the Ninja Army invades -- 徳川らっぱ_本城_葦飛ばし_忍軍襲来時
+13611000 Tokugawa Rappa_Castle -- 徳川らっぱ_城下
+13619000 Tokugawa Rappa sample -- 徳川らっぱ　サンプル
+13700000 Fire cow main castle -- 火牛　本城
+13709000 Fire cow sample -- 火牛 サンプル
+13709090 Fire cow sample battle state start -- 火牛 サンプル　戦闘状態スタート
+13800000 Fire Cow Innsmouth Submerged City -- 火牛インスマウス　水没都
+14000000 Swordsman_Defense type Honjo -- 剣客_守りタイプ　本城
+14000100 Swordsman_attack type Honjo -- 剣客_攻めタイプ　本城
+14000200 Swordsman_Iai Honjo -- 剣客_居合　本城
+14001000 Swordsman_defensive type samurai residence (ally) -- 剣客_守りタイプ　武家屋敷（味方）
+14001081 Swordsman_Defense Type Samurai Residence Conversation For NPCs [Conversation] -- 剣客_守りタイプ　武家屋敷 会話NPC用【会話】
+14001082 Swordsman_bare hand samurai residence Suzuba&#39;s son [conversation] provisional -- 剣客_素手　武家屋敷 鈴ばばあの息子【会話】仮
+14002009 Swordsman_Normal Castle Conversation for NPCs -- 剣客_通常　城下 会話NPC用
+14002080 Swordsman_Normal Castle Suzuba&#39;s son [Conversation] -- 剣客_通常　城下 鈴ばばあの息子【会話】
+14003080 Swordsman_Defense Type Sick Village Conversation For NPCs [Conversation] -- 剣客_守りタイプ　病み村 会話NPC用【会話】
+14004000 Swordsman _ Defensive type Honjo _ Tokugawa invasion Grand staircase (Tokugawa kills) -- 剣客_守りタイプ　本城_徳川襲来時　大階段（徳川にやられる）
+14004100 Swordsman_Attack type Honjo_Tokugawa invasion Grand staircase (Tokugawa kills) -- 剣客_攻めタイプ　本城_徳川襲来時　大階段（徳川にやられる）
+14004200 Swordsman_Iai Honjo_Red eye when Tokugawa invades -- 剣客_居合　本城_徳川襲来時　赤目
+14005000 Swordsman_Defense Type Revenge Spirit -- 剣客_守りタイプ　復讐霊
+14005100 Swordsman_Attack Type Revenge Spirit -- 剣客_攻めタイプ　復讐霊
+14005200 Swordsman_Iai Revenge Spirit -- 剣客_居合　復讐霊
+14009000 Swordsman defensive type sample -- 剣客　守りタイプ　サンプル
+14009080 Swordsman LookAt test [conversation] -- 剣客 LookAtテスト用 【会話】
+14009090 Swordsman Defensive Type Sample Combat State Start -- 剣客　守りタイプ　サンプル　戦闘状態スタート
+14009100 Swordsman offensive type sample -- 剣客　攻めタイプ　サンプル
+14009190 Swordsman offensive type sample Combat state start -- 剣客　攻めタイプ　サンプル　戦闘状態スタート
+14009200 Swordsman Iai sample -- 剣客　居合い　サンプル
+14009290 Swordsman Iai sample battle state start -- 剣客　居合い　サンプル　戦闘状態スタート
+14009900 Swordsman offensive type sample Burning reaction test -- 剣客　攻めタイプ　サンプル　炎上リアクションテスト
+14009910 Swordsman Iai sample Burning reaction test -- 剣客　居合い　サンプル　炎上リアクションテスト
+14500000 Nightjars Proximity Honjo -- 夜鷹衆　近接　本城
+14500001 Nightjars Proximity Honjo Self-destruct -- 夜鷹衆　近接　本城　自爆
+14500010 Nightjars Proximity Honjo Black kite fall -- 夜鷹衆　近接　本城　黒　凧落下
+14500020 Nightjars Proximity Honjo For calling friends -- 夜鷹衆　近接　本城　仲間呼び用
+14500030 Nightjars Proximity Honjo Black Flame Encha -- 夜鷹衆　近接　本城　黒　炎エンチャ
+14500040 Nightjars Proximity Honjo White -- 夜鷹衆　近接　本城　白
+14500100 Nightjars Shuriken Honjo -- 夜鷹衆　手裏剣　本城
+14500110 Nightjars Shuriken Honjo first appearance -- 夜鷹衆　手裏剣　本城　初回登場
+14500120 Nightjars Shuriken Honjo For calling friends -- 夜鷹衆　手裏剣　本城　仲間呼び用
+14500130 Nightjars Shuriken Honjo White -- 夜鷹衆　手裏剣　本城　白
+14501000 Nightjars Proximity Honjo_At the time of the Tokugawa invasion -- 夜鷹衆　近接　本城_徳川襲来時
+14501010 Nightjars Proximity Honjo_Tokugawa Invasion Black Flame Encha -- 夜鷹衆　近接　本城_徳川襲来時　黒　炎エンチャ
+14501020 Nightjars Proximity Honjo_ Tokugawa invasion White red eyes -- 夜鷹衆　近接　本城_徳川襲来時　白　赤目
+14501030 Nightjars Proximity Honjo_At the time of the Tokugawa invasion (voice of the end) -- 夜鷹衆　近接　本城_徳川襲来時(末期の声)
+14501100 Nightjars Shuriken Honjo_At the time of the Tokugawa invasion -- 夜鷹衆　手裏剣　本城_徳川襲来時
+14501110 Nightjars Shuriken Honjo_ Tokugawa invasion White red eyes -- 夜鷹衆　手裏剣　本城_徳川襲来時 白　赤目
+14502000 Nightjars Proximity Samurai Residence Conversation NPC -- 夜鷹衆　近接　武家屋敷　会話NPC用
+14502080 Nightjars Proximity Samurai Residence Conversation For NPCs [Conversation] -- 夜鷹衆　近接　武家屋敷　会話NPC用【会話】
+14503000 Nightjars Proximity Valley -- 夜鷹衆　近接　渓谷
+14503020 Nightjars run when patrolling the nearby valley -- 夜鷹衆　近接　渓谷　巡回時に走る
+14503050 Nightjars Proximity Valley Normal Flame Encha -- 夜鷹衆　近接　渓谷　通常　炎エンチャ
+14503100 Nightjars Shuriken Valley -- 夜鷹衆　手裏剣　渓谷
+14504000 Nightjars Proximity Temple -- 夜鷹衆　近接　寺
+14504010 Nightjars Proximity Self-destruct Temple -- 夜鷹衆　近接　自爆　寺
+14504020 Nightjars A temple that runs during a close patrol -- 夜鷹衆　近接　巡回時に走る　寺
+14504100 Nightjars Shuriken Temple -- 夜鷹衆　手裏剣　寺
+14504110 Nightjars Shuriken Explosion Temple -- 夜鷹衆　手裏剣　爆発　寺
+14505000 Nightjars Revenge Spirit Proximity -- 夜鷹衆　復讐霊　近接
+14505001 Nightjars Revenge Spirit Proximity Self-Destruction -- 夜鷹衆　復讐霊　近接　自爆
+14505010 Nightjars Revenge Spirit Proximity Flame Encha -- 夜鷹衆　復讐霊　近接　炎エンチャ
+14505100 Nightjars Revenge Spirit Shuriken -- 夜鷹衆　復讐霊　手裏剣
+14506000 Nightjars Proximity Honjo_When the Ninja Army invades -- 夜鷹衆　近接　本城_忍軍襲来時
+14506010 Nightjars Proximity Honjo_Self-destruction when the Ninja army invades -- 夜鷹衆　近接　本城_忍軍襲来時　自爆
+14506030 Nightjars Proximity Honjo_Ninja Army Invasion Black Flame Encha -- 夜鷹衆　近接　本城_忍軍襲来時　黒　炎エンチャ
+14506100 Nightjars Proximity Honjo_Voice of the end of the Ninja army invasion -- 夜鷹衆　近接　本城_忍軍襲来時　末期の声
+14509000 Nightjars Proximity Normal sample -- 夜鷹衆　近接　通常　サンプル
+14509001 Nightjars Proximity Black Sample -- 夜鷹衆　近接　黒　サンプル
+14509002 Nightjars Proximity White Sample -- 夜鷹衆　近接　白　サンプル
+14509010 Nightjars Proximity Normal Self-destruct sample -- 夜鷹衆　近接　通常　自爆　サンプル
+14509011 Nightjars Proximity Black Self-Destruct Sample -- 夜鷹衆　近接　黒　自爆　サンプル
+14509012 Nightjars Proximity White Self-Destruct Sample -- 夜鷹衆　近接　白　自爆　サンプル
+14509020 Nightjars A sample that runs during a close patrol -- 夜鷹衆　近接　巡回時に走る　サンプル
+14509030 Nightjars Proximity Normal Flame Encha Sample -- 夜鷹衆　近接　通常　炎エンチャ　サンプル
+14509031 Nightjars Proximity Black Flame Encha Sample -- 夜鷹衆　近接　黒　炎エンチャ　サンプル
+14509032 Nightjars Proximity White Flame Encha Sample -- 夜鷹衆　近接　白　炎エンチャ　サンプル
+14509040 Nightjars Proximity Normal red-eye sample -- 夜鷹衆　近接　通常　赤目　サンプル
+14509041 Nightjars Proximity Black Red Eye Sample -- 夜鷹衆　近接　黒　赤目　サンプル
+14509042 Nightjars Proximity White Red Eye Sample -- 夜鷹衆　近接　白　赤目　サンプル
+14509080 Nightjars LookAt test [conversation] -- 夜鷹衆　LookAtテスト用 【会話】
+14509090 Nightjars Proximity sample Combat state start -- 夜鷹衆　近接　サンプル　戦闘状態スタート
+14509100 Nightjars Shuriken Normal sample -- 夜鷹衆　手裏剣　通常　サンプル
+14509101 Nightjars Shuriken Black Sample -- 夜鷹衆　手裏剣　黒　サンプル
+14509102 Nightjars Shuriken White Sample -- 夜鷹衆　手裏剣　白　サンプル
+14509110 Nightjars Shuriken Normal Explosion Sample -- 夜鷹衆　手裏剣　通常　爆発　サンプル
+14509111 Nightjars Shuriken Black Explosion Sample -- 夜鷹衆　手裏剣　黒　爆発　サンプル
+14509112 Nightjars Shuriken White Explosion Sample -- 夜鷹衆　手裏剣　白　爆発　サンプル
+14509140 Nightjars Shuriken Normal red-eye sample -- 夜鷹衆　手裏剣　通常　赤目　サンプル
+14509141 Nightjars Shuriken Black Red Eye Sample -- 夜鷹衆　手裏剣　黒　赤目　サンプル
+14509142 Nightjars Shuriken White Red Eye Sample -- 夜鷹衆　手裏剣　白　赤目　サンプル
+14509190 Nightjars Shuriken sample Combat state start -- 夜鷹衆　手裏剣　サンプル　戦闘状態スタート
+14600000 Nightjars (kites) Honjo -- 夜鷹衆(凧)　本城
+14601000 Nightjars (kites) temple -- 夜鷹衆(凧)　寺
+14602000 Nightjars (kites) valley -- 夜鷹衆(凧)　渓谷
+14609000 Nightjars (kites) Normal sample -- 夜鷹衆(凧)　通常　サンプル
+14609001 Nightjar (kites) black sample -- 夜鷹衆(凧)　黒　サンプル
+14609002 Nightjars (kites) white sample -- 夜鷹衆(凧)　白　サンプル
+14700000 Lonely people samurai residence normal -- 孤影衆　武家屋敷　通常
+14701000 Kokageshu Honjo_When the Ninja Army invades -- 孤影衆　本城_忍軍襲来時
+14701001 Kokageshu Honjo_When the Ninja Army invades -- 孤影衆　本城_忍軍襲来時　毒手使い
+14701003 Kokageshu Honjo_When the Ninja Army invades (for reeds hostile) -- 孤影衆　本城_忍軍襲来時　（葦名勢敵対用）
+14701004 Kokageshu Honjo_When the Ninja Army invades Poisoner (for reeds hostile) -- 孤影衆　本城_忍軍襲来時　毒手使い　（葦名勢敵対用）
+14701005 Kokageshu Honjo_Ninja Army Invasion Poisonous Hands Medium Boss Attic -- 孤影衆　本城_忍軍襲来時　毒手使い　中ボス　屋根裏
+14701006 Kokageshu Honjo_When the Ninja Army Invades Poisonous Hands-on Medium Boss White Snake Shrine -- 孤影衆　本城_忍軍襲来時　毒手使い　中ボス　白蛇神社
+14701007 Kokageshu Honjo_When the Ninja Army invades -- 孤影衆　本城_忍軍襲来時　中ボスのお付き
+14702000 Kokageshu Honjo_When the Tokugawa invades -- 孤影衆　本城_徳川襲来時
+14702001 Kokageshu Honjo_When Tokugawa invades Poisonous hand -- 孤影衆　本城_徳川襲来時　毒手使い
+14702003 When the lone shadows Honjo_Tokugawa invades (for reeds hostile) -- 孤影衆　本城_徳川襲来時　（葦名勢敵対用）
+14702004 Kokageshu Honjo_When Tokugawa invades Poisonous hand (for reeds hostile) -- 孤影衆　本城_徳川襲来時　毒手使い　（葦名勢敵対用）
+14703000 Kokageshu Samurai Residence_Truth Edition Normal -- 孤影衆　武家屋敷_真相編　通常
+14703001 Kokageshu Samurai Residence_Truth Edition Poisonous Handsman -- 孤影衆　武家屋敷_真相編　毒手使い
+14703002 Kokageshu Samurai Residence_Truth Edition Normal Medium Boss -- 孤影衆　武家屋敷_真相編　通常　中ボス
+14704000 Lonely crowd hidden prison boss -- 孤影衆　隠し牢　中ボス
+14705100 Sickness Village Poisonous Handsman -- 孤影衆　病み村　毒手使い
+14709000 Lonely crowd sample -- 孤影衆　サンプル
+14709001 Lonely people sample another varieties poison hand messenger -- 孤影衆　サンプル　別バリエ　毒手使い
+14709080 Run during the lonely test patrol -- 孤影衆　テスト　巡回時に走る
+14709081 Lonely crowd test Jump off when locked on -- 孤影衆　テスト　ロックオンされたら飛び降りる
+14709090 Lonely crowd sample Combat state start -- 孤影衆　サンプル　戦闘状態スタート
+15000000 Villager Zombie _ Bare Hand -- 村人ゾンビ_素手
+15000001 Villager Zombie _ Bare Hand Appearance Varie 2 -- 村人ゾンビ_素手　見た目バリエ2
+15000002 Villager Zombie _ Bare Hand Appearance Varie 3 -- 村人ゾンビ_素手　見た目バリエ3
+15000010 Villager Zombie _ Bare Hand: I love stone throwing -- 村人ゾンビ_素手：石投げ大好き
+15000011 Villager Zombie_Bare Hands: I Love Stone Throwing Appearance Varie -- 村人ゾンビ_素手：石投げ大好き　見た目バリエ
+15000012 Villager Zombie _ Bare Hand: I Love Mad Dumpling Throw Appearance Varie -- 村人ゾンビ_素手：発狂団子投げ大好き　見た目バリエ
+15000013 Villager Zombie_Bare Hands: Surrounding Behavior &amp; Mad Dumpling Throwing Appearance Varie -- 村人ゾンビ_素手：取り巻き行動＆発狂団子投げ　見た目バリエ
+15000100 Villager Zombie_Rake -- 村人ゾンビ_熊手
+15000101 Villager Zombie_Rake Appearance Varie 2 -- 村人ゾンビ_熊手　見た目バリエ2
+15000102 Villager Zombie_Rake Appearance Varie 3 -- 村人ゾンビ_熊手　見た目バリエ3
+15000200 Villager Zombie_Knife -- 村人ゾンビ_包丁
+15000300 Villager Zombie_Hoe -- 村人ゾンビ_鍬
+15000301 Villager Zombie_Hoe Appearance Varie 2 -- 村人ゾンビ_鍬　見た目バリエ2
+15000400 Villager Zombie_Bamboo Spear -- 村人ゾンビ_竹槍
+15000401 Villager Zombie_Bamboo Spear Appearance Varie 2 -- 村人ゾンビ_竹槍 見た目バリエ2
+15000500 Villager Zombie_Weaving Machine -- 村人ゾンビ_機織り機
+15000600 Villager Zombie _ Bare Hand _ Grab Restraint -- 村人ゾンビ_素手_掴み拘束役
+15002380 Villager Zombie_Hoe Stable Resident B Castle [Conversation] -- 村人ゾンビ_鍬 馬小屋の住人B　城下【会話】
+15002480 Villager Zombie_Takeyari Stable Resident C Castle [Conversation] -- 村人ゾンビ_竹槍 馬小屋の住人C　城下【会話】
+15002580 Villager Zombie_Weaving Machine Stable Resident A Castle [Conversation] -- 村人ゾンビ_機織り機 馬小屋の住人A　城下【会話】
+15003080 Villager Zombie_Bare Hands Decent Villager Sick Village [Conversation] -- 村人ゾンビ_素手 まともな村人 病み村【会話】
+15005000 Villager Zombie _ Revenge Spirit _ Bare Hand -- 村人ゾンビ_復讐霊_素手
+15005100 Villager Zombie_Revenge Spirit_Rake -- 村人ゾンビ_復讐霊_熊手
+15005200 Villager Zombie_Revenge Spirit_Knife -- 村人ゾンビ_復讐霊_包丁
+15005300 Villager Zombie_Revenge Spirit_Hoe -- 村人ゾンビ_復讐霊_鍬
+15005400 Villager Zombie_Revenge Spirit_Bamboo Spear -- 村人ゾンビ_復讐霊_竹槍
+15005500 Villager Zombie_Revenge Spirit_Weaving Machine -- 村人ゾンビ_復讐霊_機織り機
+15005600 Villager Zombie _ Revenge Spirit _ Bare Hand _ Grab Restraint -- 村人ゾンビ_復讐霊_素手_掴み拘束役
+15009000 Villager Zombie_Bare Hand Sample -- 村人ゾンビ_素手　サンプル
+15009001 Villager Zombie _ Bare Hand Stone Throw Love Sample -- 村人ゾンビ_素手　石投げ大好き　サンプル
+15009080 Villager Zombie_Bare Hand LookAt Test [Conversation] -- 村人ゾンビ_素手 LookAtテスト用 【会話】
+15009090 Villager Zombie _ Bare Hand Sample Combat State Start -- 村人ゾンビ_素手　サンプル　戦闘状態スタート
+15009100 Villager Zombie_Rake Sample -- 村人ゾンビ_熊手　サンプル
+15009190 Villager Zombie_Rake Sample Combat State Start -- 村人ゾンビ_熊手　サンプル　戦闘状態スタート
+15009200 Villager Zombie_Knife Sample -- 村人ゾンビ_包丁　サンプル
+15009290 Villager Zombie_Knife Sample Combat State Start -- 村人ゾンビ_包丁　サンプル　戦闘状態スタート
+15009300 Villager Zombie_Hoe Sample -- 村人ゾンビ_鍬　サンプル
+15009390 Villager Zombie_Hoe Sample Combat State Start -- 村人ゾンビ_鍬　サンプル　戦闘状態スタート
+15009400 Villager Zombie_Bamboo Spear Sample -- 村人ゾンビ_竹槍　サンプル
+15009490 Villager Zombie_Bamboo Spear Sample Combat State Start -- 村人ゾンビ_竹槍　サンプル　戦闘状態スタート
+15009500 Villager Zombie_Weaving Machine Sample -- 村人ゾンビ_機織り機　サンプル
+15009590 Villager Zombie_Weaving Machine Sample Combat State Start -- 村人ゾンビ_機織り機　サンプル　戦闘状態スタート
+15009600 Villager Zombie_Prisoner Sample -- 村人ゾンビ_囚人　サンプル
+15009690 Villager Zombie_Prisoner Sample Combat State Start -- 村人ゾンビ_囚人　サンプル　戦闘状態スタート
+15010000 Villager Zombie (female) _ bare hands -- 村人ゾンビ（女）_素手
+15010010 Villager Zombie (female) _ Bare Hand: I love stone throwing -- 村人ゾンビ（女）_素手：石投げ大好き
+15010100 Villager Zombie (female) _ Rake -- 村人ゾンビ（女）_熊手
+15010200 Villager Zombie (female) _ kitchen knife -- 村人ゾンビ（女）_包丁
+15010300 Villager Zombie (female) _ Hoe -- 村人ゾンビ（女）_鍬
+15010400 Villager Zombie (female) _ Bamboo Spear -- 村人ゾンビ（女）_竹槍
+15010500 Villager Zombie (female) _ Weaving machine -- 村人ゾンビ（女）_機織り機
+15010600 Villager Zombie (female) _bare hand_grabbing restraint -- 村人ゾンビ（女）_素手_掴み拘束役
+15019000 Villager Zombie (Female) _ Bare Hand Sample -- 村人ゾンビ（女）_素手　サンプル
+15019001 Villager Zombie (female) _ Bare hand stone throwing love sample -- 村人ゾンビ（女）_素手　石投げ大好き　サンプル
+15019090 Villager Zombie (female) _ Bare Hand Sample Combat State Start -- 村人ゾンビ（女）_素手　サンプル　戦闘状態スタート
+15019100 Villager Zombie (female) _ Rake sample -- 村人ゾンビ（女）_熊手　サンプル
+15019190 Villager Zombie (female) _ Rake sample Combat state start -- 村人ゾンビ（女）_熊手　サンプル　戦闘状態スタート
+15019200 Villager Zombie (female) _ Kitchen knife sample -- 村人ゾンビ（女）_包丁　サンプル
+15019290 Villager Zombie (female) _ Kitchen knife sample Combat state start -- 村人ゾンビ（女）_包丁　サンプル　戦闘状態スタート
+15019300 Villager Zombie (Female) _ Hoe Sample -- 村人ゾンビ（女）_鍬　サンプル
+15019390 Villager Zombie (Female) _ Hoe Sample Combat State Start -- 村人ゾンビ（女）_鍬　サンプル　戦闘状態スタート
+15019400 Villager Zombie (Female) _ Bamboo Spear Sample -- 村人ゾンビ（女）_竹槍　サンプル
+15019490 Villager Zombie (female) _ Bamboo spear sample Combat state start -- 村人ゾンビ（女）_竹槍　サンプル　戦闘状態スタート
+15019500 Villager Zombie (female) _ Weaving machine sample -- 村人ゾンビ（女）_機織り機　サンプル
+15019590 Villager Zombie (female) _ Weaving machine sample Combat state start -- 村人ゾンビ（女）_機織り機　サンプル　戦闘状態スタート
+15100000 Hallucinatory character _ villager zombie _ bare hand -- 幻覚キャラ_村人ゾンビ_素手
+15100001 Hallucinatory character _ villager zombie _ bare hand I love stone throwing -- 幻覚キャラ_村人ゾンビ_素手　石投げ大好き
+15100100 Hallucinatory character _ villager zombie _ rake -- 幻覚キャラ_村人ゾンビ_熊手
+15100200 Hallucinatory character _ villager zombie _ kitchen knife -- 幻覚キャラ_村人ゾンビ_包丁
+15100300 Hallucinatory character _ villager zombie _ hoe -- 幻覚キャラ_村人ゾンビ_鍬
+15100400 Hallucinatory character _ villager zombie _ bamboo spear -- 幻覚キャラ_村人ゾンビ_竹槍
+15100500 Hallucinatory character_villager zombie_weaving machine -- 幻覚キャラ_村人ゾンビ_機織り機
+15109000 Hallucinatory character _ villager zombie _ bare hand sample -- 幻覚キャラ_村人ゾンビ_素手　サンプル
+15109001 Hallucinatory character _ villager zombie _ bare hand stone throwing love sample -- 幻覚キャラ_村人ゾンビ_素手　石投げ大好き　サンプル
+15109090 Hallucinatory character _ villager zombie _ bare hand sample battle state start -- 幻覚キャラ_村人ゾンビ_素手　サンプル　戦闘状態スタート
+15109100 Hallucinatory character _ villager zombie _ rake sample -- 幻覚キャラ_村人ゾンビ_熊手　サンプル
+15109190 Hallucinatory character _ villager zombie _ rake sample battle state start -- 幻覚キャラ_村人ゾンビ_熊手　サンプル　戦闘状態スタート
+15109200 Hallucinatory character _ villager zombie _ kitchen knife sample -- 幻覚キャラ_村人ゾンビ_包丁　サンプル
+15109290 Hallucinatory character _ villager zombie _ kitchen knife sample battle state start -- 幻覚キャラ_村人ゾンビ_包丁　サンプル　戦闘状態スタート
+15109300 Hallucinatory character _ villager zombie _ hoe sample -- 幻覚キャラ_村人ゾンビ_鍬　サンプル
+15109390 Hallucinatory character _ villager zombie _ hoe sample battle state start -- 幻覚キャラ_村人ゾンビ_鍬　サンプル　戦闘状態スタート
+15109400 Hallucinatory character _ villager zombie _ bamboo spear sample -- 幻覚キャラ_村人ゾンビ_竹槍　サンプル
+15109490 Hallucinatory character _ villager zombie _ bamboo spear sample battle state start -- 幻覚キャラ_村人ゾンビ_竹槍　サンプル　戦闘状態スタート
+15109500 Hallucinatory character_villager zombie_weaving machine sample -- 幻覚キャラ_村人ゾンビ_機織り機　サンプル
+15109590 Hallucinatory character _ villager zombie _ weaving machine sample battle state start -- 幻覚キャラ_村人ゾンビ_機織り機　サンプル　戦闘状態スタート
+15200000 Prisoner Zombie_Dungeon -- 囚人ゾンビ_地下牢
+15209000 Prisoner Zombie_Dungeon Sample -- 囚人ゾンビ_地下牢　サンプル
+15500000 Bandit_Sword Base Design -- 野盗_刀　ベースデザイン
+15500001 Bandit_sword light clothing -- 野盗_刀　軽装
+15500002 Bandit_sword light gauntlet right side -- 野盗_刀　軽装籠手右側
+15500003 Bandit_sword light armor -- 野盗_刀　軽装鎧
+15500050 Bandit_Sword Base Design -- 野盗_納刀　ベースデザイン
+15500051 Bandit_Sword Lightly dressed -- 野盗_納刀　軽装
+15500052 Bandit_Sword Light Gauntlet Right side -- 野盗_納刀　軽装籠手右側
+15500053 Bandit_Sword Light Armor -- 野盗_納刀　軽装鎧
+15500100 Bandit_ax base design -- 野盗_斧　ベースデザイン
+15500101 Bandit_ax light clothing -- 野盗_斧　軽装
+15500102 Bandit_ax Light gauntlet right side -- 野盗_斧　軽装籠手右側
+15500103 Bandit_ax light armor -- 野盗_斧　軽装鎧
+15500106 Bandit_Ax Heavy Equipment Two-Handed Gauntlet_Strong 1 -- 野盗_斧　重装備両手籠手_強1
+15500107 Bandit_Ax Heavy Equipment Gauntlet + Armor 2_Strong -- 野盗_斧　重装備籠手＋鎧2_強
+15500110 Bandit_Ax Base Design_First attack is dash cut -- 野盗_斧　ベースデザイン_初回攻撃がダッシュ切り
+15500150 Bandit_Ax Base Design -- 野盗_納斧　ベースデザイン
+15500151 Bandit_Ax Lightly dressed -- 野盗_納斧　軽装
+15500152 Bandit_Ax Light Gauntlet Right Side -- 野盗_納斧　軽装籠手右側
+15500153 Bandit_Ax Light Armor -- 野盗_納斧　軽装鎧
+15500156 Bandit_Ax Heavy Equipment Two-Handed Gauntlet_Strong -- 野盗_納斧　重装備両手籠手_強
+15500157 Bandit_Ax Heavy Equipment Gauntlet + Armor 2_Strong -- 野盗_納斧　重装備籠手＋鎧2_強
+15500200 Bandit_Torches Base Design -- 野盗_松明　ベースデザイン
+15500201 Bandit_Torches Light clothing -- 野盗_松明　軽装
+15500202 Bandit_Torches Right side of light gauntlet -- 野盗_松明　軽装籠手右側
+15500203 Bandit_Torches Light Armor -- 野盗_松明　軽装鎧
+15500210 Bandit_Torches Base Design_Do not use anime to call friends -- 野盗_松明　ベースデザイン_仲間呼ぶアニメ使わない
+15500304 Bandit_Shield Heavy Gauntlet + Armor 1 -- 野盗_盾　重装備籠手＋鎧1
+15500305 Bandit_Shield Heavy Gauntlet + Armor 2 -- 野盗_盾　重装備籠手＋鎧2
+15500306 Bandit_Shield Heavy Equipment Two-Handed Gauntlet -- 野盗_盾　重装備両手籠手
+15500310 Bandit_Shield Heavy equipment Two-handed gauntlet Stand by guard even during non-combat -- 野盗_盾　重装備両手籠手　非戦闘時もガード待機
+15500400 Bandit_Bow_Fire Arrow Base Design -- 野盗_弓_火矢　ベースデザイン
+15500401 Bandit_bow_fire arrow light clothing -- 野盗_弓_火矢　軽装
+15500402 Bandit_Bow_Fire Arrow Light Gauntlet Right Side -- 野盗_弓_火矢　軽装籠手右側
+15500403 Bandit_Bow_Fire Arrow Light Armor -- 野盗_弓_火矢　軽装鎧
+15500430 General purpose that uses only bandits_bow_fire arrow bows -- 野盗_弓_火矢弓しか使わない　汎用
+15500440 Bandit_Bow_Escape to a specific point that uses only a fire arrow bow -- 野盗_弓_火矢弓しか使わない　特定のポイントへ逃げる
+15500450 Bandit_Bow_Fire Arrow Base Design -- 野盗_納弓_火矢　ベースデザイン
+15500451 Bandit_Bow_Fire Arrow Light clothing -- 野盗_納弓_火矢　軽装
+15500452 Bandit _ Bow _ Fire arrow Light gauntlet right side -- 野盗_納弓_火矢　軽装籠手右側
+15500453 Bandit_Bow_Fire Arrow Light Armor -- 野盗_納弓_火矢　軽装鎧
+15500500 Bandit_Drunk_Sword Base Design -- 野盗_酔っ払い_納刀　ベースデザイン
+15500501 Bandit_Drunk_Sword Lightly dressed -- 野盗_酔っ払い_納刀　軽装
+15500502 Bandit_Drunk_Sword sword Light gauntlet right side -- 野盗_酔っ払い_納刀　軽装籠手右側
+15500503 Bandit_Drunk_Sword Light Armor -- 野盗_酔っ払い_納刀　軽装鎧
+15500510 Bandit_Drunk_Gourd Sword Base Design -- 野盗_酔っ払い_瓢箪刀　ベースデザイン
+15500511 Bandit_Drunk_Gourd Sword Lightly dressed -- 野盗_酔っ払い_瓢箪刀　軽装
+15500512 Bandit_Drunk_Gourd Sword Light Gauntlet Right Side -- 野盗_酔っ払い_瓢箪刀　軽装籠手右側
+15500513 Bandit_Drunk_Gourd Sword Light Armor -- 野盗_酔っ払い_瓢箪刀　軽装鎧
+15500600 Bandit_Drunk_Ax Base Design -- 野盗_酔っ払い_納斧　ベースデザイン
+15500601 Bandit_Drunk_Ax Lightly dressed -- 野盗_酔っ払い_納斧　軽装
+15500602 Bandit_Drunk_Ax Lightly dressed Gauntlet right side -- 野盗_酔っ払い_納斧　軽装籠手右側
+15500603 Bandit_Drunk_Ax Light Armor -- 野盗_酔っ払い_納斧　軽装鎧
+15500610 Bandit_Drunk_Gourd Ax Base Design -- 野盗_酔っ払い_瓢箪斧　ベースデザイン
+15500611 Bandit_Drunk_Gourd Ax Lightly dressed -- 野盗_酔っ払い_瓢箪斧　軽装
+15500612 Bandit_Drunk_Gourd Ax Light Gauntlet Right Side -- 野盗_酔っ払い_瓢箪斧　軽装籠手右側
+15500613 Bandit_Drunk_Gourd Ax Light Armor -- 野盗_酔っ払い_瓢箪斧　軽装鎧
+15501005 Bandit_Sword_Sick Village_Hidden -- 野盗_刀_病み村_姿隠し
+15501006 Bandit_Sword_Sick Village_Hidden First Action Fixed -- 野盗_刀_病み村_姿隠し　初回行動固定
+15501007 Bandit_Sword_Sick Village_Hidden For Directing No Audiovisual -- 野盗_刀_病み村_姿隠し　演出用　視聴覚なし
+15501105 Bandit_Ax_Sick Village_Hidden -- 野盗_斧_病み村_姿隠し
+15501106 Bandit_Ax_Sick Village_Hidden First Action Fixed -- 野盗_斧_病み村_姿隠し　初回行動固定
+15501107 Bandit_Ax_Sick Village_Hidden For Directing No Audiovisual -- 野盗_斧_病み村_姿隠し　演出用　視聴覚なし
+15501420 Bandit_Bow_Normal Bow and Arrow_Sick Village_Hidden -- 野盗_弓_通常弓矢_病み村_姿隠し
+15504000 Bandit_Sword_E3 Castle Base Design -- 野盗_刀_E3城下　ベースデザイン
+15504001 Bandit_Sword_E3 Castle Light Clothing -- 野盗_刀_E3城下　軽装
+15504002 Bandit_Sword_E3 Castle Light Gauntlet Right Side -- 野盗_刀_E3城下　軽装籠手右側
+15504003 Bandit_Sword_E3 Castle Light Armor -- 野盗_刀_E3城下　軽装鎧
+15504004 Bandit_Sword_E3 Castle Heavy Equipment Gauntlet + Armor 1 -- 野盗_刀_E3城下　重装備籠手＋鎧1
+15504005 Bandit_Sword_E3 Castle Heavy Equipment Gauntlet + Armor 2 -- 野盗_刀_E3城下　重装備籠手＋鎧2
+15504006 Bandit_Sword_E3 Castle Heavy Equipment Two-Handed Gauntlet -- 野盗_刀_E3城下　重装備両手籠手
+15504100 Bandit_Ax_E3 Castle Base Design -- 野盗_斧_E3城下　ベースデザイン
+15504101 Bandit_ax_E3 Castle light clothing -- 野盗_斧_E3城下　軽装
+15504102 Bandit_Ax_E3 Castle Light Gauntlet Right Side -- 野盗_斧_E3城下　軽装籠手右側
+15504103 Bandit_Ax_E3 Castle Light Armor -- 野盗_斧_E3城下　軽装鎧
+15504104 Bandit_Ax_E3 Castle Heavy Equipment Gauntlet + Armor 1 -- 野盗_斧_E3城下　重装備籠手＋鎧1
+15504105 Bandit_Ax_E3 Castle Heavy Equipment Gauntlet + Armor 2 -- 野盗_斧_E3城下　重装備籠手＋鎧2
+15504106 Bandit_Ax_E3 Castle Heavy Equipment Two-Handed Gauntlet -- 野盗_斧_E3城下　重装備両手籠手
+15504300 Bandit_Shield_E3 Castle Base Design -- 野盗_盾_E3城下　ベースデザイン
+15504301 Bandit_Shield_E3 Castle Light Clothing -- 野盗_盾_E3城下　軽装
+15504302 Bandit_Shield_E3 Castle Light Gauntlet Right Side -- 野盗_盾_E3城下　軽装籠手右側
+15504303 Bandit_Shield_E3 Castle Light Armor -- 野盗_盾_E3城下　軽装鎧
+15504304 Bandit_Shield_E3 Castle Heavy Equipment Gauntlet + Armor 1 -- 野盗_盾_E3城下　重装備籠手＋鎧1
+15504305 Bandit_Shield_E3 Castle Heavy Equipment Gauntlet + Armor 2 First Shield Bang Bang Ban -- 野盗_盾_E3城下　重装備籠手＋鎧2　初回盾バンバン禁止
+15504306 Bandit_Shield_E3 Castle Heavy Equipment Two-Handed Gauntlet -- 野盗_盾_E3城下　重装備両手籠手
+15504307 Bandit_Shield_E3 Castle Heavy Equipment Two-handed Gauntlet Stand by guard even during non-combat -- 野盗_盾_E3城下　重装備両手籠手　非戦闘時もガード待機
+15504400 Bandit_Nayumi_E3 Castle -- 野盗_納弓_E3城下
+15504401 Bandit_Bow_E3 Castle Light Clothing -- 野盗_弓_E3城下　軽装
+15504402 Bandit_Bow_E3 Castle Light Gauntlet Right Side -- 野盗_弓_E3城下　軽装籠手右側
+15504403 Bandit_Bow_E3 Castle Light Armor -- 野盗_弓_E3城下　軽装鎧
+15504404 Bandit_Bow_E3 Castle Heavy Equipment Gauntlet + Armor 1 -- 野盗_弓_E3城下　重装備籠手＋鎧1
+15504405 Bandit_Bow_E3 Castle Heavy Equipment Gauntlet + Armor 2 -- 野盗_弓_E3城下　重装備籠手＋鎧2
+15504406 Bandit_Bow_E3 Castle Heavy Equipment Two-Handed Gauntlet -- 野盗_弓_E3城下　重装備両手籠手
+15504410 Bandit_Bow Poison_E3 Castle -- 野盗_弓毒_E3城下
+15505000 Bandit_Sword Base Design -- 野盗_刀　ベースデザイン
+15505001 Bandit_sword light clothing -- 野盗_刀　軽装
+15505002 Bandit_sword light gauntlet right side -- 野盗_刀　軽装籠手右側
+15505003 Bandit_sword light armor -- 野盗_刀　軽装鎧
+15505050 Bandit_Sword Base Design -- 野盗_納刀　ベースデザイン
+15505051 Bandit_Sword Lightly dressed -- 野盗_納刀　軽装
+15505052 Bandit_Sword Light Gauntlet Right side -- 野盗_納刀　軽装籠手右側
+15505053 Bandit_Sword Light Armor -- 野盗_納刀　軽装鎧
+15505100 Bandit_ax base design -- 野盗_斧　ベースデザイン
+15505101 Bandit_ax light clothing -- 野盗_斧　軽装
+15505102 Bandit_ax Light gauntlet right side -- 野盗_斧　軽装籠手右側
+15505103 Bandit_ax light armor -- 野盗_斧　軽装鎧
+15505106 Bandit_Ax Heavy Equipment Two-Handed Gauntlet_Strong -- 野盗_斧　重装備両手籠手_強
+15505110 Bandit_Ax Base Design_First attack is dash cut -- 野盗_斧　ベースデザイン_初回攻撃がダッシュ切り
+15505150 Bandit_Ax Base Design -- 野盗_納斧　ベースデザイン
+15505151 Bandit_Ax Lightly dressed -- 野盗_納斧　軽装
+15505152 Bandit_Ax Light Gauntlet Right Side -- 野盗_納斧　軽装籠手右側
+15505153 Bandit_Ax Light Armor -- 野盗_納斧　軽装鎧
+15505156 Bandit_Ax Heavy Equipment Two-Handed Gauntlet_Strong -- 野盗_納斧　重装備両手籠手_強
+15505200 Bandit_Torches Base Design -- 野盗_松明　ベースデザイン
+15505201 Bandit_Torches Light clothing -- 野盗_松明　軽装
+15505202 Bandit_Torches Right side of light gauntlet -- 野盗_松明　軽装籠手右側
+15505203 Bandit_Torches Light Armor -- 野盗_松明　軽装鎧
+15505210 Bandit_Torches Base Design_Do not use anime to call friends -- 野盗_松明　ベースデザイン_仲間呼ぶアニメ使わない
+15505304 Bandit_Shield Heavy Gauntlet + Armor 1 -- 野盗_盾　重装備籠手＋鎧1
+15505305 Bandit_Shield Heavy Gauntlet + Armor 2 -- 野盗_盾　重装備籠手＋鎧2
+15505306 Bandit_Shield Heavy Equipment Two-Handed Gauntlet -- 野盗_盾　重装備両手籠手
+15505310 Bandit_Shield Heavy equipment Two-handed gauntlet Stand by guard even during non-combat -- 野盗_盾　重装備両手籠手　非戦闘時もガード待機
+15505400 Bandit_Bow_Fire Arrow Base Design -- 野盗_弓_火矢　ベースデザイン
+15505401 Bandit_bow_fire arrow light clothing -- 野盗_弓_火矢　軽装
+15505402 Bandit_Bow_Fire Arrow Light Gauntlet Right Side -- 野盗_弓_火矢　軽装籠手右側
+15505403 Bandit_Bow_Fire Arrow Light Armor -- 野盗_弓_火矢　軽装鎧
+15505410 Bandit_bow_poison arrow -- 野盗_弓_毒矢
+15505430 General purpose that uses only bandits_bow_fire arrow bows -- 野盗_弓_火矢弓しか使わない　汎用
+15505440 Bandit_Bow_Escape to a specific point that uses only a fire arrow bow -- 野盗_弓_火矢弓しか使わない　特定のポイントへ逃げる
+15505450 Bandit_Bow_Fire Arrow Base Design -- 野盗_納弓_火矢　ベースデザイン
+15505451 Bandit_Bow_Fire Arrow Light clothing -- 野盗_納弓_火矢　軽装
+15505452 Bandit _ Bow _ Fire arrow Light gauntlet right side -- 野盗_納弓_火矢　軽装籠手右側
+15505453 Bandit_Bow_Fire Arrow Light Armor -- 野盗_納弓_火矢　軽装鎧
+15505500 Bandit_Drunk_Sword Base Design -- 野盗_酔っ払い_納刀　ベースデザイン
+15505501 Bandit_Drunk_Sword Lightly dressed -- 野盗_酔っ払い_納刀　軽装
+15505502 Bandit_Drunk_Sword sword Light gauntlet right side -- 野盗_酔っ払い_納刀　軽装籠手右側
+15505503 Bandit_Drunk_Sword Light Armor -- 野盗_酔っ払い_納刀　軽装鎧
+15505510 Bandit_Drunk_Gourd Sword Base Design -- 野盗_酔っ払い_瓢箪刀　ベースデザイン
+15505511 Bandit_Drunk_Gourd Sword Lightly dressed -- 野盗_酔っ払い_瓢箪刀　軽装
+15505512 Bandit_Drunk_Gourd Sword Light Gauntlet Right Side -- 野盗_酔っ払い_瓢箪刀　軽装籠手右側
+15505513 Bandit_Drunk_Gourd Sword Light Armor -- 野盗_酔っ払い_瓢箪刀　軽装鎧
+15505600 Bandit_Drunk_Ax Base Design -- 野盗_酔っ払い_納斧　ベースデザイン
+15505601 Bandit_Drunk_Ax Lightly dressed -- 野盗_酔っ払い_納斧　軽装
+15505602 Bandit_Drunk_Ax Lightly dressed Gauntlet right side -- 野盗_酔っ払い_納斧　軽装籠手右側
+15505603 Bandit_Drunk_Ax Light Armor -- 野盗_酔っ払い_納斧　軽装鎧
+15505610 Bandit_Drunk_Gourd Ax Base Design -- 野盗_酔っ払い_瓢箪斧　ベースデザイン
+15505611 Bandit_Drunk_Gourd Ax Lightly dressed -- 野盗_酔っ払い_瓢箪斧　軽装
+15505612 Bandit_Drunk_Gourd Ax Light Gauntlet Right Side -- 野盗_酔っ払い_瓢箪斧　軽装籠手右側
+15505613 Bandit_Drunk_Gourd Ax Light Armor -- 野盗_酔っ払い_瓢箪斧　軽装鎧
+15506000 Bandit_Sword Temple -- 野盗_刀　寺
+15506100 Bandit_Ax Temple -- 野盗_斧　寺
+15506110 Bandit_Drunk_Gourd Ax Base Design Temple -- 野盗_酔っ払い_瓢箪斧　ベースデザイン　寺
+15506200 Bandit_Katana Torch Temple -- 野盗_刀松明　寺
+15506300 Bandit_Sword Shield Temple -- 野盗_刀盾　寺
+15506400 Bandit_Yumi Temple -- 野盗_弓　寺
+15506410 Bandit_Yumi Poison Temple -- 野盗_弓毒　寺
+15506420 Bandit_Bow_Normal Bow Temple -- 野盗_弓_通常弓　寺
+15506500 Bandit_Sword Main Temple -- 野盗_刀メイン　寺
+15506600 Bandit_bow stance temple -- 野盗_弓構え　寺
+15509000 Bandit_sword sample -- 野盗_刀　サンプル
+15509080 Bandit_Sword LookAt Test [Conversation] -- 野盗_刀　LookAtテスト用 【会話】
+15509090 Bandit_Sword Sample Combat State Start -- 野盗_刀　サンプル　戦闘状態スタート
+15509100 Bandit_ax sample -- 野盗_斧　サンプル
+15509190 Bandit_Ax Sample Combat State Start -- 野盗_斧　サンプル　戦闘状態スタート
+15509200 Bandit_Sword Torch Sample -- 野盗_刀松明　サンプル
+15509290 Bandit_Sword Torch Sample Combat State Start -- 野盗_刀松明　サンプル　戦闘状態スタート
+15509300 Bandit_Sword Shield Sample -- 野盗_刀盾　サンプル
+15509390 Bandit_Sword Shield Combat State Start Sample -- 野盗_刀盾　戦闘状態スタート　サンプル
+15509391 Bandit_Sword Shield Combat State Start Sample First Shield Bang Bang Ban -- 野盗_刀盾　戦闘状態スタート　サンプル　初回盾バンバン禁止
+15509400 Bandit_bow sample -- 野盗_弓　サンプル
+15509410 Bandit_Bow Poison Sample -- 野盗_弓毒　サンプル
+15509420 Bandit_Bow_Normal Bow Sample -- 野盗_弓_通常弓　サンプル
+15509490 Bandit_Bow Combat State Start Sample -- 野盗_弓　戦闘状態スタート　サンプル
+15509500 Bandit_sword main sample -- 野盗_刀メイン　サンプル
+15509590 Bandit_Sword Main Sample Combat State Start -- 野盗_刀メイン　サンプル　戦闘状態スタート
+15509600 Bandit_bow stance sample -- 野盗_弓構え　サンプル
+15509690 Bandit_Bow stance Combat state start sample -- 野盗_弓構え　戦闘状態スタート　サンプル
+17000000 Tokugawa Samurai _ Uchigatana Two Swords + Incendiary Gun Honjo _ Tokugawa Invasion -- 徳川侍_打刀の二刀+焼夷銃　本城_徳川襲来
+17000010 Samurai Tokugawa _ Two swords of Uchigatana + Incendiary gun Honjo _ Invasion of Tokugawa (hostile to the fallen warriors) -- 徳川侍_打刀の二刀+焼夷銃　本城_徳川襲来　(落武者敵対)
+17000011 Tokugawa Samurai _ Uchigatana Two Swords + Incendiary Gun Honjo _ Tokugawa Invasion (For Earning Prevention) -- 徳川侍_打刀の二刀+焼夷銃　本城_徳川襲来　(稼ぎ防止用)
+17000020 Tokugawa Samurai_Two swords (weak) Honjo_Tokugawa invasion (for Ochimusha hostility) -- 徳川侍_打刀の二刀（弱)　本城_徳川襲来　(落武者敵対用)
+17000021 Tokugawa Samurai_Two swords (weak) Honjo_Tokugawa invasion (for earning prevention) -- 徳川侍_打刀の二刀（弱)　本城_徳川襲来　(稼ぎ防止用)
+17000100 Samurai Tokugawa _ Two swords of Kodachi Honjo _ Invasion of Tokugawa -- 徳川侍_小太刀の二刀　本城_徳川襲来
+17000110 Samurai Tokugawa _ Two swords of Kodachi Honjo _ Invasion of Tokugawa (Ochimusha hostility) -- 徳川侍_小太刀の二刀　本城_徳川襲来　(落武者敵対)
+17000200 Tokugawa Samurai _ Flamethrower Honjo _ Tokugawa Invasion -- 徳川侍_火炎放射器　本城_徳川襲来
+17000210 Samurai Tokugawa _ Flamethrower Honjo _ Invasion of Tokugawa -- 徳川侍_火炎放射器　本城_徳川襲来　(落武者敵対用)
+17000211 Tokugawa Samurai_Flamthrower Honjo_Tokugawa Invasion (for earning prevention) -- 徳川侍_火炎放射器　本城_徳川襲来　(稼ぎ防止用)
+17000300 Tokugawa Samurai_Incendiary Gun Honjo_Tokugawa Invasion -- 徳川侍_焼夷銃　本城_徳川襲来
+17000310 Tokugawa Samurai_Incendiary Gun Honjo_Tokugawa Invasion (for Ochimusha Hostile) -- 徳川侍_焼夷銃　本城_徳川襲来　（落武者敵対用）
+17000311 Tokugawa Samurai_Incendiary Gun Honjo_Tokugawa Invasion (for earning prevention) -- 徳川侍_焼夷銃　本城_徳川襲来　（稼ぎ防止用）
+17001000 Tokugawa Samurai _ Two swords of Uchigatana + Incendiary gun Castle _ Tokugawa invasion -- 徳川侍_打刀の二刀+焼夷銃　城下_徳川襲来
+17001010 Samurai Tokugawa _ Two swords of Uchigatana + Incendiary gun Castle _ Invasion of Tokugawa (role of Buddhist demon) -- 徳川侍_打刀の二刀+焼夷銃　城下_徳川襲来(仏師鬼やられ役)
+17001100 Samurai Tokugawa_Two swords of Kodachi Castle_Invasion of Tokugawa -- 徳川侍_小太刀の二刀　城下_徳川襲来
+17001110 Samurai Tokugawa_Two swords of Kodachi Castle_Invasion of Tokugawa -- 徳川侍_小太刀の二刀　城下_徳川襲来(落武者敵対用)
+17001200 Tokugawa Samurai_Flamthrower Castle_Tokugawa Invasion -- 徳川侍_火炎放射器　城下_徳川襲来
+17001210 Samurai Tokugawa _ Flamethrower Castle _ Invasion of Tokugawa (role of Buddhist demon) -- 徳川侍_火炎放射器　城下_徳川襲来(仏師鬼やられ役)
+17001300 Tokugawa Samurai_Incendiary Gun Castle_Tokugawa Invasion -- 徳川侍_焼夷銃　城下_徳川襲来
+17001310 Tokugawa Samurai_Incendiary Gun Castle_Tokugawa Invasion (for Ochimusha Hostile) Initial Equipment_Gun -- 徳川侍_焼夷銃　城下_徳川襲来(落武者敵対用) 初期装備_銃
+17001311 Tokugawa Samurai _ Incendiary Gun Castle _ Tokugawa Invasion (for Ochimusha Hostile) Gun Only _ On the Tower -- 徳川侍_焼夷銃　城下_徳川襲来(落武者敵対用) 銃のみ_櫓の上
+17001315 Tokugawa Samurai_Incendiary Gun Castle_Tokugawa Invasion (for Ochimusha Hostile) Initial Equipment_Gun -- 徳川侍_焼夷銃　城下_徳川襲来(落武者敵対用) 初期装備_銃
+17001350 Tokugawa Samurai Castle_Tokugawa Invasion Initial Equipment_Sword -- 徳川侍　城下_徳川襲来　初期装備_刀
+17001360 Tokugawa Samurai Castle_Tokugawa Invasion (for Ochimusha Hostile) Initial Equipment_Sword -- 徳川侍　城下_徳川襲来(落武者敵対用)　初期装備_刀
+17001361 Tokugawa Samurai Castle_Tokugawa Invasion (for Ochimusha Hostile) Death in Fire -- 徳川侍　城下_徳川襲来(落武者敵対用)　炎上死亡
+17001362 Tokugawa Samurai Castle_Tokugawa Invasion (Late Voice) Initial Equipment_Sword -- 徳川侍　城下_徳川襲来（末期の声）初期装備_刀
+17001365 Tokugawa Samurai Castle_Tokugawa Invasion (for Ochimusha Hostile) Initial Equipment_Sword -- 徳川侍　城下_徳川襲来(落武者敵対用)　初期装備_刀
+17002000 Samurai Tokugawa_Two swords of Kodachi Honjo_Ninja army invasion -- 徳川侍_小太刀の二刀　本城_忍軍襲来
+17002010 Samurai Tokugawa _ Two swords of Kodachi Honjo _ Ninja army invasion (for hostile Ochimusha) -- 徳川侍_小太刀の二刀　本城_忍軍襲来(落武者敵対用)
+17009000 Tokugawa Samurai_Uchigatana dual wield + incendiary gun sample -- 徳川侍_打刀の二刀+焼夷銃　サンプル
+17009090 Tokugawa Samurai_Two swords + incendiary gun Combat state start sample -- 徳川侍_打刀の二刀+焼夷銃　戦闘状態スタート　サンプル
+17009100 Tokugawa Samurai_Small sword two-sword sample -- 徳川侍_小太刀の二刀　サンプル
+17009190 Samurai Tokugawa_Two swords of Kodachi Combat state start sample -- 徳川侍_小太刀の二刀　戦闘状態スタート　サンプル
+17009200 Tokugawa Samurai_flamethrower sample -- 徳川侍_火炎放射器　サンプル
+17009290 Tokugawa Samurai_Flamthrower Combat State Start Sample -- 徳川侍_火炎放射器　戦闘状態スタート　サンプル
+17009300 Tokugawa Samurai_Incendiary Gun Sample Initial Equipment_Gun -- 徳川侍_焼夷銃　サンプル　初期装備_銃
+17009350 Tokugawa Samurai_Incendiary Gun Sample Initial Equipment_Sword -- 徳川侍_焼夷銃　サンプル　初期装備_刀
+17009351 Tokugawa Samurai _ Incendiary Gun Castle _ Tokugawa Invasion Gun Only _ Tower Top Sample -- 徳川侍_焼夷銃　城下_徳川襲来     銃のみ_櫓の上　サンプル
+17009390 Tokugawa Samurai_Incendiary Gun Sample Combat State Start Initial Equipment_Gun -- 徳川侍_焼夷銃　サンプル　戦闘状態スタート　初期装備_銃
+50000000 Hakai Monk Submerged City -- 破戒僧　水没都
+50000001 Haunting Monk Submerged City Bug State -- 破戒僧　水没都　蟲状態
+50001000 Hakai Monk Sick Village -- 破戒僧　病み村
+50008000 Haunting Monk Submerged City E3 -- 破戒僧　水没都　E3
+50009000 Haunting Monk Sample -- 破戒僧　サンプル
+50009010 Hakai Monk Sick Village Sample Appearance Variation 1 -- 破戒僧　病み村　サンプル　見た目バリエーション1
+50009011 Hakai Monk Sick Village Sample Appearance Variation 2 -- 破戒僧　病み村　サンプル　見た目バリエーション2
+50009100 Haunting Monk Sample Bug State -- 破戒僧　サンプル　蟲状態
+50010000 Buddhist monk&#39;s bug submerged city -- 破戒僧の蟲　水没都
+50011000 Buddhist monk&#39;s bug submerged city -- 破戒僧の蟲　水没都
+50050000 The Phantom of the Haunting Monk Submerged City -- 破戒僧の幻影　水没都
+50058000 Phantom of the Haunting Monk E3 -- 破戒僧の幻影　E3
+50100000 Valley Great Snake Protomap -- 渓谷の大蛇　プロトマップ
+50101000 The Great Serpent Castle in the Valley -- 渓谷の大蛇　城下
+50102000 Large snake in the valley Valley _ snake valley A -- 渓谷の大蛇　渓谷_蛇谷A
+50102010 Large snake in the valley Valley _ snake valley B -- 渓谷の大蛇　渓谷_蛇谷B
+50103000 Valley&#39;s Great Snake Valley_Snake&#39;s Nest A -- 渓谷の大蛇　渓谷_蛇の巣穴A
+50103010 Valley&#39;s Great Snake Valley_Snake&#39;s Nest B -- 渓谷の大蛇　渓谷_蛇の巣穴B
+50200000 Akaoni Honjo_When the Ninja Army invades -- 赤鬼　本城_忍軍襲来時
+50200010 Akaoni Honjo_Ninja Army Invasion (Indiscriminate) -- 赤鬼　本城_忍軍襲来時　（無差別）
+50200100 Akaoni Honjo_Ninja army invades both hands -- 赤鬼　本城_忍軍襲来時　両手
+50202000 Akaoni Castle_VP (Red Eye) -- 赤鬼　城下_VP（赤目）
+50203000 Akaoni Castle_E3 -- 赤鬼　城下_E3
+50204080 Akaoni_Experimental Dungeon [Conversation] -- 赤鬼_実験体　地下牢【会話】
+50205000 Akaoni Castle_Tokugawa Invasion -- 赤鬼　城下_徳川襲来
+50209000 Red demon sample -- 赤鬼　サンプル
+50209080 Akaoni LookAt Test [Conversation] -- 赤鬼　LookAtテスト用 【会話】
+50209090 Red Demon Sample Combat State Start -- 赤鬼　サンプル　戦闘状態スタート
+50209100 Red Demon Sample Both Hands -- 赤鬼　サンプル　両手
+50209190 Red Demon Sample Two-Handed Combat State Start -- 赤鬼　サンプル　両手　戦闘状態スタート
+50210000 Giants Innsmouth Submerged City -- 巨人インスマス　水没都
+50210080 Giants Innsmouth Submerged City [Conversation] -- 巨人インスマス　水没都 【会話】
+50310000 Straw doll bug_test map that grows from below -- 藁人形の蟲_下から生える　テストマップ
+50310001 Straw doll bug _ test map that grows from the side -- 藁人形の蟲_横から生える　テストマップ
+50400000 Straw doll (new model) -- 藁人形（新モデル）
+50500000 Nishikigoi Submerged City -- 錦鯉　水没都
+50500080 Nishikigoi feeding [conversation] -- 錦鯉　餌やり【会話】
+50501000 Nishikigoi Valley poisoned corpse -- 錦鯉　渓谷　毒殺死体
+50509000 Nishikigoi sample -- 錦鯉　サンプル
+50509090 Nishikigoi sample battle state start -- 錦鯉　サンプル　戦闘状態スタート
+50600000 Ninja Army Chief Honjo_When the Ninja Army attacks -- 忍軍の長　本城_忍軍襲来時
+50600080 Ninja Army Chief Honjo_When the Ninja Army invades [Conversation] -- 忍軍の長　本城_忍軍襲来時【会話】
+50601000 Ninja Chief Samurai Residence_NPC -- 忍軍の長　武家屋敷_NPC
+50601010 Ninja Army Chief Samurai Residence_Boss -- 忍軍の長　武家屋敷_ボス
+50601080 Ninja Army Chief Samurai Residence_Past_NPC [Conversation] -- 忍軍の長　武家屋敷_過去_ＮＰＣ【会話】
+50609080 Ninja Chief LookAt Test [Conversation] -- 忍軍の長　LookAtテスト用 【会話】
+50609090 Ninja Chief Sample Combat State Start -- 忍軍の長　サンプル　戦闘状態スタート
+50609091 Ninja Chief Sample Starts after heating up -- 忍軍の長　サンプル　ヒートアップ後スタート
+50610000 For Ninja long cutscenes -- 忍軍の長　カットシーン用
+50630000 Ninja Army Chief (Back) Samurai Residence_Boss -- 忍軍の長（裏）　武家屋敷_ボス
+50700000 Chief Owl Honjo_When the Ninja Army invades -- 長の梟　本城_忍軍襲来時
+50709000 Long Owl Sample Combat State Start -- 長の梟　サンプル　戦闘状態スタート
+50709001 Long owl sample non-combat state start -- 長の梟　サンプル　非戦闘状態スタート
+50800000 Cavalry warrior castle -- 騎馬武者　城下
+50809000 Cavalry warrior sample -- 騎馬武者　サンプル
+50809001 Cavalry Warrior Sample Stringed Spear -- 騎馬武者　サンプル　紐付き槍
+50809090 Cavalry warrior sample battle state start -- 騎馬武者　サンプル　戦闘状態スタート
+50809091 Cavalry Warrior Sample Combat State Start Spear with String -- 騎馬武者　サンプル　戦闘状態スタート　紐付き槍
+50900000 Butterflies -- お蝶
+50900001 After the butterfly HU -- お蝶　HU後
+50909000 Butterfly sample -- お蝶　サンプル
+50909001 Sample after butterfly HU -- お蝶　HU後　サンプル
+50909080 Butterfly LookAt test [conversation] -- お蝶 LookAtテスト用 【会話】
+50909090 Butterfly sample battle state start -- お蝶　サンプル　戦闘状態スタート
+50909091 After butterfly HU sample battle state start -- お蝶　HU後　サンプル　戦闘状態スタート
+51000000 Yasha Ape -- 夜叉猿
+51000010 Yasha Ape_Bride -- 夜叉猿_嫁
+51000100 Yasha Ape_Neckless -- 夜叉猿_首無し
+51009000 Sample before Yasha Ape_HU -- 夜叉猿_HU前　サンプル
+51009001 Sample after Yasha Ape_HU -- 夜叉猿_HU後　サンプル
+51009010 Yasha Ape_Bride Sample -- 夜叉猿_嫁　サンプル
+51009090 Yasha Ape_HU Previous sample Combat state start -- 夜叉猿_HU前　サンプル　戦闘状態スタート
+51009091 Sample battle state start after Yasha Ape_HU -- 夜叉猿_HU後　サンプル　戦闘状態スタート
+51009095 Yasha Ape_HU Previous sample SA damage multiplier invalid -- 夜叉猿_HU前　サンプル　SAダメージ倍率無効
+51009096 After Yasha Ape_HU Sample SA damage multiplier invalid -- 夜叉猿_HU後　サンプル　SAダメージ倍率無効
+52000000 Mermaid dragon -- 人魚竜
+52009000 Mermaid dragon sample -- 人魚竜　サンプル
+53000000 Okiryu_shared body -- 翁竜_共有本体
+53000010 Okiryu_Combatant -- 翁竜_戦闘員
+53000011 Okiryu_Combatant (servant) -- 翁竜_戦闘員（従者）
+53000012 Okiryu_Combatant Initial placement -- 翁竜_戦闘員　初期配置
+53009000 Old dragon sample -- 翁竜　サンプル
+53100000 Tentacles -- 触手
+53100001 Tentacle_Mermaid Dragon Battle -- 触手_人魚竜戦
+53100010 Tentacle PC tracking -- 触手 PC追跡
+53100020 Tentacles_Okina Dragon Battle_Ride -- 触手_翁竜戦_乗れる
+53100021 Tentacles_Old Dragon Battle_Can&#39;t ride -- 触手_翁竜戦_乗れない
+53109000 Tentacle sample -- 触手　サンプル
+53109001 Tentacle_Mermaid Dragon Battle Sample -- 触手_人魚竜戦　サンプル
+53109010 Tentacle sample PC tracking -- 触手　サンプル　PC追跡
+53200000 Okiryu (Large) -- 翁竜（大）
+53209000 Okiryu (Large) Sample -- 翁竜（大）　サンプル
+54000000 Revived Kensei Hidden Prison _ Tokugawa Invasion -- 蘇った剣聖　隠し牢_徳川襲来
+54000180 Revived Kensei Sickbed Kensei Honjo [Conversation] -- 蘇った剣聖　病床剣聖　本城【会話】
+54009000 Revived Kensei Sample -- 蘇った剣聖　サンプル
+54009001 Sample after the resurrected Kensei HU -- 蘇った剣聖 HU後　サンプル
+54009080 Revived Kensei LookAt Test [Conversation] -- 蘇った剣聖　LookAtテスト用 【会話】
+54009090 Revived Kensei Sample Combat State Start -- 蘇った剣聖　サンプル　戦闘状態スタート
+54009091 After the resurrected Kensei HU sample battle state start -- 蘇った剣聖　HU後　サンプル　戦闘状態スタート
+54009190 Revived Kensei Sample Combat State Start (Spear Model Hidden) -- 蘇った剣聖　サンプル　戦闘状態スタート(槍モデル非表示)
+54030000 Revived Kensei (back) Hidden prison _ Tokugawa invasion -- 蘇った剣聖（裏）　隠し牢_徳川襲来
+54100000 Sickbed Kensei_Honjo Conversation NPC -- 病床剣聖_本城　会話NPC
+54300000 Bed sword Holy Honjo -- 病床剣聖　本城
+54300080 Bed Kensei Honjo [Conversation] -- 病床剣聖　本城【会話】
+54300180 Bed sword Holy Honjo_When Tokugawa attacks_Death [Conversation] -- 病床剣聖　本城_徳川襲来時_死亡【会話】
+54301080 Skill old man (Kensei sickbed) Castle [Conversation] -- スキル爺（病床剣聖）　城下【会話】
+54302080 Skill old man (Kensei sickbed) Honjo [Conversation] -- スキル爺（病床剣聖）　本城【会話】
+54309000 Bed Kensei Sample -- 病床剣聖　　サンプル
+70000000 Female player sick village -- 女奏者　病み村
+70000900 Female player conversation test -- 女奏者　会話テスト
+70009000 Female player sample -- 女奏者　サンプル
+70009080 Female player LookAt test [conversation] -- 女奏者　LookAtテスト用 【会話】
+70009090 Female player sample Combat state start -- 女奏者　サンプル 戦闘状態スタート
+70100000 Buddhist NPC Castle -- 仏師　NPC　城下
+70100080 Buddhist NPC Castle [Conversation] -- 仏師　NPC　城下【会話】
+70109000 Buddhist NPC sample -- 仏師　NPC　サンプル
+70109001 Buddhist NPC sample standing -- 仏師　NPC　サンプル　立ち状態
+70109080 For Buddhist LookAt test [Conversation] -- 仏師　LookAtテスト用 【会話】
+70110000 Buddhist NPC for cutscenes -- 仏師　NPC　カットシーン用
+70200000 In front of the Buddhist priest (demon) HU -- 仏師（鬼）　HU前
+70200001 Buddhist priest (demon) HU1 Battle state start sample -- 仏師（鬼）　HU1　戦闘状態スタート　サンプル
+70200002 Buddhist Master (Oni) HU2 Combat State Start Sample -- 仏師（鬼）　HU2　戦闘状態スタート　サンプル
+70209000 Buddhist master (demon) HU front sample -- 仏師（鬼）　HU前　サンプル
+70209001 Buddhist priest (demon) HU1 sample -- 仏師（鬼）　HU1　サンプル
+70209002 Buddhist priest (demon) HU2 sample -- 仏師（鬼）　HU2　サンプル
+70209090 Buddhist master (demon) HU front sample battle state start -- 仏師（鬼）　HU前　サンプル　戦闘状態スタート
+70209091 Buddhist priest (demon) HU1 sample Combat state start -- 仏師（鬼）　HU1　サンプル　戦闘状態スタート
+70209092 Buddhist priest (demon) HU2 sample Combat state start -- 仏師（鬼）　HU2　サンプル　戦闘状態スタート
+70210000 Dummy for demon Buddha -- 鬼仏用ダミー
+70219000 Dummy sample for demon Buddha -- 鬼仏用ダミー サンプル
+71000000 Rival Bowless Hidden Prison _ During Tutorial -- ライバル　弓なし　隠し牢_チュートリアル時
+71001000 Rival Honjo -- ライバル　本城
+71003080 For phantom conversation without rival bow -- ライバル　弓なし　幻影会話用
+71009000 Rival sample -- ライバル　サンプル
+71009080 For rival LookAt test [conversation] -- ライバル　LookAtテスト用 【会話】
+71009090 Rival sample battle state start -- ライバル　サンプル　戦闘状態スタート
+71009100 Rival sample without bow (for tutorial map) -- ライバル　サンプル　弓なし（チュートリアルマップ用）
+71010000 For rival cutscenes -- ライバル　カットシーン用
+71013000 Rival (back) Honjo -- ライバル（裏）　本城
+71100000 Rival_naked Honjo -- ライバル_裸　本城
+71101000 Rival _ Naked Hidden Prison _ When Tokugawa Invades -- ライバル_裸　隠し牢_徳川襲来時
+71109000 Rival_naked sample -- ライバル_裸　サンプル
+71109090 Rival_naked sample Combat state start -- ライバル_裸　サンプル　戦闘状態スタート
+71110000 Rival_Honjo for naked cutscenes -- ライバル_裸　カットシーン用　本城
+71111000 Rival _ Naked cutscene hidden prison _ When Tokugawa invades -- ライバル_裸　カットシーン用　隠し牢_徳川襲来時
+72000000 Prince Hidden Prison _ Tsukimi Tower -- 皇子　隠し牢_月見櫓
+72000080 Prince Hidden Prison _ Tsukimi Tower [Conversation] -- 皇子　隠し牢_月見櫓 【会話】
+72000081 Prince Hidden Prison _ Loophole [Conversation] -- 皇子　隠し牢_抜け道 【会話】
+72000082 Prince Hidden Prison_Susuki Field [Conversation] -- 皇子　隠し牢_ススキ野原 【会話】
+72000083 Prince Hidden Prison _ Tsukimi Tower [Phantom Conversation] -- 皇子　隠し牢_月見櫓【幻影会話】
+72000100 Prince Hidden Prison_Hidden Road -- 皇子　隠し牢_隠し道
+72000200 Prince Hidden Prison_Susuki Field -- 皇子　隠し牢_ススキ野原
+72001000 Prince Honjo -- 皇子　本城
+72001080 Prince Honjo_Meditation Room [Conversation] -- 皇子　本城_瞑想部屋【会話】
+72001081 Prince Honjo_Tenshukaku [Conversation] -- 皇子　本城_天守閣【会話】
+72001082 Prince Honjo_Attic [Phantom Conversation] -- 皇子　本城_屋根裏部屋【幻影会話】
+72001083 Prince Honjo_In front of the grand staircase [Phantom conversation] -- 皇子　本城_大階段前【幻影会話】
+72001084 Prince Honjo_Side Road [Phantom Conversation] -- 皇子　本城_脇道【幻影会話】
+72001085 Prince Honjo_Swordsman Area Entrance [Phantom Conversation] -- 皇子　本城_剣客エリア入り口【幻影会話】
+72002080 Prince Castle_Stable [Phantom Conversation] -- 皇子　城下_馬小屋【幻影会話】
+72002081 Prince Castle_Battlefield Ruins [Phantom Conversation] -- 皇子　城下_戦場跡前【幻影会話】
+72008000 Prince guided illusion_test -- 皇子　誘導幻影_テスト
+72009000 Prince sample -- 皇子　サンプル
+72009080 For Prince LookAt test [conversation] -- 皇子　LookAtテスト用 【会話】
+72010000 For prince cutscenes -- 皇子　カットシーン用
+72100000 Prince childhood -- 皇子　幼少期
+73000000 Chigo Temple -- 稚児　寺
+73000080 Chigo Temple [Conversation] -- 稚児　寺【会話】
+73001080 Chigo Infinite Corridor [Conversation] -- 稚児　無限回廊【会話】
+73009000 Chigo sample -- 稚児　サンプル
+73009080 For Chigo LookAt Test [Conversation] -- 稚児　LookAtテスト用 【会話】
+73010000 Travel Chigo Temple for cutscenes -- 旅装稚児　寺　カットシーン用
+73100000 For chigo temple cutscenes -- 稚児　寺　カットシーン用
+74000000 Isei&#39;s daughter Honjo -- 医聖の娘　本城
+74000010 Daughter of Isei Honjo_Tenshukaku -- 医聖の娘　本城_天守閣
+74000080 Daughter of Isei Honjo_Meditation Room [Conversation] -- 医聖の娘　本城_瞑想部屋【会話】
+74000081 Daughter of Isei Honjo_Visit to the grave [Conversation] -- 医聖の娘　本城_墓参り【会話】
+74000082 Daughter of Isei Honjo_When Tokugawa invades [Conversation] -- 医聖の娘　本城_徳川襲来時【会話】
+74000083 Daughter of Isei Honjo_Separation of Kensei [Conversation] -- 医聖の娘　本城_剣聖の離れ【会話】
+74000084 Daughter of Isei Honjo_Attic [Phantom Conversation] -- 医聖の娘　本城_屋根裏部屋【幻影会話】
+74000085 Daughter of Isei Honjo_In front of the grand staircase [Phantom conversation] -- 医聖の娘　本城_大階段前【幻影会話】
+74000180 Daughter of Isei Castle _ Araji Temple [Conversation] -- 医聖の娘　城下_荒れ寺【会話】
+74001080 Daughter of Isei Castle_Stable [Phantom Conversation] -- 医聖の娘　城下_馬小屋【幻影会話】
+74009000 Medical Holy Daughter Sample -- 医聖の娘　サンプル
+74009080 Medical Holy Daughter LookAt Test [Conversation] -- 医聖の娘　LookAtテスト用 【会話】
+74010000 Isei&#39;s daughter for cutscenes -- 医聖の娘　カットシーン用
+74100000 Fascinated Samurai [Conversation] (Base c1020) -- 魅了された侍【会話】（ベースc1020）
+74100080 Fascinated Samurai Hidden Prison [Conversation] (Base c1020) -- 魅了された侍　隠し牢【会話】（ベースc1020）
+74100081 Fascinated Samurai Hidden Prison_Dragon Cough [Conversation] (Base c1020) -- 魅了された侍　隠し牢_竜咳状態【会話】（ベースc1020）
+74101080 Fascinated Samurai Dungeon [Conversation] (Base c1020) -- 魅了された侍　地下牢【会話】（ベースc1020）
+74101081 Fascinated Samurai Dungeon_Experimental Body [Conversation] (Base c1020) -- 魅了された侍　地下牢_実験体【会話】（ベースc1020）
+74101082 Fascinated Samurai Dungeon_Crucifixion [Conversation] (Base c1020) -- 魅了された侍　地下牢_磔【会話】（ベースc1020）
+74101083 Fascinated Samurai Dungeon_Dragon Cough [Conversation] (Base c1020) -- 魅了された侍　地下牢_竜咳状態【会話】（ベースc1020）
+74102080 Fascinated Samurai Sick Village_Entrance [Conversation] (Base c1020) -- 魅了された侍　病み村_入り口【会話】（ベースc1020）
+74102081 Fascinated Samurai Sick Village_In front of the square [Conversation] (Base c1020) -- 魅了された侍　病み村_広場前【会話】（ベースc1020）
+74102082 Fascinated Samurai Sick Village_Entrance_Dragon Cough [Conversation] (Base c1020) -- 魅了された侍　病み村_入り口_竜咳状態【会話】（ベースc1020）
+74200000 Selling bandits [conversation] (base c1550) -- 物売り野盗【会話】（ベースc1550）
+74200080 Soldier Bandit Castle [Conversation] (Base c1550) -- 物売り野盗 城下【会話】（ベースc1550）
+74200081 Selling bandits Castle _ When Tokugawa invades _ Survival [Conversation] (Base c1550) -- 物売り野盗 城下_徳川襲来時_生存【会話】（ベースc1550）
+74200082 Dealer Bandit Castle_Dragon Cough [Conversation] (Base c1550) -- 物売り野盗 城下_竜咳状態【会話】（ベースc1550）
+74201080 Soldier Bandit Samurai Residence_Past [Conversation] (Base c1550) -- 物売り野盗 武家屋敷_過去【会話】（ベースc1550）
+74300000 Araji shop clerk [conversation] (base c1550) -- 荒れ寺ショップ店員【会話】（ベースc1550）
+74300080 Shop clerk Castle _ Cliff [Conversation] (Base c1120) -- ショップ店員　城下_崖上【会話】（ベースc1120）
+74300081 Shop clerk Castle _ Small castle tower [Conversation] (Base c1120) -- ショップ店員　城下_小天守【会話】（ベースc1120）
+74300082 Ara-ji Shop Clerk Castle_Ara-ji [Conversation] (Base c1550) -- 荒れ寺ショップ店員　城下_荒れ寺【会話】（ベースc1550）
+74301080 Shop clerk Valley [Conversation] (Base c1120) -- ショップ店員　渓谷【会話】（ベースc1120）
+74302080 Shop clerk Temple [Conversation] (Base c1120) -- ショップ店員　寺【会話】（ベースc1120）
+74303080 Shop clerk Dungeon [Conversation] (Base c1120) -- ショップ店員　地下牢【会話】（ベースc1120）
+74305080 Shop clerk Honjo [Conversation] (Base c1120) -- ショップ店員　本城【会話】（ベースc1120）
+74305081 Araji Shop Clerk Honjo_Araji [Conversation] (Base c1550) -- 荒れ寺ショップ店員　本城_荒れ寺【会話】（ベースc1550）
+74306080 Shop clerk Sick village [conversation] (base c1120) -- ショップ店員　病み村【会話】（ベースc1120）
+74400000 Yaohioka Nun [Conversation] (Base c1110) -- 八百比丘尼【会話】（ベースc1110）
+74400080 Yaohioka Nun Honjo [Conversation] (Base c1110) -- 八百比丘尼　本城【会話】（ベースc1110）
+74401080 Yayobioka Nun Valley_Upper [Conversation] (Base c1110) -- 八百比丘尼　渓谷_上層【会話】（ベースc1110）
+74401081 Yayobioka Nun Valley_Lower Level [Conversation] (Base c1110) -- 八百比丘尼　渓谷_下層【会話】（ベースc1110）
+74402080 Yayobioka Nanji Temple_Middle [Conversation] (Base c1110) -- 八百比丘尼　寺_中腹【会話】（ベースc1110）
+74402081 Yayobioka Nanji Temple_Main Hall [Conversation] (Base c1110) -- 八百比丘尼　寺_本堂【会話】（ベースc1110）
+74403080 Yaohioka Nun Dungeon_In front of the execution table [Conversation] (Base c1110) -- 八百比丘尼　地下牢_処刑台前【会話】（ベースc1110）
+74500000 Suzubaa [Conversation] (Base c1110) -- 鈴ばばあ【会話】（ベースc1110）
+74500080 Suzubaa Castle [Conversation] (Base c1110) -- 鈴ばばあ　城下【会話】（ベースc1110）
+74501080 Suzubaa Samurai Residence [Conversation] (Base c1110) -- 鈴ばばあ　武家屋敷【会話】（ベースc1110）
+74600000 Suzuba&#39;s son [conversation] (base c1400) -- 鈴ばばあの息子【会話】（ベースc1400）
+74600080 Suzuba&#39;s son Castle [Conversation] (Base c1400) -- 鈴ばばあの息子　城下【会話】（ベースc1400）
+74600081 Suzuba Aunt&#39;s Son Castle_After the Aunt&#39;s Killing [Conversation] (Base c1400) -- 鈴ばばあの息子　城下_おば殺害後【会話】（ベースc1400）
+74601080 Suzuba&#39;s son Samurai residence [Conversation] (base c1400) -- 鈴ばばあの息子　武家屋敷【会話】（ベースc1400）
+74700000 The kidnapped young man [conversation] (base c1180) -- さらわれ下男【会話】（ベースc1180）
+74700080 The kidnapped lower man temple [conversation] (base c1180) -- さらわれ下男　寺【会話】（ベースc1180）
+74700081 The kidnapped lower man temple_infinite corridor [conversation] (base c1180) -- さらわれ下男　寺_無限回廊【会話】（ベースc1180）
+74701080 The kidnapped young man _ joins the castle sales bandit [conversation] (base c1180) -- さらわれ下男_城下　物売り野盗と合流【会話】（ベースc1180）
+74701081 The kidnapped young man _ Castle Tokugawa invasion [Conversation] (base c1180) -- さらわれ下男_城下　徳川襲来時　【会話】（ベースc1180）
+74702080 The kidnapped younger man_Dungeon Crucifixion [Conversation] (Base c1180) -- さらわれ下男_地下牢　磔【会話】（ベースc1180）
+74702081 The kidnapped young man _ dungeon experimental body [conversation] (base c1180) -- さらわれ下男_地下牢　実験体【会話】（ベースc1180）
+74800000 Sick village priest [conversation] (base c1400) -- 病み村神主【会話】（ベースc1400）
+74800080 Sick Village Kannushi_Before Innsmouth [Conversation] (Base c1400) -- 病み村神主_インスマウス化前【会話】（ベースc1400）
+74900000 Immortal Experiment Doctor [Conversation] (Base c1220) -- 不死実験の医僧【会話】（ベースc1220）
+74900080 Immortal Experiment Doctor_Dungeon [Conversation] (Base c1220) -- 不死実験の医僧_地下牢【会話】（ベースc1220）
+74900081 Immortal Experiment Doctor _ Dungeon Deformation [Conversation] (Base c1220) -- 不死実験の医僧_地下牢　異形化【会話】（ベースc1220）
+74900082 Immortal Experiment Doctor_Outside the Dungeon [Conversation] (Base c1220) -- 不死実験の医僧_地下牢外【会話】（ベースc1220）
+74900083 Immortal Experiment Doctor_Dungeon_Dragon Cough [Conversation] (Base c1220) -- 不死実験の医僧_地下牢内_竜咳状態【会話】（ベースc1220）
+74900084 Immortal Experiment Doctor_Outside the Dungeon_Dragon Cough [Conversation] (Base c1220) -- 不死実験の医僧_地下牢外_竜咳状態【会話】（ベースc1220）
+74900085 Immortal Experiment Doctor _ Dungeon _ Not Hostile _ Inside the Prison [Conversation] (Base c1220) -- 不死実験の医僧_地下牢_敵対しない_牢屋内【会話】（ベースc1220）
+75000000 A decent villager [conversation] (base c1500) -- まともな村人【会話】（ベースc1500）
+75000080 Decent Villager_Sick Village [Conversation] (Base c1500) -- まともな村人_病み村【会話】（ベースc1500）
+75000081 Decent Villager_Sick Village_Zombie [Conversation] (Base c1500) -- まともな村人_病み村_ゾンビ化【会話】（ベースc1500）
+75100000 White Rappa [Conversation] (Base c1360) -- 白らっぱ【会話】（ベースc1360）
+75100080 White Rappa Castle [Conversation] (Base c1360) -- 白らっぱ　城下【会話】（ベースc1360）
+75100081 White Rappa Castle_Dragon Cough [Conversation] (Base c1360) -- 白らっぱ　城下_竜咳状態【会話】（ベースc1360）
+75101080 White Rappa Dungeon [Conversation] (Base c1360) -- 白らっぱ　地下牢【会話】（ベースc1360）
+75101081 White Rappa Dungeon_Experimental Body [Conversation] (Base c1360) -- 白らっぱ　地下牢_実験体【会話】（ベースc1360）
+75102080 White Rappa Temple_Before flying a kite [Conversation] (Base c1360) -- 白らっぱ　寺_凧揚げ前【会話】（ベースc1360）
+75102081 White Rappa Temple_Training Ground [Conversation] (Base c1360) -- 白らっぱ　寺_修行場【会話】（ベースc1360）
+75102082 White Rappa Temple_Before flying a kite_Dragon cough [Conversation] (Base c1360) -- 白らっぱ　寺_凧揚げ前_竜咳状態【会話】（ベースc1360）
+75102083 White Rappa Temple_Training Ground_Dragon Cough [Conversation] (Base c1360) -- 白らっぱ　寺_修行場_竜咳状態【会話】（ベースc1360）
+75103080 White Rappa Honjo_Shop [Conversation] (Base c1360) -- 白らっぱ　本城_ショップ【会話】（ベースc1360）
+75103081 White Rappa Honjo_When Tokugawa attacks [Conversation] (Base c1360) -- 白らっぱ　本城_徳川襲来時【会話】（ベースc1360）
+75103082 White Rappa Honjo_Shop_Dragon Cough [Conversation] (Base c1360) -- 白らっぱ　本城_ショップ_竜咳状態【会話】（ベースc1360）
+75200000 Submerged Handmaiden Aunt [Conversation] (Base c1110) -- 水没侍女おば【会話】（ベースc1110）
+75200080 Submerged Handmaiden Aunt_Sister [Conversation] (Base c1110) -- 水没侍女おば_妹【会話】（ベースc1110）
+75200081 Submerged Handmaiden Aunt_Sister [Conversation] (Base c1110) -- 水没侍女おば_姉【会話】（ベースc1110）
+75200082 Submerged Handmaiden Aunt_Sister_Gomiya [Conversation] (Base c1110) -- 水没侍女おば_姉_後宮【会話】（ベースc1110）
+75300000 Aunt Shura Samurai [Conversation] (Base c1110) -- 修羅侍女おば【会話】（ベースc1110）
+75300080 Shura Handmaiden Aunt_Ninja Army Invasion [Conversation] (Base c1110) -- 修羅侍女おば_忍軍襲来時【会話】（ベースc1110）
+75300081 Aunt Shura Samurai_At the time of the Tokugawa invasion [Conversation] (Base c1110) -- 修羅侍女おば_徳川襲来時【会話】（ベースc1110）
+75400080 Shop clerk Valley [Conversation] (Base c1120) -- ショップ店員　渓谷【会話】（ベースc1120）
+75500080 Shop clerk Temple [Conversation] (Base c1120) -- ショップ店員　寺【会話】（ベースc1120）
+75600080 Shop clerk Dungeon [Conversation] (Base c1120) -- ショップ店員　地下牢【会話】（ベースc1120）
+75800080 Shop clerk Honjo [Conversation] (Base c1120) -- ショップ店員　本城【会話】（ベースc1120）
+75900080 Shop clerk Sick village [conversation] (base c1120) -- ショップ店員　病み村【会話】（ベースc1120）
+76000080 Shop clerk Castle _ Cliff [Conversation] (Base c1120) -- ショップ店員　城下_崖上【会話】（ベースc1120）
+76000081 Shop clerk Castle _ Small castle tower [Conversation] (Base c1120) -- ショップ店員　城下_小天守【会話】（ベースc1120）
+90109000 For cross control verification -- クロス制御検証用
+95211000 NTC Samurai General_Komiyama Test -- NTC 侍大将_小宮山テスト
+95221000 NTC Samurai General_Tominaga Test -- NTC 侍大将_富永テスト
+95231000 NTC Samurai General_Sasaki Test -- NTC 侍大将_佐々木テスト
+98000000 Confirmation character _ Shinobi killing general purpose -- 確認キャラ_忍殺汎用
+98000001 Confirmed character_stamina damage -- 確認キャラ_スタミナダメージ
+98200000 Confirmation character _ Shinobi large -- 確認キャラ_忍殺大型
+98300000 Confirmation character_Shinobi 4 pairs -- 確認キャラ_忍殺4足
+99999999 Don&#39;t erase -- 消すべからず

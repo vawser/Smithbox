@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>REINFORCE_PARAM_PROTECTOR_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>990011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>990012</SortID>
+    </Field>
+    <Field Def="f32 physicsDefRate = 1">
+      <DisplayName>実弾防御力</DisplayName>
+      <Description>実弾防御力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 magicDefRate = 1">
+      <DisplayName>EN防御力</DisplayName>
+      <Description>EN防御力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 fireDefRate = 1">
+      <DisplayName>炎防御力</DisplayName>
+      <Description>炎防御力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 thunderDefRate = 1">
+      <DisplayName>電撃防御力</DisplayName>
+      <Description>電撃防御力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 slashDefRate = 1">
+      <DisplayName>斬撃防御力</DisplayName>
+      <Description>斬撃防御力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 blowDefRate = 1">
+      <DisplayName>打撃防御力</DisplayName>
+      <Description>打撃防御力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="f32 thrustDefRate = 1">
+      <DisplayName>刺突防御力</DisplayName>
+      <Description>刺突防御力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="f32 resistBurnRate = 1">
+      <DisplayName>炎上耐性</DisplayName>
+      <Description>炎上耐性の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="f32 resistStunRate = 1">
+      <DisplayName>スタン耐性</DisplayName>
+      <Description>スタン耐性の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="f32 resistHighPlasmaRate = 1">
+      <DisplayName>強プラズマ耐性</DisplayName>
+      <Description>強プラズマ耐性の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 resistCurseRate = 1">
+      <DisplayName>呪耐性</DisplayName>
+      <Description>呪耐性の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 residentSpEffectId1">
+      <DisplayName>常駐特殊効果ID1</DisplayName>
+      <Description>常駐特殊効果ID1の加算補正値</Description>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 residentSpEffectId2">
+      <DisplayName>常駐特殊効果ID2</DisplayName>
+      <Description>常駐特殊効果ID2の加算補正値</Description>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="u8 residentSpEffectId3">
+      <DisplayName>常駐特殊効果ID3</DisplayName>
+      <Description>常駐特殊効果ID3の加算補正値</Description>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="u8 materialSetId">
+      <DisplayName>素材ID加算値</DisplayName>
+      <Description>素材パラメータIDの加算補正値</Description>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 darkDefRate = 1">
+      <DisplayName>闇防御力</DisplayName>
+      <Description>闇防御力の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="f32 resistDepletedUraniumToxicRate = 1">
+      <DisplayName>劣化ウラン毒耐性</DisplayName>
+      <Description>劣化ウラン毒耐性の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>1150</SortID>
+    </Field>
+    <Field Def="f32 ApRate = 1">
+      <DisplayName>AP</DisplayName>
+      <Description>AP の補正値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99.99</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="dummy8 pad[4]">
+      <DisplayName>pading</DisplayName>
+      <SortID>990013</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

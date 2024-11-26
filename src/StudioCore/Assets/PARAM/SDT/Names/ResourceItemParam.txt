@@ -1,0 +1,6 @@
+0 Off -- はずれ
+1 White charge -- 白形代
+2 Red bill -- 赤形代
+3 Blue shape -- 青形代
+4 Resurrection right -- 復活権
+5 Fragment of resurrection right -- 復活権の欠片

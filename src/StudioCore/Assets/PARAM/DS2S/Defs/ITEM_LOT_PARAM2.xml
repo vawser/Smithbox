@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ITEM_LOT_PARAM2</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 lots_dropped_order" />
+    <Field Def="u8 lots_dropped_num" />
+    <Field Def="u8 Unk02" />
+    <Field Def="u8 Unk03" />
+    <Field Def="u8 amount_lot_0" />
+    <Field Def="u8 amount_lot_1" />
+    <Field Def="u8 amount_lot_2" />
+    <Field Def="u8 amount_lot_3" />
+    <Field Def="u8 amount_lot_4" />
+    <Field Def="u8 amount_lot_5" />
+    <Field Def="u8 amount_lot_6" />
+    <Field Def="u8 amount_lot_7" />
+    <Field Def="u8 amount_lot_8" />
+    <Field Def="u8 amount_lot_9" />
+    <Field Def="u8 reinforcement_lot_0" />
+    <Field Def="u8 reinforcement_lot_1" />
+    <Field Def="u8 reinforcement_lot_2" />
+    <Field Def="u8 reinforcement_lot_3" />
+    <Field Def="u8 reinforcement_lot_4" />
+    <Field Def="u8 reinforcement_lot_5" />
+    <Field Def="u8 reinforcement_lot_6" />
+    <Field Def="u8 reinforcement_lot_7" />
+    <Field Def="u8 reinforcement_lot_8" />
+    <Field Def="u8 reinforcement_lot_9" />
+    <Field Def="u8 infusion_lot_0" />
+    <Field Def="u8 infusion_lot_1" />
+    <Field Def="u8 infusion_lot_2" />
+    <Field Def="u8 infusion_lot_3" />
+    <Field Def="u8 infusion_lot_4" />
+    <Field Def="u8 infusion_lot_5" />
+    <Field Def="u8 infusion_lot_6" />
+    <Field Def="u8 infusion_lot_7" />
+    <Field Def="u8 infusion_lot_8" />
+    <Field Def="u8 infusion_lot_9" />
+    <Field Def="u8 infinite_lot_0" />
+    <Field Def="u8 infinite_lot_1" />
+    <Field Def="u8 infinite_lot_2" />
+    <Field Def="u8 infinite_lot_3" />
+    <Field Def="u8 infinite_lot_4" />
+    <Field Def="u8 infinite_lot_5" />
+    <Field Def="u8 infinite_lot_6" />
+    <Field Def="u8 infinite_lot_7" />
+    <Field Def="u8 infinite_lot_8" />
+    <Field Def="u8 infinite_lot_9" />
+    <Field Def="s32 item_lot_0" />
+    <Field Def="s32 item_lot_1" />
+    <Field Def="s32 item_lot_2" />
+    <Field Def="s32 item_lot_3" />
+    <Field Def="s32 item_lot_4" />
+    <Field Def="s32 item_lot_5" />
+    <Field Def="s32 item_lot_6" />
+    <Field Def="s32 item_lot_7" />
+    <Field Def="s32 item_lot_8" />
+    <Field Def="s32 item_lot_9" />
+    <Field Def="f32 chance_lot_0" />
+    <Field Def="f32 chance_lot_1" />
+    <Field Def="f32 chance_lot_2" />
+    <Field Def="f32 chance_lot_3" />
+    <Field Def="f32 chance_lot_4" />
+    <Field Def="f32 chance_lot_5" />
+    <Field Def="f32 chance_lot_6" />
+    <Field Def="f32 chance_lot_7" />
+    <Field Def="f32 chance_lot_8" />
+    <Field Def="f32 chance_lot_9" />
+  </Fields>
+</PARAMDEF>

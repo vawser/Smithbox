@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENU_FILTER_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 ToneLateralDispersion0">
+      <Description>色収差のズレ具合</Description>
+      <DisplayFormat>%.4f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 ToneLateralDispersion1">
+      <Description>色収差のズレ具合</Description>
+      <DisplayFormat>%.4f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 NoiseTexIdx">
+      <DisplayName>ノイズテクスチャ</DisplayName>
+      <Description>ノイズのテクスチャ番号</Description>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s8 NoizeMaskTexIdx = -1">
+      <DisplayName>ノイズマスクテクスチャ</DisplayName>
+      <Description>ノイズのマスクのテクスチャ番号</Description>
+      <Minimum>-1</Minimum>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="dummy8 reserve0[2]">
+      <DisplayName>ダミー</DisplayName>
+      <SortID>99999999</SortID>
+    </Field>
+    <Field Def="f32 NoiseTexScaleX = 1">
+      <DisplayName>ノイズテクスチャスケール横</DisplayName>
+      <Description>値が大きいほど大きく表示されます</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 NoiseTexScaleY = 1">
+      <DisplayName>ノイズテクスチャスケール縦</DisplayName>
+      <Description>値が大きいほど大きく表示されます</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 NoiseTexBlendRate">
+      <DisplayName>ノイズテクスチャブレンド率</DisplayName>
+      <Description>ノイズのブレンド率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="f32 NoiseTexNoMenuDrawBlendRate">
+      <DisplayName>メニュー描画以外へのノイズ適用率</DisplayName>
+      <Description>メニューを描画していない箇所に対してのノイズの適用率(0でメニュー描画箇所のみ、1で画面全体)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="f32 NoiseTexUpdateTime">
+      <DisplayName>ノイズ更新間隔(秒)</DisplayName>
+      <Description>ノイズのUVのランダムに更新する間隔</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="f32 Contrast">
+      <DisplayName>コントラスト</DisplayName>
+      <Description>コントラスト値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="f32 CenterThin = 1">
+      <DisplayName>ノイズの中央の薄め値</DisplayName>
+      <Description>-１で中央付近はかからない、１で中央もノイズが表示されます</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-2</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="dummy8 reserve1[12]">
+      <DisplayName>予約</DisplayName>
+      <SortID>99999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

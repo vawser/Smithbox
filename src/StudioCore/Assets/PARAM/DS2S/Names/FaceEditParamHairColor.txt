@@ -1,0 +1,10 @@
+0 Hair Color Set 1 -- 髪の色セット1
+1 Hair Color Set 2 -- 髪の色セット2
+2 Hair Color Set 3 -- 髪の色セット3
+3 Hair Color Set 4 -- 髪の色セット4
+4 Hair Color Set 5 -- 髪の色セット5
+5 Hair Color Set 6 -- 髪の色セット6
+6 Hair Color Set 7 -- 髪の色セット7
+7 Hair Color Set 8 -- 髪の色セット8
+8 Hair Color Set 9 -- 髪の色セット9
+9 Hair Color Set 10 -- 髪の色セット10

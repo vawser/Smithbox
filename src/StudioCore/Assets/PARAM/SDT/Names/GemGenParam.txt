@@ -1,0 +1,4 @@
+0 Sweet time -- あまいいしころ
+1 Attack power up &amp; defense power up -- 攻撃力アップ　＆　防御力アップ
+2 HP regen -- HPリジェネ
+3 Max HP up -- マックスHPアップ

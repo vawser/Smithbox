@@ -1,0 +1,5 @@
+0 Do not change attributes -- 属性変更しない
+100000 Attribute Enhancement - Normal -- 属性強化-通常
+100100 Attribute Enhancement - Dragon Weapon -- 属性強化-ドラゴンウェポン
+100200 Attribute Enhancement - Photostones -- 属性強化-光石
+900000 Test -- テスト

@@ -1,0 +1,34 @@
+0 Default (do not edit) -- デフォルト（編集しない）
+1000 walking -- 歩き
+1010 running -- 走り
+1020 boost move -- ブースト移動
+1030 QB
+1040 jump -- ジャンプ
+1050 Boost increase -- ブースト上昇
+1060 Landing small -- 着地小
+1070 Large landing -- 着地大
+1080 assault boost -- アサルトブースト
+1090 wall kick -- 壁キック
+1100 4 legs: hovering -- 4脚：ホバリング
+1110 Tank: Drift -- タンク：ドリフト
+1120 spare -- 予備
+1130 spare -- 予備
+1140 spare -- 予備
+1150 spare -- 予備
+1160 spare -- 予備
+1170 spare -- 予備
+2000 Attack hit sound_small -- 攻撃ヒット音_小
+2010 Attack hit sound_medium -- 攻撃ヒット音_中
+2020 Attack hit sound_Large -- 攻撃ヒット音_大
+2030 Attack hit sound_extra large -- 攻撃ヒット音_特大
+2040 Attack hit sound_Big landing that lures you -- 攻撃ヒット音_おびき寄せる大着弾
+2050 Attack hit sound_extremely small -- 攻撃ヒット音_極小
+2100 Attack occurrence sound_small -- 攻撃発生音_小
+2110 Attack sound_medium -- 攻撃発生音_中
+2120 Attack generation sound_Large -- 攻撃発生音_大
+2130 Attack occurrence sound_stealth throw -- 攻撃発生音_ステルス投げ
+2190 Attack occurrence sound_silencer -- 攻撃発生音_サイレンサー
+3000 Object destruction sound small -- オブジェクト破壊音小
+3010 Object destruction sound -- オブジェクト破壊音中
+3020 Object destruction sound loud -- オブジェクト破壊音大
+4030 death sound -- 死亡音

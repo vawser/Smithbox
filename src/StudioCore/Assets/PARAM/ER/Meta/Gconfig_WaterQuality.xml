@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <interactionEnabled AltName="Interaction Enabled" Wiki="Interaction enabled" IsBool="" />
+    <dmy AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

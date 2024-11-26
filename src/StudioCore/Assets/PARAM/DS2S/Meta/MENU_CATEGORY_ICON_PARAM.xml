@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the menu category icons." Row0Dummy="" />
+  <Field>
+    <category_index AltName="Category Index"/>
+    <shop_category_index AltName="Shop Category Index"/>
+    <icon_id AltName="Icon ID"/>
+  </Field>
+</PARAMMETA>

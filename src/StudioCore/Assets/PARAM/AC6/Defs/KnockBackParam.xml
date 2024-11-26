@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>KNOCKBACK_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 damage_No = 1">
+      <DisplayName>ダメージアニメなし_ノックバック倍率</DisplayName>
+      <Description>ダメージアニメなし_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 damage_Min = 1">
+      <DisplayName>極小ダメージ_ノックバック倍率</DisplayName>
+      <Description>極小ダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 damage_S = 1">
+      <DisplayName>小ダメージ_ノックバック倍率</DisplayName>
+      <Description>小ダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 damage_M = 1">
+      <DisplayName>中ダメージ_ノックバック倍率</DisplayName>
+      <Description>中ダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 damage_L = 1">
+      <DisplayName>大ダメージ_ノックバック倍率</DisplayName>
+      <Description>大ダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 damage_Blow = 1">
+      <DisplayName>吹っ飛びダメージ_ノックバック倍率</DisplayName>
+      <Description>吹っ飛びダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="f32 guard_Min = 1">
+      <DisplayName>ガード受け極小ダメージ_ノックバック倍率</DisplayName>
+      <Description>ガード受け極小ダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="f32 guard_S = 1">
+      <DisplayName>ガード受け小ダメージ_ノックバック倍率</DisplayName>
+      <Description>ガード受け小ダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="f32 guard_M = 1">
+      <DisplayName>ガード受け中ダメージ_ノックバック倍率</DisplayName>
+      <Description>ガード受け中ダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="f32 guard_L = 1">
+      <DisplayName>ガード受け大ダメージ_ノックバック倍率</DisplayName>
+      <Description>ガード受け大ダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 trunk_Brake = 1">
+      <DisplayName>体幹ブレイクダメージ_ノックバック倍率</DisplayName>
+      <Description>体幹ブレイクダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 guard_Brake = 1">
+      <DisplayName>ガードブレイクダメージ_ノックバック倍率</DisplayName>
+      <Description>ガードブレイクダメージ_ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="f32 dl1_Rate = 1">
+      <DisplayName>DL1_ノックバック倍率</DisplayName>
+      <Description>ダメージレベル１のダメージでの ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 dl2_Rate = 1">
+      <DisplayName>DL2_ノックバック倍率</DisplayName>
+      <Description>ダメージレベル１のダメージでの ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 dl1_Blade_Rate = 1">
+      <DisplayName>DL1(ブレード用)_ノックバック倍率</DisplayName>
+      <Description>ダメージレベル１のダメージでの ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="f32 dl2_Blade_Rate = 1">
+      <DisplayName>DL2(ブレード用)_ノックバック倍率</DisplayName>
+      <Description>ダメージレベル１のダメージでの ノックバック倍率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="dummy8 pad[16]">
+      <DisplayName>pading</DisplayName>
+      <SortID>90000</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

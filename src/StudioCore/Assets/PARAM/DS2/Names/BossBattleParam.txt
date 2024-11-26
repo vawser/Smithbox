@@ -1,0 +1,45 @@
+1010000 The Pursuer
+1010010 The Last Giant
+1014000 The Duke's Dear Freja
+1014001 The Duke's Dear Freja
+1014010 Prowling Magus & Congregation
+1015000 Guardian Dragon
+1016000 Ruin Sentinels
+1016010 The Lost Sinner
+1016020 Belfry Gargoyles
+1017000 Covetous Demon
+1017010 Mytha- the Baneful Queen
+1018000 Flexile Sentry
+1019000 Smelter Demon
+1019010 Old Iron King
+1021000 Dragonriders
+1021010 Looking Glass Knight
+1021020 Throne Watcher & Throne Defender
+1021021 Throne Watcher & Throne Defender
+1021030 Nashandra
+1021031 Nashandra
+1021040 Aldia- Scholar of the First Sin
+1023000 Skeleton Lords
+1023010 Executioner's Chariot
+1025000 The Rotten
+1027000 Ancient Dragon
+1031000 Dragonrider
+1031010 Old Dragonslayer
+1032000 Scorpioness Najka
+1033000 Royal Rat Authority
+1034000 Royal Rat Vanguard
+2010000 Giant Lord
+2011000 Demon of Song
+2024000 Velstadt- the Royal Aegis
+2024010 Vendrick
+4003000 Darklurker
+5030000 Elana- the Squalid Queen
+5030020 Afflicted Graverobber- Ancient Soldier Varg & Cerah- the Old Explorer
+5030030 Sinh- the Slumbering Dragon
+5036000 Fume Knight
+5036001 Fume Knight
+5036010 Sir Alonne
+5036020 Blue Smelter Demon
+5037000 Burnt Ivory King
+5037010 Lud- the King's Pet & Zallen- the King's Pet
+5037030 Aava- the King's Pet

@@ -1,0 +1,6 @@
+80 Front defenseless production camera -- 前面無防備演出カメラ
+81 Front defenseless production camera (pulled out) -- 前面無防備演出カメラ（引き抜き）
+82 Front defenseless production camera (for hammering) -- 前面無防備演出カメラ（槌たたきつけ用）
+83 Front defenseless production camera (for large sword) -- 前面無防備演出カメラ（大剣用）
+90 Rear defenseless production camera -- 背面無防備演出カメラ
+92 Rear defenseless production camera (for mallet) -- 背面無防備演出カメラ（槌用）

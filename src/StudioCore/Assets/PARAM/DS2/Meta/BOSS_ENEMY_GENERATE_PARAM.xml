@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters used for boss moves that trigger enemy generators." Row0Dummy="" />
+  <Field>   
+    <generator_id_0 AltName="Generator ID [0]"/>
+    <generator_id_1 AltName="Generator ID [1]"/>
+  </Field>
+</PARAMMETA>

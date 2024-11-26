@@ -1,0 +1,40 @@
+0 Basic
+1 Channel (unused)
+2 water surface
+3 Indoors (near the entrance)
+4 Indoor (back)
+5 Indoor (for m2505)
+6 Building (m4010, 4011)
+10 plant
+11 drooping plant
+12 Indoor (back)
+13 Indoors (near the entrance)
+14 Character
+20 Basic
+21 distant view
+22 celestial sphere
+23 blood letters
+24 distant tree
+25 Basic
+26 barrel room
+27 river
+28 Corridor (4300)
+29 terrace
+30 terrace(33)
+32 Basic
+33 character orange
+34 door
+35 Rubble A
+36 Rubble B
+37 boss room
+38 terrace
+39 Character
+51 No light burning
+52 Pillar stone statue (object near magma)
+53 magma
+54 distant view mountain
+55 stone statue
+56 Outdoor for character objects
+57 dragon demon
+58 For character objects indoors
+63 m99_97_00_00[Nakajima test]

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters for boss battles." Row0Dummy="" />
+  <Field>
+    <souls AltName="Souls"/>
+    <itemlot_id AltName="Itemlot ID" Refs="ItemLotParam2_Other"/>
+    <enemy_common_id AltName="Enemy Common ID" Refs="EnemyCommonParam" />
+    <boss_destruction_flag AltName="Boss Destruction Flag"/>
+    <boss_shop_visibility_flag AltName="Boss Shop Visibility Flag" Wiki="Used for enabling shop items"/>
+    <camera_follow_iD AltName="Camera Follow ID" Refs="CameraExFollowParam"/>
+    <lockon_id AltName="Lock-on ID" Refs="LockOnParam"/>
+    <has_named_boss_entity_0 AltName="Has Named Boss Entity [0]" IsBool=""/>
+    <has_named_boss_entity_1 AltName="Has Named Boss Entity [1]" IsBool=""/>
+    <has_named_boss_entity_2 AltName="Has Named Boss Entity [2]" IsBool=""/>
+    <is_primal_bonfire AltName="Unlocks Primal Bonfire" IsBool=""/>
+    <name_text_id_0 AltName="Boss Entity Name Text ID [0]"/>
+    <name_text_id_1 AltName="Boss Entity Name Text ID [1]"/>
+    <name_text_id_2 AltName="Boss Entity Name Text ID [2]"/>
+    <map_obj_bonfire_id AltName="Map Object Bonfire ID" Refs="MapObjectBonfireParam"/> 
+    <boss_soul_bullet_id AltName="Boss Soul Bullet ID" Refs="SystemBulletParam"/> 
+  </Field>
+</PARAMMETA>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Enums>
-  </Enums>
-  <Field>
-    <mapId AltName="Map ID" Wiki="Refers to the map ID without underscores." />
-  </Field>
-  <Self />
-</PARAMMETA>

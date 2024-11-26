@@ -1,0 +1,72 @@
+0 Default value
+1 For bullet source type "Generated from the projectile's target"
+10 SP Template
+2100 vs Base Elderly (Awakened) Normal
+2101 vs Base Elderly (Awakened) Close Range
+2105 vs Inheritor of Nightmares Normal
+2106 vs Inheritor of Nightmares Close Range
+2200 vs Eye Collector Normal
+2201 vs Eye Collector All Distance
+2300 vs Bloodthirsty Beast Normal
+2301 vs Bloodthirsty Beast All Distance
+2305 vs Storm Beast (Bone) Normal
+2306 vs Storm Beast (Bone) Close Range
+2400 vs Saint Beast Normal
+2401 vs Saint Beast All Distance
+2410 vs Rector Normal
+2411 vs Rector Close range
+2415 vs Father Gascoigne Normal
+2416 vs Father Gascoigne Full Distance
+2420 vs Messengers from the Moon Normal
+2421 vs Messengers from the Moon Close Range
+2425 vs Moon Child Normal
+2426 vsChild of the Moon Meteor Magic Time
+2500 vs King of Reaper Normal
+2501 vs King's Reaper Great Magic Time
+2600 vs Nightmare Lord Normal
+2601 vs Lord of Nightmares
+2605 vs Lesser Demon (Death and Darkness) Normal
+2606 vs Lesser Demon (Death and Darkness)
+2700 vs Dark Brigade Normal
+2701 vs Dark Brigade All Distance
+2800 vs The Evil God of Failure Normal
+2801 vs Failed Evil God Close Range
+2900 vs Dungeon Boss Default
+2901 vs Dungeon Boss Default Close Range
+2902 vs Dungeon Boss Normal Room B
+2903 vs Dungeon Boss Normal Room B Close range
+2904 vs Dungeon Boss Step Room A
+2905 vs Dungeon Boss Step Room A Close range
+2906 vs Dungeon Boss Thick Passage
+2907 vs Dungeon boss wide passage close range
+2908 vsDungeon boss: Middle/lower wide passage
+2909 vs Dungeon boss: Middle/lower level wide passage close range
+2910 vs Dungeon Boss Round Room: Large
+2911 vs Dungeon Boss Round Room: Large Close Range
+2912 vs Dungeon Boss Round Room: Small
+2913 vs Dungeon Boss Round Room: Small Close Range
+2914 vs Dungeon Boss Boss Room 1
+2915 vs Dungeon Boss Boss Room 1 Close range
+2916 vs Dungeon Boss Circular Boss Room
+2917 vs Dungeon boss Round boss room Close range
+2918 vs Dungeon Boss Big Boss Room
+2919 vs Dungeon Boss Big Boss Room Close Range
+3200 vs Idiot Spider Normal
+3201 vs Idiot Spider Full Distance
+3300 vs Evil God Normal
+3301 vs Evil God Close Range
+3400 vs Ludwig Beast Mode or Human mode long distance
+3401 vsLudwig Human mode close range
+3500 vs Female Hunter Normal
+3501 vs Female Hunter Close Range
+3505 vs patient B usually
+3506 vs patient B Close range
+3600 vs Last Boss Normal
+3601 vs Last Boss in the air
+5000 Dungeon Lower Passage
+10000 Close-up camera
+10001 Mid-range camera
+10002 Long-distance camera
+10003 Darkness Lock
+10004 [Protomap] Darkness
+10005 [Prototype map] A little wide

@@ -1,0 +1,1031 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GAME_SYSTEM_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="f32 BaseToughnessRecoverTime">
+      <DisplayName>基本強靭度耐久値回復時間</DisplayName>
+      <Description>強靭度回復時間の基本値です。（秒）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 ChrEventTrun_byLeft90">
+      <DisplayName>キャラのイベント旋回アニメーション（左90°）</DisplayName>
+      <Description>「キャラの旋回」イベント用の左90°旋回アニメーションです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 ChrEventTrun_byRight90">
+      <DisplayName>キャラのイベント旋回アニメーション（右90°）</DisplayName>
+      <Description>「キャラの旋回」イベント用の右90°旋回アニメーションです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 ChrEventTrun_byLeft180">
+      <DisplayName>キャラのイベント旋回アニメーション（左180°）</DisplayName>
+      <Description>「キャラの旋回」イベント用の左180°旋回アニメーションです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 ChrEventTrun_byRight180">
+      <DisplayName>キャラのイベント旋回アニメーション（右180°）</DisplayName>
+      <Description>「キャラの旋回」イベント用の右180°旋回アニメーションです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 ChrEventTrun_90TurnStartAngle">
+      <DisplayName>キャラのイベント旋回90°アニメーション開始角度</DisplayName>
+      <Description>「キャラの旋回」イベント用の90°旋回アニメーションを適用する角度の開始角度。この角度より小さい角度でイベントが始まった場合は、システム旋回が行われます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 ChrEventTrun_180TurnStartAngle">
+      <DisplayName>キャラのイベント旋回180°アニメーション開始角度</DisplayName>
+      <Description>「キャラの旋回」イベント用の180°旋回アニメーションを適用する角度の開始角度。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 DeptDeceasedItemId">
+      <DisplayName>負債亡者度アイテムId</DisplayName>
+      <Description>負債亡者度の判定用アイテムのID。０以下だと無効値として負債を扱いません</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 FlickDamageCutRateSuccessGurad">
+      <DisplayName>はじかれ時ガード成功時ダメージカット率</DisplayName>
+      <Description>はじかれ時ガード成功時ダメージカット率。最終ダメージに乗算</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 NpcTalkAnimBeginDiffAngle">
+      <DisplayName>NPC会話のアニメ再生開始する差分角度</DisplayName>
+      <Description>NPC会話の会話中モーションのアニメ再生開始する差分角度です。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 NpcTalkAnimEndDiffAngle">
+      <DisplayName>NPC会話のアニメ再生停止する差分角度</DisplayName>
+      <Description>NPC会話の会話中モーションのアニメ再生停止する差分角度です。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_Optional">
+      <DisplayName>儀式死体化時特殊効果_任意</DisplayName>
+      <Description>プレイヤーが装備している儀式剣から決定する儀式死体のときの特殊効果。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_LevelUp">
+      <DisplayName>儀式死体化時特殊効果_レベルアップ</DisplayName>
+      <Description>レベルアップ儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_StatusReroll">
+      <DisplayName>儀式死体化時特殊効果_ステータス振りなおし</DisplayName>
+      <Description>ステータス振りなおし儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_DeadLevelReset">
+      <DisplayName>儀式死体化時特殊効果_亡者度リセット</DisplayName>
+      <Description>亡者度リセット儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_Atonement">
+      <DisplayName>儀式死体化時特殊効果_贖罪</DisplayName>
+      <Description>贖罪儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_NpcWhiteGhost">
+      <DisplayName>儀式死体化時特殊効果_NPC白霊召喚</DisplayName>
+      <Description>NPC白霊召喚儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_Bomb">
+      <DisplayName>儀式死体化時特殊効果_ボム</DisplayName>
+      <Description>ボム儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_NoInvasion">
+      <DisplayName>儀式死体化時特殊効果_侵入禁止</DisplayName>
+      <Description>侵入禁止儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_LevelUp">
+      <DisplayName>レベルアップ儀式剣のId</DisplayName>
+      <Description>レベルアップ儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_StatusReroll">
+      <DisplayName>ステータス振りなおし儀式剣のId</DisplayName>
+      <Description>ステータス振りなおし儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_DeadLevelReset">
+      <DisplayName>亡者度リセット儀式剣のId</DisplayName>
+      <Description>亡者度リセット儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_Atonement">
+      <DisplayName>贖罪儀式剣のId</DisplayName>
+      <Description>贖罪儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_NpcWhiteGhost">
+      <DisplayName>NPC白霊召喚儀式剣のId</DisplayName>
+      <Description>NPC白霊召喚儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_Bomb">
+      <DisplayName>ボム儀式剣のId</DisplayName>
+      <Description>ボム儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_NoInvasion">
+      <DisplayName>侵入禁止儀式剣のId</DisplayName>
+      <Description>侵入禁止儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_LevelUp">
+      <DisplayName>レベルアップ儀式不可能ダイアログId</DisplayName>
+      <Description>レベルアップ儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_StatusReroll">
+      <DisplayName>ステータス振りなおし儀式不可能ダイアログId</DisplayName>
+      <Description>ステータス振りなおし儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_DeadLevelReset">
+      <DisplayName>亡者度リセット儀式不可能ダイアログId</DisplayName>
+      <Description>亡者度リセット儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_Atonement">
+      <DisplayName>贖罪儀式不可能ダイアログId</DisplayName>
+      <Description>贖罪儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_NpcWhiteGhost_MaxChr">
+      <DisplayName>NPC白霊召喚（空席なし）儀式不可能ダイアログId</DisplayName>
+      <Description>NPC白霊召喚（空席なし）儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_NpcWhiteGhost_AreaOut">
+      <DisplayName>NPC白霊召喚（エリア外）儀式不可能ダイアログId</DisplayName>
+      <Description>NPC白霊召喚（エリア外）儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_NpcWhiteGhost_AreaClear">
+      <DisplayName>NPC白霊召喚（攻略済み）儀式不可能ダイアログId</DisplayName>
+      <Description>NPC白霊召喚（攻略済み）儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_Bomb">
+      <DisplayName>ボム儀式不可能ダイアログId</DisplayName>
+      <Description>ボム儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_NoInvasion">
+      <DisplayName>侵入禁止儀式不可能ダイアログId</DisplayName>
+      <Description>侵入禁止儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s32 AcquittalTargetNpcEventFlagId">
+      <DisplayName>免罪対象になるNPCがいるか？イベントフラグId</DisplayName>
+      <Description>免罪対象になるNPCがいるかを持つイベントフラグId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="s32 ActiveCultAtonementEventFlagId">
+      <DisplayName>贖罪イベント起動イベントフラグId</DisplayName>
+      <Description>贖罪儀式を行ったことをイベントに通知するためのイベントフラグID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="s32 RecoverBelowMaxHpCompletionNoticeSpEffectId">
+      <DisplayName>「HP最大以下で回復」特殊効果完了通知特殊効果ID</DisplayName>
+      <Description>「HP最大以下で回復」が完了したことを通知する特殊効果のID。主にマルチの同期用に使われる。 </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="s32 EstusFlaskRecovery_AbsorptionProductionSfxId_byHp">
+      <DisplayName>HPエスト吸収演出SFXID</DisplayName>
+      <Description>侵入者撃破時などにHPエスト瓶の使用回数を回復する際の吸収演出SFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="s32 EstusFlaskRecovery_AbsorptionProductionSfxId_byMp">
+      <DisplayName>MPエスト吸収演出SFXID</DisplayName>
+      <Description>侵入者撃破時などにMPエスト瓶の使用回数を回復する際の吸収演出SFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s32 RespawnSpecialEffectActiveCheckerSpEffectId">
+      <DisplayName>復活特殊効果発動判定用特殊効果ID</DisplayName>
+      <Description>復活特殊効果が発動したことを通知する特殊効果のID。主にマルチの同期用に使われる。 </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="f32 DefeatHostilityGhostOfSoulCorrectRate_byHost">
+      <DisplayName>敵対霊撃破時取得ソウル補正値_ホスト</DisplayName>
+      <Description>マルチプレイで敵対霊を撃破した時のホストの取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="f32 DefeatHostilityGhostOfSoulCorrectRate_byTeamGhost">
+      <DisplayName>敵対霊撃破時取得ソウル補正値_協力霊</DisplayName>
+      <Description>マルチプレイで敵対霊を撃破した時の協力霊の取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="f32 DefeatMultiModeEnemyOfSoulCorrectRate_byHost">
+      <DisplayName>マルチ時エネミー撃破時取得ソウル補正値_ホスト</DisplayName>
+      <Description>マルチプレイで通常敵を撃破した時のホストの取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="f32 DefeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost">
+      <DisplayName>マルチ時エネミー撃破時取得ソウル補正値_協力霊</DisplayName>
+      <Description>マルチプレイで通常敵を撃破した時の協力霊の取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="f32 DefeatMultiModeBossOfSoulCorrectRate_byHost">
+      <DisplayName>マルチ時ボス撃破時取得ソウル補正値_ホスト</DisplayName>
+      <Description>マルチプレイでボスを撃破した時のホストの取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="f32 DefeatMultiModeBossOfSoulCorrectRate_byTeamGhost">
+      <DisplayName>マルチ時ボス撃破時取得ソウル補正値_協力霊</DisplayName>
+      <Description>マルチプレイでボスを撃破した時の協力霊の取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="u16 EnemyHpGaugeScreenOffset_byUp">
+      <DisplayName>敵キャラのHPゲージが画面上に見切れないようにするためのオフセット</DisplayName>
+      <Description>敵のHPゲージが画面上に見切れた時に画面内に収めるオフセット値[pixel]（FullHD基準）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="s16 Reserved46">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="u16 EnemyDetectionSpEffect_ShootBulletDummypolyId">
+      <DisplayName>「敵探知」時弾丸発射位置ダミポリID</DisplayName>
+      <Description>探知弾丸の発射位置ダミポリID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="u16 EnemyDetectionSpEffect_MaxDetectionNum">
+      <DisplayName>「敵探知」時最大探知数 </DisplayName>
+      <Description>同時に探知出来る敵の最大数（飛ばす弾丸の上限）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="f32 EnemyDetectionSpEffect_MaxDetectionLength">
+      <DisplayName>「敵探知」時最大探知距離</DisplayName>
+      <Description>探知可能な最大距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopHost">
+      <DisplayName>「敵探知」時発射弾丸ID_協力ホスト</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopSign_None">
+      <DisplayName>「敵探知」時発射弾丸ID_協力サイン_なし</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopSign_Umbasa">
+      <DisplayName>「敵探知」時発射弾丸ID_協力サイン_太陽</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopSign_Berserker">
+      <DisplayName>「敵探知」時発射弾丸ID_協力サイン_バーサーカー</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopSign_Sinners">
+      <DisplayName>「敵探知」時発射弾丸ID_協力サイン_罪人</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopRing_RedHunter">
+      <DisplayName>「敵探知」時発射弾丸ID_協力指輪_赤狩り</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeOrb_None">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入オーブ_なし</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeOrb_Umbasa">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入オーブ_太陽</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeOrb_Berserker">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入オーブ_バーサーカー</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeOrb_Sinners">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入オーブ_罪人</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeSign_None">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入サイン_なし</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeSign_Umbasa">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入サイン_太陽</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>64</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeSign_Berserker">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入サイン_バーサーカー</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>65</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeSign_Sinners">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入サイン_罪人</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>66</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeRing_Sinners">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入指輪_罪人</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>67</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfBoss">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入指輪_ボス守護者</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>68</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfMap">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入指輪_マップ守護者</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>69</SortID>
+    </Field>
+    <Field Def="s32 ActivityOfDeadSpEffect_BulletId">
+      <DisplayName>「死者の活性」特殊効果発動時弾丸ID</DisplayName>
+      <Description>「死者の活性」特殊効果が発動したときに発射する弾丸ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="s32 ActivityOfDeadSpEffect_ShootBulletDummypolyId">
+      <DisplayName>「死者の活性」特殊効果発動時弾丸発生位置ダミポリID</DisplayName>
+      <Description>「死者の活性」特殊効果が発動したときに弾丸が発生する位置のダミポリID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="f32 ActivityOfDeadSpEffect_DeadFadeOutTime">
+      <DisplayName>「死者の活性」特殊効果発動時の死体のフェードアウト時間</DisplayName>
+      <Description>「死者の活性」特殊効果が発動したときに死体がフェードアウトする際のフェード時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>72</SortID>
+    </Field>
+    <Field Def="f32 IgnorNetStateSyncTime_ForThrow">
+      <DisplayName>投げ開始時のネットワーク情報による遷移を無視する時間</DisplayName>
+      <Description>投げ開始時のネットワーク情報による遷移を無視する時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>73</SortID>
+    </Field>
+    <Field Def="u16 NetPenaltyPointLanDisconnect">
+      <DisplayName>マルチプレペナルティ：LAN切断</DisplayName>
+      <Description>マルチプレペナルティ：LAN切断</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>74</SortID>
+    </Field>
+    <Field Def="u16 NetPenaltyPointProfileSignout">
+      <DisplayName>マルチプレペナルティ：プロフィールサインアウト</DisplayName>
+      <Description>マルチプレペナルティ：プロフィールサインアウト</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>75</SortID>
+    </Field>
+    <Field Def="u16 NetPenaltyPointReboot">
+      <DisplayName>マルチプレペナルティ：電源断</DisplayName>
+      <Description>マルチプレペナルティ：電源断</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>76</SortID>
+    </Field>
+    <Field Def="u16 NetPnaltyPointSuspend">
+      <DisplayName>マルチプレペナルティ：サスペンド・一時停止</DisplayName>
+      <Description>マルチプレペナルティ：サスペンド・一時停止</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>77</SortID>
+    </Field>
+    <Field Def="f32 NetPenaltyForgiveItemLimitTime">
+      <DisplayName>マルチプレペナルティ：理の骨の生成（販売）開始待ち時間</DisplayName>
+      <Description>マルチプレペナルティ：理の骨の生成（販売）開始待ち時間(秒)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>1</Increment>
+      <SortID>78</SortID>
+    </Field>
+    <Field Def="u16 NetPenaltyPointThreshold">
+      <DisplayName>マルチプレペナルティ：ペナルティ判定ポイント</DisplayName>
+      <Description>マルチプレペナルティ：ペナルティ判定ポイント</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>79</SortID>
+    </Field>
+    <Field Def="u16 UncontrolledMoveThresholdTime">
+      <DisplayName>未操作判定時間</DisplayName>
+      <Description>マルチで一定期間操作ない人を退出させるためのもの。単位は秒。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byNpcEnemy">
+      <DisplayName>「敵探知」時発射弾丸ID_敵対NPC/敵キャラ</DisplayName>
+      <Description>敵意の探知に失敗したときに敵対NPC/敵キャラに飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>81</SortID>
+    </Field>
+    <Field Def="s32 ActivityOfDeadTargetSearchSpEffect_OnHitSpEffect">
+      <DisplayName>「死者の活性ターゲット検索」対象にかける特殊効果ID </DisplayName>
+      <Description>検索した対象にかける特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>82</SortID>
+    </Field>
+    <Field Def="f32 ActivityOfDeadTargetSearchSpEffect_MaxLength">
+      <DisplayName>「死者の活性ターゲット検索」距離 </DisplayName>
+      <Description>検索可能最大距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>83</SortID>
+    </Field>
+    <Field Def="f32 NetFpsCheck_fpsThreshold">
+      <DisplayName>低FPSチェック_FPS条件</DisplayName>
+      <Description>低FPSチェック_FPS条件</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>84</SortID>
+    </Field>
+    <Field Def="f32 NetFpsCheck_lowfpsTImeThreshold">
+      <DisplayName>低FPSチェック_低FPS継続時間</DisplayName>
+      <Description>低FPSチェック_低FPS継続時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>85</SortID>
+    </Field>
+    <Field Def="u32 SoloBreakInMaxPoint">
+      <DisplayName>ソロ侵入最大ポイント</DisplayName>
+      <Description>ソロ侵入ポイントの最大値。この値を越えたときにソロで侵入されるようになる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+09</Maximum>
+      <SortID>86</SortID>
+    </Field>
+    <Field Def="f32 NpcTalkTimeOutThreshold">
+      <DisplayName>NPC会話のボイス再生タイムアウト時間</DisplayName>
+      <Description>NPC会話のボイス再生タイムアウト時間。この時間経過してもボイス再生が終わらない場合は次のメッセージへ進む</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>87</SortID>
+    </Field>
+    <Field Def="f32 SendPlayLogIntervalTime">
+      <DisplayName>プレイログの送信間隔</DisplayName>
+      <Description>アイテム使用ログ などをサーバーへ送信する間隔</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>88</SortID>
+    </Field>
+    <Field Def="u8 Item370_MaxSfxNum">
+      <DisplayName>七色石の最大設置数</DisplayName>
+      <Description>七色石の最大設置数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>89</SortID>
+    </Field>
+    <Field Def="s8 Reserved_83">
+      <DisplayName>予約_83</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="s16 SummonDataCoopMatchingLevelUpperAbs">
+      <DisplayName>マルチ弱体化レベル補正係数１</DisplayName>
+      <Description>マルチ時ステータス弱体化。ホストのレベル加算補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>91</SortID>
+    </Field>
+    <Field Def="s16 SummonDataCoopMatchingLevelUpperRel">
+      <DisplayName>マルチ弱体化レベル補正係数２</DisplayName>
+      <Description>マルチ時ステータス弱体化。ホストのレベル倍率補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>92</SortID>
+    </Field>
+    <Field Def="s16 SummonDataCoopMatchingWepLevelMul">
+      <DisplayName>マルチ弱体化最大武器補正係数</DisplayName>
+      <Description>マルチ時ステータス弱体化。最大武器強化レベル補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>93</SortID>
+    </Field>
+    <Field Def="s32 PickUpBerserkerSignSpEffectBulletId">
+      <DisplayName>バーサーカーサインを拾った時のまたたび効果用弾丸ID</DisplayName>
+      <Description>サイン位置に特殊効果用の弾丸を発生させる際の弾丸ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>94</SortID>
+    </Field>
+    <Field Def="s32 SucceedBerserkerSelfKillingEffectId">
+      <DisplayName>バーサーカーがPC自力殺害に成功演出用特殊効果ID</DisplayName>
+      <Description>バーサーカーがPC自力殺害に成功した際に専用の演出を再生する特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>95</SortID>
+    </Field>
+    <Field Def="u8 MachingLevelWhiteSignUpperRel">
+      <DisplayName>レベルシンク適用判定係数１白</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>96</SortID>
+    </Field>
+    <Field Def="u8 MachingLevelWhiteSignUpperAbs">
+      <DisplayName>レベルシンク適用判定係数２白</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>97</SortID>
+    </Field>
+    <Field Def="u8 MachingLevelRedSignUpperRel">
+      <DisplayName>レベルシンク適用判定係数１赤</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>98</SortID>
+    </Field>
+    <Field Def="u8 MachingLevelRedSignUpperAbs">
+      <DisplayName>レベルシンク適用判定係数２赤</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>99</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_0">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数０白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_1">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_2">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_3">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数３白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_4">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数４白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>104</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_5">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数５白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>105</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_6">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数６白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>106</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_7">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数７白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>107</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_8">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数８白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>108</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_9">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数９白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>109</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１０白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_0">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数０赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>111</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_1">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>112</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_2">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>113</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_3">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数３赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>114</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_4">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数４赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>115</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_5">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数５赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>116</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_6">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数６赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>117</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_7">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数７赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>118</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_8">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数８赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>119</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_9">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数９赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１０赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>121</SortID>
+    </Field>
+    <Field Def="s16 Reserved_94">
+      <DisplayName>予約_94</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>122</SortID>
+    </Field>
+    <Field Def="f32 SendGlobalEventLogIntervalTime">
+      <DisplayName>グローバルイベントログの送信間隔</DisplayName>
+      <Description>グローバルイベントログ をサーバーへ送信する間隔</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>123</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_White">
+      <DisplayName>ソロ侵入ポイント加算値_白サイン</DisplayName>
+      <Description>ソロ侵入ポイント加算値_白サイン</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>124</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_Black">
+      <DisplayName>ソロ侵入ポイント加算値_赤サイン</DisplayName>
+      <Description>ソロ侵入ポイント加算値_赤サイン</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>125</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_ForceJoin">
+      <DisplayName>ソロ侵入ポイント加算値_乱入</DisplayName>
+      <Description>ソロ侵入ポイント加算値_乱入</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>126</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_VisitorGuardian">
+      <DisplayName>ソロ侵入ポイント加算値_マップ守護訪問</DisplayName>
+      <Description>ソロ侵入ポイント加算値_マップ守護訪問</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>127</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_VisitorRedHunter">
+      <DisplayName>ソロ侵入ポイント加算値_赤狩り訪問</DisplayName>
+      <Description>ソロ侵入ポイント加算値_赤狩り訪問</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>128</SortID>
+    </Field>
+    <Field Def="s16 Reserved_98">
+      <DisplayName>予約_98</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>129</SortID>
+    </Field>
+    <Field Def="f32 RedHunter_HostBossAreaGetSoulRate">
+      <DisplayName>【赤狩り】ホストが白扉を通過した際にもらえるソウル率</DisplayName>
+      <Description>ホストが白扉を通過した時に赤狩りがもらえるソウル=赤狩りが一つ前のLvから現在Lvになるために必要なソウル*この倍率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>130</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

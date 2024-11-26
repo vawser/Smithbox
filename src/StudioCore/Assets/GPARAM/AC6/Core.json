@@ -1,0 +1,2527 @@
+{
+    "list": [
+        {
+            "id": "LightSet ParamEditor",
+            "name": "Light Set",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Directional Light Angle0",
+                    "name": "Directional Light: Angle [0]",
+                    "description": "",
+                    "attributes": "IsType[Float2]"
+                },
+                {
+                    "id": "Directional Light DiffColor0",
+                    "name": "Directional Light: Diffuse Color [0]",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional Light SpecColor0",
+                    "name": "Directional Light: Specular Color [0]",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional Light Sharpness0",
+                    "name": "Directional Light: Sharpness [0]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Directional Light SsaoWeight0",
+                    "name": "Directional Light: Screen Space Ambient Occlusion [0]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Directional Light Angle1",
+                    "name": "Directional Light: Angle [1]",
+                    "description": "",
+                    "attributes": "IsType[Float2]"
+                },
+                {
+                    "id": "Directional Light DiffColor1",
+                    "name": "Directional Light: Diffuse Color [1]",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional Light SpecColor1",
+                    "name": "Directional Light: Specular Color [1]",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional Light Sharpness1",
+                    "name": "Directional Light: Sharpness [1]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Directional Light SsaoWeight1",
+                    "name": "Directional Light: Screen Space Ambient Occlusion [1]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Directional Light LocalLight Angle1",
+                    "name": "Directional Light: Local Light - Angle [1]",
+                    "description": "",
+                    "attributes": "IsType[Float2]"
+                },
+                {
+                    "id": "Directional Light LocalLight DiffColor1",
+                    "name": "Directional Light: Local Light - Diffuse Color [1]",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional Light LocalLight SpecColor1",
+                    "name": "Directional Light: Local Light - Specular Color [1]",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional LocalLight Light Sharpness1",
+                    "name": "Directional Light: Local Light - Sharpness [1]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Directional Light SsaoWeight2",
+                    "name": "Directional Light: Screen Space Ambient Occlusion [2]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Directional Light LocalLight Angle2",
+                    "name": "Directional Light: Local Light - Angle [2]",
+                    "description": "",
+                    "attributes": "IsType[Float2]"
+                },
+                {
+                    "id": "Directional Light LocalLight DiffColor2",
+                    "name": "Directional Light: Local Light - Diffuse Color [2]",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional Light LocalLight SpecColor2",
+                    "name": "Directional Light: Local Light - Specular Color [2]",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional LocalLight Light Sharpness2",
+                    "name": "Directional Light: Local Light - Sharpness [2]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Directional Light SsaoWeight3",
+                    "name": "Directional Light: Screen Space Ambient Occlusion [3]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Directional Light Hemi Color Up",
+                    "name": "Directional Light: Hemisphere Color Up",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional Light Hemi Color Down",
+                    "name": "Directional Light: Hemisphere Color Down",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Directional LightLight1 FollowedCamera",
+                    "name": "Directional Light: Light [1] - Follow Camera",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "Directional Enable LocalLight1",
+                    "name": "Directional Light: Enable Local Light [1]",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "Directional Enable LocalLight2",
+                    "name": "Directional Light: Enable Local Light [2]",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "Directional Light  LightMask Influence",
+                    "name": "Directional Light: Light Mask Influence",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "SSAO Editor",
+            "name": "Screen Space Ambient Occlusion",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "SSAO - Edit-UseNormal",
+                    "name": "Use Normal",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "SSAO - Edit-UseReProj",
+                    "name": "Use Re-projection",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "SSAO - Edit-PreventGhost",
+                    "name": "Prevent Ghosting",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "SSAO - Edit-EnableUpScale",
+                    "name": "Enable Up Scale",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 Sample Offset",
+                    "name": "Sample Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 AO Scale",
+                    "name": "Ambient Occlusion Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 AO Offset",
+                    "name": "Ambient Occlusion Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 Kernel Scale Base Dist",
+                    "name": "Kernel Scale Base Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 Kernel Scale Min",
+                    "name": "Kernel Scale Minimum",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 Kernel Scale Max",
+                    "name": "Kernel Scale Maximum",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 PrevFrame Strengh",
+                    "name": "Previous Frame Strength",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 DepthFadeStart",
+                    "name": "Depth Fade Start",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 DepthFadeRange",
+                    "name": "Depth Fade Range",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 PrecisionDepth",
+                    "name": "Precision Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 PrevFrame Depth Aware",
+                    "name": "Previous Frame Depth Awareness",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 Depth Reject Rate",
+                    "name": "Depth Rejection Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSAO - Edit-Ver2 Geom Bent Offset",
+                    "name": "Geometry Bent Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "Setting Info[Yebis]",
+            "name": "Setting Info",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "GS - BG Color-Data",
+                    "name": "Background Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "SceneSetting-  LightCollect- Auto Compute Enable",
+                    "name": "Light Collection: Auto Computation",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                },
+                {
+                    "id": "SceneSetting-  LightCollect- BaseDist",
+                    "name": "Light Collection: Base Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SceneSetting-  LightCollect-DistScaler",
+                    "name": "Light Collection: Distance Scalar",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SceneSetting-  LightCollect-DistMax",
+                    "name": "Light Collection: Distance Maximum",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SceneSetting-  ReflectScene Assign DynamicLight",
+                    "name": "Reflection Scene: Assign Dynamic Light",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                }
+            ]
+        },
+        {
+            "id": "Tone Map[Yebis]",
+            "name": "Tone Map",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "GS Presents - ToneMap-Exposure",
+                    "name": "Exposure",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-ToneMapMode",
+                    "name": "Mode",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-Contrast",
+                    "name": "Filmic Contrast",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-ReinhardContrast",
+                    "name": "Reinhard Contrast",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-ReinhardWhiteBalance",
+                    "name": "Reinhard White Balance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-Enable AutoExposure",
+                    "name": "Enable Auto Exposure",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-AutoExposure LightAdapt Speed",
+                    "name": "TAuto Exposure: Light Adapt Speed",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-AutoExposure DarkAdapt Speed",
+                    "name": "Auto Exposure: Dark Adapt Speed",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-AutoExposure Middle Gray",
+                    "name": "Auto Exposure: Middle Gray",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-AutoExposure Center Weight",
+                    "name": "Auto Exposure: Centre Weight",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-AutoExposure Adaption Max",
+                    "name": "Auto Exposure: Maximum Adaptation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-AutoExposure Adaption Min",
+                    "name": "Auto Exposure: Minimum Adaptation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneMap-FreezeAdaptionFade",
+                    "name": "Freeze Adaptation Fade",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "GS Presents - Chromatic Aberration Enable",
+                    "name": "Enable Chromatic Aberration",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "GS Presents - ToneLateralDispersion[0]",
+                    "name": "Lateral Dispersion [0]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ToneLateralDispersion[1]",
+                    "name": "Lateral Dispersion [1]",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Vignetting Power",
+                    "name": "Vignette Power",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Vignetting Range",
+                    "name": "Vignette Range",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Vignetting Shape",
+                    "name": "Vignette Shape",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Vignetting Fov Dependence",
+                    "name": "Vignette Field of View Dependence",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ColorH",
+                    "name": "Hue",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ColorS",
+                    "name": "Saturation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Tone Map Color Grading ColorShift",
+                    "name": "Color Grading: Color Shift",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Tone Map Color Grading ColorScale",
+                    "name": "Color Grading: Color Scale",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "GS Presents - ColorV",
+                    "name": "Value",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Contrast",
+                    "name": "Contrast",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "Bloom[Yebis]",
+            "name": "Bloom",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Gs Presents【Bloom】 Enable",
+                    "name": "Enable Bloom",
+                    "description": "",
+                    "attributes": "IsType[IntA]",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "Gs Presents-GlareNumLevels",
+                    "name": "Glare Level",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Gs Presents-Glare Luminance",
+                    "name": "Glare Luminance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Gs Presents-Glare Threshold",
+                    "name": "Glare Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Gs Presents-GlareBloom Alpha",
+                    "name": "Glare Alpha",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Gs Presents-GlareBloom GaussianRadiusScale",
+                    "name": "Glare Guassian Radius Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Gs Presents-GlareBloom Sturate Ctrl",
+                    "name": "Glare Saturation Control",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Gs Presents-GlareBloom Smooth",
+                    "name": "Glare Smoothing",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Gs Presents-GlareBloom FeedbackWeight",
+                    "name": "Glare Feedback Weight",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "LightShaft[Yebis]",
+            "name": "Light Shaft",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "GS Presents - LightShaft Enable",
+                    "name": "Enable Light Shaft",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "GS Presents - LightShaft Angle",
+                    "name": "Light Shaft Angle",
+                    "description": "",
+                    "attributes": "IsType[Float2]"
+                },
+                {
+                    "id": "GS Presents - LightShaft EnableRefLight",
+                    "name": "Enable Reference Light",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "GS Presents - LightShaft LightBankId",
+                    "name": "Light Bank ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "GS Presents - LightShaft LightId",
+                    "name": "Light ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "GS Presents - LightShaft HighQualitySkyMask",
+                    "name": "Enable High Quality Sky Mask",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "GS Presents - LightShaft SkyMaskMode",
+                    "name": "Sky Mask Mode",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "GS Presents - LightShaft MaskDepthThreshold",
+                    "name": "Mask Depth Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - LightShaft SkyMaskSizeAngle",
+                    "name": "Sky Mask Size Angle",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - LightShaft SkyMaskCenterPower",
+                    "name": "Sky Mask Centre Power",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Sky Multiply Color",
+                    "name": "Sky Multiplication Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "GS Presents - Sky Add Color",
+                    "name": "Sky Addition Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "GS Presents - LightShaft SkyColorSaturate",
+                    "name": "Sky Color Saturation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - LightShaft SkyColorThreshold",
+                    "name": "Sky Color Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ExposureInfluenceRate AddColor",
+                    "name": "Exposure Influence Rate: Addition Color",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Parallel mode begin ang",
+                    "name": "Parallel Mode: Start Angle",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Parallel mode end ang",
+                    "name": "Parallel Mode: End Angle",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Fade out begin ang",
+                    "name": "Fade Out: Start Angle",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - Fade out end ang",
+                    "name": "Fade Out: End Angle",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - ShaftBlurRange",
+                    "name": "Blur Range",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - LightShaft ShaftBlurRange for Parallel",
+                    "name": "Parallel Blur Range",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - LightShaft ShaftBlurFallOff",
+                    "name": "Blur Fall Off",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GS Presents - LightShaft ShaftBlurCount",
+                    "name": "Blur Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                }
+            ]
+        },
+        {
+            "id": "Anti-Alias-Editor",
+            "name": "Anti-Alias",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Yebis-Anti-Alias Enable",
+                    "name": "Enable Anti-Aliasing",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "AntiAlias - AntiAliasType",
+                    "name": "Anti-Alias Type",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "AntiAlias - fFxaaAlpha",
+                    "name": "FXAA: Alpha",
+                    "description": "FXAA is Fast Approximate Anti-Aliasing.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FxaaReduceMin",
+                    "name": "FXAA: Reduce Minimum",
+                    "description": "FXAA is Fast Approximate Anti-Aliasing.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FxaaReduceMul",
+                    "name": "FXAA: Reduce Multiplier",
+                    "description": "FXAA is Fast Approximate Anti-Aliasing.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FxaaSpanMax",
+                    "name": "FXAA: Span Maximum",
+                    "Float": "FXAA is Fast Approximate Anti-Aliasing.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - DlaaThreshold",
+                    "name": "DLAA: Threshold",
+                    "description": "DLAA is Directionally Localized Anti-Aliasing.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - DlaaRamda",
+                    "name": "DLAA: Ramda",
+                    "description": "DLAA is Directionally Localized Anti-Aliasing.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - DlaaEpsilon",
+                    "name": "DLAA: Epsilon",
+                    "description": "DLAA is Directionally Localized Anti-Aliasing.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FeedbackWeight",
+                    "name": "Feedback Weight",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - JitterCount",
+                    "name": "Jitter Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "AntiAlias - EnableDitherSwitch",
+                    "name": "Enable Dithering",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "AntiAlias - EnableMotionVectorDilation",
+                    "name": "Enable Motion Vector Dilation",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "AntiAlias - SharpenIntensity",
+                    "name": "Sharpness Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - SharpenRangeMin",
+                    "name": "Sharpness Range: Minimum",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - SharpenRangeMax",
+                    "name": "Sharpness Range: Maximum",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - SubpixelFeedbackFactor",
+                    "name": "Subpixel Feedback Factor",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - CBFeedbackWeightSampled",
+                    "name": "CB Feedback Weight Sample",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - CBFeedbackWeightFiltered",
+                    "name": "CB Feedback Weight Filter",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - EnableStencilMask",
+                    "name": "Enable Stencil Mask",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "AntiAlias - RejectedPixelBlurIntensity",
+                    "name": "Rejected Pixel Blur Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FeedbackWeightScale(None)",
+                    "name": "Feedback Weight Scale (None)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FeedbackWeightScale(0)",
+                    "name": "Feedback Weight Scale (0)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FeedbackWeightScale(1)",
+                    "name": "Feedback Weight Scale (1)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FeedbackWeightScale(2)",
+                    "name": "Feedback Weight Scale (2)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FBWeightCancelByDepth(0)",
+                    "name": "Feedback Weight Cancel By Depth (0)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FBWeightCancelByDepth(1)",
+                    "name": "Feedback Weight Cancel By Depth (1)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FBWeightCancelByDepth(2)",
+                    "name": "Feedback Weight Cancel By Depth (2)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FBWeightCancelByDepth(3)",
+                    "name": "Feedback Weight Cancel By Depth (3)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FBWeightBorderDepth(0)",
+                    "name": "Feedback Weight Border Depth (0)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FBWeightBorderDepth(1)",
+                    "name": "Feedback Weight Border Depth (1)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "AntiAlias - FBWeightBorderDepth(2)",
+                    "name": "Feedback Weight Border Depth (2)",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "MotionBlur-Editor[Yebis]",
+            "name": "Motion Blur",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "GSPresents-MotionBlur-Enable",
+                    "name": "Enable Motion Blur",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                },
+                {
+                    "id": "MotionBlur[GS Presents] Motion Blur Intensity",
+                    "name": "Motion Blur Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "MotionBlur[GS Presents] Blur Max Length",
+                    "name": "Motion Blur Max Length",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "MotionBlur[GS Presents] Shutter Speed",
+                    "name": "Motion Blur Shutter Speed",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "MotionBlur[GS Presents] Sample Count",
+                    "name": "Motion Blur Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "MotionBlur[GS Presents] Blur ReccurenceCount",
+                    "name": "Motion Blur Recurrence Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "MotionBlur[GS Presents] Bidirectional Blur",
+                    "name": "Enable Bidirectional Blur",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "MotionBlur[GS Presents] Blur Cutoff threshold in Pixel",
+                    "name": "Motion Blur Cutoff Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "GSPresents-MotionBlur-bInnerTime",
+                    "name": "Use Inner Simulation Time",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                },
+                {
+                    "id": "GSPresents-MotionBlur-Enable Average Inner Simulation Time",
+                    "name": "Use Average Inner Simulation Time",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                },
+                {
+                    "id": "GSPresents-MotionBlur-Enable Fixed Inner Simulation Time",
+                    "name": "Use Fixed Inner Simulation Time",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                }
+            ]
+        },
+        {
+            "id": "FurBlur-Editor",
+            "name": "Fur Blur",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "FurBlur-Enable",
+                    "name": "Enable Fur Blur",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                },
+                {
+                    "id": "FurBlur Fur Blur Intensity",
+                    "name": "Fur Blur Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FurBlur Blur Max Length",
+                    "name": "Fur Blur Max Length",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FurBlur Sample Count",
+                    "name": "Fur Blur Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "FurBlur Blur RecurrenceCount",
+                    "name": "Fur Blur Recurrence Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                }
+            ]
+        },
+        {
+            "id": "FeedBackBlur-Editor[Yebis]",
+            "name": "Feedback Blur",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Yebis-FeedBackBlur-Enable",
+                    "name": "Enable Blur",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "Yebis-FeedbackWeight",
+                    "name": "Blur Weight",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Yebis-Feedback UnitTimeInSeconds",
+                    "name": "Blur Time",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Object-FeedbackBlurRate",
+                    "name": "Blur Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Object-FeedbackBlurFallOff",
+                    "name": "Blur Falloff",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Object-FeedbackBlurPower",
+                    "name": "Blur Power",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "ColorGrading[Yebis]",
+            "name": "Color Grading",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Yebis-ColorGrading-Enable",
+                    "name": "Enable Color Grading",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "Yebis-LutSourceId",
+                    "name": "LUT Source ID",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "ColorGrading FadeTime",
+                    "name": "Fade Time",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "ShadowParam ParamEditor",
+            "name": "Shadow",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "hadowParam - Shadow: Angle0",
+                    "name": "Shadow Angle",
+                    "description": "",
+                    "attributes": "IsType[Float2]"
+                },
+                {
+                    "id": "shadowParam -   Shadow:  Shadow Light Id",
+                    "name": "Shadow Light ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Near",
+                    "name": "Shadow Near",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Cascade Dist 0->1",
+                    "name": "Shadow Cascade Distance: 0 to 1",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Cascade Dist 1->2",
+                    "name": "Shadow Cascade Distance: 1 to 2",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Cascade Dist 2->3",
+                    "name": "Shadow Cascade Distance: 2 to 3",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Far Fade Start",
+                    "name": "Shadow Far Fade Start",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Far Fade Dist",
+                    "name": "Shadow Far Fade Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Cascade Fade Range Scale",
+                    "name": "Shadow Cascade Fade Range Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Shadow Map FilterMode",
+                    "name": "Shadow Map Filter Mode",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Depth Offset",
+                    "name": "Shadow Depth Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - Volume Depth",
+                    "name": "Shadow Volume Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - Depth Bias",
+                    "name": "Shadow Depth Bias",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "ShadowParam - Slope Scaled Depth Bias",
+                    "name": "Shadow Slope Scaled Depth Bias",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Shadow Model Cull Flip",
+                    "name": "Model Cull Flip",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "ShadowParam - AlignTexel",
+                    "name": "Align Texture Pixel",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "ShadowParam - DepthRate",
+                    "name": "Shadow Depth Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - DepthScale",
+                    "name": "Shadow Depth Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - KernelScale",
+                    "name": "Shadow Kernel Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - DepthOffsetScale",
+                    "name": "Shadow Depth Offset Scale",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "ShadowParam - Blur Count",
+                    "name": "Shadow Blur Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "ShadowParam - Blur Radius",
+                    "name": "Shadow Blur Radius",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ShadowParam - TempAA Auto Jitter",
+                    "name": "Temporal Anti-Alias Auto Jitter",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "ShadowParam Cascade Count",
+                    "name": "Shadow Cascade Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "ShadowParam - Shadow: Shadow Map Resolution",
+                    "name": "Shadow Map Resolution",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "ShadowParam Cascade0 Resolution",
+                    "name": "Shadow Cascade Resolution [0]",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "ShadowParam Cascade1 Resolution",
+                    "name": "Shadow Cascade Resolution [1]",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "ShadowParam Cascade2 Resolution",
+                    "name": "Shadow Cascade Resolution [2]",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "ShadowParam Cascade3 Resolution",
+                    "name": "Shadow Cascade Resolution [3]",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "ShadowParam CompartmentShadow Resolution",
+                    "name": "Compartment Shadow Resolution",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                }
+            ]
+        },
+        {
+            "id": "WaterInteraction-Editor",
+            "name": "Water Interaction",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "WaterInteraction-Enable",
+                    "name": "Enable Water Interaction",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "WaterInteraction - ScreenSpace Wave Speed",
+                    "name": "Screen Space Wave Speed",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "WaterInteraction - ScreenSpace Wave Attenuation",
+                    "name": "Screen Space Wave Attenuation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "WaterInteraction - ScreenSpace TexelSize",
+                    "name": "Texture Pixel Size",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "WaterInteraction - ScreenSpace Max Resolution",
+                    "name": "Screen Space Max Resolution",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                }
+            ]
+        },
+        {
+            "id": "AOFields - Editor",
+            "name": "Ambient Occlusion",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Unknown",
+                    "name": "Unknown",
+                    "description": "",
+                    "attributes": "IsType[Unknown]"
+                }
+            ]
+        },
+        {
+            "id": "AOFields Model - Editor",
+            "name": "Model Ambient Occlusion",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Unknown",
+                    "name": "Unknown",
+                    "description": "",
+                    "attributes": "IsType[Unknown]"
+                }
+            ]
+        },
+        {
+            "id": "SeaWave:Editor",
+            "name": "Sea Wave",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Sea Wave BubbleTex: Id",
+                    "name": "Bubble ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Sea Wave BubbleMask: Id",
+                    "name": "Bubble Mask ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Sea Wave Normal: Id",
+                    "name": "Normal ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Sea Wave Light: Id",
+                    "name": "Light ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Sea Wave Time Rate",
+                    "name": "Time Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave  Enable",
+                    "name": "Enable Sea Wave",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                },
+                {
+                    "id": "Sea Wave Wave Angle",
+                    "name": "Wave Angle",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Wavelength Scale",
+                    "name": "Wavelength Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Amplitude Scale",
+                    "name": "Amplitude Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave  Enable Choppy",
+                    "name": "Enable Choppy Waves",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                },
+                {
+                    "id": "Sea Wave WindAng",
+                    "name": "Wind Angle",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave WindSpeed",
+                    "name": "Wind Speed",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave WaveAmp",
+                    "name": "Wave Amplitude",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave WaveNumberCoef",
+                    "name": "Wave Number Coefficient",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Blend Begin Depth",
+                    "name": "Wave Blend: Begin Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Blend End Depth",
+                    "name": "Wave Blend: End Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflection Max",
+                    "name": "Wave Reflection: Maximum",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflection Min",
+                    "name": "Wave Reflection: Minimum",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflectance",
+                    "name": "Wave Reflectance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Shininess",
+                    "name": "Wave Shininess",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflection Distortion Scale(near)",
+                    "name": "Wave Reflection Distortion Scale: Near",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflection Distortion Scale(far)",
+                    "name": "Wave Reflection Distortion Scale: Far",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave FFT Tex Tiling Size",
+                    "name": "FFT Texture Tiling Size",
+                    "description": "FFT means Fast Fourier Transform.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave BumpMap Tiling Size",
+                    "name": "Bump Map Tiling Size",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Basis Height",
+                    "name": "Basis Height",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Depth Limit",
+                    "name": "Depth Limit",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Area Max",
+                    "name": "Area Max",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Transparent Depth",
+                    "name": "Transparent Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Border Feed Depth",
+                    "name": "Border Feed Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Border Bubble Depth",
+                    "name": "Border Bubble Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Border Bubble Flat Scale",
+                    "name": "Border Bubble Flat Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Border Wave Scale",
+                    "name": "Border Wave Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Shallow Water",
+                    "name": "Shallow Water Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Sea Wave Deep Water",
+                    "name": "Deep Water Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Sea Wave Use Inner Simulation Time",
+                    "name": "Use Inner Simulation Time",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "Sea Wave Enable Average Inner Simulation Time",
+                    "name": "Enable Average Inner Simulation Time",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "Sea Wave Enable Fixed Inner Simulation Time",
+                    "name": "Enable Fixed Inner Simulation Time",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "Sea Wave Fix Fps",
+                    "name": "Base FPS",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "Glow Filter-Editor",
+            "name": "Glow Filter",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Glow Filter-Glow Enable",
+                    "name": "Enable Glow",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "Glow Filter - Glow NumLevels",
+                    "name": "Glow Number Levels",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Glow Filter - Blur Smoothness",
+                    "name": "Blur Smoothness",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "New Glow Filter-Glow - FinalColorScale",
+                    "name": "Final Color Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Glow Filter-Glow - BlurSampleScale",
+                    "name": "Blur Sample Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Glow Filter-Glow - Blur RgbScale",
+                    "name": "Blur RGB Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Glow Filter-Glow - Blur AlphaScale",
+                    "name": "Blur Alpha Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "[GS]Lens Simulation",
+            "name": "Lens Simulation",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "[GS]Lens Simulation Param  Enable",
+                    "name": "Enable Lens Simulation",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param NearEnd",
+                    "name": "Near End",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param NearStart",
+                    "name": "Near Start",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param FarStart",
+                    "name": "Far Start",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param FarEnd",
+                    "name": "Far End",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param FocusDist",
+                    "name": "Focus Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param UseCameraFocus",
+                    "name": "Use Camera Focus",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param SkyMaskRate",
+                    "name": "Sky Mask Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param Lens F",
+                    "name": "Lens F",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param Av (絞り値)",
+                    "name": "Aperture",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param FilmSize(mm)",
+                    "name": "Film Size",
+                    "description": "In millimetres.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param LinearCoCFactorNear",
+                    "name": "Linear Circles of Confusion Factor: Near",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param LinearCoCFactorFar",
+                    "name": "Linear Circles of Confusion Factor: Far",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param ApertureShape",
+                    "name": "Aperture Shape",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param DiaphragmRotate",
+                    "name": "Diaphragm Rotate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param CoCBlurCountPreMask",
+                    "name": "Circles of Confusion: Blur Count Pre-mask",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param CoCBlurCount(1)",
+                    "name": "Circles of Confusion: Blur Count [1]",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param CoCBlurCount(2)",
+                    "name": "Circles of Confusion: Blur Count [2]",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Lens Simulation Param MaxBlurLevel",
+                    "name": "Max Blur Level",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param CoCMode",
+                    "name": "Circles of Confusion Mode",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param NearCoCMode Linear",
+                    "name": "Is Near Circles of Confusion Mode Linear",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param FarCoCMode Linear",
+                    "name": "Is Far Circles of Confusion Mode Linear",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param HiResolutionBlur",
+                    "name": "High Resolution Blur",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param NearFarSeparatedBlur",
+                    "name": "Near Far Separated Blur",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param PreTempAA",
+                    "name": "Pre-Temporal Anti-Alias",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "[GS]Lens Simulation Param TemporalFeedbackWeight",
+                    "name": "Temporal Feedback Weight",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Lens Simulation Param AffectedByTransparentDepth",
+                    "name": "Affected by Transparent Depth",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                }
+            ]
+        },
+        {
+            "id": "Cloud Shadow:Editor",
+            "name": "Cloud Shadow",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Unknown",
+                    "name": "Unknown",
+                    "description": "",
+                    "attributes": "IsType[Unknown]"
+                }
+            ]
+        },
+        {
+            "id": "Wet ParamEditor",
+            "name": "Wet",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Wet-OverrideAlbedo",
+                    "name": "Override Albedo Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Wet-OverrideShininess",
+                    "name": "Override Shininess",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Wet-AlbedoRate",
+                    "name": "Albedo Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Wet-ShininessRate",
+                    "name": "Shininess Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "SSR ParamEditor",
+            "name": "Screen Space Reflections",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "SSR Enable",
+                    "name": "Enable Screen Space Reflections",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "SSR TraverseMode",
+                    "name": "Traverse Mode",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "SSR Shininess Reject Threshold",
+                    "name": "Shininess Reject Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Depth Reject Threshold",
+                    "name": "Depth Reject Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Fade To Viewer Start",
+                    "name": "Fade to Viewer Start",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Fresnel Reject Threshold",
+                    "name": "Fresnel Reject Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Ray Trace Step Scale Min",
+                    "name": "Ray Trace Step Scale Min",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Ray Trace Step Scale Max",
+                    "name": "Ray Trace Step Scale Max",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Display Mip Scale",
+                    "name": "Display Mip Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Display Mip Offset",
+                    "name": "Display Mip Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Depth Fade Range",
+                    "name": "Depth Fade Range",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Geom Crack Detect Factor",
+                    "name": "Geom Crack Detect Factor",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Tex Blur Sigma",
+                    "name": "Texture Blur Sigma",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Tex Blur Sigma for Mip",
+                    "name": "Texture Blur Sigma for Mip",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "VolumetricFog ParamEditor",
+            "name": "Volumetric Fog",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "VolumetricFog Enable",
+                    "name": "Enable Volumetric Fog",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog VolumeWidth",
+                    "name": "Volume Width",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog VolumeDepth",
+                    "name": "Volume Depth",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog ale",
+                    "name": "Game Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog NearDepth",
+                    "name": "Near Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog FarDepth",
+                    "name": "Far Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog NearOffset",
+                    "name": "Near Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog FogEndDepth",
+                    "name": "Fog End Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DrawTiming",
+                    "name": "Draw Timing",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "VolumetricFog EnableAnalyticalFog",
+                    "name": "Enable Analytical Fog",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog VolumeSliceSampleOffset",
+                    "name": "Volume Slice Sample Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog CullingBySceneDepth",
+                    "name": "Culling By Scene Depth",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog CancelInScatteringRateFromSSR",
+                    "name": "Cancel in Scattering Rate From Screen Space Reflection",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global FixedDensity",
+                    "name": "Fixed Density",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global ScatteringG",
+                    "name": "Scattering G",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global LocalLightScale",
+                    "name": "Local Light Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global LocalLightDistScale",
+                    "name": "Local Light Distance Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogDistribution",
+                    "name": "Height Fog Distribution",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogOffset",
+                    "name": "Height Fog Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogReferenceOffset",
+                    "name": "Height Fog Reference Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogReferenceModeRate",
+                    "name": "Height Fog Reference Mode Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogDensity Scale",
+                    "name": "Height Fog Density Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global AbsorptionScale",
+                    "name": "Absorption Scale",
+                    "description": "",
+                    "attributes": "IsType[Float3]"
+                },
+                {
+                    "id": "VolumetricFog SkyLight SkyColor",
+                    "name": "Sky Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "VolumetricFog SkyLight HeightAtten",
+                    "name": "Sky Height Attenuation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog SkyLight StartDist",
+                    "name": "Sky Start Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight LightBankId",
+                    "name": "Directional Light: Light Bank ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight LightId",
+                    "name": "Directional Light: Light ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight DirectColor",
+                    "name": "Directional Light: Direct Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "VolumetricFog DirLight OppositeColor",
+                    "name": "Directional Light: Opposite Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "VolumetricFog DirLight HeightAtten",
+                    "name": "Directional Light: Height Attenuation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight StartDist",
+                    "name": "Directional Light: Start Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight ShadowSampleCount",
+                    "name": "Directional Light: Shadow Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight ShadowDither",
+                    "name": "Directional Light: Shadow Dither",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight AngleClip",
+                    "name": "Directional Light: Angle Clip",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight EnableReproj",
+                    "name": "Directional Light: Enable Reprojection",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight JitterCount",
+                    "name": "Directional Light: Jitter Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight JitterXYSize",
+                    "name": "Directional Light: Jitter XY Size",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight FeedbackWeight",
+                    "name": "Directional Light: Feedback Weight",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog FogVolume InjectingSampleCount",
+                    "name": "Injecting Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog FogVolume InjectingDither",
+                    "name": "Injecting Dither",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog FogVolume InjectingReprojEnabled",
+                    "name": "Injecting Reprojection Enabled",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog FogVolume InjectingFeedbackWeight",
+                    "name": "Injecting Feedback Weight",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Config SampleCount",
+                    "name": "Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog Config Dither",
+                    "name": "Dither",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "FogVolume ParamEditor",
+            "name": "Fog Volume",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "FogVolume DrawArea NearFadeMinDistance",
+                    "name": "Draw Area: Near Fade Minimum Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea NearFadeMaxDistance",
+                    "name": "Draw Area: Near Fade Maximum Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea EdgeFadeDistance",
+                    "name": "Draw Area: Edge Fade Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea EdgeFadeExponent",
+                    "name": "Draw Area: Edge Fade Exponent",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea HeightFallOff",
+                    "name": "Draw Area: Height Fall Off",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea FadeDistanceForHeightMap",
+                    "name": "Draw Area: Fade Distance for Height Map",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea MaxInjectingDepth",
+                    "name": "Draw Area: Max Injecting Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume RayMarching MaxSampleCount",
+                    "name": "Ray Marching: Max Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "FogVolume RayMarching SteppingDistance",
+                    "name": "Ray Marching: Stepping Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume RayMarching SuspendedTransmittance",
+                    "name": "Ray Marching: Suspended Transmittance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume RayMarching LightProcessingInterval",
+                    "name": "Ray Marching: Light Processing Interval",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "FogVolume RayMarching LightProcessingIntervalThreshold",
+                    "name": "Ray Marching: Light Processing Interval Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Light Overwrite",
+                    "name": "Light: Overwrite",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "FogVolume Light DirectionalLightAngle",
+                    "name": "Light: Directional Light Angle",
+                    "description": "",
+                    "attributes": "IsType[Float2]"
+                },
+                {
+                    "id": "FogVolume Light DirectionalLightColor",
+                    "name": "Light: Directional Light Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "FogVolume Light DirectionalLightOppositeColor",
+                    "name": "Light: Directional Light Opposite Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "FogVolume Light AmbientColor",
+                    "name": "Light: Ambient Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "FogVolume Light ShadowingIntensity",
+                    "name": "Light: Shadowing Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Light AttenuationIntensity",
+                    "name": "Light: Attenuation Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Light AttenuationOffset",
+                    "name": "Light: Attenuation Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Light OctaveNumPerlinNoise",
+                    "name": "Light: Octave Number of Perlin Noise",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "FogVolume Density Intensity",
+                    "name": "Density: Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume PerlinNoise Frequency",
+                    "name": "Perlin Noise: Frequency",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume PerlinNoise Lacunarity",
+                    "name": "Perlin Noise: Lacunarity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume PerlinNoise Gain",
+                    "name": "Perlin Noise: Gain",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume PerlinNoise Offset",
+                    "name": "Perlin Noise: Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Scroll Speed-x",
+                    "name": "Scroll Speed: X",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Scroll Speed-y",
+                    "name": "Scroll Speed: Y",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Scroll Speed-z",
+                    "name": "Scroll Speed: Z",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Scroll DetailScale",
+                    "name": "Scroll Detail Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "EnvironmentConfig ParamEditor",
+            "name": "Environment Config",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Unknown",
+                    "name": "Unknown",
+                    "description": "",
+                    "attributes": "IsType[Unknown]"
+                }
+            ]
+        },
+        {
+            "id": "RayTracing ParamEditor",
+            "name": "Ray Tracing",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Unknown",
+                    "name": "Unknown",
+                    "description": "",
+                    "attributes": "IsType[Unknown]"
+                }
+            ]
+        },
+        {
+            "id": "HDR ColorCorrection",
+            "name": "High Dynamic Range Color Correction",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "HDR ColorCorrection ColorH",
+                    "name": "Hue",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "HDR ColorCorrection ColorS",
+                    "name": "Saturation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "HDR ColorCorrection ColorV",
+                    "name": "Value",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "HDR ColorCorrection ColorShift",
+                    "name": "Color Shift",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "HDR ColorCorrection ColorScale",
+                    "name": "Color Scale",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "HDR ColorCorrection Contrast",
+                    "name": "Contrast",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "ColorParaffin Filter-Editor",
+            "name": "Color Paraffin Filter",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "ColorParaffin Filter-Enable",
+                    "name": "Enable Color Paraffin Filter",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "ColorParaffin Filter-Mode",
+                    "name": "Filter Mode",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "ColorParaffin Radiation - CenterPos",
+                    "name": "Center Position",
+                    "description": "",
+                    "attributes": "IsType[Float2]"
+                },
+                {
+                    "id": "ColorParaffin Radiation - Radius",
+                    "name": "Radius",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "ColorParaffin Radiation - StartColor",
+                    "name": "Start Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "ColorParaffin Radiation - EndColor",
+                    "name": "End Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "ColorParaffin Radiation - Curvature",
+                    "name": "Curvature",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                }
+            ]
+        },
+        {
+            "id": "AboveShadow ParamEditor",
+            "name": "Above Shadow",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Unknown",
+                    "name": "Unknown",
+                    "description": "",
+                    "attributes": "IsType[Unknown]"
+                }
+            ]
+        }
+   ]
+}

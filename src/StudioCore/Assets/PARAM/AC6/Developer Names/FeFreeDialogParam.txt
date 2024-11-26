@@ -1,0 +1,31 @@
+0 Sample: Upper left (small) -- サンプル：左上(小)
+1 Sample: Upper left (large) -- サンプル：左上(大)
+10 Sample: Center (small) -- サンプル：中央(小)
+11 Sample: Center (large) -- サンプル：中央(大)
+101 Mission dialogue 1 -- ミッションダイアログ1
+102 mission dialogue 2 -- ミッションダイアログ2
+103 mission dialogue 3 -- ミッションダイアログ3
+104 Mission dialogue 2-1 -- ミッションダイアログ2-1
+105 Mission dialogue 2-2 -- ミッションダイアログ2-2
+106 Mission dialogue 2-3 -- ミッションダイアログ2-3
+107 Mission dialogue 3-1 -- ミッションダイアログ3-1
+108 Mission dialogue 3-2 -- ミッションダイアログ3-2
+109 Mission dialogue 3-3 -- ミッションダイアログ3-3
+110 subtitle test -- 字幕テスト
+200 Image production test 01 -- 画像演出テスト01
+201 Image production test 02 -- 画像演出テスト02
+202 Image production test 03 -- 画像演出テスト03
+203 Image production test 04 -- 画像演出テスト04
+204 Image production test 05 -- 画像演出テスト05
+205 Image production test 06 -- 画像演出テスト06
+206 blackout mock -- 暗転モック
+300 Mission log: top left, middle -- ミッションログ：左上、中
+301 Mission log: Upper left, 1st grade -- ミッションログ：左上、小1
+302 Mission log: Upper left, 2nd grade -- ミッションログ：左上、小2
+400 Submission log: top left, middle -- サブミッションログ：左上、中
+401 Submission log: Upper left, 1st grade -- サブミッションログ：左上、小1
+402 Submission log: Upper left, 2nd grade -- サブミッションログ：左上、小2
+500 Out of area warning display -- エリア外警告表示
+600 on center display -- 中央表示上
+601 center display bottom -- 中央表示下
+602 test display -- テスト表示

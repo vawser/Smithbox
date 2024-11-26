@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="GX_SHADOW_FILTER_LEVEL" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <enabled AltName="Shadow Enabled" Wiki="Shadow is enabled" IsBool="" />
+    <maxFilterLevel AltName="Maximum Filter Level" Wiki="Maximum filter quality allowed" Enum="GX_SHADOW_FILTER_LEVEL" />
+    <dmy AltName=""/>
+    <textureSizeScaler AltName="Texture Size Scalar" Wiki="Scaler with set shadow map resolution" />
+    <textureSizeDivider AltName="Texture Size Division" Wiki="Divide the set shadow map resolution" />
+    <textureMinSize AltName="Minimum Resolution" Wiki="Clamp resolution" />
+    <textureMaxSize AltName="Maximum Resolution" Wiki="Clamp the resolution. It will be the resolution judgment for each cascade" />
+    <blurCountBias AltName="Blur Count Bias" Wiki="Blur count bias (set count bias, unchanged at 0)" />
+  </Field>
+  <Self />
+</PARAMMETA>

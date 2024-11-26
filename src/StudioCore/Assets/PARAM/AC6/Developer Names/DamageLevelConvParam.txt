@@ -1,0 +1,132 @@
+0 test -- テスト
+9 For DL ​​direct value confirmation -- DL直値確認用
+1020 machine gun -- マシンガン
+1040 bazooka -- バズーカ
+1050 shotgun -- ショットガン
+1160 bolt action rifle -- ボルトアクションライフル
+2000 missile -- ミサイル
+3000 Blade (light attack) -- ブレード(弱攻撃)
+3001 Blade (strong attack) -- ブレード(強攻撃)
+10000 semi-automatic rifle -- セミオートライフル
+10001 └Semi-auto rifle (single charge) -- └セミオートライフル（単発チャージ）
+10100 assault rifle -- アサルトライフル
+10200 machine gun -- マシンガン
+10300 gatling gun -- ガトリングガン
+10400 bazooka -- バズーカ
+10500 shotgun -- ショットガン
+10600 grenade rifle -- グレネードライフル
+10700 Handgun (fire) -- ハンドガン（連射）
+10710 Handgun (single shot) -- ハンドガン（単発）
+10800 throwing gun -- 投擲銃
+10900 hand missile -- ハンドミサイル
+11000 hand rocket -- ハンドロケット
+11100 laser rifle -- レーザーライフル
+11101 └Laser rifle (charge) -- └レーザーライフル（チャージ）
+11200 plasma rifle -- プラズマライフル
+11300 pulse gun -- パルスガン
+11400 laser bazooka -- レーザーバズーカ
+11500 laser shotgun -- レーザーショットガン
+11600 flamethrower -- 火炎放射
+11700 Degraded uranium bazooka -- 劣化ウランバズーカ
+11800 [test] stun gun -- 【test】スタンガン
+20000 laser blade -- レーザーブレード
+20010 └Laser blade (reservoir) -- └レーザーブレード（溜め）
+20100 PA breaker -- PAブレイカー
+20110 └PA breaker (reservoir) -- └PAブレイカー（溜め）
+20111 └PA Breaker (body attack) -- └PAブレイカー（体当たり）
+20200 plasma broadsword -- プラズマブロードソード
+20210 └Plasma broadsword (reservoir) -- └プラズマブロードソード（溜め）
+20300 laser naginata -- レーザー薙刀
+20310 └Laser naginata (charged rotation) -- └レーザー薙刀（溜め回転）
+20311 └Laser naginata (damage finish) -- └レーザー薙刀（溜めフィニッシュ）
+20400 laser dagger -- レーザーダガー
+20410 └Laser dagger (reservoir) -- └レーザーダガー（溜め）
+20500 Laser Lance (Charge) -- レーザーランス（突進）
+20510 └Laser Lance (Finish) -- └レーザーランス（フィニッシュ）
+20600 Chainsaw (light attack) -- チェーンソー（弱攻撃）
+20610 └Chainsaw (rotating loop) -- └チェーンソー（回転ループ）
+20620 └Chainsaw (strong attack finish) -- └チェーンソー（強攻撃フィニッシュ）
+20700 electromagnetic hammer -- 電磁ハンマー
+20701 └Electromagnetic hammer (loop) -- └電磁ハンマー（ループ）
+20710 └Electromagnetic hammer (reservoir) -- └電磁ハンマー（溜め）
+20711 └Electromagnetic hammer (charge/explosion) -- └電磁ハンマー（溜め・爆発）
+20800 Explosive pile (weak) -- 爆裂パイル（弱）
+20810 └Explosive pile (strong) -- └爆裂パイル（強）
+20900 Electromagnetic baton (weak) -- 電磁警棒（弱）
+20910 └Electromagnetic baton (strong) -- └電磁警棒（強）
+30000 plasma missile -- プラズマミサイル
+30100 AI missile -- AIミサイル
+30200 twin missiles -- 連装ミサイル
+30300 special plasma missile -- 特殊プラズマミサイル
+30400 vertical missile -- 垂直ミサイル
+30500 depleted uranium missile -- 劣化ウランミサイル
+30600 large missile -- 大型ミサイル
+30700 special missile -- 特殊ミサイル
+30800 Back missile_middle 1 -- 背ミサイル_中1
+30900 Back missile_slightly heavy 3 -- 背ミサイル_やや重3
+31000 rocket -- ロケット
+32000 shoulder bazooka -- 肩バズーカ
+32100 shoulder grenade -- 肩グレネード
+32200 shoulder laser cannon -- 肩レーザーキャノン
+32300 shoulder plasma cannon -- 肩プラズマキャノン
+32400 shoulder pulse gun -- 肩パルスガン
+32500 shoulder laser bazooka -- 肩レーザーバズーカ
+32700 Anti-worm firearm -- 対ワーム用火器
+50000 assault boost -- アサルトブースト
+50010 Assault Boost_Kick -- アサルトブースト_キック
+100000 No reaction -- 反応なし
+100010 until addition -- 加算まで
+100020 until hit back -- ヒットバックまで
+100030 Even a slight wobble -- 小よろけまで
+100040 Until the big stagger -- 大よろけまで
+100050 Until it blows away -- 吹っ飛びまで
+100060 Forced blow-off -- 強制吹っ飛び
+99900000 ■Machine gun -- ■マシンガン
+99900010 ■Gatling gun -- ■ガトリングガン
+99900020 ■Assault rifle -- ■アサルトライフル
+99900030 ■Semi-auto rifle -- ■セミオートライフル
+99900040 ■Shotgun -- ■ショットガン
+99900050 ■Hand gun -- ■ハンドガン
+99900060 ■Sniper rifle -- ■スナイパーライフル
+99900070 ■Railgun -- ■レールガン
+99900080 ■Bazooka -- ■バズーカ
+99900090 ■Grenade -- ■グレネード
+99900100 ■Cluster grenade -- ■クラスターグレネード
+99900110 ■Napalm -- ■ナパーム
+99900120 ■Rocket -- ■ロケット
+99900130 ■Missile -- ■ミサイル
+99900140 ■Throwing gun -- ■投擲銃
+99900150 ■Mine -- ■マイン
+99900160 ■F Mine -- ■Fマイン
+99900170 ■Laser machine gun -- ■レーザーマシンガン
+99900180 ■Laser shotgun -- ■レーザーショットガン
+99900190 ■Laser rifle -- ■レーザーライフル
+99900200 ■High laser -- ■ハイレーザー
+99900210 ■Sniper laser -- ■狙撃レーザー
+99900220 ■Irradiation laser -- ■照射レーザー
+99900230 ■Pulse gun -- ■パルスガン
+99900240 ■Plasma gun -- ■プラズマガン
+99900250 ■Orbit -- ■オービット
+99900260 ■Orbit (Yarijuku) -- ■オービット（槍衾）
+99900270 ■Flame radiation -- ■火炎放射
+99900280 ■Substance shield -- ■実体シールド
+99900290 ■PA shield -- ■PAシールド
+99900300 ■Bash shield -- ■バッシュシールド
+99900310 ■Laser blade -- ■レーザーブレード
+99900320 ■Heat ax -- ■ヒートアックス
+99900330 ■Kick -- ■キック
+99900340 ■Laser whip -- ■レーザーウィップ
+99900350 ■EN Lance -- ■ENランス
+99900360 ■Plasma pile -- ■プラズマパイル
+99900370 ■Flare -- ■フレア
+99901000 ■Fighting general purpose -- ■格闘汎用
+99902000 ■Blast general purpose -- ■爆風汎用
+99902100 ■Blast general purpose (small) -- ■爆風汎用(小）
+99990000 ■Up to addition -- ■加算まで
+99990010 ■(Small) Up to medium stagger -- ■（小）中よろけまで
+99990020 ■Until the big stagger -- ■大よろけまで
+99990030 ■Until it blows away -- ■吹っ飛びまで
+99990040 ■No major staggers -- ■大よろけのみ無し
+99990120 ■Minimum small stagger _ up to large stagger -- ■最低小よろけ_大よろけまで
+99990130 ■Minimum slight stagger_until blown away -- ■最低小よろけ_吹っ飛びまで
+99996420 ■Mining ship eyeball main gun (spread) -- ■採掘艦目玉主砲（拡散）

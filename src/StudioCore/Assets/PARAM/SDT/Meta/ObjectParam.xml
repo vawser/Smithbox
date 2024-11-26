@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <hp Wiki="Durability until destruction (-1: indestructible)" />
+	<defense Wiki="Object attack power below this value causes no damage" />
+	<extRefTexId />
+	<materialId Wiki="Material ID. Treated the same as floor material. When it is -1, the behavior is the same as before." />
+	<animBreakIdMax />
+	<isSaveBreakState Wiki="Whether to save the destruction state in save data" IsBool="" />
+	<isBreakByPlayerCollide Wiki="Will the object break by coming into contact with the player?" IsBool="" />
+	<isAnimBreak IsBool="" />
+	<isPenetrationBulletHit Wiki="Will the penetrating bullet hit?" IsBool="" />
+	<pad8 />
+	<isAttackBacklash Wiki="Whether to deflect the attack" IsBool="" />
+	<isDisableBreakForFirstAppear Wiki="Broken at the initial appearance of the player?" IsBool="" />
+	<isLadder Wiki="Is it a ladder?" IsBool="" />
+	<isAnimPauseOnRemoPlay Wiki="Whether to stop the animation during the movie" IsBool="" />
+	<pad9 />
+	<isMoveObj Wiki="Is it a moving object? " IsBool="" />
+	<isRopeBridge Wiki="Is it a suspension bridge object?" IsBool="" />
+    <isAddRigidImpulse_ByDamage Wiki="Whether the rigid body is blown away by damage" IsBool="" />
+	<isBreak_ByChrRide Wiki="Will it break if a character rides it?" IsBool="" />
+	<isBurn Wiki="Will the object burn?" IsBool="" />
+	<isBreakByEnemyCollide Wiki="Will the object break by coming into contact with Npc's" IsBool="" />
+	<defaultLodParamId Wiki="Default LOD parameter ID (-1: None)" />
+	<breakSfxId Wiki="SFXID when destroying object (-1: default (810030))" />
+	<breakSfxCpId Wiki="SFX generation position dummy poly ID when object is destroyed (-1: model center, -2: placement position)" />
+	<breakBulletBehaviorId Wiki="Bullet shot when the object breaks" Refs="BehaviorParam" />
+	<breakBulletCpId Wiki="Dummypoly the bullet spawns from (-1: Placement position)" />
+	<breakFallHeight Wiki="Height at which the object breaks when falling (0: it does not break when falling)" />
+	<windEffectType_0 Wiki="Wind effect type (before destruction)" />
+	<windEffectType_1 Wiki="Wind effect type (before destruction)" />
+	<camAvoidType Wiki="What to do when an object blocks the camera and player" />
+	<windEffectRate_0 Wiki="Wind coefficient (before destruction)" />
+	<windEffectRate_1 Wiki="Wind coefficient (before destruction)" />
+	<breakStopTime Wiki="Time from when the rigid body is forcibly stopped after being destroyed (0 means no forced stop)" />
+	<burnTime Wiki="Burning time (seconds) (continues burning at 0)" />
+	<burnBraekRate Wiki="Burnup threshold for switching to destructive state" />
+	<burnSfxId Wiki="SFXID during combustion: 0 (-1: No SFX)" />
+	<burnSfxId_1 Wiki="SFXID during combustion: 1 (-1: No SFX)" />
+	<burnSfxId_2 Wiki="SFXID during combustion: 2 (-1: No SFX)" />
+	<burnSfxId_3 Wiki="SFXID during combustion: 3 (-1: No SFX)" />
+	<burnBulletBehaviorId Wiki="Bullet shot while the object is burning" Refs="BehaviorParam" />
+	<burnBulletBehaviorId_1 Wiki="Bullet shot while the object is burning" Refs="BehaviorParam" />
+    <burnBulletBehaviorId_2 Wiki="Bullet shot while the object is burning" Refs="BehaviorParam" />
+    <burnBulletBehaviorId_3 Wiki="Bullet shot while the object is burning" Refs="BehaviorParam" />
+	<burnBulletInterval Wiki="Interval at which fire spread bullets are generated (frames)" />
+	<navimeshFlag Wiki="Navmesh flag set from object" />
+	<collisionType Wiki="Collision detection type" />
+	<burnBulletDelayTime Wiki="Time to delay fire spread bullet generation (seconds)" />
+	<burnSfxDelayTimeMin Wiki="Minimum SFX generation delay time during combustion for burnSfxId. Randomly determined between start and end time" />
+	<burnSfxDelayTimeMin_1 Wiki="Minimum SFX generation delay time during combustion for burnSfxId_1. Randomly determined between start and end time" />
+	<burnSfxDelayTimeMin_2 Wiki="Minimum SFX generation delay time during combustion for burnSfxId_2. Randomly determined between start and end time" />
+	<burnSfxDelayTimeMin_3 Wiki="Minimum SFX generation delay time during combustion for burnSfxId_3. Randomly determined between start and end time" />
+	<burnSfxDelayTimeMax Wiki="Maximum SFX generation delay time during combustion for burnSfxId. Randomly determined between start and end time" />
+	<burnSfxDelayTimeMax_1 Wiki="Maximum SFX generation delay time during combustion for burnSfxId_1. Randomly determined between start and end time" />
+	<burnSfxDelayTimeMax_2 Wiki="Maximum SFX generation delay time during combustion for burnSfxId_2. Randomly determined between start and end time" />
+	<burnSfxDelayTimeMax_3 Wiki="Maximum SFX generation delay time during combustion for burnSfxId_3. Randomly determined between start and end time" />
+	<BreakAiSoundID Wiki="AI sound ID generated when destroyed" Refs="AiSoundParam" />
+	<FragmentInvisibleWaitTime Wiki="Fragment material ID (-1: Do not hide)" />
+	<FragmentInvisibleTime Wiki="Time to hide fragments (seconds)" />
+	<pad_3 />
+	<RigidPenetrationScale_Soft Wiki="Rigid body soft contact settings Collision point distance coefficient [Soft]" />
+	<RigidPenetrationScale_Normal Wiki="Rigid body soft contact settings Collision point distance coefficient [Normal]" />
+	<RigidPenetrationScale_Hard Wiki="Rigid body soft contact settings Collision point distance factor [Hard]" />
+	<LandTouchSfxId Wiki="SFXID when touching terrain (-1: offset by terrain material)" />
+	<isDamageCover Wiki="Whether or not to pass the damage to the opposite side when receiving damage (0: Pass, 1: Do not pass)" IsBool="" />
+	<isUserPhysicForChrCollide Wiki="After collision destruction, is it possible to perform Havok processing and re-destruction with the same shape?" IsBool="" />
+	<paintDecalTargetTextureSize Wiki="Paint decal target size (0 to 4096, only powers of 2 allowed)" />
+	<lifeTime_forDC Wiki="Time until the dynamically generated Obj disappears after being created (0: does not disappear)" />
+	<clothUpdateDist Wiki="Distance from the camera to update havokCloth (0: Always update)" />
+	<contactSeId Wiki="ID of the SE that plays when touched by the local player you control (-1: does not play)" />
+	<breakLandingSfxId Wiki="Identifier of object material-dependent SFX that plays when it first lands after being destroyed (-1: does not occur)" />
+	<extHitSfx_S Wiki="ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)" />
+	<extHitSfx_M Wiki="ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)" />
+	<extHitSfx_L Wiki="ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)" />
+	<extHitSfx_LL Wiki="ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)" />
+	<extHitSfx_LLL Wiki="ID of the SFX issued at the same time as the landing SFX. Information other than attack strength [SFX] (such as material) is not considered. (-1: No SFX)" />
+	<breakSfxOffsetX Wiki="Coordinates to offset for 'SFX dummy poly ID at destruction'" />
+	<breakSfxOffsetY Wiki="Coordinates to offset for 'SFX dummy poly ID at destruction'" />
+	<breakSfxOffsetZ Wiki="Coordinates to offset for 'SFX dummy poly ID at destruction'" />
+	<isEnableWallJump Wiki="Can the player wall jump off this object?" IsBool="" />
+	<doesStopPlayerDockedMove Wiki="Whether to stop when it comes into contact with a PC that is docked and moving" IsBool="" />
+	<isDisableEnvMapCapture Wiki="Do not shoot when shooting an environment map" IsBool="" />
+	<pad_5 />
+	<autoDrawGroupPassPixel Wiki="When generating an automatic drawing group, if more than this number of pixels are visible, a drawing group flag will be set. (-1: Default value. Defined in game.properties Draw.AutoDrawGroup.PassPixelNum)" />
+	<autoDrawGroupDisableDepthWrite Wiki="Set it on the door etc." />
+	<useExpandVolume Wiki="Use when you want to widen the visibility judgment in automatic drawing groups. Even though the 'visible judgment' is expanded, the occlusion by this model remains the same" IsBool="" />
+	<pad_6 />
+    <SpecialEffectId_InsideHit Wiki="Special effect ID to be applied to the character within the hit. Valid only if the collision detection type is 'No camera, lock, or damage, Only damage, or Only damage, but no bullets.'" Refs="SpEffectParam" />
+	<expandVolumeX_plus Wiki="In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the expansion distance in the +X direction and the expansion distance in the -X direction separately." />
+	<expandVolumeX_minus Wiki="In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the expansion distance in the +X direction and the expansion distance in the -X direction separately." />
+	<expandVolumeY_plus Wiki="In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the upward expansion distance and downward expansion distance separately" />
+	<expandVolumeY_minus Wiki="In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the upward expansion distance and downward expansion distance separately" />
+	<expandVolumeZ_plus Wiki="In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the expansion distance in the +Z direction and the expansion distance in the -Z direction separately." />
+	<expandVolumeZ_minus Wiki="In the automatic drawing group, extend the visibility judgment area from the model bounding box. Specify the expansion distance in the +Z direction and the expansion distance in the -Z direction separately." />
+	<camDitherFadeMinDist Wiki="Camera dither fade minimum distance. Setting both 'Camera dither fade minimum distance' and 'Camera dither fade maximum distance' to '0.0' disables camera dither fade." />
+	<camDitherFadeMaxDist Wiki="Maximum camera dither fade distance. Setting both 'Camera dither fade minimum distance' and 'Camera dither fade maximum distance' to '0.0' disables camera dither fade." />
+  </Field>
+  <Self Wiki="Params for MSB objects" AlternativeOrder="hp,defense,-,
+breakBulletCpId,breakBulletBehaviorId,breakStopTime,breakFallHeight,isBreakByEnemyCollide,isBreakByPlayerCollide,isBreak_ByChrRide,breakSfxId,breakSfxCpId,breakLandingSfxId,breakSfxOffsetX,breakSfxOffsetY,breakSfxOffsetZ,animBreakIdMax,BreakAiSoundID,-,
+isAddRigidImpulse_ByDamage,isAnimBreak,isAnimPauseOnRemoPlay,isAttackBacklash,isDamageCover,isDisableBreakForFirstAppear,isDisableEnvMapCapture,isEnableWallJump,isLadder,isMoveObj,isPenetrationBulletHit,isRopeBridge,isSaveBreakState,isUserPhysicForChrCollide,doesStopPlayerDockedMove,-,
+SpecialEffectId_InsideHit,-,
+useExpandVolume,expandVolumeX_plus,expandVolumeX_minus,expandVolumeY_plus,expandVolumeY_minus,expandVolumeZ_plus,expandVolumeZ_minus,-,
+windEffectRate_0,windEffectRate_1,windEffectType_0,windEffectType_1,-,
+extRefTexId,-,
+extHitSfx_S,extHitSfx_M,extHitSfx_L,extHitSfx_LL,extHitSfx_LLL,-,
+camAvoidType,camDitherFadeMaxDist,camDitherFadeMinDist,-,
+autoDrawGroupPassPixel,autoDrawGroupDisableDepthWrite,-,
+FragmentInvisibleTime,FragmentInvisibleWaitTime,-,
+lifeTime_forDC,clothUpdateDist,-,
+RigidPenetrationScale_Soft,RigidPenetrationScale_Normal,RigidPenetrationScale_Hard,-,
+paintDecalTargetTextureSize,-,
+materialId,navimeshFlag,collisionType,LandTouchSfxId,contactSeId,defaultLodParamId,-,
+isBurn,burnTime,burnBraekRate,burnBulletInterval,burnBulletDelayTime,burnBulletBehaviorId,burnBulletBehaviorId_1,burnBulletBehaviorId_2,burnBulletBehaviorId_3,burnSfxId,burnSfxId_1,burnSfxId_2,burnSfxId_3,burnSfxDelayTimeMin,burnSfxDelayTimeMin_1,burnSfxDelayTimeMin_2,burnSfxDelayTimeMin_3,burnSfxDelayTimeMax,burnSfxDelayTimeMax_1,burnSfxDelayTimeMax_2,burnSfxDelayTimeMax_3,-,
+pad_3,pad_5,pad_6,pad_7,pad8,pad9,-" />
+</PARAMMETA>

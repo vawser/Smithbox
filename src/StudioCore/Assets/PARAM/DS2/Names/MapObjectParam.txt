@@ -1,0 +1,1435 @@
+0 Default -- デフォルト
+1 【General purpose】Ground for model viewer -- 【汎用】モデルビューア用地面
+100 【General purpose】Stooping fire -- 【汎用】かがり火
+110 【General purpose】King's vessel -- 【汎用】王の器
+200 【General purpose】Wooden treasure chest (light) -- 【汎用】木の小宝箱（軽）
+201 【General purpose】Iron treasure chest -- 【汎用】鉄の宝箱
+202 【General purpose】Trap small treasure chest (light) -- 【汎用】トラップ小宝箱（軽）
+210 【General purpose】Iron treasure chest (heavy) -- 【汎用】鉄の小宝箱（重）
+211 【General purpose】Iron treasure chest (heavy) [key of the prison] -- 【汎用】鉄の小宝箱（重）【牢の鍵】
+230 【General purpose】Stone treasure chest (heavy) -- 【汎用】石の大宝箱（重）
+240 【General Purpose】Treasure Corpse Adventurer_Mummy -- 【汎用】宝死体　冒険者_ミイラ
+241 【General purpose】Treasure corpse dead: clothes of the sick♂ -- 【汎用】宝死体　亡者：病人の服♂
+242 【General purpose】Treasure corpse dead: Clothes of the traveler♂ -- 【汎用】宝死体　亡者：旅人の服♂
+243 【General purpose】Treasure corpse dead: Wealthy -- 【汎用】宝死体　亡者：富裕層
+244 【General purpose】Treasure corpse Lower soldier (dead) -- 【汎用】宝死体　下級兵士（亡者）
+245 【General purpose】Treasure corpse dead: Farmer ♂ -- 【汎用】宝死体　亡者：農民♂
+246 【General Purpose】Treasure Corpse Kingdom Soldier (Deceased) -- 【汎用】宝死体　王国兵士（亡者）
+247 【General Purpose】Treasure Corpse Kingdom Soldier (Live) -- 【汎用】宝死体　王国兵士（生者）
+248 【General purpose】Treasure corpse dead workers -- 【汎用】宝死体　死者の労働者
+249 【General Purpose】Treasure Corpse Adventurer_Sorcerer -- 【汎用】宝死体　冒険者_呪術師
+250 [General purpose] treasure corpse adventurer _ soldier -- 【汎用】宝死体　冒険者_兵士
+251 [General purpose] treasure corpse adventurer_hunter -- 【汎用】宝死体　冒険者_狩人
+252 [General purpose] treasure corpse adventurer _ lightweight warrior -- 【汎用】宝死体　冒険者_軽量戦士
+253 【General Purpose】Treasure Corpse Adventurer_Magic Soldier -- 【汎用】宝死体　冒険者_魔術兵士
+254 【General Purpose】Treasure Corpse Adventurer_Dragon Professor -- 【汎用】宝死体　冒険者_龍の教授
+255 [General purpose] treasure corpse c7410 heart broken warrior -- 【汎用】宝死体　c7410　心折れた戦士
+256 【General purpose】Treasure corpse Human bones (whole body) -- 【汎用】宝死体　人骨（全身）
+257 【General purpose】Treasure corpse human bone (skull) -- 【汎用】宝死体　人骨(頭骸骨)
+258 【General purpose】Treasure corpse Human bone (mountain of bone) -- 【汎用】宝死体　人骨(骨の山)
+259 【General purpose】Treasure corpse cow bone (whole body) -- 【汎用】宝死体　牛骨(全身)
+260 【General purpose】Treasure corpse cow bone (skull) -- 【汎用】宝死体　牛骨(頭蓋骨)
+290 【General purpose】Petrified corpse -- 【汎用】石化死体
+300 【General purpose】Wooden one door light -- 【汎用】木の片扉　軽
+301 【General purpose】Wooden one door light (castle- fort door) -- 【汎用】木の片扉　軽（城、砦の扉）
+302 【General purpose】Wooden one door Light (village door) -- 【汎用】木の片扉　軽（村の扉）
+303 【General purpose】Wooden one door light (old door) -- 【汎用】木の片扉　軽（古びた扉）
+304 【General purpose】One door of the tree light cannot be destroyed (door of the castle and the fort) -- 【汎用】木の片扉　軽　破壊不可（城、砦の扉）
+305 【General purpose】Wooden one door light (village door) -- 【汎用】木の片扉　軽　（村の扉）
+306 【General purpose】Wooden one door light (old door) -- 【汎用】木の片扉　軽　（古びた扉）
+307 【General purpose】One door of the wooden lattice (door of the castle and the fort) -- 【汎用】木格子の片扉（城、砦の扉）
+308 【General purpose】One door of the iron bar (door of the castle and the fort) -- 【汎用】鉄格子の片扉（城、砦の扉）
+310 【General purpose】One door of the tree can be destroyed -- 【汎用】木の片扉　破壊可能
+311 【General purpose】Wooden one door light (old door) -- 【汎用】木の片扉　軽　（古びた扉）
+312 【General purpose】Wooden one door light (old door) -- 【汎用】木の片扉　軽　（古びた扉）
+314 [General purpose] the door of the royal soldiers can be destroyed -- 【汎用】王兵の扉 破壊可能
+315 【General purpose】The door of the king soldier -- 【汎用】王兵の扉
+316 【General purpose】The door of the key of the prison -- 【汎用】牢の鍵の扉
+317 【General purpose】Key door of Mr. A's house -- 【汎用】Ａさん宅の鍵扉
+318 The door of the king's ring -- 【汎用】王の指輪の扉
+320 【General purpose】Wooden one door light -- 【汎用】木の片扉　軽
+321 【General purpose】Wooden one door light (castle- fort door) -- 【汎用】木の片扉　軽（城、砦の扉）
+322 【General purpose】Wooden one door Light (village door) -- 【汎用】木の片扉　軽（村の扉）
+323 【General purpose】Wooden one door light (old door) -- 【汎用】木の片扉　軽（古びた扉）
+324 【General purpose】One door of the tree light cannot be destroyed (door of the castle and the fort) -- 【汎用】木の片扉　軽　破壊不可（城、砦の扉）
+325 【General purpose】Wooden one door light (village door) -- 【汎用】木の片扉　軽　（村の扉）
+326 【General purpose】Wooden one door light (old door) -- 【汎用】木の片扉　軽　（古びた扉）
+327 【General purpose】One door of the wooden lattice (door of the castle and the fort) -- 【汎用】木格子の片扉（城、砦の扉）
+328 【General purpose】Pledge required door -- 【汎用】誓約必須扉
+329 【General purpose】Iron bar single door 1 -- 【汎用】鉄格子片扉1
+330 【General purpose】Iron bar single door 2 -- 【汎用】鉄格子片扉2
+370 【General purpose】One door of the tree heavy -- 【汎用】木の片扉　重
+371 【General purpose】One door of iron heavy -- 【汎用】鉄の片扉　重
+372 【General purpose】One door of the stone heavy -- 【汎用】石の片扉　重
+373 【General purpose】One iron door heavy (castle- fort door) -- 【汎用】鉄の片扉　重（城、砦の扉）
+374 【General purpose】Prison door (with key) -- 【汎用】牢の扉(鍵付き)
+375 【General purpose】Iron single door 2 double -- 【汎用】鉄の片扉2　重
+400 【General purpose】Both doors of wood light -- 【汎用】木の両扉　軽
+470 【General purpose】Both doors of wood heavy -- 【汎用】木の両扉　重
+471 【General purpose】Both doors of iron heavy -- 【汎用】鉄の両扉　重
+472 [General purpose] both doors of stone heavy -- 【汎用】石の両扉　重
+473 【General purpose】Both iron doors heavy (castle- fort door) -- 【汎用】鉄の両扉　重（城、砦の扉）
+474 【General purpose】Both stone doors heavy (castle- fort door) -- 【汎用】石の両扉　重（城、砦の扉）
+475 【General purpose】Both doors of stone heavy (old door) -- 【汎用】石の両扉　重（古びた扉）
+476 【General purpose】King's Door -- 【汎用】王の扉
+500 [General purpose] white door size small -- 【汎用】白扉 サイズ小
+501 [General purpose] white door in size -- 【汎用】白扉 サイズ中
+502 [General purpose] white door large -- 【汎用】白扉 サイズ大
+503 【General Purpose】White Door Unique (Forest of Shadows of The Hollow) -- 【汎用】白扉 ユニーク(虚ろの影の森)
+504 【General Purpose】White Door Unique (King's Castle Dlandreig) -- 【汎用】白扉 ユニーク(王城ドランドレイグ)
+505 【General Purpose】White Door Unique (Immortal Mausoleum) -- 【汎用】白扉 ユニーク(不死廟)
+600 【General purpose】Vertical lever: Automatic return -- 【汎用】縦レバー：自動で戻る
+620 【General purpose】Vertical lever: Do not return -- 【汎用】縦レバー：戻らない
+640 【General purpose】Floor lever: Automatic return -- 【汎用】床レバー：自動で戻る
+660 【General purpose】Floor lever: Do not return -- 【汎用】床レバー：戻らない
+680 [General purpose] floor lever - continue while the button is input -- 【汎用】床レバー：ボタン入力してる間引き続け
+700 【General purpose】Floor switch: Do not return -- 【汎用】床スイッチ：戻らない
+720 【General purpose】Wall hole lever A -- 【汎用】壁穴レバーA
+721 【General purpose】Wall hole lever B -- 【汎用】壁穴レバーB
+740 【General purpose】Standing plate -- 【汎用】立板
+760 【General purpose】Strap lever -- 【汎用】つり革レバー
+780 【General purpose】Valve -- 【汎用】バルブ
+800 【General purpose】Rope test -- 【汎用】ロープテスト
+801 [General purpose] rope 6m -- 【汎用】ロープ６ｍ
+802 【General purpose】Rope 12m -- 【汎用】ロープ１２ｍ
+803 【General purpose】Rope 15m -- 【汎用】ロープ15m
+804 [General purpose] rope 18m -- 【汎用】ロープ18m
+805 [General purpose] rope 21m -- 【汎用】ロープ21m
+806 [General purpose] rope 24m -- 【汎用】ロープ24m
+807 【General purpose】Rope 27m -- 【汎用】ロープ27m
+808 【General purpose】Rope 30m -- 【汎用】ロープ３０ｍ
+809 [General purpose] rope 36m -- 【汎用】ロープ３6ｍ
+810 【General purpose】Rope 40m -- 【汎用】ロープ40ｍ
+900 【General Purpose】Ladder 01 (3.8m) -- 【汎用】梯子01（3.8ｍ）
+901 【General Purpose】Ladder 02 (4.6m) -- 【汎用】梯子02（4.6ｍ）
+902 【General purpose】Ladder 03 (5.0m) -- 【汎用】梯子03（5.0ｍ）
+903 【General Purpose】Ladder 04 (6.2m) -- 【汎用】梯子04（6.2ｍ）
+904 【General purpose】Ladder 05 (7.4m) -- 【汎用】梯子05（7.4ｍ）
+905 【General purpose】Ladder 06 (7.8m) -- 【汎用】梯子06（7.8ｍ）
+906 【General Purpose】Ladder 07 (8.6m) -- 【汎用】梯子07（8.6ｍ）
+907 【General purpose】Ladder 08 (9.8m) -- 【汎用】梯子08（9.8ｍ）
+908 【General purpose】Ladder 09 (10.2m) -- 【汎用】梯子09（10.2ｍ）
+909 【General purpose】Ladder 10 (11m) -- 【汎用】梯子10（11ｍ）
+910 【General Purpose】Ladder 11 (12.2m) -- 【汎用】梯子11（12.2ｍ）
+911 【General Purpose】Ladder 12 (12.6m) -- 【汎用】梯子12（12.6ｍ）
+912 【General purpose】Ladder 13 (13.4m) -- 【汎用】梯子13（13.4ｍ）
+913 【General Purpose】Ladder 14 (14.6m) -- 【汎用】梯子14（14.6ｍ）
+914 【General purpose】Ladder 15 (15m) -- 【汎用】梯子15（15ｍ）
+915 【General purpose】Ladder 16 (15.8m) -- 【汎用】梯子16（15.8ｍ）
+916 【General Purpose】Ladder 17 (16.6m) -- 【汎用】梯子17（16.6ｍ）
+917 【General purpose】Ladder 18 (17.4m) -- 【汎用】梯子18（17.4ｍ）
+918 【General Purpose】Ladder 19 (18.2m) -- 【汎用】梯子19（18.2ｍ）
+919 【General purpose】Ladder 20 (19m) -- 【汎用】梯子20（19ｍ）
+920 【General Purpose】Wooden Ladder 01 (3.8m) -- 【汎用】木製梯子01（3.8ｍ）
+921 【General purpose】Wooden ladder 02 (5.0m) -- 【汎用】木製梯子02（5.0ｍ）
+922 【General Purpose】Wooden Ladder 03 (6.2m) -- 【汎用】木製梯子03（6.2ｍ）
+923 【General Purpose】Wooden Ladder 04 (7.4m) -- 【汎用】木製梯子04（7.4ｍ）
+924 【General purpose】Wooden ladder 05 (8.6m) -- 【汎用】木製梯子05（8.6ｍ）
+925 【General purpose】Wooden ladder 06 (9.8m) -- 【汎用】木製梯子06（9.8ｍ）
+926 【General purpose】Wooden ladder 07 (11m) -- 【汎用】木製梯子07（11ｍ）
+927 【General purpose】Wooden ladder 08 (12.2m) -- 【汎用】木製梯子08（12.2ｍ）
+928 【General Purpose】Wooden Ladder 09 (13.4m) -- 【汎用】木製梯子09（13.4ｍ）
+929 【General purpose】Wooden ladder 10 (14.6m) -- 【汎用】木製梯子10（14.6ｍ）
+930 【General Purpose】Wooden Ladder 11 (15.8m) -- 【汎用】木製梯子11（15.8ｍ）
+931 【General Purpose】Ladder 32 (28.6m) -- 【汎用】梯子32（28.6ｍ）
+932 【General purpose】Ladder 33 (29.4m) -- 【汎用】梯子33（29.4ｍ）
+933 【General purpose】Ladder 34 (30.2m) -- 【汎用】梯子34（30.2ｍ）
+940 【General purpose】NPC is on the ladder -- 【汎用】ＮＰＣが梯子かけ
+1010 【General purpose】Torch lamp stand for torch -- 【汎用】松明用種火の灯火台
+1011 【General purpose】Insect key lamp stand -- 【汎用】虫鍵の灯火台
+1015 [General purpose] light stand to be lit with torch -- 【汎用】松明で点灯させる灯火台
+1016 【General purpose】Ignition stand -- 【汎用】点火台
+1020 【General purpose】Bonfire for attack events -- 【汎用】襲撃イベント用かがり火
+1030 [General purpose] bone that sounds when you step on -- 【汎用】踏むと音の鳴る骨
+1040 【General purpose】Bone that sounds when stepped on (for the saloon) -- 【汎用】踏むと音の鳴る骨(広間用）
+1050 【General purpose】Insect key -- 【汎用】虫鍵
+1060 【General purpose】Iron disk (1) -- 【汎用】鉄の円盤①
+1061 【General purpose】Iron disk (2) -- 【汎用】鉄の円盤②
+1062 【General purpose】Injection port (vertical) -- 【汎用】射出口(縦)
+1063 【General purpose】Wall switch -- 【汎用】壁スイッチ
+1064 【General purpose】Injection port (horizontal) -- 【汎用】射出口(横)
+1100 Spark lamp stand (for PG test) -- 種火灯火台（PGテスト用）
+1800 【General purpose】Insect key -- 【汎用】虫鍵
+1810 【General purpose】Insect key (ground type) -- 【汎用】虫鍵(地面タイプ)
+1900 [Normal floor installation type] light stand to be lit (castle) -- 【通常床設置タイプ】火を付けられる灯火台（城)
+1901 [Normal floor installation type] lamp stand (stone) -- 【通常床設置タイプ】灯火台（石）
+1930 [Wall type] torch to be ignited (castle) -- 【壁付けタイプ】火を付けられる松明（城)
+1960 [Small floor installation type] light stand to be lit (castle) -- 【小型床設置タイプ】火を付けられる灯火台（城)
+2000 【General purpose】Barrel 1 -- 【汎用】樽1
+2001 【General purpose】Cart (with luggage) -- 【汎用】荷車（荷物あり）
+2002 【General purpose】Barrel (with stand) -- 【汎用】樽(台付き)
+2003 [General purpose] 2 barrels set -- 【汎用】樽2個セット
+2004 [General purpose] 3 barrels set -- 【汎用】樽3個セット
+2010 【General purpose】Wooden box -- 【汎用】木箱
+2011 [General purpose] wooden box _set of three -- 【汎用】木箱_三個セット
+2012 [General purpose] wooden box 3 pieces set -- 【汎用】木箱3個セット
+2013 [General purpose] wooden box 4 pieces set -- 【汎用】木箱4個セット
+2015 【General purpose】Box torch -- 【汎用】箱たいまつ
+2020 【General purpose】Bone -- 【汎用】骨
+2030 【General purpose】Table -- 【汎用】テーブル
+2040 【General purpose】Chair -- 【汎用】イス
+2050 【General purpose】1 bucket -- 【汎用】桶1
+2060 【General purpose】Basket -- 【汎用】籠
+2070 【General purpose】Sands -- 【汎用】土嚢
+2080 【General purpose】Bag -- 【汎用】荷袋
+2090 【General purpose】Shelf -- 【汎用】棚
+2100 【General purpose】Jar -- 【汎用】壷
+2110 【General purpose】Skull -- 【汎用】頭蓋骨
+2111 Falling Picture (Dragon Research Institute) -- 落下する絵（龍の研究所）
+2112 Falling Picture (Dragon Research Institute) -- 落下する絵（龍の研究所）
+2113 Falling Picture (Dragon Research Institute) -- 落下する絵（龍の研究所）
+2114 Falling Picture (Dragon Research Institute) -- 落下する絵（龍の研究所）
+2120 【General purpose】Basket (with handle) -- 【汎用】籠(取っ手付き)
+2130 【General purpose】Jar with dirty water -- 【汎用】汚れた水の入った壺
+2200 【General purpose】Barrel 2 -- 【汎用】樽2
+2210 【General purpose】Barrel 3 -- 【汎用】樽3
+2220 【General purpose】Wooden box 1 -- 【汎用】木箱1
+2230 【General purpose】Longue 1 -- 【汎用】長椅子1
+2240 【General purpose】Flame barrel  -- 【汎用】火炎樽
+2241 【General purpose】Flame barrel with taitage  -- 【汎用】台付火炎樽
+2242 【General purpose】Flame barrel with tait (3 pieces) -- 【汎用】台付火炎樽 (3個）
+2243 [General purpose] flame barrel (set of 3) -- 【汎用】火炎樽 (3個セット)
+2244 [General purpose] flame barrel (set of 4) -- 【汎用】火炎樽 (4個セット)
+2245 【General purpose】High flame barrel (3 pieces) -- 【汎用】高い台付火炎樽 (3個）
+2250 [General purpose] barrel set 1 -- 【汎用】樽セット1
+2260 [General purpose] wooden box set 1 -- 【汎用】木箱セット1
+2270 【General purpose】Long table -- 【汎用】長いテーブル
+2280 【General purpose】Small vase -- 【汎用】小さな壺
+2290 【General purpose】Wooden board -- 【汎用】木の板
+2300 【General purpose】Pot -- 【汎用】鍋
+2310 【General purpose】Rack -- 【汎用】ラック
+2313 [General purpose] weapon rack -- 【汎用】武器ラック
+2315 【General purpose】Armor rack -- 【汎用】防具ラック
+2320 【General purpose】Tableware set A -- 【汎用】食器セットA
+2330 [General purpose] blacksmith tool set A -- 【汎用】鍛冶道具セットA
+2340 【General purpose】Blacksmith tool set B -- 【汎用】鍛冶道具セットB
+2350 【General purpose】Blacksmith tool set C -- 【汎用】鍛冶道具セットC
+2360 【General purpose】Gold floor -- 【汎用】金床
+2370 【General purpose】Torch (placed type A) -- 【汎用】松明(置き型A)
+2380 【General purpose】Torch (placed type B) -- 【汎用】松明(置き型B)
+2390 【General purpose】Torch (wall-mounted Type A) -- 【汎用】松明(壁掛け型Ａ)
+2400 【General purpose】Torch (wall-mounted B) -- 【汎用】松明(壁掛け型B)
+2410 【General purpose】Torchi (Handy type) -- 【汎用】松明(ハンディタイプ)
+2420 【General purpose】Wooden bench 1 -- 【汎用】木製ベンチ1
+2430 【General purpose】Wooden bench 2 -- 【汎用】木製ベンチ2
+2440 【General purpose】Wooden bench 3 -- 【汎用】木製ベンチ3
+2445 【General purpose】Gear part of wooden cart -- 【汎用】木製荷車の歯車部分
+2450 【General purpose】Chair 1 -- 【汎用】椅子1
+2460 【General purpose】Chair 2 -- 【汎用】椅子2
+2470 【General purpose】Chair 3 -- 【汎用】椅子3
+2480 【General purpose】Chair 4 -- 【汎用】椅子4
+2490 【General purpose】Chair 5 -- 【汎用】椅子5
+2500 【General purpose】Chair 6 -- 【汎用】椅子6
+2510 【General purpose】Chair 7 -- 【汎用】椅子7
+2520 【General purpose】Chair 8 -- 【汎用】椅子8
+2530 【General purpose】Chair 9 (NPC only) -- 【汎用】椅子9（NPC専用）
+2540 【General purpose】Chair 10 -- 【汎用】椅子10
+2550 【General purpose】Desk 1 -- 【汎用】机1
+2560 【General purpose】Desk 2 -- 【汎用】机2
+2570 [General purpose] storage box 1 -- 【汎用】収納箱1
+2580 [General purpose] storage box 2 -- 【汎用】収納箱2
+2590 [General purpose] storage box 3 -- 【汎用】収納箱3
+2600 [General purpose] storage box 4 -- 【汎用】収納箱4
+2601 [General purpose] storage box 5 -- 【汎用】収納箱5
+2610 【General purpose】Wooden small box 1 -- 【汎用】木の小箱1
+2611 【General purpose】Wooden small box 2 -- 【汎用】木の小箱2
+2612 【General purpose】Wooden small box 3 -- 【汎用】木の小箱3
+2613 【General purpose】Wooden small box 4 -- 【汎用】木の小箱4
+2620 【General purpose】Candle stand 1 -- 【汎用】キャンドル立て1
+2630 【General purpose】Candle stand 2 -- 【汎用】キャンドル立て2
+2640 【General purpose】Candle stand 3 -- 【汎用】キャンドル立て3
+2650 【General purpose】Candle stand 4 (wall hanging type) -- 【汎用】キャンドル立て4(壁掛けタイプ)
+2660 【General purpose】Bucket 2 -- 【汎用】桶2
+2670 【General purpose】Tableware set B -- 【汎用】食器セットＢ
+2680 【General purpose】Tableware set C -- 【汎用】食器セットＣ
+2690 【General purpose】Tableware set D (pottery) -- 【汎用】食器セットD(陶器)
+2700 【General purpose】Barricade -- 【汎用】バリケード
+2710 【General purpose】Stand to put barrels (test) -- 【汎用】樽を置く台（テスト）
+2720 【General purpose】Wooden box (long) -- 【汎用】木箱(長)
+2730 【General purpose】Desk (library) -- 【汎用】机(書庫)
+2740 【General purpose】Vase (high-class) -- 【汎用】つぼ(高級)
+2750 【General purpose】Vase (old) -- 【汎用】つぼ(古)
+2990 【General purpose】Test destruction (wall) -- 【汎用】テスト破壊（壁）
+2991 【General purpose】Test destruction (handrail) -- 【汎用】テスト破壊（手すり）
+2992 【General purpose】Test destruction (floor) -- 【汎用】テスト破壊（床）
+2993 【General purpose】Shelf -- 【汎用】棚
+2994 【General purpose】Sundial -- 【汎用】日時計
+2995 【General purpose】Bookshelf -- 【汎用】本棚
+2996 【General purpose】Storage shelf 4 -- 【汎用】収納棚4
+2997 【General purpose】Storage shelf 5 -- 【汎用】収納棚5
+2998 【Test】Pot with venom -- 【テスト】毒液が出る壺
+2999 【General purpose】Poison pot -- 【汎用】毒壺
+3000 【General purpose】Insect vase -- 【汎用】虫壺
+3001 【General purpose】Tar vase -- 【汎用】タール壺
+3002 【General purpose】Sloppy Vase -- 【汎用】だらだら壺
+3003 【General purpose】Insect vase (large) -- 【汎用】虫壺(大)
+3004 【General purpose】Insect vase (enemy alone) -- 【汎用】虫壺(敵単体)
+3005 【General purpose】Poison pot (small) -- 【汎用】毒壺（小）
+3006 【General purpose】Poison pot (medium) -- 【汎用】毒壺（中）
+3007 【General purpose】Oil pot -- 【汎用】油壺
+3015 【General purpose】Vase (small) -- 【汎用】壺（小）
+3016 【General purpose】Vase (medium) -- 【汎用】壺（中）
+3020 【General purpose】Broken floor -- 【汎用】壊れる床
+3030 【General purpose】Daladara vase -- 【汎用】ダラダラ壺
+4900 【General purpose】Fort of resistance: SS Captain_Petrified -- 【汎用】抵抗の砦：親衛隊長_石化
+4901 【General purpose】Fort of resistance: SS Captain_Petrified (Number of pieces 616 pieces Ver.) -- 【汎用】抵抗の砦：親衛隊長_石化(破片数 616個Ver.)
+4902 【General purpose】Fort of resistance: SS Captain_Petrified (Number of pieces 408 pieces Ver.) -- 【汎用】抵抗の砦：親衛隊長_石化(破片数 408個Ver.)
+4903 【General purpose】Fort of resistance: SS Captain_Petrified (Number of pieces 209 Pieces Ver.) -- 【汎用】抵抗の砦：親衛隊長_石化(破片数 209個Ver.)
+4904 【General purpose】Beautiful voice frog petrification -- 【汎用】美声カエル　石化
+4905 [General purpose] beautiful voice frog tail -- 【汎用】美声カエル　尻尾
+4907 【General purpose】Jabazahat Petrification -- 【汎用】ジャバザハット　石化
+4908 【General Purpose】Javazahat Petrification Tail -- 【汎用】ジャバザハット　石化　尻尾
+4909 ※Preliminary -- ※予備
+4910 【General Purpose】Salamander Petrification -- 【汎用】サラマンダー　石化
+4911 【General Purpose】Salamander Petrified Tail -- 【汎用】サラマンダー　石化　尻尾
+4912 【General Purpose】Salamander Tail Petrified -- 【汎用】サラマンダー　尻尾　石化
+4913 【General purpose】c5030 Manscorpion ♀ tail (right) after cutting -- 【汎用】ｃ5030　マンスコーピオン♀尻尾（右） 切断後
+4914 【General purpose】c5030 Manscorpion ♀ tail (left) after cutting -- 【汎用】ｃ5030　マンスコーピオン♀尻尾（左） 切断後
+4915 【General Purpose】c6030 Spider Queen Face Cut -- 【汎用】ｃ6030　蜘蛛の女王 顔切断
+4917 【General purpose】c5010 Nag a tail cutting -- 【汎用】c5010 ナーガ　尻尾切断
+4918 【General Purpose】c2120 Wyvern Tail Cutting -- 【汎用】c2120 ワイバーン　尻尾切断
+5000 【General purpose】Apple -- 【汎用】リンゴ
+5010 [General purpose] box to shift -- 【汎用】ズレる箱
+6000 【General purpose】Rat -- 【汎用】ネズミ
+6001 【General purpose】The skull of the goat -- 【汎用】やぎの頭蓋骨
+6002 【General purpose】Cow bone -- 【汎用】牛骨
+6003 【General purpose】Cow carcass -- 【汎用】牛死骸
+6010 【General purpose】Chicken Tea Female -- 【汎用】鶏　茶　メス
+6011 【General purpose】Chicken white female -- 【汎用】鶏　白　メス
+6020 【General purpose】Skeleton whole body image -- 【汎用】骸骨全身像
+6030 【General purpose】Fish -- 【汎用】魚
+6031 【General purpose】Fish -- 【汎用】魚
+6040 【General purpose】Spider -- 【汎用】クモ
+6050 【General Purpose】Great Moss -- 【汎用】グレートモス
+6060 【General purpose】Crow -- 【汎用】カラス
+6070 [General purpose] advanced skeleton -- 【汎用】上級スケルトン
+6080 【General purpose】c1500 Statue's neck -- 【汎用】c1500スタチューナイトの首
+6090 【General Purpose】Bay Ground Hawk -- 【汎用】ベイグランド鷹
+7000 【General purpose】Swaying grass -- 【汎用】揺れる草
+7100 [General purpose] shouting tree -- 【汎用】叫ぶ木
+9000 【General purpose】Alignment object (Damipoli only) -- 【汎用】位置合わせオブジェ(ダミポリのみ)
+9010 【General purpose】Wall-mounted lamp (weak) -- 【汎用】壁掛けランプ（弱）
+9011 【General purpose】Wall hanging lamp 2 (weak) -- 【汎用】壁掛けランプ2（弱）
+9012 【General purpose】Skull candle 1 -- 【汎用】頭蓋骨蝋燭1
+9013 【General purpose】Candles (fire) -- 【汎用】蝋燭群(火有り)
+9014 【General purpose】Candles (no fire) -- 【汎用】蝋燭群(火無し)
+9015 【General purpose】Hanging lamp 1 (weak) -- 【汎用】吊るしランプ1(弱)
+9016 【General purpose】Hanging lamp 2 (weak) -- 【汎用】吊るしランプ2(弱)
+9020 【General purpose】Wall-mounted lamp (strong) -- 【汎用】壁掛けランプ（強）
+9030 【General purpose】Coffin of engraving -- 【汎用】刻の棺桶
+9040 【General purpose】Giant Tree -- 【汎用】巨人の木
+9050 【General purpose】Grave -- 【汎用】墓
+9060 【General purpose】Decoy OBJ -- 【汎用】デコイOBJ
+9070 【General purpose】Giant Tree (for warp) -- 【汎用】巨人の木(ワープ用)
+9100 【General purpose】Light worm (non-unit) -- 【汎用】光虫（単体）
+9105 【General purpose】Bird's Nest -- 【汎用】鳥の巣
+9110 【General purpose】Iwamine Castle for distant view -- 【汎用】遠景用岩峰城
+9113 【General purpose】Floor tar -- 【汎用】床タール
+9114 【General purpose】Inner lid in furnace -- 【汎用】炉内の内蓋
+9115 [General purpose] lever start-up drawbridge -- 【汎用】レバー起動跳ね橋
+9116 【General purpose】Temporary handle -- 【汎用】仮ハンドル
+9118 【General purpose】Bells that cause enemies from the grave -- 【汎用】墓からの敵起こす鐘
+9119 【General purpose】Lid of pitfalls -- 【汎用】落とし穴の蓋
+9123 【General purpose】Floor tar- scorching -- 【汎用】床タール・焦げ
+9150 【General purpose】Cathedral (for distant views) -- 【汎用】聖堂（遠景用）
+9200 【General purpose】Trap: Launch port of the tread arrow -- 【汎用】トラップ：踏み矢の発射口
+9250 [General purpose] scattered tar -- 【汎用】飛び散ったタール
+9300 【General purpose】Broken King's Vessel -- 【汎用】壊れた王の器
+9400 【General purpose】Statue of a mouse -- 【汎用】ネズミの像
+9401 [General purpose] stone statue of chara petrified -- 【汎用】キャラ石化の石像
+9402 [General purpose] axe-throwing dwarf image -- 【汎用】斧投げドワーフ像
+9403 【General purpose】Door to open at pledge level 3 -- 【汎用】誓約レベル3で開く扉
+9500 【General purpose】Ship -- 【汎用】船
+9600 【General purpose】Pledge altar -- 【汎用】誓約祭壇
+9601 【General purpose】Bells -- 【汎用】鐘
+9602 【General purpose】Magic Team -- 【汎用】魔法陣
+9700 [General purpose] polygon for aerial control character -- 【汎用】空中制御キャラ用ポリゴン
+9800 【Test】Dark area -- 【テスト】暗いエリア
+9801 【Test】Hole -- 【テスト】穴
+9802 【Test】Requirements gap -- 【テスト】要件ズレ
+9803 【Test】Consideration -- 【テスト】要検討
+9804 【Test】Confirmation required -- 【テスト】要確認
+9805 【Test】Adjusting -- 【テスト】調整中
+9806 【Test】Gimmick here -- 【テスト】ここギミック
+9807 【Test】Bright here -- 【テスト】ここ明るい
+9808 【Test】Widely here -- 【テスト】ここ広く
+9809 【Test】Narrow here -- 【テスト】ここ狭く
+9810 【Test】Ceiling adjustment here -- 【テスト】ここ天井調整
+9811 【Test】Long time -- 【テスト】間が長い
+9812 【Test】Empty box for event occurrence -- 【テスト】イベント発生用空ボックス
+20001 【Gap Sinus】For "Line Science" Item Display -- 【隙間の洞】「線の理」アイテム表示用
+20300 【Gap Cave】Old Woman's House Door -- 【隙間の洞】老婆の家ドア
+20900 【Gap Sinus】Stretchladder -- 【隙間の洞】伸ばし梯子
+20901 【Gap Cave】Ladder 3.8m -- 【隙間の洞】梯子3.8m
+20902 【Gap Cave】Ladder 12.2m -- 【隙間の洞】梯子12.2m
+21000 [Fossil Forest] broken branches when riding -- 【化石の森】乗ると壊れる枝
+21010 【Fossil Forest】Broken Bridge -- 【化石の森】壊れる橋
+21020 Hidden Door Key Guide -- 【隙間の洞】隠し扉キーガイド
+21030 【Cave of Gap】Falling Tree (Kickdown OBJ) -- 【隙間の洞】倒れる木（蹴り倒しOBJ）
+21050 【Gap's Cave】Stone plate -- 【隙間の洞】石版
+22000 【Gap Cave】First Pillar -- 【隙間の洞】最初の柱
+22001 【Gap Cave】Street lights -- 【隙間の洞】街灯
+28500 【Gap Sinus】Humanity Model (Handy Type) -- 【隙間の洞】人間性モデル(ハンディタイプ)
+28501 【Gap Sinus】Cup -- 【隙間の洞】コップ
+28502 【Gap Sinus】Tray -- 【隙間の洞】トレイ
+28510 【Gap Cave】Chair -- 【隙間の洞】椅子
+28511 【Gap Cave】Chair (Rocking Chair) -- 【隙間の洞】椅子（ロッキングチェア）
+28520 【Cave of Gap】Candle -- 【隙間の洞】ろうそく
+28521 【Cave of Gap】Candle (Wall) -- 【隙間の洞】ろうそく（壁）
+28522 【Gap Sinus】Curtain -- 【隙間の洞】カーテン
+29000 【Fossil Forest】Candle A -- 【化石の森】ろうそくA
+29010 【Test】Glowing corpse -- 【テスト】光る死体
+29020 【Cave of Gap】The Bird's Nest of Kirakia Daughter -- 【隙間の洞】キラキア娘の鳥の巣
+29100 【Fossil Forest】Kanoke -- 【化石の森】かんおけ
+30370 [Dragon's Residence] One Iron Door　 -- 【龍の住処】鉄の片扉
+30371 [Dragon's residence] one iron door broken -- 【龍の住処】鉄の片扉　壊れ
+30430 【Dragon's Residence】Double-open iron bar -- 【龍の住処】両開き鉄格子
+30640 【Dragon's Residence】Floor Lever: Automatic Return -- 【龍の住処】床レバー：自動で戻る
+31000 The Living House of the Dragon: A Candle That Disappears -- 【龍の住処】消えるろうそく
+31900 [Hole of the old darkness] light stand for the pledge (large) -- 【古き闇の穴】誓約用の灯火台(大)
+32000 【Dragon's Residence】Table A -- 【龍の住処】テーブルA
+32010 [Dragon's residence] wooden board that can be destroyed -- 【龍の住処】壊せる木板
+32020 【Dragon's Residence】Broken Wooden Board (Door Stop) -- 【龍の住処】壊せる木板(扉止め)
+35000 [Dragon's residence] skull to be rolled -- 【龍の住処】転がせる頭蓋骨
+39000 【Dragon's Residence】Elevator -- 【龍の住処】昇降機
+39010 【Dragon's Residence】Candles -- 【龍の住処】ろうそく
+39020 【Dragon's Residence】Bonfire -- 【龍の住処】焚火台
+39025 【Dragon's Residence】Light Stand (Large) -- 【龍の住処】灯火台（大）
+39030 【Dragon's Residence】Borocloth 1 -- 【龍の住処】ボロ布1
+39040 【Dragon's Residence】Borocloth 2 -- 【龍の住処】ボロ布2
+39050 【Dragon's Residence】Dress -- 【龍の住処】ドレス
+39060 [Dragon's Residence] Blown -- 【龍の住処】吹き流し
+39070 【Dragon's Residence】Rope -- 【龍の住処】ロープ
+39080 【Dragon's Residence】Shadow PICTURE OBJ -- 【龍の住処】影絵ＯＢＪ
+39090 【Dragon's Residence】Sick Room Cloth -- 【龍の住処】病人部屋布
+39100 【Dragon's Residence】Coffin Open -- 【龍の住処】棺桶　開き
+39400 [Hole of old darkness] Damipoly 1 for SFX -- 【古き闇の穴】SFX用ダミポリ1
+39410 [Hole of old darkness] Damipoly 2 for SFX -- 【古き闇の穴】SFX用ダミポリ2
+39500 [Dragon's Residence] Ring (for poly play) -- 【龍の住処】指輪(ポリ劇用)
+39510 [Dragon's residence] the eyelid sofered dragon eye -- 【龍の住処】古龍の竜眼のまぶた
+39520 【Dragon's Residence】Nabi-tsu -- 【龍の住処】なびく蔦
+40100 Blockade rubble (temporary) -- 封鎖用瓦礫（仮）
+40230 【Madura】Unique Treasure Chest -- 【マデューラ】ユニーク宝箱
+40240 【Maduro】The corpse of the hanging treasure -- 【マデューラ】首つり宝死体
+40400 【Madura】Gate for connection with giant forest -- 【マデューラ】巨人の森との接続用ゲート
+40470 【Madura】Both doors with stone keys -- 【マデューラ】石の鍵つき両扉
+40900 【Madura】Event Ladder (Medium) -- 【マデューラ】イベント用梯子（中）
+40905 【Madura】Event Ladder (Long) -- 【マデューラ】イベント用梯子（長）
+40910 【Madura】Event Ladder (Short) -- 【マデューラ】イベント用梯子（短）
+40920 【Madura】Event Ladder (Long) -- 【マデューラ】イベント用梯子（長）
+40930 【Maduro】Ladder of the pit -- 【マデューラ】竪穴の梯子
+40940 【Madura】Armor shop ladder -- 【マデューラ】防具屋の梯子
+41000 [Maduro] rotating door -- 【マデューラ】回転する扉
+41010 【Madura】Stone Monument of the Strong -- 【マデューラ】強者の石碑
+41020 [Maduro] damipori only model -- 【マデューラ】ダミポリのみのモデル
+41030 【Madura】Sinarot Rock -- 【マデューラ】シャナロット座る岩
+41031 【Maduro】The rock where the ladder shop sits -- 【マデューラ】梯子屋の座る岩
+41040 [Madura] rotary door switch -- 【マデューラ】回転扉スイッチ
+41100 【Madura】Armor OBJ Armor -- 【マデューラ】防具OBJ　鎧
+41101 【Madura】Armor OBJ Kagote -- 【マデューラ】防具OBJ　籠手
+41102 【Madura】Armor OBJ Leg -- 【マデューラ】防具OBJ　具足
+41103 【Madura】Armor OBJ Helmet -- 【マデューラ】防具OBJ　兜
+41110 【Madura】Well Event Strike Stone -- 【マデューラ】井戸のイベント殴り用石
+41111 【Madura】Blacksmith's Chair -- 【マデューラ】鍛冶屋の椅子
+42000 【Madura】Well Piece of Wood -- 【マデューラ】井戸の木片
+42010 【Maduro】Jizo -- 【マデューラ】地蔵
+42020 【Madura】Kokeshi -- 【マデューラ】こけし
+42030 【Maduro】Scaffolding of sewage holes -- 【マデューラ】下水穴の崩れる足場
+42040 【Maduro】OBJ chair for cats -- 【マデューラ】猫用OBJ　椅子
+42270 【Maduro】OBJ table for cats -- 【マデューラ】猫用OBJ　テーブル
+42280 【Madura】OBJ vase for cats -- 【マデューラ】猫用OBJ　壺
+42300 【Madura】OBJ pot for cats -- 【マデューラ】猫用OBJ　鍋
+42310 【Madura】OBJ for cats -- 【マデューラ】猫用OBJ　跨り用木組み
+42560 【Maduro】OBJ clay pot desk for cats -- 【マデューラ】猫用OBJ　土鍋用机
+49000 【Madura】Blacksmith Tent -- 【マデューラ】鍛冶屋テント
+49010 【Madura】General Tent A -- 【マデューラ】一般テントA
+49020 【Madura】General Tent B -- 【マデューラ】一般テントB
+49030 【Madura】General Tent C -- 【マデューラ】一般テントC
+49040 【Madura】Rope -- 【マデューラ】ロープ
+49050 【Madura】General Tent D -- 【マデューラ】一般テントD
+49060 【Maduro】Wind-twisting A -- 【マデューラ】風よけA
+49070 【Maduro】Cloth -- 【マデューラ】布きれ
+49080 【Madura】Elevator 00 -- 【マデューラ】エレベータ00
+49090 [Madura] heavy stone -- 【マデューラ】重石
+49100 【Maduro】There was a fluffy nest -- 【マデューラ】あったかふわふわの巣
+49110 【Madura】Rocks that block the water source -- 【マデューラ】水源をふさぐ岩
+49120 [Maduro] rock to block the dungeon of the time -- 【マデューラ】時のダンジョンをふさぐ岩
+49130 【Maduro】A rock that is covered with fluffy -- 【マデューラ】あったかふわふわをふさぐ岩
+49140 【Maduro】Lapis Lazuli Research Bench -- 【マデューラ】ラピスラズリの研究台
+49200 [Maduro] pedestal part of the obelisk that Sodan sits -- 【マデューラ】ソダンが座るオベリスクの台座部分
+49300 【Maduro】For displaying cumulative deaths of obelisks -- 【マデューラ】オベリスクの累計死亡表示用
+49500 Map of Madura -- 【マデューラ】地図
+49501 【Madura】Tree 1 (for translucent) -- 【マデューラ】樹木1(半透明化用)
+49502 【Madura】Tree 2 (for translucent) -- 【マデューラ】樹木2(半透明化用)
+49503 【Madura】Wooden scaffolding 1 (for translucent) -- 【マデューラ】木の足場1(半透明化用)
+49504 【Madura】Wooden eaves (for translucent) -- 【マデューラ】木製のひさし(半透明化用)
+49505 【Madura】Wooden Eaves 2 (for translucent) -- 【マデューラ】木製のひさし2(半透明化用)
+49506 【Madura】Huge Trees (for translucent) -- 【マデューラ】巨大樹木(半透明化用)
+49507 【Madura】Connection Path (Arch Column) -- 【マデューラ】接続路（アーチ柱）
+49508 【Madura】Connection Path (Arch Column_2) -- 【マデューラ】接続路（アーチ柱_2）
+49509 【Madura】Wooden frame (for translucent) -- 【マデューラ】木の枠(半透明化用）
+49510 【Maduro】The stand where the player sits -- 【マデューラ】プレイヤーが座る台
+49511 【Maduro】Player's Seat_2 -- 【マデューラ】プレイヤーが座る台_2
+100330 【Fort of resistance】One door 00 -- 【抵抗の砦】片扉00
+100340 【Fort of resistance】Lattice key door -- 【抵抗の砦】格子鍵扉
+100350 【Fort of resistance】Alarm treasure chest door -- 【抵抗の砦】アラーム宝箱扉
+100430 【Fort of resistance】Both doors 00 -- 【抵抗の砦】両扉00
+100440 [Fort of resistance] both doors that are swayed -- 【抵抗の砦】がたがたする両扉
+100450 [Forest of decayed giants] old door -- 【朽ちた巨人の森】古びた扉
+100476 King's Door -- 王の扉
+100500 【Fort of resistance】White Door 00 -- 【抵抗の砦】白扉00
+100501 【Fort of resistance】White Door 01 -- 【抵抗の砦】白扉01
+100502 【Fort of resistance】White Door 02 -- 【抵抗の砦】白扉02
+100503 【Fort of resistance】White Door 03 -- 【抵抗の砦】白扉03
+100600 [Fort of resistance] lever -- 【抵抗の砦】レバー
+100700 [Fort of resistance] patch trap floor switch -- 【抵抗の砦】パッチの罠用床スイッチ
+100900 【Fort of Resistance】Wooden Ladder -- 【抵抗の砦】木の梯子
+100901 【Fort of Resistance】Ladder 01 -- 【抵抗の砦】梯子01
+100902 【Fort of Resistance】Ladder 02 -- 【抵抗の砦】梯子02
+100903 【Fort of Resistance】Ladder 03 -- 【抵抗の砦】梯子03
+100904 【Fort of Resistance】Ladder 04 -- 【抵抗の砦】梯子04
+100905 [Fort of resistance] ladder 05 -- 【抵抗の砦】梯子05
+100906 [Fort of resistance] ladder 06 -- 【抵抗の砦】梯子06
+100907 【Fort of Resistance】Ladder 07 -- 【抵抗の砦】梯子07
+100908 【Fort of Resistance】Ladder 08 -- 【抵抗の砦】梯子08
+100909 【Fort of Resistance】Ladder 09 -- 【抵抗の砦】梯子09
+100910 Ladder 10 -- 【抵抗の砦】梯子10
+100911 Ladder 11 -- 【抵抗の砦】梯子11
+100912 Ladder 12 -- 【抵抗の砦】梯子12
+100913 【Fort of Resistance】Ladder 13 -- 【抵抗の砦】梯子13
+100914 【Fort of Resistance】Ladder 14 -- 【抵抗の砦】梯子14
+100915 Ladder 15 -- 【抵抗の砦】梯子15
+100916 【Fort of Resistance】Ladder 16 -- 【抵抗の砦】梯子16
+100917 [Fort of resistance] stretch ladder 2 -- 【抵抗の砦】伸ばし梯子２
+100920 [Decayed Giant Forest] wooden ladder 00 -- 【朽ちた巨人の森】木の梯子00
+100921 [Decayed Giant Forest] wooden ladder -- 【朽ちた巨人の森】木の梯子01
+100922 [Decayed Giant Forest] wooden ladder -- 【朽ちた巨人の森】木の梯子02
+100923 [Decayed Giant Forest] wooden ladder 03 -- 【朽ちた巨人の森】木の梯子03
+100924 [Decayed Giant Forest] wooden ladder 04 -- 【朽ちた巨人の森】木の梯子04
+100925 [Decayed Giant Forest] wooden ladder 05 -- 【朽ちた巨人の森】木の梯子05
+100926 [Decayed Giant Forest] wooden ladder 06 -- 【朽ちた巨人の森】木の梯子06
+100927 【Memory of giants】Wooden ladder 00 -- 【巨人の記憶】木の梯子00
+100928 【Memory of giants】Wooden ladder 01 -- 【巨人の記憶】木の梯子01
+101000 [Fort of resistance] the door that soldiers are holding -- 【抵抗の砦】兵士が抑えている扉
+101001 【Fort of resistance】Iron bar -- 【抵抗の砦】鉄格子
+101005 【Fort of resistance】Hidden Door 1 (insect keys- lighting- SFX) -- 【抵抗の砦】隠し扉1（虫鍵・照明・SFX）
+101010 Barista -- 【抵抗の砦】バリスタ
+101011 【Fort of resistance】Barista (continuous shooting type) -- 【抵抗の砦】バリスタ（連射型）
+101012 【Fort of resistance】Barista (Fire Arrow type) -- 【抵抗の砦】バリスタ（火矢型）
+101020 [Fort of resistance] arch bridge destroyed -- 【抵抗の砦】破壊されるアーチ橋
+101030 [Fort of resistance] door opened with a lever -- 【抵抗の砦】レバーで開く扉
+101040 【Fort of resistance】Broken doors and walls -- 【抵抗の砦】壊れる扉と壁
+101050 The stone statue that the head breaks -- 【抵抗の砦】頭が壊れる石像
+101060 [Fort of resistance] fireball corresponding to the stone statue -- 【抵抗の砦】石像にあたる火球
+101070 [Fort of resistance] the bridge of the mystery to be broken -- 【抵抗の砦】壊れる謎の橋
+101080 [Fort of resistance] iron bar open with lever 01 -- 【抵抗の砦】レバーで開く鉄格子01
+101090 [Fort of resistance] iron bar open with lever 02 -- 【抵抗の砦】レバーで開く鉄格子02
+101100 [Fort of resistance] a ship that breaks and sinks -- 【抵抗の砦】壊れて沈没する船
+101110 The fire ball that breaks the bridge of the tree -- 【抵抗の砦】木の橋を壊す火球
+101111 Damipori A for the flame of Salamander -- 【抵抗の砦】サラマンダーの炎用ダミポリA
+101112 Damipori B for the flame of Salamander -- 【抵抗の砦】サラマンダーの炎用ダミポリB
+101113 Damipori C for the flame of Salamander -- 【抵抗の砦】サラマンダーの炎用ダミポリC
+101120 【Fort of resistance】Large rock rolls -- 【抵抗の砦】大岩が転がる
+101130 [Fort of resistance] the iron door for the trap of the patch -- 【抵抗の砦】パッチの罠用鉄扉
+101140 [Fort of resistance] the seed of the fruit of the giant tree -- 【抵抗の砦】巨人の木の実の種
+101150 【Memory of giants】Hidden Door 1: Insect Key Type -- 【巨人の記憶】隠し扉1：蟲鍵タイプ
+101160 [Memory of giants] hidden door 2: invisible key guide type -- 【巨人の記憶】隠し扉2：見えないキーガイドタイプ
+101161 [Forest of decayed giants] hidden door 3: invisible key guide type -- 【朽ちた巨人の森】隠し扉3：見えないキーガイドタイプ
+101170 [Memory of giants] tower to be destroyed -- 【巨人の記憶】破壊される塔
+101171 [Memory of giants] ladder destroyed -- 【巨人の記憶】破壊される梯子
+101180 【Memory of giants】Fire damage OBJ -- 【巨人の記憶】炎ダメージOBJ
+101800 【Fort of resistance】Insect Key -- 【抵抗の砦】虫鍵
+102000 【Fort of Resistance】Barrels -- 【抵抗の砦】樽
+102010 【Fort of Resistance】Wooden Box -- 【抵抗の砦】木箱
+102030 Longue A -- 【抵抗の砦】長椅子A
+102040 Longue B -- 【抵抗の砦】長椅子B
+102050 Chair -- 【抵抗の砦】椅子
+102060 【Fort of Resistance】Table -- 【抵抗の砦】テーブル
+102070 【Fort of resistance】Shelf A -- 【抵抗の砦】棚A
+102080 【Fort of resistance】Shelf B -- 【抵抗の砦】棚B
+102090 【Fort of resistance】Bag -- 【抵抗の砦】荷袋
+102100 【Fort of resistance】Cart -- 【抵抗の砦】荷車
+102110 【Fort of resistance】Flame barrels -- 【抵抗の砦】火炎樽
+102120 [Fort of resistance] wooden fence that only giants can break -- 【抵抗の砦】巨人だけが壊せる木柵
+102130 【Fort of resistance】Pillars that only giants can break -- 【抵抗の砦】巨人だけが壊せる柱
+102140 [Fort of resistance] yagura that can be destroyed -- 【抵抗の砦】壊せるやぐら
+102150 【Fort of resistance】Barista barrels with arrows -- 【抵抗の砦】バリスタ矢入り樽
+102160 [Fort of resistance] broken barista -- 【抵抗の砦】壊れたバリスタ
+102170 【Fort of Resistance】Crane -- 【抵抗の砦】クレーン
+102171 [Fort of resistance] crane fasteners -- 【抵抗の砦】クレーンの留め具
+102180 【Fort of resistance】Cart + wooden box -- 【抵抗の砦】荷車+木箱
+102190 【Fort of resistance】Barrel fastening -- 【抵抗の砦】樽留め
+102200 【Fort of resistance】Boss Room Ceiling (Center) -- 【抵抗の砦】ボス部屋天井（中央）
+102210 【Fort of resistance】Boss Room Ceiling A -- 【抵抗の砦】ボス部屋天井Ａ
+102220 【Fort of resistance】Boss Room Ceiling B -- 【抵抗の砦】ボス部屋天井Ｂ
+102230 【Fort of resistance】Boss Room Ceiling C -- 【抵抗の砦】ボス部屋天井Ｃ
+102240 【Fort of resistance】Boss Room Ceiling D -- 【抵抗の砦】ボス部屋天井Ｄ
+102249 [Fort of resistance] the wall to enter the main tower when you break -- 【抵抗の砦】壊すと主塔へ入れる壁
+102250 [Fort of resistance] Wall A destroyed by the enemy -- 【抵抗の砦】敵が破壊する壁Ａ
+102260 [Fort of resistance] wall B destroyed by the enemy -- 【抵抗の砦】敵が破壊する壁Ｂ
+102270 [Fort of resistance] pillar snitonly to the giant -- 【抵抗の砦】巨人だけが壊せる柱B
+102280 【Fort of resistance】Boss room breaking pillar -- 【抵抗の砦】ボス部屋壊れる柱
+102290 【Fort of resistance】Boss room broken second floor -- 【抵抗の砦】ボス部屋壊れる2階
+102300 [Fort of resistance] boss room broken stairs A -- 【抵抗の砦】ボス部屋壊れる階段A
+102310 [Fort of resistance] boss room broken stairs B -- 【抵抗の砦】ボス部屋壊れる階段B
+102320 [Fort of resistance] boss room broken stairs C -- 【抵抗の砦】ボス部屋壊れる階段C
+102330 [Fort of resistance] boss room broken statue -- 【抵抗の砦】ボス部屋壊れる像
+102340 【Fort of Resistance】Eaves -- 【抵抗の砦】軒先
+102350 【Fort of resistance】Petrified corpse -- 【抵抗の砦】石化死体
+102360 [Fort of resistance] stone pillars that heavy soldiers can break -- 【抵抗の砦】重兵士が壊せる石柱
+102370 [Fort of resistance] wall C destroyed by the enemy -- 【抵抗の砦】敵が破壊する壁C
+102380 [Fort of resistance] wall that can be broken with flame barrels -- 【抵抗の砦】火炎樽で壊せる壁
+102390 [Fort of resistance] petrified corpse -- 【抵抗の砦】石化した死体
+102400 The Fortress of Resistance: The Walls of the Cave Destruction -- 【抵抗の砦】洞窟の破壊壁
+106000 Tattered left arm of the new giant senior soldier -- 新・巨人上級兵士のボロボロの左腕
+106010 The body of the captain of the kingdom. -- 王国隊長の死体
+107000 [Decaying Giant Forest] Tree A -- 【朽ちた巨人の森】木A
+107001 [Decayed Giant Forest] Tree B -- 【朽ちた巨人の森】木B
+107010 [Decaying Giant Forest] Conifer -- 【朽ちた巨人の森】針葉樹
+108500 Stone statue parts for cut scenes -- 【抵抗の砦】カットシーン用石像パーツ
+108510 Stone parts for cut scenes -- 【抵抗の砦】カットシーン用石パーツ
+108520 [Fort of resistance] bay ground sword for cut scene -- 【抵抗の砦】カットシーン用ベイグランドの剣
+109000 【Fort of resistance】Hanging lamp 01 -- 【抵抗の砦】吊り下げランプ01
+109001 [Fort of resistance] Damipoli for firing a fireball -- 【抵抗の砦】火球発射用ダミポリ
+109010 【Fort of resistance】Rag cloth -- 【抵抗の砦】ぼろ布
+109020 【Fort of Resistance】Chandelier -- 【抵抗の砦】シャンデリア
+109030 [Fort of resistance] flag curtain -- 【抵抗の砦】国旗垂れ幕
+109040 【Fort of resistance】Barista's Arrows -- 【抵抗の砦】バリスタの矢など（SFX）
+109050 Giants in the sea -- 【抵抗の砦】海にいる巨人たち
+109060 A ship floating in the sea -- 【抵抗の砦】海に浮いている船
+109070 【Fort of resistance】Wall hanging lamp -- 【抵抗の砦】壁掛けランプ
+109080 【Fort of resistance】Wall hanging lamp -- 【抵抗の砦】壁掛けランプ
+109085 [Forest of decayed giants] hanging lamp -- 【朽ちた巨人の森】吊り下げランプ
+109090 【Fort of resistance】Candles -- 【抵抗の砦】ろうそく
+109100 【Fort of resistance】Kingdom soldier_General corpse 1 -- 【抵抗の砦】王国兵_汎用死体1
+109110 【Fort of Resistance】Lantern -- 【抵抗の砦】ランタン
+109120 【Fort of resistance】National Flag (Large) -- 【抵抗の砦】国旗（大）
+109130 【Fort of Resistance】Barricade 01 -- 【抵抗の砦】バリケード01
+109140 【Fort of Resistance】Barricade 02 -- 【抵抗の砦】バリケード02
+109150 Dummy for target -- 【抵抗の砦】ターゲット用のダミー
+109160 【Fort of resistance】National Flag (Small) -- 【抵抗の砦】国旗（小）
+109170 【Fort of resistance】Hanging lamp 02 -- 【抵抗の砦】吊り下げランプ02
+109180 [Fort of resistance] fake pitfalls for the trap of the patch -- 【抵抗の砦】パッチの罠用ニセ落とし穴
+109190 [Fort of resistance] phantom human -- 【抵抗の砦】幻影人間
+109200 [Fort of resistance] Phantom Giant SS Captain -- 【抵抗の砦】幻影巨人親衛隊長
+109210 【Fort of resistance】Elevator -- 【抵抗の砦】昇降機
+109220 [Fort of resistance] bird's nest -- 【抵抗の砦】鳥の巣
+109230 The Giant King -- 【抵抗の砦】巨人王
+109240 【Fort of resistance】Rumbling Rock -- 【抵抗の砦】ゴロゴロ岩
+109250 Giant King Appeared Ground Cracked Rubble -- 巨人王登場地割れ瓦礫
+109260 【Fort of Resistance】Giant Corpse 01 -- 【抵抗の砦】巨人の死体01
+109270 【Fort of Resistance】Giant Corpse 02 -- 【抵抗の砦】巨人の死体02
+109280 [Decayed Giant Forest] Light Worm (multiple) -- 【朽ちた巨人の森】光虫（複数）
+109290 [Forest of decayed giants] hanging cross candlestick -- 【朽ちた巨人の森】吊るし十字蝋燭台
+109300 [Forest of decayed giants] red blood barrels (mimetic OBJ) -- 【朽ちた巨人の森】真っ赤な血の樽（擬態ＯＢＪ）
+109400 【Memories of giants】 SFX103 -- 【巨人の記憶】SFX103
+109401 【Memories of giants】 SFX104 -- 【巨人の記憶】SFX104
+109402 【Memories of giants】 SFX107 -- 【巨人の記憶】SFX107
+109403 【Memories of giants】 SFX108 -- 【巨人の記憶】SFX108
+109404 【Memories of giants】 SFX110 -- 【巨人の記憶】SFX110
+109405 【Memories of giants】 SFX111 -- 【巨人の記憶】SFX111
+109406 【Memories of giants】 SFX135 -- 【巨人の記憶】SFX135
+109407 【Memories of giants】 SFX136 -- 【巨人の記憶】SFX136
+109408 【Memories of giants】 SFX139 -- 【巨人の記憶】SFX139
+109409 【Memories of giants】 SFX140 -- 【巨人の記憶】SFX140
+109410 【Memories of giants】 SFX141 -- 【巨人の記憶】SFX141
+109411 【Memories of giants】 SFX142 -- 【巨人の記憶】SFX142
+109412 【Memories of giants】 SFX143 -- 【巨人の記憶】SFX143
+109413 【Memories of giants】 SFX144 -- 【巨人の記憶】SFX144
+109414 【Memories of giants】 SFX145 -- 【巨人の記憶】SFX145
+109415 【Memories of giants】 SFX146 -- 【巨人の記憶】SFX146
+109416 【Memories of giants】 SFX153 -- 【巨人の記憶】SFX153
+109417 【Memories of giants】 SFX163 -- 【巨人の記憶】SFX163
+109418 【Memories of giants】 SFX171 -- 【巨人の記憶】SFX171
+109419 【Memories of giants】 SFX192 -- 【巨人の記憶】SFX192
+109420 【Memories of giants】 SFX3041 -- 【巨人の記憶】SFX3041
+110300 [Altar of Amana] one-sided door iron frame -- 【アマナの祭壇】片開き扉鉄枠
+110400 [Fairy's Side] The Door of the Living -- 【妖精のほとり】生者の扉
+110410 The Door of the Dead -- 【妖精のほとり】亡者の扉
+110420 【Fairy's Side】Ancient Doors -- 【妖精のほとり】古代からある扉
+110640 【Fairy's Side】Floor Lever: Automatic Return -- 【妖精のほとり】床レバー：自動で戻る
+111000 【Fairy's Side】Altar -- 【妖精のほとり】祭壇
+111005 【Altar of Amana】Hidden Door 1 (Insect Keys- Lighting- SFX) -- 【アマナの祭壇】隠し扉1（虫鍵・照明・SFX）
+111010 【Fairy's Side】Herbal Remedies -- 【妖精のほとり】薬草
+111020 [Fairy's Side] Hidden Door 2 (Key Guide) -- 【妖精のほとり】隠し扉2（キーガイド）
+111030 The Altar of the Saint -- 【妖精のほとり】聖者の祭壇
+111810 【Altar of Amana】Insect Key (Floor) -- 【アマナの祭壇】虫鍵（床）
+111900 [Altar of Amana] pillar lamp stand -- 【アマナの祭壇】柱灯火台
+112000 [Fairy's Side] Breaking Root A -- 【妖精のほとり】壊せる根A
+112010 [Fairy's Side] Breaking Root B -- 【妖精のほとり】壊せる根B
+112020 [Fairy's Side] Breaking Root C -- 【妖精のほとり】壊せる根C
+112030 [Fairy's Side] Broken Masonry -- 【妖精のほとり】壊せる石積み
+112031 [Fairy's side] rock that can be broken -- 【妖精のほとり】壊せる岩
+112032 [Fairy's side] fallen tree that breaks when you walk -- 【妖精のほとり】歩くと壊れる倒木
+112040 The side of the fairy: the branch of the corpse dropping -- 【妖精のほとり】死体落としの枝
+112050 The Altar of Amana: The Altar candle of the Saint -- 【アマナの祭壇】聖者の祭壇のろうそく
+112060 [Altar of Amana] Sloppy Vase -- 【アマナの祭壇】だらだら壺
+112100 [Altar of Amana] Sloppy Vase -- 【アマナの祭壇】だらだら壺
+112530 The altar of Amana: the chair where the shrine maiden sits -- 【アマナの祭壇】巫女が座る椅子
+119000 【Fairy's Side】Light Worm (Alone) -- 【妖精のほとり】光虫（単体）
+119001 【Fairy's Side】Light Worm (Several) -- 【妖精のほとり】光虫（複数）
+119003 [Fairy's side] rock where the light worm stays -- 【妖精のほとり】光虫が留まる岩
+119004 [Fairy's Side] Elf Bonfire -- 【妖精のほとり】エルフの焚火
+119010 【Fairy's Side】Elevator 00 -- 【妖精のほとり】エレベータ00
+119011 【Fairy's Side】Elevator 01 -- 【妖精のほとり】エレベータ01
+119012 【Fairy's Side】Elevator 02 -- 【妖精のほとり】エレベータ02
+119300 [Altar of Amana] Mimetic OBJ Eringi (Mimetic OBJ) -- 【アマナの祭壇】擬態ＯＢＪエリンギ（擬態ＯＢＪ）
+131000 Thorn wheels -- 棘車輪
+139000 The God tree of the brain trunk -- 脳幹の神木
+139001 Pile Trap -- 杭トラップ
+139002 Rotary blade trap -- 回転刃トラップ
+139003 Hiding pitfalls -- 落とし穴隠し
+140300 【Spider's City】Wooden One Door Light (Spider Town Only) -- 【蜘蛛の街】木の片扉　軽（蜘蛛の街専用）
+140301 【Spider's City】One door of the tree light destruction cannot be destroyed (only for the city of the spider) -- 【蜘蛛の街】木の片扉　軽　破壊不可（蜘蛛の街専用）
+140302 【Spider's City】One door of the tree that the lower part is broken (only for the city of the spider) -- 【蜘蛛の街】下部分が壊れている木の片扉　（蜘蛛の街専用）
+140303 [Spider City] the door where the light pierces -- 【蜘蛛の街】光が刺しこむ扉
+140304 【Spider's City】One door of the tree that the upper half is broken (only for the city of the spider) -- 【蜘蛛の街】上半分が壊れている木の片扉　（蜘蛛の街専用）
+140370 【Spider's City】Iron One Door Heavy (Spider Town Only) -- 【蜘蛛の街】鉄の片扉　重（蜘蛛の街専用）
+140371 The key door of the patch -- 【蜘蛛の街】パッチの鍵の扉
+140372 The key door of the insect -- 【蜘蛛の街】虫の鍵扉
+140373 [Spider's City] iron frame door -- 【蜘蛛の街】鉄枠の方扉
+140400 【Spider City】Both doors of wood (can be destroyed) -- 【蜘蛛の街】木の両扉(破壊可能)
+140410 【Spider City】Both doors of the tree (cannot be destroyed) -- 【蜘蛛の街】木の両扉(破壊不可)
+140420 [Spider City] gate opened with wall lever -- 【蜘蛛の街】壁レバーで開くゲート
+140470 【Spider City】Both doors with spider relief -- 【蜘蛛の街】蜘蛛のレリーフが入った両扉
+140600 【Spider City】Vertical Lever: Automatic Return -- 【蜘蛛の街】縦レバー：自動で戻る
+140640 【Spider City】Floor Lever: Automatic Return -- 【蜘蛛の街】床レバー：自動で戻る
+140900 [Kiseki-gai Gerdra] Ladder A -- 【輝石街ジェルドラ】梯子A
+140902 [Kiishi-gai Gerdra] Ladder B -- 【輝石街ジェルドラ】梯子B
+140904 [Kiseki-gai Gerdra] Ladder C -- 【輝石街ジェルドラ】梯子C
+140907 [Kiseki-gai Gerdra] ladder D -- 【輝石街ジェルドラ】梯子D
+141000 【Spider City】Sand Door -- 【蜘蛛の街】砂扉
+141010 Damipori for the generation of gun sand -- 【蜘蛛の街】鉄砲砂生成用ダミポリ
+141020 【Spider City】Damipori for sand door damage generation -- 【蜘蛛の街】砂扉ダメージ発生用ダミポリ
+141030 [Spider City] rocks that break when you ride -- 【蜘蛛の街】乗ると壊れる岩
+141040 [Spider City] broken tree when riding -- 【蜘蛛の街】乗ると壊れる木
+141050 [Spider City] broken floor when riding -- 【蜘蛛の街】乗ると壊れる床
+141060 【Spider's City】Sand after the destruction of sand doors -- 【蜘蛛の街】砂扉破壊後の砂
+141070 [Spider's City] sign board of the bridge to collapse -- 【蜘蛛の街】崩れる橋の看板
+141080 Spider's Cocoon -- 【蜘蛛の街】蜘蛛の繭
+141081 Spider's Cocoon (Enemies in Spider' -- 【蜘蛛の街】蜘蛛の繭（中に敵）
+141082 Spider's Cocoon (Items in the Spider) -- 【蜘蛛の街】蜘蛛の繭（中にアイテム）
+141090 【Spider's City】Unshakable Hanging Spider Cocoon (3m) -- 【蜘蛛の街】揺れない吊り下げ蜘蛛の繭(3m）
+141091 [Spider's City] unwavering hanging spider cocoon (3m- enemy in) -- 【蜘蛛の街】揺れない吊り下げ蜘蛛の繭(3m、中に敵）
+141092 [Spider's City] hanging spider cocoon that does not shake (3m- items in) -- 【蜘蛛の街】揺れない吊り下げ蜘蛛の繭(3m、中にアイテム）
+141100 【Spider's City】Swaying Spider Cocoon (5m) -- 【蜘蛛の街】揺れない吊り下げ蜘蛛の繭(5m）
+141110 【Spider's City】Unwavering Hanging Spider Cocoon (7m) -- 【蜘蛛の街】揺れない吊り下げ蜘蛛の繭(7m）
+141120 [Spider City] Bridge that breaks when you ride -- 【蜘蛛の街】乗ると壊れる橋
+141130 【Spider's City】Rocks that break when riding (horizontal movement) -- 【蜘蛛の街】乗ると壊れる岩（水平移動）
+141140 [City of spider] boss's first crumbling cliff -- 【蜘蛛の街】ボス１回目の崩れる崖
+141150 [Spider City] Bridge that collapses when you ride -- 【蜘蛛の街】乗ると崩れる橋
+141151 [City of spiders] the destruction part of the bridge that collapses when riding -- 【蜘蛛の街】乗ると崩れる橋の破壊部分
+141160 【Spider City】Statue -- 【蜘蛛の街】女神像
+141170 Sword and Rock -- 【蜘蛛の街】剣と岩
+141180 [Spider City] iron bar opened with a lever -- 【蜘蛛の街】レバーで開く鉄格子
+141190 [Spider City] veranda that can be destroyed -- 【蜘蛛の街】破壊できるベランダ
+141200 Spider's Town: Swaying Cocoon -- 【蜘蛛の街】揺れている繭
+141210 【Spider City】Breaking Eaves -- 【蜘蛛の街】壊れる軒先
+141220 [Spider's City] collapsed veranda -- 【蜘蛛の街】崩れるベランダ
+141230 The City of Spiders: Falling Rocks -- 【蜘蛛の街】落下する岩
+141240 Spider's City: Broken Branches -- 【蜘蛛の街】壊せる枝
+141250 The city of spiders: the branches of trees with treasure corpses stuck -- 【蜘蛛の街】宝死体がひっかかっている木の枝
+141260 The city of spiders can be destroyed -- 【蜘蛛の街】破壊できる床
+141270 Chandelier in Solar Room -- 【蜘蛛の街】ソラール部屋のシャンデリア
+141280 【City of Spiders】Iron Door of The Solar Room -- 【蜘蛛の街】ソラール部屋の鉄扉
+141290 【City of Spiders】Great Moss -- 【蜘蛛の街】グレートモス
+141300 The City of Spiders: Prison Bells -- 【蜘蛛の街】監獄の鐘
+141310 [Spider's City] Spider's Web Pitfalls Hidden -- 【蜘蛛の街】蜘蛛の巣落とし穴隠し
+141330 [Spider City] broken wooden board -- 【蜘蛛の街】壊せる木板
+141340 【Spider's City】Hidden Door 2 (Key Guide) -- 【蜘蛛の街】隠し扉2（キーガイド）
+141350 The City of Spiders: Moving Scaffolding -- 【蜘蛛の街】動く足場
+141360 【City of Spiders】Old Dragon's Memory Invasion OBJ -- 【蜘蛛の街】古龍の記憶侵入OBJ
+141370 【Spider's City】Old Dragon's Memory Invasion Damipori -- 【蜘蛛の街】古龍の記憶侵入 ダミポリ
+141380 【Spider City】Mushrooms -- 【蜘蛛の街】きのこ
+141381 【Spider City】Mushroom Remnants Damipori -- 【蜘蛛の街】きのこ残骸ダミポリ
+141900 【Spider's City】Lampstand -- 【蜘蛛の街】灯火台
+141920 【Spider's City】Terminal Bonfire -- 【蜘蛛の街】終端篝火
+142000 The town of the spider: the chair of the lower layer -- 【蜘蛛の街】下層の椅子
+142010 【Spider City】Lower table -- 【蜘蛛の街】下層のテーブル
+142020 【Spider City】Lower shelf -- 【蜘蛛の街】下層の棚
+142030 The roof of the well -- 【蜘蛛の街】井戸の屋根
+142040 Rocks stuck on a cliff -- 【蜘蛛の街】崖にひっかかっている岩
+142050 Chair of the Chapel -- 【蜘蛛の街】礼拝堂の椅子
+142060 【Spider's City】Wooden Fence -- 【蜘蛛の街】木柵
+142070 【Spider's City】Broken Wooden Fence -- 【蜘蛛の街】壊れそうな木柵
+142080 【Spider City】Armor Rack -- 【蜘蛛の街】防具ラック
+142090 【Spider's City】The Stopper of The Rumbling Rock -- 【蜘蛛の街】ゴロゴロ岩のストッパー
+142100 [Spider Town] Rope Post -- 【蜘蛛の街】ロープ支柱
+142110 【Spider City】Water Vase -- 【蜘蛛の街】水壺
+142120 【City of spiders】Pots containing treasure corpses -- 【蜘蛛の街】宝死体が入っている壺
+142121 The city of spiders: a vase that does not contain a treasure corpse -- 【蜘蛛の街】宝死体が入っていないつぼ
+142130 [Kiishi-gai Gerdra] Yagura -- 【輝石街ジェルドラ】 やぐら
+142140 [Kiishi-gai Gerdra] Yagura -- 【輝石街ジェルドラ】 やぐら
+142150 [Kiishi-gai Gerdra] Yagura -- 【輝石街ジェルドラ】 やぐら
+146000 【Spider Town】Koryu Mummy -- 【蜘蛛の街】古龍ミイラ
+147000 【Spider Town】Ogi A -- 【蜘蛛の街】小木A
+149000 【Spider's City】Borocloth -- 【蜘蛛の街】ボロ布
+149010 【Spider City】Boro cloth for tents -- 【蜘蛛の街】テント用ボロ布
+149020 【Spider City】Lifting Machine 1 -- 【蜘蛛の街】昇降機1
+149021 [Spider City] Elevator 2 -- 【蜘蛛の街】昇降機2
+149022 [Spider City] Elevator 3 -- 【蜘蛛の街】昇降機3
+149030 【Spider City】Boro cloth for square tents -- 【蜘蛛の街】四角テント用ボロ布
+149040 【Spider's City】Rumbling Rock -- 【蜘蛛の街】ゴロゴロ岩
+149050 [Spider City] swaying cloth -- 【蜘蛛の街】揺れる布
+149060 [Kiishi-gai Gerdra] gate -- 【輝石街ジェルドラ】ゲート
+149061 [Kiishi-gai Gerdra] statue -- 【輝石街ジェルドラ】像
+149070 【Teruishi-gai Gerdra】Candlestick A -- 【輝石街ジェルドラ】燭台A
+149080 [Teruishi-gai Gerdra] hanging lamp of the library -- 【輝石街ジェルドラ】書庫の吊り下げランプ
+150300 Wooden Door -- 木の扉
+150470 Both entrance doors -- 入口両扉
+150471 Iron door that auger can break -- オーガが壊せる鉄扉
+150476 King's Door -- 王の扉
+150620 Vertical lever -- 縦置きレバー
+150640 Floor Lever: Auto Back -- 床レバー：自動で戻る
+151000 Durahan's raw neck- correct. -- デュラハンの生首　正解
+151001 Durahan's raw neck- mistake. -- デュラハンの生首　間違い
+151002 Durahan's raw neck- mistake. -- デュラハンの生首　間違い
+151003 Durahan's raw neck- mistake. -- デュラハンの生首　間違い
+151004 Durahan's raw neck- mistake. -- デュラハンの生首　間違い
+151010 Swaying lighting -- 揺れる照明
+151020 Lighting that shakes and falls -- 揺れて落ちる照明
+151030 Hidden Door 2 (Key Guide) -- 隠し扉2（キーガイド）
+151040 Petrified stop wall -- 石化ストップ壁
+151050 Hidden Door -- 隠し扉
+151060 Gimmick door -- ギミック扉
+151800 Insect Keys -- 虫鍵
+152000 Book Stand -- ブックスタンド
+152001 Destroyable stone door A -- 破壊可能な石扉A
+152002 Destroyable Stone Door B -- 破壊可能な石扉B
+152003 Destroyable Stone Door C -- 破壊可能な石扉C
+152005 A picture of an enemy -- 敵が出る絵
+152010 Destructible walls -- 破壊可能な壁
+152020 Antique Desk -- アンティーク机
+152030 Antique Chairs -- アンティーク椅子
+152040 Experimental desk -- 実験机
+152050 Kitchen Knife Rack -- 包丁ラック
+157000 Tree A -- 樹木A
+159000 a cage wagon containing an experimental body -- 実験体を入れる檻馬車
+159001 a table that binds an experimental body -- 実験体を縛る台
+159002 Prisoners in the Keyhole -- 鍵穴の囚人
+159003 Candlestick (Large) -- 蝋燭燭台(大)
+159004 Candlestick (medium) -- 蝋燭燭台(中)
+159005 Candle Group A -- 蝋燭群A
+159006 Candle Group B -- 蝋燭群B
+159007 Medicine bottle shelf -- 薬瓶棚
+159008 Medicine Bottle Set -- 薬瓶セット
+159009 Experimental instrument set -- 実験器具セット
+159010 Large chemical shelf -- 薬品棚(大)
+159012 Swaying Boro cloth -- 揺れるボロ布
+159020 Bird cage small -- 鳥かご小
+159021 a cage coming down from above -- 上から降りてくる檻
+159022 Huge cage at the entrance -- エントランスの巨大檻
+159030 Entrance 2F Curtain -- エントランス2Fのカーテン
+159040 Cage wagon- change -- 檻馬車・改
+159050 Mirror Night Mirror Shield -- ミラーナイト鏡盾
+159060 Elevator -- 昇降機
+159070 Only dummy for thorns on the fence -- 柵のトゲ用ダミーのみ
+159080 Magic Barrier -- 魔法障壁
+159090 Basilisk Cage -- バジリスク檻
+159100 Wall Mount B -- 壁掛け燭台B
+159110 Chair for NPC -- NPC用いす
+160330 [Castle of ruins] sturdy door of blacksmith -- 【廃墟の城】鍛冶屋の頑丈な扉
+160370 【Prison of Oblivion】Iron Bar One-way Door -- 【忘却の牢城】鉄格子　一方通行の扉
+160371 [Prison of Oblivion] one door of iron -- 【忘却の牢城】鉄の片扉
+160400 [Prison of oblivion] iron bars moving up and down with levers -- 【忘却の牢城】レバーで上下に動く鉄格子
+160410 【Prison of Oblivion】Large Iron Bar -- 【忘却の牢城】大きい鉄格子
+160420 【Prison of Oblivion】 Iron bar door raised by SW (small) -- 【忘却の牢城】SWで上がる鉄格子扉（小）
+160470 【Prison of Oblivion】Both doors and temporary in the boss room -- 【忘却の牢城】ボス部屋内の両扉・仮
+160640 [Castle of ruins] floor lever for elevator -- 【廃墟の城】昇降機用床レバー
+160650 [Prison of oblivion] lever temporary OBJ to pull -- 【忘却の牢城】引っ張るレバー仮OBJ
+160720 [Prison of oblivion] wall hole lever -- 【忘却の牢城】壁穴レバー
+160900 【Prison of Oblivion】Ladder (3.8m) -- 【忘却の牢城】梯子（3.8ｍ）
+160901 【Prison of Oblivion】Ladder (4.6m) -- 【忘却の牢城】梯子（4.6ｍ）
+160902 【Prison of Oblivion】Ladder (5.0m) -- 【忘却の牢城】梯子（5.0ｍ）
+160903 Ladder (6.2m) -- 【忘却の牢城】梯子（6.2ｍ）
+160906 【Prison of Oblivion】Ladder (8.6m) -- 【忘却の牢城】梯子（8.6ｍ）
+160907 【Prison of Oblivion】Ladder (9.8m) -- 【忘却の牢城】梯子（9.8ｍ）
+160908 【Prison of Oblivion】Ladder (10.2m) -- 【忘却の牢城】梯子（10.2ｍ）
+160910 [Prison of Oblivion] Ladder -- 【忘却の牢城】梯子
+160913 【Prison of Oblivion】Ladder (14.6m) -- 【忘却の牢城】梯子（14.6ｍ）
+161000 【Castle of ruins】Shortcut Drawbridge -- 【廃墟の城】ショートカット跳ね橋
+161010 [Prison of Oblivion] Hidden Door Type 1 (Buchi) -- 【忘却の牢城】隠し扉タイプ1（淵)
+161011 [Prison of oblivion] hidden door type 1 (disappearing part) -- 【忘却の牢城】隠し扉タイプ1（消える部分)
+161012 [Prison of oblivion] a block for sitting blacksmith -- 【忘却の牢城】鍛冶屋座る用のブロック
+161020 【Prison of Oblivion】Hidden Door 2 (Key Guide) -- 【忘却の牢城】隠し扉2（キーガイド）
+161030 [Prison of oblivion] hidden door type 3 -- 【忘却の牢城】隠し扉タイプ3
+161040 【Prison of Oblivion】Hidden Door 1 (Buchi and Door Integrated) (Insect Keys- Lighting- SFX) -- 【忘却の牢城】隠し扉1(淵と扉一体型)（虫鍵・照明・SFX）
+161050 [Prison of Oblivion] Hidden Door 2 (Key Guide: Both Sides) -- 【忘却の牢城】隠し扉2（キーガイド：両面）
+161051 【Reservoir Valley】Hidden Door 1 (Part that disappears) (insect key- lighting- SFX) -- 【溜まりの谷】隠し扉1（消える部分)（虫鍵・照明・SFX）
+161060 【Prison of Oblivion】Hidden Door 2 (Key Guide) -- 【忘却の牢城】隠し扉2（キーガイド）
+161070 【Prison of Oblivion】Hidden Door 2 (Key Guide) -- 【忘却の牢城】隠し扉2（キーガイド）
+161080 【Prison of Oblivion】Hidden Door 2 (Key Guide) -- 【忘却の牢城】隠し扉2（キーガイド）
+161090 【Prison of Oblivion】Hidden Door 2 (Key Guide) -- 【忘却の牢城】隠し扉2（キーガイド）
+161100 【Prison of Oblivion】Hidden Door 2 (Key Guide) -- 【忘却の牢城】隠し扉2（キーガイド）
+161110 【Prison of Oblivion】Hidden Door 2 (Key Guide) -- 【忘却の牢城】隠し扉2（キーガイド）
+161120 【Prison of Oblivion】Hidden Door 2 (Key Guide) -- 【忘却の牢城】隠し扉2（キーガイド）
+161130 【Prison of Oblivion】Hidden Door 1 (Buchi and Door Integrated) (Insect Keys- Lighting- SFX) -- 【忘却の牢城】隠し扉1(淵と扉一体型)（虫鍵・照明・SFX）
+161140 The Prison of Oblivion: A cage pulled from the well -- 【忘却の牢城】井戸から引き上がる檻
+161141 【Prison of Oblivion】Heavy Stone -- 【忘却の牢城】重石
+161150 [Prison of oblivion] iron bars next to the boss room -- 【忘却の牢城】ボス部屋の横の鉄格子
+161170 【Prison of Oblivion】Hidden Door 1 (Buchi and Door Integrated) (Insect Keys- Lighting- SFX) -- 【忘却の牢城】隠し扉1(淵と扉一体型)（虫鍵・照明・SFX）
+161180 【Prison of Oblivion】Hidden Door 1 (Buchi and Door Integrated) (Insect Keys- Lighting- SFX) -- 【忘却の牢城】隠し扉1(淵と扉一体型)（虫鍵・照明・SFX）
+161185 [Prison of Oblivion] hidden door (key guide: double-sided opening) -- 【忘却の牢城】隠し扉(キーガイド：両面開き）
+161190 【Prison of Oblivion】Key person (door + key person + key person) -- 【忘却の牢城】鍵人（扉+鍵人+鍵）
+161200 【Prison of Oblivion】Bell -- 【忘却の牢城】鐘
+161210 【Prison of Oblivion】Pillars of the Boss Area -- 【忘却の牢城】ボスエリアの柱
+161220 The Dead Who Are Moaning -- 【忘却の牢城】呻いている亡者
+161230 [Prison of oblivion] iron bars in the boss room -- 【忘却の牢城】ボス部屋の鉄格子
+161250 【Prison of Oblivion】Transparent stone for well events -- 【忘却の牢城】井戸のイベント用透明石
+161300 【Prison of Oblivion】Matrioshka 1 -- 【忘却の牢城】マトリョーシュカ1
+161303 【Prison of Oblivion】Matrioshka 2 -- 【忘却の牢城】マトリョーシュカ2
+161304 【Prison of Oblivion】Matrioshka 3 -- 【忘却の牢城】マトリョーシュカ3
+161305 【Prison of Oblivion】Matrioshka 4 -- 【忘却の牢城】マトリョーシュカ4
+161310 【Prison of Oblivion】The door that opens when the bell is ringed -- 【忘却の牢城】鐘を鳴らしたら開く扉
+161400 【Prison of Oblivion】Barrel Shelf -- 【忘却の牢城】樽棚
+161600 [Prison of Oblivion] Torture Lift -- 【忘却の牢城】拷問リフト
+161800 【Prison of Oblivion】Insect Key 1 -- 【忘却の牢城】虫鍵1
+161900 [Prison of oblivion] the lamp stand of the boss room -- 【忘却の牢城】ボス部屋の灯火台
+161910 [Prison of oblivion] a light stand to be set on fire -- 【忘却の牢城】火を付けられる灯火台
+161920 【Prison of Oblivion】The End Bonfire -- 【忘却の牢城】終端篝火
+162000 【Castle of ruins】Flame barrels -- 【廃墟の城】火炎樽
+162001 [Castle of ruins] the plank of the wood that was struck -- 【廃墟の城】打ち付けられた木の板
+162002 Castle in ruins: Wall broken by flame barrels -- 【廃墟の城】火炎樽で壊れる壁
+162003 【Castle in ruins】Wooden foundation -- 【廃墟の城】木製土台
+162004 【Castle in ruins】Wooden foundation (test) -- 【廃墟の城】木製土台(テスト）
+162005 【Castle in ruins】Wooden foundation (small size) -- 【廃墟の城】木製土台(小型）
+162006 【Castle in ruins】Wooden foundation (for the fall of 10m treasure corpse) -- 【廃墟の城】木製土台（宝死体１０ｍ落下用）
+162010 【Prison of Oblivion】 Rolling Flame Barrel -- 【忘却の牢城】 転がる火炎樽
+162050 【Prison of Oblivion】Barrels dedicated to barrel shelves -- 【忘却の牢城】樽棚専用の樽
+168500 【Prison of Oblivion】Isaris's Seedling Core -- 【忘却の牢城】イザリスの苗コア（前作データ)
+168501 【Prison of Oblivion】Isaris's Insect Core (Previous Data) -- 【忘却の牢城】イザリスの虫コア（前作データ)
+169000 【Castle of ruins】Cloth 1 -- 【廃墟の城】布1
+169001 【Castle of ruins】Cloth 2 -- 【廃墟の城】布2
+169002 [Castle of ruins] elevator -- 【廃墟の城】昇降機
+169005 [Prison of Oblivion] Elevator -- 【忘却の牢城】昇降機
+169006 [Prison of Oblivion] Elevator -- 【忘却の牢城】昇降機
+169010 【Castle in ruins】Statue of The Neckless Gargoyle -- 【廃墟の城】首なしガーゴイル像
+169020 Castle of ruins: Flame barrel destruction wall -- 【廃墟の城】火炎樽破壊壁
+169030 [Castle of ruins] the curtain of the dungeon boss room -- 【廃墟の城】地下牢ボス部屋の垂れ幕
+169040 【Castle in ruins】 Damipoli for SFX -- 【廃墟の城】SFX用ダミポリ
+169050 Damipori for Sound -- 【忘却の牢城】サウンド用ダミポリ
+170000 【Coal Mine Village】Gear A -- 【炭鉱の村】歯車A
+170400 【Valley of the reservoir】Gate going up with lever -- 【溜まりの谷】レバーで上に上がるゲート
+170410 【Valley of the reservoir】Iron bar raised and raised with a lever -- 【溜まりの谷】レバーで昇降する鉄格子
+170600 【Coal mine village】Vertical lever: Automatic return -- 【炭鉱の村】縦レバー：自動で戻る
+170620 【Valley of the reservoir】Lever (do not return automatically) -- 【溜まりの谷】レバー（自動で戻らない）
+170640 【Valley of the Reservoir】For floor lever lift -- 【溜まりの谷】床レバーリフト用
+170650 【Valley of the reservoir】Lever temporary OBJ to pull -- 【溜まりの谷】引っ張るレバー仮OBJ
+170720 【Valley of the reservoir】Wall hole lever -- 【溜まりの谷】壁穴レバー
+170780 【Valley of The Reservoir】Valve -- 【溜まりの谷】バルブ
+170900 【Coal mine village】Ladder for events -- 【炭鉱の村】イベント用梯子
+170901 Ladder 01 (3.8m) -- 梯子01（3.8ｍ）
+170902 Ladder 02 (4.6m) -- 梯子02（4.6ｍ）
+170903 Ladder 03 (5.0m) -- 梯子03（5.0ｍ）
+170904 Ladder 04 (6.2m) -- 梯子04（6.2ｍ）
+170905 Ladder 07 (8.6m) -- 梯子07（8.6ｍ）
+170906 A broken ladder -- 途切れ梯子
+171000 【Coal mine village】Iron bar door (for multi-use) -- 【炭鉱の村】鉄格子の扉（マルチ用）
+171010 【Coal mine village】Insect faucet -- 【炭鉱の村】虫の蛇口
+171020 【Reservoir Valley】Hidden Door (No Key Guide) -- 【溜まりの谷】隠し扉（キーガイドなし）
+171030 【Reservoir Valley】Hidden Door (No Key Guide) -- 【溜まりの谷】隠し扉（キーガイドなし）
+171040 【Reservoir Valley】Hidden Door (No Key Guide) -- 【溜まりの谷】隠し扉（キーガイドなし）
+171050 【Reservoir Valley】Hidden Door 1 (Buchi) (Insect Keys- Lighting- SFX) -- 【溜まりの谷】隠し扉1（淵)（虫鍵・照明・SFX）
+171051 【Reservoir Valley】Hidden Door 1 (Part that disappears) (insect key- lighting- SFX) -- 【溜まりの谷】隠し扉1（消える部分)（虫鍵・照明・SFX）
+171060 【Coal mine village】Venom in boss room -- 【炭鉱の村】ボス部屋の毒液
+171061 【Valley of the reservoir】Venom of the passage -- 【溜まりの谷】通路の毒液
+171062 【Valley of the reservoir】Venom in front of the boss room -- 【溜まりの谷】ボス部屋前の毒液
+171063 【Valley of the reservoir】Venom at the starting point -- 【溜まりの谷】スタート地点の毒液
+171080 【Valley of the reservoir】The foundation of the fountain of the insect key recovery -- 【溜りの谷】虫鍵回復の泉の土台
+171090 【Reservoir Valley】Hidden Door 1 (Buchi and Door Integrated) (Insect Keys- Lighting- SFX) -- 【溜まりの谷】隠し扉1(淵と扉一体型)（虫鍵・照明・SFX）
+171100 【Valley of the reservoir】The surface of the water that falls with the lever (poison) -- 【溜まりの谷】レバーで下がる水面（毒）
+171250 [Valley of the reservoir] transparent OBJ for attacking the enemy -- 【溜まりの谷】敵に攻撃当てさせる用透明OBJ
+171300 【Valley of The Reservoir】The Spring Surface of The Recovery (Poison) -- 【溜まりの谷】回復の泉水面(毒)
+171301 【Valley of The Reservoir】The Fountain of Recovery -- 【溜まりの谷】回復の泉水面
+171310 【Valley of the Reservoir】The Altar of the Sun -- 【溜まりの谷】太陽の祭壇
+171800 【Valley of the Reservoir】Insect Key 1 -- 【溜まりの谷】虫鍵1
+172000 【Coal mine village】A bridge that collapses when three people ride -- 【炭鉱の村】3人乗ると崩れる橋
+172001 【Coal mine village】Crumbling scaffolding -- 【炭鉱の村】崩れる足場
+172002 【Coal mine village】Broken fence 1 -- 【炭鉱の村】壊れる柵1
+172003 【Coal mine village】Broken fence 2 -- 【炭鉱の村】壊れる柵2
+172010 【Coal mine village】Hanging poison pot -- 【炭鉱の村】吊られた毒壺
+172011 【Coal mine village】Hanging poison pot_medium boss room -- 【炭鉱の村】吊られた毒壺_中ボス部屋
+172020 【Valley of the reservoir】The beating of the broken tree -- 【溜まりの谷】壊れる木の打ち付け１
+172021 【Valley of the reservoir】The beating of the broken tree -- 【溜まりの谷】壊れる木の打ち付け2
+172030 【Valley of the reservoir】The poison pot that is falling_ large (without poison) -- 【溜りの谷】倒れている毒壺_大（毒なし)
+172040 【Valley of the reservoir】The poison pot that is falling_ Small (no poison) -- 【溜りの谷】倒れている毒壺_小（毒なし)
+172050 【Valley of the reservoir】The poison pot that is falling_no poisoning) -- 【溜りの谷】倒れている毒壺_中毒なし)
+173000 【Valley of the Reservoir】Insect Vase (Fly) -- 【溜まりの谷】虫壺（ハエ）
+173003 【Valley of the Reservoir】Insect Vase (Multiple Enemies) -- 【溜まりの谷】虫壺(敵複数体)
+173004 【Valley of the Reservoir】Insect Vase (enemy alone) -- 【溜まりの谷】虫壺(敵単体)
+179000 【Coal mine village】Water wheel tower gear set A -- 【炭鉱の村】水車の塔歯車セットA
+179001 [Coal mine village] water wheel tower _ windmill power shaft -- 【炭鉱の村】水車の塔_風車動力シャフト
+179002 [Coal mine village] water wheel tower _ core power for windmill -- 【炭鉱の村】水車の塔_風車用コア動力
+179003 [Coal mine village] water wheel tower _ left wall gear set -- 【炭鉱の村】水車の塔_左壁歯車セット
+179004 【Coal mine village】Water mill tower_left wall sub-gear set -- 【炭鉱の村】水車の塔_左壁サブ歯車セット
+179005 【Coal mine village】Gears near the tower of the water mill _ shaft -- 【炭鉱の村】水車の塔_シャフト付近の歯車
+179010 【Coal mine village】Water wheel tower_ half circle gears -- 【炭鉱の村】水車の塔_半円の歯車
+179020 【Coal mine village】Water mill tower_front huge windmill -- 【炭鉱の村】水車の塔_正面巨大風車
+179030 【Coal mine village】Water wheel tower_ vertical rotation gear A -- 【炭鉱の村】水車の塔_縦回転の歯車A
+179040 【Coal mine village】Water mill tower_upper and lower ceilings -- 【炭鉱の村】水車の塔_上下する天井
+179050 【Coal mine village】Water wheel tower_half circle gear B -- 【炭鉱の村】水車の塔_半円の歯車B
+179060 【Coal Mine Village】Mt. Soyamako -- 【炭鉱の村】案山子
+179070 【Coal mine village】Swaying cloth -- 【炭鉱の村】揺れる布
+179080 【Coal mine village】Water mill tower_ front giant windmill wings -- 【炭鉱の村】水車の塔_正面巨大風車の羽
+179081 【Coal mine village】The tower of the water wheel_ the front of the huge windmill -- 【炭鉱の村】水車の塔_正面巨大風車の前羽
+179082 【Coal mine village】Water mill tower_windmill feathers -- 【炭鉱の村】水車の塔_風車の羽根
+179090 【Coal mine village】Chain of shung poison pot -- 【炭鉱の村】吊られた毒壺の鎖
+179100 【Reservoir Valley】Map Connection Lift -- 【溜まりの谷】マップ接続リフト
+179110 【Valley of the Reservoir】 NPC Stool Rock -- 【溜りの谷】NPC腰掛岩
+179120 【Valley of the reservoir】Gears inside the tower -- 【溜りの谷】塔内部の歯車
+179130 【Valley of the reservoir】Open-air stick -- 【溜りの谷】露天支棒
+179140 【Valley of the reservoir】Light source poison pot (hanging type) -- 【溜りの谷】光源毒壺(吊り下げタイプ)
+179150 【Valley of the reservoir】Light source poison vase (direct position type) -- 【溜りの谷】光源毒壺(直置きタイプ)
+179200 【Valley of the reservoir】Windmill wings (small) -- 【溜りの谷】風車の羽（小)
+179300 【Valley of the reservoir】 shaft of the gear (Atari only) -- 【溜りの谷】歯車のシャフト（アタリのみ）
+180600 【Hidden Port】Vertical Lever: Automatic Return -- 【隠れ港】縦レバー：自動で戻る
+180640 【Underground port】Light tower lever -- 【地下の港】灯火台レバー
+180650 【Hidden Port】For lever lift -- 【隠れ港】レバーリフト用
+180660 [Hidden port] lever -- 【隠れ港】レバー
+180900 [Hidden port] ship ladder -- 【隠れ港】船の梯子
+181000 [Hidden port] light stand -- 【隠れ港】灯火台
+181010 [Hidden Port] Ship -- 【隠れ港】船
+181020 【Hidden port】The surface of the water of the boss room -- 【隠れ港】ボス部屋の水面
+181030 【Hidden Port】Iron Bar -- 【隠れ港】鉄格子
+181040 Hidden Port: Hidden Door A -- 【隠れ港】隠し扉A
+181050 【Hidden Port】Bell -- 【隠れ港】鐘
+181060 [Hidden Port] Compass -- 【隠れ港】羅針盤
+181070 [Hidden port] ship fence -- 【隠れ港】船の柵
+181800 【Hidden Port】Insect Key -- 【隠れ港】虫鍵
+181810 【Hidden Port】Insect Key (Floor) -- 【隠れ港】虫鍵（床）
+181900 [Hidden port] light stand -- 【隠れ港】灯火台
+182000 [Hidden port] crumbling wall -- 【隠れ港】崩れる壁
+182010 【Hidden Port】Desk -- 【隠れ港】机
+182020 【Hidden Port】Chaise longue -- 【隠れ港】長椅子
+182030 [Hidden port] board hammered against the window -- 【隠れ港】窓に打ち付けられた板
+182040 【Hidden Port】Poison Pot -- 【隠れ港】毒壺
+182050 Hidden port: Destruction wall -- 【隠れ港】破壊壁
+182060 【Hidden Port】Barrels -- 【隠れ港】樽
+182061 【Hidden Port】Wooden Box -- 【隠れ港】木箱
+182070 [Hidden port] part of the pier that collapses -- 【隠れ港】崩れる桟橋の一部
+189000 [Hidden Port] Boro cloth -- 【隠れ港】ボロ布
+189010 [Hidden port] elevator -- 【隠れ港】昇降機
+190370 [Molten Castle] one iron door -- 【熔鉄城】鉄の片扉
+190371 [Molten castle] one iron door 2 -- 【熔鉄城】鉄の片扉2
+190640 [Volcano steel works] floor lever se automatic ally return -- 【火山の製鉄所】床レバー：自動で戻る
+190660 [Volcano steel works] floor lever: Do not return -- 【火山の製鉄所】床レバー：戻らない
+190700 [Volcano steel works] floor switch -- 【火山の製鉄所】床スイッチ
+190900 【Molten Castle】Ladder 01 (3.8m) -- 【熔鉄城】梯子01（3.8ｍ）
+190902 【Molten Castle】Ladder 03 (5.0m) -- 【熔鉄城】梯子03（5.0ｍ）
+190903 【Molten Castle】Ladder 04 (6.2m) -- 【熔鉄城】梯子04（6.2ｍ）
+190906 【Molten Castle】Ladder 07 (8.6m) -- 【熔鉄城】梯子07（8.6ｍ）
+190909 【Molten Castle】Ladder 10 (11m) -- 【熔鉄城】梯子10（11ｍ）
+190910 【Molten Castle】Ladder 11 (12.2m) -- 【熔鉄城】梯子11（12.2ｍ）
+190912 【Molten Castle】Ladder 13 (13.4m) -- 【熔鉄城】梯子13（13.4ｍ）
+190915 【Molten Castle】Ladder 16 (15.8m) -- 【熔鉄城】梯子16（15.8ｍ）
+191000 [Volcano steel works] head of the statue of the cowhead -- 【火山の製鉄所】牛頭の像の頭部
+191001 [Volcano steel works] fuselage of the statue of the cowhead -- 【火山の製鉄所】牛頭の像の胴体
+191002 [Volcano steel works] shutter of the furnace -- 【火山の製鉄所】炉のシャッター
+191003 [Volcano steel mill] molten iron kettle -- 【火山の製鉄所】熔鉄釜
+191004 [Volcanic steel works] flowing molten iron (for molten iron kettle) -- 【火山の製鉄所】流れる熔鉄(熔鉄釜用)
+191010 [Volcano steel works] fuselage of the statue of the cowhead -- 【火山の製鉄所】牛頭の像の胴体
+191015 【Molten Castle】Fire Arrow (Barista) -- 【熔鉄城】火矢(バリスタ)
+191020 [Volcano steel works] cowhead statue spewing fire -- 【火山の製鉄所】火を噴く牛頭像
+191030 [Volcano steel works] broken bridge -- 【火山の製鉄所】壊れる橋
+191040 Scaffolding with levers -- 【火山の製鉄所】レバーで下がる足場
+191050 [Volcano steel works] Damipori only model (pair of cows) -- 【火山の製鉄所】ダミポリのみのモデル（2対の牛）
+191051 [Volcano steel works] model only damipori (as soon as entering the castle) -- 【火山の製鉄所】ダミポリのみのモデル（城内入ってすぐ）
+191052 [Volcano steel works] damipori only model (large cow) -- 【火山の製鉄所】ダミポリのみのモデル（大きい牛）
+191053 [Volcano steel works] Damipori only model (3 series ←) -- 【火山の製鉄所】ダミポリのみのモデル（３連の←）
+191054 [Volcano steel works] Damipoli only model (center of the series) -- 【火山の製鉄所】ダミポリのみのモデル（３連の中央）
+191055 [Volcano steel works] Damipori only model (3 series →) -- 【火山の製鉄所】ダミポリのみのモデル（３連の→）
+191056 [Volcano steel mill] model only damipoli (for the door of the furnace) -- 【火山の製鉄所】ダミポリのみのモデル（炉の扉用）
+191057 [Volcano steel works] damipori only model (shutter flame) -- 【火山の製鉄所】ダミポリのみのモデル（シャッターの炎）
+191058 [Volcano steel works] model only damipoli (hole in the back of the ladder) -- 【火山の製鉄所】ダミポリのみのモデル（梯子奥の穴）
+191059 [Volcano steel works] model only damipoli (in front of the lever in the air) -- 【火山の製鉄所】ダミポリのみのモデル（レバー前空中）
+191060 [Volcano steel works] hidden door 2 (key guide) -- 【火山の製鉄所】隠し扉2（キーガイド）
+191061 [Volcano steel works] Damipoli only model (6 series_1) -- 【火山の製鉄所】ダミポリのみのモデル（6連_1）
+191062 [Volcano steel works] Damipori only model (6 series_2) -- 【火山の製鉄所】ダミポリのみのモデル（6連_2）
+191063 [Volcano steel works] Damipoli only model (6 series_3) -- 【火山の製鉄所】ダミポリのみのモデル（6連_3）
+191064 [Volcano steel works] Damipori only model (6 series_4) -- 【火山の製鉄所】ダミポリのみのモデル（6連_4）
+191065 [Volcano steel works] Damipori only model (6 series_5) -- 【火山の製鉄所】ダミポリのみのモデル（6連_5）
+191066 [Volcano steel works] Damipori only model (6 series_6) -- 【火山の製鉄所】ダミポリのみのモデル（6連_6）
+191070 [Volcanic steel works] vase of water -- 【火山の製鉄所】水の壺
+191080 [Volcano steel mill] fountain of insect key recovery -- 【火山の製鉄所】虫鍵回復の泉
+191090 Small furnace that can be destroyed -- 【火山の製鉄所】壊せる小さい炉
+191100 [Volcano steel works] hidden door 2 (type 2) -- 【火山の製鉄所】隠し扉2(タイプ2）
+191101 [Volcano steel works] head of the statue of the cowhead [for destruction _ poly play] -- 【火山の製鉄所】牛頭の像の頭部【破壊_ポリ劇用】
+191110 [Volcano steel works] Stone statue of Damon Knight -- 【火山の製鉄所】デーモンナイトの石像
+191111 [Volcano steel mill] fuselage of the statue of the cowhead [for destruction _ poly play] -- 【火山の製鉄所】牛頭の像の胴体【破壊_ポリ劇用】
+191120 [Volcano steel works] hidden door 2 (double-sided type) (key guide) -- 【火山の製鉄所】隠し扉2(両面タイプ）（キーガイド）
+191130 [Volcano steel works] hidden door 2 (double-sided type) (key guide) -- 【火山の製鉄所】隠し扉2(両面タイプ）（キーガイド）
+191140 [Volcano steel mill] hidden door 1 (front and door integrated) (insect key- lighting- SFX) -- 【火山の製鉄所】隠し扉1(淵と扉一体型)（虫鍵・照明・SFX）
+191141 【Volcano steel works】Hidden doors 1 (disappearing part) (insect keys- lighting- SFX) -- 【火山の製鉄所】隠し扉1（消える部分)（虫鍵・照明・SFX）
+191142 [Volcano steel works] open door when the bell is ringing -- 【火山の製鉄所】鐘を鳴らしたら開く扉
+191150 【Molten Castle】Bell -- 【熔鉄城】鐘
+191151 【Molten Castle】Bell (Model without Damipori for Sound) -- 【熔鉄城】鐘（サウンド用ダミポリなしモデル）
+191160 【Molten Castle】The floor that the boss can destroy -- 【熔鉄城】ボスが破壊できる床
+191200 [Volcano steel works] insect key -- 【火山の製鉄所】虫鍵
+191300 [Volcano steel works] model only Damipori for the fountain of recovery -- 【火山の製鉄所】回復の泉用ダミポリのみのモデル
+191301 [Volcano steel works] animation model of the spring surface of the recovery -- 【火山の製鉄所】回復の泉水面アニメーションモデル
+191400 【Volcanic Steel Works】Guillotine Door -- 【火山の製鉄所】ギロチン扉
+191700 [Volcano steel works] can be destroyed spire (for boss lava zone placement) -- 【火山の製鉄所】破壊できる尖塔（ボス溶岩地帯配置用）
+191800 [Volcano steel works] insect key -- 【火山の製鉄所】虫鍵
+191900 [Volcano steel works] terminated bonfire -- 【火山の製鉄所】終端篝火
+198500 [Molten castle] lava for cut scene -- 【熔鉄城】カットシーン用溶岩
+199000 【Volcano Steel Works】Elevator 1_1 -- 【火山の製鉄所】エレベータ1_1
+199001 【Volcano Steel Works】Elevator 1_2 -- 【火山の製鉄所】エレベータ1_2
+199002 【Volcano Steel Works】Elevator 2 -- 【火山の製鉄所】エレベータ2
+199003 【Volcano Steel Works】Elevator 3 -- 【火山の製鉄所】エレベータ3
+199004 [Volcano steel works] elevator caught -- 【火山の製鉄所】挟まれる昇降機
+199005 [Volcano steel works] lifting machine soaked in lava (upper) -- 【火山の製鉄所】溶岩に浸かる昇降機（上部）
+199006 [Volcano steel works] broken scaffolding -- 【火山の製鉄所】折れる足場
+199010 [Volcano steel works] stone lamp -- 【火山の製鉄所】石像ランプ
+199020 【Volcano Steel Works】Togetge Wall -- 【火山の製鉄所】トゲトゲ壁
+199300 【Molten Castle】Statue of Fire (Small) (Mimetic OBJ) -- 【熔鉄城】火を吹く像（小型）（擬態ＯＢＪ）
+210300 【Iwamine Castle】One door of the iron bar (for Iwamine Castle only) -- 【岩峰城】鉄格子の片扉（岩峰城専用）
+210330 【Iwamine Castle】Single Door Small 00 -- 【岩峰城】片扉小00
+210340 【Iwamine Castle】In one door 00 -- 【岩峰城】片扉中00
+210350 [Iwamine Castle] for one-door prison -- 【岩峰城】片扉牢屋用
+210370 【Iwamine Castle】For one door basement -- 【岩峰城】片扉地下用
+210430 【Iwamine Castle】00 in both doors -- 【岩峰城】両扉中00
+210440 【Iwamine Castle】For both door balconies -- 【岩峰城】両扉バルコニー用
+210470 【Iwamine Castle】Both doors -- 【岩峰城】両扉大01
+210476 King's Door -- 王の扉
+210480 The Door in front of the Throne -- 【王城】玉座の前の扉
+210481 【King's Castle】Both doors -- 【王城】両扉(大)
+210482 【King's Castle】Both doors in the basement -- 【王城】地下の両扉
+210640 【Iwamine Castle】Floor Lever: Automatic Return -- 【岩峰城】床レバー：自動で戻る
+210900 【King's Castle】Dedicated Ladder -- 【王城】専用梯子
+211000 【Iwamine Castle】Durahan's Raw Neck Correct Answer -- 【岩峰城】デュラハンの生首　正解
+211001 【Iwamine Castle】Durahan's Raw Neck Mistake -- 【岩峰城】デュラハンの生首　間違い
+211002 【Iwamine Castle】Durahan's Raw Neck Mistake -- 【岩峰城】デュラハンの生首　間違い
+211003 【Iwamine Castle】Durahan's Raw Neck Mistake -- 【岩峰城】デュラハンの生首　間違い
+211004 【Iwamine Castle】Durahan's Raw Neck Mistake -- 【岩峰城】デュラハンの生首　間違い
+211005 【Iwamine Castle】Durahan Armor -- 【岩峰城】デュラハンの鎧
+211010 Statue of a dragon spitting acid -- 【王城】酸を吐く龍の像
+211020 Golem -- 【王城】ゴーレム
+211030 Golem Door -- 【王城】ゴーレム扉
+211040 【King's Castle】StatueNite's Neck -- 【王城】スタチューナイトの首
+211050 The Altar of the Abyss -- 【王城】深淵の祭壇
+211100 The Queen's Painting 1 -- 【王城】王妃の絵画1
+211110 The Queen's Painting 2 -- 【王城】王妃の絵画2
+211120 The Queen's Painting 3 -- 【王城】王妃の絵画3
+211130 The Throne of the Queen -- 【王城】王妃の玉座
+211150 【King's Castle】The switch that golem moves -- 【王城】ゴーレムが動かすスイッチ
+211190 【King's Castle】Key Man -- 【王城】鍵人
+211200 Golem's Torch -- 【王城】ゴーレムの松明
+212000 [Iwamine Castle] pillar that mirror night can break -- 【岩峰城】ミラーナイトが壊せる柱
+219000 [Iwamine Castle] King's Flag -- 【岩峰城】王国旗
+219010 【Iwamine Castle】Chandelier -- 【岩峰城】シャンデリア
+219020 【Iwamine Castle】The Throne -- 【岩峰城】王座
+219030 [Iwamine Castle] Queen's Chair -- 【岩峰城】王妃のイス
+219035 【Iwamine Castle】Pitfall sit-down -- 【岩峰城】落とし穴床
+219036 【Iwamine Castle】Mask 1 -- 【岩峰城】仮面1
+219037 【Iwamine Castle】Mask 2 -- 【岩峰城】仮面2
+219038 【Iwamine Castle】Mask 3 -- 【岩峰城】仮面3
+219040 【Iwamine Castle】Chapel Chandelier -- 【岩峰城】礼拝堂シャンデリア
+219045 【Iwamine Castle】Lifting Machine -- 【岩峰城】昇降機
+219050 【Iwamine Castle】Entrance Statue -- 【岩峰城】エントランス彫像
+219051 【Iwamine Castle】Mirror -- 【岩峰城】鏡
+219055 【Iwamine Castle】Hidden Doors -- 【岩峰城】隠し扉
+219060 【Iwamine Castle】Chandelier (Naka) -- 【岩峰城】シャンデリア(中)
+219065 【Iwamine Castle】Switch Door -- 【岩峰城】スイッチ扉
+219066 【Iwamine Castle】Switch door_Iron bar -- 【岩峰城】スイッチ扉_鉄格子
+219070 【Iwamine Castle】Candlestick Stand (Large) -- 【岩峰城】蝋燭燭台(大)
+219075 【Iwamine Castle】The key door of the corridor -- 【岩峰城】回廊の鍵扉
+219080 【Iwamine Castle】Statue of Statue -- 【岩峰城】スタチューナイト像
+219085 【Iwamine Castle】The Gate of Golem -- 【岩峰城】ゴーレムの開く門
+219090 【King's Castle】Lift -- 【王城】リフト
+219100 Foundation with fire -- 【王城】火が付いている土台
+219110 [Iwamine Castle] high ground of heavy cavalry -- 【岩峰城】重騎馬兵の高台
+219200 【King's Castle】Queen NPC Provisional Model -- 【王城】王妃NPC仮モデル
+219300 【Wangcheng】Pillar (single)_for camera transmission processing -- 【王城】柱(単体)_カメラ透過処理用
+219310 【Wangcheng】Arch (single) _for camera transmission processing -- 【王城】アーチ(単体)_カメラ透過処理用
+219320 【King's Castle】Torigo -- 【王城】鳥籠
+219330 【Wangcheng】Pillar 2 (single) _for camera transmission processing -- 【王城】柱2(単体)_カメラ透過処理用
+219400 Dummy object for lightning SFX generation 1 -- 【王城】雷SFX発生用ダミーオブジェクト1
+219401 Dummy object for lightning SFX generation 2 -- 【王城】雷SFX発生用ダミーオブジェクト2
+219402 Dummy object 3 for lightning SFX generation -- 【王城】雷SFX発生用ダミーオブジェクト3
+219403 Dummy object 4 for lightning SFX generation -- 【王城】雷SFX発生用ダミーオブジェクト4
+219404 【King's Castle】Dummy Object 1 for Rain SFX Generation -- 【王城】雨SFX発生用ダミーオブジェクト1
+219405 Dummy object for rain SFX generation 2 -- 【王城】雨SFX発生用ダミーオブジェクト2
+219406 【King's Castle】 Dummy Object 1 for SFX Generation -- 【王城】SFX発生用ダミーオブジェクト1
+219407 【King's Castle】 Dummy Object 2 for SFX Generation -- 【王城】SFX発生用ダミーオブジェクト2
+219408 【King's Castle】 Dummy Object 3 for SFX Generation -- 【王城】SFX発生用ダミーオブジェクト3
+219500 【Iwamine Castle】Death number display object -- 【岩峰城】死亡数表示オブジェ
+219501 [Iwamine Castle] number of destruction display object -- 【岩峰城】撃破数表示オブジェ
+219600 【King's Castle】Original Golem -- 【王城】オリジナルゴーレム
+219700 【King's Castle】Throne + Gate -- 【王城】玉座+門
+219750 【King's Castle】Light Worm -- 【王城】光虫
+229000 The God tree of the brain trunk -- 脳幹の神木
+230620 Vertical lever for hunting forest -- 狩猟の森用縦レバー
+230640 【Hunting Forest】Floor Lever: Automatic Return -- 【狩猟の森】床レバー：自動で戻る
+230660 【Hunting Forest】Floor Lever: Do not return -- 【狩猟の森】床レバー：戻らない
+231000 Silver Chariot's Whip -- シルバーチャリオットのムチ
+231001 Silver Chariot's Executioner -- シルバーチャリオットの処刑人
+231002 Silver Chariot Carriage -- シルバーチャリオットの馬車
+231010 Silver Chariot Passage Arch -- シルバーチャリオット通路のアーチ
+231020 【Torture Site】Fallen Trees -- 【拷問場】倒れる木
+231030 【Torture Site】Broken Beams -- 【拷問場】壊れる梁
+231040 【Torture Site】Iron Bar -- 【拷問場】鉄格子
+231045 [Forest of hunting] iron fence of the arena -- 【狩猟の森】闘技場の鉄柵
+231050 Torture Lift -- 【拷問場】拷問リフト
+231060 【Torture Site】Hidden Door (Key Guide) -- 【拷問場】隠し扉（キーガイド）
+231070 【Torture Site】Hidden Door (Key Guide) -- 【拷問場】隠し扉（キーガイド）
+231080 Stone statue of the pledge -- 【拷問場】誓約の石像
+231090 【Torture Site】Guillotine Door -- 【拷問場】ギロチン扉
+232000 【Torture Place】Broken Board -- 【拷問場】壊れる板
+232010 [Forest of hunting] Skeleton Aristocratic Throne A -- 【狩猟の森】スケルトン貴族玉座A
+232011 [Forest of hunting] Skeleton Aristocratic Throne B -- 【狩猟の森】スケルトン貴族玉座B
+232020 [Hunting Forest] black phantom shop candle -- 【狩猟の森】黒ファントム屋のろうそく
+232530 【Forest of Hunting】The chair where the dark master sits -- 【狩猟の森】闇術師の座るイス
+237000 【Hunting Forest】Tree A (Conifer type) -- 【狩猟の森】樹木A(針葉樹タイプ)
+237001 【Hunting Forest】Tree B (Bimata tree type) -- 【狩猟の森】樹木B(二股木タイプ)
+237002 【Hunting Forest】Tree C (Undulation Type) -- 【狩猟の森】樹木C(うねり樹タイプ)
+237003 【Hunting Forest】Tree D (Undulating Tree Type) -- 【狩猟の森】樹木D(うねり曲樹タイプ)
+237004 【Hunting Forest】Tree E (leaf-like tree type) -- 【狩猟の森】樹木E(葉っぱ付樹タイプ)
+237005 【Hunting Forest】Tree F (shadowed tree type) -- 【狩猟の森】樹木F(影落とす樹タイプ)
+237006 【Hunting Forest】Tree G (tree type with a shadowed tree) -- 【狩猟の森】樹木G(影落とす鎖付き樹タイプ)
+237010 【Hunting Forest】Tree A (scale 90%) -- 【狩猟の森】樹木A(スケール90%)
+237011 【Hunting Forest】Tree A (scale 80%) -- 【狩猟の森】樹木A(スケール80%)
+237012 【Hunting Forest】Tree A (scale 70%) -- 【狩猟の森】樹木A(スケール70%)
+237020 【Hunting Forest】Tree B (scale 135%) -- 【狩猟の森】樹木B(スケール135%)
+237030 【Hunting Forest】Tree C (Scale Z only 60%) -- 【狩猟の森】樹木C(スケールZのみ60%)
+237031 【Hunting Forest】Tree C (scale 150%) -- 【狩猟の森】樹木C(スケール150%)
+237032 【Hunting Forest】Tree C (scale 170%) -- 【狩猟の森】樹木C(スケール170%)
+237033 【Hunting Forest】Tree C (scale 200%) -- 【狩猟の森】樹木C(スケール200%)
+237040 【Hunting Forest】Tree E (scale 50%) -- 【狩猟の森】樹木E(スケール50%)
+239000 Torture site: Suspended corpse -- 【拷問場】吊り下げられた死体
+239001 [Torture Site] flag -- 【拷問場】旗
+239002 【Torture Site】Stone Statue -- 【拷問場】石像
+239003 【Torture Site】Sloppy Vase Container -- 【拷問場】だらだら壺容器
+239004 【Torture Site】Lamp A -- 【拷問場】ランプＡ
+239005 【Torture Site】Lamp B -- 【拷問場】ランプB
+239010 【Torture Site】Movable Bridge -- 【拷問場】可動橋
+239015 【Torture site】Rotating movable bridge for map connection (tentative) -- 【拷問場】マップ接続用回転可動橋（仮）
+239020 【Torture site】Decoration of iron fence opening and closing lever -- 【拷問場】鉄柵開閉レバーの装飾
+239030 【Torture Site】Borocloth A -- 【拷問場】ボロ布A
+239031 【Torture Site】Borocloth B -- 【拷問場】ボロ布B
+239050 【Torture Site】Silver Chariot (Tentative) -- 【拷問場】シルバーチャリオット（仮）
+239300 【Torture Site】Torture Lift (Mimetic OBJ) -- 【拷問場】拷問リフト（擬態ＯＢＪ）
+239320 【King's Castle】Torigo -- 【王城】鳥籠
+239800 【Torture Place】 Pl hidden gap (tentative) -- 【拷問場】PLが隠れる隙間(仮)
+240300 【Submerged Castle】One door of the iron bar (for submerged castles only) -- 【水没城】鉄格子の片扉（水没城専用）
+240620 【Mausoleum】Vertical Lever -- 【霊廟】縦レバー
+240660 【Mausoleum】Floor Lever: Do not return -- 【霊廟】床レバー :戻らない
+240900 【Tomb of Immortality】Broken Ladder -- 【不死廟】壊れた梯子
+241000 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241010 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241020 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241030 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241040 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241050 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241060 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241070 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241080 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241090 【Submerged Castle】Searchlight [Muscle of Light] -- 【水没城】サーチライト【光の筋】
+241100 【Mausoleum】Shortcut Drawbridge -- 【霊廟】ショートカット跳ね橋
+241110 【Mausoleum】Bell -- 【霊廟】鐘
+241120 【Mausoleum】Hidden Door 2 (Key Guide) -- 【霊廟】隠し扉2（キーガイド）
+241130 【Mausoleum】Hidden Door 1 (Buchi and door integrated) (insect key- lighting- SFX) -- 【霊廟】隠し扉1(淵と扉一体型)（虫鍵・照明・SFX）
+241140 【Mausoleum】Hidden Door 2 (Key Guide) -- 【霊廟】隠し扉2（キーガイド）
+241500 【Submerged Castle】Coffin of the Immortal family -- 【水没城】不死族の棺桶
+241800 【Mausoleum】Insect Key 1 -- 【霊廟】虫鍵1
+241900 【Mausoleum】Lampstand -- 【霊廟】灯火台
+241901 【Mausoleum】Special Light Stand -- 【霊廟】特殊灯火台
+242000 【Submerged Castle】Statue with SFX of Flame -- 【水没城】炎のSFX付き彫像
+242010 【Mausoleum】Fire dish with SFX of flame -- 【霊廟】炎のSFX付き火皿
+242020 【Mausoleum】The pillar that the boss breaks -- 【霊廟】ボスが壊す柱
+242030 【Tomb of Immortality】King Van Clad's Armor -- 【不死廟】ヴァンクラッド王の鎧
+249000 【Mausoleum】Tomb (Small) 1 -- 【霊廟】墓(小)1
+249001 【Mausoleum】Tomb (Medium) -- 【霊廟】墓(中)
+249002 【Mausoleum】Tomb (Large) Phantom Mage Appearance Tomb -- 【霊廟】墓(大)　ファントムメイジ出現墓
+249003 Mausoleum: Tomb (Small) 3 -- 【霊廟】墓(小)3
+249004 【Mausoleum】Tomb (Small) 4 -- 【霊廟】墓(小)4
+249005 【Mausoleum】Small Tomb -- 【霊廟】小細墓
+249006 【Tomb of Immortality】Candles -- 【不死廟】蝋燭群
+249007 【Tomb of Immortality】Candle Group B (for individual placement) -- 【不死廟】蝋燭群B(個別配置用)
+249500 【Mausoleum of Immortality】 Damipoly 1 for SFX -- 【不死廟】SFX用ダミポリ1
+249510 【Mausoleum of Immortality】 Damipoly 2 for SFX -- 【不死廟】SFX用ダミポリ2
+249520 【Mausoleum of Immortality】 Damipoly 3 for SFX -- 【不死廟】SFX用ダミポリ3
+250200 【Scum Bottom】Burning Wooden Treasure Chest -- 【クズ底】燃える木宝箱
+250250 【DSuke Village】Skeleton -- 【Dすけ村】骸骨
+250300 【Ssuke-mura】Wooden one-door light (D-suke-mura only) -- 【Dすけ村】木の片扉　軽（Ｄすけ村専用）
+250470 【Scum bottom】The key door to open with the key of death -- 【クズ底】死の鍵(仮)で開く鍵扉
+250900 【Scum Bottom】Ladder 01 (3.8m) -- 【クズ底】梯子01（3.8ｍ）
+250902 【Scum bottom】Ladder 03 (5.0m) -- 【クズ底】梯子03（5.0ｍ）
+250903 【Scum Bottom】Ladder 04 (6.2m) -- 【クズ底】梯子04（6.2ｍ）
+250904 【Scum Bottom】Ladder 05 (7.4m) -- 【クズ底】梯子05（7.4ｍ）
+250907 【Scum bottom】Ladder 08 (9.8m) -- 【クズ底】梯子08（9.8ｍ）
+250909 【Kuzbottom】Ladder 10 (11m) -- 【クズ底】梯子10（11ｍ）
+250910 【Kuzbottom】Ladder 11 (12.2m) -- 【クズ底】梯子11（12.2ｍ）
+250915 【Kuzbottom】Ladder 16 (15.8m) -- 【クズ底】梯子16（15.8ｍ）
+250929 【Kuzbottom】Ladder 10 (14.6m) -- 【クズ底】梯子10（14.6ｍ）
+251000 【Ssuke-mura】Broken floor -- 【Dすけ村】壊れる床
+251010 【Ssuke-mura】A certain number of people ride and the floor breaks. -- 【Dすけ村】一定人数乗ると壊れる床
+251020 【Scum】Torture Lift -- 【クズ底】拷問リフト
+251030 The Altar of the Broken Saint -- 【クズ底】壊れた聖者の祭壇
+251031 【Kuzbottom】Altar Pillar of The Saint -- 【クズ底】壊聖者の祭壇柱
+251900 【Kuzbottom】Kokeshi Light Stand -- 【クズ底】こけし灯火台
+251901 【Kuzbottom】Kokeshi Lamp Stand- No Debris -- 【クズ底】こけし灯火台・破片無し
+251920 【Scum bottom】Terminating bonfire -- 【クズ底】終端篝火
+252000 【D-Suke-mura】Daladara-n-jar -- 【Dすけ村】ダラダラ壷
+252001 [Scum bottom] the plate of the wood that was hammered -- 【クズ底】打ち付けられた木の板
+252010 【Ssuke-mura】Jizo (for attack) -- 【Dすけ村】地蔵(攻撃用)
+252011 【Ssuke-mura】Jizo (for attack) small amount of moss -- 【Dすけ村】地蔵(攻撃用)コケ少量
+252012 【Ssuke-mura】Jizo (for attack) moss volume -- 【Dすけ村】地蔵(攻撃用)コケ中量
+252013 【Ssuke-mura】Jizo (for attack) moss mass -- 【Dすけ村】地蔵(攻撃用)コケ大量
+252015 【Ssuke-mura】Beheaded Jizo (for attack) -- 【Dすけ村】首つり地蔵(攻撃用)
+252020 【Ssuke-mura】Jizo -- 【Dすけ村】地蔵
+252021 【Ssuke-mura】Jizo Moss Small Quantity -- 【Dすけ村】地蔵　コケ少量
+252022 【Ssuke-mura】Jizo Co-masque -- 【Dすけ村】地蔵　コケ中量
+252023 【Ssuke-mura】Jizo Moss Mass -- 【Dすけ村】地蔵　コケ大量
+252030 [Scum bottom] cut scene Kokeshi -- 【クズ底】カットシーンこけし
+252040 [Scum bottom] cut scene kokeshi splinter -- 【クズ底】カットシーンこけし破片
+252050 [Kuzbottom] cut scene Kokeshi (Masonry destruction) -- 【クズ底】カットシーンこけし（石積み破壊化）
+252060 【Scum bottom】Broken wooden floor -- 【クズ底】壊れる木板の床
+252061 [Scum bottom] crumbling wooden board floor A -- 【クズ底】崩れる木板の床A
+252062 [Scum bottom] plate B of the wood that was hammered -- 【クズ底】打ち付けられた木の板B
+252063 【Scum bottom】Crumbling wooden board floor B -- 【クズ底】崩れる木板の床B
+252064 [Scum bottom] crumbling wooden board floor C -- 【クズ底】崩れる木板の床C
+252070 【Scum bottom】A pot that does not contain a treasure corpse -- 【クズ底】宝死体が入っていないつぼ
+252120 【Kuzbottom】Vase containing treasure corpses -- 【クズ底】宝死体が入っている壺
+252121 【Scum bottom】A pot that does not contain a treasure corpse -- 【クズ底】宝死体が入っていないつぼ
+253003 【Scum bottom】Insect vase (multiple enemies) -- 【クズ底】虫壺(敵複数体)
+253004 【Scum bottom】Acid vase -- 【クズ底】酸壺
+256000 Butcher's right arm -- 【クズ底】ブッチャーの右腕
+256001 Butcher's left arm -- 【クズ底】ブッチャーの左腕
+256002 Butcher's left arm corpse -- 【クズ底】ブッチャーの左腕 死体
+259300 【Kuzbottom】Shining Kokeshi (Mimetic OBJ) -- 【クズ底】光るこけし（擬態ＯＢＪ）
+261000 Damipoli OBJ for the Return of The Memory of the Old Dragon -- 古龍の記憶の帰還用ダミポリOBJ
+262000 Flame barrels -- 火炎樽
+262010 Crates -- 木箱
+270370 [Nest of the guard dragon] one door (heavy) -- 【守り竜の巣】片扉（重）
+270800 [Nest of the guard dragon] rope -- 【守り竜の巣】ロープ
+270801 [Nest of the guard dragon] rope -- 【守り竜の巣】ロープ
+270900 [Nest of the guard dragon] stretch ladder -- 【守り竜の巣】伸ばし梯子
+271000 [Nest of the guard dragon] suspension bridge -- 【守り竜の巣】吊り橋
+271010 [Dragon's Shrine Festival] boss room sticking out scaffolding -- 【龍の祠祭場】ボス部屋突き出る足場
+271040 [Nest of the Guard Dragon] Hidden Door (SFX) -- 【守り竜の巣】隠し扉（SFX）
+271810 [Nest of the guard dragon] insect key -- 【守り竜の巣】虫鍵
+272000 [Nest of the Guard Dragon] Wyburn's Egg -- 【守り竜の巣】ワイバーンの卵
+276000 [Nest of the guard dragon] Wyvern -- 【守り竜の巣】ワイバーン　1匹
+279000 [Nest of the guard dragon] swaying cloth -- 【守り竜の巣】揺れる布
+279010 [Nest of the guard dragon] old dragon egg -- 【守り竜の巣】古龍の卵
+279020 [Nest of the guard dragon] Damipoli for SFX -- 【守り竜の巣】SFX用ダミポリ
+289000 A grudge -- 怨念
+289001 A grudge -- 怨念
+289002 Grudges (pillars) -- 怨念(柱)
+289003 Grudge (face) -- 怨念(顔)
+291000 [Maduro hollow shadow forest connection] gimmick up door -- 【マデューラ虚ろな影の森接続】ギミック上がり扉
+291001 [Maduro hollow shadow forest connection] gimmick up door (for building blockade) -- 【マデューラ虚ろな影の森接続】ギミック上がり扉(建物封鎖用)
+297000 [Maduro hollow shadow forest connection] tree A -- 【マデューラ虚ろな影の森接続】樹木A
+297001 [Maduro hollow shadow forest connection] tree B -- 【マデューラ虚ろな影の森接続】樹木B
+300640 [Heide Great Fire Tower Hidden Port Connection Road] Floor Lever: Automatic return -- 【ハイデ大火塔隠れ港接続路】床レバー：自動で戻る
+309000 [Heide Great Fire Tower Hidden Port Connection Road] Lift -- 【ハイデ大火塔隠れ港接続路】リフト
+310329 [Heide's Great Fire Tower] door for the battle area -- 【ハイデの大火塔】対戦エリア用扉
+310400 [Great fire tower of Heide] gate for connection -- 【ハイデの大火塔】接続用ゲート
+310620 [Great fire tower of Heide] vertical lever: do not return -- 【ハイデの大火塔】縦レバー：戻らない
+310660 [Heide's Great Fire Tower] Floor Lever: Do not return -- 【ハイデの大火塔】床レバー：戻らない
+311000 [Great Fire Tower of Heide] Drawbridge -- 【ハイデの大火塔】跳ね橋
+311010 [Great fire tower of Heide] rising ground -- 【ハイデの大火塔】せり上がる地面
+311020 [Great fire tower of Heide] vertical lever storage hole -- 【ハイデの大火塔】縦レバー収納穴
+311030 [Great fire tower of Heide] pillar that only the boss can destroy -- 【ハイデの大火塔】ボスのみが破壊できる柱
+311040 Longue of The Great Fire Tower of The Blue Cathedral -- 【ハイデの大火塔】青聖堂の長椅子
+311050 [Great fire tower of Heide] pillar of the connected building -- 【ハイデの大火塔】接続建物の柱
+311060 [Great fire tower of Heide] railing of the connected building -- 【ハイデの大火塔】接続建物の手すり
+311070 [Great Fire Tower of Heide] Pillar of The Madura Connection -- 【ハイデの大火塔】マデューラ繋ぎの柱
+319004 [Great Fire Tower of Heide] Lighting -- 【ハイデの大火塔】照明
+319010 Statue of the Great Fire Tower of Heide -- 【ハイデの大火塔】誓約の像
+319020 [Great fire tower of Heide] candlestick with a wall -- 【ハイデの大火塔】壁付け燭台
+320370 [Forest of the shadow of the void] one door of the key -- 【虚ろの影の森】鍵の片扉
+320470 King's Door -- 王の扉
+320476 King's Door -- 王の扉
+320480 The Forest of The Shadow of The Void: The Door of the Shrine -- 【虚ろの影の森】祠の扉
+321000 [Forest of the shadow of the emptiness] gimmick up door -- 【虚ろの影の森】ギミック上がり扉
+321010 【Forest of The Shadow of The Void】 IlaraStone -- 【虚ろの影の森】つらら石
+321020 [Forest of the shadow of the emptiness] barrel that the top weapon shop is caught -- 【虚ろの影の森】上位武器屋が捕まっている樽
+321030 [Forest of the shadow of the emptiness] thorn wheel　 -- 【虚ろの影の森】棘車輪
+321040 Forest of Shadows: The Altar of The Saint -- 【虚ろの影の森】聖者の祭壇
+321041 Forest of Shadows of The Shadows: The Altar pillar of the Saint -- 【虚ろの影の森】聖者の祭壇柱
+322000 【Forest of Beasts】 A Jar -- 【獣人の森】だらだら壺
+322010 【Forest of Shadows of The Void】Pillar a of Durahan's House -- 【虚ろの影の森】デュラハンの家の柱A
+322011 【Forest of The Shadow of The Void】Pillar of Durahan's House B -- 【虚ろの影の森】デュラハンの家の柱B
+327000 Forest of the shadow of the emptiness: Tree by cliff -- 【虚ろの影の森】崖際樹木
+327001 Forest of the shadow of the emptiness: trees for the ground -- 【虚ろの影の森】地面用樹木
+327002 【Forest of the Shadow of The Hollow】Distant View Trees -- 【虚ろの影の森】遠景樹木
+327003 Forest of The Shadow of The Void: Dead Trees -- 【虚ろの影の森】枯れ木
+327004 【Forest of the Shadow of The Hollow】Ogi C -- 【虚ろの影の森】小木C
+327005 Forest of the Shadow of The Void: Dead Tree C -- 【虚ろの影の森】枯れ木C
+327006 [Forest of the shadow of the emptiness] Tree A -- 【虚ろの影の森】樹木A
+327007 [Forest of the shadow of the emptiness] the dead tree of the boss room (small tree) -- 【虚ろの影の森】ボス部屋の枯れ木（小さな木）
+329000 [Forest of beasts] cloth of the entrance of the beast person residence -- 【獣人の森】獣人住処の入り口の布
+329001 [Forest of the Beast Man] cloth of the entrance of the beast man nagato sin -- 【獣人の森】獣人長住処の入り口の布
+329002 [Forest of beasts] enemy appearance gate -- 【獣人の森】敵出現ゲート
+329003 Stone statue of the gate -- 【獣人の森】ゲートの石像
+329010 【Forest of beasts】Keepers of the Forest (for verification) -- 【獣人の森】森の番人（検証用）
+329020 【Forest of Beasts】 Human Face Tree A -- 【獣人の森】人面木A
+329021 【Forest of Beasts】 Human-sided Wood B -- 【獣人の森】人面木B
+329030 【Forest of Beasts】 Pitfall Slab (Small) -- 【獣人の森】落とし穴用板（小）
+329031 【Forest of Beasts】 Pitfall Slab (Large) -- 【獣人の森】落とし穴用板（大）
+329300 [Forest of the shadow of the hollow] vivid flower (mimetic OBJ) -- 【虚ろの影の森】鮮やかな花（擬態ＯＢＪ）
+329400 【Forest of the shadow of the emptiness】Acid reservoir light source -- 【虚ろの影の森】酸溜り点光源
+330906 【Door way of Faros】Ladder 07 (8.6m) -- 【ファロスの扉道】梯子07（8.6ｍ）
+331050 【Door road of Faros】Cage (Heavy Dwarf) -- 【ファロスの扉道】檻（重ドワーフ）
+331051 【Door road of Faros】Cage (hidden road) -- 【ファロスの扉道】檻（隠し道）
+331060 【Door road of Faros】The wall -- 【ファロスの扉道】通せんぼ壁
+331063 [Door road of Faros] Togetge switch -- 【ファロスの扉道】トゲトゲスイッチ
+331065 【Door road of Faros】Insect key door 1 (elephant man) -- 【ファロスの扉道】虫鍵扉・1(象人)
+331066 【Door road of Faros】Insect key door- 2 (elephant man) -- 【ファロスの扉道】虫鍵扉・2(象人)
+331067 【Door road of Faros】Insect key door 3 (elephant man) -- 【ファロスの扉道】虫鍵扉・3(象人)
+331070 【Door road of Faros】Ladder -- 【ファロスの扉道】梯子
+331800 【Door way of Faros】Insect key -- 【ファロスの扉道】虫鍵
+331810 【Door way of Faros】Insect key (ver to put on the ground) -- 【ファロスの扉道】虫鍵（地面に置くver）
+331900 【Door road of Faros】Light stand -- 【ファロスの扉道】灯火台
+331930 【Door road of Faros】Lamp stand (wall type) -- 【ファロスの扉道】灯火台(壁タイプ)
+331950 【Door road of Faros】Cage (Heavy Dwarf) -- 【ファロスの扉道】檻（重ドワーフ）
+332000 【Door road of Faros】Kokeshi -- 【ファロスの扉道】こけし
+339100 [Door of Faros] Togetge -- 【ファロスの扉】トゲトゲ
+339101 [Door of Faros] Togetge 2 -- 【ファロスの扉】トゲトゲ2
+339402 [Door way of Faros] ad-throwing dwarf statue -- 【ファロスの扉道】斧投げドワーフ像
+340900 Ladder 01 (3.8m) -- 梯子01（3.8ｍ）
+340902 Ladder 03 (5.0m) -- 梯子03（5.0ｍ）
+340909 A broken ladder -- 途切れ梯子
+341000 Drawbridge -- 跳ね橋
+341010 Gimmick Stairs -- ギミック階段
+341800 Insect Keys -- 虫鍵
+341810 Insect key (for floor) -- 虫鍵（床用）
+349000 Candles -- 蝋燭群
+349001 Rat Statue -- ネズミ像
+349002 The poison swamp that the rat image vomited -- ネズミ像が吐いた毒沼
+349003 Damipoli for SFX -- SFX用ダミポリ
+349004 Rat statue in the gimmick room -- ギミック部屋のネズミ像
+349010 Damipoli for TorchEs SFX (top) -- たいまつSFX用ダミポリ(上)
+349011 Damipoly for TorchEs SFX (bottom) -- たいまつSFX用ダミポリ(下)
+349012 Damipoly for Candle SFX -- ろうそくSFX用ダミポリ
+811200 Barista -- バリスタ
+850100 Can be destroyed -- 破壊可
+850120 Can't be destroyed -- 破壊不可
+850200 Treasure chest (Tree:) -- 宝箱（木：）
+850204 Treasure Chest (Tree: Burning) -- 宝箱（木：燃える）
+850210 Treasure Chest (Iron:) -- 宝箱（鉄：）
+850300 One door (can be destroyed) -- 片扉（破壊可）
+850400 Both doors -- 両扉
+850500 Scenario White Door -- シナリオ白扉
+850510 Boss White Door -- ボス白扉
+850520 Intrusion White Door -- 侵入白扉
+850600 Vertical Lever: Automatic Return -- 縦レバー：自動で戻る
+850620 Vertical lever: Do not return -- 縦レバー：戻らない
+850640 Floor Lever: Auto Back -- 床レバー：自動で戻る
+850660 Floor Lever: Do not return -- 床レバー：戻らない
+850680 Floor lever: Continue while the button is typing -- 床レバー：ボタン入力している間引き続け
+850700 Floor switch -- 床スイッチ
+850720 Wall hole lever -- 壁穴レバー
+850800 Rope -- ロープ
+850900 Ladder -- 梯子
+850910 Lower ladder -- 下し梯子
+850920 A broken ladder -- 途切れ梯子
+851000 Hidden Door (1) (Insect Key SFX) -- 隠し扉①（虫鍵SFX）
+851010 Hidden door (2) (button press) -- 隠し扉②（ボタン押）
+851100 Bonfire -- 篝火
+851800 Insect Keys -- 虫鍵
+851810 Insect key (floor) -- 虫鍵（床）
+851900 Pine light type fire stand -- 松明種火台
+859000 Elevator -- 昇降機
+871000 Decoy OBJ  -- デコイOBJ

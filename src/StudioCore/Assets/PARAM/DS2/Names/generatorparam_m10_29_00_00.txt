@@ -1,0 +1,16 @@
+60 [GEN:60] Benhart of Jugo
+61 [GEN:61] Benhart of Jugo
+115 [GEN:115] Rosabeth of Melfia
+116 [GEN:116] Rosabeth of Melfia
+117 [GEN:117] Rosabeth of Melfia
+1000 [GEN:1000] Basilisk
+1100 [GEN:1100] Forest Grotesque
+1200 [GEN:1200] Forest Grotesque
+1300 [GEN:1300] Forest Grotesque
+1400 [GEN:1400] Forest Grotesque
+1500 [GEN:1500] Forest Grotesque
+1600 [GEN:1600] Forest Grotesque
+1900 [GEN:1900] Forest Grotesque
+2000 [GEN:2000] Forest Grotesque
+2100 [GEN:2100] Forest Grotesque
+2200 [GEN:2200] Gyrm

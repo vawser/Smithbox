@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>DAMAGE_OVER_WRITE_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 Unk00" />
+    <Field Def="u8 Unk01" />
+    <Field Def="u8 Unk02" />
+    <Field Def="u8 Unk03" />
+    <Field Def="u8 Unk04" />
+    <Field Def="u8 Unk05" />
+    <Field Def="u8 Unk06" />
+    <Field Def="u8 Unk07" />
+    <Field Def="u8 Unk08" />
+    <Field Def="u8 Unk09" />
+    <Field Def="u8 Unk10" />
+    <Field Def="u8 Unk11" />
+    <Field Def="u8 Unk12" />
+    <Field Def="u8 Unk13" />
+    <Field Def="u8 Unk14" />
+    <Field Def="u8 Unk15" />
+    <Field Def="u8 Unk16" />
+    <Field Def="u8 Unk17" />
+    <Field Def="u8 Unk18" />
+    <Field Def="u8 Unk19" />
+    <Field Def="u8 Unk20" />
+    <Field Def="u8 Unk21" />
+    <Field Def="u8 Unk22" />
+    <Field Def="u8 Unk23" />
+    <Field Def="u8 Unk24" />
+    <Field Def="u8 Unk25" />
+    <Field Def="u8 Unk26" />
+  </Fields>
+</PARAMDEF>

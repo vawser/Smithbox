@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FE_TEXT_EFFECT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 ResourceID">
+      <DisplayName>リソースID</DisplayName>
+      <Enum>FE_TEXT_EFFECT_RES_ID</Enum>
+      <Description>メニューリソースのインスタンス名　TextEffect_XXX のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 reserved_1">
+      <DisplayName>予約1</DisplayName>
+      <Description>-----</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <SortID>998</SortID>
+    </Field>
+    <Field Def="s32 TextID_1st = -1">
+      <DisplayName>テキストID１</DisplayName>
+      <Description>表示するEventTextのテキストID(1つ目)。-1でテキストなし</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 SeID = -1">
+      <DisplayName>SE ID</DisplayName>
+      <Description>再生するVoice の SE ID。-1でSE無し</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 TextID_2nd = -1">
+      <DisplayName>テキストID２</DisplayName>
+      <Description>表示するEventTextのテキストID(2つ目)。-1でテキストなし</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 TextID_3rd = -1">
+      <DisplayName>テキストID３</DisplayName>
+      <Description>表示するEventTextのテキストID(3つ目)。-1でテキストなし</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s8 DispSlot">
+      <DisplayName>表示スロット</DisplayName>
+      <Enum>FE_TEXT_EFFECT_SLOT_TYPE</Enum>
+      <Description>表示スロット</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+    </Field>
+    <Field Def="dummy8 reserved_2[1]">
+      <DisplayName>予約2</DisplayName>
+      <Description>-----</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>999</SortID>
+    </Field>
+    <Field Def="u8 bMovieSkipEnable">
+      <DisplayName>スキップ</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>動画のスキップが可能か</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>22</SortID>
+      <UnkC8>動画</UnkC8>
+    </Field>
+    <Field Def="u8 bMovieLoopPlay">
+      <DisplayName>ループ</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>動画をループ再生するかどうか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>21</SortID>
+      <UnkC8>動画</UnkC8>
+    </Field>
+    <Field Def="s32 MovieID">
+      <DisplayName>ID</DisplayName>
+      <Description>再生する動画のID。0以下で動画無し</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>20</SortID>
+      <UnkC8>動画</UnkC8>
+    </Field>
+    <Field Def="s32 TextID_4th = -1">
+      <DisplayName>テキストID４</DisplayName>
+      <Description>表示するEventTextのテキストID(4つ目)。-1でテキストなし</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

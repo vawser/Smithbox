@@ -1,0 +1,694 @@
+1000 Unban flag at game start ゲーム開始時解禁フラグ
+1000 Unban flag at game start ゲーム開始時解禁フラグ
+2000 System reservation_participating in session システム予約_セッション参加中
+2001 system reserved_no session システム予約_セッションなし
+2010 system reserved_host システム予約_ホスト
+2011 System reservation_guest システム予約_ゲスト
+2020 system reservation_is the local player normal システム予約_ローカルプレイヤが通常か
+2021 System reservation_Is the local player a white spirit? システム予約_ローカルプレイヤが白霊か
+2022 System reservation_Is the local player a dark spirit? システム予約_ローカルプレイヤが闇霊か
+2030 Leave the loading screen off ロード画面使用OFFのまま
+2040 Event flag for PlayGo PlayGo用イベントフラグ
+2050 Arena Event Flag_Are you playing Arena? アリーナイベントフラグ_アリーナをプレイ中か
+3000 Chapter Judgment Flag_In Chapter 1 章判定フラグ_一章中
+3001 Chapter Judgment Flag_End of Chapter 1 章判定フラグ_一章終わり
+3002 Chapter Judgment Flag_Chapter 2 章判定フラグ_二章中
+3003 Chapter Judgment Flag_End of Chapter 2 章判定フラグ_二章終わり
+3004 Chapter Judgment Flag_Chapter 3 章判定フラグ_三章中
+3005 Chapter Judgment Flag_End of Chapter 3 章判定フラグ_三章終わり
+3006 Chapter Judgment Flag_Chapter 4 章判定フラグ_四章中
+3007 Chapter Judgment Flag_End of Chapter 4 章判定フラグ_四章終わり
+3008 Chapter Judgment Flag_Chapter 5 章判定フラグ_五章中
+3009 Chapter Judgment Flag_End of Chapter 5 章判定フラグ_五章終わり
+3010 Chapter Judgment Flag_Chapter 6 章判定フラグ_六章中
+3011 Chapter Judgment Flag_End of Chapter 6 章判定フラグ_六章終わり
+3020 Garage general-purpose same notification window opened ガレージ汎用　同じ告知ウインドウ開いた
+3100 Message_Visible Flag Message_表示可能フラグ
+3101 Archive_visible flag Achive_表示可能フラグ
+3102 Mission_visible flag Mission_表示可能フラグ
+3103 Assemble_visible Assemble_表示可能
+3104 Paint_Visible Paint_表示可能
+3105 Design_ visible Design_表示可能
+3106 AC_Test_Visible AC_Test_表示可能
+3107 Market_ visible Market_表示可能
+3108 Black_Market_ visible Black_Market_表示可能
+3109 Talk_ visible Talk_表示可能
+3110 AC_Arena_Visible AC_Arena_表示可能
+3111 OS_Update_Visible OS_Update_表示可能
+3112 Simulator_ can be displayed Simulator_表示可能
+3113 ONLINE_Arena_Visible ONLINE_Arena_表示可能
+3114 Spare 02 予備02
+3115 spare 03 予備03
+3116 spare 04 予備04
+3117 spare 05 予備05
+3118 spare 06 予備06
+3119 Preliminary 07 予備07
+3120 Message_cannot be selected Message_選択不可能
+3121 Achiive_Unlocking Achive_解禁用
+3122 Mission_Unlocking Mission_解禁用
+3123 Assemble_Unlocking Assemble_解禁用
+3124 Paint_Unlocking Paint_解禁用
+3125 Design_Unlocking Design_解禁用
+3126 AC_Test_Unban AC_Test_解禁用
+3127 Market_Unlocking Market_解禁用
+3128 Black_Market_Unlocking Black_Market_解禁用
+3129 Talk_Unlocking Talk_解禁用
+3130 AC_Arena_Unban AC_Arena_解禁用
+3131 OS_Update_Unban OS_Update_解禁用
+3132 Simulator_Unlocking Simulator_解禁用
+3133 ONLINE_Arena_Unlocking ONLINE_Arena_解禁用
+3134 replaymission for unlocking replaymission 解禁用
+3135 mission grayed out ミッショングレーアウト
+3136 reserve 11 予備11
+3137 Reserve 12 予備12
+3138 reserve 13 予備13
+3139 reserve 14 予備14
+3150 Arena unlock progress 1 アリーナ解禁進行度1
+3151 Arena unlock progress 2 アリーナ解禁進行度2
+3152 Arena unlock progress 3 アリーナ解禁進行度3
+3153 Arena unlock progress 4 アリーナ解禁進行度4
+3154 Arena unlock progress 5 アリーナ解禁進行度5
+3155 Arena unlock progress 6 アリーナ解禁進行度6
+3156 Arena unlock progress 7 アリーナ解禁進行度7
+3157 Arena unlock progress 8 アリーナ解禁進行度8
+3158 Arena unlock progress 9 アリーナ解禁進行度9
+3159 Arena unlock progress 10 アリーナ解禁進行度10
+3160 Arena unlock progress 11 アリーナ解禁進行度11
+3200 Menu non-display judgment メニュー非表示判定
+3210 Silent start determination 無音スタート判定
+3220 BGM reset judgment at garage IN ガレージIN時のBGMリセット判定
+3300 Conversation end judgment 会話終了判定
+3400 [Garage] Judgment by seeing the story production_Chapter 1 progress 1 【ガレージ】ストーリー演出を見た判定_チャプター1進行度1
+3401 [Garage] Judgment by seeing the story production_Chapter 1 progress 2 【ガレージ】ストーリー演出を見た判定_チャプター1進行度2
+3402 [Garage] Judgment by seeing the story production_Chapter 1 progress 3 【ガレージ】ストーリー演出を見た判定_チャプター1進行度3
+3403 [Garage] Judgment by seeing the story production_Chapter 1 progress 4 【ガレージ】ストーリー演出を見た判定_チャプター1進行度4
+3404 [Garage] Judgment by seeing the story production_Chapter 1 progress 5 【ガレージ】ストーリー演出を見た判定_チャプター1進行度5
+3405 [Garage] Judgment by seeing the story production_Chapter 1 progress 6 【ガレージ】ストーリー演出を見た判定_チャプター1進行度6
+3406 [Garage] Judgment by seeing the story production_Chapter 1 progress 7 【ガレージ】ストーリー演出を見た判定_チャプター1進行度7
+3407 [Garage] Judgment by seeing the story production_Chapter 1 progress 8 【ガレージ】ストーリー演出を見た判定_チャプター1進行度8
+3408 [Garage] Judgment by seeing the story production_Chapter 1 progress 9 【ガレージ】ストーリー演出を見た判定_チャプター1進行度9
+3409 [Garage] Judgment by watching the story production_Chapter 1 Entered the garage for the first time 【ガレージ】ストーリー演出を見た判定_チャプター1初めてガレージに入った
+3410 [Garage] Judgment by seeing the story production_Chapter 2 progress 1 【ガレージ】ストーリー演出を見た判定_チャプター2進行度1
+3411 [Garage] Judgment by seeing the story production_Chapter 2 progress 2 【ガレージ】ストーリー演出を見た判定_チャプター2進行度2
+3412 [Garage] Judgment by seeing the story production_Chapter 2 progress 3 【ガレージ】ストーリー演出を見た判定_チャプター2進行度3
+3413 [Garage] Judgment by watching the story production Chapter 2 Preliminary 1 【ガレージ】ストーリー演出を見た判定チャプター2予備1
+3414 [Garage] Judgment by watching the story production Chapter 2 Preliminary 2 【ガレージ】ストーリー演出を見た判定チャプター2予備2
+3415 [Garage] Judgment by watching the story production Chapter 2 Preliminary 3 【ガレージ】ストーリー演出を見た判定チャプター2予備3
+3416 [Garage] Judgment by watching the story production Chapter 2 Preliminary 4 【ガレージ】ストーリー演出を見た判定チャプター2予備4
+3417 [Garage] Judgment by watching the story production Chapter 2 Preliminary 5 【ガレージ】ストーリー演出を見た判定チャプター2予備5
+3418 [Garage] Judgment by watching the story production Chapter 2 Preliminary 6 【ガレージ】ストーリー演出を見た判定チャプター2予備6
+3419 [Garage] Judgment by watching the story production Chapter 2 Preliminary 7 【ガレージ】ストーリー演出を見た判定チャプター2予備7
+3420 [Garage] Judgment by watching the story production Chapter 3 progress 1 【ガレージ】ストーリー演出を見た判定チャプター3進行度1
+3421 [Garage] Judgment by seeing the story production Chapter 3 progress 2 【ガレージ】ストーリー演出を見た判定チャプター3進行度2
+3422 [Garage] Judgment by watching the story production Chapter 3 progress 3 【ガレージ】ストーリー演出を見た判定チャプター3進行度3
+3423 [Garage] Judgment by seeing the story production Chapter 3 Progress 4 【ガレージ】ストーリー演出を見た判定チャプター3進行度4
+3424 [Garage] Judgment by watching the story production Chapter 3 progress level 5 【ガレージ】ストーリー演出を見た判定チャプター3進行度5
+3425 [Garage] Judgment after seeing the story production Chapter 3 progress 6 【ガレージ】ストーリー演出を見た判定チャプター3進行度6
+3426 [Garage] Judgment by watching the story production Chapter 3 progress level 7 【ガレージ】ストーリー演出を見た判定チャプター3進行度7
+3427 [Garage] Judgment by watching the story production Chapter 3 progress level 8 【ガレージ】ストーリー演出を見た判定チャプター3進行度8
+3428 [Garage] Judgment by seeing the story production Chapter 3 progress level 9 【ガレージ】ストーリー演出を見た判定チャプター3進行度9
+3429 [Garage] Judgment by watching the story production Chapter 3 progress 10 【ガレージ】ストーリー演出を見た判定チャプター3進行度10
+3430 [Garage] Judgment by seeing the story production_Chapter 4 progress 1 【ガレージ】ストーリー演出を見た判定_チャプター4進行度1
+3431 [Garage] Judgment by seeing the story production_Chapter 4 progress 2 【ガレージ】ストーリー演出を見た判定_チャプター4進行度2
+3432 [Garage] Judgment by seeing the story production_Chapter 4 progress 3 【ガレージ】ストーリー演出を見た判定_チャプター4進行度3
+3433 [Garage] Judgment by seeing the story production_Chapter 4 progress 4 【ガレージ】ストーリー演出を見た判定_チャプター4進行度4
+3434 [Garage] Judgment by seeing the story production_Chapter 4 progress 5 【ガレージ】ストーリー演出を見た判定_チャプター4進行度5
+3435 [Garage] Judgment by seeing the story production_Chapter 4 progress 6 【ガレージ】ストーリー演出を見た判定_チャプター4進行度6
+3436 [Garage] Judgment by seeing the story production_Chapter 4 progress level 7 【ガレージ】ストーリー演出を見た判定_チャプター4進行度7
+3437 [Garage] Judgment by watching the story production Chapter 4 Preliminary 1 【ガレージ】ストーリー演出を見た判定チャプター4予備1
+3438 [Garage] Judgment by watching the story production Chapter 4 Preliminary 2 【ガレージ】ストーリー演出を見た判定チャプター4予備2
+3439 [Garage] Judgment by watching the story production Chapter 4 Preliminary 3 【ガレージ】ストーリー演出を見た判定チャプター4予備3
+3440 [Garage] Judgment by seeing the story production_Chapter 5 progress 1 【ガレージ】ストーリー演出を見た判定_チャプター5進行度1
+3441 [Garage] Judgment by seeing the story production_Chapter 5 progress 2 【ガレージ】ストーリー演出を見た判定_チャプター5進行度2
+3442 [Garage] Judgment by seeing the story production_Chapter 5 progress 3 【ガレージ】ストーリー演出を見た判定_チャプター5進行度3
+3443 [Garage] Judgment by seeing the story production_Chapter 5 progress 4 【ガレージ】ストーリー演出を見た判定_チャプター5進行度4
+3444 [Garage] Judgment by seeing the story production_Chapter 5 progress 5 【ガレージ】ストーリー演出を見た判定_チャプター5進行度5
+3445 [Garage] Judgment by seeing the story production_Chapter 5 progress 6 【ガレージ】ストーリー演出を見た判定_チャプター5進行度6
+3446 [Garage] Judgment by seeing the story production_Chapter 5 progress 7 【ガレージ】ストーリー演出を見た判定_チャプター5進行度7
+3447 [Garage] Current Route C 【ガレージ】現在Cルート
+3448 [Garage] I just saw the start of the arena 【ガレージ】今更アリーナ開始見た
+3449 [Garage] Arena now open 【ガレージ】今更アリーナ開
+3450 [Garage] Judgment by seeing the story production_Chapter 1 progress 10 【ガレージ】ストーリー演出を見た判定_チャプター1進行度10
+3451 [Garage] Judgment by seeing the story production_Chapter 1 progress 11 【ガレージ】ストーリー演出を見た判定_チャプター1進行度11
+3452 [Garage] Judgment by seeing the story production_Chapter 1 progress 12 【ガレージ】ストーリー演出を見た判定_チャプター1進行度12
+3453 [Garage] Judgment by seeing the story production_Chapter 1 progress 13 【ガレージ】ストーリー演出を見た判定_チャプター1進行度13
+3454 [Garage] Judgment by seeing the story production_Chapter 1 progress 14 【ガレージ】ストーリー演出を見た判定_チャプター1進行度14
+3455 [Garage] Judgment by seeing the story production_Chapter 1 progress 15 【ガレージ】ストーリー演出を見た判定_チャプター1進行度15
+3456 [Garage] Judgment by seeing the story production_Chapter 1 progress 16 【ガレージ】ストーリー演出を見た判定_チャプター1進行度16
+3457 [Garage] Judgment by seeing the story production_Chapter 1 progress 17 【ガレージ】ストーリー演出を見た判定_チャプター1進行度17
+3458 [Garage] Judgment by seeing the story production_Chapter 1 progress 18 【ガレージ】ストーリー演出を見た判定_チャプター1進行度18
+3460 [Garage] Judgment by watching the story production Chapter 3 progress level 11 【ガレージ】ストーリー演出を見た判定チャプター3進行度11
+3461 [Garage] Judgment by watching the story production Chapter 3 progress level 12 【ガレージ】ストーリー演出を見た判定チャプター3進行度12
+3462 [Garage] Judgment by seeing the story production Chapter 3 progress level 13 【ガレージ】ストーリー演出を見た判定チャプター3進行度13
+3463 [Garage] Judgment by seeing the story production Chapter 3 progress level 14 【ガレージ】ストーリー演出を見た判定チャプター3進行度14
+3464 [Garage] Judgment by seeing the story production Chapter 3 progress level 15 【ガレージ】ストーリー演出を見た判定チャプター3進行度15
+3465 [Garage] Judgment after seeing the story production Chapter 3 progress 16 【ガレージ】ストーリー演出を見た判定チャプター3進行度16
+3466 [Garage] Judgment by seeing the story production Chapter 3 progress level 17 【ガレージ】ストーリー演出を見た判定チャプター3進行度17
+3467 [Garage] Judgment by watching the story production Chapter 3 progress level 18 【ガレージ】ストーリー演出を見た判定チャプター3進行度18
+3468 [Garage] Judgment after seeing the story production Chapter 3 progress level 19 【ガレージ】ストーリー演出を見た判定チャプター3進行度19
+3500 [Garage] Indigenous flag Dam betrayal 1st PT 【ガレージ】土着フラグ　ダム裏切り1PT目
+3501 [Garage] Indigenous flag Dam betrayal 2nd PT 【ガレージ】土着フラグ　ダム裏切り2PT目
+3502 [Garage] Indigenous Flag Sabumi: 1st clearing of open-air quarry 【ガレージ】土着フラグ　サブミ：露天採掘場クリア1PT目
+3503 [Garage] Indigenous Flag Sabumi: 2nd Pt. 【ガレージ】土着フラグ　サブミ：露天採掘場クリア2PT目
+3504 [Garage] Indigenous flag Do not accept begging for life in front of the wall 【ガレージ】土着フラグ　壁前命乞いを受け入れない
+3505 [Garage] Indigenous flag Unknown aircraft elimination cleared 【ガレージ】土着フラグ　不明機体排除クリア
+3506 [Garage] Indigenous flag AC battle clear at the power plant 【ガレージ】土着フラグ　発電所でのAC戦クリア
+3507 [Garage] Indigenous Flag Spare 2 【ガレージ】土着フラグ　予備2
+3508 [Garage] Indigenous Flag Spare 3 【ガレージ】土着フラグ　予備3
+3509 [Garage] Indigenous Flag Spare 4 【ガレージ】土着フラグ　予備4
+3510 [Garage] Indigenous Flag Spare 5 【ガレージ】土着フラグ　予備5
+3511 [Garage] Indigenous Flag Spare 6 【ガレージ】土着フラグ　予備6
+3512 [Garage] Indigenous Flag Spare 7 【ガレージ】土着フラグ　予備7
+3513 [Garage] Indigenous Flag Spare 8 【ガレージ】土着フラグ　予備8
+3514 [Garage] Indigenous Flag Spare 9 【ガレージ】土着フラグ　予備9
+3515 [Garage] Indigenous Flag Spare 10 【ガレージ】土着フラグ　予備10
+3516 [Garage] Indigenous Flag Spare 11 【ガレージ】土着フラグ　予備11
+3517 [Garage] Indigenous Flag Spare 12 【ガレージ】土着フラグ　予備12
+3518 [Garage] Indigenous Flag Spare 13 【ガレージ】土着フラグ　予備13
+3519 [Garage] Indigenous Flag Spare 14 【ガレージ】土着フラグ　予備14
+3600 [Garage] Flag to go to Route B 【ガレージ】Bルートに行けるフラグ
+3601 [Garage] Flag to go to route B (Bioweapon ALT clear) 【ガレージ】Bルートに行けるフラグ(生体兵器ALTクリア)
+3700 [Menu] Communist for AC test enemy Gene 【メニュー】ACテスト敵ジェネ用　共産
+3701 [Menu] Quadruped for AC test enemy Gene 【メニュー】ACテスト敵ジェネ用　四脚
+3702 [Menu] NPAC for AC test enemy Gene 【メニュー】ACテスト敵ジェネ用　NPAC
+3703 [Menu] For AC Test Enemy Gene None 【メニュー】ACテスト敵ジェネ用　なし
+3704 [Menu] AC test for enemy AI ON 【メニュー】ACテスト敵AI用　ON
+3705 [Menu] AC test for enemy AI OFF 【メニュー】ACテスト敵AI用　OFF
+3706 [Menu] AC Test Preliminary 1 【メニュー】ACテスト予備1
+3707 [Menu] AC Test Preliminary 2 【メニュー】ACテスト予備2
+3708 [Menu] AC Test Preliminary 3 【メニュー】ACテスト予備3
+3709 [Menu] AC Test Preliminary 4 【メニュー】ACテスト予備4
+3800 assembled アセンブルを行った
+3801 did the coloring カラーリングを行った
+3802 Enhanced OS OS強化を行った
+3900 Garage debug flag #1 ガレージ用デバッグフラグその1
+3901 Garage debug flag #2 ガレージ用デバッグフラグその2
+3902 Garage debug flag #3 ガレージ用デバッグフラグその3
+3903 Garage debug flag #4 ガレージ用デバッグフラグその4
+3904 Garage debug flag #5 ガレージ用デバッグフラグその5
+3910 Archive debug flag_front of the wall アーカイブ用デバッグフラグ_壁前
+3920 whispered flag ひそひそ話をしたフラグ
+3999 A flag that blocks emblems that are not available 入手させないエンブレムをふさぐフラグ
+4000 Archive item retrieved flag 00 アーカイブアイテム取得済みフラグ00
+4001 Archive Item Acquired Flag 01 アーカイブアイテム取得済みフラグ01
+4002 Archive Item Acquired Flag 02 アーカイブアイテム取得済みフラグ02
+4003 Archive Item Obtained Flag 03 アーカイブアイテム取得済みフラグ03
+4004 Archive Item Obtained Flag 04 アーカイブアイテム取得済みフラグ04
+4005 Archive Item Acquired Flag 05 アーカイブアイテム取得済みフラグ05
+4006 Archive Item Acquired Flag 06 アーカイブアイテム取得済みフラグ06
+4007 Archive Item Obtained Flag 07 アーカイブアイテム取得済みフラグ07
+4008 Archive Item Acquired Flag 08 アーカイブアイテム取得済みフラグ08
+4009 Archive Item Acquired Flag 09 アーカイブアイテム取得済みフラグ09
+4010 Archive Item Obtained Flag 10 アーカイブアイテム取得済みフラグ10
+4011 Archive item retrieved flag 11 アーカイブアイテム取得済みフラグ11
+4012 Archive item retrieved flag 12 アーカイブアイテム取得済みフラグ12
+4013 Archive Item Acquired Flag 13 アーカイブアイテム取得済みフラグ13
+4014 Archive Item Acquired Flag 14 アーカイブアイテム取得済みフラグ14
+4015 Archive Item Acquired Flag 15 アーカイブアイテム取得済みフラグ15
+4016 Archive item retrieved flag 16 アーカイブアイテム取得済みフラグ16
+4017 Archive item retrieved flag 17 アーカイブアイテム取得済みフラグ17
+4018 Archive Item Acquired Flag 18 アーカイブアイテム取得済みフラグ18
+4019 Archive Item Acquired Flag 19 アーカイブアイテム取得済みフラグ19
+4020 Archive Item Obtained Flag 20 アーカイブアイテム取得済みフラグ20
+4021 Archive Item Acquired Flag 21 アーカイブアイテム取得済みフラグ21
+4022 Archive Item Acquired Flag 22 アーカイブアイテム取得済みフラグ22
+4023 Archive Item Acquired Flag 23 アーカイブアイテム取得済みフラグ23
+4024 Archive Item Acquired Flag 24 アーカイブアイテム取得済みフラグ24
+4025 Archive Item Acquired Flag 25 アーカイブアイテム取得済みフラグ25
+4026 Archive item retrieved flag 26 アーカイブアイテム取得済みフラグ26
+4027 Archive Item Acquired Flag 27 アーカイブアイテム取得済みフラグ27
+4028 Archive Item Acquired Flag 28 アーカイブアイテム取得済みフラグ28
+4029 Archive Item Acquired Flag 29 アーカイブアイテム取得済みフラグ29
+4030 Archive Item Obtained Flag 30 アーカイブアイテム取得済みフラグ30
+4031 Archive item retrieved flag 31 アーカイブアイテム取得済みフラグ31
+4032 Archive item retrieved flag 32 アーカイブアイテム取得済みフラグ32
+4033 Archive Item Acquired Flag 33 アーカイブアイテム取得済みフラグ33
+4034 Archive Item Acquired Flag 34 アーカイブアイテム取得済みフラグ34
+4035 Archive Item Acquired Flag 35 アーカイブアイテム取得済みフラグ35
+4036 Archive item retrieved flag 36 アーカイブアイテム取得済みフラグ36
+4037 Archive Item Acquired Flag 37 アーカイブアイテム取得済みフラグ37
+4038 Archive Item Obtained Flag 38 アーカイブアイテム取得済みフラグ38
+4039 Archive Item Acquired Flag 39 アーカイブアイテム取得済みフラグ39
+4040 Archive Item Acquired Flag 40 アーカイブアイテム取得済みフラグ40
+4041 Archive item retrieved flag 41 アーカイブアイテム取得済みフラグ41
+4042 Archive item retrieved flag 42 アーカイブアイテム取得済みフラグ42
+4043 Archive Item Acquired Flag 43 アーカイブアイテム取得済みフラグ43
+4044 Archive item retrieved flag 44 アーカイブアイテム取得済みフラグ44
+4045 Archive Item Acquired Flag 45 アーカイブアイテム取得済みフラグ45
+4046 Archive item retrieved flag 46 アーカイブアイテム取得済みフラグ46
+4047 Archive Item Acquired Flag 47 アーカイブアイテム取得済みフラグ47
+4048 Archive Item Acquired Flag 48 アーカイブアイテム取得済みフラグ48
+4049 Archive Item Acquired Flag 49 アーカイブアイテム取得済みフラグ49
+4050 Archive Item Obtained Flag 50 アーカイブアイテム取得済みフラグ50
+4051 Archive item retrieved flag 51 アーカイブアイテム取得済みフラグ51
+4052 Archive item retrieved flag 52 アーカイブアイテム取得済みフラグ52
+4053 Archive item retrieved flag 53 アーカイブアイテム取得済みフラグ53
+4054 Archive item retrieved flag 54 アーカイブアイテム取得済みフラグ54
+4055 Archive item retrieved flag 55 アーカイブアイテム取得済みフラグ55
+4056 Archive item retrieved flag 56 アーカイブアイテム取得済みフラグ56
+4057 Archive item retrieved flag 57 アーカイブアイテム取得済みフラグ57
+4058 Archive Item Acquired Flag 58 アーカイブアイテム取得済みフラグ58
+4059 Archive Item Acquired Flag 59 アーカイブアイテム取得済みフラグ59
+4060 Archive Item Acquired Flag 60 アーカイブアイテム取得済みフラグ60
+4061 Archive item retrieved flag 61 アーカイブアイテム取得済みフラグ61
+4062 Archive item retrieved flag 62 アーカイブアイテム取得済みフラグ62
+4063 Archive item retrieved flag 63 アーカイブアイテム取得済みフラグ63
+4064 Archive item retrieved flag 64 アーカイブアイテム取得済みフラグ64
+4065 Archive item retrieved flag 65 アーカイブアイテム取得済みフラグ65
+4066 Archive item retrieved flag 66 アーカイブアイテム取得済みフラグ66
+4067 Archive item retrieved flag 67 アーカイブアイテム取得済みフラグ67
+4068 Archive item retrieved flag 68 アーカイブアイテム取得済みフラグ68
+4069 Archive item retrieved flag 69 アーカイブアイテム取得済みフラグ69
+4070 Archive Item Obtained Flag 70 アーカイブアイテム取得済みフラグ70
+4071 Archive item retrieved flag 71 アーカイブアイテム取得済みフラグ71
+4072 Archive item retrieved flag 72 アーカイブアイテム取得済みフラグ72
+4073 Archive item retrieved flag 73 アーカイブアイテム取得済みフラグ73
+4074 Archive item retrieved flag 74 アーカイブアイテム取得済みフラグ74
+4075 Archive Item Acquired Flag 75 アーカイブアイテム取得済みフラグ75
+4076 Archive item retrieved flag 76 アーカイブアイテム取得済みフラグ76
+4077 Archive Item Acquired Flag 77 アーカイブアイテム取得済みフラグ77
+4078 Archive item retrieved flag 78 アーカイブアイテム取得済みフラグ78
+4079 Archive Item Acquired Flag 79 アーカイブアイテム取得済みフラグ79
+4080 Archive Item Acquired Flag 80 アーカイブアイテム取得済みフラグ80
+4081 Archive item retrieved flag 81 アーカイブアイテム取得済みフラグ81
+4082 Archive item retrieved flag 82 アーカイブアイテム取得済みフラグ82
+4083 Archive item retrieved flag 83 アーカイブアイテム取得済みフラグ83
+4084 Archive item retrieved flag 84 アーカイブアイテム取得済みフラグ84
+4085 Archive item retrieved flag 85 アーカイブアイテム取得済みフラグ85
+4086 Archive item retrieved flag 86 アーカイブアイテム取得済みフラグ86
+4087 Archive item retrieved flag 87 アーカイブアイテム取得済みフラグ87
+4088 Archive item retrieved flag 88 アーカイブアイテム取得済みフラグ88
+4089 Archive Item Acquired Flag 89 アーカイブアイテム取得済みフラグ89
+4090 Archive Item Acquired Flag 90 アーカイブアイテム取得済みフラグ90
+4091 Archive Item Acquired Flag 91 アーカイブアイテム取得済みフラグ91
+4092 Archive item retrieved flag 92 アーカイブアイテム取得済みフラグ92
+4093 Archive Item Acquired Flag 93 アーカイブアイテム取得済みフラグ93
+4094 Archive item retrieved flag 94 アーカイブアイテム取得済みフラグ94
+4095 Archive Item Acquired Flag 95 アーカイブアイテム取得済みフラグ95
+4096 Archive item retrieved flag 96 アーカイブアイテム取得済みフラグ96
+4097 Archive item retrieved flag 97 アーカイブアイテム取得済みフラグ97
+4098 Archive Item Acquired Flag 98 アーカイブアイテム取得済みフラグ98
+4099 Archive Item Acquired Flag 99 アーカイブアイテム取得済みフラグ99
+4100 Archive Item Acquired Flag 100 アーカイブアイテム取得済みフラグ100
+4101 Archive item retrieved flag 101 アーカイブアイテム取得済みフラグ101
+4102 Archive item retrieved flag 102 アーカイブアイテム取得済みフラグ102
+4103 Archive item retrieved flag 103 アーカイブアイテム取得済みフラグ103
+4104 Archive item retrieved flag 104 アーカイブアイテム取得済みフラグ104
+4105 Archive item retrieved flag 105 アーカイブアイテム取得済みフラグ105
+4106 Archive item retrieved flag 106 アーカイブアイテム取得済みフラグ106
+4107 Archive item retrieved flag 107 アーカイブアイテム取得済みフラグ107
+4108 Archive item retrieved flag 108 アーカイブアイテム取得済みフラグ108
+4109 Archive item retrieved flag 109 アーカイブアイテム取得済みフラグ109
+4110 Archive Item Acquired Flag 110 アーカイブアイテム取得済みフラグ110
+4111 Archive item retrieved flag 111 アーカイブアイテム取得済みフラグ111
+4112 Archive item retrieved flag 112 アーカイブアイテム取得済みフラグ112
+4113 Archive item retrieved flag 113 アーカイブアイテム取得済みフラグ113
+4114 Archive item retrieved flag 114 アーカイブアイテム取得済みフラグ114
+4115 Archive item retrieved flag 115 アーカイブアイテム取得済みフラグ115
+4116 Archive item retrieved flag 116 アーカイブアイテム取得済みフラグ116
+4117 Archive item retrieved flag 117 アーカイブアイテム取得済みフラグ117
+4118 Archive item retrieved flag 118 アーカイブアイテム取得済みフラグ118
+4119 Archive Item Acquired Flag 119 アーカイブアイテム取得済みフラグ119
+4120 Archive Item Acquired Flag 120 アーカイブアイテム取得済みフラグ120
+4121 Archive item retrieved flag 121 アーカイブアイテム取得済みフラグ121
+4122 Archive item retrieved flag 122 アーカイブアイテム取得済みフラグ122
+4123 Archive item retrieved flag 123 アーカイブアイテム取得済みフラグ123
+4124 Archive item retrieved flag 124 アーカイブアイテム取得済みフラグ124
+4125 Archive item retrieved flag 125 アーカイブアイテム取得済みフラグ125
+4126 Archive item retrieved flag 126 アーカイブアイテム取得済みフラグ126
+4127 Archive item retrieved flag 127 アーカイブアイテム取得済みフラグ127
+4128 Archive item retrieved flag 128 アーカイブアイテム取得済みフラグ128
+4129 Archive item retrieved flag 129 アーカイブアイテム取得済みフラグ129
+4130 Archive Item Acquired Flag 130 アーカイブアイテム取得済みフラグ130
+4131 Archive item retrieved flag 131 アーカイブアイテム取得済みフラグ131
+4132 Archive item retrieved flag 132 アーカイブアイテム取得済みフラグ132
+4133 Archive item retrieved flag 133 アーカイブアイテム取得済みフラグ133
+4134 Archive item retrieved flag 134 アーカイブアイテム取得済みフラグ134
+4135 Archive Item Acquired Flag 135 アーカイブアイテム取得済みフラグ135
+4136 Archive item retrieved flag 136 アーカイブアイテム取得済みフラグ136
+4137 Archive item retrieved flag 137 アーカイブアイテム取得済みフラグ137
+4138 Archive item retrieved flag 138 アーカイブアイテム取得済みフラグ138
+4139 Archive Item Acquired Flag 139 アーカイブアイテム取得済みフラグ139
+4140 Archive Item Acquired Flag 140 アーカイブアイテム取得済みフラグ140
+4141 Archive item retrieved flag 141 アーカイブアイテム取得済みフラグ141
+4142 Archive item retrieved flag 142 アーカイブアイテム取得済みフラグ142
+4143 Archive item retrieved flag 143 アーカイブアイテム取得済みフラグ143
+4144 Archive item retrieved flag 144 アーカイブアイテム取得済みフラグ144
+4145 Archive item retrieved flag 145 アーカイブアイテム取得済みフラグ145
+4146 Archive item retrieved flag 146 アーカイブアイテム取得済みフラグ146
+4147 Archive item retrieved flag 147 アーカイブアイテム取得済みフラグ147
+4148 Archive item retrieved flag 148 アーカイブアイテム取得済みフラグ148
+4149 Archive Item Acquired Flag 149 アーカイブアイテム取得済みフラグ149
+4150 Archive Item Obtained Flag 150 アーカイブアイテム取得済みフラグ150
+4151 Archive item retrieved flag 151 アーカイブアイテム取得済みフラグ151
+4152 Archive item retrieved flag 152 アーカイブアイテム取得済みフラグ152
+4153 Archive Item Acquired Flag 153 アーカイブアイテム取得済みフラグ153
+4154 Archive item retrieved flag 154 アーカイブアイテム取得済みフラグ154
+4155 Archive Item Acquired Flag 155 アーカイブアイテム取得済みフラグ155
+4156 Archive item retrieved flag 156 アーカイブアイテム取得済みフラグ156
+4157 Archive item retrieved flag 157 アーカイブアイテム取得済みフラグ157
+4158 Archive item retrieved flag 158 アーカイブアイテム取得済みフラグ158
+4159 Archive Item Acquired Flag 159 アーカイブアイテム取得済みフラグ159
+4160 Archive item retrieved flag 160 アーカイブアイテム取得済みフラグ160
+4161 Archive item retrieved flag 161 アーカイブアイテム取得済みフラグ161
+4162 Archive item retrieved flag 162 アーカイブアイテム取得済みフラグ162
+4163 Archive item retrieved flag 163 アーカイブアイテム取得済みフラグ163
+4164 Archive item retrieved flag 164 アーカイブアイテム取得済みフラグ164
+4165 Archive item retrieved flag 165 アーカイブアイテム取得済みフラグ165
+4166 Archive item retrieved flag 166 アーカイブアイテム取得済みフラグ166
+4167 Archive item retrieved flag 167 アーカイブアイテム取得済みフラグ167
+4168 Archive item retrieved flag 168 アーカイブアイテム取得済みフラグ168
+4169 Archive item retrieved flag 169 アーカイブアイテム取得済みフラグ169
+4170 Archive Item Obtained Flag 170 アーカイブアイテム取得済みフラグ170
+4171 Archive item retrieved flag 171 アーカイブアイテム取得済みフラグ171
+4172 Archive item retrieved flag 172 アーカイブアイテム取得済みフラグ172
+4173 Archive item retrieved flag 173 アーカイブアイテム取得済みフラグ173
+4174 Archive item retrieved flag 174 アーカイブアイテム取得済みフラグ174
+4175 Archive item retrieved flag 175 アーカイブアイテム取得済みフラグ175
+4176 Archive item retrieved flag 176 アーカイブアイテム取得済みフラグ176
+4177 Archive item retrieved flag 177 アーカイブアイテム取得済みフラグ177
+4178 Archive item retrieved flag 178 アーカイブアイテム取得済みフラグ178
+4179 Archive Item Acquired Flag 179 アーカイブアイテム取得済みフラグ179
+4180 Archive Item Acquired Flag 180 アーカイブアイテム取得済みフラグ180
+4181 Archive item retrieved flag 181 アーカイブアイテム取得済みフラグ181
+4182 Archive item retrieved flag 182 アーカイブアイテム取得済みフラグ182
+4183 Archive item retrieved flag 183 アーカイブアイテム取得済みフラグ183
+4184 Archive item retrieved flag 184 アーカイブアイテム取得済みフラグ184
+4185 Archive item retrieved flag 185 アーカイブアイテム取得済みフラグ185
+4186 Archive item retrieved flag 186 アーカイブアイテム取得済みフラグ186
+4187 Archive item retrieved flag 187 アーカイブアイテム取得済みフラグ187
+4188 Archive item retrieved flag 188 アーカイブアイテム取得済みフラグ188
+4189 Archive Item Acquired Flag 189 アーカイブアイテム取得済みフラグ189
+4190 Archive Item Acquired Flag 190 アーカイブアイテム取得済みフラグ190
+4191 Archive item retrieved flag 191 アーカイブアイテム取得済みフラグ191
+4192 Archive item retrieved flag 192 アーカイブアイテム取得済みフラグ192
+4193 Archive item retrieved flag 193 アーカイブアイテム取得済みフラグ193
+4194 Archive item retrieved flag 194 アーカイブアイテム取得済みフラグ194
+4195 Archive item retrieved flag 195 アーカイブアイテム取得済みフラグ195
+4196 Archive item retrieved flag 196 アーカイブアイテム取得済みフラグ196
+4197 Archive item retrieved flag 197 アーカイブアイテム取得済みフラグ197
+4198 Archive item retrieved flag 198 アーカイブアイテム取得済みフラグ198
+4199 Archive Item Acquired Flag 199 アーカイブアイテム取得済みフラグ199
+4200 Archive Item Acquired Flag 200 アーカイブアイテム取得済みフラグ200
+4440 Item monitoring flag_wrap reset_00 アイテム監視用フラグ_周回リセット_00
+4441 Item monitoring flag_wrap reset_01 アイテム監視用フラグ_周回リセット_01
+4442 Item monitoring flag_wrap reset_02 アイテム監視用フラグ_周回リセット_02
+4443 Item monitoring flag_wrap reset_03 アイテム監視用フラグ_周回リセット_03
+4444 Item monitoring flag_wrap reset_04 アイテム監視用フラグ_周回リセット_04
+4445 Item monitoring flag_wrap reset_05 アイテム監視用フラグ_周回リセット_05
+4446 Item monitoring flag_wrap reset_06 アイテム監視用フラグ_周回リセット_06
+4447 Item monitoring flag_wrap reset_07 アイテム監視用フラグ_周回リセット_07
+4448 Item monitoring flag_wrap reset_08 アイテム監視用フラグ_周回リセット_08
+4449 Item monitoring flag_wrap reset_09 アイテム監視用フラグ_周回リセット_09
+4450 Item monitoring flag_return reset_10 アイテム監視用フラグ_周回リセット_10
+4451 Item monitoring flag_wrap reset_11 アイテム監視用フラグ_周回リセット_11
+4452 Item monitoring flag_wrap reset_12 アイテム監視用フラグ_周回リセット_12
+4453 Item monitoring flag_wrap reset_13 アイテム監視用フラグ_周回リセット_13
+4454 Item monitoring flag_wrap reset_14 アイテム監視用フラグ_周回リセット_14
+4455 Item monitoring flag_wrap reset_15 アイテム監視用フラグ_周回リセット_15
+4456 Item monitoring flag_wrap reset_16 アイテム監視用フラグ_周回リセット_16
+4457 Item monitoring flag_wrap reset_17 アイテム監視用フラグ_周回リセット_17
+4458 Item monitoring flag_wrap reset_18 アイテム監視用フラグ_周回リセット_18
+4459 Item monitoring flag_wrap reset_19 アイテム監視用フラグ_周回リセット_19
+4460 Item monitoring flag_wrap reset_20 アイテム監視用フラグ_周回リセット_20
+4461 Item monitoring flag_wrap reset_21 アイテム監視用フラグ_周回リセット_21
+4462 Item monitoring flag_wrap reset_22 アイテム監視用フラグ_周回リセット_22
+4463 Item monitoring flag_wrap reset_23 アイテム監視用フラグ_周回リセット_23
+4464 Item monitoring flag_wrap reset_24 アイテム監視用フラグ_周回リセット_24
+4465 Item monitoring flag_wrap reset_25 アイテム監視用フラグ_周回リセット_25
+4466 Item monitoring flag_wrap reset_26 アイテム監視用フラグ_周回リセット_26
+4467 Item monitoring flag_wrap reset_27 アイテム監視用フラグ_周回リセット_27
+4468 Item monitoring flag_wrap reset_28 アイテム監視用フラグ_周回リセット_28
+4469 Item monitoring flag_wrap reset_29 アイテム監視用フラグ_周回リセット_29
+4470 Item monitoring flag_return reset_30 アイテム監視用フラグ_周回リセット_30
+4471 Item monitoring flag_wrap reset_31 アイテム監視用フラグ_周回リセット_31
+4472 Item monitoring flag_wrap reset_32 アイテム監視用フラグ_周回リセット_32
+4473 Item monitoring flag_wrap reset_33 アイテム監視用フラグ_周回リセット_33
+4474 Item monitoring flag_wrap reset_34 アイテム監視用フラグ_周回リセット_34
+4475 Item monitoring flag_wrap reset_35 アイテム監視用フラグ_周回リセット_35
+4476 Item monitoring flag_wrap reset_36 アイテム監視用フラグ_周回リセット_36
+4477 Item monitoring flag_wrap reset_37 アイテム監視用フラグ_周回リセット_37
+4478 Item monitoring flag_wrap reset_38 アイテム監視用フラグ_周回リセット_38
+4479 Item Monitoring Flag_Orbital Reset_39 アイテム監視用フラグ_周回リセット_39
+4480 Item monitoring flag_return reset_40 アイテム監視用フラグ_周回リセット_40
+4481 Item monitoring flag_wrap reset_41 アイテム監視用フラグ_周回リセット_41
+4482 Item monitoring flag_wrap reset_42 アイテム監視用フラグ_周回リセット_42
+4483 Item Monitoring Flag_Orbital Reset_43 アイテム監視用フラグ_周回リセット_43
+4484 Item Monitoring Flag_Orbital Reset_44 アイテム監視用フラグ_周回リセット_44
+4485 Item monitoring flag_return reset_45 アイテム監視用フラグ_周回リセット_45
+4486 Item monitoring flag_wrap reset_46 アイテム監視用フラグ_周回リセット_46
+4487 Item monitoring flag_wrap reset_47 アイテム監視用フラグ_周回リセット_47
+4488 Item monitoring flag_wrap reset_48 アイテム監視用フラグ_周回リセット_48
+4489 Item Monitoring Flag_Orbital Reset_49 アイテム監視用フラグ_周回リセット_49
+5001 Event flag for selection _Deploy 選択時用イベントフラグ_Deploy
+5002 Event flag for determination _Deploy 決定時用イベントフラグ_Deploy
+5003 Event flag for decision_sortie preparation screen 決定時用イベントフラグ_出撃準備画面
+5004 Decision time event flag_Briefing 決定時用イベントフラグ_ブリーフィング
+5011 Event flag for selection _AC 選択時用イベントフラグ_AC
+5012 Decision event flag _AC 決定時用イベントフラグ_AC
+5021 Event flag for selection _Deal 選択時用イベントフラグ_Deal
+5022 Decision time event flag _Deal 決定時用イベントフラグ_Deal
+5031 Event flag for selection _PC 選択時用イベントフラグ_PC
+5032 Event flag for determination _PC 決定時用イベントフラグ_PC
+5040 Event flag for selection_default 選択時時用イベントフラグ_デフォルト
+5050 Event flag that makes it possible to return 帰還可能になるイベントフラグ
+5051 eventflag to execute feedback 帰還を実行するイベントフラグ
+5060 For events in the garage, an event flag that makes it impossible to talk ガレージ内イベント用　トーク不可能にするイベントフラグ
+5061 Event flag for events in the garage when the talk button is pressed ガレージ内イベント用　トークを押したイベントフラグ
+5062 Self-made animation fixed flag for events in the garage ガレージ内イベント用　自機アニメ固定フラグ
+5070 slow-mo mode event flag スローモーモードイベントフラグ
+5071 Garage connection event flag_with warp ガレージ接続用イベントフラグ_ワープ付き
+5072 Past garage connection event flag_with warp 過去ガレージ接続用イベントフラグ_ワープ付き
+5073 Event flag for A layer garage connection_with warp A層ガレージ接続用イベントフラグ_ワープ付き
+5074 mute background music BGM無音化
+5075 D layer garage movement event flag D層ガレージ移動用イベントフラグ
+5081 [Cut scene] Notification event flag 01 【カットシーン】通知用イベントフラグ01
+5082 [Cut scene] Notification event flag 02 【カットシーン】通知用イベントフラグ02
+5083 [Cutscene] Notification event flag 03 【カットシーン】通知用イベントフラグ03
+5084 [Cut scene] Notification event flag 04 【カットシーン】通知用イベントフラグ04
+6000 A route clear Aルートクリア
+6001 B route clear Bルートクリア
+6002 C route clear Cルートクリア
+6003 Lap_clear event flag_03 周回用_クリアイベントフラグ_03
+6004 Lap_clear event flag_04 周回用_クリアイベントフラグ_04
+6005 Lap_clear event flag_05 周回用_クリアイベントフラグ_05
+6006 Lap_clear event flag_06 周回用_クリアイベントフラグ_06
+6007 Lap_clear event flag_07 周回用_クリアイベントフラグ_07
+6008 Lap_clear event flag_08 周回用_クリアイベントフラグ_08
+6009 Lap_clear event flag_09 周回用_クリアイベントフラグ_09
+6010 Arena unlocking progress 1 take over アリーナ解禁進行度1　引継ぎ
+6011 Arena Unlocking Progress Level 2 Transferred アリーナ解禁進行度2　引継ぎ
+6012 Arena Unlocking Progress Level 3 Takeover アリーナ解禁進行度3　引継ぎ
+6013 Arena unlocking progress 4 takeover アリーナ解禁進行度4　引継ぎ
+6014 Arena Unlocking Progress Level 5 Transferred アリーナ解禁進行度5　引継ぎ
+6015 Arena unlocking progress 6 take over アリーナ解禁進行度6　引継ぎ
+6016 Arena unlocking progress 7 take over アリーナ解禁進行度7　引継ぎ
+6017 Arena unlocking progress level 8 takeover アリーナ解禁進行度8　引継ぎ
+6018 let the air out even once 一度でもエアを出した
+6019 Lap_clear event flag_19 周回用_クリアイベントフラグ_19
+6050 Complete Arena F アリーナF完遂
+6051 Complete Arena E アリーナE完遂
+6052 Complete Arena D アリーナD完遂
+6053 Complete Arena C アリーナC完遂
+6054 Complete Arena B アリーナB完遂
+6055 Complete Arena A アリーナA完遂
+6056 Complete Arena S アリーナS完遂
+6057 Alpha simulator completed αシミュレーター完遂
+6058 Beta simulator completed βシミュレーター完遂
+6059 Completion of γ simulator γシミュレーター完遂
+6060 Defeat Rusty Simulator ラスティシミュレーター撃破
+6061 Defeat Walter Simulator ウォルターシミュレーター撃破
+6062 Defeat Air エア撃破
+6070 let out air エアまで出した
+6100 Event flag for branching within the mission_Ruins ミッション内分岐用イベントフラグ_廃墟
+6105 Flag for skipping cutscenes when retrying リトライ時カットシーンスキップ用フラグ
+6200 Chapter 1 beginning submi x 2 １章冒頭サブミ×２
+6210 Mining Ship & Dam Destruction 採掘艦＆ダム破壊
+6220 over the wall 壁越え
+6230 the coordinates indicated by the string 文字列が示す座標
+6240 continental crust 大陸殻
+6250 Defeat Iceworm アイスワーム撃破
+6260 prison break 脱獄
+6270 Coordinates indicated by the character string: 2nd round 文字列が示す座標：２周目
+6275 Continental crust: 2nd lap 大陸殻：２周目
+6280 Defeat Iceworm: Round 2 アイスワーム撃破：２周目
+6290 Jailbreak: Round 2 脱獄：２周目
+6401 Reach Mercenary Rank 1 傭兵ランク１到達
+6402 Reach Mercenary Rank 2 傭兵ランク２到達
+6403 Reach Mercenary Rank 3 傭兵ランク３到達
+6404 Reach Mercenary Rank 4 傭兵ランク４到達
+6405 Reach Mercenary Rank 5 傭兵ランク５到達
+6406 Reach Mercenary Rank 6 傭兵ランク６到達
+6407 Reach Mercenary Rank 7 傭兵ランク７到達
+6408 Reach Mercenary Rank 8 傭兵ランク８到達
+6409 Reach Mercenary Rank 9 傭兵ランク９到達
+6410 Reach Mercenary Rank 10 傭兵ランク１０到達
+6411 Reach Mercenary Rank 11 傭兵ランク１１到達
+6412 Reach Mercenary Rank 12 傭兵ランク１２到達
+6413 Reach Mercenary Rank 13 傭兵ランク１３到達
+6414 Reach Mercenary Rank 14 傭兵ランク１４到達
+6415 Reach Mercenary Rank 15 傭兵ランク１５到達
+6416 Reach Mercenary Rank 16 傭兵ランク１６到達
+6417 Reach Mercenary Rank 17 傭兵ランク１７到達
+6431 Tremo 1 clear トレモ１クリア
+6432 Tremo 2 clear トレモ２クリア
+6433 Tremo 3 clear トレモ３クリア
+6434 Clear Tremo 4 トレモ４クリア
+6435 clear tremo 5 トレモ５クリア
+6436 clear tremo 6 トレモ６クリア
+6437 clear tremo 7 トレモ７クリア
+6438 Tremo 7 released トレモ７出した
+6447 Arena clear: 01 (S) アリーナクリア：01(S)
+6448 Arena clear: TEST-09 [γ3] アリーナクリア：TEST-09【γ3】
+6449 Arena clear: TEST-R [δ1] アリーナクリア：TEST-R【δ1】
+6450 Arena clear: TEST-W [δ2] アリーナクリア：TEST-W【δ2】
+6451 Arena clear: TEST-A [δ3] アリーナクリア：TEST-A【δ3】
+6460 collapsed continental crust 1 崩落した大陸殻１
+6461 straight city invasion ストレート市街侵攻
+6462 offshore city 洋上の都市
+6463 Mine sabotage 坑道破壊工作
+6464 collapsed continental crust 2 崩落した大陸殻２
+6490 Acquire OS enhancement points Clear the wall OS強化ポイント入手　壁越えクリア
+6500 Collected all information logs 情報ログをすべて集めた
+6501 Cleared all missions すべてのミッションをクリアした
+6502 Cleared all missions with S rank すべてのミッションをSランクでクリアした
+6503 Cleared all missions in hard mode すべてのミッションをハードモードでクリアした
+6510 Obtain a medal for collecting all information logs 情報ログをすべて集めた勲章入手
+6511 Obtain a medal for clearing all missions すべてのミッションをクリアした勲章入手
+6512 Obtain a medal for clearing all missions with S rank. すべてのミッションをSランクでクリアした勲章入手
+6513 Obtain a medal for clearing all missions in hard mode すべてのミッションをハードモードでクリアした勲章入手
+6520 Obtain parts by clearing the rail レイルクリアでパーツ入手
+6521 Obtain parts by clearing the final battle B 決戦Bクリアでパーツ入手
+6522 Get parts by clearing jailbreak 脱獄クリアでパーツ入手
+6523 Get parts by clearing the atmosphere breakthrough 大気圏突破クリアでパーツ入手
+6600 Observers' Association "Overseer" 観測者たちの結社「オーバーシアー」
+6601 Rubycon 3 research technology laboratory ルビコン3調査技術研究所
+6602 all mind オールマインド
+6603 Rubiconist ルビコニスト
+6604 RaD RaD
+6605 Archibus Corporation アーキバス・コーポレーション
+6606 Archibus Group Enhanced Human Corps アーキバスグループ強化人間部隊
+6607 bay rum industry ベイラム・インダストリー
+6608 Bairam exclusive mercenary unit ベイラム専属傭兵部隊
+6609 Archibus ADD アーキバスADD
+6610 Predecessor Raven 先代レイヴン
+6611 Kate ケイト
+6612 Rusty ラスティ
+6613 Walter ウォルター
+6614 red gun 13 レッドガン13
+8000 [11 end version] A layer garage available 【11末版】A層ガレージ使用可能
+8001 [End of November] A layer garage in use 【11末版】A層ガレージ使用中
+8002 [11 end version] past garage available 【11末版】過去ガレージ使用可能
+8003 [11 end version] Past garage in use 【11末版】過去ガレージ使用中
+8004 [End of November] Tier A Garage Event Completion Flag 【11末版】A層ガレージイベント完了フラグ
+8005 [11 End Edition] Past Garage Event Completion Flag 【11末版】過去ガレージイベント完了フラグ
+8006 [11th Edition] Tier A Garage Conversation Event Available 【11末版】A層ガレージ会話イベント開始可能
+8007 [11 end version] Past garage conversation event can be started 【11末版】過去ガレージ会話イベント開始可能
+8008 [End of November] Flag for catapult event 【11末版】カタパルトイベント用フラグ
+8009 [End of November] The second half of the sortie cutscene ends 【11末版】出撃カットシーン後半終了
+8010 [End of November] Playing prologue mission 【11末版】プロローグミッションプレイ中
+8011 [End of November] Pharaon Destruction Flag 【11末版】ファラオン撃破フラグ
+8012 [11 end version] Yotuel appearance defeat flag 【11末版】ヨトゥエル登場撃破フラグ
+8013 [End of November] Yotuel Appearance Loss Event Flag 【11末版】ヨトゥエル登場負けイベントフラグ
+8014 [End of November] Result notification flag 【11末版】リザルト通知フラグ
+8015 [End of November] Checkpoint passage flag_01 【11末版】チェックポイント通過フラグ_01
+8016 [End of November] Checkpoint Pass Flag_02 【11末版】チェックポイント通過フラグ_02
+8017 [End of November] Checkpoint passage flag_03 【11末版】チェックポイント通過フラグ_03
+8018 [End of November] Checkpoint Pass Flag_04 【11末版】チェックポイント通過フラグ_04
+8019 [11th Edition] Yotuel Battle Event Notification Flag 【11末版】ヨトゥエル戦イベント通知フラグ
+8020 Straight street reverse run _ No 2 defeated flag _ production ストレート市街逆走_No2撃破したフラグ_本番
+8021 Scavenging_Ziyi Defeated Flag スカベンジング_ツィイ撃破したフラグ
+8030 sherpa_busy flag シェルパ_使用中フラグ
+8031 sherpa_used flag シェルパ_使用済みフラグ
+8101 8101_In-mission branching event flag_dam destruction_betrayal route_ 8101_ミッション内分岐用イベントフラグ_ダム破壊_裏切りルート_
+8102 8102_In-mission branching event flag_dam destruction_cooperation route_result 8102_ミッション内分岐用イベントフラグ_ダム破壊_協力ルート_結果
+8103 8103 _ Event flag for branching in mission _ Search in front of wall _ Route A (don't miss it) 8103_ミッション内分岐用イベントフラグ_壁前探索_ルートA（見逃さない）
+8104 8104_Event flag for branching in mission_Search in front of wall_Route B (miss) 8104_ミッション内分岐用イベントフラグ_壁前探索_ルートB（見逃す）
+8106 8106_In-mission branching event flag_No2 defeated route_result 8106_ミッション内分岐用イベントフラグ_No2倒したルート_結果
+8200 Control Flag 00 for Big Bridge Elevator ビッグブリッジエレベータ用制御フラグ00
+8201 Control Flag 01 for Big Bridge Elevator ビッグブリッジエレベータ用制御フラグ01
+8202 Control Flag 02 for Big Bridge Elevator ビッグブリッジエレベータ用制御フラグ02
+8203 Control Flag 03 for Big Bridge Elevator ビッグブリッジエレベータ用制御フラグ03
+8300 2170 In front of the exploration wall_Estella appearance flag 2170探索壁前_エステラ登場フラグ
+8301 2170 Exploration wall front_Joffe appearance flag 2170探索壁前_ヨッフェ登場フラグ
+8400 End of June support_item monitoring flag 00 6末対応_アイテム監視フラグ00
+8401 6 end support_item monitoring flag 01 6末対応_アイテム監視フラグ01
+8402 Support for the end of June_Item monitoring flag 02 6末対応_アイテム監視フラグ02
+8403 Support for the end of June_Item monitoring flag 03 6末対応_アイテム監視フラグ03
+8404 Support for the end of June_Item monitoring flag 04 6末対応_アイテム監視フラグ04
+8405 End of June support_item monitoring flag 05 6末対応_アイテム監視フラグ05
+8406 6 end support_item monitoring flag 06 6末対応_アイテム監視フラグ06
+8407 6 end response_item monitoring flag 07 6末対応_アイテム監視フラグ07
+8408 End of June support_item monitoring flag 08 6末対応_アイテム監視フラグ08
+8409 End of June support_item monitoring flag 09 6末対応_アイテム監視フラグ09
+8410 6 end support_item monitoring flag 10 6末対応_アイテム監視フラグ10
+8411 6 end support_item monitoring flag 11 6末対応_アイテム監視フラグ11
+8412 End of June support_item monitoring flag 12 6末対応_アイテム監視フラグ12
+8413 6 end support_item monitoring flag 13 6末対応_アイテム監視フラグ13
+8414 End of June support_item monitoring flag 14 6末対応_アイテム監視フラグ14
+8415 End of June support_item monitoring flag 15 6末対応_アイテム監視フラグ15
+8416 6 end support_item monitoring flag 16 6末対応_アイテム監視フラグ16
+8417 End of June support_item monitoring flag 17 6末対応_アイテム監視フラグ17
+8418 6 end support_item monitoring flag 18 6末対応_アイテム監視フラグ18
+8419 6 end support_item monitoring flag 19 6末対応_アイテム監視フラグ19
+8420 End of June support_item monitoring flag 20 6末対応_アイテム監視フラグ20
+8430 11 correspondence_item monitoring flag_recovery item 十一対応_アイテム監視フラグ_回復アイテム
+8441 Eleven Correspondence_Item Monitoring Flag_Daisy's Note 十一対応_アイテム監視フラグ_デイジーのメモ
+8442 Eleven correspondence _ Item monitoring flag _ Crypto assets 十一対応_アイテム監視フラグ_暗号資産
+8443 11 Correspondence_Item Monitoring Flag_Opposition Communication Log 十一対応_アイテム監視フラグ_野党の通信ログ
+8444 11 Correspondence_Item Surveillance Flag_Laser Naginata 十一対応_アイテム監視フラグ_レーザーナギナタ
+8445 11 Correspondence_Item Surveillance Flag_Ulan Bazooka 十一対応_アイテム監視フラグ_ウランバズーカ
+8446 11 Correspondence_Item Surveillance Flag_Eqbal Booster 十一対応_アイテム監視フラグ_イクバールブースター
+8450 Item monitoring flag_for checking treasure container behavior_01 アイテム監視フラグ_宝コンテナ挙動確認用_01
+8451 Item monitoring flag_for checking treasure container behavior_02 アイテム監視フラグ_宝コンテナ挙動確認用_02
+8452 Item monitoring flag_For checking treasure container behavior_03 アイテム監視フラグ_宝コンテナ挙動確認用_03
+8460 Archive confirmation flag 00 アーカイブ確認用フラグ00
+8461 Archive confirmation flag 01 アーカイブ確認用フラグ01
+8462 Archive confirmation flag 02 アーカイブ確認用フラグ02
+8463 Archive confirmation flag 03 アーカイブ確認用フラグ03
+8470 50070300 FB_M_8040 HEAD 50070300　FB_M_8040　HEAD
+8471 51070300 FB_M_8040 BODY 51070300　FB_M_8040　BODY
+8472 52070300 FB_M_8040 ARMS 52070300　FB_M_8040　ARMS
+8473 53070300 FB_M_8040 LEGS 53070300　FB_M_8040　LEGS
+8474 50070600 FB_M_8150 HEAD 50070600　FB_M_8150　HEAD
+8475 10180000 WP_A_3020 ARM UNIT stun gun 10180000　WP_A_3020　ARM UNIT　スタンガン
+8476 65010400 WP_A_8985 GENERATOR 2nd generation C 65010400　WP_A_8985　GENERATOR　第2世代C
+8477 20100000 WP_L_0510 ARM UNIT L bomb scatter 20100000　WP_L_0510　ARM UNIT L　ボムスキャッター
+8478 30350100 WP_A_5620 BACK UINIT Additional booster 3 30350100　WP_A_5620　BACK UINIT　追加ブースタ3
+8479 51080100 FB_M_8020 BODY 51080100　FB_M_8020　BODY
+8480 52080100 FB_M_8020 ARMS 52080100　FB_M_8020　ARMS
+8481 60070100 BS_A_8020 booster Miyatake booster (special) 60070100　BS_A_8020　ブースター　ミヤタケブースター（特殊）
+8482 70030100 WP_A_8969 FCS melange type 2 (K AI) 70030100　WP_A_8969　FCS　メランジ系2（K・AI）
+8483 65030100　WP_A_8989　Generator (Mera) Melange type 2 65030100　WP_A_8989　ジェネレータ　（メラ）メランジ系2
+8484 53080100 FB_M_8020 LEGS 53080100　FB_M_8020　LEGS
+8485 50080100 FB_M_8020 HEAD 50080100　FB_M_8020　HEAD
+8486 30030000 WP_R_4240 BACK UINIT Coral Missile 30030000　WP_R_4240　BACK UINIT　コーラルミサイル
+8487 25010300 WP_L_4970 Shield Coral Shield 25010300　WP_L_4970　シールド　コーラルシールド
+8500 [Speaker] General-purpose com 【話者】汎用com
+8501 [Speaker] Eph6 【話者】Eph6
+8502 [COM Voice] Preliminary 01 【COMボイス】予備01
+8503 [COM Voice] Preliminary 02 【COMボイス】予備02
+8504 [COM Voice] Preliminary 03 【COMボイス】予備03
+8505 [COM Voice] Preliminary 04 【COMボイス】予備04
+8506 [COM Voice] Preliminary 05 【COMボイス】予備05
+8507 [COM Voice] Preliminary 06 【COMボイス】予備06
+8508 [COM Voice] Preliminary 07 【COMボイス】予備07
+8509 [COM Voice] Preliminary 08 【COMボイス】予備08
+9000 Mission loadable event flag 05 ミッションロード可能イベントフラグ05
+9010 Mission clear completion event flag 05 ミッションクリア完了イベントフラグ05
+9020 Mission load prohibited event flag 05 ミッションロード禁止イベントフラグ05
+9100 Mission Loadable Event Flag 06 ミッションロード可能イベントフラグ06
+9110 Mission clear completion event flag 06 ミッションクリア完了イベントフラグ06
+9120 Mission load prohibited event flag 06 ミッションロード禁止イベントフラグ06
+9200 Refactoring Mission: Loadable リファクタリングミッション：ロード可能
+9210 Refactoring Mission: Completed リファクタリングミッション：クリア完了
+9220 Refactoring Mission: No Loading リファクタリングミッション：ロード禁止
+9230 Player_I'm in a mountain town プレイヤ_山岳の街に居る
+9231 stay in player_dam プレイヤ_ダムに居る
+9232 Player_At the connection point in front of the wall プレイヤ_壁前接続地点に居る
+9233 Player_I'm on the roof of the wall プレイヤ_壁屋上に居る
+9234 spare 予備
+9235 Garage Helicopter_In a mountain town ガレージヘリ_山岳の街に居る
+9236 Garage Helicopter_At the dam ガレージヘリ_ダムに居る
+9237 Garage Helicopter_At the connection point in front of the wall ガレージヘリ_壁前接続地点に居る
+9238 Garage Helicopter_I'm on the roof of the wall. ガレージヘリ_壁屋上に居る

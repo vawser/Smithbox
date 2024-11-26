@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="NPC_AI_ACTION_MOVE_DIR" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Top" />
+        <Option Value="2" Name="Top-Left" />
+        <Option Value="3" Name="Top-Right" />
+        <Option Value="4" Name="Left" />
+        <Option Value="5" Name="Right" />
+        <Option Value="6" Name="Bottom" />
+        <Option Value="7" Name="Bottom-Left" />
+        <Option Value="8" Name="Bottom-Right" />
+    </Enum>
+    <Enum Name="NPC_AI_ACTION_KEY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Circle" />
+        <Option Value="2" Name="Cross" />
+        <Option Value="3" Name="Square" />
+        <Option Value="4" Name="Triangle" />
+        <Option Value="5" Name="L1" />
+        <Option Value="6" Name="L2" />
+        <Option Value="7" Name="L3" />
+        <Option Value="8" Name="R1" />
+        <Option Value="9" Name="R2" />
+        <Option Value="10" Name="R3" />
+        <Option Value="11" Name="D-PAD Up" />
+        <Option Value="12" Name="D-PAD Left" />
+        <Option Value="13" Name="D-PAD Right" />
+        <Option Value="14" Name="D-PAD Down" />
+        <Option Value="15" Name="Dash" />
+        <Option Value="16" Name="Backstep" />
+        <Option Value="17" Name="Roll" />
+        <Option Value="18" Name="Kick (with R1)" />
+        <Option Value="19" Name="Jump Attack (with R2)" />
+        <Option Value="20" Name="Ladder Ascend" />
+        <Option Value="21" Name="Ladder Descend" />
+        <Option Value="22" Name="Gesture" />
+    </Enum>
+  </Enums>
+  <Field>
+    <moveDir AltName="Move Direction" Wiki="Moving direction to enter" Enum="NPC_AI_ACTION_MOVE_DIR" />
+    <key1 AltName="Key [1]" Wiki="Key to enter" Enum="NPC_AI_ACTION_KEY" />
+    <key2 AltName="Key [2]" Wiki="Key to enter" Enum="NPC_AI_ACTION_KEY" />
+    <key3 AltName="Key [3]" Wiki="Key to enter" Enum="NPC_AI_ACTION_KEY" />
+    <bMoveDirHold AltName="Handle Move Direction as Long Press" Wiki="Whether to handle the input movement direction as long press" IsBool="" />
+    <bKeyHold1 AltName="Handle Key [1] Hold as Long Press" Wiki="Whether to treat the key to be entered as a long press" IsBool="" />
+    <bKeyHold2 AltName="Handle Key [2] Hold as Long Press" Wiki="Whether to treat the key to be entered as a long press" IsBool="" />
+    <bKeyHold3 AltName="Handle Key [3] Hold as Long Press" Wiki="Whether to treat the key to be entered as a long press" IsBool="" />
+    <gestureId AltName="Gesture ID" Wiki="Gesture ID" />
+    <bLifeEndSuccess AltName="AI Goal Waits For Duration End" Wiki="If this is ON, the AI goal will not be successful until the end of its life" IsBool="" />
+    <pad1 AltName="" Padding=""/>
+  </Field>
+  <Self Wiki="Associated with the NPC_ATK enum used in AI lua scripts."/>
+</PARAMMETA>

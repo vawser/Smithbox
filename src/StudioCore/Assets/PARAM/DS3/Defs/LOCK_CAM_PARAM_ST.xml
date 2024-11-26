@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>LOCK_CAM_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 camDistTarget" />
+    <Field Def="f32 rotRangeMinX" />
+    <Field Def="f32 lockRotXShiftRatio" />
+    <Field Def="f32 chrOrgOffset_Y" />
+    <Field Def="f32 chrLockRangeMaxRadius" />
+    <Field Def="f32 camFovY" />
+    <Field Def="f32 chrLockRangeMaxRadius_forD" />
+    <Field Def="f32 chrLockRangeMaxRadius_forPD" />
+    <Field Def="f32 closeMaxHeight" />
+    <Field Def="f32 closeMinHeight" />
+    <Field Def="f32 closeAngRange" />
+    <Field Def="f32 closeMaxRadius" />
+    <Field Def="f32 closeMaxRadius_forD" />
+    <Field Def="f32 closeMaxRadius_forPD" />
+    <Field Def="f32 bulletMaxRadius" />
+    <Field Def="f32 bulletMaxRadius_forD" />
+    <Field Def="f32 bulletMaxRadius_forPD" />
+    <Field Def="f32 bulletAngRange" />
+    <Field Def="dummy8 pad1[28]" />
+  </Fields>
+</PARAMDEF>

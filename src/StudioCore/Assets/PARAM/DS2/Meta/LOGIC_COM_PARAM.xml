@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the logic used by enemy AI." Row0Dummy="" />
+  <Field>
+    <sight_distance AltName="Sight Distance"/>
+    <detect_distance AltName="Detection Distance"/>
+    <vision_cone_horizontal_angle AltName="Vision Cone - Horizontal Angle"/>
+    <vision_cone_vertical_angle AltName="Vision Cone - Vertical Angle"/>
+  </Field>
+</PARAMMETA>

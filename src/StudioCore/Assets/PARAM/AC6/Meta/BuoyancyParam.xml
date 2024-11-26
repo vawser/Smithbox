@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines buoyancy behavior for assets during wave simulation." />
+  
+  <Field>
+    <density
+    AltName="Density"
+    Wiki="Density of the water." />
+    
+    <drag
+    AltName="Drag"
+    Wiki="Drag of the water." />
+    
+    <velocityX
+    AltName="Velocity (X-Axis)" 
+    Wiki="" />
+    
+    <velocityZ
+    AltName="Velocity (Z-Axis)"
+    Wiki="" />
+    
+    <waveThickness
+    AltName="Wave Thickness"
+    Wiki="" />
+    
+    <waveInverval
+    AltName="Wave Interval"
+    Wiki="" />
+    
+    <pad
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

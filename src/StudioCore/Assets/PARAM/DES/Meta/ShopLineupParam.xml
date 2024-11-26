@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="SHOP_LINEUP_EQUIPTYPE">
+      <Option Value="0" Name="Weapons" />
+      <Option Value="1" Name="Armor" />
+      <Option Value="2" Name="Accessories" />
+      <Option Value="3" Name="Goods" />
+      <Option Value="4" Name="Magic" />
+      <Option Value="5" Name="Miracles" />
+      <Option Value="6" Name="Information" />
+    </Enum>
+    <Enum Name="SHOP_LINEUP_SHOPTYPE">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Enhancement" />
+      <Option Value="2" Name="Magic" />
+      <Option Value="3" Name="Miracle" />
+      <Option Value="4" Name="Information" />
+    </Enum>
+  </Enums>
+  <Field>
+    <shopType AltName="shopType" Enum="SHOP_LINEUP_SHOPTYPE" />
+    <equipType AltName="equipType" Enum="SHOP_LINEUP_EQUIPTYPE" />
+    <pad_0 AltName="pad_0" />
+    <equipId AltName="equipId" Refs="EquipParamWeapon(equipType=0),EquipParamProtector(equipType=1),EquipParamAccessory(equipType=2),EquipParamGoods(equipType=3),Magic(equipType=4),Magic(equipType=5)" />
+    <value AltName="value" />
+    <mtrlId AltName="mtrlId" Refs="EquipMtrlSetParam" />
+    <eventFlag AltName="eventFlag" />
+    <sellQuantity AltName="sellQuantity" />
+    <qwcId AltName="qwcId" Refs="QwcChangeParam" />
+    <pad_1 AltName="pad_1" />
+  </Field>
+  <Self />
+</PARAMMETA>

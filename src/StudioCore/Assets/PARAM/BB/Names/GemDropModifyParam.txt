@@ -1,0 +1,11 @@
+0 Nothing happens
+10 Holy Grail Type Group Test
+1011 Dungeons A [Thumel] Ritual level 1
+1012 Dungeons A [Thumel] Ritual level 2
+1013 Dungeons A [Thumel] Ritual level 3
+1014 Dungeons A [Thumel] Ritual level 4
+1022 Dungeons A' [Remote Tomb] Ritual Level 2
+1023 Dungeons A' [Remote Tomb] Ritual Level 3
+1034 Dungeons B [Roland] Ritual level 4
+1035 Dungeons B [Roland] Ritual level 5
+1045 Dungeons C [Izu] Ritual level 5

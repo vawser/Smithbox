@@ -1,0 +1,221 @@
+0 null
+1 [ SP 】Rear PC → Hammer Demon
+2 [ SP 】 Parry PC → Hammer Demon
+3 [ SP 】【Enhanced】Parry PC → Hammer Demon
+4 [ SP 】 Left side PC → Hammer Demon
+100 Rear PC to PC
+101 Gun Breaker PC to PC
+11000 Back collapse PC → Hound
+11001 Back collapse PC → Sacrificial Hound
+11010 Back collapse PC → Priest
+11040 Back collapse PC → Burned corpse
+11050 Back collapse PC → Wandering Widow
+11051 Back collapse PC → Wandering Widow ( Lightweight )
+11060 Back collapse PC → Brain Eater
+11090 Back collapse PC → Strange Beast
+11091 Back collapse PC → Strange Beast ( NPC )
+11220 Back collapse PC →Young fruit bat
+11270 Back collapse PC → Vampire pig
+11271 Back collapse PC → Vampire pig (nightmare)
+11290 Back collapse PC → Strange Beast (female)
+12000 Back collapse PC → Executioner
+12010 Back collapse PC → Dungeon Man (Grave Digger)
+12020 Back collapse PC → Kidnapper
+12040 Back collapse PC → Manipulated Corpse
+12050 Back collapse PC → Crazy Demon
+12090 Back collapse PC → Bloodthirsty Beast
+12100 Back collapse PC → Eye Collector
+12110 Back collapse PC → Spider Cthulhu
+12120 Back collapse PC → Dark Brigade
+12150 Back collapse PC → The Demon of the Old Castle
+12160 Back collapse PC → Kin of the Flame of Destruction
+12170 Back collapse PC → Messenger from Snake Swamp
+12180 Back collapse PC → Silver Beast's Kin
+12250 Back collapse PC → Jailer A
+12260 Back collapse PC → Jailer B
+12320 Back collapse PC → King's Reaper
+12330 Back collapse PC → The King's Servant
+12400 Back collapse PC → Foundling Giant
+12500 Back collapse PC → Messenger from the Moon
+12560 Back collapse PC → Ground Cherry
+12600 Back collapse PC → Terrifying crowd
+12610 Back collapse PC → Crowd Woman
+12630 Back collapse PC → crowd A (large)
+12631 Back collapse PC → crowd A (Large) Executioner Costume
+12632 Back collapse PC → crowd A (O) Mori Costume
+12640 Back collapse PC → crowd B (large)
+12700 Back collapse PC → Church Emissary
+12710 Back collapse PC → Father Gascoigne
+12720 Back collapse PC → Father Gascoigne (Beast)
+12740 Back collapse PC → student
+12800 Back collapse PC →Burnt corpse variation (poison)
+12810 Back collapse PC → Burnt Corpse Warrior (Large)
+13000 Back collapse PC → Dungeon Man (Priest)
+13010 Back collapse PC → Dungeon people (slaves)
+13020 Back collapse PC → Dungeon Guardian
+13030 Back collapse PC → Dungeon Man (Madman)
+13040 Back collapse PC → Dungeon Man (Fat)
+13050 Back collapse PC → Dungeon Lord
+13060 Back collapse PC → Dungeon Person (Bride)
+13110 Back collapse PC → Evil spirit (male)
+13120 Back collapse PC → Evil spirit (female)
+14000 Back collapse PC → Fallen Hunter
+14010 Back collapse PC → The Executioner (Nightmare)
+14020 Back collapse PC → patient A
+14030 Back collapse PC → patient B
+14040 Back collapse PC → Fishman A
+14050 Back collapse PC → Fishman B
+14060 Back collapse PC → Fishman Large
+14110 Back collapse PC → crowd A (Great) Saint D
+14120 Back collapse PC → patient A (Blood transfusion table)
+14140 Back collapse PC → Strange Beast Saint D
+14150 Back collapse PC → patient A (conversation)
+14520 Back collapse PC → Clock Tower Boss
+14540 Back collapse PC → Final Boss HU before
+14541 Back collapse PC → Final Boss HU rear
+17010 Back collapse PC → Avatar B
+17500 Back collapse PC → Enemy Avatar
+18050 Back collapse PC → Base Elderly (Awakened)
+21000 Gun Breaker PC → Hound
+21001 Gun Breaker PC → Sacrificial Hound
+21010 Gun Breaker PC → Priest
+21020 Gun Breaker PC → crowd A
+21030 Gun Breaker PC → crowdB
+21040 Gun Breaker PC → Burned corpse
+21050 Gun Breaker PC → Wandering Widow
+21051 Gun Breaker PC → Wandering Widow (Light)
+21060 Gun Breaker PC → Brain Eater
+21090 Gun Breaker PC → Strange Beast
+21091 Gun Breaker PC → Strange Beast ( NPC )
+21220 Gun Breaker PC → Young fruit bat
+21270 Gun Breaker PC → Vampire pig
+21271 Gun Breaker PC → Vampire pig (nightmare)
+21290 Gun Breaker PC → Strange Beast (female)
+22000 Gun Breaker PC → Executioner
+22010 Gun Breaker PC → Dungeon Man (Grave Digger)
+22020 Gun Breaker PC → Kidnapper
+22040 Gun Breaker PC → Manipulated Corpse
+22050 Gun Breaker PC → Crazy Demon
+22090 Gun Breaker PC → Bloodthirsty Beast
+22100 Gun Breaker PC → Eye Collector
+22110 Gun Breaker PC →Spider Cthulhu
+22120 Gun Breaker PC → Dark Brigade
+22150 Gun Breaker PC → The Demon of the Old Castle
+22160 Gun Breaker PC → Kin of the Flame of Destruction
+22170 Gun Breaker PC → Messenger from Snake Swamp
+22180 Gun Breaker PC → Silver Beast's Kin
+22250 Gun Breaker PC → Jailer A
+22260 Gun Breaker PC → Jailer B
+22320 Gun Breaker PC → King's Reaper
+22330 Gun Breaker PC → The King's Servant
+22400 Gun Breaker PC → Foundling Giant
+22500 Gun Breaker PC → Messenger from the Moon
+22560 Gun Breaker PC → Ground Cherry
+22600 Gun Breaker PC → Terrifying crowd
+22610 Gun Breaker PC → Crowd Woman
+22630 Gun Breaker PC → crowd A (large)
+22631 Gun Breaker PC → crowd A (Large) Executioner Costume
+22632 Gun Breaker PC → crowd A (Large) Mori Costume
+22640 Gun Breaker PC → crowd B (large)
+22700 Gun Breaker PC → Church Emissary
+22710 Gun Breaker PC → Father Gascoigne
+22720 Gun Breaker PC → Father Gascoigne (Beast)
+22740 Gun Breaker PC → student
+22800 Gun Breaker PC → Burned Corpse Variation (Poison)
+22810 Gun Breaker PC → Burnt Corpse Warrior (Large)
+23000 Gun Breaker PC → Dungeon Man (Priest)
+23010 Gun Breaker PC → Dungeon people (slaves)
+23020 Gun Breaker PC → Dungeon Guardian
+23030 Gun Breaker PC → Dungeon Man (Madman)
+23040 Gun Breaker PC → Dungeon Man (Fat)
+23050 Gun Breaker PC → Dungeon Lord
+23060 Gun Breaker PC → Dungeon Person (Bride)
+23110 Gun Breaker PC → Evil spirit (male)
+23120 Gun Breaker PC → Evil spirit (female)
+24000 Gun Breaker PC → Fallen Hunter
+24010 Gun Breaker PC → The Executioner (Nightmare)
+24020 Gun Breaker PC → patient A
+24030 Gun Breaker PC → patient B
+24040 Gun Breaker PC → Fishman A
+24050 Gun Breaker PC → Fishman B
+24060 Gun Breaker PC → Fishman Large
+24110 Gun Breaker PC → crowd A (Great) Saint D
+24120 Gun Breaker PC → patient A( Blood transfusion table )
+24140 Gun Breaker PC → Strange Beast
+24150 Gun Breaker PC → patient A (conversation)
+24520 Gun Breaker PC → Clock Tower Boss
+24540 Gun Breaker PC → Final Boss HU before
+24541 Gun Breaker PC → Final Boss HU rear
+27010 Gun Breaker PC → Avatar B
+27500 Gun Breaker PC → Enemy Avatar
+28050 Gun Breaker PC → Base Elderly (Awakened)
+32510 Special Throw PC → Child of the Moon
+32730 Special Throw PC → Frankenstein of the Medical Church
+33130 Special Throw PC → Fresh Golem
+34500 Special Throw PC → Parishioner Ω
+34510 Special Throw PC → Ludwig (Beast)
+34511 Special Throw PC → Ludwig (human)
+35000 Special Throw PC → Parishioner
+35020 Special Throw PC → Saint Beast
+35040 Special Throw PC → Storm Beast
+35080 Special Throw PC → Storm Beast (Bone)
+35090 Special Throw PC → Founder Beast
+35110 Special Throw PC → Silver Beast
+35120 Special Throw PC → Evil God
+35400 Special Throw PC → Inheritor of Nightmares
+1000000 Hound → PC Throw
+1000001 Sacrificial Hound → PC Throw
+1060000 Brain Eater → PC Throw
+1150000 Slime → PC Drop Throw
+1150010 Slime → PC Falling throw
+1220000 Young Fruit Bat → PC Falling Jump Throw
+1220010 Young Fruit Bat → PC Jumping Throw
+1230000 Digging → PC Throw
+1230010 Digging ( Reversed ) → PC Throw
+1290000 Aberrant Beast Female → PC Throw
+2000000 Executioner → PC Throw
+2010000 Grave Digger (Hook) → PC Throw
+2020000 Kidnapper → PC Throw
+2090000 Bloodthirsty Beast _ → PC Carotid artery bite
+2100000 Eye Collector → PC Throw
+2100010 Eye Collector → PC Back Throw
+2100050 Eye Collector Saint D → PC Throw
+2100060 Eye Collector Saint D → PC Back Throw
+2110000 Spider Cthulhu → PC Throw
+2150000 The Evil Spirit of the Old Castle → PC Throw
+2150010 The Evil Spirit of the Old Castle → PC Back Throw
+2170000 Messenger from Snake Swamp → PC Throw
+2180000 Silver Beast's Kin → PC Throw
+2400000 Foundling Giant → PC Throw
+2510000 Moon Child → PC Throw
+2530000 Star Flower → PC Throw
+2560000 Ground Cherry → PC Throw
+2610000 Crowd Woman → PC Throw
+2700000 Church Messenger → PC Throw
+2740000 Student → PC Drop Throw
+3060000 Dungeon Person (Bride) → PC Throw
+3100000 Mimic → PC Throw
+3130000 Flesh Golem → PC Throw
+4000000 Fallen Hunter → PC
+4010000 Executioner (Nightmare) → PCThrow
+4020000 patient A (Poison hand) → PC Throw
+4021000 patient A (Poison hand) → PC Throw with voice
+4022000 patient A (Head only) → PC Drop Throw
+4023000 patient A (Poison hand) → PC Throw (from the front)
+4040000 Fishman A (Kitchen knife) → PC Throw
+4060000 Fishman Large → PC Throw
+4070000 Hermit crab → PC Throw
+4500000 Parishioner Ω → PC Throw (normal)
+4500010 Parishioner Ω → PC Throw (Rush)
+4520000 Clock Tower Boss → PC Throw
+5000000 Rector → PC Throw (normal)
+5000010 Rector → PC Throw (Rush)
+5020000 Saint Beast → PC Throw (normal)
+5020010 Saint Beast → PC Throw (Anger)
+5030000 Snake Ball → PC Throw
+5090000 Primordial Beast → PC Throw
+5140000 Evil God ( large ) → PC Throw
+5140005 Evil God ( large ) → PC Throw 3 Cathedral Quarter A
+5140010 Evil God ( large ) → PC Throw 5
+7500000 Enemy Avatar → PC Throw
+8050000 Base Elderly (Awakened) → PC

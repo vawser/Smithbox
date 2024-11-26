@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to game area during multiplayer sessions." Row0Dummy="" />
+  <Field>
+    <limitation_time_1 AltName="Limitation Time [1]"/>
+    <limitation_time_2 AltName="Limitation Time [2]"/>
+    <limitation_time_3 AltName="Limitation Time [3]"/>
+  </Field>
+</PARAMMETA>

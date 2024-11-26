@@ -1,4 +1,0 @@
-2004000 arena tutorial -- アリーナチュートリアル
-2004100 online arena tutorial -- オンラインアリーナチュートリアル
-2005000 ACDATA tutorial -- ACDATAチュートリアル
-2006000 ACTEST tutorial -- ACTESTチュートリアル

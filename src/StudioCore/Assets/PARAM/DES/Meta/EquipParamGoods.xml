@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <iconId AltName="iconId" />
+    <goodsType AltName="goodsType" />
+    <pad_0 AltName="pad_0" />
+    <weight AltName="weight" />
+    <modelId AltName="modelId" />
+    <pad_1 AltName="pad_1" />
+    <basicPrice AltName="basicPrice" />
+    <goodsCategory AltName="goodsCategory" />
+    <pad_2 AltName="pad_2" />
+    <goodsUseAnim AltName="goodsUseAnim" />
+    <behaviorId AltName="behaviorId" Refs="BehaviorParam" />/>
+    <enable_live AltName="enable_live" />
+    <enable_gray AltName="enable_gray" />
+    <enable_white AltName="enable_white" />
+    <enable_black AltName="enable_black" />
+    <enable_multi AltName="enable_multi" />
+    <disable_offline AltName="disable_offline" />
+    <pad_3 AltName="pad_3" />
+    <isEquip AltName="isEquip" />
+    <isConsume AltName="isConsume" />
+    <isAutoEquip AltName="isAutoEquip" />
+    <isEstablishment AltName="isEstablishment" />
+    <shopLv AltName="shopLv" />
+    <pad_5 AltName="pad_5" />
+    <isDrop AltName="isDrop" />
+    <isDisableHand AltName="isDisableHand" />
+    <pad_6 AltName="pad_6" />
+    <sortId AltName="sortId" />
+    <trophySGradeId AltName="trophySGradeId" />
+    <pad_7 AltName="pad_7" />
+    <qwcId AltName="qwcId" />
+    <isEnhance AltName="isEnhance" />
+    <opmeMenuType AltName="opmeMenuType" />
+    <pad_8 AltName="pad_8" />
+    <yesNoDialogMessageId AltName="yesNoDialogMessageId" />
+  </Field>
+  <Self />
+</PARAMMETA>

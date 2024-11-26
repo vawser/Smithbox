@@ -1,0 +1,4 @@
+0 dummy data -- ダミーデータ
+7000 extensions -- エクステ
+8000 auxiliary booster -- 補助ブースター
+9990 Test data ① -- テストデータ①

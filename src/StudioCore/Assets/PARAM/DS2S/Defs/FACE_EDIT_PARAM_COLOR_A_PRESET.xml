@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>FACE_EDIT_PARAM_COLOR_A_PRESET</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 edit_color_R" />
+    <Field Def="f32 edit_color_G" />
+    <Field Def="f32 edit_color_B" />
+    <Field Def="f32 edit_color_A" />
+  </Fields>
+</PARAMDEF>

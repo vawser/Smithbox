@@ -1,0 +1,2326 @@
+0 
+10 
+11 
+12 
+13 
+14 
+15 
+16 
+20 
+21 
+22 
+23 
+24 
+25 
+26 
+27 
+28 
+29 
+30 
+31 
+35 
+40 
+41 
+42 
+43 
+44 
+60 
+61 
+62 
+63 
+64 
+65 
+66 
+67 
+68 
+69 
+70 
+71 
+72 
+73 
+74 
+75 
+76 
+77 
+78 
+79 
+90 
+91 
+92 
+93 
+94 
+98 
+99 
+100 Tarnished's Furled Finger
+101 Duelist's Furled Finger
+102 Bloody Finger
+103 Finger Severer
+104 White Cipher Ring
+105 Blue Cipher Ring
+106 Tarnished's Wizened Finger
+107 Phantom Bloody Finger
+108 Taunter's Tongue
+109 Small Golden Effigy
+110 Small Red Effigy
+111 Festering Bloody Finger
+112 Recusant Finger
+113 Phantom Bloody Finger
+114 Phantom Recusant Finger
+115 Memory of Grace
+130 Spectral Steed Whistle
+135 Phantom Great Rune
+150 Furlcalling Finger Remedy
+166 
+170 Tarnished's Furled Finger
+171 Duelist's Furled Finger
+172 Bloody Finger
+174 White Cipher Ring
+175 Blue Cipher Ring
+178 Taunter's Tongue
+179 Small Golden Effigy
+180 Small Red Effigy
+181 Spectral Steed Whistle
+182 Furlcalling Finger Remedy
+183 Festering Bloody Finger
+184 Recusant Finger
+190 Rune Arc
+191 Godrick's Great Rune
+192 Radahn's Great Rune
+193 Morgott's Great Rune
+194 Rykard's Great Rune
+195 Mohg's Great Rune
+196 Malenia's Great Rune
+250 Flask of Wondrous Physick
+251 Flask of Wondrous Physick
+300 Fire Pot
+301 Redmane Fire Pot
+302 Giantsflame Fire Pot
+320 Lightning Pot
+321 Ancient Dragonbolt Pot
+330 Fetid Pot
+340 Swarm Pot
+350 Holy Water Pot
+351 Sacred Order Pot
+360 Freezing Pot
+370 Poison Pot
+380 Oil Pot
+390 Alluring Pot
+391 Beastlure Pot
+400 Roped Fire Pot
+420 Roped Lightning Pot
+430 Roped Fetid Pot
+440 Roped Poison Pot
+450 Roped Oil Pot
+460 Roped Magic Pot
+470 Roped Fly Pot
+480 Roped Freezing Pot
+490 Roped Volcano Pot
+510 Roped Holy Water Pot
+600 Volcano Pot
+610 Albinauric Pot
+630 Cursed-Blood Pot
+640 Sleep Pot
+650 Rancor Pot
+660 Magic Pot
+661 Academy Magic Pot
+670 Rot Pot
+810 Rowa Raisin
+811 Sweet Raisin
+812 Frozen Raisin
+820 Boiled Crab
+830 Boiled Prawn
+900 Neutralizing Boluses
+910 Stanching Boluses
+920 Thawfrost Boluses
+930 Stimulating Boluses
+940 Preserving Boluses
+950 Rejuvenating Boluses
+960 Clarifying Boluses
+1000 Flask of Crimson Tears
+1001 Flask of Crimson Tears
+1002 Flask of Crimson Tears +1
+1003 Flask of Crimson Tears +1
+1004 Flask of Crimson Tears +2
+1005 Flask of Crimson Tears +2
+1006 Flask of Crimson Tears +3
+1007 Flask of Crimson Tears +3
+1008 Flask of Crimson Tears +4
+1009 Flask of Crimson Tears +4
+1010 Flask of Crimson Tears +5
+1011 Flask of Crimson Tears +5
+1012 Flask of Crimson Tears +6
+1013 Flask of Crimson Tears +6
+1014 Flask of Crimson Tears +7
+1015 Flask of Crimson Tears +7
+1016 Flask of Crimson Tears +8
+1017 Flask of Crimson Tears +8
+1018 Flask of Crimson Tears +9
+1019 Flask of Crimson Tears +9
+1020 Flask of Crimson Tears +10
+1021 Flask of Crimson Tears +10
+1022 Flask of Crimson Tears +11
+1023 Flask of Crimson Tears +11
+1024 Flask of Crimson Tears +12
+1025 Flask of Crimson Tears +12
+1050 Flask of Cerulean Tears
+1051 Flask of Cerulean Tears
+1052 Flask of Cerulean Tears +1
+1053 Flask of Cerulean Tears +1
+1054 Flask of Cerulean Tears +2
+1055 Flask of Cerulean Tears +2
+1056 Flask of Cerulean Tears +3
+1057 Flask of Cerulean Tears +3
+1058 Flask of Cerulean Tears +4
+1059 Flask of Cerulean Tears +4
+1060 Flask of Cerulean Tears +5
+1061 Flask of Cerulean Tears +5
+1062 Flask of Cerulean Tears +6
+1063 Flask of Cerulean Tears +6
+1064 Flask of Cerulean Tears +7
+1065 Flask of Cerulean Tears +7
+1066 Flask of Cerulean Tears +8
+1067 Flask of Cerulean Tears +8
+1068 Flask of Cerulean Tears +9
+1069 Flask of Cerulean Tears +9
+1070 Flask of Cerulean Tears +10
+1071 Flask of Cerulean Tears +10
+1072 Flask of Cerulean Tears +11
+1073 Flask of Cerulean Tears +11
+1074 Flask of Cerulean Tears +12
+1075 Flask of Cerulean Tears +12
+1100 Pickled Turtle Neck
+1110 Immunizing Cured Meat
+1120 Invigorating Cured Meat
+1130 Clarifying Cured Meat
+1140 Dappled Cured Meat
+1150 Spellproof Dried Liver
+1160 Fireproof Dried Liver
+1170 Lightningproof Dried Liver
+1180 Holyproof Dried Liver
+1190 Silver-Pickled Fowl Foot
+1200 Gold-Pickled Fowl Foot
+1210 Exalted Flesh
+1220 Deathsbane Jerky
+1235 Raw Meat Dumpling
+1240 Shabriri Grape
+1290 Starlight Shards
+1310 Immunizing White Cured Meat
+1320 Invigorating White Cured Meat
+1330 Clarifying White Cured Meat
+1340 Dappled White Cured Meat
+1350 Deathsbane White Jerky
+1400 Fire Grease
+1410 Lightning Grease
+1420 Magic Grease
+1430 Holy Grease
+1440 Blood Grease
+1450 Soporific Grease
+1460 Poison Grease
+1470 Freezing Grease
+1480 Dragonwound Grease
+1490 Rot Grease
+1500 Drawstring Fire Grease
+1510 Drawstring Lightning Grease
+1520 Drawstring Magic Grease
+1530 Drawstring Holy Grease
+1540 Drawstring Blood Grease
+1550 Drawstring Soporific Grease
+1560 Drawstring Poison Grease
+1570 Drawstring Freezing Grease
+1590 Drawstring Rot Grease
+1690 Shield Grease
+1700 Throwing Dagger
+1710 Bone Dart
+1720 Poisonbone Dart
+1730 Kukri
+1740 Crystal Dart
+1750 Fan Daggers
+1760 Ruin Fragment
+1830 Explosive Stone
+1831 Explosive Stone Clump
+1840 Poisoned Stone
+1841 Poisoned Stone Clump
+2020 Rainbow Stone
+2030 Glowstone
+2040 Telescope
+2050 Grace Mimic
+2070 Lantern
+2080 Blasphemous Claw
+2090 Deathroot
+2100 Soft Cotton
+2120 Soap
+2130 Celestial Dew
+2140 Margit's Shackle
+2150 Mohg's Shackle
+2160 Pureblood Knight's Medal
+2190 Miquella's Needle
+2200 Prattling Pate "Hello"
+2201 Prattling Pate "Thank you"
+2202 Prattling Pate "Apologies"
+2203 Prattling Pate "Wonderful"
+2204 Prattling Pate "Please help"
+2205 Prattling Pate "My beloved"
+2206 Prattling Pate "Let's get to it"
+2207 Prattling Pate "You're beautiful"
+2900 Golden Rune [1]
+2901 Golden Rune [2]
+2902 Golden Rune [3]
+2903 Golden Rune [4]
+2904 Golden Rune [5]
+2905 Golden Rune [6]
+2906 Golden Rune [7]
+2907 Golden Rune [8]
+2908 Golden Rune [9]
+2909 Golden Rune [10]
+2910 Golden Rune [11]
+2911 Golden Rune [12]
+2912 Golden Rune [13]
+2913 Numen's Rune
+2914 Hero's Rune [1]
+2915 Hero's Rune [2]
+2916 Hero's Rune [3]
+2917 Hero's Rune [4]
+2918 Hero's Rune [5]
+2919 Lord's Rune
+2950 Remembrance of the Grafted
+2951 Remembrance of the Starscourge
+2952 Remembrance of the Omen King
+2953 Remembrance of the Blasphemous
+2954 Remembrance of the Rot Goddess
+2955 Remembrance of the Blood Lord
+2956 Remembrance of the Black Blade
+2957 Remembrance of Hoarah Loux
+2958 Remembrance of the Dragonlord
+2959 Remembrance of the Full Moon Queen
+2960 Remembrance of the Lichdragon
+2961 Remembrance of the Fire Giant
+2962 Remembrance of the Regal Ancestor
+2963 Elden Remembrance
+2964 Remembrance of the Naturalborn
+2990 Lands Between Rune
+3000 Ancestral Infant's Head
+3010 Omen Bairn
+3011 Regal Omen Bairn
+3020 Miranda's Prayer
+3030 Cuckoo Glintstone
+3040 Mimic's Veil
+3050 Glintstone Scrap
+3051 Large Glintstone Scrap
+3060 Gravity Stone Fan
+3070 Gravity Stone Chunk
+3080 Wraith Calling Bell
+3300 Holy Water Grease
+3310 Warming Stone
+3311 Frenzyflame Stone
+3320 Scriptstone
+3350 Bewitching Branch
+3360 Baldachin's Blessing
+3361 Radiant Baldachin's Blessing
+3500 Uplifting Aromatic
+3510 Spark Aromatic
+3520 Ironjar Aromatic
+3550 Bloodboil Aromatic
+3580 Poison Spraymist
+3610 Acid Spraymist
+4000 [Sorcery] Glintstone Pebble
+4001 [Sorcery] Great Glintstone Shard
+4010 [Sorcery] Swift Glintstone Shard
+4020 [Sorcery] Glintstone Cometshard
+4021 [Sorcery] Comet
+4030 [Sorcery] Shard Spiral
+4040 [Sorcery] Glintstone Stars
+4050 [Sorcery] Star Shower
+4060 [Sorcery] Crystal Barrage
+4070 [Sorcery] Glintstone Arc
+4080 [Sorcery] Cannon of Haima
+4090 [Sorcery] Crystal Burst
+4100 [Sorcery] Shatter Earth
+4110 [Sorcery] Rock Blaster
+4120 [Sorcery] Gavel of Haima
+4130 [Sorcery] Terra Magicus
+4140 [Sorcery] Starlight
+4200 [Sorcery] Comet Azur
+4210 [Sorcery] Founding Rain of Stars
+4220 [Sorcery] Stars of Ruin
+4300 [Sorcery] Glintblade Phalanx
+4301 [Sorcery] Carian Phalanx
+4302 [Sorcery] Greatblade Phalanx
+4360 [Sorcery] Rennala's Full Moon
+4361 [Sorcery] Ranni's Dark Moon
+4370 [Sorcery] Magic Downpour
+4380 [Sorcery] Loretta's Greatbow
+4381 [Sorcery] Loretta's Mastery
+4390 [Sorcery] Magic Glintblade
+4400 [Sorcery] Glintstone Icecrag
+4410 [Sorcery] Zamor Ice Storm
+4420 [Sorcery] Freezing Mist
+4430 [Sorcery] Carian Greatsword
+4431 [Sorcery] Adula's Moonblade
+4440 [Sorcery] Carian Slicer
+4450 [Sorcery] Carian Piercer
+4460 [Sorcery] Scholar's Armament
+4470 [Sorcery] Scholar's Shield
+4480 [Sorcery] Lucidity
+4490 [Sorcery] Frozen Armament
+4500 [Sorcery] Shattering Crystal
+4510 [Sorcery] Crystal Release
+4520 [Sorcery] Crystal Torrent
+4600 [Sorcery] Ambush Shard
+4610 [Sorcery] Night Shard
+4620 [Sorcery] Night Comet
+4630 [Sorcery] Thops's Barrier
+4640 [Sorcery] Carian Retaliation
+4650 [Sorcery] Eternal Darkness
+4660 [Sorcery] Unseen Blade
+4670 [Sorcery] Unseen Form
+4700 [Sorcery] Meteorite
+4701 [Sorcery] Meteorite of Astel
+4710 [Sorcery] Rock Sling
+4720 [Sorcery] Gravity Well
+4721 [Sorcery] Collapsing Stars
+4800 [Sorcery] Magma Shot
+4810 [Sorcery] Gelmir's Fury
+4820 [Sorcery] Roiling Magma
+4830 [Sorcery] Rykard's Rancor
+4900 [Sorcery] Briars of Sin
+4910 [Sorcery] Briars of Punishment
+5000 [Sorcery] Rancorcall
+5001 [Sorcery] Ancient Death Rancor
+5010 [Sorcery] Explosive Ghostflame
+5020 [Sorcery] Fia's Mist
+5030 [Sorcery] Tibia's Summons
+5040 [Sorcery] Death Lightning
+5100 [Sorcery] Oracle Bubbles
+5110 [Sorcery] Great Oracular Bubble
+6000 [Incantation] Catch Flame
+6001 [Incantation] O, Flame!
+6010 [Incantation] Flame Sling
+6020 [Incantation] Flame, Fall Upon Them
+6030 [Incantation] Whirl, O Flame!
+6040 [Incantation] Flame, Cleanse Me
+6050 [Incantation] Flame, Grant Me Strength
+6060 [Incantation] Flame, Protect Me
+6100 [Incantation] Giantsflame Take Thee
+6110 [Incantation] Flame of the Fell God
+6120 [Incantation] Burn, O Flame!
+6210 [Incantation] Black Flame
+6220 [Incantation] Surge, O Flame!
+6230 [Incantation] Scouring Black Flame
+6240 [Incantation] Black Flame Ritual
+6250 [Incantation] Black Flame Blade
+6260 [Incantation] Black Flame's Protection
+6270 [Incantation] Noble Presence
+6300 [Incantation] Bloodflame Talons
+6310 [Incantation] Bloodboon
+6320 [Incantation] Bloodflame Blade
+6330 [Incantation] Barrier of Gold
+6340 [Incantation] Protection of the Erdtree
+6400 [Incantation] Rejection
+6410 [Incantation] Wrath of Gold
+6420 [Incantation] Urgent Heal
+6421 [Incantation] Heal
+6422 [Incantation] Great Heal
+6423 [Incantation] Lord's Heal
+6424 [Incantation] Erdtree Heal
+6430 [Incantation] Blessing's Boon
+6431 [Incantation] Blessing of the Erdtree
+6440 [Incantation] Cure Poison
+6441 [Incantation] Lord's Aid
+6450 [Incantation] Flame Fortification
+6460 [Incantation] Magic Fortification
+6470 [Incantation] Lightning Fortification
+6480 [Incantation] Divine Fortification
+6490 [Incantation] Lord's Divine Fortification
+6500 [Incantation] Night Maiden's Mist
+6510 [Incantation] Assassin's Approach
+6520 [Incantation] Shadow Bait
+6530 [Incantation] Darkness
+6600 [Incantation] Golden Vow
+6700 [Incantation] Discus of Light
+6701 [Incantation] Triple Rings of Light
+6710 [Incantation] Radagon's Rings of Light
+6720 [Incantation] Elden Stars
+6730 [Incantation] Law of Regression
+6740 [Incantation] Immutable Shield
+6750 [Incantation] Litany of Proper Death
+6760 [Incantation] Law of Causality
+6770 [Incantation] Order's Blade
+6780 [Incantation] Order Healing
+6800 [Incantation] Bestial Sling
+6810 [Incantation] Stone of Gurranq
+6820 [Incantation] Beast Claw
+6830 [Incantation] Gurranq's Beast Claw
+6840 [Incantation] Bestial Vitality
+6850 [Incantation] Bestial Constitution
+6900 [Incantation] Lightning Spear
+6910 [Incantation] Ancient Dragons' Lightning Strike
+6920 [Incantation] Lightning Strike
+6921 [Incantation] Frozen Lightning Spear
+6930 [Incantation] Honed Bolt
+6940 [Incantation] Ancient Dragons' Lightning Spear
+6941 [Incantation] Fortissax's Lightning Spear
+6950 [Incantation] Lansseax's Glaive
+6960 [Incantation] Electrify Armament
+6970 [Incantation] Vyke's Dragonbolt
+6971 [Incantation] Dragonbolt Blessing
+7000 [Incantation] Dragonfire
+7001 [Incantation] Agheel's Flame
+7010 [Incantation] Magma Breath
+7011 [Incantation] Theodorix's Magma
+7020 [Incantation] Dragonice
+7021 [Incantation] Borealis's Mist
+7030 [Incantation] Rotten Breath
+7031 [Incantation] Ekzykes's Decay
+7040 [Incantation] Glintstone Breath
+7041 [Incantation] Smarag's Glintstone Breath
+7050 [Incantation] Placidusax's Ruin
+7060 [Incantation] Dragonclaw
+7080 [Incantation] Dragonmaw
+7090 [Incantation] Greyoll's Roar
+7200 [Incantation] Pest Threads
+7210 [Incantation] Swarm of Flies
+7220 [Incantation] Poison Mist
+7230 [Incantation] Poison Armament
+7240 [Incantation] Scarlet Aeonia
+7300 [Incantation] Inescapable Frenzy
+7310 [Incantation] The Flame of Frenzy
+7311 [Incantation] Unendurable Frenzy
+7320 [Incantation] Frenzied Burst
+7330 [Incantation] Howl of Shabriri
+7500 [Incantation] Aspects of the Crucible: Tail
+7510 [Incantation] Aspects of the Crucible: Horns
+7520 [Incantation] Aspects of the Crucible: Breath
+7530 [Incantation] Black Blade
+7900 [Incantation] Fire's Deadly Sin
+7903 [Incantation] Golden Lightning Fortification
+8000 Stonesword Key
+8010 Rusty Key
+8102 Lucent Baldachin's Blessing
+8105 Dectus Medallion (Left)
+8106 Dectus Medallion (Right)
+8107 Rold Medallion
+8109 Academy Glintstone Key
+8111 Carian Inverted Statue
+8121 Dark Moon Ring
+8126 Fingerprint Grape
+8127 Letter from Volcano Manor
+8128 Tonic of Forgetfulness
+8129 Serpent's Amnion
+8130 Rya's Necklace
+8131 Irina's Letter
+8132 Letter from Volcano Manor
+8133 Red Letter
+8134 Drawing-Room Key
+8136 Rya's Necklace
+8137 Volcano Manor Invitation
+8142 Amber Starlight
+8143 Seluvis's Introduction
+8144 Sellen's Primal Glintstone
+8146 Miniature Ranni
+8147 Asimi, Silver Tear
+8148 Godrick's Great Rune
+8149 Radahn's Great Rune
+8150 Morgott's Great Rune
+8151 Rykard's Great Rune
+8152 Mohg's Great Rune
+8153 Malenia's Great Rune
+8154 Lord of Blood's Favor
+8155 Lord of Blood's Favor
+8156 Burial Crow's Letter
+8158 Spirit Calling Bell
+8159 Fingerslayer Blade
+8161 Sewing Needle
+8162 Gold Sewing Needle
+8163 Tailoring Tools
+8164 Seluvis's Potion
+8165 
+8166 Amber Draught
+8167 Letter to Patches
+8168 Dancer's Castanets
+8169 Sellian Sealbreaker
+8171 Chrysalids' Memento
+8172 Black Knifeprint
+8173 Letter to Bernahl
+8174 Academy Glintstone Key
+8175 Haligtree Secret Medallion (Left)
+8176 Haligtree Secret Medallion (Right)
+8181 Burial Crow's Letter
+8182 Mending Rune of Perfect Order
+8183 Mending Rune of the Death-Prince
+8184 Mending Rune of the Fell Curse
+8185 Larval Tear
+8186 Imbued Sword Key
+8187 Miniature Ranni
+8188 Golden Tailoring Tools
+8189 Iji's Confession
+8190 Knifeprint Clue
+8191 Cursemark of Death
+8192 Asimi's Husk
+8193 Seedbed Curse
+8194 The Stormhawk King
+8195 Asimi, Silver Chrysalid
+8196 Unalloyed Gold Needle
+8197 Sewer-Gaol Key
+8198 Meeting Place Map
+8199 Discarded Palace Key
+8200 "Homing Instinct" Painting
+8201 "Resurrection" Painting
+8202 "Champion's Song" Painting
+8203 "Sorcerer" Painting
+8204 "Prophecy" Painting
+8205 "Flightless Bird" Painting
+8206 "Redmane" Painting
+8221 Zorayas's Letter
+8222 Alexander's Innards
+8223 Rogier's Letter
+8224 Note: The Preceptor's Secrets
+8225 Weathered Map
+8226 Note: The Preceptor's Secret
+8227 Weathered Map
+8500 Crafting Kit
+8590 Whetstone Knife
+8600 Map: Limgrave, West
+8601 Map: Weeping Peninsula
+8602 Map: Limgrave, East
+8603 Map: Liurnia, East
+8604 Map: Liurnia, North
+8605 Map: Liurnia, West
+8606 Map: Altus Plateau
+8607 Map: Leyndell, Royal Capital
+8608 Map: Mt. Gelmir
+8609 Map: Caelid
+8610 Map: Dragonbarrow
+8611 Map: Mountaintops of the Giants, West
+8612 Map: Mountaintops of the Giants, East
+8613 Map: Ainsel River
+8614 Map: Lake of Rot
+8615 Map: Siofra River
+8616 Map: Mohgwyn Palace
+8617 Map: Deeproot Depths
+8618 Map: Consecrated Snowfield
+8660 Mirage Riddle
+8700 Note: Hidden Cave
+8701 Note: Imp Shades
+8702 Note: Flask of Wondrous Physick
+8703 Note: Stonedigger Trolls
+8704 Note: Walking Mausoleum
+8705 Note: Unseen Assassins
+8706 Note: Great Coffins
+8707 Note: Flame Chariots
+8708 Note: Demi-human Mobs
+8709 Note: Land Squirts
+8710 Note: Gravity's Advantage
+8711 Note: Revenants
+8712 Note: Waypoint Ruins
+8713 Note: Gateway
+8714 Note: Miquella's Needle
+8715 Note: Frenzied Flame Village
+8716 Note: The Lord of Frenzied Flame
+8717 Note: Below the Capital
+8750 Note: Hidden Cave
+8751 Note: Imp Shades
+8752 Note: Flask of Wondrous Physick
+8753 Note: Stonedigger Trolls
+8754 Note: Walking Mausoleum
+8755 Note: Unseen Assassins
+8756 Note: Great Coffins
+8757 Note: Flame Chariots
+8758 Note: Demi-human Mobs
+8759 Note: Land Squirts
+8760 Note: Gravity's Advantage
+8761 Note: Revenants
+8762 Note: Waypoint Ruins
+8763 Note: Gateway
+8765 Note: Frenzied Flame Village
+8767 Note: Below the Capital
+8850 Conspectus Scroll
+8851 Royal House Scroll
+8852 
+8853 
+8854 
+8855 Fire Monks' Prayerbook
+8856 Giant's Prayerbook
+8857 Godskin Prayerbook
+8858 Two Fingers' Prayerbook
+8859 Assassin's Prayerbook
+8860 Erdtree Prayerbook
+8861 Erdtree Codex
+8862 Golden Order Principia
+8863 Golden Order Principles
+8864 Dragon Cult Prayerbook
+8865 Ancient Dragon Prayerbook
+8866 Academy Scroll
+8910 Pidia's Bell Bearing
+8911 Seluvis's Bell Bearing
+8912 Patches' Bell Bearing
+8913 Sellen's Bell Bearing
+8914 
+8915 D's Bell Bearing
+8916 Bernahl's Bell Bearing
+8917 Miriel's Bell Bearing
+8918 Gostoc's Bell Bearing
+8919 Thops's Bell Bearing
+8920 Kalé's Bell Bearing
+8921 Nomadic Merchant's Bell Bearing [1]
+8922 Nomadic Merchant's Bell Bearing [2]
+8923 Nomadic Merchant's Bell Bearing [3]
+8924 Nomadic Merchant's Bell Bearing [4]
+8925 Nomadic Merchant's Bell Bearing [5]
+8926 Isolated Merchant's Bell Bearing [1]
+8927 Isolated Merchant's Bell Bearing [2]
+8928 Nomadic Merchant's Bell Bearing [6]
+8929 Hermit Merchant's Bell Bearing [1]
+8930 Nomadic Merchant's Bell Bearing [7]
+8931 Nomadic Merchant's Bell Bearing [8]
+8932 Nomadic Merchant's Bell Bearing [9]
+8933 Nomadic Merchant's Bell Bearing [10]
+8934 Nomadic Merchant's Bell Bearing [11]
+8935 Isolated Merchant's Bell Bearing [3]
+8936 Hermit Merchant's Bell Bearing [2]
+8937 Abandoned Merchant's Bell Bearing
+8938 Hermit Merchant's Bell Bearing [3]
+8939 Imprisoned Merchant's Bell Bearing
+8940 Iji's Bell Bearing
+8941 Rogier's Bell Bearing
+8942 Blackguard's Bell Bearing
+8943 Corhyn's Bell Bearing
+8944 Gowry's Bell Bearing
+8945 Bone Peddler's Bell Bearing
+8946 Meat Peddler's Bell Bearing
+8947 Medicine Peddler's Bell Bearing
+8948 Gravity Stone Peddler's Bell Bearing
+8949 
+8950 
+8951 Smithing-Stone Miner's Bell Bearing [1]
+8952 Smithing-Stone Miner's Bell Bearing [2]
+8953 Smithing-Stone Miner's Bell Bearing [3]
+8954 Smithing-Stone Miner's Bell Bearing [4]
+8955 Somberstone Miner's Bell Bearing [1]
+8956 Somberstone Miner's Bell Bearing [2]
+8957 Somberstone Miner's Bell Bearing [3]
+8958 Somberstone Miner's Bell Bearing [4]
+8959 Somberstone Miner's Bell Bearing [5]
+8960 Glovewort Picker's Bell Bearing [1]
+8961 Glovewort Picker's Bell Bearing [2]
+8962 Glovewort Picker's Bell Bearing [3]
+8963 Ghost-Glovewort Picker's Bell Bearing [1]
+8964 Ghost-Glovewort Picker's Bell Bearing [2]
+8965 Ghost-Glovewort Picker's Bell Bearing [3]
+8970 Iron Whetblade
+8971 Red-Hot Whetblade
+8972 Sanctified Whetblade
+8973 Glintstone Whetblade
+8974 Black Whetblade
+8975 Unalloyed Gold Needle
+8976 Unalloyed Gold Needle
+8977 Valkyrie's Prosthesis
+8978 Sellia's Secret
+8979 Beast Eye
+8980 Weathered Dagger
+9000 Bow
+9001 Polite Bow
+9002 My Thanks
+9003 Curtsy
+9004 Reverential Bow
+9005 My Lord
+9006 Warm Welcome
+9007 Wave
+9008 Casual Greeting
+9009 Strength!
+9010 As You Wish
+9011 Point Forwards
+9012 Point Upwards
+9013 Point Downwards
+9014 Beckon
+9015 Wait!
+9016 Calm Down!
+9017 Nod In Thought
+9018 Extreme Repentance
+9019 Grovel For Mercy
+9020 Rallying Cry
+9021 Heartening Cry
+9022 By My Sword
+9023 Hoslow's Oath
+9024 Fire Spur Me
+9026 Bravo!
+9027 Jump for Joy
+9028 Triumphant Delight
+9029 Fancy Spin
+9030 Finger Snap
+9031 Dejection
+9032 Patches' Crouch
+9033 Crossed Legs
+9034 Rest
+9035 Sitting Sideways
+9036 Dozing Cross-Legged
+9037 Spread Out
+9039 Balled Up
+9040 What Do You Want?
+9041 Prayer
+9042 Desperate Prayer
+9043 Rapture
+9045 Erudition
+9046 Outer Order
+9047 Inner Order
+9048 Golden Order Totality
+9049 The Ring
+9050 The Ring
+9100 About Sites of Grace
+9101 About Sorceries and Incantations
+9102 About Bows
+9103 About Crouching
+9104 About Stance-Breaking
+9105 About Stakes of Marika
+9106 About Guard Counters
+9107 About the Map
+9108 About Guidance of Grace
+9109 About Horseback Riding
+9110 About Death
+9111 About Summoning Spirits
+9112 About Guarding
+9113 About Item Crafting
+9115 About Flask of Wondrous Physick
+9116 About Adding Skills
+9117 About Birdseye Telescopes
+9118 About Spiritspring Jumping
+9119 About Vanquishing Enemy Groups
+9120 About Teardrop Scarabs
+9121 About Summoning Other Players
+9122 About Cooperative Multiplayer
+9123 About Competitive Multiplayer
+9124 About Invasion Multiplayer
+9125 About Hunter Multiplayer
+9126 About Summoning Pools
+9127 About Monument Icon
+9128 About Requesting Help from Hunters
+9129 About Skills
+9130 About Fast Travel to Sites of Grace
+9131 About Strengthening Armaments
+9132 About Roundtable Hold
+9134 About Materials
+9135 About Containers
+9136 About Adding Affinities
+9137 About Pouches
+9138 About Dodging
+9140 About Wielding Armaments
+9141 About Great Runes
+9142 About the Cave of Knowledge
+9150 About Duels
+9151 About United Combat and Combat Ordeals
+9152 About Combat with Spirit Ashes
+9153 About Marika's Effigy at the Roundtable
+9195 About Multiplayer
+9300 Nomadic Warrior's Cookbook [1]
+9301 Nomadic Warrior's Cookbook [3]
+9302 Nomadic Warrior's Cookbook [6]
+9303 Nomadic Warrior's Cookbook [10]
+9304 Fugitive Warrior's Recipe [5]
+9305 Nomadic Warrior's Cookbook [7]
+9306 Nomadic Warrior's Cookbook [12]
+9307 Nomadic Warrior's Cookbook [19]
+9308 Nomadic Warrior's Cookbook [13]
+9309 Nomadic Warrior's Cookbook [23]
+9310 Nomadic Warrior's Cookbook [17]
+9311 Nomadic Warrior's Cookbook [2]
+9312 Nomadic Warrior's Cookbook [21]
+9313 Missionary's Cookbook [6]
+9314 
+9315 
+9316 
+9317 
+9318 
+9319 
+9320 Armorer's Cookbook [1]
+9321 Armorer's Cookbook [2]
+9322 Nomadic Warrior's Cookbook [11]
+9323 Nomadic Warrior's Cookbook [20]
+9324 Armorer's Cookbook (5)
+9325 Armorer's Cookbook [7]
+9326 Armorer's Cookbook [4]
+9327 Nomadic Warrior's Cookbook [18]
+9328 Armorer's Cookbook [3]
+9329 Nomadic Warrior's Cookbook [16]
+9330 Armorer's Cookbook [6]
+9331 Armorer's Cookbook [5]
+9332 
+9333 
+9334 
+9335 
+9336 
+9337 
+9338 
+9339 
+9340 Glintstone Craftsman's Cookbook [4]
+9341 Glintstone Craftsman's Cookbook [1]
+9342 Glintstone Craftsman's Cookbook [5]
+9343 Nomadic Warrior's Cookbook [9]
+9344 Glintstone Craftsman's Cookbook [8]
+9345 Glintstone Craftsman's Cookbook [2]
+9346 Glintstone Craftsman's Cookbook [6]
+9347 Glintstone Craftsman's Cookbook [7]
+9348 Glintstone Craftsman's Cookbook [3]
+9349 
+9350 
+9351 
+9352 
+9353 
+9354 
+9355 
+9356 
+9357 
+9358 
+9359 
+9360 Missionary's Cookbook [2]
+9361 Missionary's Cookbook [1]
+9362 Missionary's Cookbook (3)
+9363 Missionary's Cookbook [5]
+9364 Missionary's Cookbook [4]
+9365 Missionary's Cookbook [3]
+9366 
+9367 
+9368 
+9369 
+9370 
+9380 Nomadic Warrior's Cookbook [4]
+9381 Perfumer's Cookbook (1)
+9382 Perfumer's Cookbook (2)
+9383 Nomadic Warrior's Cookbook [5]
+9384 Perfumer's Cookbook [1]
+9385 Perfumer's Cookbook [2]
+9386 Perfumer's Cookbook [3]
+9387 Nomadic Warrior's Cookbook [14]
+9388 Nomadic Warrior's Cookbook [8]
+9389 Nomadic Warrior's Cookbook [22]
+9390 Nomadic Warrior's Cookbook [15]
+9391 Nomadic Warrior's Cookbook [24]
+9392 Perfumer's Cookbook [4]
+9393 Perfumer's Cookbook (13)
+9394 
+9395 
+9396 
+9397 
+9398 
+9399 
+9400 Ancient Dragon Apostle's Cookbook [1]
+9401 Ancient Dragon Apostle's Cookbook [2]
+9402 Ancient Dragon Apostle's Cookbook [4]
+9403 Ancient Dragon Apostle's Cookbook [3]
+9404 
+9405 
+9406 
+9407 
+9408 
+9409 
+9410 
+9420 Fevor's Cookbook [1]
+9421 Fevor's Cookbook [3]
+9422 Fevor's Cookbook [2]
+9423 Missionary's Cookbook [7]
+9424 
+9425 
+9426 
+9427 
+9428 
+9429 
+9430 
+9440 Frenzied's Cookbook [1]
+9441 Frenzied's Cookbook [2]
+9442 
+9443 
+9444 
+9445 
+9446 
+9447 
+9448 
+9449 
+9450 
+9500 Cracked Pot
+9501 Ritual Pot
+9510 Perfume Bottle
+10000 Glass Shard
+10010 Golden Seed
+10020 Sacred Tear
+10030 Memory Stone
+10040 Talisman Pouch
+10060 Dragon Heart
+10070 Lost Ashes of War
+10080 Great Rune of the Unborn
+10100 Smithing Stone [1]
+10101 Smithing Stone [2]
+10102 Smithing Stone [3]
+10103 Smithing Stone [4]
+10104 Smithing Stone [5]
+10105 Smithing Stone [6]
+10106 Smithing Stone [7]
+10107 Smithing Stone [8]
+10140 Ancient Dragon Smithing Stone
+10160 Somber Smithing Stone [1]
+10161 Somber Smithing Stone [2]
+10162 Somber Smithing Stone [3]
+10163 Somber Smithing Stone [4]
+10164 Somber Smithing Stone [5]
+10165 Somber Smithing Stone [6]
+10166 Somber Smithing Stone [7]
+10167 Somber Smithing Stone [8]
+10168 Somber Ancient Dragon Smithing Stone
+10200 Somber Smithing Stone [9]
+10900 Grave Glovewort [1]
+10901 Grave Glovewort [2]
+10902 Grave Glovewort [3]
+10903 Grave Glovewort [4]
+10904 Grave Glovewort [5]
+10905 Grave Glovewort [6]
+10906 Grave Glovewort [7]
+10907 Grave Glovewort [8]
+10908 Grave Glovewort [9]
+10909 Great Grave Glovewort
+10910 Ghost Glovewort [1]
+10911 Ghost Glovewort [2]
+10912 Ghost Glovewort [3]
+10913 Ghost Glovewort [4]
+10914 Ghost Glovewort [5]
+10915 Ghost Glovewort [6]
+10916 Ghost Glovewort [7]
+10917 Ghost Glovewort [8]
+10918 Ghost Glovewort [9]
+10919 Great Ghost Glovewort
+11000 Crimsonspill Crystal Tear
+11001 Greenspill Crystal Tear
+11002 Crimson Crystal Tear
+11003 Crimson Crystal Tear
+11004 Cerulean Crystal Tear
+11005 Cerulean Crystal Tear
+11006 Speckled Hardtear
+11007 Crimson Bubbletear
+11008 Opaline Bubbletear
+11009 Crimsonburst Crystal Tear
+11010 Greenburst Crystal Tear
+11011 Opaline Hardtear
+11012 Winged Crystal Tear
+11013 Thorny Cracked Tear
+11014 Spiked Cracked Tear
+11015 Windy Crystal Tear
+11016 Ruptured Crystal Tear
+11017 Ruptured Crystal Tear
+11018 Leaden Hardtear
+11019 Twiggy Cracked Tear
+11020 Crimsonwhorl Bubbletear
+11021 Strength-knot Crystal Tear
+11022 Dexterity-knot Crystal Tear
+11023 Intelligence-knot Crystal Tear
+11024 Faith-knot Crystal Tear
+11025 Cerulean Hidden Tear
+11026 Stonebarb Cracked Tear
+11027 Purifying Crystal Tear
+11028 Flame-Shrouding Cracked Tear
+11029 Magic-Shrouding Cracked Tear
+11030 Lightning-Shrouding Cracked Tear
+11031 Holy-Shrouding Cracked Tear
+15000 Sliver of Meat
+15010 Beast Liver
+15020 Lump of Flesh
+15030 Beast Blood
+15040 Old Fang
+15050 Budding Horn
+15060 Flight Pinion
+15080 Four-Toed Fowl Foot
+15090 Turtle Neck Meat
+15100 Human Bone Shard
+15110 Great Dragonfly Head
+15120 Slumbering Egg
+15130 Crab Eggs
+15140 Land Octopus Ovary
+15150 Miranda Powder
+15160 Strip of White Flesh
+15340 Thin Beast Bones
+15341 Hefty Beast Bone
+15400 String
+15410 Living Jar Shard
+15420 Albinauric Bloodclot
+15430 Stormhawk Feather
+20650 Poisonbloom
+20651 Trina's Lily
+20652 Fulgurbloom
+20653 Miquella's Lily
+20654 Grave Violet
+20660 Faded Erdleaf Flower
+20680 Erdleaf Flower
+20681 Altus Bloom
+20682 Fire Blossom
+20683 Golden Sunflower
+20685 Tarnished Golden Sunflower
+20690 Herba
+20691 Arteria Leaf
+20710 Dewkissed Herba
+20720 Rowa Fruit
+20721 Golden Rowa
+20722 Rimed Rowa
+20723 Bloodrose
+20740 Eye of Yelough
+20750 Crystal Bud
+20751 Rimed Crystal Bud
+20753 Sacramental Bud
+20760 Mushroom
+20761 Melted Mushroom
+20770 Toxic Mushroom
+20775 Root Resin
+20780 Cracked Crystal
+20795 Sanctuary Stone
+20800 Nascent Butterfly
+20801 Aeonian Butterfly
+20802 Smoldering Butterfly
+20810 Silver Firefly
+20811 Gold Firefly
+20812 Glintstone Firefly
+20820 Golden Centipede
+20825 Silver Tear Husk
+20830 Gold-Tinged Excrement
+20831 Blood-Tainted Excrement
+20840 Cave Moss
+20841 Budding Cave Moss
+20842 Crystal Cave Moss
+20845 Yellow Ember
+20850 Volcanic Stone
+20852 Formic Rock
+20855 Gravel Stone
+50200 NPC Flask of Crimson Tears (Empty)
+50201 NPC Flask of Crimson Tears
+50202 NPC Flask of Crimson Tears (Empty)
+50203 NPC Flask of Crimson Tears
+51760 
+53090 
+53230 
+53400 
+53630 
+53650 
+53651 
+53652 
+53653 
+53654 
+53655 
+53656 
+53657 
+53658 
+200000 Black Knife Tiche
+200001 Black Knife Tiche +1
+200002 Black Knife Tiche +2
+200003 Black Knife Tiche +3
+200004 Black Knife Tiche +4
+200005 Black Knife Tiche +5
+200006 Black Knife Tiche +6
+200007 Black Knife Tiche +7
+200008 Black Knife Tiche +8
+200009 Black Knife Tiche +9
+200010 Black Knife Tiche +10
+201000 Banished Knight Oleg
+201001 Banished Knight Oleg +1
+201002 Banished Knight Oleg +2
+201003 Banished Knight Oleg +3
+201004 Banished Knight Oleg +4
+201005 Banished Knight Oleg +5
+201006 Banished Knight Oleg +6
+201007 Banished Knight Oleg +7
+201008 Banished Knight Oleg +8
+201009 Banished Knight Oleg +9
+201010 Banished Knight Oleg +10
+202000 Banished Knight Engvall
+202001 Banished Knight Engvall +1
+202002 Banished Knight Engvall +2
+202003 Banished Knight Engvall +3
+202004 Banished Knight Engvall +4
+202005 Banished Knight Engvall +5
+202006 Banished Knight Engvall +6
+202007 Banished Knight Engvall +7
+202008 Banished Knight Engvall +8
+202009 Banished Knight Engvall +9
+202010 Banished Knight Engvall +10
+203000 Fanged Imp Ashes
+203001 Fanged Imp Ashes +1
+203002 Fanged Imp Ashes +2
+203003 Fanged Imp Ashes +3
+203004 Fanged Imp Ashes +4
+203005 Fanged Imp Ashes +5
+203006 Fanged Imp Ashes +6
+203007 Fanged Imp Ashes +7
+203008 Fanged Imp Ashes +8
+203009 Fanged Imp Ashes +9
+203010 Fanged Imp Ashes +10
+204000 Latenna the Albinauric
+204001 Latenna the Albinauric +1
+204002 Latenna the Albinauric +2
+204003 Latenna the Albinauric +3
+204004 Latenna the Albinauric +4
+204005 Latenna the Albinauric +5
+204006 Latenna the Albinauric +6
+204007 Latenna the Albinauric +7
+204008 Latenna the Albinauric +8
+204009 Latenna the Albinauric +9
+204010 Latenna the Albinauric +10
+205000 Nomad Ashes
+205001 Nomad Ashes +1
+205002 Nomad Ashes +2
+205003 Nomad Ashes +3
+205004 Nomad Ashes +4
+205005 Nomad Ashes +5
+205006 Nomad Ashes +6
+205007 Nomad Ashes +7
+205008 Nomad Ashes +8
+205009 Nomad Ashes +9
+205010 Nomad Ashes +10
+206000 Nightmaiden & Swordstress Puppets
+206001 Nightmaiden & Swordstress Puppets +1
+206002 Nightmaiden & Swordstress Puppets +2
+206003 Nightmaiden & Swordstress Puppets +3
+206004 Nightmaiden & Swordstress Puppets +4
+206005 Nightmaiden & Swordstress Puppets +5
+206006 Nightmaiden & Swordstress Puppets +6
+206007 Nightmaiden & Swordstress Puppets +7
+206008 Nightmaiden & Swordstress Puppets +8
+206009 Nightmaiden & Swordstress Puppets +9
+206010 Nightmaiden & Swordstress Puppets +10
+207000 Mimic Tear Ashes
+207001 Mimic Tear Ashes +1
+207002 Mimic Tear Ashes +2
+207003 Mimic Tear Ashes +3
+207004 Mimic Tear Ashes +4
+207005 Mimic Tear Ashes +5
+207006 Mimic Tear Ashes +6
+207007 Mimic Tear Ashes +7
+207008 Mimic Tear Ashes +8
+207009 Mimic Tear Ashes +9
+207010 Mimic Tear Ashes +10
+208000 Crystalian Ashes
+208001 Crystalian Ashes +1
+208002 Crystalian Ashes +2
+208003 Crystalian Ashes +3
+208004 Crystalian Ashes +4
+208005 Crystalian Ashes +5
+208006 Crystalian Ashes +6
+208007 Crystalian Ashes +7
+208008 Crystalian Ashes +8
+208009 Crystalian Ashes +9
+208010 Crystalian Ashes +10
+209000 Ancestral Follower Ashes
+209001 Ancestral Follower Ashes +1
+209002 Ancestral Follower Ashes +2
+209003 Ancestral Follower Ashes +3
+209004 Ancestral Follower Ashes +4
+209005 Ancestral Follower Ashes +5
+209006 Ancestral Follower Ashes +6
+209007 Ancestral Follower Ashes +7
+209008 Ancestral Follower Ashes +8
+209009 Ancestral Follower Ashes +9
+209010 Ancestral Follower Ashes +10
+210000 Winged Misbegotten Ashes
+210001 Winged Misbegotten Ashes + 1
+210002 Winged Misbegotten Ashes + 2
+210003 Winged Misbegotten Ashes + 3
+210004 Winged Misbegotten Ashes + 4
+210005 Winged Misbegotten Ashes + 5
+210006 Winged Misbegotten Ashes + 6
+210007 Winged Misbegotten Ashes + 7
+210008 Winged Misbegotten Ashes + 8
+210009 Winged Misbegotten Ashes + 9
+210010 Winged Misbegotten Ashes + 10
+211000 Albinauric Ashes
+211001 Albinauric Ashes +1
+211002 Albinauric Ashes +2
+211003 Albinauric Ashes +3
+211004 Albinauric Ashes +4
+211005 Albinauric Ashes +5
+211006 Albinauric Ashes +6
+211007 Albinauric Ashes +7
+211008 Albinauric Ashes +8
+211009 Albinauric Ashes +9
+211010 Albinauric Ashes +10
+212000 Skeletal Militiaman Ashes
+212001 Skeletal Militiaman Ashes +1
+212002 Skeletal Militiaman Ashes +2
+212003 Skeletal Militiaman Ashes +3
+212004 Skeletal Militiaman Ashes +4
+212005 Skeletal Militiaman Ashes +5
+212006 Skeletal Militiaman Ashes +6
+212007 Skeletal Militiaman Ashes +7
+212008 Skeletal Militiaman Ashes +8
+212009 Skeletal Militiaman Ashes +9
+212010 Skeletal Militiaman Ashes +10
+213000 Skeletal Bandit Ashes
+213001 Skeletal Bandit Ashes +1
+213002 Skeletal Bandit Ashes +2
+213003 Skeletal Bandit Ashes +3
+213004 Skeletal Bandit Ashes +4
+213005 Skeletal Bandit Ashes +5
+213006 Skeletal Bandit Ashes +6
+213007 Skeletal Bandit Ashes +7
+213008 Skeletal Bandit Ashes +8
+213009 Skeletal Bandit Ashes +9
+213010 Skeletal Bandit Ashes +10
+214000 Oracle Envoy Ashes
+214001 Oracle Envoy Ashes +1
+214002 Oracle Envoy Ashes +2
+214003 Oracle Envoy Ashes +3
+214004 Oracle Envoy Ashes +4
+214005 Oracle Envoy Ashes +5
+214006 Oracle Envoy Ashes +6
+214007 Oracle Envoy Ashes +7
+214008 Oracle Envoy Ashes +8
+214009 Oracle Envoy Ashes +9
+214010 Oracle Envoy Ashes +10
+215000 Putrid Corpse Ashes
+215001 Putrid Corpse Ashes +1
+215002 Putrid Corpse Ashes +2
+215003 Putrid Corpse Ashes +3
+215004 Putrid Corpse Ashes +4
+215005 Putrid Corpse Ashes +5
+215006 Putrid Corpse Ashes +6
+215007 Putrid Corpse Ashes +7
+215008 Putrid Corpse Ashes +8
+215009 Putrid Corpse Ashes +9
+215010 Putrid Corpse Ashes +10
+216000 Depraved Perfumer Carmaan
+216001 Depraved Perfumer Carmaan +1
+216002 Depraved Perfumer Carmaan +2
+216003 Depraved Perfumer Carmaan +3
+216004 Depraved Perfumer Carmaan +4
+216005 Depraved Perfumer Carmaan +5
+216006 Depraved Perfumer Carmaan +6
+216007 Depraved Perfumer Carmaan +7
+216008 Depraved Perfumer Carmaan +8
+216009 Depraved Perfumer Carmaan +9
+216010 Depraved Perfumer Carmaan +10
+217000 Perfumer Tricia
+217001 Perfumer Tricia +1
+217002 Perfumer Tricia +2
+217003 Perfumer Tricia +3
+217004 Perfumer Tricia +4
+217005 Perfumer Tricia +5
+217006 Perfumer Tricia +6
+217007 Perfumer Tricia +7
+217008 Perfumer Tricia +8
+217009 Perfumer Tricia +9
+217010 Perfumer Tricia +10
+218000 Glintstone Sorcerer Ashes
+218001 Glintstone Sorcerer Ashes +1
+218002 Glintstone Sorcerer Ashes +2
+218003 Glintstone Sorcerer Ashes +3
+218004 Glintstone Sorcerer Ashes +4
+218005 Glintstone Sorcerer Ashes +5
+218006 Glintstone Sorcerer Ashes +6
+218007 Glintstone Sorcerer Ashes +7
+218008 Glintstone Sorcerer Ashes +8
+218009 Glintstone Sorcerer Ashes +9
+218010 Glintstone Sorcerer Ashes +10
+219000 Twinsage Sorcerer Ashes
+219001 Twinsage Sorcerer Ashes +1
+219002 Twinsage Sorcerer Ashes +2
+219003 Twinsage Sorcerer Ashes +3
+219004 Twinsage Sorcerer Ashes +4
+219005 Twinsage Sorcerer Ashes +5
+219006 Twinsage Sorcerer Ashes +6
+219007 Twinsage Sorcerer Ashes +7
+219008 Twinsage Sorcerer Ashes +8
+219009 Twinsage Sorcerer Ashes +9
+219010 Twinsage Sorcerer Ashes +10
+220000 Page Ashes
+220001 Page Ashes +1
+220002 Page Ashes +2
+220003 Page Ashes +3
+220004 Page Ashes +4
+220005 Page Ashes +5
+220006 Page Ashes +6
+220007 Page Ashes +7
+220008 Page Ashes +8
+220009 Page Ashes +9
+220010 Page Ashes +10
+221000 Battlemage Hugues
+221001 Battlemage Hugues +1
+221002 Battlemage Hugues +2
+221003 Battlemage Hugues +3
+221004 Battlemage Hugues +4
+221005 Battlemage Hugues +5
+221006 Battlemage Hugues +6
+221007 Battlemage Hugues +7
+221008 Battlemage Hugues +8
+221009 Battlemage Hugues +9
+221010 Battlemage Hugues +10
+222000 Clayman Ashes
+222001 Clayman Ashes +1
+222002 Clayman Ashes +2
+222003 Clayman Ashes +3
+222004 Clayman Ashes +4
+222005 Clayman Ashes +5
+222006 Clayman Ashes +6
+222007 Clayman Ashes +7
+222008 Clayman Ashes +8
+222009 Clayman Ashes +9
+222010 Clayman Ashes +10
+223000 Cleanrot Knight Finlay
+223001 Cleanrot Knight Finlay +1
+223002 Cleanrot Knight Finlay +2
+223003 Cleanrot Knight Finlay +3
+223004 Cleanrot Knight Finlay +4
+223005 Cleanrot Knight Finlay +5
+223006 Cleanrot Knight Finlay +6
+223007 Cleanrot Knight Finlay +7
+223008 Cleanrot Knight Finlay +8
+223009 Cleanrot Knight Finlay +9
+223010 Cleanrot Knight Finlay +10
+224000 Kindred of Rot Ashes
+224001 Kindred of Rot Ashes +1
+224002 Kindred of Rot Ashes +2
+224003 Kindred of Rot Ashes +3
+224004 Kindred of Rot Ashes +4
+224005 Kindred of Rot Ashes +5
+224006 Kindred of Rot Ashes +6
+224007 Kindred of Rot Ashes +7
+224008 Kindred of Rot Ashes +8
+224009 Kindred of Rot Ashes +9
+224010 Kindred of Rot Ashes +10
+225000 Marionette Soldier Ashes
+225001 Marionette Soldier Ashes +1
+225002 Marionette Soldier Ashes +2
+225003 Marionette Soldier Ashes +3
+225004 Marionette Soldier Ashes +4
+225005 Marionette Soldier Ashes +5
+225006 Marionette Soldier Ashes +6
+225007 Marionette Soldier Ashes +7
+225008 Marionette Soldier Ashes +8
+225009 Marionette Soldier Ashes +9
+225010 Marionette Soldier Ashes +10
+226000 Avionette Soldier Ashes
+226001 Avionette Soldier Ashes +1
+226002 Avionette Soldier Ashes +2
+226003 Avionette Soldier Ashes +3
+226004 Avionette Soldier Ashes +4
+226005 Avionette Soldier Ashes +5
+226006 Avionette Soldier Ashes +6
+226007 Avionette Soldier Ashes +7
+226008 Avionette Soldier Ashes +8
+226009 Avionette Soldier Ashes +9
+226010 Avionette Soldier Ashes +10
+227000 Fire Monk Ashes
+227001 Fire Monk Ashes +1
+227002 Fire Monk Ashes +2
+227003 Fire Monk Ashes +3
+227004 Fire Monk Ashes +4
+227005 Fire Monk Ashes +5
+227006 Fire Monk Ashes +6
+227007 Fire Monk Ashes +7
+227008 Fire Monk Ashes +8
+227009 Fire Monk Ashes +9
+227010 Fire Monk Ashes +10
+228000 Blackflame Monk Amon
+228001 Blackflame Monk Amon +1
+228002 Blackflame Monk Amon +2
+228003 Blackflame Monk Amon +3
+228004 Blackflame Monk Amon +4
+228005 Blackflame Monk Amon +5
+228006 Blackflame Monk Amon +6
+228007 Blackflame Monk Amon +7
+228008 Blackflame Monk Amon +8
+228009 Blackflame Monk Amon +9
+228010 Blackflame Monk Amon +10
+229000 Man-Serpent Ashes
+229001 Man-Serpent Ashes +1
+229002 Man-Serpent Ashes +2
+229003 Man-Serpent Ashes +3
+229004 Man-Serpent Ashes +4
+229005 Man-Serpent Ashes +5
+229006 Man-Serpent Ashes +6
+229007 Man-Serpent Ashes +7
+229008 Man-Serpent Ashes +8
+229009 Man-Serpent Ashes +9
+229010 Man-Serpent Ashes +10
+230000 Azula Beastman Ashes
+230001 Azula Beastman Ashes +1
+230002 Azula Beastman Ashes +2
+230003 Azula Beastman Ashes +3
+230004 Azula Beastman Ashes +4
+230005 Azula Beastman Ashes +5
+230006 Azula Beastman Ashes +6
+230007 Azula Beastman Ashes +7
+230008 Azula Beastman Ashes +8
+230009 Azula Beastman Ashes +9
+230010 Azula Beastman Ashes +10
+231000 Kaiden Sellsword Ashes
+231001 Kaiden Sellsword Ashes +1
+231002 Kaiden Sellsword Ashes +2
+231003 Kaiden Sellsword Ashes +3
+231004 Kaiden Sellsword Ashes +4
+231005 Kaiden Sellsword Ashes +5
+231006 Kaiden Sellsword Ashes +6
+231007 Kaiden Sellsword Ashes +7
+231008 Kaiden Sellsword Ashes +8
+231009 Kaiden Sellsword Ashes +9
+231010 Kaiden Sellsword Ashes +10
+232000 Lone Wolf Ashes
+232001 Lone Wolf Ashes +1
+232002 Lone Wolf Ashes +2
+232003 Lone Wolf Ashes +3
+232004 Lone Wolf Ashes +4
+232005 Lone Wolf Ashes +5
+232006 Lone Wolf Ashes +6
+232007 Lone Wolf Ashes +7
+232008 Lone Wolf Ashes +8
+232009 Lone Wolf Ashes +9
+232010 Lone Wolf Ashes +10
+233000 Giant Rat Ashes
+233001 Giant Rat Ashes +1
+233002 Giant Rat Ashes +2
+233003 Giant Rat Ashes +3
+233004 Giant Rat Ashes +4
+233005 Giant Rat Ashes +5
+233006 Giant Rat Ashes +6
+233007 Giant Rat Ashes +7
+233008 Giant Rat Ashes +8
+233009 Giant Rat Ashes +9
+233010 Giant Rat Ashes +10
+234000 Demi-Human Ashes
+234001 Demi-Human Ashes +1
+234002 Demi-Human Ashes +2
+234003 Demi-Human Ashes +3
+234004 Demi-Human Ashes +4
+234005 Demi-Human Ashes +5
+234006 Demi-Human Ashes +6
+234007 Demi-Human Ashes +7
+234008 Demi-Human Ashes +8
+234009 Demi-Human Ashes +9
+234010 Demi-Human Ashes +10
+235000 Rotten Stray Ashes
+235001 Rotten Stray Ashes +1
+235002 Rotten Stray Ashes +2
+235003 Rotten Stray Ashes +3
+235004 Rotten Stray Ashes +4
+235005 Rotten Stray Ashes +5
+235006 Rotten Stray Ashes +6
+235007 Rotten Stray Ashes +7
+235008 Rotten Stray Ashes +8
+235009 Rotten Stray Ashes +9
+235010 Rotten Stray Ashes +10
+236000 Spirit Jellyfish Ashes
+236001 Spirit Jellyfish Ashes +1
+236002 Spirit Jellyfish Ashes +2
+236003 Spirit Jellyfish Ashes +3
+236004 Spirit Jellyfish Ashes +4
+236005 Spirit Jellyfish Ashes +5
+236006 Spirit Jellyfish Ashes +6
+236007 Spirit Jellyfish Ashes +7
+236008 Spirit Jellyfish Ashes +8
+236009 Spirit Jellyfish Ashes +9
+236010 Spirit Jellyfish Ashes +10
+237000 Warhawk Ashes
+237001 Warhawk Ashes +1
+237002 Warhawk Ashes +2
+237003 Warhawk Ashes +3
+237004 Warhawk Ashes +4
+237005 Warhawk Ashes +5
+237006 Warhawk Ashes +6
+237007 Warhawk Ashes +7
+237008 Warhawk Ashes +8
+237009 Warhawk Ashes +9
+237010 Warhawk Ashes +10
+238000 Stormhawk Deenh
+238001 Stormhawk Deenh +1
+238002 Stormhawk Deenh +2
+238003 Stormhawk Deenh +3
+238004 Stormhawk Deenh +4
+238005 Stormhawk Deenh +5
+238006 Stormhawk Deenh +6
+238007 Stormhawk Deenh +7
+238008 Stormhawk Deenh +8
+238009 Stormhawk Deenh +9
+238010 Stormhawk Deenh +10
+239000 Bloodhound Knight Floh
+239001 Bloodhound Knight Floh +1
+239002 Bloodhound Knight Floh +2
+239003 Bloodhound Knight Floh +3
+239004 Bloodhound Knight Floh +4
+239005 Bloodhound Knight Floh +5
+239006 Bloodhound Knight Floh +6
+239007 Bloodhound Knight Floh +7
+239008 Bloodhound Knight Floh +8
+239009 Bloodhound Knight Floh +9
+239010 Bloodhound Knight Floh +10
+240000 Wandering Noble Ashes
+240001 Wandering Noble Ashes +1
+240002 Wandering Noble Ashes +2
+240003 Wandering Noble Ashes +3
+240004 Wandering Noble Ashes +4
+240005 Wandering Noble Ashes +5
+240006 Wandering Noble Ashes +6
+240007 Wandering Noble Ashes +7
+240008 Wandering Noble Ashes +8
+240009 Wandering Noble Ashes +9
+240010 Wandering Noble Ashes +10
+241000 Noble Sorcerer Ashes
+241001 Noble Sorcerer Ashes +1
+241002 Noble Sorcerer Ashes +2
+241003 Noble Sorcerer Ashes +3
+241004 Noble Sorcerer Ashes +4
+241005 Noble Sorcerer Ashes +5
+241006 Noble Sorcerer Ashes +6
+241007 Noble Sorcerer Ashes +7
+241008 Noble Sorcerer Ashes +8
+241009 Noble Sorcerer Ashes +9
+241010 Noble Sorcerer Ashes +10
+242000 Vulgar Militia Ashes
+242001 Vulgar Militia Ashes +1
+242002 Vulgar Militia Ashes +2
+242003 Vulgar Militia Ashes +3
+242004 Vulgar Militia Ashes +4
+242005 Vulgar Militia Ashes +5
+242006 Vulgar Militia Ashes +6
+242007 Vulgar Militia Ashes +7
+242008 Vulgar Militia Ashes +8
+242009 Vulgar Militia Ashes +9
+242010 Vulgar Militia Ashes +10
+243000 Mad Pumpkin Head Ashes
+243001 Mad Pumpkin Head Ashes +1
+243002 Mad Pumpkin Head Ashes +2
+243003 Mad Pumpkin Head Ashes +3
+243004 Mad Pumpkin Head Ashes +4
+243005 Mad Pumpkin Head Ashes +5
+243006 Mad Pumpkin Head Ashes +6
+243007 Mad Pumpkin Head Ashes +7
+243008 Mad Pumpkin Head Ashes +8
+243009 Mad Pumpkin Head Ashes +9
+243010 Mad Pumpkin Head Ashes +10
+244000 Land Squirt Ashes
+244001 Land Squirt Ashes +1
+244002 Land Squirt Ashes +2
+244003 Land Squirt Ashes +3
+244004 Land Squirt Ashes +4
+244005 Land Squirt Ashes +5
+244006 Land Squirt Ashes +6
+244007 Land Squirt Ashes +7
+244008 Land Squirt Ashes +8
+244009 Land Squirt Ashes +9
+244010 Land Squirt Ashes +10
+245000 Miranda Sprout Ashes
+245001 Miranda Sprout Ashes +1
+245002 Miranda Sprout Ashes +2
+245003 Miranda Sprout Ashes +3
+245004 Miranda Sprout Ashes +4
+245005 Miranda Sprout Ashes +5
+245006 Miranda Sprout Ashes +6
+245007 Miranda Sprout Ashes +7
+245008 Miranda Sprout Ashes +8
+245009 Miranda Sprout Ashes +9
+245010 Miranda Sprout Ashes +10
+246000 Soldjars of Fortune Ashes
+246001 Soldjars of Fortune Ashes +1
+246002 Soldjars of Fortune Ashes +2
+246003 Soldjars of Fortune Ashes +3
+246004 Soldjars of Fortune Ashes +4
+246005 Soldjars of Fortune Ashes +5
+246006 Soldjars of Fortune Ashes +6
+246007 Soldjars of Fortune Ashes +7
+246008 Soldjars of Fortune Ashes +8
+246009 Soldjars of Fortune Ashes +9
+246010 Soldjars of Fortune Ashes +10
+247000 Omenkiller Rollo
+247001 Omenkiller Rollo +1
+247002 Omenkiller Rollo +2
+247003 Omenkiller Rollo +3
+247004 Omenkiller Rollo +4
+247005 Omenkiller Rollo +5
+247006 Omenkiller Rollo +6
+247007 Omenkiller Rollo +7
+247008 Omenkiller Rollo +8
+247009 Omenkiller Rollo +9
+247010 Omenkiller Rollo +10
+248000 Greatshield Soldier Ashes
+248001 Greatshield Soldier Ashes +1
+248002 Greatshield Soldier Ashes +2
+248003 Greatshield Soldier Ashes +3
+248004 Greatshield Soldier Ashes +4
+248005 Greatshield Soldier Ashes +5
+248006 Greatshield Soldier Ashes +6
+248007 Greatshield Soldier Ashes +7
+248008 Greatshield Soldier Ashes +8
+248009 Greatshield Soldier Ashes +9
+248010 Greatshield Soldier Ashes +10
+249000 Archer Ashes
+249001 Archer Ashes +1
+249002 Archer Ashes +2
+249003 Archer Ashes +3
+249004 Archer Ashes +4
+249005 Archer Ashes +5
+249006 Archer Ashes +6
+249007 Archer Ashes +7
+249008 Archer Ashes +8
+249009 Archer Ashes +9
+249010 Archer Ashes +10
+250000 Godrick Soldier Ashes
+250001 Godrick Soldier Ashes +1
+250002 Godrick Soldier Ashes +2
+250003 Godrick Soldier Ashes +3
+250004 Godrick Soldier Ashes +4
+250005 Godrick Soldier Ashes +5
+250006 Godrick Soldier Ashes +6
+250007 Godrick Soldier Ashes +7
+250008 Godrick Soldier Ashes +8
+250009 Godrick Soldier Ashes +9
+250010 Godrick Soldier Ashes +10
+251000 Raya Lucaria Soldier Ashes
+251001 Raya Lucaria Soldier Ashes +1
+251002 Raya Lucaria Soldier Ashes +2
+251003 Raya Lucaria Soldier Ashes +3
+251004 Raya Lucaria Soldier Ashes +4
+251005 Raya Lucaria Soldier Ashes +5
+251006 Raya Lucaria Soldier Ashes +6
+251007 Raya Lucaria Soldier Ashes +7
+251008 Raya Lucaria Soldier Ashes +8
+251009 Raya Lucaria Soldier Ashes +9
+251010 Raya Lucaria Soldier Ashes +10
+252000 Leyndell Soldier Ashes
+252001 Leyndell Soldier Ashes +1
+252002 Leyndell Soldier Ashes +2
+252003 Leyndell Soldier Ashes +3
+252004 Leyndell Soldier Ashes +4
+252005 Leyndell Soldier Ashes +5
+252006 Leyndell Soldier Ashes +6
+252007 Leyndell Soldier Ashes +7
+252008 Leyndell Soldier Ashes +8
+252009 Leyndell Soldier Ashes +9
+252010 Leyndell Soldier Ashes +10
+253000 Radahn Soldier Ashes
+253001 Radahn Soldier Ashes +1
+253002 Radahn Soldier Ashes +2
+253003 Radahn Soldier Ashes +3
+253004 Radahn Soldier Ashes +4
+253005 Radahn Soldier Ashes +5
+253006 Radahn Soldier Ashes +6
+253007 Radahn Soldier Ashes +7
+253008 Radahn Soldier Ashes +8
+253009 Radahn Soldier Ashes +9
+253010 Radahn Soldier Ashes +10
+254000 Mausoleum Soldier Ashes
+254001 Mausoleum Soldier Ashes +1
+254002 Mausoleum Soldier Ashes +2
+254003 Mausoleum Soldier Ashes +3
+254004 Mausoleum Soldier Ashes +4
+254005 Mausoleum Soldier Ashes +5
+254006 Mausoleum Soldier Ashes +6
+254007 Mausoleum Soldier Ashes +7
+254008 Mausoleum Soldier Ashes +8
+254009 Mausoleum Soldier Ashes +9
+254010 Mausoleum Soldier Ashes +10
+255000 Haligtree Soldier Ashes
+255001 Haligtree Soldier Ashes +1
+255002 Haligtree Soldier Ashes +2
+255003 Haligtree Soldier Ashes +3
+255004 Haligtree Soldier Ashes +4
+255005 Haligtree Soldier Ashes +5
+255006 Haligtree Soldier Ashes +6
+255007 Haligtree Soldier Ashes +7
+255008 Haligtree Soldier Ashes +8
+255009 Haligtree Soldier Ashes +9
+255010 Haligtree Soldier Ashes +10
+256000 Ancient Dragon Knight Kristoff
+256001 Ancient Dragon Knight Kristoff +1
+256002 Ancient Dragon Knight Kristoff +2
+256003 Ancient Dragon Knight Kristoff +3
+256004 Ancient Dragon Knight Kristoff +4
+256005 Ancient Dragon Knight Kristoff +5
+256006 Ancient Dragon Knight Kristoff +6
+256007 Ancient Dragon Knight Kristoff +7
+256008 Ancient Dragon Knight Kristoff +8
+256009 Ancient Dragon Knight Kristoff +9
+256010 Ancient Dragon Knight Kristoff +10
+257000 Redmane Knight Ogha
+257001 Redmane Knight Ogha +1
+257002 Redmane Knight Ogha +2
+257003 Redmane Knight Ogha +3
+257004 Redmane Knight Ogha +4
+257005 Redmane Knight Ogha +5
+257006 Redmane Knight Ogha +6
+257007 Redmane Knight Ogha +7
+257008 Redmane Knight Ogha +8
+257009 Redmane Knight Ogha +9
+257010 Redmane Knight Ogha +10
+258000 Lhutel the Headless
+258001 Lhutel the Headless +1
+258002 Lhutel the Headless +2
+258003 Lhutel the Headless +3
+258004 Lhutel the Headless +4
+258005 Lhutel the Headless +5
+258006 Lhutel the Headless +6
+258007 Lhutel the Headless +7
+258008 Lhutel the Headless +8
+258009 Lhutel the Headless +9
+258010 Lhutel the Headless +10
+259000 Nepheli Loux Puppet
+259001 Nepheli Loux Puppet +1
+259002 Nepheli Loux Puppet +2
+259003 Nepheli Loux Puppet +3
+259004 Nepheli Loux Puppet +4
+259005 Nepheli Loux Puppet +5
+259006 Nepheli Loux Puppet +6
+259007 Nepheli Loux Puppet +7
+259008 Nepheli Loux Puppet +8
+259009 Nepheli Loux Puppet +9
+259010 Nepheli Loux Puppet +10
+260000 Dung Eater Puppet
+260001 Dung Eater Puppet +1
+260002 Dung Eater Puppet +2
+260003 Dung Eater Puppet +3
+260004 Dung Eater Puppet +4
+260005 Dung Eater Puppet +5
+260006 Dung Eater Puppet +6
+260007 Dung Eater Puppet +7
+260008 Dung Eater Puppet +8
+260009 Dung Eater Puppet +9
+260010 Dung Eater Puppet +10
+261000 Finger Maiden Therolina Puppet
+261001 Finger Maiden Therolina Puppet +1
+261002 Finger Maiden Therolina Puppet +2
+261003 Finger Maiden Therolina Puppet +3
+261004 Finger Maiden Therolina Puppet +4
+261005 Finger Maiden Therolina Puppet +5
+261006 Finger Maiden Therolina Puppet +6
+261007 Finger Maiden Therolina Puppet +7
+261008 Finger Maiden Therolina Puppet +8
+261009 Finger Maiden Therolina Puppet +9
+261010 Finger Maiden Therolina Puppet +10
+262000 Dolores the Sleeping Arrow Puppet
+262001 Dolores the Sleeping Arrow Puppet +1
+262002 Dolores the Sleeping Arrow Puppet +2
+262003 Dolores the Sleeping Arrow Puppet +3
+262004 Dolores the Sleeping Arrow Puppet +4
+262005 Dolores the Sleeping Arrow Puppet +5
+262006 Dolores the Sleeping Arrow Puppet +6
+262007 Dolores the Sleeping Arrow Puppet +7
+262008 Dolores the Sleeping Arrow Puppet +8
+262009 Dolores the Sleeping Arrow Puppet +9
+262010 Dolores the Sleeping Arrow Puppet +10
+263000 Jarwight Puppet
+263001 Jarwight Puppet +1
+263002 Jarwight Puppet +2
+263003 Jarwight Puppet +3
+263004 Jarwight Puppet +4
+263005 Jarwight Puppet +5
+263006 Jarwight Puppet +6
+263007 Jarwight Puppet +7
+263008 Jarwight Puppet +8
+263009 Jarwight Puppet +9
+263010 Jarwight Puppet +10
+2000300 Hefty Fire Pot
+2000310 Hefty Rock Pot
+2000320 Hefty Lightning Pot
+2000330 Hefty Fetid Pot
+2000340 Hefty Fly Pot
+2000360 Hefty Freezing Pot
+2000370 Hefty Poison Pot
+2000380 Hefty Oil Pot
+2000600 Hefty Volcano Pot
+2000620 Hefty Frenzied Flame Pot
+2000650 Hefty Rancor Pot
+2000660 Hefty Magic Pot
+2000670 Hefty Rot Pot
+2000680 Hefty Furnace Pot
+2000690 Hefty Red Lightning Pot
+2000700 Red Lightning Pot
+2000710 Frenzied Flame Pot
+2000740 Eternal Sleep Pot
+2000760 Roped Frenzied Flame Pot
+2000800 Spirit Raisin
+2000900 Blessing of Marika
+2000910 Lulling Branch
+2001100 Dragon Communion Flesh
+2001105 Dragonscale Flesh
+2001110 Fingerprint Nostrum
+2001120 Spellproof Pickled Liver
+2001130 Fireproof Pickled Liver
+2001140 Lightningproof Pickled Liver
+2001150 Holyproof Pickled Liver
+2001160 Opaline Pickled Liver
+2001170 Well-Pickled Turtle Neck
+2001200 Scorpion Stew
+2001201 Gourmet Scorpion Stew
+2001202 Scorpion Stew
+2001203 Gourmet Scorpion Stew
+2001210 Sacred Bloody Flesh
+2001220 Silver Horn Tender
+2001230 Golden Horn Tender
+2001400 Messmerfire Grease
+2001410 Dragonbolt Grease
+2001420 Royal Magic Grease
+2001430 Golden Grease
+2001450 Eternal Sleep Grease
+2001480 Dragon Communion Grease
+2001500 Drawstring Messmerfire Grease
+2001510 Drawstring Dragonbolt Grease
+2001520 Drawstring Royal Magic Grease
+2001530 Drawstring Golden Grease
+2001550 Drawstring Eternal Sleep Grease
+2001600 Festive Grease
+2001700 Innard Meat
+2001710 Dragon Communion Harpoon
+2002000 Polter Stone
+2002010 Rock Heart
+2002020 Priestess Heart
+2002030 Lamenter's Mask
+2002100 Ancient Dragon's Blessing
+2002120 Iris of Grace
+2002130 Iris of Occultation
+2002140 Thiollier's Concoction
+2002150 Prattling Pate "Lamentation"
+2002900 Remembrance of the Wild Boar Rider
+2002901 Remembrance of the Impaler
+2002902 Remembrance of the Shadow Sunflower
+2002903 Remembrance of the Twin Moon Knight
+2002904 Remembrance of the Saint of the Bud
+2002905 Remembrance of the Dancing Lion
+2002907 Remembrance of a God and a Lord
+2002908 Remembrance of the Lord of Frenzied Flame
+2002909 Remembrance of the Mother of Fingers
+2002910 Remembrance of Putrescence
+2002950 Leda's Rune
+2002951 Broken Rune
+2002952 Shadow Realm Rune [1]
+2002953 Shadow Realm Rune [2]
+2002954 Shadow Realm Rune [3]
+2002955 Shadow Realm Rune [4]
+2002956 Shadow Realm Rune [5]
+2002957 Shadow Realm Rune [6]
+2002958 Shadow Realm Rune [7]
+2002959 Rune of an Unsung Hero
+2002960 Marika's Rune
+2003000 Bondstone
+2003001 Spritestone
+2003130 Horned Bairn
+2003140 Perfumed Oil of Ranah
+2003150 Call of Tibia
+2003160 Surging Frenzied Flame
+2003170 Golden Vow
+2003180 Fire Coil
+2003190 Fire Spritestone
+2003200 Glinting Nail
+2003310 Sunwarmth Stone
+2003350 Charming Branch
+2004300 [Sorcery] Miriam's Vanishing
+2004310 [Sorcery] Glintblade Trio
+2004320 [Sorcery] Rellana's Twin Moons
+2004330 
+2004500 [Sorcery] Glintstone Nail
+2004510 [Sorcery] Glintstone Nails
+2004700 [Sorcery] Blades of Stone
+2004710 [Sorcery] Gravitational Missile
+2004900 [Sorcery] Mantle of Thorns
+2004910 [Sorcery] Impenetrable Thorns
+2005000 [Sorcery] Rings of Spectral Light
+2006200 [Sorcery] Vortex of Putrescence
+2006210 [Sorcery] Mass of Putrescence
+2006300 [Incantation] Furious Blade of Ansbach
+2006400 [Incantation] Heal from Afar
+2006650 [Incantation] Aspects of the Crucible: Thorns
+2006660 [Incantation] Aspects of the Crucible: Bloom
+2006670 [Incantation] Minor Erdtree
+2006680 [Incantation] Land of Shadow
+2006690 [Incantation] Wrath from Afar
+2006700 [Incantation] Light of Miquella
+2006710 [Incantation] Multilayered Ring of Light
+2006800 [Incantation] Roar of Rugalea
+2006900 [Incantation] Knight's Lightning Spear
+2006910 [Incantation] Dragonbolt of Florissax
+2006920 [Incantation] Electrocharge
+2007000 [Incantation] Bayle's Tyranny
+2007010 [Incantation] Bayle's Flame Lightning
+2007020 [Incantation] Ghostflame Breath
+2007200 [Incantation] Rotten Butterflies
+2007210 [Incantation] Pest-Thread Spears
+2007300 [Incantation] Midra's Flame of Frenzy
+2007410 [Sorcery] Fleeting Microcosm
+2007420 [Sorcery] Cherishing Fingers
+2007600 [Sorcery] Watchful Spirit
+2007700 [Sorcery] Golden Arcs
+2007710 [Sorcery] Giant Golden Arc
+2007720 [Sorcery] Spira
+2007730 [Incantation] Divine Beast Tornado
+2007740 [Incantation] Divine Bird Feathers
+2007800 [Incantation] Fire Serpent
+2007810 [Incantation] Rain of Fire
+2007820 [Incantation] Messmer's Orb
+2008000 Miquella's Great Rune
+2008003 Igon's Furled Finger
+2008004 Well Depths Key
+2008005 Gaol Upper Level Key
+2008006 Gaol Lower Level Key
+2008007 Cross Map
+2008008 Hole-Laden Necklace
+2008011 Heart of Bayle
+2008012 New Cross Map
+2008013 Storeroom Key
+2008014 Secret Rite Scroll
+2008015 Letter for Freyja
+2008016 Ruins Map
+2008017 Ruins Map (2nd)
+2008018 Ruins Map (3rd)
+2008019 Black Syrup
+2008021 Messmer's Kindling
+2008023 Keep Wall Key
+2008025 Furnace Keeper's Note
+2008027 Castle Cross Message
+2008028 Ancient Ruins Cross Message
+2008029 Monk's Missive
+2008030 Storehouse Cross Message
+2008031 Note: Sealed Spiritsprings
+2008032 Torn Diary Page
+2008033 Larval Tear
+2008034 Message from Leda
+2008036 Prayer Room Key
+2008037 Tower of Shadow Message
+2008131 Note: Sealed Spiritsprings
+2008200 "Incursion" Painting
+2008201 "The Sacred Tower" Painting
+2008202 "Domain of Dragons" Painting
+2008600 Map: Gravesite Plain
+2008601 Map: Scadu Altus
+2008602 Map: Southern Shore
+2008603 Map: Rauh Ruins
+2008604 Map: Abyss
+2008900 Moore's Bell Bearing
+2008901 Ymir's Bell Bearing
+2008902 Herbalist's Bell Bearing
+2008903 Mushroom-Seller's Bell Bearing [1]
+2008904 Mushroom-Seller's Bell Bearing [2]
+2008905 Greasemonger's Bell Bearing
+2008906 Moldmonger's Bell Bearing
+2008907 Igon's Bell Bearing
+2008908 Spellmachinist's Bell Bearing
+2008909 String-Seller's Bell Bearing
+2009000 Ring of Miquella
+2009001 May the Best Win
+2009002 The Two Fingers
+2009003 Let Us Go Together
+2009004 O Mother
+2009160 About the Scadutree Blessing
+2009161 About the Revered Spirit Ash Blessing
+2009162 About New Inventory Features
+2009301 Forager Brood Cookbook [6]
+2009302 Forager Brood Cookbook [1]
+2009303 Forager Brood Cookbook [2]
+2009304 Forager Brood Cookbook [3]
+2009305 Forager Brood Cookbook [4]
+2009306 Forager Brood Cookbook [5]
+2009307 Igon's Cookbook [2]
+2009308 Finger-Weaver's Cookbook [2]
+2009309 Greater Potentate's Cookbook [1]
+2009310 Greater Potentate's Cookbook [4]
+2009311 Greater Potentate's Cookbook [5]
+2009312 Greater Potentate's Cookbook [12]
+2009313 Greater Potentate's Cookbook [7]
+2009314 Greater Potentate's Cookbook [9]
+2009315 Greater Potentate's Cookbook [10]
+2009316 Greater Potentate's Cookbook [11]
+2009317 Mad Craftsman's Cookbook [2]
+2009318 Greater Potentate's Cookbook [8]
+2009319 Greater Potentate's Cookbook [3]
+2009320 Greater Potentate's Cookbook [13]
+2009321 Greater Potentate's Cookbook [14]
+2009322 Greater Potentate's Cookbook [6]
+2009323 Greater Potentate's Cookbook [2]
+2009324 Ancient Dragon Knight's Cookbook [1]
+2009325 Mad Craftsman's Cookbook [1]
+2009326 St. Trina Disciple's Cookbook [1]
+2009327 Fire Knight's Cookbook [1]
+2009328 Ancient Dragon Knight's Cookbook [2]
+2009329 Loyal Knight's Cookbook
+2009330 Battlefield Priest's Cookbook [1]
+2009331 Igon's Cookbook [1]
+2009332 Battlefield Priest's Cookbook [2]
+2009333 Forager Brood Cookbook [7]
+2009334 St. Trina Disciple's Cookbook [3]
+2009335 Grave Keeper's Cookbook [2]
+2009336 Antiquity Scholar's Cookbook [2]
+2009337 Tibia's Cookbook
+2009338 Mad Craftsman's Cookbook [3]
+2009339 Battlefield Priest's Cookbook [3]
+2009340 Fire Knight's Cookbook [2]
+2009341 Antiquity Scholar's Cookbook [1]
+2009342 Finger-Weaver's Cookbook [1]
+2009343 Battlefield Priest's Cookbook [4]
+2009344 Grave Keeper's Cookbook [1]
+2009345 St. Trina Disciple's Cookbook [2]
+2009500 Hefty Cracked Pot
+2010000 Scadutree Fragment
+2010100 Revered Spirit Ash
+2011000 Viridian Hidden Tear
+2011010 Crimsonburst Dried Tear
+2011020 Crimson-Sapping Cracked Tear
+2011030 Cerulean-Sapping Cracked Tear
+2011040 Oil-Soaked Tear
+2011050 Bloodsucking Cracked Tear
+2011060 Glovewort Crystal Tear
+2011070 Deflecting Hardtear
+2015000 Beast Horn
+2015010 Spirit Calculus
+2015020 Pearlescent Scale
+2015030 Scorpion Liver
+2015040 Fly Mold
+2020001 Rada Fruit
+2020002 Redflesh Mushroom
+2020003 Whiteflesh Mushroom
+2020004 Knot Resin
+2020005 Dewgem
+2020006 Black Pyrefly
+2020007 Glintslab Firefly
+2020008 Yellow Fulgurbloom
+2020009 Shadow Sunflower
+2020010 Toxic Mossling
+2020011 Scarlet Bud
+2020012 Sanguine Amaryllis
+2020013 Frozen Maggot
+2020014 Deep-Purple Lily
+2020015 Nectarblood Burgeon
+2020016 Winter-Lantern Fly
+2020017 Swollen Grape
+2020018 Grave Keeper's Brainpan
+2020019 Horn-Strewn Excrement
+2020020 Gas Stone
+2020021 Ghostflame Bloom
+2020022 Grave Cricket
+2020023 Dragon's Calorbloom
+2020024 Finger Mimic
+2020025 Empyrean-Blood Burgeon
+2020026 Congealed Putrescence
+2020027 Roundrock
+2020028 Spiritgrave Stone
+2020029 Rauh Burrow
+2020030 Ember of Messmer
+2020031 Blessed Bone Shard
+2020032 Red Fulgurbloom
+2020033 Nailstone
+2020034 Sharp Gravel Stone
+2020035 Furnace Visage
+2050301 
+2051004 
+2051005 
+2052030 
+2053140 
+2053480 
+2053490 
+2053700 
+2053701 
+2200000 Curseblade Meera
+2200001 Curseblade Meera +1
+2200002 Curseblade Meera +2
+2200003 Curseblade Meera +3
+2200004 Curseblade Meera +4
+2200005 Curseblade Meera +5
+2200006 Curseblade Meera +6
+2200007 Curseblade Meera +7
+2200008 Curseblade Meera +8
+2200009 Curseblade Meera +9
+2200010 Curseblade Meera +10
+2201000 Bloodfiend Hexer's Ashes
+2201001 Bloodfiend Hexer's Ashes +1
+2201002 Bloodfiend Hexer's Ashes +2
+2201003 Bloodfiend Hexer's Ashes +3
+2201004 Bloodfiend Hexer's Ashes +4
+2201005 Bloodfiend Hexer's Ashes +5
+2201006 Bloodfiend Hexer's Ashes +6
+2201007 Bloodfiend Hexer's Ashes +7
+2201008 Bloodfiend Hexer's Ashes +8
+2201009 Bloodfiend Hexer's Ashes +9
+2201010 Bloodfiend Hexer's Ashes +10
+2202000 Gravebird Ashes
+2202001 Gravebird Ashes +1
+2202002 Gravebird Ashes +2
+2202003 Gravebird Ashes +3
+2202004 Gravebird Ashes +4
+2202005 Gravebird Ashes +5
+2202006 Gravebird Ashes +6
+2202007 Gravebird Ashes +7
+2202008 Gravebird Ashes +8
+2202009 Gravebird Ashes +9
+2202010 Gravebird Ashes +10
+2203000 Fire Knight Hilde
+2203001 Fire Knight Hilde +1
+2203002 Fire Knight Hilde +2
+2203003 Fire Knight Hilde +3
+2203004 Fire Knight Hilde +4
+2203005 Fire Knight Hilde +5
+2203006 Fire Knight Hilde +6
+2203007 Fire Knight Hilde +7
+2203008 Fire Knight Hilde +8
+2203009 Fire Knight Hilde +9
+2203010 Fire Knight Hilde +10
+2204000 Spider Scorpion Ashes
+2204001 Spider Scorpion Ashes +1
+2204002 Spider Scorpion Ashes +2
+2204003 Spider Scorpion Ashes +3
+2204004 Spider Scorpion Ashes +4
+2204005 Spider Scorpion Ashes +5
+2204006 Spider Scorpion Ashes +6
+2204007 Spider Scorpion Ashes +7
+2204008 Spider Scorpion Ashes +8
+2204009 Spider Scorpion Ashes +9
+2204010 Spider Scorpion Ashes +10
+2205000 Inquisitor Ashes
+2205001 Inquisitor Ashes +1
+2205002 Inquisitor Ashes +2
+2205003 Inquisitor Ashes +3
+2205004 Inquisitor Ashes +4
+2205005 Inquisitor Ashes +5
+2205006 Inquisitor Ashes +6
+2205007 Inquisitor Ashes +7
+2205008 Inquisitor Ashes +8
+2205009 Inquisitor Ashes +9
+2205010 Inquisitor Ashes +10
+2206000 Demi-Human Swordsman Yosh
+2206001 Demi-Human Swordsman Yosh +1
+2206002 Demi-Human Swordsman Yosh +2
+2206003 Demi-Human Swordsman Yosh +3
+2206004 Demi-Human Swordsman Yosh +4
+2206005 Demi-Human Swordsman Yosh +5
+2206006 Demi-Human Swordsman Yosh +6
+2206007 Demi-Human Swordsman Yosh +7
+2206008 Demi-Human Swordsman Yosh +8
+2206009 Demi-Human Swordsman Yosh +9
+2206010 Demi-Human Swordsman Yosh +10
+2207000 Messmer Soldier Ashes
+2207001 Messmer Soldier Ashes +1
+2207002 Messmer Soldier Ashes +2
+2207003 Messmer Soldier Ashes +3
+2207004 Messmer Soldier Ashes +4
+2207005 Messmer Soldier Ashes +5
+2207006 Messmer Soldier Ashes +6
+2207007 Messmer Soldier Ashes +7
+2207008 Messmer Soldier Ashes +8
+2207009 Messmer Soldier Ashes +9
+2207010 Messmer Soldier Ashes +10
+2208000 Black Knight Commander Andreas
+2208001 Black Knight Commander Andreas +1
+2208002 Black Knight Commander Andreas +2
+2208003 Black Knight Commander Andreas +3
+2208004 Black Knight Commander Andreas +4
+2208005 Black Knight Commander Andreas +5
+2208006 Black Knight Commander Andreas +6
+2208007 Black Knight Commander Andreas +7
+2208008 Black Knight Commander Andreas +8
+2208009 Black Knight Commander Andreas +9
+2208010 Black Knight Commander Andreas +10
+2209000 Black Knight Captain Huw
+2209001 Black Knight Captain Huw +1
+2209002 Black Knight Captain Huw +2
+2209003 Black Knight Captain Huw +3
+2209004 Black Knight Captain Huw +4
+2209005 Black Knight Captain Huw +5
+2209006 Black Knight Captain Huw +6
+2209007 Black Knight Captain Huw +7
+2209008 Black Knight Captain Huw +8
+2209009 Black Knight Captain Huw +9
+2209010 Black Knight Captain Huw +10
+2210000 Bigmouth Imp Ashes
+2210001 Bigmouth Imp Ashes +1
+2210002 Bigmouth Imp Ashes +2
+2210003 Bigmouth Imp Ashes +3
+2210004 Bigmouth Imp Ashes +4
+2210005 Bigmouth Imp Ashes +5
+2210006 Bigmouth Imp Ashes +6
+2210007 Bigmouth Imp Ashes +7
+2210008 Bigmouth Imp Ashes +8
+2210009 Bigmouth Imp Ashes +9
+2210010 Bigmouth Imp Ashes +10
+2211000 Man-Fly Ashes
+2211001 Man-Fly Ashes +1
+2211002 Man-Fly Ashes +2
+2211003 Man-Fly Ashes +3
+2211004 Man-Fly Ashes +4
+2211005 Man-Fly Ashes +5
+2211006 Man-Fly Ashes +6
+2211007 Man-Fly Ashes +7
+2211008 Man-Fly Ashes +8
+2211009 Man-Fly Ashes +9
+2211010 Man-Fly Ashes +10
+2212000 Taylew the Golem Smith
+2212001 Taylew the Golem Smith +1
+2212002 Taylew the Golem Smith +2
+2212003 Taylew the Golem Smith +3
+2212004 Taylew the Golem Smith +4
+2212005 Taylew the Golem Smith +5
+2212006 Taylew the Golem Smith +6
+2212007 Taylew the Golem Smith +7
+2212008 Taylew the Golem Smith +8
+2212009 Taylew the Golem Smith +9
+2212010 Taylew the Golem Smith +10
+2213000 Divine Bird Warrior Ornis
+2213001 Divine Bird Warrior Ornis +1
+2213002 Divine Bird Warrior Ornis +2
+2213003 Divine Bird Warrior Ornis +3
+2213004 Divine Bird Warrior Ornis +4
+2213005 Divine Bird Warrior Ornis +5
+2213006 Divine Bird Warrior Ornis +6
+2213007 Divine Bird Warrior Ornis +7
+2213008 Divine Bird Warrior Ornis +8
+2213009 Divine Bird Warrior Ornis +9
+2213010 Divine Bird Warrior Ornis +10
+2214000 Horned Warrior Ashes
+2214001 Horned Warrior Ashes +1
+2214002 Horned Warrior Ashes +2
+2214003 Horned Warrior Ashes +3
+2214004 Horned Warrior Ashes +4
+2214005 Horned Warrior Ashes +5
+2214006 Horned Warrior Ashes +6
+2214007 Horned Warrior Ashes +7
+2214008 Horned Warrior Ashes +8
+2214009 Horned Warrior Ashes +9
+2214010 Horned Warrior Ashes +10
+2215000 Ancient Dragon Florissax
+2215001 Ancient Dragon Florissax +1
+2215002 Ancient Dragon Florissax +2
+2215003 Ancient Dragon Florissax +3
+2215004 Ancient Dragon Florissax +4
+2215005 Ancient Dragon Florissax +5
+2215006 Ancient Dragon Florissax +6
+2215007 Ancient Dragon Florissax +7
+2215008 Ancient Dragon Florissax +8
+2215009 Ancient Dragon Florissax +9
+2215010 Ancient Dragon Florissax +10
+2217000 Fingercreeper Ashes
+2217001 Fingercreeper Ashes +1
+2217002 Fingercreeper Ashes +2
+2217003 Fingercreeper Ashes +3
+2217004 Fingercreeper Ashes +4
+2217005 Fingercreeper Ashes +5
+2217006 Fingercreeper Ashes +6
+2217007 Fingercreeper Ashes +7
+2217008 Fingercreeper Ashes +8
+2217009 Fingercreeper Ashes +9
+2217010 Fingercreeper Ashes +10
+2218000 Fire Knight Queelign
+2218001 Fire Knight Queelign +1
+2218002 Fire Knight Queelign +2
+2218003 Fire Knight Queelign +3
+2218004 Fire Knight Queelign +4
+2218005 Fire Knight Queelign +5
+2218006 Fire Knight Queelign +6
+2218007 Fire Knight Queelign +7
+2218008 Fire Knight Queelign +8
+2218009 Fire Knight Queelign +9
+2218010 Fire Knight Queelign +10
+2219000 Swordhand of Night Jolán
+2219001 Swordhand of Night Jolán +1
+2219002 Swordhand of Night Jolán +2
+2219003 Swordhand of Night Jolán +3
+2219004 Swordhand of Night Jolán +4
+2219005 Swordhand of Night Jolán +5
+2219006 Swordhand of Night Jolán +6
+2219007 Swordhand of Night Jolán +7
+2219008 Swordhand of Night Jolán +8
+2219009 Swordhand of Night Jolán +9
+2219010 Swordhand of Night Jolán +10
+2220000 Jolan and Anna
+2220001 Jolan and Anna +1
+2220002 Jolan and Anna +2
+2220003 Jolan and Anna +3
+2220004 Jolan and Anna +4
+2220005 Jolan and Anna +5
+2220006 Jolan and Anna +6
+2220007 Jolan and Anna +7
+2220008 Jolan and Anna +8
+2220009 Jolan and Anna +9
+2220010 Jolan and Anna +10
+999999999 

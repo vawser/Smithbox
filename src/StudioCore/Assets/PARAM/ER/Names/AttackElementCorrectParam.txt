@@ -1,0 +1,184 @@
+0 
+10 
+1000 
+1001 
+1002 
+1010 
+1011 
+1012 
+1013 
+1014 
+1015 
+1016 
+1020 
+1030 
+1040 
+1041 
+1042 
+10000 Physical: STR + DEX | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH
+10005 Physical: STR + DEX | Magic: INT | Fire: STR | Lightning: DEX | Holy: FTH
+10013 Physical: STR + DEX + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH
+10100 Physical: STR + DEX + ARC | Magic: INT + ARC | Fire: FTH + ARC | Lightning: DEX + ARC | Holy: FTH + ARC
+12000 Physical: STR + DEX + FTH | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH
+12005 Physical: STR + DEX + FTH | Magic: INT | Fire: STR | Lightning: DEX | Holy: FTH
+12013 Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH
+13000 Physical: STR + DEX + INT | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH
+15000 Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH
+20000 Physical/Magic/Fire/Lightning/Holy: INT
+20010 Physical/Magic/Fire/Lightning/Holy: INT + FTH
+20020 Physical/Magic/Fire/Lightning/Holy: FTH
+20030 Physical/Magic/Fire/Lightning/Holy: INT + ARC
+30000 Physical/Magic/Fire/Lightning/Holy: FTH
+30010 Physical/Magic/Fire/Lightning/Holy: INT + FTH
+30020 Physical/Magic/Fire/Lightning/Holy: STR + FTH
+30030 Physical/Magic/Fire/Lightning/Holy: FTH + ARC
+30040 Physical/Magic/Fire/Lightning/Holy: STR + DEX + INT + FTH
+40000 Fire: STR + DEX + INT + FTH
+42060 Physical: FTH
+42070 Physical: FTH
+42080 Physical: FTH
+42300 Physical/Magic/Fire/Lightning/Holy: STR + DEX + INT + FTH + ARC
+42310 Physical/Magic/Fire/Lightning/Holy: STR + DEX + INT + FTH + ARC
+42311 Physical/Magic/Fire/Lightning/Holy: STR + DEX + INT + FTH + ARC
+50000 None
+50001 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 10
+50002 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 20
+50003 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 30
+50004 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 40
+50005 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 50
+50006 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 60
+50007 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 70
+50008 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 80
+50009 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 90
+50010 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 100
+50101 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 10
+50102 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 20
+50103 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 30
+50104 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 40
+50105 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 50
+50106 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 60
+50107 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 70
+50108 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 80
+50109 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 90
+50110 Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 100
+51000 Physical: STR + DEX | Magic: STR + DEX | Fire: STR + DEX | Lightning: STR + DEX | Holy: STR + DEX | Replacement Correction 15
+51010 Physical: STR | Magic: STR | Fire: STR | Lightning: STR | Holy: STR | Replacement Correction 25
+51020 Physical: DEX | Magic: DEX | Fire: DEX | Lightning: DEX | Holy: DEX | Replacement Correction 15
+51030 Physical: STR + DEX | Magic: STR + DEX | Fire: STR + DEX | Lightning: STR + DEX | Holy: STR + DEX | Replacement Correction 15
+51040 Physical: STR | Magic: STR | Fire: STR | Lightning: STR | Holy: STR | Replacement Correction 25
+51050 Physical: FTH | Magic: FTH | Fire: FTH | Lightning: FTH | Holy: FTH | Replacement Correction 25
+51060 Physical: DEX | Magic: DEX | Fire: DEX | Lightning: DEX | Holy: DEX | Replacement Correction 25
+51070 Physical: FTH | Magic: FTH | Fire: FTH | Lightning: FTH | Holy: FTH | Replacement Correction 25
+51080 Physical: INT | Magic: INT | Fire: INT | Lightning: INT | Holy: INT | Replacement Correction 25
+51090 Physical: ARC | Magic: ARC | Fire: ARC | Lightning: ARC | Holy: ARC | Replacement Correction 25
+51100 Physical: DEX + INT | Magic: DEX + INT | Fire: DEX + INT | Lightning: DEX + INT | Holy: DEX + INT | Replacement Correction 15
+51110 Physical: ARC | Magic: ARC | Fire: ARC | Lightning: ARC | Holy: ARC | Replacement Correction 25
+51120 Physical: ARC | Magic: ARC | Fire: ARC | Lightning: ARC | Holy: ARC | Replacement Correction 25
+52000 Physical: STR + DEX | Magic: ARC | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Magic Replacement Correction 50
+200300 Fire: STR + DEX
+200301 Fire: STR + DEX
+200302 Fire: FTH
+200320 Lightning: STR + DEX
+200321 Lightning: STR + DEX
+200330 Physical: ARC
+200340 Physical: ARC
+200350 Holy: FTH
+200351 Holy: FTH
+200360 Magic: ARC
+200370 Physical: ARC
+200400 Fire: STR + DEX
+200420 Lightning: STR + DEX
+200430 Physical: ARC
+200440 Physical: ARC
+200460 Magic: INT
+200470 Physical: ARC
+200480 Magic: ARC
+200490 Fire: STR + DEX
+200510 Holy: FTH
+200600 Fire: STR + DEX
+200640 Physical: ARC
+200650 Magic: INT + FTH
+200660 Magic: INT
+200661 Magic: INT
+200670 Physical: ARC
+201700 Physical: STR + DEX
+201710 Physical: STR + DEX
+201720 Physical: STR + DEX + ARC
+201730 Physical: STR + DEX + ARC
+201740 Physical: STR + DEX + INT | Magic: STR + DEX + INT
+201750 Physical: STR + DEX
+201760 Physical: STR + DEX
+201830 Fire: STR + DEX
+201831 Fire: STR + DEX
+201840 Physical: STR + DEX + ARC
+201841 Physical: STR + DEX + ARC
+203000 Magic: INT
+203010 Holy: INT + FTH
+203011 Holy: INT + FTH
+203020 Holy: FTH
+203030 Magic: INT
+203050 Magic: INT
+203051 Magic: INT
+203060 Physical: STR + INT | Magic: STR + INT
+203070 Physical: STR + INT | Magic: STR + INT
+203080 Magic: INT + FTH
+203510 Fire: STR + DEX + INT
+203580 Physical: ARC
+203610 Physical: STR + DEX + ARC
+10010000 Physical: STR + DEX | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH
+10010010 Physical: STR + DEX | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH
+10010020 Physical: STR + DEX | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH
+10010030 Physical: STR + DEX | Magic: INT | Fire: INT + FTH | Lightning: INT + FTH | Holy: INT + FTH
+10041000 Magic: STR + DEX + INT
+10061700 Magic: STR + DEX + INT
+10062600 Fire: STR + DEX + INT + FTH
+10062700 Fire: STR + DEX + INT + FTH
+10063200 Magic: STR + DEX + INT
+10063210 Magic: STR + DEX + INT
+10063400 Fire: STR + DEX
+10071100 Lightning: STR + DEX + FTH
+10071200 Fire: STR + DEX + INT + FTH
+10081700 Fire: STR + DEX + INT + FTH
+10081900 Fire: STR + DEX + INT + FTH
+10091100 Fire: STR + DEX + INT + FTH
+10091600 Lightning: STR + DEX + FTH
+10091800 Physical: STR + DEX + FTH | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH
+10091814 Physical: STR + DEX + FTH | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH
+10091815 Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH
+10092200 Lightning: STR + DEX + FTH
+10101600 Fire: STR + DEX + INT + FTH
+10110300 Fire: STR + DEX + INT + FTH
+10110310 Fire: STR + DEX + INT + FTH
+10131000 Physical: STR + DEX | Magic: INT + ARC | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH + ARC
+10131100 Physical: STR + DEX | Magic: FTH | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH
+10131200 Physical: STR + DEX | Magic: FTH | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH
+10141300 None
+10160400 Physical: STR + DEX | Magic: STR + DEX + INT
+10160410 Physical: STR + DEX | Fire: STR + DEX + INT + FTH
+10160420 Physical: STR + DEX | Magic: STR + DEX + INT | Fire: STR + DEX + INT + FTH
+20000000 Physical: STR + DEX | Magic: STR + DEX + INT | Fire: STR + DEX + INT + FTH | Lightning: STR + DEX + FTH | Holy: STR + DEX + FTH
+20010000 Physical: STR + DEX | Magic: DEX + INT | Fire: FTH | Lightning: DEX | Holy: FTH
+20010100 Physical: STR + DEX + INT + FTH | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH
+20010101 Physical: STR + DEX + INT + FTH | Magic: INT | Fire: STR + FTH | Lightning: DEX | Holy: FTH
+20010102 Physical: STR + DEX + INT + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH
+20010103 Physical: STR + DEX + INT + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH | Replacement Correction 5
+20010104 Physical: STR + DEX + INT + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH | Replacement Correction 5
+20010105 Physical: STR + DEX + INT + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH | Replacement Correction 5
+20010200 Physical: STR + DEX + ARC | Magic: INT | Fire: STR | Lightning: DEX | Holy: FTH
+20010300 Physical: STR + DEX | Magic: INT | Fire: FTH | Lightning: FTH | Holy: FTH
+20010301 Physical: STR + DEX | Magic: INT | Fire: STR | Lightning: FTH | Holy: FTH
+20010302 Physical: STR + DEX + ARC | Magic: INT | Fire: FTH | Lightning: FTH | Holy: FTH
+20010400 Physical: STR + DEX | Magic: INT | Fire: STR + DEX + INT + FTH | Lightning: DEX | Holy: FTH
+20010500 Physical: STR + DEX | Magic: INT | Fire: STR + FTH | Lightning: DEX | Holy: FTH
+20010600 Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH
+20010601 Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: STR | Lightning: DEX | Holy: FTH
+20010700 Physical: STR + DEX | Magic: INT + FTH | Fire: FTH | Lightning: DEX | Holy: FTH
+20050000 Holy: FTH
+20050010 Magic: DEX
+20050020 Lighning: ARC
+20200620 Fire: STR + DEX + INT + FTH
+20200680 Fire: STR + DEX + FTH
+20201700 Physical: STR + INT + ARC | Magic: STR + INT + ARC
+20202031 Physical: STR
+20203001 Physical: INT + FTH + ARC
+20203190 Fire: INT + FTH + ARC

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<proParamId Refs="EquipParamProtector" />
+	<gemGenId_0 Refs="GemGenParam" />
+	<gemGenId_1 Refs="GemGenParam" />
+	<gemGenId_2 Refs="GemGenParam" />
+	<gemGenId_3 Refs="GemGenParam" />
+	<gemGenId_4 Refs="GemGenParam" />
+  </Field>
+  <Self Wiki="Unused"/>
+</PARAMMETA>

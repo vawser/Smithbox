@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<textId Wiki="Subtitle Text" FmgRef="Talk_Messages" />
+	<textId_female Wiki="Subtitle Text but for women" FmgRef="Talk_Messages" />
+	<timeout Wiki="Voice playback timeout time" />
+	<pad />
+	<soundId_pc Wiki="Sound ID for male player characters" />
+	<soundId0 Wiki="Sound ID for Npc's when the player character is male" />
+	<soundId1 Wiki="Sound ID for Npc's when the player character is male" />
+	<soundId2 Wiki="Sound ID for Npc's when the player character is male" />
+	<soundId3 Wiki="Sound ID for Npc's when the player character is male" />
+	<soundId4 Wiki="Sound ID for Npc's when the player character is male" />
+	<soundId5 Wiki="Sound ID for Npc's when the player character is male" />
+	<soundId6 Wiki="Sound ID for Npc's when the player character is male" />
+	<soundId7 Wiki="Sound ID for Npc's when the player character is male" />
+	<soundId0_pc_female Wiki="Sound ID for female player characters" />
+	<soundId0_female Wiki="Sound ID for Npc's when the player character is female" />
+	<soundId1_female Wiki="Sound ID for Npc's when the player character is female" />
+	<soundId2_female Wiki="Sound ID for Npc's when the player character is female" />
+	<soundId3_female Wiki="Sound ID for Npc's when the player character is female" />
+	<soundId4_female Wiki="Sound ID for Npc's when the player character is female" />
+	<soundId5_female Wiki="Sound ID for Npc's when the player character is female" />
+	<soundId6_female Wiki="Sound ID for Npc's when the player character is female" />
+	<soundId7_female Wiki="Sound ID for Npc's when the player character is female" />
+	<lookAtTarget_pc />
+	<lookAtTarget0 />
+	<lookAtTarget1 />
+	<lookAtTarget2 />
+	<lookAtTarget3 />
+	<lookAtTarget4 />
+	<lookAtTarget5 />
+	<lookAtTarget6 />
+	<lookAtTarget7 />
+	<talkAnimation_pc Wiki="Player animation ID played duing this conversation" />
+	<talkAnimation0 Wiki="Npc animation ID played during this conversation" />
+	<talkAnimation1 Wiki="Npc animation ID played during this conversation" />
+	<talkAnimation2 Wiki="Npc animation ID played during this conversation" />
+	<talkAnimation3 Wiki="Npc animation ID played during this conversation" />
+	<talkAnimation4 Wiki="Npc animation ID played during this conversation" />
+	<talkAnimation5 Wiki="Npc animation ID played during this conversation" />
+	<talkAnimation6 Wiki="Npc animation ID played during this conversation" />
+	<talkAnimation7 Wiki="Npc animation ID played during this conversation" />
+	<lipSyncStart_pc Wiki="Player lip sync start time" />
+	<lipSyncStart0 Wiki="Npc lip sync start time" />
+	<lipSyncStart1 Wiki="Npc lip sync start time" />
+	<lipSyncStart2 Wiki="Npc lip sync start time" />
+	<lipSyncStart3 Wiki="Npc lip sync start time" />
+	<lipSyncStart4 Wiki="Npc lip sync start time" />
+	<lipSyncStart5 Wiki="Npc lip sync start time" />
+	<lipSyncStart6 Wiki="Npc lip sync start time" />
+	<lipSyncStart7 Wiki="Npc lip sync start time" />
+	<lipSyncTime_pc Wiki="Duration of player lip syncing" />
+	<lipSyncTime0 Wiki="Duration of Npc lip syncing" />
+	<lipSyncTime1 Wiki="Duration of Npc lip syncing" />
+	<lipSyncTime2 Wiki="Duration of Npc lip syncing" />
+	<lipSyncTime3 Wiki="Duration of Npc lip syncing" />
+	<lipSyncTime4 Wiki="Duration of Npc lip syncing" />
+	<lipSyncTime5 Wiki="Duration of Npc lip syncing" />
+	<lipSyncTime6 Wiki="Duration of Npc lip syncing" />
+	<lipSyncTime7 Wiki="Duration of Npc lip syncing" />
+	<pad1 />
+  </Field>
+  <Self Wiki="Dialogue sound and text, referenced by ESD" AlternativeOrder="textId,textId_female,timeout,-,
+soundId_pc,soundId0,soundId1,soundId2,soundId3,soundId4,soundId5,soundId6,soundId7,-,
+soundId0_pc_female,soundId0_female,soundId1_female,soundId2_female,soundId3_female,soundId4_female,soundId5_female,soundId6_female,soundId7_female,-,
+lookAtTarget_pc,lookAtTarget0,lookAtTarget1,lookAtTarget2,lookAtTarget3,lookAtTarget4,lookAtTarget5,lookAtTarget6,lookAtTarget7,-,
+talkAnimation_pc,talkAnimation0,talkAnimation1,talkAnimation2,talkAnimation3,talkAnimation4,talkAnimation5,talkAnimation6,talkAnimation7,-,
+lipSyncStart_pc,lipSyncStart0,lipSyncStart1,lipSyncStart2,lipSyncStart3,lipSyncStart4,lipSyncStart5,lipSyncStart6,lipSyncStart7,-,
+lipSyncTime_pc,lipSyncTime0,lipSyncTime1,lipSyncTime2,lipSyncTime3,lipSyncTime4,lipSyncTime5,lipSyncTime6,lipSyncTime7,-" />
+</PARAMMETA>

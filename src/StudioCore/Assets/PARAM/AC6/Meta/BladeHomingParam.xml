@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the homing behavior of a melee blade attack." />
+  
+  <Field>
+    <maxSpeedKMPH
+    AltName="Top Speed"
+    Wiki="In kilometres per hour." />
+    
+    <accelMPSS
+    AltName="Acceleration"
+    Wiki="In kilometres per hour ^ 2." />
+        
+    <endBrakeMPSS
+    AltName="Brake Speed" 
+    Wiki="In kilometres per hour ^ 2." />
+    
+    <accelTime
+    AltName="Acceleration Time"
+    Wiki="In seconds." />
+    
+    <endLength
+    AltName="End Distance"
+    Wiki="In metres." />
+    
+    <maxAngLR
+    AltName="Horizontal Angle Limit"
+    Wiki="In degrees." />
+    
+    <maxAngUD
+    AltName="Vertical Angle Limit"
+    Wiki="In degrees." />
+    
+    <maxSpeedKeepTime
+    AltName="Max Speed Continuation Time"
+    Wiki="Maximum speed maintenance time" />
+    
+    <reserved
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

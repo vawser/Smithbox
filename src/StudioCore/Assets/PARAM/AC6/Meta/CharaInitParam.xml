@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the loadout parameters for Armored Core type characters." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <baseRec_mp
+    AltName="Base Recovery Speed: MP"
+    Wiki="MP recovery amount per second." 
+    Obsolete="" />
+    
+    <baseRec_sp
+    AltName="Base Recovery Speed: Stamina"
+    Wiki="Stamina recovery amount per second." 
+    Obsolete="" />
+    
+    <red_Falldam
+    AltName="Fall Damage Correction %"
+    Wiki="Damage reduction amount (%) that can serve as a cushion when being attacked from above by another character." 
+    Obsolete="" />
+    
+    <soul
+    AltName="Souls"
+    Wiki="Amount of souls you have at the beginning." 
+    Obsolete="" />
+    
+    <equip_Wep_Right 
+    AltName="Equipped Part: Front Right Weapon" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Subwep_Right 
+    AltName="Equipped Part: Front Right Weapon (Sub)" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Wep_Left 
+    AltName="Equipped Part: Front Left Weapon" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Subwep_Left 
+    AltName="Equipped Part: Front Left Weapon (Sub)" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Helm 
+    AltName="Equipped Part: Head" 
+    Wiki="The equipment ID to use for this slot."
+    Refs="EquipParamProtector" />
+    
+    <equip_Armer 
+    AltName="Equipped Part: Core" 
+    Wiki="The equipment ID to use for this slot."
+    Refs="EquipParamProtector" />
+    
+    <equip_Gaunt 
+    AltName="Equipped Part: Arms" 
+    Wiki="The equipment ID to use for this slot."
+    Refs="EquipParamProtector" />
+    
+    <equip_Leg 
+    AltName="Equipped Part: Legs" 
+    Wiki="The equipment ID to use for this slot."
+    Refs="EquipParamProtector" />
+    
+    <equip_Arrow 
+    AltName="Equipped Part: Back Left Weapon" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_SubArrow 
+    AltName="Equipped Part: Back Left Weapon (Sub)" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Bolt 
+    AltName="Equipped Part: Back Right Weapon" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_SubBolt 
+    AltName="Equipped Part: Back Right Weapon (Sub)" 
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Accessory01
+    AltName="Equipped Accessory: 1"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" />
+    
+    <equip_Accessory02
+    AltName="Equipped Accessory: 2"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" />
+    
+    <equip_Accessory03
+    AltName="Equipped Accessory: 3"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" />
+    
+    <equip_Accessory04
+    AltName="Equipped Accessory: 4"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" />
+    
+    <equip_Accessory05
+    AltName="Equipped Accessory: 5"
+    Wiki="The accessory ID to use for this slot."
+    Refs="EquipParamAccessory" />
+    
+    <equip_Skill_01
+    AltName="Equipped Skill: 1"
+    Wiki="The skill ID to use for this slot." />
+    
+    <equip_Skill_02
+    AltName="Equipped Skill: 2"
+    Wiki="The skill ID to use for this slot." />
+    
+    <equip_Skill_03
+    AltName="Equipped Skill: 3"
+    Wiki="The skill ID to use for this slot." />
+    
+    <equip_Spell_01
+    AltName="Equipped Spell: 1"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_02
+    AltName="Equipped Spell: 2"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_03
+    AltName="Equipped Spell: 3"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_04
+    AltName="Equipped Spell: 4"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_05
+    AltName="Equipped Spell: 5"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_06
+    AltName="Equipped Spell: 6"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <equip_Spell_07
+    AltName="Equipped Spell: 7"
+    Wiki="The skill ID to use for this slot." 
+    Refs="Magic"
+    Obsolete="" />
+    
+    <item_01
+    AltName="Held Item: 1"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_02
+    AltName="Held Item: 2"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_03
+    AltName="Held Item: 3"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_04
+    AltName="Held Item: 4"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_05
+    AltName="Held Item: 5"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_06
+    AltName="Held Item: 6"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_07
+    AltName="Held Item: 7"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_08
+    AltName="Held Item: 8"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_09
+    AltName="Held Item: 9"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <item_10
+    AltName="Held Item: 10"
+    Wiki="The item ID to store in this slot." 
+    Refs="EquipParamGoods" />
+    
+    <assemDataID
+    AltName="Assembly Data ID"
+    Wiki="ID of aircraft data. Equipment specifications are ignored when set." />
+    
+    <padding_0
+    AltName=""
+    Padding="" />
+    
+    <arrowNum
+    AltName="Ammunition Count: Arrow"
+    Wiki="" 
+    Obsolete="" />
+    
+    <boltNum
+    AltName="Ammunition Count: Bolt"
+    Wiki="" 
+    Obsolete="" />
+    
+    <subArrowNum
+    AltName="Ammunition Count: Arrow (Sub)"
+    Wiki="" 
+    Obsolete="" />
+    
+    <subBoltNum
+    AltName="Ammunition Count: Bolt (Sub)"
+    Wiki="" 
+    Obsolete="" />
+    
+    <QWC_sb
+    AltName="Trend Coefficient: Sword-Bow Axis"
+    Wiki="Basic QWC value (Sword-Bow)"
+    Obsolete="" />
+    
+    <QWC_mw
+    AltName="Trend Coefficient: Mace-Wand Axis"
+    Wiki="Basic QWC value (Mace-Wand)"
+    Obsolete="" />
+    
+    <QWC_cd
+    AltName="Trend Coefficient: Understanding-Diffusion Axis"
+    Wiki="Basic QWC value (Understanding-Diffusion)"
+    Obsolete="" />
+    
+    <soulLv
+    AltName="Level"
+    Wiki="Initial level"
+    Obsolete="" />
+    
+    <baseVit
+    AltName="Vitality"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <baseWil
+    AltName="Attunement"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <baseEnd
+    AltName="Endurance"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <baseStr
+    AltName="Strength"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <baseDex
+    AltName="Dexterity"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <baseMag
+    AltName="Intelligence"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <baseFai
+    AltName="Faith"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <baseLuc
+    AltName="Luck"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <baseHeroPoint
+    AltName="Humanity"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <baseDurability
+    AltName="Durability"
+    Wiki="The level of this stat." 
+    Obsolete="" />
+    
+    <itemNum_01
+    AltName="Item Count: 1"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <itemNum_02
+    AltName="Item Count: 2"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <itemNum_03
+    AltName="Item Count: 3"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <itemNum_04
+    AltName="Item Count: 4"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <itemNum_05
+    AltName="Item Count: 5"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <itemNum_06
+    AltName="Item Count: 6"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <itemNum_07
+    AltName="Item Count: 7"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <itemNum_08
+    AltName="Item Count: 8"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <itemNum_09
+    AltName="Item Count: 9"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <itemNum_10
+    AltName="Item Count: 10"
+    Wiki="The amount of the specified item in this slot." />
+    
+    <bodyScaleHead
+    AltName="Body Scale: Head"
+    Wiki="Scale for body shape change." />
+    
+    <bodyScaleBreast
+    AltName="Body Scale: Chest"
+    Wiki="Scale for body shape change." />
+    
+    <bodyScaleAbdomen
+    AltName="Body Scale: Abdomen"
+    Wiki="Scale for body shape change." />
+    
+    <bodyScaleRArm
+    AltName="Body Scale: Right Arm"
+    Wiki="Scale for body shape change." />
+    
+    <bodyScaleRLeg
+    AltName="Body Scale: Right Leg"
+    Wiki="Scale for body shape change." />
+    
+    <gestureId0
+    AltName="Stored Gesture: 0"
+    Wiki="The gesture to store at this index for the gesture list." />
+    
+    <gestureId1
+    AltName="Stored Gesture: 1"
+    Wiki="The gesture to store at this index for the gesture list." />
+    
+    <gestureId2
+    AltName="Stored Gesture: 2"
+    Wiki="The gesture to store at this index for the gesture list." />
+    
+    <gestureId3
+    AltName="Stored Gesture: 3"
+    Wiki="The gesture to store at this index for the gesture list." />
+    
+    <gestureId4
+    AltName="Stored Gesture: 4"
+    Wiki="The gesture to store at this index for the gesture list." />
+    
+    <gestureId5
+    AltName="Stored Gesture: 5"
+    Wiki="The gesture to store at this index for the gesture list." />
+    
+    <gestureId6
+    AltName="Stored Gesture: 6"
+    Wiki="The gesture to store at this index for the gesture list." />
+    
+    <npcPlayerType
+    AltName="NPC Character Type"
+    Wiki="The character type used by non-player characters."
+    Enum="NPC_TYPE" />
+    
+    <npcPlayerDrawType
+    AltName="NPC Draw Type"
+    Wiki="The character draw type used by non-player characters."
+    Enum="NPC_DRAW_TYPE" />
+    
+    <npcPlayerSex
+    AltName="NPC Gender Type"
+    Wiki="The character gender type used by non-player characters."
+    Enum="CHARACTER_INIT_SEX" />
+    
+    <vowType
+    AltName="Pledge Type"
+    Wiki="The pledge type used by this character."
+    Enum="VOW_TYPE" />
+    
+    <isOsReinforceChangeLevel
+    AltName="Change OST Reinforcement Level"
+    Wiki="[For debugging] Whether to change the level of OS enhancement."
+    IsBool="" />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+    <bodyScaleLArm
+    AltName="Body Scale: Left Arm"
+    Wiki="Scale for body shape change." />
+    
+    <bodyScaleLLeg
+    AltName="Body Scale: Left Leg"
+    Wiki="Scale for body shape change." />
+    
+    <equip_Wep_Right_GenId
+    AltName="Equipment Generation: Right Weapon"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Subwep_Right_GenId
+    AltName="Equipment Generation: Right Weapon (Sub)"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Wep_Left_GenId
+    AltName="Equipment Generation: Left Weapon"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Subwep_Left_GenId
+    AltName="Equipment Generation: Left Weapon (Sub)"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Helm_GenId
+    AltName="Equipment Generation: Head"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Armer_GenId
+    AltName="Equipment Generation: Core"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Gaunt_GenId
+    AltName="Equipment Generation: Arms"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Leg_GenId
+    AltName="Equipment Generation: Legs"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Subwep_Right3
+    AltName="Equipment Generation: Right Weapon (Sub)"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Subwep_Left3
+    AltName="Equipment Generation: Left Weapon (Sub)"
+    Wiki="Weapon generation ID." />
+    
+    <equip_Booster_Main 
+    AltName="Equipped Part: Booster"
+    Wiki="The booster ID to use for this slot." 
+    Refs="EquipParamBooster" />
+    
+    <pad01
+    AltName=""
+    Padding="" />
+    
+    <overrideBaseHp
+    AltName="Override Value: AP"
+    Wiki="If the value is -1, the total value of the equipment value is used. Otherwise, override with this value" />
+    
+    <overrideBaseMp
+    AltName="Override Value: MP"
+    Wiki="If the value is -1, the total value of the equipment value is used. Otherwise, override with this value" />
+    
+    <overrideBaseSp
+    AltName="Override Value: Stamina"
+    Wiki="If the value is -1, the total value of the equipment value is used. Otherwise, override with this value" />
+    
+    <overrideSpRecDelayTime
+    AltName="Override Value: Stamina Recovery Delay"
+    Wiki="If the value is -1, the total value of the equipment value is used. Otherwise, override with this value" />
+    
+    <padding
+    AltName=""
+    Padding="" />
+    
+    <equip_AttachParts_Right
+    AltName="Equipped Part: Right-Hand Attachment"
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_ShieldParts
+    AltName="Equipped Part: Shield Attachment"
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <overrideEnergyMax
+    AltName="Override Value: Maximum Energy"
+    Wiki="If the value is -1, the total value of the equipment value is used. Otherwise, override with this value" />
+    
+    <overrideEnergyRecoveryPerSec
+    AltName="Override Value: Energy Recovery"
+    Wiki="If the value is -1, the total value of the equipment value is used. Otherwise, override with this value" />
+    
+    <overrideEnergyDecreasePerSec
+    AltName="Override Value: Energy Consumption"
+    Wiki="If the value is -1, the total value of the equipment value is used. Otherwise, override with this value" />
+    
+    <overrideEnergyRecoveryDelayTimeSec
+    AltName="Override Value: Energy Recovery Delay"
+    Wiki="If the value is -1, the total value of the equipment value is used. Otherwise, override with this value" />
+    
+    <equip_BladeParts
+    AltName="Equipped Part: Blade Weapon"
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_Generator 
+    AltName="Equipped Part: Generator" 
+    Wiki="The generator ID to use for this slot." 
+    Refs="EquipParamGenerator" />
+    
+    <equip_Fcs 
+    AltName="Equipped Part: FCS" 
+    Wiki="The fire control system ID to use for this slot." 
+    Refs="EquipParamFcs" />
+    
+    <equip_Extension 
+    AltName="Equipped Part: Extension"
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <equip_AssaultDrive 
+    AltName="Equipped Part: Core Expansion"
+    Wiki="The weapon ID to use for this slot." 
+    Refs="EquipParamWeapon" />
+    
+    <osReinforceLevel_DamageUp_ShootPhysics
+    AltName="OST Reinforcement Level: Physical Damage %"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_DamageUp_ShootMagic
+    AltName="OST Reinforcement Level: Energy Damage %"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_DamageUp_ShootFire
+    AltName="OST Reinforcement Level: Explosive Damage %"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_DamageUp_Melee
+    AltName="OST Reinforcement Level: Melee Damage %"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_DamageUp_Critical
+    AltName="OST Reinforcement Level: Direct Hit Damage %"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_DamageCut
+    AltName="OST Reinforcement Level: Damage Absorption %"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_KickEnable
+    AltName="OST Reinforcement Level: Boost Kick"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_WeaponHanger
+    AltName="OST Reinforcement Level: Weapon Bay"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_FreeAimEnable
+    AltName="OST Reinforcement Level: Manual Aiming"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_RecoverItem_RecoverUp
+    AltName="OST Reinforcement Level: Repair Kits"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_HackingUp
+    AltName="OST Reinforcement Level: Access Speed"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_OverWeightOk
+    AltName="OST Reinforcement Level: Weight Control"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_AssaultArmor
+    AltName="OST Reinforcement Level: Assault Armor"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_FollowingBarrier
+    AltName="OST Reinforcement Level: Pulse Protection"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_StationaryBarrier
+    AltName="OST Reinforcement Level: Pulse Armor"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_EmergencyBarrier
+    AltName="OST Reinforcement Level: Terminal Armor"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <osReinforceLevel_QuickTurn
+    AltName="OST Reinforcement Level: Quick Turn"
+    Wiki="For debugging. The level of this upgrade this loadout has." />
+    
+    <tailPadding
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="NPC_TYPE" type="u8">
+        <Option Value="0" Name="Standard" />
+        <Option Value="1" Name="Boss" />
+        <Option Value="2" Name="Villager" />
+        <Option Value="3" Name="Wandering Enemy" />
+        <Option Value="4" Name="Strong Enemy" />
+        <Option Value="5" Name="Bug Enemy" />
+    </Enum>
+    <Enum Name="NPC_DRAW_TYPE" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="White Phantom" />
+        <Option Value="2" Name="Black Phantom" />
+        <Option Value="3" Name="Intruder" />
+        <Option Value="4" Name="Ghoul" />
+    </Enum>
+    <Enum Name="CHARACTER_INIT_SEX" type="u8">
+        <Option Value="0" Name="Female" />
+        <Option Value="1" Name="Male" />
+    </Enum>
+    <Enum Name="VOW_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+        <Option Value="6" Name="Type 6" />
+        <Option Value="7" Name="Type 7" />
+        <Option Value="8" Name="Type 8" />
+        <Option Value="9" Name="Type 9" />
+        <Option Value="10" Name="Type 10" />
+        <Option Value="11" Name="Type 11" />
+        <Option Value="12" Name="Type 12" />
+        <Option Value="13" Name="Type 13" />
+        <Option Value="14" Name="Type 14" />
+        <Option Value="15" Name="Type 15" />
+        <Option Value="16" Name="Type 16" />
+    </Enum>
+    <Enum Name="CHARA_INIT_WEP_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

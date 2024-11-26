@@ -1,0 +1,373 @@
+1 Don&#39;t erase -- 消すべからず
+1000 Resource item A (white charge) -- リソースアイテムA（白形代）
+1010 Resource item A (white charge) -- リソースアイテムA（白形代）
+1020 Resource item A (white charge) -- リソースアイテムA（白形代）
+1030 Resource item A (white charge) -- リソースアイテムA（白形代）
+1000000 Lifting of the ban on school techniques_Hachiman Flying Rush -- 流派技解禁_八艘飛びラッシュ
+1000001 [Replenishment] Flame prevention_Yes -- 【補充】炎上予防_有
+1000002 Mask Fragment A -- お面の破片A
+1000003 [Consumption] Elixir -- 【消費】エリクサー
+1000004 [Consumption] Weird young water thrombus (scale shop fry) -- 【消費】変若水血栓（うろこショップ稚魚）
+1000005 Mask Fragment B -- お面の破片B
+1000006 Master -- 原盤
+1000007 Dragon cough healing -- 竜咳治癒
+1100000 Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹
+1100001 [Consumption] Regeneration -- 【消費】リジェネ
+1100002 [Consumption] Strengthening defense -- 【消費】防御強化
+1100003 [Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化
+1100004 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1100005 [Consumption] Release illusion -- 【消費】幻術解除
+1100006 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1100007 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1100008 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1100009 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1100050 Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹
+1100051 [Consumption] Regeneration -- 【消費】リジェネ
+1100052 [Consumption] Strengthening defense -- 【消費】防御強化
+1100053 [Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化
+1100054 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1100055 [Consumption] Release illusion -- 【消費】幻術解除
+1100056 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1100057 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1100058 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1100059 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1100100 Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹
+1100101 Gourd possession upper limit UP -- ひょうたん所持上限UP
+1100102 [Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化
+1100103 [Consumption] Grip ash -- 【消費】握り灰
+1100104 Dragon cough healing -- 竜咳治癒
+1100105 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1100106 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1100107 [Consumption] Release illusion -- 【消費】幻術解除
+1100108 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1100109 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1100110 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1100111 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1100112 Dragon cough healing refill -- 竜咳治癒おかわり
+1100150 Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹
+1100151 Gourd possession upper limit UP -- ひょうたん所持上限UP
+1100152 [Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化
+1100153 [Consumption] Grip ash -- 【消費】握り灰
+1100154 Dragon cough healing -- 竜咳治癒
+1100155 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1100156 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1100157 [Consumption] Release illusion -- 【消費】幻術解除
+1100158 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1100159 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1100160 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1100161 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1100162 Dragon cough healing refill -- 竜咳治癒おかわり
+1100200 Strengthening prosthetic hand ninja _ Shuriken _ Butterfly kunai -- 義手忍具強化_手裏剣_お蝶クナイ
+1100201 [Consumption] Ceramic piece -- 【消費】陶片
+1100202 [Consumption] Grip ash -- 【消費】握り灰
+1100203 [Consumption] Regeneration -- 【消費】リジェネ
+1100204 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1100205 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1100206 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1100207 [Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き
+1100208 [Consumption] Strengthening the core -- 【消費】体幹強化
+1100209 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1100210 General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）
+1100211 General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）
+1100212 General-purpose material: Magic 2 (Large Fragment) -- 汎用素材：呪術2（大欠片）
+1100213 [Consumption] Gold nugget_Large -- 【消費】金塊_大
+1100214 [Consumption] Attack enhancement -- 【消費】攻撃強化
+1100215 [Consumption] Elixir -- 【消費】エリクサー
+1100216 [Consumption] Release illusion -- 【消費】幻術解除
+1100217 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1100218 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1100250 Strengthening prosthetic hand ninja _ Shuriken _ Butterfly kunai -- 義手忍具強化_手裏剣_お蝶クナイ
+1100251 [Consumption] Ceramic piece -- 【消費】陶片
+1100252 [Consumption] Grip ash -- 【消費】握り灰
+1100253 [Consumption] Regeneration -- 【消費】リジェネ
+1100254 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1100255 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1100256 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1100257 [Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き
+1100258 [Consumption] Strengthening the core -- 【消費】体幹強化
+1100259 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1100260 General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）
+1100261 General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）
+1100262 General-purpose material: Magic 2 (Large Fragment) -- 汎用素材：呪術2（大欠片）
+1100263 [Consumption] Gold nugget_Large -- 【消費】金塊_大
+1100264 [Consumption] Attack enhancement -- 【消費】攻撃強化
+1100265 [Consumption] Elixir -- 【消費】エリクサー
+1100266 [Consumption] Release illusion -- 【消費】幻術解除
+1100267 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1100268 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1100300 Anayama partnership certificate -- 穴山の組合証
+1100400 Gourd possession upper limit UP -- ひょうたん所持上限UP
+1100401 [Consumption] Regeneration -- 【消費】リジェネ
+1100402 [Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化
+1100403 [Consumption] Recovery from fire + Strengthening resistance -- 【消費】炎上回復 + 耐性強化
+1100404 [Consumption] Recovery from madness + Strengthening resistance -- 【消費】発狂回復 + 耐性強化
+1100405 [Consumption] Strengthening defense -- 【消費】防御強化
+1100406 Kodachi hint -- 小太刀ヒント
+1100407 Finger whistle strengthening tips -- 指笛強化ヒント
+1100408 Transformation tips -- 変わり身ヒント
+1100409 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1100410 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1100411 Dragon cough healing -- 竜咳治癒
+1100412 [Consumption] Release illusion -- 【消費】幻術解除
+1100413 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1100414 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1100415 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1100416 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1100417 Dragon cough healing refill -- 竜咳治癒おかわり
+1100450 Gourd possession upper limit UP -- ひょうたん所持上限UP
+1100451 [Consumption] Regeneration -- 【消費】リジェネ
+1100452 [Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化
+1100453 [Consumption] Recovery from fire + Strengthening resistance -- 【消費】炎上回復 + 耐性強化
+1100454 [Consumption] Recovery from madness + Strengthening resistance -- 【消費】発狂回復 + 耐性強化
+1100455 [Consumption] Strengthening defense -- 【消費】防御強化
+1100456 Kodachi hint -- 小太刀ヒント
+1100457 Finger whistle strengthening tips -- 指笛強化ヒント
+1100458 Transformation tips -- 変わり身ヒント
+1100459 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1100460 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1100461 Dragon cough healing -- 竜咳治癒
+1100462 [Consumption] Release illusion -- 【消費】幻術解除
+1100463 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1100464 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1100465 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1100466 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1100467 Dragon cough healing refill -- 竜咳治癒おかわり
+1100500 Basic action lifted _ anti-aircraft shinobi killing -- 基本アクション解禁_対空忍殺
+1100501 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+1100502 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+1100503 Prosthetic hand ninja tool creation_shuriken -- 義手忍具作成_手裏剣
+1100504 Prosthetic hand ninja tool creation_prepared spear -- 義手忍具作成_仕込み槍
+1100505 Gourd possession upper limit UP -- ひょうたん所持上限UP
+1100506 Strengthening prosthetic hand ninja _ Shuriken _ Butterfly kunai -- 義手忍具強化_手裏剣_お蝶クナイ
+1100507 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+1100508 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+1100509 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+1100510 Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹
+1100511 Gourd possession upper limit UP -- ひょうたん所持上限UP
+1100512 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+1100513 Mask Fragment C -- お面の破片C
+1100514 Prosthetic hand ninja tool creation_iron fan -- 義手忍具作成_鉄扇
+1100515 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+1101000 Shuriken -- 手裏剣
+1101001 Firecracker -- 爆竹
+1101002 Ignition -- 発火
+1101003 Preparation ax -- 仕込み斧
+1101004 Transformation -- 変わり身
+1101005 Kodachi -- 仕込み小太刀
+1101006 Iron fan -- 鉄扇
+1101007 Turn the enemy -- 敵回し
+1101008 Preparation spear -- 仕込み槍
+1101009 Finger whistle -- 指笛
+1110000 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+1110001 Mask Fragment C -- お面の破片C
+1110002 [Consumption] Regeneration -- 【消費】リジェネ
+1110003 [Consumption] Self-illness poison -- 【消費】自病毒
+1110004 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1110005 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1110006 [Consumption] Item drop rate UP -- 【消費】アイテムドロップ率UP
+1110007 Dragon cough healing -- 竜咳治癒
+1110008 [Consumption] Release illusion -- 【消費】幻術解除
+1110009 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1110010 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1110011 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1110012 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1110013 Dragon cough healing refill -- 竜咳治癒おかわり
+1110050 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+1110051 Mask Fragment C -- お面の破片C
+1110052 [Consumption] Regeneration -- 【消費】リジェネ
+1110053 [Consumption] Self-illness poison -- 【消費】自病毒
+1110054 [Consumption] Gold nugget_small -- 【消費】金塊_小
+1110055 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1110056 [Consumption] Item drop rate UP -- 【消費】アイテムドロップ率UP
+1110057 Dragon cough healing -- 竜咳治癒
+1110058 [Consumption] Release illusion -- 【消費】幻術解除
+1110059 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1110060 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1110061 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1110062 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1110063 Dragon cough healing refill -- 竜咳治癒おかわり
+1111400 Prosthetic hand ninja tool creation_iron fan -- 義手忍具作成_鉄扇
+1111401 Basic action lifted _ anti-aircraft shinobi killing -- 基本アクション解禁_対空忍殺
+1111402 [Consumption] Release illusion -- 【消費】幻術解除
+1111403 [Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き
+1111404 [Consumption] Suicide -- 【消費】自殺
+1111405 [Consumption] Release illusion -- 【消費】幻術解除
+1111406 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1111407 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1111408 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1111409 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1111450 Prosthetic hand ninja tool creation_iron fan -- 義手忍具作成_鉄扇
+1111451 Basic action lifted _ anti-aircraft shinobi killing -- 基本アクション解禁_対空忍殺
+1111452 [Consumption] Release illusion -- 【消費】幻術解除
+1111453 [Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き
+1111454 [Consumption] Suicide -- 【消費】自殺
+1111455 [Consumption] Release illusion -- 【消費】幻術解除
+1111456 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1111457 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1111458 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1111459 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1500000 Madness prevention gourd -- 発狂予防瓢箪
+1500001 [Consumption] Regeneration -- 【消費】リジェネ
+1500002 General-purpose material: Steel 3 (lump) -- 汎用素材：鋼鉄3（塊）
+1500003 [Consumption] Stealth enhancement -- 【消費】ステルス強化
+1500004 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1500005 [Consumption] Gold nugget_Large -- 【消費】金塊_大
+1500006 Scales -- うろこ
+1500007 Sake (Ryusen) -- 酒（竜泉）
+1500008 [Consumption] Release illusion -- 【消費】幻術解除
+1500009 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1500010 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1500011 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1500012 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1500050 Madness prevention gourd -- 発狂予防瓢箪
+1500051 [Consumption] Regeneration -- 【消費】リジェネ
+1500052 General-purpose material: Steel 3 (lump) -- 汎用素材：鋼鉄3（塊）
+1500053 [Consumption] Stealth enhancement -- 【消費】ステルス強化
+1500054 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1500055 [Consumption] Gold nugget_Large -- 【消費】金塊_大
+1500056 Scales -- うろこ
+1500057 Sake (Ryusen) -- 酒（竜泉）
+1500058 [Consumption] Release illusion -- 【消費】幻術解除
+1500059 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1500060 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1500061 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1500062 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1700000 Poison prevention gourd -- 毒予防瓢箪
+1700001 [Consumption] Regeneration -- 【消費】リジェネ
+1700002 [Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化
+1700003 General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）
+1700004 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1700005 Dragon cough healing -- 竜咳治癒
+1700006 [Consumption] Release illusion -- 【消費】幻術解除
+1700007 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1700008 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1700009 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1700010 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1700005 Dragon cough healing refill -- 竜咳治癒おかわり
+1700050 Poison prevention gourd -- 毒予防瓢箪
+1700051 [Consumption] Regeneration -- 【消費】リジェネ
+1700052 [Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化
+1700053 General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）
+1700054 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+1700055 Dragon cough healing -- 竜咳治癒
+1700056 [Consumption] Release illusion -- 【消費】幻術解除
+1700057 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+1700058 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+1700059 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+1700060 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+1700055 Dragon cough healing refill -- 竜咳治癒おかわり
+2000000 Five-color rice -- 五色米
+2000001 General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）
+2000002 [Consumption] Attack enhancement -- 【消費】攻撃強化
+2000003 [Consumption] Strengthening defense -- 【消費】防御強化
+2000004 persimmon -- 柿
+2000005 [Consumption] Gold nugget_small -- 【消費】金塊_小
+2000006 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+2000007 [Consumption] Gold nugget_Large -- 【消費】金塊_大
+2000008 Dragon cough healing -- 竜咳治癒
+2000009 [Consumption] Release illusion -- 【消費】幻術解除
+2000010 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+2000011 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+2000012 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+2000013 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+2000014 Dragon cough healing refill -- 竜咳治癒おかわり
+2000050 Five-color rice -- 五色米
+2000051 General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）
+2000052 [Consumption] Attack enhancement -- 【消費】攻撃強化
+2000053 [Consumption] Strengthening defense -- 【消費】防御強化
+2000054 persimmon -- 柿
+2000055 [Consumption] Gold nugget_small -- 【消費】金塊_小
+2000056 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+2000057 [Consumption] Gold nugget_Large -- 【消費】金塊_大
+2000058 Dragon cough healing -- 竜咳治癒
+2000059 [Consumption] Release illusion -- 【消費】幻術解除
+2000060 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+2000061 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+2000062 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+2000063 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+2000064 Dragon cough healing refill -- 竜咳治癒おかわり
+2500000 Mask Fragment B -- お面の破片B
+2500001 Master -- 原盤
+2500002 Dragon cough healing -- 竜咳治癒
+2500003 [Consumption] Weird young water thrombus (scale shop fry) -- 【消費】変若水血栓（うろこショップ稚魚）
+2500004 Lifting of the ban on school techniques_Hachiman Flying Rush -- 流派技解禁_八艘飛びラッシュ
+2500005 [Replenishment] Flame prevention_Yes -- 【補充】炎上予防_有
+2500006 Mask Fragment A -- お面の破片A
+2500007 [Consumption] Elixir -- 【消費】エリクサー
+9000000 Resource item A (white charge) -- リソースアイテムA（白形代）
+9100000 Resource item A (white charge) -- リソースアイテムA（白形代）
+9620000 Magatama Fragment 1 -- 勾玉の欠片1
+9620001 Resource item C (blue) -- リソースアイテムC（青形代）
+9620002 Preparation ax -- 仕込み斧
+9620003 Magatama Fragment 2 -- 勾玉の欠片2
+9620004 Magatama Fragment 3 -- 勾玉の欠片3
+9620006 Whetstone Fragment 1 -- 砥石の欠片1
+9620007 Whetstone Fragment 4 -- 砥石の欠片4
+9620008 Whetstone Fragment 5 -- 砥石の欠片5
+9620009 parachute -- 落下傘
+9620010 Ignition -- 発火
+9620011 Firecracker -- 爆竹
+9620100 Puppet puppet killing technique -- 傀儡忍殺の術
+9620101 Blessing technique -- 加護の術
+9620102 Magatama Fragment 4 -- 勾玉の欠片4
+9620103 Whetstone Fragment 2 -- 砥石の欠片2
+9620200 Detoxification prescription -- 毒消し処方箋
+9620201 Magatama -- 勾玉
+9620202 Whetstone Fragment 3 -- 砥石の欠片3
+9620300 Resource item A (white charge) -- リソースアイテムA（白形代）
+9620301 Resource item B (red) -- リソースアイテムB（赤形代）
+9620302 Resource item C (blue) -- リソースアイテムC（青形代）
+9999000 Preparation ax -- 仕込み斧
+9999001 Resurrection technique -- 復活の術
+9999002 Magatama Fragment 1 -- 勾玉の欠片1
+9999003 Magatama Fragment 2 -- 勾玉の欠片2
+9999004 Magatama Fragment 3 -- 勾玉の欠片3
+9999005 Whetstone Fragment 1 -- 砥石の欠片1
+9999006 Whetstone Fragment 4 -- 砥石の欠片4
+9999007 Whetstone Fragment 5 -- 砥石の欠片5
+9999008 parachute -- 落下傘
+9999009 Ignition -- 発火
+9999010 Shuriken -- 手裏剣
+9999011 Puppet puppet killing technique -- 傀儡忍殺の術
+9999012 Blessing technique -- 加護の術
+9999013 Magatama Fragment 4 -- 勾玉の欠片4
+9999014 Whetstone Fragment 2 -- 砥石の欠片2
+9999015 Detoxification prescription -- 毒消し処方箋
+9999016 Magatama -- 勾玉
+9999017 Whetstone Fragment 3 -- 砥石の欠片3
+9999018 Resource item A (white charge) -- リソースアイテムA（白形代）
+9999019 Resource item B (red) -- リソースアイテムB（赤形代）
+9999020 Resource item C (blue) -- リソースアイテムC（青形代）
+9999021 Pills -- 丸薬
+9999022 Blood smoke shinobi -- 血煙忍殺
+9999023 Puppet ninja killing -- 傀儡忍殺
+9999024 parachute -- 落下傘
+9999025 Blessing technique -- 加護の術
+9999026 Pills_small -- 丸薬_小
+9999027 Detoxification circle -- 解毒丸
+9999028 Detoxification Maru prescription -- 解毒丸の処方箋
+9999029 HP / Trunk_Heart Fragment -- HP/体幹_ハートのかけら
+9999030 HP / Trunk_Heart vessel -- HP/体幹_ハートの器
+9999031 Sword attack power up item -- 刀攻撃力アップアイテム
+9999032 Recovery Ninja Frame Expansion Item -- 回復忍具枠拡張アイテム
+9999033 Resurrection technique -- 復活の術
+9999034 Ninjutsu Ninjutsu_Blood Smoke -- 忍殺忍術_血煙
+9999035 Ninjutsu Ninjutsu_Puppet -- 忍殺忍術_傀儡
+9999036 Ninjutsu Ninjutsu_Encha -- 忍殺忍術_エンチャ
+9999037 Parachute_for discrimination -- 落下傘_判別用
+9999100 Pills -- 丸薬
+9999101 Resurrection technique -- 復活の術
+9999102 Magatama Fragment 1 -- 勾玉の欠片1
+9999103 Magatama Fragment 2 -- 勾玉の欠片2
+9999104 Magatama Fragment 3 -- 勾玉の欠片3
+9999105 Detoxification circle -- 解毒丸
+9999200 Shuriken -- 手裏剣
+9999201 Firecracker -- 爆竹
+9999202 Ignition -- 発火
+9999203 Preparation ax -- 仕込み斧
+9999204 Transformation -- 変わり身
+9999205 Kodachi -- 仕込み小太刀
+9999206 Iron fan -- 鉄扇
+9999207 Turn the enemy -- 敵回し
+9999208 Preparation spear -- 仕込み槍
+9999209 Finger whistle -- 指笛

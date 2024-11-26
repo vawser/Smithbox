@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="Slot">
+      <Option Value="255" Name="Debug" />
+      <Option Value="1" Name="Head" />
+      <Option Value="2" Name="Body" />
+      <Option Value="3" Name="Arms" />
+      <Option Value="4" Name="Legs" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Defines parameters relating to equippable armor." Row0Dummy="" />
+  <Field>
+    <armor_set_id AltName="Armor ID" Wiki="The ID for this armor set. Do not forget this when creating custom armor." />
+    <slot_category AltName="Slot Category" Enum="Slot" />
+    <model_id AltName="Model ID" />
+    <has_gendered_armor AltName="Has Gendered Armor" IsBool="" />
+    <equip_interfere_id AltName="Equip Interfere ID" Refs="EquipInterfereParam" />
+    <armor_reinforce_id AltName="Armor Reinforce ID" Refs="ArmorReinforceParam" />
+    <physical_defence_scaling AltName="Scaling: Physical Defence" />
+    <strength_requirement AltName="Requirement: STR" />
+    <dexterity_requirement AltName="Requirement: DEX" />
+    <intelligence_requirement AltName="Requirement: INT" />
+    <faith_requirement AltName="Requirement: FTH" />
+    <weight AltName="Weight" />
+    <durability AltName="Durability" />
+    <repair_cost AltName="Repair Cost" />
+    <poise AltName="Poise" />
+    <control_parameters_blend_weight_1h AltName="Blend Weight - 1H - Hands Up" />
+    <control_parameters_blend_weight_2h AltName="Blend Weight - 2H - Hands Up" />
+    <item_discovery AltName="Additional Item Discovery" />
+    <Unk15 AltName="Damage Effect SE or Material" Refs="DamageEffectMaterialParam,DamageEffectSeParam"/>
+    <Unk17 AltName="Damage Effect SFX" Refs="DamageEffectSfxParam" />
+  </Field>
+</PARAMMETA>

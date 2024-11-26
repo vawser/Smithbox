@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the particle parameters used for boosting." />
+  
+  <Field>
+    <sfxId0
+    AltName="Counter Boost: Particle ID [1]"
+    Wiki="SFX 1 to play for counter boost" 
+    ParticleAlias="" />
+    
+    <sfxId1
+    AltName="Counter Boost: Particle ID [2]"
+    Wiki="SFX 2 to play for counter boost" 
+    ParticleAlias="" />
+    
+    <sfxId2
+    AltName="Counter Boost: Particle ID [3]"
+    Wiki="SFX 3 to play for counter boost" 
+    ParticleAlias="" />
+    
+    <padding1
+    AltName=""
+    Padding="" />
+    
+    <dmyPolyId0
+    AltName="Counter Boost: Dummy Polygon ID [1]"
+    Wiki="Dummy Polygon ID to use for playing counter boost SFX 1" />
+    
+    <dmyPolyId1
+    AltName="Counter Boost: Dummy Polygon ID [2]"
+    Wiki="Dummy Polygon ID to use for playing counter boost SFX 2" />
+    
+    <dmyPolyId2
+    AltName="Counter Boost: Dummy Polygon ID [3]"
+    Wiki="Dummy Polygon ID to use for playing counter boost SFX 3" />
+    
+    <padding2
+    AltName=""
+    Padding="" />
+    
+    <sfxScale
+    AltName="Particle Size Scale"
+    Wiki="Sfx size magnification: 1.0 as is, 0.5 to half" />
+    
+    <counterBoostActiveAngleDeg
+    AltName="Effective Counter Boost Angle"
+    Wiki="The angle range in which counter boost is effective is 90, and it becomes effective when the inner product of the movement direction and dummy poly direction is 0 or more. In degrees." />
+    
+    <boostDirLerpRate
+    AltName="Boost Direction Interpolation Rate"
+    Wiki="Interpolation rate of booster direction change during normal boost [Rate/Frame]" />
+    
+    <counterBoostDirLerpRate
+    AltName="Counter Boost Direction Interpolation Rate"
+    Wiki="Interpolation rate of booster direction change during counter boost [Rate/Frame]" />
+    
+    <tailPadding
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

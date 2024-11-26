@@ -1,0 +1,18 @@
+0 None (host or NPC) -- 無（ホストまたはNPC）
+1 White Spirit -- 白霊
+2 Small White Spirit -- 小白霊
+3 Golden Spirit -- 金霊
+4 Small Gold Spirit -- 小金霊
+5 Relief Blue Spirit -- 救援青霊
+6 Retaliation Blue Spirit -- 報復青霊
+7 Dark Spirit (Sign) -- 闇霊（サイン）
+8 Dark Spirits -- 闇霊（乱入）
+9 Red Spirit (Sign) -- 赤霊（サイン）
+10 Red Spirit (Intruding) -- 赤霊（乱入）
+11 Bell Guard Ashes -- 鐘守灰霊
+12 The King of Mice -- ねずみの王灰霊
+13 Dragon Spirit -- 竜霊
+14 Mirror Knight Spirit -- ミラーナイト霊
+15 Deep Spirit -- 深淵霊
+16 Duel Blue Spirit -- 決闘青霊
+17 Duel Red Spirit -- 決闘赤霊

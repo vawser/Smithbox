@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the homing angle and speed parameters for a blade melee attack."/>
+  
+  <Field>
+    <bModelUdTurn
+    AltName="Tilt Model in Vertical Direction"
+    Wiki="Tilt the model in the vertical movement direction"
+    IsBool="" />
+    
+    <bStopForHitTarget
+    AltName="Stop on Contact with Target"
+    Wiki="Does it stop when it makes contact with the target?"
+    IsBool="" />
+    
+    <bInheritRotAng
+    AltName="Inherit Rotation Angle"
+    Wiki="Do you want to inherit the rotation angle from before the start of melee?"
+    IsBool="" />
+    
+    <moveRotType
+    AltName="Movement Vertical Correction"
+    Wiki="How to correct vertical movement direction"
+    Enum="BLADE_HOMING_MOVE_UP_DOWN_TYPE" />
+    
+    <turnSpeedDPS
+    AltName="Turn Angular Velocity"
+    Wiki="In degrees per second. -1 uses the character's velocity." />
+    
+    <turnAccelDPSS
+    AltName="Turn Angular Acceleration"
+    Wiki="-1 uses the character's velocity ^ 2. Also, 0 is treated as infinity (the speed is always the same as the angular velocity). In degrees per second ^ 2" />
+    
+    <udTurnSpeedDPS
+    AltName="Vertical Turn Angular Velocity"
+    Wiki="If -1, follow angular velocity: use the same value for left and right. In degrees per seconds." />
+    
+    <udTurnAccelDPSS
+    AltName="Vertical Turn Acceleration"
+    Wiki="If -1, follow angular acceleration: use the same value for left and right. In degrees per second ^ 2" />
+    
+    <limitAngDeg_U
+    AltName="Tracking Limit: Upper Angle"
+    Wiki="In degrees." />
+    
+    <limitAngDeg_D
+    AltName="Tracking Limit: Lower Angle"
+    Wiki="In degrees." />
+    
+    <modelRotSpeedDegPerSec
+    AltName="Model Vertical Rotation Angular Velocity" 
+    Wiki="If it is 1, apply the value of the above-mentioned velocity. In degrees per second." />
+    
+    <reserved
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="BLADE_HOMING_MOVE_UP_DOWN_TYPE" type="u8">
+      <Option Value="0" Name="Correct to match target height" />
+      <Option Value="1" Name="Correct for model orientation" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

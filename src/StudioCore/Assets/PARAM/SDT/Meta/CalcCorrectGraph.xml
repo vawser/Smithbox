@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field></Field>
+  <Self Wiki="Formulas used for various upgrades" AlternativeOrder="stageMaxVal0,stageMaxVal1,stageMaxVal2,stageMaxVal3,stageMaxVal4,-,
+stageMaxGrowVal0,stageMaxGrowVal1,stageMaxGrowVal2,stageMaxGrowVal3,stageMaxGrowVal4,-,
+adjPt_maxGrowVal0,adjPt_maxGrowVal1,adjPt_maxGrowVal2,adjPt_maxGrowVal3,adjPt_maxGrowVal4,-,
+init_inclination_soul,adjustment_value,boundry_inclination_soul,boundry_value,-" />
+</PARAMMETA>

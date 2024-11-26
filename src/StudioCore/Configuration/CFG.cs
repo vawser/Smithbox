@@ -96,8 +96,8 @@ public class CFG
     public bool EnableTimeActEditor = true;
     public bool EnableGparamEditor = true;
     public bool EnableTextureViewer = true;
-    public bool EnableEmevdEditor = true;
-    public bool EnableEsdEditor = true;
+    public bool EnableEmevdEditor = false;
+    public bool EnableEsdEditor = false;
     public bool EnableCutsceneEditor = false;
     public bool EnableHavokEditor = false;
     public bool EnableMaterialEditor = false;

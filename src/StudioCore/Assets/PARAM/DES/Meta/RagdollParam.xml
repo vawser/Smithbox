@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <enable AltName="enable" />
+    <partsHitMaskNo AltName="partsHitMaskNo" />
+    <pad AltName="pad" />
+    <hierarchyGain AltName="hierarchyGain" />
+    <velocityDamping AltName="velocityDamping" />
+    <accelGain AltName="accelGain" />
+    <velocityGain AltName="velocityGain" />
+    <positionGain AltName="positionGain" />
+    <maxLinerVelocity AltName="maxLinerVelocity" />
+    <maxAngularVelocity AltName="maxAngularVelocity" />
+    <snapGain AltName="snapGain" />
+    <pad2 AltName="pad2" />
+  </Field>
+  <Self />
+</PARAMMETA>

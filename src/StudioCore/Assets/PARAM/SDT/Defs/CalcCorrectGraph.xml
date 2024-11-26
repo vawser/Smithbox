@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CACL_CORRECT_GRAPH_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="f32 stageMaxVal0">
+      <DisplayName>閾値ポイント0</DisplayName>
+      <Description>仕様書に「n次閾値[point]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 stageMaxVal1">
+      <DisplayName>閾値ポイント1</DisplayName>
+      <Description>仕様書に「n次閾値[point]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 stageMaxVal2">
+      <DisplayName>閾値ポイント2</DisplayName>
+      <Description>仕様書に「n次閾値[point]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 stageMaxVal3">
+      <DisplayName>閾値ポイント3</DisplayName>
+      <Description>仕様書に「n次閾値[point]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 stageMaxVal4">
+      <DisplayName>閾値ポイント4</DisplayName>
+      <Description>仕様書に「n次閾値[point]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 stageMaxGrowVal0">
+      <DisplayName>閾値係数0</DisplayName>
+      <Description>仕様書に「n次閾値[係数]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="f32 stageMaxGrowVal1">
+      <DisplayName>閾値係数1</DisplayName>
+      <Description>仕様書に「n次閾値[係数]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="f32 stageMaxGrowVal2">
+      <DisplayName>閾値係数2</DisplayName>
+      <Description>仕様書に「n次閾値[係数]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="f32 stageMaxGrowVal3">
+      <DisplayName>閾値係数3</DisplayName>
+      <Description>仕様書に「n次閾値[係数]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 stageMaxGrowVal4">
+      <DisplayName>閾値係数4</DisplayName>
+      <Description>仕様書に「n次閾値[係数]」と書いてあるもの</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 adjPt_maxGrowVal0">
+      <DisplayName>調整係数0</DisplayName>
+      <Description>調整係数</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 adjPt_maxGrowVal1">
+      <DisplayName>調整係数1</DisplayName>
+      <Description>調整係数</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="f32 adjPt_maxGrowVal2">
+      <DisplayName>調整係数2</DisplayName>
+      <Description>調整係数</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 adjPt_maxGrowVal3">
+      <DisplayName>調整係数3</DisplayName>
+      <Description>調整係数</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 adjPt_maxGrowVal4">
+      <DisplayName>調整係数4</DisplayName>
+      <Description>調整係数</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="f32 init_inclination_soul">
+      <DisplayName>成長ソウル 初期のグラフの傾きα1</DisplayName>
+      <Description>成長ソウル 初期のグラフの傾きα1</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="f32 adjustment_value">
+      <DisplayName>成長ソウル 初期のsoul調整α2</DisplayName>
+      <Description>成長ソウル 初期のsoul調整α2</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="f32 boundry_inclination_soul">
+      <DisplayName>成長ソウル 閾値後のグラフの傾きに影響α3</DisplayName>
+      <Description>成長ソウル 閾値後のグラフの傾きに影響α3</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 boundry_value">
+      <DisplayName>成長ソウル 閾値 t</DisplayName>
+      <Description>成長ソウル 閾値 t</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1000000</Maximum>
+      <Increment>1</Increment>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="dummy8 pad[4]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>2101</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

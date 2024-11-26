@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <sfxId_00 AltName="SFX ID [00]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_01 AltName="SFX ID [01]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_02 AltName="SFX ID [02]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_03 AltName="SFX ID [03]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_04 AltName="SFX ID [04]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_05 AltName="SFX ID [05]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_06 AltName="SFX ID [06]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_07 AltName="SFX ID [07]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_08 AltName="SFX ID [08]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_09 AltName="SFX ID [09]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_10 AltName="SFX ID [10]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_11 AltName="SFX ID [11]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_12 AltName="SFX ID [12]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_13 AltName="SFX ID [13]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_14 AltName="SFX ID [14]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_15 AltName="SFX ID [15]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_16 AltName="SFX ID [16]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_17 AltName="SFX ID [17]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_18 AltName="SFX ID [18]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_19 AltName="SFX ID [19]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_20 AltName="SFX ID [20]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_21 AltName="SFX ID [21]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_22 AltName="SFX ID [22]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_23 AltName="SFX ID [23]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_24 AltName="SFX ID [24]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_25 AltName="SFX ID [25]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_26 AltName="SFX ID [26]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_27 AltName="SFX ID [27]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_28 AltName="SFX ID [28]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_29 AltName="SFX ID [29]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_30 AltName="SFX ID [30]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_31 AltName="SFX ID [31]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+  </Field>
+  <Self />
+</PARAMMETA>

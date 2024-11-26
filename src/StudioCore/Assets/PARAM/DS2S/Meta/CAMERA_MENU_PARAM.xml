@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters relating to the camera in menu." Row0Dummy="" />
+  <Field>
+    <camera_horizontal_fov AltName="Camera Horizontal FOV"/>
+    <camera_horizontal_offset AltName="Camera Horizontal Offset"/>
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,4 @@
+0 Basic
+1 indoor
+2 boss battle
+50 p30300 cut3

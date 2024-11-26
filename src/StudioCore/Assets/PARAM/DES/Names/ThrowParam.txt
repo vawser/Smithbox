@@ -1,0 +1,39 @@
+4 PC → Snake Soldier (Swordsman) Stabbing after Paris (front)
+5 PC → Snake Soldier (Swordsman) Stabbing after Paris (after)
+8 PC → Snake Soldier (Swordsman) Back spinal cord stab
+22 PC → crocodile stop
+23 PC → crocodile stop
+1000 PC → slave soldier (dagger) Back stab
+1001 PC → slave soldier (dagger) throw after parry
+1010 PC → general soldier (long sword) back stabbing
+1011 PC→general soldier (long sword) throw after parry
+1020 PC → knight back stab
+1021 PC → Knight Throw after parry
+1030 PC → Assassin back stabbing
+1031 PC→Assassin Throw after Parry
+1040 PC → Corrupt Back stabbing
+1041 PC → Corrupt Throw after parry
+1050 PC → Skeleton Swordsman back stabbing
+1051 PC → Skeleton Swordsman Parry Post-Throw
+1060 PC→Skeleton Swordsman/Different color back stabbing
+1061 PC→Skeleton Swordsman・Different Color Parry Post Throw
+1070 PC → scale miner (pickle) back stab
+1071 PC → Scale Miner (Pickle) Parry Throw
+1080 PC → Jailer Stab in the back
+1081 PC → Jailer Throw after parry
+1100 PC → Prisoner Stab in the back
+1101 PC → Prisoner Parry back throw
+1110 PC → octopus head stabbed in the back
+1111 PC → Octopus head throw after parry
+1120 PC → Skeleton swordsman black back stabbing
+1121 PC → Skeleton Swordsman Black Parry Throw
+5000 Kagejo → PC back stab
+5010 Hawk → PC Throw
+5020 Octopus → PC brain combo
+5030 King's sword → PC frontal stab
+5040 Large mosquito → PC blood sucker
+5050 Worm → PC front stab
+5060 King Lendl → PC grab throw
+7050 PC → NPC back stab
+8000 PC → PC back stabbing
+8001 PC → PC Parry Throw

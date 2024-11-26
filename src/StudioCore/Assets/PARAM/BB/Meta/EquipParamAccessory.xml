@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="SP_EFFECT_CATEGORY">
+      <Option Value="0" Name="Default" />
+	  <Option Value="3" Name="Sorcery" />
+	  <Option Value="4" Name="Miracle" />
+      <Option Value="5" Name="Basic" />
+	  <Option Value="9" Name="Kick" />
+	  <Option Value="10" Name="Pyromancy" />
+    </Enum>
+    <Enum Name="BEHAVIOR_REF_TYPE">
+      <Option Value="0" Name="Behavior / None" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="ACCESSORY_TYPE">
+      <Option Value="0" Name="Ring" />
+      <Option Value="1" Name="Covenant" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_CATEGORY">
+      <Option Value="0" Name="Accessory" />
+      <Option Value="1" Name="Arm" />
+      <Option Value="2" Name="Body" />
+      <Option Value="3" Name="Face" />
+      <Option Value="4" Name="Hair" />
+      <Option Value="5" Name="Head" />
+      <Option Value="6" Name="Leg" />
+      <Option Value="7" Name="Weapon" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_GENDER">
+      <Option Value="0" Name="All" />
+      <Option Value="1" Name="Male/Female (1)" />
+      <Option Value="2" Name="Male/Female (2)" />
+      <Option Value="3" Name="Male/Female (3)" />
+      <Option Value="4" Name="Male" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Rings and Covenants"/>
+  <Field>
+    <refId AltName="Reference ID" Wiki="ID called from decorations" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
+    <sfxVariationId AltName="SFX Variation ID" />
+    <weight AltName="Weight" Wiki="Weight [kg]" />
+    <behaviorId AltName="Behavior ID" Wiki="Action ID (= Skill)" />
+    <basicPrice AltName="Basic Price" Wiki="Basic price" />
+    <sellValue AltName="Sell Value" Wiki="Selling price" />
+    <sortId AltName="Sort ID" Wiki="" />
+    <qwcId AltName="QWC ID" Wiki="" />
+    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number" />
+    <iconId AltName="Icon ID" Wiki="Menu icon ID" />
+    <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
+    <trophySGradeId AltName="Achievement Grade ID" Wiki="" />
+    <trophySeqId AltName="Achievement Sequential ID" Wiki="Trophy SEQ number" />
+    <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type" Enum="EQUIP_MODEL_CATEGORY" />
+    <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model" Enum="EQUIP_MODEL_GENDER" />
+    <accessoryCategory AltName="Accessory Type" Wiki="Armor category" Enum="ACCESSORY_TYPE" />
+    <refCategory AltName="Reference Type" Wiki=" ID category [Attack, Projectile, Special]" Enum="BEHAVIOR_REF_TYPE" />
+    <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="SP_EFFECT_CATEGORY" />
+    <pad Padding="" />
+    <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1: No vagrant 0: No lottery 1 ~: With lottery" />
+    <vagrantBonusEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1: No drop 0: No lottery 1 ~: With lottery" />
+    <vagrantItemEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1: No drop 0: No lottery 1 ~: With lottery" />
+    <isDeposit AltName="Can Deposit" IsBool="" />
+    <isEquipOutBrake AltName="Break on Unequip" IsBool="" />
+    <disableMultiDropShare AltName="Disable Multiplayer Sharing" Wiki="Prevents item from appearing to other players when dropped." IsBool="" />
+    <pad1 Padding="" />
+    
+  </Field>
+</PARAMMETA>

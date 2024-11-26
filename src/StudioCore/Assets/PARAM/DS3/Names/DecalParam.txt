@@ -1,0 +1,108 @@
+0 Test
+41 Oil pots (floor)
+1090000 Attack - Blood (dead) - Front Character
+1090001 Attack - Blood (dead) - Middle Upper Character
+1090002 Attack - Blood (dead) - Middle Lower Character
+1090003 Attack - Blood (dead) - Left Character
+1090004 Attack - Blood (dead) - Right Character
+1090100 Attack - Blood (dead) - Front Map
+1090101 Attack - Blood (dead) - Middle Upper Map
+1090102 Attack - Blood (dead) - Middle Lower Map
+1090103 Attack - Blood (dead) - Left Map
+1090104 Attack - Blood (dead) - Right Map
+1091000 Attack - Mild Blood (dead) - Front Character
+1091001 Attack - Mild Blood (dead) - Middle Upper Character
+1091002 Attack - Mild Blood (dead) - Middle Lower Character
+1091003 Attack - Mild Blood (dead) - Left Character
+1091004 Attack - Mild Blood (dead) - Right Character
+1091100 Attack - Mild Blood (dead) - Front Map
+1091101 Attack - Mild Blood (dead) - Middle Upper Map
+1091102 Attack - Mild Blood (dead) - Middle Lower Map
+1091103 Attack - Mild Blood (dead) - Left Map
+1091104 Attack - Mild Blood (dead) - Right Map
+1410000 Attack - Curse - Front
+1410001 Attack - Curse - Middle Upper
+1410002 Attack - Curse - Middle Lower
+1410003 Attack - Curse - Left
+1410004 Attack - Curse - Right
+1420000 Attack - Maggots - Front
+1420001 Attack - Maggots - Middle Upper
+1420002 Attack - Maggots - Middle Lower
+1420003 Attack - Maggots - Left
+1420004 Attack - Maggots - Right
+1460000 Attack - Blood (PC) - Front Character
+1460001 Attack - Blood (PC) - Middle Upper Character
+1460002 Attack - Blood (PC) - Middle Lower Character
+1460003 Attack - Blood (PC) - Left Character
+1460004 Attack - Blood (PC) - Right Character
+1460100 Attack - Blood (PC) - Front Map
+1460101 Attack - Blood (PC) - Middle Upper Map
+1460102 Attack - Blood (PC) - Middle Lower Map
+1460103 Attack - Blood (PC) - Left Map
+1460104 Attack - Blood (PC) - Right Map
+1461000 Attack - Mild Blood (PC) - Front Character
+1461001 Attack - Mild Blood (PC) - Middle Upper Character
+1461002 Attack - Mild Blood (PC) - Middle Lower Character
+1461003 Attack - Mild Blood (PC) - Left Character
+1461004 Attack - Mild Blood (PC) - Right Character
+1461100 Attack - Mild Blood (PC) - Front Map
+1461101 Attack - Mild Blood (PC) - Middle Upper Map
+1461102 Attack - Mild Blood (PC) - Middle Lower Map
+1461103 Attack - Mild Blood (PC) - Left Map
+1461104 Attack - Mild Blood (PC) - Right Map
+8000300 Dark Flame
+8000301 Oil pots (for pairs of characters)
+8010510 Dark Knight Beast - Frost
+8010511 Dark Knight Beast - Frost attack
+8010512 Dark Knight Beast - Frost attack (wide range)
+8010513 Dark Knight Beast - Frost attack (3008)
+8010520 c1090 dead Soldier: Evil spirits - knocked back against caries
+8010530 The tracker (red) knocked back against attack
+8010531 The tracker (red) Nagi 90 degrees
+8010532 The tracker (red) ground stabbing and line-catching attack
+8010533 The tracker (red) Ground stab attack
+8010534 The tracker (red) Horizontal Nagi attack
+8010535 The tracker (red) Nagi-90 degrees
+8010536 The tracker (red) Nagi (3005)
+8010537 The tracker (red) Horizontal Nagi (3025)
+8010538 The tracker (red) Horizontal Nagi (3014, 1003017)
+8010539 The tracker (red) Horizontal rotation finish (1003020)
+8010540 tracker - cut scene of caries large
+8010541 tracker - cut scene caries small
+8010542 tracker - cut scene caries foot
+8010550 The tracker (red) Horizontal rotation loop (1003019)
+8010560 The tracker (caries sword) knocked back against
+8010561 The tracker (Caries sword) Stab
+8010562 The tracker (Caries Sword)
+8010563 The tracker (Caries sword) continuous lull
+8010564 The tracker (caries sword) Continuous stab
+8010565 The tracker (caries sword) knocked back against
+8010566 The tracker (Caries Sword)
+8010567 The tracker (Caries Sword)
+8010570 Full Armor Beast - Frost
+8010571 Full Armor Beast - Frost attack
+8010572 Full Armor Beast - Frost attack (knocked back against)
+8010580 Ojo 3 - Bleeding
+8010590 Dead Wax - wax bullet (floor)
+8010591 Dead Wax - wax bullet Character
+8010600 Hel Kite - at the time of erosion SAG appearance
+8010601 Hellfire Kite - dripping drip
+8010602 Hel Kite - at the time of Eclipse appearance
+8010603 Hel kite - erosion appearance at the time of the ceiling
+8011580 Ojo 3 - bleeding blood mild
+8023000 m30_00 - Hell kite Breath Burn marks
+8023900 M39_00 - in blood (dead)
+8023901 【 m39_00 】 Large Blood (dead)
+9000100 PC bleeding - footprints blood feet
+9000101 PC bleeding - footprint blood stains shoes
+9000102 PC bleeding - footprints blood stains large shoes
+9000110 PC Bleeding - PC Bleeding
+9000111 PC Bleeding - PC Bleeding (Large)
+9001100 PC bleeding - footprints blood mild
+9001101 PC bleeding - footprints blood stains shoes mild
+9001102 PC bleeding - footprints blood mild large shoes
+9001110 PC Bleeding - PC Bleeding Blood Mild
+9001111 PC Bleeding - PC bleeding (large) blood mild
+9990000 Test
+9990001 Test
+9990002 Test

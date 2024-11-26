@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TENTATIVE_PLAYER_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 PlayerFootEffect_bySFX">
+      <DisplayName>プレイヤーの自動フットエフェクトのSFX識別子[3桁]</DisplayName>
+      <Description>フットエフェクトのSFXIDに使われる識別子です。XYYZZZのZZZにあたります。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 SnipeModeDrawAlpha_FadeTime">
+      <DisplayName>精密射撃時プレイヤー非表示フェード時間</DisplayName>
+      <Description>精密射撃時にプレイヤーを非表示にするときのフェード時間です。単位は秒。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 ToughnessRecoverCorrection">
+      <DisplayName>プレイヤー強靭度 回復時間補正値</DisplayName>
+      <Description>プレイヤーの強靭度回復時間の計算に使われる補正値です。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 DeceasedThreshold">
+      <DisplayName>亡者化する亡者度の閾値</DisplayName>
+      <Description>亡者度がこの値以上の時に死亡したとき、亡者になります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s8 Reserved03">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s8 GiantNutGetRand_MaxProbability">
+      <DisplayName>侵入された時の巨人の木の実抽選上限確率</DisplayName>
+      <Description>侵入された時の巨人の木の実抽選上限確率</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 AnimeID_DropItemPick">
+      <DisplayName>ドロップアイテム取得アニメーションID</DisplayName>
+      <Description>ドロップアイテムを拾った時のアニメーションID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 AnimeID_CofferItemPick">
+      <DisplayName>宝箱アイテム取得アニメーションID</DisplayName>
+      <Description>宝箱からアイテムを拾った時のアニメーションID（使われてない？）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s32 LoadOfCinderSpEffectId1">
+      <DisplayName>薪の王時特殊効果１</DisplayName>
+      <Description>薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s32 LoadOfCinderSpEffectId2">
+      <DisplayName>薪の王時特殊効果２</DisplayName>
+      <Description>薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 LoadOfCinderSpEffectId3">
+      <DisplayName>薪の王時特殊効果３</DisplayName>
+      <Description>薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 LoadOfCinderSpEffectId4">
+      <DisplayName>薪の王時特殊効果４</DisplayName>
+      <Description>薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 LoadOfCinderSpEffectId5">
+      <DisplayName>薪の王時特殊効果５</DisplayName>
+      <Description>薪の王時に付与する特殊効果。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 LowStatus_AtkPowDown">
+      <DisplayName>ステータス不足 基本攻撃力低下量</DisplayName>
+      <Description>ステータス不足 基本攻撃力低下量</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 LowStatus_ConsumeStaminaRate">
+      <DisplayName>ステータス不足 スタミナ消費倍率</DisplayName>
+      <Description>ステータス不足 スタミナ消費倍率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 LowStatus_AtkGuardBreak">
+      <DisplayName>ステータス不足 弾き攻撃力</DisplayName>
+      <Description>ステータス不足 弾き攻撃力</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s16 GuardStatusCorrect_MaxStatusVal">
+      <DisplayName>盾ステータス補正 判定ステータス最大値</DisplayName>
+      <Description>盾の性能のステータス補正値を計算するときに使う、性能が上昇する最大ステータス値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s32 HeroAmongSinnersSpEffectId1">
+      <DisplayName>マルチプレイ時引継ぎ薪の王特殊効果１</DisplayName>
+      <Description>マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s32 HeroAmongSinnersSpEffectId2">
+      <DisplayName>マルチプレイ時引継ぎ薪の王特殊効果２</DisplayName>
+      <Description>マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s32 HeroAmongSinnersSpEffectId3">
+      <DisplayName>マルチプレイ時引継ぎ薪の王特殊効果３</DisplayName>
+      <Description>マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s32 HeroAmongSinnersSpEffectId4">
+      <DisplayName>マルチプレイ時引継ぎ薪の王特殊効果４</DisplayName>
+      <Description>マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s32 HeroAmongSinnersSpEffectId5">
+      <DisplayName>マルチプレイ時引継ぎ薪の王特殊効果５</DisplayName>
+      <Description>マルチプレイ時に自身が薪の王状態の場合にかける特殊効果。役割（ロール）や召喚のされ方により引き継ぐ場合にのみかかる。薪の王じゃないときにはかけない。初回時に１回のみ付与するタイプ。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="s32 DebtSp">
+      <DisplayName>最大借金スタミナ</DisplayName>
+      <Description>最大マイナススタミナ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100000</Minimum>
+      <Maximum>100000</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="f32 WetOverrideInterpolateTime">
+      <DisplayName>濡れ上書き補間時間</DisplayName>
+      <Description>重複して濡れた時のマテリアル切り替え補間時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 EstusFlaskAllocateRate">
+      <DisplayName>マルチ時クライアント瓶補正倍率</DisplayName>
+      <Description>マルチ時クライアント瓶補正倍率(0.5指定で所持数半分に)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s8 GiantNutGetRand_Base">
+      <DisplayName>侵入された時の巨人の木の実抽選基本確率（％）</DisplayName>
+      <Description>侵入された時の巨人の木の実抽選基本確率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="s8 GiantNutGetRand_Bonus">
+      <DisplayName>侵入された時の巨人の木の実抽選ボーナス確率（％）</DisplayName>
+      <Description>侵入された時の巨人の木の実抽選ボーナス確率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="u8 KickAcceptanceDeg">
+      <DisplayName>プレイヤー正面から見てキックを出せる角度</DisplayName>
+      <Description>プレイヤー正面から見てキックを出せる角度</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>180</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="u8 NpcPlayerAnalogWeightRate_Light">
+      <DisplayName>NPCプレイヤー用アナログ重量比率_軽量</DisplayName>
+      <Description>NPCプレイヤー用アナログ重量比率[%]。軽量。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>200</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="u8 NpcPlayerAnalogWeightRate_Normal">
+      <DisplayName>NPCプレイヤー用アナログ重量比率_中量</DisplayName>
+      <Description>NPCプレイヤー用アナログ重量比率[%]。中量。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>200</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 NpcPlayerAnalogWeightRate_Heavy">
+      <DisplayName>NPCプレイヤー用アナログ重量比率_重量</DisplayName>
+      <Description>NPCプレイヤー用アナログ重量比率[%]。重量。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>200</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="u8 NpcPlayerAnalogWeightRate_WeightOver">
+      <DisplayName>NPCプレイヤー用アナログ重量比率_重量過多</DisplayName>
+      <Description>NPCプレイヤー用アナログ重量比率[%]。重量過多。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>200</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="u8 NpcPlayerAnalogWeightRate_SuperLight">
+      <DisplayName>NPCプレイヤー用アナログ重量比率_超軽量</DisplayName>
+      <Description>NPCプレイヤー用アナログ重量比率[%]。超軽量。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>200</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s32 GiantNutClientEffectId">
+      <DisplayName>巨人の木の実の種_闇霊効果用ID</DisplayName>
+      <Description>巨人の木の実の種の闇霊にかける特殊効果のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="s32 ClearCountCorrectBaseSpEffectId">
+      <DisplayName>周回補正特殊効果基準ID</DisplayName>
+      <Description>周回補正のためにかける特殊効果の基準ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s32 ArrowBoltModelIdOffset">
+      <DisplayName>矢、ボルトのモデルIdオフセット</DisplayName>
+      <Description>矢、ボルトモデルを表示する際に、スロット１に装備された場合のモデルIDに加えるオフセット。（モデルId+オフセット値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="s8 ArrowBoltRemainingNumModelMaskThreshold1">
+      <DisplayName>矢、ボルトの残量によるモデルマスクの残数閾値_1段階[%]</DisplayName>
+      <Description>矢、ボルトモデルを表示する際に、本数による表示マスクをかけるときの閾値の１段階判定値[%]。（この値より多ければ１段階表示）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="s8 ArrowBoltRemainingNumModelMaskThreshold2">
+      <DisplayName>矢、ボルトの残量によるモデルマスクの残数閾値_2段階[%]</DisplayName>
+      <Description>矢、ボルトモデルを表示する際に、本数による表示マスクをかけるときの閾値の２段階判定値[%]。（この値より多ければ２段階表示）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="s16 Reserved27">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Poision_Player">
+      <DisplayName>プレイヤー耐性値回復量_毒[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Desease_Player">
+      <DisplayName>プレイヤー耐性値回復量_疫病[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Blood_Player">
+      <DisplayName>プレイヤー耐性値回復量_出血[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Curse_Player">
+      <DisplayName>プレイヤー耐性値回復量_呪い[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Freeze_Player">
+      <DisplayName>プレイヤー耐性値回復量_冷気[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Poision_Enemy">
+      <DisplayName>敵耐性値回復量_毒[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Desease_Enemy">
+      <DisplayName>敵耐性値回復量_疫病[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Blood_Enemy">
+      <DisplayName>敵耐性値回復量_出血[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Curse_Enemy">
+      <DisplayName>敵耐性値回復量_呪い[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="f32 ResistRecoverPoint_Freeze_Enemy">
+      <DisplayName>敵耐性値回復量_冷気[point/s]</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999.99</Maximum>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="s32 DyingHp">
+      <DisplayName>瀕死HP</DisplayName>
+      <Description>現在HPがこの値以下ならプレイヤーは瀕死状態になる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="s32 SystemEnchant_LoadOfCinder">
+      <DisplayName>システム経由薪の王化用特殊効果ID</DisplayName>
+      <Description>システムからの薪の王化を行う際に呼び出す特殊効果Id</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="f32 EstusFlaskAllocateRateForBattleRoyalDuel">
+      <DisplayName>マルチ時クライアント瓶補正倍率(闘技場・決闘)</DisplayName>
+      <Description>マルチ時クライアント瓶の所持数の補正倍率(闘技場・決闘)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="s32 EstusFlaskAllocateOffsetForBattleRoyalDuel = 5">
+      <DisplayName>マルチ時クライアント瓶オフセット(闘技場・決闘)</DisplayName>
+      <Description>マルチ時クライアント瓶の所持数のオフセット(闘技場・決闘)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100000</Minimum>
+      <Maximum>100000</Maximum>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="f32 EstusFlaskAllocateRateForBattleRoyalFree">
+      <DisplayName>マルチ時クライアント瓶補正倍率(闘技場・乱闘)</DisplayName>
+      <Description>マルチ時クライアント瓶の所持数の補正倍率(闘技場・乱闘)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="s32 EstusFlaskAllocateOffsetForBattleRoyalFree = 1">
+      <DisplayName>マルチ時クライアント瓶オフセット(闘技場・乱闘)</DisplayName>
+      <Description>マルチ時クライアント瓶の所持数のオフセット(闘技場・乱闘)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100000</Minimum>
+      <Maximum>100000</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="f32 EstusFlaskAllocateRateForBattleRoyalTeam">
+      <DisplayName>マルチ時クライアント瓶補正倍率(闘技場・共闘)</DisplayName>
+      <Description>マルチ時クライアント瓶の所持数の補正倍率(闘技場・共闘)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="s32 EstusFlaskAllocateOffsetForBattleRoyalTeam = 1">
+      <DisplayName>マルチ時クライアント瓶オフセット(闘技場・共闘)</DisplayName>
+      <Description>マルチ時クライアント瓶の所持数のオフセット(闘技場・共闘)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100000</Minimum>
+      <Maximum>100000</Maximum>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="f32 HpEstusFlaskAllocateRateForYellowMonk">
+      <DisplayName>黄衣HPエスト瓶補正倍率 </DisplayName>
+      <Description>黄衣HPエスト瓶補正倍率 </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="s32 HpEstusFlaskAllocateOffsetForYellowMonk = 3">
+      <DisplayName>黄衣HPエスト瓶オフセット</DisplayName>
+      <Description>黄衣HPエスト瓶オフセット</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100000</Minimum>
+      <Maximum>100000</Maximum>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="f32 MpEstusFlaskAllocateRateForYellowMonk">
+      <DisplayName>黄衣MPエスト瓶補正倍率</DisplayName>
+      <Description>黄衣MPエスト瓶補正倍率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="s32 MpEstusFlaskAllocateOffsetForYellowMonk = 3">
+      <DisplayName>黄衣MPエスト瓶オフセット</DisplayName>
+      <Description>黄衣MPエスト瓶オフセット</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100000</Minimum>
+      <Maximum>100000</Maximum>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="s8 MoneyLostRate = 100">
+      <DisplayName>死亡時のお金ロスト率（％）</DisplayName>
+      <Description>死亡時のお金ロスト率（％）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="s8 SkillPointLostRate = 100">
+      <DisplayName>死亡時のスキル経験値ロスト率（％）</DisplayName>
+      <Description>死亡時のスキル経験値ロスト率（％）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="s16 Reserved50">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>64</SortID>
+    </Field>
+    <Field Def="s32 Reserved51">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>65</SortID>
+    </Field>
+    <Field Def="s32 Reserved52">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>66</SortID>
+    </Field>
+    <Field Def="s32 Reserved53">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>67</SortID>
+    </Field>
+    <Field Def="s32 Reserved54">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>68</SortID>
+    </Field>
+    <Field Def="s32 Reserved55">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>69</SortID>
+    </Field>
+    <Field Def="s32 Reserved56">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="s32 Reserved57">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="s32 Reserved58">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>72</SortID>
+    </Field>
+    <Field Def="s32 Reserved59">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>73</SortID>
+    </Field>
+    <Field Def="s32 Reserved60">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>74</SortID>
+    </Field>
+    <Field Def="s32 Reserved61">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>75</SortID>
+    </Field>
+    <Field Def="s32 Reserved62">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>76</SortID>
+    </Field>
+    <Field Def="s32 Reserved63">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>77</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

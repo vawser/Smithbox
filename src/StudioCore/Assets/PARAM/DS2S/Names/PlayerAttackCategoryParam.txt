@@ -1,0 +1,8 @@
+1 Long-range attack -- 長距離大攻撃
+2 Slow back attack -- 遅い背面攻撃
+3 Slow attacks -- 遅い攻撃
+4 Ordinary back attack -- 普通の背面攻撃
+5 Ordinary attacks -- 普通の攻撃
+6 Fast back attack -- 速い背面攻撃
+7 Fast Attack -- 速い攻撃
+8 Proximity bare hands -- 近接素手

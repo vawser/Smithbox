@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+   <ritualLv AltName="Ritual Level" Wiki="" />
+   <attributeId AltName="Attribute ID" Wiki="" />
+   <mapBaseId AltName="Map Base ID" Wiki="" />
+   <holygrailTypeId AltName="Holy Grail Type ID" Wiki="" />
+   <variationNum AltName="Random Structure Generation Count" Wiki="" />
+   <mainFeature_1 AltName="Main Feature ID" Wiki="" />
+   
+   <pad_0 Padding="" />
+   
+   <dungeonNameBaseId AltName="Dungeon Name Base ID" Wiki="" FmgRef="Title_Locations" />
+   <uniqueBaseFlagId AltName="Unique Base Flag ID" Wiki="" />
+   
+   <directMapUid AltName="Direct Map UID" Wiki="" />
+   <requiredMaterialId AltName="Required Material ID" Wiki="" Refs="RitualRequiredMatParam" />
+   <groupFrameNameId AltName="Group Selection Frame Name ID" Wiki="" />
+   
+   <uniqueItem00_head AltName="[0] Unique Item - Prefix" Wiki="" />
+   <uniqueItem00_tail AltName="[0] Unique Item - Postfix" Wiki="" />
+   <uniqueItem01_head AltName="[1] Unique Item - Prefix" Wiki="" />
+   <uniqueItem01_tail AltName="[1] Unique Item - Postfix" Wiki="" />
+   <uniqueItem02_head AltName="[2] Unique Item - Prefix" Wiki="" />
+   <uniqueItem02_tail AltName="[2] Unique Item - Postfix" Wiki="" />
+   <uniqueItem03_head AltName="[3] Unique Item - Prefix" Wiki="" />
+   <uniqueItem03_tail AltName="[3] Unique Item - Postfix" Wiki="" />
+   <uniqueItem04_head AltName="[4] Unique Item - Prefix" Wiki="" />
+   <uniqueItem04_tail AltName="[4] Unique Item - Postfix" Wiki="" />
+   <uniqueItem05_head AltName="[5] Unique Item - Prefix" Wiki="" />
+   <uniqueItem05_tail AltName="[5] Unique Item - Postfix" Wiki="" />
+   <uniqueItem06_head AltName="[6] Unique Item - Prefix" Wiki="" />
+   <uniqueItem06_tail AltName="[6] Unique Item - Postfix" Wiki="" />
+   <uniqueItem07_head AltName="[7] Unique Item - Prefix" Wiki="" />
+   <uniqueItem07_tail AltName="[7] Unique Item - Postfix" Wiki="" />
+   <uniqueItem08_head AltName="[8] Unique Item - Prefix" Wiki="" />
+   <uniqueItem08_tail AltName="[8] Unique Item - Postfix" Wiki="" />
+   <uniqueItem09_head AltName="[9] Unique Item - Prefix" Wiki="" />
+   <uniqueItem09_tail AltName="[9] Unique Item - Postfix" Wiki="" />
+   <uniqueItem10_head AltName="[10] Unique Item - Prefix" Wiki="" />
+   <uniqueItem10_tail AltName="[10] Unique Item - Postfix" Wiki="" />
+   <uniqueItem11_head AltName="[11] Unique Item - Prefix" Wiki="" />
+   <uniqueItem11_tail AltName="[11] Unique Item - Postfix" Wiki="" />
+   <uniqueItem12_head AltName="[12] Unique Item - Prefix" Wiki="" />
+   <uniqueItem12_tail AltName="[12] Unique Item - Postfix" Wiki="" />
+   <uniqueItem13_head AltName="[13] Unique Item - Prefix" Wiki="" />
+   <uniqueItem13_tail AltName="[13] Unique Item - Postfix" Wiki="" />
+   <uniqueItem14_head AltName="[14] Unique Item - Prefix" Wiki="" />
+   <uniqueItem14_tail AltName="[14] Unique Item - Postfix" Wiki="" />
+  
+   <fixedSf_1_subFeatureLotId AltName="Fixed: Sub-Feature Lottery ID [1]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <fixedSf_2_subFeatureLotId AltName="Fixed: Sub-Feature Lottery ID [2]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <fixedSf_3_subFeatureLotId AltName="Fixed: Sub-Feature Lottery ID [3]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <fixedSf_4_subFeatureLotId AltName="Fixed: Sub-Feature Lottery ID [4]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <fixedSf_5_subFeatureLotId AltName="Fixed: Sub-Feature Lottery ID [5]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <freeSf_1_subFeatureLotId AltName="Free: Sub-Feature Lottery ID [1]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <freeSf_2_subFeatureLotId AltName="Free: Sub-Feature Lottery ID [2]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <freeSf_3_subFeatureLotId AltName="Free: Sub-Feature Lottery ID [3]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   
+   <isGenericHolygrail AltName="Is Generic" Wiki="" IsBool="" />
+   <releaseFlagIdOffset AltName="Ban Event Flag Offset ID" Wiki="" />
+   
+   <pad_3 Padding="" />
+   
+   <groupSf_1_subFeatureLotId AltName="Group: Sub-Feature Lottery ID [1]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <groupSf_2_subFeatureLotId AltName="Group: Sub-Feature Lottery ID [2]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <groupSf_3_subFeatureLotId AltName="Group: Sub-Feature Lottery ID [3]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <groupSf_4_subFeatureLotId AltName="Group: Sub-Feature Lottery ID [4]" Wiki="" Refs="DungeonSubFeatLotParam" />
+   <groupSf_5_subFeatureLotId AltName="Group: Sub-Feature Lottery ID [5]" Wiki="" Refs="DungeonSubFeatLotParam" />
+  </Field>
+  <Self Wiki="Chalice Dungeon - Rituals"/>
+</PARAMMETA>

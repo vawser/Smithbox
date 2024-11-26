@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<bonusSoul_single Wiki="Amount of Souls obtained when the boss is defeated during singleplayer" />
+	<bonusSoul_multi Wiki="Amount of Souls obtained when the boss is defeated during multiplayer" />
+	<humanityPointCountFlagIdTop Wiki="Leading flag ID for managing humanity drop points" />
+	<humanityDropPoint1 Wiki="Threshold 1 for acquiring humanity" />
+	<humanityDropPoint2 Wiki="Threshold 2 for acquiring humanity" />
+	<humanityDropPoint3 Wiki="Threshold 3 for acquiring humanity" />
+	<humanityDropPoint4 Wiki="Threshold 4 for acquiring humanity" />
+	<humanityDropPoint5 Wiki="Threshold 5 for acquiring humanity" />
+	<humanityDropPoint6 Wiki="Threshold 6 for acquiring humanity" />
+	<humanityDropPoint7 Wiki="Threshold 7 for acquiring humanity" />
+	<humanityDropPoint8 Wiki="Threshold 8 for acquiring humanity" />
+	<humanityDropPoint9 Wiki="Threshold 9 for acquiring humanity" />
+	<humanityDropPoint10 Wiki="Threshold 10 for acquiring humanity" />
+	<soloBreakInPoint_Min Wiki="The minimum number of solo entry points added when defeating an area boss" />
+	<soloBreakInPoint_Max Wiki="The maximum number of solo entry points added when defeating an area boss" />
+	<bonusSkillPoint Wiki="Amount of XP obtianed when the boss is defeated" />
+	<reserve />
+  </Field>
+  <Self Wiki="Defines Boss XP and Sen rewards" AlternativeOrder="bonusSoul_single,bonusSoul_multi,bonusSkillPoint,-,
+soloBreakInPoint_Max,soloBreakInPoint_Min,-,
+humanityDropPoint1,humanityDropPoint2,humanityDropPoint3,humanityDropPoint4,humanityDropPoint5,humanityDropPoint6,humanityDropPoint7,humanityDropPoint8,humanityDropPoint9,humanityDropPoint10,humanityPointCountFlagIdTop,-" />
+</PARAMMETA>

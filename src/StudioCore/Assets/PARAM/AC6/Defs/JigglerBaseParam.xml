@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>JIGGLER_BASE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 ctrlType">
+      <DisplayName>設定方法</DisplayName>
+      <Enum>JIGGLER_CTRL_TYPE</Enum>
+      <Description>Jigglerをどこに設定するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 calcType = 1">
+      <DisplayName>計算順</DisplayName>
+      <Enum>JIGGLER_CALC_TYPE</Enum>
+      <Description>計算順序</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <Maximum>3</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="dummy8 reserved1[2]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>5001</SortID>
+    </Field>
+    <Field Def="u32 dmyPolyId">
+      <DisplayName>ダミポリID</DisplayName>
+      <Description>適用するダミポリID（設定方法がダミポリの場合のみ有効）</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <Maximum>9999999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="fixstr strCtrlBoneName[24]">
+      <DisplayName>制御ボーン名</DisplayName>
+      <Description>適用するボーン名（設定方法がスケルトンの場合のみ有効）</Description>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="dummy8 reserved2[8]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>5002</SortID>
+    </Field>
+    <Field Def="u8 axisX">
+      <DisplayName>X軸として扱う軸</DisplayName>
+      <Enum>IK_KNEE_AXIS_TYPE</Enum>
+      <Description>X軸として扱う軸（他の軸とかぶらないように）</Description>
+      <Maximum>1</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 axisY">
+      <DisplayName>Y軸として扱う軸</DisplayName>
+      <Enum>IK_KNEE_AXIS_TYPE</Enum>
+      <Description>Y軸として扱う軸（他の軸とかぶらないように）</Description>
+      <Maximum>1</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 axisZ">
+      <DisplayName>重心の軸</DisplayName>
+      <Enum>IK_KNEE_AXIS_TYPE</Enum>
+      <Description>重心となる軸（他の軸とかぶらないように）</Description>
+      <Maximum>1</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 bUseFollowBaseBone">
+      <DisplayName>【自機EO】EO制御にするか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>自機EOの制御にするか（EOのルート関節でのみON）</Description>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+      <UnkC8>自機EO</UnkC8>
+    </Field>
+    <Field Def="s8 limitAngleDeg_MinX">
+      <DisplayName>【回転】X軸最小角度[度]</DisplayName>
+      <Description>X軸の最小角度</Description>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="s8 limitAngleDeg_MaxX">
+      <DisplayName>【回転】X軸最大角度[度]</DisplayName>
+      <Description>X軸の最大角度</Description>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="s8 limitAngleDeg_MinY">
+      <DisplayName>【回転】Y軸最小角度[度]</DisplayName>
+      <Description>Y軸の最小角度</Description>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="s8 limitAngleDeg_MaxY">
+      <DisplayName>【回転】Y軸最大角度[度]</DisplayName>
+      <Description>Y軸の最大角度</Description>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u32 behaviorParamId">
+      <DisplayName>Jiggler回転挙動パラメータID</DisplayName>
+      <Description>回転挙動パラメータのID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="u32 behaviorSlideParamId">
+      <DisplayName>Jiggler移動挙動パラメータID</DisplayName>
+      <Description>移動挙動パラメータのID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="f32 limitOffset_MinX">
+      <DisplayName>【位置】X軸最小オフセット</DisplayName>
+      <Description>X軸の最小オフセット</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 limitOffset_MaxX">
+      <DisplayName>【位置】X軸最大オフセット</DisplayName>
+      <Description>X軸の最大オフセット</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 limitOffset_MinY">
+      <DisplayName>【位置】Y軸最小オフセット</DisplayName>
+      <Description>Y軸の最小オフセット</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 limitOffset_MaxY">
+      <DisplayName>【位置】Y軸最大オフセット</DisplayName>
+      <Description>Y軸の最大オフセット</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 limitOffset_MinZ">
+      <DisplayName>【位置】Z軸最小オフセット</DisplayName>
+      <Description>Z軸の最小オフセット</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 limitOffset_MaxZ">
+      <DisplayName>【位置】Z軸最大オフセット</DisplayName>
+      <Description>Z軸の最大オフセット</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u32 behaviorWorldFixParamId">
+      <DisplayName>Jigglerワールドに対して固定パラメータID</DisplayName>
+      <Description>ワールドに対して固定パラメータのID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="u32 behaviorTargetBoneRateParamId">
+      <DisplayName>Jiggler指定関節からの割合パラメータID</DisplayName>
+      <Description>指定関節からの割合パラメータのID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="dummy8 pad[16]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>5003</SortID>
+    </Field>
+    <Field Def="f32 followBaseBone_SpineFollowRateRot = 1">
+      <DisplayName>【自機EO】Spineへの追従率（回転）</DisplayName>
+      <Description>"Spine"の回転後位置への追従率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+      <UnkC8>自機EO</UnkC8>
+    </Field>
+    <Field Def="f32 followBaseBone_SpineFollowRatePos = 1">
+      <DisplayName>【自機EO】Spineへの追従率（位置）</DisplayName>
+      <Description>"Spine"の位置追従率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+      <UnkC8>自機EO</UnkC8>
+    </Field>
+    <Field Def="f32 followBaseBone_OffsetX">
+      <DisplayName>【自機EO】追従基準位置オフセットX</DisplayName>
+      <Description>"Spine"からのオフセット位置</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5000</SortID>
+      <UnkC8>自機EO</UnkC8>
+    </Field>
+    <Field Def="f32 followBaseBone_OffsetY">
+      <DisplayName>【自機EO】追従基準位置オフセットY</DisplayName>
+      <Description>"Spine"からのオフセット位置</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5000</SortID>
+      <UnkC8>自機EO</UnkC8>
+    </Field>
+    <Field Def="f32 followBaseBone_OffsetZ">
+      <DisplayName>【自機EO】追従基準位置オフセットZ</DisplayName>
+      <Description>"Spine"からのオフセット位置</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5000</SortID>
+      <UnkC8>自機EO</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserved4[40]">
+      <DisplayName>パディング3</DisplayName>
+      <SortID>5004</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

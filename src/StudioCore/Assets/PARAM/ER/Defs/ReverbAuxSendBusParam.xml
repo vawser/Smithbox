@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>REVERB_AUX_SEND_BUS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="fixstr ReverbAuxSendBusName[32]">
+      <DisplayName>ReverbAuxSendBus名</DisplayName>
+      <Description>ReverbAuxSendBus名</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

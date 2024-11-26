@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>LOD_BANK_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="f32 lv01_BorderDist = 5">
+      <DisplayName>LODレベル0-1境界距離[m]</DisplayName>
+      <Description>切り替わる中心。マイナス値の場合は、LOD1、LOD2に切り替わらない。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="f32 lv01_PlayDist = 1">
+      <DisplayName>LODレベル0-1遊び距離[m]</DisplayName>
+      <Description>境界中心で±遊び</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="f32 lv12_BorderDist = 20">
+      <DisplayName>LODレベル1-2境界距離[m]</DisplayName>
+      <Description>切り替わる中心。マイナス値の場合は、LOD2に切り替わらない。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="f32 lv12_PlayDist = 2">
+      <DisplayName>LODレベル1-2遊び距離[m]</DisplayName>
+      <Description>境界中心で±遊び</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>104</SortID>
+    </Field>
+    <Field Def="u32 textureLod:1 = 1">
+      <DisplayName>テクスチャLOD</DisplayName>
+      <Description>テクスチャLOD(0:無効, 1:有効)</Description>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>105</SortID>
+    </Field>
+    <Field Def="f32 draw_BorderDist = 9999">
+      <DisplayName>描画境界距離[m]</DisplayName>
+      <Description>切り替わる中心。マイナス値の場合は、常に描画します。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 draw_PlayDist = 1">
+      <DisplayName>描画遊び距離[m]</DisplayName>
+      <Description>境界中心で±遊び</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="f32 shadowDraw_BorderDist = 9999">
+      <DisplayName>影描画境界距離[m]</DisplayName>
+      <Description>切り替わる中心。マイナス値の場合は、常に描画します。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 shadowDraw_PlayDist = 1">
+      <DisplayName>影描画遊び距離[m]</DisplayName>
+      <Description>境界中心で±遊び</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="f32 motionBlur_BorderDist = 9999">
+      <DisplayName>モーションブラー描画境界距離[m]</DisplayName>
+      <Description>切り替え距離。マイナス値の場合は、常に描画します。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 motionBlur_PlayDist = 1">
+      <DisplayName>モーションブラー描画遊び距離[m]</DisplayName>
+      <Description>境界中心で±遊び</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>401</SortID>
+    </Field>
+    <Field Def="u8 type">
+      <DisplayName>タイプ</DisplayName>
+      <Description>タイプ</Description>
+    </Field>
+    <Field Def="u8 lodCrossFadeEnable">
+      <DisplayName>LOD間のクロスフェード有効</DisplayName>
+      <Description>1でクロスフェード有効。0で無効。</Description>
+      <Maximum>1</Maximum>
+      <SortID>106</SortID>
+    </Field>
+    <Field Def="dummy8 dummy[2]">
+      <DisplayName>予約</DisplayName>
+      <SortID>402</SortID>
+    </Field>
+    <Field Def="f32 lodCrossFadeTime = 0.2">
+      <DisplayName>LOD間のクロスフェード時間[秒]</DisplayName>
+      <Description>「LOD間のクロスフェード有効」が有効な場合に使用されるパラメータです。0.0秒の場合、時間ではなく距離でクロスフェードを行います。</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>107</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[12]">
+      <DisplayName>予約</DisplayName>
+      <SortID>403</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

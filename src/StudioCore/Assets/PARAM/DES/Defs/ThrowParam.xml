@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>THROW_INFO_BANK</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="s32 AtkChrId">
+      <DisplayName>投げ側キャラID</DisplayName>
+      <Description>投げ側キャラID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+    </Field>
+    <Field Def="s32 DefChrId">
+      <DisplayName>受け側キャラID</DisplayName>
+      <Description>受け側キャラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+    </Field>
+    <Field Def="dummy8 pad0[8]">
+      <DisplayName>パディング0</DisplayName>
+      <DisplayFormat>%</DisplayFormat>
+    </Field>
+    <Field Def="u8 PadType">
+      <DisplayName>操作タイプ</DisplayName>
+      <Enum>THROW_PAD_TYPE</Enum>
+      <Description>操作タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="u8 AtkEnableState">
+      <DisplayName>投げ側の投げ可能状態タイプ</DisplayName>
+      <Enum>THROW_ENABLE_STATE</Enum>
+      <Description>投げ側の投げ可能状態タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="u8 DefEnableState">
+      <DisplayName>受け側の投げ可能状態タイプ</DisplayName>
+      <Enum>THROW_ENABLE_STATE</Enum>
+      <Description>受け側の投げ可能状態タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="u8 isFaceToFace">
+      <DisplayName>正面で向き合うか</DisplayName>
+      <Description>1:正面で向き合う。0:二人とも同じ方向になる。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 isMoveAttacker">
+      <DisplayName>攻撃側が移動するか(1:有効)</DisplayName>
+      <Description>攻撃側が移動するか(1:有効)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 DisableTurn">
+      <DisplayName>受け側の旋回無効(1:無効)</DisplayName>
+      <Description>受け側の旋回無効(1:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 ThrowAtkStateType">
+      <DisplayName>投げ側状態タイプ</DisplayName>
+      <Enum>THROW_ATK_STATE</Enum>
+      <Description>投げ側の状態タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="u8 ThrowDefStateType">
+      <DisplayName>受け側状態タイプ</DisplayName>
+      <Enum>THROW_DEF_STATE</Enum>
+      <Description>受け側の状態タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="f32 Dist">
+      <DisplayName>有効距離</DisplayName>
+      <Description>有効距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 ValidAngF">
+      <DisplayName>角度範囲　前面</DisplayName>
+      <Description>角度範囲　前面</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+    </Field>
+    <Field Def="f32 ValidAngB">
+      <DisplayName>角度範囲　背面</DisplayName>
+      <Description>角度範囲　背面</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+    </Field>
+    <Field Def="f32 DiffAngMin">
+      <DisplayName>相手との向きの角度差範囲min</DisplayName>
+      <Description>相手との向きの角度差範囲min</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+    </Field>
+    <Field Def="f32 DiffAngMax">
+      <DisplayName>相手との向きの角度差範囲max</DisplayName>
+      <Description>相手との向きの角度差範囲max</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+    </Field>
+    <Field Def="f32 MoveDist">
+      <DisplayName>吸い込み距離</DisplayName>
+      <Description>吸い込み距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-10000</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="f32 upperYRange = 0.2">
+      <DisplayName>高さ範囲上[m]</DisplayName>
+      <Description>相手との高さ範囲上</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+    </Field>
+    <Field Def="f32 lowerYRange = 0.2">
+      <DisplayName>高さ範囲下[m]</DisplayName>
+      <Description>相手との高さ範囲下</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+    </Field>
+    <Field Def="s16 behaviorJudgeId">
+      <DisplayName>行動判定ID</DisplayName>
+      <Description>行動判定ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>10000</Maximum>
+    </Field>
+    <Field Def="dummy8 pading[6]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <padKeyId
+    AltName="Pad: Key ID"
+    Wiki="A key on a controller."
+    Enum="CS_PAD_KEY" />
+    
+    <keyboardModifyKey
+    AltName="Keyboard: Modifier Key ID"
+    Wiki="A modifier key on a keyboard."
+    Enum="CS_MODIFIER_KEY" />
+    
+    <keyboardKeyId
+    AltName="Keyboard: Key ID"
+    Wiki="A key on a keyboard."
+    Enum="CS_KEYBOARD_KEY" />
+    
+    <mouseModifyKey
+    AltName="Mouse: Modified Key ID"
+    Wiki="A modifier key on a mouse."
+    Enum="CS_MODIFIER_KEY" />
+    
+    <mouseKeyId
+    AltName="Mouse: Key ID"
+    Wiki="A key on a mouse."
+    Enum="CS_MOUSE_KEY" />
+    
+    <reserved
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="CS_PAD_KEY" type="s32">
+        <Option Value="-1" Name="None" />
+        <Option Value="2000" Name="Up" />
+        <Option Value="2001" Name="Down" />
+        <Option Value="2002" Name="Left" />
+        <Option Value="2003" Name="Right" />
+        <Option Value="2004" Name="A" />
+        <Option Value="2005" Name="B" />
+        <Option Value="2006" Name="X" />
+        <Option Value="2007" Name="Y" />
+        <Option Value="2008" Name="Left Bottom Trigger" />
+        <Option Value="2009" Name="Right Bottom Trigger" />
+        <Option Value="2010" Name="Left Stick: Push" />
+        <Option Value="2011" Name="Right Stick: Push" />
+        <Option Value="2012" Name="Back" />
+        <Option Value="2013" Name="Start" />
+        <Option Value="2900" Name="OK" />
+        <Option Value="2901" Name="Cancel" />
+        <Option Value="3000" Name="Left Top Trigger" />
+        <Option Value="3001" Name="Right Top Trigger" />
+        <Option Value="3002" Name="Left Stick: X" />
+        <Option Value="3003" Name="Left Stick: Y" />
+        <Option Value="3004" Name="Right Stick: X" />
+        <Option Value="3005" Name="Right Stick: Y" />
+    </Enum>
+    <Enum Name="CS_MODIFIER_KEY" type="s32">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Ctrl +" />
+        <Option Value="2" Name="Alt +" />
+        <Option Value="3" Name="Shift +" />
+    </Enum>
+    <Enum Name="CS_KEYBOARD_KEY" type="s32">
+        <Option Value="-1" Name="None" />
+        <Option Value="99" Name="A" />
+        <Option Value="117" Name="B" />
+        <Option Value="115" Name="C" />
+        <Option Value="101" Name="D" />
+        <Option Value="87" Name="E" />
+        <Option Value="102" Name="F" />
+        <Option Value="103" Name="G" />
+        <Option Value="104" Name="H" />
+        <Option Value="92" Name="I" />
+        <Option Value="105" Name="J" />
+        <Option Value="106" Name="K" />
+        <Option Value="107" Name="L" />
+        <Option Value="119" Name="M" />
+        <Option Value="118" Name="N" />
+        <Option Value="93" Name="O" />
+        <Option Value="94" Name="P" />
+        <Option Value="85" Name="Q" />
+        <Option Value="88" Name="R" />
+        <Option Value="100" Name="S" />
+        <Option Value="89" Name="T" />
+        <Option Value="91" Name="U" />
+        <Option Value="116" Name="V" />
+        <Option Value="86" Name="W" />
+        <Option Value="114" Name="X" />
+        <Option Value="90" Name="Y" />
+        <Option Value="113" Name="Z" />
+        <Option Value="80" Name="0" />
+        <Option Value="71" Name="1" />
+        <Option Value="72" Name="2" />
+        <Option Value="73" Name="3" />
+        <Option Value="74" Name="4" />
+        <Option Value="75" Name="5" />
+        <Option Value="76" Name="6" />
+        <Option Value="77" Name="7" />
+        <Option Value="78" Name="8" />
+        <Option Value="79" Name="9" />
+        <Option Value="120" Name="Comma" />
+        <Option Value="121" Name="Period" />
+        <Option Value="108" Name="Semi-Colon" />
+        <Option Value="109" Name="Apostrophe" />
+        <Option Value="111" Name="Left Shift" />
+        <Option Value="123" Name="Right Shift" />
+        <Option Value="98" Name="Left Control" />
+        <Option Value="176" Name="Right Control" />
+        <Option Value="125" Name="Left Alt" />
+        <Option Value="187" Name="Right Alt" />
+        <Option Value="70" Name="Esc" />
+        <Option Value="84" Name="Tab" />
+        <Option Value="83" Name="Backspace" />
+        <Option Value="97" Name="Enter" />
+        <Option Value="126" Name="Space" />
+        <Option Value="197" Name="Insert" />
+        <Option Value="198" Name="Delete" />
+        <Option Value="189" Name="Home" />
+        <Option Value="194" Name="End" />
+        <Option Value="191" Name="Page Up" />
+        <Option Value="196" Name="Page Down" />
+        <Option Value="190" Name="Up" />
+        <Option Value="195" Name="Down" />
+        <Option Value="192" Name="Left" />
+        <Option Value="193" Name="Right" />
+        <Option Value="128" Name="F1" />
+        <Option Value="129" Name="F2" />
+        <Option Value="130" Name="F3" />
+        <Option Value="131" Name="F4" />
+        <Option Value="132" Name="F5" />
+        <Option Value="133" Name="F6" />
+        <Option Value="134" Name="F7" />
+        <Option Value="135" Name="F8" />
+        <Option Value="136" Name="F9" />
+        <Option Value="137" Name="F10" />
+        <Option Value="154" Name="F11" />
+        <Option Value="155" Name="F12" />
+        <Option Value="151" Name="Num-Pad 0" />
+        <Option Value="148" Name="Num-Pad 1" />
+        <Option Value="149" Name="Num-Pad 2" />
+        <Option Value="150" Name="Num-Pad 3" />
+        <Option Value="144" Name="Num-Pad 4" />
+        <Option Value="145" Name="Num-Pad 5" />
+        <Option Value="146" Name="Num-Pad 6" />
+        <Option Value="140" Name="Num-Pad 7" />
+        <Option Value="141" Name="Num-Pad 8" />
+        <Option Value="142" Name="Num-Pad 9" />
+        <Option Value="152" Name="Num-Pad Period" />
+        <Option Value="175" Name="Num-Pad Enter" />
+        <Option Value="147" Name="Num-Pad +" />
+        <Option Value="143" Name="Num-Pad -" />
+        <Option Value="124" Name="Num-Pad *" />
+        <Option Value="185" Name="Num-Pad /" />
+    </Enum>
+    <Enum Name="CS_MOUSE_KEY" type="s32">
+        <Option Value="0" Name="Unassigned" />
+        <Option Value="1" Name="Right Click" />
+        <Option Value="2" Name="Left Click" />
+        <Option Value="3" Name="Extension Button 0" />
+        <Option Value="4" Name="Extension Button 1" />
+        <Option Value="5" Name="Extension Button 2" />
+        <Option Value="6" Name="Extension Button 3" />
+        <Option Value="7" Name="Extension Button 4" />
+        <Option Value="8" Name="Middle Click" />
+        <Option Value="9" Name="Up Scroll" />
+        <Option Value="10" Name="Down Scroll" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

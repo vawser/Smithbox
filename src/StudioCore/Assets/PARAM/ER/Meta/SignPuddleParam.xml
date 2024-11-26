@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
+    <matchAreaId AltName="Match Area ID" Wiki="ID of the simple match area to which it belongs" />
+    <pad1 AltName="" Padding=""/>
+    
+    <areaNo AltName="Map Area" Wiki="AA part of mAA_BB_CC_DD" />
+    <gridXNo AltName="Map Block" Wiki="BB part of mAA_BB_CC_DD" />
+    <gridZNo AltName="Map Region" Wiki="CC part of mAA_BB_CC_DD" />
+    <pad3 AltName="" Padding=""/>
+    
+    <posX AltName="Coordinate: X" Wiki="X coordinate" />
+    <posY AltName="Coordinate: Y" Wiki="Y coordinate (not used)" />
+    <posZ AltName="Coordinate: Z" Wiki="Z coordinate" />
+    
+    <signSubCategoryId AltName="Sign Sub Category ID" Refs="SignPuddleSubCategoryParam" />
+    <locationTextId AltName="Location Text ID" FmgRef="Title_Locations" />
+    <sortId AltName="Sort ID" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CHARACTER_INIT_PARAM</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="s32 baseVit">
+      <DisplayName>体力</DisplayName>
+      <Description>体力の基本値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 baseWil">
+      <DisplayName>精神</DisplayName>
+      <Description>精神の基本値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 baseEnd">
+      <DisplayName>頑強</DisplayName>
+      <Description>頑強の基本値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 baseStr">
+      <DisplayName>筋力</DisplayName>
+      <Description>筋力の基本値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 baseDex">
+      <DisplayName>俊敏</DisplayName>
+      <Description>俊敏の基本値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 baseMag">
+      <DisplayName>魔力</DisplayName>
+      <Description>魔力の基本値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 baseFai">
+      <DisplayName>信仰</DisplayName>
+      <Description>信仰の基本値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 baseLuc">
+      <DisplayName>運</DisplayName>
+      <Description>運の基本値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 baseHp">
+      <DisplayName>ＨＰ基本値</DisplayName>
+      <Description>ＨＰの基本値（実際は、計算式で補正される）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="s32 baseMp">
+      <DisplayName>ＭＰ基本値</DisplayName>
+      <Description>ＭＰの基本値（実際は、計算式で補正される）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="f32 baseRec_mp">
+      <DisplayName>ＭＰ回復速度基本値[s]</DisplayName>
+      <Description>ＭＰが、1ポイント回復するまでの時間（小数点第一位）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="s32 baseSp">
+      <DisplayName>スタミナ基本値</DisplayName>
+      <Description>スタミナの基本値（実際は、計算式で補正される）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="f32 baseRec_sp">
+      <DisplayName>スタミナ回復速度基本値[s]</DisplayName>
+      <Description>スタミナが、1ポイント回復するまでの時間（小数点第一位）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 red_Falldam">
+      <DisplayName>落下ダメージ軽減補正[%]</DisplayName>
+      <Description>他のキャラクターに上からのしかかれたときに、クッションとなりえるダメージ軽減量（％）（小数点第一位）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="s32 soul">
+      <DisplayName>初期ソウル</DisplayName>
+      <Description>初期に所持しているソウル量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+07</Maximum>
+    </Field>
+    <Field Def="s32 equip_Wep_Right = -1">
+      <DisplayName>右手武器</DisplayName>
+      <Description>装備品パラメータの武器ＩＤ(右手)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Subwep_Right = -1">
+      <DisplayName>右手予備武器</DisplayName>
+      <Description>装備品パラメータの武器ＩＤ(右手予備)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Wep_Left = -1">
+      <DisplayName>左手武器</DisplayName>
+      <Description>装備品パラメータの武器ＩＤ(左手)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Subwep_Left = -1">
+      <DisplayName>左手予備武器</DisplayName>
+      <Description>装備品パラメータの武器ＩＤ(左手予備)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Helm = -1">
+      <DisplayName>頭防具</DisplayName>
+      <Description>装備品パラメータの防具ＩＤ(頭防具)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Armer = -1">
+      <DisplayName>胴体防具</DisplayName>
+      <Description>装備品パラメータの防具ＩＤ(胴体防具)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Gaunt = -1">
+      <DisplayName>腕防具</DisplayName>
+      <Description>装備品パラメータの防具ＩＤ(腕防具)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Leg = -1">
+      <DisplayName>脚防具</DisplayName>
+      <Description>装備品パラメータの防具ＩＤ(脚防具)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Arrow = -1">
+      <DisplayName>矢</DisplayName>
+      <Description>装備品パラメータの武器ＩＤ(矢)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 arrowNum">
+      <DisplayName>矢の所持数</DisplayName>
+      <Description>矢の初期所持数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+    </Field>
+    <Field Def="s32 equip_Bolt = -1">
+      <DisplayName>ボルト</DisplayName>
+      <Description>装備品パラメータの武器ＩＤ(ボルト)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 boltNum">
+      <DisplayName>ボルトの所持数</DisplayName>
+      <Description>ボルトの初期所持数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+    </Field>
+    <Field Def="s32 equip_Accessory01 = -1">
+      <DisplayName>装飾品1</DisplayName>
+      <Description>装備品パラメータの装飾品ＩＤ01</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Accessory02 = -1">
+      <DisplayName>装飾品2</DisplayName>
+      <Description>装備品パラメータの装飾品ＩＤ02</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Accessory03 = -1">
+      <DisplayName>装飾品3</DisplayName>
+      <Description>装備品パラメータの装飾品ＩＤ03</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Accessory04 = -1">
+      <DisplayName>装飾品4</DisplayName>
+      <Description>装備品パラメータの装飾品ＩＤ04</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Accessory05 = -1">
+      <DisplayName>装飾品5</DisplayName>
+      <Description>装備品パラメータの装飾品ＩＤ05</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Skill_01 = -1">
+      <DisplayName>スキル1</DisplayName>
+      <Description>初期装備のスキルＩD01</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Skill_02 = -1">
+      <DisplayName>スキル2</DisplayName>
+      <Description>初期装備のスキルＩD02</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Skill_03 = -1">
+      <DisplayName>スキル3</DisplayName>
+      <Description>初期装備のスキルＩD03</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Spell_01 = -1">
+      <DisplayName>魔法・奇跡1</DisplayName>
+      <Description>初期配置の魔法・奇跡ID01</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Spell_02 = -1">
+      <DisplayName>魔法・奇跡2</DisplayName>
+      <Description>初期配置の魔法・奇跡ID02</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Spell_03 = -1">
+      <DisplayName>魔法・奇跡3</DisplayName>
+      <Description>初期配置の魔法・奇跡ID03</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Spell_04 = -1">
+      <DisplayName>魔法・奇跡4</DisplayName>
+      <Description>初期配置の魔法・奇跡ID04</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Spell_05 = -1">
+      <DisplayName>魔法・奇跡5</DisplayName>
+      <Description>初期配置の魔法・奇跡ID05</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Spell_06 = -1">
+      <DisplayName>魔法・奇跡6</DisplayName>
+      <Description>初期配置の魔法・奇跡ID06</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 equip_Spell_07 = -1">
+      <DisplayName>魔法・奇跡7</DisplayName>
+      <Description>初期配置の魔法・奇跡ID07</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 QWC_sb">
+      <DisplayName>傾向係数　S-B軸</DisplayName>
+      <Description>基本QWC値(Sword-Bow)</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s32 QWC_mw">
+      <DisplayName>傾向係数　M-W軸</DisplayName>
+      <Description>基本QWC値(Mace-Wand)</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s32 QWC_cd">
+      <DisplayName>傾向係数　C-D軸</DisplayName>
+      <Description>基本QWC値(理解-拡散)</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+    <Field Def="s32 item_01 = -1">
+      <DisplayName>アイテム01</DisplayName>
+      <Description>初期所持のアイテムID01</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_01">
+      <DisplayName>アイテム01の所持数</DisplayName>
+      <Description>初期所持のアイテム個数01</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 item_02 = -1">
+      <DisplayName>アイテム02</DisplayName>
+      <Description>初期所持のアイテムID02</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_02">
+      <DisplayName>アイテム02の所持数</DisplayName>
+      <Description>初期所持のアイテム個数02</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 item_03 = -1">
+      <DisplayName>アイテム03</DisplayName>
+      <Description>初期所持のアイテムID03</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_03">
+      <DisplayName>アイテム03の所持数</DisplayName>
+      <Description>初期所持のアイテム個数03</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 item_04 = -1">
+      <DisplayName>アイテム04</DisplayName>
+      <Description>初期所持のアイテムID04</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_04">
+      <DisplayName>アイテム個数04</DisplayName>
+      <Description>初期所持のアイテム個数04</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 item_05 = -1">
+      <DisplayName>アイテム05</DisplayName>
+      <Description>初期所持のアイテムID05</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_05">
+      <DisplayName>アイテム個数05</DisplayName>
+      <Description>初期所持のアイテム個数05</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 item_06 = -1">
+      <DisplayName>アイテム06</DisplayName>
+      <Description>初期所持のアイテムID06</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_06">
+      <DisplayName>アイテム個数06</DisplayName>
+      <Description>初期所持のアイテム個数06</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 item_07 = -1">
+      <DisplayName>アイテム07</DisplayName>
+      <Description>初期所持のアイテムID07</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_07">
+      <DisplayName>アイテム個数07</DisplayName>
+      <Description>初期所持のアイテム個数07</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 item_08 = -1">
+      <DisplayName>アイテム08</DisplayName>
+      <Description>初期所持のアイテムID08</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_08">
+      <DisplayName>アイテム個数08</DisplayName>
+      <Description>初期所持のアイテム個数08</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 item_09 = -1">
+      <DisplayName>アイテム09</DisplayName>
+      <Description>初期所持のアイテムID09</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_09">
+      <DisplayName>アイテム個数09</DisplayName>
+      <Description>初期所持のアイテム個数09</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 item_10 = -1">
+      <DisplayName>アイテム10</DisplayName>
+      <Description>初期所持のアイテムID10</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 itemNum_10">
+      <DisplayName>アイテム個数10</DisplayName>
+      <Description>初期所持のアイテム個数10</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 npcPlayerFaceGenId">
+      <DisplayName>フェイスジェンパラメータID</DisplayName>
+      <Description>NPCプレイヤーで使用するフェイスジェンパラメータID。通常プレイヤーでは使用しません。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="s32 npcPlayerThinkId">
+      <DisplayName>NPCプレイヤーの思考ID</DisplayName>
+      <Description>NPCプレイヤーで使用するNPC思考パラメータID。通常プレイヤーでは使用しません。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u8 npcPlayerType">
+      <DisplayName>NPCプレイヤーのNPCタイプ</DisplayName>
+      <Enum>NPC_TYPE</Enum>
+      <Description>NPCプレイヤーで使用するNPCタイプ。通常プレイヤーでは使用しません。</Description>
+    </Field>
+    <Field Def="u8 npcPlayerDrawType">
+      <DisplayName>NPCプレイヤーの描画タイプ</DisplayName>
+      <Enum>NPC_DRAW_TYPE</Enum>
+      <Description>NPCプレイヤーで使用する描画タイプ。通常プレイヤーでは使用しません。</Description>
+    </Field>
+    <Field Def="u8 npcPlayerSex">
+      <DisplayName>NPCプレイヤーの性別</DisplayName>
+      <Enum>CHARACTER_INIT_SEX</Enum>
+      <Description>NPCプレイヤーで使用する性別です。通常プレイヤーには反映しません。</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 pad0[17] = -1">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

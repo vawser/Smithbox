@@ -1,0 +1,4 @@
+0 Do not erase
+100 Normal Enemy
+200 Strong Enemy
+300 Boss

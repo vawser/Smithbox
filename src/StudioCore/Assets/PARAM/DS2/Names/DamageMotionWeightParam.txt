@@ -1,0 +1,151 @@
+1 No -- 無
+2 Small  -- 小
+3 In -- 中
+4 Large -- 大
+5 Oversized -- 特大
+6 Super oversized -- 超特大
+7 Super-oversized -- 超超特大
+1010 No No Motion -- 無 ノーモーション
+1020 Tiny No Motion -- 極小 ノーモーション
+1030 Small No Motion -- 小 ノーモーション
+1040 Medium No Motion -- 中 ノーモーション
+1050 Great No Motion -- 大 ノーモーション
+1060 Oversized No Motion -- 特大 ノーモーション
+1070 Super Oversized No Motion -- 超特大 ノーモーション
+1080 Super-oversized no-motion -- 超超特大 ノーモーション
+2010 No small -- 無 極小
+2020 Very small -- 極小 極小
+2030 Small and small -- 小 極小
+2040 Medium minimum -- 中 極小
+2050 Very small -- 大 極小
+2060 Oversized minimum -- 特大 極小
+2070 Ultra-large minimum -- 超特大 極小
+2080 Ultra-large ultra-large -- 超超特大 極小
+3010 No Small Knockback -- 無 小ノックバック
+3020 Tiny Small Knockback -- 極小 小ノックバック
+3030 Small Knockback -- 小 小ノックバック
+3040 Medium Small Knockback -- 中 小ノックバック
+3050 Big Small Knockback -- 大 小ノックバック
+3060 Oversized Small Knockback -- 特大 小ノックバック
+3070 Super Oversized Small Knockback -- 超特大 小ノックバック
+3080 Super Super Oversized Small KnockBack -- 超超特大 小ノックバック
+4010 No Big Knockback -- 無 大ノックバック
+4020 Tiny Big Knockback -- 極小 大ノックバック
+4030 Small Big Knockback -- 小 大ノックバック
+4040 Medium Large Knockback -- 中 大ノックバック
+4050 Great Knockback -- 大 大ノックバック
+4060 Oversized Knockback -- 特大 大ノックバック
+4070 Super Oversized Big Knockback -- 超特大 大ノックバック
+4080 Super Super Oversized Big Knockback -- 超超特大 大ノックバック
+5010 No extra large -- 無 特大
+5020 Very small OVERSIZED -- 極小 特大
+5030 Small and extra large -- 小 特大
+5040 Medium Size -- 中 特大
+5050 Large Extra Size -- 大 特大
+5060 Extra-large Oversized -- 特大 特大
+5070 Super Oversized Extra Large -- 超特大 特大
+5080 Super Extra Large Extra Large -- 超超特大 特大
+6010 No blown away -- 無 吹き飛び
+6020 Tiny blowaway -- 極小 吹き飛び
+6030 Small blowaway -- 小 吹き飛び
+6040 Inside blown away -- 中 吹き飛び
+6050 Big Blowaway -- 大 吹き飛び
+6060 Oversized blowaway -- 特大 吹き飛び
+6070 Super Oversized Blowaway -- 超特大 吹き飛び
+6080 Super Super Extra Large Blown Off -- 超超特大 吹き飛び
+7010 No launch -- 無 打ち上げ
+7020 Tiny Launch -- 極小 打ち上げ
+7030 Small Launch -- 小 打ち上げ
+7040 Medium Launch -- 中 打ち上げ
+7050 Big Launch -- 大 打ち上げ
+7060 Oversized Launch -- 特大 打ち上げ
+7070 Super-oversized launch -- 超特大 打ち上げ
+7080 Super-oversized launch -- 超超特大 打ち上げ
+8010 No Breath -- 無 ブレス
+8020 Tiny Breath -- 極小 ブレス
+8030 Small Breath -- 小 ブレス
+8040 Medium Breath -- 中 ブレス
+8050 Great Breath -- 大 ブレス
+8060 Oversized Breath -- 特大 ブレス
+8070 Super Oversized Breath -- 超特大 ブレス
+8080 Super Super Oversized Breath -- 超超特大 ブレス
+9010 No fall -- 無 転倒
+9020 Very small fall -- 極小 転倒
+9030 Small fall -- 小 転倒
+9040 Middle fall -- 中 転倒
+9050 A big fall -- 大 転倒
+9060 Oversized fall -- 特大 転倒
+9070 Super oversized fall -- 超特大 転倒
+9080 Super Super Oversized Fall -- 超超特大 転倒
+10010 No Parii Break -- 無 パリィブレイク
+10020 Tiny Break -- 極小 パリィブレイク
+10030 Small Parii Break -- 小 パリィブレイク
+10040 Medium Pari-Blake -- 中 パリィブレイク
+10050 Great Pariei Break -- 大 パリィブレイク
+10060 Oversized Pari-Blake -- 特大 パリィブレイク
+10070 Super Oversized Pariei Break -- 超特大 パリィブレイク
+10080 Super Oversized Pariei Break -- 超超特大 パリィブレイク
+11010 No Guard Break -- 無 ガードブレイク
+11020 Tiny Guard Break -- 極小 ガードブレイク
+11030 Small Guard Break -- 小 ガードブレイク
+11040 Medium Guard Break -- 中 ガードブレイク
+11050 Large Guard Break -- 大 ガードブレイク
+11060 Oversized Guard Break -- 特大 ガードブレイク
+11070 Super Oversized Guard Break -- 超特大 ガードブレイク
+11080 Super Super Oversized Guard Break -- 超超特大 ガードブレイク
+12010 No- no- no- no- -- 無 気絶
+12020 Very fainted -- 極小 気絶
+12030 Small fainting -- 小 気絶
+12040 Medium Faint -- 中 気絶
+12050 Great stunned -- 大 気絶
+12060 Oversized Stuns -- 特大 気絶
+12070 Super Oversized Stuns -- 超特大 気絶
+12080 Super Super Oversized Stuns -- 超超特大 気絶
+13010 No bleeding -- 無 出血
+13020 Tiny bleeding -- 極小 出血
+13030 Small bleeding -- 小 出血
+13040 Medium bleeding -- 中 出血
+13050 Large bleeding -- 大 出血
+13060 Oversized bleeding -- 特大 出血
+13070 Super oversized bleeding -- 超特大 出血
+13080 Super extra large bleeding -- 超超特大 出血
+14010 No- no- no- no- no- no -- 無 掴み
+14020 Tiny Gripping -- 極小 掴み
+14030 Small grab -- 小 掴み
+14040 Inside- grab it. -- 中 掴み
+14050 Big Grab -- 大 掴み
+14060 Oversized Gripping -- 特大 掴み
+14070 Super Oversized Gripping -- 超特大 掴み
+14080 Super Super Extra Large Gripping -- 超超特大 掴み
+15010 No headshot -- 無 ヘッドショット
+15020 Tiny Headshot -- 極小 ヘッドショット
+15030 Small Headshot -- 小 ヘッドショット
+15040 Medium Headshot -- 中 ヘッドショット
+15050 Large Headshot -- 大 ヘッドショット
+15060 Oversized Headshot -- 特大 ヘッドショット
+15070 Super Oversized Headshot -- 超特大 ヘッドショット
+15080 Super Super Oversized Headshot -- 超超特大 ヘッドショット
+16010 No Jump Collision Ground -- 無 ジャンプ衝突地上
+16020 Tiny Jump Collision Ground -- 極小 ジャンプ衝突地上
+16030 Small Jump Collision Ground -- 小 ジャンプ衝突地上
+16040 Medium Jump collision ground -- 中 ジャンプ衝突地上
+16050 Large Jump Collision Ground -- 大 ジャンプ衝突地上
+16060 Oversized Jump Collision Ground -- 特大 ジャンプ衝突地上
+16070 Super-oversized jump collision ground -- 超特大 ジャンプ衝突地上
+16080 Super-oversized jump collision ground -- 超超特大 ジャンプ衝突地上
+17010 No jump collision in the air -- 無 ジャンプ衝突空中
+17020 Tiny Jump Collision Mid-Air -- 極小 ジャンプ衝突空中
+17030 Small Jump Collision In Mid-Air -- 小 ジャンプ衝突空中
+17040 Medium Jump collision in mid -- 中 ジャンプ衝突空中
+17050 Large Jump Collision Mid-Air -- 大 ジャンプ衝突空中
+17060 Oversized Jump Collision Mid-Air -- 特大 ジャンプ衝突空中
+17070 Super Oversized Jump Collision Mid-Air -- 超特大 ジャンプ衝突空中
+17080 Super Super Oversized Jump Collision Mid-Air -- 超超特大 ジャンプ衝突空中
+18010 no crumbling -- 無_崩れ落ち
+18020 Very small collapse -- 極小_崩れ落ち
+18030 Small fall -- 小_崩れ落ち
+18040 Middle_crumbling -- 中_崩れ落ち
+18050 Great fall -- 大_崩れ落ち
+18060 Oversized collapse -- 特大_崩れ落ち
+18070 Super-oversized_ crumbling -- 超特大_崩れ落ち
+18080 Super Super Oversized_ Collapse -- 超超特大_崩れ落ち

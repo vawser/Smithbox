@@ -1,0 +1,39 @@
+0 Do not erase
+300000000 High Wall of Lothric
+300000001 High Wall of Lothric
+300100000 Lothric Castle
+310000000 Undead Settlement
+320000000 Archdragon Peak
+330000000 Road of Sacrifices / Farron Keep
+330000001 Road of Sacrifices / Farron Keep
+340100000 Grand Archives
+340100001 Grand Archives
+350000000 Cathedral of the Deep
+350000001 Cathedral of the Deep
+370000000 Irithyll of the Boreal Valley
+370000001 Irithyll of the Boreal Valley
+370000002 Irithyll of the Boreal Valley
+380000000 Catacombs of Carthus / Smouldering Lake
+380000001 Catacombs of Carthus / Smouldering Lake
+390000000 Irithyll Dungeon / Profaned Capital
+400000000 Cemetery of Ash / Untended Graves
+410000000 Flameless Shrine
+450000000 Ariandel
+450000001 Ariandel
+450000002 Ariandel
+450000003 Ariandel
+450000004 Ariandel
+450000005 Ariandel
+460000000 Arena - Grand Roof
+470000000 Arena - Kiln of Flame
+500000000 Dreg Heap
+500000001 Dreg Heap
+510000000 The Ringed City
+510000001 The Ringed City
+510000002 The Ringed City
+510000003 The Ringed City
+510000004 The Ringed City
+510000005 The Ringed City
+510100000 Filianore's Rest
+530000000 Arena - Dragon Ruins
+540000000 Arena - Round Plaza

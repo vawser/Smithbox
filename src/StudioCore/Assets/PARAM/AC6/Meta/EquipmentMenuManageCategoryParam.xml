@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <PropertyLayoutID 
+    AltName="Menu Layout" 
+    Wiki="Determines how this element is laid out in the menu." 
+    Refs="MenuPropertyLayoutParam" />
+    
+    <CategoryNameTextID 
+    AltName="Category Name ID" 
+    Wiki="The text that appears for this category." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <CategoryIconID 
+    AltName="Category Icon ID" 
+    Wiki="ID of category icon." />
+    
+    <SortID 
+    AltName="Sort ID" 
+    Wiki="Determines the order of this entry within the menu. 0 is top." />
+    
+    <HelpID
+    AltName="Help ID"
+    Wiki="ID of the movie to play for the help video." 
+    MovieAlias="" />
+    
+    <reserved 
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

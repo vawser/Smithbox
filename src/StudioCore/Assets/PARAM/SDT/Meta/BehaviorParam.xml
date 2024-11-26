@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="AtkParam" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="(Pc) Kusabimaru attacks and combat arts" />
+      <Option Value="2" Name="(Pc) Prosthetics" />
+      <Option Value="5" Name="(Pc) Throws" />
+      <Option Value="6" Name="(Npc) Default" />
+      <Option Value="7" Name="(Npc) Offsets blocked/deflected reactions by 2" />
+      <Option Value="8" Name="(Npc) Offsets blocked/deflected reactions by 4" />
+      <Option Value="9" Name="(Pc) Bullets attached to combat arts" />
+    </Enum>
+  </Enums>
+  <Field>
+    <variationId Wiki="For Npc's - References the behavioVariationId of the Npc in NpcParam, will only work for Npc's with the same behaviorVariationId. For Player - References behaviorVariationId on weapons, will only work with weapons that have the same behaviorVariationId." VRef="behaviorVariation" />
+    <behaviorJudgeId Wiki="Id used in animations to reference this behavior" />
+    <ezStateBehaviorType_old />
+    <refType Wiki="Defines what param this behavior references" Enum="BEHAVIOR_REF_TYPE" />
+    <wepCost Wiki="Determines whether or not this behavior will consume spirit emblems" IsBool="" />
+    <refId Wiki="References AtkParam, Bullet, or SpEffectParam depending upon the refType" Refs="Bullet(refType=1),AtkParam_Npc(refType=0),AtkParam_Pc(refType=0),SpEffectParam(refType=2)" />
+    <sfxVariationId />
+    <stamina Wiki="Amount of Posture consumed when this behavior is invoked" />
+    <mp Wiki="Amount of Fp/Mp consumed when this behavior is invoked" />
+    <category Wiki="Unique properties attached to this behavior" Enum="BEHAVIOR_CATEGORY" />
+    <heroPoint Wiki="Amount of humanity consumed when this behavior is invoked" />
+  </Field>
+  <Self Wiki="Registers hitboxes and bullets while also handling some special properties" AlternativeOrder="variationId,behaviorJudgeId,ezStateBehaviorType_old,-,
+refType,refId,category,wepCost,stamina,sfxVariationId,-,
+mp,heroPoint,-" />
+</PARAMMETA>

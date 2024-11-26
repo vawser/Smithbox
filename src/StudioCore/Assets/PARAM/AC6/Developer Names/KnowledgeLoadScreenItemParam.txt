@@ -1,0 +1,5 @@
+10000 Bering Special District -- ベーリング分領特区
+10001 PBA
+10002 shell plant -- シェル・プラント
+10003 bayram industry -- ベイラム・インダストリー
+10004 central ice field -- 中央氷原

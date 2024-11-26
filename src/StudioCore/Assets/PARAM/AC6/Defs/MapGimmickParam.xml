@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MAP_GIMMICK_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u16 gimmickType">
+      <DisplayName>ギミックタイプ</DisplayName>
+      <Description>EzStateやemsの関連付けを行う数値</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 pad[14]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

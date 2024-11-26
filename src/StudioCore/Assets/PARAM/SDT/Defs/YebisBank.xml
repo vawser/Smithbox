@@ -1,0 +1,1039 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>YEBIS_BANK</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 enableFilter = 1">
+      <DisplayName>フィルタ有効化</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>フィルタ有効化</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 clearBgColorR">
+      <DisplayName>背景のクリアするときの色:R</DisplayName>
+      <Description>背景のクリアするときの色:R</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 clearBgColorG">
+      <DisplayName>背景のクリアするときの色:G</DisplayName>
+      <Description>背景のクリアするときの色:G</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 clearBgColorB">
+      <DisplayName>背景のクリアするときの色:B</DisplayName>
+      <Description>背景のクリアするときの色:B</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 clearBgColorA">
+      <DisplayName>背景のクリアするときの色:A</DisplayName>
+      <Description>背景のクリアするときの色:A</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 rotateScale = 1">
+      <DisplayName>回転速度(スケール)または回転角度[rad]</DisplayName>
+      <Description>回転速度(スケール)または回転角度[rad]</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 rotateOffsetInDeg = 1">
+      <DisplayName>回転角度の全体のオフセット[deg]</DisplayName>
+      <Description>回転角度の全体のオフセット[deg]</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 diarotType = 1">
+      <DisplayName>回転制御の種類</DisplayName>
+      <Enum>YEBIS_DIAROT_TYPE</Enum>
+      <Description>回転制御の種類</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u32 glareQuality = 1">
+      <DisplayName>グレアクオリティ</DisplayName>
+      <Description>グレアクオリティ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>7</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u32 depthOfFieldQuality = 1">
+      <DisplayName>被写界深度クオリティ</DisplayName>
+      <Description>被写界深度クオリティ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>12</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 exposure = 1">
+      <DisplayName>トーンマップの露出設定</DisplayName>
+      <Description>トーンマップの露出設定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 gammma = 2.2">
+      <DisplayName>トーンマップのガンマ設定</DisplayName>
+      <Description>トーンマップのガンマ設定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 toneType = 2">
+      <DisplayName>トーンマップのタイプ設定</DisplayName>
+      <Enum>YEBIS_TONE_TYPE</Enum>
+      <Description>トーンマップのタイプ設定</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>6</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 toneMapFactor = 32">
+      <DisplayName>トーンマップの出力係数設定</DisplayName>
+      <Description>トーンマップの出力係数設定(HDR空間でどの程度の輝度までが最終LDR空間に有意に影響するか)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 filmicContrast = 0.5">
+      <DisplayName>簡易感光シミュレーション特性設定</DisplayName>
+      <Description>簡易敢行シミュレーション特性設定(全体的なコントラスト設定でSetToneMapType==GX_POST_PROCESS_TONE_TYPE_SENSITOMETRICのときに有効)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 colorCorrectH">
+      <DisplayName>色調補正の色相</DisplayName>
+      <Description>色調補正の色相(Hue)(0.0f～360.0f)[deg]</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="f32 colorCorrectS = 1">
+      <DisplayName>色調補正の彩度</DisplayName>
+      <Description>色調補正の彩度(0.0f:彩度最低～1.0f:変化なし～&gt;1.0f:彩度高)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="f32 colorCorrectV = 1">
+      <DisplayName>色調補正の明度</DisplayName>
+      <Description>色調補正の明度(0.0f:暗～1.0f:変化なし～&gt;1.0f:明)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u32 enableAutoExposure">
+      <DisplayName>自動露出調整有効化</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>自動露出調整有効化</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="f32 exposureDelayFrame = 1">
+      <DisplayName>自動露出調整の遅延フレーム[frame]</DisplayName>
+      <Description>自動露出調整の遅延フレーム[frame]</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 toneExposureMin = 0.001">
+      <DisplayName>最小露出スケール</DisplayName>
+      <Description>最小露出スケール(この値未満の露出にならないようにする)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>30</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="f32 toneExposureMax = 30">
+      <DisplayName>最大露出スケール</DisplayName>
+      <Description>最大露出スケール(この値より大きい露出にならないようにする)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>30</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="f32 adaptationSensitivity = 0.5">
+      <DisplayName>(明順応)調整の感度</DisplayName>
+      <Description>(明順応)調整の感度</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="f32 adaptationScale = 0.85">
+      <DisplayName>(基準より露出を下げる方向への)調整の度合</DisplayName>
+      <Description>(基準より露出を下げる方向への)調整の度合</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 adaptationSpeedLimit = 8">
+      <DisplayName>(明順応)調整速度の最大値(秒速2のべき乗単位)</DisplayName>
+      <Description>(明順応)調整速度の最大値(秒速2のべき乗単位)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="f32 darkAdaptationSensitivity = -1">
+      <DisplayName>(暗順応)調整の感度</DisplayName>
+      <Description>(暗順応)調整の感度</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="f32 darkAdaptationScale = -1">
+      <DisplayName>(基準より露出を上げる方向への)調整の度合</DisplayName>
+      <Description>(基準より露出を上げる方向への)調整の度合</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="f32 darkAdaptationSpeedLimit = -1">
+      <DisplayName>暗順応調整速度の最大値(秒速 2 のべき乗単位)</DisplayName>
+      <Description>暗順応調整速度の最大値(秒速 2 のべき乗単位)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="f32 lightDarkExposureBorder = 1">
+      <DisplayName>adaptationScaleおよびdarkAdaptatio</DisplayName>
+      <Description>adaptationScaleおよびdarkAdaptationScaleの基準となる露出</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="f32 meteringAreaWidth = 1">
+      <DisplayName>測光領域のサイズ(幅)をスクリーン幅を1.0とする比率で指定</DisplayName>
+      <Description>測光領域のサイズ(幅)をスクリーン幅を1.0とする比率で指定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.001</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="f32 meteringAreaHeight = 1">
+      <DisplayName>測光領域のサイズ(高さ)をスクリーン高を1.0とする比率で指定</DisplayName>
+      <Description>測光領域のサイズ(高さ)をスクリーン高を1.0とする比率で指定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.001</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 meteringAreaOffsetX">
+      <DisplayName>測光領域の開始位置(左端)をスクリーン幅を1.0とする正規化座</DisplayName>
+      <Description>測光領域の開始位置(左端)をスクリーン幅を1.0とする正規化座標単位で指定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="f32 meteringAreaOffsetY">
+      <DisplayName>測光領域の開始位置(上端)をスクリーン高を1.0とする正規化座</DisplayName>
+      <Description>測光領域の開始位置(上端)をスクリーン高を1.0とする正規化座標単位で指定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="f32 middleGray = 0.18">
+      <DisplayName>自動露出調整の目標とする適正な画面の明るさ設定</DisplayName>
+      <Description>自動露出調整の目標とする適正な画面の明るさ設定(0.0f&lt;middleGray&lt;=1.0f)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.001</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="u32 enableChromaticAberration = 1">
+      <DisplayName>色収差有効化</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>色収差有効化</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s32 sampleNum = 3">
+      <DisplayName>波長のサンプリング数</DisplayName>
+      <Enum>YEBIS_ABERRATION_SAMPLE</Enum>
+      <Description>波長のサンプリング数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>7</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="f32 lateralDispersionX">
+      <DisplayName>倍率色収差の分散X</DisplayName>
+      <Description>倍率色収差の分散X</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="f32 lateralDispersionY">
+      <DisplayName>倍率色収差の分散Y</DisplayName>
+      <Description>倍率色収差の分散Y</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="f32 uniformDispersionX">
+      <DisplayName>固定の色収差の分散X</DisplayName>
+      <Description>固定の色収差の分散X</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="f32 uniformDispersionY">
+      <DisplayName>固定の色収差の分散Y</DisplayName>
+      <Description>固定の色収差の分散Y</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="f32 vignettePower">
+      <DisplayName>周辺光量低下の強度</DisplayName>
+      <Description>周辺光量低下の強度</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="f32 vignetteFovDependence = 0.05">
+      <DisplayName>画角による周辺光量低下への影響の強さ</DisplayName>
+      <Description>画角による周辺光量低下への影響の強さ</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="s32 glareShape">
+      <DisplayName>グレアの形状</DisplayName>
+      <Enum>YEBIS_BLOOM_SHAPE</Enum>
+      <Description>グレアの形状</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>13</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="f32 glareLuminance = 1">
+      <DisplayName>グレアエフェクト全体の輝度</DisplayName>
+      <Description>グレアエフェクト全体の輝度</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="f32 glareThreshold">
+      <DisplayName>高輝度抽出の閾値</DisplayName>
+      <Description>高輝度抽出の閾値</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="f32 glareRemapFactor = 1">
+      <DisplayName>高輝度抽出後の非線形マッピングファクタ</DisplayName>
+      <Description>高輝度抽出後の非線形マッピングファクタ</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="s32 bloomNumLevels = -1">
+      <DisplayName>ブルームのガウスブラー画像のレベル数(-1～16)</DisplayName>
+      <Description>ブルームのガウスブラー画像のレベル数(-1～16)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="f32 generationRangeScale = 1">
+      <DisplayName>デフォルトのレンジに対するスケーリング</DisplayName>
+      <Description>デフォルトのレンジに対するスケーリング</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="f32 starFilterThreshold = 0.001">
+      <DisplayName>光芒フィルタのサンプリング閾値</DisplayName>
+      <Description>光芒フィルタのサンプリング閾値</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="f32 starLengthFovDependence = 0.5">
+      <DisplayName>光芒の長さに対する画角の影響度</DisplayName>
+      <Description>光芒の長さに対する画角の影響度</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="f32 starSoftness = -1">
+      <DisplayName>光芒の柔らかさの度合い</DisplayName>
+      <Description>光芒の柔らかさの度合い</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="f32 bloomGaussianRadiusScale = 1">
+      <DisplayName>ガウス半径のデフォルト値からのスケール</DisplayName>
+      <Description>ガウス半径のデフォルト値からのスケール</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="f32 bloomLuminanceGamma = 1">
+      <DisplayName>ブルーム結果の輝度に対して適用するガンマ値</DisplayName>
+      <Description>ブルーム結果の輝度に対して適用するガンマ値</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="f32 ghostConcentricDistortion = 1">
+      <DisplayName>補間値</DisplayName>
+      <Description>補間値 0.0でゆがみなし　1.0でゆがみあり</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="u32 anamorphicLensFlareEnable">
+      <DisplayName>アナモルフィックレンズの有効、無効の設定</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>アナモルフィックレンズの有効、無効の設定</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="f32 anamorphicFlareLuminance = 1">
+      <DisplayName>ゴーストではない部分の輝度スケールの設定</DisplayName>
+      <Description>ゴーストではない部分の輝度スケールの設定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="f32 anamorphicGhostScale = 1">
+      <DisplayName>ゴースト部分の輝度スケールの設定</DisplayName>
+      <Description>ゴースト部分の輝度スケールの設定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="f32 grareColorR = 1">
+      <DisplayName>アナモルフィックレンズのグレア部分の色設定R</DisplayName>
+      <Description>アナモルフィックレンズのグレア部分の色設定R</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="f32 grareColorG = 1">
+      <DisplayName>アナモルフィックレンズのグレア部分の色設定G</DisplayName>
+      <Description>アナモルフィックレンズのグレア部分の色設定G</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="f32 grareColorB = 1">
+      <DisplayName>アナモルフィックレンズのグレア部分の色設定B</DisplayName>
+      <Description>アナモルフィックレンズのグレア部分の色設定B</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="f32 ghostColorR = 1">
+      <DisplayName>アナモルフィックレンズのゴースト部分の色設定R</DisplayName>
+      <Description>アナモルフィックレンズのゴースト部分の色設定R</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="f32 ghostColorG = 1">
+      <DisplayName>アナモルフィックレンズのゴースト部分の色設定G</DisplayName>
+      <Description>アナモルフィックレンズのゴースト部分の色設定G</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="f32 ghostColorB = 1">
+      <DisplayName>アナモルフィックレンズのゴースト部分の色設定B</DisplayName>
+      <Description>アナモルフィックレンズのゴースト部分の色設定B</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="u32 enableLightShaft">
+      <DisplayName>ライトシャフト有効化</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>ライトシャフト有効化</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>64</SortID>
+    </Field>
+    <Field Def="f32 lightShaftColorR = 1">
+      <DisplayName>ライトシャフト全体の色スケールR</DisplayName>
+      <Description>ライトシャフト全体の色スケールR</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>65</SortID>
+    </Field>
+    <Field Def="f32 lightShaftColorG = 1">
+      <DisplayName>ライトシャフト全体の色スケールG</DisplayName>
+      <Description>ライトシャフト全体の色スケールG</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>66</SortID>
+    </Field>
+    <Field Def="f32 lightShaftColorB = 1">
+      <DisplayName>ライトシャフト全体の色スケールB</DisplayName>
+      <Description>ライトシャフト全体の色スケールB</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>67</SortID>
+    </Field>
+    <Field Def="f32 lightShaftLength = 1">
+      <DisplayName>ライトシャフトを形作る光芒の長さスケール</DisplayName>
+      <Description>ライトシャフトを形作る光芒の長さスケール</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>68</SortID>
+    </Field>
+    <Field Def="f32 lightShaftGlareRatio = 0.25">
+      <DisplayName>ライトシャフトの種にグレアソースを含める強さ</DisplayName>
+      <Description>ライトシャフトの種にグレアソースを含める強さ</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>69</SortID>
+    </Field>
+    <Field Def="f32 lightShaftMaskDepthThereshold = 0.999">
+      <DisplayName>ライトシャフトの種となる遮蔽マスクの最大距離(あるいは光源の距</DisplayName>
+      <Description>ライトシャフトの種となる遮蔽マスクの最大距離(あるいは光源の距離)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="f32 lightShaftAngleAttenuation = 1">
+      <DisplayName>光源からの角度に従う減衰率</DisplayName>
+      <Description>光源からの角度に従う減衰率</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="f32 lightShaftNoiseMask = 1">
+      <DisplayName>遮蔽されていない部分にも光芒を発生させるための乱数マスクの強さ</DisplayName>
+      <Description>遮蔽されていない部分にも光芒を発生させるための乱数マスクの強さ</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>72</SortID>
+    </Field>
+    <Field Def="f32 lightShaftNoiseFrequency = 1">
+      <DisplayName>乱数マスクの細かさ</DisplayName>
+      <Description>乱数マスクの細かさ</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>73</SortID>
+    </Field>
+    <Field Def="f32 lightScreenPositionX = 0.5">
+      <DisplayName>光源の位置(横方向)をスクリーン座標系で指定</DisplayName>
+      <Description>光源の位置(横方向)をスクリーン座標系で指定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>74</SortID>
+    </Field>
+    <Field Def="f32 lightScreenPositionY = 0.5">
+      <DisplayName>光源の位置(縦方向)をスクリーン座標系で指定</DisplayName>
+      <Description>光源の位置(縦方向)をスクリーン座標系で指定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>75</SortID>
+    </Field>
+    <Field Def="f32 diffractionRing = 0.5">
+      <DisplayName>スペクトル分散(着色)の強さ</DisplayName>
+      <Description>スペクトル分散(着色)の強さ</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>76</SortID>
+    </Field>
+    <Field Def="f32 diffractionRingRadius = 0.2618">
+      <DisplayName>内側の回折リング(主虹)の半径角度[rad]</DisplayName>
+      <Description>内側の回折リング(主虹)の半径角度[rad]</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77</SortID>
+    </Field>
+    <Field Def="f32 diffractionRingAttenuation = 0.5">
+      <DisplayName>二番目以降のリングの減衰率</DisplayName>
+      <Description>二番目以降のリングの減衰率</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>78</SortID>
+    </Field>
+    <Field Def="f32 diffractionRingSpectrumOrder = 1">
+      <DisplayName>波長による着色の方向を制御するパラメタ</DisplayName>
+      <Description>波長による着色の方向を制御するパラメタ</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>79</SortID>
+    </Field>
+    <Field Def="f32 diffractionRingOuterColorR = 1">
+      <DisplayName>回折リング(着色部分)以外のライトシャフトの色と輝度スケールR</DisplayName>
+      <Description>回折リング(着色部分)以外のライトシャフトの色と輝度スケールR</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="f32 diffractionRingOuterColorG = 1">
+      <DisplayName>回折リング(着色部分)以外のライトシャフトの色と輝度スケールG</DisplayName>
+      <Description>回折リング(着色部分)以外のライトシャフトの色と輝度スケールG</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>81</SortID>
+    </Field>
+    <Field Def="f32 diffractionRingOuterColorB = 1">
+      <DisplayName>回折リング(着色部分)以外のライトシャフトの色と輝度スケールB</DisplayName>
+      <Description>回折リング(着色部分)以外のライトシャフトの色と輝度スケールB</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>82</SortID>
+    </Field>
+    <Field Def="u32 enableDepthOfField = 1">
+      <DisplayName>被写界深度有効化</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>被写界深度有効化</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>83</SortID>
+    </Field>
+    <Field Def="s32 frontApertureNumLevels = -1">
+      <DisplayName>前景方向へのボケ画像レベル最大数</DisplayName>
+      <Description>前景方向へのボケ画像レベル最大数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>7</Maximum>
+      <SortID>84</SortID>
+    </Field>
+    <Field Def="s32 backApertureNumLevels = -1">
+      <DisplayName>背景方向へのボケ画像レベル最大数</DisplayName>
+      <Description>背景方向へのボケ画像レベル最大数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>7</Maximum>
+      <SortID>85</SortID>
+    </Field>
+    <Field Def="f32 focusDistance">
+      <DisplayName>フォーカス(ピントの合う)距離</DisplayName>
+      <Description>フォーカス(ピントの合う)距離</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>86</SortID>
+    </Field>
+    <Field Def="f32 aperture">
+      <DisplayName>絞りサイズ。Ｆ値を設定</DisplayName>
+      <Description>絞りサイズ。Ｆ値を設定</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>87</SortID>
+    </Field>
+    <Field Def="f32 adaptiveApertureFactor = 0.5">
+      <DisplayName>画角によって絞りを自動調整する場合の調整ファクタ</DisplayName>
+      <Description>画角によって絞りを自動調整する場合の調整ファクタ</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>88</SortID>
+    </Field>
+    <Field Def="f32 adaptiveApertureBaseFov = 45">
+      <DisplayName>画角によって絞りを自動調整する場合の基準となる画角</DisplayName>
+      <Description>画角によって絞りを自動調整する場合の基準となる画角</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>89</SortID>
+    </Field>
+    <Field Def="f32 imageSensorHeight = 32">
+      <DisplayName>イメージセンサ(フィルムや CCD など)の物理的なサイズ(高</DisplayName>
+      <Description>イメージセンサ(フィルムや CCD など)の物理的なサイズ(高さ)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="s32 edgeQuarity = -1">
+      <DisplayName>被写界深度のエッジボケのタイプ</DisplayName>
+      <Enum>YEBIS_DOFEDGE_TYPE</Enum>
+      <Description>被写界深度のエッジボケのタイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>4</Maximum>
+      <SortID>91</SortID>
+    </Field>
+    <Field Def="u32 enableAutoFocus">
+      <DisplayName>オートフォーカス有効化</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>オートフォーカス有効化</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>92</SortID>
+    </Field>
+    <Field Def="u32 donotPassOverFocus">
+      <DisplayName>目標の通り過ぎ現象の抑制</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>目標の通り過ぎ現象の抑制</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>93</SortID>
+    </Field>
+    <Field Def="f32 sensitivity = 0.5">
+      <DisplayName>フォーカシングの感度</DisplayName>
+      <Description>フォーカシングの感度</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>94</SortID>
+    </Field>
+    <Field Def="f32 speedLimit = 1">
+      <DisplayName>フォーカシング速度の最大値</DisplayName>
+      <Description>フォーカシング速度の最大値(秒速の焦点距離単位)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>95</SortID>
+    </Field>
+    <Field Def="f32 focusDelayFrame = -1">
+      <DisplayName>遅延時間を指定する</DisplayName>
+      <Description>遅延時間を指定する</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>96</SortID>
+    </Field>
+    <Field Def="f32 distanceRangeMin = -9999">
+      <DisplayName>オートフォーカスされる最近距離(最も近いピント位置)</DisplayName>
+      <Description>オートフォーカスされる最近距離(最も近いピント位置)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>97</SortID>
+    </Field>
+    <Field Def="f32 distanceRangeMax = 9999">
+      <DisplayName>オートフォーカスされる最遠距離(最も遠いピント位置)</DisplayName>
+      <Description>オートフォーカスされる最遠距離(最も遠いピント位置)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>98</SortID>
+    </Field>
+    <Field Def="f32 focusScreenPositionX = 0.5">
+      <DisplayName>測距点の位置(横方向)</DisplayName>
+      <Description>測距点の位置(横方向)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>99</SortID>
+    </Field>
+    <Field Def="f32 focusScreenPositionY = 0.5">
+      <DisplayName>測距点の位置(縦方向)</DisplayName>
+      <Description>測距点の位置(縦方向)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u32 enableFeedbackBlur">
+      <DisplayName>フィードバックブラー有効化</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>フィードバックブラー有効化</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="f32 feedbackWeight">
+      <DisplayName>フィードバック画像(前フレームまでの残像)の重み(減衰率)</DisplayName>
+      <Description>フィードバック画像(前フレームまでの残像)の重み(減衰率)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="f32 unitTimeInSeconds">
+      <DisplayName>特定の時間を基準に重みを指定する場合の単位時間</DisplayName>
+      <Description>特定の時間を基準に重みを指定する場合の単位時間</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="f32 aspectRatio">
+      <DisplayName>アスペクト比を幅／縦で指定する</DisplayName>
+      <Description>アスペクト比を幅／縦で指定する</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>104</SortID>
+    </Field>
+    <Field Def="u32 enablePostAntialias">
+      <DisplayName>ポストプロセスアンチエイリアス有効化</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>ポストプロセスアンチエイリアス有効化</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>105</SortID>
+    </Field>
+    <Field Def="u32 enableMotionBlur">
+      <DisplayName>モーションブラー有効化</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>モーションブラー有効化</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>106</SortID>
+    </Field>
+    <Field Def="s32 motionBlurCameraMode">
+      <DisplayName>モーションブラーのタイプ設定</DisplayName>
+      <Enum>YEBIS_CAMERA_BLUR_TYPE</Enum>
+      <Description>モーションブラーのタイプ設定</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>107</SortID>
+    </Field>
+    <Field Def="f32 blurTimeRatio = 1">
+      <DisplayName>ブラーの 1 フレームに対する時間比</DisplayName>
+      <Description>ブラーの 1 フレームに対する時間比</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>108</SortID>
+    </Field>
+    <Field Def="f32 maxBlurLength = 0.1">
+      <DisplayName>ブラーの最大の長さ</DisplayName>
+      <Description>ブラーの最大の長さ</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>109</SortID>
+    </Field>
+    <Field Def="s32 numBaseSamples = -1">
+      <DisplayName>ブラーの 1 パス毎の基準サンプル数</DisplayName>
+      <Description>ブラーの 1 パス毎の基準サンプル数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>7</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s32 maxRecurrences = -1">
+      <DisplayName>ブラーの最大再帰回数</DisplayName>
+      <Description>ブラーの最大再帰回数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>7</Maximum>
+      <SortID>111</SortID>
+    </Field>
+    <Field Def="f32 sampleInterleaved = 1">
+      <DisplayName>基準となるサンプルピクセル間隔</DisplayName>
+      <Description>基準となるサンプルピクセル間隔</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>112</SortID>
+    </Field>
+    <Field Def="f32 cameraRotationThreshold">
+      <DisplayName>カメラの回転／透視移動の閾値(スクリーン座標系単位)</DisplayName>
+      <Description>カメラの回転／透視移動の閾値(スクリーン座標系単位)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>113</SortID>
+    </Field>
+    <Field Def="f32 cameraTranslationThreshold">
+      <DisplayName>カメラの平行移動の閾値(ワールド座標系単位)</DisplayName>
+      <Description>カメラの平行移動の閾値(ワールド座標系単位)</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>114</SortID>
+    </Field>
+    <Field Def="u32 cameraOnlyMoved">
+      <DisplayName>カメラだけが動作していることを保障する</DisplayName>
+      <Enum>YEBIS_BOOL</Enum>
+      <Description>カメラだけが動作していることを保障する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>115</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

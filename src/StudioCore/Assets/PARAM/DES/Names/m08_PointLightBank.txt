@@ -1,0 +1,7 @@
+0 candlestick
+10 PC point light source (indoor)
+11 PC point light source (outdoor)
+20 For poly drama (p80000-A
+21 For poly drama (p80000-SFX no Hikari-A
+22 For poly drama (p80200
+50 B2 candlestick

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <useSoul AltName="Soul Amount" Wiki="Required soul amount (0: none)" />
+    <materialItemId_1 AltName="Material Item ID [1]" Wiki="" Refs="EquipParamGoods" />
+    <materialItemId_2 AltName="Material Item ID [2]" Wiki="" Refs="EquipParamGoods" />
+    <materialItemId_3 AltName="Material Item ID [3]" Wiki="" Refs="EquipParamGoods" />
+    <materialItemId_4 AltName="Material Item ID [4]" Wiki="" Refs="EquipParamGoods" />
+    <materialItemId_5 AltName="Material Item ID [5]" Wiki="" Refs="EquipParamGoods" />
+    <num_1 AltName="Material Count [1]" Wiki="" />
+    <num_2 AltName="Material Count [2]" Wiki="" />
+    <num_3 AltName="Material Count [3]" Wiki="" />
+    <num_4 AltName="Material Count [4]" Wiki="" />
+    <num_5 AltName="Material Count [5]" Wiki="" />
+  </Field>
+  <Self Wiki="Chalice - Ritual Materials"/>
+</PARAMMETA>

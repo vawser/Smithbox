@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the SFX used for footsteps." Row0Dummy="" />
+  <Field>
+    <foot_sfx_0 AltName="Footstep SFX [0]"/>
+    <foot_sfx_1 AltName="Footstep SFX [1]"/>
+    <foot_sfx_2 AltName="Footstep SFX [2]"/>
+    <foot_sfx_3 AltName="Footstep SFX [3]"/>
+    <foot_sfx_4 AltName="Footstep SFX [4]"/>
+    <foot_sfx_5 AltName="Footstep SFX [5]"/>
+    <foot_sfx_6 AltName="Footstep SFX [6]"/>
+    <foot_sfx_7 AltName="Footstep SFX [7]"/>
+    <foot_sfx_8 AltName="Footstep SFX [8]"/>
+    <foot_sfx_9 AltName="Footstep SFX [9]"/>
+    <foot_sfx_10 AltName="Footstep SFX [10]"/>
+    <foot_sfx_11 AltName="Footstep SFX [11]"/>
+    <foot_sfx_12 AltName="Footstep SFX [12]"/>
+    <foot_sfx_13 AltName="Footstep SFX [13]"/>
+    <foot_sfx_14 AltName="Footstep SFX [14]"/>
+    <foot_sfx_15 AltName="Footstep SFX [15]"/>
+    <foot_sfx_16 AltName="Footstep SFX [16]"/>
+    <foot_sfx_17 AltName="Footstep SFX [17]"/>
+    <foot_sfx_18 AltName="Footstep SFX [18]"/>
+    <foot_sfx_19 AltName="Footstep SFX [19]"/>
+    <foot_sfx_20 AltName="Footstep SFX [20]"/>
+    <foot_sfx_21 AltName="Footstep SFX [21]"/>
+    <foot_sfx_22 AltName="Footstep SFX [22]"/>
+    <foot_sfx_23 AltName="Footstep SFX [23]"/>
+    <foot_sfx_24 AltName="Footstep SFX [24]"/>
+    <foot_sfx_25 AltName="Footstep SFX [25]"/>
+    <foot_sfx_26 AltName="Footstep SFX [26]"/>
+    <foot_sfx_27 AltName="Footstep SFX [27]"/>
+    <foot_sfx_28 AltName="Footstep SFX [28]"/>
+    <foot_sfx_29 AltName="Footstep SFX [29]"/>
+    <foot_sfx_30 AltName="Footstep SFX [30]"/>
+    <foot_sfx_31 AltName="Footstep SFX [31]"/>
+    <foot_sfx_32 AltName="Footstep SFX [32]"/>
+    <foot_sfx_33 AltName="Footstep SFX [33]"/>
+    <foot_sfx_34 AltName="Footstep SFX [34]"/>
+    <foot_sfx_35 AltName="Footstep SFX [35]"/>
+    <foot_sfx_36 AltName="Footstep SFX [36]"/>
+    <foot_sfx_37 AltName="Footstep SFX [37]"/>
+    <foot_sfx_38 AltName="Footstep SFX [38]"/>
+    <foot_sfx_39 AltName="Footstep SFX [39]"/>
+    <foot_sfx_40 AltName="Footstep SFX [40]"/>
+    <foot_sfx_41 AltName="Footstep SFX [41]"/>
+    <foot_sfx_42 AltName="Footstep SFX [42]"/>
+  </Field>
+</PARAMMETA>

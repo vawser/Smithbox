@@ -1,0 +1,48 @@
+10020000 Gap sinus (all times) -- 隙間の洞（常時）
+10020001 Gap sinus (persistent) -- 隙間の洞（永続）
+10020002 Gap sinus (hours) -- 隙間の洞（時間）
+10040000 Madura (all times) -- マデューラ（常時）
+10040001 Madura (Permanent) -- マデューラ（永続）
+10040002 Madura (time) -- マデューラ（時間）
+10100000 Decaying Giant Forest (all times) -- 朽ちた巨人の森（常時）
+10100001 Decaying Giant Forest (Perpetuating) -- 朽ちた巨人の森（永続）
+10100002 Decaying Giant Forest (time) -- 朽ちた巨人の森（時間）
+10140000 Kiishi-gai Gerdra (all times) -- 輝石街ジェルドラ（常時）
+10140001 Kiishi-gai Gerdra (Permanent) -- 輝石街ジェルドラ（永続）
+10140002 Kiishi-gai Gerdra (time) -- 輝石街ジェルドラ（時間）
+10160000 Prison of Oblivion (all times) -- 忘却の牢城（常時）
+10160001 Prison of Oblivion (Perpetuating) -- 忘却の牢城（永続）
+10160002 Prison of Oblivion (time) -- 忘却の牢城（時間）
+10180000 Hidden port (all times) -- 隠れ港（常時）
+10180001 Hidden Port (Permanent) -- 隠れ港（永続）
+10180002 Hidden Port (Hours) -- 隠れ港（時間）
+10190000 Mingiron Castle (all times) -- 熔鉄城（常時）
+10190001 Molten Castle (Permanent) -- 熔鉄城（永続）
+10190002 Molten Iron Castle (time) -- 熔鉄城（時間）
+10230000 Hunting Forest (all times) -- 狩猟の森（常時）
+10230001 Hunting Forest (Permanent) -- 狩猟の森（永続）
+10230002 Hunting Forest (time) -- 狩猟の森（時間）
+10250000 Scum bottom (all times) -- クズ底（常時）
+10250001 Scum bottom (persistent) -- クズ底（永続）
+10250002 Scum bottom (time) -- クズ底（時間）
+10330000 Faros Door Way (all times) -- ファロスの扉道（常時）
+10330001 The Door way of Faros (permanent) -- ファロスの扉道（永続）
+10330002 Faros Door Way (Time) -- ファロスの扉道（時間）
+10340000 Saint's Tomb (all times) -- 聖人墓所（常時）
+10340001 The Tomb of the Saint (Permanent) -- 聖人墓所（永続）
+10340002 Saint's Tomb (time) -- 聖人墓所（時間）
+20110000 Amana Altar (all times) -- アマナの祭壇（常時）
+20110001 Amana Altar (Permanent) -- アマナの祭壇（永続）
+20110002 Amana Altar (time) -- アマナの祭壇（時間）
+20240000 Temple of Immortality (all times) -- 不死廟（常時）
+20240001 Tomb of Immortality (Permanent) -- 不死廟（永続）
+20240002 Tomb of Immortality (time) -- 不死廟（時間）
+40030000 Old Dark Hole (All Times) -- 古き闇の穴（常時）
+40030001 The Old Dark Hole (Persistent) -- 古き闇の穴（永続）
+40030002 Old Dark Hole (Time) -- 古き闇の穴（時間）
+90800000 Event test map (all times) -- イベントテストマップ（常時）
+90800001 Event test map (persistent) -- イベントテストマップ（永続）
+90800002 Event test map (time) -- イベントテストマップ（時間）
+99999997 Test (ignition stand default) -- テスト（点火台デフォルト）
+99999998 Testing (persistent) -- テスト（永続）
+99999999 Test (time) -- テスト（時間）

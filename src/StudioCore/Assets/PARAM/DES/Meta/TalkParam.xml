@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <msgId AltName="msgId" />
+    <voiceId AltName="voiceId" />
+    <motionId AltName="motionId" />
+    <returnPos AltName="returnPos" />
+    <reactionId AltName="reactionId" />
+    <eventId AltName="eventId" />
+    <isMotionLoop AltName="isMotionLoop" />
+    <pad0 AltName="pad0" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the Estus Flask." Row0Dummy="" />
+  <Field>
+    <estus_reinforcement_min AltName="Estus Reinforcement - Minimum"/>
+    <estus_reinforcement_max AltName="Estus Reinforcement - Maximum"/>
+  </Field>
+</PARAMMETA>

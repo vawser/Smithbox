@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Field></Field>
-    <maxAmmount AltName="Max Amount"/>
-  <Self Wiki="Set the spawn limit for bullets"/>
-</PARAMMETA>

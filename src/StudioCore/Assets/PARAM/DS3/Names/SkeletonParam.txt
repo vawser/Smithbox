@@ -1,0 +1,55 @@
+0 Move 
+1 NPC Common Neck 
+2 NPC Common Body 1 
+3 NPC Common Body 2 
+10 Human-type general-purpose left foot 
+11 Human-type universal right foot 
+18 Copy _ Test Right leg 
+19 Copy _ Test left leg 
+100 Heroine 
+200 Vips 
+300 Blacksmith Edo 
+400 Slave soldier 
+500 Ex-noble lady 
+600 Puppet use 
+700 Beggar Woman 
+800 Baldwin 
+900 Beggar Man 
+998 Copy _ old general-purpose left foot 
+999 Copy _ old-purpose right foot 
+1000 Hounds 
+1001 Hounds 
+1002 Hounds 
+1003 Hounds 
+1010 Priest _ Left Foot 
+1011 Priest _ Right foot 
+1022 Crowd A_ set neck shake 
+1030 B_ crowd left foot 
+1031 Crowd b_ right foot 
+2000 Mucademon right foot 
+2001 Mucademon left Foot 
+2010 Gargoyle Right Foot 
+2011 Gargoyle left Foot 
+2020 Iron Golem Right Foot 
+2021 Iron Golem left Foot 
+2022 Iron Golem Right Hand 
+2030 Hammer Demon left Foot 
+2031 Hammer Daemon Right foot 
+3004 Thaiwand Foot ⑤ 
+3005 Thaiwand Foot ⑥ 
+3100 Thaiwand Foot ⑦ 
+3101 Thaiwand Foot ⑧ 
+3102 Thaiwand Foot ⑨ 
+3103 Thaiwand Foot ⑩ 
+3104 Thaiwand Foot ⑪ 
+3105 Thaiwand Foot ⑫ 
+3106 Thaiwand Foot ⑬ 
+5010 Beast of flames _ left leg 
+5011 Beast of flames _ right legs 
+5012 The Beast in flames _ left leg 
+5013 Beast of flames _ right after leg 
+5014 Beast of flames _ neck shaking _ head 
+5015 Fire Beast _ Neck Swing _ Neck 1 
+5016 Fire Beast _ Neck Shaking _ Neck 2 
+5017 Fire Beast _ Neck Shaking _ neck 3 
+5018 Fire Beast _ Neck Swing _ Neck 4 

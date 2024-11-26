@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <pcJudgeUnderWB AltName="pcJudgeUnderWB" />
+    <pcJudgeTopWB AltName="pcJudgeTopWB" />
+    <pcJudgeUnderLR AltName="pcJudgeUnderLR" />
+    <pcJudgeTopLR AltName="pcJudgeTopLR" />
+    <areaJudgeUnderWB AltName="areaJudgeUnderWB" />
+    <areaJudgeTopWB AltName="areaJudgeTopWB" />
+    <areaJudgeUnderLR AltName="areaJudgeUnderLR" />
+    <areaJudgeTopLR AltName="areaJudgeTopLR" />
+  </Field>
+  <Self />
+</PARAMMETA>

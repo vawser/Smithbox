@@ -1,2 +1,0 @@
-1 Player equipment torch (for forced point light source)
-10 Player always equipped point light source test

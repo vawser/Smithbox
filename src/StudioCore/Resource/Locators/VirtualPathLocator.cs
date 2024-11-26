@@ -607,7 +607,7 @@ public static class VirtualPathLocator
 
             if (pathElements[i].Equals("worldmap"))
             {
-                return $"{AppContext.BaseDirectory}/Assets/WorldMap/world_map.tpf.dcx";
+                return $"{AppContext.BaseDirectory}//Assets//MSB//ER//Maps//world_map.tpf.dcx";
             }
         }
         // ASSET

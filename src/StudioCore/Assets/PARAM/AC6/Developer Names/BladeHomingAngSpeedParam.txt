@@ -1,0 +1,177 @@
+0 test -- テスト
+200000 Fixed after attack -- 攻撃後固定
+210000 assault boost -- アサルトブースト
+210100 Assault boost left/right evasion -- アサルトブースト左右回避中
+210200 Starting before Assault Boost -- アサルトブースト前開始中
+250000 Start rapid turn (light attack 1) -- 開始急速旋回(弱攻撃1）
+250001 Start rapid turn (light attack 2) -- 開始急速旋回(弱攻撃2）
+250005 Start rapid turn (light attack 2) -- 開始急速旋回(弱攻撃2）
+250010 Light wave blade light attack 1st stage homing -- 光波ブレード弱攻撃１段目ホーミング
+250011 Light Wave Blade Weak Attack Just before the 1st attack -- 光波ブレード弱攻撃１段目攻撃直前
+250020 Light wave blade weak attack 2nd stage homing -- 光波ブレード弱攻撃２段目ホーミング
+250021 Light Wave Blade Weak Attack Immediately before the 2nd stage attack -- 光波ブレード弱攻撃２段目攻撃直前
+250100 Light wave blade strong attack 1st stage homing -- 光波ブレード強攻撃１段目ホーミング
+250101 Light wave blade strong attack Just before the first attack -- 光波ブレード強攻撃１段目攻撃直前
+252010 Chain Hammer_Weak attack 1st stage_Before attack_Rapid rotation -- チェインハンマー_弱攻撃1段目_攻撃前_急速旋回
+252011 Chain Hammer_Weak attack 1st stage_During attack_Slight rotation -- チェインハンマー_弱攻撃1段目_攻撃中_微旋回
+252012 Chain Hammer_Light attack 1st stage_After attack_All angles fixed -- チェインハンマー_弱攻撃1段目_攻撃後_全角度固定
+252020 Chain Hammer_Weak attack 2nd stage_Before attack_Rapid rotation -- チェインハンマー_弱攻撃2段目_攻撃前_急速旋回
+252021 Chain Hammer_Weak attack 2nd stage_During attack_Slight rotation -- チェインハンマー_弱攻撃2段目_攻撃中_微旋回
+252022 Chain Hammer_Light attack 2nd stage_After attack_All angles fixed -- チェインハンマー_弱攻撃2段目_攻撃後_全角度固定
+254000 Start rapid turn (light attack 1) -- 開始急速旋回(弱攻撃1）
+254001 Start rapid turn (light attack 2) -- 開始急速旋回(弱攻撃2）
+254005 Start rapid turn (strong attack) -- 開始急速旋回(強攻撃）
+254010 PA Breaker light attack 1st stage homing -- PAブレイカー弱攻撃１段目ホーミング
+254011 PA Breaker weak attack Just before the first attack -- PAブレイカー弱攻撃１段目攻撃直前
+254012 PA Breaker weak attack 1st stage_After attack_All angles fixed -- PAブレイカー弱攻撃１段目_攻撃後_全角度固定
+254020 PA Breaker weak attack 2nd stage homing -- PAブレイカー弱攻撃２段目ホーミング
+254021 PA Breaker weak attack Just before the second attack -- PAブレイカー弱攻撃２段目攻撃直前
+254022 PA Breaker weak attack 2nd stage_After attack_All angles fixed -- PAブレイカー弱攻撃2段目_攻撃後_全角度固定
+254100 PA Breaker strong attack 1st stage homing -- PAブレイカー強攻撃１段目ホーミング
+254101 PA Breaker Heavy Attack Immediately before the 1st attack -- PAブレイカー強攻撃１段目攻撃直前
+257000 Start rapid turn (light attack 1) -- 開始急速旋回(弱攻撃1）
+257001 Start rapid turn (light attack 2) -- 開始急速旋回(弱攻撃2）
+257005 Start rapid turn (strong attack) -- 開始急速旋回(強攻撃）
+257010 PA Breaker light attack 1st stage homing -- PAブレイカー弱攻撃１段目ホーミング
+257011 PA Breaker weak attack Just before the first attack -- PAブレイカー弱攻撃１段目攻撃直前
+257020 PA Breaker weak attack 2nd stage homing -- PAブレイカー弱攻撃２段目ホーミング
+257021 PA Breaker weak attack Just before the second attack -- PAブレイカー弱攻撃２段目攻撃直前
+257100 PA Breaker strong attack 1st stage homing -- PAブレイカー強攻撃１段目ホーミング
+257100 PA Breaker Heavy Attack Immediately before the 1st attack -- PAブレイカー強攻撃１段目攻撃直前
+25000100 Light wave blade_light attack 1st stage_at start -- 光波ブレード_弱攻撃1段目_開始時
+25000110 Light wave blade_light attack 1st stage_homing -- 光波ブレード_弱攻撃1段目_ホーミング中
+25000120 Light Wave Blade_Weak attack 1st stage_Just before attack -- 光波ブレード_弱攻撃1段目_攻撃直前
+25000130 Light Wave Blade_Light attack 1st stage_All angles fixed -- 光波ブレード_弱攻撃1段目_全角度固定
+25000200 Light wave blade_light attack 2nd stage_at start -- 光波ブレード_弱攻撃2段目_開始時
+25000210 Light Wave Blade_Weak Attack 2nd Stage_Homing -- 光波ブレード_弱攻撃2段目_ホーミング中
+25000220 Light wave blade_2nd stage of weak attack_just before attack -- 光波ブレード_弱攻撃2段目_攻撃直前
+25000230 Light wave blade_2nd stage of light attack_all angles fixed -- 光波ブレード_弱攻撃2段目_全角度固定
+25001100 Light Wave Blade_Strong attack 1st stage_At start -- 光波ブレード_強攻撃1段目_開始時
+25001110 Light wave blade_strong attack 1st stage_homing -- 光波ブレード_強攻撃1段目_ホーミング中
+25001120 Light Wave Blade_Strong attack 1st stage_Just before attack -- 光波ブレード_強攻撃1段目_攻撃直前
+25001130 Light Wave Blade_Strong attack 1st stage_All angles fixed -- 光波ブレード_強攻撃1段目_全角度固定
+25100100 K Blade_Light attack 1st stage_At start -- Kブレード_弱攻撃1段目_開始時
+25100110 K Blade_Light attack 1st stage_Homing -- Kブレード_弱攻撃1段目_ホーミング中
+25100120 K Blade_Weak attack 1st stage_Just before attack -- Kブレード_弱攻撃1段目_攻撃直前
+25100130 K Blade_Light attack 1st stage_All angles fixed -- Kブレード_弱攻撃1段目_全角度固定
+25101100 K Blade_Strong attack 1st stage_At start -- Kブレード_強攻撃1段目_開始時
+25101110 K Blade_Strong attack 1st stage_Homing -- Kブレード_強攻撃1段目_ホーミング中
+25101120 K Blade_Strong attack 1st stage_Just before attack -- Kブレード_強攻撃1段目_攻撃直前
+25101125 K Blade_Strong attack 1st stage_Turn during attack -- Kブレード_強攻撃1段目_攻撃中旋回
+25101130 K Blade_Strong attack 1st stage_All angles fixed -- Kブレード_強攻撃1段目_全角度固定
+25200100 Chain Hammer_Light attack 1st stage_At start -- チェインハンマー_弱攻撃1段目_開始時
+25200110 Chain hammer_light attack 1st stage_slight rotation during attack -- チェインハンマー_弱攻撃1段目_攻撃中微旋回
+25200130 Chain Hammer_Light attack 1st stage_All angles fixed -- チェインハンマー_弱攻撃1段目_全角度固定
+25200200 Chain Hammer_Light attack 2nd stage_At start -- チェインハンマー_弱攻撃2段目_開始時
+25200210 Chain Hammer_Weak attack 2nd stage_Slight rotation during attack -- チェインハンマー_弱攻撃2段目_攻撃中微旋回
+25200230 Chain Hammer_Light attack 2nd stage_All angles fixed -- チェインハンマー_弱攻撃2段目_全角度固定
+25201100 Chain Hammer_Strong attack 1st stage_At start -- チェインハンマー_強攻撃1段目_開始時
+25201110 Chain Hammer_Strong attack 1st stage_Slight rotation during attack -- チェインハンマー_強攻撃1段目_攻撃中微旋回
+25201130 Chain Hammer_Strong attack 1st stage_All angles fixed -- チェインハンマー_強攻撃1段目_全角度固定
+25300100 Pile Bunker_Light attack 1st stage_At start -- パイルバンカー_弱攻撃1段目_開始時
+25300110 Pile Bunker_Light attack 1st stage_Homing -- パイルバンカー_弱攻撃1段目_ホーミング中
+25300120 Pile Bunker_Light attack 1st stage_Just before attack -- パイルバンカー_弱攻撃1段目_攻撃直前
+25300130 Pile Bunker_Light attack 1st stage_All angles fixed -- パイルバンカー_弱攻撃1段目_全角度固定
+25301100 Pile Bunker_Strong attack 1st stage_At start -- パイルバンカー_強攻撃1段目_開始時
+25301110 Pile Bunker_Strong attack 1st stage_Homing -- パイルバンカー_強攻撃1段目_ホーミング中
+25301120 Pile Bunker_Strong attack 1st stage_Just before attack -- パイルバンカー_強攻撃1段目_攻撃直前
+25301130 Pile Bunker_Strong attack 1st stage_All angles fixed -- パイルバンカー_強攻撃1段目_全角度固定
+25400100 PA Breaker_Light attack 1st stage_At start -- PAブレイカー_弱攻撃1段目_開始時
+25400110 PA Breaker_Light attack 1st stage_Homing -- PAブレイカー_弱攻撃1段目_ホーミング中
+25400120 PA Breaker_Weak attack 1st stage_Just before attack -- PAブレイカー_弱攻撃1段目_攻撃直前
+25400130 PA Breaker_Light attack 1st stage_All angles fixed -- PAブレイカー_弱攻撃1段目_全角度固定
+25400200 PA Breaker_Light attack 2nd stage_At start -- PAブレイカー_弱攻撃2段目_開始時
+25400210 PA Breaker_Low attack 2nd stage_Homing -- PAブレイカー_弱攻撃2段目_ホーミング中
+25400220 PA Breaker_Weak attack 2nd stage_Just before attack -- PAブレイカー_弱攻撃2段目_攻撃直前
+25400230 PA Breaker_Light attack 2nd stage_All angles fixed -- PAブレイカー_弱攻撃2段目_全角度固定
+25401100 PA Breaker_Strong attack 1st stage_At start -- PAブレイカー_強攻撃1段目_開始時
+25401110 PA Breaker_Strong attack 1st stage_Homing -- PAブレイカー_強攻撃1段目_ホーミング中
+25401120 PA Breaker_Strong attack 1st stage_Just before attack -- PAブレイカー_強攻撃1段目_攻撃直前
+25401130 PA Breaker_Strong attack 1st stage_All angles fixed -- PAブレイカー_強攻撃1段目_全角度固定
+25500100 Broadsword_Light attack 1st stage_At start -- ブロードソード_弱攻撃1段目_開始時
+25500110 Broadsword_Light attack 1st stage_Homing -- ブロードソード_弱攻撃1段目_ホーミング中
+25500120 Broadsword_Weak attack 1st stage_Just before attack -- ブロードソード_弱攻撃1段目_攻撃直前
+25500130 Broadsword_Light attack 1st stage_All angles fixed -- ブロードソード_弱攻撃1段目_全角度固定
+25501100 Broadsword_Strong attack 1st stage_At start -- ブロードソード_強攻撃1段目_開始時
+25501110 Broadsword_Strong attack 1st stage_Homing -- ブロードソード_強攻撃1段目_ホーミング中
+25501120 Broadsword_Strong attack 1st stage_Just before attack -- ブロードソード_強攻撃1段目_攻撃直前
+25501130 Broadsword_Strong attack 1st stage_All angles fixed -- ブロードソード_強攻撃1段目_全角度固定
+25501140 Broadsword_Strong attack 1st stage_All angles fixed -- ブロードソード_強攻撃1段目_全角度固定
+25600100 Beam Naginata_Light attack 1st stage_At start -- ビームナギナタ_弱攻撃1段目_開始時
+25600110 Beam Naginata_Light attack 1st stage_Homing -- ビームナギナタ_弱攻撃1段目_ホーミング中
+25600120 Beam Naginata_Weak attack 1st stage_Just before attack -- ビームナギナタ_弱攻撃1段目_攻撃直前
+25600130 Beam Naginata_Light attack 1st stage_All angles fixed -- ビームナギナタ_弱攻撃1段目_全角度固定
+25600200 Beam Naginata_Light attack 2nd stage_At start -- ビームナギナタ_弱攻撃2段目_開始時
+25600210 Beam Naginata_Light attack 2nd stage_Homing -- ビームナギナタ_弱攻撃2段目_ホーミング中
+25600220 Beam Naginata_Weak attack 2nd stage_Just before attack -- ビームナギナタ_弱攻撃2段目_攻撃直前
+25600230 Beam Naginata_Light attack 2nd stage_All angles fixed -- ビームナギナタ_弱攻撃2段目_全角度固定
+25601100 Beam Naginata_Strong attack 1st stage_At start -- ビームナギナタ_強攻撃1段目_開始時
+25601110 Beam Naginata_Strong attack 1st stage_Homing -- ビームナギナタ_強攻撃1段目_ホーミング中
+25601120 Beam Naginata_Strong attack 1st stage_Just before attack -- ビームナギナタ_強攻撃1段目_攻撃直前
+25601130 Beam Naginata_Strong attack 1st stage_All angles fixed -- ビームナギナタ_強攻撃1段目_全角度固定
+25700100 Laser dagger_light attack 1st stage_at start -- レーザーダガー_弱攻撃1段目_開始時
+25700110 Laser dagger_light attack 1st stage_homing -- レーザーダガー_弱攻撃1段目_ホーミング中
+25700120 Laser dagger_light attack 1st stage_just before attack -- レーザーダガー_弱攻撃1段目_攻撃直前
+25700130 Laser dagger_light attack 1st stage_all angles fixed -- レーザーダガー_弱攻撃1段目_全角度固定
+25700200 Laser dagger_light attack 2nd stage_at start -- レーザーダガー_弱攻撃2段目_開始時
+25700210 Laser dagger_light attack 2nd stage_homing -- レーザーダガー_弱攻撃2段目_ホーミング中
+25700220 Laser dagger_2nd stage of weak attack_just before attack -- レーザーダガー_弱攻撃2段目_攻撃直前
+25700230 Laser dagger_light attack 2nd stage_all angles fixed -- レーザーダガー_弱攻撃2段目_全角度固定
+25700300 Laser dagger_Light attack 3rd stage_At start -- レーザーダガー_弱攻撃3段目_開始時
+25700310 Laser dagger_light attack 3rd stage_homing -- レーザーダガー_弱攻撃3段目_ホーミング中
+25700320 Laser dagger_3rd stage of weak attack_just before attack -- レーザーダガー_弱攻撃3段目_攻撃直前
+25700330 Laser dagger_Light attack 3rd stage_All angles fixed -- レーザーダガー_弱攻撃3段目_全角度固定
+25701100 Laser dagger_strong attack 1st stage_at start -- レーザーダガー_強攻撃1段目_開始時
+25701110 Laser dagger_strong attack 1st stage_homing -- レーザーダガー_強攻撃1段目_ホーミング中
+25701120 Laser dagger_Strong attack 1st stage_Just before attack -- レーザーダガー_強攻撃1段目_攻撃直前
+25701130 Laser dagger_Strong attack 1st stage_All angles fixed -- レーザーダガー_強攻撃1段目_全角度固定
+25800100 Laser Lance_Light attack 1st stage_At start -- レーザーランス_弱攻撃1段目_開始時
+25800110 Laser Lance_Light attack 1st stage_Homing -- レーザーランス_弱攻撃1段目_ホーミング中
+25800120 Laser Lance_Light attack 1st stage_Just before attack -- レーザーランス_弱攻撃1段目_攻撃直前
+25800130 Laser Lance_Light attack 1st stage_All angles fixed -- レーザーランス_弱攻撃1段目_全角度固定
+25801100 Laser Lance_Strong attack 1st stage_At start -- レーザーランス_強攻撃1段目_開始時
+25801110 Laser Lance_Strong attack 1st stage_Homing -- レーザーランス_強攻撃1段目_ホーミング中
+25801120 Laser Lance_Strong attack 1st stage_Just before attack -- レーザーランス_強攻撃1段目_攻撃直前
+25801130 Laser Lance_Strong attack 1st stage_All angles fixed -- レーザーランス_強攻撃1段目_全角度固定
+25900100 Chainsaw_Light attack 1st stage_At start -- チェーンソー_弱攻撃1段目_開始時
+25900110 Chainsaw_Light attack 1st stage_Homing -- チェーンソー_弱攻撃1段目_ホーミング中
+25900120 Chainsaw_Light attack 1st stage_Just before attack -- チェーンソー_弱攻撃1段目_攻撃直前
+25900130 Chainsaw_Light attack 1st stage_All angles fixed -- チェーンソー_弱攻撃1段目_全角度固定
+25900200 Chainsaw_Light attack 2nd stage_At start -- チェーンソー_弱攻撃2段目_開始時
+25900210 Chainsaw_Light attack 2nd stage_Homing -- チェーンソー_弱攻撃2段目_ホーミング中
+25900220 Chainsaw_Light attack 2nd stage_Just before attack -- チェーンソー_弱攻撃2段目_攻撃直前
+25900230 Chainsaw_Light attack 2nd stage_All angles fixed -- チェーンソー_弱攻撃2段目_全角度固定
+25901100 Chainsaw_Strong attack 1st stage_At start -- チェーンソー_強攻撃1段目_開始時
+25901110 Chainsaw_Strong attack 1st stage_Homing -- チェーンソー_強攻撃1段目_ホーミング中
+25901120 Chainsaw_Strong attack 1st stage_Just before attack -- チェーンソー_強攻撃1段目_攻撃直前
+25901130 Chainsaw_Strong attack 1st stage_Cutting -- チェーンソー_強攻撃1段目_削り中
+25901140 Chainsaw_Strong attack 1st stage_Before finishing -- チェーンソー_強攻撃1段目_フィニッシュ前
+25901150 Chainsaw_Strong attack 1st stage_All angles fixed -- チェーンソー_強攻撃1段目_全角度固定
+26000100 Nightstick_Light attack 1st stage_At start -- 警棒_弱攻撃1段目_開始時
+26000110 Nightstick_Light attack 1st stage_Homing -- 警棒_弱攻撃1段目_ホーミング中
+26000120 Nightstick_Light attack 1st stage_Just before attack -- 警棒_弱攻撃1段目_攻撃直前
+26000130 Nightstick_Light attack 1st stage_All angles fixed -- 警棒_弱攻撃1段目_全角度固定
+26000200 Nightstick_Light attack 2nd stage_At start -- 警棒_弱攻撃2段目_開始時
+26000210 Nightstick_Light attack 2nd stage_Homing -- 警棒_弱攻撃2段目_ホーミング中
+26000220 Nightstick_2nd stage of weak attack_just before attack -- 警棒_弱攻撃2段目_攻撃直前
+26000230 Nightstick_Light attack 2nd stage_All angles fixed -- 警棒_弱攻撃2段目_全角度固定
+26000300 Nightstick_Light attack 3rd stage_At start -- 警棒_弱攻撃3段目_開始時
+26000310 Nightstick_Light attack 3rd stage_Homing -- 警棒_弱攻撃3段目_ホーミング中
+26000320 Nightstick_3rd stage of weak attack_just before attack -- 警棒_弱攻撃3段目_攻撃直前
+26000330 Nightstick_Light attack 3rd stage_All angles fixed -- 警棒_弱攻撃3段目_全角度固定
+26001100 Nightstick_Strong attack 1st stage_At start -- 警棒_強攻撃1段目_開始時
+26001110 Nightstick_Strong attack 1st stage_Homing -- 警棒_強攻撃1段目_ホーミング中
+26001120 Nightstick_Strong attack 1st stage_Just before attack -- 警棒_強攻撃1段目_攻撃直前
+26001130 Nightstick_Strong attack 1st stage_All angles fixed -- 警棒_強攻撃1段目_全角度固定
+26100100 Phalanx_Light attack 1st stage_At start -- ファランクス_弱攻撃1段目_開始時
+26100110 Phalanx_Light attack 1st stage_Homing -- ファランクス_弱攻撃1段目_ホーミング中
+26100120 Phalanx_Light attack 1st stage_Just before attack -- ファランクス_弱攻撃1段目_攻撃直前
+26100130 Phalanx_Light attack 1st stage_All angles fixed -- ファランクス_弱攻撃1段目_全角度固定
+26101100 Phalanx_Strong attack 1st stage_At start -- ファランクス_強攻撃1段目_開始時
+26101110 Phalanx_Strong attack 1st stage_Homing -- ファランクス_強攻撃1段目_ホーミング中
+26101120 Phalanx_Strong attack 1st stage_Just before attack -- ファランクス_強攻撃1段目_攻撃直前
+26101130 Phalanx_Strong attack 1st stage_All angles fixed -- ファランクス_強攻撃1段目_全角度固定
+26200100 Bare-handed_Light attack 1st stage_At the start -- 素手_弱攻撃1段目_開始時
+26200110 Bare-handed_Light attack 1st stage_Homing -- 素手_弱攻撃1段目_ホーミング中
+26200120 Bare-handed_Light attack 1st stage_Just before attack -- 素手_弱攻撃1段目_攻撃直前
+26200130 Bare-handed_Light attack 1st stage_All angles fixed -- 素手_弱攻撃1段目_全角度固定

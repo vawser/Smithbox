@@ -1,0 +1,212 @@
+100 Buddy composition effect -- バディ組成効果
+200 Character damage expression -- キャラのダメージ表現
+210 Damage emissive strength (lower this when Damage_Rate becomes 1) -- ダメージのエミッシブ強度(Damage_Rateが1になったらこっちを下げる)
+300 Optical camouflage switching_transparent (0 is opaque, 1 is transparent) -- 光学迷彩切り替え_透過用(0が不透明,1が透明）
+310 Optical camouflage switching_for refraction (0 is no refraction, 1 is maximum refraction, appropriate is 0.01) -- 光学迷彩切り替え_屈折用（0が屈折無し, 1が最大屈折　適正は0.01)
+320 Optical camouflage switching_no reflection (0 is normal shyness, -1 is no reflection) -- 光学迷彩切り替え_否反射(0が通常シャイネス,-1が無反射）
+321 Optical camouflage switching_non-mirror (0 is normal, -1 is non-mirror) -- 光学迷彩切り替え_否鏡面(0が通常,-1が無鏡面）
+330 Optical camouflage switching_Falloff (0 is normal, 1 is luminous) -- 光学迷彩切り替え_フォールオフ(0が通常　1が発光）
+340 Optical camouflage switching_Emissive (0 is normal, 1 is emissive) -- 光学迷彩切り替え_エミッシブ(0が通常　1が発光）
+350 Optical camouflage switching_Falloff strength (0 is normal, 1 is emitted) -- 光学迷彩切り替え_フォールオフ強度(0が通常　1が発光）
+800 For AC parts_Caterpillar scroll_L -- ACパーツ用_キャタピラスクロール_L
+801 For AC parts_Caterpillar scroll_R -- ACパーツ用_キャタピラスクロール_R
+900 For AC parts_MAIN -- ACパーツ用_MAIN
+901 For AC parts_SUB -- ACパーツ用_SUB
+902 For AC parts_SUPPORT -- ACパーツ用_SUPPORT
+903 For AC parts_OPTIONAL -- ACパーツ用_OPTIONAL
+904 For AC parts_JOINT -- ACパーツ用_JOINT
+905 For AC parts_DEVICE -- ACパーツ用_DEVICE
+906 For AC parts_EYE -- ACパーツ用_EYE
+907 AC parts_DEVICE strength change -- ACパーツ用_DEVICEの強度変更
+910 For AC parts_camouflage ON/OFF -- ACパーツ用_カモフラージュON/OFF
+911 For AC parts_camouflage texture scale -- ACパーツ用_カモフラージュテクスチャスケール
+912 For AC parts_camouflage texture -- ACパーツ用_カモフラージュテクスチャ
+913 AC parts_camouflage texture size change -- ACパーツ用_カモフラージュテクスチャのサイズ変更
+920 shyness -- シャイネス
+921 metalness -- メタルネス
+930 For AC parts_1st layer material_Albedo -- ACパーツ用_1層目素材_アルベド
+931 For AC parts_1st layer material_Metalness -- ACパーツ用_1層目素材_メタルネス
+932 For AC parts_1st layer material_normal -- ACパーツ用_1層目素材_ノーマル
+940 For AC parts_2nd layer material_Albedo -- ACパーツ用_2層目素材_アルベド
+941 For AC parts_2nd layer material_Metalness -- ACパーツ用_2層目素材_メタルネス
+942 For AC parts_2nd layer material_normal -- ACパーツ用_2層目素材_ノーマル
+950 For AC parts_3rd layer material_Albedo -- ACパーツ用_3層目素材_アルベド
+951 For AC parts_3rd layer material_Metalness -- ACパーツ用_3層目素材_メタルネス
+952 For AC parts_3rd layer material_normal -- ACパーツ用_3層目素材_ノーマル
+960 For AC parts_4th layer material_Albedo -- ACパーツ用_4層目素材_アルベド
+961 For AC parts_4th layer material_Metalness -- ACパーツ用_4層目素材_メタルネス
+962 For AC parts_4th layer material_Normal -- ACパーツ用_4層目素材_ノーマル
+970 For AC parts_camouflage_MAIN -- ACパーツ用_カモフラージュ_MAIN
+971 For AC parts_camouflage_SUB -- ACパーツ用_カモフラージュ_SUB
+972 For AC parts_camouflage_SUPPORT -- ACパーツ用_カモフラージュ_SUPPORT
+973 For AC parts_Camouflage_OPTIONAL -- ACパーツ用_カモフラージュ_OPTIONAL
+974 For AC parts_camouflage_JOINT -- ACパーツ用_カモフラージュ_JOINT
+980 For AC parts_Main color part shyness/metalness strength change -- ACパーツ用_Mainカラー部分のシャイネス・メタルネス強度変更
+981 For AC parts_Sub color part shineness/metalness strength change -- ACパーツ用_Subカラー部分のシャイネス・メタルネス強度変更
+982 For AC parts_Support color part shyness/metalness strength change -- ACパーツ用_Supportカラー部分のシャイネス・メタルネス強度変更
+983 For AC parts_Optional color part shineness/metalness strength change -- ACパーツ用_Optionalカラー部分のシャイネス・メタルネス強度変更
+984 For AC parts_Change the shyness and metalness strength of the joint color part -- ACパーツ用_Jointカラー部分のシャイネス・メタルネス強度変更
+985 For AC parts_Changing the shyness and metalness strength of the 1st layer texture -- ACパーツ用_1層目テクスチャのシャイネス・メタルネス強度変更
+986 For AC parts_Changing the shyness and metalness strength of the 3rd layer texture -- ACパーツ用_3層目テクスチャのシャイネス・メタルネス強度変更
+987 For AC parts_4th layer texture shyness/metalness strength change -- ACパーツ用_4層目テクスチャのシャイネス・メタルネス強度変更
+990 For AC parts_AC marking -- ACパーツ用_ACマーキング
+991 For AC parts_AC marking_Texture index offset -- ACパーツ用_ACマーキング_テクスチャインデックスオフセット
+995 For AC parts_Parts cover strength (freezing, snow, sand, etc.) -- ACパーツ用_パーツカバー強度（氷結・雪・砂など）
+996 For AC parts_Paint peeling strength -- ACパーツ用_塗装剥がれ強度
+997 For AC parts_Rust strength -- ACパーツ用_錆強度
+998 For AC parts_Damage strength -- ACパーツ用_ダメージ強度
+1000 For cockpit monitor replacement -- コックピットモニター差し替え用
+1100 For emissive strength changes that are not affected by the color of AC parts (shields, etc.) -- ACパーツのカラーに影響されないエミッシブ強度変更用(シールドなど）
+1110 For emissive color change that is not affected by the color of AC parts -- ACパーツのカラーに影響されないエミッシブカラー変更用
+1120 Unique Head Mono Eye 1 Color Tint -- ユニークヘッドモノアイ1のカラーTint
+1121 Unique Head Mono Eye 2 Color Tint -- ユニークヘッドモノアイ2のカラーTint
+1122 Unique Head Mono Eye 3 Color Tint -- ユニークヘッドモノアイ3のカラーTint
+1125 Unique head emissive main master Int (main monoeye assumption) -- ユニークヘッドエミッシブのメインマスターInt(メインモノアイの想定)
+1126 Unique Head Emissive Master Int -- ユニークヘッドエミッシブのマスターInt
+1130 For changing the transition strength of unique head glass -- ユニークヘッドガラスのトラジション強度変更用
+1131 For changing the transparency of unique head glass -- ユニークヘッドガラスの透明度変更用
+1150 Flickering when changing color in menu_Flickering_Main -- メニューでカラー変更した場合の明滅_Flickering_Main
+1151 Flickering when changing color in menu_Flickering_Sub -- メニューでカラー変更した場合の明滅_Flickering_Sub
+1152 Flickering when changing color in menu_Flickering_Support -- メニューでカラー変更した場合の明滅_Flickering_Support
+1153 Flickering when changing color in menu_Flickering_Optional -- メニューでカラー変更した場合の明滅_Flickering_Optional
+1154 Flickering when changing color in menu_Flickering_Joint -- メニューでカラー変更した場合の明滅_Flickering_Joint
+1155 Flickering when changing color in menu_Flickering_Device -- メニューでカラー変更した場合の明滅_Flickering_Device
+1200 Scanline strength when performing recovery -- 回復実行時の走査線の強さ
+1210 Display height of scan line when performing recovery (maximum value) -- 回復実行時の走査線の表示高さ(最大値）
+1220 Display height of scan line when performing recovery (minimum value) -- 回復実行時の走査線の表示高さ(最小値）
+1230 UV scale of scan lines when performing recovery -- 回復実行時の走査線のUVスケール
+1240 UV scroll speed of scanlines when performing recovery -- 回復実行時の走査線のUVスクロール速度
+1250 Scanline fade width when performing recovery -- 回復実行時の走査線のフェード幅
+1260 Scanline color when performing recovery -- 回復実行時の走査線のカラー
+1270 Texture replacement of scan lines when executing recovery -- 回復実行時の走査線のテクスチャ差し替え
+2000 For texture scrolling of personal weapons (ammo belt, etc.) -- 自機武器のテクスチャスクロール用（弾薬ベルトなど）
+3000 For threshold value when the laser blade gets stuck in the wall -- レーザーブレードの壁にめり込んだ際の閾値用
+700000 Enemy BASE coloring changed -- 敵のBASEカラーリング変更
+700001 Enemy SUB coloring changed -- 敵のSUBカラーリング変更
+700002 Enemy SUPPORT coloring changed -- 敵のSUPPORTカラーリング変更
+700003 Enemy OPTIONAL coloring change -- 敵のOPTIONALカラーリング変更
+700004 Enemy JOINT coloring changed -- 敵のJOINTカラーリング変更
+700005 Enemy EYE coloring changed -- 敵のEYEカラーリング変更
+700010 Change the strength of enemy rust -- 敵の錆の強度変更
+700015 Changed the range of staining the enemy's 1st floor -- 敵の1層目汚しの範囲変更
+700016 Change the strength of enemy's 1st layer stain -- 敵の1層目汚しの強度変更
+700018 Enemy's 3rd layer armor peeling_strength -- 敵の3層目装甲剥がれ_強度
+700100 Change enemy device strength -- 敵のデバイス強度変更
+701000 Emissive strength change for enemy AE_(strength only) -- 敵のAE対応のエミッシブ強度変更_(強度のみ）
+701001 Albedo strength change for enemy AE_(strength only) -- 敵のAE対応のアルベド強度変更_(強度のみ）
+701010 Emissive strength change for enemy AE_(color and strength) -- 敵のAE対応のエミッシブ強度変更_(カラーと強度）
+701020 Emissive texture scrolling compatible with enemy AE -- 敵のAE対応のエミッシブテクスチャスクロール対応
+701100 Emissive strength change for enemy AMSN_(strength only) -- 敵のAMSN対応のエミッシブ強度変更_(強度のみ）
+701110 Emissive strength change for enemy AMSN_(color and strength) -- 敵のAMSN対応のエミッシブ強度変更_(カラーと強度）
+701120 Supports emissive texture scrolling for enemy AMSN. -- 敵のAMSN対応のエミッシブテクスチャスクロール対応
+702000 Change the shyness/metalness strength of the enemy's _Main color part -- 敵の_Mainカラー部分のシャイネス・メタルネス強度変更
+702010 Change the shyness/metalness strength of the enemy's sub color part -- 敵の_Subカラー部分のシャイネス・メタルネス強度変更
+702020 Change the strength of shyness and metalness of the enemy's _Support color part -- 敵の_Supportカラー部分のシャイネス・メタルネス強度変更
+702030 Change the strength of the shyness and metalness of the enemy's _Optional color part -- 敵の_Optionalカラー部分のシャイネス・メタルネス強度変更
+702040 Change the strength of the shyness and metalness of the enemy's _Joint color part -- 敵の_Jointカラー部分のシャイネス・メタルネス強度変更
+702100 Enemy_detail blending enabled/disabled -- 敵の_ディテールブレンドの有効無効
+702110 For changing the strength of enemy's dirt mask -- 敵の_ダートマスクの強度変更用
+800000 Asset energy shield fade -- アセットのエネルギーシールドのフェード
+900000 Heat rod blade emissive strength and transparency specification -- ヒートロッドの刃のエミッシブ強度と透明度指定
+900010 Laser blade blade emissive strength and transparency specification -- レーザーブレードの刃のエミッシブ強度と透明度指定
+910000 General parameters for emissive strength adjustment of enemy weapons (AMSN shader) -- 敵武器のエミッシブ強度調整の汎用パラメータ(AMSNシェーダー)
+1005000 Enemy energy shield general purpose -- 敵のエネルギーシールド汎用
+1005500 For displaying the deployment of PA shield for special attack MT -- 特攻MT用PAシールドの展開表示用
+1005510 For adjusting the translucent strength of PA shield for special attack MT -- 特攻MT用PAシールドの半透明強度調整用
+1006000 Dither fade processing of enemy materials -- 敵用マテリアルのディザフェード処理
+1909999 For AC booster internal lighting -- ACブースター内部発光用
+1919999 AC parts emissive_test_SBS_9999 -- ACパーツエミッシブ用_テスト_SBS_9999
+4420000 Changing the mask scale of c4200 tip emitting emissive -- c4200の先端発光エミッシブのマスクスケール変更
+4420010 c4200 Phantom Omen Emissive Intensity Adjustment Color and Intensity -- c4200幻影予兆のエミッシブ強度調整カラーと強度
+4420020 c4200 Phantom fade parameters -- c4200幻影のフェード用パラメータ
+4420030 c4200 Phantom α fade parameters -- c4200幻影のαフェード用パラメータ
+6250000 c6250_Ice worm damage expression strength -- c6250_アイスワームのダメージ表現強度
+6250010 c6250_Ice worm damage expression_Emissive strength -- c6250_アイスワームのダメージ表現_エミッシブ強度
+5900000 c5900 Stiglo_Monoeye -- c5900スティグロ_モノアイ
+5900010 c5900 styglo_heatsink light -- c5900スティグロ_ヒートシンク光
+6000000 For emissive strength adjustment of general-purpose items -- 汎用アイテムのエミッシブ強度調整用
+6000010 For emissive color intensity adjustment of general purpose items -- 汎用アイテムのエミッシブカラー強度調整用
+7000100 garage briefing board test -- ガレージブリーフィングボードテスト
+7000110 garage briefing board test -- ガレージブリーフィングボードテスト
+7000111 garage briefing board test -- ガレージブリーフィングボードテスト
+7000112 garage briefing board test -- ガレージブリーフィングボードテスト
+7000113 garage briefing board test -- ガレージブリーフィングボードテスト
+7000114 garage briefing board test -- ガレージブリーフィングボードテスト
+7000211 garage briefing board test -- ガレージブリーフィングボードテスト
+7000212 garage briefing board test -- ガレージブリーフィングボードテスト
+7000213 garage briefing board test -- ガレージブリーフィングボードテスト
+7000214 garage briefing board test -- ガレージブリーフィングボードテスト
+7000215 garage briefing board test -- ガレージブリーフィングボードテスト
+7000310 garage briefing board test -- ガレージブリーフィングボードテスト
+4100500 D-layer mako furnace heating wire emissive strength -- D層魔晄炉の電熱線エミッシブ強度
+700500 Emissive strength of G[Light]_Emissive_Glow in the garage -- ガレージ内のG[Light]_Emissive_Glowのエミッシブ強度
+700600 Emissive strength of the PC monitor in the garage -- ガレージ内のPCモニターのエミッシブ強度
+7001000 Emissive strength of G[Sub_monitor]_Emissive_Glow in the garage -- ガレージ内のG[Sub_monitor]_Emissive_Glowのエミッシブ強度
+8000000 For map_for emissive strength adjustment -- マップ用_エミッシブ強度調整用
+8000010 For maps_for emissive color adjustment -- マップ用_エミッシブカラー調整用
+8000015 For map_Albedo intensity color adjustment -- マップ用_アルベド強度カラー調整用
+8000120 For maps_For emissive color adjustment_For changing the color tint of M[Interior].snp -- マップ用_エミッシブカラー調整用_M[Interior].snpのカラーティント変更用
+8001000 For map_melange water surface_for emissive strength adjustment -- マップ用_メランジ水面_エミッシブ強度調整用
+8001001 For map_melange water surface_for emissive color adjustment -- マップ用_メランジ水面_エミッシブカラー調整用
+8001002 For map_Melange water surface_For bubble color adjustment -- マップ用_メランジ水面_泡カラー調整用
+8001003 For map_Melange water surface_For emissive strength/color change at HU_Near (for AEG411_901) -- マップ用_メランジ水面_HU時エミッシブ強度・カラー変更用_Near(AEG411_901用)
+8001004 For map_Melange water surface_For emissive strength/color change at HU_Far (for AEG411_901) -- マップ用_メランジ水面_HU時エミッシブ強度・カラー変更用_Far(AEG411_901用)
+8001005 For maps_Melange water surface_For Absorption adjustment -- マップ用_メランジ水面_Absorption調整用
+8001006 For map_Melange water surface_Near_Far_Blend mask strength -- マップ用_メランジ水面_Near_Far_ブレンドマスク強度
+8001010 For map_melange water surface_for height strength adjustment_max -- マップ用_メランジ水面_ハイト強度調整用_max
+8001011 For map_Melange water surface_For height strength adjustment_min -- マップ用_メランジ水面_ハイト強度調整用_min
+8001012 For maps_Melange water surface_For adjusting height strength_Near -- マップ用_メランジ水面_ハイト強度調整用_Near
+8001015 For map_Melange water surface_For adjusting scroll speed -- マップ用_メランジ水面_スクロールスピード調整用
+8001020 For maps_Melange water surface_For changing scroll speed from title -- マップ用_メランジ水面_スクロールスピードをタイトルから変更用
+8001050 Effective_Range for map_PA shield deployment -- マップ用_PAシールド展開用のEffective_Range
+8001052 Master strength of PA shield emissive for map -- マップ用_PAシールドエミッシブのマスター強度
+8001053 For maps_PA shield emissive alpha mask strength -- マップ用_PAシールドエミッシブのαマスクの強度
+8001055 Map_PA shield deployment color/strength change of [Transiton]_1 -- マップ用_PAシールド展開用の[Transiton]_1のカラー・強度変更
+8001056 Map_PA shield deployment color/strength change of [Transiton]_2 -- マップ用_PAシールド展開用の[Transiton]_2のカラー・強度変更
+8001060 For the map_For changing the window color of the B-tier tower (for cutscenes) -- マップ用_B層タワーの窓の色変更用（カットシーン向け）
+8001070 For the map_For hacking representation of the B tier tower_Effective_Range -- マップ用_B層タワーのハッキング表現用_Effective_Range
+8001071 Change color and intensity of [Transiton]_1 for map_B layer tower hacking expression -- マップ用_B層タワーのハッキング表現用_[Transiton]_1のカラー・強度変更
+8001072 Change color and intensity of [Transiton]_2 for map_B layer tower hacking representation -- マップ用_B層タワーのハッキング表現用_[Transiton]_2のカラー・強度変更
+8001073 For maps_For hacking representation of B tier tower_Transition strength master -- マップ用_B層タワーのハッキング表現用_トラジションの強度マスター
+8001074 For maps_For hacking representation of B tier tower_Emissive base strength master -- マップ用_B層タワーのハッキング表現用_エミッシブベース強度マスター
+8001075 For the map_For hacking expression of B tier tower_Effective_Range magnification change -- マップ用_B層タワーのハッキング表現用_Effective_Rangeの倍率変更
+8001080 For maps_For hacking representation of B-tier tower_Base alpha strength -- マップ用_B層タワーのハッキング表現用_ベースのアルファ強度
+8001081 For maps_For hacking representation of B-tier tower_Alpha processing for blackout -- マップ用_B層タワーのハッキング表現用_ブラックアウト用アルファ処理
+8001090 For the map_For expressing the window hacking of the B-tier tower_Effective_Range -- マップ用_B層タワーの窓部分ハッキング表現用_Effective_Range
+8001091 For the map_For expressing the window hacking of the B-tier tower_Effective_Range magnification change -- マップ用_B層タワーの窓部分ハッキング表現用_Effective_Rangeの倍率変更
+8001092 For the map_For the hacking expression of the window part of the B-layer tower_[Transiton]_1 color/intensity change -- マップ用_B層タワーの窓部分ハッキング表現用_[Transiton]_1のカラー・強度変更
+8001093 For the map_For expressing the hacking of the windows of the B-layer tower_[Transiton]_2 color and intensity changes -- マップ用_B層タワーの窓部分ハッキング表現用_[Transiton]_2のカラー・強度変更
+8001095 For the map_For expressing the hacking of the windows of the B-tier tower_Changing the color of the windows -- マップ用_B層タワーの窓部分ハッキング表現用_窓のカラー変更
+8001200 Fade model for map_AC test -- マップ用_ACテストのモデルをフェード表示
+8001300 Pixel kill model for map_AC test -- マップ用_ACテストのモデルをピクセルキル
+8001310 For maps_Pixel kill of AC test model_Model side support -- マップ用_ACテストのモデルをピクセルキル_モデル側対応
+8001400 For map_For changing emissive strength of AC test_Tint -- マップ用_ACテストのエミッシブ強度変更用_Tint
+8001401 For map_For changing emissive strength of AC test_Int -- マップ用_ACテストのエミッシブ強度変更用_Int
+8001500 For map_AC test scroll addition emissive strength change_Tint -- マップ用_ACテストのスクロール加算エミッシブ強度変更用_Tint
+8001501 For map_AC test scroll addition emissive strength change_Int -- マップ用_ACテストのスクロール加算エミッシブ強度変更用_Int
+8001510 For map_AC test scroll albedo strength change_Tint -- マップ用_ACテストのスクロールアルベド強度変更用_Tint
+8001511 For map_For changing scroll albedo intensity of AC test_Int -- マップ用_ACテストのスクロールアルベド強度変更用_Int
+8001550 [Transiton]_3_Tint for map_AC test -- マップ用_ACテストの[Transiton]_3_Tint
+8001551 [Transiton]_2_Tint for map_AC test -- マップ用_ACテストの[Transiton]_2_Tint
+8001552 [Transiton]_1_Tint of AC test for map -- マップ用_ACテストの[Transiton]_1_Tint
+8001560 Map_AC test [Transiton]_3_Noise strength -- マップ用_ACテストの[Transiton]_3_ノイズ強度
+8001565 Map_AC test flow scrolling speed -- マップ用_ACテストのフロウスクロールスピード
+8003000 For Map_Keeper's Laser Railgun Model SFX Emissive Strength -- マップ用_番人のレーザー・レールガンモデルSFXエミッシブ強度用
+8003001 For map_Keeper's laser/railgun model SFX emissive strength_2nd -- マップ用_番人のレーザー・レールガンモデルSFXエミッシブ強度用_2つ目
+8006000 For changing the strength of the flame effect when the new B layer enters the atmosphere. -- 新B層が大気圏突入する際の炎エフェクト強度変更用
+8006001 For changing the strength of the flame effect when the new B layer enters the atmosphere_for base 1 -- 新B層が大気圏突入する際の炎エフェクト強度変更用_ベース1用
+8006002 For changing the strength of the flame effect when the new B layer enters the atmosphere_for base 2 -- 新B層が大気圏突入する際の炎エフェクト強度変更用_ベース2用
+8006010 Initially disable the flame effect when the new B layer enters the atmosphere. -- 新B層が大気圏突入する際の炎エフェクトを初期無効にする
+8006020 Master scroll speed of flame when new B layer enters the atmosphere -- 新B層が大気圏突入する炎のマスタースクロールスピード
+8006100 Explosive α strength for CS Coral Explosive -- CSコーラル爆発用爆発α強度
+8006101 CS Coral Explosive Explosive Mask Alpha For Strength Adjustment -- CSコーラル爆発用爆発のマスクアルファ強度調整用
+8006102 CS Coral Explosive Explosive Emissive Overall Strength -- CSコーラル爆発用爆発のエミッシブ全体の強度
+8006110 Adjusted the distortion strength of the explosion heightmap for CS Coral explosion. -- CSコーラル爆発用爆発のハイトマップの歪み強度を調整
+8500000 For emissive intensity adjustment of C[A]_Emissive_Glow -- C[A]_Emissive_Glowのエミッシブ強度調整用
+8700000 Shader for the end when pasting part decals_For texture replacement -- パーツデカール貼り付け時の終端用のシェーダー_テクスチャ差し替え用
+9030000 c9030 flying enemy -- c9030飛行敵
+9030010 c9030 flying enemy -- c9030飛行敵
+9030020 c9030 flying enemy -- c9030飛行敵
+9055000 c5500_Bioweapon luminescence -- c5500_生体兵器の発光
+9055010 c5500_Burning of biological weapon -- c5500_生体兵器の死亡焦げ
+9900000 Map laser impact test combustion -- マップレーザー着弾テスト燃焼

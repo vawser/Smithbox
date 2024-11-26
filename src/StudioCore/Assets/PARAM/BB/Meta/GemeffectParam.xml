@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<speffectId AltName="SpEffect ID" Wiki="" Refs="SpEffectParam" />
+	<categoryId AltName="Category ID" Wiki="" />
+	<effectRank AltName="Effect Rank" Wiki="" />
+	<rankMin AltName="Appearance Rank: Lower Limit" Wiki="" />
+	<rankMax AltName="Appearance Rank: Upper Limit" Wiki="" />
+	<disposalPrice AltName="Sell Price" Wiki="" />
+	<gemIconIdOffset AltName="Gem Icon ID Offset" Wiki="" />
+	<sortId AltName="Sort ID" Wiki="" />
+	<sortCategory AltName="Sort Category" Wiki="" />
+	<gemNameIdOffset AltName="Gem Name ID Offset" Wiki="" />
+	<speffectId_forAtk AltName="SpEffect ID for Attack" Wiki="" Refs="SpEffectParam" />
+  </Field>
+  <Self Wiki="Blood Gem - Effect"/>
+</PARAMMETA>

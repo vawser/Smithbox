@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>BOSS_PARTS_MODEL_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 Unk00a" />
+    <Field Def="u8 Unk00b" />
+    <Field Def="u8 Unk00c" />
+    <Field Def="u8 Unk00d" />
+    <Field Def="u8 Unk04a" />
+    <Field Def="u8 Unk04b" />
+    <Field Def="u8 Unk04c" />
+    <Field Def="u8 Unk04d" />
+    <Field Def="u8 Unk08a" />
+    <Field Def="u8 Unk08b" />
+    <Field Def="u8 Unk08c" />
+    <Field Def="u8 Unk08d" />
+    <Field Def="u8 Unk0Ca" />
+    <Field Def="u8 Unk0Cb" />
+    <Field Def="u8 Unk0Cc" />
+    <Field Def="u8 Unk0Cd" />
+    <Field Def="u8 Unk10a" />
+    <Field Def="u8 Unk10b" />
+    <Field Def="u8 Unk10c" />
+    <Field Def="u8 Unk10d" />
+    <Field Def="u8 Unk14a" />
+    <Field Def="u8 Unk14b" />
+    <Field Def="u8 Unk14c" />
+    <Field Def="u8 Unk14d" />
+    <Field Def="u8 Unk18a" />
+    <Field Def="u8 Unk18b" />
+    <Field Def="u8 Unk18c" />
+    <Field Def="u8 Unk18d" />
+    <Field Def="u8 Unk1Ca" />
+    <Field Def="u8 Unk1Cb" />
+    <Field Def="u8 Unk1Cc" />
+    <Field Def="u8 Unk1Cd" />
+    <Field Def="u8 Unk20a" />
+    <Field Def="u8 Unk20b" />
+    <Field Def="u8 Unk20c" />
+    <Field Def="u8 Unk20d" />
+    <Field Def="u8 Unk24a" />
+    <Field Def="u8 Unk24b" />
+    <Field Def="u8 Unk24c" />
+    <Field Def="u8 Unk24d" />
+  </Fields>
+</PARAMDEF>

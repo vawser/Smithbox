@@ -1,0 +1,110 @@
+1200000 Farron Dart
+1210000 Great Farron Dart
+1300000 Soul Arrow
+1301000 Great Soul Arrow
+1302000 Heavy Soul Arrow
+1303000 Great Heavy Soul Arrow
+1304000 Homing Soulmass
+1305000 Homing Crystal Soulmass
+1306000 Soul Spear
+1307000 Crystal Soul Spear
+1308000 Deep Soul
+1309000 Great Deep Soul
+1310000 Magic Weapon
+1311000 Great Magic Weapon
+1312000 Crystal Magic Weapon
+1313000 Frozen Weapon
+1330000 Magic Shield
+1331000 Great Magic Shield
+1340000 Hidden Weapon
+1341000 Hidden Body
+1350000 Cast Light
+1353000 Repair
+1354000 Spook
+1355000 Chameleon
+1356000 Aural Decoy
+1370000 White Dragon Breath
+1372000 Farron Hail
+1373000 Crystal Hail
+1374000 Soul Greatsword
+1375000 Farron Flashsword
+1376000 Old Moonlight
+1603000 Affinity
+1604000 Great Soul Dregs
+1613000 Dark Edge
+1620000 Soul Stream
+1651000 Twisted Wall of Light
+1740000 Pestilent Mist
+1741000 Snap Freeze
+2400000 Fireball
+2402000 Fire Orb
+2403000 Firestorm
+2405000 Fire Surge
+2407000 Black Serpent
+2410000 Combustion
+2411000 Great Combustion
+2420000 Poison Mist
+2421000 Toxic Mist
+2422000 Acid Surge
+2430000 Iron Flesh
+2431000 Flash Sweat
+2435000 Carthus Flame Arc
+2436000 Rapport
+2440000 Power Within
+2450000 Great Chaos Fire Orb
+2451000 Chaos Storm
+2452000 Fire Whip
+2453000 Black Flame
+2455000 Profaned Flame
+2456000 Chaos Bed Vestiges
+2457000 Floating Chaos
+2458000 Flame Fan
+2470000 Warmth
+2562000 Profuse Sweat
+2600000 Dark Orb
+2610000 Black Fire Orb
+2620000 Bursting Fireball
+2630000 Boulder Heave
+2640000 Sacred Flame
+2650000 Carthus Beacon
+2660000 Seething Chaos
+3490000 Heal Aid
+3500000 Heal
+3501000 Med Heal
+3502000 Great Heal
+3503000 Soothing Sunlight
+3504000 Replenishment
+3505000 Bountiful Sunlight
+3507000 Bountiful Light
+3508000 Caressing Tears
+3509000 Lightning Arrow
+3513000 Morbid Temptation
+3520000 Tears of Denial
+3521000 Homeward
+3530000 Force
+3531000 Wrath of the Gods
+3532000 Emit Force
+3540000 Seek Guidance
+3550000 Lightning Spear
+3551000 Great Lightning Spear
+3552000 Sunlight Spear
+3553000 Lightning Storm
+3554000 Gnaw
+3555000 Dorhys' Gnawing
+3556000 Way of White Corona
+3557000 Projected Heal
+3560000 Magic Barrier
+3561000 Great Magic Barrier
+3563000 Sacred Oath
+3581000 Vow of Silence
+3590000 Lightning Blade
+3591000 Darkmoon Blade
+3640000 Dark Blade
+3700000 Dead Again
+3710000 Lightning Stake
+3720000 Divine Pillars of Light
+3730000 Lifehunt Scythe
+3750000 Dorris Swarm
+3760000 Blessed Weapon
+3770000 Deep Protection
+3780000 Atonement

@@ -1,0 +1,28 @@
+0 Object Ming
+1 With baking 05_00
+2 cliff
+3 straw
+4 light insect
+5 Object dark
+6 Corpse clear
+7 Corpse dark
+11 With baking 05_01
+12 Kicking bridge (object)
+13 Boss area (object)
+14 Poison swamp grass
+15 slug colony
+21 boss area
+22 tribute
+23 corpses falling
+50 For poly drama (p050200-c00
+51 For poly drama (p050200-c01
+52 For polyplay (p050200-c02-Ribura
+53 For poly drama (p050200-c02-Knight
+54 For poly drama (p050200-c03-Knight-A
+55 For poly drama (p050200-c03-Knight-B
+56 For poly drama (p050200-c04-Knight
+59 Rubble A
+60 Rubble B
+61 final map character
+62 boss area character
+63 Character

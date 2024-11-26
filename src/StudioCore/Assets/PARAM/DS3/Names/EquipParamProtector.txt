@@ -1,0 +1,545 @@
+1 Ghoul head for PV 
+101000 Embraced Armor of Favor
+102000 Gauntlets of Favor
+103000 Leggings of Favor
+111000 Armor of the Glorious
+112000 Gauntlets of the Vanquisher
+113000 Boots of the Explorer
+121000 Stone Armor
+122000 Stone Gauntlets
+123000 Stone Leggings
+131000 Crystalline Armor
+132000 Crystalline Gauntlets
+133000 Crystalline Leggings
+141000 Crimson Robe
+142000 Crimson Gloves
+143000 Crimson Waistcloth
+151000 Black Cleric Robe
+152000 Black Manchette
+153000 Black Tights
+161000 Armor of the Sun
+162000 Iron Bracelet
+163000 Iron Leggings
+171000 Chain Armor
+172000 Leather Gauntlets
+173000 Chain Leggings
+181000 Cleric Armor
+182000 Cleric Gauntlets
+183000 Cleric Leggings
+201000 Armor of Thorns
+202000 Gauntlets of Thorns
+203000 Leggings of Thorns
+211000 Hard Leather Armor
+212000 Hard Leather Gauntlets
+213000 Hard Leather Boots
+221000 Sorcerer Cloak
+222000 Sorcerer Gauntlets
+223000 Sorcerer Boots
+231000 Tattered Cloth Robe
+232000 Tattered Cloth Manchette
+233000 Heavy Boots
+241000 Leather Armor
+242000 Leather Gloves
+243000 Leather Boots
+251000 Painting Guardian Robe
+252000 Painting Guardian Gloves
+253000 Painting Guardian Waistcloth
+271000 Ornstein's Armor
+272000 Ornstein's Gauntlets
+273000 Ornstein's Leggings
+281000 Eastern Armor
+282000 Eastern Gauntlets
+283000 Eastern Leggings
+291000 Xanthous Overcoat
+292000 Xanthous Gloves
+293000 Xanthous Waistcloth
+301000 Black Leather Armor
+302000 Black Leather Gloves
+303000 Black Leather Boots
+400000 Dingy Hood
+401000 Dingy Robe
+402000 Dingy Gloves
+403000 Blood-Stained Skirt
+600000 Mask of the Mother
+601000 (Yamagishi) King of firewood test 1_ torso 
+602000 (Yamagishi) King of firewood test 1_ arm 
+603000 (Yamagishi) King of firewood test 1_ leg 
+610000 Mask of the Child
+611000 (Yamagishi) King of firewood test 2_ torso 
+612000 (Yamagishi) King of firewood test 2_ arm 
+613000 (Yamagishi) King of firewood test 2_ leg 
+620000 Fang Boar Helm
+621000 (Load check) memory check 1_ Torso 
+622000 (Load check) memory check 1_ arm 
+623000 (Load check) memory check 1_ leg 
+630000 Gargoyle Helm
+631000 (Load check) memory check 2_ Torso 
+632000 (Load check) memory check 2_ arm 
+633000 (Load check) memory check 2_ leg 
+640000 Black Sorcerer Hat
+641000 Black Sorcerer Cloak
+642000 Black Sorcerer Gauntlets
+643000 Black Sorcerer Boots
+650000 Elite Cleric Helm
+651000 Elite Cleric Armor
+652000 Elite Cleric Gauntlets
+653000 Elite Cleric Leggings
+660000 (Load check) memory check 5_ head 
+661000 (Load check) memory check 5_ Torso 
+662000 (Load check) memory check 5_ arm 
+663000 (Load check) memory check 5_ leg 
+670000 (Load check) memory check 6_ head 
+671000 (Load check) memory check 6_ Torso 
+672000 (Load check) memory check 6_ arm 
+673000 (Load check) memory check 6_ leg 
+730000 (Proto) Gold Armor _ Head 
+731000 (Proto) Smelting gold armor _ torso 
+732000 (Proto) Wrought gold armor _ arms 
+733000 (Proto) Wrought gold armor _ legs 
+740000 (Proto) Hunter _ head 
+741000 (Proto) Hunter _ Torso 
+742000 (Proto) Hunter _ Arms 
+743000 (Proto) Hunter _ leg 
+750000 (Proto) Soldier _ head 
+751000 (Proto) Soldier _ Torso 
+752000 (Proto) Soldiers _ arms 
+753000 (Proto) Soldier _ leg 
+760000 (Proto) Covert _ head 
+761000 (Proto) Covert _ Torso 
+762000 (Proto) Covert _ Arms 
+763000 (Proto) Covert _ leg 
+770000 (Proto) Covert _ head 
+771000 (Proto) Covert _ Torso 
+772000 (Proto) Covert _ Arms 
+773000 (Proto) Covert _ leg 
+780000 Fugitive Head 
+781000 Fugitive Torso 
+782000 Fugitive arm 
+783000 Fugitive Leg 
+790000 Funeral Knights Head 
+791000 Funeral Knight Torso 
+792000 Funeral Knight Arms 
+793000 Funeral Knights Leg 
+800000 Head of the Red Knight 
+801000 Red Knight Torso 
+802000 Red Knight Arms 
+803000 Red Knight Leg 
+810000 Composite (TGS) head 
+811000 Compound (TGS) torso 
+812000 Compound (TGS) hand 
+813000 Combined (TGS) legs 
+820000 Head of the Overlord (TGS) 
+821000 Overlord (TGS) Torso 
+822000 Overlord (TGS) hand 
+823000 Overlord Leg 
+830000 Noble (TGS) head 
+831000 Noble (TGS) Torso 
+832000 Noble (TGS) hand 
+833000 Noble (TGS) legs 
+840000 Jeanne (TGS) head 
+841000 Jeanne (TGS) Torso 
+842000 Jeanne (TGS) hand 
+843000 Jeanne (TGS) leg 
+900000 Head
+901000 Body
+902000 Arms
+903000 Legs
+910000 Metal Armor Test _ Head 
+911000 Metal Armor Test _ Breast 
+912000 Metal Armor Test _ Arms 
+913000 Metal Armor Test Leg 
+920000 Red Fans _ Head 
+921000 Red Fan _ Chest 
+922000 Red Fans _ Arms 
+923000 Red Fan _ Legs 
+930000 Weight test 
+931000 Weight test 
+932000 Weight test 
+933000 Weight test 
+950000 No Travel Gear / Head
+951000 No Travel Gear / Body
+952000 No Travel Gear / Arms
+953000 No Travel Gear / Legs
+961000 Jeanne (Wandering) head 
+962000 Jeanne (Prowl) Torso 
+963000 Jeanne (Wandering) hands 
+964000 Jeanne (Prowl) legs 
+971000 Head of complex equipment (wandering) 
+972000 Compound equipment (wandering) trunk 
+973000 Mixed equipment (wandering) hands 
+974000 Complex (wandering) legs 
+981000 Noble (Wandering) head 
+982000 Noble (Wandering) torso 
+983000 Noble (Wandering) hands 
+984000 Noble (wandering) legs 
+991000 Head (Wandering) Overlord 
+992000 Overlord (Wandering) torso 
+993000 Hand (Wandering) Overlord 
+994000 Overlord Leg 
+1000000 Dragon Head
+1001000 Dragon Body
+1002000 Dragon Arms
+1003000 Dragon Legs
+19000000 Fallen Knight Helm
+19001000 Fallen Knight Armor
+19002000 Fallen Knight Gauntlets
+19003000 Fallen Knight Trousers
+19500000 Knight Helm
+19501000 Knight Armor
+19502000 Knight Gauntlets
+19503000 Knight Leggings
+20000000 Vilhelm's Helm
+20001000 Vilhelm's Armor
+20002000 Vilhelm's Gauntlets
+20003000 Vilhelm's Leggings
+21000000 Firelink Helm
+21001000 Firelink Armor
+21002000 Firelink Gauntlets
+21003000 Firelink Leggings
+21500000 Sellsword Helm
+21501000 Sellsword Armor
+21502000 Sellsword Gauntlet
+21503000 Sellsword Trousers
+22000000 Herald Helm
+22001000 Herald Armor
+22002000 Herald Gloves
+22003000 Herald Trousers
+22500000 Sunless Veil
+22501000 Sunless Armor
+22502000 Sunless Gauntlets
+22503000 Sunless Leggings
+23000000 Black Hand Hat
+23001000 Black Hand Armor
+23002000 Assassin Gloves
+23003000 Assassin Trousers
+23100000 Assassin Hood
+23101000 Assassin Armor
+23500000 Xanthous Crown
+23501000 Xanthous Overcoat
+23502000 Xanthous Gloves
+23503000 Xanthous Trousers
+24000000 Northern Helm
+24001000 Northern Armor
+24002000 Northern Gloves
+24003000 Northern Trousers
+24500000 Morne's Helm
+24501000 Morne's Armor
+24502000 Morne's Gauntlets
+24503000 Morne's Leggings
+25000000 Silver Mask
+25001000 Leonhard's Garb
+25002000 Leonhard's Gauntlets
+25003000 Leonhard's Trousers
+25500000 Sneering Mask
+25501000 Pale Shade Robe
+25502000 Pale Shade Gloves
+25503000 Pale Shade Trousers
+26000000 Sunset Helm
+26001000 Sunset Armor
+26002000 Sunset Gauntlets
+26003000 Sunset Leggings
+26500000 Old Sage's Blindfold
+26501000 Cornyx's Garb
+26502000 Cornyx's Wrap
+26503000 Cornyx's Skirt
+27000000 Executioner Helm
+27001000 Executioner Armor
+27002000 Executioner Gauntlets
+27003000 Executioner Leggings
+27500000 Billed Mask
+27501000 Black Dress
+27502000 Black Gauntlets
+27503000 Black Leggings
+28000000 Pyromancer Crown
+28001000 Pyromancer Garb
+28002000 Pyromancer Wrap
+28003000 Pyromancer Trousers
+28501000 Antiquated Plain Garb
+28502000 Violet Wrappings
+28503000 Loincloth
+29000000 Court Sorcerer Hood
+29001000 Court Sorcerer Robe
+29002000 Court Sorcerer Gloves
+29003000 Court Sorcerer Trousers
+29500000 Shira's Crown
+29501000 Shira's Armor
+29502000 Shira's Gloves
+29503000 Shira's Trousers
+30000000 Sorcerer Hood
+30001000 Sorcerer Robe
+30002000 Sorcerer Gloves
+30003000 Sorcerer Trousers
+30101000 Clandestine Coat
+31000000 Cleric Hat
+31001000 Cleric Blue Robe
+31002000 Cleric Gloves
+31003000 Cleric Trousers
+32000000 Lapp's Helm
+32001000 Lapp's Armor
+32002000 Lapp's Gauntlets
+32003000 Lapp's Leggings
+40000000 Steel Soldier Helm
+40001000 Deserter Armor
+40003000 Deserter Trousers
+40200000 Thief Mask
+43000000 Sage's Big Hat
+44000000 Aristocrat's Mask
+44001000 Jailer Robe
+44002000 Jailer Gloves
+44003000 Jailer Trousers
+46000000 Grave Warden Hood
+46001000 Grave Warden Robe
+46002000 Grave Warden Wrap
+46003000 Grave Warden Skirt
+47000000 Worker Hat
+47001000 Worker Garb
+47002000 Worker Gloves
+47003000 Worker Trousers
+47500000 Thrall Hood
+48000000 Evangelist Hat
+48001000 Evangelist Robe
+48002000 Evangelist Gloves
+48003000 Evangelist Trousers
+48500000 Scholar's Shed Skin
+48501000 Scholar's Robe
+49000000 Winged Knight Helm
+49001000 Winged Knight Armor
+49002000 Winged Knight Gauntlets
+49003000 Winged Knight Leggings
+50500000 Cathedral Knight Helm
+50501000 Cathedral Knight Armor
+50502000 Cathedral Knight Gauntlets
+50503000 Cathedral Knight Leggings
+52000000 Lothric Knight Helm
+52001000 Lothric Knight Armor
+52002000 Lothric Knight Gauntlets
+52003000 Lothric Knight Leggings
+53000000 Outrider Knight Helm
+53001000 Outrider Knight Armor
+53002000 Outrider Knight Gauntlets
+53003000 Outrider Knight Leggings
+54000000 Black Knight Helm
+54001000 Black Knight Armor
+54002000 Black Knight Gauntlets
+54003000 Black Knight Leggings
+54500000 Dark Mask
+54501000 Dark Armor
+54502000 Dark Gauntlets
+54503000 Dark Leggings
+55000000 Exile Mask
+55001000 Exile Armor
+55002000 Exile Gauntlets
+55003000 Exile Leggings
+55500000 Slave Knight Hood
+55501000 Slave Knight Armor
+55502000 Slave Knight Gauntlets
+55503000 Slave Knight Leggings
+56000000 Pontiff Knight Crown
+56001000 Pontiff Knight Armor
+56002000 Pontiff Knight Gauntlets
+56003000 Pontiff Knight Leggings
+56500000 Ordained Hood
+56501000 Ordained Dress
+56503000 Ordained Trousers
+57000000 Golden Crown
+57001000 Dragonscale Armor
+57002000 Golden Bracelets
+57003000 Dragonscale Waistcloth
+57500000 Wolnir's Crown
+58000000 Undead Legion Helm
+58001000 Undead Legion Armor
+58002000 Undead Legion Gauntlet
+58003000 Undead Legion Leggings
+58500000 Follower Helm
+58501000 Follower Armor
+58502000 Follower Gloves
+58503000 Follower Boots
+59500000 Man Serpent's Mask
+60000000 Fire Witch Helm
+60001000 Fire Witch Armor
+60002000 Fire Witch Gauntlets
+60003000 Fire Witch Leggings
+60500000 Millwood Knight Helm
+60501000 Millwood Knight Armor
+60502000 Millwood Knight Gauntlets
+60503000 Millwood Knight Leggings
+61000000 Lorian's Helm
+61001000 Lorian's Armor
+61002000 Lorian's Gauntlets
+61003000 Lorian's Leggings
+61500000 Hood of Prayer
+61501000 Robe of Prayer
+61503000 Skirt of Prayer
+63000000 Dancer's Crown
+63001000 Dancer's Armor
+63002000 Dancer's Gauntlets
+63003000 Dancer's Leggings
+63500000 Ringed Knight Hood
+63501000 Ringed Knight Armor
+63502000 Ringed Knight Gauntlets
+63503000 Ringed Knight Leggings
+64000000 Gundyr's Helm
+64001000 Gundyr's Armor
+64002000 Gundyr's Gauntlets
+64003000 Gundyr's Leggings
+64501000 Harald Legion Armor
+64502000 Harald Legion Gauntlets
+64503000 Harald Legion Leggings
+66000000 Archdeacon White Crown
+66001000 Archdeacon Holy Garb
+66003000 Archdeacon Skirt
+66501000 Deacon Robe
+66503000 Deacon Skirt
+67500000 Iron Dragonslayer Helm
+67501000 Iron Dragonslayer Armor
+67502000 Iron Dragonslayer Gauntlets
+67503000 Iron Dragonslayer Leggings
+68001000 Fire Keeper Robe
+68002000 Fire Keeper Gloves
+68003000 Fire Keeper Skirt
+68500000 White Preacher Head
+70000000 Chain Helm
+70001000 Chain Armor
+70002000 Leather Gauntlets
+70003000 Chain Leggings
+71000000 Nameless Knight Helm
+71001000 Nameless Knight Armor
+71002000 Nameless Knight Gauntlets
+71003000 Nameless Knight Leggings
+72000000 Elite Knight Helm
+72001000 Elite Knight Armor
+72002000 Elite Knight Gauntlets
+72003000 Elite Knight Leggings
+73000000 Faraam Helm
+73001000 Faraam Armor
+73002000 Faraam Gauntlets
+73003000 Faraam Boots
+74000000 Catarina Helm
+74001000 Catarina Armor
+74002000 Catarina Gauntlets
+74003000 Catarina Leggings
+74500000 Standard Helm
+74501000 Hard Leather Armor
+74502000 Hard Leather Gauntlets
+74503000 Hard Leather Boots
+75000000 Havel's Helm
+75001000 Havel's Armor
+75002000 Havel's Gauntlets
+75003000 Havel's Leggings
+75500000 Brigand Hood
+75501000 Brigand Armor
+75502000 Brigand Gauntlets
+75503000 Brigand Trousers
+76000000 Pharis's Hat
+76001000 Leather Armor
+76002000 Leather Gloves
+76003000 Leather Boots
+76500000 Ragged Mask
+76501000 Master's Attire
+76502000 Master's Gloves
+76503000 Loincloth
+77000000 Old Sorcerer Hat
+77001000 Old Sorcerer Coat
+77002000 Old Sorcerer Gauntlets
+77003000 Old Sorcerer Boots
+77500000 Conjurator Hood
+77501000 Conjurator Robe
+77502000 Conjurator Manchettes
+77503000 Conjurator Boots
+78001000 Black Leather Armor
+78002000 Black Leather Gloves
+78003000 Black Leather Boots
+78500000 Symbol of Avarice
+79000000 Creighton's Steel Mask
+79001000 Mirrah Chain Mail
+79002000 Mirrah Chain Gloves
+79003000 Mirrah Chain Leggings
+79500000 Maiden Hood
+79501000 Maiden Robe
+79502000 Maiden Gloves
+79503000 Maiden Skirt
+80000000 Alva Helm
+80001000 Alva Armor
+80002000 Alva Gauntlets
+80003000 Alva Leggings
+80500000 Ruin Helm
+80501000 Ruin Armor
+80502000 Ruin Gauntlets
+80503000 Ruin Leggings
+81000000 Shadow Mask
+81001000 Shadow Garb
+81002000 Shadow Gauntlets
+81003000 Shadow Leggings
+81500000 Desert Pyromancer Hood
+81501000 Desert Pyromancer Garb
+81502000 Desert Pyromancer Gloves
+81503000 Desert Pyromancer Skirt
+82000000 Eastern Helm
+82001000 Eastern Armor
+82002000 Eastern Gauntlets
+82003000 Eastern Leggings
+82500000 Black Witch Hat
+82501000 Black Witch Garb
+82502000 Black Witch Wrappings
+82503000 Black Witch Trousers
+83000000 Helm of Favor
+83001000 Embraced Armor of Favor
+83002000 Gauntlets of Favor
+83003000 Leggings of Favor
+83500000 Black Witch Veil
+84000000 Brass Helm
+84001000 Brass Armor
+84002000 Brass Gauntlets
+84003000 Brass Leggings
+84500000 Blindfold Mask
+85000000 Silver Knight Helm
+85001000 Silver Knight Armor
+85002000 Silver Knight Gauntlets
+85003000 Silver Knight Leggings
+86000000 Lucatiel's Mask
+86001000 Mirrah Vest
+86002000 Mirrah Gloves
+86003000 Mirrah Trousers
+87000000 Iron Helm
+87001000 Armor of the Sun
+87002000 Iron Bracelets
+87003000 Iron Leggings
+88000000 Drakeblood Helm
+88001000 Drakeblood Armor
+88002000 Drakeblood Gauntlets
+88003000 Drakeblood Leggings
+89001000 Drang Armor
+89002000 Drang Gauntlets
+89003000 Drang Shoes
+90000000 Black Iron Helm
+90001000 Black Iron Armor
+90002000 Black Iron Gauntlets
+90003000 Black Iron Leggings
+91000000 Painting Guardian Hood
+91001000 Painting Guardian Gown
+91002000 Painting Guardian Gloves
+91003000 Painting Guardian Waistcloth
+92000000 Wolf Knight Helm
+92001000 Wolf Knight Armor
+92002000 Wolf Knight Gauntlets
+92003000 Wolf Knight Leggings
+93000000 Dragonslayer Helm
+93001000 Dragonslayer Armor
+93002000 Dragonslayer Gauntlets
+93003000 Dragonslayer Leggings
+94000000 Smough's Helm
+94001000 Smough's Armor
+94002000 Smough's Gauntlets
+94003000 Smough's Leggings
+96000000 Helm of Thorns
+96001000 Armor of Thorns
+96002000 Gauntlets of Thorns
+96003000 Leggings of Thorns
+98000000 Crown of Dusk
+98001000 Antiquated Dress
+98002000 Antiquated Gloves
+98003000 Antiquated Skirt
+99000000 Karla's Pointed Hat
+99001000 Karla's Coat
+99002000 Karla's Gloves
+99003000 Karla's Trousers

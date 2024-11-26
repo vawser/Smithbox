@@ -1,0 +1,293 @@
+10000000 Stormveil Castle
+10010000 Chapel of Anticipation
+11000000 Leyndell, Royal Capital
+11050000 Leyndell, Ashen Capital
+11100000 
+11710000 
+12010000 Ainsel River
+12020000 Siofra River
+12030000 Deeproot Depths
+12040000 Ainsel River - Boss
+12050000 Mohgwyn Palace
+12060000 
+12070000 
+12080000 
+13000000 Crumbling Farum Azula
+14000000 Academy of Raya Lucaria
+15000000 Miquella's Haligtree
+16000000 Volcano Manor
+18000000 Stranded Graveyard
+19000000 Stone Platform
+20000000 
+20010000 
+21000000 
+21010000 
+21020000 
+22000000 
+25000000 
+28000000 
+30000000 Tombsward Catacombs
+30010000 Impaler's Catacombs
+30020000 Stormfoot Catacombs
+30030000 Road's End Catacombs
+30040000 Murkwater Catacombs
+30050000 Black Knife Catacombs
+30060000 Cliffbottom Catacombs
+30070000 Wyndham Catacombs
+30080000 Sainted Hero's Grave
+30090000 Gelmir Hero's Grave
+30100000 Auriza Hero's Grave
+30110000 Deathtouched Catacombs
+30120000 Unsightly Catacombs
+30130000 Auriza Side Tomb
+30140000 Minor Erdtree Catacombs
+30150000 Caelid Catacombs
+30160000 War-Dead Catacombs
+30170000 Giant-Conquering Hero's Grave
+30180000 Giants' Mountaintop Catacombs
+30190000 Consecrated Snowfield Catacombs
+30200000 
+31000000 
+31010000 Earthbore Cave
+31020000 Tombsward Cave
+31030000 Groveside Cave
+31040000 Stillwater Cave
+31050000 Lakeside Crystal Cave
+31060000 Academy Crystal Cave
+31070000 Seethewater Cave
+31080000 
+31090000 Volcano Cave
+31100000 Dragonbarrow Cave
+31110000 Sellia Hideaway
+31120000 Cave of the Forlorn
+31130000 
+31140000 
+31150000 Coastal Cave
+31170000 Highroad Cave
+31180000 
+31190000 
+31200000 
+31210000 
+31220000 
+32000000 Morne Tunnel
+32010000 Limgrave Tunnels
+32020000 Raya Lucaria Crystal Tunnel
+32030000 
+32040000 Old Altus Tunnel
+32050000 Altus Tunnel
+32060000 
+32070000 Gael Tunnel
+32080000 Sellia Crystal Tunnel
+32090000 
+32100000 
+32110000 Yelough Anix Tunnel
+32120000 
+34100000 Divine Tower of Limgrave
+34110000 Divine Tower of Liurnia
+34120000 Divine Tower of West Altus
+34130000 Divine Tower of Caelid
+34140000 Divine Tower of East Altus
+34150000 Isolated Divine Tower
+34160000 
+35000000 Subterranean Shunning-Grounds
+39200000 Ruin-Strewn Precipice
+40000000 
+40010000 
+40020000 
+41000000 
+41010000 
+41020000 
+42000000 
+42010000 
+42020000 
+42030000 
+43000000 
+43010000 
+50523700 
+60081002 
+60081102 
+60081202 
+60091002 
+60091102 
+60182401 
+60191901 
+60192401 
+60202001 
+60202201 
+60232001 
+60241801 
+60241901 
+60242001 
+60251701 
+60251801 
+60251901 
+60252001 
+60252101 
+60252201 
+60261701 
+60261801 
+60261901 
+60262001 
+60262101 
+60262201 
+60345200 
+60345300 
+60345400 
+60345500 
+60355200 Mt. Gelmir - Before Hermit Shack
+60355300 Mt. Gelmir - Seethewater Terminus
+60355400 Mt. Gelmir - Fort Laiedd
+60355500 
+60365000 Liurnia of the Lakes - Behind Caria Manor, Royal Grave Evergaol, Part of Ravine
+60365100 Altus Plateau - Perfumer's Ruins, Unsightly Catacombs Entrance
+60365200 Mt. Gelmir - Craftsman's Shack, Hermit's Shack
+60365300 Mt. Gelmir - Outside Volcano Manor
+60365400 Mt. Gelmir - Ninth Mt. Gelmir Campsite, Road of Iniquity, Volcano Manor Entrance
+60365500 
+60375000 Liurnia of the Lake - Northeast Ravine; Bellum Highway - West of Grand Lift of Dectus
+60375100 Altus Plateau - Abandoned Coffin, Ruin-Strewn Precipice Exit
+60375200 Mt. Gelmir - Seethewater River, Hermit Village, Wyndham Catacombs Entrance, Sage's Cave Entrance
+60375300 Mt. Gelmir - Azur, Gelmir Hero's Grave Entrance
+60375400 Mt. Gelmir - Minor Erdtree, Seethewater Cave Entrance
+60375500 Mt. Gelmir - Volcano Cave Entrance
+60385000 Liurnia of the Lakes - Ravine-Veiled Village; Bellum Highway - Grand Lift of Dectus; Altus Plateau - Altus Plateau; Ruin-Strewn Precipice Entrance
+60385100 Altus Plateau - Erdtree-Gazing Hill, Lux Ruins
+60385200 Altus Plateau - Wyndham Ruins, Wyndham Catacombs Entrance
+60385300 Altus Plateau - Old Altus Tunnel Entrance
+60385400 Mt. Gelmir - First Mt. Gelmir Campsite, Corpse-Stench Shack; Altus Plateau - West of Shaded Castle
+60385500 
+60395000 Altus Plateau - Golden Lineage Evergaol
+60395100 Altus Plateau - Altus Highway Junction
+60395200 Altus Plateau - Second Church of Marika
+60395300 Altus Plateau - Mirage Rise; Mt. Gelmir - Bridge of Iniquity
+60395400 Altus Plateau - Shaded Castle
+60395500 
+60405000 Altus Plateau - Southwest of Tree Sentinel Duo
+60405100 Altus Plateau - West of Tree Sentinel Duo, Stormcaller Church
+60405200 Altus Plateau - Forest-Spanning Greatbridge, St. Trina's Hideaway, Sainted Hero's Grave Entrance
+60405300 Altus Plateau - Bower of Bounty, Writheblood Ruins
+60405400 Altus Plateau - Road of Iniquity Side Path
+60405500 Altus Plateau - West Windmill Pasture
+60414900 
+60415000 Altus Plateau - South of Tree Sentinel Duo
+60415100 Altus Plateau - Tree Sentinel Duo, Perfumer's Grotto Entrance
+60415200 Altus Plateau - Rampartside Path, Altus Tunnel Entrance
+60415300 Altus Plateau - Woodfolk Ruins, Minor Erdtree
+60415400 Altus Plateau - West Windmill Village
+60415500 Altus Plateau - Village Windmill Pasture, East Windmill Pasture
+60424900 
+60425000 Leyndell - South of Outer Wall Phantom Tree
+60425100 Leyndell - Outer Wall Phantom Tree
+60425200 Leyndell - Southwest Outer Wall Battleground
+60425300 Leyndell - Northwest Outer Wall Battleground
+60425400 Altus Plateau - East Windmill Village, Highway Lookout Tower
+60425500 Altus Plateau - Windmill Heights
+60434900 
+60435000 Leyndell - Minor Erdtree Church, Sealed Tunnel Entrance
+60435100 Leyndell - East of Outer Wall Phantom Tree
+60435200 Leyndell - Southeast Outer Wall Battleground
+60435300 Leyndell - Northeast Outer Wall Battleground, Hermit Merchant's Shack
+60435400 Altus Plateau - Cliffside Northeast of Outer Wall Battlefield
+60435500 
+60444900 
+60445000 
+60445100 
+60445200 Leyndell - South of Minor Erdtree
+60445300 Leyndell - Minor Erdtree
+60445400 
+60445500 
+60454900 
+60455000 
+60455100 Leyndell - Auriza Hero's Grave Entrance
+60455200 Leyndell - Capital Rampart, Auriza Side Tomb Entrance
+60455300 Leyndell - Capital Rampart North Cliffside
+60455400 
+60455500 
+60464900 
+60465000 
+60465100 
+60465200 
+60465300 
+60465500 
+60465600 
+60465700 Consecrated Snowfield - Far West Cliffside
+60465800 
+60473600 
+60473700 Caelid - West of Caelid Highway South
+60473800 Caelid - Fort Gael, Caelid Waypoint Ruins, Gaol Cave Entrance
+60473900 Caelid - Fort Gael North
+60474200 Caelid - North Great-Jar Area
+60474900 
+60475000 
+60475100 Leyndell - Divine Tower of East Altus Entrance; Mountaintops of the Giants - Forbidden Lands Start
+60475400 
+60475500 Consecrated Snowfield - Yelough Anix Ruins, Yelough Anix Tunnel Entrance
+60475600 Consecrated Snowfield - North of Yelough Anix Ruins
+60475700 Consecrated Snowfield - West of Ordina
+60475800 Consecrated Snowfield - Apostate Derelict
+60485000 
+60485100 Mountaintops of the Giants - Forbidden Lands Midway
+60485200 
+60485300 
+60485400 Consecrated Snowfield - Southwest Foggy Area
+60485500 Consecrated Snowfield - Northwest Foggy Area, East of Yelough Anix Ruins
+60485600 Consecrated Snowfield - South of Ordina
+60485700 Consecrated Snowfield - Ordina, Liturgical Town
+60485800 Consecrated Snowfield - East of Apostate Derelict
+60495000 
+60495100 
+60495200 Mountaintops of the Giants - Before Grand Lift of Rold
+60495300 Mountaintops of the Giants - West Zamor Ruins, Grand Lift of Rold
+60495400 Consecrated Snowfield - Hidden Path to the Haligtree, Southeast Foggy Area
+60495500 Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield
+60495600 Consecrated Snowfield - Southeast of Ordina
+60495700 Consecrated Snowfield - East of Ordina
+60495800 
+60505000 
+60505200 
+60505300 Mountaintops of the Giants - East Zamor Ruins
+60505400 Mountaintops of the Giants - North of Zamor Ruins
+60505500 Consecrated Snowfield - Consecrated Snowfield Catacombs Entrance
+60505600 Mountaintops of the Giants - Shack of the Lofty; Consecrated Snowfield - Minor Erdtree, Albinauric Rise, Cave of the Forlorn Entrance
+60505700 Mountaintops of the Giants - West of Castle Sol; Consecrated Snowfield - North of Minor Erdtree
+60505800 
+60515200 Mountaintops of the Giants - Giants' Gravepost South Cliffside
+60515300 Mountaintops of the Giants - Southwest Giants' Gravepost
+60515400 Mountaintops of the Giants - Northwest Giants' Gravepost
+60515500 Mountaintops of the Giants - Before Ancient Snow Valley Ruins
+60515600 Mountaintops of the Giants - Ancient Snow Valley Ruins, Stargazers' Ruins
+60515700 Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook
+60515800 Mountaintops of the Giants - North Castle Sol
+60523800 Caelid - Central Radahn Arena
+60523900 Caelid - North Radahn Arena
+60524000 Caelid - Far North Radahn Arena
+60525200 Mountaintops of the Giants - Southwest Fire Giant Arena
+60525300 Mountaintops of the Giants - Northwest Fire Giant Arena, Foot of the Forge
+60525400 Mountaintops of the Giants - Northeast Giants' Gravepost
+60525500 Mountaintops of the Giants - Guardians' Garrison
+60525600 Mountaintops of the Giants - Whiteridge Road, Minor Erdtree
+60525700 Mountaintops of the Giants - Before Freezing Lake, Heretical Rise
+60525800 Mountaintops of the Giants - Northwest of Freezing Lake, East of Castle Sol
+60533700 
+60533800 Caelid - East Radahn Arena
+60533900 Caelid - Northeast Radahn Arena
+60535200 Mountaintops of the Giants - Southeast Fire Giant Arena
+60535300 Mountaintops of the Giants - Northeast Fire Giant Arena
+60535400 Mountaintops of the Giants - Giants' Gravepost Northeast Cliffside
+60535500 Mountaintops of the Giants - West of First Church of Marika
+60535600 Mountaintops of the Giants - Southwest Freezing Lake, Lord Contender's Evergaol, Spiritcaller's Cave Entrance
+60535700 Mountaintops of the Giants - Northwest Freezing Lake
+60535800 Mountaintops of the Giants - Freezing Lake North Cliffside
+60545200 
+60545300 Mountaintops of the Giants - Forge of the Giants
+60545400 
+60545500 Mountaintops of the Giants - First Church of Marika
+60545600 Mountaintops of the Giants - Southeast Freezing Lake
+60545700 Mountaintops of the Giants - Northeast Freezing Lake
+60545800 
+60555500 
+60555600 
+60555700 
+61110902 
+61120902 
+99999901 

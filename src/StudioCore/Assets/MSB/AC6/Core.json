@@ -1,0 +1,976 @@
+{
+    "list": [
+        {
+            "id": "Event",
+            "name": "Event",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EventID",
+                    "name": "Event ID",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "PartName",
+                    "name": "Part Name",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "RegionName",
+                    "name": "Region Name",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "EntityID",
+                    "name": "Entity ID",
+                    "description": "Identifies the Event in event scripts.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Treasure",
+            "name": "Treasure",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "TreasurePartName",
+                    "name": "Attached Part Name",
+                    "description": "The part that the treasure is attached to.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ItemLotID",
+                    "name": "Item Lot ID",
+                    "description": "The item lot to be given.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ActionButtonID",
+                    "name": "Action Button ID",
+                    "description": "If not -1, uses an entry from ActionButtonParam for the pickup prompt.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PickupAnimID",
+                    "name": "Pickup Anim ID",
+                    "description": "Animation to play when taking this treasure.",
+                    "attributes": ""
+                },
+                {
+                    "id": "InChest",
+                    "name": "Is in Chest",
+                    "description": "Changes the text of the pickup prompt.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "StartDisabled",
+                    "name": "Starts Disabled",
+                    "description": "Whether the treasure should be hidden by default.",
+                    "attributes": "IsBool"
+                }
+            ]
+        },
+        {
+            "id": "Generator",
+            "name": "Generator",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "MaxNum",
+                    "name": "Maximum Generated Count",
+                    "description": "The maximum number of enemies that this generator can generate in total.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GenType",
+                    "name": "Generator Type",
+                    "description": "The spawn location behavior to use upon a generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "LimitNum",
+                    "name": "Maximum Spawn Count",
+                    "description": "The maximum number of enemies that this generator can generate upon a generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MinGenNum",
+                    "name": "Random Spawn Count: Minimum",
+                    "description": "The minimum number to use when determining the amount of enemies to generate within a generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MaxGenNum",
+                    "name": "Random Spawn Count: Maximum",
+                    "description": "The maximum number to use when determining the amount of enemies to generate within a generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MinInterval",
+                    "name": "Generation Interval: Minimum",
+                    "description": "The minimum time interval (in seconds) between each generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MaxInterval",
+                    "name": "Generation Interval: Maximum",
+                    "description": "The maximum time interval (in seconds) between each generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "InitialSpawnCount",
+                    "name": "Initial Spawn Count",
+                    "description": "The initial number of enemies to spawn upon initialization of the generator.",
+                    "attributes": ""
+                },
+                {
+                    "id": "UnkT14",
+                    "name": "UnkT14",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "UnkT18",
+                    "name": "UnkT18",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpawnRegionNames",
+                    "name": "Spawn Region Names",
+                    "description": "Regions where parts will spawn from.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpawnPartNames",
+                    "name": "Spawn Part Names",
+                    "description": "Parts that will be respawned.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MapOffset",
+            "name": "Map Offset",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Translation",
+                    "name": "Translation",
+                    "description": "Position of the map.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Rotation",
+                    "name": "Rotation",
+                    "description": "Angle of the map.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "PlatoonInfo",
+            "name": "Platoon Info",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "PlatoonScriptID",
+                    "name": "Platoon Script ID",
+                    "description": "The platoon script to apply when activated.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GroupPartsNames",
+                    "name": "Group Part Names",
+                    "description": "The parts that belong to this platoon.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "PatrolRoute",
+            "name": "Patrol Route",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "PatrolType",
+                    "name": "Patrol Type",
+                    "description": "Determines patrol behavior.",
+                    "attributes": ""
+                },
+                {
+                    "id": "WalkRegionNames",
+                    "name": "Walk Region Names",
+                    "description": "The regions that belong to this patrol route.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MapGimmick",
+            "name": "MapGimmick",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "UnkT00",
+                    "name": "UnkT00",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Part",
+            "name": "Part",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Name",
+                    "name": "Name",
+                    "description": "The name of this entry.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ModelName",
+                    "name": "Model Name",
+                    "description": "The model used by this part; requires an entry in ModelParam.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TypeIndex",
+                    "name": "Type Index",
+                    "description": "Index among parts of the same type.",
+                    "attributes": ""
+                },
+                {
+                    "id": "LayoutPath",
+                    "name": "Layout Path",
+                    "description": "A path to a .sib file, presumably some kind of editor placeholder.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Position",
+                    "name": "Position",
+                    "description": "The position of this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Rotation",
+                    "name": "Rotation",
+                    "description": "The rotation of this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Scale",
+                    "name": "Scale",
+                    "description": "The scale of this part. Scale will NOT affect the scale of enemies or the scale of in-built collision for objects and assets (exception for asset collision if set to Dynamic in AssetEnvironmentGeometryParam).",
+                    "attributes": ""
+                },
+                {
+                    "id": "EntityID",
+                    "name": "Entity ID",
+                    "description": "Identifies the part in event scripts.",
+                    "attributes": ""
+                },
+                {
+                    "id": "UsePartsDrawParamID",
+                    "name": "Use Parts Draw Param ID",
+                    "description": "Enables use of PartsDrawParamID. If false, asset param is used instead.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "PartsDrawParamID",
+                    "name": "Parts Draw Param ID",
+                    "description": "The Parts Draw Param ID to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "IsPointLightShadowSrc",
+                    "name": "Is Point Light Shadow Source",
+                    "description": "Is this part to be considered a Point Light shadow source.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsShadowSrc",
+                    "name": "Is Shadow Source",
+                    "description": "Is this part to be considered a shadow source.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsStaticShadowSrc",
+                    "name": "Is Static Shadow Source",
+                    "description": "Is this part to be considered a static shadow source.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsCascade3ShadowSrc",
+                    "name": "Is Cascade Shadow Source",
+                    "description": "Is this part to be considered a cascade shadow source.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsShadowDest",
+                    "name": "Is Shadow Destination",
+                    "description": "Is this part to be considered a shadow destination.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsShadowOnly",
+                    "name": "Is Shadow Only",
+                    "description": "Is this part only rendered when calculating the shadow pass.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "DrawByReflectCam",
+                    "name": "Is Drawn by Reflection Camera",
+                    "description": "Is this part drawn by the reflection camera.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "DrawOnlyReflectCam",
+                    "name": "Is Drawn Only by the Reflection Camera",
+                    "description": "Is this part only drawn within the reflection camera.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "EnableOnAboveShadow",
+                    "name": "Enable on Above Shadow",
+                    "description": "",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "DisablePointLightEffect",
+                    "name": "Disable Point Light Effect",
+                    "description": "",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "EntityGroupIDs",
+                    "name": "Entity Group ID",
+                    "description": "A entity group ID associated with this part. Allows multiple parts to be identified with a single entity ID.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DisplayGroups",
+                    "name": "Display Group",
+                    "description": "A display group for this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DrawGroups",
+                    "name": "Draw Group",
+                    "description": "A draw group for this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CollisionMask",
+                    "name": "Collision Mask",
+                    "description": "A collision mask for this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DispGroups",
+                    "name": "Display Group",
+                    "description": "A display group for this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "LightId",
+                    "name": "Light Set ID",
+                    "description": "ID of the value set from LightSet ParamEditor to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "FogId",
+                    "name": "Fog Param ID",
+                    "description": "ID of the value set from FogParamEditor to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TransitionTime",
+                    "name": "Transition Time",
+                    "description": "Transition time between scenes.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GparamSubID_Base",
+                    "name": "Graphics Param Override: [1]",
+                    "description": "Value of the hundredths place of a Gparam to override use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GparamSubID_Override1",
+                    "name": "Graphics Param Override: [2]",
+                    "description": "Value of the hundredths place of a Gparam to override [1] with.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GparamSubID_Override2",
+                    "name": "Graphics Param Override: [3]",
+                    "description": "Value of the hundredths place of a Gparam to override [1] and [2] with.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GrassTypeParamIds",
+                    "name": "Grass Type Param ID",
+                    "description": "The grass type param to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MapID",
+                    "name": "Map ID",
+                    "description": "The four ID parts of the map that this map object belongs to. Used in overworld map tiles to link the map object to a specific overworld tile. Order is reverse of map ID string.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Struct58_ActionButtonParamID",
+                    "name": "Action Button ID",
+                    "description": "An ID in ActionButtonParam. Used for interaction prompts.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Enemy",
+            "name": "Enemy",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Enemy_ActionButtonParamID",
+                    "name": "Action Button ID",
+                    "description": "An ID in ActionButtonParam. Used for interaction prompts.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ThinkParamID",
+                    "name": "Think Param ID",
+                    "description": "An ID in NPCThinkParam that determines the enemy's AI characteristics.",
+                    "attributes": ""
+                },
+                {
+                    "id": "NPCParamID",
+                    "name": "NPC Param ID",
+                    "description": "An ID in NPCParam that determines a variety of enemy properties.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TalkID",
+                    "name": "Talk ID",
+                    "description": "An ID pointing to an .ESD file that contains the a Talk setup.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CharaInitID",
+                    "name": "Character Init ID",
+                    "description": "An ID in CharaInitParam that determines a human's inventory and stats.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CollisionPartName",
+                    "name": "Collision Part Name",
+                    "description": "The Name of the collision that this Enemy starts on.",
+                    "attributes": ""
+                },
+                {
+                    "id": "WalkRouteName",
+                    "name": "Walk Route Name",
+                    "description": "Walk route followed by this enemy.",
+                    "attributes": ""
+                },
+                {
+                    "id": "BackupEventAnimID",
+                    "name": "Backup Event Anim ID",
+                    "description": "Default event animation to apply to the enemy whilst it is idle.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PartsTokenParamID",
+                    "name": "Parts Token Param ID",
+                    "description": "Refers to PartsTokenParam ID. Used to determine which enemies hold Combat Logs.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Collision",
+            "name": "Collision",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "HitFilterID",
+                    "name": "Hit Filter ID",
+                    "description": "Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "ConnectCollision",
+            "name": "ConnectCollision",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "CollisionName",
+                    "name": "Collision Name",
+                    "description": "The collision part to attach to.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MapID",
+                    "name": "Map ID",
+                    "description": "The map to load when on this collision.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Asset",
+            "name": "Asset",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "AssetSfxParamRelativeID",
+                    "name": "Asset SFX Param Relative ID",
+                    "description": "Value added onto model ID determining AssetModelSfxParam to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PartNames",
+                    "name": "Part Names",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Region",
+            "name": "Region",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Shape",
+                    "name": "Shape",
+                    "description": "The shape of the region.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Position",
+                    "name": "Position",
+                    "description": "The location of the region.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Rotation",
+                    "name": "Rotation",
+                    "description": "The rotiation of the region, in degrees.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TypeIndex",
+                    "name": "Type Index",
+                    "description": "Index among points of the same type.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ActivationPartName",
+                    "name": "Activation Part Name",
+                    "description": "If specified, the region is only active when the part is loaded.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EntityID",
+                    "name": "Entity ID",
+                    "description": "Identifies the region in event scripts.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EntityGroupID",
+                    "name": "Entity Group ID",
+                    "description": "Identifies a group of regions in event scripts.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "EntryPoint",
+            "name": "Entry Point",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Priority",
+                    "name": "Priority",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "EnvMapPoint",
+            "name": "Environmental Map Point",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "UnkT00",
+                    "name": "UnkT00",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Sound",
+            "name": "Sound",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "SoundType",
+                    "name": "Sound Type",
+                    "description": "The category of the sound.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SoundID",
+                    "name": "Sound ID",
+                    "description": "The ID of the sound.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ChildRegionNames",
+                    "name": "Child Region Names",
+                    "description": "References to other regions used to build a composite shape.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "SFX",
+            "name": "SFX",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EffectID",
+                    "name": "Effect ID",
+                    "description": "The ID of the particle effect FFX.",
+                    "attributes": ""
+                },
+                {
+                    "id": "StartDisabled",
+                    "name": "Start Disabled",
+                    "description": "If true, the effect is off by default until enabled by event scripts.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "WindSFX",
+            "name": "Wind SFX",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EffectID",
+                    "name": "Effect ID",
+                    "description": "ID of the effect FFX.",
+                    "attributes": ""
+                },
+                {
+                    "id": "WindAreaName",
+                    "name": "Wind Area Name",
+                    "description": "Reference to a WindArea region.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "EnvironmentMapEffectBox",
+            "name": "Environment Map Effect Box",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EnableDist",
+                    "name": "Enable Distance",
+                    "description": "Distance from camera required before enabling envmap. 0 = always enabled.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TransitionDist",
+                    "name": "Transition Distance",
+                    "description": "Distance it takes for an envmap to fully transition into view.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpecularLightMult",
+                    "name": "Specular Light Multiplier",
+                    "description": "Strength of specular light in region.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PointLightMult",
+                    "name": "Point Light Multiplier",
+                    "description": "Strength of direct light emitting from EnvironmentMapPoint.",
+                    "attributes": ""
+                },
+                {
+                    "id": "IsModifyLight",
+                    "name": "Modify Light",
+                    "description": "Affects lighting with other fields when true. Possibly normalizes light when false.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "SoundOverride",
+            "name": "Sound Override",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "UnkT00",
+                    "name": "UnkT00",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Patrol",
+            "name": "Patrol",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "UnkT00",
+                    "name": "UnkT00",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "FeMapDisplay",
+            "name": "Map Display",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "UnkT00",
+                    "name": "UnkT00",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "OperationalArea",
+            "name": "Operational Area",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "UnkT00",
+                    "name": "UnkT00",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "AiTarget",
+            "name": "AI Target",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "UnkT00",
+                    "name": "UnkT00",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "WwiseEnvironmentSound",
+            "name": "Environment Sound",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "UnkT00",
+                    "name": "UnkT00",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "BigJump",
+            "name": "Jump Pad",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "JumpSpecifyAltParamID",
+                    "name": "Jump Specify Alt Param ID",
+                    "description": "Determines the parameters to use for the vertical launch pad.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Light",
+            "name": "Light",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Name",
+                    "name": "Name",
+                    "description": "The name of this light.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Type",
+                    "name": "Type",
+                    "description": "The type of light.\nPoint: omnidirectional light.\nSpot: cone of light.\nDirectional: light at a constant angle.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DiffuseColor",
+                    "name": "Diffuse Color",
+                    "description": "Color of the light on diffuse surfaces.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DiffusePower",
+                    "name": "Diffuse Intensity",
+                    "description": "Intensity of diffuse lighting.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpecularColor",
+                    "name": "Specular Color",
+                    "description": "Color of the light on reflective surfaces.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CastShadows",
+                    "name": "Cast Shadows",
+                    "description": "Whether the light casts shadows.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpecularPower",
+                    "name": "Specular Intensity",
+                    "description": "Intensity of specular lighting.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ConeAngle",
+                    "name": "Spot Light: Cone Angle",
+                    "description": "Tightness of the spot light beam. Only affects Spot lights.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Radius",
+                    "name": "Radius",
+                    "description": "Distance the light shines.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ShadowColor",
+                    "name": "ShadowColor",
+                    "description": "Color of shadows cast by the light; alpha is relative to 100.",
+                    "attributes": ""
+                },
+                {
+                    "id": "FlickerIntervalMin",
+                    "name": "Flicker Interval: Minimum",
+                    "description": "Minimum time between flickers.",
+                    "attributes": ""
+                },
+                {
+                    "id": "FlickerIntervalMax",
+                    "name": "Flicker Interval: Maximum",
+                    "description": "Maximum time between flickers.",
+                    "attributes": ""
+                },
+                {
+                    "id": "FlickerBrightnessMult",
+                    "name": "Flicker Brightness Multiplier",
+                    "description": "Multiplies the brightness of the light while flickering.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EventID",
+                    "name": "Event ID",
+                    "description": "Referenced by map events. Only used in DS2.",
+                    "attributes": ""
+                },
+                {
+                    "id": "NearClip",
+                    "name": "Spot Light: Near Clip",
+                    "description": "Distance at which spot light beam starts.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ShadowModelCullFlip",
+                    "name": "Shadow Model Cull Flip",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Sharpness",
+                    "name": "Sharpness",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "LightStartCutoff",
+                    "name": "Light Start Cutoff",
+                    "description": "Distance from start before light appears.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EnableState_UnkC0",
+                    "name": "Enable State",
+                    "description": "Affects if a light appears normally, but details are unknown.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EnableDist",
+                    "name": "Enable Distance",
+                    "description": "Distance required for a light to transition into view. 0 = always enabled.",
+                    "attributes": ""
+                },
+                {
+                    "id": "VolumeDensity",
+                    "name": "Volume Density",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        }
+   ]
+}

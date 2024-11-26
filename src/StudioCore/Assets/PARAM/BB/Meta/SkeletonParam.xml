@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <neckTurnGain AltName="Neck Turn Gain" Wiki="Swing gain. The higher it is, the faster it spins." />
+    <originalGroundHeightMS AltName="Height from Origin to Ground" />
+    <minAnkleHeightMS AltName="Minimum Ankle Height" Wiki="Minimum Height at which Ankle is raised" />
+    <maxAnkleHeightMS AltName="Maximum Ankle Height" Wiki="Maximum Height at which Ankle is raised" />
+    <cosineMaxKneeAngle AltName="Maximum Bend Angle" Wiki="Maximum angle at which the knee can be bent (cosine value)" />
+    <cosineMinKneeAngle AltName="Minimum Bend Angle" Wiki="Minimum angle at which the knee can be bent (cosine value)" />
+    <footPlantedAnkleHeightMS AltName="Lowest Ankle Height" Wiki="The lowest position assuming that the ankles are attached" />
+    <footRaisedAnkleHeightMS AltName="Highest Ankle Height" Wiki="Highest position assuming ankles are apart" />
+    <raycastDistanceUp AltName="Ankle Raycast Upward Distance" Wiki="How high above the ankle should you cast the ray?" />
+    <raycastDistanceDown AltName="Ankle Raycast Downward Distance" Wiki="How far below the ankle should you ray cast?" />
+    <footEndLS_X AltName="Toe Position: X" />
+    <footEndLS_Y AltName="Toe Position: Y" />
+    <footEndLS_Z AltName="Toe Position: Z" />
+    <onOffGain AltName="Foot Turning Gain" Wiki="Gain when turning foot contact on and off" />
+    <groundAscendingGain AltName="Foot Gain on Upward Ramp" Wiki="Gain when ground height increases" />
+    <groundDescendingGain AltName="Foot Gain on Downward Ramp" Wiki="Gain when ground height decreases" />
+    <footRaisedGain AltName="Foot Gain when Raised" Wiki="Gain when the foot is raised" />
+    <footPlantedGain AltName="Foot Gain when Planted" Wiki="Gain when foot touches the ground" />
+    <footUnlockGain AltName="Foot Gain when Unlocked" Wiki="Gain when unlocked" />
+    <kneeAxisType AltName="Knee Axis Type" Wiki="Axial direction of the knee" Enum="SKELETON_PARAM_KNEE_AXIS_DIR" />
+    <useFootLocking AltName="Use Foot Locking" Wiki="Do you want to lock (fix?) your feet/ankles?" IsBool="" />
+    <footPlacementOn AltName="Use Foot Placement" Wiki="Is foot contact effective?" IsBool="" />
+    <twistKneeAxisType AltName="Twist Knee Axis Type" Wiki="Axial direction of knee joint for twisting" Enum="SKELETON_PARAM_KNEE_AXIS_DIR" />
+    <neckTurnPriority AltName="Neck Turn Priority" Wiki="The lower it is, the faster it will turn. -1 does not shake the head" />
+    <neckTurnMaxAngle AltName="Neck Turn Max Angle" Wiki="Maximum rotation angle for this joint. Can't bend beyond this angle" />
+    <pad1 AltName="" Padding=""/>
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

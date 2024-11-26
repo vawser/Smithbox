@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>BONFIRE_WARP_SUB_CATEGORY_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>302</SortID>
+    </Field>
+    <Field Def="s32 textId">
+      <DisplayName>テキストID</DisplayName>
+      <Description>サブカテゴリの表示名テキストID[MenuText]</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u16 tabId">
+      <DisplayName>篝火ワープタブID</DisplayName>
+      <Description>篝火ワープタブID。このサブカテゴリが所属するタブのID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u16 sortId">
+      <DisplayName>篝火ワープタブソートID</DisplayName>
+      <Description>篝火ワープタブソートID。タブの中サブカテゴリの表示順</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="dummy8 pad[4]">
+      <SortID>303</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

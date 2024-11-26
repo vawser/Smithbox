@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<lockParamId0 Refs="LockCamParam" />
+	<camParamId0 Refs="CameraParam" />
+	<beginTime0 />
+	<endTime0 />
+	<lockParamId1 Refs="LockCamParam" />
+	<camParamId1 Refs="CameraParam" />
+	<beginTime1 />
+	<endTime1 />
+	<lockParamId2 Refs="LockCamParam" />
+	<camParamId2 Refs="CameraParam" />
+	<beginTime2 />
+	<endTime2 />
+	<lockParamId3 Refs="LockCamParam" />
+	<camParamId3 Refs="CameraParam" />
+	<beginTime3 />
+	<endTime3 />
+	<lockParamId4 Refs="LockCamParam" />
+	<camParamId4 Refs="CameraParam" />
+	<beginTime4 />
+	<endTime4 />
+	<lockParamId5 Refs="LockCamParam" />
+	<camParamId5 Refs="CameraParam" />
+	<beginTime5 />
+	<endTime5 />
+	<lockParamId6 Refs="LockCamParam" />
+	<camParamId6 Refs="CameraParam" />
+	<beginTime6 />
+	<endTime6 />
+	<lockParamId7 Refs="LockCamParam" />
+	<camParamId7 Refs="CameraParam" />
+	<beginTime7 />
+	<endTime7 />
+	<lockParamId8 Refs="LockCamParam" />
+	<camParamId8 Refs="CameraParam" />
+	<beginTime8 />
+	<endTime8 />
+	<lockParamId9 Refs="LockCamParam" />
+	<camParamId9 Refs="CameraParam" />
+	<beginTime9 />
+	<endTime9 />
+	<lockParamId10 Refs="LockCamParam" />
+	<camParamId10 Refs="CameraParam" />
+	<beginTime10 />
+	<endTime10 />
+	<lockParamId11 Refs="LockCamParam" />
+	<camParamId11 Refs="CameraParam" />
+	<beginTime11 />
+	<endTime11 />
+	<lockParamId12 Refs="LockCamParam" />
+	<camParamId12 Refs="CameraParam" />
+	<beginTime12 />
+	<endTime12 />
+	<lockParamId13 Refs="LockCamParam" />
+	<camParamId13 Refs="CameraParam" />
+	<beginTime13 />
+	<endTime13 />
+	<lockParamId14 Refs="LockCamParam" />
+	<camParamId14 Refs="CameraParam" />
+	<beginTime14 />
+	<endTime14 />
+	<lockParamId15 Refs="LockCamParam" />
+	<camParamId15 Refs="CameraParam" />
+	<beginTime15 />
+	<endTime15 />
+	<lockParamId16 Refs="LockCamParam" />
+	<camParamId16 Refs="CameraParam" />
+	<beginTime16 />
+	<endTime16 />
+	<lockParamId17 Refs="LockCamParam" />
+	<camParamId17 Refs="CameraParam" />
+	<beginTime17 />
+	<endTime17 />
+	<lockParamId18 Refs="LockCamParam" />
+	<camParamId18 Refs="CameraParam" />
+	<beginTime18 />
+	<endTime18 />
+	<lockParamId19 Refs="LockCamParam" />
+	<camParamId19 Refs="CameraParam" />
+	<beginTime19 />
+	<endTime19 />
+	<lockParamId20 Refs="LockCamParam" />
+	<camParamId20 Refs="CameraParam" />
+	<beginTime20 />
+	<endTime20 />
+	<lockParamId21 Refs="LockCamParam" />
+	<camParamId21 Refs="CameraParam" />
+	<beginTime21 />
+	<endTime21 />
+	<lockParamId22 Refs="LockCamParam" />
+	<camParamId22 Refs="CameraParam" />
+	<beginTime22 />
+	<endTime22 />
+	<lockParamId23 Refs="LockCamParam" />
+	<camParamId23 Refs="CameraParam" />
+	<beginTime23 />
+	<endTime23 />
+	<lockParamId24 Refs="LockCamParam" />
+	<camParamId24 Refs="CameraParam" />
+	<beginTime24 />
+	<endTime24 />
+	<lockParamId25 Refs="LockCamParam" />
+	<camParamId025 Refs="CameraParam" />
+	<beginTime25 />
+	<endTime25 />
+	<lockParamId26 Refs="LockCamParam" />
+	<camParamId26 Refs="CameraParam" />
+	<beginTime26 />
+	<endTime26 />
+	<lockParamId27 Refs="LockCamParam" />
+	<camParamId27 Refs="CameraParam" />
+	<beginTime27 />
+	<endTime27 />
+	<lockParamId28 Refs="LockCamParam" />
+	<camParamId28 Refs="CameraParam" />
+	<beginTime28 />
+	<endTime28 />
+	<lockParamId29 Refs="LockCamParam" />
+	<camParamId29 Refs="CameraParam" />
+	<beginTime29 />
+	<endTime29 />
+	<lockParamId30 Refs="LockCamParam" />
+	<camParamId30 Refs="CameraParam" />
+	<beginTime30 />
+	<endTime30 />
+	<lockParamId31 Refs="LockCamParam" />
+	<camParamId31 Refs="CameraParam" />
+	<beginTime31 />
+	<endTime31 />
+	<lockParamId32 Refs="LockCamParam" />
+	<camParamId32 Refs="CameraParam" />
+	<beginTime32 />
+	<endTime32 />
+	<lockParamId33 Refs="LockCamParam" />
+	<camParamId33 Refs="CameraParam" />
+	<beginTime33 />
+	<endTime33 />
+	<lockParamId34 Refs="LockCamParam" />
+	<camParamId34 Refs="CameraParam" />
+	<beginTime34 />
+	<endTime34 />
+	<lockParamId35 Refs="LockCamParam" />
+	<camParamId35 Refs="CameraParam" />
+	<beginTime35 />
+	<endTime35 />
+	<lockParamId36 Refs="LockCamParam" />
+	<camParamId36 Refs="CameraParam" />
+	<beginTime36 />
+	<endTime36 />
+	<lockParamId37 Refs="LockCamParam" />
+	<camParamId37 Refs="CameraParam" />
+	<beginTime37 />
+	<endTime37 />
+	<lockParamId38 Refs="LockCamParam" />
+	<camParamId38 Refs="CameraParam" />
+	<beginTime38 />
+	<endTime38 />
+	<lockParamId39 Refs="LockCamParam" />
+	<camParamId39 Refs="CameraParam" />
+	<beginTime39 />
+	<endTime39 />
+	<lockParamId40 Refs="LockCamParam" />
+	<camParamId40 Refs="CameraParam" />
+	<beginTime40 />
+	<endTime40 />
+	<lockParamId41 Refs="LockCamParam" />
+	<camParamId41 Refs="CameraParam" />
+	<beginTime41 />
+	<endTime41 />
+	<lockParamId42 Refs="LockCamParam" />
+	<camParamId42 Refs="CameraParam" />
+	<beginTime42 />
+	<endTime42 />
+	<lockParamId43 Refs="LockCamParam" />
+	<camParamId43 Refs="CameraParam" />
+	<beginTime43 />
+	<endTime43 />
+	<lockParamId44 Refs="LockCamParam" />
+	<camParamId44 Refs="CameraParam" />
+	<beginTime44 />
+	<endTime44 />
+  </Field>
+  <Self AlternativeOrder="lockParamId0,camParamId0,beginTime0,endTime0,-,
+lockParamId1,camParamId1,beginTime1,endTime1,-,
+lockParamId2,camParamId2,beginTime2,endTime2,-,
+lockParamId3,camParamId3,beginTime3,endTime3,-,
+lockParamId4,camParamId4,beginTime4,endTime4,-,
+lockParamId5,camParamId5,beginTime5,endTime5,-,
+lockParamId6,camParamId6,beginTime6,endTime6,-,
+lockParamId7,camParamId7,beginTime7,endTime7,-,
+lockParamId8,camParamId8,beginTime8,endTime8,-,
+lockParamId9,camParamId9,beginTime9,endTime9,-,
+lockParamId10,camParamId10,beginTime10,endTime10,-,
+lockParamId11,camParamId11,beginTime11,endTime11,-,
+lockParamId12,camParamId12,beginTime12,endTime12,-,
+lockParamId13,camParamId13,beginTime13,endTime13,-,
+lockParamId14,camParamId14,beginTime14,endTime14,-,
+lockParamId15,camParamId15,beginTime15,endTime15,-,
+lockParamId16,camParamId16,beginTime16,endTime16,-,
+lockParamId17,camParamId17,beginTime17,endTime17,-,
+lockParamId18,camParamId18,beginTime18,endTime18,-,
+lockParamId19,camParamId19,beginTime19,endTime19,-,
+lockParamId20,camParamId20,beginTime20,endTime20,-,
+lockParamId21,camParamId21,beginTime21,endTime21,-,
+lockParamId22,camParamId22,beginTime22,endTime22,-,
+lockParamId23,camParamId23,beginTime23,endTime23,-,
+lockParamId24,camParamId24,beginTime24,endTime24,-,
+lockParamId25,camParamId25,beginTime25,endTime25,-,
+lockParamId26,camParamId26,beginTime26,endTime26,-,
+lockParamId27,camParamId27,beginTime27,endTime27,-,
+lockParamId28,camParamId28,beginTime28,endTime28,-,
+lockParamId29,camParamId29,beginTime29,endTime29,-,
+lockParamId30,camParamId30,beginTime30,endTime30,-,
+lockParamId31,camParamId31,beginTime31,endTime31,-,
+lockParamId32,camParamId32,beginTime32,endTime32,-,
+lockParamId33,camParamId33,beginTime33,endTime33,-,
+lockParamId34,camParamId34,beginTime34,endTime34,-,
+lockParamId35,camParamId35,beginTime35,endTime35,-,
+lockParamId36,camParamId36,beginTime36,endTime36,-,
+lockParamId37,camParamId37,beginTime37,endTime37,-,
+lockParamId38,camParamId38,beginTime38,endTime38,-,
+lockParamId39,camParamId39,beginTime39,endTime39,-,
+lockParamId40,camParamId40,beginTime40,endTime40,-,
+lockParamId41,camParamId41,beginTime41,endTime41,-,
+lockParamId42,camParamId42,beginTime42,endTime42,-,
+lockParamId43,camParamId43,beginTime43,endTime43,-,
+lockParamId44,camParamId44,beginTime44,endTime44,-" />
+</PARAMMETA>

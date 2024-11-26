@@ -1,5 +1,0 @@
-0 Nothing happens -- なにもおこらない
-1 Attack power up -- 攻撃力アップ
-2 Defensive power up -- 防御力アップ
-3 HP regen -- HPリジェネ
-4 Max HP up -- マックスHPアップ

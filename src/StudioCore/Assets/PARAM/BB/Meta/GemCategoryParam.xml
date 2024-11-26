@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<sortNo AltName="Sort ID" Wiki="" />
+	<manifestRate AltName="Appearance Rate by Category" Wiki="" />
+	<directionalId AltName="Directional ID" Wiki="" />
+	<cateGroupId AltName="Category Group ID" Wiki="" />
+	<excludeGroupId AltName="Exclusive Group ID" Wiki="" />
+	<isNegative AltName="Is Negative Effect" Wiki="" IsBool=""/>
+	<enableSlotTypeA AltName="Enable Slot Type A" Wiki="" IsBool=""/>
+	<enableSlotTypeB AltName="Enable Slot Type B" Wiki="" IsBool=""/>
+	<enableSlotTypeC AltName="Enable Slot Type C" Wiki="" IsBool=""/>
+	<enableSlotTypeD AltName="Enable Slot Type D" Wiki="" IsBool=""/>
+	<enableSlotTypeE AltName="Enable Slot Type E" Wiki="" IsBool=""/>
+	<enableSlotTypeF AltName="Enable Slot Type F" Wiki="" IsBool=""/>
+	<holygrailTypeGroup AltName="Holy Grail Type Group ID" Wiki="" />
+	<affinityCateId_0 AltName="Compatibility Category Group ID [0]" Wiki="" />
+	<affinityModifyRate_0 AltName="Compatibility Correction % [0]" Wiki="" />
+	<affinityCateId_1 AltName="Compatibility Category Group ID [1]" Wiki="" />
+	<affinityModifyRate_1 AltName="Compatibility Correction % [1]" Wiki="" />
+	<affinityCateId_2 AltName="Compatibility Category Group ID [2]" Wiki="" />
+	<affinityModifyRate_2 AltName="Compatibility Correction % [2]" Wiki="" />
+	<affinityCateId_3 AltName="Compatibility Category Group ID [3]" Wiki="" />
+	<affinityModifyRate_3 AltName="Compatibility Correction % [3]" Wiki="" />
+  </Field>
+  <Self Wiki="Blood Gem - Categories"/>
+</PARAMMETA>

@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Field>
-    <spEffectIdOnHit1 AltName="spEffectId 1" Refs="SpEffectParam" />
-    <spEffectIdOnHit0 AltName="spEffectId 0" Refs="SpEffectParam" />
-  </Field>
-  <Self />
-</PARAMMETA>

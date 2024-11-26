@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>LOOK_AT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="fixstr strCtrlBoneName[24]">
+      <DisplayName>制御ボーン名</DisplayName>
+      <Description>制御するボーン名</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 bRotEnableX">
+      <DisplayName>X軸（上下方向）の回転有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>X軸回転を有効にするかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 bRotEnableY">
+      <DisplayName>Y軸（左右方向）の回転有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>Y軸回転を有効にするかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u8 bRotInverse">
+      <DisplayName>正面を180度反転</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>回転時に正面を180度反転するかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="u8 bDirPosShootOffsetEnable = 1">
+      <DisplayName>LookAt方向を銃口位置で補正</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>LookAt方向を回転軸と銃口位置とのズレの分補正するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="u8 upLimitAngleDeg = 180">
+      <DisplayName>上方向限界角度[度]</DisplayName>
+      <Description>上方向の限界角度</Description>
+      <Maximum>180</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 downLimitAngleDeg = 180">
+      <DisplayName>下方向限界角度[度]</DisplayName>
+      <Description>下方向の限界角度</Description>
+      <Maximum>180</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="u16 maxRotSpeedDegPerSecX">
+      <DisplayName>1秒間のX軸最高旋回角度[度]</DisplayName>
+      <Description>X軸の最高角速度</Description>
+      <Maximum>9999</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="f32 turnAccelDPSS_X">
+      <DisplayName>X軸回転の角加速度[deg/s^2]</DisplayName>
+      <Description>X軸回転の角加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="s32 offsetBaseDmyPolyId = -1">
+      <DisplayName>オフセット基準ダミポリ(手動入力用)</DisplayName>
+      <Description>LookAt方向を回転軸と銃口位置とのズレの分補正するときに使うダミポリID（-1で武器の射撃ダミポリ）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="u8 leftLimitAngleDeg = 180">
+      <DisplayName>左方向限界角度[度]</DisplayName>
+      <Description>左方向の限界角度</Description>
+      <Maximum>180</Maximum>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="u8 rightLimitAngleDeg = 180">
+      <DisplayName>右方向限界角度[度]</DisplayName>
+      <Description>右方向の限界角度</Description>
+      <Maximum>180</Maximum>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="u16 maxRotSpeedDegPerSecY">
+      <DisplayName>1秒間のY軸最高旋回角度[度]</DisplayName>
+      <Description>Y軸の最高角速度</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="f32 turnAccelDPSS_Y">
+      <DisplayName>Y軸回転の角加速度[deg/s^2]</DisplayName>
+      <Description>Y軸回転の角加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="f32 lookAheadSecond_Y">
+      <DisplayName>【廃止予定】最小でも何秒後のターゲット位置を見るか[sec]</DisplayName>
+      <Description>【無効中】最小でも何秒後のターゲット位置を見るか[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2800</SortID>
+    </Field>
+    <Field Def="f32 basePosOffsetY">
+      <DisplayName>基準位置高さオフセット</DisplayName>
+      <Description>方向計算時の基準位置を回転軸からY方向にこの値だけずらした場所にする</Description>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 predictionShootObserveTime">
+      <DisplayName>【廃止予定】ターゲット予測の速度観測時間[sec]</DisplayName>
+      <Description>【無効中】ターゲット予測の速度観測時間[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>4</Maximum>
+      <SortID>26000</SortID>
+    </Field>
+    <Field Def="s32 predictionBulletId = -1">
+      <DisplayName>【廃止予定】ターゲット予測に用いる弾丸ID</DisplayName>
+      <Description>ターゲット予測に用いる弾丸ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>27000</SortID>
+    </Field>
+    <Field Def="f32 predictionMaxTime">
+      <DisplayName>【廃止予定】最大でも何秒後のターゲット位置まで見るか[sec]</DisplayName>
+      <Description>【無効中】最大でも何秒後のターゲット位置まで見るか[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>29000</SortID>
+    </Field>
+    <Field Def="s8 predictionWepSlotIndex = -1">
+      <DisplayName>武器スロット番号</DisplayName>
+      <Description>武器（攻撃アクション）の装備スロット番号（-1でデフォルト）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31</Maximum>
+      <SortID>2905</SortID>
+    </Field>
+    <Field Def="u8 bFollowOrbitMode">
+      <DisplayName>自機EOの制御にするか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>自機についてくるオービットの制御モードにするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="dummy8 pad01[2]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>29001</SortID>
+    </Field>
+    <Field Def="f32 fadeOutTime">
+      <DisplayName>フェードアウト時間[sec]</DisplayName>
+      <Description>LookAtが無効化されたときのフェードアウト時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>3500</SortID>
+    </Field>
+    <Field Def="u8 deflectType">
+      <DisplayName>偏差射撃タイプ</DisplayName>
+      <Enum>BULLET_DEFLECT_TYPE</Enum>
+      <Description>偏差射撃タイプ。弾丸パラメータにも設定口があるので注意</Description>
+      <SortID>2900</SortID>
+    </Field>
+    <Field Def="u8 bLookAtPosFollowTargetMode">
+      <DisplayName>LookAtの目標位置をターゲットに追従するモード</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>LookAtのターゲット位置を速度、加速度を使って追従するモードか</Description>
+      <Maximum>1</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="u8 bWorldFixRotX">
+      <DisplayName>X軸（上下方向）回転をワールドに対して固定する</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>X軸回転をワールドに対して固定するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="u8 bWorldFixRotY">
+      <DisplayName>Y軸（左右方向）回転をワールド（キャラの向き）に対して固定する</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>Y軸回転をワールド（キャラの向き）に対して固定するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="s16 worldFixRotOffsetAngleDegX">
+      <DisplayName>X軸（上下方向）ワールド固定オフセット角度[度]</DisplayName>
+      <Description>X軸回転をワールドに対して固定するときのオフセット角度</Description>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>1610</SortID>
+    </Field>
+    <Field Def="s16 worldFixRotOffsetAngleDegY">
+      <DisplayName>Y軸（左右方向）ワールド固定オフセット角度[度]</DisplayName>
+      <Description>Y軸回転をワールドに対して固定するときのオフセット角度</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>2610</SortID>
+    </Field>
+    <Field Def="s32 lookAtPosFollowTarget_BaseDmyId = -1">
+      <DisplayName>目標位置ターゲット追従モードの基準ダミポリ</DisplayName>
+      <Description>ターゲット追従モードのときの基準ダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="f32 lookAtPosFollowTarget_AcellMPSS">
+      <DisplayName>目標位置ターゲット追従モードの加速度[m/s^2]</DisplayName>
+      <Description>ターゲット追従モードのときのターゲット方向への加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="f32 lookAtPosFollowTarget_BrakeMPSS">
+      <DisplayName>目標位置ターゲット追従モードのブレーキ[m/s^2]</DisplayName>
+      <Description>ターゲット追従モードのときのターゲット方向以外の移動ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="f32 lookAtPosFollowTarget_MaxSpeedKMH">
+      <DisplayName>目標位置ターゲット追従モードの最高速度[km/h]</DisplayName>
+      <Description>ターゲット追従モードのときのターゲット方向への移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="f32 rotRate_X = 1">
+      <DisplayName>X軸回転割合</DisplayName>
+      <Description>X軸回転の回転割合（1でターゲット方向、親関節からの累計になる）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="f32 rotRate_Y = 1">
+      <DisplayName>Y軸回転割合</DisplayName>
+      <Description>Y軸回転の回転割合（1でターゲット方向、親関節からの累計になる）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2700</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[16]">
+      <DisplayName>パディング3</DisplayName>
+      <SortID>29002</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

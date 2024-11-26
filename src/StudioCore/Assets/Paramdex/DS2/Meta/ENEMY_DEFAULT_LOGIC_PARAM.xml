@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the default battle logic used by enemies." Row0Dummy="" />
-  <Field>
-    <logic_com_param_id AltName="Logic Com ID" Refs="LogicComParam"/>
-    <enemy_param_id AltName="Enemy ID" Refs="EnemyParam"/>
-  </Field>
-</PARAMMETA>

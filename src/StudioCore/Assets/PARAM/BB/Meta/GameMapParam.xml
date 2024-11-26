@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<settingNo_timeSlotA AltName="Light Group ID: Evening" />
+	<settingNo_timeSlotB AltName="Light Group ID: Sunset" />
+	<settingNo_timeSlotC AltName="Light Group ID: Night" />
+	<settingNo_timeSlotD AltName="Light Group ID: Blood Moon" />
+  </Field>
+  <Self Wiki="Level Data - Time"/>
+</PARAMMETA>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines common parameters for enemies." />
+  
+  <Field>
+    <TargetNoForget_TargetEne0_LadderHeight
+    AltName="Never Forget Distance when on Ladder (TARGET_ENE_0)"
+    Wiki="When TARGET_ENE_0 is on a ladder, if the height difference with the enemy itself is within this value, the target will not be forgotten." />
+    
+    <IsIntegrateWithRaycast_CheckRoofLength
+    AltName="Distance from Player that allows Ceiling Height Determination"
+    Wiki="Only when the distance from the local player is less than this distance, the lifting height of the floor integral will be determined by considering the ceiling height." />
+    
+    <WallHitInteruptFlag_Angle
+    AltName="Wall Collision Interrupt Flag: Judgement Angle"
+    Wiki="Threshold value of the angle between the wall normal and the movement direction (opposite direction). In degrees." />
+    
+    <WallHitInteruptFlag_KeptTime
+    AltName="Wall Collision Interrupt Flag: Judgment Duration"
+    Wiki="Threshold for the time that wall collision lasts (If it gets too large, flag issuance will be delayed; if it gets too small, it will be easier to accidentally detonate). In seconds." />
+    
+    <WallHitInteruptFlag_StoppedTime
+    AltName="Wall Collision Interrupt Flag: Allowable Interruption Time"
+    Wiki="Maximum allowable interruption time, as wall collisions can be choppy due to system and terrain considerations." />
+    
+    <ForceIntegrateWithRaycastForSlopeTime
+    AltName="Judgement Duration for Forced Lift when Stuck on Slope"
+    Wiki="If you continue to get stuck on the slope for more than this time, forced lift update will be performed depending on the NPC parameter settings. In seconds." />
+    
+    <reserve
+    AltName=""
+    Padding="" />
+    
+    <ActivateChrByTime_PhantomId
+    AltName="Phantom ID: Time-based Activation"
+    Wiki="Fade the phantom shader with appearance/disappearance effects." 
+    Refs="PhantomParam" />
+    
+    <ExcessSubAwarePointIntervalTime
+    AltName="Awareness Decay Start Time to Upper Limit"
+    Wiki="Enemy search level Decay start time to upper limit. In seconds." />
+    
+    <SearchToDiscoveryStatePoint
+    AltName="Awareness: Change to Discovery State Trigger"
+    Wiki="Enemy search level that shifts to complete discovery state." />
+    
+    <SearchToNomalStatePoint
+    AltName="Awareness: Change to Normal State Trigger"
+    Wiki="Enemy search level that shifts to complete normal state." />
+    
+    <AwarePointDecreaseTime_Normal
+    AltName="Awareness Decrease: Grace Duration (Normal)"
+    Wiki="Grace time until enemy search level decreases - Normal (in seconds)." />
+    
+    <AwarePointDecreaseTime_Damage
+    AltName="Awareness Decrease: Grace Duration (Damage)"
+    Wiki="Grace time until enemy search level decreases - During Damage (in seconds)." />
+    
+    <AwarePointMax
+    AltName="Max Awareness"
+    Wiki="Maximum enemy search level." />
+    
+    <CombatPointDecreaseTime
+    AltName="Engagement: Grace Duration"
+    Wiki="Grace time until engagement level decreases (for perception in new specifications). In seconds." />
+    
+    <CombatPointDecreasePoint
+    AltName="Engagement: Decrease per Second"
+    Wiki="The amount of engagement level that decreases every second." />
+    
+    <ShareTargetTime
+    AltName="Target Sharing: Grace Duration"
+    Wiki="Grace time before sharing target. In seconds." />
+    
+    <CombatPointDecreasePerSec_Sense
+    AltName="Sense: Engagement Decrease per Second"
+    Wiki="Amount of reduction in engagement level accumulated due to audiovisual/hitting. In points per second." />
+    
+    <CombatPointDecreasePerSec_Radar
+    AltName="Scan: Engagement Decrease per Second"
+    Wiki="Engagement reduction amount accumulated by radar. In points per second." />
+    
+    <CombatPointDecreaseTime_Radar
+    AltName="Scan: Engagement Decrease Grace Duration"
+    Wiki="Grace time until engagement level decreases (radar). In seconds." />
+    
+    <AwarePointDescreasePerSec
+    AltName="Awareness Reduction per Second"
+    Wiki="Decreased amount of enemy search level per second." />
+    
+    <bodyTrunk_BodyGaugePoint
+    AltName="Core: Body Guage"
+    Wiki="Body trunk gauge (point)" />
+    
+    <bodyTrunk_ActionGaugePoint
+    AltName="Core: Action Guage"
+    Wiki="Body trunk gauge (point)" />
+    
+    <bodyTrunk_PointHealWaitTimeSec
+    AltName="Core Recovery: Wait Time"
+    Wiki="Time to wait for core recovery. In seconds." />
+    
+    <bodyTrunk_PointHealPerSec
+    AltName="Core Recovery: HP per Second"
+    Wiki="Points per second to restore core recovery." />
+    
+    <endPermanentStunStateValue
+    AltName="End Permanent Stun Value"
+    Wiki="" />
+    
+    <assignRoleEvaluateInterval
+    AltName="Platoon Follower: Role Evaluation Interval"
+    Wiki="Time interval for evaluating platoon follower roles. In seconds." />
+    
+    <assignAttackRoleBattleRange
+    AltName="Attacker Battle Limit Distance"
+    Wiki="Within the set distance, the attacker will be given priority to the locked-on character. In metres." />
+    
+    <SmoothPatrol_routeAdjustRadius
+    AltName="Platoon Patrol: Route Correction Upper Limit Radius"
+    Wiki="Radius value for correction of tour route smoothing process." />
+    
+    <ShareTargetRecognitionLagError
+    AltName="Shared Target Recognition Delay Error"
+    Wiki="Delay time = shared target recognition delay + random( 0, shared target recognition delay error). In seconds." />
+    
+    <addImpactDisableTimeSec
+    AltName="Impact Invicibility Time"
+    Wiki="Impact value invalidation time when exiting the state of 'impact invincibility activated when exiting the state'. In seconds." />
+    
+    <pad_01
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

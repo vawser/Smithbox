@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <sfxId AltName="SFX ID" Wiki="" ParticleAlias="" />
+    <dmypolyId AltName="Dummy Poly ID" Wiki="" />
+    <pad_0 Padding="" />
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CUSTOM_GARAGE_PARTS_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 Price">
+      <DisplayName>値段</DisplayName>
+      <Description>値段</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 NameID = -1">
+      <DisplayName>名前ID</DisplayName>
+      <Description>名前のテキストID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 GarageID">
+      <DisplayName>ガレージID</DisplayName>
+      <Description>このパーツのガレージのID（ガレージカテゴリシートのID）</Description>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 PartsIndex">
+      <DisplayName>パーツインデックス</DisplayName>
+      <Description>ガレージモデル内のパーツのインデックス</Description>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 InitType">
+      <DisplayName>初期状態</DisplayName>
+      <Enum>EMBLEM_PIECE_INIT_TYPE</Enum>
+      <Description>初期状態</Description>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 GroupID">
+      <DisplayName>グループID</DisplayName>
+      <Description>このパーツのグループID（報酬時の指定で使用）</Description>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 ThumbnailIndex">
+      <DisplayName>サムネイルインデックス</DisplayName>
+      <Description>ガレージカテゴリで指定しているテクスチャ内の何番目のサムネイルを表示するか</Description>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[3]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>41</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

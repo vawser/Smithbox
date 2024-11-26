@@ -1,0 +1,189 @@
+1 UNKNOWN
+21200001 Guardian Dragon
+21200002 Guardian Dragon
+21200003 Guardian Dragon
+21200004 Guardian Dragon
+21200005 Guardian Dragon
+21200006 Guardian Dragon
+21200007 Guardian Dragon
+21200101 Guardian Dragon
+21200102 Guardian Dragon
+21200103 Guardian Dragon
+21200104 Guardian Dragon
+21200105 Guardian Dragon
+21200106 Guardian Dragon
+21200107 Guardian Dragon
+21200201 Guardian Dragon
+21200202 Guardian Dragon
+21200203 Guardian Dragon
+21200204 Guardian Dragon
+21200205 Guardian Dragon
+21200206 Guardian Dragon
+21200207 Guardian Dragon
+21200301 Guardian Dragon
+21200302 Guardian Dragon
+21200303 Guardian Dragon
+21200304 Guardian Dragon
+21200305 Guardian Dragon
+21200306 Guardian Dragon
+21200307 Guardian Dragon
+30500001 Smelter Demon
+30500002 Smelter Demon
+30500003 Smelter Demon
+30500004 Smelter Demon
+30500005 Smelter Demon
+30500006 Smelter Demon
+30960001 The Last Giant
+30960002 The Last Giant
+30960003 The Last Giant
+30960004 The Last Giant
+30960005 The Last Giant
+30960006 The Last Giant
+30970001 Giant Lord
+30970002 Giant Lord
+30970003 Giant Lord
+30970004 Giant Lord
+30970005 Giant Lord
+30970006 Giant Lord
+32600001 The Rotten
+32600002 The Rotten
+32600003 The Rotten
+32600004 The Rotten
+32600005 The Rotten
+32600006 The Rotten
+33200001 Throne Defender
+33200002 Throne Defender
+33200003 Throne Defender
+33200004 Throne Defender
+33200005 Throne Defender
+33200006 Throne Defender
+33200009 Throne Defender
+33300001 Velstadt
+33300002 Velstadt
+33300003 Velstadt
+33300004 Velstadt
+33300005 Velstadt
+33300006 Velstadt
+50000001 Covetous Demon
+50000002 Covetous Demon
+50000003 Covetous Demon
+50000004 Covetous Demon
+50000005 Covetous Demon
+50100001 Mytha- the Baneful Queen
+50200001 Manscorpion Tark
+50200002 Manscorpion Tark
+50200003 Manscorpion Tark
+50200004 Manscorpion Tark
+50200005 Manscorpion Tark
+50300001 Scorpioness Najka
+50300002 Scorpioness Najka
+50300003 Scorpioness Najka
+50300004 Scorpioness Najka
+50300005 Scorpioness Najka
+50300006 Scorpioness Najka
+50400001 Looking Glass Knight
+50400002 Looking Glass Knight
+50400003 Looking Glass Knight
+50400004 Looking Glass Knight
+50400005 Looking Glass Knight
+50400006 Looking Glass Knight
+50400007 Looking Glass Knight
+50400008 Looking Glass Knight
+50400009 Looking Glass Knight
+50400010 Looking Glass Knight
+50400011 Looking Glass Knight
+50400012 Looking Glass Knight
+50400013 Looking Glass Knight
+50400014 Looking Glass Knight
+50400015 Looking Glass Knight
+50400016 Looking Glass Knight
+50400017 Looking Glass Knight
+51460001 Vendrick (hollow)
+51460002 Vendrick (hollow)
+51460003 Vendrick (hollow)
+51460004 Vendrick (hollow)
+51460005 Vendrick (hollow)
+51460006 Vendrick (hollow)
+60000001 Ancient Dragon
+60000002 Ancient Dragon
+60000003 Ancient Dragon
+60000004 Ancient Dragon
+60000005 Ancient Dragon
+60000006 Ancient Dragon
+60100001 Flame Lizard
+60100002 Flame Lizard
+60102001 Flame Lizard
+60200001 Demon of Song
+60200002 Demon of Song
+60200003 Demon of Song
+60200004 Demon of Song
+60200005 Demon of Song
+60200006 Demon of Song
+60200007 Demon of Song
+60200008 Demon of Song
+60300001 The Duke's Dear Freja
+60300002 The Duke's Dear Freja
+60300003 The Duke's Dear Freja
+60310001 The Duke's Dear Freja
+60310002 The Duke's Dear Freja
+60310003 The Duke's Dear Freja
+60700001 Old Iron King
+60700002 Old Iron King
+60700003 Old Iron King
+60700004 Old Iron King
+60700005 Old Iron King
+60700006 Old Iron King
+60900001 UNKNOWN
+60900002 UNKNOWN
+60900003 UNKNOWN
+60900004 UNKNOWN
+60900005 UNKNOWN
+60900006 UNKNOWN
+60900007 UNKNOWN
+61910001 Executioner's Chariot
+61910002 Executioner's Chariot
+61910003 Executioner's Chariot
+61910004 Executioner's Chariot
+61910005 Executioner's Chariot
+61910006 Executioner's Chariot
+61910007 Executioner's Chariot
+61911001 Executioner's Chariot
+61911002 Executioner's Chariot
+61911003 Executioner's Chariot
+61911004 Executioner's Chariot
+61911005 Executioner's Chariot
+61911006 Executioner's Chariot
+61911007 Executioner's Chariot
+61911008 Executioner's Chariot
+62700001 Nashandra
+62700002 Nashandra
+62700003 Nashandra
+62700004 Nashandra
+62700005 Nashandra
+62700006 Nashandra
+62700007 Nashandra
+62700008 Nashandra
+68100001 Sinh- the Slumbering Dragon
+68100002 Sinh- the Slumbering Dragon
+68100003 Sinh- the Slumbering Dragon
+68100004 Sinh- the Slumbering Dragon
+68100005 Sinh- the Slumbering Dragon
+68100006 Sinh- the Slumbering Dragon
+68100007 Sinh- the Slumbering Dragon
+68100008 Sinh- the Slumbering Dragon
+68100009 Sinh- the Slumbering Dragon
+68200001 Elana- Squalid Queen
+68200002 Elana- Squalid Queen
+68200003 Elana- Squalid Queen
+68200004 Elana- Squalid Queen
+68200005 Elana- Squalid Queen
+68300001 Imperfect
+68300002 Imperfect
+68300003 Imperfect
+68300004 Imperfect
+68300005 Imperfect
+69000001 Burnt Ivory King
+69000002 Burnt Ivory King
+69000003 Burnt Ivory King
+69000004 Burnt Ivory King
+69000005 Burnt Ivory King

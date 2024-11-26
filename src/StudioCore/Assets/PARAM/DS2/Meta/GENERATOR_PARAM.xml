@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Row0Dummy="" />
+  <Field>
+    <SpawnLimit AltName="Spawn Limit" />
+    <SpawnLimitGameClear AltName="Spawn Limit: Game Clear" />
+    <AggroGroup AltName="Aggression Group" Wiki="Used to group entities together so they become aggressive at the same trigger and sometimes used with aggro boundaries." />
+    <DeathEventID AltName="Death Event ID" />
+    <GeneratorRegistParam AltName="Generator Registeration ID" Wiki="ParamStudio can't deep link because of the way the generatorregistparam files are named to include the map designation at the end." />
+    <AppearanceEventID AltName="Appearance Event ID" Wiki="Used in ESD. 1 through to 7 are used to determine NG+ appearance." />
+    <PreviousHostileEventID1 AltName="Hostile Memory Event ID [1]" />
+    <PreviousHostileEventID2 AltName="Hostile Memory Event ID [2]" />
+    <LocationEventID1 AltName="Location Event ID [1]" Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    <LocationEventID2 AltName="Location Event ID [2]" Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    <LocationEventID3 AltName="Location Event ID [3]" Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    <LocationEventID4 AltName="Location Event ID [4]" Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    <LocationEventID5 AltName="Location Event ID [5]" Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    <MapObjectBonfireID AltName="Map Object Bonfire ID" Wiki="The ID of the bonfire this entity is linked to. Used with ascetics, effigies, and multi-player." />
+    <LeashDistance AltName="Leash Distance" />
+    <LocationEventID6 AltName="Location Event ID [6]" Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    <LocationEventID7 AltName="Location Event ID [7]" Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    <AIThinkID AltName="AI Think ID" Wiki="The AI for this entity. A boss AI will need to be damaged, changed, or ESD wizardry if you move it elsewhere." />
+    <ActivationEventID1 AltName="Activation Event ID [1]" />
+    <ActivationEventID2 AltName="Activation Event ID [2]" />
+    <HostileEventID1 AltName="Hostile Event ID [1]" Wiki="Flag to be set when the entity becomes hostile towards the player character." />
+    <HostileEventID2 AltName="Hostile Event ID [2]" Wiki="Flag to be set when the entity becomes hostile towards the player character." />
+    <LocationEventID8 AltName="Location Event ID [8]" Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    <LocationEventID9 AltName="Location Event ID [9]" Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
+    <ItemLotID1 AltName="Itemlot ID" Wiki="Typically the itemlot entry that acts as a drop table for this entity." />
+    <GraveEventID AltName="Grave Event ID" Wiki="Flag to be set when the entity is dead and requires a gravestone for the player character to interact with." />
+    <Unk48_0 AltName="" IsBool="" Wiki="" />
+    <Unk48_1 AltName="" IsBool="" Wiki="" />
+    <Unk48_2 AltName="" IsBool="" Wiki="" />
+    <Unk48_3 AltName="" IsBool="" Wiki="" />
+    <Unk48_4 AltName="" IsBool="" Wiki="" />
+    <Unk48_5 AltName="" IsBool="" Wiki="" />
+    <Unk48_6 AltName="" IsBool="" Wiki="" />
+    <Unk48_7 AltName="" IsBool="" Wiki="" />
+    <ModelMask AltName="Model Mask" Wiki="Determines which model masks to use. Also decides which model mask set to use in color params." />
+  </Field>
+</PARAMMETA>

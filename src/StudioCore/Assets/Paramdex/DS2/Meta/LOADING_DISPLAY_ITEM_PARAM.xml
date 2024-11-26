@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the loading screen items." Row0Dummy="" />
-  <Field>
-    <display_flag_id AltName="Display Flag ID"/>
-  </Field>
-</PARAMMETA>

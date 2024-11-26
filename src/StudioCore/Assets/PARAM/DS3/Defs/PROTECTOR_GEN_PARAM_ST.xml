@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>PROTECTOR_GEN_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 proParamId" />
+    <Field Def="u32 gemSlotType_0 = 2.147484E+09" />
+    <Field Def="s32 gemGenId_0 = -1" />
+    <Field Def="u32 gemSlotType_1 = 2.147484E+09" />
+    <Field Def="s32 gemGenId_1 = -1" />
+    <Field Def="u32 gemSlotType_2 = 2.147484E+09" />
+    <Field Def="s32 gemGenId_2 = -1" />
+    <Field Def="u32 gemSlotType_3 = 2.147484E+09" />
+    <Field Def="s32 gemGenId_3 = -1" />
+    <Field Def="u32 gemSlotType_4 = 2.147484E+09" />
+    <Field Def="s32 gemGenId_4 = -1" />
+  </Fields>
+</PARAMDEF>

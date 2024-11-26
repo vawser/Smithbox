@@ -1,0 +1,117 @@
+0 Default_normal -- デフォルト_通常
+1 Default_narrow space -- デフォルト_狭所
+2 Default_Indoor wide -- デフォルト_屋内広め
+3 Default_up wire -- デフォルト_上りワイヤー
+4 Default_underfloor -- デフォルト_床下
+10 Default_infinite wall jump -- デフォルト_無限壁ジャンプ
+20 Default_Looking up / Looking down slope -- デフォルト_見上げ/見下ろし斜面
+1000000 [M10_00_Samurai residence] Normal state (default) -- 【m10_00_武家屋敷】通常状態（デフォルト）
+1000001 [M10_00_Samurai residence] Narrow space (default) -- 【m10_00_武家屋敷】狭所（デフォルト）
+1000002 [M10_00_Samurai residence] Wide indoor (default) -- 【m10_00_武家屋敷】屋内広め（デフォルト）
+1000003 [M10_00_Samurai residence] Up wire (default) -- 【m10_00_武家屋敷】上りワイヤー（デフォルト）
+1000031 [M10_00_Samurai residence] Narrow space (for stairs in front of the boss) -- 【m10_00_武家屋敷】狭所（ボス前階段専用）
+1000500 [M10_00_Samurai residence] Butterfly_Normal -- 【m10_00_武家屋敷】お蝶_通常
+1000501 [M10_00_Samurai residence] Butterfly_Attack that moves sharply from side to side -- 【m10_00_武家屋敷】お蝶_左右に鋭く動く攻撃
+1000510 [M10_00_Samurai Residence] Chief of Ninja Army (True) _Normal -- 【m10_00_武家屋敷】忍軍の長(真)_通常
+1100000 [M11_00_Castle] Normal state (default) -- 【m11_00_城下】通常状態（デフォルト）
+1100001 [M11_00_ Castle] Narrow space (default) -- 【m11_00_城下】狭所（デフォルト）
+1100002 [M11_00_ Castle] Wide indoor (default) -- 【m11_00_城下】屋内広め（デフォルト）
+1100003 [M11_00_ Castle] Up wire (default) -- 【m11_00_城下】上りワイヤー（デフォルト）
+1100200 [M11_00_ Castle] With Shinboku front lining -- 【m11_00_城下】御神木前張り付き
+1100201 [M11_00_ Castle] Infiltrate the litter -- 【m11_00_城下】輿に潜入
+1100500 [M11_00_Castle] Horse-riding warrior_Normal -- 【m11_00_城下】騎馬武者_通常
+1100501 [M11_00_Castle] Cavalry warrior_Look up -- 【m11_00_城下】騎馬武者_見上げ
+1100502 [M11_00_Castle] Horse-riding warrior_close -- 【m11_00_城下】騎馬武者_寄り
+1100510 [M11_00_Castle] Buddhist demon _Normal -- 【m11_00_城下】仏師鬼_通常
+1100511 [M11_00_Castle] Buddhist demon_Jumping -- 【m11_00_城下】仏師鬼_ジャンプ中
+1100512 [M11_00_Castle] Buddhist demon _Jump Lower attack -- 【m11_00_城下】仏師鬼_ジャンプ下段攻撃中
+1100513 [M11_00_Castle] Buddhist demon _ Growing up -- 【m11_00_城下】仏師鬼_伸び上がり中
+1101000 [M11_01_Honjo] Normal state (default) -- 【m11_01_本城】通常状態（デフォルト）
+1101001 [M11_01_Honjo] Narrow space (default) -- 【m11_01_本城】狭所（デフォルト）
+1101002 [M11_01_Honjo] Wide indoor (default) -- 【m11_01_本城】屋内広め（デフォルト）
+1101003 [M11_01_Honjo] Up wire (default) -- 【m11_01_本城】上りワイヤー（デフォルト）
+1101020 [M11_01_Honjo] Looking up / looking down slope -- 【m11_01_本城】見上げ/見下ろし斜面
+1101500 [M11_01_Honjo] Rival_Normal -- 【m11_01_本城】ライバル_通常
+1101501 [M11_01_Honjo] Rival_Bow 4 consecutive shots -- 【m11_01_本城】ライバル_弓4連射
+1101510 [M11_01_Honjo] Kensei_Normal -- 【m11_01_本城】剣聖_通常
+1101520 [M11_01_Honjo] Chief of Ninja Army (Old) _Normal -- 【m11_01_本城】忍軍の長(老)_通常
+1101530 [M11_01_Honjo] Isei&#39;s daughter_Normal -- 【m11_01_本城】医聖の娘_通常
+1102000 [M11_02_Hidden prison] Normal state (default) -- 【m11_02_隠し牢】通常状態（デフォルト）
+1102001 [M11_02_Hidden prison] Narrow space (default) -- 【m11_02_隠し牢】狭所（デフォルト）
+1102002 [M11_02_Hidden prison] Wide indoor (default) -- 【m11_02_隠し牢】屋内広め（デフォルト）
+1102003 [M11_02_Hidden prison] Up wire (default) -- 【m11_02_隠し牢】上りワイヤー（デフォルト）
+1102300 [M11_02_Hidden prison] Bridge_Hanging_Eavesdropping -- 【m11_02_隠し牢】橋_ぶら下がり_盗み聞き
+1102500 [M11_02_hidden prison] Rival_normal -- 【m11_02_隠し牢】ライバル_通常
+1102501 [M11_02_Hidden prison] Rival_Bow 4 consecutive shots -- 【m11_02_隠し牢】ライバル_弓4連射
+1102510 [M11_02_Hidden Prison] Kensei_Normal -- 【m11_02_隠し牢】剣聖_通常
+1102900 [M11_02_Hidden prison] Crouching with a low ceiling (test) -- 【m11_02_隠し牢】天井が低いしゃがみ状態（テスト）
+1300000 [M13_00_Dungeon] Normal state (default) -- 【m13_00_地下牢】通常状態（デフォルト）
+1300001 [M13_00_Dungeon] Narrow space (default) -- 【m13_00_地下牢】狭所（デフォルト）
+1300002 [M13_00_ Dungeon] Wide indoor (default) -- 【m13_00_地下牢】屋内広め（デフォルト）
+1300003 [M13_00_ Dungeon] Up wire (default) -- 【m13_00_地下牢】上りワイヤー（デフォルト）
+1500000 [M15_00_Sick Village] Normal state (default) -- 【m15_00_病み村】通常状態（デフォルト）
+1500001 [M15_00_Sick Village] Narrow space (default) -- 【m15_00_病み村】狭所（デフォルト）
+1500002 [M15_00_Sick Village] Wide indoor (default) -- 【m15_00_病み村】屋内広め（デフォルト）
+1500003 [M15_00_Sick Village] Up wire (default) -- 【m15_00_病み村】上りワイヤー（デフォルト）
+1500200 [M15_00_Sick Village] Female player_Normal -- 【m15_00_病み村】女奏者_通常
+1700000 [M17_00_ Valley] Normal state (default) -- 【m17_00_渓谷】通常状態（デフォルト）
+1700001 [M17_00_ Valley] Narrow space (default) -- 【m17_00_渓谷】狭所（デフォルト）
+1700002 [M17_00_ Valley] Wide indoor (default) -- 【m17_00_渓谷】屋内広め（デフォルト）
+1700003 [M17_00_ Valley] Up wire (default) -- 【m17_00_渓谷】上りワイヤー（デフォルト）
+1700300 [M17_00_ Valley] For boss area only (test) -- 【m17_00_渓谷】ボスエリア専用（テスト）
+1700350 [M17_00_Valley] Dedicated to the large snake fall ninja area (test) -- 【m17_00_渓谷】大蛇落下忍殺エリア専用（テスト）
+1700500 [M17_00_ Valley] Yasha Ape -- 【m17_00_渓谷】夜叉猿
+1700501 [M17_00_Valley] Yasha Ape_Behavior that grows at a short distance -- 【m17_00_渓谷】夜叉猿_近距離で伸び上がる行動
+1700502 [M17_00_Valley] Yasha Ape_Jump behavior -- 【m17_00_渓谷】夜叉猿_ジャンプ行動
+1700510 [M17_00_Valley] Yasha Ape_After the appearance of the bride monkey -- 【m17_00_渓谷】夜叉猿_嫁猿登場後
+1700511 [M17_00_Valley] Yasha Ape_After the appearance of the bride monkey_Behavior that grows at a short distance -- 【m17_00_渓谷】夜叉猿_嫁猿登場後_近距離で伸び上がる行動
+1700512 [M17_00_Valley] Yasha Ape_After the appearance of the bride monkey_Jump behavior -- 【m17_00_渓谷】夜叉猿_嫁猿登場後_ジャンプ行動
+1700900 [M17_00_ Valley] Crouching with a low ceiling (test) -- 【m17_00_渓谷】天井が低いしゃがみ状態（テスト）
+1700901 [M17_00_ Valley] Climb the wall continuously (test) -- 【m17_00_渓谷】連続で壁を登る（テスト）
+1700902 [M17_00_Valley] Normal state (default) _ Centipede size only -- 【m17_00_渓谷】通常状態（デフォルト）_ムカデ大専用
+2000000 [M20_00_Temple] Normal state (default) -- 【m20_00_寺】通常状態（デフォルト）
+2000001 [M20_00_Temple] Narrow space (default) -- 【m20_00_寺】狭所（デフォルト）
+2000002 [M20_00_Temple] Wide indoor (default) -- 【m20_00_寺】屋内広め（デフォルト）
+2000003 [M20_00_Temple] Up wire (default) -- 【m20_00_寺】上りワイヤー（デフォルト）
+2000900 [M20_00_Temple] Crouching with a low ceiling (test) -- 【m20_00_寺】天井が低いしゃがみ状態（テスト）
+2500000 [M25_00_submerged city] Normal state (default) -- 【m25_00_水没都】通常状態（デフォルト）
+2500001 [M25_00_ Submerged City] Narrow space (default) -- 【m25_00_水没都】狭所（デフォルト）
+2500002 [M25_00_ Submerged City] Wide indoor (default) -- 【m25_00_水没都】屋内広め（デフォルト）
+2500003 [M25_00_submerged city] Up wire (default) -- 【m25_00_水没都】上りワイヤー（デフォルト）
+2500010 [M25_00_ Submerged City] Nishikigoi Battle Area -- 【m25_00_水没都】錦鯉戦闘エリア
+2500200 [M25_00_ Submerged City] Nishikigoi -- 【m25_00_水没都】錦鯉
+2500210 [M25_00_ Submerged City] Nishikigoi Bridge Event -- 【m25_00_水没都】錦鯉橋イベント
+2500500 [M25_00_submerged city] Mermaid dragon_normal -- 【m25_00_水没都】人魚竜_通常
+2500501 [M25_00_Submerged City] Mermaid Dragon_Storm Jump Near the top -- 【m25_00_水没都】人魚竜_ストームジャンプ頂点付近
+2500502 [M25_00_Submerged City] Mermaid Dragon_After Storm Jump -- 【m25_00_水没都】人魚竜_ストームジャンプ後中
+2500503 [M25_00_Submerged City] Mermaid Dragon_Thunderback Blowing away_Pulling strongly -- 【m25_00_水没都】人魚竜_雷返し吹き飛ばし中_強く引く
+2500504 [M25_00_Submerged City] Mermaid Dragon_Thunderback Blow-off _ Pull to some extent -- 【m25_00_水没都】人魚竜_雷返し吹き飛ばし中_ある程度引く
+2500550 [M25_00_Submerged City] Haunting Monk_Normal -- 【m25_00_水没都】破戒僧_通常
+2500551 [M25_00_Submerged City] Haunting Monk_On the Tree -- 【m25_00_水没都】破戒僧_木の上
+2500600 [M25_00_ Submerged City] Okiryu -- 【m25_00_水没都】翁竜
+2500610 [M25_00_submerged city] Okiryu_tentacles are appearing -- 【m25_00_水没都】翁竜_触手登場中
+9620000 Prototype map-normal state (default) -- プロトタイプマップ-通常状態（デフォルト)
+9620001 Prototype map-narrow space (default) -- プロトタイプマップ-狭所（デフォルト）
+9620002 Prototype Map-Wide Indoors (Default) -- プロトタイプマップ-屋内広め（デフォルト）
+9620003 Prototype map-up wire (default) -- プロトタイプマップ-上りワイヤー（デフォルト）
+9620200 Prototype map-over the shinboku -- プロトタイプマップ-御神木上空
+9620201 Prototype map-invades the litter -- プロトタイプマップ-輿に侵入
+9620202 Prototype map-pasted in front of Mikamiki -- プロトタイプマップ-御神木前貼り付き
+9620210 Prototype map-straw doll -- プロトタイプマップ-藁人形
+9980000 Test map 998 series_normal state -- テストマップ998系_通常状態
+9980010 Test map 998 series_infinite wall jump -- テストマップ998系_無限壁ジャンプ
+9990000 Test map 999 series_normal state -- テストマップ999系_通常状態
+9990001 Test Map-Overwrite test from Map Studio -- テストマップ-マップスタジオからの上書きテスト
+9990002 Test map-Overwrite test from event -- テストマップ-イベントからの上書きテスト
+9990011 Caucasian slave_test -- 白人奴隷_テスト
+9990100 Yasha Ape_Test_HU Before_HU Normal -- 夜叉猿_テスト_HU前_HU後通常
+9990101 Yasha Ape_Test_HU For heavy attack in front -- 夜叉猿_テスト_HU前の強攻撃用
+9990102 Yasha Ape_Test_HU Proximity after -- 夜叉猿_テスト_HU後近接
+9990170 Test Map-Attic Test 1 -- テストマップ-渓谷蛇谷社の天井裏テスト1
+9990171 Test Map-Attic Test 2 of Gorge Jayasha -- テストマップ-渓谷蛇谷社の天井裏テスト2
+9990200 Test map-Temple_Looking up allowed -- テストマップ-寺_見上げ許容
+9990201 Test Map-Temple_Overlooking Allowed -- テストマップ-寺_見下ろし許容
+9900500 [Test map] Rival_Normal -- 【テストマップ】ライバル_通常
+9990501 [Test map] Rival_bow 4 consecutive shots -- 【テストマップ】ライバル_弓4連射
+9990510 [Test map] Horse-riding warrior_normal -- 【テストマップ】騎馬武者_通常
+9990511 [Test map] Cavalry warrior_Look up -- 【テストマップ】騎馬武者_見上げ

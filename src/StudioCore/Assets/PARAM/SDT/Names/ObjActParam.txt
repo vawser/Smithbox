@@ -1,0 +1,149 @@
+0 necessary -- 必要
+110 Treasure Chest -- 宝箱
+200 Treasure Chest -- 宝箱
+350 m93_01_door_candle room -- m93_01_扉_蝋燭部屋
+351 m93_01_door_candle room -- m93_01_扉_蝋燭部屋
+360 m96_00 Door Concept Map_Entrance -- m96_00 扉 コンセプトマップ_入口
+370 m96_00 Door Concept Map_Basilica Entrance -- m96_00 扉 コンセプトマップ_聖堂入口
+371 m96_00 Door Concept Map_Distant View Entrance -- m96_00 扉 コンセプトマップ_遠景入口
+475 m20_01_door_orphanage 2F_small -- m20_01_扉_孤児院2F_小
+1011 test_ door test -- test_扉テスト
+1012 test_ door test -- test_扉テスト
+300300 m30_00_door_mausoleum shortcut -- m30_00_扉_霊廟ショートカット
+300301 m30_00_door_starting point -- m30_00_扉_スタート地点
+300310 m30_00_door_castle wall shortcut -- m30_00_扉_城壁ショートカット
+300311 m30_00_door_beast room door -- m30_00_扉_ビースト部屋扉
+300312 m30_00_door_one way -- m30_00_扉_一方通行
+300313 m30_00_door_merchant B prison door -- m30_00_扉_商人B牢扉
+300320 m30_01_door_old garden building -- m30_01_扉_旧ガーデン建物
+300330 m30_01 Door in front of the twin prince room -- m30_01 双皇子部屋前　扉
+300370 m30_00_door_hall entrance -- m30_00_扉_大広間入口
+300371 m30_00_door_mausoleum exit door -- m30_00_扉_霊廟出口扉
+300500 m30_00_lever_mausoleum front elevator -- m30_00_レバー_霊廟正面エレベータ
+300510 m30_00_lever_castle wall elevator -- m30_00_レバー_城壁エレベーター
+302420 m34_01_lever_library elevator -- m34_01_レバー_書庫エレベータ
+304873 m30_01_lever_hall elevator -- m30_01_レバー_大広間エレベータ
+304874 m30_01_lever_gate -- m30_01_レバー_門
+310300 m31_00_door_sewer with key -- m31_00_扉_下水道　鍵付き
+310301 m31_00_door_sewer one-way door -- m31_00_扉_下水道　一方通行扉
+310302 m31_00_door_sewage normal -- m31_00_扉_下水道　通常
+310310 m31_00_Door_Prison spider room One way -- m31_00_扉_牢蜘蛛部屋　一方通行
+310311 m31_00_Door_Prison Spider Room Normal -- m31_00_扉_牢蜘蛛部屋　通常
+310320 m31_00_door_front route building exit -- m31_00_扉_正面ルート建物出口
+310500 m31_00_gate lever -- m31_00_門レバー
+312100 m31_00_door_basket -- m31_00_扉_籠牢
+314027 m31_00_door_in front of the sniper tower -- m31_00_扉_スナイパー塔前
+314028 m31_00_door_giant elephant boss in front of the room -- m31_00_扉_巨象ボス部屋前
+324012 m32_00 lever_big bell -- m32_00 レバー_大鐘
+324051 m32_00 Lever_Bridge Elevator -- m32_00 レバー_橋エレベーター
+329250 m32_00_door_tower with key -- m32_00_扉_塔　鍵付き
+330052 m33_00 Double door (provisional) -- m33_00 両開き扉（仮）
+331312 m33_00 Lever Poison Swamp Forest Elevator -- m33_00 レバー 毒沼の森エレベーター
+331321 m33_00 Double door in front of the boss -- m33_00 両開き扉 ボス前
+332100 m33_00_door_shotoka -- m33_00_扉_ショトカ
+340320 m34_01_door_old garden building -- m34_01_扉_旧ガーデン建物
+340330 m34_01_door_library entrance -- m34_01_扉_書庫入口
+341020 m34_01_ wax bathtub -- m34_01_蝋バスタブ
+342100 m34_01_ wax bathtub (mini) -- m34_01_蝋バスタブ（ミニ）
+342200 m34_01_ Moving bookshelf lever in the library -- m34_01_書庫の動く本棚　レバー
+350003 m35_00 lever_elevator -- m35_00 レバー_エレベーター
+350005 m35_00 Large door_Basilica on both sides -- m35_00 大扉_聖堂両脇
+350021 m35_00 Lever_shutter_front -- m35_00 レバー_シャッター_手前
+350022 m35_00 Lever_Shutter_Center -- m35_00 レバー_シャッター_中央
+350023 m35_00 Lever_Shutter_Innermost -- m35_00 レバー_シャッター_最奥
+350206 m35_00 Large door_Basilica main gate -- m35_00 大扉_聖堂正門
+350300 m35_00_ door -- m35_00_扉
+351000 m35_00 Double door -- m35_00 両開き扉
+360320 m36_00 Double door in front of the middle boss -- m36_00 両開き扉 中ボス前
+360330 m36_00 Double door Shotoka -- m36_00 両開き扉 ショトカ
+370301 m37_00_door_boulevard back vacant lot -- m37_00_扉_大通り裏空き地
+370302 m37_00_door_garden building -- m37_00_扉_ガーデン建物
+370303 m37_00_ Landmark Church Square -- m37_00_ランドマーク教会前広場
+370502 m37_00_ lever -- m37_00_レバー
+370508 m37_00_Anor main building entrance_lever -- m37_00_アノール本棟入り口_レバー
+381060 m38_00 Lifting door for Shotoka -- m38_00 持ち上げ扉 ショトカ用
+381080 m38_00 lever -- m38_00 レバー
+382002 m38_00 Double door for Shotoka -- m38_00 両開き扉 ショトカ用
+390300 m39_00_ normal door -- m39_00_通常扉
+390301 m39_00_iron fence door_outside -- m39_00_鉄柵扉_外側
+390302 m39_00_iron fence door_inside -- m39_00_鉄柵扉_内側
+390305 m39_00_ door One-way door -- m39_00_扉 一方通行扉
+390306 m39_00_ Door (Large) One-way door -- m39_00_扉（大） 一方通行扉
+390310 m39_00_Atrium prison_Upper exit with key -- m39_00_吹き抜けの牢_上層出口 鍵付き
+390320 m39_00_Atrium prison_Window with key -- m39_00_吹き抜けの牢_窓 鍵付き
+390330 m39_00_Poison Swamp Ruins_Double Door -- m39_00_毒沼遺跡_両開き扉
+390340 m39_00_ Normal door with key -- m39_00_通常扉 鍵付き
+390350 m39_00_iron fence door_outside with key -- m39_00_鉄柵扉_外側 鍵付き
+390360 m39_00_iron fence door_inside with key -- m39_00_鉄柵扉_内側 鍵付き
+390500 m39_00_ Dungeon Shotoka Elevator -- m39_00_地下牢ショトカエレベーター
+400005 m40_00 Boss room door -- m40_00 ボス部屋扉
+400340 m40_00_ Las Boss Room Door -- m40_00_ラスボス部屋扉
+400510 m40_00_ lever -- m40_00_レバー
+10000 Default -- デフォルト
+1300311 m30_00_door_castle wall shortcut 1 -- m30_00_扉_城壁ショートカット1
+2300311 m30_00_door_castle wall shortcut 2 -- m30_00_扉_城壁ショートカット2
+1000370 m96_00 Door Concept Map_Basilica Entrance -- m96_00 扉 コンセプトマップ_聖堂入口
+1000371 m96_00 Door Concept Map_Distant View Entrance -- m96_00 扉 コンセプトマップ_遠景入口
+1314027 m31_00_door_in front of the sniper tower -- m31_00_扉_スナイパー塔前
+1324051 m32_00 Starting point gate_lever -- m32_00 スタート地点の門_レバー
+1400340 m40_00_ Las Boss Room Door -- m40_00_ラスボス部屋扉
+2400340 m40_00_ Las Boss Room Door -- m40_00_ラスボス部屋扉
+3400340 m40_00_ Sub-tower entrance door with key -- m40_00_副塔入口扉 鍵付き
+90000 FDP_Test_General-purpose door (double door) -- FDP_テスト用_汎用扉（両開き）
+90001 FDP_test_door with key (double door) -- FDP_テスト用_鍵付扉（両開き）
+90002 FDP_test_internal key door -- FDP_テスト用_内鍵扉
+90010 FDP_Test_General-purpose door (single door) -- FDP_テスト用_汎用扉（片開き）
+90011 FDP_test_door with key (single opening) -- FDP_テスト用_鍵付扉（片開き）
+90012 FDP_test_inner key door (single opening) -- FDP_テスト用_内鍵扉（片開き）
+90013 FDP_test_playable operation check A -- FDP_テスト用_プレイアブル動作確認Ａ
+90014 FDP_test_playable operation check B -- FDP_テスト用_プレイアブル動作確認Ｂ
+90015 FDP_test_playable operation check B -- FDP_テスト用_プレイアブル動作確認Ｂ
+90050 NTC_Test_Climb steep stairs / ladders -- NTC_テスト用_急な階段/梯子　登る
+90051 NTC_testing_steep stairs / ladder down -- NTC_テスト用_急な階段/梯子　降りる
+90060 NTC_For testing_Donden floor (folded back) Go up -- NTC_テスト用_どんでん床(折り返し) 上がる
+90061 NTC_For testing_Donden floor (folded back) -- NTC_テスト用_どんでん床(折り返し) 下る
+90065 NTC_For testing_Donden floor (go straight) Go up -- NTC_テスト用_どんでん床(直進) 上がる
+90066 NTC_For testing_Donden floor (go straight) Go down -- NTC_テスト用_どんでん床(直進) 下る
+90070 NTC_testing_plot twist warp -- NTC_テスト用_どんでん返しワープ
+90071 NTC_testing_plot twist warp -- NTC_テスト用_どんでん返しワープ
+90075 NTC_testing_plot twist -- NTC_テスト用_どんでん返し
+90076 NTC_testing_plot twist -- NTC_テスト用_どんでん返し
+101050 Door of the temple -- お堂の扉
+109950 Boss room hidden tatami -- ボス部屋隠し畳
+1100000 Honjo_Open window_Test -- 本城_窓を開く_テスト
+205000 Temple_elevator -- 寺＿エレベーター
+205010 Temple_elevator_lever -- 寺＿エレベーター＿レバー
+205011 Temple_elevator_lever -- 寺＿エレベーター＿レバー
+205100 Temple_bell -- 寺＿鐘
+205101 Temple_bell_infinite corridor -- 寺＿鐘_無限回廊
+252555 Submerged city_bell -- 水没都_鐘
+999900 Open the door_Koryomon_171 -- 扉を開く_高麗門_171
+999901 Open the door_Koryomon_170_Back -- 扉を開く_高麗門_170_裏
+999910 Open the door _ in front of you -- 扉を開く_小手前
+999911 Open the door_Small front_171 -- 扉を開く_小手前_171
+999920 Open the door_large door_push -- 扉を開く_大扉_押し
+999921 Open the door_large door_front -- 扉を開く_大扉_手前
+999922 Open the door_Large door_Front_Infinite corridor -- 扉を開く_大扉_手前_無限回廊
+999930 Open the door_Otemae_Key -- 扉を開く_大手前_鍵
+999940 Open the door _1st_ push -- 扉を開く_1st_押し
+999941 Open the door _1st_ front -- 扉を開く_1st_手前
+999945 Open the door _1st_push_one -- 扉を開く_1st_押し_一通
+999946 Open the door _1st_push_one -- 扉を開く_1st_押し_一通
+999950 Open the door_Kido -- 扉を開く_木戸
+999960 Open the door_middle door -- 扉を開く_中扉
+999970 Open the door_sliding door_table -- 扉を開く_引き戸_表
+999971 Open the door_sliding door_back -- 扉を開く_引き戸_裏
+999975 Open the door_special_ prison door -- 扉を開く_特殊_牢扉
+999976 Open the door_special_loophole door -- 扉を開く_特殊_抜け穴の扉
+999980 Open treasure chest _ general purpose -- 宝箱を開く_汎用
+999985 Open treasure chest _ submerged -- 宝箱を開く_水没
+999990 Open treasure chest _ underwater -- 宝箱を開く_水中
+9620000 Placement money _360 ° -- 配置お金_360°
+9620001 Placement money _180 ° -- 配置お金_180°
+9990000 Aristocratic corpse -- 貴族の死体
+9990900 Object and character update order test -- オブジェとキャラ更新順テスト
+9991000 Missing test of the object_waiting -- オブジェのあたり抜けテスト_待機
+9991001 Objet d&#39;art hit test_seesaw -- オブジェのあたり抜けテスト_シーソー
+9991002 Object hit test_rotation -- オブジェのあたり抜けテスト_回転
+9991003 Object white door test_for intrusion -- オブジェ白扉テスト_侵入用
+9991004 Object white door test_for release -- オブジェ白扉テスト_解放用

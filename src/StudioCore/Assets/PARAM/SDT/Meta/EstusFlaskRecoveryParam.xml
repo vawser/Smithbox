@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field></Field>
+  <Self Wiki="Defines the amount HP/MP flasks that will be refilled when an EstusFlaskRecoveryParam row is awarded" />
+</PARAMMETA>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the hit materials to check when the character collides with stuff." />
+  
+  <Field>
+    <HitMaterialId_0
+    AltName="Hit Material ID: 0"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <HitMaterialId_1
+    AltName="Hit Material ID: 1"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <HitMaterialId_2
+    AltName="Hit Material ID: 2"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <HitMaterialId_3
+    AltName="Hit Material ID: 3"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <HitMaterialId_4
+    AltName="Hit Material ID: 4"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <HitMaterialId_5
+    AltName="Hit Material ID: 5"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <HitMaterialId_6
+    AltName="Hit Material ID: 6"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <HitMaterialId_7
+    AltName="Hit Material ID: 7"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <HitMaterialId_8
+    AltName="Hit Material ID: 8"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <HitMaterialId_9
+    AltName="Hit Material ID: 9"
+    Wiki="Ground material ID to check if the character is in contact with the ground." />
+    
+    <reserve_0
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

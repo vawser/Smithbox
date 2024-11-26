@@ -1,0 +1,4 @@
+0 Sweet Ishikoro -- あまいいしころ
+1 Increased attack power and defensive power -- 攻撃力アップ　＆　防御力アップ
+2 HP Regen -- HPリジェネ
+3 Max HP up -- マックスHPアップ

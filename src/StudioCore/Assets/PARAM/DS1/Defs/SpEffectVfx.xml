@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>SP_EFFECT_VFX_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="s32 midstSfxId = -1">
+      <DisplayName>効果中SfxID</DisplayName>
+      <Description>効果中SfxID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="s32 midstSeId = -1">
+      <DisplayName>効果中SeID</DisplayName>
+      <Description>効果中SeID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="s32 initSfxId = -1">
+      <DisplayName>発動時SfxID</DisplayName>
+      <Description>発動時SfxID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="s32 initSeId = -1">
+      <DisplayName>発動時SeID</DisplayName>
+      <Description>発動時SeID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="s32 finishSfxId = -1">
+      <DisplayName>解除時SfxID</DisplayName>
+      <Description>解除時SfxID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="s32 finishSeId = -1">
+      <DisplayName>解除時SeID</DisplayName>
+      <Description>解除時SeID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 camouflageBeginDist = -1">
+      <DisplayName>姿隠し開始距離[m]</DisplayName>
+      <Description>カムフラージュ開始距離です</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 camouflageEndDist = -1">
+      <DisplayName>姿隠し終了距離[m]</DisplayName>
+      <Description>カムフラージュ終了距離です</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="s32 transformProtectorId = -1">
+      <DisplayName>変身防具ID</DisplayName>
+      <Description>変身防具ID(-1：なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="s16 midstDmyId = -1">
+      <DisplayName>効果中ダミポリID</DisplayName>
+      <Description>効果中ダミポリID(-1：ルート)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s16 initDmyId = -1">
+      <DisplayName>発動時ダミポリID</DisplayName>
+      <Description>発動時ダミポリID(-1：ルート)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="s16 finishDmyId = -1">
+      <DisplayName>解除時ダミポリID</DisplayName>
+      <Description>解除時ダミポリID(-1：ルート)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="u8 effectType">
+      <DisplayName>エフェクトタイプ</DisplayName>
+      <Enum>SP_EFFECT_VFX_EFFECT_TYPE</Enum>
+      <Description>エフェクトタイプ</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 soulParamIdForWepEnchant">
+      <DisplayName>武器エンチャント用ソウルパラムID</DisplayName>
+      <Enum>SP_EFFECT_VFX_SOUL_PARAM_TYPE</Enum>
+      <Description>武器エンチャント用ソウルパラムID(-1：なし)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>127</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 playCategory">
+      <DisplayName>VFX再生カテゴリ</DisplayName>
+      <Enum>SP_EFFECT_VFX_PLAYCATEGORY</Enum>
+      <Description>重複効果によるエフェクト再生を制御します</Description>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 playPriority">
+      <DisplayName>カテゴリ内優先度</DisplayName>
+      <Description>カテゴリ一致した場合の再生優先度を設定(低い方が優先)</Description>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 existEffectForLarge:1">
+      <DisplayName>大型用エフェクトがあるか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>大型用エフェクトがあるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 existEffectForSoul:1">
+      <DisplayName>ソウル体用エフェクトがあるか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>ソウル体用エフェクトがあるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u8 effectInvisibleAtCamouflage:1">
+      <DisplayName>姿隠し時にエフェクトを非表示にするか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>姿隠し時にエフェクトを非表示にするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="u8 useCamouflage:1">
+      <DisplayName>姿隠しするか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>姿隠しするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u8 invisibleAtFriendCamouflage:1">
+      <DisplayName>姿隠し時に味方でも非表示か</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>姿隠し時に味方でも非表示か</Description>
+      <Maximum>1</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="u8 addMapAreaBlockOffset:1">
+      <DisplayName>SfxIDにマップ番号を足すか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>SfxIDにマップ番号(AAB0)を加算します</Description>
+      <Maximum>1</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="u8 halfCamouflage:1">
+      <DisplayName>半透明の姿隠しか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>半透明の姿隠しか</Description>
+      <Maximum>1</Maximum>
+      <SortID>750</SortID>
+    </Field>
+    <Field Def="u8 isFullBodyTransformProtectorId:1">
+      <DisplayName>変身防具IDが全身用か</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>変身防具IDが全身用か</Description>
+      <Maximum>1</Maximum>
+      <SortID>2310</SortID>
+    </Field>
+    <Field Def="u8 isInvisibleWeapon:1">
+      <DisplayName>武器エンチャント用インビジブルウェポンか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>武器エンチャント用インビジブルウェポンか(0:武器表示, 1:武器非表示)</Description>
+      <Maximum>1</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="u8 isSilence:1">
+      <DisplayName>サイレンスか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>サイレンスか(0:ちがう, 1:そう)</Description>
+      <Maximum>1</Maximum>
+      <SortID>775</SortID>
+    </Field>
+    <Field Def="dummy8 pad_1:6">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+      <SortID>2311</SortID>
+    </Field>
+    <Field Def="dummy8 pad[16]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+      <SortID>2312</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

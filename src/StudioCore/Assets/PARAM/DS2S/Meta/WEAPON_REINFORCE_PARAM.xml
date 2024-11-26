@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters relating to weapon reinforcement." Row0Dummy="" />
+  <Field>
+    <damage_physical AltName="Damage: Physical" />
+    <damage_magic AltName="Damage: Magic" />
+    <damage_lightning AltName="Damage: Lightning" />
+    <damage_fire AltName="Damage: Fire" />
+    <damage_dark AltName="Damage: Dark" />
+    <damage_poison AltName="Damage: Poison" Wiki=" (Float / 5)" />
+    <damage_bleed AltName="Damage: Bleed" Wiki=" (Float / 5)" />
+    <damage_petrify AltName="Damage: Petrify" Wiki=" (Float / 5)"/>
+    <damage_curse AltName="Damage: Curse" Wiki=" (Float / 5)" />
+    <max_damage_physical AltName="Max Damage: Physical" />
+    <max_damage_magic AltName="Max Damage: Magic" />
+    <max_damage_lightning AltName="Max Damage: Lightning" />
+    <max_damage_fire AltName="Max Damage: Fire" />
+    <max_damage_dark AltName="Max Damage: Dark" />
+    <max_damage_poison AltName="Max Damage: Poison" Wiki=" (Float / 5)" />
+    <max_damage_bleed AltName="Max Damage: Bleed" Wiki=" (Float / 5)" />
+    <max_damage_petrify AltName="Max Damage: Petrify" Wiki=" (Float / 5)" />
+    <max_damage_curse AltName="Max Damage: Curse" Wiki=" (Float / 5)" />
+    <max_reinforcement_level Def="s32 Max Reinforcement Level" />
+    <weapon_stats_affect_id Def="s32 Weapon Stats Affect ID" Refs="WeaponStatsAffectParam" />
+    <absorption_physical AltName="Absorption: Physical" />
+    <absorption_magic AltName="Absorption: Magic" />
+    <absorption_fire AltName="Absorption: Fire" />
+    <absorption_lightning AltName="Absorption: Lightning" />
+    <absorption_dark AltName="Absorption: Dark" />
+    <absorption_poison AltName="Resistance: Poison" />
+    <absorption_bleed AltName="Resistance: Bleed" />
+    <absorption_petrify AltName="Resistance: Petrify" />
+    <absorption_curse AltName="Resistance: Curse" />
+    <stability_0 AltName="Stability: +0" />
+    <stability_1 AltName="Stability: +1" />
+    <stability_2 AltName="Stability: +2" />
+    <stability_3 AltName="Stability: +3" />
+    <stability_4 AltName="Stability: +4" />
+    <stability_5 AltName="Stability: +5" />
+    <stability_6 AltName="Stability: +6" />
+    <stability_7 AltName="Stability: +7" />
+    <stability_8 AltName="Stability: +8" />
+    <stability_9 AltName="Stability: +9" />
+    <stability_10 AltName="Stability: +10" />
+    <damage_mult_physical AltName="Damage %: Physical" />
+    <damage_mult_magic AltName="Damage %: Magic" />
+    <damage_mult_lightning AltName="Damage %: Lightning" />
+    <damage_mult_fire AltName="Damage %: Fire" />
+    <damage_mult_dark AltName="Damage %: Dark" />
+    <damage_mult_poison AltName="Damage %: Poison" />
+    <damage_mult_bleed AltName="Damage %: Bleed" />
+    <damage_mult_petrify AltName="Damage %: Petrify" />
+    <damage_mult_curse AltName="Damage %: Curse" />
+    <infusion_mult_magic AltName="Infusion Modifier %: Magic" />
+    <infusion_mult_lightning AltName="Infusion Modifier %: Lightning" />
+    <infusion_mult_fire AltName="Infusion Modifier %: Fire" />
+    <infusion_mult_dark AltName="Infusion Modifier %: Dark" />
+    <infusion_mult_poison AltName="Infusion Modifier %: Poison" />
+    <infusion_mult_bleed AltName="Infusion Modifier %: Bleed" />
+    <infusion_mult_raw AltName="Infusion Modifier %: Raw" />
+    <infusion_mult_enchanted AltName="Infusion Modifier %: Enchanted" />
+    <infusion_mult_mundane AltName="Infusion Modifier %: Mundane" />
+    <custom_attr_spec_param_id Def="s32 CustomAttrSpecParam ID" Refs="CustomAttrSpecParam" />
+    <custom_attr_cost_param_id Def="s32 CustomAttrCostParam ID" Refs="CustomAttrCostParam" />
+    <reinforce_cost_id Def="s32 Reinforce Cost ID" Refs="ReinforceCostParam" />
+  </Field>
+</PARAMMETA>

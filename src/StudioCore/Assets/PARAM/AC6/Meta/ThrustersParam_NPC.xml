@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="THRUSTERS_RPC_TYPE" type="u8">
+        <Option Value="0" Name="Not Used" />
+        <Option Value="1" Name="Character horizontal movement speed (km/h)" />
+    </Enum> 
+    <Enum Name="THRUSTERS_KEEP_DIRECTION_TYPE" type="u8">
+        <Option Value="0" Name="Keep orientation" />
+        <Option Value="1" Name="Align horizontally" />
+    </Enum> 
+    <Enum Name="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" type="u8">
+        <Option Value="-1" Name="No Correction" />
+        <Option Value="0" Name="Current Movement" />
+        <Option Value="1" Name="Movement Backwards" />
+    </Enum> 
+  </Enums>
+  <Field>
+    <DummyID AltName="Dummy Polygon ID" Wiki="SFX generation dummy poly position (-1: placement position) dummy poly ID. If specified as a booster, it will be the ID of the dummy poly in the booster." />
+    
+    <main_SFXID AltName="Main: SFX ID" Wiki="" ParticleAlias="" />
+    <main_SlotNO AltName="Main: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <main_useRPCType AltName="Main: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <main_IsHorizontal AltName="Main: Is Horizontal" Wiki="0: Maintain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <main_IsFollowDmyPoly AltName="Main: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <main_IsEraseActionEnd AltName="Main: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <main_camouFlageShow AltName="Main: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <main_TurnMoveDirType AltName="Main: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <main_pad Padding="" />
+    <main_TurnMoveDirLimitX AltName="Main: Correction Limit Angle: X" Wiki="" />
+    <main_TurnMoveDirLimitY AltName="Main: Correction Limit Angle: Y" Wiki="" />
+    <main_pad1 Padding="" />
+    <main_Scale AltName="Main: SFX Scale" Wiki="SFX scale value" />
+    
+    <subFront_SFXID AltName="Front: SFX ID" Wiki="" ParticleAlias="" />
+    <subFront_SlotNO AltName="Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <subFront_useRPCType AltName="Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <subFront_IsHorizontal AltName="Front: Is Horizontal" Wiki="0: subFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <subFront_IsFollowDmyPoly AltName="Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <subFront_IsEraseActionEnd AltName="Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <subFront_camouFlageShow AltName="Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <subFront_TurnMoveDirType AltName="Front: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <subFront_pad Padding="" />
+    <subFront_TurnMoveDirLimitX AltName="Front: Correction Limit Angle: X" Wiki="" />
+    <subFront_TurnMoveDirLimitY AltName="Front: Correction Limit Angle: Y" Wiki="" />
+    <subFront_pad1 Padding="" />
+    <subFront_Scale AltName="Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <subBack_SFXID AltName="Back: SFX ID" Wiki="" ParticleAlias="" />
+    <subBack_SlotNO AltName="Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <subBack_useRPCType AltName="Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <subBack_IsHorizontal AltName="Back: Is Horizontal" Wiki="0: subBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <subBack_IsFollowDmyPoly AltName="Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <subBack_IsEraseActionEnd AltName="Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <subBack_camouFlageShow AltName="Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <subBack_TurnMoveDirType AltName="Back: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <subBack_pad Padding="" />
+    <subBack_TurnMoveDirLimitX AltName="Back: Correction Limit Angle: X" Wiki="" />
+    <subBack_TurnMoveDirLimitY AltName="Back: Correction Limit Angle: Y" Wiki="" />
+    <subBack_pad1 Padding="" />
+    <subBack_Scale AltName="Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <subLeft_SFXID AltName="Left: SFX ID" Wiki="" ParticleAlias="" />
+    <subLeft_SlotNO AltName="Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <subLeft_useRPCType AltName="Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <subLeft_IsHorizontal AltName="Left: Is Horizontal" Wiki="0: subLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <subLeft_IsFollowDmyPoly AltName="Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <subLeft_IsEraseActionEnd AltName="Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <subLeft_camouFlageShow AltName="Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <subLeft_TurnMoveDirType AltName="Left: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <subLeft_pad Padding="" />
+    <subLeft_TurnMoveDirLimitX AltName="Left: Correction Limit Angle: X" Wiki="" />
+    <subLeft_TurnMoveDirLimitY AltName="Left: Correction Limit Angle: Y" Wiki="" />
+    <subLeft_pad1 Padding="" />
+    <subLeft_Scale AltName="Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <subRight_SFXID AltName="Right: SFX ID" Wiki="" ParticleAlias="" />
+    <subRight_SlotNO AltName="Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <subRight_useRPCType AltName="Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <subRight_IsHorizontal AltName="Right: Is Horizontal" Wiki="0: subRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <subRight_IsFollowDmyPoly AltName="Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <subRight_IsEraseActionEnd AltName="Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <subRight_camouFlageShow AltName="Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <subRight_TurnMoveDirType AltName="Right: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <subRight_pad Padding="" />
+    <subRight_TurnMoveDirLimitX AltName="Right: Correction Limit Angle: X" Wiki="" />
+    <subRight_TurnMoveDirLimitY AltName="Right: Correction Limit Angle: Y" Wiki="" />
+    <subRight_pad1 Padding="" />
+    <subRight_Scale AltName="Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <qbFront_SFXID AltName="Quick Boost Front: SFX ID" Wiki="" ParticleAlias="" />
+    <qbFront_SlotNO AltName="Quick Boost Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <qbFront_useRPCType AltName="Quick Boost Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <qbFront_IsHorizontal AltName="Quick Boost Front: Is Horizontal" Wiki="0: qbFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <qbFront_IsFollowDmyPoly AltName="Quick Boost Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <qbFront_IsEraseActionEnd AltName="Quick Boost Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <qbFront_camouFlageShow AltName="Quick Boost Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <qbFront_TurnMoveDirType AltName="Quick Boost Front: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <qbFront_pad Padding="" />
+    <qbFront_TurnMoveDirLimitX AltName="Quick Boost Front: Correction Limit Angle: X" Wiki="" />
+    <qbFront_TurnMoveDirLimitY AltName="Quick Boost Front: Correction Limit Angle: Y" Wiki="" />
+    <qbFront_pad1 Padding="" />
+    <qbFront_Scale AltName="Quick Boost Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <qbBack_SFXID AltName="Quick Boost Back: SFX ID" Wiki="" ParticleAlias="" />
+    <qbBack_SlotNO AltName="Quick Boost Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <qbBack_useRPCType AltName="Quick Boost Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <qbBack_IsHorizontal AltName="Quick Boost Back: Is Horizontal" Wiki="0: qbBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <qbBack_IsFollowDmyPoly AltName="Quick Boost Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <qbBack_IsEraseActionEnd AltName="Quick Boost Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <qbBack_camouFlageShow AltName="Quick Boost Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <qbBack_TurnMoveDirType AltName="Quick Boost Back: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <qbBack_pad Padding="" />
+    <qbBack_TurnMoveDirLimitX AltName="Quick Boost Back: Correction Limit Angle: X" Wiki="" />
+    <qbBack_TurnMoveDirLimitY AltName="Quick Boost Back: Correction Limit Angle: Y" Wiki="" />
+    <qbBack_pad1 Padding="" />
+    <qbBack_Scale AltName="Quick Boost Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <qbLeft_SFXID AltName="Quick Boost Left: SFX ID" Wiki="" ParticleAlias="" />
+    <qbLeft_SlotNO AltName="Quick Boost Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <qbLeft_useRPCType AltName="Quick Boost Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <qbLeft_IsHorizontal AltName="Quick Boost Left: Is Horizontal" Wiki="0: qbLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <qbLeft_IsFollowDmyPoly AltName="Quick Boost Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <qbLeft_IsEraseActionEnd AltName="Quick Boost Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <qbLeft_camouFlageShow AltName="Quick Boost Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <qbLeft_TurnMoveDirType AltName="Quick Boost Left: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <qbLeft_pad Padding="" />
+    <qbLeft_TurnMoveDirLimitX AltName="Quick Boost Left: Correction Limit Angle: X" Wiki="" />
+    <qbLeft_TurnMoveDirLimitY AltName="Quick Boost Left: Correction Limit Angle: Y" Wiki="" />
+    <qbLeft_pad1 Padding="" />
+    <qbLeft_Scale AltName="Quick Boost Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <qbRight_SFXID AltName="Quick Boost Right: SFX ID" Wiki="" ParticleAlias="" />
+    <qbRight_SlotNO AltName="Quick Boost Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <qbRight_useRPCType AltName="Quick Boost Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <qbRight_IsHorizontal AltName="Quick Boost Right: Is Horizontal" Wiki="0: qbRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <qbRight_IsFollowDmyPoly AltName="Quick Boost Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <qbRight_IsEraseActionEnd AltName="Quick Boost Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <qbRight_camouFlageShow AltName="Quick Boost Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <qbRight_TurnMoveDirType AltName="Quick Boost Right: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <qbRight_pad Padding="" />
+    <qbRight_TurnMoveDirLimitX AltName="Quick Boost Right: Correction Limit Angle: X" Wiki="" />
+    <qbRight_TurnMoveDirLimitY AltName="Quick Boost Right: Correction Limit Angle: Y" Wiki="" />
+    <qbRight_pad1 Padding="" />
+    <qbRight_Scale AltName="Quick Boost Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <lift_SFXID AltName="Lift: SFX ID" Wiki="" ParticleAlias="" />
+    <lift_SlotNO AltName="Lift: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <lift_useRPCType AltName="Lift: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <lift_IsHorizontal AltName="Lift: Is Horizontal" Wiki="0: lifttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <lift_IsFollowDmyPoly AltName="Lift: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <lift_IsEraseActionEnd AltName="Lift: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <lift_camouFlageShow AltName="Lift: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <lift_TurnMoveDirType AltName="Lift: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <lift_pad Padding="" />
+    <lift_TurnMoveDirLimitX AltName="Lift: Correction Limit Angle: X" Wiki="" />
+    <lift_TurnMoveDirLimitY AltName="Lift: Correction Limit Angle: Y" Wiki="" />
+    <lift_pad1 Padding="" />
+    <lift_Scale AltName="Lift: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique01_SFXID AltName="Unique 1: SFX ID" Wiki="" ParticleAlias="" />
+    <unique01_SlotNO AltName="Unique 1: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique01_useRPCType AltName="Unique 1: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique01_IsHorizontal AltName="Unique 1: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique01_IsFollowDmyPoly AltName="Unique 1: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique01_IsEraseActionEnd AltName="Unique 1: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique01_camouFlageShow AltName="Unique 1: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique01_TurnMoveDirType AltName="Unique 1: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique01_pad Padding="" />
+    <unique01_TurnMoveDirLimitX AltName="Unique 1: Correction Limit Angle: X" Wiki="" />
+    <unique01_TurnMoveDirLimitY AltName="Unique 1: Correction Limit Angle: Y" Wiki="" />
+    <unique01_pad1 Padding="" />
+    <unique01_Scale AltName="Unique 1: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique02_SFXID AltName="Unique 2: SFX ID" Wiki="" ParticleAlias="" />
+    <unique02_SlotNO AltName="Unique 2: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique02_useRPCType AltName="Unique 2: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique02_IsHorizontal AltName="Unique 2: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique02_IsFollowDmyPoly AltName="Unique 2: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique02_IsEraseActionEnd AltName="Unique 2: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique02_camouFlageShow AltName="Unique 2: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique02_TurnMoveDirType AltName="Unique 2: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique02_pad Padding="" />
+    <unique02_TurnMoveDirLimitX AltName="Unique 2: Correction Limit Angle: X" Wiki="" />
+    <unique02_TurnMoveDirLimitY AltName="Unique 2: Correction Limit Angle: Y" Wiki="" />
+    <unique02_pad1 Padding="" />
+    <unique02_Scale AltName="Unique 2: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique03_SFXID AltName="Unique 3: SFX ID" Wiki="" ParticleAlias="" />
+    <unique03_SlotNO AltName="Unique 3: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique03_useRPCType AltName="Unique 3: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique03_IsHorizontal AltName="Unique 3: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique03_IsFollowDmyPoly AltName="Unique 3: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique03_IsEraseActionEnd AltName="Unique 3: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique03_camouFlageShow AltName="Unique 3: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique03_TurnMoveDirType AltName="Unique 3: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique03_pad Padding="" />
+    <unique03_TurnMoveDirLimitX AltName="Unique 3: Correction Limit Angle: X" Wiki="" />
+    <unique03_TurnMoveDirLimitY AltName="Unique 3: Correction Limit Angle: Y" Wiki="" />
+    <unique03_pad1 Padding="" />
+    <unique03_Scale AltName="Unique 3: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique04_SFXID AltName="Unique 4: SFX ID" Wiki="" ParticleAlias="" />
+    <unique04_SlotNO AltName="Unique 4: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique04_useRPCType AltName="Unique 4: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique04_IsHorizontal AltName="Unique 4: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique04_IsFollowDmyPoly AltName="Unique 4: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique04_IsEraseActionEnd AltName="Unique 4: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique04_camouFlageShow AltName="Unique 4: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique04_TurnMoveDirType AltName="Unique 4: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique04_pad Padding="" />
+    <unique04_TurnMoveDirLimitX AltName="Unique 4: Correction Limit Angle: X" Wiki="" />
+    <unique04_TurnMoveDirLimitY AltName="Unique 4: Correction Limit Angle: Y" Wiki="" />
+    <unique04_pad1 Padding="" />
+    <unique04_Scale AltName="Unique 4: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique05_SFXID AltName="Unique 5: SFX ID" Wiki="" ParticleAlias="" />
+    <unique05_SlotNO AltName="Unique 5: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique05_useRPCType AltName="Unique 5: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique05_IsHorizontal AltName="Unique 5: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique05_IsFollowDmyPoly AltName="Unique 5: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique05_IsEraseActionEnd AltName="Unique 5: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique05_camouFlageShow AltName="Unique 5: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique05_TurnMoveDirType AltName="Unique 5: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique05_pad Padding="" />
+    <unique05_TurnMoveDirLimitX AltName="Unique 5: Correction Limit Angle: X" Wiki="" />
+    <unique05_TurnMoveDirLimitY AltName="Unique 5: Correction Limit Angle: Y" Wiki="" />
+    <unique05_pad1 Padding="" />
+    <unique05_Scale AltName="Unique 5: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique06_SFXID AltName="Unique 6: SFX ID" Wiki="" ParticleAlias="" />
+    <unique06_SlotNO AltName="Unique 6: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique06_useRPCType AltName="Unique 6: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique06_IsHorizontal AltName="Unique 6: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique06_IsFollowDmyPoly AltName="Unique 6: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique06_IsEraseActionEnd AltName="Unique 6: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique06_camouFlageShow AltName="Unique 6: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique06_TurnMoveDirType AltName="Unique 6: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique06_pad Padding="" />
+    <unique06_TurnMoveDirLimitX AltName="Unique 6: Correction Limit Angle: X" Wiki="" />
+    <unique06_TurnMoveDirLimitY AltName="Unique 6: Correction Limit Angle: Y" Wiki="" />
+    <unique06_pad1 Padding="" />
+    <unique06_Scale AltName="Unique 6: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique07_SFXID AltName="Unique 7: SFX ID" Wiki="" ParticleAlias="" />
+    <unique07_SlotNO AltName="Unique 7: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique07_useRPCType AltName="Unique 7: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique07_IsHorizontal AltName="Unique 7: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique07_IsFollowDmyPoly AltName="Unique 7: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique07_IsEraseActionEnd AltName="Unique 7: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique07_camouFlageShow AltName="Unique 7: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique07_TurnMoveDirType AltName="Unique 7: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique07_pad Padding="" />
+    <unique07_TurnMoveDirLimitX AltName="Unique 7: Correction Limit Angle: X" Wiki="" />
+    <unique07_TurnMoveDirLimitY AltName="Unique 7: Correction Limit Angle: Y" Wiki="" />
+    <unique07_pad1 Padding="" />
+    <unique07_Scale AltName="Unique 7: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique08_SFXID AltName="Unique 8: SFX ID" Wiki="" ParticleAlias="" />
+    <unique08_SlotNO AltName="Unique 8: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique08_useRPCType AltName="Unique 8: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique08_IsHorizontal AltName="Unique 8: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique08_IsFollowDmyPoly AltName="Unique 8: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique08_IsEraseActionEnd AltName="Unique 8: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique08_camouFlageShow AltName="Unique 8: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique08_TurnMoveDirType AltName="Unique 8: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique08_pad Padding="" />
+    <unique08_TurnMoveDirLimitX AltName="Unique 8: Correction Limit Angle: X" Wiki="" />
+    <unique08_TurnMoveDirLimitY AltName="Unique 8: Correction Limit Angle: Y" Wiki="" />
+    <unique08_pad1 Padding="" />
+    <unique08_Scale AltName="Unique 8: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique09_SFXID AltName="Unique 9: SFX ID" Wiki="" ParticleAlias="" />
+    <unique09_SlotNO AltName="Unique 9: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique09_useRPCType AltName="Unique 9: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique09_IsHorizontal AltName="Unique 9: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique09_IsFollowDmyPoly AltName="Unique 9: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique09_IsEraseActionEnd AltName="Unique 9: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique09_camouFlageShow AltName="Unique 9: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique09_TurnMoveDirType AltName="Unique 9: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique09_pad Padding="" />
+    <unique09_TurnMoveDirLimitX AltName="Unique 9: Correction Limit Angle: X" Wiki="" />
+    <unique09_TurnMoveDirLimitY AltName="Unique 9: Correction Limit Angle: Y" Wiki="" />
+    <unique09_pad1 Padding="" />
+    <unique09_Scale AltName="Unique 9: SFX Scale" Wiki="SFX scale value" />
+    
+    <unique10_SFXID AltName="Unique 10: SFX ID" Wiki="" ParticleAlias="" />
+    <unique10_SlotNO AltName="Unique 10: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <unique10_useRPCType AltName="Unique 10: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <unique10_IsHorizontal AltName="Unique 10: Is Horizontal" Wiki="0: unique01tain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <unique10_IsFollowDmyPoly AltName="Unique 10: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <unique10_IsEraseActionEnd AltName="Unique 10: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <unique10_camouFlageShow AltName="Unique 10: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <unique10_TurnMoveDirType AltName="Unique 10: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <unique10_pad Padding="" />
+    <unique10_TurnMoveDirLimitX AltName="Unique 10: Correction Limit Angle: X" Wiki="" />
+    <unique10_TurnMoveDirLimitY AltName="Unique 10: Correction Limit Angle: Y" Wiki="" />
+    <unique10_pad1 Padding="" />
+    <unique10_Scale AltName="Unique 10: SFX Scale" Wiki="SFX scale value" />
+    
+    <brakeFront_SFXID AltName="Brake Front: SFX ID" Wiki="" ParticleAlias="" />
+    <brakeFront_SlotNO AltName="Brake Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <brakeFront_useRPCType AltName="Brake Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <brakeFront_IsHorizontal AltName="Brake Front: Is Horizontal" Wiki="0: brakeFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <brakeFront_IsFollowDmyPoly AltName="Brake Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <brakeFront_IsEraseActionEnd AltName="Brake Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <brakeFront_camouFlageShow AltName="Brake Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <brakeFront_TurnMoveDirType AltName="Brake Front: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <brakeFront_pad Padding="" />
+    <brakeFront_TurnMoveDirLimitX AltName="Brake Front: Correction Limit Angle: X" Wiki="" />
+    <brakeFront_TurnMoveDirLimitY AltName="Brake Front: Correction Limit Angle: Y" Wiki="" />
+    <brakeFront_pad1 Padding="" />
+    <brakeFront_Scale AltName="Brake Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <brakeBack_SFXID AltName="Brake Back: SFX ID" Wiki="" ParticleAlias="" />
+    <brakeBack_SlotNO AltName="Brake Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <brakeBack_useRPCType AltName="Brake Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <brakeBack_IsHorizontal AltName="Brake Back: Is Horizontal" Wiki="0: brakeBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <brakeBack_IsFollowDmyPoly AltName="Brake Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <brakeBack_IsEraseActionEnd AltName="Brake Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <brakeBack_camouFlageShow AltName="Brake Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <brakeBack_TurnMoveDirType AltName="Brake Back: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <brakeBack_pad Padding="" />
+    <brakeBack_TurnMoveDirLimitX AltName="Brake Back: Correction Limit Angle: X" Wiki="" />
+    <brakeBack_TurnMoveDirLimitY AltName="Brake Back: Correction Limit Angle: Y" Wiki="" />
+    <brakeBack_pad1 Padding="" />
+    <brakeBack_Scale AltName="Brake Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <brakeLeft_SFXID AltName="Brake Left: SFX ID" Wiki="" ParticleAlias="" />
+    <brakeLeft_SlotNO AltName="Brake Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <brakeLeft_useRPCType AltName="Brake Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <brakeLeft_IsHorizontal AltName="Brake Left: Is Horizontal" Wiki="0: brakeLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <brakeLeft_IsFollowDmyPoly AltName="Brake Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <brakeLeft_IsEraseActionEnd AltName="Brake Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <brakeLeft_camouFlageShow AltName="Brake Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <brakeLeft_TurnMoveDirType AltName="Brake Left: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <brakeLeft_pad Padding="" />
+    <brakeLeft_TurnMoveDirLimitX AltName="Brake Left: Correction Limit Angle: X" Wiki="" />
+    <brakeLeft_TurnMoveDirLimitY AltName="Brake Left: Correction Limit Angle: Y" Wiki="" />
+    <brakeLeft_pad1 Padding="" />
+    <brakeLeft_Scale AltName="Brake Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <brakeRight_SFXID AltName="Brake Right: SFX ID" Wiki="" ParticleAlias="" />
+    <brakeRight_SlotNO AltName="Brake Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <brakeRight_useRPCType AltName="Brake Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <brakeRight_IsHorizontal AltName="Brake Right: Is Horizontal" Wiki="0: brakeRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <brakeRight_IsFollowDmyPoly AltName="Brake Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <brakeRight_IsEraseActionEnd AltName="Brake Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <brakeRight_camouFlageShow AltName="Brake Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <brakeRight_TurnMoveDirType AltName="Brake Right: Correction Direction based on Movement" Wiki="Used to change the direction of the dummy poly according to the character's movement direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <brakeRight_pad Padding="" />
+    <brakeRight_TurnMoveDirLimitX AltName="Brake Right: Correction Limit Angle: X" Wiki="" />
+    <brakeRight_TurnMoveDirLimitY AltName="Brake Right: Correction Limit Angle: Y" Wiki="" />
+    <brakeRight_pad1 Padding="" />
+    <brakeRight_Scale AltName="Brake Right: SFX Scale" Wiki="SFX scale value" />
+    
+  </Field>
+  <Self />
+</PARAMMETA>

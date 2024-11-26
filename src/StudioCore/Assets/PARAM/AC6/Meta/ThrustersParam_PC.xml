@@ -1,0 +1,724 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="THRUSTERS_RPC_TYPE" type="u8">
+        <Option Value="0" Name="Not Used" />
+        <Option Value="1" Name="Character horizontal movement speed (km/h)" />
+    </Enum> 
+    <Enum Name="THRUSTERS_KEEP_DIRECTION_TYPE" type="u8">
+        <Option Value="0" Name="Keep orientation" />
+        <Option Value="1" Name="Align horizontally" />
+    </Enum> 
+    <Enum Name="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" type="u8">
+        <Option Value="-1" Name="No Correction" />
+        <Option Value="0" Name="Current Movement" />
+        <Option Value="1" Name="Movement Backwards" />
+    </Enum> 
+  </Enums>
+  <Field>
+    <DummyID AltName="Dummy Polygon ID" Wiki="SFX generation dummy poly position (-1: placement position) dummy poly ID. If specified as a booster, it will be the ID of the dummy poly in the booster." />
+    
+    <main_SFXID AltName="Main: SFX ID" Wiki="" ParticleAlias="" />
+    <main_SlotNO AltName="Main: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <main_useRPCType AltName="Main: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <main_IsHorizontal AltName="Main: Is Horizontal" Wiki="0: Maintain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <main_IsFollowDmyPoly AltName="Main: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <main_IsEraseActionEnd AltName="Main: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <main_camouFlageShow AltName="Main: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <main_DoPlaySFXForTankLeg AltName="Main: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <main_pad Padding="" />
+    <main_pad1 Padding="" />
+    <main_Scale AltName="Main: SFX Scale" Wiki="SFX scale value" />
+    
+    <subFront_SFXID AltName="Front: SFX ID" Wiki="" ParticleAlias="" />
+    <subFront_SlotNO AltName="Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <subFront_useRPCType AltName="Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <subFront_IsHorizontal AltName="Front: Is Horizontal" Wiki="0: subFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <subFront_IsFollowDmyPoly AltName="Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <subFront_IsEraseActionEnd AltName="Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <subFront_camouFlageShow AltName="Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <subFront_DoPlaySFXForTankLeg AltName="Front: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <subFront_pad Padding="" />
+    <subFront_pad1 Padding="" />
+    <subFront_Scale AltName="Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <subBack_SFXID AltName="Back: SFX ID" Wiki="" ParticleAlias="" />
+    <subBack_SlotNO AltName="Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <subBack_useRPCType AltName="Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <subBack_IsHorizontal AltName="Back: Is Horizontal" Wiki="0: subBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <subBack_IsFollowDmyPoly AltName="Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <subBack_IsEraseActionEnd AltName="Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <subBack_camouFlageShow AltName="Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <subBack_DoPlaySFXForTankLeg AltName="Back: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <subBack_pad Padding="" />
+    <subBack_pad1 Padding="" />
+    <subBack_Scale AltName="Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <subLeft_SFXID AltName="Left: SFX ID" Wiki="" ParticleAlias="" />
+    <subLeft_SlotNO AltName="Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <subLeft_useRPCType AltName="Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <subLeft_IsHorizontal AltName="Left: Is Horizontal" Wiki="0: subLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <subLeft_IsFollowDmyPoly AltName="Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <subLeft_IsEraseActionEnd AltName="Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <subLeft_camouFlageShow AltName="Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <subLeft_DoPlaySFXForTankLeg AltName="Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <subLeft_pad Padding="" />
+    <subLeft_TurnMoveDirLimitX AltName="Left: Correction Limit Angle: X" Wiki="" />
+    <subLeft_TurnMoveDirLimitY AltName="Left: Correction Limit Angle: Y" Wiki="" />
+    <subLeft_pad1 Padding="" />
+    <subLeft_Scale AltName="Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <subRight_SFXID AltName="Right: SFX ID" Wiki="" ParticleAlias="" />
+    <subRight_SlotNO AltName="Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <subRight_useRPCType AltName="Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <subRight_IsHorizontal AltName="Right: Is Horizontal" Wiki="0: subRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <subRight_IsFollowDmyPoly AltName="Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <subRight_IsEraseActionEnd AltName="Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <subRight_camouFlageShow AltName="Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <subRight_DoPlaySFXForTankLeg AltName="Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <subRight_pad Padding="" />
+    <subRight_pad1 Padding="" />
+    <subRight_Scale AltName="Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <qbFront_SFXID AltName="Quick Boost Front: SFX ID" Wiki="" ParticleAlias="" />
+    <qbFront_SlotNO AltName="Quick Boost Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <qbFront_useRPCType AltName="Quick Boost Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <qbFront_IsHorizontal AltName="Quick Boost Front: Is Horizontal" Wiki="0: qbFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <qbFront_IsFollowDmyPoly AltName="Quick Boost Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <qbFront_IsEraseActionEnd AltName="Quick Boost Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <qbFront_camouFlageShow AltName="Quick Boost Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <qbFront_DoPlaySFXForTankLeg AltName="Quick Boost Front:: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <qbFront_pad Padding="" />
+    <qbFront_pad1 Padding="" />
+    <qbFront_Scale AltName="Quick Boost Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <qbBack_SFXID AltName="Quick Boost Back: SFX ID" Wiki="" ParticleAlias="" />
+    <qbBack_SlotNO AltName="Quick Boost Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <qbBack_useRPCType AltName="Quick Boost Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <qbBack_IsHorizontal AltName="Quick Boost Back: Is Horizontal" Wiki="0: qbBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <qbBack_IsFollowDmyPoly AltName="Quick Boost Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <qbBack_IsEraseActionEnd AltName="Quick Boost Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <qbBack_camouFlageShow AltName="Quick Boost Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <qbBack_DoPlaySFXForTankLeg AltName="Quick Boost Back: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    
+    <qbBack_pad Padding="" />
+    <qbBack_pad1 Padding="" />
+    <qbBack_Scale AltName="Quick Boost Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <qbLeft_SFXID AltName="Quick Boost Left: SFX ID" Wiki="" ParticleAlias="" />
+    <qbLeft_SlotNO AltName="Quick Boost Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <qbLeft_useRPCType AltName="Quick Boost Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <qbLeft_IsHorizontal AltName="Quick Boost Left: Is Horizontal" Wiki="0: qbLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <qbLeft_IsFollowDmyPoly AltName="Quick Boost Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <qbLeft_IsEraseActionEnd AltName="Quick Boost Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <qbLeft_camouFlageShow AltName="Quick Boost Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <qbLeft_DoPlaySFXForTankLeg AltName="Quick Boost Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <qbLeft_pad Padding="" />
+    <qbLeft_pad1 Padding="" />
+    <qbLeft_Scale AltName="Quick Boost Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <qbRight_SFXID AltName="Quick Boost Right: SFX ID" Wiki="" ParticleAlias="" />
+    <qbRight_SlotNO AltName="Quick Boost Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <qbRight_useRPCType AltName="Quick Boost Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <qbRight_IsHorizontal AltName="Quick Boost Right: Is Horizontal" Wiki="0: qbRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <qbRight_IsFollowDmyPoly AltName="Quick Boost Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <qbRight_IsEraseActionEnd AltName="Quick Boost Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <qbRight_camouFlageShow AltName="Quick Boost Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <qbRight_DoPlaySFXForTankLeg AltName="Quick Boost Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <qbRight_pad Padding="" />
+    <qbRight_pad1 Padding="" />
+    <qbRight_Scale AltName="Quick Boost Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <lift_SFXID AltName="Lift: SFX ID" Wiki="" ParticleAlias="" />
+    <lift_SlotNO AltName="Lift: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <lift_useRPCType AltName="Lift: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <lift_IsHorizontal AltName="Lift: Is Horizontal" Wiki="0: lifttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <lift_IsFollowDmyPoly AltName="Lift: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <lift_IsEraseActionEnd AltName="Lift: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <lift_camouFlageShow AltName="Lift: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <lift_DoPlaySFXForTankLeg AltName="Lift: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <lift_pad Padding="" />
+    <lift_pad1 Padding="" />
+    <lift_Scale AltName="Lift: SFX Scale" Wiki="SFX scale value" />
+    
+    <tankFront_SFXID AltName="Tank Front: SFX ID" Wiki="" ParticleAlias="" />
+    <tankFront_SlotNO AltName="Tank Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <tankFront_useRPCType AltName="Tank Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <tankFront_IsHorizontal AltName="Tank Front: Is Horizontal" Wiki="0: tankFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <tankFront_IsFollowDmyPoly AltName="Tank Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <tankFront_IsEraseActionEnd AltName="Tank Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <tankFront_camouFlageShow AltName="Tank Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <tankFront_DoPlaySFXForTankLeg AltName="Tank Front: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <tankFront_pad Padding="" />
+    <tankFront_pad1 Padding="" />
+    <tankFront_Scale AltName="Tank Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <tankBack_SFXID AltName="Tank Back: SFX ID" Wiki="" ParticleAlias="" />
+    <tankBack_SlotNO AltName="Tank Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <tankBack_useRPCType AltName="Tank Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <tankBack_IsHorizontal AltName="Tank Back: Is Horizontal" Wiki="0: tankBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <tankBack_IsFollowDmyPoly AltName="Tank Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <tankBack_IsEraseActionEnd AltName="Tank Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <tankBack_camouFlageShow AltName="Tank Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <tankBack_DoPlaySFXForTankLeg AltName="Tank Back: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <tankBack_pad Padding="" />
+    <tankBack_pad1 Padding="" />
+    <tankBack_Scale AltName="Tank Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <tankDriftLeft_SFXID AltName="Tank Drift Left: SFX ID" Wiki="" ParticleAlias="" />
+    <tankDriftLeft_SlotNO AltName="Tank Drift Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <tankDriftLeft_useRPCType AltName="Tank Drift Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <tankDriftLeft_IsHorizontal AltName="Tank Drift Left: Is Horizontal" Wiki="0: tankDriftLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <tankDriftLeft_IsFollowDmyPoly AltName="Tank Drift Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <tankDriftLeft_IsEraseActionEnd AltName="Tank Drift Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <tankDriftLeft_camouFlageShow AltName="Tank Drift Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <tankDriftLeft_DoPlaySFXForTankLeg AltName="Tank Drift Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <tankDriftLeft_pad Padding="" />
+    <tankDriftLeft_pad1 Padding="" />
+    <tankDriftLeft_Scale AltName="Tank Drift Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <tankDriftRight_SFXID AltName="Tank Drift Right: SFX ID" Wiki="" ParticleAlias="" />
+    <tankDriftRight_SlotNO AltName="Tank Drift Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <tankDriftRight_useRPCType AltName="Tank Drift Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <tankDriftRight_IsHorizontal AltName="Tank Drift Right: Is Horizontal" Wiki="0: tankDriftRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <tankDriftRight_IsFollowDmyPoly AltName="Tank Drift Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <tankDriftRight_IsEraseActionEnd AltName="Tank Drift Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <tankDriftRight_camouFlageShow AltName="Tank Drift Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <tankDriftRight_DoPlaySFXForTankLeg AltName="Tank Drift Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <tankDriftRight_pad Padding="" />
+    <tankDriftRight_pad1 Padding="" />
+    <tankDriftRight_Scale AltName="Tank Drift Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <quickTurnLeft_SFXID AltName="Quick Turn Left: SFX ID" Wiki="" ParticleAlias="" />
+    <quickTurnLeft_SlotNO AltName="Quick Turn Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <quickTurnLeft_useRPCType AltName="Quick Turn Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <quickTurnLeft_IsHorizontal AltName="Quick Turn Left: Is Horizontal" Wiki="0: quickTurnLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <quickTurnLeft_IsFollowDmyPoly AltName="Quick Turn Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <quickTurnLeft_IsEraseActionEnd AltName="Quick Turn Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <quickTurnLeft_camouFlageShow AltName="Quick Turn Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <quickTurnLeft_DoPlaySFXForTankLeg AltName="Quick Turn Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <quickTurnLeft_pad Padding="" />
+    <quickTurnLeft_pad1 Padding="" />
+    <quickTurnLeft_Scale AltName="Quick Turn Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <quickTurnRight_SFXID AltName="Quick Turn Right: SFX ID" Wiki="" ParticleAlias="" />
+    <quickTurnRight_SlotNO AltName="Quick Turn Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <quickTurnRight_useRPCType AltName="Quick Turn Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <quickTurnRight_IsHorizontal AltName="Quick Turn Right: Is Horizontal" Wiki="0: quickTurnRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <quickTurnRight_IsFollowDmyPoly AltName="Quick Turn Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <quickTurnRight_IsEraseActionEnd AltName="Quick Turn Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <quickTurnRight_camouFlageShow AltName="Quick Turn Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <quickTurnRight_DoPlaySFXForTankLeg AltName="Quick Turn Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <quickTurnRight_pad Padding="" />
+    <quickTurnRight_pad1 Padding="" />
+    <quickTurnRight_Scale AltName="Quick Turn Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <assaultBoost_SFXID AltName="Assault Boost: SFX ID" Wiki="" ParticleAlias="" />
+    <assaultBoost_SlotNO AltName="Assault Boost: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <assaultBoost_useRPCType AltName="Assault Boost: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <assaultBoost_IsHorizontal AltName="Assault Boost: Is Horizontal" Wiki="0: assaultBoosttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <assaultBoost_IsFollowDmyPoly AltName="Assault Boost: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <assaultBoost_IsEraseActionEnd AltName="Assault Boost: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <assaultBoost_camouFlageShow AltName="Assault Boost: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <assaultBoost_DoPlaySFXForTankLeg AltName="Assault Boost: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <assaultBoost_pad Padding="" />
+    <assaultBoost_pad1 Padding="" />
+    <assaultBoost_Scale AltName="Assault Boost: SFX Scale" Wiki="SFX scale value" />
+    
+    <hoveringStart_SFXID AltName="Hover Start: SFX ID" Wiki="" ParticleAlias="" />
+    <hoveringStart_SlotNO AltName="Hover Start: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hoveringStart_useRPCType AltName="Hover Start: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hoveringStart_IsHorizontal AltName="Hover Start: Is Horizontal" Wiki="0: hoveringStarttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hoveringStart_IsFollowDmyPoly AltName="Hover Start: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hoveringStart_IsEraseActionEnd AltName="Hover Start: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hoveringStart_camouFlageShow AltName="Hover Start: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hoveringStart_DoPlaySFXForTankLeg AltName="Hover Start: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hoveringStart_pad Padding="" />
+    <hoveringStart_pad1 Padding="" />
+    <hoveringStart_Scale AltName="Hover Start: SFX Scale" Wiki="SFX scale value" />
+    
+    <hoveringStay_SFXID AltName="Hover Stay: SFX ID" Wiki="" ParticleAlias="" />
+    <hoveringStay_SlotNO AltName="Hover Stay: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hoveringStay_useRPCType AltName="Hover Stay: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hoveringStay_IsHorizontal AltName="Hover Stay: Is Horizontal" Wiki="0: hoveringStaytain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hoveringStay_IsFollowDmyPoly AltName="Hover Stay: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hoveringStay_IsEraseActionEnd AltName="Hover Stay: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hoveringStay_camouFlageShow AltName="Hover Stay: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hoveringStay_DoPlaySFXForTankLeg AltName="Hover Stay: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hoveringStay_pad Padding="" />
+    <hoveringStay_pad1 Padding="" />
+    <hoveringStay_Scale AltName="Hover Stay: SFX Scale" Wiki="SFX scale value" />
+    
+    <hoveringFront_SFXID AltName="Hover Front: SFX ID" Wiki="" ParticleAlias="" />
+    <hoveringFront_SlotNO AltName="Hover Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hoveringFront_useRPCType AltName="Hover Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hoveringFront_IsHorizontal AltName="Hover Front: Is Horizontal" Wiki="0: hoveringFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hoveringFront_IsFollowDmyPoly AltName="Hover Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hoveringFront_IsEraseActionEnd AltName="Hover Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hoveringFront_camouFlageShow AltName="Hover Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hoveringFront_DoPlaySFXForTankLeg AltName="Hover Front: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hoveringFront_pad Padding="" />
+    <hoveringFront_pad1 Padding="" />
+    <hoveringFront_Scale AltName="Hover Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <hoveringBack_SFXID AltName="Hover Back: SFX ID" Wiki="" ParticleAlias="" />
+    <hoveringBack_SlotNO AltName="Hover Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hoveringBack_useRPCType AltName="Hover Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hoveringBack_IsHorizontal AltName="Hover Back: Is Horizontal" Wiki="0: hoveringBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hoveringBack_IsFollowDmyPoly AltName="Hover Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hoveringBack_IsEraseActionEnd AltName="Hover Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hoveringBack_camouFlageShow AltName="Hover Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hoveringBack_DoPlaySFXForTankLeg AltName="Hover Back: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hoveringBack_pad Padding="" />
+    <hoveringBack_pad1 Padding="" />
+    <hoveringBack_Scale AltName="Hover Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <hoveringLeft_SFXID AltName="Hover Left: SFX ID" Wiki="" ParticleAlias="" />
+    <hoveringLeft_SlotNO AltName="Hover Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hoveringLeft_useRPCType AltName="Hover Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hoveringLeft_IsHorizontal AltName="Hover Left: Is Horizontal" Wiki="0: hoveringLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hoveringLeft_IsFollowDmyPoly AltName="Hover Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hoveringLeft_IsEraseActionEnd AltName="Hover Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hoveringLeft_camouFlageShow AltName="Hover Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hoveringLeft_DoPlaySFXForTankLeg AltName="Hover Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hoveringLeft_pad Padding="" />
+    <hoveringLeft_pad1 Padding="" />
+    <hoveringLeft_Scale AltName="Hover Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <hoveringRight_SFXID AltName="Hover Right: SFX ID" Wiki="" ParticleAlias="" />
+    <hoveringRight_SlotNO AltName="Hover Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hoveringRight_useRPCType AltName="Hover Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hoveringRight_IsHorizontal AltName="Hover Right: Is Horizontal" Wiki="0: hoveringRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hoveringRight_IsFollowDmyPoly AltName="Hover Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hoveringRight_IsEraseActionEnd AltName="Hover Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hoveringRight_camouFlageShow AltName="Hover Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hoveringRight_DoPlaySFXForTankLeg AltName="Hover Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hoveringRight_pad Padding="" />
+    <hoveringRight_pad1 Padding="" />
+    <hoveringRight_Scale AltName="Hover Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <turnLeft_SFXID AltName="Turn Left: SFX ID" Wiki="" ParticleAlias="" />
+    <turnLeft_SlotNO AltName="Turn Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <turnLeft_useRPCType AltName="Turn Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <turnLeft_IsHorizontal AltName="Turn Left: Is Horizontal" Wiki="0: turnLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <turnLeft_IsFollowDmyPoly AltName="Turn Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <turnLeft_IsEraseActionEnd AltName="Turn Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <turnLeft_camouFlageShow AltName="Turn Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <turnLeft_DoPlaySFXForTankLeg AltName="Turn Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <turnLeft_pad Padding="" />
+    <turnLeft_pad1 Padding="" />
+    <turnLeft_Scale AltName="Turn Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <turnRight_SFXID AltName="Turn Right: SFX ID" Wiki="" ParticleAlias="" />
+    <turnRight_SlotNO AltName="Turn Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <turnRight_useRPCType AltName="Turn Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <turnRight_IsHorizontal AltName="Turn Right: Is Horizontal" Wiki="0: turnRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <turnRight_IsFollowDmyPoly AltName="Turn Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <turnRight_IsEraseActionEnd AltName="Turn Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <turnRight_camouFlageShow AltName="Turn Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <turnRight_DoPlaySFXForTankLeg AltName="Turn Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <turnRight_pad Padding="" />
+    <turnRight_pad1 Padding="" />
+    <turnRight_Scale AltName="Turn Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <mainStart_SFXID AltName="Main Start: SFX ID" Wiki="" ParticleAlias="" />
+    <mainStart_SlotNO AltName="Main Start: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <mainStart_useRPCType AltName="Main Start: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <mainStart_IsHorizontal AltName="Main Start: Is Horizontal" Wiki="0: mainStarttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <mainStart_IsFollowDmyPoly AltName="Main Start: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <mainStart_IsEraseActionEnd AltName="Main Start: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <mainStart_camouFlageShow AltName="Main Start: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <mainStart_DoPlaySFXForTankLeg AltName="Main Start: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <mainStart_pad Padding="" />
+    <mainStart_TurnMoveDirLimitX AltName="Main Start: Correction Limit Angle: X" Wiki="" />
+    <mainStart_TurnMoveDirLimitY AltName="Main Start: Correction Limit Angle: Y" Wiki="" />
+    <mainStart_pad1 Padding="" />
+    <mainStart_Scale AltName="Main Start: SFX Scale" Wiki="SFX scale value" />
+    
+    <assaultBoostFinish_SFXID AltName="Assault Boost Finish: SFX ID" Wiki="" ParticleAlias="" />
+    <assaultBoostFinish_SlotNO AltName="Assault Boost Finish: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <assaultBoostFinish_useRPCType AltName="Assault Boost Finish: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <assaultBoostFinish_IsHorizontal AltName="Assault Boost Finish: Is Horizontal" Wiki="0: assaultBoostFinishtain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <assaultBoostFinish_IsFollowDmyPoly AltName="Assault Boost Finish: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <assaultBoostFinish_IsEraseActionEnd AltName="Assault Boost Finish: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <assaultBoostFinish_camouFlageShow AltName="Assault Boost Finish: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <assaultBoostFinish_DoPlaySFXForTankLeg AltName="Assault Boost Finish: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <assaultBoostFinish_pad Padding="" />
+    <assaultBoostFinish_pad1 Padding="" />
+    <assaultBoostFinish_Scale AltName="Assault Boost Finish: SFX Scale" Wiki="SFX scale value" />
+    
+    <falling_SFXID AltName="Falling: SFX ID" Wiki="" ParticleAlias="" />
+    <falling_SlotNO AltName="Falling: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <falling_useRPCType AltName="Falling: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <falling_IsHorizontal AltName="Falling: Is Horizontal" Wiki="0: fallingtain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <falling_IsFollowDmyPoly AltName="Falling: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <falling_IsEraseActionEnd AltName="Falling: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <falling_camouFlageShow AltName="Falling: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <falling_DoPlaySFXForTankLeg AltName="Falling: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <falling_pad Padding="" />
+    <falling_pad1 Padding="" />
+    <falling_Scale AltName="Falling: SFX Scale" Wiki="SFX scale value" />
+    
+    <boostExhaustFront_SFXID AltName="Boost Exhaust Front: SFX ID" Wiki="" ParticleAlias="" />
+    <boostExhaustFront_SlotNO AltName="Boost Exhaust Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <boostExhaustFront_useRPCType AltName="Boost Exhaust Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <boostExhaustFront_IsHorizontal AltName="Boost Exhaust Front: Is Horizontal" Wiki="0: boostExhaustFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <boostExhaustFront_IsFollowDmyPoly AltName="Boost Exhaust Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <boostExhaustFront_IsEraseActionEnd AltName="Boost Exhaust Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <boostExhaustFront_camouFlageShow AltName="Boost Exhaust Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <boostExhaustFront_DoPlaySFXForTankLeg AltName="Boost Exhaust Front: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <boostExhaustFront_pad Padding="" />
+    <boostExhaustFront_pad1 Padding="" />
+    <boostExhaustFront_Scale AltName="Boost Exhaust Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <boostExhaustBack_SFXID AltName="Boost Exhaust Back: SFX ID" Wiki="" ParticleAlias="" />
+    <boostExhaustBack_SlotNO AltName="Boost Exhaust Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <boostExhaustBack_useRPCType AltName="Boost Exhaust Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <boostExhaustBack_IsHorizontal AltName="Boost Exhaust Back: Is Horizontal" Wiki="0: boostExhaustBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <boostExhaustBack_IsFollowDmyPoly AltName="Boost Exhaust Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <boostExhaustBack_IsEraseActionEnd AltName="Boost Exhaust Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <boostExhaustBack_camouFlageShow AltName="Boost Exhaust Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <boostExhaustBack_DoPlaySFXForTankLeg AltName="Boost Exhaust Back: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <boostExhaustBack_pad Padding="" />
+    <boostExhaustBack_pad1 Padding="" />
+    <boostExhaustBack_Scale AltName="Boost Exhaust Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <boostExhaustLeft_SFXID AltName="Boost Exhaust Left: SFX ID" Wiki="" ParticleAlias="" />
+    <boostExhaustLeft_SlotNO AltName="Boost Exhaust Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <boostExhaustLeft_useRPCType AltName="Boost Exhaust Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <boostExhaustLeft_IsHorizontal AltName="Boost Exhaust Left: Is Horizontal" Wiki="0: boostExhaustLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <boostExhaustLeft_IsFollowDmyPoly AltName="Boost Exhaust Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <boostExhaustLeft_IsEraseActionEnd AltName="Boost Exhaust Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <boostExhaustLeft_camouFlageShow AltName="Boost Exhaust Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <boostExhaustLeft_DoPlaySFXForTankLeg AltName="Boost Exhaust Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <boostExhaustLeft_pad Padding="" />
+    <boostExhaustLeft_pad1 Padding="" />
+    <boostExhaustLeft_Scale AltName="Boost Exhaust Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <boostExhaustRight_SFXID AltName="Boost Exhaust Right: SFX ID" Wiki="" ParticleAlias="" />
+    <boostExhaustRight_SlotNO AltName="Boost Exhaust Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <boostExhaustRight_useRPCType AltName="Boost Exhaust Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <boostExhaustRight_IsHorizontal AltName="Boost Exhaust Right: Is Horizontal" Wiki="0: boostExhaustRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <boostExhaustRight_IsFollowDmyPoly AltName="Boost Exhaust Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <boostExhaustRight_IsEraseActionEnd AltName="Boost Exhaust Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <boostExhaustRight_camouFlageShow AltName="Boost Exhaust Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <boostExhaustRight_DoPlaySFXForTankLeg AltName="Boost Exhaust Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <boostExhaustRight_pad Padding="" />
+    <boostExhaustRight_pad1 Padding="" />
+    <boostExhaustRight_Scale AltName="Boost Exhaust Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <boostExhaustFalling_SFXID AltName="Boost Exhaust Falling: SFX ID" Wiki="" ParticleAlias="" />
+    <boostExhaustFalling_SlotNO AltName="Boost Exhaust Falling: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <boostExhaustFalling_useRPCType AltName="Boost Exhaust Falling: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <boostExhaustFalling_IsHorizontal AltName="Boost Exhaust Falling: Is Horizontal" Wiki="0: boostExhaustFallingtain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <boostExhaustFalling_IsFollowDmyPoly AltName="Boost Exhaust Falling: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <boostExhaustFalling_IsEraseActionEnd AltName="Boost Exhaust Falling: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <boostExhaustFalling_camouFlageShow AltName="Boost Exhaust Falling: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <boostExhaustFalling_DoPlaySFXForTankLeg AltName="Boost Exhaust Falling: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <boostExhaustFalling_pad Padding="" />
+    <boostExhaustFalling_pad1 Padding="" />
+    <boostExhaustFalling_Scale AltName="Boost Exhaust Falling: SFX Scale" Wiki="SFX scale value" />
+    
+    <brakeFront_SFXID AltName="Brake Front: SFX ID" Wiki="" ParticleAlias="" />
+    <brakeFront_SlotNO AltName="Brake Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <brakeFront_useRPCType AltName="Brake Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <brakeFront_IsHorizontal AltName="Brake Front: Is Horizontal" Wiki="0: brakeFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <brakeFront_IsFollowDmyPoly AltName="Brake Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <brakeFront_IsEraseActionEnd AltName="Brake Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <brakeFront_camouFlageShow AltName="Brake Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <brakeFront_DoPlaySFXForTankLeg AltName="Brake Front: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <brakeFront_pad Padding="" />
+    <brakeFront_pad1 Padding="" />
+    <brakeFront_Scale AltName="Brake Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <brakeBack_SFXID AltName="Brake Back: SFX ID" Wiki="" ParticleAlias="" />
+    <brakeBack_SlotNO AltName="Brake Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <brakeBack_useRPCType AltName="Brake Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <brakeBack_IsHorizontal AltName="Brake Back: Is Horizontal" Wiki="0: brakeBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <brakeBack_IsFollowDmyPoly AltName="Brake Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <brakeBack_IsEraseActionEnd AltName="Brake Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <brakeBack_camouFlageShow AltName="Brake Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <brakeBack_DoPlaySFXForTankLeg AltName="Brake Back: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <brakeBack_pad Padding="" />
+    <brakeBack_pad1 Padding="" />
+    <brakeBack_Scale AltName="Brake Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <brakeLeft_SFXID AltName="Brake Left: SFX ID" Wiki="" ParticleAlias="" />
+    <brakeLeft_SlotNO AltName="Brake Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <brakeLeft_useRPCType AltName="Brake Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <brakeLeft_IsHorizontal AltName="Brake Left: Is Horizontal" Wiki="0: brakeLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <brakeLeft_IsFollowDmyPoly AltName="Brake Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <brakeLeft_IsEraseActionEnd AltName="Brake Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <brakeLeft_camouFlageShow AltName="Brake Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <brakeLeft_DoPlaySFXForTankLeg AltName="Brake Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <brakeLeft_pad Padding="" />
+    <brakeLeft_pad1 Padding="" />
+    <brakeLeft_Scale AltName="Brake Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <brakeRight_SFXID AltName="Brake Right: SFX ID" Wiki="" ParticleAlias="" />
+    <brakeRight_SlotNO AltName="Brake Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <brakeRight_useRPCType AltName="Brake Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <brakeRight_IsHorizontal AltName="Brake Right: Is Horizontal" Wiki="0: brakeRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <brakeRight_IsFollowDmyPoly AltName="Brake Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <brakeRight_IsEraseActionEnd AltName="Brake Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <brakeRight_camouFlageShow AltName="Brake Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <brakeRight_DoPlaySFXForTankLeg AltName="Brake Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <brakeRight_pad Padding="" />
+    <brakeRight_pad1 Padding="" />
+    <brakeRight_Scale AltName="Brake Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <brakeFalling_SFXID AltName="Brake Falling: SFX ID" Wiki="" ParticleAlias="" />
+    <brakeFalling_SlotNO AltName="Brake Falling: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <brakeFalling_useRPCType AltName="Brake Falling: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <brakeFalling_IsHorizontal AltName="Brake Falling: Is Horizontal" Wiki="0: brakeFallingtain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <brakeFalling_IsFollowDmyPoly AltName="Brake Falling: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <brakeFalling_IsEraseActionEnd AltName="Brake Falling: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <brakeFalling_camouFlageShow AltName="Brake Falling: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <brakeFalling_DoPlaySFXForTankLeg AltName="Brake Falling: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <brakeFalling_pad Padding="" />
+    <brakeFalling_pad1 Padding="" />
+    <brakeFalling_Scale AltName="Brake Falling: SFX Scale" Wiki="SFX scale value" />
+    
+    <assaultBoostLoop_SFXID AltName="Assault Boost Loop: SFX ID" Wiki="" ParticleAlias="" />
+    <assaultBoostLoop_SlotNO AltName="Assault Boost Loop: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <assaultBoostLoop_useRPCType AltName="Assault Boost Loop: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <assaultBoostLoop_IsHorizontal AltName="Assault Boost Loop: Is Horizontal" Wiki="0: assaultBoostLooptain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <assaultBoostLoop_IsFollowDmyPoly AltName="Assault Boost Loop: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <assaultBoostLoop_IsEraseActionEnd AltName="Assault Boost Loop: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <assaultBoostLoop_camouFlageShow AltName="Assault Boost Loop: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <assaultBoostLoop_DoPlaySFXForTankLeg AltName="Assault Boost Loop: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <assaultBoostLoop_pad Padding="" />
+    <assaultBoostLoop_pad1 Padding="" />
+    <assaultBoostLoop_Scale AltName="Assault Boost Loop: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsWalkFront_SFXID AltName="Hover Biped Walk Front: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsWalkFront_SlotNO AltName="Hover Biped Walk Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsWalkFront_useRPCType AltName="Hover Biped Walk Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsWalkFront_IsHorizontal AltName="Hover Biped Walk Front: Is Horizontal" Wiki="0: hover2LegsWalkFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsWalkFront_IsFollowDmyPoly AltName="Hover Biped Walk Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsWalkFront_IsEraseActionEnd AltName="Hover Biped Walk Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsWalkFront_camouFlageShow AltName="Hover Biped Walk Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsWalkFront_DoPlaySFXForTankLeg AltName="Hover Biped Walk Front: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsWalkFront_pad Padding="" />
+    <hover2LegsWalkFront_pad1 Padding="" />
+    <hover2LegsWalkFront_Scale AltName="Hover Biped Walk Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsWalkBack_SFXID AltName="Hover Biped Walk Back: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsWalkBack_SlotNO AltName="Hover Biped Walk Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsWalkBack_useRPCType AltName="Hover Biped Walk Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsWalkBack_IsHorizontal AltName="Hover Biped Walk Back: Is Horizontal" Wiki="0: hover2LegsWalkBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsWalkBack_IsFollowDmyPoly AltName="Hover Biped Walk Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsWalkBack_IsEraseActionEnd AltName="Hover Biped Walk Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsWalkBack_camouFlageShow AltName="Hover Biped Walk Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsWalkBack_DoPlaySFXForTankLeg AltName="Hover Biped Walk Back: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsWalkBack_pad Padding="" />
+    <hover2LegsWalkBack_pad1 Padding="" />
+    <hover2LegsWalkBack_Scale AltName="Hover Biped Walk Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsWalkLeft_SFXID AltName="Hover Biped Walk Left: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsWalkLeft_SlotNO AltName="Hover Biped Walk Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsWalkLeft_useRPCType AltName="Hover Biped Walk Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsWalkLeft_IsHorizontal AltName="Hover Biped Walk Left: Is Horizontal" Wiki="0: hover2LegsWalkLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsWalkLeft_IsFollowDmyPoly AltName="Hover Biped Walk Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsWalkLeft_IsEraseActionEnd AltName="Hover Biped Walk Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsWalkLeft_camouFlageShow AltName="Hover Biped Walk Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsWalkLeft_DoPlaySFXForTankLeg AltName="Hover Biped Walk Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsWalkLeft_pad Padding="" />
+    <hover2LegsWalkLeft_pad1 Padding="" />
+    <hover2LegsWalkLeft_Scale AltName="Hover Biped Walk Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsWalkRight_SFXID AltName="Hover Biped Walk Right: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsWalkRight_SlotNO AltName="Hover Biped Walk Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsWalkRight_useRPCType AltName="Hover Biped Walk Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsWalkRight_IsHorizontal AltName="Hover Biped Walk Right: Is Horizontal" Wiki="0: hover2LegsWalkRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsWalkRight_IsFollowDmyPoly AltName="Hover Biped Walk Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsWalkRight_IsEraseActionEnd AltName="Hover Biped Walk Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsWalkRight_camouFlageShow AltName="Hover Biped Walk Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsWalkRight_DoPlaySFXForTankLeg AltName="Hover Biped Walk Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsWalkRight_pad Padding="" />
+    <hover2LegsWalkRight_pad1 Padding="" />
+    <hover2LegsWalkRight_Scale AltName="Hover Biped Walk Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsWalkLeftTurn_SFXID AltName="Hover Biped Walk Turn Left: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsWalkLeftTurn_SlotNO AltName="Hover Biped Walk Turn Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsWalkLeftTurn_useRPCType AltName="Hover Biped Walk Turn Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsWalkLeftTurn_IsHorizontal AltName="Hover Biped Walk Turn Left: Is Horizontal" Wiki="0: hover2LegsWalkLeftTurntain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsWalkLeftTurn_IsFollowDmyPoly AltName="Hover Biped Walk Turn Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsWalkLeftTurn_IsEraseActionEnd AltName="Hover Biped Walk Turn Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsWalkLeftTurn_camouFlageShow AltName="Hover Biped Walk Turn Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsWalkLeftTurn_DoPlaySFXForTankLeg AltName="Hover Biped Walk Turn Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsWalkLeftTurn_pad Padding="" />
+    <hover2LegsWalkLeftTurn_pad1 Padding="" />
+    <hover2LegsWalkLeftTurn_Scale AltName="Hover Biped Walk Turn Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsWalkRightTurn_SFXID AltName="Hover Biped Walk Turn Right: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsWalkRightTurn_SlotNO AltName="Hover Biped Walk Turn Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsWalkRightTurn_useRPCType AltName="Hover Biped Walk Turn Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsWalkRightTurn_IsHorizontal AltName="Hover Biped Walk Turn Right: Is Horizontal" Wiki="0: hover2LegsWalkRightTurntain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsWalkRightTurn_IsFollowDmyPoly AltName="Hover Biped Walk Turn Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsWalkRightTurn_IsEraseActionEnd AltName="Hover Biped Walk Turn Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsWalkRightTurn_camouFlageShow AltName="Hover Biped Walk Turn Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsWalkRightTurn_DoPlaySFXForTankLeg AltName="Hover Biped Walk Turn Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsWalkRightTurn_pad Padding="" />
+    <hover2LegsWalkRightTurn_pad1 Padding="" />
+    <hover2LegsWalkRightTurn_Scale AltName="Hover Biped Walk Turn Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsRunFront_SFXID AltName="Hover Biped Run Front: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsRunFront_SlotNO AltName="Hover Biped Run Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsRunFront_useRPCType AltName="Hover Biped Run Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsRunFront_IsHorizontal AltName="Hover Biped Run Front: Is Horizontal" Wiki="0: hover2LegsRunFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsRunFront_IsFollowDmyPoly AltName="Hover Biped Run Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsRunFront_IsEraseActionEnd AltName="Hover Biped Run Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsRunFront_camouFlageShow AltName="Hover Biped Run Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsRunFront_DoPlaySFXForTankLeg AltName="Hover Biped Run Front: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsRunFront_pad Padding="" />
+    <hover2LegsRunFront_pad1 Padding="" />
+    <hover2LegsRunFront_Scale AltName="Hover Biped Run Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsRunBack_SFXID AltName="Hover Biped Run Back: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsRunBack_SlotNO AltName="Hover Biped Run Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsRunBack_useRPCType AltName="Hover Biped Run Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsRunBack_IsHorizontal AltName="Hover Biped Run Back: Is Horizontal" Wiki="0: hover2LegsRunBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsRunBack_IsFollowDmyPoly AltName="Hover Biped Run Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsRunBack_IsEraseActionEnd AltName="Hover Biped Run Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsRunBack_camouFlageShow AltName="Hover Biped Run Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsRunBack_DoPlaySFXForTankLeg AltName="Hover Biped Run Back: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsRunBack_pad Padding="" />
+    <hover2LegsRunBack_pad1 Padding="" />
+    <hover2LegsRunBack_Scale AltName="Hover Biped Run Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsRunLeft_SFXID AltName="Hover Biped Run Left: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsRunLeft_SlotNO AltName="Hover Biped Run Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsRunLeft_useRPCType AltName="Hover Biped Run Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsRunLeft_IsHorizontal AltName="Hover Biped Run Left: Is Horizontal" Wiki="0: hover2LegsRunLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsRunLeft_IsFollowDmyPoly AltName="Hover Biped Run Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsRunLeft_IsEraseActionEnd AltName="Hover Biped Run Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsRunLeft_camouFlageShow AltName="Hover Biped Run Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsRunLeft_DoPlaySFXForTankLeg AltName="Hover Biped Run Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsRunLeft_pad Padding="" />
+    <hover2LegsRunLeft_pad1 Padding="" />
+    <hover2LegsRunLeft_Scale AltName="Hover Biped Run Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsRunRight_SFXID AltName="Hover Biped Run Right: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsRunRight_SlotNO AltName="Hover Biped Run Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsRunRight_useRPCType AltName="Hover Biped Run Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsRunRight_IsHorizontal AltName="Hover Biped Run Right: Is Horizontal" Wiki="0: hover2LegsRunRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsRunRight_IsFollowDmyPoly AltName="Hover Biped Run Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsRunRight_IsEraseActionEnd AltName="Hover Biped Run Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsRunRight_camouFlageShow AltName="Hover Biped Run Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsRunRight_DoPlaySFXForTankLeg AltName="Hover Biped Run Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsRunRight_pad Padding="" />
+    <hover2LegsRunRight_pad1 Padding="" />
+    <hover2LegsRunRight_Scale AltName="Hover Biped Run Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsRunLeftTurn_SFXID AltName="Hover Biped Run Turn Left: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsRunLeftTurn_SlotNO AltName="Hover Biped Run Turn Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsRunLeftTurn_useRPCType AltName="Hover Biped Run Turn Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsRunLeftTurn_IsHorizontal AltName="Hover Biped Run Turn Left: Is Horizontal" Wiki="0: hover2LegsRunLeftTurntain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsRunLeftTurn_IsFollowDmyPoly AltName="Hover Biped Run Turn Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsRunLeftTurn_IsEraseActionEnd AltName="Hover Biped Run Turn Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsRunLeftTurn_camouFlageShow AltName="Hover Biped Run Turn Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsRunLeftTurn_DoPlaySFXForTankLeg AltName="Hover Biped Run Turn Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsRunLeftTurn_pad Padding="" />
+    <hover2LegsRunLeftTurn_pad1 Padding="" />
+    <hover2LegsRunLeftTurn_Scale AltName="Hover Biped Run Turn Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <hover2LegsRunRightTurn_SFXID AltName="Hover Biped Run Turn Right: SFX ID" Wiki="" ParticleAlias="" />
+    <hover2LegsRunRightTurn_SlotNO AltName="Hover Biped Run Turn Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hover2LegsRunRightTurn_useRPCType AltName="Hover Biped Run Turn Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hover2LegsRunRightTurn_IsHorizontal AltName="Hover Biped Run Turn Right: Is Horizontal" Wiki="0: hover2LegsRunRightTurntain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hover2LegsRunRightTurn_IsFollowDmyPoly AltName="Hover Biped Run Turn Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hover2LegsRunRightTurn_IsEraseActionEnd AltName="Hover Biped Run Turn Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hover2LegsRunRightTurn_camouFlageShow AltName="Hover Biped Run Turn Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hover2LegsRunRightTurn_DoPlaySFXForTankLeg AltName="Hover Biped Run Turn Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hover2LegsRunRightTurn_pad Padding="" />
+    <hover2LegsRunRightTurn_pad1 Padding="" />
+    <hover2LegsRunRightTurn_Scale AltName="Hover Biped Run Turn Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <tankQbFront_SFXID AltName="Tank Quick Boost Front: SFX ID" Wiki="" ParticleAlias="" />
+    <tankQbFront_SlotNO AltName="Tank Quick Boost Front: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <tankQbFront_useRPCType AltName="Tank Quick Boost Front: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <tankQbFront_IsHorizontal AltName="Tank Quick Boost Front: Is Horizontal" Wiki="0: tankQbFronttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <tankQbFront_IsFollowDmyPoly AltName="Tank Quick Boost Front: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <tankQbFront_IsEraseActionEnd AltName="Tank Quick Boost Front: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <tankQbFront_camouFlageShow AltName="Tank Quick Boost Front: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <tankQbFront_DoPlaySFXForTankLeg AltName="Tank Quick Boost Front: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <tankQbFront_pad Padding="" />
+    <tankQbFront_pad1 Padding="" />
+    <tankQbFront_Scale AltName="Tank Quick Boost Front: SFX Scale" Wiki="SFX scale value" />
+    
+    <tankQbBack_SFXID AltName="Tank Quick Boost Back: SFX ID" Wiki="" ParticleAlias="" />
+    <tankQbBack_SlotNO AltName="Tank Quick Boost Back: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <tankQbBack_useRPCType AltName="Tank Quick Boost Back: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <tankQbBack_IsHorizontal AltName="Tank Quick Boost Back: Is Horizontal" Wiki="0: tankQbBacktain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <tankQbBack_IsFollowDmyPoly AltName="Tank Quick Boost Back: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <tankQbBack_IsEraseActionEnd AltName="Tank Quick Boost Back: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <tankQbBack_camouFlageShow AltName="Tank Quick Boost Back: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <tankQbBack_DoPlaySFXForTankLeg AltName="Tank Quick Boost Back: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <tankQbBack_pad Padding="" />
+    <tankQbBack_pad1 Padding="" />
+    <tankQbBack_Scale AltName="Tank Quick Boost Back: SFX Scale" Wiki="SFX scale value" />
+    
+    <tankQbLeft_SFXID AltName="Tank Quick Boost Left: SFX ID" Wiki="" ParticleAlias="" />
+    <tankQbLeft_SlotNO AltName="Tank Quick Boost Left: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <tankQbLeft_useRPCType AltName="Tank Quick Boost Left: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <tankQbLeft_IsHorizontal AltName="Tank Quick Boost Left: Is Horizontal" Wiki="0: tankQbLefttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <tankQbLeft_IsFollowDmyPoly AltName="Tank Quick Boost Left: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <tankQbLeft_IsEraseActionEnd AltName="Tank Quick Boost Left: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <tankQbLeft_camouFlageShow AltName="Tank Quick Boost Left: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <tankQbLeft_DoPlaySFXForTankLeg AltName="Tank Quick Boost Left: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <tankQbLeft_pad Padding="" />
+    <tankQbLeft_pad1 Padding="" />
+    <tankQbLeft_Scale AltName="Tank Quick Boost Left: SFX Scale" Wiki="SFX scale value" />
+    
+    <tankQbRight_SFXID AltName="Tank Quick Boost Right: SFX ID" Wiki="" ParticleAlias="" />
+    <tankQbRight_SlotNO AltName="Tank Quick Boost Right: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <tankQbRight_useRPCType AltName="Tank Quick Boost Right: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <tankQbRight_IsHorizontal AltName="Tank Quick Boost Right: Is Horizontal" Wiki="0: tankQbRighttain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <tankQbRight_IsFollowDmyPoly AltName="Tank Quick Boost Right: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <tankQbRight_IsEraseActionEnd AltName="Tank Quick Boost Right: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <tankQbRight_camouFlageShow AltName="Tank Quick Boost Right: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <tankQbRight_DoPlaySFXForTankLeg AltName="Tank Quick Boost Right: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <tankQbRight_pad Padding="" />
+    <tankQbRight_pad1 Padding="" />
+    <tankQbRight_Scale AltName="Tank Quick Boost Right: SFX Scale" Wiki="SFX scale value" />
+    
+    <hovertTankGround_SFXID AltName="Hover Tank Ground: SFX ID" Wiki="" ParticleAlias="" />
+    <hovertTankGround_SlotNO AltName="Hover Tank Ground: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hovertTankGround_useRPCType AltName="Hover Tank Ground: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hovertTankGround_IsHorizontal AltName="Hover Tank Ground: Is Horizontal" Wiki="0: hovertTankGroundtain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hovertTankGround_IsFollowDmyPoly AltName="Hover Tank Ground: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hovertTankGround_IsEraseActionEnd AltName="Hover Tank Ground: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hovertTankGround_camouFlageShow AltName="Hover Tank Ground: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hovertTankGround_DoPlaySFXForTankLeg AltName="Hover Tank Ground: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hovertTankGround_pad Padding="" />
+    <hovertTankGround_pad1 Padding="" />
+    <hovertTankGround_Scale AltName="Hover Tank Ground: SFX Scale" Wiki="SFX scale value" />
+    
+    <hovertTankGroundWater_SFXID AltName="Hover Tank Ground [Water]: SFX ID" Wiki="" ParticleAlias="" />
+    <hovertTankGroundWater_SlotNO AltName="Hover Tank Ground [Water]: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hovertTankGroundWater_useRPCType AltName="Hover Tank Ground [Water]: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hovertTankGroundWater_IsHorizontal AltName="Hover Tank Ground [Water]: Is Horizontal" Wiki="0: hovertTankGroundWatertain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hovertTankGroundWater_IsFollowDmyPoly AltName="Hover Tank Ground [Water]: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hovertTankGroundWater_IsEraseActionEnd AltName="Hover Tank Ground [Water]: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hovertTankGroundWater_camouFlageShow AltName="Hover Tank Ground [Water]: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hovertTankGroundWater_DoPlaySFXForTankLeg AltName="Hover Tank Ground [Water]: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hovertTankGroundWater_pad Padding="" />
+    <hovertTankGroundWater_pad1 Padding="" />
+    <hovertTankGroundWater_Scale AltName="Hover Tank Ground [Water]: SFX Scale" Wiki="SFX scale value" />
+    
+    <hovertTankGroundWaterShallow_SFXID AltName="Hover Tank Ground [Shallow Water]: SFX ID" Wiki="" ParticleAlias="" />
+    <hovertTankGroundWaterShallow_SlotNO AltName="Hover Tank Ground [Shallow Water]: Slot Number" Wiki="-1: Do not set loop SFX when there is no management or no management slot" />
+    <hovertTankGroundWaterShallow_useRPCType AltName="Hover Tank Ground [Shallow Water]: RPC Type" Wiki="Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000." Enum="THRUSTERS_RPC_TYPE" />
+    <hovertTankGroundWaterShallow_IsHorizontal AltName="Hover Tank Ground [Shallow Water]: Is Horizontal" Wiki="0: hovertTankGroundWaterShallowtain direction, 1: Align horizontally" Enum="THRUSTERS_KEEP_DIRECTION_TYPE" />
+    <hovertTankGroundWaterShallow_IsFollowDmyPoly AltName="Hover Tank Ground [Shallow Water]: Follow Dummy Polygon" Wiki="" IsBool="" />
+    <hovertTankGroundWaterShallow_IsEraseActionEnd AltName="Hover Tank Ground [Shallow Water]: Delete SFX on End of Action" Wiki="" IsBool="" />
+    <hovertTankGroundWaterShallow_camouFlageShow AltName="Hover Tank Ground [Shallow Water]: SFX are always visible" Wiki="SFX will always appear, even if the entity is invisible." IsBool="" />
+    <hovertTankGroundWaterShallow_DoPlaySFXForTankLeg AltName="Hover Tank Ground [Shallow Water]: Display SFX on Tank Legs" Wiki="0 (OFF): Do not play, 1 (ON): Play" IsBool="" />
+    <hovertTankGroundWaterShallow_pad Padding="" />
+    <hovertTankGroundWaterShallow_pad1 Padding="" />
+    <hovertTankGroundWaterShallow_Scale AltName="Hover Tank Ground [Shallow Water]: SFX Scale" Wiki="SFX scale value" />
+    
+  </Field>
+  <Self />
+</PARAMMETA>

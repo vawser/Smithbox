@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>OBJ_ACT_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="s32 actionEnableMsgId = -1">
+      <DisplayName>アクション有効時のMsgID</DisplayName>
+      <Description>アクションが有効時に表示するメニューのMsgIDです。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="s32 actionFailedMsgId = -1">
+      <DisplayName>アクション失敗時のMsgID</DisplayName>
+      <Description>アクションが失敗時に表示するメニューのMsgIDです。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="s32 spQualifiedPassEventFlag = -1">
+      <DisplayName>特殊条件パス用イベントフラグ</DisplayName>
+      <Description>特殊条件を無条件パスするためのイベントフラグ.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>8500</SortID>
+    </Field>
+    <Field Def="u16 validDist = 150">
+      <DisplayName>アクションの有効距離[cm]</DisplayName>
+      <Description>アクションの有効距離です。</Description>
+      <Maximum>60000</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="u16 playerAnimId">
+      <DisplayName>プレイヤのアニメID0</DisplayName>
+      <Description>プレイヤーキャラのアクション時のアニメIDです。</Description>
+      <Maximum>60000</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u16 chrAnimId">
+      <DisplayName>キャラのアニメID0</DisplayName>
+      <Description>敵などのアクション時のアニメID</Description>
+      <Maximum>60000</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="u16 spQualifiedId">
+      <DisplayName>特殊条件のID</DisplayName>
+      <Description>特殊条件のID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="u16 spQualifiedId2">
+      <DisplayName>特殊条件のID 2</DisplayName>
+      <Description>特殊条件のIDその2</Description>
+      <Maximum>9999</Maximum>
+      <SortID>8011</SortID>
+    </Field>
+    <Field Def="u8 objDummyId">
+      <DisplayName>オブジェのダミポリID0</DisplayName>
+      <Description>オブジェクトのアクション位置となるダミポリIDです</Description>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 objAnimId">
+      <DisplayName>オブジェのアニメID0</DisplayName>
+      <Description>オブジェクトのアクション時のアニメＩＤです。</Description>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u8 validPlayerAngle = 30">
+      <DisplayName>プレイヤのアクション有効角度</DisplayName>
+      <Description>プレイヤのアクションの有効角度です。プレイヤの向きベクトルとオブジェへの方向ベクトルの有効角度差</Description>
+      <Maximum>180</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="u8 spQualifiedType">
+      <DisplayName>特殊条件のタイプ</DisplayName>
+      <Enum>OBJACT_SP_QUALIFIED_TYPE</Enum>
+      <Description>特殊条件の種類</Description>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="u8 spQualifiedType2">
+      <DisplayName>特殊条件のタイプ2</DisplayName>
+      <Enum>OBJACT_SP_QUALIFIED_TYPE</Enum>
+      <Description>特殊条件の種類2</Description>
+      <SortID>8010</SortID>
+    </Field>
+    <Field Def="u8 validObjAngle = 30">
+      <DisplayName>オブジェのアクション有効角度</DisplayName>
+      <Description>オブジェのアクション有効角度です。オブジェのアクションベクトルとキャラベクトルの有効角度差</Description>
+      <Maximum>180</Maximum>
+      <SortID>4500</SortID>
+    </Field>
+    <Field Def="u8 chrSorbType">
+      <DisplayName>キャラの吸着タイプ</DisplayName>
+      <Enum>OBJACT_CHR_SORB_TYPE</Enum>
+      <Description>オブジェアクション時のキャラの吸着方法です</Description>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="u8 eventKickTiming">
+      <DisplayName>イベント発動タイミング</DisplayName>
+      <Enum>OBJACT_EVENT_KICK_TIMING</Enum>
+      <Description>イベントの実行タイミング</Description>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[2]">
+      <Description>pad1</Description>
+      <SortID>99999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

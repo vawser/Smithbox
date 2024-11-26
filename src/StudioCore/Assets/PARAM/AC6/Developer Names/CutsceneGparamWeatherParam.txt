@@ -1,0 +1,1 @@
+0 Default data. Deletion prohibited. Used if no para -- デフォルトデータ。削除禁止。パラがない場合使用されます

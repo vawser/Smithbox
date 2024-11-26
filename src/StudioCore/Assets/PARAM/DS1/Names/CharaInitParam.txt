@@ -1,0 +1,312 @@
+1 LEVELUP presentation version_Knight
+2 IGNITE Demo Play Version_Knight
+3 For SCE online check (no pledge)
+4 For SCE online check (Hakukyo)
+5 SCE online check (princess protection)
+6 For SCE online check (solar warrior)
+7 For SCE Online Check (Dark Reis)
+8 SCE Online Check (Road to Old Dragon)
+9 For SCE online check (subordinate of Grave King)
+10 SCE Online Check (Forest Hunter)
+11 SCE Online Check (Dark Moon Sword)
+12 For SCE online check (servant of chaos)
+100 [PC version] for GGD_Artorius
+101 [PC version] GGD_Sniper
+1000 Proto version_Knight
+1001 Prototype_Magician
+1002 Proto_Onion Knight
+1003 Proto version_NPC transformed into a pot
+1010 December 2009 version_knight
+1011 December 2009 edition_priest
+1012 December 2009 version_Magician
+1030 April 2010 edition_bandit
+1031 April 2010 version_Ninja
+1032 April 2010 edition_Black Knight
+1040 January 2011_Warrior
+1041 January 2011_Hunter
+1042 January 2011_Sorcerer
+1043 January 2011 version_Knight
+1050 April 2011 edition_Warrior
+1051 April 2011_Knight
+1052 April 2011 version_Magician
+1053 April 2011 version_Sorcerer
+1054 April 2011 version_warrior
+1055 April 2011 version_Knight
+1056 April 2011 version_Magician
+1057 April 2011, Magician
+2000 Early Character_Warrior
+2001 Early Character_Knight
+2002 Early Character_Wanderer
+2003 Early Character_ Thief
+2004 Early Character_Bandit
+2005 Early Character_Hunter
+2006 Early Character_Sorcerer
+2007 Early Character_Sorcerer
+2008 Early Character_Monk
+2009 Early Character
+2020 Title Selection_Warrior
+2021 Title selection_Knight + Miracle
+2022 Title selection_Magician
+2023 Title selection_Sorcerer
+2024 Title selection_Sun Knight
+2025 Title selection_Black Knight
+2100 [Physique - Male] Average
+2101 [Physique - Male] Slim
+2102 [Physique - Male] Very Slim
+2103 [Physique - Male] Large
+2104 [Physique - Male] Very Large
+2105 [Physique - Male] Large Upper Body
+2106 [Physique - Male] Large Lower Body
+2107 [Physique - Male] Top-heavy
+2108 [Physique - Male] Tiny Head
+2200 [Physique - Female] Average
+2201 [Physique - Female] Slim
+2202 [Physique - Female] Very Slim
+2203 [Physique - Female] Large
+2204 [Physique - Female] Very Large
+2205 [Physique - Female] Large Upper Body
+2206 [Physique - Female] Large Lower Body
+2207 [Physique - Female] Top-heavy
+2208 [Physique - Female] Tiny Head
+2300 [Face - Male] Commoner
+2301 [Face - Male] Delta Farmer
+2302 [Face - Male] Astora Noble
+2303 [Face - Male] Dragon Scholar
+2304 [Face - Male] Thorolund Cleric
+2305 [Face - Male] Jubilant Catarina
+2306 [Face - Male] Dubious Carim
+2307 [Face - Male] Classic Zena
+2308 [Face - Male] Eerie Great Swamp
+2309 [Face - Male] Far East Traveler
+2310 [Face - Female] Commoner
+2311 [Face - Female] Delta Farmer
+2312 [Face - Female] Astora Noble
+2313 [Face - Female] Dragon Scholar
+2314 [Face - Female] Thorolund Cleric
+2315 [Face - Female] Jubilant Catarina
+2316 [Face - Female] Dubious Carim
+2317 [Face - Female] Classic Zena
+2318 [Face - Female] Eerie Great Swamp
+2319 [Face - Female] Far East Traveler
+2400 [Gift] None
+2401 [Gift] Divine Blessing
+2402 [Gift] Black Firebomb
+2403 [Gift] Twin Humanities
+2404 [Gift] Binoculars
+2405 [Gift] Pendant
+2406 [Gift] Master Key
+2407 [Gift] Tiny Being's Ring
+2408 [Gift] Old Witch's Ring
+3000 [Class] Warrior
+3001 [Class] Knight
+3002 [Class] Wanderer
+3003 [Class] Thief
+3004 [Class] Bandit
+3005 [Class] Hunter
+3006 [Class] Sorcerer
+3007 [Class] Sorcerer
+3008 [Class] Cleric
+3009 [Class] Deprived
+6000 Knight Solaire - Undead Burg
+6002 Knight Solaire - Anor Londo
+6003 Knight Solaire
+6004 Knight Solaire - Demon Ruins
+6010 Lady of the Darkling
+6020 Oscar, Knight of Astora
+6021 Oscar, Knight of Astora (Hostile)
+6030 Big Hat Logan - Sen's Fortress
+6031 Big Hat Logan - Duke's Archives
+6032 Big Hat Logan - Duke's Archives (Hollow)
+6040 Big Hat Logan - Undead Burg
+6041 Big Hat Logan - Sen's Fortress (Hollow)
+6050 Dusk of Oolacile
+6051 Dusk of Oolacile (Summoned)
+6070 Rhea of Thorolund
+6071 Rhea of Thorolund (Hollow)
+6080 Petrus of Thorolund
+6090 Nico of Thorolund
+6091 Nico of Thorolund (Hollow)
+6100 Vince of Thorolund
+6101 Vince of Thorolund (Hollow)
+6130 Griggs of Vinheim
+6131 Griggs of Vinheim (Hollow)
+6170 Quelana of Izalith
+6180 Ingward
+6220 Blacksmith Rickert
+6250 Crestfallen Merchant
+6260 Marvellous Chester
+6270 Crestfallen Warrior
+6271 Crestfallen Warrior (Hollow)
+6280 Siegmeyer of Catarina - Sen's Fortress
+6281 Siegmeyer of Catarina - Anor Londo
+6282 Siegmeyer of Catarina - Firelink Shrine
+6283 Siegmeyer of Catarina
+6284 Siegmeyer of Catarina
+6290 Sieglinde of Catarina - Duke's Archives
+6291 Sieglinde of Catarina - Great Hollow
+6300 Knight Lautrec - Undead Burg
+6301 Knight Lautrec - Anor Londo
+6310 Shiva of the East
+6320 Patches - Catacombs
+6321 Patches - Firelink Shrine
+6370 Oswald of Carim
+6390 Black Knight Tarkus
+6420 Shiva's Bodyguard
+6490 Lautrec Bodyguard 1
+6500 Lautrec Bodyguard 2
+6510 Iron Tarkus (Summon) - Sen's Fortress
+6511 Iron Tarkus (Summon)
+6520 Witch Beatrice (Summon)
+6521 Witch Beatrice (Summon)
+6530 Maneater Mildred (Summon)
+6531 Maneater Mildred (Invader)
+6540 Knight Solaire (Summon) - Undead Burg
+6541 Knight Solaire (Summon) - The Depths
+6542 Knight Solaire (Summon) - Anor Londo
+6543 Knight Solaire (Summon) - Demon Ruins
+6544 Knight Solaire (Summon) - Tomb of the Giants
+6550 Paladin Leeroy (Summon)
+6551 Paladin Leeroy (Invader)
+6560 Knight Kirk (Invader) - The Depths
+6561 Knight Kirk (Invader) - Demon Ruins
+6562 Knight Kirk (Invader) - Lost Izalith
+6570 King Jeremiah (Invader)
+6580 Havel the Rock
+6590 Knight Lautrec (Summon)
+6591 Knight Lautrec (Summon)
+6600 Prince Ricard
+6610 Crystal Knight
+6620 Daughter of Chaos
+6640 Dark Moon Sword (Heavy Knight)
+6650 Dark Moon Sword (Light Knight)
+6700 Dusk of Oolacile
+6740 Lord's Blade Ciaran
+6801 Forest Hunter - Bandit
+6802 Forest Hunter - Knight
+6803 Forest Hunter - Hunter
+6804 Forest Hunter - Cleric
+6805 Forest Hunter - Sorcerer
+6806 Forest Hunter - Thief
+7100 Castle 2_Vagrant NPC_Warrior
+7110 Castle 1 ・ First half_Vagrant NPC_Voyeur
+7111 Castle 1st & 2nd half_Vagrant NPC_Voyeur
+7120 Painting world_Vagrant NPC_Wanderer
+7130 Moriwaba, first half_Vagrant NPC_Hunter
+7131 Moriwaba, latter half_Vagrant NPC_Hunter
+7140 Cemetery 1_Vagrant NPC_Cleric
+7150 Cemetery 2_Vagrant NPC_Cleric
+7160 Underground Lake_Vagrant NPC_Dragon Newt
+7170 Kagemachi_Vagrant NPC_Wanderer
+7180 Closed city_Vagrant NPC_Sorcerer
+7190 Royal Castle 1_Vagrant NPC_Warrior
+7200 Royal Castle 2_Vagrant NPC_Knight
+7210 Abyss_Vagrant NPC_Bandit
+7220 Crystal Tower_Vagrant NPC_Sorcerer
+7230 Great tomb_Vagrant NPC_Not possessed
+7240 Tutorial_Vagrant NPC_What You Don't Have
+8000 for PV_warrior equipment (hero)
+8001 PV_Sorcerer
+8002 For PV_Red clothing head not equipped
+8003 PV for _ Chain Mail Woman (Phantom)
+8004 PV_Hunter head not equipped (Phantom)
+8005 PV for onion (phantom)
+8006 PV for _ gray saint
+8007 PV_Knight
+8008 PV_Black Knight
+8500 Test Player (Warrior / Sword, Ax Spear, Shield)
+8501 Test player (hunter / ax, bow, shield)
+8502 Test player (mage / catalyst, straight sword, small shield, projection flame)
+8600 Test Player_Warrior (Tutorial Clear)
+8601 Test Player_Knight (Tutorial Clear)
+8602 test player_magician (clear tutorial)
+8603 test player_magician (tutorial clear)
+8604 Test player_Monk (clear tutorial)
+8610 test player_warrior (gargoyle clear)
+8611 test player_knight (gargoyle clear)
+8612 Test player_Magician (gargoyle clear)
+8613 Test player_Sorcerer (gargoyle clear)
+8614 Test player_Monk (gargoyle clear)
+8620 Test player_Warrior (Journey 2 search only)
+8621 Test player_Knight (only search 2 castles)
+8622 Test player_Magician (Journey 2 search only)
+8623 Test player_Sorcerer (only search 2 castles)
+8624 Test player_Monk (only search for castle 2)
+8630 test player_warrior (castle clear 2 / devour clear)
+8631 test player_knight (castle 2 clear / phagocy clear)
+8632 Test player_Magician (Castle 2 clear / phagocytic clear)
+8633 test player_magician (castle 2 clear / phagocy clear)
+8634 test player_ monk (castle clear 2 / devour clear)
+8640 test player_warrior (Kagemachi clear)
+8641 Test Player_Knight (Kagecho Clear)
+8642 Test Player_Magician (Kagemachi Clear)
+8643 Test player_Sorcerer (Kagemachi clear)
+8644 Test player_Monk (Kagemachi clear)
+8650 test player_warrior (Ojo 1 clear)
+8651 Test player_Knight (Ojo 1 clear)
+8652 test player_magician (Ojo 1 clear)
+8653 Test player_Sorcerer (Ojo 1 clear)
+8654 test player _ monk (Ojo 1 clear)
+8660 test player_warrior (Ojo 2 clear)
+8661 test player_knight (Ojo 2 clear)
+8662 test player_magician (Ojo 2 clear)
+8663 Test Player_Sorcerer (Ojo 2 Clear)
+8664 Test player_Monk (Ojo 2 clear)
+8670 Test Player_Warrior (Abyss Clear)
+8671 Test Player_Knight (Abyss Clear)
+8672 test player_magician (abyss clear)
+8673 Test Player_Mage (Abyss Clear)
+8674 Test Player_Monk (Abyss Clear)
+8680 test player_warrior (crystal tower clear)
+8681 Test player_Knight (crystal tower clear)
+8682 test player_magician (crystal tower clear)
+8683 test player_magician (crystal tower clear)
+8684 Test player_Monk (crystal tower clear)
+8690 Test Player_Warrior (Clear city)
+8691 Test Player_Knight (Clear city)
+8692 test player_magician (closed city clear)
+8693 Test Player_Sorcerer (Clear city)
+8694 test player_ monk (closed city clear)
+9000 debug player (memory verification)
+9001 Debug player (general-purpose man)
+9002 Debug player (general-purpose woman)
+9005 Debug player (with lantern)
+9006 Debug player (for network check)
+9007 Debug Player (AITestPG)
+9008 Debug player with bow
+9010 Standard character (Hirai)
+9011 TEST for ladder test
+9012 for damage test
+9013 Enemy reference (assassin)
+9014 Debug Player (for anti-spirit verification)
+9015 Debug Player (Ishizaki Custom)
+9016 Debug player (poison + fire weapon)
+9017 Debug player (light dress)
+9018 Debug player (dragon makeover)
+9100 Debug player (magic: EN bullets A to C2)
+9101 Debug player (magic: EN bullet D-D2 / weapon enhancement 1-3 / shield enhancement 1-2)
+9102 Debug player (magic: invisible W / B / light / silence / sound / repair)
+9103 Debug player (magic: F control / mimicry / curse / curative / crystal beam)
+9104 Debug player (magic: F ball 1-3 / F storm 1-2 / flame emission / flame whip)
+9105 Debug player (magic: melee flame 1-2 / poison mist / poison mist / acid mist)
+9106 Debug Player (Spells: Iron Body / Veil of Water / Copper Body / Enchanted / Crazy Power)
+9107 Debug player (Spell: C_Fireball / C_Firestorm / C_Fire Whip)
+9108 Debug player (miracle: recovery 1-4 / regen / great regen)
+9109 Debug player (miracle: Summon 1-2 / one-time resurrection / return / force 1-3)
+9110 Debug player (miracle: hint / lightning 1-3 / magic protection 1-2)
+9111 Debug player (miracle: causal reward / causal reward _ bullet / gravity / anti-magic / sun sword / moonlight sword)
+9112 Debug Player ([DLC] Dark Ball / Dark Splash / Dark Mist / Followers / Black Flame)
+9120 Debug player (Magic weapon: Straight sword of ancient dragon / Sword of stone)
+9121 Debug player (magic weapon: moonlight / old dragon sword)
+9122 Debug Player (Magic Weapon: Iron Ax / Dragon King's Ax)
+9123 Debug Player (Magic Weapon: Hammer of Law Judgment / Dark Hand)
+9124 Debug player (magic weapon: 6th magic spear / dragon hunting spear)
+9125 Debug Player (Magic Weapon: Quartz Ring Shield / Rock Shield)
+9130 Beat value / beat value check _ warrior (LV5 castle 1 hammer)
+9131 Beat value / beat value check _ warrior (until LV15 castle 2 search)
+9132 Beat value / beat value check _ warrior (LV25 castle 2 devour)
+9133 Beat value / beat value check _ warrior (to LV35 Kagemachi)
+9134 Beat value / beat value check_warrior (LV45 Ojo 1)
+9135 Beat value / beat value check_warrior (LV55 to Moriwaba)
+9136 Beat value / beat value check_Warrior (up to LV65 Cemetery 2)
+9137 Beat value / beat value check_Warrior (up to LV75 last)
+9140 Debug Player (Check damage animation)

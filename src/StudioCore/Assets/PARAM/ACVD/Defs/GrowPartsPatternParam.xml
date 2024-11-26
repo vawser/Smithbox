@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GROW_PARTS_PATTERN_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 growCount_Min">
+      <DisplayName>成長回数最小</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 growCount_Max">
+      <DisplayName>成長回数最大</DisplayName>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 damagePower_Min">
+      <DisplayName>威力最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 damagePower_Max">
+      <DisplayName>威力最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 damageRecoil_Min">
+      <DisplayName>衝撃威力最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 damageRecoil_Max">
+      <DisplayName>衝撃威力最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 reloadTime_Min">
+      <DisplayName>リロード最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 reloadTime_Max">
+      <DisplayName>リロード最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 missileLockTime_Min">
+      <DisplayName>ロック時間最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 missileLockTime_Max">
+      <DisplayName>ロック時間最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 initSpeed_Min">
+      <DisplayName>初速最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 initSpeed_Max">
+      <DisplayName>初速最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 noDecayRange_Min">
+      <DisplayName>実質射程距離最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u8 noDecayRange_Max">
+      <DisplayName>実質射程距離最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u8 shootPrecisionX_Min">
+      <DisplayName>射撃精度X最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u8 shootPrecisionX_Max">
+      <DisplayName>射撃精度X最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u8 shootPrecisionY_Min">
+      <DisplayName>射撃精度Y最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u8 shootPrecisionY_Max">
+      <DisplayName>射撃精度Y最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u8 enDrain_Min">
+      <DisplayName>射撃消費EN最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u8 enDrain_Max">
+      <DisplayName>射撃消費EN最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 chargeFrame_Min">
+      <DisplayName>ためフレーム数最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u8 chargeFrame_Max">
+      <DisplayName>ためフレーム数最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u8 hitRadius_Min">
+      <DisplayName>ブレード長最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="u8 hitRadius_Max">
+      <DisplayName>ブレード長最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u8 bladeRadius_Min">
+      <DisplayName>ブレード当たり範囲最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="u8 bladeRadius_Max">
+      <DisplayName>ブレード当たり範囲最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="u8 bulletPower_Min">
+      <DisplayName>弾丸ダメージ最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="u8 bulletPower_Max">
+      <DisplayName>弾丸ダメージ最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="u8 bulletRecoil_Min">
+      <DisplayName>弾丸反動最小％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="u8 bulletRecoil_Max">
+      <DisplayName>弾丸反動最大％</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>30</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

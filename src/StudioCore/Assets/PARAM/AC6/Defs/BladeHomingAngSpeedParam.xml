@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BLADE_HOMING_ANG_SPEED_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 bModelUdTurn = 1">
+      <DisplayName>モデルを上下移動方向に傾ける</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>モデルを上下移動方向に傾けるか</Description>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 bStopForHitTarget = 1">
+      <DisplayName>ターゲットとの接触時に止まる</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ターゲットと接触時に止まるか</Description>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 bInheritRotAng">
+      <DisplayName>直前の上下角を引き継ぐ</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ブレホ開始前の上下角を引き継ぐか</Description>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 moveRotType">
+      <DisplayName>移動方向上下補正方法</DisplayName>
+      <Enum>BLADE_HOMING_MOVE_UP_DOWN_TYPE</Enum>
+      <Description>移動方向の上下補正方法</Description>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 turnSpeedDPS = -1">
+      <DisplayName>追従角速度：左右[deg/s]</DisplayName>
+      <Description>-1でそのキャラの性能を使用</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 turnAccelDPSS = -1">
+      <DisplayName>追従角加速度：左右[deg/s^2]</DisplayName>
+      <Description>-1でそのキャラの性能を使用。また、0で無限大扱い(常に角速度そのままの速度が出る)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 udTurnSpeedDPS = -1">
+      <DisplayName>追従角速度：上下[deg/s]</DisplayName>
+      <Description>-1の場合は追従角速度：左右と同じ値を使用する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 udTurnAccelDPSS = -1">
+      <DisplayName>追従角加速度：上下[deg/s^2]</DisplayName>
+      <Description>-1の場合は追従角加速度：左右と同じ値を使用する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 limitAngDeg_U = 90">
+      <DisplayName>追従上限角：上[deg]</DisplayName>
+      <Description>水平基準。この角度までしか曲げないようにする</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 limitAngDeg_D = 90">
+      <DisplayName>追従上限角：下[deg]</DisplayName>
+      <Description>同上</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 modelRotSpeedDegPerSec = -1">
+      <DisplayName>モデル上下回転角速度[deg/s]</DisplayName>
+      <Description>-1なら前述のとりパラの値を適用する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[32]">
+      <DisplayName>予備</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>13</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

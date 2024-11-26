@@ -1,0 +1,11 @@
+1 Water wet -- 水濡れ
+2 Poison Wet -- 毒濡れ
+3 Oil wet -- 油濡れ
+4 Mud Stains -- 泥汚れ
+5 Sand Dust -- 砂埃
+6 Freezing -- 凍結
+7 Covered with wax -- 蝋まみれ
+8 Frostbite -- 凍傷
+9 (Preliminary 1) -- （予備１）
+10 (Preliminary 2) -- （予備２）
+11 (Preliminary 3) -- （予備３）

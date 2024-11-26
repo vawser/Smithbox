@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>RUNTIME_BONE_CONTROL_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u32 chrId">
+      <DisplayName>キャラID</DisplayName>
+      <Description>キャラID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 ctrlType">
+      <DisplayName>制御タイプ</DisplayName>
+      <Enum>RUNTIME_BONE_CONTROL_TYPE</Enum>
+      <Description>制御タイプ</Description>
+      <Maximum>1</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="dummy8 pad[11]">
+      <SortID>1401</SortID>
+    </Field>
+    <Field Def="fixstr applyBone[32]">
+      <DisplayName>適用関節</DisplayName>
+      <Description>適用関節</Description>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="fixstr targetBone1[32]">
+      <DisplayName>ターゲット関節１</DisplayName>
+      <Description>ターゲット関節１</Description>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="fixstr targetBone2[32]">
+      <DisplayName>ターゲット関節２</DisplayName>
+      <Description>ターゲット関節２</Description>
+      <SortID>1400</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

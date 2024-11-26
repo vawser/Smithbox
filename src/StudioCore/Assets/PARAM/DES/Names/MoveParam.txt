@@ -1,0 +1,26 @@
+0 player standard
+1 player weight
+2 overweight player
+3 player dying
+4 Player blood swamp (overweight)
+5 Player poison swamp (movement speed reduction)
+100 Basic enemy battle
+101 bird standard
+102 guard
+103 dog
+104 dragon demon
+105 Enemy base: non-combat
+106 Scale miner during battle
+107 Scale miner when not in combat (bag)
+108 Scale miner when not in combat (pickle)
+109 Large spider peering in
+110 gargoyle test
+111 Dragon Demon (Mine Tunnel)
+112 for Storm Beast
+113 Storm beast (baby stingray) waits
+114 Scale miner when not in combat (bare hands)
+115 Octopus head in battle
+116 Gargoyle Aerial (for 3050)
+117 Gargoyle ground (for 3050)
+118 Kagejo_for disappearing
+119 blood mite only

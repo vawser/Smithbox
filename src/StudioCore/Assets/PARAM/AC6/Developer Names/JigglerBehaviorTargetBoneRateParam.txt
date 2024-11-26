@@ -1,0 +1,42 @@
+0 test -- テスト
+31400000 percentage rotation -- 割合回転
+31400001 percentage rotation -- 割合回転
+43010000 Percent rotation relative to thigh -- 太ももに対して割合回転
+43010007 Percent rotation relative to thigh -- 太ももに対して割合回転
+44010000 Percent rotation relative to thigh -- 太ももに対して割合回転
+44010001 Percent rotation relative to thigh -- 太ももに対して割合回転
+37010000 percentage rotation -- 割合回転
+37010001 percentage rotation -- 割合回転
+37010002 percentage rotation -- 割合回転
+37010003 percentage rotation -- 割合回転
+46320000 percentage rotation -- 割合回転
+46320001 percentage rotation -- 割合回転
+46320002 percentage rotation -- 割合回転
+46320003 percentage rotation -- 割合回転
+47010000 percentage rotation -- 割合回転
+47010001 percentage rotation -- 割合回転
+47010002 percentage rotation -- 割合回転
+47010003 percentage rotation -- 割合回転
+47010004 percentage rotation -- 割合回転
+47010005 percentage rotation -- 割合回転
+47010006 percentage rotation -- 割合回転
+47010007 percentage rotation -- 割合回転
+47010008 percentage rotation -- 割合回転
+47010009 percentage rotation -- 割合回転
+47010010 percentage rotation -- 割合回転
+47010011 percentage rotation -- 割合回転
+47010012 percentage rotation -- 割合回転
+47010013 percentage rotation -- 割合回転
+47010014 percentage rotation -- 割合回転
+47010015 percentage rotation -- 割合回転
+47510000 test data -- テストデータ
+48030000 percentage rotation -- 割合回転
+48030001 percentage rotation -- 割合回転
+48030002 percentage rotation -- 割合回転
+48030003 percentage rotation -- 割合回転
+48031000 percentage rotation -- 割合回転
+48031001 percentage rotation -- 割合回転
+48031002 percentage rotation -- 割合回転
+48031003 percentage rotation -- 割合回転
+48060003 Rear armor test -- 背面装甲テスト
+48060002 Percent rotation relative to thigh -- 太ももに対して割合回転

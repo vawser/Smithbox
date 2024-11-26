@@ -1,0 +1,124 @@
+0 R1 attack, R1 attack combo -- R1攻撃、R1攻撃コンボ
+1 Bow + magic reservoir -- 弓＋魔法溜め
+2 R2 attack, R2 attack combo -- R2攻撃、R2攻撃コンボ
+3 Bow + magic reservoir -- 弓＋魔法溜め
+4 L1 attack, L1 attack combo -- L1攻撃、L1攻撃コンボ
+6 Bow + magic reservoir -- 弓＋魔法溜め
+7 Parry, Arts: Ax -- パリィ、アーツ：斧
+8 Arts: Ready -- アーツ：構え
+9 Reserve -- 予備
+10 kick -- キック
+11 Jump attack -- ジャンプアタック
+12 One-handed / two-handed switching -- 片手/両手切り替え
+13 Use the item -- アイテム使用
+14 Reserve -- 予備
+15 backstep -- バックステップ
+16 Left weapon switching -- 左武器切り替え
+17 Right weapon switching -- 右武器切り替え
+18 Move ↑ -- 移動　↑
+19 Move ↑ ← -- 移動　↑←
+20 Move ↑ → -- 移動　↑→
+21 Move ← -- 移動　←
+22 Move → -- 移動　→
+23 Move ↓ -- 移動　↓
+24 Move ↓ ← -- 移動　↓←
+25 Move ↓ → -- 移動　↓→
+26 Guard movement ↑ -- ガード移動　↑
+27 Guard movement ↑ ← -- ガード移動　↑←
+28 Guard movement ↑ → -- ガード移動　↑→
+29 Guard move ← -- ガード移動　←
+30 Guard move → -- ガード移動　→
+31 Guard move ↓ -- ガード移動　↓
+32 Guard move ↓ ← -- ガード移動　↓←
+33 Guard move ↓ → -- ガード移動　↓→
+34 Dash move -- ダッシュ移動
+35 Guard dash move -- ガードダッシュ移動
+36 Rolling ↑ -- ローリング　↑
+37 Rolling ↑ ← -- ローリング　↑←
+38 Rolling ↑ → -- ローリング　↑→
+39 Rolling ← -- ローリング　←
+40 Rolling → -- ローリング　→
+41 Rolling ↓ -- ローリング　↓
+42 Rolling ↓ ← -- ローリング　↓←
+43 Rolling ↓ → -- ローリング　↓→
+48 Arts R1 attack -- アーツR1攻撃
+49 Arts R2 attack -- アーツR2攻撃
+50 Lockstep ↑ -- ロックステップ　↑
+51 Lockstep ↑ ← -- ロックステップ　↑←
+52 Lockstep ↑ → -- ロックステップ　↑→
+53 Lockstep ← -- ロックステップ　←
+54 Lockstep → -- ロックステップ　→
+55 Lockstep ↓ -- ロックステップ　↓
+56 Lockstep ↓ ← -- ロックステップ　↓←
+57 Lockstep ↓ → -- ロックステップ　↓→
+58 Move the arts ↑ -- アーツ構え移動　↑
+59 Move the arts ↑ ← -- アーツ構え移動　↑←
+60 Move the arts ↑ → -- アーツ構え移動　↑→
+61 Move the arts ← -- アーツ構え移動　←
+62 Move the arts stance → -- アーツ構え移動　→
+63 Move the arts ↓ -- アーツ構え移動　↓
+64 Move the arts ↓ ← -- アーツ構え移動　↓←
+65 Move the arts ↓ → -- アーツ構え移動　↓→
+66 Arts stance R1 attack ↑ -- アーツ構えR1攻撃　↑
+67 Arts stance R1 attack ↑ ← -- アーツ構えR1攻撃　↑←
+68 Arts stance R1 attack ↑ → -- アーツ構えR1攻撃　↑→
+69 Arts stance R1 attack ← -- アーツ構えR1攻撃　←
+70 Arts stance R1 attack → -- アーツ構えR1攻撃　→
+71 Arts stance R1 attack ↓ -- アーツ構えR1攻撃　↓
+72 Arts stance R1 attack ↓ ← -- アーツ構えR1攻撃　↓←
+73 Arts stance R1 attack ↓ → -- アーツ構えR1攻撃　↓→
+74 Arts stance R2 attack ↑ -- アーツ構えR2攻撃　↑
+75 Arts stance R2 attack ↑ ← -- アーツ構えR2攻撃　↑←
+76 Arts stance R2 attack ↑ → -- アーツ構えR2攻撃　↑→
+77 Arts stance R2 attack ← -- アーツ構えR2攻撃　←
+78 Arts stance R2 attack → -- アーツ構えR2攻撃　→
+79 Arts stance R2 attack ↓ -- アーツ構えR2攻撃　↓
+80 Arts stance R2 attack ↓ ← -- アーツ構えR2攻撃　↓←
+81 Arts stance R2 attack ↓ → -- アーツ構えR2攻撃　↓→
+82 Shield Chiku R1 Attack -- 盾チクR1攻撃
+83 Shield Chiku R2 Attack (Spare) -- 盾チクR2攻撃(予備)
+90 Ladder, up -- はしご、上り
+91 Ladder, down -- はしご、下り
+92 Left-handed weapon with both hands -- 左手武器両手持ち
+100 Gesture ID00 -- ジェスチャID00
+101 Gesture ID01 -- ジェスチャID01
+102 Gesture ID 02 -- ジェスチャID02
+103 Gesture ID 03 -- ジェスチャID03
+104 Gesture ID 04 -- ジェスチャID04
+105 Gesture ID 05 -- ジェスチャID05
+106 Gesture ID 06 -- ジェスチャID06
+107 Gesture ID 07 -- ジェスチャID07
+108 Gesture ID 08 -- ジェスチャID08
+109 Gesture ID 09 -- ジェスチャID09
+110 Gesture ID 10 -- ジェスチャID10
+111 Gesture ID 11 -- ジェスチャID11
+112 Gesture ID 12 -- ジェスチャID12
+113 Gesture ID 13 -- ジェスチャID13
+114 Gesture ID 14 -- ジェスチャID14
+115 Gesture ID 15 -- ジェスチャID15
+116 Gesture ID 16 -- ジェスチャID16
+117 Gesture ID17 -- ジェスチャID17
+118 Gesture ID 18 -- ジェスチャID18
+119 Gesture ID 19 -- ジェスチャID19
+120 Gesture ID 20 -- ジェスチャID20
+121 Gesture ID21 -- ジェスチャID21
+122 Gesture ID22 -- ジェスチャID22
+123 Gesture ID23 -- ジェスチャID23
+124 Gesture ID24 -- ジェスチャID24
+125 Gesture ID 25 -- ジェスチャID25
+126 Gesture ID 26 -- ジェスチャID26
+127 Gesture ID 27 -- ジェスチャID27
+128 Gesture ID 28 -- ジェスチャID28
+129 Gesture ID 29 -- ジェスチャID29
+130 Gesture ID30 -- ジェスチャID30
+131 Gesture ID 31 -- ジェスチャID31
+132 Gesture ID 32 -- ジェスチャID32
+133 Gesture ID33 -- ジェスチャID33
+134 Gesture ID34 -- ジェスチャID34
+135 Gesture ID35 -- ジェスチャID35
+136 Gesture ID 36 -- ジェスチャID36
+137 Gesture ID37 -- ジェスチャID37
+138 Gesture ID 38 -- ジェスチャID38
+139 Gesture ID 39 -- ジェスチャID39
+140 Gesture ID 40 -- ジェスチャID40
+141 No input -- 非入力

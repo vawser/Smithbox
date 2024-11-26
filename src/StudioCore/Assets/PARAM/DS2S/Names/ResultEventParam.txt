@@ -1,0 +1,81 @@
+100 Host -- ホスト
+116 Duel Blue Spirit -- 決闘青霊
+117 Duel Red Spirit -- 決闘赤霊
+199 General purpose of the spirit body -- 霊体汎用
+212 The King of The Rat -- 鼠の王灰霊
+300 Host -- ホスト
+301 White Spirit -- 白霊
+302 Small White Spirit -- 小白霊
+303 Golden Spirit -- 金霊
+304 Small Gold Spirit -- 小金霊
+316 Duel Blue Spirit -- 決闘青霊
+317 Duel Red Spirit -- 決闘赤霊
+399 General purpose of the spirit body -- 霊体汎用
+406 Retaliation Blue Spirit -- 報復青霊
+407 Black Spirit (Sign) -- 黒霊（サイン）
+408 Black Spirit (Intruding) -- 黒霊（乱入）
+409 Red Spirit (Sign) -- 赤霊（サイン）
+410 Red Spirit (Intruding) -- 赤霊（乱入）
+411 Bell Guard Ashes -- 鐘守灰霊
+412 The King of The Rat -- 鼠の王灰霊
+413 Dragon Spirit -- 竜霊
+414 Mirror Knight Spirit -- ミラーナイト霊
+415 Deep Spirit -- 深淵霊
+416 Duel Blue Spirit -- 決闘青霊
+417 Duel Red Spirit -- 決闘赤霊
+499 General purpose of the spirit body -- 霊体汎用
+501 White Spirit -- 白霊
+502 Small White Spirit -- 小白霊
+503 Golden Spirit -- 金霊
+504 Small Gold Spirit -- 小金霊
+599 General purpose of the spirit body -- 霊体汎用
+601 White Spirit -- 白霊
+602 Small White Spirit -- 小白霊
+603 Golden Spirit -- 金霊
+604 Small Gold Spirit -- 小金霊
+605 Relief Blue Spirit -- 救援青霊
+699 General purpose of the spirit body -- 霊体汎用
+701 White Spirit -- 白霊
+702 Small White Spirit -- 小白霊
+703 Golden Spirit -- 金霊
+704 Small Gold Spirit -- 小金霊
+705 Relief Blue Spirit -- 救援青霊
+799 General purpose of the spirit body -- 霊体汎用
+899 General purpose of the spirit body -- 霊体汎用
+999 General purpose of the spirit body -- 霊体汎用
+1099 General purpose of the spirit body -- 霊体汎用
+1100 Host -- ホスト
+1199 General purpose of the spirit body -- 霊体汎用
+1200 Host -- ホスト
+1205 Relief Blue Spirit -- 救援青霊
+1299 General purpose of the spirit body -- 霊体汎用
+1300 Host -- ホスト
+1311 Bell Guard Ashes -- 鐘守灰霊
+1399 General purpose of the spirit body -- 霊体汎用
+1400 Host -- ホスト
+1500 Host -- ホスト
+1600 Host -- ホスト
+1699 General purpose of the spirit body -- 霊体汎用
+1700 Host -- ホスト
+1715 Deep Spirit -- 深淵霊
+1800 Host -- ホスト
+1814 Mirror Knight Spirit -- ミラーナイト霊
+1899 General purpose of the spirit body -- 霊体汎用
+1916 Duel Blue Spirit -- 決闘青霊
+1917 Duel Red Spirit -- 決闘赤霊
+2015 Deep Spirit -- 深淵霊
+2100 Host -- ホスト
+2115 Deep Spirit -- 深淵霊
+2200 Host -- ホスト
+2400 Host -- ホスト
+2405 Relief Blue Spirit -- 救援青霊
+2499 General purpose of the spirit body -- 霊体汎用
+2508 Black Spirit (Intruding) -- 黒霊（乱入）
+2510 Red Spirit (Intruding) -- 赤霊（乱入）
+2599 General purpose of the spirit body -- 霊体汎用
+2616 Duel Blue Spirit -- 決闘青霊
+2617 Duel Red Spirit -- 決闘赤霊
+2716 Duel Blue Spirit -- 決闘青霊
+2717 Duel Red Spirit -- 決闘赤霊
+2816 Duel Blue Spirit -- 決闘青霊
+2817 Duel Red Spirit -- 決闘赤霊

@@ -1,0 +1,30 @@
+0 Host
+1 White Phantom
+2 Shade
+3 Sunbro
+4 Unknown
+5 Blue Sentinel Summon
+6 Blue Sentinel Invader
+7 Red Phantom Summon
+8 Red Phantom Invader
+9 BoB Summon
+10 BoB Invader
+11 Dragon Spirit
+12 UNKNOWN
+13 UNKNOWN
+14 Abyssal Spirit
+15 UNKNOWN
+16 Blue Sentinel Arena Spirit
+17 BoB Arena Spirit
+18 UNKNOWN
+19 UNKNOWN
+101 UNKNOWN
+102 UNKNOWN
+103 UNKNOWN
+104 UNKNOWN
+105 UNKNOWN
+106 UNKNOWN
+107 UNKNOWN
+108 UNKNOWN
+109 UNKNOWN
+110 UNKNOWN

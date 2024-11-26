@@ -1,0 +1,141 @@
+3000 Soul Arrow
+3010 Great Soul Arrow
+3020 Heavy Soul Arrow
+3030 Great Heavy Soul Arrow
+3040 Homing Soulmass
+3050 Homing Crystal Soulmass
+3060 Soul Spear
+3070 Crystal Soul Spear
+3100 Magic Weapon
+3110 Great Magic Weapon
+3120 Crystal Magic Weapon
+3300 Magic Shield
+3310 Strong Magic Shield
+3400 Hidden Weapon
+3410 Hidden Body
+3500 Cast Light
+3510 Hush
+3520 Aural Decoy
+3530 Repair
+3540 Fall Control
+3550 Chameleon
+3600 Resist Curse
+3610 Remedy
+3700 White Dragon Breath
+3710 Dark Orb
+3720 Dark Bead
+3730 Dark Fog
+3740 Pursuers
+4000 Fireball
+4010 Fire Orb
+4020 Great Fireball
+4030 Firestorm
+4040 Fire Tempest
+4050 Fire Surge
+4060 Fire Whip
+4100 Combustion
+4110 Great Combustion
+4200 Poison Mist
+4210 Toxic Mist
+4220 Acid Surge
+4300 Iron Flesh
+4310 Flash Sweat
+4360 Undead Rapport
+4400 Power Within
+4500 Great Chaos Fireball
+4510 Chaos Storm
+4520 Chaos Fire Whip
+4530 Black Flame
+5000 Heal
+5010 Great Heal
+5020 Great Heal Excerpt
+5030 Soothing Sunlight
+5040 Replenishment
+5050 Bountiful Sunlight
+5100 Gravelord Sword Dance
+5110 Gravelord Greatsword Dance
+5200 Escape Death
+5210 Homeward
+5300 Force
+5310 Wrath of the Gods
+5320 Emit Force
+5400 Seek Guidance
+5500 Lightning Spear
+5510 Great Lightning Spear
+5520 Sunlight Spear
+5600 Magic Barrier
+5610 Great Magic Barrier
+5700 Karmic Justice
+5710 Karmic Justice (Explosion - hardcoded reference)
+5800 Tranquil Walk of Peace
+5810 Vow of Silence
+5900 Sunlight Blade
+5910 Darkmoon Blade
+13000 Soul Arrow [NPC]
+13010 Great Soul Arrow [NPC]
+13020 Heavy Soul Arrow [NPC]
+13030 Great Heavy Soul Arrow [NPC]
+13040 Homing Soulmass [NPC]
+13050 Homing Crystal Soulmass [NPC]
+13060 Soul Spear [NPC]
+13070 Crystal Soul Spear [NPC]
+13100 Magic Weapon [NPC]
+13110 Great Magic Weapon [NPC]
+13120 Crystal Magic Weapon [NPC]
+13300 Magic Shield [NPC]
+13310 Strong Magic Shield [NPC]
+13400 Hidden Weapon [NPC]
+13410 Hidden Body [NPC]
+13500 Cast Light [NPC]
+13510 Hush [NPC]
+13520 Aural Decoy [NPC]
+13530 Repair [NPC]
+13540 Fall Control [NPC]
+13550 Chameleon [NPC]
+13600 Resist Curse [NPC]
+13610 Remedy [NPC]
+13700 White Dragon Breath [NPC]
+14000 Fireball [NPC]
+14010 Fire Orb [NPC]
+14020 Great Fireball [NPC]
+14030 Firestorm [NPC]
+14040 Fire Tempest [NPC]
+14050 Fire Surge [NPC]
+14060 Fire Whip [NPC]
+14100 Combustion [NPC]
+14110 Great Combustion [NPC]
+14200 Poison Mist [NPC]
+14210 Toxic Mist [NPC]
+14220 Acid Surge [NPC]
+14300 Acid Surge [NPC]
+14310 Flash Sweat [NPC]
+14360 Undead Rapport [NPC]
+14400 Power Within [NPC]
+14500 Great Chaos Fireball [NPC]
+14510 Chaos Storm [NPC]
+14520 Chaos Fire Whip [NPC]
+15000 Heal [NPC]
+15010 Great Heal [NPC]
+15020 Great Heal Excerpt [NPC]
+15030 Soothing Sunlight [NPC]
+15040 Replenishment [NPC]
+15050 Bountiful Sunlight [NPC]
+15100 Gravelord Sword Dance [NPC]
+15110 Gravelord Greatsword Dance [NPC]
+15200 Escape Death [NPC]
+15210 Homeward [NPC]
+15300 Force [NPC]
+15310 Wrath of the Gods [NPC]
+15320 Emit Force [NPC]
+15400 Seek Guidance [NPC]
+15500 Lightning Spear [NPC]
+15510 Great Lightning Spear [NPC]
+15520 Sunlight Spear [NPC]
+15600 Magic Barrier [NPC]
+15610 Great Magic Barrier [NPC]
+15700 Karmic Justice [NPC]
+15710 Karmic Justice
+15800 Tranquil Walk of Peace [NPC]
+15810 Vow of Silence [NPC]
+15900 Sunlight Blade [NPC]
+15910 Darkmoon Blade [NPC]

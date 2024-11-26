@@ -1,0 +1,17 @@
+0 B1 basic
+1 B1 Indoor
+2 B1 Sea level
+3 B1B2 celestial sphere
+4 B1 middle
+5 Light (surrounding glowing water)
+6 glowing water
+7 Light (Light falling from the ceiling)
+10 B2 basic
+11 B2 Indoor
+12 B2 Sea level
+13 B2 underground lake
+14 B2 baby ray carcass
+20 B3 Basic
+25 B3 celestial sphere
+50 p30300 (celestial sphere)
+51 p30301 (distant view)

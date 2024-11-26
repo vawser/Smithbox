@@ -1,0 +1,4651 @@
+0 For testing
+5 Disabled behavior System 
+7 Pc_sossign System 
+12 Kickout System 
+13 Leavesession System 
+15 Black_soulsign System 
+16 Intrusion System
+17 Bloodsign System 
+50 Bonfire effect
+101 Ghost weakening System 
+102 Black reinforcement System 
+201 【 QWC 】 Area _npc_ + 1
+202 【 QWC 】 Area _npc_ + 2
+203 【 QWC 】 Area _npc_ + 3
+206 【 QWC 】 Area _npc_-1
+207 【 QWC 】 Area _NPC_-2
+208 【 QWC 】 Area _NPC_-3
+211 QWC Area _ black _ + 1
+212 QWC Area _ black _ + 2
+221 QWC Area _ white _ + 1
+222 QWC Area _ white _ + 2
+231 QWC Area _ gray _ + 1
+232 QWC Area _ gray _ + 2
+236 QWC Area _ gray _-1
+237 QWC Area _ gray _-2
+311 QWC Player _ black _ + 1
+312 QWC Player _ black _ + 2
+321 QWC Player _ white _ + 1
+322 QWC Player _ white _ + 2
+331 QWC Player _ gray _ + 1
+332 QWC Player _ gray _ + 2
+336 QWC Player _ gray _-1
+337 QWC Player _ gray _-2
+1000 Pilgrim Butterfly Scale Rain
+1010 Boreal Outrider Knight Action ID for cold air (for freezing)
+1011 Boreal Outrider Knight Action ID for cold air (for decal)
+1020 Irithyll Fire Witch Torches
+1030 Deacon of the Deep Curse
+1040 Vordt of the Boreal Valley Action ID for cold air (for decal)
+1050 Ancient Wyvern Dripping (for decal)
+1060 Snake Spirit caries reservoir bullets
+1070 Wolnir Miasma Damage
+1071 Wolnir Miasma Damage
+1072 Wolnir Darkness
+1073 Wolnir Darkness
+1074 Wolnir Darkness
+1075 Wolnir Darkness
+1076 Wolnir Darkness
+1080 Dark Knight (Phantom) 
+1081 Dark Knight (Phantom) 
+1090 Jailer Quick Turn Petrify breath (right turn)
+1100 Soul of Cinder Crystal Soulmass
+1200 Lothric Thief ?
+1300 Slave Knight Gael Blue Lightning
+1310 Slave Knight Gael Blue Lightning #2
+1400 Darkeater Midir 
+1401 Darkeater Midir 
+1402 Darkeater Midir 
+1403 Darkeater Midir 
+1500 Lothric Knight 
+3000 Common attack feet, large damage, human type 
+3001 Common attack center, large damage, human type 
+3002 Common attack feet, small damage, human type 
+3003 Common attack Center, small damage, human type 
+3010 Common attack Center, no damage, human type 
+3011 Common attack back, no damage, human type 
+3012 Common attack belly, no damage, human type 
+3013 Common attack step, no damage, human type 
+3020 Common attack right hand, ladder damage, human type 
+3021 Common attack left hand, ladder damage, human type 
+3022 Common attack right foot, ladder damage, human type 
+3023 Common attack left leg, ladder damage, human type 
+3100 Common attack feet, large damage, large 
+3101 Common attack center, large damage, large 
+3102 Common attack feet, small damage, large 
+3103 Common attack Center, small damage, large 
+3110 Common attack Center, no damage, large 
+3111 Common attack back, no damage, large 
+3112 Common attack belly, no damage, large 
+3113 Common attack foot, no damage, large 
+3120 Common attack right, small damage, large 
+3121 Common attack left, small damage, large 
+3122 Common attack right leg, small damage, large 
+3123 Common attack left leg, small damage, large 
+3130 Common attack right hand, no damage, large 
+3131 Common attack left hand, no damage, large 
+3132 Common attack right leg, no damage, large 
+3133 Common attack left foot, no damage, large 
+5100 Curse Ball - High Wall of Lothric
+5110 Burning Planks
+5120 Flame Patch - High Wall of Lothric
+5200 Curse Hands - Grand Archives
+5210 Curse Hands - Grand Archives
+5220 Curse Hands - Grand Archives
+5310 Ballista
+5311 Ballista
+5312 Ballista
+5313 Ballista
+5314 Ballista
+5315 Ballista
+5316 Ballista
+5800 Waste City Bow and arrow
+5801 Waste City Bow and arrow
+5810 Catacombs of Carthus - Bolt Trap - Volley 1
+5811 Catacombs of Carthus - Bolt Trap - Volley 1
+5812 Catacombs of Carthus - Bolt Trap - Volley 1
+5813 Catacombs of Carthus - Bolt Trap - Volley 1
+5814 Catacombs of Carthus - Bolt Trap - Volley 1
+5815 Catacombs of Carthus - Bolt Trap - Volley 1
+5816 Catacombs of Carthus - Bolt Trap - Volley 1
+5820 Catacombs of Carthus - Bolt Trap - Volley 2
+5821 Catacombs of Carthus - Bolt Trap - Volley 2
+5822 Catacombs of Carthus - Bolt Trap - Volley 2
+5823 Catacombs of Carthus - Bolt Trap - Volley 2
+5824 Catacombs of Carthus - Bolt Trap - Volley 2
+5825 Catacombs of Carthus - Bolt Trap - Volley 2
+5826 Catacombs of Carthus - Bolt Trap - Volley 2
+5830 Catacombs of Carthus - Skeleton Ball
+5831 Catacombs of Carthus - Skeleton Ball
+5832 Catacombs of Carthus - Skeleton Ball
+5833 Catacombs of Carthus - Skeleton Ball
+5834 Catacombs of Carthus - Skeleton Ball
+5835 Catacombs of Carthus - Skeleton Ball
+5836 Catacombs of Carthus - Skeleton Ball
+5840 Catacombs of Carthus - Affinity Pot
+5841 Catacombs of Carthus - Affinity Pot
+5842 Catacombs of Carthus - Affinity Pot
+5843 Catacombs of Carthus - Affinity Pot
+5844 Catacombs of Carthus - Affinity Pot
+5845 Catacombs of Carthus - Affinity Pot
+5846 Catacombs of Carthus - Affinity Pot
+5870 Material - Fire
+5900 Dungeon Objects _ Magic
+7000 Exploding Tal
+9900 FDP proto-oil jar (throwing)
+9902 FDP proto-oil jar (OBJ)
+9910 FDP Proto Flame Bottle
+9930 FDP proto-Flame damage
+9950 FDP Concept edition combustion test
+31200 Sacred Beast of Elder Ghru Forest: Common Attack _ underfoot
+51800 Common attack Butt dragged/c5180 cursed Colossus 
+52700 Common attack Movement (right leg)/c5270 tracker 
+52701 Common attack movement (left leg)/c5270 tracker 
+100000 Pilgrim Pulpa - Holy Burst
+101000 Trial of Devastation - Danger Zone
+210700010 Skeleton Slash #1
+210700020 Skeleton Slash #2
+210700030 Skeleton Slash #3
+210700040 Skeleton Heavy Slash
+210700050 Skeleton Spinning Slash
+210700060 Skeleton Backstep Slash
+210700070 Skeleton 
+210700080 Skeleton 
+210700090 Skeleton Throwing Attack
+210700100 Skeleton Step slashing
+210700110 Skeleton Step Slashing
+210700120 Skeleton Slash #1
+210700130 Skeleton Slash #2
+210700140 Skeleton Slash #3
+210700150 Skeleton 
+210700160 Skeleton 
+210700170 Skeleton 
+210700180 Skeleton Dive Attack
+210700190 Skeleton Dive Attack (long distance)
+210700200 Skeleton 
+210700210 Skeleton 
+210700220 Skeleton 
+210700230 Skeleton Bow Fire
+210700240 Skeleton 
+210700500 Skeleton Guard
+210700510 Skeleton Parry Damage
+210700520 Skeleton Parry
+210700700 Skeleton 
+210700701 Skeleton 
+210900010 Pus of Man crushing Combo in arms 1-1
+210900020 Pus of Man bite with consecutive 1_ head combo 2-1
+210900021 Pus of Man bit _ throwing damage
+210900022 Pus of Man Bite 1_ Neck combo 2-1 in succession
+210900030 Pus of Man rampage on the spot
+210900040 Pus of Man Saigi: Arms _ Arms Combo 1-2
+210900041 Pus of Man Saigi: Arms _ head Combo 1-2
+210900042 Pus of Man Saigi: Arms _ Neck Combo 1-2
+210900050 Pus of Man Face Attack _ Head combo 1-3
+210900051 Pus of Man Face Attack _ Neck combo 1-3
+210900060 Pus of Man bite with consecutive 2_ head combo 2-1
+210900061 Pus of Man Bite 2_ Neck combo 2-1 in succession
+210900070 Pus of Man rushes _ head
+210900071 Pus of Man lunge _ Arms
+210900080 Pus of Man behind attack
+210900100 Pus of Man Segunda comes out _ head
+210900101 Pus of Man Segunda comes out _ arms
+210900102 Pus of Man Segunda comes out _ tails
+210900700 Pus of Man 
+211000100 Hollow Sword - right-hand swing
+211000101 Hollow Sword - right-hand crosscut
+211000102 Hollow Sword - right-hand thrusts (swords)
+211000110 Hollow Sword - dash thrusts
+211000120 Hollow Sword - shields pushed
+211000130 Hollow Sword - two-handed slash
+211000140 Hollow Sword - poked
+211000150 Hollow Sword - Reversed this morning
+211000151 Hollow Sword - reverse this morning's second row
+211000200 Hollow Spear - poked combo first Hammer
+211000201 Hollow Spear - thrusting combo second firing
+211000210 Hollow Spear - infuser Thrusts
+211000220 Hollow Spear - Nagi
+211000230 Hollow Spear - dash Thrusts
+211000240 Hollow Spear - shields Push
+211000241 Hollow Spear - Shield Push  Accelerated part
+211000250 Hollow Spear - Lash One
+211000251 Hollow Spear - Rush 2
+211000252 Hollow Spear - Rush 3
+211000300 Hollow Sword Hilt - right hand swing down
+211000310 Hollow Sword Hilt - left Kesa
+211000320 Hollow Sword Hilt - handle Beats
+211000330 Hollow Sword Hilt - rush first Stage
+211000331 Hollow Sword Hilt - rush second Stage
+211000332 Hollow Sword Hilt - rush third Stage
+211000333 Hollow Sword Hilt - rush fourth Stage
+211000334 Hollow Sword Hilt - rush fifth stage
+211000335 Hollow Sword Hilt - rush sixth stage
+211000340 Hollow Sword Hilt - leapt
+211000398 Hollow Sword Hilt - Throwing out damage
+211000399 Hollow Sword - attack transition for throwing out
+211000500 Hollow Dagger - successive slash 1
+211000501 Hollow Dagger - successive slash 2
+211000502 Hollow Dagger - successive slash 3
+211000510 Hollow Dagger - leapt (medium-range)
+211000520 Hollow Dagger - leapt (FAR)
+211000530 Hollow Dagger - Small Depression & continuous slash first stage
+211000531 Hollow Dagger - Small Depression & continuous slash second stage
+211000532 Hollow Dagger - Small Depression & continuous slash third stage
+211000540 Hollow Dagger - combo 2-1 thrusts
+211000541 Hollow Dagger - combo 2-1 continuous Slash
+211000550 Hollow Dagger - Baxta Thrusts (strong thrusts)
+211000551 Hollow Dagger - tossed
+211000560 Hollow Dagger -
+211000700 Hollow guards
+211000701 Hollow 
+211000710 Hollow  Guard (weak)
+211000711 Hollow 
+211000750 Hollow 
+211000751 Hollow 
+211000752 Hollow 
+211000800 Hollow Bow - usually arrows
+211000801 Hollow Bow - bows _ arrows
+211000805 Hollow Bow -
+211000806 Hollow Bow -
+211000810 Hollow  throwing oil pots
+211000811 Hollow  oil pots tossed _ landed
+211000820 Hollow  flame Pots
+211000821 Hollow  Flame Pots _ Landed
+211000830 Hollow Undead Hunter Charm
+211000832 Hollow Undead Hunter Charm
+211050010 Large Hollow Greataxe - Swung down: Right tilted single-shot
+211050011 Large Hollow Greataxe - shaken down: Left tilted first stage
+211050012 Large Hollow Greataxe - Swung down: right tilted two
+211050020 Large Hollow Greataxe - Swing Down: Depression & timing Difference
+211050030 Large Hollow Greataxe - steep approaching & swinging down
+211050040 Large Hollow Greataxe - Tilted sideways Sugu
+211050050 Large Hollow Greataxe - Saigi to right (for combo)
+211050051 Large Hollow Greataxe - Saigi to left (for combo)
+211050060 Large Hollow Greataxe - Right side payment
+211050061 Large Hollow Greataxe - left side pay
+211050070 Large Hollow Greataxe - Nagi from right to left
+211050110 Large Hollow Halberd - Saigi
+211050111 Large Hollow Halberd - Inverted Saigi
+211050120 Large Hollow Halberd -  butting in: lingering forward
+211050130 Large Hollow Halberd - Swing down: Go down in the afterglow
+211050140 Large Hollow Halberd - short-approaching thrusting: down in the afterglow
+211050150 Large Hollow Halberd - extruded
+211050160 Large Hollow Halberd - Strong Saigi
+211050170 Large Hollow Halberd -
+211050180 Large Hollow Halberd -
+211050190 Large Hollow Halberd -
+211050200 Large Hollow Halberd -
+211050210 Large Hollow Halberd -
+211050220 Large Hollow Halberd -
+211050230 Large Hollow Halberd -
+211300010 Rotten Slug Bit
+211300020 Rotten Slug Arm throwing transition attack
+211300021 Rotten Slug arm throwing pressure damage
+211300030 Rotten Slug 
+211300050 Rotten Slug landing
+211300700 Rotten Slug caries vomiting
+211300710 Rotten Slug Vomit (short)
+211310010 Sluggo Bite
+211310020 Sluggo Throw Transition
+211310021 Sluggo Throw
+211310030 Sluggo 
+211310050 Sluggo Landing
+211310700 Sluggo Vomit
+211310710 Sluggo Vomit (Short
+211700010 Carthus Swordsman 
+211700011 Carthus Swordsman 
+211700012 Carthus Swordsman 
+211700020 Carthus Swordsman 
+211700021 Carthus Swordsman 
+211700030 Carthus Swordsman 
+211700040 Carthus Swordsman 
+211700041 Carthus Swordsman 
+211700050 Carthus Swordsman Rush (stage)
+211700060 Carthus Swordsman Shield Bash
+211700070 Carthus Swordsman Rolling
+211700080 Carthus Swordsman 
+211700090 Carthus Swordsman 
+211700100 Carthus Swordsman Guard
+211700101 Carthus Swordsman 
+211700110 Carthus Swordsman Both hands: Right → left Saigi
+211700120 Carthus Swordsman Both hands: Shiri
+211700130 Carthus Swordsman Both hands: Tamenuri Left → right Saigi
+211700200 Carthus Swordsman Shooting
+211700201 Carthus Swordsman Shooting (for combo)
+211700202 Carthus Swordsman 
+211700210 Carthus Swordsman 
+211700211 Carthus Swordsman 
+211700220 Carthus Swordsman 
+211700230 Carthus Swordsman 
+211700231 Carthus Swordsman 
+211700240 Carthus Swordsman 
+211700250 Carthus Swordsman 
+211700260 Carthus Swordsman 
+211700270 Carthus Swordsman 
+211700280 Carthus Swordsman 
+211700290 Carthus Swordsman 
+211700291 Carthus Swordsman 
+211700700 Carthus Swordsman 
+211700900 Carthus Swordsman 
+211702200 Carthus Swordsman 
+211702201 Carthus Swordsman Greatsword -
+211702202 Carthus Swordsman Greatsword -
+211702210 Carthus Swordsman Greatsword -
+211702211 Carthus Swordsman Greatsword -
+211702220 Carthus Swordsman Greatsword -
+211702230 Carthus Swordsman Greatsword -
+211702231 Carthus Swordsman Greatsword -
+211702240 Carthus Swordsman Greatsword -
+211702250 Carthus Swordsman Greatsword -
+211702260 Carthus Swordsman Greatsword -
+211702270 Carthus Swordsman Greatsword -
+211702280 Carthus Swordsman Greatsword -
+211702290 Carthus Swordsman Greatsword -
+211702291 Carthus Swordsman Greatsword -
+211800010 Carthus Swordsman Shotel - Whack: Wait
+211800020 Carthus Swordsman Shotel - Reverse whack: whack posture
+211800030 Carthus Swordsman Shotel - Jump Whack: reverse whack posture
+211800040 Carthus Swordsman Shotel - Reverse Kesa: Whack stance
+211800050 Carthus Swordsman Shotel - Stepping down
+211800060 Carthus Swordsman Shotel - Thrust: Swing down posture
+211800070 Carthus Swordsman Shotel - Revolving Payment: Thrust posture
+211800080 Carthus Swordsman Shotel - Step Whack
+211800090 Carthus Swordsman Shotel - Reverse Whack: standing posture
+211800100 Carthus Swordsman Shotel - Grated: depression Small
+211800110 Carthus Swordsman Shotel - Revolving Payment
+211800120 Carthus Swordsman Shotel - Shield through rake-up
+211800200 Carthus Swordsman Shotel - Two-handed (right)
+211800201 Carthus Swordsman Shotel - Two-handed (left)
+211800210 Carthus Swordsman Shotel - one-handed reverse payment (left)
+211800220 Carthus Swordsman Shotel - Rotating one hand and grated (right)
+211800221 Carthus Swordsman Shotel - Rotating one-handed (left)
+211800230 Carthus Swordsman Shotel - Two-handed reverse payment (right)
+211800231 Carthus Swordsman Shotel - Two-handed reverse payment (left)
+211800240 Carthus Swordsman Shotel - Both hand and side grated (right)
+211800241 Carthus Swordsman Shotel - Both sides grated (left)
+211800250 Carthus Swordsman Shotel - Yupa Attack (right)
+211800251 Carthus Swordsman Shotel - Yupa attack (left)
+211800260 Carthus Swordsman Shotel - Both hands rounded up (right)
+211800261 Carthus Swordsman Shotel - Two-handed rounding (left)
+211800270 Carthus Swordsman Shotel - Diving rotation slash (right)
+211800271 Carthus Swordsman Shotel - Diving rotation slash (left)
+211800280 Carthus Swordsman Shotel - Left step payment (left)
+211800290 Carthus Swordsman Shotel - Right Step payment (left)
+211800300 Carthus Swordsman Shotel - Rush First stage (right)
+211800310 Carthus Swordsman Shotel - Stepping up one hand
+211800320 Carthus Swordsman Shotel - Rush Second stage (right)
+211800321 Carthus Swordsman Shotel - Second stage of Rush (left)
+211800330 Carthus Swordsman Shotel - Rush Third stage (right)
+211800331 Carthus Swordsman Shotel - Rush Third stage (left)
+211800332 Carthus Swordsman Shotel -
+211800333 Carthus Swordsman Shotel -
+211800340 Carthus Swordsman Shotel - Rush Fourth stage (right)
+211800341 Carthus Swordsman Shotel - Rush Fourth stage (left)
+211800350 Carthus Swordsman Shotel - One-handed rounding: depression small
+211800700 Carthus Swordsman Shotel - Baxtenife throwing
+211800710 Carthus Swordsman Shotel - Knife throwing
+211800720 Carthus Swordsman Shotel - Step knife throwing
+211900010 Cathedral Knight 
+211900100 Cathedral Knight  grated
+211900110 Cathedral Knight  swinging
+211900120 Cathedral Knight grated Mei-slash 1
+211900121 Cathedral Knight grated mae slash 2
+211900122 Cathedral Knight grated mae slash 3
+211900130 Cathedral Knight Saigi 1
+211900140 Cathedral Knight Saigi 2
+211900150 Cathedral Knight knocked back against
+211900160 Cathedral Knight Shield bash
+211900170 Cathedral Knight Miracle attack
+211900180 Cathedral Knight Miracle/Recovery
+211900190 Cathedral Knight Crossbow
+211900200 Cathedral Knight 
+211900210 Cathedral Knight 
+211900220 Cathedral Knight 
+211900230 Cathedral Knight 
+211900250 Cathedral Knight 
+211900251 Cathedral Knight 
+211900252 Cathedral Knight 
+211900253 Cathedral Knight 
+211900255 Cathedral Knight 
+211900260 Cathedral Knight 
+211900261 Cathedral Knight 
+211900270 Cathedral Knight 
+211900280 Cathedral Knight 
+211900290 Cathedral Knight  Guard
+211900300 Cathedral Knight Saigi 1
+211900310 Cathedral Knight Saigi 2 (Nagi 1)
+211900320 Cathedral Knight Kesa cut 1
+211900330 Cathedral Knight Saigi 3 (Kesa cut 1)
+211900340 Cathedral Knight stepping round
+211900350 Cathedral Knight stepping round
+211900360 Cathedral Knight From the top of the Great Sword (combo)
+211900370 Cathedral Knight from the top of the Swing (single)
+211900380 Cathedral Knight before kick: Kick
+211900381 Cathedral Knight pre-kick: push
+211900390 Cathedral Knight head Bud
+211900400 Cathedral Knight back Whack
+211900410 Cathedral Knight (combo)
+211900420 Cathedral Knight close-up swing
+211900430 Cathedral Knight stepping thrust
+211900440 Cathedral Knight Saigi (combo)
+211900450 Cathedral Knight the second shot
+211900451 Cathedral Knight Double swing: Second hammer
+211900460 Cathedral Knight 
+211900470 Cathedral Knight 
+211900480 Cathedral Knight 
+211900481 Cathedral Knight 
+211900490 Cathedral Knight 
+211900499 Cathedral Knight 
+211900500 Cathedral Knight 
+211900510 Cathedral Knight 
+211900520 Cathedral Knight 
+211900521 Cathedral Knight 
+211900522 Cathedral Knight 
+211900530 Cathedral Knight 
+211900540 Cathedral Knight 
+211900550 Cathedral Knight 
+211900560 Cathedral Knight 
+211900570 Cathedral Knight 
+211900580 Cathedral Knight 
+211900590 Cathedral Knight 
+211900600 Cathedral Knight 
+211900610 Cathedral Knight 
+211900620 Cathedral Knight 
+211900630 Cathedral Knight 
+211900650 Cathedral Knight 
+211900651 Cathedral Knight 
+211900652 Cathedral Knight 
+211900653 Cathedral Knight 
+211900655 Cathedral Knight 
+211900660 Cathedral Knight 
+211900661 Cathedral Knight 
+211900670 Cathedral Knight 
+211900680 Cathedral Knight 
+211900690 Cathedral Knight 
+212000100 Hollow Slave Kesa Cut
+212000110 Hollow Slave Reverse Kesa cut
+212000120 Hollow Slave Kannagi
+212000130 Hollow Slave Swing Down
+212000140 Hollow Slave Kari attack
+212000150 Hollow Slave Dash Kari attack
+212000160 Hollow Slave Dash wielding attack
+212000170 Hollow Slave Dash Furi attack
+212000180 Hollow Slave Wrap Attack (right)
+212000190 Hollow Slave Blowgun (1)
+212000200 Hollow Slave Blowgun (2)
+212000210 Hollow Slave Companions
+212000220 Hollow Slave Throwing transition
+212000240 Hollow Slave A flame pot thrower
+212000300 Hollow Slave Lateral Whack 1
+212000301 Hollow Slave 
+212000310 Hollow Slave Lateral Whack 2
+212000311 Hollow Slave 
+212000320 Hollow Slave Swinging
+212000321 Hollow Slave 
+212000330 Hollow Slave Swing Down
+212000331 Hollow Slave 
+212000340 Hollow Slave Extruded attack
+212000341 Hollow Slave 
+212000350 Hollow Slave Wrap Attack (right)
+212000351 Hollow Slave 
+212000360 Hollow Slave Fall Attack
+212000361 Hollow Slave 
+212000370 Hollow Slave companions called
+212000371 Hollow Slave 
+212000600 Hollow Slave 
+212000610 Hollow Slave 
+212000611 Hollow Slave 
+212000700 Hollow Slave Tossed
+212000999 Hollow Slave Companion call test
+212001100 Hollow Slave Grand Archives -
+212001110 Hollow Slave Grand Archives -
+212001120 Hollow Slave Grand Archives -
+212001130 Hollow Slave Grand Archives -
+212001140 Hollow Slave Grand Archives -
+212001150 Hollow Slave Grand Archives -
+212001160 Hollow Slave Grand Archives -
+212001170 Hollow Slave Grand Archives -
+212001180 Hollow Slave Grand Archives -
+212001190 Hollow Slave Grand Archives -
+212001200 Hollow Slave Grand Archives -
+212001210 Hollow Slave Grand Archives -
+212001220 Hollow Slave Grand Archives -
+212001240 Hollow Slave Grand Archives -
+212001300 Hollow Slave Grand Archives -
+212001310 Hollow Slave Grand Archives -
+212001320 Hollow Slave Grand Archives -
+212001330 Hollow Slave Grand Archives -
+212001340 Hollow Slave Grand Archives -
+212001350 Hollow Slave Grand Archives -
+212001360 Hollow Slave Grand Archives -
+212001370 Hollow Slave Grand Archives -
+212001600 Hollow Slave Grand Archives -
+212001610 Hollow Slave Grand Archives -
+212001700 Hollow Slave Grand Archives -
+212100100 Ghru Spear - Thrust
+212100110 Ghru Spear - Continuous piercing
+212100120 Ghru Spear - Continuous thrusting 2
+212100130 Ghru Spear - Shield beating
+212100140 Ghru Spear - Diagonal thrust
+212100150 Ghru Spear - Tamenuri
+212100160 Ghru Spear - Rush attack
+212100170 Ghru Spear - Guard Butt
+212100190 Ghru Spear -
+212100200 Ghru Sword - Swing Down
+212100210 Ghru Sword - Thrusting
+212100220 Ghru Sword - Scratching
+212100230 Ghru Sword - Depression Right → left Shiri
+212100240 Ghru Sword - Depression 2-Saigi
+212100250 Ghru Sword - Roundhouse Shiri
+212100260 Ghru Sword - Kicks
+212100261 Ghru Sword -
+212100270 Ghru Sword - a poop throw
+212100280 Ghru Sword -
+212100300 Ghru Magic - Stepping Thrust
+212100310 Ghru Magic - Infuser Thrust
+212100320 Ghru Magic - Move forward and cut down
+212100330 Ghru Magic - Left → Right roundhouse Saigi
+212100340 Ghru Magic - Poison fog chanting
+212100350 Ghru Magic - Widespread poison fog chanting (may be lost)
+212100360 Ghru Magic - Estrus-inducing dance
+212100370 Ghru Magic - Magic 1
+212100380 Ghru Magic - Magic 2
+212100390 Ghru Magic - Ambient Recovery Magic
+212100400 Mad Ghru Right scratching
+212100410 Mad Ghru Left scratching
+212100420 Mad Ghru with a hug
+212100430 Mad Ghru Hug (from Waiting)
+212100440 Mad Ghru High jump
+212100490 Mad Ghru Throwing damage
+212100491 Mad Ghru 
+212100500 Mad Ghru Right scratching
+212100510 Mad Ghru Left scratching
+212100520 Mad Ghru 
+212100530 Mad Ghru Lunge
+212100540 Mad Ghru Triangular flying scratching
+212100700 Ghru Magic - Name set later
+212100710 Ghru Magic - Name set later
+212100720 Ghru Magic - Name set later
+212100730 Ghru Magic - Name set later
+212100740 Ghru Magic - Name set later
+212100750 Ghru Magic - Name set later
+212100760 Ghru Magic - Name set later
+212100770 Ghru Magic - Name set later
+212100780 Ghru Magic - Name set later
+212100999 Ghru Throwing Test attack
+212200010 Corpse-grub Head Butt
+212200020 Corpse-grub Spitting Grub
+212200030 Corpse-grub Vomit (warning)
+212200040 Corpse-grub 
+212200050 Corpse-grub 
+212200060 Corpse-grub 
+212200100 Corpse-grub Maggots: Right Whack
+212200110 Corpse-grub Maggots: Left hand whack
+212200120 Corpse-grub Worm Roses: Throwing start technique (normal)
+212200121 Corpse-grub Worm Roses: Throwing start technique (pressure damage)
+212200130 Corpse-grub Hit EFEC Maggots Test
+212200140 Corpse-grub 
+212200150 Corpse-grub 
+212200160 Corpse-grub 
+212200170 Corpse-grub 
+212300010 Cathedral Evangelist Left hand: Sword down
+212300020 Cathedral Evangelist Left/Right Saigi
+212300030 Cathedral Evangelist Left hand: Right → Saigi
+212300040 Cathedral Evangelist Left/Right Saigi
+212300050 Cathedral Evangelist Right hand: Bible Helmet Split
+212300060 Cathedral Evangelist Left/Right swinging Saigi
+212300070 Cathedral Evangelist Throwing Start technique
+212300071 Cathedral Evangelist Throwing Continuous damage
+212300072 Cathedral Evangelist throwing large continuation damage
+212300080 Cathedral Evangelist Book Slap
+212300700 Cathedral Evangelist Long Distance Magic: A spear of diffuse flames
+212300710 Cathedral Evangelist Medium Range Magic: flames surrounding
+212300720 Cathedral Evangelist Medium/short distance magic: Fireball
+212300730 Cathedral Evangelist Short distance Magic: Self-centered time bomb search bullet
+212300731 Cathedral Evangelist Short distance Magic: Self-centered time bomb damage
+212300740 Cathedral Evangelist Projection Magic
+212300750 Cathedral Evangelist 
+212300800 Cathedral Evangelist Magic Trigger Range explosion
+212300900 Cathedral Evangelist For the city sniper: Gatling
+212300910 Cathedral Evangelist For the city sniper: a spear of fire that explodes
+212300920 Cathedral Evangelist Mark (Harmless)
+212400100 Peasant Hollow Axe - Kesa first Stage
+212400110 Peasant Hollow Axe - Kesa second Stage
+212400120 Peasant Hollow Axe - payment
+212400130 Peasant Hollow Axe - Kesa
+212400140 Peasant Hollow Axe - Triple Tap
+212400141 Peasant Hollow Axe -
+212400142 Peasant Hollow Axe -
+212400145 Peasant Hollow Axe -
+212400150 Peasant Hollow Axe - both gestures 1
+212400151 Peasant Hollow Axe - both gestures 2
+212400300 Peasant Hollow Dagger - Right-hand abdomen Saigi
+212400310 Peasant Hollow Dagger - Left hand thrusting a
+212400320 Peasant Hollow Dagger - Left hand grated b
+212400330 Peasant Hollow Dagger - Right hand slash
+212400340 Peasant Hollow Dagger - Both hands simultaneous attack (right)
+212400341 Peasant Hollow Dagger - Both hands simultaneous attack (right)
+212400350 Peasant Hollow Dagger - Rush (1st Stage right)
+212400351 Peasant Hollow Dagger - Rush (second stage left)
+212400352 Peasant Hollow Dagger - Rush (third stage right)
+212400353 Peasant Hollow Dagger - Rush (fourth stage left)
+212400354 Peasant Hollow Dagger - Rush (5th stage right)
+212400355 Peasant Hollow Dagger - Rush (sixth stage left)
+212400360 Peasant Hollow Dagger - Left hand thrust (throwing transition)
+212400361 Peasant Hollow Dagger - Left hand thrust (damage)
+212400370 Peasant Hollow Dagger - Jump Attack (left)
+212400371 Peasant Hollow Dagger - Jump Attack (right)
+212400500 Peasant Hollow Hammer - Knocked back against 1
+212400510 Peasant Hollow Hammer - Knocked back against 2
+212400520 Peasant Hollow Hammer - Kesa slapping
+212400530 Peasant Hollow Hammer - Infuser knocked back against
+212400540 Peasant Hollow Hammer - Sticking out
+212400600 Peasant Hollow Spear - both hand thrusts 1
+212400610 Peasant Hollow Spear - both hand thrusts 2
+212400620 Peasant Hollow Spear - both hand thrusts 3
+212400630 Peasant Hollow Spear - Infuser Butt
+212400640 Peasant Hollow Spear - Lunge whack
+212400650 Peasant Hollow Spear - slams
+212400660 Peasant Hollow Spear - Added Saigi
+212400700 Peasant Hollow 
+212400710 Peasant Hollow  oil urn
+212400720 Peasant Hollow 
+212400800 Peasant Hollow 
+212500100 Cathedral Grave Warden right Pay
+212500110 Cathedral Grave Warden left pay
+212500120 Cathedral Grave Warden 1-1 hands Shiri (right)
+212500121 Cathedral Grave Warden 1-1 hands Shiri (left)
+212500130 Cathedral Grave Warden 1-2 hands Saigi (right)
+212500131 Cathedral Grave Warden 1-2 hands Saigi (left)
+212500140 Cathedral Grave Warden 1-3 hands Saigi (right)
+212500141 Cathedral Grave Warden 1-3 hands Saigi (left)
+212500150 Cathedral Grave Warden 2-1 rounded up
+212500160 Cathedral Grave Warden 2-2 Shiri
+212500170 Cathedral Grave Warden 2-3 Shiri
+212500180 Cathedral Grave Warden x (right)
+212500181 Cathedral Grave Warden x (left)
+212500190 Cathedral Grave Warden x (lunge) (right)
+212500191 Cathedral Grave Warden x (lunge) (left)
+212500200 Cathedral Grave Warden hands down (right)
+212500201 Cathedral Grave Warden hands down (left)
+212500210 Cathedral Grave Warden counter
+212500220 Cathedral Grave Warden counter (perseverance)
+212500230 Cathedral Grave Warden both hand thrusts (right)
+212500231 Cathedral Grave Warden both hand thrusts (left)
+212500240 Cathedral Grave Warden left step attack
+212500250 Cathedral Grave Warden right-step attack
+212500260 Cathedral Grave Warden Ranbu 1-1: Right hand
+212500261 Cathedral Grave Warden Ranbu 1-1: Left hand
+212500270 Cathedral Grave Warden Ranbu 1-2: Right hand
+212500271 Cathedral Grave Warden Ranbu 1-2: Left hand
+212500280 Cathedral Grave Warden Ranbu 1-3: Right hand
+212500281 Cathedral Grave Warden Ranbu 1-3: Left hand
+212500700 Cathedral Grave Warden fire-blowing
+212600100 Hollow Manservant Saw - 1-1 both hand-out 1
+212600110 Hollow Manservant Saw - 1-2 both hand-out 2
+212600120 Hollow Manservant Saw - Both hand grated
+212600130 Hollow Manservant Saw - 2-1 hand-grated
+212600140 Hollow Manservant Saw - 2-2 Bun
+212600150 Hollow Manservant Saw - Behind attack
+212600160 Hollow Manservant Saw - 1 in rush attack
+212600161 Hollow Manservant Saw - Rush Attack _2
+212600162 Hollow Manservant Saw - 3 in rush attack
+212600163 Hollow Manservant Saw - Lash Attack _ slapping first stage
+212600164 Hollow Manservant Saw - Lash Attack _ slapping second stage
+212600165 Hollow Manservant Saw - Lash Attack _ slapping third stage
+212600180 Hollow Manservant Saw - Poised lunge (beating)
+212600181 Hollow Manservant Saw - poised lunge (pushing)
+212600190 Hollow Manservant Saw - Pay from right (one hand): wait
+212600191 Hollow Manservant Saw - Pay from left (one hand): wait
+212600192 Hollow Manservant Saw - Pay from right (one hand): left-handed posture
+212600193 Hollow Manservant Saw - Pay from left (one hand): right-handed posture
+212600194 Hollow Manservant Saw - Continuous Swing down: left-hand Posture _1
+212600195 Hollow Manservant Saw - Continuous Swing down: left-hand position _2
+212600196 Hollow Manservant Saw - Continuous Swing down: left-hand Posture _3
+212600200 Hollow Manservant Saw -
+212600210 Hollow Manservant Saw -
+212600220 Hollow Manservant Saw -
+212600230 Hollow Manservant Saw -
+212600240 Hollow Manservant Saw -
+212600300 Hollow Manservant Pot - Knocked back against
+212600310 Hollow Manservant Pot - Knocked back against 2
+212600311 Hollow Manservant Pot - Kari (bearers posture)
+212600312 Hollow Manservant Pot - left knocked back against
+212600313 Hollow Manservant Pot - Right knocked back against
+212600320 Hollow Manservant Pot - lifted knocked back against
+212600330 Hollow Manservant Pot -
+212600340 Hollow Manservant Pot -
+212600350 Hollow Manservant Pot -
+212600700 Hollow Manservant Pot - Mortar throw
+212600701 Hollow Manservant Pot - a mortar throw (bearers)
+212600710 Hollow Manservant Pot -
+212800100 Lothric Knight Right Kesa cut
+212800101 Lothric Knight Left Whack
+212800102 Lothric Knight depression thrust
+212800110 Lothric Knight Left Swing
+212800111 Lothric Knight Right
+212800120 Lothric Knight Rush Butt
+212800130 Lothric Knight Shield Bash
+212800140 Lothric Knight thrust
+212800150 Lothric Knight Roll up
+212800160 Lothric Knight counterattack from endure
+212800170 Lothric Knight Left side attack
+212800180 Lothric Knight Right flank attack
+212800300 Lothric Knight Guard Butt 1
+212800301 Lothric Knight Guard Butt 2
+212800310 Lothric Knight Rush Butt (last)
+212800311 Lothric Knight Rush Butt (in charge)
+212800320 Lothric Knight Shield Bash
+212800330 Lothric Knight Poised plunge thrust
+212800340 Lothric Knight stance short-range thrust
+212800350 Lothric Knight Withstand counterattack
+212800360 Lothric Knight Infuser Butt
+212800370 Lothric Knight Whack attack
+212800500 Lothric Knight slams
+212800510 Lothric Knight Right Saigi
+212800520 Lothric Knight Left Saigi
+212800530 Lothric Knight Rush Saigi
+212800540 Lothric Knight Infuser Butt
+212800550 Lothric Knight Behind the attack
+212800560 Lothric Knight depression
+212800570 Lothric Knight stepping Round
+212800580 Lothric Knight Swing Down (reservoir)
+212800590 Lothric Knight Whack Kesa (infuser): Wait
+212800600 Lothric Knight thrusting
+212800610 Lothric Knight Reverse Whack: stepping Posture
+212800620 Lothric Knight pattern Extrusion
+212800630 Lothric Knight Whack Swinging: enduring posture
+212800640 Lothric Knight Kesa (left side): Wait
+212800650 Lothric Knight Reverse Kesa (right side): Wait
+212800660 Lothric Knight 
+212800670 Lothric Knight 
+212800700 Lothric Knight shooting
+212800701 Lothric Knight Shooting Combo
+212800800 Lothric Knight 
+212800801 Lothric Knight 
+212800802 Lothric Knight 
+212800803 Lothric Knight 
+212800804 Lothric Knight 
+212800805 Lothric Knight 
+212800900 Lothric Knight Guard
+212800910 Lothric Knight Guard
+212800920 Lothric Knight Guard
+212900100 Winged Knight Halberd - Swing Down (Blade)
+212900110 Winged Knight Halberd - Combo ①-1 Angled Swing (blade)
+212900111 Winged Knight Halberd - Combo ①-2 (Blade)
+212900112 Winged Knight Halberd - Combo ①-3 (Blade)
+212900120 Winged Knight Halberd - Compact and grated (blade)
+212900130 Winged Knight Halberd - Combo ②-1 Saigi (Blade)
+212900131 Winged Knight Halberd - Combo ②-2 Saigi (Blade)
+212900132 Winged Knight Halberd - Combo ②-2, grated from the reservoir (Blade)
+212900140 Winged Knight Halberd - Running Down (Blade)
+212900150 Winged Knight Halberd - Force
+212900160 Winged Knight Halberd - Rotation attack Combo First stage: Rotating part (Blade)
+212900161 Winged Knight Halberd - Rotation attack Combo first stage: Pay part (Blade)
+212900170 Winged Knight Halberd - Rotation attack Combo Second stage: Rotating part (Blade)
+212900171 Winged Knight Halberd - Rotating attack Combo Second stage: Pay part (Blade)
+212900180 Winged Knight Halberd - Rotation attack Combo Third stage: rotating part (Blade)
+212900181 Winged Knight Halberd - Rotation attack combo third stage: Pay part (Blade)
+212900190 Winged Knight Halberd - Miracle: The light of the pillar dancing
+212900191 Winged Knight Halberd - Miracles: Columns of light, dance pillar of Light
+212900192 Winged Knight Halberd - Miracles: The Pillar of Light danced
+212900193 Winged Knight Halberd - Miracle: A shock wave in the motion of a pillar of light
+212900194 Winged Knight Halberd - Miracle: The column of Light dancing signs (short distance)
+212900195 Winged Knight Halberd - Miracles: A sign of the light of a pillar (target directly)
+212900200 Winged Knight Halberd - Swinging Down (stick)
+212900210 Winged Knight Halberd - Combo ①-1 Angled Swing (rod)
+212900211 Winged Knight Halberd - Combo ①-2 (Rod)
+212900212 Winged Knight Halberd - Combo ①-3 (Rod)
+212900220 Winged Knight Halberd - compact and grated (stick)
+212900230 Winged Knight Halberd - Combo ②-1 Saigi (stick)
+212900231 Winged Knight Halberd - Combo ②-2 Saigi (stick)
+212900232 Winged Knight Halberd - Combo ②-2, grated from the reservoir (stick)
+212900240 Winged Knight Halberd - Running Down (stick)
+212900260 Winged Knight Twinaxes - Rotation attack Combo First stage: Rotating section (rod)
+212900261 Winged Knight Twinaxes - Rotation attack Combo first stage: Pay part (rod)
+212900270 Winged Knight Twinaxes - Rotation attack Combo Second Stage: Rotating section (rod)
+212900271 Winged Knight Twinaxes - Rotating attack Combo Second stage: Pay part (rod)
+212900280 Winged Knight Twinaxes - Rotation attack Combo Third stage: Rotating section (rod)
+212900281 Winged Knight Twinaxes - Rotation attack combo third stage: Pay part (rod)
+212900300 Winged Knight Twinaxes - Combo ① ~ 1 Right axe slash 1
+212900301 Winged Knight Twinaxes - Combo ①-2 left axe slash 2
+212900302 Winged Knight Twinaxes - Combo ①-3 Right axe swing
+212900303 Winged Knight Twinaxes - Combo ①-4 left axe swing grated
+212900304 Winged Knight Twinaxes - Combo ① ~ 3-Car ax swing grated
+212900310 Winged Knight Twinaxes - both axe grated
+212900320 Winged Knight Twinaxes - Cut to tuck in both axes
+212900330 Winged Knight Twinaxes - Force
+212900340 Winged Knight Twinaxes - Combo ② ~ 1 Left Axe
+212900341 Winged Knight Twinaxes - Combo ② ~ 2-Car Axe slash
+212900350 Winged Knight Twinaxes - Cross-slash with both axes _ right hand
+212900351 Winged Knight Twinaxes - Cross-slash with both axes _ left hand
+212900360 Winged Knight Twinaxes - Reverse cross Slash
+212900370 Winged Knight Twinaxes - Rotating both axe slash
+212900380 Winged Knight Twinaxes - Ax throwing left
+212900381 Winged Knight Twinaxes - Ax throwing right
+212900390 Winged Knight Twinaxes -
+212900391 Winged Knight Twinaxes -
+212900400 Winged Knight Twinaxes -
+212900410 Winged Knight Twinaxes -
+212900411 Winged Knight Twinaxes -
+212900412 Winged Knight Twinaxes -
+212900420 Winged Knight Twinaxes -
+212900500 Winged Knight Twinaxes -
+212900510 Winged Knight Twinaxes -
+212900511 Winged Knight Twinaxes -
+212900512 Winged Knight Twinaxes -
+212900520 Winged Knight Twinaxes -
+212900600 Winged Knight Twinaxes -
+212900601 Winged Knight Twinaxes -
+212900602 Winged Knight Twinaxes -
+212900603 Winged Knight Twinaxes -
+212900604 Winged Knight Twinaxes -
+212900620 Winged Knight Twinaxes -
+213000100 Black Knight left Kesa cut
+213000101 Black Knight Right Whack
+213000102 Black Knight thrusting
+213000103 Black Knight Swing Down
+213000104 Black Knight Infuser Combo
+213000110 Black Knight Infuser, simple
+213000120 Black Knight beat with a shield
+213000121 Black Knight Rush Butt
+213000300 Black Knight Greatsword - Pay: Wait
+213000310 Black Knight Greatsword - reversal: Payment Attitude
+213000320 Black Knight Greatsword - Pay: Attitude
+213000330 Black Knight Greatsword - Rotation swing down: pay attitude
+213000340 Black Knight Greatsword - Swing down: posture of reversed payment
+213000350 Black Knight Greatsword - Swing Down: Wait
+213000360 Black Knight Greatsword - Reverse payment: Swing down posture
+213000370 Black Knight Greatsword - poking: Waiting
+213000380 Black Knight Greatsword - Thrust: Posture
+213000390 Black Knight Greatsword - rotating Butt: Pay attitude
+213000400 Black Knight Greatsword - two or three steps to swing
+213000410 Black Knight Greatsword - two or three steps to poke
+213000420 Black Knight Greatsword - Beat with a shield
+213000430 Black Knight Greatsword - Dragon Hunt, one-handed thrust
+213000440 Black Knight Greatsword - Dragon Hunt, two hands swing
+213000441 Black Knight Greatsword - Dragon Hunt, hands Up (preliminary operation)
+213000450 Black Knight Greatsword - behind reverse Whack
+213000500 Black Knight Greataxe - Right Kesa
+213000510 Black Knight Greataxe - Left Kesa: Right Kesa Posture
+213000520 Black Knight Greataxe - swinging: Left Kesa posture
+213000530 Black Knight Greataxe - slams: Left Kesa posture
+213000540 Black Knight Greataxe - Swing down and simply
+213000550 Black Knight Greataxe - swing-up
+213000560 Black Knight Greataxe - Beat with a shield
+213000570 Black Knight Greataxe - Pay from the left: swing attitude
+213000580 Black Knight Greataxe - One or two steps to pay
+213000590 Black Knight Greataxe - Two, three steps pounding
+213000600 Black Knight Greataxe - Dragon Hunt, jump and swing down
+213000610 Black Knight Greataxe - Dragon Hunt, hands up
+213000611 Black Knight Greataxe - Dragon Hunt, hands Up (preliminary operation)
+213000620 Black Knight Greataxe - Behind continuous attack
+213000621 Black Knight Greataxe - Behind continuous attack
+213000630 Black Knight Greataxe - Slams (feint): Left Kesa Posture
+213000700 Black Knight one poke while guarding
+213000701 Black Knight Guards while poke 2
+213000702 Black Knight Guards while poke 3
+213000703 Black Knight Spear - Nagi combo
+213000710 Black Knight Strong attack
+213000720 Black Knight one, two, three steps.
+213000730 Black Knight Spear - Nagi
+213000731 Black Knight Spear - Nagi 2
+213000732 Black Knight Spear - thrust and Nagi
+213000740 Black Knight Spear - Nagi-strong
+213000750 Black Knight Spear - PC diversion/one-handed attack
+213000751 Black Knight Spear - PC diversion/One-handed attack (preliminary operation)
+213000760 Black Knight Spear - PC Diversion/Jump Slash
+213000770 Black Knight Spear - Shield
+213000900 Black Knight Spear - Shield
+213000910 Black Knight Spear -
+213100100 Boreal Outrider Knight Sword Up
+213100101 Boreal Outrider Knight Swinging from the sword
+213100110 Boreal Outrider Knight Back Up
+213100111 Boreal Outrider Knight Swing from behind
+213100120 Boreal Outrider Knight Whack Stage
+213100130 Boreal Outrider Knight Whack next stage
+213100140 Boreal Outrider Knight Left 90 ° swivel whack
+213100150 Boreal Outrider Knight Right 90 ° swivel whack
+213100160 Boreal Outrider Knight thrusting
+213100170 Boreal Outrider Knight jumping and attacking
+213100180 Boreal Outrider Knight Breath
+213100182 Boreal Outrider Knight Breath _ Decal
+213100190 Boreal Outrider Knight Left Whack
+213100200 Boreal Outrider Knight Rush first stage
+213100201 Boreal Outrider Knight Rush second Stage
+213200010 Crystal Sage -
+213200030 Crystal Sage -
+213200040 Crystal Sage -
+213200050 Crystal Sage - Bullet
+213200100 Crystal Sage - Rapier Slash
+213200110 Crystal Sage - Rapier Thrust
+213200111 Crystal Sage - Rapier Thrust - Critical
+213200112 Crystal Sage - Rapier Thrust - Bullet
+213200130 Crystal Sage - Rapier Slash
+213200140 Crystal Sage - Quick Crystal Line - Launch
+213200141 Crystal Sage - Quick Crystal Line - Search
+213200142 Crystal Sage - Quick Crystal Line - Impact
+213200143 Crystal Sage - Quick Crystal Line - Remains
+213200150 Crystal Sage - Crystal Hail - Launch
+213200151 Crystal Sage - Crystal Hail - Cleanup
+213200152 Crystal Sage - Crystal Hail - Child
+213200153 Crystal Sage - Crystal Hail - Explosion
+213200155 Crystal Sage - Crystal Hail
+213200160 Crystal Sage - Explosion - Parent
+213200161 Crystal Sage - Explosion - Child
+213200170 Crystal Sage - Crystal Wall - Follow Player
+213200180 Crystal Sage -
+213200190 Crystal Sage - Crystal Storm - Bullet
+213200191 Crystal Sage - Crystal Storm - Bullet
+213200192 Crystal Sage - Crystal Storm - Bullet
+213200193 Crystal Sage - Crystal Storm - Shockwave
+213200194 Crystal Sage - Crystal Storm - Short
+213200195 Crystal Sage - Crystal Storm - Above
+213200300 Crystal Sage - Butt: Throwing Start
+213200310 Crystal Sage - 2 Consecutive payments: 1 payment
+213200311 Crystal Sage - 2 Consecutive payments: Payment 2
+213200312 Crystal Sage -
+213200330 Crystal Sage -
+213200340 Crystal Sage -
+213200341 Crystal Sage -
+213200342 Crystal Sage -
+213200343 Crystal Sage -
+213200350 Crystal Sage -
+213200351 Crystal Sage -
+213200352 Crystal Sage -
+213200353 Crystal Sage -
+213200355 Crystal Sage -
+213200360 Crystal Sage -
+213200361 Crystal Sage -
+213200370 Crystal Sage -
+213200380 Crystal Sage -
+213200390 Crystal Sage -
+213200391 Crystal Sage -
+213200392 Crystal Sage -
+213200393 Crystal Sage -
+213200394 Crystal Sage -
+213200395 Crystal Sage -
+213200500 Crystal Sage -
+213200510 Crystal Sage -
+213200511 Crystal Sage -
+213200512 Crystal Sage -
+213200530 Crystal Sage -
+213200540 Crystal Sage -
+213200541 Crystal Sage -
+213200542 Crystal Sage -
+213200543 Crystal Sage -
+213200550 Crystal Sage -
+213200551 Crystal Sage -
+213200552 Crystal Sage -
+213200553 Crystal Sage -
+213200555 Crystal Sage -
+213200560 Crystal Sage -
+213200561 Crystal Sage -
+213200570 Crystal Sage -
+213200580 Crystal Sage -
+213200590 Crystal Sage -
+213200591 Crystal Sage -
+213200592 Crystal Sage -
+213200593 Crystal Sage -
+213200594 Crystal Sage -
+213200595 Crystal Sage -
+213400070 Archive Scholar 
+213400071 Archive Scholar 
+213400080 Archive Scholar  depression thrust
+213400090 Archive Scholar  Infuser beating
+213400700 Archive Scholar  the arrow of Seoul
+213400710 Archive Scholar  A Spear of disturbed soul
+213400720 Archive Scholar  knocked back against: long distance
+213400730 Archive Scholar  Saigi
+213400731 Archive Scholar 
+213400732 Archive Scholar 
+213400740 Archive Scholar  knocked back against: close range
+213500100 Irithyllian Slave Swing down _1
+213500110 Irithyllian Slave Swing Down
+213500120 Irithyllian Slave Swing Down _3
+213500150 Irithyllian Slave both
+213500160 Irithyllian Slave Running thrust
+213500170 Irithyllian Slave the _1 Stage
+213500180 Irithyllian Slave The Sword
+213500200 Irithyllian Slave Shouting
+213500300 Irithyllian Slave lateral payment
+213500310 Irithyllian Slave front slash
+213500320 Irithyllian Slave piercing
+213500330 Irithyllian Slave Rampage shook _1
+213500331 Irithyllian Slave Rampage shook
+213500340 Irithyllian Slave falling throw
+213500341 Irithyllian Slave throwing damage
+213500400 Irithyllian Slave Take the right hand
+213500410 Irithyllian Slave Right hand cut back
+213500420 Irithyllian Slave Right hand Swing
+213500430 Irithyllian Slave both
+213500440 Irithyllian Slave The running slash
+213500450 Irithyllian Slave protruding slash
+213500460 Irithyllian Slave shook
+213500470 Irithyllian Slave 
+213500700 Irithyllian Slave 
+213500710 Irithyllian Slave 
+213500720 Irithyllian Slave 
+213500730 Irithyllian Slave 
+213500740 Irithyllian Slave 
+213600100 Lycanthrope Throwing transition 1
+213600110 Lycanthrope throwing transition 2
+213600120 Lycanthrope 
+213600130 Lycanthrope 
+213600140 Lycanthrope 
+213600141 Lycanthrope 
+213600150 Lycanthrope 
+213600151 Lycanthrope 
+213600160 Lycanthrope 
+213600170 Lycanthrope 
+213600180 Lycanthrope 
+213600181 Lycanthrope 
+213600182 Lycanthrope 
+213600190 Lycanthrope 
+213600191 Lycanthrope 
+213600200 Lycanthrope tossed
+213600201 Lycanthrope 
+213600202 Lycanthrope 
+213600203 Lycanthrope 
+213600204 Lycanthrope 
+213600205 Lycanthrope 
+213600210 Lycanthrope 
+213600220 Lycanthrope 
+213700100 Lycanthrope Hunter Thrusting (weakly) _ Tip
+213700101 Lycanthrope Hunter Thrusting (weakly) _ Sticky hands-tip
+213700110 Lycanthrope Hunter butting (strong) _ Tip
+213700111 Lycanthrope Hunter Thrust (strong) _ Sticky hands-tip
+213700120 Lycanthrope Hunter Lifting and thrusting _ tip
+213700121 Lycanthrope Hunter Lifting and thrusting _ sticky hands-tip
+213700130 Lycanthrope Hunter Pay in piles _ tip
+213700131 Lycanthrope Hunter Pay in piles _ Sticky hands-tip
+213700140 Lycanthrope Hunter knocked back against to lift _ tip
+213700141 Lycanthrope Hunter Lifting knocked back against _ Sticky hands-tip
+213700150 Lycanthrope Hunter Rush Butt (Continuous) _ Tip
+213700151 Lycanthrope Hunter Rush Butt (continuous) _ Sticky hands-tip
+213700152 Lycanthrope Hunter Rush Butt (Final) _ Tip
+213800010 Serpent-man Summoner beating with a whip (weak)
+213800020 Serpent-man Summoner Nagi with whips
+213800700 Serpent-man Summoner Magic Attack (weak)
+213800710 Serpent-man Summoner  the Magic Attack (strong)
+213800720 Serpent-man Summoner 
+213800730 Serpent-man Summoner 
+213900010 Serpent-man Continuous attack 1-1_ blow
+213900011 Serpent-man Continuous attack 1-1_ second
+213900020 Serpent-man Continuous attack 1-2_ blow
+213900021 Serpent-man Continuous attack 1-2_ second
+213900030 Serpent-man Rapid Melee attack 1-1
+213900040 Serpent-man Rapid Melee attack 1-2_
+213900041 Serpent-man Rapid approaching attack 1-2_ second hammer
+213900042 Serpent-man Quick approaching attack 1-2_ 3
+213900050 Serpent-man Rapid Melee attack 1-3a
+213900060 Serpent-man bit
+213900070 Serpent-man The Fall attack 1-1
+213900080 Serpent-man A Down-rise attack
+213900090 Serpent-man Bit (right): from a3000
+213900100 Serpent-man bit (left): from a3000
+213900110 Serpent-man Bit (right): from a3005
+213900120 Serpent-man bit (left): from a3005
+213900200 Serpent-man Pay: Wait
+213900210 Serpent-man Reverse Payment: A payment attitude
+213900220 Serpent-man Reverse Payment: Wait
+213900230 Serpent-man Pay: Attitude
+213900240 Serpent-man Deferred payment: A reversed payment stance
+213900250 Serpent-man Quick approaching attack
+213900260 Serpent-man Up and down attack
+213900270 Serpent-man Bit from guard break
+213900280 Serpent-man Swing Down
+213900290 Serpent-man 
+213900400 Serpent-man Breath
+213900410 Serpent-man Pay bit: Wait
+213900411 Serpent-man bit: a3016
+213900500 Serpent-man Guard
+213900510 Serpent-man 
+213900600 Serpent-man Paris Throwing damage
+213900900 Serpent-man Paris
+213910010 Giant Serpent-man A continuous attack 1-1
+213910020 Giant Serpent-man A continuous attack 1-2
+213910030 Giant Serpent-man Kusarigama Swing (Medium range)
+213910031 Giant Serpent-man Kusarigama Swing (medium range) Chara Atari No 
+213910032 Giant Serpent-man Kusarigama Swing (medium range) Return sickle 
+213910040 Giant Serpent-man Kusarigama Swing (long distance)
+213910041 Giant Serpent-man Kusarigama (long distance) Chara Atari No 
+213910042 Giant Serpent-man Kusarigama (long distance) return sickle 
+213910050 Giant Serpent-man Kusarigama
+213910051 Giant Serpent-man Kusarigama (Chain part)
+213910052 Giant Serpent-man Kusarigama (through sickle)
+213910060 Giant Serpent-man Poison Mist
+213910070 Giant Serpent-man A reverse payment (wait)
+213910080 Giant Serpent-man Swing Down (reverse posture)
+213910090 Giant Serpent-man Kusarigama (a3004 attitude)
+213910091 Giant Serpent-man Kusarigama (a3004 posture) Chain part 
+213910092 Giant Serpent-man Kusarigama (a3004 posture) through sickle 
+213910100 Giant Serpent-man Right side reverse payment
+213910110 Giant Serpent-man Left side reverse payment
+213910120 Giant Serpent-man Front bit
+213910130 Giant Serpent-man Kusarigama Swing down and strong (medium distance)
+213910131 Giant Serpent-man Kusarigama, strong (medium range) Chara Atari No 
+213910132 Giant Serpent-man Kusarigama Swing down and strong (medium range) Return sickle 
+213910133 Giant Serpent-man 
+213910134 Giant Serpent-man 
+213910135 Giant Serpent-man 
+213910140 Giant Serpent-man Kusarigama Swing (medium distance) Return sickle 
+213910141 Giant Serpent-man Kusarigama (long distance) return sickle 
+213910150 Giant Serpent-man Kusarigama Swing down and strong (medium distance) Return sickle 
+213910151 Giant Serpent-man Kusarigama and strong (long distance) return sickle 
+213910200 Giant Serpent-man Throwing
+213910201 Giant Serpent-man Throwing damage
+213911300 Giant Serpent-man 
+213911310 Giant Serpent-man 
+213911320 Giant Serpent-man 
+213911330 Giant Serpent-man 
+213911340 Giant Serpent-man 
+213911350 Giant Serpent-man 
+213911360 Giant Serpent-man 
+213911370 Giant Serpent-man 
+213911380 Giant Serpent-man 
+213911390 Giant Serpent-man 
+213911400 Giant Serpent-man 
+213911410 Giant Serpent-man 
+213911420 Giant Serpent-man 
+213911421 Giant Serpent-man 
+213911422 Giant Serpent-man 
+213911423 Giant Serpent-man 
+213911430 Giant Serpent-man 
+213911440 Giant Serpent-man 
+214100100 Silver Knight Slashing 1 (sword)
+214100101 Silver Knight Slashing 2 (sword)
+214100102 Silver Knight Slashing 3 (sword)
+214100103 Silver Knight Slashing 3/strength (sword)
+214100104 Silver Knight Thrust: Reverse Kesa Posture
+214100110 Silver Knight Depression Slashing (sword)
+214100120 Silver Knight Swing Down (sword)
+214100130 Silver Knight Thrusting (sword)
+214100140 Silver Knight Breaking with shields
+214100150 Silver Knight Jump swing Down: Wait
+214100151 Silver Knight Jump swing Down: a3015 posture
+214100160 Silver Knight Twist behind: Wait
+214100170 Silver Knight Slash: Wait
+214100200 Silver Knight Thrust 1 (spear)
+214100201 Silver Knight Thrust 2 (Spear)
+214100202 Silver Knight Thrust 3/strong (spear)
+214100210 Silver Knight  a stepping Spear
+214100220 Silver Knight Nagi (Spear)
+214100221 Silver Knight Thrust from Nagi (spear)
+214100230 Silver Knight Destroy with Shield (spear)
+214100240 Silver Knight Step back
+214100250 Silver Knight Small boost thrust
+214100260 Silver Knight Dragon Hunt thrust 1
+214100261 Silver Knight Dragon Hunt thrust 2
+214100270 Silver Knight Behind both hands: waiting
+214100300 Silver Knight Miyakonojo
+214100310 Silver Knight Miyakonojo
+214100500 Silver Knight Guard
+214100510 Silver Knight 
+214400100 Devout of the Deep 
+214400101 Devout of the Deep 
+214400102 Devout of the Deep 
+214400110 Devout of the Deep 
+214400120 Devout of the Deep 
+214400130 Devout of the Deep 
+214400140 Devout of the Deep 
+214400150 Devout of the Deep 
+214400151 Devout of the Deep 
+214400200 Devout of the Deep 
+214400201 Devout of the Deep 
+214400210 Devout of the Deep 
+214400220 Devout of the Deep 
+214400230 Devout of the Deep 
+214400240 Devout of the Deep 
+214400241 Devout of the Deep 
+214400250 Devout of the Deep 
+214400251 Devout of the Deep 
+214400252 Devout of the Deep 
+214400300 Devout of the Deep 
+214400310 Devout of the Deep 
+214400320 Devout of the Deep 
+214400330 Devout of the Deep 
+214400331 Devout of the Deep 
+214400332 Devout of the Deep 
+214400333 Devout of the Deep 
+214400334 Devout of the Deep 
+214400335 Devout of the Deep 
+214400340 Devout of the Deep 
+214400398 Devout of the Deep 
+214400399 Devout of the Deep 
+214400500 Devout of the Deep 
+214400501 Devout of the Deep 
+214400502 Devout of the Deep 
+214400510 Devout of the Deep 
+214400520 Devout of the Deep 
+214400530 Devout of the Deep 
+214400531 Devout of the Deep 
+214400532 Devout of the Deep 
+214400540 Devout of the Deep 
+214400541 Devout of the Deep 
+214400550 Devout of the Deep 
+214400551 Devout of the Deep 
+214400560 Devout of the Deep 
+214400700 Devout of the Deep 
+214400710 Devout of the Deep 
+214400750 Devout of the Deep 
+214400751 Devout of the Deep 
+214400752 Devout of the Deep 
+214400800 Devout of the Deep 
+214400801 Devout of the Deep 
+214400805 Devout of the Deep 
+214400806 Devout of the Deep 
+214400810 Devout of the Deep 
+214400811 Devout of the Deep 
+214400820 Devout of the Deep 
+214400821 Devout of the Deep 
+214400830 Devout of the Deep 
+214410300 Cathedral Evangelist 
+214410310 Cathedral Evangelist 
+214410330 Cathedral Evangelist 
+214410331 Cathedral Evangelist 
+214410332 Cathedral Evangelist 
+214410333 Cathedral Evangelist 
+214410334 Cathedral Evangelist 
+214410335 Cathedral Evangelist 
+214410340 Cathedral Evangelist 
+214410840 Cathedral Evangelist 
+214410850 Cathedral Evangelist 
+214410851 Cathedral Evangelist 
+214700010 Bonewheel Skeleton Beat by hand (right hand)
+214700011 Bonewheel Skeleton Beat by hand (left hand)
+214700020 Bonewheel Skeleton  transformed into a wheel
+214700100 Bonewheel Skeleton rotation
+214710010 Bonewheel Skeleton - Black Fire Beat by hand (right hand)
+214710011 Bonewheel Skeleton - Black Fire Beat by hand (left hand)
+214710020 Bonewheel Skeleton - Black Fire transformed into a wheel
+214710100 Bonewheel Skeleton - Black Fire rotation
+214710200 Bonewheel Skeleton - Black Fire Black Fireball
+220000010 Wolf a flying attack
+220000020 Wolf Tackle attack
+220000030 Wolf feint bite attack
+220000040 Wolf Forward bit
+220000050 Wolf Inverted attack on the belly
+220000060 Wolf Right reversal attack
+220000070 Wolf Left reversal attack
+220000080 Wolf Falling bit
+220000090 Wolf bit back step
+220000100 Wolf Forward bit 2
+220000160 Wolf 180 degrees turn
+220000170 Wolf Right
+220000180 Wolf Left
+220000190 Wolf Walking _ before
+220000200 Wolf Running before
+220000300 Wolf depression right Saigi
+220000310 Wolf Melee Combo: Right Saigi
+220000320 Wolf Melee Combo: Left Saigi
+220000330 Wolf Melee Combo: knocked back against
+220000340 Wolf 180 degree turn
+220000350 Wolf attack from a 180-degree turn
+220000360 Wolf Dash left
+220000370 Wolf Melee Combo: Left Saigi right 90 ° turn
+220000380 Wolf Melee Combo: Right Saigi left 90 ° turn
+220000390 Wolf Left Kiri left 180 ° turn
+220000400 Wolf Long distance Combo: Jump Butt
+220000410 Wolf Long distance Combo: knocked back against
+220000420 Wolf Long distance Combo: Left Saigi
+220000430 Wolf 180 degree turn attack
+220000440 Wolf Right reversal attack
+220000450 Wolf Left reversal attack
+220200010 Undead Dog Bite 1
+220200011 Undead Dog Bite 2
+220200020 Undead Dog The flight from the suspended state
+220200030 Undead Dog Jump from running
+220200040 Undead Dog bit combo First stage: from the Run
+220200050 Undead Dog  jump (Long distance)
+220200060 Undead Dog from running (long distance)
+220200070 Undead Dog left curve bit
+220200080 Undead Dog right curve bit
+220201010 Undead Dog Bite 1
+220201011 Undead Dog Bite 2
+220201020 Undead Dog jumping from a parked state
+220201030 Undead Dog jumping from running
+220201040 Undead Dog bit combo first stage: from the Run
+220201050 Undead Dog Jump (long distance)
+220201060 Undead Dog Jump (Long distance): from running
+220201070 Undead Dog Left curve bit
+220201080 Undead Dog  right curve bit
+220202010 Undead Dog 
+220202011 Undead Dog 
+220202020 Undead Dog 
+220202030 Undead Dog 
+220202040 Undead Dog 
+220202050 Undead Dog 
+220202060 Undead Dog 
+220202070 Undead Dog 
+220202080 Undead Dog 
+220210010 Small Undead Dog Bite 1
+220210011 Small Undead Dog Bite 2
+220210020 Small Undead Dog Jump from a stopped state
+220210030 Small Undead Dog Jump from running
+220210040 Small Undead Dog bit combo First stage: from the Run
+220210050 Small Undead Dog  jump (Long distance)
+220210060 Small Undead Dog from running (long distance)
+220210070 Small Undead Dog left curve bit
+220210080 Small Undead Dog right curve bit
+220212010 Small Undead Dog 
+220212011 Small Undead Dog 
+220212020 Small Undead Dog 
+220212030 Small Undead Dog 
+220212040 Small Undead Dog 
+220212050 Small Undead Dog 
+220212060 Small Undead Dog 
+220212070 Small Undead Dog 
+220212080 Small Undead Dog 
+220213010 Small Undead Dog 
+220213011 Small Undead Dog 
+220213020 Small Undead Dog 
+220213030 Small Undead Dog 
+220213040 Small Undead Dog 
+220213050 Small Undead Dog 
+220213060 Small Undead Dog 
+220213070 Small Undead Dog 
+220213080 Small Undead Dog 
+220300100 Pontiff Knight 
+220300110 Pontiff Knight Combo 1-1 One-handed rounding ①
+220300120 Pontiff Knight Combo 1-2 one handed rounding ②
+220300130 Pontiff Knight Combo 1-3 Hand Saigi
+220300140 Pontiff Knight a distance-packed attack
+220300150 Pontiff Knight Combo 2-1 reverse Kesa cut ①
+220300160 Pontiff Knight Combo 2-2 reverse Kesa cut ②
+220300170 Pontiff Knight Combo 2-3 Hand Rounding
+220300180 Pontiff Knight Combo 2-4 Hand Saigi
+220300190 Pontiff Knight Strong attack
+220300210 Pontiff Knight the Revolving Arts (loop)
+220300220 Pontiff Knight the rotating arts (finish)
+220300230 Pontiff Knight 
+220300240 Pontiff Knight 
+220300241 Pontiff Knight 
+220300300 Pontiff Knight 
+220300301 Pontiff Knight 
+220300310 Pontiff Knight Combo 1-1 Both hands rounded up ①: Blade
+220300311 Pontiff Knight Combo 1-1 Both hands rounded up ①: hilt
+220300320 Pontiff Knight Combo 1-2 Hands up ②: Blade
+220300321 Pontiff Knight Combo 1-2 hands-up ②: Handle
+220300330 Pontiff Knight Combo 1-3 One handed rounding ①: Blade
+220300331 Pontiff Knight Combo 1-3 One handed rounding ①: hilt
+220300340 Pontiff Knight Combo 1-4 hand rounded ②: Blade
+220300341 Pontiff Knight Combo 1-4 One handed rounding ②: hilt
+220300350 Pontiff Knight Combo 1-5 Two-handed devaluation: Blade
+220300351 Pontiff Knight Combo 1-5 Two-handed devaluation: hilt
+220300360 Pontiff Knight Combo 2-1 hands down: Blade
+220300361 Pontiff Knight Combo 2-1 hands down: Handle
+220300370 Pontiff Knight Combo 2-2 hand Saigi: Blade
+220300371 Pontiff Knight Combo 2-2 hand Saigi: Hilt
+220300380 Pontiff Knight two-handed distance-packed attack: Blade
+220300381 Pontiff Knight two-handed distance-packed attack: hilt
+220300390 Pontiff Knight Combo 3-1 Two-handed attack: Blade
+220300391 Pontiff Knight Combo 3-1 hand-drawn attack: hilt
+220300400 Pontiff Knight Combo 3-2 both hands Saigi: Blade
+220300401 Pontiff Knight Combo 3-2 Both hands Saigi: hilt
+220300410 Pontiff Knight Combo 3-3 Two-handed lift: Blade
+220300411 Pontiff Knight Combo 3-3 Hands up: Handle
+220300420 Pontiff Knight A round attack: Blade
+220300421 Pontiff Knight A round attack: pattern
+220300430 Pontiff Knight Extrusion attack: Blade
+220300431 Pontiff Knight Extruded attack: Hilt
+220300440 Pontiff Knight Distance packed strong attack: Blade
+220300450 Pontiff Knight Miracle dark Moon Light Sword
+220300451 Pontiff Knight 
+220300700 Pontiff Knight 
+220300701 Pontiff Knight 
+220300900 Pontiff Knight Shields
+220310100 Ruin Sentinel 
+220310110 Ruin Sentinel 
+220310120 Ruin Sentinel 
+220310130 Ruin Sentinel 
+220310140 Ruin Sentinel 
+220310150 Ruin Sentinel 
+220310160 Ruin Sentinel 
+220310170 Ruin Sentinel 
+220310180 Ruin Sentinel 
+220310190 Ruin Sentinel 
+220310210 Ruin Sentinel 
+220310220 Ruin Sentinel 
+220310230 Ruin Sentinel 
+220310240 Ruin Sentinel 
+220310241 Ruin Sentinel 
+220310300 Ruin Sentinel 
+220310301 Ruin Sentinel 
+220310310 Ruin Sentinel 
+220310311 Ruin Sentinel 
+220310320 Ruin Sentinel 
+220310321 Ruin Sentinel 
+220310330 Ruin Sentinel 
+220310331 Ruin Sentinel 
+220310340 Ruin Sentinel 
+220310341 Ruin Sentinel 
+220310350 Ruin Sentinel 
+220310351 Ruin Sentinel 
+220310360 Ruin Sentinel 
+220310361 Ruin Sentinel 
+220310370 Ruin Sentinel 
+220310371 Ruin Sentinel 
+220310380 Ruin Sentinel 
+220310381 Ruin Sentinel 
+220310390 Ruin Sentinel 
+220310391 Ruin Sentinel 
+220310400 Ruin Sentinel 
+220310401 Ruin Sentinel 
+220310410 Ruin Sentinel 
+220310411 Ruin Sentinel 
+220310420 Ruin Sentinel 
+220310421 Ruin Sentinel 
+220310430 Ruin Sentinel 
+220310431 Ruin Sentinel 
+220310440 Ruin Sentinel 
+220310450 Ruin Sentinel 
+220310451 Ruin Sentinel 
+220310700 Ruin Sentinel 
+220310701 Ruin Sentinel 
+220310900 Ruin Sentinel 
+220400100 Monstrosity of Sin Right hand slams
+220400110 Monstrosity of Sin Left hand slams
+220400120 Monstrosity of Sin Right hand finish
+220400130 Monstrosity of Sin Rising body Press
+220400140 Monstrosity of Sin Right direction
+220400150 Monstrosity of Sin Collapsed (right direction) ②
+220400160 Monstrosity of Sin Fall Down (left)
+220400170 Monstrosity of Sin Collapsed (left direction) ②
+220400180 Monstrosity of Sin Butt Press
+220400200 Monstrosity of Sin Start throwing
+220400201 Monstrosity of Sin Throwing attack (pressure damage)
+220400202 Monstrosity of Sin Throwing attack (finish)
+220400210 Monstrosity of Sin Right payment
+220400220 Monstrosity of Sin Left payment
+220400230 Monstrosity of Sin 
+220400240 Monstrosity of Sin 
+220400500 Monstrosity of Sin 
+220400510 Monstrosity of Sin 
+220600010 Corpse-grub Right whack
+220600020 Corpse-grub Left hand Whack
+220600030 Corpse-grub Throwing start technique (jumped)
+220600040 Corpse-grub Throwing start Technique (melee)
+220600041 Corpse-grub 
+220600042 Corpse-grub 
+220600043 Corpse-grub 
+220600050 Corpse-grub 
+220600060 Corpse-grub 
+220600070 Corpse-grub Rush _1
+220600080 Corpse-grub Melee Maggots
+220600090 Corpse-grub Body throwing
+220600100 Corpse-grub Throwing attack (pressure damage)
+220700010 Wretch Right hand scratching ①
+220700020 Wretch Right hand scratching ②
+220700030 Wretch Left hand scratching
+220700040 Wretch continuous scratching 1
+220700041 Wretch Continuous scratching 2
+220700042 Wretch continuous scratching 3
+220700043 Wretch continuous scratching 4
+220700060 Wretch Grab attack ①
+220700070 Wretch Grab attack ②
+220700080 Wretch Fall attack
+220700090 Wretch jumping
+220700091 Wretch 
+220700200 Wretch Spear - poked ①
+220700210 Wretch Spear - poked ②
+220700220 Wretch Spear - Thrust down
+220700230 Wretch Spear - Saigi
+220700240 Wretch Spear -Left hand scratching
+220700260 Wretch Spear - Dragon weapon
+220700261 Wretch Spear -
+220700400 Wretch Dagger - Crossing ①
+220700410 Wretch Dagger - Crossing ②
+220700420 Wretch Dagger - Crossing ③
+220700430 Wretch Dagger - Cut down ①
+220700440 Wretch Dagger - Cut down ②
+220700450 Wretch Dagger - Continuous thrust ①
+220700451 Wretch Dagger - Continuous thrust ②
+220700452 Wretch Dagger - Continuous thrust ③
+220700470 Wretch Dagger - Continuous slash ①
+220700471 Wretch Dagger - Continuous slash ②
+220700472 Wretch Dagger - Continuous slash ③
+220700473 Wretch Dagger - Continuous slash ④
+220700700 Wretch Breath
+220700710 Wretch 
+220800100 Undead Maggot Dog Bite 1
+220800110 Undead Maggot Dog Bite 2
+220800120 Undead Maggot Dog Bite rush
+220800130 Undead Maggot Dog maggots spitting
+220800140 Undead Maggot Dog throwing transition
+220800141 Undead Maggot Dog  tossed
+220900100 Oceiros, the Consumed King Lining
+220900110 Oceiros, the Consumed King on the spot
+220900111 Oceiros, the Consumed King on the spot
+220900120 Oceiros, the Consumed King a stretch attack
+220900130 Oceiros, the Consumed King Thrusting stick
+220900140 Oceiros, the Consumed King the tail payment _ the whole tail
+220900141 Oceiros, the Consumed King Tail tip
+220900150 Oceiros, the Consumed King the reservoir beating
+220900160 Oceiros, the Consumed King Additional payment
+220900170 Oceiros, the Consumed King knocked back against
+220900180 Oceiros, the Consumed King trampling weapons
+220900181 Oceiros, the Consumed King trampled left foot
+220900182 Oceiros, the Consumed King trampling _ right foot
+220900183 Oceiros, the Consumed King Trampling _ Body
+220900190 Oceiros, the Consumed King Baby
+220900300 Oceiros, the Consumed King Neck whack Bit
+220900301 Oceiros, the Consumed King Neck whack Bit chase
+220900310 Oceiros, the Consumed King Front Jump bit _ mouth
+220900311 Oceiros, the Consumed King Front Jump bit _ left hand
+220900312 Oceiros, the Consumed King Front Jump bit _ right hand
+220900313 Oceiros, the Consumed King Front jump bit body
+220900320 Oceiros, the Consumed King Crush
+220900330 Oceiros, the Consumed King Whack Bit _ whack
+220900331 Oceiros, the Consumed King Whack bit _ bite
+220900340 Oceiros, the Consumed King Rush
+220900341 Oceiros, the Consumed King Rush _ Bite
+220900350 Oceiros, the Consumed King Through inversion _ bite
+220900351 Oceiros, the Consumed King through inversion _ body
+220900360 Oceiros, the Consumed King Tail Saigi 360 ° _ Tail
+220900361 Oceiros, the Consumed King 360 ° _ Body Saigi Tail
+220900370 Oceiros, the Consumed King Tail turned tail
+220900371 Oceiros, the Consumed King Tail turned _ slams
+220900380 Oceiros, the Consumed King Standing rampage _ Bite
+220900381 Oceiros, the Consumed King Standing rampage _1
+220900382 Oceiros, the Consumed King Standing rampage
+220900383 Oceiros, the Consumed King Standing Rampage _3
+220900384 Oceiros, the Consumed King Standing rampage _4
+220900385 Oceiros, the Consumed King Standing rampage _5
+220900390 Oceiros, the Consumed King Airborne Breath _ Body
+220900391 Oceiros, the Consumed King Aerial Breath _ Right hand
+220900392 Oceiros, the Consumed King Aerial Breath _ Left hand
+220900700 Oceiros, the Consumed King Straight Breath
+220900701 Oceiros, the Consumed King 
+220900702 Oceiros, the Consumed King 
+220900710 Oceiros, the Consumed King Whack Breath
+220900711 Oceiros, the Consumed King 
+220900712 Oceiros, the Consumed King 
+220900713 Oceiros, the Consumed King 
+220900720 Oceiros, the Consumed King Aerial Breath
+220900721 Oceiros, the Consumed King 
+220900722 Oceiros, the Consumed King 
+220900730 Oceiros, the Consumed King 
+220900740 Oceiros, the Consumed King 
+220900741 Oceiros, the Consumed King 
+220900742 Oceiros, the Consumed King 
+220900743 Oceiros, the Consumed King 
+221000100 Sewer Centipede A flying attack
+221000110 Sewer Centipede Jump Throwing transition
+221000120 Sewer Centipede Rising Dash attack
+221000130 Sewer Centipede A violent right hand one on the spot
+221000131 Sewer Centipede A violent right hand 2_1 on the spot
+221000132 Sewer Centipede A violent right hand 2_2 on the spot
+221000133 Sewer Centipede Violent on the spot right hand three
+221000134 Sewer Centipede Seven violent right hand on the spot
+221000135 Sewer Centipede A violent right hand 9_1 on the spot
+221000136 Sewer Centipede A violent right hand 9_2 on the spot
+221000137 Sewer Centipede Ten violent right hand on the spot
+221000138 Sewer Centipede One left hand violent on the spot
+221000139 Sewer Centipede 2_1 left hand violent on the spot
+221000140 Sewer Centipede 2_2 left hand violent on the spot
+221000141 Sewer Centipede Three left hand violent on the spot
+221000142 Sewer Centipede Violent on the spot left hand four
+221000143 Sewer Centipede Nine violent left hand on the spot
+221000144 Sewer Centipede Ten violent left hand on the spot
+221000700 Sewer Centipede Spit something Out
+221100010 Hound-rat Bite 1
+221100020 Hound-rat Bite 2
+221100030 Hound-rat Kari
+221100040 Hound-rat Scratching
+221100050 Hound-rat Per
+221100060 Hound-rat Large bite
+221200010 Mimic Right scratching
+221200020 Mimic Left scratching
+221200030 Mimic Pre Kick
+221200040 Mimic Rolling Sobat
+221200050 Mimic Hug: Throwing Start
+221200051 Mimic Hug: Throwing damage
+221200110 Mimic Jumped: Throwing start
+221200111 Mimic Jumped: Throwing damage
+221200120 Mimic Rear bit: Throwing start
+221200121 Mimic Rear bit: Throw damage
+221200130 Mimic Spitting Spit
+221200140 Mimic 
+221200210 Mimic throw 1: Start throwing
+221200211 Mimic throw 1: Throwing damage
+221200220 Mimic throw 2: Start throwing
+221200221 Mimic throw 2: Throwing damage
+221210010 Mimic - Companion Right Swipe
+221210020 Mimic - Companion Left Swipe
+221210030 Mimic - Companion Pre-kick
+221210040 Mimic - Companion Rolling Sobat
+221210050 Mimic - Companion Hug: Start
+221210051 Mimic - Companion Hug: End
+221210110 Mimic - Companion Jump: Start
+221210111 Mimic - Companion Jump: End
+221210120 Mimic - Companion Rear Bite: Start
+221210121 Mimic - Companion Rear Bite: End
+221210130 Mimic - Companion Spit
+221210140 Mimic - Companion 
+221210210 Mimic - Companion Throw 1: Start
+221210211 Mimic - Companion Throw 1: End
+221210220 Mimic - Companion Throw 2: Start
+221210221 Mimic - Companion Throw 2: End
+221300010 Writhing Rotten Flesh Before ① to shove a bone
+221300020 Writhing Rotten Flesh After ② to shove the bone
+221300030 Writhing Rotten Flesh Shove a bone in all directions
+221300040 Writhing Rotten Flesh Falling into a crowded attack
+221300041 Writhing Rotten Flesh Falling into the attack and throwing damage
+221300050 Writhing Rotten Flesh ③ left to shove bones
+221300060 Writhing Rotten Flesh ④ right to shove a bone
+221300070 Writhing Rotten Flesh Special waiting → Drop throw judgment
+221300071 Writhing Rotten Flesh Special wait → drop throwing
+221300080 Writhing Rotten Flesh 
+221300090 Writhing Rotten Flesh 
+221300100 Writhing Rotten Flesh 
+221300110 Writhing Rotten Flesh 
+221300120 Writhing Rotten Flesh 
+221300121 Writhing Rotten Flesh 
+221400010 Basilisk Petrified Breath
+221400015 Basilisk 
+221400020 Basilisk Jump & Breath
+221400021 Basilisk Jump & Breath Landing
+221500010 Crystal Lizard Disappear
+221510010 Red Crystal Lizard Disappear
+221510100 Red Crystal Lizard Red Explosion
+221600010 Londor Pilgrim ① (small): hitting with a cane
+221600011 Londor Pilgrim ① (small): hitting with a cane② (small): hitting with a cane
+221600020 Londor Pilgrim ① (small): hitting with a caneEclipse (small): Getaway
+221600030 Londor Pilgrim ① (small): hitting with a caneWhat we call Eclipse (small): Summon
+221800010 Rosaria Maggot Head Butt
+221800020 Rosaria Maggot Heavily
+221800030 Rosaria Maggot Kari
+221800031 Rosaria Maggot Jumping two steps
+221800040 Rosaria Maggot Vomit spitting
+221800050 Rosaria Maggot 
+221800110 Rosaria Maggot Magic
+221800200 Rosaria Maggot Fire spreading
+221900100 Gargoyle Light - Saigi Weapon 
+221900110 Gargoyle Light - slams weapon 
+221900120 Gargoyle Light - Guard posture: slams weapon 
+221900130 Gargoyle Light - Guard Posture: Large ignition weapon 
+221900140 Gargoyle Light - Slams from the sky weapon 
+221900141 Gargoyle Light - Slams from the sky body 
+221900150 Gargoyle Light - Fire attack from above weapon 
+221900151 Gargoyle Light - Fire attack from the sky body 
+221900160 Gargoyle Light - Inverted from the sky weapon 
+221900161 Gargoyle Light - Inverted from the sky body 
+221900170 Gargoyle Light - Additional Saigi weapon 
+221900180 Gargoyle Light - previous step slapping weapon 
+221900181 Gargoyle Light - Front step slapping body 
+221900190 Gargoyle Light - Whack falling weapon 
+221900191 Gargoyle Light - Whack falling body 
+221900300 Gargoyle Spear - Thrust 1-1 Weapon 
+221900301 Gargoyle Spear - Thrust 1-2: Strong thrust Weapon 
+221900302 Gargoyle Spear - Butt 1-3: Poke slams weapon: thrust 
+221900303 Gargoyle Spear - Butt 1-3: Poke slams weapon: slapping 
+221900304 Gargoyle Spear - Butt 1-3: Poke slams body 
+221900310 Gargoyle Spear - rush Weapon 
+221900311 Gargoyle Spear - Rush body 
+221900320 Gargoyle Spear - Guard Posture: Shield tock Weapon 
+221900321 Gargoyle Spear - Guard Posture: Shield tock brandishes attack before thrusting 
+221900330 Gargoyle Spear - Guard Posture: rush weapon 
+221900331 Gargoyle Spear - Guard Posture: rush body 
+221900340 Gargoyle Spear - Swinging from the sky weapon 
+221900341 Gargoyle Spear - Swinging from the sky body 
+221900350 Gargoyle Spear - Dive attack weapon aiming from the sky
+221900351 Gargoyle Spear - Dive attack body aiming from the sky
+221900360 Gargoyle Spear - continuous thrust from the Sky 1 weapon 
+221900361 Gargoyle Spear - continuous thrust from the Sky 2 weapon 
+221900362 Gargoyle Spear - continuous thrust from the Sky 3 weapon 
+221900363 Gargoyle Spear - continuous thrust from the sky body 
+221900370 Gargoyle Spear - Additional whack weapon 
+221900380 Gargoyle Spear - gliding thrust weapon 
+221900381 Gargoyle Spear - gliding thrusting flying body 
+221900382 Gargoyle Spear - gliding thrust body 
+221900600 Gargoyle Common - On guard Solving _ Wings
+221900700 Gargoyle Light - Saigi: Fire Bullets
+221900701 Gargoyle Light - Saigi: Flames after landing
+221900702 Gargoyle Light - Saigi: After the Flames incidence
+221900705 Gargoyle Light - Additional Saigi: Fire bullets
+221900706 Gargoyle Light - Whack Fall: Fire bullets
+221900710 Gargoyle Light - Slams: Fire spray
+221900711 Gargoyle Light - slams: Fire splashes then
+221900720 Gargoyle Light - Guard Posture: Fire Spray (Large)
+221900721 Gargoyle Light - Guard Posture: Fire Spray (Large) right
+221900722 Gargoyle Light - Guard Posture: Fire Spray (Large) left
+221900730 Gargoyle Light - Fire attack from above
+221900900 Gargoyle Light - Guard
+221900901 Gargoyle Light - Guard (Strong)
+222000110 Carthus Sandworm slams A
+222000120 Carthus Sandworm stretched up pounding 1
+222000130 Carthus Sandworm stretched up and pounding 2
+222000131 Carthus Sandworm 
+222000132 Carthus Sandworm 
+222000140 Carthus Sandworm bit
+222000210 Carthus Sandworm 
+222000220 Carthus Sandworm 
+222000230 Carthus Sandworm 
+222000240 Carthus Sandworm 
+222000241 Carthus Sandworm 
+222000242 Carthus Sandworm 
+222000500 Carthus Sandworm 
+222000510 Carthus Sandworm 
+222000520 Carthus Sandworm 
+222000600 Carthus Sandworm 
+222010100 Carthus Sandworm Dive into the ground
+222010110 Carthus Sandworm slams A
+222010120 Carthus Sandworm stretched up pounding 1
+222010130 Carthus Sandworm stretched up and pounding 2
+222010140 Carthus Sandworm bit
+222010150 Carthus Sandworm Rush bit (throwing and grabbing)
+222010151 Carthus Sandworm Rush bit (throwing and fuselage damage)
+222010152 Carthus Sandworm Rush bit (throwing and throwing damage)
+222010300 Carthus Sandworm out on the ground
+222100100 Corvian Dagger - Overhang
+222100110 Corvian Dagger - The Sword Falling
+222100120 Corvian Dagger - Single slash
+222100200 Corvian Dagger - Saigi
+222100210 Corvian Dagger - slams
+222100220 Corvian Dagger - Extrusion
+222100300 Corvian Dagger - Ran through rush-1
+222100301 Corvian Dagger - Ran through the rush-2
+222100302 Corvian Dagger - Ran through rush-3
+222100303 Corvian Dagger - Ran through rush-4
+222100304 Corvian Dagger - Ran through rush-5
+222100310 Corvian Dagger - Take a stab with a jump-1
+222100311 Corvian Dagger - Take a stab with a jump-2
+222100320 Corvian Dagger - Jumping attack
+222100330 Corvian Dagger - Right Hand daggers Combo 1
+222100340 Corvian Dagger - Right Hand daggers Combo 2
+222100350 Corvian Dagger - Right Hand daggers Combo 3-1
+222100351 Corvian Dagger - Right Hand daggers Combo 3-2
+222100352 Corvian Dagger - Right Hand daggers Combo 3-3
+222100353 Corvian Dagger - Right Hand daggers Combo 3-4
+222100354 Corvian Dagger - Right Hand daggers Combo 3-5
+222100360 Corvian Dagger - Anti-aircraft attack-1
+222100361 Corvian Dagger - Anti-aircraft attack-2
+222100362 Corvian Dagger - Anti-aircraft attack-3
+222100363 Corvian Dagger - Anti-aircraft attack-4
+222100364 Corvian Dagger - Anti-aircraft attack-5 (left hand)
+222100365 Corvian Dagger - Anti-aircraft attack-6 (right hand)
+222100370 Corvian Dagger - 3 consecutive attacks left
+222100371 Corvian Dagger - Triple Hammer Right
+222100400 Corvian Scythe - Jumping and lowering
+222100410 Corvian Scythe - Run Kari attack
+222100420 Corvian Scythe - Saigi First Stage
+222100430 Corvian Scythe - Saigi Second Stage
+222100440 Corvian Scythe - Shiri
+222100450 Corvian Scythe - 3 consecutive knocked back against (1st half)
+222100451 Corvian Scythe - 3 consecutive knocked back against (first half 2)
+222100460 Corvian Scythe - 3 consecutive knocked back against (late whack)
+222100470 Corvian Scythe - Additional jump attacks
+222100500 Corvian Staff - Insane
+222100510 Corvian Staff - Magical Flame Arrows
+222100520 Corvian Staff - Slams with cane
+222100530 Corvian Staff - Nagi with a cane
+222100540 Corvian Staff - Magic Sangi Flame
+222100550 Corvian Staff -
+222100560 Corvian Staff -
+222300100 Jailer Pressed against baked
+222300101 Jailer Pressed against a baking iron _ flipped judgment
+222300110 Jailer Bake and move forward
+222300111 Jailer A baking iron poised to move forward _ determined
+222300120 Jailer Petrified Mist (anterior) (head butt)
+222300130 Jailer Burned and pressed
+222300131 Jailer Pressing a baking iron _ flipped judgment
+222300150 Jailer 
+222300200 Jailer Petrified Mist (forward)
+222300210 Jailer Petrified Mist (range)
+222300220 Jailer 
+222300221 Jailer 
+222300222 Jailer 
+222300223 Jailer 
+222300224 Jailer 
+222300225 Jailer 
+222300226 Jailer 
+222300227 Jailer 
+222300228 Jailer 
+222300229 Jailer 
+222300230 Jailer 
+222300240 Jailer 
+222300300 Jailer Grilled and tossed (frontal damage)
+222300310 Jailer Grilled and tossed (back damage)
+222300320 Jailer 
+222300798 Jailer 
+222300799 Jailer 
+222300900 Jailer A spear of diffuse flames
+222300910 Jailer Diffuse Spear of Fire (pointer)
+222400100 Vordt of the Boreal Valley knocked back against Combo first attack (weapon)
+222400101 Vordt of the Boreal Valley knocked back against Combo first attack (body)
+222400102 Vordt of the Boreal Valley knocked back against combo second firing (weapon)
+222400103 Vordt of the Boreal Valley knocked back against combo second firing (body)
+222400110 Vordt of the Boreal Valley ground scraping whack (weapon)
+222400111 Vordt of the Boreal Valley ground scraping whack (body)
+222400112 Vordt of the Boreal Valley ground scraping whack (shockwave)
+222400120 Vordt of the Boreal Valley per Body (at rush hour)
+222400121 Vordt of the Boreal Valley Per Body (click-up)
+222400130 Vordt of the Boreal Valley Body Press (body)
+222400131 Vordt of the Boreal Valley Body Press (weapon parts, feet)
+222400132 Vordt of the Boreal Valley Body Press (shockwave)
+222400140 Vordt of the Boreal Valley Turning Attack (right)
+222400150 Vordt of the Boreal Valley Turning Attack (left)
+222400151 Vordt of the Boreal Valley Hammer (Arms)
+222400152 Vordt of the Boreal Valley Hammer (body)
+222400153 Vordt of the Boreal Valley Vertical slapping
+222400154 Vordt of the Boreal Valley thrust
+222400155 Vordt of the Boreal Valley Launch attack
+222400156 Vordt of the Boreal Valley The right tricky Kesa first Hammer (weapon)
+222400157 Vordt of the Boreal Valley The right tricky Kesa first Hammer (body)
+222400158 Vordt of the Boreal Valley The right tricky Kesa second firing (weapon)
+222400159 Vordt of the Boreal Valley Right tricky Kesa second firing (body)
+222400160 Vordt of the Boreal Valley Left Tricky Kesa first Hammer (weapon)
+222400161 Vordt of the Boreal Valley Left Tricky Kesa first Hammer (body)
+222400162 Vordt of the Boreal Valley Left Tricky Kesa second Hammer (weapon)
+222400163 Vordt of the Boreal Valley Left Tricky Kesa second firing (body)
+222400164 Vordt of the Boreal Valley per sprinter (weapon)
+222400165 Vordt of the Boreal Valley short-range body per (body)
+222400166 Vordt of the Boreal Valley Lunge (Retrospective) (Weapon 1)
+222400167 Vordt of the Boreal Valley Lunge (Retrospective) (Weapon 2)
+222400168 Vordt of the Boreal Valley Lunge (Retrospective) (Body 1)
+222400169 Vordt of the Boreal Valley Lunge (Retrospective) (Body 2)
+222400170 Vordt of the Boreal Valley Rush (Continuous) (Weapon 1)
+222400171 Vordt of the Boreal Valley Rush (Continuous) (Weapon 2)
+222400172 Vordt of the Boreal Valley Rush (Continuous) (body 1)
+222400173 Vordt of the Boreal Valley Rush (Continuous) (body 2)
+222400174 Vordt of the Boreal Valley Turned step (weapon)
+222400175 Vordt of the Boreal Valley Turned step (body)
+222400176 Vordt of the Boreal Valley Snowstorm Breath
+222400177 Vordt of the Boreal Valley lateral Saigi (weapon)
+222400178 Vordt of the Boreal Valley lateral Saigi (body)
+222400179 Vordt of the Boreal Valley knocked back against (for combo) (weapon)
+222400180 Vordt of the Boreal Valley knocked back against (for combo) (body)
+222400181 Vordt of the Boreal Valley Horizontal Saigi (for combo) (weapon)
+222400182 Vordt of the Boreal Valley lateral Saigi (for combo) (body)
+222400183 Vordt of the Boreal Valley Blizzard Breath (Aura)
+222400250 Vordt of the Boreal Valley right foot general purpose
+222400251 Vordt of the Boreal Valley Left Foot General
+222400270 Vordt of the Boreal Valley 
+222400273 Vordt of the Boreal Valley 
+222400274 Vordt of the Boreal Valley 
+222400275 Vordt of the Boreal Valley 
+222500100 Sulyvahn's Beast Bit from the top (depression)
+222500101 Sulyvahn's Beast From the top bit (depression) (body)
+222500102 Sulyvahn's Beast From the top bit (depression) (right)
+222500103 Sulyvahn's Beast From the top bit (depression) (left hand)
+222500110 Sulyvahn's Beast Close bit (from right): wait
+222500111 Sulyvahn's Beast Close bit (right): Wait (body)
+222500112 Sulyvahn's Beast Close bit (right): wait
+222500113 Sulyvahn's Beast Close bit (right): Wait (left)
+222500120 Sulyvahn's Beast Bit from the right: wait
+222500121 Sulyvahn's Beast Bit from right: wait (body)
+222500122 Sulyvahn's Beast Bit from right: wait (right)
+222500123 Sulyvahn's Beast Bit from right: wait (left hand)
+222500130 Sulyvahn's Beast Bit from the left: wait
+222500131 Sulyvahn's Beast Bit from the left: Wait (body)
+222500132 Sulyvahn's Beast Bit from the left: wait (left hand)
+222500133 Sulyvahn's Beast Bit from the left: wait (left hand)
+222500140 Sulyvahn's Beast Bit Dive
+222500141 Sulyvahn's Beast Dive bit (body)
+222500142 Sulyvahn's Beast Bit dive (right)
+222500143 Sulyvahn's Beast Bit dive (left hand)
+222500144 Sulyvahn's Beast Bit dive (right foot)
+222500145 Sulyvahn's Beast Bit dive (left foot)
+222500150 Sulyvahn's Beast Flipping from the plunge
+222500151 Sulyvahn's Beast Flipped from the plunge (right)
+222500152 Sulyvahn's Beast Flipping from the dive (left hand)
+222500153 Sulyvahn's Beast Flipped from the plunge (right foot)
+222500154 Sulyvahn's Beast Flipped from the dive (left foot)
+222500160 Sulyvahn's Beast Bit to the right side
+222500161 Sulyvahn's Beast Bit (body) to the right side
+222500162 Sulyvahn's Beast bit (right hand) to the right side
+222500163 Sulyvahn's Beast Bit to the right side (left)
+222500164 Sulyvahn's Beast Bit to the right side
+222500165 Sulyvahn's Beast Bit (left foot) to the right side
+222500170 Sulyvahn's Beast Bit to the left side
+222500171 Sulyvahn's Beast Bit (body) to the left side
+222500172 Sulyvahn's Beast bit (right hand) to the left side
+222500173 Sulyvahn's Beast Bit to left side (left)
+222500174 Sulyvahn's Beast Bit to the left side (right foot)
+222500175 Sulyvahn's Beast bit to left side
+222500180 Sulyvahn's Beast Open Mouth and Rush
+222500181 Sulyvahn's Beast Open mouth and Rush (right hand)
+222500182 Sulyvahn's Beast Open mouth and Rush (left hand)
+222500183 Sulyvahn's Beast Open mouth and Rush (right foot)
+222500184 Sulyvahn's Beast Open mouth and Rush (left foot)
+222500185 Sulyvahn's Beast Throwing damage
+222500186 Sulyvahn's Beast Throwing Damage 2
+222500187 Sulyvahn's Beast Throwing Damage 3
+222500190 Sulyvahn's Beast Lunge attack: bit 1
+222500191 Sulyvahn's Beast Lunge attack: Bit 2
+222500192 Sulyvahn's Beast Lunge attack: Bit 3 (finish)
+222500193 Sulyvahn's Beast Rush attack: Bit (body)
+222500194 Sulyvahn's Beast Rush attack: bit (right hand)
+222500195 Sulyvahn's Beast Rush attack: bit (left hand)
+222500196 Sulyvahn's Beast Rush attack: Bit (right foot)
+222500197 Sulyvahn's Beast Lunge attack: bit (left foot)
+222500200 Sulyvahn's Beast Bit (strong): a3003 Posture
+222500201 Sulyvahn's Beast Bit (strong): a3003 Posture (body)
+222500202 Sulyvahn's Beast Bit (strong): a3003 Posture (right)
+222500203 Sulyvahn's Beast Bit (strong): a3003 posture (left)
+222500210 Sulyvahn's Beast Writhes around on his back: head
+222500211 Sulyvahn's Beast Writhes around on his back: right hand
+222500212 Sulyvahn's Beast Writhes around on his back: left hand
+222500213 Sulyvahn's Beast Writhes around on his back: right foot
+222500214 Sulyvahn's Beast Writhes around on his back: left foot
+222500215 Sulyvahn's Beast Writhes around on his back: tail
+222500700 Sulyvahn's Beast Thunder Breath
+222600700 Ballista Barista
+222600710 Ballista Varistor object Destructive Bullets
+222600720 Ballista 
+222600730 Ballista 
+222700010 Giant Crab Right scissors _ swing down near face
+222700020 Giant Crab Right Shears _ thrusting
+222700030 Giant Crab Right Shears _ depression Piercing
+222700040 Giant Crab Left shears _ face near Chockin
+222700050 Giant Crab Left shears _ poked
+222700060 Giant Crab Left shears _ diagonal Continuous attack (1 ~ two)
+222700080 Giant Crab Right Shears _ Saigi
+222700090 Giant Crab Left and Right scissors lash (1-two)
+222700091 Giant Crab Left and right scissors rush (Sandanme)
+222700092 Giant Crab Left and right scissors rush (Shidara)
+222700093 Giant Crab Left and right scissors rush (Guarder)
+222700100 Giant Crab General Press
+222700110 Giant Crab Bubble spitting
+222700120 Giant Crab Right side attack (medium range)
+222700130 Giant Crab Right side attack (long distance)
+222700140 Giant Crab Left side attack (medium range)
+222700150 Giant Crab Left side attack (long distance)
+222700200 Giant Crab Throwing start
+222700201 Giant Crab Throwing attack (sandwiching)
+222700202 Giant Crab Throwing attack (finish)
+222700210 Giant Crab 
+222700211 Giant Crab 
+222700220 Giant Crab 
+222700221 Giant Crab 
+222700222 Giant Crab 
+222710010 Lesser Crab Chockin with right shears
+222710020 Lesser Crab Chockin with left shears
+222710030 Lesser Crab hit with both scissors (right)
+222710031 Lesser Crab with both scissors (left hand)
+222710040 Lesser Crab right-side attack (medium range)
+222710050 Lesser Crab Left side attack (medium range)
+222720010 Lord of the Crabs 
+222720020 Lord of the Crabs 
+222720030 Lord of the Crabs 
+222720040 Lord of the Crabs 
+222720050 Lord of the Crabs 
+222720060 Lord of the Crabs 
+222720080 Lord of the Crabs 
+222720090 Lord of the Crabs 
+222720091 Lord of the Crabs 
+222720092 Lord of the Crabs 
+222720093 Lord of the Crabs 
+222720100 Lord of the Crabs 
+222720110 Lord of the Crabs 
+222720120 Lord of the Crabs 
+222720130 Lord of the Crabs 
+222720140 Lord of the Crabs 
+222720150 Lord of the Crabs 
+222720200 Lord of the Crabs 
+222720201 Lord of the Crabs 
+222720202 Lord of the Crabs 
+222720210 Lord of the Crabs 
+222720211 Lord of the Crabs 
+222720220 Lord of the Crabs 
+222720221 Lord of the Crabs 
+222720222 Lord of the Crabs 
+222800010 Giant Rat 
+222800020 Giant Rat 
+222800030 Giant Rat 
+222800040 Giant Rat 
+222800050 Giant Rat 
+222800060 Giant Rat 
+222800070 Giant Rat 
+222800080 Giant Rat 
+222800090 Giant Rat 
+222800100 Giant Rat 
+222800110 Giant Rat 
+230200100 Giant Slave Unarmed - Right hook
+230200110 Giant Slave Unarmed - Left hand slams: left arm
+230200111 Giant Slave Unarmed - The left hand slams: knees
+230200120 Giant Slave Unarmed - both hand grated
+230200130 Giant Slave Unarmed - left elbow: Ling
+230200131 Giant Slave Unarmed - left elbow: Saigi
+230200140 Giant Slave Unarmed - Left foot crushing
+230200150 Giant Slave Unarmed - Right foot crush
+230200160 Giant Slave Unarmed - Explore action
+230200170 Giant Slave Unarmed - Transition to bare hands _ throw
+230200171 Giant Slave Unarmed - Throwing damage
+230200180 Giant Slave Unarmed - Turned Saigi
+230200190 Giant Slave Unarmed - ground crushed: slams
+230200191 Giant Slave Unarmed - ground crushed: crushed
+230200192 Giant Slave Unarmed -
+230200200 Giant Slave Unarmed -rampage: 1 shot left foot trampled
+230200201 Giant Slave Unarmed - Rampage: 2-hammer right foot trampling
+230200202 Giant Slave Unarmed - Rampage: 3rd Hammer left arm Saigi
+230200203 Giant Slave Unarmed - Rampage: 4-shot left foot depression
+230200204 Giant Slave Unarmed - Rampage: 5 Hammer right hook
+230200205 Giant Slave Unarmed - Rampage: 6th Hammer Right Back Fist
+230200206 Giant Slave Unarmed - Rampage: 7th Hammer left hook
+230200207 Giant Slave Unarmed - Rampage: 8th Hammer left Fist
+230200208 Giant Slave Unarmed - Rampage: 9th Hammer Right Saigi
+230200300 Giant Slave Saigi The Iron Sphere _ right
+230200310 Giant Slave Saigi The Iron Sphere _ left
+230200320 Giant Slave Iron Ball _ Iron Ball
+230200330 Giant Slave Iron Sphere _ Swing down: Left
+230200340 Giant Slave Iron Sphere _ Swing down: Right
+230200350 Giant Slave Iron Sphere _ Right foot crush
+230200360 Giant Slave Iron Sphere _ Left foot crushing
+230200370 Giant Slave Iron Sphere Bun
+230200500 Giant Slave Iron Sphere _ General pressure
+230200510 Giant Slave 
+230210100 Golem right leg trampling
+230210101 Golem Right foot trampled (wind pressure)
+230210110 Golem Left foot trampled
+230210111 Golem Left foot trampled (wind pressure)
+230210120 Golem grated both hand and hand 1
+230210121 Golem both hand-in-hand 1 (wind pressure)
+230210130 Golem Both hand and hand grated 2
+230210131 Golem Both hand and hand 2 (wind pressure)
+230210140 Golem Right hand (forward)
+230210150 Golem Right hand (rear)
+230210200 Golem 
+230210300 Golem Altar slapping
+230210301 Golem Altar slapping (wind pressure)
+230210310 Golem Altar whack
+230210320 Golem Heat up
+230210330 Golem Heat up
+230210340 Golem Heat up
+230210500 Golem right hand beating
+230210501 Golem Right hand punch (wind pressure)
+230210510 Golem Right Saigi
+230210520 Golem left-hand beating
+230210521 Golem Front left punch (wind pressure)
+230210530 Golem Left Saigi
+230210540 Golem Both sides of the front beating
+230210541 Golem Both sides beating (wind pressure)
+230210550 Golem Head butt
+230210560 Golem Right-hand bridge beating
+230210580 Golem Two-handed bridge punch
+230210590 Golem Right-hand bridge Saigi (beating)
+230210591 Golem Right-hand bridge Saigi (payable)
+230210600 Golem Left hand Dast Shute
+230210610 Golem 
+230210700 Golem right hand beating
+230210701 Golem Right hand punch (wind pressure)
+230210710 Golem Both hand and hand grated
+230210711 Golem Both hand and hand (wind pressure)
+230210720 Golem Left hand Saigi knocked back against part
+230210721 Golem Left hand Saigi knocked back against partial wind pressure
+230210722 Golem Left hand Saigi Saigi
+230210730 Golem Right hand Saigi
+230210740 Golem The right hand of the enshrined punch
+230210750 Golem The left hand of the morgue punch
+230210760 Golem left-hand beating
+230210761 Golem Front left punch (wind pressure)
+230210770 Golem Right hand grip
+230210771 Golem 
+230210772 Golem 
+230210780 Golem Left hand grip
+230210900 Golem 
+230210910 Golem 
+230400010 Abyss Watcher the Rush Whack Dagger
+230400011 Abyss Watcher Rush Whack Saigi
+230400020 Abyss Watcher the Sword up
+230400030 Abyss Watcher under the butt
+230400040 Abyss Watcher the reservoir thrust
+230400041 Abyss Watcher the Infuser Dash
+230400042 Abyss Watcher Infuser Guard
+230400050 Abyss Watcher Shiri
+230400051 Abyss Watcher lateral whack
+230400052 Abyss Watcher slams
+230400060 Abyss Watcher the forward slash
+230400070 Abyss Watcher A slew of attacking turns
+230400071 Abyss Watcher the attack dash
+230400080 Abyss Watcher Continuous Attack longsword
+230400081 Abyss Watcher a succession attack dagger
+230400082 Abyss Watcher Continuous attack tightening
+230400090 Abyss Watcher short distance restraint
+230400100 Abyss Watcher the Sword
+230400101 Abyss Watcher Dagger Stab
+230400102 Abyss Watcher Swinging
+230400110 Abyss Watcher 
+230400120 Abyss Watcher 
+230400121 Abyss Watcher 
+230400130 Abyss Watcher 
+230400131 Abyss Watcher 
+230400140 Abyss Watcher 
+230400141 Abyss Watcher 
+230400150 Abyss Watcher 
+230400160 Abyss Watcher 
+230400161 Abyss Watcher 
+230400310 Abyss Watcher 
+230400311 Abyss Watcher 
+230400320 Abyss Watcher 
+230400330 Abyss Watcher 
+230400340 Abyss Watcher 
+230400341 Abyss Watcher 
+230400342 Abyss Watcher 
+230400350 Abyss Watcher 
+230400351 Abyss Watcher 
+230400352 Abyss Watcher 
+230400360 Abyss Watcher 
+230400370 Abyss Watcher 
+230400371 Abyss Watcher 
+230400380 Abyss Watcher 
+230400381 Abyss Watcher 
+230400382 Abyss Watcher 
+230400390 Abyss Watcher 
+230400400 Abyss Watcher 
+230400401 Abyss Watcher 
+230400402 Abyss Watcher 
+230400410 Abyss Watcher 
+230400420 Abyss Watcher 
+230400421 Abyss Watcher 
+230400430 Abyss Watcher 
+230400431 Abyss Watcher 
+230400440 Abyss Watcher 
+230400441 Abyss Watcher 
+230400450 Abyss Watcher 
+230400460 Abyss Watcher 
+230400461 Abyss Watcher 
+230400700 Abyss Watcher 
+230400701 Abyss Watcher 
+230400710 Abyss Watcher 
+230400711 Abyss Watcher 
+230400712 Abyss Watcher 
+230400713 Abyss Watcher 
+230400714 Abyss Watcher 
+230400715 Abyss Watcher 
+230400716 Abyss Watcher 
+230400717 Abyss Watcher 
+230400718 Abyss Watcher 
+230400720 Abyss Watcher 
+230400740 Abyss Watcher 
+230400750 Abyss Watcher 
+230400760 Abyss Watcher 
+230400770 Abyss Watcher 
+230400780 Abyss Watcher 
+230400781 Abyss Watcher 
+230400820 Abyss Watcher 
+230400840 Abyss Watcher 
+230400841 Abyss Watcher 
+230400842 Abyss Watcher 
+230400843 Abyss Watcher 
+230400844 Abyss Watcher 
+230400845 Abyss Watcher 
+230400846 Abyss Watcher 
+230400847 Abyss Watcher 
+230400870 Abyss Watcher 
+230400880 Abyss Watcher 
+230400890 Abyss Watcher 
+230400900 Abyss Watcher 
+230400910 Abyss Watcher Middle Range Combo First stage
+230400911 Abyss Watcher Second Stage Combo
+230400920 Abyss Watcher Dust Makiage
+230400930 Abyss Watcher the reservoir thrust
+230400940 Abyss Watcher The first stage of the short range combo
+230400941 Abyss Watcher Second stage of the short range combo
+230400942 Abyss Watcher The third stage of the short range combo
+230400950 Abyss Watcher attack
+230400960 Abyss Watcher Positioning change
+230400970 Abyss Watcher from left to right
+230400980 Abyss Watcher Attack from the right
+230400990 Abyss Watcher The attack from the run
+230500100 Old Demon King Combo 1-1 Saigi
+230500101 Old Demon King Combo 1-2 slams (center point)
+230500102 Old Demon King Combo 1-2 slams (outer circle)
+230500110 Old Demon King ground-running Hatake
+230500111 Old Demon King Reverse Payment
+230500112 Old Demon King Ground-running Hatake (preliminary operation)
+230500120 Old Demon King Hammered slams (weapon vertical, center point)
+230500121 Old Demon King Hammered slams (weapon vertical, outer circle)
+230500130 Old Demon King Hammered and dropped (to the left, center point)
+230500131 Old Demon King Hammered and dropped (to the left, out of the circle)
+230500140 Old Demon King slams (right, center point)
+230500141 Old Demon King slams (outward circle to the right)
+230500150 Old Demon King Hammered lift drop (center point)
+230500151 Old Demon King Hammered Lift Drop (outer circle)
+230500160 Old Demon King slams (center point)
+230500161 Old Demon King slams (outer circle)
+230500170 Old Demon King add Bun slams 1
+230500171 Old Demon King Add Bun slams 2
+230500172 Old Demon King Additional Bun slams 3 (center)
+230500173 Old Demon King Additional Bun slams 3 (outer circle)
+230500180 Old Demon King 
+230500181 Old Demon King 
+230500190 Old Demon King 
+230500300 Old Demon King 
+230500700 Old Demon King Broad breath (straight wind)
+230500710 Old Demon King Immediate Breath (straight wind)
+230500720 Old Demon King Tobichiru Flame Search Grenade
+230500730 Old Demon King Lava meteor
+230500740 Old Demon King Lava tsunami
+230500760 Old Demon King 
+230500770 Old Demon King 
+230500790 Old Demon King 
+230500800 Old Demon King 
+230500810 Old Demon King 
+230600010 Demon Combo 1_ both hands: Saigi
+230600011 Demon Combo 1_ both hands: slams
+230600020 Demon lunge: Per body
+230600030 Demon close-up
+230600040 Demon slammed away
+230600050 Demon the first attack
+230600051 Demon 
+230600052 Demon 
+230600060 Demon ground-running Hatake
+230600070 Demon 
+230600080 Demon 
+230600090 Demon 
+230600100 Demon 
+230600110 Demon 
+230600120 Demon 
+230600700 Demon Breath
+230600701 Demon 
+230600710 Demon slams: Shockwave
+230600800 Demon Walk breath: Drop it at your feet
+230600801 Demon Walking breath: Leave at your feet
+230700010 Demon Cleric grated 1
+230700020 Demon Cleric grated 2
+230700030 Demon Cleric grated
+230700040 Demon Cleric 
+230700700 Demon Cleric The Fire ball of chaos
+230700701 Demon Cleric 
+230700710 Demon Cleric Chaos Fireball (second)
+230700711 Demon Cleric 
+230700720 Demon Cleric The Great Storm of Chaos
+230710700 Demon Cleric 
+230800100 Pilgrim Butterfly 
+230800700 Pilgrim Butterfly Scales rain
+230800710 Pilgrim Butterfly The Big God soldier laser
+230800720 Pilgrim Butterfly high-speed explosion
+230800730 Pilgrim Butterfly Scales bombing
+230800740 Pilgrim Butterfly Scales Rain 2
+230900010 Caged Hollow Violent
+230900100 Caged Hollow 
+231000010 Giant Crystal Lizard Right S-Saigi
+231000011 Giant Crystal Lizard Right S-Saigi _ Crystal
+231000020 Giant Crystal Lizard Left S-shaped Saigi
+231000021 Giant Crystal Lizard Left S-shaped Saigi _ Crystal
+231000030 Giant Crystal Lizard Left tail attack
+231000040 Giant Crystal Lizard Right tail attack
+231000050 Giant Crystal Lizard crushing both hands
+231000051 Giant Crystal Lizard both hands crushed
+231000060 Giant Crystal Lizard Plunge attack
+231000061 Giant Crystal Lizard Plunge attack _ Crystals
+231000070 Giant Crystal Lizard Breath
+231000080 Giant Crystal Lizard Right scratching
+231000090 Giant Crystal Lizard Left scratching
+231000100 Giant Crystal Lizard start of rotation (long distance)
+231000110 Giant Crystal Lizard spinning
+231000120 Giant Crystal Lizard Rotation complete
+231000130 Giant Crystal Lizard Rotation complete (reversal)
+231000140 Giant Crystal Lizard bit
+231000150 Giant Crystal Lizard Start of rotation (short distance)
+231000160 Giant Crystal Lizard moving left and right
+231000170 Giant Crystal Lizard Step left and right
+231000180 Giant Crystal Lizard Step back
+231000190 Giant Crystal Lizard for crystal attack
+231000220 Giant Crystal Lizard bit left derived
+231000221 Giant Crystal Lizard 
+231000230 Giant Crystal Lizard 
+231000231 Giant Crystal Lizard 
+231000240 Giant Crystal Lizard 
+231100010 Deep Acursed bit
+231100020 Deep Acursed bit: Depression
+231100030 Deep Acursed Crush with Arms: mouth
+231100031 Deep Acursed arms crushed by arms
+231100032 Deep Acursed crushing with Arms: depression Small: Mouth
+231100033 Deep Acursed crushing with Arms: stepping Small: Arms
+231100040 Deep Acursed Kari: High: Foot 1
+231100041 Deep Acursed Kari: High: Foot 2
+231100050 Deep Acursed Kari: Low-right
+231100051 Deep Acursed Kari: Low-handed
+231100060 Deep Acursed bit: Right side
+231100070 Deep Acursed bit: Left side
+231100080 Deep Acursed bit ②
+231100090 Deep Acursed rampage: the mouth
+231100091 Deep Acursed rampage: Left and right hind
+231100092 Deep Acursed rampage: the left leg
+231100093 Deep Acursed rampage: Four Legs
+231100700 Deep Acursed Exhale: Ground
+231100701 Deep Acursed Exhale: Previous
+231100710 Deep Acursed Smoke Screen
+231100800 Deep Acursed common attack obj good small, large 
+231200010 Elder Ghru Mori no sacred beast: Beat with a cane
+231200020 Elder Ghru Mori no sacred beast: Hit with a cane: depression
+231200030 Elder Ghru Forest Sacred Beast: Beat with a cane: left and right side
+231200040 Elder Ghru Mori no sacred Beast: Bun Cane: Depression
+231200050 Elder Ghru Mori no sacred beast: Punch with a cane: depression small
+231200060 Elder Ghru shaking with a cane: Bun posture
+231200500 Elder Ghru Mori no sacred beast: Cane common knocked back against shock wave: small
+231200510 Elder Ghru Mori no sacred beast: Cane common knocked back against shock wave: large
+231200700 Elder Ghru Magic 1: Force
+231200710 Elder Ghru Mori no sacred Beast: Magic 2: Soul Restraints
+231200720 Elder Ghru 
+231200730 Elder Ghru 
+231400100 Ancient Wyvern Straight Breath _ Head
+231400110 Ancient Wyvern Saigi Breath _ Head
+231400120 Ancient Wyvern Bit _ head
+231400121 Ancient Wyvern Bit _ Neck
+231400130 Ancient Wyvern Scratching _ Feet
+231400131 Ancient Wyvern Scratching _ Blast
+231400140 Ancient Wyvern Right squished _ feet
+231400141 Ancient Wyvern Right squished _ Blast
+231400150 Ancient Wyvern Left squished _ feet
+231400151 Ancient Wyvern Left squished _ Blast
+231400160 Ancient Wyvern A tail payment
+231400170 Ancient Wyvern Rush Bit _ Head
+231400171 Ancient Wyvern Rush Bit _ Neck
+231400180 Ancient Wyvern Immediate breath _ Foot
+231400181 Ancient Wyvern Immediate breath _ Blast
+231400190 Ancient Wyvern Glide Breath _ Head
+231400191 Ancient Wyvern Glide Breath _ Neck
+231400192 Ancient Wyvern Glide Breath _ feet
+231400193 Ancient Wyvern Glide Breath _ Blast
+231400200 Ancient Wyvern Right bit _ head
+231400201 Ancient Wyvern Right bit _ neck
+231400210 Ancient Wyvern Left bit _ head
+231400211 Ancient Wyvern Left bit _ neck
+231400500 Ancient Wyvern Straight Breath _ Breath
+231400505 Ancient Wyvern 
+231400510 Ancient Wyvern Saigi Bless _ Breath
+231400520 Ancient Wyvern Immediate breath _ Breath
+231400530 Ancient Wyvern Glide Breath _ Breath
+231400540 Ancient Wyvern Event ①: Hashimoto _ Swirling Breath _ bless ①
+231400550 Ancient Wyvern Event ①: Hashimoto _ Swirling Breath _ bless ②
+231400560 Ancient Wyvern Event ②: Climb 2_ appearance _ on tower → Square _ breath
+231400570 Ancient Wyvern Event ②: Climb 2_ another tower → square → breath withdrawal _ breath
+231400580 Ancient Wyvern Event ③: Rampage Breath A (breath _max)
+231400581 Ancient Wyvern Event ③: Rampaging breath A (ground)
+231400582 Ancient Wyvern Event ③: Rampaging Breath A (ground _ decal)
+231400583 Ancient Wyvern Event ③: Rampaging Breath A (breath _ ①)
+231400584 Ancient Wyvern Event ③: Rampaging Breath A (breath _ ②)
+231400585 Ancient Wyvern Event ③: Rampaging Breath A (breath _ ③)
+231400586 Ancient Wyvern Event ③: Rampaging Breath A (breath _ ④)
+231400587 Ancient Wyvern Event ③: Rampaging Breath A (breath _ ⑤)
+231400588 Ancient Wyvern Event ③: Rampaging Breath A (breath _ ⑥)
+231400590 Ancient Wyvern Event ③: Rampage Breath B (Breath _max)
+231400591 Ancient Wyvern Event ③: Rampaging Breath B (ground)
+231400592 Ancient Wyvern Event ③: Rampaging Breath B (ground _ Decal)
+231400593 Ancient Wyvern Event ③: Rampaging Breath B (Breath _ ①)
+231400594 Ancient Wyvern Event ③: Rampaging Breath B (Breath _ ②)
+231400595 Ancient Wyvern Event ③: Rampaging Breath B (Breath _ ③)
+231400596 Ancient Wyvern Event ③: Rampaging Breath B (Breath _ ④)
+231400597 Ancient Wyvern Event ③: Rampaging Breath B (Breath _ ⑤)
+231400598 Ancient Wyvern Event ③: Rampaging Breath B (Breath _ ⑥)
+231400600 Ancient Wyvern Event ④: Ojo 1_ Groan (plumes)
+231400610 Ancient Wyvern Event ⑤: Ojo 1_-ridden wait a (plume)
+231400620 Ancient Wyvern Event ⑥: Ojo 1_-ridden wait B (plume)
+231400630 Ancient Wyvern Event ③: Rampaging Breath B (ground _ aisle side)
+231400631 Ancient Wyvern Event ③: Rampaging Breath B (ground _ Aisle Side _ Decals)
+231400640 Ancient Wyvern Event ③: Rampage Breath A (small per-ground judging)
+231400641 Ancient Wyvern Event ③: Rampage Breath A (ground _ judging Small _ decal)
+231400650 Ancient Wyvern Event ③: Rampage Breath B (ground _ small judgment per)
+231400651 Ancient Wyvern Event ③: Rampage Breath B (Ground _ Judging Small _ decal)
+231400652 Ancient Wyvern Event ③: Rampage Breath B (ground _ per judgment Large)
+231400653 Ancient Wyvern Event ③: Rampage Breath B (ground _ per judgment Large _ decal)
+231400660 Ancient Wyvern Event: Withdrawal breath (All)
+231400661 Ancient Wyvern Event: Withdrawal Breath (Breath _ ①)
+231400662 Ancient Wyvern Event: Withdrawal Breath (Breath _ ②)
+231400663 Ancient Wyvern Event: Withdrawal Breath (Breath _ ③)
+231400664 Ancient Wyvern Event: Withdrawal Breath (Breath _ ④)
+231400665 Ancient Wyvern Event: Withdrawal Breath (Breath _ ⑤)
+231400666 Ancient Wyvern Event: Withdrawal Breath (Breath _ ⑥)
+231400667 Ancient Wyvern Event: Withdrawal breath (judgment per ground)
+231400668 Ancient Wyvern Event: Withdrawal breath (ground _ per judgment Large _ decal)
+231400670 Ancient Wyvern Event: Bonfire Breath (All)
+231400671 Ancient Wyvern Event: Bonfire (Breath _ ①)
+231400672 Ancient Wyvern Event: Bonfire (Breath _ ②)
+231400673 Ancient Wyvern Event: Bonfire (Breath _ ③)
+231400674 Ancient Wyvern Event: Bonfire (Breath _ ④)
+231400675 Ancient Wyvern Event: Bonfire (Breath _ ⑤)
+231400676 Ancient Wyvern Event: Bonfire (Breath _ ⑥)
+231400677 Ancient Wyvern Event: Bonfire Breath (judgment per ground)
+231400678 Ancient Wyvern Event: Bonfire Breath (ground _ per judgment Large _ decal)
+231400680 Ancient Wyvern Event: Left side breath (all)
+231400681 Ancient Wyvern Event: Left Side breath (breath _ ①)
+231400682 Ancient Wyvern Event: Left Side breath (breath _ ②)
+231400683 Ancient Wyvern Event: Left Side breath (breath _ ③)
+231400684 Ancient Wyvern Event: Left Side breath (breath _ ④)
+231400685 Ancient Wyvern Event: Left Side breath (breath _ ⑤)
+231400686 Ancient Wyvern Event: Left Side breath (breath _ ⑥)
+231400687 Ancient Wyvern Event: Left side breath (judgment per ground)
+231400688 Ancient Wyvern Event: Left Side breath (ground _ per judgment Large _ decal)
+231400690 Ancient Wyvern 
+231400691 Ancient Wyvern 
+231400700 Ancient Wyvern Event ①: Hashimoto _ appeared _ Feet
+231400701 Ancient Wyvern Event ①: Hashimoto _ appeared _ Blast (left)
+231400702 Ancient Wyvern Event ①: Hashimoto _ appeared _ Blast (right)
+231400710 Ancient Wyvern Event ①: Hashimoto _ Circling Breath _ feet
+231400711 Ancient Wyvern Event ①: Hashimoto _ Swirling Breath _ blast
+231400750 Ancient Wyvern 
+231400751 Ancient Wyvern 
+231400752 Ancient Wyvern 
+231400755 Ancient Wyvern 
+231400756 Ancient Wyvern 
+231400757 Ancient Wyvern 
+231400760 Ancient Wyvern 
+231400770 Ancient Wyvern 
+231400800 Ancient Wyvern Event ②: Climb 2_ appearance _ on tower → Square _ feet
+231400801 Ancient Wyvern Event ②: Climb 2_ appearance _ on tower → Square _ blast (left)
+231400802 Ancient Wyvern Event ②: Climb 2_ appearance _ on tower → Square _ blast (right)
+231400820 Ancient Wyvern Event ②: Climb 2_ another tower → square → breath withdrawal _ foot
+231400821 Ancient Wyvern Event ②: Climb 2_ another tower → square → breath withdrawal _ blast
+231400900 Ancient Wyvern 
+231400901 Ancient Wyvern 
+231400902 Ancient Wyvern 
+231400903 Ancient Wyvern 
+231400904 Ancient Wyvern 
+231400905 Ancient Wyvern 
+231400906 Ancient Wyvern 
+231400907 Ancient Wyvern 
+231400908 Ancient Wyvern 
+231400910 Ancient Wyvern 
+231400911 Ancient Wyvern 
+231400912 Ancient Wyvern 
+231400913 Ancient Wyvern 
+231400914 Ancient Wyvern 
+231400915 Ancient Wyvern 
+231400916 Ancient Wyvern 
+231400917 Ancient Wyvern 
+231400918 Ancient Wyvern 
+231400950 Ancient Wyvern 
+231400951 Ancient Wyvern 
+231400952 Ancient Wyvern 
+231400953 Ancient Wyvern 
+231400954 Ancient Wyvern 
+231400955 Ancient Wyvern 
+231400956 Ancient Wyvern 
+231400957 Ancient Wyvern 
+231400958 Ancient Wyvern 
+231400960 Ancient Wyvern 
+231400961 Ancient Wyvern 
+231400962 Ancient Wyvern 
+231400963 Ancient Wyvern 
+231400964 Ancient Wyvern 
+231400965 Ancient Wyvern 
+231400966 Ancient Wyvern 
+231400967 Ancient Wyvern 
+231400968 Ancient Wyvern 
+231600010 Dragonslayer Armour advancethe
+231600020 Dragonslayer Armour Crossing _1
+231600021 Dragonslayer Armour cross-stage
+231600030 Dragonslayer Armour Shield bash
+231600031 Dragonslayer Armour Axe Swing
+231600040 Dragonslayer Armour Axe turned attack
+231600041 Dragonslayer Armour 
+231600050 Dragonslayer Armour Shield turned attack
+231600060 Dragonslayer Armour 
+231600061 Dragonslayer Armour 
+231600070 Dragonslayer Armour 
+231600080 Dragonslayer Armour 
+231600090 Dragonslayer Armour 
+231600100 Dragonslayer Armour 
+231600110 Dragonslayer Armour 
+231600120 Dragonslayer Armour 
+231600130 Dragonslayer Armour 
+231600131 Dragonslayer Armour 
+231600140 Dragonslayer Armour 
+231600150 Dragonslayer Armour 
+231600160 Dragonslayer Armour 
+231600170 Dragonslayer Armour 
+231600180 Dragonslayer Armour 
+231600190 Dragonslayer Armour 
+231600200 Dragonslayer Armour Heat up - Jump Shield knocked back against
+231600210 Dragonslayer Armour Heat up - Derived Sword
+231600220 Dragonslayer Armour Heat up - Shield knocked back against
+231600230 Dragonslayer Armour Heat up - Shield Bash added
+231600240 Dragonslayer Armour Heat up - Shield Combo 1
+231600250 Dragonslayer Armour Heat up - Shield guillotine
+231600260 Dragonslayer Armour Heat up - Gurdcancell Bash
+231600270 Dragonslayer Armour Arts _ Rush Dragon Hunt: Assault
+231600280 Dragonslayer Armour arts _ extensive whack
+231600290 Dragonslayer Armour the Arts _ Shockwave: Axe
+231600300 Dragonslayer Armour arts _ Jump Guillotine
+231600700 Dragonslayer Armour Shockwave
+231600900 Dragonslayer Armour Guard
+231610010 Cathedral Guardian 
+231610020 Cathedral Guardian 
+231610021 Cathedral Guardian 
+231610030 Cathedral Guardian Shield Bash
+231610031 Cathedral Guardian Axe Swing
+231610040 Cathedral Guardian Axe Turning Attack
+231610041 Cathedral Guardian 
+231610050 Cathedral Guardian Shield Turning Attack
+231610060 Cathedral Guardian 
+231610061 Cathedral Guardian 
+231610070 Cathedral Guardian 
+231610080 Cathedral Guardian Hold Hammer and Smash
+231610081 Cathedral Guardian Hold Hammer and Smash - Bullet
+231610090 Cathedral Guardian 
+231610100 Cathedral Guardian 
+231610110 Cathedral Guardian 
+231610120 Cathedral Guardian 
+231610130 Cathedral Guardian 
+231610131 Cathedral Guardian 
+231610140 Cathedral Guardian 
+231610150 Cathedral Guardian 
+231610160 Cathedral Guardian 
+231610170 Cathedral Guardian 
+231610180 Cathedral Guardian 
+231610190 Cathedral Guardian 
+231610200 Cathedral Guardian HU: Jump Shield Bash
+231610210 Cathedral Guardian HU: Sword
+231610220 Cathedral Guardian HU: Shield Bash
+231610230 Cathedral Guardian HU: Shield Bash
+231610240 Cathedral Guardian HU: Shield Combo
+231610250 Cathedral Guardian HU: Shield Guillotine
+231610260 Cathedral Guardian HU: Guard Bash
+231610270 Cathedral Guardian WA: Assault
+231610280 Cathedral Guardian WA: Whack
+231610290 Cathedral Guardian WA: Axe Shockwave
+231610300 Cathedral Guardian WA: Jump Slash
+231610700 Cathedral Guardian Wrath of the Gods
+231610800 Cathedral Guardian Floating Holy Mine
+231610900 Cathedral Guardian Guard
+231620010 Mirror Knight advancethe
+231620020 Mirror Knight Crossing _1
+231620021 Mirror Knight cross-stage
+231620030 Mirror Knight Shield bash
+231620031 Mirror Knight Axe Swing
+231620040 Mirror Knight Axe turned attack
+231620041 Mirror Knight 
+231620050 Mirror Knight Shield turned attack
+231620060 Mirror Knight 
+231620061 Mirror Knight 
+231620070 Mirror Knight 
+231620080 Mirror Knight 
+231620090 Mirror Knight 
+231620100 Mirror Knight 
+231620110 Mirror Knight 
+231620120 Mirror Knight 
+231620130 Mirror Knight 
+231620131 Mirror Knight 
+231620140 Mirror Knight 
+231620150 Mirror Knight 
+231620160 Mirror Knight 
+231620170 Mirror Knight 
+231620180 Mirror Knight 
+231620190 Mirror Knight 
+231620200 Mirror Knight Heat up - Jump Shield knocked back against
+231620210 Mirror Knight Heat up - Derived Sword
+231620220 Mirror Knight Heat up - Shield knocked back against
+231620230 Mirror Knight Heat up - Shield Bash added
+231620240 Mirror Knight Heat up - Shield Combo 1
+231620250 Mirror Knight Heat up - Shield guillotine
+231620260 Mirror Knight Heat up - Gurdcancell Bash
+231620270 Mirror Knight Arts _ Rush Dragon Hunt: Assault
+231620280 Mirror Knight arts _ extensive whack
+231620290 Mirror Knight the Arts _ Shockwave: Axe
+231620300 Mirror Knight arts _ Jump Guillotine
+231620400 Mirror Knight Thunder Strike
+231620500 Mirror Knight Shield Spell Deflect
+231620700 Mirror Knight Shockwave
+231620900 Mirror Knight Guard
+231700010 Darkwraith Slashing 1
+231700011 Darkwraith Slashing 2
+231700012 Darkwraith Slashing 3
+231700013 Darkwraith Slashing 4
+231700020 Darkwraith Poke a Pause
+231700030 Darkwraith Both hand-held strength 1
+231700031 Darkwraith Both hand-held strength 2
+231700040 Darkwraith Pre Kick
+231700050 Darkwraith Absorbing Soul Grab
+231700051 Darkwraith Soul-grabbing: throwing damage
+231700060 Darkwraith Cancel Soul Grab
+231700070 Darkwraith Right side to attack
+231700080 Darkwraith Left side to attack
+231700090 Darkwraith Soul Grip: Guard Posture
+231700100 Darkwraith Cancel Kick
+231700110 Darkwraith Jump skewered
+231700120 Darkwraith Dash Whack
+231700130 Darkwraith 
+231700131 Darkwraith 
+231700900 Darkwraith 
+232100010 Poisonhorn Bug 
+232100020 Poisonhorn Bug 
+232200030 Rock Lizard 
+232200040 Rock Lizard 
+232200050 Rock Lizard 
+232201030 Rocky 
+232201040 Rocky 
+232201050 Rocky 
+250100010 Nameless King Whack: Sword damage
+250100020 Nameless King whack second stage: Sword damage
+250100030 Nameless King Swing: Sword damage
+250100040 Nameless King ① one-handed Shiri
+250100050 Nameless King Both hands left Kesa
+250100060 Nameless King Both hand thrusts
+250100070 Nameless King A deadly thrust
+250100080 Nameless King Two Hands side 一閃
+250100081 Nameless King 
+250100090 Nameless King Both hand and down
+250100100 Nameless King Left foot down, lightning
+250100110 Nameless King Turned attack
+250100120 Nameless King Swing down attack
+250100130 Nameless King Two-handed left pay
+250100150 Nameless King Small Dash Rush & Flip
+250100160 Nameless King Stepping down
+250100170 Nameless King 
+250100180 Nameless King 
+250100190 Nameless King 
+250100200 Nameless King Gwin throwing: grasping judgment
+250100201 Nameless King Gwin Throw: Blast
+250100210 Nameless King 
+250100220 Nameless King 
+250100300 Nameless King 
+250100310 Nameless King 
+250100320 Nameless King 
+250100330 Nameless King 
+250100340 Nameless King 
+250100350 Nameless King 
+250100360 Nameless King 
+250100370 Nameless King 
+250100371 Nameless King 
+250100380 Nameless King 
+250100390 Nameless King 
+250100400 Nameless King 
+250100410 Nameless King 
+250100420 Nameless King 
+250100430 Nameless King 
+250100440 Nameless King 
+250100450 Nameless King 
+250100460 Nameless King 
+250100470 Nameless King 
+250100480 Nameless King 
+250100490 Nameless King 
+250100491 Nameless King 
+250100500 Nameless King 
+250100510 Nameless King 
+250100520 Nameless King 
+250100521 Nameless King 
+250100522 Nameless King 
+250100530 Nameless King 
+250100531 Nameless King 
+250100532 Nameless King 
+250100533 Nameless King 
+250100540 Nameless King 
+250100541 Nameless King 
+250100550 Nameless King 
+250100551 Nameless King 
+250100552 Nameless King 
+250100700 Nameless King  whack: Bullet damage
+250100701 Nameless King 
+250100710 Nameless King whack second stage: bullet damage
+250100711 Nameless King 
+250100720 Nameless King Swing: Bullet damage
+250100730 Nameless King 
+250100731 Nameless King 
+250200000 Demon Prince 
+250200010 Demon Prince Right hook
+250200020 Demon Prince Kari: Right
+250200030 Demon Prince Hands slams: Right
+250200035 Demon Prince 
+250200040 Demon Prince Left hook to right side
+250200043 Demon Prince 
+250200046 Demon Prince 
+250200048 Demon Prince 
+250200049 Demon Prince 
+250200050 Demon Prince Right hook to left side
+250200055 Demon Prince 
+250200060 Demon Prince Jump up and crush on Wings: Right
+250200070 Demon Prince 
+250200090 Demon Prince 
+250200110 Demon Prince 
+250200115 Demon Prince 
+250200119 Demon Prince 
+250200140 Demon Prince 
+250200141 Demon Prince 
+250200142 Demon Prince 
+250200145 Demon Prince 
+250200150 Demon Prince 
+250200155 Demon Prince 
+250200160 Demon Prince 
+250200170 Demon Prince 
+250200175 Demon Prince 
+250200190 Demon Prince 
+250200191 Demon Prince 
+250200195 Demon Prince 
+250200200 Demon Prince 
+250200205 Demon Prince 
+250200206 Demon Prince 
+250200210 Demon Prince 
+250200211 Demon Prince 
+250200220 Demon Prince 
+250200225 Demon Prince 
+250200226 Demon Prince 
+250200228 Demon Prince 
+250200230 Demon Prince 
+250200240 Demon Prince 
+250200245 Demon Prince 
+250200250 Demon Prince 
+250200260 Demon Prince 
+250200270 Demon Prince 
+250200271 Demon Prince 
+250200280 Demon Prince 
+250200300 Demon Prince 
+250200305 Demon Prince 
+250200306 Demon Prince 
+250200310 Demon Prince 
+250200320 Demon Prince 
+250200324 Demon Prince 
+250200325 Demon Prince 
+250200360 Demon Prince 
+250200370 Demon Prince 
+250200400 Demon Prince 
+250200410 Demon Prince 
+250200420 Demon Prince 
+250200421 Demon Prince 
+250200430 Demon Prince 
+250200431 Demon Prince 
+250200435 Demon Prince 
+250200440 Demon Prince 
+250200443 Demon Prince 
+250200446 Demon Prince 
+250200450 Demon Prince 
+250200455 Demon Prince 
+250200456 Demon Prince 
+250200460 Demon Prince 
+250200461 Demon Prince 
+250200470 Demon Prince 
+250200490 Demon Prince 
+250200560 Demon Prince 
+250200570 Demon Prince 
+250200571 Demon Prince 
+250200575 Demon Prince 
+250200580 Demon Prince 
+250200581 Demon Prince 
+250200710 Demon Prince 
+250200711 Demon Prince 
+250200712 Demon Prince 
+250200713 Demon Prince 
+250200720 Demon Prince 
+250200730 Demon Prince 
+250200740 Demon Prince 
+250200950 Demon Prince 
+250200955 Demon Prince 
+250200990 Demon Prince 
+250210050 Demon Prince 
+250210100 Demon Prince 
+250210105 Demon Prince 
+250210150 Demon Prince 
+250210710 Demon Prince 
+250210715 Demon Prince 
+250220150 Demon Prince 
+250220700 Demon Prince 
+250220710 Demon Prince 
+250220720 Demon Prince 
+250220730 Demon Prince 
+250220750 Demon Prince 
+250220751 Demon Prince 
+250220752 Demon Prince 
+250220753 Demon Prince 
+250220760 Demon Prince 
+250220761 Demon Prince 
+250220762 Demon Prince 
+250220763 Demon Prince 
+250220770 Demon Prince 
+250220771 Demon Prince 
+250220772 Demon Prince 
+250220773 Demon Prince 
+250300100 King of the Storm Other ground payment 1
+250300110 King of the Storm Swing attack: Pay
+250300111 King of the Storm Swing attack: per body
+250300120 King of the Storm trampled (left foot): Direct hit
+250300121 King of the Storm trampled (left foot): Blast
+250300130 King of the Storm Other flying attack: thrusting
+250300131 King of the Storm Other flying attacks: per body
+250300140 King of the Storm ground swing down: simple
+250300150 King of the Storm Pay: For jumping
+250300160 King of the Storm Ground small setback & forward thrust
+250300170 King of the Storm Ground Small retreat Breath: Root
+250300171 King of the Storm Ground Small retreat breath: Middle
+250300172 King of the Storm Ground Small retreat Breath: Tip
+250300180 King of the Storm Jumped bless
+250300190 King of the Storm Jump over: Rush on takeoff
+250300200 King of the Storm Swing down: for jumping
+250300201 King of the Storm 
+250300210 King of the Storm Ground payment 2
+250300220 King of the Storm Ground down
+250300221 King of the Storm 
+250300230 King of the Storm Trampled (right foot): direct hit
+250300231 King of the Storm Trampled (right foot): Blast
+250300240 King of the Storm 
+250300241 King of the Storm 
+250300250 King of the Storm 
+250300260 King of the Storm 
+250300270 King of the Storm 
+250300280 King of the Storm 
+250300300 King of the Storm 
+250300302 King of the Storm 
+250300310 King of the Storm 
+250300320 King of the Storm 
+250300330 King of the Storm 
+250300740 King of the Storm 
+250300741 King of the Storm 
+250300750 King of the Storm 
+250300751 King of the Storm 
+250300760 King of the Storm 
+250300770 King of the Storm 
+250300780 King of the Storm 
+250300781 King of the Storm 
+250300800 King of the Storm Right foot Hit
+250300810 King of the Storm Right foot blast
+250300820 King of the Storm Left foot hit
+250300830 King of the Storm Left foot blast
+250300835 King of the Storm Body hit
+250300840 King of the Storm Neck to face
+250300850 King of the Storm Right foot
+250300860 King of the Storm Left foot
+250300900 King of the Storm 
+251100010 Gundyr Strike Forward
+251100020 Gundyr Sweep
+251100030 Gundyr Jump Attack
+251100040 Gundyr Punch
+251100050 Gundyr Triple Combo: Sweep
+251100060 Gundyr Triple Combo: Tackle
+251100070 Gundyr Triple Combo: Lunge
+251100080 Gundyr Melee Combo: Thrust
+251100090 Gundyr Melee Combo: Vertical Strike
+251100091 Gundyr Melee Combo: Backward Strike
+251100100 Gundyr Kick
+251100110 Gundyr Grab
+251100120 Gundyr Forward Step Swipe
+251100130 Gundyr Melee Combo: Thrust
+251100140 Gundyr Melee Combo: Thrust
+251100150 Gundyr Melee Combo: Strike
+251100160 Gundyr Charge
+251100161 Gundyr Charge - Swipe
+251100170 Gundyr Knock Up
+251100180 Gundyr Slam Feet - Initial
+251100181 Gundyr Slam Feet - Spreading
+251100182 Gundyr Slam Feet - Max
+251100190 Gundyr Kick
+251100191 Gundyr Kick
+251100200 Gundyr Punch - Heat-up Transition
+251100210 Gundyr Tackle - Heat-up Transition
+251100290 Gundyr Sweep - Heat-up Transition
+251100300 Gundyr - Pus of Man Heat up combo a ① (piercing)
+251100310 Gundyr - Pus of Man heat up attack: Combo a ② (bouncing up)
+251100330 Gundyr - Pus of Man heat up attack: Combo B ② (return Saigi)
+251100340 Gundyr - Pus of Man heat up attack: Combo B ③ (left hand slams)
+251100350 Gundyr - Pus of Man heat up attack: Combo C ① (right hand jump ⇒ thrusting)
+251100351 Gundyr - Pus of Man heat up attack: Combo C ① (right hand jump ⇒ Piercing) _ Left hand judgment
+251100360 Gundyr - Pus of Man heat up attack: Combo C ② (left hand Saigi)
+251100380 Gundyr - Pus of Man heat up attack: Rear attack ② (right hand Saigi, range)
+251100391 Gundyr - Pus of Man heat up attack: ⇒ slams _ range with tail & left body
+251100400 Gundyr - Pus of Man Heat-up attack: Transition attack to throw ①
+251100420 Gundyr - Pus of Man heat up attack: Walk/Tail Attack _ Swing
+251100430 Gundyr - Pus of Man heat up attack: Medium/Long Distance/Saigi _ arm
+251100431 Gundyr - Pus of Man heat up attack: Medium/Long Distance/Saigi _ slashing
+251100441 Gundyr - Pus of Man heat up attack: Melee attack _ Snake Spirit Arm
+251100450 Gundyr - Pus of Man 
+251100451 Gundyr - Pus of Man 
+251100500 Gundyr Jump Attack - Bullet
+251100600 Gundyr 
+251100700 Gundyr throwing
+251100710 Gundyr heats up attack: throwing _ slams ①
+251100711 Gundyr heats up attack: throwing _ slams ②
+251100712 Gundyr heats up attack: throwing _ slams ③
+251100713 Gundyr heat up attack: Throw _ Finish
+251100800 Gundyr Corrupted Fist - Bullet
+251100801 Gundyr Corrupted Bite - Bullet
+251100910 Gundyr White Tear
+251100950 Gundyr - Pus of Man - Writhing Deep
+251200010 Gundyr - Pus of Man - Frontal melee attack _ head knocked back against
+251200011 Gundyr - Pus of Man - Frontal melee attack _ head lateral shaking
+251200012 Gundyr - Pus of Man - Frontal melee Attack _ head + neck knocked back against
+251200013 Gundyr - Pus of Man - Frontal melee Attack _ head + neck knocked back against Shockwave
+251200020 Gundyr - Pus of Man - Combo First hammer (right hand Saigi)
+251200030 Gundyr - Pus of Man - Combo 2 firing (left hand Saigi)
+251200040 Gundyr - Pus of Man - Range Turning Attack _ Body Press _ Head
+251200041 Gundyr - Pus of Man - Range Turning Attack _ body Press _ abdomen
+251200042 Gundyr - Pus of Man - Range Turning Attack _ Body Press _ Shockwave
+251200050 Gundyr - Pus of Man - per body (rush)
+251200060 Gundyr - Pus of Man - Backward bite attack (left)
+251200070 Gundyr - Pus of Man - Backward bite attack (right)
+251200080 Gundyr - Pus of Man - Tail attack
+251200090 Gundyr - Pus of Man - bit attack first stage
+251200091 Gundyr - Pus of Man - bit attack second stage
+251200100 Gundyr - Pus of Man - caries breath
+251200110 Gundyr - Pus of Man - Tail attack
+251200120 Gundyr - Pus of Man - turned knocked back against: Head knocked back against
+251200121 Gundyr - Pus of Man - turned knocked back against: lunge
+251200130 Gundyr - Pus of Man - bit tail: bit first stage
+251200131 Gundyr - Pus of Man - bit tail: bit second stage
+251200132 Gundyr - Pus of Man - bit tail: tail
+251200140 Gundyr - Pus of Man - bit loop: bit 1st Stage
+251200141 Gundyr - Pus of Man - bit loop: bit second stage
+251200142 Gundyr - Pus of Man - bit loop: bit third stage
+251200710 Gundyr - Pus of Man - Caries explosion
+251200720 Gundyr - Pus of Man - caries accumulation
+251200730 Gundyr - Pus of Man - caries Reservoir _hu
+251200800 Gundyr - Pus of Man - walking _ Body Damage
+251200801 Gundyr - Pus of Man - walking _ right hand
+251200802 Gundyr - Pus of Man - walking _ Left Hand
+251200810 Gundyr - Pus of Man - Traveling _ Body Damage
+251200811 Gundyr - Pus of Man - walking _ right hand
+251200812 Gundyr - Pus of Man - walking _ Left Hand
+251400010 Pontiff Sulyvahn A clockwise attack (evasion included)
+251400020 Pontiff Sulyvahn a left-handed attack (evasion included)
+251400030 Pontiff Sulyvahn Jump forward
+251400040 Pontiff Sulyvahn the right hand attack 1
+251400050 Pontiff Sulyvahn A right-hand attack 2
+251400060 Pontiff Sulyvahn A right-hand attack 3
+251400070 Pontiff Sulyvahn Left hand thrust (throwing start technique)
+251400071 Pontiff Sulyvahn Left hand thrust (throwing damage)
+251400072 Pontiff Sulyvahn Left hand piercing (throwing damage deadline)
+251400080 Pontiff Sulyvahn Left hand thrust
+251400090 Pontiff Sulyvahn 
+251400100 Pontiff Sulyvahn 
+251400110 Pontiff Sulyvahn a clockwise attack
+251400120 Pontiff Sulyvahn a left-handed attack (attack)
+251400130 Pontiff Sulyvahn 
+251400140 Pontiff Sulyvahn 
+251400141 Pontiff Sulyvahn 
+251400150 Pontiff Sulyvahn 
+251400160 Pontiff Sulyvahn 
+251400170 Pontiff Sulyvahn 
+251400180 Pontiff Sulyvahn 
+251400190 Pontiff Sulyvahn 
+251400200 Pontiff Sulyvahn 
+251400201 Pontiff Sulyvahn 
+251400202 Pontiff Sulyvahn 
+251400210 Pontiff Sulyvahn 
+251400220 Pontiff Sulyvahn 
+251400221 Pontiff Sulyvahn 
+251400222 Pontiff Sulyvahn 
+251400223 Pontiff Sulyvahn 
+251400230 Pontiff Sulyvahn 
+251400231 Pontiff Sulyvahn 
+251400232 Pontiff Sulyvahn 
+251400250 Pontiff Sulyvahn 
+251400251 Pontiff Sulyvahn 
+251400260 Pontiff Sulyvahn 
+251400261 Pontiff Sulyvahn 
+251400262 Pontiff Sulyvahn 
+251400310 Pontiff Sulyvahn 
+251400320 Pontiff Sulyvahn 
+251400330 Pontiff Sulyvahn Jump forward
+251400340 Pontiff Sulyvahn A forward jump dive and a left thrust
+251400350 Pontiff Sulyvahn jumping upward and falling back
+251400360 Pontiff Sulyvahn upward jump flapping left thrusting
+251400370 Pontiff Sulyvahn 
+251400371 Pontiff Sulyvahn 
+251400372 Pontiff Sulyvahn 
+251400380 Pontiff Sulyvahn 
+251400390 Pontiff Sulyvahn 
+251400400 Pontiff Sulyvahn 
+251400410 Pontiff Sulyvahn 
+251400420 Pontiff Sulyvahn 
+251400430 Pontiff Sulyvahn 
+251400440 Pontiff Sulyvahn 
+251400441 Pontiff Sulyvahn 
+251400450 Pontiff Sulyvahn 
+251400460 Pontiff Sulyvahn 
+251400470 Pontiff Sulyvahn 
+251400480 Pontiff Sulyvahn 
+251400490 Pontiff Sulyvahn 
+251400500 Pontiff Sulyvahn 
+251400501 Pontiff Sulyvahn 
+251400502 Pontiff Sulyvahn 
+251400510 Pontiff Sulyvahn 
+251400520 Pontiff Sulyvahn 
+251400521 Pontiff Sulyvahn 
+251400522 Pontiff Sulyvahn 
+251400523 Pontiff Sulyvahn 
+251400530 Pontiff Sulyvahn 
+251400531 Pontiff Sulyvahn 
+251400532 Pontiff Sulyvahn 
+251400550 Pontiff Sulyvahn 
+251400551 Pontiff Sulyvahn 
+251400560 Pontiff Sulyvahn 
+251400561 Pontiff Sulyvahn 
+251400562 Pontiff Sulyvahn 
+251400700 Pontiff Sulyvahn 
+251400800 Pontiff Sulyvahn 
+251400801 Pontiff Sulyvahn 
+251400810 Pontiff Sulyvahn 
+251400811 Pontiff Sulyvahn 
+251401010 Pontiff Sulyvahn Spirit -
+251401020 Pontiff Sulyvahn Spirit -
+251401030 Pontiff Sulyvahn Spirit -
+251401040 Pontiff Sulyvahn Spirit -
+251401050 Pontiff Sulyvahn Spirit -
+251401060 Pontiff Sulyvahn Spirit -
+251401070 Pontiff Sulyvahn Spirit -
+251401071 Pontiff Sulyvahn Spirit -
+251401072 Pontiff Sulyvahn Spirit -
+251401080 Pontiff Sulyvahn Spirit -
+251401090 Pontiff Sulyvahn Spirit -
+251401100 Pontiff Sulyvahn Spirit -
+251401110 Pontiff Sulyvahn Spirit -
+251401120 Pontiff Sulyvahn Spirit -
+251401130 Pontiff Sulyvahn Spirit -
+251401140 Pontiff Sulyvahn Spirit -
+251401141 Pontiff Sulyvahn Spirit -
+251401150 Pontiff Sulyvahn Spirit -
+251401160 Pontiff Sulyvahn Spirit -
+251401170 Pontiff Sulyvahn Spirit -
+251401180 Pontiff Sulyvahn Spirit -
+251401190 Pontiff Sulyvahn Spirit -
+251401200 Pontiff Sulyvahn Spirit -
+251401201 Pontiff Sulyvahn Spirit -
+251401202 Pontiff Sulyvahn Spirit -
+251401210 Pontiff Sulyvahn Spirit -
+251401220 Pontiff Sulyvahn Spirit -
+251401221 Pontiff Sulyvahn Spirit -
+251401222 Pontiff Sulyvahn Spirit -
+251401223 Pontiff Sulyvahn Spirit -
+251401230 Pontiff Sulyvahn Spirit -
+251401231 Pontiff Sulyvahn Spirit -
+251401232 Pontiff Sulyvahn Spirit -
+251401250 Pontiff Sulyvahn Spirit -
+251401251 Pontiff Sulyvahn Spirit -
+251401260 Pontiff Sulyvahn Spirit -
+251401261 Pontiff Sulyvahn Spirit -
+251401262 Pontiff Sulyvahn Spirit -
+251401310 Pontiff Sulyvahn Spirit -
+251401320 Pontiff Sulyvahn Spirit -
+251401330 Pontiff Sulyvahn Spirit -
+251401340 Pontiff Sulyvahn Spirit -
+251401350 Pontiff Sulyvahn Spirit -
+251401360 Pontiff Sulyvahn Spirit -
+251401370 Pontiff Sulyvahn Spirit -
+251401371 Pontiff Sulyvahn Spirit -
+251401372 Pontiff Sulyvahn Spirit -
+251401380 Pontiff Sulyvahn Spirit -
+251401390 Pontiff Sulyvahn Spirit -
+251401400 Pontiff Sulyvahn Spirit -
+251401410 Pontiff Sulyvahn Spirit -
+251401420 Pontiff Sulyvahn Spirit -
+251401430 Pontiff Sulyvahn Spirit -
+251401440 Pontiff Sulyvahn Spirit -
+251401441 Pontiff Sulyvahn Spirit -
+251401450 Pontiff Sulyvahn Spirit -
+251401460 Pontiff Sulyvahn Spirit -
+251401470 Pontiff Sulyvahn Spirit -
+251401480 Pontiff Sulyvahn Spirit -
+251401490 Pontiff Sulyvahn Spirit -
+251401500 Pontiff Sulyvahn Spirit -
+251401501 Pontiff Sulyvahn Spirit -
+251401502 Pontiff Sulyvahn Spirit -
+251401510 Pontiff Sulyvahn Spirit -
+251401520 Pontiff Sulyvahn Spirit -
+251401521 Pontiff Sulyvahn Spirit -
+251401522 Pontiff Sulyvahn Spirit -
+251401523 Pontiff Sulyvahn Spirit -
+251401530 Pontiff Sulyvahn Spirit -
+251401531 Pontiff Sulyvahn Spirit -
+251401532 Pontiff Sulyvahn Spirit -
+251401550 Pontiff Sulyvahn Spirit -
+251401551 Pontiff Sulyvahn Spirit -
+251401560 Pontiff Sulyvahn Spirit -
+251401561 Pontiff Sulyvahn Spirit -
+251401562 Pontiff Sulyvahn Spirit -
+251401700 Pontiff Sulyvahn Spirit -
+251500100 Aldrich Stick a cane
+251500110 Aldrich Climb slams and right
+251500120 Aldrich Swinging Right
+251500130 Aldrich Ascent slams, left
+251500140 Aldrich Swinging left
+251500150 Aldrich Forward Thrust: Cane
+251500151 Aldrich Forward Thrust: Body
+251500160 Aldrich Whack attack: Whack
+251500170 Aldrich Rear Swing
+251500180 Aldrich U-turn Iaido
+251500190 Aldrich Dive: At the time of appearance
+251500191 Aldrich 
+251500200 Aldrich Tail Furi
+251500700 Aldrich Induction Bullet
+251500710 Aldrich Whack: Magic shot
+251500712 Aldrich 
+251500720 Aldrich Magic Penetrating Bullets
+251500730 Aldrich NITs Sword follower Elementalers
+251500731 Aldrich 
+251500732 Aldrich 
+251500733 Aldrich 
+251500734 Aldrich 
+251500740 Aldrich NITs self-centered explosion
+251500750 Aldrich 
+251500751 Aldrich 
+251500752 Aldrich 
+251500753 Aldrich 
+251500754 Aldrich 
+251500755 Aldrich 
+251500756 Aldrich 
+251500760 Aldrich 
+251600010 High Lord Wolnir Right hand knocked back against
+251600020 High Lord Wolnir Right hand Saigi
+251600030 High Lord Wolnir Left hand knocked back against
+251600040 High Lord Wolnir Black Flames
+251600050 High Lord Wolnir Forward attack-right hand
+251600051 High Lord Wolnir Forward attack-left hand
+251600060 High Lord Wolnir Miasma (before HU)
+251600061 High Lord Wolnir Miasma (before HU)
+251600063 High Lord Wolnir 
+251600064 High Lord Wolnir 
+251600070 High Lord Wolnir Tomb King Sword taken out
+251600080 High Lord Wolnir Tomb King Sword eject attack a
+251600090 High Lord Wolnir Tomb King Sword removal attack b
+251600300 High Lord Wolnir the grave elementalers of the tomb king
+251600301 High Lord Wolnir The great elementalers of the grave king
+251600302 High Lord Wolnir Grave King Elementalers (Chase bullet A)
+251600303 High Lord Wolnir Grave Elementalers (outbreak)
+251600304 High Lord Wolnir Grave King Elementalers (Chase bullet A right)
+251600305 High Lord Wolnir Grave King Elementalers (Chase bullet A left)
+251600306 High Lord Wolnir Tomb of the King Elementalers (Chase Bullet B)
+251600307 High Lord Wolnir Grave King Elementalers (Chase Bullet B right)
+251600308 High Lord Wolnir Grave King Elementalers (Chase Bullet B left)
+251600309 High Lord Wolnir Tomb of King Elementalers (Chase bullet C right 1)
+251600310 High Lord Wolnir Grave King Elementalers (Chase Bullet C right 2)
+251600311 High Lord Wolnir Grave King Elementalers (Chase bullet C left 1)
+251600312 High Lord Wolnir Grave King Elementalers (Chase Bullet C left 2)
+251600313 High Lord Wolnir Right hand Sword attack
+251600320 High Lord Wolnir Right hand sword Nagi
+251600330 High Lord Wolnir the left hand slams
+251600340 High Lord Wolnir a forward attack
+251600341 High Lord Wolnir 
+251600350 High Lord Wolnir Skeleton Resurrection
+251600370 High Lord Wolnir Right hand Saigi added (before HU)
+251600380 High Lord Wolnir shifted hands slams (before Hu) _ Right hand
+251600381 High Lord Wolnir shifted hands slams (before Hu) _ Left hand
+251600390 High Lord Wolnir The Rush (before Hu) _ Body
+251600391 High Lord Wolnir The Rush (before Hu) _ right arm
+251600392 High Lord Wolnir Rush (before Hu) _ left arm
+251600400 High Lord Wolnir Miasma (after Hu)
+251600401 High Lord Wolnir Miasma (after Hu)
+251600403 High Lord Wolnir 
+251600410 High Lord Wolnir two-slash (after Hu)
+251600420 High Lord Wolnir Right hand sword thrust (after Hu)
+251600430 High Lord Wolnir The rush (after Hu) _ body
+251600431 High Lord Wolnir Rush (after Hu) _ Left hand
+251600432 High Lord Wolnir Rush (after Hu) _ Right Hand Sword
+251600700 High Lord Wolnir Drifting miasma
+251700010 Unknown gu long: breath
+251800010 Curse-rotted Greatwood a3000 right foot crush
+251800020 Curse-rotted Greatwood a3001 left foot crushing
+251800030 Curse-rotted Greatwood a3002 right hand slapping crush
+251800040 Curse-rotted Greatwood a3003 left hand beating crush
+251800050 Curse-rotted Greatwood a3004 Right-hand Saigi
+251800060 Curse-rotted Greatwood a3005 left hand Saigi
+251800070 Curse-rotted Greatwood a3006 Hip Drop
+251800080 Curse-rotted Greatwood a3007 Rising hip drop
+251800090 Curse-rotted Greatwood a3008 two-handed crush
+251800100 Curse-rotted Greatwood a3009 Right-hand rotation attack
+251800110 Curse-rotted Greatwood a3010 left hand rotation attack
+251800120 Curse-rotted Greatwood a3011 stomping crush: Belly near: Right hit
+251800130 Curse-rotted Greatwood a3012 on foot: distant front: Left foot hit
+251800140 Curse-rotted Greatwood a3000 right foot crush: Second hammer
+251800150 Curse-rotted Greatwood a3001 left foot crushing: Second hammer
+251800160 Curse-rotted Greatwood a3002 right hand crush: Second Hammer
+251800170 Curse-rotted Greatwood a3003 left hand crush: Second Hammer
+251800180 Curse-rotted Greatwood Rush Crush
+251800200 Curse-rotted Greatwood 
+251800210 Curse-rotted Greatwood 
+251800220 Curse-rotted Greatwood 
+251800221 Curse-rotted Greatwood 
+251800300 Curse-rotted Greatwood Right-turn attack: arm
+251800301 Curse-rotted Greatwood Right turning attack: belly arm
+251800310 Curse-rotted Greatwood Left arm rotation attack
+251800311 Curse-rotted Greatwood Left turn attack: Belly arm
+251800340 Curse-rotted Greatwood Ground gouge: The belly arm slams
+251800341 Curse-rotted Greatwood Ground Gouge: Gouge
+251800350 Curse-rotted Greatwood Hip Drop
+251800370 Curse-rotted Greatwood Get up and tumble
+251800380 Curse-rotted Greatwood Belly arm Continuous slams: 4 consecutive
+251800390 Curse-rotted Greatwood Rush: belly Arms Saigi blow eyes
+251800391 Curse-rotted Greatwood Rush: Belly arm Saigi Second hammer
+251800392 Curse-rotted Greatwood Rush: Belly Arm slams
+251800400 Curse-rotted Greatwood Real crush: slams
+251800401 Curse-rotted Greatwood Actual Crush: Rubbed
+251800402 Curse-rotted Greatwood 
+251800410 Curse-rotted Greatwood a1003010_ Throw
+251800411 Curse-rotted Greatwood a1003010_ Throwing damage
+251800420 Curse-rotted Greatwood Slams: Combo Stage
+251800430 Curse-rotted Greatwood Real throw
+251800440 Curse-rotted Greatwood Right foot crushing
+251800441 Curse-rotted Greatwood Right foot crushing: a blow to the belly
+251800442 Curse-rotted Greatwood Right foot crush: Belly arm Second Hammer
+251800450 Curse-rotted Greatwood Left foot crushing
+251800451 Curse-rotted Greatwood Left foot crushing: belly blow
+251800452 Curse-rotted Greatwood Left foot crushing: Belly arm second Hammer
+251800460 Curse-rotted Greatwood Right hand crush: Right hand
+251800461 Curse-rotted Greatwood Right hand crush: Belly blow
+251800462 Curse-rotted Greatwood Right hand crush: two-eyed belly
+251800470 Curse-rotted Greatwood Left hand crush: Left hand
+251800471 Curse-rotted Greatwood Crushing the left hand: a blow on his belly
+251800472 Curse-rotted Greatwood Crushing the left hand: two eyes on the belly
+251800480 Curse-rotted Greatwood 
+251800481 Curse-rotted Greatwood 
+251800482 Curse-rotted Greatwood 
+251800500 Curse-rotted Greatwood 
+251800510 Curse-rotted Greatwood 
+251800520 Curse-rotted Greatwood 
+251800800 Curse-rotted Greatwood Generic: Mystery Juice: Bullet
+251800810 Curse-rotted Greatwood 
+251800900 Curse-rotted Greatwood Fuselage General: Scratch
+251800901 Curse-rotted Greatwood Fuselage General: Shockwave
+251800902 Curse-rotted Greatwood Fuselage General: Blast
+251800910 Curse-rotted Greatwood Right arm general purpose: scratch
+251800911 Curse-rotted Greatwood Right Palm General: Shockwave
+251800920 Curse-rotted Greatwood Left arm General: Scratch
+251800921 Curse-rotted Greatwood Left Palm General: Shockwave
+251800930 Curse-rotted Greatwood Right foot general purpose: scratch
+251800931 Curse-rotted Greatwood Right Palm General: Shockwave
+251800940 Curse-rotted Greatwood Left foot general: Scratch
+251800941 Curse-rotted Greatwood Left Palm General: Shockwave
+251800950 Curse-rotted Greatwood Abdominal hand: Scratch
+251800951 Curse-rotted Greatwood Belly-Palm Versatile: Shockwave
+252000010 Stray Demon deb Daemon: Right Nagi
+252000020 Stray Demon Deb Daemon: Left Nagi
+252000030 Stray Demon deb daemon: Feet Right Nagi
+252000040 Stray Demon Deb Daemon: Primary seal
+252000050 Stray Demon deb daemon: feet left Nagi
+252000060 Stray Demon deb Daemon: underfoot knocked back against
+252000070 Stray Demon Fat daemon: Medium range swing down
+252000080 Stray Demon Fat daemon: Long distance swing down
+252000090 Stray Demon Deb Daemon: Hip drop
+252000100 Stray Demon 
+252000110 Stray Demon 
+252000111 Stray Demon 
+252000200 Stray Demon Deb Daemon: right rear Nagi
+252000210 Stray Demon deb Daemon: battering slugfest Combo First stage
+252000211 Stray Demon Deb Daemon: The second stage of the battering slugfest combo
+252000212 Stray Demon Deb Daemon: The slugfest combo third stage
+252000213 Stray Demon 
+252000220 Stray Demon deb Daemon: Saigi Otsuchi
+252000230 Stray Demon Deb: Hit the ground with your left hand
+252000240 Stray Demon Deb Daemon: Pay the ground with your left hand (knocked back against)
+252000250 Stray Demon Deb Daemon: knocked back against Otsuchi
+252000260 Stray Demon 
+252000300 Stray Demon 
+252000700 Stray Demon 
+252000710 Stray Demon 
+252200110 Deacon of the Deep 
+252200120 Deacon of the Deep 
+252200700 Deacon of the Deep Fireball
+252200800 Deacon of the Deep Curse helmeted
+252200801 Deacon of the Deep 
+252200810 Deacon of the Deep 
+252200811 Deacon of the Deep 
+252200820 Deacon of the Deep 
+252200821 Deacon of the Deep 
+252200830 Deacon of the Deep 
+252200831 Deacon of the Deep 
+252200900 Deacon of the Deep 
+252210110 Deacon of the Deep Fat Deacon -
+252210120 Deacon of the Deep Fat Deacon -
+252210130 Deacon of the Deep Fat Deacon -
+252210140 Deacon of the Deep Fat Deacon -
+252210210 Deacon of the Deep Fat Deacon -
+252210220 Deacon of the Deep Fat Deacon -
+252210230 Deacon of the Deep Fat Deacon -
+252210240 Deacon of the Deep Fat Deacon -
+252210700 Deacon of the Deep Fat Deacon - Fireball
+252210710 Deacon of the Deep Fat Deacon - Force
+252210720 Deacon of the Deep Fat Deacon -
+252210800 Deacon of the Deep Fat Deacon - Curse
+252210801 Deacon of the Deep Fat Deacon -
+252210900 Deacon of the Deep Fat Deacon -
+252220110 Deacon of the Deep Tall Deacon -
+252220120 Deacon of the Deep Tall Deacon -
+252220210 Deacon of the Deep Tall Deacon -
+252220220 Deacon of the Deep Tall Deacon -
+252220700 Deacon of the Deep Tall Deacon - Fireball
+252220800 Deacon of the Deep Tall Deacon - Curse
+252220801 Deacon of the Deep Tall Deacon -
+252220900 Deacon of the Deep Tall Deacon -
+252220901 Deacon of the Deep Tall Deacon -
+252220910 Deacon of the Deep Tall Deacon -
+252230110 Deacon of the Deep Deacon -
+252230120 Deacon of the Deep Deacon -
+252230210 Deacon of the Deep Deacon -
+252230220 Deacon of the Deep Deacon -
+252230700 Deacon of the Deep Deacon - Fireball
+252230800 Deacon of the Deep Deacon - Curse
+252230801 Deacon of the Deep Deacon -
+252400100 Irithyll Fire Witch Torch Always damage
+252400110 Irithyll Fire Witch Torch Floor Stain
+252400200 Irithyll Fire Witch The magic of this flame snake (explosion crawling on the ground)
+252400210 Irithyll Fire Witch Magic Rising Fire dragon (rising pillar)
+252400220 Irithyll Fire Witch Magic Slow Fire (slow-induced bullets)
+252400225 Irithyll Fire Witch 
+252400230 Irithyll Fire Witch Magic Explosion Diffusion (scatter)
+252400240 Irithyll Fire Witch Magic Reserve
+252400250 Irithyll Fire Witch Magic Reserve
+252400300 Irithyll Fire Witch Moonlight: grasping stab thrust (throwing transition)
+252400301 Irithyll Fire Witch Gripping Sting (burning damage)
+252400302 Irithyll Fire Witch Grab stab thrust (knocked back against damage)
+252400310 Irithyll Fire Witch Swirling attack
+252400320 Irithyll Fire Witch Attack 1
+252400330 Irithyll Fire Witch Attack 2
+252400340 Irithyll Fire Witch Attack 3
+252500100 Prince Lorian Whack
+252500110 Prince Lorian Reverse whack
+252500120 Prince Lorian Swing down
+252500121 Prince Lorian 
+252500130 Prince Lorian Strong attack
+252500131 Prince Lorian Strong attack: Shockwave
+252500140 Prince Lorian Thrusting
+252500150 Prince Lorian Turning: Right
+252500160 Prince Lorian Turning payment: Left
+252500170 Prince Lorian  Fall attack
+252500180 Prince Lorian Behind the attack
+252500190 Prince Lorian Right side attack
+252500200 Prince Lorian left side attack
+252500210 Prince Lorian 
+252500700 Prince Lorian 
+252500702 Prince Lorian 
+252500710 Prince Lorian 
+252500720 Prince Lorian 
+252500730 Prince Lorian 
+252500740 Prince Lorian 
+252510900 Prince Lothric Guard
+252520010 Prince Lothric 
+252520020 Prince Lothric 
+252520030 Prince Lothric 
+252520040 Prince Lothric 
+252520050 Prince Lothric 
+252520060 Prince Lothric 
+252520070 Prince Lothric 
+252520080 Prince Lothric 
+252520090 Prince Lothric 
+252520100 Prince Lothric 
+252520110 Prince Lothric 
+252520120 Prince Lothric 
+252520130 Prince Lothric 
+252520140 Prince Lothric 
+252520150 Prince Lothric 
+252520160 Prince Lothric 
+252520170 Prince Lothric 
+252520180 Prince Lothric 
+252520190 Prince Lothric 
+252520699 Prince Lothric 
+252520700 Prince Lothric 
+252520709 Prince Lothric 
+252520710 Prince Lothric 
+252520719 Prince Lothric 
+252520720 Prince Lothric 
+252520730 Prince Lothric 
+252600100 Yhorm the Giant Machete - Smash Down
+252600110 Yhorm the Giant Machete - Smash Down - Follow-up Behind
+252600120 Yhorm the Giant Machete - Smash Down - Follow-up Swipe Behind
+252600130 Yhorm the Giant Machete - Smash Down - To the Side
+252600140 Yhorm the Giant Machete - Strike
+252600150 Yhorm the Giant Machete - Strike - Follow-up Strike
+252600160 Yhorm the Giant Machete - Strike - Follow-up Swipe
+252600170 Yhorm the Giant Machete - Strike Across
+252600180 Yhorm the Giant Machete - Strike
+252600190 Yhorm the Giant Machete - Swipe
+252600200 Yhorm the Giant Machete - Moving Strike
+252600210 Yhorm the Giant Machete - Moving Strike - Follow-up Swipe
+252600220 Yhorm the Giant Machete - Moving Strike - Follow-up Swipe
+252600230 Yhorm the Giant Machete - Vertical Strike
+252600240 Yhorm the Giant Machete - Vertical Strike - Follow-up Swipe
+252600250 Yhorm the Giant Machete - Vertical Strike - Follow-up Vertical Strike
+252600260 Yhorm the Giant Machete - Rampage Rush - Right to Left
+252600261 Yhorm the Giant Machete - Rampage Rush - Chain - Left to Right
+252600262 Yhorm the Giant Machete - Rampage Rush - Chain - Strike Down
+252600263 Yhorm the Giant Machete - Rampage Rush - Chain - Strike Down
+252600270 Yhorm the Giant Machete - Jump and Punch
+252600271 Yhorm the Giant Machete - Jump and Punch - Bullet
+252600280 Yhorm the Giant Machete - Quick Slash
+252600281 Yhorm the Giant Machete - Quick Slash - Chain - Smash Down
+252600290 Yhorm the Giant Machete - Forward Push Upwards
+252600291 Yhorm the Giant Machete - Forward Push Upwards - Chain
+252600300 Yhorm the Giant Machete - Forward Push Upwards - Follow-up - Smash Down
+252600310 Yhorm the Giant Roar
+252600311 Yhorm the Giant Roar - Chain - Small Radius
+252600312 Yhorm the Giant Roar - Chain - Full Radius
+252600313 Yhorm the Giant Roar - Bullet (Old)
+252600314 Yhorm the Giant Roar - Bullet
+252600400 Yhorm the Giant Weapon Swing - Shockwave
+252600410 Yhorm the Giant Weapon Swing - Shockwave - Heatup
+252600420 Yhorm the Giant Weapon Swing - Shockwave - Bullet
+252600500 Yhorm the Giant Explosion - Heatup
+252600510 Yhorm the Giant Explosion - Heatup
+252600600 Yhorm the Giant Explosion - Heatup - Bullet
+252600800 Yhorm the Giant Rubble Rain
+252600810 Yhorm the Giant Earth Pillar
+252600830 Yhorm the Giant Flame Pillar
+252600900 Yhorm the Giant Earth Mine
+252600920 Yhorm the Giant Fire Mine
+252700000 Dancer of the Boreal Valley 3000 The butt
+252700010 Dancer of the Boreal Valley 3001 Saigi from falling butt
+252700020 Dancer of the Boreal Valley 3002 right hand slams from fallen butt
+252700030 Dancer of the Boreal Valley 3003 behind the attack
+252700040 Dancer of the Boreal Valley a leftist attack from _3004 slams
+252700041 Dancer of the Boreal Valley Second-wing attack from Dancer of the Boreal Valley 3004 slams
+252700050 Dancer of the Boreal Valley Frontal derivation attack from Dancer of the Boreal Valley 3005
+252700060 Dancer of the Boreal Valley Right-derived attack from Dancer of the Boreal Valley 3006
+252700070 Dancer of the Boreal Valley 3007 Slap
+252700080 Dancer of the Boreal Valley 3008 Saigi (tie from back slap)
+252700090 Dancer of the Boreal Valley 3009 Kesa cut
+252700100 Dancer of the Boreal Valley 3010 Rising Saigi attack
+252700110 Dancer of the Boreal Valley 3011 frontal slams attack
+252700120 Dancer of the Boreal Valley 3012 Saigi.
+252700130 Dancer of the Boreal Valley 3013 Rising one-handed
+252700140 Dancer of the Boreal Valley 3014 explosion
+252700150 Dancer of the Boreal Valley 3015 left attack (90 degrees turning)
+252700151 Dancer of the Boreal Valley 3015 left attack (90 degrees turning) pillar
+252700160 Dancer of the Boreal Valley 3016-derived combo 1
+252700170 Dancer of the Boreal Valley 3017-derived combo 2
+252700180 Dancer of the Boreal Valley 3018-derived combo 3
+252700190 Dancer of the Boreal Valley 3019 continuous slap first shot
+252700191 Dancer of the Boreal Valley 3019 continuous slap second shot
+252700200 Dancer of the Boreal Valley 3020 The left step rotation slash
+252700210 Dancer of the Boreal Valley 3021 the right step slash
+252700220 Dancer of the Boreal Valley 3022 Jump attack
+252700230 Dancer of the Boreal Valley 3023 Attack 1
+252700231 Dancer of the Boreal Valley 3023 Attack second firing
+252700232 Dancer of the Boreal Valley _3023 attack, the third firing.
+252700233 Dancer of the Boreal Valley _3023 attack, four firing eyes.
+252700234 Dancer of the Boreal Valley _3023 attack, five firing eyes.
+252700235 Dancer of the Boreal Valley 3023 Attack 6 firing
+252700236 Dancer of the Boreal Valley 3023 attack 7th
+252700240 Dancer of the Boreal Valley 3024 Horizontal Slash combo 1
+252700250 Dancer of the Boreal Valley 3025 Horizontal Slash combo 2
+252700260 Dancer of the Boreal Valley 3026 Horizontal Slash combo 3
+252700270 Dancer of the Boreal Valley 3027 Startup technique
+252700320 Dancer of the Boreal Valley 3032 Attack _ Finish
+252700330 Dancer of the Boreal Valley 3033 Foot Sword
+252700410 Dancer of the Boreal Valley 4100 Attack by c5270_ Tracker
+252700500 Dancer of the Boreal Valley 100_3000 HU fall-down thrust sword
+252700501 Dancer of the Boreal Valley 100_3000 HU fall into a two-stage caries sword
+252700510 Dancer of the Boreal Valley 100_3001 HU behind the attack two-stage caries sword
+252700511 Dancer of the Boreal Valley 100_3001 HU slams attack two-tiered fire sword
+252700520 Dancer of the Boreal Valley 100_3002 HU Eclipse explosion two-stage warning
+252700521 Dancer of the Boreal Valley 100_3002 HU Eclipse explosion stage explosion
+252700522 Dancer of the Boreal Valley 100_3002 HU caries explosion two-stage caries sword
+252700530 Dancer of the Boreal Valley 100_3003 HU Right Saigi
+252700540 Dancer of the Boreal Valley 100_3004 HU left Saigi
+252700550 Dancer of the Boreal Valley 100_3005 HU Saigi 1 second firing
+252700551 Dancer of the Boreal Valley 100_3005 HU double Saigi second firing
+252700560 Dancer of the Boreal Valley 100_3006 HU Saigi
+252700570 Dancer of the Boreal Valley 100_3007 HU throwing start of caries sword
+252700571 Dancer of the Boreal Valley 100_3007 HU throwing Fire Sword
+252700580 Dancer of the Boreal Valley 100_3008 HU Rise of the Shook sword
+252700581 Dancer of the Boreal Valley 100_3008 HU Rise of the Shook sword
+252700590 Dancer of the Boreal Valley 100_3009 HU frontal slams attack caries sword
+252700591 Dancer of the Boreal Valley 100_3009 HU frontal slams attack flame sword
+252700600 Dancer of the Boreal Valley 100_3010 HU The left-wing raw attack from a slams
+252700601 Dancer of the Boreal Valley 100_3010 HU second-wing attack from the slams
+252700610 Dancer of the Boreal Valley Front-derived attack from Dancer of the Boreal Valley 100_3011 HU slams
+252700620 Dancer of the Boreal Valley Right-derived attack from Dancer of the Boreal Valley 100_3012 HU slams
+252700630 Dancer of the Boreal Valley 100_3013 HU rising both hand and hand
+252700631 Dancer of the Boreal Valley 100_3013 HU rise both hand-to-hand attack flame Sword
+252700640 Dancer of the Boreal Valley 100_3014 HU left step rotation sword
+252700641 Dancer of the Boreal Valley 100_3014 HU left step rotation Sword of Flame
+252700650 Dancer of the Boreal Valley 100_3015 HU Right step sword of Flame
+252700651 Dancer of the Boreal Valley 100_3015 HU Right step sword of caries
+252700660 Dancer of the Boreal Valley 100_3016 HU rush attack 1 caries
+252700661 Dancer of the Boreal Valley 100_3016 HU Rush Attack 2 Flames
+252700662 Dancer of the Boreal Valley 100_3016 HU rush Attack 3 caries
+252700663 Dancer of the Boreal Valley 100_3016 HU Rush Attack 4 Flames
+252700664 Dancer of the Boreal Valley 100_3016 HU Rush Attack 5 Flames
+252700665 Dancer of the Boreal Valley 100_3016 HU lash attack 6 caries
+252700666 Dancer of the Boreal Valley 100_3016 HU Rush Attack 7 Flames
+252700667 Dancer of the Boreal Valley 100_3016 HU rush attack 8 caries
+252700668 Dancer of the Boreal Valley 100_3016 HU Rush Attack 9 Flames
+252700670 Dancer of the Boreal Valley 100_3017 HU Triple combo 1 caries
+252700671 Dancer of the Boreal Valley 100_3017 HU Triple combo 1 Flame
+252700672 Dancer of the Boreal Valley 100_3017 HU Triple combo 2 Flames
+252700673 Dancer of the Boreal Valley 100_3017 HU Triple combo 2 caries
+252700674 Dancer of the Boreal Valley 100_3017 HU triple combo 3 caries
+252700675 Dancer of the Boreal Valley 100_3017 HU triple combo 3 Flames
+252700680 Dancer of the Boreal Valley 100_3018 HU Rotation attack _ Starting Flame Sword
+252700681 Dancer of the Boreal Valley 100_3018 HU Rotation attack _ Starting caries Sword
+252700690 Dancer of the Boreal Valley 100_3019 HU rotation attack loop caries Sword
+252700691 Dancer of the Boreal Valley 100_3019 HU rotation attack loop Flame Sword
+252700700 Dancer of the Boreal Valley 100_3020 HU Revolving attack _ Finish caries Sword
+252700701 Dancer of the Boreal Valley 100_3020 HU Rotation attack _ Finish Flame Sword
+252700710 Dancer of the Boreal Valley 100_3021 HU jump attack Flame Stab
+252700711 Dancer of the Boreal Valley 100_3021 HU Jump attack caries
+252700720 Dancer of the Boreal Valley 100_3022 HU right attack (90 degree swivel) caries Sword
+252700721 Dancer of the Boreal Valley 100_3022 HU right attack (90 degree turning) caries column
+252700730 Dancer of the Boreal Valley 100_3023 HU left attack (90 degree swivel) Flame Sword
+252700731 Dancer of the Boreal Valley 100_3023 HU left attack (90 degree turning) Flame pillar
+252700740 Dancer of the Boreal Valley 100_3024 HU frontal thrust attack caries Sword
+252700750 Dancer of the Boreal Valley 100_3025 HU turned Saigi 1 two simultaneous caries
+252700751 Dancer of the Boreal Valley 100_3025 HU turned Saigi 1 Flames 2 simultaneous
+252700900 Dancer of the Boreal Valley 1500 Heat-up transition caries Vortex
+252800000 Soul of Cinder 
+252800001 Soul of Cinder 
+252800002 Soul of Cinder 
+252800010 Soul of Cinder 
+252800011 Soul of Cinder 
+252800012 Soul of Cinder 
+252800013 Soul of Cinder 
+252800020 Soul of Cinder 
+252800030 Soul of Cinder 
+252800040 Soul of Cinder 
+252800050 Soul of Cinder 
+252800060 Soul of Cinder 
+252800061 Soul of Cinder 
+252800062 Soul of Cinder 
+252800070 Soul of Cinder 
+252800071 Soul of Cinder 
+252800072 Soul of Cinder 
+252800073 Soul of Cinder 
+252800080 Soul of Cinder 
+252800081 Soul of Cinder 
+252800100 Soul of Cinder 
+252800105 Soul of Cinder 
+252800110 Soul of Cinder 
+252800115 Soul of Cinder 
+252800120 Soul of Cinder 
+252800125 Soul of Cinder 
+252800130 Soul of Cinder 
+252800131 Soul of Cinder 
+252800132 Soul of Cinder 
+252800135 Soul of Cinder 
+252800136 Soul of Cinder 
+252800140 Soul of Cinder 
+252800145 Soul of Cinder 
+252800146 Soul of Cinder 
+252800150 Soul of Cinder 
+252800151 Soul of Cinder 
+252800190 Soul of Cinder 
+252800191 Soul of Cinder 
+252800192 Soul of Cinder 
+252800200 Soul of Cinder 
+252800205 Soul of Cinder 
+252800210 Soul of Cinder 
+252800215 Soul of Cinder 
+252800220 Soul of Cinder 
+252800225 Soul of Cinder 
+252800226 Soul of Cinder 
+252800230 Soul of Cinder 
+252800235 Soul of Cinder 
+252800236 Soul of Cinder 
+252800237 Soul of Cinder 
+252800238 Soul of Cinder 
+252800240 Soul of Cinder 
+252800245 Soul of Cinder 
+252800250 Soul of Cinder 
+252800255 Soul of Cinder 
+252800256 Soul of Cinder 
+252800257 Soul of Cinder 
+252800260 Soul of Cinder 
+252800261 Soul of Cinder 
+252800300 Soul of Cinder 
+252800310 Soul of Cinder 
+252800315 Soul of Cinder 
+252800320 Soul of Cinder 
+252800330 Soul of Cinder 
+252800340 Soul of Cinder 
+252800500 Soul of Cinder 
+252800501 Soul of Cinder 
+252800502 Soul of Cinder 
+252800503 Soul of Cinder 
+252800505 Soul of Cinder 
+252800506 Soul of Cinder 
+252800507 Soul of Cinder 
+252800508 Soul of Cinder 
+252800510 Soul of Cinder 
+252800511 Soul of Cinder 
+252800512 Soul of Cinder 
+252800515 Soul of Cinder 
+252800516 Soul of Cinder 
+252800520 Soul of Cinder 
+252800521 Soul of Cinder 
+252800522 Soul of Cinder 
+252800523 Soul of Cinder 
+252800524 Soul of Cinder 
+252800525 Soul of Cinder 
+252800526 Soul of Cinder 
+252800527 Soul of Cinder 
+252800528 Soul of Cinder 
+252800530 Soul of Cinder 
+252800531 Soul of Cinder 
+252800532 Soul of Cinder 
+252800535 Soul of Cinder 
+252800540 Soul of Cinder 
+252800550 Soul of Cinder 
+252800555 Soul of Cinder 
+252800558 Soul of Cinder 
+252800600 Soul of Cinder 
+252800601 Soul of Cinder 
+252800602 Soul of Cinder 
+252800603 Soul of Cinder 
+252800604 Soul of Cinder 
+252800900 Soul of Cinder 
+252800901 Soul of Cinder 
+252800902 Soul of Cinder 
+252800903 Soul of Cinder 
+252800904 Soul of Cinder 
+252800910 Soul of Cinder 
+252800990 Soul of Cinder 
+252800991 Soul of Cinder 
+260000010 Farron Follower 
+260000020 Farron Follower 
+260000030 Farron Follower 
+260000040 Farron Follower 
+260000110 Farron Follower 
+260000120 Farron Follower 
+260000130 Farron Follower 
+260000140 Farron Follower 
+260000150 Farron Follower 
+260000160 Farron Follower 
+260000170 Farron Follower 
+260000180 Farron Follower 
+260000190 Farron Follower 
+260000200 Farron Follower 
+260000201 Farron Follower 
+260000202 Farron Follower 
+260000210 Farron Follower 
+260000220 Farron Follower 
+260000230 Farron Follower 
+260000240 Farron Follower 
+260000250 Farron Follower 
+260000251 Farron Follower 
+260000260 Farron Follower 
+260000261 Farron Follower 
+260000265 Farron Follower 
+260000270 Farron Follower 
+260000310 Farron Follower 
+260000320 Farron Follower 
+260000330 Farron Follower 
+260000340 Farron Follower 
+260000350 Farron Follower 
+260000351 Farron Follower 
+260000360 Farron Follower 
+260000370 Farron Follower 
+260000510 Farron Follower 
+260000520 Farron Follower 
+260000530 Farron Follower 
+260000540 Farron Follower 
+260000550 Farron Follower 
+260000560 Farron Follower 
+260000561 Farron Follower 
+260000565 Farron Follower 
+260000700 Farron Follower 
+260000701 Farron Follower 
+260000710 Farron Follower 
+260000720 Farron Follower 
+260000730 Farron Follower 
+260000740 Farron Follower 
+260000750 Farron Follower 
+260000900 Farron Follower 
+260100010 Father Ariandel 
+260100011 Father Ariandel 
+260100020 Father Ariandel 
+260100021 Father Ariandel 
+260100022 Father Ariandel 
+260100030 Father Ariandel 
+260100040 Father Ariandel 
+260100041 Father Ariandel 
+260100042 Father Ariandel 
+260100050 Father Ariandel 
+260100060 Father Ariandel 
+260100070 Father Ariandel 
+260100080 Father Ariandel 
+260100090 Father Ariandel 
+260100100 Father Ariandel 
+260100110 Father Ariandel 
+260100120 Father Ariandel 
+260100121 Father Ariandel 
+260100122 Father Ariandel 
+260100130 Father Ariandel 
+260100131 Father Ariandel 
+260100132 Father Ariandel 
+260100300 Father Ariandel 
+260100700 Father Ariandel 
+260100710 Father Ariandel 
+260100720 Father Ariandel 
+260100800 Father Ariandel 
+260100810 Father Ariandel 
+260100820 Father Ariandel 
+260200000 Sister Friede 
+260200010 Sister Friede 
+260200020 Sister Friede 
+260200030 Sister Friede 
+260200040 Sister Friede 
+260200050 Sister Friede 
+260200060 Sister Friede 
+260200070 Sister Friede 
+260200080 Sister Friede 
+260200090 Sister Friede 
+260200130 Sister Friede 
+260200132 Sister Friede 
+260200133 Sister Friede 
+260200140 Sister Friede 
+260200141 Sister Friede 
+260200142 Sister Friede 
+260200145 Sister Friede 
+260200150 Sister Friede 
+260200151 Sister Friede 
+260200153 Sister Friede 
+260200155 Sister Friede 
+260200160 Sister Friede 
+260200161 Sister Friede 
+260200170 Sister Friede 
+260200172 Sister Friede 
+260200200 Sister Friede 
+260200210 Sister Friede 
+260200211 Sister Friede 
+260200220 Sister Friede 
+260200490 Sister Friede 
+260200491 Sister Friede 
+260200500 Sister Friede 
+260200510 Sister Friede 
+260200512 Sister Friede 
+260200520 Sister Friede 
+260200525 Sister Friede 
+260200540 Sister Friede 
+260200550 Sister Friede 
+260200560 Sister Friede 
+260200570 Sister Friede 
+260200600 Sister Friede 
+260200610 Sister Friede 
+260200620 Sister Friede 
+260200630 Sister Friede 
+260200631 Sister Friede 
+260200655 Sister Friede 
+260200660 Sister Friede 
+260200662 Sister Friede 
+260200665 Sister Friede 
+260200670 Sister Friede 
+260200672 Sister Friede 
+260200675 Sister Friede 
+260200680 Sister Friede 
+260200681 Sister Friede 
+260200682 Sister Friede 
+260200700 Sister Friede 
+260200710 Sister Friede 
+260200711 Sister Friede 
+260200720 Sister Friede 
+260200760 Sister Friede 
+260200761 Sister Friede 
+260200765 Sister Friede 
+260200770 Sister Friede 
+260200771 Sister Friede 
+260200775 Sister Friede 
+260200780 Sister Friede 
+260200781 Sister Friede 
+260200783 Sister Friede 
+260200785 Sister Friede 
+260200786 Sister Friede 
+260200787 Sister Friede 
+260200790 Sister Friede 
+260200800 Sister Friede 
+260200801 Sister Friede 
+260200820 Sister Friede 
+260200821 Sister Friede 
+260200830 Sister Friede 
+260200831 Sister Friede 
+260200840 Sister Friede 
+260200841 Sister Friede 
+260200890 Sister Friede 
+260200900 Sister Friede 
+260200990 Sister Friede 
+260200995 Sister Friede 
+260200996 Sister Friede 
+260200997 Sister Friede 
+260300010 Gravetender Greatwolf 
+260300020 Gravetender Greatwolf 
+260300030 Gravetender Greatwolf 
+260300031 Gravetender Greatwolf 
+260300040 Gravetender Greatwolf 
+260300050 Gravetender Greatwolf 
+260300060 Gravetender Greatwolf 
+260300070 Gravetender Greatwolf 
+260300090 Gravetender Greatwolf 
+260300100 Gravetender Greatwolf 
+260300110 Gravetender Greatwolf 
+260300120 Gravetender Greatwolf 
+260300130 Gravetender Greatwolf 
+260300140 Gravetender Greatwolf 
+260300150 Gravetender Greatwolf 
+260300160 Gravetender Greatwolf 
+260300170 Gravetender Greatwolf 
+260300700 Gravetender Greatwolf 
+260300800 Gravetender Greatwolf 
+260300810 Gravetender Greatwolf 
+260400010 Wolf 
+260400020 Wolf 
+260400030 Wolf 
+260400040 Wolf 
+260400050 Wolf 
+260400060 Wolf 
+260400070 Wolf 
+260400080 Wolf 
+260400090 Wolf 
+260400100 Wolf 
+260400700 Wolf 
+260400710 Wolf 
+260400720 Wolf 
+260400730 Wolf 
+260500010 Wolf 
+260500020 Wolf 
+260500030 Wolf 
+260500040 Wolf 
+260500050 Wolf 
+260500060 Wolf 
+260500070 Wolf 
+260500080 Wolf 
+260500090 Wolf 
+260500100 Wolf 
+260500700 Wolf 
+260500710 Wolf 
+260500720 Wolf 
+260500730 Wolf 
+260600010 Tree Woman 
+260600011 Tree Woman 
+260600012 Tree Woman 
+260600015 Tree Woman 
+260600016 Tree Woman 
+260600017 Tree Woman 
+260600020 Tree Woman 
+260600025 Tree Woman 
+260600030 Tree Woman 
+260600031 Tree Woman 
+260600032 Tree Woman 
+260600040 Tree Woman 
+260600041 Tree Woman 
+260600045 Tree Woman 
+260600046 Tree Woman 
+260600047 Tree Woman 
+260600050 Tree Woman 
+260600051 Tree Woman 
+260600060 Tree Woman 
+260600061 Tree Woman 
+260600062 Tree Woman 
+260600063 Tree Woman 
+260600065 Tree Woman 
+260600066 Tree Woman 
+260600067 Tree Woman 
+260600070 Tree Woman 
+260600071 Tree Woman 
+260600072 Tree Woman 
+260600700 Tree Woman 
+260600701 Tree Woman 
+260600703 Tree Woman 
+260600705 Tree Woman 
+260600710 Tree Woman 
+260600711 Tree Woman 
+260600712 Tree Woman 
+260600713 Tree Woman 
+260600714 Tree Woman 
+260600715 Tree Woman 
+260600716 Tree Woman 
+260600717 Tree Woman 
+260600718 Tree Woman 
+260600719 Tree Woman 
+260700010 Corvian Knight 
+260700020 Corvian Knight 
+260700030 Corvian Knight 
+260700040 Corvian Knight 
+260700050 Corvian Knight 
+260700060 Corvian Knight 
+260700070 Corvian Knight 
+260700080 Corvian Knight 
+260700090 Corvian Knight 
+260700100 Corvian Knight 
+260700110 Corvian Knight 
+260700120 Corvian Knight 
+260700130 Corvian Knight 
+260700140 Corvian Knight 
+260700141 Corvian Knight 
+260700142 Corvian Knight 
+260700143 Corvian Knight 
+260700150 Corvian Knight 
+260700160 Corvian Knight 
+260700170 Corvian Knight 
+260700180 Corvian Knight 
+260700181 Corvian Knight 
+260700182 Corvian Knight 
+260700183 Corvian Knight 
+260700184 Corvian Knight 
+260700185 Corvian Knight 
+260700186 Corvian Knight 
+260700210 Corvian Knight 
+260700220 Corvian Knight 
+260700230 Corvian Knight 
+260700240 Corvian Knight 
+260700250 Corvian Knight 
+260700251 Corvian Knight 
+260700260 Corvian Knight 
+260700270 Corvian Knight 
+260700300 Corvian Knight 
+260700301 Corvian Knight 
+260700305 Corvian Knight 
+260700310 Corvian Knight 
+260700320 Corvian Knight 
+260700330 Corvian Knight 
+260700335 Corvian Knight 
+260700350 Corvian Knight 
+260700370 Corvian Knight 
+260700380 Corvian Knight 
+260700390 Corvian Knight 
+260700391 Corvian Knight 
+260700400 Corvian Knight 
+260700401 Corvian Knight 
+260700410 Corvian Knight 
+260700411 Corvian Knight 
+260700420 Corvian Knight 
+260700430 Corvian Knight 
+260700431 Corvian Knight 
+260700440 Corvian Knight 
+260700450 Corvian Knight 
+260700451 Corvian Knight 
+260700452 Corvian Knight 
+260700453 Corvian Knight 
+260700454 Corvian Knight 
+260700455 Corvian Knight 
+260700700 Corvian Knight 
+260700701 Corvian Knight 
+260700710 Corvian Knight 
+260700720 Corvian Knight 
+260700730 Corvian Knight 
+260700740 Corvian Knight 
+260700750 Corvian Knight 
+260700760 Corvian Knight 
+260700950 Corvian Knight 
+260800010 Giant Fly 
+260800020 Giant Fly 
+260800030 Giant Fly 
+260800040 Giant Fly 
+260800050 Giant Fly 
+260800110 Giant Fly 
+260800120 Giant Fly 
+260800130 Giant Fly 
+260800700 Giant Fly 
+260800701 Giant Fly 
+260800705 Giant Fly 
+260800706 Giant Fly 
+260800710 Giant Fly 
+260800711 Giant Fly 
+260800712 Giant Fly 
+260800713 Giant Fly 
+260800715 Giant Fly 
+260800716 Giant Fly 
+260800720 Giant Fly 
+260800730 Giant Fly 
+260800740 Giant Fly 
+260800750 Giant Fly 
+260800790 Giant Fly 
+260800800 Giant Fly 
+260800801 Giant Fly 
+260800805 Giant Fly 
+260800806 Giant Fly 
+260810010 Giant Fly 
+260810020 Giant Fly 
+260810030 Giant Fly 
+260810040 Giant Fly 
+260810050 Giant Fly 
+260810110 Giant Fly 
+260810120 Giant Fly 
+260810130 Giant Fly 
+260810700 Giant Fly 
+260810701 Giant Fly 
+260810705 Giant Fly 
+260810706 Giant Fly 
+260810710 Giant Fly 
+260810711 Giant Fly 
+260810715 Giant Fly 
+260810716 Giant Fly 
+260810720 Giant Fly 
+260810730 Giant Fly 
+260810790 Giant Fly 
+260810800 Giant Fly 
+260810801 Giant Fly 
+260810805 Giant Fly 
+260810806 Giant Fly 
+261000010 Millwood Knight 
+261000020 Millwood Knight 
+261000030 Millwood Knight 
+261000040 Millwood Knight 
+261000050 Millwood Knight 
+261000060 Millwood Knight 
+261000070 Millwood Knight 
+261000080 Millwood Knight 
+261000090 Millwood Knight 
+261000100 Millwood Knight 
+261000110 Millwood Knight 
+261000120 Millwood Knight 
+261000130 Millwood Knight 
+261000135 Millwood Knight 
+261000140 Millwood Knight 
+261000141 Millwood Knight 
+261000145 Millwood Knight 
+261000150 Millwood Knight 
+261000199 Millwood Knight 
+261000210 Millwood Knight 
+261000220 Millwood Knight 
+261000230 Millwood Knight 
+261000240 Millwood Knight 
+261000250 Millwood Knight 
+261000260 Millwood Knight 
+261000270 Millwood Knight 
+261000280 Millwood Knight 
+261000285 Millwood Knight 
+261000290 Millwood Knight 
+261000300 Millwood Knight 
+261000310 Millwood Knight 
+261000320 Millwood Knight 
+261000330 Millwood Knight 
+261000335 Millwood Knight 
+261000340 Millwood Knight 
+261000350 Millwood Knight 
+261000351 Millwood Knight 
+261000352 Millwood Knight 
+261000399 Millwood Knight 
+261000410 Millwood Knight 
+261000420 Millwood Knight 
+261000430 Millwood Knight 
+261000440 Millwood Knight 
+261000450 Millwood Knight 
+261000460 Millwood Knight 
+261000470 Millwood Knight 
+261000480 Millwood Knight 
+261000490 Millwood Knight 
+261000500 Millwood Knight 
+261000510 Millwood Knight 
+261000520 Millwood Knight 
+261000521 Millwood Knight 
+261000522 Millwood Knight 
+261000530 Millwood Knight 
+261000531 Millwood Knight 
+261000532 Millwood Knight 
+261000540 Millwood Knight 
+261000550 Millwood Knight 
+261000700 Millwood Knight 
+261000710 Millwood Knight 
+261000720 Millwood Knight 
+261000750 Millwood Knight 
+261000800 Millwood Knight 
+261000850 Millwood Knight 
+261000851 Millwood Knight 
+261000860 Millwood Knight 
+261000863 Millwood Knight 
+261000870 Millwood Knight 
+261000873 Millwood Knight 
+261000900 Millwood Knight 
+261300010 Great Crab 
+261300020 Great Crab 
+261300030 Great Crab 
+261300040 Great Crab 
+261300050 Great Crab 
+261300060 Great Crab 
+261300080 Great Crab 
+261300090 Great Crab 
+261300091 Great Crab 
+261300092 Great Crab 
+261300093 Great Crab 
+261300100 Great Crab 
+261300110 Great Crab 
+261300120 Great Crab 
+261300130 Great Crab 
+261300140 Great Crab 
+261300150 Great Crab 
+261300200 Great Crab 
+261300201 Great Crab 
+261300202 Great Crab 
+261300210 Great Crab 
+261300211 Great Crab 
+261300220 Great Crab 
+261300221 Great Crab 
+261300222 Great Crab 
+261300700 Great Crab 
+262000010 Slave Knight Gael 
+262000011 Slave Knight Gael 
+262000020 Slave Knight Gael 
+262000021 Slave Knight Gael 
+262000030 Slave Knight Gael 
+262000031 Slave Knight Gael 
+262000040 Slave Knight Gael 
+262000041 Slave Knight Gael 
+262000050 Slave Knight Gael 
+262000051 Slave Knight Gael 
+262000060 Slave Knight Gael 
+262000061 Slave Knight Gael 
+262000070 Slave Knight Gael 
+262000071 Slave Knight Gael 
+262000080 Slave Knight Gael 
+262000081 Slave Knight Gael 
+262000090 Slave Knight Gael 
+262000100 Slave Knight Gael 
+262000101 Slave Knight Gael 
+262000102 Slave Knight Gael 
+262000110 Slave Knight Gael 
+262000111 Slave Knight Gael 
+262000112 Slave Knight Gael 
+262000120 Slave Knight Gael 
+262000121 Slave Knight Gael 
+262000122 Slave Knight Gael 
+262000130 Slave Knight Gael 
+262000131 Slave Knight Gael 
+262000140 Slave Knight Gael 
+262000141 Slave Knight Gael 
+262000150 Slave Knight Gael 
+262000151 Slave Knight Gael 
+262000160 Slave Knight Gael 
+262000161 Slave Knight Gael 
+262000170 Slave Knight Gael 
+262000171 Slave Knight Gael 
+262000180 Slave Knight Gael 
+262000190 Slave Knight Gael 
+262000191 Slave Knight Gael 
+262000700 Slave Knight Gael 
+262000710 Slave Knight Gael 
+262000720 Slave Knight Gael 
+262000721 Slave Knight Gael 
+262000722 Slave Knight Gael 
+262000730 Slave Knight Gael 
+262000740 Slave Knight Gael 
+262000800 Slave Knight Gael 
+262000900 Slave Knight Gael 
+262000910 Slave Knight Gael 
+262000920 Slave Knight Gael 
+262000950 Slave Knight Gael 
+262000960 Slave Knight Gael 
+262010010 Slave Knight Gael 1st Stage -
+262010020 Slave Knight Gael 1st Stage -
+262010030 Slave Knight Gael 1st Stage -
+262010040 Slave Knight Gael 1st Stage -
+262010050 Slave Knight Gael 1st Stage -
+262010051 Slave Knight Gael 1st Stage -
+262010052 Slave Knight Gael 1st Stage -
+262010060 Slave Knight Gael 1st Stage -
+262010061 Slave Knight Gael 1st Stage -
+262010062 Slave Knight Gael 1st Stage -
+262010070 Slave Knight Gael 1st Stage -
+262010071 Slave Knight Gael 1st Stage -
+262010080 Slave Knight Gael 1st Stage -
+262010090 Slave Knight Gael 1st Stage -
+262010100 Slave Knight Gael 1st Stage -
+262010101 Slave Knight Gael 1st Stage -
+262010110 Slave Knight Gael 1st Stage -
+262010120 Slave Knight Gael 1st Stage -
+262010130 Slave Knight Gael 1st Stage -
+262010140 Slave Knight Gael 1st Stage -
+262010150 Slave Knight Gael 1st Stage -
+262010160 Slave Knight Gael 1st Stage -
+262010161 Slave Knight Gael 1st Stage -
+262010170 Slave Knight Gael 1st Stage -
+262010171 Slave Knight Gael 1st Stage -
+262010180 Slave Knight Gael 1st Stage -
+262010190 Slave Knight Gael 1st Stage -
+262010200 Slave Knight Gael 1st Stage -
+262010210 Slave Knight Gael 1st Stage -
+262010700 Slave Knight Gael 1st Stage -
+262100010 Darkeater Midir 
+262100011 Darkeater Midir 
+262100012 Darkeater Midir 
+262100013 Darkeater Midir 
+262100014 Darkeater Midir 
+262100015 Darkeater Midir 
+262100016 Darkeater Midir 
+262100017 Darkeater Midir 
+262100018 Darkeater Midir 
+262100019 Darkeater Midir 
+262100020 Darkeater Midir 
+262100021 Darkeater Midir 
+262100027 Darkeater Midir 
+262100028 Darkeater Midir 
+262100029 Darkeater Midir 
+262100030 Darkeater Midir 
+262100035 Darkeater Midir 
+262100036 Darkeater Midir 
+262100040 Darkeater Midir 
+262100045 Darkeater Midir 
+262100046 Darkeater Midir 
+262100050 Darkeater Midir 
+262100060 Darkeater Midir 
+262100070 Darkeater Midir 
+262100080 Darkeater Midir 
+262100085 Darkeater Midir 
+262100100 Darkeater Midir 
+262100110 Darkeater Midir 
+262100120 Darkeater Midir 
+262100130 Darkeater Midir 
+262100140 Darkeater Midir 
+262100150 Darkeater Midir 
+262100160 Darkeater Midir 
+262100170 Darkeater Midir 
+262100210 Darkeater Midir 
+262100211 Darkeater Midir 
+262100212 Darkeater Midir 
+262100213 Darkeater Midir 
+262100214 Darkeater Midir 
+262100700 Darkeater Midir 
+262100701 Darkeater Midir 
+262100705 Darkeater Midir 
+262100706 Darkeater Midir 
+262100710 Darkeater Midir 
+262100720 Darkeater Midir 
+262100722 Darkeater Midir 
+262100725 Darkeater Midir 
+262100726 Darkeater Midir 
+262100730 Darkeater Midir 
+262100750 Darkeater Midir 
+262100760 Darkeater Midir 
+262100765 Darkeater Midir 
+262100770 Darkeater Midir 
+262100775 Darkeater Midir 
+262100780 Darkeater Midir 
+262100785 Darkeater Midir 
+262100790 Darkeater Midir 
+262100795 Darkeater Midir 
+262100800 Darkeater Midir 
+262100805 Darkeater Midir 
+262100810 Darkeater Midir 
+262100815 Darkeater Midir 
+262100820 Darkeater Midir 
+262100825 Darkeater Midir 
+262100830 Darkeater Midir 
+262100835 Darkeater Midir 
+262100840 Darkeater Midir 
+262100845 Darkeater Midir 
+262100850 Darkeater Midir 
+262100860 Darkeater Midir 
+262100870 Darkeater Midir 
+262100880 Darkeater Midir 
+262110010 Darkeater Midir 
+262110020 Darkeater Midir 
+262110030 Darkeater Midir 
+262110040 Darkeater Midir 
+262110100 Darkeater Midir 
+262110101 Darkeater Midir 
+262110400 Darkeater Midir 
+262110404 Darkeater Midir 
+262110405 Darkeater Midir 
+262110406 Darkeater Midir 
+262110407 Darkeater Midir 
+262110408 Darkeater Midir 
+262110410 Darkeater Midir 
+262110420 Darkeater Midir 
+262110421 Darkeater Midir 
+262110422 Darkeater Midir 
+262110423 Darkeater Midir 
+262110424 Darkeater Midir 
+262110425 Darkeater Midir 
+262110426 Darkeater Midir 
+262110427 Darkeater Midir 
+262110428 Darkeater Midir 
+262110429 Darkeater Midir 
+262110440 Darkeater Midir 
+262110460 Darkeater Midir 
+262110462 Darkeater Midir 
+262110470 Darkeater Midir 
+262110474 Darkeater Midir 
+262110475 Darkeater Midir 
+262110476 Darkeater Midir 
+262110477 Darkeater Midir 
+262110478 Darkeater Midir 
+262110480 Darkeater Midir 
+262110481 Darkeater Midir 
+262110482 Darkeater Midir 
+262110483 Darkeater Midir 
+262110488 Darkeater Midir 
+262110489 Darkeater Midir 
+262110500 Darkeater Midir 
+262110510 Darkeater Midir 
+262110520 Darkeater Midir 
+262110521 Darkeater Midir 
+262110530 Darkeater Midir 
+262110540 Darkeater Midir 
+262110541 Darkeater Midir 
+262110543 Darkeater Midir 
+262110560 Darkeater Midir 
+262110561 Darkeater Midir 
+262110570 Darkeater Midir 
+262110700 Darkeater Midir 
+262110710 Darkeater Midir 
+262110720 Darkeater Midir 
+262110730 Darkeater Midir 
+262110740 Darkeater Midir 
+262110741 Darkeater Midir 
+262110750 Darkeater Midir 
+262110800 Darkeater Midir 
+262110801 Darkeater Midir 
+262110802 Darkeater Midir 
+262110803 Darkeater Midir 
+262110804 Darkeater Midir 
+262110805 Darkeater Midir 
+262110810 Darkeater Midir 
+262110811 Darkeater Midir 
+262110820 Darkeater Midir 
+262110821 Darkeater Midir 
+262110830 Darkeater Midir 
+262110840 Darkeater Midir 
+262110900 Darkeater Midir 
+262110901 Darkeater Midir 
+262110902 Darkeater Midir 
+262110903 Darkeater Midir 
+262110904 Darkeater Midir 
+262110905 Darkeater Midir 
+262110910 Darkeater Midir 
+262110911 Darkeater Midir 
+262110912 Darkeater Midir 
+262110913 Darkeater Midir 
+262110914 Darkeater Midir 
+262110920 Darkeater Midir 
+262110921 Darkeater Midir 
+262110922 Darkeater Midir 
+262110923 Darkeater Midir 
+262110924 Darkeater Midir 
+262110930 Darkeater Midir 
+262110931 Darkeater Midir 
+262110932 Darkeater Midir 
+262110933 Darkeater Midir 
+262300010 Murkman 
+262300020 Murkman 
+262300030 Murkman 
+262300040 Murkman 
+262300050 Murkman 
+262300060 Murkman 
+262300070 Murkman 
+262300700 Murkman 
+262300710 Murkman 
+262310010 Murkman 
+262310020 Murkman 
+262310030 Murkman 
+262310040 Murkman 
+262310050 Murkman 
+262310500 Murkman 
+262310501 Murkman 
+262310700 Murkman 
+262310900 Murkman 
+262320010 Murkman 
+262320011 Murkman 
+262320012 Murkman 
+262400000 Pilgrim Pulpa 
+262400010 Pilgrim Pulpa 
+262400011 Pilgrim Pulpa 
+262400700 Pilgrim Pulpa 
+262500100 Pilgrim Angel 3000 - Holy Barrage
+262500101 Pilgrim Angel 3000 - Holy Barrage
+262500102 Pilgrim Angel 3000 - Holy Barrage
+262500103 Pilgrim Angel 3000 - Holy Barrage
+262500110 Pilgrim Angel 3000 - Holy Barrage
+262500111 Pilgrim Angel 3000 - Holy Barrage
+262500112 Pilgrim Angel 3000 - Holy Barrage
+262500113 Pilgrim Angel 3000 - Holy Barrage
+262500200 Pilgrim Angel 3001 - Holy Barrage
+262500201 Pilgrim Angel 3001 - Holy Barrage
+262500202 Pilgrim Angel 3001 - Holy Barrage
+262500203 Pilgrim Angel 3001 - Holy Barrage
+262500210 Pilgrim Angel 3001 - Holy Barrage
+262500211 Pilgrim Angel 3001 - Holy Barrage
+262500212 Pilgrim Angel 3001 - Holy Barrage
+262500213 Pilgrim Angel 3001 - Holy Barrage
+262500300 Pilgrim Angel 3002 - Holy Barrage
+262500301 Pilgrim Angel 3002 - Holy Barrage
+262500302 Pilgrim Angel 3002 - Holy Barrage
+262500303 Pilgrim Angel 3002 - Holy Barrage
+262500310 Pilgrim Angel 3002 - Holy Barrage
+262500311 Pilgrim Angel 3002 - Holy Barrage
+262500312 Pilgrim Angel 3002 - Holy Barrage
+262500313 Pilgrim Angel 3002 - Holy Barrage
+262500700 Pilgrim Angel 
+262500701 Pilgrim Angel 
+262500702 Pilgrim Angel 
+262500710 Pilgrim Angel 
+262500720 Pilgrim Angel 
+262500730 Pilgrim Angel 
+262500740 Pilgrim Angel Curse Mist
+262500750 Pilgrim Angel Swoop Down - Holy Burst
+262500751 Pilgrim Angel Swoop Down - Holy Burst
+262500752 Pilgrim Angel Swoop Down - Holy Burst
+262500755 Pilgrim Angel Swoop Down - Holy Burst
+262500756 Pilgrim Angel Swoop Down - Holy Burst
+262500757 Pilgrim Angel Swoop Down - Holy Burst
+262500760 Pilgrim Angel 
+262500800 Pilgrim Angel Curse Mist
+262600010 Ringed Knight 
+262600020 Ringed Knight 
+262600030 Ringed Knight 
+262600040 Ringed Knight 
+262600050 Ringed Knight 
+262600060 Ringed Knight 
+262600070 Ringed Knight 
+262600080 Ringed Knight 
+262600090 Ringed Knight 
+262600100 Ringed Knight 
+262600110 Ringed Knight 
+262600120 Ringed Knight 
+262600130 Ringed Knight 
+262600140 Ringed Knight 
+262600150 Ringed Knight 
+262600160 Ringed Knight 
+262600170 Ringed Knight 
+262600175 Ringed Knight 
+262600180 Ringed Knight 
+262600190 Ringed Knight 
+262600200 Ringed Knight 
+262600210 Ringed Knight 
+262600220 Ringed Knight 
+262600230 Ringed Knight 
+262600240 Ringed Knight 
+262600250 Ringed Knight 
+262600310 Ringed Knight 
+262600315 Ringed Knight 
+262600320 Ringed Knight 
+262600325 Ringed Knight 
+262600330 Ringed Knight 
+262600335 Ringed Knight 
+262600340 Ringed Knight 
+262600341 Ringed Knight 
+262600345 Ringed Knight 
+262600346 Ringed Knight 
+262600350 Ringed Knight 
+262600351 Ringed Knight 
+262600355 Ringed Knight 
+262600356 Ringed Knight 
+262600360 Ringed Knight 
+262600361 Ringed Knight 
+262600365 Ringed Knight 
+262600366 Ringed Knight 
+262600370 Ringed Knight 
+262600375 Ringed Knight 
+262600390 Ringed Knight 
+262600400 Ringed Knight 
+262600401 Ringed Knight 
+262600410 Ringed Knight 
+262600415 Ringed Knight 
+262600420 Ringed Knight 
+262600425 Ringed Knight 
+262600430 Ringed Knight 
+262600431 Ringed Knight 
+262600435 Ringed Knight 
+262600436 Ringed Knight 
+262600450 Ringed Knight 
+262600460 Ringed Knight 
+262600461 Ringed Knight 
+262600470 Ringed Knight 
+262600471 Ringed Knight 
+262600475 Ringed Knight 
+262600476 Ringed Knight 
+262600480 Ringed Knight 
+262600510 Ringed Knight 
+262600520 Ringed Knight 
+262600530 Ringed Knight 
+262600535 Ringed Knight 
+262600540 Ringed Knight 
+262600550 Ringed Knight 
+262600555 Ringed Knight 
+262600560 Ringed Knight 
+262600561 Ringed Knight 
+262600565 Ringed Knight 
+262600566 Ringed Knight 
+262600570 Ringed Knight 
+262600571 Ringed Knight 
+262600575 Ringed Knight 
+262600580 Ringed Knight 
+262600585 Ringed Knight 
+262600590 Ringed Knight 
+262600595 Ringed Knight 
+262600600 Ringed Knight 
+262600610 Ringed Knight 
+262600615 Ringed Knight 
+262600620 Ringed Knight 
+262600625 Ringed Knight 
+262600630 Ringed Knight 
+262600631 Ringed Knight 
+262600632 Ringed Knight 
+262600633 Ringed Knight 
+262600640 Ringed Knight 
+262600650 Ringed Knight 
+262600660 Ringed Knight 
+262600665 Ringed Knight 
+262600670 Ringed Knight 
+262600680 Ringed Knight 
+262600700 Ringed Knight 
+262600705 Ringed Knight 
+262600709 Ringed Knight 
+262600710 Ringed Knight 
+262600720 Ringed Knight 
+262600730 Ringed Knight 
+262600750 Ringed Knight 
+262600760 Ringed Knight 
+262600770 Ringed Knight 
+262600800 Ringed Knight 
+262600805 Ringed Knight 
+262600810 Ringed Knight 
+262600820 Ringed Knight 
+262600830 Ringed Knight 
+262600850 Ringed Knight 
+262600860 Ringed Knight 
+262600870 Ringed Knight 
+262600880 Ringed Knight 
+262600890 Ringed Knight 
+262600900 Ringed Knight 
+262600910 Ringed Knight 
+262700000 Lothric Thief 
+262700010 Lothric Thief 
+262700020 Lothric Thief 
+262700030 Lothric Thief 
+262700040 Lothric Thief 
+262700041 Lothric Thief 
+262700042 Lothric Thief 
+262700045 Lothric Thief 
+262700060 Lothric Thief 
+262700070 Lothric Thief 
+262700080 Lothric Thief 
+262700090 Lothric Thief 
+262700100 Lothric Thief 
+262700110 Lothric Thief 
+262700120 Lothric Thief 
+262700130 Lothric Thief 
+262700140 Lothric Thief 
+262700141 Lothric Thief 
+262700142 Lothric Thief 
+262700160 Lothric Thief 
+262700170 Lothric Thief 
+262700180 Lothric Thief 
+262700700 Lothric Thief 
+262700710 Lothric Thief 
+262700720 Lothric Thief 
+262700721 Lothric Thief 
+262800000 Judicator 
+262800001 Judicator 
+262800010 Judicator 
+262800011 Judicator 
+262800020 Judicator 
+262800021 Judicator 
+262800030 Judicator 
+262800031 Judicator 
+262800040 Judicator 
+262800050 Judicator 
+262800060 Judicator 
+262800070 Judicator 
+262800080 Judicator 
+262800081 Judicator 
+262800090 Judicator 
+262800091 Judicator 
+262800098 Judicator 
+262800099 Judicator 
+262800200 Judicator 
+262800201 Judicator 
+262800210 Judicator 
+262800211 Judicator 
+262800220 Judicator 
+262800230 Judicator 
+262800240 Judicator 
+262800250 Judicator 
+262800260 Judicator 
+262800261 Judicator 
+262800270 Judicator 
+262800271 Judicator 
+262800298 Judicator 
+262800299 Judicator 
+262800300 Judicator 
+262800310 Judicator 
+262800320 Judicator 
+262800330 Judicator 
+262800340 Judicator 
+262800350 Judicator 
+262800380 Judicator 
+262800390 Judicator 
+262800399 Judicator 
+262800500 Judicator 
+262800510 Judicator 
+262800520 Judicator 
+262800540 Judicator 
+262800900 Judicator 
+262800910 Judicator 
+262800920 Judicator 
+262800930 Judicator 
+262900000 Hollow Cleric 
+262900010 Hollow Cleric 
+262900020 Hollow Cleric 
+262900050 Hollow Cleric 
+262900055 Hollow Cleric 
+262900058 Hollow Cleric 
+262900060 Hollow Cleric 
+262900061 Hollow Cleric 
+262900062 Hollow Cleric 
+262900063 Hollow Cleric 
+262900065 Hollow Cleric 
+262900068 Hollow Cleric 
+262900070 Hollow Cleric 
+262900075 Hollow Cleric 
+262900080 Hollow Cleric 
+262900085 Hollow Cleric 
+262900090 Hollow Cleric 
+263200010 Harald Knight 
+263200020 Harald Knight 
+263200030 Harald Knight 
+263200040 Harald Knight 
+263200050 Harald Knight 
+263200060 Harald Knight 
+263200070 Harald Knight 
+263200071 Harald Knight 
+263200080 Harald Knight 
+263200081 Harald Knight 
+263200090 Harald Knight 
+263200091 Harald Knight 
+263200100 Harald Knight 
+263200110 Harald Knight 
+263200111 Harald Knight 
+263200120 Harald Knight 
+263200121 Harald Knight 
+263200122 Harald Knight 
+263200123 Harald Knight 
+263200130 Harald Knight 
+263200131 Harald Knight 
+263200140 Harald Knight 
+263300000 Locust 
+263300010 Locust 
+263300040 Locust 
+263300041 Locust 
+263300050 Locust 
+263300080 Locust 
+263300090 Locust 
+263300100 Locust 
+263300110 Locust 
+263300111 Locust 
+263300112 Locust 
+263300120 Locust 
+263300150 Locust 
+263300155 Locust 
+263300156 Locust 
+263300200 Locust 
+263300700 Locust 
+263310000 Locust 
+263310010 Locust 
+263310040 Locust 
+263310200 Locust 
+270000010 Humanity 
+270000020 Humanity 

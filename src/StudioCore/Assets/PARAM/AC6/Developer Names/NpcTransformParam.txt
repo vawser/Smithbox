@@ -1,0 +1,8 @@
+502000 heavy guard mechanism -- 重ガードメカ
+502001 Heavy guard mechanism upper body weak point -- 重ガードメカ 上半身炉弱点
+610000 Sea spider multi-legged mode -- ウミグモ多脚モード
+610001 sea ​​spider flight mode -- ウミグモ飛行モード
+625000 sand worm -- サンドワーム
+740000 Amphibious assault ship_surface -- 強襲揚陸艦_水上
+740001 Amphibious assault ship_air_phase_1 -- 強襲揚陸艦_空中_フェイズ1
+740002 Amphibious assault ship_air_phase_2 -- 強襲揚陸艦_空中_フェイズ2

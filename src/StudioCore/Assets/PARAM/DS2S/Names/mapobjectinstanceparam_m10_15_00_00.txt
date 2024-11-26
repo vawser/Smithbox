@@ -1,0 +1,60 @@
+10150700 Brazier
+10150701 Brazier
+10150702 Brazier
+10150703 Brazier
+10150720 Brazier
+10150721 Brazier
+10150722 Brazier
+10150723 Brazier
+10150724 Brazier
+10150725 Brazier
+10150726 Brazier
+10150727 Brazier
+10150728 Brazier
+10150729 Brazier
+10150730 Brazier
+10150731 Brazier
+10150732 Brazier
+10150733 Brazier
+10150734 Brazier
+10150735 Brazier
+10150736 Brazier
+10150737 Brazier
+10150738 Brazier
+10150739 Brazier
+10150740 Brazier
+10150741 Brazier
+10150742 Brazier
+10150743 Brazier
+10150744 Brazier
+10150745 Brazier
+10150746 Brazier
+10150747 Brazier
+10150748 Brazier
+10150749 Brazier
+10150750 Brazier
+10155000 [Chest] Treasure
+10155010 [Chest] Treasure
+10155020 [Chest] Treasure
+10155030 [Chest] Treasure
+10156000 [Corpse] Treasure
+10156010 [Corpse] Treasure
+10156020 [Corpse] Treasure
+10156030 [Corpse] Treasure
+10156040 [Corpse] Treasure
+10156050 [Corpse] Treasure
+10156060 [Corpse] Treasure
+10156070 [Corpse] Treasure
+10156080 [Corpse] Treasure
+10156090 [Corpse] Treasure
+10156100 [Corpse] Treasure
+10156110 [Corpse] Treasure
+10156120 [Corpse] Treasure
+10156130 [Corpse] Treasure
+10156140 [Corpse] Treasure
+10156150 [Corpse] Treasure
+10156160 [Corpse] Treasure
+10156170 [Corpse] Treasure
+10156180 [Corpse] Treasure
+10156190 [Corpse] Treasure
+10156200 [Corpse] Treasure

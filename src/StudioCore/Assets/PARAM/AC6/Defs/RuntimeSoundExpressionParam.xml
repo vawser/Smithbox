@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>RUNTIME_SOUND_EXPRESSION_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 Expression">
+      <DisplayName>括弧</DisplayName>
+      <Enum>RUNTIME_SOUND_OPERATOR_TYPE</Enum>
+      <Description>括弧、または、かつ</Description>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Increment>0</Increment>
+      <SortID>200</SortID>
+      <UnkC8>括弧</UnkC8>
+    </Field>
+    <Field Def="u8 RTPC_OnOff">
+      <DisplayName>RTPC計算</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>RTPC計算</Description>
+      <Maximum>0</Maximum>
+      <SortID>300</SortID>
+      <UnkC8>条件</UnkC8>
+    </Field>
+    <Field Def="dummy8 dmy3[2]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>401</SortID>
+    </Field>
+    <Field Def="s32 Eval01_Condition">
+      <DisplayName>条件判定</DisplayName>
+      <Enum>RUNTIME_MOTION_CONDITION_TYPE</Enum>
+      <Description>条件判定</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>200</SortID>
+      <UnkC8>条件</UnkC8>
+    </Field>
+    <Field Def="f32 Eval01_MinValue">
+      <DisplayName>最小値</DisplayName>
+      <Description>最小値</Description>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+      <UnkC8>条件</UnkC8>
+    </Field>
+    <Field Def="f32 Eval01_MaxValue">
+      <DisplayName>最大値</DisplayName>
+      <Description>最大値</Description>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+      <UnkC8>条件</UnkC8>
+    </Field>
+    <Field Def="s32 Eval01_Dmypoly_A">
+      <DisplayName>ダミポリID_A</DisplayName>
+      <Description>ダミポリID_A</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>200</SortID>
+      <UnkC8>条件</UnkC8>
+    </Field>
+    <Field Def="s32 Eval01_Dmypoly_B">
+      <DisplayName>ダミポリID_B</DisplayName>
+      <Description>ダミポリID_B</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>200</SortID>
+      <UnkC8>条件</UnkC8>
+    </Field>
+    <Field Def="f32 RTPC_MinValue">
+      <DisplayName>RTPC最小値</DisplayName>
+      <Description>RTPC最小値、RTPC最小値からRTPC最大値までの値が０～１００に丸められます。</Description>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+      <UnkC8>条件</UnkC8>
+    </Field>
+    <Field Def="f32 RTPC_MaxValue">
+      <DisplayName>RTPC最大値</DisplayName>
+      <Description>RTPC最大値、RTPC最小値からRTPC最大値までの値が０～１００に丸められます。</Description>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+      <UnkC8>条件</UnkC8>
+    </Field>
+    <Field Def="s32 ConditionID = -1">
+      <DisplayName>判定用条件ID</DisplayName>
+      <Description>指定条件の成立状態を取る判定条件ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>400</SortID>
+      <UnkC8>条件</UnkC8>
+    </Field>
+    <Field Def="dummy8 dmy4[12]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>402</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>PLAYER_STATUS_ITEM_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 item_1" />
+    <Field Def="s32 item_2" />
+    <Field Def="s32 item_3" />
+    <Field Def="s32 item_4" />
+    <Field Def="s32 item_5" />
+    <Field Def="s32 item_6" />
+    <Field Def="s32 item_7" />
+    <Field Def="s32 item_8" />
+    <Field Def="s32 item_9" />
+    <Field Def="s32 item_10" />
+    <Field Def="s32 item_11" />
+    <Field Def="s32 item_12" />
+    <Field Def="s32 item_13" />
+    <Field Def="s32 item_14" />
+    <Field Def="s32 item_15" />
+    <Field Def="s32 item_16" />
+    <Field Def="s32 item_17" />
+    <Field Def="s32 item_18" />
+    <Field Def="s32 item_19" />
+    <Field Def="s32 item_20" />
+    <Field Def="u16 item_amount_1" />
+    <Field Def="u16 item_amount_2" />
+    <Field Def="u16 item_amount_3" />
+    <Field Def="u16 item_amount_4" />
+    <Field Def="u16 item_amount_5" />
+    <Field Def="u16 item_amount_6" />
+    <Field Def="u16 item_amount_7" />
+    <Field Def="u16 item_amount_8" />
+    <Field Def="u16 item_amount_9" />
+    <Field Def="u16 item_amount_10" />
+    <Field Def="u16 item_amount_11" />
+    <Field Def="u16 item_amount_12" />
+    <Field Def="u16 item_amount_13" />
+    <Field Def="u16 item_amount_14" />
+    <Field Def="u16 item_amount_15" />
+    <Field Def="u16 item_amount_16" />
+    <Field Def="u16 item_amount_17" />
+    <Field Def="u16 item_amount_18" />
+    <Field Def="u16 item_amount_19" />
+    <Field Def="u16 item_amount_20" />
+  </Fields>
+</PARAMDEF>

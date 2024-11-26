@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <camDistTarget AltName="Camera Target Distance" Wiki="Camera distance target" />
+    <rotRangeMinX AltName="Rotation Range - Min X" Wiki="Minimum X-axis rotation" />
+    <lockRotXShiftRatio AltName="Lock Rotation X - Shift Ratio" Wiki="Lock X rotation shift rate" />
+    <chrOrgOffset_Y AltName="Character Origin - Offset Z" Wiki="Character base point offset" />
+    <chrLockRangeMaxRadius AltName="Character Lock Range - Max Radius" Wiki="Maximum radius of character range" />
+    <camFovY AltName="Field of View - Vertical FOV" Wiki="Vertical angle of view" />
+    <chrLockRangeMaxRadius_forD AltName="Character Lock Range - Max Radius (Darkness)" Wiki="Lockable range of characters in dark places" />
+    <chrLockRangeMaxRadius_forPD AltName="Character Lock Range - Max Radius (Total Darkness)" Wiki="Character lockable range in total darkness" />
+  </Field>
+  <Self Wiki="Location Camera data"/>
+</PARAMMETA>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <UnkInt0x00 Padding="" />
+    
+    <model_Weapon01 AltName="Weapon Model [0]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon02 AltName="Weapon Model [1]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon03 AltName="Weapon Model [2]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon04 AltName="Weapon Model [3]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon05 AltName="Weapon Model [4]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon06 AltName="Weapon Model [5]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon07 AltName="Weapon Model [6]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon08 AltName="Weapon Model [7]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon09 AltName="Weapon Model [8]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon10 AltName="Weapon Model [9]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon11 AltName="Weapon Model [10]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon12 AltName="Weapon Model [11]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon13 AltName="Weapon Model [12]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon14 AltName="Weapon Model [13]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon15 AltName="Weapon Model [14]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon16 AltName="Weapon Model [15]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon17 AltName="Weapon Model [16]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon18 AltName="Weapon Model [17]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon19 AltName="Weapon Model [18]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon20 AltName="Weapon Model [19]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon21 AltName="Weapon Model [20]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon22 AltName="Weapon Model [21]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon23 AltName="Weapon Model [22]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon24 AltName="Weapon Model [23]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon25 AltName="Weapon Model [24]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon26 AltName="Weapon Model [25]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon27 AltName="Weapon Model [26]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon28 AltName="Weapon Model [27]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon29 AltName="Weapon Model [28]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon30 AltName="Weapon Model [29]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon31 AltName="Weapon Model [30]" Wiki="Refers to the wp_e_XXXX part models" />
+    <model_Weapon32 AltName="Weapon Model [31]" Wiki="Refers to the wp_e_XXXX part models" />
+    
+    <mountDestTargetDummyPoly_Weapon01 AltName="Mount Destination: Dummy Poly [0]" />
+    <mountDestTargetDummyPoly_Weapon02 AltName="Mount Destination: Dummy Poly [1]" />
+    <mountDestTargetDummyPoly_Weapon03 AltName="Mount Destination: Dummy Poly [2]" />
+    <mountDestTargetDummyPoly_Weapon04 AltName="Mount Destination: Dummy Poly [3]" />
+    <mountDestTargetDummyPoly_Weapon05 AltName="Mount Destination: Dummy Poly [4]" />
+    <mountDestTargetDummyPoly_Weapon06 AltName="Mount Destination: Dummy Poly [5]" />
+    <mountDestTargetDummyPoly_Weapon07 AltName="Mount Destination: Dummy Poly [6]" />
+    <mountDestTargetDummyPoly_Weapon08 AltName="Mount Destination: Dummy Poly [7]" />
+    <mountDestTargetDummyPoly_Weapon09 AltName="Mount Destination: Dummy Poly [8]" />
+    <mountDestTargetDummyPoly_Weapon10 AltName="Mount Destination: Dummy Poly [9]" />
+    <mountDestTargetDummyPoly_Weapon11 AltName="Mount Destination: Dummy Poly [10]" />
+    <mountDestTargetDummyPoly_Weapon12 AltName="Mount Destination: Dummy Poly [11]" />
+    <mountDestTargetDummyPoly_Weapon13 AltName="Mount Destination: Dummy Poly [12]" />
+    <mountDestTargetDummyPoly_Weapon14 AltName="Mount Destination: Dummy Poly [13]" />
+    <mountDestTargetDummyPoly_Weapon15 AltName="Mount Destination: Dummy Poly [14]" />
+    <mountDestTargetDummyPoly_Weapon16 AltName="Mount Destination: Dummy Poly [15]" />
+    <mountDestTargetDummyPoly_Weapon17 AltName="Mount Destination: Dummy Poly [16]" />
+    <mountDestTargetDummyPoly_Weapon18 AltName="Mount Destination: Dummy Poly [17]" />
+    <mountDestTargetDummyPoly_Weapon19 AltName="Mount Destination: Dummy Poly [18]" />
+    <mountDestTargetDummyPoly_Weapon20 AltName="Mount Destination: Dummy Poly [19]" />
+    <mountDestTargetDummyPoly_Weapon21 AltName="Mount Destination: Dummy Poly [20]" />
+    <mountDestTargetDummyPoly_Weapon22 AltName="Mount Destination: Dummy Poly [21]" />
+    <mountDestTargetDummyPoly_Weapon23 AltName="Mount Destination: Dummy Poly [22]" />
+    <mountDestTargetDummyPoly_Weapon24 AltName="Mount Destination: Dummy Poly [23]" />
+    <mountDestTargetDummyPoly_Weapon25 AltName="Mount Destination: Dummy Poly [24]" />
+    <mountDestTargetDummyPoly_Weapon26 AltName="Mount Destination: Dummy Poly [25]" />
+    <mountDestTargetDummyPoly_Weapon27 AltName="Mount Destination: Dummy Poly [26]" />
+    <mountDestTargetDummyPoly_Weapon28 AltName="Mount Destination: Dummy Poly [27]" />
+    <mountDestTargetDummyPoly_Weapon29 AltName="Mount Destination: Dummy Poly [28]" />
+    <mountDestTargetDummyPoly_Weapon30 AltName="Mount Destination: Dummy Poly [29]" />
+    <mountDestTargetDummyPoly_Weapon31 AltName="Mount Destination: Dummy Poly [30]" />
+    <mountDestTargetDummyPoly_Weapon32 AltName="Mount Destination: Dummy Poly [31]" />
+    
+    <attachObj_Weapon01 AltName="Attached Part [0]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon02 AltName="Attached Part [1]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon03 AltName="Attached Part [2]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon04 AltName="Attached Part [3]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon05 AltName="Attached Part [4]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon06 AltName="Attached Part [5]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon07 AltName="Attached Part [6]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon08 AltName="Attached Part [7]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon09 AltName="Attached Part [8]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon10 AltName="Attached Part [9]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon11 AltName="Attached Part [10]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon12 AltName="Attached Part [11]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon13 AltName="Attached Part [12]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon14 AltName="Attached Part [13]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon15 AltName="Attached Part [14]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon16 AltName="Attached Part [15]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon17 AltName="Attached Part [16]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon18 AltName="Attached Part [17]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon19 AltName="Attached Part [18]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon20 AltName="Attached Part [19]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon21 AltName="Attached Part [20]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon22 AltName="Attached Part [21]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon23 AltName="Attached Part [22]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon24 AltName="Attached Part [23]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon25 AltName="Attached Part [24]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon26 AltName="Attached Part [25]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon27 AltName="Attached Part [26]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon28 AltName="Attached Part [27]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon29 AltName="Attached Part [28]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon30 AltName="Attached Part [29]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon31 AltName="Attached Part [30]" Refs="AttachObj_Npc" />
+    <attachObj_Weapon32 AltName="Attached Part [31]" Refs="AttachObj_Npc" />
+    
+    <UnkC_Weapon01 AltName="Unknown [0]" />
+    <UnkC_Weapon02 AltName="Unknown [1]" />
+    <UnkC_Weapon03 AltName="Unknown [2]" />
+    <UnkC_Weapon04 AltName="Unknown [3]" />
+    <UnkC_Weapon05 AltName="Unknown [4]" />
+    <UnkC_Weapon06 AltName="Unknown [5]" />
+    <UnkC_Weapon07 AltName="Unknown [6]" />
+    <UnkC_Weapon08 AltName="Unknown [7]" />
+    <UnkC_Weapon09 AltName="Unknown [8]" />
+    <UnkC_Weapon10 AltName="Unknown [9]" />
+    <UnkC_Weapon11 AltName="Unknown [10]" />
+    <UnkC_Weapon12 AltName="Unknown [11]" />
+    <UnkC_Weapon13 AltName="Unknown [12]" />
+    <UnkC_Weapon14 AltName="Unknown [13]" />
+    <UnkC_Weapon15 AltName="Unknown [14]" />
+    <UnkC_Weapon16 AltName="Unknown [15]" />
+    <UnkC_Weapon17 AltName="Unknown [16]" />
+    <UnkC_Weapon18 AltName="Unknown [17]" />
+    <UnkC_Weapon19 AltName="Unknown [18]" />
+    <UnkC_Weapon20 AltName="Unknown [19]" />
+    <UnkC_Weapon21 AltName="Unknown [20]" />
+    <UnkC_Weapon22 AltName="Unknown [21]" />
+    <UnkC_Weapon23 AltName="Unknown [22]" />
+    <UnkC_Weapon24 AltName="Unknown [23]" />
+    <UnkC_Weapon25 AltName="Unknown [24]" />
+    <UnkC_Weapon26 AltName="Unknown [25]" />
+    <UnkC_Weapon27 AltName="Unknown [26]" />
+    <UnkC_Weapon28 AltName="Unknown [27]" />
+    <UnkC_Weapon29 AltName="Unknown [28]" />
+    <UnkC_Weapon30 AltName="Unknown [29]" />
+    <UnkC_Weapon31 AltName="Unknown [30]" />
+    <UnkC_Weapon32 AltName="Unknown [31]" />
+    
+    <sfxID_Weapon01 AltName="SFX ID [0]" ParticleAlias="" />
+    <sfxID_Weapon02 AltName="SFX ID [1]" ParticleAlias="" />
+    <sfxID_Weapon03 AltName="SFX ID [2]" ParticleAlias="" />
+    <sfxID_Weapon04 AltName="SFX ID [3]" ParticleAlias="" />
+    <sfxID_Weapon05 AltName="SFX ID [4]" ParticleAlias="" />
+    <sfxID_Weapon06 AltName="SFX ID [5]" ParticleAlias="" />
+    <sfxID_Weapon07 AltName="SFX ID [6]" ParticleAlias="" />
+    <sfxID_Weapon08 AltName="SFX ID [7]" ParticleAlias="" />
+    <sfxID_Weapon09 AltName="SFX ID [8]" ParticleAlias="" />
+    <sfxID_Weapon10 AltName="SFX ID [9]" ParticleAlias="" />
+    <sfxID_Weapon11 AltName="SFX ID [10]" ParticleAlias="" />
+    <sfxID_Weapon12 AltName="SFX ID [11]" ParticleAlias="" />
+    <sfxID_Weapon13 AltName="SFX ID [12]" ParticleAlias="" />
+    <sfxID_Weapon14 AltName="SFX ID [13]" ParticleAlias="" />
+    <sfxID_Weapon15 AltName="SFX ID [14]" ParticleAlias="" />
+    <sfxID_Weapon16 AltName="SFX ID [15]" ParticleAlias="" />
+    <sfxID_Weapon17 AltName="SFX ID [16]" ParticleAlias="" />
+    <sfxID_Weapon18 AltName="SFX ID [17]" ParticleAlias="" />
+    <sfxID_Weapon19 AltName="SFX ID [18]" ParticleAlias="" />
+    <sfxID_Weapon20 AltName="SFX ID [19]" ParticleAlias="" />
+    <sfxID_Weapon21 AltName="SFX ID [20]" ParticleAlias="" />
+    <sfxID_Weapon22 AltName="SFX ID [21]" ParticleAlias="" />
+    <sfxID_Weapon23 AltName="SFX ID [22]" ParticleAlias="" />
+    <sfxID_Weapon24 AltName="SFX ID [23]" ParticleAlias="" />
+    <sfxID_Weapon25 AltName="SFX ID [24]" ParticleAlias="" />
+    <sfxID_Weapon26 AltName="SFX ID [25]" ParticleAlias="" />
+    <sfxID_Weapon27 AltName="SFX ID [26]" ParticleAlias="" />
+    <sfxID_Weapon28 AltName="SFX ID [27]" ParticleAlias="" />
+    <sfxID_Weapon29 AltName="SFX ID [28]" ParticleAlias="" />
+    <sfxID_Weapon30 AltName="SFX ID [29]" ParticleAlias="" />
+    <sfxID_Weapon31 AltName="SFX ID [30]" ParticleAlias="" />
+    <sfxID_Weapon32 AltName="SFX ID [31]" ParticleAlias="" />
+    
+    <mountSourcePartDummyPoly_Weapon01 AltName="Mount Source: Dummy Poly [0]" />
+    <mountSourcePartDummyPoly_Weapon02 AltName="Mount Source: Dummy Poly [1]" />
+    <mountSourcePartDummyPoly_Weapon03 AltName="Mount Source: Dummy Poly [2]" />
+    <mountSourcePartDummyPoly_Weapon04 AltName="Mount Source: Dummy Poly [3]" />
+    <mountSourcePartDummyPoly_Weapon05 AltName="Mount Source: Dummy Poly [4]" />
+    <mountSourcePartDummyPoly_Weapon06 AltName="Mount Source: Dummy Poly [5]" />
+    <mountSourcePartDummyPoly_Weapon07 AltName="Mount Source: Dummy Poly [6]" />
+    <mountSourcePartDummyPoly_Weapon08 AltName="Mount Source: Dummy Poly [7]" />
+    <mountSourcePartDummyPoly_Weapon09 AltName="Mount Source: Dummy Poly [8]" />
+    <mountSourcePartDummyPoly_Weapon10 AltName="Mount Source: Dummy Poly [9]" />
+    <mountSourcePartDummyPoly_Weapon11 AltName="Mount Source: Dummy Poly [10]" />
+    <mountSourcePartDummyPoly_Weapon12 AltName="Mount Source: Dummy Poly [11]" />
+    <mountSourcePartDummyPoly_Weapon13 AltName="Mount Source: Dummy Poly [12]" />
+    <mountSourcePartDummyPoly_Weapon14 AltName="Mount Source: Dummy Poly [13]" />
+    <mountSourcePartDummyPoly_Weapon15 AltName="Mount Source: Dummy Poly [14]" />
+    <mountSourcePartDummyPoly_Weapon16 AltName="Mount Source: Dummy Poly [15]" />
+    <mountSourcePartDummyPoly_Weapon17 AltName="Mount Source: Dummy Poly [16]" />
+    <mountSourcePartDummyPoly_Weapon18 AltName="Mount Source: Dummy Poly [17]" />
+    <mountSourcePartDummyPoly_Weapon19 AltName="Mount Source: Dummy Poly [18]" />
+    <mountSourcePartDummyPoly_Weapon20 AltName="Mount Source: Dummy Poly [19]" />
+    <mountSourcePartDummyPoly_Weapon21 AltName="Mount Source: Dummy Poly [20]" />
+    <mountSourcePartDummyPoly_Weapon22 AltName="Mount Source: Dummy Poly [21]" />
+    <mountSourcePartDummyPoly_Weapon23 AltName="Mount Source: Dummy Poly [22]" />
+    <mountSourcePartDummyPoly_Weapon24 AltName="Mount Source: Dummy Poly [23]" />
+    <mountSourcePartDummyPoly_Weapon25 AltName="Mount Source: Dummy Poly [24]" />
+    <mountSourcePartDummyPoly_Weapon26 AltName="Mount Source: Dummy Poly [25]" />
+    <mountSourcePartDummyPoly_Weapon27 AltName="Mount Source: Dummy Poly [26]" />
+    <mountSourcePartDummyPoly_Weapon28 AltName="Mount Source: Dummy Poly [27]" />
+    <mountSourcePartDummyPoly_Weapon29 AltName="Mount Source: Dummy Poly [28]" />
+    <mountSourcePartDummyPoly_Weapon30 AltName="Mount Source: Dummy Poly [29]" />
+    <mountSourcePartDummyPoly_Weapon31 AltName="Mount Source: Dummy Poly [30]" />
+    <mountSourcePartDummyPoly_Weapon32 AltName="Mount Source: Dummy Poly [31]" />
+    
+  </Field>
+  <Self />
+</PARAMMETA>

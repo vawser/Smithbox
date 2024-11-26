@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MOVIE_PLAY_INFO_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="fixstr MovieFileName[16]">
+      <DisplayName>ムービーファイル名</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u16 MovieWidth = 1280">
+      <DisplayName>サイズ（横）</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>1280</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 MovieHeight = 720">
+      <DisplayName>サイズ(縦)</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>720</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u32 BgmId">
+      <DisplayName>BGMID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 PlayType">
+      <DisplayName>再生方法</DisplayName>
+      <Enum>MOVIE_PLAY_TYPE</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 DisableUserBGMOverride">
+      <DisplayName>ユーザー再生BGM禁止</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ユーザーが再生したBGMをオーバーライドするかどうか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u16 SystemMemorySize">
+      <DisplayName>システムメモリサイズ（KB)</DisplayName>
+      <Description>再生できなくなるので不用意に変更しないように</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>250000</Maximum>
+      <Increment>10</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u16 GraphicsMemorySize">
+      <DisplayName>グラフィックメモリサイズ(KB)</DisplayName>
+      <Description>再生できなくなるので不用意に変更しないように</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>250000</Maximum>
+      <Increment>10</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 GameAd">
+      <DisplayName>ゲーム広告</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <DisplayFormat>%s</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 bInternational">
+      <DisplayName>海外版ムービーあるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>海外版ムービーがある場合は ファイル名に「_US」がつく</Description>
+      <DisplayFormat>%s</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[4]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>12</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

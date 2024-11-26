@@ -1,0 +1,14 @@
+0 For players -- プレイヤー用
+1000000 Enemy initial value -- エネミー初期値
+1000001 for test -- テスト用
+1000100 Enemy_small fish -- エネミー_雑魚
+1000200 Enemy_strong enemy -- エネミー_強敵
+1012000 Enemy_Battle Tutorial Ochimusha_Collapse Shinobi Killing Tutorial -- エネミー_戦闘チュートリアル落武者_崩し忍殺チュートリアル用
+1040000 Enemy _ Centipede University only -- エネミー_ムカデ大専用
+1060000 Enemy_Rotating Spearman Only -- エネミー_回転槍術師専用
+1070000 Enemy_Shura Samurai -- エネミー_修羅侍
+1130000 Enemy_Nanban Armor -- エネミー_南蛮甲冑
+5000000 Enemy _ Dedicated to the Haunting Monk -- エネミー_破戒僧専用
+5060000 Enemy_Ninja Army Chief -- エネミー_忍軍の長
+5080000 Enemy_Cavalry Warrior Only -- エネミー_騎馬武者専用
+5100000 Enemy_Yasha Ape only -- エネミー_夜叉猿専用

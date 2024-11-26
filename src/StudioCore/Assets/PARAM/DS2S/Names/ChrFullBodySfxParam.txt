@@ -1,0 +1,50 @@
+1 Without -- なし
+10 At the time of Enemy's death -- エネミー死亡時
+100 Rain Map - Small Size -- 雨マップ-サイズ小
+110 Rain Map - Large Size -- 雨マップ-サイズ大
+101000 Enemy appeared -- エネミー登場
+101370 Necromancer Super Armor -- ネクロマンサースーパーアーマー
+102000 Appeared In Seoul Black -- ソウルブラック登場
+103000 Spell Four Tenno (Magic) Petrified -- スペル四天王（魔法）石化解除
+104000 Red Spirit Level 0 Aura -- 赤霊レベル０オーラ
+104010 Red Spirit Level 1 Aura -- 赤霊レベル１オーラ
+104020 Red Spirit Level 2 Aura -- 赤霊レベル２オーラ
+104030 Red Spirit Level 3 Aura -- 赤霊レベル３オーラ
+105000 Blue Spirit Level 0 Aura -- 青霊レベル０オーラ
+105010 Blue Spirit Level 1 Aura -- 青霊レベル１オーラ
+105020 Blue Spirit Level 2 Aura -- 青霊レベル２オーラ
+105030 Blue Spirit Level 3 Aura -- 青霊レベル３オーラ
+106010 Aura for ghosts -- 亡霊用オーラ
+111000 Enemy Death (Large) -- エネミー死亡（大）
+112000 Soul Black Death -- ソウルブラック死亡
+112010 Soul Black Death: Non-HumanOid -- ソウルブラック死亡：人型以外
+113000 NPC Death -- NPC死亡
+114000 Door possessed death -- 扉憑き死亡
+115000 Enemy Death (Small) -- エネミー死亡（小）
+116000 Enemy death (medium boss treatment) -- エネミー死亡（中ボス扱い）
+180000 Small Size Enemy Petrified Aura -- 小サイズエネミー石化オーラ
+201000 I Under The Mirror Night - Appeared -- ミラーナイトの下僕-登場
+203000 Produced from skeleton aristocracy -- スケルトン貴族から生成
+210000 boss general-purpose death human oid -- ボス汎用死亡　人型
+210010 boss general-purpose death non-humanoid -- ボス汎用死亡　非人型
+210020 Old Dragon Death Non-Human Type -- 古龍死亡　非人型
+211000 I Under The Mirror Knight - Death -- ミラーナイトの下僕-死亡
+212000 Miller Knight Died -- ミラーナイト死亡
+213000 Skeleton noble death explosion -- スケルトン貴族死亡爆散
+213010 Skeleton noble floating -- スケルトン貴族浮遊
+214000 Silver Chariot death -- シルバーチャリオット死亡
+310010 Death - Normal -- 死亡-ノーマル
+310020 Death - White Phantom -- 死亡-白ファントム
+310030 Death - Blue Phantom -- 死亡-青ファントム
+310040 Death - Gold Phantom -- 死亡-金ファントム
+310050 Death - Red Phantom -- 死亡-赤ファントム
+310060 Death - Black Phantom -- 死亡-黒ファントム
+310070 Death - Dragon Spirit Phantom -- 死亡-竜霊ファントム
+310080 Death - Abyss Phantom -- 死亡-深淵ファントム
+400010 Abnormal death - petrified -- 状態異常死亡-石化
+500010 Dragon head stone: raised -- 竜頭石：発生
+500020 Dragon Head Stone: Release -- 竜頭石：解除
+500110 Dragon stone: occurrence -- 竜体石：発生
+500120 Dragon Body Stone: Release -- 竜体石：解除
+501010 Spelling: Magic Defense -- スペル：魔法防御
+501020 Spelling: The Great Magic Defense -- スペル：大魔法防御

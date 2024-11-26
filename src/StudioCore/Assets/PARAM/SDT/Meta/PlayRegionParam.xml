@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<multiPlayZoneId Wiki="Multiplayer section ID" />
+	<multiPlayStartLimitEventFlagId Wiki="Multiplayer start restriction event flag ID" />
+	<otherDisableDistance Wiki="Other distances where spirits cannot penetrate" />
+	<pcPositionSaveLimitEventFlagId />
+	<multiPlayHostLimitEventFlagId Wiki="Multiplayer host restriction event flag: When this flag is turned ON, multiplayer is prohibited as a host. Expected to include block clear flag. 0: No limit" />
+	<cultNpcWhiteGhostEntityId_byFree Wiki="The beginning of the free frame ID used as the entity ID of the summoned NPC in the NPC white spirit summoning ritual" />
+	<bMapGuardianRegion Wiki="Do you want to increase or decrease the frame of the map guardian area?" IsBool="" />
+	<bYellowCostumeRegion Wiki="Is it the yellow-robed old man's signature area?" IsBool="" />
+    <isSummonPosStartForRed Wiki="Is the dark spirit invading the starting direction?" IsBool="" />
+	<pad />
+	<warpItemUsePermitBonfireId_1 Wiki="Entity ID 1 of the bonfire used to determine whether to allow the use of warp items" />
+	<warpItemUsePermitBonfireId_2 Wiki="Entity ID 2 of the bonfire used to determine whether to allow the use of warp items" />
+	<warpItemUsePermitBonfireId_3 Wiki="Entity ID 3 of the bonfire used to determine whether to allow the use of warp items" />
+	<warpItemUsePermitBonfireId_4 Wiki="Entity ID 4 of the bonfire used to determine whether to allow the use of warp items" />
+	<warpItemUsePermitBonfireId_5 Wiki="Entity ID 5 of the bonfire used to determine whether to allow the use of warp items" />
+	<warpItemProhibitionEventFlagId_1 Wiki="Event flag ID1 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID." />
+	<warpItemProhibitionEventFlagId_2 Wiki="Event flag ID2 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID." />
+	<warpItemProhibitionEventFlagId_3 Wiki="Event flag ID3 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID." />
+	<warpItemProhibitionEventFlagId_4 Wiki="Event flag ID4 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID." />
+	<warpItemProhibitionEventFlagId_5 Wiki="Event flag ID5 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID." />
+	<enableBloodstain Wiki="Bloostain Ghost can be seen" IsBool="" />
+    <enableBloodMessage IsBool="" />
+    <enableGhost Wiki="Ghosts of other players can be seen" IsBool="" />
+	<pad3 />
+	<pad2 />
+	<multiPlayHASHostLimitEventFlagId Wiki="Yellow Robed Old Man Host Restriction Event Flag: When this flag is turned on, multiplayer play as a Yellow Robed Old Man host is prohibited. Expected to include block clear flag. 0: No limit" />
+	<returnPointEntityId Wiki="Return position when the PC falls. Set the entity ID of the MapStudio point type 'warp point'. If it is -1, it will return to the save position." />
+	<reserve />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1244,7 +1244,7 @@ public class ParamEditorScreen : EditorScreen
     {
         var oldRegulationPath = "";
         var regulationFolder = "";
-        var storedRegulationDirectory = AppContext.BaseDirectory + $"\\Assets\\Regulations\\{MiscLocator.GetGameIDForDir()}\\";
+        var storedRegulationDirectory = AppContext.BaseDirectory + $"\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Regulations\\\\";
 
         if (Smithbox.ProjectType == ProjectType.ER)
         {

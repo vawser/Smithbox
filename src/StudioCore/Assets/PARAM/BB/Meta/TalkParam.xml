@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<msgId AltName="Male - Message ID" Wiki="PC Gender is Male: Specify Message-> Menu" FmgRef="Talk_Messages" />
+    <voiceId AltName="Male - Voice ID" Wiki="PC Gender is Male: Specify Voice-> Sound" SoundAlias="" />
+    <spEffectId0 AltName="Motion Trigger - SpEffect ID [0]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId0 AltName="Motion ID [0]" Wiki="Specify motion-> Character" />
+    <spEffectId1 AltName="Motion Trigger - SpEffect ID [1]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId1 AltName="Motion ID [1]" Wiki="Specify motion-> Character" />
+    <spEffectId2 AltName="Motion Trigger - SpEffect ID [2]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId2 AltName="Motion ID [2]" Wiki="Specify motion-> Character" />
+    <spEffectId3 AltName="Motion Trigger - SpEffect ID [3" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId3 AltName="Motion ID [3]" Wiki="Specify motion-> Character" />
+    <spEffectId4 AltName="Motion Trigger - SpEffect ID [4]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId4 AltName="Motion ID [4]" Wiki="Specify motion-> Character" />
+    <spEffectId5 AltName="Motion Trigger - SpEffect ID [5]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId5 AltName="Motion ID [5]" Wiki="Specify motion-> Character" />
+    <returnPos AltName="Return Position" Wiki="Relative position of returning conversation-> Conversation" />
+    <reactionId AltName="Reaction ID" Wiki="Conversation specification when returning-> Conversation" />
+    <eventId AltName="Event ID" Wiki="Event ID-> Event" />
+  </Field>
+  <Self Wiki="All Npc Dialogue Data"/>
+</PARAMMETA>

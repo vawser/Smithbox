@@ -1,0 +1,16 @@
+1 For medium-sized aircraft -- 中型機体用
+2 For large aircraft -- 大型機体用
+3 For super large aircraft -- 超大型機体用
+10 For small assets -- 小アセット用
+20 For medium assets -- 中アセット用
+30 For large assets -- 大アセット用
+31 Large asset_for tanks -- 大アセット_タンク用
+40 For extra large assets -- 特大アセット用
+1000 huge fuel tank -- 巨大燃料タンク
+2000 physical test -- 物理テスト
+3000 physics test 2 -- 物理テスト2
+9000 For leaving atari -- アタリ残す用
+9500 For large assets_test -- 大アセット用_テスト
+99999 mass is 0 -- 質量が0
+853001 c8530: for bit -- c8530：ビット用
+920000 9200 Reverse joint Body (Nakanishi test -- 9200 逆関節 Body(中西テスト

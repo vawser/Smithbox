@@ -1,0 +1,43 @@
+100 Equipment weight increased -- 装備重量アップ
+101 Increases pinch attack power -- ピンチ攻撃力アップ
+102 Ring of the Dark Moon God -- 暗月神の指輪
+103 thieves ring -- 盗賊団の指輪
+104 Increases stamina recovery -- スタミナ回復アップ
+105 Increases fire resistance -- 炎耐性アップ
+106 Increased lightning resistance -- 雷耐性アップ
+107 Magic resistance up -- 魔法耐性アップ
+108 All resistance up 1 -- 全耐性アップ1
+109 Increases bleeding resistance -- 出血耐性アップ
+110 Poison resistance up -- 毒耐性アップ
+111 HP slight increase -- HP微増
+113 Curse resistance up -- 呪耐性アップ
+114 magic slot up -- 魔法スロットアップ
+115 Magic power up -- 魔法威力アップ
+116 MP bias -- MP偏重
+117 Increases deadly attack power -- 致命攻撃力アップ
+119 master of the bow -- 弓の達人
+120 Physical defense power up -- 物理防御力アップ
+121 item drop up -- アイテムドロップアップ
+122 Get Soul Up -- 取得ソウルアップ
+123 sound erasure -- 音消去
+124 stone hat -- 石コロ帽子
+125 rigid legs -- 剛脚
+126 revival -- 復活
+127 resurrection from curse -- 呪いからの復活
+128 acrobatics -- 軽業
+130 resonance -- 共鳴
+137 words of chaos -- 混沌の言葉
+138 walking in darkness -- 闇歩き
+139 Lava walking -- 溶岩歩き
+141 Auxiliary magic extension -- 補助魔法延長
+142 HP drain -- HPドレイン
+143 curse of the strong -- 強者の呪い
+144 Counter reinforcement -- カウンター強化
+145 Cherish your weapons -- 武器を大切に
+146 SA up -- SAアップ
+147 Increases pinch defense power -- ピンチ防御力アップ
+148 Miracle power increased -- 奇跡威力アップ
+149 Magic slot up B -- 魔法スロットアップB
+150 [DLC] Black Dragon Ring -- 【DLC】黒竜の指輪
+160 [GR] Sky ring -- 【GR】空の指輪
+161 [GR] Evil spirit ring -- 【GR】邪霊の指輪

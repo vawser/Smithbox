@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DEPTH_LINE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 BeginDist">
+      <DisplayName>開始距離[m]</DisplayName>
+      <Description>走査開始距離</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 EndDist = 300">
+      <DisplayName>終了距離[m]</DisplayName>
+      <Description>走査終了距離</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 StepDist = 5">
+      <DisplayName>更新ステップ[m]</DisplayName>
+      <Description>1フレームで移動する距離</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 LineLength = 10">
+      <DisplayName>ラインの長さ[m]</DisplayName>
+      <Description>ラインの長さ</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 FadeOutTime = 5">
+      <DisplayName>フェードアウト時間[s]</DisplayName>
+      <Description>フェードアウトまでの時間[s]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 AccelTime = 2">
+      <DisplayName>加速時間[s]</DisplayName>
+      <Description>加速していく時間[s]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u16 MoveCount = 1">
+      <DisplayName>走査回数</DisplayName>
+      <Description>演出回数</Description>
+      <Maximum>10</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="u8 MoveType = 1">
+      <DisplayName>描画タイプ</DisplayName>
+      <Enum>DEPTH_LINE_TYPE</Enum>
+      <Description>円状に広がるようになる</Description>
+      <Maximum>10</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="dummy8 reserve0[1]">
+      <DisplayName>ダミ－</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="u8 R">
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="u8 G">
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="u8 B">
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 A">
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 texParam00_texScale = 1">
+      <DisplayName>テクスチャスケール</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>2000</SortID>
+      <UnkB8>texParam00</UnkB8>
+      <UnkC0>TexParam</UnkC0>
+      <UnkC8>テクスチャ１</UnkC8>
+    </Field>
+    <Field Def="f32 texParam00_texOffsetSpeed">
+      <DisplayName>テクスチャアニメ速度</DisplayName>
+      <Description>１秒でアニメションするU値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>2010</SortID>
+      <UnkB8>texParam00</UnkB8>
+      <UnkC0>TexParam</UnkC0>
+      <UnkC8>テクスチャ１</UnkC8>
+    </Field>
+    <Field Def="f32 texParam01_texScale = 1">
+      <DisplayName>テクスチャスケール</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>2100</SortID>
+      <UnkB8>texParam01</UnkB8>
+      <UnkC0>TexParam</UnkC0>
+      <UnkC8>テクスチャ2</UnkC8>
+    </Field>
+    <Field Def="f32 texParam01_texOffsetSpeed">
+      <DisplayName>テクスチャアニメ速度</DisplayName>
+      <Description>１秒でアニメションするU値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>2110</SortID>
+      <UnkB8>texParam01</UnkB8>
+      <UnkC0>TexParam</UnkC0>
+      <UnkC8>テクスチャ2</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserve1[16]">
+      <DisplayName>ダミ－</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

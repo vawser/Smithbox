@@ -1,0 +1,4 @@
+0 invalid value -- 無効値
+100 map expansion -- マップ拡張
+200 Radar A -- レーダーA
+300 Radar B -- レーダーB

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  	<Enum Name="DistanceConfirmationType" type="u8">
+		<Option Value="0" Name="Unknown" />
+		<Option Value="1" Name="Unknown" />
+		<Option Value="2" Name="Skip" />
+	</Enum>
+    <Enum Name="EnableAngleConfirmationType" type="u8">
+		<Option Value="0" Name="Distance" />
+		<Option Value="1" Name="Angle" />
+	</Enum>
+  </Enums>
+  <Self Wiki="Defines parameters related to grabs." Row0Dummy="" />
+  <Field>
+   <attacker_dummy_poly_id AltName="Attacker Dummy Poly ID" />
+   <attacker_orientation AltName="Attacker Orientation" />
+   <defender_dummy_poly_id AltName="Defender Dummy Poly ID" />
+   <defender_orientation AltName="Defender Orientation" />
+   <shift_target AltName="Shift Target" />
+   <relative_position_x AltName="Relative Position: X" />
+   <relative_position_z AltName="Relative Position: Z" />
+   <distance_confirmation_type AltName="Distance Confirmation Type" Enum="DistanceConfirmationType" />
+   <enable_angle_confirmation_type AltName="Enable Angle Confirmation Type" Enum="EnableAngleConfirmationType" />
+   <minimum_distance_x AltName="Minimum Distance: X" />
+   <minimum_distance_y AltName="Minimum Distance: Y" />
+   <minimum_distance_z AltName="Minimum Distance: Z" />
+   <angle_difference_unk_1 AltName="Angle Difference: Unk 1" />
+   <angle_difference_unk_2 AltName="Angle Difference: Unk 2" />
+   <angle_difference_unk_3 AltName="Angle Difference: Unk 3" />
+   <angle_difference_maximum AltName="Angle Difference: Maximum" />
+  </Field>
+</PARAMMETA>

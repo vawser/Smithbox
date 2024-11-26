@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="TEAM_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Guest" />
+      <Option Value="2" Name="Host" />
+      <Option Value="3" Name="Wingman" />
+      <Option Value="4" Name="Junior Wingman" />
+      <Option Value="5" Name="Enemy" />
+      <Option Value="6" Name="Strong Enemy" />
+      <Option Value="7" Name="Third Force" />
+      <Option Value="8" Name="Beserker" />
+      <Option Value="9" Name="Character for Object Destruction" />
+      <Option Value="10" Name="Character for Object Destruction (Wingman)" />
+      <Option Value="11" Name="Character for Object Destruction (Enemy)" />
+      <Option Value="12" Name="Object" />
+      <Option Value="13" Name="Third Force (Ally)" />
+      <Option Value="14" Name="Gimmick Battery (Ally)" />
+    </Enum>
+    <Enum Name="VOICE_CHAT_GROUP_Type" type="u8">
+        <Option Value="0" Name="Hostile" />
+        <Option Value="1" Name="Friendly" />
+    </Enum>
+    <Enum Name="ROLE_NAME_COLOR_TYPE" type="u8">
+        <Option Value="1" Name="Friendly" />
+        <Option Value="2" Name="Hostile" />
+    </Enum>
+  </Enums>
+  <Field>
+    <teamType AltName="Team Type" Wiki="Team type" Enum="TEAM_TYPE" />
+    <pad10 AltName="" Padding=""/>
+    <phantomParamId AltName="Phantom Param ID - Vow [0]" Wiki="Phantom parameter ID when pledge rank is 0" />
+    <spEffectID0 AltName="SpEffect ID [0]" Wiki="Resident special effect 0" Refs="SpEffectParam"/>
+    <spEffectID1 AltName="SpEffect ID [1]" Wiki="Resident special effect 1" Refs="SpEffectParam"/>
+    <spEffectID2 AltName="SpEffect ID [2]" Wiki="Resident special effect 2" Refs="SpEffectParam"/>
+    <spEffectID3 AltName="SpEffect ID [3]" Wiki="Resident special effect 3" Refs="SpEffectParam"/>
+    <spEffectID4 AltName="SpEffect ID [4]" Wiki="Resident special effect 4" Refs="SpEffectParam"/>
+    <spEffectID5 AltName="SpEffect ID [5]" Wiki="Resident special effect 5" Refs="SpEffectParam"/>
+    <spEffectID6 AltName="SpEffect ID [6]" Wiki="Resident special effect 6" Refs="SpEffectParam"/>
+    <spEffectID7 AltName="SpEffect ID [7]" Wiki="Resident special effect 7" Refs="SpEffectParam"/>
+    <spEffectID8 AltName="SpEffect ID [8]" Wiki="Resident special effect 8" Refs="SpEffectParam"/>
+    <spEffectID9 AltName="SpEffect ID [9]" Wiki="Resident special effect 9" Refs="SpEffectParam"/>
+    <sosSignSfxId AltName="Summon Sign - SFX ID" Wiki="SOS sign SFX ID issued by another person" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <mySosSignSfxId AltName="Personal Summon Sign - SFX ID" Wiki="SOS sign SFX ID issued by me" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <summonStartAnimId AltName="Player Summon Start - Animation ID" Wiki="Anime ID to play when the player is summoned and the game starts" />
+    <itemlotParamId AltName="Map Itemlot Param ID" Wiki="Acquisition reward item lottery parameter ID_for map (not -1)" Refs="ItemLotParam_map"/>
+    <voiceChatGroup AltName="Voice Chat Group" Wiki="Voice chat group" Enum="VOICE_CHAT_GROUP_Type" />
+    <roleNameColor AltName="Role Name Color" Wiki="The color of the role name text displayed on the FE of the network PC" Enum="ROLE_NAME_COLOR_TYPE" />
+    <pad1 AltName="" Padding=""/>
+    <roleNameId AltName="Role Name - Text ID" Wiki="Text ID of the role name to be displayed on the FE of the network PC" FmgRef="Modern_Menu_Text" />
+    <threatLv AltName="Threat Level" Wiki="Threat level" />
+    <phantomParamId_vowRank1 AltName="Phantom Param ID - Vow Rank [1]" Wiki="Phantom parameter ID when pledge rank is 1" Refs="PhantomParam"/>
+    <phantomParamId_vowRank2 AltName="Phantom Param ID - Vow Rank [2]" Wiki="Phantom parameter ID when pledge rank is 2" Refs="PhantomParam"/>
+    <phantomParamId_vowRank3 AltName="Phantom Param ID - Vow Rank [3]" Wiki="Phantom parameter ID when pledge rank is 3" Refs="PhantomParam"/>
+    <spEffectID_vowRank0 AltName="Phantom Param ID - Vow Rank [4]" Wiki="Special effect ID for SFX when pledge rank 0" Refs="SpEffectParam"/>
+    <spEffectID_vowRank1 AltName="Phantom Param ID - Vow Rank [5]" Wiki="Special effect ID for SFX when pledge rank 1" Refs="SpEffectParam"/>
+    <spEffectID_vowRank2 AltName="Phantom Param ID - Vow Rank [6]" Wiki="Special effect ID for SFX when pledge rank 2" Refs="SpEffectParam"/>
+    <spEffectID_vowRank3 AltName="Phantom Param ID - Vow Rank [7]" Wiki="Special effect ID for SFX when pledge rank 3" Refs="SpEffectParam"/>
+    <signPhantomId AltName="Ghost Phantom ID" Wiki="Multiplayer pledge ghost body sign phantom ID designation for illusion" />
+    <nonPlayerSummonStartAnimId AltName="NPC Summon Start - Animation ID" Wiki="Anime ID to play when a player other than the player is summoned and the game starts" />
+    <pad2 AltName="" Padding=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

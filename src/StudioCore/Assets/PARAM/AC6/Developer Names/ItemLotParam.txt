@@ -1,0 +1,291 @@
+0 test_param0
+8900 [FNR] Archive behavior test 00 -- 【FNR】アーカイブ挙動テスト00
+8910 [FNR] Archive behavior test 01 -- 【FNR】アーカイブ挙動テスト01
+8920 [FNR] Archive behavior test 02 -- 【FNR】アーカイブ挙動テスト02
+9510 [FNR] Eleventh End Item Recovery -- 【FNR】十一末用アイテム　回復
+9520 [FNR] Eleventh End Item for Exploration Mission 01 -- 【FNR】十一末用アイテム　探索ミッション用　01
+9530 [FNR] Eleventh End Item for Exploration Mission 02 -- 【FNR】十一末用アイテム　探索ミッション用　02
+9540 [FNR] Eleventh End Item for Exploration Mission 03 -- 【FNR】十一末用アイテム　探索ミッション用　03
+9550 [FNR] Eleventh End Item for Exploration Mission 04 -- 【FNR】十一末用アイテム　探索ミッション用　04
+9560 [FNR] Eleventh End Item for Exploration Mission 05 -- 【FNR】十一末用アイテム　探索ミッション用　05
+9980 [FNR] For checking treasure container behavior_01 -- 【FNR】宝コンテナ挙動確認用_01
+9985 [FNR] For checking treasure container behavior_02 -- 【FNR】宝コンテナ挙動確認用_02
+9990 [FNR] For checking treasure container behavior_03 -- 【FNR】宝コンテナ挙動確認用_03
+2100703300 treasure container -- 宝コンテナ
+2100703310 Found Items Outside Scaffolding -- 拾得物 外足場
+2100803000 Large exchange item -- 換金アイテム大
+2101003000 Treasure container | Part 1 -- 宝コンテナ | パーツ1
+2101503900 ID tag_Patrick -- IDタグ_パトリック
+2101503910 ID tag_Yoffe -- IDタグ_ヨッフェ
+2101503920 ID tag_swing -- IDタグ_ブランコ
+2102303000 Treasure container | Part 1 -- 宝コンテナ | パーツ1
+2102403000 Acquisition Test Weapon -- 取得テスト 武器
+2102403010 Acquisition test armor -- 取得テスト 防具
+2102403020 acquisition test booster -- 取得テスト ブースター
+2102403030 Acquisition test generator -- 取得テスト ジェネレーター
+2102403040 Acquisition test FCS -- 取得テスト FCS
+2102403050 acquisition test decoration -- 取得テスト 装飾
+2102403060 Acquisition Test Archive -- 取得テスト アーカイブ
+2102403070 Acquisition test Redemption items -- 取得テスト 換金アイテム
+2102403080 Acquisition test dummy image -- 取得テスト ダミーイメージ
+2102403100 Crunchy acquisition test -- ザクザク取得テスト
+2102403200 Simultaneous acquisition test A of multiple items -- 複数アイテムの同時取得テストA
+2102403201 Simultaneous acquisition test A of multiple items -- 複数アイテムの同時取得テストA
+2102403202 Simultaneous acquisition test A of multiple items -- 複数アイテムの同時取得テストA
+2102603000 Insider's memo -- 内通者のメモ
+2102603001 security code -- セキュリティコード
+2103503000 Treasure that cannot be taken -- 取れない宝
+2103303000 garbage scraps -- ゴミくず
+2103703000 Treasure container | Part 1 -- 宝コンテナ | パーツ1
+2103703010 Treasure container | Part 1 -- 宝コンテナ | パーツ1
+2103903000 Large exchange item -- 換金アイテム大
+2104603000 daisy's note -- デイジーのメモ
+2104603010 Mike and Daisy Crypto Assets -- マイクとデイジーの暗号資産
+2104603020 setA 1/2 Bandit Event｜Cashing in progress -- setA 1/2 野盗イベ｜換金 中
+2104603021 setA 2/2 Bandit Event｜Archive -- setA 2/2 野盗イベ｜アーカイブ
+2104603030 laser naginata -- レーザーナギナタ
+2104603040 Degraded uranium bazooka rifle -- 劣化ウランバズーカライフル
+2104603050 iqbal booster -- イクバールブースター
+2104603060 Treasure Wreck｜Strong 01 -- 宝 残骸｜強01
+2104603070 Treasure Wreck｜Weak 01 -- 宝 残骸｜弱01
+2104603080 Treasure Wreck｜Weak 02 -- 宝 残骸｜弱02
+2104603090 Treasure Wreck｜Weak 03 -- 宝 残骸｜弱03
+2104603100 Treasure Wreck｜Weak 04 -- 宝 残骸｜弱04
+2104603110 Treasure Wreck｜Weak 05 -- 宝 残骸｜弱05
+2104603120 Treasure Wreck｜Weak 06 -- 宝 残骸｜弱06
+2104603130 Treasure Wreck｜Weak 07 -- 宝 残骸｜弱07
+2104603140 Treasure Wreck｜Weak 08 -- 宝 残骸｜弱08
+2104603150 Treasure Wreck｜Weak 09 -- 宝 残骸｜弱09
+2104603160 Treasure Wreckage｜Weak 10 -- 宝 残骸｜弱10
+2104603170 Treasure Wreck｜Naka 01 -- 宝 残骸｜中01
+2104603180 Treasure Wreck｜Naka 02 -- 宝 残骸｜中02
+2104603190 Treasure Wreck｜Naka 03 -- 宝 残骸｜中03
+2104603200 Arbitrary return tutorial archive -- 任意帰還チュートリアル用アーカイブ
+2104603210 ID tag_Patrick (wall search) -- IDタグ_パトリック（壁前探索）
+2104603220 ID tag_Yoffe (wall search) -- IDタグ_ヨッフェ（壁前探索
+2104603230 Hint W bonus cash exchange items -- ヒントWのおまけ 換金アイテム
+2104703100 Treasure remains｜Ocean city -- 宝残骸｜洋上の都市
+2105303000 Treasure container | Part 1 -- 宝コンテナ | パーツ1
+2106103100 Treasure Remains｜Control Room -- 宝残骸｜制御部屋
+2106203100 Treasure remains｜Cask room 1 lower floor -- 宝残骸｜キャスク部屋1 下層
+2106203110 Treasure remains｜Slope, behind the bridge girder towards the entrance -- 宝残骸｜斜面 入口方面橋桁裏
+2106203120 Treasure remains | Crevasse Bridge -- 宝残骸｜クレバス 橋
+2106203130 Treasure remains｜Railway 2 Next to the lock door -- 宝残骸｜線路2 ロック扉横
+2106203140 Treasure remains｜Crevasse, midway point towards heat exhaust vent -- 宝残骸｜クレバス 排熱口方面 中間地点
+2106203150 Treasure Remains｜Cask Room 2 Lower Back -- 宝残骸｜キャスク部屋2 下層奥
+2106203160 Treasure Container｜Crevasses Under the second bridge -- 宝コンテナ｜クレバス 2つ目の橋下
+2106203300 Tag NPAC defeat reward -- タグ NPAC撃破報酬
+2106303300 Tag NPAC defeat reward -- タグ NPAC撃破報酬
+2106303310 Treasure remains｜3 cave valley -- 宝残骸｜3洞窟 谷間
+2106403000 Treasure container | Part 1 -- 宝コンテナ | パーツ1
+2106403010 Treasure container | Part 2 -- 宝コンテナ | パーツ2
+2106403020 Treasure container | Part 3 -- 宝コンテナ | パーツ3
+2106403030 Treasure container | Part 4 -- 宝コンテナ | パーツ4
+2106403060 For treasure remains -- 宝残骸用
+2107203000 Treasure Container | Beyond the Broken Scaffold -- 宝コンテナ | 壊れた足場の先
+2107203010 Treasure Container | Subroot -- 宝コンテナ |サブルート
+2107203020 Treasure Container | Indoor -- 宝コンテナ | 室内
+2109003300 Tag NPAC defeat reward -- タグ NPAC撃破報酬
+2109003310 Tag NPAC defeat reward -- タグ NPAC撃破報酬
+2140090000 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090010 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090020 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090030 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090040 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090050 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090060 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090070 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090080 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090090 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090100 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090110 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090120 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090130 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090140 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090150 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090160 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090170 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090180 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090190 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090200 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090210 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090220 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090230 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090240 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090250 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090260 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090270 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090280 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090290 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090300 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090310 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090320 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090330 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090340 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090350 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090360 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090370 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090380 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090390 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090400 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090410 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090420 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090430 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090440 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090450 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090460 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090470 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090480 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090490 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090500 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090510 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090520 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090530 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090540 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090550 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090560 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090570 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090580 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090590 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090600 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090610 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090620 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090630 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090640 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090650 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090660 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090670 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090680 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090690 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090700 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090710 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090720 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090730 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090740 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090750 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090760 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090770 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090780 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090790 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090800 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090810 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090820 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090830 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090840 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090850 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090860 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090870 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090880 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090890 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090900 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090910 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090920 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090930 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090940 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090950 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090960 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090970 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090980 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140090990 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091000 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091010 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091020 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091030 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091040 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091050 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091060 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091070 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091080 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091090 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091100 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091110 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091120 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091130 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091140 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091150 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091160 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091170 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091180 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091190 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091200 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091210 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091220 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091230 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091240 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091250 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091260 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091270 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091280 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091290 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091300 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091310 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091320 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091330 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091340 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091350 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091360 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091370 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091380 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091390 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091400 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091410 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091420 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091430 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091440 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091450 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091460 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091470 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091480 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091490 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091500 Event Archive_Prologue_Hack 01 -- イベント用アーカイブ_プロローグ_ハック用01
+2140091510 Event Archive_Prologue_Hack 02 -- イベント用アーカイブ_プロローグ_ハック用02
+2140091520 Event Archive_Prologue_Hack 03 -- イベント用アーカイブ_プロローグ_ハック用03
+2140091525 Event Archive_Prologue_Hack 04 -- イベント用アーカイブ_プロローグ_ハック用04
+2140091530 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091540 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091550 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091560 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091570 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091580 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091590 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091600 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091610 Event archive_Encounter with organization_Hack 01 -- イベント用アーカイブ_組織との出会い_ハック用01
+2140091620 Event archive_Encounter with organization_Hack 02 -- イベント用アーカイブ_組織との出会い_ハック用02
+2140091630 Event archive_Encounter with organization_Hack 03 -- イベント用アーカイブ_組織との出会い_ハック用03
+2140091640 Event archive_Encounter with organization_Hack 04 -- イベント用アーカイブ_組織との出会い_ハック用04
+2140091650 Exterminate Behind the Wall_NPAC Engagement Archive_Video Record: Condemnation of Rubiconian -- 壁裏殲滅_NPAC接敵用アーカイブ_映像記録：ルビコニアンの糾弾
+2140091660 [FNR] Archive_Big Bridge_Audio recording: Dozer's nonsense -- 【FNR】アーカイブ_ビッグブリッジ_音声記録：ドーザーの妄言
+2140091670 Beyond the wall_Archive_East side remains -- 壁越え_アーカイブ_東側残骸
+2140091680 Event archive_Damage revisit_Hack_Dolmayan's Essays 2 -- イベント用アーカイブ_坑道再訪_ハック用_ドルマヤンの随想録2
+2140091690 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091700 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091710 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091720 Document data: Professor Nagai's dictation (1) -- 文書データ：ナガイ教授の口述筆記（1）
+2140091730 Event Archives_Pane Revisited_Hack_Professor Nagai's Dictation 02 -- イベント用アーカイブ_坑道再訪_ハック用_ナガイ教授の口述筆記02
+2140091740 A layer indoor search_Archive_Dead-end room -- A層屋内捜索_アーカイブ_行き止まり部屋
+2140091750 Event Archives_Pane Revisited_Hack_Professor Nagai's Dictation 04 -- イベント用アーカイブ_坑道再訪_ハック用_ナガイ教授の口述筆記04
+2140091760 Ruins_Archive_On the building -- 廃墟_アーカイブ_ビル上
+2140091770 Image data: STV draft (3) -- 画像データ：STVの画稿（3）
+2140091780 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091790 [FNR] Archive_Annihilation behind the wall_Image data: STV draft (1) -- 【FNR】アーカイブ_壁裏殲滅_画像データ：STVの画稿（1）
+2140091800 Image data: STV draft (2) -- 画像データ：STVの画稿（2）
+2140091810 Fuel base explosion_Archive Hashimoto -- 燃料基地爆破_アーカイブ　橋下
+2140091820 Image data: STV draft (5) -- 画像データ：STVの画稿（5）
+2140091830 Ruins_Archive_Swamp_Ghost -- 廃墟_アーカイブ_沼_ゴースト
+2140091840 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091850 Beyond the Wall_Archive_Volta Remnants -- 壁越え_アーカイブ_ヴォルタ残骸
+2140091860 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091870 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091880 Jailbreak_Archive_Sewer quadruped -- 脱獄_アーカイブ_下水四脚
+2140091890 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091900 [FNR] Archive_Big Bridge_Video record: The final moments of a debt collector -- 【FNR】アーカイブ_ビッグブリッジ_映像記録：債権回収業者の最期
+2140091910 Audio recording: Report to Marshal -- 音声記録：帥叔への報告
+2140091920 Audio recording: Dozer chat -- 音声記録：ドーザーの雑談
+2140091930 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091940 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091950 Fuel base explosion_archive behind the plant -- 燃料基地爆破_アーカイブ　プラント裏
+2140091960 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091970 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置
+2140091980 Observation data: Enforcement system -- 観測データ：強制執行システム
+2140091990 Document data: Professor Nagai's dictation (5) -- 文書データ：ナガイ教授の口述筆記（5）
+2140092000 [FNR] Archive_Mission placement -- 【FNR】アーカイブ_ミッション配置

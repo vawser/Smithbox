@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>DAMAGE_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 damage_ctrl_id" />
+    <Field Def="s32 damage_id_followup" />
+    <Field Def="s32 damage_id_origin " />
+    <Field Def="s32 damage_0" />
+    <Field Def="s32 damage_1" />
+    <Field Def="s32 damage_2" />
+    <Field Def="u8 physical_damage_floor" />
+    <Field Def="u8 damage_type_0" />
+    <Field Def="u8 damage_type_1" />
+    <Field Def="u8 damage_type_2" />
+    <Field Def="f32 damage_mult" />
+    <Field Def="f32 counter_damage_mult" />
+    <Field Def="u16 stamina_damage_mult" />
+    <Field Def="u16 durability_damage_mult" />
+    <Field Def="f32 knockback_amount" />
+    <Field Def="f32 knockback_speed" />
+    <Field Def="u8 is_spawn_on_weapon" />
+    <Field Def="u8 hitbox_origin_dummy_poly_id" />
+    <Field Def="s8 guardbreak_type" />
+    <Field Def="u8 hitbox_shape" />
+    <Field Def="f32 hitbox_radius_mult" />
+    <Field Def="f32 hitbox_length_mult" />
+    <Field Def="f32 cycle_period" />
+    <Field Def="u8 target_disable_damage:1 = 1" />
+    <Field Def="u8 target2:1 = 1" />
+    <Field Def="u8 target_self:1 = 1" />
+    <Field Def="u8 target4:1 = 1" />
+    <Field Def="u8 target_characters:1 = 1" />
+    <Field Def="u8 target6:1 = 1" />
+    <Field Def="u8 target_map:1 = 1" />
+    <Field Def="u8 target8:1 = 1" />
+    <Field Def="u8 Unk01" />
+    <Field Def="u8 Unk02" />
+    <Field Def="u8 Unk03" />
+    <Field Def="u8 Unk04" />
+    <Field Def="u8 Unk05" />
+    <Field Def="u8 Unk06" />
+    <Field Def="u8 Unk07" />
+    <Field Def="s32 speffect_id" />
+    <Field Def="u8 apply_speffect" />
+    <Field Def="u8 speffect_type" />
+    <Field Def="u8 speffect_apply_mode" />
+    <Field Def="u8 Unk08" />
+    <Field Def="s32 damage_effect_material_param_id" />
+    <Field Def="s32 Unk10" />
+    <Field Def="s32 Unk11" />
+    <Field Def="u8 Unk12" />
+    <Field Def="u8 Unk13" />
+    <Field Def="u8 damage_movement_power_param_id" />
+    <Field Def="u8 Unk15" />
+    <Field Def="u8 Unk16" />
+    <Field Def="u8 Unk17" />
+    <Field Def="u8 hitback_is_spawn_on_weapon" />
+    <Field Def="u8 hitback_hitbox_origin_dummy_poly_id" />
+    <Field Def="u8 hitback_hitbox_shape" />
+    <Field Def="u8 sfx_opacity_adjustment" />
+    <Field Def="u8 Unk20" />
+    <Field Def="u8 Unk21" />
+    <Field Def="f32 hitback_hitbox_radius_mult" />
+    <Field Def="f32 hitback_hitbox_length_mult" />
+    <Field Def="s32 grab_param_id" />
+    <Field Def="f32 hitbox_max_size" />
+    <Field Def="f32 hitbox_expand_speed" />
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>SWORD_ARTS_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1101</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1102</SortID>
+    </Field>
+    <Field Def="u8 swordArtsType">
+      <DisplayName>剣戟ID</DisplayName>
+      <Description>ビヘイビアスクリプトに渡してどの剣戟か判定するためのもの</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 artsSpeedType">
+      <DisplayName>アーツ速度</DisplayName>
+      <Description>どのキャンセルタイミングを見るか。0：通常（左手攻撃）／1：早い／2：遅い</Description>
+      <Maximum>2</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s8 refStatus">
+      <DisplayName>関連ステータス</DisplayName>
+      <Enum>SWORD_ARTS_REF_STATUS_TYPE</Enum>
+      <Description>どの系統のアーツポイントを参照するか</Description>
+      <Minimum>0</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u8 isRefRightArts:1">
+      <DisplayName>左手（片手持ち）時に右手のアーツを表示するか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>左手武器のアーツに設定されている場合、右手武器のアーツをFEに表示します。「武器戦技」などに使われる想定</Description>
+      <Maximum>1</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="u8 isGrayoutLeftHand:1">
+      <DisplayName>左手（片手持ち）時にグレーアウトするか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>左手（片手持ち）のアーツ名を表示するときにグレーアウトするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>910</SortID>
+    </Field>
+    <Field Def="u8 isGrayoutRightHand:1">
+      <DisplayName>右手（片手持ち）時にグレーアウトするか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>右手（片手持ち）のアーツ名を表示するときにグレーアウトするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>920</SortID>
+    </Field>
+    <Field Def="u8 isGrayoutBothHand:1">
+      <DisplayName>両手持ち時にグレーアウトするか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>両手持ちのアーツ名を表示するときにグレーアウトするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>930</SortID>
+    </Field>
+    <Field Def="dummy8 reserve2:4">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>1103</SortID>
+    </Field>
+    <Field Def="s8 usePoint_L1">
+      <DisplayName>消費ポイント L1</DisplayName>
+      <Description>L1によりアーツを出したときに消費するポイント</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s8 usePoint_L2">
+      <DisplayName>消費ポイント L2</DisplayName>
+      <Description>L2によりアーツを出したときに消費するポイント</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s8 usePoint_R1">
+      <DisplayName>消費ポイント R1</DisplayName>
+      <Description>R1によりアーツを出したときに消費するポイント</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="s8 usePoint_R2">
+      <DisplayName>消費ポイント R2</DisplayName>
+      <Description>R2によりアーツを出したときに消費するポイント</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="s32 textId">
+      <DisplayName>テキストID</DisplayName>
+      <Description>アーツ説明用のテキストID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 useMagicPoint_L1">
+      <DisplayName>消費MP L1</DisplayName>
+      <Description>L1によりアーツを出したときに消費するMP</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>810</SortID>
+    </Field>
+    <Field Def="s16 useMagicPoint_L2">
+      <DisplayName>消費MP L2</DisplayName>
+      <Description>L2によりアーツを出したときに消費するMP</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>820</SortID>
+    </Field>
+    <Field Def="s16 useMagicPoint_R1">
+      <DisplayName>消費MP R1</DisplayName>
+      <Description>R1によりアーツを出したときに消費するMP</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>830</SortID>
+    </Field>
+    <Field Def="s16 useMagicPoint_R2">
+      <DisplayName>消費MP R2</DisplayName>
+      <Description>R2によりアーツを出したときに消費するMP</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>840</SortID>
+    </Field>
+    <Field Def="s8 shieldIconType" RemovedVersion="10701000">
+      <DisplayName>盾種別アイコン（上書き）</DisplayName>
+      <Enum>SWORD_ARTS_SHIELD_ICON_TYPE</Enum>
+      <Description>上書きしない場合は、武器パラの剣戟IDを元にアイコン表示されます。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>990</SortID>
+    </Field>
+    
+    <Field Def="u16 swordArtsTypeNew" FirstVersion="10701000" />
+    
+    <Field Def="u16 iconId">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>FEなどで表示するアイコンのID</Description>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="s32 aiUsageId = -1">
+      <DisplayName>AI使用判断ID</DisplayName>
+      <Description>AI使用判断ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

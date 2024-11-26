@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <NearMinDist AltName="Near: Minimum Distance" />
+    <NearMaxDist AltName="Near: Maximum Distance" />
+    <FarMinDist AltName="Far: Minimum Distance" />
+    <FarMaxDist AltName="Far: Maximum Distance" />
+    <MiddleAlpha AltName="Middle: Alpha" />
+  </Field>
+  <Self />
+</PARAMMETA>

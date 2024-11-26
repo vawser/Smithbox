@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="GAMEDATA_UNLOCK_TYPE" type="s32">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="Tool Item" />
+        <Option Value="2" Name="Event Flag" />
+        <Option Value="3" Name="Arena Elimination" />
+        <Option Value="4" Name="Mercenary Rank" />
+        <Option Value="5" Name="Mission Clear" />
+        <Option Value="6" Name="All Missions Completed" />
+        <Option Value="7" Name="All Missions S Rank Cleared" />
+        <Option Value="8" Name="All Training Completed" />
+        <Option Value="9" Name="All OS Enhancements" />
+        <Option Value="10" Name="Get All Parts" />
+        <Option Value="11" Name="Archive" />
+        <Option Value="12" Name="Cleared All Arenas" />
+        <Option Value="13" Name="DLC Possession" />
+        <Option Value="14" Name="Tutorial View" />
+        <Option Value="20" Name="Rankuma: Grade Reached" />
+        <Option Value="21" Name="Rankuma: Victory" />
+        <Option Value="22" Name="Rankuma: Grade S Reached" />
+        <Option Value="23" Name="Rankuma: Ranking" />
+    </Enum>
+  </Enums>
+  <Field>
+    <unlockType AltName="Unlock Type" Enum="GAMEDATA_UNLOCK_TYPE" />
+    <value AltName="Value" FlagAlias="unlockType=2" Refs="EquipParamGoods(unlockType=1),OsReinforcePoint(unlockType=3),MercenaryRankTable(unlockType=4),MissionParam(unlockType=5)" />
+    <pad1 Padding=""/>
+    <pad2 Padding=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

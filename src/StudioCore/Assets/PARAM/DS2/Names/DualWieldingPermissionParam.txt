@@ -1,0 +1,25 @@
+0 Without -- なし
+10 Nito style Bare hands -- 二刀流 素手
+20 Two-sword fist -- 二刀流 拳
+30 Two-sword dagger -- 二刀流 短剣
+40 Two-sword sword swords -- 二刀流 刺剣
+50 Two-sword sword one-handed sword -- 二刀流 片手剣
+60 Two-edged double-edged sword -- 二刀流 双刃剣
+70 Two-sword style One-handed mallet -- 二刀流 片手槌
+80 Two-handed sword -- 二刀流 両手剣
+90 Two-sword sword one-handed axe -- 二刀流 片手斧
+100 Two-handed hand-to-hand mallet -- 二刀流 両手槌
+110 Two-handed sword- two-handed sword -- 二刀流 両手特大剣
+120 Two-handed two-handed axe -- 二刀流 両手斧
+130 Two-sword style two-handed sickle -- 二刀流 両手鎌
+140 Two-sword style two-handed long-handed axe -- 二刀流 両手長斧
+150 Two-sword spear -- 二刀流 槍
+160 Two-sword style assault spear -- 二刀流 突撃槍
+170 Nito style whip -- 二刀流 鞭
+180 Two-sword style one-handed bow -- 二刀流 片手ボウ
+190 Two-sword style continuous shooting one-handed bow -- 二刀流 連射片手ボウ
+200 Two-sword style one-handed wand -- 二刀流 片手杖
+210 Two-sword style one-handed bell -- 二刀流 片手ベル
+220 Two-sword style right shield -- 二刀流 右盾
+230 Two-sword style Left shield -- 二刀流 左盾
+240 Nito-style claw -- 二刀流 かぎ爪

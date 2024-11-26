@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <texScrollForwardSpeedScale AltName="Texture Scroll: Movement Scale" Wiki="Movement speed until the scroll completes one revolution (Km/h)" />
+    <texScrollAngleSpeedScale AltName="Texture Scroll: Rotation Scale" Wiki="Rotating speed until the scroll completes one revolution (rad/frame)" />
+    
+    <paramL_texScrollmaterialID AltName="Left: Texture Scroll - Material ID" Wiki="Material ID specified in Matxml" />
+    <paramL_texScrollMaterialParamID AltName="Left: Texture Scroll - Parameter ID" Wiki="" Refs="MaterialExParam" />
+    <paramL_forwardAnimID AltName="Left: Forward Animation ID" Wiki="Animation ID of the wheel part when moving forward" />
+    <paramL_backAnimID AltName="Left: Backward Animation ID" Wiki="Animation ID of the wheel part when moving backwards" />
+    
+    <paramR_texScrollmaterialID AltName="Right: Texture Scroll - Material ID" Wiki="Material ID specified in Matxml" />
+    <paramR_texScrollMaterialParamID AltName="Right: Texture Scroll - Parameter ID" Wiki="" Refs="MaterialExParam" />
+    <paramR_forwardAnimID AltName="Right: Forward Animation ID" Wiki="Animation ID of the wheel part when moving forward" />
+    <paramR_backAnimID AltName="Right: Backward Animation ID" Wiki="Animation ID of the wheel part when moving backwards" />
+    
+    <WheelLeftBackIndex AltName="Back Left Wheel ID" Wiki="The leftmost rear index in the wheel internal control parameters" Refs="TankWheelParam" />
+    <WheelRightBackIndex AltName="Back Right Wheel ID" Wiki="The rightmost rear index in the wheel internal control parameters" Refs="TankWheelParam" />
+    
+    <pad6 Padding="" />
+    
+    <texScrollForwardTexSpeedScale AltName="Texture Scroll: Movement Scale" Wiki="Movement speed until the scroll completes one revolution (Km/h)" />
+    <texScrollAngleTexSpeedScale AltName="Texture Scroll: Rotation Scale" Wiki="Rotating speed until the scroll completes one revolution (rad/frame)" />
+    <footIKChangeTime AltName="Foot IK Interpolation Time" Wiki="Interpolation time of animation of wheel and belt part when FootIK is enabled/disabled" />
+    
+    <pad7 Padding="" />
+  </Field>
+  <Self />
+</PARAMMETA>

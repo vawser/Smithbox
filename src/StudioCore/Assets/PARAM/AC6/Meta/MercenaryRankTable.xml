@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <UnkInt0x00 Padding="" />
+    <mercenaryRankIcon AltName="Hunter Class Icon ID" TextureRef="Direct/01_common/SB_MercenaryRank/mercenaryRankIcon/MercenaryRank_" />
+    
+    <Unk0x0A Padding="" />
+    <UnkInt0x0C Padding="" />
+  </Field>
+  <Self Wiki="Determines the configuration for LOGHUNT progress, which includes Hunter Class."/>
+</PARAMMETA>

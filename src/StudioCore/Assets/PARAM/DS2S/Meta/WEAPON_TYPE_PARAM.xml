@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="StanceSwapType">
+      <Option Value="10" Name="From Back" />
+      <Option Value="20" Name="From Right Hip" />
+      <Option Value="30" Name="From Left Hip" />
+    </Enum>
+    <Enum Name="PositionType">
+      <Option Value="1" Name="Perpendicular to Right Hand" />
+      <Option Value="2" Name="Perpendicular to Left Hand" />
+      <Option Value="3" Name="Disappear" />
+      <Option Value="5" Name="Right Feet" />
+      <Option Value="6" Name="Left Feet" />
+      <Option Value="7" Name="Disappears" />
+      <Option Value="8" Name="Body" />
+      <Option Value="10" Name="Top of Head" />
+      <Option Value="20" Name="Right Hand" />
+      <Option Value="21" Name="Left Hand" />
+      <Option Value="22" Name="Left Backhand" />
+      <Option Value="26" Name="Right Backhand" />
+      <Option Value="30" Name="Left Hip" />
+      <Option Value="31" Name="Right Hip" />
+      <Option Value="32" Name="Right Back" />
+      <Option Value="33" Name="Left Back" />
+      <Option Value="34" Name="Upside Down Right Back" />
+      <Option Value="35" Name="Upside Down Left Back" />
+      <Option Value="38" Name="Reversed Left Hip" />
+      <Option Value="39" Name="Reversed Right Hip" />
+      <Option Value="40" Name="Right Center Back" />
+      <Option Value="41" Name="Left Center Back" />
+      <Option Value="42" Name="Perpendicular Right Back" />
+      <Option Value="43" Name="Perpendicular Left Back" />
+      <Option Value="44" Name="Transversal Up Angle Right Back" />
+      <Option Value="45" Name="Transversal Down Angle Right Back" />
+      <Option Value="46" Name="Transversal Down Angle Left Back" />
+      <Option Value="47" Name="Transversal Up Angle Left Back" />
+      <Option Value="49" Name="Hip Back Center" />
+      <Option Value="50" Name="Far Back, Left" />
+      <Option Value="51" Name="Far Back, Right" />
+      <Option Value="52" Name="Reversed Hip, Upward" />
+      <Option Value="53" Name="Hip Back Center, Inside" />
+      <Option Value="54" Name="Right Back, Upper" />
+      <Option Value="55" Name="Left Back, Upper" />
+      <Option Value="56" Name="Transversal Up Angle Right Back, Lower" />
+      <Option Value="57" Name="Transversal Down Angle Right Back, Lower" />
+      <Option Value="58" Name="Right Hip, Rotated" />
+      <Option Value="59" Name="Left Hip, Rotated" />
+    </Enum>
+    <Enum Name="RelativePositionType">
+      <Option Value="1" Name="Normal" />
+      <Option Value="2" Name="Translated" />
+      <Option Value="3" Name="Rotated" />
+    </Enum>
+    <Enum Name="CastType">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Arrows" />
+      <Option Value="2" Name="Great Arrows" />
+      <Option Value="3" Name="Bolts" />
+      <Option Value="6" Name="Sorceries/Miracles/Pyromancies" />
+    </Enum>
+    <Enum Name="WeaponCategoryNameType">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Claw" />
+      <Option Value="2" Name="Fists" />
+      <Option Value="3" Name="Dagger" />
+      <Option Value="4" Name="Thrusting Sword" />
+      <Option Value="5" Name="Whip" />
+      <Option Value="6" Name="Twinblade" />
+      <Option Value="7" Name="Spear" />
+      <Option Value="8" Name="Lance" />
+      <Option Value="9" Name="Curved Sword" />
+      <Option Value="10" Name="Katana" />
+      <Option Value="11" Name="Straight Sword" />
+      <Option Value="12" Name="Reaper" />
+      <Option Value="13" Name="Greatsword" />
+      <Option Value="14" Name="Ultra Greatsword" />
+      <Option Value="15" Name="Curved Greatsword" />
+      <Option Value="16" Name="Hammer" />
+      <Option Value="17" Name="Great Hammer" />
+      <Option Value="18" Name="Axe" />
+      <Option Value="19" Name="Greataxe" />
+      <Option Value="20" Name="Halberd" />
+      <Option Value="21" Name="Staff" />
+      <Option Value="22" Name="Sacred Chime" />
+      <Option Value="23" Name="Bow" />
+      <Option Value="24" Name="Greatbow" />
+      <Option Value="25" Name="Crossbow" />
+      <Option Value="26" Name="Small Shield" />
+      <Option Value="27" Name="Shield" />
+      <Option Value="28" Name="Greatshield" />
+      <Option Value="29" Name="Torch" />
+      <Option Value="30" Name="Binoculars" />
+      <Option Value="31" Name="Pyromancy Flame" />
+    </Enum>
+    <Enum Name="SwingSoundEnum">
+      <Option Value="0" Name="Twinblade/Scimitars/Katanas/Greatswords" />
+      <Option Value="1" Name="Ultra Greatswords/Curved Greatswords" />
+      <Option Value="2" Name="Dagger" />
+      <Option Value="3" Name="Fists/Shields" />
+      <Option Value="4" Name="Reapers/Axes" />
+      <Option Value="5" Name="Hammers/Halberds/Great Hammers/Binoculars" />
+      <Option Value="6" Name="Spears" />
+      <Option Value="7" Name="Whip" />
+      <Option Value="8" Name="Bows/Great Bows" />
+      <Option Value="9" Name="Crossbows" />
+      <Option Value="10" Name="Staves" />
+      <Option Value="11" Name="Chimes" />
+    </Enum>
+    <Enum Name="PowerStanceEnum">
+      <Option Value="0" Name="Cannot be powerstanced" />
+      <Option Value="10" Name="Bare Fists" />
+      <Option Value="20" Name="Claws And Fist Weapons" />
+      <Option Value="30" Name="Daggers" />
+      <Option Value="40" Name="Thrusting Swords" />
+      <Option Value="50" Name="Curved Swords, Straight Swords, Katanas" />
+      <Option Value="55" Name="Bewitched Alonne Sword" />
+      <Option Value="60" Name="Twinblades" />
+      <Option Value="70" Name="Hammers" />
+      <Option Value="80" Name="Greatswords" />
+      <Option Value="85" Name="Majestic Greatsword" />
+      <Option Value="90" Name="Axes" />
+      <Option Value="100" Name="Ultra Greatswords / Curved Greatswords" />
+      <Option Value="110" Name="Greataxes" />
+      <Option Value="120" Name="Greathammers" />
+      <Option Value="130" Name="Reapers" />
+      <Option Value="140" Name="Polearms" />
+      <Option Value="150" Name="Spears" />
+      <Option Value="160" Name="Lances" />
+      <Option Value="170" Name="Whips" />
+      <Option Value="180" Name="Crossbows" />
+      <Option Value="190" Name="Repeating Crossbows" />
+      <Option Value="220" Name="Reeves Greatshield" />
+      <Option Value="230" Name="Orma Greatshield" />
+      <Option Value="240" Name="Work Hook" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Defines parameters relating to weapon type and position." Row0Dummy="" />
+  <Field>
+    <is_cast_sorceries AltName="Cast Sorceries" IsBool="" />
+    <is_cast_miracles AltName="Cast Miracles" IsBool="" />
+    <is_cast_pyromancies AltName="Cast Pyromancies" IsBool="" />
+    <is_cast_hexes_staves AltName="Cast Hexes (Staff)" IsBool="" />
+    <grip_style_2h_right AltName="Grip Style: 2H Right" />
+    <grip_style_2h_left AltName="Grip Style: 2H Left" />
+    <grip_style_1h_right AltName="Grip Style: 1H Right" />
+    <grip_style_1h_left AltName="Grip Style: 1H Left" />
+    <grip_style_powerstance_right AltName="Grip Style: Powerstance Right" />
+    <grip_style_powerstance_left AltName="Grip Style: Powerstance Left" />
+    <powerstance_swap_type AltName="Powerstance Swap Type" Enum="StanceSwapType" />
+    <position_1h_right AltName="Position: 1H Right" Enum="PositionType" />
+    <relative_position_1h_right AltName="Relative Position: 1H Right" Enum="RelativePositionType" />
+    <position_1h_left AltName="Position: 1H Left" Enum="PositionType" />
+    <relative_position_1h_left AltName="Relative Position: 1H Left" Enum="RelativePositionType" />
+    <position_2h_right AltName="Position: 2H Right" Enum="PositionType" />
+    <relative_position_2h_right AltName="Relative Position: 2H Right" Enum="RelativePositionType" />
+    <position_unknown1  AltName="Position: Unknown 1" Enum="PositionType" />
+    <relative_position_unknown1 AltName="Relative Position: Unknown 1" Enum="RelativePositionType" />
+    <position_2h_left AltName="Position: 2H Left" Enum="PositionType" />
+    <relative_position_2h_left AltName="Relative Position: 2H Left" Enum="RelativePositionType" />
+    <position_unknown2  AltName="Position: Unknown 2" Enum="PositionType" />
+    <relative_position_unknown2 AltName="Relative Position: Unknown 2" Enum="RelativePositionType" />
+    <holsterPosition_right AltName="Holster Position: Right" Enum="PositionType" />
+    <holsterrelative_position_right AltName="Holster Relative Position: Right" Enum="RelativePositionType" />
+    <holsterPosition_left AltName="Holster Position: Left" Enum="PositionType" />
+    <holsterrelative_position_left AltName="Holster Relative Position: Left" Enum="RelativePositionType" />
+    <cast_type AltName="Cast Type" Enum="CastType" />
+    <weapon_category_name AltName="Weapon Category Name" Enum="WeaponCategoryNameType" />
+    <swing_sound AltName="Swing Sound" Enum="SwingSoundEnum" />
+    <is_cast_hexes_chime AltName="Cast Hexes (Chime)" IsBool="" />
+	<left_hand_stamina_damage_mult AltName="Left Hand Stamina Damage %" />
+    <left_hand_damage_mult AltName="Left Hand Damage %" />
+	<right_hand_stamina_damage_mult AltName="Right Hand Stamina Damage %" />
+    <right_hand_damage_mult AltName="Right Hand Damage %" />
+    <counter_damage AltName="Counter Damage" />
+    <bow_distance AltName="Bow Range" />
+    <backstab_check_anim AltName="Backstab - Check Animation ID" />
+    <guardbreak_check_anim AltName="Guard Break - Check Animation ID" />
+    <guard_stamina_regen AltName="Guard Stamina Regeneration %" />
+    <cast_speed AltName="Cast Speed" />
+    <mundane_scaling_mult AltName="Mundane Scaling %" />
+    <powerstance_category AltName="Powerstance Category" Enum="PowerStanceEnum" Wiki="Determines weapon power stance compatability." />
+  </Field>
+</PARAMMETA>

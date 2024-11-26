@@ -1,0 +1,39 @@
+0 Mysterious boushi -- ふしぎなぼうし
+100000 Protagonist _ head -- 主人公_頭
+101000 Protagonist _ torso -- 主人公_胴
+102000 Protagonist_arm_prosthesis -- 主人公_腕_義手
+103000 Protagonist _ legs -- 主人公_脚
+112000 Protagonist _ arm _ raw -- 主人公_腕_生身
+122000 Protagonist_arm_deficiency -- 主人公_腕_欠損
+131000 Protagonist _ body _ with sword without immortality -- 主人公_胴_刀あり不死斬りなし
+141000 Protagonist _ body _ no sword no immortal sword -- 主人公_胴_刀なし不死斬りなし
+153000 Protagonist _ legs _ barefoot -- 主人公_脚_裸足
+162000 Protagonist_arm_prosthesis_high resolution -- 主人公_腕_義手_高解像度
+200000 Protagonist_head_Busshi -- 主人公_頭_仏師
+201000 Protagonist _ body _ Buddhist teacher -- 主人公_胴_仏師
+202000 Protagonist_arm_Busshi -- 主人公_腕_仏師
+203000 Protagonist_Legs_Busshi -- 主人公_脚_仏師
+300000 Protagonist _head_shura -- 主人公_頭_修羅
+301000 Protagonist _ torso _ shura _ immortal slash -- 主人公_胴_修羅_不死斬りあり
+331000 Protagonist _ torso _ shura _ no immortal slash -- 主人公_胴_修羅_不死斬りなし
+302000 Protagonist _arm_prosthetic hand_shura -- 主人公_腕_義手_修羅
+303000 Protagonist_Legs_Shura -- 主人公_脚_修羅
+304000 Protagonist _ Hair _ Shura -- 主人公_髪_修羅
+400000 Protagonist _ Head _ Ashina Ninja -- 主人公_頭_葦名忍者
+401000 Protagonist _ torso _ reed name ninja _ immortal slash -- 主人公_胴_葦名忍者_不死斬りあり
+431000 Protagonist _ torso _ reed name ninja _ no immortal slash -- 主人公_胴_葦名忍者_不死斬りなし
+402000 Protagonist _ Arm _ Prosthetic Hand _ Ashina Ninja -- 主人公_腕_義手_葦名忍者
+403000 Protagonist _ Legs _ Ashina Ninja -- 主人公_脚_葦名忍者
+500000 Protagonist _ head _ tengu -- 主人公_頭_天狗
+501000 Protagonist _ torso _ tengu _ immortal slash -- 主人公_胴_天狗_不死斬りあり
+531000 Protagonist _ torso _ tengu _ no immortal slash -- 主人公_胴_天狗_不死斬りなし
+502000 Protagonist _ arm _ prosthetic hand _ tengu -- 主人公_腕_義手_天狗
+503000 Protagonist _ legs _ tengu -- 主人公_脚_天狗
+600000 Protagonist _ Head _ Ashina Ninja -- 主人公_頭_葦名忍者
+641000 Protagonist _ torso _ reed name ninja -- 主人公_胴_葦名忍者
+602000 Protagonist _ Arm _ Prosthetic Hand _ Ashina Ninja -- 主人公_腕_義手_葦名忍者
+603000 Protagonist _ Legs _ Ashina Ninja -- 主人公_脚_葦名忍者
+901000 Always dying _ torso -- 常に瀕死_胴
+901100 Always Jasuga _ torso -- 常にジャスガ_胴
+901200 Underwater cross confirmation _ torso -- 水中クロス確認_胴
+901300 8 HP_ torso -- HP8個_胴

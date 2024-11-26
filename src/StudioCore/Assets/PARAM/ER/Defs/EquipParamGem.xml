@@ -1,0 +1,741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>EQUIP_PARAM_GEM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>6301</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>6302</SortID>
+    </Field>
+    <Field Def="u16 iconId">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>メニュー用アイコンID</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s8 rank">
+      <DisplayName>魔石ランク</DisplayName>
+      <Description>魔石ランク</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 sortGroupId = 255">
+      <DisplayName>ソートアイテム種別ID</DisplayName>
+      <Description>ソートアイテム種別ID。ソート「アイテム種別順」にて、同じIDは同じグループとしてまとめて表示されます</Description>
+      <SortID>4010</SortID>
+    </Field>
+    <Field Def="s32 spEffectId0 = -1">
+      <DisplayName>常駐特殊効果ID00</DisplayName>
+      <Description>特殊効果ID00</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="s32 spEffectId1 = -1">
+      <DisplayName>常駐特殊効果ID01</DisplayName>
+      <Description>特殊効果ID01</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="s32 spEffectId2 = -1">
+      <DisplayName>常駐特殊効果ID02</DisplayName>
+      <Description>特殊効果ID02</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="u32 itemGetTutorialFlagId">
+      <DisplayName>アイテム入手チュートリアル判定フラグID</DisplayName>
+      <Description>初めてアイテム入手した時のチュートリアル用のイベントフラグID。アイテム入手時にフラグON。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>6300</SortID>
+    </Field>
+    <Field Def="s32 swordArtsParamId = -1">
+      <DisplayName>変化先アーツパラメータID</DisplayName>
+      <Description>変化先アーツパラメータのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="s32 mountValue">
+      <DisplayName>装着価格</DisplayName>
+      <Description>装着価格</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="s32 sellValue">
+      <DisplayName>売却価格</DisplayName>
+      <Description>売却価格</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="s32 saleValue = -1">
+      <DisplayName>販売価格</DisplayName>
+      <Description>販売価格</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3200</SortID>
+    </Field>
+    <Field Def="s32 sortId">
+      <DisplayName>ソートID</DisplayName>
+      <Description>ソートID(-1:集めない)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="s16 compTrophySedId = -1">
+      <DisplayName>コンプトロフィーSEQ番号</DisplayName>
+      <Description>コンプリート系トロフィのSEQ番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="s16 trophySeqId = -1">
+      <DisplayName>トロフィーSEQ番号</DisplayName>
+      <Description>トロフィーのSEQ番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>4200</SortID>
+    </Field>
+    <Field Def="u8 configurableWepAttr00:1">
+      <DisplayName>0</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID0</Description>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr01:1">
+      <DisplayName>1</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID1</Description>
+      <Maximum>1</Maximum>
+      <SortID>401</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr02:1">
+      <DisplayName>2</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID2</Description>
+      <Maximum>1</Maximum>
+      <SortID>402</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr03:1">
+      <DisplayName>3</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID3</Description>
+      <Maximum>1</Maximum>
+      <SortID>403</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr04:1">
+      <DisplayName>4</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID4</Description>
+      <Maximum>1</Maximum>
+      <SortID>404</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr05:1">
+      <DisplayName>5</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID5</Description>
+      <Maximum>1</Maximum>
+      <SortID>405</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr06:1">
+      <DisplayName>6</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID6</Description>
+      <Maximum>1</Maximum>
+      <SortID>406</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr07:1">
+      <DisplayName>7</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID7</Description>
+      <Maximum>1</Maximum>
+      <SortID>407</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr08:1">
+      <DisplayName>8</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID8</Description>
+      <Maximum>1</Maximum>
+      <SortID>408</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr09:1">
+      <DisplayName>9</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID9</Description>
+      <Maximum>1</Maximum>
+      <SortID>409</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr10:1">
+      <DisplayName>10</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID10</Description>
+      <Maximum>1</Maximum>
+      <SortID>410</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr11:1">
+      <DisplayName>11</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID11</Description>
+      <Maximum>1</Maximum>
+      <SortID>411</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr12:1">
+      <DisplayName>12</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID12</Description>
+      <Maximum>1</Maximum>
+      <SortID>412</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr13:1">
+      <DisplayName>13</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID13</Description>
+      <Maximum>1</Maximum>
+      <SortID>413</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr14:1">
+      <DisplayName>14</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID14</Description>
+      <Maximum>1</Maximum>
+      <SortID>414</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr15:1">
+      <DisplayName>15</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID15</Description>
+      <Maximum>1</Maximum>
+      <SortID>415</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 rarity">
+      <DisplayName>レア度</DisplayName>
+      <Description>アイテム取得ログで使うレア度</Description>
+      <Maximum>99</Maximum>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="u8 configurableWepAttr16:1">
+      <DisplayName>16</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID16</Description>
+      <Maximum>1</Maximum>
+      <SortID>416</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr17:1">
+      <DisplayName>17</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID17</Description>
+      <Maximum>1</Maximum>
+      <SortID>417</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr18:1">
+      <DisplayName>18</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID18</Description>
+      <Maximum>1</Maximum>
+      <SortID>418</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr19:1">
+      <DisplayName>19</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID19</Description>
+      <Maximum>1</Maximum>
+      <SortID>419</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr20:1">
+      <DisplayName>20</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID20</Description>
+      <Maximum>1</Maximum>
+      <SortID>420</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr21:1">
+      <DisplayName>21</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID21</Description>
+      <Maximum>1</Maximum>
+      <SortID>421</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr22:1">
+      <DisplayName>22</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID22</Description>
+      <Maximum>1</Maximum>
+      <SortID>422</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 configurableWepAttr23:1">
+      <DisplayName>23</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設定可能武器属性ID23</Description>
+      <Maximum>1</Maximum>
+      <SortID>423</SortID>
+      <UnkC8>設定可能武器属性ID</UnkC8>
+    </Field>
+    <Field Def="u8 isDiscard:1">
+      <DisplayName>捨てれるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテムを捨てれるか？TRUE=捨てれる</Description>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 isDrop:1">
+      <DisplayName>その場に置けるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテムをその場に置けるか？TRUE=置ける</Description>
+      <Maximum>1</Maximum>
+      <SortID>5100</SortID>
+    </Field>
+    <Field Def="u8 isDeposit:1">
+      <DisplayName>預けれるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>倉庫に預けれるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>5200</SortID>
+    </Field>
+    <Field Def="u8 disableMultiDropShare:1">
+      <DisplayName>マルチドロップ共有禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>マルチドロップ共有禁止か</Description>
+      <Maximum>1</Maximum>
+      <SortID>5300</SortID>
+    </Field>
+    <Field Def="u8 showDialogCondType:2 = 2">
+      <DisplayName>取得ダイアログ表示条件</DisplayName>
+      <Enum>GET_DIALOG_CONDITION_TYPE</Enum>
+      <Description>アイテム取得時にアイテム取得ダイアログに表示するか（未入力: newのみ）</Description>
+      <Maximum>2</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="u8 showLogCondType:1 = 1">
+      <DisplayName>取得ログ表示条件</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテム取得時にアイテム取得ログに表示するか（未入力: ○）</Description>
+      <Maximum>1</Maximum>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="dummy8 pad:1">
+      <Description>pad</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>6303</SortID>
+    </Field>
+    <Field Def="u8 defaultWepAttr">
+      <DisplayName>デフォルト武器属性ID</DisplayName>
+      <Description>デフォルト武器属性ID。開放されてない武器属性でも装着可能になる</Description>
+      <Maximum>23</Maximum>
+      <SortID>390</SortID>
+    </Field>
+    
+    <Field Def="dummy8 pad2_old[2]" RemovedVersion="11210015" />
+    
+    <Field Def="u8 isSpecialSwordArt" FirstVersion="11210015" />
+    <Field Def="dummy8 pad2[1]" FirstVersion="11210015" >
+      <Description>pad2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>6304</SortID>
+    </Field>
+    
+    <Field Def="u8 canMountWep_Dagger:1">
+      <DisplayName>短剣</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：短剣」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>300</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SwordNormal:1">
+      <DisplayName>直剣</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：直剣」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>301</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SwordLarge:1">
+      <DisplayName>大剣</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：大剣」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>302</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SwordGigantic:1">
+      <DisplayName>特大剣</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：特大剣」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>303</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SaberNormal:1">
+      <DisplayName>曲剣 </DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：曲剣 」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>304</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SaberLarge:1">
+      <DisplayName>大曲剣</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：大曲剣」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>305</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_katana:1">
+      <DisplayName>刀</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：刀」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>306</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SwordDoubleEdge:1">
+      <DisplayName>両刃剣</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：両刃剣」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>307</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SwordPierce:1">
+      <DisplayName>刺剣</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：刺剣」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>308</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_RapierHeavy:1">
+      <DisplayName>大刺剣</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：大刺剣」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>309</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_AxeNormal:1">
+      <DisplayName>斧</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：斧」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>310</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_AxeLarge:1">
+      <DisplayName>大斧</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：大斧」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>311</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_HammerNormal:1">
+      <DisplayName>槌</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：槌」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>312</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_HammerLarge:1">
+      <DisplayName>大槌</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：大槌」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>313</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Flail:1">
+      <DisplayName>フレイル</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：フレイル」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>314</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SpearNormal:1">
+      <DisplayName>槍</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：槍」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>315</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SpearLarge:1">
+      <DisplayName>長槍</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：長槍」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>316</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SpearHeavy:1">
+      <DisplayName>大槍</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：大槍」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>317</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_SpearAxe:1">
+      <DisplayName>斧槍</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：斧槍」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>318</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Sickle:1">
+      <DisplayName>鎌</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：鎌」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>319</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Knuckle:1">
+      <DisplayName>拳</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：拳」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>321</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Claw:1">
+      <DisplayName>爪</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：爪」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>322</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Whip:1">
+      <DisplayName>ムチ</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：ムチ」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>323</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_AxhammerLarge:1">
+      <DisplayName>特大斧槌</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：特大斧槌」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>324</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_BowSmall:1">
+      <DisplayName>小弓</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：小弓」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>325</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_BowNormal:1">
+      <DisplayName>弓</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：弓」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>326</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_BowLarge:1">
+      <DisplayName>大弓</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：大弓」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>327</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_ClossBow:1">
+      <DisplayName>クロスボウ</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：クロスボウ」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>328</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Ballista:1">
+      <DisplayName>バリスタ</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：バリスタ」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>329</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Staff:1">
+      <DisplayName>杖</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：杖」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>330</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Sorcery:1">
+      <DisplayName>入れ墨</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：入れ墨」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>331</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Talisman:1">
+      <DisplayName>聖印</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：聖印」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>332</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_ShieldSmall:1">
+      <DisplayName>小盾</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：小盾」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>333</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_ShieldNormal:1">
+      <DisplayName>中盾</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：中盾」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>334</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_ShieldLarge:1">
+      <DisplayName>大盾</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：大盾」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>335</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    <Field Def="u8 canMountWep_Torch:1">
+      <DisplayName>松明</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>「武器種別：松明」に装着可能か。未入力は×になる</Description>
+      <Maximum>1</Maximum>
+      <SortID>336</SortID>
+      <UnkC8>装着可能な武器種別か</UnkC8>
+    </Field>
+    
+    <Field Def="dummy8 reserved_canMountWep:4" RemovedVersion="11210015">
+      <DisplayName>予約領域（装着可能な武器種別か）</DisplayName>
+      <Description>装着可能な武器種別かの予約領域（全部で64bit分確保）</Description>
+      <SortID>6305</SortID>
+    </Field>
+    
+    <Field Def="u8 canMountWep_HandToHand:1" FirstVersion="11210015" />
+    <Field Def="u8 canMountWep_PerfumeBottle:1" FirstVersion="11210015" />
+    <Field Def="u8 canMountWep_ThrustingShield:1" FirstVersion="11210015" />
+    <Field Def="u8 canMountWep_ThrowingWeapon:1" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 reserved2_canMountWep_old[3]" RemovedVersion="11210015" />
+    
+    <Field Def="u8 canMountWep_ReverseHandSword:1" FirstVersion="11210015" />
+    <Field Def="u8 canMountWep_LightGreatsword:1" FirstVersion="11210015" />
+    <Field Def="u8 canMountWep_GreatKatana:1" FirstVersion="11210015" />
+    <Field Def="u8 canMountWep_BeastClaw:1" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 reserved_canMountWep_0x3d_4:4" FirstVersion="11210015" />
+    <Field Def="dummy8 reserved2_canMountWep[2]" FirstVersion="11210015" />
+    
+    <Field Def="s32 spEffectMsgId0 = -1">
+      <DisplayName>効果テキストID00</DisplayName>
+      <Description>効果テキストID00(Gem_Effect)。ステータスに表示する魔石の効果テキスト</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="s32 spEffectMsgId1 = -1">
+      <DisplayName>効果テキストID01</DisplayName>
+      <Description>効果テキストID01(Gem_Effect)。ステータスに表示する魔石の効果テキスト</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1310</SortID>
+    </Field>
+    <Field Def="s32 spEffectId_forAtk0 = -1">
+      <DisplayName>攻撃ヒット時特殊効果ID00</DisplayName>
+      <Description>攻撃ヒット時用の特殊効果パラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 spEffectId_forAtk1 = -1">
+      <DisplayName>攻撃ヒット時特殊効果ID01</DisplayName>
+      <Description>攻撃ヒット時用の特殊効果パラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="s32 spEffectId_forAtk2 = -1">
+      <DisplayName>攻撃ヒット時特殊効果ID02</DisplayName>
+      <Description>攻撃ヒット時用の特殊効果パラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1020</SortID>
+    </Field>
+    <Field Def="s32 mountWepTextId = -1">
+      <DisplayName>対応武器種別上書きテキストID</DisplayName>
+      <Description>対応武器種別上書きテキストID(-1:上書きしない)[MenuText]</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>360</SortID>
+    </Field>
+    <Field Def="dummy8 pad6[8]">
+      <SortID>6307</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FILTER_HIGH_DOF_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="f32 fBlendAlpha = 1">
+      <DisplayName>ブレンドα</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 fNearBlendAlpha = 1">
+      <DisplayName>ニアブレンドアルファ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 fFarBlendAlpha = 1">
+      <DisplayName>ファーブレンドアルファ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 fBlendAlphaMin = 0.01">
+      <DisplayName>ブレンドアルファの最小値</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 fNearStart">
+      <DisplayName>Near Start(m) （ボケ１００％）</DisplayName>
+      <DisplayFormat>%.f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>3000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 fNearEnd">
+      <DisplayName>Near End(m) （ボケ０％）</DisplayName>
+      <DisplayFormat>%.f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>3000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 fFarStart">
+      <DisplayName>Far Start(m) （ボケ０％）</DisplayName>
+      <DisplayFormat>%.f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>3000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 fFarEnd">
+      <DisplayName>Far End(m)（ボケ１００％）</DisplayName>
+      <DisplayFormat>%.f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>3000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="u8 bManualFocus">
+      <DisplayName>手動で被写体距離を設定するかどうか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="u8 bManualSetting">
+      <DisplayName>手動でNearEnd, FarStartを設定</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="dummy8 dummy[2]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+    <Field Def="f32 fFStop = 0.1">
+      <DisplayName>レンズ:絞り値</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>50</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fFocalLen = 1">
+      <DisplayName>レンズ:焦点距離(mm)</DisplayName>
+      <DisplayFormat>%.f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 fSigma = 0.001">
+      <DisplayName>レンズ:許容錯乱円(mm)</DisplayName>
+      <DisplayFormat>%.f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.001</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+    </Field>
+    <Field Def="f32 fObjDistance = 20">
+      <DisplayName>レンズ:被写体距離(m)</DisplayName>
+      <DisplayFormat>%.f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fObjDistanceMin">
+      <DisplayName>自動で被写体距離を設定する際の最小値</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fObjDistanceMax = 20">
+      <DisplayName>自動で被写体距離を設定する際の最大値</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fObjDistanceTime = 1">
+      <DisplayName>自動で被写体距離を設定する際の補間時間</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fObjDistanceIniSpd">
+      <DisplayName>自動で被写体距離を設定する際の初速係数</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 fObjDistanceBrake0">
+      <DisplayName>自動で被写体距離を設定する際のブレーキ係数0</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+    </Field>
+    <Field Def="f32 fObjDistanceBrake1">
+      <DisplayName>自動で被写体距離を設定する際のブレーキ係数1</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+    </Field>
+    <Field Def="f32 fObjDistanceThreshold">
+      <DisplayName>自動で被写体距離を設定する際の閾値</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+    </Field>
+    <Field Def="f32 fNearStartCoeff">
+      <DisplayName>ニア開始距離係数(自動計算用)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fFarEndCoeff = 1">
+      <DisplayName>ファー終了距離係数(自動計算用)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fBlurRadius">
+      <DisplayName>BlurRadius(Soft)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fBlurRadiusHard">
+      <DisplayName>BlurRadius(Hard)</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fNearBokehRadius">
+      <DisplayName>BlurRadius(Near)</DisplayName>
+      <DisplayFormat>%1</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fNearBokehExpCoeff">
+      <DisplayName>ニアボケ指数係数</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="u8 bUseHiBokeh">
+      <DisplayName>高輝度丸ボケを適用するかどうか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="u8 bIsHexaBokeh">
+      <DisplayName>高輝度丸ボケで六角形ボケを適用するかどうか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="u8 dHiBokehResolveNum = 2">
+      <DisplayName>高輝度丸ボケ処理でのリゾルブ回数</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>2</Minimum>
+      <Maximum>6</Maximum>
+    </Field>
+    <Field Def="dummy8 dummy2[1]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+    <Field Def="f32 fHiBokehThreshold">
+      <DisplayName>丸ボケ抽出輝度</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fNearHiBokehSize">
+      <DisplayName>ニアの高輝度丸ボケサイズ</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>32</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fFarHiBokehSize">
+      <DisplayName>ファーの高輝度丸ボケサイズ</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>32</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="dummy8 dummy3[8]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

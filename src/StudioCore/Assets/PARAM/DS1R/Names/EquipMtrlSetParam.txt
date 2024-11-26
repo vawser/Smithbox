@@ -1,0 +1,276 @@
+0 Normal +0
+1 Normal +1
+2 Normal +2
+3 Normal +3
+4 Normal +4
+5 Normal +5
+6 Normal +6
+7 Normal +7
+8 Normal +8
+9 Normal +9
+10 Normal +10
+11 Normal +11
+12 Normal +12
+13 Normal +13
+14 Normal +14
+15 Normal +15
+100 Crystal +0
+101 Crystal +1
+102 Crystal +2
+103 Crystal +3
+104 Crystal +4
+105 Crystal +5
+200 Lightning +0
+201 Lightning +1
+202 Lightning +2
+203 Lightning +3
+204 Lightning +4
+205 Lightning +5
+300 Raw +0
+301 Raw +1
+302 Raw +2
+303 Raw +3
+304 Raw +4
+305 Raw +5
+400 Magic +0
+401 Magic +1
+402 Magic +2
+403 Magic +3
+404 Magic +4
+405 Magic +5
+406 Magic +6
+407 Magic +7
+408 Magic +8
+409 Magic +9
+410 Magic +10
+500 Enchanted +0
+501 Enchanted +1
+502 Enchanted +2
+503 Enchanted +3
+504 Enchanted +4
+505 Enchanted +5
+600 Divine +0
+601 Divine +1
+602 Divine +2
+603 Divine +3
+604 Divine +4
+605 Divine +5
+606 Divine +6
+607 Divine +7
+608 Divine +8
+609 Divine +9
+610 Divine +10
+700 Occult +0
+701 Occult +1
+702 Occult +2
+703 Occult +3
+704 Occult +4
+705 Occult +5
+800 Fire +0
+801 Fire +1
+802 Fire +2
+803 Fire +3
+804 Fire +4
+805 Fire +5
+806 Fire +6
+807 Fire +7
+808 Fire +8
+809 Fire +9
+810 Fire +10
+900 Chaos +0
+901 Chaos +1
+902 Chaos +2
+903 Chaos +3
+904 Chaos +4
+905 Chaos +5
+1000 None
+1100 Dragon Scale +0
+1101 Dragon Scale +1
+1102 Dragon Scale +2
+1103 Dragon Scale +3
+1104 Dragon Scale +4
+1105 Dragon Scale +5
+1200 Twinkling Titanite +0
+1201 Twinkling Titanite +1
+1202 Twinkling Titanite +2
+1203 Twinkling Titanite +3
+1204 Twinkling Titanite +4
+1205 Twinkling Titanite +5
+1300 Demon Titanite +0 [Soul of Sif]
+1301 Demon Titanite +1 [Soul of Sif]
+1302 Demon Titanite +2 [Soul of Sif]
+1303 Demon Titanite +3 [Soul of Sif]
+1304 Demon Titanite +4 [Soul of Sif]
+1305 Demon Titanite +5 [Soul of Sif]
+1400 Demon Titanite +0 [Soul of Gwyn]
+1401 Demon Titanite +1 [Soul of Gwyn]
+1402 Demon Titanite +2 [Soul of Gwyn]
+1403 Demon Titanite +3 [Soul of Gwyn]
+1404 Demon Titanite +4 [Soul of Gwyn]
+1405 Demon Titanite +5 [Soul of Gwyn]
+1500 Demon Titanite +0 [Soul of Quelaag]
+1501 Demon Titanite +1 [Soul of Quelaag]
+1502 Demon Titanite +2 [Soul of Quelaag]
+1503 Demon Titanite +3 [Soul of Quelaag]
+1504 Demon Titanite +4 [Soul of Quelaag]
+1505 Demon Titanite +5 [Soul of Quelaag]
+1600 Demon Titanite +0 [Soul of Ornstein]
+1601 Demon Titanite +1 [Soul of Ornstein]
+1602 Demon Titanite +2 [Soul of Ornstein]
+1603 Demon Titanite +3 [Soul of Ornstein]
+1604 Demon Titanite +4 [Soul of Ornstein]
+1605 Demon Titanite +5 [Soul of Ornstein]
+1700 Demon Titanite +0 [Soul of Moonlight Buttefly]
+1701 Demon Titanite +1 [Soul of Moonlight Buttefly]
+1702 Demon Titanite +2 [Soul of Moonlight Buttefly]
+1703 Demon Titanite +3 [Soul of Moonlight Buttefly]
+1704 Demon Titanite +4 [Soul of Moonlight Buttefly]
+1705 Demon Titanite +5 [Soul of Moonlight Buttefly]
+1800 Demon Titanite +0 [Core of Iron Golem]
+1801 Demon Titanite +1 [Core of Iron Golem]
+1802 Demon Titanite +2 [Core of Iron Golem]
+1803 Demon Titanite +3 [Core of Iron Golem]
+1804 Demon Titanite +4 [Core of Iron Golem]
+1805 Demon Titanite +5 [Core of Iron Golem]
+1900 Demon Titanite +0 [Soul of Smough]
+1901 Demon Titanite +1 [Soul of Smough]
+1902 Demon Titanite +2 [Soul of Smough]
+1903 Demon Titanite +3 [Soul of Smough]
+1904 Demon Titanite +4 [Soul of Smough]
+1905 Demon Titanite +5 [Soul of Smough]
+2000 Demon Titanite +0 [Soul of Priscilla]
+2001 Demon Titanite +1 [Soul of Priscilla]
+2002 Demon Titanite +2 [Soul of Priscilla]
+2003 Demon Titanite +3 [Soul of Priscilla]
+2004 Demon Titanite +4 [Soul of Priscilla]
+2005 Demon Titanite +5 [Soul of Priscilla]
+2100 Demon Titanite +0 [Soul of Gwyndolin]
+2101 Demon Titanite +1 [Soul of Gwyndolin]
+2102 Demon Titanite +2 [Soul of Gwyndolin]
+2103 Demon Titanite +3 [Soul of Gwyndolin]
+2104 Demon Titanite +4 [Soul of Gwyndolin]
+2105 Demon Titanite +5 [Soul of Gwyndolin]
+2200 Dragon Scale +0 [Core of Iron Golem]
+2201 Dragon Scale +1 [Core of Iron Golem]
+2202 Dragon Scale +2 [Core of Iron Golem]
+2203 Dragon Scale +3 [Core of Iron Golem]
+2204 Dragon Scale +4 [Core of Iron Golem]
+2205 Dragon Scale +5 [Core of Iron Golem]
+2300 Demon Titanite +0
+2301 Demon Titanite +1
+2302 Demon Titanite +2
+2303 Demon Titanite +3
+2304 Demon Titanite +4
+2305 Demon Titanite +5
+2400 Demon Titanite +0 [Soul of Artorias]
+2401 Demon Titanite +1 [Soul of Artorias]
+2402 Demon Titanite +2 [Soul of Artorias]
+2403 Demon Titanite +3 [Soul of Artorias]
+2404 Demon Titanite +4 [Soul of Artorias]
+2405 Demon Titanite +5 [Soul of Artorias]
+2500 Demon Titanite +0 [Soul of Manus]
+2501 Demon Titanite +1 [Soul of Manus]
+2502 Demon Titanite +2 [Soul of Manus]
+2503 Demon Titanite +3 [Soul of Manus]
+2504 Demon Titanite +4 [Soul of Manus]
+2505 Demon Titanite +5 [Soul of Manus]
+3000 Soul Arrow
+3010 Great Soul Arrow
+3020 Heavy Soul Arrow
+3030 Great Heavy Soul Arrow
+3040 Homing Soulmass
+3050 Homing Crystal Soulmass
+3060 Soul Spear
+3070 Crystal Soul Spear
+3100 Magic Weapon
+3110 Great Magic Weapon
+3120 Crystal Magic Weapon
+3300 Magic Shield
+3310 Strong Magic Shield
+3400 Hidden Weapon
+3410 Hidden Body
+3500 Cast Light
+3510 Hush
+3520 Aural Decoy
+3530 Repair
+3540 Fall Control
+3550 Chameleon
+3600 Resist Curse
+3610 Remedy
+3700 White Dragon Breath
+3710 Dark Orb
+3720 Dark Bead
+3730 Dark Fog
+3740 Pursuers
+4000 Fireball
+4010 Fire Orb
+4020 Great Fireball
+4030 Firestorm
+4040 Fire Tempest
+4050 Fire Surge
+4060 Fire Whip
+4100 Combustion
+4110 Great Combustion
+4200 Poison Mist
+4210 Toxic Mist
+4220 Acid Surge
+4300 Iron Flesh
+4310 Flash Sweat
+4360 Undead Rapport
+4400 Power Within
+4500 Great Chaos Fireball
+4510 Chaos Storm
+4520 Chaos Fire Whip
+4530 Black Flame
+5000 Heal
+5010 Great Heal
+5020 Great Heal Excerpt
+5030 Soothing Sunlight
+5040 Replenishment
+5050 Bountiful Sunlight
+5100 Gravelord Sword Dance
+5110 Gravelord Greatsword Dance
+5200 Escape Death
+5210 Homeward
+5300 Force
+5310 Wrath of the Gods
+5320 Emit Force
+5400 Seek Guidance
+5500 Lightning Spear
+5510 Great Lightning Spear
+5520 Sunlight Spear
+5600 Magic Barrier
+5610 Great Magic Barrier
+5700 Karmic Justice
+5800 Tranquil Walk of Peace
+5810 Vow of Silence
+5900 Sunlight Blade
+5910 Darkmoon Blade
+7000 Armor - Normal +0
+7001 Armor - Normal +1
+7002 Armor - Normal +2
+7003 Armor - Normal +3
+7004 Armor - Normal +4
+7005 Armor - Normal +5
+7006 Armor - Normal +6
+7007 Armor - Normal +7
+7008 Armor - Normal +8
+7009 Armor - Normal +9
+7010 Armor - Normal +10
+7100 Armor - Twinkling +0
+7101 Armor - Twinkling +1
+7102 Armor - Twinkling +2
+7103 Armor - Twinkling +3
+7104 Armor - Twinkling +4
+7105 Armor - Twinkling +5
+7200 Armor - Normal +0
+7201 Armor - Normal +1
+7202 Armor - Normal +2
+7203 Armor - Normal +3
+7204 Armor - Normal +4
+7205 Armor - Normal +5
+7206 Armor - Normal +6
+7207 Armor - Normal +7
+7208 Armor - Normal +8
+7209 Armor - Normal +9
+7210 Armor - Normal +10

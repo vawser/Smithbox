@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Field>
+    <physicsAtkRate />
+    <magicAtkRate />
+    <fireAtkRate />
+    <thunderAtkRate />
+    <staminaAtkRate />
+    <saWeaponAtkRate />
+    <saDurabilityRate />
+    <correctStrengthRate />
+    <correctAgilityRate />
+    <correctMagicRate />
+    <correctFaithRate />
+    <physicsGuardCutRate />
+    <magicGuardCutRate />
+    <fireGuardCutRate />
+    <thunderGuardCutRate />
+    <poisonGuardResistRate />
+    <diseaseGuardResistRate />
+    <bloodGuardResistRate />
+    <curseGuardResistRate />
+    <staminaGuardDefRate />
+    <spEffectId1 Wiki="ID offset applied to weapon's spEffectId1" />
+    <spEffectId2 Wiki="ID offset applied to weapon's spEffectId2" />
+    <spEffectId3 Wiki="ID offset applied to weapon's spEffectId3" />
+    <residentSpEffectId1 Wiki="ID offset applied to weapon's residentSpEffectId1" />
+    <residentSpEffectId2 Wiki="ID offset applied to weapon's residentSpEffectId2" />
+    <residentSpEffectId3 Wiki="ID offset applied to weapon's residentSpEffectId3" />
+    <materialSetId Wiki="ID offset applied to weapon's materialSetId" />
+  </Field>
+</PARAMMETA>

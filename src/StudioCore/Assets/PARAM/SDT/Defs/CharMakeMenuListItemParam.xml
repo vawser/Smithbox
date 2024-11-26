@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CHARMAKEMENU_LISTITEM_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 Value">
+      <DisplayName>値</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 CaptionID">
+      <DisplayName>項目テキストID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 IconID">
+      <DisplayName>アイコンID</DisplayName>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[7]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>1</Increment>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CUSTOM_ATTR_COST_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 infusion_1_cost" />
+    <Field Def="s32 infusion_2_cost" />
+    <Field Def="s32 infusion_3_cost" />
+    <Field Def="s32 infusion_4_cost" />
+    <Field Def="s32 infusion_5_cost" />
+    <Field Def="s32 infusion_6_cost" />
+    <Field Def="s32 infusion_7_cost" />
+    <Field Def="s32 infusion_8_cost" />
+    <Field Def="s32 infusion_9_cost" />
+    <Field Def="s32 infusion_10_cost" />
+    <Field Def="s32 infusion_1_item" />
+    <Field Def="s32 infusion_2_item" />
+    <Field Def="s32 infusion_3_item" />
+    <Field Def="s32 infusion_4_item" />
+    <Field Def="s32 infusion_5_item" />
+    <Field Def="s32 infusion_6_item" />
+    <Field Def="s32 infusion_7_item" />
+    <Field Def="s32 infusion_8_item" />
+    <Field Def="s32 infusion_9_item" />
+    <Field Def="s32 infusion_10_item" />
+    <Field Def="u16 infusion_1_item_amount" />
+    <Field Def="u16 infusion_2_item_amount" />
+    <Field Def="u16 infusion_3_item_amount" />
+    <Field Def="u16 infusion_4_item_amount" />
+    <Field Def="u16 infusion_5_item_amount" />
+    <Field Def="u16 infusion_6_item_amount" />
+    <Field Def="u16 infusion_7_item_amount" />
+    <Field Def="u16 infusion_8_item_amount" />
+    <Field Def="u16 infusion_9_item_amount" />
+    <Field Def="u16 infusion_10_item_amount" />
+  </Fields>
+</PARAMDEF>

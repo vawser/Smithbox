@@ -1,0 +1,212 @@
+0 Prohibited use -- 使用禁止
+17 Self-torch_shadowed ali_8m -- 自たいまつ_影アリ_8m
+21 Self-torch_shadowant_12m -- 自たいまつ_影アリ_12m
+29 Self-torch_shadowant_20m -- 自たいまつ_影アリ_20m
+50 Magic: Shining Light -- 魔術：照らす光
+100200 ♦Gap sinus: Outdoor bright space general purpose -- ■隙間の洞：屋外明るい空間汎用
+100220 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+100240 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+100260 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+100270 ⇒For map connections -- ⇒マップ接続用
+100280 ⇒Special general purpose -- ⇒特殊汎用
+100290 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+100400 ♦Maduro- Outdoor bright space general purpose -- ■マデューラ：屋外明るい空間汎用
+100420 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+100440 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+100460 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+100480 ⇒Special general purpose -- ⇒特殊汎用
+100490 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+101000 ♦Decayed Giant Forest -- ■朽ちた巨人の森：屋外明るい空間汎用
+101020 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+101040 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+101060 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+101080 ⇒Special general purpose -- ⇒特殊汎用
+101090 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+101091 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+101400 ♦Kiseki-gai Gerdra- Outdoor bright space -- ■輝石街ジェルドラ：屋外明るい空間汎用
+101420 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+101440 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+101460 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+101480 ⇒Special general purpose -- ⇒特殊汎用
+101490 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+101500 ■Anne Deal's House -- ■アン・ディールの館：屋外明るい空間汎用
+101520 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+101540 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+101560 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+101580 ⇒Special general purpose -- ⇒特殊汎用
+101590 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+101600 ♦ Oblivion Prison - Outdoor bright space general purpose -- ■忘却の牢城：屋外明るい空間汎用
+101620 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+101640 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+101660 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+101680 ⇒Special general purpose -- ⇒特殊汎用
+101690 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+101691 ⇒ Boss room (sinner) -- ⇒ボス部屋（罪人）
+101700 ♦Reservoir Valley- Outdoor bright space general purpose -- ■溜まりの谷：屋外明るい空間汎用
+101720 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+101740 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+101760 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+101780 ⇒Special general purpose -- ⇒特殊汎用
+101790 ⇒ Boss Room (Naga) -- ⇒ボス部屋（ナーガ）
+101791 ⇒ Boss Room (Java) -- ⇒ボス部屋（ジャバ）
+101800 ♦Hidden port: Outdoor bright space general purpose -- ■隠れ港：屋外明るい空間汎用
+101820 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+101840 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+101860 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+101880 ⇒Special general purpose -- ⇒特殊汎用
+101890 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+101900 ♦Molten Iron Castle: Outdoor bright space -- ■熔鉄城：屋外明るい空間汎用
+101920 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+101940 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+101960 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+101980 ⇒Special general purpose -- ⇒特殊汎用
+101990 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+101991 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+102300 ♦Hunting forest swells outdoors -- ■狩猟の森：屋外明るい空間汎用
+102320 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+102340 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+102360 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+102380 ⇒Special general purpose -- ⇒特殊汎用
+102390 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+102391 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+102500 ♦Kuzbottom: Outdoor bright space general purpose -- ■クズ底：屋外明るい空間汎用
+102520 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+102540 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+102560 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+102580 ⇒Special general purpose -- ⇒特殊汎用
+102590 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+102700 ♦Defending dragon's nest- Outdoor bright space general purpose -- ■守り竜の巣：屋外明るい空間汎用
+102720 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+102740 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+102760 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+102780 ⇒Special general purpose -- ⇒特殊汎用
+102790 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+102800 ■Throne of fire -- ■火継ぎの玉座：屋外明るい空間汎用
+102820 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+102840 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+102860 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+102880 ⇒Special general purpose -- ⇒特殊汎用
+102890 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+102900 ♦Madura ⇒ Hollow Forest - Outdoor Bright Space -- ■マデューラ⇒虚ろ森：屋外明るい空間汎用
+102920 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+102940 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+102960 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+102980 ⇒Special general purpose -- ⇒特殊汎用
+102990 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+103000 ♦Heide ⇒ Hidden Port - Outdoor bright space general purpose -- ■ハイデ⇒隠れ港：屋外明るい空間汎用
+103020 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+103040 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+103060 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+103080 ⇒Special general purpose -- ⇒特殊汎用
+103090 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+103100 ♦Heide Large Fire Tower -- ■ハイデ大火塔：屋外明るい空間汎用
+103120 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+103140 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+103160 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+103180 ⇒Special general purpose -- ⇒特殊汎用
+103190 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+103191 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+103200 ■Forest of shadows in the shadows of the hollow -- ■虚ろの影の森：屋外明るい空間汎用
+103220 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+103240 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+103260 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+103280 ⇒Special general purpose -- ⇒特殊汎用
+103290 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+103300 ♦Faros Door Way -- ■ファロスの扉道：屋外明るい空間汎用
+103320 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+103340 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+103360 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+103380 ⇒Special general purpose -- ⇒特殊汎用
+103390 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+103400 ♦Saint's Tomb -- ■聖人墓所：屋外明るい空間汎用
+103420 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+103440 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+103460 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+103480 ⇒Special general purpose -- ⇒特殊汎用
+103490 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+201000 ♦ Giant's memory - outdoor bright space -- ■巨人の記憶：屋外明るい空間汎用
+201020 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+201040 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+201060 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+201080 ⇒Special general purpose -- ⇒特殊汎用
+201090 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+201100 ♦Amana's altar -- ■アマナの祭壇：屋外明るい空間汎用
+201120 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+201140 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+201160 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+201170 ⇒For map connections -- ⇒マップ接続用
+201180 ⇒Special general purpose -- ⇒特殊汎用
+201190 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+202100 ■King's Castle D'Angheig -- ■王城ドラングレイグ（過去）：屋外明るい空間汎用
+202120 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+202140 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+202160 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+202180 ⇒Special general purpose -- ⇒特殊汎用
+202190 ⇒ Boss Room: Treasures -- ⇒ボス部屋：宝物
+202191 ⇒ Boss Room: Mirror -- ⇒ボス部屋：ミラー
+202192 ⇒ Boss Room: Back of the Hall -- ⇒ボス部屋：ホール奥
+202193 ⇒ Boss Room: Ras Boss -- ⇒ボス部屋：ラスボス
+202400 ♦Mausoleum: Outdoor bright space -- ■霊廟：屋外明るい空間汎用
+202420 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+202440 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+202460 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+202461 ⇒ Indoor dark space (second half of the map) -- ⇒屋内暗い空間（マップ後半）
+202480 ⇒Special general purpose -- ⇒特殊汎用
+202490 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+202600 ■Memories of The Old Dragon -- ■古龍の記憶：屋外明るい空間汎用
+202620 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+202640 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+202660 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+202680 ⇒Special general purpose -- ⇒特殊汎用
+202690 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+206200 Default: E3 Resistance Fort -- デフォルト：E3抵抗の砦
+206300 Default: E3 Iwamine Castle (past) -- デフォルト：E3岩峰城（過去）
+300100 Default: Dungeon of The Tick: Plain -- デフォルト：刻のダンジョン：平地
+300200 Default: Dungeon of The Tick: Bunk floor -- デフォルト：刻のダンジョン：二段床
+300300 Default: Dungeon of The Tick: Three-stage floor -- デフォルト：刻のダンジョン：三段床
+300400 Default: Dungeon of The Tick: Multi-stage floor -- デフォルト：刻のダンジョン：多段床
+300500 Default: Dungeon of Ticks: Height difference -- デフォルト：刻のダンジョン：高低差
+300600 Default: Dungeon of The Tick: Falling Death Mild -- デフォルト：刻のダンジョン：落下死マイルド
+300700 Default: Dungeon of Ticks: Fall ing death hard -- デフォルト：刻のダンジョン：落下死ハード
+300800 Default: Dungeon of Ticks: Maze Small -- デフォルト：刻のダンジョン：迷路小
+300900 Default: Dungeon of Ticks: Maze Large -- デフォルト：刻のダンジョン：迷路大
+301000 Default: Dungeon of Ticks: Obstacle Mild -- デフォルト：刻のダンジョン：障害物マイルド
+301100 Default: Dungeon of Ticks: Obstacle Hard -- デフォルト：刻のダンジョン：障害物ハード
+301200 Default: Dungeon of Ticks: Division -- デフォルト：刻のダンジョン：分断
+301300 Default: Dungeon of The Tick: Dark Mild -- デフォルト：刻のダンジョン：暗闇マイルド
+301400 Default: Dungeon of Ticks: Dark Hard -- デフォルト：刻のダンジョン：暗闇ハード
+301500 Default: Dungeon of Ticks: Waterside -- デフォルト：刻のダンジョン：水辺
+301600 Default: Dungeon of Ticks: Trap Ball -- デフォルト：刻のダンジョン：トラップ玉
+301700 Default: Dungeon of Ticks: Trap Bow and Arrow -- デフォルト：刻のダンジョン：トラップ弓矢
+301800 Default: Dungeon of Ticks: Various Traps -- デフォルト：刻のダンジョン：トラップ色々
+305000 Default: Dungeon of Ticks: Medium Boss -- デフォルト：刻のダンジョン：中ボス
+306000 Default: Dungeon of Ticks: Boss Room -- デフォルト：刻のダンジョン：ボス部屋
+400300 ♦Old dark hole- Outdoor bright space general purpose -- ■古き闇の穴：屋外明るい空間汎用
+400320 ⇒ Outdoor dark space general purpose -- ⇒屋外暗い空間汎用
+400340 ⇒ Indoor bright space general purpose -- ⇒屋内明るい空間汎用
+400360 ⇒ Indoor dark space general purpose -- ⇒屋内暗い空間汎用
+400380 ⇒Special General Purpose Pledge Lv0 None -- ⇒特殊汎用 誓約Ｌｖ0 無
+400381 ⇒Special General Purpose Pledge Lv1 Small -- ⇒特殊汎用 誓約Ｌｖ1 小
+400382 ⇒Special General Purpose Pledge Lv2 medium -- ⇒特殊汎用 誓約Ｌｖ2 中
+400383 ⇒Special General Purpose Pledge Lv3 Large -- ⇒特殊汎用 誓約Ｌｖ3 大
+400390 ⇒ Boss room- cut scene only -- ⇒ボス部屋、カットシーン専用
+401000 Default: Arena: Torture -- デフォルト：闘技場：拷問場
+900000 Default: Ninja Test -- デフォルト：忍者テスト
+981600 Default: Planning Rough - Ruins Castle -- デフォルト：企画ラフ-廃墟の城
+981800 Default: Planning Rough - Underground Port -- デフォルト：企画ラフ-地下の港
+981900 Default: Planning Rough - Volcano Steel Works -- デフォルト：企画ラフ-火山の製鉄所
+982100 Default: Planning Rough - Iwamine Castle -- デフォルト：企画ラフ-岩峰城
+982400 Default: Planning Rough - Submerged Castle -- デフォルト：企画ラフ-水没城
+982500 Default: Planning Rough-D-Ssukemura -- デフォルト：企画ラフ-Dすけ村
+990000 Default: Test map- etc. -- デフォルト：テストマップ他
+998000 Default: Boss Gallery- etc. -- デフォルト：ボスギャラリー他
+999000 Default: GD Test - Brook -- デフォルト：GDテスト-小川
+999100 Default: GD Test - Sato -- デフォルト：GDテスト-佐藤
+999200 Default: PG Test - Watanabe (Taka) -- デフォルト：PGテスト-渡辺(貴)
+999300 Default: GD test - water drop etc. -- デフォルト：GDテスト-水落他
+999400 Default: GD test - Wada- etc. -- デフォルト：GDテスト-和田他
+999500 Default: GD Test - Shibae -- デフォルト：GDテスト-芝恵
+999600 Default: GD Test - Higuchi -- デフォルト：GDテスト-樋口
+999700 Default: PG Test - Shimizu -- デフォルト：PGテスト-清水
+999800 Default: GD Test - Takeda -- デフォルト：GDテスト-武田
+999900 Default: PG Test - Watanabe (Crystal) -- デフォルト：PGテスト-渡辺(晶)

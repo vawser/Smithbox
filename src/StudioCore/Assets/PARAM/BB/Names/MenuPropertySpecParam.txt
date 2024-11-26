@@ -1,0 +1,139 @@
+0 ----
+100 [Item] Name
+101 [Item] Simple description
+102 [Item] Trivia
+103 [Item] Number of possessions
+104 [Item] Warehouse possession number
+105 [Item] Sort ID
+106 [Item] Maximum number of items
+107 [Item] Maximum number of items in the warehouse
+200 [Consumables] Number of bullets consumed
+201 [Consumables] Consumable upon use
+202 [Consumables] Ability Modifier: Strength
+203 [Consumables] Ability Modifier: Skill
+204 [Consumables] Ability Modifier: Shooting
+205 [Consumables] Ability Modifier: Magic
+206 [Consumables] Required ability: Strength
+207 [Consumables] Required ability: Skill
+208 [Consumables] Required ability: Shooting
+209 [Consumables] Required ability: Magic
+300 [Weapon] Type
+301 [Weapon] Attack type name
+310 [Weapon] Melee attack power
+311 [Weapon] Gun Attack Power
+312 [Weapon] Magic attack power
+313 [Weapon] Fire attack power
+314 [Weapon] Lightning attack power
+320 [Weapon] Physical attack power
+321 [Weapon] Gunfire additional attack power
+322 [Weapon] Magical attack power
+323 [Weapon] Fire attack power
+324 [Weapon] Lightning additional attack power
+325 [Weapon] Melee attribute attack power
+326 [Weapon] Piercing attribute attack power
+327 [Weapon] Strike melee attribute attack power
+328 [Weapon] Number of bullets consumed
+330 [Weapon] Critical attack power
+331 [Weapon] Effect: Poison
+332 [Weapon] Effect: Bleeding
+335 [Weapon] Special damage effect: Moon
+336 [Weapon] Special damage effect: Beast
+340 [Weapon] Ability Modifier: Strength
+341 [Weapon] Ability Modifier: Skill
+342 [Weapon] Ability Modifier: Shooting
+343 [Weapon] Ability Modifier: Magic
+350 [Weapon] Required ability: Strength
+351 [Weapon] Required ability: Skill
+352 [Weapon] Required ability: Shooting
+353 [Weapon] Required ability: Magic
+360 [Weapon] Current durability
+361 [Weapon] Maximum durability
+370 [Weapon] Number of magic stones equipped
+371 [Weapon] Number of magic stone slots
+380 [Weapon] Magic Stone Effect 1
+381 [Weapon] Magic Stone Effect 2
+382 [Weapon] Magic Stone Effect 3
+383 [Weapon] Magic Stone Effect 4
+384 [Weapon] Magic Stone Effect 5
+385 [Weapon] Magic Stone Effect 6
+386 [Weapon] Magic Stone Effect 7
+387 [Weapon] Magic Stone Effect 8
+388 [Weapon] Magic Stone Effect 9
+400 [Armor] Damage reduction rate: Slashing
+401 [Armor] Damage reduction rate: Piercing
+402 [Armor] Damage reduction rate: Impact
+403 [Armor] Damage reduction rate: Gunfire
+404 [Armor] Damage reduction rate: Magic
+405 [Armor] Damage reduction rate: Fire
+406 [Armor] Damage reduction rate: Lightning
+410 [Armor] Poison Resistance
+411 [Armor] Bleeding resistance
+412 [Armor] Madness Resistance
+413 [Armor] Beastification Resistance
+500 [Magic Stone] Color
+501 [Magic Stone] Rank
+502 [Magic Stone] Effect 0
+503 [Magic Stone] Effect 1
+504 [Magic Stone] Effect 2
+505 [Magic Stone] Effect 3
+506 [Magic Stone] Effect 4
+507 [Magic Stone] Effect 5
+600 [Weapon Magic Stone] Slot Shape
+700 [Body Gem] Type
+800 [Holy Grail] Type
+801 [Holy Grail] Ritual Level
+802 [Holy Grail] Sub-characteristic candidates 1
+803 [Holy Grail] Sub-characteristic candidates 2
+804 [Holy Grail] Sub-characteristic candidates 3
+805 [Holy Grail] Sub-characteristic candidates 4
+806 [Holy Grail] Sub-characteristic candidates 5
+10000 [ PC Basics: Name
+10001 [ PC Basics: Background
+10002 [ PC Basics: Gifts
+10003 [ PC Basics: Gender
+10004 [ PC Basic Level
+10005 [ PC Basic: Souls owned
+10006 [ PC Basics: Pledge
+10007 [ PC Basics SAN value
+10009 [ PC Basic: Required Souls
+10100 [ PC 1st: Physical strength
+10101 [ PC 1st: Mental strength
+10102 [ PC 1st: Muscle strength
+10103 [ PC 1st: Skills
+10104 [ PC1st: Shooting
+10105 [ PC 1st: Magic
+10200 [ PC Secondary HP
+10201 [ PC Secondary: Maximum HP
+10202 [ PC Secondary: Stamina
+10203 [ PC Secondary: Equipment weight
+10204 [ PC 2nd: Item discovery ability
+10205 [ PC Secondary: Right Weapon 1 Attack Power
+10206 [ PC Secondary: Right Weapon 2 Attack Power
+10207 [ PC Secondary: Left Weapon 1 Attack Power
+10208 [ PC Secondary: Left Weapon 2 Attack Power
+10209 [ PC Secondary: Slash defense
+10210 [ PC Secondary: Pierce defense
+10211 [ PC Secondary: Strike defense
+10212 [ PC Secondary: Gunfire defense
+10213 [ PC Secondary Magic Defense
+10214 [ PC 2nd: Fire defense
+10215 [ PC Secondary: Lightning defense
+10216 [ PC Secondary: Slash cut rate
+10217 [ PC Secondary: Piercing cut rate
+10218 [ PCSecondary: Hitting cut rate
+10219 [ PC Secondary: Shooting cut rate
+10220 [ PC Secondary Magic Cut Rate
+10221 [ PC Secondary: Fire cut rate
+10222 [ PC Secondary: Lightning cut rate
+10223 [ PC 2nd: Poison Resistance
+10224 [ PC 2nd: Bleeding resistance
+10225 [ PC Secondary: Madness Resistance
+10226 [ PC 2nd: Beast Resistance
+10300 [ PC 】Body Gem Effect 1
+10301 [ PC 】Body Gem Effect 2
+10302 [ PC 】Body Gem Effect 3
+10303 [ PC 】Body Gem Effect 4
+10304 [ PC 】Body Gem Effect 5
+10305 [ PC 】Body Gem Effect 6
+10306 [ PC 】Body Gem Effect 7
+10307 [ PC 】Body Gem Effect 8

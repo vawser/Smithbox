@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the maximum spawn count for a projectile." />
+  
+  <Field>
+    <limitNum_byGroup 
+    AltName="Max Bullet Count in Group" 
+    Wiki="Maximum number of bullets in the same group" />
+    
+    <pad 
+    AltName="" 
+    Padding=""/>
+    
+  </Field>
+</PARAMMETA>

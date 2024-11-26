@@ -1,0 +1,2 @@
+0 dummy -- ダミー
+999 [test] Acceleration floor judgment -- 【test】加速床判定

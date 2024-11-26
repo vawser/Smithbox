@@ -1,0 +1,33 @@
+0 test -- test
+1 dmy -- dmy
+2 dmy -- dmy
+3 dmy -- dmy
+4 dmy -- dmy
+5 dmy -- dmy
+6 dmy -- dmy
+7 dmy -- dmy
+8 dmy -- dmy
+9 dmy -- dmy
+10 dmy -- dmy
+11 dmy -- dmy
+12 dmy -- dmy
+13 dmy -- dmy
+14 dmy -- dmy
+15 dmy -- dmy
+16 dmy -- dmy
+17 dmy -- dmy
+18 dmy -- dmy
+19 dmy -- dmy
+100 Light Source / Ninja Cancer -- 光源/忍者がんどう
+110 parachute -- 落下傘
+5000 Right hand sword -- 右手刀
+7000 Prosthesis Ninja _ Shuriken -- 義手忍具_手裏剣
+7100 Prosthetic hand ninja _ firecracker -- 義手忍具_爆竹
+7200 Prosthesis Ninja _ Ignition -- 義手忍具_発火
+7300 Prosthetic Hand Ninja_Prepared Ax -- 義手忍具_仕込み斧
+7400 Prosthetic hand ninja _ transformation -- 義手忍具_変わり身
+7500 Prosthetic hand ninja _ prepared Kodachi -- 義手忍具_仕込み小太刀
+7600 Prosthetic hand ninja _ iron fan -- 義手忍具_鉄扇
+7700 Prosthetic hand ninja _ Japamala -- 義手忍具_数珠
+7800 Prosthesis Ninja _ Preparation Spear -- 義手忍具_仕込み槍
+7900 Prosthetic hand ninja _ finger whistle -- 義手忍具_指笛

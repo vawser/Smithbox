@@ -1,3 +1,0 @@
-0 name plate 1 -- ネームプレート1
-1 name plate 2 -- ネームプレート2
-2 name plate 3 -- ネームプレート3

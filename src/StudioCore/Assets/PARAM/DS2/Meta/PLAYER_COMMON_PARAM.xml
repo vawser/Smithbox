@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the player." Row0Dummy="" />
+  <Field>
+    <roll_input_wait_time AltName="Rolling Input Wait Time" />
+    <sprint_stamina_drain_time AltName="Latent Sprint Stamina Drain Duration" />
+    <out_of_stamina_state_time AltName="Out of Stamina State Duration" />
+    <min_speed_for_jump AltName="Minimum Speed for Jumping" />
+    <item_discovery_mult_ng0 AltName="NG+0 Item Discovery %" />
+    <item_discovery_mult_ng1 AltName="NG+1 Item Discovery %" />
+    <item_discovery_mult_ng2 AltName="NG+2 Item Discovery %" />
+    <item_discovery_mult_ng3 AltName="NG+3 Item Discovery %" />
+    <item_discovery_mult_ng4 AltName="NG+4 Item Discovery %" />
+    <item_discovery_mult_ng5 AltName="NG+5 Item Discovery %" />
+    <item_discovery_mult_ng6 AltName="NG+6 Item Discovery %" />
+    <item_discovery_mult_ng7 AltName="NG+7 Item Discovery %" />
+    <chr_hit_durability_drain AltName="Character Hit Durability Consumption" />
+    <map_hit_durability_drain AltName="Map Hit Durability Consumption" />
+    <spell_use_durability_drain AltName="Spell Use Durability Consumption" />
+    <move_bullet_durability_drain AltName="Move Bullet Durability Consumption" />
+    <pvp_backstab_damage_mult AltName="PvP Backstab Damage Rate" />
+    <pvp_riposte_damage_mult AltName="PvP Riposte Damage Rate" />
+    <pvp_guardbreak_damage_mult AltName="PvP Guard Break Stab Damage Rate" />
+    <shield_letter_scaling_S_guard_mult AltName="Shield Guard Bonus (S Scaling)" Wiki="Affects guard percents gained via scaling for this scaling letter."/>
+    <shield_letter_scaling_A_guard_mult AltName="Shield Guard Bonus (A Scaling)" Wiki="Affects guard percents gained via scaling for this scaling letter."/>
+    <shield_letter_scaling_B_guard_mult AltName="Shield Guard Bonus (B Scaling)" Wiki="Affects guard percents gained via scaling for this scaling letter."/>
+    <shield_letter_scaling_C_guard_mult AltName="Shield Guard Bonus (C Scaling)" Wiki="Affects guard percents gained via scaling for this scaling letter."/>
+    <shield_letter_scaling_D_guard_mult AltName="Shield Guard Bonus (D Scaling)" Wiki="Affects guard percents gained via scaling for this scaling letter."/>
+    <shield_letter_scaling_E_guard_mult AltName="Shield Guard Bonus (E Scaling)" Wiki="Affects guard percents gained via scaling for this scaling letter."/>
+  </Field>
+</PARAMMETA>

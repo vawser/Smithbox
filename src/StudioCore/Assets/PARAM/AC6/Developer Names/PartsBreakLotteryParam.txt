@@ -1,0 +1,8 @@
+0 Shouldn't be erased -- 消すべからず
+10 waist -- 腰
+11 waist + left hand -- 腰＋左手
+12 waist + right hand -- 腰＋右手
+20 right hand only -- 右手のみ
+30 left hand only -- 左手のみ
+40 left and right hand random -- 左右手ランダム
+9999 test blade -- テストブレード

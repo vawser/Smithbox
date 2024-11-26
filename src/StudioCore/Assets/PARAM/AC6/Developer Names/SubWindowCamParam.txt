@@ -1,0 +1,2 @@
+0 Default value -- デフォルト値
+9000 Strong enemy camera -- 強敵用カメラ

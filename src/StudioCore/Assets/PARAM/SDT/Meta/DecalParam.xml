@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Diffuse Color" Fields="diffuseColorR,diffuseColorG,diffuseColorB" PlacedField="diffuseColorB" />
+    <ColorEditor Name="Reflection Color" Fields="reflecColorR,reflecColorG,reflecColorB" PlacedField="reflecColorB" />
+  </ColorEdit>
+  <Field></Field>
+  <Self />
+</PARAMMETA>

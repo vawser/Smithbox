@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BATTLE_MAP_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 ID = 0">
+      <DisplayName>ID</DisplayName>
+    </Field>
+    <Field Def="u8 RankingFlag = 0">
+      <DisplayName>ランキングフラグ</DisplayName>
+      <EditFlags>Wrap, Lock</EditFlags>
+    </Field>
+    <Field Def="u16 MapID = 0">
+      <DisplayName>マップID</DisplayName>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="fixstr MapName[32]">
+      <DisplayName>マップ名</DisplayName>
+    </Field>
+    <Field Def="f32 SizeX">
+      <DisplayName>サイズ：X</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 SizeY">
+      <DisplayName>サイズ：Y</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 SizeZ">
+      <DisplayName>サイズ：Z</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

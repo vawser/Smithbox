@@ -1,0 +1,147 @@
+0 testData -- testData
+1 Male_Prototype 1 -- 男性_試作1
+2 Male_Prototype 2 -- 男性_試作2
+3 Male_Prototype 3 -- 男性_試作3
+4 Male_Prototype 4 -- 男性_試作4
+5 Male_Prototype 5 -- 男性_試作5
+6 Male_Prototype 6 -- 男性_試作6
+7 Male_Prototype 7 -- 男性_試作7
+8 Male_Prototype 8 -- 男性_試作8
+9 Male_Prototype 9 -- 男性_試作9
+10 Male_Prototype 10 -- 男性_試作10
+11 Male_Prototype 11 -- 男性_試作11
+12 Male_Prototype 12 -- 男性_試作12
+13 Male_Prototype 13 -- 男性_試作13
+14 Male_Prototype 14 -- 男性_試作14
+20 Female_Prototype 1 -- 女性_試作1
+21 Female_Prototype 2 -- 女性_試作2
+30 4 Final Edition Warrior_Man -- ４末版　戦士_男
+31 4 Final Edition Knight_Man -- ４末版　騎士_男
+32 4 Final Edition Wizard_Woman -- ４末版　魔法使い_女
+33 4 Final Edition Shaman_Man -- ４末版　呪術師_男
+34 E3 Sun Knight_Man -- E3　太陽騎士_男
+100 Default face test_01 -- デフォルト顔テスト_01
+101 Default face test_02 -- デフォルト顔テスト_02
+102 Default face test_03 -- デフォルト顔テスト_03
+103 Default face test_04 -- デフォルト顔テスト_04
+104 Default face test_05 -- デフォルト顔テスト_05
+105 Default face test_06 -- デフォルト顔テスト_06
+106 Default face test_07 -- デフォルト顔テスト_07
+107 Default face test_08 -- デフォルト顔テスト_08
+108 Default face test_09 -- デフォルト顔テスト_09
+109 Default face test_10 -- デフォルト顔テスト_10
+110 Default face test_11 -- デフォルト顔テスト_11
+111 Default face test_12 -- デフォルト顔テスト_12
+112 Default face test_13 -- デフォルト顔テスト_13
+113 Default face test_14 -- デフォルト顔テスト_14
+114 Default face test_15 -- デフォルト顔テスト_15
+115 Default face test_16 -- デフォルト顔テスト_16
+116 Default face test_17 -- デフォルト顔テスト_17
+117 Default face test_18 -- デフォルト顔テスト_18
+118 Default face test_19 -- デフォルト顔テスト_19
+119 Default face test_20 -- デフォルト顔テスト_20
+120 Default face test_21 -- デフォルト顔テスト_21
+121 Default face test_22 -- デフォルト顔テスト_22
+122 Default face test_23 -- デフォルト顔テスト_23
+123 Default face test_24 -- デフォルト顔テスト_24
+124 Default face test_25 -- デフォルト顔テスト_25
+125 Default face test _26 -- デフォルト顔テスト_26
+126 Default face test _27 -- デフォルト顔テスト_27
+127 Default face test _28 -- デフォルト顔テスト_28
+128 Default face test _29 -- デフォルト顔テスト_29
+129 Default face test_30 -- デフォルト顔テスト_30
+130 Default face test_31 -- デフォルト顔テスト_31
+131 Default face test _32 -- デフォルト顔テスト_32
+132 Default face test_33 -- デフォルト顔テスト_33
+133 Default face test_34 -- デフォルト顔テスト_34
+134 Default face test_35 -- デフォルト顔テスト_35
+135 Default face test _36 -- デフォルト顔テスト_36
+136 Default face test _37 -- デフォルト顔テスト_37
+137 Default face test _38 -- デフォルト顔テスト_38
+138 Default face test _39 -- デフォルト顔テスト_39
+139 Default face test_40 -- デフォルト顔テスト_40
+140 Default face test_41 -- デフォルト顔テスト_41
+141 Default face test _42 -- デフォルト顔テスト_42
+142 Default face test_43 -- デフォルト顔テスト_43
+143 Default face test_44 -- デフォルト顔テスト_44
+144 Default face test_45 -- デフォルト顔テスト_45
+145 Default face test_46 -- デフォルト顔テスト_46
+146 Default face test _47 -- デフォルト顔テスト_47
+147 Default face test _48 -- デフォルト顔テスト_48
+148 Default face test _49 -- デフォルト顔テスト_49
+149 Default face test_50 -- デフォルト顔テスト_50
+300 Gray saint -- 灰色の聖女
+1000 Commoner face -- 平民顔
+1001 Peasant face of the Gosashi River -- 五指河の農民顔
+1002 Astra noble face -- アストラの貴族顔
+1003 Ryu Gakuin&#39;s student face -- 竜学院の書生顔
+1004 Sol Rondo saint face -- ソルロンドの聖者顔
+1005 Catalina&#39;s cheerful face -- カタリナの陽気顔
+1006 Karim&#39;s gloomy face -- カリムの陰気顔
+1007 Zena&#39;s old face -- ゼナの古顔
+1008 Onuma&#39;s different phase -- 大沼の異相
+1009 East strange face -- 東の異人顔
+2000 Commoner face -- 平民顔
+2001 Peasant face of the Gosashi River -- 五指河の農民顔
+2002 Astra noble face -- アストラの貴族顔
+2003 Ryu Gakuin&#39;s student face -- 竜学院の書生顔
+2004 Sol Rondo saint face -- ソルロンドの聖者顔
+2005 Catalina&#39;s cheerful face -- カタリナの陽気顔
+2006 Karim&#39;s gloomy face -- カリムの陰気顔
+2007 Zena&#39;s old face -- ゼナの古顔
+2008 Onuma&#39;s different phase -- 大沼の異相
+2009 East strange face -- 東の異人顔
+6000 Knight of the sun -- 太陽の騎士
+6001 Knight of the Sun (Sunworm Ver) -- 太陽の騎士（太陽虫Ver）
+6002 Knight of the Sun (Dead) -- 太陽の騎士（亡者）
+6010 Knight of the dark moon -- 暗月の騎士
+6020 Knight Ostra -- 騎士オストラ
+6021 Knight Ostra (hostile) -- 騎士オストラ（敵対）
+6030 &quot;Big Hat&quot; Logan -- ”ビッグハット”ロガーン
+6031 &quot;Big Hat&quot; Logan (Dead) -- ”ビッグハット”ロガーン（亡者）
+6040 Logan&#39;s disciple -- ロガーンの弟子
+6041 Logan&#39;s disciple (dead) -- ロガーンの弟子（亡者）
+6050 Princess of the exiled country -- 亡国の王女
+6060 Gray saint -- 灰色の聖女
+6070 White saint -- 白の聖女
+6071 White saint (dead) -- 白の聖女（亡者）
+6080 Knight of the Saint A -- 聖女の騎士A
+6090 Knight of the Saint B -- 聖女の騎士B
+6091 Knight of the Saint B (Dead) -- 聖女の騎士B （亡者）
+6100 Knight of the Saint C -- 聖女の騎士C
+6101 Knight of the Saint C (Dead) -- 聖女の騎士C （亡者）
+6130 Vase Shaman -- 壺の呪術師
+6131 Vase Shaman (Dead) -- 壺の呪術師（亡者）
+6170 Wandering chaos -- さまよう混沌
+6180 Healer -- 癒し手
+6220 Blacksmith Rickert -- 鍛冶屋リッケルト
+6250 A broken merchant -- 心折れた商人
+6260 Trickster -- トリックスター
+6270 A broken warrior -- 心折れた戦士
+6271 Broken heart warrior (dead) -- 心折れた戦士（亡者）
+6280 Onion knight -- たまねぎ騎士
+6290 Onion knight&#39;s daughter -- たまねぎ騎士の娘
+6300 Embraced Knight Lautrec -- 抱かれ騎士ロートレク
+6310 Nobushi -- 野武士
+6320 Cemetery coward patch -- 墓地の卑怯者パッチ
+6370 Dragon priest -- ドラゴンの神官
+6390 Black Knight Tarkus -- 黒騎士タルカス
+6400 Belka Knight -- ベルカ騎士
+6410 Witch Marose -- 魔女マロース
+6420 Ninja -- 忍者
+6490 Lautrec&#39;s companion 1 -- ロートレクのお供１
+6500 Lautrec&#39;s companion 2 -- ロートレクのお供２
+6530 Swamp Woman (NPC Multi) -- 沼女（NPCマルチ）
+6550 Temple Knight (NPC Multi) -- 神殿騎士（NPCマルチ）
+6560 Thorn Knight (NPC Multi) -- トゲ騎士（NPCマルチ）
+6570 Yellow robe (NPC multi) -- 黄衣（NPCマルチ）
+6580 Castle Tower NPC (Havell) -- 城下塔のNPC（ハベル）
+6600 NPC (Ricard) of the 1st Tower of the Royal Castle -- 王城1塔のNPC（リカール）
+6610 Crystal Knight -- 結晶騎士
+6801 Bandit A Gatekeeper -- 山賊A　門番
+6802 Bandit B Warrior -- 山賊B　戦士
+6803 Bandit C Bower -- 山賊C　弓使い
+6804 Bandit D Magic (Attack) -- 山賊D　魔法（攻撃）
+6805 Bandit E Magic (Recovery) -- 山賊E　魔法（回復）
+6806 Bandit F covert -- 山賊F　隠密
+9999 Phantom (without face) -- 幻影（顔なし）

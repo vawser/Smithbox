@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines havok collision parameters for character." />
+  
+  <Field>
+    <penetrationRecoverySpeed
+    AltName="Contact Recovery Speed"
+    Wiki="Speed ​​of getting stuck. Passed to hknpCharacterProxyCinfo::m_penetrationRecoverySpeed. Be careful not to make it too big as it will vibrate or blow off. If it's too small, it may fall off." />
+    
+    <keepContactTolerance
+    AltName="Keep Contact Tolerance"
+    Wiki="Clearance distance. Passed to hknpCharacterProxyCinfo::keepContactTolerance. Since it affects the detection range of the manifold, increasing it will reduce tunneling. If it is too large, performance will be affected." />
+    
+    <mapuid
+    AltName="Map ID"
+    Wiki="Parameter override target MapUid. -1 is the default value" />
+    
+    <hitPartsName
+    AltName="Hit Part Name"
+    Wiki="Parameter hit name to be overwritten. Part 123456 of h123456_7890. -1 means no specification. Hit directly on top." />
+    
+    <refHitPartsName
+    AltName="Reference Hit Part Name"
+    Wiki="Parameter override target reference hit name. Part 123456 of h123456_7890. -1 means no specification. Match on asset reference hits." />
+    
+    <assetPartsName
+    AltName="Asset Part Name"
+    Wiki="Asset name for parameter overwriting. Part 123456 of AEG123_456_7890. -1 not specified." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

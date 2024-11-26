@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+	<Enum Name="ActionUnlockParamActionType" type="s8">
+      <Option Value="0" Name="Diving" />
+	  <Option Value="1" Name="Night Eyes" />
+	  <Option Value="2" Name="Resurrection" />
+	  <Option Value="3" Name="Mortal Blade" />
+	  <Option Value="4" Name="Prosthetic Arm" />
+	  <Option Value="5" Name="Kusabimaru" />
+	  <Option Value="6" Name="Spirit Emblems" />
+	  <Option Value="7" Name="Unused" />
+	  <Option Value="8" Name="Unused" />
+	  <Option Value="9" Name="Unused" />
+	  <Option Value="10" Name="Unused" />
+	  <Option Value="11" Name="Mikiri Counter" />
+	  <Option Value="12" Name="Unused" />
+	  <Option Value="13" Name="Vault Over" />
+	  <Option Value="14" Name="Grappling Hook Attack" />
+	  <Option Value="15" Name="Mid-Air Deflect" />
+	  <Option Value="16" Name="Mid-Air Prosthetic" />
+	  <Option Value="17" Name="Unused" />
+	  <Option Value="18" Name="Anti-Air Deathblow" />
+	  <Option Value="19" Name="Reservoir thrust" />
+	  <Option Value="20" Name="Chasing Slice" />
+	  <Option Value="21" Name="Projected Force" />
+	  <Option Value="22" Name="Fang and Blade" />
+	  <Option Value="23" Name="Living Force" />
+	  <Option Value="24" Name="Unused" />
+	  <Option Value="25" Name="Mid-Air Combat Arts" />
+	  <Option Value="26" Name="Run and Slide" />
+	  <Option Value="27" Name="Unused" />
+	  <Option Value="28" Name="Unused" />
+	  <Option Value="29" Name="Unused" />
+	</Enum>
+  </Enums>
+  <Field>
+    <SfxIdOnMap Wiki="Sfx that appears when a Resource Item is placed in a map" />
+    <SfxIdFlying Wiki="Sfx when Resource Item is travelling towards you" />
+    <SfxIdOnHit Wiki="Sfx spawned when Resource Item hits the player" />
+    <ItemID Wiki="Item awarded" Refs="EquipParamGoods" />
+    <ActionUnlockType Enum="ActionUnlockParamActionType" Wiki="Prevents this Resource Item from being obtained until this Action is unlocked in ActionUnlockParam" />
+	<pad1 />
+	<GetVelocityMin Wiki="Set the minimum initial velocity of the flying object. The initial speed is randomly determined between the minimum and maximum initial speeds." />
+	<GetVelocityMax Wiki="Set the maximum initial velocity of the flying object. The initial speed is randomly determined between the minimum and maximum initial speeds." />
+	<GetVelocity Wiki="Set the acceleration when flying" />
+	<GetMaxSpeed Wiki="Set the maximum speed when flying. Even if you accelerate, the speed will not exceed this speed." />
+	<GetTimeoutTime Wiki="Even if the flying item does not reach the player, it will be forcibly retrieved after this time has elapsed." />
+	<pad />
+  </Field>
+  <Self Wiki="Defines Resource Items, aka Spirit Emblems/Regenerative Power Fragments" AlternativeOrder="ItemID,ActionUnlockType,-,
+  SfxIdOnMap,SfxIdFlying,SfxIdOnHit,-,
+  GetVelocity,GetVelocityMax,GetVelocityMin,GetMaxSpeed,GetTimeoutTime,-" />
+</PARAMMETA>

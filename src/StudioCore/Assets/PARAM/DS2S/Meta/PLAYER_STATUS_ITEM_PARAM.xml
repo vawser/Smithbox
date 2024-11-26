@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters that control the default items within the inventory for starting classes." Row0Dummy="" />
+  <Field>
+    <item_1 AltName="[1] Item ID" Refs="ItemParam" />
+    <item_2 AltName="[2] Item ID" Refs="ItemParam" />
+    <item_3 AltName="[3] Item ID" Refs="ItemParam" />
+    <item_4 AltName="[4] Item ID" Refs="ItemParam" />
+    <item_5 AltName="[5] Item ID" Refs="ItemParam" />
+    <item_6 AltName="[6] Item ID" Refs="ItemParam" />
+    <item_7 AltName="[7] Item ID" Refs="ItemParam" />
+    <item_8 AltName="[8] Item ID" Refs="ItemParam" />
+    <item_9 AltName="[9] Item ID" Refs="ItemParam" />
+    <item_10 AltName="[10] Item ID" Refs="ItemParam" />
+    <item_11 AltName="[11] Item ID" Refs="ItemParam" />
+    <item_12 AltName="[12] Item ID" Refs="ItemParam" />
+    <item_13 AltName="[13] Item ID" Refs="ItemParam" />
+    <item_14 AltName="[14] Item ID" Refs="ItemParam" />
+    <item_15 AltName="[15] Item ID" Refs="ItemParam" />
+    <item_16 AltName="[16] Item ID" Refs="ItemParam" />
+    <item_17 AltName="[17] Item ID" Refs="ItemParam" />
+    <item_18 AltName="[18] Item ID" Refs="ItemParam" />
+    <item_19 AltName="[19] Item ID" Refs="ItemParam" />
+    <item_20 AltName="[20] Item ID" Refs="ItemParam" />
+    <item_amount_1 AltName="[1] Item Amount" />
+    <item_amount_2 AltName="[2] Item Amount" />
+    <item_amount_3 AltName="[3] Item Amount" />
+    <item_amount_4 AltName="[4] Item Amount" />
+    <item_amount_5 AltName="[5] Item Amount" />
+    <item_amount_6 AltName="[6] Item Amount" />
+    <item_amount_7 AltName="[7] Item Amount" />
+    <item_amount_8 AltName="[8] Item Amount" />
+    <item_amount_9 AltName="[9] Item Amount" />
+    <item_amount_10 AltName="[10] Item Amount" />
+    <item_amount_11 AltName="[11] Item Amount" />
+    <item_amount_12 AltName="[12] Item Amount" />
+    <item_amount_13 AltName="[13] Item Amount" />
+    <item_amount_14 AltName="[14] Item Amount" />
+    <item_amount_15 AltName="[15] Item Amount" />
+    <item_amount_16 AltName="[16] Item Amount" />
+    <item_amount_17 AltName="[17] Item Amount" />
+    <item_amount_18 AltName="[18] Item Amount" />
+    <item_amount_19 AltName="[19] Item Amount" />
+    <item_amount_20 AltName="[20] Item Amount" />
+  </Field>
+</PARAMMETA>

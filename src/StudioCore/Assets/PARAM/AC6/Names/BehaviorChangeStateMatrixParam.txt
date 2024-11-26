@@ -1,0 +1,230 @@
+1 Do not erase
+2 Ground movement finished
+3 Start ground boost movement
+4 Ground boost move finished
+5 Start ground guard
+6 Ground guard finished
+7 Start air boost movement
+8 Aerial boost move completed
+9 Start air guard
+10 Aerial Guard End
+11 Big QB Start
+12 Big QB finished
+13 Aerial wall attachment begins
+14 Triangle jump
+15 Cover start
+16 Cover End
+17 Start moving cover
+18 Cover move finished
+19 Beginning cover fire
+20 Cover fire finished
+21 Forced quick turn before attack
+22 Ground Quick Boost
+23 Aerial Quick Boost
+24 Jump
+25 Start of Falling
+26 Landing
+27 Ground damage
+28 Aerial damage
+29 Additional damage
+30 Ground death
+31 Death in the air
+32 Start crouching
+33 End crouching
+34 Start crouching
+35 End crouching move
+36 Start Crouching Boost Movement
+37 Crouch boost move completed
+38 Ground movement resumed
+39 Resuming ground boost
+40 Triangle jump wall hanging fall
+41 Start of slope slide
+42 Slope slide finished
+43 Start the ride
+44 End of ride
+45 Dash Turn
+46 Start rising air boost
+47 Aerial boost rise finished
+48 Start water boost movement
+49 Water boost move completed
+50 Start water guard
+51 Water Guard Ended
+52 Water boost start rising
+53 Water Quick Boost
+54 Water Damage
+100 VOB start
+101 VOB ended
+20010200 Unit base 2 legs homing dash
+20010400 Unit base reverse joint jump
+90000000 Union base common ground death
+90000100 Union base common air death
+90000200 Union base common water death
+90001000 Union base common ground damage
+90001001 Universal aircraft base common ground damage
+90001002 Union base common ground jump damage
+90001013 Union base common ground guard break
+90001020 Union base common ground additional damage
+90001100 Union base common small air damage
+90001101 Union base common large air damage
+90001102 Union base common air jump damage
+90001113 Union base common air guard break
+90001120 Union base common aerial additional damage
+90001200 Union base common water damage
+90001201 Universal base common water damage
+90001202 Union base common water jump damage
+90001213 Universal base common water guard break
+90001220 Union base common water additional damage
+90002000 Universal aircraft base common standby when ground animation ends
+90002100 Union base common - standby when aerial animation ends
+90002200 Unit base common - standby when water animation ends
+90002900 Unit base common standby when VOB animation ends
+90003000 Universal base common fall
+90003010 Universal aircraft base common from ground to water
+90003100 Universal base common landing
+90003110 Union base common water landing
+90003200 Union base common landing
+90003210 Universal base common fall from water
+90003900 Own machine base common VOB start
+90003910 Own machine base common VOB purge
+90011900 Unique base common VOB quick boost
+90011910 Universal base common assault boost start
+90011911 Universal base common assault boost end
+90011912 Universal base common assault boost kick start
+90011913 Universal base common assault boost firing start
+90020000 Universal base common guard start
+90020100 Universal base common guard end
+90021000 Universal machine base common fighting first stage start
+90021001 Universal base common fighting combo start
+90022000 Universal aircraft base common - start shooting stance
+90022001 Universal aircraft base common - start shooting down
+90022002 Universal aircraft base common - start preparing for the first stage of stopping fire
+90022003 Universal aircraft base common - start preparing for second stage of stopping fire
+90029000 Unique base common recovery item
+91002000 Unit base 2 legs stand by when quick boost animation ends
+91002010 Unit base 2 legs quick boost acceleration finished
+91002020 Own aircraft base 2 legs triangular flight start
+91003000 Original base 2 legs slope slip start
+91003010 Original base 2 legs slope skid completed
+91003100 Unit base 2 legs crouching forced release
+91003200 Own aircraft base 2 legs quick boost inertial flight landing
+91010000 Own aircraft base 2 legs quick turn while on ground standby
+91010001 Own aircraft base 2 legs quick turn while on ground_for AI
+91010010 Unit base 2 legs dash turn
+91010020 Own aircraft base 2 legs quick turn while driving on boost
+91010021 Own aircraft base 2 legs quick turn while boost running_for AI
+91010100 Own aircraft base 2 legs ground movement start
+91010110 Unit base 2 legs ground movement completed
+91010200 Original base 2 legs quick boost
+91010201 Own aircraft base 2 legs quick boost during quick boost
+91010300 Own aircraft base 2 legs ground boost running start
+91010301 Own aircraft base 2 legs ground boost running resumed
+91010310 Original base 2 legs ground boost run completed
+91010311 Original base 2 legs ground boost stop
+91010400 Own aircraft base 2 leg jump
+91010500 Original base 2 legs start crouching
+91010510 Unit base 2 legs crouching completed
+91010520 Start crouching on base 2 legs
+91010530 Unit base 2 legs crouching movement completed
+91011000 Own aircraft base 2 legs aerial quick turn
+91011001 Own aircraft base 2 legs aerial quick turn_for AI
+91011020 Own aircraft base 2 legs quick turn during air boost
+91011021 Own aircraft base 2 legs quick turn during air boost_AI
+91011300 Own aircraft base 2 legs aerial boost start
+91011310 Own aircraft base 2 legs aerial boost completed
+91011320 Own aircraft base 2 legs aerial boost flight begins
+91011330 Own aircraft base 2 legs aerial boost flight completed
+91011400 Own aircraft base 2 legs aerial boost start rising
+91011410 Own aircraft base 2 legs aerial boost rise completed
+91011420 Own aircraft base 2 legs aerial boost upward flight begins
+91011430 Own aircraft base 2 legs aerial boost ascent flight completed
+91011500 Own aircraft base 2 legs aerial wall kick jump
+91012100 Original base 2 legs start moving on water
+91012110 Unit base 2 legs water movement completed
+92011000 Mobile base quadruped aerial hover start
+92011001 Unit base quadruped aerial hover completed
+93010000 Original base tank drift after assault boost kick
+990000000 Enemy base common additional damage
+990001000 Enemy base common attack
+990010000 Enemy base 2 legs ground movement start
+990010001 Enemy base 2 legs ground movement completed
+990010002 Enemy base 2 legs ground boost movement start
+990010003 Enemy base 2 legs ground boost movement completed
+990010004 Enemy Base 2 Legs Ground Quick Boost
+990010005 Enemy Base 2 Legs Ground Turn
+990010100 Enemy base 2 legs ground jump storage
+990010101 Enemy base 2 legs on the ground start falling
+990010102 Enemy Base 2 Legs Landing on the Ground
+990010103 Enemy Base 2 Legs Ground Jump Crossing
+990010110 Enemy base 2 legs ground jump edge jump
+990011000 Enemy base 2 legs ground damage
+990011100 Enemy base 2 legs ground death
+990012000 Enemy base 2 legs ground guard start
+990012001 Enemy Base 2 Legs Ground Guard Ended
+990012100 Enemy base 2 legs ground enemy base_cover start
+990012101 Enemy base 2 legs ground enemy base_cover finished
+990012102 Enemy base 2 legs ground enemy base_cover start
+990012103 Enemy base 2 legs ground enemy base_cover launch completed
+990012104 Enemy base 2 legs ground enemy base_cover launch rifle start
+990013000 Enemy base 2 legs ground normal rifle start
+990014000 Enemy base 2 legs ground full body attack
+990020000 Enemy base 2 legs aerial movement start
+990020001 Enemy base 2 legs aerial movement completed
+990020002 Enemy base 2 legs aerial boost movement start
+990020003 Enemy base 2 legs aerial boost movement completed
+990020004 Enemy base 2 legs aerial quick boost
+990020005 Enemy base 2 leg aerial turn
+990020006 Enemy base 2 legs aerial boost increase start
+990020007 Enemy base 2 legs aerial boost increase finished
+990020008 Enemy base 2 legs aerial boost dash rise start
+990020009 Enemy base 2 legs aerial boost dash rise finished
+990021000 Enemy base 2 legs aerial damage
+990021100 Enemy base 2 legs air death
+990022000 Enemy base 2 legs aerial guard start
+990022001 Enemy Base 2 Legs Aerial Guard Ended
+990023000 Enemy base 2 legs aerial normal rifle start
+990024000 Enemy base 2 legs aerial full body attack
+990040000 Enemy base floating in the air, start moving
+990040001 Enemy base floating air movement completed
+990040002 Enemy base floating air boost movement start
+990040003 Enemy base floating air boost movement completed
+990040004 Enemy base floating air quick boost
+990040005 Enemy base floating air turn
+990040006 Enemy base floating in the air uniform speed turn start
+990040007 Enemy base floating in the air uniform speed turn ends
+990041000 Enemy base floating air damage
+990041100 Enemy Base Floating Air Death
+990042000 Enemy base floating air guard start
+990042001 Enemy Base Floating Air Guard Ended
+990043000 Enemy base floating air normal rifle start
+990050000 Enemy base vehicle ground movement start
+990050001 Enemy base vehicle ground movement completed
+990050002 Enemy base vehicle ground boost movement start
+990050003 Enemy base vehicle ground boost movement completed
+990050004 Enemy Base Vehicle Ground Quick Boost
+990050005 Enemy base vehicle ground turn
+990050006 Enemy base vehicle ground uniform speed turn start
+990050007 Enemy base vehicle ground uniform speed turn ends
+990050100 Enemy base vehicle ground jump charge
+990050101 Enemy base vehicle on the ground begins to fall
+990050102 Enemy base vehicle ground landing
+990050103 Enemy base vehicle ground jump railroad crossing
+990050110 Enemy Base Vehicle Ground Jump Edge
+990051000 Enemy base vehicle ground damage
+990051100 Enemy base vehicle ground death
+990052000 Enemy base vehicle ground guard start
+990052001 Enemy Base Vehicle Ground Guard Ended
+990053000 Enemy base vehicle ground normal rifle start
+990060000 Enemy base vehicle aerial movement start
+990060001 Enemy Base Vehicle Aerial Movement Ended
+990060002 Enemy base vehicle aerial boost movement start
+990060003 Enemy base vehicle aerial boost movement completed
+990060004 Enemy base vehicle air quick boost
+990060005 Enemy base vehicle air turn
+990061000 Enemy base vehicle air damage
+990061100 Enemy base vehicle air death
+990062000 Enemy base vehicle aerial guard start
+990062001 Enemy Base Vehicle Aerial Guard Ended
+990063000 Enemy base vehicle air normal rifle start
+
+
+

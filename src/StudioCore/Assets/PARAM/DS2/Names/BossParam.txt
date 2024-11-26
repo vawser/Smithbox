@@ -1,0 +1,55 @@
+1 UNKNOWN
+212000 Guardian Dragon
+212001 Guardian Dragon
+212002 Guardian Dragon
+212003 Guardian Dragon
+303300 Flexile Sentry
+305000 Smelter Demon
+305200 Blue Smelter Demon
+309600 The Last Giant
+309700 Giant Lord
+318000 The Pursuer
+318010 The Pursuer
+318020 The Pursuer
+325000 Ruin Sentinel
+325010 Ruin Sentinel
+326000 The Rotten
+332000 UNKNOWN
+333000 Velstadt- The Royal Aegis
+334000 Throne Defender
+500000 Covetous Demon
+501000 Mytha- the Baneful Queen
+502000 Manscorpion Tark
+502001 Manscorpion Tark
+502009 Manscorpion Tark
+503000 Scorpioness Najka
+504000 Looking Glass Knight
+506100 Darklurker
+506101 Darklurker
+514600 Vendrick (hollow)
+600000 Ancient Dragon
+601000 Flame Lizard
+602000 Rampart Hedgehog
+603000 The Duke's Dear Freja
+603100 The Duke's Dear Freja
+607000 Old Iron King
+611010 Dragonrider
+611500 Dragonrider
+611510 Dragonrider
+619110 Executioner's Chariot
+625000 Old Dragonslayer
+626000 Lost Sinner
+627000 Nashandra
+628000 Royal Rat Authority
+675000 Fume Knight
+675010 Fume Knight
+679000 Aava
+679002 Aava
+681000 Sinh- the Slumbering Dragon
+682000 Elana- Squalid Queen
+683000 Imperfect
+689000 Charred Loyce Knight
+689010 Charred Loyce Knight
+689020 Charred Loyce Knight
+689030 Charred Loyce Knight
+690000 Burnt Ivory King

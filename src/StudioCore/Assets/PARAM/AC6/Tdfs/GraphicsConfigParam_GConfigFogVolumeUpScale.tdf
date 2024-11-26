@@ -1,0 +1,5 @@
+"GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_UPSCALE_TYPE"
+"u8"
+"高解像度での描画の強制","0"
+"バイラテラルアップスケール","1"
+"リニアアップスケール","2"

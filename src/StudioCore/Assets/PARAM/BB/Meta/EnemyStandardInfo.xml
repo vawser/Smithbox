@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <EnemyBehaviorID AltName="Behavior ID" Wiki="Enemy behavior ID" Refs="BehaviorParam" />
+    <HP AltName="HP" Wiki="" />
+    <AttackPower AltName="Attack Power" Wiki="" />
+    <ChrType AltName="Character Type" Wiki="" Enum="ChrType" />
+    <HitHeight AltName="Hit Height" Wiki="Size of capsule" />
+    <HitRadius AltName="Hit Radius" Wiki="Size of capsule" />
+    <Weight AltName="Weight" Wiki="" />
+    <DynamicFriction AltName="Dyanmic Friction" Wiki="" />
+    <StaticFriction AltName="Static Friction" Wiki="" />
+    <UpperDefState AltName="Upper Body Initial State" Wiki="" />
+    <ActionDefState AltName="Initial State" Wiki="" />
+    <RotY_per_Second AltName="Y-axis Rotation per Second" Wiki="" />
+    <reserve0 Padding="" />
+    <RotY_per_Second_old AltName="Y-axis Rotation per Second [OLD]" Wiki="" />
+    <EnableSideStep AltName="Enable Sidestep" Wiki="" />
+    <UseRagdollHit AltName="Use Ragdoll Hit" Wiki="" />
+    <reserve_last Padding="" />
+    <stamina AltName="Stamina" Wiki="" />
+    <staminaRecover AltName="Stamina Recovery" Wiki="Stamina recovery amount per second" />
+    <staminaConsumption AltName="Stamina Consumption" Wiki="Basic value of stamina consumption used when attacking and guarding" />
+    <deffenct_Phys AltName="Physical Defense Power" Wiki="Basic damage reduction value for physical attacks" />
+    <reserve_last2 Padding="" />
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

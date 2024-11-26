@@ -1,0 +1,31 @@
+0 Appearance of B0
+1 Inside the B0 cave
+2 Inside the B0 cave_m2000_waterside spc
+3 B0 Appearance_Object
+4 Inside the B0 cave_object
+5 B0 Appearance_Character
+6 Inside the B0 cave _ object (bright)
+7 B0 boss room_character
+8 Near B0 blast furnace_Chara
+11 Inside the B1 cave
+12 B1 boss room
+13 Near lava in B1 cave
+14 Lava in B1 cave very close
+15 B1 boss object
+16 Inside the B1 cave_Chara
+17 B1 boss room_character
+18 Near lava in B1 cave_Chara
+19 Lava in the B1 cave is very close_Chara
+20 B1 narrow cave character
+21 B1 pit character
+22 In front of B1 boss room_Chara
+30 B2 basic
+35 B2 character
+45 For poly drama (p60100-Fire Phantom
+48 For poly drama (p60200
+54 For poly drama (p60201
+59 Rubble A
+60 Rubble B
+61 boss room
+62 terrace
+63 Character

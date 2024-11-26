@@ -1,0 +1,33 @@
+0 dummy -- ダミー
+100 Normal -- 通常
+101 Normal +1 -- 通常＋1
+102 Normal +2 -- 通常＋2
+103 Normal +3 -- 通常＋3
+104 Normal +4 -- 通常＋4
+105 Normal +5 -- 通常＋5
+106 Normal +6 -- 通常＋6
+107 Normal +7 -- 通常＋7
+108 Normal +8 -- 通常＋8
+109 Normal +9 -- 通常＋9
+110 Normal +10 -- 通常＋10
+111 Normal +11 -- 通常＋11
+112 Normal +12 -- 通常＋12
+1000 Deadly Sword_Rotating Sword -- 必殺剣_回転斬り
+1010 Deadly Sword_Dive Sword -- 必殺剣_飛び込み斬り
+1011 Special Sword_Dive Sword + 1_Slash Retreat Added -- 必殺剣_飛び込み斬り+1_斬り退がり追加
+1020 Deadly Sword_Face -- 必殺剣_面打ち
+1021 Special Sword_Face +102 4th step added -- 必殺剣_面打ち+1_2段目追加
+1030 Deadly Sword_Iai -- 必殺剣_居合
+1031 Special Sword_Iai + 1_Power UP -- 必殺剣_居合+1_威力UP
+1040 Deadly Sword_Sword Holy Iai -- 必殺剣_剣聖居合
+1050 Deadly Sword_Eight Jump Rush -- 必殺剣_八艘跳びラッシュ
+1051 Special Sword_Eight Jump Rush + 1_ Increased Number of Stages -- 必殺剣_八艘跳びラッシュ+1_段数増加
+1060 Deadly Sword_Immortal Sword -- 必殺剣_不死斬り
+1061 Special Sword_Immortal Sword + 1_ Addition of Reservoir -- 必殺剣_不死斬り+1_溜め追加
+1070 Deadly Sword_Kick Rush -- 必殺剣_蹴りラッシュ
+1071 Special Sword_Kick Rush + 1_Increase in the number of steps -- 必殺剣_蹴りラッシュ+1_段数増加
+1080 Special Sword_Jiu-Jitsu Strike -- 必殺剣_体術連撃
+1081 Special Sword_Jiu-Jitsu Consecutive Attack + 1_ Yasushi Tetsuyama Added -- 必殺剣_体術連撃+1_鉄山靠追加
+1090 Deadly Sword_Ninja Fang -- 必殺剣_忍者牙突
+1091 Special Sword_Ninja Fang + 1_Descent Rotation Slash added -- 必殺剣_忍者牙突+1_降下回転斬り追加
+1100 Special Sword_New Technique -- 必殺剣_新技

@@ -1,0 +1,14 @@
+0 Systemic -- 全身
+1 Bust-up -- バストアップ
+2 The whole face -- 顔全体
+3 Face shape -- 顔形状
+4 Mayu -- まゆ
+5 Eyes -- 目
+6 Nose -- 鼻
+7 Mouth -- 口
+8 Chin -- あご
+9 Beard -- 髭
+10 For status center -- ステータス中央用
+11 For status bust-up -- ステータスバストアップ用
+12 For recall signs -- 召還サイン用
+13 For data lists -- データリスト用

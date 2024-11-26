@@ -1,0 +1,39 @@
+9910 Light and dark Lv. 0 -- 明暗Ｌｖ．０
+9920 Light and dark Lv. 1 -- 明暗Ｌｖ．１
+9930 Light and dark Lv. 2 -- 明暗Ｌｖ．２
+9940 Light and dark Lv. 3 -- 明暗Ｌｖ．３
+9950 Light and dark Lv. 4 -- 明暗Ｌｖ．４
+10020000 Things Betwixt
+10040000 Majula
+10100000 Forest of Fallen Giants
+10140000 Brightstone Cove Tseldora
+10150000 Aldia's Keep
+10160000 The Lost Bastille/Belfry Luna/Sinner's Rise
+10170000 Harvest Valley/Earthen Peak
+10180000 No-man's Wharf
+10190000 Iron Keep/Belfry Sol
+10210000 UNKNOWN
+10230000 Huntsman's Copse/Undead Purgatory
+10250000 The Gutter/Black Gulch
+10270000 Dragon Aerie/Dragon Shrine
+10290000 Path to Shaded Woods
+10300000 Path to Heide's Tower of Flame
+10310000 Heide's Tower of Flame/Cathedral of Blue
+10320000 Shaded Woods/Shrine of Winter
+10330000 Doors of Pharros
+10340000 Grave of Saints
+20100000 Memory of Jeigh/Memory of Orro/Memory of Vammar
+20110000 Shrine of Amana
+20210000 Drangleic Castle/Throne of Want
+20240000 Undead Crypt
+20260000 Dragon Memories
+20620000 E3 Fort of resistance (modern) -- E3抵抗の砦（現代）
+20630000 E3 Iwamine Castle (past) -- E3岩峰城（過去）
+40030000 Dark Chasm of Old
+50350000 Shulva- Sanctum City/Dragon's Sanctum/Dragon's Rest/Cave of the Dead
+50360000 Brume Tower/Iron Passage/Memory of the Old Iron King
+50370000 Frozen Eleum Loyce/Grand Cathedral/The Old Chaos/Frigid Outskirts
+50380000 Memory of the King
+90000000 Ninja Test Map -- 忍者テストマップ
+99805004 Map for logic testing -- ロジックテスト用マップ
+99970000 Shimizu Test Map -- 清水テストマップ

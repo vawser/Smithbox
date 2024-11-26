@@ -1,0 +1,25 @@
+10100 Prologue clear -- プロローグ　クリア
+10200 Dam Destruction Clear without betraying -- ダム破壊　裏切らずにクリア
+10210 Dam Destruction Betray and Clear -- ダム破壊　裏切ってクリア
+10300 Mining ship destroyed clear -- 採掘艦破壊　クリア
+10400 String clear -- 文字列　クリア
+10500 Clear over the wall -- 壁越え　クリア
+10600 Jesse Rescue 1 Clear -- ジェシー救出１　クリア
+10700 VOB capture clear -- VOB奪取　クリア
+10800 Jesse Rescue 2 Clear -- ジェシー救出２　クリア
+10900 Clear over the sea -- 海越え　クリア
+99999000 Test_Company A to 100 -- テスト_企業A に 100
+99999001 Test_CompanyB to 200 -- テスト_企業B に 200
+99999002 Test_Company C to 300 -- テスト_企業C に 300
+99999003 Test_CompanyD to 400 -- テスト_企業D に 400
+99999004 Test_Company E to 500 -- テスト_企業E に 500
+99999110 bay rum 100 -- ベイラム　100
+99999120 bay rum 200 -- ベイラム　200
+99999130 bay rum 300 -- ベイラム　300
+99999210 Elkano 100 -- エルカノ　100
+99999220 Elcano 200 -- エルカノ　200
+99999230 Elkano 300 -- エルカノ　300
+99999310 Rembrandt 100 -- レンブラント　100
+99999320 Rembrandt 200 -- レンブラント　200
+99999330 Rembrandt 300 -- レンブラント　300
+99999410 Bayrum Elcano 100 200 -- ベイラム　エルカノ　100　200

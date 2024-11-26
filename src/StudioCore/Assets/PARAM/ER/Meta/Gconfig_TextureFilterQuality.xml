@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="GX_TEXTURE_FILTER" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <filter AltName="Texture Filter" Wiki="filter" Enum="GX_TEXTURE_FILTER" />
+    <dmy AltName=""/>
+    <maxAnisoLevel AltName="Anisotropic Level" Wiki="Aniso level" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>GESTURE_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>302</SortID>
+    </Field>
+    <Field Def="s32 itemId">
+      <DisplayName>参照アイテムID</DisplayName>
+      <Description>参照アイテムID。各メニューでのジェスチャのテキストID、アイコンID、ソートIDを持ってくるのに使用される。装備品パラメータの道具IDを登録します</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 msgAnimId">
+      <DisplayName>メッセージ添付用アニメID</DisplayName>
+      <Description>メッセージ添付用アニメID。メッセージ添付時のアニメIDを指定します</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 cannotUseRiding:1">
+      <DisplayName>騎乗中使用禁止か</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>騎乗中使用禁止か(デフォルト:×)。○なら騎乗中に使用できない</Description>
+      <Maximum>1</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="dummy8 pad2:7">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>303</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[3]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>304</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

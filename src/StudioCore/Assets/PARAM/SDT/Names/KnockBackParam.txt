@@ -1,0 +1,3 @@
+0 General purpose -- 汎用
+1 For PC -- PC用
+10 Enemy general purpose old -- 敵汎用old

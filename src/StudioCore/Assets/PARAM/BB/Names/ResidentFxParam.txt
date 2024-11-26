@@ -1,0 +1,193 @@
+0 Try it
+100 General purpose _ candle
+101 General purpose _ Bonfire _ Point Light
+20000 Gimmick lighting _ Candle (no light source)
+20001 Gimmick lighting _ Candle (with light source)
+20002 Gimmick lighting _ Cantera ( With light source )
+20003 Gimmick lighting _ Point Light
+21000 m21_ fire
+21001 m21_ lanthanum
+21002 Orientation Test
+21003 m21_ Candle (no light source)
+21004 m21_ Fireplace (with light source)
+22000 General purpose _ Candle (no light source)
+22001 General purpose _ Torch (with light source)
+22002 General purpose _ Candle (with light source)
+22003 General purpose _ lanthanum ( With light source )
+22004 General purpose _ Bonfire ( Light source shadow )
+22005 Orientation Test
+22006 m22_ Lantern next to the window
+23000 General purpose _ Candle (no light source)
+23001 General purpose _ Torch (with light source)
+23002 General purpose _ Candle (with light source)
+23003 m23_ lanthanum ( With light source )
+23004 General purpose _ Bonfire ( Light source shadow )
+23005 m23_ The sacred flame ( Light source shadow )
+23006 Orientation Test
+23007 m24_Crucifixion Bonfire ( Light source shadow )
+23008 m23_ Gas lamp
+24000 m24_ Candle (no light source)
+24001 m24_ Torch (with light source)
+24002 m24_ Candle (with light source)
+24003 m24_ Gas lamp ( No light source )
+24004 General purpose _ Bonfire ( Light source shadow )
+24005 m24_ Incense burner
+24006 m24_ Orange gas lamp ( With light source )
+24007 m24_ Manhole steam
+24008 m24_Crucifixion Bonfire ( Light source shadow )
+24009 m24_ Gas lamp set light source
+24010 m24_ Candle set light source
+24011 m24_ Candles (for dark places without light sources)
+24012 Orientation Test
+24013 m24_ Light leaking from the door (general resident)
+24014 m24_ Lantern next to the window
+24900 m24_ test
+25000 General purpose _ Candle (no light source)
+25001 Old castle _ Torch (with light source)
+25002 Old castle _ candle _
+25003 Old castle _ lanthanum ( No light source )
+25004 General purpose _ Bonfire ( Light source shadow )
+25005 m25_ Candlestick point light
+25006 m25_ Chandelier point light source (small)
+25007 m25_ Chandelier point light source (middle)
+25008 m25_ Chandelier point light source (large)
+25009 m25_Lantern set point light source (large)
+25010 Orientation Test
+25011 m25_o25450 (with light source)
+25012 m25_o254501 (with light source)
+26000 General purpose _ Candle (no light source)
+26001 General purpose _ Torch (with light source)
+26002 General purpose _ Candle (with light source)
+26003 General purpose _ Lantern (with light source)
+26004 General purpose _ Bonfire ( Light source shadow )
+26005 Warp mirror always present
+26006 m26 : Basket chandelier point light source
+26007 Orientation Test
+27000 m27_ Candle (with light source)
+27001 m27_ Lantern (with light source)
+27002 General purpose _ Bonfire ( Light source shadow )
+27003 m27_ Burning rabbit (with light source)
+27004 m27_ Burning horse (with light source)
+27005 Orientation Test
+27006 m27_ Lantern next to the window
+27010 m27_ Lantern (with light source)
+28000 General purpose _ Candle (no light source)
+28001 General purpose _ Torch (with light source)
+28002 General purpose _ Candle (with light source)
+28003 m28 lanthanum ( With light source )
+28004 m28 lanthanum ( No light source )
+28005 m28 Chandelier point light source
+28006 m28 Lantern set light source
+28007 Orientation Test
+28008 Warp Obon always available
+28010 m28 lanthanum ( No light source )
+28011 m28 Lantern set light source
+28020 m28 lanthanum ( With light source )
+29000 m29_ Torch (with light source)
+29001 m29_ Candle [White] (no light source)
+29002 m29_ Candle [white] (with light source)
+29003 m29_ Candle [White] (No light source flare)
+29004 m29_ Candle [Yellow] (no light source)
+29005 m29_ Candle [yellow] (with light source)
+29006 m29_Candle [Yellow] (No light source flare)
+29007 m29_ Candle [Red] (No light source)
+29008 m29_ Candle [Red] (with light source)
+29009 m29_ Candle [Red] (No light source flare)
+29010 m29_ Lantern [Orange]
+29011 m29_ Lantern [Yellow]
+29012 m29_ Lantern [Red]
+29013 m29_ Glowing Stone
+29014 m29_ Candlestick point light ( small )
+29015 m29_ Candlestick point light ( large )
+29016 m29_ Chandelier point light source ( small )
+29017 m29_ Chandelier point light source ( Medium )
+29018 m29_ Chandelier point light source ( large )
+29019 m29_ Light streaming in ( small )
+29020 m29_ Light streaming in (middle)
+29021 m29_ Light coming in (large)
+29022 m29_ Light shines through blue and white ( small )
+29023 m29_ Blue-white light (medium)
+29024 m29_ Blue-white light (large)
+29025 m29_ Blue environment point light source (1 x 1 )
+29026 m29_ Blue environment point light source ( 2 x 2 )
+29027 m29_ Blue environment point light source ( 3 x 3 )
+29028 m29_ Blue environment point light source ( 5 x 5 )
+29029 m29_ Blue environment point light source ( 7 x 7 )
+29030 m29_ Orange environment point light source ( 1 x 1 )
+29031 m29_ Orange environment point light source ( 2 x 2 )
+29032 m29_ Orange environment point light source ( 3 x 3 )
+29033 m29_ Orange environment point light source ( 5 x 5 )
+29034 m29_ Orange environment point light source ( 7 x 7 )
+29035 m29_ Red environment point light source ( 1 x 1 )
+29036 m29_ Red environment point light source ( 2 x 2 )
+29037 m29_ Red environment point light source ( 3 x 3 )
+29038 m29_ Red environment point light source ( 5x 5 )
+29039 m29_ Red environment point light source ( 7 x 7 )
+29040 m29_ Strong Sandstorm (Small)
+29041 m29_ Strong Sandstorm (Medium)
+29042 m29_ Strong Sandstorm (Large)
+29043 m29_ Flying Ashes ( 10 x 10 )
+29044 General purpose _ Bonfire ( Light source shadow )
+29045 m29_ Incense burner smoke
+29046 m29_ Sub-route dense fog 6m
+29047 m29_ Sub-route dense fog 20m
+29048 m29_ Sub-route dense fog 32m
+29049 m29_ Wall of Light 1
+29050 m29_ Wall of Light 2
+29051 Orientation Test
+29052 m29_ Smoke from a bonfire (blue-white light source)
+29053 m29_ Candlestick [White] (7 candles)
+29054 m29_ General Statue [White] (5 candles)
+29055 m29_ General purpose statue [yellow] (candle x5)
+29056 m29_ Cosmic Strong (Small)
+29057 m29_ Cosmic Strong (Medium)
+29058 m29_ Cosmic Strong (Large)
+29059 m29_ Standard Strong (Small)
+29060 m29_ Standard Strong (Medium)
+29061 m29_ Standard Strong (Large)
+29062 m29_For Treasure Rarity Dungeon
+32000 General purpose _ Candle (no light source)
+32001 General purpose _ Torch (with light source)
+32002 General purpose _ Candle (with light source)
+32003 General purpose _ lanthanum ( With light source )
+32004 General purpose _ Bonfire ( Light source shadow )
+32005 Invert _ Candle (no light source)
+32006 Invert _ Torch (with light source)
+32007 Invert _ Candle (with light source)
+32008 Chandelier point light source
+32009 Orientation Test
+32010 Multi-light wall
+33000 General purpose _ Candle (no light source)
+33001 General purpose _ Torch (with light source)
+33002 General purpose _ Candle (with light source)
+33003 General purpose _ lanthanum ( With light source )
+33004 General purpose _ Bonfire ( Light source shadow )
+33005 Moon Flower ( Light source shadow )
+33006 Candle dish light source
+33007 Orientation Test
+33008 Patch Signpost
+34000 m34_ Candle (no light source)
+34001 m34_ Torch (with light source)
+34002 m34_ Candle (with light source)
+34003 m34_ Gas lamp ( No light source )
+34004 General purpose _ Bonfire ( Light source shadow )
+34005 m34_ Incense burner
+34006 m34_ Statue Gaslight ( With light source )
+34007 m34_ Manhole steam
+34008 m34_ Crucifixion Bonfire ( Light source shadow )
+34009 m34_ Gas lamp set light source
+34010 m34_ Candle set light source
+34011 m34_ Candles (for dark places without light sources)
+35000 General purpose _ Candle (no light source)
+35001 General purpose _ Torch (with light source)
+35002 General purpose _ Candle (with light source)
+35003 General purpose _ lanthanum ( With light source )
+35004 General purpose _ Downstairs display light source
+36000 General purpose _ Candle (no light source)
+36001 General purpose _ Candle (with light source)
+36002 Floating ball lighting (with light source)
+36003 Ignition OBJ (with light source)
+36004 Light source only: Candle slug
+36005 Insect-infested corpse SE
+99000 PG For research purposes
+99999 null

@@ -1,3 +1,0 @@
-100 Summon White Phantom
-101 Being Summoned
-102 Summon Dark Spirit

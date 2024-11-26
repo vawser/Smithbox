@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <ColorEdit>
+    <ColorEditor Name="Map Color" Fields="srcR,srcG,srcB" PlacedField="srcB" />
+  </ColorEdit>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
+    <srcR AltName="Pre-conversion - Map Image - R" Wiki="Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter" />
+    <srcG AltName="Pre-conversion - Map Image - G" Wiki="Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter" />
+    <srcB AltName="Pre-conversion - Map Image - B" Wiki="Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter" />
+    <pad1 AltName="" Padding=""/>
+    <mapNameId AltName="Map Name ID" Wiki="Map name ID for displaying place names [PlaceName] (0 - invalid value)" FmgRef="Title_Locations" />
+    <pad2 AltName="" Padding=""/>
+    
+    <unknownTextID_1 AltName="Location Text ID [1]" FmgRef="Title_Locations" />
+    <unknownTextID_2 AltName="Location Text ID [2]" FmgRef="Title_Locations" />
+  </Field>
+  <Self />
+</PARAMMETA>

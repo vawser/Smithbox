@@ -1,0 +1,401 @@
+100 White Sign Soapstone
+101 Red Sign Soapstone
+102 Red Eye Orb
+103 Black Separation Crystal
+108 Roster of Knights
+111 Cracked Red Eye Orb
+115 Black Eye Orb
+117 Darksign
+119 Way of White Circlet
+150 Estus Flask
+151 Estus Flask
+152 Estus Flask+1
+153 Estus Flask+1
+154 Estus Flask+2
+155 Estus Flask+2
+156 Estus Flask+3
+157 Estus Flask+3
+158 Estus Flask+4
+159 Estus Flask+4
+160 Estus Flask+5
+161 Estus Flask+5
+162 Estus Flask+6
+163 Estus Flask+6
+164 Estus Flask+7
+165 Estus Flask+7
+166 Estus Flask+8
+167 Estus Flask+8
+168 Estus Flask+9
+169 Estus Flask+9
+170 Estus Flask+10
+171 Estus Flask+10
+190 Ashen Estus Flask
+191 Ashen Estus Flask
+192 Ashen Estus Flask+1
+193 Ashen Estus Flask+1
+194 Ashen Estus Flask+2
+195 Ashen Estus Flask+2
+196 Ashen Estus Flask+3
+197 Ashen Estus Flask+3
+198 Ashen Estus Flask+4
+199 Ashen Estus Flask+4
+200 Ashen Estus Flask+5
+201 Ashen Estus Flask+5
+202 Ashen Estus Flask+6
+203 Ashen Estus Flask+6
+204 Ashen Estus Flask+7
+205 Ashen Estus Flask+7
+206 Ashen Estus Flask+8
+207 Ashen Estus Flask+8
+208 Ashen Estus Flask+9
+209 Ashen Estus Flask+9
+210 Ashen Estus Flask+10
+211 Ashen Estus Flask+10
+240 Divine Blessing
+241 Hidden Blessing
+260 Green Blossom
+261 Budding Green Blossom
+262 Budding Green Blossom
+270 Bloodred Moss Clump
+271 Purple Moss Clump
+272 Blooming Purple Moss Clump
+274 Purging Stone
+276 Rime-blue Moss Clump
+280 Repair Powder
+290 Kukri
+292 Firebomb
+293 Dung Pie
+294 Alluring Skull
+296 Undead Hunter Charm
+297 Black Firebomb
+299 Rope Firebomb
+300 Lightning Urn
+302 Rope Black Firebomb
+303 Stalk Dung Pie
+304 Duel Charm
+310 Throwing Knife
+311 Poison Throwing Knife
+315 Church Guardian Shiv
+330 Charcoal Pine Resin
+331 Gold Pine Resin
+334 Human Pine Resin
+335 Carthus Rouge
+336 Pale Pine Resin
+340 Charcoal Pine Bundle
+341 Gold Pine Bundle
+343 Rotten Pine Resin
+350 Homeward Bone
+351 Coiled Sword Fragment
+366 Wolf's Blood Swordgrass
+367 Human Dregs
+368 Forked Pale Tongue
+369 Proof of a Concord Well Kept
+370 Prism Stone
+371 Binoculars
+372 Proof of a Concord Kept
+373 Pale Tongue
+374 Vertebra Shackle
+375 Sunlight Medal
+376 Pendant
+377 Dragon Head Stone
+378 Dragon Torso Stone
+379 Filianore's Spear Ornament
+380 Rubbish
+385 Dried Finger
+387 Twinkling Dragon Head Stone
+388 Twinkling Dragon Torso Stone
+390 Fire Keeper Soul
+400 Fading Soul
+401 Soul of a Deserted Corpse
+402 Large Soul of a Deserted Corpse
+403 Soul of an Unknown Traveler
+404 Large Soul of an Unknown Traveler
+405 Soul of a Nameless Soldier
+406 Large Soul of a Nameless Soldier
+407 Soul of a Weary Warrior
+408 Large Soul of a Weary Warrior
+409 Soul of a Crestfallen Knight
+410 Large Soul of a Crestfallen Knight
+411 Soul of a Proud Paladin
+412 Large Soul of a Proud Paladin
+413 Soul of an Intrepid Hero
+414 Large Soul of an Intrepid Hero
+415 Soul of a Seasoned Warrior
+416 Large Soul of a Seasoned Warrior
+417 Soul of an Old Hand
+418 Soul of a Venerable Old Hand
+419 Soul of a Champion
+420 Soul of a Great Champion
+440 Seed of a Giant Tree
+452 Mossfruit
+454 Young White Branch
+455 Rusted Coin
+456 Siegbräu
+457 Rusted Gold Coin
+458 Blue Bug Pellet
+459 Red Bug Pellet
+460 Yellow Bug Pellet
+461 Black Bug Pellet
+462 Young White Branch
+463 Young White Branch
+490 Dark Sigil
+500 Ember
+520 Hello Carving
+521 Thank you Carving
+522 Very good! Carving
+523 I'm sorry Carving
+524 Help me! Carving
+650 Ritual Spear Fragment
+651 Divine Spear Fragment
+712 Soul of Champion Gundyr
+714 Soul of the Dancer
+715 Soul of a Crystal Sage
+717 Soul of the Blood of the Wolf
+718 Soul of Consumed Oceiros
+719 Soul of Boreal Valley Vordt
+720 Soul of the Old Demon King
+721 Soul of Dragonslayer Armour
+722 Soul of the Nameless King
+724 Soul of Pontiff Sulyvahn
+725 Soul of Aldrich
+726 Soul of High Lord Wolnir
+727 Soul of the Rotted Greatwood
+728 Soul of Rosaria
+729 Soul of the Deacons of the Deep
+731 Soul of the Twin Princes
+732 Soul of Yhorm the Giant
+733 Soul of the Lords
+739 Soul of a Demon
+743 Soul of a Stray Demon
+744 Soul of Sister Friede
+745 Soul of Slave Knight Gael
+746 Soul of the Demon Prince
+747 Soul of Darkeater Midir
+1000 Titanite Shard
+1001 Large Titanite Shard
+1002 Titanite Chunk
+1003 Titanite Slab
+1020 Titanite Scale
+1030 Twinkling Titanite
+1100 Heavy Gem
+1110 Sharp Gem
+1120 Refined Gem
+1130 Crystal Gem
+1140 Simple Gem
+1150 Fire Gem
+1160 Chaos Gem
+1170 Lightning Gem
+1180 Deep Gem
+1190 Dark Gem
+1200 Poison Gem
+1210 Blood Gem
+1220 Raw Gem
+1230 Blessed Gem
+1240 Hollow Gem
+1250 Shriving Stone
+2001 Lift Chamber Key
+2005 Small Doll
+2007 Jailbreaker's Key
+2008 Jailer's Key Ring
+2009 Grave Key
+2010 Cell Key
+2011 Dungeon Ground Floor Key
+2012 Old Cell Key
+2013 Tower Key
+2014 Grand Archives Key
+2015 Tower Key
+2102 Small Lothric Banner
+2103 Farron Coal
+2104 Sage's Coal
+2105 Giant's Coal
+2106 Profaned Coal
+2107 Mortician's Ashes
+2108 Dreamchaser's Ashes
+2109 Paladin's Ashes
+2110 Grave Warden's Ashes
+2111 Greirat's Ashes
+2112 Orbeck's Ashes
+2113 Cornyx's Ashes
+2114 Karla's Ashes
+2115 Irina's Ashes
+2116 Yuria's Ashes
+2117 Basin of Vows
+2118 Loretta's Bone
+2119 Braille Divine Tome of Carim
+2120 Braille Divine Tome of Lothric
+2121 Braille Divine Sunlight Tome
+2123 Cinders of a Lord
+2124 Cinders of a Lord
+2125 Cinders of a Lord
+2126 Cinders of a Lord
+2127 Great Swamp Pyromancy Tome
+2128 Carthus Pyromancy Tome
+2129 Izalith Pyromancy Tome
+2130 Quelana Pyromancy Tome
+2131 Grave Warden Pyromancy Tome
+2132 Sage's Scroll
+2133 Logan's Scroll
+2134 Crystal Scroll
+2135 Transposing Kiln
+2137 Coiled Sword
+2138 Eyes of a Fire Keeper
+2139 Sword of Avowal
+2140 Golden Scroll
+2141 Estus Shard
+2142 Hawkwood's Swordgrass
+2143 Undead Bone Shard
+2144 Deep Braille Divine Tome
+2145 Londor Braille Divine Tome
+2146 Excrement-covered Ashes
+2147 Prisoner Chief's Ashes
+2148 Xanthous Ashes
+2149 Hollow's Ashes
+2150 Patches' Ashes
+2151 Dragon Chaser's Ashes
+2152 Easterner's Ashes
+2153 Champion's Bones
+2154 Captain's Ashes
+2155 Contraption Key
+2156 Small Envoy Banner
+2157 Old Woman's Ashes
+2158 Blood of the Dark Soul
+2159 Young Grass Dew
+9000 Beckon
+9001 Point forward
+9002 Hurrah!
+9003 Bow
+9004 Jump for joy
+9005 Duel bow
+9006 Wave
+9007 Praise the Sun
+9008 Point up
+9009 Point down
+9012 Prostration
+9013 Proper bow
+9014 Prayer
+9015 Welcome
+9016 Joy
+9017 My thanks!
+9018 Rejoice
+9019 Rest
+9020 By my sword
+9021 Dignified bow
+9023 Curl up
+9024 Stretch out
+9025 Call over
+9026 Collapse
+9027 Quiet Resolve
+9028 Patches Squat
+9029 Applause
+9030 Path of the Dragon
+9031 Legion Etiquette
+9032 Darkmoon Loyalty
+9033 Sleep
+9034 Toast
+9035 Silent Ally
+1200000 Farron Dart
+1210000 Great Farron Dart
+1300000 Soul Arrow
+1301000 Great Soul Arrow
+1302000 Heavy Soul Arrow
+1303000 Great Heavy Soul Arrow
+1304000 Homing Soulmass
+1305000 Homing Crystal Soulmass
+1306000 Soul Spear
+1307000 Crystal Soul Spear
+1308000 Deep Soul
+1309000 Great Deep Soul
+1310000 Magic Weapon
+1311000 Great Magic Weapon
+1312000 Crystal Magic Weapon
+1313000 Frozen Weapon
+1330000 Magic Shield
+1331000 Great Magic Shield
+1340000 Hidden Weapon
+1341000 Hidden Body
+1350000 Cast Light
+1353000 Repair
+1354000 Spook
+1355000 Chameleon
+1356000 Aural Decoy
+1370000 White Dragon Breath
+1372000 Farron Hail
+1373000 Crystal Hail
+1374000 Soul Greatsword
+1375000 Farron Flashsword
+1376000 Old Moonlight
+1603000 Affinity
+1604000 Great Soul Dregs
+1613000 Dark Edge
+1620000 Soul Stream
+1651000 Twisted Wall of Light
+1740000 Pestilent Mist
+1741000 Snap Freeze
+2400000 Fireball
+2402000 Fire Orb
+2403000 Firestorm
+2405000 Fire Surge
+2407000 Black Serpent
+2411000 Great Combustion
+2420000 Poison Mist
+2421000 Toxic Mist
+2422000 Acid Surge
+2430000 Iron Flesh
+2431000 Flash Sweat
+2435000 Carthus Flame Arc
+2436000 Rapport
+2440000 Power Within
+2450000 Great Chaos Fire Orb
+2451000 Chaos Storm
+2452000 Fire Whip
+2453000 Black Flame
+2455000 Profaned Flame
+2456000 Chaos Bed Vestiges
+2457000 Floating Chaos
+2458000 Flame Fan
+2470000 Warmth
+2562000 Profuse Sweat
+2610000 Black Fire Orb
+2620000 Bursting Fireball
+2630000 Boulder Heave
+2640000 Sacred Flame
+2650000 Carthus Beacon
+2660000 Seething Chaos
+3490000 Heal Aid
+3500000 Heal
+3501000 Med Heal
+3502000 Great Heal
+3503000 Soothing Sunlight
+3504000 Replenishment
+3505000 Bountiful Sunlight
+3507000 Bountiful Light
+3508000 Caressing Tears
+3509000 Lightning Arrow
+3520000 Tears of Denial
+3521000 Homeward
+3530000 Force
+3531000 Wrath of the Gods
+3532000 Emit Force
+3540000 Seek Guidance
+3550000 Lightning Spear
+3551000 Great Lightning Spear
+3552000 Sunlight Spear
+3553000 Lightning Storm
+3554000 Gnaw
+3555000 Dorhys' Gnawing
+3556000 Way of White Corona
+3557000 Projected Heal
+3560000 Magic Barrier
+3561000 Great Magic Barrier
+3563000 Sacred Oath
+3581000 Vow of Silence
+3590000 Lightning Blade
+3591000 Darkmoon Blade
+3640000 Dark Blade
+3700000 Dead Again
+3710000 Lightning Stake
+3720000 Divine Pillars of Light
+3730000 Lifehunt Scythe
+3760000 Blessed Weapon
+3770000 Deep Protection
+3780000 Atonement

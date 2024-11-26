@@ -1,0 +1,286 @@
+100000 Goblin -- ゴブリン（生者）
+100010 Goblin: Sword -- ゴブリン（生者）：剣
+100020 Goblin (Live): Sling -- ゴブリン（生者）：スリング
+101000 Cobold -- コボルト
+102000 Kingdom Soldier (Dead): Spear: Medium Shield -- 王国兵士（亡者）：槍：中盾
+102010 Kingdom Soldier (Dead): Two-Handed Sword -- 王国兵士（亡者）：両手剣
+102020 Kingdom Soldier (Dead): Two-Handed Axe -- 王国兵士（亡者）：両手長斧
+102030 Kingdom Soldier (Deceased): Stabbing Sword: Medium Shield -- 王国兵士（亡者）：刺突剣：中盾
+102040 Kingdom Soldier (Dead): Bow -- 王国兵士（亡者）：弓
+102050 Kingdom Soldier (Deceased): Bare Hands: Two-Handed Sword -- 王国兵士（亡者）：素手：両手剣
+102100 Kingdom Soldier (Alive): Spear: Medium Shield -- 王国兵士（生者）：槍：中盾
+102110 Kingdom Soldier (Living): Two-Handed Sword: Bow -- 王国兵士（生者）：両手剣：弓
+103000 Lower-class soldier (dead): bare hands -- 下級兵士（亡者）：素手
+103010 Lower Soldier (Dead): Dagger -- 下級兵士（亡者）：短剣
+103020 Lower Soldier (Deceased): One-handed sword: Small shield -- 下級兵士（亡者）：片手剣：小盾
+103030 Lower Soldier (Dead): One-handed axe -- 下級兵士（亡者）：片手斧
+103040 Lower soldier (dead): bow of both hands -- 下級兵士（亡者）：両手弓
+103100 Lower Soldier (Raw): Dagger -- 下級兵士（生者）：短剣
+103110 Lower Soldier (Raw): One-handed sword -- 下級兵士（生者）：片手剣
+103120 Lower Soldier (Live): One-handed axe -- 下級兵士（生者）：片手斧
+103130 Lower soldier (raw): Bow -- 下級兵士（生者）：弓
+105000 Fairy Shrine Maiden: Bare Hands -- 妖精の巫女：素手
+105010 Fairy Shrine Maiden: Cane -- 妖精の巫女：杖
+106000 Dark Priest (Deceased): Color (1)_No Mask -- ダークプリースト（亡者）：色①_仮面無し
+106010 Dark Priest (Deceased): Color (1)_No Mask: Shield -- ダークプリースト（亡者）：色①_仮面無し：盾
+107000 Parasite Spider (Parasitic) -- パラサイトスパイダー（寄生）
+108000 Rogue (deceased): Dagger x 2 -- ローグ（亡者）：短剣×２
+108010 Rogue (deceased): One hand mallet × 2 -- ローグ（亡者）：片手槌×２
+108020 Rogue (deceased): Two bows x 2 -- ローグ（亡者）：両手弓×２
+113000 Sailor (deceased): One-handed sword; -- 水兵（亡者）：片手剣；小盾
+113010 Sailor (dead): Song sword × 2 -- 水兵（亡者）：曲剣×２
+113020 Sailor (deceased): Bow of both hands -- 水兵（亡者）：両手弓
+115000 Dead: Traveler's Clothing ♂: Bare Hands -- 亡者：旅人の服♂：素手
+115010 Dead: Traveler's Clothes ♂: Dagger -- 亡者：旅人の服♂：短剣
+117000 Statue: Pawn: Spear: Shield -- スタチュー：ポーン：槍：盾
+117010 Statue: Pawn: Spear -- スタチュー：ポーン：槍
+118000 Dark Wizard (Dead) -- ダークウィザード（亡者）
+119000 Lion Black Mage (Born) -- 獅子黒魔道士（生者）
+121000 Giant Lower Soldier (Giant): Bare Hands -- 巨人下級兵士（巨人）：素手
+121010 Giant Lower Soldier (Giant): Two-Handed Club -- 巨人下級兵士（巨人）：両手棍棒
+121020 Giant Lower Soldier Poison (Giant): Bare Hands -- 巨人下級兵士 毒（巨人）：素手
+121030 Giant Lower Soldier Fire (Giant): Bare Hands -- 巨人下級兵士 火（巨人）：素手
+122000 Bernice Knight: Two-Handed Sword -- バーニスの騎士：両手剣
+122010 Bernice Knight: Assault Spear -- バーニスの騎士：突撃槍
+122020 Bernice Knight: One Hand Mallet -- バーニスの騎士：片手槌
+122030 Bernice Knight: Crossbow -- バーニスの騎士：クロスボウ
+122130 Bernice Knight: One Hand Mallet -- バーニスの騎士：片手槌
+123000 Deformed shadow (raw): 2 swords -- 異形の影（生者）：２刀爪
+123010 Deformed Shadow (Born): Dagger: Stabbing Sword -- 異形の影（生者）：短剣：刺突剣
+124000 Assassin (Live): 2 Swordsnails -- 暗殺者（生者）：２刀爪
+124010 Assassin (Born): Dagger -- 暗殺者（生者）：短剣
+124020 Assassin (Live Man): Song Sword -- 暗殺者（生者）：曲剣
+124030 Assassin (Live Man): Bow -- 暗殺者（生者）：弓
+125000 Undead Citizen: Color (1) -- アンデッド市民：色①
+127000 Dead Workers (Dead): Bare Hands -- 死者の労働者（亡者）：素手
+127010 Dead Workers (Dead): Torch -- 死者の労働者（亡者）：松明
+127020 Dead Workers (Dead): Broken Straight Sword -- 死者の労働者（亡者）：折れた直剣
+129000 The Keeper of the Forest: Bare Hands: Cane -- 森の番人：素手：杖
+129010 Keeper of the Forest: Cane: Cane -- 森の番人：杖：杖
+129020 Keeper of the Forest: Bell: Cane -- 森の番人：ベル：杖
+129030 Keeper of the Forest: Bare Hands: Bell -- 森の番人：素手：ベル
+129040 Keeper of the Forest: Cane: Bell -- 森の番人：杖：ベル
+129050 Keeper of the Forest: Bell: Bell -- 森の番人：ベル：ベル
+131000 Cleric: War -- クレリック：戦鎚
+131010 Cleric: Bell -- クレリック：ベル
+131020 Cleric: Cane -- クレリック：杖
+132000 Skeleton: 2 swords -- スケルトン：２刀流
+132010 Skeleton: One-handed bent sword -- スケルトン：片手曲剣
+132020 Skeleton: One-handed stabbing -- スケルトン：片手刺突
+132030 Skeleton: Bow -- スケルトン：弓
+133000 Wheel Skeleton: Bare Hands -- 車輪スケルトン：素手
+133010 Wheel Skeleton: Curved Sword -- 車輪スケルトン：曲剣
+133020 Wheel Skeleton: The Great Sword -- 車輪スケルトン：大曲剣
+134000 Dwarf -- ドワーフ
+135000 Heavy Dwarf: Two-handed axe x 2 -- 重ドワーフ：両手斧×２
+135010 Heavy Dwarf: Mallet -- 重ドワーフ：両手槌
+135020 Heavy Dwarf: Bow -- 重ドワーフ：弓
+136000 Dark Reith (dead): Two-handed sword:: One hand -- ダークレイス(亡者)：両手大剣:：片手持ち
+136010 Dark Reith (dead): Two-handed sword:: With both hands -- ダークレイス(亡者)：両手大剣:：両手持ち
+136020 Dark Reith (Dead): Bow -- ダークレイス(亡者)：弓
+137000 Necromancer (Immortal): Bare Hands -- ネクロマンサー（イモータル）：素手
+137010 Necromancer (Immortal): Shield: Wand -- ネクロマンサー（イモータル）：盾：杖
+137020 Necromancer (Immortal): Cane -- ネクロマンサー（イモータル）：杖
+138000 Tortureman: Torture Instruments -- 拷問人：拷問器具
+138010 Tortureman: Whip -- 拷問人：鞭
+139000 Man-made Immortal: Sickle -- 人造不死人：鎌
+139010 Man-made Immortal: Bare Hands -- 人造不死人：素手
+140000 Belka's Crow -- ベルカの鴉人
+141000 Strengthened Immortals -- 強化不死人
+146000 Dead: ♂ the clothes of the wealthy: Dagger -- 亡者：富裕層の服♂：短剣
+146010 Dead: ♂ the Clothes of the Wealthy: Stabbing Sword -- 亡者：富裕層の服♂：刺突剣
+146020 Deceased: ♂ the Clothes of the Wealthy: Daggers & Torches -- 亡者：富裕層の服♂：短剣＆松明
+147000 Deceased: Sick ♂ -- 亡者：病人の服♂
+148000 Dead: Farmer's Clothes ♂: Mallet -- 亡者：農民の服♂：両手槌
+148020 Dead: Farmer's Clothing ♂: Two-Handed Sickle -- 亡者：農民の服♂：両手鎌
+149000 Deceased: Steelworker -- 亡者：製鉄所員
+150000 Statue: Night -- スタチュー：ナイト
+151000 Royal Warrior: Two-Handed Battle Hammer -- 王国兵重戦士：両手戦槌
+151110 Royal Warrior: One Hand Club -- 王国兵重戦士：片手棍棒
+152000 Kingdom Soldier Warrior: Two-Handed Sword -- 王国兵戦士：両手剣
+152010 Kingdom Warrior: Crossbow -- 王国兵戦士：クロスボウ
+153000 Royal Guard: Axe Spear -- 王国兵護衛兵：斧槍
+153010 Royal Guard: Oversized Sword -- 王国兵護衛兵：特大剣
+154000 Skeleton Aristocracy: Axe Spear -- スケルトン貴族：斧槍
+154010 Skeleton Aristocracy: Sickle -- スケルトン貴族：鎌
+154020 Skeleton Aristocracy: Cane -- スケルトン貴族：杖
+155000 Lizard Man -- トカゲ人
+156000 Helmet Skeleton: Curved Sword ×2 -- 兜スケルトン：曲剣×２
+156010 Helmet Skeleton: Curved Sword & Shield -- 兜スケルトン：曲剣＆盾
+156020 Helmet Skeleton: Stabbing Sword -- 兜スケルトン：刺突剣
+156030 Helmet Skeleton: Two-Handed Bow -- 兜スケルトン：両手弓
+157000 Armor Skeleton: Curved Sword x 2 -- 鎧スケルトン：曲剣×２
+157010 Armor Skeleton: Song Sword & Shield -- 鎧スケルトン：曲剣＆盾
+157020 Armor Skeleton: Stabbing Sword -- 鎧スケルトン：刺突剣
+157030 Armor Skeleton: Two-Handed Bow -- 鎧スケルトン：両手弓
+201000 Slave Beast -- 奴隷獣
+201100 Slave Beast: Piglet -- 奴隷獣：子豚
+202000 Slave Beast (Wild) -- 奴隷獣（野生）
+203000 Parasite Spider -- パラサイトスパイダー
+204000 Great Moss -- グレートモス
+205000 Poison hornworm: Poison -- 毒角虫：毒
+205100 Poison hornworm: acid -- 毒角虫：酸
+206000 Needle maggots -- 針ウジ虫
+209000 Hunting Dogs -- 狩猟犬
+210000 Basilisk -- バジリスク
+212000 Wyvern -- ワイバーン
+213000 Stone Defense -- 石守
+214000 Fang Beast -- 牙獣
+216000 Door possessed -- 扉憑き
+217000 A hermit in the dark -- 闇に隠れし者
+218000 Humanity (enemy) -- 人間性（敵）
+222000 Giant poison hornworm -- 巨大毒角虫
+222100 Giant Basil risk -- 巨大バジリスク
+223000 Dead Rat -- 死体あさりネズミ
+223500 The King of Rats -- ネズミの王
+224000 Coal tar -- コールタール
+225000 Light Worm -- 光虫
+226000 Dog Rat -- 犬ネズミ
+226100 Dog Mouse: Color (2) -- 犬ネズミ：色②
+227000 Stray dog -- 野犬
+300000 Auger -- オーガ（生者）
+301000 Wandering Knight -- 彷徨える騎士（亡者）
+302000 Prison man (deceased): Color (1): Two-handed sickle -- 獄吏（亡者）：色①：両手鎌
+302010 Prison man (deceased): Color (1): Two-handed long axe -- 獄吏（亡者）：色①：両手長斧
+302020 Prison man (deceased): Color (1): Two hands war mallet -- 獄吏（亡者）：色①：両手戦槌
+303300 Double-sided warrior: snake head -- 両面戦士：ヘビ頭
+304000 Banshee (Deceased) -- バンシー（亡者）
+305000 Damon Knight (Dead) -- デーモンナイト（亡者）
+305010 Damon Knight (Dead): The Oversized Sword of Fire -- デーモンナイト（亡者）：炎の特大剣
+306000 Demon Armor (Dead): Sword -- デーモン鎧（亡者）：刀
+306010 Damon Armor (Dead): Bow -- デーモン鎧（亡者）：弓
+307000 Durahan (deceased) -- デュラハン（亡者）
+307100 Durahan (Raw) -- デュラハン（生者）
+308000 Lion Warrior -- 獅子戦士
+309000 Giant Senior Soldier (Giant): Bare Hands -- 巨人上級兵士（巨人）：素手
+309010 Giant Senior Soldier (Giant): 2-Sword Style: One-Handed Club: Log -- 巨人上級兵士（巨人）：２刀流：片手棍棒：丸太
+309600 New Giant Senior Soldier (Deceased) -- 新・巨人上級兵士（亡者）
+309700 New Giant Senior Soldier (Live) -- 新・巨人上級兵士（生者）
+311000 Cavalry: Cavalry Soldiers -- 騎人兵：騎乗兵士
+312000 Immortal Senior Soldier (Immortal): Sickle -- イモータル上級兵士（イモータル）：鎌
+312010 Immortal Senior Soldier (Immortal): Spear -- イモータル上級兵士（イモータル）：槍
+313000 Falcon Warrior: Naoken -- 鷹匠戦士：直剣
+313010 Falcon Warrior: Sashimi -- 鷹匠戦士：刺剣
+313030 Falcon Warrior: Bow -- 鷹匠戦士：弓
+314000 Elephant Man (Dead): Spear Axe -- 象人（亡者）：槍斧
+315000 Elephant (Born) -- 象人（生者）
+316000 Captured Magician (Raw) -- 捕らわれた魔導士（生者）
+317000 Dragon Professor -- 龍の教授
+318000 Bay Grant A -- ベイグラントA
+319000 Damon Armor (Dead): Mass Production Type: Sword -- デーモン鎧（亡者）：量産型：刀
+319010 Damon Armor (Dead): Mass Production Type: Bow -- デーモン鎧（亡者）：量産型：弓
+321000 Mimic -- ミミック
+324000 Gargoyle -- ガーゴイル
+325000 Warrior in the Mirror -- 鏡の中の戦士
+326000 Butcher -- ブッチャー
+327000 Bone Dragon -- 骨ドラゴン
+330000 Ancient Warriors -- 古代の戦士
+331000 Damon Heavy Soldier -- デーモン重兵士
+332000 Queen Knight A -- 王妃の騎士A
+333000 Queen Knight B -- 王妃の騎士B
+334000 Queen Knight C -- 王妃の騎士C
+337000 Amazing Dead: Bare Hands -- すごい亡者：素手
+337010 Amazing Dead: Torchi -- すごい亡者：松明
+337020 Amazing Dead: Sword -- すごい亡者：剣
+500000 Javazahat -- ジャバザハット
+501000 Naga -- ナーガ
+502000 Manscorpion ♂ -- マンスコーピオン♂
+503000 Manscorpion ♀ -- マンスコーピオン♀
+504000 Mirror Night -- ミラーナイト
+505000 The Beast -- 恐獣
+506100 Agaduran Stand -- アガドゥランのスタンド
+506500 Agaduran -- アガドゥラン
+507000 Rich -- リッチ
+508000 Wraith -- レイス
+509000 Dark Bishop (Immortal): Masked -- ダークビショップ（イモータル）：仮面有り
+509100 Dark Bishop (Anger Mode) -- ダークビショップ(怒りモード)
+511000 Phantom Knight -- ファントムナイト（霊体）
+512000 Phantom Mage (Spirit) -- ファントムメイジ（霊体）
+513000 King Van Clad (past) -- ヴァンクラッド王（過去）
+514000 King Van Clad (modern) for cut scene -- ヴァンクラッド王（現代）＿カットシーン用
+514500 Van Clad King (modern) for in-game -- ヴァンクラッド王（現代）＿インゲーム用
+514600 Old King -- 年老いた王
+515000 Dark Bishop (Immortal): No Mask -- ダークビショップ（イモータル）：仮面なし
+600000 Old Dragon -- 古の龍
+601000 Salamander -- サラマンダー
+602000 Beautiful Voice Frog -- 美声カエル
+603000 Spider Queen -- 蜘蛛の女王
+603100 Spider Queen (Cliff) -- 蜘蛛の女王（崖）
+604000 Spider Queen: Left -- 蜘蛛の女王：左
+606000 Yadkari Castle -- ヤドカリ城
+607000 Molten iron daemon -- 熔鉄デーモン
+608000 Corrosive insects (outer shell) -- 腐食虫（外殻）
+609000 Leader of the Giants SS -- 巨人族親衛隊長
+610000 Heavy Cavalry: Heavy Knight (Raw) -- 重騎馬兵：重騎士（生者）
+611000 Heavy Cavalry: Soldiers Only -- 重騎馬兵：兵士のみ
+611010 Heavy Cavalry: Soldiers Only: Bow -- 重騎馬兵：兵士のみ：弓
+613000 The God tree of the brain trunk -- 脳幹の神木
+614000 Two-headed Wyvern -- 双頭のワイバーン
+615000 Leviathan -- リヴァイアサン
+616000 King Van Clad (after deformation) -- ヴァンクラッド王（変形後）
+617000 Silver Chariot: Body -- シルバーチャリオット：本体
+618000 Silver Chariot: Executioner (Dead) -- シルバーチャリオット：処刑人（亡者）
+619000 Silver Chariot: Horse (Dead) -- シルバーチャリオット：馬（亡者）
+619100 Silver Chariots: Horses Only -- シルバーチャリオット：馬のみ
+619110 Silver Chariots: Coalescence -- シルバーチャリオット：合体
+621000 Bodhidharma -- 達磨
+622000 Corrosive insects (main body) -- 腐食虫（本体）
+623000 Corrosive insects (children) -- 腐食虫（子）
+624000 Giant King *Death -- 巨人王　※没
+624500 Giant King -- 巨人王
+625000 Ornstein -- オーンスタイン
+626000 Forgotten Sinner -- 忘れられた罪人
+627000 Queen's armor -- 王妃の鎧形態
+700500 Dragon Shrine Maiden (for In-Game) -- 龍の巫女(インゲーム用)
+701000 Dragon Shrine Maiden (Child) -- 龍の巫女（子供）
+704500 ladder shop -- 梯子屋
+721100 The Spirit of the Prime Minister -- 宰相の霊
+724000 Captain of the Kingdom -- 王国隊長
+725000 Pilgrims in the Abyss -- 深淵の巡礼者
+726000 Dwarf Gabalance  -- ドワーフ・ガバランス 
+729000 Loyal Dog -- 忠犬
+730000 I 1_ Oversized Sword Under Mirror Night -- ミラーナイトの下僕１_特大剣
+730010 I under the mirror night 1_two-handed long axe -- ミラーナイトの下僕１_両手長斧
+730020 I 1_One Hand Sword Under Mirror Night -- ミラーナイトの下僕１_片手剣
+731000 I 2_ Oversized Sword Under Mirror Night -- ミラーナイトの下僕２_特大剣
+731010 I 2_Two-Handed Axe Under Mirror Night -- ミラーナイトの下僕２_両手長斧
+731020 I 2_One Hand Sword Under Mirror Night -- ミラーナイトの下僕２_片手剣
+742000 Wandering Warrior -- 放浪の戦士
+743000 Tsukiko Grandfather -- 月光爺
+744000 Patch -- パッチ
+751000 Atlas -- 地図書き
+752000 Sea Solar (City of Spiders) -- 海ソラール（蜘蛛の街）
+753000 Sancho: One-handed axe -- サンチョ：片手斧
+753010 Sancho: Two-handed bow -- サンチョ：両手弓
+754000 The Princess of Captivity -- 囚われの姫
+755000 Stalker Warrior -- ストーカー戦士
+755010 Stalker Warrior_ With Both Hands -- ストーカー戦士_両手持ち
+755020 Stalker Warrior_2 Sword -- ストーカー戦士_２刀
+760000 The Girl of the Bard -- 吟遊詩人の少女
+760200 The Girl In Captivity -- 虜囚の少女
+760300 Banshee Bluff 2 -- バンシーのブラフ２
+760400 Banshee Bluff 3 -- バンシーのブラフ３
+761000 Armor shop: Madura (hyundai) -- 防具屋：マデューラ（現代）
+761010 Armor shop: Fairy's side -- 防具屋：妖精のほとり
+762000 Material shop -- 素材屋
+763000 Sorcerer -- 呪術屋
+763010 Bookstore (Spider Town) -- 本屋（蜘蛛の街）
+764000 blacksmith -- 鍛冶屋
+764300 Armor Blacksmith 1: Madura (Modern) -- 防具鍛冶屋１:マデューラ（現代）
+764310 Armor Blacksmith 1: Castle in ruins -- 防具鍛冶屋１:廃墟の城
+765000 a tool shop -- 道具屋
+766000 A magician -- 魔術屋
+766010 Spell shop 1&4 (Fort of Resistance: Modern) -- スペル屋１＆４（抵抗の砦：現代）
+767000 Spell Shop 2 & 3 (Hyundai) -- スペル屋２＆３（現代）
+768000 Spell Mania -- スペルマニア
+769000 Miracle Man Leash -- 奇跡の人リーシュ
+770000 Dark Art Shop -- 闇術屋
+771000 A Sealed Man -- 封じられた人
+772000 a curiosity shop -- 珍品屋
+774000 Middle Arms Shop 2 -- 中位武器屋２
+777000 Cat -- 猫
+778000 Yorozuya (Modern) -- よろず屋（現代）
+780000 Material shop (modern) -- 素材屋（現代）
+783000 Black Phantom Shop -- 黒ファントム屋
+785000 Guardian Knight -- 守護の騎士
+800000 General-purpose NPC -- 汎用NPC

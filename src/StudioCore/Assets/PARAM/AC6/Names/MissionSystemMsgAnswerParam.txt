@@ -1,0 +1,37 @@
+120300101 You okay? Keep your head in the game, Raven.
+120300201 Gah... That thing's as tough as it looks.
+121700201 You've got skills... Shame you don't put them to good use.
+121700202 Another star fades.
+121700203 He's got the upper hand...
+121800201 Raven, your AC is damaged. Focus on evasive action!
+121800202 Push back, tourist!
+122400201 ...No, Raven.
+130110201 Raven, your AC's damaged!
+132300201 Looking pretty beat up there, freelancer...
+132300202 Don't forget to smile, tourist.
+132300203 You seem to have been hit badly, independent mercenary.
+132300204 Don't die on us now, buddy.
+140100101 Evasive maneuvers, Raven!
+140100102 Raven, you're the only one who can complete this survey.
+140210101 I know you can do better than that.
+140300201 Raven, we're in danger!
+140300202 ...You can take it, 621!
+140300203 You know what? I never liked you.
+140300204 Legacy augmentation... You disgust me.
+141100201 Now—let's finish this, Pater.
+141100202 The situation's under control... Watch me, Pater.
+141100203 ...Hawkins' number is mine. How I've waited for this...
+142000500 We're out of repair kits...
+142000501 ...We're out of repair kits now.
+150300201 ...Stay focused, Raven. You've beaten this mech before.
+150400201 Always were at your best under pressure, buddy.
+150400202 Must be heavy... This purpose you found.
+150500201 Howl into the abyss, dog!
+150500202 Hang in there, Raven!
+150500204 She's...tougher than I thought!
+160000202 I'll end this... Raven!
+160200201 ...You can do better than that, freelancer.
+160200202 Raven, you have to hold out...
+160200203 This is your chance, Iguazu.
+160200204 I know how this goes.
+179500201 This AC's tough...

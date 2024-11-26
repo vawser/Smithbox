@@ -1,0 +1,1277 @@
+1 
+1000 
+1001 
+1002 
+1003 
+100000 [Gatekeeper Gostoc] Festering Bloody Finger
+100002 [Gatekeeper Gostoc] Ruin Fragment
+100004 [Gatekeeper Gostoc] Buckler
+100009 [Gatekeeper Gostoc] Furlcalling Finger Remedy
+100010 [Gatekeeper Gostoc] Silver-Pickled Fowl Foot
+100011 [Gatekeeper Gostoc] Stormhawk Feather
+100012 [Gatekeeper Gostoc] Caestus
+100013 [Gatekeeper Gostoc] Great Arrow
+100014 [Gatekeeper Gostoc] Ballista Bolt
+100015 [Gatekeeper Gostoc] Bandit Manchettes
+100016 [Gatekeeper Gostoc] Bandit Boots
+100017 [Gatekeeper Gostoc] Bandit Garb
+100018 [Gatekeeper Gostoc] Ancient Dragon Smithing Stone
+100025 Memory Stone
+100026 Stonesword Key
+100050 [Sorceress Sellen] Glintstone Pebble
+100051 [Sorceress Sellen] Scholar's Armament
+100052 [Sorceress Sellen] Scholar's Shield
+100053 [Sorceress Sellen] Crystal Barrage
+100054 [Sorceress Sellen] Glintstone Arc
+100055 [Sorceress Sellen] Glintstone Stars
+100056 [Sorceress Sellen - Quest] Shard Spiral
+100057 [Sorceress Sellen - Conspectus Scroll] Glintstone Cometshard
+100058 [Sorceress Sellen - Conspectus Scroll] Star Shower
+100059 [Sorceress Sellen - Academy Scroll] Great Glintstone Shard
+100060 [Sorceress Sellen - Academy Scroll] Swift Glintstone Shard
+100061 [Sorceress Sellen] Glintblade Phalanx
+100062 [Sorceress Sellen] Carian Slicer
+100075 [Knight Bernahl] Ash of War: Impaling Thrust
+100076 [Knight Bernahl] Ash of War: Spinning Slash
+100077 [Knight Bernahl] Ash of War: Quickstep
+100078 [Knight Bernahl] Ash of War: Stamp (Upward Cut)
+100079 [Knight Bernahl] Ash of War: Kick
+100080 [Knight Bernahl] Ash of War: War Cry
+100081 [Knight Bernahl] Ash of War: Endure
+100082 [Knight Bernahl] Ash of War: Parry
+100083 [Knight Bernahl] Ash of War: Storm Blade
+100084 [Knight Bernahl] Ash of War: Eruption
+100085 [Knight Bernahl] Ash of War: Assassin's Gambit
+100086 [Knight Bernahl] Ash of War: No Skill
+100100 [Patches] Margit's Shackle
+100101 [Patches] Missionary's Cookbook [2]
+100102 [Patches] Stonesword Key
+100103 [Patches] Furlcalling Finger Remedy
+100104 [Patches] Glass Shard
+100105 [Patches] Gold-Pickled Fowl Foot
+100108 [Patches] Parrying Dagger
+100111 [Patches] Sacrificial Twig
+100112 [Patches] Festering Bloody Finger
+100113 [Patches] Grace Mimic
+100114 [Patches] Fan Daggers
+100115 [Patches] Great Arrow
+100116 [Patches] Ballista Bolt
+100117 [Patches] Festering Bloody Finger
+100118 [Patches] Fan Daggers
+100119 [Patches] Estoc
+100120 [Patches] Great Arrow
+100121 [Patches] Ballista Bolt
+100122 [Patches] Horse Crest Wooden Shield
+100126 [D Hunter of The Dead] Litany of Proper Death
+100127 [D Hunter of The Dead] Order's Blade
+100150 [Blackguard Big Boggart] Rya's Necklace
+100155 [Blackguard Big Boggart] Boiled Crab
+100160 [Blackguard Big Boggart] Boiled Prawn
+100175 [Gowry] Night Shard
+100176 [Gowry] Night Maiden's Mist
+100177 [Gowry] Glintstone Stars
+100185 [Gowry] Pest Threads
+100200 [Sorcerer Rogier] Ash of War: Spinning Weapon
+100201 [Sorcerer Rogier] Ash of War: Glintstone Pebble
+100202 [Sorcerer Rogier] Ash of War: Carian Greatsword
+100225 [Iji] Somber Smithing Stone [1]
+100226 [Iji] Somber Smithing Stone [2]
+100227 [Iji] Somber Smithing Stone [3]
+100228 [Iji] Somber Smithing Stone [4]
+100229 [Iji] Carian Filigreed Crest
+100250 [Preceptor Seluvis] Glintstone Pebble
+100251 [Preceptor Seluvis] Glintstone Arc
+100252 [Preceptor Seluvis] Starlight
+100275 [Preceptor Seluvis] Carian Phalanx
+100276 [Preceptor Seluvis] Glintstone Icecrag
+100277 [Preceptor Seluvis] Freezing Mist
+100278 [Preceptor Seluvis] Carian Retaliation
+100279 [Preceptor Seluvis] Glintstone Cometshard
+100280 [Preceptor Seluvis] Star Shower
+100281 [Preceptor Seluvis] Great Glintstone Shard
+100282 [Preceptor Seluvis] Swift Glintstone Shard
+100283 [Preceptor Seluvis] Glintblade Phalanx
+100284 [Preceptor Seluvis] Carian Slicer
+100300 [Preceptor Seluvis - Ranni Quest] Finger Maiden Therolina Puppet
+100301 [Preceptor Seluvis - Ranni Quest] Dolores the Sleeping Arrow Puppet
+100302 [Preceptor Seluvis - Ranni Quest] Jarwight Puppet
+100310 [Preceptor Seluvis - Dung Eater Quest] Dung Eater Puppet
+100325 [Pidia Carian Servant] Glintstone Craftsman's Cookbook [7]
+100326 [Pidia Carian Servant] Ritual Pot
+100329 [Pidia Carian Servant] Old Fang
+100330 [Pidia Carian Servant] Slumbering Egg
+100334 [Pidia Carian Servant] Ash of War: Carian Retaliation
+100335 [Pidia Carian Servant] Celestial Dew
+100336 [Pidia Carian Servant] Larval Tear
+100337 [Pidia Carian Servant] Budding Horn
+100338 [Pidia Carian Servant] Ripple Blade
+100339 [Pidia Carian Servant] Black Leather Shield
+100340 
+100350 [Brother Corhyn] Rejection
+100351 [Brother Corhyn] Urgent Heal
+100352 [Brother Corhyn] Heal
+100353 [Brother Corhyn] Cure Poison
+100354 [Brother Corhyn] Flame Fortification
+100355 [Brother Corhyn] Magic Fortification
+100356 [Brother Corhyn] Catch Flame
+100357 [Brother Corhyn] Flame Sling
+100358 [Brother Corhyn - Altus Plateau] Great Heal
+100359 [Brother Corhyn - Altus Plateau] Lightning Fortification
+100360 [Brother Corhyn - Goldmask] Discus of Light
+100361 [Brother Corhyn - Erdtree Sanctuary] Immutable Shield
+100362 [Brother Corhyn - Fire Monks' Prayerbook] O Flame!
+100363 [Brother Corhyn - Fire Monks' Prayerbook] Surge
+100364 [Brother Corhyn - Giant's Prayerbook] Giantsflame Take Thee
+100365 [Brother Corhyn - Giant's Prayerbook] Flame
+100366 [Brother Corhyn - Godskin Prayerbook] Black Flame
+100367 [Brother Corhyn - Godskin Prayerbook] Black Flame Blade
+100368 [Brother Corhyn - Two Fingers' Prayerbook] Lord's Heal
+100369 [Brother Corhyn - Two Fingers' Prayerbook] Lord's Aid
+100370 [Brother Corhyn - Assassin's Prayerbook] Assassin's Approach
+100371 [Brother Corhyn - Assassin's Prayerbook] Darkness
+100372 [Brother Corhyn - Golden Order Principia] Radagon's Rings of Light
+100373 [Brother Corhyn - Golden Order Principia] Law of Regression
+100374 [Brother Corhyn - Dragon Cult Prayerbook] Lightning Spear
+100375 [Brother Corhyn - Dragon Cult Prayerbook] Honed Bolt
+100376 [Brother Corhyn - Dragon Cult Prayerbook] Electrify Armament
+100377 [Brother Corhyn - Ancient Dragon Prayerbook] Ancient Dragons' Lightning Spear
+100378 [Brother Corhyn - Ancient Dragon Prayerbook] Ancient Dragons' Lightning Strike
+100400 [Miriel] Magic Glintblade
+100401 [Miriel] Carian Greatsword
+100402 [Miriel - Conspectus Scroll] Glintstone Cometshard
+100403 [Miriel - Conspectus Scroll] Star Shower
+100404 [Miriel - Academy Scroll] Great Glintstone Shard
+100405 [Miriel - Academy Scroll] Swift Glintstone Shard
+100406 [Miriel] Glintblade Phalanx
+100407 [Miriel] Carian Slicer
+100425 [Miriel] Blessing's Boon
+100426 [Miriel - Fire Monks' Prayerbook] O Flame!
+100428 [Miriel - Fire Monks' Prayerbook] Surge
+100429 [Miriel - Giant's Prayerbook] Giantsflame Take Thee
+100430 [Miriel - Giant's Prayerbook] Flame
+100431 [Miriel - Godskin Prayerbook] Black Flame
+100432 [Miriel - Godskin Prayerbook] Black Flame Blade
+100433 [Miriel - Two Fingers' Prayerbook] Lord's Heal
+100434 [Miriel - Two Fingers' Prayerbook] Lord's Aid
+100435 [Miriel - Assassin's Prayerbook] Assassin's Approach
+100436 [Miriel - Assassin's Prayerbook] Darkness
+100437 [Miriel - Golden Order Principia] Radagon's Rings of Light
+100438 [Miriel - Golden Order Principia] Law of Regression
+100439 [Miriel - Dragon Cult Prayerbook] Lightning Spear
+100440 [Miriel - Dragon Cult Prayerbook] Honed Bolt
+100441 [Miriel - Dragon Cult Prayerbook] Electrify Armament
+100442 [Miriel - Ancient Dragon Prayerbook] Ancient Dragons' Lightning Spear
+100443 [Miriel - Ancient Dragon Prayerbook] Ancient Dragons' Lightning Strike
+100500 [Merchant Kale] Note: Flask of Wondrous Physick
+100501 [Merchant Kale] Crafting Kit
+100502 [Merchant Kale] Nomadic Warrior's Cookbook [1]
+100503 [Merchant Kale] Nomadic Warrior's Cookbook [2]
+100504 [Merchant Kale] Missionary's Cookbook [1]
+100505 [Merchant Kale] Furlcalling Finger Remedy
+100506 [Merchant Kale] Cracked Pot
+100507 [Merchant Kale] Throwing Dagger
+100510 [Merchant Kale] Torch
+100511 [Merchant Kale] Large Leather Shield
+100513 [Merchant Kale] Telescope
+100514 [Merchant Kale] Note: Waypoint Ruins
+100515 [Merchant Kale] Chain Coif
+100516 [Merchant Kale] Chain Armor
+100517 [Merchant Kale] Chain Gauntlets
+100518 [Merchant Kale] Chain Leggings
+100519 [Merchant Kale] Arrow
+100520 [Merchant Kale] Bolt
+100525 [Merchant - North Limgrave] Nomadic Warrior's Cookbook [3]
+100539 [Merchant - North Limgrave] Note: Flame Chariots
+100540 [Merchant - North Limgrave] Cracked Pot
+100541 [Merchant - North Limgrave] Pickled Turtle Neck
+100542 [Merchant - North Limgrave] Short Sword
+100543 [Merchant - North Limgrave] Halberd
+100544 [Merchant - North Limgrave] Arrow
+100545 [Merchant - North Limgrave] Bolt
+100546 [Merchant - North Limgrave] Bandit Mask
+100547 [Merchant - North Limgrave] Smithing Stone [1]
+100550 [Merchant - East Limgrave] Nomadic Warrior's Cookbook [5]
+100551 [Merchant - East Limgrave] Armorer's Cookbook [3]
+100552 [Merchant - East Limgrave] Sliver of Meat
+100553 [Merchant - East Limgrave] Beast Liver
+100554 [Merchant - East Limgrave] Lump of Flesh
+100557 [Merchant - East Limgrave] Arrow
+100560 [Merchant - East Limgrave] Bolt
+100561 [Merchant - East Limgrave] Festering Bloody Finger
+100562 [Merchant - East Limgrave] Trina's Lily
+100563 [Merchant - East Limgrave] Hand Axe
+100564 [Merchant - East Limgrave] Riveted Wooden Shield
+100565 [Merchant - East Limgrave] Blue-Gold Kite Shield
+100566 [Merchant - East Limgrave] St. Trina's Arrow
+100567 [Merchant - East Limgrave] Smithing Stone [1]
+100575 [Merchant - Coastal Cave] Armorer's Cookbook [2]
+100576 [Merchant - Coastal Cave] Note: Stonedigger Trolls
+100585 [Merchant - Coastal Cave] Note: Land Squirts
+100586 [Merchant - Coastal Cave] Club
+100587 [Merchant - Coastal Cave] Broadsword
+100588 [Merchant - Coastal Cave] Iron Roundshield
+100589 [Merchant - Coastal Cave] Shortbow
+100590 [Merchant - Coastal Cave] Arrow
+100591 [Merchant - Coastal Cave] Bolt
+100592 [Merchant - Coastal Cave] Neutralizing Boluses
+100593 [Merchant - Coastal Cave] Stanching Boluses
+100594 [Merchant - Coastal Cave] Stimulating Boluses
+100595 [Merchant - Coastal Cave] Smithing Stone [1]
+100600 [Merchant - East Weeping Peninsula] Stonesword Key
+100601 [Merchant - East Weeping Peninsula] Kukri
+100602 [Merchant - East Weeping Peninsula] Red Thorn Roundshield
+100603 [Merchant - East Weeping Peninsula] Round Shield
+100604 [Merchant - East Weeping Peninsula] Crimson Amber Medallion
+100605 [Merchant - East Weeping Peninsula] Note: Demi-human Mobs
+100606 [Merchant - East Weeping Peninsula] Cracked Pot
+100607 [Merchant - East Weeping Peninsula] Bastard Sword
+100608 [Merchant - East Weeping Peninsula] Light Crossbow
+100609 [Merchant - East Weeping Peninsula] Arrow
+100610 [Merchant - East Weeping Peninsula] Bolt
+100611 [Merchant - East Weeping Peninsula] Great Arrow
+100612 [Merchant - East Weeping Peninsula] Ballista Bolt
+100613 [Merchant - East Weeping Peninsula] Iron Helmet
+100614 [Merchant - East Weeping Peninsula] Scale Armor
+100615 [Merchant - East Weeping Peninsula] Iron Gauntlets
+100616 [Merchant - East Weeping Peninsula] Leather Trousers
+100617 [Merchant - East Weeping Peninsula] Smithing Stone [1]
+100618 [Merchant - East Weeping Peninsula] Smithing Stone [2]
+100625 [Merchant - Liurnia of the Lakes] Nomadic Warrior's Cookbook [11]
+100626 [Merchant - Liurnia of the Lakes] Estoc
+100627 [Merchant - Liurnia of the Lakes] Kite Shield
+100628 [Merchant - Liurnia of the Lakes] Astrologer Hood
+100629 [Merchant - Liurnia of the Lakes] Astrologer Robe
+100630 [Merchant - Liurnia of the Lakes] Astrologer Gloves
+100631 [Merchant - Liurnia of the Lakes] Astrologer Trousers
+100632 [Merchant - Liurnia of the Lakes] Lantern
+100633 [Merchant - Liurnia of the Lakes] Astrologer's Staff
+100634 [Merchant - Liurnia of the Lakes] Arrow
+100635 [Merchant - Liurnia of the Lakes] Bolt
+100636 [Merchant - Liurnia of the Lakes] Smithing Stone [2]
+100637 [Merchant - Liurnia of the Lakes] Smithing Stone [3]
+100650 [Isolated Merchant - Weeping Peninsula] Note: Walking Mausoleum
+100652 [Isolated Merchant - Weeping Peninsula] Stonesword Key
+100654 [Isolated Merchant - Weeping Peninsula] Arteria Leaf
+100656 [Isolated Merchant - Weeping Peninsula] Ballista Bolt
+100657 [Isolated Merchant - Weeping Peninsula] Sacrificial Twig
+100658 [Isolated Merchant - Weeping Peninsula] Lantern
+100659 [Isolated Merchant - Weeping Peninsula] Lost Ashes of War
+100660 [Isolated Merchant - Weeping Peninsula] Zweihander
+100661 [Isolated Merchant - Weeping Peninsula] Arrow
+100662 [Isolated Merchant - Weeping Peninsula] Bolt
+100663 [Isolated Merchant - Weeping Peninsula] Great Arrow
+100664 [Isolated Merchant - Weeping Peninsula] Festering Bloody Finger
+100665 [Isolated Merchant - Weeping Peninsula] Smithing Stone [2]
+100675 [Merchant - Academy of Raya Lucaria] Fevor's Cookbook [2]
+100676 [Merchant - Academy of Raya Lucaria] Trina's Lily
+100678 [Merchant - Academy of Raya Lucaria] Eye of Yelough
+100680 [Merchant - Academy of Raya Lucaria] Stonesword Key
+100681 [Merchant - Academy of Raya Lucaria] Lost Ashes of War
+100682 [Merchant - Academy of Raya Lucaria] Sacrificial Twig
+100686 [Merchant - Academy of Raya Lucaria] Note: Revenants
+100687 [Merchant - Academy of Raya Lucaria] Note: Frenzied Flame Village
+100688 [Merchant - Academy of Raya Lucaria] Fanged Imp Ashes
+100689 [Merchant - Academy of Raya Lucaria] St. Trina's Arrow
+100690 [Merchant - Academy of Raya Lucaria] Meteor Bolt
+100691 [Merchant - Academy of Raya Lucaria] Blue Cloth Cowl
+100692 [Merchant - Academy of Raya Lucaria] Blue Cloth Vest
+100693 [Merchant - Academy of Raya Lucaria] Warrior Gauntlets
+100694 [Merchant - Academy of Raya Lucaria] Warrior Greaves
+100695 [Merchant - Academy of Raya Lucaria] Festering Bloody Finger
+100696 [Merchant - Academy of Raya Lucaria] Note: The Preceptor's Secret
+100700 [Merchant - North Liurnia] Nomadic Warrior's Cookbook [13]
+100704 [Merchant - North Liurnia] Composite Bow
+100705 [Merchant - North Liurnia] Rift Shield
+100706 [Merchant - North Liurnia] Blue Crest Heater Shield
+100714 [Merchant - North Liurnia] Rune Arc
+100715 [Merchant - North Liurnia] Bewitching Branch
+100716 [Merchant - North Liurnia] Arrow
+100717 [Merchant - North Liurnia] Bolt
+100718 [Merchant - North Liurnia] Immunizing White Cured Meat
+100719 [Merchant - North Liurnia] Invigorating White Cured Meat
+100720 [Merchant - North Liurnia] Clarifying White Cured Meat
+100725 [Hermit Merchant - Leyndell] Perfume Bottle
+100726 [Hermit Merchant - Leyndell] Golden Great Arrow
+100727 [Hermit Merchant - Leyndell] Sentry's Torch
+100728 [Hermit Merchant - Leyndell] Rune Arc
+100729 [Hermit Merchant - Leyndell] Golden Sunflower
+100730 [Hermit Merchant - Leyndell] Distinguished Greatshield
+100731 [Hermit Merchant - Leyndell] Arrow
+100732 [Hermit Merchant - Leyndell] Golden Arrow
+100733 [Hermit Merchant - Leyndell] Bolt
+100734 [Hermit Merchant - Leyndell] Golden Bolt
+100735 [Hermit Merchant - Leyndell] Great Arrow
+100736 [Hermit Merchant - Leyndell] Ballista Bolt
+100737 [Hermit Merchant - Leyndell] Upper-Class Robe
+100738 [Hermit Merchant - Leyndell] Consort's Trousers
+100739 [Hermit Merchant - Leyndell] Prophet Blindfold
+100740 [Hermit Merchant - Leyndell] Prophet Trousers
+100741 [Hermit Merchant - Leyndell] Prophet Robe
+100742 [Hermit Merchant - Leyndell] Festering Bloody Finger
+100743 [Hermit Merchant - Leyndell] Note: Below the Capital
+100750 [Merchant - Altus Plateau] Ancient Dragon Apostle's Cookbook [2]
+100751 [Merchant - Altus Plateau] Note: Imp Shades
+100752 [Merchant - Altus Plateau] Note: Unseen Assassins
+100753 [Merchant - Altus Plateau] Stonesword Key
+100761 [Merchant - Altus Plateau] Lightning Bolt
+100764 [Merchant - Altus Plateau] Scorpion Kite Shield
+100765 [Merchant - Altus Plateau] Gravel Stone
+100766 [Merchant - Altus Plateau] Red Crest Heater Shield
+100767 [Merchant - Altus Plateau] Crossed-Tree Towershield
+100768 [Merchant - Altus Plateau] Arrow
+100769 [Merchant - Altus Plateau] Bolt
+100770 [Merchant - Altus Plateau] Tree Surcoat
+100771 [Merchant - Altus Plateau] Festering Bloody Finger
+100775 [Merchant - Mt. Gelmir] Nomadic Warrior's Cookbook [20]
+100777 [Merchant - Mt. Gelmir] Stonesword Key
+100784 [Merchant - Mt. Gelmir] Explosive Greatbolt
+100789 [Merchant - Mt. Gelmir] Arrow
+100790 [Merchant - Mt. Gelmir] Great Arrow
+100791 [Merchant - Mt. Gelmir] Bolt
+100792 [Merchant - Mt. Gelmir] Explosive Bolt
+100793 [Merchant - Mt. Gelmir] Ballista Bolt
+100794 [Merchant - Mt. Gelmir] Confessor Hood
+100795 [Merchant - Mt. Gelmir] Confessor Armor
+100796 [Merchant - Mt. Gelmir] Confessor Gloves
+100797 [Merchant - Mt. Gelmir] Confessor Boots
+100798 [Merchant - Mt. Gelmir] Guilty Hood
+100801 Poisonbone Dart
+100802 Poisoned Stone
+100803 Poisoned Stone Clump
+100813 Preserving Boluses
+100814 Aeonian Butterfly
+100815 Arrow
+100816 Fire Arrow
+100817 Bolt
+100825 [Merchant - South Caelid] Nomadic Warrior's Cookbook [15]
+100826 [Merchant - South Caelid] Stonesword Key
+100827 [Merchant - South Caelid] Cracked Pot
+100837 [Merchant - South Caelid] Note: Gravity's Advantage
+100838 [Merchant - South Caelid] Arrow
+100839 [Merchant - South Caelid] Bolt
+100840 [Merchant - South Caelid] Flaming Bolt
+100841 [Merchant - South Caelid] Champion Headband
+100842 [Merchant - South Caelid] Champion Pauldron
+100843 [Merchant - South Caelid] Champion Bracers
+100844 [Merchant - South Caelid] Champion Gaiters
+100845 [Merchant - South Caelid] Greathelm
+100875 [Isolated Merchant - Dragonbarrow] Note: Hidden Cave
+100876 [Isolated Merchant - Dragonbarrow] Ritual Pot
+100877 [Isolated Merchant - Dragonbarrow] Lost Ashes of War
+100878 [Isolated Merchant - Dragonbarrow] Gravel Stone
+100880 [Isolated Merchant - Dragonbarrow] Sacrificial Twig
+100882 [Isolated Merchant - Dragonbarrow] Land of Reeds Helm
+100883 [Isolated Merchant - Dragonbarrow] Land of Reeds Armor
+100884 [Isolated Merchant - Dragonbarrow] Land of Reeds Gauntlets
+100885 [Isolated Merchant - Dragonbarrow] Land of Reeds Greaves
+100886 [Isolated Merchant - Dragonbarrow] Note: Gateway
+100887 [Isolated Merchant - Dragonbarrow] Dragonwound Grease
+100888 [Isolated Merchant - Dragonbarrow] Spiked Caestus
+100889 [Isolated Merchant - Dragonbarrow] Beast-Repellent Torch
+100890 [Isolated Merchant - Dragonbarrow] Arrow
+100891 [Isolated Merchant - Dragonbarrow] Serpent Arrow
+100892 [Isolated Merchant - Dragonbarrow] Bolt
+100893 [Isolated Merchant - Dragonbarrow] Festering Bloody Finger
+100900 [Merchant - Mountaintops of the Giants] Missionary's Cookbook [7]
+100901 [Merchant - Mountaintops of the Giants] Stonesword Key
+100903 [Merchant - Mountaintops of the Giants] Thawfrost Boluses
+100909 [Merchant - Mountaintops of the Giants] Rune Arc
+100910 [Merchant - Mountaintops of the Giants] Arrow
+100911 [Merchant - Mountaintops of the Giants] Bolt
+100912 [Merchant - Mountaintops of the Giants] Great Arrow
+100913 [Merchant - Mountaintops of the Giants] Ballista Bolt
+100914 [Merchant - Mountaintops of the Giants] Lightning Greatbolt
+100915 [Merchant - Mountaintops of the Giants] Vagabond Knight Helm
+100916 [Merchant - Mountaintops of the Giants] Vagabond Knight Armor
+100917 [Merchant - Mountaintops of the Giants] Vagabond Knight Gauntlets
+100918 [Merchant - Mountaintops of the Giants] Vagabond Knight Greaves
+100925 [Merchant - Siofra River] Nomadic Warrior's Cookbook [17]
+100926 [Merchant - Siofra River] Nomadic Warrior's Cookbook [18]
+100928 [Merchant - Siofra River] Stonesword Key
+100935 [Merchant - Siofra River] Dwelling Arrow
+100936 [Merchant - Siofra River] Larval Tear
+100937 [Merchant - Siofra River] Shotel
+100938 [Merchant - Siofra River] Arrow
+100939 [Merchant - Siofra River] Bolt
+100940 [Merchant - Siofra River] Soap
+100941 [Merchant - Siofra River] Nascent Butterfly
+100950 [Merchant - Ainsel River] Nomadic Warrior's Cookbook [16]
+100951 [Merchant - Ainsel River] Perfumer's Cookbook [4]
+100953 [Merchant - Ainsel River] Lost Ashes of War
+100962 [Merchant - Ainsel River] Celestial Dew
+100963 [Merchant - Ainsel River] Gravity Stone Fan
+100964 [Merchant - Ainsel River] Gravity Stone Chunk
+100965 [Merchant - Ainsel River] Prisoner Iron Mask
+100966 [Merchant - Ainsel River] Prisoner Clothing
+100967 [Merchant - Ainsel River] Prisoner Trousers
+100976 [Imprisoned Merchant - Mohgwyn] Stonesword Key
+100977 [Imprisoned Merchant - Mohgwyn] Lost Ashes of War
+100981 [Imprisoned Merchant - Mohgwyn] Rune Arc
+100982 [Imprisoned Merchant - Mohgwyn] Festering Bloody Finger
+100983 [Imprisoned Merchant - Mohgwyn] Stanching Boluses
+100984 [Imprisoned Merchant - Mohgwyn] Bloodrose
+100985 [Imprisoned Merchant - Mohgwyn] Dwelling Arrow
+100986 [Imprisoned Merchant - Mohgwyn] Burred Bolt
+101503 [Enia - Godfrey] Elden Lord Crown
+101504 [Enia - Godfrey] Elden Lord Armor
+101505 [Enia - Godfrey] Elden Lord Bracers
+101506 [Enia - Godfrey] Elden Lord Greaves
+101507 [Enia - Radahn] Radahn's Redmane Helm
+101508 [Enia - Radahn] Radahn's Lion Armor
+101509 [Enia - Radahn] Radahn's Gauntlets
+101510 [Enia - Radahn] Radahn's Greaves
+101511 [Enia - Mohg] Lord of Blood's Robe
+101512 [Enia - Rennala] Queen's Crescent Crown
+101513 [Enia - Rennala] Queen's Robe
+101514 [Enia - Rennala] Queen's Bracelets
+101515 [Enia - Rennala] Queen's Leggings
+101516 [Enia - Maliketh] Maliketh's Helm
+101517 [Enia - Maliketh] Maliketh's Armor
+101518 [Enia - Maliketh] Maliketh's Gauntlets
+101519 [Enia - Maliketh] Maliketh's Greaves
+101520 [Enia - Malenia] Malenia's Winged Helm
+101521 [Enia - Malenia] Malenia's Armor
+101522 [Enia - Malenia] Malenia's Gauntlet
+101523 [Enia - Malenia] Malenia's Greaves
+101524 [Enia - Margit] Fell Omen Cloak
+101525 [Enia - Royal Knight Loretta] Royal Knight Helm
+101526 [Enia - Royal Knight Loretta] Royal Knight Armor
+101527 [Enia - Royal Knight Loretta] Royal Knight Gauntlets
+101528 [Enia - Royal Knight Loretta] Royal Knight Greaves
+101529 [Enia - Commander Niall] Veteran's Helm
+101530 [Enia - Commander Niall] Veteran's Armor
+101531 [Enia - Commander Niall] Veteran's Gauntlets
+101532 [Enia - Commander Niall] Veteran's Greaves
+101549 [Enia - Radahn] Radahn's Spear
+101550 [Enia - Elemer of the Briar] Briar Helm
+101551 [Enia - Elemer of the Briar] Briar Armor
+101552 [Enia - Elemer of the Briar] Briar Gauntlets
+101553 [Enia - Elemer of the Briar] Briar Greaves
+101555 [Enia - Commander Gaius] Gaius's Helm
+101556 [Enia - Commander Gaius] Gaius's Armor
+101557 [Enia - Commander Gaius] Gaius's Gauntlets
+101558 [Enia - Messmer the Impaler] Messmer's Helm
+101559 [Enia - Messmer the Impaler] Messmer's Armor
+101560 [Enia - Messmer the Impaler] Messmer's Gauntlets
+101561 [Enia - Messmer the Impaler] Messmer's Greaves
+101562 [Enia - Rellana, Twin Moon Knight] Rellana's Helm
+101563 [Enia - Rellana, Twin Moon Knight] Rellana's Armor
+101564 [Enia - Rellana, Twin Moon Knight] Rellana's Gloves
+101565 [Enia - Rellana, Twin Moon Knight] Rellana's Greaves
+101566 [Enia - Radahn, Consort of Miquella] Young Lion's Helm
+101567 [Enia - Radahn, Consort of Miquella] Young Lion's Armor
+101568 [Enia - Radahn, Consort of Miquella] Young Lion's Gauntlets
+101569 [Enia - Radahn, Consort of Miquella] Young Lion's Greaves
+101775 [Enia - Forging] Remembrance of the Grafted
+101776 [Enia - Forging] Remembrance of the Starscourge
+101777 [Enia - Forging] Remembrance of the Omen King
+101778 [Enia - Forging] Remembrance of the Blasphemous
+101779 [Enia - Forging] Remembrance of the Rot Goddess
+101780 [Enia - Forging] Remembrance of the Full Moon Queen
+101781 [Enia - Forging] Remembrance of the Blood Lord
+101785 [Enia - Forging] Remembrance of the Black Blade
+101786 [Enia - Forging] Remembrance of Hoarah Loux
+101787 [Enia - Forging] Remembrance of the Dragonlord
+101788 [Enia - Forging] Remembrance of the Lichdragon
+101789 [Enia - Forging] Remembrance of the Fire Giant
+101790 [Enia - Forging] Remembrance of the Regal Ancestor
+101791 [Enia - Forging] Elden Remembrance
+101792 [Enia - Forging] Remembrance of the Naturalborn
+101800 [Twin Maiden Husks] White Cipher Ring
+101801 [Twin Maiden Husks] Blue Cipher Ring
+101802 [Twin Maiden Husks] Spirit Calling Bell
+101803 [Twin Maiden Husks] Lone Wolf Ashes
+101804 [Twin Maiden Husks - Haligtree] Black Flame's Protection
+101805 [Twin Maiden Husks - Haligtree] Lord's Divine Fortification
+101806 [Twin Maiden Husks - Mohgwyn] Fevor's Cookbook [3]
+101807 [Twin Maiden Husks - Mohg] Law of Causality
+101808 [Twin Maiden Husks] Smithing Stone [1]
+101809 [Twin Maiden Husks] Smithing Stone [2]
+101810 [Twin Maiden Husks] Glintstone Scrap
+101811 [Twin Maiden Husks] Smithing Stone [3]
+101812 [Twin Maiden Husks] Smithing Stone [4]
+101813 [Twin Maiden Husks] Explosive Stone
+101814 [Twin Maiden Husks] Smithing Stone [5]
+101815 [Twin Maiden Husks] Smithing Stone [6]
+101816 [Twin Maiden Husks] Smithing Stone [7]
+101817 [Twin Maiden Husks] Smithing Stone [8]
+101818 [Twin Maiden Husks] Somber Smithing Stone [1]
+101819 [Twin Maiden Husks] Somber Smithing Stone [2]
+101820 [Twin Maiden Husks] Somber Smithing Stone [3]
+101821 [Twin Maiden Husks] Somber Smithing Stone [4]
+101822 [Twin Maiden Husks] Cracked Crystal
+101823 [Twin Maiden Husks] Somber Smithing Stone [5]
+101824 [Twin Maiden Husks] Somber Smithing Stone [6]
+101825 [Twin Maiden Husks] Somber Smithing Stone [7]
+101826 [Twin Maiden Husks] Somber Smithing Stone [8]
+101827 [Twin Maiden Husks] Sanctuary Stone
+101828 [Twin Maiden Husks] Somber Smithing Stone [9]
+101829 [Twin Maiden Husks] Grave Glovewort [1]
+101830 [Twin Maiden Husks] Grave Glovewort [2]
+101831 [Twin Maiden Husks] Grave Glovewort [3]
+101832 [Twin Maiden Husks] Grave Glovewort [4]
+101833 [Twin Maiden Husks] Grave Glovewort [5]
+101834 [Twin Maiden Husks] Grave Glovewort [6]
+101835 [Twin Maiden Husks] Grave Glovewort [7]
+101836 [Twin Maiden Husks] Grave Glovewort [8]
+101837 [Twin Maiden Husks] Grave Glovewort [9]
+101838 [Twin Maiden Husks] Ghost Glovewort [1]
+101839 [Twin Maiden Husks] Ghost Glovewort [2]
+101840 [Twin Maiden Husks] Ghost Glovewort [3]
+101841 [Twin Maiden Husks] Ghost Glovewort [4]
+101842 [Twin Maiden Husks] Ghost Glovewort [5]
+101843 [Twin Maiden Husks] Ghost Glovewort [6]
+101844 [Twin Maiden Husks] Ghost Glovewort [7]
+101845 [Twin Maiden Husks] Ghost Glovewort [8]
+101846 [Twin Maiden Husks] Ghost Glovewort [9]
+101847 [Twin Maiden Husks] Thin Beast Bones
+101848 [Twin Maiden Husks] Hefty Beast Bone
+101849 [Twin Maiden Husks] Sliver of Meat
+101850 [Twin Maiden Husks] Lump of Flesh
+101851 [Twin Maiden Husks] Turtle Neck Meat
+101852 [Twin Maiden Husks] Neutralizing Boluses
+101853 [Twin Maiden Husks] Stanching Boluses
+101854 [Twin Maiden Husks] Thawfrost Boluses
+101855 [Twin Maiden Husks] Stimulating Boluses
+101856 [Twin Maiden Husks] Gravity Stone Fan
+101857 [Twin Maiden Husks] Gravity Stone Chunk
+101858 [Twin Maiden Husks] Ruin Fragment
+101859 [Twin Maiden Husks] Memory Stone
+101860 [Twin Maiden Husks] Stonesword Key
+101861 [Twin Maiden Husks] Rune Arc
+101862 [Twin Maiden Husks] Furled Finger's Trick-Mirror
+101863 [Twin Maiden Husks] Host's Trick-Mirror
+101864 [Twin Maiden Husks] Dagger
+101865 [Twin Maiden Husks] Longsword
+101866 [Twin Maiden Husks] Scimitar
+101867 [Twin Maiden Husks] Battle Axe
+101868 [Twin Maiden Husks] Mace
+101869 [Twin Maiden Husks] Short Spear
+101870 [Twin Maiden Husks] Rapier
+101871 [Twin Maiden Husks] Finger Seal
+101872 [Twin Maiden Husks] Longbow
+101873 [Twin Maiden Husks] Heater Shield
+101874 [Twin Maiden Husks] Knight Helm
+101875 [Twin Maiden Husks] Knight Armor
+101876 [Twin Maiden Husks] Knight Gauntlets
+101877 [Twin Maiden Husks] Knight Greaves
+101878 [Twin Maiden Husks] Flask of Wondrous Physick
+101879 [Twin Maiden Husks] Crafting Kit
+101880 [Twin Maiden Husks] Whetstone Knife
+101881 [Twin Maiden Husks] Talisman Pouch
+101885 
+101886 
+101887 
+101888 
+101889 
+101890 
+101891 
+101892 
+101893 
+101894 
+101895 
+101898 
+101899 
+101900 [Remembrance of the Grafted] Axe of Godrick
+101901 [Remembrance of the Grafted] Grafted Dragon
+101902 [Remembrance of the Starscourge] Starscourge Greatsword
+101903 [Remembrance of the Starscourge] Lion Greatbow
+101904 [Remembrance of the Omen King] Morgott's Cursed Sword
+101905 [Remembrance of the Omen King] Regal Omen Bairn
+101906 [Remembrance of the Blasphemous] Blasphemous Blade
+101907 [Remembrance of the Blasphemous] Rykard's Rancor
+101908 [Remembrance of the Rot Goddess] Hand of Malenia
+101909 [Remembrance of the Rot Goddess] Scarlet Aeonia
+101910 [Remembrance of the Blood Lord] Mohgwyn's Sacred Spear
+101911 [Remembrance of the Blood Lord] Bloodboon
+101912 [Remembrance of the Black Blade] Maliketh's Black Blade
+101913 [Remembrance of the Black Blade] Black Blade
+101914 [Remembrance of Hoarah Loux] Axe of Godfrey
+101915 [Remembrance of Hoarah Loux] Ash of War: Hoarah Loux's Earthshaker
+101916 [Remembrance of the Dragonlord] Dragon King's Cragblade
+101917 [Remembrance of the Dragonlord] Placidusax's Ruin
+101918 [Remembrance of The Full Moon Queen] Carian Regal Scepter
+101919 [Remembrance of The Full Moon Queen] Rennala's Full Moon
+101920 [Remembrance of the Lichdragon] Fortissax's Lightning Spear
+101921 [Remembrance of the Lichdragon] Death Lightning
+101922 [Remembrance of the Fire Giant] Giant's Red Braid
+101923 [Remembrance of the Fire Giant] Burn
+101924 [Remembrance of the Regal Ancestor] Winged Greathorn
+101925 [Remembrance of the Regal Ancestor] Ancestral Spirit's Horn
+101926 [Elden Remembrance] Marika's Hammer
+101927 [Elden Remembrance] Sacred Relic Sword
+101928 [Remembrance of the Naturalborn] Bastard's Stars
+101929 [Remembrance of the Naturalborn] Ash of War: Waves of Darkness
+101930 
+101931 
+101932 
+101933 
+101934 
+101935 
+101936 
+101937 
+101938 
+101939 
+101940 
+101941 
+101942 
+101943 
+101944 
+101945 
+101946 
+101947 
+101948 
+101950 [Dragon Communion] Dragonfire
+101951 [Dragon Communion] Dragonice
+101952 [Dragon Communion] Glintstone Breath
+101953 [Dragon Communion] Rotten Breath
+101954 [Dragon Communion] Agheel's Flame
+101955 [Dragon Communion] Borealis's Mist
+101956 [Dragon Communion] Smarag's Glintstone Breath
+101957 [Dragon Communion] Ekzykes's Decay
+101958 [Dragon Communion] Dragonclaw
+101959 [Dragon Communion] Dragonmaw
+101960 [Dragon Communion] Magma Breath
+101961 [Dragon Communion] Theodorix's Magma
+101962 [Dragon Communion] Greyoll's Roar
+101975 [Dragon Communion] Dragonclaw
+101976 [Dragon Communion] Dragonmaw
+101980 [Dragon Communion] Dragonfire
+102250 
+102251 
+102252 
+102253 
+102254 
+102255 
+102256 
+102257 
+102258 
+102259 
+102260 
+102261 
+102262 
+102263 
+102264 
+102265 
+102266 
+102270 
+102271 
+102272 
+102273 
+102274 
+102275 
+102276 
+102277 
+102278 
+102279 
+102280 
+102281 
+102282 
+102300 
+102301 
+102302 
+102303 
+102304 
+102305 
+102306 
+102307 
+102308 
+102350 
+102351 
+102355 
+102700 
+102701 
+102702 
+102703 
+102704 
+102705 
+102706 
+102707 
+102708 
+102710 
+102711 
+102712 
+102713 
+102714 
+102715 
+102716 
+102717 
+102718 
+102720 
+102721 
+102722 
+102723 
+102724 
+102725 
+102726 
+102800 
+102801 
+102802 
+102803 
+102804 
+102805 
+102806 
+102807 
+102808 
+102810 
+102811 
+102812 
+102813 
+102814 
+102815 
+102816 
+102817 
+102818 
+102820 
+102821 
+102822 
+102823 
+102824 
+102825 
+102826 
+110000 [Alteration] Drake Knight Helm (Altered)
+110001 [Alteration] Drake Knight Armor (Altered)
+110002 [Alteration] Scaled Armor (Altered)
+110003 [Alteration] Perfumer Robe (Altered)
+110004 [Alteration] Perfumer's Traveling Garb (Altered)
+110005 [Alteration] Spellblade's Traveling Attire (Altered)
+110006 [Alteration] Ronin's Armor (Altered)
+110007 [Alteration] Blaidd's Armor (Altered)
+110008 [Alteration] Black Knife Armor (Altered)
+110009 [Alteration] Briar Armor (Altered)
+110010 [Alteration] Page Garb (Altered)
+110011 [Alteration] Night's Cavalry Helm (Altered)
+110012 [Alteration] Night's Cavalry Armor (Altered)
+110013 [Alteration] Blue Silver Mail Armor (Altered)
+110014 [Alteration] Nomadic Merchant's Finery (Altered)
+110015 [Alteration] Tree Sentinel Armor (Altered)
+110016 [Alteration] Royal Knight Armor (Altered)
+110017 [Alteration] Nox Monk Hood (Altered)
+110018 [Alteration] Nox Monk Armor (Altered)
+110019 [Alteration] Nox Swordstress Crown (Altered)
+110020 [Alteration] Nox Swordstress Armor (Altered)
+110021 [Alteration] Gravekeeper Cloak (Altered)
+110022 [Alteration] Cleanrot Helm (Altered)
+110023 [Alteration] Cleanrot Armor (Altered)
+110024 [Alteration] Depraved Perfumer Robe (Altered)
+110025 [Alteration] All-Knowing Armor (Altered)
+110026 [Alteration] Twinned Armor (Altered)
+110029 [Alteration] Prophet Robe (Altered)
+110030 [Alteration] Astrologer Robe (Altered)
+110031 [Alteration] Lionel's Armor (Altered)
+110032 [Alteration] Hoslow's Armor (Altered)
+110033 [Alteration] Vagabond Knight Armor (Altered)
+110034 [Alteration] War Surgeon Gown (Altered)
+110036 [Alteration] Veteran's Armor (Altered)
+110037 [Alteration] Bloodhound Knight Armor (Altered)
+110038 [Alteration] Festive Hood (Altered)
+110039 [Alteration] Commoner's Garb (Altered)
+110040 [Alteration] Commoner's Simple Garb (Altered)
+110041 [Alteration] Raging Wolf Armor (Altered)
+110042 [Alteration] Land of Reeds Armor (Altered)
+110043 [Alteration] Confessor Hood (Altered)
+110044 [Alteration] Confessor Armor (Altered)
+110045 [Alteration] Finger Maiden Robe (Altered)
+110047 [Alteration] Preceptor's Long Gown (Altered)
+110049 [Alteration] Eccentric's Hood (Altered)
+110050 [Alteration] Fingerprint Armor (Altered)
+110051 [Alteration] Carian Knight Armor (Altered)
+110052 [Alteration] Errant Sorcerer Robe (Altered)
+110053 [Alteration] Gelmir Knight Armor (Altered)
+110054 [Alteration] Godrick Knight Armor (Altered)
+110055 [Alteration] Cuckoo Knight Armor (Altered)
+110056 [Alteration] Leyndell Knight Armor (Altered)
+110057 [Alteration] Redmane Knight Armor (Altered)
+110058 [Alteration] Mausoleum Knight Armor (Altered)
+110059 [Alteration] Haligtree Knight Armor (Altered)
+110060 [Alteration] High Page Clothes (Altered)
+110061 [Alteration] Rotten Gravekeeper Cloak (Altered)
+110062 [Alteration] Beast Champion Armor (Altered)
+110063 [Alteration] Snow Witch Robe (Altered)
+110064 [Alteration] Crucible Axe Armor (Altered)
+110065 [Alteration] Crucible Tree Armor (Altered)
+110066 [Alteration] Fia's Robe (Altered)
+110067 [Alteration] Alberich's Pointed Hat (Altered)
+110068 [Alteration] Alberich's Robe (Altered)
+110069 [Alteration] Traveling Maiden Robe (Altered)
+110070 [Alteration] Dryleaf Robe (Altered)
+110073 [Alteration] Thioller's Garb (Altered)
+110074 [Alteration] High Priest Robe
+110075 [Alteration] Dancer's Dress (Altered)
+110076 [Alteration] Igon's Helm (Altered)
+110077 [Alteration] Igon's Armor (Altered)
+110078 [Alteration] Ansbach's Attire (Altered)
+110079 [Alteration] Freyja's Armor (Altered)
+110080 [Alteration] Armor of Solitude (Altered)
+110081 [Alteration] Messmer Soldier Armor (Altered)
+110082 [Alteration] Fire Knight Armor (Altered)
+110100 [Alteration] Elden Lord Armor (Altered)
+110101 [Alteration] Radahn's Lion Armor (Altered)
+110102 [Alteration] Lord of Blood's Robe (Altered)
+110103 [Alteration] Maliketh's Armor (Altered)
+110104 [Alteration] Malenia's Armor (Altered)
+110105 [Alteration] Messmer's Helm (Altered)
+110106 [Alteration] Young Lion's Armor (Altered)
+110200 [Reversion] Drake Knight Helm
+110201 [Reversion] Drake Knight Armor
+110202 [Reversion] Scaled Armor
+110203 [Reversion] Perfumer Robe
+110204 [Reversion] Perfumer's Traveling Garb
+110205 [Reversion] Spellblade's Traveling Attire
+110206 [Reversion] Ronin's Armor
+110207 [Reversion] Blaidd's Armor
+110208 [Reversion] Black Knife Armor
+110209 [Reversion] Briar Armor
+110210 [Reversion] Page Garb
+110211 [Reversion] Night's Cavalry Helm
+110212 [Reversion] Night's Cavalry Armor
+110213 [Reversion] Blue Silver Mail Armor
+110214 [Reversion] Nomadic Merchant's Finery
+110215 [Reversion] Tree Sentinel Armor
+110216 [Reversion] Royal Knight Armor
+110217 [Reversion] Nox Monk Hood
+110218 [Reversion] Nox Monk Armor
+110219 [Reversion] Nox Swordstress Crown
+110220 [Reversion] Nox Swordstress Armor
+110221 [Reversion] Gravekeeper Cloak
+110222 [Reversion] Cleanrot Helm
+110223 [Reversion] Cleanrot Armor
+110224 [Reversion] Depraved Perfumer Robe
+110225 [Reversion] All-Knowing Armor
+110226 [Reversion] Twinned Armor
+110229 [Reversion] Prophet Robe
+110230 [Reversion] Astrologer Robe
+110231 [Reversion] Lionel's Armor
+110232 [Reversion] Hoslow's Armor
+110233 [Reversion] Vagabond Knight Armor
+110234 [Reversion] War Surgeon Gown
+110236 [Reversion] Veteran's Armor
+110237 [Reversion] Bloodhound Knight Armor
+110238 [Reversion] Festive Hood
+110239 [Reversion] Commoner's Garb
+110240 [Reversion] Commoner's Simple Garb
+110241 [Reversion] Raging Wolf Armor
+110242 [Reversion] Land of Reeds Armor
+110243 [Reversion] Confessor Hood
+110244 [Reversion] Confessor Armor
+110245 [Reversion] Finger Maiden Robe
+110247 [Reversion] Preceptor's Long Gown
+110249 [Reversion] Eccentric's Hood
+110250 [Reversion] Fingerprint Armor
+110251 [Reversion] Carian Knight Armor
+110252 [Reversion] Errant Sorcerer Robe
+110253 [Reversion] Gelmir Knight Armor
+110254 [Reversion] Godrick Knight Armor
+110255 [Reversion] Cuckoo Knight Armor
+110256 [Reversion] Leyndell Knight Armor
+110257 [Reversion] Redmane Knight Armor
+110258 [Reversion] Mausoleum Knight Armor
+110259 [Reversion] Haligtree Knight Armor
+110260 [Reversion] High Page Clothes
+110261 [Reversion] Rotten Gravekeeper Cloak
+110262 [Reversion] Beast Champion Armor
+110263 [Reversion] Snow Witch Robe
+110264 [Reversion] Crucible Axe Armor
+110265 [Reversion] Crucible Tree Armor
+110266 [Reversion] Fia's Robe
+110267 [Reversion] Alberich's Pointed Hat
+110268 [Reversion] Alberich's Robe
+110269 [Reversion] Traveling Maiden Robe
+110270 [Reversion] Dryleaf Robe
+110273 [Reversion] Thioller's Garb
+110274 [Reversion] High Priest Robe
+110275 [Reversion] Dancer's Dress
+110276 [Reversion] Igon's Helm
+110277 [Reversion] Igon's Armor
+110278 [Reversion] Ansbach's Attire
+110279 [Reversion] Freyja's Armor
+110280 [Reversion] Armor of Solitude
+110281 [Reversion] Messmer Soldier Armor
+110282 [Reversion] Fire Knight Armor
+110300 [Reversion] Elden Lord Armor
+110301 [Reversion] Radahn's Lion Armor
+110302 [Reversion] Lord of Blood's Robe
+110303 [Reversion] Maliketh's Armor
+110304 [Reversion] Malenia's Armor
+110305 [Reversion] Messmer's Helm
+110306 [Reversion] Young Lion's Armor
+111000 [Alteration] Drake Knight Helm (Altered)
+111001 [Alteration] Drake Knight Armor (Altered)
+111002 [Alteration] Scaled Armor (Altered)
+111003 [Alteration] Perfumer Robe (Altered)
+111004 [Alteration] Perfumer's Traveling Garb (Altered)
+111005 [Alteration] Spellblade's Traveling Attire (Altered)
+111006 [Alteration] Ronin's Armor (Altered)
+111007 [Alteration] Blaidd's Armor (Altered)
+111008 [Alteration] Black Knife Armor (Altered)
+111009 [Alteration] Briar Armor (Altered)
+111010 [Alteration] Page Garb (Altered)
+111011 [Alteration] Night's Cavalry Helm (Altered)
+111012 [Alteration] Night's Cavalry Armor (Altered)
+111013 [Alteration] Blue Silver Mail Armor (Altered)
+111014 [Alteration] Nomadic Merchant's Finery (Altered)
+111015 [Alteration] Tree Sentinel Armor (Altered)
+111016 [Alteration] Royal Knight Armor (Altered)
+111017 [Alteration] Nox Monk Hood (Altered)
+111018 [Alteration] Nox Monk Armor (Altered)
+111019 [Alteration] Nox Swordstress Crown (Altered)
+111020 [Alteration] Nox Swordstress Armor (Altered)
+111021 [Alteration] Gravekeeper Cloak (Altered)
+111022 [Alteration] Cleanrot Helm (Altered)
+111023 [Alteration] Cleanrot Armor (Altered)
+111024 [Alteration] Depraved Perfumer Robe (Altered)
+111025 [Alteration] All-Knowing Armor (Altered)
+111026 [Alteration] Twinned Armor (Altered)
+111029 [Alteration] Prophet Robe (Altered)
+111030 [Alteration] Astrologer Robe (Altered)
+111031 [Alteration] Lionel's Armor (Altered)
+111032 [Alteration] Hoslow's Armor (Altered)
+111033 [Alteration] Vagabond Knight Armor (Altered)
+111034 [Alteration] War Surgeon Gown (Altered)
+111036 [Alteration] Veteran's Armor (Altered)
+111037 [Alteration] Bloodhound Knight Armor (Altered)
+111038 [Alteration] Festive Hood (Altered)
+111039 [Alteration] Commoner's Garb (Altered)
+111040 [Alteration] Commoner's Simple Garb (Altered)
+111041 [Alteration] Raging Wolf Armor (Altered)
+111042 [Alteration] Land of Reeds Armor (Altered)
+111043 [Alteration] Confessor Hood (Altered)
+111044 [Alteration] Confessor Armor (Altered)
+111045 [Alteration] Finger Maiden Robe (Altered)
+111047 [Alteration] Preceptor's Long Gown (Altered)
+111049 [Alteration] Eccentric's Hood (Altered)
+111050 [Alteration] Fingerprint Armor (Altered)
+111051 [Alteration] Carian Knight Armor (Altered)
+111052 [Alteration] Errant Sorcerer Robe (Altered)
+111053 [Alteration] Gelmir Knight Armor (Altered)
+111054 [Alteration] Godrick Knight Armor (Altered)
+111055 [Alteration] Cuckoo Knight Armor (Altered)
+111056 [Alteration] Leyndell Knight Armor (Altered)
+111057 [Alteration] Redmane Knight Armor (Altered)
+111058 [Alteration] Mausoleum Knight Armor (Altered)
+111059 [Alteration] Haligtree Knight Armor (Altered)
+111060 [Alteration] High Page Clothes (Altered)
+111061 [Alteration] Rotten Gravekeeper Cloak (Altered)
+111062 [Alteration] Beast Champion Armor (Altered)
+111063 [Alteration] Snow Witch Robe (Altered)
+111064 [Alteration] Crucible Axe Armor (Altered)
+111065 [Alteration] Crucible Tree Armor (Altered)
+111066 [Alteration] Fia's Robe (Altered)
+111067 [Alteration] Alberich's Pointed Hat (Altered)
+111068 [Alteration] Alberich's Robe (Altered)
+111069 [Alteration] Traveling Maiden Robe (Altered)
+111070 [Alteration] Dryleaf Robe (Altered)
+111073 [Alteration] Thioller's Garb (Altered)
+111074 [Alteration] High Priest Robe
+111075 [Alteration] Dancer's Dress (Altered)
+111076 [Alteration] Igon's Helm (Altered)
+111077 [Alteration] Igon's Armor (Altered)
+111078 [Alteration] Ansbach's Attire (Altered)
+111079 [Alteration] Freyja's Armor (Altered)
+111080 [Alteration] Armor of Solitude (Altered)
+111081 [Alteration] Messmer Soldier Armor (Altered)
+111082 [Alteration] Fire Knight Armor (Altered)
+111100 [Alteration] Elden Lord Armor (Altered)
+111101 [Alteration] Radahn's Lion Armor (Altered)
+111102 [Alteration] Lord of Blood's Robe (Altered)
+111103 [Alteration] Maliketh's Armor (Altered)
+111104 [Alteration] Malenia's Armor (Altered)
+111105 [Alteration] Messmer's Helm (Altered)
+111106 [Alteration] Young Lion's Armor (Altered)
+111200 [Reversion] Drake Knight Helm
+111201 [Reversion] Drake Knight Armor
+111202 [Reversion] Scaled Armor
+111203 [Reversion] Perfumer Robe
+111204 [Reversion] Perfumer's Traveling Garb
+111205 [Reversion] Spellblade's Traveling Attire
+111206 [Reversion] Ronin's Armor
+111207 [Reversion] Blaidd's Armor
+111208 [Reversion] Black Knife Armor
+111209 [Reversion] Briar Armor
+111210 [Reversion] Page Garb
+111211 [Reversion] Night's Cavalry Helm
+111212 [Reversion] Night's Cavalry Armor
+111213 [Reversion] Blue Silver Mail Armor
+111214 [Reversion] Nomadic Merchant's Finery
+111215 [Reversion] Tree Sentinel Armor
+111216 [Reversion] Royal Knight Armor
+111217 [Reversion] Nox Monk Hood
+111218 [Reversion] Nox Monk Armor
+111219 [Reversion] Nox Swordstress Crown
+111220 [Reversion] Nox Swordstress Armor
+111221 [Reversion] Gravekeeper Cloak
+111222 [Reversion] Cleanrot Helm
+111223 [Reversion] Cleanrot Armor
+111224 [Reversion] Depraved Perfumer Robe
+111225 [Reversion] All-Knowing Armor
+111226 [Reversion] Twinned Armor
+111229 [Reversion] Prophet Robe
+111230 [Reversion] Astrologer Robe
+111231 [Reversion] Lionel's Armor
+111232 [Reversion] Hoslow's Armor
+111233 [Reversion] Vagabond Knight Armor
+111234 [Reversion] War Surgeon Gown
+111236 [Reversion] Veteran's Armor
+111237 [Reversion] Bloodhound Knight Armor
+111238 [Reversion] Festive Hood
+111239 [Reversion] Commoner's Garb
+111240 [Reversion] Commoner's Simple Garb
+111241 [Reversion] Raging Wolf Armor
+111242 [Reversion] Land of Reeds Armor
+111243 [Reversion] Confessor Hood
+111244 [Reversion] Confessor Armor
+111245 [Reversion] Finger Maiden Robe
+111247 [Reversion] Preceptor's Long Gown
+111249 [Reversion] Eccentric's Hood
+111250 [Reversion] Fingerprint Armor
+111251 [Reversion] Carian Knight Armor
+111252 [Reversion] Errant Sorcerer Robe
+111253 [Reversion] Gelmir Knight Armor
+111254 [Reversion] Godrick Knight Armor
+111255 [Reversion] Cuckoo Knight Armor
+111256 [Reversion] Leyndell Knight Armor
+111257 [Reversion] Redmane Knight Armor
+111258 [Reversion] Mausoleum Knight Armor
+111259 [Reversion] Haligtree Knight Armor
+111260 [Reversion] High Page Clothes
+111261 [Reversion] Rotten Gravekeeper Cloak
+111262 [Reversion] Beast Champion Armor
+111263 [Reversion] Snow Witch Robe
+111264 [Reversion] Crucible Axe Armor
+111265 [Reversion] Crucible Tree Armor
+111266 [Reversion] Fia's Robe
+111267 [Reversion] Alberich's Pointed Hat
+111268 [Reversion] Alberich's Robe
+111269 [Reversion] Traveling Maiden Robe
+111270 [Reversion] Dryleaf Robe
+111273 [Reversion] Thioller's Garb
+111274 [Reversion] High Priest Robe
+111275 [Reversion] Dancer's Dress
+111276 [Reversion] Igon's Helm
+111277 [Reversion] Igon's Armor
+111278 [Reversion] Ansbach's Attire
+111279 [Reversion] Freyja's Armor
+111280 [Reversion] Armor of Solitude
+111281 [Reversion] Messmer Soldier Armor
+111282 [Reversion] Fire Knight Armor
+111300 [Reversion] Elden Lord Armor
+111301 [Reversion] Radahn's Lion Armor
+111302 [Reversion] Lord of Blood's Robe
+111303 [Reversion] Maliketh's Armor
+111304 [Reversion] Malenia's Armor
+111305 [Reversion] Messmer's Helm
+111306 [Reversion] Young Lion's Armor
+112000 Ash of War: Impaling Thrust
+112001 Ash of War: Piercing Fang
+112002 Ash of War: Spinning Slash
+112003 Ash of War: Repeating Thrust
+112004 Ash of War: Double Slash
+112005 Ash of War: Unsheathe
+112006 Ash of War: Sword Dance
+112008 Ash of War: Quickstep
+112009 Ash of War: Bloodhound's Step
+112010 Ash of War: Lion's Claw
+112011 Ash of War: Stamp (Upward Cut)
+112012 Ash of War: Stamp (Sweep)
+112013 Ash of War: Wild Strikes
+112014 Ash of War: Earthshaker
+112015 Ash of War: Kick
+112016 Ash of War: Ground Slam
+112017 Ash of War: Hoarah Loux's Earthshaker
+112018 Ash of War: Barbaric Roar
+112019 Ash of War: War Cry
+112020 Ash of War: Troll's Roar
+112021 Ash of War: Braggart's Roar
+112022 Ash of War: Endure
+112023 Ash of War: Charge Forth
+112024 Ash of War: Square Off
+112025 Ash of War: Giant Hunt
+112026 Ash of War: Spinning Strikes
+112027 Ash of War: Storm Assault
+112028 Ash of War: Stormcaller
+112029 Ash of War: Storm Blade
+112030 Ash of War: Vacuum Slice
+112031 Ash of War: Storm Stomp
+112032 Ash of War: Determination
+112033 Ash of War: Royal Knight's Resolve
+112034 Ash of War: Prelate's Charge
+112035 Ash of War: Eruption
+112036 Ash of War: Flaming Strike
+112037 Ash of War: Black Flame Tornado
+112038 Ash of War: Flame of the Redmanes
+112039 Ash of War: Thunderbolt
+112040 Ash of War: Lightning Slash
+112041 Ash of War: Lightning Ram
+112042 Ash of War: Loretta's Slash
+112043 Ash of War: Spinning Weapon
+112044 Ash of War: Glintblade Phalanx
+112045 Ash of War: Glintstone Pebble
+112046 Ash of War: Gravitas
+112047 Ash of War: Carian Grandeur
+112048 Ash of War: Carian Greatsword
+112049 Ash of War: Waves of Darkness
+112050 Ash of War: Cragblade
+112051 Ash of War: Sacred Blade
+112052 Ash of War: Prayerful Strike
+112053 Ash of War: Golden Land
+112054 Ash of War: Sacred Ring of Light
+112055 Ash of War: Golden Slam
+112056 Ash of War: Golden Vow
+112057 Ash of War: Sacred Order
+112058 Ash of War: Shared Order
+112059 Ash of War: Beast's Roar
+112060 Ash of War: Phantom Slash
+112061 Ash of War: Spectral Lance
+112062 Ash of War: Raptor of the Mists
+112063 Ash of War: White Shadow's Lure
+112064 Ash of War: Poison Moth Flight
+112065 Ash of War: Poisonous Mist
+112066 Ash of War: Blood Tax
+112067 Ash of War: Bloody Slash
+112068 Ash of War: Lifesteal Fist
+112069 Ash of War: Blood Blade
+112070 Ash of War: Assassin's Gambit
+112071 Ash of War: Seppuku
+112072 Ash of War: Ice Spear
+112073 Ash of War: Chilling Mist
+112074 Ash of War: Hoarfrost Stomp
+112075 Ash of War: No Skill
+112076 Ash of War: Shield Bash
+112077 Ash of War: Shield Crash
+112078 Ash of War: Barricade Shield
+112079 Ash of War: Parry
+112080 Ash of War: Carian Retaliation
+112081 Ash of War: Storm Wall
+112082 Ash of War: Golden Parry
+112083 Ash of War: Thops's Barrier
+112084 Ash of War: Holy Ground
+112085 Ash of War: Vow of the Indomitable
+112086 Ash of War: Barrage
+112087 Ash of War: Mighty Shot
+112088 Ash of War: Sky Shot
+112089 Ash of War: Through and Through
+112090 Ash of War: Enchanted Shot
+112091 Ash of War: Rain of Arrows
+112100 Ash of War: Dryleaf Whirlwind
+112101 Ash of War: Aspects of the Crucible: Wings
+112102 Ash of War: Spinning Gravity Thrust
+112103 Ash of War: Palm Blast
+112104 Ash of War: Piercing Throw
+112105 Ash of War: Scattershot Throw
+112106 Ash of War: Wall of Sparks
+112107 Ash of War: Rolling Sparks
+112108 Ash of War: Raging Beast
+112109 Ash of War: Savage Claws
+112110 Ash of War: Blind Spot
+112111 Ash of War: Swift Slash
+112112 Ash of War: Overhead Stance
+112113 Ash of War: Wing Stance
+112114 Ash of War: Blinkbolt
+112115 Ash of War: Flame Skewer
+112116 Ash of War: Savage Lion's Claw
+112117 Ash of War: Divine Beast Frost Stomp
+112118 Ash of War: Flame Spear
+112119 Ash of War: Carian Sovereignty
+112120 Ash of War: Shriek of Sorrow
+112121 Ash of War: Ghostflame Call
+112122 Ash of War: The Poison Flower Blooms Twice
+112123 Ash of War: Igon's Drake Hunt
+112124 Ash of War: Shield Strike
+600000 Dagger
+600001 Longsword
+600002 Short Spear
+600003 Mace
+600004 Longbow
+600005 Falchion
+600006 Hand Axe
+600007 Buckler
+600008 Round Shield
+600009 Blue Cloth Cowl
+600010 Blue Cloth Vest
+600011 Warrior Gauntlets
+600012 Warrior Greaves
+600013 Lone Wolf Ashes
+600014 Cracked Pot
+600015 
+600016 Arrow
+600017 String
+600018 Note: Imp Shades
+600019 Note: Flask of Wondrous Physick
+600020 
+600021 Miranda Powder
+600022 
+900000 [Incantation] Dragonfire
+900001 [Incantation] Agheel's Flame
+900002 [Incantation] Magma Breath
+900003 [Incantation] Dragonice
+900004 [Incantation] Rotten Breath
+900010 [Incantation] Dragonfire
+900011 [Incantation] Agheel's Flame
+900012 [Incantation] Magma Breath
+900013 [Incantation] Dragonice
+900014 [Incantation] Rotten Breath
+900020 [Incantation] Dragonfire
+900021 [Incantation] Agheel's Flame
+900022 [Incantation] Magma Breath
+900023 [Incantation] Dragonice
+900024 [Incantation] Rotten Breath
+900030 [Incantation] Dragonfire
+900031 [Incantation] Agheel's Flame
+900032 [Incantation] Magma Breath
+900033 [Incantation] Dragonice
+900034 [Incantation] Rotten Breath
+1600101 Dagger
+1600102 Longsword
+1600103 Short Spear
+1600104 Mace
+1600105 Longbow
+1600106 Falchion
+1600107 Hand Axe
+1600108 Buckler
+1600109 Round Shield
+1600110 Blue Cloth Cowl
+1600111 Blue Cloth Vest
+1600112 Warrior Gauntlets
+1600113 Warrior Greaves
+1600114 
+1600115 Cracked Pot
+1600116 
+1600117 Arrow
+1600118 String
+1600119 Note: Imp Shades
+1600120 Note: Flask of Wondrous Physick
+1600121 
+1600122 Miranda Powder
+1600123 
+1600401 Glintstone Staff
+1600402 Finger Seal
+1600403 Clawmark Seal
+1600404 [Sorcery] Glintstone Pebble
+1600405 [Sorcery] Stars of Ruin
+1600406 
+1600407 [Incantation] Flame
+1600408 [Incantation] Frenzied Burst
+1600409 Carian Knight Helm
+1600410 Carian Knight Armor (Altered)
+1600411 Carian Knight Gauntlets
+1600412 Carian Knight Greaves
+1600413 Champion Headband
+1600414 Champion Pauldron
+1600415 Champion Bracers
+1600416 Champion Gaiters
+1600417 Crimson Amber Medallion
+1600418 Axe Talisman
+1600419 Fire Arrow
+1600420 Note: Stonedigger Trolls
+9000000 Forked Greatsword
+9000001 Iron Greatsword
+9000002 Lordsworn's Greatsword
+9000003 Knight's Greatsword
+9000004 Ordovis's Greatsword
+9001000 Omen Helm
+9001001 Omen Armor
+9001002 Omen Gauntlets
+9001003 Omen Greaves
+9001004 
+9999001 
+9999002 

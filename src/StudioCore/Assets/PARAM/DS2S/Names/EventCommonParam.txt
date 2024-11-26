@@ -1,0 +1,15 @@
+0 Gas: Damage Trap Activation Rate Minimum -- ガス：ダメージ 罠発動率 最小
+1 Gas: Damage Trap Activation Rate Max -- ガス：ダメージ 罠発動率 最大
+2 Gas: Recovery Trap Activation Rate Minimum -- ガス：回復 罠発動率 最小
+3 Gas: Recovery Trap Activation Rate Max -- ガス：回復 罠発動率 最大
+4 Generet: Enemy Trap Activation Rate Minimum -- ジェネレート：エネミー 罠発動率 最小
+5 Generet: Enemy Trap Activation Rate Max -- ジェネレート：エネミー 罠発動率 最大
+6 Explosion- trap activation rate- minimum. -- 爆発 罠発動率 最小
+7 Explosion- trap activation rate- maximum. -- 爆発 罠発動率 最大
+8 Continuous arrow trap activation rate Minimum -- 連続矢 罠発動率 最小
+9 Continuous arrow trap activation rate Max -- 連続矢罠発動率 最大
+10 Charges for acquittal -- 免罪基準費用
+11 Valid Event Flag ID for Gachagacha Item Drop -- ガチャガチャアイテムドロップの有効イベントフラグID
+12 Event variable ID for gachagacha item drop results -- ガチャガチャアイテムドロップの結果格納先イベント変数ID
+13 Gachagacha Item DropAble Map ID -- ガチャガチャアイテムドロップ可能マップID
+14 Basic seoul cost of special doors to Wang cheng -- 王城への特殊扉の基本ソウルコスト

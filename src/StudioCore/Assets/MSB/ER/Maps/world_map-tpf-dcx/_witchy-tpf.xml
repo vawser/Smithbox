@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tpf>
+  <filename>world_map.tpf.dcx</filename>
+  <compression>DCX_KRAK</compression>
+  <encoding>0x01</encoding>
+  <flag2>0x03</flag2>
+  <platform>PC</platform>
+  <textures>
+    <texture>
+      <name>world_map_vanilla.dds</name>
+      <format>0</format>
+      <flags1>0x00</flags1>
+    </texture>
+    <texture>
+      <name>world_map_sote.dds</name>
+      <format>0</format>
+      <flags1>0x00</flags1>
+    </texture>
+  </textures>
+</tpf>

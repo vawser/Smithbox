@@ -1,0 +1,176 @@
+1070 Skeleton
+1071 Skeleton
+1090 Pus of Man
+1100 Hollow Soldier
+1101 Hollow Soldier
+1102 Hollow Soldier
+1105 Hollow Soldier
+1106 Hollow Soldier
+1109 Hollow Soldier
+1130 Rotten Slug
+1139 Rotten Slug
+1170 Carthus Swordsman
+1180 Carthus Swordsman - Shotel
+1190 Cathedral Knight
+1200 Hollow Slave
+1201 Hollow Slave
+1210 Ghru
+1211 Ghru
+1220 Corpse-grub
+1229 Corpse-grub
+1230 Cathedral Evangelist
+1240 Peasant Hollow
+1241 Peasant Hollow
+1250 Cathedral Grave Warden
+1260 Hollow Manservant
+1280 Lothric Knight
+1281 Lothric Knight
+1282 Lothric Knight
+1283 Lothric Knight
+1290 Winged Knight
+1300 Black Knight
+1310 Boreal Outrider Knight
+1320 Crystal Sage
+1321 Crystal Sage
+1340 Archive Scholar
+1350 Irithyllian Slave
+1360 Lycanthrope
+1370 Lycanthrope Hunter
+1380 Serpent-man Summoner
+1390 Serpent-man
+1391 Giant Serpent-man
+1399 Giant Serpent-man
+1400 Fire Keeper
+1410 Silver Knight
+1430 Undead Cleric
+1440 Devout of the Deep
+1441 Devout of the Deep
+1442 Devout of the Deep
+1445 Devout of the Deep
+1446 Devout of the Deep
+1449 Devout of the Deep
+1450 Ludleth of Courland
+1470 Bonewheel Skeleton
+1480 Pontiff Knight (Illusion)
+1490 Pontiff Knight (Illusion)
+2020 Undead Dog
+2021 Small Undead Dog
+2029 Small Undead Dog
+2030 Pontiff Knight
+2040 Monstrosity of Sin
+2060 Writhing Infested Corpse
+2070 Wretch
+2080 Undead Dog
+2090 Oceiros
+2100 Sewer Centipede
+2110 Hound-rat
+2120 Mimic
+2130 Writhing Rotten Flesh
+2131 Writhing Rotten Flesh
+2132 Writhing Rotten Flesh
+2140 Basilisk
+2150 Crystal Lizard
+2160 Londor Pilgrim
+2170 Company Captain Yorshka
+2180 Rosaria Maggot
+2190 Gargoyle
+2191 Gargoyle
+2200 Carthus Sandworm
+2209 Carthus Sandworm
+2210 Corvian
+2230 Jailer
+2239 Jailer
+2240 Vordt
+2250 Sulyvahn's Beast
+2260 Sulyvahn's Beast
+2270 Giant Crab
+2271 Lesser Crab
+2279 Lesser Crab
+2280 Giant Rat
+2290 Irithyll Dog
+3020 Giant Slave
+3021 Giant Slave
+3040 Abyss Watchers
+3050 Old Demon King
+3060 Demon
+3070 Demon Cleric
+3071 Demon Cleric
+3080 Pilgrim Butterfly
+3090 Caged Hollow
+3100 Giant Crystal Lizard
+3110 Deep Acursed
+3120 Elder Ghru
+3140 Ancient Wyvern
+3141 Ancient Wyvern
+3160 Dragonslayer Armour
+3170 Darkwraith
+3190 Blacksmith Andre
+3200 Shrine Handmaid
+3210 Poisonhorn Bug
+3220 Rock Lizard
+3230 Demon Statue
+3250 High Priestess Emma
+5010 Nameless King
+5019 Nameless King
+5020 Demon Prince
+5021 Demon Prince
+5022 Demon Prince
+5030 King of the Storm
+5110 Iudex Gundyr
+5140 Pontiff Sulyvahn
+5150 Aldrich
+5160 Wolnir
+5180 Curse-rotted Greatwood
+5220 Deacon of the Deep
+5221 Fat Deacon
+5222 Tall Deacon
+5223 Thin Deacon
+5225 Fat Deacon
+5226 Tall Deacon
+5227 Thin Deacon
+5229 Thin Deacon
+5240 Irithyll Fire Witch
+5250 Lorian
+5251 Lothric
+5259 Lothric
+5260 Yhorm
+5270 Dancer
+5280 Soul of Cinder
+6000 Farron Follower
+6010 Father Ariandel
+6020 Sister Friede
+6030 Gravetender Greatwolf
+6040 Wolf
+6050 Skittish Wolf
+6060 Tree Woman
+6070 Corvian Knight
+6080 Giant Fly
+6081 Giant Fly
+6089 Giant Fly
+6090 Giant Fly
+6100 Millwood Knight
+6110 Millwood Knight
+6120 Millwood Knight
+6121 Millwood Knight
+6130 Great Crab
+6200 Slave Knight Gael
+6201 Slave Knight Gael
+6210 Midir - Bridge
+6211 Midir
+6230 Murkman
+6231 Murkman
+6232 Murkman
+6239 Murkman
+6240 Pilgrim Pulpa
+6250 Angel
+6260 Ringed Knight
+6270 Hollow Vagabond
+6280 Judicator
+6281 Judicator
+6290 Hollow Cleric
+6300 Mad Pilgrim
+6310 Filianore
+6320 Harald Knight
+6330 Big Locust
+6331 Small Locust
+6339 Small Locust

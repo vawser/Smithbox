@@ -1,0 +1,27 @@
+10300700 Brazier
+10300701 Brazier
+10300702 Brazier
+10300703 Brazier
+10300704 Brazier
+10300705 Brazier
+10300706 Brazier
+10300707 Brazier
+10300708 Brazier
+10300709 Brazier
+10300710 Brazier
+10300711 Brazier
+10300712 Brazier
+10300713 Brazier
+10300714 Brazier
+10300715 Brazier
+10300716 Brazier
+10300717 Brazier
+10300718 Brazier
+10300719 Brazier
+10300720 Brazier
+10305010 [Chest] Treasure
+10305020 [Chest] Treasure
+10306000 [Corpse] Treasure
+10306010 [Corpse] Treasure
+10306020 [Corpse] Treasure
+10306030 [Corpse] Treasure

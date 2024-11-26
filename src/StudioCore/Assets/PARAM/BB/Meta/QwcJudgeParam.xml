@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <pcJudgeUnderWB AltName="PC: Black Condition - Lower Limit" Wiki="" />
+    <pcJudgeTopWB AltName="PC: White Condition - Upper Limit" Wiki="" />
+    <pcJudgeUnderLR AltName="PC: Left Condition - Lower Limit" Wiki="" />
+    <pcJudgeTopLR AltName="" Wiki="PC: Right Condition - Upper Limit" />
+    <areaJudgeUnderWB AltName="Area: Black Condition - Lower Limit" Wiki="" />
+    <areaJudgeTopWB AltName="Area: White Condition - Upper Limit" Wiki="" />
+    <areaJudgeUnderLR AltName="Area: Left Condition - Lower Limit" Wiki="" />
+    <areaJudgeTopLR AltName="Area: Right Condition - Upper Limit" Wiki="" />
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

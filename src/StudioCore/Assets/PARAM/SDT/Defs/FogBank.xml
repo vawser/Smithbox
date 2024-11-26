@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FOG_BANK</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s16 fogBeginZ">
+      <DisplayName>(廃止) 開始距離[m]</DisplayName>
+      <Description>フォグの開始距離です</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-10000</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 fogEndZ = 100">
+      <DisplayName>(廃止) 終了距離[m]</DisplayName>
+      <Description>フォグの終了距離です</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-10000</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 degRotZ">
+      <DisplayName>(廃止) ダミー</DisplayName>
+      <Description>ダミー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 degRotW = 100">
+      <DisplayName>(廃止) 強度</DisplayName>
+      <Description>通常100にしてください(0だとフォグが掛かりません)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 colR = 255">
+      <DisplayName>(廃止) Ｒ</DisplayName>
+      <Description>フォグカラー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 colG = 255">
+      <DisplayName>(廃止) Ｇ</DisplayName>
+      <Description>フォグカラー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 colB = 255">
+      <DisplayName>(廃止) Ｂ</DisplayName>
+      <Description>フォグカラー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 colA = 100">
+      <DisplayName>(廃止) RGB倍率[％]</DisplayName>
+      <Description>フォグカラーの倍率(100が標準)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 heightBase">
+      <DisplayName>(廃止) HeightBase</DisplayName>
+      <Description>HeightBase</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 heightDensity = 100">
+      <DisplayName>(廃止) HeightDensity</DisplayName>
+      <Description>HeightDensity</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s8 isUpper = 1">
+      <DisplayName>(廃止) IsUpper</DisplayName>
+      <Description>IsUpper</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 pad[3] = 1">
+      <DisplayName>(廃止) パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="f32 contrast">
+      <DisplayName>(廃止) Contrast</DisplayName>
+      <Description>Contrast</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 ColorR">
+      <Description>ColorR</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s32 ColorG">
+      <Description>ColorG</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s32 ColorB">
+      <Description>ColorB</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 ColorA = 1">
+      <Description>ColorA</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s32 HeightColorR">
+      <Description>HeightColorR</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s32 HeightColorG">
+      <Description>HeightColorG</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s32 HeightColorB">
+      <Description>HeightColorB</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="f32 HeightColorA = 1">
+      <Description>HeightColorA</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 Dist">
+      <Description>Dist</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="f32 HeightDist">
+      <Description>HeightDist</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="f32 DistOffset">
+      <Description>DistOffset</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>-2000</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="f32 HeightOffset">
+      <Description>HeightOffset</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>-2000</Minimum>
+      <Maximum>2000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 HeightDensity = 100">
+      <Description>HeightDensity</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s8 IsUpper = 1">
+      <Description>IsUpper</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[3]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="f32 Alpha = 1">
+      <Description>Alpha</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="f32 Contrast">
+      <Description>Contrast</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="dummy8 pad3[32]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>34</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

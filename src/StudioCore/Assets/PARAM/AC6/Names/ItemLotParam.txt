@@ -1,0 +1,81 @@
+9980 HEAD - IA-C01H: EPHEMERA
+9985 CORE - IA-C01C: EPHEMERA
+9990 ARMS - IA-C01A: EPHEMERA
+2100703300 CORE - IA-C01C: EPHEMERA [Mission: Watchpoint Alpha - Underground Exploration - Depth 3] 
+2100703310 IA-C01F: OCELLUS [Mission: Watchpoint Alpha - Underground Exploration - Depth 3]
+2101003000 CORAL SHIELD - IB-C03W4: NGI 028
+2102303000 PLASMA RIFLE - IA-C01W1: NEBULA (Right) 
+2102403010 LEGS - LG-011 MELANDER
+2102403020 BST-G2/P06SPD
+2102403030 AG-J-098 JOSO
+2102403040 FCS-G1/P01
+2102403202 BST-G2/P06SPD
+2103703000 LIGHT WAVE CANNON - IA-C01W3: AURORA (Right)
+2103703010 LIGHT WAVE BLADE - IA-C01W2: MOONLIGHT
+2104603030 LASER SLICER - Vvc-774LS [Mission: Grid 086 - Stop the Secret Data Breach] 
+2104603040 DENONATING BAZOOKA - 44-141 JVLN ALPHA (Right)
+2104603050 BST-G2/P06SPD
+2104703100 IA-CO1G: AORTA
+2105303000 CORAL MISSLE LAUNCHER - IB-C03W3: NGI 006 (Right)
+2106103100 LEGS - IA-CO1L: EPHEMERA [Mission: Watchpoint Alpha - Underground Exploration - Depth 1] 
+2106203110 ARMS - IA-CO1A: EPHEMERA [Mission: Watchpoint Alpha - Underground Exploration - Depth 2] 
+2106203160 IA-CO1B: GILLS [Mission: Watchpoint Alpha - Underground Exploration - Depth 2] 
+2106303310 HEAD - IA-CO1H: EPHEMERA [Mission: Watchpoint Alpha - Unknown Territory Survey] 
+2106403000 HEAD - HC-3000 WRECKER
+2106403010 CORE - CC-3000 WRECKER
+2106403020 ARMS - AC-3000 WRECKER
+2106403030 LEGS - 2C-3000 WRECKER
+2107203000 BC-0600 12345
+2107203010 FLAMETHROWER - WB-0000 BAD COOK (Right)
+2107203020 CHAINSAW - WB-0010 DOUBLE TROUBLE
+2140091500 License Code: Thomas Kirk
+2140091510 License Code: Monkey Gordo
+2140091520 License Code: G7 Hakra
+2140091525 License Code: Raven
+2140091530 System Log: One-Sided Engagement
+2140091540 System Log: The Deserter
+2140091550 Video Record: STEEL HAZE
+2140091560 Video Record: BAWS Arsenal No. 2
+2140091570 Comms Record: Rusty's Encoded Comms
+2140091580 Text Data: The Well Dries
+2140091590 Video Record: Communication Attempt
+2140091600 Comms Record: Friendly Comms
+2140091610 Observation Data: Coral Density Survey
+2140091620 Observation Data: Terrain Survey
+2140091630 Observation Data: Installations Survey
+2140091640 Observation Data: Offshore Survey
+2140091650 Video Record: Rubiconian Invective [Mission: The Wall - Eliminate the Enforcement Squads] 
+2140091660 Comms Record: Doser Ravings [Mission: Grid 086 - Infiltrate Grid 086] 
+2140091670 Text Data: Dolmayan's Writings (1)
+2140091680 Text Data: Dolmayan's Writings (2)
+2140091690 Text Data: Dolmayan's Writings (3)
+2140091700 Text Data: Dolmayan's Writings (4)
+2140091710 Text Data: Dolmayan's Writings (5)
+2140091720 Text Data: Professor Nagai's Log (1)
+2140091730 Text Data: Professor Nagai's Log (2)
+2140091740 Text Data: Professor Nagai's Log (3) [Mission: Grid 086 - Stop the Secret Data Breach] 
+2140091750 Text Data: Professor Nagai's Log (4)
+2140091760 Video Record: The Fires of Ibis
+2140091770 Image Data: STV Sketch (3)
+2140091780 Image Data: STV Sketch (4)
+2140091790 Image Data: STV Sketch (1) [Mission: The Wall - Eliminate the Enforcement Squads] 
+2140091800 Image Data: STV Sketch (2)
+2140091810 Image Data: STV Sketch (6)
+2140091820 Image Data: STV Sketch (5)
+2140091830 Image Data: STK Sketch
+2140091840 Observation Data: The City of Xylem
+2140091850 Video Record: G4's Last Words
+2140091860 Text Data: The Re-education Center
+2140091870 Unknown
+2140091880 Video Record: Testing New Components
+2140091890 Video Record: BAWS Guard's Last Words
+2140091900 Video Record: The Collector's Last Words [Mission: Grid 086 - Infiltrate Grid 086] 
+2140091910 Comms Record: Message for Uncle
+2140091920 Comms Record: Doser Chatter
+2140091930 Comms Record: Coyote Chatter
+2140091940 Comms Record: Independant Merc Comms
+2140091950 Comms Record: Enforcement Squad Comms
+2140091960 Observation Data: Wave Mutation Detected
+2140091970 Observation Data: Blind Spots
+2140091980 Observation Data: The Enforcement System
+2140091990 Text Data: Professor Nagai's Log (5)

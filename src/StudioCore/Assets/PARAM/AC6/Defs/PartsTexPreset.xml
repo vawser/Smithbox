@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PARTS_TEX_PRESET_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 TexIdLayer0 = -1">
+      <DisplayName>1層目素材（基本鉄など）</DisplayName>
+      <Description>1層目素材（基本鉄など）</Description>
+      <DisplayFormat>%06d</DisplayFormat>
+      <EditFlags>8</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 TexIdLayer1 = -1">
+      <DisplayName>2層目素材(基本ベースペイント）</DisplayName>
+      <Description>2層目素材(基本ベースペイント）</Description>
+      <DisplayFormat>%06d</DisplayFormat>
+      <EditFlags>8</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s32 TexIdLayer2 = -1">
+      <DisplayName>3層目素材(基本塗装後の状態）</DisplayName>
+      <Description>3層目素材(基本塗装後の状態）</Description>
+      <DisplayFormat>%06d</DisplayFormat>
+      <EditFlags>8</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="s32 TexIdLayer3 = -1">
+      <DisplayName>4層目素材(経年劣化）</DisplayName>
+      <Description>4層目素材(経年劣化）</Description>
+      <DisplayFormat>%06d</DisplayFormat>
+      <EditFlags>8</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="dummy8 pad[32]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>131</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

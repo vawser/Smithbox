@@ -1,0 +1,887 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>ASSET_GEOMETORY_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 soundBankId = -1">
+      <DisplayName>サウンドのバンクID</DisplayName>
+      <Description>サウンドのバンクID(-1:バンクなし, それ以外:指定したIDのバンク)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="s32 soundBreakSEId = -1">
+      <DisplayName>破壊音SEID</DisplayName>
+      <Description>破壊音SEID(9桁) -1：assetIdから生成</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2401</SortID>
+    </Field>
+    <Field Def="s32 refDrawParamId = -1">
+      <DisplayName>描画パラメータ参照ID</DisplayName>
+      <Description>描画パラメータ参照ID。パーツ描画パラメータ.xlsmの参照IDです。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s8 hitCreateType">
+      <DisplayName>静的アセットヒット構築設定</DisplayName>
+      <Enum>ASSET_HIT_CREATE_TYPE_ENUM</Enum>
+      <Description>静的アセットのヒット構築タイプを設定します。動的アセットでは無視されます。</Description>
+      <Minimum>0</Minimum>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="u8 behaviorType = 1">
+      <DisplayName>アセット挙動タイプ</DisplayName>
+      <Enum>ASSET_BEHAVIOR_TYPE</Enum>
+      <Description>動的(すべてのアセット機能が使用可能)、静的(旧マップ扱いの機能制限された軽いアセット)、部分静的(部分破壊アセット)</Description>
+      <Maximum>1</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 collisionType">
+      <DisplayName>衝突判定タイプ</DisplayName>
+      <Enum>ASSET_COLLISION_TYPE</Enum>
+      <Description>衝突判定タイプ。アセットが何と当たるかが設定できます。</Description>
+      <Maximum>127</Maximum>
+      <SortID>1011</SortID>
+    </Field>
+    <Field Def="u8 rainBlockingType">
+      <DisplayName>雨遮断設定</DisplayName>
+      <Enum>RAIN_BLOCKING_TYPE</Enum>
+      <Description>雨遮断のタイプです。SFXと濡れ表現の遮断設定が行えます</Description>
+      <Maximum>2</Maximum>
+      <SortID>1001</SortID>
+    </Field>
+    <Field Def="s16 hp = -1">
+      <DisplayName>HP</DisplayName>
+      <Description>破壊までの耐久力(-1:破壊不可)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="u16 defense">
+      <DisplayName>防御力</DisplayName>
+      <Description>この値以下の攻撃力はダメージなし</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>3001</SortID>
+    </Field>
+    <Field Def="f32 breakStopTime = 30">
+      <DisplayName>破壊後強制停止時間</DisplayName>
+      <Description>破壊されてから剛体を強制的に停止するまでの時間（0で強制停止しない）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3010</SortID>
+    </Field>
+    <Field Def="s32 breakSfxId = -1">
+      <DisplayName>破壊時SFXID</DisplayName>
+      <Description>破壊時のSFXID(-1:デフォルト(810030))</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3020</SortID>
+    </Field>
+    <Field Def="s32 breakSfxCpId = -1">
+      <DisplayName>破壊時SFXダミポリID</DisplayName>
+      <Description>破壊時SFXの発生位置ダミポリID(-1：配置位置）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3021</SortID>
+    </Field>
+    <Field Def="s32 breakLandingSfxId = -1">
+      <DisplayName>破壊後着地時SFX識別子</DisplayName>
+      <Description>破壊された後、最初に着地した際に再生するオブジェ材質依存SFXの識別子(-1:発生しない)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31</Maximum>
+      <SortID>3022</SortID>
+    </Field>
+    <Field Def="s32 breakBulletBehaviorId = -1">
+      <DisplayName>破壊時 弾発生 行動パラメータID</DisplayName>
+      <Description>破壊時[弾]の行動パラメータ(-1:発生しない)。周回によるオフセットの仕様があるので注意。(【GR】SEQ35556 )</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3030</SortID>
+    </Field>
+    <Field Def="s32 breakBulletCpId = -1">
+      <DisplayName>破壊時 弾発生 ダミポリID</DisplayName>
+      <Description>破壊時[弾]の発生位置ダミポリID(-1:配置位置)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3031</SortID>
+    </Field>
+    <Field Def="f32 FragmentInvisibleWaitTime">
+      <DisplayName>破片非表示 待機時間(秒)</DisplayName>
+      <Description>破片非表示 待機時間(秒)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3040</SortID>
+    </Field>
+    <Field Def="f32 FragmentInvisibleTime">
+      <DisplayName>破片非表示 時間(秒)</DisplayName>
+      <Description>破片を非表示にさせる時間(秒)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3041</SortID>
+    </Field>
+    <Field Def="s32 BreakAiSoundID">
+      <DisplayName>破壊時発生AI音ID</DisplayName>
+      <Description>破壊時に発生させるAI音ID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3050</SortID>
+    </Field>
+    <Field Def="s8 breakItemLotType">
+      <DisplayName>破壊時_アイテム抽選種別</DisplayName>
+      <Enum>ASSET_BREAK_ITEM_LOT_TYPE_ENUM</Enum>
+      <Description>破壊時に抽選したアイテムの入手方法を決めるタイプ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3061</SortID>
+    </Field>
+    <Field Def="u8 animBreakIdMax">
+      <DisplayName>アニメ破壊ID最大値</DisplayName>
+      <Description>アニメ破壊IDが0番から何番までか</Description>
+      <Maximum>99</Maximum>
+      <SortID>3009</SortID>
+    </Field>
+    <Field Def="s8 breakBulletAttributeDamageType">
+      <DisplayName>破壊時 弾発生 属性ダメージ条件</DisplayName>
+      <Enum>ASSET_BREAK_ATTRIBUTE_DAMAGE_TYPE</Enum>
+      <Description>アセット破壊時に最後に受けたダメージがこの設定の条件を満たしていれば弾丸を生成する</Description>
+      <Minimum>0</Minimum>
+      <SortID>3032</SortID>
+    </Field>
+    <Field Def="u8 isBreakByPlayerCollide:1">
+      <DisplayName>プレイヤ衝突で壊れるか</DisplayName>
+      <Description>プレイヤが接触したときに壊れ(0:ない, 1:る)</Description>
+      <Maximum>1</Maximum>
+      <SortID>3003</SortID>
+    </Field>
+    <Field Def="u8 isBreakByEnemyCollide:1">
+      <DisplayName>敵キャラ衝突で壊れるか</DisplayName>
+      <Description>敵キャラが接触したときに壊れ(0:ない, 1:る)</Description>
+      <Maximum>1</Maximum>
+      <SortID>3004</SortID>
+    </Field>
+    <Field Def="u8 isBreak_ByChrRide:1">
+      <DisplayName>キャラが乗ったら壊れるか</DisplayName>
+      <Description>キャラが乗ったら壊れるか(0:壊れるない 1:壊れる)</Description>
+      <Maximum>1</Maximum>
+      <SortID>3006</SortID>
+    </Field>
+    <Field Def="u8 isDisableBreakForFirstAppear:1">
+      <DisplayName>初期出現用破壊禁止</DisplayName>
+      <Description>プレイヤの初期出現で壊れ(0:る, 1:ない)</Description>
+      <Maximum>1</Maximum>
+      <SortID>3007</SortID>
+    </Field>
+    <Field Def="u8 isAnimBreak:1">
+      <DisplayName>アニメ破壊か</DisplayName>
+      <Description>アニメ破壊か(0:物理破壊, 1:アニメ破壊)</Description>
+      <Maximum>1</Maximum>
+      <SortID>3008</SortID>
+    </Field>
+    <Field Def="u8 isDamageCover:1">
+      <DisplayName>ダメージを遮蔽するか</DisplayName>
+      <Description>ダメージを受けたときに、そのダメージを反対側に通さないかどうか　(0:通す, 1:通さない)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="u8 isAttackBacklash:1 = 1">
+      <DisplayName>攻撃を弾くか</DisplayName>
+      <Description>攻撃を弾くか(0:弾かない, 1:弾く)</Description>
+      <Maximum>1</Maximum>
+      <SortID>2501</SortID>
+    </Field>
+    
+    <Field Def="dummy8 Reserve_2:1" RemovedVersion="11210015">
+      <DisplayName>リザーブ2</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>99999</SortID>
+    </Field>
+    
+    <Field Def="u8 unknown_0x3b_7:1" FirstVersion="11210015">
+      <DisplayName>リザーブ2</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>99999</SortID>
+    </Field>
+    
+    <Field Def="u8 isLadder:1">
+      <DisplayName>ハシゴか</DisplayName>
+      <Description>ハシゴか(0:ちがう, 1:そう)</Description>
+      <Maximum>1</Maximum>
+      <SortID>5001</SortID>
+    </Field>
+    <Field Def="u8 isMoveObj:1">
+      <DisplayName>移動オブジェか</DisplayName>
+      <Description>移動オブジェか。マルチ時の移動処理の分岐に使われるフラグです(0:ちがう, 1:そう)</Description>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 isSkydomeFlag:1">
+      <DisplayName>天球扱いか</DisplayName>
+      <Description>天球扱いの処理(プレイヤー追従など)が行われます(0:ちがう, 1:そう)</Description>
+      <Maximum>1</Maximum>
+      <SortID>1004</SortID>
+    </Field>
+    <Field Def="u8 isAnimPauseOnRemoPlay:1">
+      <DisplayName>ポリ劇中アニメを停止するか</DisplayName>
+      <Description>ポリ劇中アニメを停止するか(0:しない, 1:する)</Description>
+      <Maximum>1</Maximum>
+      <SortID>5004</SortID>
+    </Field>
+    <Field Def="u8 isBurn:1">
+      <DisplayName>燃焼するか</DisplayName>
+      <Description>燃焼するか(0:しない, 1:する)</Description>
+      <Maximum>1</Maximum>
+      <SortID>3200</SortID>
+    </Field>
+    <Field Def="u8 isEnableRepick:1">
+      <DisplayName>再収集時変化があるか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>このフラグが○なら、配置単位で再度収集するアセットでは「再収集時_***」のパラメータが使われます</Description>
+      <Maximum>1</Maximum>
+      <SortID>3110</SortID>
+    </Field>
+    <Field Def="u8 isBreakOnPickUp:1">
+      <DisplayName>収集時破壊か</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>×なら収集時にアニメ再生、○なら収集時に破壊（差し替えなど含めた全ての場合において破壊）</Description>
+      <Maximum>1</Maximum>
+      <SortID>3102</SortID>
+    </Field>
+    <Field Def="u8 isBreakByHugeenemyCollide:1">
+      <DisplayName>巨大敵衝突で壊れるか</DisplayName>
+      <Description>巨大敵が接触したときに壊れ(0:ない, 1:る)</Description>
+      <Maximum>1</Maximum>
+      <SortID>3005</SortID>
+    </Field>
+    <Field Def="u8 navimeshFlag">
+      <DisplayName>破壊前ナビメッシュフラグ</DisplayName>
+      <Enum>ASSET_NAVIMESH_FLAG</Enum>
+      <Description>破壊前のアセットから設定されるナビメッシュフラグ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="u16 burnBulletInterval = 30">
+      <DisplayName>燃焼 弾発生間隔(フレーム)</DisplayName>
+      <Description>延焼用の弾を発生する間隔(フレーム)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>9999</Maximum>
+      <SortID>3230</SortID>
+    </Field>
+    <Field Def="f32 clothUpdateDist = 30">
+      <DisplayName>クロス更新距離(m)</DisplayName>
+      <Description>havokClothの更新を行なうカメラからの距離(0:必ず更新する)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 lifeTime_forRuntimeCreate">
+      <DisplayName>ランタイム生成アセットの寿命(秒)</DisplayName>
+      <Description>ランタイム生成アセットが生成後に消滅するまでの時間 (0:消滅しない)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="s32 contactSeId = -1">
+      <DisplayName>プレイヤー接触時SE ID</DisplayName>
+      <Description>自分が操作するローカルプレイヤーが触れた際に再生するSEのID(-1:再生しない)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2405</SortID>
+    </Field>
+    <Field Def="s32 repickAnimIdOffset">
+      <DisplayName>再収集時_アニメオフセット</DisplayName>
+      <Description>「再収集時変化があるか」が○のアセットは配置単位で再収集時、この値でオフセットしたアニメIDで未収集/収集済のアニメを再生</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3120</SortID>
+    </Field>
+    <Field Def="f32 windEffectRate_0 = 0.5">
+      <DisplayName>風係数(破壊前)</DisplayName>
+      <Description>風係数(破壊前)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3502</SortID>
+    </Field>
+    <Field Def="f32 windEffectRate_1 = 0.5">
+      <DisplayName>風係数(破壊後)</DisplayName>
+      <Description>風係数(破壊後)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3503</SortID>
+    </Field>
+    <Field Def="u8 windEffectType_0">
+      <DisplayName>風影響タイプ(破壊前)</DisplayName>
+      <Enum>ASSET_WIND_EFFECT_TYPE</Enum>
+      <Description>風影響タイプ(破壊前)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>2</Maximum>
+      <SortID>3500</SortID>
+    </Field>
+    <Field Def="u8 windEffectType_1">
+      <DisplayName>風影響タイプ(破壊後)</DisplayName>
+      <Enum>ASSET_WIND_EFFECT_TYPE</Enum>
+      <Description>風影響タイプ(破壊後)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>2</Maximum>
+      <SortID>3501</SortID>
+    </Field>
+    <Field Def="s16 overrideMaterialId = -1">
+      <DisplayName>上書き材質ID</DisplayName>
+      <Description>アセットの材質ID上書き設定(-1：モデルの材質IDを上書きしない 0以上：材質ID上書き)　はしご上ではこの設定でのみ材質IDが反映されます</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>1002</SortID>
+    </Field>
+    <Field Def="f32 autoCreateOffsetHeight = 0.1">
+      <DisplayName>自動生成時の高さオフセット(m)</DisplayName>
+      <Description>マップに自動生成時にレイキャストが当たったところからどれぐらい浮かせるかの高さオフセット[m]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="f32 burnTime">
+      <DisplayName>燃焼時間(秒)</DisplayName>
+      <Description>燃焼時間(秒)(0で燃え続ける)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3201</SortID>
+    </Field>
+    <Field Def="f32 burnBraekRate = 0.5">
+      <DisplayName>燃焼 破壊判定進行度</DisplayName>
+      <Description>破壊状態に切り替わる燃焼度の閾値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3202</SortID>
+    </Field>
+    <Field Def="s32 burnSfxId = -1">
+      <DisplayName>燃焼 SFXID：0</DisplayName>
+      <Description>燃焼時のSFXID：0 (-1：SFXなし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3203</SortID>
+    </Field>
+    <Field Def="s32 burnSfxId_1 = -1">
+      <DisplayName>燃焼 SFXID：1</DisplayName>
+      <Description>燃焼時のSFXID：1 (-1：SFXなし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3204</SortID>
+    </Field>
+    <Field Def="s32 burnSfxId_2 = -1">
+      <DisplayName>燃焼 SFXID：2</DisplayName>
+      <Description>燃焼時のSFXID：2 (-1：SFXなし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3205</SortID>
+    </Field>
+    <Field Def="s32 burnSfxId_3 = -1">
+      <DisplayName>燃焼 SFXID：3</DisplayName>
+      <Description>燃焼時のSFXID：3 (-1：SFXなし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3206</SortID>
+    </Field>
+    <Field Def="f32 burnSfxDelayTimeMin">
+      <DisplayName>燃焼 SFX発生遅延 開始時間(秒)：0</DisplayName>
+      <Description>燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3210</SortID>
+    </Field>
+    <Field Def="f32 burnSfxDelayTimeMin_1">
+      <DisplayName>燃焼 SFX発生遅延 開始時間(秒)：1</DisplayName>
+      <Description>燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3211</SortID>
+    </Field>
+    <Field Def="f32 burnSfxDelayTimeMin_2">
+      <DisplayName>燃焼 SFX発生遅延 開始時間(秒)：2</DisplayName>
+      <Description>燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3212</SortID>
+    </Field>
+    <Field Def="f32 burnSfxDelayTimeMin_3">
+      <DisplayName>燃焼 SFX発生遅延 開始時間(秒)：3</DisplayName>
+      <Description>燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3213</SortID>
+    </Field>
+    <Field Def="f32 burnSfxDelayTimeMax">
+      <DisplayName>燃焼 SFX発生遅延 終了時間(秒)：0</DisplayName>
+      <Description>燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3214</SortID>
+    </Field>
+    <Field Def="f32 burnSfxDelayTimeMax_1">
+      <DisplayName>燃焼 SFX発生遅延 終了時間(秒)：1</DisplayName>
+      <Description>燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3215</SortID>
+    </Field>
+    <Field Def="f32 burnSfxDelayTimeMax_2">
+      <DisplayName>燃焼 SFX発生遅延 終了時間(秒)：2</DisplayName>
+      <Description>燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3216</SortID>
+    </Field>
+    <Field Def="f32 burnSfxDelayTimeMax_3">
+      <DisplayName>燃焼 SFX発生遅延 終了時間(秒)：3</DisplayName>
+      <Description>燃焼時のSFX発生遅延時間 開始～終了時間の間でランダムに決まる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3217</SortID>
+    </Field>
+    <Field Def="s32 burnBulletBehaviorId = -1">
+      <DisplayName>燃焼 弾発生 行動パラメータ：0</DisplayName>
+      <Description>燃焼時の弾発生行動パラメータ：0(-1:発生しない)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3220</SortID>
+    </Field>
+    <Field Def="s32 burnBulletBehaviorId_1 = -1">
+      <DisplayName>燃焼 弾発生 行動パラメータ：1</DisplayName>
+      <Description>燃焼時の弾発生行動パラメータ：1(-1:発生しない)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3221</SortID>
+    </Field>
+    <Field Def="s32 burnBulletBehaviorId_2 = -1">
+      <DisplayName>燃焼 弾発生 行動パラメータ：2</DisplayName>
+      <Description>燃焼時の弾発生行動パラメータ：2(-1:発生しない)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3222</SortID>
+    </Field>
+    <Field Def="s32 burnBulletBehaviorId_3 = -1">
+      <DisplayName>燃焼 弾発生 行動パラメータ：3</DisplayName>
+      <Description>燃焼時の弾発生行動パラメータ：3(-1:発生しない)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3223</SortID>
+    </Field>
+    <Field Def="f32 burnBulletDelayTime">
+      <DisplayName>燃焼 弾発生遅延時間(秒)</DisplayName>
+      <Description>延焼用の弾発生を遅らせる時間(秒)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3224</SortID>
+    </Field>
+    <Field Def="u16 paintDecalTargetTextureSize">
+      <DisplayName>ペイントデカールターゲットサイズ</DisplayName>
+      <Description>ペイントデカールターゲットサイズ 0：デカール無効 (0～4096 ２のべき乗 0, 2, 4, 8, … 2048 のみ有効)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4096</Maximum>
+      <Increment>128</Increment>
+      <SortID>1003</SortID>
+    </Field>
+    <Field Def="u8 navimeshFlag_after">
+      <DisplayName>破壊後ナビメッシュフラグ</DisplayName>
+      <Enum>ASSET_NAVIMESH_FLAG</Enum>
+      <Description>破壊後のアセットから設定されるナビメッシュフラグ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>6005</SortID>
+    </Field>
+    <Field Def="s8 camNearBehaviorType">
+      <DisplayName>カメラ接近時描画</DisplayName>
+      <Enum>ASSET_CAM_NEAR_BEHAVIOR_TYPE</Enum>
+      <Description>カメラ接近時の描画設定。【GR】SEQ07529</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="s32 breakItemLotParamId = -1">
+      <DisplayName>破壊時_アイテム抽選ID_マップ用</DisplayName>
+      <Description>破壊時に抽選させるアイテム抽選ID_マップ用　-1：抽選しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3060</SortID>
+    </Field>
+    <Field Def="s32 pickUpActionButtonParamId = -1">
+      <DisplayName>収集時_アクションボタンID</DisplayName>
+      <Description>収集で出すアクションボタンID　-1：収集機能は無効</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="s32 pickUpItemLotParamId = -1">
+      <DisplayName>収集時_アイテム抽選ID_マップ用</DisplayName>
+      <Description>収集時に抽選させるアイテム抽選ID_マップ用　-1：収集機能は無効</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3101</SortID>
+    </Field>
+    <Field Def="u8 autoDrawGroupBackFaceCheck">
+      <DisplayName>自動描画グループ_裏面チェック</DisplayName>
+      <Enum>ASSET_AUTO_DRAW_GROUP_BACKFACE_CHECK_TYPE</Enum>
+      <Description>自動描画グループ_裏面チェック</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>2</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="u8 autoDrawGroupDepthWrite">
+      <DisplayName>自動描画グループ_遮蔽</DisplayName>
+      <Enum>ASSET_AUTO_DRAW_GROUP_DEPTH_WRITE_TYPE</Enum>
+      <Description>自動描画グループ_遮蔽</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>2</Maximum>
+      <SortID>8010</SortID>
+    </Field>
+    <Field Def="u8 autoDrawGroupShadowTest">
+      <DisplayName>自動描画グループ_影テスト</DisplayName>
+      <Enum>ASSET_AUTO_DRAW_GROUP_SHADOW_TEST_TYPE</Enum>
+      <Description>自動描画グループ_影テスト</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>2</Maximum>
+      <SortID>8030</SortID>
+    </Field>
+    <Field Def="u8 debug_isHeightCheckEnable">
+      <DisplayName>デバッグ_許容地面高さチェック</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>デバッグ_許容地面高さチェック 詳細はSEQ07876参照</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="u8 hitCarverCancelAreaFlag">
+      <DisplayName>床下ナビメッシュ切り抜き対象外</DisplayName>
+      <Enum>HIT_CARVER_CANCEL_AREA_FLAG</Enum>
+      <Description>床（地面）のヒットより低い位置に配置された場合、床下ナビメッシュ削除対象から外すかを設定すること ツールから参照</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6010</SortID>
+    </Field>
+    <Field Def="u8 assetNavimeshNoCombine">
+      <DisplayName>ナビメッシュ結合制御</DisplayName>
+      <Enum>ASSET_NAVIMESH_GENERATE_ATTRIBUTE</Enum>
+      <Description>設定されたアセットが、ナビメッシュビルド時に、ヒットパーツの結合対象から除外される</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>6020</SortID>
+    </Field>
+    <Field Def="u8 navimeshFlagApply">
+      <DisplayName>ナビメッシュフラグ適用先</DisplayName>
+      <Enum>ASSET_NAVIMESH_FLAG_APPLY_TYPE</Enum>
+      <Description>アセットから設定されるナビメッシュフラグの適用先</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>6001</SortID>
+    </Field>
+    <Field Def="u8 navimeshFlagApply_after">
+      <DisplayName>破壊後ナビメッシュフラグ適用先</DisplayName>
+      <Enum>ASSET_NAVIMESH_FLAG_APPLY_TYPE</Enum>
+      <Description>破壊後のアセットから設定されるナビメッシュフラグの適用先</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>6006</SortID>
+    </Field>
+    <Field Def="f32 autoDrawGroupPassPixelNum = -1">
+      <DisplayName>自動描画グループ_合格ピクセル</DisplayName>
+      <Description>自動描画グループ_合格ピクセル（0.0～1.0に設定することで撮影時に拡大される）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>32767</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8020</SortID>
+    </Field>
+    <Field Def="u32 pickUpReplacementEventFlag">
+      <DisplayName>収集時_差し替えフラグ条件</DisplayName>
+      <Description>このイベントフラグがONの時は後続の差し替えのIDを使う　0：常に差し替えない</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>3130</SortID>
+    </Field>
+    <Field Def="s32 pickUpReplacementAnimIdOffset">
+      <DisplayName>収集時_差し替えアニメオフセット</DisplayName>
+      <Description>「収集時_差し替えフラグ条件」がONの時、この値でオフセットしたアニメIDで未収集/収集済のアニメを再生</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3131</SortID>
+    </Field>
+    <Field Def="s32 pickUpReplacementActionButtonParamId = -1">
+      <DisplayName>収集時_差し替えアクションボタンID</DisplayName>
+      <Description>「収集時_差し替えフラグ条件」がONの時、このアクションボタンIDが使われる</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3132</SortID>
+    </Field>
+    <Field Def="s32 pickUpReplacementItemLotParamId = -1">
+      <DisplayName>収集時_差し替えアイテム抽選ID_マップ用</DisplayName>
+      <Description>「収集時_差し替えフラグ条件」がONの時、このアイテム抽選ID_マップ用が使われる</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3133</SortID>
+    </Field>
+    <Field Def="u8 slidingBulletHitType">
+      <DisplayName>地面を這う弾丸の着弾時の挙動</DisplayName>
+      <Enum>ASSET_SLIDING_BULLET_HIT_TYPE</Enum>
+      <Description>追従タイプ「衝突しても地面を這う」の弾丸がアセットに衝突した際、着弾地点に沿う方向に曲げるか？の挙動</Description>
+      <Maximum>2</Maximum>
+      <SortID>2504</SortID>
+    </Field>
+    <Field Def="u8 isBushesForDamage">
+      <DisplayName>茂みダメージで壊れるか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>◯のアセットは、 「茂みにダメージ可」◯  かつ 「オブジェ攻撃力 ＞ 防御力」の攻撃のみ、ダメージが通るようになります【GR】SEQ20617</Description>
+      <Maximum>1</Maximum>
+      <SortID>3002</SortID>
+    </Field>
+    <Field Def="u8 penetrationBulletType">
+      <DisplayName>弾丸貫通タイプ</DisplayName>
+      <Enum>ASSET_PENETRATION_BULLET_TYPE</Enum>
+      <Description>弾丸がヒットして着弾するか？を決める時に、どの弾丸パラを参照するか？を決める値。</Description>
+      <Maximum>4</Maximum>
+      <SortID>2502</SortID>
+    </Field>
+    <Field Def="u8 unkR3">
+      <DisplayName>リザーブ3</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="f32 unkR4">
+      <DisplayName>リザーブ4</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="s32 soundBreakSECpId = -1">
+      <DisplayName>破壊音ダミポリID</DisplayName>
+      <Description>破壊音を再生する場所のダミポリID (-1:配置位置)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2402</SortID>
+    </Field>
+    <Field Def="f32 debug_HeightCheckCapacityMin = -99">
+      <DisplayName>デバッグ_許容地面高さ_最小[m]</DisplayName>
+      <Description>デバッグ_許容地面高さ_最小[m] 詳細はSEQ07876参照　最大より小さい必要あり</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>9001</SortID>
+    </Field>
+    <Field Def="f32 debug_HeightCheckCapacityMax = 99">
+      <DisplayName>デバッグ_許容地面高さ_最大[m]</DisplayName>
+      <Description>デバッグ_許容地面高さ_最大[m] 詳細はSEQ07876参照　最小より大きい必要あり</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>9002</SortID>
+    </Field>
+    <Field Def="s32 repickActionButtonParamId = -1">
+      <DisplayName>再収集時_アクションボタンID</DisplayName>
+      <Description>「再収集時変化があるか」が○のアセットは配置単位で再収集時、このアクションボタンIDが使われる</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3121</SortID>
+    </Field>
+    <Field Def="s32 repickItemLotParamId = -1">
+      <DisplayName>再収集時_アイテム抽選ID_マップ用</DisplayName>
+      <Description>「再収集時変化があるか」が○のアセットは配置単位で再収集時、このアイテム抽選ID_マップ用が使われる</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3122</SortID>
+    </Field>
+    <Field Def="s32 repickReplacementAnimIdOffset">
+      <DisplayName>再収集時_差し替えアニメオフセット</DisplayName>
+      <Description>「再収集時変化があるか」が○のアセットは配置単位で再収集時、「収集時_差し替えアニメオフセット」の代わりにこのパラメータを使う</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3140</SortID>
+    </Field>
+    <Field Def="s32 repickReplacementActionButtonParamId = -1">
+      <DisplayName>再収集時_差し替えアクションボタンID</DisplayName>
+      <Description>「再収集時変化があるか」が○のアセットは配置単位で再収集時、「収集時_差し替えアクションボタンID」の代わりにこのパラメータを使う</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3141</SortID>
+    </Field>
+    <Field Def="s32 repickReplacementItemLotParamId = -1">
+      <DisplayName>再収集時_差し替えアイテム抽選ID_マップ用</DisplayName>
+      <Description>「再収集時変化があるか」が○のアセットは配置単位で再収集時、「収集時_差し替えアイテム抽選ID_マップ用」の代わりにこのパラメータを使う</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3142</SortID>
+    </Field>
+    <Field Def="u8 noGenerateCarver">
+      <DisplayName>ナビメッシュ地形内判定無効化</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>これが設定されたAssetはCarverを作らない</Description>
+      <Maximum>1</Maximum>
+      <SortID>6009</SortID>
+    </Field>
+    <Field Def="u8 noHitHugeAfterBreak">
+      <DisplayName>破壊後に巨大敵に当たらない</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>破壊後のヒットフィルタを衝突判定タイプ巨大敵に当たらない（静○動○）相当のもので上書きする</Description>
+      <Maximum>1</Maximum>
+      <SortID>6007</SortID>
+    </Field>
+    <Field Def="u8 isEnabledBreakSync:1 = 1">
+      <DisplayName>破壊を同期するか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>これが×の場合は初期同期,マップアクティベート同期,インゲーム中のアセット破壊同期を行わないようにし、リモートPCの攻撃が当たらなくなる</Description>
+      <Maximum>1</Maximum>
+      <SortID>3007</SortID>
+    </Field>
+    <Field Def="u8 isHiddenOnRepick:1">
+      <DisplayName>再収集時_非表示</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>配置単位で再収集時にアイテム抽選的に取れなければアセットを非表示にします</Description>
+      <Maximum>1</Maximum>
+      <SortID>3111</SortID>
+    </Field>
+    <Field Def="u8 isCreateMultiPlayOnly:1">
+      <DisplayName>マルチ中のみ有効か(動的のみ)</DisplayName>
+      <Description>マルチ中のみ有効か。動的アセットのみ有効。(詳細：SEQ15087)</Description>
+      <Maximum>1</Maximum>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="u8 isDisableBulletHitSfx:1">
+      <DisplayName>弾丸の着弾SFXを発生しない</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○の場合、当たった弾丸が貫通しようと着弾しようと着弾SFXは発生しない</Description>
+      <Maximum>1</Maximum>
+      <SortID>2503</SortID>
+    </Field>
+    <Field Def="u8 isEnableSignPreBreak:1 = 1">
+      <DisplayName>サイン／血文字作成可能か(アセット破壊前) </DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>アセット上にいるときサイン/血文字の作成可能かを設定する(破壊前)〇：可能、×：不可能(詳細：SEQ122568)</Description>
+      <Maximum>1</Maximum>
+      <SortID>4101</SortID>
+    </Field>
+    <Field Def="u8 isEnableSignPostBreak:1 = 1">
+      <DisplayName>サイン／血文字作成可能か(アセット破壊後) </DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>アセット上にいるときサイン/血文字の作成可能かを設定する(破壊後)〇：可能、×：不可能(詳細：SEQ122568)</Description>
+      <Maximum>1</Maximum>
+      <SortID>4102</SortID>
+    </Field>
+    <Field Def="u8 unkR1:2">
+      <DisplayName>リザーブ1</DisplayName>
+      <SortID>100000</SortID>
+    </Field>
+    <Field Def="u8 generateMultiForbiddenRegion">
+      <DisplayName>召喚禁止/侵入禁止領域生成（ダミポリ）</DisplayName>
+      <Enum>MULTI_FORBIDDEN_REGION_GENERATE_ATTRIBUTE</Enum>
+      <Description>召喚禁止/侵入禁止領域生成（ダミポリ）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="s32 residentSeId0 = -1">
+      <DisplayName>常駐SEID0</DisplayName>
+      <Description>アセットに常駐させるサウンドID0(9桁) (-1:常駐なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2405</SortID>
+    </Field>
+    <Field Def="s32 residentSeId1 = -1">
+      <DisplayName>常駐SEID1</DisplayName>
+      <Description>アセットに常駐させるサウンドID1(9桁) (-1:常駐なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2407</SortID>
+    </Field>
+    <Field Def="s32 residentSeId2 = -1">
+      <DisplayName>常駐SEID2</DisplayName>
+      <Description>アセットに常駐させるサウンドID2(9桁) (-1:常駐なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2409</SortID>
+    </Field>
+    <Field Def="s32 residentSeId3 = -1">
+      <DisplayName>常駐SEID3</DisplayName>
+      <Description>アセットに常駐させるサウンドID3(9桁) (-1:常駐なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2411</SortID>
+    </Field>
+    <Field Def="s16 residentSeDmypolyId0 = -1">
+      <DisplayName>常駐SEダミポリID0</DisplayName>
+      <Description>常駐サウンドをアタッチするダミポリID0 (-1:配置位置)</Description>
+      <Minimum>-1</Minimum>
+      <SortID>2406</SortID>
+    </Field>
+    <Field Def="s16 residentSeDmypolyId1 = -1">
+      <DisplayName>常駐SEダミポリID1</DisplayName>
+      <Description>常駐サウンドをアタッチするダミポリID1 (-1:配置位置)</Description>
+      <Minimum>-1</Minimum>
+      <SortID>2408</SortID>
+    </Field>
+    <Field Def="s16 residentSeDmypolyId2 = -1">
+      <DisplayName>常駐SEダミポリID2</DisplayName>
+      <Description>常駐サウンドをアタッチするダミポリID2 (-1:配置位置)</Description>
+      <Minimum>-1</Minimum>
+      <SortID>2410</SortID>
+    </Field>
+    <Field Def="s16 residentSeDmypolyId3 = -1">
+      <DisplayName>常駐SEダミポリID3</DisplayName>
+      <Description>常駐サウンドをアタッチするダミポリID3 (-1:配置位置)</Description>
+      <Minimum>-1</Minimum>
+      <SortID>2412</SortID>
+    </Field>
+    <Field Def="u8 excludeActivateRatio_Xboxone_Grid">
+      <DisplayName>オープン_XB1除外割合</DisplayName>
+      <Enum>ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE</Enum>
+      <Description>オープン_XB1除外割合【GR】SEQ25310</Description>
+    </Field>
+    <Field Def="u8 excludeActivateRatio_Xboxone_Legacy">
+      <DisplayName>レガシー_XB1除外割合</DisplayName>
+      <Enum>ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE</Enum>
+      <Description>レガシー_XB1除外割合【GR】SEQ25310</Description>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 excludeActivateRatio_PS4_Grid">
+      <DisplayName>オープン_PS4除外割合</DisplayName>
+      <Enum>ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE</Enum>
+      <Description>オープン_PS4除外割合【GR】SEQ25310</Description>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 excludeActivateRatio_PS4_Legacy">
+      <DisplayName>レガシー_PS4除外割合</DisplayName>
+      <Enum>ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE</Enum>
+      <Description>レガシー_PS4除外割合【GR】SEQ25310</Description>
+      <SortID>3</SortID>
+    </Field>
+    
+    <Field Def="dummy8 Reserve_0_old[32]" RemovedVersion="11210015" >
+      <DisplayName>リザーブ0</DisplayName>
+      <Description>リザーブ0</Description>
+      <SortID>99999</SortID>
+    </Field>
+    
+    <Field Def="u8 unknown_0x120" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x121" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x122" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x123" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x124" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x125" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 Reserve_0[26]" FirstVersion="11210015">
+      <DisplayName>リザーブ0</DisplayName>
+      <Description>リザーブ0</Description>
+      <SortID>99999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

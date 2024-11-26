@@ -1,0 +1,28 @@
+0 test -- テスト
+10 test -- テスト
+3020000 Permanently resident -- 常駐
+3050000 Permanently resident -- 常駐
+3100000 Permanently resident -- 常駐
+31500000 Permanently resident -- 常駐
+31500001 Permanently resident -- 常駐
+31500002 Permanently resident -- 常駐
+31500003 Permanently resident -- 常駐
+3200000 Permanently resident -- 常駐
+3400000 Permanently resident -- 常駐
+3700000 Permanently resident -- 常駐
+3700001 Permanently resident -- 常駐
+5020000 Permanently resident -- 常駐
+5500000 Permanently resident -- 常駐
+21080000 Hecatoncheir torso test -- ヘカトンケイル胴体テスト
+21080001 Hecatoncheir torso test -- ヘカトンケイル胴体テスト
+21080002 Hecatoncheir torso test -- ヘカトンケイル胴体テスト
+21400000 Shoulder weapon attachment for dummy poly -- 肩武器アタッチダミポリ用
+39100000 bipedal arm test -- 2脚腕テスト
+39100001 bipedal arm test -- 2脚腕テスト
+47510000 cuban tank -- キューバタンク
+49100000 Bipod foot test -- 2脚足テスト
+49100001 Bipod foot test -- 2脚足テスト
+49100002 Bipod foot test -- 2脚足テスト
+49100003 Bipod foot test -- 2脚足テスト
+63370000 sea ​​spider main gun -- ウミグモ主砲
+66190000 construction machine spider shield -- 建機クモシールド

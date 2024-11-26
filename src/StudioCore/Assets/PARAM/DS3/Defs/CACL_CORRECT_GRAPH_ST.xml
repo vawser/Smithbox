@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CACL_CORRECT_GRAPH_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 stageMaxVal0" />
+    <Field Def="f32 stageMaxVal1" />
+    <Field Def="f32 stageMaxVal2" />
+    <Field Def="f32 stageMaxVal3" />
+    <Field Def="f32 stageMaxVal4" />
+    <Field Def="f32 stageMaxGrowVal0" />
+    <Field Def="f32 stageMaxGrowVal1" />
+    <Field Def="f32 stageMaxGrowVal2" />
+    <Field Def="f32 stageMaxGrowVal3" />
+    <Field Def="f32 stageMaxGrowVal4" />
+    <Field Def="f32 adjPt_maxGrowVal0" />
+    <Field Def="f32 adjPt_maxGrowVal1" />
+    <Field Def="f32 adjPt_maxGrowVal2" />
+    <Field Def="f32 adjPt_maxGrowVal3" />
+    <Field Def="f32 adjPt_maxGrowVal4" />
+    <Field Def="f32 init_inclination_soul" />
+    <Field Def="f32 adjustment_value" />
+    <Field Def="f32 boundry_inclination_soul" />
+    <Field Def="f32 boundry_value" />
+    <Field Def="dummy8 pad1[4]" />
+  </Fields>
+</PARAMDEF>

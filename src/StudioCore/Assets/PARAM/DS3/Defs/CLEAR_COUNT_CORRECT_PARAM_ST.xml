@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CLEAR_COUNT_CORRECT_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 HP" />
+    <Field Def="f32 Mana" />
+    <Field Def="f32 Stamina" />
+    <Field Def="f32 PhysDmg" />
+    <Field Def="f32 slashDmg" />
+    <Field Def="f32 blowDmg" />
+    <Field Def="f32 thrustDmg" />
+    <Field Def="f32 neutral" />
+    <Field Def="f32 MagicDmg" />
+    <Field Def="f32 FireDmg" />
+    <Field Def="f32 ThunderDmg" />
+    <Field Def="f32 DarkDmg" />
+    <Field Def="f32 PhysResist" />
+    <Field Def="f32 MagicResist" />
+    <Field Def="f32 FireResist" />
+    <Field Def="f32 ThunderResist" />
+    <Field Def="f32 DarkResist" />
+    <Field Def="f32 StaminaDmg" />
+    <Field Def="f32 MpRecover" />
+    <Field Def="f32 PoisonResist" />
+    <Field Def="f32 ToxicResist" />
+    <Field Def="f32 BleedResist" />
+    <Field Def="f32 CurseResist" />
+    <Field Def="f32 FrostResist" />
+    <Field Def="f32 HpRecover" />
+    <Field Def="f32 subMpRecover" />
+    <Field Def="f32 subHpRecover" />
+    <Field Def="dummy8 pad1[20]" />
+  </Fields>
+</PARAMDEF>

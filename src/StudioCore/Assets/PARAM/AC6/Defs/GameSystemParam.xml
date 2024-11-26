@@ -1,0 +1,1619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GAME_SYSTEM_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 BaseToughnessRecoverTime = 30">
+      <DisplayName>基本強靭度耐久値回復時間</DisplayName>
+      <Description>強靭度回復時間の基本値です。（秒）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 ChrEventTrun_byLeft90 = 26001">
+      <DisplayName>キャラのイベント旋回アニメーション（左90°）</DisplayName>
+      <Description>「キャラの旋回」イベント用の左90°旋回アニメーションです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s32 ChrEventTrun_byRight90 = 26011">
+      <DisplayName>キャラのイベント旋回アニメーション（右90°）</DisplayName>
+      <Description>「キャラの旋回」イベント用の右90°旋回アニメーションです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s32 ChrEventTrun_byLeft180 = 26021">
+      <DisplayName>キャラのイベント旋回アニメーション（左180°）</DisplayName>
+      <Description>「キャラの旋回」イベント用の左180°旋回アニメーションです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s32 ChrEventTrun_byRight180 = 26031">
+      <DisplayName>キャラのイベント旋回アニメーション（右180°）</DisplayName>
+      <Description>「キャラの旋回」イベント用の右180°旋回アニメーションです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="s16 ChrEventTrun_90TurnStartAngle = 40">
+      <DisplayName>キャラのイベント旋回90°アニメーション開始角度</DisplayName>
+      <Description>「キャラの旋回」イベント用の90°旋回アニメーションを適用する角度の開始角度。この角度より小さい角度でイベントが始まった場合は、システム旋回が行われます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="s16 ChrEventTrun_180TurnStartAngle = 110">
+      <DisplayName>キャラのイベント旋回180°アニメーション開始角度</DisplayName>
+      <Description>「キャラの旋回」イベント用の180°旋回アニメーションを適用する角度の開始角度。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="s32 DeptDeceasedItemId = 490">
+      <DisplayName>負債亡者度アイテムId</DisplayName>
+      <Description>負債亡者度の判定用アイテムのID。０以下だと無効値として負債を扱いません</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="f32 FlickDamageCutRateSuccessGurad = 0.5">
+      <DisplayName>はじかれ時ガード成功時ダメージカット率</DisplayName>
+      <Description>はじかれ時ガード成功時ダメージカット率。最終ダメージに乗算</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="f32 NpcTalkAnimBeginDiffAngle = 180">
+      <DisplayName>NPC会話のアニメ再生開始する差分角度</DisplayName>
+      <Description>NPC会話の会話中モーションのアニメ再生開始する差分角度です。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 NpcTalkAnimEndDiffAngle = 180">
+      <DisplayName>NPC会話のアニメ再生停止する差分角度</DisplayName>
+      <Description>NPC会話の会話中モーションのアニメ再生停止する差分角度です。</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_Optional">
+      <DisplayName>儀式死体化時特殊効果_任意</DisplayName>
+      <Description>プレイヤーが装備している儀式剣から決定する儀式死体のときの特殊効果。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_LevelUp">
+      <DisplayName>儀式死体化時特殊効果_レベルアップ</DisplayName>
+      <Description>レベルアップ儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_StatusReroll">
+      <DisplayName>儀式死体化時特殊効果_ステータス振りなおし</DisplayName>
+      <Description>ステータス振りなおし儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>140</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_DeadLevelReset">
+      <DisplayName>儀式死体化時特殊効果_亡者度リセット</DisplayName>
+      <Description>亡者度リセット儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_Atonement">
+      <DisplayName>儀式死体化時特殊効果_贖罪</DisplayName>
+      <Description>贖罪儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_NpcWhiteGhost">
+      <DisplayName>儀式死体化時特殊効果_NPC白霊召喚</DisplayName>
+      <Description>NPC白霊召喚儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>170</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_Bomb">
+      <DisplayName>儀式死体化時特殊効果_ボム</DisplayName>
+      <Description>ボム儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>180</SortID>
+    </Field>
+    <Field Def="s32 CultDeadSpEffectId_NoInvasion">
+      <DisplayName>儀式死体化時特殊効果_侵入禁止</DisplayName>
+      <Description>侵入禁止儀式死体のときの特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>190</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_LevelUp">
+      <DisplayName>レベルアップ儀式剣のId</DisplayName>
+      <Description>レベルアップ儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_StatusReroll">
+      <DisplayName>ステータス振りなおし儀式剣のId</DisplayName>
+      <Description>ステータス振りなおし儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_DeadLevelReset">
+      <DisplayName>亡者度リセット儀式剣のId</DisplayName>
+      <Description>亡者度リセット儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_Atonement">
+      <DisplayName>贖罪儀式剣のId</DisplayName>
+      <Description>贖罪儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_NpcWhiteGhost">
+      <DisplayName>NPC白霊召喚儀式剣のId</DisplayName>
+      <Description>NPC白霊召喚儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>240</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_Bomb">
+      <DisplayName>ボム儀式剣のId</DisplayName>
+      <Description>ボム儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="s32 CultSwordItemId_NoInvasion">
+      <DisplayName>侵入禁止儀式剣のId</DisplayName>
+      <Description>侵入禁止儀式に対応する儀式剣の道具ParamId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>260</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_LevelUp">
+      <DisplayName>レベルアップ儀式不可能ダイアログId</DisplayName>
+      <Description>レベルアップ儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>270</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_StatusReroll">
+      <DisplayName>ステータス振りなおし儀式不可能ダイアログId</DisplayName>
+      <Description>ステータス振りなおし儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>280</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_DeadLevelReset">
+      <DisplayName>亡者度リセット儀式不可能ダイアログId</DisplayName>
+      <Description>亡者度リセット儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>290</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_Atonement">
+      <DisplayName>贖罪儀式不可能ダイアログId</DisplayName>
+      <Description>贖罪儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_NpcWhiteGhost_MaxChr">
+      <DisplayName>NPC白霊召喚（空席なし）儀式不可能ダイアログId</DisplayName>
+      <Description>NPC白霊召喚（空席なし）儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_NpcWhiteGhost_AreaOut">
+      <DisplayName>NPC白霊召喚（エリア外）儀式不可能ダイアログId</DisplayName>
+      <Description>NPC白霊召喚（エリア外）儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>320</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_NpcWhiteGhost_AreaClear">
+      <DisplayName>NPC白霊召喚（攻略済み）儀式不可能ダイアログId</DisplayName>
+      <Description>NPC白霊召喚（攻略済み）儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>330</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_Bomb">
+      <DisplayName>ボム儀式不可能ダイアログId</DisplayName>
+      <Description>ボム儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>340</SortID>
+    </Field>
+    <Field Def="s32 ImpossibleCultDialogId_NoInvasion">
+      <DisplayName>侵入禁止儀式不可能ダイアログId</DisplayName>
+      <Description>侵入禁止儀式が不可能な時に出るダイアログId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="s32 AcquittalTargetNpcEventFlagId">
+      <DisplayName>免罪対象になるNPCがいるか？イベントフラグId</DisplayName>
+      <Description>免罪対象になるNPCがいるかを持つイベントフラグId</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>360</SortID>
+    </Field>
+    <Field Def="s32 ActiveCultAtonementEventFlagId">
+      <DisplayName>贖罪イベント起動イベントフラグId</DisplayName>
+      <Description>贖罪儀式を行ったことをイベントに通知するためのイベントフラグID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>370</SortID>
+    </Field>
+    <Field Def="s32 RecoverBelowMaxHpCompletionNoticeSpEffectId = 29">
+      <DisplayName>「HP最大以下で回復」特殊効果完了通知特殊効果ID</DisplayName>
+      <Description>「HP最大以下で回復」が完了したことを通知する特殊効果のID。主にマルチの同期用に使われる。 </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>380</SortID>
+    </Field>
+    <Field Def="s32 EstusFlaskRecovery_AbsorptionProductionSfxId_byHp = 30200">
+      <DisplayName>HPエスト吸収演出SFXID</DisplayName>
+      <Description>侵入者撃破時などにHPエスト瓶の使用回数を回復する際の吸収演出SFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>390</SortID>
+    </Field>
+    <Field Def="s32 EstusFlaskRecovery_AbsorptionProductionSfxId_byMp = 30200">
+      <DisplayName>MPエスト吸収演出SFXID</DisplayName>
+      <Description>侵入者撃破時などにMPエスト瓶の使用回数を回復する際の吸収演出SFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s32 RespawnSpecialEffectActiveCheckerSpEffectId = 103520100">
+      <DisplayName>復活特殊効果発動判定用特殊効果ID</DisplayName>
+      <Description>復活特殊効果が発動したことを通知する特殊効果のID。主にマルチの同期用に使われる。 </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="f32 DefeatHostilityGhostOfSoulCorrectRate_byHost = 0.375">
+      <DisplayName>敵対霊撃破時取得ソウル補正値_ホスト</DisplayName>
+      <Description>マルチプレイで敵対霊を撃破した時のホストの取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>420</SortID>
+    </Field>
+    <Field Def="f32 DefeatHostilityGhostOfSoulCorrectRate_byTeamGhost = 0.125">
+      <DisplayName>敵対霊撃破時取得ソウル補正値_協力霊</DisplayName>
+      <Description>マルチプレイで敵対霊を撃破した時の協力霊の取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="f32 DefeatMultiModeEnemyOfSoulCorrectRate_byHost = 1">
+      <DisplayName>マルチ時エネミー撃破時取得ソウル補正値_ホスト</DisplayName>
+      <Description>マルチプレイで通常敵を撃破した時のホストの取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>440</SortID>
+    </Field>
+    <Field Def="f32 DefeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost = 1">
+      <DisplayName>マルチ時エネミー撃破時取得ソウル補正値_協力霊</DisplayName>
+      <Description>マルチプレイで通常敵を撃破した時の協力霊の取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>450</SortID>
+    </Field>
+    <Field Def="f32 DefeatMultiModeBossOfSoulCorrectRate_byHost = 0.75">
+      <DisplayName>マルチ時ボス撃破時取得ソウル補正値_ホスト</DisplayName>
+      <Description>マルチプレイでボスを撃破した時のホストの取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>460</SortID>
+    </Field>
+    <Field Def="f32 DefeatMultiModeBossOfSoulCorrectRate_byTeamGhost = 0.25">
+      <DisplayName>マルチ時ボス撃破時取得ソウル補正値_協力霊</DisplayName>
+      <Description>マルチプレイでボスを撃破した時の協力霊の取得ソウル量の補正値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>470</SortID>
+    </Field>
+    <Field Def="u16 EnemyHpGaugeScreenOffset_byUp = 130">
+      <DisplayName>敵キャラのHPゲージが画面上に見切れないようにするためのオフセット</DisplayName>
+      <Description>敵のHPゲージが画面上に見切れた時に画面内に収めるオフセット値[pixel]（FullHD基準）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>480</SortID>
+    </Field>
+    <Field Def="s16 pad_01">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9999999</SortID>
+    </Field>
+    <Field Def="u16 EnemyDetectionSpEffect_ShootBulletDummypolyId = 1">
+      <DisplayName>「敵探知」時弾丸発射位置ダミポリID</DisplayName>
+      <Description>探知弾丸の発射位置ダミポリID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="u16 EnemyDetectionSpEffect_MaxDetectionNum = 5">
+      <DisplayName>「敵探知」時最大探知数 </DisplayName>
+      <Description>同時に探知出来る敵の最大数（飛ばす弾丸の上限）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>510</SortID>
+    </Field>
+    <Field Def="f32 EnemyDetectionSpEffect_MaxDetectionLength = 1000">
+      <DisplayName>「敵探知」時最大探知距離</DisplayName>
+      <Description>探知可能な最大距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>520</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopHost = 1002">
+      <DisplayName>「敵探知」時発射弾丸ID_協力ホスト</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>530</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopSign_None = 1002">
+      <DisplayName>「敵探知」時発射弾丸ID_協力サイン_なし</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>540</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopSign_Umbasa = 1002">
+      <DisplayName>「敵探知」時発射弾丸ID_協力サイン_太陽</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>550</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopSign_Berserker = 1001">
+      <DisplayName>「敵探知」時発射弾丸ID_協力サイン_バーサーカー</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>560</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopSign_Sinners = 1003">
+      <DisplayName>「敵探知」時発射弾丸ID_協力サイン_罪人</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>570</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byCoopRing_RedHunter = 1000">
+      <DisplayName>「敵探知」時発射弾丸ID_協力指輪_赤狩り</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>580</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeOrb_None = 1000">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入オーブ_なし</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>590</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeOrb_Umbasa = 1001">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入オーブ_太陽</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeOrb_Berserker = 1001">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入オーブ_バーサーカー</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>610</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeOrb_Sinners = 1003">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入オーブ_罪人</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>620</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeSign_None = 1001">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入サイン_なし</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>630</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeSign_Umbasa = 1001">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入サイン_太陽</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>640</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeSign_Berserker = 1001">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入サイン_バーサーカー</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>650</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeSign_Sinners = 1003">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入サイン_罪人</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>660</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeRing_Sinners = 1003">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入指輪_罪人</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>670</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfBoss = 1001">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入指輪_ボス守護者</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>680</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfMap = 1001">
+      <DisplayName>「敵探知」時発射弾丸ID_侵入指輪_マップ守護者</DisplayName>
+      <Description>敵の勢力/タイプによって飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>690</SortID>
+    </Field>
+    <Field Def="s32 ActivityOfDeadSpEffect_BulletId = 13700100">
+      <DisplayName>「死者の活性」特殊効果発動時弾丸ID</DisplayName>
+      <Description>「死者の活性」特殊効果が発動したときに発射する弾丸ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="s32 ActivityOfDeadSpEffect_ShootBulletDummypolyId = 5">
+      <DisplayName>「死者の活性」特殊効果発動時弾丸発生位置ダミポリID</DisplayName>
+      <Description>「死者の活性」特殊効果が発動したときに弾丸が発生する位置のダミポリID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>710</SortID>
+    </Field>
+    <Field Def="f32 ActivityOfDeadSpEffect_DeadFadeOutTime = 0.5">
+      <DisplayName>「死者の活性」特殊効果発動時の死体のフェードアウト時間</DisplayName>
+      <Description>「死者の活性」特殊効果が発動したときに死体がフェードアウトする際のフェード時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>720</SortID>
+    </Field>
+    <Field Def="f32 IgnorNetStateSyncTime_ForThrow = 0.3">
+      <DisplayName>投げ開始時のネットワーク情報による遷移を無視する時間</DisplayName>
+      <Description>投げ開始時のネットワーク情報による遷移を無視する時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>730</SortID>
+    </Field>
+    <Field Def="u16 NetPenaltyPointLanDisconnect = 10">
+      <DisplayName>マルチプレペナルティ：LAN切断</DisplayName>
+      <Description>マルチプレペナルティ：LAN切断</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>740</SortID>
+    </Field>
+    <Field Def="u16 NetPenaltyPointProfileSignout = 10">
+      <DisplayName>マルチプレペナルティ：プロフィールサインアウト</DisplayName>
+      <Description>マルチプレペナルティ：プロフィールサインアウト</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>750</SortID>
+    </Field>
+    <Field Def="u16 NetPenaltyPointReboot = 10">
+      <DisplayName>マルチプレペナルティ：電源断</DisplayName>
+      <Description>マルチプレペナルティ：電源断</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>760</SortID>
+    </Field>
+    <Field Def="u16 NetPnaltyPointSuspend = 10">
+      <DisplayName>マルチプレペナルティ：サスペンド・一時停止</DisplayName>
+      <Description>マルチプレペナルティ：サスペンド・一時停止</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>770</SortID>
+    </Field>
+    <Field Def="f32 NetPenaltyForgiveItemLimitTime = 36000">
+      <DisplayName>マルチプレペナルティ：理の骨の生成（販売）開始待ち時間</DisplayName>
+      <Description>マルチプレペナルティ：理の骨の生成（販売）開始待ち時間(秒)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>1</Increment>
+      <SortID>780</SortID>
+    </Field>
+    <Field Def="u16 NetPenaltyPointThreshold = 100">
+      <DisplayName>マルチプレペナルティ：ペナルティ判定ポイント</DisplayName>
+      <Description>マルチプレペナルティ：ペナルティ判定ポイント</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10000</Maximum>
+      <SortID>790</SortID>
+    </Field>
+    <Field Def="u16 UncontrolledMoveThresholdTime = 180">
+      <DisplayName>未操作判定時間</DisplayName>
+      <Description>マルチで一定期間操作ない人を退出させるためのもの。単位は秒。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="s32 EnemyDetectionSpEffect_BulletId_byNpcEnemy = 1000">
+      <DisplayName>「敵探知」時発射弾丸ID_敵対NPC/敵キャラ</DisplayName>
+      <Description>敵意の探知に失敗したときに敵対NPC/敵キャラに飛ばす弾丸のID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>810</SortID>
+    </Field>
+    <Field Def="s32 ActivityOfDeadTargetSearchSpEffect_OnHitSpEffect = 103700100">
+      <DisplayName>「死者の活性ターゲット検索」対象にかける特殊効果ID </DisplayName>
+      <Description>検索した対象にかける特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>820</SortID>
+    </Field>
+    <Field Def="f32 ActivityOfDeadTargetSearchSpEffect_MaxLength = 10">
+      <DisplayName>「死者の活性ターゲット検索」距離 </DisplayName>
+      <Description>検索可能最大距離</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>830</SortID>
+    </Field>
+    <Field Def="f32 NetFpsCheck_fpsThreshold = 20">
+      <DisplayName>低FPSチェック_FPS条件</DisplayName>
+      <Description>低FPSチェック_FPS条件</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>840</SortID>
+    </Field>
+    <Field Def="f32 NetFpsCheck_lowfpsTImeThreshold = 30">
+      <DisplayName>低FPSチェック_低FPS継続時間</DisplayName>
+      <Description>低FPSチェック_低FPS継続時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>850</SortID>
+    </Field>
+    <Field Def="u32 SoloBreakInMaxPoint = 10000">
+      <DisplayName>ソロ侵入最大ポイント</DisplayName>
+      <Description>ソロ侵入ポイントの最大値。この値を越えたときにソロで侵入されるようになる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999999</Maximum>
+      <SortID>860</SortID>
+    </Field>
+    <Field Def="f32 NpcTalkTimeOutThreshold = 30">
+      <DisplayName>NPC会話のボイス再生タイムアウト時間</DisplayName>
+      <Description>NPC会話のボイス再生タイムアウト時間。この時間経過してもボイス再生が終わらない場合は次のメッセージへ進む</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>870</SortID>
+    </Field>
+    <Field Def="f32 SendPlayLogIntervalTime = 30">
+      <DisplayName>プレイログの送信間隔</DisplayName>
+      <Description>アイテム使用ログ などをサーバーへ送信する間隔</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>300</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>880</SortID>
+    </Field>
+    <Field Def="u8 Item370_MaxSfxNum = 32">
+      <DisplayName>七色石の最大設置数</DisplayName>
+      <Description>七色石の最大設置数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>890</SortID>
+    </Field>
+    <Field Def="s8 pad_02">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9999999</SortID>
+    </Field>
+    <Field Def="s16 SummonDataCoopMatchingLevelUpperAbs = 20">
+      <DisplayName>マルチ弱体化レベル補正係数１</DisplayName>
+      <Description>マルチ時ステータス弱体化。ホストのレベル加算補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>910</SortID>
+    </Field>
+    <Field Def="s16 SummonDataCoopMatchingLevelUpperRel = 20">
+      <DisplayName>マルチ弱体化レベル補正係数２</DisplayName>
+      <Description>マルチ時ステータス弱体化。ホストのレベル倍率補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>920</SortID>
+    </Field>
+    <Field Def="s16 SummonDataCoopMatchingWepLevelMul = 10">
+      <DisplayName>マルチ弱体化最大武器補正係数</DisplayName>
+      <Description>マルチ時ステータス弱体化。最大武器強化レベル補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>930</SortID>
+    </Field>
+    <Field Def="s32 PickUpBerserkerSignSpEffectBulletId = 70">
+      <DisplayName>バーサーカーサインを拾った時のまたたび効果用弾丸ID</DisplayName>
+      <Description>サイン位置に特殊効果用の弾丸を発生させる際の弾丸ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>940</SortID>
+    </Field>
+    <Field Def="s32 SucceedBerserkerSelfKillingEffectId = 9400">
+      <DisplayName>バーサーカーがPC自力殺害に成功演出用特殊効果ID</DisplayName>
+      <Description>バーサーカーがPC自力殺害に成功した際に専用の演出を再生する特殊効果</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>950</SortID>
+    </Field>
+    <Field Def="u8 MachingLevelWhiteSignUpperRel = 10">
+      <DisplayName>レベルシンク適用判定係数１白</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>960</SortID>
+    </Field>
+    <Field Def="u8 MachingLevelWhiteSignUpperAbs = 10">
+      <DisplayName>レベルシンク適用判定係数２白</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>970</SortID>
+    </Field>
+    <Field Def="u8 MachingLevelRedSignUpperRel = 10">
+      <DisplayName>レベルシンク適用判定係数１赤</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>980</SortID>
+    </Field>
+    <Field Def="u8 MachingLevelRedSignUpperAbs = 10">
+      <DisplayName>レベルシンク適用判定係数２赤</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>990</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_0 = 2">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数０白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_1 = 3">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_2 = 4">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1020</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_3 = 5">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数３白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1030</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_4 = 6">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数４白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1040</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_5 = 8">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数５白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1050</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_6 = 9">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数６白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1060</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_7 = 10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数７白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1070</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_8 = 10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数８白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1080</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_9 = 10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数９白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1090</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperWhiteSign_10 = 10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１０白</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_0 = 2">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数０赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_1 = 3">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_2 = 4">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1130</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_3 = 5">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数３赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1140</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_4 = 6">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数４赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1150</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_5 = 8">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数５赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1160</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_6 = 9">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数６赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1170</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_7 = 10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数７赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1180</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_8 = 10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数８赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1190</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_9 = 10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数９赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 MachingWeaponLevelUpperRedSign_10 = 10">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１０赤</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>1210</SortID>
+    </Field>
+    <Field Def="s16 pad_03">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>9999999</SortID>
+    </Field>
+    <Field Def="f32 SendGlobalEventLogIntervalTime = 300">
+      <DisplayName>グローバルイベントログの送信間隔</DisplayName>
+      <Description>グローバルイベントログ をサーバーへ送信する間隔</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>600</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1230</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_White = 600">
+      <DisplayName>ソロ侵入ポイント加算値_白サイン</DisplayName>
+      <Description>ソロ侵入ポイント加算値_白サイン</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1240</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_Black = 600">
+      <DisplayName>ソロ侵入ポイント加算値_赤サイン</DisplayName>
+      <Description>ソロ侵入ポイント加算値_赤サイン</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1250</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_ForceJoin = 1700">
+      <DisplayName>ソロ侵入ポイント加算値_乱入</DisplayName>
+      <Description>ソロ侵入ポイント加算値_乱入</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1260</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_VisitorGuardian = 1700">
+      <DisplayName>ソロ侵入ポイント加算値_マップ守護訪問</DisplayName>
+      <Description>ソロ侵入ポイント加算値_マップ守護訪問</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1270</SortID>
+    </Field>
+    <Field Def="u16 AddSoloBreakInPoint_VisitorRedHunter = 1000">
+      <DisplayName>ソロ侵入ポイント加算値_赤狩り訪問</DisplayName>
+      <Description>ソロ侵入ポイント加算値_赤狩り訪問</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1280</SortID>
+    </Field>
+    <Field Def="u16 CorpseRedrawingDistance = 1000">
+      <DisplayName>死体再描画距離（m）</DisplayName>
+      <Description>「死体再描画距離(m)」以上離れていた場合再度、描画距離内に入っても以後は死体の再描画を行わない距離</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 RedHunter_HostBossAreaGetSoulRate = 0.05">
+      <DisplayName>【赤狩り】ホストが白扉を通過した際にもらえるソウル率</DisplayName>
+      <Description>ホストが白扉を通過した時に赤狩りがもらえるソウル=赤狩りが一つ前のLvから現在Lvになるために必要なソウル*この倍率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 StealthSystemSightCutRate_SightHide_NotStealthMode">
+      <DisplayName>エネミー視界カット：PCに特殊効果ID：150なし、草むらで隠れている;</DisplayName>
+      <Description>エネミー視界カット：PCに特殊効果ID：150なし、草むらで隠れている;</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 StealthSystemSightCutRate_NotSightHide_StealthMode">
+      <DisplayName>エネミー視界カット：PCに特殊効果ID：150あり、草むらに隠れていない;</DisplayName>
+      <Description>エネミー視界カット：PCに特殊効果ID：150あり、草むらに隠れていない;</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1501</SortID>
+    </Field>
+    <Field Def="f32 StealthSystemSightCutRate_SightHide_StealthMode">
+      <DisplayName>エネミー視界カット：PCに特殊効果ID：150あり、草むらに隠れている;</DisplayName>
+      <Description>エネミー視界カット：PCに特殊効果ID：150あり、草むらに隠れている;</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1502</SortID>
+    </Field>
+    <Field Def="f32 pad_04">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>10</Increment>
+      <SortID>9999999</SortID>
+    </Field>
+    <Field Def="f32 Damage_ImpactLifeTimeSec">
+      <DisplayName>衝撃力寿命[s]</DisplayName>
+      <Description>ダメージを受けたときの衝撃力の寿命</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u16 HitStopAddDamageAnimScale = 1">
+      <DisplayName>ヒットストップ加算ダメージ時アニメ再生速度割合[%]</DisplayName>
+      <Description>ヒットストップ加算ダメージの時にアニメ再生速度をこの割合にする</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u16 HitStopAddDamageAnimTimeF">
+      <DisplayName>ヒットストップ加算ダメージ時アニメ再生速度変更時間[1/30 s]</DisplayName>
+      <Description>ヒットストップ加算ダメージの時のアニメ再生速度変更時間</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>300</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="f32 HardHitStopTimeRatePercent">
+      <DisplayName>ハードヒット時の再生速度率[%]</DisplayName>
+      <Description>ハードヒット時の再生速度割合（0で完全停止、TAEが動かなくなる）</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="f32 CoverCheckRayDist">
+      <DisplayName>カバー判定の壁をチェックするレイの長さ</DisplayName>
+      <Description>カバー時にどちらに向くかの判定をするための壁チェックレイキャストの長さ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4500</SortID>
+    </Field>
+    <Field Def="dummy8 pad_05[8]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>10000000</SortID>
+    </Field>
+    <Field Def="u16 DamageLevel_LevelUpCount">
+      <DisplayName>崩れまでのよろけ回数</DisplayName>
+      <Description>崩れまでのよろけ回数</Description>
+      <Maximum>99</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="dummy8 pad_06[2]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>10000001</SortID>
+    </Field>
+    <Field Def="f32 DamageLevel_LevelUpCountResetTimeSec">
+      <DisplayName>よろけ回数リセットまでの時間[s]</DisplayName>
+      <Description>よろけ回数リセットまでの時間[s]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u16 GrabAttachIntpFrame">
+      <DisplayName>掴み吸着補間フレーム</DisplayName>
+      <Description>掴み吸着時に掴み対象を吸着するまでのフレーム</Description>
+      <Maximum>99</Maximum>
+      <SortID>85</SortID>
+    </Field>
+    <Field Def="u16 DeadEffectMaxTime">
+      <DisplayName>【死亡演出】死亡演出最長時間[s]</DisplayName>
+      <Description>【死亡演出】死亡演出最長時間[s]</Description>
+      <Maximum>9999</Maximum>
+      <SortID>9100</SortID>
+    </Field>
+    <Field Def="f32 WallBackrash_CeilingAngleDeg = 140">
+      <DisplayName>【壁弾かれ】天井と判定する角度[deg]</DisplayName>
+      <Description>壁弾かれの天井判定角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="f32 WallBackrash_WallHitLimitAngleDeg = 120">
+      <DisplayName>【壁弾かれ】攻撃側キャラ正面と判定する角度[deg]</DisplayName>
+      <Description>壁弾かれの判定角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="f32 WallBackrash_FloorAngleDeg = 40">
+      <DisplayName>【壁弾かれ】床と判定する角度[deg]</DisplayName>
+      <Description>壁弾かれの床判定角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="f32 outRangeThresholdMaxDist">
+      <DisplayName>跳弾閾値最大補正距離[m]</DisplayName>
+      <Description>跳弾閾値最大補正距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u8 outRangeDamageDecayPercent">
+      <DisplayName>跳弾時ダメージ減衰率[%]</DisplayName>
+      <Description>跳弾時ダメージ減衰率</Description>
+      <Maximum>100</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="dummy8 pad_08[3]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>10000002</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_EffectLevel1_Threshold">
+      <DisplayName>【神経負荷】演出１段閾値</DisplayName>
+      <Description>演出的に画面効果を跳ね上げる閾値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_EffectLevel1_AddRate">
+      <DisplayName>【神経負荷】演出１段加算率</DisplayName>
+      <Description>跳ね上げる際の加算値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3001</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_EffectLevel1_Time">
+      <DisplayName>【神経負荷】演出１段減衰時間</DisplayName>
+      <Description>跳ね上げた数値の減衰時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>3002</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_EffectLevel2_Threshold">
+      <DisplayName>【神経負荷】演出2段閾値</DisplayName>
+      <Description>演出的に画面効果を跳ね上げる閾値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3010</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_EffectLevel2_AddRate">
+      <DisplayName>【神経負荷】演出2段加算率</DisplayName>
+      <Description>跳ね上げる際の加算値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3011</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_EffectLevel2_Time">
+      <DisplayName>【神経負荷】演出2段減衰時間</DisplayName>
+      <Description>跳ね上げた数値の減衰時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>3012</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_EffectLevel3_Threshold">
+      <DisplayName>【神経負荷】演出3段閾値</DisplayName>
+      <Description>演出的に画面効果を跳ね上げる閾値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3020</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_EffectLevel3_AddRate">
+      <DisplayName>【神経負荷】演出3段加算率</DisplayName>
+      <Description>跳ね上げる際の加算値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3021</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_EffectLevel3_Time">
+      <DisplayName>【神経負荷】演出3段減衰時間</DisplayName>
+      <Description>跳ね上げた数値の減衰時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>3022</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_GParamChangeTime = 0.01">
+      <DisplayName>【神経負荷】逆負荷切り替わり時間</DisplayName>
+      <Description>逆負荷効果発動後の画面が切り替わるまでの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3030</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_InverseCompRate">
+      <DisplayName>【神経負荷】逆負荷演出最終値</DisplayName>
+      <Description>逆負荷状態のひび割れの最終表示値</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3031</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_InverseCompTime = 0.01">
+      <DisplayName>【神経負荷】逆負荷演出時間</DisplayName>
+      <Description>逆負荷状態になってから【神経負荷】逆負荷演出最終値までの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>3032</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_NoiseUpdateRate = 0.01">
+      <DisplayName>【神経負荷】ノイズ減少率</DisplayName>
+      <Description>ノイズ発生後の画面演出の減少率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3040</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_MenuRequestRate">
+      <DisplayName>【神経負荷】メニュー呼び出し時加算率</DisplayName>
+      <Description>メニューからの呼び出しでのエフェクトの演出加算率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3050</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_MenuSubRate = 0.01">
+      <DisplayName>【神経負荷】メニュー呼び出し時減衰時間</DisplayName>
+      <Description>メニューからの呼び出しでのエフェクトの演出時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>3051</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_FadeOutWaitTime = 0.01">
+      <DisplayName>【神経負荷】ワンショットフェードアウト時間[s]</DisplayName>
+      <Description>神経負荷のワンショット演出のフェードアウト開始までの待機時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>3060</SortID>
+    </Field>
+    <Field Def="f32 NerveLoad_FadeOutTime = 0.01">
+      <DisplayName>【神経負荷】フェードアウト待機時間[s]</DisplayName>
+      <Description>神経負荷（ワンショット、ループ共に）のフェードアウト時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>3061</SortID>
+    </Field>
+    <Field Def="dummy8 pad_09[4]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>10000003</SortID>
+    </Field>
+    <Field Def="f32 blowWallHit_DamageSpeedKMH">
+      <DisplayName>吹っ飛び壁激突許容速度[km/h]</DisplayName>
+      <Description>吹っ飛び壁激突許容速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 blowWallHit_DamageAngDegH">
+      <DisplayName>吹っ飛び壁激突許容水平角度差[deg]</DisplayName>
+      <Description>吹っ飛び壁激突許容水平角度差</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 blowWallHit_DamageAngDegV">
+      <DisplayName>吹っ飛び壁激突許容垂直角度差[deg]</DisplayName>
+      <Description>吹っ飛び壁激突許容垂直角度差</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="u32 blowWallHit_BehaviorId_Player">
+      <DisplayName>吹っ飛び壁激突時に発生する行動パラメータID（自機）</DisplayName>
+      <Description>吹っ飛び壁激突時に発生する高度パラメータのID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="u32 blowWallHit_BehaviorId_Enemy">
+      <DisplayName>吹っ飛び壁激突時に発生する行動パラメータID（敵）</DisplayName>
+      <Description>吹っ飛び壁激突時に発生する高度パラメータのID</Description>
+      <Maximum>999999999</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 DeadFadeOutTimeSec = 3">
+      <DisplayName>死亡後フェードアウト時間[s]</DisplayName>
+      <Description>死亡後フェードアウトするキャラのフェードアウト時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 HackingContinueRadius">
+      <DisplayName>【ハッキング】持続領域半径追加[m]</DisplayName>
+      <Description>【ハッキング】持続領域半径追加[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="f32 HackingContinueHeight">
+      <DisplayName>【ハッキング】持続領域高さ追加[m]</DisplayName>
+      <Description>【ハッキング】持続領域高さ追加[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="f32 HackingContinueBottom">
+      <DisplayName>【ハッキング】持続領域底面高さオフセット追加[m]</DisplayName>
+      <Description>【ハッキング】持続領域底面高さオフセット追加[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="dummy8 pad_10[4]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>10000004</SortID>
+    </Field>
+    <Field Def="f32 PhotModeMoveDist = 50">
+      <DisplayName>【フォトモード】移動可能距離[m]</DisplayName>
+      <Description>フォトモード時にプレイヤーを中心にした移動可能な距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 PhotModeCamHitRadius = 2.5">
+      <DisplayName>【フォトモード】カメラのあたり半径[m]</DisplayName>
+      <Description>フォモード時のカメラヒット球の半径</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="s16 HDRumble_Small_Id = -1">
+      <DisplayName>【振動】部切替時(小)の振動ID</DisplayName>
+      <Description>部切替時のハプティックフィードバック振動の振動ID(左基準で右は+1した値)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="s16 HDRumble_Large_Id = -1">
+      <DisplayName>【振動】部切替時(大)の振動ID</DisplayName>
+      <Description>部切替時のハプティックフィードバック振動の振動ID(左基準で右は+1した値)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="f32 Cartridge_Size = 0.1">
+      <DisplayName>【薬莢】あたり半径[m]</DisplayName>
+      <Description>薬莢のカプセルあたりの半径</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>8100</SortID>
+    </Field>
+    <Field Def="f32 Cartridge_Length = 0.5">
+      <DisplayName>【薬莢】あたり長さ[m]</DisplayName>
+      <Description>薬莢のカプセルあたりの長さ(半径よりも大きくしてください)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>8110</SortID>
+    </Field>
+    <Field Def="f32 Cartridge_Friction = 0.3">
+      <DisplayName>【薬莢】摩擦係数</DisplayName>
+      <Description>薬莢の摩擦係数（値を上げると止まりやすくなります)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8120</SortID>
+    </Field>
+    <Field Def="f32 Cartridge_Restitution = 0.7">
+      <DisplayName>【薬莢】反発係数</DisplayName>
+      <Description>薬莢の反発係数(値を上げるとよく跳ねるようになります)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8130</SortID>
+    </Field>
+    <Field Def="f32 Cartridge_EnableDist = 200">
+      <DisplayName>【薬莢】有効距離[m]</DisplayName>
+      <Description>薬莢の有効距離（プレイヤーとの距離)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>8150</SortID>
+    </Field>
+    <Field Def="u8 Cartridge_IsChrRagdollHit">
+      <DisplayName>【薬莢】ラグドールにもヒットするか</DisplayName>
+      <Description>薬莢がキャラのラグドールにもヒットするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>8140</SortID>
+    </Field>
+    <Field Def="dummy8 pad_11[3]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>10000005</SortID>
+    </Field>
+    <Field Def="f32 Cartridge_DecelerateBeginTime">
+      <DisplayName>【薬莢】減速開始時間[秒]</DisplayName>
+      <Description>薬莢の水平速度減速開始時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>8150</SortID>
+    </Field>
+    <Field Def="f32 Cartridge_DecelerateTime">
+      <DisplayName>【薬莢】減速遷移時間[秒]</DisplayName>
+      <Description>薬莢の水平速度減速開始後減速率が最大になるまでの時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>8160</SortID>
+    </Field>
+    <Field Def="f32 Cartridge_DecelerateRate">
+      <DisplayName>【薬莢】水平減速率</DisplayName>
+      <Description>薬莢の最大減速率（値を下げると急激に減速するようになります）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8170</SortID>
+    </Field>
+    <Field Def="f32 Net_MapHitSfxOmitteDist = 600">
+      <DisplayName>【対戦】対マップ着弾SFXオミット距離[m]</DisplayName>
+      <Description>対戦時のパフォーマンス確保のためマップへの着弾SFXをこの距離以上のときは発生しない</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8200</SortID>
+    </Field>
+    <Field Def="f32 Net_MyTeamHitSfxOmitteCpuExecRate = 1">
+      <DisplayName>【対戦】味方の対マップ着弾SFXオミット処理負荷</DisplayName>
+      <Description>対戦時のパフォーマンス確保のため味方のマップへの着弾SFXのオミットCPU負荷
+現在の処理時間/目標の処理時間の値と比較</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>8210</SortID>
+    </Field>
+    <Field Def="f32 HavokGabageCollectionIntervalTime = 10">
+      <DisplayName>【Havok】ガベージコレクション実施間隔[s]</DisplayName>
+      <Description>Havokのメモリ断片化対策でのガベージコレクション呼び出し間隔</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>60</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8300</SortID>
+    </Field>
+    <Field Def="f32 PhotModeMoveScale = 1">
+      <DisplayName>【フォトモード】カメラ移動スケール</DisplayName>
+      <Description>フォトモード時にカメラ移動についてパッドの入力に対してのスケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 PhotModeTurnScale = 1">
+      <DisplayName>【フォトモード】カメラ旋回スケール</DisplayName>
+      <Description>フォトモード時にカメラ旋回についてパッドの入力に対してのスケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 PhotModeMoveIpo = 1">
+      <DisplayName>【フォトモード】カメラ移動補間率</DisplayName>
+      <Description>フォトモード時にカメラ移動についてパッドの入力方向に対して前フレームの入力との補間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 PhotModeTurnIop = 1">
+      <DisplayName>【フォトモード】カメラ旋回補間率</DisplayName>
+      <Description>フォモード時にカメラ旋回についてパッドの入力方向に対して前フレームの入力との補間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.01</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 PhotModeCamSpeedMin = 0.3">
+      <DisplayName>【フォトモード】カメラ移動速度倍率最低値</DisplayName>
+      <Description>フォトモード時のオプションによって変更されるカメラの移動速度倍率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="f32 PhotModeCamSpeedMax = 2.3">
+      <DisplayName>【フォトモード】カメラ移動速度倍率最高値</DisplayName>
+      <Description>フォトモード時のオプションによって変更されるカメラの移動速度倍率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="u32 OsTuning_ResetCost = 2000">
+      <DisplayName>【OS強化】リセット費用/レベル</DisplayName>
+      <Description>OS強化のリセット費用(1レベルあたり)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999999</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="dummy8 reserved_for_menu[40]">
+      <DisplayName>メニュー関連用予約</DisplayName>
+      <Description>メニュー関連用予約</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>10000006</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

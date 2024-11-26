@@ -1,0 +1,11 @@
+0 unused -- 未使用
+1 [PC magic] Activity of the dead -- 【PC魔法】死者の活性
+2 [PC magic] Warmth fire -- 【PC魔法】ぬくもりの火
+3 [PC magic] Miasma of death -- 【PC魔法】死の瘴気
+4 [PC magic] Poison fog -- 【PC魔法】毒の霧
+5 [PC magic] Poisonous fog -- 【PC魔法】猛毒の霧
+6 [PC magic] Acid mist -- 【PC魔法】酸の霧
+7 [PC Arts] Zombie Crow Wand_Poison Fog -- 【PCアーツ】ゾンビ鴉の杖_毒の霧
+8 [PC magic] Nozomi -- 【PC魔法】望郷
+9 Falling Soul: Bullet for generation -- 降り注ぐソウル：発生用弾丸
+10 Falling soul (slot 2: for target bullets): bullets for generation -- 降り注ぐソウル（スロット２：狙う弾用）：発生用弾丸

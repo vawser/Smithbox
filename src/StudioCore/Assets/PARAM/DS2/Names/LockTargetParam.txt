@@ -1,0 +1,3 @@
+0 Ordinary -- 普通
+1 Short -- 短い
+2 Long -- 長い

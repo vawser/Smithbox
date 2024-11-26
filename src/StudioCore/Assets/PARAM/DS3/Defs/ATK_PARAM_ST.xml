@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ATK_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 Hit0_Radius" />
+    <Field Def="f32 Hit1_Radius" />
+    <Field Def="f32 Hit2_Radius" />
+    <Field Def="f32 Hit3_Radius" />
+    <Field Def="f32 KnockbackDist" />
+    <Field Def="f32 HitStopTime" />
+    <Field Def="s32 spEffect0" />
+    <Field Def="s32 spEffect1" />
+    <Field Def="s32 spEffect2" />
+    <Field Def="s32 spEffect3" />
+    <Field Def="s32 spEffect4" />
+    <Field Def="s16 Hit0_DmyPoly1 = 100" />
+    <Field Def="s16 Hit1_DmyPoly1 = -1" />
+    <Field Def="s16 Hit2_DmyPoly1 = -1" />
+    <Field Def="s16 Hit3_DmyPoly1 = -1" />
+    <Field Def="s16 Hit0_DmyPoly2 = 120" />
+    <Field Def="s16 Hit1_DmyPoly2 = -1" />
+    <Field Def="s16 Hit2_DmyPoly2 = -1" />
+    <Field Def="s16 Hit3_DmyPoly2 = -1" />
+    <Field Def="u16 BlowingCorrection" />
+    <Field Def="u16 AtkPhysCorrection = 100" />
+    <Field Def="u16 AtkMagCorrection = 100" />
+    <Field Def="u16 AtkFireCorrection = 100" />
+    <Field Def="u16 AtkThunCorrection = 100" />
+    <Field Def="u16 AtkStamCorrection = 100" />
+    <Field Def="u16 GuardAtkRateCorrection" />
+    <Field Def="u16 GuardBreakCorrection = 100" />
+    <Field Def="u16 AtkThrowEscapeCorrection = 100" />
+    <Field Def="u16 AtkSuperArmorCorrection" />
+    <Field Def="u16 AtkPhys" />
+    <Field Def="u16 AtkMag" />
+    <Field Def="u16 AtkFire" />
+    <Field Def="u16 AtkThun" />
+    <Field Def="u16 AtkStam" />
+    <Field Def="u16 GuardAtkRate" />
+    <Field Def="u16 GuardBreakRate" />
+    <Field Def="u16 AtkSuperArmor" />
+    <Field Def="u16 AtkThrowEscape" />
+    <Field Def="u16 AtkObj = 20" />
+    <Field Def="s16 GuardStaminaCutRate" />
+    <Field Def="s16 GuardRate" />
+    <Field Def="u16 ThrowTypeID" />
+    <Field Def="u8 Hit0_hitType" />
+    <Field Def="u8 Hit1_hitType" />
+    <Field Def="u8 Hit2_hitType" />
+    <Field Def="u8 Hit3_hitType" />
+    <Field Def="u8 hit0_Priority" />
+    <Field Def="u8 hit1_Priority" />
+    <Field Def="u8 hit2_Priority" />
+    <Field Def="u8 hit3_Priority" />
+    <Field Def="u8 damageLevel = 2" />
+    <Field Def="u8 mapHitType" />
+    <Field Def="s8 GuardCutCancelRate" />
+    <Field Def="u8 AtkAttribute = 4" />
+    <Field Def="u8 spAttribute = -1" />
+    <Field Def="u8 atkType" />
+    <Field Def="u8 atkMaterial = -1" />
+    <Field Def="s8 atkSize" />
+    <Field Def="s8 DefMaterial = -1" />
+    <Field Def="s8 DefSfxMaterial" />
+    <Field Def="u8 HitSourceType" />
+    <Field Def="u8 ThrowFlag" />
+    <Field Def="u8 disableGuard:1" />
+    <Field Def="u8 disableStaminaAttack:1" />
+    <Field Def="u8 disableHitSpEffect:1" />
+    <Field Def="u8 IgnoreNotifyMissSwingForAI:1" />
+    <Field Def="u8 repeatHitSfx:1" />
+    <Field Def="u8 IsArrowAtk:1" />
+    <Field Def="u8 IsGhostAtk:1" />
+    <Field Def="u8 isDisableNoDamage:1" />
+    <Field Def="u8 atkPowForSfxSe" />
+    <Field Def="u8 atkDirForSfxSe" />
+    <Field Def="u8 opposeTarget:1 = 1" />
+    <Field Def="u8 friendlyTarget:1" />
+    <Field Def="u8 selfTarget:1" />
+    <Field Def="u8 isChargeAtk:1" />
+    <Field Def="u8 isShareHitList:1" />
+    <Field Def="u8 isCheckObjPenetration:1" />
+    <Field Def="u8 0x81_0:1" />
+    <Field Def="u8 0x81_1:1" />
+    <Field Def="u8 atkBehaviorId" />
+    <Field Def="u8 sameAttackJudgmentId" />
+    <Field Def="s32 deathCauseId" />
+    <Field Def="s32 decalId1" />
+    <Field Def="s32 decalId2 = 100" />
+    <Field Def="s32 AppearAiSoundId = 2030" />
+    <Field Def="s32 HitAiSoundId = 2130" />
+    <Field Def="s32 HitRumbleId = -1" />
+    <Field Def="s32 HitRumbleIdByNormal = -1" />
+    <Field Def="s32 HitRumbleIdByMiddle = -1" />
+    <Field Def="s32 HitRumbleIdByRoot = -1" />
+    <Field Def="s32 traceSfxId0 = -1">
+      <DisplayName>剣閃SfxID_０</DisplayName>
+      <Description>剣閃SfxID_０(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead0 = -1">
+      <DisplayName>根元剣閃ダミポリID_０</DisplayName>
+      <Description>剣閃根元ダミポリID_０(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8001</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail0 = -1">
+      <DisplayName>剣先剣閃ダミポリID_０</DisplayName>
+      <Description>剣閃剣先ダミポリID_０</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8002</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId1 = -1">
+      <DisplayName>剣閃SfxID_１</DisplayName>
+      <Description>剣閃SfxID_１(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8003</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead1 = -1">
+      <DisplayName>根元剣閃ダミポリID_１</DisplayName>
+      <Description>剣閃根元ダミポリID_１(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8004</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail1 = -1">
+      <DisplayName>剣先剣閃ダミポリID_１</DisplayName>
+      <Description>剣閃剣先ダミポリID_１</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8005</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId2 = -1">
+      <DisplayName>剣閃SfxID_２</DisplayName>
+      <Description>剣閃SfxID_２(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8006</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead2 = -1">
+      <DisplayName>根元剣閃ダミポリID_２</DisplayName>
+      <Description>剣閃根元ダミポリID_２(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8007</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail2 = -1">
+      <DisplayName>剣先剣閃ダミポリID_２</DisplayName>
+      <Description>剣閃剣先ダミポリID_２</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8008</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId3 = -1">
+      <DisplayName>剣閃SfxID_３</DisplayName>
+      <Description>剣閃SfxID_３(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8009</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead3 = -1">
+      <DisplayName>根元剣閃ダミポリID_３</DisplayName>
+      <Description>剣閃根元ダミポリID_３(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8010</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail3 = -1">
+      <DisplayName>剣先剣閃ダミポリID_３</DisplayName>
+      <Description>剣閃剣先ダミポリID_３</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8011</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId4 = -1">
+      <DisplayName>剣閃SfxID_４</DisplayName>
+      <Description>剣閃SfxID_４(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8012</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead4 = -1">
+      <DisplayName>根元剣閃ダミポリID_４</DisplayName>
+      <Description>剣閃根元ダミポリID_４(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8013</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail4 = -1">
+      <DisplayName>剣先剣閃ダミポリID_４</DisplayName>
+      <Description>剣閃剣先ダミポリID_４</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8014</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId5 = -1">
+      <DisplayName>剣閃SfxID_５</DisplayName>
+      <Description>剣閃SfxID_５(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8015</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead5 = -1">
+      <DisplayName>根元剣閃ダミポリID_５</DisplayName>
+      <Description>剣閃根元ダミポリID_５(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8016</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail5 = -1">
+      <DisplayName>剣先剣閃ダミポリID_５</DisplayName>
+      <Description>剣閃剣先ダミポリID_５</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8017</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId6 = -1">
+      <DisplayName>剣閃SfxID_６</DisplayName>
+      <Description>剣閃SfxID_６(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8018</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead6 = -1">
+      <DisplayName>根元剣閃ダミポリID_６</DisplayName>
+      <Description>剣閃根元ダミポリID_６(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8019</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail6 = -1">
+      <DisplayName>剣先剣閃ダミポリID_６</DisplayName>
+      <Description>剣閃剣先ダミポリID_６</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8020</SortID>
+    </Field>
+    <Field Def="s32 traceSfxId7 = -1">
+      <DisplayName>剣閃SfxID_７</DisplayName>
+      <Description>剣閃SfxID_７(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8021</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdHead7 = -1">
+      <DisplayName>根元剣閃ダミポリID_７</DisplayName>
+      <Description>剣閃根元ダミポリID_７(-1無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8022</SortID>
+    </Field>
+    <Field Def="s32 traceDmyIdTail7 = -1">
+      <DisplayName>剣先剣閃ダミポリID_７</DisplayName>
+      <Description>剣閃剣先ダミポリID_７</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>8023</SortID>
+    </Field>
+    <Field Def="f32 Hit4_Radius" />
+    <Field Def="f32 Hit5_Radius" />
+    <Field Def="f32 Hit6_Radius" />
+    <Field Def="f32 Hit7_Radius" />
+    <Field Def="f32 Hit8_Radius" />
+    <Field Def="f32 Hit9_Radius" />
+    <Field Def="f32 Hit10_Radius" />
+    <Field Def="f32 Hit11_Radius" />
+    <Field Def="f32 Hit12_Radius" />
+    <Field Def="f32 Hit13_Radius" />
+    <Field Def="f32 Hit14_Radius" />
+    <Field Def="f32 Hit15_Radius" />
+    <Field Def="s16 Hit4_DmyPoly1 = -1" />
+    <Field Def="s16 Hit5_DmyPoly1 = -1" />
+    <Field Def="s16 Hit6_DmyPoly1 = -1" />
+    <Field Def="s16 Hit7_DmyPoly1 = -1" />
+    <Field Def="s16 Hit8_DmyPoly1 = -1" />
+    <Field Def="s16 Hit9_DmyPoly1 = -1" />
+    <Field Def="s16 Hit10_DmyPoly1 = -1" />
+    <Field Def="s16 Hit11_DmyPoly1 = -1" />
+    <Field Def="s16 Hit12_DmyPoly1 = -1" />
+    <Field Def="s16 Hit13_DmyPoly1 = -1" />
+    <Field Def="s16 Hit14_DmyPoly1 = -1" />
+    <Field Def="s16 Hit15_DmyPoly1 = -1" />
+    <Field Def="s16 Hit4_DmyPoly2 = -1" />
+    <Field Def="s16 Hit5_DmyPoly2 = -1" />
+    <Field Def="s16 Hit6_DmyPoly2 = -1" />
+    <Field Def="s16 Hit7_DmyPoly2 = -1" />
+    <Field Def="s16 Hit8_DmyPoly2 = -1" />
+    <Field Def="s16 Hit9_DmyPoly2 = -1" />
+    <Field Def="s16 Hit10_DmyPoly2 = -1" />
+    <Field Def="s16 Hit11_DmyPoly2 = -1" />
+    <Field Def="s16 Hit12_DmyPoly2 = -1" />
+    <Field Def="s16 Hit13_DmyPoly2 = -1" />
+    <Field Def="s16 Hit14_DmyPoly2 = -1" />
+    <Field Def="s16 Hit15_DmyPoly2 = -1" />
+    <Field Def="u8 Hit4_hitType" />
+    <Field Def="u8 Hit5_hitType" />
+    <Field Def="u8 Hit6_hitType" />
+    <Field Def="u8 Hit7_hitType" />
+    <Field Def="u8 Hit8_hitType" />
+    <Field Def="u8 Hit9_hitType" />
+    <Field Def="u8 Hit10_hitType" />
+    <Field Def="u8 Hit11_hitType" />
+    <Field Def="u8 Hit12_hitType" />
+    <Field Def="u8 Hit13_hitType" />
+    <Field Def="u8 Hit14_hitType" />
+    <Field Def="u8 Hit15_hitType" />
+    <Field Def="dummy8 pad10[12]" />
+    <Field Def="s16 defMaterialVal0 = 255" />
+    <Field Def="s16 defMaterialVal1 = 139" />
+    <Field Def="s16 defMaterialVal2 = 139" />
+    <Field Def="s16 atkDarkCorrection = 100" />
+    <Field Def="s16 atkDark" />
+    <Field Def="dummy8 pad9:1" />
+    <Field Def="u8 isDisableParry:1 = 1" />
+    <Field Def="u8 isDisableBothHandsAtkBonus:1" />
+    <Field Def="u8 isInvalidatedByNoDamageInAir:1" />
+    <Field Def="dummy8 pad8:4" />
+    <Field Def="u8 dmgLevel_vsPlayer" />
+    <Field Def="u16 statusAilmentAtkPowerCorrectRate = 100" />
+    <Field Def="u16 spEffectAtkPowerCorrectRate_byPoint = 100" />
+    <Field Def="u16 spEffectAtkPowerCorrectRate_byRate = 100" />
+    <Field Def="u16 spEffectAtkPowerCorrectRate_byDmg = 100" />
+    <Field Def="u8 atkBehaviorId_2" />
+    <Field Def="u8 throwDamageAttribute" />
+    <Field Def="s16 statusAilmentAtkPowerCorrectRate_byPoint = 100" />
+    <Field Def="s32 atkElementCorrectId = -1" />
+    <Field Def="dummy8 pad2[12]" />
+  </Fields>
+</PARAMDEF>

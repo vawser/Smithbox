@@ -1,3 +1,0 @@
-0 POW: Small
-1 POW: Large
-2 POW: Large Large

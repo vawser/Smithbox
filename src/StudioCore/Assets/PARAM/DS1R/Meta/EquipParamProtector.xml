@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Field>
+    <sortId Wiki="ID used to sort this armor in menus" />
+    <wanderingEquipId />
+    <vagrantItemLotId Refs="ItemLotParam" />
+    <vagrantBonusEneDropItemLotId />
+    <vagrantItemEneDropItemLotId />
+    <fixPrice Wiki="Soul cost of repairing 100%% of the weapon. Repair cost is calculated using this and durabilityMax" />
+    <basicPrice Wiki="Soul cost of reinforcement. See ShopLineupParam for shop prices" />
+    <sellValue Wiki="Souls received when feeding this armor to Frampt (unverified)" />
+    <weight Wiki="Equip weight of the armor" />
+    <residentSpEffectId Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the owner" />
+    <residentSpEffectId2 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the owner" />
+    <residentSpEffectId3 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the owner" />
+    <materialSetId Refs="EquipMtrlSetparam" Wiki="ID of EquipMtrlSetParam to use during reinforcement, which determines reinforcement materials and amounts" />
+    <partsDamageRate Wiki="Possibly multiplies damage done to specific body parts (needs verification)" />
+    <corectSARecover Wiki="Possibly affects the time required for poise to regenerate (needs verification)" />
+    <originEquipPro Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro1 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro2 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro3 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro4 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro5 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro6 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro7 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro8 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro9 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro10 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro11 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro12 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro13 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro14 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro15 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <faceScaleM_ScaleX />
+    <faceScaleM_ScaleZ />
+    <faceScaleM_MaxX />
+    <faceScaleM_MaxZ />
+    <faceScaleF_ScaleX />
+    <faceScaleF_ScaleZ />
+    <faceScaleF_MaxX />
+    <faceScaleF_MaxZ />
+    <qwcId />
+    <equipModelId />
+    <iconIdM />
+    <iconIdF />
+    <knockBack />
+    <knockbackBounceRate />
+    <durability Wiki="Starting durability (needs verification)" />
+    <durabilityMax Wiki="Maximum durability" />
+    <saDurability AltName="Poise" />
+    <defFlickPower />
+    <defensePhysics AltName="Physical defense" />
+    <defenseMagic AltName="Magic defense" />
+    <defenseFire AltName="Fire defense" />
+    <defenseThunder AltName="Lightning defense" />
+    <defenseSlash Wiki="Percentage modifier to apply to physical defense when struck with slash damage.\nExample: -50 = -50%%, 50 = +50%%" />
+    <defenseBlow Wiki="Percentage modifier to apply to physical defense when struck with slash damage.\nExample: -50 = -50%%, 50 = +50%%" />
+    <defenseThrust Wiki="Percentage modifier to apply to physical defense when struck with slash damage.\nExample: -50 = -50%%, 50 = +50%%" />
+    <resistPoison />
+    <resistDisease />
+    <resistBlood />
+    <resistCurse />
+    <reinforceTypeId Refs="ReinforceParamProtector" Wiki="ID of ReinforceParamProtector to use for calculating the effects of reinforcement" />
+    <trophySGradeId />
+    <shopLv />
+    <knockbackParamId />
+    <flickDamageCutRate />
+    <equipModelCategory />
+    <equipModelGender />
+    <protectorCategory />
+    <defenseMaterial />
+    <defenseMaterialSfx />
+    <partsDmgType />
+    <defenseMaterial_Weak />
+    <defenseMaterialSfx_Weak />
+    <isDeposit IsBool="" />
+    <headEquip IsBool="" />
+    <bodyEquip IsBool="" />
+    <armEquip IsBool="" />
+    <legEquip IsBool="" />
+    <useFaceScale IsBool="" />
+    <invisibleFlag00 IsBool="" />
+    <invisibleFlag01 IsBool="" />
+    <invisibleFlag02 IsBool="" />
+    <invisibleFlag03 IsBool="" />
+    <invisibleFlag04 IsBool="" />
+    <invisibleFlag05 IsBool="" />
+    <invisibleFlag06 IsBool="" />
+    <invisibleFlag07 IsBool="" />
+    <invisibleFlag08 IsBool="" />
+    <invisibleFlag09 IsBool="" />
+    <invisibleFlag10 IsBool="" />
+    <invisibleFlag11 IsBool="" />
+    <invisibleFlag12 IsBool="" />
+    <invisibleFlag13 IsBool="" />
+    <invisibleFlag14 IsBool="" />
+    <invisibleFlag15 IsBool="" />
+    <invisibleFlag16 IsBool="" />
+    <invisibleFlag17 IsBool="" />
+    <invisibleFlag18 IsBool="" />
+    <invisibleFlag19 IsBool="" />
+    <invisibleFlag20 IsBool="" />
+    <invisibleFlag21 IsBool="" />
+    <invisibleFlag22 IsBool="" />
+    <invisibleFlag23 IsBool="" />
+    <invisibleFlag24 IsBool="" />
+    <invisibleFlag25 IsBool="" />
+    <invisibleFlag26 IsBool="" />
+    <invisibleFlag27 IsBool="" />
+    <invisibleFlag28 IsBool="" />
+    <invisibleFlag29 IsBool="" />
+    <invisibleFlag30 IsBool="" />
+    <invisibleFlag31 IsBool="" />
+    <invisibleFlag32 IsBool="" />
+    <invisibleFlag33 IsBool="" />
+    <invisibleFlag34 IsBool="" />
+    <invisibleFlag35 IsBool="" />
+    <invisibleFlag36 IsBool="" />
+    <invisibleFlag37 IsBool="" />
+    <invisibleFlag38 IsBool="" />
+    <invisibleFlag39 IsBool="" />
+    <invisibleFlag40 IsBool="" />
+    <invisibleFlag41 IsBool="" />
+    <invisibleFlag42 IsBool="" />
+    <invisibleFlag43 IsBool="" />
+    <invisibleFlag44 IsBool="" />
+    <invisibleFlag45 IsBool="" />
+    <invisibleFlag46 IsBool="" />
+    <invisibleFlag47 IsBool="" />
+    <disableMultiDropShare IsBool="" />
+    <simpleModelForDlc IsBool="" />
+    <oldSortId />
+  </Field>
+  <Self OffsetSize="100" />
+</PARAMMETA>

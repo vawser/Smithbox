@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <dwindleBegin AltName="dwindleBegin" />
+    <dwindleEnd AltName="dwindleEnd" />
+    <dummy0 AltName="dummy0" />
+    <dummy1 AltName="dummy1" />
+    <colR AltName="colR" />
+    <colG AltName="colG" />
+    <colB AltName="colB" />
+    <colA AltName="colA" />
+  </Field>
+  <Self />
+</PARAMMETA>

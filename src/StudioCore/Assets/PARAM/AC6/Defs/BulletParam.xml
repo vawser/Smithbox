@@ -1,0 +1,2533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BULLET_PARAM_ST</ParamType>
+  <DataVersion>10</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>10010000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>10020000</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="s32 atkId_Bullet = -1">
+      <DisplayName>攻撃ID</DisplayName>
+      <Description>攻撃パラメータのＩＤをそれぞれ登録する.→攻撃タイプ／攻撃材質／実弾攻撃力／魔法攻撃力／スタミナ攻撃力／ノックバック距離.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10030000</SortID>
+    </Field>
+    <Field Def="s32 sfxId_Bullet = -1">
+      <DisplayName>SFXID【加速前】</DisplayName>
+      <Description>加速前のSFX ID。加速後のSFX ID が -1の場合、加速後もこのSFXが飛び続ける。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050000</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_Hit = -1">
+      <DisplayName>SFXID【着弾】</DisplayName>
+      <Description>着弾SFXID。-1は発生しない。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050030</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_Flick = -1">
+      <DisplayName>SFXID【はじき時】</DisplayName>
+      <Description>はじき時SFXID。-1は発生しない。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 life = -1">
+      <DisplayName>寿命[s]</DisplayName>
+      <Description>飛び道具が存在し続けられる時間（-1なら無限）.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10070000</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="f32 dist">
+      <DisplayName>有効射程距離[m]</DisplayName>
+      <Description>弾丸の飛距離がこの値を超えた場合に他パラメータで設定した減衰を行う。飛距離の計測方法は「曲射補正の適用」の値によって変化する。「曲射補正の適用」がOFFの場合、弾丸の移動距離を飛距離とする。「曲射補正の適用」がONの場合、弾丸の発射位置から弾丸の現在位置までの水平面上の距離を移動距離とする。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260000</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 lifeAddRand">
+      <DisplayName>ランダム追加寿命[sec]</DisplayName>
+      <Description>寿命に加算されるランダム最大値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10070000</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="f32 gravityInRange">
+      <DisplayName>射程距離内重力[m/s^2]</DisplayName>
+      <Description>射程距離内での下向きにかかる重力.</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260010</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 gravityOutRange">
+      <DisplayName>射程距離外重力[m/s^2]</DisplayName>
+      <Description>減衰がはじまったときの下向きにかかる重力（ポトンと落ちる感じを表現.</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260020</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 hormingStopRange">
+      <DisplayName>誘導停止距離[m]</DisplayName>
+      <Description>誘導を停止するターゲットとの距離。誘導弾で当たり過ぎないようにするパラメータ。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280210</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 initVellocity">
+      <DisplayName>初速[m/s]</DisplayName>
+      <Description>ＳＦＸの初速度.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260040</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 accelInRange">
+      <DisplayName>射程距離内加速度[m/s^2]</DisplayName>
+      <Description>ＳＦＸの射程内の加速度.</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260170</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 accelOutRange">
+      <DisplayName>射程距離外加速度[m/s^2]</DisplayName>
+      <Description>ＳＦＸが射程距離外に出たときの加速度.</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260180</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 maxVellocity">
+      <DisplayName>最高速度[m/s]</DisplayName>
+      <Description>最高速度.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260060</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 minVellocity">
+      <DisplayName>最低速度[m/s]</DisplayName>
+      <Description>最低保証速度.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260050</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 accelTime">
+      <DisplayName>加速開始時間[s]</DisplayName>
+      <Description>この時間までは、加速しない（ロケット弾みたいな魔法を撃つことができるようにしておく）.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10260120</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 homingBeginDist">
+      <DisplayName>誘導開始距離[m]</DisplayName>
+      <Description>何ｍ進んだ地点から誘導を開始するか.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280070</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="u8 bUseMapOnlyHit:1">
+      <DisplayName>対キャラと対マップで別の大きさにする</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>○なら対キャラと対マップで別にヒットを生成する。×なら対キャラと対マップで同じヒットを用いる</Description>
+      <Maximum>1</Maximum>
+      <SortID>10250010</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="u8 bPathFind:1">
+      <DisplayName>ルート検索をするか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>○ならホーミングターゲットに対してナビボリュームのパス検索を使用します</Description>
+      <Maximum>1</Maximum>
+      <SortID>10280260</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="u8 bGenerateAssetFollow:1">
+      <DisplayName>動的生成したアセットを弾丸に追従させる</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>○なら動的アセットが弾丸に追従するようになります</Description>
+      <Maximum>1</Maximum>
+      <SortID>10370030</SortID>
+      <UnkC8>動的生成するアセット</UnkC8>
+    </Field>
+    <Field Def="u8 bLaunchStayPa:1">
+      <DisplayName>設置PAを弾丸位置に展開する</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>○なら動的アセットが弾丸に追従するようになります</Description>
+      <Maximum>1</Maximum>
+      <SortID>10210000</SortID>
+    </Field>
+    <Field Def="u8 isInheritedShotgunIndexFromParent:1">
+      <DisplayName>散弾インデックスを親から引き継ぐ</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>○なら親の散弾インデックスるを継承します</Description>
+      <Maximum>1</Maximum>
+      <SortID>10240030</SortID>
+      <UnkC8>散弾</UnkC8>
+    </Field>
+    <Field Def="u8 isPenetrateStayPa:1">
+      <DisplayName>設置PAを貫通？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>マップを貫通するか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140035</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="u8 isSyncHitErase:1">
+      <DisplayName>消滅同期をするか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>消滅同期をするか（着弾や寿命による弾丸ステート遷移の同期）</Description>
+      <Maximum>1</Maximum>
+      <SortID>10400000</SortID>
+      <UnkC8>ネットワーク</UnkC8>
+    </Field>
+    <Field Def="u8 isFSDP:1">
+      <DisplayName>FSDPか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>FSDPか(到達保証する代わりにパケロスすると詰まりが発生する)</Description>
+      <Maximum>1</Maximum>
+      <SortID>10400010</SortID>
+      <UnkC8>ネットワーク</UnkC8>
+    </Field>
+    <Field Def="u8 homingCorrectAxis">
+      <DisplayName>誘導性能個別軸</DisplayName>
+      <Enum>BULLET_HOMING_CORRECT_AXIS</Enum>
+      <Description>誘導性能の軸選択</Description>
+      <Maximum>99</Maximum>
+      <SortID>10280010</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="s16 homingCorrectAngle = -1">
+      <DisplayName>誘導性能（設定軸個別）</DisplayName>
+      <Description>誘導性能の軸成分だけを変えます。-1で変えません</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10280020</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 hitRadius = -1">
+      <DisplayName>初期弾半径[m]</DisplayName>
+      <Description>当たり球の半径を設定する.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10250020</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 hitRadiusMax = -1">
+      <DisplayName>最大弾半径[m]</DisplayName>
+      <Description>あたり球の最大半径（－1の場合、初期半径と同じにする／デフォルト）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10250030</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 hitRadiusForMap = -1">
+      <DisplayName>初期弾半径[m](マップ用) </DisplayName>
+      <Description>当たり球の半径を設定する.(マップ用) </Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10250040</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 hitRadiusMaxForMap = -1">
+      <DisplayName>最大弾半径[m](マップ用) </DisplayName>
+      <Description>あたり球の最大半径（－1の場合、初期半径と同じにする／デフォルト）(マップ用) </Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10250050</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 spreadTime">
+      <DisplayName>範囲拡散時間[s]</DisplayName>
+      <Description>範囲半径が細大にまで広がる時間.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10250060</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 expDelay">
+      <DisplayName>発動遅延[s]</DisplayName>
+      <Description>着弾後、爆発までの時間（０の場合はすぐに爆発）.</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77710100</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 hormingOffsetRange">
+      <DisplayName>誘導ずらし量[m]</DisplayName>
+      <Description>０だと正確。射撃時にXYZ各成分を、この量だけずらして狙うようにする。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280220</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 dmgHitRecordLifeTime">
+      <DisplayName>ダメージヒット履歴の生存時間[s]</DisplayName>
+      <Description>ダメージヒット履歴の生存時間[sec](&lt;=0.0f：無期限)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10200000</SortID>
+      <UnkC8>ヒットリスト</UnkC8>
+    </Field>
+    <Field Def="f32 externalForce">
+      <DisplayName>外力[m/s^2]</DisplayName>
+      <Description>射撃時の方向にかかる外力.(Y軸は抜いている)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10260030</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="s32 spEffectIDForShooter = -1">
+      <DisplayName>射撃した人にかける特殊効果</DisplayName>
+      <Description>射撃した人にかける特殊効果</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10290000</SortID>
+      <UnkC8>特殊効果</UnkC8>
+    </Field>
+    <Field Def="s32 autoSearchNPCThinkID">
+      <DisplayName>ファンネルNPC思考ID</DisplayName>
+      <Description>ファンネルがターゲットの検索使用するパラメータ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 HitBulletID = -1">
+      <DisplayName>発生弾丸ID</DisplayName>
+      <Description>弾丸パラメータから、新しく弾丸パラメータを発生させるときにＩＤを指定する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10160000</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="s32 spEffectId0 = -1">
+      <DisplayName>特殊効果ID0</DisplayName>
+      <Description>特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10290010</SortID>
+      <UnkC8>特殊効果</UnkC8>
+    </Field>
+    <Field Def="s32 spEffectId1 = -1">
+      <DisplayName>特殊効果ID1</DisplayName>
+      <Description>特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10290020</SortID>
+      <UnkC8>特殊効果</UnkC8>
+    </Field>
+    <Field Def="s32 spEffectId2 = -1">
+      <DisplayName>特殊効果ID2</DisplayName>
+      <Description>特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10290030</SortID>
+      <UnkC8>特殊効果</UnkC8>
+    </Field>
+    <Field Def="s32 spEffectId3 = -1">
+      <DisplayName>特殊効果ID3</DisplayName>
+      <Description>特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10290040</SortID>
+      <UnkC8>特殊効果</UnkC8>
+    </Field>
+    <Field Def="s32 spEffectId4 = -1">
+      <DisplayName>特殊効果ID4</DisplayName>
+      <Description>特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10290050</SortID>
+      <UnkC8>特殊効果</UnkC8>
+    </Field>
+    <Field Def="u16 numShoot">
+      <DisplayName>同時発射数</DisplayName>
+      <Description>薬莢(エミッタ)1つあたりに生成される弾数。弾薬消費には影響しない</Description>
+      <Maximum>99</Maximum>
+      <SortID>10310000</SortID>
+    </Field>
+    <Field Def="s16 homingAngle">
+      <DisplayName>誘導性能[deg/s]</DisplayName>
+      <Description>1秒間に何度まで補正するか？.</Description>
+      <Minimum>-32767</Minimum>
+      <SortID>10280000</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="s16 shootAngle">
+      <DisplayName>発射角度[deg]</DisplayName>
+      <Description>飛び道具を前方何度に向かって発射するかを指定.</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220000</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="s16 shootAngleInterval">
+      <DisplayName>発射角度間隔[deg]</DisplayName>
+      <Description>飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Y軸)</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220010</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="s16 shootAngleXInterval">
+      <DisplayName>発射仰角間隔[deg]</DisplayName>
+      <Description>飛び道具を複数発射する場合、何度間隔で発射するかを指定.(X軸)</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220040</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="s8 damageDamp">
+      <DisplayName>【廃止予定】実弾攻撃力減衰率[%/s]</DisplayName>
+      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s8 spelDamageDamp">
+      <DisplayName>【廃止予定】EN攻撃力減衰率[%/s]</DisplayName>
+      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s8 fireDamageDamp">
+      <DisplayName>【廃止予定】爆発/燃焼攻撃力減衰率[%/s]</DisplayName>
+      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s8 thunderDamageDamp">
+      <DisplayName>【廃止予定】コーラル攻撃力減衰率[%/s]</DisplayName>
+      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s8 staminaDamp">
+      <DisplayName>【廃止予定】スタミナダメージ減衰率[%/s]</DisplayName>
+      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s8 knockbackDamp">
+      <DisplayName>【廃止予定】ノックバック減衰率[%/s]</DisplayName>
+      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s8 shootAngleXZ">
+      <DisplayName>発射仰角[deg]</DisplayName>
+      <Description>水平方向からの追加仰角。</Description>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>10220030</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="u8 lockShootLimitAng">
+      <DisplayName>射撃補正角度 水平[deg]</DisplayName>
+      <Description>射撃補正角度（水平）</Description>
+      <Maximum>180</Maximum>
+      <SortID>10260190</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="u8 charaPenetrateType">
+      <DisplayName>キャラを貫通？</DisplayName>
+      <Enum>BULLET_CHARA_PENETRATE_TYPE</Enum>
+      <Description>ＰＣ、ＮＰＣに当たったときに、寿命まで消滅しないかどうか？を設定</Description>
+      <Maximum>100</Maximum>
+      <SortID>10140030</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="u8 prevVelocityDirRate">
+      <DisplayName>前回の移動方向加算率[%]</DisplayName>
+      <Description>滑る弾が壁にヒット時に前回の移動方向を今の方向へ加算する比率</Description>
+      <Maximum>100</Maximum>
+      <SortID>10110030</SortID>
+      <UnkC8>地面に沿う設定</UnkC8>
+    </Field>
+    <Field Def="u8 atkAttribute">
+      <DisplayName>実弾属性</DisplayName>
+      <Enum>ATKPARAM_ATKATTR_TYPE</Enum>
+      <Description>弾丸に設定する実弾属性を設定</Description>
+      <SortID>10100000</SortID>
+      <UnkC8>属性</UnkC8>
+    </Field>
+    <Field Def="u8 spAttribute">
+      <DisplayName>特殊属性</DisplayName>
+      <Enum>ATKPARAM_SPATTR_TYPE</Enum>
+      <Description>弾丸に設定する特殊属性を設定</Description>
+      <SortID>10100010</SortID>
+      <UnkC8>属性</UnkC8>
+    </Field>
+    <Field Def="u8 Material_AttackType">
+      <DisplayName>SFX材質 攻撃タイプ</DisplayName>
+      <Enum>BEHAVIOR_ATK_TYPE</Enum>
+      <Description>攻撃属性が何かを指定する</Description>
+      <SortID>10050090</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="u8 Material_AttackMaterial">
+      <DisplayName>SFX材質 攻撃材質</DisplayName>
+      <Enum>WEP_MATERIAL_ATK</Enum>
+      <Description>攻撃時のSFX/ＳＥに使用</Description>
+      <SortID>10050100</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="u8 bFollowHitSfx:1">
+      <DisplayName>多段ヒットしたときに着弾SFXを追従させるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>多段ヒットしたときに発生位置を追従するようにするか（常駐SFXを使用する想定）</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710100</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 maxMissileLockNum:7">
+      <DisplayName>【行動パラに移動】最大ロック数</DisplayName>
+      <Description>ミサイルロックの最大数</Description>
+      <Maximum>127</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 launchConditionType">
+      <DisplayName>発生条件</DisplayName>
+      <Enum>BULLET_LAUNCH_CONDITION_TYPE</Enum>
+      <Description>着弾・寿命消滅時に弾を発生させるか判定する条件を指定</Description>
+      <SortID>10160020</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 old_FollowType:3">
+      <DisplayName>【廃止予定】追従タイプ</DisplayName>
+      <Enum>BULLET_FOLLOW_TYPE</Enum>
+      <Description>【廃止予定】追従タイプ。「追従しない」がデフォルト。</Description>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 EmittePosType:3">
+      <DisplayName>発生源タイプ</DisplayName>
+      <Enum>BULLET_EMITTE_POS_TYPE</Enum>
+      <Description>発生源タイプ。ダミポリからが通常。（メテオを判定するために導入）</Description>
+      <Maximum>7</Maximum>
+      <SortID>10160060</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 isAttackSFX:1">
+      <DisplayName>刺さったままになるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>矢などの弾丸が、キャラクターに刺さったままになるかどうかを設定する</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140010</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="u8 isEndlessHit:1">
+      <DisplayName>あたり続けるか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>あたり続けるか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 isPenetrateMap:1">
+      <DisplayName>マップを貫通？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>マップを貫通するか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140040</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="u8 isHitBothTeam:1">
+      <DisplayName>敵味方共にあたる？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>敵味方共にあたるか？（徘徊ゴーストにはあたらない）</Description>
+      <Maximum>1</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 isUseSharedHitList:1">
+      <DisplayName>ヒットリストを共有するか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ヒットリストを共有するかを指定</Description>
+      <Maximum>1</Maximum>
+      <SortID>10200000</SortID>
+      <UnkC8>ヒットリスト</UnkC8>
+    </Field>
+    <Field Def="u8 isUseMultiDmyPolyIfPlace:1">
+      <DisplayName>複数のダミポリを使うか？</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>弾配置時に同一ダミポリIDを複数使うか？</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710100</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isHowitzer:1">
+      <DisplayName>曲射補正の適用</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>曲射補正を適用するかを設定する。あわせて、OFFの場合、弾丸の移動距離を飛距離として「有効射程距離」の判定を行う。ONの場合、弾丸の発射位置から弾丸の現在位置までの水平面上の距離を飛距離として「有効射程距離」の判定を行う。</Description>
+      <Maximum>1</Maximum>
+      <SortID>10340000</SortID>
+      <UnkC8>曲射</UnkC8>
+    </Field>
+    <Field Def="u8 isFDPFunnel:1">
+      <DisplayName>FDPファンネルか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>FDPファンネルか</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>77710100</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="u8 isHitForceMagic:1">
+      <DisplayName>フォース魔法に当たるか</DisplayName>
+      <Description>フォース魔法に当たるか ※使用不可の項目</Description>
+      <Maximum>1</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 isIgnoreSfxIfHitWater:1">
+      <DisplayName>水面衝突時のエフェクト無視するか</DisplayName>
+      <Description>水面に当たった場合はエフェクト無視するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140060</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="u8 isIgnoreMoveStateIfHitWater:1">
+      <DisplayName>水面衝突時の状態遷移を無視するか</DisplayName>
+      <Description>水に当たっても状態遷移を無視するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140070</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="u8 isHitDarkForceMagic:1">
+      <DisplayName>闇フォース魔法に当たるか</DisplayName>
+      <Description>闇フォース魔法に当たるか　※使用不可の項目</Description>
+      <Maximum>1</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 isProximityFuseHitChildInheritBulletPos:1">
+      <DisplayName>近接信管ヒット時の子弾丸発生位置を親弾丸と同じ位置にするか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>OFFのときは移動量に応じた位置に補正する（高速移動する弾丸がターゲットにめり込む場合にOFFにする）</Description>
+      <Maximum>1</Maximum>
+      <SortID>10070041</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="u8 isEndOfLifeNoDecal:1">
+      <DisplayName>寿命爆発時にデカールを貼らない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>目標到達距離などで寿命になったときにデカールを貼らないようにするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10070055</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="u8 isEnableAutoHoming:1">
+      <DisplayName>弾丸自動捕捉許可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>非ロックオン時に自動追従するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10180000</SortID>
+    </Field>
+    <Field Def="u8 isSyncBulletCulcDumypolyPos:1">
+      <DisplayName>同期弾丸の場合、ダミポリ位置での再計算を行うか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>同期生成された弾丸の場合、弾丸生成時にダミポリ位置による姿勢の再計算を行わず、同期時のエミッタ姿勢を使用する。</Description>
+      <Maximum>1</Maximum>
+      <SortID>10190000</SortID>
+    </Field>
+    <Field Def="u8 isIntervalCreateTargetLockOn:1">
+      <DisplayName>間隔指定弾丸の場合ターゲットに向けて飛ばすか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>一定間隔で作成される弾丸の場合ターゲットに向けて飛ばすか。OFFなら親姿勢の方に飛ばす。</Description>
+      <Maximum>1</Maximum>
+      <SortID>10160140</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 isNotRollBulletDirBeforeHorming:1">
+      <DisplayName>誘導開始するまで弾頭方向を維持するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>誘導開始するまで弾頭方向を維持するか。発射直後の弾頭方向が重力で下がらないようにするのに使用する</Description>
+      <Maximum>1</Maximum>
+      <SortID>10280200</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="s8 darkDamageDamp">
+      <DisplayName>【廃止予定】闇攻撃力減衰率[%/s]</DisplayName>
+      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s8 bulletSfxDeleteType_byHit">
+      <DisplayName>着弾時の弾丸SFX消滅タイプ</DisplayName>
+      <Enum>BULLET_SFX_DELETE_TYPE</Enum>
+      <Description>着弾or弾き時の弾丸SFX消滅タイプ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10050070</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s8 bulletSfxDeleteType_byLifeDead">
+      <DisplayName>寿命時の弾丸SFX消滅タイプ</DisplayName>
+      <Enum>BULLET_SFX_DELETE_TYPE</Enum>
+      <Description>寿命時の弾丸SFX消滅タイプ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10050080</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="f32 targetYOffsetRange">
+      <DisplayName>目標上下オフセット[m]</DisplayName>
+      <Description>着弾位置の上下オフセット。発射時とホーミング中のターゲット位置を上下にずらす。（-n～n）</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280240</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 shootAngleYMaxRandom">
+      <DisplayName>発射角度乱数[deg]</DisplayName>
+      <Description>発射角度乱数の上限（0～360）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220020</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="f32 shootAngleXMaxRandom">
+      <DisplayName>発射仰角乱数[deg]</DisplayName>
+      <Description>発射仰角乱数の上限（0～360）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220050</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="s32 intervalCreateBulletId = -1">
+      <DisplayName>間隔指定発生弾丸ID</DisplayName>
+      <Description>一定間隔で弾丸を作る時に使う、弾丸のID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10160090</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="f32 intervalCreateTimeMin">
+      <DisplayName>発生間隔：最小時間[s]</DisplayName>
+      <Description>一定間隔で弾丸を作る間隔の最小（0～n）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10160100</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="f32 intervalCreateTimeMax">
+      <DisplayName>発生間隔：最大時間[s]</DisplayName>
+      <Description>一定間隔で弾丸を作る間隔の最大（0～n 0なら機能無効）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10160110</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="f32 predictionShootObserveTime">
+      <DisplayName>予測射撃の速度観測時間[s]</DisplayName>
+      <Description>【無効中】予測射撃機能の平均速度観測時間（0～4 0なら機能無効）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>4</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 intervalCreateWaitTime">
+      <DisplayName>間隔指定発生開始待ち時間[s]</DisplayName>
+      <Description>一定間隔で弾丸を作り始めるまでの待ち時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10160130</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 sfxPostureType">
+      <DisplayName>弾丸から発生したSFXの姿勢のタイプ</DisplayName>
+      <Enum>BULLET_SFX_CREATE_POSTURE_TYPE</Enum>
+      <Description>弾丸から作成されたSFXまたは子弾丸の初期姿勢を設定する</Description>
+      <Maximum>2</Maximum>
+      <SortID>10160160</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 isInheritSfxToChild:1">
+      <DisplayName>子弾にSFXを引き継ぐか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>親弾のSFXを引き継ぐ。子弾に設定されたSFXIDは無視する </Description>
+      <Maximum>1</Maximum>
+      <SortID>10160030</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 isInheritSpeedToChild:1">
+      <DisplayName>子弾に速度を引き継ぐか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>子弾に差し替わるタイミングの速度を引き継ぐ。子弾に設定された速度は無視する</Description>
+      <Maximum>1</Maximum>
+      <SortID>10160040</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 isInheritFollowAssetToChild:1">
+      <DisplayName>子弾に追従アセットを引き継ぐか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>追従しているアセットがあれば子弾丸に引き継ぐ</Description>
+      <Maximum>1</Maximum>
+      <SortID>10370040</SortID>
+      <UnkC8>動的生成するアセット</UnkC8>
+    </Field>
+    <Field Def="u8 isSequenceShootWhenSameTimeShoot:1">
+      <DisplayName>同時発射でも連番発射するか【行動パラ移行予定】</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>複数ダミポリを使用する連番発射の際に、同時発射の弾丸も連番発射の対象とするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 isShootRumbleEnableNoCameraTarget:1">
+      <DisplayName>カメラが見ているキャラが以外が撃った際にカメラが揺れるかどうか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>カメラが見ているキャラが以外が撃った際にカメラが揺れるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10330030</SortID>
+      <UnkC8>カメラ揺れ</UnkC8>
+    </Field>
+    <Field Def="u8 bUseNumShootBullet:1">
+      <DisplayName>同時発射数分弾丸を消費するか 【行動パラ移行予定】</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>同時発射数分弾丸を消費する</Description>
+      <EditFlags>17</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>88800001</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u8 isLocked:1">
+      <DisplayName>ロックオンできるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ロックして迎撃できるようにしたい場合は○にしてください</Description>
+      <Maximum>1</Maximum>
+      <SortID>10120040</SortID>
+      <UnkC8>迎撃</UnkC8>
+    </Field>
+    <Field Def="u8 isReflect:1">
+      <DisplayName>反射するか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>反射するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10360000</SortID>
+      <UnkC8>反射制御</UnkC8>
+    </Field>
+    <Field Def="u8 attachEffectType2">
+      <DisplayName>アタッチ効果タイプ</DisplayName>
+      <Enum>BULLET_ATTACH_EFFECT_TYPE</Enum>
+      <Description>アタッチする効果タイプ</Description>
+      <SortID>10380000</SortID>
+      <UnkC8>アタッチ効果</UnkC8>
+    </Field>
+    <Field Def="u8 shapeType">
+      <DisplayName>ヒット形状</DisplayName>
+      <Enum>BULLET_SHAPE_TYPE</Enum>
+      <Description>ヒット形状 0:球 1:カプセル</Description>
+      <SortID>10250000</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 randomCreateRadius">
+      <DisplayName>ランダム発生時の発生範囲(半径)[m]</DisplayName>
+      <Description>発生源タイプがランダムな位置に発生する設定の場合に利用される、弾丸の発生範囲。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>10160080</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="s32 generateAssetNo = -1">
+      <DisplayName>動的生成するアセット番号</DisplayName>
+      <Description>動的に発生させるアセットの番号。-1：生成しない。アセット番号はアセットの下6桁の数値です。例： AEG999_999 = 999999</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10370000</SortID>
+      <UnkC8>動的生成するアセット</UnkC8>
+    </Field>
+    <Field Def="f32 homingBeginTime">
+      <DisplayName>誘導開始時間[s]</DisplayName>
+      <Description>何秒経過してから誘導を開始するか.</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10280080</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 beforeAccelGravity">
+      <DisplayName>加速前：重力加速度[m/s^2]</DisplayName>
+      <Description>加速開始時間が経過する前の重力加速度</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280120</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 afterAccelGravity">
+      <DisplayName>加速後：重力加速度[m/s^2]</DisplayName>
+      <Description>加速終了後の落下加速度</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280130</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 perfRandomRate">
+      <DisplayName>性能ランダム率</DisplayName>
+      <Description>弾丸の加速度、追尾最大旋回角度に対するランダム率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10280140</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="s16 maxQuakeAngleX">
+      <DisplayName>誘導：最大ブレ角度X[deg]</DisplayName>
+      <Description>加速時に発生する進行方向に対する横方向のブレ角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10280150</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="s16 traceLimitAngle = 90">
+      <DisplayName>誘導限界角度[deg]</DisplayName>
+      <Description>ターゲットと飛ぶ方向のなす角がこれ以上になったら誘導を終了する</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10280110</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 quakeConvergeTime">
+      <DisplayName>誘導：ブレ収束時間[s]</DisplayName>
+      <Description>最大ブレ角度から収束するまでの時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10280170</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 accelEndTime = 255">
+      <DisplayName>加速終了時間[s]</DisplayName>
+      <Description>この時間が過ぎたら加速しない。移行、「加速後：重力加速度」に従って落ちる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10260130</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="u8 isRicochet">
+      <DisplayName>跳弾するか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>着弾時に１回跳弾するかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10150010</SortID>
+      <UnkC8>跳弾</UnkC8>
+    </Field>
+    <Field Def="u8 isBreakable">
+      <DisplayName>迎撃できるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>迎撃できるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10120000</SortID>
+      <UnkC8>迎撃</UnkC8>
+    </Field>
+    <Field Def="s8 atkPow_forSfx">
+      <DisplayName>攻撃強度[SFX]</DisplayName>
+      <Enum>ATKPARAM_SFX_ATK_POW</Enum>
+      <Description>攻撃強度[SFX]</Description>
+      <Minimum>0</Minimum>
+      <SortID>10050110</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s8 atkPow_forSe">
+      <DisplayName>攻撃強度[SE]</DisplayName>
+      <Enum>ATKPARAM_SE_ATK_POW</Enum>
+      <Description>攻撃強度[SE]</Description>
+      <Minimum>0</Minimum>
+      <SortID>10050120</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_Guard = -1">
+      <DisplayName>SFXID【ガード時】</DisplayName>
+      <Description>ガード時SFXID。-1は発生しない。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 afterRicochetSpeedRate = 1">
+      <DisplayName>跳弾後の弾速の変化率</DisplayName>
+      <Description>跳弾後の弾速の割合(1.0で跳弾前と速度に変化無し)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10150030</SortID>
+      <UnkC8>跳弾</UnkC8>
+    </Field>
+    <Field Def="f32 afterRicochetGravity = 2.5">
+      <DisplayName>跳弾後重力加速度[m^2/sec]</DisplayName>
+      <Description>跳弾後の重力加速度</Description>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10150040</SortID>
+      <UnkC8>跳弾</UnkC8>
+    </Field>
+    <Field Def="f32 proximityFuseRange">
+      <DisplayName>近接信管反応距離(半径)[m]</DisplayName>
+      <Description>近接信管がキャラに反応して弾丸が消滅する距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10070040</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="s32 shotgunParamId = -1">
+      <DisplayName>散弾制御パラメータID</DisplayName>
+      <Description>散弾する際の散り方の制御パラメータ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10240000</SortID>
+      <UnkC8>散弾</UnkC8>
+    </Field>
+    <Field Def="f32 shotgunBaseDist">
+      <DisplayName>拡散基準距離(m)</DisplayName>
+      <Description>散弾する際の基準距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10240010</SortID>
+      <UnkC8>散弾</UnkC8>
+    </Field>
+    <Field Def="s32 targetShotgunParamId = -1">
+      <DisplayName>目標位置オフセット_散弾制御パラメータID</DisplayName>
+      <Description>目標に対する散弾する際の散り方の制御パラメータ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10240020</SortID>
+      <UnkC8>散弾</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_AtAccel = -1">
+      <DisplayName>SFXID【加速時に1度】</DisplayName>
+      <Description>加速時に１度だけ生成されるのSFX ID。-1で生成しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050010</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_AfterAccel = -1">
+      <DisplayName>SFXID【加速後】</DisplayName>
+      <Description>加速後のSFX ID。このSFX ID が -1の場合、加速前のSFXで飛び続ける。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050020</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="f32 quakeIntervalMin">
+      <DisplayName>誘導：最小ブレ間隔[s]</DisplayName>
+      <Description>誘導時の最小ブレ間隔</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10280180</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 quakeIntervalMax = 0.04">
+      <DisplayName>誘導：最大ブレ間隔[s]</DisplayName>
+      <Description>誘導時の最大ブレ間隔</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10280190</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="s16 maxQuakeAngleY">
+      <DisplayName>誘導：最大ブレ角度Y[deg]</DisplayName>
+      <Description>加速時に発生する進行方向に対する縦方向のブレ角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10280160</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="u8 bulletGenerateType">
+      <DisplayName>発生子弾丸種別</DisplayName>
+      <Enum>BULLET_CHILDREN_EMITTE_PURPOSE_TYPE</Enum>
+      <Description>発生子弾丸種別</Description>
+      <SortID>10160070</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 bulletGenerateTypeForInterva">
+      <DisplayName>間隔指定子弾丸種別</DisplayName>
+      <Enum>BULLET_CHILDREN_EMITTE_PURPOSE_TYPE</Enum>
+      <Description>間隔指定子弾丸種別</Description>
+      <SortID>10160120</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_InteractiveSmoke = -1">
+      <DisplayName>触れる煙ID</DisplayName>
+      <Description>生成する触れる煙を指定用ID(触れる煙パラメータ.xlsm)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 activeAngle_forForce">
+      <DisplayName>フォース有効初期角度[deg]</DisplayName>
+      <Description>フォースが有効な初期角度[0,180] (180で全周となる)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 activeMaxAngle_forForce">
+      <DisplayName>フォース有効最大角度[deg]</DisplayName>
+      <Description>フォースが有効な最大角度[0,180] (180で全周となる)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 validAngleDeg">
+      <DisplayName>有効角度[deg]</DisplayName>
+      <Description>弾が当たる正面からの角度[deg] 0 or 180 で全周となる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 hitRadiusMin">
+      <DisplayName>無効弾半径[m]</DisplayName>
+      <Description>この距離よりも弾と近い場合に弾が当たらない。</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710100</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 hitRadiusMinForMap">
+      <DisplayName>無効弾半径[m](マップ用) </DisplayName>
+      <Description>この距離よりも弾と近い場合に弾が当たらない。(マップ用) </Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710100</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 barrierDrainEnergyPS">
+      <DisplayName>バリア中消費エネルギー[/s]</DisplayName>
+      <Description>バリア展開中に1秒あたりに消費するエネルギー</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77710100</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 barrierDrainStaminaPS">
+      <DisplayName>バリア中消費スタミナ[/s]</DisplayName>
+      <Description>バリア展開中に1秒あたりに消費するスタミナ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 initCapsuleHitLength">
+      <DisplayName>初期当たり長さ[m]</DisplayName>
+      <Description>初期当たり長さ[m]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10250070</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 maxCapsuleHitLength">
+      <DisplayName>最大当たり長さ[m]</DisplayName>
+      <Description>最大当たり長さ[m]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10250080</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 initCapsuleHitLengthForMap">
+      <DisplayName>初期当たり長さ[m](マップ用)</DisplayName>
+      <Description>初期当たり長さ[m](マップ用)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10250090</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 maxCapsuleHitLengthForMap">
+      <DisplayName>最大当たり長さ[m](マップ用)</DisplayName>
+      <Description>最大当たり長さ[m](マップ用)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10250100</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 capsuleHitLengthExpandTime">
+      <DisplayName>当たり長さ伸長時間[sec]</DisplayName>
+      <Description>当たり長さ伸長時間[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10250110</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 initCapsuleHitRadius">
+      <DisplayName>初期当たり太さ（半径）[m]</DisplayName>
+      <Description>初期当たり太さ（半径）[m]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10250120</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 maxCapsuleHitRadius">
+      <DisplayName>最大当たり太さ（半径）[m]</DisplayName>
+      <Description>最大当たり太さ（半径）[m]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10250130</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 initCapsuleHitRadiusForMap">
+      <DisplayName>初期当たり太さ（半径）[m](マップ用)</DisplayName>
+      <Description>初期当たり太さ（半径）[m](マップ用)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10250140</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 maxCapsuleHitRadiusForMap">
+      <DisplayName>最大当たり太さ（半径）[m](マップ用)</DisplayName>
+      <Description>最大当たり太さ（半径）[m](マップ用)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10250150</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 capsuleHitRadiusExpandTime">
+      <DisplayName>当たり太さ伸長時間[sec]</DisplayName>
+      <Description>当たり太さ伸長時間[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10250160</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 initCapsuleHitKeepTime">
+      <DisplayName>初期状態を維持する時間[sec]</DisplayName>
+      <Description>初期状態を維持する時間[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10250170</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="u8 hitCount">
+      <DisplayName>ヒット回数（キャラ用）</DisplayName>
+      <Description>ヒット回数（キャラ用）</Description>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 hitCountAsset">
+      <DisplayName>ヒット回数（マップ用）</DisplayName>
+      <Description>ヒット回数（マップ用）</Description>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 createChildrenPosType">
+      <DisplayName>マップ着弾時子弾生成場所</DisplayName>
+      <Enum>BULLET_CHILDREN_EMITTE_POS_TYPE</Enum>
+      <Description>マップ着弾時の子弾生成位置を指定 0:着弾位置</Description>
+      <SortID>10160010</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 createLimitGroupId">
+      <DisplayName>作成制限グループId</DisplayName>
+      <Description>0なら未使用。同一のグループIdに設定された弾丸を作成するときに上限に達していたらその弾丸を作成しない。（ネットワークで同期作成された弾は関係なく出る）</Description>
+      <SortID>10160170</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="f32 hitInterval">
+      <DisplayName>ヒット間隔（キャラ用）[sec]</DisplayName>
+      <Description>ヒット間隔（キャラ用）[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 hitIntervalAsset">
+      <DisplayName>ヒット間隔（マップ用）[sec]</DisplayName>
+      <Description>ヒット間隔（マップ用）[sec]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 barrierDamageCutRate">
+      <DisplayName>バリアダメージ軽減率[%]</DisplayName>
+      <Description>バリア展開中に受けたダメージの軽減率。100なら全カット</Description>
+      <Maximum>100</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 barrierHitType">
+      <DisplayName>バリア着弾タイプ</DisplayName>
+      <Enum>BULLET_BARRIER_HIT_TYPE</Enum>
+      <Description>バリアに着弾した際の挙動。バリアへ攻撃する側の弾に設定。</Description>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 targetType">
+      <DisplayName>射撃ターゲットタイプ</DisplayName>
+      <Enum>BULLET_SHOOT_TARGET_TYPE</Enum>
+      <Description>ロックしているキャラか、地点指定などロックサイトの表示/非表示にも影響する</Description>
+      <SortID>10090000</SortID>
+    </Field>
+    <Field Def="u8 flareHitType">
+      <DisplayName>フレア着弾タイプ</DisplayName>
+      <Enum>BULLET_FLARE_HIT_TYPE</Enum>
+      <Description>フレア弾丸に当たった際の挙動</Description>
+      <SortID>10140000</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_FollowingBarrier = -1">
+      <DisplayName>SFXID【バリア用_弾沿い時】</DisplayName>
+      <Description>バリア側に設定。自身（バリア）に弾が沿っている際に沿っている弾の位置で常に発生するSfx</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77710000</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_OnLeaveBarrier = -1">
+      <DisplayName>SFXID【バリア後消滅時】</DisplayName>
+      <Description>バリアに当たる弾側に設定。バリアから離れる際に発生するSfx</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 onBarrierdSpeedRate">
+      <DisplayName>バリア着弾後の速度倍率</DisplayName>
+      <Description>バリアに当たった際に弾丸の速度にかかる値(バリア側の設定）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 onBarrierdSpeedMin">
+      <DisplayName>バリア着弾後の最低速度[m/s]</DisplayName>
+      <Description>バリアに当たった後の弾丸の最低速度[m/s](バリア側の設定）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 onBarrierdSpeedMax">
+      <DisplayName>バリア着弾後の最高速度[m/s]</DisplayName>
+      <Description>バリアに当たった後の弾丸の最高速度[m/s] ※0で最高速度無限(バリア側の設定）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 delayExplosionTimeSec">
+      <DisplayName>マップ着弾時爆破遅延時間[sec]</DisplayName>
+      <Description>マップ着弾後何秒で爆破するか。0 で即時爆発</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>17</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77710100</SortID>
+      <UnkC8>運用停止（出力無効）</UnkC8>
+    </Field>
+    <Field Def="f32 stickLengthRate = 0.5">
+      <DisplayName>マップ着弾時に刺さる度合い</DisplayName>
+      <Description>マップ着弾時に刺さる度合い。当たり球半径or当たりカプセル長さを基準とする 0:完全に露出 1:全て埋まる</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10140020</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_ShootDown = -1">
+      <DisplayName>SFXID【迎撃時】</DisplayName>
+      <Description>迎撃・被迎撃時に切り替わるSfxId</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_waitingExplosion = -1">
+      <DisplayName>SFXID【遅延信管爆発待機時】</DisplayName>
+      <Description>マップに着弾し、遅延信管によって爆発待機時に切り替わるSfxIｄ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050040</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="f32 barrierFlowingMaxTime = 0.3">
+      <DisplayName>バリアを沿う寿命[sec]</DisplayName>
+      <Description>バリア表面を沿い続ける最大時間[sec]。バリアへの攻撃側弾丸に設定。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>77700000</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 homingFadeTime">
+      <DisplayName>誘導開始してからの弾頭方向補間時間[s]</DisplayName>
+      <Description>誘導開始してからの弾頭方向補間時間[s]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10280090</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 breakableHitSizeRate">
+      <DisplayName>被迎撃当たりのサイズ係数</DisplayName>
+      <Description>被迎撃当たりのサイズ係数</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10120010</SortID>
+      <UnkC8>迎撃</UnkC8>
+    </Field>
+    <Field Def="s32 add_sfxId_Bullet = -1">
+      <DisplayName>弾丸追加発生SFX</DisplayName>
+      <Description>特殊効果：状態変化タイプ「弾丸追加SFX発生」がキャラクターに掛かっている時に弾丸から発生させるSFX</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050060</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="f32 flareHitRadius">
+      <DisplayName>フレア有効半径[m] </DisplayName>
+      <Description>アタッチ効果タイプがFNRフレアの場合に、他弾丸に影響を及ぼす距離[m]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10380010</SortID>
+      <UnkC8>アタッチ効果</UnkC8>
+    </Field>
+    <Field Def="f32 upperDirectionCorrectionByShooterSpeed">
+      <DisplayName>射撃者の速度による補正倍率_上方向</DisplayName>
+      <Description>弾丸の初速に加える射撃者の速度の上方向補正倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10260070</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 lowerDirectionCorrectionByShooterSpeed">
+      <DisplayName>射撃者の速度による補正倍率_下方向</DisplayName>
+      <Description>弾丸の初速に加える射撃者の速度の下方向補正倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10260080</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 forwardDirectionCorrectionByShooterSpeed">
+      <DisplayName>射撃者の速度による補正倍率_前方向</DisplayName>
+      <Description>弾丸の初速に加える射撃者の速度の水平方向補正倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10260090</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 reloadTimeSecond = 1">
+      <DisplayName>1回撃ってから次に撃てるまでのインターバル【行動パラ移行予定】</DisplayName>
+      <Description>１回撃ってから次に撃てるまでのインターバル</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s32 shootDmyPolyId = -1">
+      <DisplayName>射撃ダミポリID【行動パラ移行予定】</DisplayName>
+      <Description>射撃ダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s32 shootEndDmyPolyId = -1">
+      <DisplayName>射撃終了ダミポリID【行動パラ移行予定】</DisplayName>
+      <Description>射撃終了ダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="s32 muzzleFlashSfxId = -1">
+      <DisplayName>発射時の銃口のSFXのID</DisplayName>
+      <Description>発射時の銃口SfxのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050130</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s32 cartridgeDmyPolyId = -1">
+      <DisplayName>薬莢ダミポリID</DisplayName>
+      <Description>薬莢ダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10060000</SortID>
+      <UnkC8>薬莢</UnkC8>
+    </Field>
+    <Field Def="s32 cartridgeSfxId = -1">
+      <DisplayName>薬莢のSFXのID</DisplayName>
+      <Description>薬莢のSfxのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10060020</SortID>
+      <UnkC8>薬莢</UnkC8>
+    </Field>
+    <Field Def="s32 shootRumbleId = -1">
+      <DisplayName>射撃時の揺れID</DisplayName>
+      <Description>射撃時の揺れのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10330000</SortID>
+      <UnkC8>カメラ揺れ</UnkC8>
+    </Field>
+    <Field Def="f32 shootInterval">
+      <DisplayName>連続発射間隔[s]【行動パラ移行予定】</DisplayName>
+      <Description>連続発射時に、何秒間隔で撃つかの秒数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="f32 blastRayDist = -1">
+      <DisplayName>爆風発生レイキャスト距離[m]</DisplayName>
+      <Description>マズルと一緒に発生する爆風の発生までのレイキャスト距離</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>30</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10320000</SortID>
+      <UnkC8>爆風</UnkC8>
+    </Field>
+    <Field Def="u16 numContinueShoot = 1">
+      <DisplayName>連続発射数【行動パラ移行予定】</DisplayName>
+      <Description>継続して発射する回数。発射する弾の総数は、同時発射数×連続発射数　となる</Description>
+      <Minimum>1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="u16 PathFindCostParamId">
+      <DisplayName>ルート検索パラメータID</DisplayName>
+      <Description>ホーミングターゲットを検索する際のコスト計算用パララメータID</Description>
+      <SortID>10280280</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="s16 elevationMinAngle">
+      <DisplayName>最低発射仰角[deg]</DisplayName>
+      <Description>最低発射仰角[deg]</Description>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>10340010</SortID>
+      <UnkC8>曲射</UnkC8>
+    </Field>
+    <Field Def="s16 elevationMaxAngle">
+      <DisplayName>最高発射仰角[deg]</DisplayName>
+      <Description>最高発射仰角[deg]</Description>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>10340020</SortID>
+      <UnkC8>曲射</UnkC8>
+    </Field>
+    <Field Def="f32 initMinVellocity = -1">
+      <DisplayName>最低初速[m/s]</DisplayName>
+      <Description>最低初速[m/s]</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10340030</SortID>
+      <UnkC8>曲射</UnkC8>
+    </Field>
+    <Field Def="f32 initMaxVellocity = -1">
+      <DisplayName>最高初速[m/s]</DisplayName>
+      <Description>最高初速[m/s]</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10340040</SortID>
+      <UnkC8>曲射</UnkC8>
+    </Field>
+    <Field Def="f32 PathFindInterval = 1">
+      <DisplayName>ルート検索の頻度[s]</DisplayName>
+      <Description>ホーミングターゲットに対してナビボリュームのパス検索の更新間隔【秒】です</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10280270</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="u16 intervalCreateBulletMax">
+      <DisplayName>間隔指定発生弾丸最大数</DisplayName>
+      <Description>一定間隔で弾丸を作る時の最大数、０で無制限</Description>
+      <Maximum>999</Maximum>
+      <SortID>10160150</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="s16 cupsleRotationDeg">
+      <DisplayName>横向きカプセル初期ロール角度[deg]</DisplayName>
+      <Description>横向きカプセルの回転角度</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10250180</SortID>
+      <UnkC8>当たり調整</UnkC8>
+    </Field>
+    <Field Def="f32 PathFindSec">
+      <DisplayName>ルート検索時間[s]</DisplayName>
+      <Description>パス検索を行う時間【秒】です。この時間経過するとパス検索をしなくなります。(-1で無限)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>10280290</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 PathMoveNearDisableLength">
+      <DisplayName>ルート移動無効圏内[m]</DisplayName>
+      <Description>パス検索移動中にホーミングターゲットとの距離がこの値以下になったらパス追従を無効にして直接移動します</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>10280300</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="s32 thrusterSfxId = -1">
+      <DisplayName>ミサイルスラスターSFXのID</DisplayName>
+      <Description>発生させるSFXのID（-1でスラスターをださない）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10350000</SortID>
+      <UnkC8>ミサイルスラスター</UnkC8>
+    </Field>
+    <Field Def="f32 thrusterEmitOffsetRate">
+      <DisplayName>ミサイルスラスター発生位置割合</DisplayName>
+      <Description>当たり球の半径に対する割合</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>10350010</SortID>
+      <UnkC8>ミサイルスラスター</UnkC8>
+    </Field>
+    <Field Def="f32 reflectRate = 1">
+      <DisplayName>反発係数（垂直）</DisplayName>
+      <Description>反発係数</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10360010</SortID>
+      <UnkC8>反射制御</UnkC8>
+    </Field>
+    <Field Def="f32 reflectLimitSpeed = -1">
+      <DisplayName>反射しなくなる速度[m/s]</DisplayName>
+      <Description>反射しなくなる速度[m/s]、反射速度が設定値以下の場合は停止する</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>10360030</SortID>
+      <UnkC8>反射制御</UnkC8>
+    </Field>
+    <Field Def="s16 reflectLimitAngle = 45">
+      <DisplayName>反射停止判定角度[deg]</DisplayName>
+      <Description>反射しなくなる速度を判定する法線角度、上方向を０とする（９０で垂直壁、１８０で天井でも判定する）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10360040</SortID>
+      <UnkC8>反射制御</UnkC8>
+    </Field>
+    <Field Def="s16 shootAngleZ">
+      <DisplayName>発射Z軸回転[deg]</DisplayName>
+      <Description>飛び道具発射時にZ軸方向へ何度回転させるかを指定.</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220090</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="f32 reflectRateHorizontal = 1">
+      <DisplayName>反発係数（水平）</DisplayName>
+      <Description>反発係数</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10360020</SortID>
+      <UnkC8>反射制御</UnkC8>
+    </Field>
+    <Field Def="s32 breakableDurable">
+      <DisplayName>迎撃耐久値</DisplayName>
+      <Description>-1　：衝突するが撃墜されない（弾を吸うのみ）  0　：衝突対象の迎撃攻撃力を問わず撃墜される  1～：衝突対象の迎撃攻撃力で減算、0で撃墜</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10120020</SortID>
+      <UnkC8>迎撃</UnkC8>
+    </Field>
+    <Field Def="u32 breakablePower">
+      <DisplayName>迎撃攻撃力</DisplayName>
+      <Description>0　：耐久値0の弾丸以外撃墜しない  1～：衝突対象の迎撃耐久値を減算</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10120030</SortID>
+      <UnkC8>迎撃</UnkC8>
+    </Field>
+    <Field Def="s32 consumeEN">
+      <DisplayName>射撃時消費EN</DisplayName>
+      <Description>射撃時消費EN</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10080000</SortID>
+    </Field>
+    <Field Def="f32 thrusterEmitMinSec">
+      <DisplayName>ミサイルスラスター発生間隔最短[s]</DisplayName>
+      <Description>ミサイルスラスターを発生させる間隔の最短時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10350020</SortID>
+      <UnkC8>ミサイルスラスター</UnkC8>
+    </Field>
+    <Field Def="f32 thrusterEmitMaxSec = 0.3">
+      <DisplayName>ミサイルスラスター発生間隔最長[s]</DisplayName>
+      <Description>ミサイルスラスターを発生させる間隔の最長時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10350030</SortID>
+      <UnkC8>ミサイルスラスター</UnkC8>
+    </Field>
+    <Field Def="f32 shootAngleZInterval">
+      <DisplayName>発射Z軸回転間隔[deg]</DisplayName>
+      <Description>飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Z軸)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>1</Increment>
+      <SortID>10220100</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="f32 autoSearchStartTime">
+      <DisplayName>ファンネル思考開始時間</DisplayName>
+      <Description>ファンネル思考開始時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 shootAngleZMaxRandom">
+      <DisplayName>発射Z軸回転乱数[deg]</DisplayName>
+      <Description>発射Z軸回転乱数の上限（0～360）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220110</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="s16 shootPossibleAngle = -1">
+      <DisplayName>射撃可能角度[deg]</DisplayName>
+      <Description>射撃可能角度</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10260210</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="u8 deflectType">
+      <DisplayName>偏差射撃タイプ</DisplayName>
+      <Enum>BULLET_DEFLECT_TYPE</Enum>
+      <Description>偏差射撃タイプ</Description>
+      <SortID>10270000</SortID>
+      <UnkC8>予測射撃</UnkC8>
+    </Field>
+    <Field Def="u8 shootEnableLockNum">
+      <DisplayName>【行動パラに移動】発射可能ロック数</DisplayName>
+      <Description>ロックカウント数が指定値未満の場合は発射不可とする</Description>
+      <Maximum>99</Maximum>
+      <SortID>88800000</SortID>
+      <UnkC8>削除予定</UnkC8>
+    </Field>
+    <Field Def="f32 backDirectionCorrectionByShooterSpeed">
+      <DisplayName>射撃者の速度による補正倍率_後方向</DisplayName>
+      <Description>ノーロックで射撃したときに射撃者の速度をどれくらい乗せるか（前）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10260100</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 sideDirectionCorrectionByShooterSpeed">
+      <DisplayName>射撃者の速度による補正倍率_左右方向</DisplayName>
+      <Description>ノーロックで射撃したときに射撃者の速度をどれくらい乗せるか（後ろ）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10260110</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="s32 generateAssetAnimId = -1">
+      <DisplayName>動的生成するアセットのアニメID</DisplayName>
+      <Description>動的に発生させるアセットのアニメID。-1：アニメなし</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10370010</SortID>
+      <UnkC8>動的生成するアセット</UnkC8>
+    </Field>
+    <Field Def="s32 dangerousLevel">
+      <DisplayName>危険度</DisplayName>
+      <Description>危険度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10040000</SortID>
+    </Field>
+    <Field Def="f32 physDamageDecayTimeSec = 1">
+      <DisplayName>実弾攻撃力減衰時間[s]</DisplayName>
+      <Description>減衰距離以降、100％減衰するまでにかかる時間。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 magicDamageDecayTimeSec = 1">
+      <DisplayName>EN攻撃力減衰時間[s]</DisplayName>
+      <Description>減衰距離以降、100％減衰するまでにかかる時間。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 fireDamageDecayTimeSec = 1">
+      <DisplayName>爆発/燃焼攻撃力減衰時間[s]</DisplayName>
+      <Description>減衰距離以降、100％減衰するまでにかかる時間。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 thunderDamageDecayTimeSec = 1">
+      <DisplayName>コーラル攻撃力減衰時間[s]</DisplayName>
+      <Description>減衰距離以降、100％減衰するまでにかかる時間。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 darkDamageDecayTimeSec = 1">
+      <DisplayName>闇攻撃力減衰時間[s]</DisplayName>
+      <Description>減衰距離以降、100％減衰するまでにかかる時間。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 staminaDamageDecayTimeSec = 1">
+      <DisplayName>スタミナダメージ減衰時間[s]</DisplayName>
+      <Description>減衰距離以降、100％減衰するまでにかかる時間。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="f32 knockbackDamageDecayTimeSec = 1">
+      <DisplayName>ノックバック減衰時間[s]</DisplayName>
+      <Description>減衰距離以降、100％減衰するまでにかかる時間。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77700100</SortID>
+      <UnkC8>運用停止</UnkC8>
+    </Field>
+    <Field Def="u8 lockShootLimitAng_V">
+      <DisplayName>射撃補正角度 垂直[deg]</DisplayName>
+      <Description>射撃補正角度（垂直）</Description>
+      <Maximum>180</Maximum>
+      <SortID>10260200</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="u8 isInheritGuardType = 1">
+      <DisplayName>直撃時に子弾にガード成立判定を引き継ぐか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>直撃時にガード成立状況を引き継ぐか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10160050</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 FollowType">
+      <DisplayName>追従タイプ</DisplayName>
+      <Enum>BULLET_FOLLOW_TYPE</Enum>
+      <Description>追従タイプ。「追従しない」がデフォルト。</Description>
+      <SortID>10170000</SortID>
+    </Field>
+    <Field Def="u8 assetGenerateTiming">
+      <DisplayName>アセットの動的生成タイミング</DisplayName>
+      <Enum>BULLET_OBJ_GENERATE_TIMING</Enum>
+      <Description>「動的生成するアセット番号」で指定したオブジェクトを生成するタイミング</Description>
+      <Maximum>99</Maximum>
+      <SortID>10370020</SortID>
+      <UnkC8>動的生成するアセット</UnkC8>
+    </Field>
+    <Field Def="s32 predictionShoot_EnableSpeedType = 99999999">
+      <DisplayName>予測可能速度</DisplayName>
+      <Enum>PREDICTION_ENABLE_SPEED_TYPE</Enum>
+      <Description>予測射撃の距離ベース補正機能で使う速度タイプ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10270010</SortID>
+      <UnkC8>予測射撃</UnkC8>
+    </Field>
+    <Field Def="f32 predictionShoot_Rate = 1">
+      <DisplayName>予測補正係数</DisplayName>
+      <Description>予測射撃の距離ベース補正機能で使う補正係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10270020</SortID>
+      <UnkC8>予測射撃</UnkC8>
+    </Field>
+    <Field Def="f32 targetZOffsetRange">
+      <DisplayName>曲射目標位置手前奥オフセット[m]</DisplayName>
+      <Description>曲射用着弾位置の前後オフセット。発射時とホーミング中のターゲット位置を手前、奥にずらす。（-n～n）</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10340050</SortID>
+      <UnkC8>曲射</UnkC8>
+    </Field>
+    <Field Def="f32 targetXOffsetRange">
+      <DisplayName>曲射目標位置左右オフセット[m]</DisplayName>
+      <Description>曲射用着弾位置の左右オフセット。発射時とホーミング中のターゲット位置を左右にずらす。（-n～n）</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10340060</SortID>
+      <UnkC8>曲射</UnkC8>
+    </Field>
+    <Field Def="f32 shootTargetZOffset">
+      <DisplayName>目標手前奥オフセット[m]</DisplayName>
+      <Description>着弾位置の前後オフセット。発射時とホーミング中のターゲット位置を手前、奥にずらす。（-n～n）</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280250</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 shootTargetXOffset">
+      <DisplayName>目標左右オフセット[m]</DisplayName>
+      <Description>着弾位置の左右オフセット。発射時とホーミング中のターゲット位置を左右にずらす。（-n～n）</Description>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10280230</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="s16 bulletRollAngleZ">
+      <DisplayName>発射ねじり角[deg]</DisplayName>
+      <Description>錐揉み方向の追加角度(Z軸)</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220060</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="s16 bulletRollAngleZInterbal">
+      <DisplayName>発射ねじり角間隔[deg]</DisplayName>
+      <Description>飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Z軸)</Description>
+      <Minimum>-360</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220070</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="f32 bulletRollAngleZRandom">
+      <DisplayName>発射ねじり角乱数[deg]</DisplayName>
+      <Description>発射ねじり角乱数の上限（0～360）</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>10220080</SortID>
+      <UnkC8>発射方向・姿勢</UnkC8>
+    </Field>
+    <Field Def="s32 shootCameraRumbleParamId = -1">
+      <DisplayName>発生時カメラ振動パラメータID</DisplayName>
+      <Description>発生時カメラ振動パラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10330010</SortID>
+      <UnkC8>カメラ揺れ</UnkC8>
+    </Field>
+    <Field Def="s32 hitCameraRumbleParamId = -1">
+      <DisplayName>着弾時カメラ振動パラメータID</DisplayName>
+      <Description>着弾時カメラ振動パラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10330020</SortID>
+      <UnkC8>カメラ揺れ</UnkC8>
+    </Field>
+    <Field Def="s32 distAtkPowerRateCalcGraphParamId = -1">
+      <DisplayName>爆風距離減衰補正計算グラフID</DisplayName>
+      <Description>距離によって攻撃力を減衰するための補正計算グラフパラメータID</Description>
+      <EditFlags>17</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10320010</SortID>
+      <UnkC8>爆風</UnkC8>
+    </Field>
+    <Field Def="f32 perfSustainDist = -1">
+      <DisplayName>性能保証距離[m]</DisplayName>
+      <Description>この距離まで性能保証</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10150000</SortID>
+      <UnkC8>跳弾</UnkC8>
+    </Field>
+    <Field Def="f32 outRangeDist">
+      <DisplayName>跳弾基準距離[m]</DisplayName>
+      <Description>跳弾する距離の基準値</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10150020</SortID>
+      <UnkC8>跳弾</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_Ricochet = -1">
+      <DisplayName>SFXID【跳弾】</DisplayName>
+      <Description>跳弾時のSFX ID。-1は発生しない。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050050</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s16 penetratePower_Obj">
+      <DisplayName>OBJ貫通力</DisplayName>
+      <Description>アセットパラの「耐貫通力」がこの値より小さければ貫通する</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10140050</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="u8 isBulletShootDirMuzzleFlashSfx">
+      <DisplayName>予測射撃の発射方向に銃口のSFXを向けるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>予測射撃や目標位置オフセットを考慮した方向に銃口SFXを向けるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10050130</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="u8 launchConditionGuardType">
+      <DisplayName>発生条件_ガード</DisplayName>
+      <Enum>BULLET_LAUNCH_CONDITION_GUARD_TYPE</Enum>
+      <Description>着弾・寿命消滅時に弾を発生させるか判定するガード条件を指定</Description>
+      <SortID>10160020</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="s32 cartridgeEndDmyPolyId = -1">
+      <DisplayName>薬莢終了ダミポリID</DisplayName>
+      <Description>薬莢終了ダミポリのID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10060010</SortID>
+      <UnkC8>薬莢</UnkC8>
+    </Field>
+    <Field Def="f32 followRate_Time_MinTimeSec">
+      <DisplayName>時間誘導率 - 最小時間[sec]</DisplayName>
+      <Description>時間による誘導率変化の最小誘導率の時間</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10280030</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 followRate_Time_MaxTimeSec">
+      <DisplayName>時間誘導率 - 最大時間[sec]</DisplayName>
+      <Description>時間による誘導率変化の最大誘導率の時間</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>10280040</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 followRate_Time_MinTimeFollowRate = 1">
+      <DisplayName>時間誘導率 - 最小時間誘導率</DisplayName>
+      <Description>時間による誘導率変化の最小時間以下のときの誘導率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10280050</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 followRate_Time_MaxTimeFollowRate = 1">
+      <DisplayName>時間誘導率 - 最大時間誘導率</DisplayName>
+      <Description>時間による誘導率変化の最大時間以上のときの誘導率</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10280060</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 predictionShoot_DistScale = 1">
+      <DisplayName>予測距離係数</DisplayName>
+      <Description>予測射撃のターゲットと予測位置の距離にかける係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10270030</SortID>
+      <UnkC8>予測射撃</UnkC8>
+    </Field>
+    <Field Def="f32 predictionShoot_MaxDist = -1">
+      <DisplayName>予測距離補正上限</DisplayName>
+      <Description>予測距離係数をかけた距離の最大値</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10270040</SortID>
+      <UnkC8>予測射撃</UnkC8>
+    </Field>
+    <Field Def="u8 groundAlong_MaxSlopeAngDeg">
+      <DisplayName>地面に沿う時に登れる斜面の角度[deg]</DisplayName>
+      <Description>地面に沿う弾丸のときに登れる斜面の最大角度</Description>
+      <Maximum>90</Maximum>
+      <SortID>10110000</SortID>
+      <UnkC8>地面に沿う設定</UnkC8>
+    </Field>
+    <Field Def="u8 alertShowType">
+      <DisplayName>アラート表示タイプ</DisplayName>
+      <Enum>BULLET_ALERT_SHOW_TYPE</Enum>
+      <Description>FEのアラート表示タイプ</Description>
+      <SortID>10130000</SortID>
+      <UnkC8>アラート</UnkC8>
+    </Field>
+    <Field Def="u8 alertLevel">
+      <DisplayName>アラート区分</DisplayName>
+      <Enum>ATK_ACT_PARAM_TRIGGER_ALERT_LEVEL</Enum>
+      <Description>FEのアラートレベル</Description>
+      <SortID>10130010</SortID>
+      <UnkC8>アラート</UnkC8>
+    </Field>
+    <Field Def="u8 recoilBlur_RandType">
+      <DisplayName>【攻撃反動ブレ】乱数によって弾がばらまかれる範囲</DisplayName>
+      <Enum>BULLET_BLUR_RAND_TYPE</Enum>
+      <Description>攻撃反動ブレによる弾丸の散布方法</Description>
+      <SortID>10230000</SortID>
+      <UnkC8>攻撃反動ブレ</UnkC8>
+    </Field>
+    <Field Def="f32 groundAlong_IgnoreGroundHeight">
+      <DisplayName>地面に沿う時に無視する段差の高さ[m] 	</DisplayName>
+      <Description>地面に沿う弾丸のときに無視する段差の高さ</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10110010</SortID>
+      <UnkC8>地面に沿う設定</UnkC8>
+    </Field>
+    <Field Def="f32 groundAlong_KeepGroundAlt">
+      <DisplayName>地面に沿う時に維持する高度[m]</DisplayName>
+      <Description>地面に沿う弾丸のときに維持する地面からの高度</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>10110020</SortID>
+      <UnkC8>地面に沿う設定</UnkC8>
+    </Field>
+    <Field Def="f32 goalCondDist = -1">
+      <DisplayName>目標到達判定距離[m]</DisplayName>
+      <Description>目標距離にこの距離まで近づいたら寿命を尽きさせる</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10070050</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="s32 toTargetRotationSpeedDegPerSec = -1">
+      <DisplayName>弾丸自身がターゲットを向く旋回速度[deg/s]</DisplayName>
+      <Description>弾丸自身がターゲット方向に旋回する速度（-1で通常の旋回制御）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>10280100</SortID>
+      <UnkC8>誘導</UnkC8>
+    </Field>
+    <Field Def="f32 recoilBlur_MinRateBlurRate">
+      <DisplayName>【攻撃反動ブレ】発射角度初期値を維持する反動ブレ蓄積割合[%]</DisplayName>
+      <Description>発射角度初期値を維持する反動ブレ蓄積割合</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10230020</SortID>
+      <UnkC8>攻撃反動ブレ</UnkC8>
+    </Field>
+    <Field Def="f32 recoilBlur_MaxRateBlurRate">
+      <DisplayName>【攻撃反動ブレ】発射角度最大値となる反動ブレ蓄積割合[%]</DisplayName>
+      <Description>発射角度最大値となる反動ブレ蓄積割合</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>10230030</SortID>
+      <UnkC8>攻撃反動ブレ</UnkC8>
+    </Field>
+    <Field Def="f32 recoilBlur_MinAngDegH">
+      <DisplayName>【攻撃反動ブレ】発射角度乱数初期値[deg]</DisplayName>
+      <Description>発射角度乱数初期値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10230040</SortID>
+      <UnkC8>攻撃反動ブレ</UnkC8>
+    </Field>
+    <Field Def="f32 recoilBlur_MaxAngDegH">
+      <DisplayName>【攻撃反動ブレ】発射角度乱数最大値[deg]</DisplayName>
+      <Description>発射角度乱数最大値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10230050</SortID>
+      <UnkC8>攻撃反動ブレ</UnkC8>
+    </Field>
+    <Field Def="f32 recoilBlur_MinAngDegV">
+      <DisplayName>【攻撃反動ブレ】発射仰角乱数初期値[deg]</DisplayName>
+      <Description>発射仰角乱数初期値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10230060</SortID>
+      <UnkC8>攻撃反動ブレ</UnkC8>
+    </Field>
+    <Field Def="f32 recoilBlur_MaxAngDegV">
+      <DisplayName>【攻撃反動ブレ】発射仰角乱数最大値[deg]</DisplayName>
+      <Description>発射仰角乱数最大値</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10230070</SortID>
+      <UnkC8>攻撃反動ブレ</UnkC8>
+    </Field>
+    <Field Def="u8 recoilBlur_UseCalcGraphBlurRate = 1">
+      <DisplayName>【攻撃反動ブレ】補正計算グラフの発射角度乱数増加割合を使う</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>補正計算グラフ(861)の縦軸（0～1の倍率）を使用し、発射角度を以下のように求める。</Description>
+      <Maximum>1</Maximum>
+      <SortID>10230080</SortID>
+      <UnkC8>攻撃反動ブレ</UnkC8>
+    </Field>
+    <Field Def="u8 recoilBlur_RandExpressType">
+      <DisplayName>【攻撃反動ブレ】乱数による分布</DisplayName>
+      <Enum>BULLET_BLUR_RAND_EXPRESS_TYPE</Enum>
+      <Description>攻撃反動ブレによる弾丸の散布の偏り方</Description>
+      <SortID>10230010</SortID>
+      <UnkC8>攻撃反動ブレ</UnkC8>
+    </Field>
+    <Field Def="u8 isParentDeadLife">
+      <DisplayName>親弾消滅から寿命カウント</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>親弾丸が消滅してから寿命カウントするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10070020</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="u8 isBeforeAccelParentCoord">
+      <DisplayName>加速前は親姿勢を維持</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>加速前の姿勢を親の姿勢にするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10260140</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 lifeMoveDist = -1">
+      <DisplayName>距離寿命[m]</DisplayName>
+      <Description>飛び道具が存在し続けられる飛距離（-1なら無限）.</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10070010</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="f32 parentDeadLifeTimeRate">
+      <DisplayName>親弾消滅から寿命カウント_寿命ボーナス（発生経過時間）倍率</DisplayName>
+      <Description>親弾丸が消滅してからの寿命率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10070030</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="f32 afterAccelMoveVecTimeSec">
+      <DisplayName>加速後ベクトル補正時間（sec）</DisplayName>
+      <Description>加速後の速度ベクトル補正時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99.9</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260150</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 beforeAccelCoordFwdBrakeMPSS">
+      <DisplayName>加速前姿勢方向ブレーキ(m/s^2)</DisplayName>
+      <Description>加速前の姿勢方向ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260160</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 cartridgeDelayAppearTimeSec = -1">
+      <DisplayName>薬莢タイミング[秒]</DisplayName>
+      <Description>射撃してから薬莢が出るまでの遅延時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10060030</SortID>
+      <UnkC8>薬莢</UnkC8>
+    </Field>
+    <Field Def="s32 cartridgeBehaviorParamId = -1">
+      <DisplayName>薬莢挙動ID</DisplayName>
+      <Description>薬莢の挙動ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10060040</SortID>
+      <UnkC8>薬莢</UnkC8>
+    </Field>
+    <Field Def="f32 cartridgeDelayAppearAddTimeSec">
+      <DisplayName>薬莢連続発生間隔[秒]</DisplayName>
+      <Description>薬莢を連続で発生させる場合の発生間隔時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>10060060</SortID>
+      <UnkC8>薬莢</UnkC8>
+    </Field>
+    <Field Def="u8 cartridgeNum = 1">
+      <DisplayName>ダミポリ１つに対して薬莢発生個数</DisplayName>
+      <Description>1以上で指定個数発生</Description>
+      <Maximum>99</Maximum>
+      <SortID>10060050</SortID>
+      <UnkC8>薬莢</UnkC8>
+    </Field>
+    <Field Def="u8 distAtkPowerRateCalcGraphParamType = -1">
+      <DisplayName>爆風距離減衰補正計算グラフタイプ</DisplayName>
+      <Enum>BULLET_DIST_ATK_POWER_RATE_CALC_GRAPH_PARAM_TYPE</Enum>
+      <Description>距離によって攻撃力を減衰するための補正計算グラフパラメータのタイプ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>10320010</SortID>
+      <UnkC8>爆風</UnkC8>
+    </Field>
+    <Field Def="u8 attachSfxCondType">
+      <DisplayName>刺さったままにする条件</DisplayName>
+      <Enum>BULLET_LAUNCH_CONDITION_GUARD_TYPE</Enum>
+      <Description>刺さったままにする条件</Description>
+      <SortID>10140010</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="u8 isInheritShootTargetToChild:1">
+      <DisplayName>射撃ターゲットを子弾丸に引き継ぐか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ファンネルなどの射撃ターゲットを子弾丸に引き継ぐか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10160040</SortID>
+      <UnkC8>子弾丸</UnkC8>
+    </Field>
+    <Field Def="u8 isProgressNetworkLatency:1">
+      <DisplayName>直射弾向けラグ軽減機能を有効にするか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>直射弾向けラグ軽減機能を有効にするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10400020</SortID>
+      <UnkC8>ネットワーク</UnkC8>
+    </Field>
+    <Field Def="u8 isParentHitExclusionHit:1">
+      <DisplayName>親弾ヒット時に子弾が当たらないか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>親弾丸ヒット時にヒットした人に当たらないようにするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10140080</SortID>
+      <UnkC8>着弾</UnkC8>
+    </Field>
+    <Field Def="u8 isLocal:1">
+      <DisplayName>ローカル生成か</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ローカル生成か</Description>
+      <Maximum>1</Maximum>
+      <SortID>10400030</SortID>
+      <UnkC8>ネットワーク</UnkC8>
+    </Field>
+    <Field Def="u8 isDeleteBulletForFollowGenerateAssetBreak:1">
+      <DisplayName>追従アセット死亡時に弾丸を消す</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>追従しているアセットが壊れたら弾丸も削除するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>10370040</SortID>
+      <UnkC8>動的生成するアセット</UnkC8>
+    </Field>
+    <Field Def="u8 unk323_5:1" />
+    <Field Def="dummy8 pad03:2">
+      <DisplayName>パディング</DisplayName>
+      <SortID>90000001</SortID>
+    </Field>
+    <Field Def="f32 RicochetLifeTimeSec">
+      <DisplayName>跳弾後の弾丸寿命(sec)</DisplayName>
+      <Description>跳弾後の弾丸の寿命時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>10150030</SortID>
+      <UnkC8>跳弾</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_Ricochet_Delete = -1">
+      <DisplayName>SFXID【跳弾消滅時】</DisplayName>
+      <Description>跳弾消滅時のSFX ID。-1は発生しない。移動は引き継がない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050065</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s32 sfxId_Delete = -1">
+      <DisplayName>SFXID【寿命消滅時】 	</DisplayName>
+      <Description>消滅時のSFX ID。-1は発生しない。移動は引き継がない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050060</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="f32 brakeStartTimeSec = -1">
+      <DisplayName>ブレーキ開始時間[s]</DisplayName>
+      <Description>弾丸が発生してからブレーキが始まる時間。-1でブレーキなし</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260185</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 brakeEndTimeSec = -1">
+      <DisplayName>ブレーキ終了時間[s]</DisplayName>
+      <Description>弾丸が発生してからブレーキが終了する時間。-1で永続ブレーキ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260185</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="f32 brakeValMPSS">
+      <DisplayName>ブレーキ性能[m/s^2]</DisplayName>
+      <Description>ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10260185</SortID>
+      <UnkC8>弾丸制御</UnkC8>
+    </Field>
+    <Field Def="s32 muzzleFlashDmyPolyId = -1">
+      <DisplayName>発射時の銃口のSFXダミポリID</DisplayName>
+      <Description>[発射時の銃口のSFXのID]で指定したエフェクトを発生させるダミポリ。-1指定で銃口と同じになる</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050130</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s32 muzzleFlashSfxId_2 = -1">
+      <DisplayName>発射時の追加演出SFX</DisplayName>
+      <Description>ミサイルのバックファイヤや排熱の煙など、銃口と関係ないところに発生させるエフェクトを指定する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050130</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="s32 muzzleFlashDmyPolyId_2 = -1">
+      <DisplayName>発射時の追加演出SFXダミポリID</DisplayName>
+      <Description>上記を発生させるダミポリ指定。-1指定で銃口と同じになる</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>10050130</SortID>
+      <UnkC8>SFX/SE</UnkC8>
+    </Field>
+    <Field Def="f32 lifeMoveDistAddRand">
+      <DisplayName>ランダム追加距離寿命[m]</DisplayName>
+      <Description>距離寿命に追加されるランダム最大値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10070010</SortID>
+      <UnkC8>弾丸寿命</UnkC8>
+    </Field>
+    <Field Def="s32 unknown_ClusterMissleRelatedBool" />
+    <Field Def="f32 unknown_ClusterMissleRelatedFloat1" />
+    <Field Def="f32 unknown_ClusterMissleRelatedFloat2" />
+    <Field Def="f32 unknown_ClusterMissleRelatedFloat3" />
+    <Field Def="f32 unknown_ClusterMissleRelatedFloat4" />
+    <Field Def="dummy8 pad_end[4]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>90000000</SortID>
+      <UnkC8>パディング</UnkC8>
+    </Field>
+    <Field Def="dummy8 unk364[20]" />
+  </Fields>
+</PARAMDEF>

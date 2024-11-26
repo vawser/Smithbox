@@ -1,0 +1,11 @@
+1 Explosive tracks -- 爆発跡
+100 Splashes -- 水しぶき
+101 Poison splash -- 毒しぶき
+102 Oil splash -- 油しぶき
+103 Acid splash -- 酸飛沫
+201 Blood splash (not used) -- 血しぶき(未使用）
+900001 Footprint (dust) _ Test -- 足跡(埃)_テスト
+900002 Footprint (sand) _ Test -- 足跡(砂)_テスト
+900003 Footprint (Water) _ Test -- 足跡(水)_テスト
+900004 Footprint (poison) _ Test -- 足跡(毒)_テスト
+900005 Footprint (Coal Tar) _ Test -- 足跡(コールタール)_テスト

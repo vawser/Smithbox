@@ -1,0 +1,83 @@
+0 Test material -- テスト材質
+1 Without -- なし
+2 Iron -- 鉄
+3 Heavy iron -- 重鉄
+4 Tree -- 木
+7 Wood -- 木材
+8 Raw Meat -- 生者肉
+9 Dead Meat -- 亡者肉
+10 Bugs -- 虫
+11 Giant -- 巨人
+12 Bone -- 骨
+13 Copper -- 銅
+14 Energy -- エネルギー
+15 Flame -- 炎
+16 Lightning -- 雷
+17 Darkness -- 闇
+18 Magic -- 魔力
+19 Stone -- 石
+20 Soil -- 土
+21 Carpet -- カーペット
+22 Grass -- 草
+23 Gravel -- 砂利
+25 Sand -- 砂
+26 Ash -- 灰
+31 Spider Thread -- 蜘蛛の糸
+33 Seoul -- ソウル
+34 Crystal floor -- 結晶床
+35 Stone (dust) -- 石（ほこり）
+36 Stone (Water) -- 石（水）
+37 Cloth -- 布
+40 Underwater (ankle) -- 水中（くるぶし）
+41 Underwater (below knee) -- 水中（膝下）
+42 Underwater (waist) -- 水中（腰）
+43 Underwater (waist) -- 水中（腰上）
+45 Recovery underwater -- 回復の水中（くるぶし）
+46 Recovery underwater (below the knee) -- 回復の水中（膝下）
+47 Recovery underwater (waist) -- 回復の水中（腰）
+48 Recovery underwater (on the waist) -- 回復の水中（腰上）
+50 Falls -- 滝（くるぶし）
+51 Waterfall (below knee) -- 滝（膝下）
+52 Waterfall (waist) -- 滝（腰）
+53 Waterfall (hip) -- 滝（腰上）
+55 Muddy water -- 泥水（くるぶし）
+56 Muddy water (below the knee) -- 泥水（膝下）
+57 Muddy water (waist) -- 泥水（腰）
+58 Muddy water (waist) -- 泥水（腰上）
+60 Blood (ankle) -- 血（くるぶし）
+61 Blood (below the knee) -- 血（膝下）
+62 Blood (hip) -- 血（腰）
+63 Blood (on the waist) -- 血（腰上）
+70 Manure bed (ankle) -- 糞尿床（くるぶし）
+71 Manure floor (below knee) -- 糞尿床（膝下）
+72 Manure floor (waist) -- 糞尿床（腰）
+73 Manure floor (waist) -- 糞尿床（腰上）
+80 Iwamine Castle Boss Room (Kurubushi) -- 岩峰城ボス部屋（くるぶし）
+81 Iwamine Castle Boss Room (below knee) -- 岩峰城ボス部屋（膝下）
+82 Iwamine Castle Boss Room (Waist) -- 岩峰城ボス部屋（腰）
+83 Iwamine Castle Boss Room (Waist) -- 岩峰城ボス部屋（腰上）
+90 Lava (low temperature) -- 溶岩（低温）
+91 Lava (medium temperature) -- 溶岩（中温）
+92 Lava (high temperature) -- 溶岩（高温）
+93 Lava (ultra-high temperature) -- 溶岩（超高温）
+100 Oil (ankle) -- 油（くるぶし）
+101 Oil (below knee) -- 油（膝下）
+102 Oil (waist) -- 油（腰）
+103 Oil (waist) -- 油（腰上）
+105 Butcher Map Oil (Ankle) -- ブッチャーマップ油（くるぶし）
+106 Butcher Map Oil (below knee) -- ブッチャーマップ油（膝下）
+107 Butcher Map Oil (Waist) -- ブッチャーマップ油（腰）
+108 Butcher Map Oil (Waist) -- ブッチャーマップ油（腰上）
+109 Butcher Map Oil (Butcher Only) -- ブッチャーマップ油（ブッチャー専用）
+110 A poisonous swamp -- 毒沼（くるぶし）
+111 Poison Swamp (below knee) -- 毒沼（膝下）
+112 Poison Marsh (waist) -- 毒沼（腰）
+113 Poison Marsh (waist) -- 毒沼（腰上）
+120 Acid reservoir (ankle) -- 酸溜まり（くるぶし）
+121 Acid reservoir (below knee) -- 酸溜まり（膝下）
+122 Acid reservoir (waist) -- 酸溜まり（腰）
+123 Acid reservoir (on waist) -- 酸溜まり（腰上）
+130 Cliff-edge water -- 崖際水中（くるぶし）
+131 Cliff-edge water (below knee) -- 崖際水中（膝下）
+132 Cliff-edge water (waist) -- 崖際水中（腰）
+133 Cliff-edge water (waist) -- 崖際水中（腰上）

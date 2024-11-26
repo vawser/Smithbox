@@ -1,5 +1,0 @@
-0 I&#39;m afraid -- ふしくれたえだ
-90000 [For prototype] Torch -- 【プロト用】松明
-91000 [For prototype] Orb -- 【プロト用】オーブ
-201000 Long sword -- ロングソード
-1450000 shield -- 盾

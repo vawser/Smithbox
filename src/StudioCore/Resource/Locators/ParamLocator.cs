@@ -73,12 +73,12 @@ public static class ParamLocator
 
     public static string GetGameOffsetsAssetsDir()
     {
-        return $@"Assets\GameOffsets\{MiscLocator.GetGameIDForDir()}";
+        return $@"Assets\PARAM\{MiscLocator.GetGameIDForDir()}";
     }
 
     public static string GetParamAssetsDir()
     {
-        return $@"Assets\Paramdex\{MiscLocator.GetGameIDForDir()}";
+        return $@"Assets\PARAM\{MiscLocator.GetGameIDForDir()}";
     }
 
     public static string GetParamdefDir()

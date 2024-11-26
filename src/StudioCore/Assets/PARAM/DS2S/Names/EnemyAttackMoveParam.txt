@@ -1,0 +1,121 @@
+0 Template -- テンプレート
+1 Walking 1 -- 歩行 1
+2 Walking 2 -- 歩行 2
+3 Walking 3 -- 歩行 3
+4 Walking 4 -- 歩行 4
+5 Walking 5 -- 歩行 5
+6 Walking 6 -- 歩行 6
+7 Walking 7 -- 歩行 7
+8 Walking 8 -- 歩行 8
+9 Walking 9 -- 歩行 9
+10 Walking 10 -- 歩行 10
+11 Walking 11 -- 歩行 11
+12 Walking 12 -- 歩行 12
+13 Walking 13 -- 歩行 13
+14 Walking 14 -- 歩行 14
+15 Walking 15 -- 歩行 15
+16 Walking 16 -- 歩行 16
+17 Walking 17 -- 歩行 17
+18 Walking 18 -- 歩行 18
+19 Walking 19 -- 歩行 19
+20 On the spot 1 -- その場 1
+21 On the spot 2 -- その場 2
+22 On the spot 3 -- その場 3
+23 On the spot 4 -- その場 4
+24 On the spot 5 -- その場 5
+25 On the spot 6 -- その場 6
+26 Place 7 -- その場 7
+27 On the spot 8 -- その場 8
+28 On the spot 9 -- その場 9
+29 On the spot 10 -- その場 10
+30 Place 11 -- その場 11
+31 Place 12 -- その場 12
+32 Place 13 -- その場 13
+33 Place 14 -- その場 14
+34 Place 15 -- その場 15
+35 Place 16 -- その場 16
+36 Place 17 -- その場 17
+37 Place 18 -- その場 18
+38 Place 19 -- その場 19
+39 On the spot 20 -- その場 20
+40 Place 21 -- その場 21
+41 On the spot 22 -- その場 22
+42 Place 23 -- その場 23
+43 Place 24 -- その場 24
+44 Place 25 -- その場 25
+45 Place 26 -- その場 26
+46 Place 27 -- その場 27
+47 Place 28 -- その場 28
+48 Shooting 1 -- 射撃 1
+49 Shooting 2 -- 射撃 2
+50 Shooting 3 -- 射撃 3
+51 Shooting 4 -- 射撃 4
+52 Shooting 5 -- 射撃 5
+53 Shooting 6 -- 射撃 6
+54 Shooting 7 -- 射撃 7
+61 Slow walking 1 -- 低速歩行 1
+62 Slow Walking 2 -- 低速歩行 2
+63 Slow Walking 3 -- 低速歩行 3
+64 Slow walking 4 -- 低速歩行 4
+65 Slow walking 5 -- 低速歩行 5
+66 Slow Walking 6 -- 低速歩行 6
+67 Slow Walking 7 -- 低速歩行 7
+68 Slow walking 8 -- 低速歩行 8
+69 Slow Walking 9 -- 低速歩行 9
+70 Slow Walking 10 -- 低速歩行10
+100 Mirror Knight 1 -- ミラーナイト1
+105 Silver Chariot 1 -- シルバーチャリオット1
+106 Ornstein Action 18 Boost Thrust -- オーンスタイン　行動18　ブースト突き
+110 Kingdom Heavy Warrior 1 -- 王国重戦士1
+111 Kingdom Heavy Warrior 2 -- 王国重戦士2
+112 Wheel Skeleton 1 -- 車輪スケルトン1
+113 Man-made Immortal 1 -- 人造不死人1
+114 Rogue One -- ローグ1
+500 Small general purpose 1 speed 1.0x swivel 120 -- 小型汎用1　速度1.0倍　旋回120
+501 Small general purpose 2 speed 1.0x swivel 180 -- 小型汎用2　速度1.0倍　旋回180
+510 Small general purpose 10 speed 1.2x swivel 120 -- 小型汎用10　速度1.2倍　旋回120
+511 Small general purpose 11 speed 1.2x swivel 180 -- 小型汎用11　速度1.2倍　旋回180
+520 Small general purpose 20 speed 1.4x swivel 120 -- 小型汎用20　速度1.4倍　旋回120
+521 Small general purpose 21 speed 1.4x swivel 180 -- 小型汎用21　速度1.4倍　旋回180
+530 Small general purpose 30 speed 1.6x swivel 120 -- 小型汎用30　速度1.6倍　旋回120
+531 Small general purpose 31 speed 1.6x swivel 180 -- 小型汎用31　速度1.6倍　旋回180
+600 Small stop 1 speed 1.0x turning 120 -- 小型中止有1　速度1.0倍　旋回120
+601 Small stop 2 speed 1.0x swivel 180 -- 小型中止有2　速度1.0倍　旋回180
+610 Small stop 10 speed 1.2x turning 120 -- 小型中止有10　速度1.2倍　旋回120
+611 Small stop 11 speed 1.2x swivel 180 -- 小型中止有11　速度1.2倍　旋回180
+620 Small stop 20 speed 1.4x swivel 120 -- 小型中止有20　速度1.4倍　旋回120
+621 Small stop 21 speed 1.4x swivel 180 -- 小型中止有21　速度1.4倍　旋回180
+630 Small stop 30 speed 1.6x turning 120 -- 小型中止有30　速度1.6倍　旋回120
+631 Small stop 31 speed 1.6x swivel 180 -- 小型中止有31　速度1.6倍　旋回180
+1000 Boss General Purpose 1 Speed 1.0x Attack Swivel 120 -- ボス汎用1　速度1.0倍　攻撃旋回120
+1010 Boss General Purpose 2 Speed 1.0x Attack Swivel 180 -- ボス汎用2　速度1.0倍　攻撃旋回180
+1020 Boss General Purpose 3 Speed 1.0x Attack Swivel 240 -- ボス汎用3　速度1.0倍　攻撃旋回240
+1030 Boss General Purpose 4 Speed 1.0x Attack Swivel 90 -- ボス汎用4　速度1.0倍　攻撃旋回90
+1100 Boss General Purpose 10 Speed 1.2x Attack Swivel 120 -- ボス汎用10　速度1.2倍　攻撃旋回120
+1110 Boss General Purpose 11 Speed 1.2x Attack Swivel 180 -- ボス汎用11　速度1.2倍　攻撃旋回180
+1120 Boss General Purpose 12 Speed 1.2x Attack Swivel 240 -- ボス汎用12　速度1.2倍　攻撃旋回240
+1130 Boss General Purpose 13 Speed 1.2x Attack Swivel 90 -- ボス汎用13　速度1.2倍　攻撃旋回90
+1200 Boss General Purpose 20 Speed 1.4x Attack Swivel 120 -- ボス汎用20　速度1.4倍　攻撃旋回120
+1210 Boss General Purpose 21 Speed 1.4x Attack Swivel 180 -- ボス汎用21　速度1.4倍　攻撃旋回180
+1220 Boss General Purpose 22 Speed 1.4x Attack Swivel 240 -- ボス汎用22　速度1.4倍　攻撃旋回240
+1230 Boss General Purpose 23 Speed 1.4x Attack Swivel 90 -- ボス汎用23　速度1.4倍　攻撃旋回90
+1300 Boss General Purpose 30 Speed 1.6x Attack Swivel 120 -- ボス汎用30　速度1.6倍　攻撃旋回120
+1310 Boss General Purpose 31 Speed 1.6x Attack Swivel 180 -- ボス汎用31　速度1.6倍　攻撃旋回180
+1320 Boss General Purpose 32 Speed 1.6x Attack Swivel 240 -- ボス汎用32　速度1.6倍　攻撃旋回240
+1330 Boss General Purpose 33 Speed 1.6x Attack Swivel 90 -- ボス汎用33　速度1.6倍　攻撃旋回90
+1400 Boss General Purpose 40 Speed 1.8x Attack Swivel 120 -- ボス汎用40　速度1.8倍　攻撃旋回120
+1410 Boss General Purpose 41 Speed 1.8x Attack Swivel 180 -- ボス汎用41　速度1.8倍　攻撃旋回180
+1420 Boss General Purpose 42 Speed 1.8x Attack Swivel 240 -- ボス汎用42　速度1.8倍　攻撃旋回240
+1430 Boss General Purpose 43 Speed 1.8x Attack Swivel 90 -- ボス汎用43　速度1.8倍　攻撃旋回90
+1500 Boss General Purpose 50 Speed 2.0x Attack Swivel 120 -- ボス汎用50　速度2.0倍　攻撃旋回120
+1510 Boss General Purpose 51 Speed 2.0x Attack Swivel 180 -- ボス汎用51　速度2.0倍　攻撃旋回180
+1520 Boss General Purpose 52 Speed 2.0x Attack Swivel 240 -- ボス汎用52　速度2.0倍　攻撃旋回240
+1530 Boss General Purpose 53 Speed 2.0x Attack Swivel 90 -- ボス汎用53　速度2.0倍　攻撃旋回90
+1600 Boss General Purpose 60 Speed 0.8x Attack Swivel 120 -- ボス汎用60　速度0.8倍　攻撃旋回120
+1610 Boss General Purpose 61 Speed 0.8x Attack Swivel 180 -- ボス汎用61　速度0.8倍　攻撃旋回180
+1620 Boss General Purpose 62 Speed 0.8x Attack Swivel 240 -- ボス汎用62　速度0.8倍　攻撃旋回240
+1630 Boss General Purpose 63 Speed 0.8x Attack Swivel 90 -- ボス汎用63　速度0.8倍　攻撃旋回90
+2000 Where the right foot 120 turn Damipoli 5 -- その場 右足120旋回　ダミポリ5
+2010 Where the right foot 180 turn Damipoli 5 -- その場 右足180旋回　ダミポリ5
+2100 Where left foot 120 turn Damipoli 6 -- その場 左足120旋回　ダミポリ6
+2110 Where left foot 180 turn Damipoli 6 -- その場 左足180旋回　ダミポリ6

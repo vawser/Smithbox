@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="GOODS_TYPE" type="u8">
+      <Option Value="0" Name="Consumable" />
+      <Option Value="1" Name="Key Item" />
+      <Option Value="2" Name="Upgrade Material" />
+      <Option Value="7" Name="Unusable Logic items" />
+      <Option Value="8" Name="Ninjutsu" />
+    </Enum>
+    <Enum Name="ITEM_UI_DISPLAY_TYPE" type="u8">
+      <Option Value="0" Name="Common (No Color)" />
+      <Option Value="1" Name="Uncommon (Blue)" />
+      <Option Value="2" Name="Very Rare (Yellow)" />
+      <Option Value="3" Name="Common (No Color)" />
+      <Option Value="4" Name="Rare (Purple)" />
+    </Enum>
+	<Enum Name="GOODS_USE_ANIM" type="u8">
+	  <Option Value="0" Name="Drinking Healing Gourd" />
+	  <Option Value="1" Name="Drinking Green Mossy Gourd" />
+	  <Option Value="2" Name="Drinking Withered Red Gourd" />
+	  <Option Value="3" Name="Drinking Mollted Purple Gourd" />
+	  <Option Value="4" Name="Dumping Five-Color Rice" />
+	  <Option Value="10" Name="Out of Healing Gourds" />
+	  <Option Value="11" Name="Out of Green Mossy Gourds" />
+	  <Option Value="12" Name="Out of Withered Red Gourds" />
+	  <Option Value="13" Name="Out of Mollted Purple Gourds" />
+	  <Option Value="14" Name="Out of Five-Color Rice" />
+	  <Option Value="20" Name="Pellet/Divine Grass" />
+	  <Option Value="22" Name="Red Lump" />
+	  <Option Value="30" Name="Rice/Fine Snow/Status Cure Powders" />
+	  <Option Value="34" Name="Eel Liver/Contact Medicine" />
+	  <Option Value="40" Name="Ako's Sugar/Spiritfall" />
+	  <Option Value="41" Name="Yashariku's Sugar/Spiritfall" />
+	  <Option Value="42" Name="Ungo's Sugar/Spiritfall" />
+	  <Option Value="43" Name="Gokan's Sugar/Spiritfall" />
+	  <Option Value="44" Name="Gaichiin's Sugar/Spiritfall" />
+	  <Option Value="45" Name="Divine Confetti" />
+	  <Option Value="50" Name="Mibu Balloons" />
+	  <Option Value="60" Name="Coin Purses" />
+	  <Option Value="70" Name="Ceramic Shard" />
+	  <Option Value="71" Name="Fistful of Ash/Oil" />
+	  <Option Value="80" Name="Ceremonial Tanto" />
+	  <Option Value="82" Name="Bite Down/Hidden Tooth" />
+	  <Option Value="83" Name="Nightjar Monocular" />
+	  <Option Value="84" Name="Snap Seed" />
+	  <Option Value="85" Name="Illusive Hall Bell" />
+	  <Option Value="86" Name="Jizo Statue's/Bell Demon/Dragon's Blood Droplet" />
+	  <Option Value="87" Name="Homeward Idol" />
+	  <Option Value="88" Name="Sweet Rice Ball" />
+	  <Option Value="89" Name="Persimmon/Taro Persimmon" />
+	  <Option Value="255" Name="No use animation" />
+	</Enum>
+  </Enums>
+  <Field>
+    <refId_default Wiki="Defines what Bullet or SpEffects will be invoked when the item is used" Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    <sfxVariationId Wiki="Specify SFX variation (used in combination with TimeActEditor ID to identify SFX)" />
+    <weight Wiki="Item weight" />
+    <basicPrice />
+    <sellValue Wiki="Amount of Sen that will be obtained when selling this item" />
+    <behaviorId Wiki="Behavior entry referenced when using this item" Refs="BehaviorParam,BehaviorParam_Pc" />
+    <replaceItemId Wiki="When the item is empty it will be replaced with this item" Refs="EquipParamGoods" />
+    <sortId Wiki="Position the item appears in menus"/>
+    <qwcId Wiki="World Tendency shenanigans, not relevant to Sekiro" />
+    <yesNoDialogMessageId Wiki="Message ID used when displaying the YesNo dialog" />
+    <actionUnlockParamId Wiki="When this item is in your inventory the Action referenced here will be unlocked" Refs="ActionUnlockParam" />
+    <iconId Wiki="Icon displayed in inventory" />
+    <modelId />
+    <shopLv Wiki="Level that can be sold in stores" />
+    <compTrophySedId Wiki="Category for unlocking trophies/achievements, when you have all the items with same category the corresponding trophy will be unlocked" />
+    <trophySeqId Wiki="Trophy Sequence Id" />
+    <maxNum Wiki="Maximum amount of this item that can be held" />
+    <consumeHeroPoint Wiki="Consume humanity when using the item, not relevant to Sekiro" />
+    <overDexterity Wiki="Skill over start value" />
+    <goodsType Wiki="Item Type" Enum="GOODS_TYPE" />
+    <refCategory Wiki="Determines what param is referenced when this item is used" Enum="BEHAVIOR_REF_TYPE" />
+    <spEffectCategory Wiki="There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so the fixed effect should be set for each action so that it can correspond to an effect such as 'powering up only weapon attacks'. Set 'None' for items that do not require settings, such as baristas." />
+    <goodsCategory />
+    <goodsUseAnim Wiki="Defines the animation used when the item is used" Enum="GOODS_USE_ANIM" />
+    <opmeMenuType Wiki="What menu type does this item open if it opens a menu at all?" />
+    <useLimitCategory Wiki="Specified to control whether it can be used depending on the special effect being applied." />
+    <replaceCategory />
+    <vowType0 IsBool="" />
+    <vowType1 IsBool="" />
+    <vowType2 IsBool="" />
+    <vowType3 IsBool="" />
+    <vowType4 IsBool="" />
+    <vowType5 IsBool="" />
+    <vowType6 IsBool="" />
+    <vowType7 IsBool="" />
+    <vowType8 IsBool="" />
+    <vowType9 IsBool="" />
+    <vowType10 IsBool="" />
+    <vowType11 IsBool="" />
+    <vowType12 IsBool="" />
+    <vowType13 IsBool="" />
+    <vowType14 IsBool="" />
+    <vowType15 IsBool="" />
+    <enable_live Wiki="Can the item be used if you are alive?" IsBool="" />
+    <enable_gray Wiki="Can the item be used if you are an online spirit?" IsBool="" />
+    <enable_white Wiki="Can this item be used if you are a white phantom?" IsBool="" />
+    <enable_black Wiki="Can this item be used if you are a black phantom?" IsBool="" />
+    <enable_multi Wiki="Can this item be used during multiplayer" IsBool="" />
+    <disable_offline Wiki="Can this item be use while offline?" IsBool="" />
+    <isEquip Wiki="Can the item be equipped to the item bar?" IsBool="" />
+    <isConsume Wiki="Will the item be consumed when it is used?" IsBool="" />
+    <isAutoEquip Wiki="Will the item be equipped to the item bar automatically when the item is obtained" IsBool="" />
+    <isEstablishment Wiki="Is it a stationary item?" IsBool="" />
+    <isOnlyOne Wiki="Can you have more than one of this item?" IsBool="" />
+    <isDiscard Wiki="Can the item be discarded?" IsBool="" />
+    <isDeposit Wiki="Can the item be sent to storage" IsBool="" />
+    <isDisableHand Wiki="When enabled, item can't be used when there isn't a weapon equipped in the right hand" IsBool="" />
+    <IsTravelItem IsBool="" />
+    <isSuppleItem Wiki="If the item is replensiable(i.e. Gourds) this item is considered the empty item" IsBool="" />
+    <isFullSuppleItem Wiki="If this item is replensiable(i.e. Gourds) this item is considered the full item" IsBool="" />
+    <isEnhance Wiki="Do you want to enchant your weapon?" IsBool="" />
+    <isFixItem Wiki="Will this item repair equipment?" IsBool="" />
+    <disableMultiDropShare Wiki="Can this item be dropped during multiplayer?" IsBool="" />
+    <disableUseAtColiseum Wiki="Can this item be used in the arena?" IsBool="" />
+    <disableUseAtOutOfColiseum Wiki="Can this item be used outside the arena?" IsBool="" />
+    <isEnableFastUseItem Wiki="Is it possible to cancel early?" IsBool="" />
+    <isApplySpecialEffect Wiki="Will this item be affect by SpEffect corrections?" IsBool="" />
+    <syncNumVaryId Wiki="When the number of items is changed, items with the same ID will also be changed. 0: Do not synchronize" />
+    <refId_1 Wiki="Defines what Bullet or SpEffects will be invoked when the item is used" />
+    <refVirtualWepId Wiki="References weapons to apply base damage and scaling" Refs="EquipParamWeapon" />
+    <vagrantItemLotId />
+    <vagrantBonusEneDropItemLotId />
+    <vagrantItemEneDropItemLotId />
+    <castSfxId Wiki="Sfx spawned when the item is used but before the effect is activated" />
+    <fireSfxId Wiki="Sfx spawned when the item's effect is triggered" />
+    <effectSfxId Wiki="Sfx spawned after the item's effect has been triggered" />
+    <enable_LoadOfCinder Wiki="Can it be used in Firewood King status?" IsBool="" />
+    <isBonfireWarpItem Wiki="When set to TRUE, if the status change type 'warp prohibition' is applied, remove the function that makes the item unusable." IsBool="" />
+    <enable_Ladder Wiki="Item can be used while on a ladder" IsBool="" />
+    <isUseMultiPlayPreparation Wiki="Session probability - whether items can be used during initial synchronization" IsBool="" />
+    <canMultiUse Wiki="Can they be used together?" IsBool="" />
+    <isUseRefId1ForEnchant Wiki="Enchant with left hand and both hands? If true, use call ID 1" IsBool="" />
+    <isWarpProhibited Wiki="When this is TRUE, if the status change type 'warp prohibited' is applied, the item will be unusable." IsBool="" />
+    <isUseMultiPenaltyOnly Wiki="Flag to allow determining whether an item is only available when a client disconnection penalty is occurring" IsBool="" />
+    <suppleType />
+    <autoReplenishType />
+    <isDrop Wiki="Can this item be dropped?" IsBool="" />
+    <isNoticeLog Wiki="When the item is obtained a UI indicator will appear above the Sen counter on the right hand side of the screen, does not pause gameplay" IsBool="" />
+    <isNoticeDialog Wiki="When the item is obtained a UI indicator will appear in the middle of the screen, pauses gameplay" IsBool="" />
+    <enable_EmptyHand Wiki="Can the item be used while the sword is sheathed?" IsBool="" />
+    <enable_Swimming Wiki="Can the item be used while swimming abovewater?" IsBool="" />
+    <enable_Diving Wiki="Can the item be used while swimming underwater?" IsBool="" />
+    <enable_CantStand Wiki="Can it be used while crouching in a place where the ceiling is too low to stand up?" IsBool="" />
+    <enable_CantClimbHang Wiki="Can it be used while hanging without being able to climb?" IsBool="" />
+    <maxRepositoryNum Wiki="Maximum amount that can be stored in storage" />
+    <enable_FallWallCling Wiki="Can it be used even when stuck to a falling wall?" IsBool="" />
+    <enable_DragonsCough Wiki="Dragon Cough item" IsBool="" />
+    <enable_Hang Wiki="Can the item be used while hanging while being able to climb up?" IsBool="" />
+    <saleValue Wiki="Amount of Sen this item is sold for" />
+    <consumeResourceItemA Wiki="Amount of ResourceItemA that will be consumed when this item is used (Spirit Emblems)" />
+    <consumeResourceItemB Wiki="Amount of ResourceItemB that will be consumed when this item is used (Unused Emblem)" />
+    <consumeResourceItemC Wiki="Amount of ResourceItemC that will be consumed when this item is used (Unused Emblem)" />
+    <getGrowthType />
+    <maxReplaceItemId Wiki="When you reach or exceed the maximum amount of this item, this item will be replaced with the item defined here" Refs="EquipParamGoods" />
+    <firstGetEventFlagId Wiki="Sets the event flag defined here when this item is first obtained" />
+    <overEquipPtyMaxType Wiki="What happens when you aquire the item when you have full storage and max amount in inventory?" />
+    <itemUIDisplayType Wiki="Determines the rarity of the item" Enum="ITEM_UI_DISPLAY_TYPE" />
+    <useGetItem Wiki="When enabled, you will recieve items defined in useGetItemId" IsBool="" />
+    <useGetItemCate Wiki="Determines what item category you will receive" />
+    <consumeHpRate Wiki="Cosumes a percentage of Hp when this item is used, can't be used if your current Hp is less than or equal to the requirement" />
+    <useGetItemId Wiki="Items that will be awarded when this item is used" Refs="EquipParamGoods(useGetItem=1)" />
+    <useGetItemNum Wiki="Amount of items that will be recieved" />
+    <useLimitSpEffectType0 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
+    <useLimitSpEffectType1 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
+    <useLimitSpEffectType2 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
+    <useLimitSpEffectType3 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
+    <useLimitSpEffectType4 Wiki="Prevents the item from being used if the stateInfo defined here is present" VRef="stateInfo" />
+  </Field>
+  <Self Wiki="Defines consumable items" AlternativeOrder="refId_default,refId_1,refCategory,behaviorId,replaceCategory,refVirtualWepId,consumeResourceItemA,consumeResourceItemB,consumeResourceItemC,consumeHpRate,-,
+maxNum,maxRepositoryNum,overEquipPtyMaxType,autoReplenishType,maxReplaceItemId,-,
+iconId,modelId,sortId,shopLv,spEffectCategory,itemUIDisplayType,yesNoDialogMessageId,opmeMenuType,goodsType,goodsCategory,goodsUseAnim,actionUnlockParamId,compTrophySedId,trophySeqId,firstGetEventFlagId,-,
+useGetItemId,useGetItemNum,useGetItemCate,useGetItem,-,
+replaceItemId,suppleType,isSuppleItem,isFullSuppleItem,-,
+basicPrice,saleValue,sellValue,-,
+castSfxId,fireSfxId,effectSfxId,sfxVariationId,-,
+useLimitCategory,useLimitSpEffectType0,useLimitSpEffectType1,useLimitSpEffectType2,useLimitSpEffectType3,useLimitSpEffectType4,-,
+isEquip,isAutoEquip,isConsume,isDeposit,isDiscard,isDrop,isDisableHand,isEnableFastUseItem,isApplySpecialEffect,isEstablishment,isEnhance,isOnlyOne,IsTravelItem,isBonfireWarpItem,canMultiUse,isUseMultiPlayPreparation,isUseRefId1ForEnchant,isWarpProhibited,isNoticeLog,isNoticeDialog,-,
+enable_live,enable_gray,enable_white,enable_black,enable_multi,enable_LoadOfCinder,enable_Ladder,enable_EmptyHand,enable_Swimming,enable_Diving,enable_CantStand,enable_CantClimbHang,enable_FallWallCling,enable_DragonsCough,enable_Hang,-,
+vowType0,vowType1,vowType2,vowType3,vowType4,vowType5,vowType6,vowType7,vowType8,vowType9,vowType10,vowType11,vowType12,vowType13,vowType14,vowType15,-,
+overDexterity,syncNumVaryId,getGrowthType,-,
+vagrantItemLotId,vagrantBonusEneDropItemLotId,vagrantItemEneDropItemLotId,qwcId,consumeHeroPoint,weight,isFixItem,isUseMultiPenaltyOnly,disableMultiDropShare,disableUseAtColiseum,disableUseAtOutOfColiseum,disable_offline,-" />
+</PARAMMETA>

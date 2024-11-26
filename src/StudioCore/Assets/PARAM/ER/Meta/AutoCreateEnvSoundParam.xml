@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <RangeMin AltName="Appearance Distance - Min" Wiki="Appearance distance Min [m]" />
+    <RangeMax AltName="Appearance Distance - Max" Wiki="Appearance distance Max [" />
+    <LifeTimeMin AltName="Duration - Min" Wiki="Lifespan Min [seconds]" />
+    <LifeTimeMax AltName="Duration - Max" Wiki="Lifespan Max [seconds]" />
+    <DeleteDist AltName="Delete Distance" Wiki="Delete distance [m]" />
+    <NearDist AltName="Near Distance" Wiki="Neighborhood judgment distance [m]" />
+    <LimiteRotateMin AltName="Generation Angle Limit - Min" Wiki="Angle limit Min [degree] (Specify the Y-axis angle +-in front of the camera. 180 is omnidirectional)" />
+    <LimiteRotateMax AltName="Generation Angle Limit - Max" Wiki="Angle limit Max [degree] (Specify the Y-axis angle +-in front of the camera. 180 is omnidirectional)" />
+  </Field>
+  <Self />
+</PARAMMETA>

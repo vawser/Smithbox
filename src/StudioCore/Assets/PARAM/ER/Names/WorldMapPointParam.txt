@@ -1,0 +1,472 @@
+78500 Guidance of Grace: Leyndell - Divine Tower of East Altus Entrance; Mountaintops of the Giants - Forbidden Lands Start
+78501 Guidance of Grace: Mountaintops of the Giants - West Zamor Ruins, Grand Lift of Rold
+78502 Guidance of Grace: Mountaintops of the Giants - Ancient Snow Valley Ruins, Stargazers' Ruins
+78503 Guidance of Grace: Mountaintops of the Giants - Before Freezing Lake, Heretical Rise
+78504 Guidance of Grace: Mountaintops of the Giants - First Church of Marika
+78505 Guidance of Grace: Mountaintops of the Giants - Whiteridge Road, Minor Erdtree
+78506 Guidance of Grace: Flame Peak - Northeast Giants' Gravepost
+78507 Guidance of Grace: Flame Peak - Northwest Fire Giant Arena, Foot of the Forge
+78510 Guidance of Grace: Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook
+78511 Guidance of Grace: Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook
+78520 Guidance of Grace: Consecrated Snowfield - Hidden Path to the Haligtree, Southeast Foggy Area
+78521 Guidance of Grace: Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield
+95100 Guidance of Grace: Limgrave - Church of Elleh, Stranded Graveyard Exit
+95101 Guidance of Grace: Limgrave - Church of Elleh, Stranded Graveyard Exit
+95102 Guidance of Grace: Limgrave - Gatefront, Stormhill Evergaol, Groveside Cave Entrance, Limgrave Tunnels Entrance
+95103 Guidance of Grace: Stormhill - Stormhill Shack, Stormveil Castle Entrance
+95104 Guidance of Grace: Stormveil Castle
+95110 Guidance of Grace: Limgrave - Agheel Lake South, Forlorn Hound Evergaol
+95111 Guidance of Grace: Weeping Peninsula - Bridge of Sacrifice, Forest Lookout Tower, Earthbore Cave Entrance
+95112 Guidance of Grace: Weeping Peninsula - Castle Morne Rampart, Ailing Village Outskirts
+95113 Guidance of Grace: Weeping Peninsula - Castle Morne
+95200 Guidance of Grace: Liurnia of the Lakes - Lake-Facing Cliffs, Stormveil Castle Exit, Stillwater Cave Entrance
+95201 Guidance of Grace: Liurnia of the Lakes - Liurnia Lake Shore
+95202 Guidance of Grace: Liurnia of the Lakes - Laskyar Ruins, Malefactor's Evergaol
+95203 Guidance of Grace: Liurnia of the Lakes - Scenic Isle, Laskyar Ruins
+95204 Guidance of Grace: Liurnia of the Lakes - Gate Town Southeast
+95205 Guidance of Grace: Liurnia of the Lakes - South Raya Lucaria Gate
+95206 Guidance of Grace: Liurnia of the Lakes - Main Academy Gate, Academy of Raya Lucaria Entrance
+95210 Guidance of Grace: Bellum Highway - East Raya Lucaria Gate
+95211 Guidance of Grace: Liurnia of the Lakes - Southeast Ravine, Lake at Caria Manor Entrance; Bellum Highway - Bellum Church
+95212 Guidance of Grace: Liurnia of the Lakes - Ravine-Veiled Village, Bellum Highway, Altus Plateau, Ruin-Strewn Precipice Entrance
+95220 Guidance of Grace: Liurnia of the Lakes - Foot of the Four Belfries
+95221 Guidance of Grace: Liurnia of the Lakes - Sorcerer's Isle West, East Belfry
+95222 Guidance of Grace: Liurnia of the Lakes - Northern Liurnia Lake Shore, Kingsrealm Ruins
+95223 Guidance of Grace: Liurnia of the Lakes - Road to the Manor
+95224 Guidance of Grace: Liurnia of the Lakes - Caria Manor
+95230 Guidance of Grace: Liurnia of the Lakes - Ranni's Rise, Seluvis's Rise
+95300 Guidance of Grace: Altus Plateau - Abandoned Coffin, Ruin-Strewn Precipice Exit
+95301 Guidance of Grace: Altus Plateau - Erdtree-Gazing Hill, Lux Ruins
+95302 Guidance of Grace: Altus Plateau - Altus Highway Junction
+95303 Guidance of Grace: Capital Outskirts - Outer Wall Phantom Tree
+95304 Guidance of Grace: Capital Outskirts - Northeast Outer Wall Battleground, Hermit Merchant's Shack
+95310 Guidance of Grace: Altus Plateau - Forest-Spanning Greatbridge, St. Trina's Hideaway, Sainted Hero's Grave Entrance
+95311 Guidance of Grace: Altus Plateau - West Windmill Village
+95350 Guidance of Grace: Altus Plateau - Road of Iniquity Side Path
+95351 Guidance of Grace: Altus Plateau - Mirage Rise; Mt. Gelmir - Bridge of Iniquity
+95352 Guidance of Grace: Mt. Gelmir - First Mt. Gelmir Campsite, Corpse-Stench Shack; Altus Plateau - West of Shaded Castle
+95353 Guidance of Grace: Mt. Gelmir - Ninth Mt. Gelmir Campsite, Road of Iniquity, Volcano Manor Entrance
+95400 Guidance of Grace: Caelid - Smoldering Church, Rotview Balcony
+95401 Guidance of Grace: Caelid - Caelem Ruins, Forsaken Ruins, Minor Erdtree, Minor Erdtree Catacombs Entrance
+95402 Guidance of Grace: Caelid - Smoldering Wall, Abandoned Cave Entrance
+95403 Guidance of Grace: Caelid - West Aeonia Swamp
+95404 Guidance of Grace: Caelid - West Aeonia Swamp
+95405 Guidance of Grace: Caelid - East Aeonia Swamp
+95406 Guidance of Grace: Caelid - West Sellia, Sellia Crystal Tunnel Entrance, Sellia Evergaol
+95407 Guidance of Grace: Caelid - West Sellia, Sellia Crystal Tunnel Entrance, Sellia Evergaol
+95410 Guidance of Grace: Caelid - Caelid Highway South
+95411 Guidance of Grace: Caelid - Cathedral of Dragon Communion, Caelid Catacombs Entrance
+95412 Guidance of Grace: Caelid - Impassable Greatbridge
+95413 Guidance of Grace: Caelid - Redmane Castle
+95414 Guidance of Grace: Caelid - Redmane Castle
+95600 Guidance of Grace: Siofra River / Nokron
+95800 Guidance of Grace: Belurat, Tower Settlement
+95900 Guidance of Grace: Specimen Storehouse
+95901 Guidance of Grace: Specimen Storehouse (West Rampart)
+95902 Guidance of Grace: Ancient Ruins of Rauh - Viaduct Minor Tower
+95903 Guidance of Grace: Ancient Ruins of Rauh - Rauh Ancient Ruins, East
+95904 Guidance of Grace: Ancient Ruins of Rauh - Rauh Ancient Ruins, West
+95905 Guidance of Grace: Ancient Ruins of Rauh - Church of the Bud, Main Entrance
+95906 Guidance of Grace: Ancient Ruins of Rauh - Ancient Ruins, Grand Stairway
+96100 Starlight Guidance: Limgrave - Church of Elleh, Stranded Graveyard Exit
+96101 Catacomb Guidance: Limgrave - Church of Elleh, Stranded Graveyard Exit
+96102 Starlight Guidance: Stormhill - Saintsbridge, Deathtouched Catacombs Entrance, Highroad Cave Entrance
+96103 Catacomb Guidance: Stormhill - Saintsbridge, Deathtouched Catacombs Entrance, Highroad Cave Entrance
+96104 Starlight Guidance: Limgrave - Murkwater Coast, Murkwater Catacombs Entrance
+96105 Catacomb Guidance: Limgrave - Murkwater Coast, Murkwater Catacombs Entrance
+96106 Starlight Guidance: Weeping Peninsula - Church of Pilgrimage, Demi-Human Forest Ruins
+96107 Catacomb Guidance: Weeping Peninsula - Church of Pilgrimage, Demi-Human Forest Ruins
+96108 Starlight Guidance: Weeping Peninsula - Impaler's Catacombs Entrance
+96109 Catacomb Guidance: Weeping Peninsula - Impaler's Catacombs Entrance
+96200 Starlight Guidance: Bellum Highway - Frenzied Flame Village, Minor Erdtree
+96201 Catacomb Guidance: Bellum Highway - Frenzied Flame Village, Minor Erdtree
+96202 Starlight Guidance: Liurnia of the Lakes - Revenger's Shack
+96203 Catacomb Guidance: Liurnia of the Lakes - Revenger's Shack
+96204 Starlight Guidance: Liurnia of the Lakes - Liurnia Highway North
+96205 Catacomb Guidance: Liurnia of the Lakes - Liurnia Highway North
+96300 Starlight Guidance: Altus Plateau - Perfumer's Ruins, Unsightly Catacombs Entrance
+96301 Catacomb Guidance: Altus Plateau - Perfumer's Ruins, Unsightly Catacombs Entrance
+96302 Starlight Guidance: Altus Plateau - Wyndham Ruins, Wyndham Catacombs Entrance
+96303 Catacomb Guidance: Altus Plateau - Wyndham Ruins, Wyndham Catacombs Entrance
+96304 Starlight Guidance: Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance
+96305 Catacomb Guidance: Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance
+96400 Starlight Guidance: Caelid - Caelem Ruins, Forsaken Ruins, Minor Erdtree, Minor Erdtree Catacombs Entrance
+96401 Catacomb Guidance: Caelid - Caelem Ruins, Forsaken Ruins, Minor Erdtree, Minor Erdtree Catacombs Entrance
+96402 Starlight Guidance: Caelid - Southwest of Caelid Highway South
+96403 Catacomb Guidance: Caelid - Southwest of Caelid Highway South
+96404 Starlight Guidance: Greyoll's Dragonbarrow - Fort Faroth
+96405 Catacomb Guidance: Greyoll's Dragonbarrow - Fort Faroth
+96502 Starlight Guidance: Mountaintops of the Giants - East Zamor Ruins; Flame Peak - Giant-Conquering Hero's Grave Entrance
+96503 Catacomb Guidance: Mountaintops of the Giants - East Zamor Ruins; Flame Peak - Giant-Conquering Hero's Grave Entrance
+96510 Starlight Guidance: Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield
+96511 Catacomb Guidance: Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield
+100000 Legacy Dungeon - Stormveil Castle
+110000 Legacy Dungeon - Leyndell Royal Capital
+111000 Legacy Dungeon - Unused
+130000 Legacy Dungeon - Crumbling Farum Azula
+140000 Legacy Dungeon - Academy of Raya Lucaria
+150000 Legacy Dungeon - Miquella's Haligtree
+150001 Legacy Dungeon - Elphael Brace of the Haligtree
+160000 Legacy Dungeon - Volcano Manor
+180000 Limgrave - Stranded Graveyard
+180001 Limgrave - Fringefolk Hero's Grave
+200000 Legacy Dungeon - Belurat, Tower Settlement
+200001 Legacy Dungeon - Belurat, Tower Settlement (Miquella's Cross)
+200100 Legacy Dungeon - Enir-Ilim
+200101 Legacy Dungeon - Enir-Ilim (Miquella's Cross)
+210000 Legacy Dungeon - Shadow Keep
+210101 Legacy Dungeon - Shadow Keep (Miquella's Cross)
+220000 Legacy Dungeon - Stone Coffin Fissure
+220001 Legacy Dungeon - Stone Coffin Fissure (Miquella's Cross)
+280000 Legacy Dungeon - Midra's Manse
+300000 Weeping Peninsula - Tombsward Catacombs
+300100 Weeping Peninsula - Impaler's Catacombs
+300200 Limgrave - Stormfoot Catacombs
+300300 Limgrave - Road's End Catacombs
+300400 Limgrave - Murkwater Catacombs
+300500 Limgrave - Black Knife Catacombs
+300600 Liurnia - Cliffbottom Catacombs
+300700 Altus Plateau - Wyndham Catacombs
+300800 Altus Plateau - Sainted Hero's Grave
+300900 Mt. Gelmir - Gelmir Hero's Grave
+301000 Capital Outskirts - Auriza Hero's Grave
+301100 Limgrave - Deathtouched Catacombs
+301200 Altus Plateau - Unsightly Catacombs
+301300 Capital Outskirts - Auriza Side Tomb
+301400 Caelid - Minor Erdtree Catacombs
+301500 Caelid - Caelid Catacombs
+301600 Caelid - War-Dead Catacombs
+301700 Mountaintops of the Giants - Giant-Conquering Hero's Grave
+301800 Mountaintops of the Giants - Giants' Mountaintop Catacombs
+301900 Consecrated Snowfield - Consecrated Snowfield Catacombs
+302000 Consecrated Snowfield - Hidden Path to the Haligtree
+310000 Limgrave - Murkwater Cave
+310100 Weeping Peninsula - Earthbore Cave
+310200 Weeping Peninsula - Tombsward Cave
+310300 Limgrave - Groveside Cave
+310400 Liurnia - Stillwater Cave
+310500 Liurnia - Lakeside Crystal Cave
+310600 Liurnia - Academy Crystal Cave
+310700 Mt. Gelmir - Seethewater Cave
+310900 Mt. Gelmir - Volcano Cave
+311000 Dragonbarrow - Dragonbarrow Cave
+311100 Dragonbarrow - Sellia Hideaway
+311200 Consecrated Snowfield - Cave of the Forlorn
+311500 Limgrave - Coastal Cave
+311700 Limgrave - Highroad Cave
+311800 Capital Outskirts - Perfumer's Grotto
+311900 Altus Plateau - Sage's Cave
+312000 Dragonbarrow - Abandoned Cave
+312100 Caelid - Gaol Cave
+312200 Mountaintops of the Giants - Spiritcaller's Cave
+320000 Weeping Peninsula - Morne Tunnel
+320100 Limgrave - Limgrave Tunnels
+320200 Liurnia - Raya Lucaria Crystal Tunnel
+320400 Altus Plateau - Old Altus Tunnel
+320500 Altus Plateau - Altus Tunnel
+320700 Caelid - Gael Tunnel
+320800 Caelid - Sellia Crystal Tunnel
+321100 Consecrated Snowfield - Yelough Anix Tunnel
+341000 Limgrave - Divine Tower of Limgrave
+341100 Liurnia - Carian Study Hall
+341101 Liurnia - Divine Tower of Liurnia
+341200 Capital Outskirts - Sealed Tunnel
+341201 Leyndell - Divine Tower of West Altus
+341300 Dragonbarrow - Divine Tower of Caelid
+341400 Leyndell - Divine Tower of East Altus
+341500 Leyndell - Isolated Divine Tower
+350000 Legacy Dungeon - Subterranean Shunning-Grounds
+392000 Legacy Dungeon - Ruin-Strewn Precipice
+400000 Scadu Altus - Fog Rift Catacombs
+400100 Rauh Base - Scorpion River Catacombs
+400200 Scadu Altus - Darklight Catacombs
+410000 Gravesite Plain - Belurat Gaol
+410100 Scadu Altus - Bonny Gaol
+410200 Charo's Hidden Grave - Lamenter's Gaol
+420000 Gravesite Plain - Ruined Forge Lava Intake
+420100 
+420200 Scadu Altus - Ruined Forge of Starfall Past
+420300 Rauh Base - Taylew's Ruined Forge
+430000 Gravesite Plain - Rivermouth Cave
+430100 Jagged Peak - Dragon's Pit
+450000 Leyndell - Royal Colosseum
+450100 Limgrave - Limgrave Colosseum
+450200 Caelid - Caelid Colosseum
+61413200 Weeping Penisula - Isolated Merchant's Shack
+61413300 Weeping Penisula - Fourth Church of Marika
+61413301 Weeping Penisula - Witchbane Ruins
+61413500 Limgrave - Church of Dragon Communion
+61413800 Limgrave - Stormhill Shack
+61423200 Weeping Peninsula - Tower of Return
+61423300 Weeping Peninsula - Weeping Evergaol
+61423400 Weeping Peninsula - Tombsward Ruins
+61423600 Limgrave - Church of Elleh
+61423700 Limgrave - Gatefront Ruins
+61423701 Limgrave - Stormhill Evergaol
+61423702 Limgrave - Stormgate
+61423800 Limgrave - Warmaster's Shack
+61433100 Weeping Peninsula - Castle Morne
+61433301 Weeping Peninsula - Minor Erdtree
+61433400 Weeping Peninsula - Church of Pilgrimage
+61433401 Demi-Human Forest Ruins
+61433600 Limgrave - Dragon-Burnt Ruins
+61443300 Weeping Peninsula - Callu Baptismal Church
+61443302 Weeping Peninsula - Ailing Village
+61443400 Weeping Peninsula - Bridge of Sacrifice
+61443401 Weeping Peninsula - Forest Lookout Tower
+61443500 Limgrave - Forlorn Hound Evergaol
+61443600 Limgrave - Waypoint Ruins
+61443800 Limgrave - Artist's Shack
+61453300 Limgrave - Oridys's Rise
+61453600 Limgrave - Starfall Crater
+61453700 Limgrave - Siofra River Well
+61453701 Limgrave - Mistwood Ruins
+61453702 Limgrave - Minor Erdtree
+61453900 Limgrave - Summonwater Village
+61463600 Limgrave - Fort Haight
+61463800 Limgrave - Third Church of Marika
+62334000 Liurnia - Chelona's Rise
+62334200 Liurnia - Ringleader's Evergaol
+62334300 Liurnia - Minor Erdtree
+62334400 Liurnia - Revenger's Shack
+62334500 Liurnia - Cuckoo's Evergaol
+62334700 Liurnia - The Four Belfries
+62344100 Liurnia - Deep Ainsel Well
+62344200 Liurnia - Moonfolk Ruins
+62344300 Liurnia - Converted Tower
+62344400 Liurnia - Temple Quarter
+62344800 Liurnia - Kingsrealm Ruins
+62345000 Liurnia - Seluvis's Rise
+62345001 Liurnia - Ranni's Rise
+62345002 Liurnia - Three Sisters
+62345100 Liurnia - Renna's Rise
+62354100 Liurnia - Lunar Estate Ruins
+62354200 Liurnia - Village of the Albinaurics
+62354201 Liurnia - Cathedral of Manus Celes
+62354400 Liurnia - Rose Church
+62354700 Liurnia - Testu's Rise
+62355000 Liurnia - Caria Manor
+62364100 Liurnia - Slumbering Wolf's Shack
+62364300 Liurnia - Boilprawn Shack
+62364900 Liurnia - Bellum Church
+62365000 Liurnia - Royal Grave Evergaol
+62374200 Liurnia - Laskyar Ruins
+62374400 Liurnia - Academy Gate Town
+62374600 Liurnia - Church of Vows
+62374900 Liurnia - Church of Inhibition
+62384100 Liurnia - Malefactor's Evergaol
+62384200 Liurnia - Highway Lookout Tower
+62384500 Liurnia - Artist's Shack
+62384600 Liurnia - Ainsel River Well
+62384700 Liurnia - Uld Palace Ruins
+62384800 Liurnia - Frenzied Flame Village
+62384801 Liurnia - Minor Erdtree
+62384900 Liurnia - Frenzy-Flaming Tower
+62393900 Liurnia - Church of Irith
+62394100 Liurnia - Purified Ruins
+62394400 Liurnia - Jarburg
+62394800 Liurnia - Converted Fringe Tower
+63355400 Mt. Gelmir - Fort Laiedd
+63365100 Altus Plateau - Perfumer's Ruins
+63365200 Mt. Gelmir - Hermit's Shack
+63365203 Mt. Gelmir - Craftsman's Shack
+63375100 Altus Plateau - Stormcaller Church
+63375200 Mt. Gelmir - Hermit Village
+63375400 Mt. Gelmir - Minor Erdtree
+63385000 Altus Plateau - Grand Lift of Dectus
+63385100 Altus Plateau - Lux Ruins
+63385200 Altus Plateau - Wyndham Ruins
+63385400 Mt. Gelmir - Corpse-Stench Shack
+63395000 Altus Plateau - Golden Lineage Evergaol
+63395200 Altus Plateau - Second Church of Marika
+63395300 Altus Plateau - Mirage Rise
+63395400 Altus Plateau - The Shaded Castle
+63405200 Altus Plateau - St. Trina's Hideaway
+63405300 Altus Plateau - Writheblood Ruins
+63405500 Altus Plateau - West Windmill Pasture
+63415300 Altus Plateau - Woodfolk Ruins
+63415301 Altus Plateau - Minor Erdtree
+63415400 Altus Plateau - Dominula Windmill Village
+63415500 Altus Plateau - East Windmill Pasture
+63415501 Altus Plateau - Village Windmill Pasture
+63425400 Altus Plateau - Highway Lookout Tower
+63435000 Capital Outskirts - Minor Erdtree Church
+63435300 Capital Outskirts - Hermit Merchant's Shack
+63445300 Capital Outskirts - Minor Erdtree
+64464000 Caelid - Smoldering Church
+64464001 Caelid - Shack of the Rotting
+64473800 Caelid - Caelid Waypoint Ruins
+64473801 Caelid - Fort Gael
+64474000 Caelid - Forsaken Ruins
+64474001 Caelid - Minor Erdtree
+64474002 Caelid - Caelem Ruins
+64483600 Caelid - Cathedral of Dragon Communion
+64483800 Caelid - Street of Sages Ruins
+64484100 Dragonbarrow - Isolated Merchant's Shack
+64493800 Caelid - Swamp Lookout Tower
+64493801 Caelid - Sellia Gateway
+64493900 Caelid - Sellia Evergaol
+64494000 Caelid - Deep Siofra Well
+64503800 Caelid - Gowry's Shack
+64503900 Caelid - Church of the Plague
+64503901 Caelid - Sellia Town of Sorcery
+64513600 Caelid - Redmane Castle
+64513700 Caelid - Wailing Dunes
+64513900 Dragonbarrow - Fort Faroth
+64514000 Dragonbarrow - Minor Erdtree
+64514300 Dragonbarrow - Bestial Sanctum
+64524100 Dragonbarrow - Lenne's Rise
+65475500 Consecrated Snowfield - Yelough Anix Ruins
+65475800 Consecrated Snowfield - Apostate Derelict
+65485700 Consecrated Snowfield - Ordina Liturgical Town
+65495300 Mountaintops of the Giants - Zamor Ruins
+65495301 Mountaintops of the Giants - Grand Lift of Rold
+65505600 Mountaintops of the Giants - Shack of the Lofty
+65505601 Consecrated Snowfield - Minor Erdtree
+65505602 Consecrated Snowfield - Albinauric Rise
+65515300 Mountaintops of the Giants - Church of Repose
+65515600 Mountaintops of the Giants - Stargazers' Ruins
+65515700 Mountaintops of the Giants - Castle Sol
+65525500 Mountaintops of the Giants - Guardians' Garrison
+65525600 Mountaintops of the Giants - Minor Erdtree
+65525700 Mountaintops of the Giants - Heretical Rise
+65535600 Mountaintops of the Giants - Lord Contender's Evergaol
+65545300 Mountaintops of the Giants - Forge of the Giants
+65545500 Mountaintops of the Giants - First Church of Marika
+66120100 Ainsel River - Uhl Palace Ruins
+66120102 Ainsel River - Uhl Palace Ruins
+66120103 Ainsel River - Nokstella Eternal City
+66120104 Lake of Rot - Grand Cloister
+66120200 Siofra River - Night's Sacred Ground
+66120201 Siofra River - Siofra Aqueduct
+66120202 Siofra River - Hallowhorn Grounds
+66120203 Siofra River - Hallowhorn Grounds
+66120500 Mohgwyn Palace - Mohgwyn Dynasty Mausoleum
+66120700 Nokron - Nokron Eternal City
+68454100 Gravesite Plain - Prospect Town
+68454200 Gravesite Plain - Prospect Town (Miquella's Cross)
+68463800 Cerulean Coast - Southern Nameless Mausoleum
+68464000 Gravesite Plain - Church of Benediction
+68464001 Gravesite Plain - Artist's Shack
+68464100 Gravesite Plain - Western Nameless Mausoleum
+68464200 Gravesite Plain - Miquella's Cross
+68464201 Gravesite Plain - Scorched Ruins
+68464300 Gravesite Plain - Run-Down Traveler's Rest
+68464301 Gravesite Plain - Ellac Greatbridge
+68464400 Gravesite Plain - Abandoned Ailing Village
+68474400 Gravesite Plain - Castle Ensis
+68474401 Gravesite Plain - Castle Ensis (Miquella's Cross)
+68483700 Cerulean Coast - Miquella's Cross
+68483800 Cerulean Coast - Finger-Weaver's Hovel
+68484100 Gravesite Plain - Church of Consolation
+68484101 Gravesite Plain - Suppressing Pillar
+68484300 Abyssal Woods - Miquella's Cross
+68493900 Jagged Peak - Grand Altar of Dragon Communion
+68494200 Abyssal Woods - Elder's Hovel
+68503800 Finger Ruins of Rhia - Finger Ruins of Rhia
+68504000 Finger Ruins of Rhia - Finger Ruins of Rhia
+68534100 Abyssal Woods - Abandoned Church
+69464500 Rauh Base - Temple Town Ruins
+69464501 Gravesite Plain - Northern Nameless Mausoleum
+69464700 Ancient Ruins of Rauh - Rauh Ancient Ruins (Miquella's Cross)
+69474500 Gravesite Plain - Fog Rift Fort
+69474600 Scadu Altus - Church of the Crusade
+69484500 Scadu Altus - ? - Miquella's Cross
+69494300 Scadu Altus - Scaduview Cross (Miquella's Cross)
+69494301 Scadu Altus - Fort of Reprimand
+69494400 Scadu Altus - Moorth Ruins (Miquella's Cross)
+69494500 Scadu Altus - Moorth Ruins
+69494901 Scaduview - Scadutree Chalice
+69494902 Scaduview - Albinauric's Shack
+69504400 Scadu Altus - Whipping Hut
+69504401 Scadu Altus - Bonny Village
+69504402 Scadu Altus - Village of Flies
+69504600 Scadu Altus - Ruins of Unte
+69504800 Scaduview - Scadutree Base
+69514400 Scadu Altus - Eastern Nameless Mausoleum
+69514500 Scadu Altus - Cathedral of Manus Metyr
+69514501 Scadu Altus - Finger Ruins of Miyr
+69514600 Scadu Altus - Rabbath's Rise
+69514601 Scadu Altus - Finger Ruins of Miyr
+69514700 Scaduview - Shaman Village
+69534600 Scaduview - Finger Ruins of Dheo
+69534700 Scaduview - Finger Ruins of Dheo
+80100000 Stormveil Castle - Gatekeeper Gostoc
+80100010 Stormveil Castle - Sorcerer Rogier
+80100015 Stormveil Castle - Nepheli Loux, Warrior
+80100016 Stormveil Castle - Nepheli Loux, Warrior + Kenneth Haight, Limgrave Heir
+80110000 Leyndell - Volcano Manor Request: Vargram
+80110005 Leyndell - The Noble Goldmask
+80110510 Ashen Leyndell - Scribe Corhyn
+80130000 Crumbling Farum Azula - Alexander, Warrior Jar
+80140010 Academy of Raya Lucaria - Castellan Jerren
+80150001 Miquella's Haligtree - Millicent
+80160011 Volcano Manor - Zorayas the Scout
+80350005 Subterranean Shunning-Grounds - Dung Eater
+80350006 Subterranean Shunning-Grounds - Dung Eater
+80392000 Ruin-Strewn Precipice - Volcano Manor Request: Tragoth
+81413600 Limgrave: Coastal Cave Entrance - Nomadic Merchant
+81413900 Stormhill: North of Stormhill Shack - Finger Reader Crone
+81423900 Stormhill: North of Warmaster's Shack - Volcano Manor Request: Istvan
+81433100 Weeping Peninsula: Castle Morne - Castellan Edgar
+81433500 Limgrave: Seaside Ruins - Yura, Hunter of Bloody Fingers
+81433700 Limgrave: Agheel Lake North - Demi-Human Boc
+81433900 Stormhill: Saintsbridge - Alexander, Warrior Jar
+81443800 Limgrave: Artist's Shack - Yura, Hunter of Bloody Fingers
+81443900 Limgrave: Summonwater Village Outskirts - D, Hunter of the Dead
+81443905 Limgrave: Summonwater Village Outskirts - Nomadic Merchant
+81453400 Weeping Peninsula: Impaler's Catacombs Entrance - Irina of Morne
+81453600 Limgrave: Fort Haight West - Nomadic Merchant
+81453800 Limgrave: South of Summonwater Village - Kenneth Haight, Limgrave Heir
+81453900 Limgrave: Summonwater Village - D, Hunter of the Dead
+81463900 Limgrave: Rear Gael Tunnel Entrance - Sending Gate
+82344200 Liurnia: Village of the Albinaurics - Nepheli Loux, Warrior
+82345020 Liurnia: Ranni's Rise - Sorceress Sellen
+82354200 Moonlight Altar: Cathedral of Manus Celes - Ranni the Witch
+82354205 Liurnia: West Albinauric Village - Old Albus
+82354500 Liurnia: South Raya Lucaria Gate - Isolated Merchant
+82354600 Liurnia: Main Academy Gate - Yura, Hunter of Bloody Fingers
+82355000 Liurnia: Caria Manor - Pidia, Carian Servant
+82364400 Liurnia: Gate Town Southwest - Finger Reader Crone
+82364805 Bellum Highway: East Raya Lucaria Gate - Finger Reader Crone
+82364900 Liurnia: Southeast Ravine - Nomadic Merchant
+82374205 Liurnia: Scenic Isle - Rya the Scout
+82374400 Liurnia: Gate Town Southeast - Knight Diallos
+82384100 Liurnia: Laskyar Ruins - Lightseeker Hyetta
+82384300 Liurnia: Gate Town Bridge - Lightseeker Hyetta
+82394400 Liurnia: Jarburg - Alexander, Warrior Jar
+83355300 Mt. Gelmir: Seethewater Terminus - Alexander, Warrior Jar
+83375400 Mt. Gelmir: Seethewater Cave Entrance - Patches
+83375405 Mt. Gelmir: Seethewater Cave Entrance - Nomadic Merchant
+83385105 Altus Plateau: Erdtree-Gazing Hill - Millicent
+83395300 Mt. Gelmir: Bridge of Iniquity - Volcano Manor Request: Rileigh
+83395405 Altus Plateau: Shaded Castle - Patches
+83405200 Altus Plateau: Forest-Spanning Greatbridge - Brother Corhyn
+83405205 Altus Plateau: Forest-Spanning Greatbridge - Finger Reader Crone
+83405415 Altus Plateau: Road of Iniquity Side Path - The Noble Goldmask
+83435200 Capital Outskirts: Southeast Outer Wall Battleground - Finger Reader Crone
+83445200 Capital Outskirts: South of Minor Erdtree - Blackguard
+84483805 Caelid: West Aeonia Swamp - Nomadic Merchant
+84483905 Caelid: Smoldering Wall - Finger Reader Crone
+84493700 Caelid: Southern Aeonia Swamp Bank - Nomadic Merchant
+84513610 Caelid: Redmane Castle - Castellan Jerren
+85495300 Mountaintops of the Giants - Grand Lift of Rold
+85495301 Divine Tower of East Altus - The Rold Route
+85505600 Mountaintops of the Giants: Shack of the Lofty - Volcano Manor Request: Juno Hoslow
+85515600 Mountaintops of the Giants: Ancient Snow Valley Ruins - The Noble Goldmask
+85515620 Mountaintops of the Giants: Ancient Snow Valley Ruins - Hermit Merchant
+86120100 Ainsel River - Hermit Merchant
+86120200 Siofra River / Nokron - Blaidd the Half-Wolf
+86120205 Siofra River / Nokron - D, Beholder of Death
+86120215 Siofra River / Nokron - Abandoned Merchant
+86120500 Mohgwyn Palace - Imprisoned Merchant
+86120520 Mohgwyn Palace - White Mask Varre
+87200000 Belurat - Hornsent Grandam
+87200100 Enir-Ilim - Needle Knight Leda + Hornsent + Dryleaf Dane
+87200101 Enir-Ilim - Pureblood Knight Ansbach
+87200102 Enir-Ilim - Pureblood Knight Ansbach + Thiollier
+87200103 Enir-Ilim - Needle Knight Leda
+87210000 Shadow Keep - Fire Knight Queelign
+87210100 Specimen Storehouse - Sir Ansbach
+88484200 Jagged Peak - Igon
+88524000 Jagged Peak: Foot of the Jagged Peak - Igon

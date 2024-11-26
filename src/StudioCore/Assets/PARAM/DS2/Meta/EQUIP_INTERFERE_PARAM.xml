@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to armor and armor masks." Row0Dummy="" />
+  <Field>
+    <armor_id AltName="Armor ID" Refs="ArmorParam"/>
+    <male_mask_1 AltName="Male - Unknown Mask 1"/>
+    <male_mask_2 AltName="Male - Head Piece Mask 1"/>
+    <male_mask_3 AltName="Male - Head Piece Mask 2"/>
+    <male_mask_4 AltName="Male - Unknown Mask 2"/>
+    <male_mask_5 AltName="Male - Head Piece Mask 3"/>
+    <male_mask_6 AltName="Male - Head Piece Mask 4"/>
+    <female_mask_1 AltName="Female - Unknown Mask 1"/>
+    <female_mask_2 AltName="Female - Head Piece Mask 1"/>
+    <female_mask_3 AltName="Female - Head Piece Mask 2"/>
+    <female_mask_4 AltName="Female - Unknown Mask 2"/>
+    <female_mask_5 AltName="Female - Head Piece Mask 3"/>
+    <female_mask_6 AltName="Female - Head Piece Mask 4"/>
+  </Field>
+</PARAMMETA>

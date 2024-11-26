@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="SOUND_BGM_MAP_PLACE_TYPE" type="s16">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="10" Name="Type 10" />
+        <Option Value="20" Name="Type 20" />
+        <Option Value="30" Name="Type 30" />
+        <Option Value="40" Name="Type 40" />
+        <Option Value="41" Name="Type 41" />
+        <Option Value="100" Name="Type 100" />
+        <Option Value="110" Name="Type 110" />
+        <Option Value="111" Name="Type 111" />
+        <Option Value="120" Name="Type 120" />
+        <Option Value="130" Name="Type 130" />
+        <Option Value="140" Name="Type 140" />
+        <Option Value="150" Name="Type 150" />
+        <Option Value="160" Name="Type 160" />
+        <Option Value="190" Name="Type 190" />
+        <Option Value="300" Name="Type 300" />
+        <Option Value="310" Name="Type 310" />
+        <Option Value="320" Name="Type 320" />
+        <Option Value="340" Name="Type 340" />
+        <Option Value="350" Name="Type 350" />
+        <Option Value="390" Name="Type 390" />
+        <Option Value="500" Name="Type 500" />
+        <Option Value="501" Name="Type 501" />
+        <Option Value="999" Name="Type 999" />
+    </Enum>
+    <Enum Name="WORLD_MAP_POINT_TEXT_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="WORLD_MAP_ENTRY_FE_TYPE" type="u8">
+      <Option Value="0" Name="Type 0" />
+      <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="WORLD_MAP_ICON_ID" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Grace" />
+      <Option Value="2" Name="Blocked Grace" />
+      <Option Value="3" Name="Collapsed Church" />
+      <Option Value="4" Name="Catacombs Entrance" />
+      <Option Value="5" Name="Pillar Ruins" />
+      <Option Value="6" Name="Wooden Shack" />
+      <Option Value="7" Name="Distant Village" />
+      <Option Value="8" Name="Collapsed Tower" />
+      <Option Value="9" Name="Evergaol" />
+      <Option Value="10" Name="Gatehouse" />
+      <Option Value="11" Name="Bridge of Sacrifice" />
+      <Option Value="13" Name="Cave" />
+      <Option Value="14" Name="Tunnel" />
+      <Option Value="15" Name="River Well" />
+      <Option Value="16" Name="Hero's Grave" />
+      <Option Value="17" Name="Mage's Rise" />
+      <Option Value="18" Name="Fort" />
+      <Option Value="19" Name="Windmill" />
+      <Option Value="20" Name="Cathedral of Manus Celes" />
+      <Option Value="21" Name="Grand Lift" />
+      <Option Value="22" Name="Encampment" />
+      <Option Value="23" Name="Divine Tower" />
+      <Option Value="24" Name="Colosseum" />
+      <Option Value="25" Name="Castle Morne" />
+      <Option Value="26" Name="Caria Manor" />
+      <Option Value="27" Name="Shaded Castle" />
+      <Option Value="28" Name="Redmane Castle" />
+      <Option Value="29" Name="Castle Sol" />
+      <Option Value="30" Name="Minor Erdtree" />
+      <Option Value="32" Name="Academy Gate Town" />
+      <Option Value="33" Name="Sellia Town of Sorcery" />
+      <Option Value="34" Name="Ordina Liturgical Town" />
+      <Option Value="35" Name="Frenzied Village" />
+      <Option Value="36" Name="Windmill Village" />
+      <Option Value="37" Name="Ailing Village" />
+      <Option Value="38" Name="Jarburg" />
+      <Option Value="39" Name="Village of the Albinaurics" />
+      <Option Value="40" Name="Hermit Village" />
+      <Option Value="45" Name="Mohgwyn Dynasty Mausoleum" />
+      <Option Value="46" Name="Eternal City" />
+      <Option Value="47" Name="Hallowed Grounds" />
+      <Option Value="50" Name="Stormveil Castle" />
+      <Option Value="51" Name="Academy of Raya Lucaria" />
+      <Option Value="52" Name="The Four Belfries" />
+      <Option Value="53" Name="Ruin-Strewn Precipice" />
+      <Option Value="54" Name="Bestial Sanctum" />
+      <Option Value="55" Name="Miquella's Haligtree" />
+      <Option Value="56" Name="Elphael, Brace of the Haligtree" />
+      <Option Value="57" Name="Forge of the Giants" />
+      <Option Value="58" Name="Volcano Manor" />
+      <Option Value="59" Name="Crumbling Farum Azula" />
+      <Option Value="60" Name="Leyndell, Royal Capital" />
+      <Option Value="61" Name="Subterranean Shunning-Grounds" />
+      <Option Value="62" Name="Leyndell, Ashen Capital" />
+      <Option Value="65" Name="Chapel of Anticipation" />
+      <Option Value="66" Name="Carian Study Hall" />
+      <Option Value="70" Name="White Circle with Figure Within" />
+      <Option Value="80" Name="NPC Marker" />
+      <Option Value="83" Name="Grace Guidance" />
+      <Option Value="84" Name="Starlight Guidance" />
+      <Option Value="85" Name="Catacomb Guidance" />
+      <Option Value="86" Name="NPC Marker (White Fog behind)" />
+      <Option Value="87" Name="Red Invasion Marker" />
+      <Option Value="88" Name="Red Invasion Marker (faded)" />
+      <Option Value="89" Name="Catacomb" />
+      <Option Value="90" Name="Catacomb" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
+    <eventFlagId AltName="Open - Event Flag ID" Wiki="Event flag ID of open condition" FlagAlias="" />
+    <distViewEventFlagId AltName="Distant View - Event Flag ID" Wiki="Event flag ID to be set when found on the distant view" FlagAlias="" />
+    <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_03_dlc/iconId/MENU_MAP_" />
+    <bgmPlaceType AltName="BGM Location Type" Wiki="Bgm location type" Enum="SOUND_BGM_MAP_PLACE_TYPE" />
+    <isAreaIcon AltName="Is Area Icon" Wiki="Is it an icon that represents a range? Same size as the map" IsBool="" />
+    <isOverrideDistViewMarkPos AltName="Overwrite Coordinates when Distant View Marker" Wiki="Whether to overwrite the coordinates when using it as a distant view marker" IsBool="" />
+    <isEnableNoText AltName="Enable with No Text" Wiki="Do you want to display it even when there is no text? Basically, points are not displayed without text. Display without text when this flag is enabled" IsBool="" />
+    <pad3 AltName="" Padding=""/>
+    <areaNo_forDistViewMark AltName="Distant View Marker - Map Area" Wiki="AA part of mAA_BB_CC_DD" />
+    <gridXNo_forDistViewMark AltName="Distant View Marker - Map Block" Wiki="BB part of mAA_BB_CC_DD" />
+    <gridZNo_forDistViewMark AltName="Distant View Marker - Map Region" Wiki="CC part of mAA_BB_CC_DD" />
+    <clearedEventFlagId AltName="Cleared - Event Flag ID" Wiki="Cleared event flag ID (0: always treated as cleared)" FlagAlias="" />
+    <dispMask00 AltName="Display Mask M00" Wiki="Whether to display with M00" IsBool="" />
+    <dispMask01 AltName="Display Mask M01" Wiki="Whether to display with M01" IsBool="" />
+    <dispMask02 AltName="Display Mask M02" Wiki="Whether to display with M02" IsBool="" />
+    <pad2_0 AltName="" Padding=""/>
+    <pad2 AltName="" Padding=""/>
+    <distViewIconId AltName="Distant View - Icon ID" Wiki="Icon ID when distant view is found" />
+    <angle AltName="Display Icon Angle" Wiki="Display icon rotation angle [deg]" />
+    <areaNo AltName="Map Area" Wiki="AA part of mAA_BB_CC_DD" />
+    <gridXNo AltName="Map Block" Wiki="BB part of mAA_BB_CC_DD" />
+    <gridZNo AltName="Map Region" Wiki="CC part of mAA_BB_CC_DD" />
+    <pad AltName="" Padding=""/>
+    <posX AltName="Map Coordinate: X" Wiki="X coordinate" />
+    <posY AltName="Map Coordinate: Y" Wiki="Y coordinate (not used)" />
+    <posZ AltName="Map Coordinate: Z" Wiki="Z coordinate" />
+    <textId1 FmgRef="Title_Locations(textType1=0),Title_Characters(textType1=1)" AltName="Text ID [1]" Wiki="The text ID to display. If the value is invalid (-1), nothing is displayed." />
+    <textEnableFlagId1 AltName="Text Enable Flag [1]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
+    <textDisableFlagId1 AltName="Text Disable Flag [1]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
+    <textId2 FmgRef="Title_Locations(textType2=0),Title_Characters(textType2=1)" AltName="Text ID [2]" Wiki="The text ID to display. If it is an invalid value (-2), nothing is displayed." />
+    <textEnableFlagId2 AltName="Text Enable Flag [2]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (1) is invalid, it will be treated as On." FlagAlias="" />
+    <textDisableFlagId2 AltName="Text Disable Flag [2]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (1) is invalid, it will be treated as Off." FlagAlias="" />
+    <textId3 FmgRef="Title_Locations(textType3=0),Title_Characters(textType3=1)" AltName="Text ID [3]" Wiki="The text ID to display. If it is an invalid value (-3), nothing is displayed." />
+    <textEnableFlagId3 AltName="Text Enable Flag [3]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (2) is invalid, it will be treated as On." FlagAlias="" />
+    <textDisableFlagId3 AltName="Text Disable Flag [3]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (2) is invalid, it will be treated as Off." FlagAlias="" />
+    <textId4 FmgRef="Title_Locations(textType4=0),Title_Characters(textType4=1)" AltName="Text ID [4]" Wiki="The text ID to display. If it is an invalid value (-4), nothing is displayed." />
+    <textEnableFlagId4 AltName="Text Enable Flag [4]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (3) is invalid, it will be treated as On." FlagAlias="" />
+    <textDisableFlagId4 AltName="Text Disable Flag [4]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (3) is invalid, it will be treated as Off." FlagAlias="" />
+    <textId5 FmgRef="Title_Locations(textType5=0),Title_Characters(textType5=1)" AltName="Text ID [5]" Wiki="The text ID to display. If it is an invalid value (-5), nothing is displayed." />
+    <textEnableFlagId5 AltName="Text Enable Flag [5]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (4) is invalid, it will be treated as On." FlagAlias="" />
+    <textDisableFlagId5 AltName="Text Disable Flag [5]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (4) is invalid, it will be treated as Off." FlagAlias="" />
+    <textId6 FmgRef="Title_Locations(textType6=0),Title_Characters(textType6=1)" AltName="Text ID [6]" Wiki="The text ID to display. If it is an invalid value (-6), nothing is displayed." />
+    <textEnableFlagId6 AltName="Text Enable Flag [6]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (5) is invalid, it will be treated as On." FlagAlias="" />
+    <textDisableFlagId6 AltName="Text Disable Flag [6]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (5) is invalid, it will be treated as Off." FlagAlias="" />
+    <textId7 FmgRef="Title_Locations(textType7=0),Title_Characters(textType7=1)" AltName="Text ID [7]" Wiki="The text ID to display. If it is an invalid value (-7), nothing is displayed." />
+    <textEnableFlagId7 AltName="Text Enable Flag [7]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (6) is invalid, it will be treated as On." FlagAlias="" />
+    <textDisableFlagId7 AltName="Text Disable Flag [7]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (6) is invalid, it will be treated as Off." FlagAlias="" />
+    <textId8 FmgRef="Title_Locations(textType8=0),Title_Characters(textType8=1)" AltName="Text ID [8]" Wiki="The text ID to display. If it is an invalid value (-8), nothing is displayed." />
+    <textEnableFlagId8 AltName="Text Enable Flag [8]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (7) is invalid, it will be treated as On." FlagAlias="" />
+    <textDisableFlagId8 AltName="Text Disable Flag [8]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (7) is invalid, it will be treated as Off." FlagAlias="" />
+    <textType1 AltName="Text Type [1]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType2 AltName="Text Type [2]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType3 AltName="Text Type [3]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType4 AltName="Text Type [4]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType5 AltName="Text Type [5]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType6 AltName="Text Type [6]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType7 AltName="Text Type [7]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType8 AltName="Text Type [8]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <distViewId AltName="Distant View ID [0]" Wiki="Distance stand ID" />
+    <posX_forDistViewMark AltName="Distant View Marker - Coordinate: X" Wiki="X coordinate" />
+    <posY_forDistViewMark AltName="Distant View Marker - Coordinate: Y" Wiki="Y coordinate" />
+    <posZ_forDistViewMark AltName="Distant View Marker - Coordinate: Z" Wiki="Z coordinate" />
+    <distViewId1 AltName="Distant View ID [1]" Wiki="Distance stand ID" />
+    <distViewId2 AltName="Distant View ID [2]" Wiki="Distance stand ID" />
+    <distViewId3 AltName="Distant View ID [3]" Wiki="Distance stand ID" />
+    <dispMinZoomStep AltName="Display - Min Zoom Step" Wiki="Zoom step to display map points (0 when zoomed out most, +1 for each zoom). Displayed when Display zoom step  Current zoom step. Default is 0 (always displayed)" />
+    <selectMinZoomStep AltName="Selection - Min Zoom Step" Wiki="Zoom step where map points can be selected (0 when zoomed out most, +1 for each zoom). Selectable when Selectable zoom step  Current enlargement stage. Default is 0 (always selectable)" />
+    <entryFEType AltName="Entry FE Type" Wiki="Admission display format. Map points to be displayed at the time of admission Types of admission FE" Enum="WORLD_MAP_ENTRY_FE_TYPE" />
+    <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
+    <pad4 AltName="" Padding=""/>
+    <textEnableFlag2Id1 AltName="Text Enable Flag ID 2 [1]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
+    <textEnableFlag2Id2 AltName="Text Enable Flag ID 2 [2]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
+    <textEnableFlag2Id3 AltName="Text Enable Flag ID 2 [3]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
+    <textEnableFlag2Id4 AltName="Text Enable Flag ID 2 [4]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
+    <textEnableFlag2Id5 AltName="Text Enable Flag ID 2 [5]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
+    <textEnableFlag2Id6 AltName="Text Enable Flag ID 2 [6]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
+    <textEnableFlag2Id7 AltName="Text Enable Flag ID 2 [7]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
+    <textEnableFlag2Id8 AltName="Text Enable Flag ID 2 [8]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
+    <textDisableFlag2Id1 AltName="Text Disable Flag ID 2 [1]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
+    <textDisableFlag2Id2 AltName="Text Disable Flag ID 2 [2]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
+    <textDisableFlag2Id3 AltName="Text Disable Flag ID 2 [3]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
+    <textDisableFlag2Id4 AltName="Text Disable Flag ID 2 [4]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
+    <textDisableFlag2Id5 AltName="Text Disable Flag ID 2 [5]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
+    <textDisableFlag2Id6 AltName="Text Disable Flag ID 2 [6]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
+    <textDisableFlag2Id7 AltName="Text Disable Flag ID 2 [7]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
+    <textDisableFlag2Id8 AltName="Text Disable Flag ID 2 [8]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
+  </Field>
+  <Self />
+</PARAMMETA>

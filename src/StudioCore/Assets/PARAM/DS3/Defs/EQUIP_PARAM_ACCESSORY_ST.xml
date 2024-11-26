@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>EQUIP_PARAM_ACCESSORY_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 refId = -1" />
+    <Field Def="s32 sfxVariationId = -1" />
+    <Field Def="f32 weight" />
+    <Field Def="s32 behaviorId" />
+    <Field Def="s32 basicPrice" />
+    <Field Def="s32 sellValue = 150" />
+    <Field Def="s32 sortId = 80000" />
+    <Field Def="s32 qwcId" />
+    <Field Def="s16 equipModelId" />
+    <Field Def="s16 iconId = 5000" />
+    <Field Def="s16 shopLv = -1" />
+    <Field Def="s16 trophySGradeId = -1" />
+    <Field Def="s16 trophySeqId = -1" />
+    <Field Def="u8 equipModelCategory" />
+    <Field Def="u8 equipModelGender" />
+    <Field Def="u8 accessoryCategory" />
+    <Field Def="u8 refCategory = 2" />
+    <Field Def="u8 spEffectCategory" />
+    <Field Def="dummy8 pad1[1]" />
+    <Field Def="s32 vagrantItemLotId = -1" />
+    <Field Def="s32 vagrantBonusEneDropItemLotId = -1" />
+    <Field Def="s32 vagrantItemEneDropItemLotId = -1" />
+    <Field Def="u8 IsDeposit:1 = 1" />
+    <Field Def="u8 IsEquipOutBrake:1" />
+    <Field Def="u8 disableMultiDropShare:1" />
+    <Field Def="u8 IsDiscard:1 = 1" />
+    <Field Def="u8 isDrop:1 = 1" />
+    <Field Def="u8 showLogCondType:1" />
+    <Field Def="u8 showDialogCondType:2" />
+    <Field Def="dummy8 pad2[3]" />
+    <Field Def="s32 saleValue = -1" />
+    <Field Def="s16 accessoryGroup = -1" />
+    <Field Def="u8 vowId" />
+    <Field Def="u8 compTrophySedId = 13" />
+    <Field Def="s32 residentSpEffectId1" />
+    <Field Def="s32 residentSpEffectId2" />
+    <Field Def="s32 residentSpEffectId3" />
+    <Field Def="s32 residentSpEffectId4" />
+    <Field Def="dummy8 pad3[8]" />
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="PROTECTOR_CATEGORY" type="u8">
+	  <Option Value="0" Name="Head" />
+	  <Option Value="1" Name="Body" />
+	  <Option Value="2" Name="Arms" />
+	  <Option Value="3" Name="Legs" />
+	</Enum>
+  </Enums>
+  <Field>
+	<sortId Wiki="Position of the armor piece in armor menu" />
+	<wanderingEquipId Wiki="When a wandering ghost has this piece equipped the ghost's armor will be replaced with this armor piece" Refs="EquipParamProtector" />
+	<vagrantItemLotId />
+	<vagrantBonusEneDropItemLotId />
+	<vagrantItemEneDropItemLotId />
+	<fixPrice Wiki="Repair price" />
+	<basicPrice />
+	<sellValue Wiki="Souls received when selling" />
+	<weight Wiki="How much the armor weighs" />
+    <residentSpEffectId Wiki="SpEffect that applies when the armor is equipped" Refs="SpEffectParam" />
+    <residentSpEffectId2 Wiki="SpEffect that applies when the armor is equipped" Refs="SpEffectParam" />
+    <residentSpEffectId3 Wiki="SpEffect that applies when the armor is equipped" Refs="SpEffectParam" />
+	<materialSetId Refs="EquipMtrlSetParam" />
+	<partsDamageRate />
+	<corectSARecover Wiki="Multiplies Super Armor recovery speed" />
+	<originEquipPro Wiki="Armor used as a reference when upgrading to +0" Refs="EquipParamProtector" />
+	<originEquipPro1 Wiki="Armor used as a reference when upgrading to +1" Refs="EquipParamProtector" />
+	<originEquipPro2 Wiki="Armor used as a reference when upgrading to +2" Refs="EquipParamProtector" />
+	<originEquipPro3 Wiki="Armor used as a reference when upgrading to +3" Refs="EquipParamProtector" />
+	<originEquipPro4 Wiki="Armor used as a reference when upgrading to +4" Refs="EquipParamProtector" />
+	<originEquipPro5 Wiki="Armor used as a reference when upgrading to +5" Refs="EquipParamProtector" />
+	<originEquipPro6 Wiki="Armor used as a reference when upgrading to +6" Refs="EquipParamProtector" />
+	<originEquipPro7 Wiki="Armor used as a reference when upgrading to +7" Refs="EquipParamProtector" />
+	<originEquipPro8 Wiki="Armor used as a reference when upgrading to +8" Refs="EquipParamProtector" />
+	<originEquipPro9 Wiki="Armor used as a reference when upgrading to +9" Refs="EquipParamProtector" />
+	<originEquipPro10 Wiki="Armor used as a reference when upgrading to +10" Refs="EquipParamProtector" />
+	<originEquipPro11 Wiki="Armor used as a reference when upgrading to +11" Refs="EquipParamProtector" />
+	<originEquipPro12 Wiki="Armor used as a reference when upgrading to +12" Refs="EquipParamProtector" />
+	<originEquipPro13 Wiki="Armor used as a reference when upgrading to +13" Refs="EquipParamProtector" />
+	<originEquipPro14 Wiki="Armor used as a reference when upgrading to +14" Refs="EquipParamProtector" />
+	<originEquipPro15 Wiki="Armor used as a reference when upgrading to +15" Refs="EquipParamProtector" />
+	<faceScaleM_ScaleX />
+	<faceScaleM_ScaleZ />
+	<faceScaleM_MaxX />
+	<faceScaleM_MaxZ />
+	<faceScaleF_ScaleX />
+	<faceScaleF_ScaleZ />
+	<faceScaleF_MaxX />
+	<faceScaleF_MaxZ />
+	<qwcId />
+	<equipModelId Wiki="Parts file Id used for armor model when equipped" />
+	<iconIdM />
+	<iconIdF />
+	<knockBackCutRate_vsPlayer_DirectHit />
+	<knockBackCutRate_vsEnemy_DirectHit />
+	<knockbackBounceRate />
+	<durability />
+	<durabilityMax />
+	<saDurability />
+	<defFlickPower />
+	<defensePhysics Wiki="Flat physical defense added when armor is equipped" />
+	<defenseMagic Wiki="Flat magic defense added when armor is equipped" />
+	<defenseFire Wiki="Flat fire defense added when armor is equipped" />
+	<defenseThunder Wiki="Flat thunder defense added when armor is equipped" />
+	<defenseSlash Wiki="Flat slash defense added when armor is equipped" />
+	<defenseLightHit Wiki="Flat light hit defense added when armor is equipped" />
+	<defenseThrust Wiki="Flat thrust defense added when armor is equipped" />
+	<resistPoison Wiki="Flat Poison resistance when armor is equipped" />
+	<resistDisease Wiki="Flat Terror resistance when armor is equipped" />
+	<resistBlood Wiki="Flat Burn resistance when armor is equipped" />
+	<resistCurse Wiki="Flat Enfeeble resistance when armor is equipped" />
+	<reinforceTypeId Refs="ReinforceParamProtector" />
+	<trophySGradeId />
+	<shopLv />
+	<knockbackParamId Refs="KnockBackParam" />
+	<flickDamageCutRate />
+	<equipModelCategory />
+	<equipModelGender />
+	<protectorCategory Enum="PROTECTOR_CATEGORY" />
+	<pad02 />
+	<pad03 />
+	<partsDmgType />
+	<pad04 />
+	<isDeposit Wiki="Can the armor be put in your storage box" IsBool="" />
+    <headEquip Wiki="Armor piece can be equipped on the Head armor slot" IsBool="" />
+    <bodyEquip Wiki="Armor piece can be equipped on the Body armor slot" IsBool="" />
+	<armEquip Wiki="Armor piece can be equipped on the Arm armor slot" IsBool="" />
+    <legEquip Wiki="Armor piece can be equipped on the Leg armor slot" IsBool="" />
+	<useFaceScale />
+	<invisibleFlag00 />
+	<invisibleFlag01 />
+	<invisibleFlag02 />
+	<invisibleFlag03 />
+	<invisibleFlag04 />
+	<invisibleFlag05 />
+	<invisibleFlag06 />
+	<invisibleFlag07 />
+	<invisibleFlag08 />
+	<invisibleFlag09 />
+	<invisibleFlag10 />
+	<invisibleFlag11 />
+	<invisibleFlag12 />
+	<invisibleFlag13 />
+	<invisibleFlag14 />
+	<invisibleFlag15 />
+	<invisibleFlag16 />
+	<invisibleFlag17 />
+	<invisibleFlag18 />
+	<invisibleFlag19 />
+	<invisibleFlag20 />
+	<invisibleFlag21 />
+	<invisibleFlag22 />
+	<invisibleFlag23 />
+	<invisibleFlag24 />
+	<invisibleFlag25 />
+	<invisibleFlag26 />
+	<invisibleFlag27 />
+	<invisibleFlag28 />
+	<invisibleFlag29 />
+	<invisibleFlag30 />
+	<invisibleFlag31 />
+	<invisibleFlag32 />
+	<invisibleFlag33 />
+	<invisibleFlag34 />
+	<invisibleFlag35 />
+	<invisibleFlag36 />
+	<invisibleFlag37 />
+	<invisibleFlag38 />
+	<invisibleFlag39 />
+	<invisibleFlag40 />
+	<invisibleFlag41 />
+	<invisibleFlag42 />
+	<invisibleFlag43 />
+	<invisibleFlag44 />
+	<invisibleFlag45 />
+	<invisibleFlag46 />
+	<invisibleFlag47 />
+	<disableMultiDropShare Wiki="Can you drop this armor during multiplayer" IsBool="" />
+	<simpleModelForDlc Wiki="Is there a simple model for DLC?" IsBool="" />
+	<isDiscard Wiki="Allows the armor to be discarded" IsBool="" />
+	<isDrop Wiki="Allows the armor to be dropped" IsBool="" />
+	<isNoticeLog Wiki="When the item is obtained a UI indicator will appear above the Sen counter on the right hand side of the screen, does not pause gameplay" IsBool="" />
+	<isNoticeDialog Wiki="When the item is obtained a UI indicator will appear in the middle of the screen, pauses gameplay" IsBool="" />
+	<pad />
+	<neutralDamageCutRate Wiki="Multiplies neutral damage taken" />
+	<slashDamageCutRate Wiki="Multiplies slash damage taken" />
+	<lightHitDamageCutRate Wiki="Multiplies light hit damage taken" />
+	<thrustDamageCutRate Wiki="Multiplies thrust damage taken" />
+	<magicDamageCutRate Wiki="Multiplies magic damage taken" />
+	<fireDamageCutRate Wiki="Multiplies fire damage taken" />
+	<thunderDamageCutRate Wiki="Multiplies thunder damage taken" />
+	<defenseMaterialSfx1 />
+	<defenseMaterialSfx_Weak1 />
+	<defenseMaterial1 />
+	<defenseMaterial_Weak1 />
+	<defenseMaterialSfx2 />
+	<defenseMaterialSfx_Weak2 />
+	<defenseMaterial2 />
+	<defenseMaterial_Weak2 />
+	<footEffectDecalBaseId1 />
+	<toughnessDamageCutRate />
+	<toughnessRecoverCorrection />
+	<darkDamageCutRate Wiki="Multiplies dark damage taken" />
+	<defenseDark Wiki="Flat dark defense added when armor is equipped" />
+	<invisibleFlag48 />
+	<invisibleFlag49 />
+	<invisibleFlag50 />
+	<invisibleFlag51 />
+	<invisibleFlag52 />
+	<invisibleFlag53 />
+	<invisibleFlag54 />
+	<invisibleFlag55 />
+	<invisibleFlag56 />
+	<invisibleFlag57 />
+	<invisibleFlag58 />
+	<invisibleFlag59 />
+	<invisibleFlag60 />
+	<invisibleFlag61 />
+	<invisibleFlag62 />
+	<invisibleFlag63 />
+	<invisibleFlag64 />
+	<invisibleFlag65 />
+	<invisibleFlag66 />
+	<invisibleFlag67 />
+	<invisibleFlag68 />
+	<invisibleFlag69 />
+	<invisibleFlag70 />
+	<invisibleFlag71 />
+	<invisibleFlag72 />
+	<invisibleFlag73 />
+	<invisibleFlag74 />
+	<invisibleFlag75 />
+	<invisibleFlag76 />
+	<invisibleFlag77 />
+	<invisibleFlag78 />
+	<invisibleFlag79 />
+	<invisibleFlag80 />
+	<padbit />
+	<pad05 />
+	<upperArmParamId Refs="UpperArmParam" />
+	<saleValue Wiki="Cost to purchase the armor" />
+	<resistFreeze Wiki="Flat Shock resistance added when armor is equipped" />
+	<invisibleFlag_SexVer00 />
+	<invisibleFlag_SexVer01 />
+	<invisibleFlag_SexVer02 />
+	<invisibleFlag_SexVer03 />
+	<invisibleFlag_SexVer04 />
+	<invisibleFlag_SexVer05 />
+	<invisibleFlag_SexVer06 />
+	<invisibleFlag_SexVer07 />
+	<invisibleFlag_SexVer08 />
+	<invisibleFlag_SexVer09 />
+	<invisibleFlag_SexVer10 />
+	<invisibleFlag_SexVer11 />
+	<invisibleFlag_SexVer12 />
+	<invisibleFlag_SexVer13 />
+	<invisibleFlag_SexVer14 />
+	<invisibleFlag_SexVer15 />
+	<invisibleFlag_SexVer16 />
+	<invisibleFlag_SexVer17 />
+	<invisibleFlag_SexVer18 />
+	<invisibleFlag_SexVer19 />
+	<invisibleFlag_SexVer20 />
+	<invisibleFlag_SexVer21 />
+	<invisibleFlag_SexVer22 />
+	<invisibleFlag_SexVer23 />
+	<invisibleFlag_SexVer24 />
+	<invisibleFlag_SexVer25 />
+	<invisibleFlag_SexVer26 />
+	<invisibleFlag_SexVer27 />
+	<invisibleFlag_SexVer28 />
+	<invisibleFlag_SexVer29 />
+	<invisibleFlag_SexVer30 />
+	<invisibleFlag_SexVer31 />
+	<invisibleFlag_SexVer32 />
+	<invisibleFlag_SexVer33 />
+	<invisibleFlag_SexVer34 />
+	<invisibleFlag_SexVer35 />
+	<invisibleFlag_SexVer36 />
+	<invisibleFlag_SexVer37 />
+	<invisibleFlag_SexVer38 />
+	<invisibleFlag_SexVer39 />
+	<invisibleFlag_SexVer40 />
+	<invisibleFlag_SexVer41 />
+	<invisibleFlag_SexVer42 />
+	<invisibleFlag_SexVer43 />
+	<invisibleFlag_SexVer44 />
+	<invisibleFlag_SexVer45 />
+	<invisibleFlag_SexVer46 />
+	<invisibleFlag_SexVer47 />
+	<invisibleFlag_SexVer48 />
+	<invisibleFlag_SexVer49 />
+	<invisibleFlag_SexVer50 />
+	<invisibleFlag_SexVer51 />
+	<invisibleFlag_SexVer52 />
+	<invisibleFlag_SexVer53 />
+	<invisibleFlag_SexVer54 />
+	<invisibleFlag_SexVer55 />
+	<invisibleFlag_SexVer56 />
+	<invisibleFlag_SexVer57 />
+	<invisibleFlag_SexVer58 />
+	<invisibleFlag_SexVer59 />
+	<invisibleFlag_SexVer60 />
+	<invisibleFlag_SexVer61 />
+	<invisibleFlag_SexVer62 />
+	<invisibleFlag_SexVer63 />
+	<invisibleFlag_SexVer64 />
+	<invisibleFlag_SexVer65 />
+	<invisibleFlag_SexVer66 />
+	<invisibleFlag_SexVer67 />
+	<invisibleFlag_SexVer68 />
+	<invisibleFlag_SexVer69 />
+	<invisibleFlag_SexVer70 />
+	<invisibleFlag_SexVer71 />
+	<invisibleFlag_SexVer72 />
+	<invisibleFlag_SexVer73 />
+	<invisibleFlag_SexVer74 />
+	<invisibleFlag_SexVer75 />
+	<invisibleFlag_SexVer76 />
+	<invisibleFlag_SexVer77 />
+	<invisibleFlag_SexVer78 />
+	<invisibleFlag_SexVer79 />
+	<invisibleFlag_SexVer80 />
+	<invisibleFlag_SexVer81 />
+	<invisibleFlag_SexVer82 />
+	<invisibleFlag_SexVer83 />
+	<invisibleFlag_SexVer84 />
+	<invisibleFlag_SexVer85 />
+	<invisibleFlag_SexVer86 />
+	<invisibleFlag_SexVer87 />
+	<invisibleFlag_SexVer88 />
+	<invisibleFlag_SexVer89 />
+	<invisibleFlag_SexVer90 />
+	<invisibleFlag_SexVer91 />
+	<invisibleFlag_SexVer92 />
+	<invisibleFlag_SexVer93 />
+	<invisibleFlag_SexVer94 />
+	<invisibleFlag_SexVer95 />
+	<pad01 />
+	<footEffectDecalBaseId2 />
+	<footEffectDecalBaseId3 />
+	<slashStaminaDmgRate Wiki="Multiplies slash stamina damage taken" />
+	<lightHitStaminaDmgRate Wiki="Multiplies light hit stamina damage taken" />
+	<thrustStaminaDmgRate Wiki="Multiplies thrust stamina damage taken" />
+	<neutralStaminaDmgRate Wiki="Multiplies neutral stamina damage taken" />
+	<ninsatuStaminaDmgRate Wiki="Multiplies ninsatsu stamina damage taken" />
+	<heavyHitStaminaDmgRate Wiki="Multiplies heavy hit stamina damage taken" />
+	<antiGroundStaminaDmgRate Wiki="Multiplies anti ground stamina damage taken" />
+	<antiAirStaminaDmgRate Wiki="Multiplies anti air stamina damage taken" />
+	<lightShootStaminaDmgRate Wiki="Multiplies light shoot stamina damage taken" />
+	<defenseNeutral Wiki="Flat neutral defense added when armor is equipped" />
+	<defenseNinsatsu Wiki="Flat ninsatsu defense added when armor is equipped" />
+	<defenseHeavyHit Wiki="Flat heavy hit defense added when armor is equipped" />
+	<defenseAntiGround Wiki="Flat anti ground defense added when armor is equipped" />
+	<defenseAntiAir Wiki="Flat anti air defense added when armor is equipped" />
+	<defenseLightShoot Wiki="Flat light shoot defense added when armor is equipped" />
+	<ninsatsuDmgRate Wiki="Multiplies ninsatsu damage taken" />
+	<heavyHitDmgRate Wiki="Multiplies heavy hit damage taken" />
+	<antiGroundDmgRate Wiki="Multiplies anti ground damage taken" />
+	<antiAirDmgRate Wiki="Multiplies anti air damage taken" />
+	<lightShootDmgRate Wiki="Multiplies light shoot damage taken" />
+	<firstGetEventFlagId />
+	<attriAStaminaDmgRate Wiki="Multiplies attribute A stamina damage taken" />
+	<attriBStaminaDmgRate Wiki="Multiplies attribute B stamina damage taken" />
+	<attriCStaminaDmgRate Wiki="Multiplies attribute C stamina damage taken" />
+	<defenseAttriA Wiki="Flat attribute A defense added when armor is equipped" />
+	<defenseAttriB Wiki="Flat attribute B defense added when armor is equipped" />
+	<defenseAttriC Wiki="Flat attribute C defense added when armor is equipped" />
+	<itemUIDisplayType />
+	<pad06 />
+	<attriADamageCutRate Wiki="Multiplies attribute A damage taken" />
+	<attriBDamageCutRate Wiki="Multiplies attribute B damage taken" />
+	<attriCDamageCutRate Wiki="Multiplies attribute C damage taken" />
+  </Field>
+  <Self Wiki="Player Armor" AlternativeOrder="sortId,itemUIDisplayType,firstGetEventFlagId,wanderingEquipId,trophySGradeId,-,
+equipModelCategory,equipModelGender,equipModelId,iconIdM,iconIdF,-,
+residentSpEffectId,residentSpEffectId2,residentSpEffectId3,-,
+headEquip,bodyEquip,armEquip,legEquip,protectorCategory,-,
+isDiscard,isDeposit,isDrop,isNoticeLog,isNoticeDialog,disableMultiDropShare,simpleModelForDlc,-,
+saDurability,corectSARecover,toughnessDamageCutRate,toughnessRecoverCorrection,-,
+knockbackParamId,knockbackBounceRate,knockBackCutRate_vsEnemy_DirectHit,knockBackCutRate_vsPlayer_DirectHit,-,
+partsDmgType,partsDamageRate,-,
+upperArmParamId,-,
+resistPoison,resistDisease,resistBlood,resistCurse,resistFreeze,-,
+slashDamageCutRate,lightHitDamageCutRate,thrustDamageCutRate,neutralDamageCutRate,ninsatsuDmgRate,heavyHitDmgRate,antiGroundDmgRate,antiAirDmgRate,lightShootDmgRate,attriADamageCutRate,attriBDamageCutRate,attriCDamageCutRate,magicDamageCutRate,fireDamageCutRate,thunderDamageCutRate,darkDamageCutRate,flickDamageCutRate,-,
+slashStaminaDmgRate,lightHitStaminaDmgRate,thrustStaminaDmgRate,neutralStaminaDmgRate,ninsatuStaminaDmgRate,heavyHitStaminaDmgRate,antiGroundStaminaDmgRate,antiAirStaminaDmgRate,lightShootStaminaDmgRate,attriAStaminaDmgRate,attriBStaminaDmgRate,attriCStaminaDmgRate,-,
+defensePhysics,defenseSlash,defenseLightHit,defenseThrust,defenseNeutral,defenseNinsatsu,defenseHeavyHit,defenseAntiGround,defenseAntiAir,defenseLightShoot,defenseAttriA,defenseAttriB,defenseAttriC,defenseMagic,defenseFire,defenseThunder,defenseDark,defFlickPower,-,
+useFaceScale,faceScaleM_ScaleX,faceScaleM_ScaleZ,faceScaleM_MaxX,faceScaleM_MaxZ,faceScaleF_ScaleX,faceScaleF_ScaleZ,faceScaleF_MaxX,faceScaleF_MaxZ,-,
+defenseMaterialSfx1,defenseMaterialSfx_Weak1,defenseMaterial1,defenseMaterial_Weak1,defenseMaterialSfx2,defenseMaterialSfx_Weak2,defenseMaterial2,defenseMaterial_Weak2,-,
+footEffectDecalBaseId1,footEffectDecalBaseId2,footEffectDecalBaseId3,-,
+invisibleFlag00,invisibleFlag01,invisibleFlag02,invisibleFlag03,invisibleFlag04,invisibleFlag05,invisibleFlag06,invisibleFlag07,invisibleFlag08,invisibleFlag09,invisibleFlag10,invisibleFlag11,invisibleFlag12,invisibleFlag13,invisibleFlag14,invisibleFlag15,invisibleFlag16,invisibleFlag17,invisibleFlag18,invisibleFlag19,invisibleFlag20,invisibleFlag21,invisibleFlag22,invisibleFlag23,invisibleFlag24,invisibleFlag25,invisibleFlag26,invisibleFlag27,invisibleFlag28,invisibleFlag29,invisibleFlag30,invisibleFlag31,invisibleFlag32,invisibleFlag33,invisibleFlag34,invisibleFlag35,invisibleFlag36,invisibleFlag37,invisibleFlag38,invisibleFlag39,invisibleFlag40,invisibleFlag41,invisibleFlag42,invisibleFlag43,invisibleFlag44,invisibleFlag45,invisibleFlag46,invisibleFlag47,invisibleFlag48,invisibleFlag49,invisibleFlag50,invisibleFlag51,invisibleFlag52,invisibleFlag53,invisibleFlag54,invisibleFlag55,invisibleFlag56,invisibleFlag57,invisibleFlag58,invisibleFlag59,invisibleFlag60,invisibleFlag61,invisibleFlag62,invisibleFlag63,invisibleFlag64,invisibleFlag65,invisibleFlag66,invisibleFlag67,invisibleFlag68,invisibleFlag69,invisibleFlag70,invisibleFlag71,invisibleFlag72,invisibleFlag73,invisibleFlag74,invisibleFlag75,invisibleFlag76,invisibleFlag77,invisibleFlag78,invisibleFlag79,invisibleFlag80,-,
+invisibleFlag_SexVer00,invisibleFlag_SexVer01,invisibleFlag_SexVer02,invisibleFlag_SexVer03,invisibleFlag_SexVer04,invisibleFlag_SexVer05,invisibleFlag_SexVer06,invisibleFlag_SexVer07,invisibleFlag_SexVer08,invisibleFlag_SexVer09,invisibleFlag_SexVer10,invisibleFlag_SexVer11,invisibleFlag_SexVer12,invisibleFlag_SexVer13,invisibleFlag_SexVer14,invisibleFlag_SexVer15,invisibleFlag_SexVer16,invisibleFlag_SexVer17,invisibleFlag_SexVer18,invisibleFlag_SexVer19,invisibleFlag_SexVer20,invisibleFlag_SexVer21,invisibleFlag_SexVer22,invisibleFlag_SexVer23,invisibleFlag_SexVer24,invisibleFlag_SexVer25,invisibleFlag_SexVer26,invisibleFlag_SexVer27,invisibleFlag_SexVer28,invisibleFlag_SexVer29,invisibleFlag_SexVer30,invisibleFlag_SexVer31,invisibleFlag_SexVer32,invisibleFlag_SexVer33,invisibleFlag_SexVer34,invisibleFlag_SexVer35,invisibleFlag_SexVer36,invisibleFlag_SexVer37,invisibleFlag_SexVer38,invisibleFlag_SexVer39,invisibleFlag_SexVer40,invisibleFlag_SexVer41,invisibleFlag_SexVer42,invisibleFlag_SexVer43,invisibleFlag_SexVer44,invisibleFlag_SexVer45,invisibleFlag_SexVer46,invisibleFlag_SexVer47,invisibleFlag_SexVer48,invisibleFlag_SexVer49,invisibleFlag_SexVer50,invisibleFlag_SexVer51,invisibleFlag_SexVer52,invisibleFlag_SexVer53,invisibleFlag_SexVer54,invisibleFlag_SexVer55,invisibleFlag_SexVer56,invisibleFlag_SexVer57,invisibleFlag_SexVer58,invisibleFlag_SexVer59,invisibleFlag_SexVer60,invisibleFlag_SexVer61,invisibleFlag_SexVer62,invisibleFlag_SexVer63,invisibleFlag_SexVer64,invisibleFlag_SexVer65,invisibleFlag_SexVer66,invisibleFlag_SexVer67,invisibleFlag_SexVer68,invisibleFlag_SexVer69,invisibleFlag_SexVer70,invisibleFlag_SexVer71,invisibleFlag_SexVer72,invisibleFlag_SexVer73,invisibleFlag_SexVer74,invisibleFlag_SexVer75,invisibleFlag_SexVer76,invisibleFlag_SexVer77,invisibleFlag_SexVer78,invisibleFlag_SexVer79,invisibleFlag_SexVer80,invisibleFlag_SexVer81,invisibleFlag_SexVer82,invisibleFlag_SexVer83,invisibleFlag_SexVer84,invisibleFlag_SexVer85,invisibleFlag_SexVer86,invisibleFlag_SexVer87,invisibleFlag_SexVer88,invisibleFlag_SexVer89,invisibleFlag_SexVer90,invisibleFlag_SexVer91,invisibleFlag_SexVer92,invisibleFlag_SexVer93,invisibleFlag_SexVer94,invisibleFlag_SexVer95,-,
+fixPrice,basicPrice,sellValue,saleValue,shopLv,materialSetId,weight,qwcId,durability,durabilityMax,vagrantItemLotId,vagrantBonusEneDropItemLotId,vagrantItemEneDropItemLotId,reinforceTypeId,originEquipPro,originEquipPro1,originEquipPro2,originEquipPro3,originEquipPro4,originEquipPro5,originEquipPro6,originEquipPro7,originEquipPro8,originEquipPro9,originEquipPro10,originEquipPro11,originEquipPro12,originEquipPro13,originEquipPro14,originEquipPro15,-" />
+</PARAMMETA>

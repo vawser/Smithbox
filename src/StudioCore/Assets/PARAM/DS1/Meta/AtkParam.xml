@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="HitType">
+      <Option Value="0" Name="Default" />
+      <Option Value="2" Name="Deflect off of map and object collisions" />
+    </Enum>
+    <Enum Name="DmgLevel">
+      <Option Value="0" Name="dmgLv_None" />
+      <Option Value="1" Name="dmgLv_S" />
+      <Option Value="2" Name="dmgLv_M" />
+      <Option Value="3" Name="dmgLv_L" />
+      <Option Value="4" Name="dmgLv_BlowM" />
+      <Option Value="5" Name="dmgLv_Push" />
+      <Option Value="6" Name="dmgLv_Strike" />
+      <Option Value="7" Name="dmgLv_BlowS" />
+      <Option Value="8" Name="dmgLv_Min" />
+      <Option Value="9" Name="dmgLv_Uppercut" />
+      <Option Value="10" Name="dmgLv_BlowL" />
+      <Option Value="11" Name="dmgLv_Breath" />
+    </Enum>
+    <Enum Name="AtkAttribute">
+      <Option Value="1" Name="Slash" />
+      <Option Value="2" Name="Strike" />
+      <Option Value="3" Name="Thrust" />
+      <Option Value="4" Name="Normal" />
+    </Enum>
+    <Enum Name="SpAttribute">
+      <Option Value="1" Name="Normal" />
+      <Option Value="2" Name="Fire" />
+      <Option Value="3" Name="Magic" />
+      <Option Value="4" Name="Poison" />
+      <Option Value="5" Name="Unused (Egg)" />
+      <Option Value="6" Name="Lightning" />
+      <Option Value="7" Name="Petrification" />
+      <Option Value="8" Name="Crystal" />
+    </Enum>
+  </Enums>
+  <Field>
+    <hit0_Radius Wiki="Hitbox radius for hitbox 0 (1st)"/>
+    <hit1_Radius Wiki="Hitbox radius for hitbox 2 (2nd)"/>
+    <hit2_Radius Wiki="Hitbox radius for hitbox 3 (3rd)"/>
+    <hit3_Radius Wiki="Hitbox radius for hitbox 4 (4th)"/>
+    <knockbackDist Wiki="If attack will stun, distance victim travels in &quot;meters&quot;\nIf attack will not stun, distance attacker travels backwards in &quot;meters&quot; (needs testing)"/>
+    <spEffectId0 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
+    <spEffectId1 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
+    <spEffectId2 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
+    <spEffectId3 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
+    <spEffectId4 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
+    <hit0_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 0 (1st). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
+    <hit1_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 1 (2nd). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
+    <hit2_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 2 (3rd). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
+    <hit3_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 3 (4th). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
+    <hit0_DmyPoly2 Wiki="ID of second dummypoly location to use for hitbox 0 (1st). If -1, only DmyPoly1 will be used for the hitbox, making the hitbox a sphere" />
+    <hit1_DmyPoly2 Wiki="ID of second dummypoly location to use for hitbox 1 (2nd). If -1, only DmyPoly1 will be used for the hitbox, making the hitbox a sphere" />
+    <hit2_DmyPoly2 Wiki="ID of second dummypoly location to use for hitbox 2 (3rd). If -1, only DmyPoly1 will be used for the hitbox, making the hitbox a sphere" />
+    <hit3_DmyPoly2 Wiki="ID of second dummypoly location to use for hitbox 3 (4th). If -1, only DmyPoly1 will be used for the hitbox, making the hitbox a sphere" />
+    <blowingCorrection />
+    <atkPhysCorrection Wiki="Multiplies physical damage of attack source, such as a weapon" />
+    <atkMagCorrection Wiki="Multiplies magic damage of attack source, such as a weapon" />
+    <atkFireCorrection Wiki="Multiplies fire damage of attack source, such as a weapon" />
+    <atkThunCorrection Wiki="Multiplies lightning damage of attack source, such as a weapon" />
+    <atkStamCorrection Wiki="Multiplies stamina damage of attack source, such as a weapon" />
+    <guardAtkRateCorrection Wiki="Multiplies deflection attack value of attack source, such as a weapon. Compared against deflection defense to determine if this attack should bounce" />
+    <guardBreakCorrection Wiki="Multiplies deflection defense of guard source, such as a shield. Compared against deflection attack value to determine if the attack should bounce" />
+    <atkThrowEscapeCorrection />
+    <atkSuperArmorCorrection Wiki="Multiplies poise damage of attack source, such as a weapon" />
+    <atkPhys AltName="Physical Damage" />
+    <atkMag AltName="Magic Damage" />
+    <atkFire AltName="Fire Damage" />
+    <atkThun AltName="Lightning Damage" />
+    <atkStam AltName="Stamina Damage" />
+    <guardAtkRate Wiki="Flat deflection damage. Compared against deflection defense value to determine if this attack should bounce." />
+    <guardBreakRate Wiki="Flat deflection defense. Compared against deflection attack value to determine if the attack should bounce." />
+    <atkSuperArmor AltName="Poise Damage" />
+    <atkThrowEscape />
+    <atkObj AltName="Object Damage" Wiki="If an object has less object HP than the attack has object damage, the object will break." />
+    <guardStaminaCutRate Wiki="Multiplies stability when this attack is used for blocking.\n-50 = -50%% stability, 50 = +50%% stability" />
+    <guardRate />
+    <throwTypeId />
+    <hit0_hitType Enum="HitType" Wiki="Misc properties for hitbox 0 (1st)." />
+    <hit1_hitType Enum="HitType" Wiki="Misc properties for hitbox 1 (2nd)." />
+    <hit2_hitType Enum="HitType" Wiki="Misc properties for hitbox 2 (3rd)." />
+    <hit3_hitType Enum="HitType" Wiki="Misc properties for hitbox 3 (4th)." />
+    <hti0_Priority AltName="hit0_Priority" />
+    <hti1_Priority AltName="hit1_Priority" />
+    <hti2_Priority AltName="hit2_Priority" />
+    <hti3_Priority AltName="hit3_Priority" />
+    <dmgLevel Enum="DmgLevel" />
+    <mapHitType />
+    <guardCutCancelRate />
+    <atkAttribute Enum="AtkAttribute" />
+    <spAttribute Enum="SpAttribute" />
+    <atkType />
+    <atkMaterial />
+    <atkSize />
+    <defMaterial />
+    <defSfxMaterial />
+    <hitSourceType />
+    <throwFlag />
+    <disableGuard IsBool="" Wiki="true = attacks ignore guarding" />
+    <disableStaminaAttack IsBool="" />
+    <disableHitSpEffect IsBool="" />
+    <IgnoreNotifyMissSwingForAI IsBool="" />
+    <repeatHitSfx IsBool="" />
+    <isArrowAtk IsBool="" />
+    <isGhostAtk IsBool="" Wiki="true = attacks can harm new londo ghosts" />
+    <isDisableNoDamage IsBool="" />
+  </Field> 
+  <Self Wiki="Governs hitboxes and damage of attacks" AlternativeOrder="
+hit0_Radius,hit1_Radius,hit2_Radius,hit3_Radius,-,
+hit0_hitType,hit1_hitType,hit2_hitType,hit3_hitType,-,
+hti0_Priority,hti1_Priority,hti2_Priority,hti3_Priority,-,
+hit0_DmyPoly1,hit1_DmyPoly1,hit2_DmyPoly1,hit3_DmyPoly1,-,
+hit0_DmyPoly2,hit1_DmyPoly2,hit2_DmyPoly2,hit3_DmyPoly2,-,
+knockbackDist,hitStopTime,blowingCorrection,-,
+spEffectId0,spEffectId1,spEffectId2,spEffectId3,spEffectId4,-,
+atkPhysCorrection,atkMagCorrection,atkFireCorrection,atkThunCorrection,atkStamCorrection,atkSuperArmorCorrection,-,
+atkThrowEscapeCorrection,guardAtkRateCorrection,guardBreakCorrection,-,
+atkPhys,atkMag,atkFire,atkThun,atkStam,atkSuperArmor,-,
+atkThrowEscape,guardAtkRate,guardBreakRate,-,
+dmgLevel,atkObj,-,
+guardCutCancelRate,guardStaminaCutRate,guardRate,-,
+throwTypeId,throwFlag,throwDamageAttribute,-,
+mapHitType,guardRangeType,hitSourceType,-,
+atkAttribute,spAttribute,spAttributeVariationValue,atkType,atkMaterial,atkSize,-,
+defMaterial,defSfxMaterial,-,
+disableStaminaAttack,disableHitSpEffect,disableGuard,-," />
+</PARAMMETA>

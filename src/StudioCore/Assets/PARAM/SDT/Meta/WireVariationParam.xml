@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+	<Enum Name="WIRE_VARIATION_PARAM_TARGET_MARKER_FE_TYPE" type="u8">
+		<Option Value="0" Name="Icon: Filled in green circle" />
+		<Option Value="1" Name="Icon: Green outer edge with an arrow in the center" />
+	</Enum>
+  </Enums>
+  <Field>
+	<targetMarkerType Wiki="Type of marker (FE) to display at target position" Enum="WIRE_VARIATION_PARAM_TARGET_MARKER_FE_TYPE" />
+	<extendWireActionDistance Wiki="If a value other than 0 is set, the wire action (action possible/recognition) distance will be extended by that distance. It is assumed that it will be used on a limited basis as it will be searched regardless of the grid." />
+	<pad0 />
+	<recognitionAngleUp Wiki="With the reference direction of the wire edge as the front, only characters within this angle above can perform wire actions." />
+	<recognitionAngleDown Wiki="With the reference direction of the wire edge as the front, only characters within this angle below can perform wire actions." />
+	<recognitionAngleLeft Wiki="Only characters within this angle on the left side can perform wire actions when the reference direction of the wire edge is the front." />
+	<recognitionAngleRight Wiki="Only characters within this angle on the right side can perform wire actions when the reference direction of the wire edge is the front." />
+	<chrPhysicsHomingIdOffset Wiki="Offset the character physical homing parameter ID with this value. Use this when you want to shift the homing target position for each wire edge." />
+	<pad1 />
+  </Field>
+  <Self Wiki="Grapples for Npc's" AlternativeOrder="targetMarkerType,extendWireActionDistance,chrPhysicsHomingIdOffset,-,
+recognitionAngleUp,recognitionAngleDown,recognitionAngleLeft,recognitionAngleRight,-" />
+</PARAMMETA>

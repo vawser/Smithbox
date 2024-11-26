@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <assetEnvironmentGeometryParamId1 AltName="Asset Param ID [1]" Refs="AssetEnvironmentGeometryParam" />
+    <assetEnvironmentGeometryParamId2 AltName="Asset Param ID [2]" Refs="AssetEnvironmentGeometryParam" />
+    <assetEnvironmentGeometryParamId3 AltName="Asset Param ID [3]" Refs="AssetEnvironmentGeometryParam" />
+    <assetEnvironmentGeometryParamId4 AltName="Asset Param ID [4]" Refs="AssetEnvironmentGeometryParam" />
+    <assetEnvironmentGeometryParamId5 AltName="Asset Param ID [5]" Refs="AssetEnvironmentGeometryParam" />
+    <assetEnvironmentGeometryParamId6 AltName="Asset Param ID [6]" Refs="AssetEnvironmentGeometryParam" />
+    <assetEnvironmentGeometryParamId7 AltName="Asset Param ID [7]" Refs="AssetEnvironmentGeometryParam" />
+    <assetEnvironmentGeometryParamId8 AltName="Asset Param ID [8]" Refs="AssetEnvironmentGeometryParam" />
+    <pad1 Padding="" />
+    <pad2 Padding="" />
+  </Field>
+  <Self />
+</PARAMMETA>

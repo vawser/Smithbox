@@ -1,0 +1,86 @@
+0 
+1 
+2 
+1000 Keybind: Camera Controls
+1010 Keybind: Using Items
+1020 Sites of Grace
+1030 Keybind:
+1040 Keybind:
+1050 Keybind:
+1060 Sorceries and Incantations
+1070 Guarding
+1080 Keybind:
+1090 Keybind: Dashing
+1100 Wielding Armaments
+1110 Keybind: Lock-on Target Change
+1120 Keybind: Guarding
+1130 Bows
+1140 Crouching
+1150 Keybind: Backstab
+1160 Stance Breaking
+1170 Keybind: HUD Display
+1180 Guard Counters
+1190 Stakes of Marika
+1200 Skills
+1210 Dodging
+1500 The Map
+1510 Guidance of Grace
+1520 Horseback Riding
+1530 Death
+1550 Summoning Spirits
+1560 Materials
+1570 Item Crafting
+1580 Containers
+1590 Flask of Wonderous Physick
+1600 Adding Skills
+1610 Birdseye Telescopes
+1620 Spiritspring Jumping
+1630 Vanquishing Enemy Groups
+1640 Teardrop Scarabs
+1650 Summoning Other Players
+1660 Cooperative Multiplayer
+1670 Competitive Multiplayer
+1680 Invasion Multiplayer
+1690 Summoning Pools
+1700 Hunter Multiplayer
+1710 Monument Icon
+1720 Requesting Aid from a Hunter
+1730 Fast Travel to Sites of Grace
+1740 Strengthening Armaments
+1750 Adding Affinities
+1760 Multiplayer
+1770 Pouches
+1780 Roundtable Hold
+1800 Keybind: Mounted Double Jump
+1810 Great Runes
+1820 The Cave of Knowledge
+1850 Duels
+1860 United Combat and Combat Ordeals
+1870 Combat with Spirit Ashes
+1880 Marika's Effigy at Roundtable
+1900 Scadutree Blessing
+1910 Revered Spirit Ash Belssing
+1920 New Inventory Features
+2000 Equipment Menu
+2010 Item Crafting Menu
+2020 Inventory Menu
+2030 Status Menu
+2040 Message Menu
+2050 Multiplayer Menu
+2060 Level Up Menu
+2090 Allocating Flask Uses
+2100 Memorize Spells Menu
+2110 Sorting the Chest
+2120 Shop Menu
+2140 Ashes of War Menu
+2150 Spirit Tuning Menu
+2160 Remembrance Duplication Menu
+2170 Great Rune Menu
+2180 Mixing Physicks
+2190 Rebirth Menu
+2200 Remnant Crafting Menu
+2210 Map Menu
+2220 Smithing Menu
+2230 Colosseum Menu
+2300 Scadutree Blessing Menu
+2310 Revered Spirit Ash Blessing Menu

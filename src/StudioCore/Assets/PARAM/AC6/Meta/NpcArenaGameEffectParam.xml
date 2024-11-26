@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <!-- Unknown which field this is yet -->
+    <Enum Name="NPC_ARENA_FINISH_TEXT_TIMING" type="u8">
+      <Option Value="0" Name="Start" />
+      <Option Value="1" Name="End" />
+    </Enum>
+    <!-- Unknown which field this is yet -->
+    <Enum Name="NPC_ARENA_CATEGORY" type="u8">
+      <Option Value="0" Name="Arena" />
+      <Option Value="10" Name="Simulator" />
+    </Enum>
+  </Enums>
+  <Field>
+    <popupTextParamID_Start AltName="Pop-up Text ID: Start" Refs="FeTextEffectParam" />
+    <popupTextParamID_Complete AltName="Pop-up Text ID: Complete" Refs="FeTextEffectParam" />
+    <popupTextParamID_Abort AltName="Pop-up Text ID: Abort" Refs="FeTextEffectParam" />
+    
+    <soundCutsceneParamId AltName="Sound Cutscene ID" Refs="SoundCutsceneParam" /> <!-- May be CutsceneMapIdParam however -->
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,6 @@
+0 usually
+1 Normal + 1
+2 Normal + 2
+3 Normal + 3
+4 Normal + 4
+5 Normal + 5

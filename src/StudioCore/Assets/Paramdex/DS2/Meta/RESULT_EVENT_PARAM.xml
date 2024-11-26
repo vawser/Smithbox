@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the phantom victory in multiplayer sessions." Row0Dummy="" />
-  <Field>
-    <itemlot_id_1 AltName="[1] Itemlot Id" Refs="ItemLotParam2_Chr,ItemLotParam2_Other,ItemLotParam2_SvrEvent" />
-    <itemlot_id_2 AltName="[2] Itemlot Id" Refs="ItemLotParam2_Chr,ItemLotParam2_Other,ItemLotParam2_SvrEvent" />
-  </Field>
-</PARAMMETA>

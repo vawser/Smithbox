@@ -1,0 +1,147 @@
+10 Preset emblem: Lizard -- プリセットエンブレム：リザード
+20 Preset emblem: Cat -- プリセットエンブレム：キャット
+30 Preset emblem: Knight -- プリセットエンブレム：ナイト
+40 Preset emblem: Plant -- プリセットエンブレム：プラント
+50 Preset emblem: Breakstar -- プリセットエンブレム：ブレイクスター
+60 Preset emblem: Spider -- プリセットエンブレム：スパイダー
+70 Preset emblem: Panther -- プリセットエンブレム：パンサー
+80 Preset emblem: Unicorn -- プリセットエンブレム：ユニコーン
+90 Preset emblem: Ammonite -- プリセットエンブレム：アンモナイト
+100 Preset emblem: shark fin -- プリセットエンブレム：シャークフィン
+110 Preset emblem: Pawn -- プリセットエンブレム：ポーン
+120 Preset emblem: Soldier -- プリセットエンブレム：ソルジャー
+130 Preset emblem: Grenade -- プリセットエンブレム：グレネード
+140 Preset emblem: Bullet -- プリセットエンブレム：バレット
+150 Preset emblem: Sighting -- プリセットエンブレム：サイティング
+300 Preset decal data 1 -- プリセットデカールデータ1
+301 Preset decal data 2 -- プリセットデカールデータ2
+302 Preset decal data 3 -- プリセットデカールデータ3
+303 Preset decal data 4 -- プリセットデカールデータ4
+304 Preset decal data 5 -- プリセットデカールデータ5
+305 Preset decal data 6 -- プリセットデカールデータ6
+306 Preset decal data 7 -- プリセットデカールデータ7
+307 Preset decal data 8 -- プリセットデカールデータ8
+308 Preset decal data 9 -- プリセットデカールデータ9
+309 Preset decal data 10 -- プリセットデカールデータ10
+310 Preset decal data 11 -- プリセットデカールデータ11
+311 Preset decal data 12 -- プリセットデカールデータ12
+312 Preset decal data 13 -- プリセットデカールデータ13
+313 Preset decal data 14 -- プリセットデカールデータ14
+314 Preset decal data 15 -- プリセットデカールデータ15
+315 Preset decal data 16 -- プリセットデカールデータ16
+316 Preset decal data 17 -- プリセットデカールデータ17
+317 Preset decal data 18 -- プリセットデカールデータ18
+318 Preset decal data 19 -- プリセットデカールデータ19
+319 Preset decal data 20 -- プリセットデカールデータ20
+320 Preset decal data 21 -- プリセットデカールデータ21
+321 Preset decal data 22 -- プリセットデカールデータ22
+322 Preset decal data 23 -- プリセットデカールデータ23
+323 Preset decal data 24 -- プリセットデカールデータ24
+324 Preset decal data 25 -- プリセットデカールデータ25
+325 Preset decal data 26 -- プリセットデカールデータ26
+326 Preset decal data 27 -- プリセットデカールデータ27
+327 Preset decal data 28 -- プリセットデカールデータ28
+328 Preset decal data 29 -- プリセットデカールデータ29
+329 Preset decal data 30 -- プリセットデカールデータ30
+330 Preset decal data 31 -- プリセットデカールデータ31
+331 Preset decal data 32 -- プリセットデカールデータ32
+332 Preset decal data 33 -- プリセットデカールデータ33
+333 Preset decal data 34 -- プリセットデカールデータ34
+334 Preset decal data 35 -- プリセットデカールデータ35
+335 Preset decal data 36 -- プリセットデカールデータ36
+336 Preset decal data 37 -- プリセットデカールデータ37
+337 Preset decal data 38 -- プリセットデカールデータ38
+338 Preset decal data 39 -- プリセットデカールデータ39
+339 Preset decal data 40 -- プリセットデカールデータ40
+340 Preset decal data 41 -- プリセットデカールデータ41
+341 Preset decal data 42 -- プリセットデカールデータ42
+342 Preset decal data 43 -- プリセットデカールデータ43
+343 Preset decal data 44 -- プリセットデカールデータ44
+344 Preset decal data 45 -- プリセットデカールデータ45
+345 Preset decal data 46 -- プリセットデカールデータ46
+346 Preset decal data 47 -- プリセットデカールデータ47
+1000 red gun 13 -- レッドガン13
+1010 G6 red -- G6 レッド
+1020 G5 Iguazu -- G5 イグアス
+1030 G4 Volta -- G4 ヴォルタ
+1040 G3 Five Flower Sea -- G3 五花海
+1050 G2 Nile -- G2 ナイル
+1060 G1 Michigan -- G1 ミシガン
+1070 V.VIII Pater -- V.VIII ペイター
+1080 V.VII Swinburne -- V.VII スウィンバーン
+1090 V.VI Maeterlinck -- V.VI メーテルリンク
+1100 V.V Hawkins -- V.V ホーキンス
+1110 V.IV Rusty -- V.IV ラスティ
+1120 V.III O'Keeffe -- V.III オキーフ
+1130 V.II Snail -- V.II スネイル
+1140 V.I Freud -- V.I フロイト
+1150 index dunham -- インデックス・ダナム
+1160 little ziyi -- リトル・ツィイー
+1170 ring freddy -- リング・フレディ
+1180 middle flat -- ミドル・フラット
+1190 Sam Dolmayan -- サム・ドルマヤン
+1200 Rokumonsen -- 六文銭
+1210 Rusty (late) -- ラスティ(後期)
+1220 Invincible Rummy -- インビンシブル・ラミー
+1230 chatty stick -- チャティ・スティック
+1240 Honest Bluetooth -- オーネスト・ブルートゥ
+1250 Cinder Kara -- シンダー・カーラ
+1260 walter -- ウォルター
+1270 northark -- ノーザーク
+1280 Sulla -- スッラ
+1290 cold call -- コールドコール
+1300 kate -- ケイト
+1310 chartreuse -- シャルトルーズ
+1320 king -- キング
+1330 Default emblem: Broken Raven -- デフォルトエンブレム：ブロークンレイヴン
+1340 Verification F: Independent Mercenary -- 検証F：独立傭兵
+1350 gift of air -- エアの贈り物
+2000 Corporate emblem: Bayram -- 企業系エンブレム:ベイラム
+2010 Corporate emblem: Darfon -- 企業系エンブレム:ダ―フォン
+2020 Corporate emblem: Red gun -- 企業系エンブレム:レッドガン
+2030 Corporate emblem:Archibus -- 企業系エンブレム:アーキバス
+2040 Corporate emblem:Archibus ADD -- 企業系エンブレム:アーキバスADD
+2050 Corporate emblem: Schneider -- 企業系エンブレム:シュナイダー
+2060 Corporate emblem:VAPL -- 企業系エンブレム:VAPL
+2070 Corporate emblem: Vesper -- 企業系エンブレム:ヴェスパー
+2080 Corporate emblem: Furon -- 企業系エンブレム:ファーロン
+2090 Corporate emblem: Merinit -- 企業系エンブレム:メリニット
+2100 Corporate emblem: Takigawa -- 企業系エンブレム:タキガワ
+2110 Corporate emblem: BAWS -- 企業系エンブレム:BAWS
+2120 Corporate emblem: Elcano -- 企業系エンブレム:エルカノ
+2130 Corporate emblem: Rubiconist -- 企業系エンブレム:ルビコニスト
+2140 Corporate emblem: RaD -- 企業系エンブレム:RaD
+2150 Corporate emblem: Giken -- 企業系エンブレム:技研
+2160 corporate emblem;overshear -- 企業系エンブレム;オーバーシアー
+2170 Corporate emblem: All Mind -- 企業系エンブレム:オールマインド
+2180 Corporate emblem: Blockade organization -- 企業系エンブレム:封鎖機構
+3000 Mind α -- マインドα
+3010 Mind β -- マインドβ
+3020 mind gamma -- マインドγ
+3030 trainer -- トレーナー
+3040 tester -- テスター
+3050 Verification C: Company -- 検証C：企業
+3060 Verification D: Rubiconian -- 検証D：ルビコニアン
+3070 Verification E: Giken -- 検証E：技研
+3080 simulator raven -- シミュレーターのレイヴン
+3090 simulator rusty -- シミュレーターのラスティ
+3100 simulator walter -- シミュレーターのウォルター
+3110 air -- エア
+3120 Emblem "High Mercenary" -- エンブレム「高等傭兵」
+3130 Emblem "Combat Skills Verification Program Completed" -- エンブレム「戦闘技能検証プログラム完了」
+3140 Hunter Grade 15 All battle logs recovered -- ハンターグレード15　戦闘ログ全件回収完了
+3150 Rubicon Omniscience All information logs collected -- ルビコン全知　情報ログ全件回収完了
+3160 Emblem "Integration Program Completed" -- エンブレム「インテグレーション・プログラム完了」
+3170 stargazer -- スターゲイザー
+3180 perfect mercenary -- パーフェクトマーセナリー
+4000 Number 7 (Reinforced Human Company B) Decal -- ナンバー7（強化人間中隊B）デカール
+4001 Number 5 decal -- ナンバー5　デカール
+4002 Number 6 decal -- ナンバー6　デカール
+4003 Early Ash Decal -- アッシュ前期 デカール
+4004 Number 4 decal -- ナンバー4　デカール
+4005 Number 2 decal -- ナンバー2　デカール
+4006 Number 1 Decal -- ナンバー1　デカール
+4007 Number 3 decal -- ナンバー3　デカール
+4008 Late Ash Decal -- アッシュ後期　デカール
+4009 lester decal -- レスターデカール
+4010 lester decal -- レスターデカール

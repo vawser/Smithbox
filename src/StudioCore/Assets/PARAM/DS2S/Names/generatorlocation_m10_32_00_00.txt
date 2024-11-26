@@ -1,0 +1,86 @@
+40 [GEN:40] NO MATCH
+41 [GEN:41] NO MATCH
+55 [GEN:55] NO MATCH
+56 [GEN:56] NO MATCH
+255 [GEN:255] Vengarl
+257 [GEN:257] Vengarl
+265 [GEN:265] Weaponsmith Ornifex
+266 [GEN:266] Weaponsmith Ornifex
+325 [GEN:325] Manscorpion Tark
+326 [GEN:326] Manscorpion Tark
+626 [GEN:626] Manscorpion Tark
+627 [GEN:627] Bradley of the Old Guard
+824 [GEN:824] Scorpioness Najka
+956 [GEN:956] Forlorn
+1025 [GEN:1025] Forest Grotesque
+1026 [GEN:1026] Forest Grotesque
+1100 [GEN:1100] Forest Grotesque
+1101 [GEN:1101] Forest Grotesque
+1102 [GEN:1102] Forest Grotesque
+1103 [GEN:1103] Forest Grotesque
+1110 [GEN:1110] Forest Grotesque
+1111 [GEN:1111] Forest Grotesque
+1112 [GEN:1112] Forest Grotesque
+1113 [GEN:1113] Forest Grotesque
+1250 [GEN:1250] Forest Guardian
+1300 [GEN:1300] Forest Guardian
+1310 [GEN:1310] Forest Guardian
+2000 [GEN:2000] Forest Guardian
+2001 [GEN:2001] Forest Guardian
+2002 [GEN:2002] Forest Guardian
+2003 [GEN:2003] Forest Guardian
+2006 [GEN:2006] Forest Guardian
+2007 [GEN:2007] Forest Guardian
+2009 [GEN:2009] Forest Guardian
+2040 [GEN:2040] Lion Clan Warrior
+2041 [GEN:2041] Lion Clan Warrior
+2101 [GEN:2101] Lion Clan Warrior
+2102 [GEN:2102] Lion Clan Warrior
+2103 [GEN:2103] Lion Clan Warrior
+2110 [GEN:2110] Lion Clan Warrior
+2210 [GEN:2210] Lion Clan Warrior
+2220 [GEN:2220] Headless Vengarl
+2230 [GEN:2230] Basilisk
+2231 [GEN:2231] Basilisk
+2234 [GEN:2234] Basilisk
+2235 [GEN:2235] Basilisk
+2236 [GEN:2236] Basilisk
+2237 [GEN:2237] Basilisk
+2238 [GEN:2238] Basilisk
+2239 [GEN:2239] Basilisk
+2240 [GEN:2240] Basilisk
+2241 [GEN:2241] Basilisk
+2242 [GEN:2242] Basilisk
+2243 [GEN:2243] Basilisk
+2244 [GEN:2244] Basilisk
+2245 [GEN:2245] Basilisk
+2246 [GEN:2246] Basilisk
+2250 [GEN:2250] Giant Basilisk
+2251 [GEN:2251] Giant Basilisk
+2252 [GEN:2252] Giant Basilisk
+2300 [GEN:2300] Syan Knight
+2301 [GEN:2301] Syan Knight
+2302 [GEN:2302] Syan Knight
+2303 [GEN:2303] Syan Knight
+2310 [GEN:2310] Lion Clan Warrior
+2320 [GEN:2320] Crystal Lizard
+2400 [GEN:2400] Forest Guardian
+2410 [GEN:2410] Forest Guardian
+2420 [GEN:2420] Forest Guardian
+2421 [GEN:2421] Forest Guardian
+2430 [GEN:2430] Forest Guardian
+2440 [GEN:2440] Forest Guardian
+2450 [GEN:2450] Forest Guardian
+2460 [GEN:2460] Forest Guardian
+2500 [GEN:2500] Lion Clan Warrior
+2600 [GEN:2600] Basilisk
+2610 [GEN:2610] NO MATCH
+5000 [GEN:5000] Kobold
+5010 [GEN:5010] Kobold
+5050 [GEN:5050] Ogre
+9000 [GEN:9000] Kobold
+9001 [GEN:9001] Syan Knight
+9002 [GEN:9002] Mimic
+9500 [GEN:9500] Poison Moth
+9501 [GEN:9501] Poison Moth
+9502 [GEN:9502] Poison Moth

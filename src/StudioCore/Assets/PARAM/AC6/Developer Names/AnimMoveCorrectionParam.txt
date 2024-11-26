@@ -1,0 +1,22 @@
+0 test -- テスト
+100022400 Own machine c000_QB_front -- 自機c000_QB_前
+100022410 Own machine c000_locked_QB_before -- 自機c000_ロック中_QB_前
+100022411 Own machine c000_locked_QB_after -- 自機c000_ロック中_QB_後
+100022412 Own machine c000_Locked_QB_Left -- 自機c000_ロック中_QB_左
+100022413 Own machine c000_Locked_QB_Right -- 自機c000_ロック中_QB_右
+100022420 Own machine c000_boosting_QB_before -- 自機c000_ブースト中_QB_前
+100022430 Own machine c000_lock boosting_QB_before -- 自機c000_ロックブースト中_QB_前
+100022431 Own machine c000_during rock boost_QB_after -- 自機c000_ロックブースト中_QB_後
+100022432 Own machine c000_Rock boosting_QB_Left -- 自機c000_ロックブースト中_QB_左
+100022433 Own machine c000_Rock boosting_QB_Right -- 自機c000_ロックブースト中_QB_右
+100022440 Own machine c000_guarding_QB_before -- 自機c000_ガード中_QB_前
+100022441 Own machine c000_during guard_QB_after -- 自機c000_ガード中_QB_後
+100022442 Own machine c000_Guarding_QB_Left -- 自機c000_ガード中_QB_左
+100022443 Own machine c000_guarding_QB_right -- 自機c000_ガード中_QB_右
+100026800 Own machine c000_target boost -- 自機c000_ターゲットブースト
+100026810 Own machine c000_Target boost when locked -- 自機c000_ロック時ターゲットブースト
+100122400 Own aircraft c000_air_QB_front -- 自機c000_空中_QB_前
+100122410 Own aircraft c000_air_locked_QB_front -- 自機c000_空中_ロック中_QB_前
+100122411 Own aircraft c000_air_locked_QB_after -- 自機c000_空中_ロック中_QB_後
+100122412 Own aircraft c000_air_locked_QB_left -- 自機c000_空中_ロック中_QB_左
+100122413 Own aircraft c000_air_locked_QB_right -- 自機c000_空中_ロック中_QB_右

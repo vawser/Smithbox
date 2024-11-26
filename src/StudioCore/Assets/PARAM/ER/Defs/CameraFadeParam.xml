@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CAMERA_FADE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 NearMinDist">
+      <DisplayName>透明になりきる距離(m)</DisplayName>
+      <Description>Nearフェード最小距離(m) : α = 0になる距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 NearMaxDist">
+      <DisplayName>透明になり始める距離(m)</DisplayName>
+      <Description>Nearフェード最大距離(m) : α = MiddelAlphaとなる間の開始距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 FarMinDist">
+      <DisplayName>半透明状態になりきる距離(m)</DisplayName>
+      <Description>Farフェードの最小距離(m) : α = MiddleAlphaとなる間の終了距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 FarMaxDist">
+      <DisplayName>半透明状態になり始める距離(m)</DisplayName>
+      <Description>Farフェードの最大距離(m) : α = 1になる距離</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 MiddleAlpha">
+      <DisplayName>半透明状態の濃さ(α値)</DisplayName>
+      <Description>中間のα値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 dummy[12]">
+      <DisplayName>ダミー</DisplayName>
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

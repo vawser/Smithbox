@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the operation state of various joints. For non-players." />
+  <Field>
+    <parts0 
+    AltName="Weapon Enable Type [00]"
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts1 
+    AltName="Weapon Enable Type [01]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts2 
+    AltName="Weapon Enable Type [02]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts3 
+    AltName="Weapon Enable Type [03]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts4 
+    AltName="Weapon Enable Type [04]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts5 
+    AltName="Weapon Enable Type [05]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts6 
+    AltName="Weapon Enable Type [06]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts7 
+    AltName="Weapon Enable Type [07]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts8 
+    AltName="Weapon Enable Type [08]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts9 
+    AltName="Weapon Enable Type [09]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts10 
+    AltName="Weapon Enable Type [10]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts11 
+    AltName="Weapon Enable Type [11]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts12 
+    AltName="Weapon Enable Type [12]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts13 
+    AltName="Weapon Enable Type [13]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts14 
+    AltName="Weapon Enable Type [14]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts15 
+    AltName="Weapon Enable Type [15]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts16 
+    AltName="Weapon Enable Type [16]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts17 
+    AltName="Weapon Enable Type [17]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts18 
+    AltName="Weapon Enable Type [18]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts19 
+    AltName="Weapon Enable Type [19]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts20 
+    AltName="Weapon Enable Type [20]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts21 
+    AltName="Weapon Enable Type [21]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts22 
+    AltName="Weapon Enable Type [22]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts23 
+    AltName="Weapon Enable Type [23]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts24 
+    AltName="Weapon Enable Type [24]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts25 
+    AltName="Weapon Enable Type [25]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts26 
+    AltName="Weapon Enable Type [26]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts27 
+    AltName="Weapon Enable Type [27]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts28 
+    AltName="Weapon Enable Type [28]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts29 
+    AltName="Weapon Enable Type [29]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts30 
+    AltName="Weapon Enable Type [30]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    
+    <parts31 
+    AltName="Weapon Enable Type [31]" 
+    Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+  </Field>
+  <Enums>
+    <Enum Name="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" type="u8">
+        <Option Value="0" Name="Independent" />
+        <Option Value="1" Name="Not possible" />
+        <Option Value="2" Name="Interruption" />
+        <Option Value="3" Name="Simultaneous" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

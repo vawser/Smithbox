@@ -1,0 +1,6 @@
+80 Front unprotected directing camera -- 前面無防備演出カメラ
+81 Front unprotected production camera (pull out) -- 前面無防備演出カメラ（引き抜き）
+82 Front unprotected production camera (for mallet thrown) -- 前面無防備演出カメラ（槌たたきつけ用）
+83 Front unprotected production camera (for large sword) -- 前面無防備演出カメラ（大剣用）
+90 Rear unprotected directing camera -- 背面無防備演出カメラ
+92 Rear unprotected directing camera (for Mallet) -- 背面無防備演出カメラ（槌用）

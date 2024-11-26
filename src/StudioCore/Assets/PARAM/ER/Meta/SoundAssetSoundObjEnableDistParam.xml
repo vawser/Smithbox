@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <SoundObjEnableDist AltName="Sound Object - Enable Distance" Wiki="Asset sound sound source effective distance [m] (less than 0: invalid)" />
+  </Field>
+  <Self />
+</PARAMMETA>

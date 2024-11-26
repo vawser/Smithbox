@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="CHARACTER_NAMES" type="s32">
+        <Option Value="10" Name="Narrator" />
+        <Option Value="20" Name="Doctor" />
+        <Option Value="50" Name="COM" />
+        <Option Value="60" Name="Ayre - IB-07: SOL 644" />
+        <Option Value="70" Name="Handler Walter - IB-C03: HAL 826" />
+        <Option Value="110" Name="V.IV Rusty - STEEL HAZE" />
+        <Option Value="120" Name="Rusty - STEEL HAZE ORTUS" />
+        <Option Value="130" Name="Raven - NIGHTFALL" />
+        <Option Value="140" Name="Coldcall - DEADSLED" />
+        <Option Value="150" Name="King - ASTER CROWN" />
+        <Option Value="160" Name="Nosaac - BITTER PROMISE" />
+        <Option Value="170" Name="Chartreuse - UMBER OX" />
+        <Option Value="200" Name="ALLMIND" />
+        <Option Value="210" Name="Kate Markson - TRANSCRIBER" />
+        <Option Value="220" Name="Sulla - ENTANGLE" />
+        <Option Value="230" Name="ALLMIND" />
+        <Option Value="240" Name="ALLMIND" />
+        <Option Value="300" Name="RaD" />
+        <Option Value="310" Name="'Cinder' Carla - FULL COURSE" />
+        <Option Value="320" Name="'Chatty' Stick - CIRCUS" />
+        <Option Value="330" Name="'Honest' Brute - MILK TOOTH" />
+        <Option Value="340" Name="'Invincible' Rummy - MAD STOMP" />
+        <Option Value="400" Name="Rubicon Liberation Front" />
+        <Option Value="410" Name="Index Dunham - BURN PICKAXE" />
+        <Option Value="420" Name="Little Ziyi - YUE YU" />
+        <Option Value="430" Name="Ring Freddie - CANDLE RING" />
+        <Option Value="440" Name="Middle Flatwell - TSUBASA" />
+        <Option Value="450" Name="Thumb Dolmayan - ASTGHIK" />
+        <Option Value="460" Name="Rokumonsen - SHINOBI" />
+        <Option Value="500" Name="Balam Industries" />
+        <Option Value="510" Name="G1 Michigan - LIGER TAIL" />
+        <Option Value="520" Name="G2 Nile - DEEP DOWN" />
+        <Option Value="530" Name="G5 Iguazu - HEAD BRINGER" />
+        <Option Value="540" Name="G4 Volta - CANNON HEAD" />
+        <Option Value="550" Name="G3 Wu Huahai - LI LONG" />
+        <Option Value="560" Name="G6 Red - HERMIT" />
+        <Option Value="600" Name="Arquebus Corporation" />
+        <Option Value="610" Name="V.I Freud - LOCKSMITH" />
+        <Option Value="620" Name="V.II Snail - OPEN FAITH" />
+        <Option Value="630" Name="V.III O'Keeffe - BARREN FLOWER" />
+        <Option Value="640" Name="V.V Hawkins - RECONFIG" />
+        <Option Value="650" Name="V.VI Maeterlinck - INFECTION" />
+        <Option Value="660" Name="V.VII Swinburne - GUIDANCE" />
+        <Option Value="670" Name="V.VIII Pater - DUAL NATURE" />
+        <Option Value="710" Name="Integration Subject 51-001 K - MIND ALPHA" />
+        <Option Value="720" Name="Analysis Subject 51-015 GA - INSTITUTE" />
+        <Option Value="730" Name="Analysis Subject 51-014 BE - RUBICONIAN" />
+        <Option Value="740" Name="Analysis Subject 51-013 BE - CORPORATION" />
+        <Option Value="750" Name="Analysis Subject 51-016 GA - NIGHTFALL" />
+        <Option Value="760" Name="Analysis Subject 51-011 AL - TRAINER" />
+        <Option Value="770" Name="Analysis Subject 51-012 AL - TESTER" />
+        <Option Value="780" Name="Classified Subject 51-101 R - STEEL HAZE ORTUS" />
+        <Option Value="790" Name="Classified Subject 51-201 W - IB-C03: HAL 826" />
+        <Option Value="800" Name="Integration Subject 51-002 K - MIND BETA" />
+        <Option Value="810" Name="Ayre - ECHO" />
+        <Option Value="820" Name="Integration Subject 51-003 K - MIND GAMMA" />
+        <Option Value="910" Name="Enforcement System - IA-C01: EPHEMERA" />
+        <Option Value="920" Name="Dafeng Student Pilot - TESTER AC" />
+        <Option Value="1010" Name="RLF Soldier" />
+        <Option Value="1020" Name="RLF Officer" />
+        <Option Value="1030" Name="RLF Helicopter Pilot" />
+        <Option Value="1040" Name="RLF Mining Ship Captain" />
+        <Option Value="1050" Name="RLF Mining Ship Crew" />
+        <Option Value="1060" Name="RLF Prisoner" />
+        <Option Value="1070" Name="RLF Prisoner" />
+        <Option Value="1080" Name="RLF Prisoner" />
+        <Option Value="1090" Name="RLF Ground Troops" />
+        <Option Value="1110" Name="Balam MT Squad Member" />
+        <Option Value="1120" Name="Balam MT Squad Leader" />
+        <Option Value="1150" Name="Dafeng MT Squad Member" />
+        <Option Value="1160" Name="Dafeng MT Squad Leader" />
+        <Option Value="1170" Name="Balam Main Squad Member" />
+        <Option Value="1210" Name="Schneider MT Squad Member" />
+        <Option Value="1220" Name="Schneider MT Squad Leader" />
+        <Option Value="1250" Name="V.VIII Pater" />
+        <Option Value="1260" Name="V.VI Pater" />
+        <Option Value="1270" Name="V.V Pater" />
+        <Option Value="1280" Name="Arquebus MT Squad Member" />
+        <Option Value="1290" Name="Arquebus MT Squad Leader" />
+        <Option Value="1310" Name="Arquebus Interceptor Crew" />
+        <Option Value="1320" Name="Arquebus Interceptor Captain" />
+        <Option Value="1330" Name="Arquebus Ground Troops" />
+        <Option Value="1340" Name="Arquebus Main Squad Member" />
+        <Option Value="1350" Name="PCA Subject Guard" />
+        <Option Value="1360" Name="PCA Inspector" />
+        <Option Value="1370" Name="PCA Support Squad Member" />
+        <Option Value="1380" Name="PCA Enforcement Squad Member" />
+        <Option Value="1390" Name="PCA Outer Shell Security" />
+        <Option Value="1410" Name="Unknown Craft" />
+        <Option Value="1510" Name="Junker Coyotes" />
+        <Option Value="1610" Name="'Chatty' Stick" />
+        <Option Value="1710" Name="Xylem Control System" />
+        <Option Value="1910" Name="Raven's Operator" />
+        <Option Value="2000" Name="Planetary Closure Administration" />
+        <Option Value="2010" Name="AAP07: BALTEUS" />
+        <Option Value="2020" Name="V.II Snail - AAP07A: ARQUEBUS BALTEUS" />
+        <Option Value="2050" Name="Enforcement System - AAP03: ENFORCER" />
+        <Option Value="2100" Name="PCA SP Captain - AAS02: CATAPHRACT" />
+        <Option Value="2110" Name="PCA 2nd Lieutenant - AA22: HEAVY CAVALRY" />
+        <Option Value="2120" Name="PCA Chief Sergeant 1st Cls - AA18: LIGHT CAVALRY" />
+        <Option Value="2130" Name="PCA Chief Sergeant 2nd Cls - AA18: LIGHT CAVALRY" />
+        <Option Value="2140" Name="PCA Warrant Officer - AA22: HEAVY CAVALRY" />
+        <Option Value="2150" Name="PCA SP 2nd Lieutenant - AAS03: EKDROMOI EP" />
+        <Option Value="2160" Name="PCA SP Chief Sergeant 1st Cls - AAS03: EKDROMOI PG" />
+        <Option Value="2200" Name="PCA Captain - AA22: HEAVY CAVALRY" />
+        <Option Value="2210" Name="PCA 1st Lieutenant - AA18A: LIGHT CAVALRY HM" />
+        <Option Value="2220" Name="PCA SP 1st Lieutenant - AAS02: CATAPHRACT" />
+        <Option Value="2230" Name="PCA SP Warrant Officer - AAS03: EKDROMOI PG" />
+        <Option Value="2240" Name="PCA SP Chief Sergeant 2nd Cls - AAS03: EKDROMOI MG" />
+        <Option Value="2250" Name="V.III Pater - AA18A: LIGHT CAVALRY HM" />
+        <Option Value="2260" Name="Arquebus Main Squad Member - AA22: HEAVY CAVALRY" />
+        <Option Value="2300" Name="AS07: HEAVY WARSHIP" />
+        <Option Value="2350" Name="AH12: HC HELICOPTER" />
+        <Option Value="2360" Name="AH12: HC HELICOPTER" />
+        <Option Value="2400" Name="AB08: NEPENTHES" />
+        <Option Value="3050" Name="HA-T-102 JUGGERNAUT" />
+        <Option Value="4050" Name="EC-0804 SMART CLEANER" />
+        <Option Value="4060" Name="EB-0309 STRIDER" />
+        <Option Value="6050" Name="IA-02: ICE WORM" />
+        <Option Value="6060" Name="IA-05: DESERT WEEVIL" />
+        <Option Value="6070" Name="IB-01: CEL 240" />
+        <Option Value="6080" Name="IA-13: SEA SPIDER" />
+        <Option Value="7050" Name="12(34) GHOST" />
+        <Option Value="8050" Name="RLF HELICOPTER" />
+        <Option Value="8100" Name="RaD BREACH PROGRESS" />
+        <Option Value="8200" Name="RaD MAIN MISSILE" />
+        <Option Value="8210" Name="RaD SUB-MISSILE (RIGHT)" />
+        <Option Value="8220" Name="RaD SUB-MISSILE (LEFT)" />
+        <Option Value="8300" Name="XYLEM CONTROL TOWER" />
+        <Option Value="8310" Name="XYLEM SHIELD" />
+        <Option Value="8320" Name="XYLEM LOCKOUT PROGRESS" />
+    </Enum>
+  </Enums>
+  
+  <Field>
+    <pad1 Padding="" />
+    
+    <msgId AltName="Message ID" Wiki="FMG ID for the talk message." FmgRef="Talk_Messages" />
+    <voiceId AltName="Voice ID" Wiki="Soundbank ID for the talk message." SoundAlias="" />
+    <spEffectId0 AltName="SpEffect ID [0]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId0 AltName="Motion ID [0]" Wiki="Specify motion-> Character" />
+    <spEffectId1 AltName="SpEffect ID [1]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId1 AltName="Motion ID [1]" Wiki="Specify motion-> Character" />
+    <returnPos AltName="Return Position" Wiki="Relative position of returning conversation-> Conversation" />
+    <reactionId AltName="Reaction ID" Wiki="Conversation specification when returning-> Conversation" />
+    <eventId AltName="Event ID" Wiki="Event ID-> Event" />
+    
+    <UnkShort0x2C Padding="" />
+    <UnkShort0x2E Padding="" />
+    
+    <!-- This uses an enum instead of a FMG ref since the ID refers to a range, the actual name isn't actually present at the specific passed ID -->
+    <characterNameTextId AltName="Character Name Text ID" Wiki="Name that appears with subtitles when character is talking. ID refers to base ID of the 10 ID range used for each character." Enum="CHARACTER_NAMES" />
+    
+    <timeout AltName="Voice Playback Timeout" Wiki="Voice playback timeout period. In case of -1, time-out processing is performed in NPC conversation voice playback timeout time of Common_Game system parameter." />
+    <talkAnimationId AltName="Talk Animation ID" Wiki="Speaker: Animation ID during conversation" />
+  </Field>
+  <Self />
+</PARAMMETA>

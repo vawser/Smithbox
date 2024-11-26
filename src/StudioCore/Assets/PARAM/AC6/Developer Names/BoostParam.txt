@@ -1,0 +1,2 @@
+0 Shouldn't be erased -- 消すべからず
+9999 FNR test parameters -- FNR　テスト用パラメータ

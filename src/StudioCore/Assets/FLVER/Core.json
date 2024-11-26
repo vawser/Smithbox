@@ -1,0 +1,444 @@
+{
+    "list": [
+        {
+            "id": "Mesh",
+            "name": "Mesh",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Dynamic",
+                    "name": "Dynamic",
+                    "description": "When 1, mesh is in bind pose; when 0, it isn't. Most likely has further implications.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "MaterialIndex",
+                    "name": "Material Index",
+                    "description": "Index of the material used by all triangles in this mesh.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DefaultBoneIndex",
+                    "name": "Default Bone Index",
+                    "description": "Apparently does nothing. Usually points to a dummy bone named after the model, possibly just for labelling.",
+                    "attributes": ""
+                },
+                {
+                    "id": "BoneIndices",
+                    "name": "Bone Indices",
+                    "description": "Indexes of bones in the bone collection which may be used by vertices in this mesh.",
+                    "attributes": ""
+                },
+                {
+                    "id": "FaceSets",
+                    "name": "Face Sets",
+                    "description": "Triangles in this mesh.",
+                    "attributes": ""
+                },
+                {
+                    "id": "VertexBuffers",
+                    "name": "Vertex Buffers",
+                    "description": "Vertex buffers in this mesh.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Vertices",
+                    "name": "Vertices",
+                    "description": "Vertices in this mesh.",
+                    "attributes": "IsHidden"
+                },
+                {
+                    "id": "VertexCount",
+                    "name": "Vertex Count",
+                    "description": "The number of vertices in this mesh.",
+                    "attributes": ""
+                },
+                {
+                    "id": "BoundingBox",
+                    "name": "Bounding Box",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk",
+                    "name": "Unknown",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Min",
+                    "name": "Minimum",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Max",
+                    "name": "Maximum",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Flags",
+                    "name": "Flags",
+                    "description": "",
+                    "attributes": "IsEnum[FSFlags]"
+                },
+                {
+                    "id": "TriangleStrip",
+                    "name": "Triangle Strip",
+                    "description": "Whether vertices are defined as a triangle strip or individual triangles.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CullBackfaces",
+                    "name": "Cull Backfaces",
+                    "description": "Whether triangles can be seen through from behind.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "Unk06",
+                    "name": "Unk06",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "IndicesCount",
+                    "name": "Indices Count",
+                    "description": "The number of indices this face set has.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Indices",
+                    "name": "Indices",
+                    "description": "",
+                    "attributes": "IsHidden"
+                },
+                {
+                    "id": "LayoutIndex",
+                    "name": "Layout Index",
+                    "description": "Index to a layout in the FLVER's layout collection.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Bone",
+            "name": "Bone",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Name",
+                    "name": "Name",
+                    "description": "Corresponds to the name of a bone in the parent skeleton. May also have a dummy name.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ParentIndex",
+                    "name": "Parent Index",
+                    "description": "Index of the parent in this FLVER's bone collection, or -1 for none.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ChildIndex",
+                    "name": "Child Index",
+                    "description": "Index of the first child in this FLVER's bone collection, or -1 for none.",
+                    "attributes": ""
+                },
+                {
+                    "id": "NextSiblingIndex",
+                    "name": "Next Sibling Index",
+                    "description": "Index of the next child of this bone's parent, or -1 for none.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PreviousSiblingIndex",
+                    "name": "Previous Sibling Index",
+                    "description": "Index of the previous child of this bone's parent, or -1 for none.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Position",
+                    "name": "Translation",
+                    "description": "Translation of this bone.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Rotation",
+                    "name": "Rotation",
+                    "description": "Rotation of this bone; euler radians.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Scale",
+                    "name": "Scale",
+                    "description": "Scale of this bone.",
+                    "attributes": ""
+                },
+                {
+                    "id": "BoundingBoxMin",
+                    "name": "Bounding Box: Minimum",
+                    "description": "Minimum extent of the vertices weighted to this bone.",
+                    "attributes": ""
+                },
+                {
+                    "id": "BoundingBoxMax",
+                    "name": "Bounding Box: Maximum",
+                    "description": "Maximum extent of the vertices weighted to this bone.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk3C",
+                    "name": "Unknown",
+                    "description": "Unknown; only 0 or 1 before Sekiro.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Dummy",
+            "name": "Dummy",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Position",
+                    "name": "Position",
+                    "description": "Location of the dummy point.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Forward",
+                    "name": "Forward",
+                    "description": "Vector indicating the dummy point's forward direction.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Upward",
+                    "name": "Upward",
+                    "description": "Vector indicating the dummy point's upward direction.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ReferenceID",
+                    "name": "Reference ID",
+                    "description": "Indicates the type of dummy point this is (hitbox, sfx, etc).",
+                    "attributes": ""
+                },
+                {
+                    "id": "ParentBoneIndex",
+                    "name": "Bone Index",
+                    "description": "Presumably the index of a bone the dummy points would be listed under in an editor. Not known to mean anything ingame.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DummyBoneIndex",
+                    "name": "Bone Index",
+                    "description": "Presumably the index of a bone the dummy points would be listed under in an editor. Not known to mean anything ingame.",
+                    "attributes": ""
+                },
+                {
+                    "id": "AttachBoneIndex",
+                    "name": "Attach Bone Index",
+                    "description": "Index of the bone that the dummy point follows physically.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Color",
+                    "name": "Color",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Flag1",
+                    "name": "Flag",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "UseUpwardVector",
+                    "name": "Use Upward Vector",
+                    "description": "If false, the upward vector is not read.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk30",
+                    "name": "Unk30",
+                    "description": "Unknown; only used in Sekiro.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk34",
+                    "name": "Unk34",
+                    "description": "Unknown; only used in Sekiro.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "GXList",
+            "name": "GX List",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "TerminatorID",
+                    "name": "Terminator ID",
+                    "description": "Value indicating the terminating item; typically int.MaxValue, sometimes -1.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TerminatorLength",
+                    "name": "Terminator Length",
+                    "description": "The length in bytes of the terminator data block; most likely not important, but varies in original files.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "GXItem",
+            "name": "GX Item",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "ID",
+                    "name": "ID",
+                    "description": "In DS2, ID is just a number; in other games, it's 4 ASCII characters.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk04",
+                    "name": "Unk04",
+                    "description": "Unknown; typically 100.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Data",
+                    "name": "Data",
+                    "description": "Raw parameter data, usually just a bunch of floats.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Material",
+            "name": "Material",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Name",
+                    "name": "Name",
+                    "description": "Identifies the mesh that uses this material, may include keywords that determine hideable parts.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MTD",
+                    "name": "Material Path",
+                    "description": "Virtual path to an MTD file.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Flags",
+                    "name": "Flags",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Textures",
+                    "name": "Textures",
+                    "description": "Textures used by this material.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GXIndex",
+                    "name": "GX Index",
+                    "description": "Index to the flver's list of GX lists.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk18",
+                    "name": "Unk18",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Type",
+                    "name": "Type",
+                    "description": "The type of texture this is, corresponding to the entries in the MTD.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Path",
+                    "name": "Path",
+                    "description": "Network path to the texture file to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Scale",
+                    "name": "Scale",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk10",
+                    "name": "Unk10",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk11",
+                    "name": "Unk11",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk14",
+                    "name": "Unk14",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk18",
+                    "name": "Unk18",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk1C",
+                    "name": "Unk1C",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MATBIN",
+            "name": "MATBIN",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "ShaderPath",
+                    "name": "Shader Path",
+                    "description": "Network path to the shader source file.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SourcePath",
+                    "name": "Source Path",
+                    "description": "Network path to the material source file, either a matxml or an mtd.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Key",
+                    "name": "Key",
+                    "description": "Unknown, presumed to be an identifier for documentation.",
+                    "attributes": ""
+                }
+            ]
+        }
+    ]
+}

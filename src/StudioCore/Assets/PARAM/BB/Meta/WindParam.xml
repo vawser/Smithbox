@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <commonCapsuleBeginDmyId AltName="Common Capsule - Start Dummy Poly ID" />
+    <commonCapsuleEndDmyId AltName="Common Capsule - End Dummy Poly ID" />
+    <commonCapsuleRadius AltName="Common Capsule - Radius" />
+    <pad1 AltName="" Padding=""/>
+    <sfxWindEnable AltName="Enable Windx VFX" IsBool="" />
+    <sfxIgnorePlayerSfx AltName="Ignore Player VFX" IsBool=""/>
+    <sfxIsCollision AltName="Is Collision" IsBool="" />
+    <pad2 AltName="" Padding=""/>
+    <sfxDirPitchMin AltName="VFX Direction - Pitch Min" />
+    <sfxDirPitchMax AltName="VFX Direction - Pitch Max" />
+    <sfxDirYawMin AltName="VFX Direction - Yaw Min" />
+    <sfxDirYawMax AltName="VFX Direction - Yaw Max" />
+    <sfxCycleMin AltName="VFX Direction - Cycle Min" />
+    <sfxCycleMax AltName="VFX Direction - Cycle Max" />
+    <sfxSpeedMin AltName="VFX Direction - Speed Min" />
+    <sfxSpeedMax AltName="VFX Direction - Speed Min" />
+    <sfxMaximumDrag AltName="VFX Direction - Max Drag" />
+    <pad3 AltName="" Padding=""/>
+    <clothWindEnable AltName="Enable Wind Effect on Cloth" />
+    <clothVertexWind AltName="Enable Vertex Wind" />
+    <pad4 AltName="" Padding=""/>
+    <clothDirPitchMin AltName="Cloth Direction - Pitch Min" />
+    <clothDirPitchMax AltName="Cloth Direction - Pitch Max" />
+    <clothDirYawMin AltName="Cloth Direction - Yaw Min" />
+    <clothDirYawMax AltName="Cloth Direction - Yaw Max" />
+    <clothCycleMin AltName="Cloth Direction - Cycle Min" />
+    <clothCycleMax AltName="Cloth Direction - Cycle Max" />
+    <clothSpeedMin AltName="Cloth Direction - Speed Min" />
+    <clothSpeedMax AltName="Cloth Direction - Speed Max" />
+    <clothMaximumDrag AltName="Cloth Direction - Maximum Drag" />
+    <pad5 AltName="" Padding=""/>
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

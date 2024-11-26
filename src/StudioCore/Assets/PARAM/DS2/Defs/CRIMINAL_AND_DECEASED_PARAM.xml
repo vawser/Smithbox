@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CRIMINAL_AND_DECEASED_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 Unk00" />
+    <Field Def="u8 Unk01" />
+    <Field Def="u8 Unk02" />
+    <Field Def="u8 sinner_sin_points" />
+    <Field Def="u8 wretch_sin_points" />
+    <Field Def="u8 hollowing_increase_on_death" />
+    <Field Def="u8 hollowing_unknown" />
+    <Field Def="u8 hollowing_appearance_change" />
+    <Field Def="u8 hp_min_percent" />
+    <Field Def="u8 hp_min_percent_wretch" />
+    <Field Def="u8 unknown_percent" />
+    <Field Def="u8 unknown_percent_wretch" />
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>GENERAL_LOCATION_EVENT_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 PositionX" />
+    <Field Def="f32 PositionY" />
+    <Field Def="f32 PositionZ" />
+    <Field Def="f32 RotationX" />
+    <Field Def="f32 RotationY" />
+    <Field Def="f32 RotationZ" />
+    <Field Def="u8 RegionTypeMaybe" />
+    <Field Def="u8 Unk19" />
+    <Field Def="u8 Unk1A" />
+    <Field Def="u8 Unk1B" />
+    <Field Def="f32 ScaleX" />
+    <Field Def="f32 ScaleY" />
+    <Field Def="f32 ScaleZ" />
+    <Field Def="u16 Unk28" />
+    <Field Def="u16 Unk2A" />
+    <Field Def="u32 Unk2C" />
+  </Fields>
+</PARAMDEF>

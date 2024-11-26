@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>FOG_BANK</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="s16 fogBeginZ">
+      <DisplayName>開始距離[m]</DisplayName>
+      <Description>フォグの開始距離です</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-10000</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 fogEndZ = 100">
+      <DisplayName>終了距離[m]</DisplayName>
+      <Description>フォグの終了距離です</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-10000</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 degRotZ">
+      <DisplayName>ダミー</DisplayName>
+      <Description>ダミー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 degRotW = 100">
+      <DisplayName>強度</DisplayName>
+      <Description>通常100にしてください(0だとフォグが掛かりません)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 colR = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>フォグカラー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 colG = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>フォグカラー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 colB = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>フォグカラー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 colA = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>フォグカラーの倍率(100が標準)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>8</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

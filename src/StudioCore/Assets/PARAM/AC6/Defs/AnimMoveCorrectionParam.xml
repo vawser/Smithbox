@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ANIM_MOVE_CORRECTION_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u16 charaId">
+      <DisplayName>キャラID</DisplayName>
+      <Description>パラメータを適用する対象となるキャラのキャラID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="dummy8 pad2_1[2]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="u32 animId">
+      <DisplayName>アニメID</DisplayName>
+      <Description>パラメータを適用する対象となるアニメのアニメID</Description>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 flagId">
+      <DisplayName>フラグID</DisplayName>
+      <Description>パラメータを適用する対象となる　TAEフラグ：移動量上書き　のフラグID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u32 calcGraphParamId">
+      <DisplayName>補正計算グラフパラメータID</DisplayName>
+      <Description>補正移動量算出制御に渡す　補正計算グラフパラメータ　のID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 charaWeightMax">
+      <DisplayName>機体重量上限</DisplayName>
+      <Description>補正移動量算出制御に渡す　機体重量　の上限</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 charaWeightMin">
+      <DisplayName>機体重量下限</DisplayName>
+      <Description>補正移動量算出制御に渡す　機体重量　の下限</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 moveMax">
+      <DisplayName>移動量上限</DisplayName>
+      <Description>補正移動量算出制御に渡す　移動量　の上限</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 moveMin">
+      <DisplayName>移動量下限</DisplayName>
+      <Description>補正移動量算出制御に渡す　移動量　の下限</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="dummy8 pad99[32]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>102</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

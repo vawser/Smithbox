@@ -1,0 +1,207 @@
+1 Test -- テストデータ
+2 Function Test 1 -- 関数テスト１
+3 Function Test 2 -- 関数テスト２
+100 Npc -- ＮＰＣ
+1000 Fall escape -- 落下逃走
+11000 Enemy: Tiny -- エネミー：極小
+12000 Enemy: Small -- エネミー：小
+13000 Enemy: Medium -- エネミー：中
+14000 Enemy: Big -- エネミー：大
+15000 Enemy: Oversized -- エネミー：特大
+16000 Enemy: Extra Large -- エネミー：特特大
+17000 Enemy: Special Oversized -- エネミー：特特特大
+18000 Enemy: Boss -- エネミー：ボス
+19000 Enemy: Infinite Generation -- エネミー：無限生成
+20000 Enemy: Annihilation Type -- エネミー：消滅タイプ
+21000 Enemy: Small size annihilation type -- エネミー：小サイズ消滅タイプ
+22000 Enemy: Medium Boss Treatment Annihilation Type -- エネミー：中ボス扱い消滅タイプ
+30000 Enemy: Soul Black -- エネミー：ソウルブラック
+30010 Enemy: Soul Black: Non-Human -- エネミー：ソウルブラック：人型以外
+40000 Enemy: Suicide -- エネミー：自爆
+100010 Player: Usually killed -- プレイヤー：通常死亡
+100015 White Phantom: Usually Dead -- 白ファントム：通常死亡
+100020 Blue Phantom: Normal death -- 青ファントム：通常死亡
+100025 Gold Phantom: Normal Death -- 金ファントム：通常死亡
+100030 Red Phantom: Normal Death -- 赤ファントム：通常死亡
+100035 Black Phantom: Usually Dead -- 黒ファントム：通常死亡
+100040 Dragon Spirit Phantom: Normal death -- 竜霊ファントム：通常死亡
+100045 Abyss Phantom: Normal Death -- 深淵ファントム：通常死亡
+100110 Player: Overkill -- プレイヤー：オーバーキル
+100115 White Phantom: Overkill -- 白ファントム：オーバーキル
+100120 Blue Phantom: Overkill -- 青ファントム：オーバーキル
+100125 Gold Phantom: Overkill -- 金ファントム：オーバーキル
+100130 Red Phantom: Overkill -- 赤ファントム：オーバーキル
+100135 Black Phantom: Overkill -- 黒ファントム：オーバーキル
+100140 Dragon Spirit Phantom: Overkill -- 竜霊ファントム：オーバーキル
+100145 Abyss Phantom: Overkill -- 深淵ファントム：オーバーキル
+100210 Player: Breath Dead -- プレイヤー：ブレス死亡
+100215 White Phantom: Breath Dead -- 白ファントム：ブレス死亡
+100220 Blue Phantom: Breath Dead -- 青ファントム：ブレス死亡
+100225 Gold Phantom: Breath Dead -- 金ファントム：ブレス死亡
+100230 Red Phantom: Breath Dead -- 赤ファントム：ブレス死亡
+100235 Black Phantom: Breath Dead -- 黒ファントム：ブレス死亡
+100240 Dragon Spirit Phantom: Breath Death -- 竜霊ファントム：ブレス死亡
+100245 Abyss Phantom: Breath Death -- 深淵ファントム：ブレス死亡
+100310 Player: Turn Undead Death -- プレイヤー：ターンアンデッド死亡
+100315 White Phantom: Turn Undead Death -- 白ファントム：ターンアンデッド死亡
+100320 Blue Phantom: Turn Undead Death -- 青ファントム：ターンアンデッド死亡
+100325 Gold Phantom: Turn Undead Death -- 金ファントム：ターンアンデッド死亡
+100330 Red Phantom: Turn Undead Death -- 赤ファントム：ターンアンデッド死亡
+100335 Black Phantom: Turn Undead Death -- 黒ファントム：ターンアンデッド死亡
+100340 Dragon Spirit Phantom: Turn Undead Death -- 竜霊ファントム：ターンアンデッド死亡
+100345 Abyss Phantom: Turn Undead Death -- 深淵ファントム：ターンアンデッド死亡
+100410 Player: Poison death -- プレイヤー：毒死亡
+100415 White Phantom: Poison Death -- 白ファントム：毒死亡
+100420 Blue Phantom: Poison Death -- 青ファントム：毒死亡
+100425 Gold Phantom: Poison Death -- 金ファントム：毒死亡
+100430 Red Phantom: Poison Death -- 赤ファントム：毒死亡
+100435 Black Phantom: Poison Death -- 黒ファントム：毒死亡
+100440 Dragon Spirit Phantom: Poison Death -- 竜霊ファントム：毒死亡
+100445 Abyss Phantom: Poison Death -- 深淵ファントム：毒死亡
+100510 Player: Landing death -- プレイヤー：着地死亡
+100515 White Phantom: Landing Death -- 白ファントム：着地死亡
+100520 Blue Phantom: Landing Death -- 青ファントム：着地死亡
+100525 Gold Phantom: Landing Death -- 金ファントム：着地死亡
+100530 Red Phantom: Landing Death -- 赤ファントム：着地死亡
+100535 Black Phantom: Landing Death -- 黒ファントム：着地死亡
+100540 Dragon Spirit Phantom: Landing Death -- 竜霊ファントム：着地死亡
+100545 Abyss Phantom: Landing Death -- 深淵ファントム：着地死亡
+100610 Player: Headshot killed -- プレイヤー：ヘッドショット死亡
+100615 White Phantom: Headshot Dead -- 白ファントム：ヘッドショット死亡
+100620 Blue Phantom: Headshot Dead -- 青ファントム：ヘッドショット死亡
+100625 Gold Phantom: Headshot Dead -- 金ファントム：ヘッドショット死亡
+100630 Red Phantom: Headshot Dead -- 赤ファントム：ヘッドショット死亡
+100635 Black Phantom: Headshot Dead -- 黒ファントム：ヘッドショット死亡
+100640 Dragon Spirit Phantom: Headshot Killed -- 竜霊ファントム：ヘッドショット死亡
+100645 Abyss Phantom: Headshot Dead -- 深淵ファントム：ヘッドショット死亡
+100710 Player: Ladder Death -- プレイヤー：はしご死亡
+100715 White Phantom: Ladder Death -- 白ファントム：はしご死亡
+100720 Blue Phantom: Ladder Death -- 青ファントム：はしご死亡
+100725 Gold Phantom: Ladder Death -- 金ファントム：はしご死亡
+100730 Red Phantom: Ladder Death -- 赤ファントム：はしご死亡
+100735 Black Phantom: Ladder Death -- 黒ファントム：はしご死亡
+100740 Dragon Spirit Phantom: Ladder Death -- 竜霊ファントム：はしご死亡
+100745 Abyss Phantom: Ladder Death -- 深淵ファントム：はしご死亡
+100810 Player: Died in fall -- プレイヤー：落下中死亡
+100815 White Phantom: Died during the Fall -- 白ファントム：落下中死亡
+100820 Blue Phantom: Died during the Fall -- 青ファントム：落下中死亡
+100825 Gold Phantom: Died in Fall -- 金ファントム：落下中死亡
+100830 Red Phantom: Died during the Fall -- 赤ファントム：落下中死亡
+100835 Black Phantom: Died during the Fall -- 黒ファントム：落下中死亡
+100840 Dragon Spirit Phantom: Died in Fall -- 竜霊ファントム：落下中死亡
+100845 Abyss Phantom: Died in Fall -- 深淵ファントム：落下中死亡
+100910 Player: Died while down -- プレイヤー：ダウン中死亡
+100915 White Phantom: Death in The Down -- 白ファントム：ダウン中死亡
+100920 Blue Phantom: Death in The Down -- 青ファントム：ダウン中死亡
+100925 Gold Phantom: Dead In The Down -- 金ファントム：ダウン中死亡
+100930 Red Phantom: Death in The Down -- 赤ファントム：ダウン中死亡
+100935 Black Phantom: Dead In The Down -- 黒ファントム：ダウン中死亡
+100940 Dragon Spirit Phantom: Death In The Down -- 竜霊ファントム：ダウン中死亡
+100945 Abyss Phantom: Death in The Down -- 深淵ファントム：ダウン中死亡
+101010 Player: Curse death -- プレイヤー：呪い死亡
+101015 White Phantom: Curse Death -- 白ファントム：呪い死亡
+101020 Blue Phantom: Curse Death -- 青ファントム：呪い死亡
+101025 Gold Phantom: Curse Death -- 金ファントム：呪い死亡
+101030 Red Phantom: Curse Death -- 赤ファントム：呪い死亡
+101035 Black Phantom: Curse Death -- 黒ファントム：呪い死亡
+101040 Dragon Spirit Phantom: Curse Death -- 竜霊ファントム：呪い死亡
+101045 Abyss Phantom: Curse Death -- 深淵ファントム：呪い死亡
+101110 Player: Ragdoll Death -- プレイヤー：ラグドール死亡
+101115 White Phantom: Ragdoll Death -- 白ファントム：ラグドール死亡
+101120 Blue Phantom: Ragdoll Death -- 青ファントム：ラグドール死亡
+101125 Gold Phantom: Ragdoll Death -- 金ファントム：ラグドール死亡
+101130 Red Phantom: Ragdoll Death -- 赤ファントム：ラグドール死亡
+101135 Black Phantom: Ragdoll Death -- 黒ファントム：ラグドール死亡
+101140 Dragon Spirit Phantom: Ragdoll Death -- 竜霊ファントム：ラグドール死亡
+101145 Abyss Phantom: Ragdoll Death -- 深淵ファントム：ラグドール死亡
+101210 Player: Throwing death -- プレイヤー：投げ死亡
+101215 White Phantom: Throwing Death -- 白ファントム：投げ死亡
+101220 Blue Phantom: Throwing Death -- 青ファントム：投げ死亡
+101225 Gold Phantom: Throwing Death -- 金ファントム：投げ死亡
+101230 Red Phantom: Throwing Death -- 赤ファントム：投げ死亡
+101235 Black Phantom: Throwing Death -- 黒ファントム：投げ死亡
+101240 Dragon Spirit Phantom: Throwing Death -- 竜霊ファントム：投げ死亡
+101245 Abyss Phantom: Throwing Death -- 深淵ファントム：投げ死亡
+101310 Player: Death area death area death -- プレイヤー：死亡領域死亡
+101315 White Phantom: Death Area Death -- 白ファントム：死亡領域死亡
+101320 Blue Phantom: Death Area Death -- 青ファントム：死亡領域死亡
+101325 Gold Phantom: Death Area Death -- 金ファントム：死亡領域死亡
+101330 Red Phantom: Death Area Death -- 赤ファントム：死亡領域死亡
+101335 Black Phantom: Death Area Death -- 黒ファントム：死亡領域死亡
+101340 Dragon Spirit Phantom: Death Area Death -- 竜霊ファントム：死亡領域死亡
+101345 Abyss Phantom: Death Area Death -- 深淵ファントム：死亡領域死亡
+101410 Player: Dying Dying -- プレイヤー：瀕死死亡
+101415 White Phantom: Dying -- 白ファントム：瀕死死亡
+101420 Blue Phantom: Dying -- 青ファントム：瀕死死亡
+101425 Gold Phantom: Dying -- 金ファントム：瀕死死亡
+101430 Red Phantom: Dying -- 赤ファントム：瀕死死亡
+101435 Black Phantom: Dying -- 黒ファントム：瀕死死亡
+101440 Dragon Spirit Phantom: Dying -- 竜霊ファントム：瀕死死亡
+101445 Abyss Phantom: Dying -- 深淵ファントム：瀕死死亡
+101510 Player: Low-sky fall landing death -- プレイヤー：低空落下着地死亡
+101515 White Phantom: Low-sky fall landing death -- 白ファントム：低空落下着地死亡
+101520 Blue Phantom: Low-sky fall landing death -- 青ファントム：低空落下着地死亡
+101525 Gold Phantom: Low-sky fall landing death -- 金ファントム：低空落下着地死亡
+101530 Red Phantom: Low-sky fall landing death -- 赤ファントム：低空落下着地死亡
+101535 Black Phantom: Low-sky fall landing death -- 黒ファントム：低空落下着地死亡
+101540 Dragon Spirit Phantom: Low Sky Fall Landing Death -- 竜霊ファントム：低空落下着地死亡
+101545 Abyss Phantom: Low-Sky Fall Landing Death -- 深淵ファントム：低空落下着地死亡
+101610 Player: Headshot Killed (Whack) -- プレイヤー：ヘッドショット死亡(強打)
+101615 White Phantom: Headshot Killed (Whack) -- 白ファントム：ヘッドショット死亡(強打)
+101620 Blue Phantom: Headshot Killed (Whack) -- 青ファントム：ヘッドショット死亡(強打)
+101625 Gold Phantom: Headshot Killed (Whack) -- 金ファントム：ヘッドショット死亡(強打)
+101630 Red Phantom: Headshot Killed (Whack) -- 赤ファントム：ヘッドショット死亡(強打)
+101635 Black Phantom: Headshot Killed (Bang) -- 黒ファントム：ヘッドショット死亡(強打)
+101640 Dragon Spirit Phantom: Headshot Killed (Bang) -- 竜霊ファントム：ヘッドショット死亡(強打)
+101645 Abyss Phantom: Headshot Killed (Whack) -- 深淵ファントム：ヘッドショット死亡(強打)
+101710 Player: Beating death -- プレイヤー：叩きつけ死亡
+101715 White Phantom: Beating Death -- 白ファントム：叩きつけ死亡
+101720 Blue Phantom: Beating Death -- 青ファントム：叩きつけ死亡
+101725 Gold Phantom: Beating Death -- 金ファントム：叩きつけ死亡
+101730 Red Phantom: Beating Death -- 赤ファントム：叩きつけ死亡
+101735 Black Phantom: Beating Death -- 黒ファントム：叩きつけ死亡
+101740 Dragon Spirit Phantom: Beating death -- 竜霊ファントム：叩きつけ死亡
+101745 Abyss Phantom: Beating Death -- 深淵ファントム：叩きつけ死亡
+113000 Sailor -- 水兵
+115000 A traveler's dead person -- 旅人亡者
+132000 Skeleton -- スケルトン
+149000 Deceased: Steelworker -- 亡者：製鉄所員
+150000 Statuenight Neck Cleavage -- スタチューナイト首切断
+150010 Statuenite annihilation death -- スタチューナイト消滅死亡
+154000 Boss: Skeleton aristocracy -- ボス：スケルトン貴族
+204000 Great Moss -- グレートモス
+212000 Boss: Wyvern -- ボス：ワイバーン
+212010 Boss: For Wyburn Field -- ボス：ワイバーン　フィールド用
+216000 Enemy: Door possessed -- エネミー：扉憑き
+223500 Boss: Giant rat -- ボス：巨大ネズミ
+300000 Ogre -- オーガ
+303300 Boss: Double-sided warrior snake head -- ボス：両面戦士ヘビ頭
+303310 Boss: Double-sided warrior snake head for field -- ボス：両面戦士ヘビ頭　フィールド用
+305000 Boss: Damon Knight -- ボス：デーモンナイト
+309600 Boss: New Giant Senior Soldier (Dead) -- ボス：新・巨人上級兵士（亡者）
+309700 Boss: New Giant Senior Soldier (Live) -- ボス：新・巨人上級兵士（生者）
+318000 Boss: Bay Grant -- ボス：ベイグラント
+318010 Boss: For Bay Grant Field -- ボス：ベイグラント　フィールド用
+324000 Boss: Gargoil -- ボス：ガーゴイル
+325000 Boss: Warrior in the Mirror -- ボス：鏡の中の戦士
+325010 Boss: Warrior in the Mirror for the Field -- ボス：鏡の中の戦士 フィールド用
+326000 Boss: Butcher -- ボス：ブッチャー
+332000 Boss: Queen Knight A -- ボス：王妃の騎士Ａ
+333000 Boss: Queen Knight B -- ボス：王妃の騎士Ｂ
+334000 Boss: Queen Knight C -- ボス：王妃の騎士Ｃ
+500000 Boss: Jabazahat -- ボス：ジャバザハット
+501000 Boss: Naga -- ボス：ナーガ
+503000 Boss: Manscorpion ♀ -- ボス：マンスコーピオン♀
+504000 Boss: Miller Knight -- ボス：ミラーナイト
+506100 Boss: Agaduran Stand -- ボス：アガドゥランのスタンド
+514600 Boss: The Old King -- ボス：年老いた王
+600000 Boss: Old Dragon -- ボス：古の龍
+602000 Boss: Beautiful Voice Frog -- ボス：美声カエル
+603000 Boss: Spider Queen -- ボス：蜘蛛の女王
+607000 Boss: Molten Iron Daemon -- ボス：熔鉄デーモン
+611000 Boss: Heavy cavalry (soldiers only) -- ボス：重騎馬兵（兵士のみ）
+619100 Boss: Silver Chariot Horse -- ボス：シルバーチャリオット馬
+625000 Boss: Ornstein -- ボス：オーンスタイン
+626000 Boss: Forgotten Sinner -- ボス：忘れられた罪人
+627000 Boss: Queen's armor form -- ボス：王妃の鎧形態
+730000 Enemy: Mirror Night Under Me -- エネミー：ミラーナイト下僕

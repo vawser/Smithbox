@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <ParamStr AltName="Param String" Wiki="Wwise parameter string" />
+  </Field>
+  <Self />
+</PARAMMETA>

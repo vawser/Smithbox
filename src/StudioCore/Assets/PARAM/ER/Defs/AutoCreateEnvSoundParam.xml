@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>AUTO_CREATE_ENV_SOUND_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 RangeMin = 10">
+      <DisplayName>出現距離Min[m]</DisplayName>
+      <Description>出現距離Min[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 RangeMax = 25">
+      <DisplayName>出現距離Max[m]</DisplayName>
+      <Description>出現距離Max[</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 LifeTimeMin = 30">
+      <DisplayName>寿命Min[秒]</DisplayName>
+      <Description>寿命Min[秒]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 LifeTimeMax = 30">
+      <DisplayName>寿命Max[秒]</DisplayName>
+      <Description>寿命Max[秒]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 DeleteDist = 30">
+      <DisplayName>削除距離[m]</DisplayName>
+      <Description>削除距離[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 NearDist = 15">
+      <DisplayName>近傍判定距離[m]</DisplayName>
+      <Description>近傍判定距離[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 LimiteRotateMin">
+      <DisplayName>生成角度制限Min[度]</DisplayName>
+      <Description>角度制限Min[度](カメラの前方のY軸角度+-の指定。180なら全方位) </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 LimiteRotateMax = 180">
+      <DisplayName>生成角度制限Max[度]</DisplayName>
+      <Description>角度制限Max[度](カメラの前方のY軸角度+-の指定。180なら全方位) </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,7 @@
+0 Chara Makeup: ○ ○ -- キャラメイク：○○用
+100 Character Makeover: White for skin -- キャラメイク：肌用　白人
+105 Black -- 黒人
+110 Yellow people -- 黄人
+115 India -- インド
+120 Ruddy -- 赤ら顔
+125 Shing -- 鈍色

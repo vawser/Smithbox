@@ -1,0 +1,40 @@
+0 Do nothing
+10 Crocodile
+100 Snake Soldier
+101 Snake soldier licking meat
+110 Snakebow Soldier (Outside the Fort 0000 )
+111 Snake Bow Soldier (Fort Yagura 0001 0002 )
+112 Snake Bow Soldier (Fort Bay Window) 0003 )
+113 Snake Bow Soldier (Lava Square)
+8000 Intern Knight 1-1
+8010 Intern Knight 1-2
+8020 Intern Knight 1-3
+8030 Intern Knight 1-4
+8040 Intern Knight 2-1
+8050 Intern Knight 2-2
+8060 Intern Knight 2-3
+8070 Intern Knight 3-1
+8080 Intern Knight 3-2
+8090 Intern Knight 3-3
+8080 Intern Knight 3-4
+8090 Intern Knight 3-5
+8100 Intern Knight 4-1
+8110 Intern Knight 4-2
+8120 Intern Knight 4-3
+8130 Intern Knight 4-4
+8140 Interns Archery Soldier 1-1
+8150 Interns Archery Soldier 1-2
+8160 Interns Archery Soldier 1-3
+8170 Interns Archery Soldier 2-1
+8180 Interns Archery Soldier 2-2
+8190 Interns Archery Soldier 2-3
+8200 Interns Archery Soldier 3-1
+8210 Interns Archery Soldier 3-2
+8220 Interns Archery Soldier 3-3
+8230 Interns Archery Soldier 4-1
+8240 Interns Archery Soldier 4-2
+8250 Interns Archery Soldier 4-3
+8260 [ For interns ] Fleeing Enemy
+9000 Prototype Fat Mid-Boss
+9010 Prototype Dragon Demon
+9501 Test map waiting enemies

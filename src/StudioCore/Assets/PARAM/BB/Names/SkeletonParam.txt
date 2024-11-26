@@ -1,0 +1,59 @@
+0 Not working
+1 NPC Common Neck
+2 NPC Common Torso 1
+3 NPC Common Torso 2
+5 4 Legs Common Neck
+10 General purpose humanoid left leg
+11 Universal humanoid right leg
+18 copy _ Test right leg
+19 copy _ Test left leg
+100 heroine
+200 VIP
+300 Blacksmith Edo
+400 Slave Soldier
+500 Former noblewoman
+600 Puppeteer
+700 Beggar Woman
+800 Baldwin
+900 Beggar Man
+998 copy _ Old general-purpose left foot
+999 copy _ Old general-purpose right foot
+1000 Hound _ Left hind leg
+1001 Hound _ Right hind leg
+1002 Hound _ Left front leg
+1003 Hound _ Right front leg
+1010 Priest _ left foot
+1011 Priest _ Right Foot
+1022 Crowd A _ Swing setting
+1030 Crowd B _ left foot
+1031 Crowd B _ Right Foot
+1090 Strange Beast _ left foot
+1091 Strange Beast _ Right Foot
+1092 Strange Beast_ Swing setting
+2000 Centipede Right Leg
+2001 Centipede left leg
+2010 Gargoyle right leg
+2011 Gargoyle left leg
+2020 Iron Golem Right Leg
+2021 Iron Golem Left Leg
+2022 Iron Golem Right Hand
+2030 Hammer Demon Left Leg
+2031 Hammer Demon Right Leg
+5010 Flame Beast _ Left front leg
+5011 Flame Beast _ Right front leg
+5012 Flame Beast _ Left hind leg
+5013 Flame Beast _ Right hind leg
+5014 Flame Beast _ Shaking Head _ head
+5015 Flame Beast _ Shaking Head _ neck 1
+5016 Flame Beast _ Shaking Head _ neck 2
+5017 Flame Beast _ Shaking Head _ neck 3
+5018 Flame Beast _ Shaking Head _ neck 4
+3004 Crag Foot ⑤
+3005 Crag Foot ⑥
+3100 Crag Foot ⑦
+3101 Crag Leg 8
+3102 Crag Foot ⑨
+3103 Crag Leg 10
+3104 Crag Leg ⑪
+3105 Crag Leg ⑫
+3106 Krag Legs ⑬

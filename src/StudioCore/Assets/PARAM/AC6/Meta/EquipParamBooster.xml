@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of booster parts." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="The menu icon texture ID." 
+    Obsolete="" />
+    
+    <modelId
+    AltName="Model ID"
+    Wiki="The model ID for this part. Also determines the menu preview icon." 
+    TextureRef="Booster/01_common/SB_PartsThumbnails/modelId/" />
+    
+    <sortId
+    AltName="Sort ID"
+    Wiki="7 digits is the limit for s32 as the reinforcement level is taken into account in the program" />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight of the part." />
+    
+    <energyMax
+    AltName="Energy Capacity"
+    Wiki="The energy capacity of this booster." />
+    
+    <energyRecoveryPerSec
+    AltName="Energy Output"
+    Wiki="The energy recovery rate. In points per second." />
+    
+    <consumeEN
+    AltName="Energy Consumption"
+    Wiki="The consumption rate of energy. In points per second." />
+    
+    <energyRecoveryDelayTimeSec
+    AltName="Energy Output Delay"
+    Wiki="The delay before energy recovery starts. In seconds." />
+    
+    <f00_dashBoostMaxSpeedKMPH
+    AltName="Ground Boost: Maximum Speed"
+    Wiki="Maximum speed for ground boost. In kilometres per hour." />
+    
+    <f01_dashBoostStartAccelMPSS
+    AltName="Ground Boost: Start Acceleration"
+    Wiki="Starting acceleration for ground boost. In metres per second ^ 2." />
+    
+    <f02_dashBoostMaxAccelMPSS
+    AltName="Ground Boost: Maximum Acceleration"
+    Wiki="Maximum acceleration for ground boost. In metres per second ^ 2." />
+    
+    <f03_dashBoostBeginAccelTimeSec
+    AltName="Ground Boost: Start Acceleration Duration"
+    Wiki="Start acceleration duration for ground boost. In seconds." />
+    
+    <f04_dashBoostBeginToMaxAccelTimeSec
+    AltName="Ground Boost: Start to Maximum Acceleration Duration"
+    Wiki="Time from acceleration at start of ground boost to maximum acceleration. In seconds." />
+    
+    <f05_consumeEN_boostMove
+    AltName="Ground Boost: Energy Consumption"
+    Wiki="The energy consumption for ground boost. Point per second." />
+    
+    <f06_flyBoostHorizontalMaxSpeedKMPH
+    AltName="Aerial Boost: Maximum Horizontal Speed"
+    Wiki="Maximum horizontal speed for aerial boost. In kilometres per hour." />
+    
+    <f07_flyBoostHorizontalStartAccelMPSS
+    AltName="Aerial Boost: Horizontal Start Acceleration"
+    Wiki="Starting horizontal acceleration for aerial boost. In metres per second ^ 2." />
+    
+    <f08_flyBoostHorizontalMaxAccelMPSS
+    AltName="Aerial Boost: Horizontal Maximum Acceleration"
+    Wiki="Maximum horizontal acceleration for aerial boost. In metres per second ^ 2." />
+    
+    <f09_flyBoostHorizontalBeginAccelTimeSec
+    AltName="Aerial Boost: Start Horizontal Acceleration Duration"
+    Wiki="Start horizontal acceleration duration for aerial boost. In seconds." />
+    
+    <f10_flyBoostHorizontalBeginToMaxAccelTimeSec
+    AltName="Aerial Boost: Start to Maximum Acceleration Duration"
+    Wiki="Time from acceleration at start of aerial boost to maximum acceleration. In seconds." />
+    
+    <f11_consumeEN_boostMoveAir
+    AltName="Aerial Boost: Energy Consumption"
+    Wiki="The energy consumption for aerial boost. Point per second." />
+    
+    <consumeEN_BoostUp
+    AltName="Vertical Boost: Energy Consumption"
+    Wiki="The energy consumption for vertical boost. Point per second." />
+    
+    <consumeFixedEN_QB
+    AltName="Quick Boost: Energy Consumption"
+    Wiki="The energy consumption for quick boost." />
+    
+    <QB_EndSpeedKMH
+    AltName="Quick Boost: Terminal Speed"
+    Wiki="Terminal speed during quick boost. In kilometres per hour." />
+    
+    <QB_AccelTimeF30
+    AltName="Quick Boost: Acceleration Duration"
+    Wiki="The duration for quick boost acceleration. 1 / 30 seconds." />
+    
+    <dashBoost_EndSpeedKMH
+    AltName="Ground Boost: Terminal Speed"
+    Wiki="Terminal speed during ground boost. In kilometres per hour." />
+    
+    <flyBoost_EndSpeedKMH
+    AltName="Aerial Boost: Terminal Speed"
+    Wiki="Terminal speed during aerial boost. In kilometres per hour." />
+    
+    <QB_StartAddSpeedKMH
+    AltName="Quick Boost: Initial Speed"
+    Wiki="Additional initial velocity for quick boost. In kilometres per hour." />
+    
+    <flyBoostUpperAccelMPSS
+    AltName="Vertical Aerial Boost: Acceleration"
+    Wiki="Vertical aerial boost acceleration. In metres per second ^ 2." />
+    
+    <flyBoostUpperMaxSpeedKMH
+    AltName="Vertical Aerial Boost: Maximum Speed"
+    Wiki="Vertical aerial boost maximum speed. In kilometres per hour." />
+    
+    <flyBoostUpperJumpAccelMPSS
+    AltName="Vertical Aerial Boost: Start Acceleration on Jump"
+    Wiki="Vertical aerial boost acceleration on jump. In metres per second ^ 2." />
+    
+    <flyBoostUpperJumpEN
+    AltName="Vertical Aerial Boost: Energy Consumption on Jump"
+    Wiki="Vertical aerial boost energy consumption on jump." />
+    
+    <sellValue
+    AltName="Sell Value"
+    Wiki="Price to sell the item for." />
+    
+    <saleValue
+    AltName="Sale Value"
+    Wiki="Price the item is on sale for." />
+    
+    <QB_ReloadTimeSec
+    AltName="Quick Boost: Reload Time"
+    Wiki="Duration between quick boosts. In seconds." />
+    
+    <flyBoostDownMaxSpeedKMH
+    AltName="Aerial Boost: Maximum Descent Speed"
+    Wiki="The maximum descent speed during an aerial boost. In kilometres per hour." />
+    
+    <flyBoostUpperJumpDownMaxSpeedKMH
+    AltName="Aerial Boost: Maximum Descent Speed on Jump"
+    Wiki="The maximum descent speed during an aerial boost after jump input. In kilometres per hour." />
+    
+    <energyRecoveryDelayTimeForEmptySec
+    AltName="Energy Recovery Delay (when Empty)"
+    Wiki="The duration to wait for energy recovery (when energy is empty)." />
+    
+    <thrustersParamIDForPC
+    AltName="Thruster Configuration Offset (for Player)"
+    Wiki="For player, specify the ID of the thruster parameter (0 means no thruster)."
+    Refs="ThrusterParam_PC" />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+    <computed_f00
+    AltName="Menu Display - Value 0"
+    Wiki="Value for menu display only." />
+    
+    <computed_f01
+    AltName="Menu Display - Value 1"
+    Wiki="Value for menu display only." />
+    
+    <computed_f02
+    AltName="Menu Display - Value 2"
+    Wiki="Value for menu display only." />
+    
+    <computed_f03
+    AltName="Menu Display - Value 3"
+    Wiki="Value for menu display only." />
+    
+    <computed_f04
+    AltName="Menu Display - Value 4"
+    Wiki="Value for menu display only." />
+    
+    <computed_f05
+    AltName="Menu Display - Value 5"
+    Wiki="Value for menu display only." />
+    
+    <computed_f06
+    AltName="Menu Display - Value 6"
+    Wiki="Value for menu display only." />
+    
+    <computed_f07
+    AltName="Menu Display - Value 7"
+    Wiki="Value for menu display only." />
+    
+    <computed_f08
+    AltName="Menu Display - Value 8"
+    Wiki="Value for menu display only." />
+    
+    <computed_f09
+    AltName="Menu Display - Value 9"
+    Wiki="Value for menu display only." />
+    
+    <computed_f10
+    AltName="Menu Display - Value 10"
+    Wiki="Value for menu display only." />
+    
+    <computed_f11
+    AltName="Menu Display - Value 11"
+    Wiki="Value for menu display only." />
+    
+    <computed_f12
+    AltName="Menu Display - Value 12"
+    Wiki="Value for menu display only." />
+    
+    <computed_f13
+    AltName="Menu Display - Value 13"
+    Wiki="Value for menu display only." />
+    
+    <computed_f14
+    AltName="Menu Display - Value 14"
+    Wiki="Value for menu display only." />
+    
+    <computed_f_last
+    AltName="Menu Display - Value 15"
+    Wiki="Value for menu display only." />
+    
+    <upperBoostMaxSpeedKMPH
+    AltName="Vertical Boost: Maximum Ascent Speed"
+    Wiki="The maximum ascent speed during a vertical boost. In kilometres per hour." />
+    
+    <upperBoostStartAccelMPSS
+    AltName="Vertical Boost: Start Acceleration"
+    Wiki="Vertical boost start acceleration. In metres per second ^ 2." />
+    
+    <upperBoostMaxAccelMPSS
+    AltName="Vertical Boost: Maximum Acceleration"
+    Wiki="Vertical boost max acceleration. In metres per second ^ 2." />
+    
+    <upperBoostBeginAccelTimeSec
+    AltName="Vertical Boost: Start Acceleration Duration"
+    Wiki="Duration of vertical boost start acceleration. In seconds." />
+    
+    <upperBoostBeginToMaxAccelTimeSec
+    AltName="Vertical Boost: Start to Maximum Acceleration Duration"
+    Wiki="Duration from start to maximum acceleration. In seconds." />
+    
+    <upperBoostHorizontalMaxSpeedKMPH
+    AltName="Vertical Boost: Maximum Horizontal Speed"
+    Wiki="Maximum horizontal speed for the vertical boost. In kilometres per hour." />
+    
+    <upperBoostHorizontalAccelMPSS
+    AltName="Vertical Boost: Horizontal Acceleration"
+    Wiki="Horizontal acceleration for the vertical boost. In metres per second ^ 2." />
+    
+    <upperBoostDownMaxSpeedKMPH
+    AltName="Vertical Boost: Maximum Descent Speed"
+    Wiki="Maximum descent speed for the vertical boost. In kilometres per hour." />
+    
+    <assaultBoost_InitSpeedKMH
+    AltName="Assault Boost: Initial Speed"
+    Wiki="Initial speed of assault boost. In kilometres per hour." />
+    
+    <assaultBoost_EndSpeedKMH
+    AltName="Assault Boost: Terminal Speed"
+    Wiki="Terminal speed of assault boost. In kilometres per hour." />
+    
+    <assaultBoost_MinAccelTimeF30
+    AltName="Assault Boost: Minimum Acceleration Time"
+    Wiki="Minimum acceleration time for the assault boost. In seconds. 1 / 30 seconds" />
+    
+    <assaultBoost_DrainEnStartTimeF32
+    AltName="Assault Boost: Continuous Energy Consumption Start Time"
+    Wiki="Time before continuous energy consumption starts. 1 / 30 seconds." />
+    
+    <assaultBoost_ReloadTimeSec
+    AltName="Assault Boost: Reload Time" 
+    Wiki="Duration between uses of assault boost. In seconds." />
+    
+    <assaultBoost_OneShotDrainEnPoint
+    AltName="Assault Boost: Initial Energy Consumption"
+    Wiki="Energy consumption for initial assault boost." />
+    
+    <pad_1
+    AltName=""
+    Padding="" />
+    
+    <assaultBoost_DrainEnPointPerSec
+    AltName="Assault Boost: Continuous Energy Consumpion"
+    Wiki="Energy consumption for assault boost per tick. In seconds." />
+    
+    <pad_2
+    AltName=""
+    Padding="" />
+    
+    <Maker 
+    AltName="Corporation Texture ID" 
+    Wiki="The maker icon to use for this booster."
+    Enum="EQUIP_MAKER_TYPE" 
+    TextureRef="Direct/01_common/SB_MakerLogo/Maker/MakerLogo_" />
+    
+    <bladeHoming_InitSpeedKMH
+    AltName="Blade Homing: Initial Speed"
+    Wiki="Initial speed of blade attack homing. In kilometres per hour." />
+    
+    <bladeHoming_EndSpeedKMH
+    AltName="Blade Homing: Terminal Speed"
+    Wiki="Terminal speed of blade attack homing. In kilometres per hour." />
+    
+    <bladeHoming_MinAccelTimeF30
+    AltName="Blade Homing: Maximum Acceleration Time" 
+    Wiki="Maximum acceleration time for blade attack homing. 1 / 30 seconds." />
+    
+    <bladeHoming_DrainEnStartTimeF32
+    AltName="Blade Homing: Continuous Energy Consumption Start Time"
+    Wiki="Time before continuous energy consumption starts. 1 / 30 seconds." />
+    
+    <bladeHoming_OneShotDrainEnPoint
+    AltName="Blade Homing: Initial Energy Consumption"
+    Wiki="Energy consumption for initial blade homing attack." />
+    
+    <pad_3
+    AltName=""
+    Padding="" />
+    
+    <bladeHoming_DrainEnPointPerSec
+    AltName="Blade Homing: Continuous Energy Consumpion"
+    Wiki="Energy consumption for blade homing attack per tick. In seconds." />
+    
+    <flyBoostUpperJumpMaxAccelMPSS
+    AltName="Aerial Boost: Maximum Acceleration after Jump"
+    Wiki="Maximum acceleration during aerial boost after jump. In metres per second ^ 2." />
+    
+    <flyBoostUpperJumpBeginAccelTimeSec
+    AltName="Aerial Boost: Start Acceleration Duration after Jump"
+    Wiki="Start acceleration duration during aerial boost after jump. In seconds." />
+    
+    <flyBoostUpperJumpBeginToMaxAccelTimeSec
+    AltName="Aerial Boost: Start to Maximum Acceleration Duration after Jump"
+    Wiki="Start acceleration to maximum acceleration duration during aerial boost after jump. In seconds." />
+    
+    <QB_RegWeight
+    AltName="Quick Boost: Weight Performance"
+    Wiki="Weight performance during quick boost." />
+    
+    <refId
+    AltName="Inherited Booster ID" 
+    Wiki="Booster ID to inherit parameters from."
+    Refs="EquipParamBooster" />
+    
+    <assaultBoostSideAvoid_InitSpeedKMH
+    AltName="Assault Boost Dodge: Initial Speed"
+    Wiki="Initial speed of assault boost dodge. In kilometres per hour." />
+    
+    <assaultBoostSideAvoid_EndSpeedKMH
+    AltName="Assault Boost Dodge: Terminal Speed"
+    Wiki="Terminal speed of assault boost dodge. In kilometres per hour." />
+    
+    <assaultBoostSideAvoid_MinAccelTimeF30
+    AltName="Assault Boost Dodge: Minimum Acceleration Time"
+    Wiki="Minimum acceleration time for the assault boost dodge. In seconds. 1 / 30 seconds" />
+    
+    <assaultBoostSideAvoid_DrainEnStartTimeF32
+    AltName="Assault Boost Dodge: Continuous Energy Consumption Start Time"
+    Wiki="Time before continuous energy consumption starts. 1 / 30 seconds." />
+    
+    <assaultBoostSideAvoid_OneShotDrainEnPoint
+    AltName="Assault Boost Dodge: Initial Energy Consumption"
+    Wiki="Energy consumption for initial assault boost dodge." />
+    
+    <pad_4
+    AltName=""
+    Padding="" />
+    
+    <assaultBoostSideAvoid_DrainEnPointPerSec
+    AltName="Assault Boost Dodge: Continuous Energy Consumpion"
+    Wiki="Energy consumption for assault boost dodge per tick. In seconds." />
+    
+    <pad_end2
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="EQUIP_MAKER_TYPE" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Overseer" />
+        <Option Value="2" Name="Rubicon Research Institute" />
+        <Option Value="3" Name="PCA" />
+        <Option Value="4" Name="ALLMIND" />
+        <Option Value="5" Name="Rubiconist" />
+        <Option Value="6" Name="RaD" />
+        <Option Value="7" Name="Arquebus" />
+        <Option Value="8" Name="Schneider" />
+        <Option Value="9" Name="VCPL" />
+        <Option Value="10" Name="Vesper" />
+        <Option Value="11" Name="Balam" />
+        <Option Value="12" Name="Dafeng" />
+        <Option Value="13" Name="Redgun" />
+        <Option Value="14" Name="Unused - 協商" />
+        <Option Value="15" Name="BAWS" />
+        <Option Value="16" Name="Furlong" />
+        <Option Value="17" Name="Takigawa Harmonics" />
+        <Option Value="18" Name="Melinite" />
+        <Option Value="19" Name="Elcano" />
+        <Option Value="20" Name="Arquebus ADD" />
+        <Option Value="102" Name="Unused - RRI(旧)" />
+        <Option Value="104" Name="Unused - オルマイ(本性)" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

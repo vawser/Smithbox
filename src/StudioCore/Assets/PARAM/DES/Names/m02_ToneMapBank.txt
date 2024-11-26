@@ -1,0 +1,17 @@
+0 B0
+1 B1
+2 B2
+3 B3
+4 B3 elevator
+10 For poly drama (p20000-
+14 For poly drama (p20001-
+16 For TGS poly drama (p20002-A
+17 For TGS poly drama (p20002-B
+18 Poly drama (p20100-general
+20 For poly drama (p20100-c06
+22 For poly drama (p20101-general
+24 For poly drama (p20204
+26 For poly drama (p20201
+58 For poly drama (p20302-c00
+59 For poly drama (p20302-c01
+60 Poly drama (p20302-Rendl-c02-02

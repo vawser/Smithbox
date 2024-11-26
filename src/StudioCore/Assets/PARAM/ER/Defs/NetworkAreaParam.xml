@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>NETWORK_AREA_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 cellSizeX = 30">
+      <DisplayName>セルサイズX</DisplayName>
+      <Description>セルサイズX</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="f32 cellSizeY = 8">
+      <DisplayName>セルサイズY</DisplayName>
+      <Description>セルサイズY</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 cellSizeZ = 30">
+      <DisplayName>セルサイズZ</DisplayName>
+      <Description>セルサイズZ</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 cellOffsetX">
+      <DisplayName>セルオフセットX</DisplayName>
+      <Description>セルオフセットX</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 cellOffsetY">
+      <DisplayName>セルオフセットY</DisplayName>
+      <Description>セルオフセットY</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 cellOffsetZ">
+      <DisplayName>セルオフセットZ</DisplayName>
+      <Description>セルオフセットZ</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 enableBloodstain:1">
+      <DisplayName>血痕・死亡幻影有効</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>血痕・死亡幻影有効</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 enableBloodMessage:1">
+      <DisplayName>血文字有効</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>血文字有効</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 enableGhost:1">
+      <DisplayName>幻影有効</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>幻影有効</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 enableMultiPlay:1">
+      <DisplayName>マルチプレイ有効</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>マルチプレイ有効</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 enableRingSearch:1">
+      <DisplayName>指輪検索有効</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>指輪検索の検索対象か？（鐘守灰霊・救援青霊として呼ばれるエリア）</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 enableBreakInSearch:1">
+      <DisplayName>乱入検索有効</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>乱入検索の対象か？</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>0</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 dummy[3]">
+      <DisplayName>ダミー</DisplayName>
+      <SortID>999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

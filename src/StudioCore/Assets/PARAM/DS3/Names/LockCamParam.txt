@@ -1,0 +1,92 @@
+0 Default value 
+1 Summon Magic for range designation 
+2 【 SP 】 Test Map for Hammer warfare _ Normal Time 
+3 【 SP 】 Test Map for hammer warfare _ near 
+101 Short 
+102 Medium 
+103 Long distance 
+104 Centipede only 
+105 Dragon Zombie Only 
+110 usually dark 
+111 Close range _ Darkness 
+112 Medium Range _ Darkness 
+113 Distant Darkness 
+200 【 Protomap 】 Darkness 
+210 (DLC) warmonger camera of the abyss 
+211 (DLC) Camera for al-Tri-race 
+212 (DLC) black dragon Warfare camera 
+213 (DLC) chain person war camera 
+214 (DLC) Camera for Go warfare 
+220 (DLC) Exclusive lock camera for the arena 
+1000 Phagocytic Dragon Only 
+1010 Camera for Gargoyle 
+1100 【 1st map 】 Suspension Bridge 
+1101 (1st map) Long distance 
+1102 (1st map) Boss Room 
+1103 (1st map) Old boss Room 
+1210 (DLC) Gold Chimera Camera 
+1300 Near the grave 
+1301 Grave distance 
+1410 Dedicated to the abolition of the visor 
+1510 Camera for Gargoyle 
+1511 Camera for Gargoyle Night 
+1700 Sheath Combat Camera 
+2000 (SP) vs Parish General 
+2001 (SP) vs Parish Long distance 
+2002 【 SP 】 Ohashi 
+2003 【 SP 】 Full of statues 
+2004 【 SP 】 Avoiding sunflowers 
+2010 (SP) vs fire Beast usually 
+2011 (SP) vs Beast of flames close range 
+3000 (FDP) vs Tracker 
+3001 (FDP) vs Tracker (throw camera) 
+3002 (FDP) vs Tracker (2-knife-throwing camera) 
+3010 (FDP) Camera for distant view 
+3100 (FDP) Ceremonial camera 
+3101 (FDP) Ceremonial cameras _ on the way 
+3102 (FDP) Camera for flame ritual changed on the way 
+3120 (FDP) Forest Sacred Beast _ lock-on camera 
+3160 (FDP) Guardian Knight of the Dragon 
+3200 (FDP) for Segunda 
+3201 (FDP) for snake spirits possession segunda 
+3202 (FDP) for the snake spirits 
+3203 (FDP) for elevators 
+3204 (FDP) Possession segunda-throwing snake spirits 
+3300 (FDP) Full Armor Beast 
+3301 (FDP) Stench crab 
+5020 (FDP) Crimson Bat 
+5030 (FDP) King of the Storm (cowgirl) 
+5140 (FDP) The old king of caries 
+5160 (FDP) King of the Dead 
+5180 (FDP) Cursed Colossus test 
+5190 (FDP) King of the disused city: the first half 
+5191 (FDP) King of the disused city: Late war 
+5230 (FDP) Mother Dragon 
+5250 (FDP) Prince of Darkness 
+5260 (FDP) Mad Warrior Hallec 
+6000 (FDP) Crystal elders _ only when throwing 
+7370 (FDP) Anole _ starting point 
+8000 (FDP) Ceiling Low Place 
+9000 (FDP) for servant ride 
+10000 Short distance camera 
+10001 Medium Range Camera 
+10002 Long Distance Camera 
+10003 Dark Rock 
+10004 【 Protomap 】 Darkness 
+10005 (Protomap) a little wide 
+10006 (FDP) Test 
+10100 (FDP) Narrow-wide test _ narrow camera 
+10101 (FDP) Narrow to wide test _ wide Camera 
+10102 (FDP) Stoning machine test 
+10103 (FDP) Death of a stoned machine 
+10104 (FDP) death-following stoning machine 
+10120 (FDP) is swallowed slime 
+10121 (FDP) is swallowed slime 
+10200 (FDP) Entrance door of the candle room 
+10201 (FDP) Candle Room camera 
+10202 (FDP) Candle room warp camera 
+10300 (FDP) Wolf Kara 
+10400 (FDP) Player map start 
+90000 Covert Camera-Zoom in 
+90001 Covert Camera-Zoom Out 
+90010 Monster House Boss Camera 

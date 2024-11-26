@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to SFX used for enemy arrows." Row0Dummy="" />
+  <Field>
+    <sfx_id AltName="SFX ID"/>
+    <dummy_poly_id AltName="Dummy Poly ID"/>
+  </Field>
+</PARAMMETA>

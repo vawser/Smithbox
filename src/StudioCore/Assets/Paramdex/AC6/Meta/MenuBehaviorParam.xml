@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Field>
-    <textId AltName="Text ID" FmgRef="Tutorial_Title" />
-    <endPadding Padding="" />
-  </Field>
-  <Self />
-</PARAMMETA>

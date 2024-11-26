@@ -1,0 +1,11 @@
+700000 Color_Main
+700001 Color_Sub
+700002 Color_Support
+700003 Color_Optional
+700004 Color_Joint
+700005 Color_Eye
+700010 Rust_Int
+700015 Dirty_range_Int
+700016 Dirty_Int
+700018 Peeling_Int
+701010 Enemy_A_Emissive_Tint

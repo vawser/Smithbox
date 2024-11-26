@@ -1,0 +1,48 @@
+10102000 Base - Top- Top- Left- Left and Right - Small - Universal -- ベース-上下左右-小-普-汎用
+10202000 Base - Top- Top- Left- Left and Right - Medium - Universal -- ベース-上下左右-中-普-汎用
+10302000 Base - Top- Bottom- Left- Left and Right - Large - Universal -- ベース-上下左右-大-普-汎用
+10402000 Base - Top- Top- Left and Right - Oversized - Universal -- ベース-上下左右-特大-普-汎用
+20000010 Dragon Shi Matsuri No -- 龍のシ祭場-吊橋ゆれ
+20000110 Ryunoshi Festival - Suspension Bridge - Wyburn Landing -- 龍のシ祭場-吊橋-ワイバーン着地
+20000111 Ryunoshi Festival - Suspension Bridge - Wyburn Landing (Yoro) -- 龍のシ祭場-吊橋-ワイバーン着地（よろけ）
+20000120 Dragon's Shi Matsuri - Suspension Bridge - Weiburn Takeoff -- 龍のシ祭場-吊橋-ワイバーン離陸
+20000130 Dragon's Si Festival - Suspension Bridge - Wyburn Flight -- 龍のシ祭場-吊橋-ワイバーン飛行
+20001020 Torture Grounds - Perimeter Passages - Chariots Run Over -- 拷問場-外周通路-チャリオッツ轢き殺し
+20002010 Dragon Research Site - Square - Bone Dragon - Small Shake -- 龍の研究場-広場-骨ドラゴン-小ゆれ
+20002011 Dragon Research Site - Square - Bone Dragon - Medium Shake -- 龍の研究場-広場-骨ドラゴン-中ゆれ
+20002012 Dragon Research Site - Square - Bone Dragon - Great Shake -- 龍の研究場-広場-骨ドラゴン-大ゆれ
+20002013 Dragon Research Site - Square - Bone Dragon - Biting -- 龍の研究場-広場-骨ドラゴン-噛み付き
+20002110 Dragon's Research Center - Prison - Auger Door Banging - Koyu -- 龍の研究場-牢屋-オーガ扉叩き-小ゆれ
+20002111 Dragon's Research Center - Prison - Auger Door Banging - Nakayu -- 龍の研究場-牢屋-オーガ扉叩き-中ゆれ
+20002112 Dragon's Research Center - Prison - Auger Door Banging - Large Shake -- 龍の研究場-牢屋-オーガ扉叩き-大ゆれ
+20102000 Base - Top- Top- Left- Left and Right - Small - Universal -- ベース-上下左右-小-普-汎用
+20202000 Base - Top- Top- Left- Left and Right - Medium - Universal -- ベース-上下左右-中-普-汎用
+20302000 Base - Top- Bottom- Left- Left and Right - Large - Universal -- ベース-上下左右-大-普-汎用
+20402000 Base - Top- Top- Left and Right - Oversized - Universal -- ベース-上下左右-特大-普-汎用
+20502000 Base - Top- Bottom- Left and Right - Extra Large - Universal -- ベース-上下左右-特特大-普-汎用
+31101000 PC- Up- down- left- left- right- small- short- general purpose -- ＰＣ-上下左右-小-短-汎用
+31201000 PC- Up- down- left- right- medium- short- general purpose -- ＰＣ-上下左右-中-短-汎用
+31301000 PC- Up- down- left- left- right- large- short- general purpose -- ＰＣ-上下左右-大-短-汎用
+32101000 PC-Vertical Shaking-Small-Short-General-Purpose -- ＰＣ-縦揺れ-小-短-汎用
+32201000 PC-Vertical Shaking-Medium-Short-General-Purpose -- ＰＣ-縦揺れ-中-短-汎用
+32301000 PC-Vertical Shaking-Large-Short-General-Purpose -- ＰＣ-縦揺れ-大-短-汎用
+33101000 PC-Swaying-Small-Short-General-purpose -- ＰＣ-横揺れ-小-短-汎用
+33201000 PC-Swaying-Medium-Short-General-purpose -- ＰＣ-横揺れ-中-短-汎用
+33301000 PC-Swaying-Large-Short-General-Purpose -- ＰＣ-横揺れ-大-短-汎用
+38000700 PC-Tossing-Medium-Dagger System -- ＰＣ-投げ-中型-短剣系
+38000710 PC-Tossing- Medium-Tosed-Two-Handed Axe System -- ＰＣ-投げ-中型-両手斧系
+38000720 PC-Tossing- Medium-Handed Oversized Sword System -- ＰＣ-投げ-中型-両手特大剣系
+38000800 PC-Throwing-Large-Dagger System -- ＰＣ-投げ-大型-短剣系
+38000810 PC-Tossing-Large-Handed-Two-Handed Axe System -- ＰＣ-投げ-大型-両手斧系
+38000820 PC-Throwing-Large-Handed Oversized Sword System -- ＰＣ-投げ-大型-両手特大剣系
+41001000 Enemy - Vertical Shaking - Minimum - Short - General Purpose -- エネミー-縦揺れ-極小-短-汎用
+41001010 Enemy - Trampling - Minimum - Short - General Purpose -- エネミー-踏みつけ-極小-短-汎用
+41101000 Enemy - Vertical Shaking - Small - Short - General Purpose -- エネミー-縦揺れ-小-短-汎用
+41101010 Enemy - Trampling - Small - Short - General Purpose -- エネミー-踏みつけ-小-短-汎用
+41201000 Enemy - Vertical Shaking - Medium - Short - General Purpose -- エネミー-縦揺れ-中-短-汎用
+41201010 Enemy - Trampling - Medium - Short - General Purpose -- エネミー-踏みつけ-中-短-汎用
+41301000 Enemy - Vertical Shaking - Large - Short - General Purpose -- エネミー-縦揺れ-大-短-汎用
+41301010 Enemy - Trampling - Large - Short - General Purpose -- エネミー-踏みつけ-大-短-汎用
+41401000 Enemy - Vertical Shaking - Oversized - Short - General Purpose -- エネミー-縦揺れ-特大-短-汎用
+41401010 Enemy - Trampling - Oversized - Short - General Purpose -- エネミー-踏みつけ-特大-短-汎用
+99999999 Test -- テスト

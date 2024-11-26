@@ -1,0 +1,18 @@
+0 Body 1 Standard -- 体型1 標準
+1 Body Type 2 Weight -- 体型2 痩せ
+2 Body Type 3 Super Thin -- 体型3 超痩せ
+3 Body Type 4 Fat -- 体型4 デブ
+4 Body Type 5 Super Fat -- 体型5 超デブ
+5 Body Type 6 Upper Body Fat -- 体型6 上半身デブ
+6 Body Type 7 Lower Body Fat -- 体型7 下半身デブ
+7 Eight big body -- 体型8 頭でかい
+10 Constitution Muscle -- 体質 筋肉質
+20 Female Body Type 1 Standard -- 女　体型1 標準
+21 Female Body Type 2 Weight -- 女　体型2 痩せ
+22 Female Body Type 3 Super Thin -- 女　体型3 超痩せ
+23 Woman Body Type 4 Fat -- 女　体型4 デブ
+24 Woman Body Type 5 Super Fat -- 女　体型5 超デブ
+25 Female Body Type 6 Upper Body Fat -- 女　体型6 上半身デブ
+26 Female Body Type 7 Lower Body Fat -- 女　体型7 下半身デブ
+27 Woman- eight- big. -- 女　体型8 頭でかい
+30 Woman Constitution Muscular -- 女　体質 筋肉質

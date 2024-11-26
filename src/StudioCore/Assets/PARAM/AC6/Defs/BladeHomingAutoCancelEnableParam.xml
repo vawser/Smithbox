@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BLADE_HOMING_AUTO_CANCEL_ENABLE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 cancelAngDegR = 180">
+      <DisplayName>追従中断条件：右角度[deg]</DisplayName>
+      <Description>この角度以上で中断。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 cancelAngDegL = 180">
+      <DisplayName>追従中断条件：左角度[deg]</DisplayName>
+      <Description>この角度以上で中断。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 cancelAngDegU = 90">
+      <DisplayName>追従中断条件：上角度[deg]</DisplayName>
+      <Description>水平基準</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 cancelAngDegD = 90">
+      <DisplayName>追従中断条件：下角度[deg]</DisplayName>
+      <Description>水平基準</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 cancelDist = -1">
+      <DisplayName>追従中断条件：距離[m]</DisplayName>
+      <Description>この距離以内で中断。-1で無限大＝距離では中断しない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 nolockMinTimeSec">
+      <DisplayName>ノーロック時最低再生時間[s]</DisplayName>
+      <Description>ノーロック時の最低ブレホ時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 outTargetDist = -1">
+      <DisplayName>ブレードホーミング有効距離[m]</DisplayName>
+      <Description>ターゲットがこの距離外時にはノーロック時の挙動。-1で常にロック時挙動</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[32]">
+      <DisplayName>予備</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>9</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

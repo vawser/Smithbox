@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>SOUND_CUTSCENE_PARAM_ST</ParamType>
+  <DataVersion>5</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>10001</SortID>
+    </Field>
+    <Field Def="u8 ReverbType">
+      <DisplayName>カットシーン中のリバーブタイプ</DisplayName>
+      <Description>カットシーン中に適応するリバーブタイプを指定します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>16</Maximum>
+    </Field>
+    <Field Def="dummy8 pad0[3]">
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 BgmBehaviorTypeOnStart">
+      <DisplayName>カットシーン開始時通常BGM挙動</DisplayName>
+      <Enum>SOUND_CUTSCENE_BGM_BEHAVIOR_TYPE</Enum>
+      <Description>カットシーン開始時通常BGM挙動を指定します</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>8</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 OneShotBgmBehaviorOnStart">
+      <DisplayName>カットシーン開始時ワンショットBGM挙動</DisplayName>
+      <Enum>SOUND_CUTSCENE_BGM_BEHAVIOR_TYPE</Enum>
+      <Description>カットシーン開始時ワンショットBGM挙動を指定します</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>8</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 PostPlaySeId = -1">
+      <DisplayName>カットシーン終了時にポストするSEID（カテゴリ：p)指定(-1:ポストしない)</DisplayName>
+      <Description>カットシーン終了時にポストするSEID（カテゴリ：p)指定(-1:ポストしない)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 PostPlaySeIdForSkip = -1">
+      <DisplayName>カットシーン終了時にポストするSEID_スキップ時（カテゴリ：p)指定(-1:ポストしない)</DisplayName>
+      <Description>カットシーン終了時にポストするSEID_スキップ時用（カテゴリ：p)指定(-1:ポストしない)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 EnterMapMuteStopTimeOnDrawCutscene = -1">
+      <DisplayName>入場直後ミュート解除するカットシーン描画時間[秒](0より小さい：描画時間で解除しない)</DisplayName>
+      <Description>入場直後のミュート解除するカットシーン描画時間[秒](0より小さい：描画時間で解除しない)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>14</SortID>
+    </Field>
+    
+    <Field Def="dummy8 reserved_old[8]" FirstVersion="10501000" RemovedVersion="11210015" />
+    
+    <Field Def="u8 unknown_0x18" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x19" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x1a" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x1b" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 reserved[4]" FirstVersion="11210015" >
+      <DisplayName>リザーブ</DisplayName>
+      <Description>リザーブ</Description>
+      <SortID>10002</SortID>
+    </Field>
+    
+    <Field Def="dummy8 reserved2[4]" FirstVersion="10501000" />
+  </Fields>
+</PARAMDEF>

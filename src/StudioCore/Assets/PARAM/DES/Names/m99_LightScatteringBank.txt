@@ -1,0 +1,18 @@
+0 Basic
+1 Indoors (near the entrance)
+2 Indoor (back)
+3 Middle view
+4 distant view
+5 super distant view
+6 sea surface
+7 celestial sphere
+21 distant view
+22 celestial sphere
+23 ghost
+25 Distant view belt
+26 terrace
+27 river
+51 distant view
+52 celestial sphere
+53 lava
+63 m99_97_00_00[Nakajima test]

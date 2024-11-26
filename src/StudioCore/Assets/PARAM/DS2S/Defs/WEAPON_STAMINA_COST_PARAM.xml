@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>WEAPON_STAMINA_COST_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 right_1h_light_1" />
+    <Field Def="f32 right_1h_light_2" />
+    <Field Def="f32 right_1h_heavy_1" />
+    <Field Def="f32 right_1h_heavy_2" />
+    <Field Def="f32 right_1h_light_run" />
+    <Field Def="f32 right_1h_light_roll" />
+    <Field Def="f32 right_1h_light_backstep" />
+    <Field Def="f32 right_1h_fall" />
+    <Field Def="f32 right_1h_land" />
+    <Field Def="f32 right_1h_jump" />
+    <Field Def="f32 right_2h_light_1" />
+    <Field Def="f32 right_2h_light_2" />
+    <Field Def="f32 right_2h_heavy_1" />
+    <Field Def="f32 right_2h_heavy_2" />
+    <Field Def="f32 right_2h_light_run" />
+    <Field Def="f32 right_2h_light_roll" />
+    <Field Def="f32 right_2h_light_backstep" />
+    <Field Def="f32 right_2h_fall" />
+    <Field Def="f32 right_2h_land" />
+    <Field Def="f32 right_2h_jump" />
+    <Field Def="f32 chain_attack_1_1" />
+    <Field Def="f32 chain_attack_1_2" />
+    <Field Def="f32 chain_attack_2_1" />
+    <Field Def="f32 chain_attack_2_2" />
+    <Field Def="f32 chain_attack_run" />
+    <Field Def="f32 chain_attack_roll" />
+    <Field Def="f32 chain_attack_backstep" />
+    <Field Def="f32 chain_attack_fall" />
+    <Field Def="f32 chain_attack_land" />
+    <Field Def="f32 chain_attack_jump" />
+    <Field Def="f32 right_powerstance_light_1" />
+    <Field Def="f32 right_powerstance_light_2" />
+    <Field Def="f32 right_powerstance_heavy_1" />
+    <Field Def="f32 right_powerstance_heavy_2" />
+    <Field Def="f32 right_powerstance_light_run" />
+    <Field Def="f32 right_powerstance_light_roll" />
+    <Field Def="f32 right_powerstance_light_backstep" />
+    <Field Def="f32 right_powerstance_fall" />
+    <Field Def="f32 right_powerstance_land" />
+    <Field Def="f32 right_powerstance_jump" />
+    <Field Def="f32 left_1h_light_1" />
+    <Field Def="f32 left_1h_light_2" />
+    <Field Def="f32 left_1h_heavy_1" />
+    <Field Def="f32 left_1h_heavy_2" />
+    <Field Def="f32 left_1h_light_run" />
+    <Field Def="f32 left_1h_light_roll" />
+    <Field Def="f32 left_1h_light_backstep" />
+    <Field Def="f32 left_1h_light_fall" />
+    <Field Def="f32 left_1h_light_land" />
+    <Field Def="f32 left_1h_light_jump" />
+    <Field Def="f32 left_2h_light_1" />
+    <Field Def="f32 left_2h_heavy_1" />
+    <Field Def="f32 left_powerstance_light_1" />
+    <Field Def="f32 left_powerstance_light_2" />
+    <Field Def="f32 left_powerstance_heavy_1" />
+    <Field Def="f32 guard_break_1" />
+    <Field Def="f32 guard_break_2" />
+    <Field Def="f32 shield_poke_1_1" />
+    <Field Def="f32 shield_poke_1_2" />
+    <Field Def="f32 shield_poke_2_1" />
+    <Field Def="f32 shield_poke_2_2" />
+    <Field Def="f32 riposte" />
+    <Field Def="f32 guard_break_stab" />
+    <Field Def="f32 backstab" />
+  </Fields>
+</PARAMDEF>

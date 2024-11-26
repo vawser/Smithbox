@@ -1,0 +1,763 @@
+0 test -- test
+1 Character make test -- キャラメイクテスト
+20 20: NT version A (Knight of Wandering) -- 20：NT版 A　（放浪の騎士）
+21 21: NT version B (Northern Warrior) -- 21：NT版 B　（北の戦士）
+22 22: NT version C (Wizard) -- 22：NT版 C　（魔法使い）
+23 23: NT version D (Knight of the Temple) -- 23：NT版 D　（神殿騎士）
+1000 New Game Preset Face_Man 0 -- NewGameプリセット顔_男0
+1001 New Game Preset Face_Man 1 -- NewGameプリセット顔_男1
+1002 New Game Preset Face_Man 2 -- NewGameプリセット顔_男2
+1003 New Game Preset Face_Man 3 -- NewGameプリセット顔_男3
+1004 New Game Preset Face_Man 4 -- NewGameプリセット顔_男4
+1005 New Game Preset Face_Man 5 -- NewGameプリセット顔_男5
+1006 New Game Preset Face_Man 6 -- NewGameプリセット顔_男6
+1007 New Game Preset Face_Man 7 -- NewGameプリセット顔_男7
+1008 New Game Preset Face_Man 8 -- NewGameプリセット顔_男8
+1009 New Game Preset Face_Man 9 -- NewGameプリセット顔_男9
+2000 NewGame preset face_woman 0 -- NewGameプリセット顔_女0
+2001 New Game Preset Face_Woman 1 -- NewGameプリセット顔_女1
+2002 New Game Preset Face_Woman 2 -- NewGameプリセット顔_女2
+2003 New Game Preset Face_Woman 3 -- NewGameプリセット顔_女3
+2004 New Game Preset Face_Woman 4 -- NewGameプリセット顔_女4
+2005 New Game Preset Face_Woman 5 -- NewGameプリセット顔_女5
+2006 New Game Preset Face_Woman 6 -- NewGameプリセット顔_女6
+2007 New Game Preset Face_Woman 7 -- NewGameプリセット顔_女7
+2008 New Game Preset Face_Woman 8 -- NewGameプリセット顔_女8
+2009 New Game Preset Face_Woman 9 -- NewGameプリセット顔_女9
+3000 For base body 0 (unisex) -- ベースボディ用0（男女共用）
+3001 For base body 1 (unisex) -- ベースボディ用1（男女共用）
+3002 For base body 2 (unisex) -- ベースボディ用2（男女共用）
+3003 For base body 3 (unisex) -- ベースボディ用3（男女共用）
+3004 For base body 4 (unisex) -- ベースボディ用4（男女共用）
+3005 5 for base body (unisex) -- ベースボディ用5（男女共用）
+3006 6 for base body (unisex) -- ベースボディ用6（男女共用）
+3007 7 for base body (unisex) -- ベースボディ用7（男女共用）
+3008 8 for base body (unisex) -- ベースボディ用8（男女共用）
+3009 For base body 9 (unisex) -- ベースボディ用9（男女共用）
+4000 Character Makeup Top Menu Male -- キャラメイクトップメニュー男性
+5000 Character Makeup Top Menu Female -- キャラメイクトップメニュー女性
+8000 Temporary storage frame 1 -- 一時保存枠1
+8001 Temporary storage frame 2 -- 一時保存枠2
+8002 Temporary storage frame 3 -- 一時保存枠3
+8003 Temporary storage frame 4 -- 一時保存枠4
+8004 Temporary storage frame 5 -- 一時保存枠5
+8005 Temporary storage frame 6 -- 一時保存枠6
+8006 Temporary storage frame 7 -- 一時保存枠7
+8007 Temporary storage frame 8 -- 一時保存枠8
+8008 Temporary storage frame 9 -- 一時保存枠9
+8009 Temporary storage frame 10 -- 一時保存枠10
+8010 Temporary storage frame 11 -- 一時保存枠11
+8011 Temporary storage frame 12 -- 一時保存枠12
+8012 Temporary storage frame 13 -- 一時保存枠13
+8013 Temporary storage frame 14 -- 一時保存枠14
+8014 Temporary storage frame 15 -- 一時保存枠15
+8015 Temporary storage frame 16 -- 一時保存枠16
+8016 Temporary storage frame 17 -- 一時保存枠17
+8017 Temporary storage frame 18 -- 一時保存枠18
+8018 Temporary storage frame 19 -- 一時保存枠19
+8019 Temporary storage frame 20 -- 一時保存枠20
+8020 Temporary storage frame 21 -- 一時保存枠21
+8021 Temporary storage frame 22 -- 一時保存枠22
+8022 Temporary storage frame 23 -- 一時保存枠23
+8023 Temporary storage frame 24 -- 一時保存枠24
+8024 Temporary storage frame 25 -- 一時保存枠25
+8025 Temporary storage frame 26 -- 一時保存枠26
+8026 Temporary storage frame 27 -- 一時保存枠27
+8027 Temporary storage frame 28 -- 一時保存枠28
+8028 Temporary storage frame 29 -- 一時保存枠29
+8029 Temporary storage frame 30 -- 一時保存枠30
+8030 Temporary storage frame 31 -- 一時保存枠31
+8031 Temporary storage frame 32 -- 一時保存枠32
+8032 Temporary storage frame 33 -- 一時保存枠33
+8033 Temporary storage frame 34 -- 一時保存枠34
+8034 Temporary storage frame 35 -- 一時保存枠35
+8035 Temporary storage frame 36 -- 一時保存枠36
+8036 Temporary storage frame 37 -- 一時保存枠37
+8037 Temporary storage frame 38 -- 一時保存枠38
+8038 Temporary storage frame 39 -- 一時保存枠39
+8039 Temporary storage frame 40 -- 一時保存枠40
+8040 Temporary storage frame 41 -- 一時保存枠41
+8041 Temporary storage frame 42 -- 一時保存枠42
+8042 Temporary storage frame 43 -- 一時保存枠43
+8043 Temporary storage frame 44 -- 一時保存枠44
+8044 Temporary storage frame 45 -- 一時保存枠45
+8045 Temporary storage frame 46 -- 一時保存枠46
+8046 Temporary storage frame 47 -- 一時保存枠47
+8047 Temporary storage frame 48 -- 一時保存枠48
+8048 Temporary storage frame 49 -- 一時保存枠49
+8049 Temporary storage frame 50 -- 一時保存枠50
+8050 Temporary storage frame 51 -- 一時保存枠51
+8051 Temporary storage frame 52 -- 一時保存枠52
+8052 Temporary storage frame 53 -- 一時保存枠53
+8053 Temporary storage frame 54 -- 一時保存枠54
+8054 Temporary storage frame 55 -- 一時保存枠55
+8055 Temporary storage frame 56 -- 一時保存枠56
+8056 Temporary storage frame 57 -- 一時保存枠57
+8057 Temporary storage frame 58 -- 一時保存枠58
+8058 Temporary storage frame 59 -- 一時保存枠59
+8059 Temporary storage frame 60 -- 一時保存枠60
+8060 Temporary storage frame 61 -- 一時保存枠61
+8061 Temporary storage frame 62 -- 一時保存枠62
+8062 Temporary storage frame 63 -- 一時保存枠63
+8063 Temporary storage frame 64 -- 一時保存枠64
+8064 Temporary storage frame 65 -- 一時保存枠65
+8065 Temporary storage frame 66 -- 一時保存枠66
+8066 Temporary storage frame 67 -- 一時保存枠67
+8067 Temporary storage frame 68 -- 一時保存枠68
+8068 Temporary storage frame 69 -- 一時保存枠69
+8069 Temporary storage frame 70 -- 一時保存枠70
+8070 Temporary storage frame 71 -- 一時保存枠71
+8071 Temporary storage frame 72 -- 一時保存枠72
+8072 Temporary storage frame 73 -- 一時保存枠73
+8073 Temporary storage frame 74 -- 一時保存枠74
+8074 Temporary storage frame 75 -- 一時保存枠75
+8075 Temporary storage frame 76 -- 一時保存枠76
+8076 Temporary storage frame 77 -- 一時保存枠77
+8077 Temporary storage frame 78 -- 一時保存枠78
+8078 Temporary storage frame 79 -- 一時保存枠79
+8079 Temporary storage frame 80 -- 一時保存枠80
+8080 Temporary storage frame 81 -- 一時保存枠81
+8081 Temporary storage frame 82 -- 一時保存枠82
+8082 Temporary storage frame 83 -- 一時保存枠83
+8083 Temporary storage frame 84 -- 一時保存枠84
+8084 Temporary storage frame 85 -- 一時保存枠85
+8085 Temporary storage frame 86 -- 一時保存枠86
+8086 Temporary storage frame 87 -- 一時保存枠87
+8087 Temporary storage frame 88 -- 一時保存枠88
+8088 Temporary storage frame 89 -- 一時保存枠89
+8089 Temporary storage frame 90 -- 一時保存枠90
+8090 Temporary storage frame 91 -- 一時保存枠91
+8091 Temporary storage frame 92 -- 一時保存枠92
+8092 Temporary storage frame 93 -- 一時保存枠93
+8093 Temporary storage frame 94 -- 一時保存枠94
+8094 Temporary storage frame 95 -- 一時保存枠95
+8095 Temporary storage frame 96 -- 一時保存枠96
+8096 Temporary storage frame 97 -- 一時保存枠97
+8097 Temporary storage frame 98 -- 一時保存枠98
+8098 Temporary storage frame 99 -- 一時保存枠99
+8099 Temporary storage frame 100 -- 一時保存枠100
+8100 Temporary storage frame 101 -- 一時保存枠101
+8101 Temporary storage frame 102 -- 一時保存枠102
+8102 Temporary storage frame 103 -- 一時保存枠103
+8103 Temporary storage frame 104 -- 一時保存枠104
+8104 Temporary storage frame 105 -- 一時保存枠105
+8105 Temporary storage frame 106 -- 一時保存枠106
+8106 Temporary storage frame 107 -- 一時保存枠107
+8107 Temporary storage frame 108 -- 一時保存枠108
+8108 Temporary storage frame 109 -- 一時保存枠109
+8109 Temporary storage frame 110 -- 一時保存枠110
+8110 Temporary storage frame 111 -- 一時保存枠111
+8111 Temporary storage frame 112 -- 一時保存枠112
+8112 Temporary storage frame 113 -- 一時保存枠113
+8113 Temporary storage frame 114 -- 一時保存枠114
+8114 Temporary storage frame 115 -- 一時保存枠115
+8115 Temporary storage frame 116 -- 一時保存枠116
+8116 Temporary storage frame 117 -- 一時保存枠117
+8117 Temporary storage frame 118 -- 一時保存枠118
+8118 Temporary storage frame 119 -- 一時保存枠119
+8119 Temporary storage frame 120 -- 一時保存枠120
+8120 Temporary storage frame 121 -- 一時保存枠121
+8121 Temporary storage frame 122 -- 一時保存枠122
+8122 Temporary storage frame 123 -- 一時保存枠123
+8123 Temporary storage frame 124 -- 一時保存枠124
+8124 Temporary storage frame 125 -- 一時保存枠125
+8125 Temporary storage frame 126 -- 一時保存枠126
+8126 Temporary storage frame 127 -- 一時保存枠127
+8127 Temporary storage frame 128 -- 一時保存枠128
+8128 Temporary storage frame 129 -- 一時保存枠129
+8129 Temporary storage frame 130 -- 一時保存枠130
+8130 Temporary storage frame 131 -- 一時保存枠131
+8131 Temporary storage frame 132 -- 一時保存枠132
+8132 Temporary storage frame 133 -- 一時保存枠133
+8133 Temporary storage frame 134 -- 一時保存枠134
+8134 Temporary storage frame 135 -- 一時保存枠135
+8135 Temporary storage frame 136 -- 一時保存枠136
+8136 Temporary storage frame 137 -- 一時保存枠137
+8137 Temporary storage frame 138 -- 一時保存枠138
+8138 Temporary storage frame 139 -- 一時保存枠139
+8139 Temporary storage frame 140 -- 一時保存枠140
+8140 Temporary storage frame 141 -- 一時保存枠141
+8141 Temporary storage frame 142 -- 一時保存枠142
+8142 Temporary storage frame 143 -- 一時保存枠143
+8143 Temporary storage frame 144 -- 一時保存枠144
+8144 Temporary storage frame 145 -- 一時保存枠145
+8145 Temporary storage frame 146 -- 一時保存枠146
+8146 Temporary storage frame 147 -- 一時保存枠147
+8147 Temporary storage frame 148 -- 一時保存枠148
+8148 Temporary storage frame 149 -- 一時保存枠149
+8149 Temporary storage frame 150 -- 一時保存枠150
+8150 Temporary storage frame 151 -- 一時保存枠151
+8151 Temporary storage frame 152 -- 一時保存枠152
+8152 Temporary storage frame 153 -- 一時保存枠153
+8153 Temporary storage frame 154 -- 一時保存枠154
+8154 Temporary storage frame 155 -- 一時保存枠155
+8155 Temporary storage frame 156 -- 一時保存枠156
+8156 Temporary storage frame 157 -- 一時保存枠157
+8157 Temporary storage frame 158 -- 一時保存枠158
+8158 Temporary storage frame 159 -- 一時保存枠159
+8159 Temporary storage frame 160 -- 一時保存枠160
+8160 Temporary storage frame 161 -- 一時保存枠161
+8161 Temporary storage frame 162 -- 一時保存枠162
+8162 Temporary storage frame 163 -- 一時保存枠163
+8163 Temporary storage frame 164 -- 一時保存枠164
+8164 Temporary storage frame 165 -- 一時保存枠165
+8165 Temporary storage frame 166 -- 一時保存枠166
+8166 Temporary storage frame 167 -- 一時保存枠167
+8167 Temporary storage frame 168 -- 一時保存枠168
+8168 Temporary storage frame 169 -- 一時保存枠169
+8169 Temporary storage frame 170 -- 一時保存枠170
+8170 Temporary storage frame 171 -- 一時保存枠171
+8171 Temporary storage frame 172 -- 一時保存枠172
+8172 Temporary storage frame 173 -- 一時保存枠173
+8173 Temporary storage frame 174 -- 一時保存枠174
+8174 Temporary storage frame 175 -- 一時保存枠175
+8175 Temporary storage frame 176 -- 一時保存枠176
+8176 Temporary storage frame 177 -- 一時保存枠177
+8177 Temporary storage frame 178 -- 一時保存枠178
+8178 Temporary storage frame 179 -- 一時保存枠179
+8179 Temporary storage frame 180 -- 一時保存枠180
+8180 Temporary storage frame 181 -- 一時保存枠181
+8181 Temporary storage frame 182 -- 一時保存枠182
+8182 Temporary storage frame 183 -- 一時保存枠183
+8183 Temporary storage frame 184 -- 一時保存枠184
+8184 Temporary storage frame 185 -- 一時保存枠185
+8185 Temporary storage frame 186 -- 一時保存枠186
+8186 Temporary storage frame 187 -- 一時保存枠187
+8187 Temporary storage frame 188 -- 一時保存枠188
+8188 Temporary storage frame 189 -- 一時保存枠189
+8189 Temporary storage frame 190 -- 一時保存枠190
+8190 Temporary storage frame 191 -- 一時保存枠191
+8191 Temporary storage frame 192 -- 一時保存枠192
+8192 Temporary storage frame 193 -- 一時保存枠193
+8193 Temporary storage frame 194 -- 一時保存枠194
+8194 Temporary storage frame 195 -- 一時保存枠195
+8195 Temporary storage frame 196 -- 一時保存枠196
+8196 Temporary storage frame 197 -- 一時保存枠197
+8197 Temporary storage frame 198 -- 一時保存枠198
+8198 Temporary storage frame 199 -- 一時保存枠199
+8199 Temporary storage frame 200 -- 一時保存枠200
+8200 Temporary storage frame 201 -- 一時保存枠201
+8201 Temporary storage frame 202 -- 一時保存枠202
+8202 Temporary storage frame 203 -- 一時保存枠203
+8203 Temporary storage frame 204 -- 一時保存枠204
+8204 Temporary storage frame 205 -- 一時保存枠205
+8205 Temporary storage frame 206 -- 一時保存枠206
+8206 Temporary storage frame 207 -- 一時保存枠207
+8207 Temporary storage frame 208 -- 一時保存枠208
+8208 Temporary storage frame 209 -- 一時保存枠209
+8209 Temporary storage frame 210 -- 一時保存枠210
+8210 Temporary storage frame 211 -- 一時保存枠211
+8211 Temporary storage frame 212 -- 一時保存枠212
+8212 Temporary storage frame 213 -- 一時保存枠213
+8213 Temporary storage frame 214 -- 一時保存枠214
+8214 Temporary storage frame 215 -- 一時保存枠215
+8215 Temporary storage frame 216 -- 一時保存枠216
+8216 Temporary storage frame 217 -- 一時保存枠217
+8217 Temporary storage frame 218 -- 一時保存枠218
+8218 Temporary storage frame 219 -- 一時保存枠219
+8219 Temporary storage frame 220 -- 一時保存枠220
+8220 Temporary storage frame 221 -- 一時保存枠221
+8221 Temporary storage frame 222 -- 一時保存枠222
+8222 Temporary storage frame 223 -- 一時保存枠223
+8223 Temporary storage frame 224 -- 一時保存枠224
+8224 Temporary storage frame 225 -- 一時保存枠225
+8225 Temporary storage frame 226 -- 一時保存枠226
+8226 Temporary storage frame 227 -- 一時保存枠227
+8227 Temporary storage frame 228 -- 一時保存枠228
+8228 Temporary storage frame 229 -- 一時保存枠229
+8229 Temporary storage frame 230 -- 一時保存枠230
+8230 Temporary storage frame 231 -- 一時保存枠231
+8231 Temporary storage frame 232 -- 一時保存枠232
+8232 Temporary storage frame 233 -- 一時保存枠233
+8233 Temporary storage frame 234 -- 一時保存枠234
+8234 Temporary storage frame 235 -- 一時保存枠235
+8235 Temporary storage frame 236 -- 一時保存枠236
+8236 Temporary storage frame 237 -- 一時保存枠237
+8237 Temporary storage frame 238 -- 一時保存枠238
+8238 Temporary storage frame 239 -- 一時保存枠239
+8239 Temporary storage frame 240 -- 一時保存枠240
+8240 Temporary storage frame 241 -- 一時保存枠241
+8241 Temporary storage frame 242 -- 一時保存枠242
+8242 Temporary storage frame 243 -- 一時保存枠243
+8243 Temporary storage frame 244 -- 一時保存枠244
+8244 Temporary storage frame 245 -- 一時保存枠245
+8245 Temporary storage frame 246 -- 一時保存枠246
+8246 Temporary storage frame 247 -- 一時保存枠247
+8247 Temporary storage frame 248 -- 一時保存枠248
+8248 Temporary storage frame 249 -- 一時保存枠249
+8249 Temporary storage frame 250 -- 一時保存枠250
+8250 Temporary storage frame 251 -- 一時保存枠251
+8251 Temporary storage frame 252 -- 一時保存枠252
+8252 Temporary storage frame 253 -- 一時保存枠253
+8253 Temporary storage frame 254 -- 一時保存枠254
+8254 Temporary storage frame 255 -- 一時保存枠255
+8255 Temporary storage frame 256 -- 一時保存枠256
+8256 Temporary storage frame 257 -- 一時保存枠257
+8257 Temporary storage frame 258 -- 一時保存枠258
+8258 Temporary storage frame 259 -- 一時保存枠259
+8259 Temporary storage frame 260 -- 一時保存枠260
+8260 Temporary storage frame 261 -- 一時保存枠261
+8261 Temporary storage frame 262 -- 一時保存枠262
+8262 Temporary storage frame 263 -- 一時保存枠263
+8263 Temporary storage frame 264 -- 一時保存枠264
+8264 Temporary storage frame 265 -- 一時保存枠265
+8265 Temporary storage frame 266 -- 一時保存枠266
+8266 Temporary storage frame 267 -- 一時保存枠267
+8267 Temporary storage frame 268 -- 一時保存枠268
+8268 Temporary storage frame 269 -- 一時保存枠269
+8269 Temporary storage frame 270 -- 一時保存枠270
+8270 Temporary storage frame 271 -- 一時保存枠271
+8271 Temporary storage frame 272 -- 一時保存枠272
+8272 Temporary storage frame 273 -- 一時保存枠273
+8273 Temporary storage frame 274 -- 一時保存枠274
+8274 Temporary storage frame 275 -- 一時保存枠275
+8275 Temporary storage frame 276 -- 一時保存枠276
+8276 Temporary storage frame 277 -- 一時保存枠277
+8277 Temporary storage frame 278 -- 一時保存枠278
+8278 Temporary storage frame 279 -- 一時保存枠279
+8279 Temporary storage frame 280 -- 一時保存枠280
+8280 Temporary storage frame 281 -- 一時保存枠281
+8281 Temporary storage frame 282 -- 一時保存枠282
+8282 Temporary storage frame 283 -- 一時保存枠283
+8283 Temporary storage frame 284 -- 一時保存枠284
+8284 Temporary storage frame 285 -- 一時保存枠285
+8285 Temporary storage frame 286 -- 一時保存枠286
+8286 Temporary storage frame 287 -- 一時保存枠287
+8287 Temporary storage frame 288 -- 一時保存枠288
+8288 Temporary storage frame 289 -- 一時保存枠289
+8289 Temporary storage frame 290 -- 一時保存枠290
+8290 Temporary storage frame 291 -- 一時保存枠291
+8291 Temporary storage frame 292 -- 一時保存枠292
+8292 Temporary storage frame 293 -- 一時保存枠293
+8293 Temporary storage frame 294 -- 一時保存枠294
+8294 Temporary storage frame 295 -- 一時保存枠295
+8295 Temporary storage frame 296 -- 一時保存枠296
+8296 Temporary storage frame 297 -- 一時保存枠297
+8297 Temporary storage frame 298 -- 一時保存枠298
+8298 Temporary storage frame 299 -- 一時保存枠299
+8299 Temporary storage frame 300 -- 一時保存枠300
+8500 Temporary storage frame 1 -- 一時保存枠1
+8501 Temporary storage frame 2 -- 一時保存枠2
+8502 Temporary storage frame 3 -- 一時保存枠3
+8503 Temporary storage frame 4 -- 一時保存枠4
+8504 Temporary storage frame 5 -- 一時保存枠5
+8505 Temporary storage frame 6 -- 一時保存枠6
+8506 Temporary storage frame 7 -- 一時保存枠7
+8507 Temporary storage frame 8 -- 一時保存枠8
+8508 Temporary storage frame 9 -- 一時保存枠9
+8509 Temporary storage frame 10 -- 一時保存枠10
+8510 Temporary storage frame 11 -- 一時保存枠11
+8511 Temporary storage frame 12 -- 一時保存枠12
+8512 Temporary storage frame 13 -- 一時保存枠13
+8513 Temporary storage frame 14 -- 一時保存枠14
+8514 Temporary storage frame 15 -- 一時保存枠15
+8515 Temporary storage frame 16 -- 一時保存枠16
+8516 Temporary storage frame 17 -- 一時保存枠17
+8517 Temporary storage frame 18 -- 一時保存枠18
+8518 Temporary storage frame 19 -- 一時保存枠19
+8519 Temporary storage frame 20 -- 一時保存枠20
+8520 Temporary storage frame 21 -- 一時保存枠21
+8521 Temporary storage frame 22 -- 一時保存枠22
+8522 Temporary storage frame 23 -- 一時保存枠23
+8523 Temporary storage frame 24 -- 一時保存枠24
+8524 Temporary storage frame 25 -- 一時保存枠25
+8525 Temporary storage frame 26 -- 一時保存枠26
+8526 Temporary storage frame 27 -- 一時保存枠27
+8527 Temporary storage frame 28 -- 一時保存枠28
+8528 Temporary storage frame 29 -- 一時保存枠29
+8529 Temporary storage frame 30 -- 一時保存枠30
+8530 Temporary storage frame 31 -- 一時保存枠31
+8531 Temporary storage frame 32 -- 一時保存枠32
+8532 Temporary storage frame 33 -- 一時保存枠33
+8533 Temporary storage frame 34 -- 一時保存枠34
+8534 Temporary storage frame 35 -- 一時保存枠35
+8535 Temporary storage frame 36 -- 一時保存枠36
+8536 Temporary storage frame 37 -- 一時保存枠37
+8537 Temporary storage frame 38 -- 一時保存枠38
+8538 Temporary storage frame 39 -- 一時保存枠39
+8539 Temporary storage frame 40 -- 一時保存枠40
+8540 Temporary storage frame 41 -- 一時保存枠41
+8541 Temporary storage frame 42 -- 一時保存枠42
+8542 Temporary storage frame 43 -- 一時保存枠43
+8543 Temporary storage frame 44 -- 一時保存枠44
+8544 Temporary storage frame 45 -- 一時保存枠45
+8545 Temporary storage frame 46 -- 一時保存枠46
+8546 Temporary storage frame 47 -- 一時保存枠47
+8547 Temporary storage frame 48 -- 一時保存枠48
+8548 Temporary storage frame 49 -- 一時保存枠49
+8549 Temporary storage frame 50 -- 一時保存枠50
+8550 Temporary storage frame 51 -- 一時保存枠51
+8551 Temporary storage frame 52 -- 一時保存枠52
+8552 Temporary storage frame 53 -- 一時保存枠53
+8553 Temporary storage frame 54 -- 一時保存枠54
+8554 Temporary storage frame 55 -- 一時保存枠55
+8555 Temporary storage frame 56 -- 一時保存枠56
+8556 Temporary storage frame 57 -- 一時保存枠57
+8557 Temporary storage frame 58 -- 一時保存枠58
+8558 Temporary storage frame 59 -- 一時保存枠59
+8559 Temporary storage frame 60 -- 一時保存枠60
+8560 Temporary storage frame 61 -- 一時保存枠61
+8561 Temporary storage frame 62 -- 一時保存枠62
+8562 Temporary storage frame 63 -- 一時保存枠63
+8563 Temporary storage frame 64 -- 一時保存枠64
+8564 Temporary storage frame 65 -- 一時保存枠65
+8565 Temporary storage frame 66 -- 一時保存枠66
+8566 Temporary storage frame 67 -- 一時保存枠67
+8567 Temporary storage frame 68 -- 一時保存枠68
+8568 Temporary storage frame 69 -- 一時保存枠69
+8569 Temporary storage frame 70 -- 一時保存枠70
+8570 Temporary storage frame 71 -- 一時保存枠71
+8571 Temporary storage frame 72 -- 一時保存枠72
+8572 Temporary storage frame 73 -- 一時保存枠73
+8573 Temporary storage frame 74 -- 一時保存枠74
+8574 Temporary storage frame 75 -- 一時保存枠75
+8575 Temporary storage frame 76 -- 一時保存枠76
+8576 Temporary storage frame 77 -- 一時保存枠77
+8577 Temporary storage frame 78 -- 一時保存枠78
+8578 Temporary storage frame 79 -- 一時保存枠79
+8579 Temporary storage frame 80 -- 一時保存枠80
+8580 Temporary storage frame 81 -- 一時保存枠81
+8581 Temporary storage frame 82 -- 一時保存枠82
+8582 Temporary storage frame 83 -- 一時保存枠83
+8583 Temporary storage frame 84 -- 一時保存枠84
+8584 Temporary storage frame 85 -- 一時保存枠85
+8585 Temporary storage frame 86 -- 一時保存枠86
+8586 Temporary storage frame 87 -- 一時保存枠87
+8587 Temporary storage frame 88 -- 一時保存枠88
+8588 Temporary storage frame 89 -- 一時保存枠89
+8589 Temporary storage frame 90 -- 一時保存枠90
+8590 Temporary storage frame 91 -- 一時保存枠91
+8591 Temporary storage frame 92 -- 一時保存枠92
+8592 Temporary storage frame 93 -- 一時保存枠93
+8593 Temporary storage frame 94 -- 一時保存枠94
+8594 Temporary storage frame 95 -- 一時保存枠95
+8595 Temporary storage frame 96 -- 一時保存枠96
+8596 Temporary storage frame 97 -- 一時保存枠97
+8597 Temporary storage frame 98 -- 一時保存枠98
+8598 Temporary storage frame 99 -- 一時保存枠99
+8599 Temporary storage frame 100 -- 一時保存枠100
+8600 Temporary storage frame 101 -- 一時保存枠101
+8601 Temporary storage frame 102 -- 一時保存枠102
+8602 Temporary storage frame 103 -- 一時保存枠103
+8603 Temporary storage frame 104 -- 一時保存枠104
+8604 Temporary storage frame 105 -- 一時保存枠105
+8605 Temporary storage frame 106 -- 一時保存枠106
+8606 Temporary storage frame 107 -- 一時保存枠107
+8607 Temporary storage frame 108 -- 一時保存枠108
+8608 Temporary storage frame 109 -- 一時保存枠109
+8609 Temporary storage frame 110 -- 一時保存枠110
+8610 Temporary storage frame 111 -- 一時保存枠111
+8611 Temporary storage frame 112 -- 一時保存枠112
+8612 Temporary storage frame 113 -- 一時保存枠113
+8613 Temporary storage frame 114 -- 一時保存枠114
+8614 Temporary storage frame 115 -- 一時保存枠115
+8615 Temporary storage frame 116 -- 一時保存枠116
+8616 Temporary storage frame 117 -- 一時保存枠117
+8617 Temporary storage frame 118 -- 一時保存枠118
+8618 Temporary storage frame 119 -- 一時保存枠119
+8619 Temporary storage frame 120 -- 一時保存枠120
+8620 Temporary storage frame 121 -- 一時保存枠121
+8621 Temporary storage frame 122 -- 一時保存枠122
+8622 Temporary storage frame 123 -- 一時保存枠123
+8623 Temporary storage frame 124 -- 一時保存枠124
+8624 Temporary storage frame 125 -- 一時保存枠125
+8625 Temporary storage frame 126 -- 一時保存枠126
+8626 Temporary storage frame 127 -- 一時保存枠127
+8627 Temporary storage frame 128 -- 一時保存枠128
+8628 Temporary storage frame 129 -- 一時保存枠129
+8629 Temporary storage frame 130 -- 一時保存枠130
+8630 Temporary storage frame 131 -- 一時保存枠131
+8631 Temporary storage frame 132 -- 一時保存枠132
+8632 Temporary storage frame 133 -- 一時保存枠133
+8633 Temporary storage frame 134 -- 一時保存枠134
+8634 Temporary storage frame 135 -- 一時保存枠135
+8635 Temporary storage frame 136 -- 一時保存枠136
+8636 Temporary storage frame 137 -- 一時保存枠137
+8637 Temporary storage frame 138 -- 一時保存枠138
+8638 Temporary storage frame 139 -- 一時保存枠139
+8639 Temporary storage frame 140 -- 一時保存枠140
+8640 Temporary storage frame 141 -- 一時保存枠141
+8641 Temporary storage frame 142 -- 一時保存枠142
+8642 Temporary storage frame 143 -- 一時保存枠143
+8643 Temporary storage frame 144 -- 一時保存枠144
+8644 Temporary storage frame 145 -- 一時保存枠145
+8645 Temporary storage frame 146 -- 一時保存枠146
+8646 Temporary storage frame 147 -- 一時保存枠147
+8647 Temporary storage frame 148 -- 一時保存枠148
+8648 Temporary storage frame 149 -- 一時保存枠149
+8649 Temporary storage frame 150 -- 一時保存枠150
+8650 Temporary storage frame 151 -- 一時保存枠151
+8651 Temporary storage frame 152 -- 一時保存枠152
+8652 Temporary storage frame 153 -- 一時保存枠153
+8653 Temporary storage frame 154 -- 一時保存枠154
+8654 Temporary storage frame 155 -- 一時保存枠155
+8655 Temporary storage frame 156 -- 一時保存枠156
+8656 Temporary storage frame 157 -- 一時保存枠157
+8657 Temporary storage frame 158 -- 一時保存枠158
+8658 Temporary storage frame 159 -- 一時保存枠159
+8659 Temporary storage frame 160 -- 一時保存枠160
+8660 Temporary storage frame 161 -- 一時保存枠161
+8661 Temporary storage frame 162 -- 一時保存枠162
+8662 Temporary storage frame 163 -- 一時保存枠163
+8663 Temporary storage frame 164 -- 一時保存枠164
+8664 Temporary storage frame 165 -- 一時保存枠165
+8665 Temporary storage frame 166 -- 一時保存枠166
+8666 Temporary storage frame 167 -- 一時保存枠167
+8667 Temporary storage frame 168 -- 一時保存枠168
+8668 Temporary storage frame 169 -- 一時保存枠169
+8669 Temporary storage frame 170 -- 一時保存枠170
+8670 Temporary storage frame 171 -- 一時保存枠171
+8671 Temporary storage frame 172 -- 一時保存枠172
+8672 Temporary storage frame 173 -- 一時保存枠173
+8673 Temporary storage frame 174 -- 一時保存枠174
+8674 Temporary storage frame 175 -- 一時保存枠175
+8675 Temporary storage frame 176 -- 一時保存枠176
+8676 Temporary storage frame 177 -- 一時保存枠177
+8677 Temporary storage frame 178 -- 一時保存枠178
+8678 Temporary storage frame 179 -- 一時保存枠179
+8679 Temporary storage frame 180 -- 一時保存枠180
+8680 Temporary storage frame 181 -- 一時保存枠181
+8681 Temporary storage frame 182 -- 一時保存枠182
+8682 Temporary storage frame 183 -- 一時保存枠183
+8683 Temporary storage frame 184 -- 一時保存枠184
+8684 Temporary storage frame 185 -- 一時保存枠185
+8685 Temporary storage frame 186 -- 一時保存枠186
+8686 Temporary storage frame 187 -- 一時保存枠187
+8687 Temporary storage frame 188 -- 一時保存枠188
+8688 Temporary storage frame 189 -- 一時保存枠189
+8689 Temporary storage frame 190 -- 一時保存枠190
+8690 Temporary storage frame 191 -- 一時保存枠191
+8691 Temporary storage frame 192 -- 一時保存枠192
+8692 Temporary storage frame 193 -- 一時保存枠193
+8693 Temporary storage frame 194 -- 一時保存枠194
+8694 Temporary storage frame 195 -- 一時保存枠195
+8695 Temporary storage frame 196 -- 一時保存枠196
+8696 Temporary storage frame 197 -- 一時保存枠197
+8697 Temporary storage frame 198 -- 一時保存枠198
+8698 Temporary storage frame 199 -- 一時保存枠199
+8699 Temporary storage frame 200 -- 一時保存枠200
+8700 Temporary storage frame 201 -- 一時保存枠201
+8701 Temporary storage frame 202 -- 一時保存枠202
+8702 Temporary storage frame 203 -- 一時保存枠203
+8703 Temporary storage frame 204 -- 一時保存枠204
+8704 Temporary storage frame 205 -- 一時保存枠205
+8705 Temporary storage frame 206 -- 一時保存枠206
+8706 Temporary storage frame 207 -- 一時保存枠207
+8707 Temporary storage frame 208 -- 一時保存枠208
+8708 Temporary storage frame 209 -- 一時保存枠209
+8709 Temporary storage frame 210 -- 一時保存枠210
+8710 Temporary storage frame 211 -- 一時保存枠211
+8711 Temporary storage frame 212 -- 一時保存枠212
+8712 Temporary storage frame 213 -- 一時保存枠213
+8713 Temporary storage frame 214 -- 一時保存枠214
+8714 Temporary storage frame 215 -- 一時保存枠215
+8715 Temporary storage frame 216 -- 一時保存枠216
+8716 Temporary storage frame 217 -- 一時保存枠217
+8717 Temporary storage frame 218 -- 一時保存枠218
+8718 Temporary storage frame 219 -- 一時保存枠219
+8719 Temporary storage frame 220 -- 一時保存枠220
+8720 Temporary storage frame 221 -- 一時保存枠221
+8721 Temporary storage frame 222 -- 一時保存枠222
+8722 Temporary storage frame 223 -- 一時保存枠223
+8723 Temporary storage frame 224 -- 一時保存枠224
+8724 Temporary storage frame 225 -- 一時保存枠225
+8725 Temporary storage frame 226 -- 一時保存枠226
+8726 Temporary storage frame 227 -- 一時保存枠227
+8727 Temporary storage frame 228 -- 一時保存枠228
+8728 Temporary storage frame 229 -- 一時保存枠229
+8729 Temporary storage frame 230 -- 一時保存枠230
+8730 Temporary storage frame 231 -- 一時保存枠231
+8731 Temporary storage frame 232 -- 一時保存枠232
+8732 Temporary storage frame 233 -- 一時保存枠233
+8733 Temporary storage frame 234 -- 一時保存枠234
+8734 Temporary storage frame 235 -- 一時保存枠235
+8735 Temporary storage frame 236 -- 一時保存枠236
+8736 Temporary storage frame 237 -- 一時保存枠237
+8737 Temporary storage frame 238 -- 一時保存枠238
+8738 Temporary storage frame 239 -- 一時保存枠239
+8739 Temporary storage frame 240 -- 一時保存枠240
+8740 Temporary storage frame 241 -- 一時保存枠241
+8741 Temporary storage frame 242 -- 一時保存枠242
+8742 Temporary storage frame 243 -- 一時保存枠243
+8743 Temporary storage frame 244 -- 一時保存枠244
+8744 Temporary storage frame 245 -- 一時保存枠245
+8745 Temporary storage frame 246 -- 一時保存枠246
+8746 Temporary storage frame 247 -- 一時保存枠247
+8747 Temporary storage frame 248 -- 一時保存枠248
+8748 Temporary storage frame 249 -- 一時保存枠249
+8749 Temporary storage frame 250 -- 一時保存枠250
+8750 Temporary storage frame 251 -- 一時保存枠251
+8751 Temporary storage frame 252 -- 一時保存枠252
+8752 Temporary storage frame 253 -- 一時保存枠253
+8753 Temporary storage frame 254 -- 一時保存枠254
+8754 Temporary storage frame 255 -- 一時保存枠255
+8755 Temporary storage frame 256 -- 一時保存枠256
+8756 Temporary storage frame 257 -- 一時保存枠257
+8757 Temporary storage frame 258 -- 一時保存枠258
+8758 Temporary storage frame 259 -- 一時保存枠259
+8759 Temporary storage frame 260 -- 一時保存枠260
+8760 Temporary storage frame 261 -- 一時保存枠261
+8761 Temporary storage frame 262 -- 一時保存枠262
+8762 Temporary storage frame 263 -- 一時保存枠263
+8763 Temporary storage frame 264 -- 一時保存枠264
+8764 Temporary storage frame 265 -- 一時保存枠265
+8765 Temporary storage frame 266 -- 一時保存枠266
+8766 Temporary storage frame 267 -- 一時保存枠267
+8767 Temporary storage frame 268 -- 一時保存枠268
+8768 Temporary storage frame 269 -- 一時保存枠269
+8769 Temporary storage frame 270 -- 一時保存枠270
+8770 Temporary storage frame 271 -- 一時保存枠271
+8771 Temporary storage frame 272 -- 一時保存枠272
+8772 Temporary storage frame 273 -- 一時保存枠273
+8773 Temporary storage frame 274 -- 一時保存枠274
+8774 Temporary storage frame 275 -- 一時保存枠275
+8775 Temporary storage frame 276 -- 一時保存枠276
+8776 Temporary storage frame 277 -- 一時保存枠277
+8777 Temporary storage frame 278 -- 一時保存枠278
+8778 Temporary storage frame 279 -- 一時保存枠279
+8779 Temporary storage frame 280 -- 一時保存枠280
+8780 Temporary storage frame 281 -- 一時保存枠281
+8781 Temporary storage frame 282 -- 一時保存枠282
+8782 Temporary storage frame 283 -- 一時保存枠283
+8783 Temporary storage frame 284 -- 一時保存枠284
+8784 Temporary storage frame 285 -- 一時保存枠285
+8785 Temporary storage frame 286 -- 一時保存枠286
+8786 Temporary storage frame 287 -- 一時保存枠287
+8787 Temporary storage frame 288 -- 一時保存枠288
+8788 Temporary storage frame 289 -- 一時保存枠289
+8789 Temporary storage frame 290 -- 一時保存枠290
+8790 Temporary storage frame 291 -- 一時保存枠291
+8791 Temporary storage frame 292 -- 一時保存枠292
+8792 Temporary storage frame 293 -- 一時保存枠293
+8793 Temporary storage frame 294 -- 一時保存枠294
+8794 Temporary storage frame 295 -- 一時保存枠295
+8795 Temporary storage frame 296 -- 一時保存枠296
+8796 Temporary storage frame 297 -- 一時保存枠297
+8797 Temporary storage frame 298 -- 一時保存枠298
+8798 Temporary storage frame 299 -- 一時保存枠299
+8799 Temporary storage frame 300 -- 一時保存枠300
+9000 Default character -- デフォルトキャラ
+9999 Phantom (without face) -- 幻影（顔なし）
+20100 [Multi NPC] Veteran Warrior: Royal Castle 1 ★ White Spirit 1 -- 【マルチNPC】ベテラン戦士：王城1★白霊1
+20110 [Multi-NPC] Veteran Warrior Darkness: Royal Castle 1 ■ Dark Spirit 1 -- 【マルチNPC】ベテラン戦士　闇落ち：王城1■闇霊1
+20200 [Multi NPC] Hiyokko Warrior (1st time): Royal Castle 1 ★ White Spirit 2 -- 【マルチNPC】ひよっこ戦士（一回目）：王城1★白霊2
+20210 [Multi NPC] Hiyokko Warrior (2nd time): Royal Castle 1 ★ White Spirit 3 -- 【マルチNPC】ひよっこ戦士（二回目）：王城1★白霊3
+20220 [Multi-NPC] Hiyokko Warrior (3rd time): Royal Castle 3 ★ White Spirit 2 -- 【マルチNPC】ひよっこ戦士（三回目）：王城3★白霊2
+20300 [Multi-NPC] King&#39;s Guard Female Knight (1st time): King Castle 2 ★ White Spirit 1 -- 【マルチNPC】王の親衛隊　女騎士（一回目）：王城2★白霊1
+20310 [Multi-NPC] King&#39;s Guard Female Knight (2nd time): King Castle 3 ★ White Spirit 1 -- 【マルチNPC】王の親衛隊　女騎士（二回目）：王城3★白霊1
+20400 [Multi NPC] Dragoon: Royal Castle 2 ★ White Spirit 2 -- 【マルチNPC】竜騎士：王城2★白霊2
+20500 [Multi-NPC] King&#39;s Guard Male Knight: King Castle 2 ■ Dark Spirit 1 -- 【マルチNPC】王の親衛隊　男騎士：王城2■闇霊1
+20600 [Multi-NPC] Spellcaster Poor: Town ★ White Spirit 1 -- 【マルチNPC】呪術使い　貧民：街★白霊1
+20700 [Multi-NPC] Supporter Baba: Town ★ White Spirit 2 -- 【マルチNPC】サポーターばばあ：街★白霊2
+20800 [Multi-NPC] Clergy: Town ★ White Spirit 3 -- 【マルチNPC】聖職者：街★白霊3
+20900 [Multi-NPC] Berserker: Town ★ White Spirit 4 -- 【マルチNPC】バーサーカー：街★白霊4
+21000 [Multi-NPC] Berserker: Town ■ Dark Spirit 1 -- 【マルチNPC】バーサーカー：街■闇霊1
+21100 [Multi-NPC] Sniper NPC: Sniper NPC: Ultra-distance -- 【マルチNPC】スナイパーNPC：スナイパーNPC：超距離
+21200 [Multi NPC] Dragon Hunting Warrior: Bridge ★ White Spirit 1 -- 【マルチNPC】竜狩りの戦士：橋★白霊1
+21300 [Multi-NPC] Warrior who collapsed in the middle of his ambition: Bridge ★ White Spirit 2 -- 【マルチNPC】志半ばで倒れた戦士：橋★白霊2
+21400 [Multi-NPC] Healer with a blunt instrument: Forest ★ White Spirit 1_On the way -- 【マルチNPC】鈍器持ち治癒使い：森★白霊1_道中
+21410 [Multi-NPC] Healer with a blunt instrument: Forest ★ White Spirit 2_On the way -- 【マルチNPC】鈍器持ち治癒使い：森★白霊2_道中
+21500 [Multi-NPC] Man to hit: Mori ★ White Spirit 2_VS Elder -- 【マルチNPC】一撃にかける男：森★白霊2_VS古老
+21600 [Multi-NPC] Meat-cutting Woman: Forest ★ White Spirit 2_VS Observer -- 【マルチNPC】肉断ち女：森★白霊2_VS監視者
+21610 [Multi-NPC] Meat-cutting woman: Forest ■ Black spirit 1_ intrusion -- 【マルチNPC】肉断ち女：森■黒霊1_乱入
+21800 [Multi-NPC] King&#39;s Guard Captain: King Castle 3 ■ Dark Spirit 1 -- 【マルチNPC】王の親衛隊長：王城3■闇霊1
+21900 [Multi-NPC] Strong Warrior: Shrine ★ White Spirit 1_VS Cardinals -- 【マルチNPC】屈強な戦士：聖堂★白霊1_VS枢機卿団
+22000 [Multi-NPC] I love Parry: Shrine ★ White Spirit 2_On the way -- 【マルチNPC】パリィ大好き：聖堂★白霊2_道中
+22100 [Multi-NPC] Growing Twin Swordsman (1st time): Shrine ★ White Spirit 3_On the way -- 【マルチNPC】成長する双剣使い（1回目）：聖堂★白霊3_道中
+22110 [Multi-NPC] Growing Twin Swordsman (2nd time): Dungeon ★ White Spirit 2_On the way (bottom) -- 【マルチNPC】成長する双剣使い（2回目）：ダンジョン★白霊2_道中（下）
+22120 [Multi-NPC] Growing Twin Swordsman (3rd time): Base ★ White Spirit 1_On the way -- 【マルチNPC】成長する双剣使い（3回目）：拠点★白霊1_道中
+22200 [Multi-NPC] Sickle messenger: Basilica ■ Dark Spirit_Intrusion -- 【マルチNPC】煽ってくる鎌使い：聖堂■闇霊_乱入
+22300 [Multi NPC] Attribute Enchantment Swordfighter: Anor ★ White Spirit 1 -- 【マルチNPC】属性エンチャント剣士：アノール★白霊1
+22400 [Multi NPC] Senior Wizard: Anor ★ White Spirit 2 -- 【マルチNPC】上級魔術師：アノール★白霊2
+22500 [Multi NPC] Bucket Head: On Anor ★ White Spirit 1 -- 【マルチNPC】バケツ頭：アノール上★白霊1
+22600 [Multi NPC] Item Master: Anor ■ Dark Spirit 1 -- 【マルチNPC】アイテム師：アノール■闇霊1
+22700 [Multi-NPC] Rush Lancer: Dungeon ★ White Spirit 1_On the way (above) -- 【マルチNPC】突進ランサー：ダンジョン★白霊1_道中（上）
+22800 [Multi-NPC] I love &quot;illuminating light&quot;: Dungeon ★ White Spirit 3_On the way (bottom) -- 【マルチNPC】「照らす光」大好き：ダンジョン★白霊3_道中（下）
+22900 [Multi NPC] Priest: Dungeon ★ White Spirit 4_VS King of the Dead -- 【マルチNPC】聖職者：ダンジョン★白霊4_VS死霊の王
+23000 [Multi-NPC] Rapier-using skillful swordfighter: Dungeon ★ White Spirit 5_VS Crimson Bat -- 【マルチNPC】レイピア使いの技巧派剣士：ダンジョン★白霊5_VSクリムゾンバット
+23100 [Multi-NPC] Strong man in battle: Dungeon ★ White Spirit 6_VS Ash Demon -- 【マルチNPC】歴戦の強者：ダンジョン★白霊6_VS灰のデーモン
+23200 [Multi-NPC] Thief in the dark: Dungeon ■ Dark spirit_intrusion -- 【マルチNPC】闇にまぎれた盗人：ダンジョン■闇霊_乱入
+23300 [Multi-NPC] Suspicious Wanderer: Dungeon ★ White Spirit 1 -- 【マルチNPC】怪しげな放浪者：地下牢★白霊1
+23310 [Multi-NPC] Suspicious Wanderer: Dungeon ■ Dark Spirit 4 -- 【マルチNPC】怪しげな放浪者：地下牢■闇霊4
+23400 [Multi-NPC] Knight who was deceived and captured: Dungeon ★ White Spirit 2 -- 【マルチNPC】騙され囚われた騎士：地下牢★白霊2
+23410 [Multi-NPC] Knight deceived and captured: Dungeon ■ Dark Spirit 3 -- 【マルチNPC】騙され囚われた騎士：地下牢■闇霊3
+23500 [Multi-NPC] Hired Assassin: Dungeon ■ Dark Spirit 1 -- 【マルチNPC】雇われの暗殺者：地下牢■闇霊1
+23600 [Multi-NPC] Bizarre Executioner: Dungeon ■ Dark Spirit 2 -- 【マルチNPC】猟奇的な処刑人：地下牢■闇霊2
+23700 [Multi NPC] Gunda Equipment: Base ★ White Spirit 2_VS Evil Spirit -- 【マルチNPC】グンダ装備：拠点★白霊2_VS邪霊
+23800 [Multi-NPC] Insufficient material: Base ★ White Spirit 3_VS Las Boss -- 【マルチNPC】ネタ不足：拠点★白霊3_VSラスボス
+24700 [NPC] Meat-cutting knife woman -- 【NPC】肉断ち包丁女
+24800 [NPC] Merchant B -- 【NPC】商人B
+25000 [NPC] Kaas&#39;s messenger -- 【NPC】カアスの使者
+25100 [NPC] King&#39;s Investigator A -- 【NPC】王の探索者A
+25101 [NPC] King&#39;s Investigator A: Duel -- 【NPC】王の探索者A：決闘
+25200 [NPC] King&#39;s Investigator B -- 【NPC】王の探索者B
+25300 [NPC] King&#39;s Investigator C -- 【NPC】王の探索者C
+25305 [NPC] Pig guy -- 【NPC】豚野郎
+25400 [NPC] Magician -- 【NPC】魔術屋
+25500 [NPC] Magician -- 【NPC】呪術屋
+25600 [NPC] Magic magic shop -- 【NPC】魔法呪術屋
+25700 [NPC] Miracle shop -- 【NPC】奇跡屋
+25701 [NPC] Miracle Shop: Fire Guardian -- 【NPC】奇跡屋：火守女
+25800 [NPC] Knight of the Miracle Shop -- 【NPC】奇跡屋の騎士
+25900 [NPC] Miraculous Darkman -- 【NPC】奇跡闇術師
+26000 [NPC] Henri: Woman -- 【NPC】アンリ:女
+26010 [NPC] Henri: Man -- 【NPC】アンリ:男
+26100 [NPC] Patch: Catalina equipment -- 【NPC】パッチ:カタリナ装備
+26101 [NPC] Patch -- 【NPC】パッチ
+26200 [NPC] Descendants of Catalina -- 【NPC】カタリナの子孫
+26300 [NPC] Pig King -- 【NPC】豚王
+27300 [NPC] General-purpose A (fake master) -- 【NPC】汎用A（偽達人）
+27301 [NPC] General-purpose A (master) -- 【NPC】汎用A（真達人）
+27400 [NPC] General-purpose B (yellow robe) -- 【NPC】汎用B（黄衣）
+27500 [NPC] Roslick&#39;s messenger B (general purpose C) -- 【NPC】ロスリックの密使B（汎用C）
+27600 [NPC] General-purpose D (witch doctor) -- 【NPC】汎用D（呪術師）
+27700 [NPC] Special A (madman) -- 【NPC】特別A（狂人）
+27800 [NPC] Special B (white shadow of Rondor) -- 【NPC】特別B（ロンドールの白い影）
+27900 [NPC] Roslick&#39;s messenger A -- 【NPC】ロスリックの密使A
+28000 [NPC] Roslick&#39;s messenger C -- 【NPC】ロスリックの密使C
+28100 [NPC] Forest Connection Manager 1 -- 【NPC】森接続部番人１
+28200 [NPC] Forest Connection Manager 2 -- 【NPC】森接続部番人２
+28300 [NPC] Forest Shrine Church Connection 1 -- 【NPC】森聖堂教会接続部１
+28400 [NPC] Forest Shrine Church Connection 2 -- 【NPC】森聖堂教会接続部２
+28600 [NPC] On the roof of the dungeon ruins -- 【NPC】地下牢遺跡屋根上
+28700 [NPC] Summon the Serpent Priest 1 -- 【NPC】蛇人司祭召喚１
+28800 [NPC] Summon the Serpent Priest 2 -- 【NPC】蛇人司祭召喚２
+28900 [NPC] Summon the Serpent Priest 3 -- 【NPC】蛇人司祭召喚３
+29000 [NPC] Anor Guardian 1 -- 【NPC】アノール守護1
+29100 [NPC] Anor Guardian 2 -- 【NPC】アノール守護2
+29200 [NPC] Tarkus -- 【NPC】タルカス
+29300 [NPC] Clayton -- 【NPC】クレイトン
+29400 [NPC] Aruba -- 【NPC】アルバ
+29500 [NPC] Kirk -- 【NPC】カーク
+30000 [Ritual NPC White Spirit] Game start -- 【儀式NPC白霊】ゲーム開始
+30010 [Ritual NPC White Spirit] Royal Castle 1 -- 【儀式NPC白霊】王城１
+30020 [Ritual NPC White Spirit] Tower Town -- 【儀式NPC白霊】塔の街
+30030 [Ritual NPC White Spirit] Forest 1 (first half) -- 【儀式NPC白霊】森１（前半）
+30040 [Ritual NPC White Spirit] Basilica Church -- 【儀式NPC白霊】聖堂教会
+30050 [Ritual NPC White Spirit] Forest 2 (second half) -- 【儀式NPC白霊】森２（後半）
+30060 [Ritual NPC White Spirit] Dungeon -- 【儀式NPC白霊】ダンジョン
+30070 [Ritual NPC White Spirit] Dungeon Underground Lake (Sub) -- 【儀式NPC白霊】ダンジョン地底湖（サブ）
+30080 [Ritual NPC White Spirit] Anor -- 【儀式NPC白霊】アノール
+30090 [Ritual NPC White Spirit] Dungeon -- 【儀式NPC白霊】地下牢
+30100 [Ritual NPC White Spirit] On Anor (Sub) -- 【儀式NPC白霊】アノール上（サブ）
+30110 [Ritual NPC White Spirit] Royal Castle 2 -- 【儀式NPC白霊】王城２
+30120 [Ritual NPC White Spirit] Royal Castle 3 -- 【儀式NPC白霊】王城３
+30130 [Ritual NPC White Spirit] Bridge (Sub) -- 【儀式NPC白霊】橋（サブ）
+30140 [Ritual NPC White Spirit] Base -- 【儀式NPC白霊】拠点
+30150 [Ritual NPC White Spirit] Game end -- 【儀式NPC白霊】ゲーム終了
+31000 [Ritual NPC White Spirit: Play Area 2] Game Start -- 【儀式NPC白霊：プレイ領域２】ゲーム開始
+31010 [Ritual NPC White Spirit: Play Area 2] Royal Castle 1 -- 【儀式NPC白霊：プレイ領域２】王城１
+31020 [Ritual NPC White Spirit: Play Area 2] Tower Town -- 【儀式NPC白霊：プレイ領域２】塔の街
+31030 [Ritual NPC White Spirit: Play Area 2] Forest 1 (first half) -- 【儀式NPC白霊：プレイ領域２】森１（前半）
+31040 [Ritual NPC White Spirit: Play Area 2] Shrine Church -- 【儀式NPC白霊：プレイ領域２】聖堂教会
+31050 [Ritual NPC White Spirit: Play Area 2] Forest 2 (second half) -- 【儀式NPC白霊：プレイ領域２】森２（後半）
+31060 [Ritual NPC White Spirit: Play Area 2] Dungeon -- 【儀式NPC白霊：プレイ領域２】ダンジョン
+31070 [Ritual NPC White Spirit: Play Area 2] Dungeon Underground Lake (Sub) -- 【儀式NPC白霊：プレイ領域２】ダンジョン地底湖（サブ）
+31080 [Ritual NPC White Spirit: Play Area 2] Anor -- 【儀式NPC白霊：プレイ領域２】アノール
+31090 [Ritual NPC White Spirit: Play Area 2] Dungeon -- 【儀式NPC白霊：プレイ領域２】地下牢
+31100 [Ritual NPC White Spirit: Play Area 2] On Anor (Sub) -- 【儀式NPC白霊：プレイ領域２】アノール上（サブ）
+31110 [Ritual NPC White Spirit: Play Area 2] Royal Castle 2 -- 【儀式NPC白霊：プレイ領域２】王城２
+31120 [Ritual NPC White Spirit: Play Area 2] Royal Castle 3 -- 【儀式NPC白霊：プレイ領域２】王城３
+31130 [Ritual NPC White Spirit: Play Area 2] Bridge (Sub) -- 【儀式NPC白霊：プレイ領域２】橋（サブ）
+31140 [Ritual NPC White Spirit: Play Area 2] Base -- 【儀式NPC白霊：プレイ領域２】拠点
+31150 [Ritual NPC White Spirit: Play Area 2] Game End -- 【儀式NPC白霊：プレイ領域２】ゲーム終了

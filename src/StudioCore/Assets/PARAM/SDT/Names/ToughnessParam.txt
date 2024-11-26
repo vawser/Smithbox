@@ -1,0 +1,13 @@
+1 General parameters for enemies -- 敵用の汎用パラメータ
+10 General purpose: 1.0 times -- 汎用：1.0倍
+15 General purpose: 1.5 times -- 汎用：1.5倍
+20 General purpose: 2.0 times -- 汎用：2.0倍
+25 General purpose: 2.5 times -- 汎用：2.5倍
+30 General purpose: 3.0 times -- 汎用：3.0倍
+50 Rolling: Toughness (less than straight sword) -- ローリング中：強靭度（直剣以下）
+100 Attack: One hand: Weak -- 攻撃：片手：弱
+101 Attack: One hand: Weak: Minimum guarantee -- 攻撃：片手：弱：最低保障
+110 Attack: One hand: Strong -- 攻撃：片手：強
+111 Attack: One hand: Strong: Minimum guarantee -- 攻撃：片手：強：最低保障
+120 Attack: One hand: Strong MAX accumulation -- 攻撃：片手：強MAX溜め
+121 Attack: One hand: Strong MAX Accumulation: Minimum guarantee -- 攻撃：片手：強MAX溜め：最低保障

@@ -1,0 +1,31 @@
+1 test booster 01 -- テストブースター01
+2 Low speed long distance QB booster test -- 低速長距離QBブースターテスト
+3 High speed short range QB booster test -- 高速短距離QBブースターテスト
+4 Minimum performance booster test -- 最低性能ブースターテスト
+5 cut-in image test -- カットインイメージテスト
+10 Tank leg booster test -- タンク脚部ブースターテスト
+2020 [test] Breho behavior adjustment_Plasma broadsword -- 【test】ブレホ挙動調整用_プラズマブロードソード
+2050 [test] Breho behavior adjustment_lance -- 【test】ブレホ挙動調整用_ランス
+60000000 BS_A_1010 Bayrum Booster -- BS_A_1010 ベイラムブースター
+60010000 BS_A_2010 Heavy Crest Booster -- BS_A_2010 重クレストブースター
+60020000 BS_A_3010 Rayleonard Booster -- BS_A_3010 レイレナードブースター
+60030000 BS_A_4010 Mirage Booster -- BS_A_4010 ミラージュブースター
+60040000 BS_A_5010 Label Booster -- BS_A_5010 ラベールブースター
+60050000 BS_A_6010 Iqbal Booster -- BS_A_6010 イクバールブースター
+60060000 BS_A_7010 Cuba Booster -- BS_A_7010 キューバブースター
+60070000 BS_A_8010 Kawamori Booster -- BS_A_8010 カワモリブースター
+60070100 BS_A_8020 Miyatake Booster -- BS_A_8020 ミヤタケブースター
+60070200 BS_A_8030 JUDO Booster -- BS_A_8030 JUDOブースター
+60070300 BS_A_8040 ​​Troll Booster -- BS_A_8040 トロルブースター
+60070400 BS_A_8050 R&D Booster -- BS_A_8050 R＆Dブースター
+60900000 Event exclusive_Jailbreak mission booster -- イベント専用_脱獄ミッション用ブースター
+60900100 Booster for tremo 01 -- トレモ01用ブースター
+60900200 Booster for tremo 02 -- トレモ02用ブースター
+60900300 Booster for tremo 03 -- トレモ03用ブースター
+60900400 Booster for tremo 04 -- トレモ04用ブースター
+60900500 Booster for tremo 05 -- トレモ05用ブースター
+60901000 Event exclusive_Jailbreak mission booster -- イベント専用_脱獄ミッション用ブースター
+60901100 Prologue booster -- プロローグ用ブースター
+63300000 Tank leg_Baylum booster -- タンク脚部_ベイラムブースター
+63340000 Tank leg_Label booster -- タンク脚部_ラベールブースター
+63360000 Tank leg_Cuba booster -- タンク脚部_キューバブースター

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to infusion cost." Row0Dummy="" />
+  <Field>
+    <infusion_1_cost AltName="Infusion 1 - Cost"/>
+    <infusion_2_cost AltName="Infusion 2 - Cost"/>
+    <infusion_3_cost AltName="Infusion 3 - Cost"/>
+    <infusion_4_cost AltName="Infusion 4 - Cost"/>
+    <infusion_5_cost AltName="Infusion 5 - Cost"/>
+    <infusion_6_cost AltName="Infusion 6 - Cost"/>
+    <infusion_7_cost AltName="Infusion 7 - Cost"/>
+    <infusion_8_cost AltName="Infusion 8 - Cost"/>
+    <infusion_9_cost AltName="Infusion 9 - Cost"/>
+    <infusion_10_cost AltName="Infusion 10 - Cost"/>
+    <infusion_1_item AltName="Infusion 1 - Infusion Item" Refs="ItemParam"/>
+    <infusion_2_item AltName="Infusion 2 - Infusion Item" Refs="ItemParam"/>
+    <infusion_3_item AltName="Infusion 3 - Infusion Item" Refs="ItemParam"/>
+    <infusion_4_item AltName="Infusion 4 - Infusion Item" Refs="ItemParam"/>
+    <infusion_5_item AltName="Infusion 5 - Infusion Item" Refs="ItemParam"/>
+    <infusion_6_item AltName="Infusion 6 - Infusion Item" Refs="ItemParam"/>
+    <infusion_7_item AltName="Infusion 7 - Infusion Item" Refs="ItemParam"/>
+    <infusion_8_item AltName="Infusion 8 - Infusion Item" Refs="ItemParam"/>
+    <infusion_9_item AltName="Infusion 9 - Infusion Item" Refs="ItemParam"/>
+    <infusion_10_item AltName="Infusion 10 - Infusion Item" Refs="ItemParam"/>
+    <infusion_1_item_amount AltName="Infusion 1 - Item Amount"/>
+    <infusion_2_item_amount AltName="Infusion 2 - Item Amount"/>
+    <infusion_3_item_amount AltName="Infusion 3 - Item Amount"/>
+    <infusion_4_item_amount AltName="Infusion 4 - Item Amount"/>
+    <infusion_5_item_amount AltName="Infusion 5 - Item Amount"/>
+    <infusion_6_item_amount AltName="Infusion 6 - Item Amount"/>
+    <infusion_7_item_amount AltName="Infusion 7 - Item Amount"/>
+    <infusion_8_item_amount AltName="Infusion 8 - Item Amount"/>
+    <infusion_9_item_amount AltName="Infusion 9 - Item Amount"/>
+    <infusion_10_item_amount AltName="Infusion 10 - Item Amount"/>
+  </Field>
+</PARAMMETA>

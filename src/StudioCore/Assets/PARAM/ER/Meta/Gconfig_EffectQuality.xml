@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="CS_GCONFIG_Enabled_TYPE" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <softParticleEnabled AltName="Soft Particles Enabled" Wiki="Soft particles Enabled" IsBool="" />
+    <glowEnabled AltName="Glow Enabled" Wiki="Glow effective" IsBool="" />
+    <distortionEnable AltName="Distortion Enabled" Wiki="Distortion effective" IsBool="" />
+    <cs_upScaleEnabledType AltName="Enable Bilateral Upscale" Wiki="Bilateral upscale effective" Enum="CS_GCONFIG_Enabled_TYPE" />
+    <fNumOnceEmitsScale AltName="Number of Emits in Instance" Wiki="Number of Emits at one time" />
+    <fEmitSpanScale AltName="Emit Interval" Wiki="Emit interval" />
+    <fLodDistance1Scale AltName="1st LOD Distance Scale" Wiki="1st stage LOD distance scale" />
+    <fLodDistance2Scale AltName="2nd LOD Distance Scale" Wiki="Second stage LOD distance scale" />
+    <fLodDistance3Scale AltName="3rd LOD Distance Scale" Wiki="3rd stage LOD distance scale" />
+    <fLodDistance4Scale AltName="4th LOD Distance Scale" Wiki="4th stage LOD distance scale" />
+    <fScaleRenderDistanceScale AltName="Scale Render Distance Scale" Wiki="Magnification to the distance registered in the reduction buffer" />
+    <dmy AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

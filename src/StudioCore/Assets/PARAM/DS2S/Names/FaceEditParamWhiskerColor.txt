@@ -1,0 +1,10 @@
+0 Beard Color Set 1 -- ヒゲの色セット1
+1 Beard Color Set 2 -- ヒゲの色セット2
+2 Beard Color Set 3 -- ヒゲの色セット3
+3 Beard Color Set 4 -- ヒゲの色セット4
+4 Beard Color Set 5 -- ヒゲの色セット5
+5 Beard Color Set 6 -- ヒゲの色セット6
+6 Beard Color Set 7 -- ヒゲの色セット7
+7 Beard Color Set 8 -- ヒゲの色セット8
+8 Beard Color Set 9 -- ヒゲの色セット9
+9 Beard Color Set 10 -- ヒゲの色セット10

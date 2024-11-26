@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_GENERATE_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 eneBulletID">
+      <DisplayName>敵弾丸ID</DisplayName>
+      <Description>弾丸パラメータの敵弾ID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s8 entityGroup = 2">
+      <DisplayName>勢力グループ</DisplayName>
+      <Enum>ENTITY_GROUP</Enum>
+      <Description>敵味方設定</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 generateMax = 16">
+      <DisplayName>最大発生数</DisplayName>
+      <Description>同じパラメータから出現する敵の最大数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 generateAtOnce = 1">
+      <DisplayName>同時発生数</DisplayName>
+      <Description>同時に発生する数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u8 generateLimit">
+      <DisplayName>発生限界</DisplayName>
+      <Description>ひとつのジェネレータから出せる敵の数。０だと無限。</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="u16 geneInterval">
+      <DisplayName>発生間隔[frame]</DisplayName>
+      <Description>敵の発生間隔。０で一回のみ発生。60FPS換算</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="u16 geneRange">
+      <DisplayName>発生距離[m]</DisplayName>
+      <Description>敵が発生し始める距離。発生間隔が０以外の場合有効。（ポイント配置系）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="f32 minAliveTime">
+      <DisplayName>生きている最小時間[秒]</DisplayName>
+      <Description>最小と最大が0以下で時限死亡なし</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="f32 maxAliveTime">
+      <DisplayName>生きている最大時間[秒]</DisplayName>
+      <Description>最小と最大が0以下で時限死亡なし</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="u16 initialSpeed">
+      <DisplayName>初速[m/s]</DisplayName>
+      <Description>初速</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="u8 hitChkStartFrame">
+      <DisplayName>ジェネレート後当たりを無視する時間[frame]</DisplayName>
+      <Description>ジェネレート後、当たりを無視する時間。60フレーム換算</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="u8 ctrlBootFrame_begin">
+      <DisplayName>制御復帰時間[frame]</DisplayName>
+      <Description>復帰時間。60フレーム換算</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="u8 ctrlBootFrame_width">
+      <DisplayName>制御復帰時間（幅）[frame]</DisplayName>
+      <Description>復帰時間の幅。ランダムで。60フレーム換算</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="u8 launchDirAngle">
+      <DisplayName>射出ブレ角度[deg]</DisplayName>
+      <Description>設定方向に対して、ランダムでブレる角度。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>90</Maximum>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="dummy8 reserve2[6]">
+      <DisplayName>予約</DisplayName>
+      <SortID>110</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

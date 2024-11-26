@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CHARACTER_INIT_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 BaseRec_mp" />
+    <Field Def="f32 BaseRec_sp" />
+    <Field Def="f32 red_Falldam" />
+    <Field Def="s32 soul" />
+    <Field Def="s32 equip_Wep_Right = 2010000" />
+    <Field Def="s32 equip_Subwep_Right = -1" />
+    <Field Def="s32 equip_Wep_Left = 2.128E+07" />
+    <Field Def="s32 equip_Subwep_Left = -1" />
+    <Field Def="s32 equip_Helm = 7.2E+07" />
+    <Field Def="s32 equip_Armor = 7.2001E+07" />
+    <Field Def="s32 equip_Gaunt = 7.2002E+07" />
+    <Field Def="s32 equip_Leg = 7.2003E+07" />
+    <Field Def="s32 equip_Arrow = 400000" />
+    <Field Def="s32 equip_Bolt = 404000" />
+    <Field Def="s32 equip_SubArrow = 400200" />
+    <Field Def="s32 equip_SubBolt = 404300" />
+    <Field Def="s32 equip_Accessory1 = -1" />
+    <Field Def="s32 equip_Accessory2 = -1" />
+    <Field Def="s32 equip_Accessory3 = -1" />
+    <Field Def="s32 equip_Accessory4 = -1" />
+    <Field Def="s32 equip_Accessory5 = 10000" />
+    <Field Def="s32 Equip_Skill_01 = -1" />
+    <Field Def="s32 Equip_Skill_02 = -1" />
+    <Field Def="s32 Equip_Skill_03 = -1" />
+    <Field Def="s32 equip_Spell_01 = -1" />
+    <Field Def="s32 equip_Spell_02 = -1" />
+    <Field Def="s32 equip_Spell_03 = -1" />
+    <Field Def="s32 equip_Spell_04 = -1" />
+    <Field Def="s32 equip_Spell_05 = -1" />
+    <Field Def="s32 equip_Spell_06 = -1" />
+    <Field Def="s32 equip_Spell_07 = -1" />
+    <Field Def="s32 Item_01 = 165" />
+    <Field Def="s32 Item_02 = 290" />
+    <Field Def="s32 Item_03 = 310" />
+    <Field Def="s32 Item_04 = 292" />
+    <Field Def="s32 Item_05 = 294" />
+    <Field Def="s32 Item_06 = 330" />
+    <Field Def="s32 Item_07 = 341" />
+    <Field Def="s32 Item_08 = 271" />
+    <Field Def="s32 Item_09 = 272" />
+    <Field Def="s32 Item_10 = 240" />
+    <Field Def="s32 npcPlayerFaceGenId = 9000" />
+    <Field Def="s32 npcPlayerThinkId" />
+    <Field Def="s16 baseHp" />
+    <Field Def="s16 baseMp" />
+    <Field Def="s16 baseSp" />
+    <Field Def="s16 arrowNum = 99" />
+    <Field Def="s16 boltNum = 99" />
+    <Field Def="s16 subArrowNum = 99" />
+    <Field Def="s16 subBoltNum = 99" />
+    <Field Def="s16 QWC_sb" />
+    <Field Def="s16 QWC_mw" />
+    <Field Def="s16 QWC_cd" />
+    <Field Def="s16 soulLvl" />
+    <Field Def="s8 baseVit = 99" />
+    <Field Def="s8 baseWil = 99" />
+    <Field Def="s8 baseEnd = 99" />
+    <Field Def="s8 baseStr = 99" />
+    <Field Def="s8 baseDex = 99" />
+    <Field Def="s8 baseMag = 99" />
+    <Field Def="s8 baseFai = 99" />
+    <Field Def="s8 baseLuc = 99" />
+    <Field Def="s8 baseHeroPoint" />
+    <Field Def="s8 baseDurability = 99" />
+    <Field Def="u8 itemNum_01 = 10" />
+    <Field Def="u8 itemNum_02 = 99" />
+    <Field Def="u8 itemNum_03 = 99" />
+    <Field Def="u8 itemNum_04 = 99" />
+    <Field Def="u8 itemNum_05 = 99" />
+    <Field Def="u8 itemNum_06 = 99" />
+    <Field Def="u8 itemNum_07 = 99" />
+    <Field Def="u8 itemNum_08 = 99" />
+    <Field Def="u8 itemNum_09 = 99" />
+    <Field Def="u8 itemNum_10 = 99" />
+    <Field Def="u8 bodyScaleHead" />
+    <Field Def="u8 bodyScaleBreast" />
+    <Field Def="u8 BodyScaleAbdomen" />
+    <Field Def="u8 BodyScaleArm" />
+    <Field Def="u8 BodyScaleLeg" />
+    <Field Def="u8 gestureid0 = 2" />
+    <Field Def="u8 gestureid1 = 5" />
+    <Field Def="u8 gestureid2 = 10" />
+    <Field Def="u8 gestureid3 = 11" />
+    <Field Def="u8 gestureid4 = 12" />
+    <Field Def="u8 gestureid5 = 13" />
+    <Field Def="u8 gestureid6 = 14" />
+    <Field Def="u8 npcPlayerType" />
+    <Field Def="u8 npcPlayerDrawType" />
+    <Field Def="u8 NpcPlayerSex = 1" />
+    <Field Def="u8 vowType" />
+    <Field Def="u8 VoiceType" />
+    <Field Def="u8 unknown_0xe7" />>
+    <Field Def="s32 equip_Wep_Right_GenId = -1" />
+    <Field Def="s32 equip_Subwep_Right_GenId = -1" />
+    <Field Def="s32 equip_Wep_Left_GenId = -1" />
+    <Field Def="s32 equip_Subwep_Left_GenId = -1" />
+    <Field Def="s32 equip_Helm_GenId = -1" />
+    <Field Def="s32 equip_Armor_GenId = -1" />
+    <Field Def="s32 equip_Gaunt_GenId = -1" />
+    <Field Def="s32 equip_Leg_GenId = -1" />
+    <Field Def="s32 equip_Wep_Body_GenId = -1" />
+    <Field Def="s32 SecondaryItem_01 = -1" />
+    <Field Def="s32 SecondaryItem_02 = -1" />
+    <Field Def="s32 SecondaryItem_03 = 500" />
+    <Field Def="s32 SecondaryItem_04 = 100" />
+    <Field Def="s32 SecondaryItem_05 = 101" />
+    <Field Def="s32 SecondaryItem_06 = 102" />
+    <Field Def="s32 SecondaryItem_07 = 103" />
+    <Field Def="s32 SecondaryItem_08 = 385" />
+    <Field Def="u8 secondaryItemNum_01 = 99" />
+    <Field Def="u8 secondaryItemNum_02 = 1" />
+    <Field Def="u8 secondaryItemNum_03 = 1" />
+    <Field Def="u8 secondaryItemNum_04 = 1" />
+    <Field Def="u8 secondaryItemNum_05 = 1" />
+    <Field Def="u8 secondaryItemNum_06 = 1" />
+    <Field Def="u8 secondaryItemNum_07 = 10" />
+    <Field Def="u8 secondaryItemNum_08 = 10" />
+    <Field Def="dummy8 pad2[12]" />
+  </Fields>
+</PARAMDEF>

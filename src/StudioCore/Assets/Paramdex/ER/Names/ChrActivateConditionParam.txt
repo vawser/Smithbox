@@ -1,7 +1,0 @@
-0 Always
-99999 Always
-101000 Appear at Night
-101001 Appear at Day
-101010 Appear at Day
-21200000 Always
-21200010 Appear during Heavy Snow

@@ -1,0 +1,6 @@
+80 Front unprotected directing camera
+81 Front unprotected production camera (pull out)
+82 Front unprotected production camera (for mallet thrown)
+83 Front unprotected production camera (for large sword)
+90 Rear unprotected directing camera
+92 Rear unprotected directing camera (for Mallet)

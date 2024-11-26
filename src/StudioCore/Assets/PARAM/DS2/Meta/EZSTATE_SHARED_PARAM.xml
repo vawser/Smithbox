@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines values related to ezstate parameters." Row0Dummy="" />
+  <Field>
+    <ezstate_value AltName="Value"/>
+  </Field>
+</PARAMMETA>

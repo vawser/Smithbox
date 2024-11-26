@@ -1,0 +1,203 @@
+1 
+2 Name
+3 Body Type
+4 Age
+5 
+6 Origin
+7 Keepsake
+8 
+9 Choose Base Template
+10 Detailed Appearance
+11 Age
+12 Voice
+13 
+14 Alter Skin Color
+15 Alter Face & Hair
+16 Adjust Face Template
+17 Bone Structure
+18 Form Ephasis
+19 Apparent Age
+20 Facial Aesthetic
+21 
+22 Face Structure
+23 Facial Balance
+24 Nose Size
+25 Nose/Forehead Ratio
+26 Face Protrusion
+27 Vert. Face Ratio
+28 Facial Feature Slant
+29 Horiz. Face Ratio
+30 
+31 Forehead/Glabella
+32 Forehead Depth
+33 Forehead Protrusion
+34 Nose Bridge Height
+35 Bridge Protrusion 1
+36 Bridge Protrusion 2
+37 Nose Bridge Width
+38 
+39 Brow Ridge
+40 Brow Ridge Height
+41 Inner Brow Ridge
+42 Outer Brow Ridge
+43 
+44 Eyes
+45 Eye Position
+46 Eye Size
+47 Eye Slant
+48 Eye Spacing
+49 
+50 Nose Ridge
+51 Nose Ridge Depth
+52 Nose Ridge Length
+53 Nose Position
+54 Nose Tip Height
+55 Nose Protrusion
+56 Nose Height
+57 Nose Slant
+58 
+59 Nostrils
+60 Nostril Slant
+61 Nostril Size
+62 Nostril Width
+63 
+64 Cheeks
+65 Cheekbone Height
+66 Cheekbone Depth
+67 Cheekbone Width
+68 Cheekbone Protrusion
+69 Cheeks
+70 
+71 Lips
+72 Lip Shape
+73 Mouth Expression
+74 Lip Fullness
+75 Lip Size
+76 Lip Protrusion
+77 Lip Thickness
+78 
+79 Mouth
+80 Mouth Protrusion
+81 Mouth Slant
+82 Occlusion
+83 Mouth Position
+84 Mouth Width
+85 Mouth-Chin Distance
+86 
+87 Chin
+88 Chin Tip Position
+89 Chin Length
+90 Chin Protrusion
+91 Chin Depth
+92 Chin Size
+93 Chin Height
+94 Chin Width
+95 
+96 Jaw
+97 Jaw Protrusion
+98 Jaw Width
+99 Lower Jaw
+100 Jaw Contour
+101 
+102 
+103 
+104 Hair
+105 Hair
+106 Hair Color
+107 Luster (Hair)
+108 Root Darkness (Hair)
+109 White Hairs (Hair)
+110 
+111 Eyebrows
+112 Brows
+113 Brow Color
+114 Luster (Eyebrows)
+115 Root Darkness (Eyebrows)
+116 White Hairs (Eyebrows)
+117 
+118 Facial Hair
+119 Beard
+120 Beard Color
+121 Luster (Facial Hair)
+122 Root Darkness (Facial Hair)
+123 White Hair (Facial Hair)
+124 Stubble
+125 
+126 Eyelaches
+127 Eyelaches
+128 Eyelach Color
+129 
+130 Eyes
+131 Right Iris Size
+132 Right Iris Color
+133 Right Eye Clouding
+134 Right Eye Clouding Color
+135 Right Eye White Color
+136 Right Eye Position
+137 Left Iris Size
+138 Left Iris Color
+139 Left Eye Clouding
+140 Left Eye Clouding Color
+141 Left Eye White Color
+142 Left Eye Position
+143 Eye Alteration
+144 
+145 Skin Features
+146 Pores
+147 Skin Luster
+148 Dark Circles
+149 Dark Circle Color
+150 
+151 Cosmetics
+152 Eyeliner
+153 Eyeline Color
+154 Eyeshadow (Upper)
+155 Eyeshadow Color (Upper)
+156 Eyeshadow (Lower)
+157 Eyeshadow Color (Lower)
+158 Cheeks
+159 Cheek Color
+160 Lipstick
+161 Lipstick Color
+162 
+163 Tattoo/Mark/Eyepatch
+164 Tattoo/Mark
+165 Tattoo/Mark Color
+166 Tweak Tattoo/Mark
+167 Position (Vert.)
+168 Position (Horiz.)
+169 Angle
+170 Expansion
+171 Flip
+172 
+173 Eyepatch
+174 Eyepatch Color
+175 
+176 
+177 Similair Face
+178 
+179 Alter Body
+180 Head
+181 Chest
+182 Abdomen
+183 Arms
+184 Legs
+185 Body Hair
+186 Body Hair Color
+187 Masculature
+188 Burn Marks
+189 
+190 
+191 
+192 Save to Favorites
+193 Load Favorite
+194 
+195 
+196 
+197 
+198 
+199 
+200 Finish
+201 Finish Cosmetics
+202 Finish Cosmetics
+203 

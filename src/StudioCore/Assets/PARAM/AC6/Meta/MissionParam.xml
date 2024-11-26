@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MISSION_TYPE" type="s8">
+      <Option Value="0" Name="Story" />
+      <Option Value="1" Name="Free Exploration" />
+      <Option Value="2" Name="AC TEST" />
+      <Option Value="3" Name="Training" />
+    </Enum>
+    <Enum Name="MISSION_ALT_TYPE" type="u8">
+      <Option Value="0" Name="Original" />
+      <Option Value="1" Name="Alternate" />
+    </Enum>
+  </Enums>
+  <Field>
+    <startPad Padding="" />
+    
+    <overlayMapId AltName="Overlay Map ID" Wiki="The overlay map that contains this mission's specific MSB configuration. Represents the YY_ZZ parts in the following MSB template: mXX_YY_ZZ_AA" />
+    <missionObjectiveTextId AltName="Objective Text ID" FmgRef="Mission_Objective" Wiki="The mission objective to display for this mission." />
+    <baseMapId AltName="Base Map ID" Wiki="The base map that this mission takes place on." />
+    <pad1 Padding="" />
+    <unkSkyLighting AltName="Sky Lighting" Wiki ="Determines basic lighting used in map. Possibly refers to gparam by index." />
+    <pad2 Padding="" />
+    <missionType AltName="Mission Type" Enum ="MISSION_TYPE" Wiki="The type of mission this is."/>
+    <missionAltType AltName="Mission Alt Type" Enum ="MISSION_ALT_TYPE" Wiki="Determine whether to appear during initial playthrough or subsequent playthroughs."/>
+    <pad3 Padding="" />
+    <Unk0x21 Padding="" />
+    <UnkInt0x24 Padding="" />
+    <missionBriefingMovieId AltName="Mission Briefing Movie ID" Wiki="ID of .bk2 video file to play for mission briefing." MovieAlias="" /> 
+    <currencyReward AltName="COAM Reward" Wiki="Amount of COAM given upon successful completion of the mission." />
+    <pad4 Padding="" />
+    <ammoCostMultiplier AltName="Ammunition Cost Multiplier" Wiki="Multiplier to the cost of ammunition taken after mission completion." />
+    <ammoCostMax AltName="Ammunition Cost Maximum" Wiki="Cap to the cost of ammunition taken after mission completion." />
+    <damageCostMultiplier AltName="Repair Cost Multiplier" Wiki="Multiplier to the cost of repair taken after mission completion." />
+    <damageCostMax AltName="Repair Cost Maximum" Wiki="Cap to the cost of repair taken after mission completion." />
+    
+    <eventObjectiveMsgId0 AltName="Event Objective Text ID [1]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 1." />
+    <eventObjectiveMsgId1 AltName="Event Objective Text ID [2]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 2." />
+    <eventObjectiveMsgId2 AltName="Event Objective Text ID [3]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 3." />
+    <eventObjectiveMsgId3 AltName="Event Objective Text ID [4]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 4." />
+    <eventObjectiveMsgId4 AltName="Event Objective Text ID [5]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 5." />
+    <eventObjectiveMsgId5 AltName="Event Objective Text ID [6]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 6." />
+    <eventObjectiveMsgId6 AltName="Event Objective Text ID [7]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 7." />
+    <eventObjectiveMsgId7 AltName="Event Objective Text ID [8]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 8." />
+    <eventObjectiveMsgId8 AltName="Event Objective Text ID [9]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 9." />
+    <eventObjectiveMsgId9 AltName="Event Objective Text ID [10]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 10." />
+    
+    <eventObjectiveReward0 AltName="Event Objective Reward [1]" Wiki="Determines the amount of score given upon objective completion." />
+    <eventObjectiveReward1 AltName="Event Objective Reward [2]" Wiki="Determines the amount of score given upon objective completion." />
+    <eventObjectiveReward2 AltName="Event Objective Reward [3]" Wiki="Determines the amount of score given upon objective completion." />
+    <eventObjectiveReward3 AltName="Event Objective Reward [4]" Wiki="Determines the amount of score given upon objective completion." />
+    <eventObjectiveReward4 AltName="Event Objective Reward [5]" Wiki="Determines the amount of score given upon objective completion." />
+    <eventObjectiveReward5 AltName="Event Objective Reward [6]" Wiki="Determines the amount of score given upon objective completion." />
+    <eventObjectiveReward6 AltName="Event Objective Reward [7]" Wiki="Determines the amount of score given upon objective completion." />
+    <eventObjectiveReward7 AltName="Event Objective Reward [8]" Wiki="Determines the amount of score given upon objective completion." />
+    <eventObjectiveReward8 AltName="Event Objective Reward [9]" Wiki="Determines the amount of score given upon objective completion." />
+    <eventObjectiveReward9 AltName="Event Objective Reward [10]" Wiki="Determines the amount of score given upon objective completion." />
+    
+    <UnkInt0x84 Padding="" />
+    
+    <damageScoreMultiplier AltName="Damage Score Multiplier" Wiki="Multiplier to the score based on damage." />
+    <ammoScoreMultiplier AltName="Ammunition Score Multiplier" Wiki="Multiplier to the score based on ammunition consumption." />
+    <pointsScoreMultiplier AltName="Points Score Multiplier" Wiki="Multiplier to the score based on points." />
+    <timeScoreMultiplier AltName="Time Score Multiplier" Wiki="Multiplier to the score based on time." />
+    <timeScoreMin AltName="Time Score Minimum" Wiki="The time in seconds at which the time score multiplier is negated." />
+    <timeScoreMax AltName="Time Score Maximum" Wiki="The time in seconds at which the time score multiplier applied in full." />
+    
+    <sRankMaxScore AltName="Score for S Rank" />
+    <aRankMaxScore AltName="Score for A Rank" />
+    <bRankMaxScore AltName="Score for B Rank" />
+    <cRankMaxScore AltName="Score for C Rank" />
+    
+    <enemyObjectiveMsgId0 AltName="Enemy Objective Text ID [1]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 1." />
+    <enemyObjectiveMsgId1 AltName="Enemy Objective Text ID [2]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 2." />
+    <enemyObjectiveMsgId2 AltName="Enemy Objective Text ID [3]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 3." />
+    <enemyObjectiveMsgId3 AltName="Enemy Objective Text ID [4]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 4." />
+    <enemyObjectiveMsgId4 AltName="Enemy Objective Text ID [5]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 5." />
+    <enemyObjectiveMsgId5 AltName="Enemy Objective Text ID [6]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 6." />
+    <enemyObjectiveMsgId6 AltName="Enemy Objective Text ID [7]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 7." />
+    <enemyObjectiveMsgId7 AltName="Enemy Objective Text ID [8]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 8." />
+    
+    <enemyObjectiveReward0 AltName="Enemy Objective Reward [1]" Wiki="Determines the amount of score given upon objective completion." />
+    <enemyObjectiveReward1 AltName="Enemy Objective Reward [2]" Wiki="Determines the amount of score given upon objective completion." />
+    <enemyObjectiveReward2 AltName="Enemy Objective Reward [3]" Wiki="Determines the amount of score given upon objective completion." />
+    <enemyObjectiveReward3 AltName="Enemy Objective Reward [4]" Wiki="Determines the amount of score given upon objective completion." />
+    <enemyObjectiveReward4 AltName="Enemy Objective Reward [5]" Wiki="Determines the amount of score given upon objective completion." />
+    <enemyObjectiveReward5 AltName="Enemy Objective Reward [6]" Wiki="Determines the amount of score given upon objective completion." />
+    <enemyObjectiveReward6 AltName="Enemy Objective Reward [7]" Wiki="Determines the amount of score given upon objective completion." />
+    <enemyObjectiveReward7 AltName="Enemy Objective Reward [8]" Wiki="Determines the amount of score given upon objective completion." />
+    
+    <forcedLoadoutCharaInitParamID AltName="Forced Loadout (CharaInitParam ID)" Refs="CharaInitParam" />
+    
+    <unkMapBoundryEntityId AltName="Map Boundry Entity ID" />
+    
+    <missionDebriefingMovieId AltName="Mission Debriefing Movie ID" Wiki="ID of .bk2 video file to play for mission debriefing." />
+    
+    <unkEntityId AltName="Entity ID" />
+    
+    <mapBoundryBottom AltName="Map Boundry Bottom" />
+    
+    <playSortieScene AltName="Play Sortie Scene ID" />
+    <playSortieTalk AltName="Play Sortie Talk ID" />
+    
+    <chapter AltName="Chapter" />
+    <decisionGroup AltName="Decision Group" />
+    <sortId AltName="Sort ID" />
+    
+    <menuWorldMapTexture AltName="Menu World Map Texture ID" />
+    <menuWorldInfoTexture AltNAme="Menu World Info Texture ID" />
+    
+    <endPad Padding="" />
+  </Field>
+  <Self />
+</PARAMMETA>

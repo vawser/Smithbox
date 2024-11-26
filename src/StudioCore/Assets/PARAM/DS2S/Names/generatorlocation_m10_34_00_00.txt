@@ -1,0 +1,48 @@
+285 [GEN:285] Corpse Rat (Rat King)
+286 [GEN:286] Corpse Rat (Rat King)
+640 [GEN:640] Rhoy the Explorer
+641 [GEN:641] Rhoy the Explorer
+850 [GEN:850] Corpse Rat
+1000 [GEN:1000] Captive Undead
+1001 [GEN:1001] Captive Undead
+1100 [GEN:1100] Corpse Rat
+1150 [GEN:1150] Corpse Rat
+1155 [GEN:1155] Corpse Rat
+1180 [GEN:1180] Corpse Rat
+1251 [GEN:1251] Captive Undead
+1300 [GEN:1300] Corpse Rat
+1301 [GEN:1301] Corpse Rat
+1302 [GEN:1302] Corpse Rat
+1400 [GEN:1400] Corpse Rat
+1500 [GEN:1500] Corpse Rat
+1600 [GEN:1600] Corpse Rat
+1700 [GEN:1700] Corpse Rat
+1701 [GEN:1701] Corpse Rat
+1702 [GEN:1702] Corpse Rat
+1800 [GEN:1800] Corpse Rat
+1801 [GEN:1801] Corpse Rat
+1802 [GEN:1802] Corpse Rat
+1803 [GEN:1803] Corpse Rat
+1804 [GEN:1804] Corpse Rat
+1900 [GEN:1900] NO MATCH
+1901 [GEN:1901] NO MATCH
+1902 [GEN:1902] NO MATCH
+1904 [GEN:1904] Rupturing Hollow
+1905 [GEN:1905] Rupturing Hollow
+1907 [GEN:1907] Rupturing Hollow
+1910 [GEN:1910] Crystal Lizard
+7000 [GEN:7000] Syan Knight
+8000 [GEN:8000] Dingy Cleric Phantom
+8010 [GEN:8010] Faraam Knight Phantom
+9000 [GEN:9000] Corpse Rat
+9001 [GEN:9001] Corpse Rat
+9002 [GEN:9002] Corpse Rat
+9003 [GEN:9003] Corpse Rat
+9004 [GEN:9004] Corpse Rat
+9005 [GEN:9005] Corpse Rat
+9006 [GEN:9006] Corpse Rat
+9007 [GEN:9007] Corpse Rat
+9008 [GEN:9008] Corpse Rat
+9009 [GEN:9009] Corpse Rat
+9010 [GEN:9010] Corpse Rat
+9011 [GEN:9011] Corpse Rat

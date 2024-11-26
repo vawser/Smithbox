@@ -1,0 +1,300 @@
+1 sex -- 性別
+2 Around the age -- 年頃
+3 voice -- 声
+4 ----- {Constitution -- -----｛体質
+5 Muscle mass -- 筋肉量
+6 Hair volume -- 体毛量
+7 } ----- -- ｝-----
+8 Physique -- 体格
+9 ----- {Details of physique -- -----｛体格詳細
+10 head -- 頭部
+11 Chest -- 胸部
+12 abdomen -- 腹部
+13 Arm -- 腕部
+14 leg -- 脚部
+15 } ----- -- ｝-----
+16 Face -- 顔つき
+17 ----- {Details of face -- -----｛顔つき詳細
+18 Similar face -- 似た顔
+19 ----- {Characteristics -- -----｛特徴付け
+20 Age image -- 年齢イメージ
+21 Gender image -- 性別イメージ
+22 Shape exaggeration -- 形状誇張
+23 } ----- -- ｝-----
+24 ----- {Face shape -- -----｛顔の形状
+25 ----- {Face balance -- -----｛顔のバランス
+26 Nose occupancy -- 鼻の占める比率
+27 Nose to forehead ratio -- 鼻と額の比率
+28 Unevenness of the face -- 顔の凹凸
+29 Top and bottom spacing of face parts -- 顔パーツの上下の間隔
+30 Tilt of face parts -- 顔パーツの傾き
+31 Left and right spacing of face parts -- 顔パーツの左右の間隔
+32 } ----- -- ｝-----
+33 ----- {Forehead / glabellar -- -----｛額/眉間
+34 Forehead depth -- 額の深さ
+35 Unevenness of the forehead -- 額の凹凸
+36 Height of the upper part of the bridge of the nose -- 鼻梁上部の高さ
+37 Concavities and convexities above the bridge of the nose 1 -- 鼻梁上部の凹凸1
+38 Unevenness on the upper part of the bridge of the nose 2 -- 鼻梁上部の凹凸2
+39 Width of the upper part of the bridge of the nose -- 鼻梁上部の幅
+40 } ----- -- ｝-----
+41 ----- {Eyebrows -- -----｛眉骨
+42 Eyebrow height -- 眉骨の高さ
+43 Inner edge of the eyebrow -- 眉骨の内端
+44 Outer edge of the eyebrow -- 眉骨の外端
+45 } ----- -- ｝-----
+46 -----{eye -- -----｛眼
+47 Eye position -- 眼の位置
+48 Eye size -- 眼の大きさ
+49 Eye tilt -- 眼の傾き
+50 Eye spacing -- 眼の間隔
+51 } ----- -- ｝-----
+52 ----- {nose muscle -- -----｛鼻筋
+53 Depth of the nose -- 鼻筋の深さ
+54 Nose length -- 鼻筋の長さ
+55 Nose position -- 鼻の位置
+56 Nose height -- 鼻先の高さ
+57 Unevenness of the nose -- 鼻の凹凸
+58 Nose height -- 鼻の高さ
+59 Nose tilt -- 鼻の傾斜
+60 } ----- -- ｝-----
+61 ----- {Nose -- -----｛小鼻
+62 Inclination of the nose -- 小鼻の傾斜
+63 Nose size -- 小鼻の大きさ
+64 Nose width -- 小鼻の幅
+65 Nostril size -- 鼻孔の大きさ
+66 } ----- -- ｝-----
+67 -----{cheek -- -----｛頬
+68 Cheekbone height -- 頬骨の高さ
+69 Cheekbone depth -- 頬骨の深さ
+70 The size of the cheekbones -- 頬骨の広さ
+71 Uneven cheeks -- 頬の凹凸
+72 cheek -- 頬
+73 } ----- -- ｝-----
+74 -----{lips -- -----｛唇
+75 Lip shape -- 唇の形
+76 Facial expression on the mouth -- 口元の表情
+77 Lip bulge -- 唇の膨らみ
+78 Lip size -- 唇の大きさ
+79 Concavo-convex lips -- 唇の凹凸
+80 Lip thickness -- 唇の厚さ
+81 } ----- -- ｝-----
+82 -----{mouth -- -----｛口
+83 Concavo-convex mouth -- 口の凹凸
+84 Mouth tilt -- 口の傾き
+85 Engagement -- かみ合わせ
+86 Mouth position -- 口の位置
+87 Mouth width -- 口の幅
+88 Distance from mouth to chin -- 口から顎先の距離
+89 } ----- -- ｝-----
+90 -----{lower jaw -- -----｛下顎
+91 Before and after the tip of the chin -- 顎先端の前後
+92 Jaw length -- 顎先の長さ
+93 Chin protrusion -- 顎先の突き出し
+94 Jaw depth -- 顎先の深さ
+95 Jaw size -- 顎先の大きさ
+96 Jaw height -- 顎先の高さ
+97 Jaw size -- 顎先の広さ
+98 } ----- -- ｝-----
+99 ----- {Maxilla -- -----｛上顎
+100 Jaw stick out -- 顎の突き出し
+101 Jaw width -- 顎の幅
+102 Lower chin -- 顎下部
+103 Jaw contour -- 顎の輪郭
+104 } ----- -- ｝-----
+105 } ----- -- ｝-----
+106 ----- {Hair / Eyebrows / Beard / Eyelashes -- -----｛髪/眉/髭/まつげ
+107 Hair / eyebrows / beard color -- 髪/眉/髭色
+108 hair -- 髪
+109 Hair color -- 髪色
+110 eyebrow -- 眉
+111 Eyebrow color -- 眉色
+112 beard -- 髭
+113 beard -- 髭
+114 Beard color -- 髭色
+115 eyelash -- まつげ
+116 Eyelash color -- まつげ色
+117 } ----- -- ｝-----
+118 -----{pupil -- -----｛瞳
+119 Both eyes -- 両瞳
+120 Color of both eyes -- 両瞳の色
+121 Right pupil -- 右瞳
+122 Right eye color -- 右瞳の色
+123 Left pupil -- 左瞳
+124 Left eye color -- 左瞳の色
+125 } ----- -- ｝-----
+126 -----{make up -- -----｛化粧
+127 Brightness of the eyes -- 目元の明るさ
+128 Brightness of the orbit -- 眼窩の明るさ
+129 Eyelid brightness -- まぶたの明るさ
+130 Eyelid color -- まぶたの色
+131 eyeliner -- アイライナー
+132 Eye shadow -- アイシャドー
+133 Lipstick 1 -- 口紅1
+134 Lipstick 2 -- 口紅2
+135 } ----- -- ｝-----
+136 ----- {Tattoo / Bruise -- -----｛入れ墨/痣
+137 Tattoos / bruises -- 入れ墨/痣
+138 Tattoo / bruise color -- 入れ墨/痣の色
+139 ----- {Tattoo / Bruise Adjustment -- -----｛入れ墨/痣の調整
+140 Position up and down -- 位置 上下
+141 Position left and right -- 位置 左右
+142 angle -- 角度
+143 Expansion rate -- 拡大率
+144 } ----- -- ｝-----
+145 } ----- -- ｝-----
+146 } ----- -- ｝-----
+147 Skin color base -- 肌色ベース
+148 ----- {Details of skin color -- -----｛肌色詳細
+149 Skin brightness -- 肌の明るさ
+150 Skin color adjustment 1 -- 肌色調整1
+151 Skin color adjustment 2 -- 肌色調整2
+152 Skin color adjustment 3 -- 肌色調整3
+153 Skin color adjustment 4 -- 肌色調整4
+154 Nose bridge color -- 鼻梁の色
+155 Cheek color -- 頬の色
+156 Law line -- 法令線
+157 } ----- -- ｝-----
+158 ----- {Details of face -- -----｛顔つき詳細
+159 Similar face -- 似た顔
+160 ----- {Characteristics -- -----｛特徴付け
+161 Age image -- 年齢イメージ
+162 Gender image -- 性別イメージ
+163 Shape exaggeration -- 形状誇張
+164 } ----- -- ｝-----
+165 ----- {Face shape -- -----｛顔の形状
+166 ----- {Face balance -- -----｛顔のバランス
+167 Nose occupancy -- 鼻の占める比率
+168 Nose to forehead ratio -- 鼻と額の比率
+169 Unevenness of the face -- 顔の凹凸
+170 Top and bottom spacing of face parts -- 顔パーツの上下の間隔
+171 Tilt of face parts -- 顔パーツの傾き
+172 Left and right spacing of face parts -- 顔パーツの左右の間隔
+173 } ----- -- ｝-----
+174 ----- {Forehead / glabellar -- -----｛額/眉間
+175 Forehead depth -- 額の深さ
+176 Unevenness of the forehead -- 額の凹凸
+177 Height of the upper part of the bridge of the nose -- 鼻梁上部の高さ
+178 Concavities and convexities above the bridge of the nose 1 -- 鼻梁上部の凹凸1
+179 Unevenness on the upper part of the bridge of the nose 2 -- 鼻梁上部の凹凸2
+180 Width of the upper part of the bridge of the nose -- 鼻梁上部の幅
+181 } ----- -- ｝-----
+182 ----- {Eyebrows -- -----｛眉骨
+183 Eyebrow height -- 眉骨の高さ
+184 Inner edge of the eyebrow -- 眉骨の内端
+185 Outer edge of the eyebrow -- 眉骨の外端
+186 } ----- -- ｝-----
+187 -----{eye -- -----｛眼
+188 Eye position -- 眼の位置
+189 Eye size -- 眼の大きさ
+190 Eye tilt -- 眼の傾き
+191 Eye spacing -- 眼の間隔
+192 } ----- -- ｝-----
+193 ----- {nose muscle -- -----｛鼻筋
+194 Depth of the nose -- 鼻筋の深さ
+195 Nose length -- 鼻筋の長さ
+196 Nose position -- 鼻の位置
+197 Nose height -- 鼻先の高さ
+198 Unevenness of the nose -- 鼻の凹凸
+199 Nose height -- 鼻の高さ
+200 Nose tilt -- 鼻の傾斜
+201 } ----- -- ｝-----
+202 ----- {Nose -- -----｛小鼻
+203 Inclination of the nose -- 小鼻の傾斜
+204 Nose size -- 小鼻の大きさ
+205 Nose width -- 小鼻の幅
+206 Nostril size -- 鼻孔の大きさ
+207 } ----- -- ｝-----
+208 -----{cheek -- -----｛頬
+209 Cheekbone height -- 頬骨の高さ
+210 Cheekbone depth -- 頬骨の深さ
+211 The size of the cheekbones -- 頬骨の広さ
+212 Uneven cheeks -- 頬の凹凸
+213 cheek -- 頬
+214 } ----- -- ｝-----
+215 -----{lips -- -----｛唇
+216 Lip shape -- 唇の形
+217 Facial expression on the mouth -- 口元の表情
+218 Lip bulge -- 唇の膨らみ
+219 Lip size -- 唇の大きさ
+220 Concavo-convex lips -- 唇の凹凸
+221 Lip thickness -- 唇の厚さ
+222 } ----- -- ｝-----
+223 -----{mouth -- -----｛口
+224 Concavo-convex mouth -- 口の凹凸
+225 Mouth tilt -- 口の傾き
+226 Engagement -- かみ合わせ
+227 Mouth position -- 口の位置
+228 Mouth width -- 口の幅
+229 Distance from mouth to chin -- 口から顎先の距離
+230 } ----- -- ｝-----
+231 -----{lower jaw -- -----｛下顎
+232 Before and after the tip of the chin -- 顎先端の前後
+233 Jaw length -- 顎先の長さ
+234 Chin protrusion -- 顎先の突き出し
+235 Jaw depth -- 顎先の深さ
+236 Jaw size -- 顎先の大きさ
+237 Jaw height -- 顎先の高さ
+238 Jaw size -- 顎先の広さ
+239 } ----- -- ｝-----
+240 ----- {Maxilla -- -----｛上顎
+241 Jaw stick out -- 顎の突き出し
+242 Jaw width -- 顎の幅
+243 Lower chin -- 顎下部
+244 Jaw contour -- 顎の輪郭
+245 } ----- -- ｝-----
+246 } ----- -- ｝-----
+247 ----- {Hair / Eyebrows / Beard / Eyelashes -- -----｛髪/眉/髭/まつげ
+248 Hair / eyebrows / beard color -- 髪/眉/髭色
+249 hair -- 髪
+250 Hair color -- 髪色
+251 eyebrow -- 眉
+252 Eyebrow color -- 眉色
+253 beard -- 髭
+254 beard -- 髭
+255 Beard color -- 髭色
+256 eyelash -- まつげ
+257 Eyelash color -- まつげ色
+258 } ----- -- ｝-----
+259 -----{pupil -- -----｛瞳
+260 Both eyes -- 両瞳
+261 Color of both eyes -- 両瞳の色
+262 Right pupil -- 右瞳
+263 Right eye color -- 右瞳の色
+264 Left pupil -- 左瞳
+265 Left eye color -- 左瞳の色
+266 } ----- -- ｝-----
+267 -----{make up -- -----｛化粧
+268 Brightness of the eyes -- 目元の明るさ
+269 Brightness of the orbit -- 眼窩の明るさ
+270 Eyelid brightness -- まぶたの明るさ
+271 Eyelid color -- まぶたの色
+272 eyeliner -- アイライナー
+273 Eye shadow -- アイシャドー
+274 Lipstick 1 -- 口紅1
+275 Lipstick 2 -- 口紅2
+276 } ----- -- ｝-----
+277 ----- {Tattoo / Bruise -- -----｛入れ墨/痣
+278 Tattoos / bruises -- 入れ墨/痣
+279 Tattoo / bruise color -- 入れ墨/痣の色
+280 ----- {Tattoo / Bruise Adjustment -- -----｛入れ墨/痣の調整
+281 Position up and down -- 位置 上下
+282 Position left and right -- 位置 左右
+283 angle -- 角度
+284 Expansion rate -- 拡大率
+285 } ----- -- ｝-----
+286 } ----- -- ｝-----
+287 } ----- -- ｝-----
+288 ----- {Details of skin color -- -----｛肌色詳細
+289 Skin brightness -- 肌の明るさ
+290 Skin color adjustment 1 -- 肌色調整1
+291 Skin color adjustment 2 -- 肌色調整2
+292 Skin color adjustment 3 -- 肌色調整3
+293 Skin color adjustment 4 -- 肌色調整4
+294 Nose bridge color -- 鼻梁の色
+295 Cheek color -- 頬の色
+296 Law line -- 法令線
+297 } ----- -- ｝-----
+298 Appearance preservation -- 外見保存
+299 Appearance reading -- 外見読み込み
+300 Initialize -- 初期化

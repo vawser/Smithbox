@@ -1,4 +1,0 @@
-0 test -- テスト
-43010001 parallel to the ground -- 地面と平行
-43010002 parallel to the ground -- 地面と平行
-43010003 parallel to the ground -- 地面と平行

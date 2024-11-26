@@ -1,0 +1,1237 @@
+0 Should not be deleted *nakama may be set as a dress-up NPC -- 消すべからず ※きせかえNPCに設定していたりする nakama
+1 Obvious data (copy and paste source recommended) -- あたりさわりのないデータ（コピペ元推奨）
+5 Ally NPC -- 味方用NPC
+50 Platoon dummy leader (bipedal walking) -- 小隊用ダミーリーダー（2足歩行）
+51 Platoon dummy leader does not move -- 小隊用ダミーリーダー移動しない
+100 For automatic patrol (default) -- 自動巡回用（デフォルト）
+540 For automatic patrol (running) -- 自動巡回用（走り）
+541 For automatic patrol (walking) -- 自動巡回用（歩き）
+542 For automatic patrol (Super Dash) -- 自動巡回用（スーパーダッシュ）
+1000 Garage camera dummy character -- ガレージのカメラ用ダミーキャラ
+2000 garage helicopter -- ガレージヘリ
+10000000 10000000_Ace of Battle A -- 10000000_決戦のエースA
+10001000 10000000_Ace of Decisive Battle A_SBM Imperial Base -- 10000000_決戦のエースA_SBM帝国基地
+10001010 10000000_Ace of Decisive Battle Dam Defense -- 10000000_決戦のエースA　ダム防衛
+10100000 10100000_Ace of Battle B -- 10100000_決戦のエースB
+10101000 10100000_Ace of Battle B_Railroad ALT -- 10100000_決戦のエースB_レイルロードALT
+10200000 10200000_String AC -- 10200000_文字列AC
+10201000 10200000_string AC string -- 10200000_文字列AC　文字列
+10300000 10300000_Yuriya -- 10300000_ユーリヤ
+10300001 10300000_Yuriya_Ally_Win boarding -- 10300000_ユーリヤ_味方_ウィン搭乗
+10301000 10300000_Yuriya Eliminate intruders -- 10300000_ユーリヤ　侵入者排除
+10310000 10310000_Yuriya (All Mind) -- 10310000_ユーリヤ（オールマインド）
+10311000 10310000_Yuriya (All Mind) Battle C -- 10310000_ユーリヤ（オールマインド） 決戦C
+10400000 10400000_Assassin -- 10400000_刺客
+10400001 10400000_Assassin -- 10400000_刺客
+10500000 10500000_Ash (early model) -- 10500000_アッシュ（前期機体）
+10501000 10500000_Ash (early model) Old spaceport attack_Flight aircraft -- 10500000_アッシュ（前期機体） 旧宇宙港襲撃_僚機
+10501010 10500000_Ash (early model)_Over the wall -- 10500000_アッシュ（前期機体）_壁越え
+10501100 10500000_Ash (early model) biological weapon -- 10500000_アッシュ（前期機体）生体兵器
+10600000 10600000_Ash (late model) -- 10600000_アッシュ（後期機体）
+10601000 10600000_Ash (late model) Atmospheric breakthrough -- 10600000_アッシュ（後期機体）　大気圏突破
+10601001 10600000_Ash (late model) New B-class people_Flight aircraft -- 10600000_アッシュ（後期機体） 新B層の人々_僚機
+10601002 10600000_Ash (late model) New B-tier people_Family aircraft_For heavy guard mecha battle -- 10600000_アッシュ（後期機体） 新B層の人々_僚機_重ガードメカ戦用
+10609999 10600000_Ash (late model) for bug confirmation -- 10600000_アッシュ（後期機体）バグ確認用
+10700000 10700000_Number 2 -- 10700000_ナンバー2
+10700001 10700000_Number 2 In front of the search wall Surprise target -- 10700000_ナンバー2　探索壁前　奇襲対象
+10701000 10700000_Number 2 Straight City Reverse Run Middle Boss -- 10700000_ナンバー2　ストレート市街逆走　中ボス
+10701001 10700000_Number 2 For ruins -- 10700000_ナンバー2　廃墟用
+10710000 10700000_Number 2 Defeat Ice Worm -- 10700000_ナンバー2　アイスワーム撃破
+10800000 10800000_Number 4 (Reinforced Human Company A) -- 10800000_ナンバー4（強化人間中隊A）
+10801000 10800000_Number 4 (Reinforced Human Company A) AC battle at the power plant -- 10800000_ナンバー4（強化人間中隊A）　発電所でのAC戦
+10900000 10900000_Number 7 (Reinforced Human Company B) -- 10900000_ナンバー7（強化人間中隊B）
+10901001 10900000_Number 7 (Reinforced Human Company B) AC battle at the power plant -- 10900000_ナンバー7（強化人間中隊B）　発電所でのAC戦
+11000000 11000000_Collapse A layer AC -- 11000000_崩落A層AC
+11001000 11000000_Collapse A layer AC Collapse A layer -- 11000000_崩落A層AC 崩落A層
+11100000 11100009_Unmanned AC in the reactor core -- 11100009_炉心の無人AC
+11101000 11100009_Unmanned AC in the reactor core -- 11100009_炉心の無人AC
+11200000 11200000_Carla -- 11200000_カーラ
+11201000 11200000_Carla Straight City Reverse Driving Boss -- 11200000_カーラ　ストレート市街逆走　ボス
+11201001 11200000_Carla for jailbreak -- 11200000_カーラ　脱獄用
+11300000 11300000_Leicester -- 11300000_レスター
+11300001 11300001_Lester material hit SE confirmation -- 11300001_レスター 材質ヒットSE確認用
+11301000 11300000_Lester for decisive battle B -- 11300000_レスター 決戦B用
+11400000 11400000_Wild Geese A -- 11400000_ワイルド・ギースA
+11401010 11400000_Wild Geese A_Railroad -- 11400000_ワイルド・ギースA_レイルロード
+11401020 11400000_Wild Geese A_A layer indoor exploration -- 11400000_ワイルド・ギースA_A層屋内探索
+11401030 11400000_Wild Geese A Iceworm defeated wingman -- 11400000_ワイルド・ギースA　アイスワーム撃破　僚機
+11401040 11400000_Wild Geese A_Dam destruction -- 11400000_ワイルド・ギースA_ダム破壊
+11410000 11410000_Wild Geese A (All Minds involved) -- 11410000_ワイルド・ギースA（オールマインド関与）
+11411000 11410000_Wild Geese A (All Mind Involved) Ruin ALT -- 11410000_ワイルド・ギースA（オールマインド関与） 廃墟ALT
+11500000 11500000_Wild Geese B -- 11500000_ワイルド・ギースB
+11501010 11500000_Wild Geese B_Dam destruction -- 11500000_ワイルド・ギースB_ダム破壊
+11600000 11600000_Wild Geese C -- 11600000_ワイルド・ギースC
+11601001 11600000_Wild Geese C SBM ice field hole -- 11600000_ワイルド・ギースC　SBM氷原の穴
+11700000 11700000_Ash People A -- 11700000_灰の民A
+11701000 11700000_Ash People A_Dam destruction -- 11700000_灰の民A_ダム破壊
+11800000 11800000_Ash People B -- 11800000_灰の民B
+11801000 11800000_Ash People B Scavenging -- 11800000_灰の民B スカベンジング
+11900000 11900000_Ash People C -- 11900000_灰の民C
+11901000 11900000_Ash People C AC battle at the power plant -- 11900000_灰の民C 発電所でのAC戦
+11901001 11900000_Ash People C_Biological Weapon ALT -- 11900000_灰の民C_生体兵器ALT
+12000000 12000000_Number 1 -- 12000000_ナンバー1
+12001000 12000000_Number 1 Straight City -- 12000000_ナンバー1 ストレート市街
+12001001 12000000_Number 1 for ruins -- 12000000_ナンバー1 廃墟用
+12100000 12100000_Karla's subordinate -- 12100000_カーラの部下
+12101000 12100000_Kara's subordinate Defeat Iceworm, wingman -- 12100000_カーラの部下 アイスワーム撃破　僚機制禦
+12101100 12100000_Karla's subordinate straight city flight wingman -- 12100000_カーラの部下 ストレート市街進行　僚機
+12101101 12100000_Karla's subordinate straight city progression wingman_for production -- 12100000_カーラの部下 ストレート市街進行　僚機_演出用
+12101200 12100000_Karla's subordinate Straight city reverse run Boss Chatty -- 12100000_カーラの部下　ストレート市街逆走　ボス　チャティ
+12200000 12200000_Nest unmanned AC (shooting) -- 12200000_ネストの無人AC（射撃）
+12300000 12300000_Nest unmanned AC (proximity) -- 12300000_ネストの無人AC（近接）
+12400000 12400000_Nest unmanned AC (strong small fish) -- 12400000_ネストの無人AC（強雑魚）
+12500000 12500000_win -- 12500000_ウィン
+12501000 12500000_Win_Decisive Battle C -- 12500000_ウィン_決戦C
+12600000 12600000_Test teacher -- 12600000_テスト先生
+12601000 12600000_Test teacher_AC test -- 12600000_テスト先生_ACテスト用
+12601100 12600000_Test Teacher_For Tremo 7 -- 12600000_テスト先生_トレモ7用
+12700000 12700000_Onboarding AC -- 12700000_オンボーディングAC
+12701000 12700000_Onboarding AC_For first AC battle -- 12700000_オンボーディングAC_初AC戦用
+20000000 20000000_Wild Geese D -- 20000000_ワイルドギースD
+20001000 20000000_Wild Geese D Area withdrawal support -- 20000000_ワイルドギースD　領域離脱援護
+20100000 20100000_Wild Geese E -- 20100000_ワイルドギースE
+20101001 20100000_Wild Geese E Ruins -- 20100000_ワイルドギースE　廃墟
+20200000 20200000_Wild Geese F -- 20200000_ワイルドギースF
+20201000 20200000_Wild Geese F Rail Reverse Run -- 20200000_ワイルドギースF　レイル逆走
+20300000 20300000_Bayram battle data -- 20300000_ベイラムの戦闘データ
+20400000 20400000_Number 6 -- 20400000_ナンバー6
+20401000 20400000_Number 6 In front of the search wall -- 20400000_ナンバー6　探索壁前
+20500000 20500000_Number 5 -- 20500000_ナンバー5
+20501000 20500000_Number 5 Ruins -- 20500000_ナンバー5　廃墟
+20600000 20600000_Number 3 -- 20600000_ナンバー3
+20601000 20600000_Number 3 Submission large cavity and furnace -- 20600000_ナンバー3　サブミッション大空洞と炉
+20700000 20700000_Ash People D -- 20700000_灰の民D
+20701000 20700000_Ash People D Exterminate Behind the Walls Stray NPAC -- 20700000_灰の民D 壁裏殲滅はぐれNPAC
+20800000 20800000_Ash People E (Strong JUDO) -- 20800000_灰の民E（強JUDO）
+20801000 20800000_Ash People E (Strong JUDO) City on the Ocean -- 20800000_灰の民E（強JUDO）　洋上の都市
+20900000 20900000_Drunker -- 20900000_ドランカー
+20901000 20900000_Drunker Big Bridge -- 20900000_ドランカー ビッグ・ブリッジ
+21000000 21000000_Drunker battle data -- 21000000_ドランカーの戦闘データ
+21100000 21100000_Independent Mercenary A -- 21100000_独立傭兵A
+21101000 21100000_Independent Mercenary A Big Bridge -- 21100000_独立傭兵A　ビッグ・ブリッジ
+21101001 21100000_Independent Mercenary A For AC Test -- 21100000_独立傭兵A　ACテスト用
+21200000 21200000_Independent Mercenary B -- 21200000_独立傭兵B
+21201000 21200000_Independent Mercenary B Dam Defense_Chartreuse -- 21200000_独立傭兵B　ダム防衛_シャルトルーズ
+21300000 21300000_dead strong man -- 21300000_死んだ強者
+21301000 21300000_Dead Strong Man Dam Defense_King -- 21300000_死んだ強者　ダム防衛_キング
+21400000 21400000_Simulator unmanned AC -- 21400000_シミュレーター無人AC
+29900000 29900000_Accuracy Benchmark_Ground_Lightweight -- 29900000_精度ベンチマーク_地上_軽量
+29900010 29900000_accuracy benchmark_ground_medium amount -- 29900000_精度ベンチマーク_地上_中量
+29900020 29900000_accuracy benchmark_ground_weight -- 29900000_精度ベンチマーク_地上_重量
+29900100 29900000_Accuracy Benchmark_Aerial_Lightweight -- 29900000_精度ベンチマーク_空中_軽量
+29900110 29900000_Accuracy Benchmark_Aerial_Medium -- 29900000_精度ベンチマーク_空中_中量
+29900120 29900000_Accuracy Benchmark_Aerial_Weight -- 29900000_精度ベンチマーク_空中_重量
+30000000 General purpose security MT real rifle -- 汎用　警備MT　実ライフル
+30000099 General Purpose Security MT Actual Rifle Tattered -- 汎用　警備MT　実ライフル ボロボロ
+30000100 General purpose security MT EN rifle -- 汎用　警備MT　ENライフル
+30000199 General Purpose Security MT EN Rifle Tattered -- 汎用　警備MT　ENライフル ボロボロ
+30000200 General purpose security MT missile -- 汎用　警備MT　ミサイル
+30000201 General-purpose security MT missile (far and fixed artillery) -- 汎用　警備MT　ミサイル（遠いと固定砲台）
+30000299 General Purpose Security MT Missile Tattered -- 汎用　警備MT　ミサイル ボロボロ
+30000900 General purpose security MT fully equipped -- 汎用　警備MT　全装備
+30000902 General-purpose security MT, all equipment, for checking aerial damage behavior 1 -- 汎用　警備MT　全装備　空中ダメージ挙動確認用1
+30000903 General-purpose security MT, all equipment, for checking aerial damage behavior 2 -- 汎用　警備MT　全装備　空中ダメージ挙動確認用2
+30000904 General-purpose security MT, all equipment, for checking aerial damage behavior 3 -- 汎用　警備MT　全装備　空中ダメージ挙動確認用3
+30000905 General-purpose security MT for hacking verification -- 汎用　警備MT　ハッキング検証用
+30001001 Railroad Security MT Real Rifle -- レイルロード　警備MT　実ライフル
+30001002 Prologue Security MT Real Rifle -- プロローグ　警備MT　実ライフル
+30001003 Mining ship destruction, security MT, real rifle, long locking distance -- 採掘艦破壊　警備MT　実ライフル　ロック距離長め
+30001004 General purpose security MT real rifle -- 汎用　警備MT　実ライフル
+30001100 Fuel Base Sweeping Security MT EN Rifle Archibus -- 燃料基地掃討　警備MT　ENライフル アーキバス
+30004000 Security MT for Tremo Real Rifle Resolutely Fixed Battery -- トレモ用　警備MT　実ライフル　断固固定砲台
+30004001 Security MT for Tremo Real Rifle Fixed Battery -- トレモ用　警備MT　実ライフル　固定砲台
+30004002 Security MT for tremo, real rifle, firmly fixed battery, weakened for missile lock -- トレモ用　警備MT　実ライフル　断固固定砲台　ミサイルロック用弱体化
+30004100 Tutorial Security MT Missile -- チュートリアル用　警備MT　ミサイル
+30010000 General Purpose Security MT Enhancement A Firepower Enhancement -- 汎用　警備MT強化A火力強化
+30010950 General Purpose Security MT Enhancement A Firepower Enhancement Medium Stagger Only -- 汎用　警備MT強化A火力強化 中よろけだけ
+30010951 General Purpose Security MT Enhancement A Firepower Enhancement Large Stagger Only -- 汎用　警備MT強化A火力強化 大よろけだけ
+30020000 General Purpose Security MT Reinforced B Legs Reinforced -- 汎用　警備MT強化B脚部強化
+30200000 General purpose former communist country MT throwing lie/cover -- 汎用　旧共産圏MT　投ライ/カバー
+30200001 General purpose former communist country MT throwing lie/cover fixed battery mode -- 汎用　旧共産圏MT　投ライ/カバー　固定砲台モード
+30200090 General purpose former communist country MT throwing lie/cover Ev asset shooting point test -- 汎用　旧共産圏MT　投ライ/カバー　Evアセット射撃ポイントテスト
+30200099 General purpose former communist country MT throwing lie/cover tattered -- 汎用　旧共産圏MT　投ライ/カバー ボロボロ
+30200100 General purpose former communist region MT Dabumashi -- 汎用　旧共産圏MT　ダブマシ
+30200101 General purpose former communist country MT Doubumashi fixed battery mode -- 汎用　旧共産圏MT　ダブマシ　固定砲台モード
+30200199 General purpose former communist region MT Dabumashi tattered -- 汎用　旧共産圏MT　ダブマシ ボロボロ
+30200200 General purpose former communist region MT location machine -- 汎用　旧共産圏MT　ロケマシ
+30200201 General purpose former communist region MT location location fixed artillery mode -- 汎用　旧共産圏MT　ロケマシ　固定砲台モード
+30200202 General purpose former communist region MT location machine cover individual -- 汎用　旧共産圏MT　ロケマシ　カバー個体
+30200299 General purpose former communist region MT location machine tattered -- 汎用　旧共産圏MT　ロケマシ ボロボロ
+30200300 General purpose former communist country MT shot shield -- 汎用　旧共産圏MT　ショット盾
+30200301 General purpose former communist country MT shot shield fixed battery mode -- 汎用　旧共産圏MT　ショット盾　固定砲台モード
+30200399 General Purpose Former Communist MT Shot Shield Tattered -- 汎用　旧共産圏MT　ショット盾 ボロボロ
+30200400 General purpose former communist region MT Misarai -- 汎用　旧共産圏MT　ミサライ
+30200401 General purpose former communist region MT Misarai fixed battery mode -- 汎用　旧共産圏MT　ミサライ　固定砲台モード
+30200499 General purpose former communist region MT Misarai tattered -- 汎用　旧共産圏MT　ミサライ ボロボロ
+30200500 General purpose former communist country MT canon -- 汎用　旧共産圏MT　キャノン
+30200501 General purpose former communist country MT cannon fixed battery mode -- 汎用　旧共産圏MT　キャノン　固定砲台モード
+30200503 General purpose former communist country MT cannon resolutely fixed battery mode -- 汎用　旧共産圏MT　キャノン　断固固定砲台モード
+30200599 General purpose former communist region MT cannon battered -- 汎用　旧共産圏MT　キャノン ボロボロ
+30200600 General purpose former communist region MT Rai shield -- 汎用　旧共産圏MT　ライ盾
+30200601 General purpose former communist country MT Rai shield fixed battery mode -- 汎用　旧共産圏MT　ライ盾　固定砲台モード
+30200699 General Purpose Former Communist Country MT Raishi Shield Tattered -- 汎用　旧共産圏MT　ライ盾 ボロボロ
+30200700 General purpose former communist region MT Rokerai -- 汎用　旧共産圏MT　ロケライ
+30200799 General purpose former communist region MT Rokerai tattered -- 汎用　旧共産圏MT　ロケライ ボロボロ
+30200800 General purpose former communist region MT better shield -- 汎用　旧共産圏MT　マシ盾
+30200801 General purpose former communist country MT better shield fixed battery mode -- 汎用　旧共産圏MT　マシ盾　固定砲台モード
+30200810 General purpose former communist country MT better -- 汎用　旧共産圏MT　マシ
+30200811 General purpose former communist country MT better fixed artillery mode -- 汎用　旧共産圏MT　マシ　固定砲台モード
+30200820 General purpose former communist MT shield -- 汎用　旧共産圏MT　盾
+30200821 General purpose former communist country MT shield fixed turret mode -- 汎用　旧共産圏MT　盾　固定砲台モード
+30200830 General purpose former communist country MT Camerai -- 汎用　旧共産圏MT　カメライ
+30200831 General purpose former communist country MT camera fixed battery mode -- 汎用　旧共産圏MT　カメライ　固定砲台モード
+30200900 General purpose former communist country MT base -- 汎用　旧共産圏MT　ベース
+30200901 General purpose former communist country MT base for damage reaction confirmation -- 汎用　旧共産圏MT　ベース　　ダメージリアクション確認用
+30200902 General purpose former communist country MT base for checking aerial damage behavior 1 -- 汎用　旧共産圏MT　ベース　　空中ダメージ挙動確認用1
+30200903 General purpose former communist country MT base for checking aerial damage behavior 2 -- 汎用　旧共産圏MT　ベース　　空中ダメージ挙動確認用2
+30200904 General purpose former communist country MT base for checking aerial damage behavior 3 -- 汎用　旧共産圏MT　ベース　　空中ダメージ挙動確認用3
+30200915 General purpose former communist country MT throw lie/cover jump edge test -- 汎用　旧共産圏MT　投ライ/カバー　  ジャンプエッジテスト
+30200950 General-purpose former communist country MT only medium stagger -- 汎用　旧共産圏MT　中よろけだけ
+30200951 General purpose former communist country MT only large stagger -- 汎用　旧共産圏MT　大よろけだけ
+30200991 General purpose former communist country MT cast lie/cover color variation test archibus -- 汎用　旧共産圏MT　投ライ/カバー　カラバリテスト　アーキバス
+30200992 General purpose former communist country MT throwing lie/cover color variation test bay rum -- 汎用　旧共産圏MT　投ライ/カバー　カラバリテスト　ベイラム
+30200993 General purpose former communist country MT throwing lie/cover color variation test people of ash -- 汎用　旧共産圏MT　投ライ/カバー　カラバリテスト　灰の民
+30200994 General purpose former communist country MT throw lie/cover color variation test blockade mechanism -- 汎用　旧共産圏MT　投ライ/カバー　カラバリテスト　封鎖機構
+30200995 General purpose former communist country MT throw lie/cover color variation test corporate alliance -- 汎用　旧共産圏MT　投ライ/カバー　カラバリテスト　企業連合
+30200996 General purpose former communist country MT throwing lie/cover color variation test melange ranker -- 汎用　旧共産圏MT　投ライ/カバー　カラバリテスト　メランジドランカー
+30200998 General purpose former communist country MT throwing lie/cover color variation test rust -- 汎用　旧共産圏MT　投ライ/カバー　カラバリテスト　錆
+30201000 Test Former Communist MT Throwing/Cover Bayram Hacking Test_Voice Playback -- テスト　旧共産圏MT　投ライ/カバー　ベイラム　ハッキングテスト_ボイス再生
+30201001 Situation Examination Former Communist Country MT Throwing Lie/Cover Beirum -- シチュ検　旧共産圏MT　投ライ/カバー　ベイラム
+30201002 Test Former Communist MT Throw/Cover Bayram Hacking Test_Voice not played -- テスト　旧共産圏MT　投ライ/カバー　ベイラム　ハッキングテスト_ボイス非再生
+30201003 For large missiles, former communist country MT, throw/cover, colored Coyotes -- 大型ミサイル用　旧共産圏MT　投ライ/カバー　カラバリコヨーテス
+30201004 Territory breakaway support former communist bloc MT throw lie/cover archibus -- 領域離脱援護　旧共産圏MT　投ライ/カバー　アーキバス
+30201005 SBM Hole in the Ice Field Former Communist MT Throwing Lie/Cover Bay Rum -- SBM氷原の穴　旧共産圏MT　投ライ/カバー　ベイラム
+30201021 Jailbreak Former Communist MT Throwback/Cover Bayrum Pipe Closed Space AI -- 脱獄　旧共産圏MT　投ライ/カバー　ベイラム　パイプ閉所AI
+30201022 Rail, former communist country MT, throw lie/cover, jump edge not used, bird's foot hit role -- レイル　旧共産圏MT　投ライ/カバー　ジャンプエッジ使用不　鳥足やられ役
+30201023 Railroad Former Communist MT Cast Lie/Cover Beirum -- レイルロード　旧共産圏MT　投ライ/カバー　ベイラム
+30201024 Emerging new B layer, former communist region MT, throwing lie/cover, Ev asset shooting point test -- 浮上する新B層　旧共産圏MT　投ライ/カバー　Evアセット射撃ポイントテスト
+30201025 Ruins Former Communist MT Throwback/Cover Archibus -- 廃墟　旧共産圏MT　投ライ/カバー　アーキバス
+30201026 Jailbreak Former Communist MT Throwback/Cover Archibus -- 脱獄　旧共産圏MT　投ライ/カバー　アーキバス
+30201027 Jailbreak Former Communist MT Throwback/Cover For Closed Places -- 脱獄　旧共産圏MT　投ライ/カバー　閉所用
+30201028 Ruins Former Communist MT Throwback/Cover Archibus -- 廃墟　旧共産圏MT　投ライ/カバー　アーキバス
+30201100 Former communist country MT for tremo Doubumashi Resolute fixed battery mode -- トレモ用　旧共産圏MT　ダブマシ　断固固定砲台モード
+30201101 For tremo, former communist country MT, Dubmashi, special status, for tremo only -- トレモ用　旧共産圏MT　ダブマシ　特殊ステータス　トレモ専用
+30201102 For tremo, former communist country MT, Dubmashi, special status, for tremo only, harder -- トレモ用　旧共産圏MT　ダブマシ　特殊ステータス　トレモ専用　より固い
+30201103 Situation Inspection Former Communist MT Dabumashi Beirum -- シチュ検　旧共産圏MT　ダブマシ　ベイラム
+30201104 For tremo, former communist country MT, Dubmashi, special status, for tremo only, no undiscovered bonus -- トレモ用　旧共産圏MT　ダブマシ　特殊ステータス　トレモ専用　未発見ボナなし
+30201105 Railroad Former Communist MT Dubmashi Bayram Fixed battery mode from the beginning -- レイルロード　旧共産圏MT　ダブマシ　ベイラム　最初から固定砲台モード
+30201106 For tremo, former communist country MT, Dabumashi, special status, for tremo only, harder fixed turret -- トレモ用　旧共産圏MT　ダブマシ　特殊ステータス　トレモ専用　より固い 固定砲台
+30201107 For big bridge, former communist country MT, Dubumashi, color variation Rad -- ビッグブリッジ用　旧共産圏MT　ダブマシ　カラバリRad
+30201108 Territory breakaway support Former Communist bloc MT Dabumashi Beirum -- 領域離脱援護　旧共産圏MT　ダブマシ　ベイラム
+30201109 Dam Defense Former Communist MT Dabumashi Tattered Wingplane -- ダム防衛　旧共産圏MT　ダブマシ ボロボロ　僚機
+30201111 Big Bridge Former Communist MT Doubmashi Bayram Resolute Fixed Battery Mode -- ビッグブリッジ　旧共産圏MT　ダブマシ　ベイラム　断固固定砲台モード
+30201112 Over the Wall Former Communist MT Dabumashi -- 壁越え　旧共産圏MT　ダブマシ
+30201113 SBM Hole in the Ice Field Former Communist MT Dabumashi Bayrum -- SBM氷原の穴　旧共産圏MT　ダブマシ　ベイラム
+30201114 Over the wall, former communist country MT, dubmashi, fixed battery mode, worn out -- 壁越え　旧共産圏MT　ダブマシ　固定砲台モード　ボロボロ
+30201115 Destroy SBM battery, former communist region MT, Dabumashi, fixed battery mode, battered -- SBM砲台撃破　旧共産圏MT　ダブマシ　固定砲台モード　ボロボロ
+30201120 Prologue Former Communist MT Doubmashi Bayram Fixed artillery from the beginning_Special death 00 -- プロローグ　旧共産圏MT　ダブマシ　ベイラム　最初から固定砲台_特殊死亡00
+30201121 Prologue Former communist region MT Doubmashi Bayram Fixed battery from the beginning_Special death 01 -- プロローグ　旧共産圏MT　ダブマシ　ベイラム　最初から固定砲台_特殊死亡01
+30201122 Prologue Former Communist MT Doubmashi Bayram Fixed artillery from the beginning_Special death 02 -- プロローグ　旧共産圏MT　ダブマシ　ベイラム　最初から固定砲台_特殊死亡02
+30201123 Prologue Communist MT Dubmashi -- プロローグ　共産MT　ダブマシ
+30201124 Jailbreak Former Communist MT Dabumashi Archibus -- 脱獄　旧共産圏MT　ダブマシ　アーキバス
+30201125 Jailbreak Former Communist MT Doubmashi Fixed Artillery Mode Archibus -- 脱獄　旧共産圏MT　ダブマシ　固定砲台モード　アーキバス
+30201126 Encounter with the organization Former Communist bloc MT Dabumashi Archibus -- 組織との出会い　旧共産圏MT　ダブマシ アーキバス
+30201127 Encounter with the organization, former communist region MT, Dabumashi, fixed artillery battery, archibus -- 組織との出会い　旧共産圏MT　ダブマシ　固定砲台　アーキバス
+30201200 For big bridge, former communist region MT, location machi, color variation Rad -- ビッグブリッジ用　旧共産圏MT　ロケマシ　カラバリRad
+30201201 Situation Inspection Former Communist Area MT Location Mashi Beirum -- シチュ検　旧共産圏MT　ロケマシ　ベイラム
+30201202 Prologue Former communist region MT Location Mashi Bayrum Jump Edge not used -- プロローグ　旧共産圏MT　ロケマシ　ベイラム　ジャンプエッジ使わず
+30201203 Railroad Reverse Run, Former Communist Country MT, Location Mashi, BFF, Ally, Accompanying -- レイルロード逆走　旧共産圏MT　ロケマシ　BFF　味方　随伴
+30201204 Railroad Reverse Run, Former Communist MT, Location Best, BFF, Ally, On the Spot -- レイルロード逆走　旧共産圏MT　ロケマシ　BFF　味方　その場
+30201205 Railroad, former communist region MT, location best, BFF, ally, spot -- レイルロード　旧共産圏MT　ロケマシ　BFF　味方　その場
+30201206 Prologue Former communist region MT Location Mashi Special AP for charge shot -- プロローグ　旧共産圏MT　ロケマシ　チャージショット用特別AP
+30201207 Mining ship, former communist region MT, location-friendly, long locking distance -- 採掘艦　旧共産圏MT　ロケマシ　ロック距離長め
+30201208 In front of the search wall, former communist region MT, location mashi, team type destruction object -- 探索壁前　旧共産圏MT　ロケマシ　チームタイプ破壊オブジェ
+30201209 Territory withdrawal support, former communist region MT, location masi, Beirum -- 領域離脱援護　旧共産圏MT　ロケマシ　ベイラム
+30201210 SBM Hole in the Ice Field Former Communist MT Location Mashi Beirum -- SBM氷原の穴　旧共産圏MT　ロケマシ　ベイラム
+30201212 SBM Transport Helicopter Destroyed Former Communist MT Location Machine Cover Individual Tattered -- SBM輸送ヘリ撃破　旧共産圏MT　ロケマシ　カバー個体　ボロボロ
+30201301 SBM Hole in the Ice Field Former Communist MT Shot Shield Bayram -- SBM氷原の穴　旧共産圏MT　ショット盾　ベイラム
+30201303 Situation Inspection Former Communist MT Shot Shield Beirum -- シチュ検　旧共産圏MT　ショット盾　ベイラム
+30201304 General Purpose Former Communist MT Shot Shield Baylum Jump Edge cannot be used -- 汎用　旧共産圏MT　ショット盾　ベイラム  ジャンプエッジ使用不可
+30201305 Jailbreak Former Communist MT Shot Shield Archibus -- 脱獄　旧共産圏MT　ショット盾　アーキバス
+30201311 Encounter with the organization Former Communist MT Shot Shield Archibus -- 組織との出会い　旧共産圏MT　ショット盾　アーキバス
+30201400 Former communist region MT Misarai for AC test -- ACテスト用　旧共産圏MT　ミサライ
+30201402 Situ Prosecutor Former Communist MT Misarai Bayram -- シチュ検　旧共産圏MT　ミサライ　ベイラム
+30201403 Situation Inspector Former Communist MT Misarai Bayram Fixed battery mode from the beginning -- シチュ検　旧共産圏MT　ミサライ　ベイラム　最初から固定砲台モード
+30201404 Jailbreak Former Communist MT Misarai BFF Resolute Fixed Battery -- 脱獄　旧共産圏MT　ミサライ　BFF　断固固定砲台
+30201406 In front of the search wall, former communist region MT, Misarai Bayram, with special effects for photos -- 探索壁前　旧共産圏MT　ミサライ　ベイラム　写真用特殊効果付き
+30201407 Railroad Former Communist MT Misarai Bayram Fixed battery mode from the beginning -- レイルロード　旧共産圏MT　ミサライ　ベイラム　最初から固定砲台モード
+30201408 Dam Defense Former Communist MT Misarai Bayram Resolute Fixed Battery Mode -- ダム防衛　旧共産圏MT　ミサライ　ベイラム　断固固定砲台モード
+30201409 Big Bridge Former Communist MT Misarai Bayram Jump edge cannot be used Resolutely fixed -- ビッグブリッジ　旧共産圏MT　ミサライ　ベイラム  ジャンプエッジ使用不可　断固固定
+30201410 General-purpose former communist region MT Misarai Fixed battery mode from the beginning -- 汎用　旧共産圏MT　ミサライ　最初から固定砲台モード
+30201411 Straight city reverse run, former communist region MT, Misarai, resolutely fixed battery mode, s02, RAD -- ストレート市街逆走　旧共産圏MT　ミサライ　断固固定砲台モード　ｓ02　RAD
+30201412 Prologue Former Communist MT Misarai Fixed battery mode from the beginning -- プロローグ　旧共産圏MT　ミサライ　最初から固定砲台モード
+30201413 SBM Hole in the Ice Field Former Communist MT Misarai Fixed Battery Mode -- SBM氷原の穴　旧共産圏MT　ミサライ　固定砲台モード
+30201414 SBM Hole in the Ice Field Former Communist MT Misarai Aerial Loading Bayram -- SBM氷原の穴　旧共産圏MT　ミサライ　空中読み込み用　ベイラム
+30201415 Collapse A-layer Former Communist MT Misarai Resolute fixed battery mode -- 崩落A層　旧共産圏MT　ミサライ　断固固定砲台モード
+30201416 For SBM Tute A, former communist MT, Misarai, fixed battery mode, bay rum color -- SBMチュートA用　旧共産圏MT　ミサライ　固定砲台モード　ベイラムカラー
+30201417 For big bridge, former communist region MT, Misarai, fixed battery mode, color variation Rad -- ビッグブリッジ用　旧共産圏MT　ミサライ　固定砲台モード　カラバリRad
+30201418 For large missiles, former communist region MT, Misarai, Karabari Coyotes -- 大型ミサイル用　旧共産圏MT　ミサライ　カラバリコヨーテス
+30201419 Former communist region MT Misarai for scavenging -- スカベンジング用　旧共産圏MT　ミサライ
+30201420 Former communist MT Misarai fixed battery mode for scavenging -- スカベンジング用　旧共産圏MT　ミサライ　固定砲台モード
+30201421 Dam defense, former communist region MT, Misarai, fixed battery mode, wingman, battered -- ダム防衛　旧共産圏MT　ミサライ　固定砲台モード　僚機　ボロボロ
+30201422 Area escape support, former communist MT, Misarai, fixed battery mode, Bayram -- 領域離脱援護　旧共産圏MT　ミサライ　固定砲台モード　ベイラム
+30201423 SBM Hole in the Ice Field Former Communist MT Misarai Bayram -- SBM氷原の穴　旧共産圏MT　ミサライ　ベイラム
+30201424 Former communist region MT Misarai fixed battery mode for collapsed A layer -- 崩落A層用　旧共産圏MT　ミサライ　固定砲台モード
+30201425 Dam Destruction Former Communist MT Misarai Fixed Battery Mode Tattered -- ダム破壊　旧共産圏MT　ミサライ　固定砲台モード　ボロボロ
+30201426 SBM Transport Helicopter Destroyed Former Communist MT Misarai Fixed Battery Mode Tattered -- SBM輸送ヘリ撃破　旧共産圏MT　ミサライ　固定砲台モード　ボロボロ
+30201427 SBM battery destroyed, former communist MT Misarai, fixed battery mode, battered -- SBM砲台撃破　旧共産圏MT　ミサライ　固定砲台モード　ボロボロ
+30201428 Encounter with the organization Former Communist MT Misarai Archibus -- 組織との出会い　旧共産圏MT　ミサライ　アーキバス
+30201429 Encounter with the organization Former Communist MT Misarai Fixed artillery mode Archibus -- 組織との出会い　旧共産圏MT　ミサライ　固定砲台モード　アーキバス
+30201430 Over the wall, former communist MT, Misarai, fixed battery mode, tattered, token holding, green camera eye -- 壁越え　旧共産圏MT　ミサライ　固定砲台モード　ボロボロ　トークン持ち緑カメラアイ
+30201500 Over the Wall Former Communist MT Cannon Fixed Battery Mode Tattered -- 壁越え　旧共産圏MT　キャノン　固定砲台モード　ボロボロ
+30201501 Situation Inspection Former Communist MT Canon Beirum -- シチュ検　旧共産圏MT　キャノン　ベイラム
+30201502 Collapsed Continental Shell Former Communist MT Cannon Jump Edge Unreadable -- 崩落した大陸殻　旧共産圏MT　キャノン　ジャンプエッジよまない
+30201503 Jailbreak Former Communist MT Canon Beirum -- 脱獄　旧共産圏MT　キャノン　ベイラム
+30201504 Area escape support, former communist region MT, cannon BFF, for second base, not canceled by fixed battery damage -- 領域離脱援護　旧共産圏MT　キャノン　BFF　第二拠点用　固定砲台ダメージで解除しない
+30201505 Railroad Former Communist MT Cannon Bayram Resolute Fixed Battery Mode -- レイルロード　旧共産圏MT　キャノン　ベイラム　断固固定砲台モード
+30201506 Straight city reverse run, former communist region MT, cannon, fixed battery, unlocked by distance -- ストレート市街逆走　旧共産圏MT　キャノン　固定砲台　距離で解除
+30201507 Emerging new B class, former communist bloc MT Canon -- 浮上する新B層　旧共産圏MT　キャノン
+30201508 SBM Hole in the Ice Field Former Communist MT Cannon Determined Fixed Battery Mode Aerial Generation Bayram -- SBM氷原の穴　旧共産圏MT　キャノン　断固固定砲台モード　空中生成　ベイラム
+30201509 For large missiles, former communist region MT cannon, Karabari Coyotes -- 大型ミサイル用　旧共産圏MT　キャノン　カラバリコヨーテス
+30201510 Area escape support, former communist region MT, cannon, fixed battery mode, EVP asset shooting support, Bayram -- 領域離脱援護　旧共産圏MT　キャノン　固定砲台モード　Evpアセット射撃対応　ベイラム
+30201511 Scavenging Former Communist MT Cannon Fixed Battery Mode -- スカベンジング　旧共産圏MT　キャノン　固定砲台モード
+30201512 Dam defense, former communist region MT, cannon, fixed battery mode, wingman, battered -- ダム防衛　旧共産圏MT　キャノン　固定砲台モード　僚機　ボロボロ
+30201513 Ruins Former Communist MT Canon Archibus -- 廃墟　旧共産圏MT　キャノン　アーキバス
+30201514 Jailbreak Former Communist MT Cannon Fixed Battery Mode Archibus -- 脱獄　旧共産圏MT　キャノン　固定砲台モード　アーキバス
+30201515 New B-class people, former communist country MT, cannon, fixed battery mode, battered -- 新B層の人々　旧共産圏MT　キャノン　固定砲台モード　ボロボロ
+30201516 Dam Destruction Former Communist MT Cannon Fixed Battery Mode Tattered -- ダム破壊　旧共産圏MT　キャノン　固定砲台モード　ボロボロ
+30201517 Dam Destruction Former Communist MT Cannon Fixed Battery Mode Tattered -- ダム破壊　旧共産圏MT　キャノン　固定砲台モード　ボロボロ
+30201518 SBM battery destroyed, former communist region MT cannon, fixed battery mode, battered -- SBM砲台撃破　旧共産圏MT　キャノン　固定砲台モード　ボロボロ
+30201519 Encounter with the organization Former Communist MT Cannon Fixed artillery mode Archibus -- 組織との出会い　旧共産圏MT　キャノン　固定砲台モード　アーキバス
+30201600 For tremo, former communist country MT, Rai shield, resolutely fixed battery mode -- トレモ用　旧共産圏MT　ライ盾　断固固定砲台モード
+30201602 Situation Prosecutor Former Communist MT Raishi BFF Ally -- シチュ検　旧共産圏MT　ライ盾　BFF　味方
+30201603 Rail Reverse Run, Former Communist MT, Rai Shield, Beirum, Fixed Battery Mode from the Start -- レイル逆走　旧共産圏MT　ライ盾　ベイラム　最初から固定砲台モード
+30201604 For tremo, former communist country MT, Rai shield, fixed battery mode, for tremo only, harder -- トレモ用　旧共産圏MT　ライ盾　固定砲台モード　トレモ専用　より固い
+30201700 Territory breakaway support Former Communist bloc MT Lokerai Beirum -- 領域離脱援護　旧共産圏MT　ロケライ　ベイラム
+30201701 Encounter with the organization Former communist region MT Rokerai Archibus -- 組織との出会い　旧共産圏MT　ロケライ　アーキバス
+30201800 Tutorial for former communist region MT Mashishield Beirum -- チュートリアル用　旧共産圏MT　マシ盾　ベイラム
+30201801 For Prologue Former Communist MT Mashishield For Asabu & Blade Tutorial -- プロローグ用　旧共産圏MT　マシ盾　アサブ＆ブレードチュートリアル用
+30201802 For SBM Tute A, former communist MT, Mashishield, fixed battery mode, color variation bay ram -- SBMチュートA用　旧共産圏MT　マシ盾　固定砲台モード　カラバリベイラム
+30201803 For SBM Tute A, former communist region MT, Mashishield, color variation Baylum -- SBMチュートA用　旧共産圏MT　マシ盾　カラバリベイラム
+30201810 For prologue, former communist region MT, for one charge shot -- プロローグ用　旧共産圏MT　チャージショット一発用
+30201812 Prologue Former communist region MT better -- プロローグ　旧共産圏MT　マシ
+30201813 Dam destruction, former communist bloc MT, better -- ダム破壊　旧共産圏MT　マシ
+30201814 Over the wall, former communist country MT, better in tatters -- 壁越え　旧共産圏MT　マシ　ボロボロ
+30201815 SBM Transport Helicopter Destroyed Former Communist MT Better Tattered -- SBM輸送ヘリ撃破　旧共産圏MT　マシ　ボロボロ
+30201816 Destroyed SBM battery, former communist country MT, better in tatters -- SBM砲台撃破　旧共産圏MT　マシ　ボロボロ
+30201817 Destroy SBM battery, former communist region MT, better, fixed battery mode, battered -- SBM砲台撃破　旧共産圏MT　マシ　固定砲台モード　ボロボロ
+30201818 Prologue Former communist region MT better Distance release fixed gun battery -- プロローグ　旧共産圏MT　マシ　距離解除固定砲台
+30201819 Over the wall, former communist country MT, better, worn out, token holding green camera eye -- 壁越え　旧共産圏MT　マシ　ボロボロ　トークン持ち緑カメラアイ
+30201820 Former communist country MT for tremo better -- トレモ用　旧共産圏MT　マシ
+30201822 Prologue Former communist region MT better -- プロローグ　旧共産圏MT　マシ
+30201830 In front of the search wall, former communist region MT, Camerai -- 探索壁前　旧共産圏MT　カメライ
+30201831 In front of the search wall, former communist region MT, Camerai, fixed battery mode -- 探索壁前　旧共産圏MT　カメライ　固定砲台モード
+30202000 Over the wall, former communist region MT, better, fixed battery mode, wingman, archibus -- 壁越え　旧共産圏MT　マシ　固定砲台モード　僚機　アーキバス
+30202001 Over the wall, former communist region MT, cannon, fixed battery mode, wingman -- 壁越え　旧共産圏MT　キャノン　固定砲台モード　僚機
+30500000 General purpose regular army MT normal -- 汎用　正規軍MT　ノーマル
+30500001 General purpose regular army MT normal fixed battery mode -- 汎用　正規軍MT　ノーマル　固定砲台モード
+30500002 General purpose regular army MT normal cover individual -- 汎用　正規軍MT　ノーマル　カバー個体
+30500003 General purpose regular army MT normal wingman action accompanying -- 汎用　正規軍MT　ノーマル　僚機行動　随伴
+30500004 General Purpose Regular Army MT Normal Fixed Battery Mode Cannot be canceled by damage -- 汎用　正規軍MT　ノーマル　固定砲台モード ダメージで解除されない
+30500005 General Purpose Regular Army MT Normal Fixed Battery Mode Cannot be canceled by distance -- 汎用　正規軍MT　ノーマル　固定砲台モード 距離で解除されない
+30500006 General purpose regular army MT normal fixed battery mode Can't be canceled due to distance and damage -- 汎用　正規軍MT　ノーマル　固定砲台モード 距離とダメージで解除されない
+30500007 General purpose regular army MT normal fixed battery mode Attack only within battle starting distance -- 汎用　正規軍MT　ノーマル　固定砲台モード 戦闘開始距離内でのみ攻撃
+30500008 General purpose regular army MT normal fixed battery mode Attacks only within battle starting distance Cannot be canceled by damage -- 汎用　正規軍MT　ノーマル　固定砲台モード 戦闘開始距離内でのみ攻撃 ダメージで解除されない
+30500009 General purpose regular army MT normal fixed battery mode Attacks only within battle start distance Cannot be canceled by distance -- 汎用　正規軍MT　ノーマル　固定砲台モード 戦闘開始距離内でのみ攻撃 距離で解除されない
+30500010 General purpose regular army MT normal fixed battery mode Attacks only within battle starting distance Cannot be canceled by distance and damage -- 汎用　正規軍MT　ノーマル　固定砲台モード 戦闘開始距離内でのみ攻撃 距離とダメージで解除されない
+30500099 General purpose regular army MT normal corporate cooperation -- 汎用　正規軍MT　ノーマル 企業協商
+30500100 General purpose regular army MT support -- 汎用　正規軍MT　支援
+30500101 General purpose regular army MT support fixed battery mode -- 汎用　正規軍MT　支援　固定砲台モード
+30500102 General purpose regular army MT support fixed artillery mode not canceled by damage -- 汎用　正規軍MT　支援　固定砲台モード ダメージで解除されない
+30500103 General Purpose Regular Army MT Support Fixed Artillery Mode Cannot be canceled by distance -- 汎用　正規軍MT　支援　固定砲台モード 距離で解除されない
+30500104 General purpose regular army MT support fixed artillery mode Can't be canceled due to distance and damage -- 汎用　正規軍MT　支援　固定砲台モード 距離とダメージで解除されない
+30500105 General purpose regular army MT support fixed battery mode Attack only within battle starting distance -- 汎用　正規軍MT　支援　固定砲台モード 戦闘開始距離内でのみ攻撃
+30500106 General purpose regular army MT support fixed artillery mode Attacks only within battle starting distance Cannot be canceled by damage -- 汎用　正規軍MT　支援　固定砲台モード 戦闘開始距離内でのみ攻撃 ダメージで解除されない
+30500107 General purpose regular army MT support fixed artillery mode Attacks only within battle start distance Cannot be canceled by distance -- 汎用　正規軍MT　支援　固定砲台モード 戦闘開始距離内でのみ攻撃 距離で解除されない
+30500108 General purpose regular army MT support fixed artillery mode Attacks only within battle starting distance Cannot be canceled by distance and damage -- 汎用　正規軍MT　支援　固定砲台モード 戦闘開始距離内でのみ攻撃 距離とダメージで解除されない
+30500199 General purpose regular army MT support corporate cooperation -- 汎用　正規軍MT　支援 企業協商
+30500200 General purpose regular army MT melee -- 汎用　正規軍MT　近接
+30500201 General purpose regular army MT close cover individual -- 汎用　正規軍MT　近接　カバー個体
+30500299 General Purpose Regular Army MT Proximity Corporate Consultation -- 汎用　正規軍MT　近接 企業協商
+30500300 General purpose regular army MT flamethrower -- 汎用　正規軍MT　火炎放射
+30500399 General Purpose Regular Army MT Flamethrower Corporate Consultation -- 汎用　正規軍MT　火炎放射 企業協商
+30500400 General purpose regular army MT bombing -- 汎用　正規軍MT　爆撃
+30500401 General purpose regular army MT bombing fixed battery mode -- 汎用　正規軍MT　爆撃　固定砲台モード
+30500402 General purpose regular army MT bombing fixed artillery mode not canceled by damage -- 汎用　正規軍MT　爆撃　固定砲台モード ダメージで解除されない
+30500403 General purpose regular army MT bombing fixed artillery mode not canceled by distance -- 汎用　正規軍MT　爆撃　固定砲台モード 距離で解除されない
+30500404 General purpose regular army MT bombing fixed battery mode Can't be canceled due to distance and damage -- 汎用　正規軍MT　爆撃　固定砲台モード 距離とダメージで解除されない
+30500405 General purpose regular army MT bombing fixed battery mode Attack only within battle starting distance -- 汎用　正規軍MT　爆撃　固定砲台モード 戦闘開始距離内でのみ攻撃
+30500406 General purpose regular army MT bombing fixed battery mode Attacks only within battle starting distance Cannot be canceled by damage -- 汎用　正規軍MT　爆撃　固定砲台モード 戦闘開始距離内でのみ攻撃 ダメージで解除されない
+30500407 General purpose regular army MT bombing fixed artillery mode Attacks only within battle start distance Cannot be canceled by distance -- 汎用　正規軍MT　爆撃　固定砲台モード 戦闘開始距離内でのみ攻撃 距離で解除されない
+30500408 General purpose regular army MT bombing fixed battery mode Attacks only within battle start distance Cannot be canceled by distance and damage -- 汎用　正規軍MT　爆撃　固定砲台モード 戦闘開始距離内でのみ攻撃 距離とダメージで解除されない
+30500499 General purpose regular army MT bombing corporate cooperation -- 汎用　正規軍MT　爆撃 企業協商
+30500900 General purpose regular army MT all weapons -- 汎用　正規軍MT　全兵装
+30500901 General-purpose regular army MT, all weapons, for checking aerial damage behavior 1 -- 汎用　正規軍MT　全兵装　空中ダメージ挙動確認用1
+30500902 General-purpose regular army MT, all weapons, for checking aerial damage behavior 2 -- 汎用　正規軍MT　全兵装　空中ダメージ挙動確認用2
+30500903 General-purpose regular army MT, all weapons, for checking aerial damage behavior 3 -- 汎用　正規軍MT　全兵装　空中ダメージ挙動確認用3
+30500950 General purpose regular army MT, all weapons, medium stagger only -- 汎用　正規軍MT　全兵装 中よろけだけ
+30500951 General purpose regular army MT, all weapons, large stagger only -- 汎用　正規軍MT　全兵装 大よろけだけ
+30501000 Strike Street Reverse Run Regular Army MT Normal Archibus -- スト街逆走　正規軍MT　ノーマル　アーキバス
+30501001 Rail Reverse Run Regular Army MT Normal Fixed Battery Mode -- レイル逆走　正規軍MT　ノーマル　固定砲台モード
+30501002 Strike Street Invasion Regular Army MT Normal Archibus -- スト街侵攻　正規軍MT　ノーマル　アーキバス
+30501003 Defeat Iceworm Regular Army MT Normal Wingplane Action Accompanying -- アイスワーム撃破　正規軍MT　ノーマル　僚機行動　随伴
+30501004 General purpose regular army MT normal -- 汎用　正規軍MT　ノーマル
+30501005 General purpose regular army MT normal fixed battery mode -- 汎用　正規軍MT　ノーマル　固定砲台モード
+30501006 General purpose regular army MT normal cover individual -- 汎用　正規軍MT　ノーマル　カバー個体
+30501007 General purpose regular army MT normal wingman action accompanying -- 汎用　正規軍MT　ノーマル　僚機行動　随伴
+30501008 General Purpose Regular Army MT Normal Fixed Battery Mode Cannot be canceled by damage -- 汎用　正規軍MT　ノーマル　固定砲台モード ダメージで解除されない
+30501009 General Purpose Regular Army MT Normal Fixed Battery Mode Cannot be canceled by distance -- 汎用　正規軍MT　ノーマル　固定砲台モード 距離で解除されない
+30501010 General purpose regular army MT normal fixed battery mode Can't be canceled due to distance and damage -- 汎用　正規軍MT　ノーマル　固定砲台モード 距離とダメージで解除されない
+30501011 Strike Street Reverse Run Regular Army MT Normal Fixed Artillery Mode Archibus that cannot be canceled due to distance and damage -- スト街逆走　正規軍MT　ノーマル　固定砲台モード 距離とダメージで解除されない　アーキバス
+30501012 Strike Street Invasion Regular Army MT Normal Fixed Artillery Mode Archibus -- スト街侵攻　正規軍MT　ノーマル　固定砲台モード　アーキバス
+30501013 Strike Street Invasion Regular Army MT Normal Cover Individual Archibus -- スト街侵攻　正規軍MT　ノーマル　カバー個体　アーキバス
+30501015 Rail Reverse Run Regular Army MT Normal Fixed Battery Mode -- レイル逆走　正規軍MT　ノーマル　固定砲台モード
+30501016 Ruins Regular Army MT Normal Archibus -- 廃墟　正規軍MT　ノーマル　アーキバス
+30501017 Strike Street Invasion Regular Army MT Normal Fixed Artillery Mode Archibus that cannot be canceled due to distance and damage -- スト街侵攻　正規軍MT　ノーマル　固定砲台モード 距離とダメージで解除されない　アーキバス
+30501018 Fuel Base Sweeping Regular Army MT Normal Fixed Artillery Mode Archibus -- 燃料基地掃討　正規軍MT　ノーマル　固定砲台モード　アーキバス
+30501019 Regular army MT for attacking the old spaceport, normal, without jump edge -- 旧宇宙港襲撃用　正規軍MT　ノーマル　ジャンプエッジ使わず
+30501100 General purpose regular army MT support -- 汎用　正規軍MT　支援
+30501101 General purpose regular army MT support fixed battery mode -- 汎用　正規軍MT　支援　固定砲台モード
+30501102 Strike Street Invasion Regular Army MT Support Fixed Artillery Mode Archibus -- スト街侵攻　正規軍MT　支援　固定砲台モード　アーキバス
+30501200 Rail Reverse Run Regular Army MT Proximity Slope Room -- レイル逆走　正規軍MT　近接　斜面部屋
+30501201 General purpose regular army MT close cover individual -- 汎用　正規軍MT　近接　カバー個体
+30501202 Strike Street Invasion Regular Army MT Proximity Archibus -- スト街侵攻　正規軍MT　近接　アーキバス
+30501204 Rail Reverse Run Regular Army MT Close-up -- レイル逆走　正規軍MT　近接
+30501205 Strike Street Reverse Run Regular Army MT Proximity Archibus -- スト街逆走　正規軍MT　近接　アーキバス
+30501300 Rail Reverse Run Regular Army MT Flamethrower Slope Room -- レイル逆走　正規軍MT　火炎放射　斜面部屋
+30501301 Rail Reverse Run Regular Army MT Flamethrower -- レイル逆走　正規軍MT　火炎放射
+30501400 General purpose regular army MT bombing -- 汎用　正規軍MT　爆撃
+30501401 Strike Street Invasion Regular Army MT Bombing Fixed Artillery Mode Archibus -- スト街侵攻　正規軍MT　爆撃　固定砲台モード　アーキバス
+30501405 Fuel Base Sweeping Regular Army MT Bomb Default 5000 Archibus -- 燃料基地掃討　正規軍MT　爆撃デフォ5000つき　アーキバス
+30501406 Reverse run on strike street Regular army MT bombing Can't be canceled due to damage to archibus fixed artillery -- スト街逆走　正規軍MT　爆撃　アーキバス固定砲台ダメーで解除されない
+30501407 Fuel base mopping up, regular army MT, bombing, fixed artillery battery mode, attack only within battle start distance, cannot be canceled by distance and damage -- 燃料基地掃討　正規軍MT　爆撃　固定砲台モード 戦闘開始距離内でのみ攻撃 距離とダメージで解除されない
+31000000 General purpose reverse leg flight MT medium and short range shooting -- 汎用　逆脚飛行MT　中近距離射撃
+31000001 General-purpose reverse leg flight MT, medium and short range shooting, floating from the beginning -- 汎用　逆脚飛行MT　中近距離射撃 はじめから浮遊
+31000003 General-purpose reverse leg flight MT, medium and short range shooting, fixed battery mode from the beginning -- 汎用　逆脚飛行MT　中近距離射撃　最初から固定砲台モード
+31000100 General-purpose reverse leg flight MT short-range assault -- 汎用　逆脚飛行MT　近距離突撃
+31000103 General-purpose reverse leg flight MT, short-range assault, fixed battery mode from the beginning -- 汎用　逆脚飛行MT　近距離突撃　最初から固定砲台モード
+31000600 General-purpose reverse leg flight MT, short-range assault, floating from the beginning -- 汎用　逆脚飛行MT　近距離突撃 はじめから浮遊
+31000900 General-purpose reverse leg flight MT, all weapons -- 汎用　逆脚飛行MT　全兵装
+31000901 General-purpose reverse leg flight MT, all weapons, for checking aerial damage behavior 1 -- 汎用　逆脚飛行MT　全兵装 空中ダメージ挙動確認用1
+31000902 General-purpose reverse leg flight MT, all weapons, for checking aerial damage behavior 2 -- 汎用　逆脚飛行MT　全兵装 空中ダメージ挙動確認用2
+31000903 General-purpose reverse leg flight MT, all weapons, for checking aerial damage behavior 3 -- 汎用　逆脚飛行MT　全兵装 空中ダメージ挙動確認用3
+31000904 General-purpose reverse leg flight MT, all weapons, for checking aerial damage behavior 4 -- 汎用　逆脚飛行MT　全兵装 空中ダメージ挙動確認用4
+31000905 General-purpose reverse leg flight MT, all weapons, for checking aerial damage behavior 5 -- 汎用　逆脚飛行MT　全兵装 空中ダメージ挙動確認用5
+31000906 General-purpose reverse leg flight MT, all weapons, for checking aerial damage behavior 6 -- 汎用　逆脚飛行MT　全兵装 空中ダメージ挙動確認用6
+31000910 General-purpose reverse leg flight MT, all weapons, floating -- 汎用　逆脚飛行MT　全兵装 浮遊
+31000950 General-purpose reverse leg flight MT, all weapons, medium stagger only -- 汎用　逆脚飛行MT　全兵装 中よろけだけ
+31000951 General-purpose reverse leg flight MT, all weapons, large stagger only -- 汎用　逆脚飛行MT　全兵装 大よろけだけ
+31000955 General-purpose reverse leg flight MT, all weapons, medium stagger only -- 汎用　逆脚飛行MT　全兵装 中よろけだけ
+31000956 General-purpose reverse leg flight MT, all weapons, large stagger only -- 汎用　逆脚飛行MT　全兵装 大よろけだけ
+31001000 Reverse leg flight MT medium and short range shooting for city bosses on the ocean -- 洋上の都市ボス用　逆脚飛行MT　中近距離射撃
+31001100 General-purpose reverse leg flight MT short-range assault -- 汎用　逆脚飛行MT　近距離突撃
+31001101 Offshore City Token Reverse Leg Flying MT Close Range Assault -- 洋上の都市　トークン用　逆脚飛行MT　近距離突撃
+31500000 c3150 Juggernaut_Assault type -- c3150　ジャガーノート_突撃型
+31500900 c3150 Juggernaut_Full ride -- c3150　ジャガーノート_全乗せ
+31501000 Wall-crossing Juggernaut Assault type_For shelling only -- 壁越え　ジャガーノート　突撃型_砲撃専用
+31501001 Test Juggernaut_Assault type hacking test -- テスト　ジャガーノート_突撃型　ハッキングテスト
+32000000 General purpose Avalanche Ace -- 汎用　アバランチ　エース
+32000010 General-purpose Avalanche Ace for timer confirmation -- 汎用　アバランチ　エース タイマン確認用
+32000100 General purpose avalanche support A -- 汎用　アバランチ　サポートA
+32000101 General purpose avalanche support A2 -- 汎用　アバランチ　サポートA2
+32000110 General purpose avalanche support A for timer confirmation -- 汎用　アバランチ　サポートA タイマン確認用
+32000200 General purpose avalanche support B -- 汎用　アバランチ　サポートB
+32000210 General purpose avalanche support B for timer confirmation -- 汎用　アバランチ　サポートB タイマン確認用
+32000900 General purpose avalanche base -- 汎用　アバランチ　ベース
+32000901 General purpose avalanche base for checking aerial damage behavior 1 -- 汎用　アバランチ　ベース 空中ダメージ挙動確認用1
+32000902 General purpose avalanche base for checking aerial damage behavior 2 -- 汎用　アバランチ　ベース 空中ダメージ挙動確認用2
+32000903 General purpose avalanche base for checking aerial damage behavior 3 -- 汎用　アバランチ　ベース 空中ダメージ挙動確認用3
+32000950 General Purpose Avalanche Ace Medium Stagger Only -- 汎用　アバランチ　エース 中よろけだけ
+32000951 General Purpose Avalanche Ace Large Stagger Only -- 汎用　アバランチ　エース 大よろけだけ
+32000953 General-purpose Avalanche Ace For checking the hit addition (blade addition) -- 汎用　アバランチ　エース 被弾加算大（ブレード加算）確認用
+32000955 General purpose avalanche support B medium stagger only -- 汎用　アバランチ　サポートB 中よろけだけ
+32000956 General-purpose Avalanche Support B Large stagger only -- 汎用　アバランチ　サポートB 大よろけだけ
+32001100 Avalanche support A for eliminating intruders -- 侵入者排除用　アバランチ　サポートA
+32001200 Avalanche support B for eliminating intruders -- 侵入者排除用　アバランチ　サポートB
+32500000 General purpose regular army AC normal -- 汎用　正規軍AC　ノーマル
+32500001 General purpose regular army AC normal fixed battery -- 汎用　正規軍AC　ノーマル　固定砲台
+32500099 General Purpose Regular Army AC Normal Corporate Entente -- 汎用　正規軍AC　ノーマル 企業協商
+32500100 General Purpose Regular Army AC Diffusion Buzz -- 汎用　正規軍AC　拡散バズ
+32500101 General Purpose Regular Army AC Diffusion Buzz Fixed Artillery Battery -- 汎用　正規軍AC　拡散バズ 固定砲台
+32500102 General Purpose Regular Army AC Diffusion Buzz Resolute Fixed Artillery Battery -- 汎用　正規軍AC　拡散バズ 断固固定砲台
+32500199 General Purpose Regular Army AC Diffusion Buzz Corporate Consultation -- 汎用　正規軍AC　拡散バズ 企業協商
+32500400 General purpose regular army AC sniper -- 汎用　正規軍AC　狙撃
+32500401 General purpose regular army AC sniper fixed artillery battery -- 汎用　正規軍AC　狙撃　固定砲台
+32500402 General purpose regular army AC sniper determined fixed artillery battery -- 汎用　正規軍AC　狙撃　断固固定砲台
+32500499 General purpose regular army AC sniper corporate cooperation -- 汎用　正規軍AC　狙撃 企業協商
+32500600 c3250 Regular Army AC Enhanced Heavy Firepower -- c3250　正規軍AC 強化重火力
+32500601 c3250 Regular Army AC Enhanced Heavy Firepower Fixed Artillery Battery -- c3250　正規軍AC 強化重火力 固定砲台
+32500699 c3250 Regular Army AC Enhanced Heavy Firepower Corporate Consultation -- c3250　正規軍AC 強化重火力 企業協商
+32500700 General purpose regular army AC high mobility -- 汎用　正規軍AC　高機動
+32500701 General Purpose Regular Army AC High Mobility Floating Start -- 汎用　正規軍AC　高機動 浮遊開始
+32500799 General Purpose Regular Army AC High Mobility Corporate Consultation -- 汎用　正規軍AC　高機動 企業協商
+32500900 General purpose regular army AC base -- 汎用　正規軍AC　ベース
+32500901 General purpose regular army AC base for checking aerial damage behavior 1 -- 汎用　正規軍AC　ベース 空中ダメージ挙動確認用1
+32500902 General purpose regular army AC base for checking aerial damage behavior 2 -- 汎用　正規軍AC　ベース 空中ダメージ挙動確認用2
+32500903 General purpose regular army AC base for checking aerial damage behavior 3 -- 汎用　正規軍AC　ベース 空中ダメージ挙動確認用3
+32500910 General purpose regular army AC base melange critical confirmation -- 汎用　正規軍AC　ベース メランジクリティカル確認用
+32500950 General purpose regular army AC normal medium stagger only -- 汎用　正規軍AC　ノーマル  中よろけだけ
+32500951 General purpose regular army AC normal large stagger only -- 汎用　正規軍AC　ノーマル  大よろけだけ
+32500953 General Purpose Regular Army AC Normal For checking large hit addition (blade addition) -- 汎用　正規軍AC　ノーマル  被弾加算大（ブレード加算）確認用
+32500998 General purpose regular army AC normal without shield with homing -- 汎用　正規軍AC　ノーマル 盾なし 帰巣あり
+32500999 General purpose regular army AC normal without shield -- 汎用　正規軍AC　ノーマル 盾なし
+32501000 Test Regular Army AC Normal Hacking Test -- テスト　正規軍AC　ノーマル　ハッキングテスト
+32501002 Test Regular Army AC Normal Hacking Test -- テスト　正規軍AC　ノーマル　ハッキングテスト
+32501003 Encounter with the organization Regular Army AC Normal -- 組織との出会い　正規軍AC　ノーマル
+32501004 Fuel base explosion regular army AC normal with return home -- 燃料基地爆破　正規軍AC　ノーマル 帰巣あり
+32501010 For attacking the old spaceport, regular army AC, normal, camera eye green for holding tokens -- 旧宇宙港襲撃用　正規軍AC　ノーマル　トークン持ち用カメラアイ緑
+32501100 Straight city progress Regular army AC Diffusion buzz Archibus -- ストレート市街進行　正規軍AC　拡散バズ　アーキバス
+32501101 Intruder Elimination Regular Army AC Diffusion Buzz Right -- 侵入者排除　正規軍AC　拡散バズ右
+32501102 Intruder Elimination Regular Army AC Diffusion Buzz Left -- 侵入者排除　正規軍AC　拡散バズ左
+32501103 Exterminate Behind the Wall Regular Army AC Diffusion Buzz For First Action Designation -- 壁裏殲滅　正規軍AC　拡散バズ 初回行動指定用
+32501104 Exterminate Behind the Wall Regular Army AC Diffusion Buzz Reverse Direction for First Action Designation -- 壁裏殲滅　正規軍AC　拡散バズ 初回行動指定用逆方向
+32501105 Open pit SBM regular army AC normal boss battle -- 露天採掘場SBM　正規軍AC　ノーマル ボス戦用
+32501106 Open pit SBM Regular army AC Diffusion buzz For boss battles -- 露天採掘場SBM　正規軍AC　拡散バズ　ボス戦用
+32501110 Regular army AC for attacking the old spaceport, diffusion buzz, camera eye green for holding tokens -- 旧宇宙港襲撃用　正規軍AC　拡散バズ　トークン持ち用カメラアイ緑
+32501400 Test Regular Army AC Normal Hacking Test -- テスト　正規軍AC　ノーマル　ハッキングテスト
+32501401 Test Regular Army AC Normal Hacking Test -- テスト　正規軍AC　ノーマル　ハッキングテスト
+32501402 Test Regular Army AC Normal Hacking Test -- テスト　正規軍AC　ノーマル　ハッキングテスト
+32501403 New B surfacing Regular Army AC Sniper Resolute Fixed Artillery Battery -- 新B浮上用　正規軍AC　狙撃　断固固定砲台
+32501404 Regular army AC sniper for offshore cities -- 洋上の都市用　正規軍AC　狙撃
+32501405 Regular Army AC Sniper Fixed Artillery Battery for Shuttle for Old Spaceport Attack -- 旧宇宙港襲撃用　正規軍AC　狙撃　固定砲台　シャトル用
+32501406 Eliminate intruders Regular army AC sniper -- 侵入者排除　正規軍AC　狙撃
+32501407 Emerging new B-tier regular army AC sniper -- 浮上する新B層　正規軍AC　狙撃
+32501408 Rail Reverse Run Regular Army AC Sniper Fixed Artillery Battery -- レイル逆走　正規軍AC　狙撃　固定砲台
+32501409 Mine shaft revisited Regular army AC sniper fixed artillery platform narrow foothold sniper type -- 坑道再訪　正規軍AC　狙撃　固定砲台　足場狭い配置狙撃タイプ
+32501410 Rail Reverse Run Regular Army AC Sniper Adjustable Fixed Artillery Battery -- レイル逆走　正規軍AC　狙撃　調整固定砲台
+32501412 Rail Reverse Run Regular Army AC Sniper -- レイル逆走　正規軍AC　狙撃
+32501413 Rail reverse run regular army AC sniper red gun event use -- レイル逆走　正規軍AC　狙撃　レッドガンイベント用
+32501414 Fuel Base Sweeping Regular Army AC Sniper Fixed Artillery Archibus -- 燃料基地掃討　正規軍AC　狙撃　固定砲台 アーキバス
+32501415 Straight city progression, regular army AC, sniper, fixed artillery battery, archibus -- ストレート市街進行　正規軍AC　狙撃　固定砲台　アーキバス
+32501416 Fuel base explosion regular army AC sniper token holding green camera eye -- 燃料基地爆破　正規軍AC　狙撃　トークン持ち緑カメラアイ
+32501417 Mine sabotage, regular army AC, sniper, fixed artillery, token holding green camera eye -- 坑道破壊工作　正規軍AC　狙撃　固定砲台　トークン持ち緑カメラアイ
+32501418 Encounter with the organization Regular army AC sniper fixed artillery battery -- 組織との出会い　正規軍AC　狙撃　固定砲台
+32501600 For straight city progression_c3250 regular army AC enhanced heavy firepower_with appearance effect_left_Archibus -- ストレート市街進行用_c3250　正規軍AC 強化重火力_登場演出あり_左_アーキバス
+32501601 For straight city progression_c3250 regular army AC enhanced heavy firepower_with appearance effect_right_Archibus -- ストレート市街進行用_c3250　正規軍AC 強化重火力_登場演出あり_右_アーキバス
+32501602 Emerging new B layer regular army AC enhanced heavy firepower -- 浮上する新B層　正規軍AC 強化重火力
+32501603 Railroad Reverse Run_c3250 Regular Army AC Enhanced Heavy Firepower -- レイルロード逆走_c3250　正規軍AC 強化重火力
+32501700 Test Regular Army AC Normal Hacking Test -- テスト　正規軍AC　ノーマル　ハッキングテスト
+32501701 Old Spaceport Attack Regular Army AC High Mobility Boss Battle -- 旧宇宙港襲撃　正規軍AC　高機動　ボス戦用
+32501702 Straight city progression Regular army AC High mobility Floating start Hidden strong enemy -- ストレート市街進行　正規軍AC　高機動 浮遊開始　隠し強敵
+32501703 Railroad Reverse Run_Regular Army AC High Mobility -- レイルロード逆走_正規軍AC　高機動
+32600000 General purpose regular army heavy AC normal -- 汎用　正規軍重AC　ノーマル
+32600090 General purpose regular military heavy AC normal PG debugging -- 汎用　正規軍重AC　ノーマル　PGデバッグ用
+32600091 General purpose regular military heavy AC normal for planning debugging -- 汎用　正規軍重AC　ノーマル　企画デバッグ用
+32600099 General Purpose Regular Military Heavy AC Normal Corporate Entente -- 汎用　正規軍重AC　ノーマル 企業協商
+32600100 General purpose regular army heavy AC blade -- 汎用　正規軍重AC　ブレード
+32600190 General-purpose regular military heavy AC blade for planning and debugging -- 汎用　正規軍重AC　ブレード　企画デバッグ用
+32600199 General Purpose Regular Military Heavy AC Blade Corporate Consultation -- 汎用　正規軍重AC　ブレード 企業協商
+32600300 General purpose regular military heavy AC cutting edge -- 汎用　正規軍重AC　最先端
+32600390 General purpose regular military heavy AC cutting edge planning debugging -- 汎用　正規軍重AC　最先端　企画デバッグ用
+32600399 General purpose regular military heavy AC cutting edge corporate cooperation -- 汎用　正規軍重AC　最先端 企業協商
+32600900 General purpose regular army heavy AC base -- 汎用　正規軍重AC　ベース
+32600901 General purpose regular military heavy AC normal for checking aerial damage behavior 1 -- 汎用　正規軍重AC　ノーマル　空中ダメージ挙動確認用1
+32600902 General purpose regular army heavy AC normal air damage behavior confirmation 2 -- 汎用　正規軍重AC　ノーマル　空中ダメージ挙動確認用2
+32600903 General purpose regular army heavy AC normal air damage behavior confirmation 3 -- 汎用　正規軍重AC　ノーマル　空中ダメージ挙動確認用3
+32600950 General purpose regular army heavy AC normal medium stagger only -- 汎用　正規軍重AC　ノーマル　中よろけだけ
+32600951 General purpose regular army heavy AC normal large stagger only -- 汎用　正規軍重AC　ノーマル　大よろけだけ
+32600953 General purpose regular army heavy AC normal for checking large hit addition (blade addition) -- 汎用　正規軍重AC　ノーマル　被弾加算大（ブレード加算）確認用
+32601000 Exterminate Behind the Wall Regular Army Heavy AC Normal First Action Designation -- 壁裏殲滅　正規軍重AC　ノーマル　初回行動指定
+32601001 Open pit mining SBM regular army heavy AC normal first action designation -- 露天採掘場SBM　正規軍重AC　ノーマル　　初回行動指定
+32601100 Old Spaceport Attack Regular Army Heavy AC Blade for Boss Battle -- 旧宇宙港襲撃　正規軍重AC　ブレード　ボス戦用
+32601101 Encounter with the organization Regular Army Heavy AC Normal -- 組織との出会い　正規軍重AC　ノーマル
+32601102 Open pit mining SBM regular army heavy AC blade first action designation -- 露天採掘場SBM　正規軍重AC　ブレード 初回行動指定
+32601300 Strike Street Invasion Regular Army Heavy AC Cutting Edge -- スト街侵攻　正規軍重AC　最先端
+33000000 General Purpose Ghost MT Proximity Orbit (Stealth) -- 汎用　ゴーストMT　近接オービット(ステルス)
+33000100 General purpose ghost MT PA -- 汎用　ゴーストMT　PA
+33000200 General Purpose Ghost MT Laser Rifle (Stealth) -- 汎用　ゴーストMT　レーザーライフル(ステルス)
+33000900 General purpose ghost MT fully equipped -- 汎用　ゴーストMT　全装備
+33000901 General-purpose Ghost MT Full equipment for checking aerial damage behavior 1 -- 汎用　ゴーストMT　全装備　空中ダメージ挙動確認用1
+33000902 General purpose ghost MT fully equipped for checking aerial damage behavior 2 -- 汎用　ゴーストMT　全装備　空中ダメージ挙動確認用2
+33000903 General purpose ghost MT fully equipped for checking aerial damage behavior 3 -- 汎用　ゴーストMT　全装備　空中ダメージ挙動確認用3
+33000950 General-purpose Ghost MT All equipment Medium stagger only -- 汎用　ゴーストMT　全装備 中よろけだけ
+33000951 General-purpose Ghost MT, all equipment, large stagger only -- 汎用　ゴーストMT　全装備 大よろけだけ
+33000953 General-purpose Ghost MT Proximity Orbit (Stealth) For checking large hit addition (blade addition) -- 汎用　ゴーストMT　近接オービット(ステルス)　被弾加算大（ブレード加算）確認用
+33001100 Ghost MT PA for VOB mission -- VOBミッション用　ゴーストMT　PA
+33001200 Ghost MT Laser Rifle (Stealth) for VOB Mission -- VOBミッション用　ゴーストMT　レーザーライフル(ステルス)
+33001201 Ghost MT Laser Rifle (Stealth) for VOB Mission with Wall Sticker -- VOBミッション用　ゴーストMT　レーザーライフル(ステルス) 壁張り付き
+33001202 String Ghost MT Laser Rifle (Stealth) -- 文字列　ゴーストMT　レーザーライフル(ステルス)
+33100000 General purpose dummy ghost MT -- 汎用　ダミーゴーストMT
+34000000 General Purpose Quadruped MT Triple Buzz Bayram -- 汎用　四脚MT　三連バズ　ベイラム
+34000001 General-purpose quadruped MT triple buzz bay ram Fixed turret mode from the beginning -- 汎用　四脚MT　三連バズ　ベイラム　最初から固定砲台モード
+34000010 General purpose quadruped MT triple buzz BFF -- 汎用　四脚MT　三連バズ　BFF
+34000011 General-purpose quadruped MT triple buzz BFF Fixed battery mode from the beginning -- 汎用　四脚MT　三連バズ　BFF　最初から固定砲台モード
+34000020 General purpose quadruped MT triple buzz bay ram with searchlight -- 汎用　四脚MT　三連バズ　ベイラム　サーチライト付き
+34000099 General Purpose Quadruped MT Triple Buzz Tattered -- 汎用　四脚MT　三連バズ ボロボロ
+34000100 General Purpose Quadruped MT Nine-Buzz Bayram -- 汎用　四脚MT　九連バズ　ベイラム
+34000101 General-purpose quadruped MT nine-buzz Bayram Fixed battery mode from the beginning -- 汎用　四脚MT　九連バズ　ベイラム　最初から固定砲台モード
+34000110 General Purpose Quadruped MT Nine-Buzz BFF -- 汎用　四脚MT　九連バズ　BFF
+34000111 General-purpose quadruped MT nine-buzz BFF Fixed battery mode from the beginning -- 汎用　四脚MT　九連バズ　BFF　最初から固定砲台モード
+34000199 General Purpose Quadruped MT Nine-Run Buzz Tattered -- 汎用　四脚MT　九連バズ ボロボロ
+34000200 General Purpose Quadruped MT Sniper Bayram -- 汎用　四脚MT　スナイパー　ベイラム
+34000201 General-purpose quadruped MT sniper Bayram Fixed turret mode from the beginning -- 汎用　四脚MT　スナイパー　ベイラム　最初から固定砲台モード
+34000210 General purpose quadruped MT sniper BFF -- 汎用　四脚MT　スナイパー　BFF
+34000211 General-purpose quadruped MT sniper BFF Fixed turret mode from the beginning -- 汎用　四脚MT　スナイパー　BFF　最初から固定砲台モード
+34000290 General Purpose Quadruped MT Sniper Bayram Debug Individual -- 汎用　四脚MT　スナイパー　ベイラム　デバッグ個体
+34000299 General Purpose Quadruped MT Sniper Tattered -- 汎用　四脚MT　スナイパー ボロボロ
+34000300 General Purpose Quadruped MT Grenade Bayram -- 汎用　四脚MT　グレネード　ベイラム
+34000301 General-purpose quadruped MT grenade Bayram Fixed turret mode from the beginning -- 汎用　四脚MT　グレネード　ベイラム　最初から固定砲台モード
+34000310 General purpose quadruped MT grenade BFF -- 汎用　四脚MT　グレネード　BFF
+34000311 General-purpose quadruped MT grenade BFF Fixed turret mode from the beginning -- 汎用　四脚MT　グレネード　BFF　最初から固定砲台モード
+34000399 General Purpose Quadruped MT Grenade Tattered -- 汎用　四脚MT　グレネード ボロボロ
+34000900 General-purpose quadruped MT fully equipped Bayram -- 汎用　四脚MT　全装備　ベイラム
+34000901 General-purpose quadruped MT fully equipped Bayram for checking aerial damage behavior 1 -- 汎用　四脚MT　全装備　ベイラム　空中ダメージ挙動確認用1
+34000902 General-purpose quadruped MT fully equipped Bayram for checking aerial damage behavior 2 -- 汎用　四脚MT　全装備　ベイラム　空中ダメージ挙動確認用2
+34000903 General-purpose quadruped MT fully equipped Bayram for checking aerial damage behavior 3 -- 汎用　四脚MT　全装備　ベイラム　空中ダメージ挙動確認用3
+34000910 General purpose quadruped MT fully equipped BFF -- 汎用　四脚MT　全装備　BFF
+34000950 General-purpose quadruped MT, fully equipped, bay ram, mid-stagger only -- 汎用　四脚MT　全装備　ベイラム 中よろけだけ
+34000951 General-purpose quadruped MT, fully equipped, bay ram, large stagger only -- 汎用　四脚MT　全装備　ベイラム 大よろけだけ
+34000953 General-purpose quadruped MT triple buzz for checking large hit addition (blade addition) -- 汎用　四脚MT　三連バズ　被弾加算大（ブレード加算）確認用
+34000991 General Purpose Quadruped MT Triple Buzz Color Variation Test Archibus -- 汎用　四脚MT　三連バズ　カラバリテスト　アーキバス
+34000992 General Purpose Quadruped MT Triple Buzz Color Variation Test Bayram -- 汎用　四脚MT　三連バズ　カラバリテスト　ベイラム
+34000993 General Purpose Quadruped MT Triple Buzz Color Variation Test Ash People -- 汎用　四脚MT　三連バズ　カラバリテスト　灰の民
+34000994 General purpose quadruped MT triple buzz color variation test locking mechanism -- 汎用　四脚MT　三連バズ　カラバリテスト　封鎖機構
+34000995 General purpose quadruped MT triple buzz color variation test corporate alliance -- 汎用　四脚MT　三連バズ　カラバリテスト　企業連合
+34000996 General Purpose Quadruped MT Triple Buzz Color Variation Test Melange Drunker -- 汎用　四脚MT　三連バズ　カラバリテスト　メランジドランカー
+34001001 Big Bridge, Quadruped MT, Triple Buzz, Bay Ram, Start with special action -- ビッグブリッジ　四脚MT　三連バズ　ベイラム　特殊行動から開始
+34001002 AC test quadruped MT triple buzz Bayram -- ACテスト用　四脚MT　三連バズ　ベイラム
+34001003 General Purpose Quadruped MT Triple Buzz Bayram -- 汎用　四脚MT　三連バズ　ベイラム
+34001004 In front of the search wall, quadruped MT, triple buzz, bay rum, with searchlight, archibus token -- 探索壁前　四脚MT　三連バズ　ベイラム　サーチライト付き　アーキバス　トークン
+34001005 Encounter with the organization Quadruped MT Triple Buzz Bayrum Archibus -- 組織との出会い　四脚MT　三連バズ　ベイラム　アーキバス
+34001006 In front of the search wall, quadruped MT, triple buzz, bay rum, with searchlight, archibus, NO token -- 探索壁前　四脚MT　三連バズ　ベイラム　サーチライト付き　アーキバス　NOトークン
+34001100 Big Bridge Quadruped MT Nine-Buzz Bayram -- ビッグブリッジ　四脚MT　九連バズ　ベイラム
+34001101 Four-legged MT for AC testing Nine-seater Buzz Beirum -- ACテスト用　四脚MT　九連バズ　ベイラム
+34001102 Area escape support Quadruped MT Nine consecutive buzz Beirum token -- 領域離脱援護　四脚MT　九連バズ　ベイラム　トークン
+34001103 Jailbreak Quadruped MT Nine Buzz Bayram Fixed turret mode from the beginning Archibus -- 脱獄　四脚MT　九連バズ　ベイラム　最初から固定砲台モード　アーキバス
+34001104 Wall-crossing, quadruped MT, nine-buzz baylam, fixed turret mode from the beginning, tattered -- 壁越え　四脚MT　九連バズ　ベイラム　最初から固定砲台モード　ボロボロ
+34001105 Encounter with the organization Quadruped MT Nine-legged Buzz Bayram Archibus -- 組織との出会い　四脚MT　九連バズ　ベイラム　アーキバス
+34001200 Big Bridge Quadruped MT Sniper Bayram Tank can be involved -- ビッグブリッジ　四脚MT　スナイパー　ベイラム　タンクを巻き込める
+34001201 Quadruped MT for big bridge Sniper Bayram Color variations Rad Token holding green camera eye -- ビッグブリッジ用　四脚MT　スナイパー　ベイラム　カラバリRad トークン持ち緑カメラアイ
+34001202 Dam Destruction Quadruped MT Sniper Bayram Fixed turret mode from the beginning Tattered token holding green camera eye -- ダム破壊　四脚MT　スナイパー　ベイラム　最初から固定砲台モード　ボロボロ トークン持ち緑カメラアイ
+34001203 Destroyed SBM transport helicopter Quadruped MT Sniper Bayram Fixed turret mode from the beginning Tattered Token holding green camera eye -- SBM輸送ヘリ撃破　四脚MT　スナイパー　ベイラム　最初から固定砲台モード　ボロボロ　トークン持ち緑カメラアイ
+34001211 Over walls Quadruped MT Sniper For medium bosses -- 壁越え　四脚MT　スナイパー　中ボス用
+34001212 Encounter with the organization Quadruped MT Sniper Bayram Archibus -- 組織との出会い　四脚MT　スナイパー　ベイラム　アーキバス
+34001213 A layer indoor search quadruped MT sniper tattered token holding green camera eye -- A層屋内捜索　四脚MT　スナイパー ボロボロ　トークン持ち緑カメラアイ
+34001300 SBM Icefield Hole Quadruped MT Grenade Bayram -- SBM氷原の穴　四脚MT　グレネード　ベイラム
+34001301 Encounter with the organization Quadruped MT Grenade Bayram -- 組織との出会い　四脚MT　グレネード　ベイラム
+34001302 Collapsed continental shell, quadruped MT, grenade, Bayram, fixed battery mode from the beginning -- 崩落大陸殻　四脚MT　グレネード　ベイラム　最初から固定砲台モード
+34001800 Tutorial Quadruped MT Machine Gun Only Bayram -- チュートリアル用　四脚MT　マシンガンのみ　ベイラム
+34001801 AC test quadruped MT machine gun only Bayram -- ACテスト用　四脚MT　マシンガンのみ　ベイラム
+34004000 Quadruped MT Sniper for temporary training at the end of 4th Fixed battery mode from the beginning -- 4末暫定トレーニング用　四脚MT　スナイパ　最初から固定砲台モード
+34004100 Four-legged MT for interim training at the end of April, triple buzz, fixed battery mode from the beginning -- 4末暫定トレーニング用　四脚MT　三連バズ　最初から固定砲台モード
+35000000 General purpose old world MT gray -- 汎用　旧世界MT グレ
+35000001 General purpose old world MT gray does not work -- 汎用　旧世界MT グレ 動かない
+35000100 General purpose old world MT poison gray -- 汎用　旧世界MT 毒グレ
+35000200 General purpose old world MT cluster -- 汎用　旧世界MT クラスター
+35000201 General purpose old world MT cluster does not work -- 汎用　旧世界MT クラスター 動かない
+35000900 General purpose old world MT base -- 汎用　旧世界MT ベース
+35000901 General purpose old world MT base for checking aerial damage behavior 1 -- 汎用　旧世界MT ベース　空中ダメージ挙動確認用1
+35000902 General purpose old world MT base for checking aerial damage behavior 2 -- 汎用　旧世界MT ベース　空中ダメージ挙動確認用2
+35000903 General purpose old world MT base for checking aerial damage behavior 3 -- 汎用　旧世界MT ベース　空中ダメージ挙動確認用3
+35000950 General purpose old world MT base Medium stagger only -- 汎用　旧世界MT ベース 中よろけだけ
+35000951 General-purpose old world MT base Large stagger only -- 汎用　旧世界MT ベース 大よろけだけ
+35000953 General-purpose Old World MT Gray For checking large hit addition (blade addition) -- 汎用　旧世界MT グレ　被弾加算大（ブレード加算）確認用
+35001000 Ruins Old World MT Gray Not moving -- 廃墟　旧世界MT グレ 動かない
+35001010 Old world MT elimination Old world MT gray entourage first attack -- 旧世界MT排除　旧世界MT グレ　取り巻き 初手攻撃
+35001011 Old world MT elimination Old world MT gray entourage First-time entourage -- 旧世界MT排除　旧世界MT グレ　取り巻き 初手取り巻き
+35001012 Old World MT Elimination Old World MT Gray Appearance Production -- 旧世界MT排除　旧世界MT グレ　登場演出
+35001013 Old World MT Exclusion Old World MT Gray Appearance No Production -- 旧世界MT排除　旧世界MT グレ　登場演出しない
+35001014 Old World MT Elimination Old World MT Grey's Entourage First Attack Appearance Production -- 旧世界MT排除　旧世界MT グレ　取り巻き 初手攻撃 登場演出
+35001015 Old world MT elimination Old world MT gray entourage First entourage appearance production -- 旧世界MT排除　旧世界MT グレ　取り巻き 初手取り巻き　登場演出
+35001110 Ruins Old World MT Poison Gray Special Standby -- 廃墟　旧世界MT 毒グレ　特殊待機
+35001200 Ruins Old World MT Cluster Not Moving -- 廃墟　旧世界MT クラスター 動かない
+35001210 Ruins Old World MT Cluster Special Standby -- 廃墟　旧世界MT クラスター　特殊待機
+36000000 General purpose construction machine spider proximity -- 汎用　建機クモ　近接
+36000010 General-purpose construction machine spider close-up indoor use -- 汎用　建機クモ　近接　屋内用
+36000100 General-purpose construction machine spider support -- 汎用　建機クモ　支援
+36000190 General-purpose construction machine spider support_for artillery -- 汎用　建機クモ　支援_砲台用
+36000200 General-purpose construction machine spider sniper -- 汎用　建機クモ　狙撃
+36000290 General-purpose construction machine spider sniper_for gun battery -- 汎用　建機クモ　狙撃_砲台用
+36000291 General-purpose construction machine spider sniper_for artillery_missile -- 汎用　建機クモ　狙撃_砲台用_ミサイル
+36000292 General-purpose construction machine spider sniper_for artillery_dove lock -- 汎用　建機クモ　狙撃_砲台用_ダブロケ
+36000293 General-purpose construction machine spider sniper_for artillery_distance judgment complex -- 汎用　建機クモ　狙撃_砲台用_距離判定複合
+36000300 General-purpose construction machine spider armor -- 汎用　建機クモ　装甲
+36000390 General-purpose construction machine spider armor_for battery -- 汎用　建機クモ　装甲_砲台用
+36000391 General-purpose construction machine spider armor_for gun battery_volley fire -- 汎用　建機クモ　装甲_砲台用_一斉射撃
+36000900 General-purpose construction machine spider base -- 汎用　建機クモ　ベース
+36000901 General-purpose construction machine spider base for checking aerial damage behavior 1 -- 汎用　建機クモ　ベース　空中ダメージ挙動確認用1
+36000902 General-purpose construction machine spider base for checking aerial damage behavior 2 -- 汎用　建機クモ　ベース　空中ダメージ挙動確認用2
+36000903 General-purpose construction machine spider base for checking aerial damage behavior 3 -- 汎用　建機クモ　ベース　空中ダメージ挙動確認用3
+36000904 General purpose construction machine spider for laser sight monitoring confirmation -- 汎用　建機クモ　レーザーサイト監視確認用
+36000950 General purpose construction machine spider base medium stagger only -- 汎用　建機クモ　ベース 中よろけだけ
+36000951 General-purpose construction machine spider base large stagger only -- 汎用　建機クモ　ベース 大よろけだけ
+36000953 General-purpose construction machine spider armored large hit addition (blade addition) confirmation -- 汎用　建機クモ　装甲　被弾加算大（ブレード加算）確認用
+36001001 Big Bridge Construction Machine Spider Proximity Special Standby -- ビッグブリッジ　建機クモ　近接　特殊待機用
+36001002 Big Bridge Construction Machine Spider Proximity Special Standby Indoor Use -- ビッグブリッジ　建機クモ　近接　特殊待機用　屋内用
+36001003 Construction machine spider for big bridge close-up color variation Rad -- ビッグブリッジ用　建機クモ　近接　カラバリRad
+36001004 Construction machine spider for big bridge close-up indoor use color variation Rad -- ビッグブリッジ用　建機クモ　近接　屋内用　カラバリRad
+36001005 A-layer indoor search construction machine spider close-up indoor use colorful coyotes -- A層屋内捜索　建機クモ　近接　屋内用　カラバリコヨーテス
+36001006 Collapsed Continental Shell Construction Machine Spider Proximity For Cliff Placement -- 崩落した大陸殻　建機クモ　近接　崖配置用
+36001009 Situation Inspection 3 Construction Machinery Spider Proximity -- シチュ検3　建機クモ　近接
+36001010 Construction machine spider for big bridge close-up color variation Rad token holding camera eye green -- ビッグブリッジ用　建機クモ　近接　カラバリRad　トークン持ち　カメラアイ緑
+36001011 A-layer indoor search construction machine spider close-up indoor use color variation coyotes camera eye green -- A層屋内捜索　建機クモ　近接　屋内用　カラバリコヨーテス カメラアイ緑
+36001019 Situation Inspection 3 Construction Machine Spider Proximity Indoor -- シチュ検3　建機クモ　近接　屋内用
+36001100 Big Bridge Construction Machinery Spider Support_Determined Fixed Battery for Artillery Battery -- ビッグブリッジ　建機クモ　支援_砲台用　断固固定砲台
+36001101 Big Bridge Construction Machinery Spider Support Special Standby Initial Action Designation -- ビッグブリッジ　建機クモ　支援　特殊待機用　初期行動指定
+36001102 Collapsed continental shell construction machine spider support -- 崩落大陸殻　建機クモ　支援
+36001103 Collapsed Continental Shell Construction Machine Spider Support Coyotes -- 崩落した大陸殻　建機クモ　支援　コヨーテス
+36001109 Situation Inspection 3 Construction Machinery Spider Support -- シチュ検3　建機クモ　支援
+36001199 Situation Inspection 3 Construction Machine Spider Support_For Battery -- シチュ検3　建機クモ　支援_砲台用
+36001200 MAP Diversion Big Bridge Construction Machinery Spider Sniper Indoor_Double Roke Only -- MAP流用ビッグブリッジ　建機クモ　狙撃屋内_ダブロケのみ
+36001202 Strike street reverse run, construction machine spider, sniper, fixed gun battery, not canceled by damage, distance judgment complex, RaD -- スト街逆走　建機クモ　狙撃　固定砲台　ダメージで解除されない 距離判定複合　RaD
+36001203 Big Bridge Construction Machinery Spider Sniper_Determined Fixed Battery for Artillery Battery -- ビッグブリッジ　建機クモ　狙撃_砲台用　断固固定砲台
+36001204 Big Bridge Construction Machine Spider Sniper_For Artillery_Distance Judgment Complex Resolutely Fixed Artillery -- ビッグブリッジ　建機クモ　狙撃_砲台用_距離判定複合　断固固定砲台
+36001205 Big Bridge Construction Machinery Spider Sniper Constant Combat -- ビッグブリッジ　建機クモ　狙撃　常時戦闘
+36001206 Construction machine spider for SBM big bridge sniper_for artillery_distance judgment complex color variation Coyote -- SBMビッグブリッジ用　建機クモ　狙撃_砲台用_距離判定複合　カラバリコヨーテス
+36001207 Construction machine spider for big bridge sniper_for gun battery color variation Rad -- ビッグブリッジ用　建機クモ　狙撃_砲台用　カラバリRad
+36001208 Strike street reverse run construction machine spider sniper fixed gun battery indoor use RaD -- スト街逆走　建機クモ　狙撃　固定砲台　屋内用　RaD
+36001290 Situation inspection 3 Construction machine spider sniper_for artillery -- シチュ検3　建機クモ　狙撃_砲台用
+36001291 Situation Inspection 3 Construction Machine Spider Sniper_Artillery_Missile -- シチュ検3　建機クモ　狙撃_砲台用_ミサイル
+36001292 Situation inspection 3 Construction machine spider sniper_for artillery_doubloke -- シチュ検3　建機クモ　狙撃_砲台用_ダブロケ
+36001293 Situation Inspection 3 Construction Machine Spider Sniper_For Artillery_Distance Judgment Complex -- シチュ検3　建機クモ　狙撃_砲台用_距離判定複合
+36001294 Situation Investigation 3 Construction Machinery Spider Sniper -- シチュ検3　建機クモ　狙撃
+36001295 Collapse A layer construction machine spider sniper_for battery -- 崩落A層　建機クモ　狙撃_砲台用
+36001296 Collapsed Continental Shell Construction Machine Spider Sniper_For Artillery_Distance Judgment Complex -- 崩落大陸殻　建機クモ　狙撃_砲台用_距離判定複合
+36001300 Straight city progress construction machine spider armor_for battery_ally -- ストレート市街進行　建機クモ　装甲_砲台用_味方
+36001301 Straight city progress construction machine spider armored_for artillery_allied_with volley fire -- ストレート市街進行　建機クモ　装甲_砲台用_味方_一斉射撃有り
+36001302 Straight city progress construction machine spider support_for battery_ally -- ストレート市街進行　建機クモ　支援_砲台用_味方
+36001303 Straight city progress construction machine spider sniper_for artillery_missile_ally -- ストレート市街進行　建機クモ　狙撃_砲台用_ミサイル_味方
+36001304 Straight city progress construction machine spider sniper_for artillery_doubloque_ally -- ストレート市街進行　建機クモ　狙撃_砲台用_ダブロケ_味方
+36001305 SBM Big Bridge Construction Machine Spider Armored Colored Coyote -- SBMビッグブリッジ用　建機クモ　装甲　カラバリコヨーテス
+36001306 A layer indoor search construction machine spider armored colorful coyote camera eye green -- A層屋内捜索　建機クモ　装甲　カラバリコヨーテス　カメラアイ緑
+37000000 General purpose deleter normal -- 汎用　デリーター　通常
+37000001 General-purpose Deleteer Normal Fixed turret mode from the beginning -- 汎用　デリーター　通常　最初から固定砲台モード
+37000099 General Purpose Deleteer Normal Tattered -- 汎用　デリーター　通常 ボロボロ
+37000100 General Purpose Deleteer Fighting -- 汎用　デリーター　格闘
+37000101 General-purpose Deleteer Fighting Fixed turret mode from the beginning -- 汎用　デリーター　格闘　最初から固定砲台モード
+37000199 General Purpose Deleteer Fighting Tattered -- 汎用　デリーター　格闘 ボロボロ
+37000200 General purpose deleter sniper -- 汎用　デリーター　狙撃
+37000201 General-purpose Deleteer Sniper Fixed turret mode from the beginning -- 汎用　デリーター　狙撃　最初から固定砲台モード
+37000210 General purpose deleter sniper vertical missile high ver -- 汎用　デリーター　狙撃　垂直ミサイル　高いver
+37000299 General Purpose Deleteer Sniper Tattered -- 汎用　デリーター　狙撃 ボロボロ
+37000300 General purpose deleter ace -- 汎用　デリーター　エース
+37000390 General purpose deleter ace debug individual -- 汎用　デリーター　エース　デバッグ個体
+37000399 General Purpose Deleteer Ace Tattered -- 汎用　デリーター　エース ボロボロ
+37000900 General purpose deleter base -- 汎用　デリーター　ベース
+37000901 General purpose deleter base for checking aerial damage behavior 1 -- 汎用　デリーター　ベース　空中ダメージ挙動確認用1
+37000902 General purpose deleter base for checking aerial damage behavior 2 -- 汎用　デリーター　ベース　空中ダメージ挙動確認用2
+37000903 General purpose deleter base for checking aerial damage behavior 3 -- 汎用　デリーター　ベース　空中ダメージ挙動確認用3
+37000913 General purpose deleter fighting debug individual -- 汎用　デリーター　格闘　デバッグ個体
+37000915 General Purpose Deleter Normal Tattered Camera Eye Test -- 汎用　デリーター　通常 ボロボロ　カメラアイテスト
+37000950 General purpose deleter base medium stagger only -- 汎用　デリーター　ベース 中よろけだけ
+37000951 General Purpose Deleter Base Large Stagger Only -- 汎用　デリーター　ベース 大よろけだけ
+37000953 General Purpose Deleteer Fighting Guard Hit Addition Large (Blade Addition) Confirmation -- 汎用　デリーター　格闘　ガード被弾加算大（ブレード加算）確認用
+37001000 Situation inspection 4 Deleteer normal -- シチュ検4　デリーター　通常
+37001001 Situation Detection 4 Deleteer Normal Fixed turret mode from the beginning -- シチュ検4　　デリーター　通常　最初から固定砲台モード
+37001002 Situation Detection 4 Deleteer Normal Fixed turret mode from the beginning Distance canceled -- シチュ検4　　デリーター　通常　最初から固定砲台モード 距離解除
+37001003 Railroad Deleteer Normal Fixed turret mode from the beginning -- レイルロード　　デリーター　通常　最初から固定砲台モード
+37001004 Railroad Deleteer Normal Fixed turret mode from the beginning Distance canceled -- レイルロード　　デリーター　通常　最初から固定砲台モード 距離解除
+37001005 Railroad duct top deleter normal -- レイルロード　ダクト頂上用　デリーター　通常
+37001006 Ruins Deleteer Normal -- 廃墟　デリーター　通常
+37001010 Rail reverse run deleter normal fixed turret mode from the beginning -- レイル逆走　　デリーター　通常　最初から固定砲台モード
+37001011 Rail Reverse Run Deleteer Normal Fixed turret mode from the beginning, damage canceled -- レイル逆走　　デリーター　通常　最初から固定砲台モード、ダメージ解除
+37001020 Ruins Deleter Normal EvE -- 廃墟　デリーター　通常　EvE用
+37001100 Ruins Deleteer Fighting Fast movement speed -- 廃墟　デリーター　格闘　移動速度早い
+37001101 Situation Inspection 4 Deleteer Fighting -- シチュ検4　デリーター　格闘
+37001102 Situation Detection 4 Deleteer Fighting Fixed turret mode from the beginning -- シチュ検4　デリーター　格闘　最初から固定砲台モード
+37001103 Railroad Deleteer Fighting -- レイルロード　デリーター　格闘
+37001104 Hole in the Icefield Deleteer Fighting only -- 氷原の穴　デリーター　格闘　専用
+37001120 Rail reverse run deleter fighting -- レイル逆走　デリーター　格闘
+37001121 Rail Reverse Run Deleteer Fighting EvE Boss Room Front -- レイル逆走　デリーター　格闘　EvEボス部屋前
+37001130 Large Cavity and Furnace_Deleter_Fighting for Reactor Core Room -- 大空洞と炉_デリーター_炉心部屋用　格闘
+37001140 Railroad Deleteer Fighting_Token Difference -- レイルロード　デリーター　格闘_トークン差分
+37001200 Situation Investigation 4 Deleteer Sniper -- シチュ検4　デリーター　狙撃
+37001201 Situation Detection 4 Deleteer Sniper Fixed turret mode from the beginning -- シチュ検4　　デリーター　狙撃　最初から固定砲台モード
+37001202 Situation inspection 4 Deleteer sniper vertical missile high ver -- シチュ検4　　デリーター　狙撃　垂直ミサイル　高いver
+37001203 General-purpose Deleteer Sniper Fixed turret mode from the beginning -- 汎用　デリーター　狙撃　最初から固定砲台モード
+37001210 Ruins Deleteer Sniper Vertical Missile High ver Fixed Battery_Does not release with damage -- 廃墟　デリーター　狙撃　垂直ミサイル　高いver　固定砲台_ダメージで解除しない
+37001211 Ruins Deleteer Sniper Fast moving class -- 廃墟　デリーター　狙撃　移動族度早い
+37001212 Ruins Deleteer Sniper Vertical Missile High ver Fast movement speed -- 廃墟　デリーター　狙撃　垂直ミサイル　高いver　移動速度早い
+37001213 Railroad Deleteer Sniper Vertical Missile Fixed Battery High Ver -- レイルロード　デリーター　狙撃　垂直ミサイル　固定砲台　高いver
+37001220 Ruins Deleteer Sniper Vertical Missile High ver For EvE -- 廃墟　デリーター　狙撃　垂直ミサイル　高いver　EvE用
+37001230 Rail Reverse Run Deleteer Sniper Vertical Missile High Ver Fixed Battery_Does not release due to damage -- レイル逆走　デリーター　狙撃　垂直ミサイル　高いver　固定砲台_ダメージで解除しない
+37001240 Hole in the ice field_QU compatible_Deleter sniper -- 氷原の穴_QU対応_デリーター狙撃
+37001300 Ruins Deleteer Ace Tattered -- 廃墟　デリーター　エース ボロボロ
+37001310 Cavern and Furnace_Deleter Ace_Token Difference -- 大空洞と炉_デリーター　エース_トークン差分
+37001330 Large cavity and furnace_Deleter_For reactor core room_Ace -- 大空洞と炉_デリーター_炉心部屋用_エース
+40000100 General purpose ADF EN shotgun type -- 汎用　ADF　ENショットガンタイプ
+40000101 General purpose ADF EN shotgun type tank start -- 汎用　ADF　ENショットガンタイプ タンク開始
+40000102 General purpose ADF EN shotgun type (2 for bug confirmation) -- 汎用　ADF　ENショットガンタイプ（バグ確認用2）
+40000900 General-purpose ADF fully equipped -- 汎用　ADF　全装備
+40000901 General purpose ADF EN shotgun type for aerial damage confirmation 1 -- 汎用　ADF　ENショットガンタイプ 空中ダメージ確認用1
+40000902 General purpose ADF EN shotgun type for aerial damage confirmation 2 -- 汎用　ADF　ENショットガンタイプ 空中ダメージ確認用2
+40000903 General purpose ADF EN shotgun type for aerial damage confirmation 3 -- 汎用　ADF　ENショットガンタイプ 空中ダメージ確認用3
+40000950 General purpose ADF EN shotgun type Medium stagger only -- 汎用　ADF　ENショットガンタイプ 中よろけだけ
+40000951 General purpose ADF EN shotgun type Large stagger only -- 汎用　ADF　ENショットガンタイプ 大よろけだけ
+40001100 Unknown aircraft elimination ADF EN shotgun type -- 不明機体排除　ADF　ENショットガンタイプ
+40001101 ADF EN shotgun type for eliminating intruders -- 侵入者排除用　ADF　ENショットガンタイプ
+41000000 General-purpose humanoid heavyweight boss all mounted -- 汎用　人型重量級ボス　全部乗せ
+41000100 General purpose humanoid heavyweight boss live bullet type -- 汎用　人型重量級ボス　実弾タイプ
+41000200 General purpose humanoid heavyweight boss EN type -- 汎用　人型重量級ボス　ENタイプ
+41000901 General purpose humanoid heavy boss all mounted for checking aerial damage behavior 1 -- 汎用　人型重量級ボス　全部乗せ　空中ダメージ挙動確認用1
+41000902 General purpose humanoid heavy boss all mounted for checking aerial damage behavior 2 -- 汎用　人型重量級ボス　全部乗せ　空中ダメージ挙動確認用2
+41000903 General purpose humanoid heavy boss all mounted for checking aerial damage behavior 3 -- 汎用　人型重量級ボス　全部乗せ　空中ダメージ挙動確認用3
+41000950 General-purpose humanoid heavyweight boss, all loaded, only mid-stagger -- 汎用　人型重量級ボス　全部乗せ 中よろけだけ
+41000951 General-purpose humanoid heavyweight boss, all loaded, only a big stagger -- 汎用　人型重量級ボス　全部乗せ 大よろけだけ
+41000953 General-purpose humanoid heavyweight boss, live bullet type, for checking large hit addition (blade addition) -- 汎用　人型重量級ボス　実弾タイプ　被弾加算大（ブレード加算）確認用
+41000960 General-purpose humanoid heavyweight boss EN type for PA deployment test -- 汎用　人型重量級ボス　ENタイプ PA展開テスト用
+41500000 General purpose special attack MT normal -- 汎用　特攻MT　ノーマル
+41500010 General purpose special attack MT normal (for large missile launch support) Junker Coyotes -- 汎用　特攻MT　ノーマル　(大型ミサイル発射支援用) 　ジャンカーコヨーテス
+41500100 General purpose special attack MT PA -- 汎用　特攻MT　PA
+41500101 General purpose special attack MT PA (for bug confirmation) -- 汎用　特攻MT　PA (バグ確認用)
+41500200 General purpose special attack MT large missile -- 汎用　特攻MT　大型ミサイル
+41500500 General purpose special attack MT normal (for confirming special standby cancellation) -- 汎用　特攻MT　ノーマル （特殊待機解除確認用）
+41500501 General purpose special attack MT PA (for confirming special standby release) -- 汎用　特攻MT　PA （特殊待機解除確認用）
+41500502 General-purpose special attack MT large missile (for confirming release of special standby) -- 汎用　特攻MT　大型ミサイル （特殊待機解除確認用）
+41500900 General purpose special attack MT all equipment -- 汎用　特攻MT　全装備
+41500901 General purpose special attack MT all equipment for checking aerial damage behavior 1 -- 汎用　特攻MT　全装備　空中ダメージ挙動確認用1
+41500902 General purpose special attack MT all equipment for checking aerial damage behavior 2 -- 汎用　特攻MT　全装備　空中ダメージ挙動確認用2
+41500903 General purpose special attack MT all equipment for checking aerial damage behavior 3 -- 汎用　特攻MT　全装備　空中ダメージ挙動確認用3
+41500950 General purpose special attack MT all equipment, medium stagger only -- 汎用　特攻MT　全装備 中よろけだけ
+41500951 General-purpose special attack MT, all equipment, large stagger only -- 汎用　特攻MT　全装備 大よろけだけ
+41500953 General-purpose special attack MT normal for checking large hit addition (blade addition) -- 汎用　特攻MT　ノーマル　被弾加算大（ブレード加算）確認用
+41501000 General purpose special attack MT normal fixed turret type from the beginning -- 汎用　特攻MT　ノーマル　　最初から固定砲台タイプ
+41501001 Straight city progression special attack MT normal medium boss production -- ストレート市街進行　特攻MT　ノーマル　中ボス演出用
+41501002 Big Bridge Special Attack MT Normal Special Standby -- ビッグブリッジ　特攻MT　ノーマル　特殊待機用
+41501003 Big bridge special attack MT normal color variation Rad -- ビッグブリッジ用　特攻MT　ノーマル　カラバリRad
+41501004 A layer indoor search special attack MT normal color variation coyotes -- A層屋内捜索　特攻MT　ノーマル　カラバリコヨーテス
+41501005 Collapsed Continental Shell Special Attack MT Normal -- 崩落大陸殻　特攻MT　ノーマル
+41501010 Big Bridge Special Attack MT Normal Special Standby Token Holder Camera Eye Green -- ビッグブリッジ　特攻MT　ノーマル　特殊待機用　トークン持ち　カメラアイ緑
+41501011 Collapsed Continental Shell Special Attack MT Normal Token Holder Camera Eye Green -- 崩落大陸殻　特攻MT　ノーマル　トークン持ち　カメラアイ緑
+41501110 Collapsed Continental Shell Special Attack MT PA Token Holder Camera Eye Green -- 崩落した大陸殻　特攻MT　PA　トークン持ち　カメラアイ緑
+41501200 General purpose special attack MT large missile fixed battery type from the beginning -- 汎用　特攻MT　大型ミサイル　最初から固定砲台タイプ
+42000000 General purpose next generation proto AC -- 汎用　次世代プロトAC
+42000050 General purpose next generation proto AC for bug confirmation -- 汎用　次世代プロトAC バグ確認用
+42000901 General purpose next generation proto AC for checking aerial damage behavior 1 -- 汎用　次世代プロトAC　空中ダメージ挙動確認用1
+42000902 General purpose next generation proto AC for checking aerial damage behavior 2 -- 汎用　次世代プロトAC　空中ダメージ挙動確認用2
+42000903 General purpose next generation proto AC for checking aerial damage behavior 3 -- 汎用　次世代プロトAC　空中ダメージ挙動確認用3
+42000950 General-purpose next-generation proto AC only for mid-stagger -- 汎用　次世代プロトAC 中よろけだけ
+42000951 General-purpose next-generation proto-AC Large stagger only -- 汎用　次世代プロトAC 大よろけだけ
+42000953 General-purpose next-generation proto AC for checking large hit addition (blade addition) -- 汎用　次世代プロトAC　被弾加算大（ブレード加算）確認用
+42010000 General purpose next generation proto AC (C route) -- 汎用　次世代プロトAC (Cルート)
+42010050 General purpose next generation proto AC (C route) for HU confirmation -- 汎用　次世代プロトAC (Cルート)HU確認用
+42100000 General purpose next generation proto AC_phantom -- 汎用　次世代プロトAC_幻影
+42500000 General purpose orbit seed -- 汎用　オービットシード
+42500800 General purpose orbit seed debug individual -- 汎用　オービットシード　デバッグ個体
+42500901 General-purpose orbit seed for checking aerial damage behavior 1 -- 汎用　オービットシード　空中ダメージ挙動確認用1
+42500902 General purpose orbit seed for checking aerial damage behavior 2 -- 汎用　オービットシード　空中ダメージ挙動確認用2
+42500903 General-purpose orbit seed for checking aerial damage behavior 3 -- 汎用　オービットシード　空中ダメージ挙動確認用3
+42500950 General Purpose Orbit Seed Medium Stagger Only -- 汎用　オービットシード 中よろけだけ
+42500951 General Purpose Orbit Seed Large Stagger Only -- 汎用　オービットシード 大よろけだけ
+42500953 General-purpose orbit seed for checking large hit addition (blade addition) -- 汎用　オービットシード　被弾加算大（ブレード加算）確認用
+42600000 General purpose orbit control -- 汎用　オービット制御
+50000000 General-purpose guard mechanism (aerial) machine gun -- 汎用　ガードメカ(空中)　機関銃
+50000200 General-purpose guard mech (air) self-destruct -- 汎用　ガードメカ(空中)　自爆
+50000900 General purpose guard mechanism (aerial) base -- 汎用　ガードメカ(空中)　ベース
+50000901 General-purpose guard mechanism (aerial) base for checking aerial damage behavior 1 -- 汎用　ガードメカ(空中)　ベース　空中ダメージ挙動確認用1
+50000902 General-purpose guard mechanism (aerial) base for checking aerial damage behavior 2 -- 汎用　ガードメカ(空中)　ベース　空中ダメージ挙動確認用2
+50000903 General purpose guard mechanism (aerial) base for checking aerial damage behavior 3 -- 汎用　ガードメカ(空中)　ベース　空中ダメージ挙動確認用3
+50001000 VOB Guard Mecha (Aerial) Machine Gun -- VOB　ガードメカ(空中)　機関銃
+50001001 Test Guard Mecha (Aerial) Machine Gun Hacking Test -- テスト　ガードメカ(空中)　機関銃　ハッキングテスト
+50001002 Ocean City Boss Battle Guard Mecha (Aerial) Machine Gun -- 洋上の都市　　ボス戦　ガードメカ(空中)　機関銃
+50001003 Ocean City Boss Battle Guard Mecha (Aerial) Machine Gun Accompanying -- 洋上の都市　　ボス戦　ガードメカ(空中)　機関銃 お供
+50001200 VOB Guard Mecha (Aerial) Self-destruct -- VOB　ガードメカ(空中)　自爆
+50001800 AC test guard mechanism (aerial) machine gun -- ACテスト用　ガードメカ(空中)　機関銃
+50100000 General purpose bug work type A -- 汎用　バグ　作業タイプA
+50100001 General purpose bug work type A special standby use -- 汎用　バグ　作業タイプA　特殊待機用
+50100200 General purpose bug security type -- 汎用　バグ　警備タイプ
+50100201 General purpose bug security type special standby use -- 汎用　バグ　警備タイプ　特殊待機用
+50100202 General purpose bug security type fixed turret -- 汎用　バグ　警備タイプ　固定砲台
+50100300 General purpose bug special type -- 汎用　バグ　特殊タイプ
+50100301 General purpose bug special type special standby use -- 汎用　バグ　特殊タイプ　特殊待機用
+50100302 General purpose bug special type fixed turret -- 汎用　バグ　特殊タイプ　固定砲台
+50100303 General Purpose Bug Special Type Fixed Artillery_Fog Range Expansion -- 汎用　バグ　特殊タイプ　固定砲台_霧範囲拡大
+50100900 General purpose bug all equipment -- 汎用　バグ　全装備
+50100901 General purpose bug all equipment for checking aerial damage behavior 1 -- 汎用　バグ　全装備 空中ダメージ挙動確認用1
+50100902 General purpose bug all equipment for checking aerial damage behavior 2 -- 汎用　バグ　全装備 空中ダメージ挙動確認用2
+50100903 General purpose bug all equipment for checking aerial damage behavior 3 -- 汎用　バグ　全装備 空中ダメージ挙動確認用3
+50101000 Mine shaft revisited bug work type A special standby aerial generation -- 坑道再訪　バグ　作業タイプA　特殊待機用　空中生成
+50101200 Railroad Bug Security Type -- レイルロード　バグ　警備タイプ
+50101210 Cavern and Furnace Bug Security Type -- 大空洞と炉　バグ　警備タイプ
+50200000 General purpose heavy guard mechanism -- 汎用　重ガードメカ
+50201000 Heavy guard mechanism for big bridge, cut out for name display -- ビッグブリッジ用　重ガードメカ　名前表示用切り分け
+50201001 Heavy guard mechanism for big bridge, section for name display, for after CP -- ビッグブリッジ用　重ガードメカ　名前表示用切り分け CP後用
+50201002 Heavy guard mechanism for new B-class people -- 新B層の人々用　重ガードメカ
+51000000 General purpose large transport helicopter -- 汎用　大型輸送ヘリ
+51000001 Encounter with the organization Large transport helicopter for escape -- 組織との出会い　大型輸送ヘリ　逃走用
+51000002 Encounter with the organization Large transport helicopter for reinforcements -- 組織との出会い　大型輸送ヘリ　増援用
+51000099 General purpose large transport helicopter Ally color -- 汎用　大型輸送ヘリ 味方カラー
+51000100 General purpose large transport helicopter with container -- 汎用　大型輸送ヘリ コンテナ付
+51000101 General-purpose large transport helicopter with container, special standby 1115 only -- 汎用　大型輸送ヘリ　コンテナ付き　特殊待機1115専用
+51000110 General-purpose large transport helicopter with melange tank -- 汎用　大型輸送ヘリ メランジタンク付
+51000900 General-purpose large transport helicopter test standby loop -- 汎用　大型輸送ヘリ　テスト用　待機ループ
+51000901 General purpose large transport helicopter for checking aerial damage behavior 1 -- 汎用　大型輸送ヘリ　空中ダメージ挙動確認用1
+51000902 General purpose large transport helicopter for checking aerial damage behavior 2 -- 汎用　大型輸送ヘリ　空中ダメージ挙動確認用2
+51000903 General purpose large transport helicopter for checking aerial damage behavior 3 -- 汎用　大型輸送ヘリ　空中ダメージ挙動確認用3
+51000990 General-purpose large transport helicopter for testing -- 汎用　大型輸送ヘリ　テスト用
+51001000 Area escape support Large transport helicopter Escort target Container included -- 領域離脱援護　大型輸送ヘリ　護衛対象 コンテナ付
+51001001 New B-tier emerging, large transport helicopter, not in combat -- 浮上する新B層　大型輸送ヘリ　戦闘に入っていない
+51001002 Over the Wall Large Transport Helicopter Ally -- 壁越え　大型輸送ヘリ　味方
+51001003 Area escape support Large transport helicopter Enemy initial standby -- 領域離脱援護　大型輸送ヘリ　敵　初期待機
+51001004 SBM ice field hole large transport helicopter -- SBM氷原の穴　大型輸送ヘリ
+51001021 Attack preparation large transport helicopter for presentation -- 襲撃準備　大型輸送ヘリ　演出用
+51001031 New B-tier residential area purge Large transport helicopter reinforcements -- 新B層居住区パージ　大型輸送ヘリ　増援用
+51001040 Large transport helicopter for large missile launch support -- 大型ミサイル発射支援用　大型輸送ヘリ
+51001041 Encounter with the organization ver.2 Large transport helicopter -- 組織との出会いver2 大型輸送ヘリ
+51001101 Fuel base mopping up large transport helicopter with container for escape -- 燃料基地掃討　大型輸送ヘリ コンテナ付　逃走用
+51001102 Large transport helicopter for the first AC battle, with container, special standby 1115 only, small per map -- 初AC戦用　大型輸送ヘリ　コンテナ付き　特殊待機1115専用　マップ当たり小さめ
+51001110 Fuel base sweeping large transport helicopter with melange tank -- 燃料基地掃討　大型輸送ヘリ メランジタンク付
+51001111 Fuel base sweeping large transport helicopter with melange tank -- 燃料基地掃討　大型輸送ヘリ メランジタンク付
+51001112 Fuel base sweeping large transport helicopter with melange tank -- 燃料基地掃討　大型輸送ヘリ メランジタンク付
+51010000 General-purpose large transport helicopter machine gun -- 汎用　大型輸送ヘリ機銃
+51011000 Defeat Iceworm Large transport helicopter machine gun firing distance increased -- アイスワーム撃破　大型輸送ヘリ機銃　発砲距離増加
+51011001 Area escape support, large transport helicopter machine gun, wingman -- 領域離脱援護　大型輸送ヘリ機銃　僚機
+51200000 c5120 military US drone for transportation -- c5120　軍事用USドローン　輸送用
+51200001 c5120 Military US Drone Transport_MT -- c5120　軍事用USドローン　輸送用_MT
+51200002 c5120 Military US Drone for Transport_Construction Spider -- c5120　軍事用USドローン　輸送用_建機クモ
+51200090 c5120 military US drone for transportation with light -- c5120　軍事用USドローン　輸送用　ライト付き
+51200091 c5120 Military US Drone for Transport_MT with light -- c5120　軍事用USドローン　輸送用_MT　ライト付き
+51200092 c5120 Military US Drone for Transportation_Construction Machine Spider with Light -- c5120　軍事用USドローン　輸送用_建機クモ　ライト付き
+51200100 c5120 military US drone laser rifle -- c5120　軍事用USドローン　レーザーライフル
+51200180 c5120 Military US Drone Laser Rifle Fixed Battery -- c5120　軍事用USドローン　レーザーライフル　固定砲台
+51200190 c5120 Military US Drone Laser Rifle with Light -- c5120　軍事用USドローン　レーザーライフル　ライト付き
+51200191 c5120 Military US Drone Laser Rifle Fixed Battery with Light -- c5120　軍事用USドローン　レーザーライフル　固定砲台　ライト付き
+51200200 c5120 Military US Drone Pulse PA -- c5120　軍事用USドローン　パルスPA
+51200280 c5120 Military US Drone Pulse PA Fixed Battery -- c5120　軍事用USドローン　パルスPA　固定砲台
+51200281 c5120 Military US Drone Pulse PA Fixed Battery PA Standby -- c5120　軍事用USドローン　パルスPA　固定砲台　PA待機
+51200290 c5120 military US drone pulse PA with light -- c5120　軍事用USドローン　パルスPA　ライト付き
+51200291 c5120 Military US Drone Pulse PA Fixed Battery with Light -- c5120　軍事用USドローン　パルスPA　固定砲台　ライト付き
+51200292 c5120 Military US Drone Pulse PA Fixed Battery with Light PA Standby -- c5120　軍事用USドローン　パルスPA　固定砲台　ライト付き　PA待機
+51200300 c5120 military US drone cluster missile -- c5120　軍事用USドローン　クラスターミサイル
+51200380 c5120 Military US Drone Cluster Missile Fixed Battery -- c5120　軍事用USドローン　クラスターミサイル　固定砲台
+51200390 c5120 military US drone cluster missile with light -- c5120　軍事用USドローン　クラスターミサイル　ライト付き
+51200391 c5120 Military US Drone Cluster Missile Fixed Battery with Light -- c5120　軍事用USドローン　クラスターミサイル　固定砲台　ライト付き
+51200900 c5120 military US drone fully equipped -- c5120　軍事用USドローン　全装備
+51201000 SBM Ice Field Hole C5120 Military US Drone For Transport_MT With Light For Vertical Drop -- SBM氷原の穴　c5120　軍事用USドローン　輸送用_MT　ライト付き　垂直降下用
+51201100 Straight urban reverse driving military US drone laser rifle fixed turret damage not released with light -- ストレート市街逆走　軍事用USドローン　レーザーライフル　固定砲台ダメージ解除しない　ライト付き
+51201101 Area escape support military US drone laser rifle fixed gun battery with light movement control para replacement -- 領域離脱援護　軍事用USドローン　レーザーライフル　固定砲台　ライト付き　移動制御パラ差し替え
+51201102 Fuel base sweep Military US drone Laser rifle Resident special effects 5000 Movement para replacement -- 燃料基地掃討　軍事用USドローン　レーザーライフル　常駐特殊効果5000　移動パラ差し替え
+51201103 Scavenging c5120 Military US Drone For Transport_MT With Light High Speed ​​Movement -- スカベンジング c5120　軍事用USドローン　輸送用_MT　ライト付き　高速移動
+51201180 Straight city progression military US drone laser rifle fixed gun battery for performance -- ストレート市街進行　軍事用USドローン　レーザーライフル　固定砲台　演出用
+51201200 Old spaceport attack, military US drone, pulse PA, fixed artillery battery, PA standby, distance not released -- 旧宇宙港襲撃　軍事用USドローン　パルスPA　固定砲台　PA待機　距離解除しない
+51201280 Straight city progression military US drone pulse PA fixed artillery for production -- ストレート市街進行　軍事用USドローン　パルスPA　固定砲台　演出用
+51201300 Jailbreak Military US Drone Cluster Missile Fixed Battery with Light -- 脱獄　軍事用USドローン　クラスターミサイル　固定砲台　ライト付き
+51201301 Emerging new B-tier military US drone cluster missile permanent special effects for helicopter escort -- 浮上する新B層　軍事用USドローン　クラスターミサイル　ヘリ護衛用常駐特殊効果
+51201302 Submitute A Military US Drone Cluster Missile with Light -- サブミチュートA　軍事用USドローン　クラスターミサイル　ライト付き
+51201303 SBM Ice Field Hole C5120 Military US Drone Cluster Missile with Light -- SBM氷原の穴　c5120　軍事用USドローン　クラスターミサイル　ライト付き
+51500000 General purpose combat helicopter machine gun -- 汎用　戦闘ヘリ 　機関銃
+51500001 General-purpose combat helicopter machine gun for route movement boost -- 汎用　戦闘ヘリ 　機関銃 ルート移動ブースト用
+51500200 General purpose combat helicopter EN machine gun -- 汎用　戦闘ヘリ 　EN機関銃
+51500201 General-purpose combat helicopter EN machine gun for route movement boost -- 汎用　戦闘ヘリ 　EN機関銃 ルート移動ブースト用
+51500900 General purpose combat helicopter base -- 汎用　戦闘ヘリ 　ベース
+51500901 General-purpose combat helicopter base for checking aerial damage behavior 1 -- 汎用　戦闘ヘリ 　ベース 空中ダメージ挙動確認用1
+51500902 General-purpose combat helicopter base for checking aerial damage behavior 2 -- 汎用　戦闘ヘリ 　ベース 空中ダメージ挙動確認用2
+51500903 General-purpose combat helicopter base for checking aerial damage behavior 3 -- 汎用　戦闘ヘリ 　ベース 空中ダメージ挙動確認用3
+52000000 General purpose combat vehicle -- 汎用　戦闘車両
+52000010 General-purpose combat vehicle for event shooting -- 汎用　戦闘車両　イベント射撃用
+52000020 General-purpose combat vehicle, does not move during battle -- 汎用　戦闘車両　戦闘中は断固移動しない
+52000030 General-purpose combat vehicle, does not move during battle, for event shooting -- 汎用　戦闘車両　戦闘中は断固移動しない　イベント射撃用
+52000900 General purpose combat vehicle fully equipped -- 汎用　戦闘車両　全装備
+52001309 Search in front of the wall, combat vehicle, machine gun, money bag included -- 壁前探索　戦闘車両　マシンガン 銭袋付き
+52500000 General purpose sunflower -- 汎用　サンフラワー
+52501000 Old world MT elimination Sunflower -- 旧世界MT排除　サンフラワー
+53000000 General-purpose suicide satellite -- 汎用　自爆衛星
+53000001 General purpose suicide satellite for checking mine behavior -- 汎用　自爆衛星　機雷挙動確認用
+53000002 General-purpose self-destruct satellite, for confirming self-destruct behavior -- 汎用　自爆衛星　自爆挙動確認用
+53000100 General Purpose Suicide Satellite Necklace Keeper Carrier-Based Machine -- 汎用　自爆衛星　首飾りの番人艦載機
+53000200 General-purpose suicide satellite for special approach and long-distance events -- 汎用　自爆衛星 特殊接近遠距離イベント用
+53000250 General-purpose suicide satellite Special approach suicide bombing distance -- 汎用　自爆衛星 特殊接近自爆遠
+53000300 General-purpose suicide satellite for special approach medium-range events -- 汎用　自爆衛星 特殊接近中距離イベント用
+53000350 General-purpose suicide satellite Special approach self-destruction -- 汎用　自爆衛星 特殊接近自爆中
+53000400 General-purpose suicide satellite for special close-range events -- 汎用　自爆衛星 特殊接近近距離イベント用
+53000450 General Purpose Suicide Satellite Special Approach Suicide Destruction Nearby -- 汎用　自爆衛星 特殊接近自爆近
+53000500 General-purpose suicide satellite for special approach directly below events -- 汎用　自爆衛星 特殊接近真下イベント用
+53000550 General Purpose Suicide Satellite Special Approach Suicide Destruction Directly Below -- 汎用　自爆衛星 特殊接近自爆真下
+53000600 General-purpose self-destruct satellite SOL -- 汎用　自爆衛星 SOL
+53000901 General-purpose suicide bomber for checking aerial damage behavior 1 -- 汎用　自爆衛　空中ダメージ挙動確認用1
+53000902 General purpose suicide bomber for checking aerial damage behavior 2 -- 汎用　自爆衛　空中ダメージ挙動確認用2
+53000903 General-purpose suicide bomber for checking aerial damage behavior 3 -- 汎用　自爆衛　空中ダメージ挙動確認用3
+53001000 General-purpose suicide satellite -- 汎用　自爆衛星
+53001001 Suicide satellite first mine on the continental shell -- 大陸殻の上　自爆衛星　初手機雷
+53001002 Above the continental shell Suicide satellite Normal -- 大陸殻の上　自爆衛星　通常
+53001003 Defeat Iceworm, Suicide Satellite, Fast movement -- アイスワーム撃破　自爆衛星　移動早い
+53001004 Collapsed continental shell, suicide satellite -- 崩落した大陸殻　自爆衛星
+53001005 Continental shell, suicide satellite, special standby solid_ground stuck -- 大陸殻　自爆衛星　特殊待機固体_地面刺さり
+53001006 Continental shell, suicide satellite, special standby solid_ceiling stuck -- 大陸殻　自爆衛星　特殊待機固体_天井刺さり
+53001007 Hole in the ice field Suicide satellite Special standby solid_ceiling stuck -- 氷原の穴　自爆衛星　特殊待機固体_天井刺さり
+53001008 Hole in the Ice Field Suicide Satellite_Suicide Satellite for the second half -- 氷原の穴　自爆衛星_後半用自爆衛星
+53001009 Continental Shell Suicide Satellite Special Standby Solid_Ceiling Stick_No self-destruction with token -- 大陸殻　自爆衛星　特殊待機固体_天井刺さり_トークン持ち自爆無し
+53001600 Continental Shell Suicide Satellite SOL -- 大陸殻　自爆衛星 SOL
+55000000 General-purpose biological weapon -- 汎用　生体兵器
+55001000 Biological Weapon Biological Weapon -- 生体兵器　生体兵器
+55001900 Living Weapon Living Weapon_For Rusty Token Cooperation_Dusting for event only is prohibited -- 生体兵器　生体兵器_ラスティトークン連携用_イベント専用流用禁止
+60500000 General Purpose Pharaon Gatling -- 汎用　ファラオン　ガトリング
+60500010 General Purpose Pharaon Napalm_For Prologue -- 汎用　ファラオン　ナパーム_プロローグ用
+60500011 General Purpose Pharaon Gatling_Test version -- 汎用　ファラオン　ガトリング_テスト版
+60500100 General Purpose Pharaon Napalm -- 汎用　ファラオン　ナパーム
+60500101 General Purpose Pharaon Napalm_For Light Test -- 汎用　ファラオン　ナパーム_ライトテスト用
+60500900 General Purpose Pharaon Full Equipment -- 汎用　ファラオン　全装備
+60501010 Prologue Pharaon Napalm for on-the-road production_for prologue -- プロローグ　道中演出用ファラオン　ナパーム_プロローグ用
+60501100 Pharaon napalm light for cities on the ocean -- 洋上の都市用　ファラオン　ナパーム_ライト
+60501101 Pharaon HP adjustment version for ocean city ALT -- 洋上の都市ALT用　ファラオン　HP調整版
+61000000 General purpose sea spider -- 汎用　ウミグモ
+61000098 General purpose sea spider for C end 1 -- 汎用　ウミグモ Cエンド用1
+61000099 General-purpose sea spider C-end 2 -- 汎用　ウミグモ Cエンド用2
+61000100 General-purpose sea spider C-end bug confirmation -- 汎用　ウミグモ Cエンドバグ確認用
+61000990 Color test sea spider 1 -- カラーテスト　ウミグモ　1
+61000991 Color test sea spider 2 -- カラーテスト　ウミグモ　2
+61000992 Color test sea spider 3 -- カラーテスト　ウミグモ　3
+61000993 Color test sea spider 4 -- カラーテスト　ウミグモ　4
+61010000 General-purpose sea spider secondary gun -- 汎用　ウミグモ副砲
+61010099 General-purpose sea spider secondary gun for C-end -- 汎用　ウミグモ副砲 Cエンド用
+62500000 General purpose sandworm -- 汎用　サンドワーム
+62500010 General purpose sandworm_PA test -- 汎用　サンドワーム_PAテスト
+62501000 Sandworm for destroying ice worms -- アイスワーム撃破用　サンドワーム
+62501001 Sandworm for attacking the old spaceport -- 旧宇宙港襲撃用　サンドワーム
+63510000 General-purpose Dora secondary gun -- 汎用　ドーラ副砲
+63520000 General-purpose Dora missile -- 汎用　ドーラミサイル
+64000000 c6400 mining ship -- c6400　採掘艦
+64001000 Old world MT elimination mining ship -- 旧世界MT排除　採掘艦
+64200000 c6420 mining ship eyeball -- c6420　採掘艦 目玉
+72221000 Large missile launch support missile base -- 大型ミサイル発射支援　ミサイル土台
+72221001 Large missile launch support for right missile -- 大型ミサイル発射支援　右ミサイル用
+72221002 Large missile launch support for left missile -- 大型ミサイル発射支援　左ミサイル用
+72300000 General purpose ground force battery grenade (large) -- 汎用　地上勢力砲台グレネード(大)
+72300100 General purpose ground force battery grenade (large) with shield -- 汎用　地上勢力砲台グレネード(大) 盾有
+72301000 General purpose ground force battery grenade (large) for event shooting -- 汎用　地上勢力砲台グレネード(大) イベント射撃用
+72301100 General-purpose ground force battery grenade (large) with shield, for event shooting -- 汎用　地上勢力砲台グレネード(大) 盾有 イベント射撃用
+72302000 General purpose ground force battery grenade (large)_Snow difference -- 汎用　地上勢力砲台グレネード(大)_雪差分
+72302100 General purpose ground force battery grenade (large) with shield_snow difference -- 汎用　地上勢力砲台グレネード(大) 盾有_雪差分
+72303000 General purpose ground force battery grenade (large) for event shooting_snow difference -- 汎用　地上勢力砲台グレネード(大) イベント射撃用_雪差分
+72303100 General purpose ground force battery grenade (large) with shield For event shooting_Snow difference -- 汎用　地上勢力砲台グレネード(大) 盾有 イベント射撃用_雪差分
+72305000 Destroy mining ship Ground force battery grenade (large) -- 採掘艦破壊　地上勢力砲台グレネード(大)
+72400000 General-purpose ground force artillery bazooka -- 汎用　地上勢力砲台バズーカ
+72401000 General-purpose ground force artillery bazooka for event shooting -- 汎用　地上勢力砲台バズーカ イベント射撃用
+72402000 General-purpose ground force artillery bazooka_snow difference -- 汎用　地上勢力砲台バズーカ_雪差分
+72403000 General-purpose ground force battery bazooka for event shooting_snow difference -- 汎用　地上勢力砲台バズーカ イベント射撃用_雪差分
+72500000 General purpose ground force artillery gatling (large) -- 汎用　地上勢力砲台ガトリング(大)
+72500100 General purpose ground force artillery gatling (large) with shield -- 汎用　地上勢力砲台ガトリング(大) 盾有
+72501000 General-purpose ground force artillery gatling (large) for event shooting -- 汎用　地上勢力砲台ガトリング(大) イベント射撃用
+72501100 General purpose ground force artillery gatling (large) with shield for event shooting -- 汎用　地上勢力砲台ガトリング(大) 盾有　イベント射撃用
+72502000 General purpose ground force artillery gatling (large)_snow difference -- 汎用　地上勢力砲台ガトリング(大)_雪差分
+72502006 Large missile launch support ground force battery Gatling (large) wingman -- 大型ミサイル発射支援用　地上勢力砲台ガトリング(大)　僚機
+72502007 Large missile launch support ground force battery Gatling (large) wingman -- 大型ミサイル発射支援用　地上勢力砲台ガトリング(大)　僚機
+72502100 General purpose ground force artillery gatling (large) with shield_snow difference -- 汎用　地上勢力砲台ガトリング(大) 盾有_雪差分
+72503000 General purpose ground force artillery gatling (large) for event shooting_snow difference -- 汎用　地上勢力砲台ガトリング(大) イベント射撃用_雪差分
+72503100 General purpose ground force artillery gatling (large) with shield for event shooting_snow difference -- 汎用　地上勢力砲台ガトリング(大) 盾有　イベント射撃用_雪差分
+72600000 General-purpose ground force artillery twin missile -- 汎用　地上勢力砲台連装ミサイル
+72601000 General-purpose ground force battery twin missile for event firing -- 汎用　地上勢力砲台連装ミサイル イベント射撃用
+72602000 General-purpose ground force battery dual missile_snow difference -- 汎用　地上勢力砲台連装ミサイル_雪差分
+72603000 General-purpose ground force battery twin missile for event shooting_Snow difference -- 汎用　地上勢力砲台連装ミサイル イベント射撃用_雪差分
+72610000 General purpose ground force vertical missile -- 汎用　地上勢力砲台垂直ミサイル
+72611000 General-purpose ground force vertical missile for event firing -- 汎用　地上勢力砲台垂直ミサイル イベント射撃用
+72611010 General-purpose ground force vertical missile number limit: 5 shots -- 汎用　地上勢力砲台垂直ミサイル 弾数制限　5発
+72611020 General-purpose ground force vertical missile, limited to 5 shots, for event shooting -- 汎用　地上勢力砲台垂直ミサイル 弾数制限　5発　イベント射撃用
+72611030 General-purpose ground force vertical missile bullet limit: 10 shots -- 汎用　地上勢力砲台垂直ミサイル 弾数制限　10発
+72611040 General-purpose ground force vertical missile, limited to 10 rounds, for event shooting -- 汎用　地上勢力砲台垂直ミサイル 弾数制限　10発　イベント射撃用
+72611050 General-purpose ground force vertical missile long-range test -- 汎用　地上勢力砲台垂直ミサイル  遠距離型テスト
+72611100 Ground force artillery vertical missile for area escape support -- 領域離脱援護用　地上勢力砲台垂直ミサイル
+72611110 Mining ship destruction Ground force artillery vertical missile speed adjustment -- 採掘艦破壊　地上勢力砲台垂直ミサイル　速度調整
+72612000 General purpose ground force vertical missile_snow difference -- 汎用　地上勢力砲台垂直ミサイル_雪差分
+72613000 General purpose ground force vertical missile for event shooting_Snow difference -- 汎用　地上勢力砲台垂直ミサイル イベント射撃用_雪差分
+72620000 General purpose ground force horizontal missile -- 汎用　地上勢力砲台水平ミサイル
+72621000 General purpose ground force horizontal missile for event firing -- 汎用　地上勢力砲台水平ミサイル イベント射撃用
+72700000 General-purpose ground force artillery sniper (large) -- 汎用　地上勢力砲台 スナイパー(大)
+72700100 General purpose ground force battery Sniper (large) with shield -- 汎用　地上勢力砲台 スナイパー(大)　盾有
+72701000 General-purpose ground force battery Sniper (large) For event shooting -- 汎用　地上勢力砲台 スナイパー(大) イベント射撃用
+72701001 Test Ground Force Artillery Sniper (Large) Hacking Test -- テスト　地上勢力砲台 スナイパー(大)　ハッキングテスト
+72702000 General-purpose ground force battery Sniper (large)_Snow difference -- 汎用　地上勢力砲台 スナイパー(大)_雪差分
+72702100 General purpose ground force battery Sniper (large) with shield_snow difference -- 汎用　地上勢力砲台 スナイパー(大)　盾有_雪差分
+72703000 General-purpose ground force battery Sniper (large) For event shooting_Snow difference -- 汎用　地上勢力砲台 スナイパー(大) イベント射撃用_雪差分
+72800000 c7280 old EN battery laser rifle -- c7280　旧式EN砲台 レーザーライフル
+72801000 c7280 old EN battery laser rifle for event shooting -- c7280　旧式EN砲台 レーザーライフル イベント射撃用
+72900000 c7290 Old EN turret laser bazooka -- c7290　旧式EN砲台 レーザーバズーカ
+72901000 c7290 Old EN turret laser bazooka for event shooting -- c7290　旧式EN砲台 レーザーバズーカ イベント射撃用
+73000000 c7300 speaker antenna turret pulse -- c7300　スピーカーアンテナ砲台 パルス
+73001000 c7300 speaker antenna turret pulse event shooting -- c7300　スピーカーアンテナ砲台 パルス イベント射撃用
+73002000 c7300 speaker antenna turret pulse_snow difference -- c7300　スピーカーアンテナ砲台 パルス_雪差分
+73003000 c7300 speaker antenna turret pulse event shooting_snow difference -- c7300　スピーカーアンテナ砲台 パルス イベント射撃用_雪差分
+73100000 c7310 State-of-the-art EN battery plasma rifle -- c7310　最新鋭EN砲台 プラズマライフル
+73101000 c7310 State-of-the-art EN battery plasma rifle for event shooting -- c7310　最新鋭EN砲台 プラズマライフル イベント射撃用
+73101001 Emerging new B layer c7310 state-of-the-art EN battery plasma rifle for event shooting -- 浮上する新B層 c7310　最新鋭EN砲台 プラズマライフル イベント射撃用
+73200000 c7320 state-of-the-art EN battery plasma missile -- c7320　最新鋭EN砲台 プラズマミサイル
+73900000 c7390 D-tier giant gun battery Anemone -- c7390　D層巨大砲台 アネモネ
+74000000 General-purpose amphibious assault ship -- 汎用　強襲揚陸艦
+74000100 General purpose amphibious assault ship_gun battery only -- 汎用　強襲揚陸艦_砲台のみ
+74000200 General-purpose amphibious assault ship_missile only -- 汎用　強襲揚陸艦_ミサイルのみ
+74000300 General-purpose amphibious assault ship_gun battery/missile -- 汎用　強襲揚陸艦_砲台・ミサイル
+74000400 General-purpose amphibious assault ship_railgun -- 汎用　強襲揚陸艦_レールガン
+74000410 General-purpose amphibious assault ship_Railgun Ground combat railgun -- 汎用　強襲揚陸艦_レールガン　地上戦用レールガン
+74000500 General-purpose amphibious assault ship_bow laser cannon -- 汎用　強襲揚陸艦_艦首レーザー砲
+74000700 General-purpose amphibious assault ship_event control -- 汎用　強襲揚陸艦_イベント制御
+74000900 General-purpose amphibious assault ship_death performance sample 0 -- 汎用　強襲揚陸艦_死亡演技サンプル0
+74000901 General-purpose amphibious assault ship_death performance sample 1 -- 汎用　強襲揚陸艦_死亡演技サンプル1
+74000902 General-purpose amphibious assault ship_death performance sample 2 -- 汎用　強襲揚陸艦_死亡演技サンプル2
+74000903 General-purpose amphibious assault ship_death performance sample 3 -- 汎用　強襲揚陸艦_死亡演技サンプル3
+74000904 General-purpose amphibious assault ship_death performance sample 4 -- 汎用　強襲揚陸艦_死亡演技サンプル4
+74000905 General-purpose amphibious assault ship_death performance sample 5 -- 汎用　強襲揚陸艦_死亡演技サンプル5
+74000906 General-purpose amphibious assault ship_death performance sample 6 -- 汎用　強襲揚陸艦_死亡演技サンプル6
+74000907 General-purpose amphibious assault ship_death performance sample 7 -- 汎用　強襲揚陸艦_死亡演技サンプル7
+74000908 General-purpose amphibious assault ship_death performance sample 8 -- 汎用　強襲揚陸艦_死亡演技サンプル8
+74000909 General-purpose amphibious assault ship_death performance sample 9 -- 汎用　強襲揚陸艦_死亡演技サンプル9
+74001000 Atmospheric breakthrough amphibious assault ship_gun battery/missile -- 大気圏突破　強襲揚陸艦_砲台・ミサイル
+74001001 Encounter with the organization Amphibious assault ship for event control -- 組織との出会い　強襲揚陸艦　イベント制御用
+74001500 Amphibious assault ship for large missile launch support_bow laser cannon -- 大型ミサイル発射支援用　強襲揚陸艦_艦首レーザー砲
+74001501 Amphibious assault ship for attacking the old spaceport_bow laser cannon_damage difference -- 旧宇宙港襲撃用　強襲揚陸艦_艦首レーザー砲_ダメージ差分
+74001502 Atmospheric breakthrough amphibious assault ship_bow laser cannon -- 大気圏突破　強襲揚陸艦_艦首レーザー砲
+74001503 Amphibious assault ship for breaking through the atmosphere_gun battery/missile Bigzam -- 大気圏突破用　強襲揚陸艦_砲台・ミサイル　ビグザム
+74001504 Amphibious assault ship for attacking the old spaceport_bow laser cannon -- 旧宇宙港襲撃用　強襲揚陸艦_艦首レーザー砲
+74001700 Amphibious assault ship for breaking through the atmosphere_Event control_Ground situation -- 大気圏突破用　強襲揚陸艦_イベント制御_地上シチュ
+74001701 Amphibious assault ship for breaking through the atmosphere_Event control_Railgun situation -- 大気圏突破用　強襲揚陸艦_イベント制御_レールガンシチュ
+74010000 General-purpose amphibious assault ship main gun for front attachment -- 汎用　強襲揚陸艦 主砲　前部アタッチ用
+74010001 General-purpose amphibious assault ship main gun for rear attachment -- 汎用　強襲揚陸艦 主砲　後部アタッチ用
+74011000 Old Spaceport Attack Amphibious Assault Ship Main Gun_Damage Difference -- 旧宇宙港襲撃　強襲揚陸艦 主砲_ダメージ差分
+74011001 Old spaceport attack amphibious assault ship main gun -- 旧宇宙港襲撃　強襲揚陸艦 主砲
+74011002 Old spaceport attack amphibious assault ship main gun for enemy aircraft -- 旧宇宙港襲撃　強襲揚陸艦 主砲 敵機用
+74011003 Old Spaceport Attack Amphibious Assault Ship Main Gun_Damage Difference -- 旧宇宙港襲撃　強襲揚陸艦 主砲_ダメージ差分
+74011100 Atmospheric breakthrough amphibious assault ship main gun AP provisional adjustment -- 大気圏突破　強襲揚陸艦 主砲　AP暫定調整
+74012000 General purpose amphibious assault ship main gun_snow difference -- 汎用　強襲揚陸艦 主砲_雪差分
+74012001 General-purpose amphibious assault ship main gun_snow difference for rear attachment -- 汎用　強襲揚陸艦 主砲_雪差分　後部アタッチ用
+74020000 General-purpose amphibious assault ship secondary gun -- 汎用　強襲揚陸艦 副砲
+74021000 Hole in the Icefield Amphibious Assault Ship Secondary Gun Shortened Lock Distance Version -- 氷原の穴　強襲揚陸艦 副砲 被ロック距離縮めた版
+74021001 Attack on the old spaceport Amphibious assault ship secondary gun -- 旧宇宙港襲撃　強襲揚陸艦 副砲
+74021002 Destroy mining ship, amphibious assault ship, secondary gun, short locking distance -- 採掘艦破壊　強襲揚陸艦 副砲 被ロック距離短め
+74021003 Destroy mining ship Amphibious assault ship secondary gun -- 採掘艦破壊　強襲揚陸艦 副砲
+74021004 Old Spaceport Attack Amphibious Assault Ship Secondary Gun_Damage Difference -- 旧宇宙港襲撃　強襲揚陸艦 副砲_ダメージ差分
+74021005 Attack on the old spaceport Amphibious assault ship secondary gun -- 旧宇宙港襲撃　強襲揚陸艦 副砲
+74021100 Atmospheric breakthrough amphibious assault ship secondary gun AP provisional adjustment -- 大気圏突破　強襲揚陸艦 副砲　AP暫定調整
+74022000 General-purpose amphibious assault ship secondary gun_snow difference -- 汎用　強襲揚陸艦 副砲_雪差分
+74030000 General-purpose amphibious assault ship missile cannon -- 汎用　強襲揚陸艦 ミサイル砲
+74031000 Old spaceport attack amphibious assault ship missile cannon -- 旧宇宙港襲撃　強襲揚陸艦 ミサイル砲
+74031001 Large missile launch support amphibious assault ship missile cannon -- 大型ミサイル発射支援　強襲揚陸艦 ミサイル砲
+74031100 Atmospheric breakthrough amphibious assault ship missile cannon AP provisional adjustment -- 大気圏突破　強襲揚陸艦 ミサイル砲　AP暫定調整
+74100000 General-purpose amphibious assault ship slave unit -- 汎用　強襲揚陸艦 子機
+74100100 General-purpose amphibious assault ship child unit large suicide bomber -- 汎用　強襲揚陸艦 子機　大自爆
+74100120 General-purpose amphibious assault ship child unit large suicide bomber_right -- 汎用　強襲揚陸艦 子機　大自爆_右
+74100130 General-purpose amphibious assault ship child unit large suicide bomb_left -- 汎用　強襲揚陸艦 子機　大自爆_左
+74100200 General-purpose amphibious assault ship child unit special attack against buildings -- 汎用　強襲揚陸艦 子機　対ビル特攻
+74100901 General-purpose amphibious assault ship child unit for checking aerial damage behavior 1 -- 汎用　強襲揚陸艦 子機　空中ダメージ挙動確認用1
+74100902 General-purpose amphibious assault ship child unit for checking aerial damage behavior 2 -- 汎用　強襲揚陸艦 子機　空中ダメージ挙動確認用2
+74100903 General-purpose amphibious assault ship child unit for checking aerial damage behavior 3 -- 汎用　強襲揚陸艦 子機　空中ダメージ挙動確認用3
+74100990 General-purpose amphibious assault ship interception test -- 汎用　強襲揚陸艦 子機　迎撃テスト
+74101001 Hole in the Ice Field Amphibious Assault Ship Child Unit -- 氷原の穴　強襲揚陸艦 子機
+74101002 Encounter with the organization Amphibious assault ship slave unit -- 組織との出会い　強襲揚陸艦 子機
+81350000 c8135 Miyatake strong enemy (humanoid) -- c8135　宮武強敵（人型）
+81350901 c8135 Miyatake strong enemy (humanoid) for checking aerial damage behavior 1 -- c8135　宮武強敵（人型）　空中ダメージ挙動確認用1
+81350902 c8135 Miyatake strong enemy (humanoid) for checking aerial damage behavior 2 -- c8135　宮武強敵（人型）　空中ダメージ挙動確認用2
+81350903 c8135 Miyatake strong enemy (humanoid) for checking aerial damage behavior 3 -- c8135　宮武強敵（人型）　空中ダメージ挙動確認用3
+81350950 c8135 Miyatake strong enemy (humanoid) Medium stagger only -- c8135　宮武強敵（人型）　中よろけだけ
+81350951 c8135 Miyatake Strong Enemy (Humanoid) Big Stagger Only -- c8135　宮武強敵（人型）　大よろけだけ
+81350953 c8135 Miyatake Strong Enemy (Humanoid) For confirmation of large hit addition (blade addition) -- c8135　宮武強敵（人型）　被弾加算大（ブレード加算）確認用
+81450000 c8145 Miyatake strong enemy bird type -- c8145　宮武強敵 鳥型
+85350000 General-purpose mining ship centerpiece -- 汎用　採掘艦目玉
+85350100 General-purpose mining ship centerpiece activated -- 汎用　採掘艦目玉 起動済み
+85360000 General-purpose mining ship drill -- 汎用　採掘艦ドリル
+93210000 c9321 For control testing -- c9321　制御テスト用
+93210001 c9321 Concomitant test for control test -- c9321　制御テスト用 随伴テスト
+93240000 c9324 Hagiya Test MkⅡ -- c9324　はぎやてすとMkⅡ
+93250000 c9325 Hagiya Test MkⅢ -- c9325　はぎやてすとMkⅢ
+93260000 c9326 Hagiya Test MkⅣ -- c9326　はぎやてすとMkⅣ
+93270000 c9327 Hagiya Test MkⅤ -- c9327　はぎやてすとMkⅤ
+93500000 c9350 verification aircraft 1 (c3400 quadruped MT grenade BFF) -- ｃ9350　検証機体1　（c3400　四脚MT　グレネード　BFF)
+93500001 Shinmura test machine Pharaona Napalm special blowout death confirmation former communist country MT throwing lie/cover -- 新村テスト機　ファラオンナパーム特殊吹き飛び死亡確認用　旧共産圏MT　投ライ/カバー
+93500002 Shinmura test machine Pharaona Napalm special blowout death confirmation former communist region MT Dabumashi -- 新村テスト機　ファラオンナパーム特殊吹き飛び死亡確認用　旧共産圏MT　ダブマシ
+93500003 Shinmura test machine Pharaona Napalm special blowout death confirmation former communist region MT location machine -- 新村テスト機　ファラオンナパーム特殊吹き飛び死亡確認用　旧共産圏MT　ロケマシ
+94000000 c9400 map team test bazooka turret small -- c9400　マップ班テスト用 バズーカ砲台 小
+94000010 c9400 Map team test Bazooka turret small Kira placement test -- c9400　マップ班テスト用 バズーカ砲台 小　吉良配置テスト用
+94010000 c9401 Map team test bazooka turret large -- c9401　マップ班テスト用 バズーカ砲台 大
+94100000 c9410 Map team test sniper turret small -- c9410　マップ班テスト用 スナイパー砲台 小
+94110000 c9411 Map team test sniper battery large -- c9411　マップ班テスト用 スナイパー砲台 大
+94200000 c9420 Map team test missile battery small -- c9420　マップ班テスト用 ミサイル砲台 小
+94310000 c9431 machine gun turret -- c9431　マシンガン砲台
+99600000 c9960 Bullet generation dummy character -- c9960　弾発生ダミーキャラ
+99600001 c9960 Fuel base mopping up bullet generation dummy character Team type object -- c9960　燃料基地掃討用弾発生ダミーキャラ チームタイプオブジェ
+99606250 c9960 Bullet generation dummy character Sandworm -- c9960　弾発生ダミーキャラ サンドワーム
+99800000 c9980 Dummy character group route patrol -- c9980　ダミーキャラ　集団ルート巡回
+99800001 c9980 Dummy character No hit detection -- c9980　ダミーキャラ　当たり判定なし
+99800002 c9980 Dummy Character Catapult_Tutorial A layer -- c9980　ダミーキャラ　カタパルト_チュートリアルA層
+99800003 c9980 Dummy character catapult_fuel base -- c9980　ダミーキャラ　カタパルト_燃料基地
+99800004 c9980 Dummy character group route patrol for 2-point patrol -- c9980　ダミーキャラ　集団ルート巡回　2点巡回用
+99800010 c9980 Dummy character for conversation test -- c9980　ダミーキャラ　会話テスト用
+99800011 c9980 Dummy character for mission control Sudden -- c9980　ミッション制御用ダミーキャラ　突発
+99800012 c9980 Dummy character live for mission control -- c9980　ミッション制御用ダミーキャラ　ライブ
+99800013 c9980 Mission control dummy character BF -- c9980　ミッション制御用ダミーキャラ　BF
+99800014 c9980 Garage Point Character Mission -- c9980　ガレージポイントキャラ　ミッション内
+99800015 c9980 Dummy character Wireless conversation verification character Cannot be skipped -- c9980　ダミーキャラ　無線会話検証用キャラ　スキップ不可
+99800016 c9980 Dummy character Wireless conversation verification character Skipable -- c9980　ダミーキャラ　無線会話検証用キャラ　スキップ可
+99800017 c4000 Wireless conversation verification character Confirmation name Named Cannot be skipped -- c4000　無線会話検証用キャラ　確認用　名称付き　スキップ不可
+99800018 c4000 Wireless conversation verification character Confirmation with name Skipable -- c4000　無線会話検証用キャラ　確認用　名称付き　スキップ可
+99800019 c4000 Wireless conversation verification character Cutscene use -- c4000　無線会話検証用キャラ　カットシーン用
+99800020 c9980 Dummy character for garage -- c9980　ダミーキャラ　ガレージ用
+99800021 c9980 Dummy character object access -- c9980　ダミーキャラ　オブジェアクセス
+99800030 c9980 Dummy character for combat helicopter -- c9980　ダミーキャラ　戦闘ヘリ用
+99800040 c9980 Dummy character Hacking Lv1 -- c9980　ダミーキャラ　ハッキング用Lv1
+99800041 c9980 Dummy character Hacking Lv2 -- c9980　ダミーキャラ　ハッキング用Lv2
+99800042 c9980 Dummy character Hacking Lv3 -- c9980　ダミーキャラ　ハッキング用Lv3
+99800050 c9980 Dummy character installation for PA generation -- c9980　ダミーキャラ　設置PA発生用
+99800060 c9980 Dummy character for C-end platoon action -- c9980　ダミーキャラ　Cエンド小隊行動用
+99800090 c9980 Dummy character for destruction target -- c9980　ダミーキャラ　破壊対象用
+99800099 c9980 Dummy character HP management dummy character for multiple battles -- c9980　ダミーキャラ　複数戦用HP管理ダミーキャラ
+99800100 c9980 Dummy character defeat point addition_10000P -- c9980　ダミーキャラ　撃破ポイント加算_10000P
+99801000 Dummy character for object destruction collaboration -- オブジェ破壊連携用ダミーキャラ
+99801001 Dummy character for object destruction cooperation for dam mission -- オブジェ破壊連携用ダミーキャラ ダムミッション用
+99801002 Ice Worm Defeat Dummy Character for Worm Attach -- アイスワーム撃破　ダミーキャラ　ワームアタッチ用
+99801004 c9980 Dummy character for wingman control -- c9980　ダミーキャラ　僚機制御用
+99801005 c9980 shelter hacking dummy -- c9980　シェルター ハッキング用ダミー
+99801006 c9980 Scavenging hacking dummy -- c9980　スカベンジング ハッキング用ダミー
+99801007 c9980 Emerging new B layer shield dummy -- c9980　浮上する新B層　シールド用ダミー
+99801009 Dummy character for object destruction cooperation, attack preparation mission 1 -- オブジェ破壊連携用ダミーキャラ 襲撃準備ミッション用1
+99801010 c9980 Door etc. Hacking dummy for very short time -- c9980　扉等　ごく短い時間用のハッキングダミー
+99801011 c9980 Underground facility recapture destruction dummy -- c9980　地下施設奪還 破壊用ダミー
+99801014 c9980 Large missile launch support performance dummy -- c9980　大型ミサイル発射支援　演出用ダミー
+99801015 c9980 Encounter with the organization Hacking dummy -- c9980　組織との出会い ハッキング用ダミー
+99801016 c9980 Big Bridge Sweep Destruction OBJ Lock-on Dummy -- c9980　ビッグブリッジ掃討　破壊OBJロックオン用ダミー
+99801018 Attack preparation: Dummy character for plant destruction cooperation -- 襲撃準備　プラント破壊連携用ダミーキャラ
+99801019 Attack preparation Dummy character for reward tank destruction cooperation -- 襲撃準備　ご褒美タンク破壊連携用ダミーキャラ
+99801022 c9980 Mining ship destruction test Dummy character for object destruction collaboration -- c9980　採掘艦破壊テスト　オブジェ破壊連携用ダミーキャラ
+99801023 c9980 Mining ship destruction test Dummy character for object destruction cooperation 2 -- c9980　採掘艦破壊テスト　オブジェ破壊連携用ダミーキャラ２
+99801024 c9980 Mining ship destruction test Dummy character for object destruction cooperation 3 -- c9980　採掘艦破壊テスト　オブジェ破壊連携用ダミーキャラ3
+99801025 Hole in the Ice Field Partition Removal Object Hacking -- 氷原の穴 隔壁解除オブジェ ハッキング
+99801026 MAP diversion big bridge hacking dummy 0.5 seconds -- MAP流用ビッグブリッジ ハッキング用ダミー　0.5秒
+99801027 MAP diversion big bridge hacking dummy 10 seconds -- MAP流用ビッグブリッジ ハッキング用ダミー　10秒
+99801028 MAP diversion big bridge hacking dummy 4 seconds -- MAP流用ビッグブリッジ ハッキング用ダミー　4秒
+99801029 Large Cavity and Furnace Furnace Door Release Hacking -- 大空洞と炉 炉内扉解除 ハッキング
+99801030 Big Bridge Hacking Door Dummy Long -- ビッグ・ブリッジ ハッキング扉用ダミー　長め
+99801031 Big Bridge Hacking Door Dummy Short -- ビッグ・ブリッジ ハッキング扉用ダミー　短め
+99801032 Big Bridge Hacking Container Dummy -- ビッグ・ブリッジ ハッキングコンテナ用ダミー
+99801034 Strike street reverse run hacking door dummy -- スト街逆走 ハッキング扉用ダミー
+99801035 Prologue Boss Battle License Hacking -- プロローグ ボス戦用　ライセンスハッキング
+99801036 Multi-dam defense facility 02 dummy character for object destruction collaboration -- 多重ダム防衛　施設02　オブジェ破壊連携用ダミーキャラ
+99801039 c9980 Dummy character Multiple dams 60,000 for monitoring the total HP of multiple enemies -- c9980　ダミーキャラ　多重ダム　複数敵の合計HP監視用6万
+99801040 Mine shaft sabotage target destruction dummy character -- 坑道破壊工作　目標破壊用ダミーキャラ
+99801041 Old spaceport attack Dummy character for object destruction cooperation For attaching to landing ship assets -- 旧宇宙港襲撃 オブジェ破壊連携用ダミーキャラ 揚陸艦アセットへのアタッチ用
+99801042 A layer indoor search gauge display dummy -- A層屋内探索　ゲージ表示用ダミー
+99801043 A layer indoor search dummy character for object destruction collaboration -- A層屋内探索　オブジェ破壊連携用ダミーキャラ
+99801044 New B-tier people: Dummy characters for object destruction collaboration -- 新B層の人々　オブジェ破壊連携用ダミーキャラ
+99801045 Continental shell suicide satellite target -- 大陸殻　自爆衛星ターゲット
+99801046 Railroad reverse run hacking dummy 4 seconds -- レイルロード逆走 ハッキング用ダミー　4秒
+99801047 Railroad reverse run hacking dummy 10 seconds -- レイルロード逆走 ハッキング用ダミー　10秒
+99801048 Offshore city drone hacking dummy -- 洋上の都市　ドローン ハッキング用ダミー
+99801049 Railroad hacking dummy 2 seconds -- レイルロード ハッキング用ダミー　2秒
+99801050 Big Bridge Hacking Door Dummy Entrance Side -- ビッグ・ブリッジ ハッキング扉用ダミー　入り口側
+99801051 Big Bridge Hacking Door Dummy Exit Side -- ビッグ・ブリッジ ハッキング扉用ダミー　出口側
+99801052 Prologue additional door Door release dummy -- プロローグ追加扉　扉解除ダミー
+99801053 New B-tier people hacking dummy 4 seconds -- 新B層の人々 ハッキング用ダミー　4秒
+99801054 Old spaceport attack dummy character for production -- 旧宇宙港襲撃　ダミーキャラ　演出用
+99801056 Big Bridge Melange Tank Destruction Judgment Dummy -- ビッグブリッジ メランジタンク破壊判定用ダミー
+99801057 Big Bridge dummy character for production -- ビッグブリッジ　ダミーキャラ　演出用
+99801058 Mine sabotage dummy character for generating geyser bullets -- 坑道破壊工作　ダミーキャラ　間欠泉弾丸発生用
+99801059 Emerging new B-tier dummy character for aerial group action leaders -- 浮上する新B層　ダミーキャラ　空中集団行動リーダー用
+99801061 Prologue Dummy character No hit detection For Pharaon attach -- プロローグ　ダミーキャラ　当たり判定なし　ファラオンアタッチ用
+99801062 Defeating the ice worm for the worm event game.Do not look at the floor when generating.Team type is invalid. -- アイスワーム撃破　ワームイベタゲ用　生成時床見ない　チームタイプ無効
+99801063 Decisive Battle B: Dummy character for ramjet engine destruction collaboration -- 決戦B　ラムジェットエンジン破壊連携用ダミーキャラ
+99801064 Continental Shell Sea Spider Appears Hacking Lv3 -- 大陸殻　ウミグモ登場　ハッキング用Lv3
+99801065 Continental shell for cutscene playback hacking Lv2 -- 大陸殻　カットシーン再生用　ハッキング用Lv2
+99801066 In front of the search wall, dummy character, production target, team type object -- 探索壁前　ダミーキャラ　演出の的用　チームタイプオブジェ
+99801067 New B-tier people dummy character for wingman control -- 新B層の人々　ダミーキャラ　僚機制御用
+99801068 Large Cavity and Furnace Partition Removal Object Hacking -- 大空洞と炉　隔壁解除オブジェ ハッキング
+99801069 c9980 Dummy character Underground facility recapture event use -- c9980　ダミーキャラ　地下施設奪還　イベント用
+99801070 Rail reverse run dummy character no hit detection event target -- レイル逆走　ダミーキャラ　当たり判定なし　イベントターゲット
+99801071 Old spaceport attack Dummy character for object destruction cooperation For attaching to landing ship assets_Damage difference -- 旧宇宙港襲撃 オブジェ破壊連携用ダミーキャラ 揚陸艦アセットへのアタッチ用_ダメージ差分
+99801072 Old spaceport attack Dummy character for object destruction cooperation For attaching to landing ship assets_Damage difference 2 -- 旧宇宙港襲撃 オブジェ破壊連携用ダミーキャラ 揚陸艦アセットへのアタッチ用_ダメージ差分2
+99801073 Old spaceport attack Dummy character for object destruction cooperation For attaching to landing ship assets_No good difference -- 旧宇宙港襲撃 オブジェ破壊連携用ダミーキャラ 揚陸艦アセットへのアタッチ用_ダメ差分
+99801074 Large Cavity and Furnace Partition Removal Object Hacking -- 大空洞と炉　隔壁解除オブジェ ハッキング
+99801080 Recapture of underground facilities_Control room wall supercomputer -- 地下施設奪還_管理室壁面スパコン
+99801081 Recapture of underground facilities_Control room for time limit management -- 地下施設奪還_管理室制限時間管理用
+99801082 Recapture of underground facility_for hacking control room -- 地下施設奪還_管理室ハッキング用
+99801084 Recapture of underground facilities_management room jungle gym for event game -- 地下施設奪還_管理室ジャングルジムイベタゲ用
+99801090 Cavern and Furnace Hacking Dummy Lv2 -- 大空洞と炉 ハッキング用ダミー　Lv2
+99801091 Great Cavity and Furnace Dummy character for object destruction collaboration -- 大空洞と炉　オブジェ破壊連携用ダミーキャラ
+99801092 Jailbreak_Object destruction cooperation dummy character for dam mission -- 脱獄_オブジェ破壊連携用ダミーキャラ ダムミッション用
+99801100 Jailbreak Bullet for Kara's appearance -- 脱獄　カーラ登場時演出用弾丸
+99801110 Area escape support dummy character escort helicopter plan countermeasures -- 領域離脱援護　ダミーキャラ　護衛ヘリリプラン対策
+99801120 c9980 Dummy character No hit detection -- c9980　ダミーキャラ　当たり判定なし
+99900000 c9990 Insertion test *Weapon submission prohibited -- c9990　挿入テスト※武器提出禁止
+99910000 Punching test 1_Hirai (c3020 former communist region MT) -- 殴りテスト1_平井　（c3020旧共産圏MT）
+99970000 9997 Basic bullet pattern for adjustment test -- 9997 調整テスト用　基礎弾丸パターン
+99999999 For NPC paracopy -- NPCパラコピー用

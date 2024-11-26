@@ -1127,8 +1127,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
-                public short UnkT18 { get; set; }
+                public short ModelSfxParamRelativeID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1177,7 +1176,7 @@ namespace SoulsFormats
                     AnimID = br.ReadInt16();
                     br.AssertInt16(-1);
                     br.AssertInt32(-1);
-                    UnkT18 = br.ReadInt16();
+                    ModelSfxParamRelativeID = br.ReadInt16();
                     UnkT1A = br.ReadInt16();
                     br.AssertInt32(-1);
                     ObjPartIndex2 = br.ReadInt32();
@@ -1198,7 +1197,7 @@ namespace SoulsFormats
                     bw.WriteInt16(AnimID);
                     bw.WriteInt16(-1);
                     bw.WriteInt32(-1);
-                    bw.WriteInt16(UnkT18);
+                    bw.WriteInt16(ModelSfxParamRelativeID);
                     bw.WriteInt16(UnkT1A);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(ObjPartIndex2);

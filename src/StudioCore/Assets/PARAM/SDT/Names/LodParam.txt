@@ -1,0 +1,30 @@
+0 Default configuration -- デフォルト設定
+1 L0 main -- L0メイン
+2 L1 main -- L1メイン
+3 Do not LOD -- LODしない
+10 Character_size small -- キャラ_サイズ小
+11 Character_size -- キャラ_サイズ中
+12 Character_size large -- キャラ_サイズ大
+13 Character_size oversized -- キャラ_サイズ特大
+14 Character_Big Snake -- キャラ_大蛇
+15 Character_Okinayu -- キャラ_翁竜
+16 Character_size small -- キャラ_サイズ小
+17 Character_size -- キャラ_サイズ中
+18 Character_size large -- キャラ_サイズ大
+19 Character_size oversized -- キャラ_サイズ特大
+20 Character_Big Snake -- キャラ_大蛇
+21 Character _ Medium _ For motion blur measures -- キャラ_サイズ中_モーションブラー対策用
+30 Map_minimal size -- Map_極小サイズ
+31 Map_ small size -- Map_小サイズ
+32 Map_ Medium size -- Map_中サイズ
+33 Map_Large size -- Map_大サイズ
+34 Map_ oversized -- Map_特大サイズ
+40 Obj_minimal size -- Obj_極小サイズ
+41 Obj_ small size -- Obj_小サイズ
+42 Obj_ medium size -- Obj_中サイズ
+43 Obj_ large size -- Obj_大サイズ
+44 Obj_ oversized -- Obj_特大サイズ
+60 Does not switch to LOW texture -- LOWテクスチャに切り替わらない
+61 Does not switch to LOD model &amp; does not switch to LOW texture -- LODモデルに切り替わらない & LOWテクスチャに切り替わらない
+62 L2 only (reflection scene default) -- L2のみ（反射シーンデフォルト）
+63 Does not switch to LOD model (for poly drama) -- LODモデルに切り替わらない（ポリ劇用）

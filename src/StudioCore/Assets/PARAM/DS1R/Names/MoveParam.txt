@@ -1,0 +1,52 @@
+0 Lightweight -- 軽量
+1 Lightweight + -- 軽量＋
+5 Medium Amount -- 中量
+6 Medium Amount + -- 中量＋
+10 Weight -- 重量
+15 Over weight -- 重量オーバー
+16 Super light -- 超軽量
+20 Mimicry _ Light Weight -- 擬態_軽量
+21 Mimicry _ lightweight + -- 擬態_軽量＋
+25 Mimicry _ Medium Volume -- 擬態_中量
+26 Mimicry _ Medium Amount + -- 擬態_中量＋
+30 Mimicry weight -- 擬態_重量
+35 Mimicry _ over Weight -- 擬態_重量オーバー
+36 Mimicry _ ultra-light -- 擬態_超軽量
+40 Underwater (deep) _ Lightweight -- 水中（深）_軽量
+41 Underwater (deep) _ Lightweight + -- 水中（深）_軽量＋
+45 Underwater (deep) _ Medium volume -- 水中（深）_中量
+46 Underwater (deep) _ Medium Volume + -- 水中（深）_中量＋
+50 Underwater (deep) _ Weight -- 水中（深）_重量
+55 Underwater (deep) _ Over weight -- 水中（深）_重量オーバー
+56 Underwater (deep) _ Ultra-Light -- 水中（深）_超軽量
+60 【 SP 】 Guard Vigilance _ Lightweight -- 【SP】ガード警戒_軽量
+61 【 SP 】 Guard Vigilance _ lightweight + -- 【SP】ガード警戒_軽量＋
+65 【 SP 】 Guard Vigilance _ medium volume -- 【SP】ガード警戒_中量
+66 【 SP 】 Guard Vigilance _ Medium Amount + -- 【SP】ガード警戒_中量＋
+70 【 SP 】 Guard Vigilance _ Weight -- 【SP】ガード警戒_重量
+75 [SP] Guard vigilance _ over weight -- 【SP】ガード警戒_重量オーバー
+76 [SP] Guard Vigilance _ ultra-light -- 【SP】ガード警戒_超軽量
+100 Enemy Base Combat -- 敵基本　戦闘時
+101 Bird Standard -- 鳥標準
+102 Guard -- ガード
+103 Dog -- 犬
+104 Dragon Demon -- ドラゴンデーモン
+105 Enemy base non-combat time -- 敵基本　非戦闘時
+106 Scale miners during combat -- ウロコ鉱夫　戦闘時
+107 Scales Miners Non-combat (bag) -- ウロコ鉱夫　非戦闘時（袋）
+108 Scales Miners Non-combat (pick) -- ウロコ鉱夫　非戦闘時（ピックル）
+109 Big Spider Peeping -- 大蜘蛛　のぞき込み
+110 Gargoyletest -- ガーゴイルテスト
+111 Dragon Demon (mine) -- ドラゴンデーモン（坑道）
+112 For the beast of the Storm -- 嵐の獣用
+113 Storm Beast (CUB) Bichibichi wait -- 嵐の獣（子エイ）ビチビチ待機
+114 Scales Miners Non-combat (bare hands) -- ウロコ鉱夫　非戦闘時（素手）
+115 Octopus head when fighting -- タコ頭 　戦闘時
+116 Gargoyle aerial (for 3050) -- ガーゴイル空中（3050用）
+117 Gargoyle Ground (for 3050) -- ガーゴイル地上（3050用）
+118 Shadow woman _ for disappearing -- 影女＿消える用
+119 Blood mites only -- 血ダニ専用
+120 Paris AIM -- パリィ狙い
+121 [DLC] Enemy Basic combat (running/swirling anime without version) -- 【DLC】敵基本　戦闘時（走行／旋回アニメなしバージョン）
+900 Four-legged type for PG -- PG用4足タイプ
+910 [FDP] Test _ First time -- 【FDP】テスト_はじめてのろじっく

@@ -1,0 +1,72 @@
+0 Main Features: Standard
+1 Main feature: Guardian
+2 Main Feature: Priest
+3 Main Feature: Madman
+4 Main features: Standard + Guardian
+10 Sub-feature: Poison enemies
+11 Sub-feature: Enemy strengthening
+13 Sub-feature: Enemy poisoning + magic stone correction: Tumer
+14 Sub-feature: (Poisons enemies) Magic stone correction only: Tumel
+15 Sub-feature: (Poisoning enemies) Magic stone correction only: Izu
+20 Sub-feature: Specially generated enemies
+21 Sub-features: NPC enemy
+22 Sub-feature: Strengthens surrounding enemies
+23 Sub-characteristic: Immortal and powerful enemy
+24 Sub-feature: Specially generated enemies & NPC enemy
+25 Sub-feature: Specially generated enemies & surrounding strengthened enemies
+26 Sub-feature: Specially generated enemies & strong immortal enemies
+27 Sub-features: NPC Enemy & surrounding strengthened enemies
+28 Sub-features: NPC Enemy & Immortal Strong Opponent
+29 Sub-feature: Surrounding enemies with strengthened abilities & immortal enemies
+30 Sub-feature: Shop
+31 Sub-feature: Strong enemy that can kill allies
+32 Sub-feature: Rare Shop
+33 Sub-feature: Shop + strong friendly enemy
+34 Sub-feature: Rare shop + strong friendly enemies
+35 Sub-feature: Unique items
+36 Sub-feature: Unique item + magic stone correction 1012
+37 Sub-feature: Unique item + magic stone correction 1023
+38 Sub-feature: Unique item + magic stone correction 1034
+39 Sub-feature: Unique item + magic stone correction 1011
+40 Sub-feature: Multi-summon enemies
+45 Subfeature: Unique dungeon
+50 Holy Grail Type Correction: Magic Stone Correction 1011
+51 Holy Grail Type Correction: Magic Stone Correction 1022
+52 Holy Grail Type Correction: Magic Stone Correction 1034
+53 Holy Grail Type Correction: Magic Stone Correction 1011
+54 Difficulty UP + Holy Grail type correction: Magic stone correction 1011
+60 Sub-features: 4F Open
+61 Sub-features: 4F Release + Magic Stone Correction 1013
+62 Sub-features: ( 4F Open) Magic Stone Correction 1013
+63 Sub-features: 4F Release + Magic Stone Correction 1013
+64 Sub-features: ( 4F Open) Magic Stone Correction 1013
+65 Sub-features: 4F Release + Magic Stone Correction 1013
+66 Sub-features: ( 4F Open) Magic Stone Correction 1013
+67 Sub-features:4F Release + Magic Stone Correction 1012
+68 Sub-features: ( 4F Open) Magic Stone Correction 1012
+70 Sub-features: HP Half Curse: Fixed
+71 Sub-features: HP1/4 curse
+72 Sub-features: HP1/8 curse
+73 Sub-features: HP Half-Curse: Generation
+77 Subfeature: Generated dungeon level 2 Thumel
+78 Sub-feature: Common to all fixed dungeons
+79 Sub-characteristics: No special characters
+80 Sub-feature: Shop
+81 Sub-feature: Strong enemy that can kill allies
+82 Sub-feature: Rare Shop
+83 Sub-feature: Shop + strong friendly enemy
+84 Sub-feature: Rare shop + strong friendly enemies
+85 Fixed dungeon: Multi-grail 1
+86 Fixed dungeon: Multi-grail 2
+87 Fixed dungeon: Multi-grail 3
+88 Fixed dungeon: Multi-grail 4
+89 Fixed dungeon: Multi-grail 5
+90 Sub-characteristic candidate: Magic stone correction 1011
+91 Sub-characteristic candidate: Magic stone correction 1012
+92 Sub-characteristic candidate: Magic stone correction 1013
+93 Sub-characteristic candidate: Magic stone correction 1014
+94 Sub-characteristic candidate: Magic stone correction1022
+95 Sub-characteristic candidate: Magic stone correction 1023
+96 Sub-characteristic candidate: Magic stone correction 1034
+97 Sub-characteristic candidate: Magic stone correction 1035
+98 Sub-characteristic candidate: Magic stone correction 1045

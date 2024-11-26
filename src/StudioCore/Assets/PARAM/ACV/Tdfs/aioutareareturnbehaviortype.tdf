@@ -1,0 +1,5 @@
+"AI_OUT_AREA_BEHAVIOR_TYPE"
+"u8"
+"ターゲットの高度に戻る（PassAttack）","0"
+"現在の高度で戻る（KeepDist）","1"
+"初期位置に戻る","2"

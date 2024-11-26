@@ -1,0 +1,100 @@
+0 [PC] Start behind -- 【PC】背後始動
+100 [PC] Behind -- 【PC】背後
+201 [PC] Behind-the-scenes ninjutsu (blood smoke) -- 【PC】背後忍術（血煙）
+202 [PC] Behind-the-scenes ninjutsu (puppet) -- 【PC】背後忍術（傀儡）
+203 [PC] Behind Ninjutsu (Encha) -- 【PC】背後忍術（エンチャ）
+10000 [PC] Start behind crouching -- 【PC】しゃがみ背後始動
+10100 [PC] Behind crouching -- 【PC】しゃがみ背後
+20000 [PC] Play 0 -- 【PC】弾き0
+20100 [PC] Play 1_ Attack -- 【PC】弾き1_攻撃
+20110 [PC] Playing 1_ Behind the scenes -- 【PC】弾き1_裏回り
+20900 [PC] Playing Todome -- 【PC】弾きトドメ
+30000 [PC] Parting out 0 -- 【PC】見切り崩し0
+30100 [PC] Parting out 1_ attack -- 【PC】見切り崩し1_攻撃
+30110 [PC] Parting out 1_ Behind the scenes -- 【PC】見切り崩し1_裏回り
+40000 [PC] Breaking start -- 【PC】崩し始動
+40100 [PC] Breaking down -- 【PC】崩し
+40900 [PC] Breaking down -- 【PC】崩しトドメ
+41000 [PC] Breaking behind and starting -- 【PC】崩し背後始動
+41100 [PC] Behind the collapse -- 【PC】崩し背後
+41201 [PC] Ninjutsu behind the collapse (blood smoke) -- 【PC】崩し背後忍術（血煙）
+41202 [PC] Ninjutsu behind the collapse (puppet) -- 【PC】崩し背後忍術（傀儡）
+41203 [PC] Ninjutsu behind the collapse (Encha) -- 【PC】崩し背後忍術（エンチャ）
+41900 [PC] Todome behind the collapse -- 【PC】崩し背後トドメ
+50000 [PC] Enemy special state 0 -- 【PC】敵特殊状態0
+50100 [PC] Enemy special state 1 -- 【PC】敵特殊状態1
+60000 [PC] Unlimited fall 0 -- 【PC】制限なし落下0
+60100 [PC] Unrestricted fall 1 -- 【PC】制限なし落下1
+70000 [PC] Fall 0 -- 【PC】落下0
+70100 [PC] Fall 1 -- 【PC】落下1
+70900 [PC] Falling Todome -- 【PC】落下トドメ
+80000 [PC] Anti-aircraft 0 -- 【PC】対空0
+80100 [PC] Anti-aircraft 1 -- 【PC】対空1
+90000 [PC] Start with left wall sticking -- 【PC】左壁張り付き始動
+90010 [PC] With left wall -- 【PC】左壁張り付き
+100000 [PC] Start with right wall -- 【PC】右壁張り付き始動
+100010 [PC] With right wall -- 【PC】右壁張り付き
+110000 [PC] Hanging start -- 【PC】ぶら下がり始動
+110010 [PC] Hanging -- 【PC】ぶら下がり
+120000 [PC] Event_Large Litter -- 【PC】イベント_大蛇輿
+130000 [PC] Breaking down 0 -- 【PC】崩し落下0
+130100 [PC] Breaking down 1 -- 【PC】崩し落下1
+130200 [PC] Breaking down 2 -- 【PC】崩し落下2
+160000 [PC] Kicking down 0 -- 【PC】蹴り崩し0
+160100 [PC] Kicking down 1 -- 【PC】蹴り崩し1
+170000 [PC] Closeout -- 【PC】見切り
+180000 [PC] Breaking wire 0 -- 【PC】崩しワイヤー0
+180100 [PC] Breaking wire 1 -- 【PC】崩しワイヤー1
+180900 [PC] Breaking wire -- 【PC】崩しワイヤートドメ
+190000 [PC] Todome start -- 【PC】トドメ始動
+190100 [PC] Todome -- 【PC】トドメ
+200000 [PC] Breaking back and starting -- 【PC】崩し裏回り始動
+200010 [PC] Breaking back -- 【PC】崩し裏回り
+210000 [PC] Start behind aging -- 【PC】老化背後始動
+210010 [PC] Behind aging -- 【PC】老化背後
+220000 [PC] Aging collapse start -- 【PC】老化崩し始動
+220010 [PC] Aging collapse -- 【PC】老化崩し
+230000 [PC] Aging breaks down and starts behind -- 【PC】老化崩し背後始動
+230010 [PC] Behind the aging collapse -- 【PC】老化崩し背後
+240000 [PC] Useless push-down and start around -- 【PC】ダメ押し崩し裏回り始動
+240010 [PC] Useless push-down backside -- 【PC】ダメ押し崩し裏回り
+250000 [PC] [Immortal slash] Enemy special state 0 -- 【PC】【要不死斬り】敵特殊状態0
+250100 [PC] [Immortal slash] Enemy special state 1 -- 【PC】【要不死斬り】敵特殊状態1
+260000 [PC] Underwater collapse start -- 【PC】水中崩し始動
+260010 [PC] Underwater collapse -- 【PC】水中崩し
+270000 [PC] Breaking short distance start -- 【PC】崩し近距離始動
+270100 [PC] Breaking short distance -- 【PC】崩し近距離
+270900 [PC] Breaking short distance -- 【PC】崩し近距離トドメ
+500000 [PC] [On the roof] Start behind -- 【PC】【屋根上】背後始動
+500100 [PC] [on the roof] behind -- 【PC】【屋根上】背後
+500201 [PC] [Roof] Behind Ninjutsu (Blood Smoke) -- 【PC】【屋根上】背後忍術（血煙）
+500202 [PC] [On the roof] Behind-the-scenes ninjutsu (puppet) -- 【PC】【屋根上】背後忍術（傀儡）
+500203 [PC] [Roof] Behind Ninjutsu (Encha) -- 【PC】【屋根上】背後忍術（エンチャ）
+540000 [PC] [On the roof] Start breaking -- 【PC】【屋根上】崩し始動
+540100 [PC] [on the roof] collapse -- 【PC】【屋根上】崩し
+540900 [PC] [On the roof] -- 【PC】【屋根上】崩しトドメ
+541000 [PC] [On the roof] Break down and start behind -- 【PC】【屋根上】崩し背後始動
+541100 [PC] [On the roof] Behind the collapse -- 【PC】【屋根上】崩し背後
+541201 [PC] [On the roof] Ninjutsu behind the collapse (blood smoke) -- 【PC】【屋根上】崩し背後忍術（血煙）
+541202 [PC] [On the roof] Ninjutsu behind the collapse (puppet) -- 【PC】【屋根上】崩し背後忍術（傀儡）
+541203 [PC] [On the roof] Ninjutsu behind the collapse (Encha) -- 【PC】【屋根上】崩し背後忍術（エンチャ）
+541900 [PC] [On the roof] Crushing behind -- 【PC】【屋根上】崩し背後トドメ
+570000 [PC] [on the roof] Fall 0 -- 【PC】【屋根上】落下0
+570100 [PC] [on the roof] Fall 1 -- 【PC】【屋根上】落下1
+570900 [PC] [On the roof] Falling Todome -- 【PC】【屋根上】落下トドメ
+630000 [PC] [On the roof] Breaking down 0 -- 【PC】【屋根上】崩し落下0
+630100 [PC] [On the roof] Crush and fall 1 -- 【PC】【屋根上】崩し落下1
+630200 [PC] [On the roof] Crush and fall 2 -- 【PC】【屋根上】崩し落下2
+660000 [PC] [On the roof] Kicking down 0 -- 【PC】【屋根上】蹴り崩し0
+660100 [PC] [On the roof] Kicking down 1 -- 【PC】【屋根上】蹴り崩し1
+1000000 [Enemy] Throw 0 -- 【敵】投げ0
+1000010 [Enemy] Throw 1 -- 【敵】投げ1
+1000020 [Enemy] Throw 2 -- 【敵】投げ2
+1000030 [Enemy] Throw 3 -- 【敵】投げ3
+1000040 [Enemy] Throw 4 -- 【敵】投げ4
+1000100 [Enemy] Throw 0_Underwater -- 【敵】投げ0_水中
+1000110 [Enemy] Throw 1_Underwater -- 【敵】投げ1_水中
+1000120 [Enemy] Throw 2_Underwater -- 【敵】投げ2_水中
+1000130 [Enemy] Throw 3_Underwater -- 【敵】投げ3_水中
+1000140 [Enemy] Throw 4_Underwater -- 【敵】投げ4_水中
+100000000 --- -- -

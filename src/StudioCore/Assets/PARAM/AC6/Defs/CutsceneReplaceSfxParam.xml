@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CUTSCENE_REPLACE_SFX_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u32 sfxId">
+      <DisplayName>差し替え後SfxId</DisplayName>
+      <Description>カットシーン時に差し替えるSFXのID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

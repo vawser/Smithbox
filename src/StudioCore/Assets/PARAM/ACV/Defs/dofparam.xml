@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FILTER_DOF_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="f32 fBlurRadius">
+      <DisplayName>ぼかし画像のぼかし量</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 fNearStart">
+      <DisplayName>近距離ボケ開始距離</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>30000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fNearEnd">
+      <DisplayName>近距離ボケ終了距離</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>30000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 fNearBlendAlpha">
+      <DisplayName>近距離ボケ強さ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="f32 fFarStart">
+      <DisplayName>遠距離ボケ開始距離</DisplayName>
+      <DisplayFormat>%.f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>30000</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="f32 fFarEnd">
+      <DisplayName>遠距離ボケ終了距離</DisplayName>
+      <DisplayFormat>%.f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>30000</Maximum>
+      <Increment>10</Increment>
+    </Field>
+    <Field Def="f32 fFarBlendAlpha">
+      <DisplayName>遠距離ボケ強さ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="f32 fBlendAlpha">
+      <DisplayName>シーンにブレンドする強さ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 dumy[48]">
+      <DisplayName>陽炎用予約</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

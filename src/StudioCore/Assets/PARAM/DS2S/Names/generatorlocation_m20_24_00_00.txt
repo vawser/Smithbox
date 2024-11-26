@@ -1,0 +1,104 @@
+205 [GEN:205] Emerald Herald
+230 [GEN:230] Vendrick
+240 [GEN:240] Grave Warden Agdayne
+241 [GEN:241] Grave Warden Agdayne
+680 [GEN:680] Nameless Usurper
+686 [GEN:686] Grave Warden Agdayne
+690 [GEN:690] Devotee Scarlett
+800 [GEN:800] Velstadt
+915 [GEN:915] Aldia- Scholar of the First Sin
+971 [GEN:971] Forlorn (Scythe)
+1000 [GEN:1000] Captive Undead
+1011 [GEN:1011] Leydia Witch
+1013 [GEN:1013] Leydia Witch
+1020 [GEN:1020] Captive Undead
+1021 [GEN:1021] NO MATCH
+1022 [GEN:1022] Captive Undead
+1023 [GEN:1023] NO MATCH
+1024 [GEN:1024] Captive Undead
+1025 [GEN:1025] Captive Undead
+1026 [GEN:1026] Captive Undead
+1031 [GEN:1031] Imperious Knight
+1050 [GEN:1050] Syan Knight
+1051 [GEN:1051] Syan Knight
+1101 [GEN:1101] Grave Warden
+1102 [GEN:1102] Grave Warden
+1103 [GEN:1103] Grave Warden
+1200 [GEN:1200] Captive Undead
+1210 [GEN:1210] Captive Undead
+1211 [GEN:1211] Captive Undead
+1230 [GEN:1230] NO MATCH
+1231 [GEN:1231] Wall Ghost
+1250 [GEN:1250] Imperious Knight
+1400 [GEN:1400] Captive Undead
+1410 [GEN:1410] Captive Undead
+1420 [GEN:1420] NO MATCH
+1430 [GEN:1430] NO MATCH
+1440 [GEN:1440] Leydia Pyromancer
+1450 [GEN:1450] Leydia Pyromancer
+1460 [GEN:1460] Leydia Pyromancer
+1470 [GEN:1470] Skeleton
+1471 [GEN:1471] Skeleton
+1480 [GEN:1480] Wall Ghost
+1500 [GEN:1500] Captive Undead
+1510 [GEN:1510] Leydia Pyromancer
+1520 [GEN:1520] Leydia Pyromancer
+1550 [GEN:1550] Skeleton
+1560 [GEN:1560] Wall Ghost
+1600 [GEN:1600] Leydia Witch
+1700 [GEN:1700] Wall Ghost
+1701 [GEN:1701] Wall Ghost
+1800 [GEN:1800] NO MATCH
+1801 [GEN:1801] Wall Ghost
+2000 [GEN:2000] Wall Ghost
+2010 [GEN:2010] Wall Ghost
+2020 [GEN:2020] Wall Ghost
+2050 [GEN:2050] Imperious Knight
+2051 [GEN:2051] Imperious Knight
+2200 [GEN:2200] Leydia Pyromancer
+2210 [GEN:2210] Leydia Pyromancer
+2220 [GEN:2220] Leydia Pyromancer
+2230 [GEN:2230] Leydia Pyromancer
+2300 [GEN:2300] Captive Undead
+2310 [GEN:2310] Captive Undead
+2320 [GEN:2320] Captive Undead
+2330 [GEN:2330] Captive Undead
+2400 [GEN:2400] Leydia Pyromancer
+2450 [GEN:2450] Syan Knight
+2451 [GEN:2451] Syan Knight
+3500 [GEN:3500] Leydia Pyromancer
+3510 [GEN:3510] Leydia Pyromancer
+3520 [GEN:3520] Leydia Pyromancer
+3530 [GEN:3530] Leydia Pyromancer
+3700 [GEN:3700] Captive Undead
+3701 [GEN:3701] Captive Undead
+3702 [GEN:3702] Captive Undead
+4000 [GEN:4000] Dragonrider
+7000 [GEN:7000] Insolent Knight
+7001 [GEN:7001] Insolent Knight
+7002 [GEN:7002] Insolent Knight
+7003 [GEN:7003] Insolent Knight
+7004 [GEN:7004] Insolent Knight
+7005 [GEN:7005] Insolent Knight
+7006 [GEN:7006] Insolent Knight
+7007 [GEN:7007] Insolent Knight
+7008 [GEN:7008] Insolent Knight
+7009 [GEN:7009] Insolent Knight
+7010 [GEN:7010] Insolent Knight
+7100 [GEN:7100] Insolent Knight
+8000 [GEN:8000] Poison Moth
+9000 [GEN:9000] Invisible Hollow
+9001 [GEN:9001] Invisible Hollow
+9002 [GEN:9002] Invisible Hollow
+9003 [GEN:9003] NO MATCH
+9004 [GEN:9004] Invisible Hollow
+9005 [GEN:9005] Invisible Hollow
+9006 [GEN:9006] Invisible Hollow
+9007 [GEN:9007] Invisible Hollow
+9008 [GEN:9008] Invisible Hollow
+9009 [GEN:9009] Invisible Hollow
+9010 [GEN:9010] NO MATCH
+9011 [GEN:9011] Invisible Hollow
+9012 [GEN:9012] Invisible Hollow
+9013 [GEN:9013] Invisible Hollow
+9014 [GEN:9014] Invisible Hollow

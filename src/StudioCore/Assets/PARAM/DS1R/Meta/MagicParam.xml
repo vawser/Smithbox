@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Enums>
+    <Enum Name="MagicToolType">
+      <Option Value="0" Name="Sorcery" />
+      <Option Value="1" Name="Miracle" />
+      <Option Value="2" Name="Pyromancy" />
+	</Enum>
+    <Enum Name="RefType">
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffectParam" />
+	</Enum>
+    <Enum Name="SpEffectCategory">
+      <Option Value="3" Name="Sorcery/Pyromancy" />
+      <Option Value="4" Name="Miracle" />
+	</Enum>
+  </Enums>
+  <Field>
+    <yesNoDialogMessageId Wiki="Message ID to display when cast? (needs verification) See opmeMenuType." />
+    <limitCancelSpEffectId />
+    <sortId Wiki="Used for the sort order of magic in menus." />
+    <refId Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" Wiki="ID of Bullet Parameter or Special Effect Parameter to use for the spell. See refCategory to set reference category to Special Effect or Bullet." />
+    <mp />
+    <stamina Wiki="Never used. Subtracts the amount specified from the player's stamina when the spell is used (or marked &quot;used&quot; in the TAE)." />
+    <iconId />
+    <behaviorId />
+    <mtrlItemId />
+    <replaceMagicId />
+    <maxQuantity Wiki="Maximum uses a spell has." />
+    <heroPoint Wiki="Never used. Subtracts the amount specified from the player's humanity when the spell is used (or marked &quot;used&quot; in the TAE).\nSpell use is restricted if player doesn't have enough humanity to cast it." />
+    <overDexterity />
+    <sfxVariationId Wiki="SFX to use during casting, determining visual and sound effects to." />
+    <slotLength Wiki="Attunement Slots required to attune." />
+    <requirementIntellect Wiki="Intelligence required to cast." />
+    <requirementFaith Wiki="Faith required to cast." />
+    <analogDexiterityMin Wiki="Unknown. Possibly dexterity's effects on cast speed (needs verification)." />
+    <analogDexiterityMax Wiki="Unknown. Possibly dexterity's effects on cast speed (needs verification)." />
+    <ezStateBehaviorType Enum="MagicToolType" Wiki="Tool type required to cast." />
+    <refCategory Enum="RefType" Wiki="Which parameter category refId will refer to." />
+    <spEffectCategory Enum="SpEffectCategory" Wiki="Not fully known, but likely determines which magic potency-boosting Special Effects apply to this spell." />
+    <refType Wiki="Which animations will be used for casting." />
+    <opmeMenuType Wiki="Menu type to display when confirming casting? (needs verification)" />
+    <hasSpEffectType />
+    <replaceCategory Wiki="Used to offset refId with resonance level or covenant rank" />
+    <useLimitCategory Wiki="Prevents casting when another active effect is using the same category.\nValues correspond non-equally3 with Special Effect Parameters categories.\n(correspondence needs verification)" />
+    <vowType0 IsBool="" Wiki="Magic usable while in no covenant."/>
+    <vowType1 IsBool="" Wiki="Magic usable while in Way of White covenant." />
+    <vowType2 IsBool="" Wiki="Magic usable while in Princess Guard covenant." />
+    <vowType3 IsBool="" Wiki="Magic usable while in Warrior of Sunlight covenant." />
+    <vowType4 IsBool="" Wiki="Magic usable while in Darkwraith covenant." />
+    <vowType5 IsBool="" Wiki="Magic usable while in Path of the Dragon covenant." />
+    <vowType6 IsBool="" Wiki="Magic usable while in Gravelord Servant covenant." />
+    <vowType7 IsBool="" Wiki="Magic usable while in Forest Hunter covenant." />
+    <enable_multi IsBool="" Wiki="Magic can be used in multiplayer? (needs verification)" />
+    <enable_multi_only IsBool="" Wiki="Magic can only be used in multiplayer? (needs verification)" />
+    <isEnchant IsBool="" Wiki="Present on weapon enchanting magic. Effects unknown." />
+    <isShieldEnchant IsBool="" Wiki="Present on shield enchanting magic. Effects unknown." />
+    <enable_live IsBool="" Wiki="Magic usable if the user is human (not hollow)? (needs verification)" />
+    <enable_gray IsBool="" Wiki="Magic usable if the user is hollow? (needs verification)" />
+    <enable_white IsBool="" Wiki="Magic usable by summoned white phantoms? (needs verification)" />
+    <enable_black IsBool="" Wiki="Magic usable by hostile red phantoms? (needs verification)" />
+    <disableOffline IsBool="" Wiki="Magic cannot be used when offline? (needs verification)" />
+    <castResonanceMagic IsBool="" Wiki="Tells server when cast to create a resonance sign? (needs verification)" />
+    <vowType8 IsBool="" Wiki="Magic usable while in Blad of the Dark Moon covenant." />
+    <vowType9 IsBool="" Wiki="Magic usable while in Chaos Servant covenant." />
+    <vowType10 IsBool="" />
+    <vowType11 IsBool="" />
+    <vowType12 IsBool="" />
+    <vowType13 IsBool="" />
+    <vowType14 IsBool="" />
+    <vowType15 IsBool="" />
+  </Field>
+</PARAMMETA>

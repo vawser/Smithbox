@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+	<Enum Name="MENU_TUTORIAL_PARAM_TYPE" type="s32">
+		<Option Value="0" Name="Equipment Menu" />
+		<Option Value="1" Name="Inventory Menu" />
+		<Option Value="2" Name="Skill Menu" />
+		<Option Value="5" Name="Sculptor's Idol Menu" />
+		<Option Value="6" Name="Prosthetic Fitting Menu" />
+		<Option Value="7" Name="Prosthetic Upgrade Menu" />
+		<Option Value="8" Name="Acquire Skills Menu" />
+		<Option Value="9" Name="Reflection of Strength Menu" />
+		<Option Value="10" Name="Divine Heir Gauntlet Menu" />
+		<Option Value="11" Name="Shura Gauntlet Menu" />
+		<Option Value="12" Name="Severance Gauntlet Menu" />
+		<Option Value="13" Name="Mortal Journey Gauntlet Menu" />
+		<Option Value="14" Name="Change Form Menu" />
+		<Option Value="15" Name="Remnants Menu" />
+		<Option Value="16" Name="Viewed Remnants Menu" />
+		<Option Value="17" Name="Messages Menu" />
+	</Enum>
+  </Enums>
+  <Field>
+    <viewType Wiki="Determines what part of the menu the tutorial appears in" Enum="MENU_TUTORIAL_PARAM_TYPE" />
+	<beginEventFlagId Wiki="Event Flag to fire" />
+	<endEventFlagId Wiki="Event Flag to end" />
+	<titleMessageId Wiki="Text for the tutorial title" FmgRef="Event_Text" />
+	<descMessageId Wiki="Text for the tutorial description" FmgRef="Event_Text" />
+	<textureId />
+	<pad Wiki="Never gonna give you up, never gonna let you down, never gonna run around and desert you" />
+  </Field>
+  <Self Wiki="Tutorial pop-ups in menus" AlternativeOrder="viewType,-,
+beginEventFlagId,endEventFlagId,-,
+titleMessageId,descMessageId,-,
+textureId,-" />
+</PARAMMETA>

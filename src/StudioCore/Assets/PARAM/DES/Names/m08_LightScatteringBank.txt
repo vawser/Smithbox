@@ -1,0 +1,22 @@
+0 B0 basic
+1 Indoors (near the entrance)
+2 Indoor (back)
+3 Middle view
+4 distant view
+5 super distant view
+6 sea surface
+7 celestial sphere
+20 B1 basic
+21 distant view
+22 celestial sphere
+23 ghost
+25 Distant view belt
+26 terrace
+27 river
+37 For poly drama (p80200
+51 distant view
+52 celestial sphere
+53 lava
+60 For polyplay (p80000-A-for dark
+61 For poly drama (p80000-B-for white fog
+63 m99_97_00_00[Nakajima test]

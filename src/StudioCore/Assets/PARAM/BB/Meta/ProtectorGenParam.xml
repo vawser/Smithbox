@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <proParamId AltName="Armor ID" Wiki="" Refs="EquipParamProtector" />
+    <gemSlotType_0 AltName="Gem Slot Type [0]" Wiki="" />
+    <gemGenId_0 AltName="Gem Generation ID [0]" Wiki="" />
+    <gemSlotType_1 AltName="Gem Slot Type [1]" Wiki="" />
+    <gemGenId_1 AltName="" Wiki="Gem Generation ID [1]" />
+    <gemSlotType_2 AltName="Gem Slot Type [2]" Wiki="" />
+    <gemGenId_2 AltName="" Wiki="Gem Generation ID [2]" />
+    <gemSlotType_3 AltName="Gem Slot Type [3]" Wiki="" />
+    <gemGenId_3 AltName="" Wiki="Gem Generation ID [3]" />
+    <gemSlotType_4 AltName="Gem Slot Type [4]" Wiki="" />
+    <gemGenId_4 AltName="Gem Generation ID [4]" Wiki="" />
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

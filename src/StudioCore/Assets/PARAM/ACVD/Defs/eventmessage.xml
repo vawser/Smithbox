@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EVENT_MESSAGE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 MessageID">
+      <DisplayName>メッセージID</DisplayName>
+      <Description>ミッションエクセル及び対戦メッセージ機能から呼び出されるID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 TextID">
+      <DisplayName>メッセージサウンドマップID</DisplayName>
+      <Description>実際のテキストデータIDと音声IDと音声終端からの余韻時間設定がセットになっているデータへのID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 Priority = 100">
+      <DisplayName>優先度</DisplayName>
+      <Description>優先度（大きいほうが優先度高い）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>200</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 LimitCount = -1">
+      <DisplayName>メッセージの表示回数制限</DisplayName>
+      <Description>メッセージの表示回数制限（－１が無制限）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 InhibitInterrupt">
+      <DisplayName>メッセージの割り込み拒否</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>このメッセージ再生中にどんな割り込みも拒否する</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 Interrupt">
+      <DisplayName>メッセージに割り込みをかける</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>現在再生中のメッセージ以上の優先度をもつメッセージの場合、再生中のメッセージを停止し、再生する。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="fixstr reserve0[2]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 DisplayInterval">
+      <DisplayName>メッセージの最低表示間隔[s]</DisplayName>
+      <Description>２度続けざまにメッセージリクエストを出したとき、１度目のメッセージが表示されてから、２度目のメッセージが表示されるまでの時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 TimeoutForWaiting = -1">
+      <DisplayName>メッセージ発行からの有効待ち時間[s]</DisplayName>
+      <Description>同時表示数の制限で発行後待ち状態に入った場合、メッセージ表示を断念する時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 StartDelayTime">
+      <DisplayName>メッセージ開始までの溜め時間[s]</DisplayName>
+      <Description>メッセージ再生が決定されてから実際に再生されるまでの時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 MessageTrailingTime">
+      <DisplayName>メッセージ余韻時間[s]</DisplayName>
+      <Description>メッセージ音声終了から実際に終了するまでの余韻時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u32 ObservingMessageID0">
+      <DisplayName>監視メッセージID0</DisplayName>
+      <Description>監視対象のメッセージID（あるメッセージを再生したら、別のメッセージを再生しないといった用途で使用する）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u32 ObservingMessageID1">
+      <DisplayName>監視メッセージID1</DisplayName>
+      <Description>監視メッセージＩＤ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u32 ObservingMessageID2">
+      <DisplayName>監視メッセージID2</DisplayName>
+      <Description>監視メッセージＩＤ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u32 ObservingMessageID3">
+      <DisplayName>監視メッセージID3</DisplayName>
+      <Description>監視メッセージＩＤ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u32 ObservingMessageID4">
+      <DisplayName>監視メッセージID4</DisplayName>
+      <Description>監視メッセージＩＤ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u32 ObservingMessageID5">
+      <DisplayName>監視メッセージID5</DisplayName>
+      <Description>監視メッセージＩＤ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u32 ObservingMessageID6">
+      <DisplayName>監視メッセージID6</DisplayName>
+      <Description>監視メッセージＩＤ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u32 ObservingMessageID7">
+      <DisplayName>監視メッセージID7</DisplayName>
+      <Description>監視メッセージＩＤ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9.999E+07</Maximum>
+      <SortID>19</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

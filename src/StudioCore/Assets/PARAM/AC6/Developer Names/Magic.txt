@@ -1,0 +1,151 @@
+3000 arrow of soul -- ソウルの矢
+3001 Soul's Arrow Double Chant -- ソウルの矢二重詠唱
+3010 strong soul arrow -- 強いソウルの矢
+3020 soul arrow -- ソウルの太矢
+3021 soul arrow -- ソウルの太矢
+3030 Strong soul arrow -- 強いソウルの太矢
+3040 A mass of chasing souls -- 追尾するソウルの塊
+3050 Pursuing soul crystal mass -- 追尾するソウルの結晶塊
+3060 spear of soul -- ソウルの槍
+3070 soul crystal spear -- ソウルの結晶槍
+3100 Weapon magic enhancement 1 -- 武器魔法強化1
+3110 Weapon magic enhancement 2 -- 武器魔法強化2
+3120 Weapon magic enhancement 3 -- 武器魔法強化3
+3300 Shield reinforcement 1 -- 盾強化1
+3310 Shield reinforcement 2 -- 盾強化2
+3400 invisible weapon -- インビジブルウェポン
+3410 invisible body -- インビジブルボディ
+3500 light -- ライト
+3510 silence -- サイレンス
+3520 sound -- サウンド
+3530 repair -- 修復
+3540 Falling control -- フォーリングコントロール
+3550 mimicry -- 擬態
+3600 disenchantment -- 解呪
+3610 healing -- 治癒
+3700 crystal beam -- 結晶ビーム
+3710 [DLC] Ball of Darkness -- 【DLC】闇の玉
+3720 [DLC] Splash of darkness -- 【DLC】闇の飛沫
+3730 [DLC] Mist of Darkness -- 【DLC】闇の霧
+3740 [DLC] The Chasers -- 【DLC】追う者たち
+4000 fireball -- ファイアボール
+4001 fireball double chant -- ファイアボール二重詠唱
+4010 fireball 2 -- ファイアボール２
+4011 Fireball 2 double chant -- ファイアボール２二重詠唱
+4020 fireball 3 -- ファイアボール３
+4030 firestorm -- ファイアストーム
+4031 firestorm double chant -- ファイアストーム二重詠唱
+4040 firestorm 2 -- ファイアストーム２
+4050 flamethrower -- 火炎放射
+4060 whip of flame -- 炎のムチ
+4100 Proximity flame 1 -- 近接炎1
+4101 Proximity flame 1_double chant -- 近接炎1_二重詠唱
+4110 Proximity flame 2 -- 近接炎2
+4200 poisonous fog -- 毒の霧
+4210 poisonous fog -- 猛毒の霧
+4220 acid fog -- 酸の霧
+4300 iron body -- 鉄の体
+4310 veil of water -- 水のヴェール
+4350 flame weapon enchantment -- 炎武器エンチャント
+4400 power of madness -- 狂気の力
+4500 Chaos_Fireball -- カオス_ファイアボール
+4510 Chaos_Firestorm -- カオス_ファイアストーム
+4520 Whip of Chaos Flame -- カオス炎のムチ
+4530 [DLC] Black Flame -- 【DLC】黒炎
+5000 recovery 1 -- 回復1
+5001 Recovery 1 double chant -- 回復1二重詠唱
+5010 recovery 2 -- 回復2
+5020 recovery 3 -- 回復3
+5030 recovery 4 -- 回復4
+5040 regeneration -- リジェネ
+5041 Regeneration double chant -- リジェネ二重詠唱
+5050 great regeneration -- グレートリジェネ
+5100 Summon 1 -- 召喚1
+5110 summon 2 -- 召喚2
+5200 One-time resurrection -- 一度きり復活
+5210 return -- 帰還
+5300 force 1 -- フォース1
+5301 Force 1 double chant -- フォース1二重詠唱
+5310 force 2 -- フォース2
+5320 force 3 -- フォース3
+5400 tips -- ヒント
+5500 thunder 1 -- 雷1
+5501 Thunder 1 double chant -- 雷1二重詠唱
+5510 thunder 2 -- 雷2
+5520 thunder 3 -- 雷3
+5600 magic protection 1 -- 魔法防護1
+5610 magic protection 2 -- 魔法防護2
+5700 cause and effect -- 因果応報
+5710 cause and effect -- 因果応報
+5800 gravity -- グラビティ
+5810 anti-magic realm -- 反魔法領域
+5900 sword of the sun -- 太陽の剣
+5910 moonlight sword -- 月光の剣
+13000 arrow of soul -- ソウルの矢
+13010 strong soul arrow -- 強いソウルの矢
+13020 soul arrow -- ソウルの太矢
+13030 Strong soul arrow -- 強いソウルの太矢
+13040 A mass of chasing souls -- 追尾するソウルの塊
+13050 Pursuing soul crystal mass -- 追尾するソウルの結晶塊
+13060 spear of soul -- ソウルの槍
+13070 soul crystal spear -- ソウルの結晶槍
+13100 Weapon magic enhancement 1 -- 武器魔法強化1
+13110 Weapon magic enhancement 2 -- 武器魔法強化2
+13120 Weapon magic enhancement 3 -- 武器魔法強化3
+13300 Shield reinforcement 1 -- 盾強化1
+13310 Shield reinforcement 2 -- 盾強化2
+13400 invisible weapon -- インビジブルウェポン
+13410 invisible body -- インビジブルボディ
+13500 light -- ライト
+13510 silence -- サイレンス
+13520 sound -- サウンド
+13530 repair -- 修復
+13540 Falling control -- フォーリングコントロール
+13550 mimicry -- 擬態
+13600 disenchantment -- 解呪
+13610 healing -- 治癒
+13700 crystal beam -- 結晶ビーム
+14000 fireball -- ファイアボール
+14010 fireball 2 -- ファイアボール２
+14020 fireball 3 -- ファイアボール３
+14030 firestorm -- ファイアストーム
+14040 firestorm 2 -- ファイアストーム２
+14050 flamethrower -- 火炎放射
+14060 whip of flame -- 炎のムチ
+14100 Proximity flame 1 -- 近接炎1
+14110 Proximity flame 2 -- 近接炎2
+14200 poisonous fog -- 毒の霧
+14210 poisonous fog -- 猛毒の霧
+14220 acid fog -- 酸の霧
+14300 iron body -- 鉄の体
+14310 veil of water -- 水のヴェール
+14400 power of madness -- 狂気の力
+14500 Chaos_Fireball -- カオス_ファイアボール
+14510 Chaos_Firestorm -- カオス_ファイアストーム
+14520 Whip of Chaos Flame -- カオス炎のムチ
+15000 recovery 1 -- 回復1
+15010 recovery 2 -- 回復2
+15020 recovery 3 -- 回復3
+15030 recovery 4 -- 回復4
+15040 regeneration -- リジェネ
+15050 great regeneration -- グレートリジェネ
+15100 Summon 1 -- 召喚1
+15110 summon 2 -- 召喚2
+15200 One-time resurrection -- 一度きり復活
+15210 return -- 帰還
+15300 force 1 -- フォース1
+15301 Force 1 double chant -- フォース1二重詠唱
+15310 force 2 -- フォース2
+15320 force 3 -- フォース3
+15400 tips -- ヒント
+15500 thunder 1 -- 雷1
+15510 thunder 2 -- 雷2
+15520 thunder 3 -- 雷3
+15600 magic protection 1 -- 魔法防護1
+15610 magic protection 2 -- 魔法防護2
+15700 cause and effect -- 因果応報
+15710 cause and effect -- 因果応報
+15800 gravity -- グラビティ
+15810 anti-magic realm -- 反魔法領域
+15900 sword of the sun -- 太陽の剣
+15910 moonlight sword -- 月光の剣

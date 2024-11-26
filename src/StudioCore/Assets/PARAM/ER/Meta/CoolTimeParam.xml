@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <limitationTime_0 AltName="Limitation Time - 0 Co-op Phantoms" Wiki="Time limit [sec] (number of cooperating spirits 0)" />
+    <observeTime_0 AltName="Observation Time - 0 Co-op Phantoms" Wiki="Monitoring time [sec] (number of cooperating spirits 0)" />
+    <limitationTime_1 AltName="Limitation Time - 1 Co-op Phantoms" Wiki="Time limit [sec] (number of cooperating spirits 1)" />
+    <observeTime_1 AltName="Observation Time - 1 Co-op Phantoms" Wiki="Monitoring time [sec] (number of cooperating spirits 1)" />
+    <limitationTime_2 AltName="Limitation Time - 2 Co-op Phantoms" Wiki="Time limit [sec] (number of cooperating spirits 2)" />
+    <observeTime_2 AltName="Observation Time - 2 Co-op Phantoms" Wiki="Monitoring time [sec] (number of cooperating spirits 2)" />
+    <limitationTime_3 AltName="Limitation Time - 3 Co-op Phantoms" Wiki="Time limit [sec] (number of cooperating spirits 3)" />
+    <observeTime_3 AltName="Observation Time - 3 Co-op Phantoms" Wiki="Monitoring time [sec] (number of cooperating spirits 3)" />
+  </Field>
+  <Self />
+</PARAMMETA>

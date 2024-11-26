@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <alreadyGotFlagId Wiki="Event Flag that is turned on when this Item is obtained, prevents the Item from being obtained again" />
+    <resourceItemCategory01 Wiki="Determines which ResourceItem will be dropped" Refs="ResourceItemParam" />
+    <resourceItemCategory02 Wiki="Determines which ResourceItem will be dropped" Refs="ResourceItemParam" />
+    <resourceItemCategory03 Wiki="Determines which ResourceItem will be dropped" Refs="ResourceItemParam" />
+    <resourceItemCategory04 Wiki="Determines which ResourceItem will be dropped" Refs="ResourceItemParam" />
+    <resourceItemCategory05 Wiki="Determines which ResourceItem will be dropped" Refs="ResourceItemParam" />
+    <resourceItemCategory06 Wiki="Determines which ResourceItem will be dropped" Refs="ResourceItemParam" />
+    <resourceItemCategory07 Wiki="Determines which ResourceItem will be dropped" Refs="ResourceItemParam" />
+    <resourceItemCategory08 Wiki="Determines which ResourceItem will be dropped" Refs="ResourceItemParam" />
+    <isAddLottery Wiki="Items will not drop unless stateInfo 345 is active" IsBool="" />
+    <lotBasePoint01 Wiki="Drop rate of resourceItemCategory01" />
+    <lotBasePoint02 Wiki="Drop rate of resourceItemCategory02" />
+    <lotBasePoint03 Wiki="Drop rate of resourceItemCategory03" />
+    <lotBasePoint04 Wiki="Drop rate of resourceItemCategory04" />
+    <lotBasePoint05 Wiki="Drop rate of resourceItemCategory05" />
+    <lotBasePoint06 Wiki="Drop rate of resourceItemCategory06" />
+    <lotBasePoint07 Wiki="Drop rate of resourceItemCategory07" />
+    <lotBasePoint08 Wiki="Drop rate of resourceItemCategory08" />
+    <itemNum01 Wiki="The amount of items that will be obtianed if resourceItemCategory01 drops" />
+    <itemNum02 Wiki="The amount of items that will be obtianed if resourceItemCategory02 drops" />
+    <itemNum03 Wiki="The amount of items that will be obtianed if resourceItemCategory03 drops" />
+    <itemNum04 Wiki="The amount of items that will be obtianed if resourceItemCategory04 drops" />
+    <itemNum05 Wiki="The amount of items that will be obtianed if resourceItemCategory05 drops" />
+    <itemNum06 Wiki="The amount of items that will be obtianed if resourceItemCategory06 drops" />
+    <itemNum07 Wiki="The amount of items that will be obtianed if resourceItemCategory07 drops" />
+    <itemNum08 Wiki="The amount of items that will be obtianed if resourceItemCategory08 drops" />
+    <spLotPointRate01 Wiki="When enabled, the drop rate of resouceItemCategory01 can be adjusted by resourceItemDropRate in SpEffects" IsBool="" />
+    <spLotPointRate02 Wiki="When enabled, the drop rate of resouceItemCategory02 can be adjusted by resourceItemDropRate in SpEffects" IsBool="" />
+    <spLotPointRate03 Wiki="When enabled, the drop rate of resouceItemCategory03 can be adjusted by resourceItemDropRate in SpEffects" IsBool="" />
+    <spLotPointRate04 Wiki="When enabled, the drop rate of resouceItemCategory04 can be adjusted by resourceItemDropRate in SpEffects" IsBool="" />
+    <spLotPointRate05 Wiki="When enabled, the drop rate of resouceItemCategory05 can be adjusted by resourceItemDropRate in SpEffects" IsBool="" />
+    <spLotPointRate06 Wiki="When enabled, the drop rate of resouceItemCategory06 can be adjusted by resourceItemDropRate in SpEffects" IsBool="" />
+    <spLotPointRate07 Wiki="When enabled, the drop rate of resouceItemCategory07 can be adjusted by resourceItemDropRate in SpEffects" IsBool="" />
+    <spLotPointRate08 Wiki="When enabled, the drop rate of resouceItemCategory08 can be adjusted by resourceItemDropRate in SpEffects" IsBool="" />
+  </Field>
+  <Self Wiki="Handles the drop rate of Resource Items" ConsecutiveIDs="" AlternativeOrder="alreadyGotFlagId,isAddLottery,-,
+resourceItemCategory01,lotBasePoint01,itemNum01,spLotPointRate01,-,
+resourceItemCategory02,lotBasePoint02,itemNum02,spLotPointRate02,-,
+resourceItemCategory03,lotBasePoint03,itemNum03,spLotPointRate03,-,
+resourceItemCategory04,lotBasePoint04,itemNum04,spLotPointRate04,-,
+resourceItemCategory05,lotBasePoint05,itemNum05,spLotPointRate05,-,
+resourceItemCategory06,lotBasePoint06,itemNum06,spLotPointRate06,-,
+resourceItemCategory07,lotBasePoint07,itemNum07,spLotPointRate07,-,
+resourceItemCategory08,lotBasePoint08,itemNum08,spLotPointRate08,-" />
+</PARAMMETA>

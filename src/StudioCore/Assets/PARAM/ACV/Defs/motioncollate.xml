@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MOTION_COLLATE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 CoreMotionID">
+      <DisplayName>コアモーションID</DisplayName>
+      <DisplayFormat>%3d</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 ArmsMotionID">
+      <DisplayName>腕部モーションID</DisplayName>
+      <DisplayFormat>%3d</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 LegsMotionID">
+      <DisplayName>脚部モーションID</DisplayName>
+      <DisplayFormat>%3d</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 OwMotionID">
+      <DisplayName>OWモーションID</DisplayName>
+      <DisplayFormat>%3d</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="fixstr OwNoEquipAcMotionName[16]">
+      <DisplayName>OW装備前モーション名</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="fixstr OwEquipAcMotionName[16]">
+      <DisplayName>OW装備後モーション名</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="fixstr OwPartsMotionName[8]">
+      <DisplayName>OWパーツモーション名</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="fixstr reserved[6]">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u16 UsedLegsSoundParamID">
+      <DisplayName>サウンドパラメータID(中古脚)</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u16 CameraActionBeginID">
+      <DisplayName>OW用カメラ効果開始ID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u16 motion_ow_disarm">
+      <DisplayName>OW装備前TAEオーナーID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u16 motion_ow_equip">
+      <DisplayName>OW装備後TAEオーナーID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u16 HokanParamID">
+      <DisplayName>補間データID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u16 SoundParamID">
+      <DisplayName>サウンドパラメータID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u16 CameraParamID">
+      <DisplayName>カメラパラメータID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

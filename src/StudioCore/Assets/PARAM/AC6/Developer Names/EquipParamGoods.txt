@@ -1,0 +1,218 @@
+25 Est bottle imitation test -- エスト瓶もどきテスト
+90 Repair for Kisekae Lv:0 -- きせかえ用リペア　Lv:0
+91 Repair for Kisekae Lv:1 -- きせかえ用リペア　Lv:1
+92 Repair for Kisekae Lv:2 -- きせかえ用リペア　Lv:2
+93 Repair for Kisekae Lv:3 -- きせかえ用リペア　Lv:3
+94 Repair for Kisekae Lv:4 -- きせかえ用リペア　Lv:4
+100 Test archive_garage acquisition_log -- テスト用アーカイブ_ガレージ入手_ログ
+101 Test archive_garage acquisition_terms -- テスト用アーカイブ_ガレージ入手_用語
+102 Test archive_garage tips -- テスト用アーカイブ_ガレージ入手tips
+110 Test archive_mission_log -- テスト用アーカイブ_ミッション_ログ
+120 Test Archive_Mission_Term -- テスト用アーカイブ_ミッション_用語
+10090000 Exchange item small -- 換金アイテム小
+10091000 Items being exchanged for cash -- 換金アイテム中
+10092000 Large exchange item -- 換金アイテム大
+10099000 garbage scraps -- ゴミくず
+11000000 Est bottle imitation test -- エスト瓶もどきテスト
+13020000 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020010 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020020 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020030 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020040 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020050 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020060 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020070 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020080 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020090 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020100 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020110 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020120 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020130 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020140 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020150 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020160 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020170 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020180 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020190 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020200 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020210 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020220 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020230 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020240 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020250 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020260 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020270 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020280 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020290 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020300 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020310 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020320 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020330 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020340 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020350 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020360 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020370 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020380 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020390 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020400 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020410 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020420 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020430 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020440 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020450 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020460 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020470 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020480 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020490 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020500 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020510 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020520 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020530 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020540 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020550 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020560 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020570 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020580 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020590 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020600 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020610 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020620 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020630 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020640 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020650 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020660 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020670 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020680 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020690 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020700 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020710 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020720 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020730 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020740 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020750 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020760 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020770 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020780 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020790 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020800 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020810 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020820 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020830 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020840 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020850 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020860 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020870 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020880 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020890 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020900 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020910 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020920 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020930 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020940 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020950 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020960 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020970 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020980 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13020990 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021000 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021010 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021020 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021030 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021040 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021050 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021060 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021070 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021080 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021090 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021100 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021110 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021120 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021130 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021140 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021150 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021160 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021170 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021180 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021190 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021200 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021210 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021220 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021230 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021240 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021250 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021260 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021270 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021280 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021290 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021300 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021310 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021320 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021330 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021340 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021350 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021360 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021370 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021380 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021390 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021400 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021410 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021420 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021430 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021440 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021450 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021460 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021470 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021480 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021490 Placement Archive_Mission -- 配置アーカイブ_ミッション
+13021500 thomas kirk -- トーマス・カーク
+13021510 monkey gord -- モンキー・ゴード
+13021520 G7 Harkler -- G7 ハークラー
+13021525 Raven -- レイヴン
+13021530 System log: one-sided battle -- システムログ：一方的な戦闘
+13021540 System log: Escaped soldier -- システムログ：脱出した兵士
+13021550 Video record: Steel Haze -- 映像記録：スティールヘイズ
+13021560 Video recording: BAWS 2nd Arsenal -- 映像記録：BAWS第2工廠
+13021570 Communication record: Rusty's encrypted communication -- 通信記録：ラスティの暗号通信
+13021580 Document data: Drying well -- 文書データ：枯れゆく井戸
+13021590 Video recording: Attempt to communicate with enemy aircraft -- 映像記録：敵機との通信試行
+13021600 Correspondence records: Conversations with comrades -- 通信記録：同志との会話
+13021610 Observation data: Survey of coral concentration in ice fields -- 観測データ：氷原のコーラル濃度調査
+13021620 Observation data: Geological survey of ice fields -- 観測データ：氷原の地質調査
+13021630 Observation data: Ice field base survey -- 観測データ：氷原の拠点調査
+13021640 Observation data: Survey of sea areas near ice fields -- 観測データ：氷原の近傍海域調査
+13021650 Video Record: Condemnation of the Rubiconian -- 映像記録：ルビコニアンの糾弾
+13021660 Communication record: Dozer's delusions -- 通信記録：ドーザーの妄言
+13021670 Document data: Dolmayan's essays (1) -- 文書データ：ドルマヤンの随想録（1）
+13021680 Document data: Dolmayan's essays (2) -- 文書データ：ドルマヤンの随想録（2）
+13021690 Document data: Dolmayan's essays (3) -- 文書データ：ドルマヤンの随想録（3）
+13021700 Document data: Dolmayan's essays (4) -- 文書データ：ドルマヤンの随想録（4）
+13021710 Document data: Dolmayan's essays (5) -- 文書データ：ドルマヤンの随想録（5）
+13021720 Document data: Professor Nagai's dictation (1) -- 文書データ：ナガイ教授の口述筆記（1）
+13021730 Document data: Professor Nagai's dictation (2) -- 文書データ：ナガイ教授の口述筆記（2）
+13021740 Document data: Professor Nagai's dictation (3) -- 文書データ：ナガイ教授の口述筆記（3）
+13021750 Document data: Professor Nagai's dictation (4) -- 文書データ：ナガイ教授の口述筆記（4）
+13021760 Video Record: Ibis Fire -- 映像記録：アイビスの火
+13021770 Image data: STV draft (3) -- 画像データ：STVの画稿（3）
+13021780 Image data: STV draft (4) -- 画像データ：STVの画稿（4）
+13021790 Image data: STV draft (1) -- 画像データ：STVの画稿（1）
+13021800 Image data: STV draft (2) -- 画像データ：STVの画稿（2）
+13021810 Image data: STV draft (6) -- 画像データ：STVの画稿（6）
+13021820 Image data: STV draft (5) -- 画像データ：STVの画稿（5）
+13021830 Image data: STK's posthumous manuscript -- 画像データ：STKの遺稿
+13021840 Observation data: Offshore city Xylem -- 観測データ：洋上都市ザイレム
+13021850 Audio recording: The end of G4 -- 音声記録：G4の最期
+13021860 Document data: Re-education center -- 文書データ：再教育センター
+13021880 Video recording: Parts performance test -- 映像記録：部品性能試験
+13021890 Video record: BAWS sentry's final moments -- 映像記録：BAWS哨兵の最期
+13021900 Video recording: The final moments of a debt collector -- 映像記録：債権回収業者の最期
+13021910 Correspondence record: Report to Marshal -- 通信記録：帥叔への報告
+13021920 Communication log: Dozer's chat -- 通信記録：ドーザーの雑談
+13021930 Communication log: Coyotes chat -- 通信記録：コヨーテスの雑談
+13021940 Communication records: Independent mercenary information sharing -- 通信記録：独立傭兵の情報共有
+13021950 Communication records: information transmission of enforcement forces -- 通信記録：執行部隊の情報伝達
+13021960 Observation data: mutant waveform response -- 観測データ：変異波形反応
+13021970 Observation data: invisible area -- 観測データ：見えない領域
+13021980 Observation data: Enforcement system -- 観測データ：強制執行システム
+13021990 Document data: Professor Nagai's dictation (5) -- 文書データ：ナガイ教授の口述筆記（5）
+13022000 Placement Archive_Mission -- 配置アーカイブ_ミッション
+20090000 dummy image -- ダミーイメージ

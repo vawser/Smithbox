@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ARMOR_REINFORCE_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 defence_slash" />
+    <Field Def="f32 defence_thrust" />
+    <Field Def="f32 defence_strike" />
+    <Field Def="f32 defence_standard" />
+    <Field Def="f32 absorption_magic" />
+    <Field Def="f32 absorption_lightning" />
+    <Field Def="f32 absorption_fire" />
+    <Field Def="f32 absorption_dark" />
+    <Field Def="f32 absorption_poison" />
+    <Field Def="f32 absorption_bleed" />
+    <Field Def="f32 absorption_petrify" />
+    <Field Def="f32 absorption_curse" />
+    <Field Def="f32 max_defence_slash" />
+    <Field Def="f32 max_defence_thrust" />
+    <Field Def="f32 max_defence_strike" />
+    <Field Def="f32 max_defence_standard" />
+    <Field Def="f32 max_absorption_magic" />
+    <Field Def="f32 max_absorption_lightning" />
+    <Field Def="f32 max_absorption_fire" />
+    <Field Def="f32 max_absorption_dark" />
+    <Field Def="f32 max_absorption_poison" />
+    <Field Def="f32 max_absorption_bleed" />
+    <Field Def="f32 max_absorption_petrify" />
+    <Field Def="f32 max_absorption_curse" />
+    <Field Def="u32 max_reinforcement_level" />
+    <Field Def="f32 Unk64" />
+    <Field Def="u32 reinforce_material" />
+    <Field Def="s32 Unk6C" />
+    <Field Def="u32 reinforce_cost_id" />
+  </Fields>
+</PARAMDEF>

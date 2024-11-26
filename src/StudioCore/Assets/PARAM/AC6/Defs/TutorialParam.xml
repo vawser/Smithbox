@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TUTORIAL_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 MenuResourceType">
+      <DisplayName>メニューリソース</DisplayName>
+      <Enum>TUTORIAL_MENU_RESOURCE_TYPE</Enum>
+      <Description>使用するメニューリソース</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 reserve0[14]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="u32 ImageID">
+      <DisplayName>イメージ</DisplayName>
+      <Description>イメージのID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserve1[8]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>901</SortID>
+    </Field>
+    <Field Def="s32 OpenSE">
+      <DisplayName>開始SE</DisplayName>
+      <Description>表示時に再生するSE</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 CloseSE">
+      <DisplayName>終了SE</DisplayName>
+      <Description>非表示時に再生するSE</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 RepeatType">
+      <DisplayName>表示回数</DisplayName>
+      <Enum>TUTORIAL_REPEAT_TYPE</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 enableMultiResponseKeyguide">
+      <DisplayName>複数</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>複数同時のレスポンス表示を許可するか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>800</SortID>
+      <UnkC8>キーガイド入力判定</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserve_2[2]">
+      <DisplayName>予約</DisplayName>
+      <SortID>902</SortID>
+    </Field>
+    <Field Def="u32 UnlockEventFlagID">
+      <DisplayName>表示許可フラグ</DisplayName>
+      <Description>表示許可用イベントフラグID。指定したイベントフラグが立つまでは表示しません(0：常に表示を許可)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 Keyguide0_ActJudgeParamID">
+      <DisplayName>1行目</DisplayName>
+      <Enum>TUTORIAL_ACTJUDGE_PARAM_ID</Enum>
+      <Description>キーガイド1行目の入力判定</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>800</SortID>
+      <UnkC8>キーガイド入力判定</UnkC8>
+    </Field>
+    <Field Def="u8 Keyguide1_ActJudgeParamID">
+      <DisplayName>2行目</DisplayName>
+      <Enum>TUTORIAL_ACTJUDGE_PARAM_ID</Enum>
+      <Description>キーガイド2行目の入力判定</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>800</SortID>
+      <UnkC8>キーガイド入力判定</UnkC8>
+    </Field>
+    <Field Def="u8 Keyguide2_ActJudgeParamID">
+      <DisplayName>3行目</DisplayName>
+      <Enum>TUTORIAL_ACTJUDGE_PARAM_ID</Enum>
+      <Description>キーガイド3行目の入力判定</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>800</SortID>
+      <UnkC8>キーガイド入力判定</UnkC8>
+    </Field>
+    <Field Def="u8 Keyguide3_ActJudgeParamID">
+      <DisplayName>4行目</DisplayName>
+      <Enum>TUTORIAL_ACTJUDGE_PARAM_ID</Enum>
+      <Description>キーガイド4行目の入力判定</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>800</SortID>
+      <UnkC8>キーガイド入力判定</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

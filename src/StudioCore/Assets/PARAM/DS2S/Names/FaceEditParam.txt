@@ -1,0 +1,101 @@
+0 Age -- 年齢
+1 Gender -- 性別
+2 Shape exaggeration -- 形状誇張
+3 Color exaggeration -- 色誇張
+4 Ratio of eyebrows- nose and jaw -- 眉、鼻、顎の比率
+5 Ratio near the amount -- 額付近の比率
+6 Face width -- 顔幅
+7 Facial Rounding -- 顔の丸み
+8 Face Parts Balance -- 顔パーツバランス
+9 Face parts tilt up and down -- 顔パーツ傾き上下
+10 Face parts balance left and right -- 顔パーツバランス左右
+11 Skin Color Flushing Pale -- 肌の色 紅潮 蒼白
+12 Color Skin Color DarkNess -- 色 肌色 暗 明
+13 Color Skin Color Orange Blue -- 色 肌の色 橙青
+14 Color Skin Color Purple Yellow -- 色 肌の色 紫黄
+15 Color Skin Color Red Green -- 色 肌の色 赤緑
+16 Color Nose Muscle Color Pale Red -- 色 鼻筋の色 蒼白 赤
+17 Color Cheek Light Red -- 色 頬色 光 赤
+18 Width between eyebrows -- 眉間の幅
+19 Depth between eyebrows -- 眉間の深さ
+20 Position between eyebrows -- 眉間の位置
+21 Height between eyebrows -- 眉間の高さ
+22 Nasal muscles- upper irregularities -- 鼻筋、上部の凹凸
+23 Nasal muscles- upper irregularities -- 鼻筋、上部の凹凸
+24 Width between eyebrows -- 眉間の幅
+25 Eyebrow height -- 眉の高さ
+26 the inner end of the eyebrow -- 眉の内端
+27 the outer end of the eyebrow -- 眉の外端
+28 Color Eyebrow Red -- 色 眉色 赤
+29 Color Eyebrow Color Blue -- 色 眉色 青
+30 Color Eyebrow Green -- 色 眉色 緑
+31 Eye position -- 眼の位置
+32 Eye size -- 眼の大きさ
+33 Eye tilt -- 眼の傾き
+34 Eye spacing -- 眼の間隔
+35 Color Pupil Red -- 色 瞳色 赤
+36 Color Pupil Blue -- 色 瞳色 青
+37 Color Pupil Green -- 色 瞳色 緑
+38 Color The Color of the Orbit -- 色 眼窩の色 アザ 明
+39 Color The color of the orbit- the dark light -- 色 眼窩の色 暗 明
+40 Color Eyelid Light Dark -- 色 まぶた 明 暗
+41 Color Eyelid Blue Red -- 色 まぶた 青 赤
+42 Color Eyeliner Light And Dark -- 色 アイライナー 明 暗
+43 Color Eyeshadow Light Dark -- 色 アイシャドー 明 暗
+44 Depth of nasal muscles -- 鼻筋の深さ
+45 Length of nasal muscles -- 鼻筋の長さ
+46 Nose length -- 鼻の長さ
+47 Nose height -- 鼻の高さ
+48 Nasal irregularities -- 鼻の凹凸
+49 Nose height -- 鼻の高さ
+50 Up and down the nose -- 小鼻の上下
+51 Slope of the nose -- 小鼻の傾斜
+52 The size of the nose -- 小鼻の大きさ
+53 The width of the nose -- 小鼻の幅
+54 Size of nostrils -- 鼻孔の大きさ
+55 Cheekbone height -- 頬骨の高さ
+56 Depth of cheekbones -- 頬骨の深み
+57 The size of the cheekbone -- 頬骨の広さ
+58 Cheek irregularities -- 頬の凹凸
+59 Cheek -- 頬
+60 Cheek wrinkle line -- 頬のしわライン
+61 The shape of the lips -- 唇の形
+62 Facial expressions at the mouth- joy_ sadness -- 口元の表情、喜_悲
+63 Bulge of the lips -- 唇の膨らみ
+64 The size of the lips -- 唇の大きさ
+65 The shape of the lips -- 唇の形
+66 Lip thickness -- 唇の厚さ
+67 Irregularities in the mouth -- 口の凹凸
+68 Mouth -- 口元
+69 The shape of the lips -- 唇の形
+70 Mouth position -- 口の位置
+71 Width of mouth -- 口の幅
+72 Jaw distance from mouth -- 口から顎の距離
+73 Color Lip Color Flushing Pale -- 色 唇の色 紅潮 蒼白
+74 Color Lipstick Black Red White Blue -- 色 口紅 黒赤 白青
+75 Color Lipstick Black Blue White Red -- 色 口紅 黒青 白赤
+76 Before and after the jaw -- 顎の前後
+77 The vertical length of the jaw_ -- 顎の縦の長さ_
+78 Jaw sticking out_ -- 顎の突き出し_
+79 Jaw depth -- 顎の深さ
+80 The size of the jaw -- 顎の大きさ
+81 Jaw height -- 顎の高さ
+82 The size of the jaw -- 顎の広さ
+83 Jaw sticking out -- 顎の突き出し
+84 Jaw width -- 顎の幅
+85 Lower jaw -- 顎下部
+86 Jaw line -- 顎のライン
+87 Color Beard Red -- 色 髭色 赤
+88 Color Beard Green -- 色 髭色 緑
+89 Color Beard Blue -- 色 髭色 青
+90 Color Hair Color Red -- 色 髪色 赤
+91 Color Hair Color Green -- 色 髪色 緑
+92 Color Hair Color Blue -- 色 髪色 青
+93 Color Tattoo Color Red -- 色 刺青の色 赤
+94 Color Tattoo Color Green -- 色 刺青の色 緑
+95 Color Tattoo Color Blue -- 色 刺青の色 青
+96 Color Tattoo Color α -- 色 刺青の色 α
+97 Tattoo Position X -- 刺青の位置X
+98 Tattoo position Y -- 刺青の位置Y
+99 Angle of tattoo -- 刺青の角度
+100 Tattoo Scale -- 刺青の縮尺

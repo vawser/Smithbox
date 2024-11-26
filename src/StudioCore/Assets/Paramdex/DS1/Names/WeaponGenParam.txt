@@ -1,5 +1,0 @@
-0 Fushikure. -- ふしくれたえだ
-90000 [Prototyping] Torches -- 【プロト用】松明
-91000 [Prototyping] Orb -- 【プロト用】オーブ
-201000 Long Sword -- ロングソード
-1450000 Shield -- 盾

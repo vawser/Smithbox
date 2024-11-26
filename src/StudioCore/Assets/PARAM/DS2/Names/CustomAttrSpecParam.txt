@@ -1,0 +1,94 @@
+0 Normal: Do not change attributes -- 通常：属性変更しない
+10 Whether or not pine fat is available -- 松脂使用可否
+100000 Full derivation permission -- 全派生許可
+100100 Normal: Fist -- 通常：拳
+100200 Normal: Nails -- 通常：爪
+100300 Normal: Whip -- 通常：鞭
+100400 Normal: Dagger -- 通常：短剣
+100500 Normal: Swords -- 通常：刺剣
+100600 Normal: Spear -- 通常：槍
+100700 Normal: Assault Spear -- 通常：突撃槍
+100800 Normal: Double-edged sword -- 通常：双刃剣
+100900 Normal: Song Sword -- 通常：曲剣
+101000 Normal: Straight sword -- 通常：直剣
+101100 Normal: Sword -- 通常：刀
+101200 Normal: Two-handed sword -- 通常：両手剣
+101300 Normal: Two-handed oversized sword -- 通常：両手特大剣
+101400 Normal: Two-handed large sword -- 通常：両手大曲剣
+101500 Normal: One hand mallet -- 通常：片手槌
+101600 Normal: Two-handed mallet -- 通常：両手槌
+101700 Normal: One-handed axe -- 通常：片手斧
+101800 Normal: Two-handed axe -- 通常：両手斧
+101900 Normal: Two-handed sickle -- 通常：両手鎌
+102000 Normal: Two-handed ax -- 通常：両手長斧
+102100 Normal: Two-handed bow -- 通常：両手弓
+102200 Normal: Two-handed large bow -- 通常：両手大弓
+102300 Normal: One-handed bow -- 通常：片手ボウ
+102400 Normal: Cane -- 通常：杖
+102500 Normal: Bell -- 通常：ベル
+102600 Normal: The Fire of Magic -- 通常：呪術の火
+102700 Normal: Small shield -- 通常：小盾
+102800 Normal: Medium shield -- 通常：中盾
+102900 Normal: Large shield -- 通常：大盾
+105000 Normal: Armor -- 通常：防具
+110100 Dragon Weapon: Fist -- ドラゴンウェポン：拳
+110200 Dragon Weapon: Claws -- ドラゴンウェポン：爪
+110300 Dragon Weapon: Whip -- ドラゴンウェポン：鞭
+110400 Dragon Weapon: Dagger -- ドラゴンウェポン：短剣
+110500 Dragon Weapon: Sting Sword -- ドラゴンウェポン：刺剣
+110600 Dragon Weapon: Spear -- ドラゴンウェポン：槍
+110700 Dragon Weapon: Assault Spear -- ドラゴンウェポン：突撃槍
+110800 Dragon Weapon: Double Blade -- ドラゴンウェポン：双刃剣
+110900 Dragon Weapon: Song Sword -- ドラゴンウェポン：曲剣
+111000 Dragon Weapon: Straight Sword -- ドラゴンウェポン：直剣
+111100 Dragon Weapon: Sword -- ドラゴンウェポン：刀
+111200 Dragon Weapon: Two-Handed Sword -- ドラゴンウェポン：両手剣
+111300 Dragon Weapon: Two-Handed Oversized Sword -- ドラゴンウェポン：両手特大剣
+111400 Dragon Weapon: Two-Handed Sword -- ドラゴンウェポン：両手大曲剣
+111500 Dragon Weapon: One Hand Mallet -- ドラゴンウェポン：片手槌
+111600 Dragon Weapon: Mallet -- ドラゴンウェポン：両手槌
+111700 Dragon Weapon: One Hand Axe -- ドラゴンウェポン：片手斧
+111800 Dragon Weapon: Two-Handed Axe -- ドラゴンウェポン：両手斧
+111900 Dragon Weapon: Two-Handed Sickle -- ドラゴンウェポン：両手鎌
+112000 Dragon Weapon: Two-Handed Long Axe -- ドラゴンウェポン：両手長斧
+112100 Dragon Weapon: Bow with Both Hands -- ドラゴンウェポン：両手弓
+112200 Dragon Weapon: Two Hands Large Bow -- ドラゴンウェポン：両手大弓
+112300 Dragon Weapon: One Hand Bow -- ドラゴンウェポン：片手ボウ
+112400 Dragon Weapon: Cane -- ドラゴンウェポン：杖
+112500 Dragon Weapon: Bell -- ドラゴンウェポン：ベル
+112600 Dragon Weapon: The Fire of Magic -- ドラゴンウェポン：呪術の火
+112700 Dragon Weapon: Small Shield -- ドラゴンウェポン：小盾
+112800 Dragon Weapon: Medium Shield -- ドラゴンウェポン：中盾
+112900 Dragon Weapon: The Great Shield -- ドラゴンウェポン：大盾
+115000 Dragon Weapon: Armor -- ドラゴンウェポン：防具
+120100 Light Stone: Fist -- 光石：拳
+120200 Light Stone: Nails -- 光石：爪
+120300 Light Stone: Whip -- 光石：鞭
+120400 Light Stone: Dagger -- 光石：短剣
+120500 Koseki: Swords -- 光石：刺剣
+120600 Light Stone: Spear -- 光石：槍
+120700 Light Stone: Assault Spear -- 光石：突撃槍
+120800 Koseki: Double-edged Sword -- 光石：双刃剣
+120900 Koseki: Song Sword -- 光石：曲剣
+121000 Koseki: Straight sword -- 光石：直剣
+121100 Koseki: Sword -- 光石：刀
+121200 Light Stone: Two-handed sword -- 光石：両手剣
+121300 Light stone: Two hands oversized sword -- 光石：両手特大剣
+121400 Koseki: Two-handed sword -- 光石：両手大曲剣
+121500 Koseki: One hand mallet -- 光石：片手槌
+121600 Light stone: Mallet both hands -- 光石：両手槌
+121700 Light Stone: One-handed axe -- 光石：片手斧
+121800 Light Stone: Two-Handed Axe -- 光石：両手斧
+121900 Light Stone: Two-Handed Sickle -- 光石：両手鎌
+122000 Light stone: Two-handed long axe -- 光石：両手長斧
+122100 Light stone: bow in both hands -- 光石：両手弓
+122200 Light stone: Two hands large bow -- 光石：両手大弓
+122300 Light stone: One-handed bow -- 光石：片手ボウ
+122400 Light Stone: Cane -- 光石：杖
+122500 Light Stone: Bell -- 光石：ベル
+122600 Light Stone: The Fire of Magic -- 光石：呪術の火
+122700 Light Stone: Small Shield -- 光石：小盾
+122800 Light Stone: Shield -- 光石：中盾
+122900 Light Stone: Large Shield -- 光石：大盾
+125000 Light stone: Armor -- 光石：防具
+200100 Normally only strengthened -- 通常強化のみ

@@ -1,0 +1,3 @@
+0 Wet wet -- 水濡れ
+1 Poison wet -- 毒濡れ
+2 Oil wet -- 油濡れ

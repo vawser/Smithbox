@@ -1,0 +1,103 @@
+2221000 Basic Controls
+1401100 Toggle Targets
+1401111 Targeting Controls
+1401113 Target Assist
+1509090 Advantages of Disabling Target Assist
+1500000 Lock-on
+1500005 Lock-on
+1500100 Missile Lock
+1401117 Multi-Lock
+1411000 Sortie Using an Older AC
+1411100 Jamming Rounds
+1500105 Missile Lock
+1401141 Repair Kits
+1500300 Scanning
+1401030 EN Consumption
+1401121 Quick Boost
+1401126 Quick Boost
+1401200 Assault Boost
+1501300 Assault Boost Attacks
+1501305 Assault Boost Attacks
+1600000 Evasive Aerial Maneuvers
+1401300 Vertical Catapult
+1501010 ACS Strain and Stagger
+1501015 ACS Strain and Stagger
+1501020 Direct Hits
+1501025 Direct Hits
+1501100 ACS Accumulative Strain
+1501105 ACS Accumulative Strain
+1501400 Surprise Attacks
+1501405 Surprise Attacks
+1503100 Weapon Types
+1503105 Weapon Types
+1503200 Weapon Type Tactics
+1503205 Weapon Type Tactics
+1503210 Ricochets
+1500010 Reloading
+1500015 Reloading
+1602000 Tactical Reloading
+1503110 Energy Weapons and Overheating
+1503115 Energy Weapons and Overheating
+1501000 Charge Attacks
+1501005 Charge Attacks
+2222000 Canceling Actions
+1503010 Area Attacks
+1503015 Area Attacks
+1500200 Melee Weapons
+1500205 Melee Weapons
+1501200 Shield Defense
+1501205 Shield Defense
+1501210 Attack Indicators and Initial Guard
+1501215 Attack Indicators and Initial Guard
+1502000 Double Trigger
+1502005 Double Trigger
+1503000 Reverse-Joint Parts
+1503005 Reverse-Joint Parts
+1504000 Tetrapod Parts
+1504005 Tetrapod Parts
+1504100 Recoil
+1504105 Recoil
+1504200 Hovering-Based Tactics
+1504205 Hovering-Based Tactics
+1505000 Tank Parts and Strategy
+1505005 Tank Parts and Strategy
+1505002 Drifting
+1505007 Drifting
+1502100 Boosters and Mobility
+1502105 Boosters and Mobility
+1502200 FCS and Engagement Distance
+1502205 FCS and Engagement Distance
+1502110 Generators and Basic Specs
+1502115 Generators and Basic Specs
+1502300 AC Assembly and Strategy
+1502305 AC Assembly and Strategy
+1601000 The Right Assembly for the Job
+1506000 Adaptive Assemblies
+2223000 System Abnormality: Camera Disruption
+2220000 System Abnormality: Shock
+2219000 System Abnormality: ACS Failure
+2201000 Arm Units
+2202000 Back Units
+2203000 Heads
+2204000 Cores
+2205000 Arms
+2206000 Legs
+2207000 Boosters
+2208000 FCS
+2209000 Generators
+2000000 ASSEMBLY
+2001000 MISSIONS
+2001100 REPLAY MISSION
+2002000 BUY
+2002010 SELL
+2003000 PAINT
+2003100 DECALS
+2003300 IMAGE EDITOR
+2004000 ARENA
+2004100 NEST
+2005000 AC DATA
+2006000 AC TEST
+2007000 TRAINING
+2008000 ARCHIVES
+2008100 TIPS
+2009000 OS TUNING

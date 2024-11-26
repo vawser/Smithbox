@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>EVENT_FLAG_USAGE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 usageType">
+      <DisplayName>用途</DisplayName>
+      <Enum>EVENT_FLAG_USAGE_TYPE</Enum>
+      <Description>フラグの用途。</Description>
+      <Maximum>2</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 playlogCategory">
+      <DisplayName>プレイログカテゴリ</DisplayName>
+      <Enum>EVENT_FLAG_USAGE_PLAYLOG_CATEGORY</Enum>
+      <Description>用途が「ON/OFF」の場合のみ有効。これを設定するとフラグがONになったときにプレイログを収集する。</Description>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="dummy8 padding1[2]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="s32 flagNum = 1">
+      <DisplayName>確保フラグ数</DisplayName>
+      <Description>「ON/OFF」の場合は1を設定する。「枠割り当て」「整数」の場合は「パラメータ番号～パラメータ番号+確保フラグ数-1」が確保される範囲になる。</Description>
+      <Minimum>1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="dummy8 padding2[24]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

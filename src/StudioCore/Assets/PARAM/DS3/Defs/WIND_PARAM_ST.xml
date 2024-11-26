@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>WIND_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s16 commonCapsuleBeginDmyId" />
+    <Field Def="s16 commonCapsuleEndDmyId" />
+    <Field Def="f32 commonCapsuleRadius" />
+    <Field Def="dummy8 pad1[120]" />
+    <Field Def="u8 sfxWindEnable:1 = 1" />
+    <Field Def="u8 sfxIgnorePlayerSfx:1" />
+    <Field Def="u8 sfxIsCollision:1" />
+    <Field Def="dummy8 pad2[3]" />
+    <Field Def="f32 SfxDirPitchMin" />
+    <Field Def="f32 SfxDirPitchMax" />
+    <Field Def="f32 SfxDirYawMin" />
+    <Field Def="f32 SfxDirYawMax" />
+    <Field Def="f32 SfxCycleMin" />
+    <Field Def="f32 SfxCycleMax" />
+    <Field Def="f32 SfxSpeedMin" />
+    <Field Def="f32 SfxSpeedMax" />
+    <Field Def="f32 SfxMaximumDrag" />
+    <Field Def="dummy8 pad3[88]" />
+    <Field Def="u8 clothWindEnable:1 = 1" />
+    <Field Def="u8 clothVertexWind:1" />
+    <Field Def="dummy8 pad4[3]" />
+    <Field Def="f32 clothDirPitchMin" />
+    <Field Def="f32 clothDirPitchMax" />
+    <Field Def="f32 clothDirYawMin" />
+    <Field Def="f32 clothDirYawMax" />
+    <Field Def="f32 clothCycleMin" />
+    <Field Def="f32 clothCycleMax" />
+    <Field Def="f32 clothSpeedMin" />
+    <Field Def="f32 clothSpeedMax" />
+    <Field Def="f32 clothMaximumDrag" />
+    <Field Def="dummy8 pad5[88]" />
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MSGBOX_AUTONAVI_CTRL_TYPE" type="s8">
+      <Option Value="0" Name="Continue" />
+      <Option Value="1" Name="Suspend" />
+      <Option Value="2" Name="Yes to Continue" />
+    </Enum>
+  </Enums>
+  <Field>
+    <messageBoxAutoNaviControlType AltName="Auto-Navigation Control Type" Enum="MSGBOX_AUTONAVI_CTRL_TYPE" />
+  </Field>
+  <Self />
+</PARAMMETA>

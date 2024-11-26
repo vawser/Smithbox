@@ -1,0 +1,72 @@
+7010 UNKNOWN
+7020 UNKNOWN
+7030 UNKNOWN
+7110 UNKNOWN
+7120 UNKNOWN
+7130 UNKNOWN
+7140 UNKNOWN
+7150 UNKNOWN
+7160 UNKNOWN
+7170 UNKNOWN
+7210 UNKNOWN
+7220 UNKNOWN
+7230 UNKNOWN
+7240 UNKNOWN
+7250 UNKNOWN
+7260 UNKNOWN
+7270 UNKNOWN
+7280 UNKNOWN
+9150 UNKNOWN
+9500 UNKNOWN
+9700 UNKNOWN
+9701 UNKNOWN
+9702 UNKNOWN
+9703 UNKNOWN
+9704 UNKNOWN
+9705 UNKNOWN
+9706 UNKNOWN
+9707 UNKNOWN
+732000 Unknown NPC
+733000 Unknown NPC
+741000 Crestfallen Saulden
+761000 Maughlin the Armourer
+761010 Maughlin the Armourer
+763000 Rosabeth of Melfia
+763010 Rosabeth of Melfia
+765000 UNKNOWN
+766000 Carhillion of the Fold
+766010 Carhillion of the Fold
+772000 Magerold of Lanafir
+784000 Cromwell the Pardoner
+810000 Masterless Glencour
+811000 Lone Hunter Schmidt
+812000 Pilgrim Bellclaire
+813000 Felicia the Brave
+814000 Melinda the Butcher
+814009 Melinda the Butcher
+820000 Vorgel the Sinner
+821000 Merciless Roenna
+822000 Peculiar Kindalur
+823000 Dragonfang Villard
+831000 Dingy Cleric Phantom
+831100 Faraam Knight Phantom
+832000 Underworld Deadeye
+832100 Pretender to the Xanthous Throne
+832200 Abyss Ironclad
+832300 Abyss Ironclad
+832400 Tenebrous Rogue
+832500 The Ghost of Princes Past
+832600 A Chip Off the Ol Rock
+832700 Shadowveil Assasin
+833000 Peculiar Kindalur Phantom
+834000 UNKNOWN
+834100 UNKNOWN
+835000 Black Dragon Knight
+835100 Black Dragon Knight
+835200 Black Dragon Knight
+836000 Mad Warrior Phantom
+836100 Greatsword Bell Keeper Phantom
+836200 Dual Avelyn Bell Keeper Phantom
+836300 Bell Keeper Mage Phantom
+836400 Ironclad Warrior Phantom
+837000 Foreign Wanderer Phantom

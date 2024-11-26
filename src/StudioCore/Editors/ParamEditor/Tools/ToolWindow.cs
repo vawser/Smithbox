@@ -133,7 +133,7 @@ public class ToolWindow
                     {
                         if (Smithbox.ProjectType != ProjectType.Undefined)
                         {
-                            var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Names";
+                            var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
                             Process.Start("explorer.exe", dir);
                         }
                     }
@@ -166,7 +166,7 @@ public class ToolWindow
                     {
                         if (Smithbox.ProjectType != ProjectType.Undefined)
                         {
-                            var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Names";
+                            var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
                             Process.Start("explorer.exe", dir);
                         }
                     }

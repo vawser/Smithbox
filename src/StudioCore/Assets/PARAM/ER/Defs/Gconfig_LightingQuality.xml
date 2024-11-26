@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CS_LIGHTING_QUALITY_DETAIL</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 localLightDistFactor = 0.75">
+      <DisplayName>ローカルライト有効距離係数</DisplayName>
+      <Description>ローカルライト有効距離係数(小さくすると、近い距離で消える)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.5</Minimum>
+      <Maximum>1.2</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 localLightShadowEnabled = 1">
+      <DisplayName>ローカルライトシャドウ有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>ローカルライトシャドウ有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 forwardPassLightingEnabled = 1">
+      <DisplayName>フォワードパスライティング有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>フォワードパスライティング有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 localLightShadowSpecLevelMax = 1">
+      <DisplayName>ローカルライトシャドウスペックレベル</DisplayName>
+      <Description>ローカルライトシャドウスペックレベル。大きいほど、より多くの光源にシャドウが設定される</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>5</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="dummy8 dmy[1]">
+      <SortID>6</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

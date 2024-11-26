@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters for boss model parts." Row0Dummy="" />
+  <Enums>
+    <Enum Name="HitSfxEnum">
+      <Option Value="1" Name="None" />
+      <Option Value="2" Name="Sparks" />
+      <Option Value="3" Name="Sparks" />
+      <Option Value="4" Name="White" />
+      <Option Value="5" Name="White (Unused)" />
+      <Option Value="7" Name="White" />
+      <Option Value="8" Name="Red" />
+      <Option Value="5" Name="White" />
+      <Option Value="10" Name="Purple (Bugs)" />
+      <Option Value="11" Name="Purple (Giants)" />
+      <Option Value="12" Name="Skeleton" />
+      <Option Value="24" Name="White" />
+      <Option Value="33" Name="White (Phantom)" />
+      <Option Value="38" Name="Black Smoke" />
+      <Option Value="39" Name="None" />
+      <Option Value="41" Name="Light Green (Unused)" />
+    </Enum>
+  </Enums>
+  <Field>
+    <body_hit_sfx AltName="Body Hit SFX" Enum="HitSfxEnum" Wiki="Sfx produced when part is struck. Note that EnemyParam can also determine hit sfx."/>
+  </Field>
+</PARAMMETA>

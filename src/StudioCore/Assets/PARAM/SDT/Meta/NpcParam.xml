@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="TEAM_TYPE" type="u8">
+		<Option Value="-1" Name="Default" />
+		<Option Value="0" Name="Disabled" />
+		<Option Value="1" Name="Human" />
+		<Option Value="2" Name="White Phantom" />
+		<Option Value="3" Name="Black Phantom" />
+		<Option Value="4" Name="Hollow" />
+		<Option Value="5" Name="Wandering Phantom" />
+		<Option Value="6" Name="Enemy" />
+		<Option Value="7" Name="Strong Enemy" />
+		<Option Value="8" Name="Ally" />
+		<Option Value="9" Name="Hostile Ally" />
+		<Option Value="10" Name="Decoy Enemy" />
+		<Option Value="11" Name="Child or Red" />
+		<Option Value="12" Name="Friendly Enemy" />
+		<Option Value="13" Name="Invader" />
+		<Option Value="19" Name="Host" />
+		<Option Value="20" Name="Coop" />
+		<Option Value="21" Name="Hostile" />
+		<Option Value="22" Name="Wandering Phantom 1" />
+		<Option Value="23" Name="Enemy 1" />
+		<Option Value="24" Name="Enemy 2" />
+		<Option Value="25" Name="Strong Enemy 1" />
+		<Option Value="26" Name="Friendly NPC" />
+		<Option Value="27" Name="Hostile NPC" />
+		<Option Value="28" Name="Coop NPC" />
+		<Option Value="29" Name="Indiscriminate" />
+		<Option Value="30" Name="Object" />
+		<Option Value="31" Name="White Berserker" />
+		<Option Value="32" Name="Red Berserker" />
+		<Option Value="33" Name="ArchEnemy Team" />
+    </Enum>
+	<Enum Name="NPC_ITEMDROP_TYPE" type="u16">
+		<Option Value="0" Name="Corpse Glow" />
+		<Option Value="1" Name="Item Display" />
+		<Option Value="2" Name="Suction Drop" />
+	</Enum>
+  </Enums>
+  <Field>
+    <behaviorVariationId Wiki="Used to determine what Behavior is used for this Npc" />
+    <deadMoveForceRate />
+    <nameId FmgRef="Title_Characters" />
+    <turnVellocity />
+    <hitHeight />
+    <hitRadius />
+    <weight />
+    <hitYOffset />
+    <hp Wiki="Base Hp" />
+    <mp Wiki="Base Mp/Fp" />
+    <getSoul Wiki="Amount of Sen dropped when enemy is killed" />
+    <itemLotId_1 Wiki="Item Lottery that is rolled whenever this Npc is killed" Refs="ItemLotParam" />
+    <itemLotId_2 Wiki="Item Lottery that is rolled whenever this Npc is killed" Refs="ItemLotParam" />
+    <itemLotId_3 Wiki="Item Lottery that is rolled whenever this Npc is killed" Refs="ItemLotParam" />
+    <itemLotId_4 Wiki="Item Lottery that is rolled whenever this Npc is killed" Refs="ItemLotParam" />
+    <itemLotId_5 Wiki="Item Lottery that is rolled whenever this Npc is killed" Refs="ItemLotParam" />
+    <itemLotId_6 Wiki="Item Lottery that is rolled whenever this Npc is killed" Refs="ItemLotParam" />
+    <humanityLotId />
+    <spEffectID0 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID1 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID2 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID3 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID4 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID5 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID6 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID7 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <GameClearSpEffectID Wiki="NG+ scaling" Refs="SpEffectParam" />
+    <physGuardCutRate Wiki="Amount of physical damage this Npc can block" />
+    <magGuardCutRate Wiki="Amount of magic damage this Npc can block" />
+    <fireGuardCutRate Wiki="Amount of fire damage this Npc can block" />
+    <thunGuardCutRate Wiki="Amount of lightning damage this Npc can block" />
+    <animIdOffset />
+    <moveAnimId />
+    <spMoveAnimId1 />
+    <spMoveAnimId2 />
+    <networkWarpDist />
+    <dbgBehaviorR1 Wiki="Animation used when R1 is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorL1 Wiki="Animation used when L1 is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorR2 Wiki="Animation used when R2 is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorL2 Wiki="Animation used when L2 is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorRL Wiki="Animation used when RL is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorRR Wiki="Animation used when RR is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorRD Wiki="Animation used when RD is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorRU Wiki="Animation used when RU is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorLL Wiki="Animation used when LL is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorLR Wiki="Animation used when LR is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorLD Wiki="Animation used when LD is pressed while controlling this Npc with Debug" />
+    <dbgBehaviorLU Wiki="Animation used when LU is pressed while controlling this Npc with Debug" />
+    <animIdOffset2 />
+    <damageRate_DamageGroup1 Wiki="Multiplier applied to damage processing for damage group 1 (damage group is set by FD4ParamWeaver)" />
+    <damageRate_DamageGroup2 Wiki="Multiplier applied to damage processing for damage group 2 (damage group is set by FD4ParamWeaver)" />
+    <damageRate_DamageGroup3 Wiki="Multiplier applied to damage processing for damage group 3 (damage group is set by FD4ParamWeaver)" />
+    <damageRate_DamageGroup4 Wiki="Multiplier applied to damage processing for damage group 4 (damage group is set by FD4ParamWeaver)" />
+    <damageRate_DamageGroup5 Wiki="Multiplier applied to damage processing for damage group 5 (damage group is set by FD4ParamWeaver)" />
+    <damageRate_DamageGroup6 Wiki="Multiplier applied to damage processing for damage group 6 (damage group is set by FD4ParamWeaver)" />
+    <damageRate_DamageGroup7 Wiki="Multiplier applied to damage processing for damage group 7 (damage group is set by FD4ParamWeaver)" />
+    <damageRate_DamageGroup8 Wiki="Multiplier applied to damage processing for damage group 8 (damage group is set by FD4ParamWeaver)" />
+    <damageRate_DamageGroupWeak Wiki="Multiplier applied to damage processing for damage group weak (damage group is set by FD4ParamWeaver)" />
+    <superArmorRecoverCorrection Wiki="Correction value for super armor recovery time" />
+    <superArmorBrakeKnockbackDist Wiki="Knockback distance when super armor is broken" />
+    <stamina Wiki="Base Posture" />
+    <staminaRecoverBaseVel Wiki="Base Posture regeneration (flat value)" />
+    <def_phys Wiki="Flat physical defense" />
+    <def_slash Wiki="Flat slash defense" />
+    <def_lightHit Wiki="Flat light hit defense" />
+    <def_thrust Wiki="Flat thrust defense" />
+    <def_mag Wiki="Flat magic defense" />
+    <def_fire Wiki="Flat fire defense" />
+    <def_thunder Wiki="Flat lightning defense" />
+    <defFlickPower />
+    <resist_poison Wiki="Base Poison resistance" />
+    <resist_desease Wiki="Base Terror resistance" />
+    <resist_blood Wiki="Base Burn resistance" />
+    <resist_curse Wiki="Base Enfeeble resistance" />
+    <ghostModelId />
+    <normalChangeResouceId />
+    <guardAngle />
+    <slashGuardCutRate Wiki="Amount of slash damage this Npc can block" />
+    <lightHitGuardCutRate Wiki="Amount of light hit damage this Npc can block" />
+    <thrustGuardCutRate Wiki="Amount of thrust damage this Npc can block" />
+    <superArmorDurability Wiki="Base super armor" />
+    <normalChangeTexChrId />
+    <dropType Wiki="Display method at the time of item drop" Enum="NPC_ITEMDROP_TYPE" />
+    <knockbackRate_vsPlayer_DirectHit Wiki="Alters knockback of attacks that directly hit the player" />
+    <knockbackRate_vsPlayer_Guard Wiki="Alters knockback of attacks that hit the player blocks" />
+    <knockbackRate_vsPlayer_JustGuard Wiki="Alters knockback of attacks that the player deflects" />
+    <knockbackRate_vsEnemy_DirectHit Wiki="Alters knockback of attacks that directly hits other Npc's" />
+    <knockbackRate_vsEnemy_Guard Wiki="Alters knockback of attacks that other Npc's block" />
+    <knockbackRate_vsEnemy_JustGuard Wiki="Alters knockback of attacks that other Npc's deflect" />
+    <isHitSwimMapCollision Wiki="Allows this Npc to swim in water" IsBool="" />
+    <isDeadSwimMapCollision Wiki="Kills this Npc if it comes into contact with water" IsBool="" />
+    <isDopingProgressOffset Wiki="Will this Npc's scaling effects be increased when story progression occurs?" IsBool="" />
+    <doesPreventTalkingLookAtVibration IsBool="" />
+    <pad2 />
+    <hitStopType_Defencer />
+    <ninsatuNum Wiki="Amount of healthbars" />
+    <knockbackParamId Refs="KnockBackParam" />
+    <fallDamageDump />
+    <staminaGuardDef Wiki="Amount of Posture damage this Npc can block" />
+    <pcAttrB Wiki="When Npc is killed, move character tendency towards black" />
+    <pcAttrW Wiki="When Npc is killed, move character tendency towards white" />
+    <pcAttrL Wiki="When Npc is killed, move character tendency left" />
+    <pcAttrR Wiki="When Npc is killed, move character tendency right" />
+    <areaAttrB Wiki="When Npc is killed, move world tendency towards black" />
+    <areaAttrW Wiki="When Npc is killed, move world tendency towards white" />
+    <areaAttrL Wiki="When Npc is killed, move world tendency left" />
+    <areaAttrR Wiki="When Npc is killed, move world tendency right" />
+    <mpRecoverBaseVel />
+    <flickDamageCutRate />
+    <defaultLodParamId />
+    <drawType />
+    <npcType />
+    <teamType Wiki="What this Npc will be hostile towards as well as who can damage who" Enum="TEAM_TYPE" />
+    <moveType />
+    <lockDist />
+    <materialSe_Weak1 Wiki="Determines the sound effect when weak point damage is received." />
+    <materialSfx_Weak1 Wiki="Determines the SFX that occurs when receiving weak point damage." />
+    <partsDamageType />
+    <maxUndurationAng />
+    <guardLevel />
+    <burnSfxType />
+    <poisonGuardResist Wiki="Amount of Poison build-up the Npc can block" />
+    <diseaseGuardResist Wiki="Amount of Terror build-up the Npc can block" />
+    <bloodGuardResist Wiki="Amount of Burn build-up the Npc can block" />
+    <curseGuardResist Wiki="Amount of Enfeeble build-up the Npc can block" />
+    <parryAttack />
+    <parryDefence />
+    <sfxSize />
+    <pushOutCamRegionRadius />
+    <hitStopType />
+    <ladderEndChkOffsetTop />
+    <ladderEndChkOffsetLow />
+    <useRagdollCamHit IsBool="" />
+    <disableClothRigidHit IsBool="" />
+    <useRagdoll IsBool="" />
+    <isWeakA Wiki="If enabled, the Npc will take extra damage from weapons and speffects that boost WeakA_DamageRate" IsBool="" />
+    <isGhost IsBool="" />
+    <isNoDamageMotion IsBool="" />
+    <isUnduration IsBool="" />
+    <isChangeWanderGhost IsBool="" />
+    <modelDispMask0 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask1 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask2 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask3 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask4 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask5 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask6 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask7 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask8 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask9 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask10 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask11 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask12 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask13 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask14 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask15 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <isEnableNeckTurn IsBool="" />
+    <disableRespawn IsBool="" />
+    <isMoveAnimWait IsBool="" />
+    <isCrowd IsBool="" />
+    <isWeakB Wiki="If enabled, the Npc will take extra damage from weapons and speffects that boost WeakB_DamageRate" IsBool="" />
+    <isWeakC Wiki="If enabled, the Npc will take extra damage from weapons and speffects that boost WeakC_DamageRate" IsBool="" />
+    <isWeakD Wiki="If enabled, the Npc will take extra damage from weapons and speffects that boost WeakD_DamageRate" IsBool="" />
+    <doesAlwaysUseSpecialTurn IsBool="" />
+    <vowType />
+    <disableInitializeDead IsBool="" />
+    <isHitRumble IsBool="" />
+    <isSmoothTurn IsBool="" />
+    <isWeakE Wiki="If enabled, the Npc will take extra damage from weapons and speffects that boost WeakE_DamageRate" IsBool="" />
+    <isWeakF Wiki="If enabled, the Npc will take extra damage from weapons and speffects that boost WeakF_DamageRate" IsBool="" />
+    <modelDispMask16 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask17 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask18 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask19 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask20 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask21 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask22 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask23 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask24 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask25 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask26 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask27 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask28 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask29 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask30 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <modelDispMask31 Wiki="Enables or disables this Npc model part" IsBool="" />
+    <itemSearchRadius />
+    <chrHitHeight />
+    <chrHitRadius />
+    <specialTurnType />
+    <isSoulGetByBoss IsBool="" />
+    <isBulletOwner_byObject IsBool="" />
+    <isUseLowHitFootIk IsBool="" />
+    <isNpcPlayerCalculatePvPDamage IsBool="" />
+    <isIntegrateRaycastCheckRoof IsBool="" />
+    <isMultilingual IsBool="" />
+    <isEnableFe IsBool="" />
+    <isCreateCorpseTarget Wiki="When this Npc dies their body will be used as Corpse Target that allies can spot" IsBool="" />
+    <def_dark Wiki="Flat dark defense" />
+    <specialTurnDistanceThreshold />
+    <footEffectSfxId />
+    <materialSe1 Wiki="Determines the sound when receiving damage" />
+    <materialSfx1 Wiki="Determines the SFX that occures when receiving damage" />
+    <materialSe_Weak2 Wiki="Determines the sound when receiving weak point damage" />
+    <materialSfx_Weak2 Wiki="Determines the SFX that occurs when weak point damage is received" />
+    <materialSe2 Wiki="Determines the sound when receiving damage" />
+    <materialSfx2 Wiki="Determines the SFX that occurs when receiving damage" />
+    <spEffectID8 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID9 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID10 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID11 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID12 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID13 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID14 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID15 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <footEffectDecalBaseId1 />
+    <toughness />
+    <toughnessRecoverCorrection />
+    <neutralDamageCutRate Wiki="Resistance to Neutral damage" />
+    <slashDamageCutRate Wiki="Resistance to Slash damage" />
+    <lightHitDamageCutRate Wiki="Resistance to Light Hit damage" />
+    <thrustDamageCutRate Wiki="Resistance to Thrust damage" />
+    <magicDamageCutRate Wiki="Resistance to Magic damage" />
+    <fireDamageCutRate Wiki="Resistance to Fire damage" />
+    <thunderDamageCutRate Wiki="Resistance to Lightning damage" />
+    <darkDamageCutRate Wiki="Resistance to Dark damage" />
+    <darkGuardCutRate Wiki="Amount of dark damage this Npc can block" />
+    <clothUpdateOffset />
+    <npcPlayerWeightType />
+    <normalChangeModelId />
+    <normalChangeAnimChrId />
+    <paintRenderTargetSize />
+    <cultSettingId />
+    <squatMapHitHeight />
+    <squatMapHitRadius />
+    <squatChrHitHeight />
+    <squatChrHitRadius />
+    <partsAtkParamId1 Wiki="Attack parameter ID to refer to when damage hits part 1" />
+    <partsAtkParamId2 Wiki="Attack parameter ID to refer to when damage hits part 2" />
+    <partsAtkParamId3 Wiki="Attack parameter ID to refer to when damage hits part 3" />
+    <partsAtkParamId4 Wiki="Attack parameter ID to refer to when damage hits part 4" />
+    <partsAtkParamId5 Wiki="Attack parameter ID to refer to when damage hits part 5" />
+    <partsAtkParamId6 Wiki="Attack parameter ID to refer to when damage hits part 6" />
+    <partsAtkParamId7 Wiki="Attack parameter ID to refer to when damage hits part 7" />
+    <partsAtkParamId8 Wiki="Attack parameter ID to refer to when damage hits part 8" />
+    <phantomShaderId Wiki="Applies this PhantomParam row to the Npc" Refs="PhantomParam" />
+    <multiPlayCorrectionParamId />
+    <maxAnklePitchAngle />
+    <resist_freeze Wiki="Base Shock resistance" />
+    <freezeGuardResist Wiki="Amount of Shock build-up the Npc can block" />
+    <teamTypeByGiantNut />
+    <lockCameraParamId Refs="LockCamParam" />
+    <spEffectID16 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID17 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID18 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID19 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID20 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID21 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID22 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID23 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID24 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID25 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID26 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID27 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID28 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID29 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID30 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <spEffectID31 Wiki="Applies SpEffect to the Npc" Refs="SpEffectParam" />
+    <disableLockOnAng />
+    <clothOffLodLevel />
+    <isAffectedPlayingBgm Wiki="Will combat music play when this Npc targets the player?" IsBool="" />
+    <estusFlaskRecoveryParamId Wiki="Defines how many Flasks will be regained when the enemy is killed" Refs="HPEstusFlaskRecoveryParam,MPEstusFlaskRecoveryParam" />
+    <roleNameId />
+    <estusFlaskLotPoint Wiki="Chance for both Hp and Fp Flasks to drop" />
+    <hpEstusFlaskLotPoint Wiki="Chance for Hp Flasks to drop" />
+    <mpEstusFlaskLotPoint Wiki="Chance for Fp Flasks to drop" />
+    <estusFlaskRecovery_failedLotPointAdd Wiki="If the Flask Lot isn't successful add this amount to estusFlaskLotPoint" />
+    <hpEstusFlaskRecovery_failedLotPointAdd Wiki="If the Flask Lot isn't successful add this amount to hpEstusFlaskLotPoint" />
+    <mpEstusFlaskRecovery_failedLotPointAdd Wiki="If the Flask Lot isn't successful add this amount to mpEstusFlaskLotPoint" />
+    <WanderGhostPhantomId />
+    <footEffectDecalBaseId2 />
+    <footEffectDecalBaseId3 />
+    <maxDebtStamina />
+    <fallNoDamageDist Wiki="Max amount of distance this Npc can fall before taking damage" />
+    <slashStaminaDmgRate Wiki="Resistance to Slash Posture damage" />
+    <lightHitStaminaDmgRate Wiki="Resistance to Light Hit Posture damage" />
+    <thrustStaminaDmgRate Wiki="Resistance to Thrust Posture damage" />
+    <neutralStaminaDmgRate Wiki="Resistance to Neutral Posture damage" />
+    <ninsatuStaminaDmgRate Wiki="Resistance to Ninsatsu Posture damage" />
+    <heavyHitStaminaDmgRate Wiki="Resistance to Heavy Hit Posture damage" />
+    <antiGroundStaminaDmgRate Wiki="Resistance to Anti Ground Posture damage" />
+    <antiAirStaminaDmgRate Wiki="Resistance to Anti Air Posture damage" />
+    <lightShootStaminaDmgRate Wiki="Resistance to Light Shoot Posture damage" />
+    <def_neutral Wiki="Flat neutral defense" />
+    <def_ninsatsu Wiki="Flat ninsatsu defense" />
+    <def_heavyHit Wiki="Flat heavy hit defense" />
+    <def_antiGround Wiki="Flat anti ground defense" />
+    <def_antiAir Wiki="Flat anti air defense" />
+    <def_lightShoot Wiki="Flat light shoot defense" />
+    <ninsatsuDamageRate Wiki="Resistance to Ninsatsu damage" />
+    <heavyHitDamageRate Wiki="Resistance to Heavy Hit damage" />
+    <antiGroundDamageRate Wiki="Resistance to Anti Ground damage" />
+    <antiAirDamageRate Wiki="Resistance to Anti Air damage" />
+    <lightShootDamageRate Wiki="Resistance to Light Shoot damage" />
+    <neutralGuardCutRate Wiki="Amount of neutral damage this Npc can block" />
+    <ninsatsuGuardCutRate Wiki="Amount of ninsatsu damage this Npc can block" />
+    <heavyHitGuardCutRate Wiki="Amount of heavy hit damage this Npc can block" />
+    <antiGroundGuardCutRate Wiki="Amount of anti ground damage this Npc can block" />
+    <antiAirGuardCutRate Wiki="Amount of anti air damage this Npc can block" />
+    <lightShootGuardCutRate Wiki="Amount of light shoot damage this Npc can block" />
+    <staminaControlParamId Wiki="Determines the posture regen values used whenever Event960 is active on an Npc's animations" Refs="StaminaControlParam" />
+    <resourceItemLotParamId Wiki="Item Lottery that is rolled when the Npc is killed (for Resource Items)" Refs="ResourceItemLotParam" />
+    <lookAtHeightOffset />
+    <staminaDamageRate_DamageGroup1 Wiki="Multiplier applied to stamina damage processing for damage group 1 (damage group is set by FD4ParamWeaver)" />
+    <staminaDamageRate_DamageGroup2 Wiki="Multiplier applied to stamina damage processing for damage group 2 (damage group is set by FD4ParamWeaver)" />
+    <staminaDamageRate_DamageGroup3 Wiki="Multiplier applied to stamina damage processing for damage group 3 (damage group is set by FD4ParamWeaver)" />
+    <staminaDamageRate_DamageGroup4 Wiki="Multiplier applied to stamina damage processing for damage group 4 (damage group is set by FD4ParamWeaver)" />
+    <staminaDamageRate_DamageGroup5 Wiki="Multiplier applied to stamina damage processing for damage group 5 (damage group is set by FD4ParamWeaver)" />
+    <staminaDamageRate_DamageGroup6 Wiki="Multiplier applied to stamina damage processing for damage group 6 (damage group is set by FD4ParamWeaver)" />
+    <staminaDamageRate_DamageGroup7 Wiki="Multiplier applied to stamina damage processing for damage group 7 (damage group is set by FD4ParamWeaver)" />
+    <staminaDamageRate_DamageGroup8 Wiki="Multiplier applied to stamina damage processing for damage group 8 (damage group is set by FD4ParamWeaver)" />
+    <staminaDamageRate_DamageGroupWeak Wiki="Multiplier applied to stamina damage processing for damage group weak (damage group is set by FD4ParamWeaver)" />
+    <chrPhysicsHomingIdOffset />
+    <activateBorderDist />
+    <deactivateIntervalDist />
+    <resourceItemLotParamId2 Wiki="Item Lottery that is rolled when the Npc is killed (for Resource Items)" Refs="ResourceItemLotParam" />
+    <attriAStaminaDmgRate Wiki="Resistance to Attribute A Posture damage" />
+    <attriBStaminaDmgRate Wiki="Resistance to Attribute B Posture damage" />
+    <attriCStaminaDmgRate Wiki="Resistance to Attribute C Posture damage" />
+    <def_attriA Wiki="Flat attribute A defense" />
+    <def_attriB Wiki="Flat attribute B defense" />
+    <def_attriC Wiki="Flat attribute C defense" />
+    <attriAGuardCutRate Wiki="Amount of attribute A damage this Npc can block" />
+    <attriBGuardCutRate Wiki="Amount of attribute B damage this Npc can block" />
+    <attriCGuardCutRate Wiki="Amount of attribute C damage this Npc can block" />
+    <maxAnkleRollAngle />
+    <attriADamageCutRate Wiki="Resistance to Attribute A damage" />
+    <attriBDamageCutRate Wiki="Resistance to Attribute B damage" />
+    <attriCDamageCutRate Wiki="Resistance to Attribute C damage" />
+    <damageDropSoul Wiki="Amount of Sen dropped when hit with Golden Vortex" />
+    <damageDropItemLotId_1 Wiki="ItemLot rolled when hit with Golden Vortex" Refs="ItemLotParam" />
+    <damageDropItemLotId_2 Wiki="ItemLot rolled when hit with Golden Vortex" Refs="ItemLotParam" />
+    <camDitherFadeMinDist Wiki="Minimum camera dither fade distance. Setting both 'Camera dither fade minimum distance' and 'Camera dither fade maximum distance' to '0.0' disables camera dither fade. This parameter is valid only for parameters whose last 4 digits of the number are 0000'" />
+    <camDitherFadeMaxDist Wiki="Maximum camera dither fade distance. Setting both 'Camera dither fade minimum distance' and 'Camera dither fade maximum distance' to '0.0' disables camera dither fade. This parameter is valid only for parameters whose last 4 digits of the number are '0000'" />
+    <lifeCountItemLotId Wiki="Specify the lottery ID of the remaining life item to be obtained upon death" />
+    <skillPoint Wiki="Amount of XP dropped when the Npc is killed" />
+    <HardModeSpEffectID Wiki="Scaling speffect for Charmless difficulty, only applied when the player doesn't have Kuro's Charm" Refs="SpEffectParam" />
+    <offsetSeID Wiki="If the SE to be played is 'cX?????????' and X is 1 to 8, offset the ID of the SE to be played by the specified value. This is a function to play different SEs when the models are different but the animation is the same, such as a dog and an Innsmouth dog" />
+    <ninsatsuResourceItemLotId_1 Wiki="Resource Item dropped when the Npc recieves ninsatsu damage (deathblows)" Refs="ResourceItemLotParam" />
+    <ninsatsuResourceItemLotId_2 Wiki="Resource Item dropped when the Npc recieves ninsatsu damage (deathblows)" Refs="ResourceItemLotParam" />
+    <growthDopingSpEffectID Wiki="Area Scaling, when the player doesn't have Kuro's Charm and is not in NG+ the speffects Id is offset by 700" Refs="SpEffectParam" />
+  </Field>
+  <Self Wiki="Default Npc stats" AlternativeOrder="behaviorVariationId,nameId,-,
+getSoul,damageDropSoul,skillPoint,-,
+hp,ninsatuNum,stamina,staminaRecoverBaseVel,staminaControlParamId,-,
+superArmorDurability,superArmorRecoverCorrection,superArmorBrakeKnockbackDist,-,
+itemLotId_1,itemLotId_2,itemLotId_3,itemLotId_4,itemLotId_5,itemLotId_6,resourceItemLotParamId,resourceItemLotParamId2,ninsatsuResourceItemLotId_1,ninsatsuResourceItemLotId_2,damageDropItemLotId_1,damageDropItemLotId_2,lifeCountItemLotId,dropType,itemSearchRadius,-,
+estusFlaskRecoveryParamId,estusFlaskLotPoint,hpEstusFlaskLotPoint,mpEstusFlaskLotPoint,estusFlaskRecovery_failedLotPointAdd,hpEstusFlaskRecovery_failedLotPointAdd,mpEstusFlaskRecovery_failedLotPointAdd,-,
+spEffectID0,spEffectID1,spEffectID2,spEffectID3,spEffectID4,spEffectID5,spEffectID6,spEffectID7,spEffectID8,spEffectID9,spEffectID10,spEffectID11,spEffectID12,spEffectID13,spEffectID14,spEffectID15,spEffectID16,spEffectID17,spEffectID18,spEffectID19,spEffectID20,spEffectID21,spEffectID22,spEffectID23,spEffectID24,spEffectID25,spEffectID26,spEffectID27,spEffectID28,spEffectID29,spEffectID30,spEffectID31,GameClearSpEffectID,growthDopingSpEffectID,HardModeSpEffectID,-,
+modelDispMask0,modelDispMask1,modelDispMask2,modelDispMask3,modelDispMask4,modelDispMask5,modelDispMask6,modelDispMask7,modelDispMask8,modelDispMask9,modelDispMask10,modelDispMask11,modelDispMask12,modelDispMask13,modelDispMask14,modelDispMask15,modelDispMask16,modelDispMask17,modelDispMask18,modelDispMask19,modelDispMask20,modelDispMask21,modelDispMask22,modelDispMask23,modelDispMask24,modelDispMask25,modelDispMask26,modelDispMask27,modelDispMask28,modelDispMask29,modelDispMask30,modelDispMask31,-,
+def_phys,def_slash,def_lightHit,def_thrust,def_neutral,def_ninsatsu,def_heavyHit,def_antiGround,def_antiAir,def_lightShoot,def_attriA,def_attriB,def_attriC,def_mag,def_fire,def_thunder,def_dark,defFlickPower,-,
+slashDamageCutRate,lightHitDamageCutRate,thrustDamageCutRate,neutralDamageCutRate,ninsatsuDamageRate,heavyHitDamageRate,antiGroundDamageRate,antiAirDamageRate,lightShootDamageRate,attriADamageCutRate,attriBDamageCutRate,attriCDamageCutRate,magicDamageCutRate,fireDamageCutRate,thunderDamageCutRate,darkDamageCutRate,flickDamageCutRate,-,
+slashStaminaDmgRate,lightHitStaminaDmgRate,thrustStaminaDmgRate,neutralStaminaDmgRate,ninsatuStaminaDmgRate,heavyHitStaminaDmgRate,antiGroundStaminaDmgRate,antiAirStaminaDmgRate,lightShootStaminaDmgRate,attriAStaminaDmgRate,attriBStaminaDmgRate,attriCStaminaDmgRate,-,
+physGuardCutRate,slashGuardCutRate,lightHitGuardCutRate,thrustGuardCutRate,neutralGuardCutRate,ninsatsuGuardCutRate,heavyHitGuardCutRate,antiGroundGuardCutRate,antiAirGuardCutRate,lightShootGuardCutRate,attriAGuardCutRate,attriBGuardCutRate,attriCGuardCutRate,magGuardCutRate,fireGuardCutRate,thunGuardCutRate,darkGuardCutRate,staminaGuardDef,-,
+resist_poison,resist_desease,resist_blood,resist_freeze,resist_curse,-,
+poisonGuardResist,diseaseGuardResist,bloodGuardResist,freezeGuardResist,curseGuardResist,-,
+hitStopType,hitStopType_Defencer,-,
+damageRate_DamageGroup1,damageRate_DamageGroup2,damageRate_DamageGroup3,damageRate_DamageGroup4,damageRate_DamageGroup5,damageRate_DamageGroup6,damageRate_DamageGroup7,damageRate_DamageGroup8,damageRate_DamageGroupWeak,staminaDamageRate_DamageGroup1,staminaDamageRate_DamageGroup2,staminaDamageRate_DamageGroup3,staminaDamageRate_DamageGroup4,staminaDamageRate_DamageGroup5,staminaDamageRate_DamageGroup6,staminaDamageRate_DamageGroup7,staminaDamageRate_DamageGroup8,staminaDamageRate_DamageGroupWeak,partsAtkParamId1,partsAtkParamId2,partsAtkParamId3,partsAtkParamId4,partsAtkParamId5,partsAtkParamId6,partsAtkParamId7,partsAtkParamId8,partsDamageType,-,
+isWeakA,isWeakB,isWeakC,isWeakD,isWeakE,isWeakF,-,
+drawType,npcType,teamType,moveType,-,
+guardAngle,guardLevel,parryAttack,parryDefence,-,
+knockbackParamId,knockbackRate_vsPlayer_DirectHit,knockbackRate_vsPlayer_Guard,knockbackRate_vsPlayer_JustGuard,knockbackRate_vsEnemy_DirectHit,knockbackRate_vsEnemy_Guard,knockbackRate_vsEnemy_JustGuard,-,
+materialSfx1,materialSe1,materialSfx_Weak1,materialSe_Weak1,materialSfx2,materialSe2,materialSfx_Weak2,materialSe_Weak2,-,
+footEffectSfxId,footEffectDecalBaseId1,footEffectDecalBaseId2,footEffectDecalBaseId3,-,
+hitRadius,hitHeight,hitYOffset,chrHitRadius,chrHitHeight,squatChrHitRadius,squatChrHitHeight,squatMapHitRadius,squatMapHitHeight,-,
+animIdOffset,animIdOffset2,spMoveAnimId1,spMoveAnimId2,moveAnimId,-,
+clothOffLodLevel,clothUpdateOffset,-,
+phantomShaderId,WanderGhostPhantomId,-,
+lockCameraParamId,disableLockOnAng,lockDist,-,
+fallDamageDump,fallNoDamageDist,-,
+normalChangeAnimChrId,normalChangeModelId,normalChangeResouceId,normalChangeTexChrId,-,
+specialTurnType,specialTurnDistanceThreshold,turnVellocity,-,
+disableRespawn,disableInitializeDead,isCrowd,isGhost,isChangeWanderGhost,isNoDamageMotion,isAffectedPlayingBgm,isCreateCorpseTarget,isHitSwimMapCollision,isDeadSwimMapCollision,isDopingProgressOffset,useRagdollCamHit,disableClothRigidHit,useRagdoll,isUnduration,isEnableNeckTurn,isMoveAnimWait,doesAlwaysUseSpecialTurn,doesPreventTalkingLookAtVibration,isSmoothTurn,isHitRumble,isEnableFe,isMultilingual,isIntegrateRaycastCheckRoof,isUseLowHitFootIk,isBulletOwner_byObject,isSoulGetByBoss,-,
+deadMoveForceRate,weight,networkWarpDist,defaultLodParamId,maxUndurationAng,burnSfxType,sfxSize,pushOutCamRegionRadius,npcPlayerWeightType,paintRenderTargetSize,cultSettingId,maxAnklePitchAngle,maxAnkleRollAngle,ghostModelId,roleNameId,maxDebtStamina,lookAtHeightOffset,chrPhysicsHomingIdOffset,activateBorderDist,deactivateIntervalDist,camDitherFadeMinDist,camDitherFadeMaxDist,offsetSeID,-,
+dbgBehaviorL1,dbgBehaviorR1,dbgBehaviorL2,dbgBehaviorR2,dbgBehaviorLL,dbgBehaviorRL,dbgBehaviorLR,dbgBehaviorRR,dbgBehaviorLU,dbgBehaviorRU,dbgBehaviorLD,dbgBehaviorRD,-,
+pcAttrB,pcAttrW,pcAttrL,pcAttrR,areaAttrB,areaAttrW,areaAttrL,areaAttrR,mp,mpRecoverBaseVel,vowType,teamTypeByGiantNut,humanityLotId,multiPlayCorrectionParamId,isNpcPlayerCalculatePvPDamage,ladderEndChkOffsetLow,ladderEndChkOffsetTop,toughness,toughnessRecoverCorrection,-" />
+</PARAMMETA>

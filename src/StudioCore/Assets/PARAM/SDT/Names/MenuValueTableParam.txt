@@ -1,0 +1,5 @@
+90 Consumption type -- 消費タイプ
+100 A table that converts numbers to the letters E to S -- 数値をE～Sの文字へ変換するテーブル
+110 Pledge -- 誓約
+120 Weapon type -- 武器種別
+121 Convert the value of the weapon para WEP_TYPE_FOR_TEXT -- 武器パラ WEP_TYPE_FOR_TEXT の値を変換する

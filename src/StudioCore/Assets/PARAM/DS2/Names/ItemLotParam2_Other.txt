@@ -1,0 +1,1432 @@
+0 None
+10000 Awestone
+10010 Pharros' Lockstone- Rat Tail
+10020 Dragon Scale
+10030 Bonfire Ascetic- Human Effigy
+10040 Sunlight Medal
+10050 Token of Fidelity
+10060 Sunlight Medal
+10070 Smooth & Silky Stone
+10080 Smooth & Silky Stone
+10090 None
+10100 None
+10110 Token of Fidelity
+10120 Token of Fidelity
+10130 None
+10140 Token of Spite
+10150 Token of Spite
+10160 Token of Spite
+10170 Token of Spite
+10180 Titanite Chunk- Titanite Slab- Twinkling Titanite- Petrified Dragon Bone
+10190 Pharros' Lockstone- Smooth & Silky Stone
+10200 Pharros' Lockstone- Smooth & Silky Stone
+10210 Dragon Scale
+10220 Bonfire Ascetic- Human Effigy
+10230 Cracked Blue Eye Orb
+10240 Cracked Red Eye Orb
+10250 Human Effigy
+10260 Human Effigy
+10270 Human Effigy
+10280 Titanite Chunk- Titanite Slab- Twinkling Titanite- Petrified Dragon Bone
+11000 UNKNOWN
+11010 UNKNOWN
+11020 UNKNOWN
+11030 UNKNOWN
+11040 UNKNOWN
+11050 UNKNOWN
+11060 UNKNOWN
+11070 UNKNOWN
+11080 UNKNOWN
+11090 UNKNOWN
+11100 UNKNOWN
+11110 UNKNOWN
+11120 UNKNOWN
+11130 UNKNOWN
+11140 UNKNOWN
+11150 UNKNOWN
+11160 UNKNOWN
+11170 UNKNOWN
+11180 UNKNOWN
+11190 UNKNOWN
+11200 UNKNOWN
+11210 UNKNOWN
+11220 UNKNOWN
+11230 UNKNOWN
+11240 UNKNOWN
+106000 [Boss - Prowling Magus & Congregation] Titanite Slab
+154000 [Boss - Skeleton Lords] Skeleton Lord's Soul
+154001 [Boss - Skeleton Lords NG+] Skeleton Lord's Soul- Clear Bluestone Ring +2
+212000 [Boss - Guardian Dragon] Guardian Dragon Soul
+223500 [Boss - Royal Rat Authority] Royal Rat Authority Soul- Rat Tail
+226100 [Boss - Royal Rat Vanguard] Royal Rat Vanguard Soul- Rat Tail
+303300 [Boss - Flexile Sentry] Flexile Sentry Soul
+305000 [Boss - Smelter Demon] Smelter Demon Soul
+305010 [Boss - Smelter Demon] Smelter Demon Soul
+309600 [Boss - The Last Giant] Soul of the Last Giant- Soldier Key
+309610 [Boss - Dragonrider] Dragonrider Soul
+309700 [Boss - Giant Lord] Giant Lord Soul- Giant's Kinship
+309701 [Boss - Giant Lord NG+] Giant Lord Soul- Giant's Kinship- Ring of Giants +2
+318000 [Boss - The Pursuer] Soul of the Pursuer- Ring of Blades
+324000 [Boss - Belfry Gargoyles] Belfry Gargoyle Soul
+324001 [Boss - Belfry Gargoyles NG+] Belfry Gargoyle Soul- Covetous Gold Serpent Ring +2
+325000 [Boss - Ruin Sentinels] Ruin Sentinel Soul
+326000 [Boss - The Rotten] Soul of the Rotten
+326001 [Boss - The Rotten NG+] Soul of the Rotten- Old Dead One Soul
+332000 [Boss - Throne Defender & Throne Watcher] Throne Defender Soul- Throne Watcher Soul
+332001 [Boss - Throne Defender & Throne Watcher NG+] Throne Defender Soul- Throne Watcher Soul- Ring of the Evil Eye +2
+333000 [Boss - Velstadt- the Royal Aegis] Soul of Velstadt
+333001 [Boss - Velstadt- the Royal Aegis NG+] Soul of Velstadt- Royal Soldier's Ring +2
+500000 [Boss - Covetous Demon] Covetous Demon Soul
+501000 [Boss - Mytha- the Baneful Queen] Mytha- the Baneful Queen Soul
+501001 [Boss - Mytha- the Baneful Queen NG+] Mytha- the Baneful Queen Soul- Covetous Silver Serpent Ring +2
+503000 [Boss - Scorpioness Najka] Scorpioness Najka Soul
+503001 [Boss - Scorpioness Najka NG+] Scorpioness Najka Soul- Southern Ritual Band +2
+504000 [Boss - Looking Glass Knight] Looking Glass Knight Soul
+504001 [Boss - Looking Glass Knight NG+] Looking Glass Knight Soul- Ring of Steel Protection +2
+506100 [Boss - Darklurker] Darklurker Soul
+514500 UNKNOWN
+600000 [Boss - Ancient Dragon] Ashen Mist Heart- Soul of a Giant- Petrified Dragon Bone
+602000 [Boss - Demon of Song] Demon of Song Soul- Key to the Embedded
+603000 [Boss - The Duke's Dear Freja] Soul of the Duke's Dear Freja
+603001 [Boss - The Duke's Dear Freja NG+] Soul of the Duke's Dear Freja- Old Paledrake Soul
+607000 [Boss - Old Iron King] Old Iron King Soul
+607001 [Boss - Old Iron King NG+] Old Iron King Soul- Old King Soul
+611000 [Boss - Dragonrider] Dragonrider Soul
+619100 [Boss - Executioner's Chariot] Executioner's Chariot Soul
+619101 [Boss - Executioner's Chariot NG+] Executioner's Chariot Soul- Chloranthy Ring +2
+625000 [Boss - Old Dragonslayer] Old Dragonslayer Soul- Old Leo Ring
+626000 [Boss - The Lost Sinner] Soul of the Lost Sinner
+626001 [Boss - The Lost Sinner] Soul of the Lost Sinner- Old Witch Soul
+627000 [Boss - Nashandra] Soul of Nashandra
+675000 [Boss - Fume Knight] Soul of the Fume Knight- Soul of Nadalia- Bride of Ash
+675010 [Boss - Fume Knight] Soul of the Fume Knight
+679000 [Boss - Aava- the King's Pet] Soul of Aava- the King's Pet
+679010 [Boss - Lud & Zallen- the King's Pets] Soul of Lud- the King's Pet- Soul of Zallen- the King's Pet- Lingering Dragoncrest Ring+2
+680000 [Boss - Sir Alonne] Soul of Sir Alonne
+681000 [Boss - Sinh- the Slumbering Dragon] Soul of Sinh- the Slumbering Dragon
+682000 [Boss - Elana- the Squalid Queen] Soul of Elana- Squalid Queen
+690000 [Boss - Burnt Ivory King] Soul of the Ivory King
+862000 [Boss - Afflicted Graverobber- Ancient Soldier Varg & Cerah the Old Explorer] Twinkling Titanite- Petrified Dragon Bone- Titanite Slab
+862001 [Boss - Afflicted Graverobber- Ancient Soldier Varg & Cerah the Old Explorer] Twinkling Titanite- Petrified Dragon Bone- Titanite Slab- Ring of Thorns+2
+1307000 [NPC - Head of Vengarl] Vengarl's Helm
+1307100 [NPC - Head of Vengarl] Vengarl's Helm
+1502000 [NPC - Manscorpion Tark] Fragrant Branch of Yore
+1502010 [NPC - Manscorpion Tark] Black Scorpion Stinger + Second Dragon Ring
+1506000 [NPC - Grave Warden Agdayne] Darkdrift + Agdayne's Set
+1700000 [NPC - Emerald Herald] Estus Flask
+1701000 [NPC - Emerald Herald] Aged Feather
+1704000 [NPC - Laddersmith Gilligan] Melu Scimitar
+1705000 [NPC - Strowen] Human Effigy (King's Ring)
+1705100 UNKNOWN
+1705300 UNKNOWN
+1721000 [NPC - Chancellor Wellager] Royal Dirk- Espada Ropera- Llewellyn Set
+1723000 [NPC - Housekeeper Milibeth] Handmaid's Ladle
+1724000 [NPC - Captain Drummond] Drangleic Helm
+1725000 [NPC - Darkdiver Grandahl] Dragon Chime
+1726000 [NPC - Lonesome Gavlan] Gyrm Greataxe
+1741000 [NPC - Crestfallen Saulden] Ring of Steel Protection
+1741010 [NPC - Crestfallen Saulden] Soul Vessel
+1742000 [NPC - Creighton the Wanderer] Tseldora Den Key
+1742010 [NPC - Creighton the Wanderer] Creighton's Set
+1743000 [NPC - Benhart of Jugo] Bluemoon Greatsword- Benhart's Parma- Benhart's Set
+1744000 [NPC - Mild-mannered Pate] Tseldora Den Key
+1744010 [NPC - Mild-mannered Pate] Pate's Spear- Pate's Shield- Pate's Set- Ring of Thorns
+1744020 [NPC - Mild-mannered Pate] White Sign Soapstone
+1751000 [NPC - Cale the Cartographer] House Key
+1751010 [NPC - Cale the Cartographer] Cale's Set
+1752000 [NPC - Lucatiel of Mirrah] Mirrah Greatsword- Lucatiel's Set
+1752010 [NPC - Lucatiel of Mirrah] Human Effigy
+1752020 [NPC - Lucatiel of Mirrah] Ring of Steel Protection +1
+1753000 [NPC - Belfry Guard] Rusted Coin
+1753010 UNKNOWN
+1753020 [NPC - Belfry Guard] Bell Keeper's Seal
+1754000 [NPC - Merchant Hag Melentia] Covetous Silver Serpent Ring +1
+1756000 [NPC - The Rat King] Crest of the Rat
+1757000 UNKNOWN
+1758000 UNKNOWN
+1759000 UNKNOWN
+1760000 [NPC - Milfanito] Divine Blessing
+1760010 [NPC - Milfanito] Smooth & Silky Stone
+1760020 [NPC - Milfanito] Divine Blessing
+1760100 [NPC - Milfanito] Divine Blessing
+1760110 [NPC - Milfanito] Petrified Something
+1760120 [NPC - Milfanito] Fire Seed
+1760200 [NPC - Milfanito] Ring of the Dead
+1761000 [NPC - Maughlin the Armourer] Aurous Set
+1762000 [NPC - Stone Trader Chloanne] Twinkling Titanite
+1763000 [NPC - Rosabeth of Melfia] Prism Stone
+1764000 [NPC - Blacksmith Lenigrast] Blacksmith's Hammer
+1764300 [NPC - Steady Hand McDuff] Titanite Slab
+1766000 [NPC - Carhillion of the Fold] Northern Ritual Band +1
+1768000 [NPC - Straid of Olaphis] Black Set
+1769000 [NPC - Licia of Lindeldt] Idol's Chime + Saint's Set
+1770000 [NPC - Felkin the Outcast] Sunset Staff + Hexer's Set
+1771000 [NPC - Royal Sorcerer Navlaan] Chaos Set
+1771010 [NPC - Royal Sorcerer Navlaan] Dispelling Ring
+1771020 [NPC - Royal Sorcerer Navlaan] Simpleton's Spice
+1771030 [NPC - Royal Sorcerer Navlaan] Forbidden Sun
+1771040 [NPC - Royal Sorcerer Navlaan] Unleash Magic
+1772000 [NPC - Magerold of Lanafir] Covetous Gold Serpent Ring +1
+1776000 [NPC - Unknown] Human Effigy
+1777000 UNKNOWN
+1783040 [NPC - Titchy Gren] Scythe of Nahr Alma- Nahr Alma Set
+1784000 [NPC - Cromwell the Pardoner] Ring of Resistance
+1785040 [NPC - Blue Sentinel Targray] Targray's Set
+1786000 UNKNOWN
+1787000 [NPC - Ancient Dragon] Ashen Mist Heart
+1788000 [NPC - Alsanna- Silent Oracle] Loyce Gauntlets- Leggings
+1788010 [NPC - Alsanna- Silent Oracle] Loyce Armor
+1788020 [NPC - Alsanna- Silent Oracle] Loyce Helm
+1788030 [NPC - Alsanna- Silent Oracle] Soul of Alsanna- Silent Oracle
+2001000 [Covenant - Way of Blue 0] Blue Seal
+2001011 [Covenant - Way of Blue 1] Blue Tearstone Ring
+2001012 [Covenant - Way of Blue 2] Bloodbite Ring
+2001013 [Covenant - Way of Blue 3] Titanite Slab
+2002000 [Covenant - Blue Sentinels 0] Guardian's Seal
+2002011 [Covenant - Blue Sentinels 1] Gower's Ring of Protection
+2002012 [Covenant - Blue Sentinels 2] Spirit Tree Shield
+2002013 [Covenant - Blue Sentinels 3] Blue Knight's Halberd
+2003000 [Covenant - Brotherhood of Blood 0] Crest of Blood
+2003011 [Covenant - Brotherhood of Blood 1] Curved Twinblade
+2003012 [Covenant - Brotherhood of Blood 2] Crescent Sickle
+2003013 [Covenant - Brotherhood of Blood 3] Red Tearstone Ring
+2004000 [Covenant - Bell Keepers 0] Bell Keeper's Seal
+2004011 [Covenant - Bell Keepers 1] Titanite Chunk
+2004012 [Covenant - Bell Keepers 2] Titanite Slab
+2004013 [Covenant - Bell Keepers 3] Bell Keeper's Set
+2005000 [Covenant - Rat King 0] Crest of the Rat
+2005011 [Covenant - Rat King 1] Petrified Something
+2005012 [Covenant - Rat King 2] Ash Knuckle Ring
+2005013 [Covenant - Rat King 3] Slumbering Dragoncrest Ring
+2006000 [Covenant - Pilgrims of Dark 0] Abyss Seal
+2006011 [Covenant - Pilgrims of Dark 1] Resonant Soul
+2006012 [Covenant - Pilgrims of Dark 2] Great Resonant Soul
+2006013 [Covenant - Pilgrims of Dark 3] Climax- Xanthous Set
+2007000 [Covenant - Heirs of the Sun 0] Sun Seal
+2007011 [Covenant - Heirs of the Sun 1] Sunlight Parma
+2007012 [Covenant - Heirs of the Sun 2] Sun Sword
+2007013 [Covenant - Heirs of the Sun 3] Sunlight Spear
+2008000 [Covenant - Dragon Remnants 0] Ancient Dragon Seal- Dragon Eye
+2008011 [Covenant - Dragon Remnants 1] Dragon Head Stone
+2008012 [Covenant - Dragon Remnants 2] Dragon Torso Stone
+2008013 [Covenant - Dragon Remnants 3] First Dragon Ring
+2009000 [Covenant - Company of Champions 0] Champion's Tablet
+2009011 [Covenant - Company of Champions 1] Ring of Soul Protection
+2009012 [Covenant - Company of Champions 2] Bracing Knuckle Ring+2
+2009013 [Covenant - Company of Champions 3] Vanquisher's Seal
+3001000 [Gesture - Starting] "Point"
+3002000 [Gesture - Starting] "I won't bite"
+3004000 [Gesture - Starting] "Bow"
+3005000 [Gesture - Crestfallen Saulden] "Welcome!"
+3006000 [Gesture - Blue Sentinel Targray] "Duel bow"
+3007000 [Gesture - Starting] "Wave"
+3008000 [Gesture - Starting] "Pumped up"
+3009000 [Gesture - Benhart of Jugo] "Joy"
+3010000 [Gesture - Starting] "Warcry"
+3011000 [Gesture - Manscorpion Tark] "Warmup"
+3012000 [Gesture - Captain Drummond] "Hurrah"
+3013000 [Gesture - Starting] "Righty-ho!"
+3014000 [Gesture - Starting] "No way"
+3015000 [Gesture - Chancellor Wellager] "This one's me"
+3016000 [Gesture - Grave Warden Agdayne] "Have mercy!"
+3017000 [Gesture - Laddersmith Gilligan] "Prostration"
+3018000 [Gesture - Head of Vengarl] "Decapitate"
+3019000 [Gesture - Creighton the Wanderer] "Fist pump"
+3020000 [Gesture - Straid of Olaphis] "Mock"
+3021000 [Gesture - Heirs of the Sun altar] "Praise the Sun"
+10025010 [Things Betwixt - Chest] Human Effigy
+10026000 [Things Betwixt] Rusted Coin
+10026001 [Things Betwixt] Rusted Coin
+10026020 [Things Betwixt] Gold Pine Resin
+10026030 [Things Betwixt] Small Smooth & Silky Stone
+10026031 [Things Betwixt] Small Smooth & Silky Stone
+10026040 [Things Betwixt] Soul of a Nameless Soldier
+10026050 [Things Betwixt] Soul of a Nameless Soldier- Torch
+10026060 [Things Betwixt] Cracked Red Eye Orb
+10026070 [Things Betwixt] Dagger
+10026080 [Things Betwixt] Lifegem
+10026090 [Things Betwixt] Amber Herb
+10026100 [Things Betwixt] Estus Flask Shard
+10027000 [Things Betwixt] Bone of Order
+10045000 [Majula - Chest - Maughlin] Titanite Shard
+10045001 [Majula - Chest - Maughlin] Large Titanite Shard
+10045002 [Majula - Chest - Maughlin] Moon Butterfly Shield
+10045010 [Majula - Chest - Mansion] Titanite Shard- Torch
+10045020 [Majula - Chest - Forgotten Key] Soul Vortex
+10045030 [Majula - Chest - Forgotten Key] Great Lightning Spear
+10045040 [Majula - Chest - Lenigrast] Estus Flask Shard
+10045050 [Majula - Chest - Forgotten Key] Witchtree Branch- Witchtree Bellvine
+10045060 [Majula - Chest - Route to Forest] Rusted Coin
+10045070 [Majula - Chest - Route to Heide] Crimson Parma
+10045500 [Majula - Chest - Under Mansion] Rubbish
+10045600 [Majula - Chest - Under Mansion] Soul Vessel
+10046000 [Majula] Estus Flask Shard
+10046010 [Majula] Divine Blessing
+10046020 [Majula] Morning Star- Cleric's Sacred Chime
+10046030 [Majula] Binoculars
+10046040 [Majula] Soul of a Nameless Soldier- Lifegem
+10046050 [Majula] Poison Moss
+10046060 [Majula] Pharros' Lockstone
+10046070 [Majula] Estus Flask Shard
+10046080 [Majula] Rouge Water
+10046090 [Majula] Ring of the Evil Eye+1
+10046100 [Majula] Pharros' Lockstone
+10046110 [Majula] Homeward Bone
+10046120 [Majula] Lifegem
+10046130 [Majula] Radiant Lifegem
+10046140 [Majula] Titanite Slab
+10046150 [Majula] Homeward Bone
+10105010 [Forest of Fallen Giants - Chest - Cardinal Tower] Small Leather Shield- Repair Powder
+10105020 [Forest of Fallen Giants - Chest - Route to Forest] Human Effigy
+10105021 [Forest of Fallen Giants - Chest - Route to Forest] Human Effigy
+10105030 [Forest of Fallen Giants - Chest - Ballista Soldier Room] Life Ring- Large Titanite Shard
+10105040 [Forest of Fallen Giants - Chest - Ballista Trap Room] Titanite Shard
+10105041 [Forest of Fallen Giants - Chest - Ballista Trap Room] Titanite Chunk
+10105050 [Forest of Fallen Giants - Chest - Under Cardinal Tower] Large Titanite Shard- Torch
+10105070 [Forest of Fallen Giants - Chest - Cardinal Tower] Small White Sign Soapstone- Radiant Lifegem
+10105080 [Forest of Fallen Giants - Chest - Pharros Lockstone Room] Chloranthy Ring
+10105090 [Forest of Fallen Giants - Chest - Pharros Lockstone Room] Large Titanite Shard
+10105100 [Forest of Fallen Giants - Chest - Overlook Firebomb Room] Mail Breaker- Infantry Helm
+10105110 [Forest of Fallen Giants - Chest - Fire Pit] Flame Quartz Ring+1
+10105120 [Forest of Fallen Giants - Chest - Soldier's Rest] Large Soul of a Proud Knight- Hunter's Set
+10105130 [Forest of Fallen Giants - Chest - Flame Lizard Trap Room] Yearn
+10105140 [Forest of Fallen Giants - Chest - Pate's Trap Passage] Sorcerer's Staff- Amber Herb
+10105150 [Forest of Fallen Giants - Chest - King's Gate] Amber Herb
+10106000 [Forest of Fallen Giants] Soul of a Lost Undead
+10106010 [Forest of Fallen Giants] Soul of a Nameless Soldier- Cracked Red Eye Orb
+10106020 [Forest of Fallen Giants] Lifegem
+10106030 [Forest of Fallen Giants] Amber Herb
+10106050 [Forest of Fallen Giants] Divine Blessing
+10106060 [Forest of Fallen Giants] Wood Bolt
+10106061 [Forest of Fallen Giants] Heavy Bolt
+10106070 [Forest of Fallen Giants] Black Firebomb- Homeward Bone
+10106080 [Forest of Fallen Giants] Torch
+10106090 [Forest of Fallen Giants] Lifegem- Homeward Bone
+10106100 [Forest of Fallen Giants] Halberd- Soul of a Nameless Soldier
+10106110 [Forest of Fallen Giants] Homeward Bone- Soul of a Lost Undead
+10106120 [Forest of Fallen Giants] Human Effigy
+10106130 [Forest of Fallen Giants] Titanite Shard
+10106140 [Forest of Fallen Giants] Buckler
+10106150 [Forest of Fallen Giants] Human Effigy
+10106160 [Forest of Fallen Giants] Aromatic Ooze
+10106170 [Forest of Fallen Giants] Soul of a Nameless Soldier- Throwing Knife
+10106180 [Forest of Fallen Giants] Green Blossom
+10106190 [Forest of Fallen Giants] Large Soul of a Lost Undead
+10106200 [Forest of Fallen Giants] Shortsword- Soul of a Lost Undead
+10106210 [Forest of Fallen Giants] Soul of a Lost Undead- Torch
+10106220 [Forest of Fallen Giants] Light Crossbow
+10106230 [Forest of Fallen Giants] Broken Straight Sword
+10106240 [Forest of Fallen Giants] Torch
+10106250 [Forest of Fallen Giants] Large Leather Shield- Lifegem
+10106260 [Forest of Fallen Giants] Human Effigy
+10106270 [Forest of Fallen Giants] Human Effigy
+10106280 [Forest of Fallen Giants] Lifegem
+10106290 [Forest of Fallen Giants] Drangleic Sword- Drangleic Shield- Drangleic Mail- Drangleic Gauntlets- Drangleic Leggings
+10106300 [Forest of Fallen Giants] Soul of a Lost Undead
+10106310 [Forest of Fallen Giants] Foot Soldier Shield
+10106320 [Forest of Fallen Giants] Amber Herb
+10106321 [Forest of Fallen Giants] Wilted Dusk Herb
+10106340 [Forest of Fallen Giants] Soul of a Proud Knight
+10106350 [Forest of Fallen Giants] Cracked Red Eye Orb
+10106360 [Forest of Fallen Giants] Rebel's Greatshield
+10106370 [Forest of Fallen Giants] Soul of a Nameless Soldier- Lifegem
+10106371 [Forest of Fallen Giants] Large Soul of a Proud Knight- Old Radiant Lifegem
+10106380 [Forest of Fallen Giants] Soul of a Nameless Soldier
+10106390 [Forest of Fallen Giants] Witching Urn
+10106400 [Forest of Fallen Giants] Lifegem
+10106410 [Forest of Fallen Giants] Fire Arrow
+10106420 [Forest of Fallen Giants] Twinkling Titanite- Fragrant Branch of Yore
+10106430 [Forest of Fallen Giants] Amber Herb- Green Blossom
+10106440 [Forest of Fallen Giants] Great Soul Arrow
+10106450 [Forest of Fallen Giants] Large Soul of a Lost Undead- Blue Wooden Shield
+10106460 [Forest of Fallen Giants] Firedrake Stone
+10106470 [Forest of Fallen Giants] Hawk Ring
+10106480 [Forest of Fallen Giants] Large Soul of a Proud Knight
+10106490 [Forest of Fallen Giants] Dried Fingers- Radiant Lifegem
+10106500 [Forest of Fallen Giants] Soul of a Nameless Soldier- Torch
+10106510 [Forest of Fallen Giants] Grand Lance
+10106520 [Forest of Fallen Giants] Estus Flask Shard
+10106530 [Forest of Fallen Giants] Human Effigy- Lifegem
+10106540 [Forest of Fallen Giants] Torch
+10106550 [Forest of Fallen Giants] Repair Powder
+10106560 [Forest of Fallen Giants] Lifegem
+10106570 [Forest of Fallen Giants] Hollow Soldier Helm
+10106580 [Forest of Fallen Giants] Broken Straight Sword
+10106590 [Forest of Fallen Giants] Green Blossom
+10106600 [Forest of Fallen Giants] Prism Stone
+10106610 [Forest of Fallen Giants] Bastard Sword
+10106620 [Forest of Fallen Giants] Whip
+10106630 [Forest of Fallen Giants] Human Effigy
+10145050 [Brightstone Cove] Human Effigy
+10145060 [Brightstone Cove - Chest - Spider Room] Heavy Bolt
+10145061 [Brightstone Cove - Chest - Spider Room] Magic Bolt
+10145070 [Brightstone Cove - Chest - Pate's Fight Room] Rusted Coin
+10145080 [Brightstone Cove - Chest - Pate's Fight Room] Engraved Gauntlets
+10145110 [Brightstone Cove - Chest - Lower Cove Spider Room] Great Magic Barrier- Soul Vortex
+10145120 [Brightstone Cove - Chest - Lower Cove Ledge Room] Southern Ritual Band+1
+10145130 [Brightstone Cove - Chest - Spider Hall Side Room] Black Knight Ultra Greatsword- Great Fireball- Fire Seed
+10146000 [Brightstone Cove] Soul of a Hero- Gold Pine Resin
+10146010 [Brightstone Cove] Pharros' Lockstone
+10146020 [Brightstone Cove] Fading Soul- Cleric's Small Shield
+10146030 [Brightstone Cove] Large Titanite Shard
+10146040 [Brightstone Cove] Priestess Set
+10146050 [Brightstone Cove] Lizard Staff
+10146051 [Brightstone Cove] Titanite Shard- Large Titanite Shard
+10146060 [Brightstone Cove] Soul of a Nameless Soldier
+10146070 [Brightstone Cove] Large Titanite Shard
+10146080 [Brightstone Cove] Soul of a Proud Knight
+10146090 [Brightstone Cove] Titanite Chunk- Twinkling Titanite
+10146100 [Brightstone Cove] Large Titanite Shard
+10146110 [Brightstone Cove] Soul of a Nameless Soldier
+10146120 [Brightstone Cove] Titanite Chunk
+10146130 [Brightstone Cove] Holy Water Urn
+10146140 [Brightstone Cove] Soul of a Nameless Soldier
+10146150 [Brightstone Cove] Large Soul of a Proud Knight
+10146160 [Brightstone Cove] Soul of a Nameless Soldier
+10146170 [Brightstone Cove] Lightning Urn
+10146180 [Brightstone Cove] Titanite Chunk
+10146181 [Brightstone Cove] Titanite Chunk- Titanite Slab
+10146190 [Brightstone Cove] Flame Butterfly
+10146200 [Brightstone Cove] Estus Flask Shard
+10146210 [Brightstone Cove] Large Titanite Shard
+10146220 [Brightstone Cove] Torch
+10146230 [Brightstone Cove] Large Soul of a Nameless Soldier
+10146240 [Brightstone Cove] Fading Soul
+10146250 [Brightstone Cove] Skeptic's Spice
+10146260 [Brightstone Cove] Bonfire Ascetic
+10146270 [Brightstone Cove] Fading Soul
+10146280 [Brightstone Cove] Homeward Bone
+10146290 [Brightstone Cove] Lacerating Arrow
+10146300 [Brightstone Cove] Bat Staff
+10146310 [Brightstone Cove] Wilted Dusk Herb
+10146320 [Brightstone Cove] Charcoal Pine Resin
+10146330 [Brightstone Cove] Pharros' Lockstone
+10146340 [Brightstone Cove] Torch
+10146350 [Brightstone Cove] Radiant Lifegem
+10146360 [Brightstone Cove] Corrosive Urn
+10146370 [Brightstone Cove] Simpleton's Spice
+10146380 [Brightstone Cove] Twilight Herb
+10146381 [Brightstone Cove] Wilted Dusk Herb
+10146390 [Brightstone Cove] Soul of a Brave Warrior
+10146400 [Brightstone Cove] Petrified Dragon Bone
+10146410 [Brightstone Cove] Torch
+10146420 [Brightstone Cove] Titanite Shard- Titanite Chunk- Titanite Slab
+10146430 [Brightstone Cove] None
+10146440 [Brightstone Cove] None
+10146450 [Brightstone Cove] None
+10146460 [Brightstone Cove] None
+10146470 [Brightstone Cove] None
+10146480 [Brightstone Cove] Human Effigy
+10146490 [Brightstone Cove] Cracked Red Eye Orb
+10146500 [Brightstone Cove] Pickaxe
+10146510 [Brightstone Cove] Torch
+10146520 [Brightstone Cove] Poison Arrow
+10155000 [Aldia's Keep - Middle Dragon Hall] Great Magic Barrier
+10155010 [Aldia's Keep - Chest - Upper Dragon Hall] Dragonscale Ring
+10155020 [Aldia's Keep - Chest - Breakable Wall Passage] Malformed Shell
+10155030 [Aldia's Keep - Chest - Mirrors in Dragon Hall] Brightbug
+10156000 [Aldia's Keep] Fading Soul
+10156010 [Aldia's Keep] Northern Ritual Band+2- Petrified Dragon Bone
+10156020 [Aldia's Keep] Alluring Skull
+10156030 [Aldia's Keep] Radiant Lifegem
+10156031 [Aldia's Keep] Elizabeth Mushroom
+10156040 [Aldia's Keep] Large Soul of a Brave Warrior
+10156050 [Aldia's Keep] Simpleton's Spice- Twilight Herb
+10156060 [Aldia's Keep] Crimson Water
+10156070 [Aldia's Keep] Soul Geyser- Petrified Dragon Bone
+10156080 [Aldia's Keep] Poison Throwing Knife
+10156090 [Aldia's Keep] Fire Seed
+10156100 [Aldia's Keep] Divine Blessing
+10156130 [Aldia's Keep] Pharros' Lockstone
+10156140 [Aldia's Keep] Soul of a Proud Knight
+10156150 [Aldia's Keep] Dragon Scale
+10156160 [Aldia's Keep] Large Soul of a Nameless Soldier- Corrosive Urn
+10156161 [Aldia's Keep] Soul of a Hero- Corrosive Urn
+10156170 [Aldia's Keep] Soul of a Nameless Soldier- Petrified Dragon Bone
+10156180 [Aldia's Keep] Radiant Lifegem
+10156190 [Aldia's Keep] Twilight Herb
+10156200 [Aldia's Keep] Large Soul of a Brave Warrior
+10165000 [Lost Bastille - Chest] Parrying Dagger
+10165010 [Lost Bastille - Chest] Soul Vessel
+10165020 [Lost Bastille - Chest] Bone Staff
+10165040 [Lost Bastille - Chest] Rouge Water
+10165041 [Lost Bastille - Chest] Bell Keeper Bow
+10165050 [Lost Bastille - Chest] Estus Flask Shard- Large Titanite Shard
+10165070 [Lost Bastille - Chest] Twinblade
+10165080 [Lost Bastille - Chest] Target Shield
+10165110 [Lost Bastille - Chest] Wilted Dusk Herb
+10165120 [Lost Bastille - Chest] Fragrant Branch of Yore- Elizabeth Mushroom
+10165130 [Lost Bastille - Chest] Priest's Chime
+10165140 [Lost Bastille - Chest] Covetous Silver Serpent Ring- Human Effigy- Fragrant Branch of Yore
+10165150 [Lost Bastille - Chest] Craftsman's Hammer- Twinkling Titanite
+10165160 [Lost Bastille - Chest] Large Titanite Shard
+10165170 [Lost Bastille - Chest] Titanite Shard
+10165180 [Lost Bastille - Chest] Iron Arrow
+10165190 [Lost Bastille - Chest] Heavy Bolt
+10165200 [Lost Bastille - Chest] Radiant Lifegem- Twilight Herb
+10165210 [Lost Bastille - Chest] Hush
+10165220 [Lost Bastille - Chest] Blue Tearstone Ring
+10165230 [Lost Bastille - Chest] Southern Ritual Band
+10165240 [Lost Bastille - Chest] Antiquated Key
+10165250 [Lost Bastille - Chest] Human Effigy
+10165260 [Lost Bastille - Chest] Dull Ember
+10166000 [Lost Bastille] Homeward Bone
+10166010 [Lost Bastille] Alluring Skull
+10166020 [Lost Bastille] Soul of a Nameless Soldier
+10166030 [Lost Bastille] Soul of a Brave Warrior- Human Effigy
+10166040 [Lost Bastille] Soul of a Brave Warrior- Golden Wing Shield
+10166050 [Lost Bastille] Large Soul of a Nameless Soldier- Green Blossom
+10166060 [Lost Bastille] Bell Keeper Shield
+10166070 [Lost Bastille] Gold Pine Resin
+10166080 [Lost Bastille] Radiant Lifegem- Large Titanite Shard
+10166090 [Lost Bastille] Large Soul of a Nameless Soldier
+10166100 [Lost Bastille] Rusted Coin
+10166110 [Lost Bastille] Lacerating Knife
+10166120 [Lost Bastille] Blossom Kite Shield
+10166130 [Lost Bastille] Skeptic's Spice
+10166140 [Lost Bastille] Skeptic's Spice
+10166150 [Lost Bastille] Soul of a Nameless Soldier
+10166160 [Lost Bastille] Skeptic's Spice
+10166170 [Lost Bastille] Skeptic's Spice
+10166180 [Lost Bastille] Bastille Key
+10166190 [Lost Bastille] Lifegem
+10166191 [Lost Bastille] Radiant Lifegem
+10166200 [Lost Bastille] Bracing Knuckle Ring
+10166230 [Lost Bastille] Northern Ritual Band- Bleed Stone
+10166250 [Lost Bastille] Dragon Tooth- Petrified Something- Brightbug
+10166260 [Lost Bastille] Flame Butterfly- Torch
+10166270 [Lost Bastille] Soul of a Proud Knight- Human Effigy
+10166280 [Lost Bastille] Soul of a Proud Knight- Pharros' Lockstone
+10166290 [Lost Bastille] Flame Butterfly
+10166300 [Lost Bastille] Common Fruit
+10166310 [Lost Bastille] Blue Flame
+10166320 [Lost Bastille] Radiant Lifegem
+10166330 [Lost Bastille] Fire Seed
+10166350 [Lost Bastille] Smooth & Silky Stone
+10166360 [Lost Bastille] Radiant Lifegem
+10166370 [Lost Bastille] Large Soul of a Nameless Soldier
+10166380 [Lost Bastille] Large Club
+10166390 [Lost Bastille] Falchion
+10166400 [Lost Bastille] Soul of a Proud Knight
+10166410 [Lost Bastille] Bonfire Ascetic
+10166420 [Lost Bastille] Large Titanite Shard
+10166421 [Lost Bastille] Large Titanite Shard
+10166430 [Lost Bastille] Archdrake Robes- Archdrake Shield
+10166440 [Lost Bastille] Petrified Dragon Bone- Firebomb
+10166441 [Lost Bastille] Resplendent Life- Firebomb
+10166450 [Lost Bastille] Human Effigy
+10166460 [Lost Bastille] Soul of a Proud Knight- Radiant Lifegem
+10166470 [Lost Bastille] Scimitar- Repair Powder
+10166480 [Lost Bastille] Green Blossom
+10166490 [Lost Bastille] Wanderer Set
+10175020 [Earthen Peak - Chest] Raw Stone
+10175021 [Earthen Peak - Chest] Raw Stone- Palestone
+10175030 [Earthen Peak - Chest] Greatwood Band
+10175040 [Earthen Peak - Chest] Pike
+10175050 [Earthen Peak - Chest] Petrified Something
+10175060 [Earthen Peak - Chest] Heavy Crossbow- Heavy Bolt
+10175070 [Earthen Peak - Chest] Torch
+10175090 [Earthen Peak - Chest] Pharros' Lockstone
+10175110 [Earthen Peak - Chest] Fire Seed- Divine Blessing
+10175120 [Earthen Peak - Chest] Soul of a Brave Warrior- Crimson Water
+10175130 [Earthen Peak - Chest] Poisonbite Ring- Soul of a Proud Knight
+10175140 [Earthen Peak - Chest] Great Heavy Soul Arrow
+10175150 [Earthen Peak - Chest] Lightning Spear
+10175160 [Earthen Peak - Chest] Mirrah Shield
+10176000 [Earthen Peak] Lifegem
+10176010 [Earthen Peak] Broadsword- Human Effigy
+10176020 [Earthen Peak] Lifegem
+10176030 [Earthen Peak] Torch
+10176040 [Earthen Peak] Spell Quartz Ring+1
+10176050 [Earthen Peak] Large Soul of a Proud Knight- Divine Blessing
+10176060 [Earthen Peak] Hexing Urn
+10176070 [Earthen Peak] Radiant Lifegem- Smooth & Silky Stone
+10176080 [Earthen Peak] Skeptic's Spice
+10176090 [Earthen Peak] Torch
+10176100 [Earthen Peak] Repair Powder
+10176110 [Earthen Peak] Skeptic's Spice
+10176120 [Earthen Peak] Radiant Lifegem
+10176130 [Earthen Peak] Soul of a Lost Undead
+10176140 [Earthen Peak] Pharros' Lockstone- Twinkling Titanite
+10176150 [Earthen Peak] Simpleton's Spice
+10176160 [Earthen Peak] Old Knight Pike- Old Knight Greatshield
+10176170 [Earthen Peak] Radiant Lifegem
+10176171 [Earthen Peak] Divine Blessing
+10176180 [Earthen Peak] Fragrant Branch of Yore- Torch
+10176190 [Earthen Peak] Soul of a Nameless Soldier- Titanite Shard
+10176200 [Earthen Peak] Small Smooth & Silky Stone- Titanite Shard
+10176210 [Earthen Peak] Malformed Claws
+10176220 [Earthen Peak] Human Effigy- Large Titanite Shard
+10176221 [Earthen Peak] Human Effigy- Large Titanite Shard
+10176230 [Earthen Peak] Titanite Chunk
+10176231 [Earthen Peak] Titanite Chunk
+10176250 [Earthen Peak] Fading Soul- Small Smooth & Silky Stone
+10176260 [Earthen Peak] Fading Soul
+10176270 [Earthen Peak] Manikin Sabre
+10176280 [Earthen Peak] Fading Soul
+10176290 [Earthen Peak] Fading Soul- Titanite Shard
+10176300 [Earthen Peak] Poison Throwing Knife
+10176340 [Earthen Peak] Simpleton's Spice
+10176350 [Earthen Peak] Chameleon- Soul of a Brave Warrior
+10176370 [Earthen Peak] Titanite Shard
+10176390 [Earthen Peak] Petrified Something
+10176400 [Earthen Peak] Large Soul of a Brave Warrior- Radiant Lifegem
+10176410 [Earthen Peak] Soul of a Nameless Soldier
+10176420 [Earthen Peak] Black Firebomb
+10176430 [Earthen Peak] Manikin Mask
+10176440 [Earthen Peak] Small Smooth & Silky Stone
+10176450 [Earthen Peak] Poison Stone
+10176460 [Earthen Peak] Titanite Shard
+10176461 [Earthen Peak] Twinkling Titanite
+10176470 [Earthen Peak] Large Titanite Shard
+10176480 [Earthen Peak] Simpleton's Spice
+10176490 [Earthen Peak] Green Blossom
+10176500 [Earthen Peak] Titanite Shard
+10176510 [Earthen Peak] Fading Soul
+10176520 [Earthen Peak] Titanite Chunk
+10176530 [Earthen Peak] Titanite Shard
+10176540 [Earthen Peak] Torch
+10176550 [Earthen Peak] Titanite Shard
+10176560 [Earthen Peak] Titanite Shard
+10176570 [Earthen Peak] Fading Soul
+10176580 [Earthen Peak] Titanite Shard
+10176590 [Earthen Peak] Ring of Restoration
+10176600 [Earthen Peak] Washing Pole
+10176610 [Earthen Peak] Dragon Charm
+10176620 [Earthen Peak] Titanite Shard
+10176630 [Earthen Peak] Flame Butterfly
+10185000 [No-man's Wharf - Chest] Titanite Shard
+10185001 [No-man's Wharf - Chest] Titanite Chunk
+10185030 [No-man's Wharf - Chest] Repair Powder- Titanite Shard
+10185040 [No-man's Wharf - Chest] Bandit Axe- Brigand Set
+10185050 [No-man's Wharf - Chest] Titanite Slab
+10185060 [No-man's Wharf - Chest] Royal Soldier's Ring
+10185070 [No-man's Wharf - Chest] Large Titanite Shard
+10185071 [No-man's Wharf - Chest] Sea Bow
+10185080 [No-man's Wharf - Chest] Firebomb
+10185081 [No-man's Wharf - Chest] Black Firebomb
+10185100 [No-man's Wharf - Chest] Silver Talisman
+10185110 [No-man's Wharf - Chest] Fragrant Branch of Yore
+10185120 [No-man's Wharf - Chest] Pyromancy Flame- Fireball
+10186000 [No-man's Wharf] Soul of a Proud Knight
+10186010 [No-man's Wharf] Human Effigy- Lifegem
+10186020 [No-man's Wharf] Fire Arrow
+10186021 [No-man's Wharf] Shadow Dagger
+10186030 [No-man's Wharf] Human Effigy
+10186050 [No-man's Wharf] Large Soul of a Lost Undead- Lifegem
+10186070 [No-man's Wharf] Varangian Sword
+10186071 [No-man's Wharf] Iron Arrow
+10186100 [No-man's Wharf] Large Soul of a Proud Knight- Small Smooth & Silky Stone
+10186110 [No-man's Wharf] Large Soul of a Lost Undead- Emit Force
+10186120 [No-man's Wharf] Fading Soul
+10186130 [No-man's Wharf] Lifegem- Homeward Bone
+10186140 [No-man's Wharf] Soul of a Nameless Soldier
+10186150 [No-man's Wharf] Dark Pine Resin
+10186160 [No-man's Wharf] Large Soul of a Nameless Soldier- Lifegem
+10186170 [No-man's Wharf] Throwing Knife- Flame Butterfly
+10195000 [Iron Keep - Chest] Destructive Greatarrow
+10195001 [Iron Keep - Chest] Destructive Greatarrow
+10195030 [Iron Keep - Chest] Smelter Hammer
+10195040 [Iron Keep - Chest] Life Ring+1- Twinkling Titanite
+10195050 [Iron Keep - Chest] Black Knight Greatsword
+10195060 [Iron Keep - Chest] Protective Chime- Grand Spirit Tree Shield
+10195090 [Iron Keep - Chest] Black Knight Greataxe
+10195100 [Iron Keep - Chest] Phoenix Parma
+10195110 [Iron Keep - Chest] Chaos Storm
+10195120 [Iron Keep - Chest] Immolation
+10195130 [Iron Keep - Chest] Thunder Quartz Ring+1
+10195140 [Iron Keep - Chest] Porcine Shield- Flame Butterfly
+10195150 [Iron Keep - Chest] Petrified Something
+10196000 [Iron Keep] Simpleton's Spice
+10196010 [Iron Keep] Blacksteel Katana
+10196020 [Iron Keep] Possessed Armor Greatbow
+10196030 [Iron Keep] Soul of a Proud Knight- Repair Powder
+10196040 [Iron Keep] Simpleton's Spice
+10196050 [Iron Keep] Short Bow
+10196060 [Iron Keep] Large Soul of a Nameless Soldier- Red Leech Troches
+10196070 [Iron Keep] Old Radiant Lifegem- Green Blossom
+10196080 [Iron Keep] Iron Key
+10196090 [Iron Keep] Pharros' Lockstone
+10196100 [Iron Keep] Cracked Red Eye Orb- Torch
+10196110 [Iron Keep] Large Soul of a Nameless Soldier
+10196111 [Iron Keep] Soul of a Brave Warrior
+10196120 [Iron Keep] Large Soul of a Proud Knight- Radiant Lifegem
+10196130 [Iron Keep] Large Soul of a Nameless Soldier- Monastery Charm
+10196140 [Iron Keep] Bonfire Ascetic- Simpleton's Spice
+10196150 [Iron Keep] Fire Arrow
+10196160 [Iron Keep] Petrified Dragon Bone
+10196170 [Iron Keep] Heavy Iron Key
+10196180 [Iron Keep] Human Effigy
+10196190 [Iron Keep] Fire Seed
+10196200 [Iron Keep] Human Effigy- Triclops Snake Troches
+10196210 [Iron Keep] Large Titanite Shard- Petrified Dragon Bone
+10196211 [Iron Keep] Twinkling Titanite- Petrified Dragon Bone
+10196220 [Iron Keep] Titanite Shard- Alonne Greatbow
+10235010 [Huntman's Copse - Chest] Ricard's Rapier
+10235020 [Huntman's Copse - Chest] Sublime Bone Dust
+10236000 [Huntman's Copse] Cracked Red Eye Orb
+10236010 [Huntman's Copse] Cracked Red Eye Orb
+10236020 [Huntman's Copse] Aromatic Ooze
+10236021 [Huntman's Copse] Aromatic Ooze
+10236030 [Huntman's Copse] Large Soul of a Lost Undead- Small Orange Burr
+10236040 [Huntman's Copse] Notched Whip
+10236050 [Huntman's Copse] Mace- Titanite Shard
+10236060 [Huntman's Copse] Combustion- Titanite Shard
+10236070 [Huntman's Copse] Soul of a Nameless Soldier- Lifegem
+10236071 [Huntman's Copse] Large Soul of a Proud Knight- Old Radiant Lifegem
+10236080 [Huntman's Copse] Poison Moss- Lifegem
+10236090 [Huntman's Copse] Morning Star- Large Soul of a Nameless Soldier
+10236100 [Huntman's Copse] Poison Moss- Green Blossom
+10236110 [Huntman's Copse] Soul Spear
+10236120 [Huntman's Copse] Bandit's Knife
+10236130 [Huntman's Copse] Titanite Shard
+10236131 [Huntman's Copse] Gyrm Great Hammer
+10236140 [Huntman's Copse] Large Titanite Shard
+10236150 [Huntman's Copse] Pharros' Lockstone- Token of Fidelity
+10236160 [Huntman's Copse] Undead Lockaway Key
+10236170 [Huntman's Copse] Flamberge
+10236180 [Huntman's Copse] Fading Soul
+10236190 [Huntman's Copse] Fading Soul
+10236200 [Huntman's Copse] Fading Soul
+10236210 [Huntman's Copse] Fading Soul
+10236220 [Huntman's Copse] Soul of a Brave Warrior
+10236230 [Huntman's Copse] Flame Butterfly
+10236240 [Huntman's Copse] Fire Seed
+10236250 [Huntman's Copse] Large Soul of a Nameless Soldier
+10236260 [Huntman's Copse] Monastery Charm- Soul of a Proud Knight
+10236270 [Huntman's Copse] Human Effigy- Lacerating Arrow- Prism Stone
+10255010 [The Gutter - Chest] Black Firebomb
+10255020 [The Gutter] Twinkling Titanite- Small Smooth & Silky Stone
+10255030 [The Gutter - Chest] Great Club
+10255040 [The Gutter - Chest] Soul of a Nameless Soldier
+10255050 [The Gutter - Chest] Divine Blessing
+10255090 [The Gutter - Chest] Ring of Giants+1- Petrified Dragon Bone
+10255100 [The Gutter - Chest] Wicked Eye Greatshield
+10255110 [The Gutter - Chest] Aurous Set
+10255120 [The Gutter - Chest] Petrified Something- Simpleton's Spice- Skeptic's Spice
+10255130 [The Gutter - Chest] Shotel- Great Magic Weapon
+10256000 [The Gutter] Havel's Greatshield- Havel's Set
+10256030 [The Gutter] Bandit Greataxe
+10256060 [The Gutter] Soul of a Nameless Soldier
+10256090 [The Gutter] Full Moon Sickle
+10256130 [The Gutter] Dark Fog- Torch
+10256160 [The Gutter] Fragrant Branch of Yore
+10256170 [The Gutter] Poison Moss
+10256210 [The Gutter] Fire Seed
+10256220 [The Gutter] Dung Pie
+10256230 [The Gutter] Large Soul of a Nameless Soldier
+10256240 [The Gutter] Lifegem
+10256250 [The Gutter] Dark Pyromancy Flame- Rotten Pine Resin
+10256260 [The Gutter] Titanite Chunk
+10256270 [The Gutter] Tattered Cloth Set
+10256280 [The Gutter] Soul of a Proud Knight
+10256290 [The Gutter] Flame Butterfly
+10256300 [The Gutter] Poison Moss
+10256310 [The Gutter] Poison Arrow
+10256320 [The Gutter] Dung Pie
+10256330 [The Gutter] Rotten Pine Resin
+10256340 [The Gutter] Lifegem
+10256350 [The Gutter] Silver Talisman
+10256360 [The Gutter] Pharros' Lockstone
+10256370 [The Gutter] Large Soul of a Nameless Soldier
+10256380 [The Gutter] Scraps of Life- Torch
+10256390 [The Gutter] Radiant Lifegem
+10256400 [The Gutter] Estus Flask Shard
+10256410 [The Gutter] Human Effigy
+10256420 [The Gutter] Smooth & Silky Stone
+10256430 [The Gutter] Dragon Talon
+10256440 [The Gutter] Smooth & Silky Stone
+10256450 [The Gutter] Fragrant Branch of Yore
+10256500 [The Gutter] Pharros' Lockstone
+10275000 [Dragon Aerie - Chest] Ring of Fortune
+10275010 [Dragon Aerie - Chest] Titanite Slab
+10275020 [Dragon Aerie - Chest] Twinkling Titanite
+10275021 [Dragon Aerie - Chest] Drakekeeper's Great Hammer
+10275030 [Dragon Aerie - Chest] Drakekeeper's Greataxe- Drakekeeper's Greatshield
+10275040 [Dragon Aerie - Chest] Third Dragon Ring
+10275050 [Dragon Aerie - Chest] Crystal Magic Weapon- Fragrant Branch of Yore
+10275060 [Dragon Aerie - Chest] Judgment Set
+10275070 [Dragon Aerie - Chest] Petrified Something
+10276000 [Dragon Aerie] Soul of a Brave Warrior
+10276010 [Dragon Aerie] Dragon Tooth
+10276020 [Dragon Aerie] Boltstone
+10276030 [Dragon Aerie] Drakekeeper's Sword
+10276040 [Dragon Aerie] Drakekeeper's Warpick
+10276041 [Dragon Aerie] Elizabeth Mushroom
+10276050 [Dragon Aerie] Pharros' Lockstone
+10276060 [Dragon Aerie] Petrified Dragon Bone- Drakekeeper's Ultra Greatsword
+10276061 [Dragon Aerie] Petrified Dragon Bone
+10276070 [Dragon Aerie] Black Dragon Greataxe
+10276080 [Dragon Aerie] Large Soul of a Brave Warrior
+10276090 [Dragon Aerie] Firedrake Stone
+10276100 [Dragon Aerie] Ring of the Evil Eye+1
+10276110 [Dragon Aerie] Dragon Charm- Black Dragon Greatsword
+10276120 [Dragon Aerie] Black Dragon Warpick
+10276130 [Dragon Aerie] Twinkling Titanite
+10276140 [Dragon Aerie] Faintstone
+10276150 [Dragon Aerie] Skeptic's Spice- Twilight Herb
+10276160 [Dragon Aerie] Soul of a Great Hero
+10276170 [Dragon Aerie] Black Dragon Sword- Black Dragon Shield
+10276180 [Dragon Aerie] Magic Stone
+10276190 [Dragon Aerie] Bonfire Ascetic
+10295000 [Path to Shaded Woods - Chest] Estus Flask Shard
+10296000 [Path to Shaded Woods] Aldia Hammer
+10296010 [Path to Shaded Woods] Lifegem- Homeward Bone
+10296020 [Path to Shaded Woods] Soul of a Proud Knight- Human Effigy
+10305010 [Unseen Path to Heide - Chest] Knight Set
+10305020 [Unseen Path to Heide] Sublime Bone Dust
+10306000 [Unseen Path to Heide] Soul of a Proud Knight
+10306010 [Unseen Path to Heide] Human Effigy- Dark Troches
+10306020 [Unseen Path to Heide] Old Knight Halberd
+10306030 [Unseen Path to Heide] Estus Flask Shard
+10315000 [Heide's Tower of Flame - Chest] Ring of Binding
+10315001 [Heide's Tower of Flame - Chest] Human Effigy- Ring of Binding
+10315010 [Heide's Tower of Flame - Chest] Cleric's Parma- Tower Shield
+10315020 [Heide's Tower of Flame - Chest] Titanite Shard
+10315030 [Heide's Tower of Flame - Chest] Human Effigy
+10316010 [Heide's Tower of Flame] Soul of a Nameless Soldier- Human Effigy
+10316040 [Heide's Tower of Flame] Monastery Charm
+10316041 [Heide's Tower of Flame] Monastery Charm
+10316050 [Heide's Tower of Flame] Old Knight Ultra Greatsword
+10316090 [Heide's Tower of Flame] Soul of a Lost Undead- Broken Thief Sword
+10316100 [Heide's Tower of Flame] Lloyd's Talisman
+10316101 [Heide's Tower of Flame] Skeptic's Spice
+10316110 [Heide's Tower of Flame] Old Knight Greatsword
+10325000 [Shaded Woods - Chest] Magic Bolt
+10325001 [Shaded Woods - Chest] Magic Bolt
+10325010 [Shaded Woods - Chest] Titanite Chunk- Petrified Dragon Bone
+10325020 [Shaded Woods - Chest] Chloranthy Ring+1
+10325030 [Shaded Woods - Chest] Berserker Blade
+10325040 [Shaded Woods - Chest] Fragrant Branch of Yore- Lion Mage Set
+10325050 [Shaded Woods - Chest] Old Sun Ring
+10325060 [Shaded Woods - Chest] Homing Soulmass
+10325080 [Shaded Woods - Chest] Clear Bluestone Ring+1
+10325100 [Shaded Woods - Chest] Repair- Human Effigy- Bleeding Serum
+10325110 [Shaded Woods - Chest] Black Knight Halberd
+10325120 [Shaded Woods - Chest] Sublime Bone Dust
+10326000 [Shaded Woods] Pharros' Lockstone
+10326010 [Shaded Woods] Flame Butterfly- Torch
+10326020 [Shaded Woods] Large Soul of a Proud Knight- Human Effigy- Twinkling Titanite
+10326030 [Shaded Woods] Dragonslayer's Crescent Axe- Golden Falcon Shield
+10326040 [Shaded Woods] Pharros' Lockstone- Soul of a Brave Warrior
+10326060 [Shaded Woods] Soul of a Proud Knight- Human Effigy
+10326070 [Shaded Woods] Soul of a Nameless Soldier- Radiant Lifegem
+10326080 [Shaded Woods] Large Soul of a Nameless Soldier
+10326081 [Shaded Woods] Soul of a Brave Warrior
+10326090 [Shaded Woods] Umbral Dagger
+10326100 [Shaded Woods] Lloyd's Talisman
+10326101 [Shaded Woods] Lloyd's Talisman
+10326110 [Shaded Woods] Fading Soul
+10326120 [Shaded Woods] Soul of a Brave Warrior- Firebomb
+10326130 [Shaded Woods] Radiant Lifegem
+10326140 [Shaded Woods] Twinkling Titanite
+10326141 [Shaded Woods] Twinkling Titanite
+10326150 [Shaded Woods] Soul of a Brave Warrior- Twilight Herb
+10326160 [Shaded Woods] Fragrant Branch of Yore
+10326170 [Shaded Woods] Frozen Flower
+10326180 [Shaded Woods] Soul of a Brave Warrior- Skeptic's Spice
+10326190 [Shaded Woods] Lifegem
+10326191 [Shaded Woods] Divine Blessing
+10326200 [Shaded Woods] Flame Butterfly
+10326210 [Shaded Woods] Soul of a Brave Warrior- Pharros' Lockstone
+10326220 [Shaded Woods] Soul of a Hero
+10326230 [Shaded Woods] Torch
+10326240 [Shaded Woods] Fire Seed
+10326250 [Shaded Woods] Covetous Gold Serpent Ring
+10326260 [Shaded Woods] Large Soul of a Nameless Soldier- Human Effigy
+10326270 [Shaded Woods] Soul of a Proud Knight
+10326280 [Shaded Woods] Human Effigy
+10335000 [Doors of Pharros - Chest] Faintstone- Twinkling Titanite
+10335010 [Doors of Pharros - Chest] Titanite Chunk- Petrified Dragon Bone
+10335020 [Doors of Pharros - Chest] Magic Arrow
+10335021 [Doors of Pharros - Chest] Magic Arrow
+10335030 [Doors of Pharros - Chest] Dragon Charm
+10335031 [Doors of Pharros - Chest] Dragon Charm
+10335040 [Doors of Pharros - Chest] Santier's Spear
+10336000 [Doors of Pharros] Prism Stone
+10336010 [Doors of Pharros] Lifegem
+10336011 [Doors of Pharros] Old Radiant Lifegem
+10336020 [Doors of Pharros] Human Effigy
+10336040 [Doors of Pharros] Amber Herb
+10336041 [Doors of Pharros] Wilted Dusk Herb
+10336050 [Doors of Pharros] Gyrm Axe- Gyrm Greatshield
+10336060 [Doors of Pharros] Twisted Barricade- Soul of a Proud Knight
+10336070 [Doors of Pharros] Pharros' Lockstone- Large Soul of a Nameless Soldier
+10336080 [Doors of Pharros] Large Soul of a Brave Warrior
+10345000 [Grave of Saints - Chest] Titanite Slab
+10345010 [Grave of Saints - Chest] Token of Spite
+10345020 [Grave of Saints - Chest] Sublime Bone Dust
+10346000 [Grave of Saints] Human Effigy
+10346010 [Grave of Saints] Silverblack Spear- Silverblack Shield
+10346020 [Grave of Saints] Whisper of Despair- Torch
+10346030 [Grave of Saints] Large Soul of a Nameless Soldier
+10346031 [Grave of Saints] Large Soul of a Brave Warrior
+10346040 [Grave of Saints] Homeward Bone
+10346050 [Grave of Saints] Poison Moss
+10346060 [Grave of Saints] Pharros' Lockstone
+10346070 [Grave of Saints] Great Heal
+10346080 [Grave of Saints] Small Smooth & Silky Stone
+10346090 [Grave of Saints] Bleed Stone
+10346091 [Grave of Saints] Twinkling Titanite- Bleed Stone
+10346100 [Grave of Saints] Disc Chime
+10346110 [Grave of Saints] Homeward Bone
+20105000 [Giant's Memory - Chest] Smooth & Silky Stone
+20105001 [Giant's Memory - Chest] Smooth & Silky Stone- Petrified Something
+20105010 [Giant's Memory - Chest] Petrified Something
+20105020 [Giant's Memory - Chest] Soul of a Hero
+20105030 [Giant's Memory - Chest] Fire Seed
+20105040 [Giant's Memory - Chest] Steel Set
+20105050 [Giant's Memory - Chest] Bonfire Ascetic
+20105060 [Giant's Memory - Chest] Simpleton's Spice- Skeptic's Spice
+20106000 [Giant's Memory] Fire Seed
+20106010 [Giant's Memory] Large Soul of a Nameless Soldier
+20106011 [Giant's Memory] Large Soul of a Brave Warrior
+20106020 [Giant's Memory] Soul of a Great Hero- Bonfire Ascetic
+20106030 [Giant's Memory] Giant Warrior Club
+20106040 [Giant's Memory] Old Radiant Lifegem
+20106050 [Giant's Memory] Fading Soul
+20106060 [Giant's Memory] Old Mirrah Greatsword
+20106061 [Giant's Memory] Crimson Water
+20106070 [Giant's Memory] Soul of a Brave Warrior
+20106080 [Giant's Memory] Soul of a Great Hero- Soul Vessel
+20106090 [Giant's Memory] Large Soul of a Proud Knight
+20106100 [Giant's Memory] Bonfire Ascetic
+20106110 [Giant's Memory] Old Radiant Lifegem
+20106111 [Giant's Memory] Divine Blessing
+20106120 [Giant's Memory] Fire Seed
+20106130 [Giant's Memory] Wilted Dusk Herb
+20106140 [Giant's Memory] Soul of a Proud Knight
+20106141 [Giant's Memory] Soul of a Hero
+20106150 [Giant's Memory] Soul of a Great Hero- Torch
+20115000 [Shrine of Amana - Chest] Wilted Dusk Herb- Skeptic's Spice
+20115010 [Shrine of Amana - Chest] Elizabeth Mushroom
+20115020 [Shrine of Amana - Chest] Dragon Charm
+20115030 [Shrine of Amana - Chest] Archdrake Mace
+20115040 [Shrine of Amana - Chest] Twinkling Titanite- Smooth & Silky Stone
+20115050 [Shrine of Amana - Chest] Magic Arrow
+20115051 [Shrine of Amana - Chest] Magic Arrow- Dark Arrow
+20115060 [Shrine of Amana - Chest] Sunlight Blade
+20115070 [Shrine of Amana - Chest] King's Set
+20115080 [Shrine of Amana - Chest] Fire Tempest
+20115090 [Shrine of Amana - Chest] Helix Halberd
+20115100 [Shrine of Amana - Chest] Manslayer
+20115110 [Shrine of Amana - Chest] Bonfire Ascetic
+20115500 [Shrine of Amana - Chest] Soul of the King
+20116000 [Shrine of Amana] Large Soul of a Proud Knight- Staff of Amana
+20116010 [Shrine of Amana] Large Soul of a Nameless Soldier
+20116011 [Shrine of Amana] Soul of a Brave Warrior
+20116020 [Shrine of Amana] Soul of a Lost Undead- Skeptic's Spice
+20116030 [Shrine of Amana] Estus Flask Shard
+20116040 [Shrine of Amana] Fire Seed
+20116060 [Shrine of Amana] Skeptic's Spice
+20116070 [Shrine of Amana] Soul of a Brave Warrior- Petrified Dragon Bone
+20116080 [Shrine of Amana] Red Iron Twinblade- Soul of a Proud Knight
+20116090 [Shrine of Amana] Homing Crystal Soulmass
+20116100 [Shrine of Amana] Large Soul of a Proud Knight- Green Blossom
+20116110 [Shrine of Amana] Fire Seed
+20116120 [Shrine of Amana] Large Soul of a Proud Knight
+20116130 [Shrine of Amana] Flame Butterfly- Twinkling Titanite
+20116140 [Shrine of Amana] Soul of a Hero- Divine Blessing
+20116150 [Shrine of Amana] Green Blossom
+20116160 [Shrine of Amana] Soul of a Lost Undead- Torch
+20116170 [Shrine of Amana] Large Soul of a Proud Knight- Old Radiant Lifegem
+20116171 [Shrine of Amana] Large Soul of a Brave Warrior- Elizabeth Mushroom
+20116190 [Shrine of Amana] Alluring Skull
+20116200 [Shrine of Amana] Singer's Dress- Life Ring+2
+20116210 [Shrine of Amana] Smooth & Silky Stone
+20116220 [Shrine of Amana] Human Effigy
+20215000 [Drangleic Castle - Chest] Hunter's Blackbow- Iron Arrow
+20215010 [Drangleic Castle - Chest] Corrosive Urn
+20215011 [Drangleic Castle - Chest] Titanite Slab- Corrosive Urn
+20215020 [Drangleic Castle - Chest] Dark Arrow
+20215021 [Drangleic Castle - Chest] Dark Arrow
+20215040 [Drangleic Castle - Chest] Fire Greatarrow
+20215041 [Drangleic Castle - Chest] Fire Greatarrow- Destructive Greatarrow
+20215050 [Drangleic Castle - Chest] Royal Soldier's Ring+1
+20215060 [Drangleic Castle - Chest] Soul Vessel- Fire Seed
+20215070 [Drangleic Castle - Chest] Estus Flask Shard
+20215080 [Drangleic Castle - Chest] Great Combustion- Fire Seed
+20215090 [Drangleic Castle - Chest] Firestorm
+20215100 [Drangleic Castle - Chest] Key to King's Passage- Ring of Lords
+20215110 [Drangleic Castle - Chest] Strong Magic Shield
+20215120 [Drangleic Castle - Chest] Old Knight Hammer
+20215130 [Drangleic Castle - Chest] Mastodon Greatsword- Mastodon Greatshield
+20215140 [Drangleic Castle - Chest] Caitha's Chime- Soul Greatsword
+20215150 [Drangleic Castle - Chest] Soul Bolt- Spell Quartz Ring+2- Bonfire Ascetic
+20215160 [Drangleic Castle - Chest] Sublime Bone Dust
+20215170 [Drangleic Castle - Chest] Large Soul of a Brave Warrior- Twinkling Titanite
+20216000 [Drangleic Castle] Black Witch's Staff
+20216010 [Drangleic Castle] Faraam Set
+20216020 [Drangleic Castle] Soul of a Hero- Old Radiant Lifegem- Monastery Charm
+20216021 [Drangleic Castle] Great Magic Barrier
+20216030 [Drangleic Castle] Stone Soldier Spear
+20216040 [Drangleic Castle] Fire Greatarrow- Destructive Greatarrow
+20216050 [Drangleic Castle] Soul of a Brave Warrior
+20216060 [Drangleic Castle] Lifegem
+20216061 [Drangleic Castle] Old Radiant Lifegem- Petrified Dragon Bone
+20216070 [Drangleic Castle] Soul of a Proud Knight- Twinkling Titanite
+20216080 [Drangleic Castle] Alluring Skull
+20216090 [Drangleic Castle] Holy Water Urn
+20216100 [Drangleic Castle] Repair Powder- Flame Butterfly
+20216110 [Drangleic Castle] Titanite Slab
+20216120 [Drangleic Castle] Petrified Something
+20216130 [Drangleic Castle] Petrified Dragon Bone
+20216140 [Drangleic Castle] Torch
+20245000 [Undead Crypt - Chest] Soul Vessel
+20245010 [Undead Crypt - Chest] Magic Stone- Darknight Stone
+20245020 [Undead Crypt - Chest] Dried Fingers- Bonfire Ascetic- Twinkling Titanite
+20245030 [Undead Crypt - Chest] Crushed Eye Orb- Fire Seed
+20245040 [Undead Crypt - Chest] Olenford's Staff- Great Lightning Spear
+20245050 [Undead Crypt - Chest] Avelyn- Heavy Bolt
+20245070 [Undead Crypt - Chest] Fragrant Branch of Yore
+20245080 [Undead Crypt - Chest] Torch
+20245090 [Undead Crypt - Chest] Poison Throwing Knife
+20245100 [Undead Crypt - Chest] Darknight Stone
+20246000 [Undead Crypt] Radiant Lifegem
+20246010 [Undead Crypt] Large Soul of a Nameless Soldier
+20246011 [Undead Crypt] Soul of a Brave Warrior
+20246030 [Undead Crypt] Simpleton's Spice- Soul of a Great Hero
+20246040 [Undead Crypt] Simpleton's Spice- Black Firebomb
+20246050 [Undead Crypt] Titanite Slab
+20246070 [Undead Crypt] Large Soul of a Proud Knight- Dragon Charm
+20246100 [Undead Crypt] Soul of a Hero
+20246110 [Undead Crypt] Titanite Chunk- Petrified Dragon Bone
+20246111 [Undead Crypt] Titanite Chunk- Petrified Dragon Bone
+20246120 [Undead Crypt] Soul of a Lost Undead
+20246121 [Undead Crypt] Large Soul of a Brave Warrior
+20246130 [Undead Crypt] Divine Blessing- Soul of a Hero
+20246140 [Undead Crypt] Mace of the Insolent- Soul of a Hero
+20246150 [Undead Crypt] Radiant Lifegem- Homeward Bone
+20246151 [Undead Crypt] Elizabeth Mushroom- Homeward Bone
+20246180 [Undead Crypt] Human Effigy
+20246190 [Undead Crypt] Smooth & Silky Stone
+20246200 [Undead Crypt] Smooth & Silky Stone
+20246210 [Undead Crypt] Smooth & Silky Stone
+20246220 [Undead Crypt] Soul of a Hero
+20246500 [Undead Crypt] King's Ring
+20265000 [Dragon Memories - Chest] Lifegem
+20266000 [Dragon Memories] Soul of a Lost Undead
+40035000 [Chasm of the Abyss - Chest] Lifegem
+40036000 [Chasm of the Abyss] Soul of a Lost Undead
+50000000 [Dyna & Tillo - Small SSS] Common
+50000001 [Dyna & Tillo - Small SSS] Uncommon
+50000002 [Dyna & Tillo - Small SSS] Rare
+50000003 [Dyna & Tillo - Small SSS]
+50000100 [Dyna & Tillo - SSS] Common
+50000101 [Dyna & Tillo - SSS] Uncommon
+50000102 [Dyna & Tillo - SSS] Rare
+50000103 [Dyna & Tillo - SSS]
+50000200 [Dyna & Tillo - PS] Common
+50000201 [Dyna & Tillo - PS] Uncommon
+50000202 [Dyna & Tillo - PS] Rare
+50000203 [Dyna & Tillo - PS]
+50000300 [Dyna & Tillo - Prism]
+50000301 [Dyna & Tillo - Prism]
+50000302 [Dyna & Tillo - Prism]
+50000303 [Dyna & Tillo - Prism] Common
+50001000 [Unknown] Rubbish
+50355010 [Shulva - Chest] Dried Root
+50355020 [Shulva - Chest] Boltstone- Bleed Stone
+50355030 [Shulva - Chest] Twinkling Titanite- Petrified Dragon Bone
+50355050 [Shulva - Chest] Catarina Set
+50355060 [Shulva - Chest] Puzzling Stone Sword
+50355070 [Shulva - Chest] Bloodbite Ring+1
+50355080 [Shulva - Chest] Divine Blessing
+50355090 [Shulva - Chest] Flynn's Ring
+50355100 [Shulva - Chest] Silver Talisman
+50355110 [Shulva - Chest] Lloyd's Talisman
+50355120 [Shulva - Chest] Dragon Stone
+50355130 [Shulva - Chest] Denial
+50355140 [Shulva - Chest] Dark Greatsword
+50355150 [Shulva - Chest] Petrified Something
+50355180 [Shulva - Chest] Flower Skirt
+50355190 [Shulva - Chest] Dried Root
+50355200 [Shulva - Chest] Dried Root
+50355210 [Shulva - Chest] Dried Root
+50355220 [Shulva - Chest] Lightning Clutch Ring
+50355230 [Shulva - Chest] Bonfire Ascetic
+50355240 [Shulva - Chest] Sanctum Shield
+50355250 [Shulva - Chest] Destructive Greatarrow
+50355260 [Shulva - Chest] Soul Vessel
+50355270 [Shulva - Chest] Old Growth Balm
+50355280 [Shulva - Chest] Titanite Slab
+50355330 [Shulva - Chest] Twinkling Titanite
+50355340 [Shulva - Chest] Bleed Stone
+50355350 [Shulva - Chest] Twinkling Titanite- Petrified Dragon Bone
+50356000 [Shulva] Poisonbite Ring+1
+50356010 [Shulva] Goldenfruit Balm
+50356020 [Shulva] Lightning Urn
+50356030 [Shulva] Old Growth Balm
+50356040 [Shulva] Sanctum Mace
+50356050 [Shulva] Sanctum Repeating Crossbow
+50356060 [Shulva] Lloyd's Talisman
+50356070 [Shulva] Soul of a Lost Undead
+50356080 [Shulva] Vine Balm
+50356090 [Shulva] Soul of a Hero
+50356100 [Shulva] Human Effigy
+50356110 [Shulva] Crown of the Sunken King
+50356130 [Shulva] Dragon Charm
+50356140 [Shulva] Old Growth Balm
+50356150 [Shulva] Human Effigy
+50356160 [Shulva] Lifegem
+50356170 [Shulva] Poison Stone
+50356180 [Shulva] Titanite Chunk
+50356190 [Shulva] Elizabeth Mushroom
+50356200 [Shulva] Magic Bolt
+50356210 [Shulva] Blackweed Balm
+50356220 [Shulva] Twinkling Titanite
+50356230 [Shulva] Repair Powder
+50356240 [Shulva] Rusted Coin
+50356250 [Shulva] Focus Souls
+50356260 [Shulva] Human Effigy
+50356270 [Shulva] Repair Powder
+50356280 [Shulva] Old Growth Balm
+50356290 [Shulva] Lifegem
+50356300 [Shulva] Dung Pie
+50356310 [Shulva] Poison Throwing Knife
+50356320 [Shulva] Torch
+50356330 [Shulva] Holy Water Urn
+50356340 [Shulva] Twinkling Titanite
+50356350 [Shulva] Human Effigy
+50356360 [Shulva] Old Growth Balm
+50356370 [Shulva] Soul of a Great Hero
+50356380 [Shulva] Notched Whip
+50356390 [Shulva] Torch
+50356400 [Shulva] Long Bow
+50356410 [Shulva] Torch
+50356420 [Shulva] Sanctum Crossbow
+50356430 [Shulva] Soul of a Great Hero- Dragon Charm
+50356440 [Shulva] Petrified Dragon Bone
+50356450 [Shulva] Hexing Urn
+50356460 [Shulva] Large Soul of a Brave Warrior
+50356470 [Shulva] Twinkling Titanite
+50356480 [Shulva] Small Smooth & Silky Stone
+50356490 [Shulva] Twinkling Titanite
+50356500 [Shulva] Vine Balm
+50356510 [Shulva] Drakeblood Greatsword
+50356520 [Shulva] Drakeblood Set
+50356530 [Shulva] Promised Walk of Peace
+50356540 [Shulva] Yorgh's Ring
+50356560 [Shulva] Dark Quartz Ring+3
+50356570 [Shulva] Darknight Stone
+50356580 [Shulva] Thunder Quartz Ring+3
+50356590 [Shulva] Cracked Red Eye Orb
+50356600 [Shulva] Throwing Knife
+50356610 [Shulva] Brightbug
+50356620 [Shulva] Bonfire Ascetic
+50356630 [Shulva] Eternal Sanctum Key
+50356640 [Shulva] Sanctum Knight Set
+50356650 [Shulva] Dried Root
+50356660 [Shulva] Human Effigy
+50356670 [Shulva] Alluring Skull
+50365000 [Brume Tower - Chest] Bonfire Ascetic- Human Effigy
+50365010 [Brume Tower - Chest]  Caestus
+50365020 [Brume Tower - Chest] Life Ring+3
+50365030 [Brume Tower - Chest] Old Radiant Lifegem
+50365040 [Brume Tower - Chest] Human Effigy
+50365050 [Brume Tower - Chest] Blacksteel Katana
+50365060 [Brume Tower - Chest] Repair Powder
+50365070 [Brume Tower - Chest] Smooth & Silky Stone
+50365080 [Brume Tower - Chest] Sorcery Clutch Ring
+50365090 [Brume Tower - Chest] Twinkling Titanite
+50365500 [Brume Tower - Chest] Old Radiant Lifegem- Wilted Dusk Herb
+50365510 [Brume Tower - Chest] Soul Vessel
+50365530 [Brume Tower - Chest] Catarina Gauntlets- Catarina Leggings
+50365540 [Brume Tower - Chest] Catarina Gauntlets- Catarina Leggings
+50365550 [Brume Tower - Chest] Pilgrim's Spontoon
+50365560 [Brume Tower - Chest] Titanite Slab
+50365570 [Brume Tower - Chest] Fire Snake
+50365580 [Brume Tower - Chest] Ashen Warrior Sword
+50365590 [Brume Tower - Chest] Petrified Dragon Bone
+50365600 [Brume Tower - Chest] Twinkling Titanite
+50365610 [Brume Tower - Chest] Petrified Dragon Bone
+50365620 [Brume Tower - Chest] Titanite Slab
+50365630 [Brume Tower - Chest] Recollection
+50365640 [Brume Tower - Chest] Divine Blessing
+50365650 [Brume Tower - Chest] Smelter Wedge
+50365660 [Brume Tower - Chest] Bonfire Ascetic
+50365670 [Brume Tower - Chest] Petrified Something
+50365680 [Brume Tower - Chest] Strength Ring
+50365690 [Brume Tower - Chest] Hollow Skin
+50365700 [Brume Tower - Chest] Bonfire Ascetic
+50366000 [Brume Tower] Dance of Fire
+50366020 [Brume Tower] Old Growth Balm
+50366030 [Brume Tower] Twilight Herb
+50366040 [Brume Tower] Petrified Dragon Bone
+50366070 [Brume Tower] Simpleton's Ring
+50366120 [Brume Tower] Torch
+50366130 [Brume Tower] Large Titanite Shard
+50366140 [Brume Tower] Alluring Skull
+50366150 [Brume Tower] Titanite Chunk
+50366160 [Brume Tower] Destructive Greatarrow
+50366170 [Brume Tower] Spell Quartz Ring+3
+50366200 [Brume Tower] Simpleton's Ring
+50366210 [Brume Tower] Tower Key
+50366220 [Brume Tower] Old Growth Balm
+50366230 [Brume Tower] Petrified Dragon Bone
+50366240 [Brume Tower] Titanite Shard
+50366250 [Brume Tower] Titanite Slab- Titanite Chunk
+50366260 [Brume Tower] Flame Quartz Ring+3
+50366270 [Brume Tower] Twinkling Titanite
+50366280 [Brume Tower] Possessed Armor Sword
+50366290 [Brume Tower] Morning Star
+50366300 [Brume Tower] Large Titanite Shard
+50366310 [Brume Tower] Human Effigy
+50366320 [Brume Tower] Twinkling Titanite
+50366330 [Brume Tower] Vine Balm
+50366340 [Brume Tower] Dexterity Ring
+50366350 [Brume Tower] Rouge Water
+50366360 [Brume Tower] Scythe
+50366370 [Brume Tower] Prism Stone
+50366380 [Brume Tower] Blackweed Balm
+50366390 [Brume Tower] Lloyd's Talisman
+50366400 [Brume Tower] Titanite Chunk
+50366410 [Brume Tower] Twinkling Titanite
+50366420 [Brume Tower] Goldenfruit Balm
+50366430 [Brume Tower] Iron Greatarrow
+50366440 [Brume Tower] Radiant Lifegem
+50366450 [Brume Tower] Bleeding Serum
+50366460 [Brume Tower] Firedrake Stone
+50366470 [Brume Tower] Flame Quartz Ring+3
+50366480 [Brume Tower] Human Effigy
+50366490 [Brume Tower] Goldenfruit Balm
+50366500 [Brume Tower] Wilted Dusk Herb
+50366510 [Brume Tower] Raw Stone
+50366520 [Brume Tower] Large Titanite Shard
+50366530 [Brume Tower] Old Radiant Lifegem
+50366540 [Brume Tower] Charcoal Pine Resin
+50366550 [Brume Tower] Broadsword
+50366560 [Brume Tower] Cracked Red Eye Orb
+50366570 [Brume Tower] Dried Root
+50366580 [Brume Tower] Magic Stone
+50366590 [Brume Tower] Amber Herb
+50366600 [Brume Tower] Rusted Coin
+50366610 [Brume Tower] Fire Greatarrow
+50366620 [Brume Tower] Black Firebomb
+50366630 [Brume Tower] Morning Star
+50366640 [Brume Tower] Dexterity Ring
+50366650 [Brume Tower] Radiant Lifegem
+50366660 [Brume Tower] Palestone
+50366670 [Brume Tower] Green Blossom
+50366680 [Brume Tower] Lacerating Knife
+50366690 [Brume Tower] Old Radiant Lifegem
+50366700 [Brume Tower] Dispelling Ring+1
+50366710 [Brume Tower] Human Effigy
+50366720 [Brume Tower] Skeptic's Spice
+50366730 [Brume Tower] Mad Warrior Set
+50366740 [Brume Tower] Twilight Herb
+50366750 [Brume Tower] Rouge Water
+50366760 [Brume Tower] Partizan
+50366770 [Brume Tower] Small Orange Burr
+50366780 [Brume Tower] Smelter Wedge
+50366790 [Brume Tower] Smelter Wedge
+50366800 [Brume Tower] Majestic Greatsword
+50366810 [Brume Tower] Alonne Greatbow
+50366820 [Brume Tower] Silver Talisman
+50366830 [Brume Tower] Wilted Dusk Herb
+50366840 [Brume Tower] Smelter Wedge
+50366850 [Brume Tower] Titanite Chunk
+50366860 [Brume Tower] Twinkling Titanite
+50366870 [Brume Tower] Charcoal Pine Resin
+50366880 [Brume Tower] Broadsword
+50366890 [Brume Tower] Petrified Something
+50366900 [Brume Tower] Goldenfruit Balm
+50366910 [Brume Tower] Skeptic's Spice
+50366920 [Brume Tower] Smooth & Silky Stone
+50366930 [Brume Tower] Human Effigy
+50366940 [Brume Tower] Rusted Coin
+50366950 [Brume Tower] Repair Powder
+50366960 [Brume Tower] Twinblade
+50366970 [Brume Tower] Radiant Lifegem
+50366980 [Brume Tower] Old Growth Balm
+50366990 [Brume Tower] Cracked Red Eye Orb
+50367000 [Brume Tower] Dried Root
+50367010 [Brume Tower] Large Titanite Shard
+50367020 [Brume Tower] Torch
+50367030 [Brume Tower] Simpleton's Spice
+50367040 [Brume Tower] Crimson Water
+50367050 [Brume Tower] Wilted Dusk Herb
+50367060 [Brume Tower] Pharros Mask
+50367070 [Brume Tower] Twinkling Titanite
+50367080 [Brume Tower] Dexterity Ring
+50367090 [Brume Tower] Dried Root
+50367100 [Brume Tower] Petrified Dragon Bone
+50367110 [Brume Tower] Twinkling Titanite
+50367120 [Brume Tower] Recollection
+50367130 [Brume Tower] Flame Butterfly
+50367140 [Brume Tower] Baneful Bird Ring
+50368000 [Brume Tower] Large Soul of a Proud Knight
+50368010 [Brume Tower] Soul of a Brave Warrior
+50368020 [Brume Tower] Old Mundane Stone
+50368030 [Brume Tower] Soul of a Great Hero
+50368040 [Brume Tower] Large Soul of a Proud Knight
+50368050 [Brume Tower] Soul of a Hero
+50368060 [Brume Tower] Palestone
+50368070 [Brume Tower] Large Soul of a Nameless Soldier
+50368080 [Brume Tower] Titanite Chunk
+50368090 [Brume Tower] Large Soul of a Brave Warrior
+50375500 [Eleum Loyce - Chest] Eye of the Priestess
+50375510 [Eleum Loyce - Chest] Divine Blessing
+50375520 [Eleum Loyce - Chest] Sorcerer's Twinblade
+50375530 [Eleum Loyce - Chest] Soul Flash
+50375540 [Eleum Loyce - Chest] Soul Vessel
+50375550 [Eleum Loyce - Chest] Elizabeth Mushroom
+50375560 [Eleum Loyce - Chest] Boltstone
+50375570 [Eleum Loyce - Chest] Petrified Dragon Bone
+50375580 [Eleum Loyce - Chest] Brightbug
+50375590 [Eleum Loyce - Chest] Bonfire Ascetic
+50375600 [Eleum Loyce - Chest] Old Radiant Lifegem
+50375610 [Eleum Loyce - Chest] Titanite Slab
+50375620 [Eleum Loyce - Chest] Old Radiant Lifegem- Wilted Dusk Herb
+50375630 [Eleum Loyce - Chest] Dried Root
+50375640 [Eleum Loyce - Chest] Splintering Lightning Spear
+50375650 [Eleum Loyce - Chest] Human Effigy
+50375660 [Eleum Loyce - Chest] Fire Clutch Ring
+50375670 [Eleum Loyce - Chest] Twin-headed Greatbow
+50375680 [Eleum Loyce - Chest] Wilted Dusk Herb
+50375690 [Eleum Loyce - Chest] Twinkling Titanite- Petrified Dragon Bone
+50375700 [Eleum Loyce - Chest] Curved Nil Greatsword
+50375710 [Eleum Loyce - Chest] Vessel Shield
+50375720 [Eleum Loyce - Chest] Human Effigy
+50375730 [Eleum Loyce - Chest] Retainer's Short Sword
+50375740 [Eleum Loyce - Chest] Durgo's Hat
+50376000 [Eleum Loyce] Monastery Charm
+50376010 [Eleum Loyce] Retainer Staff
+50376020 [Eleum Loyce] Hexing Urn
+50376030 [Eleum Loyce] Vine Balm
+50376040 [Eleum Loyce] Old Radiant Lifegem
+50376050 [Eleum Loyce] Torch
+50376060 [Eleum Loyce] Repair Powder
+50376070 [Eleum Loyce] Small Blue Burr
+50376080 [Eleum Loyce] Dark Clutch Ring
+50376090 [Eleum Loyce] Old Bell Helm
+50376100 [Eleum Loyce] Lloyd's Talisman
+50376110 [Eleum Loyce] Radiant Lifegem
+50376120 [Eleum Loyce] Goldenfruit Balm
+50376130 [Eleum Loyce] Large Soul of a Brave Warrior
+50376140 [Eleum Loyce] Prism Stone
+50376150 [Eleum Loyce] Charred Loyce Greatsword- Charred Loyce Shield
+50376160 [Eleum Loyce] Alluring Skull
+50376170 [Eleum Loyce] Skeptic's Spice
+50376180 [Eleum Loyce] Twilight Herb
+50376190 [Eleum Loyce] Old Growth Balm
+50376200 [Eleum Loyce] Magic Stone
+50376210 [Eleum Loyce] Scimitar
+50376220 [Eleum Loyce] Dried Root
+50376230 [Eleum Loyce] Lacerating Knife
+50376240 [Eleum Loyce] Holy Water Urn
+50376250 [Eleum Loyce] Old Growth Balm
+50376260 [Eleum Loyce] Titanite Chunk
+50376270 [Eleum Loyce] Fire Greatarrow
+50376280 [Eleum Loyce] Rusted Coin
+50376290 [Eleum Loyce] Gold Pine Resin
+50376300 [Eleum Loyce] Garrison Ward Key
+50376310 [Eleum Loyce] Monastery Charm
+50376320 [Eleum Loyce] Goldenfruit Balm
+50376330 [Eleum Loyce] Rampart Golem Lance- Rampart Golem Shield
+50376340 [Eleum Loyce] Radiant Lifegem
+50376350 [Eleum Loyce] Winged Spear
+50376360 [Eleum Loyce] Soul of a Great Hero
+50376370 [Eleum Loyce] Crimson Water
+50376380 [Eleum Loyce] Flame Butterfly
+50376390 [Eleum Loyce] Blackweed Balm
+50376400 [Eleum Loyce] Ring of Resistance+1
+50376410 [Eleum Loyce] Goldenfruit Balm
+50376420 [Eleum Loyce] Azal's Staff
+50376430 [Eleum Loyce] Ice Rapier
+50376440 [Eleum Loyce] Cracked Red Eye Orb
+50376450 [Eleum Loyce] Mirrah Hat
+50376460 [Eleum Loyce] Twinkling Titanite
+50376470 [Eleum Loyce] Human Effigy
+50376490 [Eleum Loyce] Smooth & Silky Stone
+50376510 [Eleum Loyce] Priest's Chime
+50376520 [Eleum Loyce] Vine Balm
+50376530 [Eleum Loyce] Dark Dance
+50376540 [Eleum Loyce] Ring of the Embedded
+50376550 [Eleum Loyce] Twilight Herb
+50376560 [Eleum Loyce] Northwarder Set
+50376570 [Eleum Loyce] Bone Fist
+50376580 [Eleum Loyce] Human Effigy
+50376590 [Eleum Loyce] Human Effigy
+50376600 [Eleum Loyce] Dried Root
+50376610 [Eleum Loyce] Crimson Water
+50376620 [Eleum Loyce] Smooth & Silky Stone
+50376630 [Eleum Loyce] Dried Root
+50376640 [Eleum Loyce] Charcoal Pine Resin
+50376650 [Eleum Loyce] Pharros' Lockstone
+50376660 [Eleum Loyce] Amber Herb
+50376670 [Eleum Loyce] Large Club
+50376680 [Eleum Loyce] Dried Root
+50376690 [Eleum Loyce] Twinkling Titanite
+50376710 [Eleum Loyce] Ring of the Living
+50376730 [Eleum Loyce] Wilted Dusk Herb
+50376740 [Eleum Loyce] Blackweed Balm
+50376750 [Eleum Loyce] Dried Root
+50376760 [Eleum Loyce] Goldenfruit Balm
+50376770 [Eleum Loyce] Elizabeth Mushroom
+60001000 [Event - Black Gulch Giants] Forgotten Key- Soul of a Giant
+60002000 [Event] Seed of a Tree of Giants
+60003000 [Event - Dragon Shrine Covenant Room] Petrified Egg
+60004000 [Event - Giant Memories] Soul of a Giant
+60005000 [Event - Dragon Memories] Ancient Dragon Soul
+60006000 [Event] Rotunda Lockstone- Soothing Sunlight- Idol's Chime- Saint Set
+60007000 [Event - 1000 Dark Spirits Killed] Titanite Slab
+60007100 [Event - 1000 Successful Invasions] Titanite Slab
+60007200 [Event - Complete No Death Run] Illusory Ring of a Conqueror
+60007300 [Event - Complete No Bonfire Run] Illusory Ring of the Exalted
+60008000 [Event - Pursuer Early Encounter] Soul of the Pursuer- Ring of Blades
+60008100 [Event] Twinkling Titanite
+60008110 [Event] Twinkling Titanite
+60009000 [Event - Unpetrify Lion Warrior] Fang Key
+60010000 [Event] Soldier Key
+60011000 [Event - Speak to Ancient Dragon] Ashen Mist Heart
+60012000 [Event] Soul of Nadalia- Bride of Ash
+60012010 [Event] Soul of Nadalia- Bride of Ash
+60012020 [Event] Soul of Nadalia- Bride of Ash
+60012030 [Event] Soul of Nadalia- Bride of Ash
+60012040 [Event] Soul of Nadalia- Bride of Ash
+60012050 [Event] Soul of Nadalia- Bride of Ash
+60012060 [Event] Soul of Nadalia- Bride of Ash
+60012070 [Event] Soul of Nadalia- Bride of Ash
+60012080 [Event] Soul of Nadalia- Bride of Ash
+60012090 [Event] Soul of Nadalia- Bride of Ash
+60012100 [Event] Soul of Nadalia- Bride of Ash
+60013000 [Event] Smelter Wedge
+60014000 [Event] Scorching Iron Scepter
+60015000 [Event] Soul of Nadalia- Bride of Ash
+60016000 [Event] Crown of the Old Iron King
+60019000 [Event] Smelter Wedge
+60020000 [Event] Crown of the Sunken King
+60030000 [Event] Soul of Aava- the King's Pet- Garrison Ward Key
+60031000 [Event] Crown of the Ivory King
+60040000 [Event] Soul of the Last Giant
+60041000 [Event] Ancient Dragon Soul
+60042000 [Event] Forgotten Key
+60043000 [Event] Giant's Kinship
+60044000 [Event] Giant Lord Soul
+60044001 [Event] Giant Lord Soul- Ring of Giants+2
+60045000 [Event] Rotunda Lockstone
+60046000 [Event] Key to the Embedded
+60046001 [Event] Demon of Song Soul
+60050000 [Event] Aldia Key
+70000000 [Unknown] Black Flamestone Dagger- Black Flamestone Parma
+90000000 UNKNOWN
+90000001 UNKNOWN
+99995000 UNKNOWN
+99995001 UNKNOWN
+99995002 UNKNOWN
+99995003 UNKNOWN
+99995004 UNKNOWN
+99995005 UNKNOWN
+99995006 UNKNOWN
+99995007 UNKNOWN
+99995008 UNKNOWN
+99996000 UNKNOWN
+99996001 UNKNOWN
+99996002 UNKNOWN
+99996003 UNKNOWN
+99996004 UNKNOWN
+99996005 UNKNOWN
+99996006 UNKNOWN
+99996007 UNKNOWN
+99996008 UNKNOWN

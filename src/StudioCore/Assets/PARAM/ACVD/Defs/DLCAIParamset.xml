@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DLC_AI_PARAMSET</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 designID">
+      <DisplayName>機体構成ID</DisplayName>
+      <Description>機体構成</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 acaiID">
+      <DisplayName>AC用AIエクセルの番号</DisplayName>
+      <Description>使用するAIのID。AC用AIパラメータ.xlsの番号に対応。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 unlockTrigger1_Emblem">
+      <DisplayName>アンロック条件１　取得エンブレムID</DisplayName>
+      <Description>このAIをアンロックするために必要なエンブレムのID。達成報酬データのIDと対応。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 unlockTrigger2_missionID">
+      <DisplayName>アンロック条件２　クリアミッションID</DisplayName>
+      <Description>エンブレム設定が０の場合、こちらの条件判定を使用する。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,241 @@
+100 [Decal application target] ALL -- 【デカール貼付対象】ALL
+100 [Decal application target] MAIN -- 【デカール貼付対象】MAIN
+100 [Decal application target] SUB -- 【デカール貼付対象】SUB
+105 Not specified -- 指定なし
+105 [Automatic assembly: Legs used] 2LEGS -- 【自動アセン：使用脚部】2LEGS
+105 [Automatic assembly: legs used] REVERSE JOINT -- 【自動アセン：使用脚部】REVERSE JOINT
+105 [Automatic assembly: Legs used] 4LEGS -- 【自動アセン：使用脚部】4LEGS
+105 [Automatic assembly: legs used] TANK -- 【自動アセン：使用脚部】TANK
+106 #N/A
+106 #N/A
+106 #N/A
+106 #N/A
+106 #N/A
+110 [Text] Standard -- 【テキスト】標準
+110 [Text] Japanese -- 【テキスト】日本語
+110 [Text] English -- 【テキスト】英語
+110 [Text] French -- 【テキスト】フランス語
+110 [Text] Spanish -- 【テキスト】スペイン語
+110 [Text] Italian -- 【テキスト】イタリア語
+110 [Text] German -- 【テキスト】ドイツ語
+110 [Text] Korean -- 【テキスト】韓国語
+110 [Text] Chinese [Traditional] -- 【テキスト】中国語[繁体字]
+110 [Text] Chinese [Simplified] -- 【テキスト】中国語[簡体字]
+110 [Text] Polish -- 【テキスト】ポーランド語
+110 [Text] Russian -- 【テキスト】ロシア語
+110 [Text] Portuguese -- 【テキスト】ポルトガル語
+110 [Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語
+111 [Voice] Standard -- 【ボイス】標準
+111 [Voice] Japanese -- 【ボイス】日本語
+111 [Voice] English -- 【ボイス】英語
+111 [Voice] French -- 【ボイス】フランス語
+111 [Voice] Spanish -- 【ボイス】スペイン語
+111 [Voice] Italian -- 【ボイス】イタリア語
+111 [Voice] German -- 【ボイス】ドイツ語
+111 [Voice] Korean -- 【ボイス】韓国語
+111 [Voice] Chinese [Traditional] -- 【ボイス】中国語[繁体字]
+111 [Voice] Chinese [Simplified] -- 【ボイス】中国語[簡体字]
+111 [Voice] Polish -- 【ボイス】ポーランド語
+111 [Voice] Russian -- 【ボイス】ロシア語
+111 [Voice] Portuguese -- 【ボイス】ポルトガル語
+111 [Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語
+125 [Gender] Male -- 【性別】男
+125 [Gender] Female -- 【性別】女
+130 [Option] ON -- 【オプション】ON
+130 [Option] OFF -- 【オプション】OFF
+131 [Option] Normal -- 【オプション】ノーマル
+131 [Option] Reverse -- 【オプション】リバース
+132 [Option] Button setting: TYPE A -- 【オプション】ボタン設定：TYPE A
+132 [Option] Button setting: TYPE B -- 【オプション】ボタン設定：TYPE B
+132 [Option] Button setting: TYPE C -- 【オプション】ボタン設定：TYPE C
+132 [Option] Button setting: Custom 1 -- 【オプション】ボタン設定：カスタム1
+132 [Option] Button settings: Custom 2 -- 【オプション】ボタン設定：カスタム2
+132 [Option] Button settings: Custom 3 -- 【オプション】ボタン設定：カスタム3
+133 [Optional] Always hidden -- 【オプション】常に非表示
+133 [Option] Always display -- 【オプション】常に表示
+133 [Option] Automatic -- 【オプション】自動
+134 [Option] Toggle -- 【オプション】トグル
+134 [Option] Hold -- 【オプション】ホールド
+134 [Option] FPS -- 【オプション】FPS
+134 [Option] FPS (QBON) -- 【オプション】FPS（QBON）
+135 [Option] Assault boost operation: TYPE A -- 【オプション】アサルトブースト操作：TYPE A
+135 [Option] Assault boost operation: TYPE B -- 【オプション】アサルトブースト操作：TYPE B
+136 Assault boost + shift operation -- アサルトブースト＋シフト操作
+136 Assault boost + target fixation -- アサルトブースト＋ターゲット固定
+137 [Option] Operation guide: Pad -- 【オプション】操作ガイド：パッド
+137 [Option] Operation guide: Keyboard/Mouse -- 【オプション】操作ガイド：キーボード・マウス
+138 [Optional] Screen mode: Window -- 【オプション】スクリーンモード：ウィンドウ
+138 [Optional] Screen mode: Full screen -- 【オプション】スクリーンモード：フルスクリーン
+138 [Optional] Screen mode: borderless window -- 【オプション】スクリーンモード：ボーダーレスウィンドウ
+139 [Option] HUD layout: default -- 【オプション】HUDレイアウト：デフォルト
+139 [Option] HUD layout: Custom 1 -- 【オプション】HUDレイアウト：カスタム1
+139 [Option] HUD layout: Custom 2 -- 【オプション】HUDレイアウト：カスタム2
+139 [Option] HUD layout: Custom 3 -- 【オプション】HUDレイアウト：カスタム3
+140 [Optional] Use -- 【オプション】使用する
+140 [Option] Not used -- 【オプション】使用しない
+141 [Optional] Agree -- 【オプション】同意する
+141 [Optional] Do not agree -- 【オプション】同意しない
+145 [Matching region] World -- 【マッチング地域】世界
+145 [Matching region] Japan -- 【マッチング地域】日本
+145 [Matching region] North America / Western Canada -- 【マッチング地域】北米 / カナダ西部
+145 [Matching region] North America / Eastern Canada -- 【マッチング地域】北米 / カナダ東部
+145 [Matching region] South America -- 【マッチング地域】南米
+145 [Matching region] Oceania -- 【マッチング地域】オセアニア
+145 [Matching region] Africa / Europe / Middle East -- 【マッチング地域】アフリカ / 欧州 / 中東
+145 [Matching region] Asia -- 【マッチング地域】アジア
+146 [Optional] Other player name notation PILOT NAME -- 【オプション】他プレイヤー名称表記　PILOT NAME
+146 [Optional] Other player name online ID -- 【オプション】他プレイヤー名称表記　オンライン ID
+147 [Option] Title launch settings online -- 【オプション】タイトル起動設定　オンライン
+147 [Option] Title launch settings offline -- 【オプション】タイトル起動設定　オフライン
+148 [Option] Ray tracing function OFF -- 【オプション】レイトレーシング機能 OFF
+148 [Option] Ray tracing function ON -- 【オプション】レイトレーシング機能 ON
+149 [Option] FPS limit 30 -- 【オプション】FPS制限 30
+149 [Option] FPS limit 60 -- 【オプション】FPS制限 60
+149 [Optional] FPS limit 90 -- 【オプション】FPS制限 90
+149 [Option] FPS limit 120 -- 【オプション】FPS制限 120
+150 [Grass quality]《Low》/Medium/High/Highest/Custom -- 【グラ品質】《低》/中/高/最高/カスタム
+150 [Grass quality] Low/Medium/High/Highest/Custom -- 【グラ品質】低/《中》/高/最高/カスタム
+150 [Grass quality] Low/Medium/《High》/Highest/Custom -- 【グラ品質】低/中/《高》/最高/カスタム
+150 [Grass quality] Low/Medium/High/《Best》/Custom -- 【グラ品質】低/中/高/《最高》/カスタム
+150 [Grass quality] Low/Medium/High/Highest/《Custom》 -- 【グラ品質】低/中/高/最高/《カスタム》
+151 [Grass quality]《OFF》/Low/Medium/High/Highest -- 【グラ品質】《OFF》/低/中/高/最高
+151 [Gura Quality] OFF/《Low》/Medium/High/Highest -- 【グラ品質】OFF/《低》/中/高/最高
+151 [Gura Quality] OFF/Low/《Medium》/High/Highest -- 【グラ品質】OFF/低/《中》/高/最高
+151 [Gura Quality] OFF/Low/Medium/《High》/Highest -- 【グラ品質】OFF/低/中/《高》/最高
+151 [Gura Quality] OFF/Low/Medium/High/《Best》 -- 【グラ品質】OFF/低/中/高/《最高》
+152 [Grass quality]《OFF》/Low/Medium/High -- 【グラ品質】《OFF》/低/中/高
+152 [Grass quality] OFF/《Low》/Medium/High -- 【グラ品質】OFF/《低》/中/高
+152 [Grass quality] OFF/Low/《Medium》/High -- 【グラ品質】OFF/低/《中》/高
+152 [Grass Quality] OFF/Low/Medium/《High》 -- 【グラ品質】OFF/低/中/《高》
+153 [Grass quality]《OFF》/Medium/High/Best -- 【グラ品質】《OFF》/中/高/最高
+153 [Grass quality] OFF/《Medium》/High/Best -- 【グラ品質】OFF/《中》/高/最高
+153 [Grass Quality] OFF/Medium/《High》/Highest -- 【グラ品質】OFF/中/《高》/最高
+153 [Grass Quality] OFF/Medium/High/《Best》 -- 【グラ品質】OFF/中/高/《最高》
+154 [Grass quality]《Low》/Medium/High/Highest -- 【グラ品質】《低》/中/高/最高
+154 [Grass quality] Low/《Medium》/High/Highest -- 【グラ品質】低/《中》/高/最高
+154 [Grass quality] Low/Medium/《High》/Highest -- 【グラ品質】低/中/《高》/最高
+154 [Grass quality] Low/Medium/High/《Best》 -- 【グラ品質】低/中/高/《最高》
+155 [Grass quality]《Low》/Medium/High -- 【グラ品質】《低》/中/高
+155 [Grass quality] Low/《Medium》/High -- 【グラ品質】低/《中》/高
+155 [Grass Quality] Low/Medium/《High》 -- 【グラ品質】低/中/《高》
+156 [Gura Quality] AA《OFF》/Low/High -- 【グラ品質】AA　《OFF》/低/高
+156 [Gura quality] AA　OFF/《Low》/High -- 【グラ品質】AA　OFF/《低》/高
+156 [Gura Quality] AA OFF/Low/《High》 -- 【グラ品質】AA　OFF/低/《高》
+157 [Gura Quality] Reflection《Low》/High/Highest -- 【グラ品質】反射　《低》/高/最高
+157 [Gura Quality] Reflection Low/High/Highest -- 【グラ品質】反射　低/《高》/最高
+157 [Gura Quality] Reflection Low/High/《Best》 -- 【グラ品質】反射　低/高/《最高》
+158 [Gra quality] Water surface《Low》/High -- 【グラ品質】水面　《低》/高
+158 [Gra quality] Water surface low/《high》 -- 【グラ品質】水面　低/《高》
+159 [Performance settings] Image quality priority -- 【パフォーマンス設定】 画質優先
+159 [Performance settings] Frame rate priority -- 【パフォーマンス設定】 フレームレート優先
+220 [Standard text chat] Thank you in advance -- 【定型文チャット】　よろしくお願いします
+220 [Standard text chat] Thank you for your hard work -- 【定型文チャット】　お疲れ様でした
+220 [Standard chat] Request for sortie -- 【定型文チャット】　出撃希望
+220 [Standard chat] Want to watch a game -- 【定型文チャット】　観戦希望
+220 [Fixed text chat] Assemble -- 【定型文チャット】　アセンブルをします
+220 [Fixed text chat] Ready -- 【定型文チャット】　準備ができました
+220 [Standard text chat] Please wait a moment. -- 【定型文チャット】　少々お待ちを
+220 [Standard text chat] Sorry to have kept you waiting. -- 【定型文チャット】　お待たせしました
+220 [Standard text chat] We will focus on firepower -- 【定型文チャット】　火力重視で行きます
+220 [Standard chat] We will focus on defense. -- 【定型文チャット】　防御重視で行きます
+220 [Fixed text chat] We will focus on speed. -- 【定型文チャット】　速度重視で行きます
+220 [Fixed text chat] I will go as needed -- 【定型文チャット】　臨機応変に行きます
+220 [Standard chat] Good morning -- 【定型文チャット】　おはようございます
+220 [Standard chat] Hello -- 【定型文チャット】　こんにちは
+220 [Fixed text chat] Good evening -- 【定型文チャット】　こんばんは
+220 [Standard chat] Goodbye -- 【定型文チャット】　さようなら
+220 [Standard chat] Thank you -- 【定型文チャット】　ありがとう
+220 [Standard chat] You're welcome -- 【定型文チャット】　どういたしまして
+220 [Standard chat] That's all for today. -- 【定型文チャット】　今日はここまでにします
+220 [Standard text chat] OK -- 【定型文チャット】　OK
+230 [Room Settings] Number of people: ALL -- 【ルーム設定】人数　ALL
+230 [Room settings] Number of people: 2 people -- 【ルーム設定】人数　2人
+230 [Room settings] Number of people: 3 people -- 【ルーム設定】人数　3人
+230 [Room settings] Number of people: 4 people -- 【ルーム設定】人数　4人
+230 [Room settings] Number of people: 5 people -- 【ルーム設定】人数　5人
+230 [Room settings] Number of people: 6 people -- 【ルーム設定】人数　6人
+230 [Room settings] Number of people: 7 people -- 【ルーム設定】人数　7人
+230 [Room settings] Number of people: 8 people -- 【ルーム設定】人数　8人
+230 [Room settings] Number of people: 9 people -- 【ルーム設定】人数　9人
+231 [Room Settings] Rules ALL -- 【ルーム設定】ルール ALL
+231 [Room Settings] Rules Single -- 【ルーム設定】ルール シングル
+231 [Room Settings] Rules Team -- 【ルーム設定】ルール チーム
+232 [Room Settings] Time limit ALL -- 【ルーム設定】制限時間 ALL
+232 [Room Settings] Time limit: 2 minutes -- 【ルーム設定】制限時間 2分
+232 [Room Settings] Time limit: 3 minutes -- 【ルーム設定】制限時間 3分
+232 [Room Settings] Time limit: 5 minutes -- 【ルーム設定】制限時間 5分
+232 [Room Settings] Time limit 7 minutes -- 【ルーム設定】制限時間 7分
+232 [Room Settings] Time limit 10 minutes -- 【ルーム設定】制限時間 10分
+233 [Room Settings] Map ALL -- 【ルーム設定】マップ ALL
+233 [Room Settings] Map Bona Dea Dunes -- 【ルーム設定】マップ ボナ・デア砂丘
+233 [Room Settings] Map “Wall” block -- 【ルーム設定】マップ 「壁」街区
+233 [Room Settings] Map Jorgen Fuel Base -- 【ルーム設定】マップ ヨルゲン燃料基地
+233 [Room Settings] Map Bertram Old Spaceport -- 【ルーム設定】マップ バートラム旧宇宙港
+233 [Room Settings] Map Grid 086 -- 【ルーム設定】マップ グリッド086
+233 [Room Settings] Map Grid 086 Upper Shell -- 【ルーム設定】マップ グリッド086上層外殻
+233 [Room Settings] Map Grid 012 -- 【ルーム設定】マップ グリッド012
+233 [Room Settings] Map Watchpoint Delta -- 【ルーム設定】マップ ウォッチポイント・デルタ
+233 [Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム
+234 [Room Settings] Team participation method ALL -- 【ルーム設定】チーム参加方式 ALL
+234 [Room Settings] Team participation method fixed -- 【ルーム設定】チーム参加方式 固定
+234 [Room Settings] Team participation method Loser change -- 【ルーム設定】チーム参加方式 敗者交代
+234 [Room Settings] Team participation method Winner change -- 【ルーム設定】チーム参加方式 勝者交代
+235 [Room Settings] Public Format Open -- 【ルーム設定】公開形式 オープン
+235 [Room Settings] Public Format Private -- 【ルーム設定】公開形式 プライベート
+239 [Competition mode] RANK MATCH: SINGLE -- 【対戦モード】 RANK MATCH: SINGLE
+239 [Competition mode] RANK MATCH: TEAM -- 【対戦モード】 RANK MATCH: TEAM
+239 [Competition mode] CUSTOM MATCH -- 【対戦モード】 CUSTOM MATCH
+240 [Notification] Category Emblem -- 【通報】カテゴリ エンブレム
+240 [Notification] Category Aircraft -- 【通報】カテゴリ 機体
+240 [Notification] Category User display -- 【通報】カテゴリ ユーザー表示
+240 [Report] Category Play details -- 【通報】カテゴリ プレイ内容
+241 [Notification] Please select the reason -- 【通報】理由 選択してください
+241 [Notification] No reason -- 【通報】理由 なし
+241 [Report] Reason: Cheating -- 【通報】理由 チート行為
+241 [Report] Reason: Abuse of defect -- 【通報】理由 不具合の悪用
+241 [Report] Reason: Match abandoned -- 【通報】理由 対戦放棄
+241 [Report] Reason for neglecting the game -- 【通報】理由 ゲームの放置
+241 [Report] Reason: Hate speech -- 【通報】理由 ヘイトスピーチ
+241 [Report] Reason: Offensive remarks -- 【通報】理由 攻撃的な発言
+241 [Report] Reason: Stalking -- 【通報】理由 ストーカー行為
+241 [Report] Reason: Threat -- 【通報】理由 脅迫
+241 [Report] Reason: Discriminatory expressions -- 【通報】理由 差別的な表現
+241 [Report] Reason: Obscene expression -- 【通報】理由 わいせつな表現
+241 [Report] Reason: Commercial advertising purpose -- 【通報】理由 営利宣伝目的
+241 [Report] Reason Personal information -- 【通報】理由 個人情報
+241 [Report] Reason: Slander -- 【通報】理由 誹謗中傷
+241 [Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する
+242 [Notification] Please select the reason -- 【通報】理由 選択してください
+242 [Notification] No reason -- 【通報】理由 なし
+242 [Report] Reason: Cheating -- 【通報】理由 チート行為
+242 [Report] Reason: Abuse of defect -- 【通報】理由 不具合の悪用
+242 [Report] Reason: Match abandoned -- 【通報】理由 対戦放棄
+242 [Report] Reason for neglecting the game -- 【通報】理由 ゲームの放置
+242 [Report] Reason: Hate speech -- 【通報】理由 ヘイトスピーチ
+242 [Report] Reason: Offensive remarks -- 【通報】理由 攻撃的な発言
+242 [Report] Reason: Stalking -- 【通報】理由 ストーカー行為
+242 [Report] Reason: Threat -- 【通報】理由 脅迫
+243 [Notification] Please select the reason -- 【通報】理由 選択してください
+243 [Notification] No reason -- 【通報】理由 なし
+243 [Report] Reason: Discriminatory expressions -- 【通報】理由 差別的な表現
+243 [Report] Reason: Obscene expression -- 【通報】理由 わいせつな表現
+243 [Report] Reason: Commercial advertising purpose -- 【通報】理由 営利宣伝目的
+243 [Report] Reason Personal information -- 【通報】理由 個人情報
+243 [Report] Reason: Slander -- 【通報】理由 誹謗中傷
+243 [Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する
+250 [Parameter display] Attribute《KE》/TE/CE/SP -- 【パラメータ表示】属性　《KE》/TE/CE/SP
+250 [Parameter display] Attribute KE/《TE》/CE/SP -- 【パラメータ表示】属性　KE/《TE》/CE/SP
+250 [Parameter display] Attribute KE/TE/《CE》/SP -- 【パラメータ表示】属性　KE/TE/《CE》/SP
+250 [Parameter display] Attribute KE/TE/CE/《SP》 -- 【パラメータ表示】属性　KE/TE/CE/《SP》
+251 [Parameter display] Size《S》/M/L/XL -- 【パラメータ表示】サイズ　《S》/M/L/XL
+251 [Parameter display] Size S/《M》/L/XL -- 【パラメータ表示】サイズ　S/《M》/L/XL
+251 [Parameter display] Size S/M/《L》/XL -- 【パラメータ表示】サイズ　S/M/《L》/XL
+251 [Parameter display] Size S/M/L/《XL》 -- 【パラメータ表示】サイズ　S/M/L/《XL》
+252 [Parameter display] Shooting type《S》/B/F/T -- 【パラメータ表示】射撃タイプ　《S》/B/F/T
+252 [Parameter display] Shooting type S/《B》/F/T -- 【パラメータ表示】射撃タイプ　S/《B》/F/T
+252 [Parameter display] Shooting type S/B/《F》/T -- 【パラメータ表示】射撃タイプ　S/B/《F》/T
+252 [Parameter display] Shooting type S/B/F/《T》 -- 【パラメータ表示】射撃タイプ　S/B/F/《T》
+255 [AC test] Enemy pattern 2-legged MT + drone -- 【ACテスト】敵パターン 2脚MT + ドローン
+255 [AC test] Enemy pattern 4-legged MT -- 【ACテスト】敵パターン 4脚MT
+255 [AC Test] Enemy Pattern Trainer AC -- 【ACテスト】敵パターン トレーナーAC
+255 [AC test] No enemy pattern -- 【ACテスト】敵パターン なし

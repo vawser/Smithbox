@@ -1,0 +1,22 @@
+10000 AC lifted -- AC解禁
+10010 Assembly lifted -- アセンブル解禁
+10020 Paint ban lifted -- ペイント解禁
+10021 Coloring lifted -- カラーリング解禁
+10022 Marking lifted -- マーキング解禁
+10023 Decal pasting ban lifted -- デカール貼り付け解禁
+10024 Image creation lifted -- イメージ作成解禁
+10030 AC DATA ban lifted -- AC DATA解禁
+10040 AC TEST lifted -- AC TEST解禁
+10050 SHOP lifted -- SHOP解禁
+10051 BUY lifted -- BUY解禁
+10052 SALE lifted -- SALE解禁
+10053 TRY ON SHOP lifted -- TRY ON SHOP解禁
+10062 ONLINE ARENA lifted -- ONLINE ARENA解禁
+10063 AC ARENA lifted -- AC ARENA解禁
+10070 DEPLOY lifted -- DEPLOY解禁
+10071 MISSION lifted -- MISSION解禁
+10072 FREE MISSION lifted -- FREE MISSION解禁
+10080 OS enhancement lifted -- OS強化解禁
+10090 Mercenary rank unlocked -- 傭兵ランク解禁
+10100 Training ban lifted -- トレーニング解禁
+99999999 for testing -- テスト用

@@ -98,7 +98,7 @@ public static class BankUtils
         var baseResource = new HavokGeneratorAliasResource();
         var modResource = new HavokGeneratorAliasResource();
 
-        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Havok Aliases\\{MiscLocator.GetGameIDForDir()}\\{filename}.json";
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\HAVOK\\{MiscLocator.GetGameIDForDir()}\\{filename}.json";
 
         if (File.Exists(baseResourcePath))
         {
@@ -116,7 +116,7 @@ public static class BankUtils
         var baseResource = new ProjectEnumResource();
         var modResource = new ProjectEnumResource();
 
-        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Enums.json";
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Enums.json";
 
         if (File.Exists(baseResourcePath))
         {
@@ -126,7 +126,7 @@ public static class BankUtils
             }
         }
 
-        var modResourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Enums.json";
+        var modResourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Enums.json";
 
         // If project version exists, use it instead
         if (File.Exists(modResourcePath))
@@ -144,11 +144,11 @@ public static class BankUtils
     {
         var baseResource = new FormatResource();
 
-        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{directory}\\Core.json";
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\Core.json";
 
         if (isGameSpecific)
         {
-            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{directory}\\{MiscLocator.GetGameIDForDir()}\\Core.json";
+            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\{MiscLocator.GetGameIDForDir()}\\Core.json";
         }
 
         if (File.Exists(baseResourcePath))
@@ -171,11 +171,11 @@ public static class BankUtils
     {
         var baseResource = new FormatEnum();
 
-        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{directory}\\Enums.json";
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\Enums.json";
 
         if (isGameSpecific)
         {
-            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{directory}\\{MiscLocator.GetGameIDForDir()}\\Enums.json";
+            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\{MiscLocator.GetGameIDForDir()}\\Enums.json";
         }
 
         if (File.Exists(baseResourcePath))
@@ -198,11 +198,11 @@ public static class BankUtils
     {
         var baseResource = new FormatMask();
 
-        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{directory}\\Masks.json";
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\Masks.json";
 
         if (isGameSpecific)
         {
-            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{directory}\\{MiscLocator.GetGameIDForDir()}\\Masks.json";
+            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\{MiscLocator.GetGameIDForDir()}\\Masks.json";
         }
 
         if (File.Exists(baseResourcePath))
@@ -293,11 +293,11 @@ public static class BankUtils
         return baseResource;
     }
 
-    public static GameOffsetResource LoadGameOffsetJSON(string directory, string filename)
+    public static GameOffsetResource LoadGameOffsetJSON(string filename)
     {
         var baseResource = new GameOffsetResource();
 
-        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\{MiscLocator.GetGameIDForDir()}\\{filename}.json";
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\{filename}.json";
 
         if (File.Exists(baseResourcePath))
         {

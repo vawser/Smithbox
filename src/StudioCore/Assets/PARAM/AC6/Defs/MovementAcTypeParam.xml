@@ -1,0 +1,1717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MOVEMENT_AC_TYPE_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>990010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>990011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>990012</SortID>
+    </Field>
+    <Field Def="dummy8 pad5[8]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990013</SortID>
+    </Field>
+    <Field Def="f32 jumpHorizontalMaxSpeedKMPH">
+      <DisplayName>ジャンプ水平移動最高速度[km/h]</DisplayName>
+      <Description>ジャンプ時の水平移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>2005</SortID>
+    </Field>
+    <Field Def="f32 jumpHorizontalAccelMPSS">
+      <DisplayName>ジャンプ水平移動加速度[m/s^2]</DisplayName>
+      <Description>ジャンプ時の水平移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2010</SortID>
+    </Field>
+    <Field Def="f32 jumpUpperMaxSpeedKMPH">
+      <DisplayName>ジャンプ垂直移動最高速度[km/h]</DisplayName>
+      <Description>ジャンプ時の垂直移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>2015</SortID>
+    </Field>
+    <Field Def="f32 jumpUpperAccelMPSS">
+      <DisplayName>ジャンプ垂直移動加速度[m/s^2]</DisplayName>
+      <Description>ジャンプ時の垂直移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2020</SortID>
+    </Field>
+    <Field Def="dummy8 pad6[16]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990014</SortID>
+    </Field>
+    <Field Def="f32 quickBoostMaxSpeedKMPH">
+      <DisplayName>クイックブースト最高速度[km/h]</DisplayName>
+      <Description>QB最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="f32 quickBoostAccelMPSS">
+      <DisplayName>クイックブースト加速度[m/s^2]</DisplayName>
+      <Description>QB加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5100</SortID>
+    </Field>
+    <Field Def="f32 landingHorizontalBrakeUseSlowKMH">
+      <DisplayName>この速度以下で低速接地ブレーキ[km/h]</DisplayName>
+      <Description>この速度以下になると低速接地ブレーキが使われる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>11000</SortID>
+    </Field>
+    <Field Def="f32 landingHorizontalBrakeUseFastKMH">
+      <DisplayName>この速度以上で高速接地ブレーキ[km/h]</DisplayName>
+      <Description>この速度以上になると高速接地ブレーキが使われる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>11100</SortID>
+    </Field>
+    <Field Def="f32 landingHorizontalSlowBrakeMPSS">
+      <DisplayName>低速接地水平ブレーキ[m/s^2]</DisplayName>
+      <Description>低速時の接地ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11200</SortID>
+    </Field>
+    <Field Def="f32 landingHorizontalFastBrakeMPSS">
+      <DisplayName>高速接地水平ブレーキ[m/s^2]</DisplayName>
+      <Description>高速時の接地ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11300</SortID>
+    </Field>
+    <Field Def="f32 flyHorizontalBrakeMPSS">
+      <DisplayName>空中最高水平速度超過時ブレーキ[m/s^2] </DisplayName>
+      <Description>空中で最高水平速度を超えた際に、最高速度へ丸めようとするブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12000</SortID>
+    </Field>
+    <Field Def="f32 flyUpBrakeMPSS">
+      <DisplayName>空中最高上昇速度超過時ブレーキ[m/s^2] </DisplayName>
+      <Description>空中で最高上昇速度を超えた際に、最高速度へ丸めようとするブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12100</SortID>
+    </Field>
+    <Field Def="f32 quickBoostUpperMaxSpeedKMPH">
+      <DisplayName>クイックブースト上昇最高速度[km/h]</DisplayName>
+      <Description>QB時上昇最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5200</SortID>
+    </Field>
+    <Field Def="f32 quickBoostUpperAccelMPSS">
+      <DisplayName>クイックブースト上昇加速度[m/s^2]</DisplayName>
+      <Description>QB時上昇加速度</Description>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5300</SortID>
+    </Field>
+    <Field Def="dummy8 pad7[36]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990015</SortID>
+    </Field>
+    <Field Def="f32 quickBoostAccelTimeSec">
+      <DisplayName>クイックブースト加速度時間[sec]</DisplayName>
+      <Description>QB加速時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5400</SortID>
+    </Field>
+    <Field Def="f32 movementToAnimMoveBrakeMPSS">
+      <DisplayName>制御移動→アニメ移動でのブレーキ[m/s^2]</DisplayName>
+      <Description>Movementでの移動からアニメ移動に切り替えた時のブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>21010</SortID>
+    </Field>
+    <Field Def="f32 guardBrakeRateAtBoost = 1">
+      <DisplayName>ブーストから割り込みガードした際のブレーキ倍率</DisplayName>
+      <Description>ブーストから割り込みガードした際のブレーキ倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>30000</SortID>
+    </Field>
+    <Field Def="f32 guardBrakeRateAtQuickBoost = 1">
+      <DisplayName>QBから割り込みでガードした際のブレーキ倍率</DisplayName>
+      <Description>QBから割り込みでガードした際のブレーキ倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>30001</SortID>
+    </Field>
+    <Field Def="f32 guardBrakeRateAtNormalBrake = 1">
+      <DisplayName>ブレーキから割り込みでガードした際のブレーキ倍率</DisplayName>
+      <Description>ブレーキから割り込みでガードした際のブレーキ倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>30002</SortID>
+    </Field>
+    <Field Def="dummy8 pad4[16]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990016</SortID>
+    </Field>
+    <Field Def="f32 boostMoveSwitchBackGroundBrakeMPSS">
+      <DisplayName>地上ブースト切り返し時ブレーキ[m/s^2]</DisplayName>
+      <Description>地上ブースト移動の切り返し時ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 boostMoveSwitchBackFlyBrakeMPSS">
+      <DisplayName>空中ブースト切り返し時ブレーキ[m/s^2]</DisplayName>
+      <Description>空中ブースト移動の切り返し時ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 boostMoveSubGroundAccelMPSS">
+      <DisplayName>地上ブースト移動方向補正加速度[m/s^2]</DisplayName>
+      <Description>地上ブースト移動の移動方向補正用加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 boostMoveSubFlyAccelMPSS">
+      <DisplayName>空中ブースト移動方向補正加速度[m/s^2]</DisplayName>
+      <Description>空中ブースト移動の移動方向補正用加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 assaultBoostSubAccelMPSS">
+      <DisplayName>アサルトブースト移動方向補正加速度[m/s^2]</DisplayName>
+      <Description>アサルトブースト移動の移動方向補正用加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 bladeHomingSubAccelMPSS">
+      <DisplayName>システムブレホ移動方向補正加速度[m/s^2]</DisplayName>
+      <Description>システムブレホの移動方向補正用加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9200</SortID>
+    </Field>
+    <Field Def="dummy8 pad9[28]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990017</SortID>
+    </Field>
+    <Field Def="f32 minStiffSpeedKMPH">
+      <DisplayName>最小硬直時間になる速度[km/h]</DisplayName>
+      <Description>この速度以下で着地した時に最小硬直時間になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>40000</SortID>
+    </Field>
+    <Field Def="f32 minStiffTimeSec">
+      <DisplayName>最小硬直時間[sec]</DisplayName>
+      <Description>最小着地硬直時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>40010</SortID>
+    </Field>
+    <Field Def="f32 maxStiffSpeedKMPH">
+      <DisplayName>【補正計算グラフパラに移動】最大硬直時間になる速度[km/h]</DisplayName>
+      <Description>この速度以上で着地した時に最大硬直時間になる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>40020</SortID>
+    </Field>
+    <Field Def="f32 maxStiffTimeSec">
+      <DisplayName>最大硬直時間[sec]</DisplayName>
+      <Description>最大着地硬直時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>40030</SortID>
+    </Field>
+    <Field Def="f32 realVelocityFeedBackRate">
+      <DisplayName>実際の移動量を反映する割合</DisplayName>
+      <Description>この値が小さいほど重量感が増す</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>90000</SortID>
+    </Field>
+    <Field Def="f32 tankTurnOffset_CenterOffset">
+      <DisplayName>【タンク旋回オフセット】旋回の中心位置オフセット</DisplayName>
+      <Description>タンクの旋回軸のオフセット（前が+）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-50</Minimum>
+      <Maximum>50</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5940</SortID>
+    </Field>
+    <Field Def="f32 tankTurnOffset_MaxFwdOffset">
+      <DisplayName>【タンク旋回オフセット】前方向最大オフセット（前移動最高速度時）</DisplayName>
+      <Description>旋回軸の中心からのオフセット</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-50</Minimum>
+      <Maximum>50</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5940</SortID>
+    </Field>
+    <Field Def="f32 tankTurnOffset_MaxBackOffset">
+      <DisplayName>【タンク旋回オフセット】後ろ方向最大オフセット（後ろ移動最高速度時）</DisplayName>
+      <Description>旋回軸の中心からのオフセット</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-50</Minimum>
+      <Maximum>50</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5940</SortID>
+    </Field>
+    <Field Def="s16 tankTurnOffset_MaxFwdOffsetSpeedKMH">
+      <DisplayName>【タンク旋回オフセット】前方向最大オフセットになる前方向速度[km/h]</DisplayName>
+      <Description>前方向最大オフセットがかかるようになる最高速度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5940</SortID>
+    </Field>
+    <Field Def="s16 tankTurnOffset_MaxBackOffsetSpeedKMH">
+      <DisplayName>【タンク旋回オフセット】後ろ方向最大オフセットになる後ろ方向速度[km/h]</DisplayName>
+      <Description>後ろ方向最大オフセットがかかるようになる最高速度</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5940</SortID>
+    </Field>
+    <Field Def="f32 tankTurnOffset_MaxMoveDirFwdDirErrAngDeg">
+      <DisplayName>【タンク旋回オフセット】移動方向と速度方向の最大ズレ角度[deg]</DisplayName>
+      <Description>移動方向と速度方向のズレによるオフセットが最大になる角度</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5940</SortID>
+    </Field>
+    <Field Def="f32 assaultBoostSideAvoidSubAccelMPSS">
+      <DisplayName>アサルトブースト横回避移動方向補正加速度[m/s^2]</DisplayName>
+      <Description>アサルトブースト横回避移動の移動方向補正用加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="f32 quickBoostAddSpeedToBoostMaxSpeedKMPH">
+      <DisplayName>ダッシュブースト中クイックブースト最高速度加算値[km/h]</DisplayName>
+      <Description>ダッシュブースト中にクイックブーストした際に、ダッシュブースト最高速度に加算される値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5500</SortID>
+    </Field>
+    <Field Def="u8 quickTurn_MaxTurnAngleDeg = 180">
+      <DisplayName>クイックターン最大旋回角度[deg]</DisplayName>
+      <Description>クイックターンでの最大旋回角度</Description>
+      <Maximum>180</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[3]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990018</SortID>
+    </Field>
+    <Field Def="f32 quickTurn_MaxTurnTimeSec">
+      <DisplayName>クイックターン最大旋回時間[sec]</DisplayName>
+      <Description>クイックターンの最大旋回時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>6010</SortID>
+    </Field>
+    <Field Def="s16 roundDashMaxSpeedKMPH">
+      <DisplayName>ダッシュ回り込み最高速度[km/h]</DisplayName>
+      <Description>ダッシュ回りこみの時の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="dummy8 pad3[2]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990019</SortID>
+    </Field>
+    <Field Def="f32 roundDashAccelMPSS">
+      <DisplayName>ダッシュ回り込み加速度[m/s^2]</DisplayName>
+      <Description>ダッシュ回りこみの加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7100</SortID>
+    </Field>
+    <Field Def="f32 roundDashBrakeMPSS">
+      <DisplayName>ダッシュ回り込みブレーキ[m/s^2]</DisplayName>
+      <Description>ダッシュ回りこみのブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7200</SortID>
+    </Field>
+    <Field Def="f32 bladeBrakeFromBoostMPSS">
+      <DisplayName>ブーストorダッシュからの格闘攻撃時のブレーキ量[m/s^2]</DisplayName>
+      <Description>ブーストorダッシュからの格闘攻撃時に使用されるブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11700</SortID>
+    </Field>
+    <Field Def="f32 bladeBrakeFromQuickBoostMPSS">
+      <DisplayName>クイックブーストからの格闘攻撃時のブレーキ量[m/s^2]</DisplayName>
+      <Description>クイックブーストからの格闘攻撃時に使用されるブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11700</SortID>
+    </Field>
+    <Field Def="f32 roundDashFallAccelMPSS">
+      <DisplayName>ダッシュ回り込み急降下加速度[m/s^2]</DisplayName>
+      <Description>ダッシュ回りこみの急降下加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7150</SortID>
+    </Field>
+    <Field Def="f32 cunterBoostBrakeMPSS">
+      <DisplayName>ブースト逆噴射時ブレーキ量[m/s^2]</DisplayName>
+      <Description>ブースターを逆噴射した時のブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11800</SortID>
+    </Field>
+    <Field Def="f32 cunterBoostBrakeMaxTimeSec">
+      <DisplayName>ブースト逆噴射時最大まで時間[sec]</DisplayName>
+      <Description>ブースターを逆噴射した時のブレーキ量が最大になるまでの時間（秒）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11900</SortID>
+    </Field>
+    <Field Def="f32 flyBoostBrakeMPSS">
+      <DisplayName>飛行ブースト時最大ブレーキ量[m/s^2]</DisplayName>
+      <Description>飛行ブーストでニュートラルや切り返し移動した時のブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12200</SortID>
+    </Field>
+    <Field Def="f32 flyBoostBrakeMaxTimeSec">
+      <DisplayName>飛行ブースト時最大ブレーキまで時間[sec]</DisplayName>
+      <Description>飛行ブーストでニュートラルや切り返し移動した時のブレーキ量が最大になるまでの時間（秒）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12300</SortID>
+    </Field>
+    <Field Def="f32 uTurnBrakeMPSS">
+      <DisplayName>ブースト中Uターン時最大ブレーキ量[m/s^2]</DisplayName>
+      <Description>ブースト移動中の１８０度ターンのときのブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12000</SortID>
+    </Field>
+    <Field Def="f32 upperQuickBoostMaxSpeedKMPH">
+      <DisplayName>上昇クイックブースト上昇最高速度[km/h]</DisplayName>
+      <Description>上昇QB最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5600</SortID>
+    </Field>
+    <Field Def="f32 upperQuickBoostAccelMPSS">
+      <DisplayName>上昇クイックブースト上昇加速度[m/s^2]</DisplayName>
+      <Description>上昇QB加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5610</SortID>
+    </Field>
+    <Field Def="f32 upperQuickBoostHorizontalMaxSpeedKMPH">
+      <DisplayName>上昇クイックブースト水平方向最高速度[km/h]</DisplayName>
+      <Description>上昇QB水平方向の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5620</SortID>
+    </Field>
+    <Field Def="f32 upperQuickBoostHorizontalAccelMPSS">
+      <DisplayName>上昇クイックブースト水平方向加速度[m/s^2]</DisplayName>
+      <Description>上昇QB水平方向の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5630</SortID>
+    </Field>
+    <Field Def="f32 fallQuickBoostAccelMPSS">
+      <DisplayName>急降下クイックブースト加速度[m/s^2]</DisplayName>
+      <Description>急降下QB加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5710</SortID>
+    </Field>
+    <Field Def="f32 fallQuickBoostHorizontalMaxSpeedKMPH">
+      <DisplayName>急降下クイックブースト水平方向最高速度[km/h]</DisplayName>
+      <Description>急降下QB水平方向の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5720</SortID>
+    </Field>
+    <Field Def="f32 fallQuickBoostHorizontalAccelMPSS">
+      <DisplayName>急降下クイックブースト水平方向加速度[m/s^2]</DisplayName>
+      <Description>急降下QB水平方向の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5730</SortID>
+    </Field>
+    <Field Def="f32 bladeHomingHorizontalMaxSpeedKMPH">
+      <DisplayName>ブレホ水平移動最高速度[km/h]</DisplayName>
+      <Description>ブレホ水平移動の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="f32 bladeHomingHorizontalAccelMPSS">
+      <DisplayName>ブレホ水平移動加速度[m/s^2]</DisplayName>
+      <Description>ブレホ水平移動の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9010</SortID>
+    </Field>
+    <Field Def="f32 slidingMaxSpeedKMPH">
+      <DisplayName>スライディング最高速度[km/h]</DisplayName>
+      <Description>スライディング最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5810</SortID>
+    </Field>
+    <Field Def="f32 slidingBoostAccelMPSS">
+      <DisplayName>スライディング加速度[m/s^2]</DisplayName>
+      <Description>スライディング加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5820</SortID>
+    </Field>
+    <Field Def="f32 bladeHomingLandBrakeMPSS">
+      <DisplayName>地上ブレホブレーキ量[m/s^2]</DisplayName>
+      <Description>地上ブレホ中のブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9100</SortID>
+    </Field>
+    <Field Def="f32 bladeHomingFlyBrakeMPSS">
+      <DisplayName>空中ブレホブレーキ量[m/s^2]</DisplayName>
+      <Description>空中ブレホ中のブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9110</SortID>
+    </Field>
+    <Field Def="f32 damageBrake_BeginBrakeMPSS">
+      <DisplayName>【ダメージブレーキ】開始時ブレーキ[m/s^2]</DisplayName>
+      <Description>ダメージブレーキ開始時のブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13000</SortID>
+    </Field>
+    <Field Def="f32 damageBrake_PeakBrakeMPSS">
+      <DisplayName>【ダメージブレーキ】ピーク時ブレーキ[m/s^2]</DisplayName>
+      <Description>ダメージブレーキのピークブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13010</SortID>
+    </Field>
+    <Field Def="f32 damageBrake_BeginToPeakTimeSec">
+      <DisplayName>【ダメージブレーキ】開始からピークまでの時間[sec]</DisplayName>
+      <Description>ダメージブレーキ開始からピークまでかかる時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13020</SortID>
+    </Field>
+    <Field Def="f32 wireMoveMaxSpeedKMPH">
+      <DisplayName>ワイヤー移動最高速度[km/h]</DisplayName>
+      <Description>ワイヤー移動の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>8100</SortID>
+    </Field>
+    <Field Def="f32 wireMoveAccelMPSS">
+      <DisplayName>ワイヤー移動加速度[m/s^2]</DisplayName>
+      <Description>ワイヤー移動の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8110</SortID>
+    </Field>
+    <Field Def="f32 damageBrake_TimerResetDelayTime">
+      <DisplayName>【ダメージブレーキ】経過時間リセット猶予時間[sec]</DisplayName>
+      <Description>ノックバック速度が0になってからダメージブレーキ用タイマーがリセットするまでの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>13050</SortID>
+    </Field>
+    <Field Def="f32 flyDownBrakeMPSS">
+      <DisplayName>空中最高下降速度超過時ブレーキ[m/s^2] </DisplayName>
+      <Description>空中で最高下降速度を超えた際に、最高速度へ丸めようとするブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12110</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[4]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990020</SortID>
+    </Field>
+    <Field Def="f32 landDeadBrakeMPSS">
+      <DisplayName>死亡時地上ブレーキ量[m/s^2]</DisplayName>
+      <Description>死亡しているときの地上ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>20000</SortID>
+    </Field>
+    <Field Def="f32 flyDeadBrakeMPSS">
+      <DisplayName>死亡時空中ブレーキ量[m/s^2]</DisplayName>
+      <Description>死亡しているときの空中ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>20010</SortID>
+    </Field>
+    <Field Def="f32 BladeHomingAccelTimeSec">
+      <DisplayName>ブレホ加速度時間[sec]</DisplayName>
+      <Description>ブレホ加速時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9060</SortID>
+    </Field>
+    <Field Def="f32 jumpHorizontalMaxSpeedFromVehicleKMPH">
+      <DisplayName>ビークルからのジャンプ水平移動最高速度[km/h]</DisplayName>
+      <Description>ビークルからのジャンプ時の水平移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="f32 jumpHorizontalAccelFromVehicleMPSS">
+      <DisplayName>ビークルからのジャンプ水平移動加速度[m/s^2]</DisplayName>
+      <Description>ビークルからのジャンプ時の水平移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="f32 jumpUpperMaxSpeedFromVehicleKMPH">
+      <DisplayName>ビークルからのジャンプ垂直移動最高速度[km/h]</DisplayName>
+      <Description>ビークルからのジャンプ時の垂直移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>2700</SortID>
+    </Field>
+    <Field Def="f32 jumpUpperAccelFromVehicleMPSS">
+      <DisplayName>ビークルからのジャンプ垂直移動加速度[m/s^2]</DisplayName>
+      <Description>ビークルからのジャンプ時の垂直移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2800</SortID>
+    </Field>
+    <Field Def="f32 wallJumpMaxSpeedKMPH_H">
+      <DisplayName>三角飛び水平最高速度[km/h]</DisplayName>
+      <Description>三角飛びの水平最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="f32 wallJumpAccelMPSS_H">
+      <DisplayName>三角飛び水平加速度[m/s^2]</DisplayName>
+      <Description>三角飛びの水平加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8010</SortID>
+    </Field>
+    <Field Def="f32 wallJumpAccelTimeSec">
+      <DisplayName>三角飛び加速時間[sec]</DisplayName>
+      <Description>三角飛びの加速時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8020</SortID>
+    </Field>
+    <Field Def="f32 wallJumpAddUpMaxSpeedKMPH">
+      <DisplayName>三角飛び追加上昇最高速度[km/h]</DisplayName>
+      <Description>三角飛びで追加する上昇最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>8016</SortID>
+    </Field>
+    <Field Def="f32 wallJumpAddUpAccelMPSS">
+      <DisplayName>三角飛び追加上昇加速度[m/s^2]</DisplayName>
+      <Description>三角飛びで追加する上昇加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8018</SortID>
+    </Field>
+    <Field Def="f32 stealthDashBoostMaxSpeedKMPH">
+      <DisplayName>ステルスダッシュブースト最高速度[km/h]</DisplayName>
+      <Description>ステルス時ダッシュブースト時の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 stealthDashBoostStartAccelMPSS">
+      <DisplayName>ステルスダッシュブースト開始加速度[m/s^2]</DisplayName>
+      <Description>ステルス時ダッシュブースト時の開始加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="f32 stealthDashBoostMaxAccelMPSS">
+      <DisplayName>ステルスダッシュブースト最高加速度[m/s^2]</DisplayName>
+      <Description>ステルス時ダッシュブースト時の最高加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="f32 stealthDashBoostBeginAccelTimeSec">
+      <DisplayName>ステルスダッシュブースト開始加速度継続時間[sec]</DisplayName>
+      <Description>ステルス時ダッシュブースト開始加速度の継続時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1130</SortID>
+    </Field>
+    <Field Def="f32 stealthDashBoostBeginToMaxAccelTimeSec">
+      <DisplayName>ステルスダッシュブースト開始→最高加速度時間[sec]</DisplayName>
+      <Description>ステルス時ダッシュブースト開始時加速度から最高加速度になるまでの時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1140</SortID>
+    </Field>
+    <Field Def="f32 slopeEffectUpMinDeg">
+      <DisplayName>【坂道効果】効果が始まる最小上り角度[度]</DisplayName>
+      <Description>上り坂道で速度効果がかかり始める角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>80000</SortID>
+    </Field>
+    <Field Def="f32 slopeEffectUpMaxDeg">
+      <DisplayName>【坂道効果】効果が最大になる上り角度[度]</DisplayName>
+      <Description>上り坂道で速度効果が最大になる角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>80010</SortID>
+    </Field>
+    <Field Def="f32 slopeEffectDownMinDeg">
+      <DisplayName>【坂道効果】効果が始まる最小下り角度[度]</DisplayName>
+      <Description>下り坂道で速度効果がかかり始める角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>80020</SortID>
+    </Field>
+    <Field Def="f32 slopeEffectDownMaxDeg">
+      <DisplayName>【坂道効果】効果が最大になる下り角度[度]</DisplayName>
+      <Description>下り坂道で速度効果が最大になる角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>90</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>80030</SortID>
+    </Field>
+    <Field Def="f32 slopeEffectUpMaxAccelRate">
+      <DisplayName>【坂道効果】上り最大加速度係数</DisplayName>
+      <Description>上り坂道での最大加速係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>80040</SortID>
+    </Field>
+    <Field Def="f32 slopeEffectUpMaxSpeedRate">
+      <DisplayName>【坂道効果】上り最大速度係数</DisplayName>
+      <Description>上り坂道での最大速度係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>80050</SortID>
+    </Field>
+    <Field Def="f32 slopeEffectDownMaxAccelRate">
+      <DisplayName>【坂道効果】下り最大加速度係数</DisplayName>
+      <Description>下り坂道での最大加速係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>80060</SortID>
+    </Field>
+    <Field Def="f32 slopeEffectDownMaxSpeedRate">
+      <DisplayName>【坂道効果】下り最大速度係数</DisplayName>
+      <Description>下り坂道での最大速度係数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>80070</SortID>
+    </Field>
+    <Field Def="f32 wallJumpMaxSpeedKMPH_V">
+      <DisplayName>三角飛び垂直最高速度[km/h]</DisplayName>
+      <Description>三角飛びの垂直最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>8012</SortID>
+    </Field>
+    <Field Def="f32 wallJumpAccelMPSS_V">
+      <DisplayName>三角飛び垂直加速度[m/s^2]</DisplayName>
+      <Description>三角飛びの垂直加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8014</SortID>
+    </Field>
+    <Field Def="f32 minAnimMoveAccelMPSS = 300">
+      <DisplayName>最低保証アニメ移動加速度[m/s^2]</DisplayName>
+      <Description>アニメ移動するときの最低保証加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>21000</SortID>
+    </Field>
+    <Field Def="f32 SlowBrakeAnimKMPH">
+      <DisplayName>低速ブレーキアニメ再生[km/h]</DisplayName>
+      <Description>この値以下の水平速度のときにで低速用ブレーキアニメ切り替えを行います</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12400</SortID>
+    </Field>
+    <Field Def="f32 jumpHorizontalMinSpeedKMPH">
+      <DisplayName>ジャンプ水平移動最低速度[km/h]</DisplayName>
+      <Description>ジャンプ時の水平移動最低速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 jumpUpperMinSpeedKMPH">
+      <DisplayName>ジャンプ垂直移動最低速度[km/h]</DisplayName>
+      <Description>ジャンプ時の垂直移動最低速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>2010</SortID>
+    </Field>
+    <Field Def="f32 propellerFlyBoostHorizontalMinSpeedKMH">
+      <DisplayName>プロペラ時飛行ブースト水平移動最低速度[km/h]</DisplayName>
+      <Description>プロペラ時飛行ブースト水平移動時の最低速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>3500</SortID>
+    </Field>
+    <Field Def="f32 propellerFlyBoostHorizontalMaxSpeedKMH">
+      <DisplayName>プロペラ時飛行ブースト水平移動最高速度[km/h]</DisplayName>
+      <Description>プロペラ時飛行ブースト水平移動時の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>3510</SortID>
+    </Field>
+    <Field Def="f32 freeFallMaxHorizontalSpeedKMPH">
+      <DisplayName>自由落下水平最高速度[km/h]</DisplayName>
+      <Description>自由落下時の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>3400</SortID>
+    </Field>
+    <Field Def="f32 freeFallMaxHorizontalAccelMPSS">
+      <DisplayName>自由落下水平加速度[m/s^2]</DisplayName>
+      <Description>自由落下時の開始加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3400</SortID>
+    </Field>
+    <Field Def="u16 quickBoostAccelAnimTimeFrame">
+      <DisplayName>クイックブースト加速時間[F]</DisplayName>
+      <Description>QBの速度をパラメータ調整</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5010</SortID>
+    </Field>
+    <Field Def="u16 quickBoostSpeedKeepTimeFrame">
+      <DisplayName>クイックブースト最高速度維持時間[F]</DisplayName>
+      <Description>QBの速度をパラメータ調整</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5020</SortID>
+    </Field>
+    <Field Def="f32 quickBoostMaxSpeedForAnimKMPH">
+      <DisplayName>アニメ移動量版クイックブースト最高速度[km/h]</DisplayName>
+      <Description>アニメ版QBの最高速度指定</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5030</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostHorizontalMaxSpeedKMPH">
+      <DisplayName>大QB水平移動最高速度[km/h]</DisplayName>
+      <Description>大QB時の水平移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostHorizontalAccelMPSS">
+      <DisplayName>大QB水平移動加速度[m/s^2]</DisplayName>
+      <Description>大QB時の水平移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostUpperMaxSpeedKMPH">
+      <DisplayName>大QB「上昇/降下ボタン押下中」垂直移動最高速度[km/h]</DisplayName>
+      <Description>大QB時の垂直移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostUpperAccelMPSS">
+      <DisplayName>大QB「上昇/降下ボタン押下中」垂直移動加速度[m/s^2]</DisplayName>
+      <Description>大QB時の垂直移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostUpperBrakeMPSS">
+      <DisplayName>大QB垂直移動ブレーキ量[m/s^2]</DisplayName>
+      <Description>大QB時の垂直移動ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5902</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostUpperMoveHorizontalSpeedRate">
+      <DisplayName>大QB垂直移動時の水平移動速度補正割合</DisplayName>
+      <Description>大QB時の垂直移動時に掛かる水平移動速度の補正割合</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5902</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostUpperMoveHorizontalBrakeMPSS">
+      <DisplayName>大QB垂直移動時の水平移動ブレーキ量[m/s^2]</DisplayName>
+      <Description>大QB垂直移動時の水平移動ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5902</SortID>
+    </Field>
+    <Field Def="f32 tankLandMaxSpeedKMPH">
+      <DisplayName>タンク地上移動_歩行時_最高速度[km/h]</DisplayName>
+      <Description>タンク地上移動 - 歩行時の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5920</SortID>
+    </Field>
+    <Field Def="f32 tankLandAccelMPSS">
+      <DisplayName>タンク地上移動_歩行時_加速度[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - 歩行時の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5920</SortID>
+    </Field>
+    <Field Def="f32 tankLandTurnMaxSpeedRate">
+      <DisplayName>タンク地上移動_左右移動時の水平移動速度補正割合</DisplayName>
+      <Description>タンク地上移動_左右移動時の水平移動速度補正割合</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5925</SortID>
+    </Field>
+    <Field Def="f32 tankLandTurnMaxAngle">
+      <DisplayName>タンク地上移動_左右移動時の水平移動速度補正角度[deg]</DisplayName>
+      <Description>タンク地上移動_左右移動時の水平移動速度補正角度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>5925</SortID>
+    </Field>
+    <Field Def="f32 tankLandBoostMaxSpeedKMPH">
+      <DisplayName>タンク地上移動_走行時_最高速度[km/h]</DisplayName>
+      <Description>タンク地上移動 - 走行時最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5921</SortID>
+    </Field>
+    <Field Def="f32 tankLandBoostAccelMPSS">
+      <DisplayName>タンク地上移動_走行時_加速度[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - 走行時加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5921</SortID>
+    </Field>
+    <Field Def="f32 tankLandBoostBrakeMPSS">
+      <DisplayName>タンク地上移動_走行時_ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - 走行時ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5921</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveMaxSpeed_MinAng = 100">
+      <DisplayName>斜面移動の最小角度時最高速度[km/h]</DisplayName>
+      <Description>斜面移動 - 最小角度時の最高滑り降り速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveMaxSpeed_MaxAng = 300">
+      <DisplayName>斜面移動の最大角度時最高速度[km/h]</DisplayName>
+      <Description>斜面移動 - 最大角度時の最高滑り降り速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveMaxAccel_MinAng = 50">
+      <DisplayName>斜面移動の最小角度時最高加速度[m/s^2]</DisplayName>
+      <Description>斜面移動 - 最小角度時の最高滑り降り加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6110</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveMaxAccel_MaxAng = 100">
+      <DisplayName>斜面移動の最大角度時最高加速度[m/s^2]</DisplayName>
+      <Description>斜面移動 - 最大角度時の最高滑り降り加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6110</SortID>
+    </Field>
+    <Field Def="u8 slopeSlideMoveMaxSpeedMinAngDeg = 25">
+      <DisplayName>斜面移動の最高速度最小角度[deg]</DisplayName>
+      <Description>斜面移動 - 滑り降り速度の最小斜面角度</Description>
+      <Maximum>90</Maximum>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="u8 slopeSlideMoveMaxSpeedMaxAngDeg = 70">
+      <DisplayName>斜面移動の最高速度最大角度[deg]</DisplayName>
+      <Description>斜面移動 - 滑り降り速度の最大斜面角度</Description>
+      <Maximum>90</Maximum>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="u8 slopeSlideMoveMaxAccelMinAngDeg = 25">
+      <DisplayName>斜面移動の最高加速度最小角度[deg]</DisplayName>
+      <Description>斜面移動 - 滑り降り加速度の最小斜面角度</Description>
+      <Maximum>90</Maximum>
+      <SortID>6110</SortID>
+    </Field>
+    <Field Def="u8 slopeSlideMoveMaxAccelMaxAngDeg = 70">
+      <DisplayName>斜面移動の最高加速度最大角度[deg]</DisplayName>
+      <Description>斜面移動 - 滑り降り加速度の最大斜面角度</Description>
+      <Maximum>90</Maximum>
+      <SortID>6110</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveDecayRate_MinAng = 0.3">
+      <DisplayName>斜面移動の最小角度時減速率</DisplayName>
+      <Description>斜面移動 - 最小角度時、パッドを上り方向に入力時減速率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>6120</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveDecayRate_MaxAng = 0.1">
+      <DisplayName>斜面移動の最大角度時減速率</DisplayName>
+      <Description>斜面移動 - 最大角度時、パッドを上り方向に入力時減速率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>6120</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveAccelRate_MinAng = 0.3">
+      <DisplayName>斜面移動の最小角度時加速率</DisplayName>
+      <Description>斜面移動 - 最小角度時、パッドを下り方向に入力時加速率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>6130</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveAccelRate_MaxAng = 0.1">
+      <DisplayName>斜面移動の最大角度時加速率</DisplayName>
+      <Description>斜面移動 - 最大角度時、パッドを下り方向に入力時加速率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>6130</SortID>
+    </Field>
+    <Field Def="u8 slopeSlideMoveDecayMinAngDeg = 25">
+      <DisplayName>斜面移動の減速率最小角度[deg]</DisplayName>
+      <Description>斜面移動 - 減速率の最小斜面角度</Description>
+      <Maximum>90</Maximum>
+      <SortID>6120</SortID>
+    </Field>
+    <Field Def="u8 slopeSlideMoveDecayMaxAngDeg = 70">
+      <DisplayName>斜面移動の減速率最大角度[deg]</DisplayName>
+      <Description>斜面移動 - 減速率の最大斜面角度</Description>
+      <Maximum>90</Maximum>
+      <SortID>6120</SortID>
+    </Field>
+    <Field Def="u8 slopeSlideMoveAccelMinAngDeg = 25">
+      <DisplayName>斜面移動の加速率最小角度[deg]</DisplayName>
+      <Description>斜面移動 - 加速率の最小斜面角度</Description>
+      <Maximum>90</Maximum>
+      <SortID>6130</SortID>
+    </Field>
+    <Field Def="u8 slopeSlideMoveAccelMaxAngDeg = 70">
+      <DisplayName>斜面移動の加速率最大角度[deg]</DisplayName>
+      <Description>斜面移動 - 加速率の最大斜面角度</Description>
+      <Maximum>90</Maximum>
+      <SortID>6130</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveSideMoveSpeed = 50">
+      <DisplayName>斜面移動の左右移動速度[km/h]</DisplayName>
+      <Description>斜面移動 - 左右移動の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>6140</SortID>
+    </Field>
+    <Field Def="f32 slopeSlideMoveSideMoveAccel = 100">
+      <DisplayName>斜面移動の左右移動加速度[m/s^2]</DisplayName>
+      <Description>斜面移動 - 左右移動の加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6140</SortID>
+    </Field>
+    <Field Def="f32 hyperJumpHorizontalMaxSpeedKMPH">
+      <DisplayName>大ジャンプ水平移動最高速度[km/h]</DisplayName>
+      <Description>大ジャンプ時の水平移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5911</SortID>
+    </Field>
+    <Field Def="f32 hyperJumpHorizontalAccelMPSS">
+      <DisplayName>大ジャンプ水平移動加速度[m/s^2]</DisplayName>
+      <Description>大ジャンプ時の水平移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5911</SortID>
+    </Field>
+    <Field Def="f32 hyperJumpUpperMaxSpeedKMPH">
+      <DisplayName>大ジャンプ垂直移動最高速度[km/h]</DisplayName>
+      <Description>大ジャンプ時の垂直移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5911</SortID>
+    </Field>
+    <Field Def="f32 hyperJumpUpperAccelMPSS">
+      <DisplayName>大ジャンプ垂直移動加速度[m/s^2]</DisplayName>
+      <Description>大ジャンプ時の垂直移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5911</SortID>
+    </Field>
+    <Field Def="f32 hyperJumpUpperBrakeMPSS">
+      <DisplayName>大ジャンプ水平移動ブレーキ量[m/s^2]</DisplayName>
+      <Description>大ジャンプ時の水平移動ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5911</SortID>
+    </Field>
+    <Field Def="f32 hyperJumpHorizontalInitSpeedKMPH">
+      <DisplayName>大ジャンプ水平移動初速[km/h]</DisplayName>
+      <Description>大ジャンプ時の水平移動の初速</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5910</SortID>
+    </Field>
+    <Field Def="f32 tankLandBrakeMPSS">
+      <DisplayName>タンク地上移動_歩行時_ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - 歩行時ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5920</SortID>
+    </Field>
+    <Field Def="f32 tankLandDashMaxSpeedKMPH">
+      <DisplayName>タンク地上移動_ダッシュ時_最高速度[km/h]</DisplayName>
+      <Description>タンク地上移動 - ダッシュ時最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5922</SortID>
+    </Field>
+    <Field Def="f32 tankLandDashAccelMPSS">
+      <DisplayName>タンク地上移動_ダッシュ時_加速度[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - ダッシュ時加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5922</SortID>
+    </Field>
+    <Field Def="f32 tankLandDashBrakeMPSS">
+      <DisplayName>タンク地上移動_ダッシュ時_ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - ダッシュ時ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5922</SortID>
+    </Field>
+    <Field Def="f32 tankLandDriftBrake_ToMaxTimeSec">
+      <DisplayName>タンクドリフトブレーキ_最大ブレーキまでの時間[sec]</DisplayName>
+      <Description>タンクドリフトで使うブレーキで最小値から最大値になる時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5927</SortID>
+    </Field>
+    <Field Def="f32 tankLandDriftBrake_MinMPSS">
+      <DisplayName>タンクドリフトブレーキ_最小ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンクドリフトで使う最小ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5927</SortID>
+    </Field>
+    <Field Def="f32 tankLandDriftBrake_MaxMPSS">
+      <DisplayName>タンクドリフトブレーキ_最大ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンクドリフトで使う最大ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5927</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostAutosightingUpperMaxSpeedKMPH">
+      <DisplayName>大QBオートサイティング時垂直移動最高速度[km/h]</DisplayName>
+      <Description>オートサイティング中の大QB時の垂直移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5901</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostAutosightingUpperAccelMPSS">
+      <DisplayName>大QBオートサイティング時垂直移動加速度[m/s^2]</DisplayName>
+      <Description>オートサイティング中の大QB時の垂直移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5901</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostAutosightingUpBtnUpperMaxSpeedKMPH">
+      <DisplayName>大QBオートサイティング時上昇ボタン押下中垂直移動最高速度[km/h]</DisplayName>
+      <Description>オートサイティング中の大QB上昇ボタン押下時の垂直移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5901</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostAutosightingUpBtnUpperAccelMPSS">
+      <DisplayName>大QBオートサイティング時上昇ボタン押下中垂直移動加速度[m/s^2]</DisplayName>
+      <Description>オートサイティング中の大QB上昇ボタン押下時の垂直移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5901</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostDownMaxSpeedKMPH">
+      <DisplayName>大QB下降最高速度[km/h]</DisplayName>
+      <Description>大QB時の非上昇時下降最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="f32 hyperBoostDownAccelMPSS">
+      <DisplayName>大QB下降垂直加速度[m/s^2]</DisplayName>
+      <Description>大QB時の非上昇時下降加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="f32 boostToWalkRunBrakeMPSS">
+      <DisplayName>ブースト→歩行走行ブレーキ量[m/s^2]</DisplayName>
+      <Description>制御プログラム「ブースト移動→歩行走行」で使うブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>21010</SortID>
+    </Field>
+    <Field Def="f32 upperBoostV2HorizontalMaxSpeedKMPH">
+      <DisplayName>【ブースト上昇v2】水平移動最高速度[km/h]</DisplayName>
+      <Description>ブースト上昇v2時の水平移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 upperBoostV2HorizontalAccelMPSS">
+      <DisplayName>【ブースト上昇v2】水平移動加速度[m/s^2]</DisplayName>
+      <Description>ブースト上昇v2時の水平移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 upperBoostV2UpMaxSpeedKMPH">
+      <DisplayName>【ブースト上昇v2】上昇移動最高速度[km/h]</DisplayName>
+      <Description>ブースト上昇v2時の上昇移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 upperBoostV2UpAccelMPSS">
+      <DisplayName>【ブースト上昇v2】上昇移動加速度[m/s^2]</DisplayName>
+      <Description>ブースト上昇v2時の上昇移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 upperBoostV2DownMaxSpeedKMPH">
+      <DisplayName>【ブースト上昇v2】下降移動最高速度[km/h]</DisplayName>
+      <Description>ブースト上昇v2時の下降移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 upperBoostV2DownAccelMPSS">
+      <DisplayName>【ブースト上昇v2】下降移動加速度[m/s^2]</DisplayName>
+      <Description>ブースト上昇v2時の下降移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 upperBoostV2UpMaxAlt">
+      <DisplayName>【ブースト上昇v2】最高高度[m]</DisplayName>
+      <Description>ブースト上昇v2の最高高度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>1</Increment>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="dummy8 pad_2[16]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990021</SortID>
+    </Field>
+    <Field Def="f32 boostStartAccel_GroundCondSpeedKMH">
+      <DisplayName>地上ブースト初期加速と判定する速度[km/h]</DisplayName>
+      <Description>地上ブースト時に初期加速と判断する速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="f32 boostStartAccel_GroundAccelMPSS">
+      <DisplayName>地上ブースト時初期加速度[m/s^2]</DisplayName>
+      <Description>地上ブースト時の初期加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="f32 boostStartAccel_FlyCondSpeedKMH">
+      <DisplayName>空中ブースト初期加速と判定する速度[km/h]</DisplayName>
+      <Description>空中ブースト時に初期加速と判断する速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="f32 boostStartAccel_FlyAccelMPSS">
+      <DisplayName>空中ブースト時初期加速度[m/s^2]</DisplayName>
+      <Description>空中ブースト時の初期加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="f32 blowDeadBrake_BeginBrakeMPSS">
+      <DisplayName>【吹っ飛び死亡ブレーキ】開始時ブレーキ[m/s^2]</DisplayName>
+      <Description>吹っ飛び死亡待機ブレーキ開始時のブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13050</SortID>
+    </Field>
+    <Field Def="f32 blowDeadBrake_PeakBrakeMPSS">
+      <DisplayName>【吹っ飛び死亡ブレーキ】ピーク時ブレーキ[m/s^2]</DisplayName>
+      <Description>吹っ飛び死亡待機ブレーキのピークブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13050</SortID>
+    </Field>
+    <Field Def="f32 blowDeadBrake_BeginToPeakTimeSec">
+      <DisplayName>【吹っ飛び死亡ブレーキ】開始からピークまでの時間[sec]</DisplayName>
+      <Description>吹っ飛び死亡待機ブレーキ開始からピークまでかかる時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13050</SortID>
+    </Field>
+    <Field Def="f32 blowDeadBrake_TimerResetDelayTime">
+      <DisplayName>【吹っ飛び死亡ブレーキ】経過時間リセット猶予時間[sec]</DisplayName>
+      <Description>ノックバック速度が0になってから吹っ飛び死亡待機ブレーキ用タイマーがリセットするまでの時間</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>13050</SortID>
+    </Field>
+    <Field Def="dummy8 pad_3[4]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990022</SortID>
+    </Field>
+    <Field Def="f32 upperBoostChangePerfStartAccelMPSS">
+      <DisplayName>上昇ブースト開始加速度_ブースト性能変化空間[[m/s^2]</DisplayName>
+      <Description>上昇ブースト開始加速度(特殊効果「ブースト性能変化空間」がかかっているとき)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4200</SortID>
+    </Field>
+    <Field Def="f32 upperBoostChangePerfMaxAccelMPSS">
+      <DisplayName>上昇ブースト最高加速度_ブースト性能変化空間[[m/s^2]</DisplayName>
+      <Description>上昇ブースト時の最高加速度(特殊効果「ブースト性能変化空間」がかかっているとき)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4200</SortID>
+    </Field>
+    <Field Def="dummy8 pad_4[8]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990023</SortID>
+    </Field>
+    <Field Def="f32 tankLandOutDirBrakeMPSS">
+      <DisplayName>タンク地上移動_歩行時_移動方向外ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - 歩行時の移動方向以外に働くブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5920</SortID>
+    </Field>
+    <Field Def="f32 tankLandRunOutDirBrakeMPSS">
+      <DisplayName>タンク地上移動_走行時_移動方向外ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - 走行時の移動方向以外に働くブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5921</SortID>
+    </Field>
+    <Field Def="f32 tankLandDashOutDirBrakeMPSS">
+      <DisplayName>タンク地上移動_ダッシュ時_移動方向外ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - ダッシュ時の移動方向以外に働くブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5922</SortID>
+    </Field>
+    <Field Def="f32 tankLandSwitchBackMaxSpeedKMPH">
+      <DisplayName>タンク地上移動_切り返し時_最高速度[km/h]</DisplayName>
+      <Description>タンク地上移動 - 切り返し時最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5923</SortID>
+    </Field>
+    <Field Def="f32 tankLandSwitchBackAccelMPSS">
+      <DisplayName>タンク地上移動_切り返し時_加速度[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - 切り返し時加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5923</SortID>
+    </Field>
+    <Field Def="f32 tankLandSwitchBackBrakeMPSS">
+      <DisplayName>タンク地上移動_切り返し時_ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - 切り返し時ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5923</SortID>
+    </Field>
+    <Field Def="f32 tankLandSwitchBackOutDirBrakeMPSS">
+      <DisplayName>タンク地上移動_切り返し時_移動方向外ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - 切り返し時の移動方向以外に働くブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5923</SortID>
+    </Field>
+    <Field Def="f32 tankLandDriftMaxSpeedKMPH">
+      <DisplayName>タンク地上移動_ドリフト時_最高速度[km/h]</DisplayName>
+      <Description>タンク地上移動 - ドリフト時最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5923</SortID>
+    </Field>
+    <Field Def="f32 tankLandDriftAccelMPSS">
+      <DisplayName>タンク地上移動_ドリフト時_加速度[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - ドリフト時加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5923</SortID>
+    </Field>
+    <Field Def="f32 tankLandDriftBrakeMPSS">
+      <DisplayName>タンク地上移動_ドリフト時_ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - ドリフト時ブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5923</SortID>
+    </Field>
+    <Field Def="f32 tankLandDriftOutDirBrakeMPSS">
+      <DisplayName>タンク地上移動_ドリフト時_移動方向外ブレーキ量[m/s^2]</DisplayName>
+      <Description>タンク地上移動 - ドリフト時の移動方向以外に働くブレーキ量</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5923</SortID>
+    </Field>
+    <Field Def="dummy8 pad_5[8]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990024</SortID>
+    </Field>
+    <Field Def="f32 fourLegFlyMove_UpperMaxSpeedKMH">
+      <DisplayName>【四脚ホバリング】上昇最高速度[km/h]</DisplayName>
+      <Description>大ジャンプ時の水平移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5919</SortID>
+    </Field>
+    <Field Def="f32 fourLegFlyMove_DownMaxSpeedKMH">
+      <DisplayName>【四脚ホバリング】下降最高速度[km/h]</DisplayName>
+      <Description>大ジャンプ時の水平移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5919</SortID>
+    </Field>
+    <Field Def="f32 fourLegFlyMove_HorizontalMaxSpeedKMH">
+      <DisplayName>【四脚ホバリング】水平最高速度[km/h]</DisplayName>
+      <Description>大ジャンプ時の水平移動最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5919</SortID>
+    </Field>
+    <Field Def="f32 fourLegFlyMove_HorizontalAccelMPSS">
+      <DisplayName>【四脚ホバリング】水平加速度[m/s^2]</DisplayName>
+      <Description>大ジャンプ時の水平移動加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5919</SortID>
+    </Field>
+    <Field Def="f32 fourLegFlyMove_StartCondSpeedH">
+      <DisplayName>【四脚ホバリング】初期加速と判定する水平速度[km/h]</DisplayName>
+      <Description>空中ブースト時に初期加速と判断する速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5919</SortID>
+    </Field>
+    <Field Def="f32 fourLegFlyMove_StartAccelH">
+      <DisplayName>【四脚ホバリング】初期水平加速度[m/s^2]</DisplayName>
+      <Description>空中ブースト時の初期加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5919</SortID>
+    </Field>
+    <Field Def="f32 fourLegFlyMove_SwtichBackBrake">
+      <DisplayName>【四脚ホバリング】切り返し時ブレーキ[m/s^2]</DisplayName>
+      <Description>空中ブースト移動の切り返し時ブレーキ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5919</SortID>
+    </Field>
+    <Field Def="f32 fourLegFlyMove_SubAccel">
+      <DisplayName>【四脚ホバリング】移動方向補正加速度[m/s^2]</DisplayName>
+      <Description>空中ブースト移動の移動方向補正用加速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5919</SortID>
+    </Field>
+    <Field Def="f32 tankLandTurnBrakeMaxSpeedKMPH">
+      <DisplayName>タンク地上移動_歩行時_旋回中最高速度[km/h]</DisplayName>
+      <Description>タンク地上移動 - 旋回中の歩行時の最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5930</SortID>
+    </Field>
+    <Field Def="f32 tankLandTurnBrakeBoostMaxSpeedKMPH">
+      <DisplayName>タンク地上移動_走行時_旋回中最高速度[km/h]</DisplayName>
+      <Description>タンク地上移動 - 旋回中の走行時最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5930</SortID>
+    </Field>
+    <Field Def="f32 tankLandTurnBrakeDashMaxSpeedKMPH">
+      <DisplayName>タンク地上移動_ダッシュ時_旋回中最高速度[km/h]</DisplayName>
+      <Description>タンク地上移動 - 旋回中のダッシュ時最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5930</SortID>
+    </Field>
+    <Field Def="f32 tankLandTurnBrakeDriftMaxSpeedKMPH">
+      <DisplayName>タンク地上移動_ドリフト時_旋回中最高速度[km/h]</DisplayName>
+      <Description>タンク地上移動 - 旋回中のドリフト時最高速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>5930</SortID>
+    </Field>
+    <Field Def="f32 tankLandTurnSpeedDPS">
+      <DisplayName>タンク地上移動_旋回中とみなす角速度[deg/s]</DisplayName>
+      <Description>タンク地上移動 - 旋回中とみなす角速度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5930</SortID>
+    </Field>
+    <Field Def="f32 tankLandTurnBrakeStartTimeSec">
+      <DisplayName>タンク地上移動_旋回中の減速を始める時間[s]</DisplayName>
+      <Description>タンク地上移動 - 旋回中速度になり始める時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>5930</SortID>
+    </Field>
+    <Field Def="f32 tankLandTurnBrakeEndTimeSec">
+      <DisplayName>タンク地上移動_旋回中の減速が完了する時間[s]</DisplayName>
+      <Description>タンク地上移動 - 旋回中速度に完全になる時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>5930</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[32]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>990025</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

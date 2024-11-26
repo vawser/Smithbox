@@ -1,0 +1,63 @@
+10 Test -- テスト
+1000000 Player Test -- プレイヤーテスト
+1010000 Vibration-PC-Minis -- 振動-PC-極小
+1010001 Vibration-PC-Small -- 振動-PC-小
+1010002 Vibration -PC-Inside -- 振動-PC-中
+1010003 Vibration-PC-Large -- 振動-PC-大
+1010004 Vibration-PC-Oversized -- 振動-PC-特大
+1020005 Vibration - Minimal damage -- 振動-ダメージ極小
+1020010 Vibration - Small damage -- 振動-ダメージ小
+1020020 Vibration - Large damage -- 振動-ダメージ大
+1020030 Vibration - Damage Extra Large -- 振動-ダメージ特大
+1020040 Vibration - Damage Blowing Off -- 振動-ダメージ吹き飛ばし
+1020050 Vibration - Damage Breath -- 振動-ダメージブレス
+1020055 Vibration - Damage Breath - Loop -- 振動-ダメージブレス-ループ
+1020060 Vibration - Damage Fall -- 振動-ダメージ転倒
+1020070 Vibration - Damage Fall -- 振動-ダメージ落下
+1020080 Vibration - Damage Fall Fall -- 振動-ダメージ落下転倒
+1020090 Vibration - Damage rope fall -- 振動-ダメージロープ落下
+1020100 Vibration - Damage Parity Break -- 振動-ダメージパリィブレイク
+1020110 Vibration - Damage Grab -- 振動-ダメージつかみ
+1020120 Vibration - Damage collapse -- 振動-ダメージ崩れ落ち
+1020125 Vibration - Damage Collapse - Kneeling -- 振動-ダメージ崩れ落ち-膝つき
+1020126 Vibration - Damage Collapse - Fall -- 振動-ダメージ崩れ落ち-倒れ込み
+1021010 Vibration - Death - Normal -- 振動-死亡-通常
+1021015 Vibration - death - normal - falling -- 振動-死亡-通常-倒れ込み
+1021020 Vibration - Death - Special -- 振動-死亡-特殊
+1021025 Vibration - Death - Special - Falling -- 振動-死亡-特殊-倒れ込み
+1021030 Vibration - Death - Breath -- 振動-死亡-ブレス
+1021035 Vibration - Death - Breath - Loop -- 振動-死亡-ブレス-ループ
+1021040 Vibration - Death - Poison -- 振動-死亡-毒
+1021050 Vibration - Death - Curse Death -- 振動-死亡-呪死
+1021060 Vibration - Death - Low Air Landing -- 振動-死亡-低空着地
+1021065 Vibration - Death - Low Air Landing - Falling -- 振動-死亡-低空着地-倒れ込み
+1021070 Vibration - Death - Headshot -- 振動-死亡-ヘッドショット
+1021075 Vibration - Death - Headshot - Fall -- 振動-死亡-ヘッドショット-倒れ込み
+1021080 Vibration - Death - Blown Away -- 振動-死亡-吹き飛び
+1022010 Vibration - Guard - Weapon (Small) - Small -- 振動-ガード-武器（小）-小
+1022020 Vibration - Guard - Weapon (Small) - Large -- 振動-ガード-武器（小）-大
+1022030 Vibration - Guard - Weapon (Medium) - Small -- 振動-ガード-武器（中）-小
+1022040 Vibration - Guard - Weapon (Medium) - Large -- 振動-ガード-武器（中）-大
+1022050 Vibration - Guard - Weapon (Large) - Small -- 振動-ガード-武器（大）-小
+1022060 Vibration - Guard - Weapon (Large) - Large -- 振動-ガード-武器（大）-大
+1030010 Vibration - Roll - Lightweight Rolling -- 振動-ロール-軽量ローリング
+1030020 Vibration - Roll - Weight Rolling -- 振動-ロール-重量ローリング
+1030030 Vibration - Roll - Failure Rolling -- 振動-ロール-失敗ローリング
+1040010 Vibration -Toss-Backstub -- 振動-投げ-バックスタブ
+1041010 Vibration - Toss - Paribreak Stub -- 振動-投げ-パリィブレイクスタブ
+1042010 Vibration -Throw-Guard Break Stub -- 振動-投げ-ガードブレイクスタブ
+10000000 Vibration Test 1 -- 振動テスト１
+11010000 Vibration-ENE-Minimum -- 振動-ENE-極小
+11010001 Vibration-ENE-Small -- 振動-ENE-小
+11010002 Vibration-ENE-Medium -- 振動-ENE-中
+11010003 Vibration-ENE-Large -- 振動-ENE-大
+11010004 Vibration-ENE-Oversized -- 振動-ENE-特大
+20000000 Vibration Test 1 -- 振動テスト１
+21010000 Vibration - Directing - Very Small -- 振動-演出-極小
+21010001 Vibration - Directing - Small -- 振動-演出-小
+21010002 Vibration - Directing - Medium -- 振動-演出-中
+21010003 Vibration - Directing - Large -- 振動-演出-大
+21010004 Vibration - Directing - Oversized -- 振動-演出-特大
+22010000 Vibration - Directing - Multiplayer Generation -- 振動-演出-マルチプレイ発生
+30000000 Vibration Test 1 -- 振動テスト１
+90000000 Vibration Test 1 -- 振動テスト１

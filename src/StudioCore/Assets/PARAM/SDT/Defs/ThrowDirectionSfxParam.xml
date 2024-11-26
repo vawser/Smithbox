@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>THROW_DIRECTION_SFX_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 sfxId_00">
+      <DisplayName>0</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 sfxId_01">
+      <DisplayName>1</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 sfxId_02">
+      <DisplayName>2</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 sfxId_03">
+      <DisplayName>3</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 sfxId_04">
+      <DisplayName>4</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s32 sfxId_05">
+      <DisplayName>5</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 sfxId_06">
+      <DisplayName>6</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 sfxId_07">
+      <DisplayName>7</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s32 sfxId_08">
+      <DisplayName>8</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s32 sfxId_09">
+      <DisplayName>9</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 sfxId_10">
+      <DisplayName>10</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 sfxId_11">
+      <DisplayName>11</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s32 sfxId_12">
+      <DisplayName>12</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s32 sfxId_13">
+      <DisplayName>13</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s32 sfxId_14">
+      <DisplayName>14</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s32 sfxId_15">
+      <DisplayName>15</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s32 sfxId_16">
+      <DisplayName>16</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s32 sfxId_17">
+      <DisplayName>17</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s32 sfxId_18">
+      <DisplayName>18</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s32 sfxId_19">
+      <DisplayName>19</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s32 sfxId_20">
+      <DisplayName>20</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s32 sfxId_21">
+      <DisplayName>21</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="s32 sfxId_22">
+      <DisplayName>22</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="s32 sfxId_23">
+      <DisplayName>23</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="s32 sfxId_24">
+      <DisplayName>24</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s32 sfxId_25">
+      <DisplayName>25</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="s32 sfxId_26">
+      <DisplayName>26</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="s32 sfxId_27">
+      <DisplayName>27</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="s32 sfxId_28">
+      <DisplayName>28</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="s32 sfxId_29">
+      <DisplayName>29</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s32 sfxId_30">
+      <DisplayName>30</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="s32 sfxId_31">
+      <DisplayName>31</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="s32 sfxId_32">
+      <DisplayName>32</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s32 sfxId_33">
+      <DisplayName>33</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="s32 sfxId_34">
+      <DisplayName>34</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s32 sfxId_35">
+      <DisplayName>35</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="s32 sfxId_36">
+      <DisplayName>36</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="s32 sfxId_37">
+      <DisplayName>37</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="s32 sfxId_38">
+      <DisplayName>38</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="s32 sfxId_39">
+      <DisplayName>39</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s32 sfxId_40">
+      <DisplayName>40</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="s32 sfxId_41">
+      <DisplayName>41</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="s32 sfxId_42">
+      <DisplayName>42</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="s32 sfxId_43">
+      <DisplayName>43</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="s32 sfxId_44">
+      <DisplayName>44</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="s32 sfxId_45">
+      <DisplayName>45</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="s32 sfxId_46">
+      <DisplayName>46</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="s32 sfxId_47">
+      <DisplayName>47</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="s32 sfxId_48">
+      <DisplayName>48</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="s32 sfxId_49">
+      <DisplayName>49</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="s32 sfxId_50">
+      <DisplayName>50</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="s32 sfxId_51">
+      <DisplayName>51</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="s32 sfxId_52">
+      <DisplayName>52</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="s32 sfxId_53">
+      <DisplayName>53</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="s32 sfxId_54">
+      <DisplayName>54</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="s32 sfxId_55">
+      <DisplayName>55</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="s32 sfxId_56">
+      <DisplayName>56</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="s32 sfxId_57">
+      <DisplayName>57</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="s32 sfxId_58">
+      <DisplayName>58</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="s32 sfxId_59">
+      <DisplayName>59</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="s32 sfxId_60">
+      <DisplayName>60</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="s32 sfxId_61">
+      <DisplayName>61</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="s32 sfxId_62">
+      <DisplayName>62</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="s32 sfxId_63">
+      <DisplayName>63</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>64</SortID>
+    </Field>
+    <Field Def="s32 sfxId_64">
+      <DisplayName>64</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>65</SortID>
+    </Field>
+    <Field Def="s32 sfxId_65">
+      <DisplayName>65</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>66</SortID>
+    </Field>
+    <Field Def="s32 sfxId_66">
+      <DisplayName>66</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>67</SortID>
+    </Field>
+    <Field Def="s32 sfxId_67">
+      <DisplayName>67</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>68</SortID>
+    </Field>
+    <Field Def="s32 sfxId_68">
+      <DisplayName>68</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>69</SortID>
+    </Field>
+    <Field Def="s32 sfxId_69">
+      <DisplayName>69</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="s32 sfxId_70">
+      <DisplayName>70</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="s32 sfxId_71">
+      <DisplayName>71</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>72</SortID>
+    </Field>
+    <Field Def="s32 sfxId_72">
+      <DisplayName>72</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>73</SortID>
+    </Field>
+    <Field Def="s32 sfxId_73">
+      <DisplayName>73</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>74</SortID>
+    </Field>
+    <Field Def="s32 sfxId_74">
+      <DisplayName>74</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>75</SortID>
+    </Field>
+    <Field Def="s32 sfxId_75">
+      <DisplayName>75</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>76</SortID>
+    </Field>
+    <Field Def="s32 sfxId_76">
+      <DisplayName>76</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>77</SortID>
+    </Field>
+    <Field Def="s32 sfxId_77">
+      <DisplayName>77</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>78</SortID>
+    </Field>
+    <Field Def="s32 sfxId_78">
+      <DisplayName>78</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>79</SortID>
+    </Field>
+    <Field Def="s32 sfxId_79">
+      <DisplayName>79</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="s32 sfxId_80">
+      <DisplayName>80</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>81</SortID>
+    </Field>
+    <Field Def="s32 sfxId_81">
+      <DisplayName>81</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>82</SortID>
+    </Field>
+    <Field Def="s32 sfxId_82">
+      <DisplayName>82</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>83</SortID>
+    </Field>
+    <Field Def="s32 sfxId_83">
+      <DisplayName>83</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>84</SortID>
+    </Field>
+    <Field Def="s32 sfxId_84">
+      <DisplayName>84</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>85</SortID>
+    </Field>
+    <Field Def="s32 sfxId_85">
+      <DisplayName>85</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>86</SortID>
+    </Field>
+    <Field Def="s32 sfxId_86">
+      <DisplayName>86</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>87</SortID>
+    </Field>
+    <Field Def="s32 sfxId_87">
+      <DisplayName>87</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>88</SortID>
+    </Field>
+    <Field Def="s32 sfxId_88">
+      <DisplayName>88</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>89</SortID>
+    </Field>
+    <Field Def="s32 sfxId_89">
+      <DisplayName>89</DisplayName>
+      <Description>使用するSFXのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>90</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

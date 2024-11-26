@@ -1,0 +1,422 @@
+0 
+100000 [Stormveil Castle] Godrick the Grafted
+100001 [Stormhill] Margit, the Fell Omen
+100002 [Stormhill] Castleward Tunnel
+100003 [Stormveil Castle] Gateside Chamber
+100004 [Stormveil Castle] Stormveil Cliffside
+100005 [Stormveil Castle] Rampart Tower
+100006 [Stormveil Castle] Liftside Chamber
+100007 [Stormveil Castle] Secluded Cell
+100008 [Stormveil Castle] Stormveil Main Gate
+110000 [Leyndell, Royal Capital] Elden Throne
+110001 [Leyndell, Royal Capital] Erdtree Sanctuary
+110002 [Leyndell, Royal Capital] East Capital Rampart
+110003 [Leyndell, Royal Capital] Lower Capital Church
+110004 [Leyndell, Royal Capital] Avenue Balcony
+110005 [Leyndell, Royal Capital] West Capital Rampart
+110007 [Leyndell, Royal Capital] Queen's Bedchamber
+110008 [Leyndell, Royal Capital] Fortified Manor, First Floor
+110009 [Leyndell, Royal Capital] Divine Bridge
+110500 [Leyndell, Ashen Capital] Elden Throne
+110501 [Leyndell, Ashen Capital] Erdtree Sanctuary
+110502 [Leyndell, Ashen Capital] East Capital Rampart
+110503 [Leyndell, Ashen Capital] Leyndell, Capital of Ash
+110504 [Leyndell, Ashen Capital] Queen's Bedchamber
+110505 [Leyndell, Ashen Capital] Divine Bridge
+111000 [Roundtable Hold] Table of Lost Grace
+120100 [Ainsel River] Dragonkin Soldier of Nokstella
+120101 [Ainsel River] Ainsel River Well Depths
+120102 [Ainsel River] Ainsel River Sluice Gate
+120103 [Ainsel River] Ainsel River Downstream
+120104 [Ainsel River Main] Ainsel River Main
+120105 [Ainsel River Main] Nokstella, Eternal City
+120106 [Lake of Rot] Lake of Rot Shoreside
+120108 [Lake of Rot] Grand Cloister
+120109 [Ainsel River Main] Nokstella Waterfall Basin
+120200 [Nokron, Eternal City] Great Waterfall Basin
+120201 [Nokron, Eternal City] Mimic Tear
+120203 [Siofra River] Siofra River Bank
+120204 [Siofra River] Worshippers' Woods
+120206 [Nokron, Eternal City] Ancestral Woods
+120207 [Nokron, Eternal City] Aqueduct,Facing Cliffs
+120208 [Nokron, Eternal City] Night's Sacred Ground
+120209 [Siofra River] Below the Well
+120300 [Deeproot Depths] Prince of Death's Throne
+120301 [Deeproot Depths] Root,Facing Cliffs
+120302 [Deeproot Depths] Great Waterfall Crest
+120303 [Deeproot Depths] Deeproot Depths
+120304 [Deeproot Depths] The Nameless Eternal City
+120305 [Deeproot Depths] Across the Roots
+120400 [Ainsel River] Astel, Naturalborn of the Void
+120500 [Mohgwyn Palace] Cocoon of the Empyrean
+120501 [Mohgwyn Palace] Palace Approach Ledge,Road
+120502 [Mohgwyn Palace] Dynasty Mausoleum Entrance
+120503 [Mohgwyn Palace] Dynasty Mausoleum Midpoint
+120600 
+120601 
+120700 [Siofra River] Siofra River Well Depths
+120701 [Nokron, Eternal City] Nokron, Eternal City
+130000 [Crumbling Farum Azula] Maliketh, the Black Blade
+130001 [Crumbling Farum Azula] Dragonlord Placidusax
+130002 [Crumbling Farum Azula] Dragon Temple Altar
+130003 [Crumbling Farum Azula] Crumbling Beast Grave
+130004 [Crumbling Farum Azula] Crumbling Beast Grave Depths
+130005 [Crumbling Farum Azula] Tempest,Facing Balcony
+130006 [Crumbling Farum Azula] Dragon Temple
+130007 [Crumbling Farum Azula] Dragon Temple Transept
+130008 [Crumbling Farum Azula] Dragon Temple Lift
+130009 [Crumbling Farum Azula] Dragon Temple Rooftop
+130010 [Crumbling Farum Azula] Beside the Great Bridge
+140000 [Academy of Raya Lucaria] Raya Lucaria Grand Library
+140001 [Academy of Raya Lucaria] Debate Parlor
+140002 [Academy of Raya Lucaria] Church of the Cuckoo
+140003 [Academy of Raya Lucaria] Schoolhouse Classroom
+150000 [Elphael, Brace of the Haligtree] Malenia, Goddess of Rot
+150001 [Elphael, Brace of the Haligtree] Prayer Room
+150002 [Elphael, Brace of the Haligtree] Elphael Inner Wall
+150003 [Elphael, Brace of the Haligtree] Drainage Channel
+150004 [Elphael, Brace of the Haligtree] Haligtree Roots
+150005 [Miquella's Haligtree] Haligtree Promenade
+150006 [Miquella's Haligtree] Haligtree Canopy
+150007 [Miquella's Haligtree] Haligtree Town
+150008 [Miquella's Haligtree] Haligtree Town Plaza
+160000 [Volcano Manor] Rykard, Lord of Blasphemy
+160001 [Volcano Manor] Temple of Eiglay
+160002 [Volcano Manor] Volcano Manor
+160003 [Volcano Manor] Prison Town Church
+160004 [Volcano Manor] Guest Hall
+160005 [Volcano Manor] Audience Pathway
+160006 [Volcano Manor] Abductor Virgin
+160007 [Volcano Manor] Subterranean Inquisition Chamber
+180000 [Stranded Graveyard] Cave of Knowledge
+180001 [Stranded Graveyard] Stranded Graveyard
+190000 [Stone Platform] Fractured Marika
+200000 [Belurat, Tower Settlement] Theatre of the Divine Beast
+200001 [Belurat, Tower Settlement] Belurat, Tower Settlement
+200002 [Belurat, Tower Settlement] Small Private Altar
+200003 [Belurat, Tower Settlement] Stagefront
+200100 [Enir-Ilim] Gate of Divinity
+200102 [Enir-Ilim] Enir-Ilim: Outer Wall
+200103 [Enir-Ilim] First Rise
+200104 [Enir-Ilim] Spiral Rise
+200105 [Enir-Ilim] Cleansing Chamber Anteroom
+200106 [Enir-Ilim] Divine Gate Front Staircase
+210001 [Shadow Keep] Main Gate Plaza
+210002 [Shadow Keep] Shadow Keep Main Gate
+210006 [Shadow Keep, Church District] Church District Entrance
+210007 [Shadow Keep, Church District] Sunken Chapel
+210008 [Shadow Keep, Church District] Tree,Worship Passage
+210009 [Shadow Keep, Church District] Tree,Worship Sanctum
+210100 [Specimen Storehouse] Messmer's Dark Chamber
+210101 [Specimen Storehouse] Storehouse, First Floor
+210102 [Specimen Storehouse] Storehouse, Fourth Floor
+210103 [Specimen Storehouse] Storehouse, Seventh Floor
+210104 [Specimen Storehouse] Dark Chamber Entrance
+210105 [Specimen Storehouse] Storehouse, Back Section
+210106 [Specimen Storehouse] Storehouse, Loft
+210201 [Specimen Storehouse] West Rampart
+220000 [Stone Coffin Fissure] Garden of Deep Purple
+220001 [Stone Coffin Fissure] Stone Coffin Fissure
+220002 [Stone Coffin Fissure] Fissure Cross
+220003 [Stone Coffin Fissure] Fissure Waypoint
+220004 [Stone Coffin Fissure] Fissure Depths
+250000 [Scadu Altus] Finger Birthing Grounds
+280000 [Midra's Manse] Discussion Chamber
+280001 [Midra's Manse] Manse Hall
+280002 [Midra's Manse] Midra's Library
+280003 [Midra's Manse] Second Floor Chamber
+300000 [Weeping Peninsula] Tombsward Catacombs
+300100 [Weeping Peninsula] Impaler's Catacombs
+300200 [Limgrave] Stormfoot Catacombs
+300300 [Liurnia of the Lakes]Road's End Catacombs
+300400 [Limgrave] Murkwater Catacombs
+300500 [Liurnia of the Lakes] Black Knife Catacombs
+300600 [Liurnia of the Lakes] Cliffbottom Catacombs
+300700 [Mt. Gelmir] Wyndham Catacombs
+300800 [Altus Plateau] Sainted Hero's Grave
+300900 [Mt. Gelmir] Gelmir Hero's Grave
+301000 [Capital Outskirts] Auriza Hero's Grave
+301100 [Stormhill] Deathtouched Catacombs
+301200 [Altus Plateau] Unsightly Catacombs
+301300 [Capital Outskirts] Auriza Side Tomb
+301400 [Caelid] Minor Erdtree Catacombs
+301500 [Caelid] Caelid Catacombs
+301600 [Caelid] War,Dead Catacombs
+301700 [Flame Peak] Giant,Conquering Hero's Grave
+301800 [Flame Peak] Giants' Mountaintop Catacombs
+301900 [Consecrated Snowfield] Consecrated Snowfield Catacombs
+302000 [Forbidden Lands] Hidden Path to the Haligtree
+310000 [Limgrave] Murkwater Cave
+310100 [Weeping Peninsula] Earthbore Cave
+310200 [Weeping Peninsula] Tombsward Cave
+310300 [Limgrave] Groveside Cave
+310400 [Liurnia of the Lakes] Stillwater Cave
+310500 [Liurnia of the Lakes] Lakeside Crystal Cave
+310600 [Liurnia of the Lakes] Academy Crystal Cave
+310700 [Mt. Gelmir] Seethewater Cave
+310900 [Mt. Gelmir] Volcano Cave
+311000 [Greyoll's Dragonbarrow] Dragonbarrow Cave
+311100 [Greyoll's Dragonbarrow] Sellia Hideaway
+311200 [Consecrated Snowfield] Cave of the Forlorn
+311500 [Limgrave] Coastal Cave
+311700 [Limgrave] Highroad Cave
+311800 [Altus Plateau] Perfumer's Grotto
+311900 [Altus Plateau] Sage's Cave
+312000 [Caelid] Abandoned Cave
+312100 [Caelid] Gaol Cave
+312200 [Mountaintops of the Giants] Spiritcaller's Cave
+320000 [Weeping Peninsula] Morne Tunnel
+320100 [Limgrave] Limgrave Tunnels
+320200 [Liurnia of the Lakes] Raya Lucaria Crystal Tunnel
+320400 [Altus Plateau] Old Altus Tunnel
+320500 [Altus Plateau] Altus Tunnel
+320700 [Caelid] Gael Tunnel
+320701 [Caelid] Rear Gael Tunnel Entrance
+320800 [Caelid] Sellia Crystal Tunnel
+321100 [Consecrated Snowfield] Yelough Anix Tunnel
+341000 [Stormhill] Limgrave Tower Bridge
+341002 [Stormhill] Divine Tower of Limgrave
+341100 [Liurnia of the Lakes] Study Hall Entrance
+341101 [Liurnia of the Lakes] Liurnia Tower Bridge
+341102 [Liurnia of the Lakes] Divine Tower of Liurnia
+341200 [Capital Outskirts] Divine Tower of West Altus
+341201 [Capital Outskirts] Sealed Tunnel
+341202 [Capital Outskirts] Divine Tower of West Altus: Gate
+341301 [Greyoll's Dragonbarrow] Divine Tower of Caelid: Basement
+341302 [Greyoll's Dragonbarrow] Divine Tower of Caelid: Center
+341400 [Forbidden Lands] Divine Tower of East Altus: Gate
+341401 [Forbidden Lands] Divine Tower of East Altus
+341500 [Greyoll's Dragonbarrow] Isolated Divine Tower
+350000 [Subterranean Shunning,Grounds] Cathedral of the Forsaken
+350001 [Subterranean Shunning,Grounds] Underground Roadside
+350002 [Subterranean Shunning,Grounds] Forsaken Depths
+350003 [Subterranean Shunning,Grounds] Leyndell Catacombs
+350004 [Subterranean Shunning,Grounds] Frenzied Flame Proscription
+390000 [Ruin,Strewn Precipice] Magma Wyrm Makar
+390001 [Ruin,Strewn Precipice] Ruin,Strewn Precipice
+390002 [Ruin,Strewn Precipice] Ruin,Strewn Precipice Overlook
+400000 [Gravesite Plain] Fog Rift Catacombs
+400100 [Rauh Base] Scorpion River Catacombs
+400200 [Scadu Altus] Darklight Catacombs
+410000 [Gravesite Plain] Belurat Gaol
+410100 [Scadu Altus] Bonny Gaol
+410200 [Charo's Hidden Grave] Lamenter's Gaol
+420000 [Gravesite Plain] Ruined Forge Lava Intake
+420200 [Scadu Altus] Ruined Forge of Starfall Past
+420300 [Rauh Base] Taylew's Ruined Forge
+430000 [Gravesite Plain] Rivermouth Cave
+430100 [Gravesite Plain] Dragon's Pit
+430101 [Gravesite Plain] Dragon's Pit Terminus
+61413200 [Weeping Peninsula] Isolated Merchant's Shack
+61413300 [Weeping Peninsula] Fourth Church of Marika
+61413500 [Limgrave] Church of Dragon Communion
+61413800 [Stormhill] Stormhill Shack
+61423300 [Weeping Peninsula] Weeping Evergaol
+61423600 [Limgrave] Church of Elleh
+61423601 [Limgrave] The First Step
+61423700 [Limgrave] Gatefront Ruins
+61423800 [Stormhill] Warmaster's Shack
+61433000 [Weeping Peninsula] Morne Moangrave
+61433100 [Weeping Peninsula] Castle Morne Lift
+61433101 [Weeping Peninsula] Behind the Castle
+61433102 [Weeping Peninsula] Beside the Rampart Gaol
+61433400 [Weeping Peninsula] Church of Pilgrimage
+61433500 [Limgrave] Seaside Ruins
+61433700 [Limgrave] Agheel Lake North
+61433800 [Limgrave] Murkwater Coast
+61433900 [Stormhill] Saintsbridge
+61443300 [Weeping Peninsula] Castle Morne Rampart
+61443301 [Weeping Peninsula] South of the Lookout Tower
+61443302 [Weeping Peninsula] Ailing Village Outskirts
+61443400 [Weeping Peninsula] Bridge of Sacrifice
+61443500 [Limgrave] Agheel Lake South
+61443600 [Limgrave] Waypoint Ruins Cellar
+61443700 [Limgrave] Mistwood Outskirts
+61443800 [Limgrave] Artist's Shack
+61443900 [Limgrave] Summonwater Village Outskirts
+61453300 [Weeping Peninsula] Beside the Crater,Pocked Glade
+61453600 [Limgrave] Fort Haight West
+61454100 [Gravesite Plain] Cliffroad Terminus
+61454200 [Gravesite Plain] Main Gate Cross
+61463800 [Limgrave] Third Church of Marika
+61464000 [Gravesite Plain] Gravesite Plain
+61464200 [Gravesite Plain] Three,Path Cross
+61464400 [Gravesite Plain] Greatbridge, North
+61474100 [Gravesite Plain] Scorched Ruins
+61474300 [Gravesite Plain] Ellac River Cave
+61474400 [Gravesite Plain] Castle Front
+61474401 [Castle Ensis] Castle Ensis Checkpoint
+61484200 [Gravesite Plain] Pillar Path Waypoint
+61484300 [Gravesite Plain] Pillar Path Cross
+61484400 [Castle Ensis] Ensis Moongazing Grounds
+61484401 [Castle Ensis] Castle,Lord's Chamber
+62334000 [Moonlight Altar] Altar South
+62334400 [Liurnia of the Lakes] Revenger's Shack
+62334600 [Liurnia of the Lakes] Foot of the Four Belfries
+62334700 [Liurnia of the Lakes] The Four Belfries
+62344100 [Moonlight Altar] Moonlight Altar
+62344200 [Liurnia of the Lakes] Village of the Albinaurics
+62344300 [Liurnia of the Lakes] Converted Tower
+62344400 [Liurnia of the Lakes] Temple Quarter
+62344600 [Liurnia of the Lakes] Crystalline Woods
+62344701 [Liurnia of the Lakes] Sorcerer's Isle
+62344800 [Liurnia of the Lakes] Kingsrealm Ruins
+62344900 [Liurnia of the Lakes] Road to the Manor
+62345000 [Liurnia of the Lakes] Ranni's Rise
+62345001 [Liurnia of the Lakes] Ranni's Chamber
+62354200 [Moonlight Altar] Cathedral of Manus Celes
+62354300 [Liurnia of the Lakes] Folly on the Lake
+62354500 [Liurnia of the Lakes] South Raya Lucaria Gate
+62354600 [Liurnia of the Lakes] Main Academy Gate
+62354700 [Liurnia of the Lakes] East Gate Bridge Trestle
+62355000 [Liurnia of the Lakes] Manor Upper Level
+62355001 [Liurnia of the Lakes] Manor Lower Level
+62355002 [Liurnia of the Lakes] Royal Moongazing Grounds
+62355003 [Liurnia of the Lakes] Main Caria Manor Gate
+62364100 [Liurnia of the Lakes] Slumbering Wolf's Shack
+62364300 [Liurnia of the Lakes] Boilprawn Shack
+62364301 [Liurnia of the Lakes] Fallen Ruins of the Lake
+62364500 [Liurnia of the Lakes] Gate Town North
+62364800 [Bellum Highway] East Raya Lucaria Gate
+62364900 [Bellum Highway] Bellum Church
+62364901 [Liurnia of the Lakes] The Ravine
+62365000 [Liurnia of the Lakes] Behind Caria Manor
+62374200 [Liurnia of the Lakes] Scenic Isle
+62374400 [Liurnia of the Lakes] Academy Gate Town
+62374600 [Liurnia of the Lakes] Church of Vows
+62374800 [Liurnia of the Lakes] Mausoleum Compound
+62374900 [Bellum Highway] Church of Inhibition
+62384000 [Liurnia of the Lakes] Liurnia Lake Shore
+62384100 [Liurnia of the Lakes] Laskyar Ruins
+62384300 [Liurnia of the Lakes] Gate Town Bridge
+62384500 [Liurnia of the Lakes] Artist's Shack
+62384501 [Liurnia of the Lakes] Eastern Liurnia Lake Shore
+62384600 [Liurnia of the Lakes] Eastern Tableland
+62384700 [Liurnia of the Lakes] Ruined Labyrinth
+62384800 [Bellum Highway] Frenzied Flame Village Outskirts
+62385000 [Liurnia of the Lakes] Grand Lift of Dectus
+62385001 [Liurnia of the Lakes] Ravine,Veiled Village
+62394000 [Liurnia of the Lakes] Lake,Facing Cliffs
+62394100 [Liurnia of the Lakes] Liurnia Highway South
+62394200 [Liurnia of the Lakes] Liurnia Highway North
+62394400 [Liurnia of the Lakes] Jarburg
+63355300 [Mt. Gelmir] Seethewater Terminus
+63365200 [Mt. Gelmir] Craftman's Shack
+63365401 [Mt. Gelmir] Ninth Mt. Gelmir Campsite
+63365402 [Mt. Gelmir] Road of Iniquity
+63375100 [Altus Plateau] Abandoned Coffin
+63375200 [Mt. Gelmir] Seethewater River
+63375300 [Mt. Gelmir] Primeval Sorcerer Azur
+63385002 [Altus Plateau] Altus Plateau
+63385100 [Altus Plateau] Erdtree,Gazing Hill
+63385400 [Mt. Gelmir] First Mt. Gelmir Campsite
+63395100 [Altus Plateau] Altus Highway Junction
+63395300 [Mt. Gelmir] Bridge of Iniquity
+63395400 [Altus Plateau] Shaded Castle Ramparts
+63395401 [Altus Plateau] Shaded castle Inner Gate
+63395402 [Altus Plateau] Castellan's Hall
+63405200 [Altus Plateau] Forest,Spanning Greatbridge
+63405300 [Altus Plateau] Bower of Bounty
+63405400 [Altus Plateau] Road of Iniquity Side Path
+63415201 [Altus Plateau] Rampartside Path
+63415400 [Altus Plateau] Windmill Village
+63425100 [Capital Outskirts] Outer Wall Phantom Tree
+63425500 [Altus Plateau] Windmill Heights
+63435000 [Capital Outskirts] Minor Erdtree Church
+63435300 [Capital Outskirts] Hermit Merchant's Shack
+63435301 [Capital Outskirts] Outer Wall Battleground
+63455200 [Capital Outskirts] Capital Rampart
+64464000 [Caelid] Smoldering Church
+64464001 [Caelid] Rotview Balcony
+64473900 [Caelid] Fort Gael North
+64474000 [Caelid] Caelem Ruins
+64483600 [Caelid] Cathedral of Dragon Communion
+64483700 [Caelid] Caelid Highway South
+64483800 [Swamp of Aeonia] Aeonia Swamp Shore
+64483801 [Swamp of Aeonia] Astray from Caelid Highway North
+64483900 [Caelid] Smoldering Wall
+64484000 [Caelid] Deep Siofra Well
+64484001 [Greyoll's Dragonbarrow] Dragonbarrow West
+64484100 [Greyoll's Dragonbarrow] Isolated Merchant's Shack
+64493700 [Caelid] Southern Aeonia Swamp Bank
+64493800 [Swamp of Aeonia] Heart of Aeonia
+64493801 [Swamp of Aeonia] Inner Aeonia
+64493900 [Caelid] Sellia Backstreets
+64493901 [Caelid] Chair,Crypt of Sellia
+64493902 [Caelid] Sellia Under,Stair
+64503600 [Caelid] Impassable Greatbridge
+64503800 [Caelid] Church of the Plague
+64504000 [Greyoll's Dragonbarrow] Dragonbarrow Fork
+64513600 [Caelid] Redmane Castle Plaza
+64513601 [Caelid] Chamber Outside the Plaza
+64513900 [Greyoll's Dragonbarrow] Fort Faroth
+64514300 [Greyoll's Dragonbarrow] Bestial Sanctum
+64523800 [Caelid] Starscourge Radahn
+64524100 [Greyoll's Dragonbarrow] Lenne's Rise
+64524200 [Greyoll's Dragonbarrow] Farum Greatbridge
+65475100 [Forbidden Lands] Forbidden Lands
+65475800 [Consecrated Snowfield] Apostate Derelict
+65485700 [Consecrated Snowfield] Ordina, Liturgical Town
+65495300 [Mountaintops of the Giants] Zamor Ruins
+65495301 [Forbidden Lands] Grand Lift of Rold
+65495400 [Consecrated Snowfield] Consecrated Snowfield
+65495500 [Consecrated Snowfield] Inner Consecrated Snowfield
+65515300 [Flame Peak] Church of Repose
+65515600 [Mountaintops of the Giants] Ancient Snow Valley Ruins
+65515700 [Mountaintops of the Giants] Snow Valley Ruins Overlook
+65515701 [Mountaintops of the Giants] Castle Sol Main Gate
+65515702 [Mountaintops of the Giants] Church of the Eclipse
+65515703 [Mountaintops of the Giants] Castle Sol Rooftop
+65525300 [Mountaintops of the Giants] Foot of the Forge
+65525400 [Mountaintops of the Giants] Giant's Gravepost
+65525600 [Mountaintops of the Giants] Whiteridge Road
+65525700 [Mountaintops of the Giants] Freezing Lake
+65535200 [Mountaintops of the Giants] Fire Giant
+65545300 [Mountaintops of the Giants] Forge of the Giants
+65545500 [Mountaintops of the Giants] First Church of Marika
+68463900 [Cerulean Coast] Cerulean Coast West
+68473600 [Cerulean Coast] The Fissure
+68474101 [Gravesite Plain] Ellac River Downstream
+68483700 [Cerulean Coast] Cerulean Coast Cross
+68483900 [Cerulean Coast] Cerulean Coast
+68483901 [Charo's Hidden Grave] Charo's Hidden Grave
+68484300 [Abyssal Woods] Divided Falls
+68493900 [Foot of the Jagged Peak] Grand Altar of Dragon Communion
+68503800 [Cerulean Coast] Finger Ruins of Rhia
+68504200 [Abyssal Woods] Abyssal Woods
+68514200 [Abyssal Woods] Woodland Trail
+68524000 [Foot of the Jagged Peak] Foot of the Jagged Peak
+68524300 [Abyssal Woods] Forsaken Graveyard
+68533900 [Jagged Peak] Jagged Peak Mountainside
+68534100 [Abyssal Woods] Church Ruins
+68543900 [Jagged Peak] Jagged Peak Summit
+68553900 [Jagged Peak] Rest of the Dread Dragon
+69444500 [Ancient Ruins of Rauh] Ancient Ruins, Grand Stairway
+69444501 [Ancient Ruins of Rauh] Church of the Bud
+69444600 [Ancient Ruins of Rauh] Church of the Bud, Main Entrance
+69454501 [Ancient Ruins of Rauh] Rauh Ancient Ruins, West
+69454600 [Rauh Base] Temple Town Ruins
+69454700 [Rauh Base] Ravine North
+69464700 [Ancient Ruins of Rauh] Rauh Ancient Ruins, East
+69474500 [Scadu Altus] Scadu Altus, West
+69474700 [Ancient Ruins of Rauh] Viaduct Minor Tower
+69484500 [Scadu Altus] Highroad Cross
+69484700 [Rauh Base] Ancient Ruins Base
+69494300 [Scadu Altus] Moorth Highway, South
+69494301 [Scadu Altus] Fort of Reprimand
+69494302 [Scadu Altus] Behind the Fort of Reprimand
+69494400 [Scadu Altus] Moorth Ruins
+69494401 [Scadu Altus] Bonny Village
+69494700 [Scadu Altus] Castle Watering Hole
+69494800 [Scaduview] Scaduview
+69494801 [Scaduview] Shadow Keep, Back Gate
+69504300 [Scadu Altus] Scaduview Cross
+69504400 [Scadu Altus] Recluses' River Downstream
+69504500 [Scadu Altus] Recluses' River Upstream
+69504800 [Scaduview] Hinterland
+69504801 [Scaduview] Scadutree Base
+69514400 [Scadu Altus] Bridge Leading to the Village
+69514500 [Scadu Altus] Cathedral of Manus Metyr
+69514700 [Scadu Altus] Church District Highroad
+69514800 [Scaduview] Fingerstone Hill
+69514801 [Scaduview] Hinterland Bridge

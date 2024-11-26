@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>KEY_ASSIGN_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 padKeyId = -1">
+      <DisplayName>パッド</DisplayName>
+      <Enum>CS_PAD_KEY</Enum>
+      <Description>パッド（物理キー）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+      <UnkC8>パッド</UnkC8>
+    </Field>
+    <Field Def="s32 keyboardModifyKey">
+      <DisplayName>キーボード修飾</DisplayName>
+      <Enum>CS_MODIFIER_KEY</Enum>
+      <Description>キーボード修飾キー</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>2</SortID>
+      <UnkC8>キーボード</UnkC8>
+    </Field>
+    <Field Def="s32 keyboardKeyId = -1">
+      <DisplayName>キーボード</DisplayName>
+      <Enum>CS_KEYBOARD_KEY</Enum>
+      <Description>キーボード（物理キー）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>3</SortID>
+      <UnkC8>キーボード</UnkC8>
+    </Field>
+    <Field Def="s32 mouseModifyKey">
+      <DisplayName>マウス修飾</DisplayName>
+      <Enum>CS_MODIFIER_KEY</Enum>
+      <Description>マウス修飾キー</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>4</SortID>
+      <UnkC8>マウス</UnkC8>
+    </Field>
+    <Field Def="s32 mouseKeyId">
+      <DisplayName>マウス</DisplayName>
+      <Enum>CS_MOUSE_KEY</Enum>
+      <Description>マウス（物理キー）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>5</SortID>
+      <UnkC8>マウス</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserved[12]">
+      <DisplayName>----</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

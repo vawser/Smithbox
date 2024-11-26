@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+   <maximumFcsLockRange AltName="Maximum FCS Lock Range" Wiki="Controls the maximum range for white 'loose' lock-on. Red lock is defined within EquipParamFcs." />
+  </Field>
+  <Self />
+</PARAMMETA>

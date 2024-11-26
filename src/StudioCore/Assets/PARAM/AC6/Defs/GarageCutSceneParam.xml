@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GARAGE_CUTSCENE_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>9010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>9011</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>9012</SortID>
+    </Field>
+    <Field Def="u32 defualtSortieCutSceneID">
+      <DisplayName>汎用出撃前半カットシーンID</DisplayName>
+      <Description>ミッション出撃時の汎用のカットシーン</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 defaultReturnCutSceneID">
+      <DisplayName>汎用搬入カットシーンID</DisplayName>
+      <Description>ミッション終了後の汎用のカットシーン</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 defualtReturnOmitCutSceneID">
+      <DisplayName>汎用搬入省略カットシーンID</DisplayName>
+      <Description>ミッション失敗時などの場合</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u32 sortieCutSceneID1">
+      <DisplayName>出撃前半カットシーンID_1</DisplayName>
+      <Description>ミッション出撃時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>4</SortID>
+      <UnkC8>出撃時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 sortieCutSceneID2">
+      <DisplayName>出撃前半カットシーンID_2</DisplayName>
+      <Description>ミッション出撃時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>5</SortID>
+      <UnkC8>出撃時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 sortieCutSceneID3">
+      <DisplayName>出撃前半カットシーンID_3</DisplayName>
+      <Description>ミッション出撃時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>6</SortID>
+      <UnkC8>出撃時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 sortieCutSceneID4">
+      <DisplayName>出撃前半カットシーンID_4</DisplayName>
+      <Description>ミッション出撃時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>7</SortID>
+      <UnkC8>出撃時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 sortieCutSceneID5">
+      <DisplayName>出撃前半カットシーンID_5</DisplayName>
+      <Description>ミッション出撃時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>8</SortID>
+      <UnkC8>出撃時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 sortieCutSceneID6">
+      <DisplayName>出撃前半カットシーンID_6</DisplayName>
+      <Description>ミッション出撃時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>9</SortID>
+      <UnkC8>出撃時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 sortieCutSceneID7">
+      <DisplayName>出撃前半カットシーンID_7</DisplayName>
+      <Description>ミッション出撃時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>10</SortID>
+      <UnkC8>出撃時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 sortieCutSceneID8">
+      <DisplayName>出撃前半カットシーンID_8</DisplayName>
+      <Description>ミッション出撃時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>11</SortID>
+      <UnkC8>出撃時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 returnCutSceneID1">
+      <DisplayName>搬入カットシーンID_1</DisplayName>
+      <Description>ミッション帰還時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>12</SortID>
+      <UnkC8>帰還時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 returnCutSceneID2">
+      <DisplayName>搬入カットシーンID_2</DisplayName>
+      <Description>ミッション帰還時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>13</SortID>
+      <UnkC8>帰還時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 returnCutSceneID3">
+      <DisplayName>搬入カットシーンID_3</DisplayName>
+      <Description>ミッション帰還時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>14</SortID>
+      <UnkC8>帰還時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 returnCutSceneID4">
+      <DisplayName>搬入カットシーンID_4</DisplayName>
+      <Description>ミッション帰還時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>15</SortID>
+      <UnkC8>帰還時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 returnCutSceneID5">
+      <DisplayName>搬入カットシーンID_5</DisplayName>
+      <Description>ミッション帰還時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>16</SortID>
+      <UnkC8>帰還時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 returnCutSceneID6">
+      <DisplayName>搬入カットシーンID_6</DisplayName>
+      <Description>ミッション帰還時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>17</SortID>
+      <UnkC8>帰還時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 returnCutSceneID7">
+      <DisplayName>搬入カットシーンID_7</DisplayName>
+      <Description>ミッション帰還時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>18</SortID>
+      <UnkC8>帰還時のバリエーション</UnkC8>
+    </Field>
+    <Field Def="u32 returnCutSceneID8">
+      <DisplayName>搬入カットシーンID_8</DisplayName>
+      <Description>ミッション帰還時のカットシーンのバリエーション</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99999999</Maximum>
+      <SortID>19</SortID>
+      <UnkC8>帰還時のバリエーション</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

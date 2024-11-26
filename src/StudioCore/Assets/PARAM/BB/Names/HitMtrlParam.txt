@@ -1,0 +1,42 @@
+0 dummy
+1 Stone (outdoors)
+2 Stone (indoor)
+3 soil
+4 tree
+5 grass
+6 gravel
+7 snow
+8 ice
+9 iron
+10 sand
+11 bone
+12 ash
+13 Fallen leaves
+14 stone _ Blood Element
+15 stone _ Storm Attribute
+16 Stone with a lot of sand
+17 Snow (no footprints)
+18 Oil and water
+19 Water (slide)
+20 Water (from soles of feet to ankles)
+21 Water (up to your ankles and waist)
+22 mucus
+23 Poisonous coal tar
+24 mud
+25 Coal tar
+26 Corrosive liquid
+27 cadaver
+28 carpet
+29 Empty
+30 Old wood
+31 puddle
+32 Stone (outdoors / wet)
+33 Poison Swamp
+34 mercury
+35 River of blood (from sole of foot to ankle)
+36 Seawater in a fishing village (from sole of the foot to ankle height)
+37 Fishing village swamp (foot to ankle height)
+38 Old Tree (Sound Radius Standard Edition)
+39 Blood pool
+40 Splash SFX For
+41 River of Blood (non-water surface)

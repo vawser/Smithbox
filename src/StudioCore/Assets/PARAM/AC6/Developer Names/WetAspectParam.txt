@@ -1,0 +1,20 @@
+0 none -- なし
+1 water wet -- 水濡れ
+2 Poison wet -- 毒濡れ
+3 mud stains -- 泥汚れ
+4 frozen -- 凍結
+5 oily -- 油濡れ
+6 For hostile guests -- 敵対ゲスト用
+7 iron body -- 鉄の体
+8 【Vacant】 -- 【空き】
+9 【Vacant】 -- 【空き】
+10 [Cutscene] Blood soaked -- 【カットシーン】血濡れ
+11 [Cutscene] Tar -- 【カットシーン】タール
+12 [Cutscene] Preliminary 2 -- 【カットシーン】予備2
+13 【Vacant】 -- 【空き】
+14 【Vacant】 -- 【空き】
+15 【Vacant】 -- 【空き】
+16 【Vacant】 -- 【空き】
+17 For adhesion confirmation -- 付着確認用
+18 mercury -- 水銀
+19 plague wet -- 疫病濡れ

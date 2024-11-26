@@ -1,0 +1,34 @@
+1 Without -- なし
+2 Iron -- 鉄
+3 Heavy iron -- 重鉄
+4 Tree -- 木
+5 Water -- 水
+6 Swamp -- 沼
+7 Wood -- 木材
+8 Raw Meat -- 生者肉
+9 Dead Meat -- 亡者肉
+10 Bugs -- 虫
+11 Giant -- 巨人
+12 Bone -- 骨
+13 Copper -- 銅
+14 Energy -- エネルギー
+15 Flame -- 炎
+16 Lightning -- 雷
+17 Darkness -- 闇
+18 Magic -- 魔力
+19 Stone -- 石
+20 Soil -- 土
+21 Carpet -- カーペット
+22 Grass -- 草
+23 Gravel -- 砂利
+24 Cloth -- 布
+25 Sand -- 砂
+26 Ash -- 灰
+27 Poison Swamp -- 毒沼
+28 Oil -- 油
+29 Coal tar -- コールタール
+30 Lava -- 溶岩
+31 Spider Thread -- 蜘蛛の糸
+32 Sulfur crystals -- 硫黄結晶
+33 Seoul -- ソウル
+34 Beautiful Voice Frog -- 美声カエル

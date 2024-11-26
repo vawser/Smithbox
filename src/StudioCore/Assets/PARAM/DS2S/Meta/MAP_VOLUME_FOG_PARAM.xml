@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to map fog volumes.\nSet via the Fog MSB section." Row0Dummy="" />
+  <Field>
+    <color_r AltName="Color: R" />
+    <color_g AltName="Color: G" />
+    <color_b AltName="Color: B" />
+    <color_alpha AltName="Color: Alpha" />
+    <fog_size AltName="Fog Size"/>
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <limitationTime_Normal AltName="Limitation Time - Normal" Wiki="Time limit [sec] (normal, dry fingerless)" />
+    <limitationTime_NormalDriedFinger AltName="Limitation Time - Normal (Dried Finger)" Wiki="Time limit [sec] (normal / dry finger)" />
+    <limitationTime_Guardian AltName="Limitation Time - Guardian" Wiki="Time limit [sec] (Map guardian, dry fingerless)" />
+    <limitationTime_GuardianDriedFinger AltName="Limitation Time - Guardian (Dried Finger)" Wiki="Time limit [sec] (Map guardian / dry finger)" />
+  </Field>
+  <Self />
+</PARAMMETA>

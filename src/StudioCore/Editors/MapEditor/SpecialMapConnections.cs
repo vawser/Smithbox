@@ -252,7 +252,7 @@ internal class SpecialMapConnections
             return false;
         }
 
-        // Now, attempt to populate the offset dictionary. This relies on param field names matching official Paramdex names.
+        // Now, attempt to populate the offset dictionary. This relies on param field names matching official PARAM names.
         List<string> srcPartFields = new() { "srcAreaNo", "srcGridXNo", "srcGridZNo" };
         List<string> dstPartFields = new() { "dstAreaNo", "dstGridXNo", "dstGridZNo" };
         // Some maps have multiple incompatible connections with no clear distinguishing characteristics,

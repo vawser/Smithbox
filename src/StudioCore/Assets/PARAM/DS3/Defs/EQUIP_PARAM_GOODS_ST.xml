@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>EQUIP_PARAM_GOODS_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 refId_default = -1" />
+    <Field Def="s32 sfxVariationId = -1" />
+    <Field Def="f32 weight" />
+    <Field Def="s32 basicPrice" />
+    <Field Def="s32 sellValue = -1" />
+    <Field Def="s32 behaviorId" />
+    <Field Def="s32 replaceItemId = -1" />
+    <Field Def="s32 sortId = 80000" />
+    <Field Def="s32 appearanceReplaceItemId = -1" />
+    <Field Def="s32 yesNoDialogMessageId" />
+    <Field Def="s32 magicId" />
+    <Field Def="s16 iconId = 6" />
+    <Field Def="s16 modelId" />
+    <Field Def="s16 shopLv = -1" />
+    <Field Def="s16 compTrophySedId = -1" />
+    <Field Def="s16 trophySeqId = -1" />
+    <Field Def="s16 maxNum = 99" />
+    <Field Def="u8 consumeHeroPoint" />
+    <Field Def="u8 overDexterity = 50" />
+    <Field Def="u8 goodsType" />
+    <Field Def="u8 refCategory" />
+    <Field Def="u8 spEffectCategory" />
+    <Field Def="u8 pad3" />
+    <Field Def="s8 goodsUseAnim" />
+    <Field Def="u8 opmeMenuType" />
+    <Field Def="u8 useLimitCategory" />
+    <Field Def="u8 replaceCategory" />
+    <Field Def="u8 vowType0:1 = 1" />
+    <Field Def="u8 vowType1:1 = 1" />
+    <Field Def="u8 vowType2:1 = 1" />
+    <Field Def="u8 vowType3:1 = 1" />
+    <Field Def="u8 vowType4:1 = 1" />
+    <Field Def="u8 vowType5:1 = 1" />
+    <Field Def="u8 vowType6:1 = 1" />
+    <Field Def="u8 vowType7:1 = 1" />
+    <Field Def="u8 vowType8:1 = 1" />
+    <Field Def="u8 vowType9:1 = 1" />
+    <Field Def="u8 vowType10:1 = 1" />
+    <Field Def="u8 vowType11:1 = 1" />
+    <Field Def="u8 vowType12:1 = 1" />
+    <Field Def="u8 vowType13:1 = 1" />
+    <Field Def="u8 vowType14:1 = 1" />
+    <Field Def="u8 vowType15:1 = 1" />
+    <Field Def="u8 enable_live:1 = 1" />
+    <Field Def="u8 enable_gray:1 = 1" />
+    <Field Def="u8 enable_white:1 = 1" />
+    <Field Def="u8 enable_black:1 = 1" />
+    <Field Def="u8 enable_multi:1 = 1" />
+    <Field Def="u8 disable_offline:1" />
+    <Field Def="u8 isEquip:1" />
+    <Field Def="u8 isConsume:1 = 1" />
+    <Field Def="u8 isAutoEquip:1" />
+    <Field Def="u8 isEstablishment:1" />
+    <Field Def="u8 isOnlyOne:1" />
+    <Field Def="u8 isDiscard:1 = 1" />
+    <Field Def="u8 isDeposit:1 = 1" />
+    <Field Def="u8 isDisableHand:1" />
+    <Field Def="u8 isRemoveItem_forGameClear:1" />
+    <Field Def="u8 isSuppleItem:1" />
+    <Field Def="u8 isFullSuppleItem:1" />
+    <Field Def="u8 isEnhance:1" />
+    <Field Def="u8 isFixItem:1" />
+    <Field Def="u8 disableMutliDropShare:1" />
+    <Field Def="u8 disableUseAtColiseum:1" />
+    <Field Def="u8 disableUseAtOutofColiseum:1" />
+    <Field Def="u8 isEnableFastUseItem:1" />
+    <Field Def="u8 isApplySpecialEffect:1" />
+    <Field Def="u8 syncNumVaryId:1" />
+    <Field Def="u8 isAshenEstusFlask:1" />
+    <Field Def="u8 unknown1:1" />
+    <Field Def="u8 unknown2:1" />
+    <Field Def="u8 unknown3:1" />
+    <Field Def="u8 unknown4:1" />
+    <Field Def="u8 unknown5:1" />
+    <Field Def="u8 unknown6:1" />
+    <Field Def="s32 refId_1" />
+    <Field Def="s32 refVirtualWepId = -1" />
+    <Field Def="s32 vagrantItemLotId = -1" />
+    <Field Def="s32 vagrantBonusEneDropItemLotId = -1" />
+    <Field Def="s32 vagrantItemEneDropItemLotId = -1" />
+    <Field Def="s32 castSfxId" />
+    <Field Def="s32 fireSfxId" />
+    <Field Def="s32 effectSfxId" />
+    <Field Def="u8 enable_ActiveEmber:1 = 1" />
+    <Field Def="u8 isBonfireWarpItem:1" />
+    <Field Def="u8 enable_Ladder:1" />
+    <Field Def="u8 isUseMultiPlayPreparation:1 = 1" />
+    <Field Def="u8 canMultiUse:1" />
+    <Field Def="u8 isShieldEnchant:1" />
+    <Field Def="u8 isWarpProhibited:1" />
+    <Field Def="u8 isUseMultiPenaltyOnly:1" />
+    <Field Def="u8 suppleType" />
+    <Field Def="u8 autoReplenishType" />
+    <Field Def="u8 isDrop" />
+    <Field Def="s16 maxRepNum = 1" />
+    <Field Def="u8 invadeType" />
+    <Field Def="dummy8 pad1[1]" />
+    <Field Def="s32 shopId = -1" />
+    <Field Def="s16 consumeMP" />
+    <Field Def="s16 useLimitCategory2" />
+    <Field Def="dummy8 pad2[8]" />
+  </Fields>
+</PARAMDEF>

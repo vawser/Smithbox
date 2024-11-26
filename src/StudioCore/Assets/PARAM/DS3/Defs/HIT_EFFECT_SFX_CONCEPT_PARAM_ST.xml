@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>HIT_EFFECT_SFX_CONCEPT_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s16 atkIron_1">
+      <DisplayName>鉄製：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>鉄製：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 atkIron_2">
+      <DisplayName>鉄製：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>鉄製：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 atkLeather_1">
+      <DisplayName>革製：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>革：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 atkLeather_2">
+      <DisplayName>革製：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>革：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 atkWood_1">
+      <DisplayName>木製：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>木製：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 atkWood_2">
+      <DisplayName>木製：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>木製：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 atkBody_1">
+      <DisplayName>肉：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>肉：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 atkBody_2">
+      <DisplayName>肉：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>肉：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s16 atkStone_1">
+      <DisplayName>石製：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>蝕：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 atkStone_2">
+      <DisplayName>石製：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>蝕：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    
+    <Field Def="s16 unknown_x14" />
+    <Field Def="s16 unknown_x16" />
+    
+    <Field Def="s16 atkNone_1">
+      <DisplayName>なし：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>なし：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 atkNone_2">
+      <DisplayName>なし：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>なし：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    
+    <Field Def="s16 Unknown0" />
+    <Field Def="s16 Unknown1" />
+    <Field Def="s16 Unknown2" />
+    <Field Def="s16 Unknown3" />
+    <Field Def="s16 Unknown4" />
+    <Field Def="s16 Unknown5" />
+    <Field Def="s16 Unknown6" />
+    <Field Def="s16 Unknown7" />
+    <Field Def="s16 Unknown8" />
+    <Field Def="s16 Unknown9" />
+    <Field Def="s16 Unknown10" />
+    <Field Def="s16 Unknown11" />
+    <Field Def="s16 Unknown12" />
+    <Field Def="s16 Unknown13" />
+    <Field Def="s16 Unknown14" />
+    <Field Def="s16 Unknown15" />
+    <Field Def="s16 Unknown16" />
+    <Field Def="s16 Unknown17" />
+    <Field Def="s16 Unknown18" />
+    <Field Def="s16 Unknown19" />
+    <Field Def="s16 Unknown20" />
+    <Field Def="s16 Unknown21" />
+    <Field Def="s16 Unknown22" />
+    <Field Def="s16 Unknown23" />
+    <Field Def="s16 Unknown24" />
+    <Field Def="s16 Unknown25" />
+
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,57 @@
+0 UNKNOWN
+50920000 Soul of a Giant
+51000000 Crushed Eye Orb
+60350000 Homeward Bone
+60355000 Aged Feather
+60360000 Darksign
+62000000 Dried Fingers
+62020000 Bone of Order
+62050000 Cracked Blue Eye Orb
+62060000 Cracked Red Eye Orb
+62160000 Black Separation Crystal
+62170000 Seed of a Tree of Giants
+64000000 Soul of the Pursuer
+64010000 Soul of the Last Giant
+64020000 Dragonrider Soul
+64030000 Old Dragonslayer Soul
+64040000 Flexile Sentry Soul
+64050000 Ruin Sentinel Soul
+64060000 Soul of the Lost Sinner
+64070000 Executioner's Chariot Soul
+64080000 Skeleton Lord's Soul
+64090000 Covetous Demon Soul
+64100000 Mytha- the Baneful Queen Soul
+64110000 Smelter Demon Soul
+64120000 Old Iron King Soul
+64130000 Royal Rat Vanguard Soul
+64140000 Soul of the Rotten
+64150000 Scorpioness Najka Soul
+64160000 Royal Rat Authority Soul
+64170000 Soul of the Duke's Dear Freja
+64180000 Looking Glass Knight Soul
+64190000 Demon of Song Soul
+64200000 Soul of Velstadt
+64210000 Soul of the King
+64220000 Guardian Dragon Soul
+64230000 Ancient Dragon Soul
+64240000 Giant Lord Soul
+64250000 Soul of Nashandra
+64260000 Throne Defender Soul
+64270000 Throne Watcher Soul
+64280000 Darklurker Soul
+64290000 Belfry Gargoyle Soul
+64300000 Old Witch Soul
+64310000 Old King Soul
+64320000 Old Dead One Soul
+64330000 Old Paledrake Soul
+64500000 Soul of Sinh- the Slumbering Dragon
+64510000 Soul of the Fume Knight
+64520000 Soul of Aava- the King's Pet
+64530000 Soul of Elana- Squalid Queen
+64540000 Soul of Nadalia- Bride of Ash
+64550000 Soul ofAlsanna- Silent Oracle
+64560000 Soul of Sir Alonne
+64580000 Soul of the Ivory King
+64590000 Soul of Zallen- the King's Pet
+64600000 Loyce Soul
+64610000 Soul of Lud- the King's Pet

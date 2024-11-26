@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<MaxHpRate Wiki="Multiplier for maximum Hp" />
+	<MaxMpRate Wiki="Multiplier for maximum Mp/Fp" />
+	<MaxStaminaRate Wiki="Multiplier for maximum Posture" />
+	<PhysicsAttackRate Wiki="Multiplier for Physical damage" />
+	<SlashAttackRate Wiki="Multiplier for Slash damage" />
+	<LightHitAttackRate Wiki="Multiplier for Light Hit damage" />
+	<ThrustAttackRate Wiki="Multiplier for Thrust damage" />
+	<NeturalAttackRate Wiki="Multiplier for Neutral damage" />
+	<MagicAttackRate Wiki="Multiplier for Magic damage" />
+	<FireAttackRate Wiki="Multiplier for Fire damage" />
+	<ThunderAttackRate Wiki="Multiplier for Lightning damage" />
+	<DarkAttackRate Wiki="Multiplier for Dark damage" />
+	<PhysicsDefenseRate Wiki="Multiplier for Physical defense" />
+	<MagicDefenseRate Wiki="Multiplier for Magic defense" />
+	<FireDefenseRate Wiki="Multiplier for Fire defense" />
+	<ThunderDefenseRate Wiki="Multiplier for Lightning defense" />
+	<DarkDefenseRate Wiki="Multiplier for Dark defense" />
+	<StaminaAttackRate Wiki="Multiplier for Posture damage" />
+	<SoulRate Wiki="Multiplier for Souls dropped when killed" />
+	<PoisionResistRate Wiki="Multiplier for Posion resistance" />
+	<DeseaseResistRate Wiki="Multiplier for Terror resistance" />
+	<BloodResistRate Wiki="Multiplier for Burn resistance" />
+	<CurseResistRate Wiki="Multiplier for Enfeeble resistance" />
+	<FreezeResistRate Wiki="Multiplier for Shock resistance" />
+	<BloodDamageRate Wiki="Multiplier for Burn damage" />
+	<SuperArmorDamageRate Wiki="Multiplier for Super Armor damage taken" />
+	<FreezeDamageRate Wiki="Multiplier for Shock damage" />
+	<NinsatsuAttackRate Wiki="Multiplier for Ninsatsu damage" />
+	<HeavyHitAttackRate Wiki="Multiplier for Heavy Hit damage" />
+	<AntiGroundAttackRate Wiki="Multiplier for Anti Ground damage" />
+	<AntiAirAttackRate Wiki="Multiplier for Anti Air damage" />
+	<LightShootAttackRate Wiki="Multiplier for Light Shoot damage" />
+	<AttriAAttackRate Wiki="Multiplier for Attribute A damage" />
+	<AttriBAttackRate Wiki="Multiplier for Attribute B damage" />
+	<AttriCAttackRate Wiki="Multiplier for Attribute C damage" />
+	<SkillPointRate Wiki="Multiplier for XP dropped when killed" />
+	<StaminaRevoverSpeedRate Wiki="Multiplier for Posture recover speed"/>
+	<pad1 />
+  </Field>
+  <Self Wiki="Defines overall stat increase to enemies in NG+ through NG+7" ConsecutiveIDs="" AlternativeOrder="MaxHpRate,MaxMpRate,MaxStaminaRate,StaminaRevoverSpeedRate,-,
+PhysicsAttackRate,SlashAttackRate,LightHitAttackRate,ThrustAttackRate,NeturalAttackRate,NinsatsuAttackRate,HeavyHitAttackRate,AntiGroundAttackRate,AntiAirAttackRate,LightShootAttackRate,AttriAAttackRate,AttriBAttackRate,AttriCAttackRate,MagicAttackRate,FireAttackRate,ThunderAttackRate,DarkAttackRate,StaminaAttackRate,-,
+PhysicsDefenseRate,MagicDefenseRate,FireDefenseRate,ThunderDefenseRate,DarkDefenseRate,SuperArmorDamageRate,-,
+PoisionResistRate,DeseaseResistRate,BloodResistRate,CurseResistRate,FreezeResistRate,-,
+BloodDamageRate,FreezeDamageRate,-,
+SoulRate,SkillPointRate,-" />
+</PARAMMETA>

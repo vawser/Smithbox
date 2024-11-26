@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <action00 AltName="Unlocks Diving" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action01 AltName="Unlocks Night Eyes" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action02 AltName="Unlocks Resurrection" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action03 AltName="Unlocks Mortal Blade" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action04 AltName="Unlocks Prosthetic Arm" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action05 AltName="Unlocks Kusabimaru" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action06 AltName="Unlocks Spirit Emblems" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action07 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action08 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action09 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action10 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action11 AltName="Unlocks Mikiri Counter" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action12 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action13 AltName="Unlocks Vault Over" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action14 AltName="Unlocks Grappling Hook Attack" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action15 AltName="Unlocks Mid-Air Deflect" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action16 AltName="Unlocks Mid-Air Prosthetic Tool" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action17 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action18 AltName="Anti-Air Deathblow" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action19 AltName="Reservoir Thrust unused unlock" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action20 AltName="Unlocks Chasing Slice" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action21 AltName="Unlocks Projected Force" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action22 AltName="Unlocks Fang and Blade" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action23 AltName="Unlocks Living Force" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action24 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action25 AltName="Unlocks Mid-Air Combat Arts" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action26 AltName="Unlocks Run and Slide" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action27 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action28 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+    <action29 AltName="Unused" IsBool="" Wiki="The ban will be lifted if you possess at least one tool marked with ○" />
+  </Field>
+  <Self Wiki="Used to unlock various abilities as you progress" />
+</PARAMMETA>

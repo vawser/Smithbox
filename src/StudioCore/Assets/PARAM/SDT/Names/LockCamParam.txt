@@ -1,0 +1,150 @@
+0 Normal -- 通常
+1 Normal_narrow space -- 通常_狭所
+2 Normal_Indoor wide -- 通常_屋内広め
+10 Normal_infinite wall jump -- 通常_無限壁ジャンプ
+20 Normal_Shinboku -- 通常_御神木上
+22 Normal _ litter -- 通常_輿
+100 Crouching -- しゃがみ
+101 Crouching_narrow space -- しゃがみ_狭所
+102 Crouching_Indoor spread -- しゃがみ_屋内広め
+110 Crouching_infinite wall jump -- しゃがみ_無限壁ジャンプ
+120 Crouching _ Shinboku -- しゃがみ_御神木上
+200 With wall -- 壁張り付き
+201 With wall _ narrow space -- 壁張り付き_狭所
+202 Wall-mounted _ indoor wide -- 壁張り付き_屋内広め
+221 With wall _ in front of Shinboku -- 壁張り付き_御神木前
+300 Peeping _ left and right -- 覗き込み_左右
+301 Peeping _ left and right _ narrow space -- 覗き込み_左右_狭所
+302 Peeping _ left and right _ indoor wide -- 覗き込み_左右_屋内広め
+500 Hanging -- ぶら下がり
+501 Hanging _ narrow space -- ぶら下がり_狭所
+502 Hanging _ indoor wide -- ぶら下がり_屋内広め
+521 Hanging_Hidden Prison Bridge_Eavesdropping -- ぶら下がり_隠し牢の橋_盗み聞き
+700 Waiting for resurrection -- 復活待機
+701 Resurrection waiting _ narrow space -- 復活待機_狭所
+702 Resurrection waiting _ indoor spread -- 復活待機_屋内広め
+2000 On the water -- 水上
+2600 Water_wire injection -- 水上_ワイヤー射出
+2700 Water_waiting for resurrection -- 水上_復活待機
+3000 Underwater -- 水中
+3020 Underwater_Nishikigoi -- 水中_錦鯉
+3200 Underwater_rise -- 水中_上昇
+3220 Underwater_rise_nishikigoi -- 水中_上昇_錦鯉
+3400 Underwater_descent -- 水中_下降
+3420 Underwater_descent_nishikigoi -- 水中_下降_錦鯉
+3700 Underwater_waiting for resurrection -- 水中_復活待機
+3720 Underwater_Resurrection waiting_Nishikigoi -- 水中_復活待機_錦鯉
+4300 Water → Underwater -- 水上→水中
+4400 Underwater → on the water -- 水中→水上
+5050 Nishikigoi -- 錦鯉
+5055 Nishikigoi_Bridge event -- 錦鯉_橋イベント用
+5060 Ninja Army Chief -- 忍軍の長
+5100 Yasha Ape _ pull a little -- 夜叉猿_ちょっと引く
+5101 Yasha Ape_pull strongly -- 夜叉猿_強く引く
+5102 Yasha Ape_for close quarters battle -- 夜叉猿_近接戦闘用
+5110 Yasha Monkey (Map) -- 夜叉猿（マップ）
+5200 Mermaid dragon (princess) -- 人魚竜(姫)
+5201 Mermaid Dragon (Princess) _ Camera at the time of attack -- 人魚竜(姫)_攻撃時カメラ
+5202 Mermaid Dragon (Princess) _ During Storm Jump -- 人魚竜(姫)_ストームジャンプ時
+5203 Mermaid Dragon (Princess) _ When strongly charged -- 人魚竜(姫)_強帯電時
+7000 Female player -- 女奏者
+7020 Buddhist priest (demon) _normal -- 仏師（鬼）_通常
+7021 Buddhist priest (demon) _proximity -- 仏師（鬼）_近接
+7022 Buddhist priest (demon) _ when moving vertically -- 仏師（鬼）_縦に動く時
+59200 Temple look up allowed_default -- 寺見上げ許容_デフォルト
+59201 Allowed to look up at the temple_hanging -- 寺見上げ許容_ぶら下がり
+59210 Allowed overlooking the temple_default -- 寺見下ろし許容_デフォルト
+5000000 Haunting Monk_Normal -- 破戒僧_通常
+5000001 Haunting Monk_Normal_Crouching -- 破戒僧_通常_しゃがみ
+5000007 Haunting Monk_Normal_Resurrection Waiting -- 破戒僧_通常_復活待機
+5000100 Haunting Monk_On the Tree -- 破戒僧_木の上
+5000101 Haunting Monk_On the Tree_Crouching -- 破戒僧_木の上_しゃがみ
+5000107 Haunting Monk_On the Tree_Waiting for Resurrection -- 破戒僧_木の上_復活待機
+5050000 Nishikigoi -- 錦鯉
+5050100 Nishikigoi_Bridge event -- 錦鯉_橋イベント用
+5050101 Nishikigoi_Bridge Event_Crouching -- 錦鯉_橋イベント用_しゃがみ
+5060000 Ninja Chief (Old) _Normal -- 忍軍の長(老)_通常
+5060001 Ninja Chief (Old) _Normal_ Crouching -- 忍軍の長(老)_通常_しゃがみ
+5060007 Ninja Army Chief (Old) _Normal_Resurrection Waiting -- 忍軍の長(老)_通常_復活待機
+5061000 Ninja Chief (True) _Normal -- 忍軍の長(真)_通常
+5061001 Ninja Chief (True) _Normal_Crouching -- 忍軍の長(真)_通常_しゃがみ
+5061007 Ninja Army Chief (True) _Normal_Resurrection Waiting -- 忍軍の長(真)_通常_復活待機
+5080000 Cavalry Warrior_Normal -- 騎馬武者_通常
+5080001 Cavalry Warrior_Normal_Crouching -- 騎馬武者_通常_しゃがみ
+5080007 Cavalry Warrior_Normal_Resurrection Waiting -- 騎馬武者_通常_復活待機
+5080100 Cavalry warrior_look up -- 騎馬武者_見上げ
+5080101 Cavalry warrior _ looking up _ crouching -- 騎馬武者_見上げ_しゃがみ
+5080107 Cavalry warrior _ looking up _ waiting for resurrection -- 騎馬武者_見上げ_復活待機
+5080200 Horse-riding warrior_close -- 騎馬武者_寄り
+5080201 Cavalry warrior _ leaning _ crouching -- 騎馬武者_寄り_しゃがみ
+5080207 Horse-riding warrior_close-up_waiting for resurrection -- 騎馬武者_寄り_復活待機
+5090000 Butterfly_normal -- お蝶_通常
+5090001 Butterfly _ crouching -- お蝶_しゃがみ
+5090007 Butterfly_waiting for resurrection -- お蝶_復活待機
+5100000 Yasha Ape_Normal -- 夜叉猿_通常
+5100001 Yasha Ape_Crouching -- 夜叉猿_しゃがみ
+5100007 Yasha Ape_Resurrection Waiting -- 夜叉猿_復活待機
+5100010 Yasha Ape_Behavior that grows at close range -- 夜叉猿_近距離で伸び上がる行動
+5100011 Yasha Ape _ Behavior that grows up at a short distance _ Crouching -- 夜叉猿_近距離で伸び上がる行動_しゃがみ
+5100017 Yasha Ape _ Behavior that grows at a short distance _ Waiting for resurrection -- 夜叉猿_近距離で伸び上がる行動_復活待機
+5100020 Yasha Ape_Jump Behavior_Normal -- 夜叉猿_ジャンプ行動_通常
+5100021 Yasha Ape_Jumping Behavior_Crouching -- 夜叉猿_ジャンプ行動_しゃがみ
+5100027 Yasha Ape_Jump Action_Resurrection Waiting -- 夜叉猿_ジャンプ行動_復活待機
+5100100 Yasha Ape_After the appearance of the bride monkey_Normal -- 夜叉猿_嫁猿登場後_通常
+5100101 Yasha Ape_After the appearance of the bride monkey_Crouching -- 夜叉猿_嫁猿登場後_しゃがみ
+5100107 Yasha Ape_After the appearance of the bride monkey_Waiting for resurrection -- 夜叉猿_嫁猿登場後_復活待機
+5100110 Yasha Ape_Behavior that grows at close range -- 夜叉猿_近距離で伸び上がる行動
+5100111 Yasha Ape _ Behavior that grows up at a short distance _ Crouching -- 夜叉猿_近距離で伸び上がる行動_しゃがみ
+5100117 Yasha Ape _ Behavior that grows at a short distance _ Waiting for resurrection -- 夜叉猿_近距離で伸び上がる行動_復活待機
+5100120 Yasha Ape_Jump Behavior_Normal -- 夜叉猿_ジャンプ行動_通常
+5100121 Yasha Ape_Jumping Behavior_Crouching -- 夜叉猿_ジャンプ行動_しゃがみ
+5100127 Yasha Ape_Jump Action_Resurrection Waiting -- 夜叉猿_ジャンプ行動_復活待機
+5200000 Mermaid Dragon_Normal -- 人魚竜_通常
+5200001 Mermaid Dragon_Normal_Crouching -- 人魚竜_通常_しゃがみ
+5200007 Mermaid Dragon_Normal_Resurrection Waiting -- 人魚竜_通常_復活待機
+5200100 Mermaid Dragon_Storm Jump Near the top -- 人魚竜_ストームジャンプ頂点付近
+5200200 Mermaid Dragon_After Storm Jump -- 人魚竜_ストームジャンプ後中
+5200300 Mermaid Dragon_Thunderback Blows away_Pulls hard -- 人魚竜_雷返し吹き飛ばし中_強く引く
+5200310 Mermaid Dragon_Thunderback is being blown away -- 人魚竜_雷返し吹き飛ばし中
+5300000 Okiryu_normal -- 翁竜_通常
+5300001 Old Dragon_Normal_Crouching -- 翁竜_通常_しゃがみ
+5300007 Okiryu_normal_waiting for resurrection -- 翁竜_通常_復活待機
+5300100 Okiryu_Tentacles are appearing -- 翁竜_触手登場中
+5300101 Okiryu_Tentacles are appearing_Crouching -- 翁竜_触手登場中_しゃがみ
+5300107 Okiryu_Tentacles are appearing_Waiting for resurrection -- 翁竜_触手登場中_復活待機
+5400000 Kensei_Honjo_Normal -- 剣聖_本城_通常
+5400001 Kensei_Honjo_Normal_Crouching -- 剣聖_本城_通常_しゃがみ
+5400007 Kensei_Honjo_Normal_Resurrection Waiting -- 剣聖_本城_通常_復活待機
+5400500 Kensei_Hidden Prison_Normal -- 剣聖_隠し牢_通常
+5400501 Kensei_Hidden Prison_Normal_Crouching -- 剣聖_隠し牢_通常_しゃがみ
+5400507 Kensei_Hidden Prison_Normal_Resurrection Waiting -- 剣聖_隠し牢_通常_復活待機
+7000000 Female player_normal -- 女奏者_通常
+7000001 Female player_normal_ crouching -- 女奏者_通常_しゃがみ
+7000007 Female player_normal_waiting for resurrection -- 女奏者_通常_復活待機
+7020000 Buddhist demon _ normal -- 仏師鬼_通常
+7020001 Buddhist demon _normal_ crouching -- 仏師鬼_通常_しゃがみ
+7020007 Buddhist demon _ normal _ waiting for resurrection -- 仏師鬼_通常_復活待機
+7020100 Buddhist demon _ jumping _ normal -- 仏師鬼_ジャンプ中_通常
+7020101 Buddhist demon _ jumping _ crouching -- 仏師鬼_ジャンプ中_しゃがみ
+7020107 Buddhist demon _ jumping _ waiting for resurrection -- 仏師鬼_ジャンプ中_復活待機
+7020200 Buddhist demon _ jump lower attack -- 仏師鬼_ジャンプ下段攻撃中
+7020201 Buddhist demon _ jumping lower attack _ crouching -- 仏師鬼_ジャンプ下段攻撃中_しゃがみ
+7020207 Buddhist demon _ jump lower attack _ waiting for resurrection -- 仏師鬼_ジャンプ下段攻撃中_復活待機
+7020300 Buddhist demon _ growing up -- 仏師鬼_伸び上がり中
+7020301 Buddhist demon _ growing up _ crouching -- 仏師鬼_伸び上がり中_しゃがみ
+7020307 Buddhist demon _ growing up _ waiting for resurrection -- 仏師鬼_伸び上がり中_復活待機
+7100000 Rival_Honjo_Normal -- ライバル_本城_通常
+7100001 Rival_Honjo_Normal_Crouching -- ライバル_本城_通常_しゃがみ
+7100007 Rival_Honjo_Normal_Resurrection waiting -- ライバル_本城_通常_復活待機
+7100100 Rival_Honjo_Bow 4 consecutive shots -- ライバル_本城_弓4連射
+7100101 Rival _ Honjo _ Bow 4 barrage _ Crouching -- ライバル_本城_弓4連射_しゃがみ
+7100107 Rival_Honjo_Bow 4 barrage_Resurrection waiting -- ライバル_本城_弓4連射_復活待機
+7100500 Rival_Hidden Prison_Normal -- ライバル_隠し牢_通常
+7100501 Rival_Hidden Prison_Normal_Crouching -- ライバル_隠し牢_通常_しゃがみ
+7100507 Rival_Hidden Prison_Normal_Resurrection Waiting -- ライバル_隠し牢_通常_復活待機
+7100600 Rival _ Hidden Prison _ Bow 4 Fire -- ライバル_隠し牢_弓4連射
+7100601 Rival _ Hidden Prison _ Bow 4 Fire _ Crouching -- ライバル_隠し牢_弓4連射_しゃがみ
+7100607 Rival_Hidden Prison_Bow 4 Fires_Resurrection Wait -- ライバル_隠し牢_弓4連射_復活待機
+7400000 Medical Holy Daughter_Normal -- 医聖の娘_通常
+7400001 Medical Holy Daughter_Normal_Crouching -- 医聖の娘_通常_しゃがみ
+7400007 Medical Holy Daughter_Normal_Resurrection Waiting -- 医聖の娘_通常_復活待機

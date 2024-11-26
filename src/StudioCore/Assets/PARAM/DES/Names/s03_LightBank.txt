@@ -1,0 +1,28 @@
+0 B1 basic
+1 B1 Indoor
+2 B1 shade
+5 B1 character
+6 B1 character (indoor)
+7 B1 character (shining water)
+10 B2 basic
+11 B2 Indoor
+12 Near B2 Shrine
+13 B2 door
+15 B2 character
+16 B2 character (indoor)
+17 B2 Character (Shrine)
+18 B2 baby ray carcass
+20 B3 Basic
+25 B3 character
+40 [For m03_01_00_99] Basic
+41 [For m03_01_00_99] Distant view
+42 [for m03_01_00_99] 2011 basement room
+43 [For m03_01_00_99] Celestial sphere
+44 [For m03_01_00_99] m03_01 character (shining water)
+45 [For m03_01_00_99] m03_01 character (indoor)
+46 [For m03_01_00_99] m03_01 character
+59 Rubble A
+60 Rubble B
+61 m03_01 character (shining water)
+62 m03_01 character (indoor)
+63 m03_01 character

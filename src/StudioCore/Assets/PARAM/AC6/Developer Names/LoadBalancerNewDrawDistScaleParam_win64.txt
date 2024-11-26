@@ -1,0 +1,14 @@
+0 [Drawing distance scale] Default (do not scale) -- [描画距離スケール] デフォルト(スケールしない)
+1 [Draw distance scale] Local player -- [描画距離スケール] ローカルプレイヤー
+2 [Draw distance scale] Remote player -- [描画距離スケール] リモートプレイヤー
+3 [Drawing distance scale] Illusion -- [描画距離スケール] 幻影
+4 [Drawing distance scale] 0.75 -- [描画距離スケール] 0.75
+5 [Drawing distance scale] 0.6 -- [描画距離スケール] 0.6
+6 [Drawing distance scale] 0.5 -- [描画距離スケール] 0.5
+7 [Drawing distance scale] 0.4 -- [描画距離スケール] 0.4
+8 [Drawing distance scale] 0.3 -- [描画距離スケール] 0.3
+10 [Drawing distance scale] Chr small -- [描画距離スケール] Chr 小
+11 [Drawing distance scale] Chr medium -- [描画距離スケール] Chr 中
+12 [Drawing distance scale] Chr large -- [描画距離スケール] Chr 大
+13 [Drawing distance scale] Chr extra large -- [描画距離スケール] Chr 特大
+20 [Drawing distance scale] Map/Obj default -- [描画距離スケール] Map/Obj デフォルト

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <RadarRange AltName="Recognition Distance" Wiki="Distance to recognize enemy characters: metres" />
+    <RadarAngleX AltName="Recognition Angle: X" Wiki="X angle for recognizing enemy characters: The current direction of line of sight is 0 degrees, and the top is +." />
+    <RadarAngleY AltName="Recognition Angle: Y" Wiki="Y angle for recognizing enemy characters: The current direction of line of sight is 0 degrees, and the top is +." />
+    <TerritorySize AltName="Territory Distance" Wiki="Distance of one's own territory. If the recognized player leaves this distance, it will return to its initial position." />
+    <ThreatBeforeAttackRate AltName="Threat Rate before Attack" Wiki="Probability of threatening before attacking" />
+    <ForceThreatOnFirstLocked AltName="Initial Recognition Intimidation" Wiki="Whether to always intimidate the player when recognizing the player for the first time" IsBool="" />
+    <reserve0 Padding="" />
+    <Attack1_Distance AltName="Attack 1: Distance" Wiki="Distance when attacking." />
+    <Attack1_Margin AltName="Attack 1: Spacing" Wiki="Play between attacks. Avoid vibration near the distance" />
+    <Attack1_Rate AltName="Attack 1: Frequency" Wiki="Frequency of attacks" />
+    <Attack1_ActionID AltName="Attack 1: Action ID" Wiki="Type of attack" Enum="ACTION_PATTERN" />
+    <Attack1_DelayMin AltName="Attack 1: Minimum Delay" Wiki="Minimum delay time from when it becomes possible to attack until it attacks." />
+    <Attack1_DelayMax AltName="Attack 1: Maximum Delay" Wiki="The longest delay time from when the attack becomes possible until it attacks." />
+    <Attack1_ConeAngle AltName="Attack 1: Cone Angle" Wiki="If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK." />
+    <reserve10 Padding="" />
+    <Attack2_Distance AltName="Attack 2: Distance" Wiki="Distance when attacking." />
+    <Attack2_Margin AltName="Attack 2: Spacing" Wiki="Play between attacks. Avoid vibration near the distance" />
+    <Attack2_Rate AltName="Attack 2: Frequency" Wiki="Frequency of attacks" />
+    <Attack2_ActionID AltName="Attack 2: Action ID" Wiki="Type of attack" Enum="ACTION_PATTERN" />
+    <Attack2_DelayMin AltName="Attack 2: Minimum Delay" Wiki="Minimum delay time from when it becomes possible to attack until it attacks." />
+    <Attack2_DelayMax AltName="Attack 2: Maximum Delay" Wiki="The longest delay time from when the attack becomes possible until it attacks." />
+    <Attack2_ConeAngle AltName="Attack 2: Cone Angle" Wiki="If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK." />
+    <reserve11 Padding="" />
+    <Attack3_Distance AltName="Attack 3: Distance" Wiki="Distance when attacking." />
+    <Attack3_Margin AltName="Attack 3: Spacing" Wiki="Play between attacks. Avoid vibration near the distance" />
+    <Attack3_Rate AltName="Attack 3: Frequency" Wiki="Frequency of attacks" />
+    <Attack3_ActionID AltName="Attack 3: Action ID" Wiki="Type of attack" Enum="ACTION_PATTERN" />
+    <Attack3_DelayMin AltName="Attack 3: Minimum Delay" Wiki="Minimum delay time from when it becomes possible to attack until it attacks." />
+    <Attack3_DelayMax AltName="Attack 3: Maximum Delay" Wiki="The longest delay time from when the attack becomes possible until it attacks." />
+    <Attack3_ConeAngle AltName="Attack 3: Cone Angle" Wiki="If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK." />
+    <reserve12 Padding="" />
+    <Attack4_Distance AltName="Attack 4: Distance" Wiki="Distance when attacking." />
+    <Attack4_Margin AltName="Attack 4: Spacing" Wiki="Play between attacks. Avoid vibration near the distance" />
+    <Attack4_Rate AltName="Attack 4: Frequency" Wiki="Frequency of attacks" />
+    <Attack4_ActionID AltName="Attack 4: Action ID" Wiki="Type of attack" Enum="ACTION_PATTERN" />
+    <Attack4_DelayMin AltName="Attack 4: Minimum Delay" Wiki="Minimum delay time from when it becomes possible to attack until it attacks." />
+    <Attack4_DelayMax AltName="Attack 4: Maximum Delay" Wiki="The longest delay time from when the attack becomes possible until it attacks." />
+    <Attack4_ConeAngle AltName="Attack 4: Cone Angle" Wiki="If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK." />
+    <reserve13 Padding="" />
+    <reserve_last Padding="" />
+    
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

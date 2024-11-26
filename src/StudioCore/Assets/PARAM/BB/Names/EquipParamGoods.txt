@@ -1,0 +1,295 @@
+1 Item switching test A
+2 Item switching test b
+100 Dark Ring
+111 Parting shot
+120 bell
+130 Bloodline ranking viewing item
+131 Federation ranking viewing item
+200 Regular cooperation request
+201 Regular cooperation request _ Not available
+205 Regular cooperation wanted
+206 Regular cooperation wanted _ Not available
+225 Normal invasion request
+226 Normal invasion request _ Not available
+700 Gascoigne's Music Box
+701 Whore's Blood
+702 Captive Nun's Blood
+703 Female doctor's medicine
+704 Bloody Baby
+705 Queen's Blood
+706 Clock Tower Doctor's Blood
+800 Point forward
+801 Bow (male/light)
+802 Let's go
+803 Joy
+804 Turning the cape
+805 A bow (male/polite)
+806 Bow (female/light)
+807 One bow (female/polite)
+808 Wave
+809 pray
+810 Wait!
+811 Quietly
+812 Hey hey hey
+813 Fist pump
+814 Praise
+815 roar
+816 Pleading for your life
+817 Dust off
+818 religion A (Simple)
+819 religion A (polite)
+820 religion B
+821 sit
+822 Federation
+900 bullet【 PG Direct specification】
+901 Temporary Bullet PG Direct specification】
+910 Bullet Recovery
+999 E3 Reset item for version
+1000 HP recovery【 PG Direct specification】
+1100 Poison/bleeding recovery potion
+1101 Madness/Beast Transformation Recovery Potion
+1110 Beastification Potion
+1120 Stone Hat
+1200 Flame Pot
+1201 Timed Explosion Bottle
+1210 Poison Knife
+1220 Oil bottle
+1230 Stone
+1240 Throwing Knife
+1250 Rear Flame Pot
+1251 Timed explosion bottle behind
+1260 Beast Seduction
+1270 HP Unrecoverable
+1300 Enchantment [Fire]
+1310 Enchantment [Magic]
+1320 Enchantment [Lightning]
+1330 Gun power up
+1400 Return
+1410 Signpost
+1411 telescope
+1412 lanthanum
+1500 SAN Value Recovery + 1
+1501 SAN Value Recovery + 2
+1510 Seoul 0 】
+1511 Seoul 1 】
+1512 Seoul 2 】
+1513 Seoul 3 】
+1514 Seoul 4 】
+1515 Seoul 5 】
+1516 Seoul 6 】
+1517 Seoul 7 】
+1518 Seoul 8 】
+1519 Seoul 9 】
+1590 Seoul 10 】
+1591 Seoul 11 】
+1592 Seoul 12 】
+1593 Seoul 13 】
+1594 Seoul 14 】
+1600 BJ The rough diamond of "clockwise perversion"
+1601 BJ The rough diamond of "counterclockwise perversion"
+1602 BJ The raw stone of "Communion"
+1603 BJ The raw stone of "Odon's Fellowship"
+1604 BJ The "Lake" Gemstone
+1605 BJ Deep Sea Gemstones
+1606 BJ The raw material of the "Destroyer"
+1607 BJ The raw material of the "Reveler"
+1608 BJ The raw material of "the one who interacts"
+1609 BJ The raw material of the "successor"
+1610 BJ The Beast's Gemstone
+1611 BJ The Moon's Gemstone
+1612 BJThe raw stone of "eyes"
+1650 Radiation Magic Stone Ore Level 1
+1651 Radiation Magic Stone Ore Level 2
+1652 Radiation Magic Stone Ore Level 3
+1653 Radiation Magic Stone Ore Level 4
+1654 Radiation Magic Stone Ore Level 5
+1655 Radiation Magic Stone Ore Level 6
+1656 Radiation Magic Stone Ore Level 7
+1657 Triangular Magic Stone Ore Level 1
+1658 Triangular Magic Stone Ore Level 2
+1659 Triangular Magic Stone Ore Level 3
+1660 Triangular Magic Stone Ore Level 4
+1661 Triangular Magic Stone Ore Level 5
+1662 Triangular Magic Stone Ore Level 6
+1663 Triangular Magic Stone Ore Level 7
+1664 Defective Magic Stone Ore Level 1
+1665 Defective Magic Stone Ore Level 2
+1666 Defective Magic Stone Ore Level 3
+1667 Defective Magic Stone Ore Level 4
+1668 Defective Magic Stone Ore Level 5
+1669 Defective Magic Stone Ore Level 6
+1670 Defective Magic Stone Ore Level 7
+1671 Round Magic Stone Ore Level 1
+1672 Round Magic Stone Ore Level 2
+1673 Round Magic Stone Ore Level 3
+1674 Round Magic Stone Ore Level 4
+1675 Round Magic Stone Ore Level 5
+1676 Round Magic Stone Ore Level 6
+1677 Round Magic Stone Ore Level 7
+1678 Droplet-shaped Magic Stone Ore Level 1
+1679 Droplet-shaped Magic Stone Ore Level 2
+1680 Droplet-shaped Magic Stone Ore Level 3
+1681 Droplet-shaped Magic Stone Ore Level 4
+1682 Droplet-shaped Magic Stone Ore Level 5
+1683 Droplet-shaped Magic Stone Ore Level 6
+1684 Droplet-shaped Magic Stone Ore Level 7
+1700 Stagnation of blood
+2000 Tentacle Summoning
+2010 Space Summoning
+2020 Reflect Wall
+2030 Slippery
+2050 Area Recovery
+2060 acceleration
+2070 Cain's Impact
+2080 Guided missile
+2090 Friendly Fire
+2110 Messenger Mimicry
+2120 Cosmic Arrow
+2130 Ghost Bullet
+2140 Snake Summoning
+3000 Weapon Enhancement Material [Common]
+3010 Weapon upgrade material [Uncommon]
+3020 Weapon strengthening material [Rare]
+3030 Weapon strengthening material S rare】
+4000 Cathedral Quarter B Key
+4001 Gold pendants
+4003 Invitation to the Castle
+4006 Cathedral Quarter C Orphanage 1F Key
+4009 Evil Eye Bridge Key
+4010 Cathedral Quarter C Key to
+4011 Keys to the Old Town
+4012 Nightmare Classroom Key
+4013 Veranda key
+4014 Parishioner Ω Startup Items
+4015 Clock Tower: Dungeon Key
+4016 Observation Board Key
+4017 Altar elevator activation item
+4018 Normal Dungeon Door Key
+4019 Clock Tower Door Key
+4020 Clock Tower Hunter Room (Boss Room) Key
+4021 Clock Face Activation Item
+4102 Weapon Enhancement Unlocking Items
+4103 Magic stone removal unlock item
+4104 Body gem removable items
+4105 Quick Dungeon Unlocking Items
+4110 Shop Opening Workshop Shop A
+4111 Shop Opening Workshop Shop D
+4112 Shop Opening Workshop Shop B
+4113 Shop Opening Workshop Shop C
+4114 Shop Opening Church Shop A
+4115 Shop Opening Church Shop B
+4116 Shop Opening Church Shop C
+4117 Shop Opening Vampire
+4118 Shop Opening Workshop Shop E
+4119 Shop Opening Church Shop D
+4120 Shop Unlocked Old Hunter Badge
+4121 Shop Unlocked: Clock Tower Hunter Badge
+4300 Things related to dolls
+4301 Doll's Tears
+4304 Engagement Rings
+4305 Pink meat
+4306 Bright red brooch
+4308 Invitation to an Old Castle (Anonymous)
+4310 An item that allows you to warp back to your hometown by throwing the evil god.
+4311 [ DLC 】Cathedral Ward with Evil God Throw D Items that can warp to
+4312 [ DLC 】 NPCSummoning Items
+4313 [ DLC 】Federation Staff
+4320 3 The umbilical cord of the real thing A
+4321 3 The umbilical cord of the real thing B
+4322 3 The umbilical cord of the real thing A
+4323 3 The umbilical cord of the real thing B
+4330 The Final Holy Grail of the Deep Beyond
+4340 Brain fluid A
+4341 Brain fluid B
+4342 Brain fluid C
+4900 Messenger equipment (hat A )
+4901 Messenger equipment (hat B )
+4902 Messenger equipment (bandages)
+4903 Messenger equipment (white ribbon)
+4904 Messenger Gear (White Ribbon Covered in Guts)
+4905 Messenger Gear (Messenger's Solid Top (Not Frayed Top Hat))
+4906 Messenger equipment (Messenger Church Hat)
+4907 Messenger equipment (messenger's bloody bandages)
+4908 Messenger Equipment (Messenger Pot Festival)
+6100 Automatically generated chalice [Level 1 】Thumel
+6109 Fixed Grail [Level 1 】Thumel
+6200 Automatically generated chalice [Level 2】Thumel
+6209 Fixed Grail [Level 2 】Thumel
+6210 Automatically generated chalice [Level 2 】 Remote Grave
+6219 Fixed Grail [Level 2 】 Remote Grave
+6300 Automatically generated chalice [Level 3 】Thumel
+6302 Automatically generated chalice [Level 3 】Thumel _ Multi
+6309 Fixed Grail [Level 3 】Thumel
+6310 Automatically generated chalice [Level 3 】 Remote Grave
+6312 Automatically generated chalice [Level 3 】 Remote Grave _ Multi
+6319 Fixed Grail [Level 3 】 Remote Grave
+6401 Automatically generated chalice [Level 4 】Thumel _ curse
+6409 Fixed Grail [Level 4 】Thumel _ curse
+6420 Automatically generated chalice [Level 4 】 Laurent
+6429 Fixed Grail [Level 4 】 Laurent
+6500 Automatically generated chalice [Level 5 】Thumel
+6502 Automatically generated chalice [Level 5】Thumel _ Multi
+6509 Fixed Grail [Level 5 】Thumel
+6520 Automatically generated chalice [Level 5 】 Laurent
+6522 Automatically generated chalice [Level 5 】 Laurent _ Multi
+6529 Fixed Grail [Level 5 】 Laurent
+6530 Automatically generated chalice [Level 5 】Is
+6532 Automatically generated chalice [Level 5 】Is _ Multi
+6539 Fixed Grail [Level 5 】Is
+7000 Ritual Materials [Common A 】level 1
+7001 Ritual Materials [Common A 】level 2
+7002 Ritual Materials [Common A 】level 3
+7003 Ritual Materials [Common A 】level 4
+7004 Ritual Materials [Common A 】level 5
+7012 Ritual Materials [Common B 】level 3
+7013 Ritual Materials [Common B 】level 4
+7014 Ritual Materials [Common B】level 5
+7020 Ritual Materials [Common C 】level 1
+7021 Ritual Materials [Common C 】level 2
+7022 Ritual Materials [Common C 】level 3
+7023 Ritual Materials [Common C 】level 4
+7024 Ritual Materials [Common C 】level 5
+7050 Ritual Material Fragment
+7100 Ritual Materials [Uncommon A 】level 1
+7110 Ritual Materials [Uncommon B 】level 1
+7120 Ritual Materials [Uncommon C 】level 1
+7121 Ritual Materials [Uncommon C 】level 2
+7130 Ritual Materials [Uncommon D 】level 1
+7131 Ritual Materials [Uncommon D 】level 2
+7140 Ritual Materials [Uncommon E 】level 1
+7150 Ritual Materials [Uncommon F 】level 1
+7200 Ritual materials A5 rock】
+10900 bullet【 PG Direct specification】
+10910 Bullet Recovery
+11000 HP recovery【 PG Direct specification】
+11100 Poison/bleeding recovery potion
+11101 Madness/Beast Transformation Recovery Potion
+11110 Beastification Potion
+11130 Regain Up
+11200 Flame Pot
+11201 Timed Explosion Bottle
+11210 Poison Knife
+11220 Oil bottle
+11230 Stone
+11240 Throwing Knife
+11250 Rear Flame Pot
+11251 Timed explosion bottle behind
+11260 Beast Seduction
+11270 HP Unrecoverable
+11300 Enchantment [Fire]
+11310 Enchantment [Magic]
+11320 Enchantment [Lightning]
+11330 Gun power up
+12000 Tentacle Summoning
+12010 Space Summoning
+12020 Reflect Wall
+12030 Slippery
+12050 Area Recovery
+12060 acceleration
+12070 Ground-Crawling Magic
+12080 Guided missile
+12090 Friendly Fire
+12110 Messenger Mimicry
+12120 Cosmic Arrow
+12130 Ghost Bullet
+12140 Snake Summoning

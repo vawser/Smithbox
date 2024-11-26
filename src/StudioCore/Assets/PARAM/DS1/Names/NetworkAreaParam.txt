@@ -1,0 +1,13 @@
+0 Default (delete not allowed) -- デフォルト（削除禁止）
+300000 Ojo of caries 1 -- 蝕の王城1
+310000 City of Towers -- 塔の街
+320000 The Bridge of Flying Dragon -- 飛竜の橋
+330000 Poison Swamp Forest -- 毒沼の森
+341000 Ojo of caries 3 -- 蝕の王城3
+350000 Cathedral Church -- 聖堂教会
+370000 Anole ruins -- アノール遺跡
+380000 Dungeon -- ダンジョン
+390000 Dungeon -- 地下牢
+400000 Base -- 拠点
+981000 Multi-Play Test map -- マルチプレイテストマップ
+991000 Old multi-play test map -- 旧マルチプレイテストマップ

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Row0Dummy="" />
+  <Field>
+    <text_id_male AltName="Dialogue Text ID - Male"/>
+    <text_id_female AltName="Dialogue Text ID - Female"/>
+  </Field>
+</PARAMMETA>

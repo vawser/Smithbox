@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ITEM_USE_CHECK_DIALOG_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 flag_id" />
+    <Field Def="s32 text_id_on_use" />
+    <Field Def="s32 Unk00" />
+    <Field Def="s32 text_id_on_invalid_use" />
+    <Field Def="s32 Unk01" />
+  </Fields>
+</PARAMDEF>

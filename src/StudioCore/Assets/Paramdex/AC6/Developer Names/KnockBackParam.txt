@@ -1,4 +1,0 @@
-0 General purpose -- 汎用
-1 For PC -- PC用
-10 enemy general old -- 敵汎用old
-255 c3020 communist MT for damage test -- c3020 共産MT ダメージテスト用

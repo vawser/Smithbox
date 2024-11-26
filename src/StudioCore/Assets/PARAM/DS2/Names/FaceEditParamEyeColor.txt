@@ -1,0 +1,10 @@
+0 Eye Color Set 1 -- 瞳の色セット1
+1 Eye Color Set 2 -- 瞳の色セット2
+2 Eye Color Set 3 -- 瞳の色セット3
+3 Eye Color Set 4 -- 瞳の色セット4
+4 Eye Color Set 5 -- 瞳の色セット5
+5 Eye Color Set 6 -- 瞳の色セット6
+6 Eye Color Set 7 -- 瞳の色セット7
+7 Eye Color Set 8 -- 瞳の色セット8
+8 Eye Color Set 9 -- 瞳の色セット9
+9 Eye Color Set 10 -- 瞳の色セット10

@@ -1,0 +1,51 @@
+0 None
+1 Stock
+2 Rock
+3 Sand
+4 Wood
+5 Dirt
+6 Ore
+7 Lava
+8 Scarlet Tree
+9 
+10 
+11 Iron Grate
+12 Scarlet Mushroom
+13 
+14 Bone
+15 
+16 
+17 
+18 
+19 
+20 
+21 Water
+22 
+23 Shallow Poison Swamp
+24 Poison Swamp
+25 
+26 
+27 
+28 
+29 
+30 
+31 
+32 
+33 
+34 
+35 
+36 
+37 
+38 
+39 
+40 
+43 
+44 Rain Dirt
+45 
+46 Scarlet Swamp
+47 
+48 
+49 Lake of Rot
+60 
+61 
+62 

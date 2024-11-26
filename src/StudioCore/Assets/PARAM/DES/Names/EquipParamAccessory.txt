@@ -1,0 +1,28 @@
+100 Equipment weight up
+101 Increased load weight
+102 pinch attack power up
+103 Pinch defense up
+104 Stamina recovery up
+105 MP recovery up
+106 Weak “Regenerate”
+107 fire resistance
+108 poison resistance
+109 magic sensitive
+110 magic desensitization
+111 magical nature
+112 sincere prayer
+113 strong ghost
+114 white hope
+115 black hope
+116 Weak “Hidden”
+117 Light "Ghost Camouflage"
+118 cat landing
+119 Pheromones
+120 greed
+121 cherish
+123 Aim for vital points
+124 miraculous nature
+125 Bleed resistance
+126 plague resistance
+200 Gull Gold Run Enhancement
+201 Okina Summon Black NPC Enhancement

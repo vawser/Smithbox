@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>SIGN_PUDDLE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1001</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1002</SortID>
+    </Field>
+    <Field Def="s32 matchAreaId">
+      <DisplayName>簡易マッチエリアID</DisplayName>
+      <Description>属している簡易マッチエリアのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    
+    <Field Def="dummy8 pad1[24]" RemovedVersion="11210015" />
+    
+    <Field Def="s32 unknown_0x20" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x24" FirstVersion="11210015"/>
+    
+    <Field Def="u8 areaNo" FirstVersion="11210015"/>
+    <Field Def="u8 gridXNo" FirstVersion="11210015"/>
+    <Field Def="u8 gridZNo" FirstVersion="11210015"/>
+    <Field Def="dummy8 pad3[1]" FirstVersion="11210015"/>
+    
+    <Field Def="f32 posX" FirstVersion="11210015"/>
+    <Field Def="f32 posY" FirstVersion="11210015"/>
+    <Field Def="f32 posZ" FirstVersion="11210015"/>
+    
+    <Field Def="s32 signSubCategoryId" FirstVersion="11210015"/>
+    <Field Def="s32 locationTextId" FirstVersion="11210015"/>
+    
+    <Field Def="s32 sortId" FirstVersion="11210015"/>
+    <Field Def="dummy8 endPad[4]" FirstVersion="11210015"/>
+
+  </Fields>
+</PARAMDEF>

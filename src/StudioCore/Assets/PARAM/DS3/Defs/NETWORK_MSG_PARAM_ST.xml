@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>NETWORK_MSG_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u16 MsgType0 = 3" />
+    <Field Def="u8 MsgType2 = 1" />
+    <Field Def="u8 pad2" />
+    <Field Def="s32 MsgId0 = -1" />
+    <Field Def="s32 MsgId1 = -1" />
+    <Field Def="s32 MsgId2 = -1" />
+    <Field Def="s32 MsgId3 = -1" />
+    <Field Def="s32 MsgId4 = -1" />
+    <Field Def="s32 MsgId5 = -1" />
+    <Field Def="s32 MsgId6 = -1" />
+    <Field Def="s32 MsgId7 = -1" />
+    <Field Def="s32 MsgId8 = -1" />
+    <Field Def="s32 MsgId9 = -1" />
+    <Field Def="s32 MsgId10 = -1" />
+    <Field Def="s32 MsgId11 = -1" />
+    <Field Def="s32 MsgId12 = -1" />
+    <Field Def="s32 MsgId13 = -1" />
+    <Field Def="s32 MsgId14 = -1" />
+    <Field Def="s32 MsgId15 = -1" />
+    <Field Def="s32 MsgId16 = -1" />
+    <Field Def="s32 MsgId17 = -1" />
+    <Field Def="s32 MsgId18 = -1" />
+    <Field Def="s32 MsgId19 = -1" />
+    <Field Def="s32 MsgId20 = -1" />
+    <Field Def="s32 MsgId21 = -1" />
+    <Field Def="s32 MsgId22 = -1" />
+    <Field Def="dummy8 pad1[48]" />
+  </Fields>
+</PARAMDEF>

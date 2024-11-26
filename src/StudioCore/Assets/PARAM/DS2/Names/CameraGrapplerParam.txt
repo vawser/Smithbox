@@ -1,0 +1,11 @@
+0 Tossing Camera -- 投げカメラ
+1 Throwing camera normal interpolation -- 投げカメラ通常補間
+10000 Backstab: Dagger -- バックスタブ：短剣
+10010 Backstab: Naoken -- バックスタブ：直剣
+10020 Backstab: Spear -- バックスタブ：槍
+10030 Backstub: Two-handed oversized sword -- バックスタブ：両手特大剣
+10040 Backstub: Two-Handed Axe -- バックスタブ：両手斧
+20000 Guard Break Stub: Dagger -- ガードブレイクスタブ：短剣
+30000 Paribreak Stub: Dagger -- パリィブレイクスタブ：短剣
+10500000 Fall Ingt: Javaza Hat -- 落下スタブ：ジャバザハット
+10601000 Fall Ingrata: Salamander -- 落下スタブ：サラマンダー

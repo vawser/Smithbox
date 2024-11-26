@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the movement correction parameters for animations." />
+  
+  <Field>
+	<charaId 
+    AltName="Character ID" 
+    Wiki="Character ID of the character to which the parameter is applied." />
+	
+	<pad2_1 
+    AltName=""
+    Padding="" />
+	
+	<animId 
+    AltName="Animation ID" 
+    Wiki="The animation ID of the animation to which the parameter is applied." />
+    
+	<flagId 
+    AltName="TAE Flag ID" 
+    Wiki="TAE flag to which the parameter is applied: Flag ID of Movement Amount Override" />
+    
+	<calcGraphParamId 
+    AltName="Calculation Graph Param ID" 
+    Wiki="ID of the correction calculation graph parameter passed to the correction movement calculation control." 
+    Refs="CalcCorrectGraph" />
+    
+	<charaWeightMax 
+    AltName="Character Weight: Maximum" 
+    Wiki="Upper limit of aircraft weight to be passed to the correction travel calculation control" />
+    
+	<charaWeightMin 
+    AltName="Character Weight: Minimum" 
+    Wiki="Lower limit of aircraft weight to be passed to the correction travel calculation control" />
+    
+	<moveMax 
+    AltName="Character Movement: Maximum" 
+    Wiki="Upper limit of the amount of travel passed to the compensating travel calculation control" />
+    
+	<moveMin 
+    AltName="Character Movement: Minimum" 
+    Wiki="Lower limit of the amount of travel passed to the compensating travel calculation control" />
+    
+	<pad99 
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

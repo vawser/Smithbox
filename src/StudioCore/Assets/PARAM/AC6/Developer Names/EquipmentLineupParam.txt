@@ -1,0 +1,306 @@
+28 Emergency PA -- 緊急時PA
+29 Installed PA -- 設置PA
+30 primal armor -- プライマルアーマー
+31 assault armor -- アサルトアーマー
+34 1010_Baylum_HEAD_A -- 1010_ベイラム_HEAD_A
+35 1010_Baylum_CORE_A -- 1010_ベイラム_CORE_A
+36 1010_Baylum_ARMS_A -- 1010_ベイラム_ARMS_A
+37 1010_Baylum_LEGS_Bipod_A -- 1010_ベイラム_LEGS_二脚_A
+38 1011_Baylum_HEAD_B -- 1011_ベイラム_HEAD_B
+39 1011_Baylum_CORE_B -- 1011_ベイラム_CORE_B
+40 1011_Baylum_ARMS_B -- 1011_ベイラム_ARMS_B
+41 1011_Baylum_LEGS_Bipod_B -- 1011_ベイラム_LEGS_二脚_B
+42 1080_Hekantokeil_HEAD_A -- 1080_へカントケイル_HEAD_A
+43 1080_Hekantokeir_CORE_A -- 1080_へカントケイル_CORE_A
+44 1080_Hekantokeir_ARMS_A -- 1080_へカントケイル_ARMS_A
+45 1080_Hekantokeir_LEGS_Bipod_A -- 1080_へカントケイル_LEGS_二脚_A
+46 1110_Baylum_HEAD_C -- 1110_ベイラム_HEAD_C
+47 1410_Baylum_LEGS_quadruped_A -- 1410_ベイラム_LEGS_四脚_A
+48 1510_Baylum_LEGS_Tank_A -- 1510_ベイラム_LEGS_タンク_A
+52 2010_heavy crest_HEAD_A -- 2010_重クレスト_HEAD_A
+53 2010_Heavy Crest_CORE_A -- 2010_重クレスト_CORE_A
+54 2010_Heavy Crest_ARMS_A -- 2010_重クレスト_ARMS_A
+55 2010_Heavy Crest_LEGS_Bipod_A -- 2010_重クレスト_LEGS_二脚_A
+56 2210_Heavy Crest_ARMS_B -- 2210_重クレスト_ARMS_B
+59 3010_Ray Leonard_HEAD_A -- 3010_レイレナード_HEAD_A
+60 3010_Ray Leonard_CORE_A -- 3010_レイレナード_CORE_A
+61 3010_Ray Leonard_ARMS_A -- 3010_レイレナード_ARMS_A
+62 3010_Ray Leonard_LEGS_Bipod_A -- 3010_レイレナード_LEGS_二脚_A
+63 3110_Ray Leonard_HEAD_B -- 3110_レイレナード_HEAD_B
+64 3310_Ray Leonard_LEGS_reverse joint_A -- 3310_レイレナード_LEGS_逆関節_A
+66 4010_Mirage_HEAD_A -- 4010_ミラージュ_HEAD_A
+67 4010_Mirage_CORE_A -- 4010_ミラージュ_CORE_A
+68 4010_Mirage_ARMS_A -- 4010_ミラージュ_ARMS_A
+69 4010_Mirage_LEGS_Bipod_A -- 4010_ミラージュ_LEGS_二脚_A
+70 4110_Mirage_HEAD_B -- 4110_ミラージュ_HEAD_B
+71 4210_Mirage_ARMS_B -- 4210_ミラージュ_ARMS_B
+72 4410_Mirage_LEGS_quadruped_A -- 4410_ミラージュ_LEGS_四脚_A
+73 5010_Label_HEAD_A -- 5010_ラベール_HEAD_A
+74 5010_Label_CORE_A -- 5010_ラベール_CORE_A
+75 5010_Label_ARMS_A -- 5010_ラベール_ARMS_A
+76 5010_Label_LEGS_Bipod_A -- 5010_ラベール_LEGS_二脚_A
+77 5110_Label_HEAD_B -- 5110_ラベール_HEAD_B
+78 5510_Label_LEGS_Tank_A -- 5510_ラベール_LEGS_タンク_A
+80 6010_Iqbal_HEAD_A -- 6010_イクバール_HEAD_A
+81 6010_Iqbal_CORE_A -- 6010_イクバール_CORE_A
+82 6010_Iqbal_ARMS_A -- 6010_イクバール_ARMS_A
+83 6010_Iqbal_LEGS_Bipod_A -- 6010_イクバール_LEGS_二脚_A
+84 6110_Iqbal_HEAD_B -- 6110_イクバール_HEAD_B
+85 6320_Iqbal_LEGS_Reverse joint_A -- 6320_イクバール_LEGS_逆関節_A
+86 7010_Cuba_HEAD_A -- 7010_キューバ_HEAD_A
+87 7010_Cuba_CORE_A -- 7010_キューバ_CORE_A
+88 7010_Cuba_ARMS_A -- 7010_キューバ_ARMS_A
+89 7010_Cuba_LEGS_Bipod_A -- 7010_キューバ_LEGS_二脚_A
+90 7510_Cuba_LEGS_Tank_A -- 7510_キューバ_LEGS_タンク_A
+91 8010_Kawamori_HEAD_A -- 8010_カワモリ_HEAD_A
+92 8010_Kawamori_CORE_A -- 8010_カワモリ_CORE_A
+93 8010_Kawamori_ARMS_A -- 8010_カワモリ_ARMS_A
+94 8010_Kawamori_LEGS_Bipod_A -- 8010_カワモリ_LEGS_二脚_A
+95 8020_Miyatake_HEAD_A -- 8020_ミヤタケ_HEAD_A
+96 8020_Miyatake_CORE_A -- 8020_ミヤタケ_CORE_A
+97 8020_Miyatake_ARMS_A -- 8020_ミヤタケ_ARMS_A
+98 8020_Miyatake_LEGS_bipod_A -- 8020_ミヤタケ_LEGS_二脚_A
+99 8030_JUDO_HEAD_A
+100 8030_JUDO_CORE_A
+101 8030_JUDO_ARMS_A
+102 8030_JUDO_LEGS_Bipod_A -- 8030_JUDO_LEGS_二脚_A
+103 8031_JUDO_HEAD_A for jailbreak mission -- 8031_脱獄ミッション用JUDO_HEAD_A
+104 8031_Jailbreak mission_JUDO_CORE_A -- 8031_脱獄ミッション用_JUDO_CORE_A
+105 8031_Jailbreak mission_JUDO_ARMS_A -- 8031_脱獄ミッション用_JUDO_ARMS_A
+106 8031_Jailbreak Mission_JUDO_LEGS_Bipod_A -- 8031_脱獄ミッション用_JUDO_LEGS_二脚_A
+107 8040_Troll_HEAD_A -- 8040_トロル_HEAD_A
+108 8040_Troll_CORE_A -- 8040_トロル_CORE_A
+109 8040_Troll_ARMS_A -- 8040_トロル_ARMS_A
+110 8040_Troll_LEGS_Bipod_A -- 8040_トロル_LEGS_二脚_A
+112 1400_Scavenger_HEAD_A -- 1400_スカベンジャー_HEAD_A
+113 1400_Scavenger_CORE_A -- 1400_スカベンジャー_CORE_A
+114 1400_Scavenger_ARMS_A -- 1400_スカベンジャー_ARMS_A
+115 1400_Scavenger_LEGS_Bipod_A -- 1400_スカベンジャー_LEGS_二脚_A
+120 8150_Scavenger_HEAD_B -- 8150_スカベンジャー_HEAD_B
+121 8350_Scavenger_LEGS_Reverse joint_A -- 8350_スカベンジャー_LEGS_逆関節_A
+122 8060_Yanase_HEAD_A -- 8060_ヤナセ_HEAD_A
+123 8060_Yanase_CORE_A -- 8060_ヤナセ_CORE_A
+124 8060_Yanase_ARMS_A -- 8060_ヤナセ_ARMS_A
+125 8060_Yanase_LEGS_Bipod_A -- 8060_ヤナセ_LEGS_二脚_A
+126 BS_A_1010 Bayrum Booster -- BS_A_1010 ベイラムブースター
+128 BS_A_2010 Heavy Crest Booster -- BS_A_2010 重クレストブースター
+129 BS_A_3010 Rayleonard Booster -- BS_A_3010 レイレナードブースター
+130 BS_A_4010 Mirage Booster -- BS_A_4010 ミラージュブースター
+131 BS_A_5010 Label Booster -- BS_A_5010 ラベールブースター
+132 BS_A_6010 Iqbal Booster -- BS_A_6010 イクバールブースター
+133 BS_A_7010 Cuba Booster -- BS_A_7010 キューバブースター
+134 BS_A_8010 Kawamori Booster -- BS_A_8010 カワモリブースター
+135 BS_A_8020 Miyatake Booster -- BS_A_8020 ミヤタケブースター
+136 BS_A_8030 JUDO Booster -- BS_A_8030 JUDOブースター
+137 BS_A_8040 ​​Troll Booster -- BS_A_8040 トロルブースター
+138 BS_A_8050 R&D Booster -- BS_A_8050 R＆Dブースター
+140 1st generation FCS -- 第1世代FCS
+141 2nd generation FCS A-1 -- 第2世代FCS A-1
+142 2nd generation FCS A-2 -- 第2世代FCS A-2
+143 2nd generation FCS A-3 -- 第2世代FCS A-3
+144 2nd generation FCS B-1 -- 第2世代FCS B-1
+145 2nd generation FCS B-2 -- 第2世代FCS B-2
+146 3rd generation FCS 1 -- 第3世代FCS 1
+147 3rd generation FCS 2 -- 第3世代FCS 2
+148 Melange type FCS 1 -- メランジ系FCS 1
+149 Melange type FCS 2 -- メランジ系FCS 2
+150 8980_(combustion) 1st generation -- 8980_（燃焼）第1世代
+151 8981_(combustion) 2nd generation A-1 -- 8981_（燃焼）第2世代A-1
+152 8982_(combustion) 2nd generation A-2 -- 8982_（燃焼）第2世代A-2
+153 8991_(combustion) 2nd generation A-3 -- 8991_（燃焼）第2世代A-3
+154 8983_(EN) 2nd generation B-1 -- 8983_（EN）第2世代B-1
+155 8984_(EN) 2nd generation B-2 -- 8984_（EN）第2世代B-2
+156 8992_(EN) 2nd generation B-3 -- 8992_（EN）第2世代B-3
+157 8985_(combustion) 2nd generation C-1 -- 8985_（燃焼）第2世代C-1
+158 8990_(combustion) 2nd generation C-2 -- 8990_（燃焼）第2世代C-2
+159 8986_(EN) 3rd generation 1 -- 8986_（EN）第3世代1
+160 8987_(EN) 3rd generation 2 -- 8987_（EN）第3世代2
+161 8993_(EN) 3rd generation 3 -- 8993_（EN）第3世代3
+162 8988_(Mela) melange type 1 -- 8988_（メラ）メランジ系1
+163 8989_(Mela) Melange type 2 -- 8989_（メラ）メランジ系2
+164 1310_Grenade gun_Right -- 1310_グレネードガン_右
+165 1310_Grenade gun_Left -- 1310_グレネードガン_左
+166 1320_Heavy Grenade Gun_Right -- 1320_重グレネードガン_右
+167 1320_Heavy Grenade Gun_Left -- 1320_重グレネードガン_左
+168 1410_light bazooka_right -- 1410_軽バズーカ_右
+169 1410_light bazooka_left -- 1410_軽バズーカ_左
+170 1420_Bazooka_Right -- 1420_バズーカ_右
+171 1420_Bazooka_Left -- 1420_バズーカ_左
+172 1430_heavy bazooka_right -- 1430_重バズーカ_右
+173 1430_Heavy Bazooka_Left -- 1430_重バズーカ_左
+174 1510_light shotgun_right -- 1510_軽ショットガン_右
+175 1510_light shotgun_left -- 1510_軽ショットガン_左
+176 1520_shotgun_right -- 1520_ショットガン_右
+177 1520_shotgun_left -- 1520_ショットガン_左
+178 1530_heavy shotgun_right -- 1530_重ショットガン_右
+179 1530_Heavy shotgun_Left -- 1530_重ショットガン_左
+180 1610_Burst Rifle_Right -- 1610_バーストライフル_右
+181 1610_Burst Rifle_Left -- 1610_バーストライフル_左
+182 1620_linear rifle_right -- 1620_リニアライフル_右
+183 1620_linear rifle_left -- 1620_リニアライフル_左
+184 1630_Heavy linear rifle_Right -- 1630_重リニアライフル_右
+185 1630_Heavy linear rifle_Left -- 1630_重リニアライフル_左
+186 1710_Burst Assault Rifle_Right -- 1710_バーストアサルトライフル_右
+187 1710_Burst Assault Rifle_Left -- 1710_バーストアサルトライフル_左
+188 1720_assault rifle_right -- 1720_アサルトライフル_右
+189 1720_assault rifle_left -- 1720_アサルトライフル_左
+190 1730_Heavy assault rifle_Right -- 1730_重アサルトライフル_右
+191 1730_Heavy assault rifle_Left -- 1730_重アサルトライフル_左
+192 1810_Burst machine gun_Right -- 1810_バーストマシンガン_右
+193 1810_Burst machine gun_Left -- 1810_バーストマシンガン_左
+194 1820_machine gun_right -- 1820_マシンガン_右
+195 1820_machine gun_left -- 1820_マシンガン_左
+196 1830_heavy machine gun_right -- 1830_重マシンガン_右
+197 1830_heavy machine gun_left -- 1830_重マシンガン_左
+198 1910_Gatling gun_right -- 1910_ガトリングガン_右
+199 1910_Gatling gun_left -- 1910_ガトリングガン_左
+200 2010_Needle gun_Right -- 2010_ニードルガン_右
+201 2010_Needle gun_Left -- 2010_ニードルガン_左
+202 2020_Burst Handgun_Right -- 2020_バーストハンドガン_右
+203 2020_Burst Handgun_Left -- 2020_バーストハンドガン_左
+204 2030_Handgun_Right -- 2030_ハンドガン_右
+205 2030_Handgun_Left -- 2030_ハンドガン_左
+206 2040_Heavy handgun_Right -- 2040_重ハンドガン_右
+207 2040_Heavy handgun_Left -- 2040_重ハンドガン_左
+211 2110_Jamming throwing gun_right -- 2110_ジャミング投擲銃_右
+212 2110_Jamming throwing gun_left -- 2110_ジャミング投擲銃_左
+213 2120_Napalm throwing gun_right -- 2120_ナパーム投擲銃_右
+214 2120_Napalm throwing gun_left -- 2120_ナパーム投擲銃_左
+215 2130_Stun throwing gun_right -- 2130_スタン投擲銃_右
+216 2130_Stun throwing gun_left -- 2130_スタン投擲銃_左
+217 2210_hand missile_right -- 2210_ハンドミサイル_右
+218 2210_hand missile_left -- 2210_ハンドミサイル_左
+219 2220_Split hand missile_Right -- 2220_分裂ハンドミサイル_右
+220 2220_Split hand missile_Left -- 2220_分裂ハンドミサイル_左
+221 2310_Light grenade gun_Right -- 2310_軽グレネードガン_右
+222 2310_Light grenade gun_Left -- 2310_軽グレネードガン_左
+223 2420_Karasawa_Laser/Plasma Rifle_Right -- 2420_カラサワ_レーザー/プラズマライフル_右
+224 2420_Karasawa_Laser/Plasma Rifle_Left -- 2420_カラサワ_レーザー/プラズマライフル_左
+225 2410_Plasma Rifle_Right -- 2410_プラズマライフル_右
+226 2410_Plasma Rifle_Left -- 2410_プラズマライフル_左
+227 2510_double laser rifle_right -- 2510_ダブルレーザーライフル_右
+228 2510_double laser rifle_left -- 2510_ダブルレーザーライフル_左
+229 2610_laser shotgun/EN pile_right -- 2610_レーザーショットガン/ENパイル_右
+230 2610_laser shotgun/EN pile_left -- 2610_レーザーショットガン/ENパイル_左
+231 2620_Laser Shotgun/EN Grenade_Right -- 2620_レーザーショットガン/ENグレネード_右
+232 2620_Laser shotgun/EN grenade_Left -- 2620_レーザーショットガン/ENグレネード_左
+233 2630_Heavy Plasma Rifle_Right -- 2630_重プラズマライフル_右
+234 2630_Heavy plasma rifle_Left -- 2630_重プラズマライフル_左
+235 2631_Heavy plasma rifle (red coral ver)_Right -- 2631_重プラズマライフル（赤コーラルver）_右
+236 2631_Heavy plasma rifle (red coral ver)_Left -- 2631_重プラズマライフル（赤コーラルver）_左
+237 2710_laser handgun_right -- 2710_レーザーハンドガン_右
+238 2710_Laser handgun_Left -- 2710_レーザーハンドガン_左
+239 2720_laser rifle_right -- 2720_レーザーライフル_右
+240 2720_laser rifle_left -- 2720_レーザーライフル_左
+241 2730_Coral Rifle_Right -- 2730_コーラルライフル_右
+242 2730_Coral Rifle_Left -- 2730_コーラルライフル_左
+243 2740_Heavy laser rifle_Right -- 2740_重レーザーライフル_右
+244 2740_Heavy laser rifle_Left -- 2740_重レーザーライフル_左
+245 2810_rapid-fire pulse gun_right -- 2810_速射パルスガン_右
+246 2810_Rapid-fire pulse gun_Left -- 2810_速射パルスガン_左
+247 2820_pulse gun_right -- 2820_パルスガン_右
+248 2820_Pulse gun_Left -- 2820_パルスガン_左
+249 2910_Flamethrower_Right -- 2910_火炎放射器_右
+250 2910_Flamethrower_Left -- 2910_火炎放射器_左
+251 3010_Immersion Bazooka_Right -- 3010_浸徹バズーカ_右
+252 3010_Immersion Bazooka_Left -- 3010_浸徹バズーカ_左
+253 3020_stun gun_right -- 3020_スタンガン_右
+254 3020_stun gun_left -- 3020_スタンガン_左
+255 3030_Assault hand missile_Right -- 3030_強襲ハンドミサイル_右
+256 3030_Assault hand missile_Left -- 3030_強襲ハンドミサイル_左
+260 10_Pile Bunker_Left -- 10_パイルバンカー_左
+261 211_PA breaker_left -- 211_PAブレイカー_左
+262 221_Laser Blade_Left -- 221_レーザーブレード_左
+263 230_Coral Blade_Left -- 230_コーラルブレード_左
+264 241_Laser dagger_Left -- 241_レーザーダガー_左
+265 250_Light Wave Blade_Left -- 250_光波ブレード_左
+266 251_Light Wave Blade (Red Coral)_Left -- 251_光波ブレード（赤コーラル）_左
+268 411_Naginata_Left -- 411_ナギナタ_左
+269 510_Proximity diffusion bullet_Left -- 510_近接拡散弾_左
+270 610_Laser Lance_Left -- 610_レーザーランス_左
+271 910_Electromagnetic baton_left -- 910_電磁警棒_左
+272 1012_Chainsaw_Left -- 1012_チェーンソー_左
+273 1210_Electromagnetic hammer_Left -- 1210_電磁ハンマー_左
+276 4010_Shoulder grenade_Explosion range-Extra large_Right -- 4010_肩グレネード_爆発範囲-特大_右
+277 4010_Shoulder grenade_Explosion range-Extra large_Left -- 4010_肩グレネード_爆発範囲-特大_左
+278 4110_Shoulder bazooka_Spread_Right -- 4110_肩バズーカ_スプレッド_右
+279 4110_Shoulder bazooka_Spread_Left -- 4110_肩バズーカ_スプレッド_左
+280 4210_Plasma missile triple_right -- 4210_プラズマミサイル　3連_右
+281 4210_Plasma missile triple_left -- 4210_プラズマミサイル　3連_左
+282 4211_Plasma missile 6 series_Right -- 4211_プラズマミサイル　6連_右
+283 4211_Plasma missile 6 series_Left -- 4211_プラズマミサイル　6連_左
+284 4220_Plasma missile launch_right -- 4220_プラズマミサイル　打ち上げ_右
+285 4220_Plasma missile launch_left -- 4220_プラズマミサイル　打ち上げ_左
+286 4230_AI missile 2 series_right -- 4230_AIミサイル　2連_右
+287 4230_AI missile 2 series_left -- 4230_AIミサイル　2連_左
+288 4231_AI missile single shot_right -- 4231_AIミサイル　単発_右
+289 4231_AI missile single shot_left -- 4231_AIミサイル　単発_左
+290 4240_Coral Missile_Right -- 4240_コーラルミサイル_右
+291 4240_Coral Missile_Left -- 4240_コーラルミサイル_左
+292 4250_Vertical missile 12 series_Right -- 4250_垂直ミサイル　12連_右
+293 4250_Vertical missile 12 series_Left -- 4250_垂直ミサイル　12連_左
+294 4252_Vertical missile 8 series_Right -- 4252_垂直ミサイル　8連_右
+295 4252_Vertical missile 8 series_Left -- 4252_垂直ミサイル　8連_左
+296 4251_Vertical missile 4 series_Right -- 4251_垂直ミサイル　4連_右
+297 4251_Vertical missile 4 series_Left -- 4251_垂直ミサイル　4連_左
+298 4260_Explosive missile_right -- 4260_爆導炸ミサイル_右
+299 4260_Explosive Missile_Left -- 4260_爆導炸ミサイル_左
+302 4280_Siege Missile_Right -- 4280_包囲ミサイル_右
+303 4280_Siege Missile_Left -- 4280_包囲ミサイル_左
+304 4290_Twin missile 6 series_Right -- 4290_連装ミサイル　6連_右
+305 4290_Twin missile 6 series_Left -- 4290_連装ミサイル　6連_左
+306 4291_Twin missile 4 series_Right -- 4291_連装ミサイル　4連_右
+307 4291_Twin missile 4 series_Left -- 4291_連装ミサイル　4連_左
+308 4292_Twin missile 10 series_Right -- 4292_連装ミサイル　10連_右
+309 4292_Twin missile 10 units_Left -- 4292_連装ミサイル　10連_左
+310 4300_2way missile 3 series_right -- 4300_2wayミサイル　3連_右
+311 4300_2way missile 3 series_left -- 4300_2wayミサイル　3連_左
+312 4301_2way missile 3 consecutive type_right -- 4301_2wayミサイル　3連中型_右
+313 4301_2way missile 3 consecutive type_left -- 4301_2wayミサイル　3連中型_左
+314 4302_Split missile 2 series 12 split_Right -- 4302_分裂ミサイル　2連12分裂_右
+315 4302_Split missile 2 series 12 split_Left -- 4302_分裂ミサイル　2連12分裂_左
+316 4303_2way missile 2 series_right -- 4303_2wayミサイル　2連_右
+317 4303_2way missile 2 series_left -- 4303_2wayミサイル　2連_左
+318 4310_fission missile 2 series 6 fission_right -- 4310_分裂ミサイル　2連6分裂_右
+319 4310_Fission missile 2 consecutive 6-fission_Left -- 4310_分裂ミサイル　2連6分裂_左
+320 4311_fission missile single shot_right -- 4311_分裂ミサイル　単発_右
+321 4311_fission missile single shot_left -- 4311_分裂ミサイル　単発_左
+322 4320_Container Missile_Right -- 4320_コンテナミサイル_右
+323 4320_Container Missile_Left -- 4320_コンテナミサイル_左
+324 4330_needle missile_right -- 4330_ニードルミサイル_右
+325 4330_needle missile_left -- 4330_ニードルミサイル_左
+326 4340_Cluster Missile_Right -- 4340_クラスターミサイル_右
+327 4340_Cluster Missile_Left -- 4340_クラスターミサイル_左
+328 4350_Homing Coral Beam_Right -- 4350_ホーミングコーラルビーム_右
+329 4350_Homing Coral Beam_Left -- 4350_ホーミングコーラルビーム_左
+330 4410_Shoulder grenade_Light 2 series_Right -- 4410_肩グレネード_軽2連_右
+331 4410_Shoulder grenade_Light double_Left -- 4410_肩グレネード_軽2連_左
+332 4510_Shoulder plasma cannon_Right -- 4510_肩プラズマキャノン_右
+333 4510_Shoulder Plasma Cannon_Left -- 4510_肩プラズマキャノン_左
+334 4610_Shoulder laser cannon_Right -- 4610_肩レーザーキャノン_右
+335 4610_Shoulder laser cannon_Left -- 4610_肩レーザーキャノン_左
+336 4710_Shoulder Laser Cannon_W Laser_Right -- 4710_肩レーザーキャノン_Wレーザー_右
+337 4710_Shoulder Laser Cannon_W Laser_Left -- 4710_肩レーザーキャノン_Wレーザー_左
+338 4810_Shoulder pulse gun_Right -- 4810_肩パルスガン_右
+339 4810_Shoulder pulse gun_Left -- 4810_肩パルスガン_左
+340 5010_Shoulder laser shotgun_Right -- 5010_肩レーザーショットガン_右
+341 5010_Shoulder laser shotgun_Left -- 5010_肩レーザーショットガン_左
+349 5710_Exceed Orbit (live bullet) right_right -- 5710_イクシードオービット（実弾）右_右
+350 5710_Exceed Orbit (live bullet) left_left -- 5710_イクシードオービット（実弾）左_左
+351 5720_Exceed Orbit (Laser) Right_Right -- 5720_イクシードオービット（レーザー）右_右
+352 5720_Exceed Orbit (Laser) Left_Left -- 5720_イクシードオービット（レーザー）左_左
+353 5810_Assault Orbit_Right -- 5810_アサルトオービット_右
+354 5810_Assault Orbit_Left -- 5810_アサルトオービット_左
+355 5820_Sentry Orbit_Right -- 5820_セントリーオービット_右
+356 5820_Sentry Orbit_Left -- 5820_セントリーオービット_左
+357 4820_Shooting PA_Right -- 4820_射撃PA_右
+358 4820_Shooting PA_Left -- 4820_射撃PA_左
+359 4830_Stun needle launcher_right -- 4830_スタンニードルランチャー_右
+360 4830_Stun needle launcher_Left -- 4830_スタンニードルランチャー_左
+363 4910_PA Buckler_Initial short, initial strong_Left -- 4910_PAバックラー_イニシャル短、イニシャル強_左
+364 4920_PA Shield_Low load_Long initial_Left -- 4920_PAシールド_低負荷_イニシャル長め_左
+366 4940_PA Shield_Standard_Left -- 4940_PAシールド_標準_左
+367 4950_PA Shield_Initial short_Normal guard emphasis_Left -- 4950_PAシールド_イニシャル短_通常ガード重視_左
+368 4960_PA buckler_initial long, usually weak_left -- 4960_PAバックラー_イニシャル長い、通常弱い_左
+369 4970_Coral Shield_360°_Left -- 4970_コーラルシールド_360°_左
+370 4980_PA Scutum_Weak initial_Left -- 4980_PAスクトゥム_イニシャルが弱_左

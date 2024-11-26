@@ -1,0 +1,6 @@
+4 Forest in the Shadow of The Void 1 (Forest of The Stray) -- 虚ろの影の森1（迷いの森）
+5 Forest of Shadows of The Void (Tunnel to The Castle) -- 虚ろの影の森（王城へのトンネル）
+6 The Shadow Forest of Emptiness (The Whole Forest of Strays) -- 虚ろの影の森（迷いの森全体）
+7 House of Andy's (Acid Pool) -- アンディールの館（酸溜まり）
+8 Forest 2 in the Shadow of The Void -- 虚ろの影の森2（迷いの森）
+999900 Test map data -- テストマップデータ

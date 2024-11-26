@@ -1,0 +1,98 @@
+0 Default value -- デフォルト値
+1 Default value (locked) -- デフォルト値（ロック中）
+2 Default value (locked) -- デフォルト値（ロック中）
+3 Default value -- デフォルト値
+10 anime confirmation camera -- アニメ確認カメラ
+11 Animation confirmation camera (for tanks) -- アニメ確認カメラ（タンク用）
+12 Anime confirmation camera (for tanks_sticky) -- アニメ確認カメラ（タンク用_べた付き）
+90 Tsuruoka test -- 鶴岡テスト
+99 Default value backup -- デフォ値バックアップ
+110 Jaga defeat camera test 1-1 -- ジャガ撃破カメラテスト1-1
+111 Jaga defeat camera test 1-2 -- ジャガ撃破カメラテスト1-2
+112 Jaga defeat camera test 1-3 -- ジャガ撃破カメラテスト1-3
+120 Jaga defeat camera test 2-1 -- ジャガ撃破カメラテスト2-1
+121 Jaga defeat camera test 2-2 -- ジャガ撃破カメラテスト2-2
+122 Jaga defeat camera test 2-3 -- ジャガ撃破カメラテスト2-3
+130 Jaga defeat camera test 3-1 -- ジャガ撃破カメラテスト3-1
+131 Jaga defeat camera test 3-2 -- ジャガ撃破カメラテスト3-2
+132 Jaga defeat camera test 3-3 -- ジャガ撃破カメラテスト3-3
+160 Catapult event mock test -- カタパルトイベントモックテスト
+200 Default value -- デフォルト値
+201 Default value (locked) -- デフォルト値（ロック中）
+202 Default value (locked) 2 -- デフォルト値（ロック中）2
+300 For necklace keeper test -- 首飾りの番人テスト用
+9999 [FNR] For Pharaon camera check -- 【FNR】ファラオンカメラチェック用
+10000 Grenade cannon check -- グレネードキャノンチェック用
+10500 [FNR] For next generation camera check -- 【FNR】次世代カメラチェック用
+30000 [FNR] Assault Boost 2 legs -- 【FNR】アサルトブースト2脚
+30010 [FNR] Assault boost left and right avoidance 2 legs -- 【FNR】アサルトブースト左右回避2脚
+30100 [FNR] 2 kick legs -- 【FNR】キック2脚
+30200 [FNR] 2 jumping tables -- 【FNR】ジャンプ台2脚
+35000 [FNR] 2 legs for using Cannon -- 【FNR】キャノン使用時用2脚
+40000 [FNR] For right arm irradiation beam -- 【FNR】右腕照射ビーム用
+40100 [FNR] For left arm irradiation beam -- 【FNR】左腕照射ビーム用
+41000 [FNR] Coral Blade for heavy attack -- 【FNR】コーラルブレード強攻撃用
+42000 [FNR] Lance lock prevention camera -- 【FNR】ランスロック荒ぶり防止カメラ
+70000 [FNR] Mining ship camera -- 【FNR】採掘艦用カメラ
+70010 [FNR] Dora bombardment camera -- 【FNR】ドーラ砲撃用カメラ
+93200 [FNR] Avalanche charging camera -- 【FNR】アバランチ 突進中カメラ
+94250 [FNR] Orbit Seed Lock Camera -- 【FNR】オービットシード　ロックカメラ
+96050 [FNR] For Pharaon camera check -- 【FNR】ファラオンカメラチェック用
+96051 [FNR] For Pharaon camera check_VS version -- 【FNR】ファラオンカメラチェック用_VS版
+96100 [FNR] Sea spider camera -- 【FNR】ウミグモカメラ
+96400 [FNR] Mining ship camera check_VS version -- 【FNR】採掘艦カメラチェック用_VS版
+96420 [FNR] Mining ship feature lock camera -- 【FNR】採掘艦目玉　ロックカメラ
+98135 [FNR] Miyatake Strong Enemy Lock Camera -- 【FNR】宮武強敵　ロックカメラ
+99900 Direction death camera close -- 演出死亡 カメラ 寄り
+99901 Directed death camera away -- 演出死亡 カメラ 離れ
+99902 Direction death camera away from behind -- 演出死亡 カメラ 離れ後寄り
+99910 Production death camera close-up *For next generation -- 演出死亡 カメラ 寄り　※次世代用
+99920 Production death camera away *for sandworms -- 演出死亡 カメラ 離れ　※サンドワーム用
+100000 Default value -- デフォルト値
+100001 Default value (locked) -- デフォルト値（ロック中）
+130000 [FNR] Assault boost reverse leg -- 【FNR】アサルトブースト逆脚
+130010 [FNR] Assault boost left/right avoidance reverse leg -- 【FNR】アサルトブースト左右回避逆脚
+130100 [FNR] Kick reverse leg -- 【FNR】キック逆脚
+130200 [FNR] Jump table reverse joint -- 【FNR】ジャンプ台逆関節
+135000 [FNR] Reverse joint for using cannon -- 【FNR】キャノン使用時用逆関節
+140000 [FNR] For right arm irradiation beam -- 【FNR】右腕照射ビーム用
+140100 [FNR] For left arm irradiation beam -- 【FNR】左腕照射ビーム用
+141000 [FNR] Coral Blade for heavy attack -- 【FNR】コーラルブレード強攻撃用
+142000 [FNR] Lance lock prevention camera -- 【FNR】ランスロック荒ぶり防止カメラ
+170000 [FNR] Mining ship camera -- 【FNR】採掘艦用カメラ
+170010 [FNR] Dora bombardment camera -- 【FNR】ドーラ砲撃用カメラ
+194250 [FNR] Orbit Seed Lock Camera -- 【FNR】オービットシード　ロックカメラ
+196420 [FNR] Mining ship feature lock camera -- 【FNR】採掘艦目玉　ロックカメラ
+198135 [FNR] Miyatake Strong Enemy Lock Camera -- 【FNR】宮武強敵　ロックカメラ
+200000 Default value -- デフォルト値
+200001 Default value (locked) -- デフォルト値（ロック中）
+230000 [FNR] Assault Boost Tank -- 【FNR】アサルトブーストタンク
+230010 [FNR] Assault boost left/right avoidance tank -- 【FNR】アサルトブースト左右回避タンク
+230100 [FNR] Kick Tank -- 【FNR】キックタンク
+230200 [FNR] Jump platform tank -- 【FNR】ジャンプ台タンク
+235000 [FNR] Tank for use with cannon -- 【FNR】キャノン使用時用タンク
+240000 [FNR] For right arm irradiation beam -- 【FNR】右腕照射ビーム用
+240100 [FNR] For left arm irradiation beam -- 【FNR】左腕照射ビーム用
+241000 [FNR] Coral Blade for heavy attack -- 【FNR】コーラルブレード強攻撃用
+242000 [FNR] Lance lock prevention camera -- 【FNR】ランスロック荒ぶり防止カメラ
+270000 [FNR] Mining ship camera -- 【FNR】採掘艦用カメラ
+270010 [FNR] Dora bombardment camera -- 【FNR】ドーラ砲撃用カメラ
+294250 [FNR] Orbit Seed Lock Camera -- 【FNR】オービットシード　ロックカメラ
+296420 [FNR] Mining ship feature lock camera -- 【FNR】採掘艦目玉　ロックカメラ
+298135 [FNR] Miyatake Strong Enemy Lock Camera -- 【FNR】宮武強敵　ロックカメラ
+300000 Default value -- デフォルト値
+300001 Default value (locked) -- デフォルト値（ロック中）
+330000 [FNR] 4 legs of Assault Boost -- 【FNR】アサルトブースト4脚
+330010 [FNR] Assault boost left/right avoidance 4 legs -- 【FNR】アサルトブースト左右回避4脚
+330100 [FNR] 4 kick legs -- 【FNR】キック4脚
+330200 [FNR] Jumping platform 4 customers -- 【FNR】ジャンプ台4客
+335000 [FNR] 4 legs for use with Cannon -- 【FNR】キャノン使用時用４脚
+340000 [FNR] For right arm irradiation beam -- 【FNR】右腕照射ビーム用
+340100 [FNR] For left arm irradiation beam -- 【FNR】左腕照射ビーム用
+341000 [FNR] Coral Blade for heavy attack -- 【FNR】コーラルブレード強攻撃用
+342000 [FNR] Lance lock prevention camera -- 【FNR】ランスロック荒ぶり防止カメラ
+370000 [FNR] Mining ship camera -- 【FNR】採掘艦用カメラ
+370010 [FNR] Dora bombardment camera -- 【FNR】ドーラ砲撃用カメラ
+394250 [FNR] Orbit Seed Lock Camera -- 【FNR】オービットシード　ロックカメラ
+396420 [FNR] Mining ship feature lock camera -- 【FNR】採掘艦目玉　ロックカメラ
+398135 [FNR] Miyatake Strong Enemy Lock Camera -- 【FNR】宮武強敵　ロックカメラ

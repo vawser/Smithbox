@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="facePartsEnum">
+      <Option Value="0" Name="Musculature: Standard, Body Hair: Standard, Age: Young" />
+      <Option Value="1" Name="Musculature: Standard, Body Hair: Standard, Age: Mature" />
+      <Option Value="2" Name="Musculature: Standard, Body Hair: Standard, Age: Aged" />
+      <Option Value="3" Name="Musculature: Standard, Body Hair: Standard, Age: Gael" />
+      <Option Value="10" Name="Musculature: Standard, Body Hair: Thick, Age: Young" />
+      <Option Value="11" Name="Musculature: Standard, Body Hair: Thick, Age: Mature" />
+      <Option Value="12" Name="Musculature: Standard, Body Hair: Thick, Age: Aged" />
+      <Option Value="13" Name="Musculature: Standard, Body Hair: Thick, Age: Gael" />
+      <Option Value="100" Name="Musculature: Muscular, Body Hair: Standard, Age: Young" />
+      <Option Value="101" Name="Musculature: Muscular, Body Hair: Standard, Age: Mature" />
+      <Option Value="102" Name="Musculature: Muscular, Body Hair: Standard, Age: Aged" />
+      <Option Value="103" Name="Musculature: Muscular, Body Hair: Standard, Age: Gael" />
+      <Option Value="110" Name="Musculature: Muscular, Body Hair: Thick, Age: Young" />
+      <Option Value="111" Name="Musculature: Muscular, Body Hair: Thick, Age: Mature" />
+      <Option Value="112" Name="Musculature: Muscular, Body Hair: Thick, Age: Aged" />
+      <Option Value="113" Name="Musculature: Muscular, Body Hair: Thick, Age: Gael" />
+    </Enum>
+  </Enums>
+  <ColorEdit>
+        <ColorEditor Name="Skin Color" Fields="skinColor_R,skinColor_G,skinColor_B" PlacedField="skinColor_B" />
+        <ColorEditor Name="Right Eye Color" Fields="eyeRColor_R,eyeRColor_G,eyeRColor_B" PlacedField="eyeRColor_B" />
+        <ColorEditor Name="Left Eye Color" Fields="eyeLColor_R,eyeLColor_G,eyeLColor_B" PlacedField="eyeLColor_B" />
+        <ColorEditor Name="Hair Color" Fields="hairColor_R,hairColor_G,hairColor_B" PlacedField="hairColor_B" />
+        <ColorEditor Name="Eyelash Color" Fields="eyelashColor_R,eyelashColor_G,eyelashColor_B" PlacedField="eyelashColor_B" />
+        <ColorEditor Name="Eyebrow Color" Fields="eyebrowColor_R,eyebrowColor_G,eyebrowColor_B" PlacedField="eyebrowColor_B" />
+        <ColorEditor Name="Beard Color" Fields="beardColor_R,beardColor_G,beardColor_B" PlacedField="beardColor_B" />
+        <ColorEditor Name="Accessories Color" Fields="accessoriesColor_R,accessoriesColor_G,accessoriesColor_B" PlacedField="accessoriesColor_B" />
+        <ColorEditor Name="Decal Color" Fields="decalColor_R,decalColor_G,decalColor_B" PlacedField="decalColor_B" />
+    </ColorEdit>
+  <Field>
+    <facePartsId Enum="facePartsEnum" AltName="Face Parts ID" Wiki="Hundreds digit value is musculature type:\n  0 = Standard, 1 = Muscular\nTens value is body hair type:\n  0 = Standard, 1 = Thick\nOnes digit is age type:\n  0 = Young, 1 = Mature, 2 = Aged, 3 = Slave Knight Gael\nExamples:\n  110 = muscular, thick body hair, and young\n  12 = thick body hair and aged\n  1 = mature" />
+    <skinColor_R AltName="Base Skin Color: R" />
+    <skinColor_G AltName="Base Skin Color: G" />
+    <skinColor_B AltName="Base Skin Color: B" />
+    <hairPartsId AltName="Hair Parts ID" Wiki="In the character creator the order of hair parts is by default (assuming left to right and top to bottom): 0, 112, 1-11, 101-111."/>
+    <hairColor_R AltName="Hair Color: R" />
+    <hairColor_G AltName="Hair Color: G" />
+    <hairColor_B AltName="Hair Color: B" />
+    <eyeLPartsId AltName="Left Pupil Parts ID" Wiki="In the character creator the order of left pupil parts is by default (assuming left to right and top to bottom): 0-8."/>
+    <eyeLColor_R AltName="Left Pupil Color: R" />
+    <eyeLColor_G AltName="Left Pupil Color: G" />
+    <eyeLColor_B AltName="Left Pupil Color: B" />
+    <eyeRPartsId AltName="Right Pupil Parts ID" Wiki="In the character creator the order of right pupil parts is by default (assuming left to right and top to bottom): 0-8."/>
+    <eyeRColor_R AltName="Right Pupil Color: R" />
+    <eyeRColor_G AltName="Right Pupil Color: G" />
+    <eyeRColor_B AltName="Right Pupil Color: B" />
+    <eyelashPartsId AltName="Eyelash Parts ID" Wiki="In the character creator the order of eyelash parts is by default (assuming left to right and top to bottom): 0-16."/>
+    <eyelashColor_R AltName="Eyelash Color: R" />
+    <eyelashColor_G AltName="Eyelash Color: G" />
+    <eyelashColor_B AltName="Eyelash Color: B" />
+    <eyebrowPartsId AltName="Brow Parts ID" Wiki="In the character creator the order of brow parts is by default (assuming left to right and top to bottom): 0-16."/>
+    <eyebrowColor_R AltName="Brow Color: R" />
+    <eyebrowColor_G AltName="Brow Color: G" />
+    <eyebrowColor_B AltName="Brow Color: B" />
+    <beardPartsId AltName="Eyelash Parts ID" Wiki="In the character creator the order of eyelash parts is by default (assuming left to right and top to bottom): 0-3."/>
+    <beardColor_R AltName="Eyelash Color: R" />
+    <beardColor_G AltName="Eyelash Color: G" />
+    <beardColor_B AltName="Eyelash Color: B" />
+    <accessoriesPartsId AltName="Beard Parts ID" Wiki="In the character creator the order of beard parts is by default (assuming left to right and top to bottom): 0-11."/>
+    <accessoriesColor_R AltName="Beard Color: R" />
+    <accessoriesColor_G AltName="Beard Color: G" />
+    <accessoriesColor_B AltName="Beard Color: B" />
+    <decalPartsId AltName="Decal Parts ID" />
+    <decalColor_R AltName="Decal Color: R" />
+    <decalColor_G AltName="Decal Color: G" />
+    <decalColor_B AltName="Decal Color: B" />
+    <decalPosX AltName="Decal Position: X" />
+    <decalPosY AltName="Decal Position: Y" />
+    <decalAngle AltName="Decal Angle" />
+    <decalScale AltName="Decal Scale" />
+    <chrBodyScaleHead AltName="Character Head Scale" />
+    <chrBodyScaleBreast AltName="Character Breast Scale" />
+    <chrBodyScaleAbdomen AltName="Character Abdomen Scale" />
+    <chrBodyScaleArm AltName="Character Arm Scale" />
+    <chrBodyScaleLeg AltName="Build Detail: Head" />
+    <age AltName="Build Detail: Chest" />
+    <gender AltName="Build Detail: Abdomen" />
+    <caricatureGeometry AltName="Build Detail: Arms (Right)" />
+    <caricatureTexture AltName="Build Detail: Legs (Right)" />
+    <faceGeoData00 AltName="Build Detail: Arms (Left)" />
+    <faceGeoData01 AltName="Build Detail: Legs (Left)" />
+    <faceGeoData02 AltName="Features: Apparent Age" />
+    <faceGeoData03 AltName="Features: Facial Aesthetic" />
+    <faceGeoData04 AltName="Features: Form Emphasis" />
+    <faceGeoData05 AltName="Face Geo Data 05" />
+    <faceGeoData06 AltName="Brow Ridge: Brow Height" />
+    <faceGeoData07 AltName="Brow Ridge: Inner Brow Ridge" />
+    <faceGeoData08 AltName="Brow Ridge: Outer Brow Ridge" />
+    <faceGeoData09 AltName="Cheeks: Cheekbone Height" />
+    <faceGeoData10 AltName="Cheeks: Cheekbone Depth" />
+    <faceGeoData11 AltName="Cheeks: Cheekbone Width" />
+    <faceGeoData12 AltName="Cheeks: Cheekbone" />
+    <faceGeoData13 AltName="Cheeks: Cheekbone Depth" />
+    <faceGeoData14 AltName="Chin: Chin Tip Position" />
+    <faceGeoData15 AltName="Chin: Chin Length" />
+    <faceGeoData16 AltName="Chin: Chin Protrusion" />
+    <faceGeoData17 AltName="Chin: Chin Depth" />
+    <faceGeoData18 AltName="Chin: Chin Size" />
+    <faceGeoData19 AltName="Chin: Chin Height" />
+    <faceGeoData20 AltName="Chin: Chin Width" />
+    <faceGeoData21 AltName="Eyes: Eye Position" />
+    <faceGeoData22 AltName="Eyes: Eye Size" />
+    <faceGeoData23 AltName="Eyes: Eye Slant" />
+    <faceGeoData24 AltName="Eyes: Eye Spacing" />
+    <faceGeoData25 AltName="Facial Balance: Nose Size" />
+    <faceGeoData26 AltName="Facial Balance: Nose/Forehead Ratio" />
+    <faceGeoData27 AltName="Face Geo Data 27" />
+    <faceGeoData28 AltName="Facial Balance: face Protrusion" />
+    <faceGeoData29 AltName="Facial Balance: Vert. Facial Spacing" />
+    <faceGeoData30 AltName="Facial Balance: Facial Feature Slant" />
+    <faceGeoData31 AltName="Facial Balance: Horiz. Facial" />
+    <faceGeoData32 AltName="Face Geo Data 32" />
+    <faceGeoData33 AltName="Forehead/Glabella: Forehead Depth" />
+    <faceGeoData34 AltName="Forehead/Glabella: Forehead Protrusion" />
+    <faceGeoData35 AltName="Face Geo Data 35" />
+    <faceGeoData36 AltName="Jaw: Jaw Protrusion" />
+    <faceGeoData37 AltName="Jaw: Jaw Width" />
+    <faceGeoData38 AltName="Jaw: Lower Jaw" />
+    <faceGeoData39 AltName="Jaw: Jaw Contour" />
+    <faceGeoData40 AltName="Lips: Lip Shape" />
+    <faceGeoData41 AltName="Lips: Mouth Expression" />
+    <faceGeoData42 AltName="Lips: Lip Fullness" />
+    <faceGeoData43 AltName="Lips: Lip Size" />
+    <faceGeoData44 AltName="Lips: Lip Protrusion" />
+    <faceGeoData45 AltName="Lips: Lip Thickness" />
+    <faceGeoData46 AltName="Mouth: Mouth Protrusion" />
+    <faceGeoData47 AltName="Mouth: Mouth Slant" />
+    <faceGeoData48 AltName="Mouth: Occlusion" />
+    <faceGeoData49 AltName="Mouth: Mouth Position" />
+    <faceGeoData50 AltName="Mouth: Mouth Width" />
+    <faceGeoData51 AltName="Mouth: Mouth-Chin Distance" />
+    <faceGeoData52 AltName="Nose Ridge: Nose Ridge Depth" />
+    <faceGeoData53 AltName="Nose Ridge: Nose Ridge Length" />
+    <faceGeoData54 AltName="Nose Ridge: Nose Position" />
+    <faceGeoData55 AltName="Nose Ridge: Nose Tip Height" />
+    <faceGeoData56 AltName="Nostrils: Nostril Slant" />
+    <faceGeoData57 AltName="Nostrils: Nostril Size" />
+    <faceGeoData58 AltName="Nostrils: Nostril Width" />
+    <faceGeoData59 AltName="Nose Ridge: Nose Protrusion" />
+    <faceGeoData60 AltName="Forehead/Glabella: Nose Bridge Height" />
+    <faceTexData00 AltName="Forehead/Glabella: Bridge Protrusion 1" />
+    <faceTexData01 AltName="Forehead/Glabella: Bridge Protrusion 2" />
+    <faceTexData02 AltName="Forehead/Glabella: Nose Bridge Width" />
+    <faceTexData03 AltName="Nose Ridge > Nose Height" />
+    <faceTexData04 AltName="Nose Ridge > Nose Slant" />
+    <faceTexData05 AltName="Face Texture Data 05" />
+    <faceTexData06 AltName="Face Texture Data 06" />
+    <faceTexData07 AltName="Face Texture Data 07" />
+    <faceTexData08 AltName="Face Texture Data 08" />
+    <faceTexData09 AltName="Face Texture Data 09" />
+    <faceTexData10 AltName="Face Texture Data 10" />
+    <faceTexData11 AltName="Face Texture Data 11" />
+    <faceTexData12 AltName="Skin Color: Cheek Color" />
+    <faceTexData13 AltName="Cosmetics: Tone Around Eyes" />
+    <faceTexData14 AltName="Cosmetics: Eye Socket" />
+    <faceTexData15 AltName="Face Texture Data 15" />
+    <faceTexData16 AltName="Face Texture Data 16" />
+    <faceTexData17 AltName="Face Texture Data 17" />
+    <faceTexData18 AltName="Face Texture Data 18" />
+    <faceTexData19 AltName="Face Texture Data 19" />
+    <faceTexData20 AltName="Face Texture Data 20" />
+    <faceTexData21 AltName="Face Texture Data 21" />
+    <faceTexData22 AltName="Face Texture Data 22" />
+    <faceTexData23 AltName="Face Texture Data 23" />
+    <faceTexData24 AltName="Cosmetics: Eyelid Brightness" />
+    <faceTexData25 AltName="Cosmetics: Eyelid Color" />
+    <faceTexData26 AltName="Cosmetics: Eyeliner" />
+    <faceTexData27 AltName="Cosmetics: Eye Shadow" />
+    <faceTexData28 AltName="Face Texture Data 28" />
+    <faceTexData29 AltName="Face Texture Data 29" />
+    <faceTexData30 AltName="Face Texture Data 30" />
+    <faceTexData31 AltName="Face Texture Data 31" />
+    <faceTexData32 AltName="Cosmetics: Lipstick 1" />
+    <faceTexData33 AltName="Cosmetics: Lipstick 2" />
+    <faceTexData34 AltName="Skin Color: Laugh Lines" />
+    <faceTexData35 AltName="Nostrils: Nasal Size" />
+    <faceGeoAsymData00 AltName="Skin Color: Nose Bridge Color" />
+    <faceGeoAsymData01 AltName="Skin Color: Skin Color Layer 4" />
+    <faceGeoAsymData02 AltName="Skin Color: Skin Tone" />
+    <faceGeoAsymData03 AltName="Skin Color: Skin Color Layer 1" />
+    <faceGeoAsymData04 AltName="Skin Color: Skin Color Layer 2" />
+    <faceGeoAsymData05 AltName="Skin Color: Skin Color Layer 3" />
+    <faceGeoAsymData06 AltName="Face Geo Asym Data 06" />
+    <faceGeoAsymData07 AltName="Face Geo Asym Data 07" />
+    <faceGeoAsymData08 AltName="Face Geo Asym Data 08" />
+    <faceGeoAsymData09 AltName="Face Geo Asym Data 09" />
+    <faceGeoAsymData10 AltName="Face Geo Asym Data 10" />
+    <faceGeoAsymData11 AltName="Face Geo Asym Data 11" />
+    <faceGeoAsymData12 AltName="Face Geo Asym Data 12" />
+    <faceGeoAsymData13 AltName="Face Geo Asym Data 13" />
+    <faceGeoAsymData14 AltName="Face Geo Asym Data 14" />
+    <faceGeoAsymData15 AltName="Face Geo Asym Data 15" />
+    <faceGeoAsymData16 AltName="Face Geo Asym Data 16" />
+    <faceGeoAsymData17 AltName="Face Geo Asym Data 17" />
+    <faceGeoAsymData18 AltName="Face Geo Asym Data 18" />
+    <faceGeoAsymData19 AltName="Face Geo Asym Data 19" />
+    <faceGeoAsymData20 AltName="Face Geo Asym Data 20" />
+    <faceGeoAsymData21 AltName="Face Geo Asym Data 21" />
+    <faceGeoAsymData22 AltName="Face Geo Asym Data 22" />
+    <faceGeoAsymData23 AltName="Face Geo Asym Data 23" />
+    <faceGeoAsymData24 AltName="Face Geo Asym Data 24" />
+    <faceGeoAsymData25 AltName="Face Geo Asym Data 25" />
+    <faceGeoAsymData26 AltName="Face Geo Asym Data 26" />
+    <faceGeoAsymData27 AltName="Face Geo Asym Data 27" />
+    <faceGeoAsymData28 AltName="Face Geo Asym Data 28" />
+    <faceGeoAsymData29 AltName="Face Geo Asym Data 29" />
+    <faceGeoAsymData30 AltName="Face Geo Asym Data 30" />
+    <faceGeoAsymData31 AltName="Face Geo Asym Data 31" />
+  </Field>
+  <Self Wiki="Presets for NPC faces"/>
+</PARAMMETA>

@@ -1,0 +1,94 @@
+0 Completely independent
+1 Whole body
+2 Lower body
+3 Upper body
+4 Shield Tickable Attack
+5 Guard
+6 Shoulder
+7 Quick Boost
+8 [Main body] Death- cancel only
+9 [Main unit] Event animation- cancel only
+10 [Body] Damage- cancel only
+11 [Body] Guard damage- cancel only
+12 [Main unit] Move- cancel only
+13 [Main Unit] Quick Boost- cancel only
+14 [Main body] Jump- cancel only
+15 [Main body] Landing- cancel only
+16 [Main body] Thud landing- cancel only
+17 [Main body] Reposition guard- cancel only
+18 [Main unit] Start sliding on slope- cancel only
+19 [Right hand] Recoil small fire
+20 [Left hand] Recoil small fire
+21 [Right hand] Shooting during recoil
+22 [Left hand] Shooting during recoil
+23 [Right hand] Large recoil shot
+24 [Left hand] Large recoil shot
+25 [Right hand] Charging
+26 [Left hand] Charging
+27 [Right hand] Reload
+28 [Left hand] Reload
+29 [Right hand] Switch weapon
+30 [Left hand] Switch weapon
+31 [Right hand] Purge
+32 [Left hand] Purge
+33 [Right shoulder] Small recoil shot
+34 [Left shoulder] Small recoil shot
+35 [Right shoulder] Shooting during recoil
+36 [Left shoulder] Shooting during recoil
+37 [Right shoulder] Large recoil shot
+38 [Left shoulder] Large recoil shot
+39 [Attack] Guard
+40 [Fighting] Fighting attack
+41 [Fighting] Fighting Charge
+42 [Fighting] Charging
+43 [Special] Assault Boost
+44 [Right shoulder] Charging
+45 [Left shoulder] Charging
+46 [Right hand] Upper body recoil large shot
+47 [Left hand] Upper body recoil large shot
+48 [Both shoulders] Start shooting during recoil - cancel only
+49 [Both shoulders] Start large recoil fire - cancel only
+50 [Right shoulder] Simultaneous shooting with shoulder weapons - one half
+51 [Left shoulder] Simultaneous shooting with shoulder weapons - half
+52 [Right hand] Multi-lock in progress
+53 [Left hand] Multi-lock in progress
+54 [Right shoulder] Multi-lock in progress
+55 [Left shoulder] Multi-lock in progress
+56 [Right shoulder] Minimal recoil shooting
+57 [Left shoulder] Minimal recoil shooting
+58 [Right hand] Minimal recoil shooting
+59 [Left hand] Minimal recoil shooting
+60 [Attack] Omnidirectional Guard
+61 [Right hand] Quick turn before attack
+62 [Left hand] Quick turn before attack
+63 [Right shoulder] Quick turn before attack
+64 [Left shoulder] Quick turn before attack
+65 [Right shoulder] Exceed Orbit
+66 [Left shoulder] Exceed Orbit
+67 [Right hand] Shoulder weapon interference avoidance - Condition reference only
+68 [Left hand] Shoulder weapon interference avoidance - Condition reference only
+69 [Attack] Guard Release
+70 [Right shoulder] Shooting during recoil - after cancellation
+71 [Left shoulder] Shooting during recoil - after cancellation
+72 [Main unit] Assault boost- cancel only
+73 [Right hand] Waiting for Asabu cancellation
+74 [Left hand] Waiting for Asabu cancellation
+75 [Right shoulder] Asabu waiting for cancellation
+76 [Left shoulder] Asabu waiting for cancellation
+77 [Right hand] Upper body recoil large fire (blade type)
+78 [Left hand] Upper body recoil large fire (blade type)
+79 [Both hands] Start large recoil fire - cancel only
+100 Enemy base - Completely independent
+101 Enemy base - Whole body
+102 Enemy base - Lower body
+103 Enemy base - Upper body
+104 Enemy base - shield tick attack
+105 Enemy base - Guard
+106 Enemy Base - Shoulder
+107 Enemy Base - Quick Boost
+108 Enemy base - Guard damage
+109 Enemy base - Special attack Area 01
+110 Enemy Base - Special Attack Area 02
+111 Enemy Base - Special Attack Area 03
+112 Enemy Base - Quick Boost [Left Arm Continuous]
+113 Enemy Base - Quick Boost [Right Arm Continuous]

@@ -1,6 +1,0 @@
-0 Invalid data (deletion prohibited) -- 無効データ（削除禁止）
-981001 Test map_01 -- テストマップ_01
-981002 Test map_02 -- テストマップ_02
-981003 Test map_03 -- テストマップ_03
-981004 Test map_04 -- テストマップ_04
-981005 Test map_05 -- テストマップ_05

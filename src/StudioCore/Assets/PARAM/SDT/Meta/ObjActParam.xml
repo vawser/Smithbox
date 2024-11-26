@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<actionEnableMsgId Wiki="MsgID of the menu displayed when the action is enabled" FmgRef="Event_Text" />
+	<actionFailedMsgId Wiki="MsgID of the menu to display when the action fails" FmgRef="Event_Text" />
+	<spQualifiedPassEventFlag Wiki="Event flag for unconditionally passing special conditions" />
+	<playerAnimId Wiki="This is the animation ID of the player character during action" />
+	<chrAnimId Wiki="Anime ID for enemy actions etc." />
+	<validDist Wiki="This is the effective distance of the action" />
+	<spQualifiedId Wiki="Special condition ID" />
+	<spQualifiedId2 Wiki="Special condition ID 2" />
+	<objDummyId Wiki="This is the dummy poly ID that is the action position of the object" />
+    <isEventKickSync Wiki="Should the events used in ObjAct execution judgment be synchronized? Basically set to ×. It may be set to ○ only if the actor is not important." IsBool="" />
+	<objAnimId Wiki="This is the animation ID when the object is in action" />
+	<validPlayerAngle Wiki="The effective angle of the player's actions. Effective angular difference between the player's orientation vector and the object's orientation vector" />
+	<spQualifiedType Wiki="Types of special conditions" />
+	<spQualifiedType2 Wiki="Types of special conditions 2" />
+	<validObjAngle Wiki="The effective angle of the object's action. Effective angle difference between object action vector and character vector" />
+	<chrSorbType Wiki="This is how to attract characters during object action" />
+	<eventKickTiming Wiki="Event execution timing" />
+	<pad1 />
+    <actionButtonParamId Wiki="Action button parameter ID" Refs="ActionButtonParam" />
+	<pad2 />
+  </Field>
+  <Self Wiki="Settings for characters interacting with objects" AlternativeOrder="actionEnableMsgId,actionFailedMsgId,actionButtonParamId,-,
+playerAnimId,chrAnimId,objAnimId,-,
+objDummyId,-,
+validDist,validObjAngle,validPlayerAngle,-,
+chrSorbType,-,
+isEventKickSync,eventKickTiming,-,
+spQualifiedId,spQualifiedId2,spQualifiedType,spQualifiedType2,spQualifiedPassEventFlag,-" />
+</PARAMMETA>

@@ -1,0 +1,45 @@
+0 Don't erase it -- 消さないように
+80100010 c8010 High Altitude Sna [Weapon 1] Sna -- c8010　高所スナ 【武器1】スナ
+80100020 c8010 High Altitude Sna [Weapon 2] Gatling -- c8010　高所スナ 【武器2】ガトリング
+80200010 c8020 Guntank [Weapon 1] Mortar -- c8020　ガンタンク 【武器1】迫撃砲
+80200020 c8020 Guntank [Weapon 2] Hand Rocket -- c8020　ガンタンク 【武器2】ハンドロケット
+80300000 c8030 Pyle MT (Shotgun [Weapon 1] Pyle -- c8030 パイルMT（ショットガン　【武器1】パイル
+80300010 c8030 Pyle MT (Shotgun [Weapon 2] Shotgun -- c8030 パイルMT（ショットガン　【武器2】ショットガン
+80400010 c8040 Large Drone (Call Friend [Weapon 1] Sonar -- c8040　大ドローン（仲間呼び 【武器1】ソナー
+80400020 c8040 Large Drone (Call Friend [Weapon 2] Call Friend -- c8040　大ドローン（仲間呼び 【武器2】仲間呼び
+80400030 c8040 Large Drone (Call Friend [Weapon 3] Barrier Deployment -- c8040　大ドローン（仲間呼び 【武器3】バリア展開
+80500000 c8050 Dropship [Weapon 1] Deploy -- c8050 ドロップシップ　【武器1】出撃させる
+80500010 c8050 Dropship [Weapon 2] Gatling -- c8050 ドロップシップ　【武器2】ガトリング
+80600000 c8060 Gunship [Weapon 1] Diffusion missile -- c8060 ガンシップ　【武器1】拡散ミサイル
+80600010 c8060 Gunship [Weapon 2] Rocket -- c8060 ガンシップ　【武器2】ロケット
+80600020 c8060 Gunship [Weapon 3] Gatling -- c8060 ガンシップ　【武器3】ガトリング
+80700010 c8070 Irradiation laser [Weapon 1] Laser -- c8070 照射レーザー　【武器1】レーザー
+80900010 c8090 Fighter [Weapon 1] Machine gun -- c8090 戦闘機　【武器1】マシンガン
+81000010 c8100 Shield Holder MT (Heat Rod [Weapon 1] Handgun -- c8100 盾持ちMT（ヒートロッド 【武器1】ハンドガン
+81000020 c8100 Shield Holder MT (Heat Rod [Weapon 2] Charge Heat Rod -- c8100 盾持ちMT（ヒートロッド 【武器2】突進ヒートロッド
+81000030 c8100 Shield Holder MT (Heat Rod [Weapon 3] Guard -- c8100 盾持ちMT（ヒートロッド 【武器3】ガード
+81000040 c8100 Shield Holder MT (Heat Rod [Weapon 4] Heat Rod Combo 1 -- c8100 盾持ちMT（ヒートロッド 【武器4】ヒートロッド　コンボ1
+81000050 c8100 Shield Holder MT (Heat Rod [Weapon 5] Guard Mod) -- c8100 盾持ちMT（ヒートロッド 【武器5】ガード改
+81000060 c8100 Shield Holder MT (Heat Rod [Weapon 6] Heat Rod Combo 2 -- c8100 盾持ちMT（ヒートロッド 【武器6】ヒートロッド　コンボ2
+81100010 c8110 Colorless MT [Weapon 1] Rifle -- c8110　無色MT　【武器1】ライフル
+81100020 c8110 Colorless MT [Weapon 2] Blade 1 -- c8110　無色MT　【武器2】ブレード１
+81100030 c8110 Colorless MT [Weapon 3] Cover action -- c8110　無色MT　【武器3】カバーアクション
+81100040 c8110 Colorless MT [Weapon 4] Blade 2 -- c8110　無色MT　【武器4】ブレード２
+81100060 c8110 Colorless MT [Weapon 6] Reload test -- c8110　無色MT　【武器6】リロードテスト
+81100080 c8110 Colorless MT [Weapon 8] Looking around -- c8110　無色MT　【武器8】キョロキョロ
+82000010 c8200 Walla Walla Bug [Weapon 1] Scratch -- c8200 ワラワラ虫　【武器1】ひっかき
+82000020 c8200 Walla Walla Bug [Weapon 2] Pounce -- c8200 ワラワラ虫　【武器2】飛びかかり
+82000030 c8200 Walla Walla Bug [Weapon 3] Assault -- c8200 ワラワラ虫　【武器3】突撃
+82100010 c8210 Wara Walla Bug (Large) [Weapon 1] Scratch -- c8210 ワラワラ虫（大）　【武器1】ひっかき
+82100020 c8210 Warawalla Bug (Large) [Weapon 2] Pounce -- c8210 ワラワラ虫（大）　【武器2】飛びかかり
+82100030 c8210 Walla Walla Bug (Large) [Weapon 3] Assault -- c8210 ワラワラ虫（大）　【武器3】突撃
+82100040 c8210 Walla Walla Bug (Large) [Weapon 4] Assault -- c8210 ワラワラ虫（大）　【武器4】突撃
+82100050 c8210 Walla Walla Bug (Large) [Weapon 5] Light Bullet -- c8210 ワラワラ虫（大）　【武器5】光弾
+85100000 c8510 Shield Holder MT (Bazooka [Weapon 0] Shield -- c8510 盾持ちMT（バズーカ　【武器0】盾
+85100010 c8510 Shield Holder MT (Bazooka [Weapon 1] Bazooka -- c8510 盾持ちMT（バズーカ　【武器1】バズーカ
+85100020 c8510 Shield Holder MT (Bazooka [Weapon 2] Missile -- c8510 盾持ちMT（バズーカ　【武器2】ミサイル
+85100030 c8510 Shield Holder MT (Bazooka [Weapon 3] Turn around boost -- c8510 盾持ちMT（バズーカ　【武器3】振り向きブースト
+90310010 c9031 Drone [Weapon 1] -- c9031　ドローン 【武器1】
+90310030 c9031 Drone [Weapon 3] -- c9031　ドローン 【武器3】
+92010010 c9031 Drone [Weapon 1] Machine gun -- c9031　ドローン 【武器1】マシンガン
+92010020 c9031 Drone [Weapon 2] Missile -- c9031　ドローン 【武器2】ミサイル

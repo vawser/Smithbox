@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PARTS_BREAK_LOTTERY_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 pair0_Value = -1">
+      <DisplayName>判定値</DisplayName>
+      <Description> -1は無効値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>100</SortID>
+      <UnkB8>pair0</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損0</UnkC8>
+    </Field>
+    <Field Def="s16 pair0_Weight">
+      <DisplayName>重み付け</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>150</SortID>
+      <UnkB8>pair0</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損0</UnkC8>
+    </Field>
+    <Field Def="s16 pair1_Value = -1">
+      <DisplayName>判定値</DisplayName>
+      <Description> -1は無効値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>200</SortID>
+      <UnkB8>pair1</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損1</UnkC8>
+    </Field>
+    <Field Def="s16 pair1_Weight">
+      <DisplayName>重み付け</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>250</SortID>
+      <UnkB8>pair1</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損1</UnkC8>
+    </Field>
+    <Field Def="s16 pair2_Value = -1">
+      <DisplayName>判定値</DisplayName>
+      <Description> -1は無効値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>300</SortID>
+      <UnkB8>pair2</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損2</UnkC8>
+    </Field>
+    <Field Def="s16 pair2_Weight">
+      <DisplayName>重み付け</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>350</SortID>
+      <UnkB8>pair2</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損2</UnkC8>
+    </Field>
+    <Field Def="s16 pair3_Value = -1">
+      <DisplayName>判定値</DisplayName>
+      <Description> -1は無効値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>400</SortID>
+      <UnkB8>pair3</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損3</UnkC8>
+    </Field>
+    <Field Def="s16 pair3_Weight">
+      <DisplayName>重み付け</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>450</SortID>
+      <UnkB8>pair3</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損3</UnkC8>
+    </Field>
+    <Field Def="s16 pair4_Value = -1">
+      <DisplayName>判定値</DisplayName>
+      <Description> -1は無効値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>500</SortID>
+      <UnkB8>pair4</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損4</UnkC8>
+    </Field>
+    <Field Def="s16 pair4_Weight">
+      <DisplayName>重み付け</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>550</SortID>
+      <UnkB8>pair4</UnkB8>
+      <UnkC0>PartsBreakLotteryValueWeightPair</UnkC0>
+      <UnkC8>パーツ破損4</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

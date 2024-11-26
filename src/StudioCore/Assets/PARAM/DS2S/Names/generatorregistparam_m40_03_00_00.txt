@@ -1,0 +1,13 @@
+12900000 [REG:12900000] Forest Spirit
+12903000 [REG:12903000] Forest Spirit
+50610000 [REG:50610000] Darklurker [Boss]
+50610001 [REG:50610001] Darklurker [Boss]
+50620000 [REG:50620000] Darklurker (Clone)
+81200000 [REG:81200000] Underworld Deadeye
+81210000 [REG:81210000] Pretender to the Xanthous Throne
+81220000 [REG:81220000] Abyss Ironclad
+81230000 [REG:81230000] Abyss Ironclad
+81240000 [REG:81240000] Tenebrous Rogue
+81250000 [REG:81250000] The Ghost of Princes Past
+81260000 [REG:81260000] A Chip Off the Ol Rock
+81270000 [REG:81270000] Shadowveil Assasin

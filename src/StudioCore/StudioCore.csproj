@@ -237,25 +237,21 @@
     <None Update="Assets\Aliases\Sounds\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Aliases\TimeActs\**" CopyToOutputDirectory="PreserveNewest" />
     
-    <None Update="Assets\HavokAliases\**" CopyToOutputDirectory="PreserveNewest" />
-    
-    <None Update="Assets\FormatInfo\MSB\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\FormatInfo\FLVER\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\FormatInfo\GPARAM\**" CopyToOutputDirectory="PreserveNewest" />
-    
-    <None Update="Assets\GameOffsets\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Mappings\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\MassEditScripts\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Themes\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\EMEVD\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Shoebox\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\TAE\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Thumbnails\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\WorldMap\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Workflow\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\GX Items\**" CopyToOutputDirectory="PreserveNewest" />
+    
+    <None Update="Assets\FLVER\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\EMEVD\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\ESD\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\GPARAM\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\PARAM\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\MSB\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\TAE\**" CopyToOutputDirectory="PreserveNewest" />
+    
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WET_ASPECT_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u8 diffColorR">
+      <DisplayName>R</DisplayName>
+      <Description>ディフューズ色Rです。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <UnkC8>ディフューズ色</UnkC8>
+    </Field>
+    <Field Def="u8 diffColorG">
+      <DisplayName>G</DisplayName>
+      <Description>ディフューズ色Gです。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>1</SortID>
+      <UnkC8>ディフューズ色</UnkC8>
+    </Field>
+    <Field Def="u8 diffColorB">
+      <DisplayName>B</DisplayName>
+      <Description>ディフューズ色Bです。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>2</SortID>
+      <UnkC8>ディフューズ色</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserve_0[1]">
+      <DisplayName>予備1</DisplayName>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 diffColorA">
+      <DisplayName>A</DisplayName>
+      <Description>ディフューズ色Aです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+      <UnkC8>ディフューズ色</UnkC8>
+    </Field>
+    <Field Def="u8 refColorR">
+      <DisplayName>R</DisplayName>
+      <Description>リフレクタンス色Rです。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>4</SortID>
+      <UnkC8>リフレクタンス色</UnkC8>
+    </Field>
+    <Field Def="u8 refColorG">
+      <DisplayName>G</DisplayName>
+      <Description>リフレクタンス色Gです。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>5</SortID>
+      <UnkC8>リフレクタンス色</UnkC8>
+    </Field>
+    <Field Def="u8 refColorB">
+      <DisplayName>B</DisplayName>
+      <Description>リフレクタンス色Bです。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>6</SortID>
+      <UnkC8>リフレクタンス色</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserve_1[1]">
+      <DisplayName>予備2</DisplayName>
+      <SortID>1001</SortID>
+    </Field>
+    <Field Def="f32 refColorA">
+      <DisplayName>A</DisplayName>
+      <Description>リフレクタンス色Aです。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>7</SortID>
+      <UnkC8>リフレクタンス色</UnkC8>
+    </Field>
+    <Field Def="f32 shininessRate">
+      <DisplayName>オーバーライド率</DisplayName>
+      <Description>シャイニネスのオーバーライド率です。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>9</SortID>
+      <UnkC8>シャイニネス</UnkC8>
+    </Field>
+    <Field Def="u8 shininess">
+      <DisplayName>オーバーライド</DisplayName>
+      <Description>シャイニネスのオーバーライドです。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>8</SortID>
+      <UnkC8>シャイニネス</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserve_2[11]">
+      <DisplayName>予備3</DisplayName>
+      <SortID>1002</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

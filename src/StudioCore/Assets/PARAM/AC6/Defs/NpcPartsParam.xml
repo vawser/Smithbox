@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>NPC_PARTS_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>NT版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>90000</SortID>
+    </Field>
+    <Field Def="u8 disableParam_Product:1">
+      <DisplayName>製品版出力から外すか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>製品版から除外するか、除外するものに○をつける</Description>
+      <Maximum>1</Maximum>
+      <SortID>90010</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>100000000</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>100000001</SortID>
+    </Field>
+    <Field Def="s16 eventPartsId">
+      <DisplayName>イベント部位ID</DisplayName>
+      <Description>イベント部位ID。作成された部位インスタンスに対するID。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 partsGroupIdx = 1">
+      <DisplayName>部位グループIdx</DisplayName>
+      <Enum>NPC_PARTS_GROUP</Enum>
+      <Description>部位グループID。pwvの部位ID</Description>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s8 hitFEType = 1">
+      <DisplayName>ヒットFE設定</DisplayName>
+      <Enum>NPC_PARTS_HIT_FE_TYPE</Enum>
+      <Description>ヒットFE設定。この部位に被弾した時に表示されるFEタイプ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="s32 partsHp = -1">
+      <DisplayName>部位HP</DisplayName>
+      <Description>部位HP</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 partsDmgCorrect = 1">
+      <DisplayName>部位ダメージ補正</DisplayName>
+      <Description>部位ダメージ補正。この部位に入るダメージに乗算される</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 partsBulletDmgCorrect = 1">
+      <DisplayName>弾丸倍率</DisplayName>
+      <Description>弾丸倍率。この部位に入るダメージに乗算される</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 ownerDmgCorrect = 1">
+      <DisplayName>本体ダメージ補正</DisplayName>
+      <Description>本体ダメージ補正。本体キャラに伝わるダメージに乗算される</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u16 defMtlSE">
+      <DisplayName>防御材質SE</DisplayName>
+      <Enum>WEP_MATERIAL_DEF</Enum>
+      <Description>防御材質SE。ヒットエフェクトなどに使われる</Description>
+      <Maximum>9999</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="u16 defMtlSfx">
+      <DisplayName>防御材質SFX</DisplayName>
+      <Enum>WEP_MATERIAL_DEF_SFX</Enum>
+      <Description>防御材質SFX。ヒットエフェクトなどに使われる</Description>
+      <Maximum>9999</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="s32 hitSpEffectId = -1">
+      <DisplayName>被弾時特殊効果ID</DisplayName>
+      <Description>被弾時特殊効果ID。被弾時に発生する特殊効果</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="s32 brakSpEffectId = -1">
+      <DisplayName>破壊時特殊効果ID</DisplayName>
+      <Description>破壊時特殊効果ID。HPが0以下になった瞬間にかかる特殊効果</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 isDmgIgnore">
+      <DisplayName>無敵にするか</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>無敵にするか。ダメージが入らなくなります。</Description>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 isBreakDisableLockonDmypoly:1">
+      <DisplayName>破壊後ロックオン不可か</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>破壊時にロックできなくするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="u8 isShieldGuardEnable:1 = 1">
+      <DisplayName>ガード有効部位</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>ガードが有効な部位か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="u8 isPaGuardEnable:1 = 1">
+      <DisplayName>PA_ガード有効部位</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>PAガードが有効な部位か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="u8 isPhysGuardEnable:1 = 1">
+      <DisplayName>実盾_ガード有効部位</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>物理ガードが有効な部位か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="u8 isBulletForceForceRicochetSfx:1">
+      <DisplayName>ヒット時弾丸SFXの強制跳弾</DisplayName>
+      <Enum>NPC_BOOL</Enum>
+      <Description>弾丸のSFXを強制で跳弾させる部位か[FNR-24925] 材質「身体重鉄」「盾重鉄」に設定された部位に弾丸がヒットした時、跳弾の見た目にしたい</Description>
+      <Maximum>1</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="dummy8 pad1:3">
+      <DisplayName>pad</DisplayName>
+      <SortID>100000002</SortID>
+    </Field>
+    <Field Def="u8 AutoSightFEDispType">
+      <DisplayName>オートサイトFE表示</DisplayName>
+      <Enum>NPC_AUTOSIGHT_FE_DISP_TYPE</Enum>
+      <Description>オートサイトカーソルに表示するタイプ</Description>
+      <Maximum>1</Maximum>
+      <SortID>901</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[1]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>99999999</SortID>
+    </Field>
+    <Field Def="s32 lockonDmypoly = -1">
+      <DisplayName>ロックオンダミポリ</DisplayName>
+      <Description>ロックオンダミポリ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="s32 hpGaugeDmypoly = -1">
+      <DisplayName>HPゲージ表示ダミポリ</DisplayName>
+      <Description>HPゲージ表示ダミポリ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="f32 addImpactRate = 1">
+      <DisplayName>本体衝撃値補正</DisplayName>
+      <Description>部位にヒットした場合、この倍率を衝撃値の最終値に掛けてから蓄積させる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="u8 hitAddSpEffectCondPartsType">
+      <DisplayName>ヒット時特殊効果付与条件判定用ラベル</DisplayName>
+      <Enum>NPC_SP_EFFECT_ADD_COND_PARTS_TYPE</Enum>
+      <Description>攻撃パラに「特殊効果0付与条件_部位」が設定されているときにこの部位と同じ位置以外の場合は特殊効果を付与しない</Description>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="dummy8 pad[3]">
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>99999999</SortID>
+    </Field>
+    <Field Def="dummy8 pad_end[4]">
+      <DisplayName>pad</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>99999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

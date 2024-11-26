@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>MAP_MIMICRY_ESTABLISHMENT_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 mimicryEstablishment0 = -1">
+      <DisplayName>擬態重み0</DisplayName>
+      <Description>擬態重み0</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 mimicryEstablishment1 = -1">
+      <DisplayName>擬態重み1</DisplayName>
+      <Description>擬態重み1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="f32 mimicryEstablishment2 = -1">
+      <DisplayName>擬態重み2</DisplayName>
+      <Description>擬態重み2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="s32 mimicryBeginSfxId0 = -1">
+      <DisplayName>擬態0 SFXID 前振り</DisplayName>
+      <Description>擬態0 SFXID 前振り</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s32 mimicrySfxId0 = -1">
+      <DisplayName>擬態0 SFXID 本体</DisplayName>
+      <Description>擬態0 SFXID 本体</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="s32 mimicryEndSfxId0 = -1">
+      <DisplayName>擬態0 SFXID 解除</DisplayName>
+      <Description>擬態0 SFXID 解除</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>320</SortID>
+    </Field>
+    <Field Def="s32 mimicryBeginSfxId1 = -1">
+      <DisplayName>擬態1 SFXID 前振り</DisplayName>
+      <Description>擬態1 SFXID 前振り</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s32 mimicrySfxId1 = -1">
+      <DisplayName>擬態1 SFXID 本体</DisplayName>
+      <Description>擬態1 SFXID 本体</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="s32 mimicryEndSfxId1 = -1">
+      <DisplayName>擬態1 SFXID 解除</DisplayName>
+      <Description>擬態1 SFXID 解除</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>420</SortID>
+    </Field>
+    <Field Def="s32 mimicryBeginSfxId2 = -1">
+      <DisplayName>擬態2 SFXID 前振り</DisplayName>
+      <Description>擬態2 SFXID 前振り</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s32 mimicrySfxId2 = -1">
+      <DisplayName>擬態2 SFXID 本体</DisplayName>
+      <Description>擬態2 SFXID 本体</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>510</SortID>
+    </Field>
+    <Field Def="s32 mimicryEndSfxId2 = -1">
+      <DisplayName>擬態2 SFXID 解除</DisplayName>
+      <Description>擬態2 SFXID 解除</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>520</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[16]">
+      <DisplayName>パッド</DisplayName>
+      <Description>pad</Description>
+      <SortID>521</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

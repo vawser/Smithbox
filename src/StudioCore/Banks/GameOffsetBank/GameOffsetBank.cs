@@ -15,21 +15,18 @@ public class GameOffsetBank
 {
     public GameOffsetResource Offsets { get; set; }
 
-    private string OffsetDirectory = "";
-
     private string OffsetFileName = "";
 
     public GameOffsetBank()
     {
-        OffsetDirectory = "GameOffsets";
-        OffsetFileName = "Data";
+        OffsetFileName = "Offsets";
     }
 
     public void LoadBank()
     {
         try
         {
-            Offsets = BankUtils.LoadGameOffsetJSON(OffsetDirectory, OffsetFileName);
+            Offsets = BankUtils.LoadGameOffsetJSON(OffsetFileName);
             TaskLogs.AddLog($"Banks: setup game offsets for Param Reloader.");
         }
         catch (Exception e)

@@ -1,0 +1,394 @@
+0 should not be erased
+5 water prison prisoner
+6 Enemy NPC in Old Fort 1
+7 Tunnel 1 for wandering ghosts
+8 Old Fort 2 Uru-sama confinement NPC
+9 Ojo 4 Three Musketeers A
+10 Ojo 4 Three Musketeers B
+11 Ojo 4 Three Musketeers C
+12 Urbain
+13 Patch (Old Fort)
+15 broken heart warrior
+17 Prince Lendl
+18 Björngurm
+19 half hand
+20 patch (pit)
+21 Gargold Run
+22 Sage Logan
+23 Yurt, Lord of Silence
+24 Lord Villaidel in Black
+25 princess knight selenium
+26 witch
+27 old king doran
+28 sorcerer
+29 Believers of God Part 1
+30 Follower of God Part 2
+31 Believers of God Part 3
+32 Believers of God Part 4
+33 Savvy
+34 big bag thomas
+35 Master Satsuki
+36 Mephistopheles
+37 Miralda the Condemned
+38 Lord Villaidel in Black, White
+39 Lord Villaidel in Black, Black
+40 Princess Knight Selene White
+41 Princess Knight Selene Black
+42 Condemned Miralda White
+43 Condemned Miralda Black
+44 half hand black
+45 master satsuki black
+46 gold run black
+47 Prince Lendl, Black
+61 Prison Castle 1 NPC in front of the church
+62 warrior woman black
+63 Barbarian Male Warrior Black
+64 Barbarian Female Warrior, Black
+65 Prince Lendl (for Royal Castle 1 and 2)
+97 warrior woman black
+98 Prison Castle 1 NPC in front of the church
+99 Okina Summon Black NPC
+500 For damage test (Hirai)
+502 bird test
+503 Knight for fire damage test
+504 dog test
+505 gargoyle test
+510 Sakurai Test Zako
+1000 NPC player treasure test
+1001 for bullet owners
+3000 Wandering ghost man for tutorial
+3001 Tutorial Wandering Ghost Female
+100100 Serpent Soldier (Archer)
+103000 Chu Deb Daemon
+103001 Old Fort 1 Fat Demon
+200000 Chu slave soldier_sword
+200001 Chu slave soldier_sword (loves guards)
+200002 Chu slave soldier _ sword (weak)
+200003 NPC Slave Trader
+200010 Royal Castle 1 Slave Soldier_Sword
+200011 Royal Castle 1 Slave Soldier_Sword/Black
+200012 Royal Castle 1 Slave Soldier_Sword (Exclusive)
+200013 Royal Castle 1 Slave Soldier_Flame Sword
+200014 Royal Castle 1 Slave Soldier_Flame Sword (Exclusive)
+200015 Royal Castle 1 Slave Soldier_Sword
+200016 Royal Castle 1 Slave Soldier_Sword (Exclusive)
+200017 Royal Castle 1 Slave Soldier_Flame Sword
+200018 Royal Castle 1 Slave Soldier_Flame Sword (Exclusive)
+200019 Royal Castle 1 Slave Soldier_Sword (Exclusive Defensive/Otono Reaction)
+200020 Royal Castle 1 Slave Soldier_Sword (Prince Siege)
+200021 Royal Castle 1 Slave Soldier_Flame Sword (prince siege)
+200030 Royal Castle 2 Slave Soldier_Sword
+200031 Royal Castle 2 Slave Soldier_Sword (Exclusive)
+200032 Royal Castle 2 Slave Soldier_Flame Sword
+200033 Royal Castle 2 Slave Soldier_Flame Sword (Exclusive)
+200034 Royal Castle 2 Slave Soldier_Sword
+200035 Royal Castle 2 Slave Soldier_Sword (Exclusive)
+200036 Royal Castle 2 Slave Soldier_Flame Sword
+200037 Royal Castle 2 Slave Soldier_Flame Sword (Exclusive)
+201000 Chu general soldier_sword
+201001 Chew General Soldier _ Bow
+201002 Chew general soldier_sword (flame)
+201010 Royal Castle 1 General Soldier_Sword
+201011 Royal Castle 1 General Soldier_Sword (Flame)
+201012 Royal Castle 1 General Soldier_Bow
+201013 Royal Castle 1 General Soldier_Sword (Exclusive)
+201014 Royal Castle 1 General Soldier_Sword (flame, no sound response)
+201015 Royal Castle 1 General Soldier_Spear
+201016 Royal Castle 1 General Soldier_Ax
+201017 Royal Castle 1 General Soldier_Halberd
+201018 Royal Castle 1 General Soldier_Spear (Exclusive)
+201019 Royal Castle 1 General Soldier Ax (Exclusive)
+201020 Royal Castle 1 General Soldier_Halberd (Exclusive)
+201030 Royal Castle 2 General Soldier_Sword
+201031 Royal Castle 2 General Soldier_Bow
+201032 Royal Castle 2 General Soldier_Spear
+201033 Royal Castle 2 General Soldier Ax
+201034 Royal Castle 2 General Soldier_Halberd
+201035 Royal Castle 2 General Soldier_Sword (Exclusive)
+201036 Royal Castle 2 General Soldier_Spear (Exclusive)
+201037 Royal Castle 2 General Soldier Ax (Exclusive)
+201038 Royal Castle 2 General Soldier_Halberd (Exclusive)
+201039 Royal Castle 2 General Soldier_Bow (Fixed/Standing)
+201050 Royal Castle 3 General Soldier_Sword
+201051 Royal Castle 3 General Soldier_Bow
+201052 Royal Castle 3 General Soldier_Spear
+201053 Royal Castle 3 General Soldier_Ax
+201054 Royal Castle 3 General Soldier_Halberd
+201055 Royal Castle 3 General Soldier_Sword (Flame)
+201056 Royal Castle 3 General Soldier_Sword (Exclusive)
+201057 Royal Castle 3 General Soldier_Spear (Exclusive)
+201058 Royal Castle 3 General Soldier Ax (Exclusive)
+201059 Royal Castle 3 General Soldier_Halberd (Exclusive)
+201070 Royal Castle 4 General Soldier_Sword
+201071 Royal Castle 4 General Soldier_Sword (Flame)
+201072 Royal Castle 4 General Soldier_Bow
+201073 Royal Castle 4 General Soldier_Sword/Black
+201074 Royal Castle 4 General Soldier_Sword/Black (Flame)
+201075 Royal Castle 4 General Soldier_Bow Black
+202000 Chew Knight_Sword
+202001 Chew Knight_Sword (for Parry)
+202002 Chew Knight_Sword (Exclusive)
+202010 Royal Castle 1 Knight_Sword
+202011 Royal Castle 1 Knight_Sword/Black
+202012 Royal Castle 1 Knight_Sword (Exclusive)
+202013 Royal Castle 1 Knight_Claymore
+202014 Royal Castle 1 Knight_Bare Hands (Exclusive)
+202030 Royal Castle 2 Knight_Sword
+202031 Royal Castle 2 Knight_Sword/Black
+202032 Royal Castle 2 Knight_Claymore
+202033 Royal Castle 2 Knight_Sword (Exclusive)
+202034 Royal Castle 2 Knight_Claymore (Exclusive)
+202050 Royal Castle 3 Knight_Sword
+202051 Ojo 3 Knight_Sword/Black
+202052 Ojo 3 Knight_Claymore
+202053 Royal Castle 3 Knight_Spear
+202054 Ojo 3 Knight_Sword (Exclusive)
+202055 Ojo 3 Knight_Claymore (Exclusive)
+202056 Royal Castle 3 Knight_Spear (Exclusive)
+202070 Royal Castle 4 Knight_Sword
+202071 Royal Castle 4 Knight_Sword/Black
+202072 Royal Castle 4 Knight_Claymore
+202090 Prison Castle 3 Knight_Sword/Black
+203000 Ojo 3 Assassin
+203070 Ojo 4 Assassin
+204000 Barbarian Beast Warrior/Wolf
+205000 Barbarian Beast Warrior/Bear
+206000 Barbarian Beast Warrior, Hyena
+207000 Prison 1 prisoner
+207001 Prison 1 Prisoner (Kamisama believer)
+207002 Prison 1 Prisoner (Drop the ring)
+207003 Prison 2 prisoner
+207004 Prison 1 Prisoner (stab sword)
+207005 Prison 1 prisoner (spear)
+207006 Prison 1 prisoner (stab sword, trap)
+207500 Prison Castle 1 Prisoner's ball
+207501 Prison Castle 2 Prisoner's Ball
+208000 Royal Castle 3 Jailer (Key to Former Royal Castle II)
+208001 Royal Castle 2* Prisoner (Key to Royal Castle III)
+208002 Tunnel 1 Jailer (whip)
+208004 Tunnel 1 Jailer (Whip) Black
+208005 Royal Castle 3 Jailer (Hat)
+208006 Royal Castle 3 Jailer Black
+208007 Royal Castle 3 Prisoner (Prisoner Tower)
+208070 Royal Castle 4 Jailer
+208023 Tunnel 1 Jailer (Whip) Area 2165
+208024 Tunnel 1 Jailer (Whip) Area 2166
+208025 Tunnel 1 Jailer (Whip) Area 2167
+208026 Tunnel 2 Jailer (whip)
+208099 　　　　　Prisoner (whip) for dummy
+209000 Prison 1 Former aristocratic lady
+210000 Unclean 1 Corrupted Human (hammer)
+210001 Chu Corrupt human
+210002 Unclean 1 Corrupted Human (Spear)
+210003 Unclean 2 Corrupted Human (hammer)
+210004 Unclean 2 Corrupted Human (Spear)
+210005 Unclean 1 Corrupted Human (hammer)_Black
+210006 Unclean 1 Corrupted Human (Spear)_Black
+210007 Unclean 2 Corrupted Human (Hammer)_Black
+210008 Unclean 2 Corrupted Human (Spear)_Black
+210009 Unclean 3 Corrupted Human (hammer)
+210010 Unclean 3 Corrupted Human (Spear)
+210011 Unclean 2 Corrupted Human (Sorcerer/Fixed)
+210012 Unclean 1 Corrupted Human (Sorcerer)
+210013 Unclean 2 Corrupted Human (Magician)
+210014 Unclean 1 Corrupted Human (Hammer_Poison)
+210015 Unclean 2 Corrupted Human (Hammer_Poison)
+210016 Unclean 2 Corrupted Human (hammer) Do not push
+210100 Unclean 1 Great Corruption Human
+210101 Unclean 2 Great Corruption Human
+210102 Unclean 2 Great Corruption Human Black
+211000 Tunnel 1 Scale miner (ice ax)
+211001 Tunnel 1 scale miner (bag)
+211002 Tunnel 1 Scale miner (Sword)
+211003 Tunnel 1 Scale Miner (Great Sword)
+211004 Tunnel 1 Scale Miner (Prisoner's Underling/Fukuro)
+211005 Tunnel 1 Scale Miner (Jailer's Underling, Pickaxe)
+211006 Tunnel 1 Scale Miner (Hammer)
+211007 Tunnel 1 Scale miner (bare hands)
+211008 Tunnel 1 Scale miner (attack-type ice ax)
+211009 Tunnel 1 scale miner (rock throwing bare hand start point 1)
+211010 Tunnel 2 Scale miner (ice ax)
+211011 Tunnel 2 Scale miner (bag)
+211012 Tunnel 2 Scale Miner (Hammer)
+211013 Tunnel 2 Scale miner (bare hands)
+211014 Tunnel 1 Scale Miner (Rock Throwing Bare Hands Part 2 On the Road)
+211015 Tunnel 1 scale miner (rock throwing bare hands 3 start point 2)
+211016 Tunnel 1 Scale Miner (Rock Throwing Bare Hands Part 4 On the Road)
+211018 Tunnel 2 Scale miner (attack-type ice ax)
+211019 Tunnel 1 Scale Miner (Attack-type Pickaxe) Black
+211020 Tunnel 1 Scale miner 2 (ice ax, jacket)
+211021 Tunnel 1 Scale miner 2 (bag/jacket)
+211022 Tunnel 1 Scale miner 2 (stiletto, jacket)
+211023 Tunnel 1 Scale miner 2 (large sword, jacket)
+211026 Tunnel 1 Scale miner 2 (Hammer/jacket)
+211027 Tunnel 1 Scale miner 2 (bare hands, jacket)
+211028 Tunnel 1 Scale miner 2 (Attack-type ice ax/jacket)
+211030 Tunnel 2 Scale miner 2 (ice ax, jacket)
+211031 Tunnel 2 Scale miner 2 (bag/jacket)
+211032 Tunnel 2 Scale miner 2 (hammer, jacket)
+211033 Tunnel 2 Scale miner 2 (bare hands/jacket)
+211038 Tunnel 2 Scale miner 2 (Attack-type ice ax/jacket)
+211039 Tunnel 1 Scale miner 2 (attack type ice ax/jacket)/black
+211098 Tunnel 1 scale miner (bare hands) dummy normal
+211099 Tunnel 1 scale miner (bare hands) dummy strong enemy
+211100 Scale miner (hot iron)
+211200 Scale Miner (Hammer)
+211300 Tunnel 1 Scale miner (bag) 1
+211301 Tunnel 1 Scale miner (bag) 2
+211302 Tunnel 1 Scale miner (bag) 3
+211303 Tunnel 1 Scale miner (bag) 4
+211310 Tunnel 1 Scale miner 2 (bag/jacket) 1
+211311 Tunnel 1 Scale miner 2 (bag/jacket) 2
+211312 Tunnel 1 Scale miner 2 (bag/jacket) 3
+211320 Tunnel 2 Scale miner (bag) 1
+212000 Old Fort 2 Kagehito
+212001 Old Fort 2 Kagehito_Strong Light
+212002 Old Fort 2 Kagehito (exclusive guard)
+213000 Old Fort 2 Kagejo (Area A 2460)
+213001 Old Fort 2 Kagejo Black
+213002 Old Fort 2 Kagejo (Area B 2461)
+214000 Barbarian Beast Warrior Owl
+301000 Ojo 2 military dog
+301001 Ojo 3 military dog
+301002 Mine 1 military dog
+301012 Tunnel 2 military dog
+302000 gray wolf
+303000 Old Fort 1 Hawk
+303010 Old Fort 2 Hawk
+304000 Prison Castle 2 Chimera
+304010 Prison Castle 2 Chimera Tail
+305000 Prison Castle 2 Gargoyle (sword)
+305001 Prison Castle 2 Gargoyle (Bowgun)
+305002 Gargoyle (Sword)_Black
+305094 Prison Castle 2 Gargoyle (Sword) Area 2265
+305095 Prison Castle 2 Gargoyle (Sword) Area 2264
+305096 Prison Castle 2 Gargoyle (Sword) Area 2263
+305097 Prison Castle 2 Gargoyle (Sword) Area 2262
+305098 Prison Castle 2 Gargoyle (Sword) Area 2261
+305099 Prison Castle 2 Gargoyle (Sword) Area 2260
+306000 Unclean 1 Plague Rat
+307000 Unclean 2 Large slug
+307001 Unclean 2 Large slug (fixed)
+307100 Old Fort 2 Large Slug (Light)
+307101 Old Fort 2 Large Slug (Light) Dummy Strong Enemy
+308000 Unclean 2 cloudy jellyfish
+309000 Unclean 2 Large Mosquito
+310000 Tunnel 2 Rock earthworm
+310001 Tunnel 2 Rock worm (non-throwing Ver.)
+310002 Tunnel 2 Rock worms (likes showers)
+311000 Tunnel 2 Crystal Lizard A
+311001 Tunnel 2 Crystal lizard A (for events)
+311002 Royal Castle 1 Crystal Lizard
+311003 Royal Castle 2 Crystal Lizard
+311004 Royal Castle 3 Crystal Lizard
+311005 Royal Castle 4 Crystal Lizard
+311006 Prison Castle 1 Crystal Lizard
+311007 Prison Castle 2 Crystal Lizard
+311008 Prison Castle 3 Crystal Lizard
+311009 Unclean 1 crystal lizard
+311010 Impure 2 crystal lizard
+311011 Impure 3 crystal lizard
+311012 Tunnel 2 Crystal lizard B
+311013 Tunnel 1 Crystal Lizard A
+311014 Tunnel 1 Crystal Lizard B
+311015 Tunnel 3 Crystal Lizard A
+311016 Tunnel 3 Crystal Lizard B
+311017 Old Fort 1 Crystal Lizard
+311018 Old Fort 2 Crystal Lizard
+311019 Old Fort 3 Crystal Lizard
+312000 Tunnel 1 Magma gecko
+313000 Tunnel 2 Ookumushi
+313001 Tunnel 2 Okumamushi (for events)
+313002 Tunnel 2 Okutamushi (for maze)
+313003 Tunnel 2 medium tardigrade
+313004 Tunnel 2 Winged tardigrade
+313005 Tunnel 2 Small tardigrade
+313006 Tunnel 2 Winged tardigrade (for specific positions)
+313007 Tunnel 2 Small tardigrade black
+316000 marching planaria
+317000 Marching planaria (Violent version)
+318000 Unclean 1 Large Blood Mite
+400000 Failure (Last Boss)
+401000 Old Fort 2 Wizard
+401001 Old Fort 2 Wizard (Exclusive)
+402000 Old Fort 1 Gold Skeleton
+402001 Old Fort 1 Gold Skeleton Black
+402004 Old Fort 1 Gold Skeleton (exclusive guard)
+402005 Old Fort 1 Gold Skeleton Black (Exclusive)
+402030 Old Fort 2 Gold Skull
+402031 Old Fort 2 Gold Skeleton Black (exclusive)
+402032 Old Fort 2 Gold Skeleton_Dual Sword
+402200 Old Fort 1 Black Skeleton _ Dual Sword
+402201 Old Fort 1 Black Skeleton_Two Swords (Exclusive Defense)
+402230 Old Fort 2 Black Skeleton_Dual Sword
+402231 Old Fort 2 Black Skeleton_Dual Sword Black
+402100 Old Fort 1 White Skeleton_Sword
+402101 Old fort 1 white skeleton _ bow
+402102 Old fort 1 white skeleton _ sword (narrow)
+402103 Old Fort 1 White Skeleton_Sword (Exclusive)
+402104 Old fort 1 white skeleton _ bow (fixed)
+402105 Old Fort 1 White Skeleton_Sword/Black
+402106 Old Fort 1 White Skeleton_Bow/Black
+402107 Old Fort 1 White Skeleton_Sword (Exclusive)/Black
+402130 Old Fort 2 White Skeleton_Sword
+402131 Old Fort 2 White Skeleton _ Bow
+402132 Old fort 2 White skeleton _ sword (narrow)
+403000 Prison Castle 1 Octopus Man
+403001 Prison Castle 1 Octopus Man Prison Castle 1st floor key
+403002 Prison Castle 1 Octopus Man Key to the 2nd floor of the Prison Castle
+403003 Prison Castle 1 Octopus Man Prison Castle 3rd floor key
+403004 Prison Castle 1 Octopus Man Prison Castle 4th floor key
+403005 Prison Castle 1 Octopus Man_Black
+403006 Prison 1 Octopus man (fixed)
+403007 Prison Castle 2 Octopus Man_Black
+403008 Prison Castle 3 Octopus Man_Black
+404000 vermin celebrity
+405000 Tunnel 2 Flame Phantom
+406000 Yeti
+500000 Royal Castle 1 Phalanx child
+500001 Royal Castle 4 Phalanx Child (Hagure)
+500002 Royal Castle 2 Phalanx Child (Hagure)
+500003 Royal Castle 1 Phalanx child (stray)
+500100 Royal Castle 1 Phalanx parent
+501000 Royal Castle 2 King's Shield
+502000 Royal Castle 3 The King's Sword
+503000 Old Fort 3 Storm Beast
+503100 Old Fort 3 Son Ei
+503101 Old Fort 1 Child Ray
+503102 Old Fort 2 Son Ei (high-rise)
+503103 Old Fort 2 child stingray (middle layer)
+503104 Old Fort 2 child stingray (lower floor)
+504000 Old Fort 1 Referee
+506000 Prison Castle 1 Kami-sama
+506001 Prison 1 Fake Goddess
+507000 Prison Castle 2 Chimera Ball
+507001 Prison Castle 2 Chimera Ball Small
+507002 Prison Castle 2 Chimera Ball Black
+507003 Prison Castle 3 Chimera Ball Small
+507010 Prison Castle 2 Chimera Ball Tail
+507012 Prison Castle 2 Chimera Ball Tail Black
+508000 Unclean 2 Flies
+509000 Unclean 1 Leech Demon
+510000 Tunnel 1 Large spider
+511000 Royal Castle 3 Ore Spirit
+511001 Old Fort 2 Ore Spirit
+511002 Prison Castle 2 Ore Spirit
+511003 Unclean 2 Ore Spirit
+511004 Tunnel 1 Spirit of Ore
+512000 Royal Castle 4 Flying Dragon
+513000 Royal Castle 1 Hiryu's family
+513001 Royal castle 2 Hiryu's family
+602000 Old Fort 2 Storm Warrior
+603000 Old man in yellow (sitting)
+603100 old man in yellow
+604000 Impure 3 Saint Libra
+604100 Impure 3 Impure person
+605000 Chu Dragon Demon
+605001 Tunnel 3 Dragon Demon (Tunnel)
+708000 important person
+710000 beggar (male)
+711000 beggar (female)
+713000 NPC blacksmith (pit)
+713100 NPC blacksmith (stone pillar)
+715000 heroine
+723000 Royal Castle 4 King Lendor

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines model particle parameters." />
+  
+  <Field>
+    <sfxId_0 
+    AltName="Particle: ID [0]" 
+    Wiki="0: SfxID" 
+    ParticleAlias="" />
+    
+    <dmypolyId_0 
+    AltName="Particle: Dummy Polygon ID [0]" 
+    Wiki="0: Dummy Polygon ID" />
+    
+    <reserve_0 
+    AltName="" 
+    Padding=""/>
+    
+    <sfxId_1 
+    AltName="Particle: ID [1]" 
+    Wiki="1: SfxID" 
+    ParticleAlias="" />
+    
+    <dmypolyId_1 
+    AltName="Particle: Dummy Polygon ID [1]" 
+    Wiki="1: Dummy Polygon ID" />
+    
+    <reserve_1 
+    AltName="" 
+    Padding=""/>
+    
+    <sfxId_2 
+    AltName="Particle: ID [2]" 
+    Wiki="2: SfxID" 
+    ParticleAlias="" />
+    
+    <dmypolyId_2 
+    AltName="Particle: Dummy Polygon ID [2]" 
+    Wiki="2: Dummy Polygon ID" />
+    
+    <reserve_2 
+    AltName="" 
+    Padding=""/>
+    
+    <sfxId_3 
+    AltName="Particle: ID [3]" 
+    Wiki="3: SfxID" 
+    ParticleAlias="" />
+    
+    <dmypolyId_3 
+    AltName="Particle: Dummy Polygon ID [3]" 
+    Wiki="3: Dummy Polygon ID" />
+    
+    <reserve_3 
+    AltName="" 
+    Padding=""/>
+    
+    <sfxId_4 
+    AltName="Particle: ID [4]" 
+    Wiki="4: SfxID" 
+    ParticleAlias="" />
+    
+    <dmypolyId_4 
+    AltName="Particle: Dummy Polygon ID [4]" 
+    Wiki="4: Dummy Polygon ID" />
+    
+    <reserve_4 
+    AltName="" 
+    Padding=""/>
+    
+    <sfxId_5 
+    AltName="Particle: ID [5]" 
+    Wiki="5: SfxID" 
+    ParticleAlias="" />
+    
+    <dmypolyId_5 
+    AltName="Particle: Dummy Polygon ID [5]" 
+    Wiki="5: Dummy Polygon ID" />
+    
+    <reserve_5 
+    AltName=""
+    Padding=""/>
+    
+    <sfxId_6 
+    AltName="Particle: ID [6]" 
+    Wiki="6: SfxID" 
+    ParticleAlias="" />
+    
+    <dmypolyId_6 
+    AltName="Particle: Dummy Polygon ID [6]" 
+    Wiki="6: Dummy Polygon ID" />
+    
+    <reserve_6 
+    AltName="" 
+    Padding=""/>
+    
+    <sfxId_7 
+    AltName="Particle: ID [7]" 
+    Wiki="7: SfxID"
+    ParticleAlias="" />
+    
+    <dmypolyId_7 
+    AltName="Particle: Dummy Polygon ID [7]" 
+    Wiki="7: Dummy Polygon ID" />
+    
+    <isDisableIV 
+    AltName="Is Irradiance Volume Disabled" 
+    Wiki="When enabled, the effect on irradiance volume shooting is disabled." 
+    IsBool="" />
+    
+    <reserve_7 
+    AltName="" 
+    Padding=""/>
+  </Field>
+</PARAMMETA>

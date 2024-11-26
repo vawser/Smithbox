@@ -1,0 +1,85 @@
+0 Test 0
+1 Test One
+1000 Regain The Lost Life
+1010 Take a Life
+1020 Read Tombstone
+2000 Read a letter (summons)
+2001 Read a letter (summon red sign)
+2010 Check your letter (summons)
+3000 Read the letter (blood character)
+3010 Check your letters (blood letters)
+4000 Pick up Items
+4100 They take a relic
+4110 They take a relic
+4200 They take a memento
+4300 t
+4400 Ok
+4500 Reach into the flame
+5000 Rise Up a ladder
+5010 Hiccup The Ladder
+6000 Talk
+6001 Skip Conversation
+6100 Light a bonfire
+6101 They rest in bonfire
+6120 Talk (Used for most NPCs)
+7100 Open Doors _ General purpose
+7101 Open Doors _ General-purpose 101 standards
+7110 Close the door _ generic
+7200 Open the door _ generic (disabled guest)
+8000 Open Treasure Chest
+8010 Open Treasure Chest
+8100 Lift Open the Door
+8200 Start a gimmick
+8300 Launch lever
+8310 Ojo 1 vertical lever to launch lever
+8500 Entering the wall of Light (test)
+8501 Entering the wall of Light (test 2)
+8900 Pull out a sword from the Segunda grave
+8901 Pull a sword from the Segunda Grave 2
+8910 Simple Bonfire message
+8920 Behind the door open
+9000 For events
+9010 FDP Play kneel for events _ the evil spirits
+9011 FDP play for events seal the evil spirits
+9100 Warp from the event base
+9101 Warp from event base to Las Boss
+9200 Examining (for basilica brought)
+9300 M37_ Anole Revolving Bridge _ Lever (right)
+9301 M37_ Anole Revolving Bridge _ Lever (left)
+9320 M38 (right)
+9321 M38 (left)
+9330 M33 Poison swamp forest fire Jigitai
+9355 Pillage remains
+9356 Read Engraving
+9400 Messenger Tombstone (not ignited)
+9401 Messenger Tombstone (already ignited) * Text difference
+9410 Messenger Tombstone (not ignited)
+9411 Messenger Tombstone (already ignited) * Text difference
+10000 Interaction - Traverse the fog
+3001800 Fogwall - Vordt of the Boreal Valley
+3001830 Fogwall - Oceiros
+3001890 Fogwall - Dancer of the Boreal Valley
+3011800 Fogwall - Dragonslayer Armour
+3101800 Fogwall - Curse-rotted Greatwood
+3201800 Fogwall - Ancient Wyvern
+3201850 Fogwall - Nameless King
+3301800 Fogwall - Abyss Watchers
+3301850 Fogwall - Crystal Sage
+3411830 Fogwall - Twin Princes
+3501800 Fogwall - Deacons of the Deep
+3501860 Fogwall - Rosaria's Chamber
+3701800 Fogwall - Aldrich
+3701850 Fogwall - Pontiff Sulyvahn
+3701870 Fogwall - Lordran Remnants
+3801800 Fogwall - High Lord Wolnir
+3801830 Fogwall - Old Demon King
+3901800 Fogwall - Yhorm the Giant
+4001800 Fogwall - Iudex Gundyr
+4001830 Fogwall - Champion Gundyr
+4101800 Fogwall - Soul of Cinder
+4501800 Fogwall - Sister Friede
+5001800 Fogwall - Demon Prince
+5101800 Fogwall - Halflight
+5101850 Fogwall - Darkeater Midir
+5111800 Fogwall - Slave Knight Gael
+5111850 Fogwall - Shira Encounter

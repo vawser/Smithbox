@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <pair0_Value AltName="Judgement Value [0]" Wiki="" />
+    <pair0_Weight AltName="Weighting Value [0]" Wiki="" />
+    
+    <pair1_Value AltName="Judgement Value [1]" Wiki="" />
+    <pair1_Weight AltName="Weighting Value [1]" Wiki="" />
+    
+    <pair2_Value AltName="Judgement Value [2]" Wiki="" />
+    <pair2_Weight AltName="Weighting Value [2]" Wiki="" />
+    
+    <pair3_Value AltName="Judgement Value [3]" Wiki="" />
+    <pair3_Weight AltName="Weighting Value [3]" Wiki="" />
+    
+    <pair4_Value AltName="Judgement Value [4]" Wiki="" />
+    <pair4_Weight AltName="Weighting Value [4]" Wiki="" />
+    
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>WORLD_MAP_PIECE_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1221</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1222</SortID>
+    </Field>
+    <Field Def="u32 openEventFlagId">
+      <DisplayName>開放イベントフラグID</DisplayName>
+      <Description>開放条件のイベントフラグID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 openTravelAreaLeft">
+      <DisplayName>開放される踏破エリア：Xmin</DisplayName>
+      <Description>開放時に拡張する踏破エリアの座標（Xmin）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 openTravelAreaRight">
+      <DisplayName>開放される踏破エリア：Xmax</DisplayName>
+      <Description>開放時に拡張する踏破エリアの座標（Xmax）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="f32 openTravelAreaTop">
+      <DisplayName>開放される踏破エリア：Ymin</DisplayName>
+      <Description>開放時に拡張する踏破エリアの座標（Ymin）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="f32 openTravelAreaBottom">
+      <DisplayName>開放される踏破エリア：Ymax</DisplayName>
+      <Description>開放時に拡張する踏破エリアの座標（Ymax）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="u32 acquisitionEventFlagId">
+      <DisplayName>入手演出イベントフラグID</DisplayName>
+      <Description>入手演出開始条件のイベントフラグID。いずれかの地図断片ひとつのみがOnになっている想定</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 acquisitionEventScale = 1">
+      <DisplayName>入手演出：表示倍率</DisplayName>
+      <Description>入手演出時の表示倍率</Description>
+      <DisplayFormat>%.4f</DisplayFormat>
+      <Minimum>0.0001</Minimum>
+      <Maximum>2</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 acquisitionEventCenterX">
+      <DisplayName>入手演出：中心座標X</DisplayName>
+      <Description>入手演出時の中心座標（X）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="f32 acquisitionEventCenterY">
+      <DisplayName>入手演出：中心座標Y</DisplayName>
+      <Description>入手演出時の中心座用（Y）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="f32 acquisitionEventResScale = 1">
+      <DisplayName>入手演出：リソース倍率</DisplayName>
+      <Description>入手演出用目隠しリソースの表示倍率</Description>
+      <DisplayFormat>%.4f</DisplayFormat>
+      <Minimum>0.0001</Minimum>
+      <Maximum>2</Maximum>
+      <Increment>0.0001</Increment>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="f32 acquisitionEventResOffsetX">
+      <DisplayName>入手演出：リソースオフセットX</DisplayName>
+      <Description>入手演出用目隠しリソースの表示位置オフセット（X）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>1210</SortID>
+    </Field>
+    <Field Def="f32 acquisitionEventResOffsetY">
+      <DisplayName>入手演出：リソースオフセットY</DisplayName>
+      <Description>入手演出用目隠しリソースの表示位置オフセット（Y）</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>1</Increment>
+      <SortID>1220</SortID>
+    </Field>
+    <Field Def="dummy8 pad[12]">
+      <DisplayName>パッド</DisplayName>
+      <SortID>1223</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

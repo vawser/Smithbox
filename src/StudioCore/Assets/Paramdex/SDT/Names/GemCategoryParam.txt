@@ -1,4 +1,0 @@
-0 Nothing happens -- なにもおこらない
-1 Attack system -- 攻撃系
-2 Recovery system -- 回復系
-3 Status system -- ステータス系

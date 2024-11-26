@@ -1,0 +1,10 @@
+0 torch
+1 candle
+2 Window light (Mausoleum)
+3 Window light (barracks)
+4 Window light (passageway)
+10 lantern (outdoor)
+11 Cantera (indoor)
+20 Boss Room for TGS (Large)
+21 Boss room for TGS (small)
+40 Phalanx Core

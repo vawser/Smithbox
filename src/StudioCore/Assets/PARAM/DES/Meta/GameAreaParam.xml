@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <bonuSoul_single AltName="bonuｓSoul_single" />
+    <bonusSoul_multi AltName="bonusSoul_multi" />
+    <pad AltName="pad" />
+  </Field>
+  <Self />
+</PARAMMETA>

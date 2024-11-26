@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_ASSEMBLY_DESIGN_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s16 HEAD">
+      <DisplayName>Head</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 CORE">
+      <DisplayName>Core</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 ARMS">
+      <DisplayName>Arms</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 LEGS">
+      <DisplayName>Legs</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 FCS">
+      <DisplayName>Fcs</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 GENE">
+      <DisplayName>Gene</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 BOOSTER">
+      <DisplayName>Booster</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 BB">
+      <DisplayName>BackBoost</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s16 SB">
+      <DisplayName>SideBoost</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 OB">
+      <DisplayName>OverBoost</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 ARMWEP_R">
+      <DisplayName>ArmUnitR</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 ARMWEP_L">
+      <DisplayName>ArmUnitL</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s16 BACK_R">
+      <DisplayName>BackUnitR</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s16 BACK_L">
+      <DisplayName>BackUnitL</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s16 SHOULDER">
+      <DisplayName>Shoulder</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 HANGER_R">
+      <DisplayName>HangerR</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s16 HANGER_L">
+      <DisplayName>HangerL</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s16 HEAD_T">
+      <DisplayName>HeadT</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s16 HEAD_S_R">
+      <DisplayName>HeadS_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s16 HEAD_S_L">
+      <DisplayName>HeadS_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s16 CORE_U_R">
+      <DisplayName>CoreU_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s16 CORE_U_L">
+      <DisplayName>CoreU_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="s16 CORE_L_R">
+      <DisplayName>CoreL_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="s16 CORE_L_L">
+      <DisplayName>CoreL_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="s16 ARMS_R">
+      <DisplayName>ArmsR</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s16 ARMS_L">
+      <DisplayName>ArmsL</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="s16 LEGS_B">
+      <DisplayName>LegsB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="s16 LEGS_U_R">
+      <DisplayName>LegsU_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="s16 LEGS_U_L">
+      <DisplayName>LegsU_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="s16 LEGS_U_RB">
+      <DisplayName>LegsU_RB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s16 LEGS_U_LB">
+      <DisplayName>LegsU_LB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="s16 LEGS_M_R">
+      <DisplayName>LegsM_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="s16 LEGS_M_L">
+      <DisplayName>LegsM_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s16 LEGS_M_RB">
+      <DisplayName>LegsM_RB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="s16 LEGS_M_LB">
+      <DisplayName>LegsM_LB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s16 LEGS_L_R">
+      <DisplayName>LegsL_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="s16 LEGS_L_L">
+      <DisplayName>LegsL_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="s16 LEGS_L_RB">
+      <DisplayName>LegsL_RB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="s16 LEGS_L_LB">
+      <DisplayName>LegsL_LB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="u16 COLORING_ID">
+      <DisplayName>カラーリングID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u16 EMBLEM_ID">
+      <DisplayName>エンブレムID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="u16 DECAL_ID">
+      <DisplayName>デカールID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="s8 SQUAD_NUMBER = -1">
+      <DisplayName>背番号</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[11]">
+      <DisplayName>予約</DisplayName>
+      <SortID>45</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

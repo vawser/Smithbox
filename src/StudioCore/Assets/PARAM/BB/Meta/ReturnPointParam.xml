@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <areaNo AltName="Area" />
+    <blockNo AltName="Block" />
+    <returnPointEntityId AltName="Return Point Entity ID" />
+    <returnAnimId AltName="Return Animation ID" />
+    <isRegistDeadReturn AltName="Is Resurrection Location" Wiki="Should it be registered as a resurrection location during warp or death?" IsBool=""  />
+    <warpChairNo AltName="Warp Chair Identification Number" />
+    <pad1 Padding="" />
+  </Field>
+  <Self Wiki="Lamp (Bonfire) Parameters"/>
+</PARAMMETA>

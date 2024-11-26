@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>HIT_EFFECT_SFX_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Slash_S">
+      <DisplayName>斬撃：小</DisplayName>
+      <Description>斬撃：小</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="s32 Slash_M">
+      <DisplayName>斬撃：中</DisplayName>
+      <Description>斬撃：中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="s32 Slash_L">
+      <DisplayName>斬撃：大</DisplayName>
+      <Description>斬撃：大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="s32 Slash_LL">
+      <DisplayName>斬撃：特大</DisplayName>
+      <Description>斬撃：特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="s32 Slash_LLL">
+      <DisplayName>斬撃：特特大</DisplayName>
+      <Description>斬撃：特特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="s32 Thrust_S">
+      <DisplayName>刺突：小</DisplayName>
+      <Description>刺突：小</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>11000</SortID>
+    </Field>
+    <Field Def="s32 Thrust_M">
+      <DisplayName>刺突：中</DisplayName>
+      <Description>刺突：中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>12000</SortID>
+    </Field>
+    <Field Def="s32 Thrust_L">
+      <DisplayName>刺突：大</DisplayName>
+      <Description>刺突：大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>13000</SortID>
+    </Field>
+    <Field Def="s32 Thrust_LL">
+      <DisplayName>刺突：特大</DisplayName>
+      <Description>刺突：特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>14000</SortID>
+    </Field>
+    <Field Def="s32 Thrust_LLL">
+      <DisplayName>刺突：特特大</DisplayName>
+      <Description>刺突：特特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>15000</SortID>
+    </Field>
+    <Field Def="s32 Blow_S">
+      <DisplayName>打撃：小</DisplayName>
+      <Description>打撃：小</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>16000</SortID>
+    </Field>
+    <Field Def="s32 Blow_M">
+      <DisplayName>打撃：中</DisplayName>
+      <Description>打撃：中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>17000</SortID>
+    </Field>
+    <Field Def="s32 Blow_L">
+      <DisplayName>打撃：大</DisplayName>
+      <Description>打撃：大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>18000</SortID>
+    </Field>
+    <Field Def="s32 Blow_LL">
+      <DisplayName>打撃：特大</DisplayName>
+      <Description>打撃：特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>19000</SortID>
+    </Field>
+    <Field Def="s32 Blow_LLL">
+      <DisplayName>打撃：特特大</DisplayName>
+      <Description>打撃：特特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>20000</SortID>
+    </Field>
+    <Field Def="s32 Blast_S">
+      <DisplayName>爆風：小</DisplayName>
+      <Description>爆風：小</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>21000</SortID>
+    </Field>
+    <Field Def="s32 Blast_M">
+      <DisplayName>爆風：中</DisplayName>
+      <Description>爆風：中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>22000</SortID>
+    </Field>
+    <Field Def="s32 Blast_L">
+      <DisplayName>爆風：大</DisplayName>
+      <Description>爆風：大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>23000</SortID>
+    </Field>
+    <Field Def="s32 Blast_LL">
+      <DisplayName>爆風：特大</DisplayName>
+      <Description>爆風：特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>24000</SortID>
+    </Field>
+    <Field Def="s32 Blast_LLL">
+      <DisplayName>爆風：特特大</DisplayName>
+      <Description>爆風：特特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>25000</SortID>
+    </Field>
+    <Field Def="s32 Bullet_S">
+      <DisplayName>弾丸：小</DisplayName>
+      <Description>弾丸：小</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 Bullet_M">
+      <DisplayName>弾丸：中</DisplayName>
+      <Description>弾丸：中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="s32 Bullet_L">
+      <DisplayName>弾丸：大</DisplayName>
+      <Description>弾丸：大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="s32 Bullet_LL">
+      <DisplayName>弾丸：特大</DisplayName>
+      <Description>弾丸：特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="s32 Bullet_LLL">
+      <DisplayName>弾丸：特特大</DisplayName>
+      <Description>弾丸：特特大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Slash_S:1">
+      <DisplayName>着弾位置に追従する（斬撃：小）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Slash_M:1">
+      <DisplayName>着弾位置に追従する（斬撃：中）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>7100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Slash_L:1">
+      <DisplayName>着弾位置に追従する（斬撃：大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>8100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Slash_LL:1">
+      <DisplayName>着弾位置に追従する（斬撃：特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>9100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Slash_LLL:1">
+      <DisplayName>着弾位置に追従する（斬撃：特特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>10100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Thrust_S:1">
+      <DisplayName>着弾位置に追従する（刺突：小）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>11100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Thrust_M:1">
+      <DisplayName>着弾位置に追従する（刺突：中）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>12100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Thrust_L:1">
+      <DisplayName>着弾位置に追従する（刺突：大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>13100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Thrust_LL:1">
+      <DisplayName>着弾位置に追従する（刺突：特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>14100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Thrust_LLL:1">
+      <DisplayName>着弾位置に追従する（刺突：特特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>15100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blow_S:1">
+      <DisplayName>着弾位置に追従する（打撃：小）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>16100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blow_M:1">
+      <DisplayName>着弾位置に追従する（打撃：中）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>17100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blow_L:1">
+      <DisplayName>着弾位置に追従する（打撃：大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>18100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blow_LL:1">
+      <DisplayName>着弾位置に追従する（打撃：特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>19100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blow_LLL:1">
+      <DisplayName>着弾位置に追従する（打撃：特特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>20100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blast_S:1">
+      <DisplayName>着弾位置に追従する（爆風：小）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>21100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blast_M:1">
+      <DisplayName>着弾位置に追従する（爆風：中）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>22100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blast_L:1">
+      <DisplayName>着弾位置に追従する（爆風：大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>23100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blast_LL:1">
+      <DisplayName>着弾位置に追従する（爆風：特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>24100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Blast_LLL:1">
+      <DisplayName>着弾位置に追従する（爆風：特特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>25100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Bullet_S:1">
+      <DisplayName>着弾位置に追従する（弾丸：小）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Bullet_M:1">
+      <DisplayName>着弾位置に追従する（弾丸：中）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Bullet_L:1">
+      <DisplayName>着弾位置に追従する（弾丸：大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Bullet_LL:1">
+      <DisplayName>着弾位置に追従する（弾丸：特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="u8 bFollow_Bullet_LLL:1">
+      <DisplayName>着弾位置に追従する（弾丸：特特大）</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>2フレーム以上連続で着弾したときにSFXを追従させるか（OFFにすると新規作成）</Description>
+      <Maximum>1</Maximum>
+      <SortID>5100</SortID>
+    </Field>
+    <Field Def="u8 reserved01:7">
+      <DisplayName>予約領域</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+      <SortID>99999999</SortID>
+    </Field>
+    <Field Def="s32 Critical_Small">
+      <DisplayName>クリティカル：小</DisplayName>
+      <Description>クリティカル：小</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>50000</SortID>
+    </Field>
+    <Field Def="s32 Critical_Middle">
+      <DisplayName>クリティカル：中</DisplayName>
+      <Description>クリティカル：中</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>50000</SortID>
+    </Field>
+    <Field Def="s32 Critical_Large">
+      <DisplayName>クリティカル：大</DisplayName>
+      <Description>クリティカル：大</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>50000</SortID>
+    </Field>
+    <Field Def="dummy8 reserved02[124]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>100000000</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

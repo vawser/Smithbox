@@ -1,0 +1,233 @@
+0 Input test -- 入力テスト
+1000 Platoon Action Update Distance (m) -- 小隊行動更新距離（m）
+1001 Platoon action update time (seconds) -- 小隊行動更新時間（秒）
+1400 Platoon Action Limit Point Attack Suppression -- 小隊行動制限ポイント　攻撃抑制
+1401 Platoon Action Restriction Points Watching -- 小隊行動制限ポイント　観戦
+1402 Platoon Action Restriction Point Withdrawal -- 小隊行動制限ポイント　撤退
+1500 Support → Suppressed Horse Level Change Guarantee Time (seconds) -- 活→抑 野次馬レベル変動保証時間（秒）
+1501 Active ← Suppressed Nojima Level Variation Guarantee Time (seconds) -- 活←抑 野次馬レベル変動保証時間（秒）
+1502 Control → Kannojima Level Change Guarantee Time (seconds) -- 抑→観 野次馬レベル変動保証時間（秒）
+1503 Control ← Nojima Level Change Guarantee Time (seconds) -- 抑←観 野次馬レベル変動保証時間（秒）
+1504 Activity ← Nojima Level Change Guarantee Time (seconds) -- 活←観 野次馬レベル変動保証時間（秒）
+1505 Kan→ Removal Nojima Level Change Guarantee Time (seconds) -- 観→撤 野次馬レベル変動保証時間（秒）
+1506 Kan← Removal Nojima Level Change Guarantee Time (seconds) -- 観←撤 野次馬レベル変動保証時間（秒）
+1507 Active ← Removal Nojima Level Change Guarantee Time (seconds) -- 活←撤 野次馬レベル変動保証時間（秒）
+1600 Time (seconds) not to become a field horse after damage -- ダメージ後野次馬にならない時間（秒）
+1700 Maximum distance calculation value variation due to HP decrease -- HP減少による距離計算値変動最大
+1701 Maximum distance calculation value variation due to being away from Generator -- Generatorから離れた事による距離計算値変動最大
+1702 Maximum distance calculation value variation due to being out of front of the target -- ターゲットの正面から外れる事による距離計算値変動最大
+2000 LV1 Thought Weight Score: Super Oversized -- LV1 思考重み点数：超超特大
+2001 LV1 Thought Weight: Super Oversized -- LV1 思考重み点数：超特大
+2002 LV1 Thought Weight: Oversized -- LV1 思考重み点数：特大
+2003 LV1 Thought Weight: Large -- LV1 思考重み点数：大
+2004 LV1 Thought Weight: Medium -- LV1 思考重み点数：中
+2005 LV1 Thought Weight: Small -- LV1 思考重み点数：小
+2006 LV1 Thought Weight: Ignore -- LV1 思考重み点数：無視
+2100 LV2 Thought Weight Score: Super Oversized -- LV2 思考重み点数：超超特大
+2101 LV2 Thought Weight: Super Oversized -- LV2 思考重み点数：超特大
+2102 LV2 Thought Weight: Oversized -- LV2 思考重み点数：特大
+2103 LV2 Thought Weight: Large -- LV2 思考重み点数：大
+2104 LV2 Thought Weight: Medium -- LV2 思考重み点数：中
+2105 LV2 Thought Weight: Small -- LV2 思考重み点数：小
+2106 LV2 Thought Weight: Ignore -- LV2 思考重み点数：無視
+2200 LV3 Thought Weight Score: Super Oversized -- LV3 思考重み点数：超超特大
+2201 LV3 Thought Weight: Super Oversized -- LV3 思考重み点数：超特大
+2202 LV3 Thought Weight: Oversized -- LV3 思考重み点数：特大
+2203 LV3 Thought Weight: Large -- LV3 思考重み点数：大
+2204 LV3 Thought Weight: Medium -- LV3 思考重み点数：中
+2205 LV3 Thought Weight: Small -- LV3 思考重み点数：小
+2206 LV3 Thought Weight: Ignore -- LV3 思考重み点数：無視
+2300 LV4 Thought Weight Score: Super Oversized -- LV4 思考重み点数：超超特大
+2301 LV4 Thought Weight: Super Oversized -- LV4 思考重み点数：超特大
+2302 LV4 Thought Weight: Oversized -- LV4 思考重み点数：特大
+2303 LV4 Thought Weight: Large -- LV4 思考重み点数：大
+2304 LV4 Thought Weight: Medium -- LV4 思考重み点数：中
+2305 LV4 Thought Weight: Small -- LV4 思考重み点数：小
+2306 LV4 Thought Weight: Ignore -- LV4 思考重み点数：無視
+2400 LV5 Thought Weight Score: Super Oversized -- LV5 思考重み点数：超超特大
+2401 LV5 Thought Weight: Super Oversized -- LV5 思考重み点数：超特大
+2402 LV5 Thought Weight: Oversized -- LV5 思考重み点数：特大
+2403 LV5 Thought Weight: Large -- LV5 思考重み点数：大
+2404 LV5 Thought Weight: Medium -- LV5 思考重み点数：中
+2405 LV5 Thought Weight: Small -- LV5 思考重み点数：小
+2406 LV5 Thought Weight: Ignore -- LV5 思考重み点数：無視
+3000 Bullet speed: Stop (0m/s)  -- 弾速度：停止　（0m/s)
+3001 Bullet speed: Extra slow (5m/s)  -- 弾速度：特遅　（5m/s)
+3002 Bullet speed: Slow (10m/s)  -- 弾速度：遅　　（10m/s)
+3003 Bullet speed: Medium (25m/s)  -- 弾速度：中　　（25m/s)
+3004 Bullet speed: Speed (35m/s)  -- 弾速度：速　　（35m/s)
+3005 Bullet speed: Speed (45m/s)  -- 弾速度：特速　（45m/s)
+4000 Item Chase Table Extremely Low LV1 -- アイテム追撃テーブル　極低 LV1
+4001 Item Chase Table Extremely Low LV2 -- アイテム追撃テーブル　極低 LV2
+4002 Item Chase Table Extremely Low LV3 -- アイテム追撃テーブル　極低 LV3
+4003 Item Chase Table Extremely Low LV4 -- アイテム追撃テーブル　極低 LV4
+4004 Item Chase Table Extremely Low LV5 -- アイテム追撃テーブル　極低 LV5
+4010 Item Chase Table Low LV1 -- アイテム追撃テーブル　低 LV1
+4011 Item Chase Table Low LV2 -- アイテム追撃テーブル　低 LV2
+4012 Item Chase Table Low LV3 -- アイテム追撃テーブル　低 LV3
+4013 Item Chase Table Low LV4 -- アイテム追撃テーブル　低 LV4
+4014 Item Chase Table Low LV5 -- アイテム追撃テーブル　低 LV5
+4020 Item Chase Table In LV1 -- アイテム追撃テーブル　中 LV1
+4021 Item Chase Table In LV2 -- アイテム追撃テーブル　中 LV2
+4022 Item Chase Table In LV3 -- アイテム追撃テーブル　中 LV3
+4023 Item Chase Table In LV4 -- アイテム追撃テーブル　中 LV4
+4024 Item Chase Table Lv5 -- アイテム追撃テーブル　中 LV5
+4030 Item Chase Table High LV1 -- アイテム追撃テーブル　高 LV1
+4031 Item Chase Table High LV2 -- アイテム追撃テーブル　高 LV2
+4032 Item Chase Table High LV3 -- アイテム追撃テーブル　高 LV3
+4033 Item Chase Table High LV4 -- アイテム追撃テーブル　高 LV4
+4034 Item Chase Table High LV5 -- アイテム追撃テーブル　高 LV5
+4040 Item Chase Table Extreme Lylv1 -- アイテム追撃テーブル　極高 LV1
+4041 Item Chase Table Extreme Lylv2 -- アイテム追撃テーブル　極高 LV2
+4042 Item Chase Table Extreme Lylv3 -- アイテム追撃テーブル　極高 LV3
+4043 Item Chase Table Extreme Lylv4 -- アイテム追撃テーブル　極高 LV4
+4044 Item Chase Table Extreme Lylv5 -- アイテム追撃テーブル　極高 LV5
+4050 Item Chase Table Other 1 LV1 -- アイテム追撃テーブル　その他1 LV1
+4051 Item Chase Table Other 1 LV2 -- アイテム追撃テーブル　その他1 LV2
+4052 Item Chase Table Other 1 LV3 -- アイテム追撃テーブル　その他1 LV3
+4053 Item Chase Table Other 1 LV4 -- アイテム追撃テーブル　その他1 LV4
+4054 Item Chase Table Other 1 LV5 -- アイテム追撃テーブル　その他1 LV5
+4060 Item Chase Table Other 2 LV1 -- アイテム追撃テーブル　その他2 LV1
+4061 Item Chase Table Other 2 LV2 -- アイテム追撃テーブル　その他2 LV2
+4062 Item Chase Table Other 2 LV3 -- アイテム追撃テーブル　その他2 LV3
+4063 Item Chase Table Other 2 LV4 -- アイテム追撃テーブル　その他2 LV4
+4064 Item Chase Table Other 2 LV5 -- アイテム追撃テーブル　その他2 LV5
+4070 Item Chase Table Other 3 LV1 -- アイテム追撃テーブル　その他3 LV1
+4071 Item Chase Table Other 3 LV2 -- アイテム追撃テーブル　その他3 LV2
+4072 Item Chase Table Other 3 LV3 -- アイテム追撃テーブル　その他3 LV3
+4073 Item Chase Table Other 3 LV4 -- アイテム追撃テーブル　その他3 LV4
+4074 Item Chase Table Other 3 LV5 -- アイテム追撃テーブル　その他3 LV5
+5000 Guard collapse table very low LV1 -- ガード崩れテーブル　極低 LV1
+5001 Guard collapse table very low LV2 -- ガード崩れテーブル　極低 LV2
+5002 Guard collapse table very low LV3 -- ガード崩れテーブル　極低 LV3
+5003 Guard collapse table very low LV4 -- ガード崩れテーブル　極低 LV4
+5004 Guard collapse table very low LV5 -- ガード崩れテーブル　極低 LV5
+5010 Guard collapse table low LV1 -- ガード崩れテーブル　低 LV1
+5011 Guard collapse table Low LV2 -- ガード崩れテーブル　低 LV2
+5012 Guard collapse table low LV3 -- ガード崩れテーブル　低 LV3
+5013 Guard collapse table Low LV4 -- ガード崩れテーブル　低 LV4
+5014 Guard collapse table Low LV5 -- ガード崩れテーブル　低 LV5
+5020 Guard collapse table in LV1 -- ガード崩れテーブル　中 LV1
+5021 Guard collapse table in LV2 -- ガード崩れテーブル　中 LV2
+5022 Guard collapse table in LV3 -- ガード崩れテーブル　中 LV3
+5023 Guard collapse table in LV4 -- ガード崩れテーブル　中 LV4
+5024 Guard collapse table in LV5 -- ガード崩れテーブル　中 LV5
+5030 Guard collapse table high LV1 -- ガード崩れテーブル　高 LV1
+5031 Guard collapse table High LV2 -- ガード崩れテーブル　高 LV2
+5032 Guard collapse table high LV3 -- ガード崩れテーブル　高 LV3
+5033 Guard collapse table High LV4 -- ガード崩れテーブル　高 LV4
+5034 Guard collapse table High LV5 -- ガード崩れテーブル　高 LV5
+5040 Guard collapse table extremely high LV1 -- ガード崩れテーブル　極高 LV1
+5041 Guard collapse table extremely high LV2 -- ガード崩れテーブル　極高 LV2
+5042 Guard collapse table extremely high LV3 -- ガード崩れテーブル　極高 LV3
+5043 Guard collapse table extremely high LV4 -- ガード崩れテーブル　極高 LV4
+5044 Guard collapse table extremely high LV5 -- ガード崩れテーブル　極高 LV5
+5050 Guard collapse table Other 1 LV1 -- ガード崩れテーブル　その他1 LV1
+5051 Guard collapse table Other 1 LV2 -- ガード崩れテーブル　その他1 LV2
+5052 Guard collapse table Other 1 LV3 -- ガード崩れテーブル　その他1 LV3
+5053 Guard collapse table Other 1 LV4 -- ガード崩れテーブル　その他1 LV4
+5054 Guard collapse table Other 1 LV5 -- ガード崩れテーブル　その他1 LV5
+5060 Guard collapse table Other 2 LV1 -- ガード崩れテーブル　その他2 LV1
+5061 Guard collapse table Other 2 LV2 -- ガード崩れテーブル　その他2 LV2
+5062 Guard collapse table Other 2 LV3 -- ガード崩れテーブル　その他2 LV3
+5063 Guard collapse table Other 2 LV4 -- ガード崩れテーブル　その他2 LV4
+5064 Guard collapse table Other 2 LV5 -- ガード崩れテーブル　その他2 LV5
+5070 Guard collapse table Other 3 LV1 -- ガード崩れテーブル　その他3 LV1
+5071 Guard collapse table Other 3 LV2 -- ガード崩れテーブル　その他3 LV2
+5072 Guard collapse table Other 3 LV3 -- ガード崩れテーブル　その他3 LV3
+5073 Guard collapse table Other 3 LV4 -- ガード崩れテーブル　その他3 LV4
+5074 Guard collapse table Other 3 LV5 -- ガード崩れテーブル　その他3 LV5
+6000 Behind The Attack Table Extremely Low LV1 -- 背後攻撃テーブル　極低 LV1
+6001 Behind The Attack Table Extremely Low LV2 -- 背後攻撃テーブル　極低 LV2
+6002 Behind The Attack Table Extremely Low LV3 -- 背後攻撃テーブル　極低 LV3
+6003 Behind The Attack Table Extremely Low LV4 -- 背後攻撃テーブル　極低 LV4
+6004 Behind The Attack Table Extremely Low LV5 -- 背後攻撃テーブル　極低 LV5
+6010 Behind The Attack Table Low LV1 -- 背後攻撃テーブル　低 LV1
+6011 Behind-The-Scenes Attack Table Low LV2 -- 背後攻撃テーブル　低 LV2
+6012 Behind-the-scenes attack table Low LV3 -- 背後攻撃テーブル　低 LV3
+6013 Behind The Attack Table Low LV4 -- 背後攻撃テーブル　低 LV4
+6014 Behind The Attack Table Low LV5 -- 背後攻撃テーブル　低 LV5
+6020 Lv1 in the back attack table -- 背後攻撃テーブル　中 LV1
+6021 Lv2 in the back attack table -- 背後攻撃テーブル　中 LV2
+6022 Lv3 in the back attack table -- 背後攻撃テーブル　中 LV3
+6023 Lv4 in the back attack table -- 背後攻撃テーブル　中 LV4
+6024 Lv5 in the back attack table -- 背後攻撃テーブル　中 LV5
+6030 Behind The Attack Table High LV1 -- 背後攻撃テーブル　高 LV1
+6031 Behind The Attack Table High LV2 -- 背後攻撃テーブル　高 LV2
+6032 Behind The Attack Table High LV3 -- 背後攻撃テーブル　高 LV3
+6033 Behind The Attack Table High LV4 -- 背後攻撃テーブル　高 LV4
+6034 Behind The Attack Table High LV5 -- 背後攻撃テーブル　高 LV5
+6040 Behind The Attack Table Extremely High LV1 -- 背後攻撃テーブル　極高 LV1
+6041 Behind The Attack Table Extremely High LV2 -- 背後攻撃テーブル　極高 LV2
+6042 Behind The Attack Table Extremely High LV3 -- 背後攻撃テーブル　極高 LV3
+6043 Behind The Attack Table Extremely High LV4 -- 背後攻撃テーブル　極高 LV4
+6044 Behind The Attack Table Extremely High LV5 -- 背後攻撃テーブル　極高 LV5
+6050 Behind The Attack Table Other 1 LV1 -- 背後攻撃テーブル　その他1 LV1
+6051 Behind-the-scenes attack table Other 1 LV2 -- 背後攻撃テーブル　その他1 LV2
+6052 Behind-the-scenes attack table Other 1 LV3 -- 背後攻撃テーブル　その他1 LV3
+6053 Behind The Attack Table Other 1 LV4 -- 背後攻撃テーブル　その他1 LV4
+6054 Behind The Attack Table Other 1 LV5 -- 背後攻撃テーブル　その他1 LV5
+6060 Behind The Attack Table Other 2 LV1 -- 背後攻撃テーブル　その他2 LV1
+6061 Behind The Attack Table Other 2 LV2 -- 背後攻撃テーブル　その他2 LV2
+6062 Behind The Attack Table Other 2 LV3 -- 背後攻撃テーブル　その他2 LV3
+6063 Behind The Attack Table Other 2 LV4 -- 背後攻撃テーブル　その他2 LV4
+6064 Behind The Attack Table Other 2 LV5 -- 背後攻撃テーブル　その他2 LV5
+6070 Behind-the-scenes attack table Other 3 LV1 -- 背後攻撃テーブル　その他3 LV1
+6071 Behind-the-scenes attack table Other 3 LV2 -- 背後攻撃テーブル　その他3 LV2
+6072 Behind-the-scenes attack table Other 3 LV3 -- 背後攻撃テーブル　その他3 LV3
+6073 Behind-the-scenes attack table Other 3 LV4 -- 背後攻撃テーブル　その他3 LV4
+6074 Behind-the-scenes attack table Other 3 LV5 -- 背後攻撃テーブル　その他3 LV5
+7000 Recovery Table Extremely Low LV1 -- 回復テーブル　極低 LV1
+7001 Recovery Table Extremely Low LV2 -- 回復テーブル　極低 LV2
+7002 Recovery Table Extremely Low LV3 -- 回復テーブル　極低 LV3
+7003 Recovery Table Extremely Low LV4 -- 回復テーブル　極低 LV4
+7004 Recovery Table Extremely Low LV5 -- 回復テーブル　極低 LV5
+7010 Recovery Table Low LV1 -- 回復テーブル　低 LV1
+7011 Recovery Table Low LV2 -- 回復テーブル　低 LV2
+7012 Recovery Table Low LV3 -- 回復テーブル　低 LV3
+7013 Recovery Table Low LV4 -- 回復テーブル　低 LV4
+7014 Recovery Table Low LV5 -- 回復テーブル　低 LV5
+7020 Recovery table in LV1 -- 回復テーブル　中 LV1
+7021 Recovery table in LV2 -- 回復テーブル　中 LV2
+7022 Recovery table in LV3 -- 回復テーブル　中 LV3
+7023 Recovery table in LV4 -- 回復テーブル　中 LV4
+7024 Recovery table in LV5 -- 回復テーブル　中 LV5
+7030 Recovery Table High LV1 -- 回復テーブル　高 LV1
+7031 Recovery Table High LV2 -- 回復テーブル　高 LV2
+7032 Recovery Table High LV3 -- 回復テーブル　高 LV3
+7033 Recovery Table High LV4 -- 回復テーブル　高 LV4
+7034 Recovery Table High LV5 -- 回復テーブル　高 LV5
+7040 Recovery Table Extremely High LV1 -- 回復テーブル　極高 LV1
+7041 Recovery Table ExtremeLy High LV2 -- 回復テーブル　極高 LV2
+7042 Recovery Table ExtremeLy High LV3 -- 回復テーブル　極高 LV3
+7043 Recovery Table ExtremeLy High LV4 -- 回復テーブル　極高 LV4
+7044 Recovery Table ExtremeLy High LV5 -- 回復テーブル　極高 LV5
+7050 Recovery Table Other 1 LV1 -- 回復テーブル　その他1 LV1
+7051 Recovery Table Other 1 LV2 -- 回復テーブル　その他1 LV2
+7052 Recovery Table Other 1 LV3 -- 回復テーブル　その他1 LV3
+7053 Recovery Table Other 1 LV4 -- 回復テーブル　その他1 LV4
+7054 Recovery Table Other 1 LV5 -- 回復テーブル　その他1 LV5
+7060 Recovery Table Other 2 LV1 -- 回復テーブル　その他2 LV1
+7061 Recovery Table Other 2 LV2 -- 回復テーブル　その他2 LV2
+7062 Recovery Table Other 2 LV3 -- 回復テーブル　その他2 LV3
+7063 Recovery Table Other 2 LV4 -- 回復テーブル　その他2 LV4
+7064 Recovery Table Other 2 LV5 -- 回復テーブル　その他2 LV5
+7070 Recovery Table Other 3 LV1 -- 回復テーブル　その他3 LV1
+7071 Recovery Table Other 3 LV2 -- 回復テーブル　その他3 LV2
+7072 Recovery Table Other 3 LV3 -- 回復テーブル　その他3 LV3
+7073 Recovery Table Other 3 LV4 -- 回復テーブル　その他3 LV4
+7074 Recovery Table Other 3 LV5 -- 回復テーブル　その他3 LV5
+10500 Is it on the screen: Left magnification -- スクリーン内に存在するか：左倍率
+10501 Is it present in the screen: Right magnification -- スクリーン内に存在するか：右倍率
+10502 Is it present in the screen: up magnification -- スクリーン内に存在するか：上倍率
+10503 Does it exist on the screen: Lower magnification -- スクリーン内に存在するか：下倍率
+20000 LV1 Action Loop Time Circumferential Magnification -- LV1 行動ループ時間周回増加倍率
+20001 LV2 Action Loop Time Circumferential Magnification -- LV2 行動ループ時間周回増加倍率
+20002 LV3 Action Loop Time Circumferential Magnification -- LV3 行動ループ時間周回増加倍率
+20003 LV4 Action Loop Time Circumferential Magnification -- LV4 行動ループ時間周回増加倍率
+20004 LV5 Action Loop Time Circumferential Magnification -- LV5 行動ループ時間周回増加倍率
+20100 LV1 Action Loop Time Circumferential Reduction Magnification -- LV1 行動ループ時間周回減少倍率
+20101 LV2 Action Loop Time Circumferential Reduction Magnification -- LV2 行動ループ時間周回減少倍率
+20102 LV3 Action Loop Time Circumferential Reduction Magnification -- LV3 行動ループ時間周回減少倍率
+20103 LV4 Action Loop Time Circumferential Reduction Magnification -- LV4 行動ループ時間周回減少倍率
+20104 LV5 Action Loop Time Circumferential Reduction Magnification -- LV5 行動ループ時間周回減少倍率

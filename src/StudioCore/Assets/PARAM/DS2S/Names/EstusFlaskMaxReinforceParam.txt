@@ -1,0 +1,2 @@
+0 Number of times used -- 使用回数レベル
+1 Effect level -- 効果量レベル

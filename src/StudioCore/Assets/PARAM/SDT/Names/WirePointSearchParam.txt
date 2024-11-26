@@ -1,0 +1,20 @@
+0 Default -- デフォルト
+100 (Test) Depends on falling or player action -- （テスト）落下とかプレイヤーアクションに依存
+10100 (Test) Designated by map or event -- （テスト）マップやイベントで指定
+10200 Samurai residence_Expanded recognition range -- 武家屋敷_認識範囲だけ拡大
+11010 Hidden prison _ Turn off the off-screen display inside the well -- 隠し牢_井戸内で画面外表示を切る
+11020 Hidden prison_loophole Maebori -- 隠し牢_抜け穴前堀
+11100 Castle_Cavalry Warrior Boss Map -- 城下_騎馬武者ボスマップ
+11110 Castle_Busshi Demon_Battlefield Ruins -- 城下_仏師鬼_戦場跡
+11500 Honjo_wire to the valley side -- 本城_渓谷側へのワイヤー
+11510 Wire to Honjo_Tokugawa_Kite -- 本城_徳川_凧へのワイヤー
+11520 Wire to Honjo_Ninja _Uchibori Takebashi -- 本城_忍軍_内堀竹橋へのワイヤー
+13000 Dungeon_Immortal Execution Table -- 地下牢_不死の処刑台
+17000 Valley_Yasha Monkey_Bodhisattva Lake -- 渓谷_夜叉猿_菩薩湖
+17010 Valley_wide valley dive -- 渓谷_広い谷ダイブ
+17020 Valley_Snake Persimmon Room -- 渓谷_蛇柿部屋
+19920 Temple design map _ valley crossing -- 寺設計マップ_谷渡り
+19921 Temple design map_infinite corridor -- 寺設計マップ_無限回廊
+25000 Submerged City_Sea of Clouds_Mermaid Dragon Battle_Short Distance (Near Tentacles) -- 水没都_雲海_人魚竜戦_近距離(触手付近)
+25010 Submerged City_Sea of Clouds_Mermaid Dragon Battle_Long Distance -- 水没都_雲海_人魚竜戦_遠距離
+25020 Submerged city_sea of clouds_old dragon -- 水没都_雲海_翁竜

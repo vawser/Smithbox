@@ -1,0 +1,8 @@
+0 PS4 -- PS4
+1 PS4 Pro -- PS4Pro
+2 Xbox One -- XboxOne
+3 XboxOneX -- XboxOneX
+4 Windows Low -- Windows Low
+5 Windows Middle -- Windows Middle
+6 Windows High -- Windows High
+7 Stadia -- Stadia

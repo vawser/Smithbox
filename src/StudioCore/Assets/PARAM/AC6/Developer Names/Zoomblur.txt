@@ -1,0 +1,7 @@
+0 invalid value -- 無効値
+100 boost move -- ブースト移動
+1000 big QB -- 大QB
+2000 Tank_QB attack -- タンク_QBアタック
+2100 Tank_QB Stomp -- タンク_QBストンプ
+3000 fast movement -- 高速移動
+9000 [Event] Catapult movement -- 【イベント】カタパルト移動

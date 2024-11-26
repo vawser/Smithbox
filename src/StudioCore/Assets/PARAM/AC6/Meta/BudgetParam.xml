@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the memory budget limits for various asset groups." />
+  
+  <Field>
+    <vram_all 
+    AltName="VRAM: All" 
+    Wiki="VRAM: ALL (unit is MB)" />
+    
+    <vram_mapasset_tex 
+    AltName="VRAM: Asset: Textures" 
+    Wiki="VRAM: Map / Object Texture (Unit: MB)" />
+    
+    <vram_mapasset_mdl 
+    AltName="VRAM: Asset: Models" 
+    Wiki="VRAM: Map / object model (in MB)" />
+    
+    <vram_map 
+    AltName="VRAM: Map" 
+    Wiki="VRAM: Map (in MB)" />
+    
+    <vram_chr 
+    AltName="VRAM: Character" 
+    Wiki="VRAM: Character (unit is MB)" />
+    
+    <vram_parts 
+    AltName="VRAM: Parts" 
+    Wiki="VRAM: Parts (unit is MB)" />
+    
+    <vram_sfx 
+    AltName="VRAM: Particles" 
+    Wiki="VRAM: SFX (unit is MB)" />
+    
+    <vram_chr_tex 
+    AltName="VRAM: Characters: Textures" 
+    Wiki="VRAM: Character texture (unit is MB)" />
+    
+    <vram_chr_mdl 
+    AltName="VRAM: Characters: Models" 
+    Wiki="VRAM: Character model (unit is MB)" />
+    
+    <vram_ac_parts_tex 
+    AltName="VRAM: AC Parts: Textures" 
+    Wiki="VRAM: Parts texture (unit is MB)" />
+    
+    <vram_ac_parts_mdl 
+    AltName="VRAM: AC Parts: Models" 
+    Wiki="VRAM: Parts model (unit is MB)" />
+    
+    <vram_ene_parts_tex 
+    AltName="VRAM: Enemy Parts: Textures" 
+    Wiki="VRAM: Parts texture (unit is MB)" />
+    
+    <vram_ene_parts_mdl 
+    AltName="VRAM: Enemy Parts: Models" 
+    Wiki="VRAM: Parts model (unit is MB)" />
+    
+    <vram_sfx_tex 
+    AltName="VRAM: Particles: Textures" 
+    Wiki="VRAM: SFX texture (unit is MB)" />
+    
+    <vram_sfx_mdl 
+    AltName="VRAM: Particles: Models" 
+    Wiki="VRAM: SFX model (in MB)" />
+    
+    <vram_gi 
+    AltName="VRAM: Global Illumination" 
+    Wiki="VRAM: Gi (unit is MB)" />
+    
+    <vram_menu_tex 
+    AltName="VRAM: Menu: Textures" 
+    Wiki="VRAM: Menu (unit is MB)" />
+    
+    <vram_decal_rt 
+    AltName="VRAM: Decals: Raytracing" 
+    Wiki="VRAM: DECAL render target (unit is MB)" />
+    
+    <vram_decal 
+    AltName="VRAM: Decals" 
+    Wiki="VRAM: DECAL (unit is MB)" />
+    
+    <reserve_0 
+    AltName="" 
+    Padding=""/>
+    
+    <vram_other_tex 
+    AltName="VRAM: Other: Textures" 
+    Wiki="VRAM: Other models (in MB)" />
+    
+    <vram_other_mdl 
+    AltName="VRAM: Other: Models" 
+    Wiki="VRAM: Other textures (in MB)" />
+    
+    <havok_anim 
+    AltName="HAVOK: Animations" 
+    Wiki="HAVOK: Animation (unit is MB)" />
+    
+    <havok_ins 
+    AltName="HAVOK: Placement" 
+    Wiki="HAVOK: Placement (unit is MB)" />
+    
+    <havok_hit 
+    AltName="HAVOK: Collisions" 
+    Wiki="HAVOK: Hit (unit is MB)" />
+    
+    <vram_other 
+    AltName="VRAM: Other" 
+    Wiki="VRAM: Other (unit is MB)" />
+    
+    <vram_detail_all 
+    AltName="VRAM: Total Value" 
+    Wiki="VRAM: Total value (unit is MB)" />
+    
+    <vram_chr_and_parts 
+    AltName="VRAM: Characters and Parts" 
+    Wiki="VRAM: Total value of characters and parts (unit is MB)" />
+    
+    <vram_gs
+    AltName="VRAM: GS"
+    Wiki="VRAM: GS (unit is MB)" />
+    
+    <reserve
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

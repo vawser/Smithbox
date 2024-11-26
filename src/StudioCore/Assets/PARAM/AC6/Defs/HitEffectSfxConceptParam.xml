@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>HIT_EFFECT_SFX_CONCEPT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 atkIron_1">
+      <DisplayName>鉄製：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>鉄製：概念１（実ブレ、弾丸用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 atkIron_2">
+      <DisplayName>鉄製：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>鉄製：概念２（実ブレ、弾丸用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 atkFire_1">
+      <DisplayName>炎：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>炎：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 atkFire_2">
+      <DisplayName>炎：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>炎：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="s16 atkStun_1">
+      <DisplayName>スタン：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>スタン：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s16 atkStun_2">
+      <DisplayName>スタン：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>スタン：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>111</SortID>
+    </Field>
+    <Field Def="s16 atkEmp_1">
+      <DisplayName>emp：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>肉：概念１（生物兵器用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s16 atkEmp_2">
+      <DisplayName>emp：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>肉：概念２（生物兵器用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="s16 atkIce_1">
+      <DisplayName>氷：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>氷：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="s16 atkIce_2">
+      <DisplayName>氷：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>氷：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>131</SortID>
+    </Field>
+    <Field Def="s16 atkEnergy_Green_1">
+      <DisplayName>EN緑：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>EN緑：概念１（プラズマ、パルス、レーザー、バリア用の青色）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s16 atkEnergy_Green_2">
+      <DisplayName>EN緑：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>EN緑：概念２（プラズマ、パルス、レーザー、バリア用の青色）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s16 atkNone_1">
+      <DisplayName>なし：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>なし：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="s16 atkNone_2">
+      <DisplayName>なし：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>なし：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="s16 atkDmy1_1">
+      <DisplayName>Dmy1：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>Dmy1：概念１（企画GDさんテスト用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 atkDmy1_2">
+      <DisplayName>Dmy1：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>Dmy1：概念２（企画GDさんテスト用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 atkDmy2_1">
+      <DisplayName>Dmy2：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>Dmy2：概念１（企画GDさんテスト用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 atkDmy2_2">
+      <DisplayName>Dmy2：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>Dmy2：概念２（企画GDさんテスト用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 atkDmy3_1">
+      <DisplayName>Dmy3：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>Dmy3：概念１（企画GDさんテスト用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 atkDmy3_2">
+      <DisplayName>Dmy3：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>Dmy3：概念２（企画GDさんテスト用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 atkDmy4_1">
+      <DisplayName>Dmy4：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>Dmy4：概念１（企画GDさんテスト用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 atkDmy4_2">
+      <DisplayName>Dmy4：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>Dmy4：概念２（企画GDさんテスト用）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 atkMelange_1">
+      <DisplayName>メランジ：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>メランジ：概念１（プラズマ、パルス、レーザー、バリア用の赤色）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s16 atkMelange_2">
+      <DisplayName>メランジ：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>メランジ：概念２（プラズマ、パルス、レーザー、バリア用の赤色）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="s16 atkPulse_1">
+      <DisplayName>パルス：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>パルス：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 atkPulse_2">
+      <DisplayName>パルス：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>パルス：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 atkLaser_1">
+      <DisplayName>レーザー：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>レーザー：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 atkLaser_2">
+      <DisplayName>レーザー：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>レーザー：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 atkPlusma_1">
+      <DisplayName>プラズマ：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>プラズマ：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 atkPlusma_2">
+      <DisplayName>プラズマ：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>プラズマ：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 atkAssaultArmor_1">
+      <DisplayName>アサルトアーマー：概念１</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>アサルトアーマー：概念１</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s16 atkAssaultArmor_2">
+      <DisplayName>アサルトアーマー：概念２</DisplayName>
+      <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
+      <Description>アサルトアーマー：概念２</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[64]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>10000</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

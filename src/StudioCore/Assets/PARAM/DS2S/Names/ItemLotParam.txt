@@ -1,0 +1,258 @@
+10 Test -- テスト
+10000 Host Time - 'Strong' Pledge Success Rewards -- ホスト時-「強者」誓約成功報酬
+10010 Host Time - "King of The Mouse" Pledge Success Reward -- ホスト時-「ねずみの王」誓約成功報酬
+10020 Host Time - Dragon Spirit Repelling Reward -- ホスト時-竜霊撃退報酬
+10030 Host Time - Deep Abyss Spirit Repelling Reward -- ホスト時-深淵霊撃退報酬
+10040 Host Time - Golden Spirit Success Return Reward -- ホスト時-金霊成功帰還報酬
+10050 White Spirit Sat- White Spirit: Successful Return (Time Limit Expires) -- 白霊時-白霊：成功帰還（制限時間満了）
+10060 White Spirit S. Golden Spirit: Successful Return (Time Limit Expires) -- 白霊時-金霊：成功帰還（制限時間満了）
+10070 Korei-Korei: Successful Return (Time Limit Expires) -- 小霊時-小霊：成功帰還（制限時間満了）
+10080 Korei-Kokin Spirit: Successful Return (Time Limit Expires) -- 小霊時-小金霊：成功帰還（制限時間満了）
+10090 Relief Blue Spirit - Successful Return (Host Passes Boss White Door) -- 救援青霊時-成功帰還（ホストがボス白扉通過）
+10100 Relief Blue Spirit - Successful Return (Host passes through goal white door) -- 救援青霊時-成功帰還（ホストがゴール白扉通過）
+10110 Relief Blue Spirit - Dark Spirit: Successful Return (Dark Spirit dies) -- 救援青霊時-闇霊：成功帰還（闇霊が死亡）
+10120 Relief Blue Spirit - Red Spirit: Successful Return (Dark Spirit dies) -- 救援青霊時-赤霊：成功帰還（闇霊が死亡）
+10130 Retaliation At The Blue Spirit - Successful Return (Host Death) -- 報復青霊時-成功帰還（ホスト死亡）
+10140 The Time of the Dark Spirits - The Dark Spirit: A Successful Return (Host Death) -- 闇霊時-闇霊：成功帰還（ホスト死亡）
+10150 The Time of the Dark Spirit - The Red Spirit: A Successful Return (Host Death) -- 闇霊時-赤霊：成功帰還（ホスト死亡）
+10160 The Time of the Dark Spirits - The Dark Spirit: A Successful Return (Relief Blue Spirit Death) -- 闇霊時-闇霊：成功帰還（救援青霊死亡）
+10170 The Time of the Dark Spirit - Red Spirit: Successful Return (Relief Blue Spirit Death) -- 闇霊時-赤霊：成功帰還（救援青霊死亡）
+10180 Bell Guard Ash Spirit - Successful Return (Host Death) -- 鐘守灰霊時-成功帰還（ホスト死亡）
+10190 The King of The Mouse At The Ashes - Successful Return (Through the Goal Ash Door) -- ねずみの王灰霊時-成功帰還（ゴール灰扉通過）
+10200 The King of Mice At The Ashes - Successful Return (Host Death) -- ねずみの王灰霊時-成功帰還（ホスト死亡）
+10210 Dragon Spirit Time - Successful Return (Host Death) -- 竜霊時-成功帰還（ホスト死亡）
+10220 Abyss Remembrance Time - Successful Return (Defeat the Host with Its Own Attack) -- 深淵霊時-成功帰還（ホストを自身の攻撃で撃破）
+10230 Duel Blue Spirit Time - Duel Victory Return -- 決闘青霊時-決闘勝利帰還
+10240 Duel Dark Spirit Son - Duel Victory Return -- 決闘闇霊時-決闘勝利帰還
+102000 Kingdom Soldier (Dead): Spear: Medium Shield -- 王国兵士（亡者）：槍：中盾
+102010 Kingdom Soldier (Dead): Two-Handed Sword -- 王国兵士（亡者）：両手剣
+102011 Kingdom Soldier (Deceased): Two-Handed Sword: Soul Black -- 王国兵士（亡者）：両手剣：ソウルブラック
+102020 Kingdom Soldier (Dead): Two-Handed Axe -- 王国兵士（亡者）：両手長斧
+102030 Kingdom Soldier (Deceased): Stabbing Sword: Medium Shield -- 王国兵士（亡者）：刺突剣：中盾
+102040 Kingdom Soldier (Dead): Bow -- 王国兵士（亡者）：弓
+154000 Hunting Forest: Skeleton Aristocracy -- 狩猟の森：スケルトン貴族
+212000 Anne Deal's House: Wyvern -- アン・ディールの館：ワイバーン
+223500 The Door way of Faros: The King of Rats -- ファロスの扉道：ネズミの王
+226100 Lower Waterway: Dog Rat: Color (2) -- 下水路：犬ネズミ：色②
+303300 Hidden Port: Double-Sided Warrior: Snake Head -- 隠れ港：両面戦士：ヘビ頭
+305000 Iron Castle: Demon Knight -- 熔鉄城：デーモンナイト
+309600 The Decaying Forest of Giants: The New Giant Senior Soldier (Deceased) -- 朽ちた巨人の森：新・巨人上級兵士（亡者）
+309610 King's Castle D'Angheig: Heavy Cavalry -- 王城ドラングレイグ：重騎馬兵
+309700 Memories of giants: New Giant Senior Soldiers -- 巨人の記憶：新・巨人上級兵士（生者）
+318000 Decaying Giant Forest: Bay Grant -- 朽ちた巨人の森：ベイグラント
+325000 Prison of Oblivion: Warrior in the Mirror -- 忘却の牢城：鏡の中の戦士
+326000 Throwaway Hole: Butcher -- 捨て穴：ブッチャー
+332000 Throne 1 of the Fire: Queen Knight A -- 火継ぎの玉座１：王妃の騎士A
+333000 Tomb of Immortality: Queen Knight B -- 不死廟：王妃の騎士B
+500000 Valley of The Reservoir: Javaza Hat -- 溜まりの谷：ジャバザハット
+501000 Valley of The Reservoir: Naga -- 溜まりの谷：ナーガ
+503000 Forest of Shadows: Manscorpion ♀ -- 虚ろの影の森：マンスコーピオン♀
+504000 King's Castle D'Angheig: Mirror Knight -- 王城ドラングレイグ：ミラーナイト
+506100 Old Dark Hole: Agaduran Stand -- 古き闇の穴：アガドゥランのスタンド
+514500 Tomb of Immortality: King (Modern) -- 不死廟：王（現代）
+600000 The Nest of The Guardian Dragon: The Old Dragon -- 守り竜の巣：古の龍
+602000 Altar of Amana: The Beautiful Voice Frog -- アマナの祭壇：美声カエル
+603000 The Queen of The Spider -- 輝石街ジェルドラ：蜘蛛の女王
+607000 Molten Iron Castle: Molten Iron Daemon -- 熔鉄城：熔鉄デーモン
+611000 Heide Great Fire Tower: Heavy Cavalry: Soldiers Only -- ハイデ大火塔：重騎馬兵：兵士のみ
+619100 Hunting Forest: Silver Chariot -- 狩猟の森：シルバーチャリオット
+625000 Heide Great Fire Tower: Ornstein -- ハイデ大火塔：オーンスタイン
+626000 Prison of Oblivion: Forgotten Sinners -- 忘却の牢城：忘れられた罪人
+627000 Throne 2 of the Fire: The Queen's Armor -- 火継ぎの玉座２：王妃の鎧形態
+754000 Yorozu Babaa -- よろずババア
+783000 Black Phantom Shop -- 黒ファントム屋
+810000 Multiplayer NPC Black Spirit -- マルチプレイNPC黒霊
+1307000 Durahan - Transfer of Equipment -- デュラハン-装備品譲渡
+1307100 Durahan (neckless) -? -- デュラハン（首なし）-？
+1502000 Manscorpion (man) - ♀ destroyer - Petrified release item -- マンスコーピオン（男）-♀撃破-石化解除アイテム
+1502010 Manscorpion (Man) - Transfer of equipment -- マンスコーピオン（男）-装備品譲渡
+1506000 Tomb Amulet - Transfer of Equipment -- 墓守-装備品譲渡
+1514000 Old King-? -- 年老いた王-？
+1700000 Shrine Maiden - First Conversation - Est Bottle -- 巫女-初回会話-エスト瓶
+1701000 Shrine Maiden (Child) - Conversation - Estintia's Wings -- 巫女（子供）-会話-エスティンティアの羽
+1702000 The Queen -- 王妃-？
+1704000 Ladder Shop - Equipment Transfer -- 梯子屋-装備品譲渡
+1705000 Retired Fire Protection Woman 1- Transfer of Equipment -- 退役の火防女１-装備品譲渡
+1705100 Retired Fire Protection Woman 2-? -- 退役の火防女２-？
+1705300 Retired Fire Protection Woman 3-? -- 退役の火防女３-？
+1721000 Prime Minister's Spirit - Transfer of Equipment -- 宰相の霊-装備品譲渡
+1723000 Fire Protection Woman's Housekeeper - Transfer of Equipment -- 火防女の家政婦-装備品譲渡
+1724000 Captain of the Kingdom - Transfer of Equipment -- 王国隊長-装備品譲渡
+1725000 Pilgrims in the Abyss - Transfer of Equipment -- 深淵の巡礼者-装備品譲渡
+1726000 Dwarf - Transfer of equipment -- ドワーフ-装備品譲渡
+1729000 Loyal Dog-? -- 忠犬-？
+1741000 Heartbroken Blue Warrior - Transfer of Equipment -- 心折れた青教戦士-装備品譲渡
+1742000 Avenger Warrior - Thank You - Patch House Key -- 仇討ちの戦士-加勢お礼-パッチの家の鍵
+1742010 Avenger Warrior - Transfer of Equipment -- 仇討ちの戦士-装備品譲渡
+1743000 Tsukiko Ya - Transfer of Equipment -- 月光爺-装備品譲渡
+1744000 Patch - Thanks for the patch - patch house key -- パッチ-加勢お礼-パッチの家の鍵
+1744010 Patch - Transfer of equipment -- パッチ-装備品譲渡
+1744020 Patch - Giant Forest Conversation - White Sign Wax Stone -- パッチ-巨人の森会話-白サインろう石
+1751000 Atlas - Giant's Forest Conversation - A House Key -- 地図書き-巨人の森会話-A家鍵
+1751010 Atlas: Transfer of equipment -- 地図書き：装備品譲渡
+1752000 Female Knight - Transfer of Equipment -- 女騎士-装備品譲渡
+1752010 Female Knight - Encounter 2nd - Human Statue -- 女騎士-遭遇２回目-人間の像
+1752020 Female Knight - Encounter 3rd - Iron Protection Ring +1 -- 女騎士-遭遇３回目-鉄の加護の指輪＋１
+1753000 Bell Guard - Transfer of Equipment -- 鐘守-装備品譲渡
+1753010 Bell Guard-? -- 鐘守-？
+1753020 Bell Guard - Pledge Ring -- 鐘守-誓約指輪
+1754000 Yorozu Babaa - Equipment Transfer -- よろずババア-装備品譲渡
+1756000 King of Mice - Pledge Ring -- ねずみの王-誓約指輪
+1757000 Three Sisters A-Event 1 -- 三姉妹Ａ-イベント１
+1758000 Three Sisters B-Event 1 -- 三姉妹Ｂ-イベント１
+1759000 Three Sisters C-Event 1 -- 三姉妹Ｃ-イベント１
+1760000 Girl 1- Transfer of equipment -- 吟遊詩人の少女１-装備品譲渡
+1760010 The Girl of the Bard 1 - In Conversation - Tsurusasmall -- 吟遊詩人の少女１-会話中-つるすべ小
+1760020 1- Rescue of the girl in captivity - The blessing of the goddess -- 吟遊詩人の少女１-虜囚の少女救出-女神の祝福
+1760100 Girl 2-Equipment Transfer -- 吟遊詩人の少女２-装備品譲渡
+1760110 The Girl of the Bard 2- In Conversation - Vine -- 吟遊詩人の少女２-会話中-つるすべ石
+1760120 The Girl of The Bard 2 - Rescue of the Girl in Captivity - The Spark of The Magic -- 吟遊詩人の少女２-虜囚の少女救出-呪術の火種
+1760200 Captive Girl - In Conversation - Tsurusei Small -- 虜囚の少女-会話中-つるすべ小
+1761000 Armor shop - equipment transfer -- 防具屋-装備品譲渡
+1762000 Material shop - equipment transfer -- 素材屋-装備品譲渡
+1763000 Sorcerer - Thank you for the rescue - the power to lower -- 呪術屋-救出時お礼-引下げ理力
+1764000 Blacksmith - Transfer of equipment -- 鍛冶屋-装備品譲渡
+1764300 EX Blacksmith - Transfer of Equipment -- ＥＸ鍛冶屋-装備品譲渡
+1766000 Sorcerer - Transfer of equipment -- 魔術屋-装備品譲渡
+1768000 Spell Mania - Transfer of Equipment -- スペルマニア-装備品譲渡
+1769000 Miracle Man - Transfer of Equipment -- 奇跡の人-装備品譲渡
+1770000 Dark Art Shop - Transfer of Equipment -- 闇術屋-装備品譲渡
+1771000 Sealed Man - Transfer of Equipment -- 封印された人-装備品譲渡
+1771010 Sealed Man - First (Ladder) - All The Ring of The Devil -- 封印された人-１人目（梯子屋）-全ての退魔の指輪
+1771020 Sealed Person - Second Person (Map) - Reduction Power -- 封印された人-２人目（地図書き）-引下げ理力
+1771030 Sealed Man - Third (Spell Mania) - The Sun of Chaos -- 封印された人-３人目（スペルマニア）-混沌の太陽
+1771040 Sealed Person - 4th (Shrine Maiden) - Magical Opening -- 封印された人-４人目（巫女）-魔力開放
+1772000 Curiosity shop - Transfer of equipment -- 珍品屋-装備品譲渡
+1776000 Top Weapons Store-? -- 上位武器屋-？
+1777000 Cat-? -- 猫-？
+1783040 Black Phantom Shop - Equipment Transfer -- 黒ファントム屋-装備品譲渡
+1784000 The Martial Law of The Escape - Transfer of Equipment -- 免罪の教戒師-装備品譲渡
+1785040 Guardian Knight - Transfer of Equipment -- 守護の騎士-装備品譲渡
+1786000 Glitter Girl-? -- キラキラ娘-？
+1787000 Old Dragon - Chaos of the Dragon -- 古龍-龍の混沌
+2001000 Pledge - Blue Religion - First Pledge - Pledge Ring -- 誓約-青教-初回誓約時-誓約指輪
+2001011 Pledge - Blue Religion - Level 1 Reward-? -- 誓約-青教-レベル１報酬-？
+2001012 Pledge - Blue Religion - Level 2 Rewards-? -- 誓約-青教-レベル２報酬-？
+2001013 Pledge - Blue Religion - Level 3 Rewards- ? -- 誓約-青教-レベル３報酬-？
+2002000 Pledge - Guardian of Blue - First Pledge - Pledge Ring -- 誓約-青の守護者-初回誓約時-誓約指輪
+2002011 Pledge - Blue Guardian - Level 1 Reward- ? -- 誓約-青の守護者-レベル１報酬-？
+2002012 Pledge - Blue Guardian - Level 2 Rewards- ? -- 誓約-青の守護者-レベル２報酬-？
+2002013 Pledge - Blue Guardian - Level 3 Rewards- ? -- 誓約-青の守護者-レベル３報酬-？
+2003000 Pledge - Blood Dark Spirit - First Pledge - Pledge Ring -- 誓約-血の闇霊-初回誓約時-誓約指輪
+2003011 Pledge - Blood Dark Spirit - Level 1 Reward-? -- 誓約-血の闇霊-レベル１報酬-？
+2003012 Pledge - Blood Dark Spirit - Level 2 Reward-? -- 誓約-血の闇霊-レベル２報酬-？
+2003013 Pledge - Blood Dark Spirit - Level 3 Reward- ? -- 誓約-血の闇霊-レベル３報酬-？
+2004000 Pledge - Bell Guard - First Pledge - Pledge Ring -- 誓約-鐘守-初回誓約時-誓約指輪
+2004011 Pledge - Bell Guard - Level 1 Reward- ? -- 誓約-鐘守-レベル１報酬-？
+2004012 Pledge - Bell Guard - Level 2 Rewards- ? -- 誓約-鐘守-レベル２報酬-？
+2004013 Pledge - Bell Guard - Level 3 Rewards- ? -- 誓約-鐘守-レベル３報酬-？
+2005000 Pledge - Mouse - First Pledge - Pledge Ring -- 誓約-ねずみ-初回誓約時-誓約指輪
+2005011 Pledge - Mouse - Level 1 Reward - ? -- 誓約-ねずみ-レベル１報酬-？
+2005012 Pledge - Mouse - Level 2 Reward - ? -- 誓約-ねずみ-レベル２報酬-？
+2005013 Pledge - Mouse - Level 3 Reward - ? -- 誓約-ねずみ-レベル３報酬-？
+2006000 Pledge - Abyss - First Pledge - Pledge Ring -- 誓約-深淵-初回誓約時-誓約指輪
+2006011 Pledge - Abyss - Level 1 Reward - ? -- 誓約-深淵-レベル１報酬-？
+2006012 Pledge - Abyss - Level 2 Rewards - ? -- 誓約-深淵-レベル２報酬-？
+2006013 Pledge - Abyss - Level 3 Rewards- ? -- 誓約-深淵-レベル３報酬-？
+2007000 Pledge - Sun - First Pledge - Pledge Ring -- 誓約-太陽-初回誓約時-誓約指輪
+2007011 Pledge - Sun - Level 1 Reward - ? -- 誓約-太陽-レベル１報酬-？
+2007012 Pledge - Sun - Level 2 Rewards- ? -- 誓約-太陽-レベル２報酬-？
+2007013 Pledge - Sun - Level 3 Rewards- ? -- 誓約-太陽-レベル３報酬-？
+2008000 Pledge - Koryu - First Pledge - Pledge Ring -- 誓約-古竜-初回誓約時-誓約指輪
+2008011 Pledge - Koryu - Level 1 Reward - ? -- 誓約-古竜-レベル１報酬-？
+2008012 Pledge - Koryu - Level 2 Reward - ? -- 誓約-古竜-レベル２報酬-？
+2008013 Pledge - Koryu - Level 3 Reward - ? -- 誓約-古竜-レベル３報酬-？
+2009000 Pledge - Strongman - First Pledge - Strong Man Roster -- 誓約-強者-初回誓約時-強者名簿
+2009011 Pledge - Strong - Level 1 Reward - ? -- 誓約-強者-レベル１報酬-？
+2009012 Pledge - Strong - Level 2 Reward - ? -- 誓約-強者-レベル２報酬-？
+2009013 Pledge - Strongman - Level 3 Reward - Pledge Ring -- 誓約-強者-レベル３報酬-誓約指輪
+3001000 The Book of Pointing -- 「指差し」の書
+3002000 The Book of "Come On" -- 「かかって来い」の書
+3003000 The Book of Polite Rei -- 「丁寧な一礼」の書
+3004000 The Book of One Bow -- 「一礼」の書
+3005000 The Book of Welcome -- 「歓迎」の書
+3006000 The Book of The War -- 「開戦礼」の書
+3007000 The Book of Waving -- 「手を振る」の書
+3008000 The Book of Guts Pose -- 「ガッツポーズ」の書
+3009000 The Book of Joy -- 「歓喜」の書
+3010000 The Book of "Yutakebi" -- 「雄たけび」の書
+3011000 The Book of Shoulder Familiarity -- 「肩慣らし」の書
+3012000 The Book of Aioi -- 「エイエイオー」の書
+3013000 The Book of Understanding -- 「了解」の書
+3014000 The Book of Denial -- 「否定」の書
+3015000 The Book of "Leave to You" -- 「任せろ」の書
+3016000 The Book of The Begging of Life -- 「命乞い」の書
+3017000 The Book of "DoshitaZa" -- 「土下座」の書
+3018000 The Book of "Beheading" -- 「首斬り」の書
+3019000 The Book of Provocation -- 「挑発」の書
+3020000 The Book of Making fun of -- 「馬鹿にする」の書
+3021000 The Book of The Sun Praise -- 「太陽賛美」の書
+110025000 Treasure Chest_Torchi -- 宝箱_松明
+110145500 Treasure Corpse Bug Key -- 宝死体_虫の鍵
+110155500 The Key to The Treasure Corpse_ Anne Deal -- 宝死体_アン・ディールの鍵
+110165500 The Key to the Treasure Corpse -- 宝死体_牢の鍵
+110195500 Treasure Corpse_ Fire Key -- 宝死体_火の鍵
+110235820 Treasure Corpse_ Keys to Immortal Solitary Confinement -- 宝死体_不死独房の鍵
+120215005 The key to the treasure chest corridor (tentative) -- 宝箱_回廊の鍵（仮）
+120245495 Iron Treasure Chest_ King's Ring -- 鉄宝箱_王の指輪
+120635500 【Treasure Corpse】　E3 can be seen from the starting point -- 【宝死体】　E3スタート地点からギリギリ見える
+199995001 Debug -OBJ-Treasure 01 -- デバッグ用-OBJ-宝箱０１
+199995002 Debug -OBJ-Treasure 02 -- デバッグ用-OBJ-宝箱０２
+199995003 Debug -OBJ-Treasure 03 -- デバッグ用-OBJ-宝箱０３
+199995004 Debug -OBJ-Treasure 04 -- デバッグ用-OBJ-宝箱０４
+199995005 Debug -OBJ-Treasure 05 -- デバッグ用-OBJ-宝箱０５
+199995006 Debug -OBJ-Treasure 06 -- デバッグ用-OBJ-宝箱０６
+199995007 Debug -OBJ-Treasure 07 -- デバッグ用-OBJ-宝箱０７
+199995008 Debug -OBJ-Treasure 08 -- デバッグ用-OBJ-宝箱０８
+199995009 Debug -OBJ-Treasure Chest 09 -- デバッグ用-OBJ-宝箱０９
+199995010 Debug -OBJ-Treasure 10 -- デバッグ用-OBJ-宝箱１０
+199995011 Debug -OBJ-Treasure Chest 11 -- デバッグ用-OBJ-宝箱１１
+199995012 Debug -OBJ-Treasure Chest 12 -- デバッグ用-OBJ-宝箱１２
+199995013 Debug -OBJ-Treasure 13 -- デバッグ用-OBJ-宝箱１３
+199995014 Debug -OBJ-Treasure 14 -- デバッグ用-OBJ-宝箱１４
+199995015 Debug -OBJ-Treasure Chest 15 -- デバッグ用-OBJ-宝箱１５
+199995016 Debug -OBJ-Treasure 16 -- デバッグ用-OBJ-宝箱１６
+199995017 Debug -OBJ-Treasure Chest 17 -- デバッグ用-OBJ-宝箱１７
+199995018 Debug -OBJ-Treasure Chest 18 -- デバッグ用-OBJ-宝箱１８
+199995019 Debug -OBJ-Treasure Chest 19 -- デバッグ用-OBJ-宝箱１９
+199995020 Debug -OBJ-Treasure Chest 20 -- デバッグ用-OBJ-宝箱２０
+199995501 For Debugging -OBJ-Treasure Corpse 01 -- デバッグ用-OBJ-宝死体０１
+199995502 For Debugging-OBJ-Treasure Corpse 02 -- デバッグ用-OBJ-宝死体０２
+199995503 For Debugging-OBJ-Treasure Corpse 03 -- デバッグ用-OBJ-宝死体０３
+199995504 For Debugging-OBJ-Treasure Corpse 04 -- デバッグ用-OBJ-宝死体０４
+199995505 For debugging -OBJ-Treasure Corpse 05 -- デバッグ用-OBJ-宝死体０５
+199995506 For debugging-OBJ-Treasure Corpse 06 -- デバッグ用-OBJ-宝死体０６
+199995507 For Debugging-OBJ-Treasure Corpse 07 -- デバッグ用-OBJ-宝死体０７
+199995508 For Debugging-OBJ-Treasure Corpse 08 -- デバッグ用-OBJ-宝死体０８
+199995509 For Debugging-OBJ-Treasure Corpse 09 -- デバッグ用-OBJ-宝死体０９
+199995510 For debugging -OBJ-Treasure Corpse 10 -- デバッグ用-OBJ-宝死体１０
+199995511 For debugging -OBJ-Treasure Corpse 11 -- デバッグ用-OBJ-宝死体１１
+199995512 For debugging -OBJ-Treasure Corpse 12 -- デバッグ用-OBJ-宝死体１２
+199995513 For debugging -OBJ-Treasure Corpse 13 -- デバッグ用-OBJ-宝死体１３
+199995514 For debugging -OBJ-Treasure Corpse 14 -- デバッグ用-OBJ-宝死体１４
+199995515 For debugging -OBJ-Treasure Corpse 15 -- デバッグ用-OBJ-宝死体１５
+199995516 For debugging -OBJ-Treasure Corpse 16 -- デバッグ用-OBJ-宝死体１６
+199995517 For debugging -OBJ-Treasure Corpse 17 -- デバッグ用-OBJ-宝死体１７
+199995518 For debugging -OBJ-Treasure Corpse 18 -- デバッグ用-OBJ-宝死体１８
+199995519 For debugging -OBJ-Treasure Corpse 19 -- デバッグ用-OBJ-宝死体１９
+199995520 For debugging-OBJ-Treasure Corpse 20 -- デバッグ用-OBJ-宝死体２０
+199996001 For debugging -OBJ-Treasure Direct Positioning 01 -- デバッグ用-OBJ-宝直置き０１
+199996002 For debugging-OBJ-treasure-positioning 02 -- デバッグ用-OBJ-宝直置き０２
+199996003 For debugging-OBJ-treasure-positioning 03 -- デバッグ用-OBJ-宝直置き０３
+199996004 For debugging-OBJ-treasure-positioning 04 -- デバッグ用-OBJ-宝直置き０４
+199996005 For debugging -OBJ-Treasure Direct Positioning 05 -- デバッグ用-OBJ-宝直置き０５
+199996006 For debugging -OBJ-Treasure Direct Positioning 06 -- デバッグ用-OBJ-宝直置き０６
+199996007 For debugging -OBJ-Treasure Direct Positioning 07 -- デバッグ用-OBJ-宝直置き０７
+199996008 For debugging -OBJ-Treasure Direct Positioning 08 -- デバッグ用-OBJ-宝直置き０８
+199996009 For debugging-OBJ-treasure-positioning 09 -- デバッグ用-OBJ-宝直置き０９
+199996010 Debugging -OBJ-Treasure 10 -- デバッグ用-OBJ-宝直置き１０
+199996011 Debugging -OBJ-Treasure 11 -- デバッグ用-OBJ-宝直置き１１
+199996012 Debugging -OBJ-Treasure 12 -- デバッグ用-OBJ-宝直置き１２
+199996013 Debugging -OBJ-Treasure 13 -- デバッグ用-OBJ-宝直置き１３
+199996014 Debugging -OBJ-Treasure 14 -- デバッグ用-OBJ-宝直置き１４
+199996015 Debugging -OBJ-Treasure 15 -- デバッグ用-OBJ-宝直置き１５
+199996016 Debugging -OBJ-Treasure 16 -- デバッグ用-OBJ-宝直置き１６
+199996017 Debugging -OBJ-Treasure 17 -- デバッグ用-OBJ-宝直置き１７
+199996018 Debugging -OBJ-Treasure-18 -- デバッグ用-OBJ-宝直置き１８
+199996019 Debugging -OBJ-Treasure 19 -- デバッグ用-OBJ-宝直置き１９
+199996020 Debugging -OBJ-Treasure 20 -- デバッグ用-OBJ-宝直置き２０

@@ -264,7 +264,7 @@ public class ParamBank
 
         if (useProjectNames && Smithbox.ProjectType != ProjectType.Undefined)
         {
-            dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Names";
+            dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
 
             // Fallback to Smithbox if the project ones don't exist
             if(!Directory.Exists(dir))
@@ -273,7 +273,7 @@ public class ParamBank
 
         if (useDeveloperNames && Smithbox.ProjectType != ProjectType.Undefined)
         {
-            dir = $"{AppContext.BaseDirectory}\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Developer Names";
+            dir = $"{AppContext.BaseDirectory}\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Developer Names";
 
             // Fallback to Smithbox if the developer ones don't exist
             if (!Directory.Exists(dir))

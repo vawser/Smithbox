@@ -1,0 +1,109 @@
+10140700 Brazier
+10140701 Brazier
+10140702 Brazier
+10140703 Brazier
+10140704 Brazier
+10140705 Brazier
+10140706 Brazier
+10140708 Brazier
+10140709 Brazier
+10140710 Brazier
+10140711 Brazier
+10140712 Brazier
+10140713 Brazier
+10140714 Brazier
+10140715 Brazier
+10140716 Brazier
+10140717 Brazier
+10140718 Brazier
+10140719 Brazier
+10140720 Brazier
+10140721 Brazier
+10140722 Brazier
+10140723 Brazier
+10140724 Brazier
+10140725 Brazier
+10140726 Brazier
+10140727 Brazier
+10140728 Brazier
+10140729 Brazier
+10140730 Brazier
+10140731 Brazier
+10140732 Brazier
+10140733 Brazier
+10140734 Brazier
+10140735 Brazier
+10140736 Brazier
+10140737 Brazier
+10140738 Brazier
+10140739 Brazier
+10140740 Brazier
+10140741 Brazier
+10140742 Brazier
+10140743 Brazier
+10140744 Brazier
+10140745 Brazier
+10140746 Brazier
+10140747 Brazier
+10140748 Brazier
+10140749 Brazier
+10140750 Brazier
+10145060 [Chest] Treasure
+10145070 [Chest] Treasure
+10145080 [Chest] Treasure
+10145110 [Chest] Treasure
+10145120 [Chest] Treasure
+10145130 [Chest] Treasure
+10146000 [Corpse] Treasure
+10146010 [Corpse] Treasure
+10146020 [Corpse] Treasure
+10146030 [Corpse] Treasure
+10146040 [Corpse] Treasure
+10146050 [Corpse] Treasure
+10146060 [Corpse] Treasure
+10146070 [Corpse] Treasure
+10146080 [Corpse] Treasure
+10146090 [Corpse] Treasure
+10146100 [Corpse] Treasure
+10146110 [Corpse] Treasure
+10146120 [Corpse] Treasure
+10146130 [Corpse] Treasure
+10146140 [Corpse] Treasure
+10146150 [Corpse] Treasure
+10146160 [Corpse] Treasure
+10146170 [Corpse] Treasure
+10146180 [Corpse] Treasure
+10146190 [Corpse] Treasure
+10146200 [Corpse] Treasure
+10146210 [Corpse] Treasure
+10146220 [Corpse] Treasure
+10146230 [Corpse] Treasure
+10146240 [Corpse] Treasure
+10146250 [Corpse] Treasure
+10146260 [Corpse] Treasure
+10146270 [Corpse] Treasure
+10146280 [Corpse] Treasure
+10146290 [Corpse] Treasure
+10146300 [Corpse] Treasure
+10146310 [Corpse] Treasure
+10146320 [Corpse] Treasure
+10146330 [Corpse] Treasure
+10146340 [Corpse] Treasure
+10146350 [Corpse] Treasure
+10146360 [Corpse] Treasure
+10146370 [Corpse] Treasure
+10146380 [Corpse] Treasure
+10146390 [Corpse] Treasure
+10146400 [Corpse] Treasure
+10146410 [Corpse] Treasure
+10146420 [Corpse] Treasure
+10146430 [Corpse] Treasure
+10146440 [Corpse] Treasure
+10146450 [Corpse] Treasure
+10146460 [Corpse] Treasure
+10146470 [Corpse] Treasure
+10146480 [Corpse] Treasure
+10146490 [Corpse] Treasure
+10146500 [Corpse] Treasure
+10146510 [Corpse] Treasure
+10146520 [Corpse] Treasure

@@ -1,0 +1,51 @@
+0 dummy -- ダミー
+1 Cobblestone -- 石畳
+2 unused -- 未使用
+3 soil -- 土
+4 wood -- 木材
+5 Grassland -- 草地
+6 gravel -- 砂利
+7 bamboo -- 竹
+8 Tree -- 樹木
+9 Straw (soft) -- 藁（柔）
+10 Straw (hard) -- 藁（硬）
+11 iron -- 鉄
+12 flesh and blood -- 血肉
+13 sand -- 砂
+14 Bone -- 骨
+15 Ash -- 灰
+16 tile -- 瓦
+17 cloth -- 布
+18 Dead leaves -- 枯葉
+19 bell -- 鐘
+20 Water: Flat surface (about a puddle) -- 水：平面（水溜り程度）
+21 Water: Plane (walkable) -- 水：平面（歩ける）
+22 Water: Plane (dive) -- 水：平面（潜れる）
+23 Poison Swamp (no movement restrictions) -- 毒沼（移動制限なし）
+24 Poison swamp (with movement restrictions) -- 毒沼（移動制限あり）
+25 unused -- 未使用
+26 unused -- 未使用
+27 mud -- 泥
+28 tatami -- 畳
+29 None -- なし
+30 snow -- 雪
+31 Bushes -- 茂み
+32 Wood_indoor -- 木材_屋内
+33 Autumn leaves -- 紅葉
+34 ice -- 氷
+35 Water: Slope (walkable) -- 水：斜面（歩ける）
+36 Water: Slope (swimming) -- 水：斜面（泳げる）
+37 Water x grass (walkable) -- 水×草（歩ける）
+38 Water x grass (swimming) -- 水×草（泳げる）
+39 unused -- 未使用
+40 cloud -- 雲
+41 unused -- 未使用
+42 unused -- 未使用
+43 unused -- 未使用
+44 unused -- 未使用
+45 Underwater soil -- 水中土
+46 Underwater stone -- 水中石
+47 Underwater tree -- 水中木
+48 unused -- 未使用
+49 unused -- 未使用
+80 Miasma -- 瘴気

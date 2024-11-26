@@ -1,0 +1,40 @@
+10300000 [REG:10300000] Hollow Infantry
+10300010 [REG:10300010] Hollow Infantry
+10300034 [REG:10300034] Hollow Infantry
+10300041 [REG:10300041] Hollow Infantry
+11300000 [REG:11300000] Varangian Sailor
+11300003 [REG:11300003] Varangian Sailor
+11300005 [REG:11300005] Varangian Sailor
+11300010 [REG:11300010] Varangian Sailor
+11300020 [REG:11300020] Varangian Sailor
+11300022 [REG:11300022] Varangian Sailor
+11300023 [REG:11300023] Varangian Sailor
+11300024 [REG:11300024] Varangian Sailor
+11300025 [REG:11300025] Varangian Sailor
+11300026 [REG:11300026] Varangian Sailor
+11300051 [REG:11300051] Varangian Sailor
+11300100 [REG:11300100] Varangian Sailor
+11300103 [REG:11300103] Varangian Sailor
+11300105 [REG:11300105] Varangian Sailor
+11300120 [REG:11300120] Varangian Sailor
+11300122 [REG:11300122] Varangian Sailor
+11300123 [REG:11300123] Varangian Sailor
+12300200 [REG:12300200] Suspicious Shadow
+12302200 [REG:12302200] Suspicious Shadow
+12701100 [REG:12701100] Captive Undead
+21300000 [REG:21300000] Crystal Lizard
+21700000 [REG:21700000] Dark Stalker
+22700000 [REG:22700000] Stray Dog
+30200000 [REG:30200000] Undead Jailer
+30330000 [REG:30330000] Flexile Sentry [Boss]
+69400000 [REG:69400000] Forlorn
+69600000 [REG:69600000] Invisible Hollow
+72600000 [REG:72600000] Lonesome Gavlan
+72600001 [REG:72600001] Lonesome Gavlan
+75200000 [REG:75200000] Lucatiel of Mirrah
+75200001 [REG:75200001] Lucatiel of Mirrah
+75200002 [REG:75200002] Lucatiel of Mirrah
+76600000 [REG:76600000] Carhillion of the Fold
+76600001 [REG:76600001] Carhillion of the Fold
+80000000 [REG:80000000] Bradley of the Old Guard
+82000000 [REG:82000000] Aurous Knight Phantom

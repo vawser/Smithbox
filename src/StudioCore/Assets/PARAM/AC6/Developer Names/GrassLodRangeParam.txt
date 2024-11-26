@@ -1,0 +1,15 @@
+0 test
+1 general purpose grass -- 汎用草
+2 grass LOD test -- 草LODテスト
+3 FNR_General-purpose accessories -- FNR_汎用小物
+4 For proto_LOD0 maximum -- プロト用_LOD0　最大
+5 Geofront_for street lights -- ジオフロント_街灯用
+10 communist zone vegetation -- 共産圏植生
+20 New B layer for streetlights -- 新B層 街灯用
+25 New B layer for solar panels -- 新B層　ソーラパネル用
+30 fuel base_stone -- 燃料基地_石
+60 black sand dune_stone -- 黒砂丘_石
+70 mountains_pebbles -- 山岳_小石
+71 Mountains_Oishi -- 山岳_大石
+80 Mine shaft/Imperial base_pebbles -- 坑道・帝国基地_小石
+82 Mine shaft/Imperial base_Oishi -- 坑道・帝国基地_大石

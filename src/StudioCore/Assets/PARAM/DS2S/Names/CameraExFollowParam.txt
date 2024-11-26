@@ -1,0 +1,59 @@
+0 In-Game Camera -- インゲームカメラ
+106000 Kiishi-gai Gerdra: Zakobos -- 輝石街ジェルドラ：ザコボス戦
+154000 Hunting Forest: Skeleton Aristocracy -- 狩猟の森：スケルトン貴族
+212000 Anne Deal's House: Wyvern -- アン・ディールの館：ワイバーン
+223500 The Door way of Faros: The King of Rats -- ファロスの扉道：ネズミの王
+226100 Lower Waterway: Dog Rat: Color (2) -- 下水路：犬ネズミ：色②
+303300 Hidden Port: Double-Sided Warrior: Snake Head -- 隠れ港：両面戦士：ヘビ頭
+305000 Iron Castle: Demon Knight -- 熔鉄城：デーモンナイト
+309600 The Decaying Forest of Giants: The New Giant Senior Soldier (Deceased) -- 朽ちた巨人の森：新・巨人上級兵士（亡者）
+309610 King's Castle D'Angheig: Heavy Cavalry -- 王城ドラングレイグ：重騎馬兵
+309700 Memories of giants: New Giant Senior Soldiers -- 巨人の記憶：新・巨人上級兵士（生者）
+318000 Decaying Giant Forest: Bay Grant -- 朽ちた巨人の森：ベイグラント
+324000 Prison of Oblivion: Gargoil -- 忘却の牢城：ガーゴイル
+325000 Prison of Oblivion: Warrior in the Mirror -- 忘却の牢城：鏡の中の戦士
+326000 Throwaway Hole: Butcher -- 捨て穴：ブッチャー
+332000 Throne 1 of the Fire: Queen Knight A -- 火継ぎの玉座１：王妃の騎士A
+333000 Tomb of Immortality: Queen Knight B -- 不死廟：王妃の騎士B
+500000 Valley of The Reservoir: Javaza Hat -- 溜まりの谷：ジャバザハット
+501000 Valley of The Reservoir: Naga -- 溜まりの谷：ナーガ
+503000 Forest of Shadows: Manscorpion ♀ -- 虚ろの影の森：マンスコーピオン♀
+504000 King's Castle D'Angheig: Mirror Knight -- 王城ドラングレイグ：ミラーナイト
+506100 Old Dark Hole: Agaduran Stand -- 古き闇の穴：アガドゥランのスタンド
+514600 Tomb of Immortality: King -- 不死廟：王
+600000 The Nest of The Guardian Dragon: The Old Dragon -- 守り竜の巣：古の龍
+602000 Altar of Amana: The Beautiful Voice Frog -- アマナの祭壇：美声カエル
+603000 The Queen of The Spider -- 輝石街ジェルドラ：蜘蛛の女王
+607000 Molten Iron Castle: Molten Iron Daemon -- 熔鉄城：熔鉄デーモン
+611000 Heide Great Fire Tower: Heavy Cavalry: Soldiers Only -- ハイデ大火塔：重騎馬兵：兵士のみ
+619100 Hunting Forest: Silver Chariot -- 狩猟の森：シルバーチャリオット
+625000 Heide Great Fire Tower: Ornstein -- ハイデ大火塔：オーンスタイン
+626000 Prison of Oblivion: Forgotten Sinners -- 忘却の牢城：忘れられた罪人
+627000 Throne 2 of the Fire: The Queen's Armor -- 火継ぎの玉座２：王妃の鎧形態
+1002000 Modern - Gap Sinus - General Purpose -- 現代-隙間の洞-汎用
+1004000 Hyundai - Madura - General Purpose -- 現代-マデューラ-汎用
+1010000 Modern - Decaying Giant Forest - General Purpose -- 現代-朽ちた巨人の森-汎用
+1014000 Hyundai - Kiseki-gai Gerdra - General Purpose -- 現代-輝石街ジェルドラ-汎用
+1015000 Hyundai - Anne Deal's House - General -- 現代-アン・ディールの館-汎用
+1016000 Modern - Prison of Oblivion - General -- 現代-忘却の牢城-汎用
+1017000 Modern - Reservoir Valley - General Purpose -- 現代-溜りの谷-汎用
+1018000 Hyundai - Hidden Port - General Purpose -- 現代-隠れ港-汎用
+1019000 Hyundai - Melted Iron Castle - General Purpose -- 現代-溶鉄城-汎用
+1021000 Hyundai - King's Castle Drangreig - General -- 現代-王城ドラングレイグ-汎用
+1023000 Modern - Hunting Forest - General Purpose -- 現代-狩猟の森-汎用
+1025000 Modern - Dumping Hole - General Purpose -- 現代-捨て穴-汎用
+1027000 Modern - Guard Dragon's Nest - General Purpose -- 現代-守り竜の巣-汎用
+1028000 Modern - Fire-succeeding Thrones - Generic -- 現代-火継ぎの玉座-汎用
+1029000 Modern - Maduro imaginary shadow forest connection path - general purpose -- 現代-マデューラ虚ろの影の森接続路-汎用
+1030000 Hyundai - Heide Great Fire Tower Hidden Port Connection Road - General Purpose -- 現代-ハイデ大火塔隠れ港接続路-汎用
+1031000 Hyundai - Heide Great Fire Tower - General Purpose -- 現代-ハイデ大火塔-汎用
+1032000 Modern - The Shadow Forest of The Void - General Purpose -- 現代-虚ろの影の森-汎用
+1032010 Modern - The Shadow Forest of The Void - The Misty Forest -- 現代-虚ろの影の森-霧の森
+1033000 Modern - Faros Door way - General purpose -- 現代-ファロスの扉道-汎用
+1034000 Modern - Saint's Tomb - General Purpose -- 現代-聖人墓所-汎用
+2010000 Modern - The Memory of giants (past) - General -- 現代-巨人の記憶（過去）-汎用
+2011000 Modern - Altar of Amana (Past) - General Purpose -- 現代-アマナの祭壇（過去）-汎用
+2021000 Hyundai - King's Castle D'Angheig (past) - General -- 現代-王城ドラングレイグ（過去）-汎用
+2024000 Modern-Immortal Mausoleum (Past) - General Purpose -- 現代-不死廟（過去）-汎用
+2026000 Memories of The Old Dragon - General Purpose -- 古龍の記憶-汎用
+4003000 Modern - Old Dark Hole - General Purpose -- 現代-古き闇の穴-汎用

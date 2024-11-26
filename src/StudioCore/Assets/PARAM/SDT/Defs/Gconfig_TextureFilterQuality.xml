@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CS_TEXTURE_FILTER_QUALITY_DETAIL</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u8 filter = 3">
+      <DisplayName>フィルター</DisplayName>
+      <Enum>GX_TEXTURE_FILTER</Enum>
+      <Description>フィルター</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 dmy[3]">
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="u32 maxAnisoLevel = 4">
+      <DisplayName>アニソレベル</DisplayName>
+      <Description>アニソレベル</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>2</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

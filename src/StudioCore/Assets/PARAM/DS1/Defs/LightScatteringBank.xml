@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>LIGHT_SCATTERING_BANK</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="s16 sunRotX">
+      <DisplayName>X角度</DisplayName>
+      <Description>光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-90</Minimum>
+      <Maximum>90</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 sunRotY">
+      <DisplayName>Ｙ角度</DisplayName>
+      <Description>光源</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s16 distanceMul = 100">
+      <DisplayName>距離倍率[％]</DisplayName>
+      <Description>距離倍率[%](0～1000)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 sunR = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 sunG = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 sunB = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 sunA = 600">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="dummy8 pad_0[2]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="f32 lsHGg = 0.8">
+      <DisplayName>散乱方向係数</DisplayName>
+      <Description>散乱方向係数（-1:後方 1:前方）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-0.99</Minimum>
+      <Maximum>0.99</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 lsBetaRay = 0.2">
+      <DisplayName>レイリー散乱係数</DisplayName>
+      <Description>レイリー散乱係数（空気の分子）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 lsBetaMie = 0.01">
+      <DisplayName>ミー散乱係数</DisplayName>
+      <Description>ミー散乱係数（微粒子）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 blendCoef = 100">
+      <DisplayName>ブレンド係数[％]</DisplayName>
+      <Description>スキャッタリングの係具合(100で最大)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 reflectanceR = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>地上の乱反射光色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s16 reflectanceG = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>地上の乱反射光色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s16 reflectanceB = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>地上の乱反射光色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s16 reflectanceA = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>地上の乱反射光色</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="dummy8 pad_1[2]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>999</Maximum>
+      <Increment>1</Increment>
+      <SortID>19</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

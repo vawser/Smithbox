@@ -1,0 +1,6 @@
+"GRAPHICS_CONFIG_GX_TEXTURE_FILTER"
+"u8"
+"Point","0"
+"Bilinear","1"
+"Trilinear","2"
+"Anisotropic","3"

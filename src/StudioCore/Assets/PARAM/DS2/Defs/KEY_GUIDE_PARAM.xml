@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>KEY_GUIDE_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 obj_act_id" />
+    <Field Def="f32 activation_radius" />
+    <Field Def="f32 Unk00" />
+    <Field Def="f32 Unk01" />
+    <Field Def="f32 Unk02" />
+    <Field Def="u8 Unk03a" />
+    <Field Def="u8 Unk03b" />
+    <Field Def="u8 Unk03c" />
+    <Field Def="u8 Unk03d" />
+    <Field Def="u8 Unk04a" />
+    <Field Def="u8 Unk04b" />
+    <Field Def="u8 Unk04c" />
+    <Field Def="u8 Unk04d" />
+  </Fields>
+</PARAMDEF>

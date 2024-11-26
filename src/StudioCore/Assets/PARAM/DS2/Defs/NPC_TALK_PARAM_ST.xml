@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>NPC_TALK_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 text_id_male" />
+    <Field Def="s32 text_id_female" />
+    <Field Def="s32 Unk08" />
+    <Field Def="s32 Unk0C" />
+    <Field Def="s32 Unk10" />
+  </Fields>
+</PARAMDEF>

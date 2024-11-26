@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Material Color" Fields="colorRed,colorGreen,colorBlue" PlacedField="colorBlue" />
+  </ColorEdit>
+  <Field>
+    <Unk0x00 Padding="" />
+    <materialExParamId AltName="Material Ex Param ID" Refs="MaterialExParam"/>
+    <colorRed AltName="Color: Red" />
+    <colorGreen AltName="Color: Green" />
+    <colorBlue AltName="Color: Blue" />
+    <colorAlpha AltName="Color: Alpha" />
+  </Field>
+  <Self />
+</PARAMMETA>

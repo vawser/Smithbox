@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MAGIC_CATEGORY">
+        <Option Value="0" Name="Magic" />
+        <Option Value="1" Name="Miracle" />
+    </Enum>
+    <Enum Name="MAGIC_MOTION_TYPE">
+        <Option Value="0" Name="Projectile A (Magic Arrow)" />
+        <Option Value="1" Name="Weapon Enhancement" />
+        <Option Value="2" Name="Self Enhancement" />
+        <Option Value="3" Name="Miracle" />
+        <Option Value="4" Name="Projectile B (Fire Spray)" />
+        <Option Value="5" Name="Projectile C (Fireball)" />
+        <Option Value="6" Name="Projectile D (Auditory Hallucination)" />
+        <Option Value="7" Name="Occurrence A (Homing soul arrow)" />
+        <Option Value="8" Name="Occurrence B (Ignite)" />
+        <Option Value="9" Name="Occurrence C (Poison Cloud)" />
+        <Option Value="10" Name="Occurrence D (Firestorm)" />
+        <Option Value="11" Name="Contact (Relief)" />
+        <Option Value="12" Name="Long miracle" />
+        <Option Value="254" Name="Unavailable" />
+        <Option Value="255" Name="No MP" />
+    </Enum>
+  </Enums>
+  <Field>
+    <ezStateBehaviorType AltName="Magic Type" Enum="MAGIC_CATEGORY" />
+    <refType AltName="Animation Type" Enum="MAGIC_MOTION_TYPE" />
+    <enable_multi AltName="enable_multi" />
+    <enable_multi_only AltName="enable_multi_only" />
+    <iconId AltName="iconId" />
+    <behaviorId AltName="behaviorId" Refs="BehaviorParam" />
+    <faithForGet AltName="faithForGet" />
+    <slotLength AltName="slotLength" />
+    <isEnchant AltName="isEnchant" />
+    <sortId AltName="sortId" />
+    <basicValue AltName="basicValue" />
+    <mtrlItemId AltName="mtrlItemId" Refs="EquipMtrlSetParam" />
+    <enable_live AltName="enable_live" />
+    <enable_gray AltName="enable_gray" />
+    <enable_white AltName="enable_white" />
+    <enable_black AltName="enable_black" />
+    <yesNoDialogMessageId AltName="yesNoDialogMessageId" />
+    <opmeMenuType AltName="opmeMenuType" />
+    <disableOffline AltName="disableOffline" />
+    <pad1 AltName="pad1" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,57 @@
+0 For testing -- テスト用
+10 General Environment Wind (weak) -- 汎用環境風（弱）
+11 General environment Wind (medium) -- 汎用環境風（中）
+12 General Environment Wind (strong) -- 汎用環境風（強）
+50000 General-Purpose one shot wind (weak) -- 汎用ワンショット風（弱）
+50001 General-Purpose one shot wind (medium) -- 汎用ワンショット風（中）
+50002 General-Purpose one shot wind (strong) -- 汎用ワンショット風（強）
+100000 Map Placement Collision -- マップ配置用コリジョン
+120100000 M20_01 start part (after door open) -- m20_01スタート部（扉OPEN後）
+120100001 m20_01 Start Room-Ohashi -- m20_01スタート部屋～大橋
+120100002 M20_01 Ohashi -- m20_01大橋
+120100003 M20_01 Orphanage -- m20_01孤児院前
+120100004 M20_01 Orphanage Armpit -- m20_01孤児院脇
+120100005 M20_01 Orphanage Passage (after window destruction) -- m20_01孤児院通路（窓破壊後）
+120100006 M20_01 Orphanage Hall -- m20_01孤児院ホール
+120100007 M20_01 Orphanage Terrace -- m20_01孤児院テラス
+120100008 M20_01 Orphanage-Basilica Terrace -- m20_01孤児院～聖堂テラス
+120100009 M20_01 Cathedral Terrace -- m20_01聖堂テラス
+120100010 m20_01 Basilica -- m20_01聖堂前
+120100011 M20_01 boss Front passage (after door open) -- m20_01ボス前通路（扉OPEN後）
+120100012 M20_01 Boss Room -- m20_01ボス部屋
+120150000 M20_01 a small door and blow it -- m20_01小扉開けて吹き込む
+120150001 M20_01 Open the big door and breathe -- m20_01大扉開けて吹き込む
+120150002 m20_01 Windows Blow broken -- m20_01窓壊れて吹き込む
+120150003 M20_01 Boss appearance production wind -- m20_01ボス登場演出風
+129100000 M29 boss Stairs 20 ° Wind -- m29 ボス前階段20°の風
+191040000 M91_04 Yamagishi Style -- m91_04 山岸風
+200000000 Test (Tae Style) -- テスト用（TAE風）
+200000010 General character style (weak) -- 汎用キャラ風（弱）
+200000011 General character style (medium) -- 汎用キャラ風（中）
+200000012 General character style (strong) -- 汎用キャラ風（強）
+200000100 Pc_ Front _ Wind -- PC_正面_風
+200000101 Pc_ Left _ Wind -- PC_左前_風
+200000102 Pc_ Right _ Wind -- PC_右前_風
+200000103 Pc_ left after _ wind -- PC_左後_風
+200000104 Pc_ right after _ wind -- PC_右後_風
+200000810 Pc_ bodies _ before _ wind -- PC_体_前_ 風
+200000811 Pc_ bodies _ after _ winds -- PC_体_後_風
+200000812 Pc_ Bodies _ left _ winds -- PC_体_左_風
+200000813 Pc_ Bodies _ right _ winds -- PC_体_右_風
+200000814 Test for debugging -- デバック用テスト
+200001000 Player collision body for SFX interference -- SFX干渉用プレイヤーコリジョン_ボディ
+200001010 SFX interference player collision right arm -- SFX干渉用プレイヤーコリジョン_右腕
+200001020 SFX interference player collision left arm -- SFX干渉用プレイヤーコリジョン_左腕
+200001030 SFX interference player collision right foot -- SFX干渉用プレイヤーコリジョン_右足
+200001040 The left foot of the player collision for SFX interference -- SFX干渉用プレイヤーコリジョン_左足
+200001050 SFX Interference player collision Weapon (Common) -- SFX干渉用プレイヤーコリジョン_武器（共通）
+350000100 Parish Chief _ front _ Wind -- 教区長_正面_風
+350000101 Parish Warden _ Before the Wind -- 教区長_左前_風
+350000102 Parish Chief _ right _ winds -- 教区長_右前_風
+350000103 Parish Warden _ After left _ winds -- 教区長_左後_風
+350000104 Parish Warden _ right after winds -- 教区長_右後_風
+350000810 Parish Chief _ Body _ before _ Wind -- 教区長_体_前_ 風
+350000811 Parish Warden _ After body _ winds -- 教区長_体_後_風
+350000812 Parish Chief _ Body _ left _ Wind -- 教区長_体_左_風
+350000813 Parish Chief _ Body _ right _ winds -- 教区長_体_右_風
+350000900 Parish Chief _ Feet -- 教区長_足元

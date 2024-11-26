@@ -1,0 +1,41 @@
+100 29(F) / 20900000_Drunker -- 29(F) / 20900000_ドランカー
+101 28(F) / 11700000_Ash People A -- 28(F) / 11700000_灰の民A
+102 27(F) / 20200000_Wild Geese F -- 27(F) / 20200000_ワイルドギースF
+103 26(E) / 21100000_Independent Mercenary A -- 26(E) / 21100000_独立傭兵A
+104 25(E) / 20500000_Number 5 -- 25(E) / 20500000_ナンバー5
+105 24(E) / 11800000_Ash People B -- 24(E) / 11800000_灰の民B
+106 23(E) / 20400000_Number 6 -- 23(E) / 20400000_ナンバー6
+107 22(D) / 20100000_Wild Geese E -- 22(D) / 20100000_ワイルドギースE
+108 21(D) / 20700000_Ash People D -- 21(D) / 20700000_灰の民D
+109 20(D) / 10800000_Number 4 (Reinforced Human Company A) -- 20(D) / 10800000_ナンバー4（強化人間中隊A）
+110 19(D) / 11400000_G5 Iguazu -- 19(D) / 11400000_G5 イグアス
+111 18(D) / 10400000_Assassin -- 18(D) / 10400000_刺客
+112 17(C) / 11500000_Wild Geese B -- 17(C) / 11500000_ワイルド・ギースB
+113 16(C) / 10900000_Number 7 (Reinforced Human Company B) -- 16(C) / 10900000_ナンバー7（強化人間中隊B）
+114 15(C) / 10200000_String AC -- 15(C) / 10200000_文字列AC
+115 14(C) / 12100000_Karla's subordinate -- 14(C) / 12100000_カーラの部下
+116 13(C) / 11900000_Ash People C -- 13(C) / 11900000_灰の民C
+117 12(B) / 20600000_Number 3 -- 12(B) / 20600000_ナンバー3
+118 11(B) / 11200000_Carla -- 11(B) / 11200000_カーラ
+119 10(B) / 10100000_Ace of Decisive Battle B -- 10(B) / 10100000_決戦のエースB
+120 09(B) / 10500000_Ash (early model) For doping -- 09(B) / 10500000_アッシュ（前期機体）　ドーピング用
+121 08(B) / 11000000_Collapse A layer AC -- 08(B) / 11000000_崩落A層AC
+122 07(A) / 20000000_Wild Geese D -- 07(A) / 20000000_ワイルドギースD
+123 06(A) / 10700000_Number 2 -- 06(A) / 10700000_ナンバー2
+124 05(A) / 21200000_Independent Mercenary B -- 05(A) / 21200000_独立傭兵B
+125 04(A) / 20800000_Ash People E (Strong JUDO) For doping -- 04(A) / 20800000_灰の民E（強JUDO）　ドーピング用
+126 03(S) / 21300000_Dead Strongman -- 03(S) / 21300000_死んだ強者
+127 02(S) / 11600000_Wild Geese C -- 02(S) / 11600000_ワイルド・ギースC
+128 01(S) / 12000000_Number 1 -- 01(S) / 12000000_ナンバー1
+200 CASE-1/21400000_Simulator unmanned AC -- CASE-1 / 21400000_シミュレーター無人AC
+201 CASE-2 / 12600000_Test Teacher -- CASE-2 / 12600000_テスト先生
+202 CASE-3 / 12700000_For onboarding -- CASE-3 / 12700000_オンボーディング用
+203 CASE-4 / 10300000_Yuriya -- CASE-4 / 10300000_ユーリヤ
+204 CASE-5 / 20300000_Bayram battle data -- CASE-5 / 20300000_ベイラムの戦闘データ
+205 CASE-6 / 21000000_Drunker battle data -- CASE-6 / 21000000_ドランカーの戦闘データ
+206 CASE-7 / 10310000_Yuriya (All Mind) -- CASE-7 / 10310000_ユーリヤ（オールマインド）
+207 CASE-8 / 11100000_Unmanned AC in the reactor core -- CASE-8 / 11100000_炉心の無人AC
+208 CASE-9 / 10000000_Ace of decisive battle A for doping -- CASE-9 / 10000000_決戦のエースA　ドーピング用
+209 CASE-RLF / 10600000_Ash (late model) for doping -- CASE-RLF / 10600000_アッシュ（後期機体）　ドーピング用
+210 CASE-RRI / 11300000_Leicester -- CASE-RRI / 11300000_レスター
+211 CASE-AYR / 12500000_Win for doping -- CASE-AYR / 12500000_ウィン　ドーピング用

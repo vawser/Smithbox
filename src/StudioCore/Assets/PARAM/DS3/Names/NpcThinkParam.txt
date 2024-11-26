@@ -1,0 +1,727 @@
+0 For testing
+1 For not doing anything
+2 Atarisawari data (copy and paste recommended)
+10 Logic for animation check near
+11 Logic for animation check Far
+50 Ishizaki Test
+100 Automatic patrol (default)
+540 For automatic patrol (running)
+541 Automatic patrol (walking)
+542 Automatic patrol (super dash)
+10000 Collective Patrol dummy leader
+10001 For funnels
+10010 City Map Sniper Platoon target dummy character
+10200 For NPC Logic Testing
+20000 NPC Sub-goal Test 00 Combat
+20001 NPC Sub-goal Test 01 walking and Running
+20002 NPC Sub-goal Test 02 Quick Turn/left/right movement
+20003 NPC Sub-goal Test 03 Retreat/Step
+20010 NPC Test 00 Test
+21000 Slave Knight Gael - White Phantom - Ariandel
+21002 Slave Knight Gael - Cathedral of the Deep
+21005 Slave Knight Gael - White Phantom - Dreg Heap
+21006 Slave Knight Gael - Illusion
+21100 Sir Vilhelm - Ariandel
+21140 Sir Vilhelm - Ariandel
+21200 Livid Pyromancer Dunnel - Ariandel
+21400 Amnesiac Lapp - Dreg Heap
+21420 Amnesiac Lapp - White Phantom - Dreg Heap
+21421 Amnesiac Lapp - White Phantom
+21440 Amnesiac Lapp - Red Phantom
+21500 Shira, Knight of Filianore
+21520 Shira, Knight of Filianore - White Phantom
+21540 Shira, Knight of Filianore
+21700 Painting Guardian
+21800 Halflight
+21940 Desert Pyromancer Zoey - Dreg Heap
+22000 Amnesiac Lapp
+22140 Silver Knight Ledo - Red Phantom
+22240 Alva, Seeker of the Spurned - Red Phantom
+22241 Alva, Seeker of the Spurned - Red Phantom
+22340 Eygon of Carim - Red Phantom
+24700 Butcher - Road of Sacrifices
+24800 Greirat of the Undead Settlement
+24801 Greirat of the Undead Settlement - Firelink Shrine
+24802 Greirat of the Undead Settlement - Irithyll
+24803 Greirat of the Undead Settlement - Grand Archives
+24810 Greirat of the Undead Settlement - Hostile
+25000 Yuria of Londor - Firelink Shrine
+25020 Yuria of Londor - White Phantom - Kiln of the First Flame
+25100 Hawkwood the Deserter - Firelink Shrine
+25101 Hawkwood the Deserter - Farron Keep
+25120 Hawkwood the Deserter - White Phantom
+25121 Hawkwood the Deserter - White Phantom - Archdragon Peak
+25200 Sirris of the Sunless Realms - Firelink Shrine
+25201 Sirris of the Sunless Realms - Undead Settlement
+25202 Sirris of the Sunless Realms - Irithyll
+25203 Sirris of the Sunless Realms - Undead Settlement
+25204 Sirris of the Sunless Realms - Firelink Shrine
+25220 Sirris of the Sunless Realms - White Phantom - Cathedral of the Deep
+25221 Sirris of the Sunless Realms - White Phantom - Farron Keep
+25222 Sirris of the Sunless Realms - White Phantom - Lothric Castle
+25223 Sirris of the Sunless Realms - White Phantom - Grand Archives
+25300 Ringfinger Leonhard - Firelink Shrine
+25301 Ringfinger Leonhard - Cathedral of the Deep
+25302 Ringfinger Leonhard - Irithyll
+25400 Orbeck of Vinheim - Road of Sacrifices
+25401 Orbeck of Vinheim - Firelink Shrine
+25402 Orbeck of Vinheim - Grand Archives
+25420 Orbeck of Vinheim - White Phantom - Grand Archives
+25500 Cornyx of the Great Swamp - Undead Settlement
+25501 Cornyx of the Great Swamp - Firelink Shrine
+25600 Karla - Irithyll Dungeon
+25601 Karla - Firelink Shrine
+25700 Irina of Carim - Undead Settlement
+25701 Irina of Carim - Firelink Shrine
+25702 Irina of Carim - Firelink Shrine
+25703 Irina of Carim - Firelink Shrine
+25800 Eygon of Carim - Undead Settlement
+25801 Eygon of Carim - Firelink Shrine
+25802 Eygon of Carim - Firelink Shrine
+25820 Eygon of Carim - White Phantom - Road of Sacrifices
+25821 Eygon of Carim - White Phantom - Lothric Castle
+26000 Anri of Astora - Road of Sacrifices
+26001 Anri of Astora - Firelink Shrine
+26002 Anri of Astora - Catacombs of Carthus
+26003 Anri of Astora - Catacombs of Carthus
+26004 Anri of Astora - Catacombs of Carthus
+26005 Anri of Astora - Catacombs of Carthus
+26006 Anri of Astora - Irithyll
+26007 Anri of Astora - Irithyll
+26008 Anri of Astora - Irithyll
+26009 Anri of Astora - Cathedral of the Deep
+26020 Anri of Astora - White Phantom - Irithyll
+26021 Anri of Astora - White Phantom - Cathedral of the Deep
+26100 Unbreakable Patches - Cathedral of the Deep
+26101 Unbreakable Patches - Cathedral of the Deep
+26102 Unbreakable Patches - Cathedral of the Deep
+26103 Unbreakable Patches - Firelink Shrine
+26104 Unbreakable Patches - Firelink Shrine
+26200 Siegward of Catarina - Undead Settlement
+26201 Siegward of Catarina - Undead Settlement
+26202 Siegward of Catarina - Irithyll
+26203 Siegward of Catarina - Profaned Capital
+26204 Siegward of Catarina - Profaned Capital
+26300 Horace the Hushed - Road of Sacrifices
+26301 Horace the Hushed - Firelink Shrine
+26302 Horace the Hushed - Smouldering Lake
+26320 Horace the Hushed - White Phantom - Cathedral of the Deep
+27300 Sword Master - Firelink Shrine
+27320 Sword Master - White Phantom
+27321 Sword Master - Phantom - Untended Graves
+27420 Yellowfinger Heysel - Red Phantom - Farron Keep
+27440 Yellowfinger Heysel - Red Phantom - Road of Sacrifices
+27441 Yellowfinger Heysel - Red Phantom - Farron Keep
+27500 Black Hand Gotthard - Grand Archives
+27520 Black Hand Gotthard - White Phantom - Farron Keep
+27521 Black Hand Gotthard - White Phantom - Irithyll
+27600 Great Swamp Cuculus
+27620 Great Swamp Cuculus - White Phantom - Smouldering Lake
+27700 Holy Knight Hodrick - Undead Settlement
+27701 Holy Knight Hodrick - Undead Settlement
+27720 Holy Knight Hodrick - Mad Phantom - Road of Sacrifices
+27740 Holy Knight Hodrick - Mad Phantom - Undead Settlement
+27800 Londor Pale Shade
+27820 Londor Pale Shade - White Phantom - Farron Keep
+27821 Londor Pale Shade - White Phantom - Irithyll
+27822 Londor Pale Shade - White Phantom - Kiln of the First Flame
+27890 Londor Pale Shade - Red Phantom - Farron Keep
+27891 Londor Pale Shade - Red Phantom - Irithyll
+27900 Lion Knight Albert - Grand Archives
+27920 Lion Knight Albert - White Phantom
+28000 Daughter of Crystal Kriemhild - Grand Archives
+28040 Daughter of Crystal Kriemhild - Red Phantom - Untended Graves
+28100 Exile Watchdog - Exile Greatsword - Farron Keep
+28200 Exile Watchdog - Great Club - Farron Keep
+28300 Unkindled Brigand - Cathedral of the Deep
+28400 Unkindled Thief - Cathedral of the Deep
+28600 Court Sorcerer - Profaned Capital
+28700 Havel the Rock - Archdragon Peak
+28701 Havel the Rock
+28900 Unkindled Ricard
+29000 Drang Knight - Hammers - Irithyll
+29100 Drang Knight - Spears - Irithyll
+29200 Knight Slayer Tsorig - Smouldering Lake
+29220 Knight Slayer Tsorig - White Phantom - Smouldering Lake
+29240 Knight Slayer Tsorig - Red Phantom - Catacombs of Carthus
+29241 Knight Slayer Tsorig - Red Phantom
+29340 Creighton the Wanderer - Red Phantom - Irithyll
+29341 Creighton the Wanderer - Red Phantom - Irithyll
+29440 Alva, Seeker of the Spurned - Red Phantom - Irithyll Dungeon
+29540 Longfinger Kirk - Red Phantom - Cathedral of the Deep
+90390 Dungeon Objects (for bullet owners)
+107000 Skeleton - Catacombs of Carthus
+107001 Skeleton - Scimitar - Catacombs of Carthus
+107002 Skeleton - Falchion - Catacombs of Carthus
+107003 Skeleton - Bow - Catacombs of Carthus
+107004 Skeleton - Running - Scimitar - Catacombs of Carthus
+107005 Skeleton - Running - Falchion - Catacombs of Carthus
+107006 Skeleton - Firebomb - Catacombs of Carthus
+107021 Skeleton - Scimitar
+107022 Skeleton - Falchion
+107023 Skeleton - Bow
+107024 Skeleton - Running - Scimitar
+107025 Skeleton - Running - Falchion
+107026 Skeleton - Firebomb
+107027 Skeleton
+107028 Skeleton
+107029 Skeleton
+107033 Skeleton
+107081 Skeleton - Scimitar - Suspension Bridge
+107082 Skeleton - Torch - Suspension Bridge
+107090 Skeleton
+107091 Skeleton
+107092 Skeleton
+107093 Skeleton
+107094 Skeleton
+107095 Skeleton
+107096 Skeleton
+107126 Skeleton
+109000 Pus of Man
+109010 Pus of Man
+110000 Hollow Soldier - Straight Sword
+110001 Hollow Soldier - Straight Sword - Firebomb
+110003 Hollow Soldier - Straight Sword - Firebomb
+110004 Hollow Soldier - Straight Sword - Firebomb
+110005 Hollow Soldier - Straight Sword
+110006 Hollow Soldier - Straight Sword - Firebomb
+110007 Hollow Soldier - Straight Sword - Firebomb
+110008 Hollow Soldier - Straight Sword - Firebomb
+110009 Hollow Soldier - Straight Sword
+110010 Hollow Soldier - Sword and Shield
+110020 Hollow Soldier - Crossbow
+110021 Hollow Soldier - Crossbow
+110022 Hollow Soldier - Crossbow
+110023 Hollow Soldier - Crossbow
+110024 Hollow Soldier - Crossbow
+110025 Hollow Soldier - Crossbow
+110030 Hollow Soldier - Lantern
+110050 Hollow Soldier - Spear and Shield
+110051 Hollow Soldier - Spear and Shield
+110053 Hollow Soldier - Spear and Shield
+110054 Hollow Soldier - Spear and Shield
+110060 Hollow Soldier - Dagger
+110061 Hollow Soldier - Dagger
+110062 Hollow Soldier - Dagger
+110063 Hollow Soldier - Dagger
+110070 Hollow Soldier - Combat State -> Think ID
+110080 Hollow Assassin
+110085 Hollow Assassin
+110090 Hollow Assassin
+110091 Hollow Assassin
+110093 Hollow Assassin
+110094 Hollow Assassin
+110098 Hollow Assassin
+110100 Hollow Soldier - Sword - Lothric Castle
+110105 Hollow Soldier - Sword - Lothric Castle
+110500 Large Hollow Soldier - Greataxe
+110501 Large Hollow Soldier - Greataxe - Low Visibility
+110510 Large Hollow Soldier - Halberd
+110511 Large Hollow Soldier - Halberd - Low Visibility
+110520 Large Hollow Soldier
+110580 Large Hollow Soldier - Greataxe
+110590 Large Hollow Soldier
+113000 Rotten Slug
+113010 Rotten Slug
+113200 Rotten Slug
+117000 Carthus Swordsman - Sword
+117001 Carthus Swordsman - Sword
+117010 Carthus Swordsman - Greatsword
+117030 Carthus Swordsman - Bow
+117040 Carthus Swordsman
+118000 Carthus Swordsman - Shotel
+118010 Carthus Swordsman - Shotel
+118020 Carthus Swordsman
+119000 Cathedral Knight
+119001 Cathedral Knight
+119002 Cathedral Knight
+119005 Cathedral Knight
+119010 Cathedral Knight
+119011 Cathedral Knight
+119012 Cathedral Knight
+119020 Cathedral Knight
+119021 Cathedral Knight
+119050 Cathedral Knight
+120000 Hollow Slave - Axe - Blowpipe
+120001 Hollow Slave - Axe - Blowpipe
+120002 Hollow Slave - Axe - Blowpipe
+120003 Hollow Slave - Axe - Firebomb
+120004 Hollow Slave - Axe - Firebomb
+120005 Hollow Slave - Axe - Firebomb
+120006 Hollow Slave - Axe - Firebomb
+120009 Hollow Slave - Axe - Firebomb
+120010 Hollow Slave - Axe - Blowpipe
+120020 Hollow Slave - Flamberge
+120050 Hollow Slave - Flamberge
+121000 Ghru - Spear
+121001 Ghru - Spear
+121010 Ghru - Curved Sword
+121020 Ghru - Dagger
+121021 Ghru - Dagger
+121022 Ghru - Dagger
+121023 Ghru - Dagger
+121030 Mad Ghru
+121040 Mad Ghru
+121049 Mad Ghru
+122000 Infested Corpse
+122010 Infested Corpse - Chest
+122020 Infested Corpse
+122030 Infested Corpse
+122040 Infested Corpse
+122050 Infested Corpse
+122060 Infested Corpse
+122070 Infested Corpse
+123000 Cathedral Evangelist
+123001 Cathedral Evangelist
+123002 Cathedral Evangelist
+123003 Cathedral Evangelist
+123004 Cathedral Evangelist
+123005 Cathedral Evangelist
+123010 Cathedral Evangelist
+123051 Cathedral Evangelist
+123097 Cathedral Evangelist
+123098 Cathedral Evangelist
+123099 Cathedral Evangelist
+124000 Peasant Hollow - Axe
+124001 Peasant Hollow - Axe
+124002 Peasant Hollow - Axe
+124003 Peasant Hollow - Axe
+124004 Peasant Hollow - Axe
+124005 Peasant Hollow - Axe
+124006 Peasant Hollow - Axe
+124009 Peasant Hollow - Axe
+124010 Peasant Hollow - Lantern
+124011 Peasant Hollow - Lantern
+124012 Peasant Hollow - Lantern
+124013 Peasant Hollow - Lantern
+124014 Peasant Hollow - Lantern
+124019 Peasant Hollow - Lantern
+124020 Peasant Hollow - Sickle
+124021 Peasant Hollow - Sickle
+124029 Peasant Hollow - Sickle
+124030 Peasant Hollow - Mallet
+124039 Peasant Hollow - Mallet
+124040 Peasant Hollow - Hoe
+124041 Peasant Hollow - Hoe
+124049 Peasant Hollow - Hoe
+124050 Peasant Hollow
+125000 Cathedral Grave Warden
+125001 Cathedral Grave Warden
+125002 Cathedral Grave Warden
+125099 Cathedral Grave Warden
+126000 Hollow Manservant
+126001 Hollow Manservant
+126002 Hollow Manservant
+126090 Hollow Manservant - Saw
+126091 Hollow Manservant - Low Visibility
+128000 Lothric Knight - Sword and Shield
+128010 Lothric Knight - Spear and Shield
+128020 Lothric Knight - Greatsword
+128030 Lothric Knight - Crossbow
+128100 Lothric Knight - Sword and Shield
+128110 Lothric Knight - Spear and Shield
+128120 Lothric Knight - Greatsword
+128200 Lothric Knight - Sword and Shield
+128210 Lothric Knight - Spear and Shield
+128220 Lothric Knight - Greatsword
+128300 Lothric Knight - Sword and Shield
+128310 Lothric Knight - Spear and Shield
+128311 Lothric Knight - Spear and Shield
+129000 Winged Knight - Halberd
+129010 Winged Knight - Twinaxes
+129020 Winged Knight - Halberd - Grand Archives
+129030 Winged Knight - Twinaxes - Grand Archives
+130000 Black Knight - Sword
+130010 Black Knight - Greatsword
+130020 Black Knight - Greataxe
+130030 Black Knight - Halberd
+130040 Black Knight - Sword
+130100 Black Knight - Sword
+130110 Black Knight - Greatsword
+130120 Black Knight - Greataxe
+130130 Black Knight - Halberd
+131000 Boreal Outrider Knight
+131002 Boreal Outrider Knight - Undead Settlement
+132000 Crystal Sage
+132010 Crystal Sage
+132050 Crystal Sage
+132051 Crystal Sage
+132052 Crystal Sage
+132200 Crystal Sage
+134000 Archive Scholar
+134010 Archive Scholar
+135000 Irithyllian Slave
+135005 Irithyllian Slave
+135006 Irithyllian Slave
+135010 Irithyllian Slave
+135020 Irithyllian Slave
+135021 Irithyllian Slave
+135030 Irithyllian Slave
+136000 Lycanthrope
+136001 Lycanthrope
+137000 Lycanthrope Hunter
+137090 Lycanthrope Hunter
+138000 Serpent-man Summoner
+138001 Serpent-man Summoner
+138010 Serpent-man Summoner
+138200 Serpent-man Summoner
+139000 Serpent-man - Dagger
+139010 Serpent-man - Hatchet
+139020 Serpent-man - Axe
+139030 Serpent-man - Double-bit Axe
+139100 Giant Serpent-man - Chainaxe
+139110 Giant Serpent-man - Greataxe
+140000 Fire Keeper
+141000 Silver Knight - Sword and Shield
+141010 Silver Knight - Spear and Shield
+141020 Silver Knight - Greatbow -> Sword and Shield
+141021 Silver Knight - Greatbow -> Sword and Shield
+141030 Silver Knight - Greatbow -> Spear and Shield
+143010 Undead Cleric 1
+143030 Undead Cleric 2
+143031 Undead Cleric 2
+143040 Undead Cleric 3
+143041 Undead Cleric 3
+143061 Undead Cleric 4
+144000 Devout of the Deep 1
+144001 Devout of the Deep 1
+144010 Devout of the Deep 2
+144020 Devout of the Deep 3
+144030 Devout of the Deep 4
+144031 Devout of the Deep 4
+144035 Devout of the Deep 4
+144040 Devout of the Deep 5
+144041 Devout of the Deep 5
+144050 Devout of the Deep 6
+144060 Devout of the Deep 7
+144061 Devout of the Deep 7
+144070 Lothric Priest
+144071 Lothric Priest
+144072 Lothric Priest
+146000 Painting Protection (phantom)
+147000 Bonewheel Skeleton
+147010 Bonewheel Skeleton
+148000 Irithyll Knight - Regular - Ghost
+149000 Irithyll Knight - Dancer - Ghost
+202000 Undead Dog
+202050 Undead Dog
+202099 Undead Dog
+202100 Small Undead Dog (Undead Settlement)
+202101 Small Undead Dog
+202102 Small Undead Dog
+202103 Small Undead Dog
+202200 Undead Dog (Irithyll)
+202201 Undead Dog (Irithyll)
+203000 Pontiff Knight - Curved Sword
+203005 Pontiff Knight - Curved Sword
+203010 Pontiff Knight - Scythe
+203099 Pontiff Knight
+204000 Monstrosity of Sin
+204050 Monstrosity of Sin
+204099 Monstrosity of Sin
+206000 Infested Corpse
+206010 Infested Corpse
+207000 Wretch (Unarmed)
+207010 Wretch (Spear)
+207011 Wretch (Spear)
+207020 Wretch (Dagger)
+208000 Undead Dog - Pregnant
+209000 Oceiros, the Consumed King
+209001 Consumed Beast
+210000 Sewer Centipede
+210010 Sewer Centipede
+211000 Hound-rat
+211098 Hound-rat
+211400 Hound-rat (Passive)
+212000 Mimic
+212010 Mimic - Exorcist
+212100 Mimic
+213000 Writhing Rotten Flesh
+213090 Writhing Rotten Flesh
+213200 Smouldering Rotten Flesh
+214000 Basilisk
+214001 Basilisk
+215000 Crystal Lizard
+215005 Crystal Lizard
+215010 Red Crystal Lizard
+215011 Red Crystal Lizard - Bait
+215020 Crystal Lizard
+215025 Crystal Lizard
+216000 Yoel of Londor
+216001 Pilgrim - TOG
+216010 Londor Pilgrim
+216030 Pilgrim Dummy
+218000 Grub
+218001 Grub
+218010 Grub (Witch)
+218100 Grub
+218110 Grub (Witch)
+219000 Gargoyle (Hammer)
+219010 Gargoyle (Spear)
+220000 Carthus Sandworm
+220010 Carthus Sandworm
+220100 Carthus Sandworm
+221000 Corvian (Dagger) - Road of Sacrifices
+221001 Corvian (Scythe) - Road of Sacrifices
+221002 Corvian (Storyteller's Staff) - Road of Sacrifices
+221010 Corvian (Dagger) - Untended Graves
+221011 Corvian (Scythe) - Untended Graves
+221012 Corvian (Storyteller's Staff) - Untended Graves
+221020 Corvian (Dagger) - Irithyll
+221021 Corvian (Scythe) - Irithyll
+221022 Corvian (Storyteller's Staff) - Irithyll
+223000 Jailer
+223005 Jailer
+223006 Jailer
+223010 Jailer Handmaid
+223020 Jailer Handmaid
+224000 Vordt of the Boreal Valley
+224100 Vordt of the Boreal Valley (Heatup)
+225000 Sulyvahn's Beast
+225010 Sulyvahn's Beast
+226000 Ballista
+227000 Giant Crab
+227001 Giant Crab
+227002 Giant Crab
+227003 Giant Crab
+227100 Lesser Crab
+227101 Lesser Crab
+228000 Giant Rat
+229000 Irithyll Dog
+229100 Irithyll Dog
+302000 Giant Slave
+302010 Giant Slave
+302020 Giant Slave
+302100 Giant Slave
+302101 Giant Slave
+302102 Giant Slave
+302110 Giant Slave
+302197 Giant Slave
+302198 Giant Slave
+302199 Giant Slave (Cathedral of the Deep)
+304000 Abyss Watcher
+304005 Abyss Watcher
+304010 Abyss Watcher
+304090 Abyss Watcher - Test
+304098 Abyss Watcher - Test
+304100 Abyss Watcher
+305000 Old Demon King
+305100 Old Demon Prince
+306000 Demon
+306002 Demon - Smouldering Lake
+306099 Demon - Test
+306100 Demon (Undead Settlement)
+307000 Demon Cleric
+307100 Demon Cleric
+308000 Pilgrim Butterfly
+308001 Pilgrim Butterfly
+309000 Caged Hollow
+309010 Caged Hollow
+310000 Ravenous Crystal Lizard
+310050 Ravenous Crystal Lizard
+311000 Deep Acursed
+312000 Elder Ghru
+312001 Elder Ghru
+312020 Elder Ghru
+314000 Ancient Wyvern
+314010 Ancient Wyvern
+314020 Ancient Wyvern
+314100 Ancient Wyvern
+314200 Ancient Wyvern
+314300 Ancient Wyvern - Bridge
+316000 Dragonslayer Armour
+316010 Dragonslayer Armour
+317000 Darkwraith
+321000 Poisonhorn Bug
+322000 Rock Lizard
+322001 Rock Lizard
+322002 Rock Lizard
+323000 Demon Statue
+325000 High Priestess Emma
+501000 Nameless King
+502000 Demon Prince
+502010 Demon in Pain
+502020 Demon from Below
+502090 Demon Prince
+502100 Demon Prince (Orb)
+502200 Demon Prince (Orb)
+502300 Crimson Bat
+503000 King of the Storm
+511000 Corrupted Gundyr
+511080 Iudex Gundyr (Throwing)
+511090 Iudex Gundyr
+511091 Iudex Gundyr
+511098 Iudex Gundyr
+511099 Iudex Gundyr
+511100 Champion Gundyr
+512000 Iudex Gundyr (Pus of Man)
+512092 Iudex Gundyr (Pus of Man)
+512099 Iudex Gundyr (Pus of Man) - Test
+514000 Pontiff Sulyvahn
+514010 Pontiff Sulyvahn - Spirit Clone
+514011 Spirit of the Pontiff
+514099 Pontiff Sulyvahn - Test
+515000 Aldrich, Devourer of Gods
+516000 High Lord Wolnir
+518000 Curse-rotted Greatwood
+518001 Curse-rotted Greatwood (Heatup) - Test
+518002 Curse-rotted Greatwood - Test
+520000 Stray Demon
+520001 Stray Demon (Heatup)
+520002 Stray Demon
+522000 Deacons of the Deep
+522099 Deacons of the Deep - Test
+522100 Fat Deacon
+522101 Fat Deacon (Boss)
+522110 Fat Deacon
+522200 Tall Deacon
+522210 Tall Deacon
+522300 Deacon
+522310 Deacon
+522500 Fat Deacon (Irithyll)
+522510 Fat Deacon (Irithyll)
+522600 Tall Deacon (Irithyll)
+522610 Tall Deacon (Irithyll)
+522700 Deacon (Irithyll)
+522710 Deacon (Irithyll)
+524000 Irithyll Fire Witch
+525000 Lorian, Elder Prince
+525001 Lorian, Elder Prince (Heatup)
+525100 Lothric, Younger Prince
+526000 Yhorm the Giant
+527000 Dancer of the Boreal Valley
+528000 Soul of Cinder
+528100 Soul of Cinder (Heatup)
+600000 Farron Follower 1
+600001 Farron Follower 1
+600002 Farron Follower 1
+600010 Farron Follower 2
+600011 Farron Follower 2
+600012 Farron Follower 2
+600020 Farron Follower 3
+600021 Farron Follower 3
+600022 Farron Follower 3
+600030 Farron Follower 4
+600031 Farron Follower 4
+600032 Farron Follower 4
+601000 Father Ariandel
+602000 Sister Friede
+602001 Sister Friede (Heatup)
+603000 Greatwolf
+603001 Greatwolf
+603002 Greatwolf
+603004 Greatwolf
+603200 Greatwolf
+604000 Wolf
+604010 Wolf
+604020 Wolf
+604040 Wolf
+605000 Skittish Wolf
+605010 Skittish Wolf
+605020 Skittish Wolf
+605030 Skittish Wolf
+605031 Skittish Wolf
+605032 Skittish Wolf
+605040 Skittish Wolf
+606000 Tree Woman
+606001 Tree Woman
+606002 Tree Woman
+606010 Tree Woman
+607000 Corvian Knight
+607001 Corvian Knight
+607002 Corvian Knight
+607010 Corvian Knight
+607012 Corvian Knight
+608000 Corvian Villager
+608001 Corvian Villager
+608002 Corvian Villager
+608003 Corvian Villager
+608005 Corvian Villager
+608006 Corvian Villager
+608010 Corvian Villager
+608011 Corvian Villager
+608015 Corvian Villager
+608020 Corvian Villager
+608100 Corvian Villager
+608101 Corvian Villager
+608102 Corvian Villager
+608105 Corvian Villager
+609000 Giant Fly
+610000 Millwood Knight 1
+610010 Millwood Knight 2
+610011 Millwood Knight 2
+610020 Millwood Knight 3
+610021 Millwood Knight 3
+610030 Millwood Knight 4
+610031 Millwood Knight 4
+610032 Millwood Knight 4
+610033 Millwood Knight 4
+610034 Millwood Knight 4
+610035 Millwood Knight 4
+613000 Great Crab
+620000 Slave Knight Gael
+620100 Slave Knight Gael (Heatup)
+621000 Darkeater Midir (Bridge)
+621010 Darkeater Midir (Bridge)
+621100 Darkeater Midir
+623000 Murkman
+623001 Murkman
+623002 Murkman
+623003 Murkman
+623004 Murkman
+623100 Crawling Murkman
+623101 Crawling Murkman
+623104 Crawling Murkman
+623200 Murkman Spirit
+624000 Pilgrim Pulpa
+625000 Pilgrim Angel
+625001 Pilgrim Angel
+625002 Pilgrim Angel
+625003 Pilgrim Angel
+626000 Ringed Knight
+626001 Ringed Knight
+626002 Ringed Knight
+626005 Ringed Knight
+626010 Ringed Knight
+626015 Ringed Knight
+626020 Ringed Knight
+626021 Ringed Knight
+627000 Hollow Vagabond
+627001 Hollow Vagabond
+627002 Hollow Vagabond
+628000 Judicator
+628010 Judicator
+628020 Judicator
+628090 Judicator
+628100 Judicator
+629000 Hollow Cleric
+629001 Hollow Cleric
+629002 Hollow Cleric
+629003 Hollow Cleric
+629004 Hollow Cleric
+630000 Mad Pilgrim
+632000 Harald Knight
+632001 Harald Knight
+632002 Harald Knight
+632010 Harald Knight
+633000 Big Locust
+633001 Big Locust
+633002 Big Locust
+633010 Big Locust
+633100 Small Locust
+633101 Small Locust
+633110 Small Locust
+633111 Small Locust
+633112 Small Locust
+901000 Hiras Test
+901100 Yoshihi Test
+901200 Tsuruy Test
+901300 Move sub-goal Test 1 walking and running
+901301 Move sub-goal Test 2 Quick turn/left/right movement
+901302 Move sub-goal Test 3 Retreat Step
+901400 Masut Test
+902000 Yoshihi damage Check
+999305 - FDP Proto-wolf (weakening)
+999410 - FDP Dead _ for covert confirmation
+999901 Team AI Reader test
+999910 For sound Confirmation

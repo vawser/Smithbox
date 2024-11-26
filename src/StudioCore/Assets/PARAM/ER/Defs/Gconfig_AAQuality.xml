@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CS_AA_QUALITY_DETAIL</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 enabled">
+      <DisplayName>AA有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>AA有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 forceFXAA2">
+      <DisplayName>強制的にFXAA2</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>強制的にFXAA2</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 dmy[2]">
+      <SortID>9999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

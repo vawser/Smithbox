@@ -1,0 +1,46 @@
+{
+    "list": [
+        {
+            "id": "ToneMapMode",
+            "name": "Tone Map Mode",
+            "members": [
+                {
+                    "id": "0",
+                    "name": "No Color Shift"
+                },
+                {
+                    "id": "1",
+                    "name": "No Color Shift"
+                },
+                {
+                    "id": "2",
+                    "name": "No Color Shift"
+                },
+                {
+                    "id": "3",
+                    "name": "Enable Color Shift Parameter and Basic Contrast"
+                },
+                {
+                    "id": "4",
+                    "name": "Dark"
+                },
+                {
+                    "id": "5",
+                    "name": "Dark"
+                },
+                {
+                    "id": "6",
+                    "name": "Enable Color Shift Parameter"
+                },
+                {
+                    "id": "7",
+                    "name": "Enable Color Shift Parameter and Filmic Contrast"
+                },
+                {
+                    "id": "8",
+                    "name": "Enable Color Shift Parameter, Reinhard Contrast and White Balance"
+                }
+            ]
+        }
+   ]
+}

@@ -1,0 +1,17 @@
+0 Room0_Dry
+1 Room1_Little
+2 Room2_Little
+3 Room3_Middle
+4 Room4_Middle
+5 Room5_Large
+6 Room6_Large
+7 Room7_HugeLarge
+8 Room8_HugeLarge
+9 Room9_Outdoor_SurfaceIR
+10 Room10_Outdoor_SnowMountainIR
+11 Room11_indoor_garage
+12 Room12_reserve
+13 Room13_reserve
+14 Room14_reserve
+15 Room15_reserve
+16 -

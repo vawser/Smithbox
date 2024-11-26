@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>WAYPOINT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 attribute1 = -1">
+      <DisplayName>属性1</DisplayName>
+      <Enum>WAYPOINT_ATTRIBUTE</Enum>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>32768</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 attribute2 = -1">
+      <DisplayName>属性2</DisplayName>
+      <Enum>WAYPOINT_ATTRIBUTE</Enum>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>32768</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 attribute3 = -1">
+      <DisplayName>属性3</DisplayName>
+      <Enum>WAYPOINT_ATTRIBUTE</Enum>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>32768</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 attribute4 = -1">
+      <DisplayName>属性4</DisplayName>
+      <Enum>WAYPOINT_ATTRIBUTE</Enum>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>32768</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="dummy8 padding4[8]">
+      <DisplayName>パディング4</DisplayName>
+      <SortID>100040</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,10 @@
+2 c7430 Moonlight Father's Sword (Fake) -- c7430　月光親父の剣(偽物)
+3 Moonlight Sword (Real) Spare Frame -- 月光剣(本物)　　予備枠
+4 c1270 Dead Workers -- c1270　死者の労働者
+5 FB_1470 Butterfly Equipment -- FB_1470　蝶装備
+6 c2160 with door -- c2160　扉つき
+7 c6070 Molten iron daemon -- c6070　熔鉄デーモン
+8 c5061 Agaduran Stunt Feathers -- c5061　アガドゥランのスタント　羽
+9 c5061 Agaduran Stunt Star -- c5061　アガドゥランのスタント　星
+10 c7700 Spell Four Tenno (Magic) -- c7700 スペル四天王（呪術）
+11 c7680 Spell Four Tenno (Magic) -- c7680 スペル四天王（魔法）

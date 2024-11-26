@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>HIT_GROUP_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 Unk00" />
+    <Field Def="s32 Unk01" />
+    <Field Def="s32 Unk02" />
+    <Field Def="s32 Unk03" />
+    <Field Def="s32 Unk04" />
+    <Field Def="s32 Unk05" />
+    <Field Def="s32 Unk06" />
+    <Field Def="s32 Unk07" />
+    <Field Def="s32 Unk08" />
+    <Field Def="s32 Unk09" />
+    <Field Def="s32 Unk10" />
+    <Field Def="s32 Unk11" />
+    <Field Def="s32 Unk12" />
+    <Field Def="s32 Unk13" />
+    <Field Def="s32 Unk14" />
+    <Field Def="s32 Unk15" />
+    <Field Def="s32 Unk16" />
+  </Fields>
+</PARAMDEF>

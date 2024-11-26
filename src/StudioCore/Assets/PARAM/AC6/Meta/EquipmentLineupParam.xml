@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the appearance of equipment in the shop menu." />
+  
+  <Field>
+    <equipId 
+    AltName="Part ID" 
+    Wiki="The part to add to the Parts menu."
+    Refs="EquipParamBooster(equipCategory=4),EquipParamFcs(equipCategory=5),EquipParamGenerator(equipCategory=6),EquipParamProtector(equipCategory=1),EquipParamWeapon(equipCategory=0)" 
+    />
+    
+    <price 
+    AltName="Purchase Cost" 
+    Wiki="The purchase cost of the part in the Parts Menu." />
+    
+    <eventFlag_forRelease 
+    AltName="Unlock Flag" 
+    Wiki="The event flag required for this part to appear in the Parts menu." 
+    FlagAlias="" />
+    
+    <equipType 
+    AltName="Part Category" 
+    Wiki="The category this part appears under in the Parts menu." 
+    Enum="EQUIPMENT_LINEUP_EQUIPTYPE" />
+    
+    <pad_0
+    AltName=""
+    Padding="" />
+    
+    <isTrophyTarget
+    AltName="Is Achievement Target" 
+    Wiki="Is part of the condition for the 'Obtain All Parts' achivement." 
+    IsBool="" />
+    
+    <rewardCondition 
+    AltName="Reward Condition" 
+    Wiki="The reward condition to unlock this part with. Used for log hunter and mission rewards." 
+    Enum="EQUIPMENT_UNLOCK_CONDITION_ID" />
+    
+    <pad_1 
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="EQUIPMENT_LINEUP_EQUIPTYPE" type="u8">
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Equipment" />
+        <Option Value="4" Name="Booster" />
+        <Option Value="5" Name="FCS" />
+        <Option Value="6" Name="Generator" />
+    </Enum>
+    <Enum Name="EQUIPMENT_UNLOCK_CONDITION_ID" type="u32">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Log Hunter Rank 1" />
+        <Option Value="2" Name="Log Hunter Rank 2" />
+        <Option Value="3" Name="Log Hunter Rank 3" />
+        <Option Value="4" Name="Log Hunter Rank 4" />
+        <Option Value="5" Name="Log Hunter Rank 5" />
+        <Option Value="6" Name="Log Hunter Rank 6" />
+        <Option Value="7" Name="Log Hunter Rank 7" />
+        <Option Value="8" Name="Log Hunter Rank 8" />
+        <Option Value="9" Name="Log Hunter Rank 9" />
+        <Option Value="10" Name="Log Hunter Rank 10" />
+        <Option Value="11" Name="Log Hunter Rank 11" />
+        <Option Value="12" Name="Log Hunter Rank 12" />
+        <Option Value="13" Name="Log Hunter Rank 13" />
+        <Option Value="14" Name="Log Hunter Rank 14" />
+        <Option Value="15" Name="Log Hunter Rank 15" />
+        <Option Value="26" Name="Mission Clear: Rail Road" />
+        <Option Value="27" Name="Mission Clear: Jailbreak" />
+        <Option Value="28" Name="Mission Clear: Atmospheric Breakthrough" />
+        <Option Value="29" Name="Mission Clear: Battle B" />
+        <Option Value="30" Name="Mission Clear: 01 (S)" />
+        <Option Value="31" Name="Mission Clear: TEST-09 [γ3]" />
+        <Option Value="32" Name="Mission Clear: TEST-R [δ1]" />
+        <Option Value="33" Name="Mission Clear: TEST-W [δ2]" />
+        <Option Value="34" Name="Mission Clear: TEST-A [δ3]" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

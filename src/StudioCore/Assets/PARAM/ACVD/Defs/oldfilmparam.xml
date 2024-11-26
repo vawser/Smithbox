@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FILTER_OLDFILM_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="s16 Brightness = 100">
+      <DisplayName>明るさ</DisplayName>
+      <Minimum>-100</Minimum>
+      <Maximum>500</Maximum>
+    </Field>
+    <Field Def="s16 Contrast = 50">
+      <DisplayName>コントラスト</DisplayName>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="f32 MulY = 0.8">
+      <DisplayName>乗算値Y</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 MulCr = 0.17">
+      <DisplayName>乗算値Cr</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 MulCb = 0.2">
+      <DisplayName>乗算値Cb</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 AddY = -0.02">
+      <DisplayName>加算値Y</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 AddCr = 0.02">
+      <DisplayName>加算値Cr</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="f32 AddCb = 0.02">
+      <DisplayName>加算値Cb</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-10</Minimum>
+      <Maximum>10</Maximum>
+    </Field>
+    <Field Def="u8 NoiseBlend = 10">
+      <DisplayName>ノイズブレンド値</DisplayName>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="u8 NoiseOffsetUpdateFrameNum = 1">
+      <DisplayName>ノイズ更新フレーム</DisplayName>
+      <Minimum>1</Minimum>
+      <Maximum>30</Maximum>
+    </Field>
+    <Field Def="dummy8 dumy[2]">
+      <DisplayName>ダミー</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

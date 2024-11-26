@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="TUTORIAL_ACTJUDGE_SLOT_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Body" />
+        <Option Value="2" Name="Weapon: Right" />
+        <Option Value="3" Name="Weapon: Left" />
+        <Option Value="4" Name="Back Weapon: Right" />
+        <Option Value="5" Name="Back Weapon: Left" />
+        <Option Value="6" Name="Item" />
+    </Enum> 
+    <Enum Name="ACTION_FE_STATE_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="[Body] Jump" />
+        <Option Value="2" Name="[Body] Ascending" />
+        <Option Value="3" Name="[Body] Quick Boost" />
+        <Option Value="4" Name="[Body] Repair" />
+        <Option Value="5" Name="[Body] Movement" />
+        <Option Value="6" Name="[Body] Assault Boost" />
+        <Option Value="7" Name="[Body] Vertical Catapult" />
+        <Option Value="8" Name="[Body] Assault Boost Finished" />
+        <Option Value="30" Name="[Body] Drifting" />
+        <Option Value="31" Name="[Body] Hovering" />
+        <Option Value="32" Name="[Body] Hover Finished" />
+        <Option Value="100" Name="[Attack] Charged Shot" />
+        <Option Value="101" Name="[Attack] Reload" />
+        <Option Value="102" Name="[Attack] Guard" />
+        <Option Value="103" Name="[Attack] Melee" />
+        <Option Value="104" Name="[Attack] Melee Combo" />
+        <Option Value="105" Name="[Attack] Charged Melee" />
+        <Option Value="106" Name="[Attack] Attack" />
+        <Option Value="116" Name="[Attack] Charged Attack Interrupted: Right" />
+        <Option Value="117" Name="[Attack] Charged Attack Interrupted: Left" />
+    </Enum> 
+    <Enum Name="TUTORIAL_EXT_ACTJUDGE_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Multi-lock firing with right back missile" />
+        <Option Value="2" Name="Was lock target switched" />
+        <Option Value="3" Name="Was lock assist mode switched" />
+    </Enum> 
+  </Enums>
+  <Field>
+    <State0_ActionSlot AltName="Slot [0]" Wiki="" Enum="TUTORIAL_ACTJUDGE_SLOT_TYPE" />
+    <State0_ActionType AltName="Behavior Type [0]" Wiki="" Enum="ACTION_FE_STATE_TYPE_ENUM" />
+    <State0_reserve0 Padding="" />
+    
+    <State1_ActionSlot AltName="Slot [1]" Wiki="" Enum="TUTORIAL_ACTJUDGE_SLOT_TYPE" />
+    <State1_ActionType AltName="Behavior Type [1" Wiki="" Enum="ACTION_FE_STATE_TYPE_ENUM" />
+    <State1_reserve0 Padding="" />
+    
+    <ExtActionType AltName="Extended Behavior Type" Wiki="" Enum="TUTORIAL_EXT_ACTJUDGE_TYPE" />
+  </Field>
+  <Self />
+</PARAMMETA>

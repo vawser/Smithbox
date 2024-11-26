@@ -1,0 +1,190 @@
+0 ---- -- ----
+100 [Common to items] Name -- 【アイテム共通】 名前
+101 [Common to items] Description -- 【アイテム共通】 説明
+102 [Common to all items] -- 【アイテム共通】 うんちく
+103 [Common to items] Weight -- 【アイテム共通】 重量
+110 [Common to items] Number of possessions -- 【アイテム共通】 所持数
+111 [Common to items] Number of possessions_maximum value -- 【アイテム共通】 所持数_最大値
+112 [Common to items] Number of warehouses -- 【アイテム共通】 倉庫所持数
+113 [Common to items] Number of warehouse possessions_maximum value -- 【アイテム共通】 倉庫所持数_最大値
+120 [Common to all items] Required soul -- 【アイテム共通】 必要ソウル
+121 [Common to all items] Obtained soul -- 【アイテム共通】 獲得ソウル
+200 [Tool] Consumption type when using -- 【道具】 使用時消費タイプ
+201 [Tool] Ability correction Muscle strength -- 【道具】 能力補正 筋力
+202 [Tool] Ability correction skill -- 【道具】 能力補正 技量
+203 [Tool] Ability correction physics -- 【道具】 能力補正 理力
+204 [Tool] Ability correction Faith -- 【道具】 能力補正 信仰
+300 [Weapon] Weapon type -- 【武器】 武器種別
+301 [Weapon] Attack attribute -- 【武器】 攻撃属性
+302 [Weapon] Maneuver name -- 【武器】 戦技名
+310 [Weapon] Attack power: Physical -- 【武器】 攻撃力：物理
+311 [Weapon] Attack power: Magic -- 【武器】 攻撃力：魔法
+312 [Weapon] Attack power: Flame -- 【武器】 攻撃力：炎
+313 [Weapon] Attack power: Lightning -- 【武器】 攻撃力：雷
+314 [Weapon] Attack power: Darkness -- 【武器】 攻撃力：闇
+315 [Weapon] Additional attack power: Physical -- 【武器】付加攻撃力：物理
+316 [Weapon] Additional attack power: Magic -- 【武器】 付加攻撃力：魔法
+317 [Weapon] Additional attack power: Flame -- 【武器】 付加攻撃力：炎
+318 [Weapon] Additional attack power: Lightning -- 【武器】 付加攻撃力：雷
+319 [Weapon] Additional attack power: Darkness -- 【武器】 付加攻撃力：闇
+320 [Weapon] Range -- 【武器】 射程距離
+321 [Weapon] Magic power correction -- 【武器】 魔法威力修正
+322 [Weapon] Deadly -- 【武器】 致命
+330 [Weapon] Special effect: Poison -- 【武器】 特殊効果：毒
+331 [Weapon] Special effect: Bleeding -- 【武器】 特殊効果：出血
+332 [Weapon] Special effect: Holy -- 【武器】 特殊効果：神聖
+333 [Weapon] Special effects: Evil -- 【武器】 特殊効果：邪教
+334 [Weapon] Special effect: Cold air -- 【武器】 特殊効果：冷気
+340 [Weapon] Damage cut rate: Physical -- 【武器】 ダメージカット率：物理
+341 [Weapon] Damage cut rate: Magic -- 【武器】 ダメージカット率：魔法
+342 [Weapon] Damage cut rate: Flame -- 【武器】 ダメージカット率：炎
+343 [Weapon] Damage cut rate: Lightning -- 【武器】 ダメージカット率：雷
+344 [Weapon] Damage cut rate: Darkness -- 【武器】 ダメージカット率：闇
+345 [Weapon] Additional damage cut rate: Physical -- 【武器】 付加ダメージカット率：物理
+346 [Weapon] Additional damage cut rate: Magic -- 【武器】 付加ダメージカット率：魔法
+347 [Weapon] Additional damage cut rate: Flame -- 【武器】 付加ダメージカット率：炎
+348 [Weapon] Additional damage cut rate: Lightning -- 【武器】 付加ダメージカット率：雷
+349 [Weapon] Additional damage cut rate: Darkness -- 【武器】 付加ダメージカット率：闇
+350 [Weapon] Receiving ability -- 【武器】 受け能力
+351 [Weapon] Additional receiving ability -- 【武器】 付加受け能力
+360 [Weapon] Required ability value: Strength -- 【武器】 必要能力値：筋力
+361 [Weapon] Required ability value: Skill -- 【武器】 必要能力値：技量
+362 [Weapon] Required ability value: Reason -- 【武器】 必要能力値：理力
+363 [Weapon] Required ability value: Faith -- 【武器】 必要能力値：信仰
+365 [Weapon] Ability release status value: Strength -- 【武器】 能力解放ステータス値：筋力
+366 [Weapon] Ability release status value: Skill -- 【武器】 能力解放ステータス値：技量
+367 [Weapon] Ability release status value: Reason -- 【武器】 能力解放ステータス値：理力
+368 [Weapon] Ability release status value: Faith -- 【武器】 能力解放ステータス値：信仰
+370 [Weapon] Ability correction: Strength -- 【武器】 能力補正：筋力
+371 [Weapon] Ability correction: Skill -- 【武器】 能力補正：技量
+372 [Weapon] Ability correction: Reason -- 【武器】 能力補正：理力
+373 [Weapon] Ability correction: Faith -- 【武器】 能力補正：信仰
+380 [Weapon] Durability current value -- 【武器】 耐久度 現在値
+381 [Weapon] Maximum durability -- 【武器】 耐久度 最大値
+390 [Weapon] Consumed Arts Points: L1 -- 【武器】 消費アーツポイント：L1
+391 [Weapon] MP consumed for combat maneuvers: L2 -- 【武器】 戦技消費MP：L2
+392 [Weapon] MP consumed for combat maneuvers: R1 -- 【武器】 戦技消費MP：R1
+393 [Weapon] MP consumption for combat maneuvers: R2 -- 【武器】 戦技消費MP：R2
+400 [Armor] Defense: Physical -- 【防具】 防御力：物理
+401 [Armor] Defense: Physical vs. Strike -- 【防具】 防御力：物理 対打撃
+402 [Armor] Defense: Physical vs. Slash -- 【防具】 防御力：物理 対斬撃
+403 [Armor] Defensive power: Physical anti-piercing -- 【防具】 防御力：物理 対刺突
+404 [Armor] Defense: Magic -- 【防具】 防御力：魔法
+405 [Armor] Defensive power: Flame -- 【防具】 防御力：炎
+406 [Armor] Defensive power: Lightning -- 【防具】 防御力：雷
+410 [Armor] Toughness -- 【防具】 強靭度
+411 [Armor] Resistance: Poison -- 【防具】 耐性：毒
+412 [Armor] Resistance: Bleeding -- 【防具】 耐性：出血
+413 [Armor] Resistance: Curse -- 【防具】 耐性：呪い
+414 [Armor] Resistance: Cold air -- 【防具】 耐性：冷気
+415 [Armor] New toughness -- 【防具】 新強靭度
+420 [Armor] Current durability -- 【防具】 耐久度 現在値
+421 [Armor] Maximum durability -- 【防具】 耐久度 最大値
+430 [Armor] Damage cut: Physical -- 【防具】 ダメージカット：物理
+431 [Armor] Damage cut: Physical vs. hit -- 【防具】 ダメージカット：物理 対打撃
+432 [Armor] Damage cut: Physical anti-slash -- 【防具】 ダメージカット：物理 対斬撃
+433 [Armor] Damage cut: Physical anti-piercing -- 【防具】 ダメージカット：物理 対刺突
+434 [Armor] Damage cut: Magic -- 【防具】 ダメージカット：魔法
+435 [Armor] Damage cut: Flame -- 【防具】 ダメージカット：炎
+436 [Armor] Damage cut: Lightning -- 【防具】 ダメージカット：雷
+437 [Armor] Damage cut: Darkness -- 【防具】 ダメージカット：闇
+500 [Spell] Spell type -- 【スペル】 スペル種別
+501 [Spell] Attack attribute -- 【スペル】 攻撃属性
+502 [Spell] Number of slots used -- 【スペル】 使用スロット数
+503 [Spell] Number of uses -- 【スペル】 使用回数
+504 [Spell] Required ability value Reason -- 【スペル】 必要能力値 理力
+505 [Spell] Required ability value Faith -- 【スペル】 必要能力値 信仰
+520 [Spell] MP consumption -- 【スペル】 消費MP
+600 [Arrow] Weapon type -- 【矢】 武器種別
+601 [Arrow] Attack attribute -- 【矢】 攻撃属性
+610 [Arrow] Attack power: Physical -- 【矢】 攻撃力：物理
+611 [Arrow] Attack power: Magic -- 【矢】 攻撃力：魔法
+612 [Arrow] Attack power: Flame -- 【矢】 攻撃力：炎
+613 [Arrow] Attack power: Lightning -- 【矢】 攻撃力：雷
+614 [Arrow] Deadly -- 【矢】 致命
+615 [Arrow] Attack power: Darkness -- 【矢】 攻撃力：闇
+620 [Arrow] Special effect: Poison -- 【矢】 特殊効果：毒
+621 [Arrow] Special effect: Bleeding -- 【矢】 特殊効果：出血
+622 [Arrow] Special effect: Holy -- 【矢】 特殊効果：神聖
+623 [Arrow] Special effect: Evil -- 【矢】 特殊効果：邪教
+624 [Arrow] Special effect: Cold air -- 【矢】 特殊効果：冷気
+10000 [PC basics] Name -- 【PC基本】 名前
+10001 [PC basics] Gender -- 【PC基本】 性別
+10002 [PC basics] Features -- 【PC基本】 素性
+10003 [PC basics] Gifts -- 【PC基本】 贈り物
+10004 [PC basics] Body shape -- 【PC基本】 体型
+10005 [PC basics] Face -- 【PC基本】 顔
+10006 [PC basics] Hairstyle -- 【PC基本】 髪型
+10007 [PC basics] Hair and eye color -- 【PC基本】 髪と瞳の色
+10008 [PC basics] Level -- 【PC基本】 レベル
+10009 [PC basics] Possession soul -- 【PC基本】 所持ソウル
+10010 [PC basics] Required soul -- 【PC基本】 必要ソウル
+10011 [PC basics] Pledge -- 【PC基本】 誓約
+10012 [PC basics] Age group -- 【PC基本】 年齢層
+10013 [PC basics] Degree of death -- 【PC基本】 亡者度
+10100 [PC primary] vitality -- 【PC１次】 生命力
+10101 [PC primary] Endurance -- 【PC１次】 持久力
+10102 [PC primary] Memory -- 【PC１次】 記憶力
+10103 [PC primary] Muscle strength -- 【PC１次】 筋力
+10104 [PC primary] Skill -- 【PC１次】 技量
+10105 [PC primary] Physical fitness -- 【PC１次】 体力
+10106 [PC primary] Reason -- 【PC１次】 理力
+10107 [PC primary] Faith -- 【PC１次】 信仰
+10108 [PC primary] Human nature -- 【PC１次】 人間性
+10109 [PC primary] Luck -- 【PC１次】 運
+10200 [PC secondary] HP current value -- 【PC２次】 HP 現在値
+10201 [PC secondary] HP maximum value -- 【PC２次】 HP 最大値
+10202 [PC secondary] MP current value -- 【PC２次】 MP 現在値
+10203 [PC secondary] MP maximum value -- 【PC２次】 MP 最大値
+10204 [PC secondary] Stamina -- 【PC２次】 スタミナ
+10205 [PC secondary] Equipment weight current value -- 【PC２次】 装備重量 現在値
+10206 [PC secondary] Maximum equipment weight -- 【PC２次】 装備重量 最大値
+10207 [PC secondary] Right weapon 1 Attack power -- 【PC２次】 右武器１　攻撃力
+10208 [PC secondary] Right weapon 2 Attack power -- 【PC２次】 右武器２　攻撃力
+10209 [PC secondary] Right weapon 3 Attack power -- 【PC２次】 右武器３　攻撃力
+10210 [PC secondary] Left weapon 1 Attack power -- 【PC２次】 左武器１　攻撃力
+10211 [PC secondary] Left weapon 2 Attack power -- 【PC２次】 左武器２　攻撃力
+10212 [PC secondary] Left weapon 3 Attack power -- 【PC２次】 左武器３　攻撃力
+10213 [PC secondary] Defense: Physical -- 【PC２次】 防御力：物理
+10214 [PC secondary] Defensive power: Physical vs. hit -- 【PC２次】 防御力：物理 対打撃
+10215 [PC secondary] Defense: Physical vs. slashing -- 【PC２次】 防御力：物理 対斬撃
+10216 [PC secondary] Defensive power: Physical anti-piercing -- 【PC２次】 防御力：物理 対刺突
+10217 [PC secondary] Defense: Magic -- 【PC２次】 防御力：魔法
+10218 [PC secondary] Defensive power: Flame -- 【PC２次】 防御力：炎
+10219 [PC secondary] Defense: Lightning -- 【PC２次】 防御力：雷
+10220 [PC secondary] Resistance: Poison -- 【PC２次】 耐性：毒
+10221 [PC secondary] Resistance: Bleeding -- 【PC２次】 耐性：出血
+10222 [PC secondary] Resistance: Curse -- 【PC２次】 耐性：呪い
+10223 [PC secondary] Toughness -- 【PC２次】 強靭度
+10224 [PC secondary] Number of storage slots -- 【PC２次】 記憶スロット数
+10225 [PC secondary] Item discovery power -- 【PC２次】 アイテム発見力
+10226 [PC secondary] Load ratio -- 【PC２次】 荷重割合
+10227 [PC secondary] New toughness -- 【PC２次】 新強靭度
+10242 [PC secondary] Armor damage cut: Physical -- 【PC２次】 防具ダメージカット：物理
+10243 [PC secondary] Armor damage cut: magic -- 【PC２次】 防具ダメージカット：魔法
+10244 [PC secondary] Armor damage cut: Flame -- 【PC２次】 防具ダメージカット：炎
+10245 [PC secondary] Armor damage cut: lightning -- 【PC２次】 防具ダメージカット：雷
+10258 [PC secondary] Defense: Darkness -- 【PC２次】 防御力：闇
+10259 [PC secondary] Armor damage cut: Physical vs. hit -- 【PC２次】 防具ダメージカット：物理 対打撃
+10260 [PC secondary] Armor damage cut: Physical anti-slash -- 【PC２次】 防具ダメージカット：物理 対斬撃
+10261 [PC secondary] Armor damage cut: Physical anti-piercing -- 【PC２次】 防具ダメージカット：物理 対刺突
+10262 [PC secondary] Armor damage cut: darkness -- 【PC２次】 防具ダメージカット：闇
+10263 [PC secondary] Resistance: Cold air -- 【PC２次】 耐性：冷気
+10264 [PC secondary] Armor resistance: Bleeding -- 【PC２次】 防具耐性：出血
+10265 [PC secondary] Armor resistance: Poison -- 【PC２次】 防具耐性：毒
+10266 [PC secondary] Armor resistance: cold air -- 【PC２次】 防具耐性：冷気
+10267 [PC secondary] Armor resistance: Curse -- 【PC２次】 防具耐性：呪い
+10270 [PC secondary] Arts point: Current muscle strength -- 【PC２次】 アーツポイント：筋力 現在値
+10271 [PC secondary] Arts point: current skill value -- 【PC２次】 アーツポイント：技量 現在値
+10272 [PC secondary] Arts point: Magic current value -- 【PC２次】 アーツポイント：魔法 現在値
+10273 [PC secondary] Arts point: Miracle current value -- 【PC２次】 アーツポイント：奇跡 現在値
+10280 [PC secondary] Arts point: Maximum muscle strength -- 【PC２次】 アーツポイント：筋力 最大値
+10281 [PC secondary] Arts point: Maximum skill value -- 【PC２次】 アーツポイント：技量 最大値
+10282 [PC secondary] Arts point: Magic maximum value -- 【PC２次】 アーツポイント：魔法 最大値
+10283 [PC secondary] Arts point: Miracle maximum value -- 【PC２次】 アーツポイント：奇跡 最大値
+20300 [Sort] [Weapon] Attack power: Total -- 【ソート】【武器】 攻撃力：合計
+20301 [Sort] [Weapon] Damage cut rate: Total -- 【ソート】【武器】 ダメージカット率：合計
+20302 [Sort] [Weapon] By effect -- 【ソート】【武器】 効果別
+20400 [Sort] [Armor] Damage cut: Total -- 【ソート】【防具】 ダメージカット：合計
+20401 [Sort] [Armor] Resistance: Total -- 【ソート】【防具】 耐性：合計
+20600 [Sort] [Arrow] Attack power: Total -- 【ソート】【矢】 攻撃力：合計

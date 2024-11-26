@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters relating to rings." Row0Dummy="" />
+  <Field>
+    <weight AltName="Weight" />
+    <durability AltName="Durability" />
+    <repair_cost AltName="Repair Cost" />
+    <item_discovery AltName="Item Discovery" />
+  </Field>
+</PARAMMETA>

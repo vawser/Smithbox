@@ -1,0 +1,20 @@
+0 test -- テスト
+1 Test 1 -- テスト1
+1000800 Butterflies -- お蝶
+1000900 Chief of the Ninja Army_The heyday -- 忍軍の長_全盛期
+1100800 Horse-riding warrior -- 騎馬武者
+1100900 Buddhist demon -- 仏師鬼
+1110801 Second rival -- ライバル2回目
+1110850 Ninja Army Chief_Coward -- 忍軍の長_卑怯
+1110900 Medical Holy Daughter -- 医聖の娘
+1110920 Sword of the sickbed -- 病床の剣聖
+1120800 Rival first time -- ライバル初回
+1120830 3rd rival -- ライバル3回目
+1120860 Revived Kensei -- 甦った剣聖
+1500800 Haunting Monk_Phantom -- 破戒僧_幻影
+1700800 Yasha Ape -- 夜叉猿
+1700850 Yasha Ape_Neckless -- 夜叉猿_首無し
+2000800 Chigo monkey -- 稚児猿
+2500800 Mermaid dragon -- 人魚竜
+2500840 Okiryu_Large -- 翁竜_大
+2500850 Haunting monk -- 破戒僧

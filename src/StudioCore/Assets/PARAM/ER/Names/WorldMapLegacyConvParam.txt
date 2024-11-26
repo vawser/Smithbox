@@ -1,0 +1,196 @@
+5 Roundtable Hold -> Unnamed Tile
+10 Crumbling Farum Azula -> Greyoll's Dragonbarrow - Bestial Sanctum
+11 Crumbling Farum Azula -> Greyoll's Dragonbarrow - Bestial Sanctum
+12 Subterranean Shunning-Grounds -> Leyndell, Royal Capital
+14 Leyndell, Ashen Capital -> Stone Platform
+15 Stormveil Castle -> Divine Tower of Limgrave
+16 Isolated Divine Tower -> Unnamed Tile
+17 Crumbling Farum Azula -> Isolated Divine Tower: Overworld
+18 Miquella's Haligtree -> Consecrated Snowfield - Ordina, Liturgical Town
+100 Stormveil Castle -> Liurnia of the Lakes - Church of Irith
+101 Stormveil Castle -> Liurnia of the Lakes - Lake-Facing Cliffs, Stormveil Castle Exit, Stillwater Cave Entrance
+102 Stormveil Castle -> Caelid - West Sellia, Sellia Crystal Tunnel Entrance, Sellia Evergaol
+103 Stormveil Castle -> Greyoll's Dragonbarrow - South of Divine Tower of Caelid, Deep Siofra Well
+104 Stormveil Castle -> Stormhill - Stormhill Shack, Stormveil Castle Entrance
+105 Stormveil Castle -> Stormhill - North of Stormhill Shack
+106 Stormveil Castle -> Chapel of Anticipation
+107 Stormveil Castle -> Divine Tower of Limgrave
+108 Leyndell, Royal Capital -> Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance
+109 Leyndell, Royal Capital -> Divine Tower of East Altus
+110 Leyndell, Royal Capital -> Subterranean Shunning-Grounds
+111 Leyndell, Ashen Capital -> Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance
+112 Leyndell, Ashen Capital -> Stone Platform
+113 Leyndell, Ashen Capital -> Divine Tower of East Altus
+114 Leyndell, Ashen Capital -> Subterranean Shunning-Grounds
+115 Ainsel River / Lake of Rot -> Liurnia of the Lakes - Eastern Tableland, Ainsel River Well
+116 Ainsel River / Lake of Rot -> Liurnia of the Lakes - Ruined Labyrinth, Uld Palace Ruins
+117 Ainsel River / Lake of Rot -> Liurnia of the Lakes - Eastern Tableland Northeast Cliffside
+118 Ainsel River / Lake of Rot -> Deeproot Depths
+119 Ainsel River / Lake of Rot -> Lake of Rot - Astel's Chamber
+120 Siofra River / Nokron ->
+121 Siofra River / Nokron ->
+122 Siofra River / Nokron -> Caelid - West Sellia, Sellia Crystal Tunnel Entrance, Sellia Evergaol
+123 Siofra River / Nokron -> Greyoll's Dragonbarrow - South of Divine Tower of Caelid, Deep Siofra Well
+124 Siofra River / Nokron -> Nokron - Start
+125 Siofra River / Nokron -> Siofra River - Ancestor Spirit Chamber
+126 Siofra River / Nokron -> Nokron - Regal Ancestor Spirit Chamber
+127 Deeproot Depths -> Subterranean Shunning-Grounds
+128 Lake of Rot - Astel's Chamber -> Moonlight Altar - Deep Ainsel Well
+129 Mohgwyn Palace -> Caelid - West Radahn Arena
+130 Nokron - Start -> Limgrave - Fort Haight West
+131 Nokron - Start -> Limgrave - Siofra River Well, Mistwood Ruins, Minor Erdtree, Nokron Entrance
+132 Crumbling Farum Azula -> Flame Peak - Forge of the Giants
+133 Academy of Raya Lucaria -> Liurnia of the Lakes - South Raya Lucaria Gate
+134 Academy of Raya Lucaria -> Liurnia of the Lakes - Main Academy Gate, Academy of Raya Lucaria Entrance
+135 Academy of Raya Lucaria -> Academy Crystal Cave
+136 Miquella's Haligtree ->
+137 Volcano Manor ->
+138 Volcano Manor ->
+139 Volcano Manor ->
+140 Stranded Graveyard ->
+141 Stranded Graveyard ->
+142 Tombsward Catacombs ->
+143 Tombsward Catacombs ->
+144 Impaler's Catacombs ->
+145 Stormfoot Catacombs ->
+146 Road's End Catacombs ->
+147 Murkwater Catacombs ->
+148 Murkwater Catacombs ->
+149 Black Knife Catacombs ->
+150 Cliffbottom Catacombs ->
+151 Wyndham Catacombs ->
+152 Wyndham Catacombs ->
+153 Sainted Hero's Grave ->
+154 Gelmir Hero's Grave ->
+155 Auriza Hero's Grave
+156 Auriza Hero's Grave
+157 Deathtouched Catacombs
+158 Unsightly Catacombs
+159 Auriza Side Tomb
+160 Minor Erdtree Catacombs
+161 Minor Erdtree Catacombs
+162 Caelid Catacombs
+163 Caelid Catacombs
+164 War-Dead Catacombs
+165 Giant-Conquering Hero's Grave
+166 Giant-Conquering Hero's Grave
+167 Giants' Mountaintop Catacombs
+168 Giants' Mountaintop Catacombs
+169 Consecrated Snowfield Catacombs
+170 Consecrated Snowfield Catacombs
+171 Hidden Path to the Haligtree
+172 Hidden Path to the Haligtree
+173 Hidden Path to the Haligtree
+174 Hidden Path to the Haligtree
+175 Murkwater Cave
+176 Earthbore Cave
+177 Tombsward Cave
+178 Groveside Cave
+179 Stillwater Cave
+180 Lakeside Crystal Cave
+181 Lakeside Crystal Cave
+182 Academy Crystal Cave
+183 Academy Crystal Cave
+184 Seethewater Cave
+185 Seethewater Cave
+186 Volcano Cave
+187 Dragonbarrow Cave
+188 Sellia Hideaway
+189 Cave of the Forlorn
+190 Coastal Cave
+191 Coastal Cave
+192 Highroad Cave
+193 Perfumer's Grotto
+194 Perfumer's Grotto
+195 Sage's Cave
+196 Abandoned Cave
+197 Abandoned Cave
+198 Gaol Cave
+199 Gaol Cave
+200 Spiritcaller Cave
+201 Spiritcaller Cave
+202 Morne Tunnel
+203 Limgrave Tunnels
+204 Limgrave Tunnels
+205 Raya Lucaria Crystal Tunnel
+206 Raya Lucaria Crystal Tunnel
+207 Old Altus Tunnel
+208 Old Altus Tunnel
+209 Old Altus Tunnel
+210 Old Altus Tunnel
+211 Altus Tunnel
+212 Gael Tunnel
+213 Gael Tunnel
+214 Gael Tunnel
+215 Sellia Crystal Tunnel
+216 Yelough Anix Tunnel
+217 Divine Tower of Limgrave
+218 Divine Tower of Liurnia
+219 Divine Tower of West Altus
+220 Divine Tower of Caelid
+221 Divine Tower of Caelid
+222 Divine Tower of East Altus
+223 Isolated Divine Tower
+224 
+225 
+226 
+227 
+228 
+229 
+230 
+231 
+232 
+233 
+234 
+235 
+236 
+237 
+238 
+239 
+1000 Finger Birthing Grounds
+1100 Belurat, Tower Settlement
+1101 Enir-Ilim
+1102 Shadow Keep
+1103 Shadow Keep
+1104 Shadow Keep
+1105 Shadow Keep
+1106 Shadow Keep
+1107 Shadow Keep
+1108 Specimen Storehouse
+1109 Specimen Storehouse
+1110 Specimen Storehouse (West Rampart)
+1111 Stone Coffin Fissure
+1112 Stone Coffin Fissure
+1113 Finger Birthing Grounds
+1114 Finger Birthing Grounds
+1115 Finger Birthing Grounds
+1116 Finger Birthing Grounds
+1117 Midra's Manse
+1118 Midra's Manse
+1119 Midra's Manse
+1120 Midra's Manse
+1121 Fog Rift Catacombs
+1122 Fog Rift Catacombs
+1123 Fog Rift Catacombs
+1124 Fog Rift Catacombs
+1125 Scorpion River Catacombs
+1126 Scorpion River Catacombs
+1127 Darklight Catacombs
+1128 Darklight Catacombs
+1129 Belurat Gaol
+1130 Belurat Gaol
+1131 Bonny Gaol
+1132 Lamenter's Gaol
+1133 Lamenter's Gaol
+1134 Ruined Forge Lava Intake
+1135 Ruined Forge Lava Intake
+1136 Ruined Forge Lava Intake
+1137 Ruined Forge Lava Intake
+1138 Ruined Forge of Starfall Past
+1139 Ruined Forge of Starfall Past
+1140 Ruined Forge of Starfall Past
+1141 Ruined Forge of Starfall Past
+1142 Taylew's Ruined Forge
+1143 Taylew's Ruined Forge
+1144 Rivermouth Cave
+1145 Dragon's Pit -> Unnamed Tile

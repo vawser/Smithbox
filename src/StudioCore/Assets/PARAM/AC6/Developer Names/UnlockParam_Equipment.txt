@@ -1,0 +1,24 @@
+1 Mercenary rank 1 reward -- 傭兵ランク１報酬
+2 Mercenary rank 2 reward -- 傭兵ランク２報酬
+3 Mercenary rank 3 reward -- 傭兵ランク３報酬
+4 Mercenary rank 4 reward -- 傭兵ランク４報酬
+5 Mercenary rank 5 reward -- 傭兵ランク５報酬
+6 Mercenary rank 6 reward -- 傭兵ランク６報酬
+7 Mercenary rank 7 reward -- 傭兵ランク７報酬
+8 Mercenary rank 8 reward -- 傭兵ランク８報酬
+9 Mercenary rank 9 reward -- 傭兵ランク９報酬
+10 Mercenary rank 10 reward -- 傭兵ランク１０報酬
+11 Mercenary rank 11 reward -- 傭兵ランク１１報酬
+12 Mercenary rank 12 reward -- 傭兵ランク１２報酬
+13 Mercenary rank 13 reward -- 傭兵ランク１３報酬
+14 Mercenary rank 14 reward -- 傭兵ランク１４報酬
+15 Mercenary rank 15 reward -- 傭兵ランク１５報酬
+26 [Clear]Rail Road -- 【クリア】レイル・ロード
+27 [Clear] Jailbreak -- 【クリア】脱獄
+28 [Clear] Breaking through the atmosphere -- 【クリア】大気圏突破
+29 [Clear] Battle B -- 【クリア】決戦B
+30 [Clear] 01(S) -- 【クリア】01(S)
+31 [Clear] TEST-09 [γ3] -- 【クリア】TEST-09【γ3】
+32 [Clear] TEST-R [δ1] -- 【クリア】TEST-R【δ1】
+33 [Clear] TEST-W [δ2] -- 【クリア】TEST-W【δ2】
+34 [Clear] TEST-A [δ3] -- 【クリア】TEST-A【δ3】

@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="NPC_BULLET_PENETRATE_DEF_TYPE" type="u8">
+      <Option Value="0" Name="Low" />
+      <Option Value="1" Name="Normal" />
+    </Enum>
+    <Enum Name="NPC_DRAW_TYPE" type="s8">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="White Phantom" />
+      <Option Value="2" Name="Black Phantom" />
+      <Option Value="3" Name="Intruder" />
+      <Option Value="3" Name="Ghoul Body" />
+    </Enum>
+    <Enum Name="NPC_TYPE" type="u8">
+      <Option Value="0" Name="Standard" />
+      <Option Value="1" Name="Boss" />
+    </Enum>
+	<Enum Name="NPC_ITEMDROP_TYPE">
+      <Option Value="0" Name="Attached to Corpse" />
+      <Option Value="1" Name="Dropped in Place" />
+    </Enum>
+    <Enum Name="NPC_MOVE_TYPE" type="u8">
+      <Option Value="0" Name="Immobile" />
+      <Option Value="1" Name="All Directions" />
+      <Option Value="2" Name="Forward and Backwards Only" />
+      <Option Value="3" Name="Biped" />
+      <Option Value="4" Name="Quadruped" />
+      <Option Value="5" Name="Flight" />
+      <Option Value="6" Name="Hover" />
+      <Option Value="7" Name="Hover + Biped" />
+      <Option Value="8" Name="Flight + Biped" />
+      <Option Value="9" Name="Boss Biped" />
+      <Option Value="10" Name="Attach" />
+    </Enum>
+    <Enum Name="TEAM_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Guest" />
+      <Option Value="2" Name="Host" />
+      <Option Value="3" Name="Wingman" />
+      <Option Value="4" Name="Junior Wingman" />
+      <Option Value="5" Name="Enemy" />
+      <Option Value="6" Name="Strong Enemy" />
+      <Option Value="7" Name="Third Force" />
+      <Option Value="8" Name="Beserker" />
+      <Option Value="9" Name="Character for Object Destruction" />
+      <Option Value="10" Name="Character for Object Destruction (Wingman)" />
+      <Option Value="11" Name="Character for Object Destruction (Enemy)" />
+      <Option Value="12" Name="Object" />
+      <Option Value="13" Name="Third Force (Ally)" />
+      <Option Value="14" Name="Gimmick Battery (Ally)" />
+    </Enum>
+    <Enum Name="ATK_PARAM_PARTSDMGTYPE" type="u8">
+      <Option Value="0" Name="Arrows" />
+      <Option Value="1" Name="All attacks" />
+    </Enum>
+    <Enum Name="NPC_BURN_TYPE" type="u8">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Corpse" />
+    </Enum>
+    <Enum Name="NPC_HITSTOP_TYPE" type="u8">
+      <Option Value="0" Name="No Hit Stop" />
+      <Option Value="1" Name="Partial Hit Stop" />
+      <Option Value="2" Name="Hit Stop" />
+    </Enum>
+    <Enum Name="NPC_SFX_SIZE" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Large" />
+        <Option Value="2" Name="Medium" />
+    </Enum>
+    <Enum Name="NPC_WEIGHT_TYPE" type="u8">
+        <Option Value="0" Name="Light" />
+        <Option Value="1" Name="Medium" />
+        <Option Value="2" Name="Normal" />
+        <Option Value="3" Name="Overweight" />
+        <Option Value="4" Name="Ultralight" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_CHR_BEHAVIOR_CTRL_TYPE" type="u8">
+      <Option Value="0" Name="Walking" />
+      <Option Value="1" Name="Floating" />
+      <Option Value="2" Name="Vehicle" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_DEAD_LOOK_AT_TYPE" type="u8">
+      <Option Value="0" Name="Fixed after death immediately" />
+      <Option Value="1" Name="Fixed after death flag" />
+      <Option Value="2" Name="Never fixed" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_DEATH_ANIM_TYPE_1" type="u8">
+      <Option Value="0" Name="Not used" />
+      <Option Value="1" Name="Before" />
+      <Option Value="2" Name="Before and after" />
+      <Option Value="4" Name="Front and back, left and right" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_DEATH_ANIM_TYPE_2" type="u8">
+      <Option Value="0" Name="Not used" />
+      <Option Value="1" Name="Before" />
+      <Option Value="2" Name="Before and after" />
+      <Option Value="3" Name="Left and right" />
+      <Option Value="4" Name="Front and back, left and right" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_ENERGY_CONSUME_TYPE" type="u8">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Infinite" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_AUTOSIGHT_FE_DISP_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Weakness" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_MINIMAP_ICON_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Normal" />
+      <Option Value="2" Name="Rader" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_MOVEMENT_TYPE" type="u8">
+      <Option Value="0" Name="AC" />
+      <Option Value="1" Name="Boss" />
+      <Option Value="2" Name="Unknown" />
+      <Option Value="3" Name="Unknown" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_PARTS_GROUP" type="u8">
+      <Option Value="0" Name="Disabled" />
+      <Option Value="1" Name="Part 1" />
+      <Option Value="2" Name="Part 2" />
+      <Option Value="3" Name="Part 3" />
+      <Option Value="4" Name="Part 4" />
+      <Option Value="5" Name="Part 5" />
+      <Option Value="6" Name="Part 6" />
+      <Option Value="7" Name="Part 7" />
+      <Option Value="8" Name="Part 8" />
+      <Option Value="9" Name="Part 9" />
+      <Option Value="10" Name="Part 10" />
+      <Option Value="11" Name="Part 11" />
+      <Option Value="12" Name="Part 12" />
+      <Option Value="13" Name="Part 13" />
+      <Option Value="14" Name="Part 14" />
+      <Option Value="15" Name="Part 15" />
+      <Option Value="16" Name="Part 16" />
+      <Option Value="17" Name="Part 17" />
+      <Option Value="18" Name="Part 18" />
+      <Option Value="19" Name="Part 19" />
+      <Option Value="20" Name="Part 20" />
+      <Option Value="21" Name="Part 21" />
+      <Option Value="22" Name="Part 22" />
+      <Option Value="23" Name="Part 23" />
+      <Option Value="24" Name="Part 24" />
+      <Option Value="25" Name="Part 25" />
+      <Option Value="26" Name="Part 26" />
+      <Option Value="27" Name="Part 27" />
+      <Option Value="28" Name="Part 28" />
+      <Option Value="29" Name="Part 29" />
+      <Option Value="30" Name="Part 30" />
+      <Option Value="31" Name="Part 31" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_PARTS_HIT_FE_TYPE" type="s8">
+      <Option Value="0" Name="No Display" />
+      <Option Value="1" Name="Normal" />
+      <Option Value="2" Name="Weakness" />
+      <Option Value="3" Name="Armor" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_RECEIVE_DMG_DIR_FOR_STOP_BULLET_TYPE" type="s8">
+      <Option Value="0" Name="Bullet Position -> Character Capsule" />
+      <Option Value="1" Name="Bullet Position -> Hit Position" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_RECEIVE_DMG_HITSTOP_TYPE" type="u8">
+      <Option Value="0" Name="No" />
+      <Option Value="1" Name="Yes" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_SPECIAL_TURN_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="U-Turn" />
+      <Option Value="2" Name="Back-Turn" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_SP_EFFECT_ADD_COND_PARTS_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Ice-worm Head" />
+    </Enum>
+    <!-- TODO: find field -->
+    <Enum Name="NPC_VISIBLE_TYPE" type="u8">
+      <Option Value="0" Name="Hidden" />
+      <Option Value="1" Name="Displayed" />
+    </Enum>
+    
+  </Enums>
+  <Field>
+    <Unk0x00 Padding="" />
+    <behaviorVariationId AltName="Behavior Variation ID" Wiki="Variation ID used when calculating the action ID." />
+    <accountParamId AltName="Account ID" Refs="AccountParam" Wiki="Refers to the Account Param row to use to represent this NPC." />
+    <modelId AltName="Model ID" Wiki="Refers to the Chr ID to use for this NPC." />
+    <hitHeight AltName="Capsule Height" Wiki="The height of the capsule per character." />
+    <hitRadius AltName="Capsule Radius" Wiki="Radius of capsule per character." />
+    <weight AltName="Weight" Wiki="weight." />
+    <hitYOffset AltName="Display Position - Height Offset" Wiki="Offset of the model display position in the Y (height) direction. It can be floated from the hit position." />
+    <hp AltName="Base AP" Wiki="Death grace." />
+    <mp AltName="Base FP" Wiki="Magic usage." />
+    <getSoul AltName="Base Mission Score" Wiki="The amount of Misson Score that a character gives at the time of death." />
+    <ItemLotId1 AltName="Itemlot ID [1]" Wiki="Specify the itemlot ID given at the time of death. Please set only one of them." Refs="ItemLotParam"/>
+    <ItemLotId2 AltName="Itemlot ID [2]" Wiki="Specify the itemlot ID given at the time of death. Please set only one of them." Refs="ItemLotParam"/>
+    <ItemLotId3 AltName="Itemlot ID [3]" Wiki="Specify the itemlot ID given at the time of death. Please set only one of them." Refs="ItemLotParam"/>
+    <ItemLotId4 AltName="Itemlot ID [4]" Wiki="Specify the itemlot ID given at the time of death. Please set only one of them." Refs="ItemLotParam"/>
+    <ItemLotId5 AltName="Itemlot ID [5]" Wiki="Specify the itemlot ID given at the time of death. Please set only one of them." Refs="ItemLotParam"/>
+    <ItemLotId6 AltName="Itemlot ID [6]" Wiki="Specify the itemlot ID given at the time of death. Please set only one of them." Refs="ItemLotParam"/>
+    <humanityLotId AltName="Humanity Itemlot ID" Wiki="Specify the itemlot ID given when humanity is rewarded." Refs="ItemLotParam"/>
+    <spEffectID0 AltName="SpEffect ID [0]" Wiki="Special Effect applied to this NPC automatically." Refs="SpEffectParam"/>
+    <spEffectID1 AltName="SpEffect ID [1]" Wiki="Special Effect applied to this NPC automatically." Refs="SpEffectParam"/>
+    <spEffectID2 AltName="SpEffect ID [2]" Wiki="Special Effect applied to this NPC automatically." Refs="SpEffectParam"/>
+    <spEffectID3 AltName="SpEffect ID [3]" Wiki="Special Effect applied to this NPC automatically." Refs="SpEffectParam"/>
+    <spEffectID4 AltName="SpEffect ID [4]" Wiki="Special Effect applied to this NPC automatically." Refs="SpEffectParam"/>
+    <spEffectID5 AltName="SpEffect ID [5]" Wiki="Special Effect applied to this NPC automatically." Refs="SpEffectParam"/>
+    <spEffectID6 AltName="SpEffect ID [6]" Wiki="Special Effect applied to this NPC automatically." Refs="SpEffectParam"/>
+    <spEffectID7 AltName="SpEffect ID [7]" Wiki="Special Effect applied to this NPC automatically." Refs="SpEffectParam"/>
+    <GameClearSpEffectID AltName="Game Clear SpEffect ID" Wiki="Special Effect applied to this NPC automatically during playthroughs after initial playthrough completion." Refs="SpEffectParam"/>
+    <guardCutRate_Kinetic AltName="Guard Absorption %: Kinetic" Wiki="Determine the level of negation applied to Kinetic damage received." />
+    <guardCutRate_Energy AltName="Guard Absorption %: Energy" Wiki="Determine the level of negation applied to Energy damage received." />
+    <guardCutRate_Explosive AltName="Guard Absorption %: Explosive" Wiki="Determine the level of negation applied to Explosive damage received." />
+    <guardCutRate_Coral AltName="Guard Absorption %: Coral" Wiki="Determine the level of negation applied to Coral damage received." />
+    <animIdOffset AltName="Anim ID Offset" Wiki="All animations will be played with IDs shifted by this number. If not, the original animation ID is referenced." />
+    <lockGazePoint0 AltName="Lock Gaze Point: Dummy Poly ID [0]" Wiki="Look at the Dummy Polygon ID specified when locking the Lock-on Dummy Polygon ID 22X (-1 Invalid)" />
+    <lockGazePoint1 AltName="Lock Gaze Point: Dummy Poly ID [1]" Wiki="Look at the Dummy Polygon ID specified when locking the Lock-on Dummy Polygon ID 22X (-1 Invalid)" />
+    <lockGazePoint2 AltName="Lock Gaze Point: Dummy Poly ID [2]" Wiki="Look at the Dummy Polygon ID specified when locking the Lock-on Dummy Polygon ID 22X (-1 Invalid)" />
+    <lockGazePoint3 AltName="Lock Gaze Point: Dummy Poly ID [3]" Wiki="Look at the Dummy Polygon ID specified when locking the Lock-on Dummy Polygon ID 22X (-1 Invalid)" />
+    <lockGazePoint4 AltName="Lock Gaze Point: Dummy Poly ID [4]" Wiki="Look at the Dummy Polygon ID specified when locking the Lock-on Dummy Polygon ID 22X (-1 Invalid)" />
+    <lockGazePoint5 AltName="Lock Gaze Point: Dummy Poly ID [5]" Wiki="Look at the Dummy Polygon ID specified when locking the Lock-on Dummy Polygon ID 22X (-1 Invalid)" />
+    <networkWarpDisp AltName="Network Warp Display" Wiki="Distance to warp instead of complementary movement in network synchronization. Faster people (ex dragons) need to be longer." />
+    <dbgBehaviorR1 AltName="Debug Action: R1" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorL1 AltName="Debug Action: L1" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorR2 AltName="Debug Action: R2" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorL2 AltName="Debug Action: L2" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorRL AltName="Debug Action: Square" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorRR AltName="Debug Action: Circle" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorRD AltName="Debug Action: Cross" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorRU AltName="Debug Action: Triangle" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorLL AltName="Debug Action: Left D-Pad" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorLR AltName="Debug Action: Right D-Pad" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorLD AltName="Debug Action: Down D-Pad" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <dbgBehaviorLU AltName="Debug Action: Up D-Pad" Wiki="Register the ID from the action parameter tool and specify the action." />
+    <animIdOffset2 AltName="Secondary Anim ID Offset" Wiki="All animations will be played with IDs shifted by this number. If not, the animation ID of the animation ID offset 1 is referred to." />
+    <partsDamageRate1 AltName="Damage % Part [1]" Wiki="Magnification to the damage taken when Part 1 is hit. Part 1 is set in cXXXX.hkxpwv file." />
+    <partsDamageRate2 AltName="Damage % Part [2]" Wiki="Magnification to the damage taken when Part 2 is hit. Part 2 is set in cXXXX.hkxpwv file." />
+    <partsDamageRate3 AltName="Damage % Part [3]" Wiki="Magnification to the damage taken when Part 3 is hit. Part 3 is set in cXXXX.hkxpwv file." />
+    <partsDamageRate4 AltName="Damage % Part [4]" Wiki="Magnification to the damage taken when Part 4 is hit. Part 4 is set in cXXXX.hkxpwv file." />
+    <partsDamageRate5 AltName="Damage % Part [5]" Wiki="Magnification to the damage taken when Part 5 is hit. Part 5 is set in cXXXX.hkxpwv file." />
+    <partsDamageRate6 AltName="Damage % Part [6]" Wiki="Magnification to the damage taken when Part 6 is hit. Part 6 is set in cXXXX.hkxpwv file." />
+    <partsDamageRate7 AltName="Damage % Part [7]" Wiki="Magnification to the damage taken when Part 7 is hit. Part 7 is set in cXXXX.hkxpwv file." />
+    <partsDamageRate8 AltName="Damage % Part [8]" Wiki="Magnification to the damage taken when Part 8 is hit. Part 8 is set in cXXXX.hkxpwv file." />
+    <weakPartsDamageRate AltName="Damage % Weak Part" Wiki="Magnification to the damage taken when Weak Part is hit. Weak Part is set in cXXXX.hkxpwv file." />
+    <superArmorRecoverCorrection AltName="Poise Recovery Correction" Wiki="Correction value for stagger recovery time." />
+    <superArmorBrakeKnockbackDist AltName="Stagger Knockback Distance" Wiki="Knockback distance that can be used only at the time of stagger break." />
+    <stamina AltName="Stagger Resistance" Wiki="Total amount of stagger resistance." />
+    <staminaRecoverBaseVel AltName="Stagger Resistance Recovery" Wiki="Stagger resistance recovery basic speed [point / s]" />
+    <def_Kinetic AltName="Defence: Kinetic" Wiki="Damage reduction base value for Kinetic attacks." />
+    <defSlash AltName="Defence: Slash" Wiki="Damage reduction base value for Kinetic (Slash) attacks." />
+    <defBlow AltName="Defence: Strike" Wiki="Damage reduction base value for Kinetic (Strike) attacks." />
+    <defThrust AltName="Defence: Thrust" Wiki="Damage reduction base value for Kinetic (Thrust) attacks." />
+    <def_Energy AltName="Defence: Energy" Wiki="Damage reduction base value for Energy attacks." />
+    <def_Explosive AltName="Defence: Explosive" Wiki="Damage reduction base value for Explosive attacks." />
+    <def_Coral AltName="Defence: Coral" Wiki="Damage reduction base value for Coral attacks." />
+    <defFlickPower AltName="Defence: Weapon Repel Power" Wiki="Used to determine the repelling of enemy attacks." />
+    <statusResist_AcsAnomaly AltName="Status Resist: ACS Anomaly" Wiki="Determines resistence to ACS Anomaly status inflict."/>
+    <statusResist_ElecDischarge AltName="Status Resist: Electric Discharge" Wiki="Determines resistence to Electric Discharge status inflict."/>
+    <statusResist_Plasma AltName="Status Resist: Plasma" Wiki="Determines resistence to Plasma status inflict."/>
+    <statusResist_ElecDischargeType2 AltName="Status Resist: Electric Discharge (Type 2)" Wiki="Determines resistence to Electric Discharge (Type 2) status inflict."/>
+    <ghostModelId AltName="Ghost Model ID" Wiki="Replacement model when wandering ghost, texture ID" />
+    <normalChangeResourceId AltName="Override Resource Chr ID" Wiki="Replace resource ID during normal operation (do not use it unnecessarily)" />
+    <guardAngle AltName="Guard Angle" Wiki="Defense range angle when guarding weapons. Pending" />
+    <slashGuardCutRate AltName="Guard Absorption %: Slash" Wiki="Looking at the attack type, what percentage of the damage of the slashing attribute is cut? Specify" />
+    <blowGuardCutRate AltName="Guard Absorption %: Strike" Wiki="Looking at the attack type, what percentage of the damage of the hit attribute is cut? Specify" />
+    <thrustGuardCutRate AltName="Guard Absorption %: Thrust" Wiki="Looking at the attack type, what percentage of the damage of the piercing attribute is cut? Specify" />
+    <superArmorDurability AltName="Poise" />
+    <normalChangeTexChrId AltName="Override Texture Chr ID" Wiki="Normal replacement texture character ID (do not use it unnecessarily)" />
+    <dropType AltName="Drop Type" Wiki="Display method when dropping an item (corpse emission or item display)" Enum="NPC_ITEMDROP_TYPE" />
+    <knockbackRate AltName="Received Knockback %" Wiki="Decrease value when receiving knockback damage / Specifically, cut the initial knockback speed of the attacking side" />
+    <knockbackParamId AltName="Knockback Param ID" Wiki="Set the parameter ID used for knockback" />
+    <fallDamageDamp AltName="Fall Damage Reduction %" Wiki="Fall damage reduction correction [%]" />
+    <staminaGuardDef AltName="Guard Absorption %: Stagger Damage" Wiki="Defense against enemy stamina attacks when guarding successfully" />
+    <pcAttrB AltName="PC Attribute B" />
+    <pcAttrW AltName="PC Attribute W" />
+    <pcAttrL AltName="PC Attribute L" />
+    <pcAttrR AltName="PC Attribute R" />
+    <areaAttrB AltName="Area Attribute B" />
+    <areaAttrW AltName="Area Attribute W" />
+    <areaAttrL AltName="Area Attribute L" />
+    <areaAttrR AltName="Area Attribute R" />
+    <mpRecoverBaseVal AltName="FP Recovery" />
+    <mpRecoverBaseVel AltName="FP Recovery" Wiki="MP recovery basic speed [% / s]" />
+    <flickDamageCutRate AltName="Weapon Repel Absorption" Wiki="Set a value to attenuate damage when repelling an attack" />
+    <defaultLodParamId AltName="Default LOD Param ID" Wiki="Default LOD Param ID (-1 None)" />
+    <drawType AltName="Draw Type" Wiki="Drawing type" Enum="NPC_DRAW_TYPE" />
+    <npcType AltName="NPC Type" Wiki="NPC type. OK if Zako enemies / boss enemies are distinguished" Enum="NPC_TYPE" />
+    <teamType AltName="Team Type" Wiki="NPC attack hit / not hit, aim / not aim setting" Enum="TEAM_TYPE" />
+    <moveType AltName="Move Type" Wiki="Moving method. This changes the control." Enum="NPC_MOVE_TYPE" />
+    <lockDist AltName="Lock Distance" Wiki="Lock-on distance [m]" />
+    <weakSpot_MaterialSound AltName="Weak Spot: Sound" Wiki="Refers to material sound." />
+	<weakSpot_MaterialVisual AltName="Weak Spot: SFX" Wiki="Refers to material visual effect." />
+    <partsDamageType AltName="Parts Damage Type" Wiki="Determines if weak parts (such as the head) will be affected by all attacks or just arrow attacks.\nHeadshot animation will be used for weak part attacks if it exists." Enum="ATK_PARAM_PARTSDMGTYPE" />
+    <maxUndurationAng AltName="Max Undulation Angle" />
+    <guardLevel AltName="Guard Level" Wiki="Determines guard hit anim used depending on incoming damageLevel." />
+	<burnsfxType AltName="Burn SFX Type" Enum="NPC_BURN_TYPE" />
+    <statusGuardResist_AcsAnomaly AltName="Guard Status Resist: ACS Anomaly" Wiki="Determines resistence to ACS Anomaly status inflict whilst guarding."/>
+    <statusGuardResist_ElecDischarge AltName="Guard Status Resist: Electric Discharge" Wiki="Determines resistence to Electric Discharge status inflict whilst guarding."/>
+    <statusGuardResist_Plasma AltName="Guard Status Resist: Plasma" Wiki="Determines resistence to Plasma status inflict whilst guarding."/>
+    <statusGuardResist_ElecDischargeType2 AltName="Guard Status Resist: Electric Discharge (Type 2)" Wiki="Determines resistence to Electric Discharge (Type 2) status inflict whilst guarding."/>
+    <parryAttack AltName="Parry Attack" Wiki="If this is greater than defender's Parry Defense, the attack cannot be parried." />
+	<parryDefense AltName="Parry Defense" Wiki="If this is equal to or greater than attacker's Parry Attack, the attack can be parried." />
+    <sfxSize AltName="SFX Size" Wiki="Determines which version of a SpEffect's VFX to use (i.e. bigger poison clouds on bigger enemies)." Enum="NPC_SFX_SIZE" />
+	<pushOutCamRegionRadius AltName="Camera Push Out Region Radius" />
+    <hitStopType AltName="Hit Stop Type" Wiki="Setting whether to perform hit stop processing" Enum="NPC_HITSTOP_TYPE" />
+	<ladderEndChkOffsetTop AltName="Ladder End Check Offset Top" Wiki="Upper side of the ladder end judgment offset" />
+    <ladderEndChkOffsetLow AltName="Ladder End Check Offset Bottom" Wiki="Lower side of ladder end judgment offset" />
+    <UseRagdoll AltName = "Use Ragdoll" IsBool="" />
+    <useRagdollCamHit AltName="Use Ragdoll Camera Hit" Wiki="Does the camera hit the enemy ragdoll? (Valid only when hitting the player)" IsBool="" />
+    <disableClothRigidHit AltName="Disable Cloth Rigid Hit" Wiki="If you want to prevent the cross rigid from hitting you " IsBool="" />
+    <isWeakA AltName="Enemy Type: Type A" Wiki="Special attack A? Special attack A damage multiplier will be included in the calculation" IsBool="" />
+    <isGhost AltName="Is Ghost" Wiki="The opponent's attack will be able to slip through. The attack hits only when the anti-spirit weapon of the weapon para is attacked with the weapon of . Be careful not to confuse it with a wandering ghost" IsBool="" />
+    <isNoDamageMotion AltName="No Damage Motion" Wiki="Do you not play the damage motion when the damage is 0?" IsBool="" />
+    <isUnduration AltName="Is Undulating" Wiki="Do you match the back and forth rotation of the character with the undulations of the ground? Cannot be used for flying characters" IsBool="" />
+    <isChangeWanderGhost AltName="Is Wandering Ghost" Wiki="Will it be a wandering ghost when the player is a client?" IsBool="" />
+    <ModelDispMask0 AltName="Model Display Mask 0" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask1 AltName="Model Display Mask 1" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask2 AltName="Model Display Mask 2" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask3 AltName="Model Display Mask 3" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask4 AltName="Model Display Mask 4" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask5 AltName="Model Display Mask 5" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask6 AltName="Model Display Mask 6" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask7 AltName="Model Display Mask 7" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask8 AltName="Model Display Mask 8" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask9 AltName="Model Display Mask 9" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask10 AltName="Model Display Mask 10" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask11 AltName="Model Display Mask 11" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask12 AltName="Model Display Mask 12" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask13 AltName="Model Display Mask 13" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask14 AltName="Model Display Mask 14" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask15 AltName="Model Display Mask 15" Wiki="Displays the model corresponding to the display mask." />
+    <isEnableNeckTurn AltName="Is Enable Neck Turn" Wiki="Do you want to enable the swing set in Param Weaver?" IsBool=""/>
+    <disableRespawn AltName="Disable Respawn upon Rest" Wiki="Do you ban respawn?" IsBool="" />
+    <isMoveAnimWait AltName="Play Movement Anim until Over" Wiki="Do you want to play the moving animation until the animation is over? (Like a mayfly dragon.)" IsBool="" />
+    <isCrowd AltName="Reduce Processing Load during Crowds" Wiki="Do you want to reduce the processing load during crowds? For babies (preferably phalanx)" IsBool="" />
+    <isWeakB AltName="Enemy Type: Type B" Wiki="Special attack B? Special attack B damage multiplier will be included in the calculation" IsBool="" />
+    <isWeakC AltName="Enemy Type: Type C" Wiki="Special attack C? Special attack C damage multiplier will be included in the calculation" IsBool="" />
+    <isWeakD AltName="Enemy Type: Type D" Wiki="Special attack D? Special attack D damage multiplier will be included in the calculation" IsBool="" />
+    <doesAlwaysUseSpecialTurn AltName="Always Use Special Turn" Wiki="Always execute a special turn (even if there is no navigation mesh at the turn destination, the special turn is continuously executed)" IsBool="" />
+    <isRideAtkTarget AltName="Is Ride Attack Target" Wiki="Will you be the target of a riding special attack (if you are riding)?" IsBool="" />
+    <isEnableStepDispInterpolate AltName="Enable Step Display Interpolation" Wiki="Whether to use step-over display interpolation" IsBool="" />
+    <isStealthTarget AltName="Is Stealth Attack Target" Wiki="Is it a stealth attack target?" IsBool="" />
+    <disableInitializeDead AltName="Disable Init Dead" Wiki="If you do not make an initial death, TRUE, even if you kill and save it, the corpse will not be reproduced." IsBool="" />
+    <isHitRumble AltName="Is Hit Rumble" Wiki="TRUE if it vibrates when hit. Use when you want to change from a normal hit stop, such as a dead person." IsBool="" />
+    <isSmoothTurn AltName="Use Smooth Turning" Wiki="Whether to perform interpolation when turning between nodes in route movement" IsBool="" />
+    <isWeakE AltName="Enemy Type: Type E" Wiki="Special attack E? Special attack E damage multiplier will be included in the calculation" IsBool="" />
+    <isWeakF AltName="Enemy Type: Type F" Wiki="Special attack F? Special attack F damage multiplier will be included in the calculation" IsBool="" />
+    <ModelDispMask16 AltName="Model Display Mask [16]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask17 AltName="Model Display Mask [17]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask18 AltName="Model Display Mask [18]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask19 AltName="Model Display Mask [19]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask20 AltName="Model Display Mask [20]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask21 AltName="Model Display Mask [21]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask22 AltName="Model Display Mask [22]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask23 AltName="Model Display Mask [23]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask24 AltName="Model Display Mask [24]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask25 AltName="Model Display Mask [25]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask26 AltName="Model Display Mask [26]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask27 AltName="Model Display Mask [27]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask28 AltName="Model Display Mask [28]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask29 AltName="Model Display Mask [29]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask30 AltName="Model Display Mask [30]" Wiki="Displays the model corresponding to the display mask." />
+    <ModelDispMask31 AltName="Model Display Mask [31]" Wiki="Displays the model corresponding to the display mask." />
+    <itemSearchRadius AltName="Item Pickup Radius" Wiki="Radius to be added as a correction to the cylinder radius of normal Item search judgment (applicable to enemy drop items. Used for large characters etc.)" />
+    <chrHitHeight AltName="Character Capsule Height" Wiki="The height of the capsule per character." />
+    <chrHitRadius AltName="Character Capsule Radius" Wiki="Radius of capsule per character." />
+    <specialTurnType AltName="Special Turn Type" Wiki="Special turning type" Enum="NPC_SPECIAL_TURN_TYPE" />
+    <isSoulGetByBoss AltName="Is Boss Soul Drop" Wiki="Do you get a boss in soul?" IsBool="" />
+    <isBulletOwner_byObject AltName="Is Bullet Owner - By Object" Wiki="If you become the owner of a bullet, a flag that applies the object's damage calculation related to the bullet. Used for damage correction by power." IsBool="" />
+    <isUseLowHitFootIk AltName="Use FootIK Filter for Low Hit" Wiki="Whether to use the FootIk filter for low hits" IsBool="" />
+    <isCalculatePvPDamage AltName="Use PvP Damage Modifiers" Wiki="Decide whether to calculate damage as a player when calculating damage. If it is invalid, it is treated as an enemy." IsBool="" />
+    <isHostSyncChr AltName="Is Synced with Host World" Wiki="Can only be activated when active in the host world" IsBool="" />
+    <isSkipWeakDamageAnim AltName="Skip Weak Damage Anim" Wiki="Weakness damage Whether to skip animation playback. Part damage rate and defense material are treated as weak points just by not playing the animation." IsBool="" />
+    <isKeepHitOnRide AltName="Keep Capsule on Ride" Wiki="When riding on a character with this parameter , the character's Atari remains while riding." IsBool="" />
+    <isSpCollide AltName="Is Special Collider" Wiki="Is it a special character?" IsBool="" />
+    <def_dark AltName="Defence: Unknown" Wiki="Damage reduction base value for dark attacks." />
+    <threatLv AltName="Threat Level" Wiki="Threat level. If it is 0, even if the PC is found, FE that seems to be found is not displayed." />
+    <specialTurnDistanceThreshold AltName="Special Turn Distance Threshold" Wiki="Make a special turn when the distance to the target is greater than or equal to the set threshold" />
+    <autoFootEffectSfxId AltName="Automatic Foot Effect - SFX ID" Wiki="The SFX identifier used in the automatic foot effect. (ZZZ of XYYZZZ)" />
+    <materialSe1 AltName="Damaged - Material SE [1]" Wiki="Determine the SE that sounds when damaged. 1. It is OK to set it by appearance." Enum="WEP_MATERIAL_DEF" />
+    <materialSfx1 AltName="Damaged - Material SFX [1]" Wiki="Determine the SFX that occurs when you take damage. 1. It is OK to set it by appearance." Enum="WEP_MATERIAL_DEF_SFX" />
+    <materialSe_Weak2 AltName="Weak Point - Material SE [2]" Wiki="Determines the SE that sounds when the weak point is damaged. 2" Enum="WEP_MATERIAL_DEF" />
+    <materialSfx_Weak2 AltName="Weak Point - Material SFX [2]" Wiki="Determines the SFX that occurs when the weak point is damaged. 2" Enum="WEP_MATERIAL_DEF_SFX" />
+    <materialSe2 AltName="Damaged - Material SE [2]" Wiki="Determine the SE that sounds when damaged. 2. It is OK to set it by appearance." Enum="WEP_MATERIAL_DEF" />
+    <materialSfx2 AltName="Damaged - Material SFX [2]" Wiki="Determine the SFX that occurs when you take damage. 2. It is OK to set it by appearance." Enum="WEP_MATERIAL_DEF_SFX" />
+    <spEffectID8 AltName="SpEffect ID [8]" Wiki="Resident special effect 8" Refs="SpEffectParam"/>
+    <spEffectID9 AltName="SpEffect ID [9]" Wiki="Resident special effect 9" Refs="SpEffectParam"/>
+    <spEffectID10 AltName="SpEffect ID [10]" Wiki="Resident special effect 10" Refs="SpEffectParam"/>
+    <spEffectID11 AltName="SpEffect ID [11]" Wiki="Resident special effects 11" Refs="SpEffectParam"/>
+    <spEffectID12 AltName="SpEffect ID [12]" Wiki="Resident special effect 12" Refs="SpEffectParam"/>
+    <spEffectID13 AltName="SpEffect ID [13]" Wiki="Resident special effect 13" Refs="SpEffectParam"/>
+    <spEffectID14 AltName="SpEffect ID [14]" Wiki="Resident special effect 14" Refs="SpEffectParam"/>
+    <spEffectID15 AltName="SpEffect ID [15]" Wiki="Resident special effects 15" Refs="SpEffectParam"/>
+    <TentativePlayerId AltName="Tentative Player ID" />
+    <toughness AltName="Toughness" Wiki="Basic value of toughness" />
+    <toughnessRecoverCorrection AltName="Toughness Correction" Wiki="Correction value for toughness recovery time" />
+    <kineticDamageCutRate AltName="Absorption %: Kinetic" Wiki="Kinetic damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <slashDamageCutRate AltName="Absorption %: Slash" Wiki="Slash damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <blowDamageCutRate AltName="Absorption %: Strike" Wiki="Strike damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <thrustDamageCutRate AltName="Absorption %: Thrust" Wiki="Thrust damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <energyDamageCutRate AltName="Absorption %: Energy" Wiki="Energy damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <explosiveDamageCutRate AltName="Absorption %: Explosive" Wiki="Explosive damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <coralDamageCutRate AltName="Absorption %: Coral" Wiki="Coral damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <unknownDamageCutRate AltName="Absorption %: Unknown" Wiki="Dark damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <unknownDamageGuardCutRate AltName="Guard Absorption %: Unknown" Wiki="How much to cut the dark attack?" />
+    <clothUpdateOffset AltName="Cloth Update Offset" Wiki="Cross update priority offset [m]" />
+    <npcPlayerWeightType AltName="NPC Player Weight Type" Wiki="Equipment weight type applied for NPC players" Enum="NPC_WEIGHT_TYPE" />
+    <normalChangeModelId AltName="Replacement Change - Model ID" Wiki="Normal replacement model, texture ID" />
+    <normalChangeAnimChrId AltName="Replacement Change - Anim Chr ID" Wiki="Replace the target animation with the specified ID Anibnd" />
+    <staminaGuardDefVal AltName="Stagger Guard Defence" />
+    <CultSettingId AltName="Cult Setting ID" />
+    <phantomShaderId AltName="Phantom Shader ID" Wiki="ID of the phantom parameter .xlsm to apply" Refs="PhantomParam"/>
+    <multiPlayCorrectionParamId AltName="Multiplayer Correction Param ID" Wiki="Multiplayer correction parameter ID" Refs="MultiPlayCorrectionParam"/>
+    <maxAnklePitchAngle AltName="FootIK Ankle Pitch Limit Angle" Wiki="FootIK Ankle pitch limit angle (-1 no limit). If you have not set Foot End L S in HAT, this angle is used in common with rolls." />
+    <statusResist_Uranium AltName="Status Resist: Uranium" Wiki="Determines resistence to Uranium status inflict."/>
+    <freezeGuardResist AltName="Guard Status Resist: Uranium" Wiki="How much to cut the attack power against Uranium (set as a special effect parameter)" />
+    <lockCameraParamId AltName="Lock Camera Param ID" Wiki="The ID of the lock camera parameter applied to the camera when locked on. Highest priority. Unused if -1" Refs="LockCamParam" />
+    <spEffectID16 AltName="SpEffect ID [16]" Wiki="Resident special effects 16" Refs="SpEffectParam"/>
+    <spEffectID17 AltName="SpEffect ID [17]" Wiki="Resident special effects 17" Refs="SpEffectParam"/>
+    <spEffectID18 AltName="SpEffect ID [18]" Wiki="Resident special effects 18" Refs="SpEffectParam"/>
+    <spEffectID19 AltName="SpEffect ID [19]" Wiki="Resident special effects 19" Refs="SpEffectParam"/>
+    <spEffectID20 AltName="SpEffect ID [20]" Wiki="Resident special effect 20" Refs="SpEffectParam"/>
+    <spEffectID21 AltName="SpEffect ID [21]" Wiki="Resident special effect 21" Refs="SpEffectParam"/>
+    <spEffectID22 AltName="SpEffect ID [22]" Wiki="Resident special effect 22" Refs="SpEffectParam"/>
+    <spEffectID23 AltName="SpEffect ID [23]" Wiki="Resident special effect 23" Refs="SpEffectParam"/>
+    <spEffectID24 AltName="SpEffect ID [24]" Wiki="Resident special effect 24" Refs="SpEffectParam"/>
+    <spEffectID25 AltName="SpEffect ID [25]" Wiki="Resident special effects 25" Refs="SpEffectParam"/>
+    <spEffectID26 AltName="SpEffect ID [26]" Wiki="Resident special effect 26" Refs="SpEffectParam"/>
+    <spEffectID27 AltName="SpEffect ID [27]" Wiki="Resident special effect 27" Refs="SpEffectParam"/>
+    <spEffectID28 AltName="SpEffect ID [28]" Wiki="Resident special effects 28" Refs="SpEffectParam"/>
+    <spEffectID29 AltName="SpEffect ID [29]" Wiki="Resident special effect 29" Refs="SpEffectParam"/>
+    <spEffectID30 AltName="SpEffect ID [30]" Wiki="Resident special effect 30" Refs="SpEffectParam"/>
+    <spEffectID31 AltName="SpEffect ID [31]" Wiki="Resident special effects 31" Refs="SpEffectParam"/>
+    <disableLockOnAng AltName="Disable Lock-on Angle" Wiki="Create a conical lock-on non-lockable area beneath the enemy. The angle of the size of the cone. Can be changed temporarily from TAE" />
+    <clothOffLodLevel AltName="LOD Level to Disable Cloth Processing" Wiki="Set the LOD level to turn off cross processing" />
+    <WanderGhostPhantomId AltName="Wandering Ghost Phantom ID" Wiki="Phantom shader with ID specified only on the guest side Specify the phantom shader ID and make it an illusion" />
+    <movementEnemyTypeParamId AltName="MovementEnemyTypeParam ID" Refs="MovementEnemyTypeParam" Wiki="Determines movement specifics, such as what types of movement can be made and various speeds." />
+    <chrActTurnParamId0 AltName="Character Act Turn ID [0]" Refs="ChrActTurnParam_Npc" />
+    <npcWeaponParamId0 AltName="Weapon Param ID [0]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId1 AltName="Weapon Param ID [1]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId2 AltName="Weapon Param ID [2]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId3 AltName="Weapon Param ID [3]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId4 AltName="Weapon Param ID [4]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId5 AltName="Weapon Param ID [5]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId6 AltName="Weapon Param ID [6]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId7 AltName="Weapon Param ID [7]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId8 AltName="Weapon Param ID [8]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId9 AltName="Weapon Param ID [9]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId10 AltName="Weapon Param ID [10]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId11 AltName="Weapon Param ID [11]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId12 AltName="Weapon Param ID [12]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId13 AltName="Weapon Param ID [13]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId14 AltName="Weapon Param ID [14]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId15 AltName="Weapon Param ID [15]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId16 AltName="Weapon Param ID [16]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId17 AltName="Weapon Param ID [17]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId18 AltName="Weapon Param ID [18]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId19 AltName="Weapon Param ID [19]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId20 AltName="Weapon Param ID [20]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId21 AltName="Weapon Param ID [21]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId22 AltName="Weapon Param ID [22]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId23 AltName="Weapon Param ID [23]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId24 AltName="Weapon Param ID [24]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId25 AltName="Weapon Param ID [25]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId26 AltName="Weapon Param ID [26]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId27 AltName="Weapon Param ID [27]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId28 AltName="Weapon Param ID [28]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId29 AltName="Weapon Param ID [29]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId30 AltName="Weapon Param ID [30]" Refs="EquipParamWeapon_Npc" />
+    <npcWeaponParamId31 AltName="Weapon Param ID [31]" Refs="EquipParamWeapon_Npc" />
+    <npcMaterialParamId AltName="Material Param ID" Wiki="Affects NPC design, such as paint.\nReferences rows in NpcMaterialParam. Rows references seem to be Character ID + this field." />
+    <chrActTurnParamId1 AltName="Character Act Turn ID [1]" Refs="ChrActTurnParam_Npc" />
+    
+    <padding Padding="" />
+    <npcEquipPartsParamId AltName="Equipment Parts ID" Refs="NpcEquipPartsParam" />
+    <maxLockonDistOverride AltName="Max Lock-on Distance Override" />
+    <chrModelParamId AltName="Character Model ID" Refs="ChrModelParam" />
+    
+    <pulseArmorHp AltName="Pulse Armor: HP" />
+    <pulseArmorRegenRate AltName="Pulse Armor: Regeneration Rate" />
+    <pulseArmorRegenDelay AltName="Pulse Armor: Regeneration Delay" />
+    <pulseArmorReapplyAmount AltName="Pulse Armor: Reapplication Amount" />
+    
+    <pulseArmorGuardCutRate_Kinetic AltName="Pulse Armor Guard Absorption: Kinetic" />
+    <pulseArmorGuardCutRate_Energy AltName="Pulse Armor Guard Absorption: Energy" />
+    <pulseArmorGuardCutRate_Explosive AltName="Pulse Armor Guard Absorption: Explosive" />
+    <pulseArmorGuardCutRate_Coral AltName="Pulse Armor Guard Absorption: Coral" />
+    <pulseArmorGuardCutRate_Dark AltName="Pulse Armor Guard Absorption: Unknown" />
+    <pulseArmorGuardCutRate_Slash AltName="Pulse Armor Guard Absorption: Slash" />
+    <pulseArmorGuardCutRate_Strike AltName="Pulse Armor Guard Absorption: Strike" />
+    <pulseArmorGuardCutRate_Thrust AltName="Pulse Armor Guard Absorption: Thrust" />
+    
+    <pulseArmorAngle_Horizontal AltName="Pulse Armor: Horizontal Angle" />
+    <pulseArmorAngle_Vertical AltName="Pulse Armor: Vertical Angle" />
+    
+    <npcAttackActionId0 AltName="Attack Action ID [0]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId1 AltName="Attack Action ID [1]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId2 AltName="Attack Action ID [2]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId3 AltName="Attack Action ID [3]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId4 AltName="Attack Action ID [4]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId5 AltName="Attack Action ID [5]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId6 AltName="Attack Action ID [6]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId7 AltName="Attack Action ID [7]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId8 AltName="Attack Action ID [8]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId9 AltName="Attack Action ID [9]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId10 AltName="Attack Action ID [10]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId11 AltName="Attack Action ID [11]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId12 AltName="Attack Action ID [12]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId13 AltName="Attack Action ID [13]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId14 AltName="Attack Action ID [14]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId15 AltName="Attack Action ID [15]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId16 AltName="Attack Action ID [16]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId17 AltName="Attack Action ID [17]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId18 AltName="Attack Action ID [18]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId19 AltName="Attack Action ID [19]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId20 AltName="Attack Action ID [20]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId21 AltName="Attack Action ID [21]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId22 AltName="Attack Action ID [22]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId23 AltName="Attack Action ID [23]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId24 AltName="Attack Action ID [24]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId25 AltName="Attack Action ID [25]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId26 AltName="Attack Action ID [26]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId27 AltName="Attack Action ID [27]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId28 AltName="Attack Action ID [28]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId29 AltName="Attack Action ID [29]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId30 AltName="Attack Action ID [30]" Refs="AttackActionParam_NPC" />
+    <npcAttackActionId31 AltName="Attack Action ID [31]" Refs="AttackActionParam_NPC" />
+    
+    <lookAtParamNpcId_0 AltName="LookAt Param ID [0]" Refs="LookAtParam_Npc" />
+    
+    <shieldPartHp AltName="Shield Part HP" />
+    
+    <showStabilityBar AltName="Show Stability Bar" Wiki="If stability bar should appear in UI." IsBool="" />
+    <damageLevelConvThresholdParamId AltName="Stability Threshold Ref (DamageLevelConvThresholdParam ID)" Refs="DamageLevelConvThresholdParam" Wiki="Determines attitude stability behavior." />
+    
+    <lookAtParamNpcId_1 AltName="LookAt Param ID [1]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_2 AltName="LookAt Param ID [2]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_3 AltName="LookAt Param ID [3]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_4 AltName="LookAt Param ID [4]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_5 AltName="LookAt Param ID [5]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_6 AltName="LookAt Param ID [6]" Refs="LookAtParam_Npc" />
+    <lookAtParamNpcId_7 AltName="LookAt Param ID [7]" Refs="LookAtParam_Npc" />
+    
+    <pulseArmorReapplyDelaySeconds AltName="Pulse Armor: Reapplication Delay" Wiki="In seconds" />
+    <pulseArmorRicochetedDamageCorrection AltName="Pulse Armor: Ricocheted Damage Correction" />
+    <unkPulseArmorReapplyCondition AltName="Pulse Armor: Reapplication Condition" />
+    <pulseArmorRegenCorrection AltName="Pulse Armor: Regeneration Correction" />
+    <pulseArmorDamageReductionRate_Impact AltName="Pulse Armor: Damage Absorption %: Impact" />
+    
+    <penetrateDefense AltName="Penetration Defense" Enum="NPC_BULLET_PENETRATE_DEF_TYPE" Wiki="Affects which bullets penetrate this character. See Bullet param chrPenetrateType." />
+    
+    <damageReductionRate_Kinetic AltName="Damage Absorption %: Kinetic" />
+    <damageReductionRate_Energy AltName="Damage Absorption %: Energy" />
+    <damageReductionRate_Explosive AltName="Damage Absorption %: Explosive" />
+    
+    <shieldPart_SpEffectId AltName="Shield Part: SpEffect ID" Refs="SpEffectParam" />
+    <shieldPartGuardCutRate_Impact AltName="Shield Part: Guard Absorption %: Impact" />
+    <shieldPartGuardCutRate_Unknown AltName="Shield Part: Guard Absorption %: Unknown" />
+    
+    <generatorTypeSfxIdReplaceId_1 AltName="Generator Type Replace SFX ID [1]" Refs="GeneratorTypeSfxIdRplace_PC" />
+    <generatorTypeSfxIdReplaceId_2 AltName="Generator Type Replace SFX ID [2]" Refs="GeneratorTypeSfxIdRplace_PC" />
+    <generatorTypeSfxIdReplaceId_3 AltName="Generator Type Replace SFX ID [3]" Refs="GeneratorTypeSfxIdRplace_PC" />
+    <generatorTypeSfxIdReplaceId_4 AltName="Generator Type Replace SFX ID [4]" Refs="GeneratorTypeSfxIdRplace_PC" />
+    
+    <effectiveRangeLimit AltName="Effective Range Cap %" Wiki="Percentage-based modifier that reduces the effective range of your weapon against a specific NPC and causes ricochets to happen sooner. Ranges from 1.00 to 0.00, where 1.00 is 100% and 0.00 is 0%. At 1.00, your weapons can cover their full effective range before ricochets occur. At 0, your weapons will ricochet the moment they surpass their ideal range." />
+    
+    <endPadding Padding="" />
+    
+  </Field>
+  <Self Wiki="Defines the stats for a given enemy or group of enemies. Does not determine model or location.\nStats are often affected greatly by attached SpEffects."/>
+</PARAMMETA>

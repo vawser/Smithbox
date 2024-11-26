@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ItemSpEffectType">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Consumable" />
+      <Option Value="2" Name="Non-Consumable (except Human Effigy)" />
+      <Option Value="3" Name="System (Darksign)" />
+    </Enum>
+    <Enum Name="ItemTypeCategory">
+      <Option Value="0" Name="Weapon" />
+      <Option Value="1" Name="Shield" />
+      <Option Value="2" Name="Head Armor" />
+      <Option Value="3" Name="Chest Armor" />
+      <Option Value="4" Name="Hands Armor" />
+      <Option Value="5" Name="Legs Armor" />
+      <Option Value="6" Name="Ammunition" />
+      <Option Value="7" Name="Ring" />
+      <Option Value="8" Name="Good" />
+      <Option Value="9" Name="Spell" />
+      <Option Value="10" Name="Gesture" />
+    </Enum>
+    <Enum Name="SpEffectApplicationType">
+      <Option Value="0" Name="Block Additional SpEffects" />
+      <Option Value="2" Name="Allow Spell SpEffects" />
+      <Option Value="3" Name="Allow Any SpEffects" />
+    </Enum>
+    <Enum Name="ItemAdditionalTypeCategory">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Gesture" />
+      <Option Value="2" Name="Sorcery" />
+      <Option Value="3" Name="Miracles" />
+      <Option Value="4" Name="Pyromancy" />
+      <Option Value="5" Name="Hex" />
+    </Enum>
+    <Enum Name="NewGamePlusBehaviorType">
+      <Option Value="4" Name="Dragon Stone" />
+      <Option Value="8" Name="Limited Item" />
+      <Option Value="9" Name="Remove Ring" />
+      <Option Value="10" Name="Ladder Miniature" />
+      <Option Value="11" Name="Remove Good" />
+      <Option Value="12" Name="No Change" />
+      <Option Value="13" Name="Estus Flask / Aged Feather / Darksign" />
+      <Option Value="15" Name="Champion's Tablet" />
+    </Enum>
+    <Enum Name="SpEffectContext">
+      <Option Value="0" Name="Default" />
+      <Option Value="20" Name="Armor - Leg" />
+      <Option Value="21" Name="Armor - Hands" />
+      <Option Value="22" Name="Armor - Chest" />
+      <Option Value="23" Name="Armor - Head" />
+      <Option Value="25" Name="Ring" />
+      <Option Value="27" Name="Item - Weapon" />
+      <Option Value="31" Name="Item - Body" />
+      <Option Value="254" Name="Player" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Defines shared parameters related to all items." Row0Dummy="" AlternativeOrder="icon_id,sort_id,base_price,sell_price,max_held_count,animation_speed,-,
+  item_type_id,item_usage_id,item_category_type,item_additional_type,ng_behavior_type,-,
+  speffect_context,speffect_id,item_sp_effect_type,item_speffect_application_type,-,
+  sfx_on_use_1,sfx_on_use_2,sfx_on_use_3,-,
+  weapon_id,armor_id,ammo_id,ring_id,spell_id,gesture_id,-,
+  Unk03,Unk04,Unk05,Unk06,Unk07" />
+  <Field>
+    <icon_id AltName="Icon ID" Wiki="The icon to use for this item.\nTypically found in menu\tex\icon." />
+    <speffect_id AltName="SpEffect ID" Wiki="The SpEffect script to use for this item." />
+    <sfx_on_use_1 AltName="SFX ID [1]" Wiki="A SFX that occurs on use." />
+    <sfx_on_use_2 AltName="SFX ID [2]" Wiki="A SFX that occurs on use." />
+    <sfx_on_use_3 AltName="SFX ID [3]" Wiki="A SFX that occurs on use." />
+    <weapon_id AltName="Weapon ID" Refs="WeaponParam" Wiki="Which weapon this item is linked to." />
+    <armor_id AltName="Armor ID" Refs="ArmorParam" Wiki="Which armor piece this item is linked to." />
+    <ammo_id AltName="Ammo ID" Refs="ArrowParam" Wiki="Which ammunition this item is linked to." />
+    <ring_id AltName="Ring ID" Refs="RingParam" Wiki="Which ring this item is linked to." />
+    <spell_id AltName="Spell ID" Refs="SpellParam" Wiki="Which spell this item is linked to." />
+    <gesture_id AltName="Gesture ID" Wiki="Which gesture this item is linked to." />
+    <sort_id AltName="Sort ID" Wiki="Where the item appears in the inventory view. 0 is the top." />
+    <base_price AltName="Base Price" Wiki="Price to purchase the item from a vendor.\nPer-merchant pricing can be altered with ShopLineupParam." />
+    <sell_price AltName="Sell Price" Wiki="Souls given when sold to Gavlan." />
+    <animation_speed AltName="Animation Speed" Wiki="For usable items or weapons, the speed at which the item is used." />
+    <item_type_id AltName="Item Type ID" Refs="ItemTypeParam" Wiki="Item Type parameters to use." />
+    <item_usage_id AltName="Item Usage ID" Refs="ItemUsageParam" Wiki="Item Usage parameters to use." />
+    <max_held_count AltName="Max Held" Wiki="Maximum number that can be held at any one time." />
+    <speffect_context AltName="SpEffect Context" Enum="SpEffectContext" Wiki="The context in which the SpEffect is applied." />
+    <item_sp_effect_type AltName="Item SpEffect Type [1]" Enum="ItemSpEffectType" Wiki="Relates to SpEffect, 1 is instant effects, 2 is 'persistent' effects." />
+    <item_category_type AltName="Item Category Type [2]" Enum="ItemTypeCategory" />
+    <item_speffect_application_type AltName="Item SpEffect Application Type" Enum="SpEffectApplicationType" />
+    <item_additional_type AltName="Item Additional Type [3]" Enum="ItemAdditionalTypeCategory" />
+    <ng_behavior_type AltName="NG+ Behavior Type" Enum="NewGamePlusBehaviorType" />
+  </Field>
+</PARAMMETA>

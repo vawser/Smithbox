@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="EQUIP_MODEL_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Arms" />
+        <Option Value="2" Name="Body" />
+        <Option Value="4" Name="Hair" />
+        <Option Value="5" Name="Head" />
+        <Option Value="6" Name="Legs" />
+        <Option Value="7" Name="Weapon" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_GENDER" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Male" />
+        <Option Value="2" Name="Female" />
+        <Option Value="3" Name="Unknown" />
+        <Option Value="4" Name="No Gender" />
+    </Enum>
+    <Enum Name="PROTECTOR_CATEGORY" type="u8">
+        <Option Value="0" Name="Head" />
+        <Option Value="1" Name="Body" />
+        <Option Value="2" Name="Arms" />
+        <Option Value="3" Name="Legs" />
+        <Option Value="4" Name="Hair" />
+    </Enum>
+    <Enum Name="RARITY" type="u8">
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Common" />
+      <Option Value="2" Name="Rare" />
+      <Option Value="3" Name="Legendary" />
+    </Enum>
+    <Enum Name="ATK_PARAM_PARTSDMGTYPE" type="u8">
+      <Option Value="0" Name="Arrow Only" />
+      <Option Value="1" Name="All" />
+    </Enum>
+    <Enum Name="GET_DIALOG_CONDITION_TYPE" type="u8">
+      <Option Value="0" Name="Type 0" />
+      <Option Value="2" Name="Type 2" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="50" Name="Type 50" />
+        <Option Value="100" Name="Type 100" />
+        <Option Value="102" Name="Type 102" />
+        <Option Value="103" Name="Type 103" />
+        <Option Value="104" Name="Type 104" />
+        <Option Value="105" Name="Type 105" />
+        <Option Value="106" Name="Type 106" />
+        <Option Value="107" Name="Type 107" />
+        <Option Value="108" Name="Type 108" />
+        <Option Value="109" Name="Type 109" />
+        <Option Value="110" Name="Type 110" />
+        <Option Value="111" Name="Type 111" />
+        <Option Value="112" Name="Type 112" />
+        <Option Value="113" Name="Type 113" />
+        <Option Value="114" Name="Type 114" />
+        <Option Value="116" Name="Type 116" />
+        <Option Value="117" Name="Type 117" />
+        <Option Value="119" Name="Type 119" />
+        <Option Value="122" Name="Type 122" />
+        <Option Value="123" Name="Type 123" />
+        <Option Value="124" Name="Type 124" />
+        <Option Value="126" Name="Type 126" />
+        <Option Value="127" Name="Type 127" />
+        <Option Value="129" Name="Type 129" />
+        <Option Value="139" Name="Type 139" />
+        <Option Value="141" Name="Type 141" />
+        <Option Value="143" Name="Type 143" />
+        <Option Value="144" Name="Type 144" />
+        <Option Value="145" Name="Type 145" />
+        <Option Value="146" Name="Type 146" />
+        <Option Value="148" Name="Type 148" />
+        <Option Value="149" Name="Type 149" />
+        <Option Value="150" Name="Type 150" />
+        <Option Value="151" Name="Type 151" />
+        <Option Value="152" Name="Type 152" />
+        <Option Value="153" Name="Type 153" />
+        <Option Value="154" Name="Type 154" />
+        <Option Value="155" Name="Type 155" />
+        <Option Value="156" Name="Type 156" />
+        <Option Value="157" Name="Type 157" />
+        <Option Value="158" Name="Type 158" />
+        <Option Value="159" Name="Type 159" />
+        <Option Value="160" Name="Type 160" />
+        <Option Value="161" Name="Type 161" />
+        <Option Value="162" Name="Type 162" />
+        <Option Value="164" Name="Type 164" />
+        <Option Value="165" Name="Type 165" />
+        <Option Value="171" Name="Type 171" />
+        <Option Value="172" Name="Type 172" />
+        <Option Value="173" Name="Type 173" />
+        <Option Value="255" Name="Type 255" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF" type="u16">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="50" Name="Type 50" />
+        <Option Value="100" Name="Type 100" />
+        <Option Value="102" Name="Type 102" />
+        <Option Value="103" Name="Type 103" />
+        <Option Value="104" Name="Type 104" />
+        <Option Value="105" Name="Type 105" />
+        <Option Value="106" Name="Type 106" />
+        <Option Value="107" Name="Type 107" />
+        <Option Value="108" Name="Type 108" />
+        <Option Value="109" Name="Type 109" />
+        <Option Value="110" Name="Type 110" />
+        <Option Value="111" Name="Type 111" />
+        <Option Value="112" Name="Type 112" />
+        <Option Value="113" Name="Type 113" />
+        <Option Value="114" Name="Type 114" />
+        <Option Value="116" Name="Type 116" />
+        <Option Value="117" Name="Type 117" />
+        <Option Value="119" Name="Type 119" />
+        <Option Value="122" Name="Type 122" />
+        <Option Value="123" Name="Type 123" />
+        <Option Value="124" Name="Type 124" />
+        <Option Value="126" Name="Type 126" />
+        <Option Value="127" Name="Type 127" />
+        <Option Value="129" Name="Type 129" />
+        <Option Value="139" Name="Type 139" />
+        <Option Value="141" Name="Type 141" />
+        <Option Value="143" Name="Type 143" />
+        <Option Value="144" Name="Type 144" />
+        <Option Value="145" Name="Type 145" />
+        <Option Value="146" Name="Type 146" />
+        <Option Value="148" Name="Type 148" />
+        <Option Value="149" Name="Type 149" />
+        <Option Value="150" Name="Type 150" />
+        <Option Value="151" Name="Type 151" />
+        <Option Value="152" Name="Type 152" />
+        <Option Value="153" Name="Type 153" />
+        <Option Value="154" Name="Type 154" />
+        <Option Value="155" Name="Type 155" />
+        <Option Value="156" Name="Type 156" />
+        <Option Value="157" Name="Type 157" />
+        <Option Value="158" Name="Type 158" />
+        <Option Value="159" Name="Type 159" />
+        <Option Value="160" Name="Type 160" />
+        <Option Value="161" Name="Type 161" />
+        <Option Value="162" Name="Type 162" />
+        <Option Value="164" Name="Type 164" />
+        <Option Value="165" Name="Type 165" />
+        <Option Value="171" Name="Type 171" />
+        <Option Value="172" Name="Type 172" />
+        <Option Value="173" Name="Type 173" />
+        <Option Value="255" Name="Type 255" />
+    </Enum>
+    <Enum Name="DISPLAY_CATEGORY_ID" type="u8">
+      <Option Value="10" Name="Lightweight #1" />
+      <Option Value="20" Name="Lightweight #2" />
+      <Option Value="30" Name="Lightweight #3" />
+      <Option Value="40" Name="Lightweight #4" />
+      <Option Value="50" Name="Mediumweight #1" />
+      <Option Value="60" Name="Mediumweight #2" />
+      <Option Value="70" Name="Mediumweight #3" />
+      <Option Value="80" Name="Heavyweight #1" />
+      <Option Value="90" Name="Heavyweight #2" />
+      <Option Value="100" Name="Heavyweight #3" />
+      <Option Value="110" Name="Heavyweight #4" />
+      <Option Value="255" Name="None" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
+    <sortId AltName="Sort ID" Wiki="Sort ID (7 digits is the limit for s32 because the enhancement level is added in the program)" />
+    <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." />
+    <resistSleep AltName="Resist - Sleep" Wiki="Difficulty in getting sleep abnormalities" />
+    <resistMadness AltName="Resist - Madness" Wiki="Difficulty in getting mad" />
+    <saDurability AltName="Poise Durability" Wiki="Super armor endurance" />
+    <toughnessCorrectRate AltName="Toughness Correction" Wiki="It is a magnification that corrects the basic value of toughness." />
+    <fixPrice AltName="Repair Price" Wiki="Basic repair price" />
+    <basicPrice AltName="Basic Price" Wiki="Basic price" />
+    <sellValue AltName="Sell Value" Wiki="Selling price" />
+    <weight AltName="Weight" Wiki="Weight [kg]." />
+    <residentSpEffectId AltName="Resident SpEffect ID [1]" Wiki="Resident special effect ID1" Refs="SpEffectParam" />
+    <residentSpEffectId2 AltName="Resident SpEffect ID [2]" Wiki="Resident special effect ID2" Refs="SpEffectParam" />
+    <residentSpEffectId3 AltName="Resident SpEffect ID [3]" Wiki="Resident special effect ID3" Refs="SpEffectParam" />
+    <materialSetId AltName="Upgrade Material ID" Wiki="Material parameter ID required for weapon enhancement" Refs="EquipMtrlSetParam" />
+    <partsDamageRate AltName="Weak Parts Damage %" Wiki="Part damage rate" />
+    <corectSARecover AltName="Poise Recovery Correction" Wiki="Super Armor Recovery Time Correction Value" />
+    <originEquipPro AltName="Origin Armor +0" Wiki="Strengthening of this armor Original armor ID" Refs="EquipParamProtector" />
+    <originEquipPro1 AltName="Origin Armor +1" Wiki="Strengthening this armor Original armor ID1" Refs="EquipParamProtector" />
+    <originEquipPro2 AltName="Origin Armor +2" Wiki="Strengthening this armor Original armor ID2" Refs="EquipParamProtector"/>
+    <originEquipPro3 AltName="Origin Armor +3" Wiki="Strengthening this armor Original armor ID3" Refs="EquipParamProtector"/>
+    <originEquipPro4 AltName="Origin Armor +4" Wiki="Strengthening this armor Original armor ID4" Refs="EquipParamProtector"/>
+    <originEquipPro5 AltName="Origin Armor +5" Wiki="Strengthening this armor Original armor ID5" Refs="EquipParamProtector"/>
+    <originEquipPro6 AltName="Origin Armor +6" Wiki="Strengthening this armor Original armor ID6" Refs="EquipParamProtector"/>
+    <originEquipPro7 AltName="Origin Armor +7" Wiki="Strengthening this armor Original armor ID7" Refs="EquipParamProtector"/>
+    <originEquipPro8 AltName="Origin Armor +8" Wiki="Strengthening this armor Original armor ID8" Refs="EquipParamProtector"/>
+    <originEquipPro9 AltName="Origin Armor +9" Wiki="Strengthening this armor Original armor ID9" Refs="EquipParamProtector"/>
+    <originEquipPro10 AltName="Origin Armor +10" Wiki="Strengthening this armor Original armor ID10" Refs="EquipParamProtector"/>
+    <originEquipPro11 AltName="Origin Armor +11" Wiki="Strengthening this armor Original armor ID11" Refs="EquipParamProtector"/>
+    <originEquipPro12 AltName="Origin Armor +12" Wiki="Strengthening this armor Original armor ID12" Refs="EquipParamProtector"/>
+    <originEquipPro13 AltName="Origin Armor +13" Wiki="Strengthening this armor Original armor ID13" Refs="EquipParamProtector"/>
+    <originEquipPro14 AltName="Origin Armor +14" Wiki="Strengthening this armor Original armor ID14" Refs="EquipParamProtector"/>
+    <originEquipPro15 AltName="Origin Armor +15" Wiki="Strengthening this armor Original armor ID15" Refs="EquipParamProtector"/>
+    <faceScaleM_ScaleX AltName="Facescale - Male - Scale X" Wiki="" />
+    <faceScaleM_ScaleZ AltName="Facescale - Male - Scale Z" Wiki="" />
+    <faceScaleM_MaxX AltName="Facescale - Male - Max X" Wiki="" />
+    <faceScaleM_MaxZ AltName="Facescale - Male - Max Z" Wiki="" />
+    <faceScaleF_ScaleX AltName="Facescale - Female - Scale X" Wiki="" />
+    <faceScaleF_ScaleZ AltName="Facescale - Female - Scale Z" Wiki="" />
+    <faceScaleF_MaxX AltName="Facescale - Female - Max X" Wiki="" />
+    <faceScaleF_MaxZ AltName="Facescale - Female - Max Z" Wiki="" />
+    <qwcId AltName="QWC ID" Wiki="QWC parameter ID" />
+    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number." />
+    <iconIdM AltName="Icon ID - Male" Wiki="Men's menu icon ID." TextureRef="Direct/01_common/SB_Icon_00/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_01/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_02/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_A/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_B/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_03/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_03_A/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_04/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_05/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_06/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc_A/iconIdM/MENU_ItemIcon_,Direct/01_common/SB_Icon_08_dlc/iconIdM/MENU_ItemIcon_" />
+    <iconIdF AltName="Icon ID - Female" Wiki="Women's menu icon ID." TextureRef="Direct/01_common/SB_Icon_00/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_01/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_02/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_A/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_B/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_03/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_03_A/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_04/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_05/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_06/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc_A/iconIdF/MENU_ItemIcon_,Direct/01_common/SB_Icon_08_dlc/iconIdF/MENU_ItemIcon_" />
+    <knockBack AltName="Knockback" Wiki="Knockback reduction value." />
+    <knockbackBounceRate AltName="Knockback Bounce Rate" Wiki="Knockback repulsion rate." />
+    <durability AltName="Durability" Wiki="Initial durability." />
+    <durabilityMax AltName="Max Durability" Wiki="New durability." />
+    <pad03 AltName="" Padding=""/>
+    <defFlickPower AltName="Weapon Repel Power" Wiki="Used to determine the repulsion of enemy attacks." />
+    <defensePhysics AltName="Defence - Physical" Wiki="Physical attack damage protection." />
+    <defenseMagic AltName="Defence - Magic" Wiki="Magic attack damage protection." />
+    <defenseFire AltName="Defence - Fire" Wiki="Fire attack damage protection." />
+    <defenseThunder AltName="Defence - Lightning" Wiki="Damage protection for electric shock attacks." />
+    <defenseSlash AltName="Defence - Slash" Wiki="Look at the attack type, and if it is a slashing attribute, reduce the defense power" />
+    <defenseBlow AltName="Defence - Strike" Wiki="Look at the attack attribute, and if it is a hit attribute, reduce the defense power." />
+    <defenseThrust AltName="Defence - Thrust" Wiki="Look at the attack attribute, and if it is a hit attribute, reduce the defense power." />
+    <resistPoison AltName="Resist - Poison" Wiki="Difficulty in getting poisonous" />
+    <resistDisease AltName="Resist - Scarlet Rot" Wiki="Difficulty in getting sick" />
+    <resistBlood AltName="Resist - Hemorrhage" Wiki="Difficulty in getting bleeding abnormalities" />
+    <resistCurse AltName="Resist - Blight" Wiki="Difficulty in getting a curse condition" />
+    <reinforceTypeId AltName="Reinforce Type ID" Wiki="Enhanced type ID" Refs="ReinforceParamProtector"/>
+    <trophySGradeId AltName="Achievement ID" Wiki="Is it related to the trophy system?" />
+    <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
+    <knockbackParamId AltName="Knockback Param ID" Wiki="ID of the parameter used for knockback" />
+    <flickDamageCutRate AltName="Weapon Repel Damage %" Wiki="Used for damage attenuation rate when repelling" />
+    <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type." Enum="EQUIP_MODEL_CATEGORY" />
+    <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model." Enum="EQUIP_MODEL_GENDER" />
+    <protectorCategory AltName="Armor Category" Wiki="Armor category." Enum="PROTECTOR_CATEGORY" />
+    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
+    <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." Enum="DISPLAY_CATEGORY_ID" />
+    <partsDmgType AltName="Parts Damage Type" Wiki="Set the attack type to judge the part damage" Enum="ATK_PARAM_PARTSDMGTYPE" />
+    <pad04 AltName="" Padding=""/>
+    <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
+    <headEquip AltName="Is Head Equipment" Wiki="Is it head equipment?" IsBool="" />
+    <bodyEquip AltName="Is Body Equipment" Wiki="Is it torso equipment?" IsBool="" />
+    <armEquip AltName="Is Arm Equipment" Wiki="Is it arm equipment?" IsBool="" />
+    <legEquip AltName="Is Leg Equipment" Wiki="Is it leg equipment?" IsBool="" />
+    <useFaceScale AltName="Use Facescale" Wiki="Whether to use a face scale" IsBool="" />
+    <isSkipWeakDamageAnim AltName="Skip Weak Damage Anim" Wiki="Weakness damage Whether to skip animation playback. Part damage rate and defense material are treated as weak points just by not playing the animation." IsBool="" />
+    <pad06 AltName="" Padding=""/>
+    <defenseMaterialVariationValue_Weak AltName="Defence Material - Variation Value - Weak" Wiki="It is a value used for variation of abnormal condition, damage SFX, SE in combination with weak point defense material. SEQ16473" />
+    <autoFootEffectDecalBaseId2 AltName="Auto Foot Effect Decal Base ID [2]" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
+    <autoFootEffectDecalBaseId3 AltName="Auto Foot Effect Decal Base ID [3]" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
+    <defenseMaterialVariationValue AltName="Defence Material - Variation Value" Wiki="It is a value used in combination with the defense material to classify abnormal conditions, damage SFX, and SE. SEQ16473" />
+    <isDiscard AltName="Can Discard" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
+    <isDrop AltName="Can Drop" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <disableMultiDropShare AltName="Cannot Drop in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
+    <simpleModelForDlc AltName="Simple Model for DLC1" Wiki="Is there a simple model for DLC?" IsBool="" />
+    <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
+    <showDialogCondType AltName="Item Acquisition Dialog Condition Type " Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
+    <pad AltName="" Padding=""/>
+    <neutralDamageCutRate AltName="Absorption - Physical" Wiki="Non-attribute damage multiplier"  IsInvertedPercentage="" />
+    <slashDamageCutRate AltName="Absorption - Slash" Wiki="Slash damage multiplier" IsInvertedPercentage="" />
+    <blowDamageCutRate AltName="Absorption - Strike" Wiki="Batter damage multiplier" IsInvertedPercentage="" />
+    <thrustDamageCutRate AltName="Absorption - Thrust" Wiki="Puncture damage ratio" IsInvertedPercentage="" />
+    <magicDamageCutRate AltName="Absorption - Magic" Wiki="Magic damage multiplier" IsInvertedPercentage="" />
+    <fireDamageCutRate AltName="Absorption - Fire" Wiki="Flame damage multiplier" IsInvertedPercentage="" />
+    <thunderDamageCutRate AltName="Absorption - Lightning" Wiki="Electric shock damage ratio" IsInvertedPercentage="" />
+    <defenseMaterialSfx1 AltName="Defence Material SFX [1]" Wiki="For SFX when moving / defending. 1" Enum="WEP_MATERIAL_DEF_SFX" />
+    <defenseMaterialSfx_Weak1 AltName="Defence Material SFX - Weakness [1]" Wiki="For SFX when weak points are damaged 1" Enum="WEP_MATERIAL_DEF_SFX" />
+    <defenseMaterial1 AltName="Defence Material - SE [1]" Wiki="For SE when moving / defending. 1" Enum="WEP_MATERIAL_DEF" />
+    <defenseMaterial_Weak1 AltName="Defence Material SE - Weakness [1]" Wiki="For SE when weak points are damaged 1" Enum="WEP_MATERIAL_DEF" />
+    <defenseMaterialSfx2 AltName="Defence Material SFX [2]" Wiki="For SFX when moving / defending. 2" Enum="WEP_MATERIAL_DEF_SFX" />
+    <defenseMaterialSfx_Weak2 AltName="Defence Material SFX - Weakness [2]" Wiki="2 for SFX when weak points are damaged" Enum="WEP_MATERIAL_DEF_SFX" />
+    <footMaterialSe AltName="Foot Material SE" Wiki="Material for foot equipment SE. Only foot equipment is referenced. ([GR] SEQ10061) In the case of 139: None, the defense material 1 [SE] is referred to." Enum="WEP_MATERIAL_DEF" />
+    <defenseMaterial_Weak2 AltName="Defence Material SE - Weakness [2]" Wiki="2 for SE when weak points are damaged" Enum="WEP_MATERIAL_DEF" />
+    <autoFootEffectDecalBaseId1 AltName="Auto Foot Effect Decal Base ID [1]" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
+    <toughnessDamageCutRate AltName="Toughness Absorption" Wiki="Toughness version cut rate" IsInvertedPercentage="" />
+    <toughnessRecoverCorrection AltName="Toughness Recovery Correction" Wiki="Correction value for toughness recovery time" />
+    <darkDamageCutRate AltName="Absorption - Holy" Wiki="Dark damage multiplier" IsInvertedPercentage="" />
+    <defenseDark AltName="Defence - Holy" Wiki="Dark attack damage protection." />
+    <invisibleFlag48 IsBool="" AltName=""/>
+    <invisibleFlag49 IsBool="" AltName=""/>
+    <invisibleFlag50 IsBool="" AltName=""/>
+    <invisibleFlag51 IsBool="" AltName=""/>
+    <invisibleFlag52 IsBool="" AltName=""/>
+    <invisibleFlag53 IsBool="" AltName=""/>
+    <invisibleFlag54 IsBool="" AltName=""/>
+    <invisibleFlag55 IsBool="" AltName=""/>
+    <invisibleFlag56 IsBool="" AltName=""/>
+    <invisibleFlag57 IsBool="" AltName=""/>
+    <invisibleFlag58 IsBool="" AltName=""/>
+    <invisibleFlag59 IsBool="" AltName=""/>
+    <invisibleFlag60 IsBool="" AltName=""/>
+    <invisibleFlag61 IsBool="" AltName=""/>
+    <invisibleFlag62 IsBool="" AltName=""/>
+    <invisibleFlag63 IsBool="" AltName=""/>
+    <invisibleFlag64 IsBool="" AltName=""/>
+    <invisibleFlag65 IsBool="" AltName=""/>
+    <invisibleFlag66 IsBool="" AltName=""/>
+    <invisibleFlag67 IsBool="" AltName=""/>
+    <invisibleFlag68 IsBool="" AltName=""/>
+    <invisibleFlag69 IsBool="" AltName=""/>
+    <invisibleFlag70 IsBool="" AltName=""/>
+    <invisibleFlag71 IsBool="" AltName=""/>
+    <invisibleFlag72 IsBool="" AltName=""/>
+    <invisibleFlag73 IsBool="" AltName=""/>
+    <invisibleFlag74 IsBool="" AltName=""/>
+    <invisibleFlag75 IsBool="" AltName=""/>
+    <invisibleFlag76 IsBool="" AltName=""/>
+    <invisibleFlag77 IsBool="" AltName=""/>
+    <invisibleFlag78 IsBool="" AltName=""/>
+    <invisibleFlag79 IsBool="" AltName=""/>
+    <invisibleFlag80 IsBool="" AltName=""/>
+    <padbit AltName="" Padding=""/>
+    <postureControlId AltName="Posture Control ID" Wiki="Attitude control ID (torso)" />
+    <pad2 AltName="" Padding=""/>
+    <saleValue AltName="Shop Price" Wiki="Selling price" />
+    <resistFreeze AltName="Resist - Frost" Wiki="Difficulty in getting cold air condition abnormal" />
+    
+    <invisibleFlag_SexVer00 IsBool="" AltName="Mask 00 - Upper face" Wiki="" />
+    <invisibleFlag_SexVer01 IsBool="" AltName="Mask 01 - Chin" Wiki="" />
+    <invisibleFlag_SexVer02 IsBool="" AltName="Mask 02 - Nose and cheeks" Wiki="" />
+    <invisibleFlag_SexVer03 IsBool="" AltName="Mask 03 - Ears and top of head" Wiki="" />
+    <invisibleFlag_SexVer04 IsBool="" AltName="Mask 04 - Neck" Wiki="" />
+    <invisibleFlag_SexVer05 IsBool="" AltName="Mask 05 - Lower neck" Wiki="" />
+    <invisibleFlag_SexVer06 IsBool="" AltName="Mask 06 - Chest" Wiki="" />
+    <invisibleFlag_SexVer07 IsBool="" AltName="Mask 07 - Upper elbows" Wiki="" />
+    <invisibleFlag_SexVer08 IsBool="" AltName="Mask 08 - Shoulders" Wiki="" />
+    <invisibleFlag_SexVer09 IsBool="" AltName="Mask 09 - Lower elbows" Wiki="" />
+    <invisibleFlag_SexVer10 IsBool="" AltName="Mask 10 - Lower arms" Wiki="" />
+    <invisibleFlag_SexVer11 IsBool="" AltName="Mask 11 - Right hand" Wiki="" />
+    <invisibleFlag_SexVer12 IsBool="" AltName="Mask 12 - Waist" Wiki="" />
+    <invisibleFlag_SexVer13 IsBool="" AltName="Mask 13 - Left hand" Wiki="" />
+    <invisibleFlag_SexVer14 IsBool="" AltName="Mask 14 - Knees" Wiki="" />
+    <invisibleFlag_SexVer15 IsBool="" AltName="Mask 15 - Lower legs" Wiki="" />
+    <invisibleFlag_SexVer16 IsBool="" AltName="Mask 16 - Feet" Wiki="" />
+    <invisibleFlag_SexVer17 IsBool="" AltName="Mask 17 - Eyepatch" Wiki="" />
+    <invisibleFlag_SexVer18 IsBool="" AltName="Mask 18 - Unknown" Wiki="Set on most gauntlets" />
+    <invisibleFlag_SexVer19 IsBool="" AltName="Mask 19 - Unknown" Wiki="Set on most chests and legs" />
+    <invisibleFlag_SexVer20 IsBool="" AltName="Mask 20 - [ARMS] Long Gloves (Lower Arm)" Wiki="" />
+    <invisibleFlag_SexVer21 IsBool="" AltName="Mask 21 - [ARMS] Long Gloves (Full Length)" Wiki="" />
+    <invisibleFlag_SexVer22 IsBool="" AltName="Mask 22 - Unknown" Wiki="Set on bare chest" />
+    <invisibleFlag_SexVer23 IsBool="" AltName="Mask 23 - [BODY] Scarf / High Collar (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer24 IsBool="" AltName="Mask 24 - [BODY] Sleeves (Bunched to Elbow)" Wiki="" />
+    <invisibleFlag_SexVer25 IsBool="" AltName="Mask 25 - [BODY] Sleeves (Bunched Midway)" Wiki="" />
+    <invisibleFlag_SexVer26 IsBool="" AltName="Mask 26 - [BODY] Sleeves (Full)" Wiki="" />
+    <invisibleFlag_SexVer27 IsBool="" AltName="Mask 27 - [BODY] Large Sleeves (Bunched to Elbow)" Wiki="" />
+    <invisibleFlag_SexVer28 IsBool="" AltName="Mask 28 - [BODY] Large Sleeves (Full)" Wiki="" />
+    <invisibleFlag_SexVer29 IsBool="" AltName="Mask 29 - [BODY] Sleeves (Wrist Bracelets)" Wiki="" />
+    <invisibleFlag_SexVer30 IsBool="" AltName="Mask 30 - [BODY] Couter / Elbow Armor" Wiki="belt" />
+    <invisibleFlag_SexVer31 IsBool="" AltName="Mask 31 - [BODY] Couter / Elbow Armor (Higher Up)" Wiki="" />
+    <invisibleFlag_SexVer32 IsBool="" AltName="Mask 32 - [BODY] Small Collar" Wiki="" />
+    <invisibleFlag_SexVer33 IsBool="" AltName="Mask 33 - [BODY] Small Collar (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer34 IsBool="" AltName="Mask 34 - [BODY] Scarf / High Collar (Full)" Wiki="" />
+    <invisibleFlag_SexVer35 IsBool="" AltName="Mask 35 - [BODY] Lower Abdomen Cover" Wiki="" />
+    <invisibleFlag_SexVer36 IsBool="" AltName="Mask 36 - [BODY] Small Hood (Down)" Wiki="" />
+    <invisibleFlag_SexVer37 IsBool="" AltName="Mask 37 - [BODY] Small Hood (Up)" Wiki="" />
+    <invisibleFlag_SexVer38 IsBool="" AltName="Mask 38 - [BODY] Left Pauldron / Shoulder" Wiki="" />
+    <invisibleFlag_SexVer39 IsBool="" AltName="Mask 39 - [BODY] Right Pauldron / Shoulder" Wiki="" />
+    <invisibleFlag_SexVer40 IsBool="" AltName="Mask 40 - [BODY] Cowl" Wiki="" />
+    <invisibleFlag_SexVer41 IsBool="" AltName="Mask 41 - [BODY] Cowl (Long)" Wiki="" />
+    <invisibleFlag_SexVer42 IsBool="" AltName="Mask 42 - [BODY] Cowl (Mid)" Wiki="" />
+    <invisibleFlag_SexVer43 IsBool="" AltName="Mask 43 - [BODY] Cowl (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer44 IsBool="" AltName="Mask 44 - [HEAD] Gorget / Neckpiece" Wiki="" />
+    <invisibleFlag_SexVer45 IsBool="" AltName="Mask 45 - [HEAD] Gorget / Neckpiece (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer46 IsBool="" AltName="Mask 46 - [HEAD] Long Hood / Plume (Low)" Wiki="" />
+    <invisibleFlag_SexVer47 IsBool="" AltName="Mask 47 - [HEAD] Long Hood / Plume (Mid)" Wiki="" />
+    <invisibleFlag_SexVer48 IsBool="" AltName="Mask 48 - [HEAD] Long Hood / Plume (High)" Wiki="" />
+    <invisibleFlag_SexVer49 IsBool="" AltName="Mask 49 - [HEAD] Long Hood / Plume (Short)" Wiki="" />
+    <invisibleFlag_SexVer50 IsBool="" AltName="Mask 50 - [LEGS] High Waistbelt" Wiki="" />
+    <invisibleFlag_SexVer51 IsBool="" AltName="Mask 51 - [LEGS] Leggings" Wiki="" />
+    <invisibleFlag_SexVer52 IsBool="" AltName="Mask 52 - [LEGS] Leggings (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer53 IsBool="" AltName="Mask 53 - [LEGS] Kneepads" Wiki="" />
+    <invisibleFlag_SexVer54 IsBool="" AltName="Mask 54 - [LEGS] Kneepads (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer55 IsBool="" AltName="Mask 55 - [LEGS] Waistbelt" Wiki="" />
+    <invisibleFlag_SexVer56 IsBool="" AltName="Mask 56 - [LEGS] Waistbelt (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer57 IsBool="" AltName="Mask 57 - [LEGS] Waistcloth" Wiki="" />
+    <invisibleFlag_SexVer58 IsBool="" AltName="Mask 58 - [LEGS] Wiastcloth (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer59 IsBool="" AltName="Mask 59 - [LEGS] Pants Big Thighs" Wiki="" />
+    <invisibleFlag_SexVer60 IsBool="" AltName="Mask 60 - Hair (Front)" Wiki="" />
+    <invisibleFlag_SexVer61 IsBool="" AltName="Mask 61 - Hair (Forehead)" Wiki="" />
+    <invisibleFlag_SexVer62 IsBool="" AltName="Mask 62 - Hair (Under Helmet)" Wiki="" />
+    <invisibleFlag_SexVer63 IsBool="" AltName="Mask 63 - Hair (Over Headband)" Wiki="" />
+    <invisibleFlag_SexVer64 IsBool="" AltName="Mask 64 - Hair (Full)" Wiki="" />
+    <invisibleFlag_SexVer65 IsBool="" AltName="Mask 65 - Hair (Back of Head)" Wiki="" />
+    <invisibleFlag_SexVer66 IsBool="" AltName="Mask 66 - Long Hair Braid / Tail (Low)" Wiki="" />
+    <invisibleFlag_SexVer67 IsBool="" AltName="Mask 67 - Long Hair Braid / Tail (High)" Wiki="" />
+    <invisibleFlag_SexVer68 IsBool="" AltName="Mask 68 - Long Hair Braid / Tail (Highest)" Wiki="" />
+    <invisibleFlag_SexVer69 IsBool="" AltName="Mask 69 - Long Hair Braid / Tail (Lowest, Shortest)" Wiki="" />
+    <invisibleFlag_SexVer70 IsBool="" AltName="Mask 70 - [HEAD] Gorget / Neckpiece (Large)" Wiki="" />
+    <invisibleFlag_SexVer71 IsBool="" AltName="Mask 71 - [BODY] Long Shirt (Bunched up to Belt)" Wiki="" />
+    <invisibleFlag_SexVer72 IsBool="" AltName="Mask 72 - [BODY] Long Shirt (Full Length over Waist)" Wiki="" />
+    <invisibleFlag_SexVer73 IsBool="" AltName="Mask 73 - Bare Torso and Upper Arms" Wiki="" />
+    <invisibleFlag_SexVer74 IsBool="" AltName="Mask 74 - [BODY] Gravekeeper Cloak Hood (Down)" Wiki="" />
+    <invisibleFlag_SexVer75 IsBool="" AltName="Mask 75 - [BODY] Gravekeeper Cloak Hood (Up)" Wiki="" />
+    <invisibleFlag_SexVer76 IsBool="" AltName="Mask 76 - Lower Neck Warp" Wiki="" />
+    <invisibleFlag_SexVer77 IsBool="" AltName="Mask 77 - Unknown" Wiki="" />
+    <invisibleFlag_SexVer78 IsBool="" AltName="Mask 78 - Beard Jaw" Wiki="" />
+    <invisibleFlag_SexVer79 IsBool="" AltName="Mask 79 - Beard Chin" Wiki="" />
+    <invisibleFlag_SexVer80 IsBool="" AltName="Mask 80 - Beard Stubble" Wiki="" />
+    <invisibleFlag_SexVer81 IsBool="" AltName="Mask 81 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer82 IsBool="" AltName="Mask 82 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer83 IsBool="" AltName="Mask 83 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer84 IsBool="" AltName="Mask 84 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer85 IsBool="" AltName="Mask 85 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer86 IsBool="" AltName="Mask 86 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer87 IsBool="" AltName="Mask 87 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer88 IsBool="" AltName="Mask 88 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer89 IsBool="" AltName="Mask 89 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer90 IsBool="" AltName="Mask 90 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer91 IsBool="" AltName="Mask 91 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer92 IsBool="" AltName="Mask 92 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer93 IsBool="" AltName="Mask 93 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer94 IsBool="" AltName="Mask 94 - Unknown" Wiki="Used by chest armors" />
+    <invisibleFlag_SexVer95 IsBool="" AltName="Mask 95 - Unknown" Wiki="" />
+    
+    <pad404 AltName="" Padding=""/>
+  </Field>
+  <Self Wiki="Defines all types of equippable Armor, including no armor. Responsible for model masks." AlternativeOrder="rarity,sortId,sortGroupId,iconIdM,iconIdF,-,
+sellValue,saleValue,basicPrice,fixPrice,-,
+weight,durability,durabilityMax,-,
+
+materialSetId,reinforceTypeId,-,
+
+toughnessRecoverCorrection,toughnessCorrectRate,toughnessDamageCutRate,corectSARecover,saDurability,-,
+
+partsDamageRate,isSkipWeakDamageAnim,-,
+
+flickDamageCutRate,defFlickPower,-,
+
+neutralDamageCutRate,slashDamageCutRate,blowDamageCutRate,thrustDamageCutRate,magicDamageCutRate,fireDamageCutRate,thunderDamageCutRate,darkDamageCutRate,-,
+
+defensePhysics,defenseMagic,defenseFire,defenseThunder,defenseDark,defenseSlash,defenseBlow,defenseThrust,-,
+
+resistPoison,resistDisease,resistBlood,resistCurse,resistFreeze,resistSleep,resistMadness,-,
+
+residentSpEffectId,residentSpEffectId2,residentSpEffectId3,-,
+
+equipModelId,postureControlId,protectorCategory,protectorCategoryId,wanderingEquipId,equipModelCategory,equipModelGender,simpleModelForDlc,simpleModelForDlc1,simpleModelForDlc2,headEquip,bodyEquip,armEquip,legEquip,-,
+
+isDiscard,isDrop,isDeposit,disableMultiDropShare,isGuestDrop0,isGuestDrop1,-,
+
+qwcId,knockBack,knockbackBounceRate,knockbackParamId,shopLv,partsDmgType,-,
+
+defenseMaterial,defenseMaterialSfx,defenseMaterial_Weak,defenseMaterialSfx_Weak,defenseMaterialSfx1,defenseMaterialSfx_Weak1,defenseMaterial1,defenseMaterial_Weak1,defenseMaterialSfx2,defenseMaterialSfx_Weak2,footMaterialSe,defenseMaterial_Weak2,defenseMaterialVariationValue_Weak,defenseMaterialVariationValue,autoFootEffectDecalBaseId1,autoFootEffectDecalBaseId2,autoFootEffectDecalBaseId3,-,
+
+trophySGradeId,-,
+
+originEquipPro,originEquipPro1,originEquipPro2,originEquipPro3,originEquipPro4,originEquipPro5,originEquipPro6,originEquipPro7,originEquipPro8,originEquipPro9,originEquipPro10,originEquipPro11,originEquipPro12,originEquipPro13,originEquipPro14,originEquipPro15,originEquipPro16,-,
+
+useFaceScale,faceScaleM_ScaleX,faceScaleM_ScaleZ,faceScaleM_MaxX,faceScaleM_MaxZ,faceScaleF_ScaleX,faceScaleF_ScaleZ,faceScaleF_MaxX,faceScaleF_MaxZ,-,
+
+vagrantItemLotId,vagrantBonuseneDropItemLotId,vagrantItemEneDropItemLotId,-,
+
+showLogCondType,showDialogCondType,-,
+
+Mask00,Mask01,Mask02,Mask03,Mask04,Mask05,Mask06,Mask07,Mask08,Mask09,Mask10,Mask11,Mask12,Mask13,Mask14,Mask15,Mask16,Mask17,Mask18,Mask19,Mask20,Mask21,Mask22,Mask23,Mask24,Mask25,Mask26,Mask27,Mask28,Mask29,Mask30,Mask31,Mask32,Mask33,Mask34,Mask35,Mask36,Mask37,Mask38,Mask39,Mask40,Mask41,Mask42,Mask43,Mask44,Mask45,Mask46,Mask47,Mask48,Mask49,Mask50,Mask51,Mask52,Mask53,Mask54,Mask55,Mask56,Mask57,Mask58,Mask59,Mask60,Mask61,Mask62,Mask63,Mask64,Mask65,Mask66,Mask67,Mask68,Mask69,Mask70,Mask71,Mask72,Mask73,Mask74,Mask75,Mask76,Mask77,Mask78,Mask79,Mask80,Mask81,Mask82,Mask83,Mask84,Mask85,Mask86,Mask87,Mask88,Mask89,Mask90,Mask91,Mask92,Mask93,Mask94,Mask95,Mask96,Mask97,-,
+
+invisibleFlag_SexVer00,invisibleFlag_SexVer01,invisibleFlag_SexVer02,invisibleFlag_SexVer03,invisibleFlag_SexVer04,invisibleFlag_SexVer05,invisibleFlag_SexVer06,invisibleFlag_SexVer07,invisibleFlag_SexVer08,invisibleFlag_SexVer09,invisibleFlag_SexVer10,invisibleFlag_SexVer11,invisibleFlag_SexVer12,invisibleFlag_SexVer13,invisibleFlag_SexVer14,invisibleFlag_SexVer15,invisibleFlag_SexVer16,invisibleFlag_SexVer17,invisibleFlag_SexVer18,invisibleFlag_SexVer19,invisibleFlag_SexVer20,invisibleFlag_SexVer21,invisibleFlag_SexVer22,invisibleFlag_SexVer23,invisibleFlag_SexVer24,invisibleFlag_SexVer25,invisibleFlag_SexVer26,invisibleFlag_SexVer27,invisibleFlag_SexVer28,invisibleFlag_SexVer29,invisibleFlag_SexVer30,invisibleFlag_SexVer31,invisibleFlag_SexVer32,invisibleFlag_SexVer33,invisibleFlag_SexVer34,invisibleFlag_SexVer35,invisibleFlag_SexVer36,invisibleFlag_SexVer37,invisibleFlag_SexVer38,invisibleFlag_SexVer39,invisibleFlag_SexVer40,invisibleFlag_SexVer41,invisibleFlag_SexVer42,invisibleFlag_SexVer43,invisibleFlag_SexVer44,invisibleFlag_SexVer45,invisibleFlag_SexVer46,invisibleFlag_SexVer47,invisibleFlag_SexVer48,invisibleFlag_SexVer49,invisibleFlag_SexVer50,invisibleFlag_SexVer51,invisibleFlag_SexVer52,invisibleFlag_SexVer53,invisibleFlag_SexVer54,invisibleFlag_SexVer55,invisibleFlag_SexVer56,invisibleFlag_SexVer57,invisibleFlag_SexVer58,invisibleFlag_SexVer59,invisibleFlag_SexVer60,invisibleFlag_SexVer61,invisibleFlag_SexVer62,invisibleFlag_SexVer63,invisibleFlag_SexVer64,invisibleFlag_SexVer65,invisibleFlag_SexVer66,invisibleFlag_SexVer67,invisibleFlag_SexVer68,invisibleFlag_SexVer69,invisibleFlag_SexVer70,invisibleFlag_SexVer71,invisibleFlag_SexVer72,invisibleFlag_SexVer73,invisibleFlag_SexVer74,invisibleFlag_SexVer75,invisibleFlag_SexVer76,invisibleFlag_SexVer77,invisibleFlag_SexVer78,invisibleFlag_SexVer79,invisibleFlag_SexVer80,invisibleFlag_SexVer81,invisibleFlag_SexVer82,invisibleFlag_SexVer83,invisibleFlag_SexVer84,invisibleFlag_SexVer85,invisibleFlag_SexVer86,invisibleFlag_SexVer87,invisibleFlag_SexVer88,invisibleFlag_SexVer89,invisibleFlag_SexVer90,invisibleFlag_SexVer91,invisibleFlag_SexVer92,invisibleFlag_SexVer93,invisibleFlag_SexVer94,invisibleFlag_SexVer95,invisibleFlag_SexVer96,invisibleFlag_SexVer97,invisibleFlag_SexVer98,invisibleFlag_SexVer99,-,
+
+disableParam_NT,disableParamReserve1,disableParamReserve2,pad,pad2,padbitpad03,pad04,pad06" />
+</PARAMMETA>

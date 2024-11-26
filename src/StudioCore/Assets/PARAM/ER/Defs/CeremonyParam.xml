@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CEREMONY_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 eventLayerId">
+      <DisplayName>イベントレイヤーID</DisplayName>
+      <Description>イベントメーカーのレイヤーID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 mapStudioLayerId">
+      <DisplayName>MapStudioレイヤーID</DisplayName>
+      <Description>MapStudioのレイヤーID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>31</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="s32 multiPlayAreaOffset">
+      <DisplayName>マルチプレイエリアオフセット</DisplayName>
+      <Description>マルチプレイエリアIDのオフセット。例えば「100」と入れるとマルチプレイエリアIDが「100」オフセットされる。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1999999999</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="s32 overrideMapPlaceNameId = -1">
+      <DisplayName>マップ名ID上書き_地名表示</DisplayName>
+      <Description>マップ名ID_地名表示を指定IDに上書きする。-1:上書き無し、-2以下,0以上:そのIDに上書き。</Description>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="s32 overrideSaveMapNameId = -1">
+      <DisplayName>マップ名ID上書き_セーブデータ表示</DisplayName>
+      <Description>マップ名ID_セーブデータ表示を指定IDに上書きする。-1:上書き無し、-2以下,0以上:そのIDに上書き。</Description>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[16]">
+      <SortID>1401</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

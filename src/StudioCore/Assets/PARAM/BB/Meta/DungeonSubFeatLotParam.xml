@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <subFeatureNameId AltName="Sub-feature Candidate Name ID" Wiki="" FmgRef="Modern_Menu_Text" />
+    <requiredMaterialId AltName="Required Material ID" Wiki="" Refs="RitualRequiredMatParam" />
+    <subFeatureId_1 AltName="Sub-feature ID [1]" Wiki="" Refs="DungeonFeatureParam" />
+    <subFeatureId_2 AltName="Sub-feature ID [2]" Wiki="" Refs="DungeonFeatureParam" />
+    <subFeatureId_3 AltName="Sub-feature ID [3]" Wiki="" Refs="DungeonFeatureParam" />
+    <subFeatureId_4 AltName="Sub-feature ID [4]" Wiki="" Refs="DungeonFeatureParam" />
+    <subFeatureId_5 AltName="Sub-feature ID [5]" Wiki="" Refs="DungeonFeatureParam" />
+    <subFeatureId_6 AltName="Sub-feature ID [6]" Wiki="" Refs="DungeonFeatureParam" />
+    <subFeatureId_7 AltName="Sub-feature ID [7]" Wiki="" Refs="DungeonFeatureParam" />
+    <subFeatureId_8 AltName="Sub-feature ID [8]" Wiki="" Refs="DungeonFeatureParam" />
+    <subFeatureId_9 AltName="Sub-feature ID [9]" Wiki="" Refs="DungeonFeatureParam" />
+    <subFeatureId_10 AltName="Sub-feature ID [10]" Wiki="" Refs="DungeonFeatureParam" />
+    <pad_0 Padding="" />
+    <rate_1 AltName="Probability [1]" />
+    <rate_2 AltName="Probability [2]" />
+    <rate_3 AltName="Probability [3]" />
+    <rate_4 AltName="Probability [4]" />
+    <rate_5 AltName="Probability [5]" />
+    <rate_6 AltName="Probability [6]" />
+    <rate_7 AltName="Probability [7]" />
+    <rate_8 AltName="Probability [8]" />
+    <rate_9 AltName="Probability [9]" />
+    <rate_10 AltName="Probability [10]" />
+  </Field>
+  <Self Wiki="Chalice offerings."/>
+</PARAMMETA>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Edge Color" Fields="edgeColorR,edgeColorG,edgeColorB" PlacedField="edgeColorB" />
+    <ColorEditor Name="Front Color" Fields="frontColorR,frontColorG,frontColorB" PlacedField="frontColorB" />
+    <ColorEditor Name="Diffuse Color" Fields="diffMulColorR,diffMulColorG,diffMulColorB" PlacedField="diffMulColorB" />
+    <ColorEditor Name="Specular Color" Fields="specMulColorR,specMulColorG,specMulColorB" PlacedField="specMulColorB" />
+    <ColorEditor Name="Light Color" Fields="lightColorR,lightColorG,lightColorB" PlacedField="lightColorB" />
+  </ColorEdit>
+  <Field>
+    <isNo2Pass IsBool="" />
+    <isEdgeSubtract IsBool="" />
+    <isFrontSubtract IsBool="" />
+  </Field>
+  <Self Wiki="Defines the color and transparency of phantom visual effects" />
+</PARAMMETA>

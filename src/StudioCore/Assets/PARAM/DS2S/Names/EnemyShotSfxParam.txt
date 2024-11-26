@@ -1,0 +1,9 @@
+1 Without -- なし
+2 General Purpose Bow: DamiPoly FROM ID2 -- 汎用弓：ダミポリID２から
+3 Demon Armor Bow -- デーモン鎧弓
+4 General-purpose bow for lower-class soldiers (dead) -- 下級兵士（亡者）用汎用弓
+5 Fire arrows for lower-level soldiers (dead) -- 下級兵士（亡者）用火矢
+6 Est Bottle -- エスト瓶
+7 General Purpose Bow: DamiPoly FROM ID200 -- 汎用弓：ダミポリID200から
+8 General Purpose Bow: Rogue Skeleton (from Damipori ID201) -- 汎用弓：ローグ・スケルトン用（ダミポリID201から）
+9 General Purpose Bow: DamiPoly from ID203 -- 汎用弓：ダミポリID203から

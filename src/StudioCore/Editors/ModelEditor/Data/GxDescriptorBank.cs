@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
+using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,13 +16,14 @@ public class GxDescriptorBank
 {
     private ModelEditorScreen Screen;
 
-    private string DescriptorPath = $"{AppContext.BaseDirectory}\\Assets\\GX Items\\GXItemDescriptors.json";
+    private string DescriptorPath = "";
 
     public GXDescriptorList Descriptors = new GXDescriptorList();
 
     public GxDescriptorBank(ModelEditorScreen screen)
     {
         Screen = screen;
+        DescriptorPath = $"{AppContext.BaseDirectory}\\Assets\\FLVER\\GX_Item_Descriptors.json";
 
         try
         {

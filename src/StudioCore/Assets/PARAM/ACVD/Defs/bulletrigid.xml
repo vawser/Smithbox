@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BULLET_RIGID_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="s32 BehaviorID">
+      <DisplayName>プログラム</DisplayName>
+      <Enum>BULLET_BEHAVIOR_ID</Enum>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u8 bShootable">
+      <DisplayName>撃墜可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>この弾が「迎撃可」の弾によって撃ち落されることができる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bCanGoWater">
+      <DisplayName>水中可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bWireThrough">
+      <DisplayName>金網貫通</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bInterceptable = 1">
+      <DisplayName>迎撃可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>この弾が「撃墜可」の弾を撃ち落すことができる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 HitRadius">
+      <DisplayName>当たり半径</DisplayName>
+      <Description>0 なら直線当たり</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 ProximityFuseRange">
+      <DisplayName>近接信管距離</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 DecayPower">
+      <DisplayName>減衰：威力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="f32 DecayRecoil">
+      <DisplayName>減衰：反動</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="f32 DecayDiffsibility">
+      <DisplayName>減衰：拡散力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="f32 DecayPenetrability">
+      <DisplayName>減衰：貫通力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="f32 AirCP">
+      <DisplayName>空力係数</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+    </Field>
+    <Field Def="f32 StalledAirCP_H">
+      <DisplayName>失速時空力係数（水平）</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+    </Field>
+    <Field Def="f32 StalledAirCP_V">
+      <DisplayName>失速時空力係数（垂直）</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.0001</Increment>
+    </Field>
+    <Field Def="f32 Gravity">
+      <DisplayName>重力加速度</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+    </Field>
+    <Field Def="u16 MaxSpeedKmH = 1200">
+      <DisplayName>最高速度(Km/h)</DisplayName>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 MinSpeedKmH = 200">
+      <DisplayName>最低速度(Km/h)</DisplayName>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="f32 Brake">
+      <DisplayName>ブレーキ(m/sec)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

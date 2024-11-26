@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <Slash_Normal AltName="Slash: Standard" Wiki="Slash: Standard" />
+    <Slash_S AltName="Slash: Small" Wiki="Slash: Small" />
+    <Slash_L AltName="Slash: Large" Wiki="Slash: Large" />
+    <Slash_Specific1 AltName="Slash: Specific 1" Wiki="Slash: Specific 1" />
+    <Slash_Specific2 AltName="Slash: Specific 2" Wiki="Slash: Specific 2" />
+    <Blow_Normal AltName="Batter: Standard" Wiki="Batter: Standard" />
+    <Blow_S AltName="Batter: Small" Wiki="Batter: Small" />
+    <Blow_L AltName="Batter: Large" Wiki="Batter: Large" />
+    <Blow_Specific1 AltName="Batter: Specific 1" Wiki="Batter: Specific 1" />
+    <Blow_Specific2 AltName="Batter: Specific 2" Wiki="Batter: Specific 2" />
+    <Thrust_Normal AltName="Piercing: Standard" Wiki="Piercing: Standard" />
+    <Thrust_S AltName="Piercing: Small" Wiki="Piercing: Small" />
+    <Thrust_L AltName="Piercing: Large" Wiki="Piercing: Large" />
+    <Thrust_Specific1 AltName="Piercing: Specific 1" Wiki="Piercing: Specific 1" />
+    <Thrust_Specific2 AltName="Piercing: Specific 2" Wiki="Piercing: Specific 2" />
+    <Neutral_Normal AltName="Neutral: Standard" Wiki="Neutral: standard" />
+    <Neutral_S AltName="Neutral: Small" Wiki="Neutral: Small" />
+    <Neutral_L AltName="Neutral: Large" Wiki="Neutral: Large" />
+    <Neutral_Specific1 AltName="Neutral: Specific 1" Wiki="Neutral: Specific 1" />
+    <Neutral_Specific2 AltName="Neutral: Specific 2" Wiki="Neutral: Specific 2" />
+  </Field>
+  <Self />
+</PARAMMETA>

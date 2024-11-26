@@ -1,0 +1,4 @@
+0 PS4 -- PS4
+1 Xbox One -- XboxOne
+2 Win64 -- Win64
+3 Stadia -- Stadia

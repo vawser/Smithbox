@@ -1,0 +1,6 @@
+1000 Without -- なし
+2000 Arrow -- 矢
+3000 Oya -- 大矢
+4000 Bolt -- ボルト
+5000 Throwing Axe -- 投げ斧
+6000 Disk Shield -- 円盤盾

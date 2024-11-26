@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MATERIAL_SE_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Moon" />
+        <Option Value="2" Name="Stone" />
+        <Option Value="3" Name="Sat" />
+        <Option Value="4" Name="Wood" />
+        <Option Value="5" Name="Sand" />
+        <Option Value="6" Name="Ice" />
+        <Option Value="7" Name="Snow" />
+        <Option Value="8" Name="Cloth" />
+        <Option Value="9" Name="Electric" />
+        <Option Value="10" Name="Concrete" />
+        <Option Value="11" Name="Iron" />
+        <Option Value="12" Name="Glass" />
+        <Option Value="20" Name="Water (Puddle)" />
+        <Option Value="21" Name="Water (Ankle Level)" />
+        <Option Value="22" Name="Water (Knee Level)" />
+        <Option Value="23" Name="Water (Waist Level)" />
+        <Option Value="24" Name="Bottom" />
+        <Option Value="25" Name="Swamp (Puddle)" />
+        <Option Value="26" Name="Swamp (Ankle Level)" />
+        <Option Value="27" Name="Swamp (Knee Level)" />
+        <Option Value="28" Name="Swamp (Waist Level)" />
+        <Option Value="50" Name="Shield: Iron" />
+        <Option Value="51" Name="Shield: Heavy Iron" />
+        <Option Value="52" Name="Shield: Energy" />
+        <Option Value="53" Name="Body: Iron" />
+        <Option Value="54" Name="Body: Heavy Iron" />
+        <Option Value="55" Name="Body: Flesh" />
+        <Option Value="56" Name="Body: Cloth" />
+        <Option Value="57" Name="Body: Rubber" />
+
+    </Enum>
+  </Enums>
+  <Field>
+    <seMaterialId AltName="SE Material ID" Wiki="Conversion from SFX material ID (3 digits) to SE material ID (2 digits)" Enum="MATERIAL_SE_TYPE" />
+    <pad1 Padding="" />
+    <materialName AltName="Material Name" />
+    <endPadding Padding=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

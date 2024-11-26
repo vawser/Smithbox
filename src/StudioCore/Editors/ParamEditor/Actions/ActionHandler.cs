@@ -146,7 +146,7 @@ public class ActionHandler
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Names";
+        var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
         var path = Path.Combine(dir, $"{param}.txt");
 
         Param p = ParamBank.PrimaryBank.Params[param];

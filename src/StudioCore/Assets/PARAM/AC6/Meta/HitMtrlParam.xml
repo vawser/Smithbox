@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="HMP_FOOT_EFFECT_HEIGHT_TYPE" type="u8">
+        <Option Value="0" Name="No Change" />
+        <Option Value="1" Name="Force to Reflective Surface Height" />
+        <Option Value="2" Name="Force to Character Height" />
+    </Enum>
+    <Enum Name="HMP_FOOT_EFFECT_DIR_TYPE" type="u8">
+        <Option Value="0" Name="No Change" />
+        <Option Value="1" Name="Force Upwards" />
+    </Enum>
+    <Enum Name="HMP_FLOOR_HEIGHT_TYPE" type="u8">
+        <Option Value="0" Name="No Change" />
+        <Option Value="1" Name="Force to Reflective Surface Height" />
+    </Enum>
+    <Enum Name="HMP_HARDNESS_TYPE" type="u8">
+        <Option Value="0" Name="Soft" />
+        <Option Value="1" Name="Normal" />
+        <Option Value="2" Name="Hard" />
+    </Enum>
+  </Enums>
+  <Field>
+    <aiVolumeRate AltName="AI Volume Rate" Wiki="Normal when 1x. When set to 0, the radius of sound becomes 0 (SE and SFX are unrelated game-like parameters)." />
+    <spEffectIdOnHit0 AltName="On Hit [1] - SpEffect ID" Wiki="When the character steps on the hit material, the set special effect 0 is exhibited." Refs="SpEffectParam"/>
+    <spEffectIdOnHit1 AltName="On Hit [2] - SpEffect ID" Wiki="When the character steps on the hit material, the set special effect 1 is exhibited." Refs="SpEffectParam"/>
+    <footEffectHeightType AltName="Foot Effect Height Type" Wiki="Height to generate foot effect" Enum="HMP_FOOT_EFFECT_HEIGHT_TYPE" />
+    <footEffectDirType AltName="Foot Effect Direction Type" Wiki="Direction of foot effect" Enum="HMP_FOOT_EFFECT_DIR_TYPE" />
+    <floorHeightType AltName="Floor Height Type" Wiki="For floating items such as the surface of the water" Enum="HMP_FLOOR_HEIGHT_TYPE" />
+    <disableFallDamage AltName="Disable Fall Damage" Wiki="Set to 1 for floors that are not subject to fall damage" IsBool=""/>
+    <isHardnessForSoundReverb AltName="Is Hardness for Sound Reverb" Wiki="Is it a hard material for sound echo? (0: soft, 1: hard)" IsBool=""/>
+    <hardnessType AltName="Hardness Type" Wiki="The hardness of the material. Used for soft contact processing of rigid bodies." Enum="HMP_HARDNESS_TYPE" />
+  </Field>
+  <Self />
+</PARAMMETA>

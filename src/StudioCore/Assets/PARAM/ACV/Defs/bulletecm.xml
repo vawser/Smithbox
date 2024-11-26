@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BULLET_ECM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="s32 BehaviorID = 7">
+      <DisplayName>プログラム</DisplayName>
+      <Enum>BULLET_BEHAVIOR_ID</Enum>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u8 bShootable">
+      <DisplayName>撃墜可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>使用しません</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bCanGoWater">
+      <DisplayName>水中可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>使用しません</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bWireThrough">
+      <DisplayName>金網貫通</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bInterceptable = 1">
+      <DisplayName>迎撃可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>使用しません</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 HitRadius">
+      <DisplayName>当たり半径</DisplayName>
+      <Description>0 なら直線当たり</Description>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 ProximityFuseRange">
+      <DisplayName>近接信管距離</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 DecayPower">
+      <DisplayName>減衰：威力</DisplayName>
+      <Description>使用しません</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="f32 DecayRecoil">
+      <DisplayName>減衰：反動</DisplayName>
+      <Description>使用しません</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="f32 DecayDiffsibility">
+      <DisplayName>減衰：拡散力</DisplayName>
+      <Description>使用しません</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="f32 DecayPenetrability">
+      <DisplayName>減衰：貫通力</DisplayName>
+      <Description>使用しません</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+    </Field>
+    <Field Def="s16 Thickness = 50">
+      <DisplayName>ECM濃度</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+    <Field Def="s16 EffectiveFrame = 180">
+      <DisplayName>ECM 効果フレーム</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="f32 EffectiveRange = 100">
+      <DisplayName>ECM 効果範囲</DisplayName>
+      <DisplayFormat>%.0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>5</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

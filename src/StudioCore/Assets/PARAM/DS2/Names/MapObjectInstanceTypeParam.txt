@@ -1,0 +1,325 @@
+0 Template -- テンプレート
+1 Other tests -- その他テスト
+2 Wooden Treasure Chest Test -- 木製宝箱テスト
+3 Metal Treasure Chest Test -- 金属製宝箱テスト
+4 Wall Prefabricated Test -- 壁プレハブテスト
+5 No block test -- 無ブロックテスト
+6 Mini block test -- 極小ブロックテスト
+7 Small Block Test -- 小ブロックテスト
+8 Medium Block Test -- 中ブロックテスト
+9 Large Block Test -- 大ブロックテスト
+10 Oversized block test -- 特大ブロックテスト
+11  Block test -- ∞ブロックテスト
+12 Wooden Barrel Test -- 木の樽テスト
+13 Head test of giant statue -- 【抵抗の砦】巨像の頭テスト
+14 Wooden Box Test -- 木の箱テスト
+15 【Fort of resistance】Large door test of tackle destruction -- 【抵抗の砦】タックル破壊の大扉テスト
+16 Wooden Chair Test -- 木の椅子テスト
+17 Prefabricated test test -- プレハブテストテスト
+18 [Fort of resistance] bridge test to be destroyed -- 【抵抗の砦】破壊される橋テスト
+19 Test that breaks when touched -- 触れたら壊れるテスト
+20 【Fort of resistance】Wooden scaffold test -- 【抵抗の砦】木組の足場テスト
+21 【Fort of resistance】Stone pillar test -- 【抵抗の砦】石柱テスト
+22 Hanging accessory test -- 吊り下げられた小物テスト
+23 Unbreakable small items (general purpose) test -- 壊れない小物（汎用）テスト
+24 Wooden barrel test that does not move -- 移動しない木の樽テスト
+25 【Fort of resistance】Broken barista test -- 【抵抗の砦】壊れたバリスタテスト
+26 Boss Stone Statue Test Test -- ボス石像テストテスト
+27 【Test】Figurine GD Test -- 【テスト】置物ＧＤテスト
+28 【Test】 [Response] broken in a single attack -- 【テスト】【GGD対応】一発の攻撃で壊れる
+29 【Test】 【E3】Dragon's Research Institute: Giant Attributes -- 【テスト】【E3対応】龍の研究所：巨人属性
+30 【Test】 [E3 correspondence] to be broken in a single attack -- 【テスト】【E3対応】一発の攻撃で壊れる：転がる
+31 【Test】 【E3 correspondence】Broken by a single attack -- 【テスト】【E3対応】一発の攻撃で壊れる：置物
+32 【Test】 [Response] broken in a single attack on the desk -- 【テスト】【GGD対応】一発の攻撃で壊れる：机上
+33 【Tentative】Default value of "destructible" object -- 【仮】「破壊可能」なオブジェのデフォルト値
+34 【Test】 [E3 correspondence] Statuenight neck -- 【テスト】【E3対応】スタチューナイト首
+35 【Test】 【E3 correspondence】Statuenight Neck (Mr. Shimizu's provisional) -- 【テスト】【E3対応】スタチューナイト首（清水さん仮）
+36 【Test】 【E3 correspondence】Statuenite stone statue -- 【テスト】【E3対応】スタチューナイト石像
+37 【Test】Cart (hard) -- 【テスト】荷車（硬い）
+100 Bonfire_ Unbreakable -- 篝火_破壊不可
+101 【Do not use】Bonfire_Can be destroyed -- 【使用しない】篝火_破壊可
+110 White door_unbreakable -- 白扉_破壊不可
+120 Wooden Treasure Chest_Destroyable -- 木製宝箱_破壊可
+121 Iron Treasure Chest_Non-Destructive -- 鉄製宝箱_破壊不可
+122 【Do not use】Wooden treasure chest_cannot be destroyed -- 【使用しない】木製宝箱_破壊不可
+123 Flame Treasure Chest Can Be Destroyed -- 炎上宝箱 破壊可能
+130 Treasure corpse_ non-destructive -- 宝死体_破壊不可
+131 Corpse_ Can't be destroyed -- 死体_破壊不可
+140 Item_Cannot be destroyed -- アイテム_破壊不可
+150 【Do not use】Iron ladder_cannot be destroyed -- 【使用しない】鉄製梯子_破壊不可
+160 Rope_ Unbreakable -- ロープ_破壊不可
+170 Lever- valve- strap_non-destructive -- レバー・バルブ・つり革_破壊不可
+180 【Unavailable】Wall lever_cannot be destroyed -- 【使用不可】壁レバー_破壊不可
+190 Switch_Non-destructive -- スイッチ_破壊不可
+195 Ladder_Unbreakable -- 梯子_破壊不可
+200 One door can be destroyed -- 片扉_破壊可
+210 One door_non-destructive -- 片扉_破壊不可
+211 One door_Non-destructive HP setting yes -- 片扉_破壊不可　HP設定有
+220 【Do not use】Iron single door_cannot be destroyed -- 【使用しない】鉄製片扉_破壊不可
+225 【Do not use】Stone single door_cannot be destroyed -- 【使用しない】石製片扉_破壊不可
+230 Both doors cannot be destroyed -- 両扉_破壊不可
+231 Both doors can be destroyed -- 両扉_破壊可
+235 【Do not use】Stone both doors_cannot be destroyed -- 【使用しない】石製両扉_破壊不可
+240 【Do not use】Iron both doors_cannot be destroyed -- 【使用しない】鉄製両扉_破壊不可
+250 【Do not use】Wooden stand plate_cannot be destroyed -- 【使用しない】木製立て板_破壊不可
+260 Light stand_Non-destructive -- 灯火台_破壊不可
+270 【Do not use】Boss stone statue -- 【使用しない】ボス石像
+280 【Do not use】Barista barrels -- 【使用しない】バリスタ樽
+290 【Do not use】Hanging lantern -- 【使用しない】吊り下げランタン
+300 Memories of giants: The head of a giant statue -- 【巨人の記憶】巨像の頭
+310 【Do not use】 [Fort of resistance] broken barista -- 【使用しない】【抵抗の砦】壊れたバリスタ
+320 【Do not use】 [Fort of resistance] bridge broken by a fireball -- 【使用しない】【抵抗の砦】火球で壊れる橋
+330 【Do not use】 【Fort of Resistance】Barricade -- 【使用しない】【抵抗の砦】バリケード
+340 【Do not use】 The wall of the branch of the tree -- 【使用しない】【妖精のほとり】木の枝の壁
+350 【Do not use】 Stone floor of boss room -- 【使用しない】【抵抗の砦】ボス部屋の石床
+360 [Andir] Auga Destruction Wall -- 【アンディール】オーガ破壊壁
+365 [Andir] Auga destruction both doors -- 【アンディール】オーガ破壊両扉
+370 【General purpose】Wall broken by flame barrel -- 【汎用】火炎樽で壊れる壁
+371 【General purpose】Sloppy Vase -- 【汎用】だらだら壺（通常）
+372 【General purpose】Flame barrels (moving objects) -- 【汎用】火炎樽（動く物）
+373 【General purpose】Flame barrels (things that do not move) -- 【汎用】火炎樽（動かない物）
+374 【General purpose】Sloppy vase (only fall of emptiness) -- 【汎用】だらだら壺（虚ろの落下のみ）
+380 【Do not use】Hidden doors (can be destroyed) -- 【使用しない】隠し扉（破壊可能）
+381 【Do not use】Hidden doors (cannot be destroyed) -- 【使用しない】隠し扉（破壊不可）
+390 [Prison prisoner's prison] static → dynamically changing OBJ -- 【牢客の牢城】静的→動的に変化するOBJ
+400 【Do not use】 Decoy -- 【使用しない】デコイ
+410 【Hunting Forest】Chariots Event_Carriages -- 【狩猟の森】チャリオッツイベント用_馬車
+420 【Do not use】 Sloppy vase -- 【使用しない】だらだら壺
+430 【Do not use】 【Valley of the reservoir】Boss war vase -- 【使用しない】【溜りの谷】ボス戦用壺
+440 【Do not use】 [Great fire tower of Heide] pillar that only the boss can destroy -- 【使用しない】【ハイデの大火塔】ボスのみが破壊できる柱
+450 【Do not use】 Forest of The Shadow of The Void: Human Face Tree -- 【使用しない】【虚ろの影の森】人面木
+460 Memories of giants: Boss destroys tower -- 【巨人の記憶】ボスが塔を破壊
+470 【Do not use】 【Madura】Well Event Strike Stone -- 【使用しない】【マデューラ】井戸のイベント殴り用石
+480 [Memory of giants] boss breaks ladder -- 【巨人の記憶】ボスが壊す梯子
+490 The Iron Bar of the Boss's Room -- 【忘却の牢】ボス部屋の鉄格子
+491 【Prison of Oblivion】Barrel Shelf -- 【忘却の牢城】樽棚
+500 [King's Castle Doran] Statuenite's Neck -- 【王城ドラン】スタチューナイトの首
+501 Pitfalls of The King's Castle Doran -- 【王城ドラン】落とし穴
+510 [Gerald] well roof -- 【ジェラルド】井戸の屋根
+511 [Gerald] lower desk -- 【ジェラルド】下層の机
+520 【Forest of Emptiness】Ilarastone -- 【虚ろの森】つらら石
+521 【Do not use】 【Forest of Hollow】 Dead Trees in the Boss Room (Small Tree) -- 【使用しない】【虚ろの森】ボス部屋の枯れ木（小さな木）
+530 【Valley of the Reservoir】Jarbazahat Room Vase -- 【溜りの谷】ジャバザハット部屋の壺
+540 [Volcano steel works] broken bridge -- 【火山の製鉄所】壊れる橋
+550 【Kuzbottom】Jizo Stone-based OBJ -- 【クズ底】地蔵　　石系OBJ
+560 [Nest of the Guard Dragon] Wyburn's Egg -- 【守り龍の巣】ワイバーンの卵
+900 Boss Site Destruction: Weight Minimum: Unbreakable -- ボス部位破壊：重量極小:破壊不可
+901 Boss Site Destruction: Weight Small: Unbreakable -- ボス部位破壊：重量小:破壊不可
+902 Boss Site Destruction: In Weight: Unbreakable -- ボス部位破壊：重量中：破壊不可
+903 Boss Site Destruction: Weight Large: Unbreakable -- ボス部位破壊：重量大:破壊不可
+904 Boss site destruction: weight oversized: not destructive -- ボス部位破壊：重量特大:破壊不可
+905 Boss site destruction: weight extra large: non-destructive -- ボス部位破壊：重量特特大:破壊不可
+1000 【Do not use】General-purpose-barrel-no-wood -- 【使用しない】汎用-樽-無-木製
+1001 General-purpose-barrel-minimum-durable-minimum -- 汎用-樽-極小-耐久力極小
+1002 General-purpose-barrel-small-endurance minimum -- 汎用-樽-小-耐久力極小
+1003 General-purpose-barrel-medium-endurance minimum -- 汎用-樽-中-耐久力極小
+1004 General-purpose-barrel-large-endurance minimum -- 汎用-樽-大-耐久力極小
+1005 General-purpose-barrel-oversized-durable minimum -- 汎用-樽-特大-耐久力極小
+1006 General-purpose-barrel-ultra-oversized-durable minimum -- 汎用-樽-超特大-耐久力極小
+1007 【Do not use】General-purpose barrels---wooden -- 【使用しない】汎用-樽-∞-木製
+1050 【Do not use】General-purpose-box-no-wood -- 【使用しない】汎用-箱-無-木製
+1051 General-purpose-box-mini--durable-minimum -- 汎用-箱-極小-耐久力極小
+1052 General-purpose-box-small-endurance minimum -- 汎用-箱-小-耐久力極小
+1053 General-purpose-box-medium-endurance-minimum -- 汎用-箱-中-耐久力極小
+1054 General-purpose-box-large-endurance minimum -- 汎用-箱-大-耐久力極小
+1055 General-purpose-box-oversized-durable minimum -- 汎用-箱-特大-耐久力極小
+1056 General-purpose-box-ultra-oversized-durable minimum -- 汎用-箱-超特大-耐久力極小
+1057 【Do not use】General-purpose-box-box-wooden -- 【使用しない】汎用-箱-∞-木製
+1100 【Do not use】General-purpose- longue - No- wooden -- 【使用しない】汎用-長椅子-無-木製
+1101 【Do not use】General-purpose-chaise longue-small-wood -- 【使用しない】汎用-長椅子-極小-木製
+1102 【Do not use】General-purpose- chaise longue - Small - wooden -- 【使用しない】汎用-長椅子-小-木製
+1103 【Do not use】General-purpose- chaiselong - medium - wooden -- 【使用しない】汎用-長椅子-中-木製
+1104 【Do not use】General-purpose- chaise longue - large wooden -- 【使用しない】汎用-長椅子-大-木製
+1105 【Do not use】General-purpose- chaise longue - Oversized - Wooden -- 【使用しない】汎用-長椅子-特大-木製
+1106 【Do not use】General-purpose chaise longue saine-super-oversized-wooden -- 【使用しない】汎用-長椅子-超特大-木製
+1107 【Do not use】General-purpose-chaise-chaise-wooden -- 【使用しない】汎用-長椅子-∞-木製
+1150 General -Contact Destruction-Figurines-Can Be Destroyed -- 汎用-接触破壊-置物-破壊可
+1151 General-purpose-contact destruction-floor-can-be-destroyable -- 汎用-接触破壊-床-破壊可
+1200 【Do not use】General purpose - weight-free - durable minimum - anything -- 【使用しない】汎用-重量無-耐久極小-なんでも
+1201 【Do not use】General-purpose- weight-free-to-durable minimum-attack -- 【使用しない】汎用-重量無-耐久極小-通常攻撃
+1202 【Do not use】General-purpose- weight-free-to-durable minimum-special attack -- 【使用しない】汎用-重量無-耐久極小-特殊攻撃
+1203 【Do not use】General purpose - weight-free - durable small - anything -- 【使用しない】汎用-重量無-耐久小-なんでも
+1204 【Do not use】General-purpose- weight-free-to-durable-small-normal attack -- 【使用しない】汎用-重量無-耐久小-通常攻撃
+1205 【Do not use】General-purpose- weight-free-endurance-small-special attack -- 【使用しない】汎用-重量無-耐久小-特殊攻撃
+1206 【Do not use】General purpose - weight-free - during endurance - anything -- 【使用しない】汎用-重量無-耐久中-なんでも
+1207 【Do not use】General-purpose - Weight-free - Durability - Normal attack -- 【使用しない】汎用-重量無-耐久中-通常攻撃
+1208 【Do not use】General-purpose - Weight-free - Durable medium - Special attack -- 【使用しない】汎用-重量無-耐久中-特殊攻撃
+1209 【Do not use】General purpose - weight-free - durable large - anything -- 【使用しない】汎用-重量無-耐久大-なんでも
+1210 【Do not use】General-purpose- weight-free-endurance-large-normal attack -- 【使用しない】汎用-重量無-耐久大-通常攻撃
+1211 【Do not use】General-purpose- weight-free-to-durable large-special attack -- 【使用しない】汎用-重量無-耐久大-特殊攻撃
+1212 【Do not use】General purpose - weight-free - durable oversized - anything -- 【使用しない】汎用-重量無-耐久特大-なんでも
+1213 【Do not use】General-purpose- weight-free-endurance oversized-normal attack -- 【使用しない】汎用-重量無-耐久特大-通常攻撃
+1214 【Do not use】General-purpose- weight-free- durable oversized special attack -- 【使用しない】汎用-重量無-耐久特大-特殊攻撃
+1215 【Do not use】General purpose - weight-free - durable special size - anything -- 【使用しない】汎用-重量無-耐久特特大-なんでも
+1216 【Do not use】General-purpose- weight-free- durable special size - normal attack -- 【使用しない】汎用-重量無-耐久特特大-通常攻撃
+1217 【Do not use】General-purpose- weight-free- durable special-purpose special attack -- 【使用しない】汎用-重量無-耐久特特大-特殊攻撃
+1250 General-purpose - Weight Minimum - Durable Minimum - Bow and Arrow Attack -- 汎用-重量極小-耐久極小-弓矢攻撃
+1251 General-purpose - Weight Minimum - Durable Minimum - Normal Attack -- 汎用-重量極小-耐久極小-通常攻撃
+1252 General-purpose - Weight Minimum - Durable Minimum - Special Attack -- 汎用-重量極小-耐久極小-特殊攻撃
+1253 General-purpose - Weight Minimum - Durable Small - Bow and Arrow Attack -- 汎用-重量極小-耐久小-弓矢攻撃
+1254 General-purpose - Weight Minimum - Durable Small - Normal Attack -- 汎用-重量極小-耐久小-通常攻撃
+1255 General-purpose - Weight Minimum - Durable Small - Special Attack -- 汎用-重量極小-耐久小-特殊攻撃
+1256 General-purpose - Weight Minimum - Durability - Bow and Arrow Attack -- 汎用-重量極小-耐久中-弓矢攻撃
+1257 General-purpose - Weight Minimum - Durability - Normal Attack -- 汎用-重量極小-耐久中-通常攻撃
+1258 General-purpose - Weight Minimum - Durability - Special Attack -- 汎用-重量極小-耐久中-特殊攻撃
+1259 General-purpose - Weight Minimum - Durable Large - Bow and Arrow Attack -- 汎用-重量極小-耐久大-弓矢攻撃
+1260 General-purpose - Weight Minimum - Durable Large - Normal Attack -- 汎用-重量極小-耐久大-通常攻撃
+1261 General-purpose - Weight Minimum - Durable Large - Special Attack -- 汎用-重量極小-耐久大-特殊攻撃
+1262 General-purpose - Weight Minimum - Durable Oversized - Bow and Arrow Attack -- 汎用-重量極小-耐久特大-弓矢攻撃
+1263 General-purpose - Weight Minimum - Durable Oversized - Normal Attack -- 汎用-重量極小-耐久特大-通常攻撃
+1264 General-purpose - Weight Minimum - Durable Oversized - Special Attack -- 汎用-重量極小-耐久特大-特殊攻撃
+1265 General-purpose - Weight Minimum - Durable Oversized - Bow and Arrow Attack -- 汎用-重量極小-耐久特特大-弓矢攻撃
+1266 General-purpose - Weight Minimum - Durable Oversized - Normal Attack -- 汎用-重量極小-耐久特特大-通常攻撃
+1267 General-purpose - Weight Minimum - Durable Oversized - Special Attack -- 汎用-重量極小-耐久特特大-特殊攻撃
+1300 General-purpose - Weight Small - Durable Minimum - Bow and Arrow Attack -- 汎用-重量小-耐久極小-弓矢攻撃
+1301 General-purpose - Weight Small - Durable Minimum - Normal Attack -- 汎用-重量小-耐久極小-通常攻撃
+1302 General-purpose - Weight Small - Durable Minimum - Special Attack -- 汎用-重量小-耐久極小-特殊攻撃
+1303 General-purpose - Weight Small - Durable Small - Bow and Arrow Attack -- 汎用-重量小-耐久小-弓矢攻撃
+1304 General -weight small-endurance-small-attack -- 汎用-重量小-耐久小-通常攻撃
+1305 General-purpose - Weight Small - Durable Small - Special Attack -- 汎用-重量小-耐久小-特殊攻撃
+1306 General-purpose - Weight Small - Durable Medium - Bow and Arrow Attack -- 汎用-重量小-耐久中-弓矢攻撃
+1307 General-purpose - Weight Small - Durability - Normal Attack -- 汎用-重量小-耐久中-通常攻撃
+1308 General-purpose - Weight Small - Durability - Special Attack -- 汎用-重量小-耐久中-特殊攻撃
+1309 General-purpose - Weight Small - Durable Large - Bow and Arrow Attack -- 汎用-重量小-耐久大-弓矢攻撃
+1310 General-purpose - Weight Small - Durable Large - Normal Attack -- 汎用-重量小-耐久大-通常攻撃
+1311 General-purpose - Weight Small - Durable Large - Special Attack -- 汎用-重量小-耐久大-特殊攻撃
+1312 General-purpose - Weight Small - Durable Oversized - Bow and Arrow Attack -- 汎用-重量小-耐久特大-弓矢攻撃
+1313 General-purpose - Weight Small - Durable Oversized - Normal Attack -- 汎用-重量小-耐久特大-通常攻撃
+1314 General-purpose - Weight Small - Durable Oversized - Special Attack -- 汎用-重量小-耐久特大-特殊攻撃
+1315 General-purpose - Weight Small - Durable Extra Large - Bow and Arrow Attack -- 汎用-重量小-耐久特特大-弓矢攻撃
+1316 General-purpose - Weight Small - Durable Oversized - Normal Attack -- 汎用-重量小-耐久特特大-通常攻撃
+1317 General-purpose - Weight Small - Durable Extra Large - Special Attack -- 汎用-重量小-耐久特特大-特殊攻撃
+1350 General-purpose - Heavy - Durable Minimum - Bow and Arrow Attack -- 汎用-重量中-耐久極小-弓矢攻撃
+1351 General-purpose - Heavy - Durable Minimum - Normal Attack -- 汎用-重量中-耐久極小-通常攻撃
+1352 General-purpose - Heavy - Durable Minimum - Special Attack -- 汎用-重量中-耐久極小-特殊攻撃
+1353 General-purpose - Heavy - Durable Small - Bow and Arrow Attack -- 汎用-重量中-耐久小-弓矢攻撃
+1354 General -weight-medium-endurance-small-attack -- 汎用-重量中-耐久小-通常攻撃
+1355 General-purpose - Heavy - Durable Small - Special Attack -- 汎用-重量中-耐久小-特殊攻撃
+1356 General-purpose - Heavy - Durable - Bow and Arrow Attack -- 汎用-重量中-耐久中-弓矢攻撃
+1357 General-purpose - Heavy - Durable - Normal Attack -- 汎用-重量中-耐久中-通常攻撃
+1358 General-purpose - Heavy - Durable - Special Attack -- 汎用-重量中-耐久中-特殊攻撃
+1359 General-purpose - Heavy - Durable Large - Bow and Arrow Attack -- 汎用-重量中-耐久大-弓矢攻撃
+1360 General-purpose - Heavy - Durable Large - Normal Attack -- 汎用-重量中-耐久大-通常攻撃
+1361 General-purpose - Heavy - Durable Large - Special Attack -- 汎用-重量中-耐久大-特殊攻撃
+1362 General-purpose - Heavy - Durable Oversized - Bow and Arrow Attack -- 汎用-重量中-耐久特大-弓矢攻撃
+1363 General -in-weight-endurance oversized-normal attacks -- 汎用-重量中-耐久特大-通常攻撃
+1364 General-purpose - Heavy - Durable Oversized - Special Attack -- 汎用-重量中-耐久特大-特殊攻撃
+1365 General-purpose - Heavy - Durable Oversized - Bow and Arrow Attack -- 汎用-重量中-耐久特特大-弓矢攻撃
+1366 General -in-weight-endurance oversized-normal attacks -- 汎用-重量中-耐久特特大-通常攻撃
+1367 General-purpose - Heavy - Durable Oversized - Special Attack -- 汎用-重量中-耐久特特大-特殊攻撃
+1400 General-purpose - Heavy - Durable Minimum - Bow and Arrow Attack -- 汎用-重量大-耐久極小-弓矢攻撃
+1401 General-purpose - Heavy - Durable Minimum - Normal Attack -- 汎用-重量大-耐久極小-通常攻撃
+1402 General-purpose - Heavy - Durable Minimum - Special Attack -- 汎用-重量大-耐久極小-特殊攻撃
+1403 General-purpose - Heavy - Durable Small - Bow and Arrow Attack -- 汎用-重量大-耐久小-弓矢攻撃
+1404 General-purpose - Heavy - Durable Small - Normal Attack -- 汎用-重量大-耐久小-通常攻撃
+1405 General-purpose - Heavy - Durable Small - Special Attack -- 汎用-重量大-耐久小-特殊攻撃
+1406 General-purpose - Heavy - Durable - Bow and Arrow Attack -- 汎用-重量大-耐久中-弓矢攻撃
+1407 General-purpose - Heavy - Durable - Normal Attack -- 汎用-重量大-耐久中-通常攻撃
+1408 General-purpose - Heavy - Durable - Special Attack -- 汎用-重量大-耐久中-特殊攻撃
+1409 General-purpose - Heavy - Durable Large - Bow and Arrow Attack -- 汎用-重量大-耐久大-弓矢攻撃
+1410 General-purpose - Heavy - Durable - Normal Attack -- 汎用-重量大-耐久大-通常攻撃
+1411 General-purpose - Heavy - Durable - Special Attack -- 汎用-重量大-耐久大-特殊攻撃
+1412 General-purpose - Heavy - Durable Oversized - Bow and Arrow Attack -- 汎用-重量大-耐久特大-弓矢攻撃
+1413 General-purpose - Heavy - Durable Oversized - Normal Attack -- 汎用-重量大-耐久特大-通常攻撃
+1414 General-purpose - Heavy - Durable Oversized - Special Attack -- 汎用-重量大-耐久特大-特殊攻撃
+1415 General-purpose - Heavy - Durable Extra Large - Bow and Arrow Attack -- 汎用-重量大-耐久特特大-弓矢攻撃
+1416 General-purpose - Heavy - Durable Oversized - Normal Attack -- 汎用-重量大-耐久特特大-通常攻撃
+1417 General-purpose - Heavy - Durable Extra Large - Special Attack -- 汎用-重量大-耐久特特大-特殊攻撃
+1450 General-purpose - Heavy Oversized - Durable Minimum - Bow and Arrow Attack -- 汎用-重量特大-耐久極小-弓矢攻撃
+1451 General-purpose - Heavy Oversized - Durable Minimum - Normal Attack -- 汎用-重量特大-耐久極小-通常攻撃
+1452 General-purpose - Heavy Oversized - Durable Minimum - Special Attack -- 汎用-重量特大-耐久極小-特殊攻撃
+1453 General-purpose - Heavy Oversized - Durable Small - Bow and Arrow Attack -- 汎用-重量特大-耐久小-弓矢攻撃
+1454 General -Weight Oversized - Durable Small - Normal Attack -- 汎用-重量特大-耐久小-通常攻撃
+1455 General-purpose - Heavy Oversized - Durable Small - Special Attack -- 汎用-重量特大-耐久小-特殊攻撃
+1456 General-purpose - Heavy Oversized - Durable Medium - Bow and Arrow Attack -- 汎用-重量特大-耐久中-弓矢攻撃
+1457 General -weight oversized-during-endurance-normal attacks -- 汎用-重量特大-耐久中-通常攻撃
+1458 General-purpose - Heavy Oversized - Durability - Special Attack -- 汎用-重量特大-耐久中-特殊攻撃
+1459 General-purpose - Heavy Oversized - Durable Large - Bow and Arrow Attack -- 汎用-重量特大-耐久大-弓矢攻撃
+1460 General -Weight Oversized- Durable Large - Normal Attack -- 汎用-重量特大-耐久大-通常攻撃
+1461 General-purpose - Heavy Oversized - Durable Large - Special Attack -- 汎用-重量特大-耐久大-特殊攻撃
+1462 General-purpose - Heavy Oversized - Durable Oversized - Bow and Arrow Attack -- 汎用-重量特大-耐久特大-弓矢攻撃
+1463 General -Weight Oversized - Durable Oversized - Normal Attack -- 汎用-重量特大-耐久特大-通常攻撃
+1464 General-purpose - Heavy Oversized - Durable Oversized - Special Attack -- 汎用-重量特大-耐久特大-特殊攻撃
+1465 General-purpose - Heavy Oversized - Durable Extra Large - Bow and Arrow Attack -- 汎用-重量特大-耐久特特大-弓矢攻撃
+1466 General -Weight Oversized - Durable Oversized - Normal Attack -- 汎用-重量特大-耐久特特大-通常攻撃
+1467 General-purpose - Heavy Oversized - Durable Special Large - Special Attack -- 汎用-重量特大-耐久特特大-特殊攻撃
+1500 General-purpose - Weight Ultra-Large - Durable Minimum - Bow and Arrow Attack -- 汎用-重量超特大-耐久極小-弓矢攻撃
+1501 General-purpose - Weight Ultra-Large - Durable Minimum - Normal Attack -- 汎用-重量超特大-耐久極小-通常攻撃
+1502 General-purpose - Weight Ultra-Large - Durable Minimum - Special Attack -- 汎用-重量超特大-耐久極小-特殊攻撃
+1503 General-purpose - Weight Super Oversized - Durable Small - Bow and Arrow Attack -- 汎用-重量超特大-耐久小-弓矢攻撃
+1504 General-purpose - Weight Ultra-Oversized - Durable Small - Normal Attack -- 汎用-重量超特大-耐久小-通常攻撃
+1505 General-purpose - Weight Ultra-Large - Durable Small - Special Attack -- 汎用-重量超特大-耐久小-特殊攻撃
+1506 General-purpose - Weight Super-Oversized - Durable Medium - Bow and Arrow Attack -- 汎用-重量超特大-耐久中-弓矢攻撃
+1507 General-purpose - Weight Ultra-Oversized - Durability - Normal Attack -- 汎用-重量超特大-耐久中-通常攻撃
+1508 General-purpose - Weight Ultra-Oversized - Durability - Special Attack -- 汎用-重量超特大-耐久中-特殊攻撃
+1509 General-purpose - Weight Super-Oversized - Durable Large - Bow and Arrow Attack -- 汎用-重量超特大-耐久大-弓矢攻撃
+1510 General-purpose - Weight Super-Oversized - Durable Large - Normal Attack -- 汎用-重量超特大-耐久大-通常攻撃
+1511 General-purpose - Weight Super-Oversized - Durable Large - Special Attack -- 汎用-重量超特大-耐久大-特殊攻撃
+1512 General-purpose - Weight Super-Oversized - Durable Oversized - Bow and Arrow Attack -- 汎用-重量超特大-耐久特大-弓矢攻撃
+1513 General-purpose - Weight Super-Oversized - Durable Oversized - Normal Attack -- 汎用-重量超特大-耐久特大-通常攻撃
+1514 General-purpose - Weight Super-Oversized - Durable Oversized - Special Attack -- 汎用-重量超特大-耐久特大-特殊攻撃
+1515 General-purpose - Weight Super-Oversized - Durable Extra Large - Bow and Arrow Attack -- 汎用-重量超特大-耐久特特大-弓矢攻撃
+1516 General-purpose - Weight Super-oversized - Durable oversized - Normal attack -- 汎用-重量超特大-耐久特特大-通常攻撃
+1517 General-purpose - Weight Super-Oversized - Durable Special Large - Special Attack -- 汎用-重量超特大-耐久特特大-特殊攻撃
+1550 【Plan to be deleted】General purpose - weight - durable minimum - anything -- 【削除予定】汎用-重量∞-耐久極小-なんでも
+1551 【Plan to be deleted】General-purpose weight -- durable minimum - normal attack -- 【削除予定】汎用-重量∞-耐久極小-通常攻撃
+1552 【Plan to be deleted】General-purpose weight -- durable minimum - special attack -- 【削除予定】汎用-重量∞-耐久極小-特殊攻撃
+1553 【Plan to be deleted】General-purpose weight -- durable small- anything -- 【削除予定】汎用-重量∞-耐久小-なんでも
+1554 【Plan to be deleted】General-purpose weight -- durable small attack -- 【削除予定】汎用-重量∞-耐久小-通常攻撃
+1555 【Plan to be deleted】General-purpose weight -- durable small- special attack -- 【削除予定】汎用-重量∞-耐久小-特殊攻撃
+1556 【Plan to be deleted】General purpose - weight - during endurance - anything -- 【削除予定】汎用-重量∞-耐久中-なんでも
+1557 【Plan to be deleted】General-purpose weight -during-endurance - normal attack -- 【削除予定】汎用-重量∞-耐久中-通常攻撃
+1558 【Plan to be deleted】General-purpose weight -endurance medium-special attack -- 【削除予定】汎用-重量∞-耐久中-特殊攻撃
+1559 General-purpose - Weight ≥ - Mass minimum - Giant only destroyed -- 汎用-重量∞-質量極小-巨人だけ破壊
+1560 General-purpose - Weight ≥ - Mass Small - Giant only destroyed -- 汎用-重量∞-質量小-巨人だけ破壊
+1561 General-purpose - Weight ≥ - In mass - only destruction of giants -- 汎用-重量∞-質量中-巨人だけ破壊
+1562 General-purpose - Weight - Mass large (pillars) - only giant destruction -- 汎用-重量∞-質量大（柱とか）-巨人だけ破壊
+1563 General-purpose - Weight ≥ - Mass oversized - only destruction of giants -- 汎用-重量∞-質量特大-巨人だけ破壊
+1564 General-purpose - Weight - Mass extra large - Only giant destruction -- 汎用-重量∞-質量特特大-巨人だけ破壊
+1600 【Do not use】General purpose - weight-free - non-destructive -- 【使用しない】汎用-重量無-破壊不可
+1601 【Do not use】General purpose - weight minimum - unbreakable -- 【使用しない】汎用-重量極小-破壊不可
+1602 【Do not use】General purpose - weight small - non-destructive -- 【使用しない】汎用-重量小-破壊不可
+1603 【Do not use】General purpose - in weight - non-destructive -- 【使用しない】汎用-重量中-破壊不可
+1604 【Do not use】General purpose - weight large - non-destructive -- 【使用しない】汎用-重量大-破壊不可
+1605 【Do not use】General purpose - weight extra large - non-destructive -- 【使用しない】汎用-重量特大-破壊不可
+1606 【Do not use】General purpose - weight super-oversized - non-destructive -- 【使用しない】汎用-重量超特大-破壊不可
+1607 General-purpose -Weight -Non-destructive -- 汎用-重量∞-破壊不可
+1608 General-purpose -Weight -Non-destructive-HP setting -- 汎用-重量∞-破壊不可-HP設定あり
+1650 General-purpose -Weight ≥-Durable Minimum-Bow arrow attack -- 汎用-重量∞-耐久極小-弓矢攻撃
+1651 General-purpose -Weight -Durable Minimum - Normal Attack -- 汎用-重量∞-耐久極小-通常攻撃
+1652 General-purpose -Weight -Durable Minimum- Special Attack -- 汎用-重量∞-耐久極小-特殊攻撃
+1653 General-purpose - Weight ≥ - Durable Small - Bow and Arrow Attack -- 汎用-重量∞-耐久小-弓矢攻撃
+1654 General-purpose - Weight ≥ - Durable Small - Normal Attack -- 汎用-重量∞-耐久小-通常攻撃
+1655 General-purpose -Weight -Durable Small-Special Attack -- 汎用-重量∞-耐久小-特殊攻撃
+1656 General-purpose - Weight ≥ - Durability - Bow and Arrow Attack -- 汎用-重量∞-耐久中-弓矢攻撃
+1657 General-purpose - Weight ≥ - Durability - Normal Attack -- 汎用-重量∞-耐久中-通常攻撃
+1658 General-purpose -Weight -Durability- Special Attack -- 汎用-重量∞-耐久中-特殊攻撃
+1659 General-purpose - Weight ≥ - Durable Large - Bow and Arrow Attack -- 汎用-重量∞-耐久大-弓矢攻撃
+1660 General-purpose - Weight ≥ - Durable Large - Normal Attack -- 汎用-重量∞-耐久大-通常攻撃
+1661 General-purpose -Weight -Durable Large-Special Attack -- 汎用-重量∞-耐久大-特殊攻撃
+1662 General-purpose - Weight ≥ - Durable oversized - bow and arrow attack -- 汎用-重量∞-耐久特大-弓矢攻撃
+1663 General-purpose - Weight ≥ - Durable oversized - normal attack -- 汎用-重量∞-耐久特大-通常攻撃
+1664 General-purpose -Weight -Durable Oversized - Special Attack -- 汎用-重量∞-耐久特大-特殊攻撃
+1665 General-purpose - Weight - Durable Oversized - Bow and Arrow Attack -- 汎用-重量∞-耐久特特大-弓矢攻撃
+1666 General-purpose - Weight - Durable oversized - Normal attack -- 汎用-重量∞-耐久特特大-通常攻撃
+1667 General-purpose -Weight -Durable Special-Sized - Special Attack -- 汎用-重量∞-耐久特特大-特殊攻撃
+1700 General-purpose - Weight - Avoidance - Durable Minimum - Bow and Arrow Attack -- 汎用-重量∞-回避-耐久極小-弓矢攻撃
+1701 General-purpose - Weight ≥ - Avoidance - Durable Minimum - Normal Attack -- 汎用-重量∞-回避-耐久極小-通常攻撃
+1702 General-purpose -Weight ≥-Avoidance-Durable Minimum-Special Attack -- 汎用-重量∞-回避-耐久極小-特殊攻撃
+1800 General-purpose-stone OBJ-weight minimum-durability minimum -- 汎用-石系OBJ-重量極小-耐久極小
+1801 General-purpose-stone OBJ-weight-small-to-durable minimum -- 汎用-石系OBJ-重量小-耐久極小
+1802 General-purpose-stone OBJ-in-weight-to-durable minimum -- 汎用-石系OBJ-重量中-耐久極小
+1803 General-purpose-stone OBJ-heavy-to-durable minimum -- 汎用-石系OBJ-重量大-耐久極小
+1804 General-purpose-stone OBJ-heavy oversized-durable minimum -- 汎用-石系OBJ-重量特大-耐久極小
+1805 General-purpose-stone OBJ-weight oversized-durable minimum -- 汎用-石系OBJ-重量特特大-耐久極小
+1806 General-purpose-stone OBJ-weight ≥-durable minimum -- 汎用-石系OBJ-重量∞-耐久極小
+1810 General-purpose-stone OBJ-weight -durable oversized -- 汎用-石系OBJ-重量∞-耐久特大
+1900 General-purpose-vase-based OBJ-avoidance-weight-minimum-endurance-minimum -- 汎用-壺系OBJ-回避ー重量極小-耐久極小
+1901 General-purpose-vase-based OBJ-avoidance-weight-small-to-durable minimum -- 汎用-壺系OBJ-回避ー重量小-耐久極小
+1902 General-purpose-vase-based OBJ-avoidance-in-weight-to-durable minimum -- 汎用-壺系OBJ-回避ー重量中-耐久極小
+1903 General-purpose-vase-based OBJ-avoidance-heavy-to-durable minimum -- 汎用-壺系OBJ-回避ー重量大-耐久極小
+1904 General-purpose-vase-based OBJ-avoidance-weight-oversized-durable minimum -- 汎用-壺系OBJ-回避ー重量特大-耐久極小
+1905 General-purpose-vase-based OBJ-avoidance-weight-oversized-durable minimum -- 汎用-壺系OBJ-回避ー重量特特大-耐久極小
+1906 General-purpose-vase-based OBJ-avoidance-weight-to-durable minimum -- 汎用-壺系OBJ-回避ー重量∞-耐久極小
+1910 General-purpose-vase-based OBJ-avoidance-weight-to-durability oversized -- 汎用-壺系OBJ-回避ー重量∞-耐久特大
+1920 General-purpose-vase-based OBJ-avoidance-weight -durable minimum -breaking by load -- 汎用-壺系OBJ-回避ー重量∞-耐久極小-荷重で壊れる

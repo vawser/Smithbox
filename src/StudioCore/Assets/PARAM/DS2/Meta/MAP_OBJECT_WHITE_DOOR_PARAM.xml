@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to fog walls." Row0Dummy="" />
+  <Field>
+    <entry_delay AltName="Entry Delay"/>
+    <key_guide_param_id_1 AltName="Key Guide ID [1]" Refs="KeyGuideParam" />
+    <key_guide_param_id_2 AltName="Key Guide ID [2]" Refs="KeyGuideParam" />
+  </Field>
+</PARAMMETA>

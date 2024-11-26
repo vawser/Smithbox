@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="DamageTypeCategory">
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Magic" />
+      <Option Value="2" Name="Lightning" />
+      <Option Value="3" Name="Fire" />
+      <Option Value="4" Name="Dark" />
+      <Option Value="5" Name="Flat Damage" />
+      <Option Value="6" Name="Poison" />
+      <Option Value="7" Name="Bleed" />
+      <Option Value="8" Name="Durability" />
+      <Option Value="9" Name="Curse" />
+      <Option Value="11" Name="Toxic" />
+      <Option Value="12" Name="Petrification" />
+    </Enum>
+    <Enum Name="HitboxType">
+      <Option Value="0" Name="Sphere" />
+      <Option Value="1" Name="Capsule" />
+    </Enum>
+    <Enum Name="GuardBreakType">
+      <Option Value="-1" Name="Default" />
+      <Option Value="2" Name="Guard Break" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Defines parameters related to damage." Row0Dummy="" />
+  <Field>
+    <damage_ctrl_id AltName="Damage Control ID" Refs="DamageCtrlParam"/>
+    <damage_id_followup AltName="Damage ID - Follow-up" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_origin AltName="Damage ID - Origin" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_0 AltName="Damage [0]" Wiki="Direct damage, not used if damage is derived from weapon." />
+    <damage_1 AltName="Damage [1]" Wiki="Direct damage, not used if damage is derived from weapon." />
+    <damage_2 AltName="Damage [2]" Wiki="Direct damage, not used if damage is derived from weapon." />
+    <physical_damage_floor AltName="Physical Damage Floor" Wiki="Lowest physical damage that this attack can deal, regardless of target's physical defense. This value is divided by Absorption %: Physical in DamageAdjustParam."/>
+    <damage_type_0 AltName="Damage Type [0]" Enum="DamageTypeCategory" />
+    <damage_type_1 AltName="Damage Type [1]" Enum="DamageTypeCategory" />
+    <damage_type_2 AltName="Damage Type [2]" Enum="DamageTypeCategory" />
+    <damage_mult AltName="Damage %: All"/>
+    <counter_damage_mult AltName="Damage %: Counter"/>
+    <stamina_damage_mult AltName="Stamina Damage"/>
+    <durability_damage_mult AltName="Durability Damage"/>
+    <knockback_amount AltName="Knockback Amount"/>
+    <knockback_speed AltName="Knockback Speed"/>
+    <is_spawn_on_weapon AltName="Derive Damage from Weapon" IsBool="" Wiki="When enabled, damage is derived from the weapon, instead of using the damage fields directly."/>
+    <hitbox_origin_dummy_poly_id AltName="Hitbox Origin Dummy Poly ID"/>
+    <guardbreak_type AltName="Guard Break Type" Enum="GuardBreakType"/>
+    <hitbox_shape AltName="Hitbox Shape" Enum="HitboxType" />
+    <hitbox_radius_mult AltName="Hitbox Radius %"/>
+    <hitbox_length_mult AltName="Hitbox Length %"/>
+    <cycle_period AltName="Cycle Period"/>
+    <target_disable_damage AltName="Disable Damage" IsBool="" />
+    <target2 AltName="Unk" IsBool="" />
+    <target_self AltName="Target Self" IsBool="" />
+    <target4 AltName="Unk" IsBool="" />
+    <target_characters AltName="Target Characters" IsBool="" />
+    <target6 AltName="Unk" IsBool="" />
+    <target_map AltName="Target Map" IsBool="" />
+    <target8 AltName="Unk" IsBool="" />
+    <speffect_id AltName="SpEffect ID"/>
+    <apply_speffect AltName="Apply SpEffect" IsBool=""/>
+    <speffect_type AltName="SpEffect Type"/>
+    <speffect_apply_mode AltName="SpEffect Apply Mode"/>
+    <hitback_is_spawn_on_weapon AltName="Hitback - Derive from Weapon" IsBool="" />
+    <hitback_hitbox_origin_dummy_poly_id AltName="Hitback - Hitbox Origin DmyPoly ID"/>
+    <hitback_hitbox_shape AltName="Hitback - Hitbox Shape" Enum="HitboxType" />
+    <sfx_opacity_adjustment AltName="Affects SFX Opacity" />
+    <hitback_hitbox_radius_mult AltName="Hitback - Hitbox Radius %"/>
+    <hitback_hitbox_length_mult AltName="Hitback - Hitbox Length %"/>
+    <grab_param_id AltName="Grab ID" Refs="GrabParam" />
+    <hitbox_max_size AltName="Hitbox Max Size"/>
+    <hitbox_expand_speed AltName="Hitbox Expansion Speed"/>
+    <damage_effect_material_param_id AltName="Damage Effect Material ID" Refs="DamageEffectMaterialParam" />
+    <damage_movement_power_param_id AltName="Damage Movement Power ID" Refs="DamageMovementPowerParam" />
+  </Field>
+</PARAMMETA>

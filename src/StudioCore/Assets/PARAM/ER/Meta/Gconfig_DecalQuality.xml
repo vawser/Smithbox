@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <enabled AltName="Decal Enabled" Wiki="Decal valid" IsBool="" />
+    <dmy AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

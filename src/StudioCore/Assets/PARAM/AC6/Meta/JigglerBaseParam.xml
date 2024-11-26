@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>   
+    <boneName AltName="Jiggle Bone" />
+    
+    <offsetAxis_X_Range_Min AltName="Offset Axis X: Range Minimum" />
+    <offsetAxis_X_Range_Max AltName="Offset Axis X: Range Minimum" />
+    <offsetAxis_Z_Range_Min AltName="Offset Axis Z: Range Maximum" />
+    <offsetAxis_Z_Range_Max AltName="Offset Axis Z: Range Maximum" />
+    
+    <jigglerBehaviorParamId AltName="Jiggler Behavior ID" Refs="JigglerBehaviorParam" />
+    <jigglerBehaviorSlideParamId AltName="Jiggler Behavior Slide ID" Refs="JigglerBehaviorSlideParam" />
+    
+    <axisLeftMoveSpeed AltName="Axis Move Speed: Left" Wiki="Jiggle axis" />
+    <axisRightMoveSpeed AltName="Axis Move Speed: Right" Wiki="Jiggle axis" />
+    <axisDownwardMoveSpeed AltName="Axis Move Speed: Downward" Wiki="Jiggle axis" />
+    <axisUpwardMoveSpeed AltName="Axis Move Speed: Upward" Wiki="Jiggle axis" />
+    <axisBackwardMoveSpeed AltName="Axis Move Speed: Backward" Wiki="Jiggle axis" />
+    <axisForwardMoveSpeed AltName="Axis Move Speed: Forward" Wiki="Jiggle axis" />
+    
+    <jiggleBehaviorTargetBoneRateParam1 AltName="Target Bone Rate ID [1]" Refs="JigglerBehaviorTargetBoneRateParam" />
+    <jiggleBehaviorTargetBoneRateParam2 AltName="Target Bone Rate ID [2]" Refs="JigglerBehaviorTargetBoneRateParam" />
+  </Field>
+  <Self Wiki="Determines the configuration of jiggle bones within FLVER models."/>
+</PARAMMETA>

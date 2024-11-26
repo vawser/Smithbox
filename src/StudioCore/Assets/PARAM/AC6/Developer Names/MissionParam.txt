@@ -1,0 +1,163 @@
+0 invalid value -- 無効値
+2010 Prologue | Prologue -- プロローグ | Prologue
+2020 West Pines Dam Destroyed -- ダム破壊 | West Pines Dam Destroyed
+2025 Dam Destroyed_ALT | ALT West Pines Dam Destroyed -- ダム破壊_ALT | ALT West Pines Dam Destroyed
+2030 Crossing The Wall -- 壁越え | Crossing The Wall
+2050 String | Text Coordinates -- 文字列 | Text Coordinates
+2055 String_ALT | ALT Text Coordinates -- 文字列_ALT | ALT Text Coordinates
+2060 Survey Of Former VOB Arsenal | Survey Of Former VOB Arsenal -- 旧VOB工廠調査 | Survey Of Former VOB Arsenal
+2080 Destruction Of Mining Vessel -- 採掘艦破壊 | Destruction Of Mining Vessel
+2100 Scavenging | Scavenging -- スカベンジング | Scavenging
+2120 Big Bridge | Big Bridge -- ビッグ・ブリッジ | Big Bridge
+2140 Leave Territory Cover | Leave Territory Cover -- 領域離脱援護 | Leave Territory Cover
+2170 Search: In Front Of Wall | Search: In Front Of Wall -- 探索：壁前 | Search: In Front Of Wall
+2180 Continental Shell | Continental Shell -- 大陸殻 | Continental Shell
+2200 Intruder Removal -- 侵入者排除 | Intruder Removal
+2211 Fuel Base Sweep_ver2 | Fuel Base Sweep -- 燃料基地掃討_ver2 | Fuel Base Sweep
+2220 Large Missile Launch Support | Large Missile Launch Support -- 大型ミサイル発射支援 | Large Missile Launch Support
+2230 Search: Level A Indoor -- A層屋内捜索 | Search: Level A Indoor
+2240 Multiple Dam Defense -- 多重ダム防衛 | Multiple Dam Defense
+2250 Old World MT Elimination | Old World MT Elimination -- 旧世界MT排除 | Old World MT Elimination
+3011 Encounter With Organization_Ver2 | Encounter With Organization_Ver2 -- 組織との出会い_ver2 | Encounter With Organization_Ver2
+3030 Explosion Of Fuel Depot | Explosion Of Fuel Depot -- 燃料基地爆破 | Explosion Of Fuel Depot
+3043 Attack On Old Space Port | Attack On Old Space Port -- 旧宇宙港襲撃 | Attack On Old Space Port
+3230 Defeat Iceworm | Defeat Iceworm -- アイスワーム撃破 | Defeat Iceworm
+3320 Collapsed Continental Shell -- 崩落した大陸殻 | Collapsed Continental Shell
+3420 Tunnel Sabotage_Ver2 | Tunnel Sabotage -- 坑道破壊工作_Ver2 | Tunnel Sabotage
+3430 Elimination Of Unknown Aircraft | Elimination Of Unknown Aircraft -- 不明機体排除 | Elimination Of Unknown Aircraft
+3500 Tunnel Revisited -- 坑道再訪 | Tunnel Revisited
+4000 Hole In The Ice Field -- 氷原の穴 | Hole In The Ice Field
+4010 Rail Road | Rail Road -- レイル・ロード | Rail Road
+4015 Rail Road_ALT | ALT Rail Road -- レイル・ロード_ALT | ALT Rail Road
+4020 Large Cave And Furnace -- 大空洞と炉 | Large Cave And Furnace
+4021 Biological Weapons -- 生体兵器 | Biological Weapons
+4026 Biological Weapons_ALT | ALT Biological Weapons -- 生体兵器_ALT | ALT Biological Weapons
+4030 Ruins | Ruins -- 廃墟 | Ruins
+4035 Ruins_ALT | ALT Ruins -- 廃墟_ALT | ALT Ruins
+4100 Railroad Reverse | Railroad Reverse -- レイルロード逆走 | Railroad Reverse
+4110 AC Battle At Power Plant | AC Battle At Power Plant -- 発電所でのAC戦 | AC Battle At Power Plant
+4200 Jailbreak | Jailbreak -- 脱獄 | Jailbreak
+5010 New Level B Rises -- 浮上する新B層 | New Level B Rises
+5020 Straight City Invasion | Straight City Invasion -- ストレート市街侵攻 | Straight City Invasion
+5030 People of New Level B -- 新B層の人々 | People of New Level B
+5040 Breaking Through The Atmosphere | Breaking Through The Atmosphere -- 大気圏突破 | Breaking Through The Atmosphere
+5050 Straight City Reverse Run | Straight City Reverse Run -- ストレート市街逆走 | Straight City Reverse Run
+5100 City On The Sea | City On The Sea -- 洋上の都市 | City On The Sea
+5105 City on the Sea_ALT | ALT City On The Sea -- 洋上の都市_ALT | ALT City On The Sea
+5110 Recapture Of Underground Facilities | -- 地下施設奪還 | Recapture Of Underground Facilities
+6000 Final Battle A -- 決戦A | Final Battle A
+6010 Final Battle B -- 決戦B | Final Battle B
+6020 Final Battle C -- 決戦C | Final Battle C
+7900 Sub Mission: Helicopter Destruction | Sub Mission: Helicopter Destruction -- サブ・ミッション：輸送ヘリ撃破 | Sub Mission: Helicopter Destruction
+7910 Sub Mission: Open-Cut Mining Site -- サブ・ミッション（露天採掘場） |  Sub Mission: Open-Cut Mining Site
+7920 Sub Mission: Tutorial Level A -- サブ・ミッション（チュートリアルA層） |  Sub Mission: Tutorial Level A
+7930 Sub Mission: Hole in the Ice Field -- サブ・ミッション（氷原の穴） |  Sub Mission: Hole in the Ice Field
+7940 Sub Mission: Large Cave and Furnace -- サブ・ミッション（大空洞と炉） |  Sub Mission: Large Cave and Furnace
+7950 Sub Mission: Imperial Base -- サブ・ミッション（帝国基地） |  Sub Mission: Imperial Base
+7960 Sub Mission: Big Bridge | Sub Mission: Big Bridge -- サブ・ミッション（ビッグブリッジ） |  Sub Mission: Big Bridge
+7970 Sub Mission: Battery Destruction | Sub Mission: Battery Destruction -- サブ・ミッション：砲台撃破 | Sub Mission: Battery Destruction
+7980 Sub Mission: First AC Battle | Sub Mission: First AC Battle -- サブ・ミッション：初AC戦 | Sub Mission: First AC Battle
+7990 Sub-mission: Destruction Behind the Wall -- サブ・ミッション：壁裏殲滅 | Destruction Behind the Wall
+9001 Garage mission 01 -- ガレージ用ミッション01
+9100 AC test mission -- ACテスト用ミッション
+9110 Arena test mission_PvP_Multiple -- アリーナテスト用ミッション_対人戦_複数
+9111 Arena test mission_vs. AC battle -- アリーナテスト用ミッション_対AC戦
+9112 Arena test mission_PvP_Battle_Fuel base -- アリーナテスト用ミッション_対人戦_燃料基地
+9113 Arena test mission_PvP_Battle_Mining facility -- アリーナテスト用ミッション_対人戦_採掘施設
+9114 Arena test mission_PvP_Battle_Big Bridge -- アリーナテスト用ミッション_対人戦_ビッグブリッジ
+9115 Arena test mission_PvP_Lakeside town -- アリーナテスト用ミッション_対人戦_湖畔の街
+9200 Training 1 | Training Mode 1 -- トレーニング1 | Training Mode 1
+9201 Training 2 | Training Mode 2 -- トレーニング2 | Training Mode 2
+9202 Training 3 | Training Mode 3 -- トレーニング3 | Training Mode 3
+9203 Training 4 | Training Mode 4 -- トレーニング4 | Training Mode 4
+9204 Training 5 | Training Mode 5 -- トレーニング5 | Training Mode 5
+9205 Training 6 | Training Mode 6 -- トレーニング6 | Training Mode 6
+9206 Training 7 | Training Mode 7 -- トレーニング7 | Training Mode 7
+9250 Presentation_Prologue -- プレゼン用_プロローグ
+9251 For presentation_Basic operation confirmation attack edition -- プレゼン用_基本動作確認攻撃編
+9252 For presentation_Mining ship destruction -- プレゼン用_採掘艦破壊
+9253 For presentation_Big Bridge -- プレゼン用_ビッグ・ブリッジ
+9254 For presentation_Rail Road -- プレゼン用_レイル・ロード
+9256 For presentation_Fuel base explosion -- プレゼン用_燃料基地爆破
+9257 For presentation_Large missile launch support -- プレゼン用_大型ミサイル発射支援
+9258 For presentation_Rail Road -- プレゼン用_レイル・ロード
+9900 Forced sortie mission for A-tier event garage -- A層イベントガレージ用強制出撃ミッション
+9300 Official online arena Lakeside town -- 正式版オンラインアリーナ　湖畔の街
+9301 Official online arena Big Bridge -- 正式版オンラインアリーナ　ビッグブリッジ
+9302 Official online arena Black Sand Dune -- 正式版オンラインアリーナ　黒砂丘
+9303 Official online arena Old spaceport -- 正式版オンラインアリーナ　旧宇宙港
+9304 Official online arena wall front -- 正式版オンラインアリーナ　壁前
+9305 Official online arena fuel base -- 正式版オンラインアリーナ　燃料基地
+9306 Official online arena - City on the Ocean -- 正式版オンラインアリーナ　洋上の都市
+9307 Official online arena Continental Shell -- 正式版オンラインアリーナ　大陸殻
+9308 Official online arena Collapse A tier -- 正式版オンラインアリーナ　崩落A層
+9400 Official offline arena Lakeside town -- 正式版オフラインアリーナ　湖畔の街
+9401 Official offline arena Big Bridge -- 正式版オフラインアリーナ　ビッグブリッジ
+9402 Official offline arena Black Sand Dune -- 正式版オフラインアリーナ　黒砂丘
+9403 Official offline arena mountain -- 正式版オフラインアリーナ　山岳
+9404 Official offline arena wall front -- 正式版オフラインアリーナ　壁前
+9405 Official offline arena fuel base -- 正式版オフラインアリーナ　燃料基地
+9406 Official offline arena Continental Shell (Sea Spider Area) -- 正式版オフラインアリーナ　大陸殻（ウミグモエリア）
+9407 Official offline arena Icefield -- 正式版オフラインアリーナ　大氷原
+9408 Official offline arena AC test -- 正式版オフラインアリーナ　ACテスト
+9409 Official offline arena AC test (boss) -- 正式版オフラインアリーナ　ACテスト（ボス）
+9410 Official offline arena AC test (last boss) -- 正式版オフラインアリーナ　ACテスト（ラスボス）
+9411 Official offline arena AC test (abyss) -- 正式版オフラインアリーナ　ACテスト（深淵）
+9412 Official offline arena VOB Arsenal -- 正式版オフラインアリーナ　VOB工廠
+9413 Official offline arena collapse A layer -- 正式版オフラインアリーナ　崩落A層
+9414 Official offline arena Old spaceport -- 正式版オフラインアリーナ　旧宇宙港
+9415 Official offline arena Dam -- 正式版オフラインアリーナ　ダム
+9416 Official offline arena: City on the ocean -- 正式版オフラインアリーナ　洋上の都市
+99980000 Miyatake strong enemy for boss review -- ボスレビュー用　宮武強敵
+99980001 Juggernaut for boss review -- ボスレビュー用　ジャガーノート
+99980002 ADF for boss review -- ボスレビュー用　ADF
+99980003 Valkyria live bullet for boss review -- ボスレビュー用　ヴァルキュリア_実弾
+99980004 Valkyria_EN for boss review -- ボスレビュー用　ヴァルキュリア_EN
+99980005 Next generation prototype_type A for boss review -- ボスレビュー用　次世代プロト_タイプA
+99980006 Next generation prototype_type B for boss review -- ボスレビュー用　次世代プロト_タイプB
+99980007 Orbit seed for boss review -- ボスレビュー用　オービットシード
+99980008 Heavy guard mechanism for boss review -- ボスレビュー用　重ガードメカ
+99980009 Pharaon for boss review -- ボスレビュー用　ファラオン
+99980010 Sea spider for boss review -- ボスレビュー用　ウミグモ
+99980011 Single enemy review_Flight MT_Fog environment -- 単体敵レビュー用_飛行MT_霧下環境
+99980013 For boss review_regular army heavy AC_normal -- ボスレビュー用_正規軍重AC_ノーマル
+99980014 For boss review_regular army heavy AC_blade -- ボスレビュー用_正規軍重AC_ブレード
+99980015 For boss review_regular army AC_high mobility type -- ボスレビュー用_正規軍AC_高機動タイプ
+99980016 Boss review_Ghost PA -- ボスレビュー用_ゴーストPA
+99990022 For boss review_regular army heavy AC_cutting edge -- ボスレビュー用_正規軍重AC_最先端
+99990001 For Kira test -- 吉良テスト用
+99990002 For single enemy review_diffusion buzz -- 単体敵レビュー用_拡散バズ
+99990003 For Enomoto test -- 榎本テスト用
+99990005 For exit test -- 出口テスト用
+99990006 For Nishikawa test -- 西川テスト用
+99990007 For Ito test -- 伊藤テスト用
+99990008 For Shingu test -- 新宮テスト用
+99990009 Shingu test 2 -- 新宮テスト用２
+99990012 Ishikawa test -- 石川テスト用
+99990013 For Fujita test -- 藤田テスト用
+99990017 For link testing -- リンクテスト用
+99990018 For Nishimatsu test -- 西松テスト用
+99990019 For boss review -- ボスレビュー用
+99990020 Katayama placement difference wall front -- 片山配置差分壁前
+99990021 For Matsuda test -- 松田テスト用
+99990023 Production test_Atmospheric breakthrough -- 演出テスト_大気圏突破
+99990024 Performance test_defeat ice worm -- 演出テスト_アイスワーム撃破
+99990025 For cutscene shooting_m35_00_00_00 [C end] -- カットシーン撮影用_m35_00_00_00【Cエンド】
+99990026 Production test_Next generation prototype production confirmation -- 演出テスト_次世代プロト演出確認用
+99993000 Over the wall for placement review -- 配置レビュー用　壁越え
+99993001 Encounter with the organization for placement review -- 配置レビュー用　組織との出会い
+99993002 Big bridge for layout review -- 配置レビュー用　ビックブリッジ
+99993003 Railroad for layout review -- 配置レビュー用　レイルロード
+99993004 Trench City for layout review -- 配置レビュー用　塹壕都市
+99993005 For placement review Zako enemy situation inspection_communist MT -- 配置レビュー用　ザコ敵シチュ検_共産MT
+99993006 For placement review Zako enemy situation inspection_regular army MT -- 配置レビュー用　ザコ敵シチュ検_正規軍MT
+99993007 For placement review Zako enemy situation inspection_Construction machine spider -- 配置レビュー用　ザコ敵シチュ検_建機クモ
+99993008 For placement review Zako enemy situation inspection_delita -- 配置レビュー用　ザコ敵シチュ検_デリータ
+99993009 Old version for remaking atmospheric breakthrough -- 大気圏突破作り直し用旧ver
+99993011 Jumping table verification mission -- ジャンプ台検証ミッション
+99993012 OBJ destruction confirmation mission -- OBJ破壊確認用ミッション
+99993013 Mission to confirm enemy special standby -- 敵特殊待機確認用ミッション
+99993014 Mine shaft sabotage_for sound production work -- 坑道破壊工作_サウンド演出作業用
+3010 Ocean City Pharaon Test -- 洋上の都市　ファラオンテスト
+3020 Working _ For remaking over the wall -- 作業中_壁越え作り直し用
+2210 Unused (cleaned up old fuel base) -- 未使用（旧燃料基地掃討）

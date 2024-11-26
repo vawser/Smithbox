@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>EQUIP_MTRL_SET_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 materialId01 = -1" />
+    <Field Def="s32 materialId02 = -1" />
+    <Field Def="s32 materialId03 = -1" />
+    <Field Def="s32 materialId04 = -1" />
+    <Field Def="s32 materialId05 = -1" />
+    <Field Def="s8 itemNum01 = -1" />
+    <Field Def="s8 itemNum02 = -1" />
+    <Field Def="s8 itemNum03 = -1" />
+    <Field Def="s8 itemNum04 = -1" />
+    <Field Def="s8 itemNum05 = -1" />
+    <Field Def="u8 isDisableDispNum01:1" />
+    <Field Def="u8 isDisableDispNum02:1" />
+    <Field Def="u8 isDisableDispNum03:1 = 1" />
+    <Field Def="u8 isDisableDispNum04:1" />
+    <Field Def="u8 isDisableDispNum05:1" />
+    <Field Def="u8 unknown_0x1a" />
+    <Field Def="u8 unknown_0x1b" />
+    <Field Def="u8 unknown_0x1c" />
+    <Field Def="u8 unknown_0x1d" />
+    <Field Def="dummy8 pad1[2]" />
+  </Fields>
+</PARAMDEF>

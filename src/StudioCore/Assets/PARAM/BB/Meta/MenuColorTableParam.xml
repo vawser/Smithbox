@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Menu Color" Fields="r,g,b" PlacedField="b" />
+  </ColorEdit>
+  <Field>
+    <r AltName="Color: R" />
+    <g AltName="Color: G" />
+    <b AltName="Color: B" />
+    <a AltName="Color: Alpha" />
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

@@ -1,0 +1,69 @@
+1011 Are you sure you want to revert all settings to the defaults?
+1040 Cannot sortie until game is fully installed.
+1132 Failed to connect to <?gameServer?>.
+1134 Connecting to <?gameServer?>...
+1138 Data that cannot be used has been detected. Affected paint, decals, and AC name settings will be replaced with defaults.
+9103 Overwrite with the copied color?
+9104 Discard edits?
+40300 An edit lock is in place for this data. In order to proceed, the edit lock must be removed, which will revert paint, decals, and AC name to the defaults. Remove edit lock?
+120100 Stop spectating and return to Versus Room? (This will cancel the current match because you are the host.)
+120101 Stop spectating and return to Versus Room?
+201000 Reset settings?
+205550 Changing parts will remove any affected decals. Proceed?
+206100 Overwrite [<?assembleDataName?>]? Paint, decals and AC name will be overwritten with the defaults, as the current AC assembly is locked.
+206200 Paint, decals and AC name will be overwritten with the defaults, as the current AC assembly is locked. Proceed?
+210550 Overwrite with current color set?
+211000 Delete all applied images?
+211010 Mirror applied images to the opposite arm?
+211200 Discard edits?
+213100 Discard edits?
+213101 Delete layer?
+213110 Save your edits?
+213111 Discard edits?
+213300 If you have edited this group by resizing it, ungrouping may disrupt the layout. Proceed?
+250504 Cannot sortie due to EN shortfall.
+250505 Cannot sortie due to excess load.
+280500 Saving current assembly to <?gameServer?>...
+281001 Search for opponents failed.
+281011 Failed to create Versus Room.
+281021 No Versus Room found.
+281030 Leave Versus Room?
+281105 Leaving room...
+281106 Failed to leave Versus Room.
+281107 Failed to configure teams. Please try again.
+281210 Creating Versus Room...
+281261 Changing rule settings...
+281262 Failed to change rule settings.
+281310 Versus Room search in progress...
+281311 Versus Room search failed.
+281410 Joining Versus Room...
+281411 Failed to join Versus Room.
+281752 Failed to kick <?onlineId?>.
+281753 Kicking <?onlineId?>...
+281812 Report failed.
+281813 Reporting...
+281900 Versus Room was disbanded.
+281950 Repeated illegal cessations of multiplayer sessions were detected. Multiplayer functions disabled for a certain duration.
+281955 Versus Room is full. Unable to join.
+282000 Failed to join Versus Room.
+284010 Acquiring detailed information...
+284011 Failed to acquire detailed information.
+286002 Failed to upload AC data [<?assembleDataName?>].
+286005 Uploading AC data...
+286102 Failed to delete selected AC data (Share ID: <?ugcId?>) from the server.
+286105 Deleting AC data from the <?gameServer?>.
+286205 Searching for AC data...
+286500 Retrieving AC data from the <?gameServer?>...
+286501 Failed to retrieve AC data.
+287002 Failed to upload image data.
+287005 Uploading image data...
+287102 Failed to delete image data for Share ID: <?ugcId?>.
+287105 Deleting image data from the <?gameServer?>...
+287205 Searching for image data...
+287500 Retrieving image data from the <?gameServer?>...
+287501 Failed to retrieve image data.
+416010 No control assignment configured for <?selectPreset?>. Finish assigning controls or select a preset.
+710000 DLC parts have been deactivated.
+710010 DLC emblems have been deactivated.
+710020 DLC AC data has been deactivated.
+710030 Change in DLC ownership status has altered AC assembly.

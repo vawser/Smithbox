@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+    <Option Value="0" Name="Attack" />
+    <Option Value="1" Name="Bullet" />
+    <Option Value="2" Name="SpEffect" />
+  </Enum>
+  <Field>
+    <refId Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    <sfxVariationId/>
+    <weight />
+    <basicPrice Wiki="Soul cost of reinforcement. See ShopLineupParam for shop prices" />
+    <sellValue Wiki="Souls received when feeding this weapon to Frampt (unverified)" />
+    <behaviorId Refs="BehaviorParam_PC" Wiki="Unused (requires testing)" />
+    <replaceItemId Refs="EquipParamGoods" />
+    <sortId Wiki="ID used to sort this item in the menus" />
+    <qwcId />
+    <yesNoDialogMessageId/>
+    <magicId Refs="Magic" />
+    <iconId />
+    <modelId />
+    <shopLv />
+    <compTrophySedId />
+    <trophySeqId />
+    <maxNum />
+    <consumeHeroPoint />
+    <overDexterity />
+    <goodsType />
+    <refCategory Wiki="Param used by RefId" Enum="BEHAVIOR_REF_TYPE" />
+    <spEffectCategory />
+    <goodsCategory />
+    <goodsUseAnim />
+    <opmeMenuType />
+    <useLimitCategory />
+    <replaceCategory />
+    <vowType0 IsBool="" />
+    <vowType1 IsBool="" />
+    <vowType2 IsBool="" />
+    <vowType3 IsBool="" />
+    <vowType4 IsBool="" />
+    <vowType5 IsBool="" />
+    <vowType6 IsBool="" />
+    <vowType7 IsBool="" />
+    <vowType8 IsBool="" />
+    <vowType9 IsBool="" />
+    <vowType10 IsBool="" />
+    <vowType11 IsBool="" />
+    <vowType12 IsBool="" />
+    <vowType13 IsBool="" />
+    <vowType14 IsBool="" />
+    <vowType15 IsBool="" />
+    <enable_live IsBool="" />
+    <enable_gray IsBool="" />
+    <enable_white IsBool="" />
+    <enable_black IsBool="" />
+    <enable_multi IsBool="" />
+    <disable_offline IsBool="" />
+    <isEquip IsBool="" />
+    <isConsume IsBool="" />
+    <isAutoEquip IsBool="" />
+    <isEstablishment IsBool="" />
+    <isOnlyOne IsBool="" />
+    <isDrop IsBool="" />
+    <isDeposit IsBool="" />
+    <isDisableHand IsBool="" />
+    <IsTravelItem IsBool="" />
+    <isSuppleItem IsBool="" />
+    <isFullSuppleItem IsBool="" />
+    <isEnhance IsBool="" />
+    <isFixItem IsBool="" />
+    <disableMultiDropShare IsBool="" />
+    <disableUseAtColiseum IsBool="" />
+    <disableUseAtOutOfColiseum IsBool="" />
+    <vagrantItemLotId Refs="ItemLotParam" />
+    <vagrantBonusEneDropItemLotId Refs="ItemLotParam" />
+    <vagrantItemEneDropItemLotId Refs="ItemLotParam" />
+  </Field>
+</PARAMMETA>

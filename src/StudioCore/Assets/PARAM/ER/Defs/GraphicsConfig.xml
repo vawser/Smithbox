@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CS_GRAPHICS_CONFIG_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 m_textureFilterQuality = 2">
+      <DisplayName>テクスチャフィルタ品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>テクスチャフィルタ品質(デフォルトMidele)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 m_aaQuality = 3">
+      <DisplayName>AA品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>AA品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 m_ssaoQuality = 3">
+      <DisplayName>SSAO品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>SSAO品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 m_dofQuality = 3">
+      <DisplayName>被写界深度品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>被写界深度品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 m_motionBlurQuality = 3">
+      <DisplayName>モーションブラー品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>モーションブラー品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u8 m_shadowQuality = 3">
+      <DisplayName>シャドウ品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>シャドウ品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u8 m_lightingQuality = 3">
+      <DisplayName>ライティング品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>ライティング品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u8 m_effectQuality = 3">
+      <DisplayName>エフェクト品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>エフェクト品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u8 m_decalQuality = 3">
+      <DisplayName>デカール品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>デカール品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 m_reflectionQuality = 3">
+      <DisplayName>反射品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>反射品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 m_waterQuality = 3">
+      <DisplayName>ウォーター品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>ウォーター品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 m_shaderQuality = 3">
+      <DisplayName>シェーダー品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>シェーダー品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u8 m_volumetricEffectQuality = 3">
+      <DisplayName>ボリューメトリック効果品質</DisplayName>
+      <Enum>GX_QUALITY_LEVEL_ENUM</Enum>
+      <Description>ボリューメトリック効果品質(デフォルトHigh)</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>4</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    
+    <Field Def="dummy8 m_dummy[3]" RemovedVersion="11210015" />
+    
+    <Field Def="u8 m_RayTracingQuality" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 m_dummy[2]" FirstVersion="11210015" >
+      <DisplayName>dmy</DisplayName>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>15</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

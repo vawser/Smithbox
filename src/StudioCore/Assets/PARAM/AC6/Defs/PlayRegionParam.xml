@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PLAY_REGION_PARAM_ST</ParamType>
+  <DataVersion>5</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 multiPlayZoneId">
+      <DisplayName>マルチプレイ区間ID</DisplayName>
+      <Description>マルチプレイ区間ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u32 multiPlayStartLimitEventFlagId">
+      <DisplayName>マルチプレイ開始制限イベントフラグID</DisplayName>
+      <Description>マルチプレイ開始制限イベントフラグID（フラグON：マルチプレイ許可　フラグOFF：マルチプレイ禁止　フラグ設定無し：マルチプレイ常に許可）</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 otherDisableDistance">
+      <DisplayName>その他霊侵入不可能距離</DisplayName>
+      <Description>その他霊侵入不可能距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u32 pcPositionSaveLimitEventFlagId">
+      <DisplayName>PC位置セーブ制限イベントフラグID</DisplayName>
+      <Description>PC位置セーブ制限イベントフラグID（フラグON：PC位置セーブ有効　フラグOFF：PC位置セーブ無効　フラグ設定無し：PC位置セーブ常に有効）</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u32 multiPlayHostLimitEventFlagId">
+      <DisplayName>マルチプレイホスト制限イベントフラグ</DisplayName>
+      <Description>マルチプレイホスト制限イベントフラグ：このフラグがONになるとホストとしてマルチプレイが禁止される。ブロッククリアフラグを入れる想定。0：制限しない</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="s16 cultNpcWhiteGhostEntityId_byFree = -1">
+      <DisplayName>NPC白霊召喚儀式の召還NPCのエンティティIDの自由枠ID</DisplayName>
+      <Description>PC白霊召喚儀式の召還NPCのエンティティIDとして使われる自由枠IDの先頭</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="u8 bMapGuradianRegion:1">
+      <DisplayName>マップ守護領域か？</DisplayName>
+      <Description>マップ守護領域の枠の増減にするか</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1130</SortID>
+    </Field>
+    <Field Def="u8 bYellowCostumeRegion:1">
+      <DisplayName>黄衣の翁サイン領域か？</DisplayName>
+      <Description>黄衣の翁サイン領域か？</Description>
+      <Maximum>1</Maximum>
+      <SortID>1140</SortID>
+    </Field>
+    <Field Def="u8 multiPlayStartLimitEventFlagId_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Description>「マルチプレイ開始制限イベントフラグID」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1041</SortID>
+    </Field>
+    <Field Def="u8 breakInLimitEventFlagId_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Description>「侵入制限イベントフラグID」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1051</SortID>
+    </Field>
+    <Field Def="u8 whiteSignLimitEventFlagId_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Description>「白サイン制限イベントフラグID」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1061</SortID>
+    </Field>
+    <Field Def="u8 redSignLimitEventFlagId_targetFlagState:1 = 1">
+      <DisplayName>制限するフラグ状態</DisplayName>
+      <Description>「赤サイン制限イベントフラグID」の制限を行うフラグ状態</Description>
+      <Maximum>1</Maximum>
+      <SortID>1071</SortID>
+    </Field>
+    <Field Def="dummy8 pad:2">
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>5021</SortID>
+    </Field>
+    <Field Def="dummy8 pad4[1]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>5022</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_1">
+      <DisplayName>ワープアイテム許可篝火ID1</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID1</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_2">
+      <DisplayName>ワープアイテム許可篝火ID2</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID2</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4010</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_3">
+      <DisplayName>ワープアイテム許可篝火ID3</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID3</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4020</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_4">
+      <DisplayName>ワープアイテム許可篝火ID4</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID4</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4030</SortID>
+    </Field>
+    <Field Def="u32 warpItemUsePermitBonfireId_5">
+      <DisplayName>ワープアイテム許可篝火ID5</DisplayName>
+      <Description>ワープアイテムの使用を許可する判定に使う篝火のエンティティID5</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4040</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_1">
+      <DisplayName>ワープアイテム禁止イベントフラグID1</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID1。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_2">
+      <DisplayName>ワープアイテム禁止イベントフラグID2</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID2。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4110</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_3">
+      <DisplayName>ワープアイテム禁止イベントフラグID3</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID3。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4120</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_4">
+      <DisplayName>ワープアイテム禁止イベントフラグID4</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID4。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4130</SortID>
+    </Field>
+    <Field Def="u32 warpItemProhibitionEventFlagId_5">
+      <DisplayName>ワープアイテム禁止イベントフラグID5</DisplayName>
+      <Description>ワープアイテムの使用禁止を判定するイベントフラグID5。ワープアイテム許可篝火IDによる判定より優先度が上</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>-294967297</Maximum>
+      <SortID>4140</SortID>
+    </Field>
+    <Field Def="u8 enableBloodstain:1">
+      <DisplayName>血痕・死亡幻影有効</DisplayName>
+      <Description>血痕・死亡幻影有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 enableBloodMessage:1">
+      <DisplayName>血文字有効</DisplayName>
+      <Description>血文字有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5010</SortID>
+    </Field>
+    <Field Def="u8 enableGhost:1">
+      <DisplayName>幻影有効</DisplayName>
+      <Description>幻影有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5020</SortID>
+    </Field>
+    <Field Def="dummy8 pad2:5">
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>5023</SortID>
+    </Field>
+    <Field Def="dummy8 pad3[3]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>5024</SortID>
+    </Field>
+    <Field Def="u32 breakInLimitEventFlagId">
+      <DisplayName>侵入制限イベントフラグID</DisplayName>
+      <Description>侵入制限イベントフラグID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1050</SortID>
+    </Field>
+    <Field Def="u32 multiPlayHASHostLimitEventFlagId">
+      <DisplayName>黄衣の翁ホスト制限イベントフラグ</DisplayName>
+      <Description>黄衣の翁ホスト制限イベントフラグ：このフラグがONになると黄衣の翁のホストとしてのマルチプレイが禁止される。ブロッククリアフラグを入れる想定。0：制限しない</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[20]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>5025</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

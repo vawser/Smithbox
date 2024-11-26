@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>POINT_LIGHT_BANK</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="f32 dwindleBegin = 0.5">
+      <DisplayName>減衰開始距離[m]</DisplayName>
+      <Description>点光源</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 dwindleEnd = 2">
+      <DisplayName>減衰終了距離[m]</DisplayName>
+      <Description>点光源</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="s32 dummy0">
+      <DisplayName>ダミー</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="s32 dummy1">
+      <DisplayName>ダミー</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="s32 colR = 255">
+      <DisplayName>Ｒ</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+    </Field>
+    <Field Def="s32 colG = 255">
+      <DisplayName>Ｇ</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+    </Field>
+    <Field Def="s32 colB = 255">
+      <DisplayName>Ｂ</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+    </Field>
+    <Field Def="s32 colA = 100">
+      <DisplayName>RGB倍率[％]</DisplayName>
+      <Description>点光源</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

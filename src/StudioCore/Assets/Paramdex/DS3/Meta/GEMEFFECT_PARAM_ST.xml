@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Field>
-	<spEffectId Refs="SpEffectParam" />
-	<spEffectId_forAtk Refs="SpEffectParam" />
-  </Field>
-  <Self Wiki="Unused" />
-</PARAMMETA>

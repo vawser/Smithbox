@@ -1,0 +1,802 @@
+200 Invalid Assembly
+201 Invalid Assembly
+202 Invalid Assembly
+203 Invalid Assembly
+204 Invalid Assembly
+205 Invalid Assembly
+206 Invalid Assembly
+207 Invalid Assembly
+210 Invalid Assembly
+211 Invalid Assembly
+800 Invalid Assembly
+801 Test AC
+802 Invalid Assembly
+803 Invalid Assembly
+804 Invalid Assembly
+805 Invalid Assembly
+806 Invalid Assembly
+807 Invalid Assembly
+900 Invalid Assembly
+910 Invalid Assembly
+1000 Test AC Loader
+1001 Test AC Loader
+1002 Test AC Loader
+1100 Test AC Loader
+1101 Test AC Loader
+1200 Test AC
+1201 Test AC Loader
+1202 Test AC Loader
+1210 Test AC Walter
+1211 Test AC Carla
+1212 Test AC Tank
+1213 Test AC Tetrapod
+1214 Test AC Tetrapod
+1215 Test AC
+1216 Test AC
+1217 Test AC
+1300 Invalid Assembly
+2000 Invalid Assembly
+8800 Invalid Assembly
+8900 Invalid Assembly
+8950 Invalid Assembly
+8999 Invalid Assembly Gun pile
+9000 Test AC Loader
+9001 Test AC Loader
+9002 Test AC Tank
+9003 Test AC Tetrapod
+9004 Invalid Assembly
+9005 Invalid Assembly
+9006 Invalid Assembly
+9007 Invalid Assembly Gun pile tank
+9008 Invalid Assembly
+9009 Invalid Assembly
+9010 Invalid Assembly
+9011 Invalid Assembly
+9012 Invalid Assembly Gun pile tank
+9030 Invalid Assembly
+9040 Invalid Assembly
+9050 Invalid Assembly
+9060 Invalid Assembly
+9070 Invalid Assembly
+9100 Invalid Assembly
+9110 Invalid Assembly
+9120 Invalid Assembly
+9130 Invalid Assembly
+9140 Invalid Assembly
+9200 Invalid Assembly
+9210 Invalid Assembly
+9220 Invalid Assembly
+9230 Invalid Assembly
+9240 Invalid Assembly
+9300 Invalid Assembly
+9301 Invalid Assembly
+9302 Invalid Assembly
+9800 Invalid Assembly
+9801 Invalid Assembly
+9810 Invalid Assembly
+9820 Invalid Assembly
+9830 Invalid Assembly
+9850 Invalid Assembly
+9860 Invalid Assembly
+9870 Invalid Assembly
+9890 Invalid Assembly
+9899 Invalid Assembly
+9900 Invalid Assembly
+9901 Invalid Assembly
+9902 Invalid Assembly
+9903 Invalid Assembly
+9904 Invalid Assembly
+9905 Invalid Assembly
+9906 Invalid Assembly
+9907 Invalid Assembly
+9910 Invalid Assembly
+9911 Invalid Assembly
+9912 Invalid Assembly
+9913 Invalid Assembly
+9914 Invalid Assembly
+9915 Invalid Assembly
+9916 Invalid Assembly
+9917 Invalid Assembly
+9918 Invalid Assembly
+9919 Invalid Assembly
+9920 Invalid Assembly
+9921 Invalid Assembly
+9922 Invalid Assembly
+9923 Invalid Assembly
+9924 Invalid Assembly
+9925 Invalid Assembly
+9926 Invalid Assembly
+9927 Invalid Assembly
+9928 Invalid Assembly
+9929 Invalid Assembly
+9930 Invalid Assembly
+9931 Invalid Assembly
+9932 Invalid Assembly
+9933 Invalid Assembly
+9934 Invalid Assembly
+9935 Invalid Assembly
+9936 Invalid Assembly
+9937 Invalid Assembly
+9938 Invalid Assembly
+9939 Invalid Assembly
+9950 Invalid Assembly
+9951 Invalid Assembly
+9952 Invalid Assembly
+9953 Invalid Assembly
+9954 Invalid Assembly
+9955 Invalid Assembly
+9956 Invalid Assembly
+9957 Invalid Assembly
+9958 Invalid Assembly
+9959 Invalid Assembly
+9960 Invalid Assembly
+9961 Invalid Assembly
+9962 Invalid Assembly
+9963 Invalid Assembly
+9964 Invalid Assembly
+9965 Invalid Assembly
+9970 Invalid Assembly
+9971 Invalid Assembly
+9972 Invalid Assembly
+9973 Invalid Assembly
+9974 Invalid Assembly
+9975 Invalid Assembly
+9976 Invalid Assembly
+9977 Invalid Assembly
+9978 Invalid Assembly
+9979 Invalid Assembly
+9980 Invalid Assembly
+9981 Invalid Assembly
+9982 Invalid Assembly
+9983 Invalid Assembly Gun pile
+9984 Invalid Assembly
+9985 Invalid Assembly
+9986 Invalid Assembly
+9987 Invalid Assembly Gun pile
+9988 Test AC Melander
+9989 Test AC Loader
+9990 Test AC Loader
+9991 Test AC Loader
+9992 Test AC Loader
+9993 Test AC Loader
+9994 Test AC Loader
+9995 Test AC Loader
+9996 Test AC Loader
+9997 Test AC Loader
+9998 Test AC Loader
+9999 Test AC
+1000000 Invalid Assembly
+1100000 Invalid Assembly
+7970000 Test AC Loader
+8000000 Test AC Loader
+8000001 Test AC Loader
+8000002 Test AC Loader
+8000003 Test AC Loader
+8000010 Test AC Reverse Joint
+8000011 Test AC Reverse Joint
+8000012 Test AC Reverse Joint
+8000013 Test AC Reverse Joint
+8000020 Test AC Tetrapod
+8000021 Test AC Tetrapod
+8000022 Test AC Tetrapod
+8000023 Test AC Tetrapod
+8000030 Test AC Tank
+8000031 Test AC Tank
+8000032 Test AC Tank
+8000033 Test AC Tank
+8000100 Test AC Orange camo Reverse Joint
+8000101 Test AC NERF colors Reverse Joint
+8000102 Test AC NERF camo
+8000103 Test AC Grey Orange Green
+8000200 Test AC Green Brown Reverse Joint
+8000300 Test AC White Tetrapod
+8000400 Test AC Green Orange camo tank
+9000000 Invalid Assembly
+9970000 Invalid Assembly
+9970100 Invalid Assembly
+9970200 Invalid Assembly
+9900007 Invalid Assembly Gun pile
+9900008 Invalid Assembly Gun pile
+9900009 Invalid Assembly Gun pile
+9900010 Invalid Assembly Gun pile
+9900011 Test AC Reverse Joint
+70000000 Test AC Tian-Qiang
+70000001 Test AC VE
+70000010 Test AC Nachtreiher
+70000011 Test AC Basho
+70000020 Test AC VP
+70000021 Test AC Nachtreiher Ephemera
+70000100 Test AC
+70000101 Test AC
+70000102 Invalid Assembly
+70000200 Test AC Reverse Joint Light
+70000201 Test AC Reverse Joint Medium
+70000202 Test AC Reverse Joint Heavy
+70000300 Test AC Tetrapod Light
+70000301 Test AC Tetrapod Medium
+70000302 Test AC Tetrapod Heavy
+80000000 Test AC VP
+80000100 Test AC
+90000130 Test AC Loader
+90000140 Test AC
+90000150 Test AC Purple Green
+90000160 Test AC Burgundy
+90000170 Test AC Green
+90000180 Test AC
+90001130 Test AC Loader
+90001140 Test AC
+90001150 Test AC Purple Green
+90001160 Test AC Burgundy
+90001170 Test AC Green
+90001180 Test AC
+90002130 Test AC Loader
+90002140 Test AC
+90002150 Test AC Purple Green
+90002160 Test AC Burgundy
+90002170 Test AC Green
+90002180 Test AC
+90003130 Test AC Loader
+90003140 Test AC
+90003150 Test AC Purple Green
+90003160 Test AC Burgundy
+90003170 Test AC Green
+90003180 Test AC
+90004130 Test AC Loader
+90004140 Test AC
+90004150 Test AC Purple Green
+90004160 Test AC Burgundy
+90004170 Test AC Green
+90004180 Test AC
+90005130 Test AC Loader
+90005140 Test AC
+90005150 Test AC Purple Green
+90005160 Test AC Burgundy
+90005170 Test AC Green
+90005180 Test AC
+90010000 Test AC Loader
+90010010 Test AC
+90020000 Test AC Loader
+99900000 Test AC
+99900100 Test AC
+40000000 Test AC
+40000001 Test AC
+40000002 Test AC
+40000003 Test AC
+40000004 Test AC
+40000100 Test AC
+40000101 Test AC
+40000400 Test AC
+40000402 Test AC
+40000200 Test AC
+40000300 Test AC
+40001000 Test AC Loader
+40001100 Test AC Tetrapod
+40001200 Test AC Reverse Joint
+45500000 Test AC Loader
+45500010 Test AC
+45500020 Test AC Purple Green
+45500030 Test AC Burgundy
+45500040 Test AC Green
+45500050 Test AC
+45501000 Test AC Orange tank
+46000000 Test AC
+46000001 Test AC Tetrapod
+49000000 Test AC Loader
+49000001 Test AC Loader
+49000002 Test AC Loader
+10000000 NIGHTFALL (Raven)
+10001010 NIGHTFALL (Raven)
+10009000 NIGHTFALL (Raven)
+10100000 DEADSLED (Coldcall)
+10200000 ENTANGLE (Sulla)
+10300000 MIND BETA (51-002 K/Kate Markson)
+10310000 MIND GAMMA (51-003 K/ALLMIND)
+10400000 SHINOBI (Rokumonsen)
+10500000 STEEL HAZE (V.IV Rusty)
+10501000 STEEL HAZE (V.IV Rusty)
+10501100 STEEL HAZE (V.IV Rusty)
+10509000 STEEL HAZE (V.IV Rusty)
+10600000 STEEL HAZE ORTUS (V.IV Rusty)
+10609000 STEEL HAZE ORTUS (V.IV Rusty)
+10700000 OPEN FAITH (V.II Snail)
+10710000 OPEN FAITH (V.II Snail - Ice Worm)
+10800000 RECONFIG (V.V Hawkins)
+10900000 DUAL NATURE (V.VIII Pater)
+11000000 MILK TOOTH ("Honest" Brute)
+11100000 INSTITUTE (51-015 GA)/EPHEMERA (Enforcement System)
+11200000 FULL COURSE ("Cinder" Carla)
+11300000 IB-C03: HAL 826 (51-201 W/Handler Walter)
+11301000 IB-C03: HAL 826 (51-201 W/Handler Walter)
+11400000 HEAD BRINGER (G5 Iguazu)
+11409000 TENDERFOOT (G13 Raven)
+11410000 HEAD BRINGER (G5 Iguazu - ALLMIND)
+11500000 CANNON HEAD (G4 Volta)
+11600000 LIGER TAIL (G1 Michigan)
+11700000 BURN PICKAXE (Index Dunham)
+11800000 YUE YU (Little Ziyi)
+11900000 TSUBASA (Middle Flatwell)
+12000000 LOCKSMITH (V.I Freud)
+12100000 CIRCUS ("Chatty" Stick)
+12200000 ALLMIND Helper (Back Weapons)
+12300000 ALLMIND Helper (Arm Weapons)
+12400000 ALLMIND Helper (Arm and Back Weapons)
+12500000 ECHO (Ayre)
+12509000 ECHO (Ayre)
+12600000 TRAINER (51-011 AL) - Standard
+12600001 TRAINER (51-011 AL) - Camera Disruption
+12600002 TRAINER (51-011 AL) - Shock
+12600003 TRAINER (51-011 AL) - ACS Failure
+12700000 TESTER (Dafeng Student Pilot)
+20000000 DEEP DOWN (G2 Nile)
+20100000 LI LONG (G3 Wu Huahai)
+20200000 HERMIT (G6 Red)
+20300000 CORPORATION (51-013 BE)
+20400000 GUIDANCE (V.VII Swinburne)
+20500000 INFECTION (V.VI Maeterlinck)
+20600000 BARREN FLOWER (V.III O'Keeffe)
+20700000 CANDLE RING (Ring Freddie)
+20800000 ASTGHIK (Thumb Dolmayan)
+20809000 ASTGHIK (Thumb Dolmayan)
+20900000 MAD STOMP ("Invincible" Rummy)
+21000000 RUBICONIAN (51-014 BE)
+21100000 BITTER PROMISE (Nosaac)
+21200000 UMBER OX (Chartreuse)
+21300000 ASTER CROWN (King)
+21400000 MIND ALPHA (51-001 K)
+29000000 Test AC White tank
+29000010 Unnamed AC - G7 Hakra
+29000020 Unnamed AC - Monkey Gordo
+29000030 Unnamed AC - Thomas Kirk
+29000040 Test AC Wrecker
+29000050 Invalid Assembly
+30000000 Escape AC - JAILBREAK
+30000020 Illegal Entry AC - LOADER 4
+31000000 Alea Iacta Est Ending AC - Damaged LOADER 4
+31000010 Alea Iacta Est Ending AC - Reverse Joint
+31000020 Alea Iacta Est Ending AC - Tetrapod
+31000030 Alea Iacta Est Ending AC - Biped (Arquebus)
+31000040 Alea Iacta Est Ending AC - Tank
+31000050 Alea Iacta Est Ending AC - Biped (Heavy)
+50000000 Training AC - Beginner Training 1 (Biped- Balam)
+50100000 Training AC - Beginner Training 2 (Biped- Arquebus)
+50200000 Training AC - Intermediate Support 1 (Biped- Schneider)
+50300000 Training AC - Intermediate Support 2 (Reverse Joint- RaD)
+50400000 Training AC - Intermediate Support 3 (Tetrapod- Balam)
+50500000 Training AC - Intermediate Support 4 (Tank- Balam)
+50600000 Training AC - Advanced Mercenary Certification
+52000000 Test AC Loader
+60000000 Test AC Melander
+60100000 Test AC Loader
+60200000 Test AC Jailbreak Basho
+909999999 Invalid Assembly
+910000000 Weapon Test AC Gou-Chen
+910000001 Weapon Test AC Dizzy
+910000002 Weapon Test AC Little Gem
+910000003 Weapon Test AC Majestic
+910000004 Weapon Test AC Xuan-Ge
+910000005 Weapon Test AC Sweet Sixteen
+910000006 Weapon Test AC Haldeman
+910000007 Weapon Test AC Zimmerman
+910000008 Weapon Test AC Ransetsu-RF
+910000009 Weapon Test AC Curtis
+910000010 Weapon Test AC Harris
+910000011 Weapon Test AC Ransetsu-AR
+910000012 Weapon Test AC Turner
+910000013 Weapon Test AC Scudder
+910000014 Weapon Test AC Etsujin
+910000015 Weapon Test AC Ludlow
+910000016 Weapon Test AC Chang-Chen
+910000017 Weapon Test AC Hu-Ben
+910000018 Weapon Test AC Viento
+910000019 Weapon Test AC Sampu
+910000020 Weapon Test AC Coquillett
+910000021 Weapon Test AC Duckett
+910000022 Weapon Test AC Kyoriku
+910000023 Weapon Test AC Kyorai
+910000024 Weapon Test AC Therapist
+910000025 Weapon Test AC P19MLT-04
+910000026 Weapon Test AC P08SPL-06
+910000027 Weapon Test AC Iridium
+910000028 Weapon Test AC KRSV
+910000029 Weapon Test AC 760PR
+910000030 Weapon Test AC 66LRB
+910000031 Weapon Test AC Wuerger
+910000032 Weapon Test AC 66LS
+910000033 Weapon Test AC Nebula
+910000034 Weapon Test AC 66LH
+910000035 Weapon Test AC 66LR
+910000036 Weapon Test AC WLT-011
+910000037 Weapon Test AC 66LRA
+910000038 Weapon Test AC GU-Q1
+910000039 Weapon Test AC GU-A2
+910000040 Weapon Test AC Bad Cook
+910000041 Weapon Test AC JVLN ALPHA
+910000042 Weapon Test AC 66-EG
+910000043 Weapon Test AC Aperitif
+910000999 Invalid Assembly
+910001000 Weapon Test AC Ashmead
+910001001 Weapon Test AC BU-TT/A
+910001002 Weapon Test AC 770LB
+910001003 Weapon Test AC WLT 101
+910001004 Weapon Test AC 67LD
+910001005 Weapon Test AC Moonlight
+910001006 Weapon Test AC 774LS
+910001007 Weapon Test AC Tai-Yang-Shou
+910001008 Weapon Test AC 67LLA
+910001009 Weapon Test AC 67EB
+910001010 Weapon Test AC Double Trouble
+910001011 Weapon Test AC HMMR
+910001999 Invalid Assembly
+910002000 Weapon Test AC Earshot
+910002001 Weapon Test AC Morley
+910002002 Weapon Test AC 703PM
+910002003 Weapon Test AC 706PM
+910002004 Weapon Test AC 70VPM
+910002005 Weapon Test AC P05ACT-02
+910002006 Weapon Test AC P04ACT-01
+910002007 Weapon Test AC NGI 006
+910002008 Weapon Test AC P07VTC-12
+910002009 Weapon Test AC P03VTC-08
+910002010 Weapon Test AC P01VTC-04
+910002011 Weapon Test AC JVLN BETA
+910002012 Weapon Test AC 30060000 Unused
+910002013 Weapon Test AC Soup
+910002014 Weapon Test AC P03MLT-06
+910002015 Weapon Test AC P20MLT-04
+910002016 Weapon Test AC P05MLT-10
+910002017 Weapon Test AC P32DUO-03
+910002018 Weapon Test AC P08DUO-03
+910002019 Weapon Test AC P17SPL-16
+910002020 Weapon Test AC P31DUO-02
+910002021 Weapon Test AC P19SPL-12
+910002022 Weapon Test AC P16SPL-08
+910002023 Weapon Test AC P29CNT
+910002024 Weapon Test AC Trueno
+910002025 Weapon Test AC Delivery Boy
+910002026 Weapon Test AC Songbirds
+910002027 Weapon Test AC Fasan/60E
+910002028 Weapon Test AC 60LCS
+910002029 Weapon Test AC 60LCA
+910002030 Weapon Test AC Kranich/60Z
+910002031 Weapon Test AC 60LCD
+910002032 Weapon Test AC 30350000 Unused
+910002033 Weapon Test AC Aurora
+910002034 Weapon Test AC 30350200 Unused
+910002035 Weapon Test AC Huxley
+910002036 Weapon Test AC Orbit
+910002037 Weapon Test AC 700LD
+910002038 Weapon Test AC 60LT
+910002039 Weapon Test AC Eule/60D
+910002040 Weapon Test AC 60SNA
+910002999 Invalid Assembly
+910003000 Weapon Test AC 61PB
+910003001 Weapon Test AC SU-Q5
+910003002 Weapon Test AC 61PS
+910003003 Weapon Test AC SU-R8
+910003004 Weapon Test AC SU-TT/C
+910003005 Weapon Test AC NGI 028
+910003006 Weapon Test AC 61PSA
+919999999 Invalid Assembly
+920000000 Weapon Test AC Reverse Joint Gou-Chen
+920000001 Weapon Test AC Reverse Joint Dizzy
+920000002 Weapon Test AC Reverse Joint Little Gem
+920000003 Weapon Test AC Reverse Joint Majestic
+920000004 Weapon Test AC Reverse Joint Xuan-Ge
+920000005 Weapon Test AC Reverse Joint Sweet Sixteen
+920000006 Weapon Test AC Reverse Joint Haldeman
+920000007 Weapon Test AC Reverse Joint Zimmerman
+920000008 Weapon Test AC Reverse Joint Ransetsu-RF
+920000009 Weapon Test AC Reverse Joint Curtis
+920000010 Weapon Test AC Reverse Joint Harris
+920000011 Weapon Test AC Reverse Joint Ransetsu-AR
+920000012 Weapon Test AC Reverse Joint Turner
+920000013 Weapon Test AC Reverse Joint Scudder
+920000014 Weapon Test AC Reverse Joint Etsujin
+920000015 Weapon Test AC Reverse Joint Ludlow
+920000016 Weapon Test AC Reverse Joint Chang-Chen
+920000017 Weapon Test AC Reverse Joint Hu-Ben
+920000018 Weapon Test AC Reverse Joint Viento
+920000019 Weapon Test AC Reverse Joint Sampu
+920000020 Weapon Test AC Reverse Joint Coquillett
+920000021 Weapon Test AC Reverse Joint Duckett
+920000022 Weapon Test AC Reverse Joint Kyoriku
+920000023 Weapon Test AC Reverse Joint Kyorai
+920000024 Weapon Test AC Reverse Joint Therapist
+920000025 Weapon Test AC Reverse Joint P19MLT-04
+920000026 Weapon Test AC Reverse Joint P08SPL-06
+920000027 Weapon Test AC Reverse Joint Iridium
+920000028 Weapon Test AC Reverse Joint KRSV
+920000029 Weapon Test AC Reverse Joint 760PR
+920000030 Weapon Test AC Reverse Joint 66LRB
+920000031 Weapon Test AC Reverse Joint Wuerger
+920000032 Weapon Test AC Reverse Joint 66LS
+920000033 Weapon Test AC Reverse Joint Nebula
+920000034 Weapon Test AC Reverse Joint 66LH
+920000035 Weapon Test AC Reverse Joint 66LR
+920000036 Weapon Test AC Reverse Joint WLT-011
+920000037 Weapon Test AC Reverse Joint 66LRA
+920000038 Weapon Test AC Reverse Joint GU-Q1
+920000039 Weapon Test AC Reverse Joint GU-A2
+920000040 Weapon Test AC Reverse Joint Bad Cook
+920000041 Weapon Test AC Reverse Joint JVLN ALPHA
+920000042 Weapon Test AC Reverse Joint 66-EG
+920000043 Weapon Test AC Reverse Joint Aperitif
+920000999 Invalid Assembly
+920001000 Weapon Test AC Reverse Joint Ashmead
+920001001 Weapon Test AC Reverse Joint BU-TT/A
+920001002 Weapon Test AC Reverse Joint 770LB
+920001003 Weapon Test AC Reverse Joint WLT 101
+920001004 Weapon Test AC Reverse Joint 67LD
+920001005 Weapon Test AC Reverse Joint Moonlight
+920001006 Weapon Test AC Reverse Joint 774LS
+920001007 Weapon Test AC Reverse Joint Tai-Yang-Shou
+920001008 Weapon Test AC Reverse Joint 67LLA
+920001009 Weapon Test AC Reverse Joint 67EB
+920001010 Weapon Test AC Reverse Joint Double Trouble
+920001011 Weapon Test AC Reverse Joint HMMR
+920001999 Invalid Assembly
+920002000 Weapon Test AC Reverse Joint Earshot
+920002001 Weapon Test AC Reverse Joint Morley
+920002002 Weapon Test AC Reverse Joint 703PM
+920002003 Weapon Test AC Reverse Joint 706PM
+920002004 Weapon Test AC Reverse Joint 70VPM
+920002005 Weapon Test AC Reverse Joint P05ACT-02
+920002006 Weapon Test AC Reverse Joint P04ACT-01
+920002007 Weapon Test AC Reverse Joint NGI 006
+920002008 Weapon Test AC Reverse Joint P07VTC-12
+920002009 Weapon Test AC Reverse Joint P03VTC-08
+920002010 Weapon Test AC Reverse Joint P01VTC-04
+920002011 Weapon Test AC Reverse Joint JVLN BETA
+920002012 Weapon Test AC Reverse Joint 30060000 Unused
+920002013 Weapon Test AC Reverse Joint Soup
+920002014 Weapon Test AC Reverse Joint P03MLT-06
+920002015 Weapon Test AC Reverse Joint P20MLT-04
+920002016 Weapon Test AC Reverse Joint P05MLT-10
+920002017 Weapon Test AC Reverse Joint P32DUO-03
+920002018 Weapon Test AC Reverse Joint P08DUO-03
+920002019 Weapon Test AC Reverse Joint P17SPL-16
+920002020 Weapon Test AC Reverse Joint P31DUO-02
+920002021 Weapon Test AC Reverse Joint P19SPL-12
+920002022 Weapon Test AC Reverse Joint P16SPL-08
+920002023 Weapon Test AC Reverse Joint P29CNT
+920002024 Weapon Test AC Reverse Joint Trueno
+920002025 Weapon Test AC Reverse Joint Delivery Boy
+920002026 Weapon Test AC Reverse Joint Songbirds
+920002027 Weapon Test AC Reverse Joint Fasan/60E
+920002028 Weapon Test AC Reverse Joint 60LCS
+920002029 Weapon Test AC Reverse Joint 60LCA
+920002030 Weapon Test AC Reverse Joint Kranich/60Z
+920002031 Weapon Test AC Reverse Joint 60LCD
+920002032 Weapon Test AC Reverse Joint 30350000 Unused
+920002033 Weapon Test AC Reverse Joint Aurora
+920002034 Weapon Test AC Reverse Joint 30350200 Unused
+920002035 Weapon Test AC Reverse Joint Huxley
+920002036 Weapon Test AC Reverse Joint Orbit
+920002037 Weapon Test AC Reverse Joint 700LD
+920002038 Weapon Test AC Reverse Joint 60LT
+920002039 Weapon Test AC Reverse Joint Eule/60D
+920002040 Weapon Test AC Reverse Joint 60SNA
+920002999 Invalid Assembly
+920003000 Weapon Test AC Reverse Joint 61PB
+920003001 Weapon Test AC Reverse Joint SU-Q5
+920003002 Weapon Test AC Reverse Joint 61PS
+920003003 Weapon Test AC Reverse Joint SU-R8
+920003004 Weapon Test AC Reverse Joint SU-TT/C
+920003005 Weapon Test AC Reverse Joint NGI 028
+920003006 Weapon Test AC Reverse Joint 61PSA
+929999999 Invalid Assembly
+930000000 Weapon Test AC Tetrapod Gou-Chen
+930000001 Weapon Test AC Tetrapod Dizzy
+930000002 Weapon Test AC Tetrapod Little Gem
+930000003 Weapon Test AC Tetrapod Majestic
+930000004 Weapon Test AC Tetrapod Xuan-Ge
+930000005 Weapon Test AC Tetrapod Sweet Sixteen
+930000006 Weapon Test AC Tetrapod Haldeman
+930000007 Weapon Test AC Tetrapod Zimmerman
+930000008 Weapon Test AC Tetrapod Ransetsu-RF
+930000009 Weapon Test AC Tetrapod Curtis
+930000010 Weapon Test AC Tetrapod Harris
+930000011 Weapon Test AC Tetrapod Ransetsu-AR
+930000012 Weapon Test AC Tetrapod Turner
+930000013 Weapon Test AC Tetrapod Scudder
+930000014 Weapon Test AC Tetrapod Etsujin
+930000015 Weapon Test AC Tetrapod Ludlow
+930000016 Weapon Test AC Tetrapod Chang-Chen
+930000017 Weapon Test AC Tetrapod Hu-Ben
+930000018 Weapon Test AC Tetrapod Viento
+930000019 Weapon Test AC Tetrapod Sampu
+930000020 Weapon Test AC Tetrapod Coquillett
+930000021 Weapon Test AC Tetrapod Duckett
+930000022 Weapon Test AC Tetrapod Kyoriku
+930000023 Weapon Test AC Tetrapod Kyorai
+930000024 Weapon Test AC Tetrapod Therapist
+930000025 Weapon Test AC Tetrapod P19MLT-04
+930000026 Weapon Test AC Tetrapod P08SPL-06
+930000027 Weapon Test AC Tetrapod Iridium
+930000028 Weapon Test AC Tetrapod KRSV
+930000029 Weapon Test AC Tetrapod 760PR
+930000030 Weapon Test AC Tetrapod 66LRB
+930000031 Weapon Test AC Tetrapod Wuerger
+930000032 Weapon Test AC Tetrapod 66LS
+930000033 Weapon Test AC Tetrapod Nebula
+930000034 Weapon Test AC Tetrapod 66LH
+930000035 Weapon Test AC Tetrapod 66LR
+930000036 Weapon Test AC Tetrapod WLT-011
+930000037 Weapon Test AC Tetrapod 66LRA
+930000038 Weapon Test AC Tetrapod GU-Q1
+930000039 Weapon Test AC Tetrapod GU-A2
+930000040 Weapon Test AC Tetrapod Bad Cook
+930000041 Weapon Test AC Tetrapod JVLN ALPHA
+930000042 Weapon Test AC Tetrapod 66-EG
+930000043 Weapon Test AC Tetrapod Aperitif
+930000999 Invalid Assembly
+930001000 Weapon Test AC Tetrapod Ashmead
+930001001 Weapon Test AC Tetrapod BU-TT/A
+930001002 Weapon Test AC Tetrapod 770LB
+930001003 Weapon Test AC Tetrapod WLT 101
+930001004 Weapon Test AC Tetrapod 67LD
+930001005 Weapon Test AC Tetrapod Moonlight
+930001006 Weapon Test AC Tetrapod 774LS
+930001007 Weapon Test AC Tetrapod Tai-Yang-Shou
+930001008 Weapon Test AC Tetrapod 67LLA
+930001009 Weapon Test AC Tetrapod 67EB
+930001010 Weapon Test AC Tetrapod Double Trouble
+930001011 Weapon Test AC Tetrapod HMMR
+930001999 Invalid Assembly
+930002000 Weapon Test AC Tetrapod Earshot
+930002001 Weapon Test AC Tetrapod Morley
+930002002 Weapon Test AC Tetrapod 703PM
+930002003 Weapon Test AC Tetrapod 706PM
+930002004 Weapon Test AC Tetrapod 70VPM
+930002005 Weapon Test AC Tetrapod P05ACT-02
+930002006 Weapon Test AC Tetrapod P04ACT-01
+930002007 Weapon Test AC Tetrapod NGI 006
+930002008 Weapon Test AC Tetrapod P07VTC-12
+930002009 Weapon Test AC Tetrapod P03VTC-08
+930002010 Weapon Test AC Tetrapod P01VTC-04
+930002011 Weapon Test AC Tetrapod JVLN BETA
+930002012 Weapon Test AC Tetrapod 30060000 Unused
+930002013 Weapon Test AC Tetrapod Soup
+930002014 Weapon Test AC Tetrapod P03MLT-06
+930002015 Weapon Test AC Tetrapod P20MLT-04
+930002016 Weapon Test AC Tetrapod P05MLT-10
+930002017 Weapon Test AC Tetrapod P32DUO-03
+930002018 Weapon Test AC Tetrapod P08DUO-03
+930002019 Weapon Test AC Tetrapod P17SPL-16
+930002020 Weapon Test AC Tetrapod P31DUO-02
+930002021 Weapon Test AC Tetrapod P19SPL-12
+930002022 Weapon Test AC Tetrapod P16SPL-08
+930002023 Weapon Test AC Tetrapod P29CNT
+930002024 Weapon Test AC Tetrapod Trueno
+930002025 Weapon Test AC Tetrapod Delivery Boy
+930002026 Weapon Test AC Tetrapod Songbirds
+930002027 Weapon Test AC Tetrapod Fasan/60E
+930002028 Weapon Test AC Tetrapod 60LCS
+930002029 Weapon Test AC Tetrapod 60LCA
+930002030 Weapon Test AC Tetrapod Kranich/60Z
+930002031 Weapon Test AC Tetrapod 60LCD
+930002032 Weapon Test AC Tetrapod 30350000 Unused
+930002033 Weapon Test AC Tetrapod Aurora
+930002034 Weapon Test AC Tetrapod 30350200 Unused
+930002035 Weapon Test AC Tetrapod Huxley
+930002036 Weapon Test AC Tetrapod Orbit
+930002037 Weapon Test AC Tetrapod 700LD
+930002038 Weapon Test AC Tetrapod 60LT
+930002039 Weapon Test AC Tetrapod Eule/60D
+930002040 Weapon Test AC Tetrapod 60SNA
+930002999 Invalid Assembly
+930003000 Weapon Test AC Tetrapod 61PB
+930003001 Weapon Test AC Tetrapod SU-Q5
+930003002 Weapon Test AC Tetrapod 61PS
+930003003 Weapon Test AC Tetrapod SU-R8
+930003004 Weapon Test AC Tetrapod SU-TT/C
+930003005 Weapon Test AC Tetrapod NGI 028
+930003006 Weapon Test AC Tetrapod 61PSA
+939999999 Invalid Assembly
+940000000 Weapon Test AC Tank Gou-Chen
+940000001 Weapon Test AC Tank Dizzy
+940000002 Weapon Test AC Tank Little Gem
+940000003 Weapon Test AC Tank Majestic
+940000004 Weapon Test AC Tank Xuan-Ge
+940000005 Weapon Test AC Tank Sweet Sixteen
+940000006 Weapon Test AC Tank Haldeman
+940000007 Weapon Test AC Tank Zimmerman
+940000008 Weapon Test AC Tank Ransetsu-RF
+940000009 Weapon Test AC Tank Curtis
+940000010 Weapon Test AC Tank Harris
+940000011 Weapon Test AC Tank Ransetsu-AR
+940000012 Weapon Test AC Tank Turner
+940000013 Weapon Test AC Tank Scudder
+940000014 Weapon Test AC Tank Etsujin
+940000015 Weapon Test AC Tank Ludlow
+940000016 Weapon Test AC Tank Chang-Chen
+940000017 Weapon Test AC Tank Hu-Ben
+940000018 Weapon Test AC Tank Viento
+940000019 Weapon Test AC Tank Sampu
+940000020 Weapon Test AC Tank Coquillett
+940000021 Weapon Test AC Tank Duckett
+940000022 Weapon Test AC Tank Kyoriku
+940000023 Weapon Test AC Tank Kyorai
+940000024 Weapon Test AC Tank Therapist
+940000025 Weapon Test AC Tank P19MLT-04
+940000026 Weapon Test AC Tank P08SPL-06
+940000027 Weapon Test AC Tank Iridium
+940000028 Weapon Test AC Tank KRSV
+940000029 Weapon Test AC Tank 760PR
+940000030 Weapon Test AC Tank 66LRB
+940000031 Weapon Test AC Tank Wuerger
+940000032 Weapon Test AC Tank 66LS
+940000033 Weapon Test AC Tank Nebula
+940000034 Weapon Test AC Tank 66LH
+940000035 Weapon Test AC Tank 66LR
+940000036 Weapon Test AC Tank WLT-011
+940000037 Weapon Test AC Tank 66LRA
+940000038 Weapon Test AC Tank GU-Q1
+940000039 Weapon Test AC Tank GU-A2
+940000040 Weapon Test AC Tank Bad Cook
+940000041 Weapon Test AC Tank JVLN ALPHA
+940000042 Weapon Test AC Tank 66-EG
+940000043 Weapon Test AC Tank Aperitif
+940000999 Invalid Assembly
+940001000 Weapon Test AC Tank Ashmead
+940001001 Weapon Test AC Tank BU-TT/A
+940001002 Weapon Test AC Tank 770LB
+940001003 Weapon Test AC Tank WLT 101
+940001004 Weapon Test AC Tank 67LD
+940001005 Weapon Test AC Tank Moonlight
+940001006 Weapon Test AC Tank 774LS
+940001007 Weapon Test AC Tank Tai-Yang-Shou
+940001008 Weapon Test AC Tank 67LLA
+940001009 Weapon Test AC Tank 67EB
+940001010 Weapon Test AC Tank Double Trouble
+940001011 Weapon Test AC Tank HMMR
+940001999 Invalid Assembly
+940002000 Weapon Test AC Tank Earshot
+940002001 Weapon Test AC Tank Morley
+940002002 Weapon Test AC Tank 703PM
+940002003 Weapon Test AC Tank 706PM
+940002004 Weapon Test AC Tank 70VPM
+940002005 Weapon Test AC Tank P05ACT-02
+940002006 Weapon Test AC Tank P04ACT-01
+940002007 Weapon Test AC Tank NGI 006
+940002008 Weapon Test AC Tank P07VTC-12
+940002009 Weapon Test AC Tank P03VTC-08
+940002010 Weapon Test AC Tank P01VTC-04
+940002011 Weapon Test AC Tank JVLN BETA
+940002012 Weapon Test AC Tank 30060000 Unused
+940002013 Weapon Test AC Tank Soup
+940002014 Weapon Test AC Tank P03MLT-06
+940002015 Weapon Test AC Tank P20MLT-04
+940002016 Weapon Test AC Tank P05MLT-10
+940002017 Weapon Test AC Tank P32DUO-03
+940002018 Weapon Test AC Tank P08DUO-03
+940002019 Weapon Test AC Tank P17SPL-16
+940002020 Weapon Test AC Tank P31DUO-02
+940002021 Weapon Test AC Tank P19SPL-12
+940002022 Weapon Test AC Tank P16SPL-08
+940002023 Weapon Test AC Tank P29CNT
+940002024 Weapon Test AC Tank Trueno
+940002025 Weapon Test AC Tank Delivery Boy
+940002026 Weapon Test AC Tank Songbirds
+940002027 Weapon Test AC Tank Fasan/60E
+940002028 Weapon Test AC Tank 60LCS
+940002029 Weapon Test AC Tank 60LCA
+940002030 Weapon Test AC Tank Kranich/60Z
+940002031 Weapon Test AC Tank 60LCD
+940002032 Weapon Test AC Tank 30350000 Unused
+940002033 Weapon Test AC Tank Aurora
+940002034 Weapon Test AC Tank 30350200 Unused
+940002035 Weapon Test AC Tank Huxley
+940002036 Weapon Test AC Tank Orbit
+940002037 Weapon Test AC Tank 700LD
+940002038 Weapon Test AC Tank 60LT
+940002039 Weapon Test AC Tank Eule/60D
+940002040 Weapon Test AC Tank 60SNA
+940002999 Invalid Assembly
+940003000 Weapon Test AC Tank 61PB
+940003001 Weapon Test AC Tank SU-Q5
+940003002 Weapon Test AC Tank 61PS
+940003003 Weapon Test AC Tank SU-R8
+940003004 Weapon Test AC Tank SU-TT/C
+940003005 Weapon Test AC Tank NGI 028
+940003006 Weapon Test AC Tank 61PSA

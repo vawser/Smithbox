@@ -1,0 +1,19 @@
+10020410 [Door] Wooden Door in Second Tutorial Area
+10020600 [Fog Wall] First Tutorial Area
+10020605 [Fog Wall] Passage to Nest
+10020610 [Fog Wall] Back Passage to Ogre Area
+10020615 [Fog Wall] Second Tutorial Area
+10020620 [Fog Wall] Third Tutorial Area
+10020625 [Fog Wall] Passage in Upper Second Area
+10020650 [Bonfire] Fire Keepers' Dwelling
+10025010 [Chest] Fire Keeper House Upper Level
+10026000 [Corpse] Treasure
+10026020 [Corpse] Treasure
+10026030 [Corpse] Treasure
+10026040 [Corpse] Treasure
+10026050 [Corpse] Treasure
+10026060 [Corpse] Treasure
+10026070 [Corpse] Treasure
+10026080 [Corpse] Treasure
+10026090 [Corpse] Treasure
+10026100 [Corpse] Treasure

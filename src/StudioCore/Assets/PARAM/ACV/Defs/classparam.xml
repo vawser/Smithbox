@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CLASS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="f32 クラス別の対戦ボーナス">
+      <DisplayName>クラス別の対戦ボーナス</DisplayName>
+      <DisplayFormat>%0f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 クラスダウンする基準ポイント">
+      <DisplayName>クラスダウンする基準ポイント</DisplayName>
+      <Description>念のため用意します。</Description>
+      <DisplayFormat>%0f</DisplayFormat>
+      <Minimum>-100000</Minimum>
+      <Maximum>100000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 クラスアップする基準ポイント = 25">
+      <DisplayName>クラスアップする基準ポイント</DisplayName>
+      <DisplayFormat>%0f</DisplayFormat>
+      <Minimum>-100000</Minimum>
+      <Maximum>100000</Maximum>
+      <Increment>1</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,26 @@
+0 Basic
+100 Basic +1
+200 Base +2
+300 Basic +3
+400 Base +4
+500 Basic +5
+600 Base +6
+700 Basic +7
+800 Basic +8
+900 Basic +9
+1000 Base +10
+2000 Tentacle Summoning
+2010 Space Summoning
+2020 Reflect Wall
+2030 Slippery
+2040 Light
+2050 Area Recovery
+2060 acceleration
+2070 Ground-Crawling Magic
+2080 Guided missile
+2090 Friendly Fire
+2100 Messenger Bomb
+2110 Messenger Mimicry
+2500 Pistol _ bullet
+2600 Long gun _ bullet
+2700 Large canister _ bullet

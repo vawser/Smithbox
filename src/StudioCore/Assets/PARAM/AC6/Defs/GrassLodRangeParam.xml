@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GRASS_LOD_RANGE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 LOD0_range">
+      <DisplayName>LOD0 - 距離</DisplayName>
+      <Description>「LOD0のクラスタータイプ」に設定された描画方法(Model, Billboard, FlatTuft など)を切り替える距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 LOD0_play">
+      <DisplayName>LOD0 - 遊び</DisplayName>
+      <Description>フェードし始める距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 LOD1_range">
+      <DisplayName>LOD１ - 距離</DisplayName>
+      <Description>「LOD1のクラスタータイプ」に設定された描画方法(Model, Billboard, FlatTuft など)を切り替える距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 LOD1_play">
+      <DisplayName>LOD１ - 遊び</DisplayName>
+      <Description>フェードし始める距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 LOD2_range">
+      <DisplayName>LOD２ - 距離</DisplayName>
+      <Description>「LOD2のクラスタータイプ」に設定された描画方法(Model, Billboard, FlatTuft など)を切り替える距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 LOD2_play">
+      <DisplayName>LOD２ - 遊び</DisplayName>
+      <Description>フェードし始める距離</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>600</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

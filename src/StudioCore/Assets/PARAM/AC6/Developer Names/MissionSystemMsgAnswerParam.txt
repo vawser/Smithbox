@@ -1,0 +1,41 @@
+0 test -- テスト
+120300101 AP50% or less -- AP50％以下
+120300201 AP30% or less -- AP30％以下
+121700201 AP30% or less_NO6 -- AP30％以下_NO6
+121700202 AP30% or less_Rokumonsen -- AP30％以下_六文銭
+121700203 AP30% or less_Rokumonsen -- AP30％以下_六文銭
+121700204 For stopping -- 停止用
+121800201 AP30% or less_HU front sea spider -- AP30％以下_HU前ウミグモ
+121800202 AP30% or less_Sea spider after HU -- AP30％以下_HU後ウミグモ
+122400201 AP30% or less -- AP30％以下
+130110201 AP30% or less -- AP30％以下
+132300201 AP30% or less_Iguazu survival -- AP30％以下_イグアス生存
+132300202 AP 30% or less_ Chatty survival -- AP30％以下_チャティ生存
+132300203 AP30% or less_No2 survival -- AP30％以下_No2生存
+132300204 AP30% or less_Rusty survival -- AP30％以下_ラスティ生存
+140100101 AP50% or less_Miyatake strong enemy first half -- AP50％以下_宮武強敵前半
+140100102 AP30% or less_Miyatake strong enemy second half -- AP30％以下_宮武強敵後半
+140210101 AP50% or less_Rusty battle -- AP50％以下_ラスティ戦
+140300201 AP30% or less_Orbit Seed first half -- AP30％以下_オービットシード前半
+140300202 AP30% or less_Orbit Seed second half -- AP30％以下_オービットシード後半
+140300203 AP30% or less_ALT_Iguazu -- AP30％以下_ALT_イグアス
+140300204 AP30% or less_ALT_Snail -- AP30％以下_ALT_スネイル
+141100201 AP 30% or less_Two bodies survive_With air -- AP30％以下_二体生存_エアつき
+141100202 AP30% or less_No4 survival_with air -- AP30％以下_No4生存_エアつき
+141100203 AP30% or less_No7 survival_with air -- AP30％以下_No7生存_エアつき
+142000500 No repair kit_during battle -- リペアキットなし_戦闘中
+142000501 No repair kit_non-combat -- リペアキットなし_非戦闘
+150300201 AP30% or less_Heavy guard mech battle -- AP30％以下_重ガードメカ戦
+150300202 AP30% or less_Normal time -- AP30％以下_通常時
+150400201 AP 30% or less_Ash battle first half -- AP30％以下_アッシュ戦前半
+150400202 AP30% or less_Second half of Ash battle -- AP30％以下_アッシュ戦後半
+150500201 AP30% or less_No2 battle -- AP30％以下_No2戦
+150500202 AP 30% or less_Boss battle_1 (Both people survive and Kara's AP is 30% or more) -- AP30％以下_ボス戦_1（両名生存かつカーラのAPが30パー以上）
+150500203 AP 30% or less_Boss battle_1 (one of them is dead and Kara's AP is 30% or more) -- AP30％以下_ボス戦_1（いずれかが死んでいるかつカーラのAPが30パー以上）
+150500204 AP 30% or less_Boss battle_2 (Kara survives and Kara's AP is 30% or higher) -- AP30％以下_ボス戦_2（カーラ生存かつカーラのAPが30パー以上）
+160000202 AP30% or less_after HU2 -- AP30％以下_HU2後
+160200201 AP30% or less_first half_1 -- AP30％以下_前半_1
+160200202 AP30% or less_first half_2 -- AP30％以下_前半_2
+160200203 AP30% or less_second half_1 -- AP30％以下_後半_1
+160200204 AP30% or less_second half_2 -- AP30％以下_後半_2
+179500201 AP30% or less_Previous Raven -- AP30％以下_先代レイヴン

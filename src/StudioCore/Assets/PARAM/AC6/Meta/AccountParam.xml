@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the HUD display parameters above an enemy when targeted in-game." />
+  
+  <Field>
+    <nameTextID 
+    AltName="Name Text ID" 
+    Wiki="Base FMG Entry ID.\n+0 FE Aircraft Name\n+1 FE Pilot Name\n+2 Menu Aircraft Name\n+3 Menu Pilot Name / Conversation Speaker Name\n+4 Aircraft Name / Pilot Name" 
+    FmgRef="Title_Characters,Title_Characters+3" />
+    
+    <emblemImageID 
+    AltName="Emblem Decal ID" 
+    Wiki="ID of the Menu Decal to use, refers to SB_DecalThumbnails.layout" 
+    TextureRef="Direct/01_common/SB_DecalThumbnails/emblemImageID/Decal_tmb_" />
+    
+    <reserved
+    AltName=""
+    Padding=""/>
+  </Field>
+</PARAMMETA>
