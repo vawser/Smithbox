@@ -59,7 +59,7 @@ public class EsdEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableEditor_ESD_wip)
+        if (!CFG.Current.EnableEditor_ESD)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -99,7 +99,7 @@ public class EsdEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableEditor_ESD_wip)
+        if (!CFG.Current.EnableEditor_ESD)
             return;
 
         if (ImGui.BeginMenu("View"))
@@ -151,7 +151,7 @@ public class EsdEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableEditor_ESD_wip)
+        if (!CFG.Current.EnableEditor_ESD)
             return;
 
         ToolMenubar.Display();
@@ -162,7 +162,7 @@ public class EsdEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_ESD_wip)
+        if (!CFG.Current.EnableEditor_ESD)
             return;
 
         var scale = DPI.GetUIScale();
@@ -231,7 +231,7 @@ public class EsdEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableEditor_ESD_wip)
+        if (!CFG.Current.EnableEditor_ESD)
             return;
 
         Selection.ResetScript();
@@ -255,7 +255,7 @@ public class EsdEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_ESD_wip)
+        if (!CFG.Current.EnableEditor_ESD)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -267,7 +267,7 @@ public class EsdEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_ESD_wip)
+        if (!CFG.Current.EnableEditor_ESD)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

@@ -68,7 +68,7 @@ public class EmevdEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableEditor_EMEVD_wip)
+        if (!CFG.Current.EnableEditor_EMEVD)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -108,7 +108,7 @@ public class EmevdEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableEditor_EMEVD_wip)
+        if (!CFG.Current.EnableEditor_EMEVD)
             return;
 
         if (ImGui.BeginMenu("View"))
@@ -160,7 +160,7 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableEditor_EMEVD_wip)
+        if (!CFG.Current.EnableEditor_EMEVD)
             return;
 
         ToolMenubar.Display();
@@ -173,7 +173,7 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_EMEVD_wip)
+        if (!CFG.Current.EnableEditor_EMEVD)
             return;
 
         var scale = DPI.GetUIScale();
@@ -250,7 +250,7 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableEditor_EMEVD_wip)
+        if (!CFG.Current.EnableEditor_EMEVD)
             return;
 
         if (Smithbox.ProjectType != ProjectType.Undefined)
@@ -276,7 +276,7 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_EMEVD_wip)
+        if (!CFG.Current.EnableEditor_EMEVD)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -290,7 +290,7 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_EMEVD_wip)
+        if (!CFG.Current.EnableEditor_EMEVD)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

@@ -314,7 +314,7 @@ public class ToolWindow
             // Find Row Value Instances
             if (ImGui.CollapsingHeader("Find Row Value Instances"))
             {
-                UIHelper.WrappedText("Display all instances of a specificed value.");
+                UIHelper.WrappedText("Display all instances of a specified value.");
                 UIHelper.WrappedText("");
 
                 if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())

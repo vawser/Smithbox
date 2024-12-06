@@ -200,13 +200,16 @@ public class CommonMenubarHandler
             }
             UIHelper.ShowHoverTooltip("Open the settings related to Gparam Editor in Smithbox.");
 
-            if (ImGui.MenuItem("Time Act Editor"))
+            if (CFG.Current.EnableEditor_TAE)
             {
-                SettingsWindow.ToggleWindow(SelectedSettingTab.TimeActEditor);
+                if (ImGui.MenuItem("Time Act Editor"))
+                {
+                    SettingsWindow.ToggleWindow(SelectedSettingTab.TimeActEditor);
+                }
+                UIHelper.ShowHoverTooltip("Open the settings related to Time Act Editor in Smithbox.");
             }
-            UIHelper.ShowHoverTooltip("Open the settings related to Time Act Editor in Smithbox.");
 
-            if (FeatureFlags.EnableEditor_Evemd)
+            if (CFG.Current.EnableEditor_EMEVD)
             {
                 if (ImGui.MenuItem("EMEVD Editor"))
                 {
@@ -215,7 +218,7 @@ public class CommonMenubarHandler
                 UIHelper.ShowHoverTooltip("Open the settings related to Emevd Editor in Smithbox.");
             }
 
-            if (FeatureFlags.EnableEditor_Esd)
+            if (CFG.Current.EnableEditor_ESD)
             {
                 if (ImGui.MenuItem("ESD Editor"))
                 {

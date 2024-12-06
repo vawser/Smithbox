@@ -101,17 +101,17 @@ public class EditorHandler
         }
 
         // WIP
-        if (CFG.Current.EnableEditor_TAE_wip)
+        if (CFG.Current.EnableEditor_TAE)
         {
             EditorList.Add(TimeActEditor);
         }
 
-        if (CFG.Current.EnableEditor_EMEVD_wip)
+        if (CFG.Current.EnableEditor_EMEVD)
         {
             EditorList.Add(EmevdEditor);
         }
 
-        if (CFG.Current.EnableEditor_ESD_wip)
+        if (CFG.Current.EnableEditor_ESD)
         {
             EditorList.Add(EsdEditor);
         }
