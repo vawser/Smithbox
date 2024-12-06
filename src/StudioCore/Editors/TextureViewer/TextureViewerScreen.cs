@@ -63,7 +63,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableTextureViewer)
+        if (!CFG.Current.EnableViewer_TEXTURE)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -103,7 +103,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableTextureViewer)
+        if (!CFG.Current.EnableViewer_TEXTURE)
             return;
 
         if (ImGui.BeginMenu("View"))
@@ -155,7 +155,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableTextureViewer)
+        if (!CFG.Current.EnableViewer_TEXTURE)
             return;
 
         ToolMenubar.Display();
@@ -166,7 +166,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableTextureViewer)
+        if (!CFG.Current.EnableViewer_TEXTURE)
             return;
 
         var scale = DPI.GetUIScale();
@@ -258,7 +258,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableTextureViewer)
+        if (!CFG.Current.EnableViewer_TEXTURE)
             return;
 
         EditorActionManager.Clear();
@@ -277,7 +277,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void Save()
     {
-        if (!CFG.Current.EnableTextureViewer)
+        if (!CFG.Current.EnableViewer_TEXTURE)
             return;
 
         // Nothing
@@ -285,7 +285,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableTextureViewer)
+        if (!CFG.Current.EnableViewer_TEXTURE)
             return;
 
         // Nothing

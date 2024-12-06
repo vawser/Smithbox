@@ -14,7 +14,6 @@ using StudioCore.GraphicsEditor;
 using StudioCore.HavokEditor;
 using StudioCore.Interface;
 using StudioCore.MaterialEditor;
-using StudioCore.ParticleEditor;
 using StudioCore.Settings;
 using StudioCore.TalkEditor;
 using StudioCore.TextEditor;
@@ -45,7 +44,6 @@ public class EditorHandler
     public CutsceneEditorScreen CutsceneEditor;
     public GparamEditorScreen GparamEditor;
     public MaterialEditorScreen MaterialEditor;
-    public ParticleEditorScreen ParticleEditor;
     public EmevdEditorScreen EmevdEditor;
     public EsdEditorScreen EsdEditor;
     public TextureViewerScreen TextureViewer;
@@ -69,74 +67,68 @@ public class EditorHandler
         // WIP
         CutsceneEditor = new CutsceneEditorScreen(_context.Window, _context.Device);
         MaterialEditor = new MaterialEditorScreen(_context.Window, _context.Device);
-        ParticleEditor = new ParticleEditorScreen(_context.Window, _context.Device);
         HavokEditor = new HavokEditorScreen(_context.Window, _context.Device);
 
         // Editors to Display
-        if (CFG.Current.EnableMapEditor)
+        if (CFG.Current.EnableEditor_MSB)
         {
             EditorList.Add(MapEditor);
         }
 
-        if (CFG.Current.EnableModelEditor)
+        if (CFG.Current.EnableEditor_FLVER)
         {
             EditorList.Add(ModelEditor);
         }
 
-        if (CFG.Current.EnableParamEditor)
+        if (CFG.Current.EnableEditor_PARAM)
         {
             EditorList.Add(ParamEditor);
         }
 
-        if (CFG.Current.EnableTextEditor)
+        if (CFG.Current.EnableEditor_FMG)
         {
             EditorList.Add(TextEditor);
         }
 
-        if (CFG.Current.EnableTextureViewer)
+        if (CFG.Current.EnableViewer_TEXTURE)
         {
             EditorList.Add(TextureViewer);
         }
 
-        if (CFG.Current.EnableGparamEditor)
+        if (CFG.Current.EnableEditor_GPARAM)
         {
             EditorList.Add(GparamEditor);
         }
 
-        if (CFG.Current.EnableTimeActEditor)
+        // WIP
+        if (CFG.Current.EnableEditor_TAE_wip)
         {
             EditorList.Add(TimeActEditor);
         }
 
-        if (CFG.Current.EnableEmevdEditor)
+        if (CFG.Current.EnableEditor_EMEVD_wip)
         {
             EditorList.Add(EmevdEditor);
         }
 
-        if (CFG.Current.EnableEsdEditor)
+        if (CFG.Current.EnableEditor_ESD_wip)
         {
             EditorList.Add(EsdEditor);
         }
 
-        // WIP
-        if (CFG.Current.EnableCutsceneEditor)
+        if (CFG.Current.EnableEditor_MQB_wip)
         {
             EditorList.Add(CutsceneEditor);
         }
 
-        if (CFG.Current.EnableHavokEditor)
+        if (CFG.Current.EnableEditor_HAVOK_wip)
         {
             EditorList.Add(HavokEditor);
         }
 
-        if (CFG.Current.EnableMaterialEditor)
+        if (CFG.Current.EnableEditor_MTD_wip)
         {
             EditorList.Add(MaterialEditor);
-        }
-
-        if (CFG.Current.EnableParticleEditor)
-        {
-            EditorList.Add(ParticleEditor);
         }
 
         if (EditorList.Count > 0)

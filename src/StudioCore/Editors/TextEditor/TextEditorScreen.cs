@@ -73,7 +73,7 @@ public class TextEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableTextEditor)
+        if (!CFG.Current.EnableEditor_FMG)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -136,7 +136,7 @@ public class TextEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableTextEditor)
+        if (!CFG.Current.EnableEditor_FMG)
             return;
 
         if (ImGui.BeginMenu("View"))
@@ -182,7 +182,7 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableTextEditor)
+        if (!CFG.Current.EnableEditor_FMG)
             return;
 
         if (ImGui.BeginMenu("Data"))
@@ -207,7 +207,7 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableTextEditor)
+        if (!CFG.Current.EnableEditor_FMG)
             return;
 
         var scale = DPI.GetUIScale();
@@ -289,7 +289,7 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableTextEditor)
+        if (!CFG.Current.EnableEditor_FMG)
             return;
 
         SetupDifferenceTimer();
@@ -315,7 +315,7 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void Save()
     {
-        if (!CFG.Current.EnableTextEditor)
+        if (!CFG.Current.EnableEditor_FMG)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -336,7 +336,7 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void SaveAll()
     {
-        if (!CFG.Current.EnableTextEditor)
+        if (!CFG.Current.EnableEditor_FMG)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

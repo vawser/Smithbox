@@ -113,7 +113,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableModelEditor)
+        if (!CFG.Current.EnableEditor_FLVER)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -173,7 +173,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableModelEditor)
+        if (!CFG.Current.EnableEditor_FLVER)
             return;
 
         if (ImGui.BeginMenu("View"))
@@ -237,7 +237,7 @@ public class ModelEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableModelEditor)
+        if (!CFG.Current.EnableEditor_FLVER)
             return;
 
         ToolMenubar.DisplayMenu();
@@ -391,7 +391,7 @@ public class ModelEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableModelEditor)
+        if (!CFG.Current.EnableEditor_FLVER)
             return;
 
         var scale = DPI.GetUIScale();
@@ -442,7 +442,7 @@ public class ModelEditorScreen : EditorScreen
     /// </summary>
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableModelEditor)
+        if (!CFG.Current.EnableEditor_FLVER)
             return;
 
         if (Smithbox.ProjectType != ProjectType.Undefined)
@@ -470,7 +470,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableModelEditor)
+        if (!CFG.Current.EnableEditor_FLVER)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -487,7 +487,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableModelEditor)
+        if (!CFG.Current.EnableEditor_FLVER)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -509,7 +509,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void Update(float dt)
     {
-        if (!CFG.Current.EnableModelEditor)
+        if (!CFG.Current.EnableEditor_FLVER)
             return;
 
         ViewportUsingKeyboard = Viewport.Update(Window, dt);
@@ -528,7 +528,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (!CFG.Current.EnableModelEditor)
+        if (!CFG.Current.EnableEditor_FLVER)
             return;
 
         if (Viewport != null)

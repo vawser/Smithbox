@@ -96,25 +96,25 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableCutsceneEditor)
+        if (!CFG.Current.EnableEditor_MQB_wip)
             return;
     }
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableCutsceneEditor)
+        if (!CFG.Current.EnableEditor_MQB_wip)
             return;
     }
 
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableCutsceneEditor)
+        if (!CFG.Current.EnableEditor_MQB_wip)
             return;
     }
 
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableCutsceneEditor)
+        if (!CFG.Current.EnableEditor_MQB_wip)
             return;
 
         var scale = DPI.GetUIScale();
@@ -183,7 +183,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableCutsceneEditor)
+        if (!CFG.Current.EnableEditor_MQB_wip)
             return;
 
         CutsceneFileList.OnProjectChanged();
@@ -219,7 +219,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableCutsceneEditor)
+        if (!CFG.Current.EnableEditor_MQB_wip)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -231,7 +231,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableCutsceneEditor)
+        if (!CFG.Current.EnableEditor_MQB_wip)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

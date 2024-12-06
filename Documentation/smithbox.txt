@@ -12,4 +12,3 @@
  
 - Update AC6 paramdex to use released AC6 paramdefs + adjust other stuff based on discoveries
 
-- Add AC6 MSB map object name list as option to import

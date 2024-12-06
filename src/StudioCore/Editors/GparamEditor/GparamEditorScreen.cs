@@ -64,7 +64,7 @@ public class GparamEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableGparamEditor)
+        if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -117,7 +117,7 @@ public class GparamEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableGparamEditor)
+        if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
         if (ImGui.BeginMenu("View"))
@@ -163,7 +163,7 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableGparamEditor)
+        if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
         ToolMenubar.DisplayMenu();
@@ -174,7 +174,7 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableGparamEditor)
+        if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
         var scale = DPI.GetUIScale();
@@ -250,7 +250,7 @@ public class GparamEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableGparamEditor)
+        if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
         if (Smithbox.ProjectType != ProjectType.Undefined)
@@ -266,7 +266,7 @@ public class GparamEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableGparamEditor)
+        if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -278,7 +278,7 @@ public class GparamEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableGparamEditor)
+        if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

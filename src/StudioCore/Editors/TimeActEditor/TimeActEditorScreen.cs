@@ -73,7 +73,7 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableTimeActEditor)
+        if (!CFG.Current.EnableEditor_TAE_wip)
             return;
 
         var scale = DPI.GetUIScale();
@@ -163,7 +163,7 @@ public class TimeActEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableTimeActEditor)
+        if (!CFG.Current.EnableEditor_TAE_wip)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -217,7 +217,7 @@ public class TimeActEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableTimeActEditor)
+        if (!CFG.Current.EnableEditor_TAE_wip)
             return;
 
         if (ImGui.BeginMenu("View"))
@@ -275,7 +275,7 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableTimeActEditor)
+        if (!CFG.Current.EnableEditor_TAE_wip)
             return;
 
         // ToolMenubar.DisplayMenu();
@@ -286,7 +286,7 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableTimeActEditor)
+        if (!CFG.Current.EnableEditor_TAE_wip)
             return;
 
         Selection.OnProjectChanged();
@@ -303,7 +303,7 @@ public class TimeActEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableTimeActEditor)
+        if (!CFG.Current.EnableEditor_TAE_wip)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -328,7 +328,7 @@ public class TimeActEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableTimeActEditor)
+        if (!CFG.Current.EnableEditor_TAE_wip)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

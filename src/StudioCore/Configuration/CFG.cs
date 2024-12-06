@@ -89,19 +89,19 @@ public class CFG
     public int System_WarningLogger_FadeTime = 1500;
 
     // Editors
-    public bool EnableMapEditor = true;
-    public bool EnableModelEditor = true;
-    public bool EnableParamEditor = true;
-    public bool EnableTextEditor = true;
-    public bool EnableTimeActEditor = true;
-    public bool EnableGparamEditor = true;
-    public bool EnableTextureViewer = true;
-    public bool EnableEmevdEditor = false;
-    public bool EnableEsdEditor = false;
-    public bool EnableCutsceneEditor = false;
-    public bool EnableHavokEditor = false;
-    public bool EnableMaterialEditor = false;
-    public bool EnableParticleEditor = false;
+    public bool EnableEditor_MSB = true;
+    public bool EnableEditor_FLVER = true;
+    public bool EnableEditor_PARAM = true;
+    public bool EnableEditor_FMG = true;
+    public bool EnableEditor_GPARAM = true;
+    public bool EnableViewer_TEXTURE = true;
+
+    public bool EnableEditor_TAE_wip = false;
+    public bool EnableEditor_EMEVD_wip = false;
+    public bool EnableEditor_ESD_wip = false;
+    public bool EnableEditor_MQB_wip = false;
+    public bool EnableEditor_HAVOK_wip = false;
+    public bool EnableEditor_MTD_wip = false;
 
     //****************************
     // Settings: Viewport Grid

@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.Editors.ParticleEditor;
 using StudioCore.Editors.TalkEditor;
 using System.Numerics;
 using System.Reflection;
@@ -56,7 +55,7 @@ public class HavokEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableHavokEditor)
+        if (!CFG.Current.EnableEditor_HAVOK_wip)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -96,13 +95,13 @@ public class HavokEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableHavokEditor)
+        if (!CFG.Current.EnableEditor_HAVOK_wip)
             return;
     }
 
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableHavokEditor)
+        if (!CFG.Current.EnableEditor_HAVOK_wip)
             return;
 
         //ActionMenubar.Display();
@@ -116,7 +115,7 @@ public class HavokEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableHavokEditor)
+        if (!CFG.Current.EnableEditor_HAVOK_wip)
             return;
 
         var scale = DPI.GetUIScale();
@@ -320,7 +319,7 @@ public class HavokEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableHavokEditor)
+        if (!CFG.Current.EnableEditor_HAVOK_wip)
             return;
 
         HavokFileBank.LoadAllHavokFiles();
@@ -330,7 +329,7 @@ public class HavokEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableHavokEditor)
+        if (!CFG.Current.EnableEditor_HAVOK_wip)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -342,7 +341,7 @@ public class HavokEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableHavokEditor)
+        if (!CFG.Current.EnableEditor_HAVOK_wip)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

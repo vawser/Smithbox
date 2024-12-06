@@ -5,7 +5,6 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.MaterialEditor;
-using StudioCore.Editors.ParticleEditor;
 using StudioCore.Interface;
 using StudioCore.Settings;
 using System;
@@ -42,7 +41,7 @@ public class MaterialEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableMaterialEditor)
+        if (!CFG.Current.EnableEditor_MTD_wip)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -82,19 +81,19 @@ public class MaterialEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableMaterialEditor)
+        if (!CFG.Current.EnableEditor_MTD_wip)
             return;
     }
 
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableMaterialEditor)
+        if (!CFG.Current.EnableEditor_MTD_wip)
             return;
     }
 
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableMaterialEditor)
+        if (!CFG.Current.EnableEditor_MTD_wip)
             return;
 
         var scale = DPI.GetUIScale();
@@ -188,7 +187,7 @@ public class MaterialEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableMaterialEditor)
+        if (!CFG.Current.EnableEditor_MTD_wip)
             return;
 
         MaterialBank.LoadMaterials();
@@ -198,7 +197,7 @@ public class MaterialEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableMaterialEditor)
+        if (!CFG.Current.EnableEditor_MTD_wip)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -210,7 +209,7 @@ public class MaterialEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableMaterialEditor)
+        if (!CFG.Current.EnableEditor_MTD_wip)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

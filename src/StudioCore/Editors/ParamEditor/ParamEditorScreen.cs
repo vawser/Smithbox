@@ -130,7 +130,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableParamEditor)
+        if (!CFG.Current.EnableEditor_PARAM)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -211,7 +211,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableParamEditor)
+        if (!CFG.Current.EnableEditor_PARAM)
             return;
 
         if (ImGui.BeginMenu("View"))
@@ -306,7 +306,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableParamEditor)
+        if (!CFG.Current.EnableEditor_PARAM)
             return;
 
         ToolSubMenu.DisplayMenu();
@@ -675,7 +675,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableParamEditor)
+        if (!CFG.Current.EnableEditor_PARAM)
             return;
 
         var scale = DPI.GetUIScale();
@@ -1023,7 +1023,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableParamEditor)
+        if (!CFG.Current.EnableEditor_PARAM)
             return;
 
         ToolWindow.OnProjectChanged();
@@ -1068,7 +1068,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableParamEditor)
+        if (!CFG.Current.EnableEditor_PARAM)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -1093,7 +1093,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableParamEditor)
+        if (!CFG.Current.EnableEditor_PARAM)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

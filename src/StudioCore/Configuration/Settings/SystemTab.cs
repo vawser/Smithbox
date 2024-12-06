@@ -66,41 +66,41 @@ public class SystemTab
         {
             UIHelper.WrappedText("Determine which editors are enabled." +
                 "\nIf an editor was disabled at start, it will only appear once Smithbox is restarted if enabled.");
-            ImGui.Checkbox("Enable Map Editor", ref CFG.Current.EnableMapEditor);
+            ImGui.Checkbox("Enable Map Editor", ref CFG.Current.EnableEditor_MSB);
             UIHelper.ShowHoverTooltip("Enables the Map Editor in Smithbox.");
 
-            ImGui.Checkbox("Enable Model Editor", ref CFG.Current.EnableModelEditor);
+            ImGui.Checkbox("Enable Model Editor", ref CFG.Current.EnableEditor_FLVER);
             UIHelper.ShowHoverTooltip("Enables the Model Editor in Smithbox.");
 
-            ImGui.Checkbox("Enable Param Editor", ref CFG.Current.EnableParamEditor);
+            ImGui.Checkbox("Enable Param Editor", ref CFG.Current.EnableEditor_PARAM);
             UIHelper.ShowHoverTooltip("Enables the Param Editor in Smithbox.");
 
-            ImGui.Checkbox("Enable Text Editor", ref CFG.Current.EnableTextEditor);
+            ImGui.Checkbox("Enable Text Editor", ref CFG.Current.EnableEditor_FMG);
             UIHelper.ShowHoverTooltip("Enables the Text Editor in Smithbox.");
 
-            ImGui.Checkbox("Enable Time Act Editor", ref CFG.Current.EnableTimeActEditor);
-            UIHelper.ShowHoverTooltip("Enables the Time Act Editor in Smithbox.");
-
-            ImGui.Checkbox("Enable Gparam Editor", ref CFG.Current.EnableGparamEditor);
+            ImGui.Checkbox("Enable Gparam Editor", ref CFG.Current.EnableEditor_GPARAM);
             UIHelper.ShowHoverTooltip("Enables the Gparam Editor in Smithbox.");
 
-            ImGui.Checkbox("Enable Texture Viewer", ref CFG.Current.EnableTextureViewer);
+            ImGui.Checkbox("Enable Texture Viewer", ref CFG.Current.EnableViewer_TEXTURE);
             UIHelper.ShowHoverTooltip("Enables the Texture Viewer in Smithbox.");
-
-            ImGui.Checkbox("Enable EMEVD Editor", ref CFG.Current.EnableEmevdEditor);
-            UIHelper.ShowHoverTooltip("Enables the EMEVD Editor in Smithbox." +
-                "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
-
-            ImGui.Checkbox("Enable ESD Editor", ref CFG.Current.EnableEsdEditor);
-            UIHelper.ShowHoverTooltip("Enables the ESD Editor in Smithbox." +
-                "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
-
-            ImGui.Checkbox("Enable Cutscene Editor", ref CFG.Current.EnableCutsceneEditor);
-            UIHelper.ShowHoverTooltip("Enables the Cutscene Editor in Smithbox." +
-                "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
 
             // WIP
             /*
+            ImGui.Checkbox("Enable Time Act Editor", ref CFG.Current.EnableEditor_TAE_wip);
+            UIHelper.ShowHoverTooltip("Enables the Time Act Editor in Smithbox.");
+
+            ImGui.Checkbox("Enable EMEVD Editor", ref CFG.Current.EnableEditor_EMEVD_wip);
+            UIHelper.ShowHoverTooltip("Enables the EMEVD Editor in Smithbox." +
+                "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
+
+            ImGui.Checkbox("Enable ESD Editor", ref CFG.Current.EnableEditor_ESD_wip);
+            UIHelper.ShowHoverTooltip("Enables the ESD Editor in Smithbox." +
+                "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
+
+            ImGui.Checkbox("Enable Cutscene Editor", ref CFG.Current.EnableEditor_MQB_wip);
+            UIHelper.ShowHoverTooltip("Enables the Cutscene Editor in Smithbox." +
+                "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
+
             ImGui.Checkbox("Enable Havok Editor", ref CFG.Current.EnableHavokEditor);
             ImGui.Checkbox("Enable Material Editor", ref CFG.Current.EnableMaterialEditor);
             ImGui.Checkbox("Enable Particle Editor", ref CFG.Current.EnableParticleEditor);

@@ -12,7 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.MSBS.Event;
-using static StudioCore.Editors.ParticleEditor.ParticleBank;
 
 namespace StudioCore.Editors.TextEditor;
 
