@@ -53,6 +53,9 @@ public class TexImagePreview : IResourceEventListener
     /// </summary>
     public bool DisplayImagePreview(Param.Row context, TexRef textureRef, bool displayImage = true)
     {
+        if(textureRef == null) 
+            return false;
+
         // Display the texture
         LoadTextureContainer(textureRef.TextureContainer);
         LoadTextureFile(textureRef.TextureFile);
