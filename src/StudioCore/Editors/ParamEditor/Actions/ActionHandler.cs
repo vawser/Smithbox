@@ -319,6 +319,8 @@ public class ActionHandler
     public string targetLooseParamPath = "";
     public string targetEnemyParamPath = "";
 
+    public bool targetUniqueOnly = true;
+
     public string[] allParamTypes =
     {
         FilterStrings.RegulationBinFilter, FilterStrings.Data0Filter, FilterStrings.ParamBndDcxFilter,
@@ -348,6 +350,12 @@ public class ActionHandler
 
         // Apply the merge massedit script here
         var command = $"auxparam {auxBank.Key} .*: modified && unique ID: paste;";
+
+        if(!targetUniqueOnly)
+        {
+            command = $"auxparam {auxBank.Key} .*: modified ID: paste;";
+        }
+
         //TaskLogs.AddLog(command);
         ExecuteMassEdit(command);
     }

@@ -213,7 +213,7 @@ public class ToolWindow
             {
                 UIHelper.WrappedText("Use this to merge a target regulation.bin into your current project.");
                 UIHelper.WrappedText("");
-                UIHelper.WrappedText("Merging will bring all unique param rows from the target regulation into your project.");
+                UIHelper.WrappedText("Merging will bring all modified param rows from the target regulation into your project.");
                 UIHelper.WrappedText("");
                 UIHelper.WrappedText("This process is 'simple', and thus may produce a broken mod if you attempt to merge complex mods.");
                 UIHelper.WrappedText("");
@@ -231,6 +231,9 @@ public class ToolWindow
                         Handler.targetRegulationPath = path;
                     }
                 }
+
+                ImGui.Checkbox("Unique Only##targetUniqueOnly", ref Handler.targetUniqueOnly);
+                UIHelper.ShowHoverTooltip("Only merge in unique param rows from the target regulation. If disabled, all modified rows, even if not unique, will be merged.");
                 UIHelper.WrappedText("");
 
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
