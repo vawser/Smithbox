@@ -13,7 +13,8 @@ namespace StudioCore.Editors.MapEditor.PropertyEditor
     {
         public static void CopyCurrentRotation(PropertyInfo prop, object obj)
         {
-            CFG.Current.SavedRotation = (Vector3)prop.GetValue(obj, null);
+            CFG.Current.SavedRotation = (Vector3)obj;
+            //CFG.Current.SavedRotation = (Vector3)prop.GetValue(obj, null);
         }
 
         public static void PasteSavedRotation(ViewportSelection _selection)

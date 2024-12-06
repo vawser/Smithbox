@@ -13,7 +13,8 @@ namespace StudioCore.Editors.MapEditor.PropertyEditor
     {
         public static void CopyCurrentPosition(PropertyInfo prop, object obj)
         {
-            CFG.Current.SavedPosition = (Vector3)prop.GetValue(obj, null);
+            CFG.Current.SavedPosition = (Vector3)obj;
+            //CFG.Current.SavedPosition = (Vector3)prop.GetValue(obj, null);
         }
 
         public static void PasteSavedPosition(ViewportSelection _selection)
