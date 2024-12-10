@@ -2195,27 +2195,272 @@
     AltName="Shoot Fire Delay (when Charged)"
     Wiki="The delay before a charged shot is fired, in seconds. For behaviors, the value is multiplied by 1/30 and used as the number of seconds." />
     
+    <paOpen_PaDecayCutRate
+    AltName="Pulse Armor Deployment: Absorption %"
+    Wiki="The absorption rate to use upon the deployment of Pulse Armor." />
     
-    <coreExpansionDecayRate AltName="Core Expansion Decay Rate" Wiki="How much expansion HP is lost per second." />
+    <paOpen_PerfStayTimeSec
+    AltName="Pulse Armor Deployment: Stay Duration"
+    Wiki="The time to continue the deployment state after Pulse Armor usage. In seconds." />
+    
+    <paOpen_PerfRecastTimeSec
+    AltName="Pulse Armor Deployment: Recast Cooldown"
+    Wiki="The time to before Pulse Armor use can occur again after a deployment. In seconds." />
+    
+    <paOpen_PerfTimeSfxId
+    AltName="Pulse Armor Deployment - Stay: Particle ID"
+    Wiki="The SFX ID used during the Pulse Armor Deployment duration." 
+    ParticleAlias="" />
+    
+    <paOpen_PerfTimeSfxDmyId
+    AltName="Pulse Armor Deployment - Stay: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for displaying the SFX used for Pulse Armor Deployment." />
+    
+    <paOpen_PerfEndSfxId
+    AltName="Pulse Armor Deployment - End: Particle ID"
+    Wiki="The SFX ID used after the Pulse Armor Deployment duration." 
+    ParticleAlias="" />
+    
+    <paOpen_PerfTimeSfxDmyId
+    AltName="Pulse Armor Deployment - End: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for displaying the SFX used after the Pulse Armor Deployment duration." />
+    
+    <paOpen_RecastSfxId
+    AltName="Pulse Armor Deployment - Recast: Particle ID"
+    Wiki="The SFX ID used for the Pulse Armor Deployment recast." 
+    ParticleAlias="" />
+    
+    <paOpen_RecastSfxDmyId
+    AltName="Pulse Armor Deployment - Recast: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the SFX used for the Pulse Armor Deployment recast." />
 
+    <pad04_4
+    AltName=""
+    Padding="" />
     
-    <projectBarrierSizeCorrection AltName="Projected Barrier: Size Correction" />
-    <projectedBarrierHealth AltName="Project Barrier: Health" />
-    <projectedBarrierDecayRate AltName="Project Barrier: Decay Rate" />
-    <projectedBarrierFFX_Id0 AltName="Projected Barrier SFX [0]" ParticleAlias="" />
-    <projectedBarrierFFX_Id1 AltName="Projected Barrier SFX [1]" ParticleAlias="" />
-    <projectedBarrierFFX_Id2 AltName="Projected Barrier SFX [2]" ParticleAlias="" />
-    <projectedBarrierFFX_Id3 AltName="Projected Barrier SFX [3]" ParticleAlias="" />
+    <paGaugeOpenSubPointPerSec
+    AltName="Pulse Armor Deployment: Gauge Recovery Rate"
+    Wiki="The number of gauge points restored every second for Pulse Armor after deployment after reaching 0." />
     
-    <initialGuardDamageMitigation_Kinetic AltName="Initial Guard - Damage Mitigation: Kinetic" Wiki="Ability to mitigate incoming Kinetic damage while performing an Initial Guard." />
-    <initialGuardDamageMitigation_Energy AltName="Initial Guard - Damage Mitigation: Energy" Wiki="Ability to mitigate incoming Energy damage while performing an Initial Guard." />
-    <initialGuardDamageMitigation_Explosive AltName="Initial Guard - Damage Mitigation: Explosive" Wiki="Ability to mitigate incoming Explosive damage while performing an Initial Guard." />
-    <initialGuardDamageMitigation_Coral AltName="Initial Guard - Damage Mitigation: Coral" Wiki="Ability to mitigate incoming Coral damage while performing an Initial Guard." />
+    <pad06
+    AltName=""
+    Padding="" />
     
-    <initialGuardStatusMitigation_AcsAnomaly AltName="Initial Guard - Status Mitigation: ACS Anomaly" Wiki="Ability to mitigate incoming ACS Anomaly strain while performing an Initial Guard." />
-    <initialGuardStatusMitigation_ElecDischarge AltName="Initial Guard - Status Mitigation: Electric Discharge" Wiki="Ability to mitigate incoming Electric Discharge strain while performing an Initial Guard." />
-    <initialGuardStatusMitigation_Plasma AltName="Initial Guard - Status Mitigation: Plasma" Wiki="Ability to mitigate incoming Plasma strain while performing an Initial Guard." />
-    <initialGuardStatusMitigation_Unknown AltName="Initial Guard - Status Mitigation: Unknown" Wiki="Ability to mitigate incoming Unknown strain while performing an Initial Guard." />
+    <bulletReloadType
+    AltName="Bullet Reload Type"
+    Wiki="The type of bullet reloading this weapon uses."
+    Enum="BULLET_RELOAD_TYPE" />
+    
+    <guardImpactCutRatePercent
+    AltName="Guard Absoprtion %: Impact"
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <bPaOpenGaugeRecoverDelay
+    AltName="Apply Pulse Armor Gauge Recovery Delay after Deployment"
+    Wiki="If ON, then the gauge recovery delay is applied after pulse armor is deployed." 
+    IsBool="" />
+    
+    <pad07
+    AltName=""
+    Padding="" />
+    
+    <paOpenGaugeRecoverScale
+    AltName="Pulse Armor Deployment: Gauge Recovery Speed"
+    Wiki="The speed multiplier to apply to gauge recovery during pulse armor deployment." />
+    
+    <computed_f00
+    AltName="Menu Display - Value 0"
+    Wiki="Value for menu display only." />
+    
+    <computed_f01
+    AltName="Menu Display - Value 1"
+    Wiki="Value for menu display only." />
+    
+    <computed_f02
+    AltName="Menu Display - Value 2"
+    Wiki="Value for menu display only." />
+    
+    <computed_f03
+    AltName="Menu Display - Value 3 (Attitude Stability)"
+    Wiki="Value for menu display only." />
+    
+    <computed_f04
+    AltName="Menu Display - Value 4"
+    Wiki="Value for menu display only." />
+    
+    <computed_f05
+    AltName="Menu Display - Value 5"
+    Wiki="Value for menu display only." />
+    
+    <computed_f06
+    AltName="Menu Display - Value 6"
+    Wiki="Value for menu display only." />
+    
+    <computed_f07
+    AltName="Menu Display - Value 7"
+    Wiki="Value for menu display only." />
+    
+    <computed_f08
+    AltName="Menu Display - Value 8"
+    Wiki="Value for menu display only." />
+    
+    <computed_f09
+    AltName="Menu Display - Value 9"
+    Wiki="Value for menu display only." />
+    
+    <computed_f10
+    AltName="Menu Display - Value 10"
+    Wiki="Value for menu display only." />
+    
+    <computed_f11
+    AltName="Menu Display - Value 11"
+    Wiki="Value for menu display only." />
+    
+    <computed_f12
+    AltName="Menu Display - Value 12"
+    Wiki="Value for menu display only." />
+    
+    <computed_f13
+    AltName="Menu Display - Value 13"
+    Wiki="Value for menu display only." />
+    
+    <computed_f14
+    AltName="Menu Display - Value 14"
+    Wiki="Value for menu display only." />
+    
+    <computed_f15
+    AltName="Menu Display - Value 15"
+    Wiki="Value for menu display only." />
+    
+    <computed_f16
+    AltName="Menu Display - Value 16"
+    Wiki="Value for menu display only." />
+    
+    <computed_f17
+    AltName="Menu Display - Value 17"
+    Wiki="Value for menu display only." />
+    
+    <computed_f18
+    AltName="Menu Display - Value 18"
+    Wiki="Value for menu display only." />
+    
+    <computed_f19
+    AltName="Menu Display - Value 19"
+    Wiki="Value for menu display only." />
+    
+    <computed_f20
+    AltName="Menu Display - Value 20"
+    Wiki="Value for menu display only." />
+    
+    <computed_f21
+    AltName="Menu Display - Value 21"
+    Wiki="Value for menu display only." />
+    
+    <computed_f22
+    AltName="Menu Display - Value 22"
+    Wiki="Value for menu display only." />
+    
+    <computed_f23
+    AltName="Menu Display - Value 23"
+    Wiki="Value for menu display only." />
+    
+    <computed_f24
+    AltName="Menu Display - Value 24"
+    Wiki="Value for menu display only." />
+    
+    <computed_f25
+    AltName="Menu Display - Value 25"
+    Wiki="Value for menu display only." />
+    
+    <computed_f26
+    AltName="Menu Display - Value 26"
+    Wiki="Value for menu display only." />
+    
+    <computed_f27
+    AltName="Menu Display - Value 27"
+    Wiki="Value for menu display only." />
+    
+    <computed_f28
+    AltName="Menu Display - Value 28"
+    Wiki="Value for menu display only." />
+    
+    <computed_f29
+    AltName="Menu Display - Value 29"
+    Wiki="Value for menu display only." />
+    
+    <computed_f30
+    AltName="Menu Display - Value 30"
+    Wiki="Value for menu display only." />
+    
+    <computed_f_last
+    AltName="Menu Display - Value 31"
+    Wiki="Value for menu display only." />
+    
+    <HdPadRumble_Id
+    AltName="Vibration ID on Hand Switch"
+    Wiki="The virbration ID to play when switching weapon hand. Specified value is for the left, +1 to value for the right." 
+    Enum="EQUIP_HD_RUMBLE_TYPE" />
+    
+    <pad08
+    AltName=""
+    Padding="" />
+    
+    <physicalShield_guardImpactCutRatePercent 
+    AltName="Guard Absorption %: Impact" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Guard." />
+    
+    <physicalShield_justGuardImpactCutRatePercent 
+    AltName="Initial Guard Absorption %: Impact" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs an Initial Guard." />
+    
+    <physicalShield_justGuardKeepTimeSec
+    AltName="Initial Guard: Duration"
+    Wiki="The duration of the Initial Guard window. In seconds." />
+    
+    <physicalShield_justGuardReloadTimeSec
+    AltName="Initial Guard: Cooldown"
+    Wiki="The cooldown before the Initial Guard window is active again after usage. In seconds." />
+    
+    <shootRboundParamOffset
+    AltName="Recoil Parameter Offset"
+    Wiki="The ID offset value to use when referencing recoil parameters." />
+    
+    <pad09
+    AltName=""
+    Padding="" />
+    
+    <isNpacNoConsumeStorageBullet
+    AltName="Is Ammunition Consumed by NPC Usage"
+    Wiki="Prevent usage of ammunition if weapon is used by a NPC AC." 
+    IsBool="" />
+    
+    <isPulseSpAtkGuard
+    AltName="Is Guard affected by Pulse Attacks"
+    Wiki="Determines if guards from this weapon are affected by pulse attacks."
+    IsBool="" />
+    
+    <isHeavyWeightAddAnim
+    AltName="Apply Heavyweight Additive Animation"
+    Wiki="Is a heavyweight additive animation used for this weapon. Affects hand weapons only."
+    IsBool="" />
+    
+    <unk54c_3
+    AltName="Unknown: 54C_3"
+    Wiki="" 
+    IsBool="" />
+    
+    <pad25
+    AltName=""
+    Padding="" />
+    
+    <pad_26
+    AltName=""
+    Padding="" />
+    
+    <stayPa_Radius
+    AltName=""
+    Wiki="" />
+    
     
     <weaponCoolingRate AltName="Weapon Cooling Rate" Wiki="Speed at which heat buildup is reduced." />
     <weaponOverheatedCoolingRate AltName="Overheated Weapon Cooling Rate" Wiki="Speed at which heat buildup is reduced if the weapon overheated." />
@@ -2557,6 +2802,14 @@
     <Enum Name="SCAN_TARGET_UPDATE_TYPE" type="u8">
         <Option Value="0" Name="Constantly Updated" />
         <Option Value="1" Name="Only at Moment of Use" />
+    </Enum>
+    <Enum Name="BULLET_RELOAD_TYPE" type="u8">
+        <Option Value="0" Name="Cartridge" />
+        <Option Value="1" Name="Direct Loading" />
+    </Enum>
+    <Enum Name="EQUIP_HD_RUMBLE_TYPE" type="u8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Large" />
     </Enum>
   </Enums>
 </PARAMMETA>
