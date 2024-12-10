@@ -391,9 +391,9 @@ public class ParamBank
                         {
                             _usedTentativeParamTypes.Add(paramName, p.ParamType);
                             p.ParamType = newParamType;
-                            TaskLogs.AddLog(
-                                $"Couldn't find ParamDef for {paramName}, but tentative ParamType \"{newParamType}\" exists.",
-                                LogLevel.Warning);
+                            //TaskLogs.AddLog(
+                            //    $"Couldn't find ParamDef for {paramName}, but tentative ParamType \"{newParamType}\" exists.",
+                            //    LogLevel.Warning);
                         }
                         else
                         {
@@ -410,9 +410,9 @@ public class ParamBank
                     {
                         _usedTentativeParamTypes.Add(paramName, p.ParamType);
                         p.ParamType = newParamType;
-                        TaskLogs.AddLog(
-                            $"Couldn't read ParamType for {paramName}, but tentative ParamType \"{newParamType}\" exists.",
-                            LogLevel.Warning);
+                        //TaskLogs.AddLog(
+                        //    $"Couldn't read ParamType for {paramName}, but tentative ParamType \"{newParamType}\" exists.",
+                        //   LogLevel.Warning);
                     }
                     else
                     {

@@ -50,6 +50,12 @@ namespace Veldrid.Sdl2
         public Sdl2Window(string title, int x, int y, int width, int height, WindowFlags flags, bool threadedProcessing)
         {
             SDL = SdlProvider.SDL.Value;
+
+            // Set IME Support variable
+            byte imeShowUi = 1;
+
+            SDL.SetHint("SDL_HINT_IME_SHOW_UI", ref imeShowUi);
+
             _threadedProcessing = threadedProcessing;
             if (threadedProcessing)
             {
