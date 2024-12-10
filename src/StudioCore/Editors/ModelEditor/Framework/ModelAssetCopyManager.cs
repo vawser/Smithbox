@@ -1,7 +1,9 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
@@ -9,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -46,6 +49,8 @@ public class ModelAssetCopyManager
 
     public void CharacterCopyMenu()
     {
+        Vector2 buttonSize = new Vector2(200, 24);
+
         if (ShowNewCharacterMenu)
         {
             ImGui.OpenPopup("Copy as New Character");
@@ -53,21 +58,33 @@ public class ModelAssetCopyManager
 
         if (ImGui.BeginPopupModal("Copy as New Character", ref ShowNewCharacterMenu, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
         {
-            ImGui.Text("Source Character");
-            var name = $"{SourceCharacterName} : {AliasUtils.GetCharacterAlias(SourceCharacterName)}";
-            ImGui.InputText("sourceName", ref name, 255, ImGuiInputTextFlags.ReadOnly);
-            ImGui.Text("");
+            ImGui.Text("Target Character:");
+            UIHelper.DisplayAlias(SourceCharacterName);
+
+            ImGui.Separator();
 
             ImGui.Text("New Character ID");
             ImGui.InputInt("##newChrId", ref NewCharacterID, 1);
+            UIHelper.ShowHoverTooltip("" +
+                "The new ID the copied asset will have.\n\n" +
+                "Character IDs must be between 0 and 9999 and not already exist.");
 
-            if (ImGui.Button("Create"))
+            if (ImGui.Button("Create", buttonSize))
             {
                 bool createChr = true;
 
-                if (NewCharacterID > 0 && NewCharacterID < 9999)
+                string newChrIdStr = $"{NewCharacterID}";
+
+                if (NewCharacterID < 1000)
+                    newChrIdStr = $"0{NewCharacterID}";
+                if (NewCharacterID < 100)
+                    newChrIdStr = $"00{NewCharacterID}";
+                if (NewCharacterID < 10)
+                    newChrIdStr = $"000{NewCharacterID}";
+
+                if (NewCharacterID >= 0 && NewCharacterID <= 9999)
                 {
-                    var matchChr = $"c{NewCharacterID}";
+                    var matchChr = $"c{newChrIdStr}";
 
                     if (Smithbox.BankHandler.CharacterAliases.Aliases.list.Any(x => x.id == matchChr))
                     {
@@ -78,17 +95,19 @@ public class ModelAssetCopyManager
                 else
                 {
                     createChr = false;
-                    PlatformUtils.Instance.MessageBox($"{NewCharacterID} is not valid.", "Warning", MessageBoxButtons.OK);
+                    PlatformUtils.Instance.MessageBox($"{newChrIdStr} is not valid.", "Warning", MessageBoxButtons.OK);
                 }
 
                 if (createChr)
                 {
-                    CreateCharacter(SourceCharacterName, $"c{NewCharacterID}");
+                    CreateCharacter(SourceCharacterName, $"c{newChrIdStr}");
                     ShowNewCharacterMenu = false;
                 }
             }
+
             ImGui.SameLine();
-            if (ImGui.Button("Close"))
+
+            if (ImGui.Button("Close", buttonSize))
             {
                 ShowNewCharacterMenu = false;
             }
@@ -147,17 +166,34 @@ public class ModelAssetCopyManager
 
 
     private string SourceAssetName = "";
+    private int NewAssetCategoryID = -1;
     private int NewAssetID = -1;
     private bool ShowNewAssetMenu = false;
 
     public void OpenAssetCopyMenu(string entry)
     {
         SourceAssetName = entry;
+
+        var assetNameSegments = SourceAssetName.Split("_");
+        if (assetNameSegments.Length > 1)
+        {
+            try
+            {
+                NewAssetCategoryID = int.Parse(assetNameSegments[0]);
+            }
+            catch(Exception e)
+            {
+                TaskLogs.AddLog("Failed to convert NewAssetCategoryID string to int.", LogLevel.Error);
+            }
+        }
+
         ShowNewAssetMenu = true;
     }
 
     public void AssetCopyMenu()
     {
+        Vector2 buttonSize = new Vector2(200, 24);
+
         if (ShowNewAssetMenu)
         {
             ImGui.OpenPopup("Copy as New Asset");
@@ -165,48 +201,111 @@ public class ModelAssetCopyManager
 
         if (ImGui.BeginPopupModal("Copy as New Asset", ref ShowNewAssetMenu, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
         {
-            ImGui.Text("Source Asset");
-            var name = $"{SourceAssetName} : {AliasUtils.GetAssetAlias(SourceAssetName)}";
-            ImGui.InputText("sourceName", ref name, 255, ImGuiInputTextFlags.ReadOnly);
-            ImGui.Text("");
+            ImGui.Text("Target Asset:");
+            UIHelper.DisplayAlias(SourceAssetName);
+
+            ImGui.Separator();
+
+            if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+            {
+                ImGui.Text("New Asset Category ID");
+                ImGui.InputInt("##newAssetCategoryId", ref NewAssetCategoryID, 1);
+                UIHelper.ShowHoverTooltip("" +
+                    "The category ID the copied asset will have.\n\n" +
+                    "Asset category IDs must be between 0 and 999.");
+            }
 
             ImGui.Text("New Asset ID");
             ImGui.InputInt("##newAssetId", ref NewAssetID, 1);
+            UIHelper.ShowHoverTooltip("" +
+                "The asset ID the copied asset will have.\n\n" +
+                "Asset IDs must be between 0 and 999.");
 
-            if (ImGui.Button("Create"))
+            if (ImGui.Button("Create", buttonSize))
             {
                 bool createAsset = true;
 
-                string newAssetIdStr = $"{NewAssetID}";
-                if (NewAssetID < 100)
-                    newAssetIdStr = $"0{NewAssetID}";
-                if (NewAssetID < 10)
-                    newAssetIdStr = $"00{NewAssetID}";
+                var prefix = "";
+                var matchAsset = "";
 
-                var matchAsset = $"{SourceAssetName.Substring(0, 6)}_{newAssetIdStr}";
-
-                if (NewAssetID > 0 && NewAssetID < 999)
+                if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
                 {
-                    if (Smithbox.BankHandler.AssetAliases.Aliases.list.Any(x => x.id == matchAsset))
+                    prefix = "aeg";
+
+                    string newAssetCategoryIdStr = $"{NewAssetCategoryID}";
+                    if (NewAssetCategoryID < 100)
+                        newAssetCategoryIdStr = $"0{NewAssetCategoryID}";
+                    if (NewAssetCategoryID < 10)
+                        newAssetCategoryIdStr = $"00{NewAssetCategoryID}";
+
+                    string newAssetIdStr = $"{NewAssetID}";
+                    if (NewAssetID < 100)
+                        newAssetIdStr = $"0{NewAssetID}";
+                    if (NewAssetID < 10)
+                        newAssetIdStr = $"00{NewAssetID}";
+
+                    matchAsset = $"{newAssetCategoryIdStr}_{newAssetIdStr}";
+
+                    if (matchAsset != "" &&
+                        NewAssetID >= 0 && NewAssetID <= 999 &&
+                        NewAssetCategoryID >= 0 && NewAssetCategoryID <= 999)
+                    {
+                        if (Smithbox.BankHandler.AssetAliases.Aliases.list.Any(x => x.id == matchAsset))
+                        {
+                            createAsset = false;
+                            PlatformUtils.Instance.MessageBox($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
+                        }
+                    }
+                    else
                     {
                         createAsset = false;
-                        PlatformUtils.Instance.MessageBox($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox($"{matchAsset} is not valid.", "Warning", MessageBoxButtons.OK);
                     }
                 }
                 else
                 {
-                    createAsset = false;
-                    PlatformUtils.Instance.MessageBox($"{matchAsset} is not valid.", "Warning", MessageBoxButtons.OK);
+                    prefix = "o";
+
+                    string newAssetIdStr = $"{NewAssetID}";
+                    if (NewAssetID < 100000)
+                        newAssetIdStr = $"0{NewAssetID}";
+                    if (NewAssetID < 10000)
+                        newAssetIdStr = $"00{NewAssetID}";
+                    if (NewAssetID < 1000)
+                        newAssetIdStr = $"000{NewAssetID}";
+                    if (NewAssetID < 100)
+                        newAssetIdStr = $"0000{NewAssetID}";
+                    if (NewAssetID < 10)
+                        newAssetIdStr = $"00000{NewAssetID}";
+
+                    matchAsset = $"{newAssetIdStr}";
+
+                    if (matchAsset != "" &&
+                        NewAssetID >= 0 && NewAssetID <= 999999)
+                    {
+                        if (Smithbox.BankHandler.AssetAliases.Aliases.list.Any(x => x.id == matchAsset))
+                        {
+                            createAsset = false;
+                            PlatformUtils.Instance.MessageBox($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
+                        }
+                    }
+                    else
+                    {
+                        createAsset = false;
+                        PlatformUtils.Instance.MessageBox($"{matchAsset} is not valid.", "Warning", MessageBoxButtons.OK);
+                    }
                 }
 
                 if (createAsset)
                 {
-                    CreateAsset(SourceAssetName, $"{matchAsset}");
+                    CreateAsset(SourceAssetName, $"{prefix}{matchAsset}");
                     ShowNewAssetMenu = false;
                 }
             }
+
             ImGui.SameLine();
-            if (ImGui.Button("Close"))
+
+            if (ImGui.Button("Close", buttonSize))
             {
                 ShowNewAssetMenu = false;
             }
@@ -243,17 +342,29 @@ public class ModelAssetCopyManager
     }
 
     private string SourcePartName = "";
+    private string NewPartType = "";
+    private string NewPartGender = "";
     private int NewPartID = -1;
     private bool ShowNewPartMenu = false;
 
     public void OpenPartCopyMenu(string entry)
     {
         SourcePartName = entry;
+
+        var partNameSegments = SourcePartName.Split("_");
+        if(partNameSegments.Length > 2)
+        {
+            NewPartType = partNameSegments[0];
+            NewPartGender = partNameSegments[1];
+        }
+
         ShowNewPartMenu = true;
     }
 
     public void PartCopyMenu()
     {
+        Vector2 buttonSize = new Vector2(200, 24);
+
         if (ShowNewPartMenu)
         {
             ImGui.OpenPopup("Copy as New Part");
@@ -261,22 +372,45 @@ public class ModelAssetCopyManager
 
         if (ImGui.BeginPopupModal("Copy as New Part", ref ShowNewPartMenu, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
         {
-            ImGui.Text("Source Part");
-            var name = $"{SourcePartName} : {AliasUtils.GetPartAlias(SourcePartName)}";
-            ImGui.InputText("sourceName", ref name, 255, ImGuiInputTextFlags.ReadOnly);
-            ImGui.Text("");
+            ImGui.Text("Target Part:");
+            UIHelper.DisplayAlias(SourcePartName);
+
+            ImGui.Separator();
+
+            ImGui.Text("New Part Type");
+            ImGui.InputText("##newPartType", ref NewPartType, 1);
+            UIHelper.ShowHoverTooltip("" +
+                "The part type string the copied part will have.\n\n" +
+                "Part Type string should be hd, fc, bd, am or lg in most cases.");
+
+            ImGui.Text("New Part Gender");
+            ImGui.InputText("##newPartGender", ref NewPartGender, 1);
+            UIHelper.ShowHoverTooltip("" +
+                "The part gender string the copied part will have.\n\n" +
+                "Part Gender string should be m, f or a most cases.");
 
             ImGui.Text("New Part ID");
             ImGui.InputInt("##newPartId", ref NewPartID, 1);
+            UIHelper.ShowHoverTooltip("" +
+                "The part ID the copied part will have.\n\n" +
+                "Part IDs must be between 0 and 9999.");
 
-            if (ImGui.Button("Create"))
+            if (ImGui.Button("Create", buttonSize))
             {
                 bool createPart = true;
 
-                var oldPartId = Regex.Match(SourcePartName, @"[0-9]{4}").Groups[0].Value;
-                var matchPart = $"{SourcePartName.Replace(oldPartId, NewPartID.ToString())}";
+                string newPartIdStr = $"{NewPartID}";
 
-                if (NewPartID > 0 && NewPartID < 9999)
+                if (NewPartID < 1000)
+                    newPartIdStr = $"0{NewPartID}";
+                if (NewPartID < 100)
+                    newPartIdStr = $"00{NewPartID}";
+                if (NewPartID < 10)
+                    newPartIdStr = $"000{NewPartID}";
+
+                var matchPart = $"{NewPartType}_{NewPartGender}_{newPartIdStr}";
+
+                if (NewPartID >= 0 && NewPartID <= 9999)
                 {
                     if (Smithbox.BankHandler.PartAliases.Aliases.list.Any(x => x.id == matchPart))
                     {
@@ -296,8 +430,10 @@ public class ModelAssetCopyManager
                     ShowNewPartMenu = false;
                 }
             }
+
             ImGui.SameLine();
-            if (ImGui.Button("Close"))
+
+            if (ImGui.Button("Close", buttonSize))
             {
                 ShowNewPartMenu = false;
             }

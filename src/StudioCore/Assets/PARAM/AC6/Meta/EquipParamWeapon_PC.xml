@@ -2252,7 +2252,7 @@
     Enum="BULLET_RELOAD_TYPE" />
     
     <guardImpactCutRatePercent
-    AltName="Guard Absoprtion %: Impact"
+    AltName="Guard Absorption %: Impact"
     Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
     
     <bPaOpenGaugeRecoverDelay
@@ -2458,19 +2458,190 @@
     Padding="" />
     
     <stayPa_Radius
+    AltName="Pulse Protection: Radius"
+    Wiki="The radius of the Pulse Protection bubble." />
+    
+    <stayPa_MaxHp
+    AltName="Pulse Protection: Max HP"
+    Wiki="The HP value of the Pulse Protection bubble." />
+    
+    <stayPa_AddHpPerSec
+    AltName="Pulse Protection: HP Recovery Speed"
+    Wiki="The recovery speed for the HP of the Pulse Protection bubble. In points per second." />
+    
+    <stayPa_DefMaterialSfx
+    AltName="Pulse Protection: Defence Presentation - Particles"
+    Wiki="The particles used for impacts upon the Pulse Protection bubble." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <stayPa_DefMaterialSe 
+    AltName="Pulse Protection: Defence Presentation - Sound" 
+    Wiki="The sound used for impacts upon the Pulse Protection bubble." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <stayPa_LaunchSfxId
+    AltName="Pulse Protection: Launch - Particle ID"
+    Wiki="The SFX ID to use when the Pulse Protection bubble is deploying." />
+    
+    <stayPa_LaunchKeepSfxId
+    AltName="Pulse Protection: Persistent - Particle ID"
+    Wiki="The SFX ID to use when the Pulse Protection bubble is deployed." />
+    
+    <stayPa_BreakSfxId
+    AltName="Pulse Protection: Collapsed - Particle ID"
+    Wiki="The SFX ID to use when the Pulse Protection bubble is destroyed." />
+    
+    <stayPa_ReleaseSfxId
+    AltName="Pulse Protection: Cancelled - Particle ID"
+    Wiki="The SFX ID to use when the Pulse Protection bubble is cancelled." />
+    
+    <residualImpactSubRate_Guard
+    AltName="Guard Absorption %: Accumulative Impact"
+    Wiki="The multiplier to apply to damage of the specified type when guarding." />
+    
+    <backunitAjustHeight
+    AltName="Shoulder Weapon Height Adjustment"
+    Wiki="The amount of vertical adjustment to make for an equipped shoulder weapon." />
+    
+    <physJustGuardCutRate
+    AltName="Initial Guard - Absorption %: Kinetic"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <magJustGuardCutRate
+    AltName="Initial Guard - Absorption %: Energy"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <fireJustGuardCutRate
+    AltName="Initial Guard - Absorption %: Explosive"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <thunJustGuardCutRate
+    AltName="Initial Guard - Absorption %: Coral"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <burnJustGuardResist
+    AltName="Initial Guard - Absorption %: ACS Anomaly"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <stunJustGuardResist
+    AltName="Initial Guard - Absorption %: Electric Discharge"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <highPlasmaJustGuardResist
+    AltName="Initial Guard - Absorption %: Plasma"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <pad_27
     AltName=""
-    Wiki="" />
+    Padding="" />
     
+    <heat_SubValuePerSec 
+    AltName="Heat Reduction Speed" 
+    Wiki="The speed at which heat buildup is reduced. In points per second." />
     
-    <weaponCoolingRate AltName="Weapon Cooling Rate" Wiki="Speed at which heat buildup is reduced." />
-    <weaponOverheatedCoolingRate AltName="Overheated Weapon Cooling Rate" Wiki="Speed at which heat buildup is reduced if the weapon overheated." />
-    <weaponCoolingDelay AltName="Weapon Cooling Delay" Wiki="Delay before heat buildup start reducing." />
-    <weaponOverheatedCoolingDelay AltName="Overheated Weapon Cooling Delay" Wiki="Inherits fields from referenced weapon if the weapon overheated." />
-    <inheritanceWeaponParamId AltName="Weapon Inheritance" Refs="EquipParamWeapon" Wiki="Inherits fields from referenced weapon." />
+    <heat_OverHeatSubValueScalePercent 
+    AltName="Heat Reduction Rate after Overheating" 
+    Wiki="The percentage at which heat buildup is reduced if the weapon overheated." />
     
-    <demonstrationVideoBinkId AltName="Demostration Video Bink ID" Wiki="Refers to the video filename in Game/movie/" MovieAlias="" />
-    <pulseArmorRadius AltName="Pulse Armor: Radius" Wiki="Size of effective pulse armor (see pulseArmorVisualRadius for visual radius)." />
-    <pulseArmorVisualRadius AltName="Pulse Armor: Visual Radius" Wiki="Size of pulse armor visuals (see pulseArmorRadius for effective radius)." />
+    <heat_ShootDelay 
+    AltName="Heat Reduction Delay after Shooting"
+    Wiki="The delay after shooting before weapon heat can start being reduced. In seconds." />
+    
+    <heat_OverHeatShootDelay 
+    AltName="Heat Reduction Delay after Shooting if Overheated"
+    Wiki="The delay after shooting before weapon heat can start being reduced. In seconds." />
+    
+    <heat_OverHeatEndPoint
+    AltName="Overheat Release Value"
+    Wiki="The heat value at which overheating is cancelled." />
+    
+    <refId 
+    AltName="Weapon Inheritance ID" 
+    Wiki="Inherits fields from referenced weapon if set." 
+    Refs="EquipParamWeapon" />
+    
+    <menu_SrcBehaviorId
+    AltName="Assembly Menu: Behavior Judgment ID"
+    Wiki="The behavior judgment ID to use for this weapon's statistics." />
+    
+    <menu_SrcGenerationAtkPower
+    AltName="Assembly Menu: Attack Power"
+    Wiki="The source of the attack power stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkCountCondType
+    AltName="Assembly Menu: Attack Count Type"
+    Wiki="The type of determination used for attack count for this weapon's statistics."
+    Enum="EQUIP_ATK_COUNT_COND_TYPE" />
+    
+    <menu_SrcGenerationAtkCount
+    AltName="Assembly Menu: Attack Count"
+    Wiki="The source of the attack count stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationIntervalChild
+    AltName="Assembly Menu: Attack Interval"
+    Wiki="The source of the attack interval stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SfxFakeShootCount
+    AltName="Assembly Menu: Fake Shot Count in Attack Particle"
+    Wiki="The number of 'fake' shots used in the particle that represents the attack." />
+    
+    <menu_SrcGenerationDirectHit
+    AltName="Assembly Menu: Direct Hit Correction"
+    Wiki="The source of the direct hit correction stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationImpact
+    AltName="Assembly Menu: Impact"
+    Wiki="The source of the impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationResidualImpact
+    AltName="Assembly Menu: Accumulative Impact"
+    Wiki="The source of the accumulative impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationPaInterference
+    AltName="Assembly Menu: Pulse Armor Interference"
+    Wiki="The source of the pulse armor interference stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationHoming
+    AltName="Assembly Menu: Homing Strength"
+    Wiki="The source of the homing strength stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationExplosion
+    AltName="Assembly Menu: Blast Radius"
+    Wiki="The source of the blast radius stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationRicocheted
+    AltName="Assembly Menu: Ricochet Distance"
+    Wiki="The source of the ricochet distance stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationRange
+    AltName="Assembly Menu: Range Limit"
+    Wiki="The source of the range limit stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_ShowConsumeBullet
+    AltName="Assembly Menu: Display Ammunition Consumption"
+    Wiki="If ON, the ammunition consumption per shot is displayed."
+    IsBool="" />
+    
+    <menu_ShowAddHeat
+    AltName="Assembly Menu: Display Heat Addition"
+    Wiki="If ON, the heat addition per shot is displayed."
+    IsBool="" />
+    
+    <menu_HelpMovieID 
+    AltName="Assembly Menu: Demostration Video ID" 
+    Wiki="Refers to the bink video filename in /Game/movie/" 
+    MovieAlias="" />
     
     <menuShootCount AltName="Assembly Menu: Displayed Shoot Count" Wiki="Determines the number of rounds shot per attack in the weapon . Purely visual, the actual count has to be changed within the weapon's Bullets." />
     <menuChargeStateCategory AltName="Assembly Menu: Display Charged State Category" Wiki="Whether to show base charge or full charge values in menu. Value 100 for regular weapons, 110 for two stage weapons. Unknown if this value is derived or just an enum." Enum="MENU_CHARGE_STATE_CATEGORY"/>
@@ -2810,6 +2981,21 @@
     <Enum Name="EQUIP_HD_RUMBLE_TYPE" type="u8">
         <Option Value="0" Name="Small" />
         <Option Value="1" Name="Large" />
+    </Enum>
+    <Enum Name="EQUIP_GENERATION_TYPE" type="u8">
+        <Option Value="0" Name="Parent" />
+        <Option Value="1" Name="Child" />
+        <Option Value="2" Name="Secondary Child" />
+        <Option Value="3" Name="Tertiary Child" />
+        <Option Value="4" Name="Previous Generation" />
+        <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="EQUIP_ATK_COUNT_COND_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Number of Simultaneous Shots" />
+        <Option Value="2" Name="Number of Consecutive Shots" />
+        <Option Value="3" Name="Number of Locks" />
+        <Option Value="4" Name="Maximum number of bullets generated at specified interval" />
     </Enum>
   </Enums>
 </PARAMMETA>

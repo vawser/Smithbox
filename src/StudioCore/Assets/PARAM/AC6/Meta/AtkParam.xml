@@ -1857,7 +1857,7 @@
     Wiki="Pulse special attack impact value cut rate nullification amount" />
     
     <residualImpactPower
-    AltName="Damage: Impact when Unguarded"
+    AltName="Damage: Accumulative Impact when Unguarded"
     Wiki="Residual impact force when not guarded" />
     
     <hit0_sfxmodelId
