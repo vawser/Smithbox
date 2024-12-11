@@ -1998,7 +1998,7 @@
     AltName="Shield Defense: Coral"
     Wiki="The flat value used to reduce incoming damage of the specified type." />
     
-    <physicalShield_DefThunder
+    <physicalShield_DefDark
     AltName="Shield Defense: Dark"
     Wiki="The flat value used to reduce incoming damage of the specified type."
     Obsolete="" />
@@ -2096,7 +2096,7 @@
     Wiki="The SFX ID to use for the particle that is used for the persistent Guard action." 
     ParticleAlias="" />
     
-    <guardOpenStartSfxDmyId 
+    <guardOpenStaySfxId 
     AltName="Guard - Persistent: Dummy Polygon ID"
     Wiki="The dummy polygon ID to use for the particle that is used for the persistent Guard action." />
     

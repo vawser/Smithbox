@@ -121,6 +121,8 @@ public class ParamEditorTab
             ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
             UIHelper.ShowHoverTooltip("Allow the field order to be changed by an alternative order as defined within the PARAM META file.");
 
+            ImGui.Separator();
+
             ImGui.Checkbox("Show community field names first", ref CFG.Current.Param_MakeMetaNamesPrimary);
             UIHelper.ShowHoverTooltip("Crowd-sourced names will appear before the canonical name in the Field View list.");
 
@@ -128,7 +130,21 @@ public class ParamEditorTab
             UIHelper.ShowHoverTooltip("The crowd-sourced name (or the canonical name if the above option is enabled) will appear after the initial name in the Field View list.");
 
             ImGui.Checkbox("Show field data offsets", ref CFG.Current.Param_ShowFieldOffsets);
-            UIHelper.ShowHoverTooltip("The field offset within the .PARAM file will be show to the left in the Field View List.");
+            UIHelper.ShowHoverTooltip("The field offset within the .PARAM file will be shown to the left in the Field View List.");
+
+            ImGui.Checkbox("Show color preview", ref CFG.Current.Param_ShowColorPreview);
+            UIHelper.ShowHoverTooltip("Show color preview in field column if applicable.");
+
+            ImGui.Checkbox("Show graph visualisation", ref CFG.Current.Param_ShowGraphVisualisation);
+            UIHelper.ShowHoverTooltip("Show graph visualisation in field column if applicable.");
+
+            ImGui.Checkbox("Show view in map button", ref CFG.Current.Param_ViewInMapOption);
+            UIHelper.ShowHoverTooltip("Show the view in map if applicable.");
+
+            ImGui.Checkbox("Show view model button", ref CFG.Current.Param_ViewModelOption);
+            UIHelper.ShowHoverTooltip("Show the view model if applicable.");
+
+            ImGui.Separator();
 
             ImGui.Checkbox("Hide field references", ref CFG.Current.Param_HideReferenceRows);
             UIHelper.ShowHoverTooltip("Hide the generated param references for fields that link to other params.");
@@ -142,19 +158,22 @@ public class ParamEditorTab
             ImGui.Checkbox("Hide obsolete fields", ref CFG.Current.Param_HideObsoleteFields);
             UIHelper.ShowHoverTooltip("Hides fields that are obsolete in the property editor view.");
 
-            ImGui.Checkbox("Show color preview", ref CFG.Current.Param_ShowColorPreview);
-            UIHelper.ShowHoverTooltip("Show color preview in field column if applicable.");
+            ImGui.Separator();
 
-            ImGui.Checkbox("Show graph visualisation", ref CFG.Current.Param_ShowGraphVisualisation);
-            UIHelper.ShowHoverTooltip("Show graph visualisation in field column if applicable.");
+            ImGui.Checkbox("Show field param labels", ref CFG.Current.Param_ShowFieldParamLabels);
+            UIHelper.ShowHoverTooltip("The field param labels will be shown below the field name.");
 
-            ImGui.Checkbox("Show view in map button", ref CFG.Current.Param_ViewInMapOption);
-            UIHelper.ShowHoverTooltip("Show the view in map if applicable.");
+            ImGui.Checkbox("Show field enum labels", ref CFG.Current.Param_ShowFieldEnumLabels);
+            UIHelper.ShowHoverTooltip("The field enum labels will be shown below the field name.");
 
-            ImGui.Checkbox("Show view model button", ref CFG.Current.Param_ViewModelOption);
-            UIHelper.ShowHoverTooltip("Show the view model if applicable.");
+            ImGui.Checkbox("Show field text labels", ref CFG.Current.Param_ShowFieldFmgLabels);
+            UIHelper.ShowHoverTooltip("The field fmg reference labels will be shown below the field name.");
+
+            ImGui.Checkbox("Show field image labels", ref CFG.Current.Param_ShowFieldTextureLabels);
+            UIHelper.ShowHoverTooltip("The field texture reference labels will be shown below the field name.");
         }
 
+        // Field Information
         if (ImGui.CollapsingHeader("Field Information", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Help Icon: Show field description", ref CFG.Current.Param_ShowFieldDescription_onIcon);

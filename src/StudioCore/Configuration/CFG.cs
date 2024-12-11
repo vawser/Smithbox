@@ -349,6 +349,10 @@ public class CFG
     public bool Param_PasteAfterSelection = false;
     public bool Param_PasteThenSelect = true;
     public bool Param_ShowFieldOffsets = false;
+    public bool Param_ShowFieldEnumLabels = true;
+    public bool Param_ShowFieldParamLabels = true;
+    public bool Param_ShowFieldFmgLabels = true;
+    public bool Param_ShowFieldTextureLabels = true;
     public bool Param_ShowSecondaryNames = true;
     public bool Param_ShowVanillaParams = true;
     public bool Param_HidePaddingFields = true;

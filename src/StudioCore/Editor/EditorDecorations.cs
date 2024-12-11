@@ -175,6 +175,11 @@ public class EditorDecorations
             return;
         }
 
+        if(!CFG.Current.Param_ShowFieldParamLabels)
+        {
+            return;
+        }
+
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.TextUnformatted(@"   <");
@@ -235,61 +240,63 @@ public class EditorDecorations
             return;
         }
 
-        if (CFG.Current.Param_HideReferenceRows == false) //Move preference
+        if (!CFG.Current.Param_ShowFieldFmgLabels)
         {
-            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-            ImGui.TextUnformatted(@"   [");
-            List<string> inactiveRefs = new();
-            var first = true;
-            foreach (FMGRef r in fmgRef)
+            return;
+        }
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.TextUnformatted(@"   [");
+        List<string> inactiveRefs = new();
+        var first = true;
+        foreach (FMGRef r in fmgRef)
+        {
+            Param.Cell? c = context?[r.conditionField];
+            var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != r.conditionValue;
+
+            if (inactiveRef)
             {
-                Param.Cell? c = context?[r.conditionField];
-                var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != r.conditionValue;
-
-                if (inactiveRef)
-                {
-                    inactiveRefs.Add(r.fmg);
-                }
-                else
-                {
-                    if (first)
-                    {
-                        ImGui.SameLine();
-                        ImGui.TextUnformatted(r.fmg);
-                    }
-                    else
-                    {
-                        ImGui.TextUnformatted("    " + r.fmg);
-                    }
-
-                    first = false;
-                }
+                inactiveRefs.Add(r.fmg);
             }
-
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRefInactive_Text);
-            foreach (var inactive in inactiveRefs)
+            else
             {
-                ImGui.SameLine();
                 if (first)
                 {
-                    ImGui.TextUnformatted("!" + inactive);
+                    ImGui.SameLine();
+                    ImGui.TextUnformatted(r.fmg);
                 }
                 else
                 {
-                    ImGui.TextUnformatted("!" + inactive);
+                    ImGui.TextUnformatted("    " + r.fmg);
                 }
 
                 first = false;
             }
-
-            ImGui.PopStyleColor();
-
-            ImGui.SameLine();
-            ImGui.TextUnformatted("]");
-            ImGui.PopStyleColor();
-            ImGui.PopStyleVar();
         }
+
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRefInactive_Text);
+        foreach (var inactive in inactiveRefs)
+        {
+            ImGui.SameLine();
+            if (first)
+            {
+                ImGui.TextUnformatted("!" + inactive);
+            }
+            else
+            {
+                ImGui.TextUnformatted("!" + inactive);
+            }
+
+            first = false;
+        }
+
+        ImGui.PopStyleColor();
+
+        ImGui.SameLine();
+        ImGui.TextUnformatted("]");
+        ImGui.PopStyleColor();
+        ImGui.PopStyleVar();
     }
 
     public static void TextureRefText(List<TexRef> textureRef, Param.Row context)
@@ -303,16 +310,18 @@ public class EditorDecorations
             return;
         }
 
-        if (CFG.Current.Param_HideReferenceRows == false) //Move preference
+        if (!CFG.Current.Param_ShowFieldTextureLabels)
         {
-            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-
-            ImGui.TextUnformatted(@"   [Image]");
-
-            ImGui.PopStyleColor();
-            ImGui.PopStyleVar();
+            return;
         }
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+
+        ImGui.TextUnformatted(@"   [Image]");
+
+        ImGui.PopStyleColor();
+        ImGui.PopStyleVar();
     }
 
     public static void ParamRefsSelectables(ParamBank bank, List<ParamRef> paramRefs, Param.Row context,
@@ -523,13 +532,19 @@ public class EditorDecorations
 
     public static void EnumNameText(ParamEnum pEnum)
     {
-        if (pEnum != null && pEnum.Name != null && CFG.Current.Param_HideEnums == false) //Move preference
+        if (!CFG.Current.Param_ShowFieldEnumLabels)
+        {
+            return;
+        }
+
+        if (pEnum != null && pEnum.Name != null)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
             ImGui.TextUnformatted($@"   {pEnum.Name}");
             ImGui.PopStyleColor();
         }
     }
+
     public static void EnumValueText(Dictionary<string, string> enumValues, string value)
     {
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
@@ -539,21 +554,28 @@ public class EditorDecorations
 
     public static void AliasEnumNameText(string name)
     {
+        if (!CFG.Current.Param_ShowFieldEnumLabels)
+        {
+            return;
+        }
+
         var inactiveEnum = false;
 
-        if (CFG.Current.Param_HideEnums == false) //Move preference
+        if(!inactiveEnum)
         {
-            if(!inactiveEnum)
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-                ImGui.TextUnformatted($@"   {name}");
-                ImGui.PopStyleColor();
-            }
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
+            ImGui.TextUnformatted($@"   {name}");
+            ImGui.PopStyleColor();
         }
     }
 
     public static void ConditionalAliasEnumNameText(string name, Param.Row row, string limitField, string limitValue)
     {
+        if (!CFG.Current.Param_ShowFieldEnumLabels)
+        {
+            return;
+        }
+
         var inactiveEnum = false;
 
         if (limitField != "")
@@ -562,14 +584,11 @@ public class EditorDecorations
             inactiveEnum = row != null && c != null && Convert.ToInt32(c.Value.Value) != Convert.ToInt32(limitValue);
         }
 
-        if (CFG.Current.Param_HideEnums == false) //Move preference
+        if (!inactiveEnum)
         {
-            if (!inactiveEnum)
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-                ImGui.TextUnformatted($@"   {name}");
-                ImGui.PopStyleColor();
-            }
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
+            ImGui.TextUnformatted($@"   {name}");
+            ImGui.PopStyleColor();
         }
     }
 
@@ -577,7 +596,7 @@ public class EditorDecorations
     {
         var inactiveEnum = false;
 
-        if (CFG.Current.Param_HideEnums == false) //Move preference
+        if (!CFG.Current.Param_HideEnums) //Move preference
         {
             if (!inactiveEnum)
             {
@@ -643,23 +662,25 @@ public class EditorDecorations
 
     public static void ProjectEnumNameText(string enumType)
     {
-        if (CFG.Current.Param_HideEnums == false) //Move preference
+        if (!CFG.Current.Param_ShowFieldEnumLabels)
         {
-            var bank = Smithbox.BankHandler.ProjectEnums;
-            if (ProjectEnumsLoaded())
+            return;
+        }
+
+        var bank = Smithbox.BankHandler.ProjectEnums;
+        if (ProjectEnumsLoaded())
+        {
+            var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+
+            if (enumEntry != null)
             {
-                var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
+                ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
+                ImGui.PopStyleColor();
 
-                if (enumEntry != null)
+                if (enumEntry.Description != "")
                 {
-                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-                    ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
-                    ImGui.PopStyleColor();
-
-                    if (enumEntry.Description != "")
-                    {
-                        UIHelper.ShowHoverTooltip($"{enumEntry.Description}");
-                    }
+                    UIHelper.ShowHoverTooltip($"{enumEntry.Description}");
                 }
             }
         }
