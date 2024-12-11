@@ -378,13 +378,13 @@ public class ModelAssetCopyManager
             ImGui.Separator();
 
             ImGui.Text("New Part Type");
-            ImGui.InputText("##newPartType", ref NewPartType, 1);
+            ImGui.InputText("##newPartType", ref NewPartType, 255);
             UIHelper.ShowHoverTooltip("" +
                 "The part type string the copied part will have.\n\n" +
                 "Part Type string should be hd, fc, bd, am or lg in most cases.");
 
             ImGui.Text("New Part Gender");
-            ImGui.InputText("##newPartGender", ref NewPartGender, 1);
+            ImGui.InputText("##newPartGender", ref NewPartGender, 255);
             UIHelper.ShowHoverTooltip("" +
                 "The part gender string the copied part will have.\n\n" +
                 "Part Gender string should be m, f or a most cases.");
@@ -485,8 +485,126 @@ public class ModelAssetCopyManager
         Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
     }
 
+
+    private string SourceMapPieceName = "";
+    private string NewMapId = "";
+    private int NewMapPieceID = -1;
+    private bool ShowNewMapPieceMenu = false;
+
+    public void OpenMapPieceCopyMenu(string entry)
+    {
+        SourceMapPieceName = entry;
+
+        var nameSegments = SourcePartName.Split("_");
+        if (nameSegments.Length > 2)
+        {
+            SourceMapPieceName = nameSegments.Last();
+        }
+
+        ShowNewMapPieceMenu = true;
+    }
+
+    public void MapPieceCopyMenu()
+    {
+        Vector2 buttonSize = new Vector2(200, 24);
+
+        if (ShowNewMapPieceMenu)
+        {
+            ImGui.OpenPopup("Copy as New Map Piece");
+        }
+
+        if (ImGui.BeginPopupModal("Copy as New Map Piece", ref ShowNewMapPieceMenu, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
+        {
+            ImGui.Text("Target Map Piece:");
+            UIHelper.DisplayAlias(SourceMapPieceName);
+
+            ImGui.Separator();
+
+            ImGui.Text("New Map ID");
+            ImGui.InputText("##newMapId", ref NewMapId, 255);
+            UIHelper.ShowHoverTooltip("" +
+                "The map ID string the copied map piece will have.\n\n" +
+                "This should match the map ID of the map you want the map piece to work in.");
+
+            ImGui.Text("New Map Piece ID");
+            ImGui.InputInt("##newMapPieceID", ref NewMapPieceID, 1);
+            UIHelper.ShowHoverTooltip("" +
+                "The map piece ID the copied map piece will have.\n\n" +
+                "Map Piece IDs must be between 0 and 999999.");
+
+            if (ImGui.Button("Create", buttonSize))
+            {
+                bool createMapPiece = true;
+
+                string newMapPieceStr = $"{NewMapPieceID}";
+
+                if (NewMapPieceID < 10000)
+                    newMapPieceStr = $"0{NewMapPieceID}";
+                if (NewMapPieceID < 10000)
+                    newMapPieceStr = $"00{NewMapPieceID}";
+                if (NewMapPieceID < 1000)
+                    newMapPieceStr = $"000{NewMapPieceID}";
+                if (NewMapPieceID < 100)
+                    newMapPieceStr = $"0000{NewMapPieceID}";
+                if (NewMapPieceID < 10)
+                    newMapPieceStr = $"00000{NewMapPieceID}";
+
+                var matchMapPiece = $"{NewMapId}_{newMapPieceStr}";
+
+                if (NewMapPieceID >= 0 && NewMapPieceID <= 999999)
+                {
+                    if (Smithbox.BankHandler.MapAliases.Aliases.list.Any(x => x.id == matchMapPiece))
+                    {
+                        createMapPiece = false;
+                        PlatformUtils.Instance.MessageBox($"{matchMapPiece} already exists.", "Warning", MessageBoxButtons.OK);
+                    }
+                }
+                else if (NewMapId.Length != 12)
+                {
+                    createMapPiece = false;
+                    PlatformUtils.Instance.MessageBox($"{NewMapId} is not in the correct format: mXX_XX_XX_XX", "Warning", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    createMapPiece = false;
+                    PlatformUtils.Instance.MessageBox($"{matchMapPiece} is not valid.", "Warning", MessageBoxButtons.OK);
+                }
+
+                if (createMapPiece)
+                {
+                    CreateMapPiece(SourceMapPieceName, $"{matchMapPiece}", NewMapId);
+                    ShowNewMapPieceMenu = false;
+                }
+            }
+
+            ImGui.SameLine();
+
+            if (ImGui.Button("Close", buttonSize))
+            {
+                ShowNewMapPieceMenu = false;
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
     public void CreateMapPiece(string copyMapPiece, string newMapPiece, string mapId)
     {
+        // Get the first section of a map id, e.g. m10
+        var topMapId = mapId.Substring(0, 3);
+
+        var dir = $"{mapId}";
+
+        if(Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+            dir = $@"{topMapId}\{mapId}";
+
+        ResourceDescriptor partBnd = AssetLocator.GetMapPiece(dir, copyMapPiece);
+        if (partBnd.AssetPath != null)
+            SaveContainer(partBnd.AssetPath, copyMapPiece, newMapPiece, true);
+
+        // Reload banks so the addition appears in the lists
+        Smithbox.BankHandler.ReloadAliasBanks = true;
+        Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
     }
 
     private void SaveFile(string binderPath, string oldId, string newId, bool uppercaseReplace = false)

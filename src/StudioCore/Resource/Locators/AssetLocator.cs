@@ -134,4 +134,13 @@ public static class AssetLocator
 
         return ret;
     }
+
+    public static ResourceDescriptor GetMapPiece(string dir, string name)
+    {
+        ResourceDescriptor ret = new();
+
+        ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"map\{dir}\{name}.partsbnd.dcx");
+
+        return ret;
+    }
 }

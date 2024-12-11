@@ -2638,32 +2638,180 @@
     Wiki="If ON, the heat addition per shot is displayed."
     IsBool="" />
     
+    <menu_AtkContTimeType
+    AltName="Assembly Menu: Attack Duration Type"
+    Wiki="The source for the attack duration type used for this weapon's statistics."
+    Enum="EQUIP_ATK_CONT_TIME_TYPE" />
+    
+    <menu_SrcGenerationAtkContTime
+    AltName="Assembly Menu: Attack Duration"
+    Wiki="The source of the attack duration stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_MeleeComboCount
+    AltName="Assembly Menu: Melee Combo Count"
+    Wiki="The source of the number of attacks in a melee combo used for this weapon's statistics." />
+    
+    <menu_AtkPowerCondType
+    AltName="Assembly Menu: Attack Power Judgement Type"
+    Wiki="The source for the attack power judgement type used for this weapon's statistics."
+    Enum="EQUIP_ATK_POWER_COND_TYPE" />
+    
+    <menu_SrcBehaviorId_Charge
+    AltName="Assembly Menu: Behavior Judgment ID (Charged)"
+    Wiki="The behavior judgment ID to use for this weapon's statistics." />
+    
+    <menu_SrcGenerationAtkPower_Charge
+    AltName="Assembly Menu: Attack Power (Charged)"
+    Wiki="The source of the attack power stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkCountCondType_Charge
+    AltName="Assembly Menu: Attack Count Type (Charged)"
+    Wiki="The type of determination used for attack count for this weapon's statistics."
+    Enum="EQUIP_ATK_COUNT_COND_TYPE" />
+    
+    <menu_SrcGenerationAtkCount_Charge
+    AltName="Assembly Menu: Attack Count (Charged)"
+    Wiki="The source of the attack count stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowerCondType_Charge
+    AltName="Assembly Menu: Attack Power Judgement Type (Charged)"
+    Wiki="The source for the attack power judgement type used for this weapon's statistics."
+    Enum="EQUIP_ATK_POWER_COND_TYPE" />
+    
+    <menu_SfxFakeShootCount_Charge
+    AltName="Assembly Menu: Fake Shot Count in Attack Particle (Charged)"
+    Wiki="The number of 'fake' shots used in the particle that represents the attack." />
+    
+    <menu_SrcGenerationDirectHit_Charge
+    AltName="Assembly Menu: Direct Hit Correction (Charged)"
+    Wiki="The source of the direct hit correction stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationImpact_Charge
+    AltName="Assembly Menu: Impact (Charged)"
+    Wiki="The source of the impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationResidualImpact_Charge
+    AltName="Assembly Menu: Accumulative Impact (Charged)"
+    Wiki="The source of the accumulative impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationPaInterference_Charge
+    AltName="Assembly Menu: Pulse Armor Interference (Charged)"
+    Wiki="The source of the pulse armor interference stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationHoming_Charge
+    AltName="Assembly Menu: Homing Strength (Charged)"
+    Wiki="The source of the homing strength stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationExplosion_Charge
+    AltName="Assembly Menu: Blast Radius (Charged)"
+    Wiki="The source of the blast radius stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationRicocheted_Charge
+    AltName="Assembly Menu: Ricochet Distance (Charged)"
+    Wiki="The source of the ricochet distance stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationRange_Charge
+    AltName="Assembly Menu: Range Limit (Charged)"
+    Wiki="The source of the range limit stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_ShowConsumeBullet_Charge
+    AltName="Assembly Menu: Display Ammunition Consumption (Charged)"
+    Wiki="If ON, the ammunition consumption per shot is displayed."
+    IsBool="" />
+    
+    <menu_ShowAddHeat_Charge
+    AltName="Assembly Menu: Display Heat Addition (Charged)"
+    Wiki="If ON, the heat addition per shot is displayed."
+    IsBool="" />
+    
+    <menu_AtkContTimeType_Charge
+    AltName="Assembly Menu: Attack Duration Type (Charged)"
+    Wiki="The source for the attack duration type used for this weapon's statistics."
+    Enum="EQUIP_ATK_CONT_TIME_TYPE" />
+    
+    <menu_SrcGenerationAtkContTime_Charge
+    AltName="Assembly Menu: Attack Duration (Charged)"
+    Wiki="The source of the attack duration stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcChargeTime
+    AltName="Assembly Menu: Charge Time"
+    Wiki="The source of the charge time stat used for this weapon's statistics."
+    Enum="EQUIP_CHARGE_TIME_SRC_TYPE" />
+    
+    <pad_31
+    AltName=""
+    Padding="" />
+    
+    <menu_SrcBehaviorId_Melee
+    AltName="Assembly Menu: Behavior Judgment ID (Melee)"
+    Wiki="The behavior judgment ID to use melee attack for this weapon's statistics." />
+    
+    <menu_ShowConsumeBullet_Melee
+    AltName="Assembly Menu: Display Ammunition Consumption (Melee)"
+    Wiki="If ON, the ammunition consumption per melee attack is displayed."
+    IsBool="" />
+    
+    <menu_ShowAddHeat_Melee
+    AltName="Assembly Menu: Display Heat Addition (Melee)"
+    Wiki="If ON, the heat addition per melee attack is displayed."
+    IsBool="" />
+    
     <menu_HelpMovieID 
     AltName="Assembly Menu: Demostration Video ID" 
     Wiki="Refers to the bink video filename in /Game/movie/" 
     MovieAlias="" />
     
-    <menuShootCount AltName="Assembly Menu: Displayed Shoot Count" Wiki="Determines the number of rounds shot per attack in the weapon . Purely visual, the actual count has to be changed within the weapon's Bullets." />
-    <menuChargeStateCategory AltName="Assembly Menu: Display Charged State Category" Wiki="Whether to show base charge or full charge values in menu. Value 100 for regular weapons, 110 for two stage weapons. Unknown if this value is derived or just an enum." Enum="MENU_CHARGE_STATE_CATEGORY"/>
-    <menuChargeTimeType AltName="Assembly Menu: Show Full Charge Time" Wiki="Determines if a weapon reports its Full Charge Time in the menu for weapons with multiple charge stages. No gameplay effect." />
-    <menuSecondaryChargedBlastRadius AltName="Assembly Menu: Show Secondary Charged Blast Radius" Wiki="Determines if a weapon reports Charged Blast Radius from secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <menuSecondaryAttackPower AltName="Assembly Menu: Show Secondary Attack Power" Wiki="Determines if a weapon reports Attack Power from secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <menuSecondaryDamageField AltName="Assembly Menu: Show Secondary Damage Field" Wiki="Determines if a weapon reports multiple ticks of damage from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
-    <menuSecondaryDirectHitAdjustment AltName="Assembly Menu: Show Secondary Direct Hit Adjustment" Wiki="Determines if a weapon reports Direct Hit Adjustment from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
-    <menuSecondaryImpact AltName="Assembly Menu: Show Secondary Impact" Wiki="Determines if a weapon reports Impact from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
-    <menuSecondaryAccumulativeImpact AltName="Assembly Menu: Show Secondary Accumulative Impact" Wiki="Determines if a weapon reports Accumulative Impact from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
-    <menuSecondaryBlastRadius AltName="Assembly Menu: Show Secondary Blast Radius" Wiki="Determines if a weapon reports Blast Radius from its secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <menuMeleeWeaponConsecutiveHits AltName="Assembly Menu: Show Melee Consecutive Hits" />
-    <unkSecondaryDamageField AltName="Assembly Menu: Show Unk Secondary Damage Field" Wiki="Appears to relate to the same information as menuSecondaryDamageField. Why two fields do this is unknown but both seem required." />
-    <menuSecondaryChargedAttackPower AltName="Assembly Menu: Show Secondary Charged Attack Power" Wiki="Determines if a weapon reports Charged Attack Power from secondary bullets, such as a laser shotgun explosion. No gameplay effect." />
-    <menuSecondaryChargedDamageField AltName="Assembly Menu: Show Secondary Charged Damage Field" Wiki="Determines if a weapon reports multiple ticks of damage from its secondary charged bullets, such as plasma AoE fields. No gameplay effect." />
-    <unkSecondaryChargedDamageField AltName="Assembly Menu: Show Unk Secondary Charged Damage Field" Wiki="Appears to relate to the same information as menuSecondaryChargedDamageField. Why two fields do this is unknown but both seem required." />
-    <menuSecondaryChargedImpact AltName="Assembly Menu: Show Secondary Charged Impact" Wiki="Determines if a weapon reports Charged Impact from secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <menuSecondaryChargedAccumulativeImpact AltName="Assembly Menu: Show Secondary Charged Accumulative Impact" Wiki="Determines if a weapon reports Charged Accumulative Impact from secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <menuBurstFire AltName="Assembly Menu: Show Burst Fire" Wiki="Determines if a weapon's standard fire reports its burst fire count to the menu, causing its displayed Attack Power, Impact, and Accumulative Impact to display said burst fire count. No gameplay effect." />
-    <menuChargedBurstFire AltName="Assembly Menu: Show Charged Burst Fire" Wiki="Determines if a weapon's charge fire reports its burst fire to the menu, causing its displayed Chg Attack Power, Chg Impact, and Chg Accum Impact to display said burst fire count. No gameplay effect." />
+    <isMakeCollisionPa
+    AltName="Pulse Armor: Generate Sphere Collision"
+    Wiki="If ON, the pulse armor sphere will generate collision."
+    IsBool="" />
     
-    <weaponMotionCategory AltName="Weapon Motion Category" Wiki="Refers to the TAE used by this weapon." Enum="TAE_MOTION_CATEGORIES" />
+    <menu_IntervalMulAtkPower
+    AltName="Assembly Menu: Is Attack Power Multiplied by Interval Count"
+    Wiki="If ON, the attack power stat is multiplied by the bullet interval count."
+    IsBool="" />
+    
+    <menu_KrswShoot
+    AltName="Assembly Menu: Is 2nd stage shot for KARASAWA"
+    Wiki="If ON, this weapon is 2nd stage shot for the KARASAWA weapon."
+    IsBool="" />
+    
+    <menu_KrswShoot_Charge
+    AltName="Assembly Menu: Is 2nd stage shot for KARASAWA (Charged)"
+    Wiki="If ON, this weapon is 2nd stage shot for the KARASAWA weapon."
+    IsBool="" />
+    
+    <pad32
+    AltName=""
+    Padding="" />
+    
+    <pad_33
+    AltName=""
+    Padding="" />
+    
+    <menu_AtkPowSfxFakeShootCount
+    AltName="Assembly Menu: Number of Fake Shots for Attack Power"
+    Wiki="The number of fake shots used in the SFX to apply to attack power stat." />
+    
+    <makeCollisionPaBaesDmypolyId
+    AltName="Pulse Armor: Collision Base Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for generating the Pulse Armor sphere collision. -1 is master position." />
+    
+    <makeCollisionPaOpenInitRadius
+    AltName=""
+    Wiki="" />
     
   </Field>
   <Enums>
@@ -2996,6 +3144,20 @@
         <Option Value="2" Name="Number of Consecutive Shots" />
         <Option Value="3" Name="Number of Locks" />
         <Option Value="4" Name="Maximum number of bullets generated at specified interval" />
+    </Enum>
+    <Enum Name="EQUIP_ATK_CONT_TIME_TYPE" type="u8">
+        <Option Value="0" Name="Slip" />
+        <Option Value="1" Name="Irradiation" />
+    </Enum>
+    <Enum Name="EQUIP_ATK_POWER_COND_TYPE" type="u8">
+        <Option Value="0" Name="Attack Power only" />
+        <Option Value="1" Name="Attack Power * Number of Simultaneous Shots" />
+        <Option Value="2" Name="Attack Power * Max Number of Multi-Stage Hits" />
+        <Option Value="3" Name="Attack Power * Number of Simultaneous Shots * Max Number of Multi-Stage Hits" />
+    </Enum>
+    <Enum Name="EQUIP_CHARGE_TIME_SRC_TYPE" type="u8">
+        <Option Value="0" Name="1st Stage" />
+        <Option Value="1" Name="2nd Stage" />
     </Enum>
   </Enums>
 </PARAMMETA>

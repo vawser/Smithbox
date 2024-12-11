@@ -87,6 +87,7 @@ public class FileSelectionView
         AssetCopyManager.CharacterCopyMenu();
         AssetCopyManager.AssetCopyMenu();
         AssetCopyManager.PartCopyMenu();
+        AssetCopyManager.MapPieceCopyMenu();
 
         ImGui.End();
 
@@ -430,6 +431,16 @@ public class FileSelectionView
 
                     if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
                     {
+                        /*
+                        if (AssetCopyManager.IsSupportedProjectType())
+                        {
+                            if (ImGui.Selectable("Copy as New Map Piece"))
+                            {
+                                AssetCopyManager.OpenMapPieceCopyMenu(entry);
+                            }
+                        }
+                        */
+
                         if (ImGui.Selectable("Go to Alias"))
                         {
                             if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
