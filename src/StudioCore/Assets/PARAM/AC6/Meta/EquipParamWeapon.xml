@@ -49,9 +49,9 @@
     AltName="Repair Value" 
     Wiki="The price required to repair this part." />
     
-    <basicPrice 
-    AltName="Base Value" 
-    Wiki="The base price for this part." />
+    <reinforcePrice 
+    AltName="Reinforcement Value" 
+    Wiki="The reinforcement price for this part." />
     
     <sellValue 
     AltName="Sell Value" 
@@ -67,12 +67,12 @@
     Wiki="Multiplier to the damage derived from the specified stat." 
     Obsolete="" />
     
-    <corretMagic 
+    <correctMagic 
     AltName="Correction: INT" 
     Wiki="Multiplier to the damage derived from the specified stat." 
     Obsolete="" />
     
-    <corretFaith 
+    <correctFaith 
     AltName="Correction: FTH" 
     Wiki="Multiplier to the damage derived from the specified stat." 
     Obsolete="" />
@@ -429,7 +429,7 @@
     Wiki="The base repel value when guarding. Compared against enemy repel attack value." 
     Obsolete="" />
     
-    <guardBaseRepel 
+    <attackBaseRepel 
     AltName="Base Repel: Attack" 
     Wiki="The base repel value when attacking. Compared against enemy repel attack value." 
     Obsolete="" />
@@ -609,7 +609,7 @@
     Obsolete="" />
     
     <lanternWep 
-    ltName="Is Light Source" 
+    AltName="Is Light Source" 
     Wiki="If ON, this weapon is considered a light source." 
     IsBool="" 
     Obsolete="" />
@@ -700,7 +700,7 @@
     Padding="" />
     
     <traceSfxId0 
-    AltName=" [0] Attack Trail: Particle ID" 
+    AltName="[0] Attack Trail: Particle ID" 
     Wiki="Particle to display for the attack trail (-1 invalid)" 
     ParticleAlias="" 
     Obsolete="" />
@@ -716,7 +716,7 @@
     Obsolete="" />
     
     <traceSfxId1 
-    AltName=" [1] Attack Trail: Particle ID" 
+    AltName="[1] Attack Trail: Particle ID" 
     Wiki="Particle to display for the attack trail (-1 invalid)" 
     ParticleAlias="" 
     Obsolete="" />
@@ -732,7 +732,7 @@
     Obsolete="" />
     
     <traceSfxId2 
-    AltName=" [2] Attack Trail: Particle ID" 
+    AltName="[2] Attack Trail: Particle ID" 
     Wiki="Particle to display for the attack trail (-1 invalid)" 
     ParticleAlias="" 
     Obsolete="" />
@@ -748,7 +748,7 @@
     Obsolete="" />
     
     <traceSfxId3
-    AltName=" [3] Attack Trail: Particle ID" 
+    AltName="[3] Attack Trail: Particle ID" 
     Wiki="Particle to display for the attack trail (-1 invalid)" 
     ParticleAlias="" 
     Obsolete="" />
@@ -764,7 +764,7 @@
     Obsolete="" />
     
     <traceSfxId4 
-    AltName=" [4] Attack Trail: Particle ID" 
+    AltName="[4] Attack Trail: Particle ID" 
     Wiki="Particle to display for the attack trail (-1 invalid)" 
     ParticleAlias="" 
     Obsolete="" />
@@ -780,7 +780,7 @@
     Obsolete="" />
     
     <traceSfxId5 
-    AltName=" [5] Attack Trail: Particle ID" 
+    AltName="[5] Attack Trail: Particle ID" 
     Wiki="Particle to display for the attack trail (-1 invalid)" 
     ParticleAlias="" 
     Obsolete="" />
@@ -796,7 +796,7 @@
     Obsolete="" />
     
     <traceSfxId6 
-    AltName=" [6] Attack Trail: Particle ID" 
+    AltName="[6] Attack Trail: Particle ID" 
     Wiki="Particle to display for the attack trail (-1 invalid)" 
     ParticleAlias="" 
     Obsolete="" />
@@ -812,7 +812,7 @@
     Obsolete="" />
     
     <traceSfxId7 
-    AltName=" [7] Attack Trail: Particle ID" 
+    AltName="[7] Attack Trail: Particle ID" 
     Wiki="Particle to display for the attack trail (-1 invalid)" 
     ParticleAlias="" 
     Obsolete="" />
@@ -1100,17 +1100,17 @@
     Wiki="The SFX ID to apply to this weapon."
     ParticleAlias="" />
     
-    <residentSfxId_1 
+    <residentSfxId_2
     AltName="Weapon Particle: 2" 
     Wiki="The SFX ID to apply to this weapon."
     ParticleAlias="" />
     
-    <residentSfxId_1 
+    <residentSfxId_3 
     AltName="Weapon Particle: 3" 
     Wiki="The SFX ID to apply to this weapon."
     ParticleAlias="" />
     
-    <residentSfxId_1 
+    <residentSfxId_4
     AltName="Weapon Particle: 4" 
     Wiki="The SFX ID to apply to this weapon."
     ParticleAlias="" />
@@ -1256,7 +1256,7 @@
     IsBool="" 
     Obsolete="" />
     
-    <isSoulParamIdChange_model4 
+    <isSoulParamIdChange_model3
     AltName="Apply Weapon Particle Parameters: 4" 
     Wiki="Whether the particle paramters for weapon 4 are applied. Typically this is the 'soul param id' and 'invisible weapon' paramters." 
     IsBool="" 
@@ -1286,11 +1286,11 @@
     Padding="" />
     
     <bulletNum 
-    AltName="Magazine Rounds" 
+    AltName="Ammunition: Magazine Rounds" 
     Wiki="Number of rounds loaded per magazine." />
     
     <magazineReload_InactiveSpeedScale
-    AltName="Magazine Reload Speed %"
+    AltName="Ammunition: Magazine Reload Speed %"
     Wiki="The magazine reload speed during storage." />
     
     <vsPlayerImpactCorrectRate 
@@ -1398,7 +1398,7 @@
     Padding="" />
     
     <totalBulletNum 
-    AltName="Total Rounds" 
+    AltName="Ammunition: Total Rounds" 
     Wiki="Total number of rounds that can be fired. -1 means infinite." />
     
     <shieldParamId
@@ -1455,7 +1455,7 @@
     AltName="Weapon: Energy Consumption" 
     Wiki="The energy consumption of this weapon." />
     
-    <CategoryNameTextID 
+    <categoryNameTextID 
     AltName="Category Name ID" 
     Wiki="The text that appears for this category." 
     FmgRef="Modern_Menu_Text" />
@@ -1470,7 +1470,7 @@
     Wiki="The operation permissions for this weapon." />
     
     <bulletCost 
-    AltName="Ammunition Cost" 
+    AltName="Weapon: Ammunition Cost" 
     Wiki="Cost per round fired. At the end of each mission, the total number of rounds fired is used to calculate ammunition expenses." />
     
     <depletedUraniumToxicPaGuardResistRate 
@@ -1648,7 +1648,7 @@
     <wepMotionCategoryIdSpecify
     AltName="Weapon Animation Set"
     Wiki="The weapon animation category. Determines the base animation set the weapon uses." 
-    Enum="WEPMOTION_CATEGORY" />
+    Enum="TAE_MOTION_CATEGORIES" />
     
     <pad01
     AltName=""
@@ -1849,7 +1849,7 @@
     Refs="AttackActionParam_PC" />
     
     <magazineReloadTimeSec 
-    AltName="Magazine Reload Time" 
+    AltName="Ammunition: Magazine Reload Time" 
     Wiki="The duration for a complete reload of a magazine. In seconds." />
     
     <chargeEndTimeSec 
@@ -1935,27 +1935,33 @@
     
     <physicalShield_IsWeakA
     AltName="Shield: Is Type A"
-    Wiki="If ON, the shield is classified as 'Type A' with regards to the damage adjustment modifiers." />
+    Wiki="If ON, the shield is classified as 'Type A' with regards to the damage adjustment modifiers." 
+    IsBool="" />
     
     <physicalShield_IsWeakB
     AltName="Shield: Is Type B"
-    Wiki="If ON, the shield is classified as 'Type B' with regards to the damage adjustment modifiers." />
+    Wiki="If ON, the shield is classified as 'Type B' with regards to the damage adjustment modifiers." 
+    IsBool="" />
     
     <physicalShield_IsWeakC
     AltName="Shield: Is Type C"
-    Wiki="If ON, the shield is classified as 'Type C' with regards to the damage adjustment modifiers." />
+    Wiki="If ON, the shield is classified as 'Type C' with regards to the damage adjustment modifiers." 
+    IsBool="" />
     
     <physicalShield_IsWeakD
     AltName="Shield: Is Type D"
-    Wiki="If ON, the shield is classified as 'Type D' with regards to the damage adjustment modifiers." />
+    Wiki="If ON, the shield is classified as 'Type D' with regards to the damage adjustment modifiers." 
+    IsBool="" />
     
     <physicalShield_IsWeakE
     AltName="Shield: Is Type E"
-    Wiki="If ON, the shield is classified as 'Type E' with regards to the damage adjustment modifiers." />
+    Wiki="If ON, the shield is classified as 'Type E' with regards to the damage adjustment modifiers." 
+    IsBool="" />
     
     <physicalShield_IsWeakF
     AltName="Shield: Is Type F"
-    Wiki="If ON, the shield is classified as 'Type F' with regards to the damage adjustment modifiers." />
+    Wiki="If ON, the shield is classified as 'Type F' with regards to the damage adjustment modifiers." 
+    IsBool="" />
     
     <pad15
     AltName=""
@@ -2045,7 +2051,7 @@
     AltName=""
     Padding="" />
     
-    <chargeEndTimeSec 
+    <chargeLv2EndTimeSec 
     AltName="Duration for Full Charge (Level 2) from None" 
     Wiki="The time it takes for the weapon's charge gauge to go from 0 to MAX. If it is 0, the charge gauge will reach MAX the moment the charge gauge starts increasing. In seconds" />
     
@@ -2221,7 +2227,7 @@
     Wiki="The SFX ID used after the Pulse Armor Deployment duration." 
     ParticleAlias="" />
     
-    <paOpen_PerfTimeSfxDmyId
+    <paOpen_PerfEndSfxDmyId
     AltName="Pulse Armor Deployment - End: Dummy Polygon ID"
     Wiki="The dummy polygon ID to use for displaying the SFX used after the Pulse Armor Deployment duration." />
     
@@ -2281,7 +2287,7 @@
     Wiki="Value for menu display only." />
     
     <computed_f03
-    AltName="Menu Display - Value 3 (Attitude Stability)"
+    AltName="Menu Display - Value 3"
     Wiki="Value for menu display only." />
     
     <computed_f04
@@ -2806,12 +2812,76 @@
     Wiki="The number of fake shots used in the SFX to apply to attack power stat." />
     
     <makeCollisionPaBaesDmypolyId
-    AltName="Pulse Armor: Collision Base Dummy Polygon ID"
-    Wiki="The dummy polygon ID to use for generating the Pulse Armor sphere collision. -1 is master position." />
+    AltName="Pulse Armor: Collision - Base Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for generating the Pulse Armor spherical collision. -1 is master position." />
     
     <makeCollisionPaOpenInitRadius
+    AltName="Pulse Armor: Collision - Initial Radius"
+    Wiki="The initial radius of the spherical collision upon generation." />
+    
+    <MakeCollisionPaOpenRadius
+    AltName="Pulse Armor: Collision - Final Radius"
+    Wiki="The final radius of the spherical collision after expansion." />
+    
+    <menu_AtkPowSfxFakeShootCount_Charge
+    AltName="Assembly Menu: Number of Fake Shots for Attack Power (Charged)"
+    Wiki="The number of fake shots used in the SFX to apply to attack power stat." />
+    
+    <menu_SrcGenerationAtkPower2
+    AltName="Assembly Menu: Attack Power (2nd Stage KARASAWA)"
+    Wiki="The source of the attack power stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowerCondType2
+    AltName="Assembly Menu: Attack Count Type (2nd Stage KARASAWA)"
+    Wiki="The type of determination used for attack count for this weapon's statistics."
+    Enum="EQUIP_ATK_COUNT_COND_TYPE" />
+    
+    <menu_SrcGenerationImpact2
+    AltName="Assembly Menu: Impact (2nd Stage KARASAWA)"
+    Wiki="The source of the impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationResidualImpact2
+    AltName="Assembly Menu: Accumulative Impact (2nd Stage KARASAWA)"
+    Wiki="The source of the accumulative impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowSfxFakeShootCount2
+    AltName="Assembly Menu: Number of Fake Shots for Attack Power (2nd Stage KARASAWA)"
+    Wiki="The number of fake shots used in the SFX to apply to attack power stat." />
+    
+    <menu_SrcGenerationAtkPower_Charge2
+    AltName="Assembly Menu: Attack Power (Charged, 2nd Stage KARASAWA)"
+    Wiki="The source of the attack power stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowerCondType_Charge2
+    AltName="Assembly Menu: Attack Count Type (Charged, 2nd Stage KARASAWA)"
+    Wiki="The type of determination used for attack count for this weapon's statistics."
+    Enum="EQUIP_ATK_COUNT_COND_TYPE" />
+    
+    <menu_SrcGenerationImpact_Charge2
+    AltName="Assembly Menu: Impact (Charged, 2nd Stage KARASAWA)"
+    Wiki="The source of the impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationResidualImpact_Charge2
+    AltName="Assembly Menu: Accumulative Impact (Charged, 2nd Stage KARASAWA)"
+    Wiki="The source of the accumulative impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowSfxFakeShootCount_Charge2
+    AltName="Assembly Menu: Number of Fake Shots for Attack Power (Charged, 2nd Stage KARASAWA)"
+    Wiki="The number of fake shots used in the SFX to apply to attack power stat." />
+    
+    <menu_SrcBehaviorId2_StrongMelee
+    AltName="Assembly Menu: Behavior Judgment ID (Melee Heavy Attack)"
+    Wiki="The behavior judgment ID to use for this weapon's statistics." />
+    
+    <pad_end02
     AltName=""
-    Wiki="" />
+    Padding="" />
     
   </Field>
   <Enums>
