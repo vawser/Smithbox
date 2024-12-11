@@ -43,6 +43,11 @@ namespace Veldrid.StartupUtilities
             {
                 flags |= WindowFlags.Shown;
             }
+
+            // Add IME Suport
+            var SDL = SdlProvider.SDL.Value;
+            SDL.SetHint(Sdl.HintImeShowUI, "1");
+
             Sdl2Window window = new Sdl2Window(
                 windowCI.WindowTitle,
                 windowCI.X,
