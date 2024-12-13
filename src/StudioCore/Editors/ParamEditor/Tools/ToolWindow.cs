@@ -275,70 +275,69 @@ public class ToolWindow
                 }
             }
 
-            // Find Row ID Instances
-            if (ImGui.CollapsingHeader("Find Row ID Instances"))
+            // Pin Groups
+            if (ImGui.CollapsingHeader("Pin Groups"))
             {
-                UIHelper.WrappedText("Display all instances of a specificed row ID.");
-                UIHelper.WrappedText("");
+                PinGroupHandler.Display();
+            }
 
-                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
+            // Param Reloader
+            if (ParamMemoryTools.IsParamReloaderSupported())
+            {
+                if (ImGui.CollapsingHeader("Param Reloader"))
                 {
-                    UIHelper.WrappedText("You must select a param before you can use this action.");
-                    UIHelper.WrappedText("");
-                }
-                else
-                {
-                    UIHelper.WrappedText("Row ID:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputInt("##searchRowId", ref Handler._idRowInstanceFinder_SearchID);
-                    UIHelper.ShowHoverTooltip("The row ID to search for.");
-
-                    UIHelper.WrappedText("Row Index:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputInt("##searchRowIndex", ref Handler._idRowInstanceFinder_SearchIndex);
-                    UIHelper.ShowHoverTooltip("The row index to search for. -1 for any");
-
+                    UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
                     UIHelper.WrappedText("");
 
-                    Handler.DisplayRowIDInstances();
+                    if (ImGui.Button("Reload Current Param", defaultButtonSize))
+                    {
+                        ParamMemoryTools.ReloadCurrentParam();
+                    }
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
-                    UIHelper.WrappedText("");
-                }
-
-                if (ImGui.Button("Search##action_SearchForRowIDs", defaultButtonSize))
-                {
-                    Handler.RowIDInstanceHandler();
+                    if (ImGui.Button("Reload All Params", defaultButtonSize))
+                    {
+                        ParamMemoryTools.ReloadAllParams();
+                    }
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
                 }
             }
 
-            // Find Row Value Instances
-            if (ImGui.CollapsingHeader("Find Row Value Instances"))
+            // Item Gib
+            if (Smithbox.ProjectType is ProjectType.DS3)
             {
-                UIHelper.WrappedText("Display all instances of a specified value.");
-                UIHelper.WrappedText("");
-
-                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
+                if (ImGui.CollapsingHeader("Item Gib"))
                 {
-                    UIHelper.WrappedText("You must select a param before you can use this action.");
-                    UIHelper.WrappedText("");
-                }
-                else
-                {
-                    UIHelper.WrappedText("Value:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputText("##searchValue", ref Handler._searchValue, 255);
-                    UIHelper.ShowHoverTooltip("The value to search for.");
-
-                    ImGui.Checkbox("Initial Match Only", ref CFG.Current.Param_Toolbar_FindValueInstances_InitialMatchOnly);
-                    UIHelper.ShowHoverTooltip("Only display the first match within a param, instead of all matches.");
+                    UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
                     UIHelper.WrappedText("");
 
-                    Handler.DisplayRowValueInstances();
+                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
 
-                    if (ImGui.Button("Search##action_SearchForRowValues", defaultButtonSize))
+                    if (activeParam == "EquipParamGoods")
                     {
-                        Handler.RowValueInstanceHandler();
+                        UIHelper.WrappedText("Number of Spawned Items");
+                        ImGui.InputInt("##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
                     }
+                    if (activeParam == "EquipParamWeapon")
+                    {
+                        UIHelper.WrappedText("Reinforcement of Spawned Weapon");
+                        ImGui.InputInt("##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
+
+                        if (Smithbox.ProjectType is ProjectType.DS3)
+                        {
+                            if (ParamMemoryTools.SpawnWeaponLevel > 10)
+                            {
+                                ParamMemoryTools.SpawnWeaponLevel = 10;
+                            }
+                        }
+                    }
+
+                    UIHelper.WrappedText("");
+                    if (ImGui.Button("Give Item", defaultButtonSize))
+                    {
+                        ParamMemoryTools.GiveItem();
+                    }
+
                 }
             }
 
@@ -474,71 +473,148 @@ public class ToolWindow
                 }
             }
 
-            // Pin Groups
-            if (ImGui.CollapsingHeader("Pin Groups"))
-            {
-                PinGroupHandler.Display();
-            }
+            ImGui.Separator(); 
 
-            // Param Reloader
-            if (ParamMemoryTools.IsParamReloaderSupported())
+            // Find Field Instances
+            if (ImGui.CollapsingHeader("Find Field Instances"))
             {
-                if (ImGui.CollapsingHeader("Param Reloader"))
+                UIHelper.WrappedText("Display all fields and the respective params they appear in based on the search string.");
+                UIHelper.WrappedText("");
+
+                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
                 {
-                    UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
+                    UIHelper.WrappedText("You must select a param before you can use this action.");
+                    UIHelper.WrappedText("");
+                }
+                else
+                {
+                    UIHelper.WrappedText("Search Text:");
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    ImGui.InputText("##searchString", ref Handler._idFieldInstanceFinder_SearchString, 255);
+                    UIHelper.ShowHoverTooltip("The field string to search for.");
+
+                    ImGui.Checkbox("Include Descriptions in Search##matchDescriptions", ref Handler._idFieldInstanceFinder_matchWiki);
+                    UIHelper.ShowHoverTooltip("Include the description text for a field in the search.");
+
+                    ImGui.Checkbox("Display Community Names in Result##useCommunityNamesInResults", ref Handler._idFieldInstanceFinder_displayCommunityName);
+                    UIHelper.ShowHoverTooltip("Display the community name for the field instead of the internal name.");
+
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Reload Current Param", defaultButtonSize))
-                    {
-                        ParamMemoryTools.ReloadCurrentParam();
-                    }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+                    Handler.DisplayFieldInstances();
 
-                    if (ImGui.Button("Reload All Params", defaultButtonSize))
-                    {
-                        ParamMemoryTools.ReloadAllParams();
-                    }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+                    UIHelper.WrappedText("");
+                }
+
+                if (ImGui.Button("Search##action_SearchForFieldInstances", defaultButtonSize))
+                {
+                    Handler.FieldInstanceHandler();
                 }
             }
 
-            // Item Gib
-            if (Smithbox.ProjectType is ProjectType.DS3)
+            // Find Row ID Instances
+            if (ImGui.CollapsingHeader("Find Row ID Instances"))
             {
-                if (ImGui.CollapsingHeader("Item Gib"))
+                UIHelper.WrappedText("Display all instances of a specificed row ID.");
+                UIHelper.WrappedText("");
+
+                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
                 {
-                    UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
+                    UIHelper.WrappedText("You must select a param before you can use this action.");
+                    UIHelper.WrappedText("");
+                }
+                else
+                {
+                    UIHelper.WrappedText("Row ID:");
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    ImGui.InputInt("##searchRowId", ref Handler._idRowInstanceFinder_SearchID);
+                    UIHelper.ShowHoverTooltip("The row ID to search for.");
+
+                    UIHelper.WrappedText("Row Index:");
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    ImGui.InputInt("##searchRowIndex", ref Handler._idRowInstanceFinder_SearchIndex);
+                    UIHelper.ShowHoverTooltip("The row index to search for. -1 for any");
+
                     UIHelper.WrappedText("");
 
-                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
-
-                    if (activeParam == "EquipParamGoods")
-                    {
-                        UIHelper.WrappedText("Number of Spawned Items");
-                        ImGui.InputInt("##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
-                    }
-                    if (activeParam == "EquipParamWeapon")
-                    {
-                        UIHelper.WrappedText("Reinforcement of Spawned Weapon");
-                        ImGui.InputInt("##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
-
-                        if (Smithbox.ProjectType is ProjectType.DS3)
-                        {
-                            if (ParamMemoryTools.SpawnWeaponLevel > 10)
-                            {
-                                ParamMemoryTools.SpawnWeaponLevel = 10;
-                            }
-                        }
-                    }
+                    Handler.DisplayRowIDInstances();
 
                     UIHelper.WrappedText("");
-                    if (ImGui.Button("Give Item", defaultButtonSize))
-                    {
-                        ParamMemoryTools.GiveItem();
-                    }
+                }
 
+                if (ImGui.Button("Search##action_SearchForRowIDs", defaultButtonSize))
+                {
+                    Handler.RowIDInstanceHandler();
                 }
             }
+
+            // Find Row Name Instances
+            if (ImGui.CollapsingHeader("Find Row Name Instances"))
+            {
+                UIHelper.WrappedText("Display all instances of a specificed row ID.");
+                UIHelper.WrappedText("");
+
+                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
+                {
+                    UIHelper.WrappedText("You must select a param before you can use this action.");
+                    UIHelper.WrappedText("");
+                }
+                else
+                {
+                    UIHelper.WrappedText("Row ID:");
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    ImGui.InputInt("##searchRowId", ref Handler._idRowInstanceFinder_SearchID);
+                    UIHelper.ShowHoverTooltip("The row ID to search for.");
+
+                    UIHelper.WrappedText("Row Index:");
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    ImGui.InputInt("##searchRowIndex", ref Handler._idRowInstanceFinder_SearchIndex);
+                    UIHelper.ShowHoverTooltip("The row index to search for. -1 for any");
+
+                    UIHelper.WrappedText("");
+
+                    Handler.DisplayRowIDInstances();
+
+                    UIHelper.WrappedText("");
+                }
+
+                if (ImGui.Button("Search##action_SearchForRowIDs", defaultButtonSize))
+                {
+                    Handler.RowIDInstanceHandler();
+                }
+            }
+
+            // Find Row Value Instances
+            if (ImGui.CollapsingHeader("Find Row Value Instances"))
+            {
+                UIHelper.WrappedText("Display all instances of a specified value.");
+                UIHelper.WrappedText("");
+
+                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
+                {
+                    UIHelper.WrappedText("You must select a param before you can use this action.");
+                    UIHelper.WrappedText("");
+                }
+                else
+                {
+                    UIHelper.WrappedText("Value:");
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    ImGui.InputText("##searchValue", ref Handler._searchValue, 255);
+                    UIHelper.ShowHoverTooltip("The value to search for.");
+
+                    ImGui.Checkbox("Initial Match Only", ref CFG.Current.Param_Toolbar_FindValueInstances_InitialMatchOnly);
+                    UIHelper.ShowHoverTooltip("Only display the first match within a param, instead of all matches.");
+                    UIHelper.WrappedText("");
+
+                    Handler.DisplayRowValueInstances();
+
+                    if (ImGui.Button("Search##action_SearchForRowValues", defaultButtonSize))
+                    {
+                        Handler.RowValueInstanceHandler();
+                    }
+                }
+            }
+
         }
 
         ImGui.End();

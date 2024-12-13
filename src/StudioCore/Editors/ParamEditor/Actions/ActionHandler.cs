@@ -377,6 +377,160 @@ public class ActionHandler
         }
     }
 
+    // Find Field Instances
+    public string _idFieldInstanceFinder_SearchString = "";
+    public string _idFieldInstanceFinder_CachedSearchString = "";
+    public bool _idFieldInstanceFinder_matchWiki = true;
+    public bool _idFieldInstanceFinder_displayCommunityName = false;
+    public List<FieldInstanceResult> _idFieldInstanceFinder_Results = new();
+
+    public void FieldInstanceHandler()
+    {
+        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
+
+        if (selectedParam.ActiveParamExists())
+        {
+            if (ParamBank.PrimaryBank.Params != null)
+            {
+                _idFieldInstanceFinder_CachedSearchString = _idFieldInstanceFinder_SearchString;
+                _idFieldInstanceFinder_Results = GetFieldInstanceResults(_idFieldInstanceFinder_SearchString);
+
+                _idFieldInstanceFinder_Results.Sort();
+
+                if (_idFieldInstanceFinder_Results.Count > 0)
+                {
+                    var message = $"Found fields containing {_idFieldInstanceFinder_SearchString} string in the following params:\n";
+                    foreach (var line in _idFieldInstanceFinder_Results)
+                        message += $"  {line.ParamName}: {line.FieldInternalName}\n";
+                    TaskLogs.AddLog(message,
+                        LogLevel.Information, LogPriority.Low);
+                }
+                else
+                {
+                    TaskLogs.AddLog($"No fields found containing {_idRowInstanceFinder_SearchID} string.",
+                        LogLevel.Information, LogPriority.High);
+                }
+            }
+        }
+    }
+
+    public List<FieldInstanceResult> GetFieldInstanceResults(string searchStr)
+    {
+        List<FieldInstanceResult> output = new();
+
+        var searchComponents = searchStr.ToLower().Split(" ");
+
+        foreach (var p in ParamBank.PrimaryBank.Params)
+        {
+            var def = p.Value.AppliedParamdef;
+            var meta = ParamMetaData.Get(def);
+
+            foreach (var field in def.Fields)
+            {
+                bool addResult = false;
+                var fieldMeta = FieldMetaData.Get(field);
+
+                foreach (var entry in searchComponents)
+                {
+                    if (field.InternalName != null)
+                    {
+                        // Internal Name
+                        if (field.InternalName.ToLower().Contains(entry))
+                        {
+                            addResult = true;
+                        }
+                    }
+
+                    // Display Name
+                    if (fieldMeta.AltName != null)
+                    {
+                        var displayNameComponents = fieldMeta.AltName.Split(" ");
+
+                        foreach (var displayComponent in displayNameComponents)
+                        {
+                            if (displayComponent.ToLower().Contains(entry))
+                            {
+                                addResult = true;
+                            }
+                        }
+                    }
+
+                    // Wiki
+                    if (fieldMeta.Wiki != null && _idFieldInstanceFinder_matchWiki)
+                    {
+                        var descriptionComponents = fieldMeta.Wiki.Split(" ");
+
+                        foreach (var descriptionComponent in descriptionComponents)
+                        {
+                            if (descriptionComponent.ToLower().Contains(entry))
+                            {
+                                addResult = true;
+                            }
+                        }
+                    }
+                }
+
+                // If anything matches, add the current field (and param) as a result.
+                if (addResult)
+                {
+                    var newResultEntry = new FieldInstanceResult(field.InternalName, fieldMeta.AltName, p.Key);
+                    output.Add(newResultEntry);
+                }
+            }
+        }
+
+        return output;
+    }
+
+    public class FieldInstanceResult : IComparable<FieldInstanceResult>
+    {
+        public string FieldInternalName;
+        public string FieldDisplayName;
+        public string ParamName;
+
+        public FieldInstanceResult(string fieldInternalName, string fieldDisplayName, string paramName)
+        {
+            FieldInternalName = fieldInternalName;
+            FieldDisplayName = fieldDisplayName;
+            ParamName = paramName;
+        }
+
+        public int CompareTo(FieldInstanceResult other)
+        {
+            return other.ParamName.CompareTo(this.ParamName);
+        }
+    }
+
+    public void DisplayFieldInstances()
+    {
+        if (_idFieldInstanceFinder_Results.Count > 0)
+        {
+            var Size = ImGui.GetWindowSize();
+            float EditX = (Size.X / 100) * 95;
+            float EditY = (Size.Y / 100) * 25;
+
+            ImGui.BeginChild("##fieldInstances_resultSection", new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+            UIHelper.WrappedText($"ID {_idFieldInstanceFinder_CachedSearchString}: {_idFieldInstanceFinder_Results.Count} matches");
+
+            foreach (var result in _idFieldInstanceFinder_Results)
+            {
+                var name = result.FieldInternalName;
+
+                if(_idFieldInstanceFinder_displayCommunityName)
+                {
+                    name = result.FieldDisplayName;
+                }
+
+                if (ImGui.Selectable($"{result.ParamName}: {name}##FieldInstanceRowSearcher"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/-1/{result.ParamName}");
+                }
+            }
+
+            ImGui.EndChild();
+        }
+    }
+
     // Find Row ID Instances
     public int _idRowInstanceFinder_SearchID = 0;
     public int _idRowInstanceFinder_CachedSearchID = 0;

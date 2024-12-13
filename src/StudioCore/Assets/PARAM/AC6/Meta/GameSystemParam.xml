@@ -1,16 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines various parameters related to game systems and the player." />
+  
   <Field>
-    <baseToughnessRecoverTime AltName="Base Toughness Recovery Time" Wiki="This is the basic value of toughness recovery time. (Seconds)" />
-    <chrEventTrun_byLeft90 AltName="Chr Event Turn - By Left 90" Wiki="This is a 90  left turn animation for the Character Turn event." />
-    <chrEventTrun_byRight90 AltName="Chr Event Turn - By Right 90" Wiki="This is a 90  right turn animation for the Character Turn event." />
-    <chrEventTrun_byLeft180 AltName="Chr Event Turn - By Left 180" Wiki="This is a 180  left turn animation for the Character Turn event." />
-    <chrEventTrun_byRight180 AltName="Chr Event Turn - By Right 180" Wiki="This is a 180  right turn animation for the Character Turn event." />
-    <chrEventTrun_90TurnStartAngle AltName="Chr Event Turn - 90 Turn Start Angle" Wiki="The starting angle of the angle to which the 90  swivel animation for the Character Swirl event is applied. If the event starts at an angle smaller than this angle, a system turn will occur." />
-    <chrEventTrun_180TurnStartAngle AltName="Chr Event Turn - 180 Turn Start Angle" Wiki="The starting angle of the angle to which the 180  swivel animation for the Character Swirl event is applied." />
-    <flickDamageCutRateSuccessGurad AltName="Weapon Rebel Absorption on Successful Guard" Wiki="Damage cut rate when the guard is successful when repelled. Multiply the final damage" />
-    <npcTalkAnimBeginDiffAngle AltName="NPC Talk Anim - Start Diff Angle" Wiki="This is the difference angle at which the animation playback of the motion during the conversation of the NPC conversation starts." />
-    <npcTalkAnimEndDiffAngle AltName="NPC Talk Anim - End Diff Angle" Wiki="This is the difference angle at which the animation playback of the motion during the conversation of the NPC conversation is stopped." />
+    <baseToughnessRecoverTime 
+    AltName="Toughness Recovery Time" 
+    Wiki="The base recovery rate of toughness. In seconds." />
+    
+    <chrEventTrun_byLeft90 
+    AltName="Rotation Animation ID: Left 90°" 
+    Wiki="The animation ID to use for the specified character rotation." />
+    
+    <ChrEventTrun_byRight90 
+    AltName="Rotation Animation ID: Right 90°" 
+    Wiki="The animation ID to use for the specified character rotation." />
+    
+    <ChrEventTrun_byLeft180 
+    AltName="Rotation Animation ID: Left 180°" 
+    Wiki="The animation ID to use for the specified character rotation." />
+    
+    <ChrEventTrun_byRight180 
+    AltName="Rotation Animation ID: Right 180°" 
+    Wiki="The animation ID to use for the specified character rotation." />
+    
+    <chrEventTrun_90TurnStartAngle 
+    AltName="Rotation Animation Start Angle: 90°" 
+    Wiki="The starting angle for the specified character rotation when it is applied. If the event starts at an angle smaller than this angle, a system turn will occur." />
+    
+    <ChrEventTrun_180TurnStartAngle 
+    AltName="Rotation Animation Start Angle: 180°" 
+    Wiki="The starting angle for the specified character rotation when it is applied. If the event starts at an angle smaller than this angle, a system turn will occur." />
+    
+    <DeptDeceasedItemId
+    AltName="Debt Item ID"
+    Wiki="The item ID of the item that determines debt level. If less than 0, the debt will not be treasted as an invalid value." />
+    
+    <FlickDamageCutRateSuccessGurad 
+    AltName="Damage Absorption upon Successful Guard Repel" 
+    Wiki="The damage absorption multiplier to use when a guard action successfully repels a weapon." />
+    
+    <NpcTalkAnimBeginDiffAngle 
+    AltName="NPC Conversation Animation: Start Angle" 
+    Wiki="The difference angle between the NPC and the player at which a NPC conversation animation will start to occur." />
+    
+    <NpcTalkAnimEndDiffAngle 
+    AltName="NPC Conversation Animation: End Angle" 
+    Wiki="The difference angle between the NPC and the player at which a NPC conversation animation will stop occuring." />
+    
+    <CultDeadSpEffectId_Optional
+    AltName="Ritual Corpse: SpEffect ID - Turn"
+    Wiki="The SpEffect ID to turn an enemy corpse into a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_LevelUp
+    AltName="Ritual Corpse: SpEffect ID - Level-up"
+    Wiki="The SpEffect ID given when using the level-up menu at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_StatusReroll
+    AltName="Ritual Corpse: SpEffect ID - Attribute Reallocation"
+    Wiki="The SpEffect ID given when using the attribute reallocation menu at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_StatusReroll
+    AltName="Ritual Corpse: SpEffect ID - Hollowing Reset"
+    Wiki="The SpEffect ID given when using the hollowing reset menu at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_Atonement
+    AltName="Ritual Corpse: SpEffect ID - Atonement"
+    Wiki="The SpEffect ID given when using the sin atonement menu at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    
     <recoverBelowMaxHpCompletionNoticeSpEffectId AltName="Recovery below HP Max - Notification SpEffect ID" Wiki="ID of the special effect that notifies that Recovery below HP maximum is completed. Mainly used for multi synchronization." />
     <estusFlaskRecovery_AbsorptionProductionSfxId_byHp AltName="HP Flask - Absorption SFX ID for Intruder Flask Restoration" Wiki="Absorption effect SFXID when recovering the number of times the HP Est bottle has been used when defeating an intruder" ParticleAlias="" />
     <estusFlaskRecovery_AbsorptionProductionSfxId_byMp AltName="FP Flask - Absorption SFX ID for Intruder Flask Restoration" Wiki="Absorption effect SFXID when recovering the number of times the MP Est bottle has been used when defeating an intruder" ParticleAlias="" />
@@ -29,5 +92,4 @@
     <photoModeTurnDampening AltName="Photo Mode - Turn Dampening" />
     <photoModeSpeedMult AltName="Photo Mode - Speed Multiplier" />
   </Field>
-  <Self />
 </PARAMMETA>

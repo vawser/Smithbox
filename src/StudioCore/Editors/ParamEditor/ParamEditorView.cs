@@ -640,6 +640,8 @@ public class ParamEditorView
                     for (var i = 0; i < rows.Count; i++)
                     {
                         Param.Row currentRow = rows[i];
+
+                        // Display groupings if ConsecutiveIDs is set in the meta for the current param.
                         if (enableGrouping)
                         {
                             Param.Row prev = i - 1 > 0 ? rows[i - 1] : null;
