@@ -61,6 +61,14 @@ namespace SoulsFormats
         }
 
         /// <summary>
+        /// Loads file data from a BinaryReaderEx.
+        /// </summary>
+        protected virtual void Read(BinaryReaderEx br, string filename = "")
+        {
+            throw new NotImplementedException("Read is not implemented for this format.");
+        }
+
+        /// <summary>
         /// Loads a file from a byte array, automatically decompressing it if necessary.
         /// </summary>
         public static TFormat Read(Memory<byte> bytes)
@@ -70,6 +78,19 @@ namespace SoulsFormats
             br = SFUtil.GetDecompressedBR(br, out DCX.Type compression);
             file.Compression = compression;
             file.Read(br);
+            return file;
+        }
+
+        /// <summary>
+        /// Loads a file from a byte array, automatically decompressing it if necessary.
+        /// </summary>
+        public static TFormat Read(Memory<byte> bytes, string filename = "")
+        {
+            BinaryReaderEx br = new BinaryReaderEx(false, bytes);
+            TFormat file = new TFormat();
+            br = SFUtil.GetDecompressedBR(br, out DCX.Type compression);
+            file.Compression = compression;
+            file.Read(br, filename);
             return file;
         }
 
@@ -85,6 +106,22 @@ namespace SoulsFormats
             br = SFUtil.GetDecompressedBR(br, out DCX.Type compression);
             ret.Compression = compression;
             ret.Read(br);
+            return ret;
+        }
+
+
+        /// <summary>
+        /// Loads a file from the specified path, automatically decompressing it if necessary.
+        /// </summary>
+        public static TFormat Read(string path, string filename = "")
+        {
+            using var file = MemoryMappedFile.CreateFromFile(path, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
+            using var accessor = file.CreateMemoryAccessor(0, 0, MemoryMappedFileAccess.Read);
+            BinaryReaderEx br = new BinaryReaderEx(false, accessor.Memory);
+            TFormat ret = new TFormat();
+            br = SFUtil.GetDecompressedBR(br, out DCX.Type compression);
+            ret.Compression = compression;
+            ret.Read(br, filename);
             return ret;
         }
 

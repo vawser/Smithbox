@@ -14,10 +14,81 @@
 #ifndef COREMATS_COMMON_H
 #define COREMATS_COMMON_H
 
+//------------------------------------------------
+
+void Align(int alignment) {
+    local int delta = FTell() % alignment;
+    if (delta)
+        FSkip(alignment - delta);
+}
+
+void AlignRelative(int base, int alignment) {
+    local int delta = (FTell() - base) % alignment;
+    if (delta)
+        FSkip(alignment - delta);
+}
+
 int IsBool(int value) {
     return value == 0 || value == 1;
 }
 
+void SetEndian(int bigEndian) {
+    if (bigEndian)
+        BigEndian();
+    else
+        LittleEndian();
+}
+
+//------------------------------------------------
+
+local int _JUMP_MAX <hidden=true> = 32;
+local quad _jumpStack[_JUMP_MAX] <hidden=true>;
+local int _jumpCurrent <hidden=true> = -1;
+
+void PushTell() {
+    Assert(_jumpCurrent + 1 < _JUMP_MAX, "Jump stack out of space");
+    _jumpCurrent++;
+    _jumpStack[_jumpCurrent] = FTell();
+}
+
+void SeekPop() {
+    Assert(_jumpCurrent >= 0);
+    FSeek(_jumpStack[_jumpCurrent]);
+    _jumpCurrent--;
+}
+
+void JumpIn(quad pos) {
+    PushTell();
+    FSeek(pos);
+}
+
+void JumpOut() {
+    SeekPop();
+}
+
+//------------------------------------------------
+
+local int PINT_64BIT <hidden=true>;
+
+int GetPintSize() {
+    return PINT_64BIT ? 8 : 4;
+}
+
+typedef struct {
+    if (PINT_64BIT)
+        quad v;
+    else
+        int v;
+} pintd <read=v>;
+
+typedef struct {
+    if (PINT_64BIT)
+        quad v <format=hex>;
+    else
+        int v <format=hex>;
+} pintx <read=Str("%Xh", v)>;
+
+//------------------------------------------------
 
 typedef struct {
     float x;
@@ -51,6 +122,7 @@ string ReadVector4(Vector4 &v) {
     return Str("<%f, %f, %f, %f>", v.x, v.y, v.z, v.w);
 }
 
+//------------------------------------------------
 
 typedef struct {
     ubyte r;
@@ -80,5 +152,7 @@ string ReadPackedSystemTime(PackedSystemTime &time) {
     return Str("%04d-%02d-%02d %02d:%02d:%02d",
         time.year, time.month, time.day, time.hour, time.minute, time.second);
 }
+
+//------------------------------------------------
 
 #endif // COREMATS_COMMON_H

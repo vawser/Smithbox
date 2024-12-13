@@ -87,6 +87,8 @@ public class DebugWindow
         [Display(Name = "BTL - Byte Perfect Test")] Test_BTL_BytePerfect,
         [Display(Name = "Unique Param Row ID Insert")] Test_UniqueParamRowIDs,
         [Display(Name = "FLVER2 - Byte Perfect Test")] Test_FLVER2_BytePerfect,
+
+        [Display(Name = "BHV - Read Test")] Test_BHV_File,
     }
 
     public void Display()
@@ -178,6 +180,9 @@ public class DebugWindow
                     break;
                 case SelectedDebugTab.Test_FLVER2_BytePerfect:
                     DisplayTest_FLVER2();
+                    break;
+                case SelectedDebugTab.Test_BHV_File:
+                    DisplayTest_BHV();
                     break;
             }
         }
@@ -428,5 +433,10 @@ public class DebugWindow
     private void DisplayTest_FLVER2()
     {
         Test_FLVER2_BytePerfect.Display();
+    }
+
+    private void DisplayTest_BHV()
+    {
+        Test_BHV_Read_Test.Display();
     }
 }

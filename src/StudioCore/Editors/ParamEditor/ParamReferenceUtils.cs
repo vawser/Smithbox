@@ -298,41 +298,51 @@ public static class ParamReferenceUtils
         if (currentField == null)
             return;
 
-        if (activeParam.Contains("GrassTypeParam") && (currentField == "model0Name" || currentField == "model1Name" || currentField == "simpleModelName") )
+        if (activeParam.Contains("GrassTypeParam"))
         {
-            Param.Cell? c = row?["model0Name"];
-            string modelId1 = (string)c.Value.Value;
-
-            string modelId2 = "";
-            if (Smithbox.ProjectType is ProjectType.ER)
+            if (currentField == "modelName" || currentField == "model0Name" || currentField == "model1Name" || currentField == "simpleModelName")
             {
-                c = row?["model1Name"];
-                modelId2 = (string)c.Value.Value;
-            }
-            if (Smithbox.ProjectType is ProjectType.AC6)
-            {
-                c = row?["simpleModelName"];
-                modelId2 = (string)c.Value.Value;
-            }
+                Param.Cell? c = null;
+                string modelId1 = "";
+                string modelId2 = "";
 
-            var width = ImGui.GetColumnWidth();
-
-            if (currentField == "model0Name" && modelId1 != "")
-            {
-                if (ImGui.Button($"View Model", new Vector2(width, 20)))
+                if (Smithbox.ProjectType is ProjectType.ER)
                 {
-                    EditorCommandQueue.AddCommand($"model/load/{modelId1}/Asset");
-                }
-                UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
-            }
+                    c = row?["model0Name"];
+                    modelId1 = (string)c.Value.Value;
 
-            if ((currentField == "model1Name" || currentField == "simpleModelName") && modelId2 != "")
-            {
-                if (ImGui.Button($"View Model", new Vector2(width, 20)))
-                {
-                    EditorCommandQueue.AddCommand($"model/load/{modelId2}/Asset");
+                    c = row?["model1Name"];
+                    modelId2 = (string)c.Value.Value;
                 }
-                UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+
+                if (Smithbox.ProjectType is ProjectType.AC6)
+                {
+                    c = row?["modelName"];
+                    modelId1 = (string)c.Value.Value;
+
+                    c = row?["simpleModelName"];
+                    modelId2 = (string)c.Value.Value;
+                }
+
+                var width = ImGui.GetColumnWidth();
+
+                if ((currentField == "modelName" || currentField == "model0Name") && modelId1 != "")
+                {
+                    if (ImGui.Button($"View Model", new Vector2(width, 20)))
+                    {
+                        EditorCommandQueue.AddCommand($"model/load/{modelId1}/Asset");
+                    }
+                    UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+                }
+
+                if ((currentField == "model1Name" || currentField == "simpleModelName") && modelId2 != "")
+                {
+                    if (ImGui.Button($"View Model", new Vector2(width, 20)))
+                    {
+                        EditorCommandQueue.AddCommand($"model/load/{modelId2}/Asset");
+                    }
+                    UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+                }
             }
         }
     }

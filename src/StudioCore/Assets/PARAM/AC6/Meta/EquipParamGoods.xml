@@ -80,7 +80,7 @@
     AltName="Shop Level" 
     Wiki="Level that can be sold at the store" />
     
-    <trophySGradeId 
+    <compTrophySedId 
     AltName="Achievement ID" 
     Wiki="The achievement ID this part is associated with, if any." />
     
