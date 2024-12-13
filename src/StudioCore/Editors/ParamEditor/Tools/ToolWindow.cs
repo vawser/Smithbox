@@ -480,145 +480,28 @@ public class ToolWindow
             ImGui.Separator();
 
             // Find Field Instances
-            if (ImGui.CollapsingHeader("Find Field Instances"))
+            if (ImGui.CollapsingHeader("Find Field Name Instances"))
             {
-                UIHelper.WrappedText("Display all fields and the respective params they appear in based on the search string.");
-                UIHelper.WrappedText("");
-
-                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
-                {
-                    UIHelper.WrappedText("You must select a param before you can use this action.");
-                    UIHelper.WrappedText("");
-                }
-                else
-                {
-                    UIHelper.WrappedText("Search Text:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputText("##searchString", ref Handler._idFieldInstanceFinder_SearchString, 255);
-                    UIHelper.ShowHoverTooltip("The text to search for. Matches loosely.");
-
-                    ImGui.Checkbox("Include Descriptions in Search##matchDescriptions", ref Handler._idFieldInstanceFinder_matchWiki);
-                    UIHelper.ShowHoverTooltip("Include the description text for a field in the search.");
-
-                    ImGui.Checkbox("Display Community Names in Result##useCommunityNamesInResults", ref Handler._idFieldInstanceFinder_displayCommunityName);
-                    UIHelper.ShowHoverTooltip("Display the community name for the field instead of the internal name.");
-
-                    UIHelper.WrappedText("");
-
-                    Handler.DisplayFieldInstances();
-
-                    UIHelper.WrappedText("");
-                }
-
-                if (ImGui.Button("Search##action_SearchForFieldInstances", defaultButtonSize))
-                {
-                    Handler.FieldInstanceHandler();
-                }
+                DataInstanceFinder.FieldNameFinder.Display();
             }
 
-            // Find Row ID Instances
-            if (ImGui.CollapsingHeader("Find Row ID Instances"))
+            // Find Field Value Instances
+            if (ImGui.CollapsingHeader("Find Field Value Instances"))
             {
-                UIHelper.WrappedText("Display all instances of a specificed row ID.");
-                UIHelper.WrappedText("");
-
-                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
-                {
-                    UIHelper.WrappedText("You must select a param before you can use this action.");
-                    UIHelper.WrappedText("");
-                }
-                else
-                {
-                    UIHelper.WrappedText("Row ID:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputInt("##searchRowId", ref Handler._idRowInstanceFinder_SearchID);
-                    UIHelper.ShowHoverTooltip("The row ID to search for.");
-
-                    UIHelper.WrappedText("Row Index:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputInt("##searchRowIndex", ref Handler._idRowInstanceFinder_SearchIndex);
-                    UIHelper.ShowHoverTooltip("The row index to search for. -1 for any");
-
-                    UIHelper.WrappedText("");
-
-                    Handler.DisplayRowIDInstances();
-
-                    UIHelper.WrappedText("");
-                }
-
-                if (ImGui.Button("Search##action_SearchForRowIDs", defaultButtonSize))
-                {
-                    Handler.RowIDInstanceHandler();
-                }
+                DataInstanceFinder.FieldValueFinder.Display();
             }
 
             // Find Row Name Instances
             if (ImGui.CollapsingHeader("Find Row Name Instances"))
             {
-                UIHelper.WrappedText("Display all instances of a specificed row name.");
-                UIHelper.WrappedText("");
-
-                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
-                {
-                    UIHelper.WrappedText("You must select a param before you can use this action.");
-                    UIHelper.WrappedText("");
-                }
-                else
-                {
-                    UIHelper.WrappedText("Search Text:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputText("##searchRowName", ref Handler._nameRowInstanceFinder_SearchName, 255);
-                    UIHelper.ShowHoverTooltip("The row name to search for. Matches loosely.");
-
-                    UIHelper.WrappedText("Row Index:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputInt("##searchRowNameIndex", ref Handler._nameRowInstanceFinder_SearchIndex);
-                    UIHelper.ShowHoverTooltip("The row index to search for. -1 for any");
-
-                    UIHelper.WrappedText("");
-
-                    Handler.DisplayRowNameInstances();
-
-                    UIHelper.WrappedText("");
-                }
-
-                if (ImGui.Button("Search##action_SearchForRowNames", defaultButtonSize))
-                {
-                    Handler.RowNameInstanceHandler();
-                }
+                DataInstanceFinder.RowNameFinder.Display();
             }
 
-            // Find Row Value Instances
-            if (ImGui.CollapsingHeader("Find Row Value Instances"))
+            // Find Row ID Instances
+            if (ImGui.CollapsingHeader("Find Row ID Instances"))
             {
-                UIHelper.WrappedText("Display all instances of a specified value.");
-                UIHelper.WrappedText("");
-
-                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
-                {
-                    UIHelper.WrappedText("You must select a param before you can use this action.");
-                    UIHelper.WrappedText("");
-                }
-                else
-                {
-                    UIHelper.WrappedText("Value:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputText("##searchValue", ref Handler._searchValue, 255);
-                    UIHelper.ShowHoverTooltip("The value to search for.");
-
-                    ImGui.Checkbox("Initial Match Only", ref CFG.Current.Param_Toolbar_FindValueInstances_InitialMatchOnly);
-                    UIHelper.ShowHoverTooltip("Only display the first match within a param, instead of all matches.");
-                    UIHelper.WrappedText("");
-
-                    Handler.DisplayRowValueInstances();
-
-                    if (ImGui.Button("Search##action_SearchForRowValues", defaultButtonSize))
-                    {
-                        Handler.RowValueInstanceHandler();
-                    }
-                }
+                DataInstanceFinder.RowIDFinder.Display();
             }
-
         }
 
         ImGui.End();
