@@ -396,20 +396,6 @@ public class ActionHandler
                 _idFieldInstanceFinder_Results = GetFieldInstanceResults(_idFieldInstanceFinder_SearchString);
 
                 _idFieldInstanceFinder_Results.Sort();
-
-                if (_idFieldInstanceFinder_Results.Count > 0)
-                {
-                    var message = $"Found fields containing {_idFieldInstanceFinder_SearchString} string in the following params:\n";
-                    foreach (var line in _idFieldInstanceFinder_Results)
-                        message += $"  {line.ParamName}: {line.FieldInternalName}\n";
-                    TaskLogs.AddLog(message,
-                        LogLevel.Information, LogPriority.Low);
-                }
-                else
-                {
-                    TaskLogs.AddLog($"No fields found containing {_idRowInstanceFinder_SearchID} string.",
-                        LogLevel.Information, LogPriority.High);
-                }
             }
         }
     }
@@ -482,25 +468,6 @@ public class ActionHandler
         return output;
     }
 
-    public class FieldInstanceResult : IComparable<FieldInstanceResult>
-    {
-        public string FieldInternalName;
-        public string FieldDisplayName;
-        public string ParamName;
-
-        public FieldInstanceResult(string fieldInternalName, string fieldDisplayName, string paramName)
-        {
-            FieldInternalName = fieldInternalName;
-            FieldDisplayName = fieldDisplayName;
-            ParamName = paramName;
-        }
-
-        public int CompareTo(FieldInstanceResult other)
-        {
-            return other.ParamName.CompareTo(this.ParamName);
-        }
-    }
-
     public void DisplayFieldInstances()
     {
         if (_idFieldInstanceFinder_Results.Count > 0)
@@ -528,6 +495,25 @@ public class ActionHandler
             }
 
             ImGui.EndChild();
+        }
+    }
+
+    public class FieldInstanceResult : IComparable<FieldInstanceResult>
+    {
+        public string FieldInternalName;
+        public string FieldDisplayName;
+        public string ParamName;
+
+        public FieldInstanceResult(string fieldInternalName, string fieldDisplayName, string paramName)
+        {
+            FieldInternalName = fieldInternalName;
+            FieldDisplayName = fieldDisplayName;
+            ParamName = paramName;
+        }
+
+        public int CompareTo(FieldInstanceResult other)
+        {
+            return this.ParamName.CompareTo(other.ParamName);
         }
     }
 
@@ -604,6 +590,115 @@ public class ActionHandler
             }
 
             ImGui.EndChild();
+        }
+    }
+
+    // Find Row Name Instances
+    public string _nameRowInstanceFinder_SearchName = "";
+    public string _nameRowInstanceFinder_CachedSearchName = "";
+    public int _nameRowInstanceFinder_SearchIndex = -1;
+    public List<RowNameResult> _nameRowInstanceFinder_Results = new();
+
+    public void RowNameInstanceHandler()
+    {
+        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
+
+        if (selectedParam.ActiveParamExists())
+        {
+            if (ParamBank.PrimaryBank.Params != null)
+            {
+                _nameRowInstanceFinder_CachedSearchName = _nameRowInstanceFinder_SearchName;
+                _nameRowInstanceFinder_Results = GetParamsWithRowName(_nameRowInstanceFinder_SearchName, _nameRowInstanceFinder_SearchIndex);
+            }
+        }
+    }
+
+    public List<RowNameResult> GetParamsWithRowName(string searchString, int index)
+    {
+        List<RowNameResult> output = new();
+
+        var searchComponents = searchString.Split(" ");
+
+        foreach (var p in ParamBank.PrimaryBank.Params)
+        {
+            for (var i = 0; i < p.Value.Rows.Count; i++)
+            {
+                var r = p.Value.Rows[i];
+
+                bool addResult = false;
+
+                var rowName = "";
+
+                foreach (var entry in searchComponents)
+                {
+                    if (r.Name != "" || r.Name != null)
+                    {
+                        var rowNameComponents = r.Name.Split(" ");
+
+                        rowName = r.Name;
+
+                        foreach (var rowNameEntry in rowNameComponents)
+                        {
+                            if (rowNameEntry.Contains(entry) && (index == -1 || index == i))
+                            {
+                                addResult = true;
+                            }
+                        }
+                    }
+                }
+
+                if(addResult)
+                {
+                    var newResult = new RowNameResult(rowName, r.ID, i, p.Key);
+                    output.Add(newResult);
+                }
+            }
+        }
+
+        return output;
+    }
+
+    public void DisplayRowNameInstances()
+    {
+        if (_nameRowInstanceFinder_Results.Count > 0)
+        {
+            var Size = ImGui.GetWindowSize();
+            float EditX = (Size.X / 100) * 95;
+            float EditY = (Size.Y / 100) * 25;
+
+            ImGui.BeginChild("##rowNameResultSection", new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+            UIHelper.WrappedText($"ID {_nameRowInstanceFinder_CachedSearchName}: {_nameRowInstanceFinder_Results.Count} matches");
+
+            foreach (var result in _nameRowInstanceFinder_Results)
+            {
+                if (ImGui.Selectable($"{result.ParamName}: {result.RowName}##RowNameSearcher"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/-1/{result.ParamName}/{result.RowID}");
+                }
+            }
+
+            ImGui.EndChild();
+        }
+    }
+
+    public class RowNameResult : IComparable<RowNameResult>
+    {
+        public string RowName;
+        public int RowID;
+        public int RowIndex;
+        public string ParamName;
+
+        public RowNameResult(string rowName, int rowID, int rowIndex, string paramName)
+        {
+            RowName = rowName;
+            RowID = rowID;
+            RowIndex = rowIndex;
+            ParamName = paramName;
+        }
+
+        public int CompareTo(RowNameResult other)
+        {
+            return this.ParamName.CompareTo(other.ParamName);
         }
     }
 

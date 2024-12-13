@@ -208,138 +208,7 @@ public class ToolWindow
                 }
             }
 
-            // Merge Params
-            if (ImGui.CollapsingHeader("Merge Params"))
-            {
-                UIHelper.WrappedText("Use this to merge a target regulation.bin into your current project.");
-                UIHelper.WrappedText("");
-                UIHelper.WrappedText("Merging will bring all modified param rows from the target regulation into your project.");
-                UIHelper.WrappedText("");
-                UIHelper.WrappedText("This process is 'simple', and thus may produce a broken mod if you attempt to merge complex mods.");
-                UIHelper.WrappedText("");
-
-                UIHelper.WrappedText("Target Regulation");
-                UIHelper.ShowHoverTooltip("This is the target regulation.bin you wish to merge.");
-
-                ImGui.SetNextItemWidth(inputBoxSize.X);
-                ImGui.InputText("##targetRegulationPath", ref Handler.targetRegulationPath, 255);
-                ImGui.SameLine();
-                if (ImGui.Button($@"{ForkAwesome.FileO}"))
-                {
-                    if (PlatformUtils.Instance.OpenFileDialog("Select target regulation.bin...", Handler.allParamTypes, out var path))
-                    {
-                        Handler.targetRegulationPath = path;
-                    }
-                }
-
-                ImGui.Checkbox("Unique Only##targetUniqueOnly", ref Handler.targetUniqueOnly);
-                UIHelper.ShowHoverTooltip("Only merge in unique param rows from the target regulation. If disabled, all modified rows, even if not unique, will be merged.");
-                UIHelper.WrappedText("");
-
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-                {
-                    UIHelper.WrappedText("Target Loose Params");
-                    UIHelper.ShowHoverTooltip("This is the target loose param folder you wish to merge.");
-
-                    ImGui.SetNextItemWidth(inputBoxSize.X);
-                    ImGui.InputText("##targetLooseParamPath", ref Handler.targetLooseParamPath, 255);
-                    ImGui.SameLine();
-                    if (ImGui.Button($@"{ForkAwesome.FileO}"))
-                    {
-                        if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
-                        {
-                            Handler.targetLooseParamPath = path;
-                        }
-                    }
-                    UIHelper.WrappedText("");
-
-                    UIHelper.WrappedText("Target Regulation");
-                    UIHelper.ShowHoverTooltip("This is the target enemy param you wish to merge.");
-
-                    ImGui.SetNextItemWidth(inputBoxSize.X);
-                    ImGui.InputText("##targetEnemyParamPath", ref Handler.targetEnemyParamPath, 255);
-                    ImGui.SameLine();
-                    if (ImGui.Button($@"{ForkAwesome.FileO}"))
-                    {
-                        if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
-                        {
-                            Handler.targetEnemyParamPath = path;
-                        }
-                    }
-                    UIHelper.WrappedText("");
-                }
-
-                if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
-                {
-                    Handler.MergeParamHandler();
-                }
-            }
-
-            // Pin Groups
-            if (ImGui.CollapsingHeader("Pin Groups"))
-            {
-                PinGroupHandler.Display();
-            }
-
-            // Param Reloader
-            if (ParamMemoryTools.IsParamReloaderSupported())
-            {
-                if (ImGui.CollapsingHeader("Param Reloader"))
-                {
-                    UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
-                    UIHelper.WrappedText("");
-
-                    if (ImGui.Button("Reload Current Param", defaultButtonSize))
-                    {
-                        ParamMemoryTools.ReloadCurrentParam();
-                    }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
-
-                    if (ImGui.Button("Reload All Params", defaultButtonSize))
-                    {
-                        ParamMemoryTools.ReloadAllParams();
-                    }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
-                }
-            }
-
-            // Item Gib
-            if (Smithbox.ProjectType is ProjectType.DS3)
-            {
-                if (ImGui.CollapsingHeader("Item Gib"))
-                {
-                    UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
-                    UIHelper.WrappedText("");
-
-                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
-
-                    if (activeParam == "EquipParamGoods")
-                    {
-                        UIHelper.WrappedText("Number of Spawned Items");
-                        ImGui.InputInt("##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
-                    }
-                    if (activeParam == "EquipParamWeapon")
-                    {
-                        UIHelper.WrappedText("Reinforcement of Spawned Weapon");
-                        ImGui.InputInt("##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
-
-                        if (Smithbox.ProjectType is ProjectType.DS3)
-                        {
-                            if (ParamMemoryTools.SpawnWeaponLevel > 10)
-                            {
-                                ParamMemoryTools.SpawnWeaponLevel = 10;
-                            }
-                        }
-                    }
-
-                    UIHelper.WrappedText("");
-                    if (ImGui.Button("Give Item", defaultButtonSize))
-                    {
-                        ParamMemoryTools.GiveItem();
-                    }
-
-                }
-            }
+            ImGui.Separator();
 
             // Mass Edit Window
             if (ImGui.CollapsingHeader("Mass Edit - Window"))
@@ -473,7 +342,142 @@ public class ToolWindow
                 }
             }
 
-            ImGui.Separator(); 
+            ImGui.Separator();
+
+            // Merge Params
+            if (ImGui.CollapsingHeader("Merge Params"))
+            {
+                UIHelper.WrappedText("Use this to merge a target regulation.bin into your current project.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedText("Merging will bring all modified param rows from the target regulation into your project.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedText("This process is 'simple', and thus may produce a broken mod if you attempt to merge complex mods.");
+                UIHelper.WrappedText("");
+
+                UIHelper.WrappedText("Target Regulation");
+                UIHelper.ShowHoverTooltip("This is the target regulation.bin you wish to merge.");
+
+                ImGui.SetNextItemWidth(inputBoxSize.X);
+                ImGui.InputText("##targetRegulationPath", ref Handler.targetRegulationPath, 255);
+                ImGui.SameLine();
+                if (ImGui.Button($@"{ForkAwesome.FileO}"))
+                {
+                    if (PlatformUtils.Instance.OpenFileDialog("Select target regulation.bin...", Handler.allParamTypes, out var path))
+                    {
+                        Handler.targetRegulationPath = path;
+                    }
+                }
+
+                ImGui.Checkbox("Unique Only##targetUniqueOnly", ref Handler.targetUniqueOnly);
+                UIHelper.ShowHoverTooltip("Only merge in unique param rows from the target regulation. If disabled, all modified rows, even if not unique, will be merged.");
+                UIHelper.WrappedText("");
+
+                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                {
+                    UIHelper.WrappedText("Target Loose Params");
+                    UIHelper.ShowHoverTooltip("This is the target loose param folder you wish to merge.");
+
+                    ImGui.SetNextItemWidth(inputBoxSize.X);
+                    ImGui.InputText("##targetLooseParamPath", ref Handler.targetLooseParamPath, 255);
+                    ImGui.SameLine();
+                    if (ImGui.Button($@"{ForkAwesome.FileO}"))
+                    {
+                        if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
+                        {
+                            Handler.targetLooseParamPath = path;
+                        }
+                    }
+                    UIHelper.WrappedText("");
+
+                    UIHelper.WrappedText("Target Regulation");
+                    UIHelper.ShowHoverTooltip("This is the target enemy param you wish to merge.");
+
+                    ImGui.SetNextItemWidth(inputBoxSize.X);
+                    ImGui.InputText("##targetEnemyParamPath", ref Handler.targetEnemyParamPath, 255);
+                    ImGui.SameLine();
+                    if (ImGui.Button($@"{ForkAwesome.FileO}"))
+                    {
+                        if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
+                        {
+                            Handler.targetEnemyParamPath = path;
+                        }
+                    }
+                    UIHelper.WrappedText("");
+                }
+
+                if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
+                {
+                    Handler.MergeParamHandler();
+                }
+            }
+
+            // Pin Groups
+            if (ImGui.CollapsingHeader("Pin Groups"))
+            {
+                PinGroupHandler.Display();
+            }
+
+            // Param Reloader
+            if (ParamMemoryTools.IsParamReloaderSupported())
+            {
+                if (ImGui.CollapsingHeader("Param Reloader"))
+                {
+                    UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
+                    UIHelper.WrappedText("");
+
+                    if (ImGui.Button("Reload Current Param", defaultButtonSize))
+                    {
+                        ParamMemoryTools.ReloadCurrentParam();
+                    }
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+
+                    if (ImGui.Button("Reload All Params", defaultButtonSize))
+                    {
+                        ParamMemoryTools.ReloadAllParams();
+                    }
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+                }
+            }
+
+            // Item Gib
+            if (Smithbox.ProjectType is ProjectType.DS3)
+            {
+                if (ImGui.CollapsingHeader("Item Gib"))
+                {
+                    UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
+                    UIHelper.WrappedText("");
+
+                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+
+                    if (activeParam == "EquipParamGoods")
+                    {
+                        UIHelper.WrappedText("Number of Spawned Items");
+                        ImGui.InputInt("##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
+                    }
+                    if (activeParam == "EquipParamWeapon")
+                    {
+                        UIHelper.WrappedText("Reinforcement of Spawned Weapon");
+                        ImGui.InputInt("##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
+
+                        if (Smithbox.ProjectType is ProjectType.DS3)
+                        {
+                            if (ParamMemoryTools.SpawnWeaponLevel > 10)
+                            {
+                                ParamMemoryTools.SpawnWeaponLevel = 10;
+                            }
+                        }
+                    }
+
+                    UIHelper.WrappedText("");
+                    if (ImGui.Button("Give Item", defaultButtonSize))
+                    {
+                        ParamMemoryTools.GiveItem();
+                    }
+
+                }
+            }
+
+            ImGui.Separator();
 
             // Find Field Instances
             if (ImGui.CollapsingHeader("Find Field Instances"))
@@ -491,7 +495,7 @@ public class ToolWindow
                     UIHelper.WrappedText("Search Text:");
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
                     ImGui.InputText("##searchString", ref Handler._idFieldInstanceFinder_SearchString, 255);
-                    UIHelper.ShowHoverTooltip("The field string to search for.");
+                    UIHelper.ShowHoverTooltip("The text to search for. Matches loosely.");
 
                     ImGui.Checkbox("Include Descriptions in Search##matchDescriptions", ref Handler._idFieldInstanceFinder_matchWiki);
                     UIHelper.ShowHoverTooltip("Include the description text for a field in the search.");
@@ -551,7 +555,7 @@ public class ToolWindow
             // Find Row Name Instances
             if (ImGui.CollapsingHeader("Find Row Name Instances"))
             {
-                UIHelper.WrappedText("Display all instances of a specificed row ID.");
+                UIHelper.WrappedText("Display all instances of a specificed row name.");
                 UIHelper.WrappedText("");
 
                 if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
@@ -561,26 +565,26 @@ public class ToolWindow
                 }
                 else
                 {
-                    UIHelper.WrappedText("Row ID:");
+                    UIHelper.WrappedText("Search Text:");
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputInt("##searchRowId", ref Handler._idRowInstanceFinder_SearchID);
-                    UIHelper.ShowHoverTooltip("The row ID to search for.");
+                    ImGui.InputText("##searchRowName", ref Handler._nameRowInstanceFinder_SearchName, 255);
+                    UIHelper.ShowHoverTooltip("The row name to search for. Matches loosely.");
 
                     UIHelper.WrappedText("Row Index:");
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
-                    ImGui.InputInt("##searchRowIndex", ref Handler._idRowInstanceFinder_SearchIndex);
+                    ImGui.InputInt("##searchRowNameIndex", ref Handler._nameRowInstanceFinder_SearchIndex);
                     UIHelper.ShowHoverTooltip("The row index to search for. -1 for any");
 
                     UIHelper.WrappedText("");
 
-                    Handler.DisplayRowIDInstances();
+                    Handler.DisplayRowNameInstances();
 
                     UIHelper.WrappedText("");
                 }
 
-                if (ImGui.Button("Search##action_SearchForRowIDs", defaultButtonSize))
+                if (ImGui.Button("Search##action_SearchForRowNames", defaultButtonSize))
                 {
-                    Handler.RowIDInstanceHandler();
+                    Handler.RowNameInstanceHandler();
                 }
             }
 

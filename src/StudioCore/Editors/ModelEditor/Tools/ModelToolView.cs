@@ -158,6 +158,8 @@ public class ModelToolView
                 }
             }
 
+            ImGui.Separator();
+
             // FLVER Groups
             if (ImGui.CollapsingHeader("Groups: FLVER"))
             {
@@ -204,6 +206,8 @@ public class ModelToolView
                 AllSkeletonBoneGroups.DisplayConfiguration(Screen);
             }
 
+            ImGui.Separator();
+
             // Global Model Search
             if (ImGui.CollapsingHeader("Global Model Search"))
             {
@@ -248,6 +252,7 @@ public class ModelToolView
                     }
                 }
             }
+
         }
 
         ImGui.End();

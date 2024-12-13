@@ -55,84 +55,6 @@ public class ToolWindow
             var defaultButtonSize = new Vector2(windowWidth, 32);
             var thinButtonSize = new Vector2(windowWidth, 24);
 
-
-            ///--------------------
-            /// Global Property Search
-            ///--------------------
-            if (ImGui.CollapsingHeader("Global Property Search"))
-            {
-                if(!Screen.MapQueryHandler.Bank.MapBankInitialized && !Screen.MapQueryHandler.UserLoadedData)
-                {
-                    if(ImGui.Button("Load Map Data", defaultButtonSize))
-                    {
-                        Screen.MapQueryHandler.Setup();
-                    }
-                }
-
-                Screen.MapQueryHandler.IsOpen = true;
-                Screen.MapQueryHandler.DisplayInput();
-                Screen.MapQueryHandler.DisplayResults();
-            }
-            else
-            {
-                Screen.MapQueryHandler.IsOpen = false;
-            }
-
-            ///--------------------
-            /// Global Property Edit
-            ///--------------------
-            /*
-            if (ImGui.CollapsingHeader("Global Property Edit"))
-            {
-                Screen.MapQueryEditHandler.IsOpen = true;
-                Screen.MapQueryEditHandler.DisplayInput();
-                Screen.MapQueryEditHandler.DisplayEditStaging();
-            }
-            else
-            {
-                Screen.MapQueryEditHandler.IsOpen = false;
-            }
-            */
-
-            ///--------------------
-            /// Local Property Search
-            ///--------------------
-            if(FocusLocalPropertySearch)
-            {
-                FocusLocalPropertySearch = false;
-                ImGui.SetNextItemOpen(true);
-            }
-            if (ImGui.CollapsingHeader("Local Property Search"))
-            {
-                Screen.PropSearch.Display();
-            }
-
-            ///--------------------
-            /// Selection Groups
-            ///--------------------
-            if (ImGui.CollapsingHeader("Selection Groups"))
-            {
-                Screen.SelectionGroupEditor.Display();
-            }
-
-            ///--------------------
-            /// Import Prefab
-            ///--------------------
-            if (ImGui.CollapsingHeader("Import Prefab"))
-            {
-                Screen.PrefabEditor.ImportPrefabMenu();
-                Screen.PrefabEditor.PrefabTree();
-            }
-
-            ///--------------------
-            /// Export Prefab
-            ///--------------------
-            if (ImGui.CollapsingHeader("Export Prefab"))
-            {
-                Screen.PrefabEditor.ExportPrefabMenu();
-                Screen.PrefabEditor.PrefabTree();
-            }
-
             ///--------------------
             /// Create
             ///--------------------
@@ -962,6 +884,87 @@ public class ToolWindow
                     Handler.ApplyMovetoGrid();
                 }
             }
+
+            ImGui.Separator();
+
+            ///--------------------
+            /// Import Prefab
+            ///--------------------
+            if (ImGui.CollapsingHeader("Import Prefab"))
+            {
+                Screen.PrefabEditor.ImportPrefabMenu();
+                Screen.PrefabEditor.PrefabTree();
+            }
+
+            ///--------------------
+            /// Export Prefab
+            ///--------------------
+            if (ImGui.CollapsingHeader("Export Prefab"))
+            {
+                Screen.PrefabEditor.ExportPrefabMenu();
+                Screen.PrefabEditor.PrefabTree();
+            }
+
+            ///--------------------
+            /// Selection Groups
+            ///--------------------
+            if (ImGui.CollapsingHeader("Selection Groups"))
+            {
+                Screen.SelectionGroupEditor.Display();
+            }
+
+            ImGui.Separator();
+
+            ///--------------------
+            /// Local Property Search
+            ///--------------------
+            if (FocusLocalPropertySearch)
+            {
+                FocusLocalPropertySearch = false;
+                ImGui.SetNextItemOpen(true);
+            }
+            if (ImGui.CollapsingHeader("Local Property Search"))
+            {
+                Screen.PropSearch.Display();
+            }
+
+            ///--------------------
+            /// Global Property Search
+            ///--------------------
+            if (ImGui.CollapsingHeader("Global Property Search"))
+            {
+                if (!Screen.MapQueryHandler.Bank.MapBankInitialized && !Screen.MapQueryHandler.UserLoadedData)
+                {
+                    if (ImGui.Button("Load Map Data", defaultButtonSize))
+                    {
+                        Screen.MapQueryHandler.Setup();
+                    }
+                }
+
+                Screen.MapQueryHandler.IsOpen = true;
+                Screen.MapQueryHandler.DisplayInput();
+                Screen.MapQueryHandler.DisplayResults();
+            }
+            else
+            {
+                Screen.MapQueryHandler.IsOpen = false;
+            }
+
+            ///--------------------
+            /// Global Property Edit
+            ///--------------------
+            /*
+            if (ImGui.CollapsingHeader("Global Property Edit"))
+            {
+                Screen.MapQueryEditHandler.IsOpen = true;
+                Screen.MapQueryEditHandler.DisplayInput();
+                Screen.MapQueryEditHandler.DisplayEditStaging();
+            }
+            else
+            {
+                Screen.MapQueryEditHandler.IsOpen = false;
+            }
+            */
         }
 
         ImGui.End();
