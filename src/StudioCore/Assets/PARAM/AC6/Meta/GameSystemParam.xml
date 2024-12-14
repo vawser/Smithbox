@@ -4,11 +4,11 @@
   Wiki="Determines various parameters related to game systems and the player." />
   
   <Field>
-    <baseToughnessRecoverTime 
+    <BaseToughnessRecoverTime 
     AltName="Toughness Recovery Time" 
     Wiki="The base recovery rate of toughness. In seconds." />
     
-    <chrEventTrun_byLeft90 
+    <ChrEventTrun_byLeft90 
     AltName="Rotation Animation ID: Left 90°" 
     Wiki="The animation ID to use for the specified character rotation." />
     
@@ -24,7 +24,7 @@
     AltName="Rotation Animation ID: Right 180°" 
     Wiki="The animation ID to use for the specified character rotation." />
     
-    <chrEventTrun_90TurnStartAngle 
+    <ChrEventTrun_90TurnStartAngle 
     AltName="Rotation Animation Start Angle: 90°" 
     Wiki="The starting angle for the specified character rotation when it is applied. If the event starts at an angle smaller than this angle, a system turn will occur." />
     
@@ -63,7 +63,7 @@
     Wiki="The SpEffect ID given when using the attribute reallocation menu at a ritual corpse." 
     Refs="SpEffectParam" />
     
-    <CultDeadSpEffectId_StatusReroll
+    <CultDeadSpEffectId_DeadLevelReset
     AltName="Ritual Corpse: SpEffect ID - Hollowing Reset"
     Wiki="The SpEffect ID given when using the hollowing reset menu at a ritual corpse." 
     Refs="SpEffectParam" />
@@ -73,23 +73,272 @@
     Wiki="The SpEffect ID given when using the sin atonement menu at a ritual corpse." 
     Refs="SpEffectParam" />
     
+    <CultDeadSpEffectId_NpcWhiteGhost
+    AltName="Ritual Corpse: SpEffect ID - Spirit Summon"
+    Wiki="The SpEffect ID given when using the spirit summon menu at a ritual corpse." 
+    Refs="SpEffectParam" />
     
-    <recoverBelowMaxHpCompletionNoticeSpEffectId AltName="Recovery below HP Max - Notification SpEffect ID" Wiki="ID of the special effect that notifies that Recovery below HP maximum is completed. Mainly used for multi synchronization." />
-    <estusFlaskRecovery_AbsorptionProductionSfxId_byHp AltName="HP Flask - Absorption SFX ID for Intruder Flask Restoration" Wiki="Absorption effect SFXID when recovering the number of times the HP Est bottle has been used when defeating an intruder" ParticleAlias="" />
-    <estusFlaskRecovery_AbsorptionProductionSfxId_byMp AltName="FP Flask - Absorption SFX ID for Intruder Flask Restoration" Wiki="Absorption effect SFXID when recovering the number of times the MP Est bottle has been used when defeating an intruder" ParticleAlias="" />
-    <respawnSpecialEffectActiveCheckerSpEffectId AltName="Resurrection - Notification SpEffect ID" Wiki="ID of the special effect that notifies that the resurrection special effect has been activated. Mainly used for multi synchronization." />
-    <estusFlaskRecovery_AddEstusTime AltName="Flask - Absorption SFX Playback Time" Wiki="Time from the start of est absorption SFX playback to the start of est addition processing" />
-    <defeatMultiModeEnemyOfSoulCorrectRate_byHost AltName="Rune Absorption Multiplier - Normal Enemy - Host" Wiki="Correction value of the amount of soul acquired by the host when defeating a normal enemy in multiplayer" />
-    <defeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost AltName="Rune Absorption Multiplier - Normal Enemy - Friendly Phantom" Wiki="Correction value of the amount of soul acquired by cooperating spirits when defeating a normal enemy in multiplayer" />
-    <defeatMultiModeBossOfSoulCorrectRate_byHost AltName="Rune Absorption Multiplier - Boss - Host" Wiki="Correction value of the amount of soul acquired by the host when defeating the boss in multiplayer" />
-    <defeatMultiModeBossOfSoulCorrectRate_byTeamGhost AltName="Rune Absorption Multiplier - Boss - Friendly Phantom" Wiki="Correction value of the amount of soul acquired when the boss is defeated in multiplayer" />
-    <enemyHpGaugeScreenOffset_byUp AltName="Enemy HP Gauge - Cutoff Pixel Offset" Wiki="Offset value [pixel] (FullHD standard) that fits in the screen when the enemy's HP gauge is cut off on the screen" />
-    <playRegionCollectDist AltName="Play Region Collection Distance" Wiki="Collection radius of the play area around the PC" />
-    <enemyDetectionSpEffect_ShootBulletDummypolyId AltName="Enemy Detection - Shoot Bullet Dummy Poly ID" Wiki="Detect bullet firing position Damipoli ID" />
-    <photoModeMoveSpeed AltName="Photo Mode - Move Speed" />
-    <photoModeTurnSpeed AltName="Photo Mode - Turn Speed" />
-    <photoModeMoveDampening AltName="Photo Mode - Move Dampening" />
-    <photoModeTurnDampening AltName="Photo Mode - Turn Dampening" />
-    <photoModeSpeedMult AltName="Photo Mode - Speed Multiplier" />
+    <CultDeadSpEffectId_Bomb
+    AltName="Ritual Corpse: SpEffect ID - Bomb"
+    Wiki="The SpEffect ID given when using the bomb action at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultDeadSpEffectId_NoInvasion
+    AltName="Ritual Corpse: SpEffect ID - Block Invasion"
+    Wiki="The SpEffect ID given when using the block invasion action at a ritual corpse." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_LevelUp
+    AltName="Ritual Sword: SpEffect ID - Level-up"
+    Wiki="The SpEffect ID for the level-up menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_StatusReroll
+    AltName="Ritual Sword: SpEffect ID - Attribute Reallocation"
+    Wiki="The SpEffect ID for the attribute reallocation menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_DeadLevelReset
+    AltName="Ritual Sword: SpEffect ID - Hollowing Reset"
+    Wiki="The SpEffect ID for the hollowing reset menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_Atonement
+    AltName="Ritual Sword: SpEffect ID - Atonement"
+    Wiki="The SpEffect ID for the sin atonement menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_NpcWhiteGhost
+    AltName="Ritual Sword: SpEffect ID - Spirit Summon"
+    Wiki="The SpEffect ID for the spirit summon menu with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_Bomb
+    AltName="Ritual Sword: SpEffect ID - Bomb"
+    Wiki="The SpEffect ID for the bomb action with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <CultSwordItemId_NoInvasion
+    AltName="Ritual Sword: SpEffect ID - Block Invasion"
+    Wiki="The SpEffect ID for the block invasion action with a ritual sword." 
+    Refs="SpEffectParam" />
+    
+    <ImpossibleCultDialogId_LevelUp
+    AltName="Ritual Action: Dialog ID - Level-up"
+    Wiki="The dialogue ID to use when using the level-up action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_StatusReroll
+    AltName="Ritual Action: Dialog ID - Attribute Reallocation"
+    Wiki="The dialogue ID to use when using the attribute reallocation action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_DeadLevelReset
+    AltName="Ritual Action: Dialog ID - Hollowing Reset"
+    Wiki="The dialogue ID to use when using the hollowing reset action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_Atonement
+    AltName="Ritual Action: Dialog ID - Atonement"
+    Wiki="The dialogue ID to use when using the atonement action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_NpcWhiteGhost_MaxChr
+    AltName="Ritual Action: Dialog ID - Spirit Summon (No Slots)"
+    Wiki="The dialogue ID to use when using the spirit summon action with a ritual implement, with no available summon slots." />
+    
+    <ImpossibleCultDialogId_NpcWhiteGhost_AreaOut
+    AltName="Ritual Action: Dialog ID - Spirit Summon (Outside Area)"
+    Wiki="The dialogue ID to use when using the spirit summon action with a ritual implement, when outside of the summoning area." />
+    
+    <ImpossibleCultDialogId_NpcWhiteGhost_AreaClear
+    AltName="Ritual Action: Dialog ID - Spirit Summon (Area Clear)"
+    Wiki="The dialogue ID to use when using the spirit summon action with a ritual implement, when an area is cleared." />
+    
+    <ImpossibleCultDialogId_Bomb
+    AltName="Ritual Action: Dialog ID - Bomb"
+    Wiki="The dialogue ID to use when using the bomb action with a ritual implement." />
+    
+    <ImpossibleCultDialogId_NoInvasion
+    AltName="Ritual Action: Dialog ID - Block Invasion"
+    Wiki="The dialogue ID to use when using the block invasion action with a ritual implement." />
+    
+    <AcquittalTargetNpcEventFlagId
+    AltName="Acquittal: Flag ID"
+    Wiki="The event flag ID to hold whether a NPC has forgotten a player's sin." 
+    FlagAlias="" />
+    
+    <ActiveCultAtonementEventFlagId
+    AltName="Atonement: Flag ID"
+    Wiki="The event flag ID to hold whether the player has performed the atonement ritual." 
+    FlagAlias="" />
+    
+    <RecoverBelowMaxHpCompletionNoticeSpEffectId
+    AltName="Notification SpEffect ID: Recovery when HP is below Max"
+    Wiki="The notification SpEffect ID to use when the 'Recovery when HP is below maximum' SpEffect is completed."
+    Refs="SpEffectParam" />
+    
+    <EstusFlaskRecovery_AbsorptionProductionSfxId_byHp
+    AltName="HP Flask Gain: Particle ID"
+    Wiki="The absorption SFX ID to use when a HP flask is gained." 
+    ParticleAlias="" />
+    
+    <EstusFlaskRecovery_AbsorptionProductionSfxId_byMp
+    AltName="MP Flask Gain: Particle ID"
+    Wiki="The absorption SFX ID to use when a MP flask is gained." 
+    ParticleAlias="" />
+    
+    <RespawnSpecialEffectActiveCheckerSpEffectId
+    AltName="Notification SpEffect ID: Resurrection Activation"
+    Wiki="The notification SpEffect ID to use when the 'Resurrection' SpEffect is completed. Mainly used for multiplayer sync."
+    Refs="SpEffectParam" />
+    
+    <DefeatHostilityGhostOfSoulCorrectRate_byHost
+    AltName="Host - Soul Absorption %: Intruder"
+    Wiki="The soul absorption multiplier to use when defeating an intruder as the host." />
+    
+    <DefeatHostilityGhostOfSoulCorrectRate_byTeamGhost
+    AltName="Client - Soul Absorption %: Intruder"
+    Wiki="The soul absorption multiplier to use when defeating an intruder as a client." />
+    
+    <DefeatMultiModeEnemyOfSoulCorrectRate_byHost
+    AltName="Host - Soul Absorption %: Enemy"
+    Wiki="The soul absorption multiplier to use when defeating an enemy as the host in a multiplayer session." />
+    
+    <DefeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost
+    AltName="Client - Soul Absorption %: Enemy"
+    Wiki="The soul absorption multiplier to use when defeating an enemy as a client in a multiplayer session." />
+    
+    <DefeatMultiModeBossOfSoulCorrectRate_byHost
+    AltName="Host - Soul Absorption %: Boss"
+    Wiki="The soul absorption multiplier to use when defeating a boss as the host in a multiplayer session." />
+    
+    <DefeatMultiModeBossOfSoulCorrectRate_byTeamGhost
+    AltName="Client - Soul Absorption %: Boss"
+    Wiki="The soul absorption multiplier to use when defeating a boss as a client in a multiplayer session." />
+    
+    <EnemyHpGaugeScreenOffset_byUp
+    AltName="Enemy HP Gauge: Screen Offset"
+    Wiki="The offset value in pixels for screen adjustments if the enemy HP gauge covers the entire screen (FullHD standard)." />
+    
+    <pad_01
+    AltName=""
+    Padding="" />
+    
+    <EnemyDetectionSpEffect_ShootBulletDummypolyId
+    AltName="Enemy Detection: Bullet Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the emitted bullet from the enemy detection SpEffect." />
+    
+    <EnemyDetectionSpEffect_MaxDetectionNum
+    AltName="Enemy Detection: Maximum Detection Count"
+    Wiki="The maximum number of enemies that can be detected at once by the enemy detection SpEffect." />
+    
+    <EnemyDetectionSpEffect_MaxDetectionLength
+    AltName="Enemy Detection: Maximum Detection Distance"
+    Wiki="The maximum distance at which enemies can be detected at once by the enemy detection SpEffect." />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopHost
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Default)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopSign_None
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Unaligned)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopSign_Umbasa
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Sun Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopSign_Berserker
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Berserker Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopSign_Sinners
+    AltName="Enemy Detection: Bullet ID - Co-operator Sign (Sinner Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byCoopRing_RedHunter
+    AltName="Enemy Detection: Bullet ID - Co-operator Ring (Intruder Hunter Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeOrb_None
+    AltName="Enemy Detection: Bullet ID - Intruder Orb (Unaligned)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeOrb_Umbasa
+    AltName="Enemy Detection: Bullet ID - Intruder Orb (Sun Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeOrb_Berserker
+    AltName="Enemy Detection: Bullet ID - Intruder Orb (Berserker Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeOrb_Sinners
+    AltName="Enemy Detection: Bullet ID - Intruder Orb (Sinner Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeSign_None
+    AltName="Enemy Detection: Bullet ID - Intruder Sign (Unaligned)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeSign_Umbasa
+    AltName="Enemy Detection: Bullet ID - Intruder Sign (Sun Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeSign_Berserker
+    AltName="Enemy Detection: Bullet ID - Intruder Sign (Berserker Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeSign_Sinners
+    AltName="Enemy Detection: Bullet ID - Intruder Sign (Sinner Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeRing_Sinners
+    AltName="Enemy Detection: Bullet ID - Intruder Ring (Sinner Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfBoss
+    AltName="Enemy Detection: Bullet ID - Intruder Ring (Boss: Forest Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfMap
+    AltName="Enemy Detection: Bullet ID - Intruder Ring (Map: Forest Covenant)"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <ActivityOfDeadSpEffect_BulletId
+    AltName="Dead Again SpEffect: Bullet ID"
+    Wiki="The bullet ID to use for the Dead Again SpEffect."
+    Refs="Bullet" />
+    
+    <ActivityOfDeadSpEffect_ShootBulletDummypolyId
+    AltName="Dead Again SpEffect: Bullet Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the emitted bullet from the Dead Again SpEffect."
+    Refs="Bullet" />
+    
+    <ActivityOfDeadSpEffect_DeadFadeOutTime
+    AltName="Dead Again SpEffect: Fade Out Time"
+    Wiki="The fade out time for dead enemies affected by the Dead Again SpEffect." />
+    
+    <IgnorNetStateSyncTime_ForThrow
+    AltName="Network: Transition Ignore Time at Throw Start"
+    Wiki="The time to ignore transitions at throw start due to network information." />
+    
+    <NetPenaltyPointLanDisconnect
+    AltName="Network: Multiplayer Penalty for LAN Disconnection"
+    Wiki="The penalty points to apply for a client after LAN disconnection." />
+    
   </Field>
 </PARAMMETA>

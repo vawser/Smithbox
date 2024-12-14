@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
@@ -26,7 +27,9 @@ public class FieldNameFinder
 
     public string SearchText = "";
     public string CachedSearchText = "";
+    public bool IncludeCommunityNameInSearch = true;
     public bool IncludeDescriptionInSearch = true;
+    public bool MatchTextExactly = false;
     public bool DisplayCommunityNameInResult = false;
 
     public List<DataSearchResult> Results = new();
@@ -54,13 +57,26 @@ public class FieldNameFinder
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputText("##searchString", ref SearchText, 255);
 
-        UIHelper.ShowHoverTooltip("The text to search for. Matches loosely.");
+        UIHelper.ShowHoverTooltip("The text to search for. Matches loosely by default.");
+
+        // Checkbox: Include Community Name in Search
+        ImGui.Checkbox($"Include Community Name in Search##includeCommunityName_{imguiID}",
+            ref IncludeCommunityNameInSearch);
+
+        UIHelper.ShowHoverTooltip("Include the community name text for a field in the search.");
 
         // Checkbox: Include Descriptions in Search
         ImGui.Checkbox($"Include Descriptions in Search##includeDescriptions_{imguiID}", 
             ref IncludeDescriptionInSearch);
 
         UIHelper.ShowHoverTooltip("Include the description text for a field in the search.");
+
+        // Checkbox: Match Exactly
+        ImGui.Checkbox($"Complete Word Match##matchExact_{imguiID}",
+            ref MatchTextExactly);
+
+        UIHelper.ShowHoverTooltip("When matching, ensure the search term is an exact match for a word, not a partial element of the word." +
+            "\nFor internal names, this will split the string based on capitalization before checking.");
 
         // Checkbox: Display Community Name in Results
         ImGui.Checkbox($"Display Community Name in Results##useCommunityNames_{imguiID}", 
@@ -143,25 +159,55 @@ public class FieldNameFinder
 
                 foreach (var entry in searchComponents)
                 {
+                    // Internal Name
                     if (field.InternalName != null)
                     {
-                        // Internal Name
-                        if (field.InternalName.ToLower().Contains(entry))
+                        if (MatchTextExactly)
                         {
-                            addResult = true;
+                            var adjustedName = field.InternalName;
+
+                            // Place _ in front of inter-word capitalization
+                            adjustedName = Regex.Replace(adjustedName, "(?<!^)([A-Z])", "_$1");
+
+                            var adjustedComponents = adjustedName.Split("_");
+
+                            foreach (var component in adjustedComponents)
+                            {
+                                if (component.ToLower() == entry)
+                                {
+                                    addResult = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (field.InternalName.ToLower().Contains(entry))
+                            {
+                                addResult = true;
+                            }
                         }
                     }
 
                     // Display Name
-                    if (fieldMeta.AltName != null)
+                    if (fieldMeta.AltName != null && IncludeCommunityNameInSearch)
                     {
                         var displayNameComponents = fieldMeta.AltName.Split(" ");
 
                         foreach (var displayComponent in displayNameComponents)
                         {
-                            if (displayComponent.ToLower().Contains(entry))
+                            if(MatchTextExactly)
                             {
-                                addResult = true;
+                                if (displayComponent.ToLower() == entry)
+                                {
+                                    addResult = true;
+                                }
+                            }
+                            else
+                            {
+                                if (displayComponent.ToLower().Contains(entry))
+                                {
+                                    addResult = true;
+                                }
                             }
                         }
                     }
@@ -173,9 +219,19 @@ public class FieldNameFinder
 
                         foreach (var descriptionComponent in descriptionComponents)
                         {
-                            if (descriptionComponent.ToLower().Contains(entry))
+                            if (MatchTextExactly)
                             {
-                                addResult = true;
+                                if (descriptionComponent.ToLower() == entry)
+                                {
+                                    addResult = true;
+                                }
+                            }
+                            else
+                            {
+                                if (descriptionComponent.ToLower().Contains(entry))
+                                {
+                                    addResult = true;
+                                }
                             }
                         }
                     }
