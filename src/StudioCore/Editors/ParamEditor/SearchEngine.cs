@@ -864,6 +864,101 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                     return false;
                 });
             });
+        filterList.Add("value", newCmd(new[] { "field value" },
+            "Selects cells/fields where the cell has the specified value",
+            (args, lenient) =>
+            {
+                var startValue = args[0];
+
+                ParamBank bank = ParamBank.PrimaryBank;
+
+                return row =>
+                {
+                    if (row.Item1 == null)
+                    {
+                        throw new Exception("Can't check if cell is modified - not part of a param");
+                    }
+
+                    Param curParam = bank.Params?[row.Item1];
+                    if (curParam == null)
+                    {
+                        throw new Exception("Can't check if cell is modified - no param");
+                    }
+
+                    Param.Row r = curParam[row.Item2.ID];
+
+                    if (r == null)
+                    {
+                        return col => false;
+                    }
+
+                    return col =>
+                    {
+                        (PseudoColumn, Param.Column) curCol = col.GetAs(curParam);
+                        var curValue = r.Get(curCol);
+
+                        if (curCol.Item2 == null)
+                            return false;
+
+                        if (IsValueMatch($"{curValue}", $"{startValue}", $"{startValue}", curCol.Item2.Def.InternalType))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    };
+                };
+            }));
+        filterList.Add("range", newCmd(new[] { "field start value", "field end value" },
+            "Selects cells/fields where the cell has a value between the start and end values specified",
+            (args, lenient) =>
+            {
+                var startValue = args[0];
+                var endValue = args[1];
+
+                ParamBank bank = ParamBank.PrimaryBank;
+
+                return row =>
+                {
+                    if (row.Item1 == null)
+                    {
+                        throw new Exception("Can't check if cell is modified - not part of a param");
+                    }
+
+                    Param curParam = bank.Params?[row.Item1];
+                    if (curParam == null)
+                    {
+                        throw new Exception("Can't check if cell is modified - no param");
+                    }
+
+                    Param.Row r = curParam[row.Item2.ID];
+
+                    if (r == null)
+                    {
+                        return col => false;
+                    }
+
+                    return col =>
+                    {
+                        (PseudoColumn, Param.Column) curCol = col.GetAs(curParam);
+                        var curValue = r.Get(curCol);
+
+                        if (curCol.Item2 == null)
+                            return false;
+
+                        if (IsValueMatch($"{curValue}", $"{startValue}", $"{endValue}", curCol.Item2.Def.InternalType))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    };
+                };
+            }));
         filterList.Add("modified", newCmd(new string[0],
             "Selects cells/fields where the equivalent cell in the vanilla regulation or parambnd has a different value",
             (args, lenient) => row =>
@@ -952,6 +1047,146 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                     lenient ? RegexOptions.IgnoreCase : RegexOptions.None); //Leniency rules break from the norm
                 return row => col => r.IsMatch(col.GetColumnSfType());
             }, () => CFG.Current.Param_AdvancedMassedit));
+    }
+
+    private bool IsValueMatch(string fieldValue, string startValue, string endValue, string internalType)
+    {
+        var fieldSuccess = false;
+        var startSuccess = false;
+        var endSuccess = false;
+
+        switch (internalType)
+        {
+            case "s8":
+                sbyte sbyteFieldVal;
+                sbyte sbyteStartVal;
+                sbyte sbyteEndVal;
+
+                fieldSuccess = sbyte.TryParse(fieldValue, out sbyteFieldVal);
+                startSuccess = sbyte.TryParse(startValue, out sbyteStartVal);
+                endSuccess = sbyte.TryParse(endValue, out sbyteEndVal);
+
+                if (fieldSuccess && startSuccess && endSuccess)
+                {
+                    if ((sbyteFieldVal >= sbyteStartVal) &&
+                        (sbyteFieldVal <= sbyteEndVal))
+                    {
+                        return true;
+                    }
+                }
+                break;
+            case "u8":
+                byte byteFieldVal;
+                byte byteStartVal;
+                byte byteEndVal;
+
+                fieldSuccess = byte.TryParse(fieldValue, out byteFieldVal);
+                startSuccess = byte.TryParse(startValue, out byteStartVal);
+                endSuccess = byte.TryParse(endValue, out byteEndVal);
+
+                if (fieldSuccess && startSuccess && endSuccess)
+                {
+                    if ((byteFieldVal >= byteStartVal) &&
+                        (byteFieldVal <= byteEndVal))
+                    {
+                        return true;
+                    }
+                }
+                break;
+            case "s16":
+                short shortFieldVal;
+                short shortStartVal;
+                short shortEndVal;
+
+                fieldSuccess = short.TryParse(fieldValue, out shortFieldVal);
+                startSuccess = short.TryParse(startValue, out shortStartVal);
+                endSuccess = short.TryParse(endValue, out shortEndVal);
+
+                if (fieldSuccess && startSuccess && endSuccess)
+                {
+                    if ((shortFieldVal >= shortStartVal) &&
+                        (shortFieldVal <= shortEndVal))
+                    {
+                        return true;
+                    }
+                }
+                break;
+            case "u16":
+                ushort ushortFieldVal;
+                ushort ushortStartVal;
+                ushort ushortEndVal;
+
+                fieldSuccess = ushort.TryParse(fieldValue, out ushortFieldVal);
+                startSuccess = ushort.TryParse(startValue, out ushortStartVal);
+                endSuccess = ushort.TryParse(endValue, out ushortEndVal);
+
+                if (fieldSuccess && startSuccess && endSuccess)
+                {
+                    if ((ushortFieldVal >= ushortStartVal) &&
+                        (ushortFieldVal <= ushortEndVal))
+                    {
+                        return true;
+                    }
+                }
+                break;
+            case "s32":
+                int intFieldVal;
+                int intStartVal;
+                int intEndVal;
+
+                fieldSuccess = int.TryParse(fieldValue, out intFieldVal);
+                startSuccess = int.TryParse(startValue, out intStartVal);
+                endSuccess = int.TryParse(endValue, out intEndVal);
+
+                if (fieldSuccess && startSuccess && endSuccess)
+                {
+                    if ((intFieldVal >= intStartVal) &&
+                        (intFieldVal <= intEndVal))
+                    {
+                        return true;
+                    }
+                }
+                break;
+            case "u32":
+                uint uintFieldVal;
+                uint uintStartVal;
+                uint uintEndVal;
+
+                fieldSuccess = uint.TryParse(fieldValue, out uintFieldVal);
+                startSuccess = uint.TryParse(startValue, out uintStartVal);
+                endSuccess = uint.TryParse(endValue, out uintEndVal);
+
+                if (fieldSuccess && startSuccess && endSuccess)
+                {
+                    if ((uintFieldVal >= uintStartVal) &&
+                        (uintFieldVal <= uintEndVal))
+                    {
+                        return true;
+                    }
+                }
+                break;
+            case "f32":
+                double floatFieldVal;
+                double floatStartVal;
+                double floatEndVal;
+
+                fieldSuccess = double.TryParse(fieldValue, out floatFieldVal);
+                startSuccess = double.TryParse(startValue, out floatStartVal);
+                endSuccess = double.TryParse(endValue, out floatEndVal);
+
+                if (fieldSuccess && startSuccess && endSuccess)
+                {
+                    if ((floatFieldVal >= floatStartVal) &&
+                        (floatFieldVal <= floatEndVal))
+                    {
+                        return true;
+                    }
+                }
+                break;
+            default: break;
+        }
+
+        return false;
     }
 }
 
