@@ -400,6 +400,7 @@ public class ParamRowEditor
         var IsInvertedPercentage = cellMeta?.IsInvertedPercentage ?? false;
         var IsPaddingField = cellMeta?.IsPaddingField ?? false;
         var IsObsoleteField = cellMeta?.IsObsoleteField ?? false;
+        var AddSeparator = cellMeta?.AddSeparatorNextLine ?? false;
 
         var displayRefTypes = !CFG.Current.Param_HideReferenceRows && RefTypes != null;
         var displayFmgRef = !CFG.Current.Param_HideReferenceRows && FmgRef != null;
@@ -449,6 +450,11 @@ public class ParamRowEditor
 
         if (ImGui.TableNextColumn())
         {
+            if(AddSeparator)
+            {
+                ImGui.Separator();
+            }
+
             // Help icon text
             if (CFG.Current.Param_ShowFieldDescription_onIcon || CFG.Current.Param_ShowFieldLimits_onIcon)
             {
@@ -659,6 +665,11 @@ public class ParamRowEditor
             else if (matchDefault)
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+            }
+
+            if (AddSeparator)
+            {
+                ImGui.Separator();
             }
 
             // Property Editor UI

@@ -337,8 +337,236 @@
     Wiki="The time to ignore transitions at throw start due to network information." />
     
     <NetPenaltyPointLanDisconnect
-    AltName="Network: Multiplayer Penalty for LAN Disconnection"
+    AltName="Network: Multiplayer Penalty - LAN Disconnection"
     Wiki="The penalty points to apply for a client after LAN disconnection." />
+    
+    <NetPenaltyPointProfileSignout
+    AltName="Network: Multiplayer Penalty - Profile Sign Out"
+    Wiki="The penalty points to apply for a client after profile sign out." />
+    
+    <NetPenaltyPointReboot
+    AltName="Network: Multiplayer Penalty - Reboot"
+    Wiki="The penalty points to apply for a client after reboot." />
+    
+    <NetPnaltyPointSuspend
+    AltName="Network: Multiplayer Penalty - Suspend"
+    Wiki="The penalty points to apply for a client after suspend." />
+    
+    <NetPenaltyForgiveItemLimitTime
+    AltName="Network: Multiplayer Penalty - Item Forgiveness Time"
+    Wiki="The item forgiveness duration after incurring a multiplayer penalty." />
+    
+    <NetPenaltyPointThreshold
+    AltName="Network: Multiplayer Penality - Judgement Threshold"
+    Wiki="The threshold at which a multiplayer penalty is incurred." />
+    
+    <UncontrolledMoveThresholdTime
+    AltName="Network: No Action Kick Duration"
+    Wiki="The duration after which no actions have occured the player will be kicked from the multiplayer session. In seconds." />
+    
+    <EnemyDetectionSpEffect_BulletId_byNpcEnemy
+    AltName="Enemy Detection: Bullet ID - NPC Enemy"
+    Wiki="The detection bullet ID to use for this specified type."
+    Refs="Bullet" />
+    
+    <ActivityOfDeadTargetSearchSpEffect_OnHitSpEffect
+    AltName="Dead Again SpEffect: Active Target Search"
+    Wiki="The SpEffect ID applied during the active target search effect of Dead Again."
+    Refs="SpEffectParam" />
+    
+    <ActivityOfDeadTargetSearchSpEffect_MaxLength
+    AltName="Dead Again SpEffect: Active Target Search Distance"
+    Wiki="The maximum distance for the active target search effect of Dead Again." />
+    
+    <NetFpsCheck_fpsThreshold
+    AltName="Network: Low FPS Threshold"
+    Wiki="The low FPS threshold at which a player is kicked from a multiplayer session." />
+    
+    <NetFpsCheck_lowfpsTImeThreshold
+    AltName="Network: Low FPS Duration"
+    Wiki="The duration at which the low FPS threshold is met, after which a player will be kicked from a multiplayer session." />
+    
+    <SoloBreakInMaxPoint
+    AltName="Maximum Points for Single Intruder"
+    Wiki="The maximum points for solo intruder entry. If this value is exceeded, the host is invaded by a solo player." />
+    
+    <NpcTalkTimeOutThreshold
+    AltName="NPC Conversation: Voice Timeout"
+    Wiki="The timeout duration for voice playback during NPC conversations. If this timeout is reached, the next talk message occurs." />
+    
+    <SendPlayLogIntervalTime
+    AltName="Play Log Interval"
+    Wiki="The interval at which the play logging is sent to the server." />
+    
+    <Item370_MaxSfxNum
+    AltName="Prism Stone: Maximum Particle Count"
+    Wiki="The maximum number of SFX that can originate from the Prism Stone item." />
+    
+    <pad_02
+    AltName=""
+    Padding="" />
+    
+    <SummonDataCoopMatchingLevelUpperAbs
+    AltName="Multiplayer: Matching Correction - Absolute Level"
+    Wiki="The matching correction factor applied during multiplier, based on the specified factor." />
+    
+    <SummonDataCoopMatchingLevelUpperRel
+    AltName="Multiplayer: Matching Correction - Relative Level"
+    Wiki="The matching correction factor applied during multiplier, based on the specified factor." />
+    
+    <SummonDataCoopMatchingWepLevelMul
+    AltName="Multiplayer: Matching Correction - Weapon Reinforcement"
+    Wiki="The matching correction factor applied during multiplier, based on the specified factor." />
+    
+    <PickUpBerserkerSignSpEffectBulletId
+    AltName="Berserker Sign SpEffect: Bullet ID"
+    Wiki="The bullet ID to use when generating the SpEffect bullet at the sign position."
+    Refs="Bullet" />
+    
+    <SucceedBerserkerSelfKillingEffectId
+    AltName="Berserker Player Kill: SpEffect ID"
+    Wiki="The SpEffect to apply when the berserker kills the host by themselves." 
+    Refs="SpEffectParam" />
+    
+    <MachingLevelWhiteSignUpperRel
+    AltName="Level Sync: Relative Soul Level Coefficient (Friendly Phantom)"
+    Wiki="The soul level coefficient to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingLevelWhiteSignUpperAbs
+    AltName="Level Sync: Absolute Soul Level Coefficient (Friendly Phantom)"
+    Wiki="The soul level coefficient to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingLevelRedSignUpperRel
+    AltName="Level Sync: Relative Soul Level Coefficient (Hostile Phantom)"
+    Wiki="The soul level coefficient to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingLevelRedSignUpperAbs
+    AltName="Level Sync: Absolute Soul Level Coefficient (Hostile Phantom)"
+    Wiki="The soul level coefficient to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_0
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [0] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_1
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [1] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_2
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [2] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_3
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [3] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_4
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [4] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_5
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [5] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_6
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [6] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_7
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [7] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_8
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [8] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_9
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [9] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperWhiteSign_10
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [10] (Friendly Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_0
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [0] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_1
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [1] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_2
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [2] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_3
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [3] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_4
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [4] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_5
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [5] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_6
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [6] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_7
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [7] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_8
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [8] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_9
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [9] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <MachingWeaponLevelUpperRedSign_10
+    AltName="Level Sync: Maximum Weapon Reinforcement Coefficient [10] (Hostile Phantom)"
+    Wiki="The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms." />
+    
+    <pad_03
+    AltName=""
+    Padding="" />
+    
+    <SendGlobalEventLogIntervalTime
+    AltName="Global Event Log Send Interval"
+    Wiki="The interval at which to send the global event log to the server." />
+    
+    <AddSoloBreakInPoint_White
+    AltName="Intruder Entry Point: Addition Value (White Phantom)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <AddSoloBreakInPoint_Black
+    AltName="Intruder Entry Point: Addition Value (Red Phantom)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <AddSoloBreakInPoint_ForceJoin
+    AltName="Intruder Entry Point: Addition Value (Intruder)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <AddSoloBreakInPoint_VisitorGuardian
+    AltName="Intruder Entry Point: Addition Value (Visitor: Map Guardian)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <AddSoloBreakInPoint_VisitorRedHunter
+    AltName="Intruder Entry Point: Addition Value (Visitor: Red Hunter)"
+    Wiki="The addition value to apply for intruder entry for intruders of this type into the host's world." />
+    
+    <CorpseRedrawingDistance
+    AltName="Corpse Redraw Distance"
+    Wiki="The distance at which a corpse will be marked to not be redrawn, even if it comes within draw distance again." />
+    
+    <RedHunter_HostBossAreaGetSoulRate
+    AltName=""
+    Wiki="" />
     
   </Field>
 </PARAMMETA>

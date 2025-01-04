@@ -1,8 +1,6 @@
 #--------------------------------------
 # TODO
 #--------------------------------------
-- Update Andre.Param to include the signed bitfield changes from SoulsFormats 
-
 - Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
 
 - These official defs don't match the actual param layout, need to adjust them:

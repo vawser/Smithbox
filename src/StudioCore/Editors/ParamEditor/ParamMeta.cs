@@ -583,6 +583,12 @@ public class FieldMetaData
             IsPaddingField = true;
         }
 
+        XmlAttribute AddSeparator = fieldMeta.Attributes["Separator"];
+        if (AddSeparator != null)
+        {
+            AddSeparatorNextLine = true;
+        }
+
         XmlAttribute Obsolete = fieldMeta.Attributes["Obsolete"];
         if (Obsolete != null)
         {
@@ -680,6 +686,11 @@ public class FieldMetaData
     ///     Is this field considered padding?
     /// </summary>
     public bool IsPaddingField { get; set; }
+
+    /// <summary>
+    ///     Is a ImGui seperator applied after this line?
+    /// </summary>
+    public bool AddSeparatorNextLine { get; set; }
 
     /// <summary>
     ///     Is this field considered obsolete (unused)?
