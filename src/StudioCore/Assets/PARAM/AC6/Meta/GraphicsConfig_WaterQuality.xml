@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each water quality level." />
+  
+  <Field>
+    <interactionEnabled 
+    AltName="Enable Water Interaction" 
+    Wiki="If ON, water will response to interaction." 
+    IsBool="" />
+    
+    <pad1 
+    AltName="" 
+    Padding="" />
+    
+  </Field>
+  
+</PARAMMETA>

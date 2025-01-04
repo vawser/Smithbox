@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each lighting quality level." />
+  
+  <Field>
+    <localLightDistFactor 
+    AltName="Local Light: Distance Factor" 
+    Wiki="The player local light's effective distance coefficient (smaller, it disappears at a short distance)" />
+    
+    <localLightShadowEnabled 
+    AltName="Local Light: Enable Shadows" 
+    Wiki="If ON, the player local light can create shadows." 
+    IsBool="" />
+    
+    <forwardPassLightingEnabled 
+    AltName="Local Light: Enable Forward Pass Lighting" 
+    Wiki="If ON, forward pass lighting is used. this means each object is drawn one by one. Whereas deferred rendering means all information for each object is rendered into multiple buffers first." 
+    IsBool="" />
+    
+    <localLightShadowSpecLevelMax 
+    AltName="Local Light: Shadow Specular Level" 
+    Wiki="The local light's maximum shadow specular level. The larger the value, the more light sources will be shadowed." />
+    
+    <pad1 
+    AltName="" 
+    Padding=""/>
+    
+  </Field>
+  <Self />
+</PARAMMETA>

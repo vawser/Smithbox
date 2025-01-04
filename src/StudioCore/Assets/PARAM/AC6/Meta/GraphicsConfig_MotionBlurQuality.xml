@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each motion blur quality level." />
+  
+  <Field>
+    <enabled 
+    AltName="Enable Motion Blur" 
+    Wiki="If ON, motion blur is enabled" 
+    IsBool="" />
+    
+    <ombEnabled 
+    AltName="Enable Object Motion Blur" 
+    Wiki="If ON, motion blur is applied to objects." 
+    IsBool="" />
+    
+    <forceScaleVelocityBuffer 
+    AltName="Lower Velocity Buffer Resolution" 
+    Wiki="Reduce the resolution of the velocity buffer used internally. No effect if precision velocity buffers are not being used." 
+    IsBool="" />
+    
+    <cheapFilterMode 
+    AltName="Simple Filter Mode" 
+    Wiki="If ON, ignore reconstruction filter for motion blur calculations, and instead use a lighter process." 
+    IsBool="" />
+    
+    <sampleCountBias 
+    AltName="Sample Count Bias" 
+    Wiki="Set the bias to apply to the sample count. Set to a multiple of 2." />
+    
+    <recurrenceCountBias 
+    AltName="Recurrence Count Bias" 
+    Wiki="Set the bias to apply to the number of recursive blurs." />
+    
+    <blurMaxLengthScale 
+    AltName="Scale Value for Blur Maximum Length" 
+    Wiki="The scale value to use for the blur maximum length parameter." />
+  </Field>
+</PARAMMETA>

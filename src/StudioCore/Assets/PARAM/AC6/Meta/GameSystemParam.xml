@@ -562,11 +562,315 @@
     
     <CorpseRedrawingDistance
     AltName="Corpse Redraw Distance"
-    Wiki="The distance at which a corpse will be marked to not be redrawn, even if it comes within draw distance again." />
+    Wiki="The distance at which a corpse will be marked to not be redrawn, even if it comes within draw distance again. In metres." />
     
     <RedHunter_HostBossAreaGetSoulRate
+    AltName="Red Hunter: Soul Multiplier after Boss Entered"
+    Wiki="The soul absorption multiplier applied to the Red Hunter when the host enters a boss arena through the fog gate. This multiplier is applied to the soul value of the Red Hunter next level difference." />
+    
+    <StealthSystemSightCutRate_SightHide_NotStealthMode
+    AltName="Stealth System: Player in Grass - Enemy Sight Reduction %"
+    Wiki="The enemy visibility reduction rate to apply when the player is in grass but does not have SpEffect 150." />
+    
+    <StealthSystemSightCutRate_NotSightHide_StealthMode
+    AltName="Stealth System: Player not in Grass - Enemy Sight Reduction %"
+    Wiki="The enemy visibility reduction rate to apply when the player is not in grass and has SpEffect 150." />
+    
+    <StealthSystemSightCutRate_SightHide_StealthMode
+    AltName="Stealth System: Player in Grass - Enemy Sight Reduction %"
+    Wiki="The enemy visibility reduction rate to apply when the player is in grass and has SpEffect 150." />
+    
+    <pad_04
     AltName=""
-    Wiki="" />
+    Padding="" />
+    
+    <Damage_ImpactLifeTimeSec
+    AltName="Impact Damage Duration"
+    Wiki="The duration of impact damage when it occurs. In seconds." />
+    
+    <HitStopAddDamageAnimScale
+    AltName="Animation Playback Speed Ratio during Hit Stop"
+    Wiki="The animation playback speed % during hit stop additive damage." />
+    
+    <HitStopAddDamageAnimTimeF
+    AltName="Animation Playback Speed Change Time during Hit Shop"
+    Wiki="The animation playback speed change time during hit stop additive damage (in frames, or 1/30 seconds)" />
+    
+    <HardHitStopTimeRatePercent
+    AltName="Animation Playback Speed Ratio on Hard Hit"
+    Wiki="The animation playback speed ratio upon a hard hit (0 means complete stop)." />
+    
+    <CoverCheckRayDist
+    AltName="Cover Judgement Raycast Distance"
+    Wiki="The raycast distance used for the wall check when determining which direction to face when covering." />
+    
+    <pad_05
+    AltName=""
+    Padding="" />
+    
+    <DamageLevel_LevelUpCount
+    AltName="Stagger Count before Collapse"
+    Wiki="The number of staggers allowed before collapsing." />
+    
+    <pad_06
+    AltName=""
+    Padding="" />
+    
+    <DamageLevel_LevelUpCountResetTimeSec
+    AltName="Stagger Count Reset Duration"
+    Wiki="The duration to reset the stagger count. In seconds." />
+    
+    <GrabAttachIntpFrame
+    AltName="Grab Interpolation Frame"
+    Wiki="The frame at which a target is grabbed when an entity is attempting a grab." />
+    
+    <DeadEffectMaxTime
+    AltName="Death Effect Maximum Duration"
+    Wiki="The maximum duration for the death effect. In seconds." />
+    
+    <WallBackrash_CeilingAngleDeg
+    AltName="Wall Bounce: Ceiling Judgement Angle"
+    Wiki="During a wall bounce, the angle at which the surface will be judged as a ceiling. In degrees." />
+    
+    <WallBackrash_WallHitLimitAngleDeg
+    AltName="Wall Bounce: Character Front"
+    Wiki="During a wall bounce, the angle that is considered the 'front' of the character. In degrees." />
+    
+    <WallBackrash_FloorAngleDeg
+    AltName="Wall Bounce: Floor Judgement Angle"
+    Wiki="During a wall bounce, the angle at which the surface will be judged as a floor. In degrees." />
+    
+    <outRangeThresholdMaxDist
+    AltName="Ricochet: Maximum Threshold Correction Distance"
+    Wiki="The maximum threshold correction distance when determining ricochet. In metres." />
+    
+    <outRangeDamageDecayPercent
+    AltName="Ricochet: Damage Attenuation %"
+    Wiki="The damage attenuation multiplier to apply during a ricochet." />
+    
+    <pad_08
+    AltName=""
+    Padding="" />
+    
+    <NerveLoad_EffectLevel1_Threshold
+    AltName="1: ACS Overload - Screen Effect Threshold"
+    Wiki="The threshold at which to increase the visual screen effect for ACS overload." />
+    
+    <NerveLoad_EffectLevel1_AddRate
+    AltName="1: ACS Overload - Screen Effect Strength"
+    Wiki="The addition value to apply when this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel1_Time
+    AltName="1: ACS Overload - Screen Effect Decay"
+    Wiki="The decay rate for the addition value after this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel2_Threshold
+    AltName="2: ACS Overload - Screen Effect Threshold"
+    Wiki="The threshold at which to increase the visual screen effect for ACS overload." />
+    
+    <NerveLoad_EffectLevel2_AddRate
+    AltName="2: ACS Overload - Screen Effect Strength"
+    Wiki="The addition value to apply when this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel2_Time
+    AltName="2: ACS Overload - Screen Effect Decay"
+    Wiki="The decay rate for the addition value after this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel3_Threshold
+    AltName="3: ACS Overload - Screen Effect Threshold"
+    Wiki="The threshold at which to increase the visual screen effect for ACS overload." />
+    
+    <NerveLoad_EffectLevel3_AddRate
+    AltName="3: ACS Overload - Screen Effect Strength"
+    Wiki="The addition value to apply when this specific screen effect threshold is reached." />
+    
+    <NerveLoad_EffectLevel3_Time
+    AltName="3: ACS Overload - Screen Effect Decay"
+    Wiki="The decay rate for the addition value after this specific screen effect threshold is reached." />
+    
+    <NerveLoad_GParamChangeTime
+    AltName="ACS Overload: GParam Change Time"
+    Wiki="The time until the screen effect changes after the ACS overload effect is applied. In seconds." />
+    
+    <NerveLoad_InverseCompRate
+    AltName="ACS Overload: Display Strength"
+    Wiki="The final display strength of the effect whilst under ACS overload effect." />
+    
+    <NerveLoad_InverseCompTime
+    AltName="ACS Overload: Display Duration"
+    Wiki="The final display duration of the effect whilst under ACS overload effect." />
+    
+    <NerveLoad_NoiseUpdateRate
+    AltName="ACS Overload: Noise Update %"
+    Wiki="The noise reduction multiplier after the ACS overload effect occurs." />
+    
+    <NerveLoad_MenuRequestRate
+    AltName="ACS Overload: Menu Display Strength %"
+    Wiki="The effect addition multiplier when applied from the menu." />
+    
+    <NerveLoad_MenuSubRate
+    AltName="ACS Overload: Menu Display Duration"
+    Wiki="The effect duration when applied from the menu. In seconds." />
+    
+    <NerveLoad_FadeOutWaitTime
+    AltName="ACS Overload: Fade Out Delay"
+    Wiki="The delay until the fade-out for the ACS overload particles. In seconds." />
+    
+    <NerveLoad_FadeOutTime
+    AltName="ACS Overload: Fade Out Duration"
+    Wiki="The duration of the fade-out for the ACS overload particles. In seconds." />
+    
+    <pad_09
+    AltName=""
+    Padding="" />
+    
+    <blowWallHit_DamageSpeedKMH
+    AltName="Wall Collision: Allowable Speed"
+    Wiki="The allowable speed at which to apply blow-off wall collision. In kilometres per hour." />
+    
+    <blowWallHit_DamageAngDegH
+    AltName="Wall Collision: Allowable Horizontal Angle Difference"
+    Wiki="The allowable horizontal angle difference at which to apply blow-off wall collision. In degrees." />
+    
+    <blowWallHit_DamageAngDegV
+    AltName="Wall Collision: Allowable Vertical Angle Difference"
+    Wiki="The allowable vertical angle difference at which to apply blow-off wall collision. In degrees." />
+    
+    <blowWallHit_BehaviorId_Player
+    AltName="Wall Collision: Behavior ID (for Player)"
+    Wiki="The behavior ID to apply upon a wall collision (for the player)." 
+    Refs="BehaviorParam" />
+    
+    <blowWallHit_BehaviorId_Player
+    AltName="Wall Collision: Behavior ID (for Player)"
+    Wiki="The behavior ID to apply upon a wall collision (for the player)." 
+    Refs="BehaviorParam" />
+    
+    <blowWallHit_BehaviorId_Enemy
+    AltName="Wall Collision: Behavior ID (for Enemy)"
+    Wiki="The behavior ID to apply upon a wall collision (for an enemy)." 
+    Refs="BehaviorParam" />
+    
+    <DeadFadeOutTimeSec
+    AltName="Fade Out Duration after Death"
+    Wiki="The fade out duration for characters after death. In seconds." />
+    
+    <HackingContinueRadius
+    AltName="Hacking: Allowable Radius"
+    Wiki="The radius in which hacking can continue after starting. In metres." />
+    
+    <HackingContinueHeight
+    AltName="Hacking: Allowable Height"
+    Wiki="The height in which hacking can continue after starting. In metres." />
+    
+    <HackingContinueBottom
+    AltName="Hacking: Lower Height Offset"
+    Wiki="The height offset to apply to the allowable height from the bottom. In metres." />
+    
+    <pad_10
+    AltName=""
+    Padding="" />
+    
+    <PhotModeMoveDist
+    AltName="Photo Mode: Allowable Distance"
+    Wiki="The distance from the player entity that the camera is allowed to move to whilst in Photo Mode. In metres." />
+    
+    <PhotModeCamHitRadius
+    AltName="Photo Mode: Camera Radius"
+    Wiki="The radius of the camera hitbox whilst in Photo Mode. In metres." />
+    
+    <HDRumble_Small_Id
+    AltName="Vibration ID on Part Switch (Small)"
+    Wiki="The vibration ID for rumble when switching small parts." />
+    
+    <HDRumble_Large_Id
+    AltName="Vibration ID on Part Switch (Large)"
+    Wiki="The vibration ID for rumble when switching large parts." />
+    
+    <Cartridge_Size
+    AltName="Cartridge: Capsule Radius"
+    Wiki="The radius of each capsule used for the cartridge case. In metres." />
+    
+    <Cartridge_Length
+    AltName="Cartridge: Capsule Length"
+    Wiki="The length of each capsule used for the cartridge case. In metres (Must be larger than radius)." />
+    
+    <Cartridge_Friction
+    AltName="Cartridge: Friction Coefficient"
+    Wiki="The coefficient used for the cartridge friction. Higher values means it is easier to stop." />
+    
+    <Cartridge_Restitution
+    AltName="Cartridge: Bounce Coefficient"
+    Wiki="The coefficient used for the cartridge bounciness. Higher values means it will bounce more." />
+    
+    <Cartridge_EnableDist
+    AltName="Cartridge: Effective Distance"
+    Wiki="The maximum effective distance of the cartridge (from the player). In metres." />
+    
+    <Cartridge_IsChrRagdollHit
+    AltName="Cartridge: Hit Ragdolls"
+    Wiki="If ON, the cartridges will hit character ragdolls."
+    IsBool="" />
+    
+    <pad_11
+    AltName=""
+    Padding="" />
+    
+    <Cartridge_DecelerateBeginTime
+    AltName="Cartridge: Deceleration Delay"
+    Wiki="The delay before the horizontal deceleration of the cartridge. In seconds." />
+    
+    <Cartridge_DecelerateTime
+    AltName="Cartridge: Deceleration Duration"
+    Wiki="The duration from the start of the deceleration until it reaches the maximum deceleration rate. In seconds." />
+    
+    <Cartridge_DecelerateRate
+    AltName="Cartridge: Maximum Deceleration %"
+    Wiki="The maximum horizontal deceleration of the cartridge." />
+    
+    <Net_MapHitSfxOmitteDist
+    AltName="Arena: Map Impact - Particle Cull Distance"
+    Wiki="In an arena match, this determines the cull distance for SFX that impact the map." />
+    
+    <Net_MyTeamHitSfxOmitteCpuExecRate
+    AltName="Arena: Friendly Impact - Particle Processing Time"
+    Wiki="In an arena match, this determines if a SFX that impact a friendly character is culled. Based on the processing time for the particle." />
+    
+    <HavokGabageCollectionIntervalTime
+    AltName="Havok: Garbage Collection Interval"
+    Wiki="The garbage collection interval for Havok's memeroy fragmentation system. In seconds." />
+    
+    <PhotModeMoveScale
+    AltName="Photo Mode: Camera Movement Scale"
+    Wiki="The scale for input with regards to camera movement whilst in Photo Mode." />
+    
+    <PhotModeTurnScale
+    AltName="Photo Mode: Camera Rotation Scale"
+    Wiki="The scale for input with regards to camera rotation whilst in Photo Mode." />
+    
+    <PhotModeMoveIpo
+    AltName="Photo Mode: Camera Movement Interpolation %"
+    Wiki="The interpolation rate for input with regards to camera movement whilst in Photo Mode." />
+    
+    <PhotModeTurnIop
+    AltName="Photo Mode: Camera Rotation Interpolation %"
+    Wiki="The interpolation rate for input with regards to camera rotation whilst in Photo Mode." />
+    
+    <PhotModeCamSpeedMin
+    AltName="Photo Mode: Camera Movement - Minimum Speed"
+    Wiki="The minimum camera movement speed when changed by options whilst in Photo Mode." />
+    
+    <PhotModeCamSpeedMax
+    AltName="Photo Mode: Camera Movement - Maximum Speed"
+    Wiki="The maximum camera movement speed when changed by options whilst in Photo Mode." />
+    
+    <OsTuning_ResetCost
+    AltName="OS Tuning: Reset Cost"
+    Wiki="The reset cost for OS improvements (per level)." />
+    
+    <reserved_for_menu
+    AltName=""
+    Padding="" />
     
   </Field>
 </PARAMMETA>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each motion blur quality level." />
+  
+  <Field>
+    <enabled
+    AltName="Enable Raytracing"
+    Wiki="If ON, then raytracing is enabled." 
+    IsBool="" />
+    
+    <dirLightShadowEnabled
+    AltName="Enable Directional Light Shadow"
+    Wiki="If ON, then parallel light shadows are enabled."
+    IsBool="" />
+    
+    <aoEnabled
+    AltName="Enable Ambient Occlusion"
+    Wiki="If ON, then ambient occlusion is enabled."
+    IsBool="" />
+    
+    <pad1
+    AltName=""
+    Padding="" />
+    
+    <dirLightShadowRaySampleScale
+    AltName="Directional Light: Shadow Ray Sample Scale"
+    Wiki="The scale to apply to the ray sample count for directional light shadows." />
+    
+    <dirLightShadowRaySampleOffset
+    AltName="Directional Light: Shadow Ray Sample Offset"
+    Wiki="The offset to apply to the ray sample count for directional light shadows." />
+    
+    <aoRaySampleScale
+    AltName="Ambient Occlusion: Shadow Ray Sample Scale"
+    Wiki="The scale to apply to the ray sample count for ambient occlusion shadows." />
+    
+    <aoRaySampleOffset
+    AltName="Ambient Occlusion: Shadow Ray Sample Offset"
+    Wiki="The offset to apply to the ray sample count for ambient occlusion shadows." />
+    
+    <dirLightShadowConeScale
+    AltName="Directional Light: Shadow Cone Scale"
+    Wiki="The scale of the shadow cone used for directional lighting. In the range of 0 to 1.0. If you set it to 0, the number of samples will automatically become 1." />
+    
+  </Field>
+</PARAMMETA>

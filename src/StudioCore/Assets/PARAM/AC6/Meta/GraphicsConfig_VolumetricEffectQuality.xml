@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each volumetric particle quality level." />
+  
+  <Field>
+    <fogEnabled 
+    AltName="Enable Volumetric Fog" 
+    Wiki="If ON, enable volumetric fog." 
+    IsBool="" />
+    
+    <fogShadowEnabled 
+    AltName="Enable Volumetric Fog Shadows" 
+    Wiki="If ON, enable volumetric fog shadows." 
+    IsBool="" />
+    
+    <fogVolumeEdgeCorrectionLevel 
+    AltName="Fog Edge Correction Level" 
+    Wiki="The fog edge correction level used during bilateral upscaling." 
+    Enum="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_EDGE_CORRECTION_LEVEL" />
+    
+    <fogVolumeResolution 
+    AltName="Fog Volume Resolution" 
+    Wiki="The processing resolution of placeable fog volumes. (Overrides upscale type setting)." 
+    Enum="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_RESOLUTION" />
+    
+    <fogShadowSampleCountBias 
+    AltName="Fog Shadow Sample Count Offset" 
+    Wiki="The offset to apply to the fog shadow sample count." />
+    
+    <fogLocalLightDistScale 
+    AltName="Fog: Local Light Distance Scale" 
+    Wiki="The local light calculation distance scale within volumetric fog (0 does not calculate local light)." />
+    
+    <fogVolueSizeScaler 
+    AltName="Fog Volume Size Scaler" 
+    Wiki="The size scalar to apply to volumetric fog." />
+    
+    <fogVolueSizeDivider 
+    AltName="Fog Volume Size Divisor" 
+    Wiki="The size divisor to apply to volumetric fog." />
+    
+    <fogVolumeDepthScaler 
+    AltName="Fog Volume Depth Scaler" 
+    Wiki="The depth scalar to apply to volumetric fog." />
+    
+    <fogVolumeDepthDivider 
+    AltName="Fog Volume Depth Divisor" 
+    Wiki="The depth divisor to apply to volumetric fog." />
+    
+    <fogVolumeEnabled 
+    AltName="Enable Placeable Fog Volumes"
+    Wiki="If ON, placeable fog volumes are enabled." 
+    IsBool="" />
+    
+    <fogVolumeUpScaleType 
+    AltName="Fog Upscaling" 
+    Wiki="The type of upscaling to apply to the fog." 
+    Enum="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_UPSCALE_TYPE" />
+    
+    <fogVolumeUpScaleInTwoStageEnabled
+    AltName="2-Step Upscaling"
+    Wiki="Upscaling from the reduced buffer will be increased from 1 to 2 stages to reduce flickering."
+    IsBool="" />
+    
+    <fogVolumeShadowEnabled 
+    AltName="Enable Fog Volume Shadow" 
+    Wiki="If ON, enables shadows related to the fog volume." 
+    IsBool="" />
+    
+    <fogVolumeRayMarcingSampleCountOffset 
+    AltName="Fog Volume Ray Sample Count Offset" 
+    Wiki="The offset applied to the sampling number during ray marching for the fog volume." />
+    
+    <fogVolumeTwoStepUpScalingEnabled
+    AltName="Enable 2-Step Upscaling"
+    Wiki="If ON, use 2-step upscaling when applying upscaling to the fog volume." 
+    IsBool="" />
+    
+    <fogVolumeForceShadowing 
+    AltName="Force Fog Volume Shadowing" 
+    Wiki="If ON, forcibly casts a shadow on the area regardless of the setting when shadow is permitted (shadow processing is not affected)" 
+    IsBool="" />
+    
+    <pad2
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_UPSCALE_TYPE" type="u8">
+        <Option Value="0" Name="Force Draw at High Resolution" />
+        <Option Value="1" Name="Bilateral Upscaling" />
+        <Option Value="2" Name="Linear Upscaling" />
+    </Enum>
+    <Enum Name="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_EDGE_CORRECTION_LEVEL" type="u8">
+        <Option Value="0" Name="Level 0" />
+        <Option Value="1" Name="Level 1" />
+        <Option Value="2" Name="Level 2" />
+        <Option Value="3" Name="Level 3" />
+    </Enum>
+    <Enum Name="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_RESOLUTION" type="u8">
+        <Option Value="0" Name="Fog Volume: 1 by 1" />
+        <Option Value="1" Name="Fog Volume: 2 by 2" />
+        <Option Value="2" Name="Fog Volume: 4 by 4" />
+    </Enum>
+  </Enums>
+  
+</PARAMMETA>

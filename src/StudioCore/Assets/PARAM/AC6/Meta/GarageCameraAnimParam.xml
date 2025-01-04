@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the handling of garage camera animation." />
+  
   <Field>
     <disableParam_NT 
     AltName="Disable Param: Network Test Version" 
@@ -1012,5 +1015,4 @@
     AltName="15: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
     
   </Field>
-  <Self />
 </PARAMMETA>

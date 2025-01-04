@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each decal quality level." />
+  
+  <Field>
+    <enabled 
+    AltName="Enable Decals" 
+    Wiki="If ON, decals are displayed." 
+    IsBool="" />
+    
+    <pad1 
+    AltName="" 
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each screen space ambient occlusion quality level." />
+  
+  <Field>
+    <enabled 
+    AltName="Enable Screen-space Ambient Occulsion" 
+    Wiki="If ON, enable screen-space ambient occlusion." 
+    IsBool="" />
+    
+    <cs_reprojEnabledType 
+    AltName="Enable SSAO Reprojection" 
+    Wiki="If reprojection is enabled, artifacts are hidden from undersampling, but ghosting may occur if reprojection fails." 
+    Enum="GRAPHICS_CONFIG_CS_GCONFIG_ENABLED_TYPE" />
+    
+    <cs_upScaleEnabledType 
+    AltName="Enable Bilateral Upscaling" 
+    Wiki="Determines the bilateral upscaling settings for SSAO." 
+    Enum="GRAPHICS_CONFIG_CS_GCONFIG_ENABLED_TYPE" />
+    
+    <cs_useNormalEnabledType 
+    AltName="Enable Normal Usage" 
+    Wiki="Determines the normal usage settings for SSAO." 
+    Enum="GRAPHICS_CONFIG_CS_GCONFIG_ENABLED_TYPE" />
+    
+    <dmy AltName="" Padding=""/>
+  </Field>
+  
+  <Enums>
+    <Enum Name="GRAPHICS_CONFIG_CS_GCONFIG_ENABLED_TYPE" type="u8">
+        <Option Value="0" Name="Keep GParam Settings" />
+        <Option Value="1" Name="Force Disable" />
+        <Option Value="2" Name="Force Enable" />
+    </Enum>
+  </Enums>
+  
+</PARAMMETA>

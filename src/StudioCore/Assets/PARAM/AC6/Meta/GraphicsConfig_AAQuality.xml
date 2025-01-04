@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each anti-aliasing quality level." />
+  
+  <Field>
+    <enabled 
+    AltName="Enable Anti-Aliasing" 
+    Wiki="If ON, then anti-aliasing is enabled." 
+    IsBool="" />
+    
+    <forceFXAA2 
+    AltName="Force Fast Approximate Anti-Aliasing" 
+    Wiki="If ON, then force anti-alias to downgrade to fast approximate anti-aliasing (FXAA2)." 
+    IsBool="" />
+    
+    <dmy AltName="" Padding=""/>
+  </Field>
+</PARAMMETA>
