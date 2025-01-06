@@ -101,8 +101,8 @@
     Wiki="The maximum position offset for the Z-axis." />
     
     <behaviorWorldFixParamId
-    AltName="World Fix ID"
-    Wiki="The parameter ID to use for correcting the jiggler's worldspace." 
+    AltName="Ground Attach ID"
+    Wiki="The parameter ID to use when the jiggler is attached to the ground." 
     Refs="JigglerBehaviorWorldFixParam" />
     
     <behaviorTargetBoneRateParamId
