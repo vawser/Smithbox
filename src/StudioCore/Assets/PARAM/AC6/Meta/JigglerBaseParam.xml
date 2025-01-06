@@ -1,25 +1,160 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration of jiggle bones within FLVER models."/>
+  
   <Field>   
-    <boneName AltName="Jiggle Bone" />
+    <ctrlType
+    AltName="Control Type"
+    Wiki="The setup type used for setting up the jiggler."
+    Enum="JIGGLER_CTRL_TYPE" />
     
-    <offsetAxis_X_Range_Min AltName="Offset Axis X: Range Minimum" />
-    <offsetAxis_X_Range_Max AltName="Offset Axis X: Range Minimum" />
-    <offsetAxis_Z_Range_Min AltName="Offset Axis Z: Range Maximum" />
-    <offsetAxis_Z_Range_Max AltName="Offset Axis Z: Range Maximum" />
+    <calcType
+    AltName="Calculation Type"
+    Wiki="The calculation type to use with the jiggler."
+    Enum="JIGGLER_CALC_TYPE" />
+  
+    <reserved1
+    AltName=""
+    Padding="" />
     
-    <jigglerBehaviorParamId AltName="Jiggler Behavior ID" Refs="JigglerBehaviorParam" />
-    <jigglerBehaviorSlideParamId AltName="Jiggler Behavior Slide ID" Refs="JigglerBehaviorSlideParam" />
+    <dmyPolyId
+    AltName="Dummy Polygon ID"
+    Wiki="The dummy polygon ID to apply the jiggler to. Only valid if the control type is set to Dummy Polygon." />
+  
+    <strCtrlBoneName 
+    AltName="Control Bone Name" 
+    Wiki="The bone name to apply the jiggler to. Only valid if the control type is set to Skeleton." />
     
-    <axisLeftMoveSpeed AltName="Axis Move Speed: Left" Wiki="Jiggle axis" />
-    <axisRightMoveSpeed AltName="Axis Move Speed: Right" Wiki="Jiggle axis" />
-    <axisDownwardMoveSpeed AltName="Axis Move Speed: Downward" Wiki="Jiggle axis" />
-    <axisUpwardMoveSpeed AltName="Axis Move Speed: Upward" Wiki="Jiggle axis" />
-    <axisBackwardMoveSpeed AltName="Axis Move Speed: Backward" Wiki="Jiggle axis" />
-    <axisForwardMoveSpeed AltName="Axis Move Speed: Forward" Wiki="Jiggle axis" />
+    <reserved2
+    AltName=""
+    Padding="" />
     
-    <jiggleBehaviorTargetBoneRateParam1 AltName="Target Bone Rate ID [1]" Refs="JigglerBehaviorTargetBoneRateParam" />
-    <jiggleBehaviorTargetBoneRateParam2 AltName="Target Bone Rate ID [2]" Refs="JigglerBehaviorTargetBoneRateParam" />
+    <axisX 
+    AltName="Axis: X" 
+    Wiki="The axis to treat as the X-axis (so that it does not overlap with other axes)." 
+    Enum="IK_KNEE_AXIS_TYPE" />
+    
+    <axisY 
+    AltName="Axis: Y" 
+    Wiki="The axis to treat as the Y-axis (so that it does not overlap with other axes)." 
+    Enum="IK_KNEE_AXIS_TYPE" />
+    
+    <axisZ 
+    AltName="Axis: Z" 
+    Wiki="The axis to treat as the Z-axis (so that it does not overlap with other axes)." 
+    Enum="IK_KNEE_AXIS_TYPE" />
+    
+    <bUseFollowBaseBone
+    AltName="Follow Root Bone"
+    Wiki="If ON, the jiggler will follow the root bone."
+    IsBool="" />
+    
+    <limitAngleDeg_MinX
+    AltName="Rotation: X-Axis - Minimum Angle"
+    Wiki="The minimum angle for the X-axis. In degrees." />
+    
+    <limitAngleDeg_MaxX
+    AltName="Rotation: X-Axis - Maximum Angle"
+    Wiki="The maximum angle for the X-axis. In degrees." />
+    
+    <limitAngleDeg_MinY
+    AltName="Rotation: Y-Axis - Minimum Angle"
+    Wiki="The minimum angle for the Y-axis. In degrees." />
+    
+    <limitAngleDeg_MaxY
+    AltName="Rotation: Y-Axis - Maximum Angle"
+    Wiki="The maximum angle for the Y-axis. In degrees." />
+    
+    <behaviorParamId 
+    AltName="Rotation Behavior ID" 
+    Wiki="The rotation behavior parameter to use."
+    Refs="JigglerBehaviorParam" />
+    
+    <behaviorSlideParamId 
+    AltName="Movement Behavior ID" 
+    Wiki="The movement behavior parameter to use."
+    Refs="JigglerBehaviorSlideParam" />
+    
+    <limitOffset_MinX
+    AltName="Position: X-Axis - Minimum Offset"
+    Wiki="The minimum position offset for the X-axis." />
+    
+    <limitOffset_MaxX
+    AltName="Position: X-Axis - Maximum Offset"
+    Wiki="The maximum position offset for the X-axis." />
+    
+    <limitOffset_MinY
+    AltName="Position: Y-Axis - Minimum Offset"
+    Wiki="The minimum position offset for the Y-axis." />
+    
+    <limitOffset_MaxY
+    AltName="Position: Y-Axis - Maximum Offset"
+    Wiki="The maximum position offset for the Y-axis." />
+    
+    <limitOffset_MinZ
+    AltName="Position: Z-Axis - Minimum Offset"
+    Wiki="The minimum position offset for the Z-axis." />
+    
+    <limitOffset_MaxZ
+    AltName="Position: Z-Axis - Maximum Offset"
+    Wiki="The maximum position offset for the Z-axis." />
+    
+    <behaviorWorldFixParamId
+    AltName="World Fix ID"
+    Wiki="The parameter ID to use for correcting the jiggler's worldspace." 
+    Refs="JigglerBehaviorWorldFixParam" />
+    
+    <behaviorTargetBoneRateParamId
+    AltName="Target Bone Rate ID"
+    Wiki="The parameter ID to use for determining the percentage rate from a specified joint." 
+    Refs="JigglerBehaviorTargetBoneRateParam" />
+    
+    <followBaseBone_SpineFollowRateRot
+    AltName="[Follow Root] Spine Follow %: Rotation"
+    Wiki="Used if Follow Root Bone is ON. The tracking rate to the new position after the rotation of the root bone for the spine." />
+    
+    <followBaseBone_SpineFollowRatePos
+    AltName="[Follow Root] Spine Follow %: Position"
+    Wiki="Used if Follow Root Bone is ON. The tracking rate to the new position after the movement of the root bone for the spine." />
+    
+    <followBaseBone_OffsetX
+    AltName="[Follow Root] Spine Position Offset: X"
+    Wiki="Used if Follow Root Bone is ON. The follow position offset on the X-axis for the spine when movement of the root bone occurs." />
+    
+    <followBaseBone_OffsetY
+    AltName="[Follow Root] Spine Position Offset: Y"
+    Wiki="Used if Follow Root Bone is ON. The follow position offset on the Y-axis for the spine when movement of the root bone occurs." />
+    
+    <followBaseBone_OffsetZ
+    AltName="[Follow Root] Spine Position Offset: Z"
+    Wiki="Used if Follow Root Bone is ON. The follow position offset on the Z-axis for the spine when movement of the root bone occurs." />
+    
+    <reserved4
+    AltName=""
+    Padding="" />
+    
   </Field>
-  <Self Wiki="Determines the configuration of jiggle bones within FLVER models."/>
+  
+  <Enums>
+    <Enum Name="JIGGLER_CTRL_TYPE" type="u8">
+        <Option Value="0" Name="Dummy Polygon" />
+        <Option Value="1" Name="Skeleton" />
+    </Enum> 
+    <Enum Name="JIGGLER_CALC_TYPE" type="u8">
+        <Option Value="0" Name="Position only" />
+        <Option Value="1" Name="Rotation only" />
+        <Option Value="2" Name="Position -> Rotation" />
+        <Option Value="4" Name="Fixed to World" />
+        <Option Value="5" Name="Percentage from Specified Joint" />
+    </Enum> 
+    <Enum Name="IK_KNEE_AXIS_TYPE" type="u8">
+        <Option Value="0" Name="+ X" />
+        <Option Value="1" Name="+ Y" />
+        <Option Value="2" Name="+ Z" />
+        <Option Value="3" Name="- X" />
+        <Option Value="4" Name="- Y" />
+        <Option Value="5" Name="- Z" />
+    </Enum>
+  </Enums>
 </PARAMMETA>
