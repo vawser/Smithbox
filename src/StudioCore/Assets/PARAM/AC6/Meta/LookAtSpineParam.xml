@@ -1,5 +1,216 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Self 
+  Wiki="Determines the parameters relating to look-at cameras for various bones."/>
+  
+  <Field>
+    <baseRate
+    AltName=""
+    Wiki="" />
+    
+    <spineBoneRateXZ
+    AltName=""
+    Wiki="" />
+    
+    <clavicleBoneRateXZ
+    AltName=""
+    Wiki="" />
+    
+    <handBoneRateXZ
+    AltName=""
+    Wiki="" />
+    
+    <spineBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <clavicleBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <handBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <spineRotLeftMax
+    AltName=""
+    Wiki="" />
+    
+    <spineRotRightMax
+    AltName=""
+    Wiki="" />
+    
+    <spineRotUpMax
+    AltName=""
+    Wiki="" />
+    
+    <spineRotDownMax
+    AltName=""
+    Wiki="" />
+    
+    <spine1BoneRateXZ
+    AltName=""
+    Wiki="" />
+    
+    <spine1BoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <flyRootRotUpMax
+    AltName=""
+    Wiki="" />
+    
+    <flyRootRotDownMax
+    AltName=""
+    Wiki="" />
+    
+    <flyRootBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <flySpineBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <flySpine1BoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <flyClavicleBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <flyHandBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <spineAexABoneRateXZ
+    AltName=""
+    Wiki="" />
+    
+    <spineAexABoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <flySpineAexABoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <spineAexBBoneRateXZ
+    AltName=""
+    Wiki="" />
+    
+    <spineAexBBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <flySpineAexBBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <pelvisBoneRateXZ
+    AltName=""
+    Wiki="" />
+    
+    <pelvisBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <flyPelvisBoneRateY
+    AltName=""
+    Wiki="" />
+    
+    <spineBoneRateYD
+    AltName=""
+    Wiki="" />
+    
+    <clavicleBoneRateYD
+    AltName=""
+    Wiki="" />
+    
+    <handBoneRateYD
+    AltName=""
+    Wiki="" />
+    
+    <flyRootBoneRateYD
+    AltName=""
+    Wiki="" />
+    
+    <flySpineBoneRateYD
+    AltName=""
+    Wiki="" />
+    
+    <flyClavicleBoneRateYD
+    AltName=""
+    Wiki="" />
+    
+    <flyHandBoneRateYD
+    AltName=""
+    Wiki="" />
+    
+    <priority
+    AltName=""
+    Wiki="" />
+    
+    <bParentRateTakeOver
+    AltName=""
+    Wiki="" 
+    IsBool="" />
+    
+    <reserved1
+    AltName=""
+    Padding="" />
+    
+    <lookAtRotAngDegPerSecXZ
+    AltName=""
+    Wiki="" />
+    
+    <lookAtRotAngDegPerSecY
+    AltName=""
+    Wiki="" />
+    
+    <spineRotAngDegPerSecXZ
+    AltName=""
+    Wiki="" />
+    
+    <spineRotAngDegPerSecY
+    AltName=""
+    Wiki="" />
+    
+    <armRotAngDegPerSecXZ
+    AltName=""
+    Wiki="" />
+    
+    <armRotAngDegPerSecY
+    AltName=""
+    Wiki="" />
+    
+    <lookAtDisableRotAngDegPerSecXZ
+    AltName=""
+    Wiki="" />
+    
+    <lookAtDisableRotAngDegPerSecY
+    AltName=""
+    Wiki="" />
+    
+    <lookAtDisableRotTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <lookAtDisableFlyRotTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <changeParamIntpTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <switchTargetIntpTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <reserved4
+    AltName=""
+    Padding="" />
+  </Field>
 </PARAMMETA>
