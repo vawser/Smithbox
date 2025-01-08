@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Self 
+  Wiki="Determines the parameters relating to look-at camera for heads."/>
+  
+  <Field>
+    <lookAtPerf
+    AltName=""
+    Wiki="" />
+    
+    
+  </Field>
 </PARAMMETA>
