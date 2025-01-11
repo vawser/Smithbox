@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuraiton of magic. Obsolete."/>
+
+  <Field>
+    <yesNoDialogMessageId 
+    AltName="Dialog Message ID"
+    Wiki="The text ID of to use for the 'Yes / No' dialog issued when this spell is used." />
+    
+    <limitCancelSpEffectId 
+    AltName="Ignore Usage Restriction SpEffect ID" 
+    Wiki="If the specified SpEffect is active on the player, then usage restrictions for this spell are ignored." 
+    Refs="SpEffectParam" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The numeric ID used for ordering each spell in menus." />
+    
+    <refId
+    AltName="Call ID" 
+    Wiki="The call ID to used to specific the Attack, Bullet or SpEffect this spell uses when triggered." 
+    Refs="AtkParam_Pc(refCategory=0),Bullet(refCategory=1),SpEffectParam(refCategory=2)"/>
+    
+    <mp 
+    AltName="FP Consumption" 
+    Wiki="The FP consumption of this spell when triggered." />
+    
+    <stamina 
+    AltName="Stamina Consumption" 
+    Wiki="The stamina consumption of this spell when triggered." />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="The numeric ID used for specifying which icon is used to display this spell in menus." />
+    
+    <behaviorId 
+    AltName="Behavior ID" 
+    Wiki="The behavior parameter to use when this spell is triggered." />
+    
+    <mtrlItemId 
+    AltName="Item Requirement for Purchase" 
+    Wiki="The item (or items) that the spell costs in a shop that must be present before it can be purchased." 
+    Refs="EquipMtrlSetParam" />
+    
+    <replaceMagicId 
+    AltName="State Info Switch: Magic ID" 
+    Wiki="The new magic row ID to use when the specified state info is invoked." />
+    
+    <maxQuantity 
+    AltName="Usage Count" 
+    Wiki="The number of uses this spell allows when equipped before requiring a bonfire reset." />
+    
+    <heroPoint
+    AltName="Humanity Consumption"
+    Wiki="The amount of humanity this spell consumes when triggered." />
+    
+    <overDexterity 
+    AltName="Maximum Dexterity" 
+    Wiki="The maximum value of dexterity over start value." />
+    
+    <sfxVariationId
+    AltName="Particle Variation ID"
+    Wiki="The offset to apply to the SFX ID invoked in the TAE event." />
+    
+    <slotLength 
+    AltName="Slot Usage" 
+    Wiki="The number of spell equipment slots this spell occupies." />
+    
+    <requirementIntellect 
+    AltName="Requirement: INT" 
+    Wiki="The minimum amount of intelligence (INT) this spell requires for a valid cast." />
+    
+    <requirementFaith 
+    AltName="Requirement: FTH" 
+    Wiki="The minimum amount of faith (FTH) this spell requires for a valid cast." />
+    
+    <analogDexiterityMin 
+    AltName="Casting Speed Range: Start" 
+    Wiki="The minimum value of dexterity (DEX) to start scaling the cast animation with (via the TimeAct event)." />
+    
+    <analogDexiterityMax 
+    AltName="Casting Speed Range: End" 
+    Wiki="The maximum value of dexterity (DEX) to stop scaling the cast animation with (via the TimeAct event)." />
+    
+    <ezStateBehaviorType 
+    AltName="Magic School Type" 
+    Wiki="The magic school this spell belongs to." 
+    Enum="MAGIC_CATEGORY" />
+    
+    <refCategory 
+    AltName="Call Category" 
+    Wiki="The parameter type to use for the call ID." 
+    Enum="BEHAVIOR_REF_TYPE" />
+    
+    <spEffectCategory 
+    AltName="SpEffect Category" 
+    Wiki="The SpEffect category this spell belongs to" 
+    Enum="BEHAVIOR_CATEGORY" />
+    
+    <refType 
+    AltName="Motion Category" 
+    Wiki="The TimeAct offset used in the c0000 TAE to find the casting animations." />
+    
+    <opmeMenuType 
+    AltName="Menu Type on Usage" 
+    Wiki="The type of menu to display when the spell is used." 
+    Enum="GOODS_OPEN_MENU" />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+    <hasSpEffectType 
+    AltName="State Info Switch: Value" 
+    Wiki="The state info value that triggers the state info switch for this spell, changing the magic row ID it uses." 
+    ProjectEnum="SP_EFFECT_TYPE" />
+    
+    <replaceCategory 
+    AltName="State Info Switch: Replacement Category" 
+    Wiki="Additional conditions when switching the spell due to a state info switch occuring." 
+    Enum="REPLACE_CATEGORY" />
+    
+    <useLimitCategory 
+    AltName="Usage Limit: SpEffect Category" 
+    Wiki="The usage categories that this spell will be blocked by if SpEffect with the same category are present." 
+    Enum="SP_EFFECT_USELIMIT_CATEGORY" />
+    
+    <vowType0 
+    AltName="Vow Type: 0" 
+    Wiki="If ON, this spell is associated with the covenant in slot 0." 
+    IsBool="" />
+    
+    <vowType1
+    AltName="Vow Type: 1" 
+    Wiki="If ON, this spell is associated with the covenant in slot 1." 
+    IsBool="" />
+    
+    <vowType2
+    AltName="Vow Type: 2" 
+    Wiki="If ON, this spell is associated with the covenant in slot 2." 
+    IsBool="" />
+    
+    <vowType3
+    AltName="Vow Type: 3" 
+    Wiki="If ON, this spell is associated with the covenant in slot 3." 
+    IsBool="" />
+    
+    <vowType4
+    AltName="Vow Type: 4" 
+    Wiki="If ON, this spell is associated with the covenant in slot 4." 
+    IsBool="" />
+    
+    <vowType5
+    AltName="Vow Type: 5" 
+    Wiki="If ON, this spell is associated with the covenant in slot 5." 
+    IsBool="" />
+    
+    <vowType6
+    AltName="Vow Type: 6" 
+    Wiki="If ON, this spell is associated with the covenant in slot 6." 
+    IsBool="" />
+    
+    <vowType7
+    AltName="Vow Type: 7" 
+    Wiki="If ON, this spell is associated with the covenant in slot 7." 
+    IsBool="" />
+    
+    <enable_multi 
+    AltName="Usable in Multiplayer" 
+    Wiki="If ON, then the spell can be used in multiplayer sessions." 
+    IsBool="" />
+    
+    <enable_multi_only 
+    AltName="Usable in Multiplayer Only" 
+    Wiki="If ON, then the spell can be used in multiplayer sessions, but not in offline sessions." 
+    IsBool="" />
+    
+    <isEnchant 
+    AltName="Is Weapon Enchantment" 
+    Wiki="If ON, this spell is considered a weapon enhancement spell." 
+    IsBool="" />
+    
+    <isShieldEnchant 
+    AltName="Is Shield Enchantment" 
+    Wiki="If ON, this spell is considered a shield enhancement spell." 
+    IsBool="" />
+    
+    <enable_live 
+    AltName="Enable in Multiplayer: Host" 
+    Wiki="If ON, this spell can be used in a sessions where the player is the host." 
+    IsBool="" />
+    
+    <enable_gray 
+    AltName="Enable in Multiplayer: Gray Phantom" 
+    Wiki="If ON, this spell can be used in a sessions where the player is a gray phantom." 
+    IsBool="" />
+    
+    <enable_white 
+    AltName="Enable in Multiplayer: White Phantom" 
+    Wiki="If ON, this spell can be used in a sessions where the player is a white phantom." 
+    IsBool="" />
+    
+    <enable_black 
+    AltName="Enable in Multiplayer: Black Phantom" 
+    Wiki="If ON, this spell can be used in a sessions where the player is a black phantom." 
+    IsBool="" />
+    
+    <disableOffline 
+    AltName="Disable when Offline" 
+    Wiki="If ON, this spell is disabled if the player is not in a multiplayer session." 
+    IsBool="" />
+    
+    <castResonanceMagic 
+    AltName="Trigger Resonance" 
+    Wiki="If ON, this spell will broadcast resonance across multiplayer sessions (i.e. white rings) that empower the spell." IsBool="" />
+    
+    <isValidTough_ProtSADmg 
+    AltName="Is Toughness Calculated" 
+    Wiki="Whether the toughness calculation is performed even if the armor poise is the initial value."
+    IsBool="" />
+    
+    <pad_1
+    AltName=""
+    Padding="" />
+    
+    <vowType8
+    AltName="Vow Type: 8" 
+    Wiki="If ON, this spell is associated with the covenant in slot 8." 
+    IsBool="" />
+    
+    <vowType9
+    AltName="Vow Type: 9" 
+    Wiki="If ON, this spell is associated with the covenant in slot 9." 
+    IsBool="" />
+    
+    <vowType10
+    AltName="Vow Type: 10" 
+    Wiki="If ON, this spell is associated with the covenant in slot 10." 
+    IsBool="" />
+    
+    <vowType11
+    AltName="Vow Type: 11" 
+    Wiki="If ON, this spell is associated with the covenant in slot 11." 
+    IsBool="" />
+    
+    <vowType12
+    AltName="Vow Type: 12" 
+    Wiki="If ON, this spell is associated with the covenant in slot 12." 
+    IsBool="" />
+    
+    <vowType13
+    AltName="Vow Type: 13" 
+    Wiki="If ON, this spell is associated with the covenant in slot 13." 
+    IsBool="" />
+    
+    <vowType14
+    AltName="Vow Type: 14" 
+    Wiki="If ON, this spell is associated with the covenant in slot 14." 
+    IsBool="" />
+    
+    <vowType15
+    AltName="Vow Type: 15" 
+    Wiki="If ON, this spell is associated with the covenant in slot 15." 
+    IsBool="" />
+    
+    <castSfxId 
+    AltName="Cast: Particle ID" 
+    Wiki="The SFX ID to use during the cast animation of this spell." 
+    ParticleAlias="" />
+    
+    <fireSfxId 
+    AltName="Shoot: Particle ID" 
+    Wiki="The SFX ID to use during the shoot animation of this spell." 
+    ParticleAlias="" />
+    
+    <effectSfxId 
+    AltName="Effect: Particle ID" 
+    Wiki="The SFX ID to use during the effect animation of this spell." 
+    ParticleAlias="" />
+    
+    <toughnessCorrectRate 
+    AltName="Poise Correction" 
+    Wiki="The magnification rate to apply to the base value of poise." />
+    
+    <reserve 
+    AltName="" 
+    Padding=""/>
+  </Field>
+  
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="Attack" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="MAGIC_CATEGORY" type="u8">
+      <Option Value="0" Name="Spell" />
+      <Option Value="1" Name="Miracle" />
+      <Option Value="2" Name="Sorcery" />
+      <Option Value="3" Name="Vow Spell" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Right-hand Attack" />
+        <Option Value="2" Name="Left-hand Attack" />
+        <Option Value="3" Name="Sorcery Attack" />
+        <Option Value="4" Name="Miracle Attack" />
+        <Option Value="5" Name="Body" />
+        <Option Value="6" Name="Enemy Attack 1" />
+        <Option Value="7" Name="Enemy Attack 2" />
+        <Option Value="8" Name="Enemy Attack 3" />
+        <Option Value="9" Name="Kick" />
+    </Enum>
+    <Enum Name="GOODS_OPEN_MENU" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Yes / No" />
+      <Option Value="2" Name="Kick Player" />
+      <Option Value="3" Name="Leave World" />
+      <Option Value="4" Name="White Soapstone" />
+      <Option Value="5" Name="Write Message" />
+      <Option Value="6" Name="Message List" />
+      <Option Value="7" Name="Sinner Rankings" />
+      <Option Value="8" Name="Chaos Servant Rankings" />
+      <Option Value="9" Name="Ok / Cancel" />
+      <Option Value="10" Name="Invade World" />
+      <Option Value="11" Name="Select Bonfire Warp" />
+      <Option Value="12" Name="Darkling" />
+    </Enum>
+    <Enum Name="REPLACE_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Add cooperation value to Call ID" />
+        <Option Value="2" Name="Add resonance value to the Call ID" />
+        <Option Value="3" Name="Add Blade of the Dark Moon rank value to Call ID" />
+        <Option Value="4" Name="Add Gravelord Servant rank value to Call ID" />
+        <Option Value="5" Name="Add Path of the Dragon rank value to Call ID" />
+    </Enum>
+    <Enum Name="SP_EFFECT_USELIMIT_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Weapon Change" />
+        <Option Value="2" Name="Transform Body" />
+        <Option Value="3" Name="Transform Head" />
+        <Option Value="4" Name="Transform Head (Special)" />
+        <Option Value="5" Name="Movement" />
+        <Option Value="6" Name="Damage Change" />
+        <Option Value="7" Name="Inflicted Status: Poison" />
+        <Option Value="8" Name="Inflicted Status: Toxic" />
+        <Option Value="9" Name="Inflicted Status: Bleed" />
+        <Option Value="10" Name="Inflicted Status: Curse" />
+        <Option Value="11" Name="Transform Body / Transform Head" />
+        <Option Value="12" Name="Transform Body / Transform Head / Transform Head (Special)" />
+        <Option Value="13" Name="Transform Body / Transform Head" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

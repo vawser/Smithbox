@@ -4,48 +4,151 @@
   Wiki="Determines the parameters used to display Archive and Mail messages in-game." />
   
   <Field>
-    <disableParam_NT AltName="Disable Param: Network Test Version" Wiki="Exclude from the NT version or mark the ones to be excluded." IsBool="" />
-    <disableParam_Product AltName="Disable Param: Release Version" Wiki="Exclude from the product version or mark the items to be excluded." IsBool="" />
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
     
-    <disableParamReserve1 Padding="" />
-    <disableParamReserve2 Padding="" />
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding="" />
   
-    <senderTextID AltName="Sender Name: Text ID" Wiki="Found in FMG Entries in Menu Text" />
+    <senderTextID 
+    AltName="Sender Name: Text ID" 
+    Wiki="Found in FMG Entries in Menu Text" />
     
-    <reserved1 Padding="" />
+    <reserved1 
+    AltName="" 
+    Padding="" />
     
-    <backImageID AltName="Background Image ID" Wiki="" />
+    <backImageID 
+    AltName="Background Image ID" 
+    Wiki="The image ID to use for the background." />
     
-    <attachedFile_reserved Padding="" />
-    <attachedFile_type AltName="Attachment Category" Wiki="Attachment data type." Enum="MAIL_ATTACHED_FILE_TYPE" />
-    <attachedFile_ID AltName="Attachment ID" Wiki="Attachment data ID" />
+    <attachedFile_reserved 
+    AltName="" 
+    Padding="" />
+    
+    <attachedFile_type 
+    AltName="Attachment Category"
+    Wiki="The attachment type to use for the 'attached file' element." 
+    Enum="MAIL_ATTACHED_FILE_TYPE" />
+    
+    <attachedFile_ID 
+    AltName="Attachment ID" 
+    Wiki="The attachment ID to use for the 'attached file' element data." />
   
-    <page0_textID AltName="Page 1: Text ID" Wiki="1st page: Body text ID" FmgRef="Archive_Name" />
-    <page0_imageID AltName="Page 1: Image ID" Wiki="1st page: Image ID in the text" />
-    <page0_layout AltName="Page 1: Layout" Wiki="" Enum="MAIL_LAYOUT_TYPE" />
-    <page0_reserved1 Padding="" />
-    <page0_blockEffect_0 AltName="Page 1: Block 1" Wiki="" />
-    <page0_blockEffect_1 AltName="Page 1: Block 2" Wiki="" />
-    <page0_blockEffect_2 AltName="Page 1: Block 3" Wiki="" />
-    <page0_reserved2 Padding="" />
-  
-    <page1_textID AltName="Page 2: Text ID" Wiki="1st page: Body text ID" FmgRef="Archive_Name" />
-    <page1_imageID AltName="Page 2: Image ID" Wiki="1st page: Image ID in the text" />
-    <page1_layout AltName="Page 2: Layout" Wiki="" Enum="MAIL_LAYOUT_TYPE" />
-    <page1_reserved1 Padding="" />
-    <page1_blockEffect_0 AltName="Page 2: Block 1" Wiki="" />
-    <page1_blockEffect_1 AltName="Page 2: Block 2" Wiki="" />
-    <page1_blockEffect_2 AltName="Page 2: Block 3" Wiki="" />
-    <page1_reserved2 Padding="" />
+    <page0_textID 
+    AltName="Page 1: Text ID" 
+    Wiki="The text ID to use for the page 1 text element." 
+    Separator="" />
     
-    <page2_textID AltName="Page 3: Text ID" Wiki="1st page: Body text ID" FmgRef="Archive_Name" />
-    <page2_imageID AltName="Page 3: Image ID" Wiki="1st page: Image ID in the text" />
-    <page2_layout AltName="Page 3: Layout" Wiki="" Enum="MAIL_LAYOUT_TYPE" />
-    <page2_reserved1 Padding="" />
-    <page2_blockEffect_0 AltName="Page 3: Block 1" Wiki="" />
-    <page2_blockEffect_1 AltName="Page 3: Block 2" Wiki="" />
-    <page2_blockEffect_2 AltName="Page 3: Block 3" Wiki="" />
-    <page2_reserved2 Padding="" />
+    <page0_imageID 
+    AltName="Page 1: Image ID" 
+    Wiki="The image ID to use for the page 1 image element." />
+    
+    <page0_layout 
+    AltName="Page 1: Layout" 
+    Wiki="The position of the page 1 elements." 
+    Enum="MAIL_LAYOUT_TYPE" />
+    
+    <page0_reserved1 
+    AltName="" 
+    Padding="" />
+    
+    <page0_blockEffect_0 
+    AltName="Page 1: Block Load ID 1" 
+    Wiki="The block load effect to use for page 1." />
+    
+    <page0_blockEffect_1 
+    AltName="Page 1: Block Load ID 2" 
+    Wiki="The block load effect to use for page 1." />
+    
+    <page0_blockEffect_2 
+    AltName="Page 1: Block Load ID 3" 
+    Wiki="The block load effect to use for page 1." />
+    
+    <page0_reserved2 
+    AltName="" 
+    Padding="" />
+  
+    <page1_textID 
+    AltName="Page 2: Text ID" 
+    Wiki="The text ID to use for the page 2 text element." 
+    Separator="" />
+    
+    <page1_imageID 
+    AltName="Page 2: Image ID" 
+    Wiki="The image ID to use for the page 2 image element." />
+    
+    <page1_layout 
+    AltName="Page 2: Layout" 
+    Wiki="The position of the page 2 elements." 
+    Enum="MAIL_LAYOUT_TYPE" />
+    
+    <page1_reserved1 
+    AltName="" 
+    Padding="" />
+    
+    <page1_blockEffect_0 
+    AltName="Page 2: Block Load ID 1" 
+    Wiki="The block load effect to use for page 2." />
+    
+    <page1_blockEffect_1 
+    AltName="Page 2: Block Load ID 2" 
+    Wiki="The block load effect to use for page 2." />
+    
+    <page1_blockEffect_2 
+    AltName="Page 2: Block Load ID 3" 
+    Wiki="The block load effect to use for page 2." />
+    
+    <page1_reserved2 
+    AltName="" 
+    Padding="" />
+    
+    <page2_textID 
+    AltName="Page 3: Text ID" 
+    Wiki="The text ID to use for the page 3 text element." 
+    Separator="" />
+    
+    <page2_imageID 
+    AltName="Page 3: Image ID" 
+    Wiki="The image ID to use for the page 3 image element." />
+    
+    <page2_layout 
+    AltName="Page 3: Layout" 
+    Wiki="The position of the page 3 elements." 
+    Enum="MAIL_LAYOUT_TYPE" />
+    
+    <page2_reserved1 
+    AltName="" 
+    Padding="" />
+    
+    <page2_blockEffect_0 
+    AltName="Page 3: Block Load ID 1" 
+    Wiki="The block load effect to use for page 3." />
+    
+    <page2_blockEffect_1 
+    AltName="Page 3: Block Load ID 2" 
+    Wiki="The block load effect to use for page 3." />
+    
+    <page2_blockEffect_2 
+    AltName="Page 3: Block Load ID 3" 
+    Wiki="The block load effect to use for page 3." />
+    
+    <page2_reserved2 
+    AltName="" 
+    Padding="" />
+    
   </Field>
   <Enums>
     <Enum Name="MAIL_LAYOUT_TYPE" type="u8">
