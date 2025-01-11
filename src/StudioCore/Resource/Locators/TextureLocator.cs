@@ -607,7 +607,7 @@ public static class TextureLocator
         if (Smithbox.ProjectType == ProjectType.AC6)
         {
             string path;
-            if (partsId.Substring(0, 2) == "wp")
+            if (partsId.Length >= 2 && partsId.Substring(0, 2) == "wp")
             {
                 string id;
                 if (partsId.EndsWith("_l"))

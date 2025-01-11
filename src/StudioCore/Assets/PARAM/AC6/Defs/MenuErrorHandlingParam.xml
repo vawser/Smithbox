@@ -6,7 +6,7 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="u32 ErrorCode">
+    <Field Def="s32 ErrorCode">
       <DisplayName>エラーコード</DisplayName>
       <Enum>MENU_ERRORHANDLING_PARAM_ERROR_CODE</Enum>
       <Description>エラーコード</Description>

@@ -324,27 +324,28 @@ public static class ParamReferenceUtils
                     modelId2 = (string)c.Value.Value;
                 }
 
-                var width = ImGui.GetColumnWidth();
-
                 if ((currentField == "modelName" || currentField == "model0Name") && modelId1 != "")
                 {
-                    if (ImGui.Button($"View Model", new Vector2(width, 20)))
-                    {
-                        EditorCommandQueue.AddCommand($"model/load/{modelId1}/Asset");
-                    }
-                    UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+                    DisplayViewModelSection(0, modelId1);
                 }
 
                 if ((currentField == "model1Name" || currentField == "simpleModelName") && modelId2 != "")
                 {
-                    if (ImGui.Button($"View Model", new Vector2(width, 20)))
-                    {
-                        EditorCommandQueue.AddCommand($"model/load/{modelId2}/Asset");
-                    }
-                    UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+                    DisplayViewModelSection(1, modelId2);
                 }
             }
         }
+    }
+
+    private static void DisplayViewModelSection(int imguiID, string assetId)
+    {
+        var width = ImGui.GetColumnWidth();
+
+        if (ImGui.Button($"View Model##{imguiID}_viewModel{assetId}", new Vector2(width, 20)))
+        {
+            EditorCommandQueue.AddCommand($"model/load/{assetId}/Asset");
+        }
+        UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
     }
 
     private static List<string> AssetList;

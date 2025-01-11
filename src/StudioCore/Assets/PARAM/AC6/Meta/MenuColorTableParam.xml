@@ -1,13 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <ColorEdit>
-    <ColorEditor Name="Menu Color" Fields="colorR,colorG,colorB" PlacedField="colorB" />
-  </ColorEdit>
+  <Self 
+  Wiki="Determines the coloring used for various interface elements." />
+  
   <Field>
-    <colorR AltName="Menu Color: R" />
-    <colorG AltName="Menu Color: G" />
-    <colorB AltName="Menu Color: B" />
-    <colorAlpha AltName="Menu Color: A" />
+    <r 
+    AltName="Menu Color: R" 
+    Wiki="The red component of the color." />
+    
+    <g 
+    AltName="Menu Color: G"
+    Wiki="The green component of the color." />
+    
+    <b 
+    AltName="Menu Color: B" 
+    Wiki="The blue component of the color." />
+    
+    <a 
+    AltName="Menu Color: Alpha" 
+    Wiki="The alpha component of the color." />
   </Field>
-  <Self />
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Menu Color" 
+    Fields="r,g,b" 
+    PlacedField="b" />
+    
+  </ColorEdit>
+  
 </PARAMMETA>
