@@ -12,7 +12,7 @@
     <behaviorJudgeId />
     <ezStateBehaviorType_old />
     <refType Enum="ReferenceType" />
-    <refId Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
+    <refId Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" DeepCopyTarget="Behavior" />
     <sfxVariationId />
     <stamina />
     <mp />

@@ -73,7 +73,7 @@ public class ActionHandler
 
         for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
         {
-            actions.Add(new AddParamsAction(param, "legacystring", rowsToInsert, false, false, -1, CFG.Current.Param_Toolbar_Duplicate_Offset));
+            actions.Add(new AddParamsAction(param, "legacystring", rowsToInsert, false, false, -1, CFG.Current.Param_Toolbar_Duplicate_Offset, true));
         }
 
         var compoundAction = new CompoundAction(actions);
@@ -376,4 +376,5 @@ public class ActionHandler
             ParamBank.RefreshParamDifferenceCacheTask();
         }
     }
+
 }

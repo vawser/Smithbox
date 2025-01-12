@@ -58,28 +58,28 @@ InvisibleFlag00,InvisibleFlag01,InvisibleFlag02,InvisibleFlag03,InvisibleFlag04,
     <basicPrice AltName="Basic Price" Wiki="Basic price" />
     <sellValue AltName="Sell Value" Wiki="Selling price" />
     <weight AltName="Weight" Wiki="Weight [kg]." />
-    <residentSpEffectId AltName="Resident SpEffect ID 1" Wiki="Resident special effect ID1" Refs="SpEffectParam" />
-    <residentSpEffectId2 AltName="Resident SpEffect ID 2" Wiki="Resident special effect ID2" Refs="SpEffectParam" />
-    <residentSpEffectId3 AltName="Resident SpEffect ID 3" Wiki="Resident special effect ID3" Refs="SpEffectParam" />
+    <residentSpEffectId AltName="Resident SpEffect ID 1" Wiki="Resident special effect ID1" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <residentSpEffectId2 AltName="Resident SpEffect ID 2" Wiki="Resident special effect ID2" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <residentSpEffectId3 AltName="Resident SpEffect ID 3" Wiki="Resident special effect ID3" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
     <materialSetId AltName="Upgrade Material ID" Wiki="Material parameter ID required for weapon enhancement" Refs="EquipMtrlSetParam" />
     <partsDamageRate AltName="Weak Parts Damage %" Wiki="Part damage rate" />
     <correctSARecover AltName="Poise Recovery Correction" Wiki="Value added to poise recovery time (so negative values are better)." />
-    <originEquipPro1 AltName="Origin Armor +0" Wiki="Strengthening of this armor Original armor ID" Refs="EquipParamProtector" />
-    <originEquipPro2 AltName="Origin Armor +1" Wiki="Strengthening this armor Original armor ID1" Refs="EquipParamProtector" />
-    <originEquipPro3 AltName="Origin Armor +2" Wiki="Strengthening this armor Original armor ID2" Refs="EquipParamProtector"/>
-    <originEquipPro4 AltName="Origin Armor +3" Wiki="Strengthening this armor Original armor ID3" Refs="EquipParamProtector"/>
-    <originEquipPro5 AltName="Origin Armor +4" Wiki="Strengthening this armor Original armor ID4" Refs="EquipParamProtector"/>
-    <originEquipPro6 AltName="Origin Armor +5" Wiki="Strengthening this armor Original armor ID5" Refs="EquipParamProtector"/>
-    <originEquipPro7 AltName="Origin Armor +6" Wiki="Strengthening this armor Original armor ID6" Refs="EquipParamProtector"/>
-    <originEquipPro8 AltName="Origin Armor +7" Wiki="Strengthening this armor Original armor ID7" Refs="EquipParamProtector"/>
-    <originEquipPro9 AltName="Origin Armor +8" Wiki="Strengthening this armor Original armor ID8" Refs="EquipParamProtector"/>
-    <originEquipPro10 AltName="Origin Armor +9" Wiki="Strengthening this armor Original armor ID9" Refs="EquipParamProtector"/>
-    <originEquipPro11 AltName="Origin Armor +10" Wiki="Strengthening this armor Original armor ID10" Refs="EquipParamProtector"/>
-    <originEquipPro12 AltName="Origin Armor +11" Wiki="Strengthening this armor Original armor ID11" Refs="EquipParamProtector"/>
-    <originEquipPro13 AltName="Origin Armor +12" Wiki="Strengthening this armor Original armor ID12" Refs="EquipParamProtector"/>
-    <originEquipPro14 AltName="Origin Armor +13" Wiki="Strengthening this armor Original armor ID13" Refs="EquipParamProtector"/>
-    <originEquipPro15 AltName="Origin Armor +14" Wiki="Strengthening this armor Original armor ID14" Refs="EquipParamProtector"/>
-    <originEquipPro16 AltName="Origin Armor +15" Wiki="Strengthening this armor Original armor ID15" Refs="EquipParamProtector"/>
+    <originEquipPro1 AltName="Origin Armor +0" Wiki="Strengthening of this armor Original armor ID" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro2 AltName="Origin Armor +1" Wiki="Strengthening this armor Original armor ID1" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro3 AltName="Origin Armor +2" Wiki="Strengthening this armor Original armor ID2" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro4 AltName="Origin Armor +3" Wiki="Strengthening this armor Original armor ID3" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro5 AltName="Origin Armor +4" Wiki="Strengthening this armor Original armor ID4" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro6 AltName="Origin Armor +5" Wiki="Strengthening this armor Original armor ID5" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro7 AltName="Origin Armor +6" Wiki="Strengthening this armor Original armor ID6" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro8 AltName="Origin Armor +7" Wiki="Strengthening this armor Original armor ID7" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro9 AltName="Origin Armor +8" Wiki="Strengthening this armor Original armor ID8" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro10 AltName="Origin Armor +9" Wiki="Strengthening this armor Original armor ID9" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro11 AltName="Origin Armor +10" Wiki="Strengthening this armor Original armor ID10" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro12 AltName="Origin Armor +11" Wiki="Strengthening this armor Original armor ID11" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro13 AltName="Origin Armor +12" Wiki="Strengthening this armor Original armor ID12" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro14 AltName="Origin Armor +13" Wiki="Strengthening this armor Original armor ID13" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro15 AltName="Origin Armor +14" Wiki="Strengthening this armor Original armor ID14" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+    <originEquipPro16 AltName="Origin Armor +15" Wiki="Strengthening this armor Original armor ID15" Refs="EquipParamProtector" DeepCopyTarget="Source" />
     <faceScaleM_ScaleX AltName="Facescale - Male - Scale X" Wiki="" />
     <faceScaleM_ScaleZ AltName="Facescale - Male - Scale Z" Wiki="" />
     <faceScaleM_MaxX AltName="Facescale - Male - Max X" Wiki="" />

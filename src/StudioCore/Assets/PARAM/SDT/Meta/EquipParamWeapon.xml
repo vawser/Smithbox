@@ -46,29 +46,29 @@
     <magGuardCutRate Wiki="Percentage of magic damage this weapon can block" />
     <fireGuardCutRate Wiki="Percentage of fire damage this weapon can block" />
     <thunGuardCutRate Wiki="Percentage of lightning damage this weapon can block" />
-    <spEffectBehaviorId0 Wiki="Applies speffect when this weapon hits another character" Refs="SpEffectParam" />
-    <spEffectBehaviorId1 Wiki="Applies speffect when this weapon hits another character" Refs="SpEffectParam" />
-    <spEffectBehaviorId2 Wiki="Applies speffect when this weapon hits another character" Refs="SpEffectParam" />
-    <residentSpEffectId Wiki="Applies this speffect to the player when this weapon is equipped" Refs="SpEffectParam" />
-    <residentSpEffectId1 Wiki="Applies this speffect to the player when this weapon is equipped" Refs="SpEffectParam" />
-    <residentSpEffectId2 Wiki="Applies this speffect to the player when this weapon is equipped" Refs="SpEffectParam" />
+    <spEffectBehaviorId0 Wiki="Applies speffect when this weapon hits another character" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectBehaviorId1 Wiki="Applies speffect when this weapon hits another character" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectBehaviorId2 Wiki="Applies speffect when this weapon hits another character" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <residentSpEffectId Wiki="Applies this speffect to the player when this weapon is equipped" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <residentSpEffectId1 Wiki="Applies this speffect to the player when this weapon is equipped" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <residentSpEffectId2 Wiki="Applies this speffect to the player when this weapon is equipped" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
     <materialSetId Wiki="Materials used to obtain this item in a shop" Refs="EquipMtrlSetParam" />
-    <originEquipWep Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep1 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep2 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep3 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep4 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep5 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep6 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep7 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep8 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep9 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep10 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep11 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep12 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep13 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep14 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
-    <originEquipWep15 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" />
+    <originEquipWep Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep1 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep2 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep3 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep4 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep5 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep6 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep7 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep8 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep9 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep10 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep11 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep12 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep13 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep14 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
+    <originEquipWep15 Wiki="Logic used to automatically upgrade this weapon using ReinforceParamWeapon" Refs="EquipParamWeapon" DeepCopyTarget="Source" />
     <weakA_DamageRate Wiki="Multiplies this weapons damage against Npc's with isWeakA enabled" />
     <weakB_DamageRate Wiki="Multiplies this weapons damage against Npc's with isWeakB enabled" />
     <weakC_DamageRate Wiki="Multiplies this weapons damage against Npc's with isWeakC enabled" />

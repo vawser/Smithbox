@@ -91,11 +91,11 @@
     <hit3_Radius AltName="Hit 3: Radius" Wiki="Radius of sphere/capsule hitbox." />
     <knockbackDist AltName="Knockback Distance" Wiki="Knockback distance of attack." />
     <hitStopTime AltName="Hit Stop Time" Wiki="Duration of the 'hit' flag on the target." />
-    <spEffectId0 AltName="Target SpEffect [0]" Wiki="Special effect applied to target on hit" Refs="SpEffectParam" />
-    <spEffectId1 AltName="Target SpEffect [1]" Wiki="Special effect applied to target on hit." Refs="SpEffectParam" />
-    <spEffectId2 AltName="Target SpEffect [2]" Wiki="Special effect applied to target on hit." Refs="SpEffectParam" />
-    <spEffectId3 AltName="Target SpEffect [3]" Wiki="Special effect applied to target on hit." Refs="SpEffectParam" />
-    <spEffectId4 AltName="Target SpEffect [4]" Wiki="Special effect applied to target on hit." Refs="SpEffectParam" />
+    <spEffectId0 AltName="Target SpEffect [0]" Wiki="Special effect applied to target on hit" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId1 AltName="Target SpEffect [1]" Wiki="Special effect applied to target on hit." Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId2 AltName="Target SpEffect [2]" Wiki="Special effect applied to target on hit." Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId3 AltName="Target SpEffect [3]" Wiki="Special effect applied to target on hit." Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId4 AltName="Target SpEffect [4]" Wiki="Special effect applied to target on hit." Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
     <hit0_DmyPoly1 AltName="Hit 0: Dummy Poly [1]" Wiki="Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)." />
     <hit1_DmyPoly1 AltName="Hit 1: Dummy Poly [1]" Wiki="Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)." />
     <hit2_DmyPoly1 AltName="Hit 2: Dummy Poly [1]" Wiki="Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)." />

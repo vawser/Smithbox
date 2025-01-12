@@ -39,9 +39,9 @@
     
     <pad0 AltName="pad0" Padding="" />
     
-    <atkParamId AltName="Attack Param ID" Refs="AtkParam_Npc(refType=0),AtkParam_Pc(refType=0)"/>
-    <bulletParamId AltName="Bullet Param ID" Refs="Bullet(refType=1)" />
-    <spEffectId AltName="SpEffect Param ID" Refs="SpEffectParam(refType=2)" />
+    <atkParamId AltName="Attack Param ID" Refs="AtkParam_Npc(refType=0),AtkParam_Pc(refType=0)" DeepCopyTarget="Attack" />
+    <bulletParamId AltName="Bullet Param ID" Refs="Bullet(refType=1)" DeepCopyTarget="Bullet" />
+    <spEffectId AltName="SpEffect Param ID" Refs="SpEffectParam(refType=2)" DeepCopyTarget="SpEffect" />
     
     <sfxVariationId AltName="SFX Variation ID" />
     <category AltName="Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="BEHAVIOR_CATEGORY" />

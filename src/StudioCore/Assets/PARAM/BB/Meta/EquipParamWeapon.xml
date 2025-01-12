@@ -183,29 +183,29 @@
     <magGuardCutRate AltName="Guard Absorption: Magic" Wiki="The Magic absorption to use when guarding." IsInvertedPercentage=""/>
     <fireGuardCutRate AltName="Guard Absorption: Fire" Wiki="The Fire absorption to use when guarding." IsInvertedPercentage=""/>
     <thunGuardCutRate AltName="Guard Absorption: Lightning" Wiki="The Lightning absorption to use when guarding." IsInvertedPercentage=""/>
-    <spEffectBehaviorId0 Refs="SpEffectParam" AltName="Behavior Speffect ID 0" Wiki="The SpEffect to apply to the enemy on hit." />
-    <spEffectBehaviorId1 Refs="SpEffectParam" AltName="Behavior Speffect ID 1" Wiki="The SpEffect to apply to the enemy on hit." />
-    <spEffectBehaviorId2 Refs="SpEffectParam" AltName="Behavior Speffect ID 2" Wiki="The SpEffect to apply to the enemy on hit." />
-    <residentSpEffectId0 Refs="SpEffectParam" AltName="Resident Speffect ID 0" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." />
-    <residentSpEffectId1 Refs="SpEffectParam" AltName="Resident Speffect ID 1" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." />
-    <residentSpEffectId2 Refs="SpEffectParam" AltName="Resident Speffect ID 2" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." />
+    <spEffectBehaviorId0 Refs="SpEffectParam" AltName="Behavior Speffect ID 0" Wiki="The SpEffect to apply to the enemy on hit." DeepCopyTarget="SpEffect" />
+    <spEffectBehaviorId1 Refs="SpEffectParam" AltName="Behavior Speffect ID 1" Wiki="The SpEffect to apply to the enemy on hit." DeepCopyTarget="SpEffect" />
+    <spEffectBehaviorId2 Refs="SpEffectParam" AltName="Behavior Speffect ID 2" Wiki="The SpEffect to apply to the enemy on hit." DeepCopyTarget="SpEffect" />
+    <residentSpEffectId0 Refs="SpEffectParam" AltName="Resident Speffect ID 0" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." DeepCopyTarget="SpEffect" />
+    <residentSpEffectId1 Refs="SpEffectParam" AltName="Resident Speffect ID 1" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." DeepCopyTarget="SpEffect" />
+    <residentSpEffectId2 Refs="SpEffectParam" AltName="Resident Speffect ID 2" Wiki="The SpEffect to apply passively to the player while holding the item in an active hand." DeepCopyTarget="SpEffect" />
     <materialSetId Refs="EquipMtrlSetParam" AltName="Upgrade Material ID" Wiki="Determines the EquipMtrlSetParam row range used for reinforcement." />
-    <originEquipWep AltName="Origin Weapon +0" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep1 AltName="Origin Weapon +1" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep2 AltName="Origin Weapon +2" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep3 AltName="Origin Weapon +3" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep4 AltName="Origin Weapon +4" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep5 AltName="Origin Weapon +5" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep6 AltName="Origin Weapon +6" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep7 AltName="Origin Weapon +7" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep8 AltName="Origin Weapon +8" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep9 AltName="Origin Weapon +9" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep10 AltName="Origin Weapon +10" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep11 AltName="Origin Weapon +11" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep12 AltName="Origin Weapon +12" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep13 AltName="Origin Weapon +13" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep14 AltName="Origin Weapon +14" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
-    <originEquipWep15 AltName="Origin Weapon +15" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." />
+    <originEquipWep AltName="Origin Weapon +0" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep1 AltName="Origin Weapon +1" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep2 AltName="Origin Weapon +2" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep3 AltName="Origin Weapon +3" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep4 AltName="Origin Weapon +4" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep5 AltName="Origin Weapon +5" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep6 AltName="Origin Weapon +6" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep7 AltName="Origin Weapon +7" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep8 AltName="Origin Weapon +8" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep9 AltName="Origin Weapon +9" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep10 AltName="Origin Weapon +10" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep11 AltName="Origin Weapon +11" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep12 AltName="Origin Weapon +12" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep13 AltName="Origin Weapon +13" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep14 AltName="Origin Weapon +14" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
+    <originEquipWep15 AltName="Origin Weapon +15" Refs="EquipParamWeapon" Wiki="Contains the base weapon ID.\nDetermines the max reinforcement level and what an infused weapon returns to when uninfused." DeepCopyTarget="Source" />
     <antiDemonDamageRate AltName="Damage Multiplier %: Type A (Demon)" Wiki="Damage multiplier for special attack A" />
     <antSaintDamageRate AltName="Damage Multiplier %: Type B (Undead)" Wiki="Damage multiplier for special attack B" />
     <antWeakA_DamageRate AltName="Damage Multiplier %: Type C (Hollow)" Wiki="Damage multiplier for special attack C" />

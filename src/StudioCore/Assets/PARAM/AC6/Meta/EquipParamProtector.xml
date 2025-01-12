@@ -65,17 +65,20 @@
     <residentSpEffectId 
     AltName="Resident SpEffect ID: 1" 
     Wiki="A SpEffect applied when this part is equipped." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <residentSpEffectId2 
     AltName="Resident SpEffect ID: 2" 
     Wiki="A SpEffect applied when this part is equipped." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <residentSpEffectId3 
     AltName="Resident SpEffect ID: 3" 
     Wiki="A SpEffect applied when this part is equipped." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <materialSetId 
     AltName="Upgrade Material ID" 
@@ -93,82 +96,98 @@
     <originEquipPro 
     AltName="Source ID: +0" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro1
     AltName="Source ID: +1" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro2
     AltName="Source ID: +2" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro3
     AltName="Source ID: +3" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro4
     AltName="Source ID: +4" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro5
     AltName="Source ID: +5" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro6
     AltName="Source ID: +6" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro7
     AltName="Source ID: +7" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro8
     AltName="Source ID: +8" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro9
     AltName="Source ID: +9" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro10
     AltName="Source ID: +10" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro11
     AltName="Source ID: +11" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro12
     AltName="Source ID: +12" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro13
     AltName="Source ID: +13" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro14
     AltName="Source ID: +14" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <originEquipPro15
     AltName="Source ID: +15" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamProtector" />
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
     
     <faceScaleM_ScaleX 
     AltName="Male Face Scale: X" 

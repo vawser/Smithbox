@@ -10,28 +10,28 @@
     <basicPrice Wiki="Soul cost of reinforcement. See ShopLineupParam for shop prices" />
     <sellValue Wiki="Souls received when feeding this armor to Frampt (unverified)" />
     <weight Wiki="Equip weight of the armor" />
-    <residentSpEffectId Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the owner" />
-    <residentSpEffectId2 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the owner" />
-    <residentSpEffectId3 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the owner" />
+    <residentSpEffectId Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the owner" DeepCopyTarget="SpEffect" />
+    <residentSpEffectId2 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the owner" DeepCopyTarget="SpEffect" />
+    <residentSpEffectId3 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the owner" DeepCopyTarget="SpEffect" />
     <materialSetId Refs="EquipMtrlSetparam" Wiki="ID of EquipMtrlSetParam to use during reinforcement, which determines reinforcement materials and amounts" />
     <partsDamageRate Wiki="Possibly multiplies damage done to specific body parts (needs verification)" />
     <corectSARecover Wiki="Possibly affects the time required for poise to regenerate (needs verification)" />
-    <originEquipPro Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro1 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro2 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro3 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro4 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro5 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro6 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro7 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro8 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro9 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro10 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro11 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro12 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro13 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro14 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
-    <originEquipPro15 Refs="EquipParamProtector" Wiki="Used for reinforcement" />
+    <originEquipPro Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro1 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro2 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro3 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro4 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro5 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro6 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro7 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro8 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro9 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro10 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro11 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro12 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro13 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro14 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
+    <originEquipPro15 Refs="EquipParamProtector" Wiki="Used for reinforcement" DeepCopyTarget="Source" />
     <faceScaleM_ScaleX />
     <faceScaleM_ScaleZ />
     <faceScaleM_MaxX />

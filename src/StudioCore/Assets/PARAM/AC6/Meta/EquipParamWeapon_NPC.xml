@@ -96,32 +96,38 @@
     <spEffectBehaviorId0 
     AltName="SpEffect on Hit: 1" 
     Wiki="A SpEffect to apply when this weapon hits." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectBehaviorId1
     AltName="SpEffect on Hit: 2" 
     Wiki="A SpEffect to apply when this weapon hits." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectBehaviorId2 
     AltName="SpEffect on Hit: 3" 
     Wiki="A SpEffect to apply when this weapon hits." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <residentSpEffectId 
     AltName="Resident SpEffect: 1" 
     Wiki="A SpEffect to apply to the wielder of this weapon." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <residentSpEffectId1
     AltName="Resident SpEffect: 2" 
     Wiki="A SpEffect to apply to the wielder of this weapon." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <residentSpEffectId2
     AltName="Resident SpEffect: 3" 
     Wiki="A SpEffect to apply to the wielder of this weapon." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <materialSetId 
     AltName="Upgrade Material ID" 
@@ -131,82 +137,98 @@
     <originEquipWep 
     AltName="Source ID: +0" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep1
     AltName="Source ID: +1" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep2
     AltName="Source ID: +2" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep3
     AltName="Source ID: +3" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep4
     AltName="Source ID: +4" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep5
     AltName="Source ID: +5" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep6
     AltName="Source ID: +6" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep7
     AltName="Source ID: +7" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep8
     AltName="Source ID: +8" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep9
     AltName="Source ID: +9" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep10
     AltName="Source ID: +10" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep11
     AltName="Source ID: +11" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep12
     AltName="Source ID: +12" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep13
     AltName="Source ID: +13" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep14
     AltName="Source ID: +14" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <originEquipWep15
     AltName="Source ID: +15" 
     Wiki="The source ID when this part is reinforced to this level." 
-    Refs="EquipParamWeapon" />
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
     
     <weakA_DamageRate
     AltName="Damage Adjustment %: Type A"

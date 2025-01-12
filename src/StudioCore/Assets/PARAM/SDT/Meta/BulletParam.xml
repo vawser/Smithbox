@@ -69,7 +69,7 @@
     </Enum>
   </Enums>
   <Field>
-    <atkId_Bullet Wiki="Hitbox referenced by this bullet" Refs="AtkParam_Npc,AtkParam_Pc" />
+    <atkId_Bullet Wiki="Hitbox referenced by this bullet" Refs="AtkParam_Npc,AtkParam_Pc" DeepCopyTarget="Attack" />
     <sfxId_Bullet Wiki="Sfx attached to the bullet as it travels" />
     <sfxId_Hit Wiki="Sfx spawned when the bullet hits something" />
     <sfxId_Flick Wiki="Sfx spawned when the bullet is blocked" />
@@ -93,14 +93,14 @@
     <hormingOffsetRange Wiki="0 is correct. Shift each component of XYZ by this amount when aiming." />
     <dmgHitRecordLifeTime Wiki="How often the bullet can hit while it is active" />
     <externalForce />
-    <spEffectIDForShooter Wiki="Applies speffect to the bullet owner when the bullet is shot" Refs="SpEffectParam" />
+    <spEffectIDForShooter Wiki="Applies speffect to the bullet owner when the bullet is shot" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
     <autoSearchNPCThinkID />
-    <HitBulletID Wiki="Bullet that spawns based on the launchConditionType" Refs="Bullet" />
-    <spEffectId0 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
-    <spEffectId1 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
-    <spEffectId2 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
-    <spEffectId3 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
-    <spEffectId4 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" />
+    <HitBulletID Wiki="Bullet that spawns based on the launchConditionType" Refs="Bullet" DeepCopyTarget="Bullet" />
+    <spEffectId0 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId1 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId2 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId3 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId4 Wiki="Applies this spEffect when the bullets hits a character" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
     <numShoot Wiki="The number of projectiles fired at once" />
     <homingAngle Wiki="The amount of corrections applied to the bullet trajectory every second" />
     <shootAngle Wiki="Offsets the angle the bullet is shot at in degrees on the Y axis, Negative # = Shoot right/Positive # = Shoot left" />
@@ -147,7 +147,7 @@
     <targetYOffsetRange Wiki="Vertical offset of the impact position. Shifts the target position up and down when firing and homing" />
     <shootAngleYMaxRandom />
     <shootAngleXMaxRandom />
-    <intervalCreateBulletId Wiki="Bullet that is spawned from this bullet over the duration of this bullet" Refs="Bullet" />
+    <intervalCreateBulletId Wiki="Bullet that is spawned from this bullet over the duration of this bullet" Refs="Bullet" DeepCopyTarget="Bullet" />
     <intervalCreateTimeMin Wiki="Maximum amount of time to wait for before create another bullet via intervalCreateBulletId" />
     <intervalCreateTimeMax Wiki="Minimum amount of time to wait for before create another bullet via intervalCreateBulletId" />
     <predictionShootObserveTime />

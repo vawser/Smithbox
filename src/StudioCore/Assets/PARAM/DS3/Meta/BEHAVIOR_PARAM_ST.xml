@@ -158,7 +158,7 @@
     <behaviorJudgeId AltName="Behavior Judge ID" Enum="AttackType" Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine." />
     <ezStateBehaviorType_old AltName="State Behavior Type" Enum="STATE_BEHAVIOR_TYPE" Wiki="For ID calculation rules" />
     <refType AltName="Reference Type" Enum="BEHAVIOR_REF_TYPE" Wiki="Specify the reference ID so that it is correct." />
-    <refId AltName="Reference ID" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType."/>
+    <refId AltName="Reference ID" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType." DeepCopyTarget="Behavior" />
     <sfxVariationId AltName="SFX Variation ID" Wiki="SFX used for multiplayer session actions" />
     <stamina AltName="Stamina Cost" Wiki="Set the amount of stamina consumed during action." />
     <consumeDurability AltName="Durability Cost" Wiki="Set the durability of weapons consumed during action." />

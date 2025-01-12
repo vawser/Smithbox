@@ -161,7 +161,7 @@
     
     <pad0 Padding=""/>
     
-    <refId AltName="Reference ID" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType."/>
+    <refId AltName="Reference ID" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType." DeepCopyTarget="Behavior" />
     <sfxVariationId AltName="SFX Variation ID" Wiki="SFX used for multiplayer session actions" />
     <stamina AltName="Stamina Cost" Wiki="Set the amount of stamina consumed during action." />
     <mp AltName="Durability Cost" Wiki="Set the durability of weapons consumed during action." />

@@ -18,28 +18,28 @@
 	<basicPrice />
 	<sellValue Wiki="Souls received when selling" />
 	<weight Wiki="How much the armor weighs" />
-    <residentSpEffectId Wiki="SpEffect that applies when the armor is equipped" Refs="SpEffectParam" />
-    <residentSpEffectId2 Wiki="SpEffect that applies when the armor is equipped" Refs="SpEffectParam" />
-    <residentSpEffectId3 Wiki="SpEffect that applies when the armor is equipped" Refs="SpEffectParam" />
+    <residentSpEffectId Wiki="SpEffect that applies when the armor is equipped" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <residentSpEffectId2 Wiki="SpEffect that applies when the armor is equipped" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <residentSpEffectId3 Wiki="SpEffect that applies when the armor is equipped" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
 	<materialSetId Refs="EquipMtrlSetParam" />
 	<partsDamageRate />
 	<corectSARecover Wiki="Multiplies Super Armor recovery speed" />
-	<originEquipPro Wiki="Armor used as a reference when upgrading to +0" Refs="EquipParamProtector" />
-	<originEquipPro1 Wiki="Armor used as a reference when upgrading to +1" Refs="EquipParamProtector" />
-	<originEquipPro2 Wiki="Armor used as a reference when upgrading to +2" Refs="EquipParamProtector" />
-	<originEquipPro3 Wiki="Armor used as a reference when upgrading to +3" Refs="EquipParamProtector" />
-	<originEquipPro4 Wiki="Armor used as a reference when upgrading to +4" Refs="EquipParamProtector" />
-	<originEquipPro5 Wiki="Armor used as a reference when upgrading to +5" Refs="EquipParamProtector" />
-	<originEquipPro6 Wiki="Armor used as a reference when upgrading to +6" Refs="EquipParamProtector" />
-	<originEquipPro7 Wiki="Armor used as a reference when upgrading to +7" Refs="EquipParamProtector" />
-	<originEquipPro8 Wiki="Armor used as a reference when upgrading to +8" Refs="EquipParamProtector" />
-	<originEquipPro9 Wiki="Armor used as a reference when upgrading to +9" Refs="EquipParamProtector" />
-	<originEquipPro10 Wiki="Armor used as a reference when upgrading to +10" Refs="EquipParamProtector" />
-	<originEquipPro11 Wiki="Armor used as a reference when upgrading to +11" Refs="EquipParamProtector" />
-	<originEquipPro12 Wiki="Armor used as a reference when upgrading to +12" Refs="EquipParamProtector" />
-	<originEquipPro13 Wiki="Armor used as a reference when upgrading to +13" Refs="EquipParamProtector" />
-	<originEquipPro14 Wiki="Armor used as a reference when upgrading to +14" Refs="EquipParamProtector" />
-	<originEquipPro15 Wiki="Armor used as a reference when upgrading to +15" Refs="EquipParamProtector" />
+	<originEquipPro Wiki="Armor used as a reference when upgrading to +0" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro1 Wiki="Armor used as a reference when upgrading to +1" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro2 Wiki="Armor used as a reference when upgrading to +2" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro3 Wiki="Armor used as a reference when upgrading to +3" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro4 Wiki="Armor used as a reference when upgrading to +4" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro5 Wiki="Armor used as a reference when upgrading to +5" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro6 Wiki="Armor used as a reference when upgrading to +6" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro7 Wiki="Armor used as a reference when upgrading to +7" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro8 Wiki="Armor used as a reference when upgrading to +8" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro9 Wiki="Armor used as a reference when upgrading to +9" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro10 Wiki="Armor used as a reference when upgrading to +10" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro11 Wiki="Armor used as a reference when upgrading to +11" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro12 Wiki="Armor used as a reference when upgrading to +12" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro13 Wiki="Armor used as a reference when upgrading to +13" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro14 Wiki="Armor used as a reference when upgrading to +14" Refs="EquipParamProtector" DeepCopyTarget="Source" />
+	<originEquipPro15 Wiki="Armor used as a reference when upgrading to +15" Refs="EquipParamProtector" DeepCopyTarget="Source" />
 	<faceScaleM_ScaleX />
 	<faceScaleM_ScaleZ />
 	<faceScaleM_MaxX />

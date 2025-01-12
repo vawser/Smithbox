@@ -25,7 +25,8 @@
     <atkId_Bullet 
     AltName="Attack ID" 
     Wiki="Register the ID of each attack parameter. -> Attack type/attack material/live bullet attack power/magic attack power/stamina attack power/knockback distance." 
-    Refs="AtkParam_Pc,AtkParam_Npc" />
+    Refs="AtkParam_Pc,AtkParam_Npc" 
+    DeepCopyTarget="Attack" />
     
     <sfxId_Bullet 
     AltName="Particle ID: Projectile" 
@@ -182,7 +183,8 @@
     <spEffectIDForShooter 
     AltName="Shooter SpEffect ID" 
     Wiki="SpEffect applied to owner of bullet." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <autoSearchNPCThinkID 
     AltName="Funnel Think ID" 
@@ -192,32 +194,38 @@
     <HitBulletID 
     AltName="Hit Bullet ID" 
     Wiki="Bullet to generate when projectile expires." 
-    Refs="Bullet" />
+    Refs="Bullet" 
+    DeepCopyTarget="Bullet" />
     
     <spEffectId0 
     AltName="Target SpEffect ID [0]" 
     Wiki="SpEffect to apply when bullet hits target." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectId1 
     AltName="Target SpEffect ID [1]" 
     Wiki="SpEffect to apply when bullet hits target." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectId2 
     AltName="Target SpEffect ID [2]" 
     Wiki="SpEffect to apply when bullet hits target." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectId3 
     AltName="Target SpEffect ID [3]" 
     Wiki="SpEffect to apply when bullet hits target." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectId4 
     AltName="Target SpEffect ID [4]" 
     Wiki="SpEffect to apply when bullet hits target." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <numShoot
     AltName="Number of Shots"
@@ -439,7 +447,8 @@
     <intervalCreateBulletId  
     AltName="Interval Emitter: Bullet ID" 
     Wiki="Bullet ID used when creating bullets at regular intervals" 
-    Refs="Bullet" />
+    Refs="Bullet" 
+    DeepCopyTarget="Bullet" />
     
     <intervalCreateTimeMin 
     AltName="Interval Emitter: Minimum Creation Time" 

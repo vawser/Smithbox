@@ -79,11 +79,11 @@
     <knockbackDist_Guard Wiki="Amount of knockback applied if target is hit while blocking" />
     <knockbackDist_JustGuard Wiki="Amount of knockback applied if target is hit while deflecting" />
     <hitStopTime />
-    <spEffectId0 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
-    <spEffectId1 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
-    <spEffectId2 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
-    <spEffectId3 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
-    <spEffectId4 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
+    <spEffectId0 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId1 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId2 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId3 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId4 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
     <hit0_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
     <hit1_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
     <hit2_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />

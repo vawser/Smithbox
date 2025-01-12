@@ -640,6 +640,24 @@ public class FieldMetaData
         {
             ShowParamFieldOffset = true;
         }
+
+        XmlAttribute DeepCopyTarget = fieldMeta.Attributes["DeepCopyTarget"];
+        if (DeepCopyTarget != null)
+        {
+            DeepCopyTargetType = new List<string>();
+
+            if (DeepCopyTarget.InnerText.Contains(","))
+            {
+                foreach(var element in DeepCopyTarget.InnerText.Split(","))
+                {
+                    DeepCopyTargetType.Add(element);
+                }
+            }
+            else
+            {
+                DeepCopyTargetType.Add(DeepCopyTarget.InnerText);
+            }
+        }
     }
 
     /// <summary>
@@ -735,6 +753,8 @@ public class FieldMetaData
     public string ProjectEnumType { get; set; }
 
     public bool ShowParamFieldOffset { get; set; }
+
+    public List<string> DeepCopyTargetType { get; set; }
 
     /// <summary>
     ///     Path (and subpath) filters for files linked by this field.

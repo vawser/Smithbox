@@ -398,6 +398,12 @@ public class CFG
     public int Param_Toolbar_Duplicate_Amount = 1;
     public int Param_Toolbar_Duplicate_Offset = 1;
 
+    public bool Param_Toolbar_Duplicate_AffectAttackField = false;
+    public bool Param_Toolbar_Duplicate_AffectBehaviorField = false;
+    public bool Param_Toolbar_Duplicate_AffectBulletField = false;
+    public bool Param_Toolbar_Duplicate_AffectSpEffectField = false;
+    public bool Param_Toolbar_Duplicate_AffectSourceField = false;
+
     public bool Param_Toolbar_FindValueInstances_InitialMatchOnly = false;
 
     public bool Param_PinGroups_ShowOnlyPinnedParams = false;

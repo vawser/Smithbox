@@ -17,29 +17,29 @@
     <magGuardCutRate Wiki="Magic damage reduction when blocking" />
     <fireGuardCutRate Wiki="Fire damage reduction when blocking" />
     <thunGuardCutRate Wiki="Lightning damage reduction when blocking" />
-    <spEffectBehaviorId0 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to victims of attacks from this weapon" />
-    <spEffectBehaviorId1 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to victims of attacks from this weapon" />
-    <spEffectBehaviorId2 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to victims of attacks from this weapon" />
+    <spEffectBehaviorId0 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to victims of attacks from this weapon" DeepCopyTarget="SpEffect" />
+    <spEffectBehaviorId1 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to victims of attacks from this weapon" DeepCopyTarget="SpEffect" />
+    <spEffectBehaviorId2 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to victims of attacks from this weapon" DeepCopyTarget="SpEffect" />
     <residentSpEffectId Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the wielder of this weapon" />
     <residentSpEffectId1 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the wielder of this weapon" />
     <residentSpEffectId2 Refs="SpEffectParam" Wiki="ID of spEffectParam to apply to the wielder of this weapon" />
     <materialSetId Refs="EquipMtrlSetParam" Wiki="ID of EquipMtrlSetParam to use during reinforcement, which determines reinforcement materials and amounts." />
-    <originEquipWep Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +0 (details needed)" />
-    <originEquipWep1 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +1 (details needed)" />
-    <originEquipWep2 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +2 (details needed)" />
-    <originEquipWep3 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +3 (details needed)" />
-    <originEquipWep4 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +4 (details needed)" />
-    <originEquipWep5 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +5 (details needed)" />
-    <originEquipWep6 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +6 (details needed)" />
-    <originEquipWep7 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +7 (details needed)" />
-    <originEquipWep8 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +8 (details needed)" />
-    <originEquipWep9 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +9 (details needed)" />
-    <originEquipWep10 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +10 (details needed)" />
-    <originEquipWep11 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +11 (details needed)" />
-    <originEquipWep12 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +12 (details needed)" />
-    <originEquipWep13 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +13 (details needed)" />
-    <originEquipWep14 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +14 (details needed)" />
-    <originEquipWep15 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +15 (details needed)" />
+    <originEquipWep Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +0 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep1 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +1 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep2 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +2 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep3 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +3 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep4 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +4 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep5 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +5 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep6 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +6 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep7 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +7 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep8 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +8 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep9 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +9 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep10 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +10 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep11 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +11 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep12 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +12 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep13 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +13 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep14 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +14 (details needed)" DeepCopyTarget="Source" />
+    <originEquipWep15 Refs="EquipParamWeapon" Wiki="ID of the weapon this weapon ascends from and reverts into at +15 (details needed)" DeepCopyTarget="Source" />
     <antiDemonDamageRate Wiki="Damage multiplier against enemies with isDemon (demons) in npcParam. Used by Black Knight weapons in vanilla.\n1.1 = +10%% damage" />
     <antSaintDamageRate Wiki="Divine AUX damage and damage multiplier against enemies with isWeakSaint in npcParam. Also prevents immortal skeletons from resurrecting.\n1.1 = +10%% damage" />
     <antWeakA_DamageRate Wiki="Occult AUX damage and damage multiplier against enemies with isWeakA in npcParam.\n1.1 = +10%% damage" />

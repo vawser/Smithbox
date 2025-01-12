@@ -63,7 +63,7 @@
   </Enums>
   <Self Wiki="Projectile data" Row0Dummy="" />
   <Field>
-    <atkBullet_Id Refs="AtkParam_Pc,AtkParam_Npc" AltName="AtkParam ID" Wiki="Attack parameters for bullet impact." />
+    <atkBullet_Id Refs="AtkParam_Pc,AtkParam_Npc" AltName="AtkParam ID" Wiki="Attack parameters for bullet impact." DeepCopyTarget="Attack" />
     <sfxIdBullet AltName="Projectile FX ID" Wiki="Visual effect ID for bullet projectile." />
     <sfxIdHit AltName="Impact FX ID" Wiki="Visual effect ID for bullet impact." />
     <sfxIdFlick AltName="Flick FX ID" Wiki="Visual effect ID for bullet flick. Normally triggered by guarding." />
@@ -86,14 +86,14 @@
     <expDelay AltName="Expansion Delay" Wiki="Delay between impact and 'expansion'." />
     <homingOffsetRange AltName="Homing Offset Range" Wiki="Offset homing position by this amount." />
     <dmgHitRecordLifeTime AltName="Hitbox Duration" Wiki="Duration of bullet impact hitbox. A value of zero means it is disabled immediately after first impact." />
-    <spEffectIdForShooter Refs="SpEffectParam" AltName="Shooter Effect ID" Wiki="Special effect applied to owner when bullet is created." />
+    <spEffectIdForShooter Refs="SpEffectParam" AltName="Shooter Effect ID" Wiki="Special effect applied to owner when bullet is created." DeepCopyTarget="SpEffect" />
     <autoSearchNpcThinkId AltName="Bullet AI" Wiki="AI parameter ID for triggered floating bullets." />
-    <hitBulletId AltName="Hit Bullet ID" Refs="Bullet" Wiki="Bullet emitted on impact of this bullet." />
-    <spEffectId0 Refs="SpEffectParam" AltName="Target SpEffect ID [0]" Wiki="Special effect applied to target hit by bullet." />
-    <spEffectId1 Refs="SpEffectParam" AltName="Target SpEffect ID [1]" Wiki="Special effect applied to target hit by bullet." />
-    <spEffectId2 Refs="SpEffectParam" AltName="Target SpEffect ID [2]" Wiki="Special effect applied to target hit by bullet." />
-    <spEffectId3 Refs="SpEffectParam" AltName="Target SpEffect ID [3]" Wiki="Special effect applied to target hit by bullet." />
-    <spEffectId4 Refs="SpEffectParam" AltName="Target SpEffect ID [4]" Wiki="Special effect applied to target hit by bullet." />
+    <hitBulletId AltName="Hit Bullet ID" Refs="Bullet" Wiki="Bullet emitted on impact of this bullet." DeepCopyTarget="Bullet" />
+    <spEffectId0 Refs="SpEffectParam" AltName="Target SpEffect ID [0]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
+    <spEffectId1 Refs="SpEffectParam" AltName="Target SpEffect ID [1]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
+    <spEffectId2 Refs="SpEffectParam" AltName="Target SpEffect ID [2]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
+    <spEffectId3 Refs="SpEffectParam" AltName="Target SpEffect ID [3]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
+    <spEffectId4 Refs="SpEffectParam" AltName="Target SpEffect ID [4]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
     <numShoot AltName="Bullet Count" Wiki="Number of bullets emitted at once." />
     <homingAngle AltName="Homing Angle" Wiki="Turning angle of homing bullet per second." />
     <shootAngle AltName="Launch Angle" Wiki="Specify how many times the missile is fired forward." />
@@ -142,7 +142,7 @@
 	<targetYOffsetRange AltName="Target Vertical Offset" Wiki="Vertical offset of landing position. Shift the target position up and down at the time of launch and during homing. (-N ~ n)" />
     <shootAngleYMaxRandom AltName="Random Launch Angle - Max" Wiki="Upper limit of random number of firing angle (0 to 360)" />
     <shootAngleXMaxRandom AltName="Random Elevation Angle - Max" Wiki="Upper limit of firing elevation random number (0 to 360)" />
-    <intervalCreateBulletId AltName="Bullet Emitter: Bullet ID" Wiki="Bullet ID used when making bullets at regular intervals" Refs="Bullet" />
+    <intervalCreateBulletId AltName="Bullet Emitter: Bullet ID" Wiki="Bullet ID used when making bullets at regular intervals" Refs="Bullet" DeepCopyTarget="Bullet" />
 	<intervalCreateTimeMin AltName="Bullet Emitter: Minimum Shoot Interval" Wiki="Minimum interval for making bullets at regular intervals (0 to n)" />
 	<intervalCreateTimeMax AltName="Bullet Emitter: Maximum Shoot Interval" Wiki="Maximum interval for making bullets at regular intervals (function is disabled if 0 to n 0)" />
 	<predictionShootObserveTime AltName="Prediction Shoot Observe Time" Wiki="Average speed observation time of predicted shooting function (function is invalid if 0 to 40)" />

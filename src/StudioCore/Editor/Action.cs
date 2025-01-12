@@ -155,10 +155,11 @@ public class AddParamsAction : EditorAction
     private readonly List<int> RemovedIndex = new();
     private readonly bool replParams;
     private string ParamString;
-    private int DuplicateOffset;
+    private int IdOffset;
+    private bool IsDuplicate;
 
     public AddParamsAction(Param param, string pstring, List<Param.Row> rows, bool appendOnly, bool replaceParams,
-        int index = -1, int duplicateOffset = 1)
+        int index = -1, int idOffset = 1, bool isDuplicate = false)
     {
         Param = param;
         Clonables.AddRange(rows);
@@ -166,7 +167,8 @@ public class AddParamsAction : EditorAction
         appOnly = appendOnly;
         replParams = replaceParams;
         InsertIndex = index;
-        DuplicateOffset = duplicateOffset;
+        IdOffset = idOffset;
+        IsDuplicate = isDuplicate;
     }
 
     public override ActionEvent Execute()
@@ -174,6 +176,64 @@ public class AddParamsAction : EditorAction
         foreach (Param.Row row in Clonables)
         {
             var newrow = new Param.Row(row);
+
+            // Only apply for Duplicate action
+            if(IsDuplicate)
+            {
+                foreach (var cell in newrow.Cells)
+                {
+                    var meta = FieldMetaData.Get(cell.Def);
+                    var adjust = false;
+
+                    if (meta.DeepCopyTargetType != null)
+                    {
+                        // Attack
+                        if (CFG.Current.Param_Toolbar_Duplicate_AffectAttackField)
+                        {
+                            adjust = true;
+                        }
+
+                        // Bullet
+                        if (CFG.Current.Param_Toolbar_Duplicate_AffectBulletField)
+                        {
+                            adjust = true;
+                        }
+
+                        // Behavior
+                        if (CFG.Current.Param_Toolbar_Duplicate_AffectBehaviorField)
+                        {
+                            adjust = true;
+                        }
+
+                        // SpEffect
+                        if (CFG.Current.Param_Toolbar_Duplicate_AffectSpEffectField)
+                        {
+                            adjust = true;
+                        }
+
+                        // Origin
+                        if (CFG.Current.Param_Toolbar_Duplicate_AffectSourceField)
+                        {
+                            adjust = true;
+                        }
+
+                        if (adjust)
+                        {
+                            // Assuming ints here
+                            int id = (int)cell.Value;
+
+                            // Ignore if value is -1
+                            if (id != -1)
+                            {
+                                id = id + IdOffset;
+
+                                cell.Value = id;
+                            }
+                        }
+                    }
+                }
+            }
+
             if (InsertIndex > -1)
             {
                 newrow.Name = row.Name != null ? row.Name + "_1" : "";
@@ -193,14 +253,14 @@ public class AddParamsAction : EditorAction
                     else
                     {
                         newrow.Name = row.Name != null ? row.Name + "_1" : "";
-                        var newID = row.ID + DuplicateOffset;
+                        var newID = row.ID + IdOffset;
                         while (Param[newID] != null)
                         {
-                            newID += DuplicateOffset;
+                            newID += IdOffset;
                         }
 
                         newrow.ID = newID;
-                        Param.InsertRow(Param.IndexOfRow(Param[newID - DuplicateOffset]) + 1, newrow);
+                        Param.InsertRow(Param.IndexOfRow(Param[newID - IdOffset]) + 1, newrow);
                     }
                 }
 

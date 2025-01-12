@@ -42,11 +42,11 @@
     <hit2_Radius Wiki="Hitbox radius for hitbox 3 (3rd)"/>
     <hit3_Radius Wiki="Hitbox radius for hitbox 4 (4th)"/>
     <knockbackDist Wiki="If attack will stun, distance victim travels in &quot;meters&quot;\nIf attack will not stun, distance attacker travels backwards in &quot;meters&quot; (needs testing)"/>
-    <spEffectId0 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
-    <spEffectId1 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
-    <spEffectId2 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
-    <spEffectId3 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
-    <spEffectId4 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" />
+    <spEffectId0 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
+    <spEffectId1 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
+    <spEffectId2 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
+    <spEffectId3 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
+    <spEffectId4 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
     <hit0_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 0 (1st). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
     <hit1_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 1 (2nd). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
     <hit2_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 2 (3rd). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />

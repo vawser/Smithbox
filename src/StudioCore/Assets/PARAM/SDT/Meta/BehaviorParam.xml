@@ -23,7 +23,7 @@
     <ezStateBehaviorType_old />
     <refType Wiki="Defines what param this behavior references" Enum="BEHAVIOR_REF_TYPE" />
     <wepCost Wiki="Determines whether or not this behavior will consume spirit emblems" IsBool="" />
-    <refId Wiki="References AtkParam, Bullet, or SpEffectParam depending upon the refType" Refs="Bullet(refType=1),AtkParam_Npc(refType=0),AtkParam_Pc(refType=0),SpEffectParam(refType=2)" />
+    <refId Wiki="References AtkParam, Bullet, or SpEffectParam depending upon the refType" Refs="Bullet(refType=1),AtkParam_Npc(refType=0),AtkParam_Pc(refType=0),SpEffectParam(refType=2)" DeepCopyTarget="Behavior" />
     <sfxVariationId />
     <stamina Wiki="Amount of Posture consumed when this behavior is invoked" />
     <mp Wiki="Amount of Fp/Mp consumed when this behavior is invoked" />

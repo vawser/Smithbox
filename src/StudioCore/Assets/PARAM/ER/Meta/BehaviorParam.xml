@@ -33,7 +33,7 @@
     <ezStateBehaviorType_old AltName="State Behavior Type" Wiki="For ID calculation rules" Enum="STATE_BEHAVIOR_TYPE" />
     <refType AltName="Reference Type" Wiki="Specify the reference ID so that it is correct." Enum="BEHAVIOR_REF_TYPE" />
     <pad2 AltName="" Padding=""/>
-    <refId AltName="Reference ID" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType." Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
+    <refId AltName="Reference ID" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType." Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" DeepCopyTarget="Behavior" />
     <consumeSA AltName="Poise Cost" Wiki="Set the amount of SA consumed during action." />
     <stamina AltName="Stamina Cost" Wiki="Set the amount of stamina consumed during action." />
     <consumeDurability AltName="Durability Cost" Wiki="Set the durability of weapons consumed during action." />

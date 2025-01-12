@@ -44,7 +44,7 @@
     </Enum>
   </Enums>
   <Field>
-    <atkId_Bullet Refs="AtkParam_Npc,AtkParam_Pc" Wiki="ID of AtkParam_Npc or AtkParam_Pc to use on hit targets." />
+    <atkId_Bullet Refs="AtkParam_Npc,AtkParam_Pc" Wiki="ID of AtkParam_Npc or AtkParam_Pc to use on hit targets." DeepCopyTarget="Attack" />
     <sfxId_Bullet Wiki="Visual/audio effect while bullet is active. Refers to ID of an SFX" />
     <sfxId_Hit Wiki="Visual/audio effect when the bullet expires or hits something. Refers to ID of an SFX" />
     <sfxId_Flick Wiki="Visual/audio effect when the bullet is blocked by a shield? (needs verification) Refers to ID of an SFX" />
@@ -68,14 +68,14 @@
     <hormingOffsetRange Wiki="Distance (in &quot;meters&quot;) to offset homing target using the direction they are currently moving." />
     <dmgHitRecordLifeTime Wiki="Frequency (in seconds) that (penetrating) bullets can apply damage or special effects. 0 = apply once" />
     <externalForce Wiki="Something to do with checking map data to influence bullet direction (like wind). (rarely used, needs verification)" />
-    <spEffectIDForShooter Refs="SpEffectParam" Wiki="spEffectParam to apply to the bullet's owner." />
+    <spEffectIDForShooter Refs="SpEffectParam" Wiki="spEffectParam to apply to the bullet's owner." DeepCopyTarget="SpEffect" />
     <autoSearchNPCThinkID Wiki="Used for some homing soul mass/pursuers spell behavior, such as additional projectiles as intelligence increases and launching when applicable." />
-    <HitBulletID Refs="Bullet" Wiki="ID of another bullet to generate once this one expires, or conditionally using launchConditionType." />
-    <spEffectId0 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." />
-    <spEffectId1 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." />
-    <spEffectId2 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." />
-    <spEffectId3 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." />
-    <spEffectId4 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." />
+    <HitBulletID Refs="Bullet" Wiki="ID of another bullet to generate once this one expires, or conditionally using launchConditionType." DeepCopyTarget="Bullet" />
+    <spEffectId0 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." DeepCopyTarget="SpEffect" />
+    <spEffectId1 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." DeepCopyTarget="SpEffect" />
+    <spEffectId2 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." DeepCopyTarget="SpEffect" />
+    <spEffectId3 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." DeepCopyTarget="SpEffect" />
+    <spEffectId4 Refs="SpEffectParam" Wiki="spEffectParam to apply to hit targets." DeepCopyTarget="SpEffect" />
     <numShoot Wiki="Amount of projectiles to generate per interval" />
     <homingAngle Wiki="How quickly the projectile can turn to face a homing target (in degrees per second)." />
     <shootAngle Wiki="Yaw (left/right) angle offset for all projectiles." />

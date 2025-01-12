@@ -70,7 +70,7 @@
     </Enum>
   </Enums>
   <Field>
-    <atkId_Bullet AltName="AtkParam ID" Wiki="Register each attack parameter ID.  Attack type / Attack material / Physical attack power / Magic attack power / Stamina attack power / Knockback distance." Refs="AtkParam_Pc,AtkParam_Npc" />
+    <atkId_Bullet AltName="AtkParam ID" Wiki="Register each attack parameter ID.  Attack type / Attack material / Physical attack power / Magic attack power / Stamina attack power / Knockback distance." Refs="AtkParam_Pc,AtkParam_Npc" DeepCopyTarget="Attack"  />
     <sfxId_Bullet AltName="Projectile SFX ID" Wiki="Enter the SFX ID for [Bullet]. -1 does not occur." ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <sfxId_Hit AltName="Impact SFX ID" Wiki="[Impact] Enter the SFX ID. -1 does not occur." ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <sfxId_Flick AltName="Repel SFX ID" Wiki="[At the time of repelling] Enter the SFX ID. -1 does not occur." ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
@@ -94,14 +94,14 @@
     <hormingOffsetRange AltName="Homing Offset Range" Wiki="It is accurate if it is 0. At the time of shooting, each component of XYZ should be aimed by shifting this amount." />
     <dmgHitRecordLifeTime AltName="Damage Hit Duration" Wiki="Damage hit history survival time [sec] ( 0.0f: indefinite)" />
     <externalForce AltName="External Force in Bullet Direction" Wiki="External force applied in the direction of shooting. (Y-axis is removed)" />
-    <spEffectIDForShooter AltName="Shooter SpEffect ID" Wiki="Special effects on the person who shot" Refs="SpEffectParam" />
+    <spEffectIDForShooter AltName="Shooter SpEffect ID" Wiki="Special effects on the person who shot" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
     <autoSearchNPCThinkID AltName="Bullet AI" Wiki="Parameters used by the funnel to search for the target" Refs="NpcThinkParam" />
-    <HitBulletID AltName="Hit Bullet ID" Wiki="Specify the ID when generating a new bullet parameter from the bullet parameter" Refs="Bullet" />
-    <spEffectId0 AltName="Target SpEffect ID [0]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
-    <spEffectId1 AltName="Target SpEffect ID [1]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
-    <spEffectId2 AltName="Target SpEffect ID [2]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
-    <spEffectId3 AltName="Target SpEffect ID [3]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
-    <spEffectId4 AltName="Target SpEffect ID [4]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
+    <HitBulletID AltName="Hit Bullet ID" Wiki="Specify the ID when generating a new bullet parameter from the bullet parameter" Refs="Bullet" DeepCopyTarget="Bullet" />
+    <spEffectId0 AltName="Target SpEffect ID [0]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId1 AltName="Target SpEffect ID [1]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId2 AltName="Target SpEffect ID [2]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId3 AltName="Target SpEffect ID [3]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId4 AltName="Target SpEffect ID [4]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
     <numShoot AltName="Bullet Count" Wiki="The number of missiles fired at one time." />
     <homingAngle AltName="Homing Angle" Wiki="How many corrections per second? .." />
     <shootAngle AltName="Launch Angle" Wiki="Specify how many times the missile is fired forward." />
@@ -150,7 +150,7 @@
     <targetYOffsetRange AltName="Target Vertical Offset" Wiki="Vertical offset of landing position. Shift the target position up and down at the time of launch and during homing. (-N ~ n)" />
     <shootAngleYMaxRandom AltName="Random Launch Angle - Max" Wiki="Upper limit of random number of firing angle (0 to 360)" />
     <shootAngleXMaxRandom AltName="Random Elevation Angle - Max" Wiki="Upper limit of firing elevation random number (0 to 360)" />
-    <intervalCreateBulletId AltName="Bullet Emitter: Bullet ID" Wiki="Bullet ID used when making bullets at regular intervals" Refs="Bullet" />
+    <intervalCreateBulletId AltName="Bullet Emitter: Bullet ID" Wiki="Bullet ID used when making bullets at regular intervals" Refs="Bullet" DeepCopyTarget="Bullet" />
     <intervalCreateTimeMin AltName="Bullet Emitter: Minimum Shoot Interval" Wiki="Minimum interval for making bullets at regular intervals (0 to n)" />
     <intervalCreateTimeMax AltName="Bullet Emitter: Maximum Shoot Interval" Wiki="Maximum interval for making bullets at regular intervals (function is disabled if 0 to n 0)" />
     <predictionShootObserveTime AltName="Prediction Shoot Observe Time" Wiki="Average speed observation time of predicted shooting function (function is invalid if 0 to 40)" />

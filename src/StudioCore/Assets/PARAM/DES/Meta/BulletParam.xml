@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <atkId_Bullet AltName="atkId_Bullet" Refs="AtkParam_Npc,AtkParam_Pc"/>
+    <atkId_Bullet AltName="atkId_Bullet" Refs="AtkParam_Npc,AtkParam_Pc" DeepCopyTarget="Attack" />
     <sfxId_Bullet AltName="sfxId_Bullet" />
     <sfxId_Hit AltName="sfxId_Hit" />
     <EmittePosType AltName="EmittePosType" />
@@ -43,14 +43,14 @@
     <isPenetrateMap AltName="isPenetrateMap" />
     <isHitBothTeam AltName="isHitBothTeam" />
     <hormingOffsetRange AltName="hormingOffsetRange" />
-    <spEffectIDForShooter AltName="spEffectIDForShooter" />
+    <spEffectIDForShooter AltName="spEffectIDForShooter" DeepCopyTarget="SpEffect" />
     <autoSearchNPCThinkID AltName="autoSearchNPCThinkID" />
-    <HitBulletID AltName="HitBulletID" Refs="Bullet"/>
-    <spEffectId0 AltName="spEffectId0" Refs="SpEffectParam"/>
-    <spEffectId1 AltName="spEffectId1" Refs="SpEffectParam"/>
-    <spEffectId2 AltName="spEffectId2" Refs="SpEffectParam"/>
-    <spEffectId3 AltName="spEffectId3" Refs="SpEffectParam"/>
-    <spEffectId4 AltName="spEffectId4" Refs="SpEffectParam"/>
+    <HitBulletID AltName="HitBulletID" Refs="Bullet" DeepCopyTarget="Bullet" />
+    <spEffectId0 AltName="spEffectId0" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId1 AltName="spEffectId1" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId2 AltName="spEffectId2" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId3 AltName="spEffectId3" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId4 AltName="spEffectId4" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
   </Field>
   <Self />
 </PARAMMETA>

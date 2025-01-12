@@ -68,7 +68,7 @@
   </Enums>
   <Self Wiki="Projectile data" Row0Dummy="" />
   <Field>
-    <atkId_Bullet Refs="AtkParam_Pc,AtkParam_Npc" AltName="AtkParam ID" Wiki="Attack parameters for bullet impact." />
+    <atkId_Bullet Refs="AtkParam_Pc,AtkParam_Npc" AltName="AtkParam ID" Wiki="Attack parameters for bullet impact." DeepCopyTarget="Attack" />
     <sfxId_Bullet AltName="Projectile FX ID" Wiki="Visual effect ID for bullet projectile." />
     <sfxId_Hit AltName="Impact FX ID" Wiki="Visual effect ID for bullet impact." />
     <sfxId_Flick AltName="Flick FX ID" Wiki="Visual effect ID for bullet flick. Normally triggered by guarding." />
@@ -92,14 +92,14 @@
     <homingOffsetRange AltName="Homing Offset Range" Wiki="Offset homing position by this amount." />
     <dmgHitRecordLifeTime AltName="Hitbox Duration" Wiki="Duration of bullet impact hitbox. A value of zero means it is disabled immediately after first impact." />
     <externalForce AltName="External Force in Bullet Direction" Wiki="External force applied in the direction of shooting. (Y-axis is removed)" />
-    <spEffectIDForShooter Refs="SpEffectParam" AltName="Shooter Effect ID" Wiki="Special effect applied to owner when bullet is created." />
+    <spEffectIDForShooter Refs="SpEffectParam" AltName="Shooter Effect ID" Wiki="Special effect applied to owner when bullet is created." DeepCopyTarget="SpEffect" />
     <autoSearchNPCThinkID AltName="Bullet AI" Wiki="AI parameter ID for triggered floating bullets." />
-    <HitBulletID AltName="Hit Bullet ID" Refs="Bullet" Wiki="Bullet emitted on impact of this bullet." />
-    <spEffectId0 Refs="SpEffectParam" AltName="Target SpEffect ID [0]" Wiki="Special effect applied to target hit by bullet." />
-    <spEffectId1 Refs="SpEffectParam" AltName="Target SpEffect ID [1]" Wiki="Special effect applied to target hit by bullet." />
-    <spEffectId2 Refs="SpEffectParam" AltName="Target SpEffect ID [2]" Wiki="Special effect applied to target hit by bullet." />
-    <spEffectId3 Refs="SpEffectParam" AltName="Target SpEffect ID [3]" Wiki="Special effect applied to target hit by bullet." />
-    <spEffectId4 Refs="SpEffectParam" AltName="Target SpEffect ID [4]" Wiki="Special effect applied to target hit by bullet." />
+    <HitBulletID AltName="Hit Bullet ID" Refs="Bullet" Wiki="Bullet emitted on impact of this bullet." DeepCopyTarget="Bullet" />
+    <spEffectId0 Refs="SpEffectParam" AltName="Target SpEffect ID [0]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
+    <spEffectId1 Refs="SpEffectParam" AltName="Target SpEffect ID [1]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
+    <spEffectId2 Refs="SpEffectParam" AltName="Target SpEffect ID [2]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
+    <spEffectId3 Refs="SpEffectParam" AltName="Target SpEffect ID [3]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
+    <spEffectId4 Refs="SpEffectParam" AltName="Target SpEffect ID [4]" Wiki="Special effect applied to target hit by bullet." DeepCopyTarget="SpEffect" />
     <numShoot AltName="Bullet Count" Wiki="Number of bullets emitted at once." />
     <homingAngle AltName="Homing Angle" Wiki="Turning angle of homing bullet per second." />
     <shootAngle AltName="Launch Angle" Wiki="Specify how many times the missile is fired forward." />

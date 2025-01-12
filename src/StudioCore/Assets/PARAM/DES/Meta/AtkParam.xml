@@ -97,11 +97,11 @@
     <pad11 AltName="pad11" Padding="" />
     
     <IgnoreNotifyMissSwingForAI AltName="Disable Missed Attack Notification For AI" Wiki="Do not notify AI of missed swing" IsBool="" />
-    <spEffectId0 AltName="Target SpEffect [0]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
-    <spEffectId1 AltName="Target SpEffect [1]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
-    <spEffectId2 AltName="Target SpEffect [2]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
-    <spEffectId3 AltName="Target SpEffect [3]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
-    <spEffectId4 AltName="Target SpEffect [4]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
+    <spEffectId0 AltName="Target SpEffect [0]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId1 AltName="Target SpEffect [1]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId2 AltName="Target SpEffect [2]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId3 AltName="Target SpEffect [3]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
+    <spEffectId4 AltName="Target SpEffect [4]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" DeepCopyTarget="SpEffect" />
     <pad8 AltName="pad8" Padding="" />
   </Field>
   <Self Row0Dummy="" />

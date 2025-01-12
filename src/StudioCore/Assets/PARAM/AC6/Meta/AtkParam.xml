@@ -49,27 +49,32 @@
     <spEffectId0 
     AltName="SpEffect ID [0]" 
     Wiki="SpEffect ID applied by this attack." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectId1 
     AltName="SpEffect ID [1]" 
     Wiki="SpEffect ID applied by this attack." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectId2 
     AltName="SpEffect ID [2]" 
     Wiki="SpEffect ID applied by this attack." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectId3 
     AltName="SpEffect ID [3]" 
     Wiki="SpEffect ID applied by this attack." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <spEffectId4 
     AltName="SpEffect ID [4]" 
     Wiki="SpEffect ID applied by this attack." 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
     <hit0_DmyPoly1 
     AltName="Hit 0: Initial Dummy Polygon" 
