@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
@@ -18,6 +19,9 @@ public static class ProjectConfigurationWindow
 {
     public static bool DisplayProjectConfigurationWindow = false;
     public static bool DisplayClosePopup = false;
+
+    private static bool renameProject = false;
+    private static string newProjectName = "";
 
     public static void ToggleWindow()
     {
@@ -43,7 +47,7 @@ public static class ProjectConfigurationWindow
 
         if (ImGui.Begin($"Project Configuration", ref DisplayProjectConfigurationWindow, ImGuiWindowFlags.NoDocking))
         {
-            var widthUnit = ImGui.GetWindowWidth();
+            var width = ImGui.GetWindowWidth();
 
             if (Smithbox.ProjectHandler.CurrentProject == null)
             {
@@ -57,54 +61,209 @@ public static class ProjectConfigurationWindow
             }
             else
             {
-                ImGui.Text($"Project Name: {Smithbox.ProjectHandler.CurrentProject.Config.ProjectName}");
-                ImGui.Text($"Project Type: {Smithbox.ProjectType}");
-                ImGui.Text($"Project Root Directory: {Smithbox.GameRoot}");
-                ImGui.Text($"Project Mod Directory: {Smithbox.ProjectRoot}");
+                var itemWidth = 120;
 
-                if (Smithbox.ProjectType is ProjectType.DS1R)
+                if (ImGui.BeginTable($"projectDetailsTable", 3, ImGuiTableFlags.SizingFixedFit))
                 {
-                    ImGui.Text($"Project DS1 Collision Directory: {CFG.Current.PTDE_Collision_Root}");
-                    ImGui.SameLine();
-                    if (ImGui.Button($@"{ForkAwesome.FileO}##collisionDirPicker"))
+                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
+                    ImGui.TableSetupColumn("Action", ImGuiTableColumnFlags.WidthStretch);
+
+                    // Name
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Name");
+                    UIHelper.ShowHoverTooltip("The name of this project.");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+
+                    if (renameProject)
                     {
-                        if (PlatformUtils.Instance.OpenFileDialog("Select Dark Souls: Prepare to Die Edition .exe", new string[] { "exe" }, out var ptdeRoot))
+                        ImGui.InputText("##newProjectName", ref newProjectName, 255);
+
+                        if(ImGui.IsItemDeactivatedAfterEdit())
                         {
-                            var filename = Path.GetFileName(ptdeRoot);
-                            CFG.Current.PTDE_Collision_Root = ptdeRoot.Replace(filename, "");
-                            CFG.Save();
+                            renameProject = false;
+
+                            Smithbox.ProjectHandler.CurrentProject.Config.ProjectName = newProjectName;
+                            Smithbox.ProjectHandler.SaveCurrentProject();
                         }
                     }
-                    UIHelper.ShowHoverTooltip("When set this will allow collisions to be visible whilst editing Dark Souls: Remastered maps, assuming you have unpacked Dark Souls: Prepare the Die Edition.");
-                    var warning = CFG.Current.PTDE_Collision_Root_Warning;
-                    if (ImGui.Checkbox("Warning for Missing Collision Directory", ref warning))
-                        CFG.Current.PTDE_Collision_Root_Warning = warning;
-                    UIHelper.ShowHoverTooltip("When set to true, a warning will be displayed when loading Dark Souls: Remastered projects if the DS1 collision directory is not set.");
+                    else
+                    {
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text,
+                            $"{Smithbox.ProjectHandler.CurrentProject.Config.ProjectName}");
+                    }
 
+                    ImGui.TableSetColumnIndex(2);
+
+                    if (renameProject)
+                    {
+                        ImGui.BeginDisabled();
+
+                        if (ImGui.Button("Rename", new Vector2(itemWidth, 20)))
+                        {
+                        }
+                        UIHelper.ShowHoverTooltip("Opens the project.json file for this project.");
+
+                        ImGui.EndDisabled();
+                    }
+                    else
+                    {
+                        if (ImGui.Button("Rename", new Vector2(itemWidth, 20)))
+                        {
+                            renameProject = true;
+                        }
+                        UIHelper.ShowHoverTooltip("Opens the project.json file for this project.");
+                    }
+
+                    // Project Directory
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Project Directory");
+                    UIHelper.ShowHoverTooltip("The directory that contains the project files. This is always the location of the project.json file.");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text,
+                        $"{Smithbox.ProjectRoot}");
+
+                    ImGui.TableSetColumnIndex(2);
+
+                    if (ImGui.Button("Open", new Vector2(itemWidth, 20)))
+                    {
+                        var projectPath = CFG.Current.LastProjectFile;
+                        Process.Start("explorer.exe", projectPath);
+                    }
+                    UIHelper.ShowHoverTooltip("Opens the project.json file for this project.");
+
+                    // Type
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Type");
+                    UIHelper.ShowHoverTooltip("The internal type for this project. Determines how the project is handled within the editors.");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text,
+                        $"{Smithbox.ProjectType.GetDisplayName()}");
+
+                    ImGui.TableSetColumnIndex(2);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.SetNextItemWidth(itemWidth);
+                    if (ImGui.BeginCombo("##projectTypePicker", Smithbox.ProjectType.GetDisplayName()))
+                    {
+                        foreach (var entry in Enum.GetValues(typeof(ProjectType)))
+                        {
+                            var type = (ProjectType)entry;
+
+                            if (ImGui.Selectable(type.GetDisplayName()))
+                            {
+                                Smithbox.ProjectType = type;
+
+                                Smithbox.ProjectHandler.CurrentProject.Config.GameType = type;
+                                Smithbox.ProjectHandler.SaveCurrentProject();
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+
+                    UIHelper.ShowHoverTooltip("Set the game directory to use for this project.");
+
+                    // Root Directory
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Game Directory");
+                    UIHelper.ShowHoverTooltip("The directory that contains the game files. Typically the directory that the game executable is located in.");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text,
+                        $"{Smithbox.GameRoot}");
+
+                    ImGui.TableSetColumnIndex(2);
+
+                    ImGui.AlignTextToFramePadding();
+                    if (ImGui.Button($@"Change##rootDirectoryPicker", new Vector2(itemWidth, 20)))
+                    {
+                        if (PlatformUtils.Instance.OpenFileDialog("Select game .exe", new string[] { "exe" }, out var gameDir))
+                        {
+                            var newGameRoot = Path.GetDirectoryName(gameDir);
+
+                            Smithbox.GameRoot = newGameRoot;
+
+                            Smithbox.ProjectHandler.CurrentProject.Config.GameRoot = newGameRoot;
+                            Smithbox.ProjectHandler.SaveCurrentProject();
+                        }
+                    }
+                    UIHelper.ShowHoverTooltip("Set the game directory to use for this project.");
+
+                    // Collision Directory
+                    if (Smithbox.ProjectType is ProjectType.DS1R)
+                    {
+                        ImGui.TableNextRow();
+                        ImGui.TableSetColumnIndex(0);
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Collision Directory");
+                        UIHelper.ShowHoverTooltip("The directory that contains the DS1 game files. This is used to load the original DS1 collisions.");
+
+                        ImGui.TableSetColumnIndex(1);
+
+                        ImGui.AlignTextToFramePadding();
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text,
+                            $"{CFG.Current.PTDE_Collision_Root}");
+
+                        ImGui.TableSetColumnIndex(2);
+
+                        ImGui.AlignTextToFramePadding();
+                        if (ImGui.Button($@"Change##collisionDirPicker", new Vector2(itemWidth, 20)))
+                        {
+                            if (PlatformUtils.Instance.OpenFileDialog("Select Dark Souls: Prepare to Die Edition .exe", new string[] { "exe" }, out var ptdeRoot))
+                            {
+                                var filename = Path.GetFileName(ptdeRoot);
+                                CFG.Current.PTDE_Collision_Root = ptdeRoot.Replace(filename, "");
+                                CFG.Save();
+                            }
+                        }
+                        UIHelper.ShowHoverTooltip("When set this will allow collisions to be visible whilst editing Dark Souls: Remastered maps, assuming you have unpacked Dark Souls: Prepare the Die Edition.");
+                    }
+
+                    ImGui.EndTable();
                 }
 
-                ImGui.Separator();
-
-                if (ImGui.Button("Open Project.JSON", new Vector2(widthUnit * 0.5f, 32)))
-                {
-                    var projectPath = CFG.Current.LastProjectFile;
-                    Process.Start("explorer.exe", projectPath);
-                }
-                ImGui.SameLine();
-                if (ImGui.Button("Clear Recent Project List", new Vector2(widthUnit * 0.5f, 32)))
-                {
-                    CFG.Current.RecentProjects = new List<CFG.RecentProject>();
-                    CFG.Save();
-                }
-
-                ImGui.Separator();
-
-                var useLoose = Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams;
+                // Options
                 if (Smithbox.ProjectHandler.CurrentProject.Config.GameType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3)
                 {
+                    ImGui.Separator();
+
+                    var useLoose = Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams;
+
                     if (ImGui.Checkbox("Use loose params", ref useLoose))
+                    {
                         Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams = useLoose;
+                    }
                     UIHelper.ShowHoverTooltip("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
+
+                    if (Smithbox.ProjectType is ProjectType.DS1R)
+                    {
+                        ImGui.Checkbox("Warning for Missing Collision Directory", ref CFG.Current.PTDE_Collision_Root_Warning);
+                        UIHelper.ShowHoverTooltip("When set to true, a warning will be displayed when loading Dark Souls: Remastered projects if the DS1 collision directory is not set.");
+                    }
                 }
             }
         }

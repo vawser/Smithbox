@@ -1,34 +1,105 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <ColorEdit>
-    <ColorEditor Name="Weak Coral" Fields="CoralFeWeak_FE_CoralColorR,CoralFeWeak_FE_CoralColorG,CoralFeWeak_FE_CoralColorB" PlacedField="CoralFeWeak_FE_CoralColorR" />
-    <ColorEditor Name="Strong Coral" Fields="CoralFeStrength_FE_CoralColorR,CoralFeStrength_FE_CoralColorG,CoralFeStrength_FE_CoralColorB" PlacedField="CoralFeStrength_FE_CoralColorR" />
-  </ColorEdit>
+  <Self 
+  Wiki="Determines the configuration of various parameters relating to the interface." />
+  
   <Field>
-    <SoloPlayDeath_ToFadeOutTime AltName="Fade Out Time: Solo Play" Wiki="How many seconds after 'YOU DIED' is displayed when dying in solo play, does it start to fade out?" />
-    <PartyGhostDeath_ToFadeOutTime AltName="Fade Out Time: Multiplayer Play" Wiki="How many seconds after 'YOU DIED' is displayed when White or Black Ghost dies, does it begin to fade out?" />
-    <PlayerMaxHpLimit AltName="Max Displayed Player AP" Wiki="Used to calculate what percentage of the length of the gauge prepared by resources is used when displaying the AP gauge." />
-    <PlayerMaxMpLimit AltName="Max Diplayed Player MP" Wiki="Used to calculate what percentage of the length of the gauge prepared by the resource is used when displaying the MP gauge." />
-    <PlayerMaxSpLimit AltName="Max Displayed Player Energy" Wiki="Used to calculate what percentage of the length of the gauge prepared by the resource is used when displaying the Energy gauge." />
-    <ActionPanelChangeThreshold_Vel AltName="Action Panel Change Threshold: Player Velocity" Wiki="Action panel switchable player speed. Switching is possible below this speed." />
-    <ActionPanelChangeThreshold_PassTime AltName="Action Panel Change Threshold: Pass Time" Wiki="Consideration time for speeding up players who can switch action panels. Use the average speed during this time (maximum 4 seconds according to the system)" />
-    <PlayerMaxAddHp AltName="Max Addition to Player AP" Wiki="Value to be added to the player's maximum HP when calculating what percentage of the gauge length prepared by resources is used." />
-    <PlayerMaxAddMp AltName="Max Addition to Player MP" Wiki="Value added to the player's maximum MP when calculating what percentage of the gauge length prepared by resources is used." />
-    <PlayerMaxAddSp AltName="Max Addition to Player Energy" Wiki="Value to be added to the player's maximum Energy when calculating what percentage of the gauge length prepared by resources is used." />
-    <DecalPosOffsetX AltName="Decal Offset: X" Wiki="Decal display position offset left/right direction" />
-    <DecalPosOffsetY AltName="Decal Offset: Y" Wiki="Decal display position offset vertical" />
-    <TargetStateSearchDurationTime AltName="Search Icon Display Time" Wiki="The number of seconds from when the Search icon of the FE that is likely to be found starts to fade in until it starts to fade out." />
-    <TargetStateBattleDurationTime AltName="Battle Icon Display Time" Wiki="Number of seconds between when the likely FE Battle icon starts fading in and before it starts fading out." />
-    <VolatilizeFadeBeginSec AltName="Instant Impact Fade Time" Wiki="FE: Instantaneous impact gauge fade time (in seconds)" />
-    <MakerRendRangeWidth AltName="Marker Drawing Range: Width" Wiki="Definition of which range to draw within 1920" />
-    <MakerRendRangeHeight AltName="Marker Drawing Range: Height" Wiki="Definition of the range within 1080 to draw" />
-    <HpBarFadeOutTime AltName="AP Bar Fade Out Time" Wiki="How many seconds after displaying the AP bar should it start to fade out?" />
-    <ZeroHpBarFadeOutTime AltName="AP Bar Fade Out Time on Death" Wiki="After how many seconds pass after the AP reaches 0, the AP bar starts to fade out?" />
-    <HitFEViewTime AltName="Hit Marker Display Time" Wiki="Time to continue displaying hit marker (in seconds)" />
-    <HackingGaugeFadeOutTime AltName="Hacking Bar Fade Out Time" Wiki="How many seconds should pass before the hacking bar starts to fade out after being unable to be hacked?" />
-    <VolatilizeCombineSec AltName="Instant Impact Connection Time" Wiki="FE: Instantaneous impact gauge connection time (in seconds)" />
-    <MiniMap_WorldDispRange AltName="Minimap: World Display Range" Wiki="In metres" />
-    <MiniMap_RaderRange AltName="Minimap: Radar Range" Wiki="In metres" />
+    <SoloPlayDeath_ToFadeOutTime 
+    AltName="Death Message: Fade Out Delay (Singleplayer)" 
+    Wiki="The duration that the 'YOU DIED' is displayed before fading out if in singleplayer." />
+    
+    <PartyGhostDeath_ToFadeOutTime 
+    AltName="Death Message: Fade Out Delay (Multiplayer)" 
+    Wiki="The duration that the 'YOU DIED' is displayed before fading out if a client in a multiplayer session." />
+    
+    <PlayerMaxHpLimit 
+    AltName="Max Displayed Player AP" 
+    Wiki="The value with which to calculate what percentage of the length of the gauge prepared by resources is used when displaying the AP gauge." />
+    
+    <PlayerMaxMpLimit 
+    AltName="Max Diplayed Player FP" 
+    Wiki="The value with which to calculate what percentage of the length of the gauge prepared by the resource is used when displaying the FP gauge." />
+    
+    <PlayerMaxSpLimit 
+    AltName="Max Displayed Player Energy" 
+    Wiki="The value with which to calculate what percentage of the length of the gauge prepared by the resource is used when displaying the Energy gauge." />
+    
+    <ActionPanelChangeThreshold_Vel 
+    AltName="Action Panel Change Threshold: Player Velocity" 
+    Wiki="The action panel switchable player speed. Switching is possible when below this speed." />
+    
+    <ActionPanelChangeThreshold_PassTime 
+    AltName="Action Panel Change Threshold: Pass Time" 
+    Wiki="The consideration time for speeding up players who can switch action panels. Use the average speed during this time (maximum 4 seconds according to the system)." />
+    
+    <PlayerMaxAddHp 
+    AltName="Max Addition to Player AP" 
+    Wiki="The maximum value to be added to the player's maximum AP when calculating what percentage of the gauge length affected by the addition is used." />
+    
+    <PlayerMaxAddMp 
+    AltName="Max Addition to Player FP" 
+    Wiki="The maximum value to be added to the player's maximum FP when calculating what percentage of the gauge length affected by the addition is used." />
+    
+    <PlayerMaxAddSp 
+    AltName="Max Addition to Player Energy" 
+    Wiki="The maximum value to be added to the player's maximum Energy when calculating what percentage of the gauge length affected by the addition is used." />
+    
+    <DecalPosOffsetX 
+    AltName="Decal Display: Horizontal Offset" 
+    Wiki="The horizontal offset to apply to decal display position." />
+    
+    <DecalPosOffsetY 
+    AltName="Decal Display: Vertical Offset" 
+    Wiki="The vertical offset to apply to decal display position." />
+    
+    <TargetStateSearchDurationTime 
+    AltName="Search Icon: Display Duration" 
+    Wiki="The time that the Search icon to be displayed on the HUD. In seconds." />
+    
+    <TargetStateBattleDurationTime 
+    AltName="Battle Icon: Display Duration" 
+    Wiki="The time that the Battle icon to be displayed on the HUD. In seconds." />
+    
+    <VolatilizeFadeBeginSec 
+    AltName="Impact Gauge: Fade Delay" 
+    Wiki="The time that the Impact gauge is displayed for on the HUD before fading out. In seconds." />
+    
+    <MakerRendRangeWidth 
+    AltName="Marker: Rendering Width" 
+    Wiki="The width of the rendering range that a marker can be drawn in." />
+    
+    <MakerRendRangeHeight 
+    AltName="Marker: Rendering Height" 
+    Wiki="The height of the rendering range that a marker can be drawn in." />
+    
+    <HpBarFadeOutTime 
+    AltName="AP Gauge: Fade Delay" 
+    Wiki="The time that the AP gauge is displayed on the HUD before fading out. In seconds." />
+    
+    <ZeroHpBarFadeOutTime 
+    AltName="AP Gauge: Fade Delay (Dead)" 
+    Wiki="The time that the AP gauge is displayed on the HUD before fading out, when the player is killed. In seconds." />
+    
+    <HitFEViewTime 
+    AltName="Hit Marker: Display Duration" 
+    Wiki="The duration to a hit marker is displayed on the HUD for. In seconds." />
+    
+    <HackingGaugeFadeOutTime 
+    AltName="Hacking Gauge: Fade Delay" 
+    Wiki="The time that the Hacking gauge is displayed on the HUD before fading out. In seconds." />
+    
+    <VolatilizeCombineSec 
+    AltName="Impact Gauge: Update Duration" 
+    Wiki="The time before the Impact gauge is updated to its new state after a hit. In seconds." />
+    
+    <MiniMap_WorldDispRange 
+    AltName="Minimap: World Display Range" 
+    Wiki="The display range for the world in the minimap. In metres." />
+    
+    <MiniMap_RaderRange 
+    AltName="Minimap: Radar Range" 
+    Wiki="The range of the radar effect in the minimap. In metres" />
+    
     <EnemyLooksLikeSABreakThreshold AltName="Threshold for Stagger Break" Wiki="Threshold (ratio) of Stagger value that produces FE that is likely to cause Stagger break" />
     <CamLockInterpolationFactor AltName="Locked Camera Interpolation Coefficient" Wiki="Coefficient used to supplement lock site movement when camera is fixed. How many times faster is the completion that takes 1 second to move?" />
     <CamUnlockInterpolationFactor AltName="Locked Camera Release Interpolation Coefficient" Wiki="Coefficient used to supplement lock site movement when camera fixation is released. How many times faster is the completion that takes 1 second to move?" />
@@ -130,6 +201,16 @@
     <pad_end Padding="" />
   </Field>
   
-  
-  <Self />
+  <ColorEdit>
+    <ColorEditor 
+    Name="Weak Coral" 
+    Fields="CoralFeWeak_FE_CoralColorR,CoralFeWeak_FE_CoralColorG,CoralFeWeak_FE_CoralColorB" 
+    PlacedField="CoralFeWeak_FE_CoralColorR" />
+    
+    <ColorEditor 
+    Name="Strong Coral" 
+    Fields="CoralFeStrength_FE_CoralColorR,CoralFeStrength_FE_CoralColorG,CoralFeStrength_FE_CoralColorB" 
+    PlacedField="CoralFeStrength_FE_CoralColorR" />
+    
+  </ColorEdit>
 </PARAMMETA>

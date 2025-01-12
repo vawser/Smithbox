@@ -1,8 +1,10 @@
 ﻿using ImGuiNET;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -61,6 +63,23 @@ public class ProjectSettingsTab
 
             ImGui.Checkbox("Gparam Editor", ref CFG.Current.System_EnableAutoSave_GparamEditor);
             UIHelper.ShowHoverTooltip("All modified gparams will be automatically saved.");
+        }
+
+        if (ImGui.CollapsingHeader("Actions", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            var width = ImGui.GetWindowWidth();
+
+            if (ImGui.Button("Clear Recent Project List", new Vector2(width, 24)))
+            {
+                var result = PlatformUtils.Instance.MessageBox("This will irreversibly clear the recent projects list.", "Warning", MessageBoxButtons.OKCancel);
+
+                if (result is DialogResult.OK)
+                {
+                    CFG.Current.RecentProjects = new List<CFG.RecentProject>();
+                    CFG.Save();
+                }
+            }
+            UIHelper.ShowHoverTooltip("Removes all entries in the stored Recent Project list.");
         }
     }
 }
