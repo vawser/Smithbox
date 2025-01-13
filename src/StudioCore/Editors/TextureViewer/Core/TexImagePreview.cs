@@ -56,6 +56,9 @@ public class TexImagePreview : IResourceEventListener
         if(textureRef == null) 
             return false;
 
+        if (Selection == null)
+            return false;
+
         // Display the texture
         LoadTextureContainer(textureRef.TextureContainer);
         LoadTextureFile(textureRef.TextureFile);
@@ -124,6 +127,9 @@ public class TexImagePreview : IResourceEventListener
     /// </summary>
     private SubTexture GetPreviewSubTexture(Param.Row context, TexRef textureRef)
     {
+        if (Selection == null)
+            return null;
+
         // Guard clauses checking the validity of the TextureRef
         if (context[textureRef.TargetField] == null)
         {
@@ -203,6 +209,9 @@ public class TexImagePreview : IResourceEventListener
     /// </summary>
     private void SelectTextureContainer(TextureViewInfo info)
     {
+        if (Selection == null)
+            return;
+
         // Ignore this if it is already loaded (e.g. same entry is double clicked)
         if (Selection.SelectedPreviewTextureContainer == info)
             return;
@@ -347,6 +356,12 @@ public class TexImagePreview : IResourceEventListener
 
     public void LoadTextureContainer(string container)
     {
+        if (Selection == null)
+            return;
+
+        if (TextureFolderBank.FolderBank == null)
+            return;
+
         if (Selection.SelectedPreviewTextureContainerKey != container)
         {
             foreach (var (name, info) in TextureFolderBank.FolderBank)
@@ -362,6 +377,9 @@ public class TexImagePreview : IResourceEventListener
 
     public void LoadTextureFile(string filename)
     {
+        if (Selection == null)
+            return;
+
         if (Selection.SelectedPreviewTextureContainerKey != filename)
         {
             if (Selection.SelectedPreviewTextureContainer != null && Selection.SelectedPreviewTextureContainerKey != "")
@@ -408,31 +426,31 @@ public class TexImagePreview : IResourceEventListener
 
     public SubTexture GetMatchingSubTexture(string currentTextureName, string imageIndex, string namePrepend)
     {
-        if (ShoeboxLayouts != null)
+        if (ShoeboxLayouts == null)
+            return null;
+
+        if (ShoeboxLayouts.Textures.ContainsKey(currentTextureName))
         {
-            if (ShoeboxLayouts.Textures.ContainsKey(currentTextureName))
+            var subTexs = ShoeboxLayouts.Textures[currentTextureName];
+
+            int matchId;
+            var successMatch = int.TryParse(imageIndex, out matchId);
+
+            foreach (var entry in subTexs)
             {
-                var subTexs = ShoeboxLayouts.Textures[currentTextureName];
+                var SubTexName = entry.Name.Replace(".png", "");
 
-                int matchId;
-                var successMatch = int.TryParse(imageIndex, out matchId);
-
-                foreach (var entry in subTexs)
+                Match contents = Regex.Match(SubTexName, $@"{namePrepend}([0-9]+)");
+                if (contents.Success)
                 {
-                    var SubTexName = entry.Name.Replace(".png", "");
+                    var id = contents.Groups[1].Value;
 
-                    Match contents = Regex.Match(SubTexName, $@"{namePrepend}([0-9]+)");
-                    if (contents.Success)
+                    int numId;
+                    var successNum = int.TryParse(id, out numId);
+
+                    if (successMatch && successNum && matchId == numId)
                     {
-                        var id = contents.Groups[1].Value;
-
-                        int numId;
-                        var successNum = int.TryParse(id, out numId);
-
-                        if (successMatch && successNum && matchId == numId)
-                        {
-                            return entry;
-                        }
+                        return entry;
                     }
                 }
             }

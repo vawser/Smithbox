@@ -3,6 +3,7 @@ using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextureViewer;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -267,10 +268,22 @@ public class ParamEditorTab
             ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.1f, 0.1f, 10.0f);
             UIHelper.ShowHoverTooltip("Scale of the previewed image.");
 
-            ImGui.Checkbox("Display image preview in field context menu", ref CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu);
+            if(ImGui.Checkbox("Display image preview in field context menu", ref CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu))
+            {
+                if (!TextureFolderBank.IsLoaded)
+                {
+                    TextureFolderBank.LoadTextureFolders();
+                }
+            }
             UIHelper.ShowHoverTooltip("Display image preview of any image index fields if possible within the field context menu.");
 
             ImGui.Checkbox("Display image preview in field column", ref CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
+            {
+                if (!TextureFolderBank.IsLoaded)
+                {
+                    TextureFolderBank.LoadTextureFolders();
+                }
+            }
             UIHelper.ShowHoverTooltip("Display image preview of any image index fields if possible at the bottom of the field column.");
         }
 

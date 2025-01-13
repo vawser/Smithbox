@@ -517,7 +517,7 @@ public class EditorDecorations
 
         foreach (var texRef in texRefs)
         {
-            if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
+            if (CFG.Current.EnableViewer_TEXTURE && CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
             {
                 var imageDisplayed = Smithbox.EditorHandler.TextureViewer.ImagePreview.DisplayImagePreview(context, texRef);
 

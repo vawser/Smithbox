@@ -100,16 +100,46 @@
     AltName="Minimap: Radar Range" 
     Wiki="The range of the radar effect in the minimap. In metres" />
     
-    <EnemyLooksLikeSABreakThreshold AltName="Threshold for Stagger Break" Wiki="Threshold (ratio) of Stagger value that produces FE that is likely to cause Stagger break" />
-    <CamLockInterpolationFactor AltName="Locked Camera Interpolation Coefficient" Wiki="Coefficient used to supplement lock site movement when camera is fixed. How many times faster is the completion that takes 1 second to move?" />
-    <CamUnlockInterpolationFactor AltName="Locked Camera Release Interpolation Coefficient" Wiki="Coefficient used to supplement lock site movement when camera fixation is released. How many times faster is the completion that takes 1 second to move?" />
-    <EnemySearchIconFadeOutTime AltName="Detection State Fade Out Time" Wiki="Time to fade out the FE after the display conditions for the enemy search FE above the enemy are no longer met (in seconds)" />
-    <LockSite_DisableLockDistance AltName="" Wiki="" />
-    <GetSoulAnimStartTime AltName="" Wiki="" />
-    <DangerFEViewTime AltName="" Wiki="" />
-    <TosScrollSpeed_Normal AltName="" Wiki="" />
-    <TosScrollSpeed_Fast AltName="" Wiki="" />
-    <TosScrollSpeed_Mouse AltName="" Wiki="" />
+    <EnemyLooksLikeSABreakThreshold 
+    AltName="Stagger Break Indicator Threshold" 
+    Wiki="The threshold (ratio) of Stagger value that produces indicator that enemy is vulnerable to Stagger Break." />
+    
+    <CamLockInterpolationFactor 
+    AltName="Locked Camera: Interpolation Coefficient" 
+    Wiki="The coefficient used to supplement lock-on movement when camera is fixed." />
+    
+    <CamUnlockInterpolationFactor 
+    AltName="Locked Camera: Release Interpolation Coefficient" 
+    Wiki="The coefficient used to supplement lock-on movement when a fixed camera is released." />
+    
+    <EnemySearchIconFadeOutTime 
+    AltName="Search Icon: Fade Out Delay" 
+    Wiki="The duration before the enemy search indicator icon starts facing out. In seconds." />
+    
+    <LockSite_DisableLockDistance 
+    AltName="Locked Camera: Release Interpolation Distance"
+    Wiki="The distance between the lock-on and the target position after which the lock-on will be interpolated." />
+    
+    <GetSoulAnimStartTime 
+    AltName="Soul Acquisition Animation Delay" 
+    Wiki="The duration before the soul acquisition animation occurs after recieving souls. In seconds." />
+    
+    <DangerFEViewTime 
+    AltName="Danger Icon: Display Time" 
+    Wiki="The time that the Danger icon to be displayed on the HUD. In seconds." />
+    
+    <TosScrollSpeed_Normal 
+    AltName="Terms of Use: Scroll Speed (Normal)" 
+    Wiki="The speed of scrolling through the terms of use. In pixels." />
+    
+    <TosScrollSpeed_Fast 
+    AltName="Terms of Use: Scroll Speed (Fast)" 
+    Wiki="The speed of scrolling through the terms of use. In pixels." />
+    
+    <TosScrollSpeed_Mouse 
+    AltName="Terms of Use: Scroll Speed (Mouse)" 
+    Wiki="The speed of scrolling through the terms of use. In pixels." />
+    
     <TosFastScrollCount AltName="" Wiki="" />
     <PreOpeningMovie_WaitSec AltName="" Wiki="" />
     <StaffRoll_PlaySec AltName="" Wiki="" />
