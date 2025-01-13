@@ -140,95 +140,341 @@
     AltName="Terms of Use: Scroll Speed (Mouse)" 
     Wiki="The speed of scrolling through the terms of use. In pixels." />
     
-    <TosFastScrollCount AltName="" Wiki="" />
-    <PreOpeningMovie_WaitSec AltName="" Wiki="" />
-    <StaffRoll_PlaySec AltName="" Wiki="" />
-    <MIniMap3D_PlayerIconScale AltName="" Wiki="" />
-    <MIniMap3D_TargetSpotIconScale AltName="" Wiki="" />
-    <MIniMap3D_EnemyIconScale AltName="" Wiki="" />
-    <MIniMap3D_RaderIconScale AltName="" Wiki="" />
-    <MIniMap3D_MissionRegionHeight AltName="" Wiki="" />
-    <MIniMap3D_MaintenancePointIconScale AltName="" Wiki="" />
-    <MIniMap3D_CatapultIconScale AltName="" Wiki="" />
-    <MIniMap3D_RouteIconScale AltName="" Wiki="" />
-    <FE_MissionLine_FadeInTime AltName="" Wiki="" />
-    <FE_MissionRegionSfxId AltName="" Wiki="" />
-    <FE_MissionRegionStartLineDist AltName="" Wiki="" />
-    <FE_MissionRegionLineDist AltName="" Wiki="" />
-    <FE_MissionRegionLineHeight AltName="" Wiki="" />
-    <FE_MissionRegionLineTexTile AltName="" Wiki="" />
-    <FE_MissionRegionLineHeightOffset AltName="" Wiki="" />
-    <MiniMap_RepairPointAlphaBeginHeith AltName="" Wiki="" />
-    <MiniMap_RepairPointAlphaEndHeith AltName="" Wiki="" />
-    <MiniMap_RepairPointAlphaMin AltName="" Wiki="" />
-    <FE_MissionRegionLineAddBlend AltName="" Wiki="" />
-    <FE_MissionRegionLineUseSfx AltName="" Wiki="" />
+    <TosFastScrollCount 
+    AltName="Terms of Use: Number of Fast Scrolls" 
+    Wiki="The number of allowable fast scrolls." />
     
-    <pad_26 Padding="" />
+    <PreOpeningMovie_WaitSec 
+    AltName="Prologue Delay" 
+    Wiki="The duration before the prologue movie plays. In seconds." />
     
-    <MiniMap_ChangeInterval AltName="" Wiki="" />
-    <DoubleLockSightOffset AltName="" Wiki="" />
-    <MIniMap3D_TowerIconScale AltName="" Wiki="" />
-    <MIniMap3D_CityIconScale AltName="" Wiki="" />
-    <MIniMap3D_ForitfiedCityIconScale AltName="" Wiki="" />
-    <MIniMap3D_ColonySpotIconScale AltName="" Wiki="" />
-    <AsmView_LensShiftLimitX AltName="" Wiki="" />
-    <AsmView_LensShiftLimitY AltName="" Wiki="" />
-    <DisableLockCursorAlpha AltName="" Wiki="" />
-    <ItemGetLogAliveTime AltName="" Wiki="" />
-    <PartsModelRotationInputWaitTimeSec AltName="" Wiki="" />
-    <GrageCallSpecialEffectId AltName="" Wiki="" />
-    <FE_LowHP_rate AltName="" Wiki="" />
-    <FE_LowBarrier_rate AltName="" Wiki="" />
+    <StaffRoll_PlaySec 
+    AltName="Credit Roll Duration" 
+    Wiki="The duration the staff credit roll plays for. In seconds." />
     
-    <pad_998 Padding="" />
+    <MIniMap3D_PlayerIconScale 
+    AltName="3D Minimap: Player Icon Scale" 
+    Wiki="The scale value of the player icon when displayed on the 3D minimap." />
     
-    <FE_LargeDamageDetect_HP_rate AltName="" Wiki="" />
-    <FE_LargeDamageDetect_CollectTime AltName="" Wiki="" />
-    <Garage_FocusWaitTime AltName="" Wiki="" />
-    <Garage_FadeTime AltName="" Wiki="" />
-    <FE_MissionLine_Width AltName="" Wiki="" />
-    <FE_MissionLine_FadeOutTime AltName="" Wiki="" />
-    <FE_MissionLineWarningStartLineDist AltName="" Wiki="" />
-    <FE_MissionLineWarningLineDist AltName="" Wiki="" />
-    <Garage_CamPadWaitTime AltName="" Wiki="" />
-    <Garage_ChangeHeadPlayAnimId AltName="" Wiki="" />
-    <Garage_ChangeCorePlayAnimId AltName="" Wiki="" />
-    <Garage_ChangeArmPlayAnimId AltName="" Wiki="" />
-    <Garage_ChangeLegPlayAnimId AltName="" Wiki="" />
-    <Garage_ChangePlayAnimId AltName="" Wiki="" />
-    <Garage_CamPadSpeedY AltName="" Wiki="" />
-    <Garage_CamPadSpeedX AltName="" Wiki="" />
-    <FE_RegionLineUpDownOffset AltName="" Wiki="" />
-    <FE_RegionEdgeSfxHideDist AltName="" Wiki="" />
-    <FE_RegionEdgeSfxFadeDist AltName="" Wiki="" />
-    <FE_RegionEdgeTexWidth AltName="" Wiki="" />
-    <FE_RegionEdgeTexHeight AltName="" Wiki="" />
-    <FE_RegionEdgeTexOffsetX AltName="" Wiki="" />
-    <FE_RegionEdgeTexOffsetY AltName="" Wiki="" />
-    <FE_Region_UpperLimitDist AltName="" Wiki="" />
-    <FE_Region_LowerLimitDist AltName="" Wiki="" />
-    <Garage_BriefingBokeTime AltName="" Wiki="" />
-    <Garage_BriefingBokeWaitTime AltName="" Wiki="" />
-    <Garage_BriefingBokeRate AltName="" Wiki="" />
-    <CoralFeWeak_FE_CoralScrollSpeed AltName="" Wiki="" />
-    <CoralFeWeak_FE_CoralDispWidth AltName="" Wiki="" />
-    <CoralFeWeak_FE_CoralDispFadeInTime AltName="" Wiki="" />
-    <CoralFeWeak_FE_CoralColorR AltName="" Wiki="" />
-    <CoralFeWeak_FE_CoralColorG AltName="" Wiki="" />
-    <CoralFeWeak_FE_CoralColorB AltName="" Wiki="" />
-    <CoralFeWeak_FE_CoralColorA AltName="" Wiki="" />
-    <CoralFeStrength_FE_CoralScrollSpeed AltName="" Wiki="" />
-    <CoralFeStrength_FE_CoralDispWidth AltName="" Wiki="" />
-    <CoralFeStrength_FE_CoralDispFadeInTime AltName="" Wiki="" />
-    <CoralFeStrength_FE_CoralColorR AltName="" Wiki="" />
-    <CoralFeStrength_FE_CoralColorG AltName="" Wiki="" />
-    <CoralFeStrength_FE_CoralColorB AltName="" Wiki="" />
-    <CoralFeStrength_FE_CoralColorA AltName="" Wiki="" />
-    <FE_VsFloatingInfo_Range AltName="" Wiki="" />
-    <FE_ShowDamageAccumulationTimeSec AltName="" Wiki="" />
+    <MIniMap3D_TargetSpotIconScale 
+    AltName="" 
+    Wiki="" />
     
-    <pad_end Padding="" />
+    <MIniMap3D_EnemyIconScale 
+    AltName="" 
+    Wiki="" />
+    
+    <MIniMap3D_RaderIconScale 
+    AltName="" 
+    Wiki="" />
+    
+    <MIniMap3D_MissionRegionHeight 
+    AltName="" 
+    Wiki="" />
+    
+    <MIniMap3D_MaintenancePointIconScale 
+    AltName="" 
+    Wiki="" />
+    
+    <MIniMap3D_CatapultIconScale 
+    AltName="" 
+    Wiki="" />
+    
+    <MIniMap3D_RouteIconScale 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionLine_FadeInTime 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionRegionSfxId 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionRegionStartLineDist 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionRegionLineDist 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionRegionLineHeight 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionRegionLineTexTile 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionRegionLineHeightOffset 
+    AltName="" 
+    Wiki="" />
+    
+    <MiniMap_RepairPointAlphaBeginHeith 
+    AltName="" 
+    Wiki="" />
+    
+    <MiniMap_RepairPointAlphaEndHeith 
+    AltName="" 
+    Wiki="" />
+    
+    <MiniMap_RepairPointAlphaMin 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionRegionLineAddBlend 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionRegionLineUseSfx 
+    AltName="" 
+    Wiki="" />
+    
+    <pad_26 
+    AltName=""
+    Padding="" />
+    
+    <MiniMap_ChangeInterval 
+    AltName="" 
+    Wiki="" />
+    
+    <DoubleLockSightOffset 
+    AltName="" 
+    Wiki="" />
+    
+    <MIniMap3D_TowerIconScale 
+    AltName="" 
+    Wiki="" />
+    
+    <MIniMap3D_CityIconScale 
+    AltName="" 
+    Wiki="" />
+    
+    <MIniMap3D_ForitfiedCityIconScale 
+    AltName="" 
+    Wiki="" />
+    
+    <MIniMap3D_ColonySpotIconScale 
+    AltName="" 
+    Wiki="" />
+    
+    <AsmView_LensShiftLimitX 
+    AltName="" 
+    Wiki="" />
+    
+    <AsmView_LensShiftLimitY 
+    AltName="" 
+    Wiki="" />
+    
+    <DisableLockCursorAlpha 
+    AltName="" 
+    Wiki="" />
+    
+    <ItemGetLogAliveTime 
+    AltName="" 
+    Wiki="" />
+    
+    <PartsModelRotationInputWaitTimeSec 
+    AltName="" 
+    Wiki="" />
+    
+    <GrageCallSpecialEffectId 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_LowHP_rate 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_LowBarrier_rate 
+    AltName="" 
+    Wiki="" />
+    
+    <pad_998 
+    AltName=""
+    Padding="" />
+    
+    <FE_LargeDamageDetect_HP_rate 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_LargeDamageDetect_CollectTime 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_FocusWaitTime 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_FadeTime 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionLine_Width 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionLine_FadeOutTime 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionLineWarningStartLineDist 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_MissionLineWarningLineDist 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_CamPadWaitTime 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_ChangeHeadPlayAnimId 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_ChangeCorePlayAnimId 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_ChangeArmPlayAnimId 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_ChangeLegPlayAnimId 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_ChangePlayAnimId 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_CamPadSpeedY 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_CamPadSpeedX 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_RegionLineUpDownOffset 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_RegionEdgeSfxHideDist 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_RegionEdgeSfxFadeDist 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_RegionEdgeTexWidth 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_RegionEdgeTexHeight 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_RegionEdgeTexOffsetX 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_RegionEdgeTexOffsetY 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_Region_UpperLimitDist 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_Region_LowerLimitDist 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_BriefingBokeTime 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_BriefingBokeWaitTime 
+    AltName="" 
+    Wiki="" />
+    
+    <Garage_BriefingBokeRate 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeWeak_FE_CoralScrollSpeed 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeWeak_FE_CoralDispWidth 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeWeak_FE_CoralDispFadeInTime 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeWeak_FE_CoralColorR 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeWeak_FE_CoralColorG 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeWeak_FE_CoralColorB 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeWeak_FE_CoralColorA 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeStrength_FE_CoralScrollSpeed 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeStrength_FE_CoralDispWidth 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeStrength_FE_CoralDispFadeInTime 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeStrength_FE_CoralColorR 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeStrength_FE_CoralColorG 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeStrength_FE_CoralColorB 
+    AltName="" 
+    Wiki="" />
+    
+    <CoralFeStrength_FE_CoralColorA 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_VsFloatingInfo_Range 
+    AltName="" 
+    Wiki="" />
+    
+    <FE_ShowDamageAccumulationTimeSec 
+    AltName="" 
+    Wiki="" />
+    
+    <pad_end 
+    AltName=""
+    Padding="" />
   </Field>
   
   <ColorEdit>

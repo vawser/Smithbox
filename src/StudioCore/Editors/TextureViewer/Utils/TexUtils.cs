@@ -45,6 +45,18 @@ public static class TexUtils
             Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
             image.SaveAsPng($"{exportFilePath}.png");
         }
+        // Use 24 since 16 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgba16)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsPng($"{exportFilePath}.png");
+        }
+        // Use 24 since 8 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgb8)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsPng($"{exportFilePath}.png");
+        }
         else
         {
             throw new Exception("Unsupported pixel format (" + _image.Format + ")");
@@ -62,6 +74,18 @@ public static class TexUtils
 
         }
         else if (_image.Format == Pfim.ImageFormat.Rgb24)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsBmp($"{exportFilePath}.bmp");
+        }
+        // Use 24 since 16 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgba16)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsBmp($"{exportFilePath}.bmp");
+        }
+        // Use 24 since 8 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgb8)
         {
             Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
             image.SaveAsBmp($"{exportFilePath}.bmp");
@@ -87,6 +111,18 @@ public static class TexUtils
             Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
             image.SaveAsTga($"{exportFilePath}.tga");
         }
+        // Use 24 since 16 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgba16)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsTga($"{exportFilePath}.tga");
+        }
+        // Use 24 since 8 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgb8)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsTga($"{exportFilePath}.tga");
+        }
         else
         {
             throw new Exception("Unsupported pixel format (" + _image.Format + ")");
@@ -104,6 +140,18 @@ public static class TexUtils
 
         }
         else if (_image.Format == Pfim.ImageFormat.Rgb24)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsTiff($"{exportFilePath}.tiff");
+        }
+        // Use 24 since 16 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgba16)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsTiff($"{exportFilePath}.tiff");
+        }
+        // Use 24 since 8 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgb8)
         {
             Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
             image.SaveAsTiff($"{exportFilePath}.tiff");
@@ -129,6 +177,18 @@ public static class TexUtils
             Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
             image.SaveAsJpeg($"{exportFilePath}.jpeg");
         }
+        // Use 24 since 16 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgba16)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsJpeg($"{exportFilePath}.jpeg");
+        }
+        // Use 24 since 8 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgb8)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsJpeg($"{exportFilePath}.jpeg");
+        }
         else
         {
             throw new Exception("Unsupported pixel format (" + _image.Format + ")");
@@ -146,6 +206,18 @@ public static class TexUtils
 
         }
         else if (_image.Format == Pfim.ImageFormat.Rgb24)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsWebp($"{exportFilePath}.webp");
+        }
+        // Use 24 since 16 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgba16)
+        {
+            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
+            image.SaveAsWebp($"{exportFilePath}.webp");
+        }
+        // Use 24 since 8 isn't directly supported in ImageSharp
+        else if (_image.Format == Pfim.ImageFormat.Rgb8)
         {
             Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
             image.SaveAsWebp($"{exportFilePath}.webp");
