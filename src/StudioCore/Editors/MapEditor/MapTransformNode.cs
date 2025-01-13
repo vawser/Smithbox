@@ -1,4 +1,8 @@
-﻿using System.Numerics;
+﻿using System.Collections.Generic;
+using System.Numerics;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -22,3 +26,4 @@ public class MapTransformNode
     public Vector3 Rotation { get; set; }
     public Vector3 Scale { get; set; } = Vector3.One;
 }
+

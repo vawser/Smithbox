@@ -8,6 +8,7 @@ using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
 using StudioCore.Core;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -309,6 +310,26 @@ public static class BankUtils
         else
         {
             TaskLogs.AddLog($"Failed to load {baseResourcePath} game offset resource for Param Reloader.", LogLevel.Error);
+        }
+
+        return baseResource;
+    }
+
+    public static MapTransformList LoadMapTransformJson(string baseResourcePath)
+    {
+        var baseResource = new MapTransformList();
+
+        if (File.Exists(baseResourcePath))
+        {
+            using (var stream = File.OpenRead(baseResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize(stream, MapTransformListSerializationContext.Default.MapTransformList);
+            }
+        }
+        else
+        {
+            // Add empty list if file doesn't exist yet
+            baseResource.TransformList = new List<MapTransformEntry>();
         }
 
         return baseResource;

@@ -1130,6 +1130,7 @@ public class MapPropertyEditor
 
         // Bottom Decoration
         ImGui.Columns(1);
+
         if (!CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
         {
             DisplayPropertyViewDecorations(selection, 0);

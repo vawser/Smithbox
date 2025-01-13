@@ -889,6 +889,9 @@ public class Universe
 
             // Check for duplicate EntityIDs
             CheckDupeEntityIDs(map);
+
+            // Set the map transform to the saved position, rotation and scale.
+            //map.LoadMapTransform();
         }
         catch (Exception e)
         {
@@ -1249,6 +1252,7 @@ public class Universe
     public void SaveMap(MapContainer map)
     {
         SaveBTL(map);
+
         try
         {
             ResourceDescriptor ad = MapLocator.GetMapMSB(map.Name);
@@ -1409,6 +1413,9 @@ public class Universe
         {
             throw new SavingFailedException(Path.GetFileName(map.Name), e);
         }
+
+        // Save the current map transform for this map
+        //map.SaveMapTransform();
     }
 
     public void SaveAllMaps()

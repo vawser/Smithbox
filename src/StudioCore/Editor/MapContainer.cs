@@ -44,7 +44,69 @@ public class MapContainer : ObjectContainer
         var t = new MapTransformNode(mapid);
         RootObject = new MsbEntity(this, t, MsbEntity.MsbEntityType.MapRoot);
         MapOffsetNode = new MsbEntity(this, new MapTransformNode(mapid));
+
         RootObject.AddChild(MapOffsetNode);
+    }
+
+    /// <summary>
+    /// Load the stored map transforms for this map and apply them to the root object
+    /// </summary>
+    public void LoadMapTransform()
+    {
+        var transformList = Smithbox.BankHandler.MapTransforms.Transforms.TransformList;
+
+        // Only try and apply if data exists for the map ID
+        if (transformList.Where(e => e.MapID == Name).Any())
+        {
+            var entry = transformList.Where(e => e.MapID == Name).FirstOrDefault();
+
+            if (entry != null)
+            {
+                RootObject.SetPropertyValue("Position", entry.Position);
+                RootObject.SetPropertyValue("Rotation", entry.Rotation);
+                RootObject.SetPropertyValue("Scale", entry.Scale);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Save the current map transforms for this map
+    /// </summary>
+    public void SaveMapTransform()
+    {
+        var transforms = Smithbox.BankHandler.MapTransforms.Transforms;
+
+        var position = (Vector3)RootObject.GetPropertyValue("Position");
+        var rotation = (Vector3)RootObject.GetPropertyValue("Scale");
+        var scale = (Vector3)RootObject.GetPropertyValue("Position");
+
+        // Update
+        if (transforms.TransformList.Where(e => e.MapID == Name).Any())
+        {
+            var entry = transforms.TransformList.Where(e => e.MapID == Name).FirstOrDefault();
+
+            if (entry != null)
+            {
+                entry.MapID = Name;
+                entry.Position = position;
+                entry.Rotation = rotation;
+                entry.Scale = scale;
+            }
+        }
+        // Add
+        else
+        {
+            var newEntry = new MapTransformEntry();
+            newEntry.MapID = Name;
+            newEntry.Position = position;
+            newEntry.Rotation = rotation;
+            newEntry.Scale = scale;
+
+            transforms.TransformList.Add(newEntry);
+        }
+
+        // Updat
+        Smithbox.BankHandler.MapTransforms.SaveBank();
     }
 
     public List<GPARAM> GParams { get; }
