@@ -4,6 +4,16 @@
   Row0Dummy="" 
   Wiki="Determines the behavior parameters used when triggering projectiles and attacks." />
   
+  <DisplayNames>
+    <NameEntry 
+    Param="BehaviorParam" 
+    Name="Behaviors: NPC" />
+    
+    <NameEntry 
+    Param="BehaviorParam_PC" 
+    Name="Behaviors: Player" />
+  </DisplayNames>
+  
   <Field>
     <variationId 
     AltName="Behavior Variation ID" 

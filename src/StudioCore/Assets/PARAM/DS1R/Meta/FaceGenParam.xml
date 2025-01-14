@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0" >
   <Self 
-  Wiki="" />
+  Wiki="Determines the configuration of NPC faces." />
 
+  <DisplayNames>
+    <NameEntry 
+    Param="FaceGenParam" 
+    Name="Character Face Configurations" />
+  </DisplayNames>
+  
   <Field>
     <faceGeoData00 AltName="Face - Geometry Data [00]" Wiki="Face - Geometry Data [00]"/>
     <faceGeoData01 AltName="Face - Geometry Data [01]" Wiki="Face - Geometry Data [01]"/>

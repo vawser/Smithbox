@@ -3,6 +3,12 @@
   <Self 
   Wiki="Determines the parameters of projectiles." />
   
+  <DisplayNames>
+    <NameEntry 
+    Param="Bullet" 
+    Name="Projectiles" />
+  </DisplayNames>
+  
   <Field>
     <atkId_Bullet 
     AltName="Attack ID" 

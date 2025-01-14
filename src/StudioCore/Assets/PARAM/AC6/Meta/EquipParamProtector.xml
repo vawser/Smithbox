@@ -330,7 +330,7 @@
     <knockbackParamId 
     AltName="Knockback Parameter ID" 
     Wiki="The knockback parameters to use for this part." 
-    Refs="KnockbackParam" />
+    Refs="KnockBackParam" />
     
     <flickDamageCutRate 
     AltName="Repulsion Damage Absorption %" 

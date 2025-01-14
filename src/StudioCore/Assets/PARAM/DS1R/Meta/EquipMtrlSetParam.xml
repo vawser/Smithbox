@@ -2,7 +2,13 @@
 <PARAMMETA XmlVersion="0" >
   <Self 
   Wiki="Determines the material costs for various transactions." />
-    
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipMtrlSetParam" 
+    Name="Reinforcement Material Costs" />
+  </DisplayNames>
+  
   <Field>
     <materialId01
     AltName="Material ID: 1"

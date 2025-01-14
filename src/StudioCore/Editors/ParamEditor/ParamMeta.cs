@@ -21,6 +21,8 @@ public class ParamMetaData
 
     internal Dictionary<string, ParamEnum> enums = new();
 
+    internal List<ParamDisplayName> DisplayNames = new();
+
     internal List<ParamColorEdit> ColorEditors = new();
 
     public static string CurrentMetaFile = "";
@@ -154,6 +156,13 @@ public class ParamMetaData
         {
             ParamColorEdit colorEditor = new(node);
             ColorEditors.Add(colorEditor);
+        }
+
+        // Display Names
+        foreach (XmlNode node in root.SelectNodes("DisplayNames/NameEntry"))
+        {
+            ParamDisplayName displayNames = new(node);
+            DisplayNames.Add(displayNames);
         }
 
         // Fields
@@ -805,6 +814,37 @@ public class FieldMetaData
         XmlNode thisNode = ParamMetaData.GetXmlNode(_parent._xml, "PARAMMETA", "Field", field);
         if (thisNode.Attributes.Count == 0 && thisNode.ChildNodes.Count == 0)
             ParamMetaData.GetXmlNode(_parent._xml, "PARAMMETA", "Field").RemoveChild(thisNode);
+    }
+}
+public class ParamDisplayName
+{
+    public string Param;
+    public string Name;
+
+    public ParamDisplayName(XmlNode node)
+    {
+        Param = "";
+        Name = "";
+
+        if (node.Attributes["Param"] != null)
+        {
+            Param = node.Attributes["Param"].InnerText;
+            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - {Param}");
+        }
+        else
+        {
+            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamColorEdit Name property for {Param}");
+        }
+
+        if (node.Attributes["Name"] != null)
+        {
+            Name = node.Attributes["Name"].InnerText;
+            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - {Name}");
+        }
+        else
+        {
+            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamColorEdit Name property for {Name}");
+        }
     }
 }
 

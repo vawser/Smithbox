@@ -52,6 +52,9 @@
 701 WEIGHT - FCS - Armload Target Tracking
 702 FCS - Hardlock Strength
 703 FCS - White Lock Strength (0 is 100%)
+850 Recoil - Recoil Parameter Multiplier
+851 Recoil - Reduction Rate per Second
+852 Recoil - Reduction Delay
 970 FIREARM SPECIALIZATION - Target Tracing Multiplier
 971 FIREARM SPECIALIZATION - Unknown Penalty
 991 ENERGY FIREARM SPECIALIZATION - Weapon Charge Speed

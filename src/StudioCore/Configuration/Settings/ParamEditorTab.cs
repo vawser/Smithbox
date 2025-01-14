@@ -101,6 +101,10 @@ public class ParamEditorTab
             if (ImGui.Checkbox("Sort params alphabetically", ref CFG.Current.Param_AlphabeticalParams))
                 UICache.ClearCaches();
             UIHelper.ShowHoverTooltip("Sort the Param View list alphabetically.");
+
+            if (ImGui.Checkbox("Show community param names", ref CFG.Current.Param_ShowParamCommunityName))
+                UICache.ClearCaches();
+            UIHelper.ShowHoverTooltip("Show the community name for a param instead of its raw filename in the list.");
         }
 
         // Rows

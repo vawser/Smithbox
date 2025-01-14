@@ -3,6 +3,12 @@
   <Self 
   Wiki="Determines the parameters of goods."  />
 
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipParamGoods" 
+    Name="Items" />
+  </DisplayNames>
+  
   <Field>
     <refId 
     AltName="Reference ID" 

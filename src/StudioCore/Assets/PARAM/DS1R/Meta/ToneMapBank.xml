@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for tone maps." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_ToneMapBank" 
+    Name="Tone Map: Default" />
+    
+    <NameEntry 
+    Param="m10_ToneMapBank" 
+    Name="Tone Map: Depths / Undead Burg / Undead Parish" />
+    
+    <NameEntry 
+    Param="m11_ToneMapBank" 
+    Name="Tone Map: Painted World" />
+    
+    <NameEntry 
+    Param="m12_ToneMapBank" 
+    Name="Tone Map: Darkroot Garden / Oolacile" />
+    
+    <NameEntry 
+    Param="m13_ToneMapBank" 
+    Name="Tone Map: Catacombs / Tomb of the Giants / Great Hollow" />
+    
+    <NameEntry 
+    Param="m14_ToneMapBank" 
+    Name="Tone Map: Blighttown / Demon Ruins / Lost Izalith" />
+    
+    <NameEntry 
+    Param="m15_ToneMapBank" 
+    Name="Tone Map: Sen's Fortress / Anor Londo" />
+    
+    <NameEntry 
+    Param="m16_ToneMapBank" 
+    Name="Tone Map: New Londo Ruins / Valley of Drakes" />
+    
+    <NameEntry 
+    Param="m17_ToneMapBank" 
+    Name="Tone Map: Duke's Archives" />
+    
+    <NameEntry 
+    Param="m18_ToneMapBank" 
+    Name="Tone Map: Kiln of the First Flame / Northern Undead Asylum" />
+    
+    <NameEntry 
+    Param="m19_ToneMapBank" 
+    Name="Tone Map: Development" />
+  </DisplayNames>
+  
+  <Field>
+    
+    
+  </Field>
+</PARAMMETA>

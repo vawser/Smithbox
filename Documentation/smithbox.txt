@@ -18,4 +18,24 @@
  
 - Update AC6 paramdex to use released AC6 paramdefs + adjust other stuff based on discoveries
 
-MenuParam
+  DisplayNames="default_DofBank=Depth of Field: Default,
+  m10_DofBank=Depth of Field: Depths / Undead Burg / Undead Parish,
+  m11_DofBank=Depth of Field: Painted World,
+  m12_DofBank=Depth of Field: Darkroot Garden / Oolacile,
+  m13_DofBank=Depth of Field: Catacombs / Tomb of the Giants / Great Hollow / Lake of Ash,
+  m14_DofBank=Depth of Field: Blighttown / Demon Ruins / Lost Izalith,
+  m15_DofBank=Depth of Field: Sen's Fortress / Anor Londo,
+  m16_DofBank=Depth of Field: New Londo Ruins / Valley of Drakes,
+  m17_DofBank=Depth of Field: Duke's Archives,
+  m18_DofBank=Depth of Field: Kiln of the First Flame / Northern Undead Asylum,
+  m99_DofBank=Depth of Field: Development,
+  s10_DofBank=Depth of Field: Depths / Undead Burg / Undead Parish,
+  s11_DofBank=Depth of Field: Painted World,
+  s12_DofBank=Depth of Field: Darkroot Garden / Oolacile,
+  s13_DofBank=Depth of Field: Catacombs / Tomb of the Giants / Great Hollow / Lake of Ash,
+  s14_DofBank=Depth of Field: Blighttown / Demon Ruins / Lost Izalith,
+  s15_DofBank=Depth of Field: Sen's Fortress / Anor Londo,
+  s16_DofBank=Depth of Field: New Londo Ruins / Valley of Drakes,
+  s17_DofBank=Depth of Field: Duke's Archives,
+  s18_DofBank=Depth of Field: Kiln of the First Flame / Northern Undead Asylum,
+  s99_DofBank=Depth of Field: Development

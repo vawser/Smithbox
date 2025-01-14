@@ -3,6 +3,12 @@
   <Self 
   Wiki="Determines the parameters of accessories." />
 
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipParamAccessory" 
+    Name="Rings" />
+  </DisplayNames>
+  
   <Field>
     <refId 
     AltName="Reference ID" 

@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
@@ -277,6 +278,7 @@ public class ParamEditorView
             if (p != null)
             {
                 var meta = ParamMetaData.Get(p.AppliedParamdef);
+
                 var Wiki = meta?.Wiki;
                 if (Wiki != null)
                 {
@@ -298,7 +300,25 @@ public class ParamEditorView
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             }
 
-            if (ImGui.Selectable($"{paramKey}", paramKey == _selection.GetActiveParam()))
+            var displayedName = paramKey;
+
+            if (CFG.Current.Param_ShowParamCommunityName)
+            {
+                var meta = ParamMetaData.Get(p.AppliedParamdef);
+                var names = meta?.DisplayNames;
+
+                if (names != null)
+                {
+                    var paramDisplayName = names.Where(e => e.Param == paramKey).FirstOrDefault();
+
+                    if(paramDisplayName != null)
+                    {
+                        displayedName = paramDisplayName.Name;
+                    }
+                }
+            }
+
+            if (ImGui.Selectable($"{displayedName}##{paramKey}", paramKey == _selection.GetActiveParam()))
             {
                 //_selection.setActiveParam(param.Key);
                 EditorCommandQueue.AddCommand($@"param/view/{_viewIndex}/{paramKey}");

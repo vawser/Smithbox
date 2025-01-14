@@ -3,6 +3,16 @@
   <Self 
   Wiki="Determines the hitbox and damage parameters for attacks." />
   
+  <DisplayNames>
+    <NameEntry 
+    Param="AtkParam_Npc" 
+    Name="Attacks: NPC" />
+    
+    <NameEntry 
+    Param="AtkParam_Pc" 
+    Name="Attacks: Player" />
+  </DisplayNames>
+  
   <Field>
     <hit0_Radius 
     AltName="Hit 0: Radius" 

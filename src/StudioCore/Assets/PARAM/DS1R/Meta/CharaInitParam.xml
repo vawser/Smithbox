@@ -3,6 +3,12 @@
   <Self 
   Wiki="Determines the loadout parameters for Armored Core type characters." />
 
+  <DisplayNames>
+    <NameEntry 
+    Param="CharaInitParam" 
+    Name="Character Configurations" />
+  </DisplayNames>
+  
   <Field>
     <baseRec_mp
     AltName="Base Recovery Speed: MP"

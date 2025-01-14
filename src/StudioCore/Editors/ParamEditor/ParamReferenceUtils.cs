@@ -242,7 +242,8 @@ public static class ParamReferenceUtils
 
                 rowMapId = $"m{sAA}_{sBB}_{sCC}_00";
             }
-            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS3 or ProjectType.SDT or ProjectType.BB)
+
+            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB)
             {
                 var idStr = entityID.ToString();
 
@@ -252,6 +253,19 @@ public static class ParamReferenceUtils
                     string sBB = $"{idStr.Substring(2, 2)}";
 
                     rowMapId = $"m{sAA}_{sBB}_00_00";
+                }
+            }
+
+            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            {
+                var idStr = entityID.ToString();
+
+                if (idStr.Length == 7)
+                {
+                    string sAA = $"{idStr.Substring(0, 2)}";
+                    string sB = $"{idStr.Substring(2, 1)}";
+
+                    rowMapId = $"m{sAA}_0{sB}_00_00";
                 }
             }
 

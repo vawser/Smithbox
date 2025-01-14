@@ -4,6 +4,12 @@
   OffsetSize="100"
   Wiki="Determines the parameters of equipment."  />
 
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipParamProtector" 
+    Name="Equipment" />
+  </DisplayNames>
+  
   <Field>
     <sortId 
     AltName="Sort ID" 
@@ -308,7 +314,7 @@
     <knockbackParamId 
     AltName="Knockback Parameter ID" 
     Wiki="The knockback parameters to use for this part." 
-    Refs="KnockbackParam" />
+    Refs="KnockBackParam" />
 
     <flickDamageCutRate 
     AltName="Repulsion Damage Absorption %" 

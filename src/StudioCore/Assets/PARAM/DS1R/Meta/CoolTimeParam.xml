@@ -3,6 +3,12 @@
   <Self 
   Wiki="" />
   
+  <DisplayNames>
+    <NameEntry 
+    Param="CoolTimeParam" 
+    Name="Co-op Session Limits" />
+  </DisplayNames>
+  
   <Field>
     <limitationTime_0 
     AltName="Limitation Time: 0 Co-op Clients" 
