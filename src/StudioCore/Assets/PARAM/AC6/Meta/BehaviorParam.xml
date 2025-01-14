@@ -25,12 +25,12 @@
     
     <variationId 
     AltName="Behavior Variation ID" 
-    Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." />
+    Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." 
+    VRef="BehaviorVariation" />
     
     <behaviorJudgeId 
     AltName="Behavior Judgement ID" 
-    Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TAE." 
-    VRef="variationId" />
+    Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TAE." />
     
     <ezStateBehaviorType_old
     AltName="ID Calculation Rule"
@@ -69,8 +69,8 @@
     Obsolete="" />
     
     <category
-    AltName="Action Category"
-    Wiki="There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so set the effect for each action so that it can correspond to an effect such as 'powering up only weapon attacks'. Set 'None' for items that do not require settings, such as baristas."
+    AltName="SpEffect Category"
+     Wiki="The SpEffect category this behavior belongs to" 
     Enum="BEHAVIOR_CATEGORY" />
     
     <heroPoint

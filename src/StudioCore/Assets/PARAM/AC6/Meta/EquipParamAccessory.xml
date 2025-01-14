@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self 
-  Wiki="" />
+  Wiki="Determines the parameters of accessories." />
+
   <Field>
     <disableParam_NT 
     AltName="Disable Param: Network Test Version" 
@@ -82,7 +83,8 @@
     
     <equipModelGender 
     AltName="Model Gender" 
-    Wiki="Gender of equipment model" Enum="EQUIP_MODEL_GENDER" />
+    Wiki="Gender of equipment model" 
+    Enum="EQUIP_MODEL_GENDER" />
     
     <accessoryCategory 
     AltName="Accessory Type" 

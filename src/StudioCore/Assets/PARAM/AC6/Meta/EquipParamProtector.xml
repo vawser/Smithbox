@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self 
-  Wiki="Determines the parameters of parts."  />
+  Wiki="Determines the parameters of equipment."  />
   
   <Field>
     <disableParam_NT 
@@ -310,7 +310,7 @@
     
     <resistCurse 
     AltName="Status Resist: Curse" 
-    Wiki="The flat defense value of this part for the specified resistance type." 
+    Wiki="The flat defense value of this part for the specified resistance type."
     Obsolete="" />
     
     <reinforceTypeId 
@@ -330,7 +330,7 @@
     <knockbackParamId 
     AltName="Knockback Parameter ID" 
     Wiki="The knockback parameters to use for this part." 
-    Refs="KnockBackParam" />
+    Refs="KnockbackParam" />
     
     <flickDamageCutRate 
     AltName="Repulsion Damage Absorption %" 
@@ -341,9 +341,10 @@
     Wiki="The equipment model category used by this part." 
     Enum="EQUIP_MODEL_CATEGORY" />
     
-    <XXX_equipModelGender 
-    AltName=""
-    Padding="" />
+    <equipModelGender 
+    AltName="Model Gender" 
+    Wiki="Gender of equipment model" 
+    Enum="EQUIP_MODEL_GENDER" />
     
     <protectorCategory 
     AltName="Equipment Category" 

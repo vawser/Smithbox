@@ -157,20 +157,20 @@
     Wiki="The scale value of the player icon when displayed on the 3D minimap." />
     
     <MIniMap3D_TargetSpotIconScale 
-    AltName="" 
-    Wiki="" />
+    AltName="3D Minimap: Target Spotted Icon Scale" 
+    Wiki="The scale value of the target spotted icon when displayed on the 3D minimap." />
     
     <MIniMap3D_EnemyIconScale 
-    AltName="" 
-    Wiki="" />
+    AltName="3D Minimap: Enemy Icon Scale" 
+    Wiki="The scale value of the enemy icon when displayed on the 3D minimap." />
     
     <MIniMap3D_RaderIconScale 
-    AltName="" 
-    Wiki="" />
+    AltName="3D Minimap: Radar Icon Scale" 
+    Wiki="The scale value of the radar icon when displayed on the 3D minimap." />
     
     <MIniMap3D_MissionRegionHeight 
-    AltName="" 
-    Wiki="" />
+    AltName="3D Minimap: Operational Area Height Scale" 
+    Wiki="The scale value for the height of the operational area when displayed on the 3D minimap." />
     
     <MIniMap3D_MaintenancePointIconScale 
     AltName="" 

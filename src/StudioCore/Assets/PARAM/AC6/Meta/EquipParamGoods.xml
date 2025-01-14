@@ -49,7 +49,8 @@
     
     <replaceItemId 
     AltName="Replacement Item ID" 
-    Wiki="Item ID to add when item is consumed." />
+    Wiki="Item ID to add when item is consumed." 
+    Refs="EquipParamGoods" />
     
     <sortId 
     AltName="Sort ID" 
@@ -270,7 +271,7 @@
     
     <isEstablishment 
     AltName="Is Guidance Item" 
-    Wiki="If ON, this item isa stationary item?" 
+    Wiki="If ON, this item is a stationary item." 
     IsBool="" />
     
     <isOnlyOne 

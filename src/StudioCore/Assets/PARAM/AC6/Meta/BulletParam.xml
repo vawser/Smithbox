@@ -24,7 +24,7 @@
     
     <atkId_Bullet 
     AltName="Attack ID" 
-    Wiki="Register the ID of each attack parameter. -> Attack type/attack material/live bullet attack power/magic attack power/stamina attack power/knockback distance." 
+    Wiki="Set the attack parameters that are applied when this bullet impacts a victim." 
     Refs="AtkParam_Pc,AtkParam_Npc" 
     DeepCopyTarget="Attack" />
     
@@ -35,21 +35,21 @@
     
     <sfxId_Hit 
     AltName="Particle ID: Impact" 
-    Wiki="Impact SFXID. -1 does not occur." 
+    Wiki="Impact SFX ID. -1 means it does not occur." 
     ParticleAlias="" />
     
     <sfxId_Flick 
     AltName="Particle ID: Repel" 
-    Wiki="SFXID when repelling projectile. -1 does not occur." 
+    Wiki="SFX ID when repelling projectile. -1 means it does not occur." 
     ParticleAlias="" />
     
     <life 
     AltName="Duration" 
-    Wiki="Time for missiles to continue to exist (-1 is infinite). In seconds." />
+    Wiki="Time for projectile to exist in flight (-1 is infinite). In seconds." />
     
     <dist 
     AltName="Attenuation Range" 
-    Wiki="If the bullet flight distance exceeds this value, the attenuation set by other parameters will be applied. The distance measurement method changes depending on the value of 'Application of curve correction'.\n\nIf 'Application of curved shot correction' is OFF, the travel distance of the bullet is taken as flight distance.\n\nIf 'Apply curve correction' is ON, the distance on the horizontal plane from the bullet's firing position to the bullet's current position is the distance traveled." />
+    Wiki="If the projectile's flight distance exceeds this value, the attenuation set by other parameters will be applied. The distance measurement method changes depending on the value of 'Application of curve correction'.\n\nIf 'Application of curved shot correction' is OFF, the travel distance of the bullet is taken as flight distance.\n\nIf 'Apply curve correction' is ON, the distance on the horizontal plane from the bullet's firing position to the bullet's current position is the distance traveled." />
     
     <lifeAddRand
     AltName="Max Random Duration Value"
@@ -57,28 +57,31 @@
     
     <gravityInRange 
     AltName="Gravity: In Range" 
-    Wiki="Gravity applied downward within range. In metres per second ^ 2." />
+    Wiki="Gravity applied downward to the projectile when within range. In metres per second ^ 2." />
     
     <gravityOutRange 
     AltName="Gravity: Out of Range" 
-    Wiki="Gravity applied downward outside of range. In metres per second ^ 2." />
+    Wiki="Gravity applied downward to the projectile when outside of range. In metres per second ^ 2." />
     
-    <shootInterval AltName="Shoot Interval" Wiki="Specify how many seconds the missile will be fired." />
+    <shootInterval 
+    AltName="Shoot Interval" 
+    Wiki="The interval at which the projectile is emitted. Applied when generated via the TAE Bullet Behavior event. In seconds." />
+    
     <hormingStopRange 
     AltName="Homing Stop Range" 
-    Wiki="Distance at which bullet homing will stop applying." />
+    Wiki="The distance at which the projectile homing will stop being applied." />
     
     <initVellocity 
     AltName="Initial Velocity" 
-    Wiki="Initial speed of bullet." />
+    Wiki="Initial speed of projectile." />
     
     <accelInRange 
     AltName="Acceleration: In Range" 
-    Wiki="Acceleration within bullet range. In metres per second ^ 2." />
+    Wiki="Acceleration whilst projectile is within distance threshold. In metres per second ^ 2." />
     
     <accelOutRange 
     AltName="Acceleration: Out of Range" 
-    Wiki="Acceleration when bullet goes out of range. In metres per second ^ 2." />
+    Wiki="Acceleration whilst projectile is beyond the distance threshold. In metres per second ^ 2." />
     
     <maxVellocity 
     AltName="Maximum Velocity" 
@@ -90,11 +93,11 @@
     
     <accelTime 
     AltName="Acceleration Start Delay" 
-    Wiki="Until this time, it will not accelerate. In seconds." />
+    Wiki="The delay before the projectile will start accelerating. In seconds." />
     
     <homingBeginDist 
     AltName="Homing Start Distance" 
-    Wiki="Distance at which bullet homing will start to apply." />
+    Wiki="The distance at which projectile homing will start to be applied." />
     
     <bUseMapOnlyHit
     AltName="Use Map-only Hit"
@@ -147,11 +150,11 @@
     
     <hitRadius 
     AltName="Hit Radius: Initial" 
-    Wiki="Initial radius of the hitbox." />
+    Wiki="The initial radius of the hitbox." />
     
     <hitRadiusMax 
-    AltName="Hit Radius: Max" 
-    Wiki="Maximum radius of the hitbox, time hitbox changes from initial to max is determined by spreadTime. (If -1, radius is same as initial hitbox radius)." />
+    AltName="Hit Radius: Maximum" 
+    Wiki="The maximum radius of the hitbox, the duration for the hitbox to change from initial to max radius is determined by spreadTime. (If -1, radius is same as initial hitbox radius)." />
     
     <hitRadiusForMap 
     AltName="Hit Radius: Initial (Map-only)" 
@@ -163,89 +166,90 @@
     
     <spreadTime 
     AltName="Hit Radius: Spread Time" 
-    Wiki="Amount of time (in seconds) it takes for hitbox radius to grow from initial value to max value." />
+    Wiki="The duration it takes for hitbox radius to grow from initial value to max value. If 0, only the initial radius is used. In seconds." />
     
     <expDelay 
-    AltName="Hit Radius: Expansion Delay" Wiki="Time from landing to expansion (if 0, it expands immediately)." />
+    AltName="Hit Radius: Expansion Delay" 
+    Wiki="The duration from the projectile landing to the start of hit radius expansion (if 0, it expands immediately)." />
     
     <hormingOffsetRange 
     AltName="Homing Correction Offset" 
-    Wiki="It is accurate if it is 0. At the time of shooting, each component of XYZ should be aimed by shifting this amount." />
+    Wiki="If set to 0, the projectile will track with perfect accuracy. Otherwise, the target location is offset by this amount in the direction to victim is moving." />
     
     <dmgHitRecordLifeTime 
-    AltName="Damage History Duration" 
-    Wiki="Damage hit history survival time ( 0.0f: indefinite). In seconds." />
+    AltName="Damage Application Interval" 
+    Wiki="The interval at which damage can be applied by this bullet to a victim. 0 means it will only ever apply once." />
     
     <externalForce 
-    AltName="External Force in Bullet Direction" 
-    Wiki="External force applied in the direction of shooting. (Y-axis is removed)" />
+    AltName="External Force Modifier" 
+    Wiki="The external force modifier to apply to the projectile in the direction of shooting (Y-axis is removed) based on map factor." />
     
     <spEffectIDForShooter 
     AltName="Shooter SpEffect ID" 
-    Wiki="SpEffect applied to owner of bullet." 
+    Wiki="The SpEffect applied to owner of projectile upon being emitted." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <autoSearchNPCThinkID 
     AltName="Funnel Think ID" 
-    Wiki="Parameters used by the funnel to search for the target (e.g. soulmass)" 
+    Wiki="The think parameters used by the funnel to search for the target (e.g. soulmass)." 
     Refs="NpcThinkParam" />
     
     <HitBulletID 
     AltName="Hit Bullet ID" 
-    Wiki="Bullet to generate when projectile expires." 
+    Wiki="The bullet to generate when the projectile expires, or conditionally according to some launchConditionType values." 
     Refs="Bullet" 
     DeepCopyTarget="Bullet" />
     
     <spEffectId0 
-    AltName="Target SpEffect ID [0]" 
-    Wiki="SpEffect to apply when bullet hits target." 
+    AltName="Target SpEffect ID: 0" 
+    Wiki="The SpEffect to apply when the projectile hits target." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectId1 
-    AltName="Target SpEffect ID [1]" 
-    Wiki="SpEffect to apply when bullet hits target." 
+    AltName="Target SpEffect ID: 1" 
+    Wiki="SpEffect to apply when the projectile hits target." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectId2 
-    AltName="Target SpEffect ID [2]" 
-    Wiki="SpEffect to apply when bullet hits target." 
+    AltName="Target SpEffect ID: 2" 
+    Wiki="SpEffect to apply when the projectile hits target." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectId3 
-    AltName="Target SpEffect ID [3]" 
-    Wiki="SpEffect to apply when bullet hits target." 
+    AltName="Target SpEffect ID: 3" 
+    Wiki="SpEffect to apply when the projectile hits target." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectId4 
-    AltName="Target SpEffect ID [4]" 
-    Wiki="SpEffect to apply when bullet hits target." 
+    AltName="Target SpEffect ID: 4" 
+    Wiki="SpEffect to apply when the projectile hits target." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <numShoot
     AltName="Number of Shots"
-    Wiki="Number of bullets produced per emitter." />
+    Wiki="The number of projectiles produced per emitter interval." />
     
     <homingAngle 
     AltName="Homing Strength" 
-    Wiki="The amount of degree correction made each second. In degrees per second." />
+    Wiki="The amount of tracking correction made each second, affecting the speed the projectile faces the victim. In degrees per second." />
     
     <shootAngle 
-    AltName="Firing Angle" 
-    Wiki="Specify how far forward the projectile should be fired. In degrees." />
+    AltName="Horizontal Firing Angle" 
+    Wiki="Specify the horizontal angle at which the projectile should be fired, offset from the emitter origin. In degrees." />
     
     <shootAngleInterval 
-    AltName="Firing Angle Interval" 
-    Wiki="When firing multiple projectiles, specify the interval at which to fire (Y-axis). In degrees." />
+    AltName="Horizontal Firing Angle Interval" 
+    Wiki="When firing multiple projectiles, specify the horizontal angle interval at which to fire (Y-axis). In degrees." />
     
     <shootAngleXInterval 
-    AltName="Firing Elevation Interval" 
-    Wiki="When firing multiple projectiles, specify the interval at which to fire (X-axis). In degrees." />
+    AltName="Vertical Firing Angle Interval" 
+    Wiki="When firing multiple projectiles, specify the vertical angle interval at which to fire (X-axis). Positive values angle upwards, negative values angle downwards. In degrees." />
     
     <damageDamp 
     AltName="Damage Falloff %: Kinetic" 
@@ -255,10 +259,12 @@
     AltName="Damage Falloff %: Energy" 
     Wiki="After passing attenuation distance, Energy damage falls off by this % every second." />
     
-    <fireDamageDamp AltName="Damage Falloff %: Explosive" 
+    <fireDamageDamp 
+    AltName="Damage Falloff %: Explosive" 
     Wiki="After passing attenuation distance, Explosive damage falls off by this % every second." />
     
-    <thunderDamageDamp AltName="Damage Falloff %: Coral" 
+    <thunderDamageDamp 
+    AltName="Damage Falloff %: Coral" 
     Wiki="After passing attenuation distance, Coral damage falls off by this % every second." />
     
     <staminaDamp 
@@ -269,12 +275,13 @@
     AltName="Damage Falloff %: Knockback" 
     Wiki="After passing attenuation distance, knockback falls off by this % every second." />
     
-    <shootAngleXZ AltName="Firing Elevation Angle" 
-    Wiki="Specify the elevation of the projectile that should be fired. In degrees." />
+    <shootAngleXZ 
+    AltName="Vertical Firing Angle" 
+    Wiki="Specify the vertical angle of the projectile that should be fired. Positive values angle upwards, negative values angle downwards. In degrees." />
     
     <lockShootLimitAng 
-    AltName="Horizontal Correction Angle" 
-    Wiki="Shooting correction angle (horizontal). In degrees." />
+    AltName="Maximum Tracking Angle" 
+    Wiki="The maximum angle the bullet's initial direction can change to face towards player locked-on target or AI focused enemy. In degrees." />
     
     <charaPenetrateType
     AltName="Character Penetration Type"
@@ -283,7 +290,7 @@
     
     <prevVelocityDirRate 
     AltName="Previous Movement Direction Addition %" 
-    Wiki="Ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall." />
+    Wiki="The ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall." />
     
     <atkAttribute 
     AltName="Live Bullet Attribute" 
@@ -297,12 +304,12 @@
     
     <Material_AttackType 
     AltName="Attack Presentation Type" 
-    Wiki="Specify particles and sounds at the time of attack (1 set by attribute, material, size)" 
+    Wiki="Specify the particles and sounds to apply for the attack against the victim." 
     Enum="BEHAVIOR_ATK_TYPE" />
     
     <Material_AttackMaterial 
     AltName="Attack Presentation: Material" 
-    Wiki="Specify particles and sounds at the time of attack (1 set by attribute, material, size)" 
+    Wiki="Specify the material to apply for the attack against the victim." 
     Enum="WEP_MATERIAL_ATK" />
     
     <bFollowHitSfx
@@ -330,33 +337,33 @@
     Enum="BULLET_EMITTE_POS_TYPE" />
     
     <isAttackSFX 
-    AltName="Persistent Attack SFX" 
-    Wiki="Set whether bullets such as arrows will remain stuck in the character" 
+    AltName="Persistent Hit Particles" 
+    Wiki="If ON, the projectile SFX will remain stuck in the victim it it collides." 
     IsBool="" />
     
     <isEndlessHit 
-    AltName="Continuous Hit" 
-    Wiki="Do you keep hitting?" 
+    AltName="Allow Continuous Hit" 
+    Wiki="If ON, the projectile will hit continously upon impact." 
     IsBool="" />
     
     <isPenetrateMap 
     AltName="Penetrate Map" 
-    Wiki="If it is ON, it will penetrate without landing when hitting a hit / static asset." 
+    Wiki="If ON, the projectile will pass through collision and map pieces." 
     IsBool="" />
     
     <isHitBothTeam 
     AltName="Hit Both Teams" 
-    Wiki="Will it hit both friend and foe? (Does not apply to wandering ghosts)" 
+    Wiki="If ON, the projectile will collide with both victim and owner team types." 
     IsBool="" />
     
     <isUseSharedHitList 
     AltName="Use Shared Hit List" 
-    Wiki="Specify whether to share the hit list" 
+    Wiki="If ON, multiple projectile from the same emitter that collide with a victim will count as one projectile in terms of updating the damage interval." 
     IsBool="" />
     
     <isUseMultiDmyPolyIfPlace 
-    AltName="Use Multiple Dummy Polygons for Placement" 
-    Wiki="Use multiple dummy polygons with shared ID when placing bullets?" 
+    AltName="Use Multiple Dummy Polygons for Emit" 
+    Wiki="If ON, multiple dummy polygons with shared ID can be used for emitting the projectile." 
     IsBool="" />
     
     <isHowitzer
@@ -371,22 +378,22 @@
     
     <isHitForceMagic 
     AltName="Is Hit Force Magic" 
-    Wiki="Is bullet deflected by 'force magic'. Items cannot be used." 
+    Wiki="If ON, this projectile can be deflected by projectiles with attachEffectType set to 1." 
     IsBool="" />
     
     <isIgnoreSfxIfHitWater 
-    AltName="Ignore Particle Spawn on Water Collision"
-    Wiki="Ignore the particle if it hits the water surface" 
+    AltName="Block Hit Particle Emit on Water Collision"
+    Wiki="If ON, do not emit the hit particle if the projectile hits the water surface" 
     IsBool="" />
     
     <isIgnoreMoveStateIfHitWater 
-    AltName="Ignore State Transition on Water Collision" 
-    Wiki="Whether to ignore state transition during water surface collision" 
+    AltName="Penetrate Water Collision" 
+    Wiki="If ON, the projectile will pass through water collision." 
     IsBool="" />
     
     <isHitDarkForceMagic 
     AltName="Is Hit Dark Force Magic" 
-    Wiki="Is bullet deflected by 'dark force magic'. Items cannot be used." 
+    Wiki="If ON, this projectile can be deflected by projectiles with attachEffectType set to 3." 
     IsBool="" />
     
     <isProximityFuseHitChildInheritBulletPos
@@ -512,8 +519,8 @@
     IsBool="" />
     
     <attachEffectType2
-    AltName="Attach Effect Type"
-    Wiki="Effect type to attach"
+    AltName="Deflection Type"
+    Wiki="The deflection type for this projectile against other projectiles."
     Enum="BULLET_ATTACH_EFFECT_TYPE" />
     
     <shapeType

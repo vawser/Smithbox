@@ -24,223 +24,225 @@
     
     <hit0_Radius 
     AltName="Hit 0: Radius" 
-    Wiki="Sphere, capsule radius" />
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
     
     <hit1_Radius 
     AltName="Hit 1: Radius" 
-    Wiki="Sphere, capsule radius" />
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
     
     <hit2_Radius 
     AltName="Hit 2: Radius" 
-    Wiki="Sphere, capsule radius" />
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
     
     <hit3_Radius 
     AltName="Hit 3: Radius" 
-    Wiki="Sphere, capsule radius" />
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
     
     <knockbackMPS 
-    AltName="Knockback Speed" 
-    Wiki="Knockback speed [m/s]" />
+    AltName="Knockback Distance" 
+    Wiki="Determines the distance the victim is knocked back by. In metres per second." />
     
     <hitStopTime 
     AltName="Hit Stop Time" 
-    Wiki="Hard hit (FDP hit stop) stop time [s]" />
+    Wiki="The duration that the victim's animations are paused for when hit. In seconds." />
     
     <spEffectId0 
-    AltName="SpEffect ID [0]" 
-    Wiki="SpEffect ID applied by this attack." 
+    AltName="SpEffect ID: 0" 
+    Wiki="SpEffect ID applied to victim by this attack." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectId1 
-    AltName="SpEffect ID [1]" 
-    Wiki="SpEffect ID applied by this attack." 
+    AltName="SpEffect ID: 1" 
+    Wiki="SpEffect ID applied to victim by this attack." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectId2 
-    AltName="SpEffect ID [2]" 
-    Wiki="SpEffect ID applied by this attack." 
+    AltName="SpEffect ID: 2" 
+    Wiki="SpEffect ID applied to victim by this attack." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectId3 
-    AltName="SpEffect ID [3]" 
-    Wiki="SpEffect ID applied by this attack." 
+    AltName="SpEffect ID: 3" 
+    Wiki="SpEffect ID applied to victim by this attack." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectId4 
-    AltName="SpEffect ID [4]" 
-    Wiki="SpEffect ID applied by this attack." 
+    AltName="SpEffect ID: 4" 
+    Wiki="SpEffect ID applied to victim by this attack." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <hit0_DmyPoly1 
-    AltName="Hit 0: Initial Dummy Polygon" 
-    Wiki="Dummy Polygon in sphere, capsule position" />
+    AltName="Hit 0: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
     
     <hit1_DmyPoly1 
-    AltName="Hit 1: Initial Dummy Polygon" 
-    Wiki="Dummy Polygon in sphere, capsule position" />
+    AltName="Hit 1: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
     
     <hit2_DmyPoly1 
-    AltName="Hit 2: Initial Dummy Polygon" 
-    Wiki="Dummy Polygon in sphere, capsule position" />
+    AltName="Hit 2: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
     
     <hit3_DmyPoly1 
-    AltName="Hit 3: Initial Dummy Polygon" 
-    Wiki="Dummy Polygon in sphere, capsule position" />
+    AltName="Hit 3: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
     
     <hit0_DmyPoly2 
-    AltName="Hit 0: Secondary Dummy Polygon" 
-    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    AltName="Hit 0: Secondary Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
     
     <hit1_DmyPoly2 
-    AltName="Hit 1: Secondary Dummy Polygon" 
-    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    AltName="Hit 1: Secondary Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
     
     <hit2_DmyPoly2 
-    AltName="Hit 2: Secondary Dummy Polygon" 
-    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    AltName="Hit 2: Secondary Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
     
     <hit3_DmyPoly2 
-    AltName="Hit 3: Secondary Dummy Poly" 
-    Wiki="The position of another point on the capsule Dummy Polygon. -1 makes it a sphere" />
+    AltName="Hit 3: Secondary Dummy Poly ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
     
     <blowingCorrection 
     AltName="Attack Correction: Blow-off" 
-    Wiki="Multiplier to the base blow-off power" />
+    Wiki="The multiplier to apply to the base blow-off value." />
     
     <atkPhysCorrection 
     AltName="Attack Correction: Kinetic" 
-    Wiki="Player only. Multiplier to the base Kinetic attack power" />
+    Wiki="The multiplier to apply to the base Kinetic attack value." />
     
     <atkMagCorrection 
     AltName="Attack Correction: Energy" 
-    Wiki="Player only. Multiplier to the base Energy attack power" />
+    Wiki="The multiplier to apply to the base Energy attack value." />
     
     <atkFireCorrection 
     AltName="Attack Correction: Explosive" 
-    Wiki="Player only. Multiplier to the base Explosive attack power" />
+    Wiki="The multiplier to apply to the base Explosive attack value." />
     
     <atkThunCorrection 
     AltName="Attack Correction: Coral" 
-    Wiki="Player only. Multiplier to the base Coral attack power" />
+    Wiki="The multiplier to apply to the base Coral attack value." />
     
     <atkStamCorrection 
     AltName="Attack Correction: Stamina" 
-    Wiki="Player only. Multiplier to the base stamina attack power" />
+    Wiki="The multiplier to apply to the base stamina attack value." />
     
     <guardAtkRateCorrection 
     AltName="Attack Correction: Guard Attack" 
-    Wiki="Player only. Multiplier to the base guard attack power" />
+    Wiki="The multiplier to apply to the base guard attack value. Compared against the guard defense value to determine if the attack will bounce." />
     
     <guardBreakCorrection 
     AltName="Attack Correction: Guard Defense" 
-    Wiki="Player only. Multiplier to the base guard defense power" />
+    Wiki="Player only. The multiplier to the base guard defense value. Compared against the guard attack value to determine if the attack will bounce." />
     
     <atkThrowEscapeCorrection 
     AltName="Attack Correction: Throw Attack" 
-    Wiki="Multiplier to the base throw attack power" />
+    Wiki="The multiplier to apply to the base throw attack value." />
     
     <atkSuperArmorCorrection
     AltName="Attack Correction: Poise"
-    Wiki="Player only. Multiplier to the base poise attack power" />
+    Wiki="Player only. The multiplier to apply to the base poise attack value." />
     
     <atkPhys 
     AltName="Damage: Kinetic" 
-    Wiki="The base Kinetic attack power. Used primarily for NPC attacks." />
+    Wiki="The base Kinetic attack value. Used primarily for NPC attacks." />
     
     <atkMag 
     AltName="Damage: Energy" 
-    Wiki="The base Energy attack power. Used primarily for NPC attacks." />
+    Wiki="The base Energy attack value. Used primarily for NPC attacks." />
     
     <atkFire 
     AltName="Damage: Explosive" 
-    Wiki="The base Explosive attack power. Used primarily for NPC attacks." />
+    Wiki="The base Explosive attack value. Used primarily for NPC attacks." />
     
     <atkThun 
     AltName="Damage: Coral" 
-    Wiki="The base Coral attack power. Used primarily for NPC attacks." />
+    Wiki="The base Coral attack value. Used primarily for NPC attacks." />
     
     <atkStam 
     AltName="Damage: Stamina" 
-    Wiki="The base stamina attack power." />
+    Wiki="The base stamina attack value." />
     
     <guardAtkRate 
     AltName="Damage: Guard Attack" 
-    Wiki="The base guard attack power." />
+    Wiki="The base guard attack value. Compared against the guard defense value to determine if the attack will bounce." />
     
     <guardBreakRate 
     AltName="Damage: Guard Defense" 
-    Wiki="The base guard defense power." />
+    Wiki="The base guard defense value. Compared against the guard attack value to determine if the attack will bounce." />
     
     <atkSuperArmor 
     AltName="Damage: Poise" 
-    Wiki="The base poise attack power." />
+    Wiki="The base poise attack value." />
     
     <atkThrowEscape 
     AltName="Damage: Throw Attack" 
-    Wiki="The base throw attack power." />
+    Wiki="The base throw attack value." />
     
     <atkObj 
     AltName="Damage: Object Destruction" 
-    Wiki="The base object destruction power." />
+    Wiki="The base object destruction value. Applied to the object's HP." />
     
     <guardStaminaCutRate 
     AltName="Guard Absorption Correction: Stamina" 
-    Wiki="Multiplier to the reduction of stamina damage when guarding." />
+    Wiki="The multiplier to apply to the reduction of stamina damage when guarding. Positive values increase guard stability, negative values decrease it." />
     
     <guardRate 
     AltName="Guard Absorption" 
-    Wiki="NPC, the guard performance set in the weapon parameter is uniformly corrected. 0, 1x / 100, 2x / -100, guard multiplier = (guard multiplier / 100) to increase / decrease the parameter to 0. + 1)" />
+    Wiki="The multiplier to apply to the guard absorption value from the weapon. 0, 1x / 100, 2x / -100, guard multiplier = (guard multiplier / 100) to increase / decrease the parameter to 0. + 1)" />
     
     <throwTypeId 
     AltName="Throw Type ID" 
-    Wiki="ID associated with the throw parameter" />
+    Wiki="The throw type ID to use with this attack against the victim." />
     
     <hit0_hitType 
     AltName="Hit 0: Hit Type"
-    Wiki="Hit part" 
+    Wiki="The hit collision type for this hit slot." 
     Enum="ATK_PARAM_HIT_TYPE" />
     
     <hit1_hitType 
     AltName="Hit 1: Hit Type" 
-    Wiki="Hit part" 
+    Wiki="The hit collision type for this hit slot." 
     Enum="ATK_PARAM_HIT_TYPE" />
     
     <hit2_hitType 
     AltName="Hit 2: Hit Type" 
-    Wiki="Hit part" Enum="ATK_PARAM_HIT_TYPE" />
+    Wiki="The hit collision type for this hit slot." 
+    Enum="ATK_PARAM_HIT_TYPE" />
     
     <hit3_hitType 
     AltName="Hit 3: Hit Type" 
-    Wiki="Hit part" 
+    Wiki="The hit collision type for this hit slot." 
     Enum="ATK_PARAM_HIT_TYPE" />
     
     <hti0_Priority 
     AltName="Hit 0: Priority" 
-    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     
     <hti1_Priority 
     AltName="Hit 1: Priority" 
-    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     
     <hti2_Priority 
     AltName="Hit 2: Priority" 
-    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     
     <hti3_Priority 
     AltName="Hit 3: Priority" 
-    Wiki="Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     
     <dmgLevel 
     AltName="Damage Level: Hostile" 
-    Wiki="Which damage animation should be played against the enemy when attacking?" 
+    Wiki="The damage animation to apply to the victim of this attack." 
     Enum="ATKPARAM_REP_DMGTYPE_UINT" />
     
-    <mapHitType AltName="Map Hit Type" 
+    <mapHitType 
+    AltName="Map Hit Type" 
     Wiki="Which map do you see around the attack? The set" 
     Enum="ATK_PARAM_MAP_HIT" />
     
@@ -275,12 +277,12 @@
     
     <defSeMaterial1 
     AltName="Defense Presentation: Sound" 
-    Wiki="Used for sounds when guarding" 
+    Wiki="The sounds to use when guarding against this attack." 
     Enum="WEP_MATERIAL_DEF" />
     
     <hitSourceType 
     AltName="Hit Source Type" 
-    Wiki="The source of the Dummy Polygon ID for the attack?" 
+    Wiki="The source of the dummy Polygon ID to use for this attack."
     Enum="ATK_PARAM_HIT_SOURCE" />
     
     <throwFlag 
@@ -289,43 +291,43 @@
     Enum="ATK_PATAM_THROWFLAG_TYPE" />
     
     <disableGuard 
-    AltName="Disable Guard" 
-    Wiki="If 1, ignore the guard on the guard side and enter the damage level" 
+    AltName="Ignore Guard" 
+    Wiki="If ON, then this attack ignores the victim's guard and applies the damage animation automatically." 
     IsBool="" />
     
     <disableStaminaAttack 
-    AltName="Disable Stamina Attack" 
-    Wiki="The stamina attack power is used to determine if it is broken, but the stamina is not actually reduced." 
+    AltName="Disable Guard Drain" 
+    Wiki="If ON, then this attack will not reduce the victim's stamina as a result of them guarding the attack." 
     IsBool="" />
     
     <disableHitSpEffect 
     AltName="Disable Hit SpEffect" 
-    Wiki="Disables on-hit SpEffects." 
+    Wiki="If ON, then this attack will not apply on-hit SpEffects to the victim." 
     IsBool="" />
     
     <IgnoreNotifyMissSwingForAI 
-    AltName="Disable Missed Attack Notification For AI" 
-    Wiki="Do not notify AI of missed swing" 
+    AltName="Disable Missed Attack Notification" 
+    Wiki="If ON, then the enemy AI is not given notification of a missed attack." 
     IsBool="" />
     
     <repeatHitSfx 
     AltName="Repeat Hit Particles" 
-    Wiki="Enemy only: Does SFX occur continuously when hitting a wall?" 
+    Wiki="If ON, does the on-hit SFX for this attack repeat forever upon collision." 
     IsBool="" />
     
     <isArrowAtk 
-    AltName="Is Physical Attack" 
-    Wiki="Used for determining part damage" 
+    AltName="Enable Part Destruction" 
+    Wiki="If ON, then this attack will count as damage to a destructable enemy part." 
     IsBool="" />
     
     <isGhostAtk 
-    AltName="Is Spiritual Attack" 
-    Wiki="Used for determining spiritual damage." 
+    AltName="Enable Ghost Destruction" 
+    Wiki="If ON, then this attack will count as damage to a ghost enemy." 
     IsBool="" />
     
     <isDisableNoDamage 
-    AltName="Is Invincibility  Disabled" 
-    Wiki="Ignore invincible effects such as steps, TAE's complete invincibility cannot be ignored." 
+    AltName="Ignore Invulnerability Frames" 
+    Wiki="If ON, then invulnerability frames (such as roll frames) are ignored by this attack. Complete invulnerability is NOT ignored however." 
     IsBool="" />
     
     <atkPow_forSfx 

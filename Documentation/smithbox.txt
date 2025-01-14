@@ -5,6 +5,10 @@
 - Add meta-data file to hold MapTransformNode changes for a project, so transform adjustments (as they are used to move the map in the editor) can be kept.
 
 # PARAM
+- Calculation window:
+ - Automatically display gameplay balance data such for currently selected row
+  - For example: Physical/Magic/Fire/Lightning damage with configurable stat input, accounting for CalcCorrectGraph
+
 - Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
 
 - These official defs don't match the actual param layout, need to adjust them:
@@ -13,3 +17,5 @@
  - ThrustersParam_PC
  
 - Update AC6 paramdex to use released AC6 paramdefs + adjust other stuff based on discoveries
+
+MenuParam

@@ -25,11 +25,11 @@
     <behaviorVariationId 
     AltName="Behavior Variation ID" 
     Wiki="Used to determine the action parameters to use for this weapon's attacks." 
-    VRef="BehaviorParam,BehaviorParam_PC" />
+    VRef="BehaviorVariation" />
     
     <sortId 
     AltName="Sort ID" 
-    Wiki="The ordering ID used to sort this part in the menu." />
+    Wiki="The ordering ID used to sort this equipment in the menu." />
     
     <wanderingEquipId 
     AltName="Wandering Equip ID" 
@@ -47,34 +47,34 @@
     
     <fixPrice 
     AltName="Repair Value" 
-    Wiki="The price required to repair this part." />
+    Wiki="The price required to repair this equipment. Repair cost is calculated using this and durabilityMax" />
     
     <reinforcePrice 
     AltName="Reinforcement Value" 
-    Wiki="The reinforcement price for this part." />
+    Wiki="The reinforcement price for this equipment." />
     
     <sellValue 
     AltName="Sell Value" 
-    Wiki="The sell value for this part." />
+    Wiki="The sell value for this equipment." />
     
     <correctStrength 
     AltName="Correction: STR" 
-    Wiki="Multiplier to the damage derived from the specified stat." 
+    Wiki="The multiplier to the damage corrected by this specified stat." 
     Obsolete="" />
     
     <correctAgility 
     AltName="Correction: DEX" 
-    Wiki="Multiplier to the damage derived from the specified stat." 
+    Wiki="The multiplier to the damage corrected by this specified stat." 
     Obsolete="" />
     
     <correctMagic 
     AltName="Correction: INT" 
-    Wiki="Multiplier to the damage derived from the specified stat." 
+    Wiki="The multiplier to the damage corrected by this specified stat." 
     Obsolete="" />
     
     <correctFaith 
     AltName="Correction: FTH" 
-    Wiki="Multiplier to the damage derived from the specified stat." 
+    Wiki="The multiplier to the damage corrected by this specified stat." 
     Obsolete="" />
     
     <physGuardCutRate 
@@ -95,19 +95,19 @@
     
     <spEffectBehaviorId0 
     AltName="SpEffect on Hit: 1" 
-    Wiki="A SpEffect to apply when this weapon hits." 
+    Wiki="A SpEffect to apply to the victim when this weapon hits." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectBehaviorId1
     AltName="SpEffect on Hit: 2" 
-    Wiki="A SpEffect to apply when this weapon hits." 
+    Wiki="A SpEffect to apply to the victim when this weapon hits." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
     <spEffectBehaviorId2 
     AltName="SpEffect on Hit: 3" 
-    Wiki="A SpEffect to apply when this weapon hits." 
+    Wiki="A SpEffect to apply to the victim when this weapon hits." 
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
@@ -131,102 +131,102 @@
     
     <materialSetId 
     AltName="Upgrade Material ID" 
-    Wiki="The material requirements for improving this part." 
+    Wiki="The material requirements for improving this equipment." 
     Refs="EquipMtrlSetParam" />
     
     <originEquipWep 
     AltName="Source ID: +0" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep1
     AltName="Source ID: +1" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep2
     AltName="Source ID: +2" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep3
     AltName="Source ID: +3" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep4
     AltName="Source ID: +4" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep5
     AltName="Source ID: +5" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep6
     AltName="Source ID: +6" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep7
     AltName="Source ID: +7" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep8
     AltName="Source ID: +8" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep9
     AltName="Source ID: +9" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep10
     AltName="Source ID: +10" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep11
     AltName="Source ID: +11" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep12
     AltName="Source ID: +12" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep13
     AltName="Source ID: +13" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep14
     AltName="Source ID: +14" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
     <originEquipWep15
     AltName="Source ID: +15" 
-    Wiki="The source ID when this part is reinforced to this level." 
+    Wiki="The source ID when this equipment is reinforced to this level." 
     Refs="EquipParamWeapon" 
     DeepCopyTarget="Source" />
     
@@ -263,22 +263,22 @@
     
     <equipModelId 
     AltName="Model ID" 
-    Wiki="The model ID to use for this part. Also determines the menu preview icon." 
+    Wiki="The model ID to use for this equipment. Also determines the menu preview icon." 
     TextureRef="Weapon/01_common/SB_PartsThumbnails/equipModelId/" />
     
     <iconId 
     AltName="Icon ID " 
-    Wiki="The icon ID to use for this part." 
+    Wiki="The icon ID to use for this equipment." 
     Obsolete="" />
     
     <durability 
     AltName="Durability" 
-    Wiki="The initial durability of this part." 
+    Wiki="The initial durability of this equipment." 
     Obsolete="" />
     
     <durabilityMax 
     AltName="Max Durability" 
-    Wiki="The maximum durability of this part." 
+    Wiki="The maximum durability of this equipment." 
     Obsolete="" />
     
     <attackThrowEscape 
@@ -321,7 +321,7 @@
     
     <horizontalGuardAngle 
     AltName="Horizontal Guard Angle" 
-    Wiki="Defense generation range angle when guarding with a weapon (horizontal direction).  In degrees." />
+    Wiki="Defense generation range angle when guarding with a weapon (horizontal direction). In degrees." />
     
     <staminaGuardDef 
     AltName="Guard Stability" 
@@ -329,16 +329,16 @@
     
     <reinforceTypeId 
     AltName="Reinforcement Type ID"
-    Wiki="The reinforcement progression to use for this part." 
+    Wiki="The reinforcement progression to use for this equipment." 
     Refs="ReinforceParamProtector"/>
     
     <trophySGradeId 
     AltName="Achievement ID" 
-    Wiki="The achievement ID this part is associated with, if any." />
+    Wiki="The achievement ID this equipment is associated with, if any." />
     
     <trophySeqId 
     AltName="Sequential Achievement ID" 
-    Wiki="The sequential achievement ID this part is associated with, if any." />
+    Wiki="The sequential achievement ID this equipment is associated with, if any." />
     
     <throwAtkRate 
     AltName="Critical Hit Multiplier" 
@@ -352,17 +352,17 @@
     
     <equipModelCategory 
     AltName="Model Category" 
-    Wiki="The equipment model category used by this part." 
+    Wiki="The equipment model category used by this equipment." 
     Enum="EQUIP_MODEL_CATEGORY" />
     
     <equipModelGender 
     AltName="Model Gender Category"
-    Wiki="The equipment gender category used by this part." 
+    Wiki="The equipment gender category used by this equipment." 
     Enum="EQUIP_MODEL_GENDER" />
     
     <weaponCategory 
     AltName="Weapon Category" 
-    Wiki="The weapon category of this part." 
+    Wiki="The weapon category of this equipment." 
     Enum="WEAPON_CATEGORY" />
     
     <wepmotionCategory 
@@ -379,12 +379,12 @@
     
     <atkMaterial 
     AltName="Attack Presentation: Material" 
-    Wiki="Specify particles and sounds at the time of attack (1 set by attribute, material, size)" 
+    Wiki="Specify the particles and sounds to apply to the victim at the time of attack." 
     Enum="WEP_MATERIAL_ATK" />
     
     <defSeMaterial1 
     AltName="Defense Presentation: Sound" 
-    Wiki="Used for sounds when guarding" 
+    Wiki="Specify the sounds to apply when guarding against an attack." 
     Enum="WEP_MATERIAL_DEF" />
     
     <correctType_Physics 
@@ -447,13 +447,13 @@
     Obsolete="" />
     
     <guardBaseRepel 
-    AltName="Base Repel: Guard" 
+    AltName="Base Repel: Defense" 
     Wiki="The base repel value when guarding. Compared against enemy repel attack value." 
     Obsolete="" />
     
     <attackBaseRepel 
     AltName="Base Repel: Attack" 
-    Wiki="The base repel value when attacking. Compared against enemy repel attack value." 
+    Wiki="The base repel value when attacking. Compared against enemy repel defense value." 
     Obsolete="" />
     
     <guardCutCancelRate 
@@ -504,28 +504,28 @@
     
     <rightHandEquipable 
     AltName="Equipped in Front Right Slot" 
-    Wiki="If ON, this part can be equipped in the front right slot."
+    Wiki="If ON, this equipment can be equipped in the front right slot."
     IsBool="" />
     
     <leftHandEquipable 
     AltName="Equipped in Front Left Slot" 
-    Wiki="If ON, this part can be equipped in the front left slot."
+    Wiki="If ON, this equipment can be equipped in the front left slot."
     IsBool="" />
     
     <bothHandEquipable 
     AltName="Equipped in either Front Slot" 
-    Wiki="If ON, this part can be equipped in either front slot."
+    Wiki="If ON, this equipment can be equipped in either front slot."
     IsBool="" 
     Obsolete="" />
     
     <rightBackEquipable 
     AltName="Equipped in Back Right Slot" 
-    Wiki="If ON, this part can be equipped in the back right slot."
+    Wiki="If ON, this equipment can be equipped in the back right slot."
     IsBool="" />
     
     <leftBackEquipable 
     AltName="Equipped in Back Left Slot" 
-    Wiki="If ON, this part can be equipped in the back left slot."
+    Wiki="If ON, this equipment can be equipped in the back left slot."
     IsBool="" />
     
     <enableGuard 
@@ -590,19 +590,19 @@
     
     <isEnhance 
     AltName="Is Buffable" 
-    Wiki="If ON, this weapon be buffed via a tool." 
+    Wiki="If ON, this weapon be buffed via a tool or spell." 
     IsBool="" 
     Obsolete="" />
     
     <isHeroPointCorrect 
     AltName="Apply Humanity Correction" 
-    Wiki="If On, applies attack correction based on humanity." 
+    Wiki="If ON, applies attack correction based on humanity." 
     IsBool="" 
     Obsolete="" />
     
     <isCustom 
     AltName="Is Reinforcable" 
-    Wiki="If ON, this weapon can be reinforced via the reinforcement mechanic?" 
+    Wiki="If ON, this weapon can be reinforced via the reinforcement mechanic." 
     IsBool="" 
     Obsolete="" />
     
@@ -689,7 +689,7 @@
     
     <extensionEquipable
     AltName="Equipped in Core Expansion Slot"
-    Wiki="If ON, this part can be equipped in the core expansion slot."
+    Wiki="If ON, this equipment can be equipped in the core expansion slot."
     IsBool="" />
     
     <pad1
@@ -1455,7 +1455,7 @@
     
     <assembleMenuCategory
     AltName="Assembly Menu Category"
-    Wiki="The assembly menu category for this part."
+    Wiki="The assembly menu category for this equipment."
     Enum="ASSEMBLE_MENU_CATEGORY_WEAPON" />
     
     <weaponPoseTypeR

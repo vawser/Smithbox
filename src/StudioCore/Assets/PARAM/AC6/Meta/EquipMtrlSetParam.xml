@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self 
-  Wiki="" />
+  Wiki="Determines the material costs for various transactions." />
   
   <Field>
     <materialId01
