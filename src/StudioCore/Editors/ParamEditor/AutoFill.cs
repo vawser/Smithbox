@@ -211,7 +211,6 @@ internal class AutoFill
 
     public static string ParamSearchBarAutoFill()
     {
-        ImGui.SameLine();
         ImGui.Button($@"{ForkAwesome.CaretDown}");
         if (ImGui.BeginPopupContextItem("##psbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
@@ -226,7 +225,6 @@ internal class AutoFill
 
     public static string RowSearchBarAutoFill()
     {
-        ImGui.SameLine();
         ImGui.Button($@"{ForkAwesome.CaretDown}");
         if (ImGui.BeginPopupContextItem("##rsbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
@@ -241,7 +239,6 @@ internal class AutoFill
 
     public static string ColumnSearchBarAutoFill()
     {
-        ImGui.SameLine();
         ImGui.Button($@"{ForkAwesome.CaretDown}");
         if (ImGui.BeginPopupContextItem("##csbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {

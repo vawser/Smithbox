@@ -6,51 +6,51 @@
   <DisplayNames>
     <NameEntry 
     Param="default_LensFlareBank" 
-    Name="Lens Flare: Default" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m10_LensFlareBank" 
-    Name="Lens Flare: Depths / Undead Burg / Undead Parish" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m11_LensFlareBank" 
-    Name="Lens Flare: Painted World" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m12_LensFlareBank" 
-    Name="Lens Flare: Darkroot Garden / Oolacile" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m13_LensFlareBank" 
-    Name="Lens Flare: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m14_LensFlareBank" 
-    Name="Lens Flare: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m15_LensFlareBank" 
-    Name="Lens Flare: Sen's Fortress" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m15_1_LensFlareBank" 
-    Name="Lens Flare: Anor Londo" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m16_LensFlareBank" 
-    Name="Lens Flare: New Londo Ruins / Valley of Drakes" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m17_LensFlareBank" 
-    Name="Lens Flare: Duke's Archives" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m18_LensFlareBank" 
-    Name="Lens Flare: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Lens Flare" />
     
     <NameEntry 
     Param="m99_LensFlareBank" 
-    Name="Lens Flare: Development" />
+    Name="Lens Flare" />
   </DisplayNames>
   
   <Field>

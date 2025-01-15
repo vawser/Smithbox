@@ -6,95 +6,95 @@
   <DisplayNames>
     <NameEntry 
     Param="default_LightBank" 
-    Name="Light Map: Default" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m10_LightBank" 
-    Name="Light Map: Depths / Undead Burg / Undead Parish" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m11_LightBank" 
-    Name="Light Map: Painted World" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m12_LightBank" 
-    Name="Light Map: Darkroot Garden / Oolacile" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m13_LightBank" 
-    Name="Light Map: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m14_LightBank" 
-    Name="Light Map: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m15_LightBank" 
-    Name="Light Map: Sen's Fortress" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m15_1_LightBank" 
-    Name="Light Map: Anor Londo" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m16_LightBank" 
-    Name="Light Map: New Londo Ruins / Valley of Drakes" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m17_LightBank" 
-    Name="Light Map: Duke's Archives" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m18_LightBank" 
-    Name="Light Map: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="m99_LightBank" 
-    Name="Light Map: Development" />
+    Name="Light Map" />
     
     <NameEntry 
     Param="s10_LightBank" 
-    Name="Light Map: Depths / Undead Burg / Undead Parish" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s11_LightBank" 
-    Name="Light Map: Painted World" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s12_LightBank" 
-    Name="Light Map: Darkroot Garden / Oolacile" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s13_LightBank" 
-    Name="Light Map: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s14_LightBank" 
-    Name="Light Map: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s15_LightBank" 
-    Name="Light Map: Sen's Fortress" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s15_1_LightBank" 
-    Name="Light Map: Anor Londo" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s16_LightBank" 
-    Name="Light Map: New Londo Ruins / Valley of Drakes" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s17_LightBank" 
-    Name="Light Map: Duke's Archives" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s18_LightBank" 
-    Name="Light Map: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Light Map (Cutscene)" />
     
     <NameEntry 
     Param="s99_LightBank" 
-    Name="Light Map: Development" />
+    Name="Light Map (Cutscene)" />
   </DisplayNames>
   
   <Field>

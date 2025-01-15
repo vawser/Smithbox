@@ -105,6 +105,10 @@ public class ParamEditorTab
             if (ImGui.Checkbox("Show community param names", ref CFG.Current.Param_ShowParamCommunityName))
                 UICache.ClearCaches();
             UIHelper.ShowHoverTooltip("Show the community name for a param instead of its raw filename in the list.");
+
+            if (ImGui.Checkbox("Display param categories", ref CFG.Current.Param_DisplayParamCategories))
+                UICache.ClearCaches();
+            UIHelper.ShowHoverTooltip("If defined, display params in their assigned param category groupings.");
         }
 
         // Rows

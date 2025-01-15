@@ -339,6 +339,7 @@ public class CFG
 
     public bool Param_AlphabeticalParams = true;
     public bool Param_ShowParamCommunityName = false;
+    public bool Param_DisplayParamCategories = true;
 
     public bool Param_AdvancedMassedit = false;
     public bool Param_AllowRowReorder = false;

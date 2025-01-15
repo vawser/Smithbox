@@ -238,6 +238,12 @@ public class ParamEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.Param_ShowParamCommunityName);
 
+            if (ImGui.MenuItem("Param: Categories"))
+            {
+                CFG.Current.Param_DisplayParamCategories = !CFG.Current.Param_DisplayParamCategories;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_DisplayParamCategories);
+
             ImGui.Separator();
 
             // Quick toggles for some of the Param Editor field visibility options

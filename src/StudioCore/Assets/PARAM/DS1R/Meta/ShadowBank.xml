@@ -6,51 +6,51 @@
   <DisplayNames>
     <NameEntry 
     Param="default_ShadowBank" 
-    Name="Shadow: Default" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m10_ShadowBank" 
-    Name="Shadow: Depths / Undead Burg / Undead Parish" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m11_ShadowBank" 
-    Name="Shadow: Painted World" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m12_ShadowBank" 
-    Name="Shadow: Darkroot Garden / Oolacile" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m13_ShadowBank" 
-    Name="Shadow: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m14_ShadowBank" 
-    Name="Shadow: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m15_ShadowBank" 
-    Name="Shadow: Sen's Fortress" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m15_1_ShadowBank" 
-    Name="Shadow: Anor Londo" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m16_ShadowBank" 
-    Name="Shadow: New Londo Ruins / Valley of Drakes" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m17_ShadowBank" 
-    Name="Shadow: Duke's Archives" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m18_ShadowBank" 
-    Name="Shadow: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Shadow" />
     
     <NameEntry 
     Param="m99_ShadowBank" 
-    Name="Shadow: Development" />
+    Name="Shadow" />
   </DisplayNames>
   
   <Field>

@@ -26,11 +26,6 @@ public class ParamEditorView
     private bool _arrowKeyPressed;
     private bool _focusRows;
     private int _gotoParamRow = -1;
-    private bool _mapParamView;
-
-    private bool _systemParamView = false;
-    private bool _eventParamView = false;
-    private bool _gConfigParamView = false;
 
     internal ParamEditorScreen _paramEditor;
 
@@ -49,13 +44,7 @@ public class ParamEditorView
 
     public void OnProjectChanged()
     {
-        ParamBank.GraphicsConfigParams = new List<string>();
-        ParamBank.EventParams = new List<string>();
-        ParamBank.SystemParams = new List<string>();
 
-        _systemParamView = false;
-        _eventParamView = false;
-        _gConfigParamView = false;
     }
 
     //------------------------------------
@@ -77,13 +66,8 @@ public class ParamEditorView
             }
         }
 
-        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchParam))
-        {
-            ImGui.SetKeyboardFocusHere();
-        }
-
-        ImGui.InputText($"Search <{KeyBindings.Current.PARAM_SearchParam.HintText}>",
-            ref _selection.currentParamSearchString, 256);
+        // Autofill
+        ImGui.AlignTextToFramePadding();
         var resAutoParam = AutoFill.ParamSearchBarAutoFill();
 
         if (resAutoParam != null)
@@ -91,55 +75,23 @@ public class ParamEditorView
             _selection.SetCurrentParamSearchString(resAutoParam);
         }
 
+        ImGui.SameLine();
+
+        // Search param
+        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchParam))
+        {
+            ImGui.SetKeyboardFocusHere();
+        }
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputText($"##paramSearch",
+            ref _selection.currentParamSearchString, 256);
+        UIHelper.ShowHoverTooltip($"Search <{KeyBindings.Current.PARAM_SearchParam.HintText}>");
+
         if (!_selection.currentParamSearchString.Equals(lastParamSearch))
         {
             UICache.ClearCaches();
             lastParamSearch = _selection.currentParamSearchString;
-        }
-
-        if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
-        {
-            // This game has DrawParams, add UI element to toggle viewing DrawParam and GameParams.
-            if (ImGui.Checkbox("Edit Draw Params", ref _mapParamView))
-            {
-                UICache.ClearCaches();
-            }
-        }
-        else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            // DS2 has map params, add UI element to toggle viewing map params and GameParams.
-            if (ImGui.Checkbox("Edit Map Params", ref _mapParamView))
-            {
-                UICache.ClearCaches();
-            }
-        }
-
-        // Graphics Config
-        if (ParamBank.GraphicsConfigParams.Count > 0)
-        {
-            if (ImGui.Checkbox("Edit Graphics Config Params", ref _gConfigParamView))
-            {
-                _eventParamView = false;
-                UICache.ClearCaches();
-            }
-        }
-        // System Params
-        if (ParamBank.SystemParams.Count > 0)
-        {
-            if (ImGui.Checkbox("Edit System Params", ref _systemParamView))
-            {
-                _gConfigParamView = false;
-                UICache.ClearCaches();
-            }
-        }
-        // Event Params
-        if (ParamBank.EventParams.Count > 0)
-        {
-            if (ImGui.Checkbox("Edit Event Params", ref _eventParamView))
-            {
-                _gConfigParamView = false;
-                UICache.ClearCaches();
-            }
         }
 
         ImGui.Separator();
@@ -213,55 +165,10 @@ public class ParamEditorView
         {
             List<(ParamBank, Param)> list =
                 ParamSearchEngine.pse.Search(true, _selection.currentParamSearchString, true, true);
+
             var keyList = list.Where(param => param.Item1 == ParamBank.PrimaryBank)
                 .Select(param => ParamBank.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
 
-            if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
-            {
-                if (_mapParamView)
-                {
-                    keyList = keyList.FindAll(p => p.EndsWith("Bank"));
-                }
-                else
-                {
-                    keyList = keyList.FindAll(p => !p.EndsWith("Bank"));
-                }
-            }
-            else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-            {
-                if (_mapParamView)
-                {
-                    keyList = keyList.FindAll(p => ParamBank.DS2MapParamlist.Contains(p.Split('_')[0]));
-                }
-                else
-                {
-                    keyList = keyList.FindAll(p => !ParamBank.DS2MapParamlist.Contains(p.Split('_')[0]));
-                }
-            }
-
-            // Graphics Config (AC6/SDT)
-            if (ParamBank.GraphicsConfigParams.Count > 0 && _gConfigParamView)
-            {
-                keyList = keyList.FindAll(p => ParamBank.GraphicsConfigParams.Contains(p));
-            }
-            // System Params (AC6/ER)
-            else if (ParamBank.SystemParams.Count > 0 && _systemParamView)
-            {
-                keyList = keyList.FindAll(p => ParamBank.SystemParams.Contains(p));
-            }
-            // Event Params (AC6/ER)
-            else if (ParamBank.EventParams.Count > 0 && _eventParamView)
-            {
-                keyList = keyList.FindAll(p => ParamBank.EventParams.Contains(p));
-            }
-            else
-            {
-                keyList = keyList.FindAll(p =>
-                !ParamBank.EventParams.Contains(p) &&
-                !ParamBank.GraphicsConfigParams.Contains(p) &&
-                !ParamBank.SystemParams.Contains(p));
-            }
-           
             if (CFG.Current.Param_AlphabeticalParams)
             {
                 keyList.Sort();
@@ -270,10 +177,70 @@ public class ParamEditorView
             return keyList;
         });
 
+
+        var categories = Smithbox.BankHandler.ParamCategories.Categories.Categories;
+
+        if (categories != null && CFG.Current.Param_DisplayParamCategories)
+        {
+            var generalParamList = new List<string>();
+
+            // Build a general list from all unassigned params
+            foreach (var paramKey in paramKeyList)
+            {
+                bool add = true;
+
+                foreach (var category in categories)
+                {
+                    foreach (var entry in category.Params)
+                    {
+                        if (entry == paramKey)
+                            add = false;
+                    }
+                }
+
+                if (add)
+                    generalParamList.Add(paramKey);
+            }
+
+            if (categories.Count > 0)
+            {
+                // General List
+                if (ImGui.CollapsingHeader($"General", ImGuiTreeNodeFlags.DefaultOpen))
+                {
+                    DisplayParamList(paramKeyList, generalParamList, doFocus, scale, scrollTo);
+                }
+
+                // Categories
+                foreach (var category in categories)
+                {
+                    if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
+                    {
+                        DisplayParamList(paramKeyList, category.Params, doFocus, scale, scrollTo);
+                    }
+                }
+            }
+            else
+            {
+                // Fallback to full view
+                DisplayParamList(paramKeyList, paramKeyList, doFocus, scale, scrollTo);
+            }
+        }
+        else
+        {
+            // Fallback to full view
+            DisplayParamList(paramKeyList, paramKeyList, doFocus, scale, scrollTo);
+        }
+    }
+
+    public void DisplayParamList(List<string> paramKeyList, List<string> visibleParams, bool doFocus, float scale, float scrollTo)
+    {
         foreach (var paramKey in paramKeyList)
         {
             HashSet<int> primary = ParamBank.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
             Param p = ParamBank.PrimaryBank.Params[paramKey];
+
+            if (!visibleParams.Contains(paramKey))
+                continue;
 
             if (p != null)
             {
@@ -373,27 +340,24 @@ public class ParamEditorView
     {
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            if (_mapParamView)
+            Regex pattern = new Regex(@"(m[0-9]{2}_[0-9]{2}_[0-9]{2}_[0-9]{2})");
+            Match match = pattern.Match(paramKey);
+
+            var alias = "";
+
+            if (match.Captures.Count > 0)
             {
-                Regex pattern = new Regex(@"(m[0-9]{2}_[0-9]{2}_[0-9]{2}_[0-9]{2})");
-                Match match = pattern.Match(paramKey);
+                var aliasRef = Smithbox.BankHandler.MapAliases.GetEntries()
+                    .Where(e => e.Key == match.Captures[0].Value)
+                    .FirstOrDefault();
 
-                var alias = "";
-
-                if (match.Captures.Count > 0)
+                if (aliasRef.Key != null)
                 {
-                    var aliasRef = Smithbox.BankHandler.MapAliases.GetEntries()
-                        .Where(e => e.Key == match.Captures[0].Value)
-                        .FirstOrDefault();
-
-                    if (aliasRef.Key != null)
-                    {
-                        alias = aliasRef.Value.name;
-                    }
+                    alias = aliasRef.Value.name;
                 }
-
-                UIHelper.DisplayAlias(alias);
             }
+
+            UIHelper.DisplayAlias(alias);
         }
     }
 
@@ -431,49 +395,27 @@ public class ParamEditorView
 
         scrollTo = 0;
 
-        if (ImGui.Button($"Go to selected <{KeyBindings.Current.PARAM_GoToSelectedRow.HintText}>") ||
-            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
-        {
-            _paramEditor.GotoSelectedRow = true;
-        }
-
-        ImGui.SameLine();
-
-        if (ImGui.Button($"Go to ID <{KeyBindings.Current.PARAM_GoToRowID.HintText}>") ||
-            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
-        {
-            ImGui.OpenPopup("gotoParamRow");
-        }
-
-        if (ImGui.BeginPopup("gotoParamRow"))
-        {
-            var gotorow = 0;
-            ImGui.SetKeyboardFocusHere();
-            ImGui.InputInt("Goto Row ID", ref gotorow);
-
-            if (ImGui.IsItemDeactivatedAfterEdit())
-            {
-                _gotoParamRow = gotorow;
-                ImGui.CloseCurrentPopup();
-            }
-
-            ImGui.EndPopup();
-        }
-
-        //Row ID/name search
-        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchRow))
-        {
-            ImGui.SetKeyboardFocusHere();
-        }
-
-        ImGui.InputText($"Search <{KeyBindings.Current.PARAM_SearchRow.HintText}>",
-            ref _selection.GetCurrentRowSearchString(), 256);
+        // Auto fill
+        ImGui.AlignTextToFramePadding();
         var resAutoRow = AutoFill.RowSearchBarAutoFill();
 
         if (resAutoRow != null)
         {
             _selection.SetCurrentRowSearchString(resAutoRow);
         }
+
+        ImGui.SameLine();
+
+        // Row Search
+        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchRow))
+        {
+            ImGui.SetKeyboardFocusHere();
+        }
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputText($"##rowSearch",
+            ref _selection.GetCurrentRowSearchString(), 256);
+        UIHelper.ShowHoverTooltip($"Search <{KeyBindings.Current.PARAM_SearchRow.HintText}>");
 
         if (!lastRowSearch.ContainsKey(_selection.GetActiveParam()) || !lastRowSearch[_selection.GetActiveParam()]
                 .Equals(_selection.GetCurrentRowSearchString()))
@@ -492,7 +434,60 @@ public class ParamEditorView
             _paramEditor._isSearchBarActive = false;
         }
 
-        UIHints.AddImGuiHintButton("MassEditHint", ref UIHints.SearchBarHint);
+        ImGui.SameLine();
+
+        // Go to selected
+        ImGui.AlignTextToFramePadding();
+        if (ImGui.Button($"{ForkAwesome.LocationArrow}") ||
+            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
+        {
+            _paramEditor.GotoSelectedRow = true;
+        }
+        UIHelper.ShowHoverTooltip($"Go to selected <{KeyBindings.Current.PARAM_GoToSelectedRow.HintText}>");
+
+        ImGui.SameLine();
+
+        // Go to ID
+        ImGui.AlignTextToFramePadding();
+        if (ImGui.Button($"{ForkAwesome.InfoCircle}") ||
+            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
+        {
+            ImGui.OpenPopup("gotoParamRow");
+        }
+        UIHelper.ShowHoverTooltip($"Go to ID <{KeyBindings.Current.PARAM_GoToRowID.HintText}>");
+
+        if (ImGui.BeginPopup("gotoParamRow"))
+        {
+            var gotorow = 0;
+            ImGui.SetKeyboardFocusHere();
+            ImGui.InputInt("Goto Row ID", ref gotorow);
+
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                _gotoParamRow = gotorow;
+                ImGui.CloseCurrentPopup();
+            }
+
+            ImGui.EndPopup();
+        }
+
+        ImGui.SameLine();
+
+        // Mass Edit Hint
+        ImGui.AlignTextToFramePadding();
+
+        if (ImGui.Button($"{ForkAwesome.QuestionCircle}"))
+        {
+            ImGui.OpenPopup("massEditHint");
+        }
+        UIHelper.ShowHoverTooltip(UIHints.SearchBarHint);
+
+        if (ImGui.BeginPopup("massEditHint"))
+        {
+            ImGui.Text(UIHints.SearchBarHint);
+
+            ImGui.EndPopup();
+        }
 
         ImGui.Separator();
     }

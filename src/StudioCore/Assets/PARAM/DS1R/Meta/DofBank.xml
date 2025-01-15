@@ -6,51 +6,51 @@
   <DisplayNames>
     <NameEntry 
     Param="default_DofBank" 
-    Name="Depth of Field: Default" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m10_DofBank" 
-    Name="Depth of Field: Depths / Undead Burg / Undead Parish" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m11_DofBank" 
-    Name="Depth of Field: Painted World" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m12_DofBank" 
-    Name="Depth of Field: Darkroot Garden / Oolacile" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m13_DofBank" 
-    Name="Depth of Field: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m14_DofBank" 
-    Name="Depth of Field: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m15_DofBank" 
-    Name="Depth of Field: Sen's Fortress" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m15_1_DofBank" 
-    Name="Depth of Field: Anor Londo" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m16_DofBank" 
-    Name="Depth of Field: New Londo Ruins / Valley of Drakes" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m17_DofBank" 
-    Name="Depth of Field: Duke's Archives" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m18_DofBank" 
-    Name="Depth of Field: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Depth of Field" />
     
     <NameEntry 
     Param="m99_DofBank" 
-    Name="Depth of Field: Development" />
+    Name="Depth of Field" />
   </DisplayNames>
   
   <Field>

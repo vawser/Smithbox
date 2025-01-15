@@ -6,51 +6,51 @@
   <DisplayNames>
     <NameEntry 
     Param="default_ToneCorrectBank" 
-    Name="Tone Correction: Default" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m10_ToneCorrectBank" 
-    Name="Tone Correction: Depths / Undead Burg / Undead Parish" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m11_ToneCorrectBank" 
-    Name="Tone Correction: Painted World" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m12_ToneCorrectBank" 
-    Name="Tone Correction: Darkroot Garden / Oolacile" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m13_ToneCorrectBank" 
-    Name="Tone Correction: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m14_ToneCorrectBank" 
-    Name="Tone Correction: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m15_ToneCorrectBank" 
-    Name="Tone Correction: Sen's Fortress" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m15_1_ToneCorrectBank" 
-    Name="Tone Correction: Anor Londo" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m16_ToneCorrectBank" 
-    Name="Tone Correction: New Londo Ruins / Valley of Drakes" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m17_ToneCorrectBank" 
-    Name="Tone Correction: Duke's Archives" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m18_ToneCorrectBank" 
-    Name="Tone Correction: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Tone Map Correction" />
     
     <NameEntry 
     Param="m99_ToneCorrectBank" 
-    Name="Tone Correction: Development" />
+    Name="Tone Map Correction" />
   </DisplayNames>
   
   <Field>

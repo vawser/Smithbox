@@ -6,51 +6,51 @@
   <DisplayNames>
     <NameEntry 
     Param="default_EnvLightTexBank" 
-    Name="Environment Light Texture: Default" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m10_EnvLightTexBank" 
-    Name="Environment Light Texture: Depths / Undead Burg / Undead Parish" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m11_EnvLightTexBank" 
-    Name="Environment Light Texture: Painted World" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m12_EnvLightTexBank" 
-    Name="Environment Light Texture: Darkroot Garden / Oolacile" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m13_EnvLightTexBank" 
-    Name="Environment Light Texture: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m14_EnvLightTexBank" 
-    Name="Environment Light Texture: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m15_EnvLightTexBank" 
-    Name="Environment Light Texture: Sen's Fortress" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m15_1_EnvLightTexBank" 
-    Name="Environment Light Texture: Anor Londo" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m16_EnvLightTexBank" 
-    Name="Environment Light Texture: New Londo Ruins / Valley of Drakes" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m17_EnvLightTexBank" 
-    Name="Environment Light Texture: Duke's Archives" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m18_EnvLightTexBank" 
-    Name="Environment Light Texture: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Environmental Light Texture" />
     
     <NameEntry 
     Param="m99_EnvLightTexBank" 
-    Name="Environment Light Texture: Development" />
+    Name="Environmental Light Texture" />
   </DisplayNames>
   
   <Field>

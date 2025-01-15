@@ -2,6 +2,7 @@
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.HavokAliasBank;
+using StudioCore.Banks.ParamCategoryBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
@@ -56,7 +57,7 @@ public class BankHandler
     public GameOffsetBank GameOffsets;
 
     public ProjectEnumBank ProjectEnums;
-
+    public ParamCategoryBank ParamCategories;
     public LightmapAtlasBank LightmapAtlasBank;
     public MaterialResourceBank MaterialBank;
 
@@ -95,7 +96,7 @@ public class BankHandler
         GameOffsets = new GameOffsetBank();
 
         ProjectEnums = new ProjectEnumBank("Project Enums");
-
+        ParamCategories = new ParamCategoryBank();
         LightmapAtlasBank = new LightmapAtlasBank();
         MaterialBank = new MaterialResourceBank();
 
@@ -132,7 +133,7 @@ public class BankHandler
         GameOffsets.LoadBank();
 
         ProjectEnums.LoadBank();
-
+        ParamCategories.LoadBank();
         LightmapAtlasBank.LoadBank();
         MaterialBank.LoadBank();
 

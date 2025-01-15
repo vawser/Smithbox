@@ -35,13 +35,8 @@ public class ParamRowEditor
                 ImGui.SetKeyboardFocusHere();
             }
 
-            ImGui.InputText($"Search <{KeyBindings.Current.PARAM_SearchField.HintText}>", ref propSearchString,
-                255);
-            if (ImGui.IsItemEdited())
-            {
-                UICache.ClearCaches();
-            }
-
+            // Autofill
+            ImGui.AlignTextToFramePadding();
             var resAutoCol = AutoFill.ColumnSearchBarAutoFill();
             if (resAutoCol != null)
             {
@@ -49,9 +44,18 @@ public class ParamRowEditor
                 UICache.ClearCaches();
             }
 
-            ImGui.Spacing();
-            ImGui.Separator();
-            ImGui.Spacing();
+            ImGui.SameLine();
+
+            // Field search
+            ImGui.AlignTextToFramePadding();
+            ImGui.InputText("##fieldSearch", ref propSearchString,
+                255);
+            UIHelper.ShowHoverTooltip($"Search <{KeyBindings.Current.PARAM_SearchField.HintText}>");
+
+            if (ImGui.IsItemEdited())
+            {
+                UICache.ClearCaches();
+            }
         }
     }
 

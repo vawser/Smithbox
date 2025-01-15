@@ -6,51 +6,51 @@
   <DisplayNames>
     <NameEntry 
     Param="default_FogBank" 
-    Name="Fog: Default" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m10_FogBank" 
-    Name="Fog: Depths / Undead Burg / Undead Parish" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m11_FogBank" 
-    Name="Fog: Painted World" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m12_FogBank" 
-    Name="Fog: Darkroot Garden / Oolacile" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m13_FogBank" 
-    Name="Fog: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m14_FogBank" 
-    Name="Fog: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m15_FogBank" 
-    Name="Fog: Sen's Fortress" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m15_1_FogBank" 
-    Name="Fog: Anor Londo" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m16_FogBank" 
-    Name="Fog: New Londo Ruins / Valley of Drakes" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m17_FogBank" 
-    Name="Fog: Duke's Archives" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m18_FogBank" 
-    Name="Fog: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Fog" />
     
     <NameEntry 
     Param="m99_FogBank" 
-    Name="Fog: Development" />
+    Name="Fog" />
   </DisplayNames>
   
   <Field>

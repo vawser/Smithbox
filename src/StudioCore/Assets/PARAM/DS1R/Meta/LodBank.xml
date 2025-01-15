@@ -6,51 +6,51 @@
   <DisplayNames>
     <NameEntry 
     Param="default_LodBank" 
-    Name="LOD: Default" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m10_LodBank" 
-    Name="LOD: Depths / Undead Burg / Undead Parish" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m11_LodBank" 
-    Name="LOD: Painted World" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m12_LodBank" 
-    Name="LOD: Darkroot Garden / Oolacile" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m13_LodBank" 
-    Name="LOD: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m14_LodBank" 
-    Name="LOD: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m15_LodBank" 
-    Name="LOD: Sen's Fortress" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m15_1_LodBank" 
-    Name="LOD: Anor Londo" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m16_LodBank" 
-    Name="LOD: New Londo Ruins / Valley of Drakes" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m17_LodBank" 
-    Name="LOD: Duke's Archives" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m18_LodBank" 
-    Name="LOD: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Level of Detail" />
     
     <NameEntry 
     Param="m99_LodBank" 
-    Name="LOD: Development" />
+    Name="Level of Detail" />
   </DisplayNames>
   
   <Field>

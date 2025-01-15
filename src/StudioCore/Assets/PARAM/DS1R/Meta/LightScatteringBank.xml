@@ -6,51 +6,51 @@
   <DisplayNames>
     <NameEntry 
     Param="default_LightScatteringBank" 
-    Name="Light Scattering: Default" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m10_LightScatteringBank" 
-    Name="Light Scattering: Depths / Undead Burg / Undead Parish" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m11_LightScatteringBank" 
-    Name="Light Scattering: Painted World" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m12_LightScatteringBank" 
-    Name="Light Scattering: Darkroot Garden / Oolacile" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m13_LightScatteringBank" 
-    Name="Light Scattering: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m14_LightScatteringBank" 
-    Name="Light Scattering: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m15_LightScatteringBank" 
-    Name="Light Scattering: Sen's Fortress" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m15_1_LightScatteringBank" 
-    Name="Light Scattering: Anor Londo" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m16_LightScatteringBank" 
-    Name="Light Scattering: New Londo Ruins / Valley of Drakes" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m17_LightScatteringBank" 
-    Name="Light Scattering: Duke's Archives" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m18_LightScatteringBank" 
-    Name="Light Scattering: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Light Scattering" />
     
     <NameEntry 
     Param="m99_LightScatteringBank" 
-    Name="Light Scattering: Development" />
+    Name="Light Scattering" />
   </DisplayNames>
   
   <Field>

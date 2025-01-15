@@ -435,12 +435,6 @@ public class ToolWindow
                 }
             }
 
-            // Pin Groups
-            if (ImGui.CollapsingHeader("Pin Groups"))
-            {
-                PinGroupHandler.Display();
-            }
-
             // Param Reloader
             if (ParamMemoryTools.IsParamReloaderSupported())
             {
@@ -526,6 +520,22 @@ public class ToolWindow
             {
                 DataInstanceFinder.RowIDFinder.Display();
             }
+
+            ImGui.Separator();
+
+            // Pin Groups
+            if (ImGui.CollapsingHeader("Pin Groups"))
+            {
+                PinGroupHandler.Display();
+            }
+
+            // Param Categories
+            /*
+            if (ImGui.CollapsingHeader("Param Categories"))
+            {
+                UserParamCategories.Display();
+            }
+            */
         }
 
         ImGui.End();

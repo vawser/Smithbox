@@ -6,7 +6,7 @@
   <DisplayNames>
     <NameEntry 
     Param="default_EnemyBehaviorBank" 
-    Name="Enemy Behavior Bank: Default" />
+    Name="Enemy Behavior Configuration" />
   </DisplayNames>
   
   <Field>

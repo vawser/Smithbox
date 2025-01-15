@@ -6,51 +6,51 @@
   <DisplayNames>
     <NameEntry 
     Param="default_PointLightBank" 
-    Name="Point Light: Default" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m10_PointLightBank" 
-    Name="Point Light: Depths / Undead Burg / Undead Parish" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m11_PointLightBank" 
-    Name="Point Light: Painted World" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m12_PointLightBank" 
-    Name="Point Light: Darkroot Garden / Oolacile" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m13_PointLightBank" 
-    Name="Point Light: Catacombs / Tomb of the Giants / Great Hollow" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m14_PointLightBank" 
-    Name="Point Light: Blighttown / Demon Ruins / Lost Izalith" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m15_PointLightBank" 
-    Name="Point Light: Sen's Fortress" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m15_1_PointLightBank" 
-    Name="Point Light: Anor Londo" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m16_PointLightBank" 
-    Name="Point Light: New Londo Ruins / Valley of Drakes" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m17_PointLightBank" 
-    Name="Point Light: Duke's Archives" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m18_PointLightBank" 
-    Name="Point Light: Kiln of the First Flame / Northern Undead Asylum" />
+    Name="Point Light" />
     
     <NameEntry 
     Param="m99_PointLightBank" 
-    Name="Point Light: Development" />
+    Name="Point Light" />
   </DisplayNames>
   
   <Field>
