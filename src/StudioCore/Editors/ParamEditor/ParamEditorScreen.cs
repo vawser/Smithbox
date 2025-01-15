@@ -230,6 +230,16 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.Separator();
 
+            // Quick toggles for some of the Param Editor param visibility options
+
+            if (ImGui.MenuItem("Param: Community Names"))
+            {
+                CFG.Current.Param_ShowParamCommunityName = !CFG.Current.Param_ShowParamCommunityName;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowParamCommunityName);
+
+            ImGui.Separator();
+
             // Quick toggles for some of the Param Editor field visibility options
 
             if (ImGui.MenuItem("Field: Vanilla Comparison Column"))

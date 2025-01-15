@@ -30,7 +30,11 @@
     
     <NameEntry 
     Param="m15_DofBank" 
-    Name="Depth of Field: Sen's Fortress / Anor Londo" />
+    Name="Depth of Field: Sen's Fortress" />
+    
+    <NameEntry 
+    Param="m15_1_DofBank" 
+    Name="Depth of Field: Anor Londo" />
     
     <NameEntry 
     Param="m16_DofBank" 
@@ -45,7 +49,7 @@
     Name="Depth of Field: Kiln of the First Flame / Northern Undead Asylum" />
     
     <NameEntry 
-    Param="m19_DofBank" 
+    Param="m99_DofBank" 
     Name="Depth of Field: Development" />
   </DisplayNames>
   

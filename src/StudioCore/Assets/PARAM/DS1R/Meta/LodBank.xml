@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for levels of detail." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_LodBank" 
+    Name="LOD: Default" />
+    
+    <NameEntry 
+    Param="m10_LodBank" 
+    Name="LOD: Depths / Undead Burg / Undead Parish" />
+    
+    <NameEntry 
+    Param="m11_LodBank" 
+    Name="LOD: Painted World" />
+    
+    <NameEntry 
+    Param="m12_LodBank" 
+    Name="LOD: Darkroot Garden / Oolacile" />
+    
+    <NameEntry 
+    Param="m13_LodBank" 
+    Name="LOD: Catacombs / Tomb of the Giants / Great Hollow" />
+    
+    <NameEntry 
+    Param="m14_LodBank" 
+    Name="LOD: Blighttown / Demon Ruins / Lost Izalith" />
+    
+    <NameEntry 
+    Param="m15_LodBank" 
+    Name="LOD: Sen's Fortress" />
+    
+    <NameEntry 
+    Param="m15_1_LodBank" 
+    Name="LOD: Anor Londo" />
+    
+    <NameEntry 
+    Param="m16_LodBank" 
+    Name="LOD: New Londo Ruins / Valley of Drakes" />
+    
+    <NameEntry 
+    Param="m17_LodBank" 
+    Name="LOD: Duke's Archives" />
+    
+    <NameEntry 
+    Param="m18_LodBank" 
+    Name="LOD: Kiln of the First Flame / Northern Undead Asylum" />
+    
+    <NameEntry 
+    Param="m99_LodBank" 
+    Name="LOD: Development" />
+  </DisplayNames>
+  
+  <Field>
+    <lv01_BorderDist
+    AltName="LOD Level: 0 -> 1 - Boundary Distance"
+    Wiki="The boundary distance between LOD level 0 to level 1. In metres." />
+    
+    <lv01_PlayDist
+    AltName="LOD Level: 0 -> 1 - Play Distance"
+    Wiki="The play distance (at the centre of the boundary) between LOD level 0 to level 1. In metres." />
+    
+    <lv12_BorderDist
+    AltName="LOD Level: 1 -> 2 - Boundary Distance"
+    Wiki="The boundary distance between LOD level 1 to level 2. In metres." />
+    
+    <lv12_PlayDist
+    AltName="LOD Level: 1 -> 2 - Play Distance"
+    Wiki="The play distance (at the centre of the boundary) between LOD level 1 to level 2. In metres." />
+  </Field>
+</PARAMMETA>

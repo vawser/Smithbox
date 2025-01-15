@@ -5,8 +5,8 @@
   
   <DisplayNames>
     <NameEntry 
-    Param="default_EnemyStandardBank" 
-    Name="Enemy Standard Bank: Default" />
+    Param="default_EnemyBehaviorBank" 
+    Name="Enemy Behavior Bank: Default" />
   </DisplayNames>
   
   <Field>

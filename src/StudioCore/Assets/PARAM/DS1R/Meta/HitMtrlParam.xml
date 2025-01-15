@@ -15,12 +15,12 @@
     Wiki="Normal when 1x. When set to 0, the sound radius becomes 0 (SE and SFX are unrelated game-like parameters)." />
     
     <spEffectIdOnHit0 
-    AltName="0: On Hit - SpEffect ID" 
+    AltName="On Hit SpEffect ID: 0" 
     Wiki="When this hit material is hit, this SpEffect is applied to the character." 
     Refs="SpEffectParam"/>
     
     <spEffectIdOnHit1 
-    AltName="1: On Hit - SpEffect ID" 
+    AltName="On Hit SpEffect ID: 1"
     Wiki="When this hit material is hit, this SpEffect is applied to the character." 
     Refs="SpEffectParam" />
     

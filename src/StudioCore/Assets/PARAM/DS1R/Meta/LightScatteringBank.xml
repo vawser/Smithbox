@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for light scattering." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_LightScatteringBank" 
+    Name="Light Scattering: Default" />
+    
+    <NameEntry 
+    Param="m10_LightScatteringBank" 
+    Name="Light Scattering: Depths / Undead Burg / Undead Parish" />
+    
+    <NameEntry 
+    Param="m11_LightScatteringBank" 
+    Name="Light Scattering: Painted World" />
+    
+    <NameEntry 
+    Param="m12_LightScatteringBank" 
+    Name="Light Scattering: Darkroot Garden / Oolacile" />
+    
+    <NameEntry 
+    Param="m13_LightScatteringBank" 
+    Name="Light Scattering: Catacombs / Tomb of the Giants / Great Hollow" />
+    
+    <NameEntry 
+    Param="m14_LightScatteringBank" 
+    Name="Light Scattering: Blighttown / Demon Ruins / Lost Izalith" />
+    
+    <NameEntry 
+    Param="m15_LightScatteringBank" 
+    Name="Light Scattering: Sen's Fortress" />
+    
+    <NameEntry 
+    Param="m15_1_LightScatteringBank" 
+    Name="Light Scattering: Anor Londo" />
+    
+    <NameEntry 
+    Param="m16_LightScatteringBank" 
+    Name="Light Scattering: New Londo Ruins / Valley of Drakes" />
+    
+    <NameEntry 
+    Param="m17_LightScatteringBank" 
+    Name="Light Scattering: Duke's Archives" />
+    
+    <NameEntry 
+    Param="m18_LightScatteringBank" 
+    Name="Light Scattering: Kiln of the First Flame / Northern Undead Asylum" />
+    
+    <NameEntry 
+    Param="m99_LightScatteringBank" 
+    Name="Light Scattering: Development" />
+  </DisplayNames>
+  
+  <Field>
+    <sunRotX
+    AltName="Light Source: Horizontal Angle"
+    Wiki="The horizontal angle for the light source (sun). In degrees." />
+    
+    <sunRotY
+    AltName="Light Source: Vertical Angle"
+    Wiki="The vertical angle for the light source (sun). In degrees." />
+    
+    <distanceMul
+    AltName="Distance Magnification %"
+    Wiki="The magnification to apply to the distance of the scattering." />
+    
+    <sunR
+    AltName="Light Color: R"
+    Wiki="The red component of the coloring for the light source (sun)." />
+    
+    <sunG
+    AltName="Light Color: G"
+    Wiki="The green component of the coloring for the light source (sun)." />
+    
+    <sunB
+    AltName="Light Color: B"
+    Wiki="The blue component of the coloring for the light source (sun)." />
+    
+    <sunA
+    AltName="Light Color: Alpha"
+    Wiki="The alpha component of the coloring for the light source (sun)." />
+    
+    <pad_0
+    Padding="" />
+    
+    <lsHGg
+    AltName="Scattering Direction Coefficient"
+    Wiki="The scattering direction coefficient, negative is backward, positive is forward." />
+    
+    <lsBetaRay
+    AltName="Rayleigh Scattering Coefficient"
+    Wiki="The scattering coefficient for the rays. Represents air particles." />
+    
+    <lsBetaMie
+    AltName="Mie Scattering Coefficient"
+    Wiki="The scattering coefficient for the rays. Represents fine particles." />
+    
+    <blendCoef
+    AltName="Scattering Degree"
+    Wiki="The scattering degree for the rays." />
+    
+    <reflectanceR
+    AltName="Reflected Light: R"
+    Wiki="The red component of the coloring for the reflected light from the light source (sun)." />
+    
+    <reflectanceG
+    AltName="Reflected Light: G"
+    Wiki="The green component of the coloring for the reflected light from the light source (sun)." />
+    
+    <reflectanceB
+    AltName="Reflected Light: B"
+    Wiki="The blue component of the coloring for the reflected light from the light source (sun)." />
+    
+    <reflectanceA
+    AltName="Reflected Light: Alpha"
+    Wiki="The alpha component of the coloring for the reflected light from the light source (sun)." />
+    
+    <pad_1
+    Padding="" />
+  </Field>
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Light Color" 
+    Fields="sunR,sunG,sunB" 
+    PlacedField="sunA" />
+    
+    <ColorEditor 
+    Name="Reflected Color" 
+    Fields="reflectanceR,reflectanceG,reflectanceB" 
+    PlacedField="reflectanceA" />
+  </ColorEdit>
+</PARAMMETA>

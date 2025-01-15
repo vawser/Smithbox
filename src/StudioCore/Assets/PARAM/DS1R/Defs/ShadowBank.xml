@@ -107,7 +107,7 @@
       <Increment>0.0001</Increment>
       <SortID>12</SortID>
     </Field>
-    <Field Def="f32 ｇradFactor">
+    <Field Def="f32 gradFactor">
       <DisplayName>パース調整パラメータ(PSM用)</DisplayName>
       <Description>－にするとシャドウマップのパースが弱まり,＋にするとパースが強まります</Description>
       <EditFlags>None</EditFlags>

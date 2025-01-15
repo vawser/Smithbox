@@ -829,7 +829,6 @@ public class ParamDisplayName
         if (node.Attributes["Param"] != null)
         {
             Param = node.Attributes["Param"].InnerText;
-            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - {Param}");
         }
         else
         {
@@ -839,7 +838,6 @@ public class ParamDisplayName
         if (node.Attributes["Name"] != null)
         {
             Name = node.Attributes["Name"].InnerText;
-            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - {Name}");
         }
         else
         {

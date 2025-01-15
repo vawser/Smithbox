@@ -30,7 +30,11 @@
     
     <NameEntry 
     Param="m15_EnvLightTexBank" 
-    Name="Environment Light Texture: Sen's Fortress / Anor Londo" />
+    Name="Environment Light Texture: Sen's Fortress" />
+    
+    <NameEntry 
+    Param="m15_1_EnvLightTexBank" 
+    Name="Environment Light Texture: Anor Londo" />
     
     <NameEntry 
     Param="m16_EnvLightTexBank" 
@@ -45,7 +49,7 @@
     Name="Environment Light Texture: Kiln of the First Flame / Northern Undead Asylum" />
     
     <NameEntry 
-    Param="m19_EnvLightTexBank" 
+    Param="m99_EnvLightTexBank" 
     Name="Environment Light Texture: Development" />
   </DisplayNames>
   
@@ -150,280 +154,280 @@
     
     <degRotX_00
     AltName="Light Source 0: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_00
     AltName="Light Source 0: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_00
     AltName="Light Source 0: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_00
     AltName="Light Source 0: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_00
     AltName="Light Source 0: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_00
     AltName="Light Source 0: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_00
     Padding="" />
     
     <degRotX_01
     AltName="Light Source 1: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_01
     AltName="Light Source 1: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_01
     AltName="Light Source 1: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_01
     AltName="Light Source 1: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_01
     AltName="Light Source 1: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_01
     AltName="Light Source 1: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_01
     Padding="" />
     
     <degRotX_02
     AltName="Light Source 2: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_02
     AltName="Light Source 2: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_02
     AltName="Light Source 2: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_02
     AltName="Light Source 2: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_02
     AltName="Light Source 2: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_02
     AltName="Light Source 2: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_02
     Padding="" />
     
     <degRotX_03
     AltName="Light Source 3: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_03
     AltName="Light Source 3: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_03
     AltName="Light Source 3: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_03
     AltName="Light Source 3: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_03
     AltName="Light Source 3: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_03
     AltName="Light Source 3: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_03
     Padding="" />
     
     <degRotX_04
     AltName="Light Source 4: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_04
     AltName="Light Source 4: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_04
     AltName="Light Source 4: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_04
     AltName="Light Source 4: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_04
     AltName="Light Source 4: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_04
     AltName="Light Source 4: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_04
     Padding="" />
     
     <degRotX_05
     AltName="Light Source 5: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_05
     AltName="Light Source 5: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_05
     AltName="Light Source 5: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_05
     AltName="Light Source 5: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_05
     AltName="Light Source 5: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_05
     AltName="Light Source 5: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_05
     Padding="" />
     
     <degRotX_06
     AltName="Light Source 6: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_06
     AltName="Light Source 6: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_06
     AltName="Light Source 6: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_06
     AltName="Light Source 6: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_06
     AltName="Light Source 6: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_06
     AltName="Light Source 6: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_06
     Padding="" />
     
     <degRotX_07
     AltName="Light Source 7: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_07
     AltName="Light Source 7: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_07
     AltName="Light Source 7: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_07
     AltName="Light Source 7: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_07
     AltName="Light Source 7: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_07
     AltName="Light Source 7: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_07
     Padding="" />
     
     <degRotX_08
     AltName="Light Source 8: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_08
     AltName="Light Source 8: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_08
     AltName="Light Source 8: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_08
     AltName="Light Source 8: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_08
     AltName="Light Source 8: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_08
     AltName="Light Source 8: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_08
     Padding="" />
     
     <degRotX_09
     AltName="Light Source 9: Horizontal Angle"
-    Wiki="The horizontal angle to use for this parallel light source. In degrees." 
+    Wiki="The horizontal angle to use for this light source. In degrees." 
     Separator="" />
     
     <degRotY_09
     AltName="Light Source 9: Vertical Angle"
-    Wiki="The vertical angle to use for this parallel light source. In degrees." />
+    Wiki="The vertical angle to use for this light source. In degrees." />
     
     <colR_09
     AltName="Light Source 9: R"
-    Wiki="The red component of the RGBA color used for this parallel light source." />
+    Wiki="The red component of the RGBA color used for this light source." />
     
     <colG_09
     AltName="Light Source 9: G"
-    Wiki="The green component of the RGBA color used for this parallel light source." />
+    Wiki="The green component of the RGBA color used for this light source." />
     
     <colB_09
     AltName="Light Source 9: B"
-    Wiki="The blue component of the RGBA color used for this parallel light source." />
+    Wiki="The blue component of the RGBA color used for this light source." />
     
     <colA_09
     AltName="Light Source 9: Alpha"
-    Wiki="The alpha component of the RGBA color used for this parallel light source." />
+    Wiki="The alpha component of the RGBA color used for this light source." />
     
     <pad_09
     Padding="" />
