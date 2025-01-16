@@ -29,7 +29,7 @@
     Wiki="The EzState behavior type to use for ID calculation." />
     
     <refType 
-    AltName="Reference ID Type" 
+    AltName="Call ID Type" 
     Wiki="Which param type to reference for attack behavior." 
     Enum="BEHAVIOR_REF_TYPE" />
     
@@ -38,8 +38,8 @@
     Padding="" />
     
     <refId 
-    AltName="Reference ID" 
-    Wiki="The ID of param to use for attack behavior. Param used is determined by refType." 
+    AltName="Call ID" 
+    Wiki="The ID to call for attack behavior. Param used is determined by refType." 
     Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" 
     DeepCopyTarget="Behavior" />
     

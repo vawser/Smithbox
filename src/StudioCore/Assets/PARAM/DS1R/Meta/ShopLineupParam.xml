@@ -1,11 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for shops." 
+  ConsecutiveIDs="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="ShopLineupParam" 
+    Name="Shops" />
+  </DisplayNames>
+  
+  <Field>
+    <equipId 
+    AltName="Item ID"
+    Wiki="The item ID that is sold."
+    Refs="EquipParamWeapon(equipType=0),EquipParamProtector(equipType=1),EquipParamAccessory(equipType=2),EquipParamGoods(equipType=3)" />
+    
+    <value 
+    AltName="Sale Price"
+    Wiki="The cost of item sold. Overrides the sellValue in item's row." />
+    
+    <mtrlId 
+    AltName="Material ID"
+    Wiki="The material cost when purchasing an item, or equipping a spell." 
+    Refs="EquipMtrlSetParam" />
+    
+    <eventFlag 
+    AltName="Stock Flag ID"
+    Wiki="The ID of an 8-bit event value that stores sold item quantity. Used for any items that are not sold infinitely." 
+    FlagAlias="" />
+    
+    <qwcId 
+    AltName="World Tendency ID"
+    Wiki="Demon's Souls leftover. Probably doesn't work." 
+    Refs="QwcChangeParam" />
+    
+    <sellQuantity 
+    AltName="Quantity"
+    Wiki="The maximum amount of items that can be sold. -1 for infinite. Requires an eventFlag for quantity sold to be saved." />
+    
+    <shopType 
+    AltName="Shop Type"
+    Wiki="The type of shop this row belongs to."
+    Enum="SHOP_LINEUP_SHOPTYPE" />
+    
+    <equipType 
+    AltName="Equipment Type"
+    Wiki="The type of equipment the sold item is."
+    Enum="SHOP_LINEUP_EQUIPTYPE" />
+    
+    <pad_0
+    Padding="" />
+  </Field>
   <Enums>
-    <Enum Name="ShopType">
-      <Option Value="0" Name="Normal shop" />
-      <Option Value="2" Name="Attunement menu" />
+    <Enum Name="SHOP_LINEUP_SHOPTYPE">
+      <Option Value="0" Name="Shop menu" />
+      <Option Value="1" Name="Enhancement menu" />
+      <Option Value="2" Name="Magic menu" />
+      <Option Value="3" Name="Miracle menu" />
+      <Option Value="4" Name="Information menu" />
+      <Option Value="5" Name="SAN Value menu" />
 	</Enum>
-    <Enum Name="EquipType">
+    <Enum Name="SHOP_LINEUP_EQUIPTYPE">
       <Option Value="0" Name="Weapon" />
       <Option Value="1" Name="Armor" />
       <Option Value="2" Name="Accessory" />
@@ -13,14 +69,4 @@
       <Option Value="4" Name="Attunement" />
 	</Enum>
   </Enums>
-  <Field>
-    <equipId Refs="EquipParamWeapon(equipType=0),EquipParamProtector(equipType=1),EquipParamAccessory(equipType=2),EquipParamGoods(equipType=3)" Wiki="ID of item sold" />
-    <value Wiki="Cost of item sold." />
-    <mtrlId Refs="EquipMtrlSetParam" Wiki="The EquipMtrlSetParam to use when attuning a spell." />
-    <eventFlag Wiki="The ID of an 8-bit event value that stores sold item quantity. Used for any items that are not sold infinitely." />
-    <qwcId Refs="QwcChangeParam" Wiki="Demon's Souls leftover. Probably doesn't work." />
-    <sellQuantity Wiki="Maximum amount of items that can be sold. -1 for infinite. Requires an eventFlag for quantity sold to be saved." />
-    <shopType Enum="ShopType" />
-    <equipType Enum="EquipType" />
-  </Field>
 </PARAMMETA>

@@ -1,23 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for objects." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="ObjectParam" 
+    Name="Objects" />
+  </DisplayNames>
+  
   <Field>
-    <hp Wiki="Amount of damage object receives before breaking. -1 = don't break normally" />
-    <defense Wiki="Threshold compared against AtkParam field atkObj. if object damage surpasses object defense, the object will take damage (needs verification)" />
-    <extRefTexId />
-    <materialId Wiki="Material to use when this object is hit, determining visual effect and sound to use" />
-    <animBreakIdMax />
-    <isCamHit IsBool="" Wiki="Determines if camera collides with object" />
-    <isBreakByPlayerCollide IsBool="" Wiki="Determines if player collision can break the object (needs verification)" />
-    <isAnimBreak IsBool="" Wiki="Determines if object should use an animation when broken" />
-    <isPenetrationBulletHit IsBool="" Wiki="If Bullet with isPenetrate will collide with the object." />
-    <isChrHit IsBool="" Wiki="Determines if characters will collide with the object and if character attacks can hit the object" />
-    <isAttackBacklash IsBool="" Wiki="Determines if attacks can deflect off of the object (attacks can deflect anyway if object is invincible)" />
-    <isDisableBreakForFirstAppear IsBool="" Wiki="Determines if the object will break when the game is loaded if the player collides with the object upon spawning" />
-    <isLadder IsBool="" />
-    <isAnimPauseOnRemoPlay IsBool="" />
-    <isDamageNoHit IsBool="" Wiki="Unknown. Related to AtkParam field isDisableNoDamage?" />
-    <isMoveObj IsBool="" />
-    <defaultLodParamId />
-    <breakSfxId />
+    <hp 
+    AltName="HP"
+    Wiki="The amount of damage this object can receive before breaking. -1 means it will never break from damage." />
+    
+    <defense 
+    AltName="Defense"
+    Wiki="The threshold compared against AtkParam field atkObj. If object damage surpasses object defense, the object will take damage. Otherwise, no damage occurs." />
+    
+    <extRefTexId 
+    AltName="External Textures: Map ID"
+    Wiki="The map ID of the TPF in which to source the external textures this object uses (if it uses them)." />
+    
+    <materialId 
+    AltName="Material ID"
+    Wiki="The material to use when this object is hit, determines the visual effect and sound that occurs. -1 means it will inherit the material used for the collision it belongs to." />
+    
+    <animBreakIdMax 
+    AltName="Destruction: Animation ID (Max)"
+    Wiki="The maximum ID in the animation range to use for object destruction for this object." />
+    
+    <isCamHit 
+    AltName="Collide with Camera"
+    Wiki="If ON, a camera will collide with this object." 
+    IsBool="" />
+    
+    <isBreakByPlayerCollide 
+    AltName="Destroy on Player Collision"
+    Wiki="If ON, this object can be destroyed when collided with by a player." 
+    IsBool="" />
+    
+    <isAnimBreak 
+    AltName="Has Destruction Animation"
+    Wiki="If ON, this object will use a destruction animation when destroyed." 
+    IsBool="" />
+    
+    <isPenetrationBulletHit 
+    AltName="Collide with Projectiles"
+    Wiki="If ON, projectiles with isPenetrate enabled will collide with this object." 
+    IsBool="" />
+    
+    <isChrHit 
+    AltName="Collide with Characters"
+    Wiki="If ON, characters will collide with this object and their attacks will hit this object." 
+    IsBool="" />
+    
+    <isAttackBacklash 
+    AltName="Can Deflect Attacks"
+    Wiki="If ON, incoming attacks can deflect off of the object (attacks can deflect anyway if object is invincible)." 
+    IsBool="" />
+    
+    <isDisableBreakForFirstAppear 
+    AltName="Destroy on Player Collision during Load"
+    Wiki="If ON, the object will break when the game is loaded if the player collides with the object upon spawning." 
+    IsBool="" />
+    
+    <isLadder 
+    AltName="Is Ladder"
+    Wiki="If ON, this object is treated as a ladder."
+    IsBool="" />
+    
+    <isAnimPauseOnRemoPlay 
+    AltName="Pause Animation during Cutscenes"
+    Wiki="If ON, any object animation active is paused during a cutscene."
+    IsBool="" />
+    
+    <isDamageNoHit 
+    AltName="Ignore Hits"
+    Wiki="If ON, damage will not count as a hit." 
+    IsBool="" />
+    
+    <isMoveObj 
+    AltName="Is Moving Object"
+    Wiki="If ON, is treated as a moving object."
+    IsBool="" />
+    
+    <pad_1
+    Padding="" />
+    
+    <defaultLodParamId 
+    AltName="Default LOD Param ID"
+    Wiki="The default LOD parameter to use for this character." />
+    
+    <breakSfxId 
+    AltName="Destruction: Particle ID"
+    Wiki="The SFX to use upon object destruction for this object." 
+    ParticleAlias="" />
   </Field>
 </PARAMMETA>

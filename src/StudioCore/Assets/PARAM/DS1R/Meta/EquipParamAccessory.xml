@@ -11,7 +11,7 @@
   
   <Field>
     <refId 
-    AltName="Reference ID" 
+    AltName="Call ID" 
     Wiki="Reference ID to use for this accessory." 
     Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
     
@@ -81,7 +81,7 @@
     Enum="ACCESSORY_CATEGORY" />
 
     <refCategory 
-    AltName="Reference Type" 
+    AltName="Call ID Type" 
     Wiki="The ID category to use for the refId field." 
     Enum="BEHAVIOR_REF_TYPE" />
 

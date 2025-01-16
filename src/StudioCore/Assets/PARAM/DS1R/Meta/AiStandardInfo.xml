@@ -6,7 +6,7 @@
   <DisplayNames>
     <NameEntry 
     Param="default_AIStandardInfoBank" 
-    Name="AI Configuration" />
+    Name="Enemy AI Defaults" />
   </DisplayNames>
   
   <Field>

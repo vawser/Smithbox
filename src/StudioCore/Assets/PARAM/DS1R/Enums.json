@@ -5,7 +5,7 @@
             "Name": "SP_EFFECT_TYPE",
             "Description": "These are state info IDs, which can trigger internal scripts, or are simply used as markers.",
             "Options": [
-                { "ID": "0", "Name": "none", "Description": "" },
+                { "ID": "0", "Name": "None", "Description": "" },
                 { "ID": "1", "Name": "Flame", "Description": "" },
                 { "ID": "2", "Name": "Flame", "Description": "" },
                 { "ID": "3", "Name": "Hill", "Description": "" },

@@ -293,10 +293,6 @@
     AltName="Damage: Poise" 
     Wiki="The base poise attack power." />
     
-    <saWeaponDamage 
-    AltName="Damage: Poise" 
-    Wiki="The base poise attack power." />
-    
     <saDurability 
     AltName="Poise" 
     Wiki="The additional poise to apply when using this weapon during attack animations." />

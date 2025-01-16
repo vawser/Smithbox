@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for character skeletons." 
+  ConsecutiveIDs="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="SkeletonParam" 
+    Name="Skeletons" />
+  </DisplayNames>
+  
+  <Field>
+    <neckTurnGain
+    AltName=""
+    Wiki="" />
+    
+    <originalGroundHeightMS
+    AltName=""
+    Wiki="" />
+    
+    <minAnkleHeightMS
+    AltName=""
+    Wiki="" />
+    
+    <maxAnkleHeightMS
+    AltName=""
+    Wiki="" />
+    
+    <cosineMaxKneeAngle
+    AltName=""
+    Wiki="" />
+    
+    <cosineMinKneeAngle
+    AltName=""
+    Wiki="" />
+    
+    <footPlantedAnkleHeightMS
+    AltName=""
+    Wiki="" />
+    
+    <footRaisedAnkleHeightMS
+    AltName=""
+    Wiki="" />
+    
+    <raycastDistanceUp
+    AltName=""
+    Wiki="" />
+    
+    <raycastDistanceDown
+    AltName=""
+    Wiki="" />
+    
+    <footEndLS_X
+    AltName=""
+    Wiki="" />
+    
+    <footEndLS_Y
+    AltName=""
+    Wiki="" />
+    
+    <footEndLS_Z
+    AltName=""
+    Wiki="" />
+    
+    <onOffGain
+    AltName=""
+    Wiki="" />
+    
+    <groundAscendingGain
+    AltName=""
+    Wiki="" />
+    
+    <groundDescendingGain
+    AltName=""
+    Wiki="" />
+    
+    <footRaisedGain
+    AltName=""
+    Wiki="" />
+    
+    <footPlantedGain
+    AltName=""
+    Wiki="" />
+    
+    <footUnlockGain
+    AltName=""
+    Wiki="" />
+    
+    <kneeAxisType
+    AltName=""
+    Wiki="" 
+    Enum="SKELETON_PARAM_KNEE_AXIS_DIR" />
+    
+    <useFootLocking
+    AltName=""
+    Wiki="" 
+    IsBool="" />
+    
+    <footPlacementOn
+    AltName=""
+    Wiki="" 
+    IsBool="" />
+    
+    <twistKneeAxisType
+    AltName=""
+    Wiki="" />
+    
+    <neckTurnGain
+    AltName=""
+    Wiki="" 
+    Enum="SKELETON_PARAM_KNEE_AXIS_DIR" />
+    
+    <neckTurnPriority
+    AltName=""
+    Wiki="" />
+    
+    <neckTurnMaxAngle
+    AltName=""
+    Wiki="" />
+    
+    <pad1
+    Padding="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="SKELETON_PARAM_KNEE_AXIS_DIR">
+      <Option Value="0" Name="x" />
+      <Option Value="1" Name="y" />
+      <Option Value="2" Name="z" />
+      <Option Value="3" Name="-x" />
+      <Option Value="4" Name="-y" />
+      <Option Value="5" Name="-z" />
+	</Enum>
+  </Enums>
+</PARAMMETA>

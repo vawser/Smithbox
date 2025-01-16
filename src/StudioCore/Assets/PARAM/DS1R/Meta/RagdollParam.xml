@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for ragdolls." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="RagdollParam" 
+    Name="Ragdolls" />
+  </DisplayNames>
+  
+  <Field>
+    <hierarchyGain
+    AltName="Heirarchy Gain"
+    Wiki="Lowering it will bring it closer to the original pose, while increasing it will make it squishier." />
+    
+    <velocityDamping
+    AltName="Speed Decay"
+    Wiki="The rate at which the ragdoll's movement speed is reduced. When it approaches 0, it returns slowly, and when it approaches 1, it returns suddenly." />
+    
+    <accelGain
+    AltName="Acceleration Gain"
+    Wiki="Adjustment parameter for rigid acceleration. Lower values will make the movement softer, higher values will make it harder. Should be set to a lower value than the acceleration gain." />
+    
+    <velocityGain
+    AltName="Speed Gain"
+    Wiki="Rigid speed adjustment parameter. Lower values will make the movement softer, higher values will make it harder. It seems to be set to a lower value than the speed gain." />
+    
+    <positionGain
+    AltName="Position Gain"
+    Wiki="Adjustment parameter for rigid movement position. Lower values will make the movement softer, higher values will make it harder." />
+    
+    <maxLinerVelocity
+    AltName="Maximum Speed"
+    Wiki="Maximum movement speed for the rigid body." />
+    
+    <maxAngularVelocity
+    AltName="Maximum Rotation"
+    Wiki="Maximum rotation speed for the rigid body." />
+    
+    <snapGain
+    AltName="Snap Gain"
+    Wiki="Adjustment value to get closer to the original pose. Effect similar to position gain." />
+    
+    <enable
+    AltName="Enable during Damage"
+    Wiki="If ON, the ragdoll moves during damage." 
+    IsBool="" />
+    
+    <partsHitMaskNo
+    AltName="Parts Mask"
+    Wiki="The parts mask value to use. -1 means mask is disabled." />
+    
+    <pad
+    Padding="" />
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters relating to level synchronization."/>
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="LevelSyncParam" 
+    Name="Matchmaking Synchronization" />
+  </DisplayNames>
+  
+  <Field>
+    <SCLUA
+    AltName="SCLUA"
+    Wiki="" />
+    
+    <SDCLUR
+    AltName="SDCLUR"
+    Wiki="" />
+    
+    <SDCWLM
+    AltName="SDCWLM"
+    Wiki="" />
+    
+    <MLWSUR
+    AltName="MLWSUR"
+    Wiki="" />
+    
+    <MLWSUA
+    AltName="MLWSUA"
+    Wiki="" />
+    
+    <MLRSUR
+    AltName="MLRSUR"
+    Wiki="" />
+    
+    <MLRSUA
+    AltName="MLRSUA"
+    Wiki="" />
+    
+    <MWLUWS0
+    AltName="MWLUWS: 0"
+    Wiki="" />
+    
+    <MWLUWS1
+    AltName="MWLUWS: 1"
+    Wiki="" />
+    
+    <MWLUWS2
+    AltName="MWLUWS: 2"
+    Wiki="" />
+    
+    <MWLUWS3
+    AltName="MWLUWS: 3"
+    Wiki="" />
+    
+    <MWLUWS4
+    AltName="MWLUWS: 4"
+    Wiki="" />
+    
+    <MWLUWS5
+    AltName="MWLUWS: 5"
+    Wiki="" />
+    
+    <MWLUWS6
+    AltName="MWLUWS: 6"
+    Wiki="" />
+    
+    <MWLUWS7
+    AltName="MWLUWS: 7"
+    Wiki="" />
+    
+    <MWLUWS8
+    AltName="MWLUWS: 8"
+    Wiki="" />
+    
+    <MWLUWS9
+    AltName="MWLUWS: 9"
+    Wiki="" />
+    
+    <MWLUWS10
+    AltName="MWLUWS: 10"
+    Wiki="" />
+    
+    <MWLURS0
+    AltName="MWLURS: 0"
+    Wiki="" />
+    
+    <MWLURS1
+    AltName="MWLURS: 1"
+    Wiki="" />
+    
+    <MWLURS2
+    AltName="MWLURS: 2"
+    Wiki="" />
+    
+    <MWLURS3
+    AltName="MWLURS: 3"
+    Wiki="" />
+    
+    <MWLURS4
+    AltName="MWLURS: 4"
+    Wiki="" />
+    
+    <MWLURS5
+    AltName="MWLURS: 5"
+    Wiki="" />
+    
+    <MWLURS6
+    AltName="MWLURS: 6"
+    Wiki="" />
+    
+    <MWLURS7
+    AltName="MWLURS: 7"
+    Wiki="" />
+    
+    <MWLURS8
+    AltName="MWLURS: 8"
+    Wiki="" />
+    
+    <MWLURS9
+    AltName="MWLURS: 9"
+    Wiki="" />
+    
+    <MWLURS10
+    AltName="MWLURS: 10"
+    Wiki="" />
+    
+    <MWLUA0
+    AltName="MWLUA: 0"
+    Wiki="" />
+    
+    <MWLUA1
+    AltName="MWLUA: 1"
+    Wiki="" />
+    
+    <MWLUA2
+    AltName="MWLUA: 2"
+    Wiki="" />
+    
+    <MWLUA3
+    AltName="MWLUA: 3"
+    Wiki="" />
+    
+    <MWLUA4
+    AltName="MWLUA: 4"
+    Wiki="" />
+    
+    <MWLUA5
+    AltName="MWLUA: 5"
+    Wiki="" />
+    
+    <MWLUA6
+    AltName="MWLUA: 6"
+    Wiki="" />
+    
+    <MWLUA7
+    AltName="MWLUA: 7"
+    Wiki="" />
+    
+    <MWLUA8
+    AltName="MWLUA: 8"
+    Wiki="" />
+    
+    <MWLUA9
+    AltName="MWLUA: 9"
+    Wiki="" />
+    
+    <MWLUA10
+    AltName="MWLUA: 10"
+    Wiki="" />
+    
+    <MLASUR
+    AltName="MLASUR"
+    Wiki="" />
+    
+    <MLASUA
+    AltName="MLASUA"
+    Wiki="" />
+    
+    <Pad
+    Padding="" />
+    
+    <summonTimeoutTime
+    AltName="Summon Timeout Duration"
+    Wiki="The duration for a summoned client to timeout. In seconds." />
+    
+    <singGetMax
+    AltName="Summon Sign Max Duration"
+    Wiki="The maximum duration for a summon sign." />
+    
+    <signDownloadSpan
+    AltName="Summon Sign Download Size"
+    Wiki="The size of the summon sign download packet." />
+    
+    <nitoSignDownloadSpan
+    AltName="Gravelord Sign Download Size"
+    Wiki="The size of the gravelord sign download packet." />
+    
+    <signUpdateSpan
+    AltName="Summon Sign Update Size"
+    Wiki="The size of the summon sign update packet." />
+    
+    <maxBreakInTargetListCount
+    AltName="Max Invasion Points"
+    Wiki="The maximum number of invasion points to use when determining the spawn location." />
+    
+    <breakInRequestIntervalTimeSec
+    AltName="Invasion Interval Duration"
+    Wiki="The duration between each invasion request. In seconds." />
+    
+    <breakInRequestTimeOutSec
+    AltName="Invasion Timeout Duration"
+    Wiki="The duration for a hostile client to timeout. In seconds." />
+    
+    <reloadSignTotalCount_0
+    AltName="Summon Sign: Total Count 0"
+    Wiki="" />
+    
+    <reloadSignIntervalTime_0
+    AltName="Summon Sign: Reload Interval 0"
+    Wiki="" />
+    
+    <reloadSignIntervalTime_1
+    AltName="Summon Sign: Reload Interval 1"
+    Wiki="" />
+    
+    <reloadSignTotalCount_1
+    AltName="Summon Sign: Total Count 1"
+    Wiki="" />
+    
+    <reloadSignCellCount
+    AltName="Summon Sign: Reload Cell Count"
+    Wiki="" />
+    
+    <reloadSignIntervalTime_2
+    AltName="Summon Sign: Reload Interval 2"
+    Wiki="" />
+    
+    <reloadGhostTotalCount
+    AltName="Bloodstain: Reload Total Count"
+    Wiki="" />
+    
+    <reloadGhostCellCount
+    AltName="Bloodstain: Reload Cell Count"
+    Wiki="" />
+    
+    <maxGhostTotalCount
+    AltName="Bloodstain: Max Total Count"
+    Wiki="" />
+    
+    <updateWanderGhostIntervalTime
+    AltName="Bloodstain: Update Interval"
+    Wiki="" />
+    
+    <minReplayIntervalTime
+    AltName="Replay Interval - Minimum"
+    Wiki="" />
+    
+    <maxReplayIntervalTime
+    AltName="Replay Interval - Maximum"
+    Wiki="" />
+    
+    <reloadGhostIntervalTime
+    AltName="Bloodstain: Reload Interval"
+    Wiki="" />
+    
+    <replayBonfireModeRange
+    AltName="Bonfire: Replay Mode Range"
+    Wiki="" />
+    
+    <wanderGhostIntervalLifeTime
+    AltName="Bloodstain: Interval Duration"
+    Wiki="" />
+    
+    <summonMessageInterval
+    AltName="Message: Interval"
+    Wiki="" />
+    
+    <hostRegisterUpdateTime
+    AltName="Register Host Update Duration"
+    Wiki="" />
+    
+    <requestSearchQuickMatchLimit
+    AltName="Request Quick Match Limit"
+    Wiki="" />
+    
+    <myTeamInviteTimeoutTime
+    AltName="Team Invite Timeout Duration"
+    Wiki="" />
+    
+    <VisitorListMax
+    AltName="Max Visitor List"
+    Wiki="" />
+    
+    <VisitorTimeOutTime
+    AltName="Visitor Timeout Duration"
+    Wiki="" />
+    
+    <DownloadSpan
+    AltName="Download Size"
+    Wiki="" />
+    
+    <bonfireLowerBoundCoolTime
+    AltName="Bonfire: Cooldown (Minimum)"
+    Wiki="" />
+    
+    <bonfireUpperBoundCoolTime
+    AltName="Bonfire: Cooldown (Maximum)"
+    Wiki="" />
+    
+    <resonanceMagicDbDistInterval
+    AltName="Resonance Distance Interval"
+    Wiki="" />
+    
+    <inputTimeoutSec
+    AltName="Input Timeout Duration"
+    Wiki="" />
+    
+    <generalPurposeParam1
+    AltName="Parameter 1"
+    Wiki="" />
+    
+    <generalPurposeParam2
+    AltName="Parameter 2"
+    Wiki="" />
+    
+    <generalPurposeParam3
+    AltName="Parameter 3"
+    Wiki="" />
+    
+    <generalPurposeParam4
+    AltName="Parameter 4"
+    Wiki="" />
+    
+    <generalPurposeParam5
+    AltName="Parameter 5"
+    Wiki="" />
+    
+    <MWLUWS_11
+    AltName="MWLUWS: 11"
+    Wiki="" />
+    
+    <MWLUWS_12
+    AltName="MWLUWS: 12"
+    Wiki="" />
+    
+    <MWLUWS_13
+    AltName="MWLUWS: 13"
+    Wiki="" />
+    
+    <MWLUWS_14
+    AltName="MWLUWS: 14"
+    Wiki="" />
+    
+    <MWLUWS_15
+    AltName="MWLUWS: 15"
+    Wiki="" />
+    
+    <MWLURS_11
+    AltName="MWLURS: 11"
+    Wiki="" />
+    
+    <MWLURS_12
+    AltName="MWLURS: 12"
+    Wiki="" />
+    
+    <MWLURS_13
+    AltName="MWLURS: 13"
+    Wiki="" />
+    
+    <MWLURS_14
+    AltName="MWLURS: 14"
+    Wiki="" />
+    
+    <MWLURS_15
+    AltName="MWLURS: 15"
+    Wiki="" />
+    
+    <MWLUAR_11
+    AltName="MWLUAR: 11"
+    Wiki="" />
+    
+    <MWLUAR_12
+    AltName="MWLUAR: 12"
+    Wiki="" />
+    
+    <MWLUAR_13
+    AltName="MWLUAR: 13"
+    Wiki="" />
+    
+    <MWLUAR_14
+    AltName="MWLUAR: 14"
+    Wiki="" />
+    
+    <MWLUAR_15
+    AltName="MWLUAR: 15"
+    Wiki="" />
+    
+    <generalPurposeParam6
+    AltName="Parameter 6"
+    Wiki="" />
+  </Field>
+</PARAMMETA>

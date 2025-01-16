@@ -254,31 +254,31 @@
     Wiki="The weapon repulsion defense for this equipment." />
     
     <defensePhysics 
-    AltName="Defence: Physical" 
+    AltName="Defense: Physical" 
     Wiki="The flat defense value for this equipment for the specified type." />
     
     <defenseMagic 
-    AltName="Defence: Magic" 
+    AltName="Defense: Magic" 
     Wiki="The flat defense value for this equipment for the specified type." />
     
     <defenseFire 
-    AltName="Defence: Fire" 
+    AltName="Defense: Fire" 
     Wiki="The flat defense value for this equipment for the specified type." />
     
     <defenseThunder 
-    AltName="Defence: Lightning" 
+    AltName="Defense: Lightning" 
     Wiki="The flat defense value for this equipment for the specified type." />
 
     <defenseSlash 
-    AltName="Defence Correction: Slash" 
+    AltName="Defense Correction: Slash" 
     Wiki="Percentage modifier to apply to physical defense when struck with slash damage. Example: -50 = -50%, 50 = +50%" />
     
     <defenseBlow
-    AltName="Defence Correction: Strike" 
+    AltName="Defense Correction: Strike" 
     Wiki="Percentage modifier to apply to physical defense when struck with strike damage. Example: -50 = -50%, 50 = +50%" />
     
     <defenseThrust  
-    AltName="Defence Correction: Thrust" 
+    AltName="Defense Correction: Thrust" 
     Wiki="Percentage modifier to apply to physical defense when struck with thrust damage. Example: -50 = -50%, 50 = +50%" />
     
     <resistPoison 
@@ -336,12 +336,12 @@
     Enum="PROTECTOR_CATEGORY" />
     
     <defenseMaterial
-    AltName="Defence Presentation: Sound" 
+    AltName="Defense Presentation: Sound" 
     Wiki="The sound used when guarding." 
     Enum="WEP_MATERIAL_DEF" />
 
     <defenseMaterialSfx
-    AltName="Defence Presentation: Particle" 
+    AltName="Defense Presentation: Particle" 
     Wiki="The particles used when guarding." 
     Enum="WEP_MATERIAL_DEF_SFX" />
     
@@ -351,12 +351,12 @@
     Enum="ATK_PARAM_PARTSDMGTYPE" />
 
     <defenseMaterial_Weak 
-    AltName="Defence Presentation: Sound (on Weak Point Damage)" 
+    AltName="Defense Presentation: Sound (on Weak Point Damage)" 
     Wiki="The sound used when weak point is damaged." 
     Enum="WEP_MATERIAL_DEF" />
 
     <defenseMaterialSfx_Weak 
-    AltName="Defence Presentation: Particle (on Weak Point Damage)" 
+    AltName="Defense Presentation: Particle (on Weak Point Damage)" 
     Wiki="The particles used when weak point is damaged." 
     Enum="WEP_MATERIAL_DEF_SFX" />
 
@@ -684,22 +684,25 @@
     </Enum>
     <Enum Name="WEP_MATERIAL_DEF" type="u16">
         <Option Value="0" Name="None" />
-        <Option Value="100" Name="Shield: Physical" />
-        <Option Value="101" Name="Shield: Strong Physical" />
-        <Option Value="102" Name="Shield: Magic" />
-        <Option Value="103" Name="Body: Physical" />
-        <Option Value="104" Name="Body: Strong Physical" />
-        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="50" Name="Standard" />
+        <Option Value="51" Name="Physical" />
+        <Option Value="52" Name="Magic" />
+        <Option Value="53" Name="Fire" />
+        <Option Value="54" Name="Lightning" />
+        <Option Value="55" Name="Dark" />
+        <Option Value="79" Name="Greatshield" />
         <Option Value="255" Name="Material 1" />
     </Enum>
     <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
         <Option Value="0" Name="None" />
-        <Option Value="100" Name="Shield: Physical" />
-        <Option Value="101" Name="Shield: Strong Physical" />
-        <Option Value="102" Name="Shield: Magic" />
-        <Option Value="103" Name="Body: Physical" />
-        <Option Value="104" Name="Body: Strong Physical" />
-        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="50" Name="Standard" />
+        <Option Value="51" Name="Physical" />
+        <Option Value="52" Name="Magic" />
+        <Option Value="53" Name="Fire" />
+        <Option Value="54" Name="Lightning" />
+        <Option Value="55" Name="Dark" />
+        <Option Value="59" Name="Fist" />
+        <Option Value="79" Name="Greatshield" />
         <Option Value="255" Name="Material 1" />
     </Enum>
   </Enums>

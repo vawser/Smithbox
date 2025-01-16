@@ -6,7 +6,7 @@
   <DisplayNames>
     <NameEntry 
     Param="CharaInitParam" 
-    Name="Character Configurations" />
+    Name="Character Loadouts" />
   </DisplayNames>
   
   <Field>
@@ -412,7 +412,7 @@
     Enum="CHARACTER_INIT_SEX" />
     
     <vowType
-    AltName="Pledge Type"
+    AltName="Vow Type"
     Wiki="The pledge type used by this character."
     Enum="VOW_TYPE" />
 
@@ -444,23 +444,23 @@
         <Option Value="1" Name="Male" />
     </Enum>
     <Enum Name="VOW_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
-        <Option Value="3" Name="Type 3" />
-        <Option Value="4" Name="Type 4" />
-        <Option Value="5" Name="Type 5" />
-        <Option Value="6" Name="Type 6" />
-        <Option Value="7" Name="Type 7" />
-        <Option Value="8" Name="Type 8" />
-        <Option Value="9" Name="Type 9" />
-        <Option Value="10" Name="Type 10" />
-        <Option Value="11" Name="Type 11" />
-        <Option Value="12" Name="Type 12" />
-        <Option Value="13" Name="Type 13" />
-        <Option Value="14" Name="Type 14" />
-        <Option Value="15" Name="Type 15" />
-        <Option Value="16" Name="Type 16" />
+        <Option Value="0" Name="Covenant: None" />
+        <Option Value="1" Name="Covenant: Way of White" />
+        <Option Value="2" Name="Covenant: Princess Guard" />
+        <Option Value="3" Name="Covenant: Warrior of Sunlight" />
+        <Option Value="4" Name="Covenant: Darkwraith" />
+        <Option Value="5" Name="Covenant: Path of the Dragon" />
+        <Option Value="6" Name="Covenant: Gravelord Servant" />
+        <Option Value="7" Name="Covenant: Forest Hunter" />
+        <Option Value="8" Name="Covenant: Blade of the Dark Moon" />
+        <Option Value="9" Name="Covenant: Chaos Servant" />
+        <Option Value="10" Name="Covenant: 10" />
+        <Option Value="11" Name="Covenant: 11" />
+        <Option Value="12" Name="Covenant: 12" />
+        <Option Value="13" Name="Covenant: 13" />
+        <Option Value="14" Name="Covenant: 14" />
+        <Option Value="15" Name="Covenant: 15" />
+        <Option Value="16" Name="Covenant: 16" />
     </Enum>
   </Enums>
 
