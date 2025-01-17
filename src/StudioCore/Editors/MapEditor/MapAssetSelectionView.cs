@@ -50,6 +50,9 @@ namespace StudioCore.Editors.MapEditor
             if (Smithbox.ProjectType == ProjectType.Undefined)
                 return;
 
+            if (Smithbox.AliasCacheHandler == null)
+                return;
+
             if (!Smithbox.AliasCacheHandler.AliasCache.UpdateCacheComplete)
                 return;
 

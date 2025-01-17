@@ -94,18 +94,33 @@ public class MapQueryBank
         }
         else
         {
-            var mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";
+            var innerDir = "mapstudio";
+            var ext = ".msb.dcx";
+
+            if (Smithbox.ProjectType is ProjectType.DS1)
+            {
+                innerDir = "MapStudio";
+                ext = ".msb";
+            }
+
+            if (Smithbox.ProjectType is ProjectType.DS1R)
+            {
+                innerDir = "MapStudioNew";
+                ext = ".msb";
+            }
+
+            var mapDir = $"{Smithbox.GameRoot}/map/{innerDir}/ ";
 
             if (Engine.GetProjectFileUsage())
             {
-                mapDir = $"{Smithbox.ProjectRoot}/map/mapstudio/";
+                mapDir = $"{Smithbox.ProjectRoot}/map/{innerDir}/";
             }
 
             if (Directory.Exists(mapDir))
             {
                 foreach (var entry in Directory.EnumerateFiles(mapDir))
                 {
-                    if (entry.Contains(".msb.dcx"))
+                    if (entry.Contains($"{ext}"))
                     {
                         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
                         ResourceDescriptor ad = MapLocator.GetMapMSB(name);

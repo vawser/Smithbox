@@ -9,6 +9,7 @@ using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
+using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.TextEditor;
@@ -140,6 +141,8 @@ public class BankHandler
         MapTransforms.LoadBank();
 
         ParamBank.ReloadParams();
+
+        MsbMeta.SetupMeta();
     }
 
     /// <summary>

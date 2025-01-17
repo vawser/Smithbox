@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace StudioCore.Editors.MapEditor;
+namespace StudioCore.Editors.MapEditor.PropertyEditor;
 public class MapPropertyCache
 {
     public readonly Dictionary<string, PropertyInfo[]> PropCache = new();

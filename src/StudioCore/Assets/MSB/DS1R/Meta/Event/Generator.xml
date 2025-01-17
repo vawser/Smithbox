@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a generator within the map." />
+  
+  <Field>
+    <MaxNum
+    AltName="Maximum Generated Count"
+    Wiki="The maximum number of enemies that this generator can generate in total." />
+    
+    <GenType
+    AltName="Generator Type"
+    Wiki="The spawn location behavior to use upon a generation interval." />
+    
+    <LimitNum
+    AltName="Maximum Spawn Count"
+    Wiki="The maximum number of enemies that this generator can generate upon a generation interval." />
+    
+    <MinGenNum
+    AltName="Random Spawn Count: Minimum"
+    Wiki="The minimum number to use when determining the amount of enemies to generate within a generation interval." />
+    
+    <MaxGenNum
+    AltName="Random Spawn Count: Maximum"
+    Wiki="The maximum number to use when determining the amount of enemies to generate within a generation interval." />
+    
+    <MinInterval
+    AltName="Generation Interval: Minimum"
+    Wiki="The minimum time interval (in seconds) between each generation interval." />
+    
+    <MaxInterval
+    AltName="Generation Interval: Maximum"
+    Wiki="The maximum time interval (in seconds) between each generation interval." />
+    
+    <InitialSpawnCount
+    AltName="Initial Spawn Count"
+    Wiki="The initial number of enemies to spawn upon initialization of the generator." />
+    
+    <SpawnPointNames
+    AltName="Spawn Point"
+    Wiki="The spot regions that the parts can appear at."
+    MapRef="Region-Region"
+    ArrayProperty="" />
+    
+    <SpawnPointIndices
+    IndexProperty="" />
+    
+    <SpawnPartNames
+    AltName="Spawned Part"
+    Wiki="The spawned parts that can be selected."
+    MapRef="Part-Part"
+    ArrayProperty="" />
+    
+    <SpawnPartIndices
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -81,14 +81,17 @@ public class MapEditorTab
         // Property View
         if (ImGui.CollapsingHeader("Properties", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Enable complex rename", ref CFG.Current.MapEditor_Enable_Referenced_Rename);
-            UIHelper.ShowHoverTooltip("This option will allow renaming an object to also rename every reference to it, but will require a confirmation to apply a rename");
-
             ImGui.Checkbox("Display community names", ref CFG.Current.MapEditor_Enable_Commmunity_Names);
             UIHelper.ShowHoverTooltip("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
 
-            ImGui.Checkbox("Display community descriptions", ref CFG.Current.MapEditor_Enable_Commmunity_Hints);
-            UIHelper.ShowHoverTooltip("The MSB property fields will be given crowd-sourced descriptions.");
+            ImGui.Checkbox("Display padding fields", ref CFG.Current.MapEditor_Enable_Padding_Fields);
+            UIHelper.ShowHoverTooltip("The MSB property fields that are considered padding.");
+
+            ImGui.Checkbox("Display obsolete fields", ref CFG.Current.MapEditor_Enable_Obsolete_Fields);
+            UIHelper.ShowHoverTooltip("The MSB property fields that are considered obsolete.");
+
+            ImGui.Checkbox("Enable complex rename", ref CFG.Current.MapEditor_Enable_Referenced_Rename);
+            UIHelper.ShowHoverTooltip("This option will allow renaming an object to also rename every reference to it, but will require a confirmation to apply a rename");
 
             ImGui.Checkbox("Display property info", ref CFG.Current.MapEditor_Enable_Property_Info);
             UIHelper.ShowHoverTooltip("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");

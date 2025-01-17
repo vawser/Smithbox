@@ -7,6 +7,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Editors.MapEditor.MapQuery;
+using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
@@ -659,6 +660,28 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
                 UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Viewport_LightmapAtlas);
             }
+
+            ImGui.Separator();
+
+            // Quick toggles for some of the Field Editor field visibility options
+
+            if (ImGui.MenuItem("Field: Community Names"))
+            {
+                CFG.Current.MapEditor_Enable_Commmunity_Names = !CFG.Current.MapEditor_Enable_Commmunity_Names;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Enable_Commmunity_Names);
+
+            if (ImGui.MenuItem("Field: Padding"))
+            {
+                CFG.Current.MapEditor_Enable_Padding_Fields = !CFG.Current.MapEditor_Enable_Padding_Fields;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Enable_Padding_Fields);
+
+            if (ImGui.MenuItem("Field: Obsolete"))
+            {
+                CFG.Current.MapEditor_Enable_Obsolete_Fields = !CFG.Current.MapEditor_Enable_Obsolete_Fields;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Enable_Obsolete_Fields);
 
             ImGui.EndMenu();
         }

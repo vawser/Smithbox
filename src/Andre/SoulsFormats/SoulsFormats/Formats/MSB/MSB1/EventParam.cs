@@ -561,7 +561,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Item lots to be granted when the treasure is picked up; only the first appears to be functional.
                 /// </summary>
-                [MSBParamReference(ParamName = "ItemLotParam")]
                 public int[] ItemLots { get; private set; }
 
                 /// <summary>

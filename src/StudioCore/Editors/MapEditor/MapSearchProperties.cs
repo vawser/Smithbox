@@ -2,6 +2,7 @@
 using SoulsFormats;
 using SoulsFormats.Util;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;

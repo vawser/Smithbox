@@ -901,8 +901,9 @@ public class ParamEnum
         }
         else
         {
-            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamEnum Name property for {enumNode.Name}");
+            //TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamEnum Name property for {enumNode.Name}", LogLevel.Error);
         }
+
         foreach (XmlNode option in enumNode.SelectNodes("Option"))
         {
             if (option.Attributes["Value"] != null)
@@ -911,7 +912,7 @@ public class ParamEnum
             }
             else
             {
-                TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamEnum Option Attribute Value property for {enumNode.Name}");
+                //TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamEnum Option Attribute Value property for {enumNode.Name}", LogLevel.Error);
             }
         }
     }

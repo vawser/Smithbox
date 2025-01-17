@@ -13,7 +13,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using static StudioCore.Editors.MapEditor.MapPropertyEditor;
+using static StudioCore.Editors.MapEditor.PropertyEditor.MapPropertyEditor;
 
 namespace StudioCore.Editors.MapEditor.MapQuery;
 
