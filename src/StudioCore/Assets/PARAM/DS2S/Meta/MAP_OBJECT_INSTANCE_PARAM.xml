@@ -1,19 +1,161 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Defines parameters related to map object instances." 
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_02_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_04_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_10_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_14_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_15_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_16_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_17_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_18_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_19_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_23_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_25_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_27_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_29_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_30_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_31_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_32_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_33_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m10_34_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m20_10_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m20_11_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m20_21_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m20_24_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m20_26_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m40_03_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m50_35_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m50_36_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m50_37_00_00" 
+    Name="Map Object Instances" />
+    
+    <NameEntry 
+    Param="mapobjectinstanceparam_m50_38_00_00" 
+    Name="Map Object Instances" />
+    
+  </DisplayNames>
+  
+  <Field>
+    <param_id 
+    AltName="Param ID" 
+    Wiki="" />
+    
+    <obj_bullet_1 
+    AltName="Object Bullet [1]" 
+    Wiki=""
+    Refs="SystemBulletParam" />
+    
+    <obj_bullet_2 
+    AltName="Object Bullet [2]" 
+    Wiki=""
+    Refs="SystemBulletParam" />
+    
+    <map_obj_instance_type_id 
+    AltName="Map Object Instance Type ID" 
+    Wiki=""
+    Refs="MapObjectInstanceTypeParam" />
+    
+    <default_state 
+    AltName="Default State" 
+    Wiki=""
+    Enum="DEFAULT_STATE_TYPE" />
+    
+    <itemlot_id 
+    AltName="Itemlot ID" 
+    Wiki=""
+    Refs="ItemLotParam2_Chr,ItemLotParam2_Other,ItemLotParam2_SvrEvent"/>
+  </Field>
+  
   <Enums>
-    <Enum Name="DefaultStateType">
+    <Enum Name="DEFAULT_STATE_TYPE">
       <Option Value="0" Name="None" />
       <Option Value="1" Name="Inactive" />
       <Option Value="2" Name="Active" />
     </Enum>
   </Enums>
-  <Self Wiki="Defines parameters related to map object instances." Row0Dummy="" />
-  <Field>
-    <param_id AltName="Param ID" />
-    <obj_bullet_1 AltName="Object Bullet [1]" Refs="SystemBulletParam" />
-    <obj_bullet_2 AltName="Object Bullet [2]" Refs="SystemBulletParam" />
-    <map_obj_instance_type_id AltName="Map Object Instance Type ID" Refs="MapObjectInstanceTypeParam" />
-    <default_state AltName="Default State" Enum="DefaultStateType" />
-    <itemlot_id AltName="Itemlot ID" Refs="ItemLotParam2_Chr,ItemLotParam2_Other,ItemLotParam2_SvrEvent"/>
-  </Field>
+  
 </PARAMMETA>

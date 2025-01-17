@@ -325,7 +325,7 @@ public class ParamEditorView
             }
 
             // Map alias
-            DisplayDS2MapNameAlias(paramKey);
+            //DisplayDS2MapNameAlias(paramKey);
 
             ImGui.Unindent(15.0f * scale);
         }

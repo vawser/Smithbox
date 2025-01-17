@@ -1,11 +1,146 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Row0Dummy="" />
+  <Self 
+  Wiki=""
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="generatorregistparam_m10_02_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_04_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_10_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_14_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_15_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_16_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_17_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_18_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_19_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_23_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_25_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_27_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_29_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_30_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_31_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_32_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_33_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m10_34_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m20_10_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m20_11_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m20_21_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m20_24_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m20_26_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m40_03_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m50_35_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m50_36_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m50_37_00_00" 
+    Name="Enemy Registration" />
+    
+    <NameEntry 
+    Param="generatorregistparam_m50_38_00_00" 
+    Name="Enemy Registration" />
+    
+  </DisplayNames>
+  
   <Field>
-    <EnemyParamID Refs="EnemyParam" />
-    <logicComParamID Refs="LogicComParam" />
-    <defaultLogicParamID Refs="EnemyDefaultLogicParam" />
-    <SpawnState Wiki="What position/state the entity takes when spawning." />
-    <DrawGroup Wiki="Determines when the game renders an entity." />
+    <EnemyParamID 
+    AltName=""
+    Wiki=""
+    Refs="EnemyParam" />
+    
+    <logicComParamID 
+    AltName=""
+    Wiki=""
+    Refs="LogicComParam" />
+    
+    <defaultLogicParamID 
+    AltName=""
+    Wiki=""
+    Refs="EnemyDefaultLogicParam" />
+    
+    <SpawnState 
+    AltName=""
+    Wiki="What position/state the entity takes when spawning." />
+    
+    <DrawGroup 
+    AltName=""
+    Wiki="Determines when the game renders an entity." />
   </Field>
 </PARAMMETA>

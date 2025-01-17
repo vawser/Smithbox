@@ -152,9 +152,9 @@ public class MapPropertyEditor
 
         foreach (Param.Cell cell in cells)
         {
-            var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+            //var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
 
-            PropEditorPropCellRow(meta, cell, ref id, selection);
+            PropEditorPropCellRow(null, cell, ref id, selection);
         }
 
         ImGui.Columns(1);
@@ -176,9 +176,9 @@ public class MapPropertyEditor
 
         foreach (Param.Column cell in row.Columns)
         {
-            var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+            //var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
 
-            PropEditorPropCellRow(meta, row[cell], ref id, null);
+            PropEditorPropCellRow(null, row[cell], ref id, null);
         }
 
         ImGui.Columns(1);

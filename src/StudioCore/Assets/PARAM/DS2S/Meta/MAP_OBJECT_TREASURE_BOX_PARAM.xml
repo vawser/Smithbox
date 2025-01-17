@@ -1,17 +1,136 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="ChestType">
-      <Option Value="0" Name="Normal" />
-      <Option Value="1" Name="Trapped" />
-    </Enum>
-  </Enums>
-  <Self Row0Dummy="" />
+  <Self 
+  Wiki="Defines parameters related to treasure chests." 
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="treasureboxparam_m10_02_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_04_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_10_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_14_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_15_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_16_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_17_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_18_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_19_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_23_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_25_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_27_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_29_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_30_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_31_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_32_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_33_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m10_34_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m20_10_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m20_11_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m20_21_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m20_24_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m20_26_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m40_03_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m50_35_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m50_36_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m50_37_00_00" 
+    Name="Treasure Chests" />
+    
+    <NameEntry 
+    Param="treasureboxparam_m50_38_00_00" 
+    Name="Treasure Chests" />
+    
+  </DisplayNames>
+  
   <Field>
-    <chest_type AltName="Chest Type" Enum="ChestType"/>
+    <chest_type AltName="Chest Type" Enum="CHEST_TYPE"/>
     <bullet_id_1 AltName="Trapped Chest Bullet [1]" Refs="SystemBulletParam"/>
     <bullet_id_2 AltName="Trapped Chest Bullet [2]" Refs="SystemBulletParam"/>
     <bullet_id_3 AltName="Trapped Chest Bullet [3]" Refs="SystemBulletParam"/>
     <bullet_id_4 AltName="Trapped Chest Bullet [4]" Refs="SystemBulletParam"/>
   </Field>
+  
+  <Enums>
+    <Enum Name="CHEST_TYPE">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Trapped" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

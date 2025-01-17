@@ -1,16 +1,175 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Row0Dummy="" />
+  <Self 
+  Wiki=""
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="eventlocation_m10_02_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_04_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_10_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_14_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_15_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_16_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_17_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_18_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_19_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_23_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_25_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_27_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_29_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_30_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_31_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_32_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_33_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m10_34_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m20_10_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m20_11_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m20_21_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m20_24_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m20_26_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m40_03_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m50_35_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m50_36_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m50_37_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="eventlocation_m50_38_00_00" 
+    Name="Event Locations" />
+    
+    <NameEntry 
+    Param="GeneralLocationEventParam_m99_80_50_04" 
+    Name="Event Locations: m99_80_50_04" />
+    
+    <NameEntry 
+    Param="GeneralLocationEventParam_m99_97_00_00" 
+    Name="Event Locations: m99_97_00_00" />
+    
+    <NameEntry 
+    Param="GeneralLocationEventParam_m20_10_00_00" 
+    Name="Event Locations: m20_10_00_00" />
+    
+  </DisplayNames>
+  
   <Field>
-    <PositionX AltName="Position: X" />
-    <PositionY AltName="Position: Y" />
-    <PositionZ AltName="Position: Z" />
-    <RotationX AltName="Rotation: X" />
-    <RotationY AltName="Rotation: Y" />
-    <RotationZ AltName="Rotation: Z" />
-    <RegionTypeMaybe AltName="Region Type" />
-    <ScaleX AltName="Scale: X" />
-    <ScaleY AltName="Scale: Y" />
-    <ScaleZ AltName="Scale: Z" />
+    <PositionX 
+    AltName="Position: X" 
+    Wiki="" />
+    
+    <PositionY 
+    AltName="Position: Y" 
+    Wiki="" />
+    
+    <PositionZ 
+    AltName="Position: Z" 
+    Wiki="" />
+    
+    <RotationX 
+    AltName="Rotation: X" 
+    Wiki="" />
+    
+    <RotationY 
+    AltName="Rotation: Y" 
+    Wiki="" />
+    
+    <RotationZ 
+    AltName="Rotation: Z" 
+    Wiki="" />
+    
+    <RegionTypeMaybe 
+    AltName="Region Type" 
+    Wiki="" />
+    
+    <ScaleX 
+    AltName="Scale: X" 
+    Wiki="" />
+    
+    <ScaleY 
+    AltName="Scale: Y" 
+    Wiki="" />
+    
+    <ScaleZ 
+    AltName="Scale: Z" 
+    Wiki="" />
   </Field>
 </PARAMMETA>
