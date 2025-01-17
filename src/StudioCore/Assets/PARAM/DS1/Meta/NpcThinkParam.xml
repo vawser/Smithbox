@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for enemy AI." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="NpcThinkParam" 
+    Name="Enemy AI" />
+  </DisplayNames>
+  
+  <Field>
+    <logicId
+    AltName="Logic Script ID"
+    Wiki="The logic script to use for this character." />
+    
+    <battleGoalID
+    AltName="Battle Goal ID"
+    Wiki="The battle script to use for this character." />
+    
+    <nearDist
+    AltName="Battle Distance: Short"
+    Wiki="The distance between this character and the target that is treated as 'short' for combat distance calculations." />
+    
+    <midDist
+    AltName="Battle Distance: Medium"
+    Wiki="The distance between this character and the target that is treated as 'medium' for combat distance calculations." />
+    
+    <farDist
+    AltName="Battle Distance: Long"
+    Wiki="The distance between this character and the target that is treated as 'long' for combat distance calculations." />
+    
+    <outDist
+    AltName="Battle Distance: End"
+    Wiki="The distance between this character and the target that ends combat aggression. A character outside of this range will no longer attempt combat actions." />
+    
+    <BackHomeLife_OnHitEneWal
+    AltName="Goal Duration on Wall Collision"
+    Wiki="The duration of the BackToHome goal when this character hits an enemy wall collision (which blocks movement). In seconds." />
+    
+    <goalID_ToCaution
+    AltName="Caution State: Goal ID"
+    Wiki="The goal ID to use when this character enters the 'Caution' alert state." />
+    
+    <idAttackCannotMove
+    AltName="Action ID on Blocked Movement"
+    Wiki="The EzState ID to use for the action to perform when this character's movement is stopped by a destructible object." />
+    
+    <goalID_ToFind
+    AltName="Search State: Goal ID"
+    Wiki="The goal ID to use when this character enters the 'Search' alert state." />
+    
+    <callHelp_ActionAnimId
+    AltName="Call for Help: Animation ID (Respond)"
+    Wiki="The action animation ID (EzStateAnimID) to use when responding to a call for help." />
+    
+    <callHelp_CallActionId
+    AltName="Call for Help: Animation ID (Call)"
+    Wiki="The action animation ID (EzStateAnimID) to use when calling for help." />
+    
+    <eye_dist
+    AltName="Visual Search Distance"
+    Wiki="The maximum extent to check for when searching visually (sight) for this character. In metres." />
+    
+    <ear_dist
+    AltName="Auditory Search Distance"
+    Wiki="The maximum extent to check for when searching aurally (sound) for this character. In metres." />
+    
+    <ear_soundcut_dist
+    AltName="Auditory Dampening Distance"
+    Wiki="The distance at which the size of a sound source will be reduced. Sounds below this distance will no longer be heard. In metres." />
+    
+    <nose_dist
+    AltName="Olfactory Search Distance"
+    Wiki="The maximum extent to check for when searching olfactorily (smell) for this character. This method of searching is never blocked by any obstacle. In metres." />
+    
+    <maxBackhomeDist
+    AltName="Battle Act: Return Home Distance"
+    Wiki="The distance after which this character will always return home. In metres.\nA parameter for the COMMON_SetBattleActLogic script. " />
+    
+    <backhomeDist
+    AltName="Battle Act: Return Home Distance (Combat)"
+    Wiki="The distance after which this character will return home if in combat with a target. In metres.\nA parameter for the COMMON_SetBattleActLogic script. " />
+    
+    <backhomeBattleDist
+    AltName="Battle Act: Return Home Abort Distance"
+    Wiki="The distance whilst in combat, after which an attempt to return home will be aborted. In metres.\nA parameter for the COMMON_SetBattleActLogic script. " />
+    
+    <nonBattleActLife
+    AltName="Battle Act: Non-Combat Act Duration"
+    Wiki="The duration for non-combat acts whilst this character is aware of a target. In seconds.\nA parameter for the COMMON_SetBattleActLogic script. " />
+    
+    <BackHome_LookTargetTime
+    AltName="Return Home: Target Look-At Duration"
+    Wiki="When this character is returning home, this is the duration they keep looking at their current target for. In seconds." />
+    
+    <BackHome_LookTargetDist
+    AltName="Return Home: Target Look-At Distance"
+    Wiki="When this character is returning home, this is the distance at which they keep looking at their current target for. In metres." />
+    
+    <SightTargetForgetTime
+    AltName="Visual Target Forget Duration"
+    Wiki="The duration after a visual target has been acquired in which it will be forgotten. In frames." />
+    
+    <SoundTargetForgetTime
+    AltName="Auditory Target Forget Duration"
+    Wiki="The duration after a aural target has been acquired in which it will be forgotten. In frames." />
+    
+    <BattleStartDist
+    AltName="Battle Start Distance"
+    Wiki="The distance at which this character will start combat after acquiring a target. In metres." />
+    
+    <callHelp_MyPeerId
+    AltName="Call for Help: Respond Friend Group ID"
+    Wiki="The friend group ID this character belongs to, and thus which other characters it will respond to." />
+    
+    <callHelp_CallPeerId
+    AltName="Call for Help: Call Friend Group ID"
+    Wiki="The friend group ID this character belongs to, and thus which other characters it can call to." />
+    
+    <targetSys_DmgEffectRate
+    AltName="Damage Effect Rate"
+    Wiki="The damage effect rate for this character, used in the target system evaluation." />
+    
+    <TeamAttackEffectivity
+    AltName="Team Attack Weight"
+    Wiki="A value used to determine the number of simultaneous attackers within a group of characters that share the same team.\n\nEach potential attacker adds thier TeamAttackEffectivity to a total value. If this total value is or exceeds 100, no more attackers will be allowed to attack.\n\nIn general, this means higher values reduce the number of potential attackers against a target." />
+    
+    <eye_angX
+    AltName="Visual Search: Horizontal Angle"
+    Wiki="The horizontal cone within which the visual search is performed. In degrees." />
+    
+    <eye_angY
+    AltName="Visual Search: Vertical Angle"
+    Wiki="The vertical cone within which the visual search is performed. In degrees." />
+    
+    <ear_angX
+    AltName="Auditory Search: Horizontal Angle"
+    Wiki="The horizontal cone within which the aural search is performed. In degrees." />
+    
+    <ear_angY
+    AltName="Auditory Search: Vertical Angle"
+    Wiki="The vertical cone within which the aural search is performed. In degrees." />
+    
+    <callHelp_CallValidMinDistTarget
+    AltName="Call for Help: Minimum Distance to Target"
+    Wiki="If a character is closer than this distance to their target, they cannot call for friends. In metres." />
+    
+    <callHelp_CallValidRange
+    AltName="Call for Help: Maximum Distance to Friend"
+    Wiki="If a character is further than this distance to a friend, they cannot call the friend. In metres." />
+    
+    <callHelp_ForgetTimeByArrival
+    AltName="Call for Help: Respond Duration"
+    Wiki="When a friend is called, this is the duration it takes to answer and then forget the call. In seconds." />
+    
+    <callHelp_MinWaitTime
+    AltName="Call for Help: Minimum Delay"
+    Wiki="The minimum duration after a call that any friend responses can occur. In milliseconds." />
+    
+    <callHelp_MaxWaitTime
+    AltName="Call for Help: Maximum Delay"
+    Wiki="The maximum duration after a call that any friend responses can occur. In milliseconds." />
+    
+    <goalAction_ToCaution
+    AltName="Caution State: Goal Action"
+    Wiki="The goal action when this character becomes alert." 
+    Enum="NPC_THINK_GOAL_ACTION" />
+    
+    <goalAction_ToFind
+    AltName="Search State: Goal Action"
+    Wiki="The goal action when this character acquires a target." 
+    Enum="NPC_THINK_GOAL_ACTION" />
+    
+    <callHelp_ReplyBehaviorType
+    AltName="Call for Help: Post-Response Action Type"
+    Wiki="The action type for reaching the friend's position after responding to a call." 
+    Enum="NPC_THINK_REPLY_BEHAVIOR_TYPE" />
+    
+    <disablePathMove
+    AltName="Disable Path Movement"
+    Wiki="If ON, then path movement using the navigation mesh is ignored, and direct movement occurs in a straight line (obstacles are not accounted for)." 
+    IsBool="" />
+    
+    <skipArrivalVisibleCheck
+    AltName="Skip Arrival Line of Sight Check"
+    Wiki="If ON, arrival is achieved even if there is no line of sight." 
+    IsBool="" />
+    
+    <thinkAttr_doAdmirer
+    AltName="Is Entourage"
+    Wiki="If ON, this character plays the role of an entourage. This is a think attribute." 
+    IsBool="" />
+    
+    <enableNaviFlg_Edge
+    AltName="Can Navigate: Cliff"
+    Wiki="If ON, this character can navigate on graph edges marked with the 'cliff' navigation flag." 
+    IsBool="" />
+    
+    <enableNaviFlg_LargeSpace
+    AltName="Can Navigate: Wide"
+    Wiki="If ON, this character can navigate on graph edges marked with the 'wide' navigation flag." 
+    IsBool="" />
+    
+    <enableNaviFlg_Ladder
+    AltName="Can Navigate: Ladder"
+    Wiki="If ON, this character can navigate on graph edges marked with the 'ladder' navigation flag."
+    IsBool="" />
+    
+    <enableNaviFlg_Hole
+    AltName="Can Navigate: Hole"
+    Wiki="If ON, this character can navigate on graph edges marked with the 'hole' navigation flag."
+    IsBool="" />
+    
+    <enableNaviFlg_Door
+    AltName="Can Navigate: Door"
+    Wiki="If ON, this character can navigate on graph edges marked with the 'door' navigation flag."
+    IsBool="" />
+    
+    <enableNaviFlg_InSideWall
+    AltName="Can Navigate: In the Wall"
+    Wiki="If ON, this character can navigate on graph edges marked with the 'in the wall' navigation flag."
+    IsBool="" />
+
+    <enableNaviFlg_reserve0
+    Padding="" />
+    
+    <enableNaviFlg_reserve1
+    Padding="" />
+    
+    <pad0
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="NPC_THINK_GOAL_ACTION" type="u8">
+        <Option Value="0" Name="Do nothing" />
+        <Option Value="1" Name="Face towards Target" />
+        <Option Value="2" Name="Walk to Target" />
+        <Option Value="3" Name="Run to Target" />
+        <Option Value="4" Name="Set any Goal" />
+        <Option Value="5" Name="Away from Target" />
+        <Option Value="6" Name="Wander Around" />
+        <Option Value="7" Name="Hold up Shield -> Walk to Target" />
+        <Option Value="8" Name="Route movement" />
+        <Option Value="9" Name="Walk around nearby" />
+    </Enum>
+    <Enum Name="NPC_THINK_REPLY_BEHAVIOR_TYPE" type="u8">
+        <Option Value="0" Name="Walking" />
+        <Option Value="1" Name="Run and move" />
+        <Option Value="2" Name="Walking (move the nest)" />
+        <Option Value="3" Name="Run and move (move the nest)" />
+        <Option Value="4" Name="Run and move accordingly" />
+        <Option Value="5" Name="Run and move accordingly (move the nest)" />
+        <Option Value="6" Name="Walk to coordinates" />
+        <Option Value="7" Name="Run to coordinates" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

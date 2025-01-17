@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters relating to the player cameras."/>
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="LockCamParam" 
+    Name="Cameras" />
+  </DisplayNames>
+  
+  <Field>
+    <camDistTarget
+    AltName="Camera: Target Distance"
+    Wiki="The distance the camera is placed from the current target. In metres." />
+    
+    <rotRangeMinX
+    AltName="Rotation: Minimum X-Axis Value"
+    Wiki="The minimum rotational value on the X-axis for the camera. In degrees." />
+    
+    <lockRotXShiftRatio
+    AltName="Lock-on Rotation: Shift Ratio"
+    Wiki="The standard value of rotation * rotation shift rate. 0.0 is the centre of screen, 1.0 is the top, -1.0 is the bottom." />
+    
+    <chrOrgOffset_Y
+    AltName="Character: Height Offset"
+    Wiki="The height of the camera's look point (from the character's root position, when touching the ground). In metres." />
+    
+    <chrLockRangeMaxRadius
+    AltName="Character: Max Lock Radius"
+    Wiki="The maximum radius from the character's root position that the camera can be locked-on to." />
+    
+    <camFovY
+    AltName="Camera: Vertical Field of View"
+    Wiki="The vertical field of view to apply when active to the camera." />
+    
+    <pad
+    Padding="" />
+  </Field>
+</PARAMMETA>

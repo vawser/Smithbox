@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for character skeleton and foot inverse kinematics ." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="SkeletonParam" 
+    Name="Skeletons" />
+  </DisplayNames>
+  
+  <Field>
+    <neckTurnGain
+    AltName="Neck Turn Gain"
+    Wiki="The amount of gain for neck turning. The higher the value, the faster it turns." />
+    
+    <originalGroundHeightMS
+    AltName="Height from Origin to Ground"
+    Wiki="In metres." />
+    
+    <minAnkleHeightMS
+    AltName="Minimum Ankle Height"
+    Wiki="The minimum height at which the ankle can be raised. In metres." />
+    
+    <maxAnkleHeightMS
+    AltName="Maximum Ankle Height"
+    Wiki="The maximum height at which the ankle can be raised. In metres." />
+    
+    <cosineMaxKneeAngle
+    AltName="Maximum Bend Angle" 
+    Wiki="Maximum angle at which the knee can be bent (cosine value). In degrees." />
+    
+    <cosineMinKneeAngle
+    AltName="Minimum Bend Angle" 
+    Wiki="Minimum angle at which the knee can be bent (cosine value). In degrees." />
+    
+    <footPlantedAnkleHeightMS
+    AltName="Lowest Ankle Height" 
+    Wiki="If the ankle is lower than this height, assume they are together. In centimetres." />
+    
+    <footRaisedAnkleHeightMS
+    AltName="Highest Ankle Height" 
+    Wiki="If the ankle is higher than this height, assume they are apart. In centimetres." />
+    
+    <raycastDistanceUp
+    AltName="Ankle Raycast: Upward Distance" 
+    Wiki="The distance above the ankle at which the raycast occurs. In centimetres." />
+    
+    <raycastDistanceDown
+    AltName="Ankle Raycast: Downward Distance" 
+    Wiki="The distance below the ankle at which the raycast occurs. In centimetres." />
+    
+    <footEndLS_X
+    AltName="Toe Position: X" 
+    Wiki="The x-coordinate of the toe." />
+    
+    <footEndLS_Y
+    AltName="Toe Position: Y" 
+    Wiki="The y-coordinate of the toe." />
+    
+    <footEndLS_Z
+    AltName="Toe Position: Z" 
+    Wiki="The z-coordinate of the toe." />
+    
+    <onOffGain
+    AltName="Gain on IK Toggle"
+    Wiki="Determines the amount of gain applied when IK is toggled on and off." />
+    
+    <groundAscendingGain
+    AltName="Gain on Ground Height Increase"
+    Wiki="Determines the amount of gain applied when the ground height increases." />
+    
+    <groundDescendingGain
+    AltName="Gain on Ground Height Decrease"
+    Wiki="Determines the amount of gain applied when the ground height decreases." />
+    
+    <footRaisedGain
+    AltName="Gain on Foot Raise"
+    Wiki="Determines the amount of gain applied when a foot is raised." />
+    
+    <footPlantedGain
+    AltName="Gain on Foot Plant"
+    Wiki="Determines the amount of gain applied when a foot is planted to the ground." />
+    
+    <footUnlockGain
+    AltName="Gain on Foot Lock Toggle"
+    Wiki="Determines the amount of gain applied when a foot is locked or unlocked." />
+    
+    <kneeAxisType
+    AltName="Knee Axis Type"
+    Wiki="The axial direction of the knee to use."
+    Enum="SKELETON_PARAM_KNEE_AXIS_DIR" />
+    
+    <useFootLocking
+    AltName="Use Foot Locking"
+    Wiki="If ON, feet and ankles will be locked."
+    IsBool="" />
+    
+    <footPlacementOn
+    AltName="Use Foot Placement"
+    Wiki="If ON, foot placement is active."
+    IsBool="" />
+    
+    <twistKneeAxisType
+    AltName="Twist Knee Axis Type"
+    Wiki="Axial direction that ignores rotation of the knee joint for twisting." 
+    Enum="SKELETON_PARAM_KNEE_AXIS_DIR" />
+    
+    <neckTurnPriority
+    AltName="Neck Turn Priority"
+    Wiki="The lower it is, the faster it will turn. -1 does not turn the head." />
+    
+    <neckTurnMaxAngle
+    AltName="Neck Turn Maximum Rotation"
+    Wiki="The maximum rotation angle for this joint. Can't bend beyond this angle." />
+    
+    <pad1
+    Padding="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="SKELETON_PARAM_KNEE_AXIS_DIR">
+      <Option Value="0" Name="x" />
+      <Option Value="1" Name="y" />
+      <Option Value="2" Name="z" />
+      <Option Value="3" Name="-x" />
+      <Option Value="4" Name="-y" />
+      <Option Value="5" Name="-z" />
+	</Enum>
+  </Enums>
+</PARAMMETA>

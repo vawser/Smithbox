@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for enemy AI." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_AIStandardInfoBank" 
+    Name="Enemy AI Defaults" />
+  </DisplayNames>
+  
+  <Field>
+    <RadarRange
+    AltName="Recognition Distance"
+    Wiki="The distance at which characters are recognized. In metres." />
+    
+    <RadarAngleX
+    AltName="Horziontal Recognition Angle"
+    Wiki="The horziontal angle for the recognition check. In degrees." />
+    
+    <RadarAngleY
+    AltName="Vertical Recognition Angle"
+    Wiki="The vertical angle for the recognition check. In degrees." />
+    
+    <TerritorySize
+    AltName="Territory Distance"
+    Wiki="The distance of the owner's territory. If the recognized character leaves this distance, the owner will return to its initial position." />
+    
+    <ThreatBeforeAttackRate
+    AltName="Intimidation Probability before Attack"
+    Wiki="The probability of intimidation before an attack." />
+    
+    <ForceThreatOnFirstLocked
+    AltName="Force Initial Intimidation"
+    Wiki="If ON, always intimidate the player when recognizing the player for the first time." 
+    IsBool="" />
+    
+    <reserve0
+    Padding="" />
+    
+    <Attack1_Distance
+    AltName="Attack 1: Distance"
+    Wiki="The distance when attacking with this attack slot." />
+    
+    <Attack1_Margin
+    AltName="Attack 1: Margin"
+    Wiki="The distance to move between attacks with this attack slot. In metres." />
+    
+    <Attack1_Rate
+    AltName="Attack 1: Frequency"
+    Wiki="The frequency of this attack slot." />
+    
+    <Attack1_ActionID
+    AltName="Attack 1: Type" 
+    Wiki="The type of attack this attack slot is." 
+    Enum="ACTION_PATTERN" />
+    
+    <Attack1_DelayMin
+    AltName="Attack 1: Minimum Delay"
+    Wiki="The minimum delay after an attack that another one can occur. In frames." />
+    
+    <Attack1_DelayMax
+    AltName="Attack 1: Maximum Delay"
+    Wiki="The maximum delay after an attack that another one can occur. In frames." />
+    
+    <Attack1_ConeAngle
+    AltName="Attack 1: Allowed Angle"
+    Wiki="The allowable angle between the line of sight and the direction vector toward the target. If within this angle, then the attack will proceed. In degrees." />
+    
+    <reserve10
+    Padding="" />
+    
+    <Attack2_Distance
+    AltName="Attack 2: Distance"
+    Wiki="The distance when attacking with this attack slot." />
+    
+    <Attack2_Margin
+    AltName="Attack 2: Margin"
+    Wiki="The distance to move between attacks with this attack slot. In metres." />
+    
+    <Attack2_Rate
+    AltName="Attack 2: Frequency"
+    Wiki="The frequency of this attack slot." />
+    
+    <Attack2_ActionID
+    AltName="Attack 2: Type" 
+    Wiki="The type of attack this attack slot is." 
+    Enum="ACTION_PATTERN" />
+    
+    <Attack2_DelayMin
+    AltName="Attack 2: Minimum Delay"
+    Wiki="The minimum delay after an attack that another one can occur. In frames." />
+    
+    <Attack2_DelayMax
+    AltName="Attack 2: Maximum Delay"
+    Wiki="The maximum delay after an attack that another one can occur. In frames." />
+    
+    <Attack2_ConeAngle
+    AltName="Attack 2: Allowed Angle"
+    Wiki="The allowable angle between the line of sight and the direction vector toward the target. If within this angle, then the attack will proceed. In degrees." />
+    
+    <reserve11
+    Padding="" />
+    
+    <Attack3_Distance
+    AltName="Attack 3: Distance"
+    Wiki="The distance when attacking with this attack slot." />
+    
+    <Attack3_Margin
+    AltName="Attack 3: Margin"
+    Wiki="The distance to move between attacks with this attack slot. In metres." />
+    
+    <Attack3_Rate
+    AltName="Attack 3: Frequency"
+    Wiki="The frequency of this attack slot." />
+    
+    <Attack3_ActionID
+    AltName="Attack 3: Type" 
+    Wiki="The type of attack this attack slot is." 
+    Enum="ACTION_PATTERN" />
+    
+    <Attack3_DelayMin
+    AltName="Attack 3: Minimum Delay"
+    Wiki="The minimum delay after an attack that another one can occur. In frames." />
+    
+    <Attack3_DelayMax
+    AltName="Attack 3: Maximum Delay"
+    Wiki="The maximum delay after an attack that another one can occur. In frames." />
+    
+    <Attack3_ConeAngle
+    AltName="Attack 3: Allowed Angle"
+    Wiki="The allowable angle between the line of sight and the direction vector toward the target. If within this angle, then the attack will proceed. In degrees." />
+    
+    <reserve12
+    Padding="" />
+    
+    <Attack4_Distance
+    AltName="Attack 4: Distance"
+    Wiki="The distance when attacking with this attack slot." />
+    
+    <Attack4_Margin
+    AltName="Attack 4: Margin"
+    Wiki="The distance to move between attacks with this attack slot. In metres." />
+    
+    <Attack4_Rate
+    AltName="Attack 4: Frequency"
+    Wiki="The frequency of this attack slot." />
+    
+    <Attack4_ActionID
+    AltName="Attack 4: Type" 
+    Wiki="The type of attack this attack slot is." 
+    Enum="ACTION_PATTERN" />
+    
+    <Attack4_DelayMin
+    AltName="Attack 4: Minimum Delay"
+    Wiki="The minimum delay after an attack that another one can occur. In frames." />
+    
+    <Attack4_DelayMax
+    AltName="Attack 4: Maximum Delay"
+    Wiki="The maximum delay after an attack that another one can occur. In frames." />
+    
+    <Attack4_ConeAngle
+    AltName="Attack 4: Allowed Angle"
+    Wiki="The allowable angle between the line of sight and the direction vector toward the target. If within this angle, then the attack will proceed. In degrees." />
+    
+    <reserve13
+    Padding="" />
+    
+    <reserve_last
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="ACTION_PATTERN" type="u8">
+        <Option Value="0" Name="None" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for throws." 
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="ThrowParam" 
+    Name="Throws" />
+  </DisplayNames>
+  
+  <Field>
+    <AtkChrId
+    AltName="Attacker: Character ID"
+    Wiki="The character ID to define the attacker parameters for." />
+    
+    <DefChrId
+    AltName="Defender: Character ID"
+    Wiki="The character ID to define the defender parameters for." />
+    
+    <Dist
+    AltName="Allowed Distance"
+    Wiki="The maximum distance the throw is allowed to occur at. In metres." />
+    
+    <DiffAngMin
+    AltName="Angular Difference: Minimum"
+    Wiki="The minimum angular difference range between own direction and opponent's direction. In degrees." />
+    
+    <DiffAngMax
+    AltName="Angular Difference: Maximum"
+    Wiki="The maximum angular difference range between own direction and opponent's direction. In degrees." />
+    
+    <upperYRange
+    AltName="Maximum Relative Height"
+    Wiki="The throw will not proceed unless the relative distance of the Y-axis from the attacker to the defender is less than this value." />
+    
+    <lowerYRange
+    AltName="Minimum Relative Height"
+    Wiki="The throw will not proceed unless the relative distance of the Y-axis from the attacker to the defender is above this value." />
+    
+    <diffAngMyToDef
+    AltName="Maximum Angular Difference"
+    Wiki="The angular difference between the vector in front of the attacker and the vector in the direction from the attacker to the defender. If it is larger than this value, the throw will not proceed." />
+    
+    <throwTypeId
+    AltName="Throw Type ID"
+    Wiki="The throw type ID for this throw. Linked to the throwTypeId field in the AtkParam." />
+    
+    <atkAnimId
+    AltName="Attacker: Animation ID"
+    Wiki="The animation ID for the attacker when performing the throw (linked with EzState)." />
+    
+    <defAnimId
+    AltName="Defender: Animation ID"
+    Wiki="The animation ID for the defender when performing the throw (linked with EzState)." />
+    
+    <escHp
+    AltName="Throw Escape Resistance"
+    Wiki="The amount of 'HP' the throw has. A player can 'resist' the throw, reducing the throw's resistance per escape cycle. If the resistance is lower than 0, the player is released from the throw." />
+    
+    <selfEscCycleTime
+    AltName="Throw Escape Cycle Duration"
+    Wiki="The duration of the throw escape cycle for the player. This is the interval that the player can reduce the throw's resistance in. In milliseconds." />
+    
+    <sphereCastRadiusRateTop
+    AltName="Sphere Cast: Upper Radius %"
+    Wiki="The ratio of the upper radius when using the sphere cast (this determines if a throw connects)." />
+    
+    <sphereCastRadiusRateLow
+    AltName="Sphere Cast: Lower Radius %"
+    Wiki="The ratio of the lower radius when using the sphere cast (this determines if a throw connects)." />
+    
+    <PadType
+    AltName="Operation Type"
+    Wiki="The operation type for the throw." 
+    Enum="THROW_PAD_TYPE" />
+    
+    <AtkEnableState
+    AltName="Attacker State Type"
+    Wiki="The state type in which the attacker may perform the throw." 
+    Enum="THROW_ENABLE_STATE" />
+    
+    <atkSorbDmyId
+    AltName="Attacker: Attraction Dummy Polygon ID"
+    Wiki="The dummy polygon used to spawn the sphere cast which determines if a throw connects." />
+    
+    <defSorbDmyId
+    AltName="Defender: Attraction Dummy Polygon ID"
+    Wiki="The dummy polygon used to spawn the sphere cast which determines if a throw connects." />
+    
+    <throwType
+    AltName="Throw Type"
+    Wiki="The throw type for this throw." 
+    Enum="THROW_TYPE" />
+    
+    <selfEscCycleCnt
+    AltName="Throw Escape Cycle Count"
+    Wiki="The number of throw escape cycles a player has during this throw." />
+    
+    <dmyHasChrDirType
+    AltName="Throw Direction Type"
+    Wiki="The direction of the throw hold dummy polygon ID when a throw occurs." 
+    Enum="THROW_DMY_CHR_DIR_TYPE" />
+    
+    <isTurnAtker
+    AltName="Attacker can Turn"
+    Wiki="If ON, the attacker can turn during the throw." 
+    IsBool="" />
+    
+    <isSkipWepCate
+    AltName="Skip Weapon Category Check"
+    Wiki="If ON, the attacker's weapon category check is skipped." 
+    IsBool="" />
+    
+    <isSkipSphereCast
+    AltName="Skip Sphere Cast"
+    Wiki="If ON, the sphere cast is skipped." 
+    IsBool="" />
+    
+    <pad0
+    Padding="" />
+    
+    <pad1
+    Padding="" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="THROW_PAD_TYPE">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="R1" />
+        <Option Value="2" Name="L1" />
+        <Option Value="3" Name="R1 + Up" />
+        <Option Value="4" Name="L1 + Up" />
+        <Option Value="5" Name="Cross" />
+    </Enum>
+    <Enum Name="THROW_ENABLE_STATE">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Waiting" />
+        <Option Value="2" Name="In stealth" />
+        <Option Value="255" Name="Never" />
+    </Enum>
+    <Enum Name="THROW_TYPE">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Normal (player)" />
+        <Option Value="2" Name="Stealth" />
+        <Option Value="8" Name="Parry" />
+        <Option Value="9" Name="Coffin" />
+        <Option Value="10" Name="Falling" />
+        <Option Value="11" Name="Boosted Normal" />
+        <Option Value="12" Name="Boosted Parry" />
+        <Option Value="13" Name="Soul Drain" />
+        <Option Value="14" Name="Boosted Coffin" />
+        <Option Value="15" Name="Boosted Falling" />
+        <Option Value="16" Name="Boosted Soul Drain" />
+    </Enum>
+    <Enum Name="THROW_DMY_CHR_DIR_TYPE">
+        <Option Value="0" Name="Turn towards defender" />
+        <Option Value="1" Name="Turn away from defender" />
+        <Option Value="255" Name="Do nothing" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

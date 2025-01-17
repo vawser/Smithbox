@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for environmental lighting textures." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m10_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m11_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m12_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m13_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m14_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m15_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m15_1_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m16_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m17_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m18_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+    
+    <NameEntry 
+    Param="m99_EnvLightTexBank" 
+    Name="Environmental Light Texture" />
+  </DisplayNames>
+  
+  <Field>
+    <isUse
+    AltName="Enable"
+    Wiki="If ON, this row is enabled."
+    IsBool="" />
+    
+    <autoUpdate
+    AltName="Automatic Update"
+    Wiki="If ON, this row automatically updates."
+    IsBool="" />
+    
+    <pad_0
+    Padding="" />
+    
+    <invMulCol
+    AltName="Base: RGB Reverse Magnification %"
+    Wiki="All light colors are multiplied by the reciprocal of this value." 
+    Separator="" />
+    
+    <resNameId_Dif0
+    AltName="Diffuse 0: Resource Name ID"
+    Wiki="The texture filename to use for this texture." 
+    Separator="" />
+    
+    <invMulCol_Dif0
+    AltName="Diffuse 0: RGB Reverse Magnification %"
+    Wiki="All light colors are multiplied by the reciprocal of this value." />
+    
+    <sepcPow_Dif0
+    AltName="Diffuse 0: Specular Power"
+    Wiki="The specular power used for this texture." />
+    
+    <pad_Dif0
+    Padding="" />
+    
+    <resNameId_Spc0
+    AltName="Specular 0: Resource Name ID"
+    Wiki="The texture filename to use for this texture." 
+    Separator="" />
+    
+    <invMulCol_Spc0
+    AltName="Specular 0: RGB Reverse Magnification %"
+    Wiki="All light colors are multiplied by the reciprocal of this value." />
+    
+    <sepcPow_Spc0
+    AltName="Specular 0: Specular Power"
+    Wiki="The specular power used for this texture." />
+    
+    <pad_Spc0
+    Padding="" />
+    
+    <resNameId_Spc1
+    AltName="Specular 1: Resource Name ID"
+    Wiki="The texture filename to use for this texture." 
+    Separator="" />
+    
+    <invMulCol_Spc1
+    AltName="Specular 1: RGB Reverse Magnification %"
+    Wiki="All light colors are multiplied by the reciprocal of this value." />
+    
+    <sepcPow_Spc1
+    AltName="Specular 1: Specular Power"
+    Wiki="The specular power used for this texture." />
+    
+    <pad_Spc1
+    Padding="" />
+    
+    <resNameId_Spc2
+    AltName="Specular 2: Resource Name ID"
+    Wiki="The texture filename to use for this texture." 
+    Separator="" />
+    
+    <invMulCol_Spc2
+    AltName="Specular 2: RGB Reverse Magnification %"
+    Wiki="All light colors are multiplied by the reciprocal of this value." />
+    
+    <sepcPow_Spc2
+    AltName="Specular 2: Specular Power"
+    Wiki="The specular power used for this texture." />
+    
+    <pad_Spc2
+    Padding="" />
+    
+    <resNameId_Spc3
+    AltName="Specular 3: Resource Name ID"
+    Wiki="The texture filename to use for this texture." 
+    Separator="" />
+    
+    <invMulCol_Spc3
+    AltName="Specular 3: RGB Reverse Magnification %"
+    Wiki="All light colors are multiplied by the reciprocal of this value." />
+    
+    <sepcPow_Spc3
+    AltName="Specular 3: Specular Power"
+    Wiki="The specular power used for this texture." />
+    
+    <pad_Spc3
+    Padding="" />
+    
+    <degRotX_00
+    AltName="Light Source 0: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_00
+    AltName="Light Source 0: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_00
+    AltName="Light Source 0: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_00
+    AltName="Light Source 0: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_00
+    AltName="Light Source 0: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_00
+    AltName="Light Source 0: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_00
+    Padding="" />
+    
+    <degRotX_01
+    AltName="Light Source 1: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_01
+    AltName="Light Source 1: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_01
+    AltName="Light Source 1: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_01
+    AltName="Light Source 1: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_01
+    AltName="Light Source 1: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_01
+    AltName="Light Source 1: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_01
+    Padding="" />
+    
+    <degRotX_02
+    AltName="Light Source 2: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_02
+    AltName="Light Source 2: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_02
+    AltName="Light Source 2: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_02
+    AltName="Light Source 2: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_02
+    AltName="Light Source 2: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_02
+    AltName="Light Source 2: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_02
+    Padding="" />
+    
+    <degRotX_03
+    AltName="Light Source 3: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_03
+    AltName="Light Source 3: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_03
+    AltName="Light Source 3: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_03
+    AltName="Light Source 3: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_03
+    AltName="Light Source 3: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_03
+    AltName="Light Source 3: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_03
+    Padding="" />
+    
+    <degRotX_04
+    AltName="Light Source 4: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_04
+    AltName="Light Source 4: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_04
+    AltName="Light Source 4: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_04
+    AltName="Light Source 4: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_04
+    AltName="Light Source 4: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_04
+    AltName="Light Source 4: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_04
+    Padding="" />
+    
+    <degRotX_05
+    AltName="Light Source 5: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_05
+    AltName="Light Source 5: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_05
+    AltName="Light Source 5: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_05
+    AltName="Light Source 5: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_05
+    AltName="Light Source 5: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_05
+    AltName="Light Source 5: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_05
+    Padding="" />
+    
+    <degRotX_06
+    AltName="Light Source 6: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_06
+    AltName="Light Source 6: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_06
+    AltName="Light Source 6: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_06
+    AltName="Light Source 6: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_06
+    AltName="Light Source 6: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_06
+    AltName="Light Source 6: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_06
+    Padding="" />
+    
+    <degRotX_07
+    AltName="Light Source 7: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_07
+    AltName="Light Source 7: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_07
+    AltName="Light Source 7: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_07
+    AltName="Light Source 7: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_07
+    AltName="Light Source 7: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_07
+    AltName="Light Source 7: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_07
+    Padding="" />
+    
+    <degRotX_08
+    AltName="Light Source 8: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_08
+    AltName="Light Source 8: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_08
+    AltName="Light Source 8: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_08
+    AltName="Light Source 8: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_08
+    AltName="Light Source 8: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_08
+    AltName="Light Source 8: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_08
+    Padding="" />
+    
+    <degRotX_09
+    AltName="Light Source 9: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_09
+    AltName="Light Source 9: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_09
+    AltName="Light Source 9: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_09
+    AltName="Light Source 9: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_09
+    AltName="Light Source 9: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_09
+    AltName="Light Source 9: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <pad_09
+    Padding="" />
+  </Field>
+  <ColorEdit>
+    <ColorEditor 
+    Name="Light Source 0" 
+    Fields="colR_00,colG_00,colB_00" 
+    PlacedField="colA_00" />
+    
+    <ColorEditor 
+    Name="Light Source 1" 
+    Fields="colR_01,colG_01,colB_01" 
+    PlacedField="colA_01" />
+    
+    <ColorEditor 
+    Name="Light Source 2" 
+    Fields="colR_02,colG_02,colB_02" 
+    PlacedField="colA_02" />
+    
+    <ColorEditor 
+    Name="Light Source 3" 
+    Fields="colR_03,colG_03,colB_03" 
+    PlacedField="colA_03" />
+    
+    <ColorEditor 
+    Name="Light Source 4" 
+    Fields="colR_04,colG_04,colB_04" 
+    PlacedField="colA_04" />
+    
+    <ColorEditor 
+    Name="Light Source 5" 
+    Fields="colR_05,colG_05,colB_05" 
+    PlacedField="colA_05" />
+    
+    <ColorEditor 
+    Name="Light Source 6" 
+    Fields="colR_06,colG_06,colB_06" 
+    PlacedField="colA_06" />
+    
+    <ColorEditor 
+    Name="Light Source 7" 
+    Fields="colR_07,colG_07,colB_07" 
+    PlacedField="colA_07" />
+    
+    <ColorEditor 
+    Name="Light Source 8" 
+    Fields="colR_08,colG_08,colB_08" 
+    PlacedField="colA_08" />
+    
+    <ColorEditor 
+    Name="Light Source 9" 
+    Fields="colR_09,colG_09,colB_09" 
+    PlacedField="colA_09" />
+    
+  </ColorEdit>
+</PARAMMETA>

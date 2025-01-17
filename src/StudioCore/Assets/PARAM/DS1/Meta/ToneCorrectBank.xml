@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for tone map corrections." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m10_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m11_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m12_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m13_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m14_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m15_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m15_1_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m16_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m17_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m18_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+    
+    <NameEntry 
+    Param="m99_ToneCorrectBank" 
+    Name="Tone Map Correction" />
+  </DisplayNames>
+  
+  <Field>
+    <brightnessR
+    AltName="Brightness %: R"
+    Wiki="Multiplier to red component of the RGB color that corrects the brightness." />
+    
+    <brightnessG
+    AltName="Brightness %: G"
+    Wiki="Multiplier to green component of the RGB color that corrects the brightness." />
+    
+    <brightnessB
+    AltName="Brightness %: B"
+    Wiki="Multiplier to blue component of the RGB color that corrects the brightness." />
+    
+    <contrastR
+    AltName="Contrast %: R"
+    Wiki="Multiplier to red component of the RGB color that corrects the contrast." />
+    
+    <contrastG
+    AltName="Contrast %: G"
+    Wiki="Multiplier to green component of the RGB color that corrects the contrast." />
+    
+    <contrastB
+    AltName="Contrast %: B"
+    Wiki="Multiplier to blue component of the RGB color that corrects the contrast." />
+    
+    <saturation
+    AltName="Saturation %"
+    Wiki="Multiplier to the value that corrects the saturation" />
+    
+    <hue
+    AltName="Hue %"
+    Wiki="Multiplier to the value that corrects the hue" />
+    
+    <sfxMultiplier
+    AltName="Particle Multiplier"
+    Wiki="Multiplier to the amount of particles used." />
+  </Field>
+  
+</PARAMMETA>

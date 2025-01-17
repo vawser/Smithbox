@@ -1,20 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for reinforcing armor." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="ReinforceParamProtector" 
+    Name="Armor Reinforcement" />
+  </DisplayNames>
+  
   <Field>
-    <physicsDefRate />
-    <magicDefRate />
-    <fireDefRate />
-    <thunderDefRate />
-    <slashDefRate />
-    <blowDefRate />
-    <thrustDefRate />
-    <resistPoisonRate />
-    <resistDiseaseRate />
-    <resistBloodRate />
-    <resistCurseRate />
-    <residentSpEffectId1 Wiki="ID offset applied to armor's residentSpEffectId1" />
-    <residentSpEffectId2 Wiki="ID offset applied to armor's residentSpEffectId2" />
-    <residentSpEffectId3 Wiki="ID offset applied to armor's residentSpEffectId3" />
-    <materialSetId Wiki="ID offset applied to armor's materialSetId" />
+    <physicsDefRate 
+    AltName="Physical Defense"
+    Wiki="The multiplier to apply to base physical defense for this tier of reinforcement." />
+    
+    <magicDefRate 
+    AltName="Magic Defense"
+    Wiki="The multiplier to apply to base magic defense for this tier of reinforcement." />
+    
+    <fireDefRate 
+    AltName="Fire Defense"
+    Wiki="The multiplier to apply to base fire defense for this tier of reinforcement." />
+    
+    <thunderDefRate 
+    AltName="Lightning Defense"
+    Wiki="The multiplier to apply to base lightning defense for this tier of reinforcement." />
+    
+    <slashDefRate 
+    AltName="Slash Defense"
+    Wiki="The multiplier to apply to base slash defense for this tier of reinforcement." />
+    
+    <blowDefRate 
+    AltName="Strike Defense"
+    Wiki="The multiplier to apply to base strike defense for this tier of reinforcement." />
+    
+    <thrustDefRate 
+    AltName="Thrust Defense"
+    Wiki="The multiplier to apply to base thrust defense for this tier of reinforcement." />
+    
+    <resistPoisonRate 
+    AltName="Poison Resistance"
+    Wiki="The multiplier to apply to base poison resistance for this tier of reinforcement." />
+    
+    <resistDiseaseRate 
+    AltName="Toxic Resistance"
+    Wiki="The multiplier to apply to base toxic resistance for this tier of reinforcement." />
+    
+    <resistBloodRate 
+    AltName="Bleed Resistance"
+    Wiki="The multiplier to apply to base bleed resistance for this tier of reinforcement." />
+    
+    <resistCurseRate 
+    AltName="Curse Resistance"
+    Wiki="The multiplier to apply to base curse resistance for this tier of reinforcement." />
+    
+    <residentSpEffectId1 
+    AltName="Resident SpEffect Offset: 1"
+    Wiki="The ID offset applied to the armor's residentSpEffectId1 field value." />
+    
+    <residentSpEffectId2 
+    AltName="Resident SpEffect Offset: 2"
+    Wiki="The ID offset applied to the armor's residentSpEffectId2 field value." />
+    
+    <residentSpEffectId3 
+    AltName="Resident SpEffect Offset: 3"
+    Wiki="The ID offset applied to the armor's residentSpEffectId3 field value." />
+    
+    <materialSetId 
+    AltName="Material Set Offset"
+    Wiki="The ID offset applied to the armor's materialSetId field value." />
   </Field>
 </PARAMMETA>

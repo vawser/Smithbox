@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for enemy behavior and collision." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_EnemyBehaviorBank" 
+    Name="Enemy Behavior Defaults" />
+  </DisplayNames>
+  
+  <Field>
+    <EnemyBehaviorID
+    AltName="Behavior ID"
+    Wiki="The behavior ID this enemy uses."
+    Enum="ENEMY_BEHAVIOR_ID" />
+    
+    <HP
+    AltName="HP"
+    Wiki="The HP this enemy has." />
+    
+    <AttackPower
+    AltName="Attack Power"
+    Wiki="The attack power this enemy has." />
+    
+    <ChrType
+    AltName="Character Type"
+    Wiki="The character type of this enemy."
+    Enum="CHR_TYPE" />
+    
+    <HitHeight
+    AltName="Collision Height"
+    Wiki="The height of the enemy collision capsule. In metres." />
+    
+    <HitRadius
+    AltName="Collision Radius"
+    Wiki="The radius of the enemy collision capsule. In metres." />
+    
+    <Weight
+    AltName="Weight" 
+    Wiki="The weight of this enemy (for physics)." />
+    
+    <DynamicFriction
+    AltName="Dynamic Friction"
+    Wiki="The dynamic friction force used for this enemy (for physics)." />
+    
+    <StaticFriction
+    AltName="Static Friction"
+    Wiki="The static friction force used for this enemy (for physics)." />
+    
+    <UpperDefState
+    AltName="Initial State: Upper Body"
+    Wiki="The initial state of this enemy's upper body." />
+    
+    <ActionDefState
+    AltName="Initial State: Action"
+    Wiki="The initial state of action this enemy has." />
+    
+    <RotY_per_Second
+    AltName="Y-Axis Rotation Rate"
+    Wiki="The rotation rate on the y-axis for this enemy. In degrees per second." />
+    
+    <reserve0
+    Padding="" />
+    
+    <RotY_per_Second_old
+    AltName="Y-Axis Rotation Rate"
+    Wiki="The rotation rate on the y-axis for this enemy. In degrees per second." 
+    Obsolete="" />
+    
+    <EnableSideStep
+    AltName="Enable Sidestep"
+    Wiki="If ON, the enemy can side-step left and right."
+    IsBool="" />
+    
+    <UseRagdollHit
+    AltName="Enable Ragdoll"
+    Wiki="If ON, then ragdoll collision is used for this enemy."
+    IsBool="" />
+    
+    <reserve_last
+    Padding="" />
+    
+    <stamina
+    AltName="Stamina"
+    Wiki="The total amount of stamina this enemy has." />
+    
+    <staminaRecover
+    AltName="Stamina Recovery"
+    Wiki="The recovery rate per second for stamina this enemy uses." />
+    
+    <staminaConsumption
+    AltName="Stamina Consumption"
+    Wiki="The base value of stamina consumption this enemy expends when attacking or guarding." />
+    
+    <deffenct_Phys
+    AltName="Physical Defense"
+    Wiki="The base defense against physical damage." />
+    
+    <reserve_last2
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="ENEMY_BEHAVIOR_ID" type="s32">
+    </Enum>
+    <Enum Name="CHR_TYPE" type="s32">
+    </Enum>
+  </Enums>
+</PARAMMETA>

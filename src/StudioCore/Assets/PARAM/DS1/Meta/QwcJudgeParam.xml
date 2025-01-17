@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for world tendency effects." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="QwcJudge" 
+    Name="World Tendency Effects" />
+  </DisplayNames>
+  
+  <Field>
+    <pcJudgeUnderWB
+    AltName="Player: Black Condition"
+    Wiki="The value that triggers the black player world tendency state." />
+    
+    <pcJudgeTopWB
+    AltName="Player: White Condition"
+    Wiki="The value that triggers the white player world tendency state." />
+    
+    <pcJudgeUnderLR
+    AltName="Player: Left Condition"
+    Wiki="The value that triggers the left player world tendency state." />
+    
+    <pcJudgeTopLR
+    AltName="Player: Right Condition"
+    Wiki="The value that triggers the right player world tendency state." />
+    
+    <areaJudgeUnderWB
+    AltName="Area: Black Condition"
+    Wiki="The value that triggers the black area world tendency state." />
+    
+    <areaJudgeTopWB
+    AltName="Area: White Condition"
+    Wiki="The value that triggers the white area world tendency state." />
+    
+    <areaJudgeUnderLR
+    AltName="Area: Left Condition"
+    Wiki="The value that triggers the left area world tendency state." />
+    
+    <areaJudgeTopLR
+    AltName="Area: Right Condition"
+    Wiki="The value that triggers the right area world tendency state." />
+    
+  </Field>
+</PARAMMETA>

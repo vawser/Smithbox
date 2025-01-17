@@ -1,129 +1,460 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the hitbox and damage parameters for attacks." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="AtkParam_Npc" 
+    Name="Attacks: NPC" />
+    
+    <NameEntry 
+    Param="AtkParam_Pc" 
+    Name="Attacks: Player" />
+  </DisplayNames>
+  
+  <Field>
+    <hit0_Radius 
+    AltName="Hit 0: Radius" 
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
+    
+    <hit1_Radius 
+    AltName="Hit 1: Radius" 
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
+    
+    <hit2_Radius 
+    AltName="Hit 2: Radius" 
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
+    
+    <hit3_Radius 
+    AltName="Hit 3: Radius" 
+    Wiki="Determines the radius of the hitbox (sphere/capsule)." />
+    
+    <knockbackDist 
+    AltName="Knockback Distance" 
+    Wiki="Determines the distance the victim is knocked back by. In metres per second." />
+    
+    <hitStopTime 
+    AltName="Hit Stop Time" 
+    Wiki="The duration that the victim's animations are paused for when hit. In seconds." />
+    
+    <spEffectId0 
+    AltName="SpEffect ID: 0" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId1 
+    AltName="SpEffect ID: 1" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId2 
+    AltName="SpEffect ID: 2" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId3 
+    AltName="SpEffect ID: 3" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId4 
+    AltName="SpEffect ID: 4" 
+    Wiki="SpEffect ID applied to victim by this attack." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <hit0_DmyPoly1 
+    AltName="Hit 0: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
+    
+    <hit1_DmyPoly1 
+    AltName="Hit 1: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
+    
+    <hit2_DmyPoly1 
+    AltName="Hit 2: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
+    
+    <hit3_DmyPoly1 
+    AltName="Hit 3: Initial Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit." />
+    
+    <hit0_DmyPoly2 
+    AltName="Hit 0: Secondary Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
+    
+    <hit1_DmyPoly2 
+    AltName="Hit 1: Secondary Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
+    
+    <hit2_DmyPoly2 
+    AltName="Hit 2: Secondary Dummy Polygon ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
+    
+    <hit3_DmyPoly2 
+    AltName="Hit 3: Secondary Dummy Poly ID" 
+    Wiki="The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit." />
+    
+    <blowingCorrection 
+    AltName="Attack Correction: Blow-off" 
+    Wiki="The multiplier to apply to the base blow-off value." />
+    
+    <atkPhysCorrection 
+    AltName="Attack Correction: Physical" 
+    Wiki="The multiplier to apply to the base Physical attack value." />
+    
+    <atkMagCorrection 
+    AltName="Attack Correction: Magic" 
+    Wiki="The multiplier to apply to the base Magic attack value." />
+    
+    <atkFireCorrection 
+    AltName="Attack Correction: Fire" 
+    Wiki="The multiplier to apply to the base Fire attack value." />
+    
+    <atkThunCorrection 
+    AltName="Attack Correction: Lightning" 
+    Wiki="The multiplier to apply to the base Lightning attack value." />
+    
+    <atkStamCorrection 
+    AltName="Attack Correction: Stamina" 
+    Wiki="The multiplier to apply to the base stamina attack value." />
+    
+    <guardAtkRateCorrection 
+    AltName="Attack Correction: Guard Attack" 
+    Wiki="The multiplier to apply to the base guard attack value. Compared against the deflection defense value to determine if the attack will bounce." />
+    
+    <guardBreakCorrection 
+    AltName="Attack Correction: Guard Defense" 
+    Wiki="Player only. The multiplier to the base guard defense value. Compared against the deflection attack value to determine if the attack will bounce." />
+    
+    <atkThrowEscapeCorrection 
+    AltName="Attack Correction: Throw Attack" 
+    Wiki="The multiplier to apply to the base throw attack value." />
+    
+    <atkSuperArmorCorrection
+    AltName="Attack Correction: Poise"
+    Wiki="Player only. The multiplier to apply to the base poise attack value." />
+    
+    <atkPhys 
+    AltName="Damage: Kinetic" 
+    Wiki="The base Kinetic attack value. Used primarily for NPC attacks." />
+    
+    <atkMag 
+    AltName="Damage: Energy" 
+    Wiki="The base Energy attack value. Used primarily for NPC attacks." />
+    
+    <atkFire 
+    AltName="Damage: Explosive" 
+    Wiki="The base Explosive attack value. Used primarily for NPC attacks." />
+    
+    <atkThun 
+    AltName="Damage: Coral" 
+    Wiki="The base Coral attack value. Used primarily for NPC attacks." />
+    
+    <atkStam 
+    AltName="Damage: Stamina" 
+    Wiki="The base stamina attack value." />
+    
+    <guardAtkRate 
+    AltName="Damage: Guard Attack" 
+    Wiki="The base guard attack value. Compared against the guard defense value to determine if the attack will bounce." />
+    
+    <guardBreakRate 
+    AltName="Damage: Guard Defense" 
+    Wiki="The base guard defense value. Compared against the guard attack value to determine if the attack will bounce." />
+    
+    <atkSuperArmor 
+    AltName="Damage: Poise" 
+    Wiki="The base poise attack value." />
+    
+    <atkThrowEscape 
+    AltName="Damage: Throw Attack" 
+    Wiki="The base throw attack value." />
+    
+    <atkObj 
+    AltName="Damage: Object Destruction" 
+    Wiki="The base object destruction value. Applied to the object's HP." />
+    
+    <guardStaminaCutRate 
+    AltName="Guard Absorption Correction: Stamina" 
+    Wiki="The multiplier to apply to the reduction of stamina damage when guarding. Positive values increase guard stability, negative values decrease it." />
+    
+    <guardRate 
+    AltName="Guard Absorption" 
+    Wiki="The multiplier to apply to the guard absorption value from the weapon. 0, 1x / 100, 2x / -100, guard multiplier = (guard multiplier / 100) to increase / decrease the parameter to 0. + 1)" />
+    
+    <throwTypeId 
+    AltName="Throw Type ID" 
+    Wiki="The throw type ID to use with this attack against the victim." />
+    
+    <hit0_hitType 
+    AltName="Hit 0: Hit Type"
+    Wiki="The hit collision type for this hit slot." 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit1_hitType 
+    AltName="Hit 1: Hit Type" 
+    Wiki="The hit collision type for this hit slot." 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit2_hitType 
+    AltName="Hit 2: Hit Type" 
+    Wiki="The hit collision type for this hit slot." 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hit3_hitType 
+    AltName="Hit 3: Hit Type" 
+    Wiki="The hit collision type for this hit slot." 
+    Enum="ATK_PARAM_HIT_TYPE" />
+    
+    <hti0_Priority 
+    AltName="Hit 0: Priority" 
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti1_Priority 
+    AltName="Hit 1: Priority" 
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti2_Priority 
+    AltName="Hit 2: Priority" 
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <hti3_Priority 
+    AltName="Hit 3: Priority" 
+    Wiki="The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    
+    <dmgLevel 
+    AltName="Damage Level: Hostile" 
+    Wiki="The damage animation to apply to the victim of this attack." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <mapHitType 
+    AltName="Map Hit Type" 
+    Wiki="Which map do you see around the attack? The set" 
+    Enum="ATK_PARAM_MAP_HIT" />
+    
+    <guardCutCancelRate 
+    AltName="Guard Absorption Invalidation" 
+    Wiki="Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become " />
+    
+    <atkAttribute 
+    AltName="Attack Attribute" 
+    Wiki="Attack attribute to use when applying attack against the victim." 
+    Enum="ATKPARAM_ATKATTR_TYPE" />
+    
+    <spAttribute 
+    AltName="Special Attribute" 
+    Wiki="Special attributes to use when applying attack against the victim." 
+    Enum="ATKPARAM_SPATTR_TYPE" />
+    
+    <atkType 
+    AltName="Attack Presentation Type" 
+    Wiki="Specify the particles and sounds at the time of attack (1 set by attribute, material, size)." 
+    Enum="BEHAVIOR_ATK_TYPE" />
+    
+    <atkMaterial 
+    AltName="Attack Presentation: Material" 
+    Wiki="Specify the particles and sounds at the time of attack (1 set by attribute, material, size)." 
+    Enum="WEP_MATERIAL_ATK" />
+    
+    <atkSize 
+    AltName="Attack Presentation: Size"
+    Wiki="Specify particles and sounds at the time of attack (Although it is reserved, it is used, so be sure to set it blank or small)."
+    Enum="BEHAVIOR_ATK_SIZE" />
+    
+    <defMaterial 
+    AltName="Defense Presentation: Material" 
+    Wiki="Specify the particles and sounds when guarding against this attack. (1 set by attribute, material, size)." 
+    Enum="WEP_MATERIAL_ATK" />
+    
+    <defSfxMaterial 
+    AltName="Defense Presentation: Particles" 
+    Wiki="The particles used when guarding against this attack." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <hitSourceType 
+    AltName="Hit Source Type" 
+    Wiki="The source of the dummy Polygon ID to use for this attack." 
+    Enum="ATK_PARAM_HIT_SOURCE" />
+    
+    <throwFlag 
+    AltName="Throw Type" 
+    Wiki="The flag used to determine the throwing parameters for this attack." 
+    Enum="ATK_PATAM_THROWFLAG_TYPE" />
+    
+    <disableGuard 
+    AltName="Ignore Guard" 
+    Wiki="If ON, then this attack ignores the victim's guard and applies the damage animation automatically." 
+    IsBool="" />
+    
+    <disableStaminaAttack 
+    AltName="Disable Guard Drain" 
+    Wiki="If ON, then this attack will not reduce the victim's stamina as a result of them guarding the attack." 
+    IsBool="" />
+    
+    <disableHitSpEffect 
+    AltName="Disable Hit SpEffect" 
+    Wiki="If ON, then this attack will not apply on-hit SpEffects to the victim." 
+    IsBool="" />
+    
+    <IgnoreNotifyMissSwingForAI 
+    AltName="Disable Missed Attack Notification" 
+    Wiki="If ON, then the enemy AI is not given notification of a missed attack." 
+    IsBool="" />
+    
+    <repeatHitSfx 
+    AltName="Repeat Hit Particles" 
+    Wiki="If ON, does the on-hit SFX for this attack repeat forever upon collision." 
+    IsBool="" />
+    
+    <isArrowAtk 
+    AltName="Enable Part Destruction" 
+    Wiki="If ON, then this attack will count as damage to a destructable enemy part." 
+    IsBool="" />
+    
+    <isGhostAtk 
+    AltName="Enable Ghost Destruction" 
+    Wiki="If ON, then this attack will count as damage to a ghost enemy." 
+    IsBool="" />
+    
+    <isDisableNoDamage 
+    AltName="Ignore Invulnerability Frames" 
+    Wiki="If ON, then invulnerability frames (such as roll frames) are ignored by this attack. Complete invulnerability is NOT ignored however." 
+    IsBool="" />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+  </Field>
   <Enums>
-    <Enum Name="HitType">
-      <Option Value="0" Name="Default" />
-      <Option Value="2" Name="Deflect off of map and object collisions" />
+    <Enum Name="ATK_PARAM_HIT_TYPE" type="u8">
+      <Option Value="0" Name="Normal (tip)" />
+      <Option Value="1" Name="Middle" />
+      <Option Value="2" Name="Root" />
+      <Option Value="3" Name="Map Collision Detection" />
     </Enum>
-    <Enum Name="DmgLevel">
-      <Option Value="0" Name="dmgLv_None" />
-      <Option Value="1" Name="dmgLv_S" />
-      <Option Value="2" Name="dmgLv_M" />
-      <Option Value="3" Name="dmgLv_L" />
-      <Option Value="4" Name="dmgLv_BlowM" />
-      <Option Value="5" Name="dmgLv_Push" />
-      <Option Value="6" Name="dmgLv_Strike" />
-      <Option Value="7" Name="dmgLv_BlowS" />
-      <Option Value="8" Name="dmgLv_Min" />
-      <Option Value="9" Name="dmgLv_Uppercut" />
-      <Option Value="10" Name="dmgLv_BlowL" />
-      <Option Value="11" Name="dmgLv_Breath" />
+    <Enum Name="ATKPARAM_REP_DMGTYPE" type="u8">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="No Stagger" />
+        <Option Value="2" Name="Unavailable" />
+        <Option Value="3" Name="Addition" />
+        <Option Value="4" Name="Hit Stop" />
+        <Option Value="5" Name="Small Stagger" />
+        <Option Value="6" Name="Unavailable" />
+        <Option Value="7" Name="Large Stagger" />
+        <Option Value="8" Name="Unavailable" />
+        <Option Value="9" Name="Unavailable" />
+        <Option Value="10" Name="Blown Away" />
+        <Option Value="11" Name="Unavailable" />
+        <Option Value="12" Name="Unavailable" />
     </Enum>
-    <Enum Name="AtkAttribute">
-      <Option Value="1" Name="Slash" />
-      <Option Value="2" Name="Strike" />
-      <Option Value="3" Name="Thrust" />
-      <Option Value="4" Name="Normal" />
+    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Slash" />
+        <Option Value="2" Name="Strike" />
+        <Option Value="3" Name="Thrust" />
+        <Option Value="4" Name="Push" />
     </Enum>
-    <Enum Name="SpAttribute">
-      <Option Value="1" Name="Normal" />
-      <Option Value="2" Name="Fire" />
-      <Option Value="3" Name="Magic" />
-      <Option Value="4" Name="Poison" />
-      <Option Value="5" Name="Unused (Egg)" />
-      <Option Value="6" Name="Lightning" />
-      <Option Value="7" Name="Petrification" />
-      <Option Value="8" Name="Crystal" />
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+        <Option Value="0" Name="Do not overwrite" />
+        <Option Value="1" Name="None" />
+        <Option Value="2" Name="Fire" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Poison" />
+        <Option Value="5" Name="Egg" />
+        <Option Value="6" Name="Lightning" />
+        <Option Value="7" Name="Petrification" />
+        <Option Value="8" Name="Crystallization" />
+        <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="ATK_PARAM_MAP_HIT" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Precision" />
+        <Option Value="2" Name="Not on the map" />
+        <Option Value="3" Name="Map, not an asset" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Blow" />
+        <Option Value="2" Name="Thrust" />
+        <Option Value="3" Name="Explosion" />
+        <Option Value="4" Name="Bullet" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_ATK" type="u8">
+      <Option Value="0" Name="Standard" />
+      <Option Value="1" Name="Physical" />
+      <Option Value="2" Name="Magic" />
+      <Option Value="3" Name="Fire" />
+      <Option Value="4" Name="Lightning" />
+      <Option Value="5" Name="Dark" />
+      <Option Value="6" Name="None" />
+      <Option Value="7" Name="Dmy1" />
+      <Option Value="8" Name="Dmy2" />
+      <Option Value="9" Name="Dmy3" />
+      <Option Value="10" Name="Dmy4" />
+      <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_SIZE" type="u8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Large" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Physical" />
+        <Option Value="101" Name="Shield: Strong Physical" />
+        <Option Value="102" Name="Shield: Magic" />
+        <Option Value="103" Name="Body: Physical" />
+        <Option Value="104" Name="Body: Strong Physical" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="ATK_PARAM_HIT_SOURCE" type="u8">
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Body" />
+        <Option Value="2" Name="Part 0" />
+        <Option Value="3" Name="Part 1" />
+        <Option Value="4" Name="Part 2" />
+        <Option Value="5" Name="Part 3" />
+        <Option Value="6" Name="Part 4" />
+        <Option Value="7" Name="Part 5" />
+        <Option Value="8" Name="Part 6" />
+        <Option Value="9" Name="Part 7" />
+        <Option Value="10" Name="Part 8" />
+        <Option Value="11" Name="Part 9" />
+        <Option Value="12" Name="Part 10" />
+        <Option Value="13" Name="Part 11" />
+        <Option Value="14" Name="Part 12" />
+        <Option Value="15" Name="Part 13" />
+        <Option Value="16" Name="Part 14" />
+        <Option Value="17" Name="Part 15" />
+        <Option Value="18" Name="Part 16" />
+        <Option Value="19" Name="Part 17" />
+        <Option Value="20" Name="Part 18" />
+        <Option Value="21" Name="Part 19" />
+        <Option Value="22" Name="Part 20" />
+        <Option Value="23" Name="Part 21" />
+        <Option Value="24" Name="Part 22" />
+        <Option Value="25" Name="Part 23" />
+        <Option Value="26" Name="Part 24" />
+        <Option Value="27" Name="Part 25" />
+        <Option Value="28" Name="Part 26" />
+        <Option Value="29" Name="Part 27" />
+        <Option Value="30" Name="Part 28" />
+        <Option Value="31" Name="Part 29" />
+        <Option Value="32" Name="Part 30" />
+        <Option Value="33" Name="Part 31" />
+    </Enum>
+    <Enum Name="ATK_PATAM_THROWFLAG_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Throw transition" />
+        <Option Value="2" Name="Throw" />
+        <Option Value="3" Name="Throw transition (with dmgLevel)" />
     </Enum>
   </Enums>
-  <Field>
-    <hit0_Radius Wiki="Hitbox radius for hitbox 0 (1st)"/>
-    <hit1_Radius Wiki="Hitbox radius for hitbox 2 (2nd)"/>
-    <hit2_Radius Wiki="Hitbox radius for hitbox 3 (3rd)"/>
-    <hit3_Radius Wiki="Hitbox radius for hitbox 4 (4th)"/>
-    <knockbackDist Wiki="If attack will stun, distance victim travels in &quot;meters&quot;\nIf attack will not stun, distance attacker travels backwards in &quot;meters&quot; (needs testing)"/>
-    <spEffectId0 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
-    <spEffectId1 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
-    <spEffectId2 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
-    <spEffectId3 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
-    <spEffectId4 Refs="SpEffectParam" Wiki="spEffectParam to apply to victims of this attack.\nAttacks used for bullets must use the spEffectId fields present in bullet parameters" DeepCopyTarget="SpEffect" />
-    <hit0_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 0 (1st). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
-    <hit1_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 1 (2nd). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
-    <hit2_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 2 (3rd). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
-    <hit3_DmyPoly1 Wiki="ID of first dummypoly location to use for hitbox 3 (4th). DmyPoly2 fields can be used to define a second point for hitboxes, creating a hitbox capsule" />
-    <hit0_DmyPoly2 Wiki="ID of second dummypoly location to use for hitbox 0 (1st). If -1, only DmyPoly1 will be used for the hitbox, making the hitbox a sphere" />
-    <hit1_DmyPoly2 Wiki="ID of second dummypoly location to use for hitbox 1 (2nd). If -1, only DmyPoly1 will be used for the hitbox, making the hitbox a sphere" />
-    <hit2_DmyPoly2 Wiki="ID of second dummypoly location to use for hitbox 2 (3rd). If -1, only DmyPoly1 will be used for the hitbox, making the hitbox a sphere" />
-    <hit3_DmyPoly2 Wiki="ID of second dummypoly location to use for hitbox 3 (4th). If -1, only DmyPoly1 will be used for the hitbox, making the hitbox a sphere" />
-    <blowingCorrection />
-    <atkPhysCorrection Wiki="Multiplies physical damage of attack source, such as a weapon" />
-    <atkMagCorrection Wiki="Multiplies magic damage of attack source, such as a weapon" />
-    <atkFireCorrection Wiki="Multiplies fire damage of attack source, such as a weapon" />
-    <atkThunCorrection Wiki="Multiplies lightning damage of attack source, such as a weapon" />
-    <atkStamCorrection Wiki="Multiplies stamina damage of attack source, such as a weapon" />
-    <guardAtkRateCorrection Wiki="Multiplies deflection attack value of attack source, such as a weapon. Compared against deflection defense to determine if this attack should bounce" />
-    <guardBreakCorrection Wiki="Multiplies deflection defense of guard source, such as a shield. Compared against deflection attack value to determine if the attack should bounce" />
-    <atkThrowEscapeCorrection />
-    <atkSuperArmorCorrection Wiki="Multiplies poise damage of attack source, such as a weapon" />
-    <atkPhys AltName="Physical Damage" />
-    <atkMag AltName="Magic Damage" />
-    <atkFire AltName="Fire Damage" />
-    <atkThun AltName="Lightning Damage" />
-    <atkStam AltName="Stamina Damage" />
-    <guardAtkRate Wiki="Flat deflection damage. Compared against deflection defense value to determine if this attack should bounce." />
-    <guardBreakRate Wiki="Flat deflection defense. Compared against deflection attack value to determine if the attack should bounce." />
-    <atkSuperArmor AltName="Poise Damage" />
-    <atkThrowEscape />
-    <atkObj AltName="Object Damage" Wiki="If an object has less object HP than the attack has object damage, the object will break." />
-    <guardStaminaCutRate Wiki="Multiplies stability when this attack is used for blocking.\n-50 = -50%% stability, 50 = +50%% stability" />
-    <guardRate />
-    <throwTypeId />
-    <hit0_hitType Enum="HitType" Wiki="Misc properties for hitbox 0 (1st)." />
-    <hit1_hitType Enum="HitType" Wiki="Misc properties for hitbox 1 (2nd)." />
-    <hit2_hitType Enum="HitType" Wiki="Misc properties for hitbox 2 (3rd)." />
-    <hit3_hitType Enum="HitType" Wiki="Misc properties for hitbox 3 (4th)." />
-    <hti0_Priority AltName="hit0_Priority" />
-    <hti1_Priority AltName="hit1_Priority" />
-    <hti2_Priority AltName="hit2_Priority" />
-    <hti3_Priority AltName="hit3_Priority" />
-    <dmgLevel Enum="DmgLevel" />
-    <mapHitType />
-    <guardCutCancelRate />
-    <atkAttribute Enum="AtkAttribute" />
-    <spAttribute Enum="SpAttribute" />
-    <atkType />
-    <atkMaterial />
-    <atkSize />
-    <defMaterial />
-    <defSfxMaterial />
-    <hitSourceType />
-    <throwFlag />
-    <disableGuard IsBool="" Wiki="true = attacks ignore guarding" />
-    <disableStaminaAttack IsBool="" />
-    <disableHitSpEffect IsBool="" />
-    <IgnoreNotifyMissSwingForAI IsBool="" />
-    <repeatHitSfx IsBool="" />
-    <isArrowAtk IsBool="" />
-    <isGhostAtk IsBool="" Wiki="true = attacks can harm new londo ghosts" />
-    <isDisableNoDamage IsBool="" />
-  </Field> 
-  <Self Wiki="Governs hitboxes and damage of attacks" AlternativeOrder="
-hit0_Radius,hit1_Radius,hit2_Radius,hit3_Radius,-,
-hit0_hitType,hit1_hitType,hit2_hitType,hit3_hitType,-,
-hti0_Priority,hti1_Priority,hti2_Priority,hti3_Priority,-,
-hit0_DmyPoly1,hit1_DmyPoly1,hit2_DmyPoly1,hit3_DmyPoly1,-,
-hit0_DmyPoly2,hit1_DmyPoly2,hit2_DmyPoly2,hit3_DmyPoly2,-,
-knockbackDist,hitStopTime,blowingCorrection,-,
-spEffectId0,spEffectId1,spEffectId2,spEffectId3,spEffectId4,-,
-atkPhysCorrection,atkMagCorrection,atkFireCorrection,atkThunCorrection,atkStamCorrection,atkSuperArmorCorrection,-,
-atkThrowEscapeCorrection,guardAtkRateCorrection,guardBreakCorrection,-,
-atkPhys,atkMag,atkFire,atkThun,atkStam,atkSuperArmor,-,
-atkThrowEscape,guardAtkRate,guardBreakRate,-,
-dmgLevel,atkObj,-,
-guardCutCancelRate,guardStaminaCutRate,guardRate,-,
-throwTypeId,throwFlag,throwDamageAttribute,-,
-mapHitType,guardRangeType,hitSourceType,-,
-atkAttribute,spAttribute,spAttributeVariationValue,atkType,atkMaterial,atkSize,-,
-defMaterial,defSfxMaterial,-,
-disableStaminaAttack,disableHitSpEffect,disableGuard,-," />
 </PARAMMETA>

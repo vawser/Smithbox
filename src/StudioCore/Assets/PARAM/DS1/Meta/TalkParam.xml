@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for character dialogues." 
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="TalkParam" 
+    Name="Character Dialogues" />
+  </DisplayNames>
+  
+  <Field>
+    <msgId
+    AltName="Message ID"
+    Wiki="The text ID for the message this line of dialogue should display as subtitles."
+    FmgRef="Talk_Messages" />
+    
+    <voiceId
+    AltName="Voice ID"
+    Wiki="The voice ID for this line of dialogue."
+    SoundAlias="" />
+    
+    <motionId
+    AltName="Motion ID"
+    Wiki="The animation the character speaking this line of dialogue should use during playback." />
+    
+    <returnPos
+    AltName="Return: Conversation Position"
+    Wiki="The relative position of conversation to return when returning to a conversation." />
+    
+    <reactionId
+    AltName="Return: Reaction ID"
+    Wiki="The reaction ID to use when returning to a conversation." />
+    
+    <eventId
+    AltName="Return: Event ID"
+    Wiki="The event ID to use when returning to a conversation." />
+    
+    <isMotionLoop
+    AltName="Is Motion Looped"
+    Wiki="If ON, the motion animation is looped for this line of dialogue." 
+    IsBool="" />
+    
+    <pad0
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

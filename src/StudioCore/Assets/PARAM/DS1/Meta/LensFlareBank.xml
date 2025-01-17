@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for lens flares." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m10_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m11_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m12_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m13_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m14_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m15_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m15_1_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m16_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m17_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m18_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m99_LensFlareBank" 
+    Name="Lens Flare" />
+  </DisplayNames>
+  
+  <Field>
+    <texId
+    AltName="Texture ID"
+    Wiki="The texture to use for this lens flare." />
+    
+    <isFlare
+    AltName="Is Flare"
+    Wiki="If ON, this lens flare is treated as a flare. If OFF, then it is a ghost."
+    IsBool="" />
+    
+    <enableRoll
+    AltName="Enable Rotation"
+    Wiki="If ON, this lens flare can be rotated." 
+    IsBool="" />
+    
+    <enableScale
+    AltName="Enable Scaling"
+    Wiki="If ON, this lens flare can be scaled." 
+    IsBool="" />
+    
+    <locateDistRate
+    AltName="Placement Distance Rate"
+    Wiki="The placement distance rate. 0 is the light source position, 1 is the centre of the screen." />
+    
+    <texScale
+    AltName="Texture Scale"
+    Wiki="The scale to apply to the lens flare texture." />
+    
+    <colR
+    AltName="Texture: R"
+    Wiki="The red component of the RGBA color used with the lens flare texture." />
+    
+    <colG
+    AltName="Texture: G"
+    Wiki="The green component of the RGBA color used with the lens flare texture." />
+    
+    <colB
+    AltName="Texture: B"
+    Wiki="The blue component of the RGBA color used with the lens flare texture." />
+    
+    <colA
+    AltName="Texture: Alpha"
+    Wiki="The alpha component of the RGBA color used with the lens flare texture." />
+  </Field>
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Texture Color" 
+    Fields="colR,colG,colB" 
+    PlacedField="colA" />
+  </ColorEdit>
+</PARAMMETA>

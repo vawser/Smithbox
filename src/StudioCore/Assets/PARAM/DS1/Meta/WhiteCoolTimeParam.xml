@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for friendly phantoms." 
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="WhiteCoolTimeParam" 
+    Name="Friendly Co-op Session Limits" />
+  </DisplayNames>
+  
+  <Field>
+    <timeLimit0
+    AltName="Time Limit: 0"
+    Wiki="" />
+    
+    <timeLimit1
+    AltName="Time Limit: 1"
+    Wiki="" />
+    
+    <timeLimit2
+    AltName="Time Limit: 2"
+    Wiki="" />
+    
+    <timeLimit3
+    AltName="Time Limit: 3"
+    Wiki="" />
+  </Field>
+</PARAMMETA>

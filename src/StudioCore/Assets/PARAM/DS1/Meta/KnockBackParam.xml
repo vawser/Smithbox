@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters relating to knockback."/>
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="KnockBackParam" 
+    Name="Knockback" />
+  </DisplayNames>
+  
+  <Field>
+    <damage_Min_ContTime 
+    AltName="Animation: Minimum - Duration" 
+    Wiki="Set the duration of the animation used for tiny damage hit." />
+    
+    <damage_S_ContTime 
+    AltName="Animation: Small - Duration" 
+    Wiki="Set the duration of the animation used for small damage hit." />
+    
+    <damage_M_ContTime 
+    AltName="Animation: Medium - Duration" 
+    Wiki="Set the duration of the animation used for medium damage hit." />
+    
+    <damage_L_ContTime 
+    AltName="Animation: Heavy - Duration" 
+    Wiki="Set the duration of the animation used for heavy damage hit." />
+    
+    <damage_BlowS_ContTime 
+    AltName="Animation: Small Blow-off - Duration" 
+    Wiki="Set the duration of the animation used for small blow-off damage hit." />
+    
+    <damage_BlowM_ContTime 
+    AltName="Animation: Heavy Blow-off - Duration" 
+    Wiki="Set the duration of the animation used during the big blow damage hit." />
+    
+    <damage_Strike_ContTime 
+    AltName="Animation: Strike - Duration" 
+    Wiki="Set the duration of the animation used for slamming damage hit." />
+    
+    <damage_Uppercut_ContTime 
+    AltName="Animation: Uppercut - Duration" 
+    Wiki="Set the duration of the animation used for launch damage hit." />
+    
+    <damage_Push_ContTime 
+    AltName="Animation: Push - Duration" 
+    Wiki="Set the duration of the animation used for push damage hit." />
+    
+    <damage_Breath_ContTime 
+    AltName="Animation: Breath - Duration" 
+    Wiki="Set the duration of the animation used for breath damage hit." />
+    
+    <damage_HeadShot_ContTime 
+    AltName="Animation: Headshot - Duration" 
+    Wiki="Set the duration of the animation used for headshot damage hit." />
+    
+    <guard_S_ContTime 
+    AltName="Guard Animation: Small - Duration" 
+    Wiki="Set the duration of the animation used for small damage hit when guarding." />
+    
+    <guard_L_ContTime 
+    AltName="Guard Animation: Heavy - Duration" 
+    Wiki="Set the duration of the animation used for heavy damage hit when guarding." />
+    
+    <guard_LL_ContTime 
+    AltName="Guard Animation: Very Heavy - Duration" 
+    Wiki="Set the duration of the animation used for very heavy damage hit when guarding." />
+    
+    <guardBrake_ContTime 
+    AltName="Guard Animation: Break - Duration" 
+    Wiki="Set the duration of the animation used for guard break hit when guarding." />
+    
+    <damage_Min_DecTime 
+    AltName="Animation: Minimum - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for minimal damage hit." />
+    
+    <damage_S_DecTime 
+    AltName="Animation: Small - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for small damage hit." />
+    
+    <damage_M_DecTime 
+    AltName="Animation: Medium - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for medium damage hit." />
+    
+    <damage_L_DecTime 
+    AltName="Animation: Heavy - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for heavy damage hit." />
+    
+    <damage_BlowS_DecTime 
+    AltName="Animation: Small Blow-off - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for small blow-off damage hit." />
+    
+    <damage_BlowM_DecTime 
+    AltName="Animation: Heavy Blow-off - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for heavy blow-off damage hit." />
+    
+    <damage_Strike_DecTime 
+    AltName="Animation: Strike - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for strike damage hit." />
+    
+    <damage_Uppercut_DecTime 
+    AltName="Animation: Uppercut - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for uppercut damage hit." />
+    
+    <damage_Push_DecTime 
+    AltName="Animation: Push - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for push damage hit." />
+    
+    <damage_Breath_DecTime 
+    AltName="Animation: Breath - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for breath damage hit." />
+    
+    <damage_HeadShot_DecTime 
+    AltName="Animation: Headshot - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for headshot damage hit." />
+    
+    <guard_S_DecTime 
+    AltName="Guard Animation: Small - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for small damage hit when guarding" />
+    
+    <guard_L_DecTime 
+    AltName="Guard Animation: Heavy - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for heavy damage hit when guarding" />
+    
+    <guard_LL_DecTime 
+    AltName="Guard Animation: Very Heavy - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for very heavy damage hit when guarding" />
+    
+    <guardBrake_DecTime 
+    AltName="Guard Animation: Break - Stop Delay" 
+    Wiki="Set the deceleration duration to stop for guard break damage hit when guarding" />
+    
+    <pad 
+    Padding=""/>
+  </Field>
+</PARAMMETA>

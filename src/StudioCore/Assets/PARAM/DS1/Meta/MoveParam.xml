@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for movement." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="MoveParam" 
+    Name="Movement" />
+  </DisplayNames>
+  
+  <Field>
+    <stayId
+    AltName="Animation ID: Idle"
+    Wiki="The animation to use for this movement action." />
+    
+    <walkF
+    AltName="Animation ID: Walk Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <walkB
+    AltName="Animation ID: Walk Backward"
+    Wiki="The animation to use for this movement action." />
+    
+    <walkL
+    AltName="Animation ID: Walk Left"
+    Wiki="The animation to use for this movement action." />
+    
+    <walkR
+    AltName="Animation ID: Walk Right"
+    Wiki="The animation to use for this movement action." />
+    
+    <dashF
+    AltName="Animation ID: Run Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <dashB
+    AltName="Animation ID: Run Backward"
+    Wiki="The animation to use for this movement action." />
+    
+    <dashL
+    AltName="Animation ID: Run Left"
+    Wiki="The animation to use for this movement action." />
+    
+    <dashR
+    AltName="Animation ID: Run Right"
+    Wiki="The animation to use for this movement action." />
+    
+    <superDash
+    AltName="Animation ID: Sprint"
+    Wiki="The animation to use for this movement action." />
+    
+    <escapeF
+    AltName="Animation ID: Roll Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <escapeB
+    AltName="Animation ID: Roll Backward"
+    Wiki="The animation to use for this movement action." />
+    
+    <escapeL
+    AltName="Animation ID: Roll Left"
+    Wiki="The animation to use for this movement action." />
+    
+    <escapeR
+    AltName="Animation ID: Roll Right"
+    Wiki="The animation to use for this movement action." />
+    
+    <turnL
+    AltName="Animation ID: 90° Turn Left"
+    Wiki="The animation to use for this movement action." />
+    
+    <trunR
+    AltName="Animation ID: 90° Turn Right"
+    Wiki="The animation to use for this movement action." />
+    
+    <largeTurnL
+    AltName="Animation ID: 180° Turn Left"
+    Wiki="The animation to use for this movement action." />
+    
+    <largeTurnR
+    AltName="Animation ID: 180° Turn Right"
+    Wiki="The animation to use for this movement action." />
+    
+    <stepMove
+    AltName="Animation ID: Step Move"
+    Wiki="" />
+    
+    <flyStay
+    AltName="Animation ID: Fly Idle"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyWalkF
+    AltName="Animation ID: Fly Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyWalkFL
+    AltName="Animation ID: Fly Left-Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyWalkFR
+    AltName="Animation ID: Fly Right-Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyWalkFL2
+    AltName="Animation ID: Fly Left-Forward 2"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyWalkFR2
+    AltName="Animation ID: Fly Right-Forward 2"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyDashF
+    AltName="Animation ID: Fast Fly Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyDashFL
+    AltName="Animation ID: Fast Fly Left-Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyDashFR
+    AltName="Animation ID: Fast Fly Right-Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyDashFL2
+    AltName="Animation ID: Fast Fly Left-Forward 2"
+    Wiki="The animation to use for this movement action." />
+    
+    <flyDashFR2
+    AltName="Animation ID: Fast Fly Right-Forward 2"
+    Wiki="The animation to use for this movement action." />
+    
+    <dashEscapeF
+    AltName="Animation ID: Fly Dodge Forward"
+    Wiki="The animation to use for this movement action." />
+    
+    <dashEscapeB
+    AltName="Animation ID: Fly Dodge Backward"
+    Wiki="The animation to use for this movement action." />
+    
+    <dashEscapeL
+    AltName="Animation ID: Fly Dodge Left"
+    Wiki="The animation to use for this movement action." />
+    
+    <dashEscapeR
+    AltName="Animation ID: Fly Dodge Right"
+    Wiki="The animation to use for this movement action." />
+    
+    <analogMoveParamId
+    AltName="Analog Move Param ID"
+    Wiki="The MoveParam row to use for animation blending." 
+    Refs="MoveParam" />
+    
+    <pad
+    Padding="" />
+  </Field>
+  
+</PARAMMETA>

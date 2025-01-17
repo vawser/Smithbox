@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for world tendency changes." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="QwcChange" 
+    Name="World Tendency Changes" />
+  </DisplayNames>
+  
+  <Field>
+    <pcAttrB 
+    AltName="Player (Black)"
+    Wiki="The amount to add to Black World Tendency (for the player) for this action." />
+    
+    <pcAttrW 
+    AltName="Player (White)"
+    Wiki="The amount to add to White World Tendency (for the player) for this action." />
+    
+    <pcAttrL 
+    AltName="Player (Left)"
+    Wiki="The amount to add to World Tendency (for the player) for this action." />
+    
+    <pcAttrR 
+    AltName="Player (Right)"
+    Wiki="The amount to add to World Tendency (for the player) for this action." />
+    
+    <areaAttrB 
+    AltName="Area (Black)"
+    Wiki="The amount to add to Black World Tendency (for the area) for this action." />
+    
+    <areaAttrW 
+    AltName="Area (White)"
+    Wiki="The amount to add to White World Tendency (for the area) for this action." />
+    
+    <areaAttrL 
+    AltName="Area (Left)"
+    Wiki="The amount to add to World Tendency (for the area) for this action." />
+    
+    <areaAttrR 
+    AltName="Area (Right)"
+    Wiki="The amount to add to World Tendency (for the area) for this action." />
+    
+  </Field>
+</PARAMMETA>

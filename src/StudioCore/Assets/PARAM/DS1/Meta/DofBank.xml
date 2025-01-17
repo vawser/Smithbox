@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for depth of field assignments." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m10_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m11_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m12_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m13_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m14_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m15_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m15_1_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m16_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m17_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m18_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m99_DofBank" 
+    Name="Depth of Field" />
+  </DisplayNames>
+  
+  <Field>
+    <farDofBegin
+    AltName="Far DOF: Start Distance"
+    Wiki="The distance at which distant objects start to become blurred due to depth of field. In metres." />
+    
+    <farDofEnd
+    AltName="Far DOF: End Distance"
+    Wiki="The distance at which distant objects become completely blurred due to depth of field. In metres." />
+    
+    <farDofMul
+    AltName="Far DOF: Strength"
+    Wiki="The strength of the depth of field blur. 0 means no blur." />
+    
+    <pad_0
+    Padding="" />
+    
+    <nearDofBegin
+    AltName="Near DOF: Start Distance"
+    Wiki="The distance at which distant objects start to become blurred due to depth of field. In metres." />
+    
+    <nearDofEnd
+    AltName="Near DOF: End Distance"
+    Wiki="The distance at which distant objects become completely blurred due to depth of field. In metres." />
+    
+    <nearDofMul
+    AltName="Near DOF: Strength"
+    Wiki="The strength of the depth of field blur. 0 means no blur." />
+    
+    <pad_1
+    Padding="" />
+    
+    <dispersionSq
+    AltName="Blur Strength"
+    Wiki="The base strength of the depth of field blur." />
+    
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for point lights." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m10_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m11_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m12_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m13_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m14_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m15_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m15_1_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m16_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m17_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m18_PointLightBank" 
+    Name="Point Light" />
+    
+    <NameEntry 
+    Param="m99_PointLightBank" 
+    Name="Point Light" />
+  </DisplayNames>
+  
+  <Field>
+    <dwindleBegin
+    AltName="Attenuation Start Distance"
+    Wiki="The distance to start attenuating the point light source. In metres." />
+    
+    <dwindleEnd
+    AltName="Attenuation End Distance"
+    Wiki="The distance to stop attenuating the point light source. In metres." />
+    
+    <colR
+    AltName="Light Color: R"
+    Wiki="The red component of the coloring for the point light." />
+    
+    <colG
+    AltName="Light Color: G"
+    Wiki="The green component of the coloring for the point light." />
+    
+    <colB
+    AltName="Light Color: B"
+    Wiki="The blue component of the coloring for the point light." />
+    
+    <colA
+    AltName="Light Color: Alpha"
+    Wiki="The alpha component of the coloring for the point light." />
+    
+  </Field>
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Light Color" 
+    Fields="colR,colG,colB" 
+    PlacedField="colA" />
+  </ColorEdit>
+</PARAMMETA>

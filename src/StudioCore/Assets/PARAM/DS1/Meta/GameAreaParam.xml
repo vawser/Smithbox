@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the soul and humanity drops given upon boss victories." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="GameAreaParam" 
+    Name="Boss Rewards" />
+  </DisplayNames>
+  
+  <Field>
+    <bonusSoul_single
+    AltName="Soul Amount: Singleplayer Clear"
+    Wiki="The amount of souls gained when defeating the associated boss in singleplayer." />
+    
+    <bonusSoul_multi
+    AltName="Soul Amount: Multiplayer Clear"
+    Wiki="The amount of souls gained when defeating the associated boss in multiplayer." />
+    
+    <humanityPointCountFlagIdTop
+    AltName="Humanity Drop Point Count: Flag ID"
+    Wiki="The event flag ID used to hold humanity drop point count. Consumes 20 bits (e.g. this flag plus the next 19)" />
+    
+    <humanityDropPoint1
+    AltName="Humanity Drop Point Threshold: 1"
+    Wiki="The point threshold for acquiring 1 humanity." />
+    
+    <humanityDropPoint2
+    AltName="Humanity Drop Point Threshold: 2"
+    Wiki="The point threshold for acquiring 2 humanity." />
+    
+    <humanityDropPoint3
+    AltName="Humanity Drop Point Threshold: 3"
+    Wiki="The point threshold for acquiring 3 humanity." />
+    
+    <humanityDropPoint4
+    AltName="Humanity Drop Point Threshold: 4"
+    Wiki="The point threshold for acquiring 4 humanity." />
+    
+    <humanityDropPoint5
+    AltName="Humanity Drop Point Threshold: 5"
+    Wiki="The point threshold for acquiring 5 humanity." />
+    
+    <humanityDropPoint6
+    AltName="Humanity Drop Point Threshold: 6"
+    Wiki="The point threshold for acquiring 6 humanity." />
+    
+    <humanityDropPoint7
+    AltName="Humanity Drop Point Threshold: 7"
+    Wiki="The point threshold for acquiring 7 humanity." />
+    
+    <humanityDropPoint8
+    AltName="Humanity Drop Point Threshold: 8"
+    Wiki="The point threshold for acquiring 8 humanity." />
+    
+    <humanityDropPoint9
+    AltName="Humanity Drop Point Threshold: 9"
+    Wiki="The point threshold for acquiring 9 humanity." />
+    
+    <humanityDropPoint10
+    AltName="Humanity Drop Point Threshold: 10"
+    Wiki="The point threshold for acquiring 10 humanity." />
+    
+  </Field>
+</PARAMMETA>

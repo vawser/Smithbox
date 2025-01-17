@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for fog volumes." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m10_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m11_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m12_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m13_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m14_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m15_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m15_1_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m16_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m17_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m18_FogBank" 
+    Name="Fog" />
+    
+    <NameEntry 
+    Param="m99_FogBank" 
+    Name="Fog" />
+  </DisplayNames>
+  
+  <Field>
+    <fogBeginZ
+    AltName="Fog Start Distance"
+    Wiki="The start distance for the fog." />
+    
+    <fogEndZ
+    AltName="Fog End Distance"
+    Wiki="The end distance for the fog." />
+    
+    <degRotZ
+    Padding="" />
+    
+    <degRotW
+    AltName="Fog Strength"
+    Wiki="The strength of the fog. 0 means it is not visible." />
+  
+    <colR
+    AltName="Fog: R"
+    Wiki="The red component of the RGBA color used for this fog." />
+    
+    <colG
+    AltName="Fog: G"
+    Wiki="The green component of the RGBA color used for this fog." />
+    
+    <colB
+    AltName="Fog: B"
+    Wiki="The blue component of the RGBA color used for this fog." />
+    
+    <colA
+    AltName="Fog: Alpha"
+    Wiki="The alpha component of the RGBA color used for this fog." />
+  </Field>
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Fog Color" 
+    Fields="colR,colG,colB" 
+    PlacedField="colA" />
+  </ColorEdit>
+</PARAMMETA>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for shadow maps." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m10_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m11_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m12_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m13_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m14_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m15_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m15_1_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m16_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m17_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m18_ShadowBank" 
+    Name="Shadow" />
+    
+    <NameEntry 
+    Param="m99_ShadowBank" 
+    Name="Shadow" />
+  </DisplayNames>
+  
+  <Field>
+    <lightDegRotX
+    AltName="Light Source: Horizontal Angle"
+    Wiki="The horizontal angle of the light source affecting this shadow map. In degrees." />
+    
+    <lightDegRotY
+    AltName="Light Source: Vertical Angle"
+    Wiki="The vertical angle of the light source affecting this shadow map. In degrees." />
+    
+    <densityRatio
+    AltName="Shadow Density %"
+    Wiki="The density of the shadow map. 100% is the darkest value." />
+    
+    <colR
+    AltName="Shadow Color: R"
+    Wiki="The red component of the coloring for the shadow map." />
+    
+    <colG
+    AltName="Shadow Color: G"
+    Wiki="The green component of the coloring for the shadow map." />
+    
+    <colB
+    AltName="Shadow Color: B"
+    Wiki="The blue component of the coloring for the shadow map." />
+    
+    <beginDist
+    AltName="Shadow Start Distance"
+    Wiki="The start distance for the shadow map. 0 means the camera's near clip is used. In metres." />
+    
+    <endDist
+    AltName="Shadow End Distance"
+    Wiki="The end distance for the shadow map.  In metres." />
+    
+    <calibulateFar
+    AltName="Automatic Far Clip Adjustment Distance"
+    Wiki="The distance to shorten the end distance by when facing the light source direction." />
+    
+    <fadeBeginDist
+    AltName="Shadow Fade Start Distance"
+    Wiki="The start distance for fading the shadow map. In metres." />
+    
+    <fadeDist
+    AltName="Shadow Fade End Distance"
+    Wiki="The end distance for fading the shadow map. In metres." />
+    
+    <persedDepthOffset
+    AltName="Shadow Depth Offset"
+    Wiki="The z-offset for the shadow map. Negative values reduce the amount of self-shadowing that occurs." />
+    
+    <gradFactor
+    AltName="Perspective Adjustment"
+    Wiki="Adjusts the perspective of the shadow map. Negative values reduce the perspective, vice versa." />
+    
+    <shadowVolumeDepth
+    AltName="Shadow Volume Depth"
+    Wiki="The depth of the shadow volume for this shadow map. Increase value for large objects." />
+  </Field>
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Shadow Color" 
+    Fields="colR,colG,colB" 
+    PlacedField="colB" />
+  </ColorEdit>
+</PARAMMETA>

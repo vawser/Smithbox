@@ -1,32 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for reinforcing weapons." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="ReinforceParamWeapon" 
+    Name="Weapon Reinforcement" />
+  </DisplayNames>
+  
   <Field>
-    <physicsAtkRate />
-    <magicAtkRate />
-    <fireAtkRate />
-    <thunderAtkRate />
-    <staminaAtkRate />
-    <saWeaponAtkRate />
-    <saDurabilityRate />
-    <correctStrengthRate />
-    <correctAgilityRate />
-    <correctMagicRate />
-    <correctFaithRate />
-    <physicsGuardCutRate />
-    <magicGuardCutRate />
-    <fireGuardCutRate />
-    <thunderGuardCutRate />
-    <poisonGuardResistRate />
-    <diseaseGuardResistRate />
-    <bloodGuardResistRate />
-    <curseGuardResistRate />
-    <staminaGuardDefRate />
-    <spEffectId1 Wiki="ID offset applied to weapon's spEffectId1" />
-    <spEffectId2 Wiki="ID offset applied to weapon's spEffectId2" />
-    <spEffectId3 Wiki="ID offset applied to weapon's spEffectId3" />
-    <residentSpEffectId1 Wiki="ID offset applied to weapon's residentSpEffectId1" />
-    <residentSpEffectId2 Wiki="ID offset applied to weapon's residentSpEffectId2" />
-    <residentSpEffectId3 Wiki="ID offset applied to weapon's residentSpEffectId3" />
-    <materialSetId Wiki="ID offset applied to weapon's materialSetId" />
+    <physicsAtkRate 
+    AltName="Physical Damage"
+    Wiki="The multiplier to apply to base physical damage for this tier of reinforcement." />
+    
+    <magicAtkRate 
+    AltName="Magic Damage"
+    Wiki="The multiplier to apply to base magic damage for this tier of reinforcement." />
+    
+    <fireAtkRate 
+    AltName="Fire Damage"
+    Wiki="The multiplier to apply to base fire damage for this tier of reinforcement." />
+    
+    <thunderAtkRate 
+    AltName="Lightning Damage"
+    Wiki="The multiplier to apply to base lightning damage for this tier of reinforcement." />
+    
+    <staminaAtkRate 
+    AltName="Stamina Damage"
+    Wiki="The multiplier to apply to base stamina damage for this tier of reinforcement." />
+    
+    <saWeaponAtkRate 
+    AltName="Poise Damage"
+    Wiki="The multiplier to apply to base poise damage for this tier of reinforcement." />
+    
+    <saDurabilityRate 
+    AltName="Poise"
+    Wiki="The multiplier to apply to base poise for this tier of reinforcement." />
+    
+    <correctStrengthRate 
+    AltName="Correction: STR"
+    Wiki="The multiplier to apply to base STR correction for this tier of reinforcement." />
+    
+    <correctAgilityRate 
+    AltName="Correction: DEX"
+    Wiki="The multiplier to apply to base DEX correction for this tier of reinforcement." />
+    
+    <correctMagicRate 
+    AltName="Correction: INT"
+    Wiki="The multiplier to apply to base INT correction for this tier of reinforcement." />
+    
+    <correctFaithRate 
+    AltName="Correction: FTH"
+    Wiki="The multiplier to apply to base FTH correction for this tier of reinforcement." />
+    
+    <physicsGuardCutRate 
+    AltName="Guard Absorption %: Physical" 
+    Wiki="The multiplier to apply to base physical guard absorption for this tier of reinforcement." />
+    
+    <magicGuardCutRate 
+    AltName="Guard Absorption %: Magic" 
+    Wiki="The multiplier to apply to base magic guard absorption for this tier of reinforcement." />
+    
+    <fireGuardCutRate 
+    AltName="Guard Absorption %: Fire" 
+    Wiki="The multiplier to apply to base fire guard absorption for this tier of reinforcement." />
+    
+    <thunderGuardCutRate 
+    AltName="Guard Absorption %: Lightning" 
+    Wiki="The multiplier to apply to base lightning guard absorption for this tier of reinforcement." />
+    
+    <poisonGuardResistRate 
+    AltName="Guard Absorption %: Poison" 
+    Wiki="The multiplier to apply to base poison guard absorption for this tier of reinforcement." />
+    
+    <diseaseGuardResistRate 
+    AltName="Guard Absorption %: Toxic" 
+    Wiki="The multiplier to apply to base toxic guard absorption for this tier of reinforcement." />
+    
+    <bloodGuardResistRate 
+    AltName="Guard Absorption %: Bleed" 
+    Wiki="The multiplier to apply to base bleed guard absorption for this tier of reinforcement." />
+    
+    <curseGuardResistRate 
+    AltName="Guard Absorption %: Curse" 
+    Wiki="The multiplier to apply to base curse guard absorption for this tier of reinforcement." />
+    
+    <staminaGuardDefRate 
+    AltName="Guard Stability" 
+    Wiki="The multiplier to apply to base guard stability for this tier of reinforcement." />
+    
+    <spEffectId1 
+    AltName="Hit SpEffect Offset: 1"
+    Wiki="The ID offset applied to the weapon's spEffectId1 field value." />
+    
+    <spEffectId2
+    AltName="Hit SpEffect Offset: 2"
+    Wiki="The ID offset applied to the weapon's spEffectId2 field value." />
+    
+    <spEffectId3
+    AltName="Hit SpEffect Offset: 3"
+    Wiki="The ID offset applied to the weapon's spEffectId3 field value." />
+    
+    <residentSpEffectId1
+    AltName="Resident SpEffect Offset: 1"
+    Wiki="The ID offset applied to the weapon's residentSpEffectId1 field value." />
+    
+    <residentSpEffectId2
+    AltName="Resident SpEffect Offset: 2"
+    Wiki="The ID offset applied to the weapon's residentSpEffectId1 field value." />
+    
+    <residentSpEffectId3
+    AltName="Resident SpEffect Offset: 3"
+    Wiki="The ID offset applied to the weapon's residentSpEffectId1 field value." />
+    
+    <materialSetId 
+    AltName="Material Set Offset"
+    Wiki="The ID offset applied to the weapon's materialSetId field value." />
+    
+    <reinforcementLevel
+    AltName="Reinforcement Level"
+    Wiki="The reinforcement level this tier is counted as." />
+    
   </Field>
 </PARAMMETA>

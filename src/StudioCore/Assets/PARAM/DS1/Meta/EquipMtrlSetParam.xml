@@ -1,20 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the material costs for various transactions." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipMtrlSetParam" 
+    Name="Reinforcement Material Costs" />
+  </DisplayNames>
+  
   <Field>
-    <materialId01 Refs="EquipParamGoods" Wiki="The item ID of the item to be used as a material." />
-    <materialId02 Refs="EquipParamGoods" Wiki="The item ID of the item to be used as a material." />
-    <materialId03 Refs="EquipParamGoods" Wiki="The item ID of the item to be used as a material." />
-    <materialId04 Refs="EquipParamGoods" Wiki="The item ID of the item to be used as a material." />
-    <materialId05 Refs="EquipParamGoods" Wiki="The item ID of the item to be used as a material." />
-    <itemNum01 Wiki="The amount of the item to require in the cost." />
-    <itemNum02 Wiki="The amount of the item to require in the cost." />
-    <itemNum03 Wiki="The amount of the item to require in the cost." />
-    <itemNum04 Wiki="The amount of the item to require in the cost." />
-    <itemNum05 Wiki="The amount of the item to require in the cost." />
-    <isDisableDispNum01 IsBool="" Wiki="Whether the amount required should be hidden." />
-    <isDisableDispNum02 IsBool="" Wiki="Whether the amount required should be hidden." />
-    <isDisableDispNum03 IsBool="" Wiki="Whether the amount required should be hidden." />
-    <isDisableDispNum04 IsBool="" Wiki="Whether the amount required should be hidden." />
-    <isDisableDispNum05 IsBool="" Wiki="Whether the amount required should be hidden." />
+    <materialId01
+    AltName="Material ID: 1"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+    
+    <materialId02
+    AltName="Material ID: 2"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+
+    <materialId03
+    AltName="Material ID: 3"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+
+    <materialId04
+    AltName="Material ID: 4"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+
+    <materialId05
+    AltName="Material ID: 5"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+
+    <itemNum01
+    AltName="Material Count: 1"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum02
+    AltName="Material Count: 2"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum03
+    AltName="Material Count: 3"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum04
+    AltName="Material Count: 4"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum05
+    AltName="Material Count: 5"
+    Wiki="The number of the required item needed." />
+
+    <isDisableDispNum01
+    AltName="Display Material Count: 1"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum02
+    AltName="Display Material Count: 2"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum03
+    AltName="Display Material Count: 3"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum04
+    AltName="Display Material Count: 4"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum05
+    AltName="Display Material Count: 5"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+
+    <pad
+    AltName=""
+    Padding="" />
   </Field>
 </PARAMMETA>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for tone maps." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_ToneMapBank" 
+    Name="Tone Map: Default" />
+    
+    <NameEntry 
+    Param="m10_ToneMapBank" 
+    Name="Tone Map: Depths / Undead Burg / Undead Parish" />
+    
+    <NameEntry 
+    Param="m11_ToneMapBank" 
+    Name="Tone Map: Painted World" />
+    
+    <NameEntry 
+    Param="m12_ToneMapBank" 
+    Name="Tone Map: Darkroot Garden / Oolacile" />
+    
+    <NameEntry 
+    Param="m13_ToneMapBank" 
+    Name="Tone Map: Catacombs / Tomb of the Giants / Great Hollow" />
+    
+    <NameEntry 
+    Param="m14_ToneMapBank" 
+    Name="Tone Map: Blighttown / Demon Ruins / Lost Izalith" />
+    
+    <NameEntry 
+    Param="m15_ToneMapBank" 
+    Name="Tone Map: Sen's Fortress / Anor Londo" />
+    
+    <NameEntry 
+    Param="m16_ToneMapBank" 
+    Name="Tone Map: New Londo Ruins / Valley of Drakes" />
+    
+    <NameEntry 
+    Param="m17_ToneMapBank" 
+    Name="Tone Map: Duke's Archives" />
+    
+    <NameEntry 
+    Param="m18_ToneMapBank" 
+    Name="Tone Map: Kiln of the First Flame / Northern Undead Asylum" />
+    
+    <NameEntry 
+    Param="m19_ToneMapBank" 
+    Name="Tone Map: Development" />
+  </DisplayNames>
+  
+  <Field>
+    <bloomBegin
+    AltName="Near: Bloom Threshold %"
+    Wiki="The threshold rate for near bloom." />
+    
+    <bloomMul
+    AltName="Near: Blood Magnification %"
+    Wiki="The magnification rate for near bloom." />
+    
+    <bloomBeginFar
+    AltName="Far: Bloom Threshold %"
+    Wiki="The threshold rate for far bloom." />
+    
+    <bloomMulFar
+    AltName="Far: Blood Magnification %"
+    Wiki="The magnification rate for far bloom." />
+    
+    <bloomNearDist
+    AltName="Near: Bloom Distance"
+    Wiki="The distance of the bloom. In metres." />
+    
+    <bloomFarDist
+    AltName="Far: Bloom Distance"
+    Wiki="The distance of the bloom. In metres." />
+    
+    <grayKeyValue
+    AltName="Tone Map Reference Value"
+    Wiki="The gray key value. Higher values make the screen brighter, and vice versa." />
+    
+    <minAdaptedLum
+    AltName="Minimum Adaptive Brightness"
+    Wiki="The minimum level of adaptive brightness." />
+    
+    <maxAdapredLum
+    AltName="Maximum Adaptive Brightness"
+    Wiki="The maximum level of adaptive brightness." />
+    
+    <adaptSpeed
+    AltName="Adaptation Speed"
+    Wiki="The speed of adaptive brightness changes." />
+    
+    <lightShaftBegin
+    AltName="Light Shaft: Threshold %"
+    Wiki="The threshold for the light shaft effect." />
+    
+    <pad_0
+    Padding="" />
+    
+    <lightShaftPower
+    AltName="Light Shaft: Strength"
+    Wiki="The strength of the light shaft effect. 0 means no shaft." />
+    
+    <lightShaftAttenRate
+    AltName="Light Shaft: Attenuation Rate"
+    Wiki="The attenuation rate of the light shaft. Lower values mean shorter shaft." />
+    
+    <inverseToneMapMul
+    AltName="Inverse Tone Map Multiplier"
+    Wiki="" />
+  </Field>
+</PARAMMETA>

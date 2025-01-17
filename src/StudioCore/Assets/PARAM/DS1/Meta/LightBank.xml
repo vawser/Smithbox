@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for light maps." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m10_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m11_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m12_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m13_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m14_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m15_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m15_1_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m16_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m17_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m18_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="m99_LightBank" 
+    Name="Light Map" />
+    
+    <NameEntry 
+    Param="s10_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s11_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s12_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s13_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s14_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s15_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s15_1_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s16_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s17_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s18_LightBank" 
+    Name="Light Map (Cutscene)" />
+    
+    <NameEntry 
+    Param="s99_LightBank" 
+    Name="Light Map (Cutscene)" />
+  </DisplayNames>
+  
+  <Field>
+    <degRotX_0
+    AltName="Light 0: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." />
+    
+    <degRotY_0
+    AltName="Light 0: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_0
+    AltName="Light 0: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_0
+    AltName="Light 0: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_0
+    AltName="Light 0: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_0
+    AltName="Light 0: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <degRotX_1
+    AltName="Light 1: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_1
+    AltName="Light 1: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_1
+    AltName="Light 1: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_1
+    AltName="Light 1: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_1
+    AltName="Light 1: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_1
+    AltName="Light 1: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <degRotX_2
+    AltName="Light 2: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_2
+    AltName="Light 2: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_2
+    AltName="Light 2: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_2
+    AltName="Light 2: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_2
+    AltName="Light 2: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_2
+    AltName="Light 2: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <colR_u
+    AltName="Lower Hemisphere Light: R"
+    Wiki="The red component of the RGBA color used for this light source." 
+    Separator="" />
+    
+    <colG_u
+    AltName="Lower Hemisphere Light: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_u
+    AltName="Lower Hemisphere Light: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_u
+    AltName="Lower Hemisphere Light: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <colR_d
+    AltName="Upper Hemisphere Light: R"
+    Wiki="The red component of the RGBA color used for this light source." 
+    Separator="" />
+    
+    <colG_d
+    AltName="Upper Hemisphere Light: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_d
+    AltName="Upper Hemisphere Light: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_d
+    AltName="Upper Hemisphere Light: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <degRotX_s
+    AltName="Light (Specular): Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." 
+    Separator="" />
+    
+    <degRotY_s
+    AltName="Light (Specular): Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR_s
+    AltName="Light (Specular): R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG_s
+    AltName="Light (Specular): G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB_s
+    AltName="Light (Specular): B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA_s
+    AltName="Light (Specular): Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <envDif_colR
+    AltName="Ambient Light: R"
+    Wiki="The red component of the RGBA color used for this light source." 
+    Separator="" />
+    
+    <envDif_colG
+    AltName="Ambient Light: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <envDif_colB
+    AltName="Ambient Light: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <envDif_colA
+    AltName="Ambient Light: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <envSpc_colR
+    AltName="Ambient Light (Specular): R"
+    Wiki="The red component of the RGBA color used for this light source." 
+    Separator="" />
+    
+    <envSpc_colG
+    AltName="Ambient Light (Specular): G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <envSpc_colB
+    AltName="Ambient Light (Specular): B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <envSpc_colA
+    AltName="Ambient Light (Specular): Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <envDif
+    AltName="Ambient Light: Diffuse Texture ID"
+    Wiki="The diffuse texture to use for this light source." 
+    Separator="" />
+    
+    <envSpc_0
+    AltName="Ambient Light: Specular 0 Texture ID"
+    Wiki="The specular texture to use for this light source." />
+    
+    <envSpc_1
+    AltName="Ambient Light: Specular 1 Texture ID"
+    Wiki="The specular texture to use for this light source." />
+    
+    <envSpc_2
+    AltName="Ambient Light: Specular 2 Texture ID"
+    Wiki="The specular texture to use for this light source." />
+    
+    <envSpc_3
+    AltName="Ambient Light: Specular 3 Texture ID"
+    Wiki="The specular texture to use for this light source." />
+    
+    <pad
+    Padding="" />
+    
+  </Field>
+  <ColorEdit>
+    <ColorEditor 
+    Name="Light 0" 
+    Fields="colR_0,colG_0,colB_0" 
+    PlacedField="colA_0" />
+    
+    <ColorEditor 
+    Name="Light 1" 
+    Fields="colR_1,colG_1,colB_1" 
+    PlacedField="colA_1" />
+    
+    <ColorEditor 
+    Name="Light 2" 
+    Fields="colR_2,colG_2,colB_2" 
+    PlacedField="colA_2" />
+    
+    <ColorEditor 
+    Name="Lower Hemisphere Light" 
+    Fields="colR_u,colG_u,colB_u" 
+    PlacedField="colA_u" />
+    
+    <ColorEditor 
+    Name="Upper Hemisphere Light" 
+    Fields="colR_d,colG_d,colB_d" 
+    PlacedField="colA_d" />
+    
+    <ColorEditor 
+    Name="Light (Specular)" 
+    Fields="colR_s,colG_s,colB_s" 
+    PlacedField="colA_s" />
+    
+    <ColorEditor 
+    Name="Ambient Light" 
+    Fields="envDif_colR,envDif_colG,envDif_colB" 
+    PlacedField="envDif_colA" />
+    
+    <ColorEditor 
+    Name="Ambient Light (Specular)" 
+    Fields="envSpc_colR,envSpc_colG,envSpc_colB" 
+    PlacedField="envSpc_colA" />
+  </ColorEdit>
+</PARAMMETA>

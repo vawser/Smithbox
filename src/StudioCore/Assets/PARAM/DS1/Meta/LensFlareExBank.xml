@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for lens flares." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m10_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m11_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m12_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m13_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m14_LensFlareExBank" 
+    Name="Lens Flare" />
+    <NameEntry 
+    Param="m15_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m15_1_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m16_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m17_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m18_LensFlareExBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m99_LensFlareExBank" 
+    Name="Lens Flare" />
+  </DisplayNames>
+  
+  <Field>
+    <lightDegRotX
+    AltName="Light: Horizontal Angle"
+    Wiki="The horizontal angle to use for this light source. In degrees." />
+    
+    <lightDegRotY
+    AltName="Light: Vertical Angle"
+    Wiki="The vertical angle to use for this light source. In degrees." />
+    
+    <colR
+    AltName="Light: R"
+    Wiki="The red component of the RGBA color used for this light source." />
+    
+    <colG
+    AltName="Light: G"
+    Wiki="The green component of the RGBA color used for this light source." />
+    
+    <colB
+    AltName="Light: B"
+    Wiki="The blue component of the RGBA color used for this light source." />
+    
+    <colA
+    AltName="Light: Alpha"
+    Wiki="The alpha component of the RGBA color used for this light source." />
+    
+    <lightDist
+    AltName="Light Source Distance"
+    Wiki="The distance of this light source. In metres." />
+    
+  </Field>
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Light Color" 
+    Fields="colR,colG,colB" 
+    PlacedField="colA" />
+  </ColorEdit>
+</PARAMMETA>

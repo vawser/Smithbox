@@ -1,28 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0" >
-  <Enums>
-    <Enum Name="QualifierType">
-      <Option Value="0" Name="none" />
-      <Option Value="1" Name="good" />
-      <Option Value="2" Name="speffect" />
-	</Enum>
-  </Enums>
+  <Self 
+  Wiki="Determines the parameters for interactions." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="ObjActParam" 
+    Name="Object Interactions" />
+  </DisplayNames>
+  
   <Field>
-    <actionEnableMsgId />
-    <actionFailedMsgId />
-    <spQualifiedPassEventFlag />
-    <validDist />
-    <playerAnimId />
-    <chrAnimId />
-    <spQualifiedId Refs="SpEffectParam(spQualifiedType=2),EquipParamGoods(spQualifiedType=1)" Wiki="Requirement #1. Good owned or special effect present required to use objAct.\nspQualifiedType determines which type to reference." />
-    <spQualifiedId2 Refs="SpEffectParam(spQualifiedType2=2),EquipParamGoods(spQualifiedType2=1)" Wiki="Requirement #2. Good owned or special effect present required to use objAct.\nspQualifiedType determines which type to reference." />
-    <objDummyId />
-    <objAnimId />
-    <validPlayerAngle />
-    <spQualifiedType Enum="QualifierType" Wiki="Requirement #1. What requirement type to use for spQualifiedID." />
-    <spQualifiedType2 Enum="QualifierType" Wiki="Requirement #2. What requirement type to use for spQualifiedID." />
-    <validObjAngle />
-    <chrSorbType />
-    <eventKickTiming />
+    <actionEnableMsgId 
+    AltName="Enabled: Message ID"
+    Wiki="The text ID to use for the prompt message if this interaction is enabled." 
+    FmgRef="Event_Text" />
+    
+    <actionFailedMsgId 
+    AltName="Failed: Message ID"
+    Wiki="The text ID to use for the prompt message if this interaction fails." 
+    FmgRef="Event_Text" />
+    
+    <spQualifiedPassEventFlag 
+    AltName="Bypass Qualification Check: Event Flag ID"
+    Wiki="The event flag ID that causes the qualification checks to be ignored for this interaction."
+    FlagAlias="" />
+    
+    <validDist 
+    AltName="Use Distance"
+    Wiki="The maximum distance at which this interaction can be triggered. In metres." />
+    
+    <playerAnimId 
+    AltName="Use Action: Player Animation ID"
+    Wiki="The player animation to use when this interaction is used by a player." />
+    
+    <chrAnimId 
+    AltName="Use Action: Character Animation ID"
+    Wiki="The player animation to use when this interaction is used by a non-player character." />
+    
+    <spQualifiedId 
+    AltName="Qualification ID: 1"
+    Wiki="The requirements to use this interaction, can either be a EquipParamGoods or SpEffectParam row.\nspQualifiedType determines which type to reference."
+    Refs="SpEffectParam(spQualifiedType=2),EquipParamGoods(spQualifiedType=1)" />
+    
+    <spQualifiedId2 
+    AltName="Qualification ID: 2"
+    Wiki="The requirements to use this interaction, can either be a EquipParamGoods or SpEffectParam row.\nspQualifiedType2 determines which type to reference."
+    Refs="SpEffectParam(spQualifiedType2=2),EquipParamGoods(spQualifiedType2=1)" />
+    
+    <objDummyId 
+    AltName="Use: Dummy Polygon ID"
+    Wiki="The dummy polygon belonging to the attached object for this interaction that determines the 'action' position." />
+    
+    <objAnimId 
+    AltName="Use: Object Animation ID"
+    Wiki="The object animation to use when this interaction is used." />
+    
+    <validPlayerAngle 
+    AltName="Valid Player Angle"
+    Wiki="The usage cone where a player can trigger this interaction (on the player's side). Effective angular difference between the player's orientation vector and the object's orientation vector. In degrees." />
+    
+    <spQualifiedType 
+    AltName="Qualification Type: 1"
+    Wiki="The requirement type to use for spQualifiedID." 
+    Enum="OBJACT_SP_QUALIFIED_TYPE" />
+    
+    <spQualifiedType2 
+    AltName="Qualification Type: 2"
+    Wiki="The requirement type to use for spQualifiedID2." 
+    Enum="OBJACT_SP_QUALIFIED_TYPE" />
+    
+    <validObjAngle 
+    AltName="Valid Object Angle"
+    Wiki="The usage cone where a player can trigger this interaction (on the object's side). Effective angular difference between the player's orientation vector and the object's orientation vector. In degrees." />
+    
+    <chrSorbType 
+    AltName="Character Attraction Type"
+    Wiki="How the user character is attracted into the object during usage." 
+    Enum="OBJACT_CHR_SORB_TYPE" />
+    
+    <eventKickTiming 
+    AltName="Interaction Activation Timing"
+    Wiki="The timing for the interaction activation." />
+    
+    <pad1
+    Padding="" />
   </Field>
+  <Enums>
+    <Enum Name="OBJACT_SP_QUALIFIED_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Goods" />
+        <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="OBJACT_CHR_SORB_TYPE" type="u8">
+        <Option Value="0" Name="Move to Dummy Polygon" />
+        <Option Value="1" Name="Turn towards Dummy Polygon" />
+    </Enum>
+    <Enum Name="OBJACT_EVENT_KICK_TIMING" type="u8">
+        <Option Value="0" Name="After playing object animation" />
+        <Option Value="1" Name="Before playing object animation" />
+    </Enum>
+  </Enums>
 </PARAMMETA>
