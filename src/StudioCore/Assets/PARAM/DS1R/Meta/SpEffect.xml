@@ -1,343 +1,868 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0" >
-    <Enums>
-        <Enum Name="SP_EFFECT_TYPE">
-            <Option Value="0" Name="none" />
-            <Option Value="1" Name="Flame" />
-            <Option Value="2" Name="Flame" />
-            <Option Value="3" Name="Hill" />
-            <Option Value="4" Name="Corrosion" />
-            <Option Value="5" Name="Stun" />
-            <Option Value="6" Name="Strong plasma" />
-            <Option Value="7" Name="Ghost camouflage" />
-            <Option Value="8" Name="Disguise" />
-            <Option Value="9" Name="Gravity user" />
-            <Option Value="10" Name="Abnormal Recovery [Flame]" />
-            <Option Value="11" Name="Abnormal recovery [Stun]" />
-            <Option Value="12" Name="Abnormal state recovery [strong plasma]" />
-            <Option Value="13" Name="Abnormal recovery [All-purpose]" />
-            <Option Value="14" Name="Soul Steel" />
-            <Option Value="15" Name="Zoom" />
-            <Option Value="16" Name="Warp" />
-            <Option Value="17" Name="Demon's Soul" />
-            <Option Value="18" Name="Black Ghosts" />
-            <Option Value="24" Name="No magic use" />
-            <Option Value="26" Name="Grindstone" />
-            <Option Value="32" Name="Gold Bondage" />
-            <Option Value="38" Name="Auditory hallucinations" />
-            <Option Value="39" Name="Soul coins" />
-            <Option Value="43" Name="Forced ghosting stage 1" />
-            <Option Value="44" Name="Forced ghosting second stage" />
-            <Option Value="45" Name="Forced ghosting stage 3" />
-            <Option Value="47" Name="Cat landing" />
-            <Option Value="50" Name="Regenerate" />
-            <Option Value="52" Name="Weak Regenerate" />
-            <Option Value="53" Name="Weak Ghost Camouflage" />
-            <Option Value="57" Name="Yellow Cloak" />
-            <Option Value="66" Name="Item Drop Compensation" />
-            <Option Value="67" Name="MP Regenerate" />
-            <Option Value="68" Name="Weak MP Regenerate" />
-            <Option Value="69" Name="Resurrection when dead" />
-            <Option Value="95" Name="Mimicry" />
-            <Option Value="96" Name="Transformation" />
-            <Option Value="99" Name="Waiting for cooperation" />
-            <Option Value="100" Name="Cooperation" />
-            <Option Value="101" Name="Cooperation Sending" />
-            <Option Value="102" Name="Gravity" />
-            <Option Value="103" Name="Evil Eye" />
-            <Option Value="104" Name="State Release [Waiting for Cooperation]" />
-            <Option Value="105" Name="Effect Lv1" />
-            <Option Value="106" Name="Effect Lv2" />
-            <Option Value="107" Name="Effect Lv3" />
-            <Option Value="108" Name="Evil Eye Lv1" />
-            <Option Value="109" Name="Evil Eye Lv2" />
-            <Option Value="110" Name="Counter" />
-            <Option Value="111" Name="Eggs on standby" />
-            <Option Value="112" Name="Eggs planted" />
-            <Option Value="113" Name="Egg head standby" />
-            <Option Value="114" Name="Egg head" />
-            <Option Value="115" Name="Ultralight Move" />
-            <Option Value="116" Name="Curse 1" />
-            <Option Value="117" Name="Petrify" />
-            <Option Value="118" Name="Curse 1 canceled" />
-            <Option Value="120" Name="Damage animation change_only for SA" />
-            <Option Value="121" Name="Damage animation change_additional" />
-            <Option Value="122" Name="Underwater behavior" />
-            <Option Value="123" Name="Weapon Head" />
-            <Option Value="124" Name="Weapon Body" />
-            <Option Value="125" Name="Weapon hand" />
-            <Option Value="126" Name="Weapon leg" />
-            <Option Value="133" Name="Blood character acquisition" />
-            <Option Value="134" Name="Flag change" />
-            <Option Value="136" Name="Crystallization" />
-            <Option Value="137" Name="Resonance Lv0" />
-            <Option Value="138" Name="Resonance Lv1" />
-            <Option Value="139" Name="Resonance Lv2" />
-            <Option Value="140" Name="Resonance Lv3" />
-            <Option Value="141" Name="Resonance Lv4" />
-            <Option Value="142" Name="Action ID designation" />
-            <Option Value="143" Name="Enemy Immortal" />
-            <Option Value="146" Name="Whole body grinding stone" />
-            <Option Value="148" Name="Rescue request" />
-            <Option Value="152" Name="Enhanced Flame" />
-            <Option Value="153" Name="Stun enhancement" />
-            <Option Value="155" Name="Enhanced SA" />
-            <Option Value="156" Name="Durability reduction disabled" />
-            <Option Value="157" Name="Anti-Spirit Enhancement" />
-            <Option Value="158" Name="Guard enhancement" />
-            <Option Value="159" Name="Ring resurrection when normally dead" />
-            <Option Value="160" Name="Ring resurrected when cursed to death" />
-            <Option Value="161" Name="Warp B" />
-            <Option Value="162" Name="Warp C" />
-            <Option Value="163" Name="Warp D" />
-            <Option Value="164" Name="Warp E" />
-            <Option Value="165" Name="Warp A" />
-            <Option Value="166" Name="Pledge breakage" />
-            <Option Value="167" Name="Full body transformation" />
-            <Option Value="168" Name="Precision Enhancement" />
-            <Option Value="176" Name="Soul Coin (Immortal)" />
-            <Option Value="177" Name="Soul Coin (Beastly)" />
-            <Option Value="179" Name="Curse effect Lv1" />
-            <Option Value="180" Name="Curse effect Lv2" />
-            <Option Value="181" Name="Curse effect Lv3" />
-            <Option Value="182" Name="Curse effect Lv4" />
-            <Option Value="185" Name="Nit effect" />
-            <Option Value="186" Name="Flame Kick" />
-            <Option Value="192" Name="Egg head_second level" />
-            <Option Value="193" Name="Lifespan extension" />
-            <Option Value="194" Name="Increase number of magic uses" />
-            <Option Value="197" Name="Counter Up" />
-            <Option Value="198" Name="Egg Destruction" />
-            <Option Value="203" Name="Decrease number of times magic is used" />
-            <Option Value="204" Name="Strengthen Guard [Large]" />
-            <Option Value="232" Name="No use of prohibited items in arena" />
-            <Option Value="235" Name="Arena NoDead" />
-        </Enum>
-        <Enum Name="SpCategory">
-            <Option Value="0" Name="Stack Unique Effects" />
-            <Option Value="1" Name="? (needs testing)" />
-            <Option Value="10" Name="Stack Duplicable Effects" />
-            <Option Value="20" Name="Reset Active Effects" />
-            <Option Value="100" Name="Single Effect, older removed" />
-            <Option Value="110" Name="? (needs testing)" />
-            <Option Value="1000" Name="Use categoryPriority, delay low priorities" />
-            <Option Value="1001" Name="? (needs testing)" />
-            <Option Value="1002" Name="Use categoryPriority, delay low priorities" />
-            <Option Value="10000" Name="Single Effect, newer ignored" />
-            <Option Value="10001" Name="Single Effect, newer ignored" />
-            <Option Value="10002" Name="Single Effect, newer ignored" />
-            <Option Value="10003" Name="Single Effect, newer ignored" />
-            <Option Value="10004" Name="Single Effect, newer ignored" />
-            <Option Value="10005" Name="Single Effect, newer ignored" />
-            <Option Value="10006" Name="Single Effect, newer ignored" />
-        </Enum>
-        <Enum Name="AtkAttribute">
-            <Option Value="1" Name="Slash" />
-            <Option Value="2" Name="Strike" />
-            <Option Value="3" Name="Thrust" />
-            <Option Value="4" Name="Normal" />
-        </Enum>
-        <Enum Name="SpAttribute">
-            <Option Value="1" Name="Normal" />
-            <Option Value="2" Name="Fire" />
-            <Option Value="3" Name="Magic" />
-            <Option Value="4" Name="Poison" />
-            <Option Value="5" Name="Unused (Egg)" />
-            <Option Value="6" Name="Lightning" />
-            <Option Value="7" Name="Petrification" />
-            <Option Value="8" Name="Crystal" />
-        </Enum>
-        <Enum Name="WepParamChange">
-            <Option Value="0" Name="apply to everything" />
-            <Option Value="1" Name="right hand only (removes effect if rhand swapped)" />
-            <Option Value="2" Name="left hand only (removes effect if lhand swapped)" />
-            <Option Value="3" Name="spells/status effects??" />
-            <Option Value="4" Name="kick,falling damage?" />
-        </Enum>
-        <Enum Name="MoveType">
-            <Option Value="0" Name="normal" />
-            <Option Value="3" Name="chameleon" />
-            <Option Value="4" Name="water" />
-            <Option Value="5" Name="iron flesh" />
-        </Enum>
-        <Enum Name="LifeReductionType">
-            <Option Value="2" Name="poison" />
-            <Option Value="5" Name="toxic" />
-        </Enum>
-    </Enums>
-    <Field>
-        <iconId Wiki="ID of icon to use while effect is active" />
-        <conditionHp Wiki="Maximum percentage of HP required for effect to activate.\n-1 = no requirement, 40 = less than 40%% HP, 80 = less than 80%% HP" />
-        <effectEndurance Wiki="Duration of effect (in seconds)" />
-        <motionInterval Wiki="Interval (in seconds) for specific effects to be reapplied. 0 = once per frame" />
-        <maxHpRate Wiki="Multiplies maximum HP. See bCurrHPIndependeMaxHP to determine how current HP behaves.\n1 = default, .5 = -50%%, 2 = +100%%" />
-        <maxMpRate />
-        <maxStaminaRate Wiki="Multiplies maximum stamina." />
-        <slashDamageCutRate Wiki="Multiplies slash physical damage taken." />
-        <blowDamageCutRate Wiki="Multiplies strike physical damage taken." />
-        <thrustDamageCutRate Wiki="Multiplies thrust physical damage taken." />
-        <neutralDamageCutRate Wiki="Multiplies neutral physical damage taken." />
-        <magicDamageCutRate Wiki="Multiplies magic damage taken." />
-        <fireDamageCutRate Wiki="Multiplies fire damage taken." />
-        <thunderDamageCutRate Wiki="Multiplies lightning damage taken." />
-        <physicsAttackRate Wiki="Multiplies physical damage dealt (post-defense, bypasses attack rating)" />
-        <magicAttackRate Wiki="Multiplies magic damage dealt (post-defense, bypasses attack rating)" />
-        <fireAttackRate Wiki="Multiplies fire damage dealt (post-defense, bypasses attack rating)" />
-        <thunderAttackRate Wiki="Multiplies lightning damage dealt (post-defense, bypasses attack rating)" />
-        <physicsAttackPowerRate Wiki="Multiplies physical damage dealt." />
-        <magicAttackPowerRate Wiki="Multiplies magic damage dealt." />
-        <fireAttackPowerRate Wiki="Multiplies fire damage dealt." />
-        <thunderAttackPowerRate Wiki="Multiplies lightning damage dealt." />
-        <physicsAttackPower Wiki="Adds physical damage to attack rating." />
-        <magicAttackPower Wiki="Adds magic damage to attack rating." />
-        <fireAttackPower Wiki="Adds fire damage to attack rating." />
-        <thunderAttackPower Wiki="Adds lightning damage to attack rating." />
-        <physicsDiffenceRate Wiki="Multiplies physical defense." />
-        <magicDiffenceRate Wiki="Multiplies magic defense." />
-        <fireDiffenceRate Wiki="Multiplies fire defense." />
-        <thunderDiffenceRate Wiki="Multiplies thunder defense." />
-        <physicsDiffence Wiki="Adds to physical defense." />
-        <magicDiffence Wiki="Adds to magic defense." />
-        <fireDiffence Wiki="Adds to fire defense." />
-        <thunderDiffence Wiki="Adds to lightning defense." />
-        <NoGuardDamageRate Wiki="Unused. Possibly multiplies damage against non-guarding enemies? (needs testing)" />
-        <vitalSpotChangeRate Wiki="Unused. Possibly multiplies damage when hitting a enemy's weak point? (needs testing)" />
-        <normalSpotChangeRate Wiki="Unused. Possibly multiplies damage when not hitting an enemy's weak point? (needs testing)" />
-        <maxHpChangeRate Wiki="Unused. See maxHpRate" />
-        <behaviorId Refs="BehaviorParam,BehaviorParam_PC" Wiki="ID of BehaviorParam or BehaviorParam_PC to apply to the effect's owner.\nRequires stateInfo to function. stateInfo 142 applies non-player BehaviorParam for attacks only (not bullets).\nstateInfo 171 is used for karmic justice spell but has unknown, possibly hardcoded limitations (needs testing)" />
-        <changeHpRate Wiki="Increases/decreases HP by percent of max HP. -100 = heal 100%% HP, 100 = remove 100%% HP" />
-        <changeHpPoint Wiki="Flat increase/decrease to HP. -100 = heal 100 damage, 100 = deal 100 damage" />
-        <changeMpRate />
-        <changeMpPoint />
-        <mpRecoverChangeSpeed />
-        <changeStaminaRate Wiki="Does nothing. See staminaRecoverChangeSpeed" />
-        <changeStaminaPoint Wiki="Does nothing. See staminaRecoverChangeSpeed" />
-        <staminaRecoverChangeSpeed Wiki="Flat increase/decrease to stamina regeneration." />
-        <magicEffectTimeChange Wiki="Does nothing. Lingering Dragoncrest Ring uses stateinfo 193 which checks for isExtendSpEffectLife." />
-        <insideDurability Wiki="Flat increase/decrease to durability.\n-100 = restore 100 durability, 100 = consume 100 durability" />
-        <maxDurability Wiki="Affects hits required before durability is consumed. 5 = +5 hits before durability consumed, -5 = -5 hits before durability consumed" />
-        <staminaAttackRate Wiki="Multiplies stamina damage dealt." />
-        <poizonAttackPower Wiki="Poison status effect added/subtracted." />
-        <registIllness Wiki="Toxic status effect added/subtracted." />
-        <registBlood Wiki="Bleed status effect added/subtracted." />
-        <registCurse Wiki="Curse status effect added/subtracted." />
-        <fallDamageRate Wiki="Does nothing. Fall control effects use stateInfo 47" />
-        <soulRate Wiki="Multiplies souls received from enemies." />
-        <equipWeightChangeRate Wiki="Multiplies maximum equip weight." />
-        <allItemWeightChangeRate Wiki="Does nothing. Probable DeS remnant." />
-        <soul Wiki="Flat increase/decrease to souls." />
-        <animIdOffset Wiki="Offsets animation IDs. Frequently used to make enemies swap movesets." />
-        <haveSoulRate Wiki="Multiplies the amount of souls granted after death. May only work when added via npcParam? (needs testing)" />
-        <targetPriority Wiki="Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)." />
-        <sightSearchEnemyCut Wiki="Reduces distance for enemies to see the effect's owner.\n0 = default, 50 = -50%% sight distance, 100 = -100%% sight distance" />
-        <hearingSearchEnemyCut Wiki="Reduces distance for enemies to hear the effect's owner.\n0 = default, 50 = -50%% hearing distance, 100 = -100%% hearing distance" />
-        <grabityRate Wiki="Multiplies animation speeds. 1 = default, .5 = -50%% speed, 2 = +100%% speed" />
-        <registPoizonChangeRate Wiki="Multiplies stat based poison resistance." />
-        <registIllnessChangeRate Wiki="Multiplies stat based toxic resistance." />
-        <registBloodChangeRate Wiki="Multiplies stat based bleed resistance." />
-        <registCurseChangeRate Wiki="Multiplies stat based curse resistance." />
-        <soulStealRate Wiki="Unknown. Internal description says &quot;defense against HP when NPCs are robbed by soul steal&quot;." />
-        <lifeReductionRate Wiki="Multiplies the duration of the status effect specified with lifeReductionType." />
-        <hpRecoverRate Wiki="Multiplies healing received." />
-        <replaceSpEffectId Refs="SpEffectParam" Wiki="ID of spEffectParam to add once this effect ends." />
-        <cycleOccurrenceSpEffectId Refs="SpEffectParam" Wiki="ID of spEffectParam to add once every motionInterval" />
-        <atkOccurrenceSpEffectId Refs="SpEffectParam" Wiki="ID of spEffectParam to add to victim when the owner hits an enemy.\nRequires stateInfo 152 or 153 (and likely other values used for weapon buffs) to work (VFX present)" />
-        <guardDefFlickPowerRate Wiki="Possibly affects attack bouncing? (needs testing)" />
-        <guardStaminaCutRate Wiki="Multiplies shield stability. Requires stateInfo 158 (magic shield) or stateInfo 204 (great magic shield) to work (VFX present). Note that stability values over 100 nullify all stamina damage." />
-        <rayCastPassedTime Wiki="Unknown. Only used for unused &quot;Evil Eye&quot;. Internal description says &quot;Gaze passing: activation time (milliseconds).&quot;" />
-        <changeSuperArmorPoint Wiki="Flat increase/decrease to poise. Requires stateInfo 155 to work." />
-        <bowDistRate Wiki="Modifies ShotRange (effective distance) for ranged weapons. 0 = default, 50 = +50%%? (values needs testing)" />
-        <spCategory Enum="SpCategory" Wiki="Determines special effect stacking behavior; how effects will react when another effect in the same category is added."/>
-        <categoryPriority Wiki="Used with specific spCategory values to determine stacking behavior. The higher the value, the lower the priority." />
-        <saveCategory Wiki="Used to save effects so that they remain after quitting and loading the game. Only one effect per saveCategory is saved. (needs testing)" />
-        <changeMagicSlot Wiki="Increases attunement slots." />
-        <changeMiracleSlot Wiki="Probably does nothing (needs testing)" />
-        <heroPointDamage Wiki="Flat increase/decrease to humanity stat. -1 = add 1 humanity, 1 = remove 1 humanity" />
-        <defFlickPower Wiki="Possibly affects attack bouncing? (needs testing)" />
-        <flickDamageCutRate Wiki="Possibly affects attack bouncing? (needs testing)" />
-        <bloodDamageRate Wiki="Possibly affects bleed damage dealt? (needs testing)" />
-        <dmgLv_None Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_S Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_M Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_L Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_BlowM Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_Push Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_Strike Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_BlowS Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_Min Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_Uppercut Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_BlowLL Wiki="Sets stun level. (needs additional info)" />
-        <dmgLv_Breath Wiki="Sets stun level. (needs additional info)" />
-        <atkAttribute Enum="AtkAttribute" Wiki="Physical damage type." />
-        <spAttribute Enum="SpAttribute" Wiki="Special damage type. Changes visual/audio effects on hit and death animations." />
-        <stateInfo Enum="SP_EFFECT_TYPE" Refs="SpEffectVfxParam" Wiki="ID of hardcoded system to use for unique effects. Causes effects itself and is necessary for certain fields to work.\nAlso used for visual effects by referring to the ID of a SpEffectVfxParam to use if useSpEffectEffect is true."/>
-        <wepParamChange Enum="WepParamChange" Wiki="Determines how specific fields, such as damage modifiers, behave with certain attack &quot;categories&quot;" />
-        <moveType Enum="MoveType" Wiki="Offsets character movement animations. Possibly refers to MoveParam? (needs testing)" />
-        <lifeReductionType Enum="LifeReductionType" Wiki="Determines the type of status effect to modify the duration of using lifeReductionRate." />
-        <throwCondition Wiki="Affects throws. Values unknown (needs testing)." />
-        <addBehaviorJudgeId_condition Wiki="Used to prevent certain attack behaviors from occurring. How values correlate with behaviors is unknown. (needs testing)" />
-        <addBehaviorJudgeId_add Wiki="Unknown. Never used. Internal description suggests that this is a constant added to all behavior judge IDs, but tests have been unsuccessful (needs testing)." />
-        <effectTargetSelf IsBool="" Wiki="Will affect the effect's owner." />
-        <effectTargetFriend IsBool="" Wiki="Will affect the effect's owner's allies." />
-        <effectTargetEnemy IsBool="" Wiki="Will affect the effect's owner's enemies." />
-        <effectTargetPlayer IsBool="" Wiki="Will affect the player." />
-        <effectTargetAI IsBool="" Wiki="Will affect AI characters? (needs verification)" />
-        <effectTargetLive IsBool="" Wiki="Will affect non-hollow humans." />
-        <effectTargetGhost IsBool="" Wiki="Will affect hollow humans." />
-        <effectTargetWhiteGhost IsBool="" Wiki="Will affect white phantoms." />
-        <effectTargetBlackGhost IsBool="" Wiki="Will affect red phantoms." />
-        <effectTargetAttacker IsBool="" Wiki="When effect is added via equipParamWeapon spEffectBehavior field, this field determines if the effect will be applied to attacked enemies instead of the effect owner.\ntrue = affects victim, false = affects owner" />
-        <dispIconNonactive IsBool="" Wiki="Unknown. Never used. Internal description says (approximately) &quot;display icon even when effect is waiting to be active.&quot;" />
-        <useSpEffectEffect IsBool="" Wiki="Determines if visual effects via SpEffectVfxParam should be used. See stateInfo for the ID of SpEffectVfxParam to be used." />
-        <bAdjustMagicAblity IsBool="" Wiki="Determines if certain fields will be modified by a sorcery tool's(?) magic adjustment. (actual conditions need testing)" />
-        <bAdjustFaithAblity IsBool="" Wiki="Determines if certain fields will be modified by a miracle tool's(?) magic adjustment. (actual conditions need testing)" />
-        <bGameClearBonus IsBool="" Wiki="Effect only applied in NG+" />
-        <magParamChange IsBool="" Wiki="Determines if certain fields, such as damage multipliers, will also affect sorceries and pyromancies." />
-        <miracleParamChange IsBool="" Wiki="Determines if certain fields, such as damage multipliers, will also affect miracles." />
-        <clearSoul IsBool="" Wiki="Sets soul counter to 0." />
-        <requestSOS IsBool="" Wiki="Used only by White Sign Soapstone. Probably used for network matchmaking." />
-        <requestBlackSOS IsBool="" Wiki="Used only by Red Sign Soapstone. Probably used for network matchmaking." />
-        <requestForceJoinBlackSOS IsBool="" Wiki="Used only by (Cracked) Red Eye Orb. Probably used for network matchmaking." />
-        <requestKickSession IsBool="" Wiki="Possibly kicks all clients out of your world." />
-        <requestLeaveSession IsBool="" Wiki="Used only by Black Separation Crystal. Probably used to leave network sessions." />
-        <requestNpcInveda IsBool="" Wiki="Used only by Black Eye Orb (Lautrec quest and cut Shiva quest)" />
-        <noDead IsBool="" Wiki="If true, character cannot die (may be DSR or debug build only? needs testing!)" />
-        <bCurrHPIndependeMaxHP IsBool="" Wiki="Determines how current HP behaves when maximum HP is modified.
-true = current HP will not change, false = current HP will change with max HP" />
-        <corrosionIgnore IsBool="" Wiki="Possibly makes owner immune to durability damaging effects? (needs testing)" />
-        <sightSearchCutIgnore IsBool="" Wiki="Possibly makes owner ignore sightSearchEnemyCut? (needs testing)" />
-        <hearingSearchCutIgnore IsBool="" Wiki="Possibly makes owner ignore hearingSearchEnemyCut? (needs testing)" />
-        <antiMagicIgnore IsBool="" Wiki="Possibly makes owner ignore Vow of Silence? (needs testing)" />
-        <fakeTargetIgnore IsBool="" Wiki="Possibly makes owner ignore Aural Decoy? (needs testing)" />
-        <fakeTargetIgnoreUndead IsBool="" Wiki="Possibly makes owner ignore Alluring Skull? (needs testing)" />
-        <fakeTargetIgnoreAnimal IsBool="" Wiki="Unknown. Never used." />
-        <grabityIgnore IsBool="" Wiki="Makes owner ignore grabityRate." />
-        <disablePoison IsBool="" Wiki="Makes owner immune to poison." />
-        <disableDisease IsBool="" Wiki="Makes owner immune to toxic." />
-        <disableBlood IsBool="" Wiki="Makes owner immune to bleed." />
-        <disableCurse IsBool="" Wiki="Makes owner immune to curse." />
-        <enableCharm IsBool="" Wiki="Possibly makes owner vulnerable to Undead Rapport? (needs testing)" />
-        <enableLifeTime IsBool="" Wiki="Possibly makes effect end when owner dies? (may require stateInfo, needs testing)" />
-        <hasTarget IsBool="" Wiki="Unknown. Only used for unused &quot;Evil Eye&quot;." />
-        <isFireDamageCancel IsBool="" Wiki="Unknown. Never used. Does not grant immunity to fire damage." />
-        <isExtendSpEffectLife IsBool="" Wiki="Determines if effectEndurance will be affected by stateInfo 193 which is used by the Lingering Dragoncrest Ring." />
-        <requestLeaveColiseumSession IsBool="" Wiki="Used only by Purple Coward's Crystal." />
-        <vowType0 IsBool="" Wiki="Effect usable while in no covenant." />
-        <vowType1 IsBool="" Wiki="Effect usable while in Way of White covenant."/>
-        <vowType2 IsBool="" Wiki="Effect usable while in Princess Guard covenant."/>
-        <vowType3 IsBool="" Wiki="Effect usable while in Warrior of Sunlight covenant."/>
-        <vowType4 IsBool="" Wiki="Effect usable while in Darkwraith covenant."/>
-        <vowType5 IsBool="" Wiki="Effect usable while in Path of the Dragon covenant."/>
-        <vowType6 IsBool="" Wiki="Effect usable while in Gravelord Servant covenant."/>
-        <vowType7 IsBool="" Wiki="Effect usable while in Forest Hunter covenant."/>
-        <vowType8 IsBool="" Wiki="Effect usable while in Blade of the Dark Moon covenant."/>
-        <vowType9 IsBool="" Wiki="Effect usable while in Chaos Servant covenant."/>
-        <vowType10 IsBool="" />
-        <vowType11 IsBool="" />
-        <vowType12 IsBool="" />
-        <vowType13 IsBool="" />
-        <vowType14 IsBool="" />
-        <vowType15 IsBool="" />
-    </Field>
-    <Self Row0Dummy="" />
+  <Self 
+  Wiki="Determines the parameters for special effects." 
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="SpEffectParam" 
+    Name="Special Effects" />
+  </DisplayNames>
+    
+  <Field>
+    <iconId 
+    AltName="Icon ID"
+    Wiki="The icon id to display in the interface whilst the effect is active." />
+    
+    <conditionHp 
+    AltName="Trigger at HP Below %"
+    Wiki="The maximum percentage of HP required for effect to activate.\n-1 = no requirement, 40 = less than 40% HP, 80 = less than 80% HP" />
+    
+    <effectEndurance 
+    AltName="Duration"
+    Wiki="The duration of effect. In seconds." />
+    
+    <motionInterval 
+    AltName="Trigger Interval"
+    Wiki="The interval for the contents of this effect to be reapplied. 0 = once per frame. In seconds." />
+    
+    <maxHpRate 
+    AltName="Maximum HP %"
+    Wiki="Multiplies maximum HP. See bCurrHPIndependeMaxHP to determine how current HP behaves.\n1 = default, .5 = -50%, 2 = +100%" />
+    
+    <maxMpRate 
+    AltName="Maximum MP %"
+    Wiki="Multiplies maximum MP." 
+    Obsolete="" />
+    
+    <maxStaminaRate 
+    AltName="Maximum Stamina %"
+    Wiki="Multiplies maximum stamina." />
+    
+    <slashDamageCutRate 
+    AltName="Absorption %: Slash"
+    Wiki="Multiplies slash physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <blowDamageCutRate 
+    AltName="Absorption %: Strike"
+    Wiki="Multiplies strike physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <thrustDamageCutRate 
+    AltName="Absorption %: Thrust"
+    Wiki="Multiplies thrust physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <neutralDamageCutRate 
+    AltName="Absorption %: Physical"
+    Wiki="Multiplies neutral physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <magicDamageCutRate 
+    AltName="Absorption %: Magic"
+    Wiki="Multiplies magic damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <fireDamageCutRate 
+    AltName="Absorption %: Fire"
+    Wiki="Multiplies fire damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <thunderDamageCutRate 
+    AltName="Absorption %: Lightning"
+    Wiki="Multiplies lightning damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <physicsAttackRate 
+    AltName="Post-Defense Attack %: Physical"
+    Wiki="Multiplies physical damage dealt (post-defense, bypasses attack rating)" />
+    
+    <magicAttackRate 
+    AltName="Post-Defense Attack %: Magic"
+    Wiki="Multiplies magic damage dealt (post-defense, bypasses attack rating)" />
+    
+    <fireAttackRate 
+    AltName="Post-Defense Attack %: Fire"
+    Wiki="Multiplies fire damage dealt (post-defense, bypasses attack rating)" />
+    
+    <thunderAttackRate 
+    AltName="Post-Defense Attack %: Lightning"
+    Wiki="Multiplies lightning damage dealt (post-defense, bypasses attack rating)" />
+    
+    <physicsAttackPowerRate 
+    AltName="Attack %: Physical"
+    Wiki="Multiplies physical damage dealt." />
+    
+    <magicAttackPowerRate 
+    AltName="Attack %: Magic"
+    Wiki="Multiplies magic damage dealt." />
+    
+    <fireAttackPowerRate 
+    AltName="Attack %: Fire"
+    Wiki="Multiplies fire damage dealt." />
+    
+    <thunderAttackPowerRate 
+    AltName="Attack %: Lightning"
+    Wiki="Multiplies lightning damage dealt." />
+    
+    <physicsAttackPower 
+    AltName="Damage: Physical"
+    Wiki="Adds physical damage to attack rating." />
+    
+    <magicAttackPower 
+    AltName="Damage: Magic"
+    Wiki="Adds magic damage to attack rating." />
+    
+    <fireAttackPower 
+    AltName="Damage: Fire"
+    Wiki="Adds fire damage to attack rating." />
+    
+    <thunderAttackPower 
+    AltName="Damage: Lightning"
+    Wiki="Adds lightning damage to attack rating." />
+    
+    <physicsDiffenceRate 
+    AltName="Defense %: Physical"
+    Wiki="Multiplies physical defense." />
+    
+    <magicDiffenceRate 
+    AltName="Defense %: Magic"
+    Wiki="Multiplies magic defense." />
+    
+    <fireDiffenceRate
+    AltName="Defense %: Fire"
+    Wiki="Multiplies fire defense." />
+    
+    <thunderDiffenceRate 
+    AltName="Defense %: Lightning"
+    Wiki="Multiplies lightning defense." />
+    
+    <physicsDiffence 
+    AltName="Defense: Physical"
+    Wiki="Adds to physical defense." />
+    
+    <magicDiffence 
+    AltName="Defense: Magic"
+    Wiki="Adds to magic defense." />
+    
+    <fireDiffence 
+    AltName="Defense: Fire"
+    Wiki="Adds to fire defense." />
+    
+    <thunderDiffence 
+    AltName="Defense: Lightning"
+    Wiki="Adds to lightning defense." />
+    
+    <NoGuardDamageRate 
+    AltName="Damage on Hit %: Unguarded"
+    Wiki="Multiplier to the damage suffered by the target if it is not guarding when hit." />
+    
+    <vitalSpotChangeRate 
+    AltName="Damage on Hit %: Weak Point"
+    Wiki="Multiplier to the damage suffered by the target if it is hit in a part designated as a 'weak point'." />
+    
+    <normalSpotChangeRate 
+    AltName="Damage on Hit %: Standard"
+    Wiki="Multiplier to the damage suffered by the target if it is hit normally." />
+    
+    <maxHpChangeRate 
+    AltName="Maximum HP Source Multiplier"
+    Wiki="Multiplier to the maxHpRate values present on the character this effect belongs to." />
+    
+    <behaviorId 
+    AltName="Behavior ID"
+    Wiki="The ID of BehaviorParam or BehaviorParam_PC to apply to the effect's owner.\nRequires stateInfo 142 to function for non-player characters.\nRequires stateInfo 171 to function for player characters." 
+    Refs="BehaviorParam(stateInfo=142),BehaviorParam_PC(stateInfo=171)" />
+    
+    <changeHpRate 
+    AltName="Damage HP by Percentage"
+    Wiki="Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum HP of the character." />
+    
+    <changeHpPoint 
+    AltName="Damage HP by Point"
+    Wiki="Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <changeMpRate 
+    AltName="Damage MP by Percentage"
+    Wiki="Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character." />
+    
+    <changeMpPoint 
+    AltName="Damage MP by Point"
+    Wiki="Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <mpRecoverChangeSpeed 
+    AltName="MP Recovery Speed" 
+    Wiki="The amount of MP recovered per second." />
+    
+    <changeStaminaRate 
+    AltName="Damage Stamina by Percentage"
+    Wiki="Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character." />
+    
+    <changeStaminaPoint 
+    AltName="Damage Stamina by Point"
+    Wiki="Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <staminaRecoverChangeSpeed 
+    AltName="Stamina Recovery Speed" 
+    Wiki="The amount of stamina recovered per second." />
+    
+    <magicEffectTimeChange 
+    AltName="Magic Effect Duration Change"
+    Wiki="For only spells whose effect duration is set to 0.1 seconds or more, add or subtract the time set to the effect duration.\n\nLingering Dragoncrest Ring uses stateinfo 193 which checks for isExtendSpEffectLife." 
+    Obsolete="" />
+    
+    <insideDurability 
+    AltName="Damage Durability by Point"
+    Wiki="Causes Durability loss to the used equipment of the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <maxDurability 
+    AltName="Hits per Durability Loss"
+    Wiki="Affects hits required before durability is consumed. 5 = +5 hits before durability consumed, -5 = -5 hits before durability consumed" />
+    
+    <staminaAttackRate 
+    AltName="Attack %: Stamina"
+    Wiki="Multiplies stamina damage dealt." />
+    
+    <poizonAttackPower
+    AltName="Inflict: Poison"
+    Wiki="Adds to the amount of poison status effect inflicted." />
+    
+    <registIllness 
+    AltName="Inflict: Toxic"
+    Wiki="Adds to the amount of toxic status effect inflicted." />
+    
+    <registBlood 
+    AltName="Inflict: Bleed"
+    Wiki="Adds to the amount of bleed status effect inflicted." />
+    
+    <registCurse 
+    AltName="Inflict: Curse"
+    Wiki="Adds to the amount of curse status effect inflicted." />
+    
+    <fallDamageRate 
+    AltName="Fall Damage %"
+    Wiki="Does nothing. Fall control effects use stateInfo 47" 
+    Obsolete="" />
+    
+    <soulRate 
+    AltName="Soul Absorption %"
+    Wiki="Multiplies souls received from enemies." />
+    
+    <equipWeightChangeRate 
+    AltName="Equipment Weight %"
+    Wiki="Multiplies maximum equip weight." />
+    
+    <allItemWeightChangeRate 
+    AltName="Item Weight %"
+    Wiki="Multiplies maximum item weight. Does nothing. Probable DeS remnant." 
+    Obsolete="" />
+    
+    <soul 
+    AltName="Souls"
+    Wiki="Flat increase/decrease to souls." />
+    
+    <animIdOffset 
+    AltName="Animation ID Offset"
+    Wiki="Offsets animation IDs. Frequently used to make enemies swap movesets." />
+    
+    <haveSoulRate 
+    AltName="Soul Possession %"
+    Wiki="Multiplies the amount of souls granted after death. Requires base value in character's NpcParam row." />
+    
+    <targetPriority 
+    AltName="Target Priority Addition"
+    Wiki="Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)." />
+    
+    <sightSearchEnemyCut 
+    AltName="Visual Search Reduction %"
+    Wiki="The value to reduce the distance at which enemies see the effect's owner.\n0 = default, 50 = -50% sight distance, 100 = -100% sight distance" />
+    
+    <hearingSearchEnemyCut 
+    AltName="Auditory Search Reduction %"
+    Wiki="The value to reduce the distance at which enemies hear the effect's owner.\n0 = default, 50 = -50% hearing distance, 100 = -100% hearing distance" />
+    
+    <grabityRate 
+    AltName="Animation Playback Speed"
+    Wiki="Multiplies animation speeds. 1 = default, 0.5 = -50% speed, 2 = +100% speed" />
+    
+    <registPoizonChangeRate 
+    AltName="Resistance %: Poison"
+    Wiki="Multiplies stat based poison resistance." />
+    
+    <registIllnessChangeRate 
+    AltName="Resistance %: Toxic"
+    Wiki="Multiplies stat based toxic resistance." />
+    
+    <registBloodChangeRate 
+    AltName="Resistance %: Bleed"
+    Wiki="Multiplies stat based bleed resistance." />
+    
+    <registCurseChangeRate 
+    AltName="Resistance %: Curse"
+    Wiki="Multiplies stat based curse resistance." />
+    
+    <soulStealRate 
+    AltName="Soul Steal %"
+    Wiki="The defense power against HP loss when soul steal move is used." 
+    Obsolete="" />
+    
+    <lifeReductionRate 
+    AltName="Effect Duration Change %"
+    Wiki="Multiplies the duration of the status effect with the stateInfo specified by lifeReductionType." />
+    
+    <hpRecoverRate 
+    AltName="HP Recovery %"
+    Wiki="Multiplies healing received." />
+    
+    <replaceSpEffectId 
+    AltName="Expire SpEffect ID"
+    Wiki="The ID of spEffectParam to add once this effect ends." 
+    Refs="SpEffectParam" />
+    
+    <cycleOccurrenceSpEffectId 
+    AltName="Cycle SpEffect ID"
+    Wiki="The ID of spEffectParam to add once every motionInterval." 
+    Refs="SpEffectParam" />
+    
+    <atkOccurrenceSpEffectId 
+    AltName="Attack SpEffect ID"
+    Wiki="ID of spEffectParam to add to victim when the owner hits an enemy.\nRequires stateInfo 152 or 153 (and likely other values used for weapon buffs) to work (VFX present)" 
+    Refs="SpEffectParam" />
+    
+    <guardDefFlickPowerRate 
+    AltName="Guard Defense Repulsion %"
+    Wiki="The multiplier to apply to guard defense (for deflection)." />
+    
+    <guardStaminaCutRate 
+    AltName="Guard Stability %"
+    Wiki="Multiplies shield stability. Requires stateInfo 158 (magic shield) or stateInfo 204 (great magic shield) to work (VFX present). Note that stability values over 100 nullify all stamina damage." />
+    
+    <rayCastPassedTime 
+    AltName="Raycast Passed Time"
+    Wiki="Activation time for passing the line of sight (used for the Evil Eye). In milliseconds." />
+    
+    <changeSuperArmorPoint 
+    AltName="Poise"
+    Wiki="Flat increase/decrease to poise. Requires stateInfo 155 to work." />
+    
+    <bowDistRate 
+    AltName="Ammunition Distance %" 
+    Wiki="Addition to the bowDistRate field of the held weapon for the effect's owner." />
+    
+    <spCategory 
+    AltName="SpEffect Category"
+    Wiki="Determines special effect stacking behavior; how effects will react when another effect in the same category is added." 
+    Enum="SP_EFFECT_SPCATEGORY" />
+    
+    <categoryPriority 
+    AltName="Category Priority"
+    Wiki="Used with specific spCategory values to determine stacking behavior. The higher the value, the lower the priority." />
+    
+    <saveCategory 
+    AltName="Save Category"
+    Wiki="Used to save effects so that they remain after quitting and loading the game. Only one effect per saveCategory is saved." />
+    
+    <changeMagicSlot 
+    AltName="Attunement Slots (Magic)"
+    Wiki="Increases attunement slots." />
+    
+    <changeMiracleSlot 
+    AltName="Attunement Slots (Miracle)"
+    Wiki="Increases attunement slots." />
+    
+    <heroPointDamage 
+    AltName="Damage: Humanity"
+    Wiki="Flat increase/decrease to humanity stat. -1 = add 1 humanity, 1 = remove 1 humanity" />
+    
+    <defFlickPower 
+    AltName="Repulsion Defense" 
+    Wiki="Modifies the repulsion defense for the effect owner's current weapon." />
+    
+    <flickDamageCutRate 
+    AltName="Repulsion Damage Absorption %" 
+    Wiki="The absorption rate to use when calculating the repulsion damage for the effect owner's current weapon." />
+    
+    <bloodDamageRate 
+    AltName="Bleed Damage Incurred %"
+    Wiki="Multiplier to the damage portion of the Bleed status effect when it is triggered on the effect's owner." />
+    
+    <dmgLv_None 
+    AltName="Damage Level: No Impact" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_S 
+    AltName="Damage Level: Small Impact" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_M 
+    AltName="Damage Level: Medium Impact" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_L 
+    AltName="Damage Level: Large Impact" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_BlowM 
+    AltName="Damage Level: Medium Blow" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Push 
+    AltName="Damage Level: Push" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Strike 
+    AltName="Damage Level: Strike" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_BlowS 
+    AltName="Damage Level: Small Blow" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Min 
+    AltName="Damage Level: Minimal" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Uppercut 
+    AltName="Damage Level: Uppercut" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_BlowLL 
+    AltName="Damage Level: Blow Backwards" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Breath 
+    AltName="Damage Level: Breath" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <atkAttribute 
+    AltName="Attack Attribute" 
+    Wiki="Attack attribute to use when applying attack against the victim for attacks from this effect's owner." 
+    Enum="ATKPARAM_ATKATTR_TYPE" />
+    
+    <spAttribute 
+    AltName="Special Attribute" 
+    Wiki="Special attributes to use when applying attack against the victim for attacks from this effect's owner." 
+    Enum="ATKPARAM_SPATTR_TYPE" />
+    
+    <stateInfo 
+    AltName="State Info" 
+    Wiki="ID of hardcoded system to use for unique effects. Causes effects itself and is necessary for certain fields to work.\nAlso used for visual effects by referring to the ID of a SpEffectVfxParam to use if useSpEffectEffect is true."
+    ProjectEnum="SP_EFFECT_TYPE" 
+    Refs="SpEffectVfxParam(useSpEffectEffect=1)" />
+    
+    <wepParamChange 
+    AltName="Weapon Influence Type"
+    Wiki="Determines how specific fields, such as damage modifiers, behave with certain attack categories" 
+    Enum="SP_EFE_WEP_CHANGE_PARAM" />
+    
+    <moveType 
+    AltName="Movement Type"
+    Wiki="Offsets character movement animations." 
+    Enum="SP_EFFECT_MOVE_TYPE" />
+    
+    <lifeReductionType 
+    AltName="Effect Duration Change Type"
+    Wiki="Determines the type of status effect to modify the duration of. SpEffects with the specified stateInfo will be affected." 
+    ProjectEnum="SP_EFFECT_TYPE" />
+    
+    <throwCondition 
+    AltName="Throw Condition"
+    Wiki="Affects the throwing masks." 
+    Enum="SP_EFFECT_THROW_CONDITION_TYPE" />
+    
+    <addBehaviorJudgeId_condition 
+    AltName="Behavior ID: Condition"
+    Wiki="A condition value for the BehaviorJudgeId value used by the current owner." />
+    
+    <addBehaviorJudgeId_add 
+    AltName="Behavior ID: Add"
+    Wiki="A value for the BehaviorJudgeId value used by the current owner." />
+    
+    <effectTargetSelf 
+    AltName="Apply to Self"
+    Wiki="Will affect the effect's owner." 
+    IsBool="" />
+    
+    <effectTargetFriend 
+    AltName="Apply to Friend"
+    Wiki="Will affect the effect's owner's allies." 
+    IsBool="" />
+    
+    <effectTargetEnemy 
+    AltName="Apply to Enemy"
+    Wiki="Will affect the effect's owner's enemies." 
+    IsBool="" />
+    
+    <effectTargetPlayer 
+    AltName="Apply to Player"
+    Wiki="Will affect the player." 
+    IsBool="" />
+    
+    <effectTargetAI 
+    AltName="Apply to Non-Player"
+    Wiki="Will affect non-player characters." 
+    IsBool="" />
+    
+    <effectTargetLive 
+    AltName="Apply to Host"
+    Wiki="Will affect host player in multiplayer sessions." 
+    IsBool="" />
+    
+    <effectTargetGhost 
+    AltName="Apply to Phantom"
+    Wiki="Will affect all types of client players in multiplayer sessions." 
+    IsBool="" />
+    
+    <effectTargetWhiteGhost 
+    AltName="Apply to Friendly Phantom"
+    Wiki="Will affect friendly client players in multiplayer sessions."  
+    IsBool="" />
+    
+    <effectTargetBlackGhost 
+    AltName="Apply to Hostile Phantom"
+    Wiki="Will affect hostile client players in multiplayer sessions."  
+    IsBool="" />
+    
+    <effectTargetAttacker 
+    AltName="Apply to Attacker"
+    Wiki="When effect is added via equipParamWeapon spEffectBehavior field, this field determines if the effect will be applied to attacked enemies instead of the effect owner.\ntrue = affects victim, false = affects owner" 
+    IsBool="" />
+    
+    <dispIconNonactive 
+    AltName="Display Icon when Inactive"
+    Wiki="If ON, the interface icon for the effect will still disabled even if the effect is inactive due to a failed conditional check." 
+    IsBool="" />
+    
+    <useSpEffectEffect 
+    AltName="Trigger Particles via SpEffect"
+    Wiki="If ON, visual effects via SpEffectVfxParam will be used. See stateInfo for the ID of SpEffectVfxParam to be used." 
+    IsBool="" />
+    
+    <bAdjustMagicAblity 
+    AltName="Apply Intelligence Correction"
+    Wiki="If ON, the intelligence stat will be used to correct various fields, such as damage." 
+    IsBool="" />
+    
+    <bAdjustFaithAblity 
+    AltName="Apply Faith Correction"
+    Wiki="If ON, the faith stat will be used to correct various fields, such as damage." 
+    IsBool="" />
+    
+    <bGameClearBonus 
+    AltName="Apply Modifiers only after Game Clear"
+    Wiki="If ON, this effect will only be active in NG+ or higher." 
+    IsBool="" />
+    
+    <magParamChange 
+    AltName="Apply Modifiers to Sorcery"
+    Wiki="If ON, damage and scaling fields will apply to sorcery and pyromancies." 
+    IsBool="" />
+    
+    <miracleParamChange 
+    AltName="Apply Modifiers to Miracles"
+    Wiki="If ON, damage and scaling fields will apply to miracles." 
+    IsBool="" />
+    
+    <clearSoul 
+    AltName="Clear Held Souls"
+    Wiki="Sets soul counter to 0." 
+    IsBool="" />
+    
+    <requestSOS 
+    AltName="Request: Friendly Phantom"
+    Wiki="Used only by White Sign Soapstone. Probably used for network matchmaking." 
+    IsBool="" />
+    
+    <requestBlackSOS 
+    AltName="Request: Hostile Phantom"
+    Wiki="Used only by Red Sign Soapstone. Probably used for network matchmaking." 
+    IsBool="" />
+    
+    <requestForceJoinBlackSOS 
+    AltName="Request: Invader"
+    Wiki="Used only by (Cracked) Red Eye Orb. Probably used for network matchmaking." 
+    IsBool="" />
+    
+    <requestKickSession 
+    AltName="Request: Kick Phantom"
+    Wiki="Possibly kicks all clients out of your world." 
+    IsBool="" />
+    
+    <requestLeaveSession 
+    AltName="Request: Leave"
+    Wiki="Used only by Black Separation Crystal. Probably used to leave network sessions." 
+    IsBool="" />
+    
+    <requestNpcInveda 
+    AltName="Request: Character Invader"
+    Wiki="Used only by Black Eye Orb (Lautrec quest and cut Shiva quest)." 
+    IsBool="" />
+    
+    <noDead 
+    AltName="Is Owner Undying"
+    Wiki="If ON, character cannot become a corpse (and thus die)." 
+    IsBool="" />
+    
+    <bCurrHPIndependeMaxHP 
+    AltName="Ignore Current HP on Max HP Change"
+    Wiki="Determines how current HP behaves when maximum HP is modified. true = current HP will not change, false = current HP will change with max HP" 
+    IsBool="" />
+    
+    <corrosionIgnore 
+    AltName="Disable Durability"
+    Wiki="If ON, disables durability damage to the effect owner's weapons and armor." 
+    IsBool="" />
+    
+    <sightSearchCutIgnore 
+    AltName="Ignore Visual Search Adjustments"
+    Wiki="If ON, visual search adjustments from sightSearchEnemyCut are ignored by the effect owner." 
+    IsBool="" />
+    
+    <hearingSearchCutIgnore 
+    AltName="Ignore Auditory Search Adjustments"
+    Wiki="If ON, auditory search adjustments from hearingSearchEnemyCut are ignored by the effect owner." 
+    IsBool="" />
+    
+    <antiMagicIgnore 
+    AltName="Ignore Magic Block"
+    Wiki="If ON, magic blocking effects are ignored by the effect owner (Vow of Silence)." 
+    IsBool="" />
+    
+    <fakeTargetIgnore 
+    AltName="Ignore Decoy Target"
+    Wiki="If ON, the effect owner will ignore fake targets (Aural Decoy projectiles)." 
+    IsBool="" />
+    
+    <fakeTargetIgnoreUndead 
+    AltName="Ignore Decoy Target (Undead)"
+    Wiki="If ON, the effect owner will ignore fake undead targets (Alluring Skull projectiles)." 
+    IsBool="" />
+    
+    <fakeTargetIgnoreAnimal 
+    AltName="Ignore Decoy Target (Animal)"
+    Wiki="If ON, the effect owner will ignore fake animal targets." 
+    IsBool="" />
+    
+    <grabityIgnore 
+    AltName="Ignore Animation Playback Speed Changes"
+    Wiki="If ON, the effect owner ignores grabityRate changes." 
+    IsBool="" />
+    
+    <disablePoison 
+    AltName="Is Immune to Poison"
+    Wiki="If ON, effect owner becomes immune to poison." 
+    IsBool="" />
+    
+    <disableDisease 
+    AltName="Is Immune to Toxic"
+    Wiki="If ON, effect owner becomes immune to toxic." 
+    IsBool="" />
+    
+    <disableBlood 
+    AltName="Is Immune to Bleed"
+    Wiki="If ON, effect owner becomes immune to bleed." 
+    IsBool="" />
+    
+    <disableCurse 
+    AltName="Is Immune to Curse"
+    Wiki="If ON, effect owner becomes immune to curse." 
+    IsBool="" />
+    
+    <enableCharm 
+    AltName="Is Vulnerable to Charm"
+    Wiki="If ON, effect owner is vulnerable to charm effects (Undead Rapport)." 
+    IsBool="" />
+    
+    <enableLifeTime 
+    AltName="Enable Duration via TimeAct Event"
+    Wiki="If ON, the effect duration can be extended by a TimeAct event.." 
+    IsBool="" />
+    
+    <hasTarget 
+    AltName="Enable Target Activation"
+    Wiki="If ON, enable the activation conditions for the Evil Eye." 
+    IsBool="" />
+    
+    <isFireDamageCancel 
+    AltName="Cancel Effect on Fire Damage"
+    Wiki="If ON, this effect will be cancelled early if fire damage is applied to the effect owner." 
+    IsBool="" />
+    
+    <isExtendSpEffectLife 
+    AltName="Is Affected by Spell Duration Extension"
+    Wiki="Determines if effectEndurance will be affected by stateInfo 193 which is used by the Lingering Dragoncrest Ring." 
+    IsBool="" />
+    
+    <requestLeaveColiseumSession 
+    AltName="Request: Leave Undead Match"
+    Wiki="Used only by Purple Coward's Crystal." 
+    IsBool="" />
+    
+    <pad_2
+    Padding="" />
+    
+    <vowType0 
+    AltName="Trigger: None"
+    Wiki="Effect usable while in no covenant." 
+    IsBool="" />
+    
+    <vowType1 
+    AltName="Trigger: Way of White"
+    Wiki="Effect usable while in Way of White covenant."
+    IsBool="" />
+    
+    <vowType2 
+    AltName="Trigger: Princess Guard"
+    Wiki="Effect usable while in Princess Guard covenant."
+    IsBool="" />
+    
+    <vowType3 
+    AltName="Trigger: Warrior of Sunlight"
+    Wiki="Effect usable while in Warrior of Sunlight covenant."
+    IsBool="" />
+    
+    <vowType4 
+    AltName="Trigger: Darkwaith"
+    Wiki="Effect usable while in Darkwraith covenant." 
+    IsBool="" />
+    
+    <vowType5 
+    AltName="Trigger: Path of the Dragon"
+    Wiki="Effect usable while in Path of the Dragon covenant."
+    IsBool="" />
+    
+    <vowType6 
+    AltName="Trigger: Gravelord Servant"
+    Wiki="Effect usable while in Gravelord Servant covenant." 
+    IsBool="" />
+    
+    <vowType7 
+    AltName="Trigger: Forest Hunter"
+    Wiki="Effect usable while in Forest Hunter covenant."
+    IsBool="" />
+    
+    <vowType8 
+    AltName="Trigger: Blade of the Dark Moon"
+    Wiki="Effect usable while in Blade of the Dark Moon covenant." 
+    IsBool="" />
+    
+    <vowType9 
+    AltName="Trigger: Chaos Servant"
+    Wiki="Effect usable while in Chaos Servant covenant." 
+    IsBool="" />
+    
+    <vowType10 
+    AltName="Trigger: 10"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType11 
+    AltName="Trigger: 11"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType12 
+    AltName="Trigger: 12"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType13 
+    AltName="Trigger: 13"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType14 
+    AltName="Trigger: 14"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType15 
+    AltName="Trigger: 15"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <pad1
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="SP_EFFECT_SPCATEGORY">
+        <Option Value="0" Name="None" />
+        <Option Value="10" Name="Unlimited: same ID will stack with previous instances" />
+        <Option Value="20" Name="Overwrite: same ID will overwrite previous instance" />
+        <Option Value="100" Name="Replace Previous: same ID will replace previous instance" />
+        <Option Value="1000" Name="Priority: use categoryPriority, delay low priorities" />
+        <Option Value="1002" Name="Priority: use categoryPriority, delay low priorities" />
+        <Option Value="10000" Name="Retain Current: same ID will ignore new instance" />
+        <Option Value="10001" Name="Retain Current: same ID will ignore new instance" />
+        <Option Value="10002" Name="Retain Current: same ID will ignore new instance" />
+        <Option Value="10003" Name="Retain Current: same ID will ignore new instance" />
+        <Option Value="10004" Name="Retain Current: same ID will ignore new instance" />
+        <Option Value="10005" Name="Retain Current: same ID will ignore new instance" />
+        <Option Value="10006" Name="Retain Current: same ID will ignore new instance" />
+    </Enum>
+    <Enum Name="ATKPARAM_REP_DMGTYPE" type="u8">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="No Stagger" />
+        <Option Value="2" Name="Unavailable" />
+        <Option Value="3" Name="Addition" />
+        <Option Value="4" Name="Hit Stop" />
+        <Option Value="5" Name="Small Stagger" />
+        <Option Value="6" Name="Unavailable" />
+        <Option Value="7" Name="Large Stagger" />
+        <Option Value="8" Name="Unavailable" />
+        <Option Value="9" Name="Unavailable" />
+        <Option Value="10" Name="Blown Away" />
+        <Option Value="11" Name="Unavailable" />
+        <Option Value="12" Name="Unavailable" />
+    </Enum>
+    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Slash" />
+        <Option Value="2" Name="Strike" />
+        <Option Value="3" Name="Thrust" />
+        <Option Value="4" Name="Push" />
+    </Enum>
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+        <Option Value="0" Name="Do not overwrite" />
+        <Option Value="1" Name="None" />
+        <Option Value="2" Name="Fire" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Poison" />
+        <Option Value="5" Name="Egg" />
+        <Option Value="6" Name="Lightning" />
+        <Option Value="7" Name="Petrification" />
+        <Option Value="8" Name="Crystallization" />
+        <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="SP_EFE_WEP_CHANGE_PARAM">
+        <Option Value="0" Name="Apply to All" />
+        <Option Value="1" Name="Right-hand weapon attacks only" />
+        <Option Value="2" Name="Left-hand weapon attacks only" />
+        <Option Value="3" Name="Ignore" />
+        <Option Value="4" Name="Kick" />
+    </Enum>
+    <Enum Name="SP_EFFECT_MOVE_TYPE">
+        <Option Value="0" Name="Normal" />
+        <Option Value="3" Name="Chameleon" />
+        <Option Value="4" Name="Deep Water" />
+        <Option Value="5" Name="Iron Flesh" />
+    </Enum>
+    <Enum Name="SP_EFFECT_THROW_CONDITION_TYPE">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Throw disabled" />
+        <Option Value="2" Name="Parry broken" />
+        <Option Value="3" Name="Lying down" />
+        <Option Value="4" Name="Falling" />
+        <Option Value="5" Name="Enhanced throw" />
+        <Option Value="6" Name="Soul drain" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

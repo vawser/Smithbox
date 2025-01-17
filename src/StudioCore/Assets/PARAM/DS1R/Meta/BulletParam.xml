@@ -295,7 +295,7 @@
     Enum="BULLET_ATTACH_EFFECT_TYPE" />
 
     <isHitForceMagic 
-    AltName="Is Hit Force Magic" 
+    AltName="Is Physical Projectile (for Deflection)" 
     Wiki="If ON, this projectile can be deflected by projectiles with attachEffectType set to 1." 
     IsBool="" />
     
@@ -310,7 +310,7 @@
     IsBool="" />
 
     <isHitDarkForceMagic 
-    AltName="Is Hit Dark Force Magic" 
+    AltName="Is Magical Projectile (for Deflection)" 
     Wiki="If ON, this projectile can be deflected by projectiles with attachEffectType set to 3." 
     IsBool="" />
 
@@ -389,8 +389,8 @@
     </Enum>
     <Enum Name="BULLET_ATTACH_EFFECT_TYPE" type="u8">
       <Option Value="0" Name="None" />
-      <Option Value="1" Name="Force (isHitForceMagic)" />
-      <Option Value="3" Name="Dark Force (isHitDarkForceMagic)" />
+      <Option Value="1" Name="Repel Physical Projectiles (isHitForceMagic)" />
+      <Option Value="3" Name="Repel Magical Projectiles (isHitDarkForceMagic)" />
     </Enum>
   </Enums>
 </PARAMMETA>

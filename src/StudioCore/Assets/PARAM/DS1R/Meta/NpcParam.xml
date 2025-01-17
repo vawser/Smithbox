@@ -283,15 +283,15 @@
     
     <def_slash 
     AltName="Defense: Slash"
-    Wiki="This value is applied to the flat physical defense when the sub-type matches. For example: 10 = +10%% defense, -10 = -10%% defense" />
+    Wiki="This value is applied to the flat physical defense when the sub-type matches. For example: 10 = +10% defense, -10 = -10% defense" />
     
     <def_blow 
     AltName="Defense: Strike"
-    Wiki="This value is applied to the flat physical defense when the sub-type matches. For example: 10 = +10%% defense, -10 = -10%% defense" />
+    Wiki="This value is applied to the flat physical defense when the sub-type matches. For example: 10 = +10% defense, -10 = -10% defense" />
     
     <def_thrust 
     AltName="Defense: Thrust"
-    Wiki="This value is applied to the flat physical defense when the sub-type matches. For example: 10 = +10%% defense, -10 = -10%% defense" />
+    Wiki="This value is applied to the flat physical defense when the sub-type matches. For example: 10 = +10% defense, -10 = -10% defense" />
     
     <def_mag 
     AltName="Defense: Magic"

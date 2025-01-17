@@ -7,7 +7,7 @@
   <DisplayNames>
     <NameEntry 
     Param="EquipParamWeapon" 
-    Name="Weaponry" />
+    Name="Weapons" />
   </DisplayNames>
   
   <Field>
@@ -31,7 +31,7 @@
     
     <weaponWeightRate 
     AltName="Equipment Weight Ratio" 
-    Wiki="Affects animation recovery timing (such as dodging or follow-up attacks) via TAE event 300.\nHigher values mean slower recovery, lower values mean faster recovery.\nValues determine how much of the early recovery event (if present) is not active, from 0%% to 100%%.\nEffects of values will be dependent on the length of the early recovery event.\n1 = 100%% (slowest), .5 = 50%% (half), 0 = 0%% (fastest)" />
+    Wiki="Affects animation recovery timing (such as dodging or follow-up attacks) via TAE event 300.\nHigher values mean slower recovery, lower values mean faster recovery.\nValues determine how much of the early recovery event (if present) is not active, from 0% to 100%.\nEffects of values will be dependent on the length of the early recovery event.\n1 = 100% (slowest), .5 = 50% (half), 0 = 0% (fastest)" />
     
     <fixPrice 
     AltName="Repair Value" 
@@ -319,11 +319,11 @@
     Wiki="The sequential achievement ID this equipment is associated with, if any." />
     
     <throwAtkRate 
-    AltName="Critical Hit Multiplier" 
+    AltName="Critical Hit %" 
     Wiki="The multiplier to apply to critical hits." />
     
     <bowDistRate 
-    AltName="Ammunition Distance Multiplier" 
+    AltName="Ammunition Distance %" 
     Wiki="Increase the attentuation range of ammunition by the specified multiplier." />
     
     <equipModelCategory 
