@@ -223,7 +223,6 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            [IndexProperty]
             public int PartIndex { get; set; }
 
             /// <summary>
@@ -231,7 +230,6 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
-            [IndexProperty]
             public int RegionIndex { get; set; }
 
             /// <summary>
@@ -555,7 +553,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                [IndexProperty]
                 public int TreasurePartIndex { get; set; }
 
                 /// <summary>
@@ -683,7 +680,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnPointNames { get; set; }
-                [IndexProperty]
                 public int[] SpawnPointIndices { get; set; }
 
                 /// <summary>
@@ -691,7 +687,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; set; }
-                [IndexProperty]
                 public int[] SpawnPartIndices { get; set; }
 
                 /// <summary>
@@ -836,13 +831,11 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                [IndexProperty]
                 public int ObjActPartIndex { get; set; }
 
                 /// <summary>
                 /// ID in ObjActParam that configures the ObjAct.
                 /// </summary>
-                [MSBParamReference(ParamName = "ObjActParam")]
                 public short ObjActParamID { get; set; }
 
                 /// <summary>
@@ -912,7 +905,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string SpawnPointName { get; set; }
-                [IndexProperty]
                 public int SpawnPointIndex { get; set; }
 
                 /// <summary>
@@ -961,7 +953,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Position of the map.
                 /// </summary>
-                [PositionProperty]
                 public Vector3 Position { get; set; }
 
                 /// <summary>
@@ -1001,7 +992,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string NavmeshRegionName { get; set; }
-                [IndexProperty]
                 public int NavmeshRegionIndex { get; set; }
 
                 /// <summary>

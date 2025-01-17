@@ -228,7 +228,6 @@ public class CFG
     public bool MapEditor_Enable_Commmunity_Names = true;
     public bool MapEditor_Enable_Padding_Fields = true;
     public bool MapEditor_Enable_Obsolete_Fields = true;
-    public bool MapEditor_Enable_Field_Categories = false;
 
     public bool MapEditor_Enable_Property_Info = false;
     public bool MapEditor_Enable_Map_Load_on_Double_Click = false;

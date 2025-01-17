@@ -79,7 +79,27 @@ public static class MsbMeta
                 if (_MsbMetas.ContainsKey(key))
                     return _MsbMetas[key];
             }
+            else if (typeSegments.Length > 1)
+            {
+                var rootType = typeSegments[1];
+
+                var key = $"{rootType}_{rootType}";
+
+                if (_MsbMetas.ContainsKey(key))
+                    return _MsbMetas[key];
+            }
         }
+
+        return new MsbParamMeta();
+    }
+
+    /// <summary>
+    /// For DS2 MSB params
+    /// </summary>
+    public static MsbParamMeta GetParamMeta(string paramName)
+    {
+        if (_MsbMetas.ContainsKey(paramName))
+            return _MsbMetas[paramName];
 
         return new MsbParamMeta();
     }
@@ -107,37 +127,48 @@ public static class MsbMeta
 
         return new MsbFieldMetaData();
     }
+
+    /// <summary>
+    /// For DS2 MSB params
+    /// </summary>
+    public static MsbFieldMetaData GetParamFieldMeta(string field, string paramName)
+    {
+        var rootMeta = GetParamMeta(paramName);
+
+        if (rootMeta != null)
+        {
+            if (rootMeta.Fields.ContainsKey(field))
+            {
+                return rootMeta.Fields[field];
+            }
+        }
+
+        return new MsbFieldMetaData();
+    }
 }
 
 public class MsbParamMeta
 {
-    public bool IsEmpty { get; set; }
+    public bool IsEmpty { get; set; } = false;
 
     internal XmlDocument _xml;
 
     private int XML_VERSION = 0;
 
-    public Dictionary<string, MapParamEnum> EnumList { get; set; }
+    public Dictionary<string, MapParamEnum> EnumList { get; set; } = new Dictionary<string, MapParamEnum>();
 
-    public Dictionary<string, MsbFieldMetaData> Fields { get; set; }
+    public Dictionary<string, MsbFieldMetaData> Fields { get; set; } = new Dictionary<string, MsbFieldMetaData>();
 
-    public string Wiki { get; set; }
+    public string Wiki { get; set; } = string.Empty;
 
     // Empty default
     public MsbParamMeta()
     {
-        Wiki = "";
-        Fields = new Dictionary<string, MsbFieldMetaData>();
         IsEmpty = true;
     }
 
     public MsbParamMeta(string path)
     {
-        IsEmpty = false;
-
-        Fields = new Dictionary<string, MsbFieldMetaData>();
-        EnumList = new Dictionary<string, MapParamEnum>();
-
         _xml = new XmlDocument();
         _xml.Load(path);
 
@@ -251,6 +282,9 @@ public class MsbFieldMetaData
 
     public bool ArrayProperty { get; set; } = false;
     public bool IndexProperty { get; set; } = false;
+    public bool PositionProperty { get; set; } = false;
+    public bool RotationProperty { get; set; } = false;
+    public bool ScaleProperty { get; set; } = false;
 
     // Meta
     public List<ParamRef> ParamRef { get; set; } = new List<ParamRef>();
@@ -276,6 +310,8 @@ public class MsbFieldMetaData
     public bool ShowSoundList { get; set; } = false;
 
     public bool ShowEventFlagList { get; set; } = false;
+
+    public bool ShowModelLinkButton { get; set; } = false;
 
     // Empty default
     public MsbFieldMetaData()
@@ -376,6 +412,13 @@ public class MsbFieldMetaData
             ShowEventFlagList = true;
         }
 
+        // Model Link Button
+        XmlAttribute tModelLinkButton = entry.Attributes["ModelNameLink"];
+        if (tModelLinkButton != null)
+        {
+            ShowModelLinkButton = true;
+        }
+
         // Array Property
         XmlAttribute IsArray = entry.Attributes["ArrayProperty"];
         if (IsArray != null)
@@ -390,6 +433,26 @@ public class MsbFieldMetaData
             IndexProperty = true;
         }
 
+        // Position Property
+        XmlAttribute IsPosition = entry.Attributes["PositionProperty"];
+        if (IsPosition != null)
+        {
+            PositionProperty = true;
+        }
+
+        // Rotation Property
+        XmlAttribute IsRotation = entry.Attributes["RotationProperty"];
+        if (IsRotation != null)
+        {
+            RotationProperty = true;
+        }
+
+        // Scale Property
+        XmlAttribute IsScale = entry.Attributes["ScaleProperty"];
+        if (IsScale != null)
+        {
+            ScaleProperty = true;
+        }
 
         // SpecialHandling
         XmlAttribute tSpecialHandling = entry.Attributes["SpecialHandling"];

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a wind emitter within the map." />
+  
+  <Field>
+    <WindVecMin
+    AltName="Minimum Wind Vector"
+    Wiki="" />
+    
+    <UnkT0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <WindVecMax
+    AltName="Maximum Wind Vector"
+    Wiki="" />
+    
+    <UnkT1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <WindSwingCycle0
+    AltName="Wind Swing Cycle: 0"
+    Wiki="" />
+    
+    <WindSwingCycle1
+    AltName="Wind Swing Cycle: 1"
+    Wiki="" />
+    
+    <WindSwingCycle2
+    AltName="Wind Swing Cycle: 2"
+    Wiki="" />
+    
+    <WindSwingCycle3
+    AltName="Wind Swing Cycle: 3"
+    Wiki="" />
+    
+    <WindSwingPow0
+    AltName="Wind Swing Power: 0"
+    Wiki="" />
+    
+    <WindSwingPow1
+    AltName="Wind Swing Power: 1"
+    Wiki="" />
+    
+    <WindSwingPow2
+    AltName="Wind Swing Power: 2"
+    Wiki="" />
+    
+    <WindSwingPow3
+    AltName="Wind Swing Power: 3"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

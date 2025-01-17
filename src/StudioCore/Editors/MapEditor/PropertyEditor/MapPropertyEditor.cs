@@ -9,12 +9,14 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tasks;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.MapEditor.PropertyEditor;
 
@@ -150,7 +152,9 @@ public class MapPropertyEditor
 
         foreach (Param.Cell cell in cells)
         {
-            PropEditorPropCellRow(cell, ref id, selection);
+            var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+
+            PropEditorPropCellRow(meta, cell, ref id, selection);
         }
 
         ImGui.Columns(1);
@@ -172,7 +176,9 @@ public class MapPropertyEditor
 
         foreach (Param.Column cell in row.Columns)
         {
-            PropEditorPropCellRow(row[cell], ref id, null);
+            var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+
+            PropEditorPropCellRow(meta, row[cell], ref id, null);
         }
 
         ImGui.Columns(1);
@@ -182,17 +188,17 @@ public class MapPropertyEditor
     private void PropEditorPropInfoRow(object rowOrWrappedObject, PropertyInfo prop, string visualName, ref int id,
         Entity nullableSelection)
     {
-        PropEditorPropRow(prop.GetValue(rowOrWrappedObject), ref id, visualName, prop.PropertyType, null, null,
+        PropEditorPropRow(null, prop.GetValue(rowOrWrappedObject), ref id, visualName, prop.PropertyType, null, null,
             prop, rowOrWrappedObject, nullableSelection);
     }
 
-    private void PropEditorPropCellRow(Param.Cell cell, ref int id, Entity nullableSelection)
+    private void PropEditorPropCellRow(MsbFieldMetaData meta, Param.Cell cell, ref int id, Entity nullableSelection)
     {
-        PropEditorPropRow(cell.Value, ref id, cell.Def.InternalName, cell.Value.GetType(), null,
+        PropEditorPropRow(meta, cell.Value, ref id, cell.Def.InternalName, cell.Value.GetType(), null,
             cell.Def.InternalName, cell.GetType().GetProperty("Value"), cell, nullableSelection);
     }
 
-    private void PropEditorPropRow(object oldval, ref int id, string visualName, Type propType,
+    private void PropEditorPropRow(MsbFieldMetaData meta, object oldval, ref int id, string visualName, Type propType,
         Entity nullableEntity, string nullableName, PropertyInfo proprow, object paramRowOrCell,
         Entity nullableSelection)
     {
@@ -204,7 +210,7 @@ public class MapPropertyEditor
 
         object newval;
         // Property Editor UI
-        (bool, bool) propEditResults = PropertyRow(propType, oldval, out newval, proprow, null);
+        (bool, bool) propEditResults = PropertyRow(meta, propType, oldval, out newval, proprow, null);
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
         UpdateProperty(proprow, nullableSelection, paramRowOrCell, newval, changed, committed);
@@ -229,7 +235,7 @@ public class MapPropertyEditor
     /// <summary>
     /// Displays property context menu.
     /// </summary>
-    private void DisplayPropContextMenu(ViewportSelection selection, PropertyInfo prop, object obj, int arrayIndex)
+    private void DisplayPropContextMenu(MsbFieldMetaData meta, ViewportSelection selection, PropertyInfo prop, object obj, int arrayIndex)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
@@ -266,8 +272,7 @@ public class MapPropertyEditor
             }
 
             // Position - Copy/Paste
-            var posAtt = prop.GetCustomAttribute<PositionProperty>();
-            if (posAtt != null)
+            if (meta != null && meta.PositionProperty)
             {
                 if (ImGui.Selectable(@"Copy##CopyPosition"))
                 {
@@ -280,8 +285,7 @@ public class MapPropertyEditor
             }
 
             // Rotation - Copy/Paste
-            var rotAtt = prop.GetCustomAttribute<RotationProperty>();
-            if (rotAtt != null)
+            if (meta != null && meta.RotationProperty)
             {
                 if (ImGui.Selectable(@"Copy##CopyRotation"))
                 {
@@ -294,8 +298,7 @@ public class MapPropertyEditor
             }
 
             // Scale - Copy/Paste
-            var scaleAtt = prop.GetCustomAttribute<ScaleProperty>();
-            if (scaleAtt != null)
+            if (meta != null && meta.ScaleProperty)
             {
                 if (ImGui.Selectable(@"Copy##CopyScale"))
                 {
@@ -364,16 +367,16 @@ public class MapPropertyEditor
         object newval;
 
         // Property Editor UI
-        (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, prop, entSelection);
+        (bool, bool) propEditResults = PropertyRow(meta, type, oldval, out newval, prop, entSelection);
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
-        DisplayPropContextMenu(selection, prop, obj, arrayIndex);
+        DisplayPropContextMenu(meta, selection, prop, obj, arrayIndex);
         if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
         {
             ImGui.SetItemDefaultFocus();
         }
 
-        // Model Link - TODO: this still uses the C# attribute method, change to MSBMETA
+        // Model Link
         MapEditorDecorations.ModelNameRow(meta, entSelection, prop, oldval);
 
         // Param References
@@ -515,6 +518,8 @@ public class MapPropertyEditor
         ImGui.NextColumn();
     }
 
+    private string msbFieldSearch = "";
+
     private void PropEditorSelectedEntities(ViewportSelection selection, int classIndex = -1)
     {
         var entities = selection.GetFilteredSelection<MsbEntity>();
@@ -523,56 +528,53 @@ public class MapPropertyEditor
         var first = entities.First();
 
         var type = types.Count() == 1 ? types.First() : typeof(IMsbEntry);
+        var meta = MsbMeta.GetMeta(type, false);
 
         if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
 
-        ImGui.Separator();
+        var mapNames = string.Join(", ", maps.Select(map => map.Name));
+
+        ImGui.AlignTextToFramePadding();
         ImGui.Text("Properties");
+        UIHelper.ShowHoverTooltip($"{mapNames}");
         ImGui.Separator();
 
-        var mapNames = string.Join(", ", maps.Select(map => map.Name));
-        ImGui.Text($"Map: {mapNames}");
+        // Search bar
+        ImGui.SetNextItemWidth(ImGui.GetColumnWidth() * 0.75f);
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputText("Search##msbFieldSearch", ref msbFieldSearch, 255);
+
+        ImGui.Separator();
 
         ImGui.Columns(2);
 
         ImGui.AlignTextToFramePadding();
+        ImGui.Text("Object Type");
+
+        ImGui.NextColumn();
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text(type.Name);
+
+        if (meta != null)
         {
-            ImGui.Text("Object Type");
-            ImGui.NextColumn();
-            ImGui.Text(type.Name);
-            ImGui.NextColumn();
+            UIHelper.ShowHoverTooltip(meta.Wiki);
         }
 
-        if (CFG.Current.MapEditor_Enable_Property_Filter)
-        {
-            ImGui.Text("Property Filter");
-            ImGui.NextColumn();
-            // MSB Property Filter list
-            ImGui.SetNextItemWidth(-1);
-            if (ImGui.BeginCombo("##PropertyFilterList", SelectedMsbPropertyFilter))
-            {
-                foreach (var filter in MsbPropertyFilters)
-                {
-                    if (ImGui.Selectable(filter, filter == SelectedMsbPropertyFilter))
-                    {
-                        SelectedMsbPropertyFilter = filter;
-                        break;
-                    }
-                }
+        ImGui.NextColumn();
 
-                ImGui.EndCombo();
-            }
-            UIHelper.ShowHoverTooltip("Filter the property view, narrowing down what is visible.");
-            ImGui.NextColumn();
-        }
-
+        // Name
         if (CFG.Current.MapEditor_Enable_Referenced_Rename)
+        {
             PropEditorNameWithRef(entities);
+        }
         else
+        {
             PropEditorNameDirect(entities);
+        }
 
         if (types.Count() > 1)
         {
@@ -629,6 +631,16 @@ public class MapPropertyEditor
                 fieldDescription = meta.Wiki;
             }
 
+            // Filter by Search
+            var filterTerm = msbFieldSearch.ToLower();
+            if (!meta.IsEmpty && msbFieldSearch != "")
+            {
+                if(!prop.Name.ToLower().Contains(filterTerm) && !meta.AltName.ToLower().Contains(filterTerm))
+                {
+                    continue;
+                }
+            }
+
             if (!prop.CanWrite && !prop.PropertyType.IsArray)
             {
                 continue;
@@ -639,25 +651,8 @@ public class MapPropertyEditor
                 continue;
 
             // Index Properties are hidden by default
-            if (prop.GetCustomAttribute<IndexProperty>() != null)
+            if (meta != null && meta.IndexProperty)
                 continue;
-
-            if (SelectedMsbPropertyFilter == "Vital")
-            {
-                // Filter: Vital Properties
-                if (prop.GetCustomAttribute<IgnoreProperty>() != null)
-                {
-                    continue;
-                }
-            }
-            if (SelectedMsbPropertyFilter == "Enemy")
-            {
-                // Filter: Vital Properties
-                if (prop.GetCustomAttribute<EnemyProperty>() == null)
-                {
-                    continue;
-                }
-            }
 
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();
@@ -976,7 +971,7 @@ public class MapPropertyEditor
     }
 
 
-    private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop, IEnumerable<Entity> entSelection)
+    private (bool, bool) PropertyRow(MsbFieldMetaData meta, Type typ, object oldval, out object newval, PropertyInfo prop, IEnumerable<Entity> entSelection)
     {
         ImGui.SetNextItemWidth(-1);
 
@@ -1001,7 +996,7 @@ public class MapPropertyEditor
         {
             var val = (int)oldval;
 
-            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
+            if (meta != null && meta.IsBool)
             {
                 bool bVar = false;
 
@@ -1033,7 +1028,7 @@ public class MapPropertyEditor
             var val = (uint)oldval;
             var strval = $@"{val}";
 
-            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
+            if (meta != null && meta.IsBool)
             {
                 bool bVar = false;
 
@@ -1068,7 +1063,7 @@ public class MapPropertyEditor
         {
             int val = (short)oldval;
 
-            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
+            if (meta != null && meta.IsBool)
             {
                 bool bVar = false;
 
@@ -1100,7 +1095,7 @@ public class MapPropertyEditor
             var val = (ushort)oldval;
             var strval = $@"{val}";
 
-            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
+            if (meta != null && meta.IsBool)
             {
                 bool bVar = false;
 
@@ -1135,7 +1130,7 @@ public class MapPropertyEditor
         {
             int val = (sbyte)oldval;
 
-            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
+            if (meta != null && meta.IsBool)
             {
                 bool bVar = false;
 
@@ -1167,7 +1162,7 @@ public class MapPropertyEditor
             var val = (byte)oldval;
             var strval = $@"{val}";
 
-            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
+            if (meta != null && meta.IsBool)
             {
                 bool bVar = false;
 
@@ -1246,7 +1241,7 @@ public class MapPropertyEditor
 
             bool showNormalInput = true;
 
-            if (entSelection != null && prop.GetCustomAttribute<ScaleProperty>() != null)
+            if (entSelection != null && meta != null && meta.ScaleProperty)
             {
                 var ent = entSelection.FirstOrDefault();
                 if (ent != null)

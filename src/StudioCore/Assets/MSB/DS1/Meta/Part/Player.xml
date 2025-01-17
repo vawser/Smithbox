@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a player point, which is used to place the player when warping between maps, or on map reset." />
+  
+  <Field>
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

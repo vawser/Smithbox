@@ -20,7 +20,8 @@
     
     <PointMoveType
     AltName="Point Move Type"
-    Wiki="" />
+    Wiki="" 
+    Enum="POINT_MOVE_TYPE" />
     
     <PlatoonID
     AltName="Platoon Script ID"
@@ -59,5 +60,13 @@
   </Field>
   
   <Enums>
+    <Enum Name="POINT_MOVE_TYPE">
+        <Option Value="0" Name="Patrol" />
+        <Option Value="1" Name="Round Trip" />
+        <Option Value="2" Name="Random" />
+        <Option Value="3" Name="Flight: Air Patrol" />
+        <Option Value="4" Name="Flight: Landing" />
+        <Option Value="5" Name="Humanity" />
+    </Enum>
   </Enums>
 </MSBMETA>

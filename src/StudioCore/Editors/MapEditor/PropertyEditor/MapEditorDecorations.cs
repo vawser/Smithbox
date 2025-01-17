@@ -713,7 +713,7 @@ public static class MapEditorDecorations
         PropertyInfo propinfo, 
         object value)
     {
-        if (propinfo.GetCustomAttribute<ModelNameLink>() == null)
+        if (meta.ShowModelLinkButton == false)
         {
             return;
         }
