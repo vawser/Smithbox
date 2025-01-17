@@ -1,14 +1,151 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Row0Dummy="" />
+  <Self 
+  Wiki=""
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="generatorlocation_m10_02_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_04_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_10_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_14_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_15_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_16_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_17_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_18_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_19_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_23_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_25_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_27_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_29_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_30_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_31_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_32_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_33_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m10_34_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m20_10_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m20_11_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m20_21_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m20_24_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m20_26_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m40_03_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m50_35_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m50_36_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m50_37_00_00" 
+    Name="Enemy Locations" />
+    
+    <NameEntry 
+    Param="generatorlocation_m50_38_00_00" 
+    Name="Enemy Locations" />
+    
+  </DisplayNames>
+  
   <Field>
-    <PositionX AltName="Position: X" />
-    <PositionY AltName="Position: Y" />
-    <PositionZ AltName="Position: Z" />
-    <RotationX AltName="Rotation: X" />
-    <RotationY AltName="Rotation: Y" />
-    <RotationZ AltName="Rotation: Z" />
-    <LocUnk18 AltName="Unknown" />
-    <UnkInheritInstanceParamId AltName="UnkInheritInstanceParamId" Wiki="References InstanceParamIds and seemingly inherits data such as drawgroups." />
+    <PositionX 
+    AltName="Position: X" 
+    Wiki="" />
+    
+    <PositionY 
+    AltName="Position: Y" 
+    Wiki="" />
+    
+    <PositionZ 
+    AltName="Position: Z" 
+    Wiki="" />
+    
+    <RotationX 
+    AltName="Rotation: X" 
+    Wiki="" />
+    
+    <RotationY 
+    AltName="Rotation: Y" 
+    Wiki="" />
+    
+    <RotationZ 
+    AltName="Rotation: Z" 
+    Wiki="" />
+    
+    <UnkInheritInstanceParamId 
+    AltName="Inherit Instance Param ID" 
+    Wiki="References InstanceParamIds and seemingly inherits data such as drawgroups." />
   </Field>
 </PARAMMETA>

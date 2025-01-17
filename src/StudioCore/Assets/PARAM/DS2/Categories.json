@@ -1,0 +1,534 @@
+{
+  "Categories": [
+    {
+      "DisplayName": "Camera",
+      "Params": [
+        "CameraActionParam",
+        "CameraAreaParam",
+        "CameraBattleParam",
+        "CameraControlParam",
+        "CameraElasticParam",
+        "CameraEventParam",
+        "CameraExFollowImpactParam",
+        "CameraExFollowParam",
+        "CameraFreeParam",
+        "CameraGrapperParam",
+        "CameraMenuParam",
+        "CameraNoiseParam",
+        "CameraNormalParam",
+        "CameraSubjectiveParam"
+      ]
+    },
+    {
+      "DisplayName": "Things Betwixt",
+      "Params": [
+        "demopointlight_scn100200",
+        "demopointlight_scn100210",
+        "demopointlight_scn100211",
+        "demopointlight_scn100220",
+        "demopointlight_scn100221",
+        "demopointlight_scn100230",
+        "demopointlight_scn100231",
+        "demospotlight_scn100200",
+        "demospotlight_scn100210",
+        "demospotlight_scn100211",
+        "demospotlight_scn100220",
+        "demospotlight_scn100221",
+        "demospotlight_scn100230",
+        "demospotlight_scn100231",
+        "eventlocation_m10_02_00_00",
+        "eventparam_m10_02_00_00",
+        "generatorlocation_m10_02_00_00",
+        "generatorparam_m10_02_00_00",
+        "generatorregistparam_m10_02_00_00",
+        "hitgroupparam_m10_02_00_00",
+        "intrudepointparam_m10_02_00_00",
+        "mapobjectinstanceparam_m10_02_00_00",
+        "maptargetdirparam_m10_02_00_00",
+        "npctalkparam_m10_02_00_00",
+        "treasureboxparam_m10_02_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Majula",
+      "Params": [
+        "eventlocation_m10_04_00_00",
+        "eventparam_m10_04_00_00",
+        "generatorlocation_m10_04_00_00",
+        "generatorparam_m10_04_00_00",
+        "generatorregistparam_m10_04_00_00",
+        "hitgroupparam_m10_04_00_00",
+        "intrudepointparam_m10_04_00_00",
+        "mapobjectinstanceparam_m10_04_00_00",
+        "maptargetdirparam_m10_04_00_00",
+        "npctalkparam_m10_04_00_00",
+        "treasureboxparam_m10_04_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Forest of Fallen Giants",
+      "Params": [
+        "demopointlight_scn101010",
+        "demopointlight_scn101020",
+        "demopointlight_scn101050",
+        "demopointlight_scn101060",
+        "demopointlight_scn101070",
+        "demospotlight_scn101010",
+        "demospotlight_scn101020",
+        "demospotlight_scn101050",
+        "demospotlight_scn101060",
+        "demospotlight_scn101070",
+        "demospotlight_scn101098",
+        "demospotlight_scn101099",
+        "eventlocation_m10_10_00_00",
+        "eventparam_m10_10_00_00",
+        "generatorlocation_m10_10_00_00",
+        "generatorparam_m10_10_00_00",
+        "generatorregistparam_m10_10_00_00",
+        "hitgroupparam_m10_10_00_00",
+        "intrudepointparam_m10_10_00_00",
+        "mapobjectinstanceparam_m10_10_00_00",
+        "maptargetdirparam_m10_10_00_00",
+        "npctalkparam_m10_10_00_00",
+        "treasureboxparam_m10_10_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Brightstone Cove Tseldora",
+      "Params": [
+        "demopointlight_scn101410",
+        "demopointlight_scn101420",
+        "demospotlight_scn101410",
+        "demospotlight_scn101420",
+        "eventlocation_m10_14_00_00",
+        "eventparam_m10_14_00_00",
+        "generatorlocation_m10_14_00_00",
+        "generatorparam_m10_14_00_00",
+        "generatorregistparam_m10_14_00_00",
+        "hitgroupparam_m10_14_00_00",
+        "intrudepointparam_m10_14_00_00",
+        "mapobjectinstanceparam_m10_14_00_00",
+        "maptargetdirparam_m10_14_00_00",
+        "npctalkparam_m10_14_00_00",
+        "treasureboxparam_m10_14_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Aldia's Keep",
+      "Params": [
+        "eventlocation_m10_15_00_00",
+        "eventparam_m10_15_00_00",
+        "generatorlocation_m10_15_00_00",
+        "generatorparam_m10_15_00_00",
+        "generatorregistparam_m10_15_00_00",
+        "hitgroupparam_m10_15_00_00",
+        "intrudepointparam_m10_15_00_00",
+        "mapobjectinstanceparam_m10_15_00_00",
+        "maptargetdirparam_m10_15_00_00",
+        "npctalkparam_m10_15_00_00",
+        "treasureboxparam_m10_15_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Lost Bastille & Belfry Luna",
+      "Params": [
+        "demopointlight_scn101610",
+        "demopointlight_scn101620",
+        "demospotlight_scn101610",
+        "demospotlight_scn101620",
+        "eventlocation_m10_16_00_00",
+        "eventparam_m10_16_00_00",
+        "generatorlocation_m10_16_00_00",
+        "generatorparam_m10_16_00_00",
+        "generatorregistparam_m10_16_00_00",
+        "hitgroupparam_m10_16_00_00",
+        "intrudepointparam_m10_16_00_00",
+        "mapobjectinstanceparam_m10_16_00_00",
+        "maptargetdirparam_m10_16_00_00",
+        "npctalkparam_m10_16_00_00",
+        "treasureboxparam_m10_16_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Havest Valley & Earthen Peak",
+      "Params": [
+        "eventlocation_m10_17_00_00",
+        "eventparam_m10_17_00_00",
+        "generatorlocation_m10_17_00_00",
+        "generatorparam_m10_17_00_00",
+        "generatorregistparam_m10_17_00_00",
+        "hitgroupparam_m10_17_00_00",
+        "intrudepointparam_m10_17_00_00",
+        "mapobjectinstanceparam_m10_17_00_00",
+        "maptargetdirparam_m10_17_00_00",
+        "npctalkparam_m10_17_00_00",
+        "treasureboxparam_m10_17_00_00"
+      ]
+    },
+    {
+      "DisplayName": "No-man's Wharf",
+      "Params": [
+        "demopointlight_scn101820",
+        "demospotlight_scn101820",
+        "eventlocation_m10_18_00_00",
+        "eventparam_m10_18_00_00",
+        "generatorlocation_m10_18_00_00",
+        "generatorparam_m10_18_00_00",
+        "generatorregistparam_m10_18_00_00",
+        "hitgroupparam_m10_18_00_00",
+        "intrudepointparam_m10_18_00_00",
+        "mapobjectinstanceparam_m10_18_00_00",
+        "maptargetdirparam_m10_18_00_00",
+        "npctalkparam_m10_18_00_00",
+        "treasureboxparam_m10_18_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Iron Keep & Belfry Sol",
+      "Params": [
+        "demopointlight_scn101910",
+        "demospotlight_scn101910",
+        "eventlocation_m10_19_00_00",
+        "eventparam_m10_19_00_00",
+        "generatorlocation_m10_19_00_00",
+        "generatorparam_m10_19_00_00",
+        "generatorregistparam_m10_19_00_00",
+        "hitgroupparam_m10_19_00_00",
+        "intrudepointparam_m10_19_00_00",
+        "mapobjectinstanceparam_m10_19_00_00",
+        "maptargetdirparam_m10_19_00_00",
+        "npctalkparam_m10_19_00_00",
+        "treasureboxparam_m10_19_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Huntsman's Copse & Undead Purgatory",
+      "Params": [
+        "demopointlight_scn102310",
+        "demospotlight_scn102310",
+        "eventlocation_m10_23_00_00",
+        "eventparam_m10_23_00_00",
+        "generatorlocation_m10_23_00_00",
+        "generatorparam_m10_23_00_00",
+        "generatorregistparam_m10_23_00_00",
+        "hitgroupparam_m10_23_00_00",
+        "intrudepointparam_m10_23_00_00",
+        "mapobjectinstanceparam_m10_23_00_00",
+        "maptargetdirparam_m10_23_00_00",
+        "npctalkparam_m10_23_00_00",
+        "treasureboxparam_m10_23_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Gutter & Black Gulch",
+      "Params": [
+        "demopointlight_scn102510",
+        "demospotlight_scn102510",
+        "eventlocation_m10_25_00_00",
+        "eventparam_m10_25_00_00",
+        "generatorlocation_m10_25_00_00",
+        "generatorparam_m10_25_00_00",
+        "generatorregistparam_m10_25_00_00",
+        "hitgroupparam_m10_25_00_00",
+        "intrudepointparam_m10_25_00_00",
+        "mapobjectinstanceparam_m10_25_00_00",
+        "maptargetdirparam_m10_25_00_00",
+        "npctalkparam_m10_25_00_00",
+        "treasureboxparam_m10_25_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Dragon Aerie & Dragon Shrine",
+      "Params": [
+        "eventlocation_m10_27_00_00",
+        "eventparam_m10_27_00_00",
+        "generatorlocation_m10_27_00_00",
+        "generatorparam_m10_27_00_00",
+        "generatorregistparam_m10_27_00_00",
+        "hitgroupparam_m10_27_00_00",
+        "intrudepointparam_m10_27_00_00",
+        "mapobjectinstanceparam_m10_27_00_00",
+        "maptargetdirparam_m10_27_00_00",
+        "npctalkparam_m10_27_00_00",
+        "treasureboxparam_m10_27_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Passage: Majula to Shaded Woods",
+      "Params": [
+        "eventlocation_m10_29_00_00",
+        "eventparam_m10_29_00_00",
+        "generatorlocation_m10_29_00_00",
+        "generatorparam_m10_29_00_00",
+        "generatorregistparam_m10_29_00_00",
+        "hitgroupparam_m10_29_00_00",
+        "intrudepointparam_m10_29_00_00",
+        "mapobjectinstanceparam_m10_29_00_00",
+        "maptargetdirparam_m10_29_00_00",
+        "npctalkparam_m10_29_00_00",
+        "treasureboxparam_m10_29_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Passage: Heide's Tower to No-man's Wharf",
+      "Params": [
+        "eventlocation_m10_30_00_00",
+        "eventparam_m10_30_00_00",
+        "generatorlocation_m10_30_00_00",
+        "generatorparam_m10_30_00_00",
+        "generatorregistparam_m10_30_00_00",
+        "hitgroupparam_m10_30_00_00",
+        "intrudepointparam_m10_30_00_00",
+        "mapobjectinstanceparam_m10_30_00_00",
+        "maptargetdirparam_m10_30_00_00",
+        "npctalkparam_m10_30_00_00",
+        "treasureboxparam_m10_30_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Heide's Tower of Flame",
+      "Params": [
+        "eventlocation_m10_31_00_00",
+        "eventparam_m10_31_00_00",
+        "generatorlocation_m10_31_00_00",
+        "generatorparam_m10_31_00_00",
+        "generatorregistparam_m10_31_00_00",
+        "hitgroupparam_m10_31_00_00",
+        "intrudepointparam_m10_31_00_00",
+        "mapobjectinstanceparam_m10_31_00_00",
+        "maptargetdirparam_m10_31_00_00",
+        "npctalkparam_m10_31_00_00",
+        "treasureboxparam_m10_31_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Shaded Woods & Shrine of Winter",
+      "Params": [
+        "eventlocation_m10_32_00_00",
+        "eventparam_m10_32_00_00",
+        "generatorlocation_m10_32_00_00",
+        "generatorparam_m10_32_00_00",
+        "generatorregistparam_m10_32_00_00",
+        "hitgroupparam_m10_32_00_00",
+        "intrudepointparam_m10_32_00_00",
+        "mapobjectinstanceparam_m10_32_00_00",
+        "maptargetdirparam_m10_32_00_00",
+        "npctalkparam_m10_32_00_00",
+        "treasureboxparam_m10_32_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Doors of Pharros",
+      "Params": [
+        "eventlocation_m10_33_00_00",
+        "eventparam_m10_33_00_00",
+        "generatorlocation_m10_33_00_00",
+        "generatorparam_m10_33_00_00",
+        "generatorregistparam_m10_33_00_00",
+        "hitgroupparam_m10_33_00_00",
+        "intrudepointparam_m10_33_00_00",
+        "mapobjectinstanceparam_m10_33_00_00",
+        "maptargetdirparam_m10_33_00_00",
+        "npctalkparam_m10_33_00_00",
+        "treasureboxparam_m10_33_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Grave of Saints",
+      "Params": [
+        "eventlocation_m10_34_00_00",
+        "eventparam_m10_34_00_00",
+        "generatorlocation_m10_34_00_00",
+        "generatorparam_m10_34_00_00",
+        "generatorregistparam_m10_34_00_00",
+        "hitgroupparam_m10_34_00_00",
+        "intrudepointparam_m10_34_00_00",
+        "mapobjectinstanceparam_m10_34_00_00",
+        "maptargetdirparam_m10_34_00_00",
+        "npctalkparam_m10_34_00_00",
+        "treasureboxparam_m10_34_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Memory of Vammar, Orro and Jeigh",
+      "Params": [
+        "demospotlight_scn201010",
+        "eventlocation_m20_10_00_00",
+        "eventparam_m20_10_00_00",
+        "generatorlocation_m20_10_00_00",
+        "generatorparam_m20_10_00_00",
+        "generatorregistparam_m20_10_00_00",
+        "hitgroupparam_m20_10_00_00",
+        "intrudepointparam_m20_10_00_00",
+        "mapobjectinstanceparam_m20_10_00_00",
+        "maptargetdirparam_m20_10_00_00",
+        "npctalkparam_m20_10_00_00",
+        "treasureboxparam_m20_10_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Shrine of Amana",
+      "Params": [
+        "eventlocation_m20_11_00_00",
+        "eventparam_m20_11_00_00",
+        "generatorlocation_m20_11_00_00",
+        "generatorparam_m20_11_00_00",
+        "generatorregistparam_m20_11_00_00",
+        "hitgroupparam_m20_11_00_00",
+        "intrudepointparam_m20_11_00_00",
+        "mapobjectinstanceparam_m20_11_00_00",
+        "maptargetdirparam_m20_11_00_00",
+        "npctalkparam_m20_11_00_00",
+        "treasureboxparam_m20_11_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Drangleic Castle & Throne of Want",
+      "Params": [
+        "demopointlight_scn202110",
+        "demopointlight_scn202120",
+        "demopointlight_scn202130",
+        "demopointlight_scn202150",
+        "demospotlight_scn202110",
+        "demospotlight_scn202120",
+        "demospotlight_scn202130",
+        "demospotlight_scn202150",
+        "eventlocation_m20_21_00_00",
+        "eventparam_m20_21_00_00",
+        "generatorlocation_m20_21_00_00",
+        "generatorparam_m20_21_00_00",
+        "generatorregistparam_m20_21_00_00",
+        "hitgroupparam_m20_21_00_00",
+        "intrudepointparam_m20_21_00_00",
+        "mapobjectinstanceparam_m20_21_00_00",
+        "maptargetdirparam_m20_21_00_00",
+        "npctalkparam_m20_21_00_00",
+        "treasureboxparam_m20_21_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Undead Crypt",
+      "Params": [
+        "demopointlight_scn202410",
+        "demospotlight_scn202410",
+        "eventlocation_m20_24_00_00",
+        "eventparam_m20_24_00_00",
+        "generatorlocation_m20_24_00_00",
+        "generatorparam_m20_24_00_00",
+        "generatorregistparam_m20_24_00_00",
+        "hitgroupparam_m20_24_00_00",
+        "intrudepointparam_m20_24_00_00",
+        "mapobjectinstanceparam_m20_24_00_00",
+        "maptargetdirparam_m20_24_00_00",
+        "npctalkparam_m20_24_00_00",
+        "treasureboxparam_m20_24_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Dragon Memories",
+      "Params": [
+        "eventlocation_m20_26_00_00",
+        "eventparam_m20_26_00_00",
+        "generatorlocation_m20_26_00_00",
+        "generatorparam_m20_26_00_00",
+        "generatorregistparam_m20_26_00_00",
+        "hitgroupparam_m20_26_00_00",
+        "intrudepointparam_m20_26_00_00",
+        "mapobjectinstanceparam_m20_26_00_00",
+        "maptargetdirparam_m20_26_00_00",
+        "npctalkparam_m20_26_00_00",
+        "treasureboxparam_m20_26_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Dark Chasm of Old",
+      "Params": [
+        "eventlocation_m40_03_00_00",
+        "eventparam_m40_03_00_00",
+        "generatorlocation_m40_03_00_00",
+        "generatorparam_m40_03_00_00",
+        "generatorregistparam_m40_03_00_00",
+        "hitgroupparam_m40_03_00_00",
+        "intrudepointparam_m40_03_00_00",
+        "mapobjectinstanceparam_m40_03_00_00",
+        "maptargetdirparam_m40_03_00_00",
+        "npctalkparam_m40_03_00_00",
+        "treasureboxparam_m40_03_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Shulva, Sanctum City",
+      "Params": [
+        "eventlocation_m50_35_00_00",
+        "eventparam_m50_35_00_00",
+        "generatorlocation_m50_35_00_00",
+        "generatorparam_m50_35_00_00",
+        "generatorregistparam_m50_35_00_00",
+        "hitgroupparam_m50_35_00_00",
+        "intrudepointparam_m50_35_00_00",
+        "mapobjectinstanceparam_m50_35_00_00",
+        "maptargetdirparam_m50_35_00_00",
+        "npctalkparam_m50_35_00_00",
+        "treasureboxparam_m50_35_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Brume Tower",
+      "Params": [
+        "demopointlight_scn503610",
+        "eventlocation_m50_36_00_00",
+        "eventparam_m50_36_00_00",
+        "generatorlocation_m50_36_00_00",
+        "generatorparam_m50_36_00_00",
+        "generatorregistparam_m50_36_00_00",
+        "hitgroupparam_m50_36_00_00",
+        "intrudepointparam_m50_36_00_00",
+        "mapobjectinstanceparam_m50_36_00_00",
+        "maptargetdirparam_m50_36_00_00",
+        "npctalkparam_m50_36_00_00",
+        "treasureboxparam_m50_36_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Frozen Eleum Loyce",
+      "Params": [
+        "eventlocation_m50_37_00_00",
+        "eventparam_m50_37_00_00",
+        "generatorlocation_m50_37_00_00",
+        "generatorparam_m50_37_00_00",
+        "generatorregistparam_m50_37_00_00",
+        "hitgroupparam_m50_37_00_00",
+        "intrudepointparam_m50_37_00_00",
+        "mapobjectinstanceparam_m50_37_00_00",
+        "maptargetdirparam_m50_37_00_00",
+        "npctalkparam_m50_37_00_00",
+        "treasureboxparam_m50_37_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Memory of the King",
+      "Params": [
+        "demopointlight_scn503810",
+        "eventlocation_m50_38_00_00",
+        "eventparam_m50_38_00_00",
+        "generatorlocation_m50_38_00_00",
+        "generatorparam_m50_38_00_00",
+        "generatorregistparam_m50_38_00_00",
+        "hitgroupparam_m50_38_00_00",
+        "intrudepointparam_m50_38_00_00",
+        "mapobjectinstanceparam_m50_38_00_00",
+        "maptargetdirparam_m50_38_00_00",
+        "npctalkparam_m50_38_00_00",
+        "treasureboxparam_m50_38_00_00"
+      ]
+    },
+    {
+      "DisplayName": "Development",
+      "Params": [
+        "GeneralLocationEventParam_m20_10_00_00",
+        "GeneralLocationEventParam_m99_80_50_04",
+        "GeneralLocationEventParam_m99_97_00_00"
+      ]
+    }
+  ]
+}

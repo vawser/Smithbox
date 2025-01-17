@@ -1,14 +1,180 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Row0Dummy="" />
+  <Self 
+  Wiki=""
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <!-- Things Betwixt -->
+    <NameEntry 
+    Param="demospotlight_scn100200" 
+    Name="Spot Light: 0" />
+    
+    <NameEntry 
+    Param="demospotlight_scn100210" 
+    Name="Spot Light: 10" />
+    
+    <NameEntry 
+    Param="demospotlight_scn100211" 
+    Name="Spot Light: 11" />
+    
+    <NameEntry 
+    Param="demospotlight_scn100220" 
+    Name="Spot Light: 20" />
+    
+    <NameEntry 
+    Param="demospotlight_scn100221" 
+    Name="Spot Light: 21" />
+    
+    <NameEntry 
+    Param="demospotlight_scn100230" 
+    Name="Spot Light: 30" />
+    
+    <NameEntry 
+    Param="demospotlight_scn100231" 
+    Name="Spot Light: 31" />
+    
+    <!-- Forest of Fallen -->
+    <NameEntry 
+    Param="demospotlight_scn101010" 
+    Name="Spot Light: 10" />
+    
+    <NameEntry 
+    Param="demospotlight_scn101020" 
+    Name="Spot Light: 20" />
+    
+    <NameEntry 
+    Param="demospotlight_scn101050" 
+    Name="Spot Light: 50" />
+    
+    <NameEntry 
+    Param="demospotlight_scn101060" 
+    Name="Spot Light: 60" />
+    
+    <NameEntry 
+    Param="demospotlight_scn101070" 
+    Name="Spot Light: 70" />
+    
+    <NameEntry 
+    Param="demospotlight_scn101098" 
+    Name="Spot Light: 98" />
+    
+    <NameEntry 
+    Param="demospotlight_scn101099" 
+    Name="Spot Light: 99" />
+    
+    <!-- Brightstone Cove Tseldora -->
+    <NameEntry 
+    Param="demospotlight_scn101410" 
+    Name="Spot Light: 10" />
+    
+    <NameEntry 
+    Param="demospotlight_scn101420" 
+    Name="Spot Light: 20" />
+    
+    <!-- Lost Bastille & Belfry Luna -->
+    <NameEntry 
+    Param="demospotlight_scn101610" 
+    Name="Spot Light: 10" />
+    
+    <NameEntry 
+    Param="demospotlight_scn101620" 
+    Name="Spot Light: 20" />
+    
+    <!-- No-man's Wharf -->
+    <NameEntry 
+    Param="demospotlight_scn101820" 
+    Name="Spot Light: 20" />
+    
+    <!-- Iron Keep & Belfry Sol -->
+    <NameEntry 
+    Param="demospotlight_scn101910" 
+    Name="Spot Light: 10" />
+    
+    <!-- Huntsman's Copse & Undead Purgatory -->
+    <NameEntry 
+    Param="demospotlight_scn102310" 
+    Name="Spot Light: 10" />
+    
+    <!-- Gutter & Black Gulch -->
+    <NameEntry 
+    Param="demospotlight_scn102510" 
+    Name="Spot Light: 10" />
+    
+    <!-- Memory of Vammar, Orro and Jeigh -->
+    <NameEntry 
+    Param="demospotlight_scn201010" 
+    Name="Spot Light: 10" />
+    
+    <!-- Drangleic Castle & Throne of Want -->
+    <NameEntry 
+    Param="demospotlight_scn202110" 
+    Name="Spot Light: 10" />
+    
+    <NameEntry 
+    Param="demospotlight_scn202120" 
+    Name="Spot Light: 20" />
+    
+    <NameEntry 
+    Param="demospotlight_scn202130" 
+    Name="Spot Light: 30" />
+    
+    <NameEntry 
+    Param="demospotlight_scn202150" 
+    Name="Spot Light: 50" />
+    
+    <!-- Undead Crypt -->
+    <NameEntry 
+    Param="demospotlight_scn202410" 
+    Name="Spot Light: 10" />
+    
+  </DisplayNames>
+  
   <Field>
-    <diffuse_color_R AltName="Diffuse: R"/>
-    <diffuse_color_G AltName="Diffuse: G"/>
-    <diffuse_color_B AltName="Diffuse: B"/>
-    <diffuse_color_A AltName="Diffuse: A"/>
-    <specular_color_R AltName="Specular: R"/>
-    <specular_color_G AltName="Specular: G"/>
-    <specular_color_B AltName="Specular: B"/>
-    <specular_color_A AltName="Specular: A"/>
+    <diffuse_color_R 
+    AltName="Diffuse Color: R"
+    Wiki="The red component of the color." />
+    
+    <diffuse_color_G 
+    AltName="Diffuse Color: G"
+    Wiki="The green component of the color." />
+    
+    <diffuse_color_B 
+    AltName="Diffuse Color: B"
+    Wiki="The blue component of the color." />
+    
+    <diffuse_color_A 
+    AltName="Diffuse Color: Alpha"
+    Wiki="The alpha component of the color." />
+    
+    <specular_color_R 
+    AltName="Specular Color: R"
+    Wiki="The red component of the color." />
+    
+    <specular_color_G 
+    AltName="Specular Color: G"
+    Wiki="The green component of the color." />
+    
+    <specular_color_B 
+    AltName="Specular Color: B"
+    Wiki="The blue component of the color." />
+    
+    <specular_color_A 
+    AltName="Specular Color: Alpha"
+    Wiki="The alpha component of the color." />
+    
   </Field>
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Diffuse Color" 
+    Fields="diffuse_color_R,diffuse_color_G,diffuse_color_B" 
+    PlacedField="diffuse_color_A" />
+    
+    <ColorEditor 
+    Name="Specular Color" 
+    Fields="specular_color_R,specular_color_G,specular_color_B" 
+    PlacedField="specular_color_A" />
+    
+  </ColorEdit>
 </PARAMMETA>
