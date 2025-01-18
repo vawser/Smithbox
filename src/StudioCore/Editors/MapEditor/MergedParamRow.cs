@@ -15,7 +15,12 @@ public class MergedParamRow
 
     private readonly List<Param.Row> Rows = new();
 
-    public MergedParamRow() { }
+    public string MetaName { get; set; }
+
+    public MergedParamRow(string metaName) 
+    {
+        MetaName = metaName;
+    }
 
     public MergedParamRow(MergedParamRow clone)
     {

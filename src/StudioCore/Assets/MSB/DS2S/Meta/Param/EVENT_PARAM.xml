@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <event_id 
+    AltName="Event ID"
+    Wiki="" />
+    
+    <flag_id 
+    AltName="Flag ID"
+    Wiki=""
+    FlagAlias="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

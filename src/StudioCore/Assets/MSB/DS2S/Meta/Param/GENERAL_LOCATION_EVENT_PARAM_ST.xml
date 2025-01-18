@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <PositionX 
+    AltName="Position: X" 
+    Wiki="" />
+    
+    <PositionY 
+    AltName="Position: Y" 
+    Wiki="" />
+    
+    <PositionZ 
+    AltName="Position: Z" 
+    Wiki="" />
+    
+    <RotationX 
+    AltName="Rotation: X" 
+    Wiki="" />
+    
+    <RotationY 
+    AltName="Rotation: Y" 
+    Wiki="" />
+    
+    <RotationZ 
+    AltName="Rotation: Z" 
+    Wiki="" />
+    
+    <RegionTypeMaybe 
+    AltName="Region Type" 
+    Wiki="" />
+    
+    <ScaleX 
+    AltName="Scale: X" 
+    Wiki="" />
+    
+    <ScaleY 
+    AltName="Scale: Y" 
+    Wiki="" />
+    
+    <ScaleZ 
+    AltName="Scale: Z" 
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

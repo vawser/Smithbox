@@ -538,7 +538,7 @@ public class Universe
             }
 
 
-            MergedParamRow mergedRow = new();
+            MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
             mergedRow.AddRow("generator-loc", row);
             generatorParams.Add(row.ID, mergedRow);
 
@@ -563,7 +563,7 @@ public class Universe
             }
             else
             {
-                MergedParamRow mergedRow = new();
+                MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
                 mergedRow.AddRow("generator", row);
                 generatorParams.Add(row.ID, mergedRow);
                 MsbEntity obj = new(map, mergedRow, MsbEntity.MsbEntityType.DS2Generator);

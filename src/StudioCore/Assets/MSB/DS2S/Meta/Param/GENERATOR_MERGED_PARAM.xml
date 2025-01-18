@@ -1,125 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<MSBMETA XmlVersion="0">
   <Self 
-  Wiki=""
-  Row0Dummy="" />
-  
-  <DisplayNames>
-    <NameEntry 
-    Param="generatorparam_m10_02_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_04_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_10_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_14_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_15_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_16_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_17_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_18_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_19_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_23_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_25_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_27_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_29_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_30_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_31_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_32_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_33_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m10_34_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m20_10_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m20_11_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m20_21_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m20_24_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m20_26_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m40_03_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m50_35_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m50_36_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m50_37_00_00" 
-    Name="Enemies" />
-    
-    <NameEntry 
-    Param="generatorparam_m50_38_00_00" 
-    Name="Enemies" />
-    
-  </DisplayNames>
+  Wiki="" />
   
   <Field>
+    <PositionX 
+    AltName="Position: X" 
+    Wiki="" />
+    
+    <PositionY 
+    AltName="Position: Y" 
+    Wiki="" />
+    
+    <PositionZ 
+    AltName="Position: Z" 
+    Wiki="" />
+    
+    <RotationX 
+    AltName="Rotation: X" 
+    Wiki="" />
+    
+    <RotationY 
+    AltName="Rotation: Y" 
+    Wiki="" />
+    
+    <RotationZ 
+    AltName="Rotation: Z" 
+    Wiki="" />
+    
+    <UnkInheritInstanceParamId 
+    AltName="Inherit Instance Param ID" 
+    Wiki="References InstanceParamIds and seemingly inherits data such as drawgroups." />
+    
     <SpawnLimit 
     AltName="Spawn Limit" 
     Wiki="" />
@@ -138,7 +50,9 @@
     
     <GeneratorRegistParam 
     AltName="Generator Registration ID" 
-    Wiki="" />
+    Wiki="" 
+    ParamRef="generatorregistparam" 
+    SpecialHandling="MapParam" />
     
     <AppearanceEventID 
     AltName="Appearance Event ID" 
@@ -217,8 +131,14 @@
     Wiki="An event ID used by ESD or hardcoded logic. Used for location based events, often for an NPC to move from one place to another." />
     
     <ItemLotID1 
-    AltName="Itemlot ID" 
-    Wiki="Typically the itemlot entry that acts as a drop table for this entity." />
+    AltName="Itemlot ID: 1" 
+    Wiki="Typically the itemlot entry that acts as a drop table for this entity." 
+    ParamRef="ItemLotParam2_Chr" />
+    
+    <ItemLotID2
+    AltName="Itemlot ID: 2" 
+    Wiki="Typically the itemlot entry that acts as a drop table for this entity." 
+    ParamRef="ItemLotParam2_Chr" />
     
     <GraveEventID 
     AltName="Grave Event ID"
@@ -228,4 +148,7 @@
     AltName="Model Mask" 
     Wiki="Determines which model masks to use. Also decides which model mask set to use in color params." />
   </Field>
-</PARAMMETA>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

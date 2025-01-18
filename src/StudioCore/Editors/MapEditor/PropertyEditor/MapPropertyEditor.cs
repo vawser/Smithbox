@@ -2,6 +2,7 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.ModelEditor.Utils;
@@ -44,6 +45,8 @@ public class MapPropertyEditor
 
     public bool Focus = false;
 
+    private string msbFieldSearch = "";
+
     public MapPropertyEditor(MapEditorScreen screen, ViewportActionManager manager, MapPropertyCache propCache, IViewport viewport)
     {
         Screen = screen;
@@ -67,6 +70,13 @@ public class MapPropertyEditor
         ImGui.Begin($@"Properties##{id}");
         Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.MapObjectProperties);
 
+        // Header
+        ImGui.SetNextItemWidth(ImGui.GetColumnWidth() * 0.75f);
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputText("Search##msbFieldSearch", ref msbFieldSearch, 255);
+        ImGui.Separator();
+
+        // Properties
         ImGui.BeginChild("propedit");
         Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.MapObjectProperties);
 
@@ -150,11 +160,24 @@ public class MapPropertyEditor
         PropEditorPropInfoRow(selection.WrappedObject, nameProp, "Name", ref id, selection);
         PropEditorPropInfoRow(selection.WrappedObject, idProp, "ID", ref id, selection);
 
+        MsbFieldMetaData meta = null;
+
         foreach (Param.Cell cell in cells)
         {
-            //var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+            if (selection.WrappedObject is MergedParamRow)
+            {
+                var mergedRow = (MergedParamRow)selection.WrappedObject;    
 
-            PropEditorPropCellRow(null, cell, ref id, selection);
+                meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
+            }
+            if (selection.WrappedObject is Param.Row)
+            {
+                var paramRow = (Param.Row)selection.WrappedObject;
+
+                meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
+            }
+
+            PropEditorPropCellRow(meta, cell, ref id, selection);
         }
 
         ImGui.Columns(1);
@@ -176,9 +199,9 @@ public class MapPropertyEditor
 
         foreach (Param.Column cell in row.Columns)
         {
-            //var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+            var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
 
-            PropEditorPropCellRow(null, row[cell], ref id, null);
+            PropEditorPropCellRow(meta, row[cell], ref id, null);
         }
 
         ImGui.Columns(1);
@@ -194,29 +217,22 @@ public class MapPropertyEditor
 
     private void PropEditorPropCellRow(MsbFieldMetaData meta, Param.Cell cell, ref int id, Entity nullableSelection)
     {
+        var filterTerm = msbFieldSearch.ToLower();
+        if (msbFieldSearch != "")
+        {
+            if (!cell.Def.InternalName.ToLower().Contains(filterTerm))
+            {
+                return;
+            }
+
+            if (meta != null && !meta.AltName.ToLower().Contains(filterTerm))
+            {
+                return;
+            }
+        }
+
         PropEditorPropRow(meta, cell.Value, ref id, cell.Def.InternalName, cell.Value.GetType(), null,
             cell.Def.InternalName, cell.GetType().GetProperty("Value"), cell, nullableSelection);
-    }
-
-    private void PropEditorPropRow(MsbFieldMetaData meta, object oldval, ref int id, string visualName, Type propType,
-        Entity nullableEntity, string nullableName, PropertyInfo proprow, object paramRowOrCell,
-        Entity nullableSelection)
-    {
-        ImGui.PushID(id);
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text(visualName);
-        ImGui.NextColumn();
-        ImGui.SetNextItemWidth(-1);
-
-        object newval;
-        // Property Editor UI
-        (bool, bool) propEditResults = PropertyRow(meta, propType, oldval, out newval, proprow, null);
-        var changed = propEditResults.Item1;
-        var committed = propEditResults.Item2;
-        UpdateProperty(proprow, nullableSelection, paramRowOrCell, newval, changed, committed);
-        ImGui.NextColumn();
-        ImGui.PopID();
-        id++;
     }
 
     /// <summary>
@@ -314,15 +330,84 @@ public class MapPropertyEditor
         }
     }
 
-    List<string> MsbPropertyFilters = new List<string>()
+    /// <summary>
+    /// Param MSB Object Field
+    /// </summary>
+    private void PropEditorPropRow(MsbFieldMetaData meta, object oldval, ref int id, string visualName, Type propType,
+        Entity nullableEntity, string nullableName, PropertyInfo proprow, object paramRowOrCell,
+        Entity nullableSelection)
     {
-        "All",
-        "Vital",
-        "Enemy"
-    };
+        ImGui.PushID(id);
+        ImGui.AlignTextToFramePadding();
 
-    private string SelectedMsbPropertyFilter = "All";
+        var displayedName = visualName;
 
+        // Name
+        if (meta != null && meta.AltName != "")
+        {
+            displayedName = meta.AltName;
+        }
+
+        ImGui.Text(displayedName);
+
+        // Description
+        if (meta != null && meta.Wiki != "")
+        {
+            UIHelper.ShowHoverTooltip(meta.Wiki);
+        }
+
+        ImGui.NextColumn();
+        ImGui.SetNextItemWidth(-1);
+
+        object newval;
+
+        (bool, bool) propEditResults = PropertyRow(meta, propType, oldval, out newval, proprow, null);
+
+        var changed = propEditResults.Item1;
+        var committed = propEditResults.Item2;
+
+        if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
+        {
+            ImGui.SetItemDefaultFocus();
+        }
+
+        // Param References
+        if (MapEditorDecorations.ParamRefRow(meta, proprow, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        // Text References
+        if (MapEditorDecorations.FmgRefRow(meta, proprow, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        // Enum List
+        if (MapEditorDecorations.GenericEnumRow(meta, proprow, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        // Alias List
+        if (MapEditorDecorations.AliasEnumRow(meta, proprow, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        UpdateProperty(proprow, nullableSelection, paramRowOrCell, newval, changed, committed);
+        ImGui.NextColumn();
+        ImGui.PopID();
+        id++;
+    }
+
+    /// <summary>
+    /// Standard MSB Object Field
+    /// </summary>
     private void PropGenericFieldRow(
         ViewportSelection selection,
         IEnumerable<Entity> entSelection,
@@ -370,7 +455,9 @@ public class MapPropertyEditor
         (bool, bool) propEditResults = PropertyRow(meta, type, oldval, out newval, prop, entSelection);
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
+
         DisplayPropContextMenu(meta, selection, prop, obj, arrayIndex);
+
         if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
         {
             ImGui.SetItemDefaultFocus();
@@ -518,8 +605,6 @@ public class MapPropertyEditor
         ImGui.NextColumn();
     }
 
-    private string msbFieldSearch = "";
-
     private void PropEditorSelectedEntities(ViewportSelection selection, int classIndex = -1)
     {
         var entities = selection.GetFilteredSelection<MsbEntity>();
@@ -534,20 +619,6 @@ public class MapPropertyEditor
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
-
-        var mapNames = string.Join(", ", maps.Select(map => map.Name));
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Properties");
-        UIHelper.ShowHoverTooltip($"{mapNames}");
-        ImGui.Separator();
-
-        // Search bar
-        ImGui.SetNextItemWidth(ImGui.GetColumnWidth() * 0.75f);
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputText("Search##msbFieldSearch", ref msbFieldSearch, 255);
-
-        ImGui.Separator();
 
         ImGui.Columns(2);
 

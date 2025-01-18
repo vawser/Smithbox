@@ -32,7 +32,7 @@ public static class MapEditorDecorations
     /// </summary>
     public static bool ParamRefRow(MsbFieldMetaData meta, PropertyInfo propinfo, object val, ref object newObj)
     {
-        if (meta.ParamRef.Count > 0)
+        if (meta != null && meta.ParamRef.Count > 0)
         {
             List<ParamRef> refs = new();
 
@@ -65,7 +65,7 @@ public static class MapEditorDecorations
 
                     if (selection.IsSelection())
                     {
-                        // Get cur map name, apend to ParamName
+                        // Get cur map name, append to ParamName
                         var sel = selection.GetSelection().First() as Entity;
                         var map = sel.Parent.Name;
 
@@ -73,11 +73,27 @@ public static class MapEditorDecorations
 
                         var mapPrefix = map.Substring(0, 3);
 
-                        // Handling for m15_1
+                        // Handling for m15_1 in DS1
                         if (map == "m15_01_00_00")
                             mapPrefix = "m51_1";
 
                         refs.Add(new ParamRef($"{mapPrefix}_{paramName}"));
+                    }
+                }
+                // DS2 Map Params
+                else if (meta.SpecialHandling == "MapParam")
+                {
+                    var selection = Smithbox.EditorHandler.MapEditor._selection;
+
+                    if (selection.IsSelection())
+                    {
+                        // Get cur map name, append to ParamName
+                        var sel = selection.GetSelection().First() as Entity;
+                        var map = sel.Parent.Name;
+
+                        var paramName = pRef.ParamName;
+
+                        refs.Add(new ParamRef($"{paramName}_{map}"));
                     }
                 }
                 else
@@ -113,7 +129,7 @@ public static class MapEditorDecorations
     /// </summary>
     public static bool FmgRefRow(MsbFieldMetaData meta, PropertyInfo propinfo, object val, ref object newObj)
     {
-        if (meta.FmgRef.Count > 0)
+        if (meta != null && meta.FmgRef.Count > 0)
         {
             List<FMGRef> refs = new();
 
@@ -142,7 +158,7 @@ public static class MapEditorDecorations
         object val, 
         ref object newVal)
     {
-        if (meta.EnumType != null)
+        if (meta != null && meta.EnumType != null)
         {
             var enumName = meta.EnumType.Name;
             var options = meta.EnumType.Values;
@@ -351,7 +367,7 @@ public static class MapEditorDecorations
         string enumName = "";
         List<AliasReference> options = null;
 
-        if (meta.ShowParticleList)
+        if (meta != null && meta.ShowParticleList)
         {
             if (Smithbox.BankHandler.ParticleAliases.Aliases != null)
             {
@@ -361,7 +377,7 @@ public static class MapEditorDecorations
             }
         }
 
-        if (meta.ShowEventFlagList)
+        if (meta != null && meta.ShowEventFlagList)
         {
             if (Smithbox.BankHandler.EventFlagAliases.Aliases != null)
             {
@@ -371,7 +387,7 @@ public static class MapEditorDecorations
             }
         }
 
-        if (meta.ShowSoundList)
+        if (meta != null && meta.ShowSoundList)
         {
             if (Smithbox.BankHandler.SoundAliases.Aliases != null)
             {
