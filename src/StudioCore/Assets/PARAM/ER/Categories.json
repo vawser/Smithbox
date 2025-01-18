@@ -1,0 +1,210 @@
+{
+  "Categories": [
+    {
+      "DisplayName": "Configuration",
+      "Params": [
+        "default_DofBank",
+        "default_EnvLightTexBank",
+        "default_FogBank",
+        "default_LensFlareBank",
+        "default_LensFlareExBank",
+        "default_LightBank",
+        "default_LightScatteringBank",
+        "default_PointLightBank",
+        "default_ShadowBank",
+        "default_ToneCorrectBank",
+        "default_ToneMapBank",
+        "default_LodBank",
+        "default_AIStandardInfoBank",
+        "default_EnemyBehaviorBank"
+      ]
+    },
+    {
+      "DisplayName": "Depths / Undead Burg / Undead Parish",
+      "Params": [
+        "m10_DofBank",
+        "m10_EnvLightTexBank",
+        "m10_FogBank",
+        "m10_LensFlareBank",
+        "m10_LensFlareExBank",
+        "m10_LightBank",
+        "m10_LightScatteringBank",
+        "m10_PointLightBank",
+        "m10_ShadowBank",
+        "m10_ToneCorrectBank",
+        "m10_ToneMapBank",
+        "s10_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Painted World",
+      "Params": [
+        "m11_DofBank",
+        "m11_EnvLightTexBank",
+        "m11_FogBank",
+        "m11_LensFlareBank",
+        "m11_LensFlareExBank",
+        "m11_LightBank",
+        "m11_LightScatteringBank",
+        "m11_PointLightBank",
+        "m11_ShadowBank",
+        "m11_ToneCorrectBank",
+        "m11_ToneMapBank",
+        "s11_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Darkroot Garden / Oolacile",
+      "Params": [
+        "m12_DofBank",
+        "m12_EnvLightTexBank",
+        "m12_FogBank",
+        "m12_LensFlareBank",
+        "m12_LensFlareExBank",
+        "m12_LightBank",
+        "m12_LightScatteringBank",
+        "m12_PointLightBank",
+        "m12_ShadowBank",
+        "m12_ToneCorrectBank",
+        "m12_ToneMapBank",
+        "s12_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Catacombs / Tomb of the Giants / Great Hollow",
+      "Params": [
+        "m13_DofBank",
+        "m13_EnvLightTexBank",
+        "m13_FogBank",
+        "m13_LensFlareBank",
+        "m13_LensFlareExBank",
+        "m13_LightBank",
+        "m13_LightScatteringBank",
+        "m13_PointLightBank",
+        "m13_ShadowBank",
+        "m13_ToneCorrectBank",
+        "m13_ToneMapBank",
+        "s13_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Blighttown / Demon Ruins / Lost Izalith",
+      "Params": [
+        "m14_DofBank",
+        "m14_EnvLightTexBank",
+        "m14_FogBank",
+        "m14_LensFlareBank",
+        "m14_LensFlareExBank",
+        "m14_LightBank",
+        "m14_LightScatteringBank",
+        "m14_PointLightBank",
+        "m14_ShadowBank",
+        "m14_ToneCorrectBank",
+        "m14_ToneMapBank",
+        "s14_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Sen's Fortress",
+      "Params": [
+        "m15_DofBank",
+        "m15_EnvLightTexBank",
+        "m15_FogBank",
+        "m15_LensFlareBank",
+        "m15_LensFlareExBank",
+        "m15_LightBank",
+        "m15_LightScatteringBank",
+        "m15_PointLightBank",
+        "m15_ShadowBank",
+        "m15_ToneCorrectBank",
+        "m15_ToneMapBank",
+        "s15_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Anor Londo",
+      "Params": [
+        "m15_1_DofBank",
+        "m15_1_EnvLightTexBank",
+        "m15_1_FogBank",
+        "m15_1_LensFlareBank",
+        "m15_1_LensFlareExBank",
+        "m15_1_LightBank",
+        "m15_1_LightScatteringBank",
+        "m15_1_PointLightBank",
+        "m15_1_ShadowBank",
+        "m15_1_ToneCorrectBank",
+        "m15_1_ToneMapBank",
+        "s15_1_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "New Londo Ruins / Valley of Drakes",
+      "Params": [
+        "m16_DofBank",
+        "m16_EnvLightTexBank",
+        "m16_FogBank",
+        "m16_LensFlareBank",
+        "m16_LensFlareExBank",
+        "m16_LightBank",
+        "m16_LightScatteringBank",
+        "m16_PointLightBank",
+        "m16_ShadowBank",
+        "m16_ToneCorrectBank",
+        "m16_ToneMapBank",
+        "s16_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Duke's Archives",
+      "Params": [
+        "m17_DofBank",
+        "m17_EnvLightTexBank",
+        "m17_FogBank",
+        "m17_LensFlareBank",
+        "m17_LensFlareExBank",
+        "m17_LightBank",
+        "m17_LightScatteringBank",
+        "m17_PointLightBank",
+        "m17_ShadowBank",
+        "m17_ToneCorrectBank",
+        "m17_ToneMapBank",
+        "s17_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Kiln of the First Flame / Northern Undead Asylum",
+      "Params": [
+        "m18_DofBank",
+        "m18_EnvLightTexBank",
+        "m18_FogBank",
+        "m18_LensFlareBank",
+        "m18_LensFlareExBank",
+        "m18_LightBank",
+        "m18_LightScatteringBank",
+        "m18_PointLightBank",
+        "m18_ShadowBank",
+        "m18_ToneCorrectBank",
+        "m18_ToneMapBank",
+        "s18_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Development Layouts",
+      "Params": [
+        "m99_DofBank",
+        "m99_EnvLightTexBank",
+        "m99_FogBank",
+        "m99_LensFlareBank",
+        "m99_LensFlareExBank",
+        "m99_LightBank",
+        "m99_LightScatteringBank",
+        "m99_PointLightBank",
+        "m99_ShadowBank",
+        "m99_ToneCorrectBank",
+        "m99_ToneMapBank",
+        "s99_LightBank"
+      ]
+    }
+  ]
+}

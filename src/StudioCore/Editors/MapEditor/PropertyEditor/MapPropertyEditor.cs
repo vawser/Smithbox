@@ -704,9 +704,17 @@ public class MapPropertyEditor
 
             // Filter by Search
             var filterTerm = msbFieldSearch.ToLower();
+            if (msbFieldSearch != "")
+            {
+                if (!prop.Name.ToLower().Contains(filterTerm))
+                {
+                    continue;
+                }
+            }
+
             if (!meta.IsEmpty && msbFieldSearch != "")
             {
-                if(!prop.Name.ToLower().Contains(filterTerm) && !meta.AltName.ToLower().Contains(filterTerm))
+                if(!meta.AltName.ToLower().Contains(filterTerm))
                 {
                     continue;
                 }
