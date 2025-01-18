@@ -313,6 +313,8 @@ public class MsbFieldMetaData
 
     public bool ShowModelLinkButton { get; set; } = false;
 
+    public bool ShowSpawnStateList { get; set; } = false;
+
     // Empty default
     public MsbFieldMetaData()
     {
@@ -410,6 +412,13 @@ public class MsbFieldMetaData
         if (tEventFlagList != null)
         {
             ShowEventFlagList = true;
+        }
+
+        // Spawn State List
+        XmlAttribute tSpawnStateList = entry.Attributes["SpawnStates"];
+        if (tSpawnStateList != null)
+        {
+            ShowSpawnStateList = true;
         }
 
         // Model Link Button

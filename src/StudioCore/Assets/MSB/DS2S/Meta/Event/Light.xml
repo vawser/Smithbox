@@ -4,9 +4,11 @@
   Wiki="" />
   
   <Field>
-    <Color
-    AltName="Color"
+    <UnkT00
+    AltName="Unknown: 0x0"
     Wiki="" />
+    
+    
   </Field>
   
   <Enums>

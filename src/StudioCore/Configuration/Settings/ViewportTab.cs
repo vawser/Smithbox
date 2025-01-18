@@ -77,8 +77,14 @@ public class ViewportTab
         // Information Panel
         if (ImGui.CollapsingHeader("Information Panel", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Display information panel", ref CFG.Current.Viewport_Enable_ViewportInfoPanel);
+            UIHelper.ShowHoverTooltip("Display the information panel.");
+
             ImGui.Checkbox("Display degree increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement);
-            UIHelper.ShowHoverTooltip("Display the current degree increment type you are using.");
+            UIHelper.ShowHoverTooltip("Display the current degree increment type you are using in the information panel.");
+
+            ImGui.Checkbox("Display movement increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement);
+            UIHelper.ShowHoverTooltip("Display the current movement increment type you are using in the information panel.");
         }
 
         if (ImGui.CollapsingHeader("Camera", ImGuiTreeNodeFlags.DefaultOpen))

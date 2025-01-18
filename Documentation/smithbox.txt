@@ -21,3 +21,13 @@
  - ER
  - AC6
 
+{
+    "id": "XXXX",
+    "name": "XXXX",
+    "states": [
+        {
+            "value": "0",
+            "name": "Idle"
+        }
+    ]
+}

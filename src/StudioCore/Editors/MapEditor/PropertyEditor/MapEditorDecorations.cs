@@ -4,6 +4,7 @@ using Octokit;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
+using StudioCore.Banks.SpawnStateBank;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
@@ -403,7 +404,7 @@ public static class MapEditorDecorations
 
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-            ImGui.TextUnformatted(@$"   <{enumName}>");
+            ImGui.TextUnformatted(@$"");
             ImGui.PopStyleColor();
             ImGui.PopStyleVar();
 
@@ -469,6 +470,125 @@ public static class MapEditorDecorations
                         if (ImGui.Selectable($"{entry.id}: {entry.name}"))
                         {
                             newVal = Convert.ChangeType(entry.id, val.GetType());
+                            ImGui.EndChild();
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        ImGui.EndChild();
+        return false;
+    }
+
+    /// <summary>
+    /// DS2: Spawn State List
+    /// </summary>
+    public static bool SpawnStateListRow(
+        MsbFieldMetaData meta,
+        PropertyInfo propinfo,
+        object val,
+        ref object newVal, 
+        int rowID)
+    {
+        bool display = false;
+        string enumName = "";
+        var matchId = $"{rowID}";
+        List<SpawnStatePair> options = null;
+
+        if (meta != null && meta.ShowSpawnStateList)
+        {
+            if (Smithbox.BankHandler.SpawnStates.List != null && matchId.Length > 3)
+            {
+                matchId = $"{rowID}".Substring(0, 3);
+
+                var states = Smithbox.BankHandler.SpawnStates.List.list;
+                var matchedState = states.Where(e => e.id == matchId).FirstOrDefault();
+                if (matchedState != null)
+                {
+                    options = matchedState.states;
+                    enumName = "SPAWN STATES";
+                    display = true;
+                }
+            }
+        }
+
+        if (display)
+        {
+            ImGui.NextColumn();
+
+            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+            ImGui.TextUnformatted(@$"   <{enumName}>");
+            ImGui.PopStyleColor();
+            ImGui.PopStyleVar();
+
+            ImGui.NextColumn();
+
+            string currentEntry = "___";
+
+            var match = options.Where(x => x.value == val.ToString()).FirstOrDefault();
+
+            ImGui.BeginGroup();
+
+            if (match != null)
+            {
+                currentEntry = match.name;
+
+                // Revert if the stored name is empty
+                if (currentEntry == "")
+                    currentEntry = "___";
+
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+                ImGui.TextUnformatted(currentEntry);
+                ImGui.PopStyleColor();
+            }
+            else
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
+                ImGui.TextUnformatted(currentEntry);
+                ImGui.PopStyleColor();
+            }
+
+            ImGui.EndGroup();
+
+            if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
+            {
+                var opened = MsbSpawnStateEnumContextMenu(meta, propinfo, val, ref newVal, options);
+                ImGui.EndPopup();
+                return opened;
+            }
+        }
+
+        return false;
+    }
+
+    public static bool MsbSpawnStateEnumContextMenu(
+        MsbFieldMetaData meta,
+        PropertyInfo propinfo,
+        object val,
+        ref object newVal,
+        List<SpawnStatePair> options)
+    {
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+
+        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
+        {
+            try
+            {
+                foreach (var entry in options)
+                {
+                    if (SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.value, " ")
+                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.name, " ")
+                        || enumSearchStr == "")
+                    {
+                        if (ImGui.Selectable($"{entry.value}: {entry.name}"))
+                        {
+                            newVal = Convert.ChangeType(entry.value, val.GetType());
                             ImGui.EndChild();
                             return true;
                         }

@@ -13,6 +13,38 @@
     Wiki=""
     FlagAlias="" />
     
+    <Unk08
+    AltName="Unknown: 0x08"
+    Wiki="" />
+    
+    <Unk09
+    AltName="Unknown: 0x09"
+    Wiki="" />
+    
+    <Unk0A
+    AltName="Unknown: 0x0A"
+    Wiki="" />
+    
+    <Unk0B
+    AltName="Unknown: 0x0B"
+    Wiki="" />
+    
+    <Unk0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <Unk0D
+    AltName="Unknown: 0x0D"
+    Wiki="" />
+    
+    <Unk0E
+    AltName="Unknown: 0x0E"
+    Wiki="" />
+    
+    <Unk0F
+    AltName="Unknown: 0x0F"
+    Wiki="" />
+    
   </Field>
   
   <Enums>

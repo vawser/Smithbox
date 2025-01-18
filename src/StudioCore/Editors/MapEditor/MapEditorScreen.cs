@@ -645,6 +645,12 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_ResourceList);
 
+            if (ImGui.MenuItem("Viewport Information Panel"))
+            {
+                CFG.Current.Viewport_Enable_ViewportInfoPanel = !CFG.Current.Viewport_Enable_ViewportInfoPanel;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_ViewportInfoPanel);
+
             if (ImGui.MenuItem("Viewport Grid"))
             {
                 UI.Current.Interface_MapEditor_Viewport_Grid = !UI.Current.Interface_MapEditor_Viewport_Grid;
@@ -660,6 +666,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
                 UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Viewport_LightmapAtlas);
             }
+
 
             ImGui.Separator();
 

@@ -4,6 +4,7 @@ using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Banks.ParamCategoryBank;
 using StudioCore.Banks.ProjectEnumBank;
+using StudioCore.Banks.SpawnStateBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
@@ -59,6 +60,7 @@ public class BankHandler
 
     public ProjectEnumBank ProjectEnums;
     public ParamCategoryBank ParamCategories;
+    public SpawnStateBank SpawnStates;
     public LightmapAtlasBank LightmapAtlasBank;
     public MaterialResourceBank MaterialBank;
 
@@ -102,6 +104,8 @@ public class BankHandler
         MaterialBank = new MaterialResourceBank();
 
         MapTransforms = new MapTransformBank();
+
+        SpawnStates = new SpawnStateBank();
     }
 
     public void UpdateBanks()
@@ -135,6 +139,7 @@ public class BankHandler
 
         ProjectEnums.LoadBank();
         ParamCategories.LoadBank();
+        SpawnStates.LoadBank();
         LightmapAtlasBank.LoadBank();
         MaterialBank.LoadBank();
 

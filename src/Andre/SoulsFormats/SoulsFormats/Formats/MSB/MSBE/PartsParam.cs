@@ -187,10 +187,7 @@ namespace SoulsFormats
             /// <summary>
             /// The model used by this part; requires an entry in ModelParam.
             /// </summary>
-            [ModelNameLink]
             public string ModelName { get; set; }
-            [IndexProperty]
-            [XmlIgnore]
             private int ModelIndex { get; set; }
 
             /// <summary>
@@ -201,164 +198,136 @@ namespace SoulsFormats
             /// <summary>
             /// A path to a .sib file, presumably some kind of editor placeholder.
             /// </summary>
-            [IgnoreProperty]
             public string SibPath { get; set; }
 
             /// <summary>
             /// Location of the part.
             /// </summary>
-            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of the part.
             /// </summary>
-            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// Scale of the part; only works for map pieces and objects.
             /// </summary>
-            [ScaleProperty]
             public Vector3 Scale { get; set; }
 
             /// <summary>
             /// 1 disables the part, 2 and 3 are unknown.
             /// </summary>
-            [IgnoreProperty]
             public GameEditionDisableType GameEditionDisable { get; set; } = GameEditionDisableType.NeverDisable;
 
             /// <summary>
             /// Very speculative
             /// </summary>
-            [IgnoreProperty]
             public uint MapStudioLayer { get; set; }
 
             /// <summary>
             /// Identifies the part in event scripts.
             /// </summary>
-            [EnemyProperty]
             public uint EntityID { get; set; }
 
             /// <summary>
             /// Enables use of PartsDrawParamID. If false, asset param is used instead.
             /// </summary>
-            [IgnoreProperty]
             public byte isUsePartsDrawParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MSBParamReference(ParamName = "PartsDrawParam")]
-            [IgnoreProperty]
             public ushort PartsDrawParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public sbyte IsPointLightShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public byte UnkE0B { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public bool IsShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public byte IsStaticShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public byte IsCascade3ShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public byte UnkE0F { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public byte UnkE10 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public bool IsShadowDest { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public bool IsShadowOnly { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public bool DrawByReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public bool DrawOnlyReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public byte EnableOnAboveShadow { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public bool DisablePointLightEffect { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public byte UnkE17 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public int UnkE18 { get; set; }
 
             /// <summary>
             /// Allows multiple parts to be identified by the same entity ID.
             /// </summary>
-            [EnemyProperty]
             public uint[] EntityGroupIDs { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public short UnkE3C { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [IgnoreProperty]
             public short UnkE3E { get; set; }
 
             private protected Part(string name)

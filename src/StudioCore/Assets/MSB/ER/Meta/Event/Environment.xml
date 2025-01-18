@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="" />
+  Wiki="This map object represents an environmental effect box within the map." />
   
   <Field>
     <UnkT00
     AltName="Unknown: 0x0"
     Wiki="" />
     
-    <ColorT04
-    AltName="Color"
+    <UnkT04
+    AltName="Unknown: 0x4"
     Wiki="" />
     
     <UnkT08
-    AltName="Unknown: 0x08"
+    AltName="Unknown: 0x8"
     Wiki="" />
     
     <UnkT0C
-    AltName="Unknown: 0x0C"
+    AltName="Unknown: 0x0c"
     Wiki="" />
     
     <UnkT10
@@ -26,14 +26,6 @@
     
     <UnkT14
     AltName="Unknown: 0x14"
-    Wiki="" />
-    
-    <UnkT15
-    AltName="Unknown: 0x15"
-    Wiki="" />
-    
-    <UnkT16
-    AltName="Unknown: 0x16"
     Wiki="" />
     
   </Field>

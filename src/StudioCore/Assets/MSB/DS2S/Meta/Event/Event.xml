@@ -4,8 +4,8 @@
   Wiki="" />
   
   <Field>
-    <Color
-    AltName="Color"
+    <EventID
+    AltName="Event ID"
     Wiki="" />
   </Field>
   

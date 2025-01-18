@@ -140,14 +140,18 @@ public class MapPropertyEditor
 
     private void PropEditorParamRow(Entity selection)
     {
+        var rowID = -1;
+
         IReadOnlyList<Param.Cell> cells = new List<Param.Cell>();
         if (selection.WrappedObject is Param.Row row)
         {
             cells = row.Cells;
+            rowID = row.ID;
         }
         else if (selection.WrappedObject is MergedParamRow mrow)
         {
             cells = mrow.CellHandles;
+            rowID = mrow.ID;
         }
 
         ImGui.Columns(2);
@@ -161,6 +165,7 @@ public class MapPropertyEditor
         PropEditorPropInfoRow(selection.WrappedObject, idProp, "ID", ref id, selection);
 
         MsbFieldMetaData meta = null;
+
 
         foreach (Param.Cell cell in cells)
         {
@@ -177,7 +182,9 @@ public class MapPropertyEditor
                 meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
             }
 
-            PropEditorPropCellRow(meta, cell, ref id, selection);
+
+
+            PropEditorPropCellRow(meta, cell, ref id, selection, rowID);
         }
 
         ImGui.Columns(1);
@@ -197,11 +204,13 @@ public class MapPropertyEditor
         PropEditorPropInfoRow(row, idProp, "ID", ref id, null);
         ImGui.PopStyleColor();
 
+        ImGui.Separator();
+
         foreach (Param.Column cell in row.Columns)
         {
             var meta = MsbMeta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
 
-            PropEditorPropCellRow(meta, row[cell], ref id, null);
+            PropEditorPropCellRow(meta, row[cell], ref id, null, row.ID);
         }
 
         ImGui.Columns(1);
@@ -212,27 +221,22 @@ public class MapPropertyEditor
         Entity nullableSelection)
     {
         PropEditorPropRow(null, prop.GetValue(rowOrWrappedObject), ref id, visualName, prop.PropertyType, null, null,
-            prop, rowOrWrappedObject, nullableSelection);
+            prop, rowOrWrappedObject, nullableSelection, -1);
     }
 
-    private void PropEditorPropCellRow(MsbFieldMetaData meta, Param.Cell cell, ref int id, Entity nullableSelection)
+    private void PropEditorPropCellRow(MsbFieldMetaData meta, Param.Cell cell, ref int id, Entity nullableSelection, int rowID)
     {
         var filterTerm = msbFieldSearch.ToLower();
         if (msbFieldSearch != "")
         {
-            if (!cell.Def.InternalName.ToLower().Contains(filterTerm))
-            {
-                return;
-            }
-
-            if (meta != null && !meta.AltName.ToLower().Contains(filterTerm))
+            if (!cell.Def.InternalName.ToLower().Contains(filterTerm) && (meta != null && !meta.AltName.ToLower().Contains(filterTerm)))
             {
                 return;
             }
         }
 
         PropEditorPropRow(meta, cell.Value, ref id, cell.Def.InternalName, cell.Value.GetType(), null,
-            cell.Def.InternalName, cell.GetType().GetProperty("Value"), cell, nullableSelection);
+            cell.Def.InternalName, cell.GetType().GetProperty("Value"), cell, nullableSelection, rowID);
     }
 
     /// <summary>
@@ -245,6 +249,27 @@ public class MapPropertyEditor
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
             ImGui.OpenPopup("MsbPropContextMenu");
+        }
+    }
+
+    /// <summary>
+    /// Displays property context menu (for DS2 map params)
+    /// </summary>
+    private void DisplayParamContextMenu(MsbFieldMetaData meta, PropertyInfo propinfo, object val, ref object newObj, string fieldName)
+    {
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+        {
+            ImGui.OpenPopup("MsbPropContextMenu");
+        }
+
+        if (ImGui.BeginPopup("MsbPropContextMenu"))
+        {
+            if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
+            {
+                PlatformUtils.Instance.SetClipboardText(fieldName);
+            }
+
+            ImGui.EndPopup();
         }
     }
 
@@ -335,10 +360,12 @@ public class MapPropertyEditor
     /// </summary>
     private void PropEditorPropRow(MsbFieldMetaData meta, object oldval, ref int id, string visualName, Type propType,
         Entity nullableEntity, string nullableName, PropertyInfo proprow, object paramRowOrCell,
-        Entity nullableSelection)
+        Entity nullableSelection, int rowID)
     {
         ImGui.PushID(id);
         ImGui.AlignTextToFramePadding();
+
+        PropContextRowOpener();
 
         var displayedName = visualName;
 
@@ -365,6 +392,8 @@ public class MapPropertyEditor
 
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
+
+        DisplayParamContextMenu(meta, proprow, oldval, ref newval, visualName);
 
         if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
         {
@@ -394,6 +423,13 @@ public class MapPropertyEditor
 
         // Alias List
         if (MapEditorDecorations.AliasEnumRow(meta, proprow, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        // DS2: Spawn State List
+        if (MapEditorDecorations.SpawnStateListRow(meta, proprow, oldval, ref newval, rowID))
         {
             changed = true;
             committed = true;

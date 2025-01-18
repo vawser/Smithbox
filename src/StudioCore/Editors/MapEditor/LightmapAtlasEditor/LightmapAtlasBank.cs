@@ -20,7 +20,7 @@ public class LightmapAtlasBank
 
     public bool UsesLightmapAtlases()
     {
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.DS3)
+        if (Smithbox.ProjectType is ProjectType.DS3)
         {
             return true;
         }

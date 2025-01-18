@@ -21,11 +21,17 @@
     
     <SpawnState 
     AltName="Spawn State"
-    Wiki="What position/state the entity takes when spawning." />
+    Wiki="What position/state the entity takes when spawning." 
+    SpawnStates="" />
     
     <DrawGroup 
     AltName="Draw Group"
     Wiki="Determines when the game renders an entity." />
+    
+    <Unk0F
+    AltName="Unknown: 0x0F"
+    Wiki="" />
+    
   </Field>
   
   <Enums>
