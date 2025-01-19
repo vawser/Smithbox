@@ -1,16 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for objects." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="ObjectParam" 
+    Name="Objects" />
+  </DisplayNames>
+  
   <Field>
-    <hp AltName="hp" />
-    <defense AltName="defense" />
-    <isCamHit AltName="isCamHit" />
-    <isBreakByPlayerCollide AltName="isBreakByPlayerCollide" />
-    <extRefTexId AltName="extRefTexId" />
-    <isAnimBreak AltName="isAnimBreak" />
-    <animBreakIdMax AltName="animBreakIdMax" />
-    <materialId AltName="materialId" />
-    <isPenetrationBulletHit AltName="isPenetrationBulletHit" />
-    <pad_1 AltName="pad_1" />
+    <hp 
+    AltName="HP"
+    Wiki="The amount of damage this object can receive before breaking. -1 means it will never break from damage." />
+    
+    <defense 
+    AltName="Defense"
+    Wiki="The threshold compared against AtkParam field atkObj. If object damage surpasses object defense, the object will take damage. Otherwise, no damage occurs." />
+    
+    <isCamHit 
+    AltName="Collide with Camera"
+    Wiki="If ON, a camera will collide with this object." 
+    IsBool="" />
+    
+    <isBreakByPlayerCollide 
+    AltName="Destroy on Player Collision"
+    Wiki="If ON, this object can be destroyed when collided with by a player." 
+    IsBool="" />
+    
+    <extRefTexId 
+    AltName="External Textures: Map ID"
+    Wiki="The map ID of the TPF in which to source the external textures this object uses (if it uses them)." />
+    
+    <isAnimBreak 
+    AltName="Has Destruction Animation"
+    Wiki="If ON, this object will use a destruction animation when destroyed." 
+    IsBool="" />
+    
+    <animBreakIdMax 
+    AltName="Destruction: Animation ID (Max)"
+    Wiki="The maximum ID in the animation range to use for object destruction for this object." />
+    
+    <materialId 
+    AltName="Material ID"
+    Wiki="The material to use when this object is hit, determines the visual effect and sound that occurs. -1 means it will inherit the material used for the collision it belongs to." />
+    
+    <isPenetrationBulletHit 
+    AltName="Collide with Projectiles"
+    Wiki="If ON, projectiles with isPenetrate enabled will collide with this object." 
+    IsBool="" />
+    
+    <pad_1
+    Padding="" />
+    
   </Field>
-  <Self />
 </PARAMMETA>

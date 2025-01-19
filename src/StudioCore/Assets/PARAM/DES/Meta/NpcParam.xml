@@ -1,128 +1,642 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for enemy characters." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="NpcParam" 
+    Name="Enemies" />
+  </DisplayNames>
+  
   <Field>
-    <behaviorVariationId AltName="behaviorVariationId" />
-    <aiThinkId AltName="aiThinkId" />
-    <nameId AltName="nameId" />
-    <drawType AltName="drawType" />
-    <npcType AltName="npcType" />
-    <teamType AltName="teamType" />
-    <moveType AltName="moveType" />
-    <turnVellocity AltName="turnVellocity" />
-    <useRagdoll AltName="useRagdoll" />
-    <lockDist AltName="lockDist" />
-    <isDemon AltName="isDemon" />
-    <isNoDamageMotion AltName="isNoDamageMotion" />
-    <hitHeight AltName="hitHeight" />
-    <hitRadius AltName="hitRadius" />
-    <weight AltName="weight" />
-    <hitYOffset AltName="hitYOffset" />
-    <material AltName="material" />
-    <materialSfx AltName="materialSfx" />
-    <isUnduration AltName="isUnduration" />
-    <maxUndurationAng AltName="maxUndurationAng" />
-    <hp AltName="hp" />
-    <mp AltName="mp" />
-    <mpRecoverBaseVel AltName="mpRecoverBaseVel" />
-    <stamina AltName="stamina" />
-    <staminaRecoverBaseVel AltName="staminaRecoverBaseVel" />
-    <dropType AltName="dropType" />
-    <getSoul AltName="getSoul" />
-    <itemLotId_1 AltName="itemLotId_1" />
-    <itemLotId_2 AltName="itemLotId_2" />
-    <itemLotId_3 AltName="itemLotId_3" />
-    <itemLotId_4 AltName="itemLotId_4" />
-    <itemLotId_5 AltName="itemLotId_5" />
-    <itemLotId_6 AltName="itemLotId_6" />
-    <def_phys AltName="def_phys" />
-    <def_slash AltName="def_slash" />
-    <def_blow AltName="def_blow" />
-    <def_thrust AltName="def_thrust" />
-    <def_mag AltName="def_mag" />
-    <def_fire AltName="def_fire" />
-    <guardBreakRate AltName="guardBreakRate" />
-    <knockbackRate AltName="knockbackRate" />
-    <fallDamageDump AltName="fallDamageDump" />
-    <resist_poison AltName="resist_poison" />
-    <resist_desease AltName="resist_desease" />
-    <resist_blood AltName="resist_blood" />
-    <spEffectID0 AltName="spEffectID0" />
-    <spEffectID1 AltName="spEffectID1" />
-    <spEffectID2 AltName="spEffectID2" />
-    <spEffectID3 AltName="spEffectID3" />
-    <spEffectID4 AltName="spEffectID4" />
-    <GameClearSpEffectID AltName="GameClearSpEffectID" />
-    <guardLevel AltName="guardLevel" />
-    <pad3 AltName="pad3" />
-    <guardAngle AltName="guardAngle" />
-    <physGuardCutRate AltName="physGuardCutRate" />
-    <slashGuardCutRate AltName="slashGuardCutRate" />
-    <blowGuardCutRate AltName="blowGuardCutRate" />
-    <thrustGuardCutRate AltName="thrustGuardCutRate" />
-    <pad4 AltName="pad4" />
-    <magGuardCutRate AltName="magGuardCutRate" />
-    <fireGuardCutRate AltName="fireGuardCutRate" />
-    <pad5 AltName="pad5" />
-    <poisonGuardResist AltName="poisonGuardResist" />
-    <diseaseGuardResist AltName="diseaseGuardResist" />
-    <bloodGuardResist AltName="bloodGuardResist" />
-    <staminaGuardDef AltName="staminaGuardDef" />
-    <guardKnockbackCutRate AltName="guardKnockbackCutRate" />
-    <guardKnockbackBackslash AltName="guardKnockbackBackslash" />
-    <superArmorLimitDamage AltName="superArmorLimitDamage" />
-    <superArmorLimitTime AltName="superArmorLimitTime" />
-    <knockbackBounceRate AltName="knockbackBounceRate" />
-    <parryAttack AltName="parryAttack" />
-    <parryDefence AltName="parryDefence" />
-    <pad6 AltName="pad6" />
-    <pcAttrB AltName="pcAttrB" />
-    <pcAttrW AltName="pcAttrW" />
-    <pcAttrL AltName="pcAttrL" />
-    <pcAttrR AltName="pcAttrR" />
-    <areaAttrB AltName="areaAttrB" />
-    <areaAttrW AltName="areaAttrW" />
-    <areaAttrL AltName="areaAttrL" />
-    <areaAttrR AltName="areaAttrR" />
-    <animIdOffset AltName="animIdOffset" />
-    <modelDispMask0 AltName="modelDispMask0" />
-    <modelDispMask1 AltName="modelDispMask1" />
-    <modelDispMask2 AltName="modelDispMask2" />
-    <modelDispMask3 AltName="modelDispMask3" />
-    <modelDispMask4 AltName="modelDispMask4" />
-    <modelDispMask5 AltName="modelDispMask5" />
-    <modelDispMask6 AltName="modelDispMask6" />
-    <modelDispMask7 AltName="modelDispMask7" />
-    <moveAnimId AltName="moveAnimId" />
-    <spMoveAnimId1 AltName="spMoveAnimId1" />
-    <spMoveAnimId2 AltName="spMoveAnimId2" />
-    <isChangeWanderGhost AltName="isChangeWanderGhost" />
-    <isCrowd AltName="isCrowd" />
-    <sfxSize AltName="sfxSize" />
-    <pad7 AltName="pad7" />
-    <ghostModelId AltName="ghostModelId" />
-    <normalChangeResouceId AltName="normalChangeResouceId" />
-    <networkWarpDist AltName="networkWarpDist" />
-    <dbgBehaviorR1 AltName="dbgBehaviorR1" />
-    <dbgBehaviorL1 AltName="dbgBehaviorL1" />
-    <dbgBehaviorR2 AltName="dbgBehaviorR2" />
-    <dbgBehaviorL2 AltName="dbgBehaviorL2" />
-    <dbgBehaviorRL AltName="dbgBehaviorRL" />
-    <dbgBehaviorRR AltName="dbgBehaviorRR" />
-    <dbgBehaviorRD AltName="dbgBehaviorRD" />
-    <dbgBehaviorRU AltName="dbgBehaviorRU" />
-    <dbgBehaviorLL AltName="dbgBehaviorLL" />
-    <dbgBehaviorLR AltName="dbgBehaviorLR" />
-    <dbgBehaviorLD AltName="dbgBehaviorLD" />
-    <dbgBehaviorLU AltName="dbgBehaviorLU" />
-    <modelDispMask8 AltName="modelDispMask8" />
-    <modelDispMask9 AltName="modelDispMask9" />
-    <modelDispMask10 AltName="modelDispMask10" />
-    <modelDispMask11 AltName="modelDispMask11" />
-    <modelDispMask12 AltName="modelDispMask12" />
-    <modelDispMask13 AltName="modelDispMask13" />
-    <modelDispMask14 AltName="modelDispMask14" />
-    <modelDispMask15 AltName="modelDispMask15" />
-    <animIdOffset2 AltName="animIdOffset2" />
+    <behaviorVariationId 
+    AltName="Behavior Variation ID" 
+    Wiki="Used to determine the action parameters to use for this enemy." 
+    VRef="BehaviorVariation" />
+    
+    <aiThinkId 
+    AltName="Think ID"
+    Wiki="The think parameters to use for this enemy." 
+    Refs="NpcThinkParam" />
+    
+    <nameId 
+    AltName="Name ID"
+    Wiki="The name to display for this entity. Only appears on the health bar of c0000 characters." 
+    FmgRef="Title_Characters" />
+    
+    <drawType 
+    AltName="Draw Type"
+    Wiki="The draw type used for this character. Normally affects the shader used." 
+    Enum="NPC_DRAW_TYPE" />
+    
+    <npcType 
+    AltName="Character Type"
+    Wiki="The character type assigned to this character." 
+    Enum="NPC_TYPE"/>
+    
+    <teamType 
+    AltName="Team Type"
+    Wiki="The team type assigned to this character." 
+    Enum="TEAM_TYPE"/>
+    
+    <moveType 
+    AltName="Move Type"
+    Wiki="The move type assigned to this character." 
+    Enum="NPC_MOVE_TYPE"/>
+    
+    <turnVellocity 
+    AltName="Turn Velocity"
+    Wiki="The rotation speed of the enemy. In degrees per second." />
+    
+    <useRagdoll 
+    AltName="Use Ragdoll Collision"
+    Wiki="If ON, then ragdoll is used for character to character collision. If false, hitRadius and hitHeight are used instead" 
+    IsBool="" />
+    
+    <lockDist 
+    AltName="Additional Lock-on Distance"
+    Wiki="Additional maximum lock-on distance added onto base distance defined in LockCamParam" />
+    
+    <isDemon 
+    AltName="Is Demon"
+    Wiki="If ON, character will be affected by weapons with antiDemonDamageRate (anti-demon damage)." 
+    IsBool="" />
+    
+    <isNoDamageMotion 
+    AltName="Ignore Damage Motion for Dummy Hits"
+    Wiki="If ON, damage level motion is ignored if the damage suffered is 0."
+    IsBool="" />
+    
+    <hitHeight 
+    AltName="Simple Collision Height"
+    Wiki="Vertical radius of hitbox used for character to character collision. Requires useRagdoll = false" />
+    
+    <hitRadius 
+    AltName="Simple Collision Radius"
+    Wiki="Horizontal radius of hitbox used for character to character collision. Requires useRagdoll = false" />
+    
+    <weight 
+    AltName="Weight"
+    Wiki="The weight of the character." />
+    
+    <hitYOffset 
+    AltName="Collision Height Offset"
+    Wiki="The vertical offset of the character's hitbox. Will cause them to float." />
+    
+    <material
+    AltName="Defense Presentation: Sound" 
+    Wiki="The sound used when guarding." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <materialSfx
+    AltName="Defense Presentation: Particle" 
+    Wiki="The particles used when guarding." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <isUnduration 
+    AltName="Is Undulating"
+    Wiki="If ON, enemies will rotate vertically on slopes. Rotation angle determines by maxUndurationAng" 
+    IsBool="" />
+    
+    <maxUndurationAng 
+    AltName="Maximum Angle for Undulation"
+    Wiki="Maximum angle enemies can rotate vertically while on slopes. Requires isUnduration" />
+    
+    <hp 
+    AltName="HP" 
+    Wiki="The character's maximum hit points." />
+    
+    <mp 
+    AltName="MP" 
+    Wiki="The character's maximum mana points." />
+    
+    <mpRecoverBaseVel 
+    AltName="MP Recovery Speed"
+    Wiki="The speed at which mana points are restored for this character." />
+    
+    <stamina 
+    AltName="Stamina"
+    Wiki="The maximum stamina for this character.. Used for non c0000 enemies blocking in DS1" />
+    
+    <staminaRecoverBaseVel 
+    AltName="Stamina Recovery Speed" 
+    Wiki="The recovery speed for stamina for this character." />
+    
+    <dropType 
+    AltName="Item Drop Type"
+    Wiki="Determines behavior and appearance of dropped items." 
+    Enum="NPC_ITEMDROP_TYPE" />
+    
+    <getSoul 
+    AltName="Souls"
+    Wiki="The amount of souls dropped on death by this character." />
+    
+    <itemLotId_1 
+    AltName="Item Lot ID: 1"
+    Wiki="The ID of the item lot to use for item drops for this character's death." 
+    Refs="ItemLotParam" />
+    
+    <itemLotId_2
+    AltName="Item Lot ID: 2"
+    Wiki="The ID of the item lot to use for item drops for this character's death." 
+    Refs="ItemLotParam" />
+    
+    <itemLotId_3
+    AltName="Item Lot ID: 3"
+    Wiki="The ID of the item lot to use for item drops for this character's death." 
+    Refs="ItemLotParam" />
+    
+    <itemLotId_4
+    AltName="Item Lot ID: 4"
+    Wiki="The ID of the item lot to use for item drops for this character's death." 
+    Refs="ItemLotParam" />
+    
+    <itemLotId_5 
+    AltName="Item Lot ID: 5"
+    Wiki="The ID of the item lot to use for item drops for this character's death." 
+    Refs="ItemLotParam" />
+    
+    <itemLotId_6
+    AltName="Item Lot ID: 6"
+    Wiki="The ID of the item lot to use for item drops for this character's death." 
+    Refs="ItemLotParam" />
+    
+    <def_phys 
+    AltName="Defense: Physical"
+    Wiki="The flat physical damage defense this character possess." />
+    
+    <def_slash 
+    AltName="Defense: Slash"
+    Wiki="This value is applied to the flat physical defense when the sub-type matches. For example: 10 = +10% defense, -10 = -10% defense" />
+    
+    <def_blow 
+    AltName="Defense: Strike"
+    Wiki="This value is applied to the flat physical defense when the sub-type matches. For example: 10 = +10% defense, -10 = -10% defense" />
+    
+    <def_thrust 
+    AltName="Defense: Thrust"
+    Wiki="This value is applied to the flat physical defense when the sub-type matches. For example: 10 = +10% defense, -10 = -10% defense" />
+    
+    <def_mag 
+    AltName="Defense: Magic"
+    Wiki="The flat magic damage defense this character possess." />
+    
+    <def_fire 
+    AltName="Defense: Fire"
+    Wiki="The flat physical damage defense this character possess." />
+    
+    <guardBreakRate
+    AltName="Guard: Weapon Repulsion %" 
+    Wiki="The base guard defense value. Compared against the guard attack value to determine if the attack will bounce." />
+    
+    <knockbackRate 
+    AltName="Knockback %"
+    Wiki="The rate of knockback suffered from sources of knockback from attackers." />
+    
+    <fallDamageDump 
+    AltName="Fall Damage %"
+    Wiki="The dampening rate to apply to fall damage suffered." />
+    
+    <resist_poison 
+    AltName="Status Resist: Poison" 
+    Wiki="The flat defense value for this character against the specified resistance type." />
+    
+    <resist_desease 
+    AltName="Status Resist: Toxic" 
+    Wiki="The flat defense value for this character against the specified resistance type." />
+    
+    <resist_blood 
+    AltName="Status Resist: Bleed" 
+    Wiki="The flat defense value for this character against the specified resistance type." />
+    
+    <spEffectID0 
+    AltName="SpEffect ID: 0"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID1
+    AltName="SpEffect ID: 1"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID2
+    AltName="SpEffect ID: 2"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID3 
+    AltName="SpEffect ID: 3"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID4
+    AltName="SpEffect ID: 4"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <GameClearSpEffectID 
+    AltName="SpEffect ID: Game Clear"
+    Wiki="The ID of a SpEffect that affect this character that only applies on NG+ and higher. Used to scale enemy stats for each NG+ journey."
+    Refs="SpEffectParam" />
+    
+    <guardLevel 
+    AltName="Guard Damage Level" 
+    Wiki="When guarding, the guard animation offset to use when being attacked." 
+    Enum="GUARD_DAMAGE_LEVEL" />
+    
+    <pad3
+    Padding="" />
+    
+    <guardAngle 
+    AltName="Horizontal Guard Angle" 
+    Wiki="Defense generation range angle when guarding (horizontal direction). In degrees." />
+    
+    <physGuardCutRate 
+    AltName="Guard Absorption %: Physical"
+    Wiki="The percentage reduction in Physical damage taken when this character is guarding." />
+    
+    <slashGuardCutRate 
+    AltName="Guard Absorption %: Slash" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <blowGuardCutRate
+    AltName="Guard Absorption %: Strike" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <thrustGuardCutRate 
+    AltName="Guard Absorption %: Thrust" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <pad4
+    Padding="" />
+    
+    <magGuardCutRate 
+    AltName="Guard Absorption %: Magic"
+    Wiki="The percentage reduction in Magic damage taken when this character is guarding." />
+    
+    <fireGuardCutRate 
+    AltName="Guard Absorption %: Fire"
+    Wiki="The percentage reduction in Fire damage taken when this character is guarding." />
+    
+    <pad5
+    Padding="" />
+    
+    <poisonGuardResist 
+    AltName="Guard Absorption %: Poison" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <diseaseGuardResist 
+    AltName="Guard Absorption %: Toxic" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <bloodGuardResist 
+    AltName="Guard Absorption %: Bleed" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <staminaGuardDef 
+    AltName="Guard Absorption %: Stamina"
+    Wiki="The amount to reduce stamina damage by when received by the character." />
+    
+    <guardKnockbackCutRate
+    AltName="Guard: Knockback Absorption %"
+    Wiki="The absorption to apply to knocback speed when guarding." />
+    
+    <guardKnockbackBackslash
+    AltName="Guard: Knockback Repulsion %"
+    Wiki="The counter-repulsion to the opponent when guarding (after suffering an attack)." />
+    
+    <superArmorLimitDamage
+    Wiki="The amount of poise this character has." />
+    
+    <superArmorLimitTime
+    AltName="Poise Recovery Speed"
+    Wiki="The change to apply to poise recovery speed for this character." />
+    
+    <knockbackBounceRate 
+    AltName="Knockback Repulsion %" 
+    Wiki="The knockback repulsion value for this equipment." />
+    
+    <parryAttack 
+    AltName="Parry Attack"
+    Wiki="The attack power value to use when calculating a parry as the parrying side." />
+    
+    <parryDefence 
+    AltName="Parry Defense"
+    Wiki="The defense power value to use when calculating a parry as the parried side." />
+    
+    <pad6
+    Padding="" />
+    
+    <pcAttrB 
+    AltName="World Tendency: Player (Black)"
+    Wiki="The amount to add to Black World Tendency (for the player) when this character dies." />
+    
+    <pcAttrW 
+    AltName="World Tendency: Player (White)"
+    Wiki="The amount to add to White World Tendency (for the player) when this character dies." />
+    
+    <pcAttrL 
+    AltName="World Tendency: Player (Left)"
+    Wiki="The amount to add to World Tendency (for the player) when this character dies." />
+    
+    <pcAttrR 
+    AltName="World Tendency: Player (Right)"
+    Wiki="The amount to add to World Tendency (for the player) when this character dies." />
+    
+    <areaAttrB 
+    AltName="World Tendency: Area (Black)"
+    Wiki="The amount to add to Black World Tendency (for the area) when this character dies." />
+    
+    <areaAttrW 
+    AltName="World Tendency: Area (White)"
+    Wiki="The amount to add to White World Tendency (for the area) when this character dies." />
+    
+    <areaAttrL 
+    AltName="World Tendency: Area (Left)"
+    Wiki="The amount to add to World Tendency (for the area) when this character dies." />
+    
+    <areaAttrR 
+    AltName="World Tendency: Area (Right)"
+    Wiki="The amount to add to World Tendency (for the area) when this character dies." />
+    
+    <animIdOffset 
+    AltName="Primary Animation ID Offset"
+    Wiki="A value to offset animation IDs by. 0 = a00, 10000 = a01, etc." />
+    
+    <modelDispMask0 
+    AltName="Model Mask: 0" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask1
+    AltName="Model Mask: 1" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask2 
+    AltName="Model Mask: 2" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask3 
+    AltName="Model Mask: 3" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask4
+    AltName="Model Mask: 4" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask5 
+    AltName="Model Mask: 5" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask6 
+    AltName="Model Mask: 6" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask7 
+    AltName="Model Mask: 7" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <moveAnimId 
+    AltName="Move Animation ID"
+    Wiki="The movement animation to use for this character." />
+    
+    <spMoveAnimId1 
+    AltName="Special Movement Animation ID: 0"
+    Wiki="The special movement animation to use for this character." />
+    
+    <spMoveAnimId2 
+    AltName="Special Movement Animation ID: 1"
+    Wiki="The special movement animation to use for this character." />
+    
+    <isChangeWanderGhost 
+    AltName="Is Valid for Wandering Ghost"
+    Wiki="If ON, character is valid for the wandering ghost feature."
+    IsBool="" />
+    
+    <isCrowd 
+    AltName="Is Crowd Character"
+    Wiki="If ON, this character is considered a crowd character and will use a reduced profile when multiple characters are present."
+    IsBool="" />
+    
+    <sfxSize 
+    AltName="Particle Size"
+    Wiki="The size of the particles used by this character." 
+    Enum="NPC_SFX_SIZE" />
+    
+    <pad7
+    Padding="" />
+    
+    <ghostModelId 
+    AltName="Wandering Ghost: Model ID"
+    Wiki="The model ID to use for the wandering ghost version of this character." />
+    
+    <normalChangeResouceId 
+    AltName="Normal Change: Resource ID"
+    Wiki="The resource ID to use for the normal texture." />
+    
+    <networkWarpDist 
+    AltName="Network Warp Judgement Distance"
+    Wiki="The distance at which to warp this character instead of allowing standard movement during network synchronization." />
+    
+    
+    <dbgBehaviorR1 
+    AltName="Debug Action: R1" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorL1 
+    AltName="Debug Action: L1" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorR2 
+    AltName="Debug Action: R2" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorL2 
+    AltName="Debug Action: L2" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorRL 
+    AltName="Debug Action: Square" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorRR 
+    AltName="Debug Action: Circle" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorRD 
+    AltName="Debug Action: Cross" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorRU 
+    AltName="Debug Action: Triangle" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorLL 
+    AltName="Debug Action: Left Arrow" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorLR 
+    AltName="Debug Action: Right Arrow" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorLD 
+    AltName="Debug Action: Down Arrow" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <dbgBehaviorLU 
+    AltName="Debug Action: Up Arrow" 
+    Wiki="The animation ID to use when the specified button is pressed during a debug session." />
+    
+    <modelDispMask8 
+    AltName="Model Mask: 8" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask9 
+    AltName="Model Mask: 9" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask10 
+    AltName="Model Mask: 10" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask11 
+    AltName="Model Mask: 11" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask12 
+    AltName="Model Mask: 12" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask13 
+    AltName="Model Mask: 13" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask14 
+    AltName="Model Mask: 14" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <modelDispMask15 
+    AltName="Model Mask: 15" 
+    Wiki="Displays the model corresponding to the display mask." 
+    IsBool="" />
+    
+    <animIdOffset2 
+    AltName="Secondary Animation ID Offset"
+    Wiki="A value to offset animation IDs by. 0 = a00, 10000 = a01, etc." />
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="NPC_ITEMDROP_TYPE" type="u16">
+      <Option Value="0" Name="Attach to Character (White Glow)" />
+      <Option Value="1" Name="Drop to Ground (Yellow Glow)" />
+    </Enum>
+    <Enum Name="NPC_DRAW_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="White Phantom" />
+      <Option Value="2" Name="Black Phantom" />
+      <Option Value="3" Name="Intruder" />
+      <Option Value="4" Name="Ghoul Body" />
+    </Enum>
+    <Enum Name="NPC_TYPE" type="u8">
+      <Option Value="0" Name="Standard Enemy" />
+      <Option Value="1" Name="Boss Enemy" />
+      <Option Value="2" Name="Villager" />
+      <Option Value="3" Name="Wandering NPC" />
+      <Option Value="4" Name="Strong Enemy" />
+      <Option Value="5" Name="Bug Enemy" />
+    </Enum>
+    <Enum Name="TEAM_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Live/Player" />
+      <Option Value="2" Name="White Ghost" />
+      <Option Value="3" Name="Black Ghost" />
+      <Option Value="4" Name="Grey Ghost" />
+      <Option Value="5" Name="Wandering Ghost" />
+      <Option Value="6" Name="Enemy" />
+      <Option Value="7" Name="Boss" />
+      <Option Value="8" Name="Friend" />
+      <Option Value="9" Name="Hostile Friend" />
+      <Option Value="10" Name="Decoy Enemy" />
+      <Option Value="11" Name="Blood Child" />
+      <Option Value="12" Name="Battle Friend" />
+      <Option Value="13" Name="Invader" />
+      <Option Value="14" Name="Neutral" />
+      <Option Value="15" Name="Charmed" />
+      <Option Value="16" Name="Invader" />
+      <Option Value="17" Name="Invader" />
+      <Option Value="18" Name="Invader" />
+      <Option Value="19" Name="Host" />
+      <Option Value="20" Name="Co-op" />
+      <Option Value="21" Name="Hostile" />
+      <Option Value="22" Name="Wandering Phantom" />
+      <Option Value="23" Name="Enemy 1" />
+      <Option Value="24" Name="Enemy 2 " />
+      <Option Value="25" Name="Strong Enemy" />
+      <Option Value="26" Name="Friendly NPC" />
+    </Enum>
+    <Enum Name="NPC_MOVE_TYPE" type="u8">
+      <Option Value="0" Name="Immobile" />
+      <Option Value="1" Name="All Directions" />
+      <Option Value="2" Name="Forward and Backwards Only" />
+      <Option Value="3" Name="Biped" />
+      <Option Value="4" Name="Quadruped" />
+      <Option Value="5" Name="Flight" />
+      <Option Value="6" Name="Hover" />
+      <Option Value="7" Name="Hover + Biped" />
+      <Option Value="8" Name="Flight + Biped" />
+      <Option Value="9" Name="Boss Biped" />
+      <Option Value="10" Name="Attach" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="50" Name="Standard" />
+        <Option Value="51" Name="Physical" />
+        <Option Value="52" Name="Magic" />
+        <Option Value="53" Name="Fire" />
+        <Option Value="54" Name="Lightning" />
+        <Option Value="55" Name="Dark" />
+        <Option Value="60" Name="Unknown" />
+        <Option Value="79" Name="Greatshield" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="50" Name="Standard" />
+        <Option Value="51" Name="Physical" />
+        <Option Value="52" Name="Magic" />
+        <Option Value="53" Name="Fire" />
+        <Option Value="54" Name="Lightning" />
+        <Option Value="55" Name="Dark" />
+        <Option Value="59" Name="Fist" />
+        <Option Value="60" Name="Unknown" />
+        <Option Value="79" Name="Greatshield" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="GUARD_DAMAGE_LEVEL" type="s16">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Light" />
+        <Option Value="2" Name="Medium" />
+        <Option Value="3" Name="Heavy" />
+        <Option Value="4" Name="Shield" />
+    </Enum>
+    <Enum Name="NPC_SFX_SIZE" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Large" />
+        <Option Value="2" Name="Medium" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

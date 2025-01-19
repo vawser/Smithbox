@@ -6,7 +6,7 @@
   <Unicode>False</Unicode>
   <Version>102</Version>
   <Fields>
-    <Field Def="u32 bonuｓSoul_single">
+    <Field Def="u32 bonusSoul_single">
       <DisplayName>シングル時クリアボーナスソウル量</DisplayName>
       <Description>エリアボスを倒したときに取得できるソウル量(シングルプレイ時)</Description>
       <Maximum>1E+08</Maximum>

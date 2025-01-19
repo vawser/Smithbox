@@ -1,44 +1,176 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for enemy AI." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="NpcThinkParam" 
+    Name="Enemy AI" />
+  </DisplayNames>
+  
   <Field>
-    <logicId AltName="logicId" />
-    <battleGoalID AltName="battleGoalID" />
-    <disablePathMove AltName="disablePathMove" />
-    <bMoveOnHearSound AltName="bMoveOnHearSound" />
-    <TeamAttackEffectivity AltName="TeamAttackEffectivity" />
-    <skipArrivalVisibleCheck AltName="skipArrivalVisibleCheck" />
-    <pad1 AltName="pad1" />
-    <nearDist AltName="nearDist" />
-    <midDist AltName="midDist" />
-    <farDist AltName="farDist" />
-    <outDist AltName="outDist" />
-    <eye_dist AltName="eye_dist" />
-    <eye_angX AltName="eye_angX" />
-    <eye_angY AltName="eye_angY" />
-    <ear_dist AltName="ear_dist" />
-    <ear_soundcut_dist AltName="ear_soundcut_dist" />
-    <ear_angX AltName="ear_angX" />
-    <ear_angY AltName="ear_angY" />
-    <pad3 AltName="pad3" />
-    <nose_dist AltName="nose_dist" />
-    <maxBackhomeDist AltName="maxBackhomeDist" />
-    <backhomeDist AltName="backhomeDist" />
-    <backhomeBattleDist AltName="backhomeBattleDist" />
-    <nonBattleActLife AltName="nonBattleActLife" />
-    <BattleStartDist AltName="BattleStartDist" />
-    <BackHome_LookTargetTime AltName="BackHome_LookTargetTime" />
-    <BackHome_LookTargetDist AltName="BackHome_LookTargetDist" />
-    <SightTargetForgetTime AltName="SightTargetForgetTime" />
-    <SoundTargetForgetTime AltName="SoundTargetForgetTime" />
-    <idAttackCannotMove AltName="idAttackCannotMove" />
-    <BackHomeLife_OnHitEneWal AltName="BackHomeLife_OnHitEneWal" />
-    <pad6 AltName="pad6" />
-    <goalAction_ToCaution AltName="goalAction_ToCaution" />
-    <pad4 AltName="pad4" />
-    <goalID_ToCaution AltName="goalID_ToCaution" />
-    <goalAction_ToFind AltName="goalAction_ToFind" />
-    <pad5 AltName="pad5" />
-    <goalID_ToFind AltName="goalID_ToFind" />
+    <logicId
+    AltName="Logic Script ID"
+    Wiki="The logic script to use for this character." />
+    
+    <battleGoalID
+    AltName="Battle Goal ID"
+    Wiki="The battle script to use for this character." />
+    
+    <disablePathMove
+    AltName="Disable Path Movement"
+    Wiki="If ON, then path movement using the navigation mesh is ignored, and direct movement occurs in a straight line (obstacles are not accounted for)." 
+    IsBool="" />
+    
+    <bMoveOnHearSound
+    AltName="React to Sound"
+    Wiki="If ON, this character will to sound." 
+    Obsolete="" />
+    
+    <TeamAttackEffectivity
+    AltName="Team Attack Weight"
+    Wiki="A value used to determine the number of simultaneous attackers within a group of characters that share the same team.\n\nEach potential attacker adds thier TeamAttackEffectivity to a total value. If this total value is or exceeds 100, no more attackers will be allowed to attack.\n\nIn general, this means higher values reduce the number of potential attackers against a target." />
+    
+    <skipArrivalVisibleCheck
+    AltName="Skip Arrival Line of Sight Check"
+    Wiki="If ON, arrival is achieved even if there is no line of sight." 
+    IsBool="" />
+    
+    <pad1
+    Padding="" />
+    
+    <nearDist
+    AltName="Battle Distance: Short"
+    Wiki="The distance between this character and the target that is treated as 'short' for combat distance calculations." />
+    
+    <midDist
+    AltName="Battle Distance: Medium"
+    Wiki="The distance between this character and the target that is treated as 'medium' for combat distance calculations." />
+    
+    <farDist
+    AltName="Battle Distance: Long"
+    Wiki="The distance between this character and the target that is treated as 'long' for combat distance calculations." />
+    
+    <outDist
+    AltName="Battle Distance: End"
+    Wiki="The distance between this character and the target that ends combat aggression. A character outside of this range will no longer attempt combat actions." />
+    
+    <eye_dist
+    AltName="Visual Search Distance"
+    Wiki="The maximum extent to check for when searching visually (sight) for this character. In metres." />
+    
+    <eye_angX
+    AltName="Visual Search: Horizontal Angle"
+    Wiki="The horizontal cone within which the visual search is performed. In degrees." />
+    
+    <eye_angY
+    AltName="Visual Search: Vertical Angle"
+    Wiki="The vertical cone within which the visual search is performed. In degrees." />
+    
+    <ear_dist
+    AltName="Auditory Search Distance"
+    Wiki="The maximum extent to check for when searching aurally (sound) for this character. In metres." />
+    
+    <ear_soundcut_dist
+    AltName="Auditory Dampening Distance"
+    Wiki="The distance at which the size of a sound source will be reduced. Sounds below this distance will no longer be heard. In metres." />
+    
+    <ear_angX
+    AltName="Auditory Search: Horizontal Angle"
+    Wiki="The horizontal cone within which the aural search is performed. In degrees." />
+    
+    <ear_angY
+    AltName="Auditory Search: Vertical Angle"
+    Wiki="The vertical cone within which the aural search is performed. In degrees." />
+    
+    <pad3
+    Padding="" />
+    
+    <nose_dist
+    AltName="Olfactory Search Distance"
+    Wiki="The maximum extent to check for when searching olfactorily (smell) for this character. This method of searching is never blocked by any obstacle. In metres." />
+    
+    <maxBackhomeDist
+    AltName="Battle Act: Return Home Distance"
+    Wiki="The distance after which this character will always return home. In metres.\nA parameter for the COMMON_SetBattleActLogic script. " />
+    
+    <backhomeDist
+    AltName="Battle Act: Return Home Distance (Combat)"
+    Wiki="The distance after which this character will return home if in combat with a target. In metres.\nA parameter for the COMMON_SetBattleActLogic script. " />
+    
+    <backhomeBattleDist
+    AltName="Battle Act: Return Home Abort Distance"
+    Wiki="The distance whilst in combat, after which an attempt to return home will be aborted. In metres.\nA parameter for the COMMON_SetBattleActLogic script. " />
+    
+    <nonBattleActLife
+    AltName="Battle Act: Non-Combat Act Duration"
+    Wiki="The duration for non-combat acts whilst this character is aware of a target. In seconds.\nA parameter for the COMMON_SetBattleActLogic script. " />
+    
+    <BackHome_LookTargetTime
+    AltName="Return Home: Target Look-At Duration"
+    Wiki="When this character is returning home, this is the duration they keep looking at their current target for. In seconds." />
+    
+    <BackHome_LookTargetDist
+    AltName="Return Home: Target Look-At Distance"
+    Wiki="When this character is returning home, this is the distance at which they keep looking at their current target for. In metres." />
+    
+    <SightTargetForgetTime
+    AltName="Visual Target Forget Duration"
+    Wiki="The duration after a visual target has been acquired in which it will be forgotten. In frames." />
+    
+    <SoundTargetForgetTime
+    AltName="Auditory Target Forget Duration"
+    Wiki="The duration after a aural target has been acquired in which it will be forgotten. In frames." />
+    
+    <idAttackCannotMove
+    AltName="Action ID on Blocked Movement"
+    Wiki="The EzState ID to use for the action to perform when this character's movement is stopped by a destructible object." />
+    
+    <BackHomeLife_OnHitEneWal
+    AltName="Goal Duration on Wall Collision"
+    Wiki="The duration of the BackToHome goal when this character hits an enemy wall collision (which blocks movement). In seconds." />
+    
+    <pad6
+    Padding="" />
+    
+    <goalAction_ToCaution
+    AltName="Caution State: Goal Action"
+    Wiki="The goal action when this character becomes alert." 
+    Enum="NPC_THINK_GOAL_ACTION" />
+    
+    <pad4
+    Padding="" />
+    
+    <goalID_ToCaution
+    AltName="Caution State: Goal ID"
+    Wiki="The goal ID to use when this character enters the 'Caution' alert state." />
+    
+    <goalAction_ToFind
+    AltName="Search State: Goal Action"
+    Wiki="The goal action when this character acquires a target." 
+    Enum="NPC_THINK_GOAL_ACTION" />
+    
+    <pad5
+    Padding="" />
+    
+    <goalID_ToFind
+    AltName="Search State: Goal ID"
+    Wiki="The goal ID to use when this character enters the 'Search' alert state." />
+    
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="NPC_THINK_GOAL_ACTION" type="u8">
+        <Option Value="0" Name="Do nothing" />
+        <Option Value="1" Name="Face towards Target" />
+        <Option Value="2" Name="Walk to Target" />
+        <Option Value="3" Name="Run to Target" />
+        <Option Value="4" Name="Set any Goal" />
+        <Option Value="5" Name="Away from Target" />
+        <Option Value="6" Name="Wander Around" />
+        <Option Value="7" Name="Hold up Shield -> Walk to Target" />
+        <Option Value="8" Name="Route movement" />
+        <Option Value="9" Name="Walk around nearby" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

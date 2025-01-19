@@ -1,84 +1,421 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  OffsetSize="100"
+  Wiki="Determines the parameters of equipment."  />
+
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipParamProtector" 
+    Name="Armor" />
+  </DisplayNames>
+  
   <Field>
-    <equipModelCategory AltName="equipModelCategory" />
-    <equipModelGender AltName="equipModelGender" />
-    <equipModelId AltName="equipModelId" />
-    <iconIdM AltName="iconIdM" />
-    <iconIdF AltName="iconIdF" />
-    <protectorCategory AltName="protectorCategory" />
-    <headEquip AltName="headEquip" />
-    <bodyEquip AltName="bodyEquip" />
-    <armEquip AltName="armEquip" />
-    <legEquip AltName="legEquip" />
-    <defenseMaterial AltName="defenseMaterial" />
-    <defenseMaterialSfx AltName="defenseMaterialSfx" />
-    <useFaceScale AltName="useFaceScale" />
-    <wanderingEquipId AltName="wanderingEquipId" />
-    <weight AltName="weight" />
-    <durability AltName="durability" />
-    <durabilityMax AltName="durabilityMax" />
-    <defensePhysics AltName="defensePhysics" />
-    <defenseMagic AltName="defenseMagic" />
-    <defenseFire AltName="defenseFire" />
-    <defenseSlash AltName="defenseSlash" />
-    <defenseBlow AltName="defenseBlow" />
-    <defenseThrust AltName="defenseThrust" />
-    <resistPoison AltName="resistPoison" />
-    <resistDisease AltName="resistDisease" />
-    <resistBlood AltName="resistBlood" />
-    <repelVal AltName="repelVal" />
-    <basicPrice AltName="basicPrice" />
-    <shopLv AltName="shopLv" />
-    <knockBack AltName="knockBack" />
-    <knockbackBounceRate AltName="knockbackBounceRate" />
-    <pad_4 AltName="pad_4" />
-    <sortId AltName="sortId" />
-    <residentSpEffectBehaviorId AltName="residentSpEffectBehaviorId" />
-    <trophySGradeId AltName="trophySGradeId" />
-    <pad_5 AltName="pad_5" />
-    <fixPrice AltName="fixPrice" />
-    <qwcId AltName="qwcId" />
-    <invisibleFlag00 AltName="invisibleFlag00" />
-    <invisibleFlag01 AltName="invisibleFlag01" />
-    <invisibleFlag02 AltName="invisibleFlag02" />
-    <invisibleFlag03 AltName="invisibleFlag03" />
-    <invisibleFlag04 AltName="invisibleFlag04" />
-    <invisibleFlag05 AltName="invisibleFlag05" />
-    <invisibleFlag06 AltName="invisibleFlag06" />
-    <invisibleFlag07 AltName="invisibleFlag07" />
-    <invisibleFlag08 AltName="invisibleFlag08" />
-    <invisibleFlag09 AltName="invisibleFlag09" />
-    <invisibleFlag10 AltName="invisibleFlag10" />
-    <invisibleFlag11 AltName="invisibleFlag11" />
-    <invisibleFlag12 AltName="invisibleFlag12" />
-    <invisibleFlag13 AltName="invisibleFlag13" />
-    <invisibleFlag14 AltName="invisibleFlag14" />
-    <invisibleFlag15 AltName="invisibleFlag15" />
-    <invisibleFlag16 AltName="invisibleFlag16" />
-    <invisibleFlag17 AltName="invisibleFlag17" />
-    <invisibleFlag18 AltName="invisibleFlag18" />
-    <invisibleFlag19 AltName="invisibleFlag19" />
-    <invisibleFlag20 AltName="invisibleFlag20" />
-    <invisibleFlag21 AltName="invisibleFlag21" />
-    <invisibleFlag22 AltName="invisibleFlag22" />
-    <invisibleFlag23 AltName="invisibleFlag23" />
-    <invisibleFlag24 AltName="invisibleFlag24" />
-    <invisibleFlag25 AltName="invisibleFlag25" />
-    <invisibleFlag26 AltName="invisibleFlag26" />
-    <invisibleFlag27 AltName="invisibleFlag27" />
-    <invisibleFlag28 AltName="invisibleFlag28" />
-    <invisibleFlag29 AltName="invisibleFlag29" />
-    <invisibleFlag30 AltName="invisibleFlag30" />
-    <invisibleFlag31 AltName="invisibleFlag31" />
-    <faceScaleM_ScaleX AltName="faceScaleM_ScaleX" />
-    <faceScaleM_ScaleZ AltName="faceScaleM_ScaleZ" />
-    <faceScaleM_MaxX AltName="faceScaleM_MaxX" />
-    <faceScaleM_MaxZ AltName="faceScaleM_MaxZ" />
-    <faceScaleF_ScaleX AltName="faceScaleF_ScaleX" />
-    <faceScaleF_ScaleZ AltName="faceScaleF_ScaleZ" />
-    <faceScaleF_MaxX AltName="faceScaleF_MaxX" />
-    <faceScaleF_MaxZ AltName="faceScaleF_MaxZ" />
+    
+    <equipModelCategory 
+    AltName="Model Category" 
+    Wiki="The equipment model category used by this part." 
+    Enum="EQUIP_MODEL_CATEGORY" />
+    
+    <equipModelGender 
+    AltName="Model Gender" 
+    Wiki="Gender of equipment model" 
+    Enum="EQUIP_MODEL_GENDER" />
+    
+    <equipModelId 
+    AltName="Model ID" 
+    Wiki="The model ID to use for this equipment." />
+
+    <iconIdM 
+    AltName="Male: Icon ID " 
+    Wiki="The icon ID to use for the male gender version." />
+    
+    <iconIdF 
+    AltName="Female: Icon ID " 
+    Wiki="The icon ID to use for the male gender version." />
+    
+    <protectorCategory 
+    AltName="Equipment Category" 
+    Wiki="The equipment category for this part." 
+    Enum="PROTECTOR_CATEGORY" />
+    
+    <headEquip 
+    AltName="Is Helm Equipment" 
+    Wiki="If ON, is considered Helm equipment." 
+    IsBool="" />
+    
+    <bodyEquip 
+    AltName="Is Chest Equipment" 
+    Wiki="If ON, is considered Chest equipment." 
+    IsBool="" />
+    
+    <armEquip 
+    AltName="Is Gauntlet Equipment" 
+    Wiki="If ON, is considered Gauntlet equipment." 
+    IsBool="" />
+    
+    <legEquip 
+    AltName="Is Legs Equipment" 
+    Wiki="If ON, is considered Legs equipment." 
+    IsBool="" />
+
+    <defenseMaterial
+    AltName="Defense Presentation: Sound" 
+    Wiki="The sound used when guarding." 
+    Enum="WEP_MATERIAL_DEF" />
+
+    <defenseMaterialSfx
+    AltName="Defense Presentation: Particle" 
+    Wiki="The particles used when guarding." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <useFaceScale 
+    AltName="Use Facescale" 
+    Wiki="If ON, this part applies face scaling."
+    IsBool="" />
+
+    <wanderingEquipId 
+    AltName="Wandering Equip ID" 
+    Wiki="Replacement equipment ID for wandering ghosts." 
+    Refs="EquipParamProtector" />
+
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight [kg]." />
+
+    <durability 
+    AltName="Durability" 
+    Wiki="The initial durability for this equipment." />
+    
+    <durabilityMax 
+    AltName="Max Durability" 
+    Wiki="The maximum durability for this equipment." />
+    
+    <defensePhysics 
+    AltName="Defense: Physical" 
+    Wiki="The flat defense value for this equipment for the specified type." />
+    
+    <defenseMagic 
+    AltName="Defense: Magic" 
+    Wiki="The flat defense value for this equipment for the specified type." />
+    
+    <defenseFire 
+    AltName="Defense: Fire" 
+    Wiki="The flat defense value for this equipment for the specified type." />
+    
+    <defenseSlash 
+    AltName="Defense Correction: Slash" 
+    Wiki="Percentage modifier to apply to physical defense when struck with slash damage. Example: -50 = -50%, 50 = +50%" />
+    
+    <defenseBlow
+    AltName="Defense Correction: Strike" 
+    Wiki="Percentage modifier to apply to physical defense when struck with strike damage. Example: -50 = -50%, 50 = +50%" />
+    
+    <defenseThrust  
+    AltName="Defense Correction: Thrust" 
+    Wiki="Percentage modifier to apply to physical defense when struck with thrust damage. Example: -50 = -50%, 50 = +50%" />
+    
+    <resistPoison 
+    AltName="Status Resist: Poison" 
+    Wiki="The flat defense value for this equipment for the specified resistance type." />
+    
+    <resistDisease 
+    AltName="Status Resist: Toxic" 
+    Wiki="The flat defense value for this equipment for the specified resistance type." />
+    
+    <resistBlood 
+    AltName="Status Resist: Bleed" 
+    Wiki="The flat defense value for this equipment for the specified resistance type." />
+    
+    <repelVal
+    AltName="Weapon Repulsion"
+    Wiki="Used to determine the repulsion of enemy attacks" />
+    
+    <basicPrice 
+    AltName="Reinforcement Price" 
+    Wiki="Soul cost of reinforcement. See ShopLineupParam for shop prices." />
+
+    <shopLv 
+    AltName="Shop Level" 
+    Wiki="Level that can be sold at the store" />
+
+    <knockBack 
+    AltName="Knockback" 
+    Wiki="The knockback reduction value for this equipment." />
+    
+    <knockbackBounceRate 
+    AltName="Knockback Repulsion %" 
+    Wiki="The knockback repulsion value for this equipment." />
+
+    <pad_4
+    Padding="" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The ordering ID used to sort this part in the menu." />
+    
+    <residentSpEffectBehaviorId 
+    AltName="Resident SpEffect Behavior ID" 
+    Wiki="A SpEffect applied when this part is equipped." 
+    Refs="BehaviorParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <trophySGradeId 
+    AltName="Achievement ID" 
+    Wiki="The achievement ID this part is associated with, if any." />
+    
+    <pad_5
+    Padding="" />
+    
+    <fixPrice 
+    AltName="Repair Price" 
+    Wiki="Soul cost for repairing this item." />
+
+    <qwcId 
+    AltName="World Tendency ID" 
+    Wiki="The world tendency ID to use for this item." />
+    
+    <invisibleFlag00 
+    AltName="Model Mask 0"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag01 
+    AltName="Model Mask 1"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag02 
+    AltName="Model Mask 2"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag03 
+    AltName="Model Mask 3"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag04 
+    AltName="Model Mask 4"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag05 
+    AltName="Model Mask 5"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag06 
+    AltName="Model Mask 6"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag07 
+    AltName="Model Mask 7"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag08 
+    AltName="Model Mask 8"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag09 
+    AltName="Model Mask 9"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag10 
+    AltName="Model Mask 10"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag11 
+    AltName="Model Mask 11"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag12 
+    AltName="Model Mask 12"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag13 
+    AltName="Model Mask 13"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag14 
+    AltName="Model Mask 14"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag15 
+    AltName="Model Mask 15"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag16 
+    AltName="Model Mask 16"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag17 
+    AltName="Model Mask 17"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag18 
+    AltName="Model Mask 18"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag19 
+    AltName="Model Mask 19"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag20 
+    AltName="Model Mask 20"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag21 
+    AltName="Model Mask 21"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag22 
+    AltName="Model Mask 22"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag23 
+    AltName="Model Mask 23"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag24 
+    AltName="Model Mask 24"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag25 
+    AltName="Model Mask 25"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag26 
+    AltName="Model Mask 26"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag27 
+    AltName="Model Mask 27"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag28 
+    AltName="Model Mask 28"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag29 
+    AltName="Model Mask 29"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag30 
+    AltName="Model Mask 30"
+    Wiki=""
+    IsBool="" />
+
+    <invisibleFlag31 
+    AltName="Model Mask 31"
+    Wiki=""
+    IsBool="" />
+
+    <faceScaleM_ScaleX 
+    AltName="Male Face Scale: X" 
+    Wiki="The male face scaling factor for the X-axis." />
+    
+    <faceScaleM_ScaleZ 
+    AltName="Male Face Scale: Z" 
+    Wiki="The male face scaling factor for the Z-axis." />
+    
+    <faceScaleM_MaxX 
+    AltName="Male Face Max Scale: X" 
+    Wiki="The maximum male face scaling factor for the X-axis." />
+    
+    <faceScaleM_MaxZ 
+    AltName="Male Face Max Scale: Z" 
+    Wiki="The maximum male face scaling factor for the Z-axis." />
+    
+    <faceScaleF_ScaleX 
+    AltName="Female Face Scale: X" 
+    Wiki="The female face scaling factor for the X-axis." />
+    
+    <faceScaleF_ScaleZ 
+    AltName="Female Face Scale: Z" 
+    Wiki="The female face scaling factor for the Z-axis." />
+    
+    <faceScaleF_MaxX 
+    AltName="Female Face Max Scale: X" 
+    Wiki="The maximum female face scaling factor for the X-axis." />
+    
+    <faceScaleF_MaxZ 
+    AltName="Female Face Max Scale: Z" 
+    Wiki="The maximum female face scaling factor for the Z-axis." />
+    
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="EQUIP_MODEL_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Arms" />
+        <Option Value="2" Name="Body" />
+        <Option Value="3" Name="Face" />
+        <Option Value="4" Name="Hair" />
+        <Option Value="5" Name="Head" />
+        <Option Value="6" Name="Legs" />
+        <Option Value="7" Name="Weapon" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_GENDER" type="u8">
+        <Option Value="0" Name="Unisex (A)" />
+        <Option Value="1" Name="Male only (M)" />
+        <Option Value="2" Name="Female only (F)" />
+        <Option Value="3" Name="Male and Female" />
+        <Option Value="4" Name="Unisex (M)" />
+        <Option Value="5" Name="Enemy only (E)" />
+    </Enum>
+    <Enum Name="PROTECTOR_CATEGORY" type="u8">
+        <Option Value="0" Name="Head" />
+        <Option Value="1" Name="Core" />
+        <Option Value="2" Name="Arms" />
+        <Option Value="3" Name="Legs" />
+        <Option Value="4" Name="Hair" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="50" Name="Standard" />
+        <Option Value="51" Name="Physical" />
+        <Option Value="52" Name="Magic" />
+        <Option Value="53" Name="Fire" />
+        <Option Value="54" Name="Lightning" />
+        <Option Value="55" Name="Dark" />
+        <Option Value="79" Name="Greatshield" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="50" Name="Standard" />
+        <Option Value="51" Name="Physical" />
+        <Option Value="52" Name="Magic" />
+        <Option Value="53" Name="Fire" />
+        <Option Value="54" Name="Lightning" />
+        <Option Value="55" Name="Dark" />
+        <Option Value="59" Name="Fist" />
+        <Option Value="79" Name="Greatshield" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

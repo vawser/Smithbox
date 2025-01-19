@@ -1,49 +1,132 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the configuraiton of magic spells."/>
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="MagicParam" 
+    Name="Spells" />
+  </DisplayNames>
+  
+  <Field>
+    <ezStateBehaviorType 
+    AltName="Magic School Type" 
+    Wiki="The magic school this spell belongs to." 
+    Enum="MAGIC_CATEGORY" />
+    
+    <refType 
+    AltName="Motion Category" 
+    Wiki="The TimeAct offset used in the c0000 TAE to find the casting animations." 
+    Enum="TAE_MOTION_MAGIC_CATEGORIES" />
+    
+    <enable_multi 
+    AltName="Usable in Multiplayer" 
+    Wiki="If ON, then the spell can be used in multiplayer sessions." 
+    IsBool="" />
+    
+    <enable_multi_only 
+    AltName="Usable in Multiplayer Only" 
+    Wiki="If ON, then the spell can be used in multiplayer sessions, but not in offline sessions." 
+    IsBool="" />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="The numeric ID used for specifying which icon is used to display this spell in menus." />
+    
+    <behaviorId 
+    AltName="Behavior ID" 
+    Wiki="The behavior parameter to use when this spell is triggered." 
+    Enum="BehaviorParam" />
+    
+    <faithForGet 
+    AltName="Requirement: FTH" 
+    Wiki="The minimum amount of faith (FTH) this spell requires for a valid cast." />
+  
+    <slotLength 
+    AltName="Slot Usage" 
+    Wiki="The number of spell equipment slots this spell occupies." />
+    
+    <isEnchant 
+    AltName="Is Weapon Enchantment" 
+    Wiki="If ON, this spell is considered a weapon enhancement spell." 
+    IsBool="" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The numeric ID used for ordering each spell in menus." />
+    
+    <basicValue 
+    AltName="Base Value" 
+    Wiki="The base price for this spell." />
+    
+    <mtrlItemId 
+    AltName="Item Requirement for Purchase" 
+    Wiki="The item (or items) that the spell costs in a shop that must be present before it can be purchased." 
+    Refs="EquipMtrlSetParam" />
+    
+    <enable_live 
+    AltName="Enable in Multiplayer: Host" 
+    Wiki="If ON, this spell can be used in a sessions where the player is the host." 
+    IsBool="" />
+    
+    <enable_gray 
+    AltName="Enable in Multiplayer: Gray Phantom" 
+    Wiki="If ON, this spell can be used in a sessions where the player is a gray phantom." 
+    IsBool="" />
+    
+    <enable_white 
+    AltName="Enable in Multiplayer: White Phantom" 
+    Wiki="If ON, this spell can be used in a sessions where the player is a white phantom." 
+    IsBool="" />
+    
+    <enable_black 
+    AltName="Enable in Multiplayer: Black Phantom" 
+    Wiki="If ON, this spell can be used in a sessions where the player is a black phantom." 
+    IsBool="" />
+    
+    <yesNoDialogMessageId 
+    AltName="Dialog Message ID"
+    Wiki="The text ID of to use for the 'Yes / No' dialog issued when this spell is used." 
+    FmgRef="Event_Text" />
+    
+    <opmeMenuType 
+    AltName="Menu Type on Usage" 
+    Wiki="The type of menu to display when the spell is used." 
+    Enum="GOODS_OPEN_MENU" />
+    
+    <disableOffline 
+    AltName="Disable when Offline" 
+    Wiki="If ON, this spell is disabled if the player is not in a multiplayer session." 
+    IsBool="" />
+    
+    <pad1
+    Padding="" />
+    
+  </Field>
   <Enums>
-    <Enum Name="MAGIC_CATEGORY">
-        <Option Value="0" Name="Magic" />
-        <Option Value="1" Name="Miracle" />
+    <Enum Name="MAGIC_CATEGORY" type="u8">
+      <Option Value="0" Name="Sorcery" />
+      <Option Value="1" Name="Miracle" />
     </Enum>
-    <Enum Name="MAGIC_MOTION_TYPE">
-        <Option Value="0" Name="Projectile A (Magic Arrow)" />
-        <Option Value="1" Name="Weapon Enhancement" />
-        <Option Value="2" Name="Self Enhancement" />
-        <Option Value="3" Name="Miracle" />
-        <Option Value="4" Name="Projectile B (Fire Spray)" />
-        <Option Value="5" Name="Projectile C (Fireball)" />
-        <Option Value="6" Name="Projectile D (Auditory Hallucination)" />
-        <Option Value="7" Name="Occurrence A (Homing soul arrow)" />
-        <Option Value="8" Name="Occurrence B (Ignite)" />
-        <Option Value="9" Name="Occurrence C (Poison Cloud)" />
-        <Option Value="10" Name="Occurrence D (Firestorm)" />
-        <Option Value="11" Name="Contact (Relief)" />
-        <Option Value="12" Name="Long miracle" />
-        <Option Value="254" Name="Unavailable" />
-        <Option Value="255" Name="No MP" />
+    <Enum Name="GOODS_OPEN_MENU" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Yes / No" />
+      <Option Value="2" Name="Kick Player" />
+      <Option Value="3" Name="Leave World" />
+      <Option Value="4" Name="White Soapstone" />
+      <Option Value="5" Name="Write Message" />
+      <Option Value="6" Name="Message List" />
+      <Option Value="7" Name="Sinner Rankings" />
+      <Option Value="8" Name="Chaos Servant Rankings" />
+      <Option Value="9" Name="Ok / Cancel" />
+      <Option Value="10" Name="Invade World" />
+      <Option Value="11" Name="Select Bonfire Warp" />
+      <Option Value="12" Name="Darkling" />
+    </Enum>
+    <Enum Name="TAE_MOTION_MAGIC_CATEGORIES" type="u8">
+        <Option Value="0" Name="None" />
     </Enum>
   </Enums>
-  <Field>
-    <ezStateBehaviorType AltName="Magic Type" Enum="MAGIC_CATEGORY" />
-    <refType AltName="Animation Type" Enum="MAGIC_MOTION_TYPE" />
-    <enable_multi AltName="enable_multi" />
-    <enable_multi_only AltName="enable_multi_only" />
-    <iconId AltName="iconId" />
-    <behaviorId AltName="behaviorId" Refs="BehaviorParam" />
-    <faithForGet AltName="faithForGet" />
-    <slotLength AltName="slotLength" />
-    <isEnchant AltName="isEnchant" />
-    <sortId AltName="sortId" />
-    <basicValue AltName="basicValue" />
-    <mtrlItemId AltName="mtrlItemId" Refs="EquipMtrlSetParam" />
-    <enable_live AltName="enable_live" />
-    <enable_gray AltName="enable_gray" />
-    <enable_white AltName="enable_white" />
-    <enable_black AltName="enable_black" />
-    <yesNoDialogMessageId AltName="yesNoDialogMessageId" />
-    <opmeMenuType AltName="opmeMenuType" />
-    <disableOffline AltName="disableOffline" />
-    <pad1 AltName="pad1" />
-  </Field>
-  <Self />
+  
 </PARAMMETA>

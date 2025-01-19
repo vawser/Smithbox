@@ -1,22 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters of accessories." />
+
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipParamAccessory" 
+    Name="Rings" />
+  </DisplayNames>
+  
   <Field>
-    <equipModelCategory AltName="equipModelCategory" />
-    <equipModelGender AltName="equipModelGender" />
-    <equipModelId AltName="equipModelId" />
-    <iconId AltName="iconId" />
-    <accessoryCategory AltName="accessoryCategory" />
-    <pad_0 AltName="pad_0" />
-    <weight AltName="weight" />
-    <behaviorId AltName="behaviorId" />
-    <basicPrice AltName="basicPrice" />
-    <shopLv AltName="shopLv" />
-    <pad_2 AltName="pad_2" />
-    <sortId AltName="sortId" />
-    <trophySGradeId AltName="trophySGradeId" />
-    <pad_3 AltName="pad_3" />
-    <qwcId AltName="qwcId" />
-    <pad_4 AltName="pad_4" />
+  
+    <equipModelCategory 
+    AltName="Model Category" 
+    Wiki="Equipment model type" 
+    Enum="EQUIP_MODEL_CATEGORY" />
+    
+    <equipModelGender 
+    AltName="Model Gender" 
+    Wiki="Gender of equipment model" 
+    Enum="EQUIP_MODEL_GENDER" />
+    
+    <equipModelId 
+    AltName="Model ID" 
+    Wiki="Equipment model number" />
+
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="Menu icon ID" />
+
+    <accessoryCategory 
+    AltName="Accessory Type" 
+    Wiki="Armor category" 
+    Enum="ACCESSORY_CATEGORY" />
+
+    <pad_0
+    Padding="" />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight [kg]" />
+
+    <behaviorId 
+    AltName="Behavior ID" 
+    Wiki="Action ID (= Skill)" 
+    Refs="BehaviorParam" />
+
+    <basicPrice 
+    AltName="Reinforcement Price" 
+    Wiki="Soul cost of reinforcement. See ShopLineupParam for shop prices." />
+
+    <shopLv 
+    AltName="Shop Level" 
+    Wiki="Level that can be sold at the store" />
+
+    <pad_2
+    Padding="" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The ordering within the menu." />
+
+    <trophySGradeId 
+    AltName="Achievement ID" 
+    Wiki="The achievement ID this part is associated with, if any." />
+    
+    <pad_3
+    Padding="" />
+    
+    <qwcId 
+    AltName="World Tendency ID" 
+    Wiki="The world tendency ID this item uses." />
+
+    <pad_4
+    Padding="" />
+    
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="EQUIP_MODEL_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Arms" />
+        <Option Value="2" Name="Body" />
+        <Option Value="3" Name="Face" />
+        <Option Value="4" Name="Hair" />
+        <Option Value="5" Name="Head" />
+        <Option Value="6" Name="Legs" />
+        <Option Value="7" Name="Weapon" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_GENDER" type="u8">
+        <Option Value="0" Name="Unisex (A)" />
+        <Option Value="1" Name="Male only (M)" />
+        <Option Value="2" Name="Female only (F)" />
+        <Option Value="3" Name="Male and Female" />
+        <Option Value="4" Name="Unisex (M)" />
+        <Option Value="5" Name="Enemy only (E)" />
+    </Enum>
+    <Enum Name="ACCESSORY_CATEGORY" type="u8">
+        <Option Value="0" Name="Ring" />
+        <Option Value="1" Name="Talisman" />
+    </Enum>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="Behavior / None" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

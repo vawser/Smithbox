@@ -1,16 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for depth of field assignments." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m01_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m02_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m03_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m04_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m05_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m06_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m07_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m08_DofBank" 
+    Name="Depth of Field" />
+    
+    <NameEntry 
+    Param="m99_DofBank" 
+    Name="Depth of Field" />
+  </DisplayNames>
+  
   <Field>
-    <farDofBegin AltName="farDofBegin" />
-    <farDofEnd AltName="farDofEnd" />
-    <farDofMul AltName="farDofMul" />
-    <pad_0 AltName="pad_0" />
-    <nearDofBegin AltName="nearDofBegin" />
-    <nearDofEnd AltName="nearDofEnd" />
-    <nearDofMul AltName="nearDofMul" />
-    <pad_1 AltName="pad_1" />
-    <dispersionSq AltName="dispersionSq" />
-    <pad_2 AltName="pad_2" />
+    <farDofBegin
+    AltName="Far DOF: Start Distance"
+    Wiki="The distance at which distant objects start to become blurred due to depth of field. In metres." />
+    
+    <farDofEnd
+    AltName="Far DOF: End Distance"
+    Wiki="The distance at which distant objects become completely blurred due to depth of field. In metres." />
+    
+    <farDofMul
+    AltName="Far DOF: Strength"
+    Wiki="The strength of the depth of field blur. 0 means no blur." />
+    
+    <pad_0
+    Padding="" />
+    
+    <nearDofBegin
+    AltName="Near DOF: Start Distance"
+    Wiki="The distance at which distant objects start to become blurred due to depth of field. In metres." />
+    
+    <nearDofEnd
+    AltName="Near DOF: End Distance"
+    Wiki="The distance at which distant objects become completely blurred due to depth of field. In metres." />
+    
+    <nearDofMul
+    AltName="Near DOF: Strength"
+    Wiki="The strength of the depth of field blur. 0 means no blur." />
+    
+    <pad_1
+    Padding="" />
+    
+    <dispersionSq
+    AltName="Blur Strength"
+    Wiki="The base strength of the depth of field blur." />
+    
+    <pad_2
+    Padding="" />
+    
   </Field>
-  <Self />
 </PARAMMETA>

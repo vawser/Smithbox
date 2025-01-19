@@ -1,9 +1,6 @@
 #--------------------------------------
 # TODO
 #--------------------------------------
-# MAP EDITOR
-- Add meta-data file to hold MapTransformNode changes for a project, so transform adjustments (as they are used to move the map in the editor) can be kept.
-
 # PARAM
 - Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
 
@@ -12,22 +9,16 @@
  - ThrustersParam_NPC
  - ThrustersParam_PC
  
-- Update AC6 paramdex to use released AC6 paramdefs + adjust other stuff based on discoveries
-
 - Update the paramdex to the new name/wiki style + fill in missing for:
+ - DES
  - DS2
  - DS3
  - SDT
  - ER
  - AC6
 
-{
-    "id": "XXXX",
-    "name": "XXXX",
-    "states": [
-        {
-            "value": "0",
-            "name": "Idle"
-        }
-    ]
-}
+# MAP EDITOR
+- Add mass entity ID assignment tool to map editor
+ - Use ID format + rules to allow user to tailor what is assigned
+ 
+- Add utility class that converts passed string into correct MSB object (e.g. "Part-Part" in a DS1 project becomes MSB1.Part)

@@ -1,11 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for character skeleton and foot inverse kinematics ." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="SkeletonParam" 
+    Name="Skeletons" />
+  </DisplayNames>
+  
   <Field>
-    <neckTurnPriority AltName="neckTurnPriority" />
-    <neckTurnMaxAngle AltName="neckTurnMaxAngle" />
-    <pad1 AltName="pad1" />
-    <neckTurnGain AltName="neckTurnGain" />
-    <pad AltName="pad" />
+    <neckTurnPriority
+    AltName="Neck Turn Priority"
+    Wiki="The lower it is, the faster it will turn. -1 does not turn the head." />
+    
+    <neckTurnMaxAngle
+    AltName="Neck Turn Maximum Rotation"
+    Wiki="The maximum rotation angle for this joint. Can't bend beyond this angle." />
+    
+    <pad1
+    Padding="" />
+    
+    <neckTurnGain
+    AltName="Neck Turn Gain"
+    Wiki="The amount of gain for neck turning. The higher the value, the faster it turns." />
+    
+    <pad
+    Padding="" />
   </Field>
-  <Self />
+  
+  <Enums>
+  </Enums>
 </PARAMMETA>

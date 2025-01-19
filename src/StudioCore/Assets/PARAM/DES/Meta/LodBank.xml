@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for levels of detail." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_LodBank" 
+    Name="Level of Detail" />
+    
+    <NameEntry 
+    Param="m01_LodBank" 
+    Name="Level of Detail" />
+    
+    <NameEntry 
+    Param="m02_LodBank" 
+    Name="Level of Detail" />
+    
+    <NameEntry 
+    Param="m03_LodBank" 
+    Name="Level of Detail" />
+    
+    <NameEntry 
+    Param="m04_LodBank" 
+    Name="Level of Detail" />
+    
+    <NameEntry 
+    Param="m05_LodBank" 
+    Name="Level of Detail" />
+    
+    <NameEntry 
+    Param="m06_LodBank" 
+    Name="Level of Detail" />
+    
+    <NameEntry 
+    Param="m07_LodBank" 
+    Name="Level of Detail" />
+    
+    <NameEntry 
+    Param="m08_LodBank" 
+    Name="Level of Detail" />
+    
+    <NameEntry 
+    Param="m99_LodBank" 
+    Name="Level of Detail" />
+  </DisplayNames>
+  
+  <Field>
+    <lv01_BorderDist
+    AltName="LOD Level: 0 -> 1 - Boundary Distance"
+    Wiki="The boundary distance between LOD level 0 to level 1. In metres." />
+    
+    <lv01_PlayDist
+    AltName="LOD Level: 0 -> 1 - Play Distance"
+    Wiki="The play distance (at the centre of the boundary) between LOD level 0 to level 1. In metres." />
+    
+    <lv12_BorderDist
+    AltName="LOD Level: 1 -> 2 - Boundary Distance"
+    Wiki="The boundary distance between LOD level 1 to level 2. In metres." />
+    
+    <lv12_PlayDist
+    AltName="LOD Level: 1 -> 2 - Play Distance"
+    Wiki="The play distance (at the centre of the boundary) between LOD level 1 to level 2. In metres." />
+  </Field>
+</PARAMMETA>

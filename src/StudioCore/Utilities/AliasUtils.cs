@@ -515,6 +515,13 @@ public static class AliasUtils
         if (Smithbox.ProjectType is ProjectType.DS3)
             itemlotId = e.GetPropertyValue<int>("ItemLot1");
 
+        if (Smithbox.ProjectType is ProjectType.DES)
+        {
+            var treasureObject = (MSBD.Event.Treasure)e.WrappedObject;
+
+            itemlotId = treasureObject.ItemLots[0];
+        }
+
         if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
             var treasureObject = (MSB1.Event.Treasure)e.WrappedObject;

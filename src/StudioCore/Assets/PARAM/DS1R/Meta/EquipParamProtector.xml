@@ -211,8 +211,8 @@
     Wiki="The maximum female face scaling factor for the Z-axis." />
     
     <qwcId 
-    AltName="QWC ID" 
-    Wiki="QWC parameter ID" 
+    AltName="World Tendency ID" 
+    Wiki="The ID this item uses for world tendency." 
     Obsolete="" />
     
     <equipModelId 
@@ -221,13 +221,11 @@
 
     <iconIdM 
     AltName="Male: Icon ID " 
-    Wiki="The icon ID to use for the male gender version." 
-    Obsolete="" />
+    Wiki="The icon ID to use for the male gender version." />
     
     <iconIdF 
     AltName="Female: Icon ID " 
-    Wiki="The icon ID to use for the male gender version." 
-    Obsolete="" />
+    Wiki="The icon ID to use for the male gender version."  />
     
     <knockBack 
     AltName="Knockback" 

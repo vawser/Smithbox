@@ -1,9 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the soul and humanity drops given upon boss victories." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="GameAreaParam" 
+    Name="Boss Rewards" />
+  </DisplayNames>
+  
   <Field>
-    <bonuSoul_single AltName="bonuｓSoul_single" />
-    <bonusSoul_multi AltName="bonusSoul_multi" />
-    <pad AltName="pad" />
+    <bonusSoul_single
+    AltName="Soul Amount: Singleplayer Clear"
+    Wiki="The amount of souls gained when defeating the associated boss in singleplayer." />
+    
+    <bonusSoul_multi
+    AltName="Soul Amount: Multiplayer Clear"
+    Wiki="The amount of souls gained when defeating the associated boss in multiplayer." />
+    
+    <pad
+    Padding="" />
+    
   </Field>
-  <Self />
 </PARAMMETA>

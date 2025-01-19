@@ -1,12 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Unknown." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="GameInfoParam" 
+    Name="Game Info" />
+  </DisplayNames>
+  
   <Field>
-    <titleMsgId AltName="titleMsgId" />
-    <contentMsgId AltName="contentMsgId" />
-    <value AltName="value" />
-    <sortId AltName="sortId" />
-    <eventId AltName="eventId" />
-    <Pad AltName="Pad" />
+    <titleMsgId
+    AltName="Title Message ID"
+    Wiki="The ID of the text to use for the title text."
+    FmgRef="Event_Text" />
+    
+    <contentMsgId
+    AltName="Body Message ID"
+    Wiki="The ID of the text to use for the body text."
+    FmgRef="Event_Text" />
+    
+    <value
+    AltName="Price"
+    Wiki="The price of this row." />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The ordering ID used to sort this in the menu." />
+    
+    <eventId
+    AltName="Availability Event ID"
+    Wiki="The event flag ID that determines the sales status." 
+    FlagAlias="" />
+    
+    <Pad
+    Padding="" />
   </Field>
-  <Self />
 </PARAMMETA>

@@ -122,6 +122,14 @@
     Wiki="Is this map object only rendered when calculating the shadow pass." 
     IsBool="" />
     
+    <UnkE10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <UnkE11
+    AltName="Unknown: 0x11"
+    Wiki="" />
+    
     <DrawByReflectCam
     AltName="Is Drawn by Reflection Camera"
     Wiki="Is this map object drawn by the reflection camera." 

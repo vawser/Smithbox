@@ -1,17 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the material costs for various transactions." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipMtrlSetParam" 
+    Name="Reinforcement Material Costs" />
+  </DisplayNames>
+  
   <Field>
-    <materialId01 AltName="materialId01" Refs="EquipParamGoods" />
-    <itemNum01 AltName="itemNum01" />
-    <materialId02 AltName="materialId02" Refs="EquipParamGoods" />
-    <itemNum02 AltName="itemNum02" />
-    <materialId03 AltName="materialId03" Refs="EquipParamGoods" />
-    <itemNum03 AltName="itemNum03" />
-    <materialId04 AltName="materialId04" Refs="EquipParamGoods" />
-    <itemNum04 AltName="itemNum04" />
-    <materialId05 AltName="materialId05" Refs="EquipParamGoods" />
-    <itemNum05 AltName="itemNum05" />
-    <pad AltName="pad" />
+    <materialId01
+    AltName="Material ID: 1"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+    
+    <materialId02
+    AltName="Material ID: 2"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+
+    <materialId03
+    AltName="Material ID: 3"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+
+    <materialId04
+    AltName="Material ID: 4"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+
+    <materialId05
+    AltName="Material ID: 5"
+    Wiki="The item required for the material cost." 
+    Refs="EquipParamGoods" />
+
+    <itemNum01
+    AltName="Material Count: 1"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum02
+    AltName="Material Count: 2"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum03
+    AltName="Material Count: 3"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum04
+    AltName="Material Count: 4"
+    Wiki="The number of the required item needed." />
+    
+    <itemNum05
+    AltName="Material Count: 5"
+    Wiki="The number of the required item needed." />
+
+    <isDisableDispNum01
+    AltName="Display Material Count: 1"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum02
+    AltName="Display Material Count: 2"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum03
+    AltName="Display Material Count: 3"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum04
+    AltName="Display Material Count: 4"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+    
+    <isDisableDispNum05
+    AltName="Display Material Count: 5"
+    Wiki="Disable number display (for enhanced shop)."
+    IsBool="" />
+
+    <pad
+    AltName=""
+    Padding="" />
   </Field>
-  <Self />
 </PARAMMETA>

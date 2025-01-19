@@ -1,41 +1,225 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters of goods."  />
+
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipParamGoods" 
+    Name="Items" />
+  </DisplayNames>
+  
   <Field>
-    <iconId AltName="iconId" />
-    <goodsType AltName="goodsType" />
-    <pad_0 AltName="pad_0" />
-    <weight AltName="weight" />
-    <modelId AltName="modelId" />
-    <pad_1 AltName="pad_1" />
-    <basicPrice AltName="basicPrice" />
-    <goodsCategory AltName="goodsCategory" />
-    <pad_2 AltName="pad_2" />
-    <goodsUseAnim AltName="goodsUseAnim" />
-    <behaviorId AltName="behaviorId" Refs="BehaviorParam" />/>
-    <enable_live AltName="enable_live" />
-    <enable_gray AltName="enable_gray" />
-    <enable_white AltName="enable_white" />
-    <enable_black AltName="enable_black" />
-    <enable_multi AltName="enable_multi" />
-    <disable_offline AltName="disable_offline" />
-    <pad_3 AltName="pad_3" />
-    <isEquip AltName="isEquip" />
-    <isConsume AltName="isConsume" />
-    <isAutoEquip AltName="isAutoEquip" />
-    <isEstablishment AltName="isEstablishment" />
-    <shopLv AltName="shopLv" />
-    <pad_5 AltName="pad_5" />
-    <isDrop AltName="isDrop" />
-    <isDisableHand AltName="isDisableHand" />
-    <pad_6 AltName="pad_6" />
-    <sortId AltName="sortId" />
-    <trophySGradeId AltName="trophySGradeId" />
-    <pad_7 AltName="pad_7" />
-    <qwcId AltName="qwcId" />
-    <isEnhance AltName="isEnhance" />
-    <opmeMenuType AltName="opmeMenuType" />
-    <pad_8 AltName="pad_8" />
-    <yesNoDialogMessageId AltName="yesNoDialogMessageId" />
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="Icon ID used for this item." />
+    
+    <goodsType 
+    AltName="Goods Type" 
+    Wiki="The type of item."
+    Enum="GOODS_TYPE" />
+
+    <pad_0
+    Padding="" />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight. In kilograms." />
+
+    <modelId 
+    AltName="Model ID" 
+    Wiki="Model ID used for this item." />
+
+    <pad_1
+    Padding="" />
+    
+    <basicPrice 
+    AltName="Reinforcement Price" 
+    Wiki="Soul cost of reinforcement. See ShopLineupParam for shop prices." />
+
+    <goodsCategory
+    AltName="Item Category"
+    Wiki="Category for this item."
+    Enum="GOODS_CATEGORY" />
+
+    <pad_2
+    Padding="" />
+    
+    <goodsUseAnim 
+    AltName="Item Use Animation" 
+    Wiki="Set the animation to play when using the item." 
+    Enum="GOODS_USE_ANIM" />
+
+    <behaviorId 
+    AltName="Behavior ID" 
+    Wiki="Behavior action ID applied when item is used." 
+    Refs="BehaviorParam" />
+    
+    <enable_live 
+    AltName="Enable as Host Player" 
+    Wiki="If ON, this item is usable if the user is a host player." 
+    IsBool="" />
+    
+    <enable_gray 
+    AltName="Enable as Gray Phantom" 
+    Wiki="If ON, this item is usable if the user is a gray phantom player." 
+    IsBool="" />
+    
+    <enable_white 
+    AltName="Enable as White Phantom"
+    Wiki="If ON, this item is usable if the user is a white phantom player." 
+    IsBool="" />
+    
+    <enable_black 
+    AltName="Enable as Black Phantom" 
+    Wiki="If ON, this item is usable if the user is a black phantom player." 
+    IsBool="" />
+    
+    <enable_multi 
+    AltName="Enable in Multiplayer" 
+    Wiki="If ON, this item is usable in a multiplayer session." 
+    IsBool="" />
+    
+    <disable_offline 
+    AltName="Enable only in Multiplayer" 
+    Wiki="If ON, this item is only usable if in a multiplayer session." 
+    IsBool="" />
+
+    <pad_3
+    Padding="" />
+    
+    <isEquip 
+    AltName="Is Equippable" 
+    Wiki="If ON, this item can be equipped."
+    IsBool="" />
+    
+    <isConsume 
+    AltName="Is Consumed" 
+    Wiki="If ON, this item can be consumed. This will remove one instance of the item upon consumption."
+    IsBool="" />
+    
+    <isAutoEquip 
+    AltName="Is Automatically Equipped" 
+    Wiki="If ON, this item is automaticlly equipped when picked up."
+    IsBool="" />
+    
+    <isEstablishment 
+    AltName="Is Guidance Item" 
+    Wiki="If ON, this item is a stationary item." 
+    IsBool="" />
+
+    <shopLv 
+    AltName="Shop Level" 
+    Wiki="Level that can be sold at the store" />
+    
+    <pad_5
+    Padding="" />
+    
+    <isDrop 
+    AltName="Can Drop" 
+    Wiki="If ON, this item can be dropped."
+    IsBool="" />
+    
+    <isDisableHand 
+    AltName="Disable if Right Hand is Empty" 
+    Wiki="If ON, this item cannot be used when the right-handed weapon is empty." 
+    IsBool="" />
+
+    <pad_6
+    Padding="" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="Determines ordering in menu." />
+    
+    <trophySGradeId 
+    AltName="Achievement ID" 
+    Wiki="The achievement ID this part is associated with, if any." />
+    
+    <pad_7
+    Padding="" />
+    
+    <qwcId 
+    AltName="World Tendency ID" 
+    Wiki="The world tendency ID to use for this item." />
+    
+    <isEnhance 
+    AltName="Is Enhancement Source" 
+    Wiki="If ON, this item is used to apply an 'enhancement' to equipment or self." 
+    IsBool="" />
+
+    <opmeMenuType 
+    AltName="Interaction Menu Type"
+    Wiki="Menu type that opens when using an item." 
+    Enum="GOODS_OPEN_MENU" />
+
+    <pad_8
+    Padding="" />
+    
+    <yesNoDialogMessageId
+    AltName="Message Text ID"
+    Wiki="Message ID used when displaying the YesNo dialog." 
+    FmgRef="Event_Text" />
+
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="GOODS_CATEGORY" type="u8">
+        <Option Value="0" Name="Recovery" />
+    </Enum>
+    <Enum Name="GOODS_TYPE" type="u8">
+        <Option Value="0" Name="Consumable" />
+        <Option Value="1" Name="Event" />
+        <Option Value="2" Name="Material" />
+        <Option Value="3" Name="Soul" />
+        <Option Value="4" Name="Vagrant" />
+        <Option Value="5" Name="Scroll" />
+        <Option Value="6" Name="Ritual" />
+    </Enum>
+    <Enum Name="GOODS_USE_ANIM" type="u8">
+        <Option Value="0" Name="Recovery" />
+        <Option Value="1" Name="Weapon Enhancement" />
+        <Option Value="2" Name="Throwing Knife" />
+        <Option Value="3" Name="Throwing Bottle" />
+        <Option Value="4" Name="Telescope" />
+        <Option Value="5" Name="Repair" />
+        <Option Value="6" Name="Pledge" />
+        <Option Value="7" Name="Install" />
+        <Option Value="8" Name="Message" />
+        <Option Value="9" Name="Soul" />
+        <Option Value="10" Name="Drink" />
+        <Option Value="11" Name="Dragon Transformation (Head)" />
+        <Option Value="12" Name="Dragon Transformation (Body)" />
+        <Option Value="13" Name="Pledge (Secondary)" />
+        <Option Value="14" Name="Dark Force" />
+        <Option Value="15" Name="Amethyst" />
+        <Option Value="16" Name="Quick Enhancement" />
+        <Option Value="17" Name="Quick Throwing Knife" />
+        <Option Value="18" Name="Quick Throwing Bottle" />
+        <Option Value="19" Name="Drink (MP)" />
+        <Option Value="20" Name="Backwards Throwing Bottle" />
+        <Option Value="21" Name="Drink (Alcohol)" />
+        <Option Value="22" Name="Reserve 1" />
+        <Option Value="23" Name="Reserve 2" />
+        <Option Value="24" Name="Reserve 3" />
+        <Option Value="25" Name="Reserve 4" />
+        <Option Value="26" Name="Reserve 5" />
+        <Option Value="254" Name="Block Drink" />
+        <Option Value="255" Name="Block Animation" />
+    </Enum>
+    <Enum Name="GOODS_OPEN_MENU" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Yes/No" />
+        <Option Value="2" Name="Kick Other Players" />
+        <Option Value="3" Name="Leave Session" />
+        <Option Value="4" Name="White Phantom Summon" />
+        <Option Value="5" Name="Message" />
+        <Option Value="6" Name="Message List" />
+        <Option Value="7" Name="Bounty Ranking" />
+        <Option Value="8" Name="Izalith Ranking" />
+        <Option Value="9" Name="Ok/Cancel" />
+        <Option Value="10" Name="Invasion" />
+        <Option Value="11" Name="Selectable Warp" />
+        <Option Value="12" Name="Darkling" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

@@ -1,112 +1,492 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for special effects." 
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="SpEffectParam" 
+    Name="Special Effects" />
+  </DisplayNames>
+    
   <Field>
-    <iconId AltName="iconId" />
-    <stateInfo AltName="stateInfo" />
-    <effectTargetSelf AltName="effectTargetSelf" />
-    <effectTargetFriend AltName="effectTargetFriend" />
-    <effectTargetEnemy AltName="effectTargetEnemy" />
-    <effectTargetPlayer AltName="effectTargetPlayer" />
-    <effectTargetAI AltName="effectTargetAI" />
-    <effectTargetLive AltName="effectTargetLive" />
-    <effectTargetGhost AltName="effectTargetGhost" />
-    <effectTargetWhiteGhost AltName="effectTargetWhiteGhost" />
-    <effectTargetBlackGhost AltName="effectTargetBlackGhost" />
-    <effectTargetAttacker AltName="effectTargetAttacker" />
-    <dispIconNonactive AltName="dispIconNonactive" />
-    <pad1 AltName="pad1" />
-    <bAdjustMagicAblity AltName="bAdjustMagicAblity" />
-    <bAdjustFaithAblity AltName="bAdjustFaithAblity" />
-    <bGameClearBonus AltName="bGameClearBonus" />
-    <conditionHp AltName="conditionHp" />
-    <effectEndurance AltName="effectEndurance" />
-    <motionInterval AltName="motionInterval" />
-    <maxHpRate AltName="maxHpRate" />
-    <maxMpRate AltName="maxMpRate" />
-    <maxStaminaRate AltName="maxStaminaRate" />
-    <wepParamChange AltName="wepParamChange" />
-    <magParamChange AltName="magParamChange" />
-    <miracleParamChange AltName="miracleParamChange" />
-    <clearSoul AltName="clearSoul" />
-    <pad2 AltName="pad2" />
-    <physicsDamageCutRate AltName="physicsDamageCutRate" />
-    <magicDamageCutRate AltName="magicDamageCutRate" />
-    <fireDamageCutRate AltName="fireDamageCutRate" />
-    <physicsAttackRate AltName="physicsAttackRate" />
-    <magicAttackRate AltName="magicAttackRate" />
-    <fireAttackRate AltName="fireAttackRate" />
-    <physicsAttackPowerRate AltName="physicsAttackPowerRate" />
-    <magicAttackPowerRate AltName="magicAttackPowerRate" />
-    <fireAttackPowerRate AltName="fireAttackPowerRate" />
-    <physicsAttackPower AltName="physicsAttackPower" />
-    <magicAttackPower AltName="magicAttackPower" />
-    <fireAttackPower AltName="fireAttackPower" />
-    <physicsDiffenceRate AltName="physicsDiffenceRate" />
-    <magicDiffenceRate AltName="magicDiffenceRate" />
-    <fireDiffenceRate AltName="fireDiffenceRate" />
-    <physicsDiffence AltName="physicsDiffence" />
-    <magicDiffence AltName="magicDiffence" />
-    <fireDiffence AltName="fireDiffence" />
-    <NoGuardDamageRate AltName="NoGuardDamageRate" />
-    <vitalSpotChangeRate AltName="vitalSpotChangeRate" />
-    <normalSpotChangeRate AltName="normalSpotChangeRate" />
-    <maxHpChangeRate AltName="maxHpChangeRate" />
-    <changeHpRate AltName="changeHpRate" />
-    <changeHpPoint AltName="changeHpPoint" />
-    <changeMpRate AltName="changeMpRate" />
-    <changeMpPoint AltName="changeMpPoint" />
-    <mpRecoverChangeSpeed AltName="mpRecoverChangeSpeed" />
-    <changeStaminaRate AltName="changeStaminaRate" />
-    <changeStaminaPoint AltName="changeStaminaPoint" />
-    <staminaRecoverChangeSpeed AltName="staminaRecoverChangeSpeed" />
-    <magicEffectTimeChange AltName="magicEffectTimeChange" />
-    <insideDurability AltName="insideDurability" />
-    <maxDurability AltName="maxDurability" />
-    <staminaAttackRate AltName="staminaAttackRate" />
-    <pad4 AltName="pad4" />
-    <poizonAttackPower AltName="poizonAttackPower" />
-    <registIllness AltName="registIllness" />
-    <registBlood AltName="registBlood" />
-    <fallDamageRate AltName="fallDamageRate" />
-    <soulRate AltName="soulRate" />
-    <equipWeightChangeRate AltName="equipWeightChangeRate" />
-    <allItemWeightChangeRate AltName="allItemWeightChangeRate" />
-    <soul AltName="soul" />
-    <haveSoulRate AltName="haveSoulRate" />
-    <targetPriority AltName="targetPriority" Wiki="Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)." />
-    <sightSearchEnemyCut AltName="sightSearchEnemyCut" />
-    <hearingSearchEnemyCut AltName="hearingSearchEnemyCut" />
-    <requestSOS AltName="requestSOS" />
-    <requestBlackSOS AltName="requestBlackSOS" />
-    <requestForceJoinBlackSOS AltName="requestForceJoinBlackSOS" />
-    <requestKickSession AltName="requestKickSession" />
-    <requestLeaveSession AltName="requestLeaveSession" />
-    <noDead AltName="noDead" />
-    <bCurrHPIndependeMaxHP AltName="bCurrHPIndependeMaxHP" />
-    <changeMagicSlot AltName="changeMagicSlot" />
-    <changeMiracleSlot AltName="changeMiracleSlot" />
-    <moveType AltName="moveType" />
-    <pad5 AltName="pad5" />
-    <registPoizonChangeRate AltName="registPoizonChangeRate" />
-    <registIllnessChangeRate AltName="registIllnessChangeRate" />
-    <registBloodChangeRate AltName="registBloodChangeRate" />
-    <soulStealRate AltName="soulStealRate" />
-    <corrosionIgnore AltName="corrosionIgnore" />
-    <sightSearchCutIgnore AltName="sightSearchCutIgnore" />
-    <hearingSearchCutIgnore AltName="hearingSearchCutIgnore" />
-    <antiMagicIgnore AltName="antiMagicIgnore" />
-    <forgedTargetIgnore AltName="forgedTargetIgnore" />
-    <pad11 AltName="pad11" />
-    <lifeReductionType AltName="lifeReductionType" />
-    <lifeReductionRate AltName="lifeReductionRate" />
-    <hpRecoverRate AltName="hpRecoverRate" />
-    <disablePoison AltName="disablePoison" />
-    <disableDisease AltName="disableDisease" />
-    <disableBlood AltName="disableBlood" />
-    <pad7 AltName="pad7" />
-    <priority AltName="priority" />
-    <category AltName="category" />
-    <pad6 AltName="pad6" />
+    <iconId 
+    AltName="Icon ID"
+    Wiki="The icon id to display in the interface whilst the effect is active." />
+    
+    <stateInfo 
+    AltName="State Info" 
+    Wiki="ID of hardcoded system to use for unique effects. Causes effects itself and is necessary for certain fields to work.\nAlso used for visual effects by referring to the ID of a SpEffectVfxParam to use if useSpEffectEffect is true."
+    ProjectEnum="SP_EFFECT_TYPE" />
+    
+    <effectTargetSelf 
+    AltName="Apply to Self"
+    Wiki="Will affect the effect's owner." 
+    IsBool="" />
+    
+    <effectTargetFriend 
+    AltName="Apply to Friend"
+    Wiki="Will affect the effect's owner's allies." 
+    IsBool="" />
+    
+    <effectTargetEnemy 
+    AltName="Apply to Enemy"
+    Wiki="Will affect the effect's owner's enemies." 
+    IsBool="" />
+    
+    <effectTargetPlayer 
+    AltName="Apply to Player"
+    Wiki="Will affect the player." 
+    IsBool="" />
+    
+    <effectTargetAI 
+    AltName="Apply to Non-Player"
+    Wiki="Will affect non-player characters." 
+    IsBool="" />
+    
+    <effectTargetLive 
+    AltName="Apply to Host"
+    Wiki="Will affect host player in multiplayer sessions." 
+    IsBool="" />
+    
+    <effectTargetGhost 
+    AltName="Apply to Phantom"
+    Wiki="Will affect all types of client players in multiplayer sessions." 
+    IsBool="" />
+    
+    <effectTargetWhiteGhost 
+    AltName="Apply to Friendly Phantom"
+    Wiki="Will affect friendly client players in multiplayer sessions."  
+    IsBool="" />
+    
+    <effectTargetBlackGhost 
+    AltName="Apply to Hostile Phantom"
+    Wiki="Will affect hostile client players in multiplayer sessions."  
+    IsBool="" />
+    
+    <effectTargetAttacker 
+    AltName="Apply to Attacker"
+    Wiki="When effect is added via equipParamWeapon spEffectBehavior field, this field determines if the effect will be applied to attacked enemies instead of the effect owner.\ntrue = affects victim, false = affects owner" 
+    IsBool="" />
+    
+    <dispIconNonactive 
+    AltName="Display Icon when Inactive"
+    Wiki="If ON, the interface icon for the effect will still disabled even if the effect is inactive due to a failed conditional check." 
+    IsBool="" />
+    
+    <pad1
+    Padding="" />
+    
+    <bAdjustMagicAblity 
+    AltName="Apply Intelligence Correction"
+    Wiki="If ON, the intelligence stat will be used to correct various fields, such as damage." 
+    IsBool="" />
+    
+    <bAdjustFaithAblity 
+    AltName="Apply Faith Correction"
+    Wiki="If ON, the faith stat will be used to correct various fields, such as damage." 
+    IsBool="" />
+    
+    <bGameClearBonus 
+    AltName="Apply Modifiers only after Game Clear"
+    Wiki="If ON, this effect will only be active in NG+ or higher." 
+    IsBool="" />
+    
+    <conditionHp 
+    AltName="Trigger at HP Below %"
+    Wiki="The maximum percentage of HP required for effect to activate.\n-1 = no requirement, 40 = less than 40% HP, 80 = less than 80% HP" />
+    
+    <effectEndurance 
+    AltName="Duration"
+    Wiki="The duration of effect. In seconds." />
+    
+    <motionInterval 
+    AltName="Trigger Interval"
+    Wiki="The interval for the contents of this effect to be reapplied. 0 = once per frame. In seconds." />
+    
+    <maxHpRate 
+    AltName="Maximum HP %"
+    Wiki="Multiplies maximum HP. See bCurrHPIndependeMaxHP to determine how current HP behaves.\n1 = default, .5 = -50%, 2 = +100%" />
+    
+    <maxMpRate 
+    AltName="Maximum MP %"
+    Wiki="Multiplies maximum MP." 
+    Obsolete="" />
+    
+    <maxStaminaRate 
+    AltName="Maximum Stamina %"
+    Wiki="Multiplies maximum stamina." />
+    
+    <wepParamChange 
+    AltName="Weapon Influence Type"
+    Wiki="Determines how specific fields, such as damage modifiers, behave with certain attack categories" 
+    Enum="SP_EFE_WEP_CHANGE_PARAM" />
+    
+    <magParamChange 
+    AltName="Apply Modifiers to Sorcery"
+    Wiki="If ON, damage and scaling fields will apply to sorcery and pyromancies." 
+    IsBool="" />
+    
+    <miracleParamChange 
+    AltName="Apply Modifiers to Miracles"
+    Wiki="If ON, damage and scaling fields will apply to miracles." 
+    IsBool="" />
+    
+    <clearSoul 
+    AltName="Clear Held Souls"
+    Wiki="Sets soul counter to 0." 
+    IsBool="" />
+    
+    <pad2
+    Padding="" />
+    
+    <physicsDamageCutRate 
+    AltName="Absorption %: Physical"
+    Wiki="Multiplies neutral physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <magicDamageCutRate 
+    AltName="Absorption %: Magic"
+    Wiki="Multiplies magic damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <fireDamageCutRate 
+    AltName="Absorption %: Fire"
+    Wiki="Multiplies fire damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <physicsAttackRate 
+    AltName="Post-Defense Attack %: Physical"
+    Wiki="Multiplies physical damage dealt (post-defense, bypasses attack rating)" />
+    
+    <magicAttackRate 
+    AltName="Post-Defense Attack %: Magic"
+    Wiki="Multiplies magic damage dealt (post-defense, bypasses attack rating)" />
+    
+    <fireAttackRate 
+    AltName="Post-Defense Attack %: Fire"
+    Wiki="Multiplies fire damage dealt (post-defense, bypasses attack rating)" />
+    
+    <physicsAttackPowerRate 
+    AltName="Attack %: Physical"
+    Wiki="Multiplies physical damage dealt." />
+    
+    <magicAttackPowerRate 
+    AltName="Attack %: Magic"
+    Wiki="Multiplies magic damage dealt." />
+    
+    <fireAttackPowerRate 
+    AltName="Attack %: Fire"
+    Wiki="Multiplies fire damage dealt." />
+    
+    <physicsAttackPower 
+    AltName="Damage: Physical"
+    Wiki="Adds physical damage to attack rating." />
+    
+    <magicAttackPower 
+    AltName="Damage: Magic"
+    Wiki="Adds magic damage to attack rating." />
+    
+    <fireAttackPower 
+    AltName="Damage: Fire"
+    Wiki="Adds fire damage to attack rating." />
+    
+    <physicsDiffenceRate 
+    AltName="Defense %: Physical"
+    Wiki="Multiplies physical defense." />
+    
+    <magicDiffenceRate 
+    AltName="Defense %: Magic"
+    Wiki="Multiplies magic defense." />
+    
+    <fireDiffenceRate
+    AltName="Defense %: Fire"
+    Wiki="Multiplies fire defense." />
+    
+    <physicsDiffence 
+    AltName="Defense: Physical"
+    Wiki="Adds to physical defense." />
+    
+    <magicDiffence 
+    AltName="Defense: Magic"
+    Wiki="Adds to magic defense." />
+    
+    <fireDiffence 
+    AltName="Defense: Fire"
+    Wiki="Adds to fire defense." />
+    
+    <NoGuardDamageRate 
+    AltName="Damage on Hit %: Unguarded"
+    Wiki="Multiplier to the damage suffered by the target if it is not guarding when hit." />
+    
+    <vitalSpotChangeRate 
+    AltName="Damage on Hit %: Weak Point"
+    Wiki="Multiplier to the damage suffered by the target if it is hit in a part designated as a 'weak point'." />
+    
+    <normalSpotChangeRate 
+    AltName="Damage on Hit %: Standard"
+    Wiki="Multiplier to the damage suffered by the target if it is hit normally." />
+    
+    <maxHpChangeRate 
+    AltName="Maximum HP Source Multiplier"
+    Wiki="Multiplier to the maxHpRate values present on the character this effect belongs to." />
+    
+    <changeHpRate 
+    AltName="Damage HP by Percentage"
+    Wiki="Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum HP of the character." />
+    
+    <changeHpPoint 
+    AltName="Damage HP by Point"
+    Wiki="Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <changeMpRate 
+    AltName="Damage MP by Percentage"
+    Wiki="Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character." />
+    
+    <changeMpPoint 
+    AltName="Damage MP by Point"
+    Wiki="Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <mpRecoverChangeSpeed 
+    AltName="MP Recovery Speed" 
+    Wiki="The amount of MP recovered per second." />
+    
+    <changeStaminaRate 
+    AltName="Damage Stamina by Percentage"
+    Wiki="Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character." />
+    
+    <changeStaminaPoint 
+    AltName="Damage Stamina by Point"
+    Wiki="Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <staminaRecoverChangeSpeed 
+    AltName="Stamina Recovery Speed" 
+    Wiki="The amount of stamina recovered per second." />
+    
+    <magicEffectTimeChange 
+    AltName="Magic Effect Duration Change"
+    Wiki="For only spells whose effect duration is set to 0.1 seconds or more, add or subtract the time set to the effect duration.\n\nLingering Dragoncrest Ring uses stateinfo 193 which checks for isExtendSpEffectLife." 
+    Obsolete="" />
+    
+    <insideDurability 
+    AltName="Damage Durability by Point"
+    Wiki="Causes Durability loss to the used equipment of the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <maxDurability 
+    AltName="Hits per Durability Loss"
+    Wiki="Affects hits required before durability is consumed. 5 = +5 hits before durability consumed, -5 = -5 hits before durability consumed" />
+    
+    <staminaAttackRate 
+    AltName="Attack %: Stamina"
+    Wiki="Multiplies stamina damage dealt." />
+    
+    <pad4
+    Padding="" />
+    
+    <poizonAttackPower
+    AltName="Inflict: Poison"
+    Wiki="Adds to the amount of poison status effect inflicted." />
+    
+    <registIllness 
+    AltName="Inflict: Toxic"
+    Wiki="Adds to the amount of toxic status effect inflicted." />
+    
+    <registBlood 
+    AltName="Inflict: Bleed"
+    Wiki="Adds to the amount of bleed status effect inflicted." />
+    
+    <fallDamageRate 
+    AltName="Fall Damage %"
+    Wiki="Does nothing. Fall control effects use stateInfo 47" />
+    
+    <soulRate 
+    AltName="Soul Absorption %"
+    Wiki="Multiplies souls received from enemies." />
+    
+    <equipWeightChangeRate 
+    AltName="Equipment Weight %"
+    Wiki="Multiplies maximum equip weight." />
+    
+    <allItemWeightChangeRate 
+    AltName="Item Weight %"
+    Wiki="Multiplies maximum item weight. Does nothing. Probable DeS remnant." />
+    
+    <soul 
+    AltName="Souls"
+    Wiki="Flat increase/decrease to souls." />
+    
+    <haveSoulRate 
+    AltName="Soul Possession %"
+    Wiki="Multiplies the amount of souls granted after death. Requires base value in character's NpcParam row." />
+    
+    <targetPriority 
+    AltName="Target Priority Addition"
+    Wiki="Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)." />
+    
+    <sightSearchEnemyCut 
+    AltName="Visual Search Reduction %"
+    Wiki="The value to reduce the distance at which enemies see the effect's owner.\n0 = default, 50 = -50% sight distance, 100 = -100% sight distance" />
+    
+    <hearingSearchEnemyCut 
+    AltName="Auditory Search Reduction %"
+    Wiki="The value to reduce the distance at which enemies hear the effect's owner.\n0 = default, 50 = -50% hearing distance, 100 = -100% hearing distance" />
+    
+    <requestSOS 
+    AltName="Request: Friendly Phantom"
+    Wiki="Used only by White Sign Soapstone. Probably used for network matchmaking." 
+    IsBool="" />
+    
+    <requestBlackSOS 
+    AltName="Request: Hostile Phantom"
+    Wiki="Used only by Red Sign Soapstone. Probably used for network matchmaking." 
+    IsBool="" />
+    
+    <requestForceJoinBlackSOS 
+    AltName="Request: Invader"
+    Wiki="Used only by (Cracked) Red Eye Orb. Probably used for network matchmaking." 
+    IsBool="" />
+    
+    <requestKickSession 
+    AltName="Request: Kick Phantom"
+    Wiki="Possibly kicks all clients out of your world." 
+    IsBool="" />
+    
+    <requestLeaveSession 
+    AltName="Request: Leave"
+    Wiki="Used only by Black Separation Crystal. Probably used to leave network sessions." 
+    IsBool="" />
+    
+    <noDead 
+    AltName="Is Owner Undying"
+    Wiki="If ON, character cannot become a corpse (and thus die)." 
+    IsBool="" />
+    
+    <bCurrHPIndependeMaxHP 
+    AltName="Ignore Current HP on Max HP Change"
+    Wiki="Determines how current HP behaves when maximum HP is modified. true = current HP will not change, false = current HP will change with max HP" 
+    IsBool="" />
+    
+    <changeMagicSlot 
+    AltName="Attunement Slots (Magic)"
+    Wiki="Increases attunement slots." />
+    
+    <changeMiracleSlot 
+    AltName="Attunement Slots (Miracle)"
+    Wiki="Increases attunement slots." />
+    
+    <moveType 
+    AltName="Movement Type"
+    Wiki="Offsets character movement animations." 
+    Enum="SP_EFFECT_MOVE_TYPE" />
+    
+    <pad5
+    Padding="" />
+    
+    <registPoizonChangeRate 
+    AltName="Resistance %: Poison"
+    Wiki="Multiplies stat based poison resistance." />
+    
+    <registIllnessChangeRate 
+    AltName="Resistance %: Toxic"
+    Wiki="Multiplies stat based toxic resistance." />
+    
+    <registBloodChangeRate 
+    AltName="Resistance %: Bleed"
+    Wiki="Multiplies stat based bleed resistance." />
+    
+    <soulStealRate 
+    AltName="Soul Steal %"
+    Wiki="The defense power against HP loss when soul steal move is used." />
+    
+    <corrosionIgnore 
+    AltName="Disable Durability"
+    Wiki="If ON, disables durability damage to the effect owner's weapons and armor." 
+    IsBool="" />
+    
+    <sightSearchCutIgnore 
+    AltName="Ignore Visual Search Adjustments"
+    Wiki="If ON, visual search adjustments from sightSearchEnemyCut are ignored by the effect owner." 
+    IsBool="" />
+    
+    <hearingSearchCutIgnore 
+    AltName="Ignore Auditory Search Adjustments"
+    Wiki="If ON, auditory search adjustments from hearingSearchEnemyCut are ignored by the effect owner." 
+    IsBool="" />
+    
+    <antiMagicIgnore 
+    AltName="Ignore Magic Block"
+    Wiki="If ON, magic blocking effects are ignored by the effect owner (Vow of Silence)." 
+    IsBool="" />
+    
+    <forgedTargetIgnore 
+    AltName="Ignore Decoy Target"
+    Wiki="If ON, the effect owner will ignore fake targets (Aural Decoy projectiles)." 
+    IsBool="" />
+    
+    <pad11
+    Padding="" />
+    
+    <lifeReductionType 
+    AltName="Effect Duration Change Type"
+    Wiki="Determines the type of status effect to modify the duration of. SpEffects with the specified stateInfo will be affected." 
+    ProjectEnum="SP_EFFECT_TYPE" />
+    
+    <lifeReductionRate 
+    AltName="Effect Duration Change %"
+    Wiki="Multiplies the duration of the status effect with the stateInfo specified by lifeReductionType." />
+    
+    <hpRecoverRate 
+    AltName="HP Recovery %"
+    Wiki="Multiplies healing received." />
+    
+    <disablePoison 
+    AltName="Is Immune to Poison"
+    Wiki="If ON, effect owner becomes immune to poison." 
+    IsBool="" />
+    
+    <disableDisease 
+    AltName="Is Immune to Toxic"
+    Wiki="If ON, effect owner becomes immune to toxic." 
+    IsBool="" />
+    
+    <disableBlood 
+    AltName="Is Immune to Bleed"
+    Wiki="If ON, effect owner becomes immune to bleed." 
+    IsBool="" />
+    
+    <pad7
+    Padding="" />
+    
+    <priority
+    AltName="Priority"
+    Wiki="The priority of this SpEffect." />
+    
+    <category
+    AltName="Category"
+    Wiki="The category of this SpEffect." 
+    Enum="SP_CATEGORY" />
+    
+    <pad6
+    Padding="" />
   </Field>
-  <Self Row0Dummy="" />
+  <Enums>
+    <Enum Name="SP_CATEGORY">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Body: Internal Resident" />
+        <Option Value="2" Name="Body: Internal Addition" />
+        <Option Value="3" Name="Body: External Addition" />
+        <Option Value="4" Name="Weapon" />
+    </Enum>
+    <Enum Name="SP_EFE_WEP_CHANGE_PARAM">
+        <Option Value="0" Name="Apply to All" />
+        <Option Value="1" Name="Right-hand weapon attacks only" />
+        <Option Value="2" Name="Left-hand weapon attacks only" />
+        <Option Value="3" Name="Ignore" />
+        <Option Value="4" Name="Kick" />
+    </Enum>
+    <Enum Name="SP_EFFECT_MOVE_TYPE">
+        <Option Value="0" Name="Normal" />
+        <Option Value="3" Name="Chameleon" />
+        <Option Value="4" Name="Deep Water" />
+        <Option Value="5" Name="Iron Flesh" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

@@ -1,94 +1,526 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Defines weapon types and each affinity.\nIncludes arrows and bolts. Responsible for scaling shown on certain consumables.\nIDs not ending in a multiple of 100 are ignored.\nPermitting affinities on a weapon without affinity rows at the correct IDs will result in the nearest 10000 being used.\nSpEffects specified here can be modified by upgrades in ReinforceParamWeapon." 
+  OffsetSize="100" />
+
+  <DisplayNames>
+    <NameEntry 
+    Param="EquipParamWeapon" 
+    Name="Weapons" />
+  </DisplayNames>
+  
   <Field>
-    <equipModelCategory AltName="equipModelCategory" />
-    <equipModelGender AltName="equipModelGender" />
-    <equipModelId AltName="equipModelId" />
-    <iconId AltName="iconId" />
-    <weaponCategory AltName="weaponCategory" />
-    <wepmotionCategory AltName="wepmotionCategory" />
-    <wepmotionOneHandId AltName="wepmotionOneHandId" />
-    <wepmotionBothHandId AltName="wepmotionBothHandId" />
-    <rightHandEquipable AltName="rightHandEquipable" />
-    <leftHandEquipable AltName="leftHandEquipable" />
-    <bothHandEquipable AltName="bothHandEquipable" />
-    <arrowSlotEquipable AltName="arrowSlotEquipable" />
-    <boltSlotEquipable AltName="boltSlotEquipable" />
-    <throwable AltName="throwable" />
-    <existWepCase AltName="existWepCase" />
-    <enableGuard AltName="enableGuard" />
-    <enableParry AltName="enableParry" />
-    <enableMagic AltName="enableMagic" />
-    <enableMiracle AltName="enableMiracle" />
-    <pad_ AltName="pad_" />
-    <maxBulletNum AltName="maxBulletNum" />
-    <wanderingEquipId AltName="wanderingEquipId" />
-    <behaviorVariationId AltName="behaviorVariationId" />
-    <isNormalAttackType AltName="isNormalAttackType" />
-    <isBlowAttackType AltName="isBlowAttackType" />
-    <isSlashAttackType AltName="isSlashAttackType" />
-    <isThrustAttackType AltName="isThrustAttackType" />
-    <weight AltName="weight" />
-    <durability AltName="durability" />
-    <durabilityMax AltName="durabilityMax" />
-    <attackBasePhysics AltName="attackBasePhysics" />
-    <attackBaseMagic AltName="attackBaseMagic" />
-    <attackBaseFire AltName="attackBaseFire" />
-    <attackBaseStamina AltName="attackBaseStamina" />
-    <attackSuperArmor AltName="attackSuperArmor" />
-    <attackBaseParry AltName="attackBaseParry" />
-    <defenseBaseParry AltName="defenseBaseParry" />
-    <guardBaseRepel AltName="guardBaseRepel" />
-    <attackBaseRepel AltName="attackBaseRepel" />
-    <parryDamageLife AltName="parryDamageLife" />
-    <physGuardCutRate AltName="physGuardCutRate" />
-    <magGuardCutRate AltName="magGuardCutRate" />
-    <fireGuardCutRate AltName="fireGuardCutRate" />
-    <slashGuardCutRate AltName="slashGuardCutRate" />
-    <blowGuardCutRate AltName="blowGuardCutRate" />
-    <thrustGuardCutRate AltName="thrustGuardCutRate" />
-    <poisonGuardResist AltName="poisonGuardResist" />
-    <diseaseGuardResist AltName="diseaseGuardResist" />
-    <bloodGuardResist AltName="bloodGuardResist" />
-    <staminaGuardDef AltName="staminaGuardDef" />
-    <guardAngle AltName="guardAngle" />
-    <guardLevel AltName="guardLevel" />
-    <pad_1 AltName="pad_1" />
-    <guardKnockbackCutRate AltName="guardKnockbackCutRate" />
-    <guardKnockbackBackslash AltName="guardKnockbackBackslash" />
-    <correctStrength AltName="correctStrength" />
-    <correctAgility AltName="correctAgility" />
-    <correctMagic AltName="correctMagic" />
-    <correctFaith AltName="correctFaith" />
-    <properStrength AltName="properStrength" />
-    <properAgility AltName="properAgility" />
-    <properMagic AltName="properMagic" />
-    <properFaith AltName="properFaith" />
-    <correctType AltName="correctType" />
-    <qwcType AltName="qwcType" />
-    <isLuckCorrect AltName="isLuckCorrect" />
-    <guardCutCancelRate AltName="guardCutCancelRate" />
-    <antiDemonDamageRate AltName="antiDemonDamageRate" />
-    <spEffectBehaviorId0 AltName="spEffectBehaviorId0" />
-    <spEffectBehaviorId1 AltName="spEffectBehaviorId1" />
-    <spEffectBehaviorId2 AltName="spEffectBehaviorId2" />
-    <residentSpEffectBehaviorId AltName="residentSpEffectBehaviorId" />
-    <customShopType AltName="customShopType" />
-    <pad_4 AltName="pad_4" />
-    <throwAtkRate AltName="throwAtkRate" />
-    <originEquipWep AltName="originEquipWep" />
-    <materialSetId AltName="materialSetId" />
-    <sortId AltName="sortId" />
-    <isCustom AltName="isCustom" />
-    <pad_5 AltName="pad_5" />
-    <bowDistRate AltName="bowDistRate" />
-    <trophySGradeId AltName="trophySGradeId" />
-    <trophySeqId AltName="trophySeqId" />
-    <fixPrice AltName="fixPrice" />
-    <qwcId AltName="qwcId" />
-    <isEnhance AltName="isEnhance" />
-    <pad_6 AltName="pad_6" />
-    <basicPrice AltName="basicPrice" />
+    <equipModelCategory 
+    AltName="Model Category" 
+    Wiki="The equipment model category used by this equipment." 
+    Enum="EQUIP_MODEL_CATEGORY" />
+    
+    <equipModelGender 
+    AltName="Model Gender Category"
+    Wiki="The equipment gender category used by this equipment." 
+    Enum="EQUIP_MODEL_GENDER" />
+    
+    <equipModelId 
+    AltName="Model ID" 
+    Wiki="The model ID to use for this equipment." />
+    
+    <iconId 
+    AltName="Icon ID " 
+    Wiki="The icon ID to use for this equipment."  />
+    
+    <weaponCategory 
+    AltName="Weapon Category" 
+    Wiki="The weapon category of this equipment." 
+    Enum="WEAPON_CATEGORY" />
+    
+    <wepmotionCategory 
+    AltName="Weapon Animation Set" 
+    Wiki="The weapon animation category. Determines the base animation set the weapon uses." 
+    Enum="TAE_MOTION_BASE_CATEGORIES" />
+    
+    <wepmotionOneHandId 
+    AltName="Weapon Idle Animation Set: 1H" 
+    Wiki="The weapon idle animation category. Determines the idle animations used when held one-handed." 
+    Enum="TAE_MOTION_HOLD_CATEGORIES" />
+    
+    <wepmotionBothHandId 
+    AltName="Weapon Idle Animation Set: 2H" 
+    Wiki="The weapon idle animation category. Determines the idle animations used when held two-handed." 
+    Enum="TAE_MOTION_HOLD_CATEGORIES" />
+    
+    <rightHandEquipable 
+    AltName="Equipped in Right Weapon Slot" 
+    Wiki="If ON, this equipment can be equipped in the right weapon slot."
+    IsBool="" />
+    
+    <leftHandEquipable 
+    AltName="Equipped in Left Weapon Slot" 
+    Wiki="If ON, this equipment can be equipped in the left weapon slot."
+    IsBool="" />
+    
+    <bothHandEquipable 
+    AltName="Equipped in either Weapon Slot" 
+    Wiki="If ON, this equipment can be equipped in either weapon slot."
+    IsBool="" />
+    
+    <arrowSlotEquipable 
+    AltName="Equipped in Arrow Slot" 
+    Wiki="If ON, this equipment can be equipped in arrow ammunition slot."
+    IsBool="" />
+    
+    <boltSlotEquipable 
+    AltName="Equipped in Bolt Slot" 
+    Wiki="If ON, this equipment can be equipped in bolt ammunition slot."
+    IsBool="" />
+    
+    <throwable
+    AltName="Is Throwable"
+    Wiki="If ON, weapon can be thrown."
+    IsBool="" />
+    
+    <existWepCase
+    AltName="Has Sheath"
+    Wiki="If ON, weapon has a sheath."
+    IsBool="" />
+    
+    <enableGuard 
+    AltName="Enables Guard" 
+    Wiki="If ON, this weapon will guard with L1 when equipped with left hand." 
+    IsBool="" />
+    
+    <enableParry 
+    AltName="Enables Parry" 
+    Wiki="If ON, this weapon will arry with L2 when equipped with left hand." 
+    IsBool="" />
+    
+    <enableMagic 
+    AltName="Enables Sorcery" 
+    Wiki="If ON, this weapon will cast sorcery when attacking." 
+    IsBool="" />
+    
+    <enableMiracle 
+    AltName="Enables Miracles" 
+    Wiki="If ON, this weapon will cast miracles when attacking." 
+    IsBool="" />
+    
+    <pad_
+    Padding="" />
+    
+    <maxBulletNum
+    AltName="Maximum Ammunition Count"
+    Wiki="The maximum amount of ammunition that can be carried (for ammunition weapon entries)." />
+    
+    <wanderingEquipId 
+    AltName="Wandering Equip ID" 
+    Wiki="Replacement equipment ID for wandering ghosts." 
+    Refs="EquipParamWeapon" />
+    
+    <behaviorVariationId 
+    AltName="Behavior Variation ID" 
+    Wiki="Used to determine the action parameters to use for this weapon's attacks." 
+    VRef="BehaviorVariation" />
+    
+    <isNormalAttackType 
+    AltName="Menu Display: Normal" 
+    Wiki="The attack type for menu display." 
+    IsBool="" />
+    
+    <isBlowAttackType 
+    AltName="Menu Display: Strike" 
+    Wiki="The attack type for menu display." 
+    IsBool="" />
+    
+    <isSlashAttackType 
+    AltName="Menu Display: Slash" 
+    Wiki="The attack type for menu display." 
+    IsBool="" />
+    
+    <isThrustAttackType 
+    AltName="Menu Display: Thrust" 
+    Wiki="The attack type for menu display." 
+    IsBool="" />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight [kg]." />
+    
+    <durability 
+    AltName="Durability" 
+    Wiki="The initial durability of this equipment." />
+    
+    <durabilityMax 
+    AltName="Max Durability" 
+    Wiki="The maximum durability of this equipment." />
+    
+    <attackBasePhysics 
+    AltName="Damage: Physical" 
+    Wiki="The base Physical attack power." />
+    
+    <attackBaseMagic 
+    AltName="Damage: Magic" 
+    Wiki="The base Magic attack power." />
+    
+    <attackBaseFire 
+    AltName="Damage: Fire" 
+    Wiki="The base Fire attack power." />
+    
+    <attackBaseStamina 
+    AltName="Damage: Stamina" 
+    Wiki="The base stamina attack power." />
+    
+    <attackSuperArmor 
+    AltName="Damage: Poise" 
+    Wiki="The base poise attack power." />
+    
+    <attackBaseParry 
+    AltName="Parry Attack" 
+    Wiki="The base parry attack damage value. Applied to the enemy parry defense value." />
+    
+    <defenseBaseParry 
+    AltName="Parry Defense" 
+    Wiki="The base parry defense value. Compared against enemy parry attack value." />
+    
+    <guardBaseRepel 
+    AltName="Base Repel: Defense" 
+    Wiki="The base repel value when guarding. If a blocked attack has a repel attack value less than the repel defense value, the attack will bounce." />
+    
+    <attackBaseRepel 
+    AltName="Base Repel: Attack" 
+    Wiki="The base repel value when attacking. If the victim has a repel defense value greater than the repel attack value, the attack will bounce." />
+    
+    <parryDamageLife 
+    AltName="Parry Damage Duration" 
+    Wiki="The duration of parry damage. It is capped by the duration set in the TAE. In frames." />
+    
+    <physGuardCutRate 
+    AltName="Guard Absorption %: Physical" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <magGuardCutRate 
+    AltName="Guard Absorption %: Magic" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <fireGuardCutRate 
+    AltName="Guard Absorption %: Fire" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <slashGuardCutRate 
+    AltName="Guard Absorption %: Slash" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <blowGuardCutRate
+    AltName="Guard Absorption %: Strike" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <thrustGuardCutRate 
+    AltName="Guard Absorption %: Thrust" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <poisonGuardResist 
+    AltName="Guard Absorption %: Poison" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <diseaseGuardResist 
+    AltName="Guard Absorption %: Toxic" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <bloodGuardResist 
+    AltName="Guard Absorption %: Bleed" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <staminaGuardDef 
+    AltName="Guard Stability" 
+    Wiki="Defense power against stamina drain from enemy attacks when guarding correctly." />
+    
+    <guardAngle 
+    AltName="Horizontal Guard Angle" 
+    Wiki="Defense generation range angle when guarding with a weapon (horizontal direction). In degrees." />
+    
+    <guardLevel 
+    AltName="Guard Damage Level" 
+    Wiki="When guarding, the guard animation offset to use when being attacked." 
+    Enum="GUARD_DAMAGE_LEVEL" />
+    
+    <pad_1
+    Padding="" />
+    
+    <guardKnockbackCutRate
+    AltName="Guard: Knockback Absorption %"
+    Wiki="The absorption to apply to knocback speed when guarding." />
+    
+    <guardKnockbackBackslash
+    AltName="Guard: Knockback Repulsion %"
+    Wiki="The counter-repulsion to the opponent when guarding (after suffering an attack)." />
+    
+    <correctStrength 
+    AltName="Correction: STR" 
+    Wiki="The multiplier to the damage corrected by this specified stat." />
+    
+    <correctAgility 
+    AltName="Correction: DEX" 
+    Wiki="The multiplier to the damage corrected by this specified stat." />
+    
+    <correctMagic 
+    AltName="Correction: INT" 
+    Wiki="The multiplier to the damage corrected by this specified stat." />
+    
+    <correctFaith 
+    AltName="Correction: FTH" 
+    Wiki="The multiplier to the damage corrected by this specified stat." />
+    
+    <properStrength 
+    AltName="Requirement: STR"
+    Wiki="The required level of the specified stat to properly wield this weapon." />
+    
+    <properAgility 
+    AltName="Requirement: DEX"
+    Wiki="The required level of the specified stat to properly wield this weapon." />
+    
+    <properMagic 
+    AltName="Requirement: INT"
+    Wiki="The required level of the specified stat to properly wield this weapon." />
+    
+    <properFaith 
+    AltName="Requirement: FTH"
+    Wiki="The required level of the specified stat to properly wield this weapon." />
+    
+    <correctType
+    AltName="Damage Correction Graph" 
+    Wiki="Determine the calculcation correction graph to use when correcting damage." 
+    Refs="CalcCorrectGraph" />
+    
+    <qwcType
+    AltName="World Tendency Correction Type"
+    Wiki="The attack power correction type to use based on world tendency." 
+    Enum="WEP_QWC_TYPE" />
+    
+    <isLuckCorrect 
+    AltName="Apply Luck Correction" 
+    Wiki="If ON, applies attack correction based on luck." 
+    IsBool="" />
+    
+    <guardCutCancelRate 
+    AltName="Guard Absorption Invalidation" 
+    Wiki="Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become " />
+    
+    <antiDemonDamageRate
+    AltName="Damage Adjustment %: Demon"
+    Wiki="Damage multiplier applied to targets that are classified with isDemon." />
+    
+    <spEffectBehaviorId0 
+    AltName="SpEffect on Hit: 1" 
+    Wiki="A SpEffect to apply to the victim when this weapon hits." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectBehaviorId1
+    AltName="SpEffect on Hit: 2" 
+    Wiki="A SpEffect to apply to the victim when this weapon hits." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectBehaviorId2 
+    AltName="SpEffect on Hit: 3" 
+    Wiki="A SpEffect to apply to the victim when this weapon hits." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <residentSpEffectBehaviorId 
+    AltName="Resident SpEffect Behavior ID" 
+    Wiki="A SpEffect to apply to the wielder of this weapon." 
+    Refs="BehaviorParam" />
+    
+    <customShopType
+    AltName="Reinforcement Type"
+    Wiki="The reinforcement menu type to use for this weapon."
+    Enum="CUSTOMSHOP_NPC_TYPE" />
+    
+    <pad_4
+    Padding="" />
+    
+    <throwAtkRate 
+    AltName="Critical Hit %" 
+    Wiki="The multiplier to apply to critical hits." />
+    
+    <originEquipWep 
+    AltName="Source ID" 
+    Wiki="The source ID to use for this equipment when changing its base form." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <materialSetId 
+    AltName="Upgrade Material ID" 
+    Wiki="The material requirements for improving this equipment." 
+    Refs="EquipMtrlSetParam" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The ordering ID used to sort this part in the menu." />
+    
+    <isCustom 
+    AltName="Is Reinforcable" 
+    Wiki="If ON, this weapon can be reinforced via the reinforcement mechanic." 
+    IsBool="" />
+    
+    <pad_5
+    Padding="" />
+    
+    <bowDistRate 
+    AltName="Ammunition Distance %" 
+    Wiki="Increase the attentuation range of ammunition by the specified multiplier." />
+    
+    <trophySGradeId 
+    AltName="Achievement ID" 
+    Wiki="The achievement ID this equipment is associated with, if any." />
+    
+    <trophySeqId 
+    AltName="Sequential Achievement ID" 
+    Wiki="The sequential achievement ID this equipment is associated with, if any." />
+    
+    <fixPrice 
+    AltName="Repair Value" 
+    Wiki="The price required to repair this part. Repair cost is calculated using this and durabilityMax" />
+    
+    <qwcId 
+    AltName="World Tendency ID" 
+    Wiki="The world tendency ID to use for this item." />
+    
+    <isEnhance 
+    AltName="Is Buffable" 
+    Wiki="If ON, this weapon be buffed via a tool or spell." 
+    IsBool="" />
+    
+    <pad_6
+    Padding="" />
+    
+    <basicPrice 
+    AltName="Reinforcement Value" 
+    Wiki="The reinforcement price for this part." />
+    
   </Field>
-  <Self OffsetSize="100" />
+  <Enums>
+    <Enum Name="WEAPON_CATEGORY" type="u8">
+        <Option Value="0" Name="Dagger" />
+        <Option Value="1" Name="Straight Sword" />
+        <Option Value="2" Name="Thrusting Sword" />
+        <Option Value="3" Name="Curved Sword" />
+        <Option Value="4" Name="Axe" />
+        <Option Value="5" Name="Hammer" />
+        <Option Value="6" Name="Spear" />
+        <Option Value="7" Name="Halberd" />
+        <Option Value="8" Name="Spell Tool" />
+        <Option Value="9" Name="Fist" />
+        <Option Value="10" Name="Bow" />
+        <Option Value="11" Name="Crossbow" />
+        <Option Value="12" Name="Shield" />
+        <Option Value="13" Name="Arrow" />
+        <Option Value="14" Name="Bolt" />
+        <Option Value="255" Name="Disabled" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Arms" />
+        <Option Value="2" Name="Body" />
+        <Option Value="3" Name="Face" />
+        <Option Value="4" Name="Hair" />
+        <Option Value="5" Name="Head" />
+        <Option Value="6" Name="Legs" />
+        <Option Value="7" Name="Weapon" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_GENDER" type="u8">
+        <Option Value="0" Name="Unisex (A)" />
+        <Option Value="1" Name="Male only (M)" />
+        <Option Value="2" Name="Female only (F)" />
+        <Option Value="3" Name="Male and Female" />
+        <Option Value="4" Name="Unisex (M)" />
+        <Option Value="5" Name="Enemy only (E)" />
+    </Enum>
+    <Enum Name="TAE_MOTION_BASE_CATEGORIES" type="s16">
+        <Option Value="0" Name="None" />
+        <Option Value="20" Name="Dagger" />
+        <Option Value="23" Name="Straight Sword" />
+        <Option Value="25" Name="Greatsword / Curved Greatsword" />
+        <Option Value="26" Name="Ultra Greatsword" />
+        <Option Value="27" Name="Rapier" />
+        <Option Value="28" Name="Curved Sword" />
+        <Option Value="29" Name="Katana" />
+        <Option Value="30" Name="Axe" />
+        <Option Value="32" Name="Greataxe" />
+        <Option Value="33" Name="Hammer" />
+        <Option Value="35" Name="Great Hammer" />
+        <Option Value="36" Name="Spear" />
+        <Option Value="38" Name="Halberd" />
+        <Option Value="41" Name="Spell Tool" />
+        <Option Value="42" Name="Fists" />
+        <Option Value="43" Name="Whip" />
+        <Option Value="44" Name="Bow" />
+        <Option Value="46" Name="Crossbow" />
+        <Option Value="47" Name="Greatshield" />
+        <Option Value="48" Name="Shield" />
+    </Enum>
+    <Enum Name="TAE_MOTION_HOLD_CATEGORIES" type="s16">
+      <Option Value="0" Name="One hand down by hip" />
+      <Option Value="2" Name="One hand on shoulder" />
+      <Option Value="3" Name="One hand down and behind hip" />
+      <Option Value="10" Name="Both hands in front" />
+      <Option Value="12" Name="Both hands on shoulder" />
+      <Option Value="13" Name="Both hands in spear position" />
+      <Option Value="14" Name="Both hands in bow position" />
+      <Option Value="15" Name="Both hands in shield position" />
+      <Option Value="16" Name="Both hands in crossbow position" />
+    </Enum>
+    <Enum Name="GUARD_DAMAGE_LEVEL" type="s16">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Light" />
+        <Option Value="2" Name="Medium" />
+        <Option Value="3" Name="Heavy" />
+        <Option Value="4" Name="Shield" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_ATK" type="u8">
+      <Option Value="0" Name="Standard" />
+      <Option Value="1" Name="Physical" />
+      <Option Value="2" Name="Magic" />
+      <Option Value="3" Name="Fire" />
+      <Option Value="4" Name="Lightning" />
+      <Option Value="5" Name="Dark" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="50" Name="Standard" />
+        <Option Value="51" Name="Physical" />
+        <Option Value="52" Name="Magic" />
+        <Option Value="53" Name="Fire" />
+        <Option Value="54" Name="Lightning" />
+        <Option Value="55" Name="Dark" />
+        <Option Value="79" Name="Greatshield" />
+        <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="50" Name="Standard" />
+        <Option Value="51" Name="Physical" />
+        <Option Value="52" Name="Magic" />
+        <Option Value="53" Name="Fire" />
+        <Option Value="54" Name="Lightning" />
+        <Option Value="55" Name="Dark" />
+        <Option Value="59" Name="Fist" />
+        <Option Value="79" Name="Greatshield" />
+        <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="WEP_QWC_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Black" />
+        <Option Value="2" Name="White" />
+        <Option Value="3" Name="All" />
+    </Enum>
+    <Enum Name="CUSTOMSHOP_NPC_TYPE" type="u8">
+        <Option Value="0" Name="Both" />
+        <Option Value="1" Name="Stone Pillar" />
+        <Option Value="2" Name="Mine Shaft" />
+        <Option Value="3" Name="DS" />
+    </Enum>
+    
+    
+  </Enums>
 </PARAMMETA>

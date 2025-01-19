@@ -41,8 +41,8 @@
     Wiki="The ordering within the menu." />
 
     <qwcId 
-    AltName="QWC ID" 
-    Wiki="" 
+    AltName="World Tendency ID" 
+    Wiki="The ID this item uses for world tendency." 
     Obsolete="" />
 
     <equipModelId 

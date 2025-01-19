@@ -1,10 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the coloring used for various interface elements." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="MenuColorTableParam" 
+    Name="Interface Coloring" />
+  </DisplayNames>
+  
   <Field>
-    <r AltName="r" />
-    <g AltName="g" />
-    <b AltName="b" />
-    <a AltName="a" />
+    <r 
+    AltName="Menu Color: R" 
+    Wiki="The red component of the color." />
+    
+    <g 
+    AltName="Menu Color: G"
+    Wiki="The green component of the color." />
+    
+    <b 
+    AltName="Menu Color: B" 
+    Wiki="The blue component of the color." />
+    
+    <a 
+    AltName="Menu Color: Alpha" 
+    Wiki="The alpha component of the color." />
   </Field>
-  <Self />
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Menu Color" 
+    Fields="r,g,b" 
+    PlacedField="a" />
+    
+  </ColorEdit>
+  
 </PARAMMETA>

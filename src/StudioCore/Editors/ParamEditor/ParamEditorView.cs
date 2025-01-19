@@ -53,6 +53,20 @@ public class ParamEditorView
     private void ParamView_ParamList_Header(bool isActiveView)
     {
         ImGui.Text("Params");
+
+        // Param Version
+        if (ParamBank.PrimaryBank.ParamVersion != 0)
+        {
+            ImGui.SameLine();
+            ImGui.Text($"- Version {Utils.ParseParamVersion(ParamBank.PrimaryBank.ParamVersion)}");
+
+            if (ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
+            {
+                ImGui.SameLine();
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, "(out of date)");
+            }
+        }
+
         ImGui.Separator();
 
         // Autofill
@@ -81,19 +95,6 @@ public class ParamEditorView
         {
             UICache.ClearCaches();
             lastParamSearch = _selection.currentParamSearchString;
-        }
-
-        // Param Version
-        ImGui.SameLine();
-        if (ParamBank.PrimaryBank.ParamVersion != 0)
-        {
-            ImGui.Text($"Param version {Utils.ParseParamVersion(ParamBank.PrimaryBank.ParamVersion)}");
-
-            if (ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
-            {
-                ImGui.SameLine();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, "(out of date)");
-            }
         }
 
         ImGui.Separator();

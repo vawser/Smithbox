@@ -6,50 +6,50 @@
   <DisplayNames>
     <NameEntry 
     Param="default_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m10_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m11_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m12_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m13_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m14_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     <NameEntry 
     Param="m15_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m15_1_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m16_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m17_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m18_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
     
     <NameEntry 
     Param="m99_LensFlareExBank" 
-    Name="Lens Flare" />
+    Name="Lens Flare Extra" />
   </DisplayNames>
   
   <Field>

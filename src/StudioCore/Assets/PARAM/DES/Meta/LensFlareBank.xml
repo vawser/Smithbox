@@ -1,17 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for lens flares." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="default_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m01_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m02_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m03_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m04_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m05_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m06_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m07_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m08_LensFlareBank" 
+    Name="Lens Flare" />
+    
+    <NameEntry 
+    Param="m99_LensFlareBank" 
+    Name="Lens Flare" />
+  </DisplayNames>
+  
   <Field>
-    <texId AltName="texId" />
-    <isFlare AltName="isFlare" />
-    <enableRoll AltName="enableRoll" />
-    <enableScale AltName="enableScale" />
-    <dummy1 AltName="dummy1" />
-    <locateDistRate AltName="locateDistRate" />
-    <texScale AltName="texScale" />
-    <colR AltName="colR" />
-    <colG AltName="colG" />
-    <colB AltName="colB" />
-    <colA AltName="colA" />
+    <texId
+    AltName="Texture ID"
+    Wiki="The texture to use for this lens flare." />
+    
+    <isFlare
+    AltName="Is Flare"
+    Wiki="If ON, this lens flare is treated as a flare. If OFF, then it is a ghost."
+    IsBool="" />
+    
+    <enableRoll
+    AltName="Enable Rotation"
+    Wiki="If ON, this lens flare can be rotated." 
+    IsBool="" />
+    
+    <enableScale
+    AltName="Enable Scaling"
+    Wiki="If ON, this lens flare can be scaled." 
+    IsBool="" />
+    
+    <dummy1
+    Padding="" />
+    
+    <locateDistRate
+    AltName="Placement Distance Rate"
+    Wiki="The placement distance rate. 0 is the light source position, 1 is the centre of the screen." />
+    
+    <texScale
+    AltName="Texture Scale"
+    Wiki="The scale to apply to the lens flare texture." />
+    
+    <colR
+    AltName="Texture: R"
+    Wiki="The red component of the RGBA color used with the lens flare texture." />
+    
+    <colG
+    AltName="Texture: G"
+    Wiki="The green component of the RGBA color used with the lens flare texture." />
+    
+    <colB
+    AltName="Texture: B"
+    Wiki="The blue component of the RGBA color used with the lens flare texture." />
+    
+    <colA
+    AltName="Texture: Alpha"
+    Wiki="The alpha component of the RGBA color used with the lens flare texture." />
   </Field>
-  <Self />
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Texture Color" 
+    Fields="colR,colG,colB" 
+    PlacedField="colA" />
+  </ColorEdit>
 </PARAMMETA>

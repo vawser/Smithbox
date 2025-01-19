@@ -141,20 +141,20 @@
     Wiki="Player only. The multiplier to apply to the base poise attack value." />
     
     <atkPhys 
-    AltName="Damage: Kinetic" 
-    Wiki="The base Kinetic attack value. Used primarily for NPC attacks." />
+    AltName="Damage: Physical" 
+    Wiki="The base Physical attack value. Used primarily for NPC attacks." />
     
     <atkMag 
-    AltName="Damage: Energy" 
-    Wiki="The base Energy attack value. Used primarily for NPC attacks." />
+    AltName="Damage: Magic" 
+    Wiki="The base Magic attack value. Used primarily for NPC attacks." />
     
     <atkFire 
-    AltName="Damage: Explosive" 
-    Wiki="The base Explosive attack value. Used primarily for NPC attacks." />
+    AltName="Damage: Fire" 
+    Wiki="The base Fire attack value. Used primarily for NPC attacks." />
     
     <atkThun 
-    AltName="Damage: Coral" 
-    Wiki="The base Coral attack value. Used primarily for NPC attacks." />
+    AltName="Damage: Lightning" 
+    Wiki="The base Lightning attack value. Used primarily for NPC attacks." />
     
     <atkStam 
     AltName="Damage: Stamina" 
@@ -406,13 +406,15 @@
     </Enum>
     <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
         <Option Value="0" Name="None" />
-        <Option Value="100" Name="Shield: Physical" />
-        <Option Value="101" Name="Shield: Strong Physical" />
-        <Option Value="102" Name="Shield: Magic" />
-        <Option Value="103" Name="Body: Physical" />
-        <Option Value="104" Name="Body: Strong Physical" />
-        <Option Value="105" Name="Body: Flesh" />
-        <Option Value="255" Name="Material 1" />
+        <Option Value="50" Name="Standard" />
+        <Option Value="51" Name="Physical" />
+        <Option Value="52" Name="Magic" />
+        <Option Value="53" Name="Fire" />
+        <Option Value="54" Name="Lightning" />
+        <Option Value="55" Name="Dark" />
+        <Option Value="59" Name="Fist" />
+        <Option Value="79" Name="Greatshield" />
+        <Option Value="255" Name="None" />
     </Enum>
     <Enum Name="ATK_PARAM_HIT_SOURCE" type="u8">
         <Option Value="0" Name="Weapon" />

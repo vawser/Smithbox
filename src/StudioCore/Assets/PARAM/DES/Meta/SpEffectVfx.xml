@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the parameters for particles triggered via SpEffect." 
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="SpEffectVfxParam" 
+    Name="Special Effect Particles" />
+  </DisplayNames>
+  
+  <Field>
+    <midstSfxId 
+    AltName="Continuous: Particle ID"
+    Wiki="The SFX ID to use for the particle that is displayed continuously." 
+    ParticleAlias="" />
+    
+    <midstSeId 
+    AltName="Continuous: Sound ID"
+    Wiki="The sound ID to use for the particle that is displayed continuously." 
+    SoundAlias="" />
+    
+    <initSfxId 
+    AltName="Start: Particle ID"
+    Wiki="The SFX ID to use for the particle that appears when the effect starts." 
+    ParticleAlias="" />
+    
+    <initSeId 
+    AltName="Start: Sound ID"
+    Wiki="The sound ID to use for the particle that appears when the effect starts." 
+    SoundAlias="" />
+    
+    <finishSfxId 
+    AltName="End: Particle ID"
+    Wiki="The SFX ID to use for the particle that appears when the effect ends." 
+    ParticleAlias="" />
+    
+    <finishSeId 
+    AltName="End: Sound ID"
+    Wiki="The sound ID to use for the particle that appears when the effect ends." 
+    SoundAlias="" />
+    
+    <camouflageBeginDist 
+    AltName="Invisibility: Start Distance"
+    Wiki="When hiding the owner via this effect, this is the start distance for the invisibility." />
+    
+    <camouflageEndDist 
+    AltName="Invisibility: End Distance"
+    Wiki="When hiding the owner via this effect, this is the end distance for the invisibility." />
+    
+    <transformProtectorId 
+    AltName="Transformation: Armor ID"
+    Wiki="The armor ID to draw from when overriding the owner's current equipment (visually)." />
+    Refs="EquipParamProtector" />
+    
+    <midstDmyId 
+    AltName="Continuous: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the particle that is displayed continuously." />
+    
+    <initDmyId 
+    AltName="Start: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the particle that appears when the effect starts." />
+    
+    <finishDmyId 
+    AltName="End: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the particle that appears when the effect end." />
+    
+    <effectType 
+    AltName="Particle Type"
+    Wiki="The particle type for this effect." 
+    Enum="SP_EFFECT_VFX_EFFECT_TYPE" />
+    
+    <soulParamIdForWepEnchant 
+    AltName="Shader for Weapon Enchantment"
+    Wiki="The shader type to display on the weapon of the effect owner." 
+    Enum="SP_EFFECT_VFX_SOUL_PARAM_TYPE" />
+    
+    <playCategory 
+    AltName="Playback Category"
+    Wiki="The playback category for the effect, controls playback if multiple effects overlap." 
+    Enum="SP_EFFECT_VFX_PLAYCATEGORY" />
+    
+    <playPriority 
+    AltName="Playback Priority"
+    Wiki="The priority to give this effect if it overlaps with another." />
+    
+    <existEffectForLarge 
+    AltName="Apply NPC Particle Offset"
+    Wiki="Offsets particle ID according to target's NpcParam sfxSize." 
+    IsBool="" />
+    
+    <existEffectForSoul 
+    AltName="Apply Shader Offset"
+    Wiki="Offsets shader ID according to target's weapon." 
+    IsBool="" />
+    
+    <effectInvisibleAtCamouflage 
+    AltName="Hide Playback when Hidden"
+    Wiki="If ON, playback of the effect is stopped whilst the owner is hidden." 
+    IsBool="" />
+    
+    <useCamouflage 
+    AltName="Apply Invisibility"
+    Wiki="If ON, the invisibility fields are enabled, allowing invisibility." 
+    IsBool="" />
+    
+    <invisibleAtFriendCamouflage 
+    AltName="Apply Invisibility against Friends"
+    Wiki="If ON, invisibility will hide the owner for friendly characters too." 
+    IsBool="" />
+    
+    <addMapAreaBlockOffset 
+    AltName="Map Particle Offset"
+    Wiki="If defined, the particle ID will be prefixed with the map ID it is present in, and the FFX will be looked for within the map's FFX container." 
+    IsBool="" />
+    
+    <halfCamouflage 
+    AltName="Is Partial Invisibility"
+    Wiki="If ON, invisibility is only semi-transparent, not total." 
+    IsBool="" />
+    
+    <isFullBodyTransformProtectorId 
+    AltName="Apply Transformation to Full Body"
+    Wiki="If ON, the transformation ID will apply to all armor slots." 
+    IsBool="" />
+    
+    <isInvisibleWeapon 
+    AltName="Hide Right-Hand Weapon"
+    Wiki="If ON, the effect will make the right-hand weapon of the owner invisible." 
+    IsBool="" />
+    
+    <isSilence 
+    AltName="Suppress Sound"
+    Wiki="If ON, the effect owner produces no sound." 
+    IsBool="" />
+    
+    <pad_1
+    Padding="" />
+    
+    <pad
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="SP_EFFECT_VFX_EFFECT_TYPE">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Right-hand Weapon Enchantment" />
+        <Option Value="2" Name="Left-hand Weapon Enchantment" />
+        <Option Value="3" Name="Reference only" />
+        <Option Value="4" Name="Recovery only" />
+    </Enum>
+    <Enum Name="SP_EFFECT_VFX_SOUL_PARAM_TYPE">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Magic" />
+        <Option Value="2" Name="Fire" />
+        <Option Value="3" Name="Lightning" />
+        <Option Value="4" Name="Dark" />
+        <Option Value="5" Name="Poison" />
+        <Option Value="6" Name="Frost" />
+        <Option Value="7" Name="Physical" />
+    </Enum>
+    <Enum Name="SP_EFFECT_VFX_PLAYCATEGORY">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="System Effect" />
+        <Option Value="2" Name="Head Effect" />
+        <Option Value="3" Name="Body Effect (Positive)" />
+        <Option Value="4" Name="Body Effect (Negative)" />
+        <Option Value="5" Name="Foot Decal Offset" />
+        <Option Value="6" Name="Shader Effect" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

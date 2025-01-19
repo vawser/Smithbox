@@ -1,24 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
+<PARAMMETA XmlVersion="0" >
+  <Self 
+  Wiki="Determines the configuraiton of missiles."/>
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="MissileStandard" 
+    Name="Missiles" />
+  </DisplayNames>
+  
   <Field>
-    <FFXID AltName="FFXID" />
-    <LifeTime AltName="LifeTime" />
-    <HitSphereRadius AltName="HitSphereRadius" />
-    <HitDamage AltName="HitDamage" />
-    <reserve0 AltName="reserve0" />
-    <InitVelocity AltName="InitVelocity" />
-    <distance AltName="distance" />
-    <gravityInRange AltName="gravityInRange" />
-    <gravityOutRange AltName="gravityOutRange" />
-    <mp AltName="mp" />
-    <accelInRange AltName="accelInRange" />
-    <accelOutRange AltName="accelOutRange" />
-    <reserve1 AltName="reserve1" />
-    <HitMissileID AltName="HitMissileID" />
-    <DiedNaturaly AltName="DiedNaturaly" />
-    <ExplosionDie AltName="ExplosionDie" />
-    <behaviorId AltName="behaviorId" />
-    <reserve_last AltName="reserve_last" />
+    <FFXID
+    AltName="Particle ID"
+    Wiki="The SFX ID to use for this missile"
+    ParticleAlias="" />
+    
+    <LifeTime
+    AltName="Duration" 
+    Wiki="Time for projectile to exist in flight (-1 is infinite). In seconds." />
+    
+    <HitSphereRadius
+    AltName="Hit Sphere Radius"
+    Wiki="The radius of the hit sphere. In centimetres." />
+    
+    <HitDamage
+    AltName="Hit Damage"
+    Wiki="The damage incurred upon impact." />
+    
+    <reserve0
+    Padding="" />
+    
+    <InitVelocity
+    AltName="Initial Velocity" 
+    Wiki="Initial speed of projectile." />
+    
+    <distance
+    AltName="Attenuation Range" 
+    Wiki="If the bullet flight distance exceeds this value, the attenuation set by other parameters will be applied." />
+    
+    <gravityInRange
+    AltName="Gravity: In Range" 
+    Wiki="Gravity applied downward within range. In metres per second ^ 2." />
+    
+    <gravityOutRange
+    AltName="Gravity: Out of Range" 
+    Wiki="Gravity applied downward outside of range. In metres per second ^ 2." />
+    
+    <mp
+    AltName="MP Consumption"
+    Wiki="The mana consumption when this missile is fired." />
+    
+    <accelInRange
+    AltName="Acceleration: In Range" 
+    Wiki="Acceleration whilst projectile is within distance threshold. In metres per second ^ 2." />
+    
+    <accelOutRange
+    AltName="Acceleration: Out of Range" 
+    Wiki="Acceleration whilst projectile is beyond the distance threshold. In metres per second ^ 2." />
+    
+    <reserve1
+    Padding="" />
+    
+    <HitMissileID
+    AltName="Hit Bullet ID" 
+    Wiki="The bullet to generate when the projectile expires, or conditionally according to some launchConditionType values." 
+    Refs="MissileStandard" 
+    DeepCopyTarget="Bullet" />
+    
+    <DiedNaturaly
+    AltName="Will Expire"
+    Wiki="If ON, this missile will expire when its duration reaches zero."
+    IsBool="" />
+    
+    <ExplosionDie
+    AltName="Will Explode"
+    Wiki="If ON, this missile will explode when its duration reaches zero."
+    IsBool="" />
+    
+    <behaviorId
+    AltName="Behavior ID on Hit"
+    Wiki="The behavior ID to apply to the victim when this missile hits."
+    Refs="BehaviorParam" />
+    
+    <reserve_last
+    Padding="" />
+    
   </Field>
-  <Self />
+  
 </PARAMMETA>
