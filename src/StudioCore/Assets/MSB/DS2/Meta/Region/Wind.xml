@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <UnkT0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <UnkT10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <UnkT14
+    AltName="Unknown: 0x14"
+    Wiki="" />
+    
+    <UnkT18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+  </Field>
+  <Enums>
+  </Enums>
+</MSBMETA>

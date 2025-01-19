@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <MapVolumeFogParamID
+    AltName="Map Volume Fog ID"
+    Wiki="The ID of the map volumen fog parameters to use."
+    ParamRef="MapVolumeFogParam" />
+    
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+  </Field>
+  <Enums>
+  </Enums>
+</MSBMETA>

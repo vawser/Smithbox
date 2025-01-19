@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <Name
+    AltName="Name"
+    Wiki="The name of the light." />
+  
+    <Type
+    AltName="Emitter Type"
+    Wiki="The emitter type for this light." />
+  
+    <Position
+    AltName="Position"
+    Wiki="Location of the light."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the light, in degrees."
+    RotationProperty="" />
+    
+    <Radius
+    AltName="Radius"
+    Wiki="The radius of this light." />
+    
+    <Sharpness
+    AltName="Sharpness"
+    Wiki="The sharpness of the light." />
+    
+    <LightStartCutoff
+    AltName="Minimum Light Distance"
+    Wiki="Distance from start before light appears." />
+    
+    <ShadowModelCullFlip
+    AltName="Shadow Model Cull Flip"
+    Wiki="" 
+    IsBool="" />
+    
+    <EnableDist
+    AltName="Enable Distance"
+    Wiki="Distance required for a light to transition into view. 0 = always enabled." />
+    
+    <EnableState_UnkC0
+    AltName="Enable State"
+    Wiki="The enable state for this light."
+    ArrayProperty="" />
+    
+    <DiffuseColor
+    AltName="Diffuse Color"
+    Wiki="The diffuse color for this light." />
+    
+    <DiffusePower
+    AltName="Diffuse Intensity"
+    Wiki="The intensity of the diffuse lighting" />
+    
+    <SpecularColor
+    AltName="Specular Color"
+    Wiki="The specular color for this light." />
+    
+    <CastShadows
+    AltName="Cast Shadows"
+    Wiki="If ON, this light will cast shadows" 
+    IsBool="" />
+    
+    <ShadowColor
+    AltName="Shadow Color"
+    Wiki="The color of the shadows for this light." />
+    
+    <FlickerIntervalMin
+    AltName="Flicker: Minimal Interval"
+    Wiki="For a flicking light, this is the minimal interval between each flicker." />
+    
+    <FlickerIntervalMax
+    AltName="Flicker: Maximum Interval"
+    Wiki="For a flicking light, this is the minimal interval between each flicker." />
+    
+    <FlickerBrightnessMult
+    AltName="Flicker: Brightness Multiplier"
+    Wiki="For a flickering light, the brightness multiplier to apply." />
+    
+    <Width
+    AltName="Width"
+    Wiki="The width of the light." />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

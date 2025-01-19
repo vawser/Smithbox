@@ -88,8 +88,8 @@
         <Option Value="8" Name="Collide with all characters" />
         <Option Value="9" Name="Collide with camera only" />
         <Option Value="11" Name="Collide with non-player characters only" />
-        <Option Value="13" Name="Trigger fall death camera on collision" />
-        <Option Value="15" Name="Trigger instant death on collision" />
+        <Option Value="13" Name="Trigger fall death camera in collision" />
+        <Option Value="15" Name="Trigger instant death in collision" />
         <Option Value="16" Name="Type 16" />
         <Option Value="17" Name="Type 17" />
         <Option Value="19" Name="Type 19" />

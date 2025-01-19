@@ -4,10 +4,6 @@
   Wiki="This map object represents a part within the map." />
   
   <Field>
-    <SibPath
-    AltName="Model Placeholder Path"
-    Wiki="A path to a .sib file, presumed to be some kind of editor placeholder." />
-    
     <ModelName
     AltName="Model Name"
     Wiki="The model of the map object, corresponding to an entry in the ModelParam." 
@@ -15,6 +11,10 @@
     
     <ModelIndex
     IndexProperty="" />
+    
+    <SibPath
+    AltName="Model Placeholder Path"
+    Wiki="A path to a .sib file, presumed to be some kind of editor placeholder." />
     
     <Position
     AltName="Position"

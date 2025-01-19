@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <Type
+    AltName="Emitter Type"
+    Wiki="The emitter type for this light." />
+  
+    <Position
+    AltName="Position"
+    Wiki="Location of the light."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the light, in degrees."
+    RotationProperty="" />
+    
+    <Radius
+    AltName="Radius"
+    Wiki="The radius of this light." />
+    
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

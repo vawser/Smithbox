@@ -20,12 +20,12 @@
     
     <PointMoveType
     AltName="Point Move Type"
-    Wiki="" 
+    Wiki="The type of patrolling this enemy does." 
     Enum="POINT_MOVE_TYPE" />
     
     <PlatoonID
     AltName="Platoon Script ID"
-    Wiki="" />
+    Wiki="The platoon formation this enemy follows." />
     
     <CharaInitID
     AltName="Character Initialization ID"

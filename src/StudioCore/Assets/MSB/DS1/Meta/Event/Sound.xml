@@ -6,11 +6,11 @@
   <Field>
     <SoundType
     AltName="Sound Type"
-    Wiki="" />
+    Wiki="The category of sound." />
     
     <SoundID
     AltName="Sound ID"
-    Wiki=""
+    Wiki="The ID of the sound file in the FSBs."
     SoundAlias="" />
     
   </Field>

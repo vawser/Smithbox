@@ -317,13 +317,11 @@ namespace SoulsFormats
             /// <summary>
             /// Center of the region.
             /// </summary>
-            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of the region, in degrees.
             /// </summary>
-            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
@@ -340,7 +338,6 @@ namespace SoulsFormats
             /// Region is inactive unless this part is drawn; null for always active.
             /// </summary>
             public string ActivationPartName { get; set; }
-            [IndexProperty]
             public int ActivationPartIndex { get; set; }
 
             /// <summary>

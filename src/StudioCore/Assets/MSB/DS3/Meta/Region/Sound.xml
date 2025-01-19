@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an sound emitter in the map." />
+  
+  <Field>
+    <SoundType
+    AltName="Sound Type"
+    Wiki="The type of sound this emitter produces." />
+    
+    <SoundID
+    AltName="Sound ID"
+    Wiki="The ID of the sound to emit" 
+    SoundAlias="" />
+    
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="A child region this emitter will use." />
+    
+    <ChildRegionIndices
+    IndexProperty="" />
+    
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="SOUND_TYPE">
+        <Option Value="0" Name="Environment" />
+        <Option Value="6" Name="Boss Fight" />
+        <Option Value="7" Name="Voice" />
+    </Enum>
+  </Enums>
+</MSBMETA>

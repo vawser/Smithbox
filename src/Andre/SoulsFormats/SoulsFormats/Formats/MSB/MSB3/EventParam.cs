@@ -183,7 +183,6 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            [IndexProperty]
             public int PartIndex { get; set; }
 
             /// <summary>
@@ -191,7 +190,6 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Region))]
             public string PointName { get; set; }
-            [IndexProperty]
             public int PointIndex { get; set; }
 
             /// <summary>
@@ -313,19 +311,16 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                [IndexProperty]
                 public int TreasurePartIndex { get; set; }
 
                 /// <summary>
                 /// First item lot given by this treasure.
                 /// </summary>
-                [MSBParamReference(ParamName = "ItemLotParam")]
                 public int ItemLot1 { get; set; }
 
                 /// <summary>
                 /// Second item lot given by this treasure; rarely used.
                 /// </summary>
-                [MSBParamReference(ParamName = "ItemLotParam")]
                 public int ItemLot2 { get; set; }
 
                 /// <summary>
@@ -336,7 +331,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// If not -1, uses an entry from ActionButtonParam for the pickup prompt.
                 /// </summary>
-                [MSBParamReference(ParamName = "ActionButtonParam")]
                 public int ActionButtonParamID { get; set; }
 
                 /// <summary>
@@ -647,13 +641,11 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                [IndexProperty]
                 public int ObjActPartIndex { get; set; }
 
                 /// <summary>
                 /// ID in ObjActParam that configures this ObjAct.
                 /// </summary>
-                [MSBParamReference(ParamName = "ObjActParam")]
                 public int ObjActParamID { get; set; }
 
                 /// <summary>
@@ -734,7 +726,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Position of the map offset.
                 /// </summary>
-                [PositionProperty]
                 public Vector3 Position { get; set; }
 
                 /// <summary>
@@ -812,7 +803,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Ceremony Param ID to use.
                 /// </summary>
-                [MSBParamReference(ParamName = "Ceremony")]
                 public int CeremonyParamID { get; set; }
 
                 /// <summary>
@@ -890,7 +880,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown; probably some kind of route type.
                 /// </summary>
-                [MSBEnum(EnumType = "PATROL_TYPE")]
                 public int PatrolType { get; set; }
 
                 /// <summary>

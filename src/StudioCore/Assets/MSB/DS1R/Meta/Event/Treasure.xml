@@ -14,7 +14,7 @@
     
     <ItemLots
     AltName="Item Lot"
-    Wiki=""
+    Wiki="The item lot to award when this treasure is acquired."
     ArrayProperty="" 
     ParamRef="ItemLotParam" />
     
