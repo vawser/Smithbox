@@ -16,12 +16,20 @@
     AltName="Unknown: 0x8"
     Wiki="" />
     
-    <ColorT0C
-    AltName="Color: 0x0C"
+    <UnkT0C
+    AltName="Unknown: 0x0C"
     Wiki="" />
     
-    <ColorT10
-    AltName="Color: 0x10"
+    <UnkT10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <UnkT14
+    AltName="Unknown: 0x14"
+    Wiki="" />
+    
+    <UnkT18
+    AltName="Unknown: 0x18"
     Wiki="" />
     
     <UnkT1C
@@ -32,34 +40,21 @@
     AltName="Unknown: 0x20"
     Wiki="" />
     
-    <ColorT24
-    AltName="Color: 0x24"
+    <UnkT24
+    AltName="Unknown: 0x24"
     Wiki="" />
     
-    <ColorT28
-    AltName="Color: 0x28"
+    <UnkT28
+    AltName="Unknown: 0x28"
     Wiki="" />
     
-    <ColorT34
-    AltName="Color: 0x34"
+    <UnkT2C
+    AltName="Unknown: 0x2C"
     Wiki="" />
     
-    <ColorT38
-    AltName="Color: 0x8"
+    <UnkT30
+    AltName="Unknown: 0x30"
     Wiki="" />
-    
-    <ColorT3C
-    AltName="Color: 0x3C"
-    Wiki="" />
-    
-    <UnkT40
-    AltName="Unknown: 0x40"
-    Wiki="" />
-    
-    <UnkT44
-    AltName="Unknown: 0x44"
-    Wiki="" />
-    
   </Field>
   
   <Enums>

@@ -4,6 +4,10 @@
   Wiki="This map object represents a particle emitter within the map." />
   
   <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
     <EffectID
     AltName="Particle ID"
     Wiki="The ID of the effect in the ffxbnds."

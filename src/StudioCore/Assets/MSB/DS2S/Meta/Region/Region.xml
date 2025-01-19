@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <Unk08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <Shape
+    AltName="Region Shape"
+    Wiki="Describes the space encompassed by the region." />
+    
+    <Unk0E
+    AltName="Unknown: 0x0E"
+    Wiki="" />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the map object."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the map object, in degrees."
+    RotationProperty="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

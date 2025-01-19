@@ -188,13 +188,11 @@ namespace SoulsFormats
             /// <summary>
             /// Location of the region.
             /// </summary>
-            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of the region, in degrees.
             /// </summary>
-            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             private protected Region(string name)
@@ -657,7 +655,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MSBParamReference(ParamName = "MapVolumeFogParam")]
                 public int MapVolumeFogParamID { get; set; }
 
                 /// <summary>

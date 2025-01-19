@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <ModelName
+    AltName="Model Name"
+    Wiki="The model of the map object, corresponding to an entry in the ModelParam." 
+    ModelNameLink="" />
+    
+    <ModelIndex
+    IndexProperty="" />
+    
+    <Position
+    AltName="Position"
+    Wiki="Location of the map object."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the map object, in degrees."
+    RotationProperty="" />
+    
+    <Scale
+    AltName="Scale"
+    Wiki="Scale of the map object, only meaningful for map pieces and objects."
+    ScaleProperty="" />
+    
+    <DrawGroups
+    AltName="Draw Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <Unk44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+    
+    <Unk48
+    AltName="Unknown: 0x48"
+    Wiki="" />
+    
+    <Unk4C
+    AltName="Unknown: 0x4C"
+    Wiki="" />
+    
+    <Unk50
+    AltName="Unknown: 0x50"
+    Wiki="" />
+    
+    <DispGroups
+    AltName="Display Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <Unk64
+    AltName="Unknown: 0x64"
+    Wiki="" />
+    
+    <Unk6C
+    AltName="Unknown: 0x6C"
+    Wiki="" />
+    
+    <Unk6E
+    AltName="Unknown: 0x6E"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a soapstone message within the map." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <MessageID
+    AltName="Message ID"
+    Wiki="The text ID to display for this message."
+    FmgRef="Blood_Messages" />
+    
+    <MessageParam
+    AltName="Message Param"
+    Wiki="Unknown." />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -187,32 +187,27 @@ namespace SoulsFormats
             /// <summary>
             /// The model of the Part, corresponding to an entry in the ModelParam.
             /// </summary>
-            [ModelNameLink]
             public string ModelName { get; set; }
             private int ModelIndex;
 
             /// <summary>
             /// A path to a .sib file, presumed to be some kind of editor placeholder.
             /// </summary>
-            [IgnoreProperty]
             public string SibPath { get; set; }
 
             /// <summary>
             /// Location of the part.
             /// </summary>
-            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of the part, in degrees.
             /// </summary>
-            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// Scale of the part, only meaningful for map pieces and objects.
             /// </summary>
-            [ScaleProperty]
             public Vector3 Scale { get; set; }
 
             /// <summary>
@@ -605,57 +600,46 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [EnemyProperty]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [EnemyProperty]
                 public int UnkT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [EnemyProperty]
                 public float UnkT08 { get; set; }
 
                 /// <summary>
                 /// ID in NPCParam determining character properties.
                 /// </summary>
-                [MSBParamReference(ParamName = "NpcParam")]
-                [EnemyProperty]
                 public int NPCParamID { get; set; }
 
                 /// <summary>
                 /// ID of a talk ESD used by the character.
                 /// </summary>
-                [EnemyProperty]
                 public int TalkID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [EnemyProperty]
                 public byte PointMoveType { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [EnemyProperty]
                 public ushort PlatoonID { get; set; }
 
                 /// <summary>
                 /// ID in CharaInitParam determining equipment and stats for humans.
                 /// </summary>
-                [EnemyProperty]
-                [MSBParamReference(ParamName = "CharaInitParam")]
                 public int CharaInitID { get; set; }
 
                 /// <summary>
                 /// Collision that controls loading of the enemy.
                 /// </summary>
-                [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
@@ -671,13 +655,11 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [EnemyProperty]
                 public int InitAnimID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [EnemyProperty]
                 public int DamageAnimID { get; set; }
 
                 private protected EnemyBase() : base("cXXXX_XXXX")

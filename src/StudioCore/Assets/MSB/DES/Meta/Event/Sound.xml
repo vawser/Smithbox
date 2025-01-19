@@ -4,6 +4,10 @@
   Wiki="This map object represents a sound emitter within the map." />
   
   <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
     <SoundType
     AltName="Sound Type"
     Wiki="The category of sound." />

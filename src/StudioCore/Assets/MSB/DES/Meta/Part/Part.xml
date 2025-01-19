@@ -4,6 +4,10 @@
   Wiki="This map object represents a part within the map." />
   
   <Field>
+    <Name
+    AltName="Name"
+    Wiki="The name of the part." />
+    
     <ModelName
     AltName="Model Name"
     Wiki="The model of the map object, corresponding to an entry in the ModelParam." 

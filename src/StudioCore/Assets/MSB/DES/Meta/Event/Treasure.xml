@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a treasure within the map." />
+  
+  <Field>
+    <TreasurePartName
+    AltName="Part Name"
+    Wiki="The part referenced by the treasure event."
+    MapRef="Part-Part" />
+    
+    <TreasurePartIndex
+    IndexProperty="" />
+    
+    <ItemLots
+    AltName="Item Lot"
+    Wiki=""
+    ArrayProperty="" 
+    ParamRef="ItemLotParam" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>
