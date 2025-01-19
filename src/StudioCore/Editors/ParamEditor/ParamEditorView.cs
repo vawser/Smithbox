@@ -181,6 +181,7 @@ public class ParamEditorView
         });
 
 
+        var categoryObj = Smithbox.BankHandler.ParamCategories.Categories;
         var categories = Smithbox.BankHandler.ParamCategories.Categories.Categories;
 
         if (categories != null && CFG.Current.Param_DisplayParamCategories)
@@ -205,20 +206,48 @@ public class ParamEditorView
                     generalParamList.Add(paramKey);
             }
 
+            // TODO: perhaps add an actual ordering system to the ParamCategories (using SortID) instead of this crude boolean method
             if (categories.Count > 0)
             {
+                // Categories - Forced Top
+                foreach (var category in categories)
+                {
+                    if (category.ForceTop)
+                    {
+                        if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
+                        {
+                            DisplayParamList(paramKeyList, category.Params, doFocus, scale, scrollTo);
+                        }
+                    }
+                }
+
                 // General List
                 if (ImGui.CollapsingHeader($"General", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     DisplayParamList(paramKeyList, generalParamList, doFocus, scale, scrollTo);
                 }
 
-                // Categories
+                // Categories - Default
                 foreach (var category in categories)
                 {
-                    if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
+                    if (!category.ForceTop && !category.ForceBottom)
                     {
-                        DisplayParamList(paramKeyList, category.Params, doFocus, scale, scrollTo);
+                        if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
+                        {
+                            DisplayParamList(paramKeyList, category.Params, doFocus, scale, scrollTo);
+                        }
+                    }
+                }
+
+                // Categories - Forced Top
+                foreach (var category in categories)
+                {
+                    if (category.ForceBottom)
+                    {
+                        if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
+                        {
+                            DisplayParamList(paramKeyList, category.Params, doFocus, scale, scrollTo);
+                        }
                     }
                 }
             }
@@ -301,12 +330,18 @@ public class ParamEditorView
                 scrollTo = ImGui.GetCursorPosY();
             }
 
+            // Context Menu
             if (ImGui.BeginPopupContextItem())
             {
                 if (ImGui.Selectable("Pin " + paramKey) &&
                     !Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Contains(paramKey))
                 {
                     Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Add(paramKey);
+                }
+
+                if (ImGui.Selectable("Copy Param Name"))
+                {
+                    PlatformUtils.Instance.SetClipboardText(paramKey);
                 }
 
                 if (ParamEditorScreen.EditorMode && p != null)

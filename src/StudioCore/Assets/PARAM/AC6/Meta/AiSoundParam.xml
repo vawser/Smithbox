@@ -39,7 +39,7 @@
     
     <doSetSearchTarget 
     AltName="Set Search Target" 
-    Wiki="" 
+    Wiki="If ON, set the search target when sound is heard." 
     IsBool="" />
 	
 	<pad 

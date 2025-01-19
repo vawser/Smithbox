@@ -529,13 +529,10 @@ public class ToolWindow
                 PinGroupHandler.Display();
             }
 
-            // Param Categories
-            /*
             if (ImGui.CollapsingHeader("Param Categories"))
             {
-                UserParamCategories.Display();
+                ParamCategories.Display();
             }
-            */
         }
 
         ImGui.End();

@@ -27,8 +27,9 @@ public class ParamCategoryResource
 
 public class ParamCategoryEntry
 {
+    public bool ForceBottom { get; set; } = false;
+    public bool ForceTop { get; set; } = false;
+
     public string DisplayName { get; set; }
     public List<string> Params { get; set; }
-
-    public bool IsProjectSpecific { get; set; } = false;
 }

@@ -19,11 +19,11 @@ public class ParamCategoryBank
 
     public ParamCategoryBank() { }
 
-    public void LoadBank()
+    public void LoadBank(bool loadBase = false)
     {
         try
         {
-            Categories = LoadParamCategoriesJSON();
+            Categories = LoadParamCategoriesJSON(loadBase);
             TaskLogs.AddLog($"Banks: setup param categories bank.");
         }
         catch (Exception e)
@@ -32,18 +32,26 @@ public class ParamCategoryBank
         }
     }
 
-    public static ParamCategoryResource LoadParamCategoriesJSON()
+    public static ParamCategoryResource LoadParamCategoriesJSON(bool loadBase = false)
     {
-        var resourcePath = AppContext.BaseDirectory + $"\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Categories.json";
+        var resourcePath = $"{AppContext.BaseDirectory}\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Categories.json";
+        var modResourcePath = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Categories.json";
 
-        var baseResource = new ParamCategoryResource();
-        var modResource = new ParamCategoryResource();
+        // If path does not exist, use baseResource only
+        if (File.Exists(modResourcePath) && !loadBase)
+        {
+            // Otherwise, replace with project-local version
+            using (var stream = File.OpenRead(modResourcePath))
+            {
+                return JsonSerializer.Deserialize(stream, ParamCategorySerializationContext.Default.ParamCategoryResource);
+            }
+        }
 
         if (File.Exists(resourcePath))
         {
             using (var stream = File.OpenRead(resourcePath))
             {
-                baseResource = JsonSerializer.Deserialize(stream, ParamCategorySerializationContext.Default.ParamCategoryResource);
+                return JsonSerializer.Deserialize(stream, ParamCategorySerializationContext.Default.ParamCategoryResource);
             }
         }
         else
@@ -52,43 +60,7 @@ public class ParamCategoryBank
             TaskLogs.AddLog($"Failed to load param categories: {filename} at {resourcePath}", LogLevel.Error);
         }
 
-        var modResourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Categories.json";
-
-        // If path does not exist, use baseResource only
-        if (File.Exists(modResourcePath))
-        {
-            using (var stream = File.OpenRead(modResourcePath))
-            {
-                modResource = JsonSerializer.Deserialize(stream, ParamCategorySerializationContext.Default.ParamCategoryResource);
-            }
-
-            // Add mod local unique rentries
-            foreach (var mEntry in modResource.Categories)
-            {
-                var modDisplayName = mEntry.DisplayName;
-
-                var isUnique = true;
-
-                foreach (var bEntry in baseResource.Categories)
-                {
-                    var baseDisplayName = mEntry.DisplayName;
-                    var baseParams = mEntry.Params;
-
-                    // Mod override exists
-                    if (baseDisplayName == modDisplayName)
-                        isUnique = false;
-                }
-
-                if (isUnique)
-                {
-                    mEntry.IsProjectSpecific = true;
-
-                    baseResource.Categories.Add(mEntry);
-                }
-            }
-        }
-
-        return baseResource;
+        return new ParamCategoryResource();
     }
 
     public void WriteProjectParamCategories()
@@ -96,9 +68,16 @@ public class ParamCategoryBank
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        var modResourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Categories.json";
+        var modResourceDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\";
 
-        if (File.Exists(modResourcePath))
+        var modResourcePath = $"{modResourceDir}\\Categories.json";
+
+        if(!Directory.Exists(modResourceDir))
+        {
+            Directory.CreateDirectory(modResourceDir);
+        }
+
+        if (Directory.Exists(modResourceDir))
         {
             string jsonString = JsonSerializer.Serialize(Categories, typeof(ParamCategoryResource), ParamCategorySerializationContext.Default);
 

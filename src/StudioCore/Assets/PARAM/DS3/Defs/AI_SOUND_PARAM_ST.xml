@@ -6,13 +6,66 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="f32 radius" />
-    <Field Def="f32 lifeFrame" />
-    <Field Def="u8 bSpEffectEnable" />
-    <Field Def="u8 type" />
-    <Field Def="u8 fakeTargetType" />
-    <Field Def="u8 interestCategory" />
-    <Field Def="u8 useHitDamageTeam" />
-    <Field Def="dummy8 pad[19]" />
+    <Field Def="f32 radius">
+      <DisplayName>音半径[m]</DisplayName>
+      <Description>AI音の半径</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65536</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 lifeFrame">
+      <DisplayName>消滅時間[秒]</DisplayName>
+      <Description>AI音が残る時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 bSpEffectEnable">
+      <DisplayName>特殊効果からの影響を受けるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>特殊効果の”音半径倍率”の影響を受けるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u8 type">
+      <DisplayName>種別</DisplayName>
+      <Enum>AI_SOUND_RATE_TYPE</Enum>
+      <Description>AI音の種別</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 opposeTarget:1 = 1">
+      <DisplayName>対象：●敵対</DisplayName>
+      <Enum>AI_SOUND_BOOL</Enum>
+      <Description>対象：●敵対</Description>
+      <Maximum>1</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="u8 friendlyTarget:1">
+      <DisplayName>対象：○味方</DisplayName>
+      <Enum>AI_SOUND_BOOL</Enum>
+      <Description>対象：○味方</Description>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u8 selfTarget:1">
+      <DisplayName>対象：自分</DisplayName>
+      <Enum>AI_SOUND_BOOL</Enum>
+      <Description>対象：自分</Description>
+      <Maximum>1</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="dummy8 pad:5">
+      <SortID>5002</SortID>
+    </Field>
+    <Field Def="u8 rank">
+      <DisplayName>キャラの振る舞い</DisplayName>
+      <Enum>AI_SOUND_RANK</Enum>
+      <Description>キャラの振る舞い</Description>
+      <Maximum>7</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="dummy8 endpad[20]" />
   </Fields>
 </PARAMDEF>
