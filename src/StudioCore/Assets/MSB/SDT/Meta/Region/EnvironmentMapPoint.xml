@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an environmental map point in the map." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <UnkT0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <UnkT10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <UnkT14
+    AltName="Unknown: 0x14"
+    Wiki="" />
+    
+    <UnkT18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+    <UnkT1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <UnkT20
+    AltName="Unknown: 0x20"
+    Wiki="" />
+    
+    <UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <UnkT28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

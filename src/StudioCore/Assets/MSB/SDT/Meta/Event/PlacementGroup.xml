@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a group of associated enemies within the map.\n\nNote: bRestrictSamePlacementGroup in AISoundParam makes sounds spawned by enemies in a PlacementGroup only heard by other enemies in the same group." />
+  
+  <Field>
+    <PlacementGroupEnemyNames
+    AltName="Enemy Name"
+    Wiki="The name of an enemy associated with this group."
+    MapRef="Part-Enemy" 
+    ArrayProperty="" />
+    
+    <PlacementGroupEnemyIndices
+    IndexProperty="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

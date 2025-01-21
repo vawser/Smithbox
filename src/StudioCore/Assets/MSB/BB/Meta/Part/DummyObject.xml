@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game object of varying sizes, from clutter to cliffs. Supports in-built collision, however not all objects use it." />
+  
+  <Field>
+    <CollisionName
+    AltName="Collision Name"
+    Wiki="The collision that controls loading of the object."
+    MapRef="Part-Collision" />
+    
+    <CollisionIndex
+    IndexProperty="" />
+    
+    <BreakTerm
+    AltName="Break Term"
+    Wiki="" />
+    
+    <NetSyncType
+    AltName="Network Synchronization Type"
+    Wiki="" 
+    IsBool="" />
+    
+    <CollisionFilter
+    AltName="Collision Filter"
+    Wiki="" 
+    IsBool="" />
+    
+    <SetMainObjStructureBooleans
+    AltName="Set Main Object Structure Booleans"
+    Wiki=""
+    IsBool="" />
+    
+    <AnimIDs
+    AltName="Idle Animation ID"
+    Wiki="The animation ID for this object to idle with." />
+    
+    <BreakobjID
+    AltName="BreakObj ID"
+    Wiki="Something to do with breakobj functionality. Possibly decides which part of a shared-map (chalice) .breakobj file to use." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

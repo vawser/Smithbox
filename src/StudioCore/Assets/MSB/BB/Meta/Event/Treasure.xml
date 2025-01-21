@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a treasure within the map." />
+  
+  <Field>
+    <TreasurePartName
+    AltName="Part Name"
+    Wiki="The part referenced by the treasure event."
+    MapRef="Part-Part" />
+    
+    <TreasurePartIndex
+    IndexProperty="" />
+    
+    <ItemLot1
+    AltName="Item Lot: 1"
+    Wiki="The item lot to award when this treasure is acquired."
+    ParamRef="ItemLotParam" />
+    
+    <ItemLot2
+    AltName="Item Lot: 2"
+    Wiki="The item lot to award when this treasure is acquired. Rarely used."
+    ParamRef="ItemLotParam" />
+    
+    <UnkT18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+    <ActionButtonParamID
+    AltName="Action Button ID"
+    Wiki="The action button parameters to use when this treasure is used."
+    ParamRef="ActionButtonParam" />
+    
+    <PickupAnimID
+    AltName="Pick-up Animation ID"
+    Wiki="The animation ID the player uses when picking up this treasure." />
+    
+    <InChest
+    AltName="Is Chest"
+    Wiki="If ON, this treasure is within a chest, meaning the glow will be hidden until the chest is triggered and the action prompt is changed."
+    IsBool="" />
+    
+    <StartDisabled
+    AltName="Start Disabled"
+    Wiki="If ON, this treasure is hidden by default."
+    IsBool="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

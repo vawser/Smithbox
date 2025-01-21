@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an invasion point in the map." />
+  
+  <Field>
+    <Priority
+    AltName="Priority"
+    Wiki="The priority of this invasion point compared to the others." />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

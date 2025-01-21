@@ -1,0 +1,4294 @@
+{
+  "list": [
+    {
+      "id": "337",
+      "name": "Hollow",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sleeping on Floor"
+        },
+        {
+          "value": "3",
+          "name": "Kneeling "
+        },
+        {
+          "value": "4",
+          "name": "Writhing on Floor"
+        },
+        {
+          "value": "5",
+          "name": "Standing Prayer"
+        },
+        {
+          "value": "6",
+          "name": "Kneeling Prayer"
+        },
+        {
+          "value": "7",
+          "name": "Banging on Wall"
+        },
+        {
+          "value": "9",
+          "name": "Sitting"
+        },
+        {
+          "value": "10",
+          "name": "Rising from Ground"
+        },
+        {
+          "value": "11",
+          "name": "Dropping Down"
+        },
+        {
+          "value": "15",
+          "name": "Lying Down"
+        },
+        {
+          "value": "17",
+          "name": "Hanging from Ledge"
+        }
+      ]
+    },
+    {
+      "id": "696",
+      "name": "Invisible Hollow",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sleeping on Floor"
+        },
+        {
+          "value": "3",
+          "name": "Kneeling "
+        },
+        {
+          "value": "4",
+          "name": "Writhing on Floor"
+        },
+        {
+          "value": "5",
+          "name": "Standing Prayer"
+        },
+        {
+          "value": "6",
+          "name": "Kneeling Prayer"
+        },
+        {
+          "value": "7",
+          "name": "Banging on Wall"
+        },
+        {
+          "value": "9",
+          "name": "Sitting"
+        },
+        {
+          "value": "10",
+          "name": "Rising from Ground"
+        },
+        {
+          "value": "11",
+          "name": "Dropping Down"
+        },
+        {
+          "value": "15",
+          "name": "Lying Down"
+        },
+        {
+          "value": "17",
+          "name": "Hanging from Ledge"
+        }
+      ]
+    },
+    {
+      "id": "115",
+      "name": "Imported Hollow (Dagger/Unarmed)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Kneeling Prayer"
+        },
+        {
+          "value": "3",
+          "name": "Sitting"
+        },
+        {
+          "value": "4",
+          "name": "Prone"
+        },
+        {
+          "value": "5",
+          "name": "Hanging on Ledge"
+        },
+        {
+          "value": "6",
+          "name": "Stoneform (auto dissolve when near)"
+        },
+        {
+          "value": "15",
+          "name": "Lying Down (Display only)"
+        }
+      ]
+    },
+    {
+      "id": "837",
+      "name": "Imported Hollow (Sword/Bow)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Emote -> Idle (Bow)"
+        },
+        {
+          "value": "3",
+          "name": "Emote -> Idle"
+        },
+        {
+          "value": "4",
+          "name": "Emote -> Idle (Praise the Sun)"
+        },
+        {
+          "value": "5",
+          "name": "Flash -> Idle"
+        },
+        {
+          "value": "6",
+          "name": "Mantle -> Idle"
+        },
+        {
+          "value": "10",
+          "name": "Lying Down"
+        },
+        {
+          "value": "11",
+          "name": "Ghost Hover (Immune to Damage)"
+        },
+        {
+          "value": "12",
+          "name": "Sitting"
+        },
+        {
+          "value": "13",
+          "name": "On Stool with Head in Hands"
+        },
+        {
+          "value": "14",
+          "name": "Cross-legged Sitting"
+        },
+        {
+          "value": "15",
+          "name": "Holding Back Object"
+        },
+        {
+          "value": "16",
+          "name": "Passive (non-hostile until hit)"
+        },
+        {
+          "value": "17",
+          "name": "Passive Sitting (non-hostile until hit)"
+        },
+        {
+          "value": "18",
+          "name": "Passive Guard Pose (non-hostile until hit)"
+        },
+        {
+          "value": "19",
+          "name": "Passive Stool Sitting (non-hostile until hit)"
+        },
+        {
+          "value": "20",
+          "name": "Passive Lean Back Sitting (non-hostile until hit)"
+        }
+      ]
+    },
+    {
+      "id": "838",
+      "name": "Imported Hollow (Crossbow)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Emote -> Idle (Bow)"
+        },
+        {
+          "value": "3",
+          "name": "Emote -> Idle"
+        },
+        {
+          "value": "4",
+          "name": "Emote -> Idle (Praise the Sun)"
+        },
+        {
+          "value": "5",
+          "name": "Flash -> Idle"
+        },
+        {
+          "value": "6",
+          "name": "Mantle -> Idle"
+        },
+        {
+          "value": "10",
+          "name": "Lying Down"
+        },
+        {
+          "value": "11",
+          "name": "Ghost Hover (Immune to Damage)"
+        },
+        {
+          "value": "12",
+          "name": "Sitting"
+        },
+        {
+          "value": "13",
+          "name": "On Stool with Head in Hands"
+        },
+        {
+          "value": "14",
+          "name": "Cross-legged Sitting"
+        },
+        {
+          "value": "15",
+          "name": "Holding Back Object"
+        },
+        {
+          "value": "16",
+          "name": "Passive (non-hostile until hit)"
+        },
+        {
+          "value": "17",
+          "name": "Passive Sitting (non-hostile until hit)"
+        },
+        {
+          "value": "18",
+          "name": "Passive Guard Pose (non-hostile until hit)"
+        },
+        {
+          "value": "19",
+          "name": "Passive Stool Sitting (non-hostile until hit)"
+        },
+        {
+          "value": "20",
+          "name": "Passive Lean Back Sitting (non-hostile until hit)"
+        }
+      ]
+    },
+    {
+      "id": "Hollow Soldier",
+      "name": "102",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Kneeling"
+        },
+        {
+          "value": "3",
+          "name": "Prone"
+        },
+        {
+          "value": "4",
+          "name": "Lying Down"
+        }
+      ]
+    },
+    {
+      "id": "103",
+      "name": "Hollow Infantry",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Kneeling"
+        },
+        {
+          "value": "3",
+          "name": "Prone"
+        },
+        {
+          "value": "4",
+          "name": "Lying Down"
+        },
+        {
+          "value": "15",
+          "name": "Lying Down (bugged)"
+        },
+        {
+          "value": "17",
+          "name": "Climbing Ladder"
+        }
+      ]
+    },
+    {
+      "id": "102",
+      "name": "Royal Soldier (Human)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sleeping"
+        },
+        {
+          "value": "3",
+          "name": "Prone"
+        },
+        {
+          "value": "4",
+          "name": "Sitting"
+        },
+        {
+          "value": "5",
+          "name": "Hands on Wall"
+        },
+        {
+          "value": "6",
+          "name": "Wall Sit"
+        },
+        {
+          "value": "7",
+          "name": "Hold Back"
+        },
+        {
+          "value": "8",
+          "name": "Hands on Wall"
+        },
+        {
+          "value": "9",
+          "name": "Hands on Wall (Head Forward)"
+        },
+        {
+          "value": "15",
+          "name": "Lying Down (bugged)"
+        },
+        {
+          "value": "17",
+          "name": "Climbing Ladder"
+        }
+      ]
+    },
+    {
+      "id": "152",
+      "name": "Royal Swordsman",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Stoneform (dissolve when near)"
+        },
+        {
+          "value": "3",
+          "name": "Stoneform (dissolve when near)"
+        },
+        {
+          "value": "15",
+          "name": "Ragdoll"
+        },
+        {
+          "value": "17",
+          "name": "Climbing Ladder"
+        }
+      ]
+    },
+    {
+      "id": "125",
+      "name": "Rupturing Hollow",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Stumble"
+        },
+        {
+          "value": "3",
+          "name": "Kneeling"
+        },
+        {
+          "value": "4",
+          "name": "Sitting"
+        },
+        {
+          "value": "5",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "127",
+      "name": "Undead Crypt Hollow",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting"
+        },
+        {
+          "value": "3",
+          "name": "Kneeling"
+        },
+        {
+          "value": "4",
+          "name": "Prone"
+        },
+        {
+          "value": "5",
+          "name": "Standing Prayer"
+        },
+        {
+          "value": "6",
+          "name": "Kneeling Prayer"
+        },
+        {
+          "value": "7",
+          "name": "Kneeling Wall Bang"
+        },
+        {
+          "value": "9",
+          "name": "Sitting"
+        },
+        {
+          "value": "11",
+          "name": "Ground Rise"
+        }
+      ]
+    },
+    {
+      "id": "146",
+      "name": "Tseldora Citizen",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Crossed Arms"
+        },
+        {
+          "value": "3",
+          "name": "Drop from Ledge"
+        }
+      ]
+    },
+    {
+      "id": "148",
+      "name": "Tseldora Peasant",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "108",
+      "name": "Rogue",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Crouching"
+        },
+        {
+          "value": "3",
+          "name": "Hug Wall"
+        },
+        {
+          "value": "4",
+          "name": "Prone"
+        },
+        {
+          "value": "5",
+          "name": "Lying Down"
+        }
+      ]
+    },
+    {
+      "id": "107",
+      "name": "Spider Hollow",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "313",
+      "name": "Falconer",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "132",
+      "name": "Skeleton",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Ground Rise"
+        },
+        {
+          "value": "3",
+          "name": "Disassembled"
+        },
+        {
+          "value": "4",
+          "name": "Ground Rise with Skull Attachment"
+        }
+      ]
+    },
+    {
+      "id": "157",
+      "name": "Skeleton (Armored)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Ground Rise"
+        },
+        {
+          "value": "3",
+          "name": "Disassembled"
+        },
+        {
+          "value": "4",
+          "name": "Ground Rise with Skull Attachment"
+        }
+      ]
+    },
+    {
+      "id": "133",
+      "name": "Bonewheel",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "105",
+      "name": "Amana Mage",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Supplication"
+        }
+      ]
+    },
+    {
+      "id": "131",
+      "name": "Amana Archdrake",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "888",
+      "name": "Pyromancer",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "106",
+      "name": "White Priest",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "147",
+      "name": "Crawling Undead",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Lying Down"
+        },
+        {
+          "value": "3",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "149",
+      "name": "Undead Steelworker",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "118",
+      "name": "Hollow Mage",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "312",
+      "name": "Grave Warden",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "306",
+      "name": "Alonne Captain",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "319",
+      "name": "Alonne Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "113",
+      "name": "Varangian",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting on Stool"
+        },
+        {
+          "value": "3",
+          "name": "Sleeping on Table"
+        },
+        {
+          "value": "4",
+          "name": "Climb from Ledge"
+        },
+        {
+          "value": "5",
+          "name": "Crouching"
+        }
+      ]
+    },
+    {
+      "id": "134",
+      "name": "Gyrm (Flail)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Crouching"
+        },
+        {
+          "value": "3",
+          "name": "Sitting (Anvil in Hand)"
+        },
+        {
+          "value": "4",
+          "name": "Sitting (Anvil by Side)"
+        }
+      ]
+    },
+    {
+      "id": "135",
+      "name": "Gyrm (Axe/Greathammer/Crossbow)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Drinking Ale"
+        }
+      ]
+    },
+    {
+      "id": "153",
+      "name": "Syan Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Stoneform (dissolves when near)"
+        }
+      ]
+    },
+    {
+      "id": "314",
+      "name": "Primal Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "315",
+      "name": "Rusted Primal Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Stoneform (dissolves when near)"
+        }
+      ]
+    },
+    {
+      "id": "301",
+      "name": "Heide Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting"
+        }
+      ]
+    },
+    {
+      "id": "835",
+      "name": "Dragon Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Emote -> Idle (Taunt)"
+        },
+        {
+          "value": "3",
+          "name": "Emote -> Idle"
+        },
+        {
+          "value": "4",
+          "name": "Emote -> Idle (Praise the Sun)"
+        },
+        {
+          "value": "5",
+          "name": "Flash -> Idle"
+        },
+        {
+          "value": "6",
+          "name": "Mantle -> Idle"
+        }
+      ]
+    },
+    {
+      "id": "868",
+      "name": "Dragon Champion",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Emote -> Idle (Taunt)"
+        },
+        {
+          "value": "3",
+          "name": "Emote -> Idle"
+        },
+        {
+          "value": "4",
+          "name": "Emote -> Idle (Praise the Sun)"
+        },
+        {
+          "value": "5",
+          "name": "Flash -> Idle"
+        },
+        {
+          "value": "6",
+          "name": "Mantle -> Idle"
+        }
+      ]
+    },
+    {
+      "id": "123",
+      "name": "Suspicious Shadow",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Crouching"
+        },
+        {
+          "value": "3",
+          "name": "Ceiling Drop"
+        }
+      ]
+    },
+    {
+      "id": "124",
+      "name": "Manikin",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "138",
+      "name": "Undead Torturer ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting"
+        },
+        {
+          "value": "3",
+          "name": "Sitting"
+        }
+      ]
+    },
+    {
+      "id": "302",
+      "name": "Undead Jailer",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "511",
+      "name": "Imperious Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "880",
+      "name": "Drakeblood Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Emote -> Idle (Taunt)"
+        },
+        {
+          "value": "3",
+          "name": "Emote -> Idle"
+        },
+        {
+          "value": "4",
+          "name": "Emote -> Idle (Praise the Sun)"
+        },
+        {
+          "value": "5",
+          "name": "Flash -> Idle"
+        },
+        {
+          "value": "6",
+          "name": "Mantle -> Idle"
+        }
+      ]
+    },
+    {
+      "id": "151",
+      "name": "Ironclad",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "117",
+      "name": "Stone Soldier",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Stoneform"
+        }
+      ]
+    },
+    {
+      "id": "150",
+      "name": "Stone Horse Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Stoneform"
+        }
+      ]
+    },
+    {
+      "id": "308",
+      "name": "Lion Warrior",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting"
+        },
+        {
+          "value": "3",
+          "name": "Stoneform"
+        }
+      ]
+    },
+    {
+      "id": "316",
+      "name": "Desert Sorceress",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "317",
+      "name": "Dragon Acolyte",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "509",
+      "name": "Leydia Witch",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "512",
+      "name": "Leydia Spirit",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "838",
+      "name": "Shaded Spirit",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "139",
+      "name": "Artificial Undead ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "665",
+      "name": "Sanctum Guardian",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "666",
+      "name": "Sanctum Soldier",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Lying Down"
+        },
+        {
+          "value": "3",
+          "name": "Sitting"
+        }
+      ]
+    },
+    {
+      "id": "670",
+      "name": "Sanctum Priestess",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "650",
+      "name": "Iron Warrior Giant",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "651",
+      "name": "Fume Sorcerer",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "653",
+      "name": "Ashen Warrior",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "654",
+      "name": "Scorcher",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "656",
+      "name": "Possessed Armor",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Disassembled"
+        }
+      ]
+    },
+    {
+      "id": "663",
+      "name": "Spellsword",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Kneeling"
+        }
+      ]
+    },
+    {
+      "id": "677",
+      "name": "Retainer ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting"
+        }
+      ]
+    },
+    {
+      "id": "688",
+      "name": "Loyce Knight ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting"
+        },
+        {
+          "value": "3",
+          "name": "Kneeling"
+        }
+      ]
+    },
+    {
+      "id": "689",
+      "name": "Charred Loyce Knight ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting -> Crystal Away"
+        },
+        {
+          "value": "3",
+          "name": "Kneeling"
+        },
+        {
+          "value": "4",
+          "name": "Exit Portal"
+        },
+        {
+          "value": "5",
+          "name": "Raise Sword"
+        }
+      ]
+    },
+    {
+      "id": "883",
+      "name": "Elite Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Emote -> Idle (Bow)"
+        },
+        {
+          "value": "3",
+          "name": "Emote -> Idle"
+        },
+        {
+          "value": "4",
+          "name": "Emote -> Idle (Praise the Sun)"
+        },
+        {
+          "value": "5",
+          "name": "Flash -> Idle"
+        },
+        {
+          "value": "6",
+          "name": "Mantle -> Idle"
+        }
+      ]
+    },
+    {
+      "id": "307",
+      "name": "Body of Vengarl",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "730",
+      "name": "Mirror Squire (Ultra Greatsword) ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "731",
+      "name": "Mirror Squire (Syan's Halberd) ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "872",
+      "name": "Astrologist",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "101",
+      "name": "Kobold",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "100",
+      "name": "Goblin",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Idle"
+        },
+        {
+          "value": "3",
+          "name": "Crouching"
+        }
+      ]
+    },
+    {
+      "id": "201",
+      "name": "Undead Boar (Small)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "202",
+      "name": "Undead Boar (Medium)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "214",
+      "name": "Undead Boar (Giant)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "209",
+      "name": "Mutant Dog",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "227",
+      "name": "Undead Dog",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "210",
+      "name": "Basilisk",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Ground Pop"
+        },
+        {
+          "value": "3",
+          "name": "Ground Pop"
+        }
+      ]
+    },
+    {
+      "id": "222",
+      "name": "Giant Basilisk",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "223",
+      "name": "Mongrel Rat",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "226",
+      "name": "Corpse Rat",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "203",
+      "name": "Spider",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Wall Cling (Up)"
+        },
+        {
+          "value": "3",
+          "name": "Wall Cling (Up)"
+        },
+        {
+          "value": "4",
+          "name": "Ceiling Cling"
+        },
+        {
+          "value": "5",
+          "name": "Wall Cling (Down)"
+        }
+      ]
+    },
+    {
+      "id": "204",
+      "name": "Poison Moth",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "695",
+      "name": "Poison Moth (Invisible)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "205",
+      "name": "Horn Beetle",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "672",
+      "name": "Corrosive Insect",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "220",
+      "name": "Giant Horn Beetle",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "608",
+      "name": "Ant Queen",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "601",
+      "name": "Fire Salamander",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "671",
+      "name": "Statue Lizard",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "217",
+      "name": "Darkdweller",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "224",
+      "name": "Darksucker",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "141",
+      "name": "Undead Aberration",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "155",
+      "name": "Amana Aberration",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Idle"
+        },
+        {
+          "value": "3",
+          "name": "Leaping"
+        }
+      ]
+    },
+    {
+      "id": "XXXX",
+      "name": "XXXX",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "300",
+      "name": "Ogre",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Sitting"
+        }
+      ]
+    },
+    {
+      "id": "657",
+      "name": "Cask Runner",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Barrel in Front"
+        },
+        {
+          "value": "3",
+          "name": "Resting on Barrel"
+        }
+      ]
+    },
+    {
+      "id": "661",
+      "name": "Ice Stallion",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "662",
+      "name": "Ice Rat",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Looking About"
+        },
+        {
+          "value": "3",
+          "name": "Leaning Forward"
+        }
+      ]
+    },
+    {
+      "id": "683",
+      "name": "Imperfect Beast",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "330",
+      "name": "Old Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting"
+        }
+      ]
+    },
+    {
+      "id": "331",
+      "name": "Drakekeeper",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Kneeling"
+        }
+      ]
+    },
+    {
+      "id": "311",
+      "name": "Harvest Overseer",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "121",
+      "name": "Giant",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Idle"
+        },
+        {
+          "value": "3",
+          "name": "Leap"
+        }
+      ]
+    },
+    {
+      "id": "309",
+      "name": "Forgotten Giant",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Idle"
+        },
+        {
+          "value": "3",
+          "name": "Leap"
+        }
+      ]
+    },
+    {
+      "id": "659",
+      "name": "Rampart Golem",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Vertical Hold"
+        }
+      ]
+    },
+    {
+      "id": "660",
+      "name": "Ice Golem",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "678",
+      "name": "Golem",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sitting"
+        },
+        {
+          "value": "3",
+          "name": "Shrug"
+        }
+      ]
+    },
+    {
+      "id": "129",
+      "name": "Witchtree Spirit",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "216",
+      "name": "Wall Ghost",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "206",
+      "name": "Razorback Nightcrawler",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Low"
+        }
+      ]
+    },
+    {
+      "id": "674",
+      "name": "Pagan Tree",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "321",
+      "name": "Mimic",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Chest"
+        }
+      ]
+    },
+    {
+      "id": "213",
+      "name": "Crystal Lizard",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "307",
+      "name": "Head of Vengarl",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "502",
+      "name": "Manscorpion Tark",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "506",
+      "name": "Agdayne",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "658",
+      "name": "Alsanna, Silent Oracle",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "700",
+      "name": "Shanalotte",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "701",
+      "name": "Child Shanalotte",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "703",
+      "name": "Human Nashandra",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "704",
+      "name": "Laddersmith Gilligan",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "705",
+      "name": "Strowen",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "723",
+      "name": "Housekeeper Milibeth",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "721",
+      "name": "Chancellor Wellager",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "724",
+      "name": "Captain Drummond",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "725",
+      "name": "Darkdiver Grandahl",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "726",
+      "name": "Lonesome Gavlan",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "741",
+      "name": "Saulden",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "742",
+      "name": "Creighton",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "744",
+      "name": "Pate",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "743",
+      "name": "Benhart",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "751",
+      "name": "Cale",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "752",
+      "name": "Lucatiel",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "754",
+      "name": "Melentia",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "304",
+      "name": "Milfanito (Hollow)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "760",
+      "name": "Milfanito ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "761",
+      "name": "Maughlin",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "762",
+      "name": "Chloanne",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "763",
+      "name": "Rosabeth",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "764",
+      "name": "Lenigrast",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "764",
+      "name": "McDuff",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "766",
+      "name": "Carhillion",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "768",
+      "name": "Straid",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "769",
+      "name": "Licia",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "770",
+      "name": "Felkin",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "771",
+      "name": "Royal Sorcerer Navlaan",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "772",
+      "name": "Magerold",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "776",
+      "name": "Ornifex",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "777",
+      "name": "Shalquoir",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "783",
+      "name": "Titchy Gren",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "784",
+      "name": "Cromwell",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "785",
+      "name": "Targray",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "226",
+      "name": "Rat King",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "753",
+      "name": "Bell Keeper",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "884",
+      "name": "Twiggy Shei",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "891",
+      "name": "Sellsword Luet",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "892",
+      "name": "Manhunter O'Harrah",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "867",
+      "name": "Steelheart Ellie",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "866",
+      "name": "Steelheart Ellie",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "892",
+      "name": "Bashful Ray",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "813",
+      "name": "Felicia the Brave",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "890",
+      "name": "Felicia the Brave",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "810",
+      "name": "Bradley of the Old Guard",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "893",
+      "name": "Bradley of the Old Guard",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "891",
+      "name": "Devotee Scarlett",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "875",
+      "name": "Steel-willed Lorrie",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "876",
+      "name": "Drifter Swordsman Aidel",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "868",
+      "name": "Transcedent Edde",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "869",
+      "name": "Rapacious Andrei",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "865",
+      "name": "Abbess Feeva",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "866",
+      "name": "Ruined Alfis",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "810",
+      "name": "Masterless Glencour",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "811",
+      "name": "Lone Hunter Schmidt",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "812",
+      "name": "Pilgrim Bellclaire",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "820",
+      "name": "Ashen Knight Boyd",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "853",
+      "name": "Ashen Knight Boyd",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "897",
+      "name": "Armourer Dennis",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "824",
+      "name": "Aslatiel of Mirrah",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "853",
+      "name": "Bowman Guthry",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "877",
+      "name": "Castaway Witch Donna",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "823",
+      "name": "Dragonfang Villard",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "694",
+      "name": "Forlorn",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "695",
+      "name": "Forlorn",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "897",
+      "name": "Fencer Sharron",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "887",
+      "name": "Gutter Denizen",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "878",
+      "name": "Hexer Nicholai",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "879",
+      "name": "Holy Knight Aurheim",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "849",
+      "name": "Jester Thomas",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "861",
+      "name": "Jester Thomas",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "871",
+      "name": "Maldron the Assassin",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "814",
+      "name": "Melinda the Butcher",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "821",
+      "name": "Merciless Roenna",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "849",
+      "name": "Nameless Usurper",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "898",
+      "name": "Oliver the Collector",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "822",
+      "name": "Peculiar Kindular",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "881",
+      "name": "Prowler (Katana)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "882",
+      "name": "Prowler (Bow)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "870",
+      "name": "Quicksword Rachel",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "849",
+      "name": "Rhoy the Explorer",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "860",
+      "name": "Rockshield Baldyr",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "771",
+      "name": "Royal Sorcerer Navlaan",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "896",
+      "name": "Woodland Child",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "832",
+      "name": "Abyss Phantom",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "318",
+      "name": "Pursuer",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Appear from Ground"
+        },
+        {
+          "value": "3",
+          "name": "Land from Crow"
+        }
+      ]
+    },
+    {
+      "id": "611",
+      "name": "Dragonrider ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Riding Pose"
+        }
+      ]
+    },
+    {
+      "id": "625",
+      "name": "Old Dragonslayer",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "303",
+      "name": "Flexile Sentry",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "325",
+      "name": "Ruin Sentinels",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Forward Position"
+        }
+      ]
+    },
+    {
+      "id": "626",
+      "name": "Lost Sinner",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "324",
+      "name": "Belfry Gargoyle",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Stoneform"
+        }
+      ]
+    },
+    {
+      "id": "154",
+      "name": "Skeleton Lord",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "619",
+      "name": "Executioner's Chariot",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "500",
+      "name": "Covetous Demon",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "501",
+      "name": "Mytha, the Baneful Queen",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "305",
+      "name": "Smelter Demon",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "607",
+      "name": "Old Iron King",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "503",
+      "name": "Scorpioness Najka",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "628",
+      "name": "Royal Rat Authority",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "226",
+      "name": "Royal Rat Vanguard",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "137",
+      "name": "Prowling Magus",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "603",
+      "name": "Duke's Dear Freja",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "326",
+      "name": "Rotten ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "504",
+      "name": "Looking Glass Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "602",
+      "name": "Demon of Song",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "333",
+      "name": "Velstadt, the Royal Aegis",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "212",
+      "name": "Guardian Dragon",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        },
+        {
+          "value": "2",
+          "name": "Sleeping"
+        }
+      ]
+    },
+    {
+      "id": "600",
+      "name": "Ancient Dragon",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "309",
+      "name": "Giant Lord",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "332",
+      "name": "Throne Defender",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "334",
+      "name": "Throne Watcher",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "627",
+      "name": "Nashandra",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "514",
+      "name": "Vendrick (Hollow)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "684",
+      "name": "Vendrick (Human)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "692",
+      "name": "Aldia",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "506",
+      "name": "Darklurker",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "682",
+      "name": "Elana, the Squalid Queen",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "685",
+      "name": "Skeleton (Elana)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "686",
+      "name": "Boar (Elana)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "687",
+      "name": "Velstadt (Elana)",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "681",
+      "name": "Sinh, the Slumbering Dragon",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "862",
+      "name": "Cerah, the Old Explorer ",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "863",
+      "name": "Ancient Soldier Varg",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "864",
+      "name": "Afflicted Graverobber",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "675",
+      "name": "Fume Knight",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "680",
+      "name": "Sir Alonne",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "679",
+      "name": "Aava, the King's Pet",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "690",
+      "name": "Burnt Ivory King",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "679",
+      "name": "Lud",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    },
+    {
+      "id": "679",
+      "name": "Zallen",
+      "states": [
+        {
+          "value": "0",
+          "name": "Idle"
+        },
+        {
+          "value": "1",
+          "name": "Idle"
+        }
+      ]
+    }
+  ]
+}

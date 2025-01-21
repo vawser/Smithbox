@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a form of collision. Typically used to block player or enemy movement, but also used for detection such as for kill planes, or the generation of special footstep visual effects, such as in water or lava." />
+  
+  <Field>
+    <HitFilterID
+    AltName="Hit Filter ID"
+    Wiki="Determines the behavior of the collision with other entities." 
+    Enum="HIT_FILTER_TYPE" />
+    
+    <SoundSpaceType
+    AltName="Sound Space Type"
+    Wiki="The sound space type this collision applies to sounds." 
+    Enum="SOUND_SPACE_TYPE" />
+    
+    <ReflectPlaneHeight
+    AltName="Reflection Plane Height"
+    Wiki="" />
+    
+    <MapNameID
+    AltName="Map Name ID"
+    Wiki=" Determines the text to display for map popups and save files." />
+    
+    <DisableStart
+    AltName="Disable Start"
+    Wiki=""
+    IsBool="" />
+    
+    <UnkT17
+    AltName="Unknown: 0x17"
+    Wiki="" />
+    
+    <DisableBonfireEntityID
+    AltName="Disable Bonfire Entity on Enemy Presence"
+    Wiki="The entity ID of the bonfire to disable if enemy is on this collision." />
+    
+    <UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <UnkT25
+    AltName="Unknown: 0x25"
+    Wiki="" />
+    
+    <UnkT26
+    AltName="Unknown: 0x26"
+    Wiki="" />
+    
+    <MapVisibility
+    AltName="Map Visibility Type"
+    Wiki="The type of visibility the player has when on this collision" 
+    Enum="MAP_VISIBILITY" />
+    
+    <PlayRegionID
+    AltName="Play Region ID"
+    Wiki="" 
+    ParamRef="PlayRegionParam" />
+    
+    <LockCamParamID
+    AltName="Lock-cam Param ID"
+    Wiki="" 
+    ParamRef="LockCamParam" />
+    
+    <UnkT3C
+    AltName="Unknown: 0x3C"
+    Wiki="" />
+    
+    <UnkT40
+    AltName="Unknown: 0x40"
+    Wiki="" />
+    
+    <UnkT44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+    
+    <UnkT48
+    AltName="Unknown: 0x48"
+    Wiki="" />
+    
+    <UnkT4C
+    AltName="Unknown: 0x4C"
+    Wiki="" />
+    
+    <UnkT50
+    AltName="Unknown: 0x50"
+    Wiki="" />
+    
+    <UnkT54
+    AltName="Unknown: 0x54"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="HIT_FILTER_TYPE">
+        <Option Value="0" Name="Standard: No High Collision - No Foot IK" />
+        <Option Value="1" Name="Standard: No High Collision" />
+        <Option Value="2" Name="Standard: No High Collision" />
+        <Option Value="3" Name="Standard: No High Collision" />
+        <Option Value="4" Name="Standard: No High Collision" />
+        <Option Value="5" Name="Standard: No High Collision" />
+        <Option Value="6" Name="Standard: No High Collision" />
+        <Option Value="7" Name="Standard: No High Collision" />
+        <Option Value="8" Name="Collide with all characters" />
+        <Option Value="9" Name="Collide with camera only" />
+        <Option Value="11" Name="Collide with non-player characters only" />
+        <Option Value="13" Name="Trigger fall death camera in collision" />
+        <Option Value="14" Name="Trigger fall death camera in collision" />
+        <Option Value="15" Name="Trigger instant death on collision" />
+        <Option Value="16" Name="Type 16" />
+        <Option Value="17" Name="Type 17" />
+        <Option Value="19" Name="Collide with non-player characters only" />
+        <Option Value="20" Name="Type 20" />
+        <Option Value="21" Name="Slide movement" />
+        <Option Value="22" Name="Block all fall damage" />
+        <Option Value="23" Name="Type 23" />
+        <Option Value="24" Name="Type 24" />
+        <Option Value="29" Name="Type 29" />
+    </Enum>
+    <Enum Name="SOUND_SPACE_TYPE">
+        <Option Value="0" Name="No Reverb" />
+        <Option Value="1" Name="Small Reverb: A" />
+        <Option Value="2" Name="Small Reverb: B" />
+        <Option Value="3" Name="Middle Reverb: A" />
+        <Option Value="4" Name="Middle Reverb: B" />
+        <Option Value="5" Name="Large Reverb: A" />
+        <Option Value="6" Name="Large Reverb: B" />
+        <Option Value="7" Name="Massive Reverb: A" />
+        <Option Value="8" Name="Massive Reverb: B" />
+    </Enum>
+    <Enum Name="MAP_VISIBILITY">
+        <Option Value="0" Name="Good" />
+        <Option Value="1" Name="Dark" />
+        <Option Value="2" Name="Total Dark" />
+    </Enum>
+  </Enums>
+</MSBMETA>

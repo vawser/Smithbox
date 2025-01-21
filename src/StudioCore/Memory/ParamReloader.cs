@@ -85,7 +85,8 @@ internal class ParamReloader
                 }
                 else
                 {
-                    throw new Exception("Unable to find running game");
+                    TaskLogs.AddLog("Unable to find running game", LogLevel.Error);
+                    //throw new Exception("Unable to find running game");
                 }
             }
         );

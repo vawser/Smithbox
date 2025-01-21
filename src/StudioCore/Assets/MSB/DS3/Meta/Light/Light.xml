@@ -82,9 +82,128 @@
     Wiki="For a flickering light, the brightness multiplier to apply." />
     
     <Width
-    AltName="Width"
-    Wiki="The width of the light." />
+    AltName="Spot Light: Width"
+    Wiki="The width of the spot light." />
     
+    <NearClip
+    AltName="Spot Light: Start Distance"
+    Wiki="Distance at which spot light beam starts." />
+    
+    <ConeAngle
+    AltName="Spot Light: Tightness"
+    Wiki="" />
+    
+    <EventID
+    AltName="Event ID"
+    Wiki="Referenced by map events. Only used in DS2." />
+    
+    <VolumeDensity
+    AltName="Volume Density"
+    Wiki="" />
+    
+    <Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <Unk30
+    AltName="Unknown: 0x30"
+    Wiki="" />
+    
+    <Unk34
+    AltName="Unknown: 0x34"
+    Wiki="" />
+    
+    <Unk50
+    AltName="Unknown: 0x50"
+    Wiki="" />
+    
+    <Unk54
+    AltName="Unknown: 0x54"
+    Wiki="" />
+    
+    <Unk5C
+    AltName="Unknown: 0x5C"
+    Wiki="" />
+    
+    <Unk64
+    AltName="Unknown: 0x64"
+    Wiki="" />
+    
+    <Unk68
+    AltName="Unknown: 0x68"
+    Wiki="" />
+    
+    <Unk70
+    AltName="Unknown: 0x70"
+    Wiki="" />
+    
+    <Unk84
+    AltName="Unknown: 0x84"
+    Wiki="" />
+    
+    <Unk88
+    AltName="Unknown: 0x88"
+    Wiki="" />
+    
+    <Unk90
+    AltName="Unknown: 0x90"
+    Wiki="" />
+    
+    <Unk98
+    AltName="Unknown: 0x98"
+    Wiki="" />
+    
+    <UnkA0
+    AltName="Unknown: 0xA0"
+    Wiki="" />
+    
+    <UnkA1
+    AltName="Unknown: 0xA1"
+    Wiki="" />
+    
+    <UnkA2
+    AltName="Unknown: 0xA2"
+    Wiki="" />
+    
+    <UnkAC
+    AltName="Unknown: 0xAC"
+    Wiki="" />
+    
+    <UnkC8
+    AltName="Unknown: 0xC8"
+    Wiki="" />
+    
+    <UnkCC
+    AltName="Unknown: 0xCC"
+    Wiki="" />
+    
+    <UnkD4
+    AltName="Unknown: 0xD4"
+    Wiki="" />
+    
+    <UnkD8
+    AltName="Unknown: 0xD8"
+    Wiki="" />
+    
+    <UnkDC
+    AltName="Unknown: 0xDC"
+    Wiki="" />
+    
+    <UnkE0
+    AltName="Unknown: 0xE0"
+    Wiki="" />
+    
+    <UnkE4
+    AltName="Unknown: 0xE4"
+    Wiki="" />
+    
+    <UnkE8
+    AltName="Unknown: 0xE8"
+    Wiki="" />
+    
+    <UnkEB
+    AltName="Unknown: 0xEB"
+    Wiki="" />
   </Field>
   
   <Enums>

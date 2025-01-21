@@ -201,7 +201,6 @@ namespace SoulsFormats
             /// <summary>
             /// The model of the Part, corresponding to an entry in the ModelParam.
             /// </summary>
-            [ModelNameLink]
             public string ModelName { get; set; }
             private int ModelIndex;
 
@@ -213,19 +212,16 @@ namespace SoulsFormats
             /// <summary>
             /// Location of the part.
             /// </summary>
-            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of the part, in degrees.
             /// </summary>
-            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// Scale of the part, only meaningful for map pieces and objects.
             /// </summary>
-            [ScaleProperty]
             public Vector3 Scale { get; set; }
 
             /// <summary>
@@ -251,7 +247,6 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MSBParamReference(ParamName = "ResidentFxParam")]
             public int ResidentFXParamID { get; set; }
 
             /// <summary>
@@ -796,20 +791,20 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this map piece.
                 /// </summary>
-                public GparamConfig Gparam { get; set; }
+                public GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Creates a MapPiece with default values.
                 /// </summary>
                 public MapPiece() : base("mXXXXXX_XXXX")
                 {
-                    Gparam = new GparamConfig();
+                    GparamConfig = new GparamConfig();
                 }
 
                 private protected override void DeepCopyTo(Part part)
                 {
                     var piece = (MapPiece)part;
-                    piece.Gparam = Gparam.DeepCopy();
+                    piece.GparamConfig = GparamConfig.DeepCopy();
                 }
 
                 internal MapPiece(BinaryReaderEx br) : base(br) { }
@@ -820,7 +815,7 @@ namespace SoulsFormats
                     br.AssertInt32(0);
                 }
 
-                private protected override void ReadGparamConfig(BinaryReaderEx br) => Gparam = new GparamConfig(br);
+                private protected override void ReadGparamConfig(BinaryReaderEx br) => GparamConfig = new GparamConfig(br);
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
@@ -828,7 +823,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                 }
 
-                private protected override void WriteGparamConfig(BinaryWriterEx bw) => Gparam.Write(bw);
+                private protected override void WriteGparamConfig(BinaryWriterEx bw) => GparamConfig.Write(bw);
             }
 
             /// <summary>
@@ -843,7 +838,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this object.
                 /// </summary>
-                public GparamConfig Gparam { get; set; }
+                public GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Collision that controls loading of the object.
@@ -885,7 +880,7 @@ namespace SoulsFormats
 
                 private protected ObjectBase() : base("oXXXXXX_XXXX")
                 {
-                    Gparam = new GparamConfig();
+                    GparamConfig = new GparamConfig();
                     AnimIDs = new short[4] { -1, -1, -1, -1 };
                     BreakobjID = new int[2];
                 }
@@ -893,7 +888,7 @@ namespace SoulsFormats
                 private protected override void DeepCopyTo(Part part)
                 {
                     var obj = (ObjectBase)part;
-                    obj.Gparam = Gparam.DeepCopy();
+                    obj.GparamConfig = GparamConfig.DeepCopy();
                     obj.AnimIDs = (short[])AnimIDs.Clone();
                     obj.BreakobjID = (int[])BreakobjID.Clone();
                 }
@@ -913,7 +908,7 @@ namespace SoulsFormats
                     BreakobjID = br.ReadInt32s(2);
                 }
 
-                private protected override void ReadGparamConfig(BinaryReaderEx br) => Gparam = new GparamConfig(br);
+                private protected override void ReadGparamConfig(BinaryReaderEx br) => GparamConfig = new GparamConfig(br);
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
@@ -928,7 +923,7 @@ namespace SoulsFormats
                     bw.WriteInt32s(BreakobjID);
                 }
 
-                private protected override void WriteGparamConfig(BinaryWriterEx bw) => Gparam.Write(bw);
+                private protected override void WriteGparamConfig(BinaryWriterEx bw) => GparamConfig.Write(bw);
 
                 internal override void GetNames(MSBB msb, Entries entries)
                 {
@@ -970,18 +965,16 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this enemy.
                 /// </summary>
-                public GparamConfig Gparam { get; set; }
+                public GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// ID in NPCThinkParam determining AI properties.
                 /// </summary>
-                [MSBParamReference(ParamName = "NpcThinkParam")]
                 public int ThinkParamID { get; set; }
 
                 /// <summary>
                 /// ID in NPCParam determining character properties.
                 /// </summary>
-                [MSBParamReference(ParamName = "NpcParam")]
                 public int NPCParamID { get; set; }
 
                 /// <summary>
@@ -997,7 +990,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID in CharaInitParam determining equipment and stats for humans.
                 /// </summary>
-                [MSBParamReference(ParamName = "CharaInitParam")]
                 public int CharaInitID { get; set; }
 
                 /// <summary>
@@ -1031,7 +1023,7 @@ namespace SoulsFormats
 
                 private protected EnemyBase() : base("cXXXX_XXXX")
                 {
-                    Gparam = new GparamConfig();
+                    GparamConfig = new GparamConfig();
                     ThinkParamID = -1;
                     NPCParamID = -1;
                     TalkID = -1;
@@ -1042,7 +1034,7 @@ namespace SoulsFormats
                 private protected override void DeepCopyTo(Part part)
                 {
                     var enemy = (EnemyBase)part;
-                    enemy.Gparam = Gparam.DeepCopy();
+                    enemy.GparamConfig = GparamConfig.DeepCopy();
                     enemy.MovePointNames = (string[])MovePointNames.Clone();
                 }
 
@@ -1066,7 +1058,7 @@ namespace SoulsFormats
                     DamageAnimID = br.ReadInt32();
                 }
 
-                private protected override void ReadGparamConfig(BinaryReaderEx br) => Gparam = new GparamConfig(br);
+                private protected override void ReadGparamConfig(BinaryReaderEx br) => GparamConfig = new GparamConfig(br);
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
@@ -1086,7 +1078,7 @@ namespace SoulsFormats
                     bw.WriteInt32(DamageAnimID);
                 }
 
-                private protected override void WriteGparamConfig(BinaryWriterEx bw) => Gparam.Write(bw);
+                private protected override void WriteGparamConfig(BinaryWriterEx bw) => GparamConfig.Write(bw);
 
                 internal override void GetNames(MSBB msb, Entries entries)
                 {
@@ -1184,12 +1176,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this collision.
                 /// </summary>
-                public GparamConfig Gparam { get; set; }
+                public GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public SceneGparamConfig SceneGparam { get; set; }
+                public SceneGparamConfig SceneGparamConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1251,8 +1243,8 @@ namespace SoulsFormats
                 /// </summary>
                 public Collision() : base("hXXXXXX_XXXX")
                 {
-                    Gparam = new GparamConfig();
-                    SceneGparam = new SceneGparamConfig();
+                    GparamConfig = new GparamConfig();
+                    SceneGparamConfig = new SceneGparamConfig();
                     MapNameID = -1;
                     DisableBonfireEntityID = -1;
                     LockCamParamID1 = -1;
@@ -1262,8 +1254,8 @@ namespace SoulsFormats
                 private protected override void DeepCopyTo(Part part)
                 {
                     var collision = (Collision)part;
-                    collision.Gparam = Gparam.DeepCopy();
-                    collision.SceneGparam = SceneGparam.DeepCopy();
+                    collision.GparamConfig = GparamConfig.DeepCopy();
+                    collision.SceneGparamConfig = SceneGparamConfig.DeepCopy();
                 }
 
                 internal Collision(BinaryReaderEx br) : base(br) { }
@@ -1283,8 +1275,8 @@ namespace SoulsFormats
                     LockCamParamID2 = br.ReadInt16();
                 }
 
-                private protected override void ReadGparamConfig(BinaryReaderEx br) => Gparam = new GparamConfig(br);
-                private protected override void ReadSceneGparamConfig(BinaryReaderEx br) => SceneGparam = new SceneGparamConfig(br);
+                private protected override void ReadGparamConfig(BinaryReaderEx br) => GparamConfig = new GparamConfig(br);
+                private protected override void ReadSceneGparamConfig(BinaryReaderEx br) => SceneGparamConfig = new SceneGparamConfig(br);
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
@@ -1301,8 +1293,8 @@ namespace SoulsFormats
                     bw.WriteInt16(LockCamParamID2);
                 }
 
-                private protected override void WriteGparamConfig(BinaryWriterEx bw) => Gparam.Write(bw);
-                private protected override void WriteSceneGparamConfig(BinaryWriterEx bw) => SceneGparam.Write(bw);
+                private protected override void WriteGparamConfig(BinaryWriterEx bw) => GparamConfig.Write(bw);
+                private protected override void WriteSceneGparamConfig(BinaryWriterEx bw) => SceneGparamConfig.Write(bw);
             }
 
             /// <summary>

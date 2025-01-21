@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game entity, used for enemies, characters and interaction points that make use of the Talk system." />
+  
+  <Field>
+    <ThinkParamID
+    AltName="NPC Think Param ID"
+    Wiki="The AI parameters this character should use." 
+    ParamRef="NpcThinkParam" />
+    
+    <NPCParamID
+    AltName="NPC Param ID"
+    Wiki="The property parameters this character should use." 
+    ParamRef="NpcParam" />
+    
+    <UnkT10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <PlatoonID
+    AltName="Platoon Script ID"
+    Wiki="The platoon formation this enemy follows" />
+    
+    <CharaInitID
+    AltName="Character Initialization ID"
+    Wiki="The ID in CharaInitParam determining equipment and stats for humans."
+    ParamRef="CharaInitParam" />
+    
+    <CollisionPartName
+    AltName="Collision Name"
+    Wiki="The collision that controls loading of the enemy."
+    MapRef="Part-Collision" />
+    
+    <CollisionPartIndex
+    IndexProperty="" />
+    
+    <WalkRouteName
+    AltName="Walk Route"
+    Wiki="The walk route this enemy follows."
+    MapRef="Event-PatrolInfo" />
+    
+    <WalkRouteIndex
+    IndexProperty="" />
+    
+    <InitAnimIDType
+    AltName="Idle Animation ID Type"
+    Wiki="The type of animation ID to use." />
+    
+    <UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <BackupEventAnimID
+    AltName="Idle Animation ID"
+    Wiki="The animation ID for this enemy to idle with." />
+    
+    <EventFlagID
+    AltName="Event Flag ID"
+    Wiki="" />
+    
+    <EventFlagCompareState
+    AltName="Event Flag Compare State"
+    Wiki="" />
+    
+    <UnkT48
+    AltName="Unknown: 0x48"
+    Wiki="" />
+    
+    <UnkT4C
+    AltName="Unknown: 0x4C"
+    Wiki="" />
+    
+    <UnkT50
+    AltName="Unknown: 0x50"
+    Wiki="" />
+    
+    <UnkT78
+    AltName="Unknown: 0x78"
+    Wiki="" />
+    
+    <UnkT84
+    AltName="Unknown: 0x84"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

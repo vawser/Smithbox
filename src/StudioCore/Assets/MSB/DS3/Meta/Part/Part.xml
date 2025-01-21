@@ -127,6 +127,11 @@
     AltName="Unknown: 0x18"
     Wiki="" />
     
+    
+    <GparamConfig
+    AltName="GPARAM Configuration"
+    Wiki="" />
+    
     <LightSetID
     AltName="Light Set ID"
     Wiki="The ID of the value set from LightSet ParamEditor to use." />
@@ -142,6 +147,11 @@
     <EnvMapID
     AltName="Environmental Map ID"
     Wiki="The ID of the value set from Env Map:Editor to use." />
+    
+    
+    <SceneGparamConfig
+    AltName="Scene GPARAM Configuration"
+    Wiki="" />
     
     <ShadowParamID
     AltName="Shadow ID"

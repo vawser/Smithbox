@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a form of collision used to connect different maps together. When the player steps on a ConnectCollision, the specified map(s) will be loaded." />
+  
+  <Field>
+    <CollisionName
+    AltName="Collision Name"
+    Wiki="The collision that controls loading of the next map."
+    MapRef="Part-Collision" />
+    
+    <CollisionIndex
+    IndexProperty="" />
+    
+    <MapID
+    AltName="Map ID"
+    Wiki=""
+    ArrayProperty="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>
