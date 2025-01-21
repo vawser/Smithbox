@@ -599,27 +599,6 @@ namespace SoulsFormats
             /// </summary>
             public class Sound : Region
             {
-                /// <summary>
-                /// Types of sound that may be in a Sound region.
-                /// </summary>
-                public enum SndType : uint
-                {
-                    /// <summary>
-                    /// Ambient sounds like wind, creaking, etc.
-                    /// </summary>
-                    Environment = 0,
-
-                    /// <summary>
-                    /// Boss fight music.
-                    /// </summary>
-                    BGM = 6,
-
-                    /// <summary>
-                    /// Character voices.
-                    /// </summary>
-                    Voice = 7,
-                }
-
                 private protected override RegionType Type => RegionType.Sound;
                 private protected override TypeDataPresence ShouldHaveTypeData => TypeDataPresence.Always;
                 private protected override bool DoesHaveTypeData => true;
@@ -627,7 +606,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Type of sound in this region; determines mixing behavior like muffling.
                 /// </summary>
-                public SndType SoundType { get; set; } = SndType.Environment;
+                public uint SoundType { get; set; } = 0;
 
                 /// <summary>
                 /// ID of the sound to play in this region, or 0 for child regions.
@@ -646,7 +625,7 @@ namespace SoulsFormats
                 /// </summary>
                 public Sound() : base($"{nameof(Region)}: {nameof(Sound)}")
                 {
-                    SoundType = SndType.Environment;
+                    SoundType = 0;
                     ChildRegionNames = new string[16];
                 }
 
@@ -660,7 +639,7 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    SoundType = br.ReadEnum32<SndType>();
+                    SoundType = br.ReadUInt32();
                     SoundID = br.ReadInt32();
                     ChildRegionIndices = br.ReadInt32s(16);
                 }

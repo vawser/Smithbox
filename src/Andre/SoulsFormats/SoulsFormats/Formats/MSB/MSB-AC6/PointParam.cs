@@ -530,13 +530,11 @@ namespace SoulsFormats
             /// <summary>
             /// The location of the region.
             /// </summary>
-            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
-            /// The rotiation of the region, in degrees.
+            /// The rotation of the region, in degrees.
             /// </summary>
-            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
@@ -1177,9 +1175,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] ChildRegionNames { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int[] ChildRegionIndices { get; set; }
 
                 /// <summary>
@@ -1240,7 +1235,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// The ID of the particle effect FFX.
                 /// </summary>
-                [MSBAliasEnum(AliasEnumType = "PARTICLES")]
                 public int EffectID { get; set; }
 
                 /// <summary>
@@ -1279,7 +1273,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID of the effect FFX.
                 /// </summary>
-                [MSBAliasEnum(AliasEnumType = "PARTICLES")]
                 public int EffectID { get; set; }
 
                 /// <summary>
@@ -2292,7 +2285,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MSBParamReference(ParamName = "JumpSpecifyAltParam")]
                 public int JumpSpecifyAltParamID { get; set; }
 
                 /// <summary>

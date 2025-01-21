@@ -23,7 +23,8 @@
     
     <ObjActState
     AltName="ObjAct State"
-    Wiki="The interaction state this interaction uses." />
+    Wiki="The interaction state this interaction uses." 
+    Enum="OBJACT_STATE" />
     
     <EventFlagID
     AltName="Event Flag ID"
@@ -32,5 +33,10 @@
   </Field>
   
   <Enums>
+    <Enum Name="OBJACT_STATE" >
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="Door" />
+        <Option Value="2" Name="Loop" />
+    </Enum>
   </Enums>
 </MSBMETA>

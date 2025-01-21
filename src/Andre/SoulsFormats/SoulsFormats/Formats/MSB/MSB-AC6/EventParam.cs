@@ -169,15 +169,11 @@ namespace SoulsFormats
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
 
-            [IndexProperty]
-            [XmlIgnore]
             private int PartIndex { get; set; }
 
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
 
-            [IndexProperty]
-            [XmlIgnore]
             private int RegionIndex { get; set; }
 
             public int EntityID { get; set; }
@@ -315,21 +311,16 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int TreasurePartIndex { get; set; }
 
                 /// <summary>
                 /// Itemlot given by the treasure.
                 /// </summary>
-                [MSBParamReference(ParamName = "ItemLotParam")]
                 public int ItemLotID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MSBParamReference(ParamName = "ActionButtonParam")]
                 public int ActionButtonID { get; set; }
 
                 /// <summary>
@@ -593,7 +584,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Position of the map.
                 /// </summary>
-                [PositionProperty]
                 public Vector3 Translation { get; set; }
 
                 /// <summary>
@@ -717,7 +707,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MSBEnum(EnumType = "PATROL_TYPE")]
                 public int PatrolType { get; set; }
 
                 /// <summary>
@@ -814,9 +803,6 @@ namespace SoulsFormats
 
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string RegionNameT04 { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private short RegionIndexT04 { get; set; }
 
                 /// <summary>
@@ -830,9 +816,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string PartNameT08 { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int PartIndexT08 { get; set; }
 
                 /// <summary>
@@ -841,9 +824,6 @@ namespace SoulsFormats
                 
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] PartNamesT0C { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private short[] PartIndicesT0C { get; set; }
 
                 /// <summary>
@@ -852,9 +832,6 @@ namespace SoulsFormats
                 
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] RegionNamesT28 { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private short[] RegionIndicesT28 { get; set; }
 
                 /// <summary>

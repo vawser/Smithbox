@@ -807,18 +807,6 @@ namespace SoulsFormats
             /// </summary>
             public class ObjAct : Event
             {
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public enum StateType : byte
-                {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-                    Default = 0,
-                    Door = 1,
-                    Loop = 2,
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
-                }
-
                 private protected override EventType Type => EventType.ObjAct;
 
                 /// <summary>
@@ -841,7 +829,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public StateType ObjActState { get; set; } = StateType.Default;
+                public byte ObjActState { get; set; } = 0;
 
                 /// <summary>
                 /// Unknown, probably enables or disables the ObjAct.
@@ -865,7 +853,7 @@ namespace SoulsFormats
                     ObjActEntityID = br.ReadInt32();
                     ObjActPartIndex = br.ReadInt32();
                     ObjActParamID = br.ReadInt16();
-                    ObjActState = br.ReadEnum8<StateType>();
+                    ObjActState = br.ReadByte();
                     br.AssertByte(0);
                     EventFlagID = br.ReadInt32();
                 }
@@ -875,7 +863,7 @@ namespace SoulsFormats
                     bw.WriteInt32(ObjActEntityID);
                     bw.WriteInt32(ObjActPartIndex);
                     bw.WriteInt16(ObjActParamID);
-                    bw.WriteByte((byte)ObjActState);
+                    bw.WriteByte(ObjActState);
                     bw.WriteByte(0);
                     bw.WriteInt32(EventFlagID);
                 }

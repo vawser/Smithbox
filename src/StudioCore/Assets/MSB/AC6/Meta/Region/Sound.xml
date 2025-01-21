@@ -6,8 +6,7 @@
   <Field>
     <SoundType
     AltName="Sound Type"
-    Wiki="The type of sound this emitter produces." 
-    Enum="SOUND_TYPE" />
+    Wiki="The type of sound this emitter produces." />
     
     <SoundID
     AltName="Sound ID"
@@ -20,8 +19,6 @@
     
     <ChildRegionIndices
     IndexProperty="" />
-    
-    
   </Field>
   
   <Enums>

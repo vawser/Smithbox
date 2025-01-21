@@ -1178,69 +1178,6 @@ namespace SoulsFormats
             /// </summary>
             public class Collision : Part
             {
-                /// <summary>
-                /// HitFilterType
-                /// </summary>
-                public enum HitFilterType : byte
-                {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-                    Standard_NoHighHit_NoFootIK = 0,
-                    Standard_NoHighHit_1 = 1,
-                    Standard_NoHighHit_2 = 2,
-                    Standard_NoHighHit_3 = 3,
-                    Standard_NoHighHit_4 = 4,
-                    Standard_NoHighHit_5 = 5,
-                    Standard_NoHighHit_6 = 6,
-                    Standard_NoHighHit_7 = 7,
-                    Standard = 8,
-                    BlockCameraOnly = 9,
-                    BlockEnemyOnly = 11,
-                    FallDeathCam = 13,
-                    LethalFall = 14,
-                    KillPlane = 15,
-                    Unk16 = 16,
-                    Unk17 = 17,
-                    BlockEnemyOnly_2 = 19,
-                    Unk20 = 20,
-                    Slide = 21,
-                    FallDamageImmunity = 22,
-                    Unk23 = 23,
-                    Unk24 = 24,
-                    Unk25 = 25,
-                    Unk29 = 29,
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
-                }
-
-                /// <summary>
-                /// Amount of reverb to apply to sounds.
-                /// </summary>
-                public enum SoundSpace : byte
-                {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-                    NoReverb = 0,
-                    SmallReverbA = 1,
-                    SmallReverbB = 2,
-                    MiddleReverbA = 3,
-                    MiddleReverbB = 4,
-                    LargeReverbA = 5,
-                    LargeReverbB = 6,
-                    ExtraLargeReverbA = 7,
-                    ExtraLargeReverbB = 8,
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
-                }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public enum MapVisiblity : byte
-                {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-                    Good = 0,
-                    Dark = 1,
-                    PitchDark = 2,
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
-                }
-
                 private protected override PartsType Type => PartsType.Collision;
                 private protected override bool HasGparamConfig => true;
                 private protected override bool HasSceneGparamConfig => true;
@@ -1258,12 +1195,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.
                 /// </summary>
-                public HitFilterType HitFilterID { get; set; } = HitFilterType.Standard;
+                public byte HitFilterID { get; set; } = 8;
 
                 /// <summary>
                 /// Modifies sounds while the player is touching this collision.
                 /// </summary>
-                public SoundSpace SoundSpaceType { get; set; } = SoundSpace.NoReverb;
+                public byte SoundSpaceType { get; set; } = 0;
 
                 /// <summary>
                 /// Unknown.
@@ -1335,7 +1272,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public MapVisiblity MapVisType { get; set; } = MapVisiblity.Good;
+                public byte MapVisType { get; set; } = 0;
 
                 /// <summary>
                 /// Creates a Collision with default values.
@@ -1344,11 +1281,11 @@ namespace SoulsFormats
                 {
                     GparamConfig = new GparamConfig();
                     SceneGparamConfig = new SceneGparamConfig();
-                    SoundSpaceType = SoundSpace.NoReverb;
+                    SoundSpaceType = 0;
                     MapNameID = -1;
                     DisableStart = false;
                     DisableBonfireEntityID = -1;
-                    MapVisType = MapVisiblity.Good;
+                    MapVisType = 0;
                     PlayRegionID = -1;
                 }
 
@@ -1363,8 +1300,8 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    HitFilterID = br.ReadEnum8<HitFilterType>();
-                    SoundSpaceType = br.ReadEnum8<SoundSpace>();
+                    HitFilterID = br.ReadByte();
+                    SoundSpaceType = br.ReadByte();
                     EnvLightMapSpotIndex = br.ReadInt16();
                     ReflectPlaneHeight = br.ReadSingle();
                     br.AssertInt32(0); // Navmesh Group (4)
@@ -1383,7 +1320,7 @@ namespace SoulsFormats
                     UnkT34 = br.ReadByte();
                     UnkT35 = br.ReadByte();
                     UnkT36 = br.ReadByte();
-                    MapVisType = br.ReadEnum8<MapVisiblity>();
+                    MapVisType = br.ReadByte();
                     PlayRegionID = br.ReadInt32();
                     LockCamID1 = br.ReadInt16();
                     LockCamID2 = br.ReadInt16();

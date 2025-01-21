@@ -6,7 +6,8 @@
   <Field>
     <HitFilterID
     AltName="Hit Filter ID"
-    Wiki="Determines the behavior of the collision with other entities." />
+    Wiki="Determines the behavior of the collision with other entities." 
+    Enum="HIT_FILTER_TYPE" />
     
     <SoundSpaceType
     AltName="Sound Space Type"

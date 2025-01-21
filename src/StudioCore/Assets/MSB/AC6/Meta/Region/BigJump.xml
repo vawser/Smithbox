@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a vertical ascent region." />
+  
+  <Field>
+    <JumpSpecifyAltParamID
+    AltName="Jump Specify Alt Param ID"
+    Wiki="The vertical ascent parameters to use." 
+    ParamRef="JumpSpecifyAltParam" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

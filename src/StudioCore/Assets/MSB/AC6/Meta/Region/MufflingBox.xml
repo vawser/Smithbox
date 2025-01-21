@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a muffling box in the map." />
+  
+  <Field>
+    <MufflingBox_UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <MufflingBox_UnkT20
+    AltName="Unknown: 0x20"
+    Wiki="" />
+    
+    <MufflingBox_UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <MufflingBox_UnkT28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <MufflingBox_UnkT2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+    <MufflingBox_UnkT34
+    AltName="Unknown: 0x34"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

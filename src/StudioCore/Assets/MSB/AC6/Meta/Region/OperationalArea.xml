@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a operational area region." />
+  
+  <Field>
+    <OperationalArea_UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <OperationalArea_UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <OperationalArea_UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <OperationalArea_UnkT0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <OperationalArea_UnkT10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <OperationalArea_UnkT14
+    AltName="Unknown: 0x14"
+    Wiki="" />
+    
+    <OperationalArea_UnkT18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -23,8 +23,3 @@
  
 - Add utility class that converts passed string into correct MSB object (e.g. "Part-Part" in a DS1 project becomes MSB1.Part)
 
-[21:36:04:334] Could not apply ParamDef for ThrustersLocomotionParam_PC.param: Row size paramdef mismatch for THRUSTERS_LOCOMOTION_PARAM_PC_ST - byteOffset:330 - rowSize:272
-[21:36:04:607]    at Andre.Formats.Param.ApplyParamdef(PARAMDEF def, UInt64 regulationVersion) in ./src/Andre/Andre.Formats/Param.cs:line 478
-
-[21:36:04:646] Could not apply ParamDef for ThrustersParam_NPC.param: Row size paramdef mismatch for THRUSTERS_PARAM_NPC_ST - byteOffset:436 - rowSize:388
-[21:36:04:646]    at Andre.Formats.Param.ApplyParamdef(PARAMDEF def, UInt64 regulationVersion) in ./src/Andre/Andre.Formats/Param.cs:line 478

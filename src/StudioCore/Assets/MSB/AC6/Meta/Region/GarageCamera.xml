@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an garage camera point." />
+  
+  <Field>
+    <GarageCamera_UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <GarageCamera_UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

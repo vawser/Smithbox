@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a point where a player can entry the world of another." />
+  
+  <Field>
+    <Priority
+    AltName="Priority"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

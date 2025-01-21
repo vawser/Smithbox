@@ -22,7 +22,8 @@
     
     <SoundSpaceType
     AltName="Sound Space Type"
-    Wiki="Modifies sounds while the player is touching this collision." />
+    Wiki="Modifies sounds while the player is touching this collision." 
+    Enum="SOUND_SPACE_TYPE" />
     
     <UnkT11
     AltName="Unknown: 0x11"

@@ -516,7 +516,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public short UnkT0E { get; set; }
 
                 /// <summary>

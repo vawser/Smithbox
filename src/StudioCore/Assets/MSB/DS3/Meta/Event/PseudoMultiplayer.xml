@@ -28,11 +28,13 @@
     
     <PlayerChrType
     AltName="Player Character Type"
-    Wiki="The character type the player uses when in the 'fake' invasion world." />
+    Wiki="The character type the player uses when in the 'fake' invasion world." 
+    Enum="PLAYER_CHR_TYPE" />
     
     <MessageSetType
     AltName="Message Set Type"
-    Wiki="Determines which set of FMG entries to use in fake' invasion world." />
+    Wiki="Determines which set of FMG entries to use in fake' invasion world."
+    Enum="MESSAGE_SET_TYPE" />
     
     <JoinMessageTextID
     AltName="Join Message ID"

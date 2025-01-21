@@ -9,76 +9,29 @@
     Wiki="Determines the behavior of the collision with other entities." 
     Enum="HIT_FILTER_TYPE" />
     
-    <SoundSpaceType
-    AltName="Sound Space Type"
-    Wiki="The sound space type this collision applies to sounds." 
-    Enum="SOUND_SPACE_TYPE" />
-    
-    <EnvLightMapSpotIndex
-    AltName="Environmental Lighting Map Spot Index"
+    <Collision_Unk01
+    AltName="Unknown: 0x1"
     Wiki="" />
     
-    <ReflectPlaneHeight
-    AltName="Reflection Plane Height"
+    <Collision_Unk02
+    AltName="Unknown: 0x2"
     Wiki="" />
     
-    <MapNameID
-    AltName="Map Name ID"
+    <Collision_Unk03
+    AltName="Unknown: 0x3"
     Wiki="" />
     
-    <DisableStart
-    AltName="Disable Start"
-    Wiki=""
-    IsBool="" />
-    
-    <DisableBonfireEntityID
-    AltName="Disable Bonfire Entity on Enemy Presence"
-    Wiki="The entity ID of the bonfire to disable if enemy is on this collision." />
-    
-    <PlayRegionID
-    AltName="Play Region ID"
+    <Collision_Unk04
+    AltName="Unknown: 0x4"
     Wiki="" />
     
-    <LockCamID1
-    AltName="Lock-cam Param ID: 1"
-    Wiki="" 
-    ParamRef="LockCamParam" />
-    
-    <LockCamID2
-    AltName="Lock-cam Param ID: 2"
-    Wiki="" 
-    ParamRef="LockCamParam" />
-    
-    <UnkHitName
-    AltName="Collision Hit Name"
-    Wiki="Unknown. Always refers to another collision part." 
-    MapRef="Part-Collision" />
-    
-    <UnkHitIndex
-    IndexProperty="" />
-    
-    <ChameleonParamID
-    AltName="Chameleon ID"
-    Wiki="The chameleon paramters to use for the player when on this collision." 
-    ParamRef="MapMimicryEstablishmentParam" />
-    
-    <UnkT34
-    AltName="Unknown: 0x34"
+    <Collision_Unk26
+    AltName="Unknown: 0x26"
     Wiki="" />
     
-    <UnkT35
-    AltName="Unknown: 0x35"
-    Wiki="" />
-    
-    <UnkT36
+    <Collision_Unk36
     AltName="Unknown: 0x36"
     Wiki="" />
-    
-    <MapVisType
-    AltName="Map Visibility Type"
-    Wiki="The type of visibility the player has when on this collision" 
-    Enum="MAP_VISIBILITY" />
-    
   </Field>
   
   <Enums>
@@ -106,6 +59,9 @@
         <Option Value="23" Name="Type 23" />
         <Option Value="24" Name="Type 24" />
         <Option Value="29" Name="Type 29" />
+        <Option Value="30" Name="Type 30" />
+        <Option Value="31" Name="Type 31" />
+        <Option Value="255" Name="Other" />
     </Enum>
     <Enum Name="SOUND_SPACE_TYPE">
         <Option Value="0" Name="No Reverb" />

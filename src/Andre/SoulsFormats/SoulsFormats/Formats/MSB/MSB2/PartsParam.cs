@@ -408,20 +408,6 @@ namespace SoulsFormats
             /// </summary>
             public class Collision : Part
             {
-                /// <summary>
-                /// Amount of reverb to apply to sounds.
-                /// </summary>
-                public enum SoundSpace : byte
-                {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-                    NoReverb = 0,
-                    SmallReverb = 1,
-                    MiddleReverb = 2,
-                    LargeReverb = 3,
-                    ExtraLargeReverb = 4
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
-                }
-
                 private protected override PartType Type => PartType.Collision;
 
                 /// <summary>
@@ -447,7 +433,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Modifies sounds while the player is touching this collision.
                 /// </summary>
-                public SoundSpace SoundSpaceType { get; set; } = SoundSpace.NoReverb;
+                public byte SoundSpaceType { get; set; } = 0;
 
                 /// <summary>
                 /// Unknown.
@@ -564,7 +550,7 @@ namespace SoulsFormats
                     UnkT04 = br.ReadInt32();
                     UnkT08 = br.ReadInt32();
                     UnkT0C = br.ReadInt32();
-                    SoundSpaceType = br.ReadEnum8<SoundSpace>();
+                    SoundSpaceType = br.ReadByte();
                     UnkT11 = br.ReadByte();
                     UnkT12 = br.ReadByte();
                     FilterParamID = br.ReadByte();
