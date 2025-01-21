@@ -1,12 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" type="u8">
-        <Option Value="-1" Name="No Correction" />
-        <Option Value="0" Name="Direction of Movement" />
-        <Option Value="1" Name="Backward Movement" />
-    </Enum> 
-  </Enums>
+  <Self 
+  Wiki=""/>
+  
   <Field>
     <RotationBoneName AltName="Rotation Joint Name" Wiki="The name of the joint that is rotated within the part." />
     <AttachDummyID AltName="Attachment Dummy Polygon ID" Wiki="Thruster/parts connection dummy poly ID" />
@@ -360,5 +356,11 @@
     <hovertTankGroundWaterShallow_pad Padding="" />
     <hovertTankGroundWaterShallow_pad1 Padding="" />
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" type="u8">
+        <Option Value="3" Name="No Correction" />
+        <Option Value="0" Name="Direction of Movement" />
+        <Option Value="1" Name="Backward Movement" />
+    </Enum> 
+  </Enums>
 </PARAMMETA>
