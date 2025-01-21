@@ -5605,13 +5605,13 @@
 19975 [Sorcery] Miriam's Vanishing
 19980 [Item] Rock Heart
 19981 [Item] Priestess Heart
-19982 
+19982 [Item] Lamenter's Mask
 19983 
 19985 [Talisman] Verdigris Discus
-19986 
-19987 
+19986 [Talisman] Verdigris Discus (Heavy Weight)
+19987 [Talisman] Verdigris Discus (Overweight)
 19990 [Talisman] Sharpshot Talisman
-19991 
+19991 [Talisman] Sharpshot Talisman (Damage Boost)
 19995 Forced Torrent Dismount (Abyssal Woods)
 19996 Remove Forced Torrent Dismount (Abyssal Woods)
 19997 
