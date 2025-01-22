@@ -1,25 +1,18 @@
 #--------------------------------------
 # TODO
 #--------------------------------------
-# PARAM
-- Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
-
-- These official defs don't match the actual param layout, need to adjust them:
- - ThrustersLocomotionParam_PC
- - ThrustersParam_NPC
- - ThrustersParam_PC
- 
-- Update the paramdex to the new name/wiki style + fill in missing for:
- - DES
- - DS2
- - DS3
- - SDT
- - ER
- - AC6
-
 # MAP EDITOR
 - Add mass entity ID assignment tool to map editor
  - Use ID format + rules to allow user to tailor what is assigned
  
 - Add utility class that converts passed string into correct MSB object (e.g. "Part-Part" in a DS1 project becomes MSB1.Part)
 
+# PARAM
+- Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
+
+- Update the paramdex to the new name/wiki style + fill in missing for:
+ - AC6
+ - ER
+ - SDT
+ - DS3
+ - BB

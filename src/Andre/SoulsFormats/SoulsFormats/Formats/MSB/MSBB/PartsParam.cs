@@ -985,7 +985,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT14 { get; set; }
+                public short UnkT12 { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
+                public short UnkT14 { get; set; }
 
                 /// <summary>
                 /// ID in CharaInitParam determining equipment and stats for humans.
@@ -1047,7 +1052,8 @@ namespace SoulsFormats
                     ThinkParamID = br.ReadInt32();
                     NPCParamID = br.ReadInt32();
                     TalkID = br.ReadInt32();
-                    UnkT14 = br.ReadInt32();
+                    UnkT12 = br.ReadInt16();
+                    UnkT14 = br.ReadInt16();
                     CharaInitID = br.ReadInt32();
                     CollisionIndex = br.ReadInt32();
                     UnkT20 = br.ReadInt16();
@@ -1067,7 +1073,8 @@ namespace SoulsFormats
                     bw.WriteInt32(ThinkParamID);
                     bw.WriteInt32(NPCParamID);
                     bw.WriteInt32(TalkID);
-                    bw.WriteInt32(UnkT14);
+                    bw.WriteInt16(UnkT12);
+                    bw.WriteInt16(UnkT14);
                     bw.WriteInt32(CharaInitID);
                     bw.WriteInt32(CollisionIndex);
                     bw.WriteInt16(UnkT20);

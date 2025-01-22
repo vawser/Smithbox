@@ -18,6 +18,10 @@
     AltName="Talk Script ID"
     Wiki="The ID of a talk ESD used by the character." />
     
+    <UnkT12
+    AltName="Unknown: 0x12"
+    Wiki="" />
+    
     <UnkT14
     AltName="Unknown: 0x14"
     Wiki="" />
