@@ -869,18 +869,6 @@ namespace SoulsFormats
             /// </summary>
             public class ObjAct : Event
             {
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public enum StateType : byte
-                {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-                    Default = 0,
-                    Door = 1,
-                    Loop = 2,
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
-                }
-
                 private protected override EventType Type => EventType.ObjAct;
                 private protected override bool HasTypeData => true;
 
@@ -904,7 +892,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public StateType ObjActState { get; set; } = StateType.Default;
+                public byte ObjActState { get; set; } = 0;
 
                 /// <summary>
                 /// Unknown, probably enables or disables the ObjAct.
@@ -928,7 +916,7 @@ namespace SoulsFormats
                     ObjActEntityID = br.ReadInt32();
                     ObjActPartIndex = br.ReadInt32();
                     ObjActParamID = br.ReadInt32();
-                    ObjActState = br.ReadEnum8<StateType>();
+                    ObjActState = br.ReadByte();
                     br.AssertByte(0);
                     br.AssertInt16(0);
                     EventFlagID = br.ReadInt32();
@@ -1022,7 +1010,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Position of the map.
                 /// </summary>
-                [PositionProperty]
                 public Vector3 Position { get; set; }
 
                 /// <summary>
@@ -1243,7 +1230,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown; probably some kind of route type.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int PatrolType { get; set; }
 
                 /// <summary>
                 /// List of points in the route.
@@ -1270,7 +1257,7 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    PatrolType = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1279,7 +1266,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(PatrolType);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);

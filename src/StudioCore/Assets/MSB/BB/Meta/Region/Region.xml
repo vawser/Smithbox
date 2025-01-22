@@ -8,17 +8,9 @@
     AltName="Name"
     Wiki="The name of this region." />
     
-    <Unk2C
-    AltName="Unknown: 0x2C"
-    Wiki="" />
-    
     <Shape
     AltName="Region Shape"
     Wiki="" />
-    
-    <MapStudioLayer
-    AltName="Ceremony Layer"
-    Wiki="A bitmask that determines which ceremonies the region appears in." />
     
     <Position
     AltName="Position"
@@ -29,23 +21,6 @@
     AltName="Rotation"
     Wiki="Rotation of the region, in degrees."
     RotationProperty="" />
-    
-    <UnkA
-    AltName="Unknown A"
-    Wiki=""
-    ArrayProperty="" />
-    
-    <UnkB
-    AltName="Unknown B"
-    Wiki=""
-    ArrayProperty="" />
-    
-    <ActivationPartName
-    AltName="Activation Part Name"
-    Wiki="The region remains inactive until the specified part is rendered. Empty means it is always active." />
-    
-    <ActivationPartIndex
-    IndexProperty="" />
     
     <EntityID
     AltName="Entity ID"

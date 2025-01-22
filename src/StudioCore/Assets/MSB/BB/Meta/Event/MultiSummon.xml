@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a multi-summon." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <UnkT06
+    AltName="Unknown: 0x6"
+    Wiki="" />
+    
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <UnkT0A
+    AltName="Unknown: 0x0A"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -22,18 +22,46 @@
     Wiki="The item lot to award when this treasure is acquired. Rarely used."
     ParamRef="ItemLotParam" />
     
-    <UnkT18
-    AltName="Unknown: 0x18"
+    <ItemLot3
+    AltName="Item Lot: 3"
+    Wiki="The item lot to award when this treasure is acquired. Rarely used."
+    ParamRef="ItemLotParam" />
+    
+    <UnkT1C
+    AltName="Unknown: 0x1C"
     Wiki="" />
     
-    <ActionButtonParamID
-    AltName="Action Button ID"
-    Wiki="The action button parameters to use when this treasure is used."
-    ParamRef="ActionButtonParam" />
+    <UnkT20
+    AltName="Unknown: 0x20"
+    Wiki="" />
     
-    <PickupAnimID
-    AltName="Pick-up Animation ID"
-    Wiki="The animation ID the player uses when picking up this treasure." />
+    <UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <UnkT28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <UnkT2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+    <UnkT30
+    AltName="Unknown: 0x30"
+    Wiki="" />
+    
+    <UnkT34
+    AltName="Unknown: 0x34"
+    Wiki="" />
+    
+    <UnkT38
+    AltName="Unknown: 0x38"
+    Wiki="" />
+    
+    <UnkT3C
+    AltName="Unknown: 0x3C"
+    Wiki="" />
     
     <InChest
     AltName="Is Chest"
@@ -44,6 +72,18 @@
     AltName="Start Disabled"
     Wiki="If ON, this treasure is hidden by default."
     IsBool="" />
+    
+    <UnkT42
+    AltName="Unknown: 0x42"
+    Wiki="" />
+    
+    <UnkT44
+    AltName="Unknown: 0x44"
+    Wiki="" />
+    
+    <UnkT48
+    AltName="Unknown: 0x48"
+    Wiki="" />
     
   </Field>
   

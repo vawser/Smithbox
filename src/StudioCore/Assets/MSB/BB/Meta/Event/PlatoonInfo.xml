@@ -13,7 +13,7 @@
     Wiki="The default state for this ensemble." />
     
     <GroupPartsNames
-    AltName="Platoon Character"
+    AltName="Character Name"
     Wiki="A character that belongs to this platoon." />
     
     <GroupPartsIndices

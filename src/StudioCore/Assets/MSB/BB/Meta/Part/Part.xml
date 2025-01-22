@@ -124,7 +124,7 @@
     Wiki="" />
     
     
-    <GparamConfig
+    <GparamConfigStruct
     AltName="GPARAM Configuration"
     Wiki="" />
     
@@ -145,7 +145,7 @@
     Wiki="The ID of the value set from Env Map:Editor to use." />
     
     
-    <SceneGparamConfig
+    <SceneGparamConfigStruct
     AltName="Scene GPARAM Configuration"
     Wiki="" />
     

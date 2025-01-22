@@ -32,6 +32,22 @@
     AltName="Generation Interval: Maximum"
     Wiki="The maximum time interval (in seconds) between each generation interval." />
     
+    <InitialSpawnCount
+    AltName="Initial Spawn Count"
+    Wiki="The initial number of enemies to spawn upon initialization of the generator." />
+    
+    <UnkT11
+    AltName="Unknown: 0x11"
+    Wiki="" />
+    
+    <UnkT12
+    AltName="Unknown: 0x12"
+    Wiki="" />
+    
+    <UnkT13
+    AltName="Unknown: 0x13"
+    Wiki="" />
+    
     <SpawnPointNames
     AltName="Spawn Point"
     Wiki="The spot regions that the parts can appear at."
@@ -49,18 +65,6 @@
     
     <SpawnPartIndices
     IndexProperty="" />
-    
-    <InitialSpawnCount
-    AltName="Initial Spawn Count"
-    Wiki="The initial number of enemies to spawn upon initialization of the generator." />
-    
-    <UnkT14
-    AltName="Unknown: 0x14"
-    Wiki="" />
-    
-    <UnkT18
-    AltName="Unknown: 0x18"
-    Wiki="" />
   </Field>
   
   <Enums>

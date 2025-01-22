@@ -512,7 +512,7 @@ public static class AliasUtils
 
         int itemlotId = e.GetPropertyValue<int>("ItemLotID");
 
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.BB)
             itemlotId = e.GetPropertyValue<int>("ItemLot1");
 
         if (Smithbox.ProjectType is ProjectType.DES)

@@ -11,7 +11,8 @@
     
     <SoundSpaceType
     AltName="Sound Space Type"
-    Wiki="The sound space type this collision applies to sounds." />
+    Wiki="The sound space type this collision applies to sounds." 
+    Enum="SOUND_SPACE_TYPE" />
     
     <EnvLightMapSpotIndex
     AltName="Environmental Lighting Map Spot Index"
@@ -23,12 +24,17 @@
     
     <MapNameID
     AltName="Map Name ID"
-    Wiki="" />
+    Wiki="Controls displays of the map name on screen or the loading menu." />
     
     <DisableStart
     AltName="Disable Start"
     Wiki=""
     IsBool="" />
+    
+    <MapVisibilityType
+    AltName="Map Visibility Type"
+    Wiki="The type of visibility the player has when on this collision" 
+    Enum="MAP_VISIBILITY" />
     
     <DisableBonfireEntityID
     AltName="Disable Bonfire Entity on Enemy Presence"
@@ -36,47 +42,17 @@
     
     <PlayRegionID
     AltName="Play Region ID"
-    Wiki="" />
+    Wiki="Determines invasion parameters." />
     
-    <LockCamID1
+    <LockCamParamID1
     AltName="Lock-cam Param ID: 1"
-    Wiki="" 
+    Wiki="The ID in LockCamParam determining camera properties." 
     ParamRef="LockCamParam" />
     
-    <LockCamID2
+    <LockCamParamID2
     AltName="Lock-cam Param ID: 2"
-    Wiki="" 
+    Wiki="The ID in LockCamParam determining camera properties." 
     ParamRef="LockCamParam" />
-    
-    <UnkHitName
-    AltName="Collision Hit Name"
-    Wiki="Unknown. Always refers to another collision part." 
-    MapRef="Part-Collision" />
-    
-    <UnkHitIndex
-    IndexProperty="" />
-    
-    <ChameleonParamID
-    AltName="Chameleon ID"
-    Wiki="The chameleon paramters to use for the player when on this collision." 
-    ParamRef="MapMimicryEstablishmentParam" />
-    
-    <UnkT34
-    AltName="Unknown: 0x34"
-    Wiki="" />
-    
-    <UnkT35
-    AltName="Unknown: 0x35"
-    Wiki="" />
-    
-    <UnkT36
-    AltName="Unknown: 0x36"
-    Wiki="" />
-    
-    <MapVisType
-    AltName="Map Visibility Type"
-    Wiki="The type of visibility the player has when on this collision" />
-    
   </Field>
   
   <Enums>
