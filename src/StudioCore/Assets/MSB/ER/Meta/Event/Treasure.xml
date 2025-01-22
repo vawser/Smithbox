@@ -12,11 +12,19 @@
     <TreasurePartIndex
     IndexProperty="" />
     
-    <ItemLots
+    <ItemLotID
     AltName="Item Lot"
-    Wiki=""
-    ArrayProperty="" 
-    ParamRef="ItemLotParam" />
+    Wiki="The item lot to award when this treasure is acquired."
+    ParamRef="ItemLotParam_map" />
+    
+    <ActionButtonParamID
+    AltName="Action Button ID"
+    Wiki="The action button parameters to use when this treasure is used."
+    ParamRef="ActionButtonParam" />
+    
+    <PickupAnimID
+    AltName="Pick-up Animation ID"
+    Wiki="The animation ID the player uses when picking up this treasure." />
     
     <InChest
     AltName="Is Chest"
@@ -27,7 +35,6 @@
     AltName="Start Disabled"
     Wiki="If ON, this treasure is hidden by default."
     IsBool="" />
-    
   </Field>
   
   <Enums>

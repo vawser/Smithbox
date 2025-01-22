@@ -215,8 +215,6 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            [IndexProperty]
-            [XmlIgnore]
             private int PartIndex { get; set; }
 
             /// <summary>
@@ -224,8 +222,6 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
-            [IndexProperty]
-            [XmlIgnore]
             private int RegionIndex { get; set; }
 
             /// <summary>
@@ -429,20 +425,16 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                [IndexProperty]
-                [XmlIgnore]
                 private int TreasurePartIndex { get; set; }
 
                 /// <summary>
                 /// The item lot to be given.
                 /// </summary>
-                [MSBParamReference(ParamName = "ItemLotParam_map")]
                 public int ItemLotID { get; set; }
 
                 /// <summary>
                 /// If not -1, uses an entry from ActionButtonParam for the pickup prompt.
                 /// </summary>
-                [MSBParamReference(ParamName = "ActionButtonParam")]
                 public int ActionButtonID { get; set; }
 
                 /// <summary>
@@ -687,7 +679,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown why objacts need an extra entity ID.
                 /// </summary>
-                [MSBEntityReference]
                 public uint ObjActEntityID { get; set; }
 
                 /// <summary>
@@ -695,14 +686,11 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                [IndexProperty]
-                [XmlIgnore]
                 private int ObjActPartIndex { get; set; }
 
                 /// <summary>
                 /// A row in ObjActParam.
                 /// </summary>
-                [MSBParamReference(ParamName = "ObjActParam")]
                 public int ObjActID { get; set; }
 
                 /// <summary>
@@ -781,8 +769,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string NavmeshRegionName { get; set; }
-                [IndexProperty]
-                [XmlIgnore]
                 private int NavmeshRegionIndex { get; set; }
 
                 /// <summary>
@@ -832,7 +818,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// The NPC whose world you're entering.
                 /// </summary>
-                [MSBEntityReference]
                 public uint HostEntityID { get; set; }
 
                 /// <summary>
@@ -998,7 +983,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Determines patrol behavior. 0 = return to first region on loop, 1 = go through list backwards on loop, etc.
                 /// </summary>
-                [MSBEnum(EnumType = "PATROL_TYPE")]
                 public byte PatrolType { get; set; }
 
                 /// <summary>
@@ -1082,9 +1066,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string RiderPartName { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int RiderPartIndex { get; set; }
 
                 /// <summary>
@@ -1092,9 +1073,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string MountPartName { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int MountPartIndex { get; set; }
 
                 /// <summary>
@@ -1148,15 +1126,11 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string SignPartName { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int SignPartIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MSBParamReference(ParamName = "SignPuddleParam")]
                 public int SignPuddleParamID { get; set; }
 
                 /// <summary>
@@ -1271,9 +1245,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string RetryPartName { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int RetryPartIndex { get; set; }
 
                 /// <summary>
@@ -1291,9 +1262,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string RetryRegionName { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private short RetryRegionIndex { get; set; }
 
                 /// <summary>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an area team event." />
+  
+  <Field>
+    <EntityID_Leader
+    AltName="Leader: Entity ID"
+    Wiki="The entity ID of the leader." />
+    
+    <EUnk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <EUnk08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <EUnk0c
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <RegionID_Leader
+    AltName="Leader: Region ID"
+    Wiki="The region ID of the leader." />
+    
+    <RegionID_Guest1
+    AltName="Guest 1: Region ID"
+    Wiki="The region ID of guest 1." />
+    
+    <RegionID_Guest2
+    AltName="Guest 2: Region ID"
+    Wiki="The region ID of guest 2." />
+    
+    <EUnk1c
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <EUnk20
+    AltName="Unknown: 0x20"
+    Wiki="" />
+    
+    <EUnk24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <EUnk28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

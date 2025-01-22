@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a cylinder shape." />
+  
+  <Field>
+    <Radius
+    AltName="Radius"
+    Wiki="The radius of the cylinder." />
+    
+    <Height
+    AltName="Height"
+    Wiki="The height of the cylinder." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

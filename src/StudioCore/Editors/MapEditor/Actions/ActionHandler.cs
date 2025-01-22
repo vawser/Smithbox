@@ -855,7 +855,7 @@ public class ActionHandler
                     {
                         if (Smithbox.ProjectType == ProjectType.ER)
                         {
-                            s.SetPropertyValue("GameEditionDisable", (GameEditionDisableType)1);
+                            s.SetPropertyValue("GameEditionDisable", 1);
                         }
                     }
                 }
@@ -866,7 +866,7 @@ public class ActionHandler
                     {
                         if (Smithbox.ProjectType == ProjectType.ER)
                         {
-                            s.SetPropertyValue("GameEditionDisable", (GameEditionDisableType)0);
+                            s.SetPropertyValue("GameEditionDisable", 0);
                         }
                     }
                 }

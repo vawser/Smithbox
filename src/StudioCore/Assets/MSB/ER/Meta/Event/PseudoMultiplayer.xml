@@ -10,12 +10,33 @@
     
     <EventFlagID
     AltName="Event Flag ID"
-    Wiki="The event flag set when the player is within the region." />
+    Wiki="The event flag set when the player is within the region." 
+    FlagAlias="" />
     
     <ActivateGoodsID
     AltName="Activation Goods ID"
     Wiki="The item that is used to trigger the non-player character invasion."
     ParamRef="EquipParamGoods" />
+    
+    <UnkT0C
+    AltName="Unknown: 0x0C"
+    Wiki="Sound ID?" />
+    
+    <UnkT10
+    AltName="Unknown: 0x10"
+    Wiki="Map event ID?" />
+    
+    <UnkT14
+    AltName="Unknown: 0x14"
+    Wiki="Flags?" />
+    
+    <UnkT18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+    <UnkT1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
     
   </Field>
   

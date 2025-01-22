@@ -10,7 +10,8 @@
     
     <EventFlagID
     AltName="Event Flag ID"
-    Wiki="The event flag set when the player is within the region." />
+    Wiki="The event flag set when the player is within the region." 
+    FlagAlias="" />
     
     <ActivateGoodsID
     AltName="Activation Goods ID"

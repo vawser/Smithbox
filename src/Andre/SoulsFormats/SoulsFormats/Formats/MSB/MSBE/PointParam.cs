@@ -515,13 +515,11 @@ namespace SoulsFormats
             /// <summary>
             /// The location of the region.
             /// </summary>
-            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// The rotiation of the region, in degrees.
             /// </summary>
-            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
@@ -574,9 +572,6 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Part))]
             public string ActivationPartName { get; set; }
-
-            [IndexProperty]
-            [XmlIgnore]
             private int ActivationPartIndex { get; set; }
 
             /// <summary>
@@ -989,9 +984,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] ChildRegionNames { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int[] ChildRegionIndices { get; set; }
 
                 /// <summary>
@@ -1106,9 +1098,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string WindAreaName { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int WindAreaIndex { get; set; }
 
                 /// <summary>
@@ -1208,7 +1197,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MSBParamReference(ParamName = "ItemLotParam_map")]
                 public int ItemLotParamID { get; set; }
 
                 /// <summary>
@@ -1229,7 +1217,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// NpcParam ID to use when rendering a character with the message.
                 /// </summary>
-                [MSBParamReference(ParamName = "NPCParam")]
                 public int NPCParamID { get; set; }
 
                 /// <summary>
@@ -1826,7 +1813,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Determines which WorldMapPointParam to use.
                 /// </summary>
-                [MSBParamReference(ParamName = "WorldMapPointParam")]
                 public int WorldMapPointParamID { get; set; }
 
                 /// <summary>
@@ -1902,7 +1888,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Determines which WeatherLotParam ID to use.
                 /// </summary>
-                [MSBParamReference(ParamName = "WeatherLotParam")]
                 public int WeatherLotParamID { get; set; }
 
                 public sbyte UnkT08 { get; set; }
@@ -2021,9 +2006,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] PartNames { get; set; }
-
-                [IndexProperty]
-                [XmlIgnore]
                 private int[] PartIndices { get; set; }
 
                 /// <summary>
@@ -2039,8 +2021,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MSBParamReference(ParamName = "MPEstusFlaskRecoveryParam")]
-                [MSBParamReference(ParamName = "HPEstusFlaskRecoveryParam")]
                 public int EstusFlaskRecoveryID { get; set; }
 
                 /// <summary>
@@ -2249,7 +2229,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MSBParamReference(ParamName = "PlayRegionParam")]
                 public int PlayRegionID { get; set; }
 
                 /// <summary>
@@ -2486,37 +2465,27 @@ namespace SoulsFormats
             /// </summary>
             public class HorseRideOverride : Region
             {
-                /// <summary>
-                /// OverrideType
-                /// </summary>
-                public enum HorseRideOverrideType : uint
-                {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-                    PreventRiding = 1,
-                    AllowRiding = 2,
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
-                }
                 private protected override RegionType Type => RegionType.HorseRideOverride;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
                 /// 1 = Forbid riding torrent, 2 = Permit riding torrent
                 /// </summary>
-                public HorseRideOverrideType OverrideType { get; set; } = HorseRideOverrideType.PreventRiding;
+                public uint OverrideType { get; set; } = 1;
 
                 /// <summary>
                 /// Creates a HorseRideOverride with default values.
                 /// </summary>
                 public HorseRideOverride() : base($"{nameof(Region)}: {nameof(HorseRideOverride)}") 
                 {
-                    OverrideType = HorseRideOverrideType.PreventRiding;
+                    OverrideType = 1;
                 }
 
                 internal HorseRideOverride(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    OverrideType = br.ReadEnum32<HorseRideOverrideType>();
+                    OverrideType = br.ReadUInt32();
                     br.AssertInt32(0);
                 }
 
@@ -2548,7 +2517,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Probably event flag to enable.
                 /// </summary>
-                public int UnkT08 { get; set; }
+                public int EnableEventFlagID { get; set; }
 
                 /// <summary>
                 /// Creates a LockedMountJump with default values.
@@ -2561,7 +2530,7 @@ namespace SoulsFormats
                 {
                     JumpHeight = br.ReadSingle();
                     UnkT04 = br.ReadInt32();
-                    UnkT08 = br.ReadInt32();
+                    EnableEventFlagID = br.ReadInt32();
                     br.AssertInt32(-1);
                 }
 
@@ -2569,7 +2538,7 @@ namespace SoulsFormats
                 {
                     bw.WriteSingle(JumpHeight);
                     bw.WriteInt32(UnkT04);
-                    bw.WriteInt32(UnkT08);
+                    bw.WriteInt32(EnableEventFlagID);
                     bw.WriteInt32(-1);
                 }
             }
@@ -2585,7 +2554,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Probably event flag to enable.
                 /// </summary>
-                public int UnkT08 { get; set; }
+                public int EnableEventFlagID { get; set; }
 
                 /// <summary>
                 /// Creates a LockedMountJumpFall with default values.
@@ -2598,14 +2567,14 @@ namespace SoulsFormats
                 {
                     br.AssertInt32(-1);
                     br.AssertInt32(0);
-                    UnkT08 = br.ReadInt32();
+                    EnableEventFlagID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(-1);
                     bw.WriteInt32(0);
-                    bw.WriteInt32(UnkT08);
+                    bw.WriteInt32(EnableEventFlagID);
                 }
 
             }

@@ -788,7 +788,7 @@ public class MapPropertyEditor
                         Type arrtyp = typ.GetElementType();
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
-                            var classOpen = ImGui.TreeNodeEx($@"{fieldName}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                            var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
                             ShowFieldHint(obj, prop, fieldDescription);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
@@ -825,7 +825,7 @@ public class MapPropertyEditor
                     Type arrtyp = typ.GetGenericArguments()[0];
                     if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                     {
-                        var open = ImGui.TreeNodeEx($@"{fieldName}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                        var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
                         ShowFieldHint(obj, prop, fieldDescription);
                         ImGui.NextColumn();
                         ImGui.SetNextItemWidth(-1);

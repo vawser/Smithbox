@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a locked spirit spring jump in the map." />
+  
+  <Field>
+    <JumpHeight
+    AltName="Jump Height"
+    Wiki="Height the player will move upwards when activating this spirit spring." />
+    
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <EnableEventFlagID
+    AltName="Unlock Event Flag ID"
+    Wiki="The event flag that must be ON for this spirit spring to be active." />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -36,6 +36,14 @@
     AltName="Initial Spawn Count"
     Wiki="The initial number of enemies to spawn upon initialization of the generator." />
     
+    <UnkT14
+    AltName="Unknown: 0x14"
+    Wiki="" />
+    
+    <UnkT18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
     <SpawnPointNames
     AltName="Spawn Point"
     Wiki="The spot regions that the parts can appear at."

@@ -1084,10 +1084,10 @@ public enum Item_MsgBndID_ER
     Description_Magic_DLC2 = 427,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "DLC 2")]
-    Title_Characters_DL2 = 428,
+    Title_Characters_DLC2 = 428,
 
     [Display(Name = "Locations", ShortName = "Common", Description = "DLC 2")]
-    Title_Locations_DL2 = 429,
+    Title_Locations_DLC2 = 429,
 
     [Display(Name = "Goods Dialog", ShortName = "Common", Description = "DLC 2")]
     Dialog_Goods_DLC2 = 430,

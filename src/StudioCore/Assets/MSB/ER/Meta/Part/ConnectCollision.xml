@@ -17,6 +17,22 @@
     Wiki=""
     ArrayProperty="" />
     
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="" />
+    
+    <UnkT09
+    AltName="Unknown: 0x9"
+    Wiki="" />
+    
+    <UnkT0A
+    AltName="Unknown: 0x0A"
+    Wiki="" />
+    
+    <UnkT0B
+    AltName="Unknown: 0x0B"
+    Wiki="" />
+    
   </Field>
   
   <Enums>

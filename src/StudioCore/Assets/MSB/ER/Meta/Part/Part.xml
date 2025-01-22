@@ -37,10 +37,11 @@
     
     <GameEditionDisable
     AltName="Disable Type"
-    Wiki="Determines the loading of this map object." />
+    Wiki="Determines the loading of this map object." 
+    Enum="GAME_EDITION_DISABLE_TYPE" />
     
     <MapStudioLayer
-    AltName="Layer"
+    AltName="Map Studio Layer"
     Wiki="The map layer this map object is placed on." />
     
     <EntityID
@@ -139,8 +140,236 @@
     AltName="Unknown: 0x3E"
     Wiki="" />  
     
+    <DisplayDataStruct
+    AltName="Display Data"
+    Wiki="" />
+    
+    <DisplayGroups
+    AltName="Display Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <DrawGroups
+    AltName="Draw Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <CollisionMask
+    AltName="Collision Mask"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <Condition1
+    AltName="Condition 1"
+    Wiki="" />
+    
+    <Condition2
+    AltName="Condition 2"
+    Wiki="" />
+    
+    <UnkC2
+    AltName="Unknown: 0xC2"
+    Wiki="" />
+    
+    <UnkC3
+    AltName="Unknown: 0xC3"
+    Wiki="" />
+    
+    <UnkC4
+    AltName="Unknown: 0xC4"
+    Wiki="" />
+    
+    <UnkC6
+    AltName="Unknown: 0xC6"
+    Wiki="" />
+    
+    
+    <DisplayGroupStruct
+    AltName="Display Groups"
+    Wiki="" />
+    
+    <Condition
+    AltName="Condition"
+    Wiki="" />
+    
+    <DispGroups
+    AltName="Display Group"
+    Wiki="Controls when the map object is visible." 
+    ArrayProperty="" />
+    
+    <Unk24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <Unk26
+    AltName="Unknown: 0x26"
+    Wiki="" />
+    
+    
+    <GparamConfigStruct
+    AltName="GPARAM Configuration"
+    Wiki="" />
+    
+    <LightSetID
+    AltName="Light Set ID"
+    Wiki="The ID of the value set from LightSet ParamEditor to use." />
+    
+    <FogParamID
+    AltName="Fog ID"
+    Wiki="The ID of the value set from FogParamEditor to use." />
+    
+    <LightScatteringID
+    AltName="Light Scattering ID"
+    Wiki="The ID of the value set from LightScattering : ParamEditor to use." />
+    
+    <EnvMapID
+    AltName="Environmental Map ID"
+    Wiki="The ID of the value set from Env Map:Editor to use." />
+    
+    
+    <SceneGparamConfigStruct
+    AltName="Scene GPARAM Configuration"
+    Wiki="" />
+    
+    <TransitionTime
+    AltName="Transition Time"
+    Wiki="Amount of time it takes for GParam to transition (in seconds). -1 = Some default time." />
+    
+    <GparamSubID_Base
+    AltName="GPARAM Sub ID: Base"
+    Wiki="Value of the hundredths place of a Gparam to override use." />
+    
+    <GparamSubID_Override1
+    AltName="GPARAM Sub ID: Override 1"
+    Wiki="Value of the hundredths place of a Gparam to override Base with." />
+    
+    <GparamSubID_Override2
+    AltName="GPARAM Sub ID: Override 2"
+    Wiki="Value of the hundredths place of a Gparam to override Base and Override 1 with." />
+    
+    <GparamSubID_Override3
+    AltName="GPARAM Sub ID: Override 3"
+    Wiki="Value of the hundredths place of a Gparam to override Base and Override 1 and Override 2 with." />
+    
+    <Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <Unk1D
+    AltName="Unknown: 0x1D"
+    Wiki="" />
+    
+    <Unk20
+    AltName="Unknown: 0x20"
+    Wiki="" />
+    
+    <Unk21
+    AltName="Unknown: 0x21"
+    Wiki="" />
+    
+    <GrassConfigStruct
+    AltName="Grass Configuration"
+    Wiki="" />
+    
+    <GrassParamId0
+    AltName="Grass Type ID: 0"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
+    
+    <GrassParamId1
+    AltName="Grass Type ID: 1"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
+    
+    <GrassParamId2
+    AltName="Grass Type ID: 2"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
+    
+    <GrassParamId3
+    AltName="Grass Type ID: 3"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
+    
+    <GrassParamId4
+    AltName="Grass Type ID: 4"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
+    
+    <GrassParamId5
+    AltName="Grass Type ID: 5"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
+    
+    <GrassConfigStruct_Unk18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+    
+    <UnkStruct8
+    AltName="Unknown Struct 0x8"
+    Wiki="" />
+    
+    <UnkStruct8_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    
+    <UnkStruct9
+    AltName="Unknown Struct 0x9"
+    Wiki="" />
+    
+    <UnkStruct9_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    
+    <TileLoadConfig
+    AltName="Tile Load Configuration"
+    Wiki="" />
+    
+    <MapID
+    AltName="Map ID"
+    Wiki="The map ID to target."
+    ArrayProperty="" />
+    
+    <TileLoadConfig_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <TileLoadConfig_Unk0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <TileLoadConfig_Unk10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <CullingHeightBehavior
+    AltName="Culling Height Behavior"
+    Wiki="Unknown culling behaviour field for extreme height differences. Values 0000 - 10000." />
+    
+    
+    <UnkStruct11
+    AltName="Unknown Struct 0x11"
+    Wiki="" />
+    
+    <UnkStruct11_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <UnkStruct11_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
   </Field>
   
   <Enums>
+    <Enum Name="GAME_EDITION_DISABLE_TYPE">
+        <Option Value="0" Name="Never Disable" />
+        <Option Value="1" Name="Disable in Release" />
+        <Option Value="2" Name="Disable in Package Edition" />
+        <Option Value="3" Name="Disable in Network Test" />
+    </Enum>
   </Enums>
 </MSBMETA>

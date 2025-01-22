@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an in-game object of varying sizes, from clutter to cliffs. Supports in-built collision, however not all objects use it." />
+  
+  <Field>
+    <UnkT00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+  
+    <UnkT02
+    AltName="Unknown: 0x2"
+    Wiki="" />
+    
+    <UnkT10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <UnkT11
+    AltName="Unknown: 0x11"
+    Wiki="" />
+    
+    <UnkT12
+    AltName="Unknown: 0x12"
+    Wiki="" />
+    
+    <AssetSfxParamRelativeID
+    AltName="Model Particle Offset ID"
+    Wiki="The SFX ID for this object to use (added to the base ModelSfxParam ID)." />
+    
+    <UnkT1E
+    AltName="Unknown: 0x1E"
+    Wiki="" />
+    
+    <UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <UnkT28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <UnkT30
+    AltName="Unknown: 0x30"
+    Wiki="" />
+    
+    <UnkT34
+    AltName="Unknown: 0x34"
+    Wiki="" />
+    
+    <PartNames
+    AltName="Part Name"
+    Wiki="The part names associated with this collision."
+    MapRef="Part-Part" />
+    
+    <PartIndices
+    IndexProperty="" />
+    
+    <UnkT50
+    AltName="Unknown: 0x50"
+    Wiki="" />
+    
+    <UnkT51
+    AltName="Unknown: 0x51"
+    Wiki="" />
+    
+    <UnkT53
+    AltName="Unknown: 0x53"
+    Wiki="" />
+    
+    <UnkT54PartName
+    AltName="Part Name"
+    Wiki="The part names associated with this collision."
+    MapRef="Part-Part" />
+    
+    <UnkT54PartIndex
+    IndexProperty="" />
+    
+    <UnkModelMaskAndAnimID
+    AltName="Model Mask and Animation ID"
+    Wiki="A model mask and animation ID that determines the pose of the current asset." 
+    EldenRingAssetMask="" />
+    
+    <UnkT5C
+    AltName="Unknown: 0x5C"
+    Wiki="" />
+    
+    <UnkT60
+    AltName="Unknown: 0x60"
+    Wiki="" />
+    
+    <UnkT64
+    AltName="Unknown: 0x64"
+    Wiki="" />
+    
+    
+    <AssetUnk1
+    AltName="Unknown Struct 1"
+    Wiki="" />
+    
+    <AssetStruct1_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <AssetStruct1_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" 
+    IsBool="" />
+    
+    <DisableTorrentAssetOnly
+    AltName="Disable Torrent"
+    Wiki="If ON, Torrent cannot be summoned on this asset." 
+    IsBool="" />
+    
+    <AssetStruct1_Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <AssetStruct1_Unk24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <AssetStruct1_Unk26
+    AltName="Unknown: 0x26"
+    Wiki="" />
+    
+    <AssetStruct1_Unk28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <AssetStruct1_Unk2C
+    AltName="Unknown: 0x2C"
+    Wiki="" />
+    
+    
+    <AssetUnk2
+    AltName="Unknown Struct 2"
+    Wiki="" />
+    
+    <AssetUnkStruct2_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <AssetUnkStruct2_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <AssetUnkStruct2_Unk14
+    AltName="Unknown: 0x14"
+    Wiki="" />
+    
+    <AssetUnkStruct2_Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <AssetUnkStruct2_Unk1D
+    AltName="Unknown: 0x1D"
+    Wiki="" />
+    
+    <AssetUnkStruct2_Unk1E
+    AltName="Unknown: 0x1E"
+    Wiki="" />
+    
+    <AssetUnkStruct2_Unk1F
+    AltName="Unknown: 0x1F"
+    Wiki="" />
+    
+    
+    <AssetUnk3
+    AltName="Unknown Struct 3"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk09
+    AltName="Unknown: 0x9"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk0A
+    AltName="Unknown: 0x0A"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk0B
+    AltName="Unknown: 0x0B"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk0C
+    AltName="Unknown: 0x0C"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk0E
+    AltName="Unknown: 0x0E"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk10
+    AltName="Unknown: 0x10"
+    Wiki="" />
+    
+    <DisableWhenMapLoadedMapID
+    AltName="Disable Asset on Loaded Map ID"
+    Wiki="Disables the asset when the specified map is loaded." 
+    ArrayProperty="" />
+    
+    <AssetUnkStruct3_Unk18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk20
+    AltName="Unknown: 0x20"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk24
+    AltName="Unknown: 0x24"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk25
+    AltName="Unknown: 0x25"
+    Wiki="" />
+    
+    <AssetUnkStruct3_Unk28
+    AltName="Unknown: 0x28"
+    Wiki="" />
+    
+    <AssetUnk4
+    AltName="Unknown Struct 4"
+    Wiki="" />
+    
+    <AssetUnkStruct4_Unk00
+    AltName="Unknown: 0x0"
+    Wiki="" />
+    
+    <AssetUnkStruct4_Unk01
+    AltName="Unknown: 0x1"
+    Wiki="" />
+    
+    <AssetUnkStruct4_Unk02
+    AltName="Unknown: 0x2"
+    Wiki="" />
+    
+    <AssetUnkStruct4_Unk03
+    AltName="Unknown: 0x3"
+    Wiki="" />
+    
+    <UnkT18
+    AltName="Unknown: 0x18"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

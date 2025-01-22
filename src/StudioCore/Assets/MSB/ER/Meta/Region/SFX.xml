@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an particle emitter in the map." />
+  
+  <Field>
+    <EffectID
+    AltName="Particle ID"
+    Wiki="The SFX ID this emitter produces." 
+    ParticleAlias="" />
+    
+    <StartDisabled
+    AltName="Start Disabled"
+    Wiki="If ON, this particle will be inactive until it is enabled via an event script."
+    IsBool="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>
