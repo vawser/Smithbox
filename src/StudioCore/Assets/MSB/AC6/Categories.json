@@ -1,0 +1,11 @@
+{
+  "Categories": [
+    {
+      "ForceTop": true,
+      "DisplayName": "Common",
+      "Maps": [
+        "AtkParam_Npc"
+      ]
+    }
+  ]
+}
