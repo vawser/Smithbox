@@ -115,6 +115,13 @@ internal class ParamReloader
         List<Task> tasks = new();
         foreach (var param in paramNames)
         {
+            // Skip these for now
+            if (param == "ThrustersLocomotionParam_PC" || param == "ThrustersParam_NPC")
+            {
+                TaskLogs.AddLog($"Cannot reload {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
+                continue;
+            }
+
             if (!offsets.paramOffsets.TryGetValue(param, out var pOffset) || param == null)
             {
                 TaskLogs.AddLog($"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
