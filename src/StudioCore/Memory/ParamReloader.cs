@@ -115,7 +115,7 @@ internal class ParamReloader
         List<Task> tasks = new();
         foreach (var param in paramNames)
         {
-            // Skip these for now
+            // Skip these for now: cause it to CTD due to type issue
             if (param == "ThrustersLocomotionParam_PC" || param == "ThrustersParam_NPC")
             {
                 TaskLogs.AddLog($"Cannot reload {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);

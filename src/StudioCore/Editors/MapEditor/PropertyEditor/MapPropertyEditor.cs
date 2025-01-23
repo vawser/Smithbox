@@ -661,14 +661,34 @@ public class MapPropertyEditor
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Object Type");
 
+        if (meta != null)
+        {
+            UIHelper.ShowHoverTooltip(meta.Wiki);
+        }
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Map ID");
+        UIHelper.ShowHoverTooltip("The map ID of the map that the first entry of the current selection is found in." );
+
         ImGui.NextColumn();
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text(type.Name);
 
-        if (meta != null)
+        ImGui.AlignTextToFramePadding();
+
+        var mapID = "";
+
+        if (first.MapID != null)
         {
-            UIHelper.ShowHoverTooltip(meta.Wiki);
+            mapID = first.MapID;
+            ImGui.Text(mapID);
+
+            if (mapID != "")
+            {
+                var mapAlias = AliasUtils.GetMapNameAlias(first.MapID);
+                UIHelper.DisplayAlias(mapAlias);
+            }
         }
 
         ImGui.NextColumn();
