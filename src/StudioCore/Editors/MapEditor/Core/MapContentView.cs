@@ -6,6 +6,7 @@ using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -19,6 +20,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Veldrid;
+using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.MapEditor.Core;
 
@@ -166,7 +168,7 @@ public class MapContentView
             ImGui.Indent(); //TreeNodeEx fails to indent as it is inside a group / indentation is reset
         }
 
-        DisplayContextMenu(selected);
+        DisplayRootContextMenu(selected);
         HandleSelectionClick(selectTarget, mapRoot, mapRef, nodeopen);
 
         if (nodeopen)
@@ -243,12 +245,118 @@ public class MapContentView
     }
 
     /// <summary>
-    /// Handles the right-click context menu
+    /// Handles the right-click context menu for map root
     /// </summary>
-    private void DisplayContextMenu(bool selected)
+    private void DisplayRootContextMenu(bool selected)
     {
         if (ImGui.BeginPopupContextItem($@"mapcontext_{MapID}"))
         {
+            if (ImGui.Selectable("Copy Map ID"))
+            {
+                PlatformUtils.Instance.SetClipboardText(MapID);
+            }
+            if (ImGui.Selectable("Copy Map Name"))
+            {
+                var mapName = AliasUtils.GetMapNameAlias(MapID);
+                PlatformUtils.Instance.SetClipboardText(mapName);
+            }
+            if (Screen.MapQueryView.IsOpen)
+            {
+                if (ImGui.Selectable("Add to Map Filter"))
+                {
+                    Screen.MapQueryView.AddMapFilterInput(MapID);
+                }
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
+
+    /// <summary>
+    /// Handles the right-click context menu for map object
+    /// </summary>
+    private void DisplayMapObjectContextMenu(Entity ent, int imguiID)
+    {
+        if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{MapID}_{imguiID}"))
+        {
+            if (ImGui.Selectable("Duplicate"))
+            {
+                Screen.ActionHandler.ApplyDuplicate();
+            }
+            UIHelper.ShowHoverTooltip($"Duplicate the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
+
+            if (ImGui.Selectable("Duplicate to Map"))
+            {
+                Screen.ActionHandler.OpenDuplicateToMapPopup = true;
+            }
+            UIHelper.ShowHoverTooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {KeyBindings.Current.MAP_DuplicateToMap.HintText}");
+
+            if (ImGui.Selectable("Delete"))
+            {
+                Screen.ActionHandler.ApplyDelete();
+            }
+            UIHelper.ShowHoverTooltip($"Delete the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
+
+            if (ImGui.Selectable("Scramble"))
+            {
+                Screen.ActionHandler.ApplyScramble();
+            }
+            UIHelper.ShowHoverTooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ScrambleSelection.HintText}");
+
+            if (ImGui.Selectable("Replicate"))
+            {
+                Screen.ActionHandler.ApplyReplicate();
+            }
+            UIHelper.ShowHoverTooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ReplicateSelection.HintText}");
+
+            ImGui.Separator();
+
+            if (ImGui.Selectable("Frame in Viewport"))
+            {
+                Screen.ActionHandler.ApplyFrameInViewport();
+            }
+            UIHelper.ShowHoverTooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MAP_FrameSelection.HintText}");
+
+            if (ImGui.Selectable("Move to Grid"))
+            {
+                Screen.ActionHandler.ApplyMovetoGrid();
+            }
+            UIHelper.ShowHoverTooltip($"Move the current selection to the nearest grid point.\n\nShortcut: {KeyBindings.Current.MAP_SetSelectionToGrid.HintText}");
+
+            if (ImGui.Selectable("Move to Camera"))
+            {
+                Screen.ActionHandler.ApplyMoveToCamera();
+            }
+            UIHelper.ShowHoverTooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
+
+            ImGui.Separator();
+
+            if (ImGui.Selectable("Copy Name"))
+            {
+                if(Screen.Selection.IsMultiSelection())
+                {
+                    var fullStr = "";
+
+                    foreach(var entry in Screen.Selection.GetSelection())
+                    {
+                        var curEnt = (MsbEntity)entry;
+
+                        if(fullStr != "")
+                            fullStr = $"{fullStr}, {curEnt.Name}";
+                        else
+                            fullStr = $"{curEnt.Name}";
+                    }
+
+                    PlatformUtils.Instance.SetClipboardText(fullStr);
+                }
+                else
+                {
+
+                    PlatformUtils.Instance.SetClipboardText(ent.Name);
+                }
+            }
+            UIHelper.ShowHoverTooltip($"Copy the current selection's name to the clipboard. For multi-selections, each name is separated by a comma and space.");
 
             ImGui.EndPopup();
         }
@@ -443,6 +551,9 @@ public class MapContentView
                 var alias = AliasUtils.GetEntityAliasName(e);
                 UIHelper.DisplayAlias(alias);
             }
+
+            DisplayMapObjectContextMenu(e, treeImGuiId);
+
         }
 
         if (ImGui.IsItemClicked(ImGuiMouseButton.Left))

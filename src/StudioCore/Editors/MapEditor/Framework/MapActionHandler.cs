@@ -7,6 +7,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Tools;
+using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -25,6 +26,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
 using static SoulsFormats.MSBE.Part;
+using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 
@@ -187,10 +189,30 @@ public class MapActionHandler
         }
     }
 
+    public string SelectedMap = "";
+    public bool OpenDuplicateToMapPopup = false;
+    private bool ApplyImmediately = false;
+
+    public void HandleDuplicateToMapMenuPopup()
+    {
+        if(OpenDuplicateToMapPopup)
+        {
+            OpenDuplicateToMapPopup = false;
+            ImGui.OpenPopup("##DupeToTargetMapPopup");
+        }
+
+        if (ImGui.BeginPopup("##DupeToTargetMapPopup"))
+        {
+            DisplayDuplicateToMapMenu(MapDuplicateToMapType.Popup);
+
+            ImGui.EndPopup();
+        }
+    }
+
     /// <summary>
     /// Duplicate to Map
     /// </summary>
-    public void DisplayDuplicateToMapMenu(bool isToolWindow = false, bool isActionSubMenu = false)
+    public void DisplayDuplicateToMapMenu(MapDuplicateToMapType displayType)
     {
         if (!Screen.Selection.IsSelection())
             return;
@@ -201,32 +223,32 @@ public class MapActionHandler
         if (!Screen.Universe.LoadedObjectContainers.Any())
             return;
 
-        if (isToolWindow)
+        if (displayType is MapDuplicateToMapType.ToolWindow)
         {
-            UIHelper.WrappedText("Duplicate selection to specific map.");
+            UIHelper.WrappedText("Duplicate selection to specific loaded map.");
             UIHelper.WrappedText("");
         }
         else
         {
             ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 1.0f), "Duplicate selection to specific map");
-            ImGui.SameLine();
-            ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 0.5f), $" <{KeyBindings.Current.MAP_DuplicateToMap.HintText}>");
         }
 
-        if (ImGui.BeginCombo("Targeted Map", _comboTargetMap.Item1))
+        foreach (var obj in Screen.Universe.LoadedObjectContainers)
         {
-            foreach (var obj in Screen.Universe.LoadedObjectContainers)
+            var mapID = obj.Key;
+            var map = obj.Value;
+
+            if (map != null)
             {
-                if (obj.Value != null)
+                if (ImGui.Selectable(mapID, SelectedMap == mapID))
                 {
-                    if (ImGui.Selectable(obj.Key))
-                    {
-                        _comboTargetMap = (obj.Key, obj.Value);
-                        break;
-                    }
+                    _comboTargetMap = (mapID, map);
+                    ApplyImmediately = true;
                 }
+
+                var mapName = AliasUtils.GetMapNameAlias(mapID);
+                UIHelper.DisplayAlias(mapName);
             }
-            ImGui.EndCombo();
         }
 
         if (_comboTargetMap.Item2 == null)
@@ -255,47 +277,16 @@ public class MapActionHandler
                 return;
         }
 
-        if (isToolWindow)
+        if (ApplyImmediately)
         {
-            var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth, 32);
+            ApplyImmediately = false;
 
-            if (ImGui.MenuItem("Duplicate##duplicateToMapButton"))
-            {
-                Entity targetParent = _dupeSelectionTargetedParent.Item2;
+            Entity targetParent = _dupeSelectionTargetedParent.Item2;
 
-                var action = new CloneMapObjectsAction(Screen.Universe, Screen.MapViewportView.RenderScene, sel, true, targetMap, targetParent);
-                Screen.EditorActionManager.ExecuteAction(action);
-                _comboTargetMap = ("None", null);
-                _dupeSelectionTargetedParent = ("None", null);
-            }
-        }
-        else if (isActionSubMenu)
-        {
-            if (ImGui.MenuItem("Duplicate##duplicateToMapMenuButton"))
-            {
-                Entity targetParent = _dupeSelectionTargetedParent.Item2;
-
-                var action = new CloneMapObjectsAction(Screen.Universe, Screen.MapViewportView.RenderScene, sel, true, targetMap, targetParent);
-                Screen.EditorActionManager.ExecuteAction(action);
-                _comboTargetMap = ("None", null);
-                _dupeSelectionTargetedParent = ("None", null);
-            }
-        }
-        else
-        {
-            if (ImGui.MenuItem("Duplicate##duplicateToMapMenuButtonPopup"))
-            {
-                Entity targetParent = _dupeSelectionTargetedParent.Item2;
-
-                var action = new CloneMapObjectsAction(Screen.Universe, Screen.MapViewportView.RenderScene, sel, true, targetMap, targetParent);
-                Screen.EditorActionManager.ExecuteAction(action);
-                _comboTargetMap = ("None", null);
-                _dupeSelectionTargetedParent = ("None", null);
-
-                // Closes popup/menu bar
-                ImGui.CloseCurrentPopup();
-            }
+            var action = new CloneMapObjectsAction(Screen.Universe, Screen.MapViewportView.RenderScene, sel, true, targetMap, targetParent);
+            Screen.EditorActionManager.ExecuteAction(action);
+            _comboTargetMap = ("None", null);
+            _dupeSelectionTargetedParent = ("None", null);
         }
     }
 
