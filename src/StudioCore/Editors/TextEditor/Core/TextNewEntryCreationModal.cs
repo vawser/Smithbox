@@ -4,7 +4,6 @@ using Octokit;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Prefabs;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextEditor;

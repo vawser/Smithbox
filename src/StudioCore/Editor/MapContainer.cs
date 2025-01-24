@@ -10,10 +10,11 @@ using System.Numerics;
 using System.Xml.Serialization;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MaterialEditor;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
 using Veldrid.Utilities;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Banks.MapTransformBank;
 
 namespace StudioCore.Editor;
 

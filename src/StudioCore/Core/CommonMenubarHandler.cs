@@ -608,7 +608,7 @@ public class CommonMenubarHandler
         }
 
         // Add async stuff here that doesn't directly use the TaskManager system
-        if (Smithbox.EditorHandler.MapEditor.MapQueryHandler.UserLoadedData && !Smithbox.EditorHandler.MapEditor.MapQueryHandler.Bank.MapBankInitialized)
+        if (Smithbox.EditorHandler.MapEditor.MapQueryView.UserLoadedData && !Smithbox.EditorHandler.MapEditor.MapQueryView.Bank.MapBankInitialized)
         {
             return false;
         }

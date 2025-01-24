@@ -1,5 +1,5 @@
 ﻿using ImGuiNET;
-using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,7 +3,7 @@ using HKLib.hk2018.hkaiCollisionAvoidance;
 using HKLib.hk2018.TypeRegistryTest;
 using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.MsbEditor;

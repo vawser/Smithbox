@@ -1,7 +1,8 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
-using StudioCore.Editors.MapEditor.Actions;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor.Tools.PatrolRouteDraw;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -12,18 +13,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.MapEditor.Actions.ActionHandler;
+using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 
 namespace StudioCore.Editors.MapEditor.Tools;
 
 public class ToolSubMenu
 {
     private MapEditorScreen Screen;
-    private ActionHandler Handler;
+    private MapActionHandler Handler;
 
     private bool PatrolsVisualised = false;
 
-    public ToolSubMenu(MapEditorScreen screen, ActionHandler handler)
+    public ToolSubMenu(MapEditorScreen screen, MapActionHandler handler)
     {
         Screen = screen;
         Handler = handler;
@@ -53,7 +54,7 @@ public class ToolSubMenu
         KeyboardMovement.Shortcuts();
 
         //Selection Groups
-        Screen.SelectionGroupEditor.SelectionGroupShortcuts();
+        Screen.SelectionGroupView.SelectionGroupShortcuts();
     }
 
     public void OnProjectChanged()
