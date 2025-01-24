@@ -15,7 +15,6 @@ using StudioCore.Resource.Locators;
 using Veldrid.Utilities;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Banks.MapTransformBank;
-using StudioCore.Editors.MapEditor.Enums;
 
 namespace StudioCore.Editor;
 
@@ -44,7 +43,7 @@ public class MapContainer : ObjectContainer
         Name = mapid;
         Universe = u;
         var t = new MapTransformNode(mapid);
-        RootObject = new MsbEntity(this, t, MsbEntityType.MapRoot);
+        RootObject = new MsbEntity(this, t, MsbEntity.MsbEntityType.MapRoot);
         MapOffsetNode = new MsbEntity(this, new MapTransformNode(mapid));
 
         RootObject.AddChild(MapOffsetNode);
@@ -142,7 +141,7 @@ public class MapContainer : ObjectContainer
 
         foreach (IMsbPart p in msb.Parts.GetEntries())
         {
-            var n = new MsbEntity(this, p, MsbEntityType.Part);
+            var n = new MsbEntity(this, p, MsbEntity.MsbEntityType.Part);
             Parts.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
@@ -150,7 +149,7 @@ public class MapContainer : ObjectContainer
 
         foreach (IMsbRegion p in msb.Regions.GetEntries())
         {
-            var n = new MsbEntity(this, p, MsbEntityType.Region);
+            var n = new MsbEntity(this, p, MsbEntity.MsbEntityType.Region);
             Regions.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
@@ -158,7 +157,7 @@ public class MapContainer : ObjectContainer
 
         foreach (IMsbEvent p in msb.Events.GetEntries())
         {
-            var n = new MsbEntity(this, p, MsbEntityType.Event);
+            var n = new MsbEntity(this, p, MsbEntity.MsbEntityType.Event);
             Events.Add(n);
 
             if (p is MSB2.Event.MapOffset mo1)
@@ -204,11 +203,11 @@ public class MapContainer : ObjectContainer
 
     public void LoadBTL(ResourceDescriptor ad, BTL btl)
     {
-        var btlParent = new MsbEntity(this, ad, MsbEntityType.Editor);
+        var btlParent = new MsbEntity(this, ad, MsbEntity.MsbEntityType.Editor);
         MapOffsetNode.AddChild(btlParent);
         foreach (BTL.Light l in btl.Lights)
         {
-            var n = new MsbEntity(this, l, MsbEntityType.Light);
+            var n = new MsbEntity(this, l, MsbEntity.MsbEntityType.Light);
             Objects.Add(n);
             btlParent.AddChild(n);
         }
@@ -1021,7 +1020,7 @@ public class MapContainer : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MsbEntity m && m.Type == MsbEntityType.DS2Generator &&
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2Generator &&
                 m.WrappedObject is MergedParamRow mp)
             {
                 if (!ids.Contains(mp.ID))
@@ -1066,7 +1065,7 @@ public class MapContainer : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MsbEntity m && m.Type == MsbEntityType.DS2GeneratorRegist &&
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2GeneratorRegist &&
                 m.WrappedObject is Param.Row mp)
             {
                 if (!ids.Contains(mp.ID))
@@ -1093,7 +1092,7 @@ public class MapContainer : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MsbEntity m && m.Type == MsbEntityType.DS2Event && m.WrappedObject is Param.Row mp)
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2Event && m.WrappedObject is Param.Row mp)
             {
                 if (!ids.Contains(mp.ID))
                 {
@@ -1120,7 +1119,7 @@ public class MapContainer : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MsbEntity m && m.Type == MsbEntityType.DS2EventLocation &&
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2EventLocation &&
                 m.WrappedObject is Param.Row mp)
             {
                 if (!ids.Contains(mp.ID))
@@ -1155,7 +1154,7 @@ public class MapContainer : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MsbEntity m && m.Type == MsbEntityType.DS2ObjectInstance &&
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2ObjectInstance &&
                 m.WrappedObject is Param.Row mp)
             {
                 if (!ids.Contains(mp.ID))

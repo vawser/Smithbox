@@ -28,7 +28,6 @@ using StudioCore.Resource.Locators;
 using HKLib.hk2018;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.MapConnections;
-using StudioCore.Editors.MapEditor.Enums;
 
 namespace StudioCore.MsbEditor;
 
@@ -529,7 +528,7 @@ public class Universe
 
             registParams.Add(row.ID, row);
 
-            MsbEntity obj = new(map, row, MsbEntityType.DS2GeneratorRegist);
+            MsbEntity obj = new(map, row, MsbEntity.MsbEntityType.DS2GeneratorRegist);
             map.AddObject(obj);
         }
 
@@ -546,7 +545,7 @@ public class Universe
             mergedRow.AddRow("generator-loc", row);
             generatorParams.Add(row.ID, mergedRow);
 
-            MsbEntity obj = new(map, mergedRow, MsbEntityType.DS2Generator);
+            MsbEntity obj = new(map, mergedRow, MsbEntity.MsbEntityType.DS2Generator);
             generatorObjs.Add(row.ID, obj);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
@@ -570,7 +569,7 @@ public class Universe
                 MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
                 mergedRow.AddRow("generator", row);
                 generatorParams.Add(row.ID, mergedRow);
-                MsbEntity obj = new(map, mergedRow, MsbEntityType.DS2Generator);
+                MsbEntity obj = new(map, mergedRow, MsbEntity.MsbEntityType.DS2Generator);
                 generatorObjs.Add(row.ID, obj);
                 map.AddObject(obj);
             }
@@ -613,7 +612,7 @@ public class Universe
 
             eventParams.Add(row.ID, row);
 
-            MsbEntity obj = new(map, row, MsbEntityType.DS2Event);
+            MsbEntity obj = new(map, row, MsbEntity.MsbEntityType.DS2Event);
             map.AddObject(obj);
         }
 
@@ -627,7 +626,7 @@ public class Universe
 
             eventLocationParams.Add(row.ID, row);
 
-            MsbEntity obj = new(map, row, MsbEntityType.DS2EventLocation);
+            MsbEntity obj = new(map, row, MsbEntity.MsbEntityType.DS2EventLocation);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
 
@@ -649,7 +648,7 @@ public class Universe
 
             objectInstanceParams.Add(row.ID, row);
 
-            MsbEntity obj = new(map, row, MsbEntityType.DS2ObjectInstance);
+            MsbEntity obj = new(map, row, MsbEntity.MsbEntityType.DS2ObjectInstance);
             map.AddObject(obj);
         }
 

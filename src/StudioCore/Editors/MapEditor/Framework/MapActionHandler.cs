@@ -5,7 +5,6 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
@@ -66,7 +65,7 @@ public class MapActionHandler
             {
                 foreach (Entity btl in map.BTLParents)
                 {
-                    AddNewEntity(typeof(BTL.Light), MsbEntityType.Light, map, btl);
+                    AddNewEntity(typeof(BTL.Light), MsbEntity.MsbEntityType.Light, map, btl);
                 }
             }
             if (CFG.Current.Toolbar_Create_Part)
@@ -74,21 +73,21 @@ public class MapActionHandler
                 if (_createPartSelectedType == null)
                     return;
 
-                AddNewEntity(_createPartSelectedType, MsbEntityType.Part, map);
+                AddNewEntity(_createPartSelectedType, MsbEntity.MsbEntityType.Part, map);
             }
             if (CFG.Current.Toolbar_Create_Region)
             {
                 if (_createRegionSelectedType == null)
                     return;
 
-                AddNewEntity(_createRegionSelectedType, MsbEntityType.Region, map);
+                AddNewEntity(_createRegionSelectedType, MsbEntity.MsbEntityType.Region, map);
             }
             if (CFG.Current.Toolbar_Create_Event)
             {
                 if (_createEventSelectedType == null)
                     return;
 
-                AddNewEntity(_createEventSelectedType, MsbEntityType.Event, map);
+                AddNewEntity(_createEventSelectedType, MsbEntity.MsbEntityType.Event, map);
             }
         }
     }
@@ -96,7 +95,7 @@ public class MapActionHandler
     /// <summary>
     /// Adds a new entity to the targeted map. If no parent is specified, RootObject will be used.
     /// </summary>
-    private void AddNewEntity(Type typ, MsbEntityType etype, MapContainer map, Entity parent = null)
+    private void AddNewEntity(Type typ, MsbEntity.MsbEntityType etype, MapContainer map, Entity parent = null)
     {
         var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
         MsbEntity obj = new(map, newent, etype);
