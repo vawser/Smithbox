@@ -40,7 +40,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// Main interface for the MSB Editor.
 /// </summary>
-public class MapEditorScreen : EditorScreen
+public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 {
     /// <summary>
     /// Lock variable used to handle pauses to the Update() function.
@@ -63,6 +63,7 @@ public class MapEditorScreen : EditorScreen
     // Core Views
     public MapViewportView MapViewportView;
     public MapListView MapListView;
+    public MapContentView MapContentView;
     public MapPropertyView MapPropertyView;
 
     // Optional Views
@@ -90,10 +91,10 @@ public class MapEditorScreen : EditorScreen
     {
         MapViewportView = new MapViewportView(this, window, device);
         Universe = new Universe(MapViewportView.RenderScene, Selection);
-        FocusManager = new EditorFocusManager(this);
 
         // Core Views
-        MapListView = new MapListView(this);
+        MapListView = new MapListView(this, "mapedittree");
+        MapContentView = new MapContentView(this);
         MapPropertyView = new MapPropertyView(this);
 
         // Optional Views
@@ -121,6 +122,7 @@ public class MapEditorScreen : EditorScreen
         ToolSubMenu = new ToolSubMenu(this, ActionHandler);
 
         // Focus
+        FocusManager = new EditorFocusManager(this);
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
         EditorActionManager.AddEventHandler(MapListView);
     }
@@ -583,29 +585,23 @@ public class MapEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
 
-            if (ImGui.MenuItem("Map List"))
+            if (ImGui.MenuItem("Map Object List"))
             {
-                UI.Current.Interface_MapEditor_MapList = !UI.Current.Interface_MapEditor_MapList;
+                UI.Current.Interface_MapEditor_MapObjectList = !UI.Current.Interface_MapEditor_MapObjectList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_MapList);
-
-            if (ImGui.MenuItem("Map Contents"))
-            {
-                UI.Current.Interface_MapEditor_MapContents = !UI.Current.Interface_MapEditor_MapContents;
-            }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_MapContents);
-
-            if (ImGui.MenuItem("Properties"))
-            {
-                UI.Current.Interface_MapEditor_Properties = !UI.Current.Interface_MapEditor_Properties;
-            }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Properties);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_MapObjectList);
 
             if (ImGui.MenuItem("Tool Window"))
             {
                 UI.Current.Interface_MapEditor_ToolWindow = !UI.Current.Interface_MapEditor_ToolWindow;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_ToolWindow);
+
+            if (ImGui.MenuItem("Properties"))
+            {
+                UI.Current.Interface_MapEditor_Properties = !UI.Current.Interface_MapEditor_Properties;
+            }
+            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Properties);
 
             if (ImGui.MenuItem("Asset Browser"))
             {
@@ -922,6 +918,7 @@ public class MapEditorScreen : EditorScreen
 
         MapViewportView.OnGui();
         MapListView.OnGui();
+        MapContentView.OnGui();
 
         if (Smithbox.FirstFrame)
         {
@@ -1010,6 +1007,7 @@ public class MapEditorScreen : EditorScreen
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             MapListView.OnProjectChanged();
+            MapContentView.OnProjectChanged();
 
             MapQueryView.OnProjectChanged();
             SelectionGroupView.OnProjectChanged();

@@ -88,8 +88,7 @@ public class UI
     public bool Interface_Editor_Profiling = true;
 
     // Map Editor
-    public bool Interface_MapEditor_MapList = true;
-    public bool Interface_MapEditor_MapContents = true;
+    public bool Interface_MapEditor_MapObjectList = true;
     public bool Interface_MapEditor_Properties = true;
     public bool Interface_MapEditor_PropertySearch = true;
     public bool Interface_MapEditor_RenderGroups = true;

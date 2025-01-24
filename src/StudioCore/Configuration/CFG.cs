@@ -245,7 +245,6 @@ public class CFG
 
     public bool MapEditor_MapObjectList_ShowListSortingType = true;
     public bool MapEditor_MapObjectList_ShowMapIdSearch = true;
-    public bool MapEditor_MapObjectList_ShowMapContentSearch = true;
 
     public bool MapEditor_MapObjectList_ShowCharacterNames = true;
     public bool MapEditor_MapObjectList_ShowAssetNames = true;
