@@ -1,7 +1,5 @@
 ﻿using Silk.NET.OpenGL;
 using StudioCore.Configuration;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -71,7 +69,7 @@ public static class KeyboardMovement
         }
 
         List<ViewportAction> actlist = new();
-        HashSet<Entity> sels = Smithbox.EditorHandler.MapEditor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> sels = Smithbox.EditorHandler.MapEditor._selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
         foreach (Entity sel in sels)
         {

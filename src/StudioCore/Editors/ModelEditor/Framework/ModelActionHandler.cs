@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.AllSkeleton;
 using StudioCore.Editors.ModelEditor.Actions.BaseSkeleton;

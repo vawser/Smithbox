@@ -1,5 +1,5 @@
 ﻿using ImGuiNET;
-using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using System.Numerics;

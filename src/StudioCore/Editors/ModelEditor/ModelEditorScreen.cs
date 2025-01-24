@@ -10,6 +10,7 @@ using Veldrid.Utilities;
 using Viewport = StudioCore.Interface.Viewport;
 using StudioCore.Configuration;
 using StudioCore.MsbEditor;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Utilities;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Core.Project;
@@ -21,14 +22,12 @@ using StudioCore.Editors.ModelEditor.Core;
 using StudioCore.Editors.ModelEditor.Core.Properties;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
 
 namespace StudioCore.Editors.ModelEditor;
 
 public class ModelEditorScreen : EditorScreen
 {
-    public ViewportActionManager EditorActionManager = new();
+    public MapEditor.ViewportActionManager EditorActionManager = new();
 
     public ViewportSelection _selection = new();
 

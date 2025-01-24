@@ -107,21 +107,19 @@ public class ViewportTab
                 CFG.Current.Viewport_RenderDistance_Max = farClip;
             UIHelper.ShowHoverTooltip("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
 
-            var worldView = Smithbox.EditorHandler.MapEditor.MapViewportView.Viewport.WorldView;
-
             if (ImGui.SliderFloat("Map camera speed (slow)",
-                    ref worldView.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
-                CFG.Current.Viewport_Camera_MoveSpeed_Slow = worldView.CameraMoveSpeed_Slow;
+                    ref Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
+                CFG.Current.Viewport_Camera_MoveSpeed_Slow = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
             UIHelper.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
 
             if (ImGui.SliderFloat("Map camera speed (normal)",
-                    ref worldView.CameraMoveSpeed_Normal, 0.1f, 9999.0f))
-                CFG.Current.Viewport_Camera_MoveSpeed_Normal = worldView.CameraMoveSpeed_Normal;
+                    ref Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 9999.0f))
+                CFG.Current.Viewport_Camera_MoveSpeed_Normal = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
             UIHelper.ShowHoverTooltip("Set the speed at which the camera will move whilst moving normally.");
 
             if (ImGui.SliderFloat("Map camera speed (fast)",
-                    ref worldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
-                CFG.Current.Viewport_Camera_MoveSpeed_Fast = worldView.CameraMoveSpeed_Fast;
+                    ref Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
+                CFG.Current.Viewport_Camera_MoveSpeed_Fast = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
             UIHelper.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
 
             if (ImGui.Button("Reset##ViewportCamera", defaultButtonSize))
@@ -130,15 +128,15 @@ public class ViewportTab
 
                 CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
 
-                worldView.CameraMoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
-                CFG.Current.Viewport_Camera_MoveSpeed_Slow = worldView.CameraMoveSpeed_Slow;
+                Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
+                CFG.Current.Viewport_Camera_MoveSpeed_Slow = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
                 CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
 
-                worldView.CameraMoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
-                CFG.Current.Viewport_Camera_MoveSpeed_Normal = worldView.CameraMoveSpeed_Normal;
+                Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
+                CFG.Current.Viewport_Camera_MoveSpeed_Normal = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
 
-                worldView.CameraMoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
-                CFG.Current.Viewport_Camera_MoveSpeed_Fast = worldView.CameraMoveSpeed_Fast;
+                Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
+                CFG.Current.Viewport_Camera_MoveSpeed_Fast = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
             }
             UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 

@@ -1,6 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor.Multiselection;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;

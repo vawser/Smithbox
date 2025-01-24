@@ -3,7 +3,6 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.HavokAliasBank;
-using StudioCore.Banks.MapTransformBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;

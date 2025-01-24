@@ -1,4 +1,4 @@
-﻿using StudioCore.Editors.MapEditor.Framework;
+﻿using StudioCore.Editors.MapEditor;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;

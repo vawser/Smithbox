@@ -5,7 +5,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editor.Multiselection;
-using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;

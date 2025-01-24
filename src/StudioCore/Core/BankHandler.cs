@@ -1,10 +1,8 @@
 ﻿using StudioCore.Banks.AliasBank;
-using StudioCore.Banks.EntitySelectionGroupBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Banks.MapCategoryBank;
-using StudioCore.Banks.MapTransformBank;
 using StudioCore.Banks.ParamCategoryBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.SpawnStateBank;
@@ -12,9 +10,8 @@ using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Framework.META;
-using StudioCore.Editors.MapEditor.Tools.LightmapAtlasEditor;
+using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
+using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.TextEditor;
@@ -68,7 +65,6 @@ public class BankHandler
     public SpawnStateBank SpawnStates;
     public LightmapAtlasBank LightmapAtlasBank;
     public MaterialResourceBank MaterialBank;
-    public EntitySelectionGroupBank EntitySelectionGroups;
 
     public MapTransformBank MapTransforms;
 
@@ -109,7 +105,6 @@ public class BankHandler
         MapCategories = new MapCategoryBank();
         LightmapAtlasBank = new LightmapAtlasBank();
         MaterialBank = new MaterialResourceBank();
-        EntitySelectionGroups = new EntitySelectionGroupBank();
 
         MapTransforms = new MapTransformBank();
 
@@ -151,7 +146,6 @@ public class BankHandler
         SpawnStates.LoadBank();
         LightmapAtlasBank.LoadBank();
         MaterialBank.LoadBank();
-        EntitySelectionGroups.LoadBank();
 
         MapTransforms.LoadBank();
 

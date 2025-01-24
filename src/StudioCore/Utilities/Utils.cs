@@ -8,7 +8,6 @@ using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
