@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -1764,7 +1765,7 @@ public class ReplicateMapObjectsAction : ViewportAction
 
         if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
-            if (sel.Type == MsbEntity.MsbEntityType.DS2Generator &&
+            if (sel.Type == MsbEntityType.DS2Generator &&
                 sel.WrappedObject is MergedParamRow mp)
             {
                 Param.Row loc = mp.GetRow("generator-loc");
@@ -1790,7 +1791,7 @@ public class ReplicateMapObjectsAction : ViewportAction
 
             if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
-                if (newobj.Type == MsbEntity.MsbEntityType.DS2Generator &&
+                if (newobj.Type == MsbEntityType.DS2Generator &&
                 newobj.WrappedObject is MergedParamRow mp)
                 {
                     Param.Row loc = mp.GetRow("generator-loc");

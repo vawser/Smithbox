@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Tools.MapConnections;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
@@ -1506,7 +1507,7 @@ public class MapSerializationEntity
 {
     public string Name { get; set; }
     public int Msbidx { get; set; } = -1;
-    public MsbEntity.MsbEntityType Type { get; set; }
+    public MsbEntityType Type { get; set; }
     public Transform Transform { get; set; }
     public List<MapSerializationEntity> Children { get; set; }
 
@@ -1521,24 +1522,6 @@ public class MapSerializationEntity
 /// </summary>
 public class MsbEntity : Entity
 {
-    /// <summary>
-    /// Enum for Entity Type within the MSB.
-    /// </summary>
-    public enum MsbEntityType
-    {
-        MapRoot,
-        Editor,
-        Part,
-        Region,
-        Event,
-        Light,
-        DS2Generator,
-        DS2GeneratorRegist,
-        DS2Event,
-        DS2EventLocation,
-        DS2ObjectInstance
-    }
-
     protected int CurrentNPCParamID = 0;
     protected int[] ModelMasks = null;
 

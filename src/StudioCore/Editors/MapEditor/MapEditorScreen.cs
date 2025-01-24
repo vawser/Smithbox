@@ -55,6 +55,7 @@ public class MapEditorScreen : EditorScreen
     public MapActionHandler ActionHandler;
     public ViewportSelection Selection = new();
     public Universe Universe;
+    public MapEntityTypeCache EntityTypeCache = new();
     public EditorFocusManager FocusManager;
     public MapPropertyCache MapPropertyCache = new();
     public MapCommandQueue CommandQueue;
