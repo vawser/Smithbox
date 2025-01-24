@@ -147,7 +147,7 @@ namespace SoulsFormats
                         else if (member.Type == LayoutType.Float4)
                         {
                             Position = br.ReadVector3();
-                            br.AssertSingle(0);
+                            br.ReadSingle(); // br.AssertSingle(0);
                         }
                         else if (member.Type == LayoutType.EdgeCompressed)
                         {
@@ -293,7 +293,7 @@ namespace SoulsFormats
                         else if (member.Type == LayoutType.Byte4C)
                         {
                             UVs.Add(new Vector3(br.ReadByte() / 255f, br.ReadByte() / 255f, br.ReadByte() / 255f));
-                            br.AssertByte(0);
+                            br.ReadByte(); //br.AssertByte(0);
                         }
                         else if (member.Type == LayoutType.UV)
                         {
@@ -307,7 +307,7 @@ namespace SoulsFormats
                         else if (member.Type == LayoutType.Short4toFloat4B)
                         {
                             UVs.Add(new Vector3(br.ReadInt16(), br.ReadInt16(), br.ReadInt16()) / uvFactor);
-                            br.AssertInt16(0);
+                            br.ReadInt16(); // br.AssertInt16(0);
                         }
                         else
                             throw new NotImplementedException($"Read not implemented for {member.Type} {member.Semantic}.");

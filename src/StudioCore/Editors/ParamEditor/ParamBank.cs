@@ -2883,10 +2883,12 @@ public class ParamBank
             var path = ParamLocator.GetStrippedRowNamesPath(p.Key);
             if (File.Exists(path))
             {
+                var filename = Path.GetFileName(path);
+
                 var names = File.ReadAllLines(path);
                 if (names.Length != p.Value.Rows.Count)
                 {
-                    TaskLogs.AddLog($"External row names could not be applied to {p.Key}, row count does not match",
+                    TaskLogs.AddLog($"External row names could not be applied to {p.Key}, row count does not match.\n\nYou can manually correct this by opening {filename}.txt at {path}:\n\nEnsure the row count matches the number of rows in the param exactly.",
                         LogLevel.Warning, LogPriority.Low);
                     failCount++;
                     continue;
