@@ -211,8 +211,6 @@ public class CFG
     //****************************
     // Settings: Map Editor
     //****************************
-    public bool Param_DisplayMapCategories = true;
-
     public bool MapEditor_LoadMapQueryData = true;
 
     public bool MapEditor_AssetBrowser_ShowAliases = true;

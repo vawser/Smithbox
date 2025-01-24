@@ -239,7 +239,7 @@ public class ParamEditorView
                     }
                 }
 
-                // Categories - Forced Bottom
+                // Categories - Forced Top
                 foreach (var category in categories)
                 {
                     if (category.ForceBottom)
