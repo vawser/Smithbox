@@ -10,7 +10,8 @@ namespace StudioCore.Editors.MapEditor.Enums;
 public enum MapEditorContext
 {
     [Display(Name = "None")] None,
-    [Display(Name = "Map Object List")] MapObjectList,
+    [Display(Name = "Map List")] MapIdList,
+    [Display(Name = "Map Contents")] MapContents,
     [Display(Name = "Map Viewport")] MapViewport,
     [Display(Name = "Map Object Properties")] MapObjectProperties,
     [Display(Name = "Tool Window")] ToolWindow,
