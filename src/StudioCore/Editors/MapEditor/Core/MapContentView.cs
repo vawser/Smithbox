@@ -112,9 +112,6 @@ public class MapContentView
 
         ImGui.Separator();
 
-        // Reset this every frame, otherwise the map object selectables won't work correctly
-        treeImGuiId = 0;
-
         DisplayContentTree();
     }
 
@@ -148,9 +145,6 @@ public class MapContentView
         if (Container != null && ContentLoadState is MapContentLoadState.Loaded)
         {
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
-
-            var mapName = AliasUtils.GetMapNameAlias(MapID);
-            UIHelper.DisplayAlias(mapName);
         }
 
         ImGui.EndGroup();
@@ -166,8 +160,8 @@ public class MapContentView
             ImGui.Indent(); //TreeNodeEx fails to indent as it is inside a group / indentation is reset
         }
 
-        DisplayContextMenu(selected);
-        HandleSelectionClick(selectTarget, mapRoot, mapRef, nodeopen);
+        //DisplayContextMenu(selected);
+        //HandleSelectionClick(selectTarget, mapRoot, mapRef, nodeopen);
 
         if (nodeopen)
         {
@@ -445,7 +439,7 @@ public class MapContentView
             }
         }
 
-        if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
+        if (ImGui.IsItemClicked(0))
         {
             _pendingClick = e;
         }
