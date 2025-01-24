@@ -7,7 +7,6 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Tools;
@@ -263,7 +262,7 @@ public class MapEditorScreen : EditorScreen
             ///--------------------
             if (ImGui.BeginMenu("Duplicate Selected to Map"))
             {
-                ActionHandler.DisplayDuplicateToMapMenu(MapDuplicateToMapType.Menubar);
+                ActionHandler.DisplayDuplicateToMapMenu(false, true);
 
                 ImGui.EndMenu();
             }
@@ -393,16 +392,14 @@ public class MapEditorScreen : EditorScreen
             {
                 ActionHandler.ApplyFrameInViewport();
             }
-            UIHelper.ShowHoverTooltip("Frames the current selection in the viewport.");
 
             ///--------------------
             // Move to Grid
             ///--------------------
-            if (ImGui.MenuItem("Move Selected to Grid", KeyBindings.Current.MAP_SetSelectionToGrid.HintText))
+            if (ImGui.MenuItem("Move Selected to Grid", KeyBindings.Current.MAP_ReplicateSelection.HintText))
             {
                 ActionHandler.ApplyMovetoGrid();
             }
-            UIHelper.ShowHoverTooltip("Move the current selection to the nearest grid point.");
 
             ///--------------------
             // Move to Camera
@@ -411,7 +408,6 @@ public class MapEditorScreen : EditorScreen
             {
                 ActionHandler.ApplyMoveToCamera();
             }
-            UIHelper.ShowHoverTooltip("Move the current selection to the camera position.");
 
             ImGui.Separator();
 
@@ -909,7 +905,13 @@ public class MapEditorScreen : EditorScreen
         WorldMapView.Shortcuts();
         ToolSubMenu.Shortcuts();
         CommandQueue.Parse(initcmd);
-        ActionHandler.HandleDuplicateToMapMenuPopup();
+
+        if (ImGui.BeginPopup("##DupeToTargetMapPopup"))
+        {
+            ActionHandler.DisplayDuplicateToMapMenu();
+
+            ImGui.EndPopup();
+        }
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
