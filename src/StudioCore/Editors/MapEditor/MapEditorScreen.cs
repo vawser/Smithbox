@@ -667,6 +667,13 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Viewport_LightmapAtlas);
             }
 
+            ImGui.Separator();
+
+            if (ImGui.MenuItem("Map Object List: Categories"))
+            {
+                CFG.Current.Param_DisplayMapCategories = !CFG.Current.Param_DisplayMapCategories;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Param_DisplayMapCategories);
 
             ImGui.Separator();
 
