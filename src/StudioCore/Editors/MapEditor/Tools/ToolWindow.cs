@@ -268,7 +268,7 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Duplicate to Map"))
             {
-                Handler.DisplayDuplicateToMapMenu(true);
+                Handler.DisplayDuplicateToMapMenu(MapDuplicateToMapType.ToolWindow);
             }
 
             ///--------------------
