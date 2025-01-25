@@ -1,14 +1,22 @@
-﻿using ImGuiNET;
+﻿using CommunityToolkit.HighPerformance.Helpers;
+using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Actions;
-using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
-using StudioCore.Editors.MapEditor.MapQuery;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Core;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Tools;
+using StudioCore.Editors.MapEditor.Tools.AssetBrowser;
+using StudioCore.Editors.MapEditor.Tools.DisplayGroups;
+using StudioCore.Editors.MapEditor.Tools.LightmapAtlasEditor;
+using StudioCore.Editors.MapEditor.Tools.MapQuery;
+using StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
+using StudioCore.Editors.MapEditor.Tools.SelectionGroups;
+using StudioCore.Editors.MapEditor.Tools.WorldMap;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -24,7 +32,7 @@ using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Editors.MapEditor.Actions.ActionHandler;
+using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 using Viewport = StudioCore.Interface.Viewport;
 
 namespace StudioCore.Editors.MapEditor;
@@ -38,109 +46,85 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     /// Lock variable used to handle pauses to the Update() function.
     /// </summary>
     private static readonly object _lock_PauseUpdate = new();
-    
-    /// <summary>
-    /// Current entity selection within the viewport.
-    /// </summary>
-    public ViewportSelection _selection = new();
-
-    /// <summary>
-    /// Active modal window.
-    /// </summary>
-    private IModal _activeModal;
-
+    private bool GCNeedsCollection;
     private bool _PauseUpdate;
 
-    public bool AltHeld;
-    public bool CtrlHeld;
+    private IModal _activeModal;
 
     public ViewportActionManager EditorActionManager = new();
-
-    public MapSelectionManager Selection;
-
-    public DisplayGroupEditor DispGroupEditor;
-    public MapAssetSelectionView MapAssetSelectionView;
-    public SelectionGroupEditor SelectionGroupEditor;
-    public PrefabEditor PrefabEditor;
-    public LightmapAtlasScreen LightmapAtlasEditor;
-
-    public GranularRegionToggleHandler GranularRegionHandler;
-
-    private bool GCNeedsCollection;
-
-    public Rectangle ModelViewerBounds;
-    public NavmeshEditor NavMeshEditor;
-    public MapPropertyEditor PropEditor;
-    public MapSearchProperties PropSearch;
-    private readonly MapPropertyCache _propCache = new();
-
-    public Rectangle Rect;
-    public RenderScene RenderScene;
-
-    public MapSceneTree SceneTree;
-    public bool ShiftHeld;
-
+    public MapActionHandler ActionHandler;
+    public ViewportSelection Selection = new();
     public Universe Universe;
-    public IViewport Viewport;
+    public EditorFocusManager FocusManager;
+    public MapPropertyCache MapPropertyCache = new();
+    public MapCommandQueue CommandQueue;
+    public MapShortcuts Shortcuts;
 
-    private bool ViewportUsingKeyboard;
+    // Core Views
+    public MapViewportView MapViewportView;
+    public MapListView MapListView;
+    public MapContentView MapContentView;
+    public MapPropertyView MapPropertyView;
 
-    private Sdl2Window Window;
+    // Optional Views
+    public AssetBrowserView AssetBrowserView;
+    public DisplayGroupView DisplayGroupView;
+    public SelectionGroupView SelectionGroupView;
+    public PrefabView PrefabView;
+    public LightmapAtlasView LightmapAtlasView;
+    public NavmeshBuilderView NavmeshBuilderView;
+    public MapQueryView MapQueryView;
+    public WorldMapView WorldMapView;
+    public LocalSearchView LocalSearchView;
 
-    public List<string> WorldMap_ClickedMapZone = new List<string>();
+    // Menubar
+    public BasicFilters BasicFilters;
+    public RegionFilters RegionFilters;
 
+    // Tools
     public ToolWindow ToolWindow;
     public ToolSubMenu ToolSubMenu;
 
-    public ActionHandler ActionHandler;
-
-    public MapQuerySearchEngine MapQueryHandler;
-
-    public EditorFocusManager FocusManager;
+    // Viewport
 
     public MapEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        Rect = window.Bounds;
-        Window = window;
+        MapViewportView = new MapViewportView(this, window, device);
+        Universe = new Universe(MapViewportView.RenderScene, Selection);
 
-        Selection = new MapSelectionManager(this);
+        // Core Views
+        MapListView = new MapListView(this, "mapedittree");
+        MapContentView = new MapContentView(this);
+        MapPropertyView = new MapPropertyView(this);
 
-        if (device != null)
-        {
-            RenderScene = new RenderScene();
-            Viewport = new Viewport(ViewportType.MapEditor, "Mapeditvp", device, RenderScene, EditorActionManager, _selection, Rect.Width, Rect.Height);
-            RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
-        }
-        else
-        {
-            Viewport = new NullViewport(ViewportType.MapEditor, "Mapeditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
-        }
+        // Optional Views
+        DisplayGroupView = new DisplayGroupView(this);
+        LocalSearchView = new LocalSearchView(this);
 
-        Universe = new Universe(RenderScene, _selection);
+        AssetBrowserView = new AssetBrowserView(this);
+        LightmapAtlasView = new LightmapAtlasView(this);
+        PrefabView = new PrefabView(this);
+        SelectionGroupView = new SelectionGroupView(this);
+        NavmeshBuilderView = new NavmeshBuilderView(this);
 
-        SceneTree = new MapSceneTree(this, MapSceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport);
-        DispGroupEditor = new DisplayGroupEditor(RenderScene, _selection, EditorActionManager);
-        PropSearch = new MapSearchProperties(Universe, _propCache);
-        NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
-        MapAssetSelectionView = new MapAssetSelectionView(this);
-        GranularRegionHandler = new GranularRegionToggleHandler(Universe);
+        BasicFilters = new BasicFilters(this);
+        RegionFilters = new RegionFilters(this);
 
-        PropEditor = new MapPropertyEditor(this, EditorActionManager, _propCache, Viewport);
+        // Framework
+        ActionHandler = new MapActionHandler(this);
+        MapQueryView = new MapQueryView(this);
+        WorldMapView = new WorldMapView(this);
+        CommandQueue = new MapCommandQueue(this);
+        Shortcuts = new MapShortcuts(this);
 
-        LightmapAtlasEditor = new LightmapAtlasScreen(this);
-        SelectionGroupEditor = new SelectionGroupEditor(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
-        PrefabEditor = new() { universe = Universe, scene = RenderScene, actionManager = EditorActionManager };
-
-        ActionHandler = new ActionHandler(this);
+        // Tools
         ToolWindow = new ToolWindow(this, ActionHandler);
         ToolSubMenu = new ToolSubMenu(this, ActionHandler);
 
-        MapQueryHandler = new MapQuerySearchEngine(this);
-
+        // Focus
         FocusManager = new EditorFocusManager(this);
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
-
-        EditorActionManager.AddEventHandler(SceneTree);
+        EditorActionManager.AddEventHandler(MapListView);
     }
 
     private bool PauseUpdate
@@ -186,7 +170,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             return;
         }
 
-        ViewportUsingKeyboard = Viewport.Update(Window, dt);
+        MapViewportView.Update(dt);
 
         // Throw any exceptions that ocurred during async map loading.
         if (Universe.LoadMapExceptions != null)
@@ -197,9 +181,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
     {
-        Window = window;
-        Rect = window.Bounds;
-        //Viewport.ResizeViewport(device, new Rectangle(0, 0, window.Width, window.Height));
+        MapViewportView.EditorResized(window, device);
     }
 
     public void EditDropdown()
@@ -708,119 +690,61 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         if (!CFG.Current.EnableEditor_MSB)
             return;
 
+        var validViewportState = MapViewportView.RenderScene != null && 
+            MapViewportView.Viewport != null;
+
+        // Tools
         ToolSubMenu.DisplayMenu();
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
+        // Filters
+        if (ImGui.BeginMenu("Filters", validViewportState))
         {
-            bool ticked;
-
-            // Map Piece
-            if (ImGui.MenuItem("Map Piece"))
-            {
-                RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
-            }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.MapPiece);
-            UIHelper.ShowActiveStatus(ticked);
-
-            // Collision
-            if (ImGui.MenuItem("Collision"))
-            {
-                RenderScene.ToggleDrawFilter(RenderFilter.Collision);
-            }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
-            UIHelper.ShowActiveStatus(ticked);
-
-            // Object
-            if (ImGui.MenuItem("Object"))
-            {
-                RenderScene.ToggleDrawFilter(RenderFilter.Object);
-            }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Object);
-            UIHelper.ShowActiveStatus(ticked);
-
-            // Character
-            if (ImGui.MenuItem("Character"))
-            {
-                RenderScene.ToggleDrawFilter(RenderFilter.Character);
-            }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Character);
-            UIHelper.ShowActiveStatus(ticked);
-
-            // Navmesh
-            if (ImGui.MenuItem("Navmesh"))
-            {
-                RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
-            }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
-            UIHelper.ShowActiveStatus(ticked);
-
-            // Region
-            if (ImGui.MenuItem("Region"))
-            {
-                RenderScene.ToggleDrawFilter(RenderFilter.Region);
-            }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Region);
-            UIHelper.ShowActiveStatus(ticked);
-
-            // Light
-            if (ImGui.MenuItem("Light"))
-            {
-                RenderScene.ToggleDrawFilter(RenderFilter.Light);
-            }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Light);
-            UIHelper.ShowActiveStatus(ticked);
-
-            // Debug
-            if (ImGui.MenuItem("Debug"))
-            {
-                RenderScene.ToggleDrawFilter(RenderFilter.Debug);
-            }
-            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Debug);
-            UIHelper.ShowActiveStatus(ticked);
+            BasicFilters.Display();
 
             ImGui.Separator();
 
-            GranularRegionHandler.DisplayOptions();
+            RegionFilters.DisplayOptions();
 
             ImGui.EndMenu();
         }
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("Viewport", RenderScene != null && Viewport != null))
+        // Viewport
+        if (ImGui.BeginMenu("Viewport", validViewportState))
         {
             if (ImGui.BeginMenu("Filter Presets"))
             {
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_01.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_01.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_01.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_02.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_02.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_02.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_03.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_03.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_03.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_04.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_04.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_04.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_05.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_05.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_05.Filters;
                 }
 
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_06.Name))
                 {
-                    RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_06.Filters;
+                    MapViewportView.RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_06.Filters;
                 }
 
                 ImGui.EndMenu();
@@ -830,7 +754,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             {
                 if (ImGui.MenuItem("Default"))
                 {
-                    Viewport.SetEnvMap(0);
+                    MapViewportView.Viewport.SetEnvMap(0);
                 }
 
                 foreach (var map in Universe.EnvMapTextures)
@@ -854,7 +778,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (ImGui.BeginMenu("Scene Lighting"))
             {
-                Viewport.SceneParamsGui();
+                MapViewportView.Viewport.SceneParamsGui();
                 ImGui.EndMenu();
             }
 
@@ -880,7 +804,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
             }
 
-            CFG.Current.LastSceneFilter = RenderScene.DrawFilter;
+            CFG.Current.LastSceneFilter = MapViewportView.RenderScene.DrawFilter;
             ImGui.EndMenu();
         }
 
@@ -972,8 +896,10 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         var dsid = ImGui.GetID("DockSpace_MapEdit");
         ImGui.DockSpace(dsid, new Vector2(0, 0));
 
-        MapEditorShortcuts();
-        MapEditorCommandLine(initcmd);
+        Shortcuts.Monitor();
+        WorldMapView.Shortcuts();
+        ToolSubMenu.Shortcuts();
+        CommandQueue.Parse(initcmd);
 
         if (ImGui.BeginPopup("##DupeToTargetMapPopup"))
         {
@@ -990,50 +916,45 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         //ImGui.Text($@"Viewport size: {Viewport.Width}x{Viewport.Height}");
         //ImGui.Text(string.Format("Application average {0:F3} ms/frame ({1:F1} FPS)", 1000f / ImGui.GetIO().Framerate, ImGui.GetIO().Framerate));
 
-        Viewport.OnGui();
-
-        SceneTree.OnGui();
-
-        if (UpdatePropSearch)
-        {
-            UpdatePropSearch = false;
-
-            PropSearch.OnGui(propSearchCmd);
-        }
+        MapViewportView.OnGui();
+        MapListView.OnGui();
+        MapContentView.OnGui();
 
         if (Smithbox.FirstFrame)
         {
             ImGui.SetNextWindowFocus();
         }
 
-        if(PropEditor.Focus)
+        if (MapPropertyView.Focus)
         {
-            PropEditor.Focus = false;
+            MapPropertyView.Focus = false;
             ImGui.SetNextWindowFocus();
         }
 
-        PropEditor.OnGui(_selection, "mapeditprop", Viewport.Width, Viewport.Height);
+        MapPropertyView.OnGui(Selection, "mapeditprop", MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
+
+        LocalSearchView.OnGui();
 
         // Not usable yet
         if (FeatureFlags.EnableNavmeshBuilder)
         {
-            NavMeshEditor.OnGui();
+            NavmeshBuilderView.OnGui();
         }
 
-        if (LightmapAtlasEditor != null)
+        if (LightmapAtlasView != null)
         {
-            LightmapAtlasEditor.OnGui();
+            LightmapAtlasView.OnGui();
         }
 
-        ResourceLoadWindow.DisplayWindow(Viewport.Width, Viewport.Height);
+        ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
         if (UI.Current.Interface_MapEditor_ResourceList)
         {
             ResourceListWindow.DisplayWindow("mapResourceList");
         }
 
-        DispGroupEditor.OnGui(Universe._dispGroupCount);
-        MapAssetSelectionView.OnGui();
-        SelectionGroupEditor.OnGui();
+        DisplayGroupView.OnGui(Universe._dispGroupCount);
+        AssetBrowserView.OnGui();
+        SelectionGroupView.OnGui();
 
         if (UI.Current.Interface_MapEditor_ToolWindow)
         {
@@ -1059,435 +980,20 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         FocusManager.OnFocus();
     }
 
-    private string[] propSearchCmd = null;
-    private bool UpdatePropSearch = false;
-
-    public void MapEditorCommandLine(string[] initcmd)
-    {
-        // Parse select commands
-        if (initcmd != null && initcmd.Length > 1)
-        {
-            if (initcmd[0] == "propsearch")
-            {
-                propSearchCmd = initcmd.Skip(1).ToArray();
-                PropSearch.Property = PropEditor.RequestedSearchProperty;
-                PropEditor.RequestedSearchProperty = null;
-                UpdatePropSearch = true;
-            }
-
-            // Support loading maps through commands.
-            // Probably don't support unload here, as there may be unsaved changes.
-            ISelectable target = null;
-            if (initcmd[0] == "load")
-            {
-                var mapid = initcmd[1];
-                if (Universe.GetLoadedMap(mapid) is MapContainer m)
-                {
-                    target = m.RootObject;
-                }
-                else
-                {
-                    Universe.LoadMap(mapid, true);
-                }
-            }
-
-            if (initcmd[0] == "select")
-            {
-                var mapid = initcmd[1];
-                if (initcmd.Length > 2)
-                {
-                    if (Universe.GetLoadedMap(mapid) is MapContainer m)
-                    {
-                        var name = initcmd[2];
-                        if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntity.MsbEntityType entityType))
-                        {
-                            target = m.GetObjectsByName(name)
-                                .Where(ent => ent is MsbEntity me && me.Type == entityType)
-                                .FirstOrDefault();
-                        }
-                        else
-                        {
-                            target = m.GetObjectByName(name);
-                        }
-                    }
-                }
-                else
-                {
-                    target = new ObjectContainerReference(mapid, Universe).GetSelectionTarget();
-                }
-            }
-
-            if (initcmd[0] == "idselect")
-            {
-                var type = initcmd[1];
-                var mapid = initcmd[2];
-                var entityID = initcmd[3];
-
-                if (initcmd.Length > 3)
-                {
-                    if (Universe.GetLoadedMap(mapid) is MapContainer m)
-                    {
-                        if (type == "enemy")
-                        {
-                            target = m.GetEnemyByID(entityID);
-                        }
-                        if (type == "asset")
-                        {
-                            target = m.GetAssetByID(entityID);
-                        }
-                        if (type == "region")
-                        {
-                            target = m.GetRegionByID(entityID);
-                        }
-                    }
-                }
-            }
-
-            if (initcmd[0] == "emevd_select")
-            {
-                var mapid = initcmd[1];
-                var entityID = initcmd[2];
-
-                if (initcmd.Length > 2)
-                {
-                    if (Universe.GetLoadedMap(mapid) is MapContainer m)
-                    {
-                        if (target == null)
-                            target = m.GetEnemyByID(entityID, true);
-
-                        if(target == null)
-                            target = m.GetAssetByID(entityID);
-
-                        if (target == null)
-                            target = m.GetRegionByID(entityID);
-
-                        if (target == null)
-                            target = m.GetCollisionByID(entityID);
-                    }
-                }
-            }
-
-            if (target != null)
-            {
-                Universe.Selection.ClearSelection();
-                Universe.Selection.AddSelection(target);
-                Universe.Selection.GotoTreeTarget = target;
-                ActionHandler.ApplyFrameInViewport();
-            }
-        }
-    }
-
-    public void MapEditorShortcuts()
-    {
-        // Keyboard shortcuts
-        if (!ViewportUsingKeyboard && !ImGui.IsAnyItemActive())
-        {
-            var type = CFG.Current.MapEditor_Viewport_GridType;
-
-            if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
-            {
-                EditorActionManager.UndoAction();
-            }
-
-            if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
-            {
-                EditorActionManager.UndoAction();
-            }
-
-            if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
-            {
-                EditorActionManager.RedoAction();
-            }
-
-            if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
-            {
-                EditorActionManager.RedoAction();
-            }
-
-            // Viewport Grid
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_LowerGrid))
-            {
-                var offset = CFG.Current.MapEditor_Viewport_Grid_Height;
-                var increment = CFG.Current.MapEditor_Viewport_Grid_Height_Increment;
-                offset = offset - increment;
-                CFG.Current.MapEditor_Viewport_Grid_Height = offset;
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_RaiseGrid))
-            {
-                var offset = CFG.Current.MapEditor_Viewport_Grid_Height;
-                var increment = CFG.Current.MapEditor_Viewport_Grid_Height_Increment;
-                offset = offset + increment;
-                CFG.Current.MapEditor_Viewport_Grid_Height = offset;
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_SetGridToSelectionHeight))
-            {
-                var tempList = _selection.GetFilteredSelection<MsbEntity>().ToList();
-                if (tempList != null && tempList.Count > 0)
-                {
-                    MsbEntity sel = tempList.First();
-                    Vector3 pos = (Vector3)sel.GetPropertyValue("Position");
-                    CFG.Current.MapEditor_Viewport_Grid_Height = pos.Y;
-                }
-            }
-
-            // Create
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateMapObject) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyObjectCreation();
-            }
-
-            // Duplicate
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyDuplicate();
-            }
-
-            // Duplicate to Map
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DuplicateToMap) && _selection.IsSelection())
-            {
-                ImGui.OpenPopup("##DupeToTargetMapPopup");
-            }
-
-            // Delete
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyDelete();
-            }
-
-            // Frame in Viewport
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_FrameSelection) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyFrameInViewport();
-            }
-
-            // Go to in Map Object List
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_GoToInList) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyGoToInObjectList();
-            }
-
-            // Move to Camera
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveToCamera) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyMoveToCamera();
-            }
-
-            // Rotate (X-axis)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_RotateSelectionXAxis))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
-            }
-
-            // Rotate (Y-axis)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_RotateSelectionYAxis))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
-            }
-
-            // Rotate Pivot (Y-axis)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_PivotSelectionYAxis))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
-            }
-
-            // Rotate (Fixed Increment)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_RotateFixedAngle))
-            {
-                ActionHandler.SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
-            }
-
-            // Reset Rotation
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ResetRotation))
-            {
-                ActionHandler.SetSelectionToFixedRotation(new Vector3(0, 0, 0));
-            }
-
-            // Order (Up)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveObjectUp) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
-            }
-
-            // Order (Down)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveObjectDown) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
-            }
-
-            // Order (Top)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveObjectTop) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
-            }
-
-            // Order (Bottom)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveObjectBottom) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
-            }
-
-            // Scramble
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ScrambleSelection) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyScramble();
-            }
-
-            // Replicate
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ReplicateSelection) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyReplicate();
-            }
-
-            // Move to Grid
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetSelectionToGrid) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyMovetoGrid();
-            }
-
-            // Toggle Editor Visibility
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_FlipSelectionVisibility) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_EnableSelectionVisibility) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DisableSelectionVisibility) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_FlipAllVisibility))
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_EnableAllVisibility))
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DisableAllVisibility))
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
-            }
-
-            // Toggle In-game Visibility
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MakeDummyObject) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Disable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MakeNormalObject) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DisableGamePresence) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Disable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_EnableGamePresence) && _selection.IsSelection())
-            {
-                ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
-            }
-
-            // Toggle Selection Outline
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_RenderOutline))
-            {
-                CFG.Current.Viewport_Enable_Selection_Outline = !CFG.Current.Viewport_Enable_Selection_Outline;
-            }
-
-            ToolSubMenu.Shortcuts();
-
-            // Gizmos
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoTranslationMode))
-            {
-                Gizmos.Mode = Gizmos.GizmosMode.Translate;
-            }
-
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoRotationMode))
-            {
-                Gizmos.Mode = Gizmos.GizmosMode.Rotate;
-            }
-
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoOriginMode))
-            {
-                if (Gizmos.Origin == Gizmos.GizmosOrigin.World)
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
-                }
-                else if (Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox)
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.World;
-                }
-            }
-
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoSpaceMode))
-            {
-                if (Gizmos.Space == Gizmos.GizmosSpace.Local)
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.World;
-                }
-                else if (Gizmos.Space == Gizmos.GizmosSpace.World)
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.Local;
-                }
-            }
-
-            // Render settings
-            if (RenderScene != null)
-            {
-                if (InputTracker.GetControlShortcut(Key.Number1))
-                {
-                    RenderScene.DrawFilter = RenderFilter.MapPiece | RenderFilter.Object |
-                                             RenderFilter.Character | RenderFilter.Region;
-                }
-                else if (InputTracker.GetControlShortcut(Key.Number2))
-                {
-                    RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Object |
-                                             RenderFilter.Character | RenderFilter.Region;
-                }
-                else if (InputTracker.GetControlShortcut(Key.Number3))
-                {
-                    RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Navmesh |
-                                             RenderFilter.Object | RenderFilter.Character |
-                                             RenderFilter.Region;
-                }
-                else if (InputTracker.GetControlShortcut(Key.Number4))
-                {
-                    RenderScene.DrawFilter = RenderFilter.MapPiece | RenderFilter.Object |
-                                             RenderFilter.Character | RenderFilter.Light;
-                }
-                else if (InputTracker.GetControlShortcut(Key.Number5))
-                {
-                    RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Object |
-                                             RenderFilter.Character | RenderFilter.Light;
-                }
-                else if (InputTracker.GetControlShortcut(Key.Number6))
-                {
-                    RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Navmesh |
-                                             RenderFilter.MapPiece | RenderFilter.Collision |
-                                             RenderFilter.Navmesh | RenderFilter.Object |
-                                             RenderFilter.Character | RenderFilter.Region |
-                                             RenderFilter.Light;
-                }
-
-                CFG.Current.LastSceneFilter = RenderScene.DrawFilter;
-            }
-        }
-    }
-
     public void Draw(GraphicsDevice device, CommandList cl)
     {
         if (!CFG.Current.EnableEditor_MSB)
             return;
 
-        if (Viewport != null)
+        if (MapViewportView.Viewport != null)
         {
-            Viewport.Draw(device, cl);
+            MapViewportView.Draw(device, cl);
         }
     }
 
     public bool InputCaptured()
     {
-        return Viewport.ViewportSelected;
+        return MapViewportView.InputCaptured();
     }
 
     public void OnProjectChanged()
@@ -1495,21 +1001,25 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         if (!CFG.Current.EnableEditor_MSB)
             return;
 
-        _selection.ClearSelection();
+        Selection.ClearSelection();
         EditorActionManager.Clear();
 
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
-            MapQueryHandler.OnProjectChanged();
-            SelectionGroupEditor.OnProjectChanged();
-            MapAssetSelectionView.OnProjectChanged();
-            SceneTree.OnProjectChanged();
-            GranularRegionHandler.OnProjectChanged();
-            PrefabEditor.OnProjectChanged();
+            MapListView.OnProjectChanged();
+            MapContentView.OnProjectChanged();
+
+            MapQueryView.OnProjectChanged();
+            SelectionGroupView.OnProjectChanged();
+            AssetBrowserView.OnProjectChanged();
+            RegionFilters.OnProjectChanged();
+            PrefabView.OnProjectChanged();
             ToolWindow.OnProjectChanged();
             ToolSubMenu.OnProjectChanged();
+            WorldMapView.OnProjectChanged();
         }
 
+        MapViewportView.OnProjectChanged();
         ReloadUniverse();
     }
 
@@ -1524,7 +1034,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         try
         {
             Universe.SaveAllMaps();
-            LightmapAtlasEditor.Save();
+            LightmapAtlasView.Save();
         }
         catch (SavingFailedException e)
         {
@@ -1594,8 +1104,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                     {
                         if (obj.WrappedObject == eRef.Referrer)
                         {
-                            _selection.ClearSelection();
-                            _selection.AddSelection(obj);
+                            Selection.ClearSelection();
+                            Selection.AddSelection(obj);
                             ActionHandler.ApplyFrameInViewport();
                             return;
                         }

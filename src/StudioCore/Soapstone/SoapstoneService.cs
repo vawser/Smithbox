@@ -6,6 +6,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using System;

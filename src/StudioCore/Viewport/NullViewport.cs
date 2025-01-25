@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editors;
-using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;

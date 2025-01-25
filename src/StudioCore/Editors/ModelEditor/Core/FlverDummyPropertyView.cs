@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
-using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Interface;

@@ -26,6 +26,8 @@ using System.ComponentModel;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
 using HKLib.hk2018;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor.Tools.MapConnections;
 
 namespace StudioCore.MsbEditor;
 
@@ -43,6 +45,7 @@ internal partial class BtlLightSerializerContext : JsonSerializerContext
 public class Universe
 {
     public RenderScene _renderScene;
+
     public int _dispGroupCount = 8;
 
     public ExceptionDispatchInfo LoadMapExceptions = null;

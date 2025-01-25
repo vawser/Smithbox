@@ -3,12 +3,14 @@ using StudioCore.Configuration;
 using StudioCore.DebugPrimitives;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Framework;
-using StudioCore.Editors.MsbEditor;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
@@ -47,7 +49,7 @@ public class Viewport : IViewport
     //private DebugPrimitives.DbgPrimGizmoTranslate TranslateGizmo = null;
     private readonly Gizmos _gizmos;
 
-    private readonly MapViewGrid _mapEditor_Viewport_Grid;
+    private readonly MapViewportGrid _mapEditor_Viewport_Grid;
     private readonly ModelViewGrid _modelEditor_Viewport_Grid;
 
     private readonly DbgPrimWire _rayDebug = null;
@@ -125,7 +127,7 @@ public class Viewport : IViewport
         _gizmos = new Gizmos(_actionManager, _selection, _renderScene.OverlayRenderables);
 
         // Create view grid
-        _mapEditor_Viewport_Grid = new MapViewGrid(_renderScene.OpaqueRenderables);
+        _mapEditor_Viewport_Grid = new MapViewportGrid(_renderScene.OpaqueRenderables);
         _modelEditor_Viewport_Grid = new ModelViewGrid(_renderScene.OpaqueRenderables);
 
         _clearQuad = new FullScreenQuad();
@@ -168,7 +170,7 @@ public class Viewport : IViewport
             {
                 if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
                 {
-                    Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.MapViewport);
+                    Smithbox.EditorHandler.MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.MapViewport);
                 }
 
                 if (Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)

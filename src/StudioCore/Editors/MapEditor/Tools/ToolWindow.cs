@@ -2,9 +2,8 @@
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.MapEditor.MapQuery;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
@@ -16,16 +15,16 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.MapEditor.Actions.ActionHandler;
+using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 
 namespace StudioCore.Editors.MapEditor.Tools;
 
 public class ToolWindow
 {
     private MapEditorScreen Screen;
-    private ActionHandler Handler;
+    private MapActionHandler Handler;
 
-    public ToolWindow(MapEditorScreen screen, ActionHandler handler)
+    public ToolWindow(MapEditorScreen screen, MapActionHandler handler)
     {
         Screen = screen;
         Handler = handler;
@@ -48,7 +47,7 @@ public class ToolWindow
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor"))
         {
-            Smithbox.EditorHandler.MapEditor.Selection.SwitchWindowContext(MapEditorContext.ToolWindow);
+            Smithbox.EditorHandler.MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.ToolWindow);
 
             var windowHeight = ImGui.GetWindowHeight();
             var windowWidth = ImGui.GetWindowWidth();
@@ -892,8 +891,8 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Import Prefab"))
             {
-                Screen.PrefabEditor.ImportPrefabMenu();
-                Screen.PrefabEditor.PrefabTree();
+                Screen.PrefabView.ImportPrefabMenu();
+                Screen.PrefabView.PrefabTree();
             }
 
             ///--------------------
@@ -901,8 +900,8 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Export Prefab"))
             {
-                Screen.PrefabEditor.ExportPrefabMenu();
-                Screen.PrefabEditor.PrefabTree();
+                Screen.PrefabView.ExportPrefabMenu();
+                Screen.PrefabView.PrefabTree();
             }
 
             ///--------------------
@@ -910,7 +909,7 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Selection Groups"))
             {
-                Screen.SelectionGroupEditor.Display();
+                Screen.SelectionGroupView.Display();
             }
 
             ImGui.Separator();
@@ -925,7 +924,7 @@ public class ToolWindow
             }
             if (ImGui.CollapsingHeader("Local Property Search"))
             {
-                Screen.PropSearch.Display();
+                Screen.LocalSearchView.Display();
             }
 
             ///--------------------
@@ -933,21 +932,21 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Global Property Search"))
             {
-                if (!Screen.MapQueryHandler.Bank.MapBankInitialized && !Screen.MapQueryHandler.UserLoadedData)
+                if (!Screen.MapQueryView.Bank.MapBankInitialized && !Screen.MapQueryView.UserLoadedData)
                 {
                     if (ImGui.Button("Load Map Data", defaultButtonSize))
                     {
-                        Screen.MapQueryHandler.Setup();
+                        Screen.MapQueryView.Setup();
                     }
                 }
 
-                Screen.MapQueryHandler.IsOpen = true;
-                Screen.MapQueryHandler.DisplayInput();
-                Screen.MapQueryHandler.DisplayResults();
+                Screen.MapQueryView.IsOpen = true;
+                Screen.MapQueryView.DisplayInput();
+                Screen.MapQueryView.DisplayResults();
             }
             else
             {
-                Screen.MapQueryHandler.IsOpen = false;
+                Screen.MapQueryView.IsOpen = false;
             }
 
             ///--------------------

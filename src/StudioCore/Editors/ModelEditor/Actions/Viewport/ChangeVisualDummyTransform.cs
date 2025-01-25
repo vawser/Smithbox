@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
-using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,7 +3,7 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
-using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
