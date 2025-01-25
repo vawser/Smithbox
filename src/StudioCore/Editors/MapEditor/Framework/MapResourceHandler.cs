@@ -4,6 +4,7 @@ using SoulsFormats;
 using SoulsFormats.KF4;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
@@ -566,7 +567,7 @@ public class MapResourceHandler
                 var nva = NVA.Read(nvaasset.AssetPath);
                 foreach (NVA.Navmesh currentNav in nva.Navmeshes)
                 {
-                    MsbEntity n = new(map, currentNav, MsbEntity.MsbEntityType.Editor);
+                    MsbEntity n = new(map, currentNav, MsbEntityType.Editor);
                     map.AddObject(n);
                     var navid = $@"n{currentNav.ModelID:D6}";
                     var navname = "n" + ModelLocator.MapModelNameToAssetName(AdjustedMapID, navid).Substring(1);

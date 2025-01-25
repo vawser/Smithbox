@@ -1,5 +1,6 @@
 ﻿using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Core;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
 using System;
@@ -56,7 +57,7 @@ public class MapCommandQueue
                     if (Screen.Universe.GetLoadedMap(mapid) is MapContainer m)
                     {
                         var name = initcmd[2];
-                        if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntity.MsbEntityType entityType))
+                        if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntityType entityType))
                         {
                             target = m.GetObjectsByName(name)
                                 .Where(ent => ent is MsbEntity me && me.Type == entityType)

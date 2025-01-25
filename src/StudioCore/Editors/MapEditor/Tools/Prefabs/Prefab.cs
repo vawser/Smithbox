@@ -14,6 +14,7 @@ using static MsbUtils;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Enums;
 
 namespace StudioCore.Editors.MapEditor.Tools.Prefabs;
 
@@ -135,7 +136,7 @@ internal class Prefab<T> : Prefab
         // * Make the asset objects children of that
         // * Modify scenetree to handle AssetPrefabs.
 
-        IEnumerable<MsbEntity> Entities<Category>(IMsbParam<Category> category, MsbEntity.MsbEntityType type, Func<Category, Category> copy)
+        IEnumerable<MsbEntity> Entities<Category>(IMsbParam<Category> category, MsbEntityType type, Func<Category, Category> copy)
             where Category : IMsbEntry
         {
             foreach (var part in category.GetEntries())
@@ -147,9 +148,9 @@ internal class Prefab<T> : Prefab
         }
 
         return new IEnumerable<MsbEntity>[] {
-            Entities(pseudoMap.Parts, MsbEntity.MsbEntityType.Part, p => p.DeepCopy()),
-            Entities(pseudoMap.Events, MsbEntity.MsbEntityType.Event, p => p.DeepCopy()),
-            Entities(pseudoMap.Regions, MsbEntity.MsbEntityType.Region, p => p.DeepCopy()),
+            Entities(pseudoMap.Parts, MsbEntityType.Part, p => p.DeepCopy()),
+            Entities(pseudoMap.Events, MsbEntityType.Event, p => p.DeepCopy()),
+            Entities(pseudoMap.Regions, MsbEntityType.Region, p => p.DeepCopy()),
         }
         .SelectMany(e => e)
         .ToList();

@@ -6,6 +6,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
@@ -41,14 +42,14 @@ public class SoapstoneService : SoapstoneServiceV1
         [ProjectType.AC6] = FromSoftGame.ArmoredCore6
     };
 
-    private static readonly Dictionary<MsbEntity.MsbEntityType, KeyNamespace> mapNamespaces = new()
+    private static readonly Dictionary<MsbEntityType, KeyNamespace> mapNamespaces = new()
     {
-        [MsbEntity.MsbEntityType.Event] = KeyNamespace.MapEvent,
-        [MsbEntity.MsbEntityType.Region] = KeyNamespace.MapRegion,
-        [MsbEntity.MsbEntityType.Part] = KeyNamespace.MapPart
+        [MsbEntityType.Event] = KeyNamespace.MapEvent,
+        [MsbEntityType.Region] = KeyNamespace.MapRegion,
+        [MsbEntityType.Part] = KeyNamespace.MapPart
     };
 
-    private static readonly Dictionary<KeyNamespace, MsbEntity.MsbEntityType> revMapNamespaces =
+    private static readonly Dictionary<KeyNamespace, MsbEntityType> revMapNamespaces =
         mapNamespaces.ToDictionary(e => e.Value, e => e.Key);
 
     private readonly MapEditorScreen MapEditor;
@@ -612,7 +613,7 @@ public class SoapstoneService : SoapstoneServiceV1
             }
             else if (key is SoulsKey.MsbEntryKey msbEntryKey && MatchesResource(resource, msbEntryKey.File.Map)
                                                              && revMapNamespaces.TryGetValue(msbEntryKey.Namespace,
-                                                                 out MsbEntity.MsbEntityType entityType))
+                                                                 out MsbEntityType entityType))
             {
                 EditorCommandQueue.AddCommand(new[]
                 {

@@ -79,10 +79,7 @@ public class MapContentView
     {
         ContentLoadState = MapContentLoadState.Unloaded;
 
-        if (Screen.MapListView._cachedTypeView != null && Container == null && Screen.MapListView._cachedTypeView.ContainsKey(MapID))
-        {
-            Screen.MapListView._cachedTypeView.Remove(MapID);
-        }
+        Screen.EntityTypeCache.RemoveMapFromCache(this);
 
         Selection.ClearSelection();
         EditorActionManager.Clear();
@@ -103,23 +100,19 @@ public class MapContentView
         if (ContentLoadState is MapContentLoadState.Unloaded)
             return;
 
-        DisplaySearchbar();
+        if (CFG.Current.MapEditor_MapObjectList_ShowMapContentSearch)
+        {
+            var mapId = MapID;
+            var mapName = AliasUtils.GetMapNameAlias(MapID);
+
+            ImGui.SetNextItemWidth(-1);
+            ImGui.InputText($"##contentTreeSearch_{ImguiID}", ref SearchBarText, 255);
+            UIHelper.ShowHoverTooltip($"Filter the content tree entries for {mapId}: {mapName}");
+        }
+
         ImGui.Separator();
 
         DisplayContentTree();
-    }
-
-    /// <summary>
-    /// Handles the display of the content tree searchbar
-    /// </summary>
-    public void DisplaySearchbar()
-    {
-        if (CFG.Current.MapEditor_MapObjectList_ShowMapContentSearch)
-        {
-            ImGui.SetNextItemWidth(-1);
-            ImGui.InputText($"##contentTreeSearch_{ImguiID}", ref SearchBarText, 255);
-            UIHelper.ShowHoverTooltip("Filter the content tree entries.");
-        }
     }
 
     /// <summary>
@@ -167,9 +160,8 @@ public class MapContentView
             ImGui.Indent(); //TreeNodeEx fails to indent as it is inside a group / indentation is reset
         }
 
-        DisplayContextMenu(selected);
-
-        HandleSelectionClick(selectTarget, mapRoot, mapRef, nodeopen);
+        //DisplayContextMenu(selected);
+        //HandleSelectionClick(selectTarget, mapRoot, mapRef, nodeopen);
 
         if (nodeopen)
         {
@@ -257,31 +249,14 @@ public class MapContentView
     }
 
     /// <summary>
-    /// Handles the setup for the heiarchical content selectables
-    /// </summary>
-    private void HierarchyView(Entity entity)
-    {
-        foreach (Entity obj in entity.Children)
-        {
-            if (obj is Entity e)
-            {
-                MapObjectSelectable(e, true, true);
-            }
-        }
-    }
-
-    /// <summary>
     /// Handles the setup for the object type content selectables
     /// </summary>
     private void TypeView(MapContainer map)
     {
-        if (Screen.MapListView._cachedTypeView == null || !Screen.MapListView._cachedTypeView.ContainsKey(map.Name))
-        {
-            Screen.MapListView.RebuildTypeViewCache(map);
-        }
+        Screen.EntityTypeCache.AddMapToCache(map);
 
-        foreach (KeyValuePair<MsbEntity.MsbEntityType, Dictionary<Type, List<MsbEntity>>> cats in
-                 Screen.MapListView._cachedTypeView[map.Name].OrderBy(q => q.Key.ToString()))
+        foreach (KeyValuePair<MsbEntityType, Dictionary<Type, List<MsbEntity>>> cats in
+                 Screen.EntityTypeCache._cachedTypeView[map.Name].OrderBy(q => q.Key.ToString()))
         {
             if (cats.Value.Count > 0)
             {
@@ -294,7 +269,7 @@ public class MapContentView
                         if (typ.Value.Count > 0)
                         {
                             // Regions don't have multiple types in certain games
-                            if (cats.Key == MsbEntity.MsbEntityType.Region &&
+                            if (cats.Key == MsbEntityType.Region &&
                                 Smithbox.ProjectType is ProjectType.DES
                                     or ProjectType.DS1
                                     or ProjectType.DS1R
@@ -305,7 +280,7 @@ public class MapContentView
                                     MapObjectSelectable(obj, true);
                                 }
                             }
-                            else if (cats.Key == MsbEntity.MsbEntityType.Light)
+                            else if (cats.Key == MsbEntityType.Light)
                             {
                                 foreach (Entity parent in map.BTLParents)
                                 {
@@ -535,6 +510,20 @@ public class MapContentView
         }
 
         ImGui.PopID();
+    }
+
+    /// <summary>
+    /// Handles the setup for the heiarchical content selectables
+    /// </summary>
+    private void HierarchyView(Entity entity)
+    {
+        foreach (Entity obj in entity.Children)
+        {
+            if (obj is Entity e)
+            {
+                MapObjectSelectable(e, true, true);
+            }
+        }
     }
 
 }
