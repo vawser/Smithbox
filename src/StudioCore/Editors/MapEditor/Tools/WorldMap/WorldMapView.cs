@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
+using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Formats;
 using StudioCore.Interface;
@@ -115,6 +116,33 @@ public class WorldMapView : IResourceEventListener
         {
             IsViewingSOTEMap = false;
             WorldMapOpen = false;
+        }
+    }
+
+    /// <summary>
+    /// Load the maps via the ContentViews when appropriate
+    /// </summary>
+    public void LoadMapsOnClick(List<string> mapIDs)
+    {
+        if (Screen.MapListView.SetupContentViews)
+        {
+            foreach (var entry in Screen.MapListView.MapIDs)
+            {
+                MapContentView curView = null;
+
+                if (Screen.MapListView.ContentViews.ContainsKey(entry))
+                {
+                    curView = Screen.MapListView.ContentViews[entry];
+                }
+
+                if (curView != null)
+                {
+                    if(mapIDs.Contains(curView.MapID))
+                    {
+                        curView.Load(true);
+                    }
+                }
+            }
         }
     }
 
@@ -313,7 +341,7 @@ public class WorldMapView : IResourceEventListener
 
                     if (CFG.Current.WorldMap_EnableFilterOnClick)
                     {
-                        Smithbox.EditorHandler.MapEditor.MapListView.SetWorldMapSelection();
+                        LoadMapsOnClick(currentHoverMaps);
                         Smithbox.EditorHandler.MapEditor.WorldMapView.WorldMap_ClickedMapZone = currentHoverMaps;
                     }
                 }
@@ -331,7 +359,7 @@ public class WorldMapView : IResourceEventListener
                     {
                         foreach (var mapId in currentHoverMaps)
                         {
-                            Smithbox.EditorHandler.MapEditor.Universe.LoadMap(mapId, false);
+                            LoadMapsOnClick(new List<string>() { mapId });
                         }
                     }
                 }

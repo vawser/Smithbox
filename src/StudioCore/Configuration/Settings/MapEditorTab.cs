@@ -51,7 +51,10 @@ public class MapEditorTab
             ImGui.Checkbox("Display list sorting type", ref CFG.Current.MapEditor_MapObjectList_ShowListSortingType);
             UIHelper.ShowHoverTooltip("Display the list sorting type combo box.");
 
-            ImGui.Checkbox("Display map object list search", ref CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch);
+            ImGui.Checkbox("Display map id search", ref CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch);
+            UIHelper.ShowHoverTooltip("Display the map id search text box.");
+
+            ImGui.Checkbox("Display map content search", ref CFG.Current.MapEditor_MapObjectList_ShowMapContentSearch);
             UIHelper.ShowHoverTooltip("Display the map object list search text box.");
 
             ImGui.Checkbox("Display map groups interface", ref CFG.Current.MapEditor_ShowMapGroups);
