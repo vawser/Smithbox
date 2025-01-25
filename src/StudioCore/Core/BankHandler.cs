@@ -3,7 +3,6 @@ using StudioCore.Banks.EntitySelectionGroupBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.HavokAliasBank;
-using StudioCore.Banks.MapCategoryBank;
 using StudioCore.Banks.MapTransformBank;
 using StudioCore.Banks.ParamCategoryBank;
 using StudioCore.Banks.ProjectEnumBank;
@@ -64,7 +63,6 @@ public class BankHandler
 
     public ProjectEnumBank ProjectEnums;
     public ParamCategoryBank ParamCategories;
-    public MapCategoryBank MapCategories;
     public SpawnStateBank SpawnStates;
     public LightmapAtlasBank LightmapAtlasBank;
     public MaterialResourceBank MaterialBank;
@@ -106,7 +104,6 @@ public class BankHandler
 
         ProjectEnums = new ProjectEnumBank("Project Enums");
         ParamCategories = new ParamCategoryBank();
-        MapCategories = new MapCategoryBank();
         LightmapAtlasBank = new LightmapAtlasBank();
         MaterialBank = new MaterialResourceBank();
         EntitySelectionGroups = new EntitySelectionGroupBank();
@@ -147,7 +144,6 @@ public class BankHandler
 
         ProjectEnums.LoadBank();
         ParamCategories.LoadBank();
-        MapCategories.LoadBank();
         SpawnStates.LoadBank();
         LightmapAtlasBank.LoadBank();
         MaterialBank.LoadBank();
