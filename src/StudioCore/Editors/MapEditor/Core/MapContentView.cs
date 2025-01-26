@@ -326,6 +326,36 @@ public class MapContentView
     {
         if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{MapID}_{imguiID}"))
         {
+            // Move Up
+            if (ImGui.Selectable("Move Up"))
+            {
+                Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
+            }
+            UIHelper.ShowHoverTooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectUp.HintText}");
+
+            // Move Down
+            if (ImGui.Selectable("Move Down"))
+            {
+                Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
+            }
+            UIHelper.ShowHoverTooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectDown.HintText}");
+
+            // Move Top
+            if (ImGui.Selectable("Move to Top"))
+            {
+                Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
+            }
+            UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectTop.HintText}");
+
+            // Move Bottom
+            if (ImGui.Selectable("Move to Bottom"))
+            {
+                Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
+            }
+            UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectBottom.HintText}");
+
+            ImGui.Separator();
+
             if (ImGui.Selectable("Duplicate"))
             {
                 Screen.ActionHandler.ApplyDuplicate();
