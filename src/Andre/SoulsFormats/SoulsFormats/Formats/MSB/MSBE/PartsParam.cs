@@ -842,7 +842,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public int Condition { get; set; }
 
                 /// <summary>
@@ -853,13 +852,11 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public short Unk24 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public short Unk26 { get; set; }
 
                 /// <summary>
@@ -1786,7 +1783,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public int Unk00 { get; set; }
 
                 /// <summary>
@@ -2474,7 +2470,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public int UnkT34 { get; set; }
 
                 /// <summary>
@@ -2483,26 +2478,21 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] PartNames { get; set; }
 
-                [IndexProperty]
-                [XmlIgnore]
                 private int[] PartIndices { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public bool UnkT50 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public byte UnkT51 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public byte UnkT53 { get; set; }
 
                 /// <summary>
@@ -2510,8 +2500,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string UnkT54PartName { get; set; }
-                [XmlIgnore]
-                [IndexProperty]
                 private int UnkT54PartIndex { get; set; }
 
                 /// <summary>
@@ -2533,7 +2521,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public int UnkT64 { get; set; }
 
                 /// <summary>

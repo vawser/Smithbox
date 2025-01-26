@@ -568,8 +568,6 @@ namespace SoulsFormats
             [MSBReference(ReferenceType = typeof(Region))]
             public string[] ParentRegionNames { get; set; }
 
-            [IndexProperty]
-            [XmlIgnore]
             private short[] ParentListIndices { get; set; }
 
             /// <summary>
@@ -578,8 +576,6 @@ namespace SoulsFormats
             [MSBReference(ReferenceType = typeof(Region))]
             public string[] ChildRegionNames { get; set; }
 
-            [IndexProperty]
-            [XmlIgnore]
             private short[] ChildListIndices { get; set; }
 
             /// <summary>

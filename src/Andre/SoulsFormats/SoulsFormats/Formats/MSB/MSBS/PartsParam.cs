@@ -1097,7 +1097,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string ObjPartName2 { get; set; }
-                [IndexProperty]
                 public int ObjPartIndex2 { get; set; }
 
                 /// <summary>
@@ -1105,7 +1104,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string ObjPartName3 { get; set; }
-                [IndexProperty]
                 public int ObjPartIndex3 { get; set; }
 
                 private protected ObjectBase() : base("oXXXXXX_XXXX")

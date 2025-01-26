@@ -740,7 +740,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(WindArea))]
                 public string WindAreaName { get; set; }
-                [IndexProperty]
                 public int WindAreaIndex { get; set; }
 
                 /// <summary>

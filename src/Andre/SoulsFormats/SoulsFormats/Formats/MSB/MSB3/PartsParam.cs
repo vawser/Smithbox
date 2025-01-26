@@ -950,7 +950,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Controls enemy speech.
                 /// </summary>
-                [EnemyProperty]
                 public int TalkID { get; set; }
 
                 /// <summary>
@@ -973,7 +972,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
-                [IndexProperty]
                 public short WalkRouteIndex { get; set; }
 
                 /// <summary>

@@ -488,7 +488,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
                 public byte UnkT27 { get; set; }
 
                 /// <summary>

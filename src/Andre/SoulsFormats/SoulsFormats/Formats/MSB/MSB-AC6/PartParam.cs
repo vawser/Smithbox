@@ -1576,8 +1576,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// PartsTokenParam
                 /// </summary>
-                [EnemyProperty]
-                [MSBParamReference(ParamName = "PartsTokenParam")]
                 public int PartsTokenParamID { get; set; }
 
                 /// <summary>

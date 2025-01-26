@@ -384,7 +384,6 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string TreasurePartName { get; set; }
-                [IndexProperty]
                 public int TreasurePartIndex { get; set; }
 
                 /// <summary>

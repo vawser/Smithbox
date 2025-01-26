@@ -577,8 +577,6 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnRegionNames { get; set; }
 
-                [IndexProperty]
-                [XmlIgnore]
                 private int[] SpawnRegionIndices { get; set; }
 
                 /// <summary>
@@ -587,8 +585,6 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; set; }
 
-                [IndexProperty]
-                [XmlIgnore]
                 private int[] SpawnPartIndices { get; set; }
 
                 /// <summary>
@@ -921,8 +917,6 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] GroupPartsNames { get; set; }
 
-                [IndexProperty]
-                [XmlIgnore]
                 private int[] GroupPartsIndices { get; set; }
 
                 /// <summary>
@@ -991,8 +985,6 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] WalkRegionNames { get; set; }
 
-                [IndexProperty]
-                [XmlIgnore]
                 private short[] WalkRegionIndices { get; set; }
 
                 /// <summary>
