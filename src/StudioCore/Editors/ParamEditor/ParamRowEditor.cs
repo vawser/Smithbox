@@ -427,6 +427,7 @@ public class ParamRowEditor
         var MovieAliasEnum_ConditionalValue = cellMeta?.MovieAliasEnum_ConditionalValue;
 
         bool showParamFieldOffset = false;
+        var paramFieldIndex = "";
 
         if (cellMeta != null)
         {
@@ -438,6 +439,7 @@ public class ParamRowEditor
             showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
 
             showParamFieldOffset = cellMeta.ShowParamFieldOffset;
+            paramFieldIndex = cellMeta.ParamFieldOffsetIndex;
         }
 
         object newval = null;
@@ -626,7 +628,7 @@ public class ParamRowEditor
                 // Param Field Offset
                 if(showParamFieldOffset)
                 {
-                    EditorDecorations.ParamFieldOffsetText(activeParam, row);
+                    EditorDecorations.ParamFieldOffsetText(activeParam, row, paramFieldIndex);
                 }
 
                 ImGui.EndGroup();
@@ -777,7 +779,7 @@ public class ParamRowEditor
                 // Param Field Offset
                 if (showParamFieldOffset)
                 {
-                    EditorDecorations.ParamFieldOffsetValueText(activeParam, row);
+                    EditorDecorations.ParamFieldOffsetValueText(activeParam, row, paramFieldIndex);
                 }
 
                 ImGui.EndGroup();
@@ -944,6 +946,7 @@ public class ParamRowEditor
             var MovieAliasEnum_ConditionalValue = cellMeta?.MovieAliasEnum_ConditionalValue;
 
             var showParamFieldOffset = false;
+            var paramFieldIndex = "";
 
             if (cellMeta != null)
             {
@@ -955,6 +958,7 @@ public class ParamRowEditor
                 showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
 
                 showParamFieldOffset = cellMeta.ShowParamFieldOffset;
+                paramFieldIndex = cellMeta.ParamFieldOffsetIndex;
             }
 
             if (propType == typeof(byte[]))
@@ -1032,7 +1036,7 @@ public class ParamRowEditor
             // Param Field Offset
             if (showParamFieldOffset)
             {
-                EditorDecorations.ParamFieldOffsetValueText(activeParam, context);
+                EditorDecorations.ParamFieldOffsetValueText(activeParam, context, paramFieldIndex);
             }
         }
     }

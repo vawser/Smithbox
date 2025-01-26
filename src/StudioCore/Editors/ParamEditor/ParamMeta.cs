@@ -681,6 +681,7 @@ public class FieldMetaData
         if (ParamFieldOffset != null)
         {
             ShowParamFieldOffset = true;
+            ParamFieldOffsetIndex = ParamFieldOffset.InnerText;
         }
 
         XmlAttribute DeepCopyTarget = fieldMeta.Attributes["DeepCopyTarget"];
@@ -800,6 +801,7 @@ public class FieldMetaData
     public string ProjectEnumType { get; set; }
 
     public bool ShowParamFieldOffset { get; set; }
+    public string ParamFieldOffsetIndex { get; set; }
 
     public List<string> DeepCopyTargetType { get; set; }
 

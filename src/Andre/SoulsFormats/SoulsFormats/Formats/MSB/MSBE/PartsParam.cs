@@ -2811,7 +2811,7 @@ namespace SoulsFormats
                     /// <summary>
                     /// Unknown.
                     /// </summary>
-                    public byte AssetUnkStruct3_Unk24 { get; set; }
+                    public sbyte AssetUnkStruct3_Unk24 { get; set; }
 
                     /// <summary>
                     /// Unknown.
@@ -2856,7 +2856,7 @@ namespace SoulsFormats
                         AssetUnkStruct3_Unk18 = br.ReadInt32();
                         AssetUnkStruct3_Unk1C = br.ReadInt32();
                         AssetUnkStruct3_Unk20 = br.ReadInt32();
-                        AssetUnkStruct3_Unk24 = br.ReadByte();
+                        AssetUnkStruct3_Unk24 = br.ReadSByte();
                         AssetUnkStruct3_Unk25 = br.ReadBoolean();
                         br.AssertByte(0);
                         br.AssertByte(0);
@@ -2883,7 +2883,7 @@ namespace SoulsFormats
                         bw.WriteInt32(AssetUnkStruct3_Unk18);
                         bw.WriteInt32(AssetUnkStruct3_Unk1C);
                         bw.WriteInt32(AssetUnkStruct3_Unk20);
-                        bw.WriteByte(AssetUnkStruct3_Unk24);
+                        bw.WriteSByte(AssetUnkStruct3_Unk24);
                         bw.WriteBoolean(AssetUnkStruct3_Unk25);
                         bw.WriteByte(0);
                         bw.WriteByte(0);

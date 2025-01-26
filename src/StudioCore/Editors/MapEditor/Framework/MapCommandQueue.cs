@@ -46,6 +46,7 @@ public class MapCommandQueue
                 else
                 {
                     Screen.Universe.LoadMap(mapid, true);
+                    Screen.MapListView.SignalLoad(mapid);
                 }
             }
 

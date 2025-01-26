@@ -303,6 +303,7 @@ public class WorldMapView : IResourceEventListener
                 if (ImGui.Button($"Load##load{match}"))
                 {
                     Smithbox.EditorHandler.MapEditor.Universe.LoadMap(match, false);
+                    Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(match);
                 }
                 ImGui.SameLine();
                 UIHelper.WrappedText($"{match}");

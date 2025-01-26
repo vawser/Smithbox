@@ -1,10 +1,266 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the data sources for various menu elements." />
+  
+  <Field>
+    <CaptionTextID 
+    AltName="Caption Text ID" 
+    Wiki="The text ID to use for the caption for this element."
+    FmgRef="Modern_Menu_Text" />
+    
+    <IconID
+    AltName="Icon ID"
+    Wiki="" />
+    
+    <RequiredPropertyID
+    AltName="Required Property ID"
+    Wiki="The required proprerty ID for this element." 
+    Refs="MenuPropertyLayoutParam" />
+    
+    <CompareType 
+    AltName="Compare Type" 
+    Wiki="Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)." 
+    Enum="MENU_PROPERTY_CMP_TYPE" />
+    
+    <FormatType
+    AltName="Format Type"
+    Wiki="The format type for this element." 
+    Enum="MENU_PROPERTY_FORMAT_TYPE" />
+    
+    <AdhocCaption 
+    AltName="Comment" 
+    Wiki="The developer comment left for this element."/>
+    
+    <HelpTextID 
+    AltName="Description Text ID" 
+    Wiki="The text ID to use for the description for this element."
+    FmgRef="Modern_Menu_Line_Help" />
+    
+    <EditType
+    AltName="Edit Type"
+    Wiki="The edit type for this element."
+    Enum="MENU_PROPERTY_EDIT_TYPE" />
+    
+    <EditParamBool
+    AltName="Slider: Is Looped"
+    Wiki="If ON, the slider will loop around."
+    IsBool="" />
+    
+    <IndexRefParamID
+    AltName="Index Reference Parameter ID"
+    Wiki="The index reference parameter for this element."
+    Enum="MENU_PROPERTY_INDEXREF_PARAM_ID" />
+    
+    <ExtractedParamOperaion 
+    AltName="Overall Operation Type" 
+    Wiki="The operation to apply after the two extractions. X being extraction value 0, and Y being extraction value 1." 
+    Enum="MENU_PROPERTY_EXTRACTED_PARAM_OPERATION_TYPE" />
+    
+    <reserved1
+    Padding="" />
+    
+    <EditParam2
+    AltName="Slider: Adjustment Value"
+    Wiki="The amount the slider will adjust per tick." />
+    
+    <EditParam0
+    AltName="Slider: Minimum Value"
+    Wiki="The minimum value for the slider." />
+    
+    <EditParam1
+    AltName="Slider: Maximum Value"
+    Wiki="The maximum value for the slider." />
+    
+    <extract0_Target 
+    AltName="X: Target Type" 
+    Wiki="The parameters to be extracted." 
+    Enum="MENU_PROPERTY_EXTRACT_TARGET_TYPE" />
+    
+    <extract0_MemberType 
+    AltName="X: Primitive Type" 
+    Wiki="The primitive type of the parameter to be extracted."
+    Enum="MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE" />
+    
+    <extract0_Operation
+    AltName="X: Operation Type"
+    Wiki="The operation to apply to the extracted parameter value." 
+    Enum="MENU_PROPERTY_EXTRACT_OPERATION_TYPE" />
+    
+    <extract0_MemberTailOffset 
+    AltName="X: Parameter Offset" 
+    Wiki="This points to the specific field within the target param pointed to by MENU_PROPERTY_EXTRACT_TARGET_TYPE.\n Convert the field value to hexidecimal, then minus the size of MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE to get the offset." 
+    ParamFieldOffset="0" />
+    
+    <extract0_Constant0 
+    AltName="X: Constant 0" 
+    Wiki="This is the X value used when multiplying the passed parameter value." />
+    
+    <extract0_Constant1 
+    AltName="X: Constant 1" 
+    Wiki="This is the Y value used when adding to the passed parameter value." />
+    
+    <extract0_reserved
+    Padding="" />
+    
+    <extract1_Target 
+    AltName="Y: Target Type" 
+    Wiki="The parameters to be extracted." 
+    Enum="MENU_PROPERTY_EXTRACT_TARGET_TYPE" />
+    
+    <extract1_MemberType 
+    AltName="Y: Primitive Type" 
+    Wiki="The primitive type of the parameter to be extracted."
+    Enum="MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE" />
+    
+    <extract1_Operation
+    AltName="Y: Operation Type"
+    Wiki="The operation to apply to the extracted parameter value." 
+    Enum="MENU_PROPERTY_EXTRACT_OPERATION_TYPE" />
+    
+    <extract1_MemberTailOffset 
+    AltName="Y: Parameter Offset" 
+    Wiki="This points to the specific field within the target param pointed to by MENU_PROPERTY_EXTRACT_TARGET_TYPE.\n Convert the field value to hexidecimal, then minus the size of MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE to get the offset." 
+    ParamFieldOffset="1" />
+    
+    <extract1_Constant0 
+    AltName="Y: Constant 0" 
+    Wiki="This is the X value used when multiplying the passed parameter value." />
+    
+    <extract1_Constant1 
+    AltName="Y: Constant 1" 
+    Wiki="This is the Y value used when adding to the passed parameter value." />
+    
+    <extract1_reserved
+    Padding="" />
+  </Field>
+  
   <Enums>
     <Enum Name="MENU_PROPERTY_CMP_TYPE" type="s8">
       <Option Value="0" Name="None" />
       <Option Value="1" Name="Greater than is positive" />
       <Option Value="2" Name="Less than is positive" />
+    </Enum>
+    <Enum Name="MENU_PROPERTY_FORMAT_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="±number" />
+      <Option Value="2" Name="0 or less is -(hyphen)" />
+      <Option Value="3" Name="Display (1.0-magnification)x100 as an integer" />
+      <Option Value="4" Name="Less than 0 is - (hyphen)" />
+      <Option Value="8" Name="Currency" />
+      <Option Value="9" Name="Truncate after decimal point" />
+      <Option Value="10" Name="Display to first decimal place" />
+      <Option Value="11" Name="Display to two decimal places" />
+      <Option Value="12" Name="Display to 3rd decimal place" />
+      <Option Value="13" Name="Arena Point" />
+      <Option Value="20" Name="Convert to (1.0-magnification)x100: display to first decimal place" />
+      <Option Value="21" Name="Convert to (1.0-magnification)x100: display to two decimal places" />
+      <Option Value="22" Name="Convert to (1.0-magnification)x100: display to 3rd decimal place" />
+      <Option Value="30" Name="Icon(PartsSpec)" />
+      <Option Value="80" Name="Display resolution specification in window size" />
+      <Option Value="81" Name="HDR maximum brightness value" />
+      <Option Value="90" Name="Consumption type" />
+      <Option Value="100" Name="[Decal] Target to be pasted" />
+      <Option Value="105" Name="[Auto assemble] Used legs" />
+      <Option Value="106" Name="[Auto Ascension] Ascension Tendency" />
+      <Option Value="110" Name="[Language] Text" />
+      <Option Value="111" Name="[Language] Voice" />
+      <Option Value="125" Name="Gender" />
+      <Option Value="130" Name="[Option] ON/OFF" />
+      <Option Value="131" Name="[Option] Normal Reverse" />
+      <Option Value="132" Name="[Option] Button settings preset/custom" />
+      <Option Value="133" Name="[Option] HUD display type" />
+      <Option Value="134" Name="[Option] Boost operation type" />
+      <Option Value="135" Name="[Option] Assault boost operation type" />
+      <Option Value="136" Name="[Option] Limiter release operation type" />
+      <Option Value="137" Name="[Option] Operation guide target device" />
+      <Option Value="138" Name="[Option]Screen mode" />
+      <Option Value="139" Name="[Option] HUD layout" />
+      <Option Value="140" Name="[Option] Use/Do not use" />
+      <Option Value="141" Name="[Option] Agree/Disagree" />
+      <Option Value="145" Name="[Option] Matching region" />
+      <Option Value="146" Name="[Option] Other player name notation" />
+      <Option Value="147" Name="[Option] Title launch settings" />
+      <Option Value="148" Name="[Option] Ray tracing function" />
+      <Option Value="149" Name="[Option] FPS Limit" />
+      <Option Value="150" Name="[Grass Quality] Low/Medium/High/Highest/Custom" />
+      <Option Value="151" Name="[Grass Quality] OFF/Low/Medium/High/Highest" />
+      <Option Value="152" Name="[Graphic Quality] OFF/Low/Medium/High" />
+      <Option Value="153" Name="[Grass Quality] OFF/medium/high/best" />
+      <Option Value="154" Name="[Grass Quality] Low/Medium/High/Highest" />
+      <Option Value="155" Name="[Grass Quality] Low/Medium/High" />
+      <Option Value="156" Name="[Graphical Quality] AA (OFF/Low/High)" />
+      <Option Value="157" Name="[Graphical Quality] Reflection (Low/High/Highest)" />
+      <Option Value="158" Name="[Graphical Quality] Water surface (low/high)" />
+      <Option Value="159" Name="[Optional] Performance settings" />
+      <Option Value="200" Name="[Photo mode] Blur type" />
+      <Option Value="220" Name="[Fixed text chat] Fixed text" />
+      <Option Value="230" Name="[Room Settings] Number of people" />
+      <Option Value="231" Name="[Room Settings] Rules" />
+      <Option Value="232" Name="[Room Settings] Time Limit" />
+      <Option Value="233" Name="[Room Settings] Map" />
+      <Option Value="234" Name="[Room Settings] Team Participation Method" />
+      <Option Value="235" Name="[Room Settings] Publication Format" />
+      <Option Value="239" Name="[Online Arena] Battle mode" />
+      <Option Value="240" Name="[Notification] Category" />
+      <Option Value="241" Name="[Report] Reason" />
+      <Option Value="250" Name="[Parameter display] Attribute KE/TE/CE/SP" />
+      <Option Value="251" Name="[Parameter display] Size S/M/L/XL" />
+      <Option Value="252" Name="[Parameter display] Shooting type S/B/F/T" />
+      <Option Value="255" Name="[AC Test] Enemy Pattern A/B/C" />
+    </Enum>
+    <Enum Name="MENU_PROPERTY_EDIT_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="List selection" />
+      <Option Value="2" Name="Slider" />
+      <Option Value="3" Name="Button" />
+    </Enum>
+    <Enum Name="MENU_PROPERTY_INDEXREF_PARAM_ID" type="s16">
+      <Option Value="-1" Name="None" />
+      <Option Value="0" Name="Float: 0" />
+      <Option Value="1" Name="Float: 1" />
+      <Option Value="2" Name="Float: 2" />
+      <Option Value="3" Name="Float: 3" />
+      <Option Value="4" Name="Float: 4" />
+      <Option Value="5" Name="Float: 5" />
+      <Option Value="6" Name="Float: 6" />
+      <Option Value="7" Name="Float: 7" />
+      <Option Value="8" Name="Float: 8" />
+      <Option Value="9" Name="Float: 9" />
+      <Option Value="10" Name="Float: 10" />
+      <Option Value="11" Name="Float: 11" />
+      <Option Value="12" Name="Float: 12" />
+      <Option Value="13" Name="Float: 13" />
+      <Option Value="14" Name="Float: 14" />
+      <Option Value="15" Name="Float: 15" />
+      <Option Value="16" Name="Float: 16" />
+      <Option Value="17" Name="Float: 17" />
+      <Option Value="18" Name="Float: 18" />
+      <Option Value="19" Name="Float: 19" />
+      <Option Value="20" Name="Float: 20" />
+      <Option Value="21" Name="Float: 21" />
+      <Option Value="22" Name="Float: 22" />
+      <Option Value="23" Name="Float: 23" />
+      <Option Value="24" Name="Float: 24" />
+      <Option Value="25" Name="Float: 25" />
+      <Option Value="26" Name="Float: 26" />
+      <Option Value="27" Name="Float: 27" />
+      <Option Value="28" Name="Float: 28" />
+      <Option Value="29" Name="Float: 29" />
+      <Option Value="30" Name="Float: 30" />
+      <Option Value="31" Name="Float: 31" />
+    </Enum>
+    <Enum Name="MENU_PROPERTY_EXTRACTED_PARAM_OPERATION_TYPE" type="s8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="X * Y" />
+      <Option Value="2" Name="X / Y" />
+      <Option Value="3" Name="X + Y" />
+      <Option Value="4" Name="X - Y" />
+    </Enum>
+    <Enum Name="MENU_PROPERTY_EXTRACT_OPERATION_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Constant 0 * Value + Constant 1" />
+      <Option Value="2" Name="Constant 0 / Value + Constant 1" />
     </Enum>
     <Enum Name="MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE" type="s8">
       <Option Value="0" Name="None" />
@@ -15,11 +271,6 @@
       <Option Value="5" Name="Signed Integer" />
       <Option Value="6" Name="Unsigned Integer" />
       <Option Value="7" Name="Floating Point" />
-    </Enum>
-    <Enum Name="MENU_PROPERTY_EXTRACT_OPERATION_TYPE" type="s8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Constant 0 * Parameter + Constant 1" />
-      <Option Value="2" Name="Constant 0 / Parameter + Constant 1" />
     </Enum>
     <Enum Name="MENU_PROPERTY_EXTRACT_TARGET_TYPE" type="u16">
       <Option Value="0" Name="None" />
@@ -38,23 +289,4 @@
     </Enum>
   </Enums>
   
-  <Field>
-    <TitleTextID AltName="Title Text ID" FmgRef="Modern_Menu_Text" />
-    
-    <compareType AltName="Compare Type" Enum="MENU_PROPERTY_CMP_TYPE" Wiki="Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)." />
-    
-    <developerComment AltName="Comment" />
-    
-    <DescriptionTextID AltName="Description Text ID" FmgRef="Modern_Menu_Line_Help" />
-    
-    <menuPropertyExtractTargetType AltName="Target Type" Enum="MENU_PROPERTY_EXTRACT_TARGET_TYPE" />
-    <menuPropertyExtractPrimitiveType AltName="Primitive Type" Enum="MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE" />
-    <menuPropertyExtractOperationType AltName="Operation Type" Enum="MENU_PROPERTY_EXTRACT_OPERATION_TYPE" />
-    
-    <paramFieldOffset AltName="Target Parameter" Wiki="This points to the specific field within the target param pointed to by MENU_PROPERTY_EXTRACT_TARGET_TYPE.\n Convert the field value to hexidecimal, then minus the size of MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE to get the offset." ParamFieldOffset="" />
-    
-    <constantValue0 AltName="Constant 0" Wiki="This is the Constant 0 used when multiplying the passed parameter value." />
-    <constantValue1 AltName="Constant 1" Wiki="This is the Constant 1 used when adding to the passed parameter value." />
-  </Field>
-  <Self Wiki="Determines the configuration of menu interface elements, such as buttons, titles, descriptions, etc." />
 </PARAMMETA>

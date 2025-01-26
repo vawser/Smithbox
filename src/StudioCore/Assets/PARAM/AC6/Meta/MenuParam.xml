@@ -173,32 +173,33 @@
     Wiki="The scale value for the height of the operational area when displayed on the 3D minimap." />
     
     <MIniMap3D_MaintenancePointIconScale 
-    AltName="" 
-    Wiki="" />
+    AltName="3D Minimap: Supply Point Icon Scale" 
+    Wiki="The scale value of the supply point icon when displayed on the 3D minimap." />
     
     <MIniMap3D_CatapultIconScale 
-    AltName="" 
-    Wiki="" />
+    AltName="3D Minimap: Catapult Icon Scale" 
+    Wiki="The scale value of the catapult point icon when displayed on the 3D minimap." />
     
     <MIniMap3D_RouteIconScale 
-    AltName="" 
-    Wiki="" />
+    AltName="3D Minimap: Route Icon Scale" 
+    Wiki="The scale value of the route icon when displayed on the 3D minimap." />
     
     <FE_MissionLine_FadeInTime 
-    AltName="" 
-    Wiki="" />
+    AltName="Mission Area Boundary: Fade-in Duration" 
+    Wiki="The fade-in time for the mission area boundary interface element to appear. In seconds." />
     
     <FE_MissionRegionSfxId 
-    AltName="" 
-    Wiki="" />
+    AltName="Mission Area: Particle ID" 
+    Wiki="The SFX ID to use for the mission region boundary." 
+    ParticleAlias="" />
     
     <FE_MissionRegionStartLineDist 
-    AltName="" 
-    Wiki="" />
+    AltName="Mission Area: Start Distance for Boundary Line" 
+    Wiki="The distance at which the mission area boundary lines will start to appear. In metres." />
     
     <FE_MissionRegionLineDist 
-    AltName="" 
-    Wiki="" />
+    AltName="Mission Area: Color Shift Distance" 
+    Wiki="The distance at whicht the color of the mission area boundary shifts. In metres." />
     
     <FE_MissionRegionLineHeight 
     AltName="" 

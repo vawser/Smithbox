@@ -39,7 +39,7 @@ public class EditorDecorations
         return UIHints.AddImGuiHintButton(id, ref hint, canEdit, true); //presently a hack, move code here
     }
 
-    public static void ParamFieldOffsetText(string activeParam, Param.Row context)
+    public static void ParamFieldOffsetText(string activeParam, Param.Row context, string index)
     {
         // This feature is purely for AC6 MenuPropertySpecParam.
         if (activeParam == "MenuPropertySpecParam")
@@ -57,14 +57,34 @@ public class EditorDecorations
         }
     }
 
-    public static void ParamFieldOffsetValueText(string activeParam, Param.Row context)
+    public static void ParamFieldOffsetValueText(string activeParam, Param.Row context, string index)
     {
         // This feature is purely for AC6 MenuPropertySpecParam.
         if (activeParam == "MenuPropertySpecParam")
         {
-            var paramTarget = context["menuPropertyExtractTargetType"].Value.Value.ToString();
-            var primitiveType = context["menuPropertyExtractPrimitiveType"].Value.Value.ToString();
-            var fieldOffset = context["paramFieldOffset"].Value.Value.ToString();
+            string target = "";
+            string primitiveType = "";
+            string operationType = "";
+            string fieldOffset = "";
+
+            if (index == "0")
+            {
+                target = context["extract0_Target"].Value.Value.ToString();
+                primitiveType = context["extract0_MemberType"].Value.Value.ToString();
+                operationType = context["extract0_Operation"].Value.Value.ToString();
+                fieldOffset = context["extract0_MemberTailOffset"].Value.Value.ToString();
+            }
+            else if (index == "1")
+            {
+                target = context["extract1_Target"].Value.Value.ToString();
+                primitiveType = context["extract1_MemberType"].Value.Value.ToString();
+                operationType = context["extract1_Operation"].Value.Value.ToString();
+                fieldOffset = context["extract1_MemberTailOffset"].Value.Value.ToString();
+            }
+            else
+            {
+                return;
+            }
 
             var decimalOffset = int.Parse($"{fieldOffset}");
 
@@ -92,7 +112,7 @@ public class EditorDecorations
             
             var paramString = "";
 
-            switch(paramTarget)
+            switch(target)
             {
                 case "0": return;
 

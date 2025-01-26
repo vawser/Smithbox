@@ -122,6 +122,7 @@ public static class PropInfo_ReferencesTo
                             if (ImGui.Selectable("Load Map"))
                             {
                                 firstEnt.Universe.LoadMap(mapid);
+                                Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(mapid);
                             }
                         }
                         else

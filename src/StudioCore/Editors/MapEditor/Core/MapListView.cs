@@ -387,4 +387,14 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             Screen.EntityTypeCache.InvalidateCache();
         }
     }
+
+    public void SignalLoad(string mapId)
+    {
+        if(ContentViews.ContainsKey(mapId))
+        {
+            var curView = ContentViews[mapId];
+
+            curView.Load(true);
+        }
+    }
 }
