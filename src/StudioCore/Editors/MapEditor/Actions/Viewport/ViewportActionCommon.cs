@@ -24,6 +24,9 @@ public static class ViewportActionCommon
 {
     public static void SetUniqueEntityID(MsbEntity sel, MapContainer map)
     {
+        if (sel.WrappedObject is BTL.Light)
+            return;
+
         if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             return;
 

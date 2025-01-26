@@ -992,12 +992,16 @@ public class Entity : ISelectable, IDisposable
         {
             Actions.Viewport.PropertiesChangedAction act = new(WrappedObject);
             PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
-            act.AddPropertyChange(prop, newt.Position);
+
+            if(prop != null)
+                act.AddPropertyChange(prop, newt.Position);
 
             if (includeScale)
             {
                 PropertyInfo scaleProp = WrappedObject.GetType().GetProperty("Scale");
-                act.AddPropertyChange(scaleProp, newt.Scale);
+
+                if(scaleProp != null)
+                    act.AddPropertyChange(scaleProp, newt.Scale);
             }
 
             prop = WrappedObject.GetType().GetProperty("Rotation");

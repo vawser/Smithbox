@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
@@ -6,6 +7,7 @@ using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
@@ -326,35 +328,39 @@ public class MapContentView
     {
         if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{MapID}_{imguiID}"))
         {
-            // Move Up
-            if (ImGui.Selectable("Move Up"))
+            // Not supported for BTLs
+            if (ent.WrappedObject is not BTL.Light)
             {
-                Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
-            }
-            UIHelper.ShowHoverTooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectUp.HintText}");
+                // Move Up
+                if (ImGui.Selectable("Move Up"))
+                {
+                    Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
+                }
+                UIHelper.ShowHoverTooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectUp.HintText}");
 
-            // Move Down
-            if (ImGui.Selectable("Move Down"))
-            {
-                Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
-            }
-            UIHelper.ShowHoverTooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectDown.HintText}");
+                // Move Down
+                if (ImGui.Selectable("Move Down"))
+                {
+                    Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
+                }
+                UIHelper.ShowHoverTooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectDown.HintText}");
 
-            // Move Top
-            if (ImGui.Selectable("Move to Top"))
-            {
-                Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
-            }
-            UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectTop.HintText}");
+                // Move Top
+                if (ImGui.Selectable("Move to Top"))
+                {
+                    Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
+                }
+                UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectTop.HintText}");
 
-            // Move Bottom
-            if (ImGui.Selectable("Move to Bottom"))
-            {
-                Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
-            }
-            UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectBottom.HintText}");
+                // Move Bottom
+                if (ImGui.Selectable("Move to Bottom"))
+                {
+                    Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
+                }
+                UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectBottom.HintText}");
 
-            ImGui.Separator();
+                ImGui.Separator();
+            }
 
             if (ImGui.Selectable("Duplicate"))
             {
@@ -494,9 +500,10 @@ public class MapContentView
                                             parent.EditorVisible = !parent.EditorVisible;
                                         }
 
-                                        foreach (Entity obj in parent.Children)
+                                        for(int i = 0; i < parent.Children.Count; i++)
                                         {
-                                            MapObjectSelectable(obj, true);
+                                            var curObj = parent.Children[i];
+                                            MapObjectSelectable(curObj, true);
                                         }
 
                                         ImGui.TreePop();
