@@ -190,6 +190,12 @@
     <nolockTargetDist AltName="Target Range when Unlocked" Wiki="Target range when unlocked (-1: Refer to range, 0: No target)" />
     
     <mayRemoteDetonate AltName="Can be Remotely Detonated" Wiki="Bullets with Attach Type 6 will cause this bullet to be detonated if this bullet is within their hit radius." />
+    
+    <isDisableAiProjectileDodge
+    AltName="Disable AI Projectile Dodge"
+    Wiki="If ON, this projectile will not be dodged by the AI."
+    IsBool="" />
+    
     <pad4 AltName="" Padding=""/>
   </Field>
   <Self Wiki="Governs motion, hitbox and appearance of projetiles. Can reference AtkParam for damage."/>

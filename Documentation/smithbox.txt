@@ -16,3 +16,8 @@
  - SDT
  - DS3
  - BB
+
+
+- Map Editor:
+ - Fix World Map click so it filters instead of automatically loading
+ - Check BB chalice loading (MapContentView issue)

@@ -658,7 +658,7 @@
     
     <Field Def="dummy8 pad1:1" RemovedVersion="11210015" />
     
-    <Field Def="u8 unknown_0xc3_5:1" FirstVersion="11210015" >
+    <Field Def="u8 isDisableAiProjectileDodge:1" FirstVersion="11210015" >
       <DisplayName>pad</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
