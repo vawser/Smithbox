@@ -39,6 +39,10 @@ public class MapContainer : ObjectContainer
     public List<Entity> Events = new();
     public List<Entity> Regions = new();
 
+    public List<Entity> Models = new();
+    public List<Entity> Layers = new();
+    public List<Entity> Routes = new();
+
     public MapContainer(Universe u, string mapid)
     {
         Name = mapid;
@@ -192,6 +196,40 @@ public class MapContainer : ObjectContainer
             Objects.Add(n);
             RootObject.AddChild(n);
         }
+
+        /*
+        // MSB_AC6
+        if (msb is MSB_AC6)
+        {
+            var cMSB = (MSB_AC6)msb;
+            var count = 0;
+
+            // Layers
+            foreach (MSB_AC6.Layer p in cMSB.Layers.GetEntries())
+            {
+                var n = new MsbEntity(this, p, MsbEntityType.Layers);
+                if(n.Name == "" || n.Name == null)
+                    n.Name = "{" + $"{count}" + "}";
+                Layers.Add(n);
+                Objects.Add(n);
+                RootObject.AddChild(n);
+                count++;
+            }
+
+            // Routes
+            count = 0;
+            foreach (MSB_AC6.Route p in cMSB.Routes.GetEntries())
+            {
+                var n = new MsbEntity(this, p, MsbEntityType.Routes);
+                if (n.Name == "" || n.Name == null)
+                    n.Name = "{" + $"{count}" + "}";
+                Layers.Add(n);
+                Objects.Add(n);
+                RootObject.AddChild(n);
+                count++;
+            }
+        }
+        */
 
         foreach (Entity m in Objects)
         {

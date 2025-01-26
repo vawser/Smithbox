@@ -1630,6 +1630,9 @@ public class ReplicateMapObjectsAction : ViewportAction
 
     private void ApplyReplicateTransform(MsbEntity sel, int iteration)
     {
+        if (sel.WrappedObject is not IMsbPart or IMsbRegion)
+            return;
+
         Transform objT = sel.GetLocalTransform();
 
         var newTransform = Transform.Default;
@@ -1901,6 +1904,10 @@ public class OrderMapObjectsAction : ViewportAction
             {
                 var curSel = selection.First();
                 var ent = (Entity)curSel;
+
+                // Ignore if the selection is a BTL.Light
+                if (ent.WrappedObject is BTL.Light)
+                    return ActionEvent.NoEvent;
 
                 MapContainer mapRoot = Universe.GetLoadedMap(curSel.MapID);
 

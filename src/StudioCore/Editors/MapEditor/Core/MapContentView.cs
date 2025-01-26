@@ -328,8 +328,8 @@ public class MapContentView
     {
         if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{MapID}_{imguiID}"))
         {
-            // Not supported for BTLs
-            if (ent.WrappedObject is not BTL.Light)
+            // Only supported for these types
+            if (ent.WrappedObject is IMsbPart or IMsbRegion or IMsbEvent)
             {
                 // Move Up
                 if (ImGui.Selectable("Move Up"))
@@ -380,39 +380,51 @@ public class MapContentView
             }
             UIHelper.ShowHoverTooltip($"Delete the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
 
-            if (ImGui.Selectable("Scramble"))
+            // Only supported for these types
+            if (ent.WrappedObject is IMsbPart or IMsbRegion or BTL.Light)
             {
-                Screen.ActionHandler.ApplyScramble();
+                if (ImGui.Selectable("Scramble"))
+                {
+                    Screen.ActionHandler.ApplyScramble();
+                }
+                UIHelper.ShowHoverTooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ScrambleSelection.HintText}");
             }
-            UIHelper.ShowHoverTooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ScrambleSelection.HintText}");
 
-            if (ImGui.Selectable("Replicate"))
+            // Only supported for these types
+            if (ent.WrappedObject is IMsbPart or IMsbRegion)
             {
-                Screen.ActionHandler.ApplyReplicate();
+                if (ImGui.Selectable("Replicate"))
+                {
+                    Screen.ActionHandler.ApplyReplicate();
+                }
+                UIHelper.ShowHoverTooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ReplicateSelection.HintText}");
             }
-            UIHelper.ShowHoverTooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ReplicateSelection.HintText}");
 
             ImGui.Separator();
 
-            if (ImGui.Selectable("Frame in Viewport"))
+            // Only supported for these types
+            if (ent.WrappedObject is IMsbPart or IMsbRegion)
             {
-                Screen.ActionHandler.ApplyFrameInViewport();
-            }
-            UIHelper.ShowHoverTooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MAP_FrameSelection.HintText}");
+                if (ImGui.Selectable("Frame in Viewport"))
+                {
+                    Screen.ActionHandler.ApplyFrameInViewport();
+                }
+                UIHelper.ShowHoverTooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MAP_FrameSelection.HintText}");
 
-            if (ImGui.Selectable("Move to Grid"))
-            {
-                Screen.ActionHandler.ApplyMovetoGrid();
-            }
-            UIHelper.ShowHoverTooltip($"Move the current selection to the nearest grid point.\n\nShortcut: {KeyBindings.Current.MAP_SetSelectionToGrid.HintText}");
+                if (ImGui.Selectable("Move to Grid"))
+                {
+                    Screen.ActionHandler.ApplyMovetoGrid();
+                }
+                UIHelper.ShowHoverTooltip($"Move the current selection to the nearest grid point.\n\nShortcut: {KeyBindings.Current.MAP_SetSelectionToGrid.HintText}");
 
-            if (ImGui.Selectable("Move to Camera"))
-            {
-                Screen.ActionHandler.ApplyMoveToCamera();
-            }
-            UIHelper.ShowHoverTooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
+                if (ImGui.Selectable("Move to Camera"))
+                {
+                    Screen.ActionHandler.ApplyMoveToCamera();
+                }
+                UIHelper.ShowHoverTooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
 
-            ImGui.Separator();
+                ImGui.Separator();
+            }
 
             if (ImGui.Selectable("Copy Name"))
             {

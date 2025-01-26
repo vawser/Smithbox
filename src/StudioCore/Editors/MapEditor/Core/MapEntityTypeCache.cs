@@ -56,6 +56,28 @@ public class MapEntityTypeCache
 
         mapcache.Add(MsbEntityType.Event, new Dictionary<Type, List<MsbEntity>>());
 
+        /*
+        // Routes
+        if (Smithbox.ProjectType is ProjectType.DS2 
+            or ProjectType.DS2S
+            or ProjectType.DS3
+            or ProjectType.SDT
+            or ProjectType.ER
+            or ProjectType.AC6)
+        {
+            mapcache.Add(MsbEntityType.Routes, new Dictionary<Type, List<MsbEntity>>());
+        }
+
+        // Layers
+        if (Smithbox.ProjectType is ProjectType.DS2
+            or ProjectType.DS2S
+            or ProjectType.DS3
+            or ProjectType.AC6)
+        {
+            mapcache.Add(MsbEntityType.Layers, new Dictionary<Type, List<MsbEntity>>());
+        }
+        */
+
         if (Smithbox.ProjectType is ProjectType.BB
             or ProjectType.DS3
             or ProjectType.SDT

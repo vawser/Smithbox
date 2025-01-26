@@ -94,29 +94,25 @@ public class ToolWindow
                     UIHelper.ShowHoverTooltip("The ID offset to apply when duplicating.");
                     UIHelper.WrappedText("");
 
-                    // Add more project types as they are supported via META updates
-                    if (Smithbox.ProjectType is ProjectType.AC6)
-                    {
-                        UIHelper.WrappedText("Deep Copy:");
-                        UIHelper.ShowHoverTooltip("If any of these options are enabled, then the tagged fields within the duplicated row will be affected by the duplication offset.\n\nThis lets you easily duplicate sets of rows where the fields tend to refer to other rows (e.g. bullets).");
+                    UIHelper.WrappedText("Deep Copy:");
+                    UIHelper.ShowHoverTooltip("If any of these options are enabled, then the tagged fields within the duplicated row will be affected by the duplication offset.\n\nThis lets you easily duplicate sets of rows where the fields tend to refer to other rows (e.g. bullets).");
 
-                        // Specific toggles
-                        ImGui.Checkbox("Affect Attack Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectAttackField);
-                        UIHelper.ShowHoverTooltip("Fields tagged as 'Attack' will have the offset applied to their value.\n\nExample: the Attack reference in a Bullet row.");
+                    // Specific toggles
+                    ImGui.Checkbox("Affect Attack Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectAttackField);
+                    UIHelper.ShowHoverTooltip("Fields tagged as 'Attack' will have the offset applied to their value.\n\nExample: the Attack reference in a Bullet row.");
 
-                        ImGui.Checkbox("Affect Bullet Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectBulletField);
-                        UIHelper.ShowHoverTooltip("Fields tagged as 'Bullet' will have the offset applied to their value.\n\nExample: the Bullet references in a Bullet row.");
+                    ImGui.Checkbox("Affect Bullet Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectBulletField);
+                    UIHelper.ShowHoverTooltip("Fields tagged as 'Bullet' will have the offset applied to their value.\n\nExample: the Bullet references in a Bullet row.");
 
-                        ImGui.Checkbox("Affect Behavior Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectBehaviorField);
-                        UIHelper.ShowHoverTooltip("Fields tagged as 'Behavior' will have the offset applied to their value.\n\nExamples: the Reference ID field in a BehaviorParam row.");
+                    ImGui.Checkbox("Affect Behavior Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectBehaviorField);
+                    UIHelper.ShowHoverTooltip("Fields tagged as 'Behavior' will have the offset applied to their value.\n\nExamples: the Reference ID field in a BehaviorParam row.");
 
-                        ImGui.Checkbox("Affect SpEffect Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectSpEffectField);
-                        UIHelper.ShowHoverTooltip("Fields tagged as 'SpEffect' will have the offset applied to their value.\n\nExample: the SpEffect references in a Bullet row.");
+                    ImGui.Checkbox("Affect SpEffect Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectSpEffectField);
+                    UIHelper.ShowHoverTooltip("Fields tagged as 'SpEffect' will have the offset applied to their value.\n\nExample: the SpEffect references in a Bullet row.");
 
-                        ImGui.Checkbox("Affect Equipment Origin Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectSourceField);
-                        UIHelper.ShowHoverTooltip("Fields tagged as 'Source' will have the offset applied to their value.\n\nExamples: the Source ID references in an EquipParamProtector row.");
+                    ImGui.Checkbox("Affect Equipment Origin Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectSourceField);
+                    UIHelper.ShowHoverTooltip("Fields tagged as 'Source' will have the offset applied to their value.\n\nExamples: the Source ID references in an EquipParamProtector row.");
 
-                    }
 
                     if (ImGui.Button("Duplicate##duplicateRow", defaultButtonSize))
                     {
