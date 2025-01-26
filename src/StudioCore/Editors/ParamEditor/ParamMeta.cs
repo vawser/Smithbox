@@ -537,6 +537,39 @@ public class FieldMetaData
             FmgRef = FMGRef.InnerText.Split(",").Select(x => new FMGRef(x)).ToList();
         }
 
+        XmlAttribute tMapFmgRef = fieldMeta.Attributes["MapFmgRef"];
+        if (tMapFmgRef != null)
+        {
+            MapFmgRef = new List<FMGRef>
+            {
+                new FMGRef("m10_02_00_00"),
+                new FMGRef("m10_04_00_00"),
+                new FMGRef("m10_10_00_00"),
+                new FMGRef("m10_14_00_00"),
+                new FMGRef("m10_15_00_00"),
+                new FMGRef("m10_16_00_00"),
+                new FMGRef("m10_17_00_00"),
+                new FMGRef("m10_18_00_00"),
+                new FMGRef("m10_19_00_00"),
+                new FMGRef("m10_23_00_00"),
+                new FMGRef("m10_25_00_00"),
+                new FMGRef("m10_27_00_00"),
+                new FMGRef("m10_29_00_00"),
+                new FMGRef("m10_31_00_00"),
+                new FMGRef("m10_32_00_00"),
+                new FMGRef("m10_33_00_00"),
+                new FMGRef("m10_34_00_00"),
+                new FMGRef("m20_10_00_00"),
+                new FMGRef("m20_11_00_00"),
+                new FMGRef("m20_21_00_00"),
+                new FMGRef("m20_24_00_00"),
+                new FMGRef("m50_35_00_00"),
+                new FMGRef("m50_36_00_00"),
+                new FMGRef("m50_37_00_00"),
+                new FMGRef("m50_38_00_00")
+            };
+        }
+
         XmlAttribute TexRef = fieldMeta.Attributes["TextureRef"];
         if (TexRef != null)
         {
@@ -683,6 +716,11 @@ public class FieldMetaData
     ///     Name of an FMG that a Field may refer to.
     /// </summary>
     public List<FMGRef> FmgRef { get; set; }
+
+    /// <summary>
+    ///     DS2 Map FMG Refs
+    /// </summary>
+    public List<FMGRef> MapFmgRef { get; set; }
 
     /// <summary>
     ///     Name of an Texture Container and File that a Field may refer to.

@@ -233,7 +233,7 @@ public class EditorDecorations
         ImGui.PopStyleVar();
     }
 
-    public static void FmgRefText(List<FMGRef> fmgRef, Param.Row context)
+    public static void FmgRefText(List<FMGRef> fmgRef, Param.Row context, string overrideName = "")
     {
         if (fmgRef == null)
         {
@@ -247,57 +247,68 @@ public class EditorDecorations
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.TextUnformatted(@"   [");
-        List<string> inactiveRefs = new();
-        var first = true;
-        foreach (FMGRef r in fmgRef)
-        {
-            Param.Cell? c = context?[r.conditionField];
-            var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != r.conditionValue;
 
-            if (inactiveRef)
+        if (overrideName == "")
+        {
+            ImGui.TextUnformatted(@"   [");
+
+            List<string> inactiveRefs = new();
+            var first = true;
+            foreach (FMGRef r in fmgRef)
             {
-                inactiveRefs.Add(r.fmg);
-            }
-            else
-            {
-                if (first)
+                Param.Cell? c = context?[r.conditionField];
+                var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != r.conditionValue;
+
+                if (inactiveRef)
                 {
-                    ImGui.SameLine();
-                    ImGui.TextUnformatted(r.fmg);
+                    inactiveRefs.Add(r.fmg);
                 }
                 else
                 {
-                    ImGui.TextUnformatted("    " + r.fmg);
+                    if (first)
+                    {
+                        ImGui.SameLine();
+                        ImGui.TextUnformatted(r.fmg);
+                    }
+                    else
+                    {
+                        ImGui.TextUnformatted("    " + r.fmg);
+                    }
+
+                    first = false;
+                }
+            }
+
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRefInactive_Text);
+            foreach (var inactive in inactiveRefs)
+            {
+                ImGui.SameLine();
+                if (first)
+                {
+                    ImGui.TextUnformatted("!" + inactive);
+                }
+                else
+                {
+                    ImGui.TextUnformatted("!" + inactive);
                 }
 
                 first = false;
             }
-        }
 
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRefInactive_Text);
-        foreach (var inactive in inactiveRefs)
-        {
+            ImGui.PopStyleColor();
+
             ImGui.SameLine();
-            if (first)
-            {
-                ImGui.TextUnformatted("!" + inactive);
-            }
-            else
-            {
-                ImGui.TextUnformatted("!" + inactive);
-            }
-
-            first = false;
+            ImGui.TextUnformatted("]");
+        }
+        else
+        {
+            ImGui.TextUnformatted($@"   [{overrideName}]");
         }
 
-        ImGui.PopStyleColor();
-
-        ImGui.SameLine();
-        ImGui.TextUnformatted("]");
         ImGui.PopStyleColor();
         ImGui.PopStyleVar();
     }
+
 
     public static void TextureRefText(List<TexRef> textureRef, Param.Row context)
     {
@@ -845,7 +856,7 @@ public class EditorDecorations
         }
     }
 
-    public static bool ParamRefEnumContextMenuItems(ParamBank bank, FieldMetaData cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
+    public static bool ParamRefEnumContextMenuItems(ParamBank bank, FieldMetaData cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
     {
         var result = false;
         if (RefTypes != null)
@@ -858,7 +869,12 @@ public class EditorDecorations
             PropertyRowFMGRefsContextItems(fmgRefs, context, oldval, executor);
         }
 
-        if(textureRefs != null)
+        if (mapFmgRefs != null)
+        {
+            PropertyRowFMGRefsContextItems(mapFmgRefs, context, oldval, executor);
+        }
+
+        if (textureRefs != null)
         {
             PropertyRowTextureRefsContextItems(textureRefs, context, executor);
         }

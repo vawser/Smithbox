@@ -107,7 +107,7 @@ public class MapEntityPropertyFieldMeta
         }
 
         // MapRef
-        XmlAttribute tMapRef = entry.Attributes["FmgRef"];
+        XmlAttribute tMapRef = entry.Attributes["MapRef"];
         if (tMapRef != null)
         {
             MapRef = tMapRef.InnerText.Split("-").ToList();

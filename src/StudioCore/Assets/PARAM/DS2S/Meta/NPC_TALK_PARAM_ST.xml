@@ -122,10 +122,12 @@
   <Field>
     <text_id_male 
     AltName="Dialogue Text ID - Male"
-    Wiki="" />
+    Wiki="" 
+    MapFmgRef = "" />
     
     <text_id_female 
     AltName="Dialogue Text ID - Female"
-    Wiki="" />
+    Wiki="" 
+    MapFmgRef= "" />
   </Field>
 </PARAMMETA>
