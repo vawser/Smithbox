@@ -42,8 +42,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
 
     private string SelectedMap = "";
 
-    private bool _chaliceLoadError;
-    private string _chaliceMapID = "m29_";
+    private bool DisplayChaliceDungeons = true;
 
     public MapListView(MapEditorScreen screen)
     {
@@ -100,6 +99,11 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             DisplaySearchbar();
             ImGui.SameLine();
             DisplayUnloadAllButton();
+            if(Smithbox.ProjectType is ProjectType.BB)
+            {
+                ImGui.SameLine();
+                DisplayChaliceToggleButton();
+            }
 
             ImGui.Separator();
 
@@ -132,12 +136,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 ImGui.BeginChild($"mapListSection");
                 DisplayMapList(MapContentLoadState.Unloaded);
                 ImGui.EndChild();
-
-                // TODO: check this
-                if (Smithbox.ProjectType == ProjectType.BB)
-                {
-                    ChaliceDungeonImportButton();
-                }
             }
         }
 
@@ -213,6 +211,18 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     }
 
     /// <summary>
+    /// Handles the chalice MSB toggle button
+    /// </summary>
+    private void DisplayChaliceToggleButton()
+    {
+        if (ImGui.Button($"{ForkAwesome.Adjust}"))
+        {
+            DisplayChaliceDungeons = !DisplayChaliceDungeons;
+        }
+        UIHelper.ShowHoverTooltip("Toggles the display of chalice dungeon maps within the map list.");
+    }
+
+    /// <summary>
     /// Handles the two types of map ID list
     /// </summary>
     private void DisplayMapList(MapContentLoadState loadType)
@@ -225,6 +235,12 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             if(!SearchFilters.IsMapSearchMatch(SearchBarText, entry, AliasUtils.GetMapNameAlias(entry), AliasUtils.GetMapTags(entry)) && loadType == MapContentLoadState.Unloaded)
             {
                 continue;
+            }
+
+            if(!DisplayChaliceDungeons)
+            {
+                if (entry.Contains("m29_"))
+                    continue;
             }
 
             if (ContentViews.ContainsKey(entry))
@@ -369,61 +385,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         if (evt.HasFlag(Actions.Viewport.ActionEvent.ObjectAddedRemoved))
         {
             Screen.EntityTypeCache.InvalidateCache();
-        }
-    }
-
-    private bool DisplayChaliceDungeonSection = true;
-
-    private void ChaliceDungeonImportButton()
-    {
-        ImGui.Separator();
-
-        if (ImGui.Selectable("Toggle Chalice Dungeon Panel"))
-        {
-            DisplayChaliceDungeonSection = !DisplayChaliceDungeonSection;
-        }
-
-        ImGui.Separator();
-
-        if (DisplayChaliceDungeonSection)
-        {
-            var width = ImGui.GetWindowWidth() * 0.95f;
-
-            ImGui.Indent(5f);
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("Chalice ID (m29_xx_xx_xx): ");
-            var pname = _chaliceMapID;
-
-            if (_chaliceLoadError)
-            {
-                ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_ErrorInput_Background);
-            }
-
-            ImGui.SetNextItemWidth(width);
-            if (ImGui.InputText("##chalicename", ref pname, 12))
-            {
-                _chaliceMapID = pname;
-            }
-
-            if (_chaliceLoadError)
-            {
-                ImGui.PopStyleColor();
-            }
-
-            if (ImGui.Button("Load", new Vector2(width, 24)))
-            {
-                if (!Universe.LoadMap(_chaliceMapID))
-                {
-                    _chaliceLoadError = true;
-                }
-                else
-                {
-                    ImGui.CloseCurrentPopup();
-                    _chaliceLoadError = false;
-                    _chaliceMapID = "m29_";
-                }
-            }
-            ImGui.Unindent(5f);
         }
     }
 }

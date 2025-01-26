@@ -338,7 +338,7 @@ public static class MapLocator
     }
 
     /// <summary>
-    /// Gets the full list of maps in the game (excluding chalice dungeons). 
+    /// Gets the full list of maps in the game. 
     /// Basically if there's an msb for it, it will be in this list.
     /// </summary>
     /// <returns></returns>
@@ -418,13 +418,21 @@ public static class MapLocator
             }
             else
             {
-                var msbFiles = Directory
-                    .GetFileSystemEntries(Smithbox.GameRoot + @"\map\MapStudio\", @"*.msb")
+                var msbFiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + @"\map\MapStudio\", @"*.msb")
                     .Select(Path.GetFileNameWithoutExtension).ToList();
 
-                msbFiles.AddRange(Directory
-                    .GetFileSystemEntries(Smithbox.GameRoot + @"\map\MapStudio\", @"*.msb.dcx")
+                msbFiles.AddRange(Directory.GetFileSystemEntries(Smithbox.GameRoot + @"\map\MapStudio\", @"*.msb.dcx")
                     .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
+
+                if(Smithbox.ProjectType is ProjectType.BB)
+                {
+                    string[] folders = Directory.GetDirectories(Smithbox.GameRoot + @"\map\MapStudio\", "m29_*");
+                    foreach (var folder in folders)
+                    {
+                        msbFiles.AddRange(Directory.GetFileSystemEntries(folder, @"*.msb.dcx")
+                        .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
+                    }
+                }
 
                 if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + @"\map\MapStudio\"))
                 {
@@ -436,6 +444,16 @@ public static class MapLocator
                         .GetFileSystemEntries(Smithbox.ProjectRoot + @"\map\MapStudio\", @"*.msb.dcx")
                         .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension)
                         .ToList());
+
+                    if (Smithbox.ProjectType is ProjectType.BB)
+                    {
+                        string[] folders = Directory.GetDirectories(Smithbox.ProjectRoot + @"\map\MapStudio\", "m29_*");
+                        foreach (var folder in folders)
+                        {
+                            msbFiles.AddRange(Directory.GetFileSystemEntries(folder, @"*.msb.dcx")
+                            .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
+                        }
+                    }
                 }
 
                 foreach (var msb in msbFiles)
@@ -522,6 +540,16 @@ public static class MapLocator
             msbFiles.AddRange(Directory
                 .GetFileSystemEntries(projectPath + @"\map\MapStudio\", @"*.msb.dcx")
                 .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
+
+            if (Smithbox.ProjectType is ProjectType.BB)
+            {
+                string[] folders = Directory.GetDirectories(projectPath + @"\map\MapStudio\", "m29_*");
+                foreach (var folder in folders)
+                {
+                    msbFiles.AddRange(Directory.GetFileSystemEntries(folder, @"*.msb.dcx")
+                    .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
+                }
+            }
 
             foreach (var msb in msbFiles)
                 mapSet.Add(msb);
