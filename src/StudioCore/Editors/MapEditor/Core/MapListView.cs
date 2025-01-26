@@ -38,7 +38,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     public Dictionary<string, MapContentView> ContentViews = new();
     public bool SetupContentViews = false;
 
-    private string SearchBarText = "";
+    public string SearchBarText = "";
 
     private string SelectedMap = "";
 

@@ -27,42 +27,38 @@ public class WorldMapView : IResourceEventListener
     private MapEditorScreen Screen;
 
     private Task _loadingTask;
-    private bool LoadedWorldMapTexture { get; set; }
-    private bool WorldMapOpen { get; set; }
 
-    private WorldMapLayout WorldMapLayout_Vanilla = null;
-    private WorldMapLayout WorldMapLayout_SOTE = null;
+    private WorldMapLayout VanillaLayout = null;
+    private WorldMapLayout SoteLayout = null;
 
-    private Vector2 zoomFactor;
+    private bool IsMapTextureLoaded { get; set; }
+    private bool IsMapOpen { get; set; }
+    private bool IsSoteMapOpen { get; set; }
 
-    private float zoomFactorStep = 0.1f;
+    private Vector2 MapZoomFactor;
+    private float MapZoomFactorStep = 0.1f;
 
     private Vector2 TextureViewWindowPosition = new Vector2(0, 0);
     private Vector2 TextureViewScrollPosition = new Vector2(0, 0);
 
-    private Vector2 trueSize = new Vector2();
-    private Vector2 size = new Vector2();
-    private Vector2 relativePos = new Vector2();
-    private Vector2 relativePosWindowPosition = new Vector2();
+    private Vector2 MapTextureTrueSize = new Vector2();
+    private Vector2 MapTextureSize = new Vector2();
+    private Vector2 MapCurseRelativePosition = new Vector2();
+    private Vector2 MapCurseRelativePositionInWindow = new Vector2();
 
     List<string> currentHoverMaps = new List<string>();
-
-    private bool IsViewingSOTEMap = false;
-
-    public bool MapSelectionActive = false;
-
     public List<string> WorldMap_ClickedMapZone = new List<string>();
 
     public WorldMapView(MapEditorScreen screen)
     {
         Screen = screen;
 
-        WorldMapOpen = false;
-        LoadedWorldMapTexture = false;
-        zoomFactor = GetDefaultZoomLevel();
+        IsMapOpen = false;
+        IsMapTextureLoaded = false;
+        MapZoomFactor = GetDefaultZoomLevel();
         DPI.UIScaleChanged += (_, _) =>
         {
-            zoomFactor = GetDefaultZoomLevel();
+            MapZoomFactor = GetDefaultZoomLevel();
         };
     }
 
@@ -80,20 +76,20 @@ public class WorldMapView : IResourceEventListener
     {
         if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleERMapVanilla))
         {
-            WorldMapOpen = !WorldMapOpen;
-            if (IsViewingSOTEMap)
+            IsMapOpen = !IsMapOpen;
+            if (IsSoteMapOpen)
             {
-                IsViewingSOTEMap = false;
-                WorldMapOpen = true;
+                IsSoteMapOpen = false;
+                IsMapOpen = true;
             };
         }
         if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleERMapSOTE))
         {
-            WorldMapOpen = !WorldMapOpen;
-            if (!IsViewingSOTEMap)
+            IsMapOpen = !IsMapOpen;
+            if (!IsSoteMapOpen)
             {
-                IsViewingSOTEMap = true;
-                WorldMapOpen = true;
+                IsSoteMapOpen = true;
+                IsMapOpen = true;
             };
         }
 
@@ -104,7 +100,7 @@ public class WorldMapView : IResourceEventListener
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
         {
-            zoomFactor = GetDefaultZoomLevel();
+            MapZoomFactor = GetDefaultZoomLevel();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DragWorldMap))
@@ -114,8 +110,8 @@ public class WorldMapView : IResourceEventListener
 
         if (InputTracker.GetKey(Key.Escape))
         {
-            IsViewingSOTEMap = false;
-            WorldMapOpen = false;
+            IsSoteMapOpen = false;
+            IsMapOpen = false;
         }
     }
 
@@ -157,18 +153,18 @@ public class WorldMapView : IResourceEventListener
         var windowWidth = ImGui.GetWindowWidth();
         var widthUnit = windowWidth / 100;
 
-        if (LoadedWorldMapTexture && CFG.Current.MapEditor_ShowWorldMapButtons)
+        if (IsMapTextureLoaded && CFG.Current.MapEditor_ShowWorldMapButtons)
         {
             if (ImGui.Button("Lands Between", new Vector2(widthUnit * 48, 20 * scale)))
             {
                 if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_vanilla", AccessLevel.AccessGPUOptimizedOnly))
                     LoadWorldMapTexture();
 
-                WorldMapOpen = !WorldMapOpen;
-                if (IsViewingSOTEMap)
+                IsMapOpen = !IsMapOpen;
+                if (IsSoteMapOpen)
                 {
-                    IsViewingSOTEMap = false;
-                    WorldMapOpen = true;
+                    IsSoteMapOpen = false;
+                    IsMapOpen = true;
                 };
             }
             UIHelper.ShowHoverTooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapVanilla.HintText}");
@@ -179,11 +175,11 @@ public class WorldMapView : IResourceEventListener
                 if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_sote", AccessLevel.AccessGPUOptimizedOnly))
                     LoadWorldMapTexture();
 
-                WorldMapOpen = !WorldMapOpen;
-                if (!IsViewingSOTEMap)
+                IsMapOpen = !IsMapOpen;
+                if (!IsSoteMapOpen)
                 {
-                    IsViewingSOTEMap = true;
-                    WorldMapOpen = true;
+                    IsSoteMapOpen = true;
+                    IsMapOpen = true;
                 };
             }
             UIHelper.ShowHoverTooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapSOTE.HintText}");
@@ -206,7 +202,7 @@ public class WorldMapView : IResourceEventListener
         if (Smithbox.ProjectType != ProjectType.ER)
             return;
 
-        if (!WorldMapOpen)
+        if (!IsMapOpen)
             return;
 
         ImGui.Begin("World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
@@ -237,7 +233,7 @@ public class WorldMapView : IResourceEventListener
 
         ResourceHandle<TextureResource> resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_vanilla");
 
-        if (IsViewingSOTEMap)
+        if (IsSoteMapOpen)
         {
             resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_sote");
         }
@@ -248,14 +244,14 @@ public class WorldMapView : IResourceEventListener
 
             if (texRes != null)
             {
-                trueSize = GetImageSize(texRes, false);
-                size = GetImageSize(texRes, true);
-                relativePos = GetRelativePosition(TextureViewWindowPosition, TextureViewScrollPosition);
-                relativePosWindowPosition = GetRelativePositionWindowOnly(TextureViewWindowPosition);
+                MapTextureTrueSize = GetImageSize(texRes, false);
+                MapTextureSize = GetImageSize(texRes, true);
+                MapCurseRelativePosition = GetRelativePosition(TextureViewWindowPosition, TextureViewScrollPosition);
+                MapCurseRelativePositionInWindow = GetRelativePositionWindowOnly(TextureViewWindowPosition);
 
                 nint handle = (nint)texRes.GPUTexture.TexHandle;
 
-                ImGui.Image(handle, size);
+                ImGui.Image(handle, MapTextureSize);
             }
         }
 
@@ -292,7 +288,7 @@ public class WorldMapView : IResourceEventListener
         }
         */
 
-        currentHoverMaps = GetMatchingMaps(relativePos);
+        currentHoverMaps = GetMatchingMaps(MapCurseRelativePosition);
 
         ImGui.Separator();
         ImGui.Text($"Selection:");
@@ -333,7 +329,7 @@ public class WorldMapView : IResourceEventListener
 
         if (InputTracker.GetMouseButtonDown(MouseButton.Left))
         {
-            if (relativePosWindowPosition.X > 0 && relativePosWindowPosition.X < windowWidth && relativePosWindowPosition.Y > 0 && relativePosWindowPosition.Y < windowHeight)
+            if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < windowWidth && MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < windowHeight)
             {
                 if (currentHoverMaps != null && currentHoverMaps.Count > 0)
                 {
@@ -341,15 +337,14 @@ public class WorldMapView : IResourceEventListener
 
                     if (CFG.Current.WorldMap_EnableFilterOnClick)
                     {
-                        LoadMapsOnClick(currentHoverMaps);
-                        Smithbox.EditorHandler.MapEditor.WorldMapView.WorldMap_ClickedMapZone = currentHoverMaps;
+                        Smithbox.EditorHandler.MapEditor.MapListView.SearchBarText = string.Join("|", currentHoverMaps);
                     }
                 }
             }
         }
         if (InputTracker.GetMouseButtonDown(MouseButton.Right))
         {
-            if (relativePosWindowPosition.X > 0 && relativePosWindowPosition.X < windowWidth && relativePosWindowPosition.Y > 0 && relativePosWindowPosition.Y < windowHeight)
+            if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < windowWidth && MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < windowHeight)
             {
                 if (currentHoverMaps != null && currentHoverMaps.Count > 0)
                 {
@@ -392,7 +387,7 @@ public class WorldMapView : IResourceEventListener
 
         ResourceManager.AddResourceListener<TextureResource>(ad.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
 
-        LoadedWorldMapTexture = true;
+        IsMapTextureLoaded = true;
     }
 
     private void GenerateWorldMapLayout_Vanilla()
@@ -405,10 +400,10 @@ public class WorldMapView : IResourceEventListener
         var largeCols = new List<int>() { 15, 14, 13, 12, 11, 10, 9, 8, 7 };
 
 
-        WorldMapLayout_Vanilla = new WorldMapLayout("60", 480, 55);
-        WorldMapLayout_Vanilla.GenerateTiles(smallRows, smallCols, "00", 124);
-        WorldMapLayout_Vanilla.GenerateTiles(mediumRows, mediumCols, "01", 248);
-        WorldMapLayout_Vanilla.GenerateTiles(largeRows, largeCols, "02", 496);
+        VanillaLayout = new WorldMapLayout("60", 480, 55);
+        VanillaLayout.GenerateTiles(smallRows, smallCols, "00", 124);
+        VanillaLayout.GenerateTiles(mediumRows, mediumCols, "01", 248);
+        VanillaLayout.GenerateTiles(largeRows, largeCols, "02", 496);
     }
 
     private int SOTE_xOffset = 540;
@@ -423,21 +418,21 @@ public class WorldMapView : IResourceEventListener
         var largeRows = new List<int>() { 10, 11, 12, 13, 14 };
         var largeCols = new List<int>() { 13, 12, 11, 10, 9, 8 };
 
-        WorldMapLayout_SOTE = new WorldMapLayout("61", SOTE_xOffset, SOTE_yOffset);
-        WorldMapLayout_SOTE.GenerateTiles(smallRows, smallCols, "00", 256);
-        WorldMapLayout_SOTE.GenerateTiles(mediumRows, mediumCols, "01", 528);
-        WorldMapLayout_SOTE.GenerateTiles(largeRows, largeCols, "02", 1056);
+        SoteLayout = new WorldMapLayout("61", SOTE_xOffset, SOTE_yOffset);
+        SoteLayout.GenerateTiles(smallRows, smallCols, "00", 256);
+        SoteLayout.GenerateTiles(mediumRows, mediumCols, "01", 528);
+        SoteLayout.GenerateTiles(largeRows, largeCols, "02", 1056);
     }
 
     private List<string> GetMatchingMaps(Vector2 pos)
     {
         List<string> matches = new List<string>();
 
-        var tiles = WorldMapLayout_Vanilla.Tiles;
+        var tiles = VanillaLayout.Tiles;
 
-        if (IsViewingSOTEMap)
+        if (IsSoteMapOpen)
         {
-            tiles = WorldMapLayout_SOTE.Tiles;
+            tiles = SoteLayout.Tiles;
         }
 
         foreach (var tile in tiles)
@@ -515,7 +510,7 @@ public class WorldMapView : IResourceEventListener
             {
                 if (includeZoomFactor)
                 {
-                    size = new Vector2(Width * zoomFactor.X, Height * zoomFactor.Y);
+                    size = new Vector2(Width * MapZoomFactor.X, Height * MapZoomFactor.Y);
                 }
                 else
                 {
@@ -557,30 +552,30 @@ public class WorldMapView : IResourceEventListener
 
     private void ZoomIn()
     {
-        zoomFactor.X = zoomFactor.X + zoomFactorStep;
-        zoomFactor.Y = zoomFactor.Y + zoomFactorStep;
+        MapZoomFactor.X = MapZoomFactor.X + MapZoomFactorStep;
+        MapZoomFactor.Y = MapZoomFactor.Y + MapZoomFactorStep;
 
-        if (zoomFactor.X > 10.0f)
+        if (MapZoomFactor.X > 10.0f)
         {
-            zoomFactor.X = 10.0f;
+            MapZoomFactor.X = 10.0f;
         }
-        if (zoomFactor.Y > 10.0f)
+        if (MapZoomFactor.Y > 10.0f)
         {
-            zoomFactor.Y = 10.0f;
+            MapZoomFactor.Y = 10.0f;
         }
     }
     private void ZoomOut()
     {
-        zoomFactor.X = zoomFactor.X - zoomFactorStep;
-        zoomFactor.Y = zoomFactor.Y - zoomFactorStep;
+        MapZoomFactor.X = MapZoomFactor.X - MapZoomFactorStep;
+        MapZoomFactor.Y = MapZoomFactor.Y - MapZoomFactorStep;
 
-        if (zoomFactor.X < 0.1f)
+        if (MapZoomFactor.X < 0.1f)
         {
-            zoomFactor.X = 0.1f;
+            MapZoomFactor.X = 0.1f;
         }
-        if (zoomFactor.Y < 0.1f)
+        if (MapZoomFactor.Y < 0.1f)
         {
-            zoomFactor.Y = 0.1f;
+            MapZoomFactor.Y = 0.1f;
         }
     }
     private Vector2 GetDefaultZoomLevel()
@@ -605,8 +600,8 @@ public class WorldMapView : IResourceEventListener
         relativePos.Y = cursorPos.Y - (windowPos.Y + fixedY - scrollPos.Y);
 
         // Account for zoom
-        relativePos.X = relativePos.X / zoomFactor.X;
-        relativePos.Y = relativePos.Y / zoomFactor.Y;
+        relativePos.X = relativePos.X / MapZoomFactor.X;
+        relativePos.Y = relativePos.Y / MapZoomFactor.Y;
 
         return relativePos;
     }

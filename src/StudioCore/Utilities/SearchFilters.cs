@@ -446,20 +446,19 @@ public static class SearchFilters
             return match;
         }
 
-        string[] inputParts = input.Split("+");
-        bool[] partTruth = new bool[inputParts.Length];
+        string[] inputParts = input.Split("|");
 
-        for (int i = 0; i < partTruth.Length; i++)
+        for (int i = 0; i < inputParts.Length; i++)
         {
             string entry = inputParts[i];
 
             // Match: Map ID
             if (entry == MapID)
-                partTruth[i] = true;
+                match = true;
 
             // Contains: Map ID
             if (MapID.Contains(entry))
-                partTruth[i] = true;
+                match = true;
 
             // Match: Map ID parts
             var MapIDParts = MapID.Split("_");
@@ -468,48 +467,40 @@ public static class SearchFilters
                 var part = refPart.Replace("m", "");
 
                 if (entry == refPart)
-                    partTruth[i] = true;
+                    match = true;
 
                 if (refPart.Contains(entry))
-                    partTruth[i] = true;
+                    match = true;
             }
 
             // Match: Alias Name
             if (entry == MapName)
-                partTruth[i] = true;
+                match = true;
 
             // Contains: Map ID
             if (MapName.Contains(entry))
-                partTruth[i] = true;
+                match = true;
 
             // Match: Alias Name parts
             var MapNameParts = MapName.Split(" ");
             foreach (var refPart in MapNameParts)
             {
                 if (entry == refPart)
-                    partTruth[i] = true;
+                    match = true;
 
                 if (refPart.Contains(entry))
-                    partTruth[i] = true;
+                    match = true;
             }
 
             // Match: Tags
             foreach (string tagStr in MapTags)
             {
                 if (tagStr.ToLower().Contains(entry))
-                    partTruth[i] = true;
+                    match = true;
 
                 if (entry == tagStr.ToLower())
-                    partTruth[i] = true;
+                    match = true;
             }
-        }
-
-        match = true;
-
-        foreach (bool entry in partTruth)
-        {
-            if (!entry)
-                match = false;
         }
 
         return match;
