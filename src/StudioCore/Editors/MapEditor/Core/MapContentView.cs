@@ -102,15 +102,13 @@ public class MapContentView
         if (ContentLoadState is MapContentLoadState.Unloaded)
             return;
 
-        if (CFG.Current.MapEditor_MapObjectList_ShowMapContentSearch)
-        {
-            var mapId = MapID;
-            var mapName = AliasUtils.GetMapNameAlias(MapID);
+        DisplaySearchbar();
 
-            ImGui.SetNextItemWidth(-1);
-            ImGui.InputText($"##contentTreeSearch_{ImguiID}", ref SearchBarText, 255);
-            UIHelper.ShowHoverTooltip($"Filter the content tree entries for {mapId}: {mapName}");
-        }
+        ImGui.SameLine();
+        DisplayShowAllButton();
+
+        ImGui.SameLine();
+        DisplayHideAllButton();
 
         ImGui.Separator();
 
@@ -118,6 +116,54 @@ public class MapContentView
         treeImGuiId = 0;
 
         DisplayContentTree();
+    }
+
+    /// <summary>
+    /// Handles the display of the searchbar
+    /// </summary>
+    public void DisplaySearchbar()
+    {
+        var width = ImGui.GetWindowWidth();
+
+        if (CFG.Current.MapEditor_MapObjectList_ShowMapContentSearch)
+        {
+            var mapId = MapID;
+            var mapName = AliasUtils.GetMapNameAlias(MapID);
+
+            ImGui.SetNextItemWidth(width * 0.75f);
+            ImGui.InputText($"##contentTreeSearch_{ImguiID}", ref SearchBarText, 255);
+            UIHelper.ShowHoverTooltip($"Filter the content tree entries for {mapId}: {mapName}");
+        }
+    }
+
+    /// <summary>
+    /// Handles the show all button
+    /// </summary>
+    private void DisplayShowAllButton()
+    {
+        if (ImGui.Button($"{ForkAwesome.Eye}"))
+        {
+            foreach(var entry in Container.Objects)
+            {
+                entry.EditorVisible = true;
+            }
+        }
+        UIHelper.ShowHoverTooltip("Force all map objects within this map to be shown.");
+    }
+
+    /// <summary>
+    /// Handles the hude all button
+    /// </summary>
+    private void DisplayHideAllButton()
+    {
+        if (ImGui.Button($"{ForkAwesome.EyeSlash}"))
+        {
+            foreach (var entry in Container.Objects)
+            {
+                entry.EditorVisible = false;
+            }
+        }
+        UIHelper.ShowHoverTooltip("Force all map objects within this map to be hidden.");
     }
 
     /// <summary>

@@ -17,6 +17,3 @@
  - DS3
  - BB
 
-
-- Map Editor:
- - Check BB chalice loading (MapContentView issue)
