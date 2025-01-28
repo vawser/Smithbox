@@ -46,7 +46,7 @@
 33702222 [REG:33702222] Captive Undead
 60800000 [REG:60800000] Corrosive Ant Queen
 67100000 [REG:67100000] Poison Statue Cluster
-67200000 [REG:67200000] Corrosive Ant
+67200000 [REG:67200000] Corrosive Egg Insect
 69300000 [REG:69300000] Aldia- Scholar of the First Sin
 69500000 [REG:69500000] Forlorn
 69600000 [REG:69600000] Invisible Hollow

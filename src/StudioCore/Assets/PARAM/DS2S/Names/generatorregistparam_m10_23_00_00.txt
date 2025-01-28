@@ -20,23 +20,23 @@
 10800055 [REG:10800055] Hollow Rogue
 11800000 [REG:11800000] Black Hollow Mage
 11800001 [REG:11800001] Black Hollow Mage
-12700000 [REG:12700000] Captive Undead
-12700001 [REG:12700001] Captive Undead
-12700002 [REG:12700002] Captive Undead
-12700003 [REG:12700003] Captive Undead
-12700009 [REG:12700009] Captive Undead
-12700050 [REG:12700050] Captive Undead
-12700051 [REG:12700051] Captive Undead
-12700052 [REG:12700052] Captive Undead
-12700099 [REG:12700099] Captive Undead
-12701009 [REG:12701009] Captive Undead
-13200003 [REG:13200003] Dual-wielding Skeleton
-13200010 [REG:13200010] Dual-wielding Skeleton
-13200032 [REG:13200032] Dual-wielding Skeleton
-13202235 [REG:13202235] Dual-wielding Skeleton
-13205000 [REG:13205000] Dual-wielding Skeleton
+12700000 [REG:12700000] Undead Laborer
+12700001 [REG:12700001] Undead Laborer
+12700002 [REG:12700002] Undead Laborer
+12700003 [REG:12700003] Undead Laborer
+12700009 [REG:12700009] Undead Laborer
+12700050 [REG:12700050] Undead Laborer
+12700051 [REG:12700051] Undead Laborer
+12700052 [REG:12700052] Undead Laborer
+12700099 [REG:12700099] Undead Laborer
+12701009 [REG:12701009] Undead Laborer
+13200003 [REG:13200003] Armored Skeleton
+13200010 [REG:13200010] Armored Skeleton
+13200032 [REG:13200032] Armored Skeleton
+13202235 [REG:13202235] Armored Skeleton
+13205000 [REG:13205000] Armored Skeleton
 13209000 [REG:13209000] Skeleton
-13300101 [REG:13300101] Skeleton
+13300101 [REG:13300101] Bonewheel Skeleton
 13800000 [REG:13800000] Torturer
 13800001 [REG:13800001] Torturer
 13800002 [REG:13800002] Torturer
@@ -51,21 +51,21 @@
 15400000 [REG:15400000] Skeleton Lord
 15400001 [REG:15400001] Skeleton Lord
 15400002 [REG:15400002] Skeleton Lord
-15600000 [REG:15600000] Dual-wielding Skeleton
-15700012 [REG:15700012] Dual-wielding Skeleton
-15700014 [REG:15700014] Dual-wielding Skeleton
-15700020 [REG:15700020] Dual-wielding Skeleton
-15700022 [REG:15700022] Dual-wielding Skeleton
-15700023 [REG:15700023] Dual-wielding Skeleton
-15700500 [REG:15700500] Dual-wielding Skeleton
-15700600 [REG:15700600] Dual-wielding Skeleton
-15701400 [REG:15701400] Dual-wielding Skeleton
-15701500 [REG:15701500] Dual-wielding Skeleton
-15702300 [REG:15702300] Dual-wielding Skeleton
-15702600 [REG:15702600] Dual-wielding Skeleton
-15703300 [REG:15703300] Dual-wielding Skeleton
-15705800 [REG:15705800] Dual-wielding Skeleton
-15706802 [REG:15706802] Dual-wielding Skeleton
+15600000 [REG:15600000] Armored Skeleton
+15700012 [REG:15700012] Armored Skeleton
+15700014 [REG:15700014] Armored Skeleton
+15700020 [REG:15700020] Armored Skeleton
+15700022 [REG:15700022] Armored Skeleton
+15700023 [REG:15700023] Armored Skeleton
+15700500 [REG:15700500] Armored Skeleton
+15700600 [REG:15700600] Armored Skeleton
+15701400 [REG:15701400] Armored Skeleton
+15701500 [REG:15701500] Armored Skeleton
+15702300 [REG:15702300] Armored Skeleton
+15702600 [REG:15702600] Armored Skeleton
+15703300 [REG:15703300] Armored Skeleton
+15705800 [REG:15705800] Armored Skeleton
+15706802 [REG:15706802] Armored Skeleton
 20400000 [REG:20400000] Poison Moth
 21300000 [REG:21300000] Crystal Lizard
 22200000 [REG:22200000] Giant Basilisk

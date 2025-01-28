@@ -1,4 +1,4 @@
-340 [GEN:340] Retainer
+340 [GEN:340] Alsanna, Silent Oracle
 342 [GEN:342] Voice Marker (Alsanna)
 343 [GEN:343] Voice Marker (Alsanna)
 344 [GEN:344] Voice Marker (Alsanna)
@@ -9,7 +9,7 @@
 771 [GEN:771] Twiggy Shei
 772 [GEN:772] Masterless Glencour
 773 [GEN:773] Steelheart Ellie
-774 [GEN:774] Vengarl
+774 [GEN:774] Head of Vengarl
 775 [GEN:775] Abbess Feeva
 776 [GEN:776] Manhunter O'Harrah
 777 [GEN:777] Sellsword Luet
@@ -24,10 +24,10 @@
 795 [GEN:795] Loyce Knight
 796 [GEN:796] Loyce Knight
 797 [GEN:797] Loyce Knight
-907 [GEN:907] Lud- the King's Pet
+907 [GEN:907] Aava, the King's Pet
 908 [GEN:908] Burnt Ivory King
-909 [GEN:909] Aava- the King's Pet
-910 [GEN:910] Aava- the King's Pet
+909 [GEN:909] Lud, the King's Pet
+910 [GEN:910] Zallen, the King's Pet
 980 [GEN:980] Forlorn (Scythe)
 1000 [GEN:1000] Spellsword
 1001 [GEN:1001] Spellsword
@@ -130,8 +130,8 @@
 2900 [GEN:2900] Rampart Golem
 2910 [GEN:2910] Rampart Golem
 3000 [GEN:3000] Retainer
-3010 [GEN:3010] Facsimile Giant
-3011 [GEN:3011] Facsimile Giant
+3010 [GEN:3010] Frozen Golem
+3011 [GEN:3011] Frozen Golem
 3020 [GEN:3020] Mimic
 3100 [GEN:3100] Spellsword
 3101 [GEN:3101] Spellsword
@@ -143,9 +143,9 @@
 3400 [GEN:3400] Spellsword
 3500 [GEN:3500] NO MATCH
 3600 [GEN:3600] NO MATCH
-3700 [GEN:3700] Facsimile Giant
-3701 [GEN:3701] Facsimile Giant
-3702 [GEN:3702] Facsimile Giant
+3700 [GEN:3700] Frozen Golem
+3701 [GEN:3701] Frozen Golem
+3702 [GEN:3702] Frozen Golem
 3710 [GEN:3710] Spellsword
 3810 [GEN:3810] Rampart Golem
 3811 [GEN:3811] Rampart Golem
@@ -156,8 +156,8 @@
 3901 [GEN:3901] Spellsword
 3902 [GEN:3902] Spellsword
 3910 [GEN:3910] NO MATCH
-3911 [GEN:3911] Facsimile Giant
-3912 [GEN:3912] Facsimile Giant
+3911 [GEN:3911] Frozen Golem
+3912 [GEN:3912] Frozen Golem
 4100 [GEN:4100] NO MATCH
 4101 [GEN:4101] NO MATCH
 4102 [GEN:4102] NO MATCH
@@ -188,11 +188,11 @@
 5302 [GEN:5302] NO MATCH
 5320 [GEN:5320] Teeth-chattering Dan
 5330 [GEN:5330] Rampart Hedgehog
-5500 [GEN:5500] Facsimile Giant
-5501 [GEN:5501] Facsimile Giant
+5500 [GEN:5500] Frozen Golem
+5501 [GEN:5501] Frozen Golem
 5502 [GEN:5502] NO MATCH
-5503 [GEN:5503] Facsimile Giant
-5504 [GEN:5504] Facsimile Giant
+5503 [GEN:5503] Frozen Golem
+5504 [GEN:5504] Frozen Golem
 5510 [GEN:5510] Rampart Hedgehog
 5511 [GEN:5511] Rampart Hedgehog
 5512 [GEN:5512] Rampart Hedgehog
@@ -256,8 +256,8 @@
 7200 [GEN:7200] Rampart Golem
 7201 [GEN:7201] Rampart Golem
 7202 [GEN:7202] Rampart Golem
-7505 [GEN:7505] Unknown Phantom
-7506 [GEN:7506] Unknown Phantom
-7600 [GEN:7600] Unknown Phantom
-7602 [GEN:7602] Unknown Phantom
-7603 [GEN:7603] Unknown Phantom
+7505 [GEN:7505] Exile Brave
+7506 [GEN:7506] Exile Brave
+7600 [GEN:7600] Exile Brave
+7602 [GEN:7602] Exile Brave
+7603 [GEN:7603] Exile Brave

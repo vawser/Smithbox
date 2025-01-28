@@ -6,7 +6,7 @@
 617 [GEN:617] Devotee Scarlett
 842 [GEN:842] Dragonrider
 843 [GEN:843] Old Dragonslayer
-1000 generator_1000
+1000 [GEN:1000] Old Knight
 1010 [GEN:1010] Old Knight
 1020 [GEN:1020] Old Knight
 1030 [GEN:1030] Old Knight
@@ -25,6 +25,6 @@
 1530 [GEN:1530] Heide Knight
 1550 [GEN:1550] Heide Knight
 2000 [GEN:2000] Executioner Phantom
-9110 [GEN:9110] Sentinel Phantom
-9112 [GEN:9112] Sentinel Phantom
-9120 [GEN:9120] Sentinel Phantom
+9110 [GEN:9110] Blue Sentinel Phantom
+9112 [GEN:9112] Blue Sentinel Phantom
+9120 [GEN:9120] Blue Sentinel Phantom

@@ -5,8 +5,8 @@
     <souls AltName="Souls"/>
     <itemlot_id AltName="Itemlot ID" Refs="ItemLotParam2_Other"/>
     <enemy_common_id AltName="Enemy Common ID" Refs="EnemyCommonParam" />
-    <boss_destruction_flag AltName="Boss Destruction Flag"/>
-    <boss_shop_visibility_flag AltName="Boss Shop Visibility Flag" Wiki="Used for enabling shop items"/>
+    <boss_destruction_flag AltName="Boss Destruction Event Flag"/>
+    <map_clear_global_event_flag AltName="Map Clear Global Event Flag" Wiki="Used for enabling shop items and for triggering map events."/>
     <camera_follow_iD AltName="Camera Follow ID" Refs="CameraExFollowParam"/>
     <lockon_id AltName="Lock-on ID" Refs="LockOnParam"/>
     <has_named_boss_entity_0 AltName="Has Named Boss Entity [0]" IsBool=""/>

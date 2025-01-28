@@ -44,9 +44,9 @@
 1100 [GEN:1100] Skeleton
 1101 [GEN:1101] Skeleton
 1102 [GEN:1102] Skeleton
-1103 [GEN:1103] Dual-wielding Skeleton
-1104 [GEN:1104] Dual-wielding Skeleton
-1105 [GEN:1105] Dual-wielding Skeleton
+1103 [GEN:1103] Armored Skeleton
+1104 [GEN:1104] Armored Skeleton
+1105 [GEN:1105] Armored Skeleton
 1106 [GEN:1106] Skeleton
 1107 [GEN:1107] Skeleton
 2000 [GEN:2000] Mimic

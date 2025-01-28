@@ -342,7 +342,7 @@
 10106460 [Forest of Fallen Giants] Firedrake Stone
 10106470 [Forest of Fallen Giants] Hawk Ring
 10106480 [Forest of Fallen Giants] Large Soul of a Proud Knight
-10106490 [Forest of Fallen Giants] Dried Fingers- Radiant Lifegem
+10106490 [Forest of Fallen Giants] Hand Axe- Radiant Lifegem
 10106500 [Forest of Fallen Giants] Soul of a Nameless Soldier- Torch
 10106510 [Forest of Fallen Giants] Grand Lance
 10106520 [Forest of Fallen Giants] Estus Flask Shard
@@ -450,7 +450,7 @@
 10165010 [Lost Bastille - Chest] Soul Vessel
 10165020 [Lost Bastille - Chest] Bone Staff
 10165040 [Lost Bastille - Chest] Rouge Water
-10165041 [Lost Bastille - Chest NG+] Bell Keeper Bow
+10165041 [Lost Bastille - Chest NG+] Crimson Water
 10165050 [Lost Bastille - Chest] Estus Flask Shard- Large Titanite Shard
 10165070 [Lost Bastille - Chest] Twinblade
 10165080 [Lost Bastille - Chest] Target Shield

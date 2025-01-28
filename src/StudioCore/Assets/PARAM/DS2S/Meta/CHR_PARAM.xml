@@ -84,7 +84,7 @@
     <stat_hp_ng5 AltName="HP - NG+5"/>
     <stat_hp_ng6 AltName="HP - NG+6"/>
     <stat_hp_ng7 AltName="HP - NG+7"/>
-    <name_text_id AltName="Name Text ID"/>
+    <name_text_id AltName="Name Text ID" FmgRef="npcmenu" />
     <drops_awestone AltName="Drops Awestone" IsBool=""/>
     <speffect_id AltName="SpEffect ID"/>
     <chr_fade_in_on_spawn AltName="Fade-In Time on Spawn" />

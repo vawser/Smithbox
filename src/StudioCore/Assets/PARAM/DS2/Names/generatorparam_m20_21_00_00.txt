@@ -11,7 +11,7 @@
 670 [GEN:670] Royal Sorcerer Navlaan
 671 [GEN:671] Nameless Usurper
 676 [GEN:676] Benhart of Jugo
-677 [GEN:677] Vengarl
+677 [GEN:677] Head of Vengarl
 678 [GEN:678] Benhart of Jugo
 679 [GEN:679] Ashen Knight Boyd
 680 [GEN:680] Bradley of the Old Guard
@@ -30,21 +30,23 @@
 1000 [GEN:1000] Primal Knight
 1010 [GEN:1010] Primal Knight
 1020 [GEN:1020] Drakekeeper Knight Phantom
-1030 [GEN:1030] Royal Soldier
-1031 [GEN:1031] Royal Soldier
-1053 [GEN:1053] Royal Soldier
+1030 [GEN:1030] Royal Swordsman
+1050 [GEN:1050] Royal Swordsman
+1051 [GEN:1051] Royal Swordsman
+1052 [GEN:1052] Royal Swordsman
+1053 [GEN:1053] Royal Swordsman
 1070 [GEN:1070] Syan Knight
 1071 [GEN:1071] Syan Knight
 1073 [GEN:1073] Syan Knight
-1090 [GEN:1090] Royal Soldier
-1091 [GEN:1091] Royal Soldier
-1092 [GEN:1092] Royal Soldier
+1090 [GEN:1090] Royal Swordsman
+1091 [GEN:1091] Royal Swordsman
+1092 [GEN:1092] Royal Swordsman
 1098 [GEN:1098] Crystal Lizard
 1100 [GEN:1100] Syan Knight
 1220 [GEN:1220] Syan Knight
 1221 [GEN:1221] Syan Knight
 1222 [GEN:1222] Syan Knight
-1230 [GEN:1230] Royal Soldier
+1230 [GEN:1230] Royal Swordsman
 1296 [GEN:1296] Syan Knight
 1300 [GEN:1300] Stone Soldier
 1302 [GEN:1302] Stone Soldier
@@ -70,17 +72,17 @@
 1366 [GEN:1366] Stone Soldier
 1367 [GEN:1367] Stone Soldier
 1368 [GEN:1368] Stone Soldier
-1410 [GEN:1410] Royal Soldier
-1420 [GEN:1420] Royal Soldier
-1430 [GEN:1430] Royal Soldier
-1431 [GEN:1431] Royal Soldier
-1510 [GEN:1510] Royal Soldier
+1410 [GEN:1410] Royal Swordsman
+1420 [GEN:1420] Royal Swordsman
+1430 [GEN:1430] Royal Swordsman
+1431 [GEN:1431] Royal Swordsman
+1510 [GEN:1510] Royal Swordsman
 1550 [GEN:1550] Syan Knight
 1560 [GEN:1560] Syan Knight
 1561 [GEN:1561] Syan Knight
 1570 [GEN:1570] Syan Knight
-1591 [GEN:1591] Royal Soldier
-1610 [GEN:1610] Royal Soldier
+1591 [GEN:1591] Royal Swordsman
+1610 [GEN:1610] Royal Swordsman
 1703 [GEN:1703] Alonne Captain
 3010 [GEN:3010] Stone Knight
 3020 [GEN:3020] Stone Knight
@@ -93,6 +95,9 @@
 8010 [GEN:8010] The Pursuer
 9000 [GEN:9000] Belfry Gargoyle
 9010 [GEN:9010] Executioner's Chariot
+9031 [GEN:9031] Old Knight
+9032 [GEN:9032] Old Knight
+9033 [GEN:9033] Old Knight
 9040 [GEN:9040] Dark Stalker
 9050 [GEN:9050] Wall Ghost
 9051 [GEN:9051] Wall Ghost
@@ -104,4 +109,4 @@
 9201 [GEN:9201] Invisible Hollow
 9202 [GEN:9202] Invisible Hollow
 9300 [GEN:9300] Mimic
-9953 [GEN:9953] Royal Soldier
+9953 [GEN:9953] Royal Swordsman

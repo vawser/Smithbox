@@ -50,7 +50,8 @@
     <Field Def="f32 hitbox_length" />
     <Field Def="f32 hitback_radius" />
     <Field Def="f32 hitback_length" />
-    <Field Def="s16 damage_type_menu" />
+    <Field Def="u8 damage_type_menu_1" />
+	<Field Def="u8 damage_type_menu_2" />
     <Field Def="s16 poise_damage_menu" />
     <Field Def="s16 counter_damage_menu" />
     <Field Def="s16 casting_speed_menu" />

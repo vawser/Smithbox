@@ -137,8 +137,8 @@
     Wiki="" />
     
     <GeneratorRegistParam 
-    AltName="Generator Registeration ID" 
-    Wiki="ParamStudio can't deep link because of the way the generatorregistparam files are named to include the map designation at the end." />
+    AltName="Generator Registration ID" 
+    Wiki="" />
     
     <AppearanceEventID 
     AltName="Appearance Event ID" 

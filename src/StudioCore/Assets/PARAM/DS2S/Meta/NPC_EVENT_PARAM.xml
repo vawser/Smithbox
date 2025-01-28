@@ -4,9 +4,9 @@
   <Field>
     <shopLineupStartRow AltName="Shop Lineup - Start Row ID" Refs="ShopLineupParam" />
     <shopLineupEndRow AltName="Shop Lineup - End Row ID" Refs="ShopLineupParam" />
-    <displayItemTextId AltName="NPC Menu - Item Text ID" Wiki="The text ID for 'Offer X' option within the menu." WikiFmgRef="itemname" />
+    <displayItemTextId AltName="NPC Menu - Item Text ID" Wiki="The text ID for 'Offer X' option within the menu." Refs="ItemParam" />
     <shopLineupParamId AltName="Unknown Shop Lineup ID" Refs="ShopLineupParam" />
-    <npcMenu_NameID AltName="NPC Menu - Name Text ID" Wiki="The text ID for the NPC's name within the menu." FmgRef="itemname" />
+    <npcMenu_NameID AltName="NPC Menu - Name Text ID" Wiki="The text ID for the NPC's name within the menu." FmgRef="npcmenu" />
     
   </Field>
 </PARAMMETA>

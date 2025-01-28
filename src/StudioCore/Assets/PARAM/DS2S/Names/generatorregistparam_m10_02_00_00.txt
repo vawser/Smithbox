@@ -23,9 +23,9 @@
 72300001 [REG:72300001] Milibeth
 72300002 [REG:72300002] Milibeth
 78600000 [REG:78600000] Dyna & Tillo
-80500000 [REG:80500000] Imported Hollow
+80500000 [REG:80500000] Player Character - Start Sequence
 83700000 [REG:83700000] Foreign Wanderer Phantom
 83710001 [REG:83710001] Foreign Wanderer
-83720000 [REG:83720000] Greatsword Foreigner Phantom
-83720100 [REG:83720100] Goblin Phantom
-90000000 [REG:90000000] Player Character - Start Sequence
+83720000 [REG:83720000] Foreign Wanderer
+83720100 [REG:83720100] Foreign Wanderer
+90000000 [REG:90000000] Bastard Sword Foreigner Phantom

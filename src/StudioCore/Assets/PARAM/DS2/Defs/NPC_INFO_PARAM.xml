@@ -10,7 +10,7 @@
     <Field Def="s32 Unk00" />
     <Field Def="s32 npc_death_flag" />
     <Field Def="s32 revival_cost" />
-    <Field Def="s32 Unk01" />
+    <Field Def="s32 npcMenu_DeathstoneMessageID" />
     <Field Def="s32 Unk02" />
     <Field Def="s32 souls_for_gift_goods_vendor" />
     <Field Def="s32 souls_for_gift_blacksmith" />

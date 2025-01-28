@@ -7,7 +7,7 @@
   <Version>201</Version>
   <Fields>
     <Field Def="s32 Unk00" />
-    <Field Def="s32 blood_type" />
+    <Field Def="s32 body_hit_sfx" />
     <Field Def="s32 Unk08" />
   </Fields>
 </PARAMDEF>

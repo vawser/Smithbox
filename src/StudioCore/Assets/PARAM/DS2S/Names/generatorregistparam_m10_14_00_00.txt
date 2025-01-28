@@ -4,7 +4,7 @@
 10700001 [REG:10700001] Parasitized Undead
 10700100 [REG:10700100] Parasitized Undead
 11820000 [REG:11820000] White Hollow Mage
-12700000 [REG:12700000] Captive Undead
+12700000 [REG:12700000] Undead Laborer
 13700000 [REG:13700000] Prowling Magus
 14601000 [REG:14601000] Lord Tseldora
 14700000 [REG:14700000] Undead Supplicant

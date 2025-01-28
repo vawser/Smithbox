@@ -6,10 +6,13 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="s32 text_id_male" />
-    <Field Def="s32 text_id_female" />
-    <Field Def="s32 Unk08" />
-    <Field Def="s32 Unk0C" />
+    <Field Def="s32 text_id" />
+    <Field Def="s32 audio_id" />
+    <Field Def="s32 gesture" />
+    <Field Def="u8 hide_subtitle" />
+	<Field Def="u8 play_next_line" />
+	<Field Def="u8 Unk0C_c" />
+	<Field Def="u8 Unk0C_d" />
     <Field Def="s32 Unk10" />
   </Fields>
 </PARAMDEF>

@@ -1,9 +1,9 @@
-40 generator_40
-41 generator_41
-55 generator_55
-56 generator_56
-255 [GEN:255] Vengarl
-257 [GEN:257] Vengarl
+40 [GEN:40] Darkdiver Grandahl
+41 [GEN:40] Darkdiver Grandahl
+55 [GEN:55] Creighton the Wanderer
+56 [GEN:56] Creighton the Wanderer
+255 [GEN:255] Head of Vengarl
+257 [GEN:257] Head of Vengarl
 265 [GEN:265] Weaponsmith Ornifex
 266 [GEN:266] Weaponsmith Ornifex
 325 [GEN:325] Manscorpion Tark
@@ -22,7 +22,15 @@
 1111 [GEN:1111] Forest Grotesque
 1112 [GEN:1112] Forest Grotesque
 1113 [GEN:1113] Forest Grotesque
+1200 [GEN:1200] Hollow Falconer
+1201 [GEN:1201] Hollow Falconer
+1202 [GEN:1202] Hollow Falconer
+1203 [GEN:1203] Hollow Falconer
+1204 [GEN:1204] Hollow Falconer
+1205 [GEN:1205] Hollow Falconer
 1250 [GEN:1250] Forest Guardian
+1260 [GEN:1260] Forest Grotesque
+1261 [GEN:1261] Forest Grotesque
 1300 [GEN:1300] Forest Guardian
 1310 [GEN:1310] Forest Guardian
 2000 [GEN:2000] Forest Guardian

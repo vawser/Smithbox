@@ -59,7 +59,7 @@
 8020 [GEN:8020] Undead Aberration
 8030 [GEN:8030] Ogre
 8040 [GEN:8040] Basilisk
-8500 [GEN:8500] Dragon Acolyte
+8500 [GEN:8500] Prowling Magus
 8600 [GEN:8600] Undead Traveler
 8601 [GEN:8601] Undead Traveler
 9000 [GEN:9000] Looking Glass Phantom

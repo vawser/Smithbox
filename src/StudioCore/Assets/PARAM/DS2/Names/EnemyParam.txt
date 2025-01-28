@@ -156,21 +156,21 @@
 125014 Rupturing Hollow (Brown Core) - Dragon Aerie
 125015 Rupturing Hollow (Yellow Core) - Lost Bastille
 125016 Rupturing Hollow (Red Core, Black Phantom) - The Gutter (NG+)
-127000 Hollow Prisoner - Huntsman's Copse
-127001 Hollow Prisoner - Undead Crypt
-127002 Hollow Prisoner (Boss - Prowling Magus & Congregation)
-127003 Hollow Prisoner - Harvest Valley / Earthen Peak
-127004 Hollow Prisoner - Unused
-127005 Hollow Prisoner - Unused
-127006 Hollow Prisoner - Undead Purgatory
-127010 Hollow Prisoner - Unused
-127011 Hollow Prisoner (Torch) - No-man's Wharf / Undead Crypt
-127020 Hollow Prisoner - Unused
-127030 Hollow Prisoner (Inside Pots) - Earthen Peak
-127100 Hollow Prisoner - Unused
-127101 Hollow Prisoner (Unarmed) - Frozen Eleum Loyce / Frigid Outskirts
-127110 Hollow Prisoner (Torch) - Frozen Eleum Loyce
-127111 Hollow Prisoner - Unused
+127000 Undead Laborer - Huntsman's Copse
+127001 Undead Laborer - Undead Crypt
+127002 Undead Laborer (Boss - Prowling Magus & Congregation)
+127003 Undead Laborer - Harvest Valley / Earthen Peak
+127004 Undead Laborer - Unused
+127005 Undead Laborer - Unused
+127006 Undead Laborer - Undead Purgatory
+127010 Undead Laborer - Unused
+127011 Undead Laborer (Torch) - No-man's Wharf / Undead Crypt
+127020 Undead Laborer - Unused
+127030 Undead Laborer (Inside Pots) - Earthen Peak
+127100 Undead Laborer - Unused
+127101 Undead Laborer (Unarmed) - Frozen Eleum Loyce / Frigid Outskirts
+127110 Undead Laborer (Torch) - Frozen Eleum Loyce
+127111 Undead Laborer - Unused
 129000 Forest Spirit - Dark Chasm of Old
 129010 Forest Spirit - Dark Chasm of Old
 129200 Forest Spirit - Frozen Eleum Loyce
@@ -268,32 +268,32 @@
 155000 Amana Aberration
 155001 Amana Aberration - Unused
 156011 UNKNOWN
-157000 Skeleton - Unused
-157001 Skeleton (Falchions) - Huntsman's Copse
-157002 Skeleton - Unused
-157003 Skeleton - Unused
-157004 Skeleton (Falchions) - Huntsman's Copse
-157005 Skeleton (Falchions) (Executioner's Chariot)
-157006 Skeleton (Falchions) (Executioner's Chariot)
-157007 Skeleton (Falchions) - Majula Basement (NG+5)
-157008 Skeleton (Falchions) (Boss - Skeleton Lords)
-157010 Skeleton (Falchion & Shield) - Huntsman's Copse
-157011 Skeleton - Unused
-157012 Skeleton - Unused
-157013 Skeleton (Falchion & Shield) - Boss (Skeleton Lords)
-157014 Skeleton (Falchion & Shield) (Executioner's Chariot)
-157015 Skeleton (Falchion & Shield) (Executioner's Chariot)
-157016 Skeleton (Falchion & Shield) - Majula Basement (NG+3, NG+4)
-157020 Skeleton (Estoc & Shield) - Huntsman's Copse
-157021 Skeleton (Estoc & Shield) - Huntsman's Copse
-157022 Skeleton (Estoc & Shield) - Huntsman's Copse
-157023 Skeleton (Estoc & Shield) - Undead Purgatory
-157024 Skeleton (Estoc & Shield) - Undead Purgatory
-157025 Skeleton (Estoc & Shield) (Boss - Skeleton Lords)
-157030 Skeleton (Bow) - Huntsman's Copse
-157031 Skeleton - Unused
-157032 Skeleton (Bow) - Huntsman's Copse
-157033 Skeleton (Bow) - Undead Purgatory
+157000 Armored Skeleton - Unused
+157001 Armored Skeleton (Falchions) - Huntsman's Copse
+157002 Armored Skeleton - Unused
+157003 Armored Skeleton - Unused
+157004 Armored Skeleton (Falchions) - Huntsman's Copse
+157005 Armored Skeleton (Falchions) (Executioner's Chariot)
+157006 Armored Skeleton (Falchions) (Executioner's Chariot)
+157007 Armored Skeleton (Falchions) - Majula Basement (NG+5)
+157008 Armored Skeleton (Falchions) (Boss - Skeleton Lords)
+157010 Armored Skeleton (Falchion & Shield) - Huntsman's Copse
+157011 Armored Skeleton - Unused
+157012 Armored Skeleton - Unused
+157013 Armored Skeleton (Falchion & Shield) - Boss (Skeleton Lords)
+157014 Armored Skeleton (Falchion & Shield) (Executioner's Chariot)
+157015 Armored Skeleton (Falchion & Shield) (Executioner's Chariot)
+157016 Armored Skeleton (Falchion & Shield) - Majula Basement (NG+3, NG+4)
+157020 Armored Skeleton (Estoc & Shield) - Huntsman's Copse
+157021 Armored Skeleton (Estoc & Shield) - Huntsman's Copse
+157022 Armored Skeleton (Estoc & Shield) - Huntsman's Copse
+157023 Armored Skeleton (Estoc & Shield) - Undead Purgatory
+157024 Armored Skeleton (Estoc & Shield) - Undead Purgatory
+157025 Armored Skeleton (Estoc & Shield) (Boss - Skeleton Lords)
+157030 Armored Skeleton (Bow) - Huntsman's Copse
+157031 Armored Skeleton - Unused
+157032 Armored Skeleton (Bow) - Huntsman's Copse
+157033 Armored Skeleton (Bow) - Undead Purgatory
 201100 Small Boar - Brightstone Cove Tseldora
 201101 Small Boar - Majula
 202100 Undead Boar - Brightstone Cove Tseldora
@@ -387,7 +387,7 @@
 303301 Flexile Sentry - Unused
 303302 Flexile Sentry - Frozen Eleum Loyce
 303303 Flexile Sentry - Sinner's Rise
-304010 Milfanito
+304010 Injured Milfanito
 305000 Smelter Demon (Boss)
 305200 Blue Smelter Demon (Boss)
 306000 Alonne Captain (Katana) - Iron Keep
@@ -400,11 +400,11 @@
 306019 Alonne Captain (Greatbow, Black Phantom) - Memory of the Old Iron King (NG+2)
 307000 Body of Vengarl (Unused)
 307001 Body of Vengarl
-307101 Vengarl (NPC) (Dead)
-307107 Vengarl (Summon) - Frigid Outskirts
-307108 Vengarl (Summon) - Dragon Shrine
-307109 Vengarl (Summon) - Throne of Want
-307110 Vengarl (NPC)
+307101 Head of Vengarl (NPC) (Dead)
+307107 Head of Vengarl (Summon) - Frigid Outskirts
+307108 Head of Vengarl (Summon) - Dragon Shrine
+307109 Head of Vengarl (Summon) - Throne of Want
+307110 Head of Vengarl (NPC)
 308000 Lion Clan Warrior
 308100 Golden Lion Clan Warrior
 309000 Forgotten Giant - Giant Memories
@@ -504,7 +504,7 @@
 504000 Looking Glass Knight (Boss)
 506100 Darklurker (Boss)
 506101 Darklurker (Clone) (Boss)
-506200 UNKNOWN
+506200 Darklurker (Portal) (Boss)
 506500 Grave Warden Agdayne (NPC)
 506501 Grave Warden Agdayne (Dead)
 506509 Grave Warden Agdayne (Summon)
@@ -580,10 +580,10 @@
 659003 Rampart Golem (Black Phantom) - Frozen Eleum Loyce (NG+2)
 659004 Rampart Golem - Unused
 659005 Rampart Golem (Black Phantom) - Frigid Outskirts (NG+2)
-660000 Crystal Golem
-660001 Crystal Golem - Unused
-660002 Crystal Golem (Black Phantom) - (NG+2)
-660003 Crystal Golem - Unused
+660000 Ice Golem
+660001 Ice Golem - Unused
+660002 Ice Golem (Black Phantom) - (NG+2)
+660003 Ice Golem - Unused
 661000 Frozen Reindeer
 661001 Frozen Reindeer (Black Phantom) - Unused
 662000 Rampart Hedgehog
@@ -624,9 +624,9 @@
 671000 Poison Statue Cluster - Shulva
 671001 Poison Statue Cluster - Black Gulch (NG+)
 671100 Petrifying Statue Cluster
-672000 Corrosive Ant - Shulva
-672001 Corrosive Ant - Dragon's Sanctum
-672002 Corrosive Ant - The Gutter
+672000 Corrosive Egg Insect - Shulva
+672001 Corrosive Egg Insect - Dragon's Sanctum
+672002 Corrosive Egg Insect - The Gutter
 674000 Pagan Tree
 675000 Fume Knight (Boss)
 675001 Fume Knight - Unused
@@ -636,13 +636,13 @@
 677001 Retainer Sorcerer - Unused
 677010 Retainer Sorcerer (Staff)
 677011 Retainer Sorcerer - Unused
-678000 Ice Golem (Dormant) - Frozen Eleum Loyce (Inner Wall)
-678001 Ice Golem (Active) - Frozen Eleum Loyce (Lower Garrison)
-678010 Ice Golem (Dormant) - Frozen Eleum Loyce (Lower Garrison)
-678011 Ice Golem - Unused
-678099 Ice Golem - Unused
+678000 Frozen Golem (Dormant) - Frozen Eleum Loyce (Inner Wall)
+678001 Frozen Golem (Active) - Frozen Eleum Loyce (Lower Garrison)
+678010 Frozen Golem (Dormant) - Frozen Eleum Loyce (Lower Garrison)
+678011 Frozen Golem - Unused
+678099 Frozen Golem - Unused
 679000 Lud, the King's Pet (Boss)
-679001 Aava, the King's Pet - Unused
+679001 Lud, the King's Pet - Unused
 679002 Zallen, the King's Pet (Boss)
 679100 Aava, the King's Pet (Boss)
 679101 Aava, the King's Pet - Unused
@@ -691,7 +691,7 @@
 700502 Emerald Herald - Drangleic Castle / Throne of Want
 700503 Emerald Herald - Undead Crypt
 700504 Emerald Herald - Dragon Aerie
-701500 UNKNOWN
+701500 Emerald Herald (Child) - Unused
 703600 Nashandra (NPC)
 704500 Laddersmith Gilligan
 704501 Laddersmith Gilligan (Dead)

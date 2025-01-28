@@ -152,24 +152,45 @@
 7003 [GEN:7003] Prowlers
 7004 [GEN:7004] Prowlers
 7100 [GEN:7100] Crystal Lizard
+7500 [GEN:7500] Flame Lizard
+7502 [GEN:7502] Flame Lizard
+7503 [GEN:7503] Flame Lizard
 7510 [GEN:7510] Alonne Captain
+7520 [GEN:7520] Alonne Knight
 7530 [GEN:7530] Alonne Knight
 7531 [GEN:7531] Alonne Knight
 7532 [GEN:7532] Alonne Knight
+7533 [GEN:7533] Alonne Knight
 7535 [GEN:7535] Alonne Knight
 7603 [GEN:7603] Flame Lizard
 7610 [GEN:7610] Alonne Captain
+7620 [GEN:7620] Alonne Captain
+7621 [GEN:7621] Alonne Knight
+7622 [GEN:7622] Alonne Knight
 7630 [GEN:7630] Alonne Knight
 7631 [GEN:7631] Alonne Knight
+7640 [GEN:7640] Alonne Knight
+7641 [GEN:7641] Alonne Knight
+7651 [GEN:7651] Alonne Knight
 8001 [GEN:8001] Ashen Warrior
+8004 [GEN:8004] Ashen Warrior
+8006 [GEN:8006] Ashen Warrior
+8007 [GEN:8007] Ashen Warrior
 8020 [GEN:8020] Fume Sorcerer
 8103 [GEN:8103] Ashen Warrior
 8108 [GEN:8108] Ashen Warrior
 8109 [GEN:8109] Ashen Warrior
 8201 [GEN:8201] Fume Sorcerer
+8210 [GEN:8210] Ashen Warrior
+8211 [GEN:8211] Ashen Warrior
 8212 [GEN:8212] Ashen Warrior
+8213 [GEN:8213] Ashen Warrior
 8301 [GEN:8301] Possessed Armor
 8311 [GEN:8311] Ashen Warrior
+8313 [GEN:8313] Ashen Warrior
+8314 [GEN:8314] Ashen Warrior
+8320 [GEN:8320] Possessed Armor
+8400 [GEN:8400] Iron Warrior
 8414 [GEN:8414] Possessed Armor
 9000 [GEN:9000] Ashen Warrior
 9001 [GEN:9001] Ashen Warrior
@@ -182,4 +203,5 @@
 9080 [GEN:9080] Ashen Warrior
 9090 [GEN:9090] Ashen Warrior
 9500 [GEN:9500] Evangelist Scion Waslo
+9501 [GEN:9501] Evangelist Scion Waslo
 9502 [GEN:9502] Evangelist Scion Waslo

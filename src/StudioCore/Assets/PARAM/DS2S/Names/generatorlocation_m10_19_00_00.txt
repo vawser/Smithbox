@@ -13,16 +13,30 @@
 807 [GEN:807] Old Iron King
 913 [GEN:913] Aldia- Scholar of the First Sin
 941 [GEN:941] Forlorn
+1021 [GEN:1021] Alonne Knight
+2000 [GEN:2000] Alonne Knight
+2016 [GEN:2016] Alonne Knight
 2020 [GEN:2020] Alonne Knight
+2030 [GEN:2030] Alonne Knight
 2040 [GEN:2040] Alonne Captain
+3020 [GEN:3020] Alonne Knight
 3021 [GEN:3021] Alonne Knight
+3025 [GEN:3025] Alonne Knight
 3030 [GEN:3030] Alonne Captain
+3040 [GEN:3040] Alonne Captain
+3060 [GEN:3060] Alonne Knight
+3065 [GEN:3065] Alonne Knight
 3070 [GEN:3070] Alonne Captain
+3071 [GEN:3071] Alonne Captain
 3080 [GEN:3080] Alonne Captain
+3090 [GEN:3090] Alonne Knight
 3095 [GEN:3095] Alonne Knight
 3096 [GEN:3096] Alonne Knight
+3120 [GEN:3120] Alonne Knight
 3121 [GEN:3121] Alonne Knight
 4010 [GEN:4010] Ironclad Soldier
+4015 [GEN:4015] Alonne Knight
+4016 [GEN:4016] Alonne Knight
 4020 [GEN:4020] Alonne Captain
 4025 [GEN:4025] Alonne Knight
 4026 [GEN:4026] Alonne Knight
@@ -39,19 +53,15 @@
 4041 [GEN:4041] Alonne Knight
 4050 [GEN:4050] Alonne Captain
 4051 [GEN:4051] Alonne Captain
+4052 [GEN:4052] Alonne Captain
 4100 [GEN:4100] Ironclad Soldier
-4200 [LOC] Iron Warrior
-4201 [LOC] Iron Warrior
-4400 [LOC] Possessed Armor
-4401 [LOC] Possessed Armor
-4402 [LOC] Possessed Armor
-4403 [LOC] Possessed Armor
 5000 [GEN:5000] The Pursuer
 7002 [GEN:7002] Alonne Captain
 7003 [GEN:7003] Ironclad Soldier
 7005 [GEN:7005] Ironclad Soldier
 7006 [GEN:7006] Ironclad Warrior Phantom
 7007 [GEN:7007] Mad Warrior Phantom
+7008 [GEN:7008] Alonne Knight
 7009 [GEN:7009] Alonne Knight
 7011 [GEN:7011] Ironclad Soldier
 8000 [GEN:8000] Greatsword Bell Keeper Phantom

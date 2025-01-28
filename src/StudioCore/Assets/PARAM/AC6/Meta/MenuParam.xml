@@ -199,11 +199,11 @@
     
     <FE_MissionRegionLineDist 
     AltName="Mission Area: Color Shift Distance" 
-    Wiki="The distance at whicht the color of the mission area boundary shifts. In metres." />
+    Wiki="The distance at which the color of the mission area boundary shifts. In metres." />
     
     <FE_MissionRegionLineHeight 
-    AltName="" 
-    Wiki="" />
+    AltName="Mission Area: Boundary Line Height" 
+    Wiki="The vertical width of the mission area boundary line. In metres." />
     
     <FE_MissionRegionLineTexTile 
     AltName="" 

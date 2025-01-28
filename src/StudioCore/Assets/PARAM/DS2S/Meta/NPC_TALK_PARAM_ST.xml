@@ -120,14 +120,22 @@
   </DisplayNames>
   
   <Field>
-    <text_id_male 
-    AltName="Dialogue Text ID - Male"
-    Wiki="" 
-    MapFmgRef = "" />
+    <text_id 
+    AltName="Dialogue Text ID"
+    Wiki=""
+	MapFmgRef=""/>
     
-    <text_id_female 
-    AltName="Dialogue Text ID - Female"
-    Wiki="" 
-    MapFmgRef= "" />
+    <audio_id 
+    AltName="Dialogue Audio ID"
+    Wiki="" />
+	
+    <gesture 
+    AltName="Gesture" Wiki="Animation performed in a conversation." />	
+	
+	<hide_subtitle 
+    AltName="Hide Subtitles" Wiki="The audio plays with no subtitles." IsBool=""/>
+	
+	<play_next_line 
+    AltName="Play Next Line" Wiki="Plays the next line after the current one ends." IsBool=""/>
   </Field>
 </PARAMMETA>

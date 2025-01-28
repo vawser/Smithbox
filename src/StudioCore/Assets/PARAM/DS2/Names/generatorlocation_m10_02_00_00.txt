@@ -22,17 +22,17 @@
 3010 [GEN:3010] Undead Traveler
 3020 [GEN:3020] Undead Traveler
 3030 [GEN:3030] Undead Traveler
-3040 [GEN:3040] Greatsword Foreigner Phantom
+3040 [GEN:3040] Foreign Wanderer
 3041 [GEN:3041] Undead Traveler
-3050 [GEN:3050] Greatsword Foreigner Phantom
+3050 [GEN:3050] Foreign Wanderer
 3051 [GEN:3051] Undead Traveler
 3100 [GEN:3100] Undead Traveler
 3101 [GEN:3101] Foreign Wanderer
 3110 [GEN:3110] Foreign Wanderer
 3111 [GEN:3111] Foreign Wanderer
-3211 [GEN:3211] Goblin Phantom
+3211 [GEN:3211] Foreign Wanderer
 3220 [GEN:3220] Undead Traveler
-3230 [GEN:3230] Goblin Phantom
+3230 [GEN:3230] Foreign Wanderer
 3240 [GEN:3240] Basilisk
 3241 [GEN:3241] Basilisk
 3242 [GEN:3242] Basilisk
@@ -53,5 +53,5 @@
 7000 [GEN:7000] Forest Grotesque
 7010 [GEN:7010] Forest Grotesque
 8170 [GEN:8170] Foreign Wanderer Phantom
-9000 [GEN:9000] Imported Hollow
-9500 [GEN:9500] Player Character
+9000 [GEN:9000] Player Character - Start Sequence
+9500 [GEN:9500] Bastard Sword Foreigner Phantom

@@ -81,11 +81,11 @@
 2520 [GEN:2520] Undead Supplicant
 2521 [GEN:2521] Undead Supplicant
 2522 [GEN:2522] Undead Supplicant
-2530 [GEN:2530] Captive Undead
-2531 [GEN:2531] Captive Undead
-2532 [GEN:2532] Captive Undead
-2533 [GEN:2533] Captive Undead
-2534 [GEN:2534] Captive Undead
+2530 [GEN:2530] Undead Laborer
+2531 [GEN:2531] Undead Laborer
+2532 [GEN:2532] Undead Laborer
+2533 [GEN:2533] Undead Laborer
+2534 [GEN:2534] Undead Laborer
 2700 [GEN:2700] Parasite Spider
 2710 [GEN:2710] NO MATCH
 2720 [GEN:2720] Parasite Spider
@@ -114,36 +114,40 @@
 3500 [GEN:3500] White Hollow Mage
 3510 [GEN:3510] White Hollow Mage
 3550 [GEN:3550] NO MATCH
+3551 [GEN:3551] Parasite Spider
 3552 [GEN:3552] Parasite Spider
 3553 [GEN:3553] Parasite Spider
+3554 [GEN:3554] Parasite Spider
 3555 [GEN:3555] NO MATCH
+3556 [GEN:3556] Parasite Spider
 3557 [GEN:3557] Parasite Spider
+3558 [GEN:3558] Parasite Spider
 3590 [GEN:3590] Parasite Spider
 3591 [GEN:3591] Parasite Spider
 4000 [GEN:4000] Basilisk
 4010 [GEN:4010] Parasite Spider
-4011 generator_4011
+4011 [GEN:4011] NO MATCH
 4012 [GEN:4012] Parasite Spider
 4013 [GEN:4013] Parasite Spider
-4014 generator_4014
+4014 [GEN:4014] NO MATCH
 4090 [GEN:4090] Red Crystal Lizard
-4200 generator_4200
-4210 generator_4210
+4200 [GEN:4200] NO MATCH
+4210 [GEN:4210] NO MATCH
 4500 [GEN:4500] Parasite Spider
 4501 [GEN:4501] Parasite Spider
 4502 [GEN:4502] Parasite Spider
-4503 generator_4503
+4503 [GEN:4503] NO MATCH
 4600 [GEN:4600] Parasite Spider
 4610 [GEN:4610] Parasitized Undead
 5010 [GEN:5010] Parasite Spider
 5011 [GEN:5011] Parasite Spider
-5012 generator_5012
+5012 [GEN:5012] NO MATCH
 5013 [GEN:5013] Parasite Spider
-5014 generator_5014
+5014 [GEN:5014] NO MATCH
 5020 [GEN:5020] Basilisk
 5030 [GEN:5030] Parasitized Undead
 5110 [GEN:5110] Dual Wielding Swordsman Phantom
-5250 generator_5250
+5250 [GEN:5250] NO MATCH
 5251 [GEN:5251] Undead Peasant
 5252 [GEN:5252] Undead Peasant
 5253 [GEN:5253] Undead Peasant
@@ -154,18 +158,18 @@
 5510 [GEN:5510] Parasitized Undead
 5520 [GEN:5520] Parasite Spider
 5530 [GEN:5530] Parasite Spider
-5540 generator_5540
+5540 [GEN:5540] NO MATCH
 5700 [GEN:5700] Parasite Spider
-5701 generator_5701
+5701 [GEN:5701] NO MATCH
 5702 [GEN:5702] Parasite Spider
 5703 [GEN:5703] Parasite Spider
-5704 generator_5704
+5704 [GEN:5704] NO MATCH
 5705 [GEN:5705] Parasite Spider
 6000 [GEN:6000] Parasite Spider
 6001 [GEN:6001] Parasite Spider
-6002 generator_6002
+6002 [GEN:6002] NO MATCH
 6003 [GEN:6003] Parasite Spider
-6004 generator_6004
+6004 [GEN:6004] NO MATCH
 6005 [GEN:6005] Parasite Spider
 6006 [GEN:6006] Parasite Spider
 6007 [GEN:6007] Parasite Spider
@@ -175,19 +179,19 @@
 6011 [GEN:6011] Parasite Spider
 6020 [GEN:6020] Parasitized Undead
 6050 [GEN:6050] Porcine Peasant Phantom
-6100 generator_6100
+6100 [GEN:6100] NO MATCH
 6101 [GEN:6101] Parasite Spider
 6102 [GEN:6102] Parasite Spider
 6103 [GEN:6103] Parasite Spider
 6104 [GEN:6104] Parasite Spider
 6105 [GEN:6105] Parasite Spider
-6106 generator_6106
-6200 generator_6200
-6201 generator_6201
+6106 [GEN:6106] NO MATCH
+6200 [GEN:6200] NO MATCH
+6201 [GEN:6201] NO MATCH
 6202 [GEN:6202] Parasite Spider
 6203 [GEN:6203] Parasite Spider
-6204 generator_6204
-6205 generator_6205
+6204 [GEN:6204] NO MATCH
+6205 [GEN:6205] NO MATCH
 6206 [GEN:6206] Parasite Spider
 7000 [GEN:7000] Parasite Spider
 7001 [GEN:7001] Parasite Spider
@@ -200,23 +204,23 @@
 7008 [GEN:7008] Parasite Spider
 7009 [GEN:7009] Parasite Spider
 7010 [GEN:7010] Parasite Spider
-7011 generator_7011
+7011 [GEN:7011] NO MATCH
 7030 [GEN:7030] Parasite Spider
-7031 generator_7031
+7031 [GEN:7031] NO MATCH
 7032 [GEN:7032] Parasite Spider
 7040 [GEN:7040] Parasite Spider
-7050 generator_7050
-7051 generator_7051
+7050 [GEN:7050] NO MATCH
+7051 [GEN:7051] NO MATCH
 7300 [GEN:7300] Undead Peasant
 7301 [GEN:7301] Undead Peasant
-7302 generator_7302
+7302 [GEN:7302] NO MATCH
 7303 [GEN:7303] Undead Peasant
-7500 generator_7500
+7500 [GEN:7500] NO MATCH
 7501 [GEN:7501] Parasite Spider
-7502 generator_7502
-7510 generator_7510
-7520 generator_7520
-7521 generator_7521
+7502 [GEN:7502] NO MATCH
+7510 [GEN:7510] NO MATCH
+7520 [GEN:7520] NO MATCH
+7521 [GEN:7521] NO MATCH
 8000 [GEN:8000] Parasite Spider
 8001 [GEN:8001] Parasite Spider
 8002 [GEN:8002] Parasite Spider
@@ -229,6 +233,6 @@
 8013 [GEN:8013] Parasite Spider
 8014 [GEN:8014] Parasite Spider
 8015 [GEN:8015] Parasite Spider
-8500 [GEN:8500] Headless Vengarl
+8500 [GEN:8500] Lord Tseldora
 9000 [GEN:9000] Voice Marker (Creighton/Pate)
 9500 [GEN:9500] Poison Moth

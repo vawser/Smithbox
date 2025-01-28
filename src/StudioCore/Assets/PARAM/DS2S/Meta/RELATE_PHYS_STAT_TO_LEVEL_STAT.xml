@@ -1,16 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Enums>
+  	<Enum Name="LevelUpStat" type="u8">
+		<Option Value="1" Name="Vigor" />
+		<Option Value="2" Name="Endurance" />
+		<Option Value="3" Name="Vitality" />
+		<Option Value="4" Name="Attunement" />
+		<Option Value="5" Name="Strenght" />
+		<Option Value="6" Name="Dexterity" />
+		<Option Value="7" Name="Intelligence" />
+		<Option Value="8" Name="Faith" />
+		<Option Value="9" Name="Adaptability" />
+		<Option Value="10" Name="Unused" />
+		<Option Value="11" Name="Unused" />
+	</Enum>
+  </Enums>
   <Self Wiki="Defines parameters relating statistics to level." Row0Dummy="" />
   <Field>
-    <attunement_slots AltName="Attunement Slots" />
-    <cast_tier AltName="Cast Tier" />
-    <max_stamina AltName="Max Stamina" />
-    <max_equip_load AltName="Max Equip Load" />
-    <strength_bonus AltName="Strength Bonus" />
-    <dexterity_bonus AltName="Dexterity Bonus" />
-    <magic_bonus AltName="Magic Bonus" />
-    <lightning_bonus AltName="Lightning Bonus" />
-    <magic_defence AltName="Magic Defence" />
-    <lightning_defence AltName="Lightning Defence" />
+    <attunement_slots AltName="Attunement Slots" Enum="LevelUpStat" />
+    <cast_tier AltName="Cast Tier" Enum="LevelUpStat" />
+    <max_stamina AltName="Max Stamina" Enum="LevelUpStat" />
+    <max_equip_load AltName="Max Equip Load" Enum="LevelUpStat" />
+    <strength_bonus AltName="Strength Bonus" Enum="LevelUpStat" />
+    <dexterity_bonus AltName="Dexterity Bonus" Enum="LevelUpStat" />
+    <magic_bonus AltName="Magic Bonus" Enum="LevelUpStat" />
+    <lightning_bonus AltName="Lightning Bonus" Enum="LevelUpStat" />
+    <magic_defence AltName="Magic Defence" Enum="LevelUpStat" />
+    <lightning_defence AltName="Lightning Defence" Enum="LevelUpStat" />
   </Field>
 </PARAMMETA>

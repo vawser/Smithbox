@@ -18,6 +18,7 @@
 1800 [GEN:1800] Gyrm
 1900 [GEN:1900] Mongrel Rat
 2000 [GEN:2000] Hollow Primal Knight
+2100 [GEN:2100] NO MATCH
 2110 [GEN:2110] Mongrel Rat
 2120 [GEN:2120] Mongrel Rat
 2200 [GEN:2200] Gyrm

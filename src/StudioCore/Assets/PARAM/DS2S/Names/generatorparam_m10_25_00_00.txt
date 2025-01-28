@@ -56,11 +56,11 @@
 2503 [GEN:2503] Captive Undead
 2505 [GEN:2505] Rupturing Hollow
 2510 [GEN:2510] Hunting Dog
-2520 [GEN:2520] Rotten Vermin
-2521 [GEN:2521] Rotten Vermin
-2522 [GEN:2522] Rotten Vermin
-2523 [GEN:2523] Rotten Vermin
-2700 [GEN:2700] Rotten Vermin
+2520 [GEN:2520] Corrosive Egg Insect
+2521 [GEN:2521] Corrosive Egg Insect
+2522 [GEN:2522] Corrosive Egg Insect
+2523 [GEN:2523] Corrosive Egg Insect
+2700 [GEN:2700] Corrosive Ant Queen
 2710 [GEN:2710] Poison Horn Beetle
 2711 [GEN:2711] Poison Horn Beetle
 2712 [GEN:2712] Poison Horn Beetle

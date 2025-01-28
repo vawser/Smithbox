@@ -108,10 +108,18 @@
 8000 [GEN:8000] Sanctum Soldier
 8001 [GEN:8001] Sanctum Soldier
 8002 [GEN:8002] Sanctum Soldier
+8003 [GEN:8003] Sanctum Soldier
+8010 [GEN:8010] Sanctum Soldier
+8200 [GEN:8200] Sanctum Soldier
+8201 [GEN:8201] Sanctum Soldier
+8202 [GEN:8202] Sanctum Soldier
 8203 [GEN:8203] Poison Statue Cluster
 8204 [GEN:8204] Poison Statue Cluster
 8205 [GEN:8205] Poison Statue Cluster
 8206 [GEN:8206] Poison Statue Cluster
+8300 [GEN:8300] Sanctum Soldier
+8301 [GEN:8301] Sanctum Soldier
+8302 [GEN:8302] Sanctum Soldier
 8401 [GEN:8401] Poison Statue Cluster
 8404 [GEN:8404] Poison Statue Cluster
 8405 [GEN:8405] Poison Statue Cluster

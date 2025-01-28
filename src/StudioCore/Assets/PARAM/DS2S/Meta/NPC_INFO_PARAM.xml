@@ -11,6 +11,6 @@
     <fth_requirement_for_gift AltName="FTH Requirement for Gift"/>
     <shop_lineup_souls_for_update_1 AltName="Souls for ShopLineup Update [1]"/>
     <shop_lineup_souls_for_update_2 AltName="Souls for ShopLineup Update [2]"/>
-    <npcMenu_DeathstoneMessageID AltName="Tombstone Prompt Text ID" Wiki="The text ID for the NPC's name within the tombstone prompt." />
+    <npcMenu_DeathstoneMessageID AltName="Tombstone Prompt Text ID" Wiki="The text ID for the NPC's name within the tombstone prompt." FmgRef="npcmenu" />
   </Field>
 </PARAMMETA>

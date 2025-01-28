@@ -21,8 +21,8 @@
 12500052 [REG:12500052] Rupturing Hollow
 12500053 [REG:12500053] Rupturing Hollow
 14100000 [REG:14100000] Undead Aberration
-15200000 [REG:15200000] Royal Soldier
-15201000 [REG:15201000] Royal Soldier
+15200000 [REG:15200000] Royal Swordsman
+15201000 [REG:15201000] Royal Swordsman
 20400000 [REG:20400000] Poison Moth
 22700000 [REG:22700000] Stray Dog
 22700010 [REG:22700010] Stray Dog
@@ -44,7 +44,7 @@
 69300000 [REG:69300000] Aldia- Scholar of the First Sin
 69600000 [REG:69600000] Invisible Hollow
 73200000 [REG:73200000] Lost Sinner Pyromancer Phantom
-73300010 [REG:73200010] Lost Sinner Pyromancer Phantom
+73330000 [REG:73330000] Lost Sinner Pyromancer Phantom
 75200000 [REG:75200000] Lucatiel of Mirrah
 75200001 [REG:75200001] Lucatiel of Mirrah
 75200900 [REG:75200900] Lucatiel of Mirrah

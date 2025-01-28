@@ -26,6 +26,10 @@
 2200 [GEN:2200] Amana Aberration
 2300 [GEN:2300] NO MATCH
 2301 [GEN:2301] NO MATCH
+2302 [GEN:2302] Amana Aberration
+2303 [GEN:2303] Amana Aberration
+2304 [GEN:2304] Amana Aberration
+2305 [GEN:2305] Amana Aberration
 2310 [GEN:2310] Acid Horn Beetle
 2400 [GEN:2400] Amana Aberration
 2410 [GEN:2410] Amana Aberration
@@ -48,7 +52,7 @@
 3002 [GEN:3002] Amana Aberration
 3003 [GEN:3003] Amana Aberration
 3010 [GEN:3010] Amana Shrine Maiden
-3100 [GEN:3100] Peculiar Kindalur Phantom
+3100 [GEN:3100] Butcher Phantom
 3110 [GEN:3110] Amana Shrine Maiden
 3200 [GEN:3200] Amana Shrine Maiden
 3201 [GEN:3201] Amana Shrine Maiden
@@ -83,6 +87,7 @@
 3681 [GEN:3681] Acid Horn Beetle
 3682 [GEN:3682] Acid Horn Beetle
 3683 [GEN:3683] Acid Horn Beetle
+3684 [GEN:3684] Giant Acid Horn Beetle
 3686 [GEN:3686] Acid Horn Beetle
 3687 [GEN:3687] Acid Horn Beetle
 3688 [GEN:3688] Acid Horn Beetle
@@ -94,7 +99,7 @@
 3800 [GEN:3800] Ogre
 3900 [GEN:3900] Amana Shrine Maiden
 4000 [GEN:4000] Amana Shrine Maiden
-4100 [GEN:4100] Milfanito
+4100 [GEN:4100] Injured Milfanito
 4200 [GEN:4200] NO MATCH
 4210 [GEN:4210] Amana Aberration
 4220 [GEN:4220] Amana Aberration
@@ -120,10 +125,11 @@
 6004 [GEN:6004] NO MATCH
 6005 [GEN:6005] NO MATCH
 6010 [GEN:6010] Syan Knight
-6020 [GEN:6020] Butcher Phantom
-6021 [GEN:6021] Butcher Phantom
-6022 [GEN:6022] Butcher Phantom
+6020 [GEN:6020] Pyromancer
+6021 [GEN:6021] Pyromancer
+6022 [GEN:6022] Pyromancer
 6100 [GEN:6100] NO MATCH
+6110 [GEN:6110] Old Knight
 6200 [GEN:6200] Basilisk
 6210 [GEN:6210] Lindelt Cleric
 6300 [GEN:6300] Amana Aberration
@@ -151,12 +157,18 @@
 8034 [GEN:8034] NO MATCH
 8040 [GEN:8040] NO MATCH
 8050 [GEN:8050] NO MATCH
+8051 [GEN:8051] Amana Shrine Maiden
 8052 [GEN:8052] Amana Aberration
 8053 [GEN:8053] Amana Aberration
 8054 [GEN:8054] NO MATCH
 8055 [GEN:8055] Amana Aberration
 8056 [GEN:8056] Amana Aberration
+8057 [GEN:8057] Lindelt Cleric	
+8058 [GEN:8058] Lindelt Cleric	
+8059 [GEN:8059] Lindelt Cleric	
 8060 [GEN:8060] Amana Aberration
+8061 [GEN:8061] Lindelt Cleric	
+8062 [GEN:8062] Lindelt Cleric	
 8063 [GEN:8063] Lindelt Cleric
 8500 [GEN:8500] Amana Aberration
 8501 [GEN:8501] NO MATCH
