@@ -686,6 +686,7 @@ public class Universe
         foreach (KeyValuePair<string, SpecialMapConnections.RelationType> map in relatedMaps)
         {
             LoadMap(map.Key);
+            Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(map.Key);
         }
     }
 

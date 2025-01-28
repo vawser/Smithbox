@@ -69,9 +69,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     {
         var scale = DPI.GetUIScale();
 
-        if (!UI.Current.Interface_MapEditor_MapList)
-            return;
-
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -84,86 +81,92 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             }
         }
 
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-        // Map List
-        if (ImGui.Begin($@"Map List##mapIdList"))
+        if (UI.Current.Interface_MapEditor_MapList)
         {
-            FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-            // World Map
-            Screen.WorldMapView.DisplayWorldMapButton();
-            Screen.WorldMapView.DisplayWorldMap();
-
-            DisplaySearchbar();
-            ImGui.SameLine();
-            DisplayUnloadAllButton();
-            if(Smithbox.ProjectType is ProjectType.BB)
+            // Map List
+            if (ImGui.Begin($@"Map List##mapIdList"))
             {
+                FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
+
+                // World Map
+                Screen.WorldMapView.DisplayWorldMapButton();
+                Screen.WorldMapView.DisplayWorldMap();
+
+                DisplaySearchbar();
                 ImGui.SameLine();
-                DisplayChaliceToggleButton();
-            }
-
-            ImGui.Separator();
-
-            // Setup the Content Views
-            if (Universe.LoadedObjectContainers.Count > 0 && !SetupContentViews)
-            {
-                SetupContentViews = true;
-
-                var maps = Universe.LoadedObjectContainers
-                    .Where(k => k.Key is not null)
-                    .OrderBy(k => k.Key);
-
-                foreach(var entry in maps)
+                DisplayUnloadAllButton();
+                if (Smithbox.ProjectType is ProjectType.BB)
                 {
-                    var newView = new MapContentView(Screen, entry.Key, entry.Value);
+                    ImGui.SameLine();
+                    DisplayChaliceToggleButton();
+                }
 
-                    if(!ContentViews.ContainsKey(newView.MapID))
+                ImGui.Separator();
+
+                // Setup the Content Views
+                if (Universe.LoadedObjectContainers.Count > 0 && !SetupContentViews)
+                {
+                    SetupContentViews = true;
+
+                    var maps = Universe.LoadedObjectContainers
+                        .Where(k => k.Key is not null)
+                        .OrderBy(k => k.Key);
+
+                    foreach (var entry in maps)
                     {
-                        MapIDs.Add(newView.MapID);
-                        ContentViews.Add(newView.MapID, newView);
+                        var newView = new MapContentView(Screen, entry.Key, entry.Value);
+
+                        if (!ContentViews.ContainsKey(newView.MapID))
+                        {
+                            MapIDs.Add(newView.MapID);
+                            ContentViews.Add(newView.MapID, newView);
+                        }
                     }
+                }
+
+                // Display List of Maps
+                if (SetupContentViews)
+                {
+                    DisplayMapList(MapContentLoadState.Loaded);
+
+                    ImGui.BeginChild($"mapListSection");
+                    DisplayMapList(MapContentLoadState.Unloaded);
+                    ImGui.EndChild();
                 }
             }
 
-            // Display List of Maps
-            if (SetupContentViews)
-            {
-                DisplayMapList(MapContentLoadState.Loaded);
-
-                ImGui.BeginChild($"mapListSection");
-                DisplayMapList(MapContentLoadState.Unloaded);
-                ImGui.EndChild();
-            }
+            ImGui.End();
+            ImGui.PopStyleColor();
         }
 
-        ImGui.End();
-        ImGui.PopStyleColor();
-
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-        // Map Contents
-        if (ImGui.Begin($@"Map Contents##mapContentsPanel"))
+        if (UI.Current.Interface_MapEditor_MapContents)
         {
-            FocusManager.SwitchWindowContext(MapEditorContext.MapContents);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-            if (ContentViews.Count > 0)
+            // Map Contents
+            if (ImGui.Begin($@"Map Contents##mapContentsPanel"))
             {
-                foreach (var entry in ContentViews)
+                FocusManager.SwitchWindowContext(MapEditorContext.MapContents);
+
+                if (ContentViews.Count > 0)
                 {
-                    if (entry.Key == SelectedMap)
+                    foreach (var entry in ContentViews)
                     {
-                        entry.Value.OnGui();
+                        if (entry.Key == SelectedMap)
+                        {
+                            entry.Value.OnGui();
+                        }
                     }
                 }
             }
-        }
 
-        ImGui.End();
-        ImGui.PopStyleColor(1);
+            ImGui.End();
+            ImGui.PopStyleColor(1);
+        }
 
         Selection.ClearGotoTarget();
     }
@@ -311,7 +314,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         if (ImGui.BeginPopupContextItem($@"mapListEntryContext_{entry}"))
         {
             // Unloaded Map
-            if(curView.Container == null)
+            if (curView.ContentLoadState is MapContentLoadState.Unloaded)
             {
                 // Load Map
                 if (ImGui.Selectable("Load Map"))
@@ -321,37 +324,40 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             }
 
             // Loaded Map
-            if (curView.Container is MapContainer m)
+            if (curView.ContentLoadState is MapContentLoadState.Loaded)
             {
-                // Save Map
-                if (ImGui.Selectable("Save Map"))
+                if (curView.Container is MapContainer m)
                 {
-                    try
+                    // Save Map
+                    if (ImGui.Selectable("Save Map"))
                     {
-                        Universe.SaveMap(m);
-                    }
-                    catch (SavingFailedException e)
-                    {
-                        Screen.HandleSaveException(e);
-                    }
-                }
-
-                // Unload Map
-                if (ImGui.Selectable("Unload Map"))
-                {
-                    curView.Unload();
-                }
-
-                // ER: Load Related Maps
-                if (Universe.GameType is ProjectType.ER)
-                {
-                    if (entry.StartsWith("m60") || entry.StartsWith("m61"))
-                    {
-                        if (ImGui.Selectable("Load Related Maps"))
+                        try
                         {
-                            curView.Load(true);
-                            Universe.LoadRelatedMapsER(entry, Universe.LoadedObjectContainers);
+                            Universe.SaveMap(m);
                         }
+                        catch (SavingFailedException e)
+                        {
+                            Screen.HandleSaveException(e);
+                        }
+                    }
+
+                    // Unload Map
+                    if (ImGui.Selectable("Unload Map"))
+                    {
+                        curView.Unload();
+                    }
+                }
+            }
+
+            // ER: Load Related Maps
+            if (Universe.GameType is ProjectType.ER)
+            {
+                if (entry.StartsWith("m60") || entry.StartsWith("m61"))
+                {
+                    if (ImGui.Selectable("Load Related Maps"))
+                    {
+                        curView.Load(true);
+                        Universe.LoadRelatedMapsER(entry, Universe.LoadedObjectContainers);
                     }
                 }
             }
