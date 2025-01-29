@@ -206,15 +206,15 @@
     Wiki="The vertical width of the mission area boundary line. In metres." />
     
     <FE_MissionRegionLineTexTile 
-    AltName="" 
-    Wiki="" />
+    AltName="Mission Area: Boundary Line Tiling Scale" 
+    Wiki="The tiling scale for the boundary line texture." />
     
     <FE_MissionRegionLineHeightOffset 
-    AltName="" 
-    Wiki="" />
+    AltName="Mission Area: Boundary Line Height Offset" 
+    Wiki="The height offset to apply to the boundary line." />
     
     <MiniMap_RepairPointAlphaBeginHeith 
-    AltName="" 
+    AltName="Minimap: " 
     Wiki="" />
     
     <MiniMap_RepairPointAlphaEndHeith 

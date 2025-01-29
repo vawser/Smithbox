@@ -1,6 +1,8 @@
 ﻿using Pfim;
 using SoulsFormats;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Memory;
+using StudioCore.TextureViewer;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -457,10 +459,13 @@ public class TexturePool
 
             Format = format;
 
-            if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))
+            // Ignore if in the Texture Viewer so it can display irregular textures
+            if (Smithbox.EditorHandler.FocusedEditor is not TextureViewerScreen)
             {
-                //Removed to allow Texture Viewer to load all textures
-                //return;
+                if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))
+                {
+                    return;
+                }
             }
 
             width = FormatHelpers.IsCompressedFormat(format) ? (uint)((width + 3) & ~0x3) : width;
