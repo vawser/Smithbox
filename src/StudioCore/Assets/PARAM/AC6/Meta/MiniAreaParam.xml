@@ -1,5 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Self 
+  Wiki="Determines the configuration for mini-areas."/>
+  
+  <Field>
+    <areaName
+    AltName=""
+    Wiki="" />
+    
+    <openEventFlag
+    AltName=""
+    Wiki="" />
+    
+    <warningLineStartDisplayDistance
+    AltName=""
+    Wiki="" />
+    
+    <warningLineDisplayDistance
+    AltName=""
+    Wiki="" />
+    
+    <pad_end
+    Padding="" />
+  </Field>
 </PARAMMETA>

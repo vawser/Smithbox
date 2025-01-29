@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines parameters relating to menu values." />
+  
+  <Field>
+    <value 
+    AltName="Comparison Value"
+    Wiki="The value to compare." />
+    
+    <textId 
+    AltName="Text ID" 
+    Wiki="The text ID after conversion. Negative value = ID of SystemMessage."
+    FmgRef="Modern_Menu_Text" />
+    
+    <compareType 
+    AltName="Compare Type" 
+    Wiki="Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)." 
+    Enum="MENU_VALUE_TABLE_CMP_TYPE" />
+    
+    <padding 
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="MENU_VALUE_TABLE_CMP_TYPE" type="s8">
+      <Option Value="0" Name="Equal to table value" />
+      <Option Value="1" Name="Greater than or equal to table value" />
+      <Option Value="2" Name="Always match" />
+      <Option Value="3" Name="Number of definitions" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

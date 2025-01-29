@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration for LOGHUNT progress, which includes Hunter Class."/>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <totalPoint
+    AltName="Cumulative Points"
+    Wiki="The cumulative points required to rank up." />
+    
+    <iconID 
+    AltName="Icon ID" 
+    Wiki="The icon ID to use for the rank." 
+    Enum="MERCENARY_ICON_ID"
+    TextureRef="Direct/01_common/SB_MercenaryRank/mercenaryRankIcon/MercenaryRank_" />
+    
+    <reserved
+    Padding="" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="MERCENARY_ICON_ID" type="s16">
+      <Option Value="0" Name="RANK 0" />
+      <Option Value="1" Name="RANK 1" />
+      <Option Value="2" Name="RANK 2" />
+      <Option Value="3" Name="RANK 3" />
+      <Option Value="4" Name="RANK 4" />
+      <Option Value="5" Name="RANK 5" />
+      <Option Value="6" Name="RANK 6" />
+      <Option Value="7" Name="RANK 7" />
+      <Option Value="8" Name="RANK 8" />
+      <Option Value="9" Name="RANK 9" />
+      <Option Value="10" Name="RANK 10" />
+      <Option Value="11" Name="RANK 11" />
+      <Option Value="12" Name="RANK 12" />
+      <Option Value="13" Name="RANK 13" />
+      <Option Value="14" Name="RANK 14" />
+      <Option Value="15" Name="RANK 15" />
+      <Option Value="16" Name="RANK 16" />
+      <Option Value="17" Name="RANK 17" />
+      <Option Value="18" Name="RANK 18" />
+      <Option Value="19" Name="RANK 19" />
+      <Option Value="20" Name="RANK 20" />
+      <Option Value="21" Name="RANK 21" />
+      <Option Value="22" Name="RANK 22" />
+      <Option Value="23" Name="RANK 23" />
+      <Option Value="24" Name="RANK 24" />
+      <Option Value="25" Name="RANK 25" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

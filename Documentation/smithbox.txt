@@ -1,12 +1,13 @@
 #--------------------------------------
 # TODO
 #--------------------------------------
+# GENERAL
+- Add edit history window (along side loggers)
+
 # MAP EDITOR
 - Add mass entity ID assignment tool to map editor
  - Use ID format + rules to allow user to tailor what is assigned
  
-- Add utility class that converts passed string into correct MSB object (e.g. "Part-Part" in a DS1 project becomes MSB1.Part)
-
 # PARAM
 - Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
 
@@ -17,4 +18,3 @@
  - DS3
  - BB
 
-- Add Moonlight's DS2 param stuff
