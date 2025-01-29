@@ -25,6 +25,8 @@ namespace SoulsFormats
 
         private BHV_TYPE FileType { get; set; }
 
+        private short[] mystery { get; set; }
+
         private int MysterySize { get; set; }
 
         /// <summary>
@@ -120,6 +122,17 @@ namespace SoulsFormats
             // Mystery Size
             if (MysterySize != -1)
             {
+                for(int i = 0; i < MysterySize / 2; i++)
+                {
+                    mystery[i] = br.ReadInt16();
+                }
+            }
+
+            int DATA_START = 0x20;
+
+            // States
+            if(stateCount > 0)
+            {
 
             }
 
@@ -188,6 +201,51 @@ namespace SoulsFormats
             for (int i = 0; i < Entries.Count; i++)
                 Entries[i].Write(bw, stringOffsets[i * 2], stringOffsets[i * 2 + 1]);
             */
+        }
+
+        public class State
+        {
+
+        }
+
+        public class Transition
+        {
+
+        }
+
+        public class Condition
+        {
+
+        }
+
+        public class StructABB
+        {
+
+        }
+
+        public class StructB
+        {
+
+        }
+
+        public class StructC
+        {
+
+        }
+
+        public class StructD
+        {
+
+        }
+
+        public class StructDA
+        {
+
+        }
+
+        public class Strings
+        {
+
         }
     }
 }
