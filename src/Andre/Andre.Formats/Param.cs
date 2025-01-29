@@ -238,6 +238,19 @@ public class Param : SoulsFile<Param>
     }
 
     /// <summary>
+    /// Returns true if the param contains the specified row ID
+    /// </summary>
+    public bool ContainsRow(int id)
+    {
+        if(_rows.Any(e => e.ID == id))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
     ///     List of columns created from the applied paramdef. You can iterate through these and use the columns
     ///     to access the specific data of rows.
     /// </summary>

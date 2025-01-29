@@ -1256,6 +1256,9 @@ public static class ParamReferenceUtils
         if (param == null)
             return;
 
+        if (!param.ContainsRow(row.ID))
+            return;
+
         var curRow = param[row.ID];
 
         var color = GetVector3Color(curRow, redField, greenField, blueField);
