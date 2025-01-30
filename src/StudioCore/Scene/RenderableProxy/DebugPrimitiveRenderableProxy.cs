@@ -327,7 +327,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();
-        pipelineDescription.BlendState = BlendStateDescription.SingleOverrideBlend;
+        pipelineDescription.BlendState = BlendStateDescription.SingleAlphaBlend;
         pipelineDescription.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqual;
         pipelineDescription.RasterizerState = new RasterizerStateDescription(
             _debugPrimitive.CullMode,
@@ -596,9 +596,9 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public static DebugPrimitiveRenderableProxy GetSolidBoxRegionProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox);
-        r.BaseColor = ColorHelper.GetRenderableColor(CFG.Current.GFX_Renderable_Box_BaseColor);
-        r.HighlightedColor = ColorHelper.GetRenderableColor(CFG.Current.GFX_Renderable_Box_HighlightColor);
-        ColorHelper.ApplyColorVariance(r);
+        r.BaseColor = ColorHelper.GetAlphaRenderableColor(CFG.Current.GFX_Renderable_Box_BaseColor);
+        r.HighlightedColor = ColorHelper.GetAlphaRenderableColor(CFG.Current.GFX_Renderable_Box_HighlightColor);
+        //ColorHelper.ApplyColorVariance(r);
         return r;
     }
 

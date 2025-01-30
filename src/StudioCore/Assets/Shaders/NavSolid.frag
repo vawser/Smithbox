@@ -102,5 +102,5 @@ void main()
 	//fsout_color = vec4(diffuse, 1.0);
 	float grid = gridFactor(fsin_barycentric, 0.5);
 	vec3 col = diffuse * color.xyz * 0.8 + ambient * color.xyz * 0.2;
-	fsout_color = vec4(col * grid + (1.0 - grid) * col * 0.4, 1.0);
+	fsout_color = vec4(col * grid + (1.0 - grid) * col * 0.4, color.a);
 }

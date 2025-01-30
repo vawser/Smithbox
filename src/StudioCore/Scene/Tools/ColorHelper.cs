@@ -48,6 +48,22 @@ public static class ColorHelper
             Math.Clamp(b, 0, 255)
         );
     }
+
+    /// <summary>
+    /// Transparent colors
+    /// </summary>
+    public static Color GetAlphaRenderableColor(Vector3 color)
+    {
+        var transparency = CFG.Current.Viewport_Solid_Rendering_Alpha;
+
+        var value = 255 * (transparency / 100);
+
+        return Color.FromArgb((int)value, (int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
+    }
+
+    /// <summary>
+    /// Solid colors
+    /// </summary>
     public static Color GetRenderableColor(Vector3 color)
     {
         return Color.FromArgb((int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));

@@ -4,10 +4,6 @@
 # GENERAL
 - Add edit history window (along side loggers)
 
-# MAP EDITOR
-- Add mass entity ID assignment tool to map editor
- - Use ID format + rules to allow user to tailor what is assigned
- 
 # PARAM
 - Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
 
@@ -18,3 +14,15 @@
  - DS3
  - BB
 
+
+# MAP EDITOR
+- Add mass entity ID assignment tool to map editor
+ - Use ID format + rules to allow user to tailor what is assigned
+ 
+- Visualisations:
+ - Add the transparent solid regions for more types:
+  - Cylinders
+  - Spheres
+  - The special sub types for Lights, etc.
+  
+ - Add ability to set temporary color override with hotkey for solid region

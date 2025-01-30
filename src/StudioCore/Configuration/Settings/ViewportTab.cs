@@ -50,8 +50,8 @@ public class ViewportTab
             ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
             UIHelper.ShowHoverTooltip("Enabling this option will cause a selection outline to appear on selected objects.");
 
-            ImGui.Checkbox("Enable solid primitive shading", ref CFG.Current.Viewport_Enable_Solid_Primitive_Shading);
-            UIHelper.ShowHoverTooltip("Enabling this option will shade each face of the solid primitives (e.g. the regions) slightly differently, so the overall shape is more obvious.");
+            ImGui.DragFloat("Solid Rendering Transparency", ref CFG.Current.Viewport_Solid_Rendering_Alpha, 1.0f, 1.0f, 100.0f);
+            UIHelper.ShowHoverTooltip("Adjusts the transparency of solid rendered entities. 0 means no transparency.");
 
             if (ImGui.Button("Reset##ResetSelectionProperties", defaultButtonSize))
             {

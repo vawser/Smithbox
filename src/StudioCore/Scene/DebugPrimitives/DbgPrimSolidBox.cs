@@ -11,7 +11,7 @@ public class DbgPrimSolidBox : DbgPrimSolid
     private readonly DbgPrimGeometryData GeometryData;
 
     // This fixes some issues with culling, but messes with the Frame in Viewport action
-    //public override BoundingBox Bounds => new(new Vector3(float.NegativeInfinity), new Vector3(float.PositiveInfinity));
+    public override BoundingBox Bounds => new(new Vector3(float.NegativeInfinity), new Vector3(float.PositiveInfinity));
 
     public DbgPrimSolidBox(Transform location, Vector3 min, Vector3 max, Color color)
     {
@@ -53,9 +53,9 @@ public class DbgPrimSolidBox : DbgPrimSolid
             AddTri(bfl, tfl, tfr, frontColor);
             AddTri(bfl, tfr, bfr, frontColor);
 
-            // Back Face
-            AddTri(bbr, tbr, tbl, backColor);
-            AddTri(tbr, tbl, bbl, backColor);
+            // Back Face - ISSUE
+            AddTri(bbr, tbr, tbl, backColor); 
+            AddTri(bbr, tbl, bbl, backColor); 
 
             // Left Face
             AddTri(bbl, tbl, tfl, leftColor);
