@@ -21,6 +21,7 @@ using Org.BouncyCastle.Utilities;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using static SoulsFormats.FLVER;
+using StudioCore.Scene.Structs;
 
 namespace StudioCore.Resource.Types;
 

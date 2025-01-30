@@ -23,6 +23,7 @@ using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
 using StudioCore.Scene;
+using StudioCore.Scene.Interfaces;
 using StudioCore.Settings;
 using StudioCore.Tasks;
 using StudioCore.Tools;

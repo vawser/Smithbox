@@ -2,7 +2,7 @@
 using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
 using StudioCore.Interface;
-using StudioCore.Scene;
+using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

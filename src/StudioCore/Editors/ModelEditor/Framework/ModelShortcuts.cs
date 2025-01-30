@@ -5,6 +5,7 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor.Core;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Scene;
+using StudioCore.Scene.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

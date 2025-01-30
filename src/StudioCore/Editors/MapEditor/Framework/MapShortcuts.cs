@@ -3,6 +3,7 @@ using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Scene;
+using StudioCore.Scene.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using StudioCore.Scene.Enums;
+using StudioCore.Scene.Framework;
+using StudioCore.Scene.Interfaces;
+using System.Collections.Generic;
 using Veldrid.Utilities;
 
 namespace StudioCore.Scene;

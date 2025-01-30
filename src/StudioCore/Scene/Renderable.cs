@@ -1,4 +1,8 @@
-﻿using System;
+﻿using StudioCore.Scene.Enums;
+using StudioCore.Scene.Framework;
+using StudioCore.Scene.Interfaces;
+using StudioCore.Scene.Structs;
+using System;
 using System.Collections.Generic;
 using Veldrid;
 using Veldrid.Utilities;

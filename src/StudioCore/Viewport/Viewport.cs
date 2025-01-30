@@ -1,12 +1,10 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
-using StudioCore.DebugPrimitives;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Enums;
@@ -14,6 +12,8 @@ using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
+using StudioCore.Scene.DebugPrimitives;
+using StudioCore.Scene.Interfaces;
 using StudioCore.Settings;
 using StudioCore.Utilities;
 using System;
@@ -286,6 +286,10 @@ public class Viewport : IViewport
         {
             kbbusy = WorldView.UpdateInput(window, dt);
             if (InputTracker.GetMouseButtonDown(MouseButton.Left))
+            {
+                _viewPipeline.CreateAsyncPickingRequest();
+            }
+            if (InputTracker.GetMouseButton(MouseButton.Left) && InputTracker.GetKeyDown(Key.AltLeft))
             {
                 _viewPipeline.CreateAsyncPickingRequest();
             }

@@ -1,5 +1,4 @@
 ﻿using StudioCore.Platform;
-using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +11,7 @@ using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Scene.Enums;
 
 namespace StudioCore;
 

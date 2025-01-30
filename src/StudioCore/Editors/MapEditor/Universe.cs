@@ -29,6 +29,9 @@ using HKLib.hk2018;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.MapConnections;
 using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Scene.RenderableProxy;
+using StudioCore.Scene.Enums;
+using StudioCore.Scene.DebugPrimitives;
 
 namespace StudioCore.MsbEditor;
 
@@ -328,7 +331,7 @@ public class Universe
             return null;
         }
 
-        DebugPrimitives.DbgPrimWireChain line = new(points, looseStartPoints, System.Drawing.Color.Red, endAtStart, random);
+        DbgPrimWireChain line = new(points, looseStartPoints, System.Drawing.Color.Red, endAtStart, random);
         DebugPrimitiveRenderableProxy mesh = new(_renderScene.OpaqueRenderables, line)
         {
             BaseColor = System.Drawing.Color.Red,

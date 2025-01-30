@@ -1,7 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Scene;
+using StudioCore.Scene.Interfaces;
 using System;
 using System.Collections.Generic;
 using Veldrid.Utilities;

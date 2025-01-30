@@ -2,6 +2,7 @@
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
+using StudioCore.Scene.Interfaces;
 using System.Numerics;
 
 namespace StudioCore.Scene;

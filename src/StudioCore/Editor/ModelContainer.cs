@@ -8,7 +8,7 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
-using StudioCore.Scene;
+using StudioCore.Scene.RenderableProxy;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

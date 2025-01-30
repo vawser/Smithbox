@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Interface;
 using StudioCore.Scene;
+using StudioCore.Scene.Framework;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

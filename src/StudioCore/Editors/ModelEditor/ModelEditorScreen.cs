@@ -21,7 +21,6 @@ using StudioCore.Editors.ModelEditor.Core;
 using StudioCore.Editors.ModelEditor.Core.Properties;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
-using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 
 namespace StudioCore.Editors.ModelEditor;

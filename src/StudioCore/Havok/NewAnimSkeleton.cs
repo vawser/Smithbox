@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.DebugPrimitives;
+using StudioCore.Scene.DebugPrimitives;
 using System;
 using System.Collections.Generic;
 using System.Numerics;

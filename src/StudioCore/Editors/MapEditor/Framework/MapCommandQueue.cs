@@ -2,7 +2,7 @@
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.MsbEditor;
-using StudioCore.Scene;
+using StudioCore.Scene.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

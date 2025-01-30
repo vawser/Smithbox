@@ -1,5 +1,5 @@
 ﻿using StudioCore.MsbEditor;
-using StudioCore.Scene;
+using StudioCore.Scene.Interfaces;
 
 namespace StudioCore.Editor;
 

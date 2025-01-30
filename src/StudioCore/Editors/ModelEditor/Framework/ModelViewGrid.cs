@@ -1,7 +1,8 @@
-﻿using StudioCore.DebugPrimitives;
-using StudioCore.Editors.MapEditor;
+﻿using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using StudioCore.Scene;
+using StudioCore.Scene.DebugPrimitives;
+using StudioCore.Scene.RenderableProxy;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

@@ -4,13 +4,13 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Havok;
 using StudioCore.Resource;
-using StudioCore.Scene;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Types;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Scene.RenderableProxy;
 
 namespace StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 

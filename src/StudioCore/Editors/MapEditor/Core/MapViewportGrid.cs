@@ -1,7 +1,8 @@
 ﻿using ImGuiNET;
-using StudioCore.DebugPrimitives;
 using StudioCore.Interface;
 using StudioCore.Scene;
+using StudioCore.Scene.DebugPrimitives;
+using StudioCore.Scene.RenderableProxy;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

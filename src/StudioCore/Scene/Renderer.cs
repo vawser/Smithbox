@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudioCore.Scene.RenderableProxy;
+using StudioCore.Scene.Structs;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;

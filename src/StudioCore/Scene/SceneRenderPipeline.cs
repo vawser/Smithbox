@@ -1,9 +1,13 @@
-﻿using System;
+﻿using StudioCore.Scene.Framework;
+using StudioCore.Scene.Structs;
+using System;
 using System.Diagnostics;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
+using StudioCore.Utilities;
+using StudioCore.Scene.Interfaces;
 
 namespace StudioCore.Scene;
 
@@ -14,18 +18,31 @@ namespace StudioCore.Scene;
 public class SceneRenderPipeline
 {
     private readonly Renderer.RenderQueue _overlayQueue;
-
     private readonly Renderer.RenderQueue _renderQueue;
     private readonly RenderScene Scene;
 
+    // Scene Parameters
+    public DeviceBuffer SceneParamBuffer { get; }
+    public ResourceSet SceneParamResourceSet { get; }
+
+    public SceneParam SceneParams;
+
+    // Picking Results
+    public DeviceBuffer PickingResultsBuffer { get; }
+    public ResourceSet PickingResultResourceSet { get; }
+    public DeviceBuffer PickingResultReadbackBuffer { get; }
+    public bool PickingResultsReady { get; set; }
+    private int _pickingEntity { get; set; }
+
     private bool _pickingEnabled;
-
-    public uint EnvMapTexture = 0;
-
 
     public PickingResult PickingResult;
 
-    public SceneParam SceneParams;
+    public Vector3 Eye { get; private set; }
+
+    public float CPURenderTime => _renderQueue.CPURenderTime;
+
+    public uint EnvMapTexture = 0;
 
     public unsafe SceneRenderPipeline(RenderScene scene, GraphicsDevice device, int width, int height)
     {
@@ -33,7 +50,7 @@ public class SceneRenderPipeline
 
         ResourceFactory factory = device.ResourceFactory;
 
-        // Setup scene param uniform buffer
+        // Setup scene param uniform buffer.
         SceneParamBuffer = factory.CreateBuffer(
             new BufferDescription( (uint)sizeof(SceneParam), VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0)
         );
@@ -99,21 +116,6 @@ public class SceneRenderPipeline
         Renderer.RegisterRenderQueue(_overlayQueue);
     }
 
-    public DeviceBuffer SceneParamBuffer { get; }
-
-    public ResourceSet SceneParamResourceSet { get; }
-    public DeviceBuffer PickingResultsBuffer { get; }
-    public ResourceSet PickingResultResourceSet { get; }
-
-    public DeviceBuffer PickingResultReadbackBuffer { get; }
-
-    public Vector3 Eye { get; private set; }
-
-    public float CPURenderTime => _renderQueue.CPURenderTime;
-    public bool PickingResultsReady { get; set; }
-
-    private int _pickingEntity { get; set; }
-
     public void SetViewportSetupAction(Action<GraphicsDevice, CommandList> action)
     {
         _renderQueue.SetPredrawSetupAction(action);
@@ -150,6 +152,9 @@ public class SceneRenderPipeline
         Scene.Render(_renderQueue, _overlayQueue, frustum, this);
     }
 
+    /// <summary>
+    /// Triggered by mouse click: pick out entities from viewport
+    /// </summary>
     public unsafe void CreateAsyncPickingRequest()
     {
         if (_pickingEnabled)
@@ -159,16 +164,22 @@ public class SceneRenderPipeline
 
         _pickingEnabled = true;
         Scene.SendGPUPickingRequest();
+
         Debug.WriteLine("Starting picking request");
+
         Renderer.AddAsyncReadback(PickingResultReadbackBuffer, PickingResultsBuffer, d =>
         {
-            MappedResourceView<PickingResult> result =
-                d.Map<PickingResult>(PickingResultReadbackBuffer, MapMode.Read);
+            MappedResourceView<PickingResult> result = d.Map<PickingResult>(PickingResultReadbackBuffer, MapMode.Read);
+
             var results = new Span<PickingResult>(result.MappedResource.Data.ToPointer(), 1);
+
             _pickingEntity = results[0].entityID != ulong.MaxValue ? (int)results[0].entityID : -1;
+
             PickingResultsReady = true;
             _pickingEnabled = false;
+
             Debug.WriteLine($@"Got picking result: entity {results[0].entityID}, depth {results[0].depth}");
+
             Renderer.AddBackgroundUploadTask((d, cl) =>
             {
                 cl.UpdateBuffer(PickingResultsBuffer, 0, ref PickingResult, (uint)sizeof(PickingResult));
