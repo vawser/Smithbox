@@ -257,12 +257,6 @@ public class MapShortcuts
                 ViewportActionCommon.ToggleRenderType(Selection);
             }
 
-            // Set Render Type to Default
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_DefaultRenderTypeAll))
-            {
-                ViewportActionCommon.SetRenderTypeToDefault(Selection);
-            }
-
             // Gizmos
             if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoTranslationMode))
             {

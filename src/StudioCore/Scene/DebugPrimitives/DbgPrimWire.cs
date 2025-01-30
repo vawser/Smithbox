@@ -17,6 +17,8 @@ public class DbgPrimWire : DbgPrim
 
     public override BoundingBox Bounds => new(new Vector3(-1, -1, -1), new Vector3(1, 1, 1));
 
+    public override BoundingBox FramingBounds => new(new Vector3(-1, -1, -1), new Vector3(1, 1, 1));
+
     public override string ShaderName => "DebugWire";
 
     public override SpecializationConstant[] SpecializationConstants => new SpecializationConstant[0];

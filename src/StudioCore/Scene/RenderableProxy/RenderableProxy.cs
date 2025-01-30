@@ -1,5 +1,6 @@
 ﻿#nullable enable
 using StudioCore;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Resource;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
@@ -52,6 +53,8 @@ public abstract class RenderableProxy : Renderer.IRendererUpdatable, IDisposable
     public abstract void SetSelectable(ISelectable sel);
 
     public abstract BoundingBox GetBounds();
+
+    public abstract BoundingBox GetFramingBounds();
 
     public abstract BoundingBox GetLocalBounds();
 

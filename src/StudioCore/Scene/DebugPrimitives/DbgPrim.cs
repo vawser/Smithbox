@@ -122,6 +122,7 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
     public abstract uint VertexSize { get; }
 
     public int IndexCount => Indices.Length;
+    public abstract BoundingBox FramingBounds { get; }
 
     // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
     // ~DbgPrim()
@@ -237,6 +238,11 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
     }
 
     public virtual BoundingBox GetBounds()
+    {
+        return new BoundingBox();
+    }
+
+    public virtual BoundingBox GetFramingBounds()
     {
         return new BoundingBox();
     }

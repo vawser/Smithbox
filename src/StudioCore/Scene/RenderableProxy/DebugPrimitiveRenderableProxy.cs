@@ -1,5 +1,6 @@
 ﻿#nullable enable
 using StudioCore;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Resource;
 using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Enums;
@@ -37,7 +38,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     private static DbgPrimWireSpotLight? _spotLight;
     private static DbgPrimWireSpheroidWithArrow? _directionalLight;
 
-    private readonly IDbgPrim? _debugPrimitive;
+    private IDbgPrim? _debugPrimitive;
 
     private readonly MeshRenderables _renderablesSet;
     private Color _baseColor = Color.Gray;
@@ -209,6 +210,14 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
             return new BoundingBox();
 
         return _debugPrimitive.Bounds;
+    }
+
+    public override BoundingBox GetFramingBounds()
+    {
+        if (_debugPrimitive == null)
+            return new BoundingBox();
+
+        return _debugPrimitive.FramingBounds;
     }
 
     public override void UnregisterAndRelease()

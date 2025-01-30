@@ -24,6 +24,8 @@ public interface IDbgPrim : IDisposable
 
     public BoundingBox Bounds { get; }
 
+    public BoundingBox FramingBounds { get; }
+
     /// <summary>
     ///     Get handle to the GPU allocated geometry
     /// </summary>

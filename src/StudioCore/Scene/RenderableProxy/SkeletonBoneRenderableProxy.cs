@@ -1,5 +1,6 @@
 ﻿#nullable enable
 using StudioCore;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Resource;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
@@ -159,7 +160,10 @@ public class SkeletonBoneRenderableProxy : RenderableProxy
     {
         return BoundingBox.Transform(GetLocalBounds(), _world);
     }
-
+    public override BoundingBox GetFramingBounds()
+    {
+        return BoundingBox.Transform(GetLocalBounds(), _world);
+    }
     public override BoundingBox GetLocalBounds()
     {
         BoundingBox b = _bonePointRenderable.GetLocalBounds();

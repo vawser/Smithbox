@@ -18,6 +18,8 @@ public class DbgPrimGizmo : DbgPrim
 
     public override BoundingBox Bounds => new(new Vector3(-20, -20, -20), new Vector3(20, 20, 20));
 
+    public override BoundingBox FramingBounds => new(new Vector3(-20, -20, -20), new Vector3(20, 20, 20));
+
     public override string ShaderName => "DebugWire";
 
     public override SpecializationConstant[] SpecializationConstants => new SpecializationConstant[0];

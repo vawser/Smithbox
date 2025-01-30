@@ -1778,24 +1778,6 @@ public class MsbEntity : Entity
     }
 
     /// <summary>
-    /// Switches the current rendering type for this entity to its default, and forces the mesh to update
-    /// </summary>
-    public void DefaultRenderType()
-    {
-        IsSwitchingRenderType = true;
-
-        if (Type is MsbEntityType.Region)
-        {
-            EntityRenderType = RenderModelType.Wireframe;
-        }
-
-        _renderSceneMesh.Dispose();
-        _renderSceneMesh = null;
-
-        IsSwitchingRenderType = false;
-    }
-
-    /// <summary>
     /// Update the render model of this entity.
     /// </summary>
     public override void UpdateRenderModel()

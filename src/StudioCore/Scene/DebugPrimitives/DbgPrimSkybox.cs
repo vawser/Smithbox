@@ -64,6 +64,8 @@ public class DbgPrimSkybox : DbgPrim
 
     public override BoundingBox Bounds => throw new NotImplementedException();
 
+    public override BoundingBox FramingBounds => throw new NotImplementedException();
+
     public override string ShaderName => throw new NotImplementedException();
 
     public override SpecializationConstant[] SpecializationConstants => throw new NotImplementedException();

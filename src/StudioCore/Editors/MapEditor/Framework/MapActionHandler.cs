@@ -7,6 +7,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Tools;
+using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
@@ -317,18 +318,41 @@ public class MapActionHandler
             HashSet<Entity> selected = Screen.Selection.GetFilteredSelection<Entity>();
             var first = false;
             BoundingBox box = new();
+
             foreach (Entity s in selected)
             {
                 if (s.RenderSceneMesh != null)
                 {
+                    var framingBounds = s.RenderSceneMesh.GetFramingBounds();
+
+                    if (s.WrappedObject is IMsbRegion)
+                    {
+                        var position = s.GetPropertyValue<Vector3>("Position");
+                        var shape = s.GetPropertyValue<MSB.Shape>("Shape");
+
+                        if (shape != null)
+                        {
+                            if (shape is MSB.Shape.Box)
+                            {
+                                var boxShape = (MSB.Shape.Box)shape;
+
+                                var width = boxShape.Width;
+                                var depth = boxShape.Depth;
+                                var height = boxShape.Height;
+
+                                framingBounds = GenerateBoundingBox(position, width, height, depth);
+                            }
+                        }
+                    }
+
                     if (!first)
                     {
-                        box = s.RenderSceneMesh.GetBounds();
+                        box = framingBounds;
                         first = true;
                     }
                     else
                     {
-                        box = BoundingBox.Combine(box, s.RenderSceneMesh.GetBounds());
+                        box = BoundingBox.Combine(box, framingBounds);
                     }
                 }
                 else if (s.Container.RootObject == s)
@@ -358,6 +382,15 @@ public class MapActionHandler
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
+    }
+
+    private BoundingBox GenerateBoundingBox(Vector3 center, float width, float height, float depth)
+    {
+        Vector3 halfExtents = new Vector3(width / 2, height / 2, depth / 2);
+        Vector3 min = center - halfExtents;
+        Vector3 max = center + halfExtents;
+
+        return new BoundingBox(min, max);
     }
 
     /// <summary>

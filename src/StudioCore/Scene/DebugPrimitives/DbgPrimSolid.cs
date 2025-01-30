@@ -18,6 +18,8 @@ public class DbgPrimSolid : DbgPrim
 
     public override BoundingBox Bounds => new();
 
+    public override BoundingBox FramingBounds => new();
+
     public override string ShaderName => "DebugWire";
 
     public override SpecializationConstant[] SpecializationConstants => new SpecializationConstant[0];

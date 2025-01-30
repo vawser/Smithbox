@@ -285,10 +285,6 @@ public class ViewportKeybindTab
             KeyBindings.Current.VIEWPORT_ToggleRenderType = InputTracker.KeybindLine(15,
                 KeyBindings.Current.VIEWPORT_ToggleRenderType,
                 KeyBindings.Default.VIEWPORT_ToggleRenderType);
-
-            KeyBindings.Current.VIEWPORT_DefaultRenderTypeAll = InputTracker.KeybindLine(16,
-                KeyBindings.Current.VIEWPORT_DefaultRenderTypeAll,
-                KeyBindings.Default.VIEWPORT_DefaultRenderTypeAll);
         }
     }
 }
