@@ -249,6 +249,16 @@ public class KeyBindings
             "Toggles the appearance of the selection outline.",
             Key.Unknown);
 
+        public KeyBind VIEWPORT_ToggleRenderType = new(
+            "Toggle Render Type",
+            "Toggles the rendering type for the selection (if supported) between wireframe and solid.",
+            Key.M);
+
+        public KeyBind VIEWPORT_DefaultRenderTypeAll = new(
+            "Set Render Type to Default",
+            "For all map objects, resets their rendering type to the default.",
+            Key.M, true, true);
+
         //-----------------------------
         // Map Editor
         //-----------------------------

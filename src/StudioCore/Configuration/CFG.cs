@@ -132,6 +132,7 @@ public class CFG
     public bool Viewport_Enable_Selection_Outline = true;
     public bool Viewport_Enable_Model_Masks = true;
     public bool Viewport_Enable_LOD_Facesets = false;
+    public bool Viewport_Enable_Solid_Primitive_Shading = true;
 
     public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
 

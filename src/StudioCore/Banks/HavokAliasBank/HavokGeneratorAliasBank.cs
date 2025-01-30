@@ -15,8 +15,6 @@ public class HavokGeneratorAliasBank
 {
     public HavokGeneratorAliasResource HavokAliases { get; set; }
 
-    private string TemplateName = "Template.json";
-
     private string HavokAliasFileName = "";
 
     private string HavokAliasTitle = "";

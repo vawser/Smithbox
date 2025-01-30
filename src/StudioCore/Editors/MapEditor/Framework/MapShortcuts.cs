@@ -1,9 +1,11 @@
-﻿using ImGuiNET;
+﻿using DotNext.Collections.Generic;
+using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Scene;
 using StudioCore.Scene.Enums;
+using StudioCore.Scene.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -247,6 +249,18 @@ public class MapShortcuts
             if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_RenderOutline))
             {
                 CFG.Current.Viewport_Enable_Selection_Outline = !CFG.Current.Viewport_Enable_Selection_Outline;
+            }
+
+            // Toggle Render Type
+            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_ToggleRenderType))
+            {
+                ViewportActionCommon.ToggleRenderType(Selection);
+            }
+
+            // Set Render Type to Default
+            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_DefaultRenderTypeAll))
+            {
+                ViewportActionCommon.SetRenderTypeToDefault(Selection);
             }
 
             // Gizmos

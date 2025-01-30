@@ -357,7 +357,7 @@ public class SettingsWindow
         tab.Display();
     }
 
-    private SelectedSettingTab SelectedTab = SelectedSettingTab.System;
+    // private SelectedSettingTab SelectedTab = SelectedSettingTab.System;
 
     public enum SelectedSettingTab
     {

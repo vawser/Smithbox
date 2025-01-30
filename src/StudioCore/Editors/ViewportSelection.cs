@@ -1,4 +1,5 @@
-﻿using StudioCore.Scene.Interfaces;
+﻿using Silk.NET.SDL;
+using StudioCore.Scene.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ public class ViewportSelection
     /// </summary>
     private readonly HashSet<ISelectable> _selected = new();
 
+    private HashSet<ISelectable> _storedSelection = new();
+
     // State for SceneTree auto-scroll, as these are set at the same time as selections or using selections.
     // This is processed by SceneTree and cleared as soon as the goto is complete, or no goto target was found.
     //
@@ -22,6 +25,19 @@ public class ViewportSelection
     // tracking even more state in SceneTree, as well as path-from-root metadata for an entity. This should
     // probably be split out of Selection at that point (IGotoTarget, perhaps).
     public ISelectable GotoTreeTarget { get; set; }
+
+    public void StoreSelection()
+    {
+        _storedSelection = _selected;
+    }
+
+    public void ResetSelection()
+    {
+        foreach (var entry in _selected)
+        {
+            AddSelection(entry);
+        }
+    }
 
     /// <summary>
     /// Return true if any entity been selected.

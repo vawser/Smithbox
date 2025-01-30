@@ -32,6 +32,7 @@ using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Scene.RenderableProxy;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.DebugPrimitives;
+using static StudioCore.Editors.MapEditor.Framework.MsbEntity;
 
 namespace StudioCore.MsbEditor;
 
@@ -193,11 +194,17 @@ public class Universe
         return modelMarker;
     }
 
-    public RenderableProxy GetRegionDrawable(MapContainer map, Entity obj)
+    public RenderableProxy GetRegionDrawable(MapContainer map, Entity obj, RenderModelType renderType)
     {
         if (obj.WrappedObject is IMsbRegion r && r.Shape is MSB.Shape.Box)
         {
             DebugPrimitiveRenderableProxy mesh = DebugPrimitiveRenderableProxy.GetBoxRegionProxy(_renderScene);
+
+            if(renderType is RenderModelType.Solid)
+            {
+                mesh = DebugPrimitiveRenderableProxy.GetSolidBoxRegionProxy(_renderScene);
+            }
+
             mesh.World = obj.GetWorldMatrix();
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Region;
@@ -308,6 +315,11 @@ public class Universe
 
     public RenderableProxy GetDummyPolyDrawable(ObjectContainer map, Entity obj)
     {
+        var selection = Selection.GetSelection();
+        var isSelected = false;
+        if (selection.Contains(obj))
+            isSelected = true;
+
         DebugPrimitiveRenderableProxy mesh = DebugPrimitiveRenderableProxy.GetDummyPolyForwardUpProxy(_renderScene);
         mesh.World = obj.GetWorldMatrix();
         obj.RenderSceneMesh = mesh;

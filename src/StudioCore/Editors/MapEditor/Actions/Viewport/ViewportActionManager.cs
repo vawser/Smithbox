@@ -123,3 +123,4 @@ public class ViewportActionManager
         RedoStack.Clear();
     }
 }
+

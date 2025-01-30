@@ -20,8 +20,6 @@ public class ProjectEnumBank
 {
     public ProjectEnumResource Enums { get; set; }
 
-    private string TemplateName = "Template.json";
-
     private string EnumTitle = "";
 
     public ProjectEnumBank(string title)

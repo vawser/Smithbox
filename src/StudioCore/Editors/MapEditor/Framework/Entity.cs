@@ -232,11 +232,17 @@ public class Entity : ISelectable, IDisposable
         GC.SuppressFinalize(this);
     }
 
+    public bool IsSelected {  get; set; }
+
     /// <summary>
     /// Function executed upon the selection of this entity.
     /// </summary>
     public void OnSelected()
     {
+        IsSelected = true;
+
+        UpdateRenderModel();
+
         if (RenderSceneMesh != null)
         {
             RenderSceneMesh.RenderSelectionOutline = true;
@@ -249,6 +255,10 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public void OnDeselected()
     {
+        IsSelected = false;
+
+        UpdateRenderModel();
+
         if (RenderSceneMesh != null)
         {
             RenderSceneMesh.RenderSelectionOutline = false;
@@ -1735,6 +1745,56 @@ public class MsbEntity : Entity
         return null;
     }
 
+    public enum RenderModelType
+    {
+        Solid,
+        Wireframe
+    }
+
+    public bool IsSwitchingRenderType = false;
+    private RenderModelType EntityRenderType = RenderModelType.Wireframe;
+
+    /// <summary>
+    /// Switches the current rendering type for this entity, and forces the mesh to update
+    /// </summary>
+    public void SwitchRenderType()
+    {
+        IsSwitchingRenderType = true;
+
+        switch (EntityRenderType)
+        {
+            case RenderModelType.Solid:
+                EntityRenderType = RenderModelType.Wireframe;
+                break;
+            case RenderModelType.Wireframe:
+                EntityRenderType = RenderModelType.Solid;
+                break;
+        }
+
+        _renderSceneMesh.Dispose();
+        _renderSceneMesh = null;
+
+        IsSwitchingRenderType = false;
+    }
+
+    /// <summary>
+    /// Switches the current rendering type for this entity to its default, and forces the mesh to update
+    /// </summary>
+    public void DefaultRenderType()
+    {
+        IsSwitchingRenderType = true;
+
+        if (Type is MsbEntityType.Region)
+        {
+            EntityRenderType = RenderModelType.Wireframe;
+        }
+
+        _renderSceneMesh.Dispose();
+        _renderSceneMesh = null;
+
+        IsSwitchingRenderType = false;
+    }
+
     /// <summary>
     /// Update the render model of this entity.
     /// </summary>
@@ -1764,7 +1824,7 @@ public class MsbEntity : Entity
                 _renderSceneMesh.Dispose();
             }
 
-            _renderSceneMesh = Universe.GetRegionDrawable(ContainingMap, this);
+            _renderSceneMesh = Universe.GetRegionDrawable(ContainingMap, this, EntityRenderType);
         }
         else if (Type == MsbEntityType.Light && _renderSceneMesh == null)
         {

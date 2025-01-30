@@ -43,18 +43,30 @@ public class ViewportTab
             }
         }
 
+        if (ImGui.CollapsingHeader("Selection", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
+
+            ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
+            UIHelper.ShowHoverTooltip("Enabling this option will cause a selection outline to appear on selected objects.");
+
+            ImGui.Checkbox("Enable solid primitive shading", ref CFG.Current.Viewport_Enable_Solid_Primitive_Shading);
+            UIHelper.ShowHoverTooltip("Enabling this option will shade each face of the solid primitives (e.g. the regions) slightly differently, so the overall shape is more obvious.");
+
+            if (ImGui.Button("Reset##ResetSelectionProperties", defaultButtonSize))
+            {
+                CFG.Current.Viewport_Enable_Selection_Outline = CFG.Default.Viewport_Enable_Selection_Outline;
+                CFG.Current.Viewport_DefaultRender_SelectColor = CFG.Default.Viewport_DefaultRender_SelectColor;
+            }
+            UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
+        }
+
         if (ImGui.CollapsingHeader("Rendering", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.InputFloat("Default Model Render: Brightness", ref CFG.Current.Viewport_DefaultRender_Brightness);
             UIHelper.ShowHoverTooltip("Change the brightness modifier for the Default Model Rendering shader.");
             ImGui.InputFloat("Default Model Render: Saturation", ref CFG.Current.Viewport_DefaultRender_Saturation);
             UIHelper.ShowHoverTooltip("Change the saturation modifier for the Default Model Rendering shader.");
-
-
-            ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
-            UIHelper.ShowHoverTooltip("Enabling this option will cause a selection outline to appear on selected objects.");
-
-            ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
 
             ImGui.Checkbox("Enable enemy model masks", ref CFG.Current.Viewport_Enable_Model_Masks);
             UIHelper.ShowHoverTooltip("Attempt to display the correct model masks for enemies based on NpcParam.");
@@ -66,8 +78,6 @@ public class ViewportTab
             {
                 CFG.Current.Viewport_DefaultRender_Brightness = CFG.Default.Viewport_DefaultRender_Brightness;
                 CFG.Current.Viewport_DefaultRender_Saturation = CFG.Default.Viewport_DefaultRender_Saturation;
-                CFG.Current.Viewport_Enable_Selection_Outline = CFG.Default.Viewport_Enable_Selection_Outline;
-                CFG.Current.Viewport_DefaultRender_SelectColor = CFG.Default.Viewport_DefaultRender_SelectColor;
                 CFG.Current.Viewport_Enable_Model_Masks = CFG.Default.Viewport_Enable_Model_Masks;
                 CFG.Current.Viewport_Enable_LOD_Facesets = CFG.Default.Viewport_Enable_LOD_Facesets;
             }

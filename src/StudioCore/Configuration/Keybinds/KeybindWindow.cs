@@ -15,7 +15,6 @@ using Veldrid;
 namespace StudioCore.Configuration.Keybinds;
 public class KeybindWindow
 {
-    private KeyBind _currentKeyBind;
     public bool MenuOpenState;
 
     private CommonKeybindTab CommonKeybinds;
@@ -282,6 +281,14 @@ public class ViewportKeybindTab
             KeyBindings.Current.VIEWPORT_RenderOutline = InputTracker.KeybindLine(14,
                 KeyBindings.Current.VIEWPORT_RenderOutline,
                 KeyBindings.Default.VIEWPORT_RenderOutline);
+
+            KeyBindings.Current.VIEWPORT_ToggleRenderType = InputTracker.KeybindLine(15,
+                KeyBindings.Current.VIEWPORT_ToggleRenderType,
+                KeyBindings.Default.VIEWPORT_ToggleRenderType);
+
+            KeyBindings.Current.VIEWPORT_DefaultRenderTypeAll = InputTracker.KeybindLine(16,
+                KeyBindings.Current.VIEWPORT_DefaultRenderTypeAll,
+                KeyBindings.Default.VIEWPORT_DefaultRenderTypeAll);
         }
     }
 }

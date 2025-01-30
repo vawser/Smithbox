@@ -60,7 +60,7 @@ public class ProjectHandler
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog("Failed to load recent project.", LogLevel.Error);
+                TaskLogs.AddLog($"Failed to load recent project: {ex}", LogLevel.Error);
             }
         }
 
