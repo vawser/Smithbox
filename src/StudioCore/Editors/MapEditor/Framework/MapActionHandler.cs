@@ -14,6 +14,7 @@ using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
+using StudioCore.Scene.Tools;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -325,6 +326,7 @@ public class MapActionHandler
                 {
                     var framingBounds = s.RenderSceneMesh.GetFramingBounds();
 
+                    // Calculate the bounding box for regions, as the debug primitives themselves do not.
                     if (s.WrappedObject is IMsbRegion)
                     {
                         var position = s.GetPropertyValue<Vector3>("Position");
@@ -332,6 +334,7 @@ public class MapActionHandler
 
                         if (shape != null)
                         {
+                            // Box
                             if (shape is MSB.Shape.Box)
                             {
                                 var boxShape = (MSB.Shape.Box)shape;
@@ -340,7 +343,28 @@ public class MapActionHandler
                                 var depth = boxShape.Depth;
                                 var height = boxShape.Height;
 
-                                framingBounds = GenerateBoundingBox(position, width, height, depth);
+                                framingBounds = BoundingBoxHelper.GenerateBoundingBox(position, width, height, depth);
+                            }
+
+                            // Cylinder
+                            if (shape is MSB.Shape.Cylinder)
+                            {
+                                var cylinderShape = (MSB.Shape.Cylinder)shape;
+
+                                var height = cylinderShape.Height;
+                                var radius = cylinderShape.Radius;
+
+                                framingBounds = BoundingBoxHelper.GenerateBoundingBox(position, radius, height);
+                            }
+
+                            // Sphere
+                            if (shape is MSB.Shape.Sphere)
+                            {
+                                var sphereShape = (MSB.Shape.Sphere)shape;
+
+                                var radius = sphereShape.Radius;
+
+                                framingBounds = BoundingBoxHelper.GenerateBoundingBox(position, radius);
                             }
                         }
                     }
@@ -382,15 +406,6 @@ public class MapActionHandler
         {
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
-    }
-
-    private BoundingBox GenerateBoundingBox(Vector3 center, float width, float height, float depth)
-    {
-        Vector3 halfExtents = new Vector3(width / 2, height / 2, depth / 2);
-        Vector3 min = center - halfExtents;
-        Vector3 max = center + halfExtents;
-
-        return new BoundingBox(min, max);
     }
 
     /// <summary>

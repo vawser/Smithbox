@@ -10,9 +10,7 @@ public class DbgPrimSolidBox : DbgPrimSolid
 {
     private readonly DbgPrimGeometryData GeometryData;
 
-    /// <summary>
     /// Set this so the box isn't culled incorrectly
-    /// </summary>
     public override BoundingBox Bounds => new(new Vector3(-1, -1, -1), new Vector3(1, 1, 1));
 
     public DbgPrimSolidBox(Transform location, Vector3 min, Vector3 max, Color color)

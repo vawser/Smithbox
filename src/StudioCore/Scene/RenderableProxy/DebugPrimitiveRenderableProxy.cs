@@ -24,8 +24,13 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 {
     private static DbgPrimSolidBox? _regionSolidBox;
     private static DbgPrimWireBox? _regionBox;
+
+    private static DbgPrimSolidCylinder? _regionSolidCylinder;
     private static DbgPrimWireCylinder? _regionCylinder;
+
+    private static DbgPrimSolidSphere? _regionSolidSphere;
     private static DbgPrimWireSphere? _regionSphere;
+
     private static DbgPrimWireSphere? _regionPoint;
     private static DbgPrimWireSphere? _dmyPoint;
     private static DbgPrimWireSphereForwardUp? _dmySphereFwdUp;
@@ -508,11 +513,23 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
             new Vector3(0.5f, 1.0f, 0.5f), 
             Color.Blue);
 
+        _regionSolidCylinder = new DbgPrimSolidCylinder(
+            Transform.Default,
+            1.0f,
+            1.0f,
+            12,
+            Color.Blue);
+
         _regionCylinder = new DbgPrimWireCylinder(
             Transform.Default, 
             1.0f, 
             1.0f, 
             12, 
+            Color.Blue);
+
+        _regionSolidSphere = new DbgPrimSolidSphere(
+            Transform.Default,
+            1.0f,
             Color.Blue);
 
         _regionSphere = new DbgPrimWireSphere(
@@ -605,8 +622,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public static DebugPrimitiveRenderableProxy GetSolidBoxRegionProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox);
-        r.BaseColor = ColorHelper.GetAlphaRenderableColor(CFG.Current.GFX_Renderable_Box_BaseColor);
-        r.HighlightedColor = ColorHelper.GetAlphaRenderableColor(CFG.Current.GFX_Renderable_Box_HighlightColor);
+        r.BaseColor = ColorHelper.GetRenderableColor_WithAlpha(CFG.Current.GFX_Renderable_Box_BaseColor);
+        r.HighlightedColor = ColorHelper.GetRenderableColor_WithAlpha(CFG.Current.GFX_Renderable_Box_HighlightColor);
         //ColorHelper.ApplyColorVariance(r);
         return r;
     }
@@ -620,12 +637,30 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         return r;
     }
 
+    public static DebugPrimitiveRenderableProxy GetSolidCylinderRegionProxy(RenderScene scene)
+    {
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidCylinder);
+        r.BaseColor = ColorHelper.GetRenderableColor_WithAlpha(CFG.Current.GFX_Renderable_Cylinder_BaseColor);
+        r.HighlightedColor = ColorHelper.GetRenderableColor_WithAlpha(CFG.Current.GFX_Renderable_Cylinder_HighlightColor);
+        //ColorHelper.ApplyColorVariance(r);
+        return r;
+    }
+
     public static DebugPrimitiveRenderableProxy GetCylinderRegionProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionCylinder);
         r.BaseColor = ColorHelper.GetRenderableColor(CFG.Current.GFX_Renderable_Cylinder_BaseColor);
         r.HighlightedColor = ColorHelper.GetRenderableColor(CFG.Current.GFX_Renderable_Cylinder_HighlightColor);
         ColorHelper.ApplyColorVariance(r);
+        return r;
+    }
+
+    public static DebugPrimitiveRenderableProxy GetSolidSphereRegionProxy(RenderScene scene)
+    {
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidSphere);
+        r.BaseColor = ColorHelper.GetRenderableColor_WithAlpha(CFG.Current.GFX_Renderable_Sphere_BaseColor);
+        r.HighlightedColor = ColorHelper.GetRenderableColor_WithAlpha(CFG.Current.GFX_Renderable_Sphere_HighlightColor);
+        //ColorHelper.ApplyColorVariance(r);
         return r;
     }
 

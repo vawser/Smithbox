@@ -50,8 +50,8 @@ public class ViewportTab
             ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
             UIHelper.ShowHoverTooltip("Enabling this option will cause a selection outline to appear on selected objects.");
 
-            ImGui.DragFloat("Solid Rendering Transparency", ref CFG.Current.Viewport_Solid_Rendering_Alpha, 1.0f, 1.0f, 100.0f);
-            UIHelper.ShowHoverTooltip("Adjusts the transparency of solid rendered entities. 0 means no transparency.");
+            ImGui.DragFloat("Default Rendering Transparency", ref CFG.Current.Viewport_Solid_Rendering_Alpha, 1.0f, 1.0f, 100.0f);
+            UIHelper.ShowHoverTooltip("Adjusts the default transparency of solid rendered entities. 0 means no transparency.");
 
             if (ImGui.Button("Reset##ResetSelectionProperties", defaultButtonSize))
             {

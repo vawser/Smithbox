@@ -214,6 +214,12 @@ public class Universe
         if (obj.WrappedObject is IMsbRegion r2 && r2.Shape is MSB.Shape.Sphere s)
         {
             DebugPrimitiveRenderableProxy mesh = DebugPrimitiveRenderableProxy.GetSphereRegionProxy(_renderScene);
+
+            if (renderType is RenderModelType.Solid)
+            {
+                mesh = DebugPrimitiveRenderableProxy.GetSolidSphereRegionProxy(_renderScene);
+            }
+
             mesh.World = obj.GetWorldMatrix();
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Region;
@@ -232,6 +238,12 @@ public class Universe
         if (obj.WrappedObject is IMsbRegion r4 && r4.Shape is MSB.Shape.Cylinder c)
         {
             DebugPrimitiveRenderableProxy mesh = DebugPrimitiveRenderableProxy.GetCylinderRegionProxy(_renderScene);
+
+            if (renderType is RenderModelType.Solid)
+            {
+                mesh = DebugPrimitiveRenderableProxy.GetSolidCylinderRegionProxy(_renderScene);
+            }
+
             mesh.World = obj.GetWorldMatrix();
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Region;

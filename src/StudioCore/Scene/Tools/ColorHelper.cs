@@ -52,7 +52,7 @@ public static class ColorHelper
     /// <summary>
     /// Transparent colors
     /// </summary>
-    public static Color GetAlphaRenderableColor(Vector3 color)
+    public static Color GetRenderableColor_WithAlpha(Vector3 color)
     {
         var transparency = CFG.Current.Viewport_Solid_Rendering_Alpha;
 
