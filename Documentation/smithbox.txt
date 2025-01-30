@@ -16,13 +16,18 @@
 
 
 # MAP EDITOR
-- Add mass entity ID assignment tool to map editor
- - Use ID format + rules to allow user to tailor what is assigned
- 
-- Visualisations:
- - Add the transparent solid regions for more types:
-  - Cylinders
-  - Spheres
-  - The special sub types for Lights, etc.
-  
+Region Select:
+ - Add ability to spawn 'selection' region primitive via shortcut:
+  - Brings up Region Select panel for editing the shape and submitting the selection
+  - Once select is submitted, add all map objects within the bounding box of the region to the current selection, delete the 'selection' region.
+
+Visualisations:
  - Add ability to set temporary color override with hotkey for solid region
+ 
+ - Add the transparent solid regions for more types:
+  - Point
+  - Model Marker
+  - Sphere with Arrow
+  - Point Light
+  - Spot Light
+  - Directional Light

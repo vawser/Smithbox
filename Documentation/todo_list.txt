@@ -9,13 +9,7 @@ General:
  - ADD: Add format json support for the other MSB types.
  - ADD: Add articles covering all of the features and common use-cases in Smithbox
  
- - ADD: global search: allow user to enter regex search term, then collate matches in ALL possible data 
-  - add quick-links if possible
-  - add toggles for data sources
-  - should be new menubar item as it is independant of any editor (after debugging)
- 
 Viewport:
- - ADD: support for transparent shapes, so regions can be better visualized
  - ADD: support for billboard sprites, e.g. images that are rendered towards the camera but placed at a fixed point in the viewport space
  - FIX: viewport resources aren't being fully purged, memory is held, meaning RAM usage goes up if lots of resources are loaded in and doesn't decrease after unload
  
@@ -51,15 +45,14 @@ Map Editor:
  - ADD: global prop edit
  - ADD: MSB xml export
  - ADD: local prop search should focus tool window + prop search collapsible
+ - ADD: Add mass entity ID assignment tool to map editor: Use ID format + rules to allow user to tailor what is assigned
+ 
  
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  - FIX: misc texture loads during map load can hang, causing the load window to never disppear. (e.g. Leyndell)
  
 Param Editor
- - ADD: DES Meta
- - ADD: DS1 Meta
- - ADD: translated BB row names
  - ADD: Copy to NPC AtkParam/BehaviorParam from PC AtkParam/BehaviorParam and vice versa
  - ADD: Revert param to Vanilla + Revert selected rows to Vanilla
  - ADD: stayparam support for DS3 (requires 'blob' editor with manual definitions)
@@ -81,6 +74,7 @@ Model Editor:
  - ADD: Add Collision section in hierarchy
  - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
  - ADD: GX Item mapping so the byte arrays are more comprehesible
+ - ADD: material entry import based on selected Matbin/MTD for imported model
 
  - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)

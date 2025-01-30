@@ -324,50 +324,7 @@ public class MapActionHandler
             {
                 if (s.RenderSceneMesh != null)
                 {
-                    var framingBounds = s.RenderSceneMesh.GetFramingBounds();
-
-                    // Calculate the bounding box for regions, as the debug primitives themselves do not.
-                    if (s.WrappedObject is IMsbRegion)
-                    {
-                        var position = s.GetPropertyValue<Vector3>("Position");
-                        var shape = s.GetPropertyValue<MSB.Shape>("Shape");
-
-                        if (shape != null)
-                        {
-                            // Box
-                            if (shape is MSB.Shape.Box)
-                            {
-                                var boxShape = (MSB.Shape.Box)shape;
-
-                                var width = boxShape.Width;
-                                var depth = boxShape.Depth;
-                                var height = boxShape.Height;
-
-                                framingBounds = BoundingBoxHelper.GenerateBoundingBox(position, width, height, depth);
-                            }
-
-                            // Cylinder
-                            if (shape is MSB.Shape.Cylinder)
-                            {
-                                var cylinderShape = (MSB.Shape.Cylinder)shape;
-
-                                var height = cylinderShape.Height;
-                                var radius = cylinderShape.Radius;
-
-                                framingBounds = BoundingBoxHelper.GenerateBoundingBox(position, radius, height);
-                            }
-
-                            // Sphere
-                            if (shape is MSB.Shape.Sphere)
-                            {
-                                var sphereShape = (MSB.Shape.Sphere)shape;
-
-                                var radius = sphereShape.Radius;
-
-                                framingBounds = BoundingBoxHelper.GenerateBoundingBox(position, radius);
-                            }
-                        }
-                    }
+                    var framingBounds = BoundingBoxHelper.GetDerivedBoundingBox(s);
 
                     if (!first)
                     {

@@ -3,6 +3,7 @@ using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
+using StudioCore.Editors.MapEditor.Helpers;
 using StudioCore.Scene;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Interfaces;
@@ -254,7 +255,7 @@ public class MapShortcuts
             // Toggle Render Type
             if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_ToggleRenderType))
             {
-                ViewportActionCommon.ToggleRenderType(Selection);
+                VisualizationHelper.ToggleRenderType(Selection);
             }
 
             // Gizmos

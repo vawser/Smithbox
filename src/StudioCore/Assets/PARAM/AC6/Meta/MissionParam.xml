@@ -162,7 +162,7 @@
     AltName="Repair Cost Multiplier" 
     Wiki="Multiplier to the cost of repair taken after mission completion." />
     
-    <damageCostMax 
+    <repairCost_limit 
     AltName="Repair Cost Maximum" 
     Wiki="Cap to the cost of repair taken after mission completion." />
     

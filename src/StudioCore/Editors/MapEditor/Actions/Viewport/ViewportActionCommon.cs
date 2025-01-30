@@ -22,29 +22,6 @@ namespace StudioCore.Editors.MapEditor.Actions.Viewport;
 /// </summary>
 public static class ViewportActionCommon
 {
-    public static void ToggleRenderType(ViewportSelection selection)
-    {
-        selection.StoreSelection();
-        var sel = selection.GetSelection();
-
-        foreach(var entry in sel)
-        {
-            var ent = (Entity)entry;
-
-            if(ent is MsbEntity)
-            {
-                var mEnt = (MsbEntity)ent;
-
-                if(!mEnt.IsSwitchingRenderType && mEnt.Type is Enums.MsbEntityType.Region)
-                {
-                    mEnt.SwitchRenderType();
-                }
-            }
-        }
-
-        selection.ResetSelection();
-    }
-
     public static void SetUniqueEntityID(MsbEntity sel, MapContainer map)
     {
         if (sel.WrappedObject is BTL.Light)
