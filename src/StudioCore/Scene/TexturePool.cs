@@ -459,8 +459,14 @@ public class TexturePool
 
             Format = format;
 
-            // Ignore if in the Texture Viewer so it can display irregular textures
-            if (Smithbox.EditorHandler.FocusedEditor is not TextureViewerScreen)
+            var exlusions = new List<string>()
+            {
+                "world_map_vanilla",
+                "world_map_sote"
+            };
+
+            // Ignore if in the Texture Viewer, or for the world map textures
+            if (Smithbox.EditorHandler.FocusedEditor is not TextureViewerScreen && !exlusions.Contains(tex.Name))
             {
                 if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))
                 {
