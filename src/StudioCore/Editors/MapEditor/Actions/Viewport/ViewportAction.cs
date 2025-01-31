@@ -1970,16 +1970,19 @@ public class OrderMapObjectsAction : ViewportAction
                         {
                             if (curSel == mapRoot.Objects[i])
                             {
-                                if (i == indexStart)
+                                if (i < mapRoot.Objects.Count)
                                 {
-                                    break;
-                                }
-                                else
-                                {
-                                    var prevEntry = mapRoot.Objects[i - 1];
-                                    mapRoot.Objects[i - 1] = curSel;
-                                    mapRoot.Objects[i] = prevEntry;
-                                    break;
+                                    if (i == indexStart)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        var prevEntry = mapRoot.Objects[i - 1];
+                                        mapRoot.Objects[i - 1] = curSel;
+                                        mapRoot.Objects[i] = prevEntry;
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -1992,16 +1995,19 @@ public class OrderMapObjectsAction : ViewportAction
                         {
                             if (curSel == mapRoot.Objects[i])
                             {
-                                if (i == indexEnd)
+                                if (i < mapRoot.Objects.Count)
                                 {
-                                    break;
-                                }
-                                else
-                                {
-                                    var nextEntry = mapRoot.Objects[i + 1];
-                                    mapRoot.Objects[i + 1] = curSel;
-                                    mapRoot.Objects[i] = nextEntry;
-                                    break;
+                                    if (i == indexEnd)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        var nextEntry = mapRoot.Objects[i + 1];
+                                        mapRoot.Objects[i + 1] = curSel;
+                                        mapRoot.Objects[i] = nextEntry;
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -2015,7 +2021,7 @@ public class OrderMapObjectsAction : ViewportAction
                         // Find the index for the moved selection
                         for (int i = indexStart; i <= indexEnd; i++)
                         {
-                            if (mapRoot.Objects[i] == curSel)
+                            if (i < mapRoot.Objects.Count && mapRoot.Objects[i] == curSel)
                             {
                                 rootIndex = i;
                             }
@@ -2024,7 +2030,7 @@ public class OrderMapObjectsAction : ViewportAction
                         // For all entries above it, move them down
                         for (int i = rootIndex; i >= indexStart; i--)
                         {
-                            if (i > 0)
+                            if (i < mapRoot.Objects.Count && i > 0)
                             {
                                 mapRoot.Objects[i] = mapRoot.Objects[i - 1];
                             }
@@ -2041,7 +2047,7 @@ public class OrderMapObjectsAction : ViewportAction
                         // Find the index for the moved selection
                         for (int i = indexStart; i <= indexEnd; i++)
                         {
-                            if (mapRoot.Objects[i] == curSel)
+                            if (i < mapRoot.Objects.Count && mapRoot.Objects[i] == curSel)
                             {
                                 rootIndex = i;
                             }
