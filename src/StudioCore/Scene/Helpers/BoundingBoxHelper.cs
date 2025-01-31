@@ -67,18 +67,33 @@ public static class BoundingBoxHelper
                 if (shape is MSB.Shape.Circle)
                 {
                     var circleShape = (MSB.Shape.Circle)shape;
+
+                    var height = 1.0f;
+                    var radius = circleShape.Radius;
+
+                    framingBounds = GenerateBoundingBox(position, radius, height);
                 }
 
                 // Rectangle
                 if (shape is MSB.Shape.Rectangle)
                 {
                     var rectShape = (MSB.Shape.Rectangle)shape;
+
+                    var width = rectShape.Width;
+                    var depth = rectShape.Depth;
+                    var height = 1.0f;
+
+                    framingBounds = GenerateBoundingBox(position, width, height, depth);
                 }
 
                 // Point
                 if (shape is MSB.Shape.Point)
                 {
                     var pointShape = (MSB.Shape.Point)shape;
+
+                    var radius = 1.0f;
+
+                    framingBounds = GenerateBoundingBox(position, radius);
                 }
             }
         }

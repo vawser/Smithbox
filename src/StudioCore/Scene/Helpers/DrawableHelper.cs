@@ -228,7 +228,7 @@ public static class DrawableHelper
                 // CIRCLE
                 else if (r.Shape is MSB.Shape.Circle)
                 {
-                    mesh = RenderableHelper.GetSolidBoxRegionProxy(scene);
+                    mesh = RenderableHelper.GetSolidCylinderRegionProxy(scene);
                 }
                 // COMPOSITE
                 else if (r.Shape is MSB.Shape.Composite)

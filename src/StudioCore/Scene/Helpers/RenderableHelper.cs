@@ -13,16 +13,17 @@ namespace StudioCore.Scene.Helpers;
 
 public static class RenderableHelper
 {
-    private static DbgPrimSolidBox? _regionSolidBox;
     private static DbgPrimWireBox? _regionBox;
+    private static DbgPrimSolidBox? _regionSolidBox;
 
-    private static DbgPrimSolidCylinder? _regionSolidCylinder;
     private static DbgPrimWireCylinder? _regionCylinder;
+    private static DbgPrimSolidCylinder? _regionSolidCylinder;
 
-    private static DbgPrimSolidSphere? _regionSolidSphere;
     private static DbgPrimWireSphere? _regionSphere;
+    private static DbgPrimSolidSphere? _regionSolidSphere;
 
-    private static DbgPrimWireSphere? _regionPoint;
+    private static DbgPrimWirePoint? _regionPoint;
+    private static DbgPrimSolidPoint? _regionSolidPoint;
 
     private static DbgPrimWireSphere? _pointLight;
     private static DbgPrimWireSpotLight? _spotLight;
@@ -81,17 +82,22 @@ public static class RenderableHelper
             1.0f,
             Color.Blue);
 
-        _regionPoint = new DbgPrimWireSphere(
+        _regionPoint = new DbgPrimWirePoint(
             Transform.Default,
             1.0f,
             Color.Yellow,
             1,
             4);
 
+        _regionSolidPoint = new DbgPrimSolidPoint(
+            Transform.Default,
+            1.0f,
+            Color.Blue);
+
         _dmyPoint = new DbgPrimWireSphere(
             Transform.Default,
             0.05f,
-            Color.Yellow,
+            Color.Blue,
             1,
             4);
 
@@ -284,7 +290,7 @@ public static class RenderableHelper
         var highlightColor = CFG.Current.GFX_Renderable_Point_HighlightColor;
         var transparency = CFG.Current.GFX_Renderable_Point_Alpha;
 
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionPoint);
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidPoint);
 
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);

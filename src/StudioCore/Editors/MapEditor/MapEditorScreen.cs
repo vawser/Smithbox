@@ -9,6 +9,7 @@ using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor.Helpers;
 using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.MapEditor.Tools.AssetBrowser;
@@ -413,6 +414,15 @@ public class MapEditorScreen : EditorScreen
                 ActionHandler.ApplyMoveToCamera();
             }
             UIHelper.ShowHoverTooltip("Move the current selection to the camera position.");
+
+            ///--------------------
+            // Toggle Render Type
+            ///--------------------
+            if (ImGui.MenuItem("Toggle Render Type", KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText))
+            {
+                VisualizationHelper.ToggleRenderType(Selection);
+            }
+            UIHelper.ShowHoverTooltip("Toggle the render type of the current selection.");
 
             ImGui.Separator();
 
