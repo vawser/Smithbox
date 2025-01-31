@@ -205,22 +205,20 @@ public static class EmevdBank
             var info = entry.Key;
             var script = entry.Value;
 
-            if (info.IsModified)
+            // Always save everything for DS2
+            foreach (BinderFile f in emevdBnd.Files)
             {
-                foreach (BinderFile f in emevdBnd.Files)
+                var scriptName = Path.GetFileNameWithoutExtension(f.Name);
+
+                if (!f.Name.ToUpper().EndsWith(".EMEVD"))
                 {
-                    var scriptName = Path.GetFileNameWithoutExtension(f.Name);
+                    continue;
+                }
 
-                    if (!f.Name.ToUpper().EndsWith(".emevd"))
-                    {
-                        continue;
-                    }
-
-                    if (scriptName == info.Name)
-                    {
-                        var bytes = script.Write();
-                        f.Bytes = bytes;
-                    }
+                if (scriptName == info.Name)
+                {
+                    var bytes = script.Write();
+                    f.Bytes = bytes;
                 }
             }
         }
@@ -228,6 +226,8 @@ public static class EmevdBank
 
         Utils.WriteWithBackup(dir, mod, @"enc_regulation.bnd.dcx", emevdBnd);
         emevdBnd.Dispose();
+
+        TaskLogs.AddLog("Saved EMEVD scripts.", LogLevel.Information);
     }
 
     public static void LoadEventScripts()

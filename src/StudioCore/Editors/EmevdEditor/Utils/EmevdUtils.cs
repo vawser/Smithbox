@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Core.Project;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -116,5 +117,22 @@ public static class EmevdUtils
         }
 
         return (argDocList, argList);
+    }
+
+    public static string GetDS2ItemAlias(EMEVD.Event evt)
+    {
+        var eventName = evt.Name;
+        var itemName = ParamBank.PrimaryBank.GetParamFromName("ItemParam");
+
+        if (itemName != null)
+        {
+
+            var itemRow = itemName.Rows.Where(e => e.ID == (int)evt.ID).FirstOrDefault();
+
+            if (itemRow != null)
+                eventName = itemRow.Name;
+        }
+
+        return eventName;
     }
 }

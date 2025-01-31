@@ -282,7 +282,17 @@ public class EmevdEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        EmevdBank.SaveEventScript(Selection.SelectedFileInfo, Selection.SelectedScript);
+        if (!EmevdBank.IsLoaded)
+            return;
+
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            EmevdBank.SaveEventScripts();
+        }
+        else
+        {
+            EmevdBank.SaveEventScript(Selection.SelectedFileInfo, Selection.SelectedScript);
+        }
     }
 
     /// <summary>

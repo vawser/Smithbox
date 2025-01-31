@@ -130,7 +130,9 @@ public class EmevdFilters
     /// </summary>
     public bool IsEventFilterMatch(EMEVD.Event evt)
     {
-        var text = $"{evt.ID} {evt.Name}";
+        var aliasText = EmevdUtils.GetDS2ItemAlias(evt);
+        var text = $"{evt.ID} {evt.Name} {aliasText}";
+
 
         bool isValid = true;
 
@@ -187,7 +189,6 @@ public class EmevdFilters
                             partTruth[i] = true;
                     }
                 }
-
             }
 
             // Only evaluate as true if all parts are true

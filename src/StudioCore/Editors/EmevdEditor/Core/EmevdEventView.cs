@@ -8,6 +8,7 @@ using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -63,16 +64,7 @@ public class EmevdEventView
                 var eventName = evt.Name;
                 if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
-                    var itemName = ParamBank.PrimaryBank.GetParamFromName("ItemParam");
-
-                    if(itemName != null)
-                    {
-
-                        var itemRow = itemName.Rows.Where(e => e.ID == (int)evt.ID).FirstOrDefault();
-
-                        if (itemRow != null)
-                            eventName = itemRow.Name;
-                    }
+                    eventName = EmevdUtils.GetDS2ItemAlias(evt);
                 }
 
                 if (Filters.IsEventFilterMatch(evt))
@@ -82,6 +74,9 @@ public class EmevdEventView
                     {
                         Selection.SelectedEvent = evt;
                         Selection.SelectedEventIndex = i;
+
+                        Selection.SelectedInstruction = null;
+                        Selection.SelectedInstructionIndex = -1;
                     }
 
                     // Arrow Selection
@@ -90,6 +85,9 @@ public class EmevdEventView
                         Selection.SelectNextEvent = false;
                         Selection.SelectedEvent = evt;
                         Selection.SelectedEventIndex = i;
+
+                        Selection.SelectedInstruction = null;
+                        Selection.SelectedInstructionIndex = -1;
                     }
                     if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                     {
