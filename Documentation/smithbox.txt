@@ -28,3 +28,5 @@ Visualisations:
   - Point Light
   - Spot Light
   - Directional Light
+  
+- Implement the map contents search bar

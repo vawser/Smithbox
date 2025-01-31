@@ -314,6 +314,7 @@ public static class DrawableHelper
                 mesh = RenderableHelper.GetSolidSpotLightProxy(scene);
             }
         }
+        // WIREFRAME
         else if (renderType is RenderModelType.Wireframe)
         {
             if (light.Type is BTL.LightType.Directional)

@@ -1,6 +1,7 @@
 ﻿using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
+using StudioCore.Scene.Meshes;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -39,6 +40,42 @@ public static class RenderableHelper
     private static DbgPrimWireSphere? _jointSphere;
 
     private static DbgPrimTree? _solidTree;
+
+    /// <summary>
+    /// List of assets starting IDs that will always receive a tree marker.
+    /// Contains speedtree AEGs, which currently do not render in Smithbox.
+    /// Can be removed when speedtree rendering is functional.
+    /// </summary>
+    public static readonly HashSet<string> SpeedTree_Assets = new()
+    {
+        "AEG801",
+        "AEG805",
+        "AEG810",
+        "AEG811",
+        "AEG813",
+        "AEG814",
+        "AEG815",
+        "AEG816"
+    };
+
+    /// <summary>
+    /// Returns true if the passed mesh provider is a Speed Tree asset
+    /// </summary>
+    public static bool IsSpeedTreeAsset(MeshProvider _meshProvider)
+    {
+        if (_meshProvider is FlverMeshProvider fProvider)
+        {
+            if (SpeedTree_Assets.FirstOrDefault(n => fProvider.MeshName.ToUpper().StartsWith(n)) != null)
+            {
+                if (fProvider.MeshName.ToUpper() != "AEG801_224")
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 
     /// <summary>
     /// These are initialized explicitly to ensure these meshes are created at startup time so that they don't share

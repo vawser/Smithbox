@@ -64,10 +64,15 @@ public class EmevdEventView
                 if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
                     var itemName = ParamBank.PrimaryBank.GetParamFromName("ItemParam");
-                    var itemRow = itemName.Rows.Where(e => e.ID == (int)evt.ID).FirstOrDefault();
 
-                    if (itemRow != null)
-                        eventName = itemRow.Name;
+                    if(itemName != null)
+                    {
+
+                        var itemRow = itemName.Rows.Where(e => e.ID == (int)evt.ID).FirstOrDefault();
+
+                        if (itemRow != null)
+                            eventName = itemRow.Name;
+                    }
                 }
 
                 if (Filters.IsEventFilterMatch(evt))
