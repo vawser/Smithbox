@@ -9,8 +9,10 @@ using StudioCore.Editors.MapEditor.Tools.MapConnections;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
+using StudioCore.Scene;
+using StudioCore.Scene.Framework;
+using StudioCore.Scene.Helpers;
 using StudioCore.Scene.Interfaces;
-using StudioCore.Scene.RenderableProxy;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -413,7 +415,10 @@ public class Entity : ISelectable, IDisposable
                 }
                 else
                 {
-                    Array.Copy(arr, target, arr.Length);
+                    if (target != null)
+                    {
+                        Array.Copy(arr, target, arr.Length);
+                    }
                 }
             }
             else if (sourceProperty.CanWrite)
@@ -1797,7 +1802,7 @@ public class MsbEntity : Entity
                 _renderSceneMesh.Dispose();
             }
 
-            _renderSceneMesh = Universe.GetDS2EventLocationDrawable(ContainingMap, this);
+            _renderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(Universe._renderScene, ContainingMap, this);
         }
         else if (Type == MsbEntityType.Region && _renderSceneMesh == null)
         {
@@ -1806,7 +1811,7 @@ public class MsbEntity : Entity
                 _renderSceneMesh.Dispose();
             }
 
-            _renderSceneMesh = Universe.GetRegionDrawable(ContainingMap, this, EntityRenderType);
+            _renderSceneMesh = DrawableHelper.GetRegionDrawable(Universe._renderScene, ContainingMap, this, EntityRenderType);
         }
         else if (Type == MsbEntityType.Light && _renderSceneMesh == null)
         {
@@ -1815,7 +1820,7 @@ public class MsbEntity : Entity
                 _renderSceneMesh.Dispose();
             }
 
-            _renderSceneMesh = Universe.GetLightDrawable(ContainingMap, this);
+            _renderSceneMesh = DrawableHelper.GetLightDrawable(Universe._renderScene, ContainingMap, this, EntityRenderType);
         }
         else
         {
@@ -1850,7 +1855,7 @@ public class MsbEntity : Entity
                     // Get model
                     if (model != null)
                     {
-                        _renderSceneMesh = Universe.GetModelDrawable(ContainingMap, this, model, true, ModelMasks);
+                        _renderSceneMesh = DrawableHelper.GetModelDrawable(Universe._renderScene, ContainingMap, this, model, true, ModelMasks);
                     }
 
                     if (Universe.Selection.IsSelected(this))

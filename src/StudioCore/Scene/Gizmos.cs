@@ -5,7 +5,7 @@ using StudioCore.Editors;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Scene.DebugPrimitives;
-using StudioCore.Scene.RenderableProxy;
+using StudioCore.Scene.Framework;
 using StudioCore.Settings;
 using System;
 using System.Collections.Generic;

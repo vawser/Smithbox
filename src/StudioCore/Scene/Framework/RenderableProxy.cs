@@ -3,7 +3,6 @@ using StudioCore;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Resource;
 using StudioCore.Scene.Enums;
-using StudioCore.Scene.Framework;
 using StudioCore.Scene.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,7 +14,7 @@ using Veldrid;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
 
-namespace StudioCore.Scene.RenderableProxy;
+namespace StudioCore.Scene.Framework;
 
 /// <summary>
 /// Proxy class that represents a connection between the logical scene

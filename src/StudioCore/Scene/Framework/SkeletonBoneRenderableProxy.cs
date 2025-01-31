@@ -3,7 +3,7 @@ using StudioCore;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Resource;
 using StudioCore.Scene.Enums;
-using StudioCore.Scene.Framework;
+using StudioCore.Scene.Helpers;
 using StudioCore.Scene.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ using Veldrid;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
 
-namespace StudioCore.Scene.RenderableProxy;
+namespace StudioCore.Scene.Framework;
 
 public class SkeletonBoneRenderableProxy : RenderableProxy
 {
@@ -47,7 +47,7 @@ public class SkeletonBoneRenderableProxy : RenderableProxy
 
     public SkeletonBoneRenderableProxy(RenderScene scene)
     {
-        _bonePointRenderable = DebugPrimitiveRenderableProxy.GetBonePointProxy(scene);
+        _bonePointRenderable = RenderableHelper.GetBonePointProxy(scene);
         ScheduleRenderableConstruction();
         AutoRegister = true;
         _registered = true;

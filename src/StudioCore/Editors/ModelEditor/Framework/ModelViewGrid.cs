@@ -2,7 +2,7 @@
 using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Scene.DebugPrimitives;
-using StudioCore.Scene.RenderableProxy;
+using StudioCore.Scene.Framework;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

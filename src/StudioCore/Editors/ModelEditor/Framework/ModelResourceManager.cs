@@ -11,7 +11,7 @@ using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
 using StudioCore.Scene.Enums;
-using StudioCore.Scene.RenderableProxy;
+using StudioCore.Scene.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
 
-namespace StudioCore.Scene.Tools;
+namespace StudioCore.Scene.Helpers;
 
 public static class BoundingBoxHelper
 {

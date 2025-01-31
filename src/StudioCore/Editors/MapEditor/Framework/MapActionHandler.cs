@@ -14,7 +14,7 @@ using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
-using StudioCore.Scene.Tools;
+using StudioCore.Scene.Helpers;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

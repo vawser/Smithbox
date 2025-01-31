@@ -10,7 +10,7 @@ using System.Numerics;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Types;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Scene.RenderableProxy;
+using StudioCore.Scene.Framework;
 
 namespace StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 

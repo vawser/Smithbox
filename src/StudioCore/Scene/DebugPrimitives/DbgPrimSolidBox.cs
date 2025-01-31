@@ -1,5 +1,4 @@
-﻿using StudioCore.Scene.Tools;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
 using Veldrid.Utilities;

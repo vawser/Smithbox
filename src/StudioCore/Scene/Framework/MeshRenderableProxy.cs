@@ -3,7 +3,7 @@ using StudioCore;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Resource;
 using StudioCore.Scene.Enums;
-using StudioCore.Scene.Framework;
+using StudioCore.Scene.Helpers;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Scene.Meshes;
 using StudioCore.Scene.Structs;
@@ -17,7 +17,7 @@ using Veldrid;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
 
-namespace StudioCore.Scene.RenderableProxy;
+namespace StudioCore.Scene.Framework;
 
 /// <summary>
 ///     Render proxy for a single static mesh
@@ -283,7 +283,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             if (needsPlaceholder)
             {
                 _placeholderProxy =
-                    DebugPrimitiveRenderableProxy.GetModelMarkerProxy(_renderablesSet, _placeholderType);
+                    RenderableHelper.GetModelMarkerProxy(_renderablesSet, _placeholderType);
                 _placeholderProxy.World = World;
                 _placeholderProxy.Visible = Visible;
                 _placeholderProxy.DrawFilter = _drawfilter;

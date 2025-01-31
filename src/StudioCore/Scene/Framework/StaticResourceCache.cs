@@ -1,5 +1,5 @@
-﻿using StudioCore.Scene.Structs;
-using StudioCore.Scene.Tools;
+﻿using StudioCore.Scene.Helpers;
+using StudioCore.Scene.Structs;
 using System.Collections.Generic;
 using Veldrid;
 using Vortice.Vulkan;

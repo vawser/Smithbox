@@ -1,4 +1,5 @@
-﻿using StudioCore.Scene.RenderableProxy;
+﻿using StudioCore.Scene.Framework;
+using StudioCore.Scene.Helpers;
 using StudioCore.Scene.Structs;
 using System;
 using System.Collections.Concurrent;
@@ -117,7 +118,7 @@ public class Renderer
 
         // Initialize global debug primitives
         // TODO: Make vertex buffer allocation smarter so that we don't need to do this
-        DebugPrimitiveRenderableProxy.InitializeDebugMeshes();
+        RenderableHelper.InitializeDebugMeshes();
     }
 
     public static void RegisterRenderQueue(RenderQueue queue)

@@ -8,7 +8,8 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
-using StudioCore.Scene.RenderableProxy;
+using StudioCore.Scene.Framework;
+using StudioCore.Scene.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -70,7 +71,7 @@ public class ModelContainer : ObjectContainer
         {
             var boneNode = new TransformableNamedEntity(this, flver.Nodes[i], $"Bone {i} {{ {flver.Nodes[i].Name} }}", i);
 
-            boneNode.RenderSceneMesh = Universe.GetBoneDrawable(this, boneNode);
+            boneNode.RenderSceneMesh = DrawableHelper.GetBoneDrawable(Universe._renderScene, this, boneNode);
             if(CFG.Current.ModelEditor_ViewDummyPolys)
             {
                 boneNode.EditorVisible = true;
@@ -89,7 +90,7 @@ public class ModelContainer : ObjectContainer
         {
             var dummyPolyNode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}", i);
 
-            dummyPolyNode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dummyPolyNode);
+            dummyPolyNode.RenderSceneMesh = DrawableHelper.GetDummyPolyDrawable(Universe._renderScene, this, dummyPolyNode);
 
             if (CFG.Current.ModelEditor_ViewDummyPolys)
             {

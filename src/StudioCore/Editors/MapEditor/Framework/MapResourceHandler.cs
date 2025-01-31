@@ -8,7 +8,8 @@ using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene.Enums;
-using StudioCore.Scene.RenderableProxy;
+using StudioCore.Scene.Framework;
+using StudioCore.Scene.Helpers;
 using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
@@ -268,7 +269,9 @@ public class MapResourceHandler
                     masks = msbEnt.GetModelMasks();
                 }
 
-                Smithbox.EditorHandler.MapEditor.Universe.GetModelDrawable(map, obj, mp.ModelName, false, masks);
+                var renderScene = Smithbox.EditorHandler.MapEditor.Universe._renderScene;
+
+                DrawableHelper.GetModelDrawable(renderScene, map, obj, mp.ModelName, false, masks);
             }
         }
     }

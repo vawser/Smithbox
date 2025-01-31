@@ -1,4 +1,4 @@
-﻿using StudioCore.Scene.RenderableProxy;
+﻿using StudioCore.Scene.Framework;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -7,7 +7,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Scene.Tools;
+namespace StudioCore.Scene.Helpers;
 
 public static class ColorHelper
 {
@@ -22,13 +22,13 @@ public static class ColorHelper
 
         for (int i = 0; i < halfSize; i++) // Generate 3 lighter shades
         {
-            float factor = 1f + (0.2f * (i + 1)); // Increase brightness
+            float factor = 1f + 0.2f * (i + 1); // Increase brightness
             shades[i] = ChangeBrightness(baseColor, factor);
         }
 
         for (int i = 0; i < halfSize; i++) // Generate 3 darker shades
         {
-            float factor = 1f - (0.2f * (i + 1)); // Decrease brightness
+            float factor = 1f - 0.2f * (i + 1); // Decrease brightness
             shades[i + halfSize] = ChangeBrightness(baseColor, factor);
         }
 
@@ -52,19 +52,14 @@ public static class ColorHelper
     /// <summary>
     /// Transparent colors
     /// </summary>
-    public static Color GetRenderableColor_WithAlpha(Vector3 color)
+    public static Color GetTransparencyColor(Vector3 color, float alpha)
     {
-        var transparency = CFG.Current.Viewport_Solid_Rendering_Alpha;
-
-        var value = 255 * (transparency / 100);
+        var value = 255 * alpha;
 
         return Color.FromArgb((int)value, (int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
     }
 
-    /// <summary>
-    /// Solid colors
-    /// </summary>
-    public static Color GetRenderableColor(Vector3 color)
+    public static Color GetSolidColor(Vector3 color)
     {
         return Color.FromArgb((int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
     }
