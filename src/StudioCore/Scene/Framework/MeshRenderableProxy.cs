@@ -231,6 +231,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     public void OnProviderAvailable()
     {
         var needsPlaceholder = _placeholderType != ModelMarkerType.None;
+        var useTreePlaceholder = false;
+
         for (var i = 0; i < _meshProvider.ChildCount; i++)
         {
             MeshRenderableProxy child = new(_renderablesSet, _meshProvider.GetChildProvider(i),
@@ -276,17 +278,42 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                     {
                         // Non-rendering speedtree
                         needsPlaceholder = true;
+                        useTreePlaceholder = true;
                     }
                 }
             }
 
-            if (needsPlaceholder)
+            if (needsPlaceholder && !useTreePlaceholder)
             {
                 _placeholderProxy =
                     RenderableHelper.GetModelMarkerProxy(_renderablesSet, _placeholderType);
                 _placeholderProxy.World = World;
                 _placeholderProxy.Visible = Visible;
                 _placeholderProxy.DrawFilter = _drawfilter;
+                _placeholderProxy.DrawGroups = _drawgroups;
+                if (_selectable != null)
+                {
+                    _selectable.TryGetTarget(out ISelectable? sel);
+                    if (sel != null)
+                    {
+                        _placeholderProxy.SetSelectable(sel);
+                    }
+                }
+
+                if (_registered)
+                {
+                    _placeholderProxy.Register();
+                }
+            }
+
+            // Tree Placeholder
+            if (needsPlaceholder && useTreePlaceholder)
+            {
+                _placeholderProxy =
+                    RenderableHelper.GetTreeProxy(_renderablesSet);
+                _placeholderProxy.World = World;
+                _placeholderProxy.Visible = Visible;
+                _placeholderProxy.DrawFilter = RenderFilter.SpeedTree;
                 _placeholderProxy.DrawGroups = _drawgroups;
                 if (_selectable != null)
                 {

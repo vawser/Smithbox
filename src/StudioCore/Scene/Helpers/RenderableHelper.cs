@@ -37,6 +37,8 @@ public static class RenderableHelper
     private static DbgPrimWireSphereForwardUp? _dmySphereFwdUp;
     private static DbgPrimWireSphere? _jointSphere;
 
+    private static DbgPrimTree? _solidTree;
+
     /// <summary>
     /// These are initialized explicitly to ensure these meshes are created at startup time so that they don't share
     /// vertex buffer memory with dynamically allocated resources and cause the megabuffers to not be freed.
@@ -158,6 +160,14 @@ public static class RenderableHelper
             2,
             false,
             true);
+
+        _solidTree = new DbgPrimTree(
+            Transform.Default,
+            6f,  // Trunk height
+            0.5f,   // Trunk width
+            3f,   // Cluster radius
+            Color.Brown,
+            Color.Green);
     }
 
     // BOX REGION
@@ -458,4 +468,18 @@ public static class RenderableHelper
         return r;
     }
 
+    // Tree
+    public static DebugPrimitiveRenderableProxy GetTreeProxy(MeshRenderables renderables)
+    {
+        var baseColor = CFG.Current.GFX_Renderable_Box_BaseColor;
+        var highlightColor = CFG.Current.GFX_Renderable_Box_HighlightColor;
+        var transparency = 0.5f;
+
+        DebugPrimitiveRenderableProxy r = new(renderables, _solidTree, false);
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
 }

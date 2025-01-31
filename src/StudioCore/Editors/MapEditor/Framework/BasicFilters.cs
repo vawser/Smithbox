@@ -90,6 +90,12 @@ public class BasicFilters
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Debug);
         UIHelper.ShowActiveStatus(ticked);
 
-
+        // Speed Tree
+        if (ImGui.MenuItem("Speed Tree"))
+        {
+            RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
+        }
+        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.SpeedTree);
+        UIHelper.ShowActiveStatus(ticked);
     }
 }

@@ -14,5 +14,6 @@ public enum RenderFilter
     Navmesh = 64,
     Region = 128,
     Light = 256,
+    SpeedTree = 512,
     All = 0xFFFFFFF
 }

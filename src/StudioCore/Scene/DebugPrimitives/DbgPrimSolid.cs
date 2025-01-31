@@ -82,7 +82,6 @@ public class DbgPrimSolid : DbgPrim
         AddIndex((short)vertIndexB);
         AddIndex((short)vertIndexA);
     }
-
     protected override void DisposeBuffers()
     {
         //VertBuffer?.Dispose();

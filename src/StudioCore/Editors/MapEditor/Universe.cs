@@ -144,6 +144,9 @@ public class Universe
             case "Light":
                 filter = RenderFilter.Light;
                 break;
+            case "SpeedTree":
+                filter = RenderFilter.SpeedTree;
+                break;
             default:
                 filter = RenderFilter.All;
                 break;
