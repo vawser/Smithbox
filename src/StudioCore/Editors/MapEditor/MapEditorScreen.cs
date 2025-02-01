@@ -83,6 +83,7 @@ public class MapEditorScreen : EditorScreen
     // Menubar
     public BasicFilters BasicFilters;
     public RegionFilters RegionFilters;
+    public MapContentFilters MapContentFilter;
 
     // Tools
     public ToolWindow ToolWindow;
@@ -112,6 +113,7 @@ public class MapEditorScreen : EditorScreen
 
         BasicFilters = new BasicFilters(this);
         RegionFilters = new RegionFilters(this);
+        MapContentFilter = new MapContentFilters(this);
 
         // Framework
         ActionHandler = new MapActionHandler(this);

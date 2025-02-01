@@ -77,7 +77,8 @@ public class MapPropertyView
         // Header
         ImGui.SetNextItemWidth(ImGui.GetColumnWidth() * 0.75f);
         ImGui.AlignTextToFramePadding();
-        ImGui.InputText("Search##msbFieldSearch", ref msbFieldSearch, 255);
+        ImGui.InputText("##msbFieldSearch", ref msbFieldSearch, 255);
+        UIHelper.ShowHoverTooltip("Filter the properties by field names that exactly or partially match your input.");
         ImGui.Separator();
 
         // Properties
@@ -296,26 +297,6 @@ public class MapPropertyView
                 ImGui.Separator();
             }
 
-            // Actions
-            if (ImGui.Selectable(@"Search##PropSearch"))
-            {
-                Screen.ToolWindow.FocusLocalPropertySearch = true;
-                RequestedSearchProperty = prop;
-                EditorCommandQueue.AddCommand($@"map/propsearch/{prop.Name}");
-            }
-            if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
-            {
-                PlatformUtils.Instance.SetClipboardText(prop.Name);
-            }
-
-            if (Screen.MapQueryView.IsOpen)
-            {
-                if (ImGui.Selectable("Add to Property Filter"))
-                {
-                    Screen.MapQueryView.AddPropertyFilterInput(prop, arrayIndex);
-                }
-            }
-
             // Position - Copy/Paste
             if (meta != null && meta.PositionProperty)
             {
@@ -352,6 +333,37 @@ public class MapPropertyView
                 if (ImGui.Selectable(@"Paste##PasteScale"))
                 {
                     PropAction_Scale.PasteSavedScale(selection);
+                }
+            }
+
+
+            // Actions
+            if (ImGui.Selectable(@"Search##PropSearch"))
+            {
+                Screen.ToolWindow.FocusLocalPropertySearch = true;
+                RequestedSearchProperty = prop;
+                EditorCommandQueue.AddCommand($@"map/propsearch/{prop.Name}");
+            }
+            if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
+            {
+                PlatformUtils.Instance.SetClipboardText(prop.Name);
+            }
+            if (ImGui.Selectable(@"Copy Property Type##CopyPropType"))
+            {
+                var propType = prop.PropertyType;
+
+                if (propType != null)
+                {
+                    var primitiveType = propType.ToString().Replace("System.", "");
+                    PlatformUtils.Instance.SetClipboardText(primitiveType);
+                }
+            }
+
+            if (Screen.MapQueryView.IsOpen)
+            {
+                if (ImGui.Selectable("Add to Property Filter"))
+                {
+                    Screen.MapQueryView.AddPropertyFilterInput(prop, arrayIndex);
                 }
             }
 

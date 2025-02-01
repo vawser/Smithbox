@@ -6,6 +6,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor.Helpers;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Editors.ParamEditor.Actions;
@@ -22,6 +23,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Veldrid;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
 using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.MapEditor.Core;
@@ -39,7 +41,7 @@ public class MapContentView
     public string MapID;
     public ObjectContainer Container;
 
-    private string ImguiID = "";
+    public string ImguiID = "";
     private int treeImGuiId = 0;
 
     public MapContentViewType ContentViewType = MapContentViewType.ObjectType;
@@ -104,15 +106,9 @@ public class MapContentView
         if (ContentLoadState is MapContentLoadState.Unloaded)
             return;
 
-        DisplaySearchbar();
+        Screen.MapContentFilter.DisplaySearch(this);
 
-        ImGui.SameLine();
-        DisplayShowAllButton();
-
-        ImGui.SameLine();
-        DisplayHideAllButton();
-
-        ImGui.Separator();
+        DisplayQuickActionButtons();
 
         // Reset this every frame, otherwise the map object selectables won't work correctly
         treeImGuiId = 0;
@@ -121,28 +117,13 @@ public class MapContentView
     }
 
     /// <summary>
-    /// Handles the display of the searchbar
-    /// </summary>
-    public void DisplaySearchbar()
-    {
-        var width = ImGui.GetWindowWidth();
-
-        if (CFG.Current.MapEditor_MapObjectList_ShowMapContentSearch)
-        {
-            var mapId = MapID;
-            var mapName = AliasUtils.GetMapNameAlias(MapID);
-
-            ImGui.SetNextItemWidth(width * 0.75f);
-            ImGui.InputText($"##contentTreeSearch_{ImguiID}", ref SearchBarText, 255);
-            UIHelper.ShowHoverTooltip($"Filter the content tree entries for {mapId}: {mapName}");
-        }
-    }
-
-    /// <summary>
     /// Handles the show all button
     /// </summary>
-    private void DisplayShowAllButton()
+    private void DisplayQuickActionButtons()
     {
+        ImGui.SameLine();
+
+        // Show All
         if (ImGui.Button($"{ForkAwesome.Eye}"))
         {
             foreach(var entry in Container.Objects)
@@ -151,13 +132,9 @@ public class MapContentView
             }
         }
         UIHelper.ShowHoverTooltip("Force all map objects within this map to be shown.");
-    }
 
-    /// <summary>
-    /// Handles the hude all button
-    /// </summary>
-    private void DisplayHideAllButton()
-    {
+        // Hide All
+        ImGui.SameLine();
         if (ImGui.Button($"{ForkAwesome.EyeSlash}"))
         {
             foreach (var entry in Container.Objects)
@@ -423,6 +400,15 @@ public class MapContentView
                 }
                 UIHelper.ShowHoverTooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
 
+                if (ent.WrappedObject is IMsbRegion)
+                {
+                    if (ImGui.Selectable("Toggle Render Type"))
+                    {
+                        VisualizationHelper.ToggleRenderType(Selection);
+                    }
+                    UIHelper.ShowHoverTooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText}");
+                }
+
                 ImGui.Separator();
             }
 
@@ -485,7 +471,10 @@ public class MapContentView
                             {
                                 foreach (MsbEntity obj in typ.Value)
                                 {
-                                    MapObjectSelectable(obj, true);
+                                    if (Screen.MapContentFilter.ContentFilter(this, obj))
+                                    {
+                                        MapObjectSelectable(obj, true);
+                                    }
                                 }
                             }
                             else if (cats.Key == MsbEntityType.Light)
@@ -515,7 +504,11 @@ public class MapContentView
                                         for(int i = 0; i < parent.Children.Count; i++)
                                         {
                                             var curObj = parent.Children[i];
-                                            MapObjectSelectable(curObj, true);
+
+                                            if (Screen.MapContentFilter.ContentFilter(this, curObj))
+                                            {
+                                                MapObjectSelectable(curObj, true);
+                                            }
                                         }
 
                                         ImGui.TreePop();
@@ -544,7 +537,10 @@ public class MapContentView
                             {
                                 foreach (MsbEntity obj in typ.Value)
                                 {
-                                    MapObjectSelectable(obj, true);
+                                    if (Screen.MapContentFilter.ContentFilter(this, obj))
+                                    {
+                                        MapObjectSelectable(obj, true);
+                                    }
                                 }
 
                                 ImGui.TreePop();
