@@ -48,6 +48,9 @@
     Wiki="The weather at the start of the mission"
     Enum="WEATHER_TYPE" />
     
+    <pad01
+    Padding="" />
+    
     <missionType 
     AltName="Mission Type" 
     Wiki="The type of mission this is."
@@ -71,14 +74,12 @@
     Wiki="The activation distance (on the x/z-axis) of mission placement items." />
     
     <sortieCutsceneIdx 
-    AltName="Briefing Scene ID" 
-    Wiki="The garage cutscene to use for the mission briefing scene." 
-    Refs="GarageCutSceneParam" /> 
+    AltName="Briefing Scene Index" 
+    Wiki="The garage cutscene to use for the mission briefing scene."  /> 
     
     <returnCutsceneIdx 
-    AltName="Completion Scene ID" 
-    Wiki="The garage cutscene to use for the mission completion scene." 
-    Refs="GarageCutSceneParam" /> 
+    AltName="Completion Scene Index" 
+    Wiki="The garage cutscene to use for the mission completion scene." /> 
     
     <cutsceneTalkOffsetId
     AltName="Scene Conversation ID"
@@ -128,7 +129,7 @@
     Wiki="The first icon displayed in the menu for this mission." 
     Enum="MISSION_ICON_TYPE" />
     
-    <icon_0
+    <icon_1
     AltName="1: Mission Icon"
     Wiki="The second icon displayed in the menu for this mission." 
     Enum="MISSION_ICON_TYPE" />
@@ -236,7 +237,7 @@
     AltName="Time Score Multiplier"
     Wiki="Multiplier to the score based on time." />
     
-    <activateDistXZ
+    <activateDistY
     AltName="Activation Distance: Y"
     Wiki="The activation distance (on the y-axis) of mission placement items." />
     
@@ -379,13 +380,76 @@
     Refs="CharaInitParam" />
     
     <arenaMissionLineEntityId
-    AltName="Arena Boundary: Collision Entity ID"
+    AltName="Arena: Boundary Collision Entity ID"
     Wiki="The entity ID of the collision to enable during an Arena mission to form the map boundary." />
     
     <ResultMovie0_movieID
-    AltName=""
-    Wiki="" />
+    AltName="0: Post-Results - Movie ID"
+    Wiki="The movie ID to use after the results screen." 
+    MovieAlias="" />
     
+    <ResultMovie0_eventFlagID
+    AltName="0: Post-Results - Playback Flag ID"
+    Wiki="The event flag that determines movie playback. If 0, always play." 
+    FlagAlias="" />
+    
+    <ResultMovie1_movieID
+    AltName="1: Post-Results - Movie ID"
+    Wiki="The movie ID to use after the results screen." 
+    MovieAlias="" />
+    
+    <ResultMovie1_eventFlagID
+    AltName="0: Post-Results - Playback Flag ID"
+    Wiki="The event flag that determines movie playback. If 0, always play." 
+    FlagAlias="" />
+    
+    <arenaMissionFallDeadHitEntityId
+    AltName="Arena: Kill Collision Entity ID"
+    Wiki="The entity ID of the collision to enable during an Arena mission to form the kill boundary." />
+    
+    <acNameID
+    AltName="Sortie: AC Name ID"
+    Wiki="The text ID of the AC to display on the Sortie screen." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <fallDeadHeight
+    AltName="Forced Fall Death Height"
+    Wiki="The height at which death will occur dued to forced fall." />
+    
+    <WorldMapImageID
+    AltName="Mission Selection: Map Image ID"
+    Wiki="The image ID of the world map image displayed on the mission selection screen." />
+    
+    <MapInfoImageID
+    AltName="Mission Selection: Supplementary Image ID"
+    Wiki="The image ID of the supplementary image displayed on the mission selection screen." />
+    
+    <preLoadChrTexId
+    AltName="Preloaded Character ID"
+    Wiki="The character ID to load at the start of the mission for its textures. Used when memory fragmentation occurs with dynamic character loading." />
+    
+    <updateGeomLimitNum
+    AltName="Asset Update Limit"
+    Wiki="The update limit for assets per frame." />
+    
+    <hiHitLimitRange
+    AltName="High Collision Distance"
+    Wiki="The distance at which high collision is activated. In metres." />
+    
+    <hiLoadMaxNum
+    AltName="High Collision Activation Update Limit"
+    Wiki="The update limit for activating high collision each frame. -1 defaults to 70." />
+    
+    <activateDistXZ_forXb1
+    AltName="Activation Distance: X/Z (XB1)"
+    Wiki="The activation distance (on the x/z-axis) of mission placement items." />
+    
+    <activateDistY_forXb1
+    AltName="Activation Distance: Y (XB1)"
+    Wiki="The activation distance (on the y-axis) of mission placement items." />
+    
+    <pad8
+    Padding="" />
   </Field>
   <Enums>
     <Enum Name="MISSION_TYPE" type="s8">
@@ -399,13 +463,29 @@
       <Option Value="1" Name="Alternate" />
     </Enum>
     <Enum Name="TIME_ZONE_TYPE" type="s8">
-      <Option Value="0" Name="None" />
+      <Option Value="0" Name="Morning" />
+      <Option Value="1" Name="Day A" />
+      <Option Value="2" Name="Day B" />
+      <Option Value="3" Name="Evening" />
+      <Option Value="4" Name="Night" />
+      <Option Value="5" Name="Midnight A" />
+      <Option Value="6" Name="Midnight B" />
+      <Option Value="-1" Name="Invalid" />
     </Enum>
     <Enum Name="WEATHER_TYPE" type="s16">
-      <Option Value="0" Name="None" />
+      <Option Value="0" Name="Sunny" />
+      <Option Value="1" Name="Rain" />
+      <Option Value="2" Name="Storm (Weak)" />
+      <Option Value="3" Name="Storm (Strong)" />
+      <Option Value="4" Name="Geyser" />
+      <Option Value="5" Name="Geyser (Small and Large)" />
+      <Option Value="-1" Name="Disabled" />
+      <Option Value="-2" Name="All Weather" />
     </Enum>
     <Enum Name="MISSION_ICON_TYPE" type="u8">
       <Option Value="0" Name="None" />
+      <Option Value="1" Name="Final Chapter" />
+      <Option Value="2" Name="Story Progression" />
     </Enum>
   </Enums>
 </PARAMMETA>
