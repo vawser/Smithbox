@@ -1,4 +1,6 @@
-﻿using StudioCore.Scene.DebugPrimitives;
+﻿using SoulsFormats;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Meshes;
@@ -26,9 +28,11 @@ public static class RenderableHelper
     private static DbgPrimWirePoint? _regionPoint;
     private static DbgPrimSolidPoint? _regionSolidPoint;
 
-    private static DbgPrimWireSphere? _pointLight;
+    private static DbgPrimBulb? _pointLight;
     private static DbgPrimSolidSphere? _pointLightSolid;
+
     private static DbgPrimWireSpotLight? _spotLight;
+
     private static DbgPrimWireSpheroidWithArrow? _directionalLight;
 
     private static DbgPrimWireSpheroidWithArrow? _modelMarkerChr;
@@ -192,19 +196,15 @@ public static class RenderableHelper
 
         _modelMarkerTree = new DbgPrimTree(
             Transform.Default,
-            6f,  // Trunk height
-            0.5f,   // Trunk width
-            3f,   // Cluster radius
+            6f,    // Trunk height
+            0.5f,  // Trunk width
+            3f,    // Cluster radius
             Color.Brown,
             Color.Green);
 
         // LIGHT
-        _pointLight = new DbgPrimWireSphere(
-            Transform.Default,
-            1.0f,
-            Color.Yellow,
-            6,
-            6);
+        _pointLight = new DbgPrimBulb(
+            Transform.Default);
 
         _pointLightSolid = new DbgPrimSolidSphere(
             Transform.Default,
@@ -238,7 +238,6 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionBox);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -271,7 +270,6 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionCylinder);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -304,7 +302,6 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -336,7 +333,6 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionPoint);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -369,25 +365,38 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _pointLight);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
 
         return r;
     }
-    public static DebugPrimitiveRenderableProxy GetSolidPointLightProxy(RenderScene scene)
+    public static DebugPrimitiveRenderableProxy GetSolidPointLightProxy(Entity obj, RenderScene scene)
     {
-        var baseColor = CFG.Current.GFX_Renderable_PointLight_BaseColor;
-        var highlightColor = CFG.Current.GFX_Renderable_PointLight_HighlightColor;
         var transparency = CFG.Current.GFX_Renderable_PointLight_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _pointLightSolid);
 
         r.RenderOverlay = true;
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
+
+        // Override color with light color
+        var light = (BTL.Light)obj.WrappedObject;
+        if(light != null)
+        {
+            var baseColor = Color.FromArgb(light.DiffuseColor.R, light.DiffuseColor.G, light.DiffuseColor.B);
+            var highlightColor = baseColor;
+
+            r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+            r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        }
+        else
+        {
+            var baseColor = CFG.Current.GFX_Renderable_PointLight_BaseColor;
+            var highlightColor = CFG.Current.GFX_Renderable_PointLight_HighlightColor;
+
+            r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+            r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        }
 
         return r;
     }
@@ -400,14 +409,13 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _spotLight);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
 
         return r;
     }
-    public static DebugPrimitiveRenderableProxy GetSolidSpotLightProxy(RenderScene scene)
+    public static DebugPrimitiveRenderableProxy GetSolidSpotLightProxy(Entity obj, RenderScene scene)
     {
         var baseColor = CFG.Current.GFX_Renderable_SpotLight_BaseColor;
         var highlightColor = CFG.Current.GFX_Renderable_SpotLight_HighlightColor;
@@ -431,14 +439,13 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _directionalLight);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
 
         return r;
     }
-    public static DebugPrimitiveRenderableProxy GetSolidDirectionalLightProxy(RenderScene scene)
+    public static DebugPrimitiveRenderableProxy GetSolidDirectionalLightProxy(Entity obj, RenderScene scene)
     {
         var baseColor = CFG.Current.GFX_Renderable_DirectionalLight_BaseColor;
         var highlightColor = CFG.Current.GFX_Renderable_DirectionalLight_HighlightColor;
@@ -489,7 +496,6 @@ public static class RenderableHelper
         }
 
         DebugPrimitiveRenderableProxy r = new(renderables, prim, false);
-        r.RenderOverlay = true;
         r.BaseColor = baseColor;
         r.HighlightedColor = selectColor;
 
@@ -505,7 +511,6 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OverlayRenderables, _dmyPoint);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -521,7 +526,6 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _dmySphereFwdUp);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -537,7 +541,6 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OverlayRenderables, _jointSphere);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -554,7 +557,6 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(renderables, _modelMarkerTree, false);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);

@@ -269,11 +269,15 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                 {
                     _placeholderProxy =
                     RenderableHelper.GetTreeProxy(_renderablesSet);
+                    _placeholderProxy.DrawFilter = RenderFilter.SpeedTree;
+                }
+                else
+                {
+                    _placeholderProxy.DrawFilter = _drawfilter;
                 }
 
                 _placeholderProxy.World = World;
                 _placeholderProxy.Visible = Visible;
-                _placeholderProxy.DrawFilter = _drawfilter;
                 _placeholderProxy.DrawGroups = _drawgroups;
                 if (_selectable != null)
                 {

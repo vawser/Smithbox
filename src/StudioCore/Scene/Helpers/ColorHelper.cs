@@ -59,6 +59,13 @@ public static class ColorHelper
         return Color.FromArgb((int)value, (int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
     }
 
+    public static Color GetTransparencyColor(Color color, float alpha)
+    {
+        var value = 255 * (alpha / 100);
+
+        return Color.FromArgb((int)value, (int)(color.R), (int)(color.G), (int)(color.B));
+    }
+
     public static Color GetSolidColor(Vector3 color)
     {
         return Color.FromArgb((int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));

@@ -97,6 +97,13 @@ public static class BoundingBoxHelper
                 }
             }
         }
+        else if(s.WrappedObject is BTL.Light)
+        {
+            var position = s.GetPropertyValue<Vector3>("Position");
+            var radius = s.GetPropertyValue<float>("Radius");
+
+            framingBounds = GenerateBoundingBox(position, radius);
+        }
 
         return framingBounds;
     }

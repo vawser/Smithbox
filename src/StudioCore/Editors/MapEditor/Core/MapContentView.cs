@@ -400,7 +400,7 @@ public class MapContentView
                 }
                 UIHelper.ShowHoverTooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
 
-                if (ent.WrappedObject is IMsbRegion)
+                if (ent.WrappedObject is IMsbRegion or BTL.Light)
                 {
                     if (ImGui.Selectable("Toggle Render Type"))
                     {

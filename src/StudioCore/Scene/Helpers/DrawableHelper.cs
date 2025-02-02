@@ -301,17 +301,17 @@ public static class DrawableHelper
         {
             if (light.Type is BTL.LightType.Directional)
             {
-                mesh = RenderableHelper.GetSolidDirectionalLightProxy(scene);
+                mesh = RenderableHelper.GetSolidDirectionalLightProxy(obj, scene);
             }
 
             if (light.Type is BTL.LightType.Point)
             {
-                mesh = RenderableHelper.GetSolidPointLightProxy(scene);
+                mesh = RenderableHelper.GetSolidPointLightProxy(obj, scene);
             }
 
             if (light.Type is BTL.LightType.Spot)
             {
-                mesh = RenderableHelper.GetSolidSpotLightProxy(scene);
+                mesh = RenderableHelper.GetSolidSpotLightProxy(obj, scene);
             }
         }
         // WIREFRAME
