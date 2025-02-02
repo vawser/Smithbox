@@ -16,6 +16,8 @@
 
 
 # MAP EDITOR
+Mass Edit:
+
 Region Select:
  - Add ability to spawn 'selection' region primitive via shortcut:
   - Brings up Region Select panel for editing the shape and submitting the selection
