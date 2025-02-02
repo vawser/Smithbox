@@ -1,33 +1,65 @@
 #--------------------------------------
-# TODO
+# General
 #--------------------------------------
-# GENERAL
-- Add edit history window (along side loggers)
+- FEAT: edit history window
+- FEAT: allow editors to be initialized but not appear in the tab bar, to allow for conditional appearance
 
-# PARAM
-- Correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
+#--------------------------------------
+# Viewport
+#--------------------------------------
+- FIX: viewport resources are not fully released by Resource management system
+- FIX: hanging issue if resource fails to resolve loading during map loads.
 
-- Update the paramdex to the new name/wiki style + fill in missing for:
+#--------------------------------------
+# Map Editor
+#--------------------------------------
+- FEAT: mass edit tool for editing map objects in a programmatic fashion.
+ - Include 'loaded' and 'global' version - Loaded will affect all loaded maps, global will affect all maps.
+- FEAT: region selection tool 
+ - Spawn 'fake' region, all map objects within it are selected.
+- FEAT: 3D model marker visualisations
+- FEAT: 3D light marker visualisations
+- FEAT: asset/object collision display
+ 
+- FIX: asset browser does not update Instance ID and Self Parts
+ 
+#--------------------------------------
+# Param Editor
+#--------------------------------------
+- DOC: Update the paramdex to the new name/wiki style + fill in missing for:
  - AC6
  - ER
  - SDT
  - DS3
  - BB
+- FEAT: action to copy AtkParam/BehaviorParam row into _PC version (vice versa)
+- FEAT: action to revert selected row to vanilla data
 
+- FIX: correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
+- FIX: color picker throwing CTD on second param view
+- FIX: shortcuts don't work with secondary overviews
 
-# MAP EDITOR
-Mass Edit:
+#--------------------------------------
+# EMEVD Editor
+#--------------------------------------
+- FEAT: enum selection changes value
+- FEAT: Add ability to insert/delete/order events.
+- FEAT: Add ability to insert/delete/order instructions.
+- FEAT: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
 
-Region Select:
- - Add ability to spawn 'selection' region primitive via shortcut:
-  - Brings up Region Select panel for editing the shape and submitting the selection
-  - Once select is submitted, add all map objects within the bounding box of the region to the current selection, delete the 'selection' region.
+#--------------------------------------
+# Model Editor
+#--------------------------------------
+- FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
+- FIX: dummy position needs to be offset by parent bone (currently this is ignored)
+- FIX: account for scale when displaying dummies/bones
 
-Visualisations:
- - Add the transparent solid regions for more types:
-  - Model Marker
-  - Sphere with Arrow
-  - Point Light
-  - Spot Light
-  - Directional Light
-  
+#--------------------------------------
+# Time Act Editor
+#--------------------------------------
+- FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
+
+#--------------------------------------
+# Texture Viewer: 
+#--------------------------------------
+- FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
