@@ -26,7 +26,8 @@ public static class VisualizationHelper
             {
                 var mEnt = (MsbEntity)ent;
 
-                if (!mEnt.IsSwitchingRenderType && mEnt.Type is MsbEntityType.Region)
+                if (!mEnt.IsSwitchingRenderType && 
+                    ( mEnt.Type is MsbEntityType.Region || mEnt.Type is MsbEntityType.Light))
                 {
                     mEnt.SwitchRenderType();
                 }

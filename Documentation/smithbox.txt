@@ -5,12 +5,6 @@
 - FEAT: allow editors to be initialized but not appear in the tab bar, to allow for conditional appearance
 
 #--------------------------------------
-# Viewport
-#--------------------------------------
-- FIX: viewport resources are not fully released by Resource management system
-- FIX: hanging issue if resource fails to resolve loading during map loads.
-
-#--------------------------------------
 # Map Editor
 #--------------------------------------
 - FEAT: mass edit tool for editing map objects in a programmatic fashion.
@@ -63,3 +57,9 @@
 # Texture Viewer: 
 #--------------------------------------
 - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
+
+#--------------------------------------
+# Viewport
+#--------------------------------------
+- FIX: viewport resources are not fully released by Resource management system
+- FIX: hanging issue if resource fails to resolve loading during map loads.

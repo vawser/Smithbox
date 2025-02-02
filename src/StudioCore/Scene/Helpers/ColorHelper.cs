@@ -20,15 +20,15 @@ public static class ColorHelper
 
         var halfSize = size / 2;
 
-        for (int i = 0; i < halfSize; i++) // Generate 3 lighter shades
+        for (int i = 0; i < halfSize; i++) 
         {
-            float factor = 1f + 0.2f * (i + 1); // Increase brightness
+            float factor = 1f + 0.2f * (i + 1); 
             shades[i] = ChangeBrightness(baseColor, factor);
         }
 
-        for (int i = 0; i < halfSize; i++) // Generate 3 darker shades
+        for (int i = 0; i < halfSize; i++) 
         {
-            float factor = 1f - 0.2f * (i + 1); // Decrease brightness
+            float factor = 1f - 0.2f * (i + 1); 
             shades[i + halfSize] = ChangeBrightness(baseColor, factor);
         }
 
@@ -54,7 +54,7 @@ public static class ColorHelper
     /// </summary>
     public static Color GetTransparencyColor(Vector3 color, float alpha)
     {
-        var value = 255 * alpha;
+        var value = 255 * (alpha / 100);
 
         return Color.FromArgb((int)value, (int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
     }

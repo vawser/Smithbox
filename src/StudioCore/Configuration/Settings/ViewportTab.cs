@@ -19,32 +19,9 @@ public class ViewportTab
     {
         var defaultButtonSize = new Vector2(ImGui.GetWindowWidth(), 24);
 
-        // General
-        if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Enable model texturing", ref CFG.Current.Viewport_Enable_Texturing);
-            UIHelper.ShowHoverTooltip("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
-
-            ImGui.Checkbox("Enable frustum culling", ref CFG.Current.Viewport_Frustum_Culling);
-            UIHelper.ShowHoverTooltip("Enabling this option will cause entities outside of the camera frustum to be culled.");
-
-            //ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_BackgroundColor);
-            //ImguiUtils.ShowHoverTooltip("Change the background color in the viewport. Requires a restart of Smithbox to take effect.");
-
-            ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f);
-            UIHelper.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
-
-            // Round FPS to the nearest whole number
-            CFG.Current.System_Frame_Rate = (float)Math.Round(CFG.Current.System_Frame_Rate);
-
-            if (ImGui.Button("Reset"))
-            {
-                CFG.Current.System_Frame_Rate = CFG.Default.System_Frame_Rate;
-            }
-        }
-
-
+        //---------------------------------------
         // Visualization
+        //---------------------------------------
         if (ImGui.CollapsingHeader("Visualization", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
@@ -56,55 +33,55 @@ public class ViewportTab
 
             ImGui.ColorEdit3("Box region - base color", ref CFG.Current.GFX_Renderable_Box_BaseColor);
             ImGui.ColorEdit3("Box region - highlight color", ref CFG.Current.GFX_Renderable_Box_HighlightColor);
-            ImGui.DragFloat("Box region - transparency when solid", ref CFG.Current.GFX_Renderable_Box_Alpha);
+            ImGui.DragFloat("Box region - transparency when solid", ref CFG.Current.GFX_Renderable_Box_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Cylinder region - base color", ref CFG.Current.GFX_Renderable_Cylinder_BaseColor);
             ImGui.ColorEdit3("Cylinder region - highlight color", ref CFG.Current.GFX_Renderable_Cylinder_HighlightColor);
-            ImGui.DragFloat("Cylinder region - transparency when solid", ref CFG.Current.GFX_Renderable_Cylinder_Alpha);
+            ImGui.DragFloat("Cylinder region - transparency when solid", ref CFG.Current.GFX_Renderable_Cylinder_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Sphere region - base color", ref CFG.Current.GFX_Renderable_Sphere_BaseColor);
             ImGui.ColorEdit3("Sphere region - highlight color", ref CFG.Current.GFX_Renderable_Sphere_HighlightColor);
-            ImGui.DragFloat("Sphere region - transparency when solid", ref CFG.Current.GFX_Renderable_Sphere_Alpha);
+            ImGui.DragFloat("Sphere region - transparency when solid", ref CFG.Current.GFX_Renderable_Sphere_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Point region - base color", ref CFG.Current.GFX_Renderable_Point_BaseColor);
             ImGui.ColorEdit3("Point region - highlight color", ref CFG.Current.GFX_Renderable_Point_HighlightColor);
-            ImGui.DragFloat("Point region - transparency when solid", ref CFG.Current.GFX_Renderable_Point_Alpha);
+            ImGui.DragFloat("Point region - transparency when solid", ref CFG.Current.GFX_Renderable_Point_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Dummy poly - base color", ref CFG.Current.GFX_Renderable_DummyPoly_BaseColor);
             ImGui.ColorEdit3("Dummy poly - highlight color", ref CFG.Current.GFX_Renderable_DummyPoly_HighlightColor);
-            ImGui.DragFloat("Dummy poly - transparency when solid", ref CFG.Current.GFX_Renderable_DummyPoly_Alpha);
+            ImGui.DragFloat("Dummy poly - transparency when solid", ref CFG.Current.GFX_Renderable_DummyPoly_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Bone point - base color", ref CFG.Current.GFX_Renderable_BonePoint_BaseColor);
             ImGui.ColorEdit3("Bone point - highlight color", ref CFG.Current.GFX_Renderable_BonePoint_HighlightColor);
-            ImGui.DragFloat("Bone point - transparency when solid", ref CFG.Current.GFX_Renderable_BonePoint_Alpha);
+            ImGui.DragFloat("Bone point - transparency when solid", ref CFG.Current.GFX_Renderable_BonePoint_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Chr marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Chr_BaseColor);
             ImGui.ColorEdit3("Chr marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Chr_HighlightColor);
-            ImGui.DragFloat("Chr marker - transparency when solid", ref CFG.Current.GFX_Renderable_ModelMarker_Chr_Alpha);
+            ImGui.DragFloat("Chr marker - transparency when solid", ref CFG.Current.GFX_Renderable_ModelMarker_Chr_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Object marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Object_BaseColor);
             ImGui.ColorEdit3("Object marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Object_HighlightColor);
-            ImGui.DragFloat("Object marker - transparency when solid", ref CFG.Current.GFX_Renderable_ModelMarker_Object_Alpha);
+            ImGui.DragFloat("Object marker - transparency when solid", ref CFG.Current.GFX_Renderable_ModelMarker_Object_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Player marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Player_BaseColor);
             ImGui.ColorEdit3("Player marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Player_HighlightColor);
-            ImGui.DragFloat("Player marker - transparency when solid", ref CFG.Current.GFX_Renderable_ModelMarker_Player_Alpha);
+            ImGui.DragFloat("Player marker - transparency when solid", ref CFG.Current.GFX_Renderable_ModelMarker_Player_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Other marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Other_BaseColor);
             ImGui.ColorEdit3("Other marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Other_HighlightColor);
-            ImGui.DragFloat("Other marker - transparency when solid", ref CFG.Current.GFX_Renderable_ModelMarker_Other_Alpha);
+            ImGui.DragFloat("Other marker - transparency when solid", ref CFG.Current.GFX_Renderable_ModelMarker_Other_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Point light - base color", ref CFG.Current.GFX_Renderable_PointLight_BaseColor);
             ImGui.ColorEdit3("Point light - highlight color", ref CFG.Current.GFX_Renderable_PointLight_HighlightColor);
-            ImGui.DragFloat("Point light - transparency when solid", ref CFG.Current.GFX_Renderable_PointLight_Alpha);
+            ImGui.DragFloat("Point light - transparency when solid", ref CFG.Current.GFX_Renderable_PointLight_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Spot light - base color", ref CFG.Current.GFX_Renderable_SpotLight_BaseColor);
             ImGui.ColorEdit3("Spot light - highlight color", ref CFG.Current.GFX_Renderable_SpotLight_HighlightColor);
-            ImGui.DragFloat("Spot light - transparency when solid", ref CFG.Current.GFX_Renderable_SpotLight_Alpha);
+            ImGui.DragFloat("Spot light - transparency when solid", ref CFG.Current.GFX_Renderable_SpotLight_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Directional light - base color", ref CFG.Current.GFX_Renderable_DirectionalLight_BaseColor);
             ImGui.ColorEdit3("Directional light - highlight color", ref CFG.Current.GFX_Renderable_DirectionalLight_HighlightColor);
-            ImGui.DragFloat("Directional light - transparency when solid", ref CFG.Current.GFX_Renderable_DirectionalLight_Alpha);
+            ImGui.DragFloat("Directional light - transparency when solid", ref CFG.Current.GFX_Renderable_DirectionalLight_Alpha, 1.0f, 1.0f, 100.0f);
 
             ImGui.ColorEdit3("Gizmo: X Axis - base color", ref CFG.Current.GFX_Gizmo_X_BaseColor);
             ImGui.ColorEdit3("Gizmo: X Axis - highlight color", ref CFG.Current.GFX_Gizmo_X_HighlightColor);
@@ -119,70 +96,33 @@ public class ViewportTab
 
             if (ImGui.Button("Reset", defaultButtonSize))
             {
-                CFG.Current.Viewport_Enable_Selection_Outline = CFG.Default.Viewport_Enable_Selection_Outline;
-                CFG.Current.Viewport_DefaultRender_SelectColor = CFG.Default.Viewport_DefaultRender_SelectColor;
-
-                // Proxies
-                CFG.Current.GFX_Renderable_Box_BaseColor = Utils.GetDecimalColor(Color.Blue);
-                CFG.Current.GFX_Renderable_Box_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-
-                CFG.Current.GFX_Renderable_Cylinder_BaseColor = Utils.GetDecimalColor(Color.Blue);
-                CFG.Current.GFX_Renderable_Cylinder_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-
-                CFG.Current.GFX_Renderable_Sphere_BaseColor = Utils.GetDecimalColor(Color.Blue);
-                CFG.Current.GFX_Renderable_Sphere_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-
-                CFG.Current.GFX_Renderable_Point_BaseColor = Utils.GetDecimalColor(Color.Yellow);
-                CFG.Current.GFX_Renderable_Point_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-
-                CFG.Current.GFX_Renderable_DummyPoly_BaseColor = Utils.GetDecimalColor(Color.Yellow);
-                CFG.Current.GFX_Renderable_DummyPoly_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-
-                CFG.Current.GFX_Renderable_BonePoint_BaseColor = Utils.GetDecimalColor(Color.Blue);
-                CFG.Current.GFX_Renderable_BonePoint_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-
-                CFG.Current.GFX_Renderable_ModelMarker_Chr_BaseColor = Utils.GetDecimalColor(Color.Firebrick);
-                CFG.Current.GFX_Renderable_ModelMarker_Chr_HighlightColor = Utils.GetDecimalColor(Color.Tomato);
-
-                CFG.Current.GFX_Renderable_ModelMarker_Object_BaseColor = Utils.GetDecimalColor(Color.MediumVioletRed);
-                CFG.Current.GFX_Renderable_ModelMarker_Object_HighlightColor = Utils.GetDecimalColor(Color.DeepPink);
-
-                CFG.Current.GFX_Renderable_ModelMarker_Player_BaseColor = Utils.GetDecimalColor(Color.DarkOliveGreen);
-                CFG.Current.GFX_Renderable_ModelMarker_Player_HighlightColor = Utils.GetDecimalColor(Color.OliveDrab);
-
-                CFG.Current.GFX_Renderable_ModelMarker_Other_BaseColor = Utils.GetDecimalColor(Color.Wheat);
-                CFG.Current.GFX_Renderable_ModelMarker_Other_HighlightColor = Utils.GetDecimalColor(Color.AntiqueWhite);
-
-                CFG.Current.GFX_Renderable_PointLight_BaseColor = Utils.GetDecimalColor(Color.YellowGreen);
-                CFG.Current.GFX_Renderable_PointLight_HighlightColor = Utils.GetDecimalColor(Color.Yellow);
-
-                CFG.Current.GFX_Renderable_SpotLight_BaseColor = Utils.GetDecimalColor(Color.Goldenrod);
-                CFG.Current.GFX_Renderable_SpotLight_HighlightColor = Utils.GetDecimalColor(Color.Violet);
-
-                CFG.Current.GFX_Renderable_DirectionalLight_BaseColor = Utils.GetDecimalColor(Color.Cyan);
-                CFG.Current.GFX_Renderable_DirectionalLight_HighlightColor = Utils.GetDecimalColor(Color.AliceBlue);
-
-                CFG.Current.GFX_Gizmo_X_BaseColor = new Vector3(0.952f, 0.211f, 0.325f);
-                CFG.Current.GFX_Gizmo_X_HighlightColor = new Vector3(1.0f, 0.4f, 0.513f);
-
-                CFG.Current.GFX_Gizmo_Y_BaseColor = new Vector3(0.525f, 0.784f, 0.082f);
-                CFG.Current.GFX_Gizmo_Y_HighlightColor = new Vector3(0.713f, 0.972f, 0.270f);
-
-                CFG.Current.GFX_Gizmo_Z_BaseColor = new Vector3(0.219f, 0.564f, 0.929f);
-                CFG.Current.GFX_Gizmo_Z_HighlightColor = new Vector3(0.407f, 0.690f, 1.0f);
-
-                CFG.Current.GFX_Wireframe_Color_Variance = CFG.Default.GFX_Wireframe_Color_Variance;
+                ResetVisualisationCFG();
             }
             UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 
         }
 
+        //---------------------------------------
+        // Rendering
+        //---------------------------------------
         if (ImGui.CollapsingHeader("Rendering", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Text("Please restart the program for changes to take effect.");
 
             ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f),
                 @"Try smaller increments (+25%%) at first, as high values will cause issues.");
+
+            if (ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f))
+            {
+                CFG.Current.System_Frame_Rate = (float)Math.Round(CFG.Current.System_Frame_Rate);
+            }
+            UIHelper.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
+
+            ImGui.Checkbox("Enable model texturing", ref CFG.Current.Viewport_Enable_Texturing);
+            UIHelper.ShowHoverTooltip("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
+
+            ImGui.Checkbox("Enable frustum culling", ref CFG.Current.Viewport_Frustum_Culling);
+            UIHelper.ShowHoverTooltip("Enabling this option will cause entities outside of the camera frustum to be culled.");
 
             if (ImGui.InputInt("Renderables", ref CFG.Current.Viewport_Limit_Renderables, 0, 0))
                 if (CFG.Current.Viewport_Limit_Renderables < CFG.Default.Viewport_Limit_Renderables)
@@ -210,31 +150,14 @@ public class ViewportTab
 
             if (ImGui.Button("Reset##ResetRenderProperties", defaultButtonSize))
             {
-                CFG.Current.Viewport_DefaultRender_Brightness = CFG.Default.Viewport_DefaultRender_Brightness;
-                CFG.Current.Viewport_DefaultRender_Saturation = CFG.Default.Viewport_DefaultRender_Saturation;
-                CFG.Current.Viewport_Enable_Model_Masks = CFG.Default.Viewport_Enable_Model_Masks;
-                CFG.Current.Viewport_Enable_LOD_Facesets = CFG.Default.Viewport_Enable_LOD_Facesets;
-
-                CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
-                CFG.Current.Viewport_Limit_Buffer_Indirect_Draw = CFG.Default.Viewport_Limit_Buffer_Indirect_Draw;
-                CFG.Current.Viewport_Limit_Buffer_Flver_Bone = CFG.Default.Viewport_Limit_Buffer_Flver_Bone;
+                ResetRenderingCFG();
             }
             UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
         }
 
-        // Information Panel
-        if (ImGui.CollapsingHeader("Information Panel", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Display information panel", ref CFG.Current.Viewport_Enable_ViewportInfoPanel);
-            UIHelper.ShowHoverTooltip("Display the information panel.");
-
-            ImGui.Checkbox("Display degree increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement);
-            UIHelper.ShowHoverTooltip("Display the current degree increment type you are using in the information panel.");
-
-            ImGui.Checkbox("Display movement increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement);
-            UIHelper.ShowHoverTooltip("Display the current movement increment type you are using in the information panel.");
-        }
-
+        //---------------------------------------
+        // Camera
+        //---------------------------------------
         if (ImGui.CollapsingHeader("Camera", ImGuiTreeNodeFlags.DefaultOpen))
         {
             var cam_fov = CFG.Current.Viewport_Camera_FOV;
@@ -274,26 +197,31 @@ public class ViewportTab
 
             if (ImGui.Button("Reset##ViewportCamera", defaultButtonSize))
             {
-                CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
-
-                CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
-
-                worldView.CameraMoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
-                CFG.Current.Viewport_Camera_MoveSpeed_Slow = worldView.CameraMoveSpeed_Slow;
-                CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
-
-                worldView.CameraMoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
-                CFG.Current.Viewport_Camera_MoveSpeed_Normal = worldView.CameraMoveSpeed_Normal;
-
-                worldView.CameraMoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
-                CFG.Current.Viewport_Camera_MoveSpeed_Fast = worldView.CameraMoveSpeed_Fast;
+                ResetCameraCFG();
             }
             UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 
         }
 
-        // Map Object Display Presets
-        if (ImGui.CollapsingHeader("Display Presets", ImGuiTreeNodeFlags.DefaultOpen))
+        //---------------------------------------
+        // Information Panel
+        //---------------------------------------
+        if (ImGui.CollapsingHeader("Information Panel", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Display information panel", ref CFG.Current.Viewport_Enable_ViewportInfoPanel);
+            UIHelper.ShowHoverTooltip("Display the information panel.");
+
+            ImGui.Checkbox("Display degree increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement);
+            UIHelper.ShowHoverTooltip("Display the current degree increment type you are using in the information panel.");
+
+            ImGui.Checkbox("Display movement increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement);
+            UIHelper.ShowHoverTooltip("Display the current movement increment type you are using in the information panel.");
+        }
+
+        //---------------------------------------
+        // Display Presets
+        //---------------------------------------
+        if (ImGui.CollapsingHeader("Display Presets"))
         {
             ImGui.Text("Configure each of the six display presets available.");
 
@@ -306,18 +234,7 @@ public class ViewportTab
 
             if (ImGui.Button("Reset##DisplayPresets", defaultButtonSize))
             {
-                CFG.Current.SceneFilter_Preset_01.Name = CFG.Default.SceneFilter_Preset_01.Name;
-                CFG.Current.SceneFilter_Preset_01.Filters = CFG.Default.SceneFilter_Preset_01.Filters;
-                CFG.Current.SceneFilter_Preset_02.Name = CFG.Default.SceneFilter_Preset_02.Name;
-                CFG.Current.SceneFilter_Preset_02.Filters = CFG.Default.SceneFilter_Preset_02.Filters;
-                CFG.Current.SceneFilter_Preset_03.Name = CFG.Default.SceneFilter_Preset_03.Name;
-                CFG.Current.SceneFilter_Preset_03.Filters = CFG.Default.SceneFilter_Preset_03.Filters;
-                CFG.Current.SceneFilter_Preset_04.Name = CFG.Default.SceneFilter_Preset_04.Name;
-                CFG.Current.SceneFilter_Preset_04.Filters = CFG.Default.SceneFilter_Preset_04.Filters;
-                CFG.Current.SceneFilter_Preset_05.Name = CFG.Default.SceneFilter_Preset_05.Name;
-                CFG.Current.SceneFilter_Preset_05.Filters = CFG.Default.SceneFilter_Preset_05.Filters;
-                CFG.Current.SceneFilter_Preset_06.Name = CFG.Default.SceneFilter_Preset_06.Name;
-                CFG.Current.SceneFilter_Preset_06.Filters = CFG.Default.SceneFilter_Preset_06.Filters;
+                ResetSceneFilterPresetCFG();
             }
             UIHelper.ShowHoverTooltip("Reset the values within this section to their default values.");
 
@@ -352,5 +269,115 @@ public class ViewportTab
         }
 
         ImGui.PopID();
+    }
+
+    private void ResetRenderingCFG()
+    {
+        CFG.Current.System_Frame_Rate = CFG.Default.System_Frame_Rate;
+
+        CFG.Current.Viewport_DefaultRender_Brightness = CFG.Default.Viewport_DefaultRender_Brightness;
+        CFG.Current.Viewport_DefaultRender_Saturation = CFG.Default.Viewport_DefaultRender_Saturation;
+        CFG.Current.Viewport_Enable_Model_Masks = CFG.Default.Viewport_Enable_Model_Masks;
+        CFG.Current.Viewport_Enable_LOD_Facesets = CFG.Default.Viewport_Enable_LOD_Facesets;
+
+        CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
+        CFG.Current.Viewport_Limit_Buffer_Indirect_Draw = CFG.Default.Viewport_Limit_Buffer_Indirect_Draw;
+        CFG.Current.Viewport_Limit_Buffer_Flver_Bone = CFG.Default.Viewport_Limit_Buffer_Flver_Bone;
+    }
+
+    private void ResetCameraCFG()
+    {
+        CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
+        CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
+        CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
+        CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
+        CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
+        CFG.Current.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
+    }
+
+    private void ResetSceneFilterPresetCFG()
+    {
+        CFG.Current.SceneFilter_Preset_01.Name = CFG.Default.SceneFilter_Preset_01.Name;
+        CFG.Current.SceneFilter_Preset_01.Filters = CFG.Default.SceneFilter_Preset_01.Filters;
+        CFG.Current.SceneFilter_Preset_02.Name = CFG.Default.SceneFilter_Preset_02.Name;
+        CFG.Current.SceneFilter_Preset_02.Filters = CFG.Default.SceneFilter_Preset_02.Filters;
+        CFG.Current.SceneFilter_Preset_03.Name = CFG.Default.SceneFilter_Preset_03.Name;
+        CFG.Current.SceneFilter_Preset_03.Filters = CFG.Default.SceneFilter_Preset_03.Filters;
+        CFG.Current.SceneFilter_Preset_04.Name = CFG.Default.SceneFilter_Preset_04.Name;
+        CFG.Current.SceneFilter_Preset_04.Filters = CFG.Default.SceneFilter_Preset_04.Filters;
+        CFG.Current.SceneFilter_Preset_05.Name = CFG.Default.SceneFilter_Preset_05.Name;
+        CFG.Current.SceneFilter_Preset_05.Filters = CFG.Default.SceneFilter_Preset_05.Filters;
+        CFG.Current.SceneFilter_Preset_06.Name = CFG.Default.SceneFilter_Preset_06.Name;
+        CFG.Current.SceneFilter_Preset_06.Filters = CFG.Default.SceneFilter_Preset_06.Filters;
+    }
+
+    private void ResetVisualisationCFG()
+    {
+        CFG.Current.Viewport_Enable_Selection_Outline = CFG.Default.Viewport_Enable_Selection_Outline;
+        CFG.Current.Viewport_DefaultRender_SelectColor = CFG.Default.Viewport_DefaultRender_SelectColor;
+        CFG.Current.GFX_Renderable_Default_Wireframe_Alpha = CFG.Default.GFX_Renderable_Default_Wireframe_Alpha;
+
+        CFG.Current.GFX_Renderable_Box_BaseColor = CFG.Default.GFX_Renderable_Box_BaseColor;
+        CFG.Current.GFX_Renderable_Box_HighlightColor = CFG.Default.GFX_Renderable_Box_HighlightColor;
+        CFG.Current.GFX_Renderable_Box_Alpha = CFG.Default.GFX_Renderable_Box_Alpha;
+
+        CFG.Current.GFX_Renderable_Cylinder_BaseColor = CFG.Default.GFX_Renderable_Cylinder_BaseColor;
+        CFG.Current.GFX_Renderable_Cylinder_HighlightColor = CFG.Default.GFX_Renderable_Cylinder_HighlightColor;
+        CFG.Current.GFX_Renderable_Cylinder_Alpha = CFG.Default.GFX_Renderable_Cylinder_Alpha;
+
+        CFG.Current.GFX_Renderable_Sphere_BaseColor = CFG.Default.GFX_Renderable_Sphere_BaseColor;
+        CFG.Current.GFX_Renderable_Sphere_HighlightColor = CFG.Default.GFX_Renderable_Sphere_HighlightColor;
+        CFG.Current.GFX_Renderable_Sphere_Alpha = CFG.Default.GFX_Renderable_Sphere_Alpha;
+
+        CFG.Current.GFX_Renderable_Point_BaseColor = CFG.Default.GFX_Renderable_Point_BaseColor;
+        CFG.Current.GFX_Renderable_Point_HighlightColor = CFG.Default.GFX_Renderable_Point_HighlightColor;
+        CFG.Current.GFX_Renderable_Point_Alpha = CFG.Default.GFX_Renderable_Point_Alpha;
+
+        CFG.Current.GFX_Renderable_DummyPoly_BaseColor = CFG.Default.GFX_Renderable_DummyPoly_BaseColor;
+        CFG.Current.GFX_Renderable_DummyPoly_HighlightColor = CFG.Default.GFX_Renderable_DummyPoly_HighlightColor;
+        CFG.Current.GFX_Renderable_DummyPoly_Alpha = CFG.Default.GFX_Renderable_DummyPoly_Alpha;
+
+        CFG.Current.GFX_Renderable_BonePoint_BaseColor = CFG.Default.GFX_Renderable_BonePoint_BaseColor;
+        CFG.Current.GFX_Renderable_BonePoint_HighlightColor = CFG.Default.GFX_Renderable_BonePoint_HighlightColor;
+        CFG.Current.GFX_Renderable_BonePoint_Alpha = CFG.Default.GFX_Renderable_BonePoint_Alpha;
+
+        CFG.Current.GFX_Renderable_ModelMarker_Chr_BaseColor = CFG.Default.GFX_Renderable_ModelMarker_Chr_BaseColor;
+        CFG.Current.GFX_Renderable_ModelMarker_Chr_HighlightColor = CFG.Default.GFX_Renderable_ModelMarker_Chr_HighlightColor;
+        CFG.Current.GFX_Renderable_ModelMarker_Chr_Alpha = CFG.Default.GFX_Renderable_ModelMarker_Chr_Alpha;
+
+        CFG.Current.GFX_Renderable_ModelMarker_Object_BaseColor = CFG.Default.GFX_Renderable_ModelMarker_Object_BaseColor;
+        CFG.Current.GFX_Renderable_ModelMarker_Object_HighlightColor = CFG.Default.GFX_Renderable_ModelMarker_Object_HighlightColor;
+        CFG.Current.GFX_Renderable_ModelMarker_Object_Alpha = CFG.Default.GFX_Renderable_ModelMarker_Object_Alpha;
+
+        CFG.Current.GFX_Renderable_ModelMarker_Player_BaseColor = CFG.Default.GFX_Renderable_ModelMarker_Player_BaseColor;
+        CFG.Current.GFX_Renderable_ModelMarker_Player_HighlightColor = CFG.Default.GFX_Renderable_ModelMarker_Player_HighlightColor;
+        CFG.Current.GFX_Renderable_ModelMarker_Player_Alpha = CFG.Default.GFX_Renderable_ModelMarker_Player_Alpha;
+
+        CFG.Current.GFX_Renderable_ModelMarker_Other_BaseColor = CFG.Default.GFX_Renderable_ModelMarker_Other_BaseColor;
+        CFG.Current.GFX_Renderable_ModelMarker_Other_HighlightColor = CFG.Default.GFX_Renderable_ModelMarker_Other_HighlightColor;
+        CFG.Current.GFX_Renderable_ModelMarker_Other_Alpha = CFG.Default.GFX_Renderable_ModelMarker_Other_Alpha;
+
+        CFG.Current.GFX_Renderable_PointLight_BaseColor = CFG.Default.GFX_Renderable_PointLight_BaseColor;
+        CFG.Current.GFX_Renderable_PointLight_HighlightColor = CFG.Default.GFX_Renderable_PointLight_HighlightColor;
+        CFG.Current.GFX_Renderable_PointLight_Alpha = CFG.Default.GFX_Renderable_PointLight_Alpha;
+
+        CFG.Current.GFX_Renderable_SpotLight_BaseColor = CFG.Default.GFX_Renderable_SpotLight_BaseColor;
+        CFG.Current.GFX_Renderable_SpotLight_HighlightColor = CFG.Default.GFX_Renderable_SpotLight_HighlightColor;
+        CFG.Current.GFX_Renderable_SpotLight_Alpha = CFG.Default.GFX_Renderable_SpotLight_Alpha;
+
+        CFG.Current.GFX_Renderable_DirectionalLight_BaseColor = CFG.Default.GFX_Renderable_DirectionalLight_BaseColor;
+        CFG.Current.GFX_Renderable_DirectionalLight_HighlightColor = CFG.Default.GFX_Renderable_DirectionalLight_HighlightColor;
+        CFG.Current.GFX_Renderable_DirectionalLight_Alpha = CFG.Default.GFX_Renderable_DirectionalLight_Alpha;
+
+        CFG.Current.GFX_Gizmo_X_BaseColor = CFG.Default.GFX_Gizmo_X_BaseColor;
+        CFG.Current.GFX_Gizmo_X_HighlightColor = CFG.Default.GFX_Gizmo_X_HighlightColor;
+
+        CFG.Current.GFX_Gizmo_Y_BaseColor = CFG.Default.GFX_Gizmo_Y_BaseColor;
+        CFG.Current.GFX_Gizmo_Y_HighlightColor = CFG.Default.GFX_Gizmo_Y_HighlightColor;
+
+        CFG.Current.GFX_Gizmo_Z_BaseColor = CFG.Default.GFX_Gizmo_Z_BaseColor;
+        CFG.Current.GFX_Gizmo_Z_HighlightColor = CFG.Default.GFX_Gizmo_Z_HighlightColor;
+
+        CFG.Current.GFX_Wireframe_Color_Variance = CFG.Default.GFX_Wireframe_Color_Variance;
     }
 }

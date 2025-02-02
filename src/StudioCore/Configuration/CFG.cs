@@ -152,59 +152,59 @@ public class CFG
     // Wireframe Coloring
     public float GFX_Wireframe_Color_Variance = 0.11f;
 
-    public float GFX_Renderable_Default_Wireframe_Alpha = 1.0f;
+    public float GFX_Renderable_Default_Wireframe_Alpha = 100.0f;
 
     public Vector3 GFX_Renderable_Box_BaseColor = Utils.GetDecimalColor(Color.Blue);
     public Vector3 GFX_Renderable_Box_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Box_Alpha = 0.75f;
+    public float GFX_Renderable_Box_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_Cylinder_BaseColor = Utils.GetDecimalColor(Color.Blue);
     public Vector3 GFX_Renderable_Cylinder_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Cylinder_Alpha = 0.75f;
+    public float GFX_Renderable_Cylinder_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_Sphere_BaseColor = Utils.GetDecimalColor(Color.Blue);
     public Vector3 GFX_Renderable_Sphere_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Sphere_Alpha = 0.75f;
+    public float GFX_Renderable_Sphere_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_Point_BaseColor = Utils.GetDecimalColor(Color.Yellow);
     public Vector3 GFX_Renderable_Point_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_Point_Alpha = 0.75f;
+    public float GFX_Renderable_Point_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_DummyPoly_BaseColor = Utils.GetDecimalColor(Color.Yellow);
     public Vector3 GFX_Renderable_DummyPoly_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_DummyPoly_Alpha = 0.75f;
+    public float GFX_Renderable_DummyPoly_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_BonePoint_BaseColor = Utils.GetDecimalColor(Color.Blue);
     public Vector3 GFX_Renderable_BonePoint_HighlightColor = Utils.GetDecimalColor(Color.DarkViolet);
-    public float GFX_Renderable_BonePoint_Alpha = 0.75f;
+    public float GFX_Renderable_BonePoint_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_ModelMarker_Chr_BaseColor = Utils.GetDecimalColor(Color.Firebrick);
     public Vector3 GFX_Renderable_ModelMarker_Chr_HighlightColor = Utils.GetDecimalColor(Color.Tomato);
-    public float GFX_Renderable_ModelMarker_Chr_Alpha = 0.75f;
+    public float GFX_Renderable_ModelMarker_Chr_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_ModelMarker_Object_BaseColor = Utils.GetDecimalColor(Color.MediumVioletRed);
     public Vector3 GFX_Renderable_ModelMarker_Object_HighlightColor = Utils.GetDecimalColor(Color.DeepPink);
-    public float GFX_Renderable_ModelMarker_Object_Alpha = 0.75f;
+    public float GFX_Renderable_ModelMarker_Object_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_ModelMarker_Player_BaseColor = Utils.GetDecimalColor(Color.DarkOliveGreen);
     public Vector3 GFX_Renderable_ModelMarker_Player_HighlightColor = Utils.GetDecimalColor(Color.OliveDrab);
-    public float GFX_Renderable_ModelMarker_Player_Alpha = 0.75f;
+    public float GFX_Renderable_ModelMarker_Player_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_ModelMarker_Other_BaseColor = Utils.GetDecimalColor(Color.Wheat);
     public Vector3 GFX_Renderable_ModelMarker_Other_HighlightColor = Utils.GetDecimalColor(Color.AntiqueWhite);
-    public float GFX_Renderable_ModelMarker_Other_Alpha = 0.75f;
+    public float GFX_Renderable_ModelMarker_Other_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_PointLight_BaseColor = Utils.GetDecimalColor(Color.YellowGreen);
     public Vector3 GFX_Renderable_PointLight_HighlightColor = Utils.GetDecimalColor(Color.Yellow);
-    public float GFX_Renderable_PointLight_Alpha = 0.75f;
+    public float GFX_Renderable_PointLight_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_SpotLight_BaseColor = Utils.GetDecimalColor(Color.Goldenrod);
     public Vector3 GFX_Renderable_SpotLight_HighlightColor = Utils.GetDecimalColor(Color.Violet);
-    public float GFX_Renderable_SpotLight_Alpha = 0.75f;
+    public float GFX_Renderable_SpotLight_Alpha = 75.0f;
 
     public Vector3 GFX_Renderable_DirectionalLight_BaseColor = Utils.GetDecimalColor(Color.Cyan);
     public Vector3 GFX_Renderable_DirectionalLight_HighlightColor = Utils.GetDecimalColor(Color.AliceBlue);
-    public float GFX_Renderable_DirectionalLight_Alpha = 0.75f;
+    public float GFX_Renderable_DirectionalLight_Alpha = 75.0f;
 
     public Vector3 GFX_Gizmo_X_BaseColor = new(0.952f, 0.211f, 0.325f);
     public Vector3 GFX_Gizmo_X_HighlightColor = new(1.0f, 0.4f, 0.513f);
