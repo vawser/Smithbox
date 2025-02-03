@@ -37,4 +37,8 @@ public class ReplaceMeshList : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

@@ -49,4 +49,8 @@ public class AddGxItem : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

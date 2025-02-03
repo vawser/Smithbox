@@ -67,4 +67,8 @@ public class GroupedAction : ViewportAction
 
         return evt;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

@@ -51,4 +51,8 @@ public class RemoveLayoutMember : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

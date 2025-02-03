@@ -61,4 +61,8 @@ public class DuplicateMultipleMaterials : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

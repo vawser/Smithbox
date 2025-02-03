@@ -49,4 +49,8 @@ public class AppendDummyList : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

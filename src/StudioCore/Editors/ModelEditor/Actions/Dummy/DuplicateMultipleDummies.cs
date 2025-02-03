@@ -63,4 +63,8 @@ public class DuplicateMultipleDummies : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

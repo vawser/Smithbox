@@ -35,6 +35,10 @@ public class UpdateProperty_FLVERHeader_BigEndian : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class UpdateProperty_FLVERHeader_Version : ViewportAction
@@ -62,6 +66,10 @@ public class UpdateProperty_FLVERHeader_Version : ViewportAction
         Entry.Version = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -91,6 +99,10 @@ public class UpdateProperty_FLVERHeader_BoundingBoxMin : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class UpdateProperty_FLVERHeader_BoundingBoxMax : ViewportAction
@@ -119,6 +131,10 @@ public class UpdateProperty_FLVERHeader_BoundingBoxMax : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class UpdateProperty_FLVERHeader_Unicode : ViewportAction
@@ -146,6 +162,10 @@ public class UpdateProperty_FLVERHeader_Unicode : ViewportAction
         Entry.Unicode = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -176,6 +196,10 @@ public class UpdateProperty_FLVERDummy_Position : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class UpdateProperty_FLVERDummy_Forward : ViewportAction
@@ -204,6 +228,10 @@ public class UpdateProperty_FLVERDummy_Forward : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class UpdateProperty_FLVERDummy_Upward : ViewportAction
@@ -231,6 +259,10 @@ public class UpdateProperty_FLVERDummy_Upward : ViewportAction
         Entry.Upward = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -266,6 +298,10 @@ public class UpdateProperty_FLVERDummy_ReferenceID : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class UpdateProperty_FLVERDummy_ParentBoneIndex : ViewportAction
@@ -299,6 +335,10 @@ public class UpdateProperty_FLVERDummy_ParentBoneIndex : ViewportAction
         Entry.ParentBoneIndex = (short)OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -334,6 +374,10 @@ public class UpdateProperty_FLVERDummy_AttachBoneIndex : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class UpdateProperty_FLVERDummy_Flag1 : ViewportAction
@@ -361,6 +405,10 @@ public class UpdateProperty_FLVERDummy_Flag1 : ViewportAction
         Entry.Flag1 = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -390,6 +438,10 @@ public class UpdateProperty_FLVERDummy_UseUpwardVector : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class UpdateProperty_FLVERDummy_Unk30 : ViewportAction
@@ -418,6 +470,10 @@ public class UpdateProperty_FLVERDummy_Unk30 : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class UpdateProperty_FLVERDummy_Unk34 : ViewportAction
@@ -445,6 +501,10 @@ public class UpdateProperty_FLVERDummy_Unk34 : ViewportAction
         Entry.Unk34 = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -475,6 +535,10 @@ public class UpdateProperty_FLVERMaterial_Name : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMaterial_MTD : ViewportAction
 {
@@ -501,6 +565,10 @@ public class UpdateProperty_FLVERMaterial_MTD : ViewportAction
         Entry.MTD = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 public class UpdateProperty_FLVERMaterial_GXIndex : ViewportAction
@@ -529,6 +597,10 @@ public class UpdateProperty_FLVERMaterial_GXIndex : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMaterial_MTDIndex : ViewportAction
 {
@@ -555,6 +627,10 @@ public class UpdateProperty_FLVERMaterial_MTDIndex : ViewportAction
         Entry.Index = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -585,6 +661,10 @@ public class UpdateProperty_FLVERMaterial_Texture_Type : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMaterial_Texture_Path : ViewportAction
 {
@@ -612,6 +692,10 @@ public class UpdateProperty_FLVERMaterial_Texture_Path : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMaterial_Texture_Scale : ViewportAction
 {
@@ -638,6 +722,10 @@ public class UpdateProperty_FLVERMaterial_Texture_Scale : ViewportAction
         Entry.Scale = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -668,6 +756,10 @@ public class UpdateProperty_FLVERGXList_GXItem_ID : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERGXList_GXItem_Unk04 : ViewportAction
 {
@@ -694,6 +786,10 @@ public class UpdateProperty_FLVERGXList_GXItem_Unk04 : ViewportAction
         Entry.Unk04 = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 public class UpdateProperty_FLVERGXList_GXItem_Data : ViewportAction
@@ -727,6 +823,10 @@ public class UpdateProperty_FLVERGXList_GXItem_Data : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 // Node
@@ -755,6 +855,10 @@ public class UpdateProperty_FLVERNode_Name : ViewportAction
         Entry.Name = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 public class UpdateProperty_FLVERNode_ParentIndex : ViewportAction
@@ -786,6 +890,10 @@ public class UpdateProperty_FLVERNode_ParentIndex : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERNode_FirstChildIndex : ViewportAction
 {
@@ -815,6 +923,10 @@ public class UpdateProperty_FLVERNode_FirstChildIndex : ViewportAction
         Entry.FirstChildIndex = (short)OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 public class UpdateProperty_FLVERNode_NextSiblingIndex : ViewportAction
@@ -846,6 +958,10 @@ public class UpdateProperty_FLVERNode_NextSiblingIndex : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERNode_PreviousSiblingIndex : ViewportAction
 {
@@ -876,6 +992,10 @@ public class UpdateProperty_FLVERNode_PreviousSiblingIndex : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERNode_Translation : ViewportAction
 {
@@ -903,6 +1023,10 @@ public class UpdateProperty_FLVERNode_Translation : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERNode_Rotation : ViewportAction
 {
@@ -929,6 +1053,10 @@ public class UpdateProperty_FLVERNode_Rotation : ViewportAction
         Entry.Rotation = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -958,6 +1086,10 @@ public class UpdateProperty_FLVERNode_Scale : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERNode_BoundingBoxMin : ViewportAction
 {
@@ -984,6 +1116,10 @@ public class UpdateProperty_FLVERNode_BoundingBoxMin : ViewportAction
         Entry.BoundingBoxMin = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 public class UpdateProperty_FLVERNode_BoundingBoxMax : ViewportAction
@@ -1012,6 +1148,10 @@ public class UpdateProperty_FLVERNode_BoundingBoxMax : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERNode_Flags : ViewportAction
 {
@@ -1038,6 +1178,10 @@ public class UpdateProperty_FLVERNode_Flags : ViewportAction
         Entry.Flags = (FLVER.Node.NodeFlags)OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -1068,6 +1212,10 @@ public class UpdateProperty_FLVERMesh_UseBoneWeights : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMesh_MaterialIndex : ViewportAction
 {
@@ -1095,6 +1243,10 @@ public class UpdateProperty_FLVERMesh_MaterialIndex : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMesh_NodeIndex : ViewportAction
 {
@@ -1121,6 +1273,10 @@ public class UpdateProperty_FLVERMesh_NodeIndex : ViewportAction
         Entry.NodeIndex = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -1151,6 +1307,10 @@ public class UpdateProperty_FLVERMesh_FaceSet_Flags : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMesh_FaceSet_TriangleStrip : ViewportAction
 {
@@ -1178,6 +1338,10 @@ public class UpdateProperty_FLVERMesh_FaceSet_TriangleStrip : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMesh_FaceSet_CullBackfaces : ViewportAction
 {
@@ -1204,6 +1368,10 @@ public class UpdateProperty_FLVERMesh_FaceSet_CullBackfaces : ViewportAction
         Entry.CullBackfaces = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 public class UpdateProperty_FLVERMesh_FaceSet_Unk06 : ViewportAction
@@ -1238,6 +1406,10 @@ public class UpdateProperty_FLVERMesh_FaceSet_Unk06 : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 // Mesh -> Vertex Buffer
@@ -1266,6 +1438,10 @@ public class UpdateProperty_FLVERMesh_VertexBuffer_VertexBuffer : ViewportAction
         Entry.LayoutIndex = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -1296,6 +1472,10 @@ public class UpdateProperty_FLVERMesh_BoundingBoxes_Min : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMesh_BoundingBoxes_Max : ViewportAction
 {
@@ -1323,6 +1503,10 @@ public class UpdateProperty_FLVERMesh_BoundingBoxes_Max : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERMesh_BoundingBoxes_Unk : ViewportAction
 {
@@ -1349,6 +1533,10 @@ public class UpdateProperty_FLVERMesh_BoundingBoxes_Unk : ViewportAction
         Entry.Unk = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -1379,6 +1567,10 @@ public class UpdateProperty_FLVERBufferLayout_LayoutMember_Unk00 : ViewportActio
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERBufferLayout_LayoutMember_Type : ViewportAction
 {
@@ -1405,6 +1597,10 @@ public class UpdateProperty_FLVERBufferLayout_LayoutMember_Type : ViewportAction
         Entry.Type = (FLVER.LayoutType)OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 public class UpdateProperty_FLVERBufferLayout_LayoutMember_Semantic : ViewportAction
@@ -1433,6 +1629,10 @@ public class UpdateProperty_FLVERBufferLayout_LayoutMember_Semantic : ViewportAc
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERBufferLayout_LayoutMember_Index : ViewportAction
 {
@@ -1459,6 +1659,10 @@ public class UpdateProperty_FLVERBufferLayout_LayoutMember_Index : ViewportActio
         Entry.Index = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -1495,6 +1699,10 @@ public class UpdateProperty_FLVERSkeleton_Bone_ParentIndex : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERSkeleton_Bone_FirstChildIndex : ViewportAction
 {
@@ -1527,6 +1735,10 @@ public class UpdateProperty_FLVERSkeleton_Bone_FirstChildIndex : ViewportAction
         Entry.FirstChildIndex = (short)OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 public class UpdateProperty_FLVERSkeleton_Bone_NextSiblingIndex : ViewportAction
@@ -1561,6 +1773,10 @@ public class UpdateProperty_FLVERSkeleton_Bone_NextSiblingIndex : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERSkeleton_Bone_PreviousSiblingIndex : ViewportAction
 {
@@ -1594,6 +1810,10 @@ public class UpdateProperty_FLVERSkeleton_Bone_PreviousSiblingIndex : ViewportAc
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 public class UpdateProperty_FLVERSkeleton_Bone_NodeIndex : ViewportAction
 {
@@ -1620,6 +1840,10 @@ public class UpdateProperty_FLVERSkeleton_Bone_NodeIndex : ViewportAction
         Entry.NodeIndex = OldValue;
 
         return ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 

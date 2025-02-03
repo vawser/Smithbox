@@ -6,6 +6,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
@@ -30,6 +31,7 @@ public abstract class ViewportAction
 {
     public abstract ActionEvent Execute(bool isRedo = false);
     public abstract ActionEvent Undo();
+    public abstract string GetEditMessage();
 }
 
 public class PropertiesChangedAction : ViewportAction
@@ -38,12 +40,14 @@ public class PropertiesChangedAction : ViewportAction
     private readonly List<PropertyChange> Changes = new();
     private Action<bool> PostExecutionAction;
 
+    private string EditMessage = "";
+
     public PropertiesChangedAction(object changed)
     {
         ChangedObject = changed;
     }
 
-    public PropertiesChangedAction(PropertyInfo prop, object changed, object newval)
+    public PropertiesChangedAction(PropertyInfo prop, object changed, object newval, string entityName = "")
     {
         ChangedObject = changed;
         var change = new PropertyChange();
@@ -52,9 +56,11 @@ public class PropertiesChangedAction : ViewportAction
         change.NewValue = newval;
         change.ArrayIndex = -1;
         Changes.Add(change);
+
+        EditMessage = $"{entityName} -> {prop.Name} was changed to {change.NewValue}";
     }
 
-    public PropertiesChangedAction(PropertyInfo prop, int index, object changed, object newval)
+    public PropertiesChangedAction(PropertyInfo prop, int index, object changed, object newval, string entityName = "")
     {
         ChangedObject = changed;
         var change = new PropertyChange();
@@ -80,6 +86,8 @@ public class PropertiesChangedAction : ViewportAction
         change.NewValue = newval;
         change.ArrayIndex = index;
         Changes.Add(change);
+
+        EditMessage = $"{entityName} -> {prop.Name}[{change.ArrayIndex} was changed to {change.NewValue}";
     }
 
     public void AddPropertyChange(PropertyInfo prop, object newval, int index = -1)
@@ -183,6 +191,11 @@ public class PropertiesChangedAction : ViewportAction
         return ActionEvent.NoEvent;
     }
 
+    public override string GetEditMessage()
+    {
+        return EditMessage;
+    }
+
     private class PropertyChange
     {
         public int ArrayIndex;
@@ -266,6 +279,11 @@ public class ArrayPropertyCopyAction : ViewportAction
         }
 
         return ActionEvent.NoEvent;
+    }
+
+    public override string GetEditMessage()
+    {
+        return "";
     }
 
     private class PropertyChange
@@ -417,6 +435,11 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
         }
 
         return ActionEvent.NoEvent;
+    }
+
+    public override string GetEditMessage()
+    {
+        return "";
     }
 
     private class PropertyChange
@@ -646,6 +669,11 @@ public class CloneMapObjectsAction : ViewportAction
 
         return ActionEvent.ObjectAddedRemoved;
     }
+
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class AddMapObjectsAction : ViewportAction
@@ -759,6 +787,11 @@ public class AddMapObjectsAction : ViewportAction
 
         return ActionEvent.ObjectAddedRemoved;
     }
+
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 /// <summary>
@@ -832,6 +865,11 @@ public class AddParamsAction : ViewportAction
         }
 
         return ActionEvent.NoEvent;
+    }
+
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -931,6 +969,11 @@ public class DeleteMapObjectsAction : ViewportAction
 
         return ActionEvent.ObjectAddedRemoved;
     }
+
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 /// <summary>
@@ -977,6 +1020,11 @@ public class DeleteParamsAction : ViewportAction
         }
 
         return ActionEvent.NoEvent;
+    }
+
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -1115,6 +1163,11 @@ public class ReorderContainerObjectsAction : ViewportAction
         }
 
         return ActionEvent.NoEvent;
+    }
+
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -1257,6 +1310,11 @@ public class ChangeEntityHierarchyAction : ViewportAction
         }*/
         return ActionEvent.NoEvent;
     }
+
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class ChangeMapObjectType : ViewportAction
@@ -1370,6 +1428,11 @@ public class ChangeMapObjectType : ViewportAction
     }
 
     private record MapObjectChange(object OldObject, object NewObject, MsbEntity Entity);
+
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class CompoundAction : ViewportAction
@@ -1424,6 +1487,100 @@ public class CompoundAction : ViewportAction
         }
 
         return evt;
+    }
+
+    public override string GetEditMessage()
+    {
+        return "";
+    }
+}
+
+
+public class MapActionGroupCompoundAction : ViewportAction
+{
+    private readonly List<MapActionGroup> Actions;
+
+    private Action<bool> PostExecutionAction;
+
+    public MapActionGroupCompoundAction(List<MapActionGroup> actions)
+    {
+        Actions = actions;
+    }
+
+    public void SetPostExecutionAction(Action<bool> action)
+    {
+        PostExecutionAction = action;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        var evt = ActionEvent.NoEvent;
+
+        foreach (var group in Actions)
+        {
+            var name = group.MapID;
+            var alias = AliasUtils.GetMapNameAlias(name);
+            if (alias != null)
+                name = $"{name} {alias}";
+
+            var tAction = group.Actions;
+
+            foreach (ViewportAction act in tAction)
+            {
+                if (act != null)
+                {
+                    evt |= act.Execute(isRedo);
+                }
+            }
+            
+            TaskLogs.AddLog($"Applied MSB mass edit affecting {tAction.Count} map objects for {name}");
+        }
+
+        if (PostExecutionAction != null)
+        {
+            PostExecutionAction.Invoke(false);
+        }
+
+        return evt;
+    }
+
+    public override ActionEvent Undo()
+    {
+        var evt = ActionEvent.NoEvent;
+
+        foreach (var group in Actions)
+        {
+            var name = group.MapID;
+            var alias = AliasUtils.GetMapNameAlias(name);
+            if (alias != null)
+                name = $"{name} {alias}";
+
+            var tAction = group.Actions;
+
+            foreach (ViewportAction act in tAction)
+            {
+                if (act != null)
+                {
+                    evt |= act.Undo();
+                }
+            }
+
+            TaskLogs.AddLog($"Reverted MSB mass edit affecting {tAction.Count} map objects for {name}");
+        }
+
+        if (PostExecutionAction != null)
+        {
+            PostExecutionAction.Invoke(true);
+        }
+
+        MsbMassEdit.ClearPreviousMassEditLog();
+
+        return evt;
+    }
+
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -1860,6 +2017,11 @@ public class ReplicateMapObjectsAction : ViewportAction
 
         return ActionEvent.ObjectAddedRemoved;
     }
+
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public enum OrderMoveDir
@@ -2080,6 +2242,11 @@ public class OrderMapObjectsAction : ViewportAction
 
         return ActionEvent.ObjectAddedRemoved;
     }
+
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class RenameObjectsAction(List<MsbEntity> entities, List<string> newNames, bool reference) : ViewportAction
@@ -2121,5 +2288,10 @@ public class RenameObjectsAction(List<MsbEntity> entities, List<string> newNames
             Rename(entity, name);
         }
         return ActionEvent.NoEvent;
+    }
+
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }

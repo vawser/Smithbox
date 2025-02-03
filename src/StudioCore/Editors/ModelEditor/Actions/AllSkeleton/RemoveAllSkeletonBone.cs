@@ -49,4 +49,8 @@ public class RemoveAllSkeletonBone : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

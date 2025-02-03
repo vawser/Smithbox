@@ -72,4 +72,8 @@ public class RemoveMultipleNodes : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

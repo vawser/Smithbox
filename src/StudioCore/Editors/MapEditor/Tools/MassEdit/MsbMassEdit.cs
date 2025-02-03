@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
@@ -44,30 +45,85 @@ public static class MsbMassEdit
 
     private static List<string> EditInputs = new List<string>() { "" };
 
+    private static List<MapActionGroup> PreviousMassEdit = new List<MapActionGroup>();
+
+    private static bool ShowPreviousMassEditLog = true;
+
     public static void Display()
     {
         var width = ImGui.GetWindowWidth();
         var buttonSize = new Vector2(width, 24);
 
+        UIHelper.WrappedText("Map Target");
+        UIHelper.ShowHoverTooltip("Determine which maps will be affected by the mass edit.");
+        ImGui.Separator();
+
         ConfigureMapTarget();
 
+        ImGui.Separator();
+        UIHelper.WrappedText("Selection Criteria");
+        UIHelper.ShowHoverTooltip("Determine which map objects will be affected by the mass edit.");
         ImGui.Separator();
 
         ConfigureSelection();
 
         ImGui.Separator();
+        UIHelper.WrappedText("Edit Commands");
+        UIHelper.ShowHoverTooltip("Determine which property to affect and the value change to apply for this mass edit.");
+        ImGui.Separator();
 
         ConfigureEdit();
-
-        ImGui.Separator();
 
         if(ImGui.Button("Apply", buttonSize))
         {
             ApplyMassEdit();
         }
-        UIHelper.ShowHoverTooltip("Process mass edit, filtering by map target and selection commands and then applying edit commands to the filtered map objects.");
+
+        ImGui.Separator();
+
+        DisplayPreviousEdits();
 
         //PopupHints();
+    }
+
+    private static void DisplayPreviousEdits()
+    {
+        if (PreviousMassEdit != null)
+        {
+            if (ImGui.Button($"{ForkAwesome.Eye}##previousEditLog"))
+            {
+                ShowPreviousMassEditLog = !ShowPreviousMassEditLog;
+            }
+            UIHelper.ShowHoverTooltip("Toggle visibility of the previous edit log.");
+
+            if (ShowPreviousMassEditLog)
+            {
+                ImGui.BeginChild("previousEditLogSection");
+
+                foreach (var entry in PreviousMassEdit)
+                {
+                    var displayName = entry.MapID;
+                    var alias = AliasUtils.GetMapNameAlias(entry.MapID);
+                    if (alias != null)
+                        displayName = $"{displayName} {alias}";
+
+                    if (ImGui.CollapsingHeader($"{displayName}##mapTab_{entry.MapID}"))
+                    {
+                        var changes = entry.Actions;
+
+                        foreach (var change in changes)
+                        {
+                            if (change is PropertiesChangedAction propChange)
+                            {
+                                UIHelper.WrappedText($"{propChange.GetEditMessage()}");
+                            }
+                        }
+                    }
+                }
+
+                ImGui.EndChild();
+            }
+        }
     }
 
     private static void ConfigureMapTarget()
@@ -454,13 +510,28 @@ public static class MsbMassEdit
 
         }
     }
-    
+
+    /// <summary>
+    /// Mass Edit for all maps
+    /// </summary>
+    private static void ProcessGlobalMassEdit()
+    {
+        // TODO: this should fill the universe container with all maps,
+        // need to implement special 'fast' LoadMap flow so it ignores all rendering aspects when doing this
+    }
+
     private static void ApplyMassEdit()
     {
+        var selection = Smithbox.EditorHandler.MapEditor.Selection;
         var listView = Smithbox.EditorHandler.MapEditor.MapListView;
         var universe = Smithbox.EditorHandler.MapEditor.Universe;
 
-        if(MapTarget is MapTargetType.Loaded)
+        // Clear selection before applying edits, to ensure the properties view doesn't interfere.
+        selection.ClearSelection();
+
+        List<MapActionGroup> actionGroups = new List<MapActionGroup>();
+
+        if (MapTarget is MapTargetType.Loaded)
         {
             if (universe.LoadedObjectContainers.Count > 0)
             {
@@ -474,7 +545,10 @@ public static class MsbMassEdit
                     {
                         var curView = listView.ContentViews[entry.Key];
 
-                        ProcessLocalMassEdit(curView);
+                        var actionList = ProcessLocalMassEdit(curView);
+
+                        if(actionList.Count > 0)
+                            actionGroups.Add(new MapActionGroup(entry.Key, actionList));
                     }
                 }
             }
@@ -483,21 +557,26 @@ public static class MsbMassEdit
         {
             ProcessGlobalMassEdit();
         }
-    }
 
-    /// <summary>
-    /// Mass Edit for all maps
-    /// </summary>
-    private static void ProcessGlobalMassEdit()
-    {
-        // TODO: this needs to be done differently to the Loaded process
+        if (actionGroups.Count > 0)
+        {
+            PreviousMassEdit = actionGroups;
+            var compoundAction = new MapActionGroupCompoundAction(actionGroups);
+            Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(compoundAction);
+        }
+        else
+        {
+            TaskLogs.AddLog("MSB mass edit could not be applied.");
+        }
     }
 
     /// <summary>
     /// Mass Edit for loaded maps
     /// </summary>
-    private static void ProcessLocalMassEdit(MapContentView curView)
+    private static List<ViewportAction> ProcessLocalMassEdit(MapContentView curView)
     {
+        List<ViewportAction> actions = new List<ViewportAction>();
+
         if (curView.Container != null)
         {
             foreach (var entry in curView.Container.Objects)
@@ -506,11 +585,17 @@ public static class MsbMassEdit
                 {
                     if (IsSelected(curView, mEnt))
                     {
-                        ApplyEdit(curView, mEnt);
+                        var actionList = ApplyEdit(curView, mEnt);
+                        foreach(var actionEntry in actionList)
+                        {
+                            actions.Add(actionEntry);
+                        }
                     }
                 }
             }
         }
+
+        return actions;
     }
 
     private static bool IsSelected(MapContentView curView, MsbEntity mEnt)
@@ -909,9 +994,11 @@ public static class MsbMassEdit
         return false;
     }
 
-    private static void ApplyEdit(MapContentView curView, MsbEntity mEnt)
+    private static List<ViewportAction> ApplyEdit(MapContentView curView, MsbEntity mEnt)
     {
         var editCommands = EditInputs;
+
+        List<ViewportAction> actions = new();
 
         for (int i = 0; i < editCommands.Count; i++)
         {
@@ -924,13 +1011,16 @@ public static class MsbMassEdit
             // Default to <prop> <operation> <value>
             else
             {
-                PropertyValueOperation(curView, mEnt, cmd);
+                var action = PropertyValueOperation(curView, mEnt, cmd);
+                if(action != null)
+                    actions.Add(action);
             }
         }
+
+        return actions;
     }
 
-    // TODO: adjust so the operation logic isn't duplicated
-    private static void PropertyValueOperation(MapContentView curView, MsbEntity curEnt, string cmd)
+    private static ViewportAction PropertyValueOperation(MapContentView curView, MsbEntity curEnt, string cmd)
     {
         var input = cmd.Replace("prop:", "");
 
@@ -973,6 +1063,9 @@ public static class MsbMassEdit
                     if (collection is Array arr && index >= 0 && index < arr.Length)
                     {
                         targetProp_Value = arr.GetValue(index);
+
+                        if (targetProp_Value == null)
+                            return null;
 
                         var valueType = targetProp_Value.GetType();
 
@@ -1049,7 +1142,7 @@ public static class MsbMassEdit
                                     }
                                 }
 
-                                arr.SetValue(result, index);
+                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
                         }
                         // UINT
@@ -1120,7 +1213,7 @@ public static class MsbMassEdit
                                     }
                                 }
 
-                                arr.SetValue(result, index);
+                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
                         }
                         // INT
@@ -1191,7 +1284,7 @@ public static class MsbMassEdit
                                     }
                                 }
 
-                                arr.SetValue(result, index);
+                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
                         }
                         // USHORT
@@ -1262,7 +1355,7 @@ public static class MsbMassEdit
                                     }
                                 }
 
-                                arr.SetValue(result, index);
+                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
                         }
                         // SHORT
@@ -1333,7 +1426,7 @@ public static class MsbMassEdit
                                     }
                                 }
 
-                                arr.SetValue(result, index);
+                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
                         }
                         // SBYTE
@@ -1404,7 +1497,7 @@ public static class MsbMassEdit
                                     }
                                 }
 
-                                arr.SetValue(result, index);
+                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
                         }
                         // BYTE
@@ -1475,7 +1568,7 @@ public static class MsbMassEdit
                                     }
                                 }
 
-                                arr.SetValue(result, index);
+                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
                         }
                         // FLOAT
@@ -1546,7 +1639,7 @@ public static class MsbMassEdit
                                     }
                                 }
 
-                                arr.SetValue(result, index);
+                                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
                         }
                     }
@@ -1556,6 +1649,9 @@ public static class MsbMassEdit
             {
                 targetProp = curEnt.GetProperty(prop);
                 targetProp_Value = curEnt.GetPropertyValue(prop);
+
+                if (targetProp_Value == null)
+                    return null;
 
                 var valueType = targetProp_Value.GetType();
 
@@ -1632,7 +1728,7 @@ public static class MsbMassEdit
                             }
                         }
 
-                        curEnt.SetPropertyValue(prop, result);
+                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
                 }
                 // UINT
@@ -1703,7 +1799,7 @@ public static class MsbMassEdit
                             }
                         }
 
-                        curEnt.SetPropertyValue(prop, result);
+                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
                 }
                 // INT
@@ -1774,7 +1870,7 @@ public static class MsbMassEdit
                             }
                         }
 
-                        curEnt.SetPropertyValue(prop, result);
+                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
                 }
                 // USHORT
@@ -1845,7 +1941,7 @@ public static class MsbMassEdit
                             }
                         }
 
-                        curEnt.SetPropertyValue(prop, result);
+                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
                 }
                 // SHORT
@@ -1916,7 +2012,7 @@ public static class MsbMassEdit
                             }
                         }
 
-                        curEnt.SetPropertyValue(prop, result);
+                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
                 }
                 // SBYTE
@@ -1987,7 +2083,7 @@ public static class MsbMassEdit
                             }
                         }
 
-                        curEnt.SetPropertyValue(prop, result);
+                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
                 }
                 // BYTE
@@ -2058,7 +2154,7 @@ public static class MsbMassEdit
                             }
                         }
 
-                        curEnt.SetPropertyValue(prop, result);
+                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
                 }
                 // FLOAT
@@ -2129,11 +2225,31 @@ public static class MsbMassEdit
                             }
                         }
 
-                        curEnt.SetPropertyValue(prop, result);
+                        return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
                 }
             }
         }
+
+        return null;
+    }
+
+    public static void ClearPreviousMassEditLog()
+    {
+        PreviousMassEdit = new List<MapActionGroup>();
+    }
+}
+
+public class MapActionGroup
+{
+    public string MapID { get; set; }
+
+    public List<ViewportAction> Actions { get; set; }
+
+    public MapActionGroup(string mapID, List<ViewportAction> actions)
+    {
+        MapID = mapID;
+        Actions = actions;
     }
 }
 

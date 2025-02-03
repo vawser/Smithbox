@@ -48,4 +48,8 @@ public class AddBaseSkeletonBone : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

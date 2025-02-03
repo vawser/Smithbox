@@ -50,6 +50,10 @@ public class LightmapAtlasChangeAtlasID : ViewportAction
 
         return Actions.Viewport.ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class LightmapAtlasChangePartName : ViewportAction
@@ -91,6 +95,10 @@ public class LightmapAtlasChangePartName : ViewportAction
         Entry.PartName = OldValue;
 
         return Actions.Viewport.ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -134,6 +142,10 @@ public class LightmapAtlasChangeMaterialName : ViewportAction
 
         return Actions.Viewport.ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 public class LightmapAtlasChangeUVOffset : ViewportAction
@@ -175,6 +187,10 @@ public class LightmapAtlasChangeUVOffset : ViewportAction
         Entry.UVOffset = OldValue;
 
         return Actions.Viewport.ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -218,6 +234,10 @@ public class LightmapAtlasChangeUVScale : ViewportAction
 
         return Actions.Viewport.ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 /// <summary>
@@ -249,6 +269,10 @@ public class BtabEntryAdd : ViewportAction
 
         return Actions.Viewport.ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 /// <summary>
@@ -279,6 +303,10 @@ public class BtabEntryDuplicate : ViewportAction
         EntryList.RemoveAt(InsertionIndex);
 
         return Actions.Viewport.ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -320,6 +348,10 @@ public class BtabEntryMultiDuplicate : ViewportAction
 
         return Actions.Viewport.ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
 
 /// <summary>
@@ -350,6 +382,10 @@ public class BtabEntryDelete : ViewportAction
         EntryList.Insert(RemovalIndex, StoredEntry);
 
         return Actions.Viewport.ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }
 
@@ -392,5 +428,9 @@ public class BtabEntryMultiDelete : ViewportAction
         }
 
         return Actions.Viewport.ActionEvent.NoEvent;
+    }
+    public override string GetEditMessage()
+    {
+        return "";
     }
 }

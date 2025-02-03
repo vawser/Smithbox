@@ -53,4 +53,8 @@ public class RemoveMesh : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }

@@ -60,4 +60,8 @@ public class DuplicateMultipleGxLists : ViewportAction
 
         return ActionEvent.NoEvent;
     }
+    public override string GetEditMessage()
+    {
+        return "";
+    }
 }
