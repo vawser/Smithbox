@@ -17,6 +17,8 @@
  - DS2
  - DS1
 - FEAT: support for large/medium/small tile overlays in the World Map
+- FEAT: 3D model marker visualisations
+- FEAT: 3D spotlight marker visualisations
 
 #--------------------------------------
 # Param Editor

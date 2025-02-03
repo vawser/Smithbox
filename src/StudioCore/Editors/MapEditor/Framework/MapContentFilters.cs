@@ -32,9 +32,6 @@ public class MapContentFilters
     public string SearchInput = "";
     public string StoredSearchInput = "";
 
-    private bool InvalidCommand = false;
-    public string InvalidCommandError = "";
-
     /// <summary>
     /// Display the event filter UI
     /// </summary>
@@ -47,12 +44,6 @@ public class MapContentFilters
         ImGui.SetNextItemWidth(width * 0.6f);
         ImGui.InputText($"##contentFilterSearch_{view.ImguiID}", ref SearchInput, 255);
         UIHelper.ShowHoverTooltip($"Filter the content tree for {mapId}: {mapName}");
-
-        // Display command error in the hover tooltip
-        if(InvalidCommand)
-        {
-            UIHelper.ShowHoverTooltip($"\n{InvalidCommandError}");
-        }
 
         ImGui.SameLine();
         if (ImGui.Button($"{ForkAwesome.QuestionCircle}"))

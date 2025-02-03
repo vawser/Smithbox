@@ -11,8 +11,6 @@
  - Include 'loaded' and 'global' version - Loaded will affect all loaded maps, global will affect all maps.
 - FEAT: region selection tool 
  - Spawn 'fake' region, all map objects within it are selected.
-- FEAT: 3D model marker visualisations
-- FEAT: 3D light marker visualisations
 - FEAT: asset/object collision display
  
 - FIX: asset browser does not update Instance ID and Self Parts

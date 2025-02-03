@@ -75,7 +75,7 @@ public class MapContentView
         Selection.ClearSelection();
         Universe.LoadMap(MapID, selected);
 
-        if(Universe.LoadedObjectContainers.ContainsKey(MapID))
+        if (Universe.LoadedObjectContainers.ContainsKey(MapID))
         {
             Container = Universe.LoadedObjectContainers[MapID];
         }
@@ -90,7 +90,7 @@ public class MapContentView
         Selection.ClearSelection();
         EditorActionManager.Clear();
 
-        if(Container != null)
+        if (Container != null)
             Universe.UnloadContainer(Container);
 
         GC.Collect();
@@ -126,7 +126,7 @@ public class MapContentView
         // Show All
         if (ImGui.Button($"{ForkAwesome.Eye}"))
         {
-            foreach(var entry in Container.Objects)
+            foreach (var entry in Container.Objects)
             {
                 entry.EditorVisible = true;
             }
@@ -143,6 +143,21 @@ public class MapContentView
             }
         }
         UIHelper.ShowHoverTooltip("Force all map objects within this map to be hidden.");
+
+        // Switch View Type
+        ImGui.SameLine();
+        if (ImGui.Button($"{ForkAwesome.Sort}"))
+        {
+            if (ContentViewType is MapContentViewType.ObjectType)
+            {
+                ContentViewType = MapContentViewType.Flat;
+            }
+            else if (ContentViewType is MapContentViewType.Flat)
+            {
+                ContentViewType = MapContentViewType.ObjectType;
+            }
+        }
+        UIHelper.ShowHoverTooltip("Switch the map content list style.");
     }
 
     /// <summary>
@@ -201,7 +216,14 @@ public class MapContentView
             var scale = DPI.GetUIScale();
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 3.0f) * scale);
 
-            TypeView((MapContainer)Container);
+            if (ContentViewType is MapContentViewType.ObjectType)
+            {
+                TypeView((MapContainer)Container);
+            }
+            else if (ContentViewType is MapContentViewType.Flat)
+            {
+                FlatView((MapContainer)Container);
+            }
 
             ImGui.PopStyleVar();
             ImGui.TreePop();
@@ -414,15 +436,15 @@ public class MapContentView
 
             if (ImGui.Selectable("Copy Name"))
             {
-                if(Screen.Selection.IsMultiSelection())
+                if (Screen.Selection.IsMultiSelection())
                 {
                     var fullStr = "";
 
-                    foreach(var entry in Screen.Selection.GetSelection())
+                    foreach (var entry in Screen.Selection.GetSelection())
                     {
                         var curEnt = (MsbEntity)entry;
 
-                        if(fullStr != "")
+                        if (fullStr != "")
                             fullStr = $"{fullStr}, {curEnt.Name}";
                         else
                             fullStr = $"{curEnt.Name}";
@@ -501,7 +523,7 @@ public class MapContentView
                                             parent.EditorVisible = !parent.EditorVisible;
                                         }
 
-                                        for(int i = 0; i < parent.Children.Count; i++)
+                                        for (int i = 0; i < parent.Children.Count; i++)
                                         {
                                             var curObj = parent.Children[i];
 
@@ -734,4 +756,17 @@ public class MapContentView
         }
     }
 
+    private void FlatView(MapContainer map)
+    {
+        foreach (Entity obj in map.Objects)
+        {
+            if (obj is MsbEntity e)
+            {
+                if (Screen.MapContentFilter.ContentFilter(this, obj))
+                {
+                    MapObjectSelectable(e, true);
+                }
+            }
+        }
+    }
 }

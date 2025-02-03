@@ -950,20 +950,12 @@ public class ToolWindow
             }
 
             ///--------------------
-            /// Global Property Edit
+            /// Property Mass Edit
             ///--------------------
-            /*
-            if (ImGui.CollapsingHeader("Global Property Edit"))
+            if (ImGui.CollapsingHeader("Property Mass Edit"))
             {
-                Screen.MapQueryEditHandler.IsOpen = true;
-                Screen.MapQueryEditHandler.DisplayInput();
-                Screen.MapQueryEditHandler.DisplayEditStaging();
+                MsbMassEdit.Display();
             }
-            else
-            {
-                Screen.MapQueryEditHandler.IsOpen = false;
-            }
-            */
         }
 
         ImGui.End();
