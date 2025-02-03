@@ -83,7 +83,7 @@ public static class MsbMassEdit
 
         DisplayPreviousEdits();
 
-        //PopupHints();
+        PopupHints();
     }
 
     private static void DisplayPreviousEdits()
@@ -210,6 +210,7 @@ public static class MsbMassEdit
 
             ImGui.EndCombo();
         }
+        UIHelper.ShowHoverTooltip("The logic with which to handle the selection inputs.");
 
         ImGui.SameLine();
         if (ImGui.Button($"{ForkAwesome.QuestionCircle}##selectionHintButton"))
@@ -299,49 +300,42 @@ public static class MsbMassEdit
         {
             var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
 
-            if (ImGui.BeginTable($"mapTargetHintTable", 2, tableFlags))
+            if (ImGui.CollapsingHeader("Map Target Type", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
+                if (ImGui.BeginTable($"mapTargetHintTable", 2, tableFlags))
+                {
+                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
 
-                // Title Bar
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Loaded
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Title");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Loaded");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Effect");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("All currently loaded maps will be affected by this mass edit.");
 
-                // Loaded
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Loaded
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Loaded");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("All");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("All currently loaded maps will be affected by this mass edit.");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("All maps, whether they are loaded or not, will be affected by this mass edit.");
 
-                // Loaded
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("All");
-
-                ImGui.TableSetColumnIndex(1);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("All maps, whether they are loaded or not, will be affected by this mass edit.");
-
-                ImGui.EndTable();
+                    ImGui.EndTable();
+                }
             }
+
+            ImGui.EndPopup();
         }
 
         // SELECTION
@@ -349,156 +343,152 @@ public static class MsbMassEdit
         {
             var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
 
-            ImGui.Text("The search bar accepts multiple search commands.");
-            ImGui.Text("Place ; at the end of a command to denote the start of a new command.");
-
-            ImGui.Text("");
-            ImGui.Text("Text");
-
-            // Default
-            if (ImGui.BeginTable($"defaultParameterTable", 2, tableFlags))
+            if (ImGui.CollapsingHeader("Name", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
+                if (ImGui.BeginTable($"nameSelectionTable", 2, tableFlags))
+                {
+                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
 
-                // Name
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Name
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Command");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Command");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("<string>");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("<string>");
 
-                // Description
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Description
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Description");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Description");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Filters the map objects by matches against their name.");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Select map objects whose name matches, or partially matches the specified string.");
 
-                ImGui.EndTable();
+                    ImGui.EndTable();
+                }
             }
 
-            ImGui.Text("");
-            ImGui.Text("Property Value");
-
-            // Property Value
-            if (ImGui.BeginTable($"propValueParameterTable", 2, tableFlags))
+            if (ImGui.CollapsingHeader("Property Value", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
+                if (ImGui.BeginTable($"propValueSelectionTable", 2, tableFlags))
+                {
+                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
 
-                // Name
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Name
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Command");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Command");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("prop: <property name> [<index>] <comparator> <value>");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("prop: <property name> [<index>] <comparator> <value>");
 
-                // Description
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Description
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Description");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Description");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Filters the map objects by value comparisons for the specified property.");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Select map objects who possess the specified property, and where the " +
+                        "\nproperty's value is equal, less than or greater than the specified value.");
 
-                // Parameter 1
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Parameter 1
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Parameter 1");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Parameters");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("<property name>: the name of the property to target." +
-                    "\nTarget a slot in an array property with the [] syntax.");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("<property name>: the name of the property to target." +
+                        "\nTarget a slot in an array property with the [] syntax.");
 
-                // Parameter 2
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Parameter 2
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Parameter 2");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("<comparator>: the comparator to use." +
-                    "\nAccepted symbols: =, <, >");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("<comparator>: the comparator to use." +
+                        "\nAccepted symbols: =, <, >");
 
-                // Parameter 3
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Parameter 3
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Parameter 3");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("<value>: the value to check for.");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("<value>: the value to check for.");
 
-                // Example 1
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Example 1
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Example");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Examples");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("prop:IsShadowOnly = 1" +
-                    "\nThe map contents will only show map objects with the Is Shadow only boolean set to true.");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("prop:EntityID = 1" +
+                        "\nSelect all map objects with an Entity ID equal to 1.");
 
-                // Example 2
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Example 2
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Example");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("prop:EntityID > 0" +
-                    "\nThe map contents will only show map objects with an Entity ID above 0.");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("prop:EntityID > 1000" +
+                        "\nSelect all map objects with an Entity ID equal or greater than 1000.");
 
-                // Example 3
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
+                    // Example 3
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Example");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("");
 
-                ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(1);
 
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("prop:EntityGroupIDs[1] > 0" +
-                    "\nThe map contents will only show map objects with an EntityGroupID in slot 1 that is above 0.");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("prop:EntityGroupIDs[1] < 999" +
+                        "\nSelect all map objects with an EntityGroupID (at index 1) equal or less than 999");
 
-                ImGui.EndTable();
+                    ImGui.EndTable();
+                }
             }
 
             ImGui.EndPopup();
@@ -507,7 +497,113 @@ public static class MsbMassEdit
         // EDIT
         if (ImGui.BeginPopup("editInputHint"))
         {
+            var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
 
+            if (ImGui.CollapsingHeader("Basic Operations", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                if (ImGui.BeginTable($"basicOperationEditTable", 2, tableFlags))
+                {
+                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
+
+                    // Name
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Command");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("<property name> [<index>] <operation> <value>");
+
+                    // Description
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Description");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Edit the specified property using the operation and value specified " +
+                        "\nfor the map objects that meet the selection criteria.");
+
+                    // Parameter 1
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Parameters");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("<property name>: the name of the property to edit." +
+                        "\nEdit a slot in an array property with the [] syntax.");
+
+                    // Parameter 2
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("<operation>: the operation to apply with the value." +
+                        "\nAccepted operations: =, +, -, *, /");
+
+                    // Parameter 3
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("<value>: the value to use with the operation. " +
+                        "\nIf the operation is +, -, * or /, it will conduct the operation with the " +
+                        "\nexisting property value one the left-hand side.");
+
+                    // Example 1
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Examples");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("EntityID = 1000" +
+                        "\nSet the Entity ID field in all the map objects that meet the selection " +
+                        "\ncriteria to 1000.");
+
+                    // Example 2
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("EntityID + 999" +
+                        "\nAdds 999 to the existing Entity ID field value of all the map objects that " +
+                        "\nmeet the selection criteria.");
+
+                    ImGui.EndTable();
+                }
+            }
+
+            ImGui.EndPopup();
         }
     }
 
