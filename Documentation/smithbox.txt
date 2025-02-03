@@ -59,5 +59,6 @@
 #--------------------------------------
 # Viewport
 #--------------------------------------
+- FEAT: overhaul resource management so it isn't so byzantine + improve texture finding
 - FIX: viewport resources are not fully released by Resource management system
 - FIX: hanging issue if resource fails to resolve loading during map loads.
