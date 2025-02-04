@@ -503,10 +503,9 @@ public class MassEditHandler
 
             universe.SaveAllMaps();
 
-            universe.UnloadAllMaps();
+            //universe.UnloadAllMaps();
             foreach (var entry in availableList)
             {
-                universe.LoadMap(entry, false, true);
                 Smithbox.EditorHandler.MapEditor.MapListView.SignalUnload(entry);
             }
 

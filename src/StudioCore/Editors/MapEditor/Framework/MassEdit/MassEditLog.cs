@@ -17,7 +17,7 @@ public class MassEditLog
 
     private List<MapActionGroup> MassEditActions = new List<MapActionGroup>();
 
-    private bool ShowMassEditLog = true;
+    public bool ShowMassEditLog = true;
 
     public MassEditLog(MapEditorScreen screen, MassEditHandler handler)
     {
@@ -31,7 +31,9 @@ public class MassEditLog
         {
             if (ImGui.Button($"{ForkAwesome.Eye}##previousEditLog"))
             {
-                ShowMassEditLog = !ShowMassEditLog;
+                Handler.BackupManager.ShowBackupManager = false;
+                Handler.TemplateManager.ShowTemplateManager = false;
+                ShowMassEditLog = true;
             }
             UIHelper.ShowHoverTooltip("Toggle visibility of the edit log.");
         }

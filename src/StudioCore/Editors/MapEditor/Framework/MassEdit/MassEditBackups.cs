@@ -5,7 +5,9 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +20,7 @@ public class MassEditBackups
 
     private string BackupDir = "";
 
-    private bool ShowBackupManager = true;
+    public bool ShowBackupManager = true;
 
     public MassEditBackups(MapEditorScreen screen, MassEditHandler handler)
     {
@@ -36,7 +38,9 @@ public class MassEditBackups
     {
         if (ImGui.Button($"{ForkAwesome.FileExcelO}##mapBackupManagerView"))
         {
-            ShowBackupManager = !ShowBackupManager;
+            Handler.EditLog.ShowMassEditLog = false;
+            Handler.TemplateManager.ShowTemplateManager = false;
+            ShowBackupManager = true;
         }
         UIHelper.ShowHoverTooltip("Toggle visibility of the backup manager.");
 
@@ -44,14 +48,58 @@ public class MassEditBackups
 
     public void Display()
     {
-        ImGui.BeginChild("mapBackupManagerSection");
+        var width = ImGui.GetWindowWidth();
+        var buttonSize = new Vector2(width, 24);
 
-        if(ImGui.Button("Backup Maps"))
+        if (ShowBackupManager)
+        {
+            ImGui.BeginChild("mapBackupManagerSection");
+
+            if (ImGui.Button("Backup Maps", buttonSize))
+            {
+                BackupMaps();
+            }
+            UIHelper.ShowHoverTooltip("All maps as they currently exist will be backed up into a ZIP file within the .smithbox folder.");
+
+            ImGui.EndChild();
+        }
+    }
+
+    private void BackupMaps()
+    {
+        var mapPaths = GetMapPaths();
+
+        // Ignore if not set correctly, don't want to be making ZIPs on the desktop
+        if (BackupDir != "")
+        {
+            var date = DateTime.Now;
+
+            var zipPath = $"{BackupDir}/MSB_Backup_{date.Year}_{date.Month}_{date.Day}_{date.Hour}_{date.Minute}_{date.Second}_{date.Millisecond}.zip";
+
+            using (ZipArchive archive = ZipFile.Open(zipPath, ZipArchiveMode.Create))
+            {
+                foreach (string file in mapPaths)
+                {
+                    archive.CreateEntryFromFile(file, Path.GetFileName(file));
+                }
+            }
+
+            TaskLogs.AddLog($"Backed up all maps at {zipPath}");
+
+            
+        }
+    }
+
+    private List<string> GetMapPaths()
+    {
+        var mapPaths = new List<string>();
+        var projectMapNames = MapLocator.GetMapList(Smithbox.ProjectRoot);
+
+        foreach (var name in projectMapNames)
         {
 
         }
-        UIHelper.ShowHoverTooltip("All maps as they currently exist will be backed up into a ZIP file within the .smithbox folder.");
 
-        ImGui.EndChild();
+        return mapPaths;
     }
 }

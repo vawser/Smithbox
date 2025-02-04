@@ -14,7 +14,7 @@ public class MassEditTemplates
     private MapEditorScreen Screen;
     private MassEditHandler Handler;
 
-    private bool ShowTemplateManager = true;
+    public bool ShowTemplateManager = true;
 
     public MassEditTemplates(MapEditorScreen screen, MassEditHandler handler)
     {
@@ -26,7 +26,9 @@ public class MassEditTemplates
     {
         if (ImGui.Button($"{ForkAwesome.Database}##templateManagerView"))
         {
-            ShowTemplateManager = !ShowTemplateManager;
+            Handler.EditLog.ShowMassEditLog = false;
+            Handler.BackupManager.ShowBackupManager = false;
+            ShowTemplateManager = true;
         }
         UIHelper.ShowHoverTooltip("Toggle visibility of the template manager.");
 
@@ -34,9 +36,12 @@ public class MassEditTemplates
 
     public void Display()
     {
-        ImGui.BeginChild("templateManagerSection");
+        if (ShowTemplateManager)
+        {
+            ImGui.BeginChild("templateManagerSection");
 
 
-        ImGui.EndChild();
+            ImGui.EndChild();
+        }
     }
 }
