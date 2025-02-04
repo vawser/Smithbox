@@ -50,6 +50,10 @@ public class Universe
     // This handles all rendering-specific stuff. Used to allow Map Editor and Model Editor usage without viewport if needed.
     public static bool IsRendering = true;
 
+    // Used during the Global MSB Mass Edit to ignore save exceptions
+
+    public static bool IgnoreExceptions = false;
+
     public Universe(RenderScene scene, ViewportSelection sel)
     {
         _renderScene = scene;
@@ -335,7 +339,7 @@ public class Universe
         }
     }
 
-    public bool LoadMap(string mapid, bool selectOnLoad = false)
+    public bool LoadMap(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
         if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
@@ -354,7 +358,7 @@ public class Universe
             return false;
         }
 
-        LoadMapAsync(mapid, selectOnLoad);
+        LoadMapAsync(mapid, selectOnLoad, fastLoad);
         return true;
     }
 
@@ -423,7 +427,7 @@ public class Universe
 
     private List<Task> tasks = new();
 
-    public async void LoadMapAsync(string mapid, bool selectOnLoad = false)
+    public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
         if (LoadedObjectContainers.TryGetValue(mapid, out var m) && m != null)
         {
@@ -432,7 +436,10 @@ public class Universe
             return;
         }
 
-        HavokCollisionManager.OnLoadMap(mapid);
+        if (!fastLoad)
+        {
+            HavokCollisionManager.OnLoadMap(mapid);
+        }
 
         try
         {
@@ -1061,7 +1068,10 @@ public class Universe
         }
         catch (Exception e)
         {
-            throw new SavingFailedException(Path.GetFileName(map.Name), e);
+            if (!Universe.IgnoreExceptions)
+            {
+                throw new SavingFailedException(Path.GetFileName(map.Name), e);
+            }
         }
 
         // Save the current map transform for this map

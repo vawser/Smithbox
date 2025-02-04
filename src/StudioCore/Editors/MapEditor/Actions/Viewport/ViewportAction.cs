@@ -6,7 +6,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Tools;
+using StudioCore.Editors.MapEditor.Framework.MassEdit;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
@@ -1573,7 +1573,7 @@ public class MapActionGroupCompoundAction : ViewportAction
             PostExecutionAction.Invoke(true);
         }
 
-        MsbMassEdit.ClearPreviousMassEditLog();
+        Smithbox.EditorHandler.MapEditor.MassEditHandler.EditLog.ClearLogSource();
 
         return evt;
     }

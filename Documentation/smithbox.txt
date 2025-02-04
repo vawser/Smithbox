@@ -7,8 +7,7 @@
 #--------------------------------------
 # Map Editor
 #--------------------------------------
-- FEAT: mass edit tool for editing map objects in a programmatic fashion.
- - Include 'loaded' and 'global' version - Loaded will affect all loaded maps, global will affect all maps.
+- FEAT: add async to MSB Mass Edit (global) so it doesn't hang the program
 - FEAT: region selection tool 
  - Spawn 'fake' region, all map objects within it are selected.
 - FEAT: asset/object collision display

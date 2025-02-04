@@ -9,6 +9,7 @@ using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor.Framework.MassEdit;
 using StudioCore.Editors.MapEditor.Helpers;
 using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Tools;
@@ -88,6 +89,7 @@ public class MapEditorScreen : EditorScreen
     // Tools
     public ToolWindow ToolWindow;
     public ToolSubMenu ToolSubMenu;
+    public MassEditHandler MassEditHandler;
 
     // Viewport
 
@@ -125,6 +127,7 @@ public class MapEditorScreen : EditorScreen
         // Tools
         ToolWindow = new ToolWindow(this, ActionHandler);
         ToolSubMenu = new ToolSubMenu(this, ActionHandler);
+        MassEditHandler = new MassEditHandler(this);
 
         // Focus
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");

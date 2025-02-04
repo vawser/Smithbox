@@ -4,6 +4,7 @@ using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
+using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections;
@@ -12,44 +13,44 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
-namespace StudioCore.Editors.MapEditor.Tools;
-public enum CommandLogic
+namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
+
+public class MassEditHandler
 {
-    [Display(Name = "AND")]
-    AND,
-    [Display(Name = "OR")]
-    OR
-}
+    private MapEditorScreen Screen;
 
-public enum MapTargetType
-{
-    [Display(Name = "Loaded")]
-    Loaded,
-    [Display(Name = "All")]
-    All
-}
+    private MapListType MapTarget;
 
+    private List<string> MapInputs = new List<string>() { "" };
 
-public static class MsbMassEdit
-{
-    private static MapTargetType MapTarget;
+    private SelectionConditionLogic MapSelectionLogic;
 
-    private static CommandLogic CommandLogic;
+    private List<string> SelectionInputs = new List<string>() { "" };
 
-    private static List<string> SelectionInputs = new List<string>() { "" };
+    private SelectionConditionLogic MapObjectSelectionLogic;
 
-    private static List<string> EditInputs = new List<string>() { "" };
+    private List<string> EditInputs = new List<string>() { "" };
 
-    private static List<MapActionGroup> PreviousMassEdit = new List<MapActionGroup>();
+    public MassEditLog EditLog;
+    public MassEditHints Hints;
+    public MassEditBackups BackupManager;
+    public MassEditTemplates TemplateManager;
 
-    private static bool ShowPreviousMassEditLog = true;
+    public MassEditHandler(MapEditorScreen screen)
+    {
+        Screen = screen;
+        EditLog = new MassEditLog(screen, this);
+        Hints = new MassEditHints(screen, this);
+        BackupManager = new MassEditBackups(screen, this);
+        TemplateManager = new MassEditTemplates(screen, this);
+    }
 
-    public static void Display()
+    /// <summary>
+    /// Handles the initial setup for the Mass Edit tool panel
+    /// </summary>
+    public void Display()
     {
         var width = ImGui.GetWindowWidth();
         var buttonSize = new Vector2(width, 24);
@@ -74,65 +75,116 @@ public static class MsbMassEdit
 
         ConfigureEdit();
 
-        if(ImGui.Button("Apply", buttonSize))
+        if (ImGui.Button("Apply", buttonSize))
         {
-            ApplyMassEdit();
+            ProcessMassEdit();
         }
 
         ImGui.Separator();
 
-        DisplayPreviousEdits();
+        EditLog.DisplayButton();
+        ImGui.SameLine();
+        BackupManager.DisplayButton();
+        ImGui.SameLine();
+        TemplateManager.DisplayButton();
 
-        PopupHints();
+        EditLog.Display();
+        BackupManager.Display();
+        TemplateManager.Display();
+
+        Hints.DisplayHintPopups();
     }
 
-    private static void DisplayPreviousEdits()
+    /// <summary>
+    /// Handles the map target section
+    /// </summary>
+    private void ConfigureMapTarget()
     {
-        if (PreviousMassEdit != null)
+        var width = ImGui.GetWindowWidth();
+
+        //--------------
+        // Actions
+        //--------------
+        // Documentation
+        if (ImGui.Button($"{ForkAwesome.QuestionCircle}##mapTargetHintButton"))
         {
-            if (ImGui.Button($"{ForkAwesome.Eye}##previousEditLog"))
+            ImGui.OpenPopup("mapTargetHint");
+        }
+        UIHelper.ShowHoverTooltip("View the documentation on map target commands.");
+
+        ImGui.SameLine();
+
+        // Add
+        if (ImGui.Button($"{ForkAwesome.Plus}##mapSelectionAdd"))
+        {
+            MapInputs.Add("");
+        }
+        UIHelper.ShowHoverTooltip("Add new map selection input row.");
+
+        ImGui.SameLine();
+
+        // Remove
+        if (MapInputs.Count < 2)
+        {
+            ImGui.BeginDisabled();
+
+            if (ImGui.Button($"{ForkAwesome.Minus}##mapSelectionRemoveDisabled"))
             {
-                ShowPreviousMassEditLog = !ShowPreviousMassEditLog;
+                MapInputs.RemoveAt(MapInputs.Count - 1);
             }
-            UIHelper.ShowHoverTooltip("Toggle visibility of the previous edit log.");
+            UIHelper.ShowHoverTooltip("Remove last added map selection input row.");
 
-            if (ShowPreviousMassEditLog)
+            ImGui.EndDisabled();
+        }
+        else
+        {
+            if (ImGui.Button($"{ForkAwesome.Minus}##mapSelectionRemove"))
             {
-                ImGui.BeginChild("previousEditLogSection");
-
-                foreach (var entry in PreviousMassEdit)
-                {
-                    var displayName = entry.MapID;
-                    var alias = AliasUtils.GetMapNameAlias(entry.MapID);
-                    if (alias != null)
-                        displayName = $"{displayName} {alias}";
-
-                    if (ImGui.CollapsingHeader($"{displayName}##mapTab_{entry.MapID}"))
-                    {
-                        var changes = entry.Actions;
-
-                        foreach (var change in changes)
-                        {
-                            if (change is PropertiesChangedAction propChange)
-                            {
-                                UIHelper.WrappedText($"{propChange.GetEditMessage()}");
-                            }
-                        }
-                    }
-                }
-
-                ImGui.EndChild();
+                MapInputs.RemoveAt(MapInputs.Count - 1);
+                UIHelper.ShowHoverTooltip("Remove last added map selection input row.");
             }
         }
-    }
 
-    private static void ConfigureMapTarget()
-    {
+        ImGui.SameLine();
+
+        // Reset
+        if (ImGui.Button("Reset##resetMapSelectionInput"))
+        {
+            MapInputs = new List<string>() { "" };
+        }
+        UIHelper.ShowHoverTooltip("Reset map selection input rows.");
+
+        ImGui.SameLine();
+
+        // Conditional Logic
+        ImGui.SetNextItemWidth(width * 0.3f);
+        if (ImGui.BeginCombo($"##mapSelectionCommandLogic", MapSelectionLogic.GetDisplayName()))
+        {
+            foreach (var entry in Enum.GetValues(typeof(SelectionConditionLogic)))
+            {
+                var curEnum = (SelectionConditionLogic)entry;
+
+                if (ImGui.Selectable($"{curEnum.GetDisplayName()}", MapSelectionLogic == curEnum))
+                {
+                    MapSelectionLogic = curEnum;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        UIHelper.ShowHoverTooltip("The logic with which to handle the selection inputs." +
+            "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
+            "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
+
+        ImGui.SameLine();
+
+        // Map List Type
+        ImGui.SetNextItemWidth(width * 0.3f);
         if (ImGui.BeginCombo("##mapTargetCombo", MapTarget.GetDisplayName()))
         {
-            foreach (var entry in Enum.GetValues(typeof(MapTargetType)))
+            foreach (var entry in Enum.GetValues(typeof(MapListType)))
             {
-                var curEnum = (MapTargetType)entry;
+                var curEnum = (MapListType)entry;
 
                 if (ImGui.Selectable($"{curEnum.GetDisplayName()}", MapTarget == curEnum))
                 {
@@ -142,28 +194,57 @@ public static class MsbMassEdit
 
             ImGui.EndCombo();
         }
+        UIHelper.ShowHoverTooltip("Determines how the map list is obtained." +
+            "\n\nLocal means only currently loaded maps will be edited (that match the map selection criteria)." +
+            "\n\nGlobal means all maps will be edited (that match the map selection criteria).\nWARNING: editing a large amounts of maps will cause Smithbox to hang until it is finished, which may be several minutes.");
 
-        ImGui.SameLine();
-        if (ImGui.Button($"{ForkAwesome.QuestionCircle}##mapTargetHintButton"))
+        //--------------
+        // Map Inputs
+        //--------------
+        for (int i = 0; i < MapInputs.Count; i++)
         {
-            ImGui.OpenPopup("mapTargetHint");
+            var curCommand = MapInputs[i];
+            var curText = curCommand;
+
+            ImGui.SetNextItemWidth(width);
+            if (ImGui.InputText($"##mapSelectionInput{i}", ref curText, 255))
+            {
+                MapInputs[i] = curText;
+            }
+            UIHelper.ShowHoverTooltip("The map selection command to process.");
         }
-        UIHelper.ShowHoverTooltip("View the effect the map target types have.");
     }
 
-    private static void ConfigureSelection()
+    /// <summary>
+    /// Handles the selection criteria section
+    /// </summary>
+    private void ConfigureSelection()
     {
         var width = ImGui.GetWindowWidth();
         var buttonSize = new Vector2(width * 0.32f, 24);
 
+        //--------------
+        // Actions
+        //--------------
+        // Documentation
+        if (ImGui.Button($"{ForkAwesome.QuestionCircle}##selectionHintButton"))
+        {
+            ImGui.OpenPopup("selectionInputHint");
+        }
+        UIHelper.ShowHoverTooltip("View documentation on selection commands.");
+
+        ImGui.SameLine();
+
+        // Add
         if (ImGui.Button($"{ForkAwesome.Plus}##selectionAdd"))
         {
-            SelectionInputs.Add( "" );
+            SelectionInputs.Add("");
         }
         UIHelper.ShowHoverTooltip("Add new selection input row.");
 
         ImGui.SameLine();
 
+        // Remove
         if (SelectionInputs.Count < 2)
         {
             ImGui.BeginDisabled();
@@ -187,6 +268,7 @@ public static class MsbMassEdit
 
         ImGui.SameLine();
 
+        // Reset
         if (ImGui.Button("Reset##resetSelectionInput"))
         {
             SelectionInputs = new List<string>() { "" };
@@ -195,56 +277,74 @@ public static class MsbMassEdit
 
         ImGui.SameLine();
 
-        ImGui.SetNextItemWidth(100f);
-        if (ImGui.BeginCombo($"##selectionCommandLogic", CommandLogic.GetDisplayName()))
+        // Conditional Logic
+        ImGui.SetNextItemWidth(width * 0.3f);
+        if (ImGui.BeginCombo($"##selectionCommandLogic", MapObjectSelectionLogic.GetDisplayName()))
         {
-            foreach (var entry in Enum.GetValues(typeof(CommandLogic)))
+            foreach (var entry in Enum.GetValues(typeof(SelectionConditionLogic)))
             {
-                var curEnum = (CommandLogic)entry;
+                var curEnum = (SelectionConditionLogic)entry;
 
-                if (ImGui.Selectable($"{curEnum.GetDisplayName()}", CommandLogic == curEnum))
+                if (ImGui.Selectable($"{curEnum.GetDisplayName()}", MapObjectSelectionLogic == curEnum))
                 {
-                    CommandLogic = curEnum;
+                    MapObjectSelectionLogic = curEnum;
                 }
             }
 
             ImGui.EndCombo();
         }
-        UIHelper.ShowHoverTooltip("The logic with which to handle the selection inputs.");
+        UIHelper.ShowHoverTooltip("The logic with which to handle the selection inputs." +
+            "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
+            "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
-        ImGui.SameLine();
-        if (ImGui.Button($"{ForkAwesome.QuestionCircle}##selectionHintButton"))
-        {
-            ImGui.OpenPopup("selectionInputHint");
-        }
-        UIHelper.ShowHoverTooltip("View documentation on selection commands.");
-
+        //--------------
+        // Selection Inputs
+        //--------------
         for (int i = 0; i < SelectionInputs.Count; i++)
         {
             var curCommand = SelectionInputs[i];
             var curText = curCommand;
 
+            ImGui.SetNextItemWidth(width);
             if (ImGui.InputText($"##selectionInput{i}", ref curText, 255))
             {
                 SelectionInputs[i] = curText;
             }
             UIHelper.ShowHoverTooltip("The selection command to process.");
         }
+
     }
 
-    private static void ConfigureEdit()
+    /// <summary>
+    /// Handles the edit section
+    /// </summary>
+    private void ConfigureEdit()
     {
         var width = ImGui.GetWindowWidth();
         var buttonSize = new Vector2(width * 0.32f, 24);
 
+        //--------------
+        // Actions Inputs
+        //--------------
+        // Documentation
+        if (ImGui.Button($"{ForkAwesome.QuestionCircle}##editHintButton"))
+        {
+            ImGui.OpenPopup("editInputHint");
+        }
+        UIHelper.ShowHoverTooltip("View documentation on edit commands.");
+
+        ImGui.SameLine();
+
+        // Add
         if (ImGui.Button($"{ForkAwesome.Plus}##editAdd"))
         {
-            EditInputs.Add( "" );
+            EditInputs.Add("");
         }
         UIHelper.ShowHoverTooltip("Add edit input row.");
 
         ImGui.SameLine();
 
+        // Remove
         if (EditInputs.Count < 2)
         {
             ImGui.BeginDisabled();
@@ -268,366 +368,58 @@ public static class MsbMassEdit
 
         ImGui.SameLine();
 
+        // Reset
         if (ImGui.Button("Reset##resetEditInputs"))
         {
             EditInputs = new List<string>() { "" };
         }
         UIHelper.ShowHoverTooltip("Reset edit input rows.");
 
-        ImGui.SameLine();
-        if (ImGui.Button($"{ForkAwesome.QuestionCircle}##editHintButton"))
-        {
-            ImGui.OpenPopup("editInputHint");
-        }
-        UIHelper.ShowHoverTooltip("View documentation on edit commands.");
-
+        //--------------
+        // Edit Inputs
+        //--------------
         for (int i = 0; i < EditInputs.Count; i++)
         {
             var curCommand = EditInputs[i];
             var curText = curCommand;
 
+            ImGui.SetNextItemWidth(width);
             if (ImGui.InputText($"##editInput{i}", ref curText, 255))
             {
                 EditInputs[i] = curText;
             }
+            UIHelper.ShowHoverTooltip("The edit command to process.");
         }
     }
 
-    private static void PopupHints()
-    {
-        // MAP TARGET
-        if (ImGui.BeginPopup("mapTargetHint"))
-        {
-            var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
-
-            if (ImGui.CollapsingHeader("Map Target Type", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                if (ImGui.BeginTable($"mapTargetHintTable", 2, tableFlags))
-                {
-                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
-
-                    // Loaded
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Loaded");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("All currently loaded maps will be affected by this mass edit.");
-
-                    // Loaded
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("All");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("All maps, whether they are loaded or not, will be affected by this mass edit.");
-
-                    ImGui.EndTable();
-                }
-            }
-
-            ImGui.EndPopup();
-        }
-
-        // SELECTION
-        if (ImGui.BeginPopup("selectionInputHint"))
-        {
-            var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
-
-            if (ImGui.CollapsingHeader("Name", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                if (ImGui.BeginTable($"nameSelectionTable", 2, tableFlags))
-                {
-                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
-
-                    // Name
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Command");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("<string>");
-
-                    // Description
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Description");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Select map objects whose name matches, or partially matches the specified string.");
-
-                    ImGui.EndTable();
-                }
-            }
-
-            if (ImGui.CollapsingHeader("Property Value", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                if (ImGui.BeginTable($"propValueSelectionTable", 2, tableFlags))
-                {
-                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
-
-                    // Name
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Command");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("prop: <property name> [<index>] <comparator> <value>");
-
-                    // Description
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Description");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Select map objects who possess the specified property, and where the " +
-                        "\nproperty's value is equal, less than or greater than the specified value.");
-
-                    // Parameter 1
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Parameters");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("<property name>: the name of the property to target." +
-                        "\nTarget a slot in an array property with the [] syntax.");
-
-                    // Parameter 2
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("<comparator>: the comparator to use." +
-                        "\nAccepted symbols: =, <, >");
-
-                    // Parameter 3
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("<value>: the value to check for.");
-
-                    // Example 1
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Examples");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("prop:EntityID = 1" +
-                        "\nSelect all map objects with an Entity ID equal to 1.");
-
-                    // Example 2
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("prop:EntityID > 1000" +
-                        "\nSelect all map objects with an Entity ID equal or greater than 1000.");
-
-                    // Example 3
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("prop:EntityGroupIDs[1] < 999" +
-                        "\nSelect all map objects with an EntityGroupID (at index 1) equal or less than 999");
-
-                    ImGui.EndTable();
-                }
-            }
-
-            ImGui.EndPopup();
-        }
-
-        // EDIT
-        if (ImGui.BeginPopup("editInputHint"))
-        {
-            var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
-
-            if (ImGui.CollapsingHeader("Basic Operations", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                if (ImGui.BeginTable($"basicOperationEditTable", 2, tableFlags))
-                {
-                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
-
-                    // Name
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Command");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("<property name> [<index>] <operation> <value>");
-
-                    // Description
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Description");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Edit the specified property using the operation and value specified " +
-                        "\nfor the map objects that meet the selection criteria.");
-
-                    // Parameter 1
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Parameters");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("<property name>: the name of the property to edit." +
-                        "\nEdit a slot in an array property with the [] syntax.");
-
-                    // Parameter 2
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("<operation>: the operation to apply with the value." +
-                        "\nAccepted operations: =, +, -, *, /");
-
-                    // Parameter 3
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("<value>: the value to use with the operation. " +
-                        "\nIf the operation is +, -, * or /, it will conduct the operation with the " +
-                        "\nexisting property value one the left-hand side.");
-
-                    // Example 1
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Examples");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("EntityID = 1000" +
-                        "\nSet the Entity ID field in all the map objects that meet the selection " +
-                        "\ncriteria to 1000.");
-
-                    // Example 2
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("EntityID + 999" +
-                        "\nAdds 999 to the existing Entity ID field value of all the map objects that " +
-                        "\nmeet the selection criteria.");
-
-                    ImGui.EndTable();
-                }
-            }
-
-            ImGui.EndPopup();
-        }
-    }
-
+    
     /// <summary>
-    /// Mass Edit for all maps
+    /// Handles the map-level part of the Mass Edit
     /// </summary>
-    private static void ProcessGlobalMassEdit()
-    {
-        // TODO: this should fill the universe container with all maps,
-        // need to implement special 'fast' LoadMap flow so it ignores all rendering aspects when doing this
-    }
-
-    private static void ApplyMassEdit()
+    private void ProcessMassEdit()
     {
         var selection = Smithbox.EditorHandler.MapEditor.Selection;
         var listView = Smithbox.EditorHandler.MapEditor.MapListView;
         var universe = Smithbox.EditorHandler.MapEditor.Universe;
 
+        List<MapActionGroup> actionGroups = new List<MapActionGroup>();
+
         // Clear selection before applying edits, to ensure the properties view doesn't interfere.
         selection.ClearSelection();
 
-        List<MapActionGroup> actionGroups = new List<MapActionGroup>();
+        // Get filtered list of maps
+        var mapList = MapLocator.GetFullMapList();
+        var availableList = new List<string>();
+        foreach (var entry in mapList)
+        {
+            if (IsValidMap(entry))
+            {
+                availableList.Add(entry);
+            }
+        }
 
-        if (MapTarget is MapTargetType.Loaded)
+        // Local
+        if (MapTarget is MapListType.Local)
         {
             if (universe.LoadedObjectContainers.Count > 0)
             {
@@ -637,39 +429,155 @@ public static class MsbMassEdit
 
                 foreach (var entry in maps)
                 {
-                    if(listView.ContentViews.ContainsKey(entry.Key))
+                    if (availableList.Contains(entry.Key))
+                    {
+                        if (listView.ContentViews.ContainsKey(entry.Key))
+                        {
+                            var curView = listView.ContentViews[entry.Key];
+
+                            var actionList = ProcessSelectionCriteria(curView);
+
+                            if (actionList.Count > 0)
+                                actionGroups.Add(new MapActionGroup(entry.Key, actionList));
+                        }
+                    }
+                }
+            }
+
+            if (actionGroups.Count > 0)
+            {
+                EditLog.UpdateLogSource(actionGroups);
+                var compoundAction = new MapActionGroupCompoundAction(actionGroups);
+                Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(compoundAction);
+            }
+            else
+            {
+                TaskLogs.AddLog("MSB mass edit could not be applied.");
+            }
+        }
+
+        // Global
+        if (MapTarget is MapListType.Global)
+        {
+            Universe.IsRendering = false;
+            Universe.IgnoreExceptions = true;
+
+            // Load all maps
+            foreach (var entry in availableList)
+            {
+                universe.LoadMap(entry, false, true);
+                Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(entry);
+            }
+
+            // Process each map
+            if (universe.LoadedObjectContainers.Count > 0)
+            {
+                var maps = universe.LoadedObjectContainers
+                        .Where(k => k.Key is not null)
+                        .OrderBy(k => k.Key);
+
+                foreach (var entry in maps)
+                {
+                    if (listView.ContentViews.ContainsKey(entry.Key))
                     {
                         var curView = listView.ContentViews[entry.Key];
 
-                        var actionList = ProcessLocalMassEdit(curView);
+                        var actionList = ProcessSelectionCriteria(curView);
 
-                        if(actionList.Count > 0)
+                        if (actionList.Count > 0)
                             actionGroups.Add(new MapActionGroup(entry.Key, actionList));
                     }
                 }
             }
+
+            if (actionGroups.Count > 0)
+            {
+                EditLog.UpdateLogSource(actionGroups);
+                var compoundAction = new MapActionGroupCompoundAction(actionGroups);
+                Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(compoundAction);
+            }
+            else
+            {
+                TaskLogs.AddLog("MSB mass edit could not be applied.");
+            }
+
+            universe.SaveAllMaps();
+
+            universe.UnloadAllMaps();
+            foreach (var entry in availableList)
+            {
+                universe.LoadMap(entry, false, true);
+                Smithbox.EditorHandler.MapEditor.MapListView.SignalUnload(entry);
+            }
+
+            Universe.IsRendering = true;
+            Universe.IgnoreExceptions = false;
         }
-        else if (MapTarget is MapTargetType.All)
+    }
+    /// <summary>
+    /// Handles the selection filtering for map objects
+    /// </summary>
+    private bool IsValidMap(string mapID)
+    {
+        var isValid = true;
+
+        if (MapSelectionLogic is SelectionConditionLogic.OR)
         {
-            ProcessGlobalMassEdit();
+            isValid = false;
         }
 
-        if (actionGroups.Count > 0)
+        bool[] partTruth = new bool[MapInputs.Count];
+
+        for (int i = 0; i < MapInputs.Count; i++)
         {
-            PreviousMassEdit = actionGroups;
-            var compoundAction = new MapActionGroupCompoundAction(actionGroups);
-            Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(compoundAction);
+            var cmd = MapInputs[i];
+
+            // Blank will match for everything
+            if (cmd == "")
+                partTruth[i] = true;
+
+            if (cmd.Contains("exclude:"))
+            {
+                var input = cmd.Replace("exclude:", "").Trim().ToLower();
+
+                if (mapID.Contains(input))
+                {
+                    partTruth[i] = false;
+                }
+            }
+            // Default to name filter if no explicit command is used
+            else
+            {
+                var input = cmd.Trim().ToLower();
+
+                if (mapID.Contains(input))
+                {
+                    partTruth[i] = true;
+                }
+            }
         }
-        else
+
+        foreach (bool entry in partTruth)
         {
-            TaskLogs.AddLog("MSB mass edit could not be applied.");
+            if (MapSelectionLogic is SelectionConditionLogic.AND)
+            {
+                if (!entry)
+                    isValid = false;
+            }
+            else if (MapSelectionLogic is SelectionConditionLogic.OR)
+            {
+                if (entry)
+                    isValid = true;
+            }
         }
+
+        return isValid;
     }
 
     /// <summary>
-    /// Mass Edit for loaded maps
+    /// Handles the selection criteria process
     /// </summary>
-    private static List<ViewportAction> ProcessLocalMassEdit(MapContentView curView)
+    private List<ViewportAction> ProcessSelectionCriteria(MapContentView curView)
     {
         List<ViewportAction> actions = new List<ViewportAction>();
 
@@ -679,10 +587,10 @@ public static class MsbMassEdit
             {
                 if (entry is MsbEntity mEnt)
                 {
-                    if (IsSelected(curView, mEnt))
+                    if (IsValidMapObject(curView, mEnt))
                     {
-                        var actionList = ApplyEdit(curView, mEnt);
-                        foreach(var actionEntry in actionList)
+                        var actionList = ProcessEditCommands(curView, mEnt);
+                        foreach (var actionEntry in actionList)
                         {
                             actions.Add(actionEntry);
                         }
@@ -694,23 +602,23 @@ public static class MsbMassEdit
         return actions;
     }
 
-    private static bool IsSelected(MapContentView curView, MsbEntity mEnt)
+    /// <summary>
+    /// Handles the selection filtering for map objects
+    /// </summary>
+    private bool IsValidMapObject(MapContentView curView, MsbEntity mEnt)
     {
         var isValid = true;
 
-        var selectionCommands = SelectionInputs;
-        var commandLogic = CommandLogic;
-
-        if(commandLogic is CommandLogic.OR)
+        if (MapObjectSelectionLogic is SelectionConditionLogic.OR)
         {
             isValid = false;
         }
 
-        bool[] partTruth = new bool[selectionCommands.Count];
+        bool[] partTruth = new bool[SelectionInputs.Count];
 
-        for (int i = 0; i < selectionCommands.Count; i++)
+        for (int i = 0; i < SelectionInputs.Count; i++)
         {
-            var cmd = selectionCommands[i];
+            var cmd = SelectionInputs[i];
 
             if (cmd.Contains("prop:"))
             {
@@ -719,18 +627,18 @@ public static class MsbMassEdit
             // Default to name filter if no explicit command is used
             else
             {
-                partTruth[i] = NameFilter(curView, mEnt, cmd);
+                partTruth[i] = PropertyNameFilter(curView, mEnt, cmd);
             }
         }
 
         foreach (bool entry in partTruth)
         {
-            if (commandLogic is CommandLogic.AND)
+            if (MapObjectSelectionLogic is SelectionConditionLogic.AND)
             {
                 if (!entry)
                     isValid = false;
             }
-            else if (commandLogic is CommandLogic.OR)
+            else if (MapObjectSelectionLogic is SelectionConditionLogic.OR)
             {
                 if (entry)
                     isValid = true;
@@ -741,9 +649,9 @@ public static class MsbMassEdit
     }
 
     /// <summary>
-    /// Filtering based on object name
+    /// Handles the selection filtering for map objects based on name
     /// </summary>
-    private static bool NameFilter(MapContentView view, Entity curEnt, string cmd)
+    private bool PropertyNameFilter(MapContentView view, Entity curEnt, string cmd)
     {
         bool isValid = false;
 
@@ -777,9 +685,9 @@ public static class MsbMassEdit
     }
 
     /// <summary>
-    /// Filtering based on object property value
+    /// Handles the selection filtering for map objects based on property value
     /// </summary>
-    private static bool PropertyValueFilter(MapContentView view, Entity curEnt, string cmd)
+    private bool PropertyValueFilter(MapContentView view, Entity curEnt, string cmd)
     {
         bool isValid = false;
 
@@ -842,7 +750,7 @@ public static class MsbMassEdit
                 var valueType = targetProp_Value.GetType();
 
                 // Do numeric comparison if compare str is < or >
-                if (IsNumericType(valueType) && compare != "=")
+                if (MassEditUtils.IsNumericType(valueType) && compare != "=")
                 {
                     isValid = PerformNumericComparison(compare, targetValue, targetProp_Value, valueType);
                 }
@@ -861,25 +769,11 @@ public static class MsbMassEdit
         return isValid;
     }
 
-    private static bool IsNumericType(Type valueType)
-    {
-        if (valueType == typeof(byte) ||
-            valueType == typeof(sbyte) ||
-            valueType == typeof(short) ||
-            valueType == typeof(ushort) ||
-            valueType == typeof(int) ||
-            valueType == typeof(uint) ||
-            valueType == typeof(long) ||
-            valueType == typeof(float) ||
-            valueType == typeof(double))
-        {
-            return true;
-        }
 
-        return false;
-    }
-
-    private static bool PerformNumericComparison(string comparator, string targetVal, object propValue, Type valueType)
+    /// <summary>
+    /// Performs the mathematical condition check
+    /// </summary>
+    private bool PerformNumericComparison(string comparator, string targetVal, object propValue, Type valueType)
     {
         // LONG
         if (valueType == typeof(long))
@@ -1090,7 +984,10 @@ public static class MsbMassEdit
         return false;
     }
 
-    private static List<ViewportAction> ApplyEdit(MapContentView curView, MsbEntity mEnt)
+    /// <summary>
+    /// Handles the edit command process
+    /// </summary>
+    private List<ViewportAction> ProcessEditCommands(MapContentView curView, MsbEntity mEnt)
     {
         var editCommands = EditInputs;
 
@@ -1108,7 +1005,7 @@ public static class MsbMassEdit
             else
             {
                 var action = PropertyValueOperation(curView, mEnt, cmd);
-                if(action != null)
+                if (action != null)
                     actions.Add(action);
             }
         }
@@ -1116,7 +1013,11 @@ public static class MsbMassEdit
         return actions;
     }
 
-    private static ViewportAction PropertyValueOperation(MapContentView curView, MsbEntity curEnt, string cmd)
+    /// <summary>
+    /// Handles the property value operation edits
+    /// TODO: adjust how this is done so we don't need to duplicate the operation logic so much
+    /// </summary>
+    private ViewportAction PropertyValueOperation(MapContentView curView, MsbEntity curEnt, string cmd)
     {
         var input = cmd.Replace("prop:", "");
 
@@ -1166,7 +1067,7 @@ public static class MsbMassEdit
                         var valueType = targetProp_Value.GetType();
 
                         // If numeric operation is not supported, force set operation
-                        if (!IsNumericType(valueType))
+                        if (!MassEditUtils.IsNumericType(valueType))
                         {
                             compare = "=";
                         }
@@ -1752,7 +1653,7 @@ public static class MsbMassEdit
                 var valueType = targetProp_Value.GetType();
 
                 // If numeric operation is not supported, force set operation
-                if (!IsNumericType(valueType))
+                if (!MassEditUtils.IsNumericType(valueType))
                 {
                     compare = "=";
                 }
@@ -1768,7 +1669,7 @@ public static class MsbMassEdit
                     if (res)
                     {
                         var result = tExistingValue;
-                        if(compare == "=")
+                        if (compare == "=")
                         {
                             try
                             {
@@ -1779,7 +1680,7 @@ public static class MsbMassEdit
                                 TaskLogs.AddLog($"{e.Message} {e.StackTrace}");
                             }
                         }
-                        if(compare == "+")
+                        if (compare == "+")
                         {
                             try
                             {
@@ -2330,22 +2231,5 @@ public static class MsbMassEdit
         return null;
     }
 
-    public static void ClearPreviousMassEditLog()
-    {
-        PreviousMassEdit = new List<MapActionGroup>();
-    }
-}
-
-public class MapActionGroup
-{
-    public string MapID { get; set; }
-
-    public List<ViewportAction> Actions { get; set; }
-
-    public MapActionGroup(string mapID, List<ViewportAction> actions)
-    {
-        MapID = mapID;
-        Actions = actions;
-    }
 }
 

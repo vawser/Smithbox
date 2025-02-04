@@ -954,7 +954,7 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Property Mass Edit"))
             {
-                MsbMassEdit.Display();
+                Screen.MassEditHandler.Display();
             }
         }
 

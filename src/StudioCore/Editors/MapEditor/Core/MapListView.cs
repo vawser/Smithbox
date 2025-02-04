@@ -403,4 +403,14 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             curView.Load(true);
         }
     }
+
+    public void SignalUnload(string mapId)
+    {
+        if (ContentViews.ContainsKey(mapId))
+        {
+            var curView = ContentViews[mapId];
+
+            curView.Unload();
+        }
+    }
 }
