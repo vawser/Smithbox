@@ -31,8 +31,7 @@ public class MassEditLog
         {
             if (ImGui.Button($"{ForkAwesome.Eye}##previousEditLog"))
             {
-                Handler.BackupManager.ShowBackupManager = false;
-                Handler.TemplateManager.ShowTemplateManager = false;
+                Handler.Tools.ShowToolView = false;
                 ShowMassEditLog = true;
             }
             UIHelper.ShowHoverTooltip("Toggle visibility of the edit log.");

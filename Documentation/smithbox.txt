@@ -8,8 +8,8 @@
 # Map Editor
 #--------------------------------------
 - FEAT: add async to MSB Mass Edit (global) so it doesn't hang the program
-- FEAT: mass edit - map backup
 - FEAT: mass edit - templates
+- FEAT: add MSB diff bank - add highlighting of different map objects + properties
 - FEAT: region selection tool 
  - Spawn 'fake' region, all map objects within it are selected.
 - FEAT: asset/object collision display

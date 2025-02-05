@@ -127,19 +127,26 @@ public static class HavokCollisionManager
                         Memory<byte> bytes = reader.ReadFile(f);
                         var FileBytes = DCX.Decompress(bytes).ToArray();
 
-                        HavokBinarySerializer serializer = new HavokBinarySerializer();
-                        using (MemoryStream memoryStream = new MemoryStream(CompendiumBytes))
+                        try
                         {
-                            serializer.LoadCompendium(memoryStream);
-                        }
-                        using (MemoryStream memoryStream = new MemoryStream(FileBytes))
-                        {
-                            var fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-
-                            if (!HavokContainers.ContainsKey(name))
+                            HavokBinarySerializer serializer = new HavokBinarySerializer();
+                            using (MemoryStream memoryStream = new MemoryStream(CompendiumBytes))
                             {
-                                HavokContainers.Add(name, fileHkx);
+                                serializer.LoadCompendium(memoryStream);
                             }
+                            using (MemoryStream memoryStream = new MemoryStream(FileBytes))
+                            {
+                                var fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+
+                                if (!HavokContainers.ContainsKey(name))
+                                {
+                                    HavokContainers.Add(name, fileHkx);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            TaskLogs.AddLog($"Failed to serialize havok file: {name} - {ex}");
                         }
                     }
                 }
@@ -222,15 +229,22 @@ public static class HavokCollisionManager
                 Memory<byte> bytes = reader.ReadFile(f);
                 var FileBytes = bytes.ToArray();
 
-                HavokBinarySerializer serializer = new HavokBinarySerializer();
-                using (MemoryStream memoryStream = new MemoryStream(FileBytes))
+                try
                 {
-                    var fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-
-                    if (!HavokContainers.ContainsKey(storedName))
+                    HavokBinarySerializer serializer = new HavokBinarySerializer();
+                    using (MemoryStream memoryStream = new MemoryStream(FileBytes))
                     {
-                        HavokContainers.Add(storedName, fileHkx);
+                        var fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+
+                        if (!HavokContainers.ContainsKey(storedName))
+                        {
+                            HavokContainers.Add(storedName, fileHkx);
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"Failed to serialize havok file: {name} - {ex}");
                 }
             }
         }

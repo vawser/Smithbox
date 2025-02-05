@@ -23,28 +23,26 @@ public class MassEditHandler
 
     private MapListType MapTarget;
 
-    private List<string> MapInputs = new List<string>() { "" };
+    public List<string> MapInputs = new List<string>() { "" };
 
-    private SelectionConditionLogic MapSelectionLogic;
+    public SelectionConditionLogic MapSelectionLogic;
 
-    private List<string> SelectionInputs = new List<string>() { "" };
+    public List<string> SelectionInputs = new List<string>() { "" };
 
-    private SelectionConditionLogic MapObjectSelectionLogic;
+    public SelectionConditionLogic MapObjectSelectionLogic;
 
-    private List<string> EditInputs = new List<string>() { "" };
+    public List<string> EditInputs = new List<string>() { "" };
 
     public MassEditLog EditLog;
     public MassEditHints Hints;
-    public MassEditBackups BackupManager;
-    public MassEditTemplates TemplateManager;
+    public MassEditTools Tools;
 
     public MassEditHandler(MapEditorScreen screen)
     {
         Screen = screen;
         EditLog = new MassEditLog(screen, this);
         Hints = new MassEditHints(screen, this);
-        BackupManager = new MassEditBackups(screen, this);
-        TemplateManager = new MassEditTemplates(screen, this);
+        Tools = new MassEditTools(screen, this);
     }
 
     /// <summary>
@@ -83,14 +81,11 @@ public class MassEditHandler
         ImGui.Separator();
 
         EditLog.DisplayButton();
-        //ImGui.SameLine();
-        //BackupManager.DisplayButton();
-        //ImGui.SameLine();
-        //TemplateManager.DisplayButton();
+        ImGui.SameLine();
+        Tools.DisplayButton();
 
         EditLog.Display();
-        //BackupManager.Display();
-        //TemplateManager.Display();
+        Tools.Display();
 
         Hints.DisplayHintPopups();
     }

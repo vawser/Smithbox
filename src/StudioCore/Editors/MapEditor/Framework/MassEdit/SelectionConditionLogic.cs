@@ -10,8 +10,8 @@ namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 public enum SelectionConditionLogic
 {
     [Display(Name = "All must match")]
-    AND,
+    AND = 0,
     [Display(Name = "One must match")]
-    OR
+    OR = 1
 }
 
