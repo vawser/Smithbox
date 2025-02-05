@@ -83,14 +83,14 @@ public class MassEditHandler
         ImGui.Separator();
 
         EditLog.DisplayButton();
-        ImGui.SameLine();
-        BackupManager.DisplayButton();
-        ImGui.SameLine();
-        TemplateManager.DisplayButton();
+        //ImGui.SameLine();
+        //BackupManager.DisplayButton();
+        //ImGui.SameLine();
+        //TemplateManager.DisplayButton();
 
         EditLog.Display();
-        BackupManager.Display();
-        TemplateManager.Display();
+        //BackupManager.Display();
+        //TemplateManager.Display();
 
         Hints.DisplayHintPopups();
     }

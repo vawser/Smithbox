@@ -39,9 +39,11 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
         _activeSubmeshes = _allSubmeshes.Where((p, i) =>
         {
-            if (_resource.Get().GPUMeshes.Length < i)
+            var res = _resource.Get();
+
+            if (res.GPUMeshes.Length > i)
             {
-                var mask = _resource.Get().GPUMeshes[i].Material.MaterialMask;
+                var mask = res.GPUMeshes[i].Material.MaterialMask;
                 return mask == -1 || ModelMasks[mask] == 1;
             }
             else
