@@ -558,7 +558,7 @@
     <vsPlayerDmgCorrectRate_Curse AltName="Vs. Player - Blight Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <pad AltName="" Padding=""/>
     <restrictSpecialSwordArt AltName="Restrict Special Ashes of War" Wiki="If set to true, then ashes of war in EquipParamGem with isSpecialSwordArt set to 1 cannot be applied to this weapon." IsBool="" />
-    <isArrow AltName="Is Arrow" Wiki="[DLC] Is on by default for arrows." IsBool=""/>
+    <quickMatchReplanish AltName="Replanish after quick match" Wiki="Should amount of this item be stored and replenished after quick match?" IsBool="" />
     <isWeaponCatalyst AltName="Is Weapon Catalyst" Wiki="[DLC] Is on by default for Carian Sorcery Sword." IsBool="" />
   </Field>
   <Self Wiki="Defines weapon types and each affinity.\nIncludes arrows and bolts. Responsible for scaling shown on certain consumables.\nIDs not ending in a multiple of 100 are ignored.\nPermitting affinities on a weapon without affinity rows at the correct IDs will result in the nearest 10000 being used.\nSpEffects specified here can be modified by upgrades in ReinforceParamWeapon." OffsetSize="100" AlternativeOrder="sortId,trophySGradeId,-,
@@ -584,7 +584,7 @@ overStrength,-,
 guardBaseRepel,attackBaseRepel,guardCutCancelRate,guardLevel,-,
 rightHandEquipable,leftHandEquipable,bothHandEquipable,arrowSlotEquipable,boltSlotEquipable,-,
 enableGuard,enableParry,enableMagic,enableMiracle,enableSorcery,enableVowMagic,-,
-isDualBlade,isEnhance,isArrow,isWeaponCatalyst,-,
+isDualBlade,isEnhance,quickMatchReplanish,isWeaponCatalyst,-,
 disableBaseChangeReset,disableRepair,isDarkHand,simpleModelForDlc,lanternWep,isVersusGhostWep,baseChangeCategory,isDragonSlayer,-,
 isDeposit,disableMultiDropShare,isDiscard,isDrop,isAutoEquip,-,
 showLogCondType,enableThrow,showDialogCondType,disableGemAttr,restrictSpecialSwordArt,defSfxMaterial1,wepCollidableType0,wepCollidableType1,postureControlId_Right,postureControlId_Left,-,
