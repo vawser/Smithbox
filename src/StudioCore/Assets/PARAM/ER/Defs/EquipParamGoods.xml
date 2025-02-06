@@ -602,7 +602,7 @@
     <Field Def="dummy8 pad1_old:7" RemovedVersion="11210015" />
     
     <Field Def="u8 unknown_0x73_1:1" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x73_2:1" FirstVersion="11210015" />
+    <Field Def="u8 quickMatchReplanish:1" FirstVersion="11210015" />
     <Field Def="dummy8 pad1:5" FirstVersion="11210015" >
       <DisplayName>pad</DisplayName>
       <Description>（旧ログ用アイコン）</Description>

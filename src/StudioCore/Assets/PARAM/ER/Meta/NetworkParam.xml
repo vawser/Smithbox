@@ -34,6 +34,7 @@
     <maxBreakInTargetListCount AltName="Intrusion - Max Intruder List Count" Wiki="" />
     <breakInRequestIntervalTimeSec AltName="Intrusion - Intruder Request Interval Time" Wiki="" />
     <breakInRequestTimeOutSec AltName="Intrusion - Intruder Request Timeout" Wiki="" />
+    <breakInRequestAreaCount AltName="Intrusion - Intruder Request Area Count" Wiki="How many areas to check at once when invading across the map" />
     <pad_1 AltName=""/>
     <keyGuideRange AltName="Blood Message - Key Guide Horionztal Range" Wiki="" />
     <keyGuideHeight_1 AltName="Blood Message - Key Guide Vertical Range" Wiki="" />
