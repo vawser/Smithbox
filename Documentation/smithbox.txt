@@ -16,6 +16,8 @@
  
 - FIX: asset browser does not update Instance ID and Self Parts
  
+- FEAT: implement SoulFormatsNEXT speedtree solution (https://github.com/soulsmods/SoulsFormatsNEXT/pull/24/files)
+
 #--------------------------------------
 # Param Editor
 #--------------------------------------

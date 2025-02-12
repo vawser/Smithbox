@@ -92,7 +92,6 @@ public class MassEditTools
                 i++;
             }
 
-
             ImGui.Separator();
             UIHelper.WrappedText("Actions");
             ImGui.Separator();

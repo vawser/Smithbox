@@ -864,7 +864,7 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                     return false;
                 });
             });
-        filterList.Add("value", newCmd(new[] { "field value" },
+        filterList.Add("field_value", newCmd(new[] { "field value" },
             "Selects cells/fields where the cell has the specified value",
             (args, lenient) =>
             {
@@ -911,7 +911,7 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                     };
                 };
             }));
-        filterList.Add("range", newCmd(new[] { "field start value", "field end value" },
+        filterList.Add("field_range", newCmd(new[] { "field start value", "field end value" },
             "Selects cells/fields where the cell has a value between the start and end values specified",
             (args, lenient) =>
             {
