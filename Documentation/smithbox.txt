@@ -1,8 +1,13 @@
 #--------------------------------------
+# PRIORITY
+#--------------------------------------
+- FEAT: overhaul the initialization flow on Project load to make the sequence of loading much clearer
+- FEAT: allow editors to be initialized but not appear in the tab bar, to allow for conditional appearance
+
+#--------------------------------------
 # General
 #--------------------------------------
 - FEAT: edit history window
-- FEAT: allow editors to be initialized but not appear in the tab bar, to allow for conditional appearance
 
 #--------------------------------------
 # Map Editor
@@ -48,6 +53,11 @@
 - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
 - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
 - FIX: account for scale when displaying dummies/bones
+
+#--------------------------------------
+# Text Editor
+#--------------------------------------
+- FIX: the Text Difference check eventually fails if Smithbox is left idle on the Text Editor window (the dictionary access fails)
 
 #--------------------------------------
 # Time Act Editor
