@@ -24,6 +24,9 @@ public class TextEditorTab
 
             ImGui.Checkbox("Include Vanilla Cache", ref CFG.Current.TextEditor_IncludeVanillaCache);
             UIHelper.ShowHoverTooltip("If enabled, the vanilla cache is loaded, which enables the modified and unique difference features.");
+
+            ImGui.Checkbox("Enable Background Difference Update", ref CFG.Current.TextEditor_EnableAutomaticDifferenceCheck);
+            UIHelper.ShowHoverTooltip("If enabled, the difference cache will be updated in the background every 5 minutes.");
         }
 
         // Primary Category

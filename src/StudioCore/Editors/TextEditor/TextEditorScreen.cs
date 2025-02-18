@@ -372,9 +372,12 @@ public class TextEditorScreen : EditorScreen
 
     public void OnAutomaticDiff(object source, ElapsedEventArgs e)
     {
-        if(TextBank.VanillaBankLoaded)
+        if (CFG.Current.TextEditor_EnableAutomaticDifferenceCheck)
         {
-            DifferenceManager.TrackFmgDifferences();
+            if (TextBank.VanillaBankLoaded)
+            {
+                DifferenceManager.TrackFmgDifferences();
+            }
         }
     }
 }

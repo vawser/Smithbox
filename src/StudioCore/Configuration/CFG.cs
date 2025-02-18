@@ -484,6 +484,8 @@ public class CFG
     public bool TextEditor_LanguageSync_AddPrefix = true;
     public string TextEditor_LanguageSync_Prefix = "TRANSLATE: ";
 
+    public bool TextEditor_EnableAutomaticDifferenceCheck = false;
+
     // OLD
     public string FMG_SearchAndReplace_SearchText = "";
     public string FMG_SearchAndReplace_ReplaceText = "";
