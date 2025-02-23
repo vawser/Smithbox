@@ -91,22 +91,35 @@ public class PrefabView
     {
         bool selectedEntities = Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
 
-        ImGui.BeginDisabled(!selectedEntities || selectedPrefab is not null || !editName.Any());
+        var isDisabled = !selectedEntities || selectedPrefab is not null || !editName.Any();
 
-        if (ImGui.Button("Create", buttonSize))
+        if (isDisabled)
         {
-            CreateFromSelection(editName);
-        }
-        UIHelper.ShowHoverTooltip("Create a new prefab from the selected entities.");
+            ImGui.BeginDisabled();
 
-        ImGui.EndDisabled();
+            if (ImGui.Button("Create##createPrefab", buttonSize))
+            {
+                CreateFromSelection(editName);
+            }
+            UIHelper.ShowHoverTooltip("Create a new prefab from the selected entities.");
+
+            ImGui.EndDisabled();
+        }
+        else
+        {
+            if (ImGui.Button("Create##createPrefab", buttonSize))
+            {
+                CreateFromSelection(editName);
+            }
+            UIHelper.ShowHoverTooltip("Create a new prefab from the selected entities.");
+        }
     }
 
     void DeleteButton(Vector2 buttonSize)
     {
         ImGui.BeginDisabled(selectedPrefab is null);
 
-        if (ImGui.Button("Delete", buttonSize))
+        if (ImGui.Button("Delete##deletePrefab", buttonSize))
         {
             Delete(selectedPrefab.PrefabName);
             selectedPrefab = null;
@@ -122,7 +135,7 @@ public class PrefabView
     {
         ImGui.BeginDisabled(selectedPrefab is null || comboMap.map is not MapContainer);
 
-        if (ImGui.Button("Import", buttonSize))
+        if (ImGui.Button("Import##importPrefab", buttonSize))
         {
             string prefixName = null;
             if (CFG.Current.Prefab_ApplyOverrideName)
@@ -145,7 +158,7 @@ public class PrefabView
 
         ImGui.BeginDisabled(selectedPrefab is null || !selectedEntities);
 
-        if (ImGui.Button("Replace", buttonSize))
+        if (ImGui.Button("Replace##replacePrefab", buttonSize))
         {
             Delete(selectedPrefab.PrefabName);
             CreateFromSelection(editName);
@@ -157,16 +170,16 @@ public class PrefabView
 
     void ExportConfig()
     {
-        ImGui.Checkbox("Retain Entity ID", ref CFG.Current.Prefab_IncludeEntityID);
+        ImGui.Checkbox("Retain Entity ID##prefabRetainEntityID", ref CFG.Current.Prefab_IncludeEntityID);
         UIHelper.ShowHoverTooltip("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
 
-        ImGui.Checkbox("Retain Entity Group IDs", ref CFG.Current.Prefab_IncludeEntityGroupIDs);
+        ImGui.Checkbox("Retain Entity Group IDs##prefabRetainGroupEntityIDs", ref CFG.Current.Prefab_IncludeEntityGroupIDs);
         UIHelper.ShowHoverTooltip("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
     }
 
     void ImportConfig()
     {
-        ImGui.Checkbox("Override import name", ref CFG.Current.Prefab_ApplyOverrideName);
+        ImGui.Checkbox("Override import name##prefabOverrideImportName", ref CFG.Current.Prefab_ApplyOverrideName);
         UIHelper.ShowHoverTooltip("Spawned prefab objects will be prepended with this instead of the prefab name");
 
         if (!CFG.Current.Prefab_ApplyOverrideName)
@@ -179,18 +192,18 @@ public class PrefabView
         ImGui.PopItemWidth();
         ImGui.EndDisabled();
 
-        ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
+        ImGui.Checkbox("Apply Unique Entity ID##prefabApplyUniqueEntityID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
         UIHelper.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
 
         if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
         {
-            ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
+            ImGui.Checkbox("Apply Unique Instance ID##prefabApplyUniqueInstanceID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
             UIHelper.ShowHoverTooltip("Spawned prefab objects will be given unique Instance IDs.");
         }
 
         if (Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
         {
-            ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
+            ImGui.Checkbox("Apply Entity Group ID##prefabApplyEntityGroupID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
 
             if (!CFG.Current.Prefab_ApplySpecificEntityGroupID)
                 CFG.Current.Prefab_SpecificEntityGroupID = 0;
