@@ -644,29 +644,29 @@
 900027 Elden Remembrance * 1
 900028 Remembrance of the Naturalborn * 1
 900029 Remembrance of the Naturalborn * 1
-900050 
-900051 
-900052 
-900053 
-900054 
-900055 
-900056 
-900057 
-900058 
-900059 
+900050 Remembrance of the Dancing Lion * 1
+900051 Remembrance of the Dancing Lion * 1
+900052 Remembrance of the Twin Moon Knight * 1
+900053 Remembrance of the Twin Moon Knight * 1
+900054 Remembrance of the Wild Boar Rider * 1
+900055 Remembrance of the Wild Boar Rider * 1
+900056 Remembrance of Putrescence * 1
+900057 Remembrance of Putrescence * 1
+900058 Remembrance of the Saint of the Bud * 1
+900059 Remembrance of the Saint of the Bud * 1
 900060 
 900061 
-900062 
-900063 
-900064 
-900065 
-900066 
-900067 
-900068 
-900069 
-900070 
-900071 
-900072 
+900062 Remembrance of the Lord of Frenzied Flame * 1
+900063 Remembrance of the Lord of Frenzied Flame * 1
+900064 Remembrance of the Shadow Sunflower * 1
+900065 Remembrance of the Shadow Sunflower * 1
+900066 Remembrance of the Impaler * 1
+900067 Remembrance of the Impaler * 1
+900068 Remembrance of the Mother of Fingers * 1
+900069 Remembrance of the Mother of Fingers * 1
+900070 Remembrance of a God and a Lord * 1
+900071 Remembrance of a God and a Lord * 1
+900072 Remembrance of a God and a Lord * 1
 900100 Drake Knight Helm * 1
 900101 Drake Knight Armor * 1
 900102 Scaled Armor * 1

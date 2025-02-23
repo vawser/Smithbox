@@ -106,7 +106,7 @@
 100337 [Pidia Carian Servant] Budding Horn
 100338 [Pidia Carian Servant] Ripple Blade
 100339 [Pidia Carian Servant] Black Leather Shield
-100340 
+100340 [Pidia Carian Servant] Weathered Map
 100350 [Brother Corhyn] Rejection
 100351 [Brother Corhyn] Urgent Heal
 100352 [Brother Corhyn] Heal
@@ -335,14 +335,14 @@
 100796 [Merchant - Mt. Gelmir] Confessor Gloves
 100797 [Merchant - Mt. Gelmir] Confessor Boots
 100798 [Merchant - Mt. Gelmir] Guilty Hood
-100801 Poisonbone Dart
-100802 Poisoned Stone
-100803 Poisoned Stone Clump
-100813 Preserving Boluses
-100814 Aeonian Butterfly
-100815 Arrow
-100816 Fire Arrow
-100817 Bolt
+100801 [Merchant - Caelid (Aeonia Swamp)] Poisonbone Dart
+100802 [Merchant - Caelid (Aeonia Swamp)] Poisoned Stone
+100803 [Merchant - Caelid (Aeonia Swamp)] Poisoned Stone Clump
+100813 [Merchant - Caelid (Aeonia Swamp)] Preserving Boluses
+100814 [Merchant - Caelid (Aeonia Swamp)] Aeonian Butterfly
+100815 [Merchant - Caelid (Aeonia Swamp)] Arrow
+100816 [Merchant - Caelid (Aeonia Swamp)] Fire Arrow
+100817 [Merchant - Caelid (Aeonia Swamp)] Bolt
 100825 [Merchant - South Caelid] Nomadic Warrior's Cookbook [15]
 100826 [Merchant - South Caelid] Stonesword Key
 100827 [Merchant - South Caelid] Cracked Pot
@@ -559,19 +559,19 @@
 101879 [Twin Maiden Husks] Crafting Kit
 101880 [Twin Maiden Husks] Whetstone Knife
 101881 [Twin Maiden Husks] Talisman Pouch
-101885 
-101886 
-101887 
-101888 
-101889 
-101890 
-101891 
-101892 
-101893 
-101894 
-101895 
-101898 
-101899 
+101885 [Twin Maiden Husks] Rada Fruit
+101886 [Twin Maiden Husks] Redflesh Mushroom
+101887 [Twin Maiden Husks] Mushroom
+101888 [Twin Maiden Husks] Whiteflesh Mushroom
+101889 [Twin Maiden Husks] Toxic Mushroom
+101890 [Twin Maiden Husks] Knot Resin
+101891 [Twin Maiden Husks] Root Resin
+101892 [Twin Maiden Husks] Fly Mold
+101893 [Twin Maiden Husks] String
+101894 [Twin Maiden Husks] Igon's Harpoon
+101895 [Twin Maiden Husks] Rabbath's Greatbolt
+101898 [Twin Maiden Husks] Enraged Divine Beast
+101899 [Twin Maiden Husks] Ash of War: Divine Beast Frost Stomp
 101900 [Remembrance of the Grafted] Axe of Godrick
 101901 [Remembrance of the Grafted] Grafted Dragon
 101902 [Remembrance of the Starscourge] Starscourge Greatsword
@@ -602,25 +602,25 @@
 101927 [Elden Remembrance] Sacred Relic Sword
 101928 [Remembrance of the Naturalborn] Bastard's Stars
 101929 [Remembrance of the Naturalborn] Ash of War: Waves of Darkness
-101930 
-101931 
-101932 
-101933 
-101934 
-101935 
-101936 
-101937 
-101938 
-101939 
-101940 
-101941 
-101942 
-101943 
-101944 
-101945 
-101946 
-101947 
-101948 
+101930 [Remembrance of the Twin Moon Knight] Rellana's Twin Blades
+101931 [Remembrance of the Twin Moon Knight] Rellana's Twin Moons
+101932 [Remembrance of the Wild Boar Rider] Sword Lance (Spinning Gravity Thrust)
+101933 [Remembrance of the Wild Boar Rider] Blades of Stone
+101934 [Remembrance of Putrescence] Putrescence Cleaver
+101935 [Remembrance of Putrescence] Vortex of Putrescence
+101936 [Remembrance of the Saint of the Bud] Poleblade of the Bud
+101937 [Remembrance of the Saint of the Bud] Rotten Butterflies
+101938 [Remembrance of the Lord of Frenzied Flame] Greatsword of Damnation
+101939 [Remembrance of the Lord of Frenzied Flame] Midra's Flame of Frenzy
+101940 [Remembrance of the Shadow Sunflower] Shadow Sunflower Blossom
+101941 [Remembrance of the Shadow Sunflower] Land of Shadow
+101942 [Remembrance of the Impaler] Spear of the Impaler
+101943 [Remembrance of the Impaler] Messmer's Orb
+101944 [Remembrance of the Mother of Fingers] Staff of the Great Beyond
+101945 [Remembrance of the Mother of Fingers] Gazing Finger
+101946 [Remembrance of a God and a Lord] Greatsword of Radahn (Lord)
+101947 [Remembrance of a God and a Lord] Greatsword of Radahn (Light)
+101948 [Remembrance of a God and a Lord] Light of Miquella
 101950 [Dragon Communion] Dragonfire
 101951 [Dragon Communion] Dragonice
 101952 [Dragon Communion] Glintstone Breath
@@ -637,98 +637,98 @@
 101975 [Dragon Communion] Dragonclaw
 101976 [Dragon Communion] Dragonmaw
 101980 [Dragon Communion] Dragonfire
-102250 
-102251 
-102252 
-102253 
-102254 
-102255 
-102256 
-102257 
-102258 
-102259 
-102260 
-102261 
-102262 
-102263 
-102264 
-102265 
-102266 
-102270 
-102271 
-102272 
-102273 
-102274 
-102275 
-102276 
-102277 
-102278 
-102279 
-102280 
-102281 
-102282 
-102300 
-102301 
-102302 
-102303 
-102304 
-102305 
-102306 
-102307 
-102308 
-102350 
-102351 
-102355 
-102700 
-102701 
-102702 
-102703 
-102704 
-102705 
-102706 
-102707 
-102708 
-102710 
-102711 
-102712 
-102713 
-102714 
-102715 
-102716 
-102717 
-102718 
-102720 
-102721 
-102722 
-102723 
-102724 
-102725 
-102726 
-102800 
-102801 
-102802 
-102803 
-102804 
-102805 
-102806 
-102807 
-102808 
-102810 
-102811 
-102812 
-102813 
-102814 
-102815 
-102816 
-102817 
-102818 
-102820 
-102821 
-102822 
-102823 
-102824 
-102825 
-102826 
+102826 Remembrance of Putrescence
+102250 Rune Arc
+102251 Arrow
+102252 Bolt
+102253 Great Arrow
+102254 Ballista Bolt
+102255 Note: Sealed Spiritsprings
+102256 Rada Fruit
+102257 Redflesh Mushroom
+102258 Whiteflesh Mushroom
+102259 Knot Resin
+102260 Spellproof Pickled Liver
+102261 Fireproof Pickled Liver
+102262 Lightningproof Pickled Liver
+102263 Holyproof Pickled Liver
+102264 Well-Pickled Turtle Neck
+102265 Black Pyrefly
+102266 Sanguine Amaryllis
+102270 Deadly Poison Perfume Bottle
+102271 Poison Grease
+102272 Drawstring Poison Grease
+102273 Poisonbone Dart
+102274 Poisoned Stone
+102275 Poisoned Stone Clump
+102276 Altus Bloom
+102277 Miranda Powder
+102278 Poisonbloom
+102279 Toxic Mushroom
+102280 Toxic Mossling
+102281 Trina's Lily
+102282 Thiollier's Concoction
+102300 [Sorcery] Miriam's Vanishing
+102301 [Sorcery] Glintstone Nail
+102302 [Sorcery] Glintstone Nails
+102303 [Sorcery] Fleeting Microcosm
+102304 [Sorcery] Glintstone Pebble
+102305 [Sorcery] Great Glintstone Shard
+102306 [Sorcery] Glintblade Phalanx
+102307 [Sorcery] Carian Phalanx
+102308 [Sorcery] Carian Retaliation
+102350 [Incantation] Bayle's Tyranny
+102351 [Incantation] Bayle's Flame Lightning
+102355 [Incantation] Ghostflame Breath
+102700 Remembrance of the Grafted
+102701 Remembrance of the Starscourge
+102702 Remembrance of the Omen King
+102703 Remembrance of the Blasphemous
+102704 Remembrance of the Rot Goddess
+102705 Remembrance of the Full Moon Queen
+102706 Remembrance of the Blood Lord
+102707 Remembrance of a God and a Lord
+102708 Remembrance of the Impaler
+102710 Remembrance of the Black Blade
+102711 Remembrance of Hoarah Loux
+102712 Remembrance of the Dragonlord
+102713 Remembrance of the Lichdragon
+102714 Remembrance of the Fire Giant
+102715 Remembrance of the Regal Ancestor
+102716 Elden Remembrance
+102717 Remembrance of the Naturalborn
+102718 Remembrance of the Wild Boar Rider
+102720 Remembrance of the Shadow Sunflower
+102721 Remembrance of the Twin Moon Knight
+102722 Remembrance of the Saint of the Bud
+102723 Remembrance of the Dancing Lion
+102724 Remembrance of the Lord of Frenzied Flame
+102725 Remembrance of the Mother of Fingers
+102726 Remembrance of Putrescence
+102800 Remembrance of the Grafted
+102801 Remembrance of the Starscourge
+102802 Remembrance of the Omen King
+102803 Remembrance of the Blasphemous
+102804 Remembrance of the Rot Goddess
+102805 Remembrance of the Full Moon Queen
+102806 Remembrance of the Blood Lord
+102807 Remembrance of a God and a Lord
+102808 Remembrance of the Impaler
+102810 Remembrance of the Black Blade
+102811 Remembrance of Hoarah Loux
+102812 Remembrance of the Dragonlord
+102813 Remembrance of the Lichdragon
+102814 Remembrance of the Fire Giant
+102815 Remembrance of the Regal Ancestor
+102816 Elden Remembrance
+102817 Remembrance of the Naturalborn
+102818 Remembrance of the Wild Boar Rider
+102820 Remembrance of the Shadow Sunflower
+102821 Remembrance of the Twin Moon Knight
+102822 Remembrance of the Saint of the Bud
+102823 Remembrance of the Dancing Lion
+102824 Remembrance of the Lord of Frenzied Flame
+102825 Remembrance of the Mother of Fingers
 110000 [Alteration] Drake Knight Helm (Altered)
 110001 [Alteration] Drake Knight Armor (Altered)
 110002 [Alteration] Scaled Armor (Altered)

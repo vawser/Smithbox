@@ -57,7 +57,6 @@
 #--------------------------------------
 # Text Editor
 #--------------------------------------
-- FIX: the Text Difference check eventually fails if Smithbox is left idle on the Text Editor window (the dictionary access fails)
 
 #--------------------------------------
 # Time Act Editor
@@ -68,6 +67,7 @@
 # Texture Viewer: 
 #--------------------------------------
 - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
+- FIX: base textures cannot be viewed if project directory does not contain the folder structure needed (i.e. aet204 files, aet204 folder needs to be present in project directory)
 
 #--------------------------------------
 # Viewport

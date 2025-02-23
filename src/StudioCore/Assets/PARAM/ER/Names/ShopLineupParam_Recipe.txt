@@ -131,58 +131,58 @@
 32208 Rotbone Bolt - Nomadic Warrior's Cookbook [15]
 32209 Sleepbone Bolt -  Fevor's Cookbook [2]
 32300 Bone Ballista Bolt - Nomadic Warrior's Cookbook [13]
-35100 
-35101 
-35102 
-35104 
-35105 
-35106 
-35107 
-35108 
-35110 
-35111 
-35112 
-35113 
-35114 
-35115 
-35116 
-35120 
-35121 
-35122 
-35131 
-35200 
-35300 
-35400 
-35401 
-35410 
-35411 
-35412 
-35413 
-35414 
-35415 
-35500 
-35501 
-35502 
-35503 
-35504 
-35505 
-35506 
-35507 
-35508 
-35509 
-35510 
-35511 
-35600 
-35700 
-35800 
-35801 
-35802 
-35803 
-35804 
-35805 
-35806 
-35807 
-35808 
-37000 
-37001 
-37100 
+35100 Hefty Fire Pot - Greater Potentate's Cookbook [1]
+35101 Hefty Magic Pot - Greater Potentate's Cookbook [4]
+35102 Hefty Lightning Pot - Greater Potentate's Cookbook [5]
+35104 Hefty Rock Pot - Greater Potentate's Cookbook [12]
+35105 Hefty Poison Pot - Greater Potentate's Cookbook [7]
+35106 Hefty Rot Pot - Greater Potentate's Cookbook [9]
+35107 Hefty Fly Pot - Greater Potentate's Cookbook [10]
+35108 Hefty Freezing Pot - Greater Potentate's Cookbook [11]
+35110 Hefty Frenzied Flame Pot - Greater Potentate's Cookbook [2]
+35111 Hefty Fetid Pot - Greater Potentate's Cookbook [8]
+35112 Hefty Oil Pot - Greater Potentate's Cookbook [3]
+35113 Hefty Volcano Pot - Greater Potentate's Cookbook [13]
+35114 Hefty Rancor Pot - Greater Potentate's Cookbook [14]
+35115 Hefty Red Lightning Pot - Greater Potentate's Cookbook [6]
+35116 Hefty Furance Pot - Greater Potentate's Cookbook [2]
+35120 Red Lightning Pot - Ancient Dragon Knight's Cookbook [1]
+35121 Frenzied Flame Pot - Mad Craftsman's Cookbook [1]
+35122 Eternal Sleep Pot - St. Trina Disciple's Cookbook [1]
+35131 Roped Frenzied Flame Pot - Mad Craftsman's Cookbook [1]
+35200 Spirit Raisin - Forager Brood Cookbook [7]
+35300 Lulling Branch - St. Trina Disciple's Cookbook [3]
+35400 Dragon Communion Flesh - Igon's Cookbook [2]
+35401 Fingerprint Nostrum - Finger-Weaver's Cookbook [2]
+35410 Spellproof Pickled Liver - Forager Brood Cookbook [1]
+35411 Fireproof Pickled Liver - Forager Brood Cookbook [2]
+35412 Lightningproof Pickled Liver - Forager Brood Cookbook [3]
+35413 Holyproof Pickled Liver - Forager Brood Cookbook [4]
+35414 Opaline Pickled Liver - Forager Brood Cookbook [5]
+35415 Well-Pickled Turtle Neck - Forager Brood Cookbook [6]
+35500 Messmerfire Grease - Fire Knight's Cookbook [1]
+35501 Dragonbolt Grease - Ancient Dragon Knight's Cookbook [2]
+35502 Royal Magic Grease - Loyal Knight's Cookbook
+35503 Golden Grease - Battlefield Priest's Cookbook [1]
+35504 Eternal Sleep Grease - St. Trina Disciple's Cookbook [2]
+35505 Dragon Communion Grease - Igon's Cookbook [1]
+35506 Drawstring Messmerfire Grease - Fire Knight's Cookbook [1]
+35507 Drawstring Dragonbolt Grease - Ancient Dragon Knight's Cookbook [2]
+35508 Drawstring Royal Magic Grease - Loyal Knight's Cookbook
+35509 Drawstring Golden Grease - Battlefield Priest's Cookbook [1]
+35510 Drawstring Eternal Sleep Grease - St. Trina Disciple's Cookbook [2]
+35511 Festive Grease - Battlefield Priest's Cookbook [2]
+35600 Dragon Communion Harpoon - Igon's Cookbook [1]
+35700 Polter Stone - Grave Keeper's Cookbook [2]
+35800 Spritestone - Antiquity Scholar's Cookbook [2]
+35801 Call of Tibia - Tibia's Cookbook
+35802 Surging Frenzied Flame - Mad Craftsman's Cookbook [3]
+35803 Golden Vow - Battlefield Priest's Cookbook [3]
+35804 Fire Coil - Fire Knight's Cookbook [2]
+35805 Fire Spritestone - Antiquity Scholar's Cookbook [1]
+35806 Glinting Nail - Finger-Weaver's Cookbook [1]
+35807 Sunwarmth Stone - Battlefield Priest's Cookbook [4]
+35808 Charming Branch - Forager Brood Cookbook [7]
+37000 Piquebone Arrow (Fletched) - Grave Keeper's Cookbook [1]
+37001 Piquebone Arrow - Grave Keeper's Cookbook [1]
+37100 Piquebone Bolt - Grave Keeper's Cookbook [1]
