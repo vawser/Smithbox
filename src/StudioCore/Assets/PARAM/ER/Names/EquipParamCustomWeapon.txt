@@ -1422,242 +1422,242 @@
 14520 Quality Hookclaws +25 - White Shadow's Lure
 14521 Quality Whip +25 - White Shadow's Lure
 14522 Quality Duelist Greataxe +25 - White Shadow's Lure
-1000000 
-1000001 
-1000002 
-1000003 
-1200055 
-1200120 
-1200123 
-1200124 
-1200125 
-1200126 
-1200127 
-1200128 
-1200129 
-1200136 
-1200137 
-1200138 
-1200139 
-1200140 
-1200153 
-1200160 
-1200161 
-1400025 
-1400026 
-1400039 
-1400040 
-1400061 
-1401055 
-1402053 
-1403053 
-1404056 
-1405056 
-1406062 
-1407062 
-1408062 
-1409058 
-1410058 
-1411061 
-1412060 
-1413020 
-1413022 
-1413023 
-1413024 
-1413025 
-1413026 
-1413027 
-1413028 
-1413029 
-1413030 
-1413031 
-1413032 
-1413033 
-1413034 
-1413035 
-1413036 
-1413037 
-1413038 
-1413039 
-1413040 
-1413042 
-1413043 
-1413050 
-1413053 
-1413055 
-1413057 
-1413058 
-1413060 
-1413061 
-1413062 
-1414024 
-1414025 
-1414026 
-1414036 
-1414037 
-1414039 
-1414057 
-1414060 
-1414061 
-1415024 
-1415025 
-1415026 
-1415028 
-1415040 
-1416020 
-1416022 
-1416023 
-1416024 
-1416025 
-1416026 
-1416027 
-1416028 
-1416029 
-1416030 
-1416031 
-1416032 
-1416033 
-1416034 
-1416035 
-1416036 
-1416037 
-1416038 
-1416039 
-1416040 
-1416042 
-1416043 
-1416050 
-1416053 
-1416055 
-1416057 
-1416058 
-1416060 
-1416061 
-1416062 
-1417026 
-1418023 
-1419020 
-1419022 
-1419023 
-1419024 
-1419025 
-1419026 
-1419027 
-1419028 
-1419029 
-1419030 
-1419031 
-1419032 
-1419033 
-1419034 
-1419035 
-1419036 
-1419037 
-1419038 
-1419039 
-1419040 
-1419042 
-1419043 
-1419050 
-1419053 
-1419055 
-1419057 
-1419058 
-1419060 
-1419061 
-1419062 
-1422023 
-1422025 
-1422026 
-1422027 
-1422028 
-1422029 
-1422036 
-1422037 
-1422038 
-1422039 
-1422040 
-1422060 
-1422061 
-1505020 
-1505022 
-1505023 
-1505024 
-1505025 
-1505026 
-1505027 
-1505028 
-1505029 
-1505030 
-1505031 
-1505032 
-1505033 
-1505034 
-1505035 
-1505036 
-1505037 
-1505038 
-1505039 
-1505040 
-1505042 
-1505043 
-1505050 
-1505053 
-1505055 
-1505057 
-1505058 
-1505060 
-1505061 
-1505062 
-1548045 
-1800057 
-2000000 
-2000001 
-2000002 
-2000100 
-2000101 
-2000102 
-2000103 
-2000104 
-2000105 
-2000106 
-2000107 
-2001002 
-2001103 
-3000000 
-3000001 
-3000002 
-3000003 
-3000004 
-3000005 
-3000006 
-3000007 
-3000008 
-3000009 
-3000010 
-3000011 
-3000012 
-3000013 
-3000014 
-3000015 
-3000016 
-3000017 
-3000100 
-3000101 
-3000102 
-3000103 
-3000104 
-3000105 
-3001000 
-3001001 
-3001002 
-3001010 
-3001011 
-3001012 
-4400039 
-4401055 
-4407062 
-4409058 
-4411061 
-4548045 
-4800057 
+1000000 Longsword - No Skill
+1000001 Short Spear - No Skill
+1000002 Greatsword - No Skill
+1000003 Dueling Shield - No Skill
+1200055 Dryleaf Arts - Dryleaf Whirlwind
+1200120 Sacred Dagger - Aspects of the Crucible: Wings
+1200123 Sacred Longsword - Aspect of the Crucible: Wings
+1200124 Sacred Twinblade - Aspects of Crucible: Wings
+1200125 Sacred Bastard Sword - Aspects of the Crucible: Wings
+1200126 Sacred Greatsword - Aspects of the Crucible: Wings
+1200127 Sacred Rapier - Aspects of the Crucible: Wings
+1200128 Sacred Falchion - Aspects of the Crucible: Wings
+1200129 Sacred Uchigatana - Aspects of the Crucible: Wings
+1200136 Sacred Short Spear - Aspects of the Crucible: Wings
+1200137 Sacred Lance - Aspects of the Crucible: Wings
+1200138 Sacred Halberd - Aspects of the Crucible: Wings
+1200139 Sacred Great Epee - Aspects of the Crucible: Wings
+1200140 Sacred Dismounter - Aspects of the Crucible: Wings
+1200153 Sacted Smithscript Dagger - Aspects of the Crucible: Wings
+1200160 Sacted Milady - Aspects of the Crucible: Wings
+1200161 Sacred Great Katana - Aspects of the Crucible: Wings
+1400025 Heavy Bastard Sword - Spinning Gravity Thrust
+1400026 Heavy Dismounter - Spinning Gravity Thrust
+1400039 Heavy Great Epee - Spinning Gravity Thrust
+1400040 Heavy Greatsword - Spinning Gravity Thrust
+1400061 Heavy Great Katana - Spinning Gravity Thrust
+1401055 Dryleaf Arts - Palm Blast
+1402053 Keen Smithscript Dagger - Piercing Throw
+1403053 Keen Smithscript Dagger - Scattershot Throw
+1404056 Firespark Perfume Bottle - Wall of Sparks
+1405056 Firespark Perfume Bottle - Rolling Sparks
+1406062 Keen Beast Claw - Raging Beast
+1407062 Keen Beast Claw - Savage Claws
+1408062 Red Bear's Claw
+1409058 Keen Backhand Blade - Blind Spot
+1410058 Keen Backhand Blade - Swift Slash
+1411061 Keen Great Kanata - Overhead Stance
+1412060 Quality Milady - Wing Stance
+1413020 Lightning Dagger - Blinkbolt
+1413022 Lightning Hookclaws - Blinkbolt
+1413023 Lightning Longsword - Blinkbolt
+1413024 Lightning Twinblade - Blinkbolt
+1413025 Lightning Bastard Sword - Blinkbolt
+1413026 Lightning Greatsword - Blinkbolt
+1413027 Lightning Rapier - Blinkbolt
+1413028 Lightning Falchion - Blinkbolt
+1413029 Lightning Uchigatana - Blinkbolt
+1413030 Lightning Battle Axe - Blinkbolt
+1413031 Lightning Duelist Greataxe - Blinkbolt
+1413032 Lightning Greataxe - Blinkbolt
+1413033 Lightning Mace - Blinkbolt
+1413034 Lightning Nightrider Flail - Blinkbolt
+1413035 Lightning Large Club - Blinkbolt
+1413036 Lightning Short Spear - Blinkbolt
+1413037 Lightning Lance - Blinkbolt
+1413038 Lightning Halberd - Blinkbolt
+1413039 Lightning Great Epee - Blinkbolt
+1413040 Lightning Dismounter - Blinkbolt
+1413042 Lightning Caestus - Blinkbolt
+1413043 Lightning Whip - Blinkbolt
+1413050 Lightning Scythe - Blinkbolt
+1413053 Lightning Smithscript Dagger - Blinkbolt
+1413055 Lightning Dryleaf Arts - Blinkbolt
+1413057 Lightning Dueling Shield - Blinkbolt
+1413058 Lightning Backhand Blade - Blinkbolt
+1413060 Lightning Milady - Blinkbolt
+1413061 Lightning Great Katana - Blinkbolt
+1413062 Lightning Beast Claw - Blinkbolt
+1414024 Flame Art Twinblade - Flame Skewer
+1414025 Flame Art Claymore - Flame Skewer
+1414026 Flame Art Greatsword - Flame Skewer
+1414036 Flame Art Short Spear - Flame Skewer
+1414037 Flame Art Lance - Flame Skewer
+1414039 Flame Art Great Epee - Flame Skewer
+1414057 Flame Art Dueling Shield - Flame Skewer
+1414060 Flame Art Milady - Flame Skewer
+1414061 Flame Art Great Katana - Flame Skewer
+1415024 Heavy Longsword - Savage Lion's Claw
+1415025 Heavy Claymore - Savage Lion's Claw
+1415026 Heavy Greatsword - Savage Lion's Claw
+1415028 Heavy Falchion - Savage Lion's Claw
+1415040 Heavy Dismounter - Savage Lion's Claw
+1416020 Cold Dagger - Divine Beast Frost Stomp
+1416022 Cold Hookclaws - Divine Beast Frost Stomp
+1416023 Cold Longsword - Divine Beast Frost Stomp
+1416024 Cold Twinblade - Divine Beast Frost Stomp
+1416025 Cold Bastard Sword - Divine Beast Frost Stomp
+1416026 Cold Greatsword - Divine Beast Frost Stomp
+1416027 Cold Rapier - Divine Beast Frost Stomp
+1416028 Cold Falchion - Divine Beast Frost Stomp
+1416029 Cold Uchigatana - Divine Beast Frost Stomp
+1416030 Cold Battle Axe - Divine Beast Frost Stomp
+1416031 Cold Duelist Greataxe - Divine Beast Frost Stomp
+1416032 Cold Greataxe - Divine Beast Frost Stomp
+1416033 Cold Mace - Divine Beast Frost Stomp
+1416034 Cold Nightrider Flail - Divine Beast Frost Stomp
+1416035 Cold Large Club - Divine Beast Frost Stomp
+1416036 Cold Short Spear - Divine Beast Frost Stomp
+1416037 Cold Lance - Divine Beast Frost Stomp
+1416038 Cold Halberd - Divine Beast Frost Stomp
+1416039 Cold Great Epee - Divine Beast Frost Stomp
+1416040 Cold Dismounter - Divine Beast Frost Stomp
+1416042 Cold Caestus - Divine Beast Frost Stomp
+1416043 Cold Whip - Divine Beast Frost Stomp
+1416050 Cold Scythe - Divine Beast Frost Stomp
+1416053 Cold Smithscript Dagger - Divine Beast Frost Stomp
+1416055 Cold Dryleaf Arts - Divine Beast Frost Stomp
+1416057 Cold Dueling Shield - Divine Beast Frost Stomp
+1416058 Cold Backhand Blade - Divine Beast Frost Stomp
+1416060 Cold Milady - Divine Beast Frost Stomp
+1416061 Cold Great Katana - Divine Beast Frost Stomp
+1416062 Cold Beast Claw - Divine Beast Frost Stomp
+1417026 Zweihander - Flame Spear
+1418023 Longsword - Carain Sovereignty
+1419020 Occult Dagger - Shriek of Sorrow
+1419022 Occult Hookclaws - Shriek of Sorrow
+1419023 Occult Longsword - Shriek of Sorrow
+1419024 Occult Twinblade - Shriek of Sorrow
+1419025 Occult Bastard Sword - Shriek of Sorrow
+1419026 Occult Greatsword - Shriek of Sorrow
+1419027 Occult Rapier - Shriek of Sorrow
+1419028 Occult Falchion - Shriek of Sorrow
+1419029 Occult Uchigatana - Shriek of Sorrow
+1419030 Occult Battle Axe - Shriek of Sorrow
+1419031 Occult Duelist Greataxe - Shriek of Sorrow
+1419032 Occult Greataxe - Shriek of Sorrow
+1419033 Occult Mace - Shriek of Sorrow
+1419034 Occult Nightrider Flail - Shriek of Sorrow
+1419035 Occult Large Club - Shriek of Sorrow
+1419036 Occult Short Spear - Shriek of Sorrow
+1419037 Occult Lance - Shriek of Sorrow
+1419038 Occult Halberd - Shriek of Sorrow
+1419039 Occult Great Epee - Shriek of Sorrow
+1419040 Occult Dismounter - Shriek of Sorrow
+1419042 Occult Caestus - Shriek of Sorrow
+1419043 Occult Whip - Shriek of Sorrow
+1419050 Occult Scythe - Shriek of Sorrow
+1419053 Occult Smithscript Dagger - Shriek of Sorrow
+1419055 Occult Dryleaf Arts - Shriek of Sorrow
+1419057 Occult Dueling Shield - Shriek of Sorrow
+1419058 Occult Backhand Blade - Shriek of Sorrow
+1419060 Occult Milady - Shriek of Sorrow
+1419061 Occult Great Katana - Shriek of Sorrow
+1419062 Occult Beast Claw - Shriek of Sorrow
+1422023 Cold Longsword - Ghostflame Call
+1422025 Poison Claymore - Ghostflame Call
+1422026 Poison Greatsword - Ghostflame Call
+1422027 Blood Rapier - Ghostflame Call
+1422028 Poison Falchion - Ghostflame Call
+1422029 Blood Uchigatana - Ghostflame Call
+1422036 Blood Short Spear - Ghostflame Call
+1422037 Bloody Lance - Ghostflame Call
+1422038 Blood Halberd - Ghostflame Call
+1422039 Blood Great Epee - Ghostflame Call
+1422040 Poison Dismounter - Ghostflame Call
+1422060 Cold Milady - Ghostflame Call
+1422061 Cold Great Katana - Ghostflame Call
+1505020 Poison Dagger - The Poison Flower Blooms Twice
+1505022 Poison Hookclaws - The Poison Flower Blooms Twice
+1505023 Poison Longsword - The Poison Flower Blooms Twice
+1505024 Poison Twinblade - The Poison Flower Blooms Twice
+1505025 Poison Bastard Sword - The Poison Flower Blooms Twice
+1505026 Poison Greatsword - The Poison Flower Blooms Twice
+1505027 Poison Rapier - The Poison Flower Blooms Twice
+1505028 Poison Falchion - The Poison Flower Blooms Twice
+1505029 Poison Uchigatana - The Poison Flower Blooms Twice
+1505030 Poison Battle Axe - The Poison Flower Blooms Twice
+1505031 Poison Duelist Greataxe - The Poison Flower Blooms Twice
+1505032 Poison Greataxe - The Poison Flower Blooms Twice
+1505033 Poison Mace - The Poison Flower Blooms Twice
+1505034 Poison Nightrider Flail - The Poison Flower Blooms Twice
+1505035 Poison Large Club - The Poison Flower Blooms Twice
+1505036 Poison Short Spear - The Poison Flower Blooms Twice
+1505037 Poison Lance - The Poison Flower Blooms Twice
+1505038 Poison Halberd - The Poison Flower Blooms Twice
+1505039 Poison Great Epee - The Poison Flower Blooms Twice
+1505040 Poison Dismounter - The Poison Flower Blooms Twice
+1505042 Poison Caestus - The Poison Flower Blooms Twice
+1505043 Poison Whip - The Poison Flower Blooms Twice
+1505050 Poison Scythe - The Poison Flower Blooms Twice
+1505053 Poison Smithscript Dagger - The Poison Flower Blooms Twice
+1505055 Poison Dryleaf Arts - The Poison Flower Blooms Twice
+1505057 Poison Dueling Shield - The Poison Flower Blooms Twice
+1505058 Poison Backhand Blade - The Poison Flower Blooms Twice
+1505060 Poison Milady - The Poison Flower Blooms Twice
+1505061 Poison Great Katana - The Poison Flower Blooms Twice
+1505062 Poison Beast Claw - The Poison Flower Blooms Twice
+1548045 Greatbow - Igon's Drake Hunt
+1800057 Dueling Shield - Shield Strike
+2000000 Quality Longsword - Square Off
+2000001 Quality Claymore - Storm Blade
+2000002 Quality Halberd - Giant Hunt
+2000100 Heavy Greatsword - Stamp (Sweep)
+2000101 Heavy Stone Club - Wild Stikes
+2000102 Heavy Iron Ball - Barbaric Roar
+2000103 Heavy Fingerprint Stone Shield - No Skill
+2000104 Heavy Giant-Crusher - Lion's Claw
+2000105 Heavy Giant-Crusher - Royal Knight's Resolve
+2000106 Heavy Misericorde - Golden Vow
+2000107 Brass Shield - Golden Parry
+2001002 Magic Rift Shield - Carian Retaliation
+2001103 Carian Knight's Magic Shield - Carian Retaliation
+3000000 Dueling Shield - Impaling Thrust
+3000001 Dueling Shield - Piercing Fang
+3000002 Dueling Shield - Charge Forth
+3000003 Dueling Shield - Repeating Thrust
+3000004 Dueling Shield - Giant Hunt
+3000005 Dueling Shield - Spinning Weapon
+3000006 Dueling Shield - Storm Assault
+3000007 Dueling Shield - Glintblade Phalanx
+3000008 Dueling Shield - Glintstone Pebble
+3000009 Dueling Shield - Lifesteal Fist
+3000010 Dueling Shield - Gravitas
+3000011 Dueling Shield - Thunderbolt
+3000012 Dueling Shield - Barricade Shield
+3000013 Dueling Shield - Flame of the Redmanes
+3000014 Dueling Shield - Sacred Order
+3000015 Dueling Shield - Shared Order
+3000016 Dueling Shield - Beast's Roar
+3000017 Dueling Shield - Endure
+3000100 Backhand Blade - Spinning Slash
+3000101 Backhand Blade - Poison Moth Flight
+3000102 Backhand Blade - Sword Dance
+3000103 Backhand Blade - Gravitas
+3000104 Backhand Blade - Blood Blade
+3000105 Backhand Blade - Cragblade
+3001000 Chilling Perfume Bottle - Wall of Sparks
+3001001 Frenzyflame Perfume Bottle - Wall of Sparks
+3001002 Lightning Perfume Bottle - Wall of Sparks
+3001010 Chilling Perfume Bottle - Rolling Sparks
+3001011 Frenzyflame Perfume Bottle - Rolling Sparks
+3001012 Lightning Perfume Bottle - Rolling Sparks
+4400039 Sword Lance - Spinning Gravity Thrust
+4401055 Dryleaf Arts - Palm Blast
+4407062 Beast Claw - Savage Claws
+4409058 Backhand Blade - Blind Spot
+4411061 Great Katana - Overhead Stance
+4548045 Igon's Greatbow - Igon's Great Hunt
+4800057 Dueling Shield - Shield Strike

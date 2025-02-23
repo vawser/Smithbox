@@ -912,6 +912,12 @@ public class ParamRowEditor
             ImGui.EndPopup();
         }
 
+        // Context Menu Shortcuts
+        if (EditorDecorations.ParamRefEnumShortcutItems(bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
+        {
+            ParamEditorCommon.SetLastPropertyManual(newval);
+        }
+
         var committed = ParamEditorCommon.UpdateProperty(ContextActionManager,
             nullableCell != null ? nullableCell : row, proprow, oldval);
         if (committed && !ParamBank.VanillaBank.IsLoadingParams)

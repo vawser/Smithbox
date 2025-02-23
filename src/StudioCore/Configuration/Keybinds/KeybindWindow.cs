@@ -733,6 +733,10 @@ public class ParamEditorKeybindTab
             KeyBindings.Current.PARAM_OnlyShowPinnedFields = InputTracker.KeybindLine(21,
                 KeyBindings.Current.PARAM_OnlyShowPinnedFields,
                 KeyBindings.Default.PARAM_OnlyShowPinnedFields);
+
+            KeyBindings.Current.PARAM_InheritReferencedRowName = InputTracker.KeybindLine(22,
+                KeyBindings.Current.PARAM_InheritReferencedRowName,
+                KeyBindings.Default.PARAM_InheritReferencedRowName);
         }
     }
 }

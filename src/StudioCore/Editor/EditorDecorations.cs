@@ -876,6 +876,42 @@ public class EditorDecorations
         }
     }
 
+    public static bool ParamRefEnumShortcutItems(ParamBank bank, FieldMetaData cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
+    {
+        var result = false;
+
+        if (!ImGui.IsAnyItemActive())
+        {
+            if (RefTypes != null)
+            {
+                if (bank.Params == null)
+                {
+                    return false;
+                }
+
+                if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_InheritReferencedRowName))
+                {
+                    List<(string, Param.Row, string)> refs = resolveRefs(bank, RefTypes, context, oldval);
+
+                    foreach ((string, Param.Row, string) rf in refs)
+                    {
+                        if (context == null || executor == null)
+                        {
+                            continue;
+                        }
+
+                        executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"), context,
+                                rf.Item2.Name));
+                    }
+
+                    result = true;
+                }
+            }
+        }
+
+        return result;
+    }
+
     public static bool ParamRefEnumContextMenuItems(ParamBank bank, FieldMetaData cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
     {
         var result = false;

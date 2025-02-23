@@ -863,6 +863,11 @@ public class KeyBindings
             "Toggle the setting to show only pinned fields in the param list.",
             Key.Unknown);
 
+        public KeyBind PARAM_InheritReferencedRowName = new(
+            "Inherit Referenced Row's Name",
+            "Set the name of the selected row to the referenced row's name.",
+            Key.F9);
+
         //-----------------------------
         // Text Editor
         //-----------------------------
