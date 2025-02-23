@@ -278,8 +278,7 @@ public class ParamEditorCommon
             if (newval == null)
             {
                 // Safety check warned to user, should have proper crash handler instead
-                TaskLogs.AddLog("ParamEditorCommon: Property changed was null",
-                    LogLevel.Warning);
+                // TaskLogs.AddLog("ParamEditorCommon: Property changed was null", LogLevel.Warning);
                 return;
             }
 
