@@ -72,5 +72,8 @@ Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/
 * GoogleBen (Contributor)
 * Lord Exelot (Contributor)
 
+# Support
+If you enjoy Smithbox, feel free to support me via [Ko-fi](https://ko-fi.com/vawser).
+
 
   
