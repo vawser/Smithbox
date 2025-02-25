@@ -47,6 +47,10 @@ public static class ViewportActionCommon
     public static void SetUniqueEntityID_AC6(MsbEntity sel, MapContainer map)
     {
         uint originalID = (uint)sel.GetPropertyValue("EntityID");
+
+        if (originalID == 0 )
+            return;
+
         sel.SetPropertyValue("EntityID", (uint)0);
 
         HashSet<uint> vals = new();
@@ -116,54 +120,32 @@ public static class ViewportActionCommon
     public static void SetUniqueEntityID_ER(MsbEntity sel, MapContainer map)
     {
         uint originalID = (uint)sel.GetPropertyValue("EntityID");
+
+        // Don't set entity ID if the original entity doesn't have one
+        if (originalID == 0)
+            return;
+        
         sel.SetPropertyValue("EntityID", (uint)0);
 
         HashSet<uint> vals = new();
 
         // For enemies, only fill vals with other enemy IDs, as ER enemies use 7 digits, not 8 like the other map objects
-        if (sel.WrappedObject is MSBE.Part.Enemy)
+        foreach (var e in map?.Objects)
         {
-            foreach (var e in map?.Objects)
-            {
-                if (e.WrappedObject is MSBE.Part.Enemy)
-                {
-                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-                    if (val == null)
-                        continue;
+            var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+            if (val == null)
+                continue;
 
-                    uint entUint;
-                    if (val is int entInt)
-                        entUint = (uint)entInt;
-                    else
-                        entUint = (uint)val;
+            uint entUint;
+            if (val is int entInt)
+                entUint = (uint)entInt;
+            else
+                entUint = (uint)val;
 
-                    if (entUint == 0 || entUint == uint.MaxValue)
-                        continue;
+            if (entUint == 0 || entUint == uint.MaxValue)
+                continue;
 
-                    vals.Add(entUint);
-                }
-            }
-        }
-        // Default val behavior
-        else
-        {
-            foreach (var e in map?.Objects)
-            {
-                var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-                if (val == null)
-                    continue;
-
-                uint entUint;
-                if (val is int entInt)
-                    entUint = (uint)entInt;
-                else
-                    entUint = (uint)val;
-
-                if (entUint == 0 || entUint == uint.MaxValue)
-                    continue;
-
-                vals.Add(entUint);
-            }
+            vals.Add(entUint);
         }
 
         var mapIdParts = map.Name.Replace("m", "").Split("_");
@@ -180,14 +162,21 @@ public static class ViewportActionCommon
             minId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
             maxId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
         }
+        // Is DLC open-world tile
+        if (mapIdParts[0] == "61")
+        {
+            minId = uint.Parse($"20{mapIdParts[1]}{mapIdParts[2]}0000");
+            maxId = uint.Parse($"20{mapIdParts[1]}{mapIdParts[2]}9999");
+        }
 
+        // I don't think this is necessary at all and it just seems to break incrementing entity IDs
         // Enemies themselves don't use the 60 -> 10 substitution, and only have 7 digits
-        if (sel.WrappedObject is MSBE.Part.Enemy)
+        /*if (sel.WrappedObject is MSBE.Part.Enemy)
         {
             minId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}000");
             maxId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}999");
         }
-
+        */
         // Build base entity ID list
         var baseVals = new HashSet<uint>();
         for (uint i = minId; i < maxId; i++)
@@ -230,6 +219,10 @@ public static class ViewportActionCommon
     public static void SetUniqueEntityID_Int(MsbEntity sel, MapContainer map)
     {
         int originalID = (int)sel.GetPropertyValue("EntityID");
+
+        if (originalID == 0 || originalID == -1)
+            return;
+
         sel.SetPropertyValue("EntityID", -1);
 
         HashSet<int> vals = new();
