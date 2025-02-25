@@ -1,4 +1,6 @@
-﻿using StudioCore.Core.Project;
+﻿using Andre.Formats;
+using StudioCore.Core.Project;
+using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Platform;
 using System;
@@ -47,14 +49,16 @@ public static class DokuWikiHelper
 
         var output = $"====== {paramKey} ======\n" +
             $"===== Fields =====\n" +
-            $"^ Field ^ Description ^ Notes ^\n";
+            $"^ Field ^ Type ^ Offset ^ Description ^ Notes ^\n";
 
         var targetParamDef = ParamBank.PrimaryBank.GetParamFromName(paramKey);
         var targetParamMeta = ParamMetaData.Get(targetParamDef.AppliedParamdef);
 
         // Fields
-        foreach(var field in targetParamDef.AppliedParamdef.Fields)
+        foreach (var field in targetParamDef.AppliedParamdef.Fields)
         {
+            var col = targetParamDef.Columns.Where(e => e.Def == field).FirstOrDefault();
+
             var fieldMeta = FieldMetaData.Get(field);
 
             var notes = "";
@@ -67,7 +71,7 @@ public static class DokuWikiHelper
                 {
                     if (references == "")
                     {
-                        references = $"[[{namespacePrefix}- refmat:param:{entry.ParamName}]]";
+                        references = $"[[{namespacePrefix}-refmat:param:{entry.ParamName}]]";
                     }
                     else
                     {
@@ -188,9 +192,29 @@ public static class DokuWikiHelper
                 }
             }
 
-            var sanitizedWiki = $"{fieldMeta.Wiki}".Replace("\n", ", ").Replace("|", "-");
+            var sanitizedWiki = $"{fieldMeta.Wiki}".Replace("\n", " ").Replace("|", "-");
 
-            output = output + $"| {field.InternalName} | {sanitizedWiki} | {notes} |\n";
+            var colString = "";
+
+            if (col != null)
+            {
+                var offS = col.GetBitOffset();
+
+                if (col.Def.BitSize == -1)
+                {
+                    colString = col.GetByteOffset().ToString("x");
+                }
+                else if (col.Def.BitSize == 1)
+                {
+                    colString = $"{col.GetByteOffset().ToString("x")} [{offS}]";
+                }
+                else
+                {
+                    colString = $"{col.GetByteOffset().ToString("x")} [{offS}-{offS + col.Def.BitSize - 1}]";
+                }
+            }
+
+            output = output + $"| {field.InternalName} | ''{field.DisplayType}'' | ''0x{colString}'' | {sanitizedWiki} | {notes} |\n";
         }
 
         if (targetParamMeta.enums.Count > 0)
@@ -205,7 +229,7 @@ public static class DokuWikiHelper
 
                 foreach (var opt in entry.Value.Values)
                 {
-                    output = output + $"| {opt.Key} | {opt.Value} | |\n";
+                    output = output + $"| ''{opt.Key}'' | {opt.Value} | |\n";
                 }
             }
         }
