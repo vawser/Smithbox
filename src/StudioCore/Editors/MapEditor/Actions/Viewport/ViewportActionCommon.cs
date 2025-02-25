@@ -169,14 +169,6 @@ public static class ViewportActionCommon
             maxId = uint.Parse($"20{mapIdParts[1]}{mapIdParts[2]}9999");
         }
 
-        // I don't think this is necessary at all and it just seems to break incrementing entity IDs
-        // Enemies themselves don't use the 60 -> 10 substitution, and only have 7 digits
-        /*if (sel.WrappedObject is MSBE.Part.Enemy)
-        {
-            minId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}000");
-            maxId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}999");
-        }
-        */
         // Build base entity ID list
         var baseVals = new HashSet<uint>();
         for (uint i = minId; i < maxId; i++)
