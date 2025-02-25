@@ -192,7 +192,7 @@ public static class DokuWikiHelper
                 }
             }
 
-            var sanitizedWiki = $"{fieldMeta.Wiki}".Replace("\n", " ").Replace("|", "-");
+            var sanitizedWiki = $"{fieldMeta.Wiki}".Replace("\n", " ").Replace("|", "-").Replace("^", "<nowiki>^</nowiki>");
 
             var colString = "";
 
