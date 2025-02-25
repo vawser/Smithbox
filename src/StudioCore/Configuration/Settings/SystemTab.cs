@@ -107,10 +107,14 @@ public class SystemTab
             */
         }
 
-        if (ImGui.CollapsingHeader("Aliases"))
+        if (ImGui.CollapsingHeader("Meta Tools"))
         {
             ImGui.Checkbox("Change Base Aliases", ref CFG.Current.AliasBank_EditorMode);
             UIHelper.ShowHoverTooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
+
+            ImGui.Checkbox("Enable DokuWiki Tools",
+                ref CFG.Current.EnableWikiTools);
+            UIHelper.ShowHoverTooltip("Enables various functionality changes for DokuWiki outputs.");
         }
 
         if (ImGui.CollapsingHeader("Configuration"))

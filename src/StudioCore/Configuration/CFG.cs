@@ -51,6 +51,8 @@ public class CFG
     public bool DisplayRandomiserTools = false;
     public bool DisplayDebugTools = false;
 
+    public bool EnableWikiTools = false;
+
     //**************
     // Actions
     //**************

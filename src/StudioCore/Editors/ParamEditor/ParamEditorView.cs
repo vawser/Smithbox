@@ -7,6 +7,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Tools.Generation;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -342,6 +343,20 @@ public class ParamEditorView
                 if (ImGui.Selectable("Copy Param Name"))
                 {
                     PlatformUtils.Instance.SetClipboardText(paramKey);
+                }
+
+                // WIKI - Make false to disable
+                if (CFG.Current.EnableWikiTools)
+                {
+                    if (ImGui.Selectable("Export Param Table"))
+                    {
+                        DokuWikiHelper.OutputParamTableInformation();
+                    }
+
+                    if (ImGui.Selectable("Export Specific Param Wiki Table"))
+                    {
+                        DokuWikiHelper.OutputParamInformation(paramKey);
+                    }
                 }
 
                 if (ParamEditorScreen.EditorMode && p != null)

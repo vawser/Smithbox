@@ -195,6 +195,7 @@ public class AliasTab
         if (ImGui.Button("Copy Alias List", buttonSize))
         {
             var aliasList = "";
+
             foreach (var entry in Bank.GetEntries())
             {
                 if (entry.Key == "dummy" || entry.Key == "default")
@@ -202,10 +203,20 @@ public class AliasTab
 
                 var line = $"{entry.Key} {entry.Value.name}\n";
 
+                if (CFG.Current.EnableWikiTools)
+                {
+                    line = $"| {entry.Key} | {entry.Value.name} |\n";
+                }
+
                 if (SearchFilters.IsSearchMatch(_searchInput, entry.Value.id, entry.Value.name, entry.Value.tags))
                 {
                     aliasList = aliasList + line;
                 }
+            }
+
+            if (CFG.Current.EnableWikiTools)
+            {
+                aliasList = $"^ ID ^ Description ^\n{aliasList}";
             }
 
             PlatformUtils.Instance.SetClipboardText(aliasList);
