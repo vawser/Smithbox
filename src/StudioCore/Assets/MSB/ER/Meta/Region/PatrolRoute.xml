@@ -5,8 +5,8 @@
   
   <Field>
     <UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    AltName="Patrol Action ID"
+    Wiki="Determines what action ID to perform on reaching this patrol route (handled in ai_common/common_patrol_behavior.lua)." />
     
   </Field>
   

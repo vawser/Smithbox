@@ -148,6 +148,23 @@ public class MapShortcuts
                 ActionHandler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
             }
 
+            // Negative Rotate (X-axis)
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_NegativeRotateSelectionXAxis))
+            {
+                ActionHandler.ArbitraryRotation_Selection(new Vector3(-1, 0, 0), false);
+            }
+
+            // Negative Rotate (Y-axis)
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_NegativeRotateSelectionYAxis))
+            {
+                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, -1, 0), false);
+            }
+
+            // Negative Rotate Pivot (Y-axis)
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_NegativePivotSelectionYAxis))
+            {
+                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, -1, 0), true);
+            }
             // Rotate (Fixed Increment)
             if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_RotateFixedAngle))
             {

@@ -26,6 +26,7 @@
         <Option Value="3" Name="Unknown" />
         <Option Value="4" Name="Use Final Point Only, Idle, then Return to Start Point" />
         <Option Value="5" Name="Idle at Final Point, Look at Penultimate Point, then Return to Final Point" />
+        <Option Value="6" Name="Randomly Wander Around" />
     </Enum>
   </Enums>
 </MSBMETA>
