@@ -4,8 +4,6 @@
 - FEAT: overhaul the initialization flow on Project load to make the sequence of loading much clearer
 - FEAT: allow editors to be initialized but not appear in the tab bar, to allow for conditional appearance
 
-- FIX: alias source doesn't change on project reload
-
 #--------------------------------------
 # General
 #--------------------------------------

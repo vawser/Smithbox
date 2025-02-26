@@ -58,6 +58,7 @@ public class MassEditTools
         {
             ImGui.BeginChild("mapMassEditToolSection");
 
+            /*
             ImGui.Separator();
             UIHelper.WrappedText("New Template");
             ImGui.Separator();
@@ -91,6 +92,7 @@ public class MassEditTools
 
                 i++;
             }
+            */
 
             ImGui.Separator();
             UIHelper.WrappedText("Actions");
