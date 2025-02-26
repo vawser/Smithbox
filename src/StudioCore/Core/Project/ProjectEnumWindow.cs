@@ -209,72 +209,111 @@ public static class ProjectEnumWindow
                     Smithbox.BankHandler.ProjectEnums.RestoreBaseEnumEntry(_selectedEntry);
                     ReselectEntry = true;
                 }
-            }
 
-            if (_selectedEntry != null)
-            {
-                if (_selectedEntry.Options.Count > 0)
+                if (CFG.Current.EnableWikiTools)
                 {
-                    if (_selectedEntryOption != null)
+                    if (ImGui.Button("Copy Selected Alias Name", buttonSize))
                     {
-                        // Selected Option
-                        if (ImGui.CollapsingHeader("Selected Option"))
-                        {
-                            ImGui.Text($"Name");
-                            ImGui.InputTextMultiline($"##UpdateOptionName", ref _refUpdateOptionName, 255, inputSize);
-                            UIHelper.ShowHoverTooltip("The display name of the enum option.");
-                            //ImGui.Text($"Description");
-                            //ImGui.InputTextMultiline($"##UpdateOptionDescription", ref _refUpdateOptionDescription, 255, inputSize);
-                            //ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");
+                        PlatformUtils.Instance.SetClipboardText(_selectedEntry.Name);
+                    }
+                    UIHelper.ShowHoverTooltip("Copy the currently selected alias name directly to your clipboard.");
 
-                            if (ImGui.Button("Update Option", buttonSize))
+                    if (ImGui.Button("Copy Alias List", buttonSize))
+                    {
+                        var aliasList = "";
+
+                        var entry = Smithbox.BankHandler.ProjectEnums.Enums.List.Where(e => e.Name == _selectedEntry.Name).FirstOrDefault();
+
+                        if (entry != null)
+                        {
+                            foreach (var opt in entry.Options)
                             {
-                                var newOption = new ProjectEnumOption().Clone(_selectedEntryOption);
-                                newOption.ID = _refUpdateOptionID;
-                                newOption.Name = _refUpdateOptionName;
-                                newOption.Description = _refUpdateOptionDescription;
+                                var line = $"{opt.ID} {opt.Name}\n";
+
+                                if (CFG.Current.EnableWikiTools)
+                                {
+                                    line = $"| {opt.ID} | {opt.Name} |\n";
+                                }
+
+                                aliasList = aliasList + line;
+                            }
+
+                            if (CFG.Current.EnableWikiTools)
+                            {
+                                aliasList = $"^ ID ^ Description ^\n{aliasList}";
+                            }
+
+                            PlatformUtils.Instance.SetClipboardText(aliasList);
+                        }
+                    }
+                    UIHelper.ShowHoverTooltip("Copy the aliases into a list: <ID> <Name>, saving to your clipboard.");
+                }
+
+                if (_selectedEntry != null)
+                {
+                    if (_selectedEntry.Options.Count > 0)
+                    {
+                        if (_selectedEntryOption != null)
+                        {
+                            // Selected Option
+                            if (ImGui.CollapsingHeader("Selected Option"))
+                            {
+                                ImGui.Text($"Name");
+                                ImGui.InputTextMultiline($"##UpdateOptionName", ref _refUpdateOptionName, 255, inputSize);
+                                UIHelper.ShowHoverTooltip("The display name of the enum option.");
+                                //ImGui.Text($"Description");
+                                //ImGui.InputTextMultiline($"##UpdateOptionDescription", ref _refUpdateOptionDescription, 255, inputSize);
+                                //ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");
+
+                                if (ImGui.Button("Update Option", buttonSize))
+                                {
+                                    var newOption = new ProjectEnumOption().Clone(_selectedEntryOption);
+                                    newOption.ID = _refUpdateOptionID;
+                                    newOption.Name = _refUpdateOptionName;
+                                    newOption.Description = _refUpdateOptionDescription;
+
+                                    Smithbox.BankHandler.ProjectEnums.UpdateEnumEntryOption(_selectedEntry, newOption);
+                                    ReselectEntry = true;
+                                }
+                                if (ImGui.Button("Delete Option", buttonSize))
+                                {
+                                    Smithbox.BankHandler.ProjectEnums.RemoveEnumEntryOption(_selectedEntry, _selectedEntryOption);
+                                    _selectedEntryOption = null;
+                                    ReselectEntry = true;
+                                }
+                            }
+                        }
+                    }
+
+                    // New Option
+                    if (ImGui.CollapsingHeader("New Option"))
+                    {
+                        ImGui.Text($"ID");
+                        ImGui.InputTextMultiline($"##NewOptionID", ref _refNewOptionID, 255, inputSize);
+                        UIHelper.ShowHoverTooltip("The numeric ID of the enum option.");
+                        ImGui.Text($"Name");
+                        ImGui.InputTextMultiline($"##NewOptionName", ref _refNewOptionName, 255, inputSize);
+                        UIHelper.ShowHoverTooltip("The display name of the enum option.");
+                        //ImGui.Text($"Description");
+                        //ImGui.InputTextMultiline($"##NewOptionDescription", ref _refNewOptionDescription, 255, inputSize);
+                        //ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");
+
+                        if (ImGui.Button("Add Option", buttonSize))
+                        {
+                            if (_selectedEntry.Options.Where(e => e.ID == _refNewOptionID).Any())
+                            {
+                                PlatformUtils.Instance.MessageBox($"Option with {_refNewOptionID} already exists for {_selectedEntry.DisplayName}", "Error", MessageBoxButtons.OK);
+                            }
+                            else
+                            {
+                                var newOption = new ProjectEnumOption();
+                                newOption.ID = _refNewOptionID;
+                                newOption.Name = _refNewOptionName;
+                                newOption.Description = _refNewOptionDescription;
 
                                 Smithbox.BankHandler.ProjectEnums.UpdateEnumEntryOption(_selectedEntry, newOption);
                                 ReselectEntry = true;
                             }
-                            if (ImGui.Button("Delete Option", buttonSize))
-                            {
-                                Smithbox.BankHandler.ProjectEnums.RemoveEnumEntryOption(_selectedEntry, _selectedEntryOption);
-                                _selectedEntryOption = null;
-                                ReselectEntry = true;
-                            }
-                        }
-                    }
-                }
-
-                // New Option
-                if (ImGui.CollapsingHeader("New Option"))
-                {
-                    ImGui.Text($"ID");
-                    ImGui.InputTextMultiline($"##NewOptionID", ref _refNewOptionID, 255, inputSize);
-                    UIHelper.ShowHoverTooltip("The numeric ID of the enum option.");
-                    ImGui.Text($"Name");
-                    ImGui.InputTextMultiline($"##NewOptionName", ref _refNewOptionName, 255, inputSize);
-                    UIHelper.ShowHoverTooltip("The display name of the enum option.");
-                    //ImGui.Text($"Description");
-                    //ImGui.InputTextMultiline($"##NewOptionDescription", ref _refNewOptionDescription, 255, inputSize);
-                    //ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");
-
-                    if (ImGui.Button("Add Option", buttonSize))
-                    {
-                        if (_selectedEntry.Options.Where(e => e.ID == _refNewOptionID).Any())
-                        {
-                            PlatformUtils.Instance.MessageBox($"Option with {_refNewOptionID} already exists for {_selectedEntry.DisplayName}", "Error", MessageBoxButtons.OK);
-                        }
-                        else
-                        {
-                            var newOption = new ProjectEnumOption();
-                            newOption.ID = _refNewOptionID;
-                            newOption.Name = _refNewOptionName;
-                            newOption.Description = _refNewOptionDescription;
-
-                            Smithbox.BankHandler.ProjectEnums.UpdateEnumEntryOption(_selectedEntry, newOption);
-                            ReselectEntry = true;
                         }
                     }
                 }
