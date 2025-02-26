@@ -56,7 +56,7 @@ public class SettingsWindow
     private AliasTab MapAliasTab;
     private AliasTab TimeActsTab;
 
-    private bool TabInitialized = false;
+    public bool TabInitialized = false;
 
     public SettingsWindow()
     {

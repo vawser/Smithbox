@@ -125,6 +125,7 @@ public class ProjectHandler
         Smithbox.InitializeBanks();
         Smithbox.InitializeNameCaches();
         Smithbox.EditorHandler.UpdateEditors();
+        Smithbox.WindowHandler.SettingsWindow.TabInitialized = false;
 
         Current.LastProjectFile = path;
         CFG.Save();
