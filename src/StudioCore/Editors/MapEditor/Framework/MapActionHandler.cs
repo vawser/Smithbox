@@ -503,18 +503,22 @@ public class MapActionHandler
             if (axis.X != 0)
             {
                 radianRotateAmount = RotationIncrement.GetRadianRotateAmount();
+                // Makes radian rotate amount negative if axis X argument is negative
+                radianRotateAmount = (axis.X < 0 ) ? -radianRotateAmount : radianRotateAmount;
                 rot_x = objT.EulerRotation.X + radianRotateAmount;
             }
 
             if (axis.Y != 0)
             {
                 radianRotateAmount = RotationIncrement.GetRadianRotateAmount();
+                // Makes radian rotate amount negative if axis Y argument is negative
+                radianRotateAmount = (axis.Y < 0 ) ? -radianRotateAmount : radianRotateAmount;
                 rot_y = objT.EulerRotation.Y + radianRotateAmount;
             }
 
             if (pivot)
             {
-                newPos = Utils.RotateVectorAboutPoint(objT.Position, centerT.Position, axis, radianRotateAmount);
+                newPos = Utils.RotateVectorAboutPoint(objT.Position, centerT.Position, Vector3.Abs(axis), radianRotateAmount);
             }
             else
             {

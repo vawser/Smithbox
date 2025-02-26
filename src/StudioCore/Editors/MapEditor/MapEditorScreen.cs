@@ -434,25 +434,49 @@ public class MapEditorScreen : EditorScreen
             ///--------------------
             // Rotate (X-axis)
             ///--------------------
-            if (ImGui.MenuItem("Rotate Selected (X-axis)", KeyBindings.Current.MAP_RotateSelectionXAxis.HintText))
+            if (ImGui.MenuItem("Positive Rotate Selected (X-axis)", KeyBindings.Current.MAP_RotateSelectionXAxis.HintText))
             {
                 ActionHandler.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
             }
 
             ///--------------------
+            // Negative Rotate (X-axis)
+            ///--------------------
+            if (ImGui.MenuItem("Negative Rotate Selected (X-axis)", KeyBindings.Current.MAP_NegativeRotateSelectionXAxis.HintText))
+            {
+                ActionHandler.ArbitraryRotation_Selection(new Vector3(-1, 0, 0), false);
+            }
+
+            ///--------------------
             // Rotate (Y-axis)
             ///--------------------
-            if (ImGui.MenuItem("Rotate Selected (Y-axis)", KeyBindings.Current.MAP_RotateSelectionYAxis.HintText))
+            if (ImGui.MenuItem("Positive Rotate Selected (Y-axis)", KeyBindings.Current.MAP_RotateSelectionYAxis.HintText))
             {
                 ActionHandler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
             }
 
             ///--------------------
+            // Negative Rotate (Y-axis)
+            ///--------------------
+            if (ImGui.MenuItem("Negative Rotate Selected (Y-axis)", KeyBindings.Current.MAP_NegativeRotateSelectionYAxis.HintText))
+            {
+                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, -1, 0), false);
+            }
+
+            ///--------------------
             // Rotate Pivot (Y-axis)
             ///--------------------
-            if (ImGui.MenuItem("Rotate Selected with Pivot (Y-axis)", KeyBindings.Current.MAP_PivotSelectionYAxis.HintText))
+            if (ImGui.MenuItem("Positive Rotate Selected with Pivot (Y-axis)", KeyBindings.Current.MAP_PivotSelectionYAxis.HintText))
             {
                 ActionHandler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
+            }
+
+            ///--------------------
+            // Negative Rotate Pivot (Y-axis)
+            ///--------------------
+            if (ImGui.MenuItem("Negative Rotate Selected with Pivot (Y-axis)", KeyBindings.Current.MAP_NegativePivotSelectionYAxis.HintText))
+            {
+                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, -1, 0), true);
             }
 
             ///--------------------

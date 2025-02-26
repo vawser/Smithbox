@@ -325,13 +325,25 @@ public class MapEditorKeybindTab
                 KeyBindings.Current.MAP_RotateSelectionXAxis,
                 KeyBindings.Default.MAP_RotateSelectionXAxis);
 
+            KeyBindings.Current.MAP_NegativeRotateSelectionXAxis = InputTracker.KeybindLine(61,
+                KeyBindings.Current.MAP_NegativeRotateSelectionXAxis,
+                KeyBindings.Default.MAP_NegativeRotateSelectionXAxis);
+
             KeyBindings.Current.MAP_RotateSelectionYAxis = InputTracker.KeybindLine(6,
                 KeyBindings.Current.MAP_RotateSelectionYAxis,
                 KeyBindings.Default.MAP_RotateSelectionYAxis);
 
+            KeyBindings.Current.MAP_NegativeRotateSelectionYAxis = InputTracker.KeybindLine(62,
+                KeyBindings.Current.MAP_NegativeRotateSelectionYAxis,
+                KeyBindings.Default.MAP_NegativeRotateSelectionYAxis);
+
             KeyBindings.Current.MAP_PivotSelectionYAxis = InputTracker.KeybindLine(7,
                 KeyBindings.Current.MAP_PivotSelectionYAxis,
                 KeyBindings.Default.MAP_PivotSelectionYAxis);
+
+            KeyBindings.Current.MAP_NegativePivotSelectionYAxis = InputTracker.KeybindLine(63,
+                KeyBindings.Current.MAP_NegativePivotSelectionYAxis,
+                KeyBindings.Default.MAP_NegativePivotSelectionYAxis);
 
             KeyBindings.Current.MAP_RotateFixedAngle = InputTracker.KeybindLine(50,
                 KeyBindings.Current.MAP_RotateFixedAngle,

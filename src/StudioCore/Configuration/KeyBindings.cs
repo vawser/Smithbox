@@ -274,23 +274,37 @@ public class KeyBindings
             Key.F);
 
         public KeyBind MAP_RotateSelectionXAxis = new(
-            "Rotate Selection on X-axis", 
-            "Rotates the current selection on the X-axis by the specified increment.", 
+            "Positive Rotate Selection on X-axis", 
+            "Rotates the current selection on the X-axis in the positive direction by the specified increment.", 
             Key.R,
             true);
 
+        public KeyBind MAP_NegativeRotateSelectionXAxis = new(
+            "Negative Rotate Selection on X-axis", 
+            "Rotates the current selection on the X-axis in the negative direction by the specified increment.", 
+            Key.Unknown);
+
         public KeyBind MAP_RotateSelectionYAxis = new(
-            "Rotate Selection on Y-axis",
-            "Rotates the current selection on the Y-axis by the specified increment.",
+            "Positive Rotate Selection on Y-axis",
+            "Rotates the current selection on the Y-axis in the positive direction by the specified increment.",
+            Key.Unknown);
+
+        public KeyBind MAP_NegativeRotateSelectionYAxis = new(
+            "Negative Rotate Selection on Y-axis",
+            "Rotates the current selection on the Y-axis in the negative direction by the specified increment.",
             Key.Unknown);
 
         public KeyBind MAP_PivotSelectionYAxis = new(
-            "Pivot Selection on Y-axis",
-            "Pivots the current selection on the Y-axis by the specified increment.",
+            "Positive Pivot Selection on Y-axis",
+            "Pivots the current selection on the Y-axis in the positive direction by the specified increment.",
             Key.R,
             false,
             false,
             true);
+        public KeyBind MAP_NegativePivotSelectionYAxis = new(
+            "Negative Pivot Selection on Y-axis",
+            "Pivots the current selection on the Y-axis in the negative direction by the specified increment.",
+            Key.Unknown);
 
         public KeyBind MAP_RotateFixedAngle = new(
             "Rotate to Fixed Increment for Selection",
