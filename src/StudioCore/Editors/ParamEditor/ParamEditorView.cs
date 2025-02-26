@@ -986,6 +986,14 @@ public class ParamEditorView
                     _paramEditor.Handler.DuplicateHandler();
                 }
 
+                if (ImGui.Selectable(@$"Copy ID ({KeyBindings.Current.PARAM_CopyId.HintText})", false,
+                        _selection.RowSelectionExists()
+                            ? ImGuiSelectableFlags.None
+                            : ImGuiSelectableFlags.Disabled))
+                {
+                    _paramEditor.Handler.CopyIdHandler();
+                }
+
                 ImGui.Separator();
             }
 

@@ -517,6 +517,12 @@ public class CommonMenubarHandler
                 }
                 UIHelper.ShowHoverTooltip("Display the helper.");
 
+                if (ImGui.MenuItem($"Mod Generator"))
+                {
+                    DebugWindow.ToggleWindow(SelectedDebugTab.ModGenerator);
+                }
+                UIHelper.ShowHoverTooltip("Display the helper.");
+
                 ImGui.Separator();
 
                 if (ImGui.MenuItem($"Test: MSBE Byte-Perfect Write"))

@@ -755,6 +755,11 @@ public class ParamEditorScreen : EditorScreen
             {
                 GotoSelectedRow = true;
             }
+
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyId))
+            {
+                Handler.CopyIdHandler();
+            }
         }
 
         EditorShortcuts.Shortcuts();

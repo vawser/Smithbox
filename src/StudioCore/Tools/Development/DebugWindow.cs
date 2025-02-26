@@ -77,6 +77,7 @@ public class DebugWindow
         // Helpers
         [Display(Name = "FMG Ref Print")] FmgRefPrint,
         [Display(Name = "FLVER Layout Helper")] FlverDumpHelper,
+        [Display(Name = "Mod Generator")] ModGenerator,
 
         // Tests
         [Display(Name = "MSBE - Byte Perfect Test")] Test_MSBE_BytePerfect,
@@ -154,6 +155,9 @@ public class DebugWindow
                     break;
                 case SelectedDebugTab.FlverDumpHelper:
                     DisplayHelper_FLVERDumper();
+                    break;
+                case SelectedDebugTab.ModGenerator:
+                    DisplayHelper_ModGenerator();
                     break;
 
                 // Tests
@@ -362,6 +366,15 @@ public class DebugWindow
         if (ImGui.Button("Dump Layouts", buttonSize))
         {
             FlverDumpTools.DumpFlverLayouts();
+        }
+    }
+    private void DisplayHelper_ModGenerator()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        if (ImGui.Button("Generate Mod", buttonSize))
+        {
+            ModGenerationHelper.GenerateGrandMerchant();
         }
     }
 

@@ -93,6 +93,34 @@ public class ActionHandler
             }
         }
     }
+    public void CopyIdHandler()
+    {
+        Param param = ParamBank.PrimaryBank.Params[Screen._activeView._selection.GetActiveParam()];
+        List<Param.Row> rows = Screen._activeView._selection.GetSelectedRows();
+
+        if (rows.Count == 0)
+        {
+            return;
+        }
+
+        var output = "";
+
+        foreach(var entry in rows)
+        {
+            var id = entry.ID;
+
+            if(output == "")
+            {
+                output = $"{id}";
+            }
+            else
+            {
+                output = $"{output}, {id}";
+            }
+        }
+
+        PlatformUtils.Instance.SetClipboardText(output);
+    }
 
     private void ExportRowNames()
     {
