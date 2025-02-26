@@ -183,16 +183,17 @@ public class Smithbox
 
         fonts.Clear();
 
-        var scale = DPI.GetUIScale();
+        var scaleFine = (float)Math.Round(UI.Current.Interface_FontSize * DPI.GetUIScale());
+        var scaleLarge = (float)Math.Round((UI.Current.Interface_FontSize + 2) * DPI.GetUIScale());
 
         // English fonts
         {
             ImFontConfig* ptr = ImGuiNative.ImFontConfig_ImFontConfig();
             ImFontConfigPtr cfg = new(ptr);
             cfg.GlyphMinAdvanceX = 5.0f;
-            cfg.OversampleH = 5;
-            cfg.OversampleV = 5;
-            fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, (float)Math.Round(UI.Current.Interface_FontSize * scale), cfg,
+            cfg.OversampleH = 3;
+            cfg.OversampleV = 2;
+            fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, scaleFine, cfg,
                 fonts.GetGlyphRangesDefault());
         }
 
@@ -202,8 +203,8 @@ public class Smithbox
             ImFontConfigPtr cfg = new(ptr);
             cfg.MergeMode = true;
             cfg.GlyphMinAdvanceX = 7.0f;
-            cfg.OversampleH = 5;
-            cfg.OversampleV = 5;
+            cfg.OversampleH = 2;
+            cfg.OversampleV = 2;
 
             ImFontGlyphRangesBuilderPtr glyphRanges =
                 new(ImGuiNative.ImFontGlyphRangesBuilder_ImFontGlyphRangesBuilder());
@@ -236,7 +237,7 @@ public class Smithbox
             }
 
             glyphRanges.BuildRanges(out ImVector glyphRange);
-            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, (float)Math.Round((UI.Current.Interface_FontSize + 2) * scale), cfg, glyphRange.Data);
+            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, scaleLarge, cfg, glyphRange.Data);
             glyphRanges.Destroy();
         }
 
@@ -247,13 +248,13 @@ public class Smithbox
             ImFontConfigPtr cfg = new(ptr);
             cfg.MergeMode = true;
             cfg.GlyphMinAdvanceX = 12.0f;
-            cfg.OversampleH = 5;
-            cfg.OversampleV = 5;
+            cfg.OversampleH = 3;
+            cfg.OversampleV = 3;
             ImFontGlyphRangesBuilder b = new();
 
             fixed (ushort* r = ranges)
             {
-                ImFontPtr f = fonts.AddFontFromMemoryTTF(fontIconNative, fontIcon.Length, (float)Math.Round((UI.Current.Interface_FontSize + 2) * scale), cfg,
+                ImFontPtr f = fonts.AddFontFromMemoryTTF(fontIconNative, fontIcon.Length, scaleLarge, cfg,
                     (IntPtr)r);
             }
         }

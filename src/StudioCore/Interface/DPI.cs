@@ -34,7 +34,7 @@ public static class DPI
         {
             var window = _context.Window.SdlWindowHandle;
             int index = SdlProvider.SDL.Value.GetWindowDisplayIndex(window);
-            float ddpi = 96f;
+            float ddpi = DefaultDpi;
             float _ = 0f;
             SdlProvider.SDL.Value.GetDisplayDPI(index, ref ddpi, ref _, ref _);
 
