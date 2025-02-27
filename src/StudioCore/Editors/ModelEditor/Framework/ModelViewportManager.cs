@@ -31,7 +31,6 @@ namespace StudioCore.Editors.ModelEditor;
 public class ModelViewportManager
 {
     public ModelEditorScreen Screen;
-    public Universe Universe;
 
     public IViewport Viewport;
 
@@ -41,13 +40,12 @@ public class ModelViewportManager
     public ModelViewportManager(ModelEditorScreen screen, IViewport viewport)
     {
         Screen = screen;
-        Universe = screen._universe;
         Viewport = viewport;
     }
 
     public bool HasValidLoadedContainer()
     {
-        if (Universe.LoadedModelContainer == null)
+        if (Screen._universe.LoadedModelContainer == null)
             return false;
 
         return true;

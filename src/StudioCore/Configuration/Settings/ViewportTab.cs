@@ -19,6 +19,65 @@ public class ViewportTab
     {
         var defaultButtonSize = new Vector2(ImGui.GetWindowWidth(), 24);
 
+
+        //---------------------------------------
+        // Rendering
+        //---------------------------------------
+        if (ImGui.CollapsingHeader("Rendering", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            // Frame Rate
+            if (ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f))
+            {
+                CFG.Current.System_Frame_Rate = (float)Math.Round(CFG.Current.System_Frame_Rate);
+            }
+            UIHelper.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
+
+            ImGui.Separator();
+
+            // Toggle Rendering
+            ImGui.Checkbox("Enable rendering", ref CFG.Current.Viewport_Enable_Rendering);
+            UIHelper.ShowHoverTooltip("Enabling this option will allow Smithbox to render entities in the viewport.");
+
+            // Toggle Texturing
+            ImGui.Checkbox("Enable texturing", ref CFG.Current.Viewport_Enable_Texturing);
+            UIHelper.ShowHoverTooltip("Enabling this option will allow Smithbox to render the textures of models within the viewport.");
+
+            // Toggle culling
+            ImGui.Checkbox("Enable frustum culling", ref CFG.Current.Viewport_Enable_Culling);
+            UIHelper.ShowHoverTooltip("Enabling this option will cause entities outside of the camera frustum to be culled.");
+
+            ImGui.Separator();
+
+            if (ImGui.InputInt("Renderables", ref CFG.Current.Viewport_Limit_Renderables, 0, 0))
+                if (CFG.Current.Viewport_Limit_Renderables < CFG.Default.Viewport_Limit_Renderables)
+                    CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
+            UIHelper.ShowHoverTooltip("This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.");
+
+            Utils.ImGui_InputUint("Indirect Draw buffer", ref CFG.Current.Viewport_Limit_Buffer_Indirect_Draw);
+            UIHelper.ShowHoverTooltip("This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception.");
+
+            Utils.ImGui_InputUint("FLVER Bone buffer", ref CFG.Current.Viewport_Limit_Buffer_Flver_Bone);
+            UIHelper.ShowHoverTooltip("This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.");
+
+            ImGui.Separator();
+
+            ImGui.InputFloat("Default Model Render: Brightness", ref CFG.Current.Viewport_DefaultRender_Brightness);
+            UIHelper.ShowHoverTooltip("Change the brightness modifier for the Default Model Rendering shader.");
+            ImGui.InputFloat("Default Model Render: Saturation", ref CFG.Current.Viewport_DefaultRender_Saturation);
+            UIHelper.ShowHoverTooltip("Change the saturation modifier for the Default Model Rendering shader.");
+
+            ImGui.Checkbox("Enable enemy model masks", ref CFG.Current.Viewport_Enable_Model_Masks);
+            UIHelper.ShowHoverTooltip("Attempt to display the correct model masks for enemies based on NpcParam.");
+
+            ImGui.Checkbox("Draw LOD facesets", ref CFG.Current.Viewport_Enable_LOD_Facesets);
+            UIHelper.ShowHoverTooltip("Render all facesets for all FLVER meshes, including LOD ones.");
+
+            if (ImGui.Button("Reset##ResetRenderProperties", defaultButtonSize))
+            {
+                ResetRenderingCFG();
+            }
+            UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
+        }
         //---------------------------------------
         // Visualization
         //---------------------------------------
@@ -100,59 +159,6 @@ public class ViewportTab
             }
             UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 
-        }
-
-        //---------------------------------------
-        // Rendering
-        //---------------------------------------
-        if (ImGui.CollapsingHeader("Rendering", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Text("Please restart the program for changes to take effect.");
-
-            ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f),
-                @"Try smaller increments (+25%%) at first, as high values will cause issues.");
-
-            if (ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f))
-            {
-                CFG.Current.System_Frame_Rate = (float)Math.Round(CFG.Current.System_Frame_Rate);
-            }
-            UIHelper.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
-
-            ImGui.Checkbox("Enable model texturing", ref CFG.Current.Viewport_Enable_Texturing);
-            UIHelper.ShowHoverTooltip("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
-
-            ImGui.Checkbox("Enable frustum culling", ref CFG.Current.Viewport_Frustum_Culling);
-            UIHelper.ShowHoverTooltip("Enabling this option will cause entities outside of the camera frustum to be culled.");
-
-            if (ImGui.InputInt("Renderables", ref CFG.Current.Viewport_Limit_Renderables, 0, 0))
-                if (CFG.Current.Viewport_Limit_Renderables < CFG.Default.Viewport_Limit_Renderables)
-                    CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
-            UIHelper.ShowHoverTooltip("This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.");
-
-            Utils.ImGui_InputUint("Indirect Draw buffer", ref CFG.Current.Viewport_Limit_Buffer_Indirect_Draw);
-            UIHelper.ShowHoverTooltip("This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception.");
-
-            Utils.ImGui_InputUint("FLVER Bone buffer", ref CFG.Current.Viewport_Limit_Buffer_Flver_Bone);
-            UIHelper.ShowHoverTooltip("This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.");
-
-            ImGui.Separator();
-
-            ImGui.InputFloat("Default Model Render: Brightness", ref CFG.Current.Viewport_DefaultRender_Brightness);
-            UIHelper.ShowHoverTooltip("Change the brightness modifier for the Default Model Rendering shader.");
-            ImGui.InputFloat("Default Model Render: Saturation", ref CFG.Current.Viewport_DefaultRender_Saturation);
-            UIHelper.ShowHoverTooltip("Change the saturation modifier for the Default Model Rendering shader.");
-
-            ImGui.Checkbox("Enable enemy model masks", ref CFG.Current.Viewport_Enable_Model_Masks);
-            UIHelper.ShowHoverTooltip("Attempt to display the correct model masks for enemies based on NpcParam.");
-
-            ImGui.Checkbox("Draw LOD facesets", ref CFG.Current.Viewport_Enable_LOD_Facesets);
-            UIHelper.ShowHoverTooltip("Render all facesets for all FLVER meshes, including LOD ones.");
-
-            if (ImGui.Button("Reset##ResetRenderProperties", defaultButtonSize))
-            {
-                ResetRenderingCFG();
-            }
-            UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
         }
 
         //---------------------------------------

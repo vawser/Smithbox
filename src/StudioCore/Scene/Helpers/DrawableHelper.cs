@@ -25,6 +25,8 @@ public static class DrawableHelper
     /// </summary>
     public static RenderableProxy GetModelDrawable(RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks)
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         ResourceDescriptor asset;
         var loadcol = false;
         var loadnav = false;
@@ -106,7 +108,7 @@ public static class DrawableHelper
                 }
 
                 Task task = job.Complete();
-                if (obj.Universe.postLoad)
+                if (universe.HasProcessedMapLoad)
                 {
                     task.Wait();
                 }
@@ -137,7 +139,7 @@ public static class DrawableHelper
                 }
 
                 Task task = job.Complete();
-                if (obj.Universe.postLoad)
+                if (universe.HasProcessedMapLoad)
                 {
                     task.Wait();
                 }
@@ -178,7 +180,7 @@ public static class DrawableHelper
             }
 
             Task task = job.Complete();
-            if (obj.Universe.postLoad)
+            if (universe.HasProcessedMapLoad)
             {
                 task.Wait();
             }

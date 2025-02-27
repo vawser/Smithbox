@@ -413,7 +413,7 @@ public class SelectionGroupView
         List<Entity> entities = new List<Entity>();
 
         // TODO: add something to prevent confusion if multiple maps are loaded with the same names within
-        foreach (var entry in _universe.GetLoadedMaps())
+        foreach (var entry in _universe.GetLoadedMapContainerList())
         {
             foreach (var mapObj in entry.Objects)
             {

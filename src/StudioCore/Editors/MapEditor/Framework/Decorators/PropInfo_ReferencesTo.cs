@@ -116,12 +116,13 @@ public static class PropInfo_ReferencesTo
 
                     if (ImGui.BeginPopupContextItem())
                     {
-                        MapContainer map = firstEnt.Universe.GetLoadedMap(mapid);
+                        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+                        MapContainer map = universe.GetLoadedMapContainer(mapid);
                         if (map == null)
                         {
                             if (ImGui.Selectable("Load Map"))
                             {
-                                firstEnt.Universe.LoadMap(mapid);
+                                universe.LoadMap(mapid);
                                 Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(mapid);
                             }
                         }
@@ -129,7 +130,7 @@ public static class PropInfo_ReferencesTo
                         {
                             if (ImGui.Selectable("Unload Map"))
                             {
-                                firstEnt.Universe.UnloadContainer(map);
+                                universe.UnloadContainer(map);
                             }
                         }
 

@@ -31,7 +31,7 @@ public class ModelEditorScreen : EditorScreen
 
     public ViewportSelection _selection = new();
 
-    public Universe _universe;
+    public ModelUniverse _universe;
 
     public Rectangle Rect;
     public RenderScene RenderScene;
@@ -80,7 +80,7 @@ public class ModelEditorScreen : EditorScreen
             Viewport = new NullViewport(ViewportType.ModelEditor, "Modeleditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
 
-        _universe = new Universe(RenderScene, _selection);
+        _universe = new ModelUniverse(RenderScene, _selection);
 
         // Order matters here as classes may fill references via Screen composition
         ViewportManager = new ModelViewportManager(this, Viewport);

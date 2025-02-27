@@ -107,15 +107,11 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 ImGui.Separator();
 
                 // Setup the Content Views
-                if (Universe.LoadedObjectContainers.Count > 0 && !SetupContentViews)
+                if (Universe.GetMapContainerCount() > 0 && !SetupContentViews)
                 {
                     SetupContentViews = true;
 
-                    var maps = Universe.LoadedObjectContainers
-                        .Where(k => k.Key is not null)
-                        .OrderBy(k => k.Key);
-
-                    foreach (var entry in maps)
+                    foreach (var entry in Universe.GetMapContainerList())
                     {
                         var newView = new MapContentView(Screen, entry.Key, entry.Value);
 
@@ -350,7 +346,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             }
 
             // ER: Load Related Maps
-            if (Universe.GameType is ProjectType.ER)
+            if (Smithbox.ProjectType is ProjectType.ER)
             {
                 if (entry.StartsWith("m60") || entry.StartsWith("m61"))
                 {

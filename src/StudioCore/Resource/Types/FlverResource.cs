@@ -1877,7 +1877,7 @@ public class FlverResource : IResource, IDisposable
 
     private bool LoadInternalDeS(AccessLevel al)
     {
-        if (!Universe.IsRendering)
+        if (!CFG.Current.Viewport_Enable_Rendering)
         {
             return true;
         }
@@ -1945,7 +1945,7 @@ public class FlverResource : IResource, IDisposable
 
     private bool LoadInternal(AccessLevel al)
     {
-        if (!Universe.IsRendering)
+        if (!CFG.Current.Viewport_Enable_Rendering)
         {
             return true;
         }

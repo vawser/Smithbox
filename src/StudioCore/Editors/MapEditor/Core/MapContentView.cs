@@ -75,10 +75,7 @@ public class MapContentView
         Selection.ClearSelection();
         Universe.LoadMap(MapID, selected);
 
-        if (Universe.LoadedObjectContainers.ContainsKey(MapID))
-        {
-            Container = Universe.LoadedObjectContainers[MapID];
-        }
+        Container = Universe.GetObjectContainerForMap(MapID);
     }
 
     public void Unload()

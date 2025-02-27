@@ -73,7 +73,7 @@ public class LightmapAtlasView
         {
             ImGui.BeginTabBar("##LightmapAtlasMaps");
 
-            var loadedMaps = Smithbox.EditorHandler.MapEditor.Universe.GetLoadedMaps();
+            var loadedMaps = Smithbox.EditorHandler.MapEditor.Universe.GetLoadedMapContainerList();
 
             foreach (var entry in Smithbox.BankHandler.LightmapAtlasBank.LightmapAtlases)
             {

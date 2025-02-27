@@ -14,17 +14,14 @@ public class ObjectContainer
     {
     }
 
-    public ObjectContainer(Universe u, string name)
+    public ObjectContainer(string name)
     {
         Name = name;
-        Universe = u;
         RootObject = new Entity(this, new MapTransformNode());
     }
 
     public string Name { get; set; }
     public Entity RootObject { get; set; }
-
-    [XmlIgnore] public Universe Universe { get; protected set; }
 
     public bool HasUnsavedChanges { get; set; } = false;
 

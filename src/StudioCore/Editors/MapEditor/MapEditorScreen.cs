@@ -702,9 +702,9 @@ public class MapEditorScreen : EditorScreen
 
             if (ImGui.MenuItem("Map Object List: Categories"))
             {
-                CFG.Current.Param_DisplayMapCategories = !CFG.Current.Param_DisplayMapCategories;
+                CFG.Current.MapEditor_DisplayMapCategories = !CFG.Current.MapEditor_DisplayMapCategories;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_DisplayMapCategories);
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_DisplayMapCategories);
 
             ImGui.Separator();
 
@@ -804,22 +804,6 @@ public class MapEditorScreen : EditorScreen
                 if (ImGui.MenuItem("Default"))
                 {
                     MapViewportView.Viewport.SetEnvMap(0);
-                }
-
-                foreach (var map in Universe.EnvMapTextures)
-                {
-                    if (ImGui.MenuItem(map))
-                    {
-                        /*var tex = ResourceManager.GetTextureResource($@"tex/{map}".ToLower());
-                        if (tex.IsLoaded && tex.Get() != null && tex.TryLock())
-                        {
-                            if (tex.Get().GPUTexture.Resident)
-                            {
-                                Viewport.SetEnvMap(tex.Get().GPUTexture.TexHandle);
-                            }
-                            tex.Unlock();
-                        }*/
-                    }
                 }
 
                 ImGui.EndMenu();
@@ -994,7 +978,7 @@ public class MapEditorScreen : EditorScreen
             ResourceListWindow.DisplayWindow("mapResourceList");
         }
 
-        DisplayGroupView.OnGui(Universe._dispGroupCount);
+        DisplayGroupView.OnGui();
         AssetBrowserView.OnGui();
         SelectionGroupView.OnGui();
 

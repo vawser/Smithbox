@@ -17,7 +17,9 @@ using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using System.Text.Json;
@@ -26,54 +28,88 @@ using System.Threading.Tasks;
 
 namespace StudioCore.MsbEditor;
 
-[JsonSourceGenerationOptions(WriteIndented = true,
-    GenerationMode = JsonSourceGenerationMode.Metadata, IncludeFields = true)]
-[JsonSerializable(typeof(List<BTL.Light>))]
-internal partial class BtlLightSerializerContext : JsonSerializerContext
-{
-}
-
 /// <summary>
-///     A universe is a collection of loaded maps with methods to load, serialize,
-///     and unload individual maps.
+/// A universe is a collection of loaded maps with methods to load, serialize,
+/// and unload individual maps.
 /// </summary>
 public class Universe
 {
-    public RenderScene _renderScene;
+    /// <summary>
+    /// The rendering scene context
+    /// </summary>
+    public RenderScene RenderScene;
 
-    public int _dispGroupCount = 8;
-
+    /// <summary>
+    /// Holds exception dispatches that can occur during map loading
+    /// </summary>
     public ExceptionDispatchInfo LoadMapExceptions = null;
 
-    public bool postLoad;
+    /// <summary>
+    /// True after or before a map load. False if a map load is on-going.
+    /// </summary>
+    public bool HasProcessedMapLoad;
 
-    // This handles all rendering-specific stuff. Used to allow Map Editor and Model Editor usage without viewport if needed.
-    public static bool IsRendering = true;
+    /// <summary>
+    /// The map entity containers, sorted by map ID
+    /// </summary>
+    public Dictionary<string, ObjectContainer> LoadedObjectContainers { get; } = new();
 
-    // Used during the Global MSB Mass Edit to ignore save exceptions
+    /// <summary>
+    /// The entity selection context
+    /// </summary>
+    public ViewportSelection Selection { get; }
 
-    public static bool IgnoreExceptions = false;
+    /// <summary>
+    /// Task list for the async map loads
+    /// </summary>
+    private List<Task> Tasks = new();
 
     public Universe(RenderScene scene, ViewportSelection sel)
     {
-        _renderScene = scene;
+        RenderScene = scene;
         Selection = sel;
 
-        if(_renderScene == null)
+        if (RenderScene == null)
         {
-            IsRendering = false;
+            CFG.Current.Viewport_Enable_Rendering = false;
         }
     }
 
-    public Dictionary<string, ObjectContainer> LoadedObjectContainers { get; } = new();
-    public ModelContainer LoadedModelContainer { get; set; }
-    public ViewportSelection Selection { get; }
+    /// <summary>
+    /// Get the list of map containers available.
+    /// </summary>
+    public IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> GetMapContainerList()
+    {
+        return LoadedObjectContainers
+            .Where(k => k.Key is not null)
+            .OrderBy(k => k.Key);
+    }
 
-    public List<string> EnvMapTextures { get; private set; } = new();
+    /// <summary>
+    /// Get the count of map containers available.
+    /// </summary>
+    public int GetMapContainerCount()
+    {
+        return LoadedObjectContainers.Count;
+    }
 
-    public ProjectType GameType => Smithbox.ProjectType;
+    /// <summary>
+    /// Get the object container for the passed Map ID if possible, or return null.
+    /// </summary>
+    public ObjectContainer GetObjectContainerForMap(string mapId)
+    {
+        if (LoadedObjectContainers.ContainsKey(mapId))
+        {
+            return LoadedObjectContainers[mapId];
+        }
 
-    public List<MapContainer> GetLoadedMaps()
+        return null;
+    }
+
+    /// <summary>
+    /// Get the list of map containers available that are loaded.
+    /// </summary>
+    public List<MapContainer> GetLoadedMapContainerList()
     {
         List<MapContainer> maps = new List<MapContainer>();
 
@@ -88,7 +124,10 @@ public class Universe
         return maps;
     }
 
-    public MapContainer GetLoadedMap(string id)
+    /// <summary>
+    /// Get the loaded map container for the passed Map ID if possible, or return null.
+    /// </summary>
+    public MapContainer GetLoadedMapContainer(string id)
     {
         if (id != null)
         {
@@ -101,64 +140,321 @@ public class Universe
         return null;
     }
 
-    public int GetLoadedMapCount()
+    /// <summary>
+    /// Load a map asynchronously based on the passed map ID
+    /// </summary>
+    public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
-        var i = 0;
-        foreach (KeyValuePair<string, ObjectContainer> map in LoadedObjectContainers)
+        /*
+        if (LoadedObjectContainers.TryGetValue(mapid, out var m) && m != null)
         {
-            if (map.Value != null)
+            TaskLogs.AddLog($"Map \"{mapid}\" is already loaded",
+                LogLevel.Information, StudioCore.Tasks.LogPriority.Normal);
+            return;
+        }
+        */
+
+        if (!fastLoad)
+        {
+            HavokCollisionManager.OnLoadMap(mapid);
+        }
+
+        try
+        {
+            HasProcessedMapLoad = false;
+
+            Smithbox.EditorHandler.MapEditor.DisplayGroupView.SetupDrawgroupCount();
+
+            MapContainer map = new(this, mapid);
+
+            MapResourceHandler resourceHandler = new MapResourceHandler(mapid);
+
+            // Get the Map MSB resource
+            bool exists = resourceHandler.GetMapMSB();
+
+            // If MSB resource doesn't exist, quit
+            if (!exists)
+                return;
+
+            // Read the MSB
+            resourceHandler.ReadMap();
+
+            // Load the map into the MapContainer
+            map.LoadMSB(resourceHandler.Msb);
+
+            if (CFG.Current.Viewport_Enable_Rendering)
             {
-                i++;
+                if (Smithbox.ProjectType != ProjectType.AC4 &&
+                    Smithbox.ProjectType != ProjectType.ACFA &&
+                    Smithbox.ProjectType != ProjectType.ACV &&
+                    Smithbox.ProjectType != ProjectType.ACVD)
+                    resourceHandler.SetupHumanEnemySubstitute();
+
+                resourceHandler.SetupModelLoadLists();
+                resourceHandler.SetupTexturelLoadLists();
+                resourceHandler.SetupModelMasks(map);
+            }
+
+            resourceHandler.LoadLights(map);
+
+            if (CFG.Current.Viewport_Enable_Rendering)
+            {
+                if (Smithbox.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
+                {
+                    if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
+                        loadTransform)
+                    {
+                        map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
+                    }
+                }
+            }
+
+            if (!LoadedObjectContainers.ContainsKey(mapid))
+            {
+                LoadedObjectContainers.Add(mapid, map);
+            }
+            else
+            {
+                LoadedObjectContainers[mapid] = map;
+            }
+
+            if (CFG.Current.Viewport_Enable_Rendering)
+            {
+                // Intervene in the UI to change selection if requested.
+                // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
+                if (selectOnLoad)
+                {
+                    Selection.ClearSelection();
+                    Selection.AddSelection(map.RootObject);
+                }
+            }
+
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            {
+                LoadDS2Generators(resourceHandler.AdjustedMapID, map);
+            }
+
+            if (CFG.Current.Viewport_Enable_Rendering)
+            {
+                Tasks = resourceHandler.LoadTextures(Tasks, map);
+                await Task.WhenAll(Tasks);
+                Tasks = resourceHandler.LoadModels(Tasks, map);
+                await Task.WhenAll(Tasks);
+
+                resourceHandler.SetupNavmesh(map);
+
+                ScheduleTextureRefresh();
+            }
+
+            // After everything loads, do some additional checks:
+            await Task.WhenAll(Tasks);
+            HasProcessedMapLoad = true;
+
+            if (CFG.Current.Viewport_Enable_Rendering)
+            {
+                // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
+                foreach (Entity obj in map.Objects)
+                {
+                    obj.UpdateRenderModel();
+                }
+            }
+
+            // Check for duplicate EntityIDs
+            CheckDupeEntityIDs(map);
+
+            // Set the map transform to the saved position, rotation and scale.
+            //map.LoadMapTransform();
+        }
+        catch (Exception e)
+        {
+#if DEBUG
+            TaskLogs.AddLog("Map Load Failed (debug build)",
+                LogLevel.Error, StudioCore.Tasks.LogPriority.High, e);
+            throw;
+#else
+                // Store async exception so it can be caught by crash handler.
+                LoadMapExceptions = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
+#endif
+        }
+    }
+
+
+    public void SaveMap(MapContainer map)
+    {
+        SaveBTL(map);
+
+        try
+        {
+            ResourceDescriptor ad = MapLocator.GetMapMSB(map.Name);
+            ResourceDescriptor adw = MapLocator.GetMapMSB(map.Name, true);
+            IMsb msb;
+            DCX.Type compressionType = GetCompressionType();
+            if (Smithbox.ProjectType == ProjectType.DS3)
+            {
+                var prev = MSB3.Read(ad.AssetPath);
+                MSB3 n = new();
+                n.PartsPoses = prev.PartsPoses;
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                msb = n;
+            }
+            else if (Smithbox.ProjectType == ProjectType.ER)
+            {
+                var prev = MSBE.Read(ad.AssetPath);
+                MSBE n = new();
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                msb = n;
+            }
+            else if (Smithbox.ProjectType == ProjectType.AC6)
+            {
+                var prev = MSB_AC6.Read(ad.AssetPath);
+                MSB_AC6 n = new();
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                msb = n;
+            }
+            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            {
+                var prev = MSB2.Read(ad.AssetPath);
+                MSB2 n = new();
+                n.PartPoses = prev.PartPoses;
+                msb = n;
+            }
+            else if (Smithbox.ProjectType == ProjectType.SDT)
+            {
+                var prev = MSBS.Read(ad.AssetPath);
+                MSBS n = new();
+                n.PartsPoses = prev.PartsPoses;
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                msb = n;
+            }
+            else if (Smithbox.ProjectType == ProjectType.BB)
+            {
+                msb = new MSBB();
+            }
+            else if (Smithbox.ProjectType == ProjectType.DES)
+            {
+                var prev = MSBD.Read(ad.AssetPath);
+                MSBD n = new();
+                n.Trees = prev.Trees;
+                msb = n;
+            }
+            //TODO ACFA
+            else if (Smithbox.ProjectType == ProjectType.ACFA)
+            {
+                MSBFA prev = MSBFA.Read(ad.AssetPath);
+                MSBFA n = new();
+                n.Models.Version = prev.Models.Version;
+                n.Events.Version = prev.Events.Version;
+                n.Parts.Version = prev.Parts.Version;
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                n.DrawingTree = prev.DrawingTree;
+                n.CollisionTree = prev.CollisionTree;
+                msb = n;
+            }
+            else if (Smithbox.ProjectType == ProjectType.ACV)
+            {
+                MSBV prev = MSBV.Read(ad.AssetPath);
+                MSBV n = new();
+                n.Models.Version = prev.Models.Version;
+                n.Events.Version = prev.Events.Version;
+                n.Parts.Version = prev.Parts.Version;
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                n.DrawingTree = prev.DrawingTree;
+                n.CollisionTree = prev.CollisionTree;
+                msb = n;
+            }
+            else if (Smithbox.ProjectType == ProjectType.ACVD)
+            {
+                MSBVD prev = MSBVD.Read(ad.AssetPath);
+                MSBVD n = new();
+                n.Models.Version = prev.Models.Version;
+                n.Events.Version = prev.Events.Version;
+                n.Parts.Version = prev.Parts.Version;
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                n.DrawingTree = prev.DrawingTree;
+                n.CollisionTree = prev.CollisionTree;
+                msb = n;
+            }
+            else
+            {
+                msb = new MSB1();
+                //var t = MSB1.Read(ad.AssetPath);
+                //((MSB1)msb).Models = t.Models;
+            }
+
+            map.SerializeToMSB(msb, Smithbox.ProjectType);
+
+            // Create the map directory if it doesn't exist
+            if (!Directory.Exists(Path.GetDirectoryName(adw.AssetPath)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(adw.AssetPath));
+            }
+
+            // Write as a temporary file to make sure there are no errors before overwriting current file 
+            var mapPath = adw.AssetPath;
+            //if (GetModProjectPathForFile(mapPath) != null)
+            //{
+            //    mapPath = GetModProjectPathForFile(mapPath);
+            //}
+
+            // If a backup file doesn't exist of the original file create it
+            if (!File.Exists(mapPath + ".bak") && File.Exists(mapPath))
+            {
+                File.Copy(mapPath, mapPath + ".bak", true);
+            }
+
+            if (File.Exists(mapPath + ".temp"))
+            {
+                File.Delete(mapPath + ".temp");
+            }
+
+            msb.Write(mapPath + ".temp", compressionType);
+
+            // Make a copy of the previous map
+            if (File.Exists(mapPath))
+            {
+                File.Copy(mapPath, mapPath + ".prev", true);
+            }
+
+            // Move temp file as new map file
+            if (File.Exists(mapPath))
+            {
+                File.Delete(mapPath);
+            }
+
+            File.Move(mapPath + ".temp", mapPath);
+
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            {
+                SaveDS2Generators(map);
+            }
+
+            CheckDupeEntityIDs(map);
+            map.HasUnsavedChanges = false;
+            TaskLogs.AddLog($"Saved map {map.Name}");
+        }
+        catch (Exception e)
+        {
+            if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
+            {
+                throw new SavingFailedException(Path.GetFileName(map.Name), e);
             }
         }
 
-        return i;
+        // Save the current map transform for this map
+        //map.SaveMapTransform();
     }
 
-    private static RenderFilter GetRenderFilter(string type)
-    {
-        RenderFilter filter;
 
-        switch (type)
-        {
-            case "Enemy":
-            case "DummyEnemy":
-                filter = RenderFilter.Character;
-                break;
-            case "Asset":
-            case "Object":
-            case "DummyObject":
-                filter = RenderFilter.Object;
-                break;
-            case "Player":
-                filter = RenderFilter.Region;
-                break;
-            case "MapPiece":
-                filter = RenderFilter.MapPiece;
-                break;
-            case "Collision":
-                filter = RenderFilter.Collision;
-                break;
-            case "Navmesh":
-                filter = RenderFilter.Navmesh;
-                break;
-            case "Region":
-                filter = RenderFilter.Region;
-                break;
-            case "Light":
-                filter = RenderFilter.Light;
-                break;
-            case "SpeedTree":
-                filter = RenderFilter.SpeedTree;
-                break;
-            default:
-                filter = RenderFilter.All;
-                break;
-        }
-
-        return filter;
-    }
-
+    /// <summary>
+    /// 
+    /// </summary>
     public void LoadDS2Generators(string mapid, MapContainer map)
     {
         Dictionary<long, Param.Row> registParams = new();
@@ -234,7 +530,7 @@ public class Universe
                 {
                     ResourceDescriptor asset = ModelLocator.GetChrModel($@"c{chrid}", $@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                        _renderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
+                        RenderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
                     model.DrawFilter = RenderFilter.Character;
                     generatorObjs[row.ID].RenderSceneMesh = model;
                     model.SetSelectable(generatorObjs[row.ID]);
@@ -281,7 +577,7 @@ public class Universe
             map.MapOffsetNode.AddChild(obj);
 
             // Try rendering as a box for now
-            DebugPrimitiveRenderableProxy mesh = RenderableHelper.GetBoxRegionProxy(_renderScene);
+            DebugPrimitiveRenderableProxy mesh = RenderableHelper.GetBoxRegionProxy(RenderScene);
             mesh.World = obj.GetLocalTransform().WorldMatrix;
             obj.RenderSceneMesh = mesh;
             mesh.DrawFilter = RenderFilter.Region;
@@ -391,175 +687,6 @@ public class Universe
             TaskLogs.AddLog($"Failed to load {ad.AssetName}",
                 LogLevel.Error, StudioCore.Tasks.LogPriority.Normal, e);
             return null;
-        }
-    }
-
-    private void SetupDrawgroupCount()
-    {
-        switch (Smithbox.ProjectType)
-        {
-            // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
-            case ProjectType.DES:
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-            case ProjectType.AC4: // TODO unsure if this is correct
-            case ProjectType.ACFA: // TODO unsure if this is correct
-            case ProjectType.ACV: // TODO unsure if this is correct
-            case ProjectType.ACVD: // TODO unsure if this is correct
-                _dispGroupCount = 4;
-                break;
-            case ProjectType.BB:
-            case ProjectType.DS3:
-                _dispGroupCount = 8;
-                break;
-            case ProjectType.SDT:
-            case ProjectType.ER:
-            case ProjectType.AC6:
-                _dispGroupCount = 8; //?
-                break;
-            default:
-                throw new Exception($"Error: Did not expect Gametype {Smithbox.ProjectType}");
-                //break;
-        }
-    }
-
-    private List<Task> tasks = new();
-
-    public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
-    {
-        if (LoadedObjectContainers.TryGetValue(mapid, out var m) && m != null)
-        {
-            TaskLogs.AddLog($"Map \"{mapid}\" is already loaded",
-                LogLevel.Information, StudioCore.Tasks.LogPriority.Normal);
-            return;
-        }
-
-        if (!fastLoad)
-        {
-            HavokCollisionManager.OnLoadMap(mapid);
-        }
-
-        try
-        {
-            postLoad = false;
-
-            SetupDrawgroupCount();
-
-            MapContainer map = new(this, mapid);
-
-            MapResourceHandler resourceHandler = new MapResourceHandler(mapid);
-
-            // Get the Map MSB resource
-            bool exists = resourceHandler.GetMapMSB();
-
-            // If MSB resource doesn't exist, quit
-            if (!exists)
-                return;
-
-            // Read the MSB
-            resourceHandler.ReadMap();
-
-            // Load the map into the MapContainer
-            map.LoadMSB(resourceHandler.Msb);
-
-            if (IsRendering)
-            {
-                if (Smithbox.ProjectType != ProjectType.AC4 &&
-                    Smithbox.ProjectType != ProjectType.ACFA &&
-                    Smithbox.ProjectType != ProjectType.ACV &&
-                    Smithbox.ProjectType != ProjectType.ACVD)
-                    resourceHandler.SetupHumanEnemySubstitute();
-
-                resourceHandler.SetupModelLoadLists();
-                resourceHandler.SetupTexturelLoadLists();
-                resourceHandler.SetupModelMasks(map);
-            }
-
-            resourceHandler.LoadLights(map);
-
-            if (IsRendering)
-            {
-                if (Smithbox.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
-                {
-                    if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
-                        loadTransform)
-                    {
-                        map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
-                    }
-                }
-            }
-
-            if (!LoadedObjectContainers.ContainsKey(mapid))
-            {
-                LoadedObjectContainers.Add(mapid, map);
-            }
-            else
-            {
-                LoadedObjectContainers[mapid] = map;
-            }
-
-            if (IsRendering)
-            {
-                // Intervene in the UI to change selection if requested.
-                // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
-                if (selectOnLoad)
-                {
-                    Selection.ClearSelection();
-                    Selection.AddSelection(map.RootObject);
-                }
-            }
-
-            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            {
-                LoadDS2Generators(resourceHandler.AdjustedMapID, map);
-            }
-
-            if (IsRendering)
-            {
-                tasks = resourceHandler.LoadTextures(tasks, map);
-                await Task.WhenAll(tasks);
-                tasks = resourceHandler.LoadModels(tasks, map);
-                await Task.WhenAll(tasks);
-
-                resourceHandler.SetupNavmesh(map);
-
-                // Real bad hack
-                EnvMapTextures = TextureLocator.GetEnvMapTextureNames(resourceHandler.AdjustedMapID);
-
-                ScheduleTextureRefresh();
-            }
-
-            // After everything loads, do some additional checks:
-            await Task.WhenAll(tasks);
-            postLoad = true;
-
-            if (IsRendering)
-            {
-                // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
-                foreach (Entity obj in map.Objects)
-                {
-                    obj.UpdateRenderModel();
-                }
-            }
-
-            // Check for duplicate EntityIDs
-            CheckDupeEntityIDs(map);
-
-            // Set the map transform to the saved position, rotation and scale.
-            //map.LoadMapTransform();
-        }
-        catch (Exception e)
-        {
-#if DEBUG
-            TaskLogs.AddLog("Map Load Failed (debug build)",
-                LogLevel.Error, StudioCore.Tasks.LogPriority.High, e);
-            throw;
-#else
-                // Store async exception so it can be caught by crash handler.
-                LoadMapExceptions = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
-#endif
         }
     }
 
@@ -906,178 +1033,6 @@ public class Universe
         }
     }
 
-    public void SaveMap(MapContainer map)
-    {
-        SaveBTL(map);
-
-        try
-        {
-            ResourceDescriptor ad = MapLocator.GetMapMSB(map.Name);
-            ResourceDescriptor adw = MapLocator.GetMapMSB(map.Name, true);
-            IMsb msb;
-            DCX.Type compressionType = GetCompressionType();
-            if (Smithbox.ProjectType == ProjectType.DS3)
-            {
-                var prev = MSB3.Read(ad.AssetPath);
-                MSB3 n = new();
-                n.PartsPoses = prev.PartsPoses;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                msb = n;
-            }
-            else if (Smithbox.ProjectType == ProjectType.ER)
-            {
-                var prev = MSBE.Read(ad.AssetPath);
-                MSBE n = new();
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                msb = n;
-            }
-            else if (Smithbox.ProjectType == ProjectType.AC6)
-            {
-                var prev = MSB_AC6.Read(ad.AssetPath);
-                MSB_AC6 n = new();
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                msb = n;
-            }
-            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            {
-                var prev = MSB2.Read(ad.AssetPath);
-                MSB2 n = new();
-                n.PartPoses = prev.PartPoses;
-                msb = n;
-            }
-            else if (Smithbox.ProjectType == ProjectType.SDT)
-            {
-                var prev = MSBS.Read(ad.AssetPath);
-                MSBS n = new();
-                n.PartsPoses = prev.PartsPoses;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                msb = n;
-            }
-            else if (Smithbox.ProjectType == ProjectType.BB)
-            {
-                msb = new MSBB();
-            }
-            else if (Smithbox.ProjectType == ProjectType.DES)
-            {
-                var prev = MSBD.Read(ad.AssetPath);
-                MSBD n = new();
-                n.Trees = prev.Trees;
-                msb = n;
-            }
-            //TODO ACFA
-            else if (Smithbox.ProjectType == ProjectType.ACFA)
-            {
-                MSBFA prev = MSBFA.Read(ad.AssetPath);
-                MSBFA n = new();
-                n.Models.Version = prev.Models.Version;
-                n.Events.Version = prev.Events.Version;
-                n.Parts.Version = prev.Parts.Version;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                n.DrawingTree = prev.DrawingTree;
-                n.CollisionTree = prev.CollisionTree;
-                msb = n;
-            }
-            else if (Smithbox.ProjectType == ProjectType.ACV)
-            {
-                MSBV prev = MSBV.Read(ad.AssetPath);
-                MSBV n = new();
-                n.Models.Version = prev.Models.Version;
-                n.Events.Version = prev.Events.Version;
-                n.Parts.Version = prev.Parts.Version;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                n.DrawingTree = prev.DrawingTree;
-                n.CollisionTree = prev.CollisionTree;
-                msb = n;
-            }
-            else if (Smithbox.ProjectType == ProjectType.ACVD)
-            {
-                MSBVD prev = MSBVD.Read(ad.AssetPath);
-                MSBVD n = new();
-                n.Models.Version = prev.Models.Version;
-                n.Events.Version = prev.Events.Version;
-                n.Parts.Version = prev.Parts.Version;
-                n.Layers = prev.Layers;
-                n.Routes = prev.Routes;
-                n.DrawingTree = prev.DrawingTree;
-                n.CollisionTree = prev.CollisionTree;
-                msb = n;
-            }
-            else
-            {
-                msb = new MSB1();
-                //var t = MSB1.Read(ad.AssetPath);
-                //((MSB1)msb).Models = t.Models;
-            }
-
-            map.SerializeToMSB(msb, Smithbox.ProjectType);
-
-            // Create the map directory if it doesn't exist
-            if (!Directory.Exists(Path.GetDirectoryName(adw.AssetPath)))
-            {
-                Directory.CreateDirectory(Path.GetDirectoryName(adw.AssetPath));
-            }
-
-            // Write as a temporary file to make sure there are no errors before overwriting current file 
-            var mapPath = adw.AssetPath;
-            //if (GetModProjectPathForFile(mapPath) != null)
-            //{
-            //    mapPath = GetModProjectPathForFile(mapPath);
-            //}
-
-            // If a backup file doesn't exist of the original file create it
-            if (!File.Exists(mapPath + ".bak") && File.Exists(mapPath))
-            {
-                File.Copy(mapPath, mapPath + ".bak", true);
-            }
-
-            if (File.Exists(mapPath + ".temp"))
-            {
-                File.Delete(mapPath + ".temp");
-            }
-
-            msb.Write(mapPath + ".temp", compressionType);
-
-            // Make a copy of the previous map
-            if (File.Exists(mapPath))
-            {
-                File.Copy(mapPath, mapPath + ".prev", true);
-            }
-
-            // Move temp file as new map file
-            if (File.Exists(mapPath))
-            {
-                File.Delete(mapPath);
-            }
-
-            File.Move(mapPath + ".temp", mapPath);
-
-            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            {
-                SaveDS2Generators(map);
-            }
-
-            CheckDupeEntityIDs(map);
-            map.HasUnsavedChanges = false;
-            TaskLogs.AddLog($"Saved map {map.Name}");
-        }
-        catch (Exception e)
-        {
-            if (!Universe.IgnoreExceptions)
-            {
-                throw new SavingFailedException(Path.GetFileName(map.Name), e);
-            }
-        }
-
-        // Save the current map transform for this map
-        //map.SaveMapTransform();
-    }
-
     public void SaveAllMaps()
     {
         foreach (KeyValuePair<string, ObjectContainer> m in LoadedObjectContainers)
@@ -1154,7 +1109,7 @@ public class Universe
 
     public void ScheduleTextureRefresh()
     {
-        if (GameType == ProjectType.DS1)
+        if (Smithbox.ProjectType == ProjectType.DS1)
         {
             ResourceManager.ScheduleUDSMFRefresh();
         }
@@ -1162,40 +1117,11 @@ public class Universe
         ResourceManager.ScheduleUnloadedTexturesRefresh();
     }
 
-    /// <summary>
-    /// Model Editor: Unload All
-    /// </summary>
-    public void UnloadModels()
-    {
-        if (LoadedModelContainer != null)
-        {
-            foreach (Entity obj in LoadedModelContainer.Objects)
-            {
-                if (obj != null)
-                {
-                    obj.Dispose();
-                }
-            }
-        }
-    }
+}
 
-    /// <summary>
-    /// Model Editor: Unload Dummies/Bones
-    /// </summary>
-    public void UnloadTransformableEntities()
-    {
-        if (LoadedModelContainer != null)
-        {
-            foreach (Entity obj in LoadedModelContainer.Objects)
-            {
-                if (obj is TransformableNamedEntity)
-                {
-                    if (obj != null)
-                    {
-                        obj.Dispose();
-                    }
-                }
-            }
-        }
-    }
+[JsonSourceGenerationOptions(WriteIndented = true,
+    GenerationMode = JsonSourceGenerationMode.Metadata, IncludeFields = true)]
+[JsonSerializable(typeof(List<BTL.Light>))]
+internal partial class BtlLightSerializerContext : JsonSerializerContext
+{
 }

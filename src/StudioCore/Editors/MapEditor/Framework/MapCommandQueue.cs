@@ -39,7 +39,7 @@ public class MapCommandQueue
             if (initcmd[0] == "load")
             {
                 var mapid = initcmd[1];
-                if (Screen.Universe.GetLoadedMap(mapid) is MapContainer m)
+                if (Screen.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
                 {
                     target = m.RootObject;
                 }
@@ -55,7 +55,7 @@ public class MapCommandQueue
                 var mapid = initcmd[1];
                 if (initcmd.Length > 2)
                 {
-                    if (Screen.Universe.GetLoadedMap(mapid) is MapContainer m)
+                    if (Screen.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
                     {
                         var name = initcmd[2];
                         if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntityType entityType))
@@ -84,7 +84,7 @@ public class MapCommandQueue
 
                 if (initcmd.Length > 3)
                 {
-                    if (Screen.Universe.GetLoadedMap(mapid) is MapContainer m)
+                    if (Screen.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
                     {
                         if (type == "enemy")
                         {
@@ -109,7 +109,7 @@ public class MapCommandQueue
 
                 if (initcmd.Length > 2)
                 {
-                    if (Screen.Universe.GetLoadedMap(mapid) is MapContainer m)
+                    if (Screen.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
                     {
                         if (target == null)
                             target = m.GetEnemyByID(entityID, true);

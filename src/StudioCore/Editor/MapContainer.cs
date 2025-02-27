@@ -26,6 +26,8 @@ namespace StudioCore.Editor;
 /// </summary>
 public class MapContainer : ObjectContainer
 {
+    public Universe Universe { get; set; }
+
     /// <summary>
     ///     Parent entities used to organize lights per-BTL file.
     /// </summary>
@@ -47,6 +49,17 @@ public class MapContainer : ObjectContainer
     {
         Name = mapid;
         Universe = u;
+
+        Objects = new();
+
+        BTLParents = new();
+        Parts = new();
+        Events = new();
+        Regions = new();
+        Models = new();
+        Layers = new();
+        Routes = new();
+
         var t = new MapTransformNode(mapid);
         RootObject = new MsbEntity(this, t, MsbEntityType.MapRoot);
         MapOffsetNode = new MsbEntity(this, new MapTransformNode(mapid));

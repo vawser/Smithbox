@@ -494,11 +494,11 @@ public class CloneMapObjectsAction : ViewportAction
             MapContainer m;
             if (TargetMap != null)
             {
-                m = Universe.GetLoadedMap(TargetMap.Name);
+                m = Universe.GetLoadedMapContainer(TargetMap.Name);
             }
             else
             {
-                m = Universe.GetLoadedMap(Clonables[i].MapID);
+                m = Universe.GetLoadedMapContainer(Clonables[i].MapID);
             }
 
             if (m != null)
@@ -727,7 +727,7 @@ public class AddMapObjectsAction : ViewportAction
 
                 if (TargetMap != null)
                 {
-                    m = Universe.GetLoadedMap(TargetMap.Name);
+                    m = Universe.GetLoadedMapContainer(TargetMap.Name);
 
                     // Prefab-specific
                     if (CFG.Current.Prefab_ApplyUniqueInstanceID)
@@ -896,7 +896,7 @@ public class DeleteMapObjectsAction : ViewportAction
     {
         foreach (MsbEntity obj in Deletables)
         {
-            MapContainer m = Universe.GetLoadedMap(obj.MapID);
+            MapContainer m = Universe.GetLoadedMapContainer(obj.MapID);
             if (m != null)
             {
                 RemoveMaps.Add(m);
@@ -1359,7 +1359,7 @@ public class ChangeMapObjectType : ViewportAction
                 Type currentType = ent.WrappedObject.GetType();
                 if (currentType == sourceType)
                 {
-                    MapContainer map = Universe.GetLoadedMap(ent.MapID);
+                    MapContainer map = Universe.GetLoadedMapContainer(ent.MapID);
                     map.HasUnsavedChanges = true;
 
                     var sourceObj = ent.WrappedObject;
@@ -1661,7 +1661,7 @@ public class ReplicateMapObjectsAction : ViewportAction
                 }
 
                 MapContainer m;
-                m = Screen.Universe.GetLoadedMap(Clonables[i].MapID);
+                m = Screen.Universe.GetLoadedMapContainer(Clonables[i].MapID);
 
                 if (m != null)
                 {
@@ -2071,7 +2071,7 @@ public class OrderMapObjectsAction : ViewportAction
                 if (ent.WrappedObject is BTL.Light)
                     return ActionEvent.NoEvent;
 
-                MapContainer mapRoot = Universe.GetLoadedMap(curSel.MapID);
+                MapContainer mapRoot = Universe.GetLoadedMapContainer(curSel.MapID);
 
                 // Ignore usage if the selection is the map root itself
                 if (mapRoot == null)
@@ -2236,7 +2236,7 @@ public class OrderMapObjectsAction : ViewportAction
         {
             var curSel = selection.First();
 
-            MapContainer mapRoot = Universe.GetLoadedMap(curSel.MapID);
+            MapContainer mapRoot = Universe.GetLoadedMapContainer(curSel.MapID);
             mapRoot.Objects = storedObjectOrder;
         }
 

@@ -20,11 +20,13 @@ namespace StudioCore.Editor;
 
 public class ModelContainer : ObjectContainer
 {
+    public ModelUniverse Universe { get; set; }
+
     public Entity Mesh_RootNode { get; set; }
     public Entity Bone_RootNode { get; set; }
     public Entity DummyPoly_RootNode { get; set; }
 
-    public ModelContainer(Universe u, FLVER2 flver, MeshRenderableProxy flverProxy)
+    public ModelContainer(ModelUniverse u, FLVER2 flver, MeshRenderableProxy flverProxy)
     {
         Universe = u;
 
@@ -37,14 +39,14 @@ public class ModelContainer : ObjectContainer
         RootObject.AddChild(Bone_RootNode);
         RootObject.AddChild(DummyPoly_RootNode);
 
-        if (!Universe.IsRendering)
+        if (!CFG.Current.Viewport_Enable_Rendering)
             return;
 
         // Meshes
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
             var meshNode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
-            if (Universe.IsRendering)
+            if (CFG.Current.Viewport_Enable_Rendering)
             {
                 if (flverProxy.Submeshes.Count > 0 && i < flverProxy.Submeshes.Count)
                 {
@@ -71,7 +73,7 @@ public class ModelContainer : ObjectContainer
         {
             var boneNode = new TransformableNamedEntity(this, flver.Nodes[i], $"Bone {i} {{ {flver.Nodes[i].Name} }}", i);
 
-            boneNode.RenderSceneMesh = DrawableHelper.GetBoneDrawable(Universe._renderScene, this, boneNode);
+            boneNode.RenderSceneMesh = DrawableHelper.GetBoneDrawable(Universe.RenderScene, this, boneNode);
             if(CFG.Current.ModelEditor_ViewDummyPolys)
             {
                 boneNode.EditorVisible = true;
@@ -90,7 +92,7 @@ public class ModelContainer : ObjectContainer
         {
             var dummyPolyNode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}", i);
 
-            dummyPolyNode.RenderSceneMesh = DrawableHelper.GetDummyPolyDrawable(Universe._renderScene, this, dummyPolyNode);
+            dummyPolyNode.RenderSceneMesh = DrawableHelper.GetDummyPolyDrawable(Universe.RenderScene, this, dummyPolyNode);
 
             if (CFG.Current.ModelEditor_ViewDummyPolys)
             {
@@ -119,6 +121,7 @@ public class ModelContainer : ObjectContainer
 
             return pos;
         }
+    // Offset a vector position by the rotation and translation of a bone it is attached to
 
         pos = OffsetPos(pos, flver, dummy);
         dummy.Position = pos;
@@ -126,7 +129,6 @@ public class ModelContainer : ObjectContainer
         //Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeDummy(index, pos);
     }
 
-    // Offset a vector position by the rotation and translation of a bone it is attached to
     public Vector3 RecursiveBoneOffset(Vector3 pos, FLVER.Node bone, FLVER2 flver)
     {
         pos = RotateVector(pos, bone.Rotation) + bone.Position;

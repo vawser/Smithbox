@@ -129,7 +129,7 @@ public class MeshRenderables : Renderables
             }
 
             ContainmentType intersect = frustum.Contains(ref cBounds[i]);
-            if (!CFG.Current.Viewport_Frustum_Culling)
+            if (!CFG.Current.Viewport_Enable_Culling)
             {
                 cCulled[i] = !cVisible[i]._valid || !cVisible[i]._visible;
             }

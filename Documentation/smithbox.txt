@@ -26,6 +26,8 @@
 - FEAT: add ability to change the viewport information panel text color
 - FEAT: move the movement increment stuff into the tool window (map editor)
 
+- FIX: reloading a map does not refresh the Entity environment, detaching visuals from data.
+
 #--------------------------------------
 # Param Editor
 #--------------------------------------

@@ -655,7 +655,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
         private void SetUniqueInstanceID(MsbEntity selected, string modelName)
         {
             MapContainer m;
-            m = Screen.Universe.GetLoadedMap(selected.MapID);
+            m = Screen.Universe.GetLoadedMapContainer(selected.MapID);
 
             Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 

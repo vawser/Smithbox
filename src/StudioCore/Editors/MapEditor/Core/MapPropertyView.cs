@@ -85,7 +85,7 @@ public class MapPropertyView
         ImGui.BeginChild("propedit");
         Smithbox.EditorHandler.MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.MapObjectProperties);
 
-        if (Screen.Universe.postLoad && entSelection.Count > 1)
+        if (Screen.Universe.HasProcessedMapLoad && entSelection.Count > 1)
         {
             Entity firstEnt = entSelection.First();
             if (firstEnt.WrappedObject is Param.Row prow || firstEnt.WrappedObject is MergedParamRow)
@@ -107,7 +107,7 @@ public class MapPropertyView
             ImGui.PopStyleColor();
             ImGui.EndChild();
         }
-        else if (Screen.Universe.postLoad && entSelection.Any())
+        else if (Screen.Universe.HasProcessedMapLoad && entSelection.Any())
         {
             Entity firstEnt = entSelection.First();
             //ImGui.Text($" Map: {firstEnt.Container.Name}");
@@ -129,7 +129,7 @@ public class MapPropertyView
                 PropEditorSelectedEntities(selection);
             }
         }
-        else if (!Screen.Universe.postLoad)
+        else if (!Screen.Universe.HasProcessedMapLoad)
         {
             ImGui.Text("");
         }

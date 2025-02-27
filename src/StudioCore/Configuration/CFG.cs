@@ -128,8 +128,10 @@ public class CFG
     //****************************
     // Settings: Viewport
     //****************************
-    public bool Viewport_Frustum_Culling = true;
-    public bool Viewport_Enable_Texturing = false;
+    public bool Viewport_Enable_Rendering = true;
+    public bool Viewport_Enable_Texturing = true;
+    public bool Viewport_Enable_Culling = true;
+
     public bool Viewport_Enable_ER_Auto_Map_Offset = true;
     public bool Viewport_Enable_Selection_Outline = true;
     public bool Viewport_Enable_Model_Masks = true;
@@ -229,7 +231,9 @@ public class CFG
     //****************************
     // Settings: Map Editor
     //****************************
-    public bool Param_DisplayMapCategories = true;
+    public bool MapEditor_IgnoreSaveExceptions = false;
+
+    public bool MapEditor_DisplayMapCategories = true;
 
     public bool MapEditor_LoadMapQueryData = true;
 

@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
@@ -7,6 +8,7 @@ using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Scene.Framework;
 using StudioCore.Settings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -20,6 +22,8 @@ public class DisplayGroupView
     private RenderScene RenderScene;
     private ViewportSelection Selection;
 
+    private int _dispGroupCount = 8;
+
     public readonly HashSet<string> HighlightedGroups = new();
 
     public DisplayGroupView(MapEditorScreen screen)
@@ -30,7 +34,38 @@ public class DisplayGroupView
         Selection = screen.Selection;
     }
 
-    public void OnGui(int dispCount)
+    public void SetupDrawgroupCount()
+    {
+        switch (Smithbox.ProjectType)
+        {
+            // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
+            case ProjectType.DES:
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+            case ProjectType.AC4: // TODO unsure if this is correct
+            case ProjectType.ACFA: // TODO unsure if this is correct
+            case ProjectType.ACV: // TODO unsure if this is correct
+            case ProjectType.ACVD: // TODO unsure if this is correct
+                _dispGroupCount = 4;
+                break;
+            case ProjectType.BB:
+            case ProjectType.DS3:
+                _dispGroupCount = 8;
+                break;
+            case ProjectType.SDT:
+            case ProjectType.ER:
+            case ProjectType.AC6:
+                _dispGroupCount = 8; //?
+                break;
+            default:
+                throw new Exception($"Error: Did not expect Gametype {Smithbox.ProjectType}");
+                //break;
+        }
+    }
+
+    public void OnGui()
     {
         var scale = DPI.GetUIScale();
 
@@ -64,10 +99,10 @@ public class DisplayGroupView
             Smithbox.EditorHandler.MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.RenderGroups);
 
             DrawGroup dg = RenderScene.DisplayGroup;
-            if (dg.AlwaysVisible || dg.RenderGroups.Length != dispCount)
+            if (dg.AlwaysVisible || dg.RenderGroups.Length != _dispGroupCount)
             {
-                dg.RenderGroups = new uint[dispCount];
-                for (var i = 0; i < dispCount; i++)
+                dg.RenderGroups = new uint[_dispGroupCount];
+                for (var i = 0; i < _dispGroupCount; i++)
                 {
                     dg.RenderGroups[i] = 0xFFFFFFFF;
                 }
@@ -78,7 +113,7 @@ public class DisplayGroupView
             if (ImGui.Button($"Show All <{KeyBindings.Current.MAP_ShowAllDisplayGroups.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.MAP_ShowAllDisplayGroups))
             {
-                for (var i = 0; i < dispCount; i++)
+                for (var i = 0; i < _dispGroupCount; i++)
                 {
                     dg.RenderGroups[i] = 0xFFFFFFFF;
                 }
@@ -88,7 +123,7 @@ public class DisplayGroupView
             if (ImGui.Button($"Hide All <{KeyBindings.Current.MAP_HideAllDisplayGroups.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.MAP_HideAllDisplayGroups))
             {
-                for (var i = 0; i < dispCount; i++)
+                for (var i = 0; i < _dispGroupCount; i++)
                 {
                     dg.RenderGroups[i] = 0;
                 }
@@ -104,7 +139,7 @@ public class DisplayGroupView
                 || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDisplayGroup)
                     && sdispgroups != null)
             {
-                for (var i = 0; i < dispCount; i++)
+                for (var i = 0; i < _dispGroupCount; i++)
                 {
                     dg.RenderGroups[i] = sdispgroups[i];
                 }
@@ -115,7 +150,7 @@ public class DisplayGroupView
                 || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDrawGroup)
                     && sdispgroups != null)
             {
-                for (var i = 0; i < dispCount; i++)
+                for (var i = 0; i < _dispGroupCount; i++)
                 {
                     dg.RenderGroups[i] = sdrawgroups[i];
                 }

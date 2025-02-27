@@ -63,7 +63,7 @@ public class MapEditorTab
             ImGui.Checkbox("Display world map interface", ref CFG.Current.MapEditor_ShowWorldMapButtons);
             UIHelper.ShowHoverTooltip("Display the world map buttons.");
 
-            ImGui.Checkbox("Display map categories", ref CFG.Current.Param_DisplayMapCategories);
+            ImGui.Checkbox("Display map categories", ref CFG.Current.MapEditor_DisplayMapCategories);
             UIHelper.ShowHoverTooltip("If defined, display maps in their assigned map category groupings.");
 
             ImGui.Separator();

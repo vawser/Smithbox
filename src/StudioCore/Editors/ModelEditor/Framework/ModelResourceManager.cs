@@ -29,7 +29,6 @@ public class ModelResourceManager : IResourceEventListener
     public FlverContainer LoadedFlverContainer { get; set; }
 
     public ModelEditorScreen Screen;
-    public Universe Universe;
     public ModelSelectionManager Selection;
     public ModelToolView ToolView;
     public ModelViewportManager ViewportManager;
@@ -51,7 +50,6 @@ public class ModelResourceManager : IResourceEventListener
         Screen = screen;
         Viewport = viewport;
         EditorActionManager = screen.EditorActionManager;
-        Universe = screen._universe;
         ToolView = screen.ToolView;
         ViewportManager = screen.ViewportManager;
         Selection = screen.Selection;
@@ -61,8 +59,6 @@ public class ModelResourceManager : IResourceEventListener
 
     public void OnProjectChanged()
     {
-        Universe.UnloadAll(true);
-
         if (_loadingTask != null)
         {
             TaskLogs.AddLog(
@@ -547,7 +543,7 @@ public class ModelResourceManager : IResourceEventListener
 
         foreach (var entry in textureAssets)
         {
-            if (Universe.IsRendering)
+            if (CFG.Current.Viewport_Enable_Rendering)
             {
                 if (CFG.Current.Viewport_Enable_Texturing)
                 {
@@ -978,7 +974,7 @@ public class ModelResourceManager : IResourceEventListener
         if (_Flver_RenderMesh != null)
             _Flver_RenderMesh.Visible = false;
 
-        if (Universe.IsRendering)
+        if (CFG.Current.Viewport_Enable_Rendering)
         {
             var meshRenderableProxy = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
             meshRenderableProxy.World = Matrix4x4.Identity;
@@ -997,7 +993,7 @@ public class ModelResourceManager : IResourceEventListener
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Universe.IsRendering)
+        if (CFG.Current.Viewport_Enable_Rendering)
         {
             // High Collision
             if (collisionAsset.AssetVirtualPath.Contains("_h"))

@@ -269,7 +269,7 @@ public class MapResourceHandler
                     masks = msbEnt.GetModelMasks();
                 }
 
-                var renderScene = Smithbox.EditorHandler.MapEditor.Universe._renderScene;
+                var renderScene = Smithbox.EditorHandler.MapEditor.Universe.RenderScene;
 
                 DrawableHelper.GetModelDrawable(renderScene, map, obj, mp.ModelName, false, masks);
             }
@@ -579,7 +579,7 @@ public class MapResourceHandler
                     ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(AdjustedMapID, navname);
 
                     var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                        Smithbox.EditorHandler.MapEditor.Universe._renderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
+                        Smithbox.EditorHandler.MapEditor.Universe.RenderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
                     mesh.World = n.GetWorldMatrix();
                     mesh.SetSelectable(n);
                     mesh.DrawFilter = RenderFilter.Navmesh;

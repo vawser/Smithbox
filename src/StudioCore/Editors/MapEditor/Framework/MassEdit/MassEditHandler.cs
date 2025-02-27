@@ -454,8 +454,15 @@ public class MassEditHandler
         // Global
         if (MapTarget is MapListType.Global)
         {
-            Universe.IsRendering = false;
-            Universe.IgnoreExceptions = true;
+            var restoreRendering = false;
+
+            if(CFG.Current.Viewport_Enable_Rendering)
+            {
+                CFG.Current.Viewport_Enable_Rendering = false;
+                restoreRendering = true;
+            }
+
+            CFG.Current.MapEditor_IgnoreSaveExceptions = true;
 
             // Load all maps
             foreach (var entry in availableList)
@@ -504,8 +511,12 @@ public class MassEditHandler
                 Smithbox.EditorHandler.MapEditor.MapListView.SignalUnload(entry);
             }
 
-            Universe.IsRendering = true;
-            Universe.IgnoreExceptions = false;
+            if(restoreRendering)
+            {
+                CFG.Current.Viewport_Enable_Rendering = true;
+            }
+
+            CFG.Current.MapEditor_IgnoreSaveExceptions = false;
         }
     }
     /// <summary>
