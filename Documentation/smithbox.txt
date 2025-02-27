@@ -37,6 +37,7 @@
  - BB
 - FEAT: action to copy AtkParam/BehaviorParam row into _PC version (vice versa)
 - FEAT: action to revert selected row to vanilla data
+- FEAT: add create text entry group for selection (e.g. new weapon infusion).
 
 - FIX: correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
 - FIX: color picker throwing CTD on second param view
