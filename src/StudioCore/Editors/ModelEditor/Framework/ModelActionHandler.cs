@@ -340,39 +340,80 @@ public class ModelActionHandler
             return;
         }
 
-        model.Header.BoundingBoxMin = new Vector3();
-        model.Header.BoundingBoxMax = new Vector3();
+        model.Header.BoundingBoxMin = new Vector3(float.PositiveInfinity);
+        model.Header.BoundingBoxMax = new Vector3(float.NegativeInfinity);
         foreach (FLVER.Node node in model.Nodes)
         {
-            node.BoundingBoxMin = new Vector3();
-            node.BoundingBoxMax = new Vector3();
+            node.BoundingBoxMin = new Vector3(float.PositiveInfinity);
+            node.BoundingBoxMax = new Vector3(float.NegativeInfinity);
+            node.Flags = 0;
         }
         foreach (FLVER2.Mesh mesh in model.Meshes)
         {
+            mesh.BoundingBox = new FLVER2.Mesh.BoundingBoxes
+            {
+                Min = new Vector3(float.PositiveInfinity),
+                Max = new Vector3(float.NegativeInfinity)
+            };
             foreach (FLVER.Vertex vertex in mesh.Vertices)
             {
                 FlverTools.UpdateHeaderBoundingBox(model.Header, vertex.Position);
                 FlverTools.UpdateMeshBoundingBox(mesh, vertex.Position);
 
-                if (FlverTools.BoneIndicesToIntArray(vertex.BoneIndices) == null)
-                    continue;
-
-                foreach (int nodeIndex in FlverTools.BoneIndicesToIntArray(vertex.BoneIndices))
+                var boneIndices = FlverTools.BoneIndicesToIntArray(vertex.BoneIndices);
+                if (boneIndices != null)
                 {
-                    bool boneDoesNotExist = false;
-
-                    if (nodeIndex >= 0 && nodeIndex < model.Nodes.Count)
-                        model.Nodes[nodeIndex].Flags = 0;
-                    else
-                        boneDoesNotExist = true;
-
-                    if (!boneDoesNotExist)
-                        FlverTools.UpdateBonesBoundingBox(model.Nodes[nodeIndex], model.Nodes, vertex.Position);
+                    foreach (int boneIndex in boneIndices)
+                    {
+                        if (boneIndex >= 0 && boneIndex < model.Nodes.Count)
+                        {
+                            FlverTools.UpdateBonesBoundingBox(model.Nodes[boneIndex], model.Nodes, vertex.Position);
+                        }
+                    }
                 }
             }
         }
 
+        ValidateBoundingBoxes(model);
         TaskLogs.AddLog("Bounding Boxes solved.");
+    }
+
+    private void ValidateBoundingBoxes(FLVER2 model)
+    {
+        (Vector3 min, Vector3 max) GetValidBounds(Vector3 min, Vector3 max)
+        {
+            if (min == new Vector3(float.PositiveInfinity) || max == new Vector3(float.NegativeInfinity))
+            {
+                return (new Vector3(-1), new Vector3(1));
+            }
+            return (min, max);
+        }
+
+        // Validate header bounds
+        {
+            var (min, max) = GetValidBounds(model.Header.BoundingBoxMin, model.Header.BoundingBoxMax);
+            model.Header.BoundingBoxMin = min;
+            model.Header.BoundingBoxMax = max;
+        }
+
+        // Validate node bounds
+        foreach (var node in model.Nodes)
+        {
+            var (min, max) = GetValidBounds(node.BoundingBoxMin, node.BoundingBoxMax);
+            node.BoundingBoxMin = min;
+            node.BoundingBoxMax = max;
+        }
+
+        // Validate mesh bounds
+        foreach (var mesh in model.Meshes)
+        {
+            if (mesh.BoundingBox != null)
+            {
+                var (min, max) = GetValidBounds(mesh.BoundingBox.Min, mesh.BoundingBox.Max);
+                mesh.BoundingBox.Min = min;
+                mesh.BoundingBox.Max = max;
+            }
+        }
     }
 
 }
