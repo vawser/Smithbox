@@ -344,6 +344,76 @@ public static class AliasUtils
 
     }
 
+    public static void UpdateEntityAliasName(Entity e)
+    {
+        var aliasName = "";
+        var modelName = "";
+
+        if (e.IsPart())
+        {
+            modelName = e.GetPropertyValue<string>("ModelName");
+            if (modelName == null)
+            {
+                return;
+            }
+
+            modelName = modelName.ToLower();
+        }
+
+        // Only grab the alias once, then refer to the cachedName within the entity
+        if (e.CachedAliasName == null)
+        {
+            if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+            {
+                if (Smithbox.BankHandler.CharacterAliases.Aliases.list != null)
+                {
+                    aliasName = GetCharacterAlias(modelName);
+                    aliasName = $"{aliasName}";
+                }
+            }
+
+            if (CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
+            {
+                if (Smithbox.BankHandler.AssetAliases.Aliases.list != null)
+                {
+                    aliasName = GetAssetAlias(modelName);
+                    aliasName = $"{aliasName}";
+                }
+            }
+
+            if (CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
+            {
+                if (Smithbox.BankHandler.MapPieceAliases.Aliases.list != null)
+                {
+                    aliasName = GetMapPieceAlias(modelName);
+                    aliasName = $"{aliasName}";
+                };
+            }
+
+            // Player/System Characters: peek in param/fmg for name
+            if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+            {
+                if (modelName == "c0000")
+                {
+                    aliasName = FindPlayerCharacterName(e, modelName);
+                }
+
+                if (modelName == "c0100" || modelName == "c0110" || modelName == "c0120" || modelName == "c1000")
+                {
+                    aliasName = FindSystemCharacterName(e, modelName);
+                }
+            }
+
+            // Treasure: show itemlot row name
+            if (CFG.Current.MapEditor_MapObjectList_ShowTreasureNames && e.IsEventTreasure())
+            {
+                aliasName = FindTreasureName(e);
+            }
+
+            e.CachedAliasName = aliasName;
+        }
+    }
+
     // Map Editor
     public static string GetEntityAliasName(Entity e)
     {

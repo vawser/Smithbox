@@ -4,6 +4,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
+using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
 using System;
 using System.Collections;
@@ -244,7 +245,9 @@ public class MapContentFilters
             foreach (bool entry in partTruth)
             {
                 if (!entry)
+                {
                     isValid = false;
+                }
             }
         }
 
@@ -261,27 +264,27 @@ public class MapContentFilters
         if (curEnt == null)
             return isValid;
 
-        if (curEnt.Name == null)
-            return isValid;
-
-        if (curEnt.CachedAliasName == null)
-            return isValid;
-
-        var entName = curEnt.Name.Trim().ToLower();
-        var aliasName = curEnt.CachedAliasName.Trim().ToLower();
-
         var input = cmd.Replace("name:", "").Trim().ToLower();
 
-        if (entName != null)
+        if (curEnt.Name != null)
         {
-            if (entName != "" && entName.Contains(input))
-                isValid = true;
+            var entName = curEnt.Name.Trim().ToLower();
+
+            if (entName != null)
+            {
+                if (entName != "" && entName.Contains(input))
+                    isValid = true;
+            }
         }
 
-        if (aliasName != null)
+        if (curEnt.CachedAliasName != null)
         {
-            if (aliasName != "" && aliasName.Contains(input))
-                isValid = true;
+            var aliasName = curEnt.CachedAliasName.Trim().ToLower();
+            if (aliasName != null)
+            {
+                if (aliasName != "" && aliasName.Contains(input))
+                    isValid = true;
+            }
         }
 
         return isValid;

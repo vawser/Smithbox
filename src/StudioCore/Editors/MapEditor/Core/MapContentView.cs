@@ -493,6 +493,8 @@ public class MapContentView
                             {
                                 foreach (MsbEntity obj in typ.Value)
                                 {
+                                    AliasUtils.UpdateEntityAliasName(obj);
+
                                     if (Screen.MapContentFilter.ContentFilter(this, obj))
                                     {
                                         MapObjectSelectable(obj, true);
@@ -527,6 +529,8 @@ public class MapContentView
                                         {
                                             var curObj = parent.Children[i];
 
+                                            AliasUtils.UpdateEntityAliasName(curObj);
+
                                             if (Screen.MapContentFilter.ContentFilter(this, curObj))
                                             {
                                                 MapObjectSelectable(curObj, true);
@@ -559,6 +563,8 @@ public class MapContentView
                             {
                                 foreach (MsbEntity obj in typ.Value)
                                 {
+                                    AliasUtils.UpdateEntityAliasName(obj);
+
                                     if (Screen.MapContentFilter.ContentFilter(this, obj))
                                     {
                                         MapObjectSelectable(obj, true);
@@ -659,9 +665,10 @@ public class MapContentView
                 doSelect = true;
                 arrowKeySelect = true;
             }
+
+            var alias = AliasUtils.GetEntityAliasName(e);
             if (ImGui.IsItemVisible())
             {
-                var alias = AliasUtils.GetEntityAliasName(e);
                 UIHelper.DisplayAlias(alias);
             }
 

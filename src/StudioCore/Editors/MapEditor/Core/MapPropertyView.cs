@@ -1643,8 +1643,11 @@ public class MapPropertyView
     {
         foreach (var ent in selection)
         {
-            ent.CachedAliasName = null;
-            if (changed) { ent.BuildReferenceMap(); }
+            if (changed)
+            {
+                ent.CachedAliasName = null;
+                ent.BuildReferenceMap(); 
+            }
         }
 
         if (changed)
