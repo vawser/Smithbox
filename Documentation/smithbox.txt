@@ -23,6 +23,9 @@
  
 - FEAT: implement SoulFormatsNEXT speedtree solution (https://github.com/soulsmods/SoulsFormatsNEXT/pull/24/files)
 
+- FEAT: add ability to change the viewport information panel text color
+- FEAT: move the movement increment stuff into the tool window (map editor)
+
 #--------------------------------------
 # Param Editor
 #--------------------------------------
@@ -53,6 +56,8 @@
 - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
 - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
 - FIX: account for scale when displaying dummies/bones
+
+- FEAT: add a texture search
 
 #--------------------------------------
 # Text Editor
