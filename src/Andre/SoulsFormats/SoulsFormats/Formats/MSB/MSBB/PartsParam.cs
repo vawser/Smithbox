@@ -1007,7 +1007,9 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public short UnkT20 { get; set; }
+                [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
+                public string PatrolInfoName { get; set; }
+                private short PatrolInfoIndex;
 
                 /// <summary>
                 /// Regions for the enemy to patrol.
@@ -1056,7 +1058,7 @@ namespace SoulsFormats
                     UnkT14 = br.ReadInt16();
                     CharaInitID = br.ReadInt32();
                     CollisionIndex = br.ReadInt32();
-                    UnkT20 = br.ReadInt16();
+                    PatrolInfoIndex = br.ReadInt16();
                     br.AssertInt16(0);
                     br.AssertInt32(0);
                     MovePointIndices = br.ReadInt16s(8);
@@ -1077,7 +1079,7 @@ namespace SoulsFormats
                     bw.WriteInt16(UnkT14);
                     bw.WriteInt32(CharaInitID);
                     bw.WriteInt32(CollisionIndex);
-                    bw.WriteInt16(UnkT20);
+                    bw.WriteInt16(PatrolInfoIndex);
                     bw.WriteInt16(0);
                     bw.WriteInt32(0);
                     bw.WriteInt16s(MovePointIndices);
@@ -1092,6 +1094,8 @@ namespace SoulsFormats
                     base.GetNames(msb, entries);
                     CollisionName = MSB.FindName(entries.Parts, CollisionIndex);
 
+                    PatrolInfoName = MSB.FindNameInSubType(entries.Events, typeof(Event.PatrolInfo), PatrolInfoIndex);
+
                     MovePointNames = new string[MovePointIndices.Length];
                     for (int i = 0; i < MovePointIndices.Length; i++)
                         MovePointNames[i] = MSB.FindName(entries.Regions, MovePointIndices[i]);
@@ -1101,6 +1105,8 @@ namespace SoulsFormats
                 {
                     base.GetIndices(msb, entries);
                     CollisionIndex = MSB.FindIndex(this, entries.Parts, CollisionName);
+
+                    PatrolInfoIndex = (short)MSB.FindIndexOfSubType(this, entries.Events, typeof(Event.PatrolInfo), PatrolInfoName);
 
                     MovePointIndices = new short[MovePointNames.Length];
                     for (int i = 0; i < MovePointNames.Length; i++)

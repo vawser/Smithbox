@@ -36,6 +36,11 @@
     Wiki="The collision that controls loading of the enemy."
     MapRef="Part-Collision" />
     
+    <PatrolInfoName
+    AltName="Patrol Info ID"
+    Wiki="The index of the patrol info to use."
+    MapRef="Event-PatrolInfo" />
+    
     <CollisionIndex
     IndexProperty="" />
     

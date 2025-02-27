@@ -90,6 +90,36 @@ namespace SoulsFormats
                 return list[index].Name;
         }
 
+        internal static string FindNameInSubType<T>(List<T> list, Type subType, int index) where T : IMsbEntry
+        {
+            if (index == -1)
+                return null;
+            else if (index >= list.Count)
+                return null;
+            else
+            {
+                int eventIndex = 0;
+                int subIndex = 0;
+
+                foreach (var entry in list)
+                {
+                    if (entry.GetType() == subType)
+                    {
+                        if (index == subIndex)
+                        {
+                            return list[eventIndex].Name;
+                        }
+
+                        subIndex++;
+                    }
+
+                    eventIndex++;
+                }
+            }
+
+            return null;
+        }
+
         internal static string FindName<T>(List<T> list, ushort index) where T : IMsbEntry
         {
             if (index >= list.Count)
@@ -156,6 +186,40 @@ namespace SoulsFormats
                     }
                 }
                 return result;
+            }
+        }
+
+        internal static int FindIndexOfSubType<T>(IMsbEntry referrer, List<T> list, Type subType, string name) where T : IMsbEntry
+        {
+            if (name == null || name == "")
+            {
+                return -1;
+            }
+            else
+            {
+                int eventIndex = 0;
+                int subIndex = 0;
+
+                foreach (var entry in list)
+                {
+                    if (entry.GetType() == subType)
+                    {
+                        if (entry.Name == name)
+                        {
+                            return subIndex;
+                        }
+                        else if (entry.Name.ToLower() == name.ToLower())
+                        {
+                            return subIndex;
+                        }
+
+                        subIndex++;
+                    }
+
+                    eventIndex++;
+                }
+
+                throw new MissingReferenceException(referrer, name);
             }
         }
 
