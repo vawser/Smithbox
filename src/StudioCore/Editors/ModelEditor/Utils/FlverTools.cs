@@ -24,17 +24,12 @@ public static class FlverTools
         header.BoundingBoxMax = new Vector3(maxX, maxY, maxZ);
     }
 
+
     public static void UpdateMeshBoundingBox(FLVER2.Mesh mesh, Vector3 vertexPos)
     {
         mesh.BoundingBox ??= new FLVER2.Mesh.BoundingBoxes();
-        float minX = Math.Min(mesh.BoundingBox.Min.X, vertexPos.X);
-        float minY = Math.Min(mesh.BoundingBox.Min.Y, vertexPos.Y);
-        float minZ = Math.Min(mesh.BoundingBox.Min.Z, vertexPos.Z);
-        float maxX = Math.Max(mesh.BoundingBox.Max.X, vertexPos.X);
-        float maxY = Math.Max(mesh.BoundingBox.Max.Y, vertexPos.Y);
-        float maxZ = Math.Max(mesh.BoundingBox.Max.Z, vertexPos.Z);
-        mesh.BoundingBox.Min = new Vector3(minX, minY, minZ);
-        mesh.BoundingBox.Max = new Vector3(maxX, maxY, maxZ);
+        mesh.BoundingBox.Min = Vector3.Min(mesh.BoundingBox.Min, vertexPos);
+        mesh.BoundingBox.Max = Vector3.Max(mesh.BoundingBox.Max, vertexPos);
     }
 
     public static void UpdateBonesBoundingBox(FLVER.Node node, IReadOnlyList<FLVER.Node> nodes, Vector3 vertexPos)
@@ -45,14 +40,8 @@ public static class FlverTools
             return;
 
         Vector3 posForBBox = Vector3.Transform(vertexPos, invertedBoneMatrix);
-        float minX = Math.Min(node.BoundingBoxMin.X, posForBBox.X);
-        float minY = Math.Min(node.BoundingBoxMin.Y, posForBBox.Y);
-        float minZ = Math.Min(node.BoundingBoxMin.Z, posForBBox.Z);
-        float maxX = Math.Max(node.BoundingBoxMax.X, posForBBox.X);
-        float maxY = Math.Max(node.BoundingBoxMax.Y, posForBBox.Y);
-        float maxZ = Math.Max(node.BoundingBoxMax.Z, posForBBox.Z);
-        node.BoundingBoxMin = new Vector3(minX, minY, minZ);
-        node.BoundingBoxMax = new Vector3(maxX, maxY, maxZ);
+        node.BoundingBoxMin = Vector3.Min(node.BoundingBoxMin, posForBBox);
+        node.BoundingBoxMax = Vector3.Max(node.BoundingBoxMax, posForBBox);
     }
 
     public static Matrix4x4 GetAbsoluteNMatrix(FLVER.Node node, IReadOnlyList<FLVER.Node> nodes)
