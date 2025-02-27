@@ -72,7 +72,7 @@ public class MapCommandQueue
                 }
                 else
                 {
-                    target = new ObjectContainerReference(mapid, Screen.Universe).GetSelectionTarget();
+                    target = new ObjectContainerReference(mapid).GetSelectionTarget();
                 }
             }
 

@@ -1930,7 +1930,7 @@ public class MsbEntity : Entity
             // For now, the map relationship type is not given here (dictionary values), just all related maps.
             foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(Name, universe.LoadedObjectContainers.Keys, connects).Keys)
             {
-                References[mapRef] = new[] { new ObjectContainerReference(mapRef, universe) };
+                References[mapRef] = new[] { new ObjectContainerReference(mapRef) };
             }
         }
         else

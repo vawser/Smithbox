@@ -26,8 +26,6 @@ namespace StudioCore.Editor;
 /// </summary>
 public class MapContainer : ObjectContainer
 {
-    public Universe Universe { get; set; }
-
     /// <summary>
     ///     Parent entities used to organize lights per-BTL file.
     /// </summary>
@@ -45,10 +43,9 @@ public class MapContainer : ObjectContainer
     public List<Entity> Layers = new();
     public List<Entity> Routes = new();
 
-    public MapContainer(Universe u, string mapid)
+    public MapContainer(string mapid)
     {
         Name = mapid;
-        Universe = u;
 
         Objects = new();
 

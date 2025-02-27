@@ -15,11 +15,8 @@ internal class CreatePrefabModal : IModal
     private string _prefabName = "";
     private Entity _referenceEntity;
 
-    private Universe _universe;
-
-    public CreatePrefabModal(Universe universe, Entity reference)
+    public CreatePrefabModal(Entity reference)
     {
-        _universe = universe;
         _referenceEntity = reference;
     }
 

@@ -28,7 +28,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     private IViewport Viewport;
 
     private ViewportActionManager EditorActionManager;
-    private Universe Universe;
     private ViewportSelection Selection;
     private EditorFocusManager FocusManager;
 
@@ -49,7 +48,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         Screen = screen;
 
         EditorActionManager = screen.EditorActionManager;
-        Universe = screen.Universe;
         Selection = screen.Selection;
         Viewport = screen.MapViewportView.Viewport;
         FocusManager = screen.FocusManager;
@@ -107,11 +105,11 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 ImGui.Separator();
 
                 // Setup the Content Views
-                if (Universe.GetMapContainerCount() > 0 && !SetupContentViews)
+                if (Screen.Universe.GetMapContainerCount() > 0 && !SetupContentViews)
                 {
                     SetupContentViews = true;
 
-                    foreach (var entry in Universe.GetMapContainerList())
+                    foreach (var entry in Screen.Universe.GetMapContainerList())
                     {
                         var newView = new MapContentView(Screen, entry.Key, entry.Value);
 
@@ -200,7 +198,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                         entry.Value.Unload();
                 }
 
-                Universe.UnloadAllMaps();
+                Screen.Universe.UnloadAllMaps();
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
                 GC.Collect();
@@ -329,7 +327,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                     {
                         try
                         {
-                            Universe.SaveMap(m);
+                            Screen.Universe.SaveMap(m);
                         }
                         catch (SavingFailedException e)
                         {
@@ -353,7 +351,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                     if (ImGui.Selectable("Load Related Maps"))
                     {
                         curView.Load(true);
-                        Universe.LoadRelatedMapsER(entry, Universe.LoadedObjectContainers);
+                        Screen.Universe.LoadRelatedMapsER(entry);
                     }
                 }
             }

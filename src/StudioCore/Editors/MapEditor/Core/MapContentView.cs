@@ -34,7 +34,6 @@ public class MapContentView
     private IViewport Viewport;
 
     private ViewportActionManager EditorActionManager;
-    private Universe Universe;
     private ViewportSelection Selection;
     private EditorFocusManager FocusManager;
 
@@ -57,7 +56,6 @@ public class MapContentView
     {
         Screen = screen;
         EditorActionManager = screen.EditorActionManager;
-        Universe = screen.Universe;
         Selection = screen.Selection;
         Viewport = screen.MapViewportView.Viewport;
         FocusManager = screen.FocusManager;
@@ -73,9 +71,9 @@ public class MapContentView
         ContentLoadState = MapContentLoadState.Loaded;
 
         Selection.ClearSelection();
-        Universe.LoadMap(MapID, selected);
+        Screen.Universe.LoadMap(MapID, selected);
 
-        Container = Universe.GetObjectContainerForMap(MapID);
+        Container = Screen.Universe.GetObjectContainerForMap(MapID);
     }
 
     public void Unload()
@@ -88,7 +86,7 @@ public class MapContentView
         EditorActionManager.Clear();
 
         if (Container != null)
-            Universe.UnloadContainer(Container);
+            Screen.Universe.UnloadContainer(Container);
 
         GC.Collect();
         GC.WaitForPendingFinalizers();
@@ -165,7 +163,7 @@ public class MapContentView
         ImGui.BeginChild($"mapContentsTree_{ImguiID}");
 
         Entity mapRoot = Container?.RootObject;
-        ObjectContainerReference mapRef = new(MapID, Universe);
+        ObjectContainerReference mapRef = new(MapID);
         ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
 
         ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;

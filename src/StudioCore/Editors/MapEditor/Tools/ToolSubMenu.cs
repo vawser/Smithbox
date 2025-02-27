@@ -40,7 +40,7 @@ public class ToolSubMenu
                 if (!PatrolsVisualised)
                 {
                     PatrolsVisualised = true;
-                    PatrolDrawManager.Generate(Screen.Universe);
+                    PatrolDrawManager.Generate();
                 }
                 else
                 {
@@ -111,7 +111,7 @@ public class ToolSubMenu
                 {
                     if (ImGui.MenuItem("Display"))
                     {
-                        PatrolDrawManager.Generate(Screen.Universe);
+                        PatrolDrawManager.Generate();
                     }
                     if (ImGui.MenuItem("Clear"))
                     {

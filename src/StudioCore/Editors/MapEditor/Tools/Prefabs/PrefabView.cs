@@ -20,7 +20,6 @@ using System.Numerics;
 public class PrefabView
 {
     private MapEditorScreen Screen;
-    private Universe Universe;
     private ViewportActionManager EditorActionManager;
     private RenderScene RenderScene;
 
@@ -41,7 +40,6 @@ public class PrefabView
     public PrefabView(MapEditorScreen screen) 
     { 
         Screen = screen;
-        Universe = screen.Universe;
         EditorActionManager = screen.EditorActionManager;
         RenderScene = screen.MapViewportView.RenderScene;
     }
@@ -74,7 +72,7 @@ public class PrefabView
         }
         var newPrefab = Prefab.New(Smithbox.ProjectType);
 
-        newPrefab.ExportSelection($@"{prefabDir}\{name}.json", name, editFlags, Universe.Selection);
+        newPrefab.ExportSelection($@"{prefabDir}\{name}.json", name, editFlags, Screen.Universe.Selection);
 
         prefabs.Add(name, newPrefab);
         selectedPrefab = newPrefab;
@@ -89,7 +87,7 @@ public class PrefabView
 
     void CreateButton(Vector2 buttonSize)
     {
-        bool selectedEntities = Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
+        bool selectedEntities = Screen.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
 
         var isDisabled = !selectedEntities || selectedPrefab is not null || !editName.Any();
 
@@ -144,7 +142,7 @@ public class PrefabView
             var loadedPrefab = GetLoadedPrefab(selectedPrefab.PrefabName);
 
             if (loadedPrefab != null)
-                loadedPrefab.ImportToMap(comboMap.map as MapContainer, Universe, RenderScene, EditorActionManager, prefixName);
+                loadedPrefab.ImportToMap(comboMap.map as MapContainer, RenderScene, EditorActionManager, prefixName);
         }
         UIHelper.ShowHoverTooltip("Import the selected prefab into a loaded map.");
 
@@ -154,7 +152,7 @@ public class PrefabView
 
     void ReplaceButton(Vector2 buttonSize)
     {
-        bool selectedEntities = Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
+        bool selectedEntities = Screen.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
 
         ImGui.BeginDisabled(selectedPrefab is null || !selectedEntities);
 
@@ -227,13 +225,13 @@ public class PrefabView
         ImGui.Text("Map:");
         ImGui.SameLine();
 
-        if (comboMap.name != null && Universe.LoadedObjectContainers[comboMap.name] == null)
+        if (comboMap.name != null && Screen.Universe.LoadedObjectContainers[comboMap.name] == null)
             comboMap = (null, null);
 
         ImGui.PushItemWidth(-1);
         if (ImGui.BeginCombo("##PrefabMapCombo", comboMap.name))
         {
-            foreach (var (name, container) in Universe.LoadedObjectContainers)
+            foreach (var (name, container) in Screen.Universe.LoadedObjectContainers)
             {
                 if (container is null) continue;
                 if (ImGui.Selectable(name))

@@ -16,14 +16,12 @@ namespace StudioCore.Editors.MapEditor.Framework;
 public class RegionFilters
 {
     private MapEditorScreen Screen;
-    private Universe Universe;
 
     public List<bool> RegionVisibilityTruth { get; set; }
 
     public RegionFilters(MapEditorScreen screen)
     {
         Screen = screen;
-        Universe = screen.Universe;
 
         SetupTruthList(true);
     }
@@ -227,7 +225,7 @@ public class RegionFilters
     {
         if (ImGui.MenuItem("Toggle Region Visibility: OFF"))
         {
-            foreach (var entry in Universe.LoadedObjectContainers.Values)
+            foreach (var entry in Screen.Universe.LoadedObjectContainers.Values)
             {
                 if (entry is MapContainer)
                 {
@@ -246,7 +244,7 @@ public class RegionFilters
 
         if (ImGui.MenuItem("Toggle Region Visibility: ON"))
         {
-            foreach (var entry in Universe.LoadedObjectContainers.Values)
+            foreach (var entry in Screen.Universe.LoadedObjectContainers.Values)
             {
                 if (entry is MapContainer)
                 {
@@ -271,7 +269,7 @@ public class RegionFilters
         var show = false;
 
         // Only show if region type is present
-        foreach (var entry in Universe.LoadedObjectContainers.Values)
+        foreach (var entry in Screen.Universe.LoadedObjectContainers.Values)
         {
             if (entry is MapContainer)
             {
@@ -290,7 +288,7 @@ public class RegionFilters
         {
             if (ImGui.MenuItem($"Toggle: {name}"))
             {
-                foreach (var entry in Universe.LoadedObjectContainers.Values)
+                foreach (var entry in Screen.Universe.LoadedObjectContainers.Values)
                 {
                     if (entry is MapContainer)
                     {

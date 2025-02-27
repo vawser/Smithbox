@@ -51,7 +51,7 @@ public abstract class Prefab : PrefabAttributes
         };
     }
 
-    public void ImportToMap(MapContainer targetMap, Universe _universe, RenderScene _scene, ViewportActionManager _actionManager, string prefixName = null)
+    public void ImportToMap(MapContainer targetMap, RenderScene _scene, ViewportActionManager _actionManager, string prefixName = null)
     {
         if (targetMap is null)
         {
@@ -69,7 +69,7 @@ public abstract class Prefab : PrefabAttributes
             RenameWithRefs(entries, entry, prefixName + entry.Name);
         }
 
-        AddMapObjectsAction act = new(_universe, targetMap, _scene, ents, true, parent);
+        AddMapObjectsAction act = new(targetMap, _scene, ents, true, parent);
         _actionManager.ExecuteAction(act);
     }
 
@@ -106,7 +106,7 @@ internal class Prefab<T> : Prefab
     void Load(HashSet<MsbEntity> entities)
     {
         pseudoMap = new();
-        MapContainer map = new(null, "");
+        MapContainer map = new(null);
         var entries = entities.Select(ent => ent.WrappedObject as IMsbEntry);
         foreach (var ent in entities)
         {

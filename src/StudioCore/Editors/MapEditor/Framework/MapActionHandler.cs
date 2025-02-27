@@ -107,7 +107,7 @@ public class MapActionHandler
 
         parent ??= map.RootObject;
 
-        AddMapObjectsAction act = new(Screen.Universe, map, Screen.MapViewportView.RenderScene, new List<MsbEntity> { obj }, true, parent);
+        AddMapObjectsAction act = new(map, Screen.MapViewportView.RenderScene, new List<MsbEntity> { obj }, true, parent);
         Screen.EditorActionManager.ExecuteAction(act);
     }
 
@@ -182,7 +182,7 @@ public class MapActionHandler
     {
         if (Screen.Selection.IsSelection())
         {
-            CloneMapObjectsAction action = new(Screen.Universe, Screen.MapViewportView.RenderScene, Screen.Selection.GetFilteredSelection<MsbEntity>().ToList(), true);
+            CloneMapObjectsAction action = new(Screen.MapViewportView.RenderScene, Screen.Selection.GetFilteredSelection<MsbEntity>().ToList(), true);
             Screen.EditorActionManager.ExecuteAction(action);
         }
         else
@@ -285,7 +285,7 @@ public class MapActionHandler
 
             Entity targetParent = _dupeSelectionTargetedParent.Item2;
 
-            var action = new CloneMapObjectsAction(Screen.Universe, Screen.MapViewportView.RenderScene, sel, true, targetMap, targetParent);
+            var action = new CloneMapObjectsAction(Screen.MapViewportView.RenderScene, sel, true, targetMap, targetParent);
             Screen.EditorActionManager.ExecuteAction(action);
             _comboTargetMap = ("None", null);
             _dupeSelectionTargetedParent = ("None", null);
@@ -299,7 +299,7 @@ public class MapActionHandler
     {
         if (Screen.Selection.IsSelection())
         {
-            DeleteMapObjectsAction action = new(Screen.Universe, Screen.MapViewportView.RenderScene,
+            DeleteMapObjectsAction action = new(Screen.MapViewportView.RenderScene,
             Screen.Selection.GetFilteredSelection<MsbEntity>().ToList(), true);
             Screen.EditorActionManager.ExecuteAction(action);
         }
@@ -564,7 +564,7 @@ public class MapActionHandler
     {
         if (Screen.Selection.IsSelection())
         {
-            OrderMapObjectsAction action = new(Screen.Universe, Screen.MapViewportView.RenderScene, Screen.Selection.GetFilteredSelection<MsbEntity>().ToList(), direction);
+            OrderMapObjectsAction action = new(Screen.MapViewportView.RenderScene, Screen.Selection.GetFilteredSelection<MsbEntity>().ToList(), direction);
             Screen.EditorActionManager.ExecuteAction(action);
         }
         else
@@ -942,7 +942,7 @@ public class MapActionHandler
         }
         List<MsbEntity> sourceList = Screen.Selection.GetFilteredSelection<MsbEntity>().ToList();
 
-        ChangeMapObjectType action = new(Screen.Universe, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
+        ChangeMapObjectType action = new(msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
         Screen.EditorActionManager.ExecuteAction(action);
     }
 

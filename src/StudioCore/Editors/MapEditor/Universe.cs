@@ -165,7 +165,7 @@ public class Universe
 
             Smithbox.EditorHandler.MapEditor.DisplayGroupView.SetupDrawgroupCount();
 
-            MapContainer map = new(this, mapid);
+            MapContainer map = new(mapid);
 
             MapResourceHandler resourceHandler = new MapResourceHandler(mapid);
 
@@ -624,10 +624,11 @@ public class Universe
         }
     }
 
-    public void LoadRelatedMapsER(string mapid, Dictionary<string, ObjectContainer> maps)
+    public void LoadRelatedMapsER(string mapid)
     {
         IReadOnlyDictionary<string, SpecialMapConnections.RelationType> relatedMaps =
-            SpecialMapConnections.GetRelatedMaps(mapid, maps.Keys);
+            SpecialMapConnections.GetRelatedMaps(mapid, LoadedObjectContainers.Keys);
+
         foreach (KeyValuePair<string, SpecialMapConnections.RelationType> map in relatedMaps)
         {
             LoadMap(map.Key);

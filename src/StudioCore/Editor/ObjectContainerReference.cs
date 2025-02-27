@@ -8,12 +8,9 @@ namespace StudioCore.Editor;
 /// </summary>
 public class ObjectContainerReference : ISelectable
 {
-    private readonly Universe Universe;
-
-    public ObjectContainerReference(string name, Universe universe)
+    public ObjectContainerReference(string name)
     {
         Name = name;
-        Universe = universe;
     }
 
     public string Name { get; set; }
@@ -30,8 +27,9 @@ public class ObjectContainerReference : ISelectable
 
     public ISelectable GetSelectionTarget()
     {
-        if (Universe != null
-            && Universe.LoadedObjectContainers.TryGetValue(Name, out ObjectContainer container)
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
+        if (universe != null && universe.LoadedObjectContainers.TryGetValue(Name, out ObjectContainer container)
             && container?.RootObject != null)
         {
             return container.RootObject;

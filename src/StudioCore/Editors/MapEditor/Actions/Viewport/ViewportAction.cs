@@ -461,13 +461,11 @@ public class CloneMapObjectsAction : ViewportAction
     private readonly bool SetSelection;
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
-    private readonly Universe Universe;
     private RenderScene Scene;
 
-    public CloneMapObjectsAction(Universe univ, RenderScene scene, List<MsbEntity> objects, bool setSelection,
+    public CloneMapObjectsAction(RenderScene scene, List<MsbEntity> objects, bool setSelection,
         MapContainer targetMap = null, Entity targetBTL = null)
     {
-        Universe = univ;
         Scene = scene;
         Clonables.AddRange(objects);
         SetSelection = setSelection;
@@ -477,6 +475,8 @@ public class CloneMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         var clonesCached = Clones.Count() > 0;
 
         var objectnames = new Dictionary<string, HashSet<string>>();
@@ -494,11 +494,11 @@ public class CloneMapObjectsAction : ViewportAction
             MapContainer m;
             if (TargetMap != null)
             {
-                m = Universe.GetLoadedMapContainer(TargetMap.Name);
+                m = universe.GetLoadedMapContainer(TargetMap.Name);
             }
             else
             {
-                m = Universe.GetLoadedMapContainer(Clonables[i].MapID);
+                m = universe.GetLoadedMapContainer(Clonables[i].MapID);
             }
 
             if (m != null)
@@ -630,10 +630,10 @@ public class CloneMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
             foreach (MsbEntity c in Clones)
             {
-                Universe.Selection.AddSelection(c);
+                universe.Selection.AddSelection(c);
             }
         }
 
@@ -642,6 +642,8 @@ public class CloneMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         for (var i = 0; i < Clones.Count(); i++)
         {
             CloneMaps[i].Objects.Remove(Clones[i]);
@@ -660,10 +662,10 @@ public class CloneMapObjectsAction : ViewportAction
         // Clones.Clear();
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
             foreach (MsbEntity c in Clonables)
             {
-                Universe.Selection.AddSelection(c);
+                universe.Selection.AddSelection(c);
             }
         }
 
@@ -684,14 +686,12 @@ public class AddMapObjectsAction : ViewportAction
     private readonly MapContainer Map;
     private readonly Entity Parent;
     private readonly bool SetSelection;
-    private readonly Universe Universe;
     private RenderScene Scene;
     private MapContainer TargetMap;
 
-    public AddMapObjectsAction(Universe univ, MapContainer map, RenderScene scene, List<MsbEntity> objects,
+    public AddMapObjectsAction(MapContainer map, RenderScene scene, List<MsbEntity> objects,
         bool setSelection, Entity parent, MapContainer targetMap = null)
     {
-        Universe = univ;
         Map = map;
         Scene = scene;
         Added.AddRange(objects);
@@ -702,6 +702,8 @@ public class AddMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         for (var i = 0; i < Added.Count(); i++)
         {
             if (Map != null)
@@ -727,7 +729,7 @@ public class AddMapObjectsAction : ViewportAction
 
                 if (TargetMap != null)
                 {
-                    m = Universe.GetLoadedMapContainer(TargetMap.Name);
+                    m = universe.GetLoadedMapContainer(TargetMap.Name);
 
                     // Prefab-specific
                     if (CFG.Current.Prefab_ApplyUniqueInstanceID)
@@ -752,10 +754,10 @@ public class AddMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
             foreach (MsbEntity c in Added)
             {
-                Universe.Selection.AddSelection(c);
+                universe.Selection.AddSelection(c);
             }
         }
 
@@ -764,6 +766,8 @@ public class AddMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         for (var i = 0; i < Added.Count(); i++)
         {
             AddedMaps[i].Objects.Remove(Added[i]);
@@ -782,7 +786,7 @@ public class AddMapObjectsAction : ViewportAction
         //Clones.Clear();
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -881,12 +885,10 @@ public class DeleteMapObjectsAction : ViewportAction
     private readonly List<MsbEntity> RemoveParent = new();
     private readonly List<int> RemoveParentIndex = new();
     private readonly bool SetSelection;
-    private readonly Universe Universe;
     private RenderScene Scene;
 
-    public DeleteMapObjectsAction(Universe univ, RenderScene scene, List<MsbEntity> objects, bool setSelection)
+    public DeleteMapObjectsAction(RenderScene scene, List<MsbEntity> objects, bool setSelection)
     {
-        Universe = univ;
         Scene = scene;
         Deletables.AddRange(objects);
         SetSelection = setSelection;
@@ -894,9 +896,11 @@ public class DeleteMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         foreach (MsbEntity obj in Deletables)
         {
-            MapContainer m = Universe.GetLoadedMapContainer(obj.MapID);
+            MapContainer m = universe.GetLoadedMapContainer(obj.MapID);
             if (m != null)
             {
                 RemoveMaps.Add(m);
@@ -930,7 +934,7 @@ public class DeleteMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -938,6 +942,8 @@ public class DeleteMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         for (var i = 0; i < Deletables.Count(); i++)
         {
             if (RemoveMaps[i] == null || RemoveIndices[i] == -1)
@@ -960,10 +966,10 @@ public class DeleteMapObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
             foreach (MsbEntity d in Deletables)
             {
-                Universe.Selection.AddSelection(d);
+                universe.Selection.AddSelection(d);
             }
         }
 
@@ -1034,12 +1040,10 @@ public class ReorderContainerObjectsAction : ViewportAction
     private readonly bool SetSelection;
     private readonly List<Entity> SourceObjects = new();
     private readonly List<int> TargetIndices = new();
-    private readonly Universe Universe;
     private int[] UndoIndices;
 
-    public ReorderContainerObjectsAction(Universe univ, List<Entity> src, List<int> targets, bool setSelection)
+    public ReorderContainerObjectsAction(List<Entity> src, List<int> targets, bool setSelection)
     {
-        Universe = univ;
         SourceObjects.AddRange(src);
         TargetIndices.AddRange(targets);
         SetSelection = setSelection;
@@ -1047,6 +1051,8 @@ public class ReorderContainerObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         var sourceindices = new int[SourceObjects.Count];
         for (var i = 0; i < SourceObjects.Count; i++)
         {
@@ -1100,10 +1106,10 @@ public class ReorderContainerObjectsAction : ViewportAction
         UndoIndices = sourceindices;
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
             foreach (Entity c in SourceObjects)
             {
-                Universe.Selection.AddSelection(c);
+                universe.Selection.AddSelection(c);
             }
         }
 
@@ -1112,6 +1118,8 @@ public class ReorderContainerObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         for (var i = 0; i < TargetIndices.Count; i++)
         {
             // Remove object and update indices
@@ -1155,10 +1163,10 @@ public class ReorderContainerObjectsAction : ViewportAction
 
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
             foreach (Entity c in SourceObjects)
             {
-                Universe.Selection.AddSelection(c);
+                universe.Selection.AddSelection(c);
             }
         }
 
@@ -1177,14 +1185,12 @@ public class ChangeEntityHierarchyAction : ViewportAction
     private readonly List<Entity> SourceObjects = new();
     private readonly List<int> TargetIndices = new();
     private readonly List<Entity> TargetObjects = new();
-    private readonly Universe Universe;
     private int[] UndoIndices;
     private Entity[] UndoObjects;
 
-    public ChangeEntityHierarchyAction(Universe univ, List<Entity> src, List<Entity> targetEnts, List<int> targets,
+    public ChangeEntityHierarchyAction(List<Entity> src, List<Entity> targetEnts, List<int> targets,
         bool setSelection)
     {
-        Universe = univ;
         SourceObjects.AddRange(src);
         TargetObjects.AddRange(targetEnts);
         TargetIndices.AddRange(targets);
@@ -1193,6 +1199,8 @@ public class ChangeEntityHierarchyAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         var sourceindices = new int[SourceObjects.Count];
         for (var i = 0; i < SourceObjects.Count; i++)
         {
@@ -1250,10 +1258,10 @@ public class ChangeEntityHierarchyAction : ViewportAction
         UndoIndices = sourceindices;
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
             foreach (Entity c in SourceObjects)
             {
-                Universe.Selection.AddSelection(c);
+                universe.Selection.AddSelection(c);
             }
         }
 
@@ -1327,23 +1335,22 @@ public class ChangeMapObjectType : ViewportAction
     private readonly string[] OldTypes;
     private readonly bool SetSelection;
 
-    private readonly Universe Universe;
-
     /// <summary>
     ///     Change selected map objects from one type to another. Only works for map objects of the same overarching type, such
     ///     as Parts or Regions.
     ///     Data for properties absent in targeted type will be lost, but will be restored for undo/redo.
     /// </summary>
-    public ChangeMapObjectType(Universe universe, Type msbType, List<MsbEntity> selectedEnts, string[] oldTypes,
+    public ChangeMapObjectType(Type msbType, List<MsbEntity> selectedEnts, string[] oldTypes,
         string[] newTypes, string msbParamStr, bool setSelection)
     {
-        Universe = universe;
         MsbType = msbType;
         Entities.AddRange(selectedEnts);
         OldTypes = oldTypes;
         NewTypes = newTypes;
         SetSelection = setSelection;
         MsbParamstr = msbParamStr;
+
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
 
         // Go through applicable map entities and create WrappedObject with the new type for each.
         // Store entity, old obj, and new obj to be used when changing Entity's WrappedObject (including restoring the exact same objs in cases of undo/redo).
@@ -1359,7 +1366,7 @@ public class ChangeMapObjectType : ViewportAction
                 Type currentType = ent.WrappedObject.GetType();
                 if (currentType == sourceType)
                 {
-                    MapContainer map = Universe.GetLoadedMapContainer(ent.MapID);
+                    MapContainer map = universe.GetLoadedMapContainer(ent.MapID);
                     map.HasUnsavedChanges = true;
 
                     var sourceObj = ent.WrappedObject;
@@ -1409,6 +1416,8 @@ public class ChangeMapObjectType : ViewportAction
 
     public override ActionEvent Undo()
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         foreach (MapObjectChange mapChangeObj in MapObjectChanges)
         {
             // Restore old, stored WrappedObject to entity.
@@ -1417,10 +1426,10 @@ public class ChangeMapObjectType : ViewportAction
 
         if (SetSelection)
         {
-            Universe.Selection.ClearSelection();
+            universe.Selection.ClearSelection();
             foreach (MsbEntity ent in Entities)
             {
-                Universe.Selection.AddSelection(ent);
+                universe.Selection.AddSelection(ent);
             }
         }
 
@@ -2037,14 +2046,12 @@ public class OrderMapObjectsAction : ViewportAction
     private List<MsbEntity> selection = new();
     private List<Entity> storedObjectOrder = new();
 
-    private Universe Universe;
     private RenderScene Scene;
 
     private OrderMoveDir MoveSelectionDir;
 
-    public OrderMapObjectsAction(Universe univ, RenderScene scene, List<MsbEntity> objects, OrderMoveDir moveDir)
+    public OrderMapObjectsAction(RenderScene scene, List<MsbEntity> objects, OrderMoveDir moveDir)
     {
-        Universe = univ;
         Scene = scene;
         selection.AddRange(objects);
 
@@ -2053,6 +2060,8 @@ public class OrderMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         // TODO: allow this to work with multi-selections
         // Will require more rigorous validation of the indices
         if (selection.Count > 1)
@@ -2071,7 +2080,7 @@ public class OrderMapObjectsAction : ViewportAction
                 if (ent.WrappedObject is BTL.Light)
                     return ActionEvent.NoEvent;
 
-                MapContainer mapRoot = Universe.GetLoadedMapContainer(curSel.MapID);
+                MapContainer mapRoot = universe.GetLoadedMapContainer(curSel.MapID);
 
                 // Ignore usage if the selection is the map root itself
                 if (mapRoot == null)
@@ -2232,11 +2241,13 @@ public class OrderMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         if (selection.Count > 0)
         {
             var curSel = selection.First();
 
-            MapContainer mapRoot = Universe.GetLoadedMapContainer(curSel.MapID);
+            MapContainer mapRoot = universe.GetLoadedMapContainer(curSel.MapID);
             mapRoot.Objects = storedObjectOrder;
         }
 

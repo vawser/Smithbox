@@ -18,7 +18,6 @@ public class SelectionGroupView
 {
     private MapEditorScreen Screen;
     private IViewport _viewport;
-    private Universe _universe;
     private ViewportSelection _selection;
 
     private MsbEntity selectedEntity;
@@ -28,7 +27,6 @@ public class SelectionGroupView
         Screen = screen;
 
         _selection = screen.Selection;
-        _universe = screen.Universe;
         _viewport = screen.MapViewportView.Viewport;
     }
 
@@ -413,7 +411,7 @@ public class SelectionGroupView
         List<Entity> entities = new List<Entity>();
 
         // TODO: add something to prevent confusion if multiple maps are loaded with the same names within
-        foreach (var entry in _universe.GetLoadedMapContainerList())
+        foreach (var entry in Screen.Universe.GetLoadedMapContainerList())
         {
             foreach (var mapObj in entry.Objects)
             {

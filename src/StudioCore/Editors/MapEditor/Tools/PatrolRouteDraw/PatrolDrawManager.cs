@@ -56,8 +56,10 @@ public static class PatrolDrawManager
     /// <summary>
     ///     Generates the renderable walk routes for all loaded maps.
     /// </summary>
-    public static void Generate(Universe universe)
+    public static void Generate()
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         Clear();
 
         var loadedMaps = universe.LoadedObjectContainers.Values.Where(x => x != null);
