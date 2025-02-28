@@ -1,0 +1,24 @@
+# MapPiece Texture Load Flow
+
+1. MapResourceHandler
+-> GetMapTextures(mapid), returns List<ResourceDescriptor>, added to a Hashset<ResourceDescriptor>
+    - Each ResourceDescriptor is:
+        - AssetPath -> The game/project path to the asset (prefers project if it exists)
+            - Example: map/m10/m10_0000.tpfbhd
+        - AssetArchiveVirtualPath -> the virt path sequence for a container
+            - Example: map/tex/m10/0000
+        - AssetVirtualPath -> the virt path sequence for a file
+            
+-> Iterate through Hashset<ResourceDescriptor>
+    - Handle based on the virt path:
+    
+    - ResourceJobBuilder.AddLoadArchiveTask: queues a request for archive loading
+        - Adds the action into the job builder
+    - ResourceJobBuilder.AddLoadFileTask: queues a request for file loading
+        - Adds the action into the job builder
+        
+-> LoadBinderResourcesAction 
+    - The action class sent into the job system
+    
+-> ResourceJob
+    - The job class 

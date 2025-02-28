@@ -6,7 +6,7 @@
 /// </summary>
 public static class FeatureFlags
 {
-    public static bool EnableResourceLogs = false;
+    public static bool EnableResourceLogs = true;
 
     // Feature Toggles
     public static bool EnableNavmeshBuilder = false;

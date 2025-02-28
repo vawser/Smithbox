@@ -77,12 +77,6 @@ public class MapContentView
         {
             Container = Screen.Universe.GetObjectContainerForMap(MapID);
         }
-
-        // VAWSER: part of the Map Load/Unload fix, this simply displays all objects related to the 'loaded' map.
-        foreach (var entry in Container.Objects)
-        {
-            entry.EditorVisible = true;
-        }
     }
 
     public void Unload()
@@ -94,19 +88,12 @@ public class MapContentView
         Selection.ClearSelection();
         EditorActionManager.Clear();
 
-        // VAWSER: part of the Map Load/Unload fix, this simply hides all objects related to the 'unloaded' map.
-        foreach (var entry in Container.Objects)
-        {
-            entry.EditorVisible = false;
-        }
+        if (Container != null)
+            Screen.Universe.UnloadContainer(Container);
 
-        // VAWSER: this is commented out as a fix so each MapContainer is only every loaded once, and then it is kept in memory until Smithbox is closed.
-        //if (Container != null)
-        //    Screen.Universe.UnloadContainer(Container);
-
-        //GC.Collect();
-        //GC.WaitForPendingFinalizers();
-        //GC.Collect();
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        GC.Collect();
     }
 
     /// <summary>
