@@ -221,34 +221,6 @@ public class Viewport : IViewport
                     $@"Index Buffers Size: {Renderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024} MB");
                 //ImGui.Text($@"Selected renderable:  { _viewPipeline._pickingEntity }");
 
-                ImGui.Separator();
-
-                var universe = Smithbox.EditorHandler.MapEditor.Universe;
-
-                foreach(var container in universe.LoadedObjectContainers)
-                {
-                    if(ImGui.CollapsingHeader($"{container.Key}", ImGuiTreeNodeFlags.DefaultOpen))
-                    {
-                        var objContainer = container.Value;
-
-                        if (objContainer != null)
-                        {
-                            if (objContainer.Objects.Count > 0)
-                            {
-                                foreach (var entry in objContainer.Objects)
-                                {
-                                    var entryObj = entry.WrappedObject;
-
-                                    ImGui.Text($"{entryObj.GetType()} - {entry.Name}");
-                                }
-                            }
-                        }
-                        else
-                        {
-                            ImGui.Text("Not loaded.");
-                        }
-                    }
-                }
             }
 
             ImGui.End();

@@ -1,8 +1,6 @@
-﻿using CommunityToolkit.HighPerformance.Helpers;
-using ImGuiNET;
+﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
@@ -28,8 +26,6 @@ using StudioCore.Scene;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Settings;
 using StudioCore.Tasks;
-using StudioCore.Tools;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +33,6 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
-using Viewport = StudioCore.Interface.Viewport;
 
 namespace StudioCore.Editors.MapEditor;
 

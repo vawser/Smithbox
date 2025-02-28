@@ -145,14 +145,12 @@ public class Universe
     /// </summary>
     public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
-        /*
         if (LoadedObjectContainers.TryGetValue(mapid, out var m) && m != null)
         {
             TaskLogs.AddLog($"Map \"{mapid}\" is already loaded",
                 LogLevel.Information, StudioCore.Tasks.LogPriority.Normal);
             return;
         }
-        */
 
         if (!fastLoad)
         {
@@ -209,13 +207,23 @@ public class Universe
                 }
             }
 
+            var fullLoad = true;
+
             if (!LoadedObjectContainers.ContainsKey(mapid))
             {
                 LoadedObjectContainers.Add(mapid, map);
             }
             else
             {
-                LoadedObjectContainers[mapid] = map;
+                if (LoadedObjectContainers[mapid] == null)
+                {
+                    LoadedObjectContainers[mapid] = map;
+                }
+                else
+                {
+                    LoadedObjectContainers[mapid] = map;
+                    fullLoad = false;
+                }
             }
 
             if (CFG.Current.Viewport_Enable_Rendering)
@@ -229,21 +237,25 @@ public class Universe
                 }
             }
 
-            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            // VAWSER: part of the Map Load/Unload fix, fullLoad is used to only load the MSB data into the viewport once for the creation of the map object entities.
+            if (fullLoad)
             {
-                LoadDS2Generators(resourceHandler.AdjustedMapID, map);
-            }
+                if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+                {
+                    LoadDS2Generators(resourceHandler.AdjustedMapID, map);
+                }
 
-            if (CFG.Current.Viewport_Enable_Rendering)
-            {
-                Tasks = resourceHandler.LoadTextures(Tasks, map);
-                await Task.WhenAll(Tasks);
-                Tasks = resourceHandler.LoadModels(Tasks, map);
-                await Task.WhenAll(Tasks);
+                if (CFG.Current.Viewport_Enable_Rendering)
+                {
+                    Tasks = resourceHandler.LoadTextures(Tasks, map);
+                    await Task.WhenAll(Tasks);
+                    Tasks = resourceHandler.LoadModels(Tasks, map);
+                    await Task.WhenAll(Tasks);
 
-                resourceHandler.SetupNavmesh(map);
+                    resourceHandler.SetupNavmesh(map);
 
-                ScheduleTextureRefresh();
+                    ScheduleTextureRefresh();
+                }
             }
 
             // After everything loads, do some additional checks:
