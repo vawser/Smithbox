@@ -299,9 +299,19 @@ public static class ViewportActionCommon
             if (sel.WrappedObject is MSBE.Part.Asset)
             {
                 string partName = (string)sel.GetPropertyValue("Name");
+
+                if (partName == null)
+                    return;
+
                 string modelName = (string)sel.GetPropertyValue("ModelName");
 
-                string[] names = (string[])sel.GetPropertyValue("UnkPartNames");
+                if (modelName == null)
+                    return;
+
+                string[] names = (string[])sel.GetPropertyValue("PartNames");
+
+                if (names == null)
+                    return;
 
                 string[] newNames = new string[names.Length];
 
@@ -309,19 +319,19 @@ public static class ViewportActionCommon
                 {
                     var name = names[i];
 
-                    if (name != null)
+                    if (name == null)
+                        continue;
+
+                    // Name is a AEG reference
+                    if (name.Contains(modelName) && name.Contains("AEG"))
                     {
-                        // Name is a AEG reference
-                        if (name.Contains(modelName) && name.Contains("AEG"))
-                        {
-                            name = partName;
-                        }
+                        name = partName;
                     }
 
                     newNames[i] = name;
                 }
 
-                sel.SetPropertyValue("UnkPartNames", newNames);
+                sel.SetPropertyValue("PartNames", newNames);
             }
         }
 
@@ -330,9 +340,19 @@ public static class ViewportActionCommon
             if (sel.WrappedObject is MSB_AC6.Part.Asset)
             {
                 string partName = (string)sel.GetPropertyValue("Name");
+
+                if (partName == null)
+                    return;
+
                 string modelName = (string)sel.GetPropertyValue("ModelName");
 
+                if (modelName == null)
+                    return;
+
                 string[] names = (string[])sel.GetPropertyValue("PartNames");
+
+                if (names == null)
+                    return;
 
                 string[] newNames = new string[names.Length];
 
@@ -340,13 +360,13 @@ public static class ViewportActionCommon
                 {
                     var name = names[i];
 
-                    if (name != null)
+                    if (name == null)
+                        continue;
+
+                    // Name is a AEG reference
+                    if (name.Contains(modelName) && name.Contains("AEG"))
                     {
-                        // Name is a AEG reference
-                        if (name.Contains(modelName) && name.Contains("AEG"))
-                        {
-                            name = partName;
-                        }
+                        name = partName;
                     }
 
                     newNames[i] = name;

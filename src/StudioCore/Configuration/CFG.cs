@@ -636,7 +636,7 @@ public class CFG
     //****************************
 
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
-    public bool Toolbar_Duplicate_Increment_UnkPartNames = false;
+    public bool Toolbar_Duplicate_Increment_PartNames = false;
     public bool Toolbar_Duplicate_Increment_InstanceID = true;
 
     public bool Toolbar_Duplicate_Clear_Entity_ID = false;
@@ -724,7 +724,7 @@ public class CFG
 
     public bool Replicator_Apply_Scramble_Configuration = false;
     public bool Replicator_Increment_Entity_ID = false;
-    public bool Replicator_Increment_UnkPartNames = false;
+    public bool Replicator_Increment_PartNames = false;
     public bool Replicator_Increment_InstanceID = true;
 
     public bool Replicator_Clear_Entity_ID = false;

@@ -592,7 +592,7 @@ public class CloneMapObjectsAction : ViewportAction
                 {
                     ViewportActionCommon.SetUniqueInstanceID(newobj, m);
                 }
-                if (CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames)
+                if (CFG.Current.Toolbar_Duplicate_Increment_PartNames)
                 {
                     ViewportActionCommon.SetSelfPartNames(newobj, m);
                 }
@@ -1754,7 +1754,7 @@ public class ReplicateMapObjectsAction : ViewportAction
                     {
                         ViewportActionCommon.SetUniqueInstanceID(newobj, m);
                     }
-                    if (CFG.Current.Replicator_Increment_UnkPartNames)
+                    if (CFG.Current.Replicator_Increment_PartNames)
                     {
                         ViewportActionCommon.SetSelfPartNames(newobj, m);
                     }

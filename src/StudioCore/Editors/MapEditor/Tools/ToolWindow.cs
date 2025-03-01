@@ -236,8 +236,8 @@ public class ToolWindow
 
                 if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
-                    ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames);
-                    UIHelper.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
+                    ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_PartNames);
+                    UIHelper.ShowHoverTooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
                 }
 
                 if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
@@ -818,8 +818,8 @@ public class ToolWindow
 
                 if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
-                    ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Replicator_Increment_UnkPartNames);
-                    UIHelper.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
+                    ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Replicator_Increment_PartNames);
+                    UIHelper.ShowHoverTooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
                 }
 
                 if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
