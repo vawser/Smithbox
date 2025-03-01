@@ -2,6 +2,10 @@
 # PRIORITY
 #--------------------------------------
 - FIX FIX FIX: map editor state is messed up on map reload
+    Currently: 
+        - initial map load is fine, entities associate with the MSB data correctly.
+        - unload occurs, visually entities are unloaded (but seemingly not removed internally)
+        - reload occurs: visually entities are now connected to initial map load MSB entities, but the content view has new invisible MSB entities
 
 #--------------------------------------
 # General

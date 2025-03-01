@@ -104,7 +104,7 @@
 3004 [Class] Bandit
 3005 [Class] Hunter
 3006 [Class] Sorcerer
-3007 [Class] Sorcerer
+3007 [Class] Pyromancer
 3008 [Class] Cleric
 3009 [Class] Deprived
 6000 Knight Solaire - Undead Burg
@@ -117,19 +117,19 @@
 6030 Big Hat Logan - Sen's Fortress
 6031 Big Hat Logan - Duke's Archives
 6032 Big Hat Logan - Duke's Archives (Hollow)
-6040 Big Hat Logan - Undead Burg
-6041 Big Hat Logan - Sen's Fortress (Hollow)
+6040 Griggs of Vinheim - Undead Burg
+6041 Griggs of Vinheim - Sen's Fortress (Hollow)
 6050 Dusk of Oolacile
 6051 Dusk of Oolacile (Summoned)
 6070 Rhea of Thorolund
 6071 Rhea of Thorolund (Hollow)
 6080 Petrus of Thorolund
-6090 Nico of Thorolund
-6091 Nico of Thorolund (Hollow)
-6100 Vince of Thorolund
-6101 Vince of Thorolund (Hollow)
-6130 Griggs of Vinheim
-6131 Griggs of Vinheim (Hollow)
+6090 Vince of Thorolund
+6091 Vince of Thorolund (Hollow)
+6100 Nico of Thorolund
+6101 Nico of Thorolund (Hollow)
+6130 Laurentius of the Great Swamp
+6131 Laurentius of the Great Swamp (Hollow)
 6170 Quelana of Izalith
 6180 Ingward
 6220 Blacksmith Rickert
@@ -170,7 +170,7 @@
 6560 Knight Kirk (Invader) - The Depths
 6561 Knight Kirk (Invader) - Demon Ruins
 6562 Knight Kirk (Invader) - Lost Izalith
-6570 King Jeremiah (Invader)
+6570 Xanthous King, Jeremiah (Invader)
 6580 Havel the Rock
 6590 Knight Lautrec (Summon)
 6591 Knight Lautrec (Summon)
