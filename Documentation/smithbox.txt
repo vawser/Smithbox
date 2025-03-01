@@ -26,8 +26,6 @@
  
 - FEAT: implement SoulFormatsNEXT speedtree solution (https://github.com/soulsmods/SoulsFormatsNEXT/pull/24/files)
 
-- FEAT: add ability to change the viewport information panel text color
-
 #--------------------------------------
 # Param Editor
 #--------------------------------------

@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using SoapstoneLib.Proto.Internal;
+using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Veldrid;
+using static SoapstoneLib.SoulsKey;
+using static SoulsFormats.BHD5;
 
 namespace StudioCore;
 
@@ -42,6 +45,18 @@ public class KeyBind
     {
         PresentationName = "";
         Description = "";
+    }
+
+    public KeyBind(KeyBind existingKeybind)
+    {
+        PresentationName = existingKeybind.PresentationName;
+        Description = existingKeybind.Description;
+
+        PrimaryKey = existingKeybind.PrimaryKey;
+        Ctrl_Pressed = existingKeybind.Ctrl_Pressed;
+        Alt_Pressed = existingKeybind.Alt_Pressed;
+        Shift_Pressed = existingKeybind.Shift_Pressed;
+        FixedKey = existingKeybind.FixedKey;
     }
 
     public KeyBind(string name, string description, Key primaryKey = Key.Unknown, bool ctrlKey = false, bool altKey = false, bool shiftKey = false, bool fixedKey = false)

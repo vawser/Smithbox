@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Octokit;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -148,9 +149,7 @@ public class CommonKeybindTab
 
     public void Display()
     {
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
-        ImGui.Separator();
+        KeybindWindowUtil.DisplayHeader();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -199,9 +198,7 @@ public class ViewportKeybindTab
 
     public void Display()
     {
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
-        ImGui.Separator();
+        KeybindWindowUtil.DisplayHeader();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -295,9 +292,7 @@ public class MapEditorKeybindTab
 
     public void Display()
     {
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
-        ImGui.Separator();
+        KeybindWindowUtil.DisplayHeader();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -584,9 +579,7 @@ public class ModelEditorKeybindTab
 
     public void Display()
     {
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
-        ImGui.Separator();
+        KeybindWindowUtil.DisplayHeader();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -615,9 +608,7 @@ public class ParamEditorKeybindTab
 
     public void Display()
     {
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
-        ImGui.Separator();
+        KeybindWindowUtil.DisplayHeader();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -774,9 +765,7 @@ public class TextEditorKeybindTab
 
     public void Display()
     {
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
-        ImGui.Separator();
+        KeybindWindowUtil.DisplayHeader();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -816,9 +805,7 @@ public class GparamEditorKeybindTab
 
     public void Display()
     {
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
-        ImGui.Separator();
+        KeybindWindowUtil.DisplayHeader();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -847,9 +834,7 @@ public class TimeActEditorKeybindTab
 
     public void Display()
     {
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
-        ImGui.Separator();
+        KeybindWindowUtil.DisplayHeader();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -870,9 +855,7 @@ public class TextureViewerKeybindTab
 
     public void Display()
     {
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
-        ImGui.Separator();
+        KeybindWindowUtil.DisplayHeader();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -888,5 +871,15 @@ public class TextureViewerKeybindTab
                 KeyBindings.Current.TEXTURE_ResetZoomLevel,
                 KeyBindings.Default.TEXTURE_ResetZoomLevel);
         }
+    }
+}
+
+public static class KeybindWindowUtil
+{
+    public static void DisplayHeader()
+    {
+        //ImGui.Separator();
+        //UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        //ImGui.Separator();
     }
 }

@@ -270,6 +270,9 @@ public static class InputTracker
         return newKeyBind;
     }
 
+    public static List<KeyBind> CurrentKeybindList = new();
+    public static List<KeyBind> DefaultKeybindList = new();
+
     private static KeyBind _currentKeyBind;
 
     public static KeyBind KeybindLine(int index, KeyBind currentKeyBind, KeyBind defaultKeyBind)
@@ -301,6 +304,7 @@ public static class InputTracker
         ImGui.Columns(1);
 
         var newKeyBind = currentKeyBind;
+
         return newKeyBind;
     }
 }
