@@ -1,8 +1,7 @@
 #--------------------------------------
 # PRIORITY
 #--------------------------------------
-- FEAT: overhaul the initialization flow on Project load to make the sequence of loading much clearer
-- FEAT: allow editors to be initialized but not appear in the tab bar, to allow for conditional appearance
+- FIX FIX FIX: map editor state is messed up on map reload
 
 #--------------------------------------
 # General
@@ -63,6 +62,7 @@
 #--------------------------------------
 # Text Editor
 #--------------------------------------
+- FIX: when duplicating a row for projects with DLC0, DLC1, DLC2 structure, automatically place the new row in the DLC2 container and change focus to that, even if the source is DLC0 or DLC1
 
 #--------------------------------------
 # Time Act Editor
