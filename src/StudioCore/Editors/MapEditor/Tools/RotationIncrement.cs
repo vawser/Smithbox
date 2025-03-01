@@ -19,15 +19,30 @@ public static class RotationIncrement
             {
                 CycleIncrementType();
             }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SwitchDegreeIncrementTypeBackward))
+            {
+                CycleIncrementType(true);
+            }
         }
     }
 
-    public static void CycleIncrementType()
+    public static void CycleIncrementType(bool decrement = false)
     {
-        CFG.Current.Toolbar_Rotate_IncrementType += 1;
-        if (CFG.Current.Toolbar_Rotate_IncrementType > 4)
+        if (decrement)
         {
-            CFG.Current.Toolbar_Rotate_IncrementType = 0;
+            CFG.Current.Toolbar_Rotate_IncrementType -= 1;
+            if (CFG.Current.Toolbar_Rotate_IncrementType < 0)
+            {
+                CFG.Current.Toolbar_Rotate_IncrementType = 4;
+            }
+        }
+        else
+        {
+            CFG.Current.Toolbar_Rotate_IncrementType += 1;
+            if (CFG.Current.Toolbar_Rotate_IncrementType > 4)
+            {
+                CFG.Current.Toolbar_Rotate_IncrementType = 0;
+            }
         }
     }
 

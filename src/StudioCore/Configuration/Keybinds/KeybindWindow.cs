@@ -321,37 +321,9 @@ public class MapEditorKeybindTab
                 KeyBindings.Current.MAP_FrameSelection,
                 KeyBindings.Default.MAP_FrameSelection);
 
-            KeyBindings.Current.MAP_RotateSelectionXAxis = InputTracker.KeybindLine(5,
-                KeyBindings.Current.MAP_RotateSelectionXAxis,
-                KeyBindings.Default.MAP_RotateSelectionXAxis);
-
-            KeyBindings.Current.MAP_NegativeRotateSelectionXAxis = InputTracker.KeybindLine(61,
-                KeyBindings.Current.MAP_NegativeRotateSelectionXAxis,
-                KeyBindings.Default.MAP_NegativeRotateSelectionXAxis);
-
-            KeyBindings.Current.MAP_RotateSelectionYAxis = InputTracker.KeybindLine(6,
-                KeyBindings.Current.MAP_RotateSelectionYAxis,
-                KeyBindings.Default.MAP_RotateSelectionYAxis);
-
-            KeyBindings.Current.MAP_NegativeRotateSelectionYAxis = InputTracker.KeybindLine(62,
-                KeyBindings.Current.MAP_NegativeRotateSelectionYAxis,
-                KeyBindings.Default.MAP_NegativeRotateSelectionYAxis);
-
-            KeyBindings.Current.MAP_PivotSelectionYAxis = InputTracker.KeybindLine(7,
-                KeyBindings.Current.MAP_PivotSelectionYAxis,
-                KeyBindings.Default.MAP_PivotSelectionYAxis);
-
-            KeyBindings.Current.MAP_NegativePivotSelectionYAxis = InputTracker.KeybindLine(63,
-                KeyBindings.Current.MAP_NegativePivotSelectionYAxis,
-                KeyBindings.Default.MAP_NegativePivotSelectionYAxis);
-
             KeyBindings.Current.MAP_RotateFixedAngle = InputTracker.KeybindLine(50,
                 KeyBindings.Current.MAP_RotateFixedAngle,
                 KeyBindings.Default.MAP_RotateFixedAngle);
-
-            KeyBindings.Current.MAP_SwitchDegreeIncrementType = InputTracker.KeybindLine(60,
-                KeyBindings.Current.MAP_SwitchDegreeIncrementType,
-                KeyBindings.Default.MAP_SwitchDegreeIncrementType);
 
             KeyBindings.Current.MAP_ResetRotation = InputTracker.KeybindLine(8,
                 KeyBindings.Current.MAP_ResetRotation,
@@ -410,8 +382,43 @@ public class MapEditorKeybindTab
                 KeyBindings.Default.MAP_SetSelectionToGrid);
         }
 
+        if (ImGui.CollapsingHeader("Rotation Increment", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_RotateSelectionXAxis = InputTracker.KeybindLine(80,
+                KeyBindings.Current.MAP_RotateSelectionXAxis,
+                KeyBindings.Default.MAP_RotateSelectionXAxis);
 
-        if (ImGui.CollapsingHeader("Selection", ImGuiTreeNodeFlags.DefaultOpen))
+            KeyBindings.Current.MAP_NegativeRotateSelectionXAxis = InputTracker.KeybindLine(81,
+                KeyBindings.Current.MAP_NegativeRotateSelectionXAxis,
+                KeyBindings.Default.MAP_NegativeRotateSelectionXAxis);
+
+            KeyBindings.Current.MAP_RotateSelectionYAxis = InputTracker.KeybindLine(82,
+                KeyBindings.Current.MAP_RotateSelectionYAxis,
+                KeyBindings.Default.MAP_RotateSelectionYAxis);
+
+            KeyBindings.Current.MAP_NegativeRotateSelectionYAxis = InputTracker.KeybindLine(83,
+                KeyBindings.Current.MAP_NegativeRotateSelectionYAxis,
+                KeyBindings.Default.MAP_NegativeRotateSelectionYAxis);
+
+            KeyBindings.Current.MAP_PivotSelectionYAxis = InputTracker.KeybindLine(84,
+                KeyBindings.Current.MAP_PivotSelectionYAxis,
+                KeyBindings.Default.MAP_PivotSelectionYAxis);
+
+            KeyBindings.Current.MAP_NegativePivotSelectionYAxis = InputTracker.KeybindLine(85,
+                KeyBindings.Current.MAP_NegativePivotSelectionYAxis,
+                KeyBindings.Default.MAP_NegativePivotSelectionYAxis);
+
+            KeyBindings.Current.MAP_SwitchDegreeIncrementType = InputTracker.KeybindLine(86,
+                KeyBindings.Current.MAP_SwitchDegreeIncrementType,
+                KeyBindings.Default.MAP_SwitchDegreeIncrementType);
+
+            KeyBindings.Current.MAP_SwitchDegreeIncrementTypeBackward = InputTracker.KeybindLine(87,
+                KeyBindings.Current.MAP_SwitchDegreeIncrementTypeBackward,
+                KeyBindings.Default.MAP_SwitchDegreeIncrementTypeBackward);
+
+        }
+
+        if (ImGui.CollapsingHeader("Movement Increment", ImGuiTreeNodeFlags.DefaultOpen))
         {
             KeyBindings.Current.MAP_KeyboardMove_PositiveX = InputTracker.KeybindLine(70,
                 KeyBindings.Current.MAP_KeyboardMove_PositiveX,
@@ -440,6 +447,10 @@ public class MapEditorKeybindTab
             KeyBindings.Current.MAP_KeyboardMove_CycleIncrement = InputTracker.KeybindLine(76,
                 KeyBindings.Current.MAP_KeyboardMove_CycleIncrement,
                 KeyBindings.Default.MAP_KeyboardMove_CycleIncrement);
+
+            KeyBindings.Current.MAP_KeyboardMove_CycleIncrementBackward = InputTracker.KeybindLine(77,
+                KeyBindings.Current.MAP_KeyboardMove_CycleIncrementBackward,
+                KeyBindings.Default.MAP_KeyboardMove_CycleIncrementBackward);
         }
 
         if (ImGui.CollapsingHeader("Order", ImGuiTreeNodeFlags.DefaultOpen))

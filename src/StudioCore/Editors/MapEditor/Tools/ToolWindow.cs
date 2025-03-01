@@ -342,74 +342,7 @@ public class ToolWindow
                 UIHelper.ShowHoverTooltip("Set the rotation axis to specified values below.");
                 UIHelper.WrappedText("");
 
-                if (!CFG.Current.Toolbar_Fixed_Rotate)
-                {
-                    UIHelper.WrappedText("Current Degree Increment:");
-                    ImGui.SameLine();
-                    RotationIncrement.DisplayCurrentRotateIncrement();
-
-                    UIHelper.WrappedText("");
-
-                    if (ImGui.Button("Cycle Increment", thinButtonSize))
-                    {
-                        RotationIncrement.CycleIncrementType();
-                    }
-                    UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
-                    UIHelper.WrappedText("");
-
-                    UIHelper.WrappedText("Degree Increment [0]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-
-                    var rot0 = CFG.Current.Toolbar_Rotate_Increment_0;
-                    if (ImGui.SliderFloat("##degreeIncrement0", ref rot0, -360.0f, 360.0f))
-                    {
-                        CFG.Current.Toolbar_Rotate_Increment_0 = Math.Clamp(rot0, -360.0f, 360.0f);
-                    }
-                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
-
-                    UIHelper.WrappedText("Degree Increment [1]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-
-                    var rot1 = CFG.Current.Toolbar_Rotate_Increment_1;
-                    if (ImGui.SliderFloat("##degreeIncrement1", ref rot1, -360.0f, 360.0f))
-                    {
-                        CFG.Current.Toolbar_Rotate_Increment_1 = Math.Clamp(rot1, -360.0f, 360.0f);
-                    }
-                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
-
-                    UIHelper.WrappedText("Degree Increment [2]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-
-                    var rot2 = CFG.Current.Toolbar_Rotate_Increment_2;
-                    if (ImGui.SliderFloat("##degreeIncrement2", ref rot2, -360.0f, 360.0f))
-                    {
-                        CFG.Current.Toolbar_Rotate_Increment_2 = Math.Clamp(rot2, -360.0f, 360.0f);
-                    }
-                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
-
-                    UIHelper.WrappedText("Degree Increment [3]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-
-                    var rot3 = CFG.Current.Toolbar_Rotate_Increment_3;
-                    if (ImGui.SliderFloat("##degreeIncrement3", ref rot3, -360.0f, 360.0f))
-                    {
-                        CFG.Current.Toolbar_Rotate_Increment_3 = Math.Clamp(rot3, -360.0f, 360.0f);
-                    }
-                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
-
-                    UIHelper.WrappedText("Degree Increment [4]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-
-                    var rot4 = CFG.Current.Toolbar_Rotate_Increment_4;
-                    if (ImGui.SliderFloat("##degreeIncrement4", ref rot4, -360.0f, 360.0f))
-                    {
-                        CFG.Current.Toolbar_Rotate_Increment_4 = Math.Clamp(rot4, -360.0f, 360.0f);
-                    }
-                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
-
-                    UIHelper.WrappedText("");
-                }
-                else
+                if (CFG.Current.Toolbar_Fixed_Rotate)
                 {
                     var x = CFG.Current.Toolbar_Rotate_FixedAngle[0];
                     var y = CFG.Current.Toolbar_Rotate_FixedAngle[1];
@@ -910,6 +843,167 @@ public class ToolWindow
             if (ImGui.CollapsingHeader("Selection Groups"))
             {
                 Screen.SelectionGroupView.Display();
+            }
+
+            ///--------------------
+            /// Movement Increments
+            ///--------------------
+            if (ImGui.CollapsingHeader("Movement Increments"))
+            {
+                UIHelper.WrappedText("The current settings to use for the Movement Increment shortcuts.");
+                UIHelper.WrappedText("");
+
+                UIHelper.WrappedText("Current Movement Increment:");
+                ImGui.SameLine();
+                KeyboardMovement.DisplayCurrentMovementIncrement();
+
+                UIHelper.WrappedText("");
+
+                UIHelper.WrappedText($"Shortcut: {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText}");
+                if (ImGui.Button("Cycle Increment", thinButtonSize))
+                {
+                    KeyboardMovement.CycleIncrementType();
+                }
+                UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
+                UIHelper.WrappedText("");
+
+                // 0
+                UIHelper.WrappedText("Movement Increment [0]:");
+                ImGui.PushItemWidth(thinButtonSize.X);
+
+                var unit0 = CFG.Current.MapEditor_Selection_Movement_Increment_0;
+                if (ImGui.SliderFloat("##movementIncrement0", ref unit0, 0.0f, 999.0f))
+                {
+                    CFG.Current.MapEditor_Selection_Movement_Increment_0 = unit0;
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+                // 1
+                UIHelper.WrappedText("Movement Increment [1]:");
+                ImGui.PushItemWidth(thinButtonSize.X);
+
+                var unit1 = CFG.Current.MapEditor_Selection_Movement_Increment_1;
+                if (ImGui.SliderFloat("##movementIncrement1", ref unit1, 0.0f, 999.0f))
+                {
+                    CFG.Current.MapEditor_Selection_Movement_Increment_1 = unit1;
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+                // 2
+                UIHelper.WrappedText("Movement Increment [2]:");
+                ImGui.PushItemWidth(thinButtonSize.X);
+
+                var unit2 = CFG.Current.MapEditor_Selection_Movement_Increment_2;
+                if (ImGui.SliderFloat("##movementIncrement2", ref unit2, 0.0f, 999.0f))
+                {
+                    CFG.Current.MapEditor_Selection_Movement_Increment_2 = unit2;
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+                // 3
+                UIHelper.WrappedText("Movement Increment [3]:");
+                ImGui.PushItemWidth(thinButtonSize.X);
+
+                var unit3 = CFG.Current.MapEditor_Selection_Movement_Increment_3;
+                if (ImGui.SliderFloat("##movementIncrement3", ref unit3, 0.0f, 999.0f))
+                {
+                    CFG.Current.MapEditor_Selection_Movement_Increment_3 = unit3;
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+                // 4
+                UIHelper.WrappedText("Movement Increment [4]:");
+                ImGui.PushItemWidth(thinButtonSize.X);
+
+                var unit4 = CFG.Current.MapEditor_Selection_Movement_Increment_4;
+                if (ImGui.SliderFloat("##movementIncrement4", ref unit4, 0.0f, 999.0f))
+                {
+                    CFG.Current.MapEditor_Selection_Movement_Increment_4 = unit4;
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+                UIHelper.WrappedText("");
+
+                ImGui.Checkbox("Display movement increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement);
+                UIHelper.ShowHoverTooltip("Display the current movement increment type you are using in the information panel.");
+            }
+
+            ///--------------------
+            /// Rotation Increments
+            ///--------------------
+            if (ImGui.CollapsingHeader("Rotation Increments"))
+            {
+                UIHelper.WrappedText("The current settings to use for the Rotation Increment shortcuts.");
+                UIHelper.WrappedText("");
+
+                UIHelper.WrappedText("Current Rotation Increment:");
+                ImGui.SameLine();
+                RotationIncrement.DisplayCurrentRotateIncrement();
+
+                UIHelper.WrappedText("");
+
+                UIHelper.WrappedText($"Shortcut: {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText}");
+                if (ImGui.Button("Cycle Increment", thinButtonSize))
+                {
+                    RotationIncrement.CycleIncrementType();
+                }
+                UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+                UIHelper.WrappedText("");
+
+                UIHelper.WrappedText("Degree Increment [0]:");
+                ImGui.PushItemWidth(defaultButtonSize.X);
+
+                var rot0 = CFG.Current.Toolbar_Rotate_Increment_0;
+                if (ImGui.SliderFloat("##degreeIncrement0", ref rot0, -360.0f, 360.0f))
+                {
+                    CFG.Current.Toolbar_Rotate_Increment_0 = Math.Clamp(rot0, -360.0f, 360.0f);
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+                UIHelper.WrappedText("Degree Increment [1]:");
+                ImGui.PushItemWidth(defaultButtonSize.X);
+
+                var rot1 = CFG.Current.Toolbar_Rotate_Increment_1;
+                if (ImGui.SliderFloat("##degreeIncrement1", ref rot1, -360.0f, 360.0f))
+                {
+                    CFG.Current.Toolbar_Rotate_Increment_1 = Math.Clamp(rot1, -360.0f, 360.0f);
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+                UIHelper.WrappedText("Degree Increment [2]:");
+                ImGui.PushItemWidth(defaultButtonSize.X);
+
+                var rot2 = CFG.Current.Toolbar_Rotate_Increment_2;
+                if (ImGui.SliderFloat("##degreeIncrement2", ref rot2, -360.0f, 360.0f))
+                {
+                    CFG.Current.Toolbar_Rotate_Increment_2 = Math.Clamp(rot2, -360.0f, 360.0f);
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+                UIHelper.WrappedText("Degree Increment [3]:");
+                ImGui.PushItemWidth(defaultButtonSize.X);
+
+                var rot3 = CFG.Current.Toolbar_Rotate_Increment_3;
+                if (ImGui.SliderFloat("##degreeIncrement3", ref rot3, -360.0f, 360.0f))
+                {
+                    CFG.Current.Toolbar_Rotate_Increment_3 = Math.Clamp(rot3, -360.0f, 360.0f);
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+                UIHelper.WrappedText("Degree Increment [4]:");
+                ImGui.PushItemWidth(defaultButtonSize.X);
+
+                var rot4 = CFG.Current.Toolbar_Rotate_Increment_4;
+                if (ImGui.SliderFloat("##degreeIncrement4", ref rot4, -360.0f, 360.0f))
+                {
+                    CFG.Current.Toolbar_Rotate_Increment_4 = Math.Clamp(rot4, -360.0f, 360.0f);
+                }
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+                UIHelper.WrappedText("");
+
+                ImGui.Checkbox("Display rotation increment in viewport", ref CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement);
+                UIHelper.ShowHoverTooltip("Display the current degree increment type you are using in the information panel.");
             }
 
             ImGui.Separator();

@@ -273,49 +273,11 @@ public class KeyBindings
             "Frames the current selection within the viewport.",
             Key.F);
 
-        public KeyBind MAP_RotateSelectionXAxis = new(
-            "Positive Rotate Selection on X-axis", 
-            "Rotates the current selection on the X-axis in the positive direction by the specified increment.", 
-            Key.R,
-            true);
-
-        public KeyBind MAP_NegativeRotateSelectionXAxis = new(
-            "Negative Rotate Selection on X-axis", 
-            "Rotates the current selection on the X-axis in the negative direction by the specified increment.", 
-            Key.Unknown);
-
-        public KeyBind MAP_RotateSelectionYAxis = new(
-            "Positive Rotate Selection on Y-axis",
-            "Rotates the current selection on the Y-axis in the positive direction by the specified increment.",
-            Key.Unknown);
-
-        public KeyBind MAP_NegativeRotateSelectionYAxis = new(
-            "Negative Rotate Selection on Y-axis",
-            "Rotates the current selection on the Y-axis in the negative direction by the specified increment.",
-            Key.Unknown);
-
-        public KeyBind MAP_PivotSelectionYAxis = new(
-            "Positive Pivot Selection on Y-axis",
-            "Pivots the current selection on the Y-axis in the positive direction by the specified increment.",
-            Key.R,
-            false,
-            false,
-            true);
-        public KeyBind MAP_NegativePivotSelectionYAxis = new(
-            "Negative Pivot Selection on Y-axis",
-            "Pivots the current selection on the Y-axis in the negative direction by the specified increment.",
-            Key.Unknown);
 
         public KeyBind MAP_RotateFixedAngle = new(
             "Rotate to Fixed Increment for Selection",
             "Increment the rotation of the current selection to the fixed angle defined in the tool window.",
             Key.Unknown);
-
-        public KeyBind MAP_SwitchDegreeIncrementType = new(
-            "Cycle Degree Increment Type",
-            "Changes the degree increment used by Rotate Selection on X/Y-axis. Up to 5 increments can be stored.",
-            Key.C,
-            true);
 
         public KeyBind MAP_ResetRotation = new(
             "Reset Rotation for Selection",
@@ -434,50 +396,101 @@ public class KeyBindings
             false, 
             true);
 
-        // Selection
+        // Rotation Increment
+        public KeyBind MAP_RotateSelectionXAxis = new(
+            "Rotate Selection on X-axis (Positive)",
+            "Rotates the current selection on the X-axis in the positive direction by the specified increment.",
+            Key.R,
+            true);
+
+        public KeyBind MAP_NegativeRotateSelectionXAxis = new(
+            "Rotate Selection on X-axis (Negative)",
+            "Rotates the current selection on the X-axis in the negative direction by the specified increment.",
+            Key.Unknown);
+
+        public KeyBind MAP_RotateSelectionYAxis = new(
+            "Rotate Selection on Y-axis (Positive)",
+            "Rotates the current selection on the Y-axis in the positive direction by the specified increment.",
+            Key.Unknown);
+
+        public KeyBind MAP_NegativeRotateSelectionYAxis = new(
+            "Rotate Selection on Y-axis (Negative)",
+            "Rotates the current selection on the Y-axis in the negative direction by the specified increment.",
+            Key.Unknown);
+
+        public KeyBind MAP_PivotSelectionYAxis = new(
+            "Pivot Selection on Y-axis (Positive)",
+            "Pivots the current selection on the Y-axis in the positive direction by the specified increment.",
+            Key.R,
+            false,
+            false,
+            true);
+
+        public KeyBind MAP_NegativePivotSelectionYAxis = new(
+            "Pivot Selection on Y-axis (Negative)",
+            "Pivots the current selection on the Y-axis in the negative direction by the specified increment.",
+            Key.Unknown);
+
+        public KeyBind MAP_SwitchDegreeIncrementType = new(
+            "Cycle Rotation Increment Type (Forward)",
+            "Changes the degree increment used by Rotate Selection on X/Y-axis. Up to 5 increments can be stored.",
+            Key.C,
+            true);
+
+        public KeyBind MAP_SwitchDegreeIncrementTypeBackward = new(
+            "Cycle Rotation Increment Type (Backward)",
+            "Changes the degree increment used by Rotate Selection on X/Y-axis. Up to 5 increments can be stored.",
+            Key.Unknown);
+
+        // Movement Increment
         public KeyBind MAP_KeyboardMove_PositiveX = new(
-            "Keyboard Move: Positive X",
+            "Movement Increment: X (Positive)",
             "Moves the selection on the x-axis.",
             Key.Right,
             true);
 
         public KeyBind MAP_KeyboardMove_NegativeX = new(
-            "Keyboard Move: Positive X",
+            "Movement Increment: X (Negative)",
             "Moves the selection on the x-axis.",
             Key.Left,
             true);
 
         public KeyBind MAP_KeyboardMove_PositiveY = new(
-            "Keyboard Move: Positive Y",
+            "Movement Increment: Y (Positive)",
             "Moves the selection on the y-axis.",
             Key.Up,
             true);
 
         public KeyBind MAP_KeyboardMove_NegativeY = new(
-            "Keyboard Move: Positive Y",
+            "Movement Increment: Y (Negative)",
             "Moves the selection on the y-axis.",
             Key.Down,
             true);
 
         public KeyBind MAP_KeyboardMove_PositiveZ = new(
-            "Keyboard Move: Positive Z",
+            "Movement Increment: Z (Positive)",
             "Moves the selection on the z-axis.",
             Key.Up,
             true,
             true);
 
         public KeyBind MAP_KeyboardMove_NegativeZ = new(
-            "Keyboard Move: Negative Z",
+            "Movement Increment: Z (Negative)",
             "Moves the selection on the z-axis.",
             Key.Down,
             true,
             true);
 
         public KeyBind MAP_KeyboardMove_CycleIncrement = new(
-            "Keyboard Move: Cycle Increment",
+            "Keyboard Move: Cycle Increment (Forward)",
             "Cycles the increment used when moving via Keyboard Move.",
             Key.V,
             true);
+
+        public KeyBind MAP_KeyboardMove_CycleIncrementBackward = new(
+            "Keyboard Move: Cycle Increment (Backward)",
+            "Cycles the increment used when moving via Keyboard Move.",
+            Key.Unknown);
 
         // Render Groups
         public KeyBind MAP_GetDisplayGroup = new(

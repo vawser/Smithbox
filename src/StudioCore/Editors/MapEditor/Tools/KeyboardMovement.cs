@@ -14,18 +14,29 @@ namespace StudioCore.Editors.MapEditor.Tools;
 
 public static class KeyboardMovement
 {
-    public static void CycleIncrementType()
+    public static void CycleIncrementType(bool decrement = false)
     {
-        CFG.Current.MapEditor_Selection_Movement_IncrementType += 1;
-        if (CFG.Current.MapEditor_Selection_Movement_IncrementType > 4)
+        if(decrement)
         {
-            CFG.Current.MapEditor_Selection_Movement_IncrementType = 0;
+            CFG.Current.MapEditor_Selection_Movement_IncrementType -= 1;
+            if (CFG.Current.MapEditor_Selection_Movement_IncrementType < 0)
+            {
+                CFG.Current.MapEditor_Selection_Movement_IncrementType = 4;
+            }
+        }
+        else
+        {
+            CFG.Current.MapEditor_Selection_Movement_IncrementType += 1;
+            if (CFG.Current.MapEditor_Selection_Movement_IncrementType > 4)
+            {
+                CFG.Current.MapEditor_Selection_Movement_IncrementType = 0;
+            }
         }
     }
 
     public static void Shortcuts()
     {
-        if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_CycleIncrement))
+        if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_CycleIncrement) || InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_CycleIncrementBackward))
         {
             // Only apply in Map Editor screen
             if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
@@ -33,6 +44,10 @@ public static class KeyboardMovement
                 if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_CycleIncrement))
                 {
                     CycleIncrementType();
+                }
+                if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_CycleIncrementBackward))
+                {
+                    CycleIncrementType(true);
                 }
             }
         }
