@@ -758,7 +758,12 @@ public class ParamEditorScreen : EditorScreen
 
             if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyId))
             {
-                Handler.CopyIdHandler();
+                Handler.CopyRowDetailHandler();
+            }
+
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyIdAndName))
+            {
+                Handler.CopyRowDetailHandler(true);
             }
         }
 

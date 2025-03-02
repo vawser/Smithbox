@@ -93,7 +93,7 @@ public class ActionHandler
             }
         }
     }
-    public void CopyIdHandler()
+    public void CopyRowDetailHandler(bool includeName = false)
     {
         Param param = ParamBank.PrimaryBank.Params[Screen._activeView._selection.GetActiveParam()];
         List<Param.Row> rows = Screen._activeView._selection.GetSelectedRows();
@@ -108,14 +108,22 @@ public class ActionHandler
         foreach(var entry in rows)
         {
             var id = entry.ID;
+            var name = entry.Name;
+
+            var entryOutput = $"{id}";
+
+            if(includeName)
+            {
+                entryOutput = $"{id};{name}";
+            }
 
             if(output == "")
             {
-                output = $"{id}";
+                output = $"{entryOutput}";
             }
             else
             {
-                output = $"{output}, {id}";
+                output = $"{output}, {entryOutput}";
             }
         }
 

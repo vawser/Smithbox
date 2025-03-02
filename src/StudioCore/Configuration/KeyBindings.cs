@@ -796,6 +796,13 @@ public class KeyBindings
             false,
             true);
 
+        public KeyBind PARAM_CopyIdAndName = new(
+            "Copy ID and Name",
+            "Copy the selected row ID and Name (will form a list if multiple).",
+            Key.Q,
+            false,
+            true);
+
         // Mass Edit
         public KeyBind PARAM_ViewMassEdit = new(
             "View Mass Edit",

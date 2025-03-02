@@ -7,6 +7,8 @@
         - unload occurs, visually entities are unloaded (but seemingly not removed internally)
         - reload occurs: visually entities are now connected to initial map load MSB entities, but the content view has new invisible MSB entities
 
+    - Issue likely linked to how LoadMap is filling the MapContainer (ObjectContainer) entities
+    
 #--------------------------------------
 # General
 #--------------------------------------

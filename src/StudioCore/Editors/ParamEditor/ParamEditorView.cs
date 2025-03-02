@@ -991,7 +991,15 @@ public class ParamEditorView
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    _paramEditor.Handler.CopyIdHandler();
+                    _paramEditor.Handler.CopyRowDetailHandler(false);
+                }
+
+                if (ImGui.Selectable(@$"Copy ID and Name ({KeyBindings.Current.PARAM_CopyIdAndName.HintText})", false,
+                        _selection.RowSelectionExists()
+                            ? ImGuiSelectableFlags.None
+                            : ImGuiSelectableFlags.Disabled))
+                {
+                    _paramEditor.Handler.CopyRowDetailHandler(true);
                 }
 
                 ImGui.Separator();
