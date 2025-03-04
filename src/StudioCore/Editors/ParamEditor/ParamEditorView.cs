@@ -986,6 +986,14 @@ public class ParamEditorView
                     _paramEditor.Handler.DuplicateHandler();
                 }
 
+                if (ImGui.BeginMenu("Duplicate Row to Commutative Param", Smithbox.EditorHandler.ParamEditor.Handler.IsCommutativeParam()))
+                {
+                    Smithbox.EditorHandler.ParamEditor.Handler.DisplayCommutativeDuplicateMenu();
+
+                    ImGui.EndMenu();
+                }
+                UIHelper.ShowHoverTooltip($"Duplicates current selection to a commutative param.");
+
                 if (ImGui.Selectable(@$"Copy ID ({KeyBindings.Current.PARAM_CopyId.HintText})", false,
                         _selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None

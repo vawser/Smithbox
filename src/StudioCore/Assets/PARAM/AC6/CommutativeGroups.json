@@ -1,0 +1,113 @@
+{
+  "Groups": [
+    {
+      "Name": "AtkParam",
+      "Params": [
+        "AtkParam_Npc",
+        "AtkParam_Pc"
+      ]
+    },
+    {
+      "Name": "BehaviorParam",
+      "Params": [
+        "BehaviorParam",
+        "BehaviorParam_Pc"
+      ]
+    },
+    {
+      "Name": "AttachObj",
+      "Params": [
+        "AttachObj_Npc",
+        "AttachObj_Pc"
+      ]
+    },
+    {
+      "Name": "AttackActionParam",
+      "Params": [
+        "AttackActionParam_NPC",
+        "AttackActionParam_PC"
+      ]
+    },
+    {
+      "Name": "BulletShotgunParam",
+      "Params": [
+        "BulletShotgunParam_NPC",
+        "BulletShotgunParam_PC"
+      ]
+    },
+    {
+      "Name": "ChrActTurnParam",
+      "Params": [
+        "ChrActTurnParam",
+        "ChrActTurnParam_Npc"
+      ]
+    },
+    {
+      "Name": "DefaultKeyAssignParam",
+      "Params": [
+        "DefaultKeyAssignParam",
+        "DefaultKeyAssignParam01",
+        "DefaultKeyAssignParam02"
+      ]
+    },
+    {
+      "Name": "RuntimeSoundExpressionParam",
+      "Params": [
+        "RuntimeSoundExpressionParam_Npc",
+        "RuntimeSoundExpressionParam_Pc"
+      ]
+    },
+    {
+      "Name": "RuntimeSoundParam",
+      "Params": [
+        "RuntimeSoundParam_Npc",
+        "RuntimeSoundParam_Pc"
+      ]
+    },
+    {
+      "Name": "ThrustersSfxIdParam",
+      "Params": [
+        "ThrustersSfxIdParam_NPC",
+        "ThrustersSfxIdParam_PC"
+      ]
+    },
+    {
+      "Name": "UnlockParam",
+      "Params": [
+        "UnlockParam_Archive",
+        "UnlockParam_Archive_Logs",
+        "UnlockParam_Archive_Terms",
+        "UnlockParam_Archive_Tips",
+        "UnlockParam_DecalImage",
+        "UnlockParam_DLC",
+        "UnlockParam_EmblemPiece",
+        "UnlockParam_Equipment",
+        "UnlockParam_MenuCommand",
+        "UnlockParam_NamePlate_Solo",
+        "UnlockParam_NamePlate_Team",
+        "UnlockParam_NpAcArena",
+        "UnlockParam_OsPoint",
+        "UnlockParam_Trophy"
+      ]
+    },
+    {
+      "Name": "WwiseValueToStrParam",
+      "Params": [
+        "WwiseValueToStrParam_ReflectAuxBusType",
+        "WwiseValueToStrParam_ReflectTextureType",
+        "WwiseValueToStrParam_ReverbAuxBusType",
+        "WwiseValueToStrParam_RuntimeReflectTextureType",
+        "WwiseValueToStrParam_Switch_AttackPowerType",
+        "WwiseValueToStrParam_Switch_BGMStatus",
+        "WwiseValueToStrParam_Switch_BulletGenerateType",
+        "WwiseValueToStrParam_Switch_DestroyedSeType",
+        "WwiseValueToStrParam_Switch_GeneratorType",
+        "WwiseValueToStrParam_Switch_Material",
+        "WwiseValueToStrParam_Switch_ShootSeCategory",
+        "WwiseValueToStrParam_Switch_Weapon_Type",
+        "WwiseValueToStrParam_Switch_WeaponAtkAttribute",
+        "WwiseValueToStrParam_Switch_WeaponMaterial"
+      ]
+    }
+  ]
+}

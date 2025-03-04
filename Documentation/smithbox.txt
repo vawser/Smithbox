@@ -45,8 +45,6 @@
 - FIX: color picker throwing CTD on second param view
 - FIX: shortcuts don't work with secondary overviews
 
-- ADD: foxyhooligan's BB stuff
-
 #--------------------------------------
 # EMEVD Editor
 #--------------------------------------

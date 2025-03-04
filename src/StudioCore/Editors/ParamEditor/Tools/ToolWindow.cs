@@ -121,6 +121,38 @@ public class ToolWindow
                 }
             }
 
+            // Duplicate Row to Commutative Param
+            if (ImGui.CollapsingHeader("Duplicate Row to Commutative Param"))
+            {
+                UIHelper.WrappedText("Duplicate the selected rows to another param that shares the same underlying structure.");
+                UIHelper.WrappedText("");
+
+                if (!Screen._activeView._selection.RowSelectionExists())
+                {
+                    UIHelper.WrappedText("You must select a row before you can use this action.");
+                    UIHelper.WrappedText("");
+                }
+                else
+                {
+                    UIHelper.WrappedText("Offset:");
+
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    ImGui.InputInt("##Offset", ref CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset);
+                    UIHelper.ShowHoverTooltip("The ID offset to apply when duplicating.");
+                    UIHelper.WrappedText("");
+
+                    ImGui.Checkbox("Replace Rows in Target Param", ref CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows);
+                    UIHelper.ShowHoverTooltip("If enabled, rows in the target will be overwritten when duplicating into a commutative param.");
+
+                    Handler.DisplayCommutativeDuplicateToolMenu();
+
+                    if (ImGui.Button("Duplicate##duplicateRow", defaultButtonSize))
+                    {
+                        Handler.CommutativeDuplicateHandler();
+                    }
+                }
+            }
+
             // Import Row Names
             if (ImGui.CollapsingHeader("Import Row Names"))
             {

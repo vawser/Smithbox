@@ -428,6 +428,10 @@ public class CFG
     public int Param_Toolbar_Duplicate_Amount = 1;
     public int Param_Toolbar_Duplicate_Offset = 1;
 
+    public string Param_Toolbar_CommutativeDuplicate_Target = "";
+    public int Param_Toolbar_CommutativeDuplicate_Offset = 0;
+    public bool Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows = true;
+
     public bool Param_Toolbar_Duplicate_AffectAttackField = false;
     public bool Param_Toolbar_Duplicate_AffectBehaviorField = false;
     public bool Param_Toolbar_Duplicate_AffectBulletField = false;

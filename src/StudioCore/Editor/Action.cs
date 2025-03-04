@@ -252,15 +252,19 @@ public class AddParamsAction : EditorAction
                     }
                     else
                     {
+                        var rowIdOffset = IdOffset;
+                        if (rowIdOffset <= 0)
+                            rowIdOffset = 1;
+
                         newrow.Name = row.Name != null ? row.Name + "_1" : "";
-                        var newID = row.ID + IdOffset;
+                        var newID = row.ID + rowIdOffset;
                         while (Param[newID] != null)
                         {
-                            newID += IdOffset;
+                            newID += rowIdOffset;
                         }
 
                         newrow.ID = newID;
-                        Param.InsertRow(Param.IndexOfRow(Param[newID - IdOffset]) + 1, newrow);
+                        Param.InsertRow(Param.IndexOfRow(Param[newID - rowIdOffset]) + 1, newrow);
                     }
                 }
 

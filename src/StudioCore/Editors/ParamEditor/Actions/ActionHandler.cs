@@ -51,6 +51,135 @@ public class ActionHandler
         Screen = screen;
     }
 
+    public bool IsCommutativeParam()
+    {
+        var isValid = false;
+
+        var paramName = Screen._activeView._selection.GetActiveParam();
+
+        var groups = Smithbox.BankHandler.ParamCommutativeGroups.CommutativeGroups;
+
+        Param param = ParamBank.PrimaryBank.Params[paramName];
+
+        if(groups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        {
+            isValid = true;
+        }
+
+        return isValid;
+    }
+
+    /// <summary>
+    /// For the tool window
+    /// </summary>
+    public void DisplayCommutativeDuplicateToolMenu()
+    {
+        var paramName = Screen._activeView._selection.GetActiveParam();
+        Param param = ParamBank.PrimaryBank.Params[paramName];
+
+        var groups = Smithbox.BankHandler.ParamCommutativeGroups.CommutativeGroups;
+
+        if (groups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        {
+            var targetGroup = groups.Groups.Where(e => e.Params.Contains(paramName)).FirstOrDefault();
+
+            if (targetGroup == null)
+                return;
+
+            ImGui.Text("");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Param:");
+
+            foreach (var entry in targetGroup.Params)
+            {
+                // Ignore current param
+                if (entry == paramName)
+                    continue;
+
+                if (ImGui.Selectable($"{entry}", CFG.Current.Param_Toolbar_CommutativeDuplicate_Target == entry))
+                {
+                    CFG.Current.Param_Toolbar_CommutativeDuplicate_Target = entry;
+                }
+            }
+
+            ImGui.Text("");
+        }
+    }
+
+    /// <summary>
+    /// For the dropdown menu
+    /// </summary>
+    public void DisplayCommutativeDuplicateMenu()
+    {
+        var paramName = Screen._activeView._selection.GetActiveParam();
+        Param param = ParamBank.PrimaryBank.Params[paramName];
+
+        var groups = Smithbox.BankHandler.ParamCommutativeGroups.CommutativeGroups;
+
+        if (groups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        {
+            var targetGroup = groups.Groups.Where(e => e.Params.Contains(paramName)).FirstOrDefault();
+
+            if (targetGroup == null)
+                return;
+
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Param:");
+
+            foreach(var entry in targetGroup.Params)
+            {
+                // Ignore current param
+                if (entry == paramName)
+                    continue;
+
+                if(ImGui.MenuItem($"{entry}"))
+                {
+                    CFG.Current.Param_Toolbar_CommutativeDuplicate_Target = entry;
+                    CommutativeDuplicateHandler();
+                }
+            }
+        }
+    }
+
+    public void CommutativeDuplicateHandler()
+    {
+        var currentParamName = Screen._activeView._selection.GetActiveParam();
+        var targetParamName = CFG.Current.Param_Toolbar_CommutativeDuplicate_Target;
+
+        if (targetParamName == "")
+            return;
+
+        if (currentParamName == targetParamName)
+            return;
+
+        Param currentParam = ParamBank.PrimaryBank.Params[currentParamName];
+        Param targetParam = ParamBank.PrimaryBank.Params[targetParamName];
+
+        if(targetParam == null) 
+            return;
+
+        List<Param.Row> selectedRows = Screen._activeView._selection.GetSelectedRows();
+
+        if (selectedRows.Count == 0)
+        {
+            return;
+        }
+
+        List<Param.Row> rowsToInsert = new();
+
+        foreach (Param.Row r in selectedRows)
+        {
+            Param.Row newrow = new(r, targetParam);
+            rowsToInsert.Add(newrow);
+        }
+
+        List<EditorAction> actions = new List<EditorAction>();
+
+        actions.Add(new AddParamsAction(targetParam, "legacystring", rowsToInsert, false, CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows, -1, CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset, false));
+
+        var compoundAction = new CompoundAction(actions);
+
+        Screen.EditorActionManager.ExecuteAction(compoundAction);
+    }
+
     public void DuplicateHandler()
     {
         Param param = ParamBank.PrimaryBank.Params[Screen._activeView._selection.GetActiveParam()];

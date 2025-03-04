@@ -170,6 +170,14 @@ public class ParamEditorScreen : EditorScreen
             }
             UIHelper.ShowHoverTooltip($"Duplicates current selection.");
 
+            if (ImGui.BeginMenu("Duplicate Row to Commutative Param", Handler.IsCommutativeParam()))
+            {
+                Handler.DisplayCommutativeDuplicateMenu();
+
+                ImGui.EndMenu();
+            }
+            UIHelper.ShowHoverTooltip($"Duplicates current selection to a commutative param.");
+
             if (ImGui.MenuItem("Remove Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 DeleteSelection();
