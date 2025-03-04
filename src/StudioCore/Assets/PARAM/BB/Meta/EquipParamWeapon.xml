@@ -164,6 +164,48 @@
         <Option Value="7" Name="Size 7" />
         <Option Value="8" Name="Size 8" />
     </Enum>
+    <Enum Name="WEP_MATERIAL_ATK">
+      <Option Value="255" Name="Material 1" />
+      <Option Value="0" Name="Unk" />
+      <Option Value="1" Name="Likely Unused" />
+      <Option Value="2" Name="Wood" />
+      <Option Value="3" Name="Flesh/Tentacles/Squishy" />
+      <Option Value="4" Name="Likely Unused" />
+      <Option Value="5" Name="Magic?/Splashing?" />
+      <Option Value="6" Name="Fire?" />
+    </Enum>
+	<Enum Name="WEP_MATERIAL_DEF">
+      <Option Value="255" Name="Material 1" />
+      <Option Value="29" Name="Air" />
+      <Option Value="50" Name="Sword" />
+      <Option Value="52" Name="Wood Weapon" />
+      <Option Value="53" Name="Slugs" />
+      <Option Value="54" Name="Iron Shield" />
+      <Option Value="55" Name="Wood Shield" />
+      <Option Value="56" Name="Armored Flesh" />
+      <Option Value="57" Name="Chainmail" />
+      <Option Value="58" Name="Unk58" />
+      <Option Value="59" Name="Small Flesh" />
+      <Option Value="60" Name="Small Flesh (Weak)" />
+      <Option Value="61" Name="Paleblood" />
+      <Option Value="62" Name="Paleblood (Weak)" />
+      <Option Value="63" Name="Helmet?" />
+      <Option Value="64" Name="Lava" />
+      <Option Value="65" Name="Lava (Weak)" />
+      <Option Value="66" Name="Unk66" />
+      <Option Value="67" Name="Unk67" />
+      <Option Value="68" Name="Rotted Flesh/Slime" />
+      <Option Value="69" Name="Rotted Flesh/Slime (Weak)" />
+      <Option Value="70" Name="Ghost" />
+      <Option Value="71" Name="Fishman Flesh" />
+      <Option Value="72" Name="Large Flesh" />
+      <Option Value="73" Name="Large Flesh (Weak)" />
+      <Option Value="74" Name="Kin Flesh" />
+      <Option Value="75" Name="Kin Flesh (Weak)" />
+      <Option Value="76" Name="Bone Flesh" />
+      <Option Value="77" Name="Bone" />
+      <Option Value="78" Name="Bloody Slime Flesh" />
+    </Enum>
   </Enums>
   <Self Wiki="Weapons and Ammunition" OffsetSize="100" />
   <Field>
@@ -239,9 +281,9 @@
     <weaponCategory AltName="Weapon Category" Enum="WEAPON_CATEGORY" Wiki="Determines the weapon category." />
     <wepmotionCategory AltName="Weapon Motion Category" Enum="WEAPON_MOTION_CATEGORY" Wiki="Determines the base moveset used by the weapon. Corresponds to TAE ID." />
     <guardmotionCategory AltName="Guard Motion Category" Enum="GUARDMOTION_CATEGORY" Wiki="Determines the moveset used whilst guarding." />
-    <atkMaterial AltName="Attack Material" Wiki="Attack material used from attack para"/>
-    <defMaterial AltName="Defense Material" />
-    <defSfxMaterial AltName="Defense SE Material 1" Wiki="Defense SE material used from attack para 1" />
+    <atkMaterial AltName="Attack Material" Wiki="Attack material used from attack para" Enum="WEP_MATERIAL_ATK" />
+    <defMaterial AltName="Defense Material" Enum="WEP_MATERIAL_DEF" />
+    <defSfxMaterial AltName="Defense SE Material 1" Wiki="Defense SE material used from attack para 1" Enum="WEP_MATERIAL_DEF" />
     <correctType AltName="Correction Type - Physical" Refs="CalcCorrectGraph" Wiki="Determines the stat graph used for Physical damage (i.e. how effective a stat is).\nAlso affects STR/DEX portion of Spell Buff if applicable (Does not appear)." />
     <spAttribute AltName="Speical Attribute" Wiki="Weapon special attribute value" Enum="ATKPARAM_SPATTR_TYPE" />
     <spAtkcategory AltName="Special Motion Category" Wiki="Determines the override moveset used by the weapon. Corresponds to TAE ID." Enum="WEPMOTION_OVERRIDE_CATEGORY" />

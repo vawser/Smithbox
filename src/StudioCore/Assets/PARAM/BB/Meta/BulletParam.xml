@@ -3,58 +3,51 @@
   <Enums>
     <Enum Name="ATKPARAM_ATKATTR_TYPE">
       <Option Value="0" Name="None" />
-      <Option Value="1" Name="Slash" />
-      <Option Value="2" Name="Strike" />
+      <Option Value="1" Name="Physical" />
+      <Option Value="2" Name="Blunt" />
       <Option Value="3" Name="Thrust" />
-      <Option Value="4" Name="Standard" />
+      <Option Value="4" Name="Non-Attribute" />
     </Enum>
     <Enum Name="ATKPARAM_SPATTR_TYPE">
-      <Option Value="-1" Name="None" />
-	  <Option Value="0" Name="None" />
+      <Option Value="-1" Name="Material 1" />
+      <Option Value="0" Name="No Override" />
       <Option Value="1" Name="Physical" />
       <Option Value="2" Name="Fire" />
-      <Option Value="3" Name="Magic" />
-      <Option Value="4" Name="Poison/Bleed" />
-      <Option Value="6" Name="Lightning" />
-      <Option Value="7" Name="Petrify" />
-      <Option Value="8" Name="Crystallize" />
-      <Option Value="9" Name="Dark" />
-	  <Option Value="10" Name="Blue Lightning" />
-      <Option Value="255" Name="None255" />
+      <Option Value="3" Name="Arcane" />
+      <Option Value="4" Name="Poison" />
+      <Option Value="5" Name="Egg" />
+      <Option Value="6" Name="Bolt" />
+      <Option Value="7" Name="Petrification" />
+      <Option Value="8" Name="Crystalization" />
     </Enum>
     <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Strike" />
+        <Option Value="0" Name="Physical" />
+        <Option Value="1" Name="Blunt" />
         <Option Value="2" Name="Thrust" />
-        <Option Value="3" Name="Standard" />
+        <Option Value="3" Name="Push" />
     </Enum>
     <Enum Name="BULLET_LAUNCH_CONDITION_TYPE">
-        <Option Value="0" Name="Always" />
-        <Option Value="1" Name="Hit water" />
-        <Option Value="2" Name="Hit water or swamp" />
-        <Option Value="3" Name="Didn't hit enemy" />
-        <Option Value="4" Name="Hit enemy" />
-        <Option Value="5" Name="Unknown" />
-        <Option Value="6" Name="Unknown" />
-        <Option Value="254" Name="Expired" />
-        <Option Value="255" Name="Hit ground or enemy" />
+      <Option Value="0" Name="Always" />
+      <Option Value="1" Name="Water only" />
+      <Option Value="2" Name="Water/Swamp only" />
+      <Option Value="3" Name="Non-character hit" />
+      <Option Value="4" Name="Only on character hit" />
+      <Option Value="254" Name="If the bullet does not land" />
+      <Option Value="255" Name="Allowed only on impact" />
     </Enum>
     <Enum Name="BULLET_FOLLOW_TYPE" type="u8">
-      <Option Value="0" Name="Do not follow" />
-      <Option Value="1" Name="Follow shooter" />
-      <Option Value="2" Name="Follow shooter's feet" />
-      <Option Value="3" Name="Follow target" />
-      <Option Value="4" Name="Slide along ground" />
-      <Option Value="5" Name="Return to shooter" />
+      <Option Value="0" Name="Not following" />
+      <Option Value="1" Name="Follows the shooter" />
+      <Option Value="2" Name="Follows the shooter's footsteps" />
+      <Option Value="3" Name="Follows the target" />
+      <Option Value="4" Name="Crawl on the ground after impact" />
     </Enum>
     <Enum Name="BULLET_EMITTE_POS_TYPE" type="u8">
-        <Option Value="0" Name="Default" />
-        <Option Value="1" Name="Shooter + randomCreateRadius" />
-        <Option Value="2" Name="Higher elevation" />
-        <Option Value="3" Name="Nearby enemy origin. If no enemies, targets bullet origin." />
-        <Option Value="4" Name="Nearest enemy + randomCreateRadius" />
-        <Option Value="5" Name="Parent bullet (instead of hit location)" />
-        <Option Value="6" Name="Above and behind target" />
+      <Option Value="0" Name="From Dummy Polygon" />
+      <Option Value="1" Name="From the ground around the shooter" />
+      <Option Value="2" Name="Slightly above the Dummy Polygon" />
+      <Option Value="3" Name="Generated from the shooter's target" />
+      <Option Value="4" Name="Generated in a random area around the shooter's target" />
     </Enum>
     <Enum Name="BULLET_SFX_DELETE_TYPE" type="s8">
       <Option Value="0" Name="Emitter Stopped" />

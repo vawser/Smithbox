@@ -55,9 +55,10 @@
     AltName="Unknown: 0x34"
     Wiki="" />
     
-    <UnkT38
-    AltName="Unknown: 0x38"
-    Wiki="" />
+    <ActionButtonParamID
+    AltName="Action Button ID"
+    Wiki="Adds the designated Action Button param to the Treasure pickup"
+	ParamRef="ActionButtonParam" />
     
     <UnkT3C
     AltName="Unknown: 0x3C"
@@ -77,9 +78,10 @@
     AltName="Unknown: 0x42"
     Wiki="" />
     
-    <UnkT44
-    AltName="Unknown: 0x44"
-    Wiki="" />
+    <EnableSecondaryItemlot
+    AltName="Enable ItemLot #2 Flag"
+    Wiki="Toggles to Item Lot #2 when this flag is ON." 
+    IsBool="" />
     
     <UnkT48
     AltName="Unknown: 0x48"

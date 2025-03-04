@@ -3,15 +3,18 @@
   <Enums>
     <Enum Name="ACTION_BUTTON_REGION_TYPE" type="u8">
         <Option Value="0" Name="Cylinder" />
-        <Option Value="1" Name="Prism" />
-        <Option Value="2" Name="Capsule" />
+        <Option Value="1" Name="Square" />
     </Enum>
     <Enum Name="ACTION_BUTTON_ANGLE_CHECK_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
+        <Option Value="0" Name="Point" />
+        <Option Value="1" Name="Line" />
     </Enum>
     <Enum Name="ACTION_BUTTON_TEXT_BOX_TYPE" type="u8">
         <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="ACTION_BUTTON_EXEC_CIRCLE">
+      <Option Value="0" Name="No" />
+      <Option Value="1" Name="Yes" />
     </Enum>
   </Enums>
   <Field>
@@ -41,7 +44,7 @@
     <grayoutFlag AltName="Grayout Flag" Wiki="If this flag is ON, the action button will be grayed out and no judgment will be made." />
     <priority AltName="Priority" />
     <execInvalidTime AltName="Execution Invalid Time" Wiki="Invalid time after execution (-infinite by value)" />
-    <execButtonCircle AltName="Execution Button" />
+    <execButtonCircle AltName="Execution Button" Enum="ACTION_BUTTON_EXEC_CIRCLE" />
     
     <padding4 Padding=""/>
     

@@ -5,18 +5,18 @@
       <Option Value="0" Name="Weapon" />
       <Option Value="1" Name="Armor" />
       <Option Value="4" Name="Good" />
-      <Option Value="8" Name="Gem" />
-    </Enum>
+      <Option Value="8" Name="GemGen" />
+      <Option Value="15" Name="ItemLotLv" />    </Enum>
   </Enums>
   <Field>
-    <lotItemId01 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 1" />
-    <lotItemId02 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 2" />
-    <lotItemId03 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 3" />
-    <lotItemId04 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 4" />
-    <lotItemId05 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 5" />
-    <lotItemId06 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 6" />
-    <lotItemId07 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 7" />
-    <lotItemId08 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 8" />
+    <lotItemId01 Refs="ItemLotLvdepParam(lotItemCategory01=15),GemGenParam(lotItemCategory01=8),EquipParamGoods(lotItemCategory01=4),EquipParamProtector(lotItemCategory01=1),EquipParamWeapon(lotItemCategory01=0)" AltName="Item ID 1" />
+    <lotItemId02 Refs="ItemLotLvdepParam(lotItemCategory02=15),GemGenParam(lotItemCategory02=8),EquipParamGoods(lotItemCategory02=4),EquipParamProtector(lotItemCategory02=1),EquipParamWeapon(lotItemCategory02=0)" AltName="Item ID 2" />
+    <lotItemId03 Refs="ItemLotLvdepParam(lotItemCategory03=15),GemGenParam(lotItemCategory03=8),EquipParamGoods(lotItemCategory03=4),EquipParamProtector(lotItemCategory03=1),EquipParamWeapon(lotItemCategory03=0)" AltName="Item ID 3" />
+    <lotItemId04 Refs="ItemLotLvdepParam(lotItemCategory04=15),GemGenParam(lotItemCategory04=8),EquipParamGoods(lotItemCategory04=4),EquipParamProtector(lotItemCategory04=1),EquipParamWeapon(lotItemCategory04=0)" AltName="Item ID 4" />
+    <lotItemId05 Refs="ItemLotLvdepParam(lotItemCategory05=15),GemGenParam(lotItemCategory05=8),EquipParamGoods(lotItemCategory05=4),EquipParamProtector(lotItemCategory05=1),EquipParamWeapon(lotItemCategory05=0)" AltName="Item ID 5" />
+    <lotItemId06 Refs="ItemLotLvdepParam(lotItemCategory06=15),GemGenParam(lotItemCategory06=8),EquipParamGoods(lotItemCategory06=4),EquipParamProtector(lotItemCategory06=1),EquipParamWeapon(lotItemCategory06=0)" AltName="Item ID 6" />
+    <lotItemId07 Refs="ItemLotLvdepParam(lotItemCategory07=15),GemGenParam(lotItemCategory07=8),EquipParamGoods(lotItemCategory07=4),EquipParamProtector(lotItemCategory07=1),EquipParamWeapon(lotItemCategory07=0)" AltName="Item ID 7" />
+    <lotItemId08 Refs="ItemLotLvdepParam(lotItemCategory08=15),GemGenParam(lotItemCategory08=8),EquipParamGoods(lotItemCategory08=4),EquipParamProtector(lotItemCategory08=1),EquipParamWeapon(lotItemCategory08=0)" AltName="Item ID 8" />
     <lotItemCategory01 Enum="ITEMLOT_ITEMCATEGORY" />
     <LotItemCategory02 Enum="ITEMLOT_ITEMCATEGORY" />
     <lotItemCategory03 Enum="ITEMLOT_ITEMCATEGORY" />

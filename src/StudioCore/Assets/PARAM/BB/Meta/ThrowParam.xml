@@ -2,29 +2,36 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
 	<Enum Name="THROW_TYPE">
-	  <Option Value="0" Name="Grab" />
-	  <Option Value="1" Name="Backstab" />
-      <Option Value="8" Name="Parry/Riposte" />
-	  <Option Value="10" Name="Plunge Attack" />
-	  <Option Value="11" Name="Hornet Ring Backstab/Grab" />
-	  <Option Value="12" Name="Hornet Ring Parry/Riposte" />
-      <Option Value="13" Name="Dark Hand" />
-	  <Option Value="15" Name="Hornet Ring Plunge Attack" />
-	  <Option Value="16" Name="Hornet Ring Dark Hand" />
+	  <Option Value="0" Name="Normal Throw" />
+      <Option Value="1" Name="Normal Throw (PC)" />
+      <Option Value="2" Name="Stealth Throw" />
+      <Option Value="8" Name="Parry Throw" />
+      <Option Value="9" Name="Backstrike Throw" />
+      <Option Value="10" Name="Falling Throw" />
+      <Option Value="11" Name="Reinforced Throw" />
+      <Option Value="12" Name="Reinforced Parry Throw" />
+      <Option Value="13" Name="Soul Drain" />
 	</Enum>
     <Enum Name="THROW_PAD_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="3" Name="Type 3" />
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="R1" />
+      <Option Value="2" Name="L1" />
+      <Option Value="3" Name="R1 + up" />
+      <Option Value="4" Name="L1 + up" />
+      <Option Value="5" Name="X" />
     </Enum>
     <Enum Name="THROW_ENABLE_STATE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
+      <Option Value="-1" Name="Throw Disabled" />
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Waiting" />
+      <Option Value="2" Name="Stealth" />
     </Enum>
     <Enum Name="THROW_FOLLOWING_TYPE" type="u8">
     </Enum>
     <Enum Name="THROW_DMY_CHR_DIR_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
+        <Option Value="0" Name="Turn to" />
+     	<Option Value="1" Name="Turn back" />
+      	<Option Value="255" Name="No Nothing" />
     </Enum>
   </Enums>
   <Field>

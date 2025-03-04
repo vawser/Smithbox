@@ -985,12 +985,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public short UnkT12 { get; set; }
+                public short PatrolType { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public short UnkT14 { get; set; }
+                public short FallbackPlatoonID { get; set; }
 
                 /// <summary>
                 /// ID in CharaInitParam determining equipment and stats for humans.
@@ -1054,8 +1054,8 @@ namespace SoulsFormats
                     ThinkParamID = br.ReadInt32();
                     NPCParamID = br.ReadInt32();
                     TalkID = br.ReadInt32();
-                    UnkT12 = br.ReadInt16();
-                    UnkT14 = br.ReadInt16();
+                    PatrolType = br.ReadInt16();
+                    FallbackPlatoonID = br.ReadInt16();
                     CharaInitID = br.ReadInt32();
                     CollisionIndex = br.ReadInt32();
                     PatrolInfoIndex = br.ReadInt16();
@@ -1075,8 +1075,8 @@ namespace SoulsFormats
                     bw.WriteInt32(ThinkParamID);
                     bw.WriteInt32(NPCParamID);
                     bw.WriteInt32(TalkID);
-                    bw.WriteInt16(UnkT12);
-                    bw.WriteInt16(UnkT14);
+                    bw.WriteInt16(PatrolType);
+                    bw.WriteInt16(FallbackPlatoonID);
                     bw.WriteInt32(CharaInitID);
                     bw.WriteInt32(CollisionIndex);
                     bw.WriteInt16(PatrolInfoIndex);

@@ -28,6 +28,38 @@
     <Enum Name="ATK_PARAM_PARTSDMGTYPE">
       <Option Value="0" Name="Type 0" />
     </Enum>
+    <Enum Name="WEP_MATERIAL_DEF">
+      <Option Value="255" Name="Material 1" />
+      <Option Value="29" Name="Air" />
+      <Option Value="50" Name="Sword" />
+      <Option Value="52" Name="Wood Weapon" />
+      <Option Value="53" Name="Slugs" />
+      <Option Value="54" Name="Iron Shield" />
+      <Option Value="55" Name="Wood Shield" />
+      <Option Value="56" Name="Armored Flesh" />
+      <Option Value="57" Name="Chainmail" />
+      <Option Value="58" Name="Unk58" />
+      <Option Value="59" Name="Small Flesh" />
+      <Option Value="60" Name="Small Flesh (Weak)" />
+      <Option Value="61" Name="Paleblood" />
+      <Option Value="62" Name="Paleblood (Weak)" />
+      <Option Value="63" Name="Helmet?" />
+      <Option Value="64" Name="Lava" />
+      <Option Value="65" Name="Lava (Weak)" />
+      <Option Value="66" Name="Unk66" />
+      <Option Value="67" Name="Unk67" />
+      <Option Value="68" Name="Rotted Flesh/Slime" />
+      <Option Value="69" Name="Rotted Flesh/Slime (Weak)" />
+      <Option Value="70" Name="Ghost" />
+      <Option Value="71" Name="Fishman Flesh" />
+      <Option Value="72" Name="Large Flesh" />
+      <Option Value="73" Name="Large Flesh (Weak)" />
+      <Option Value="74" Name="Kin Flesh" />
+      <Option Value="75" Name="Kin Flesh (Weak)" />
+      <Option Value="76" Name="Bone Flesh" />
+      <Option Value="77" Name="Bone" />
+      <Option Value="78" Name="Bloody Slime Flesh" />
+    </Enum>
   </Enums>
   <Self Wiki="Armor" />
   <Field>
@@ -99,11 +131,11 @@
     <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type." Enum="EQUIP_MODEL_CATEGORY" />
     <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model." Enum="EQUIP_MODEL_GENDER" />
     <protectorCategory AltName="Armor Category" Wiki="Armor category." Enum="PROTECTOR_CATEGORY" />
-    <defenseMaterial AltName="Hit Sound FX" Wiki="Type of sound effect generated when this armor is hit." />
-    <defenseMaterialSfx AltName="Hit Visual FX" Wiki="Type of visual effect generated when this armor is hit." />
+    <defenseMaterial AltName="Hit Sound FX" Wiki="Type of sound effect generated when this armor is hit." Enum="WEP_MATERIAL_DEF" />
+    <defenseMaterialSfx AltName="Hit Visual FX" Wiki="Type of visual effect generated when this armor is hit." Enum="WEP_MATERIAL_DEF" />
     <partsDmgType AltName="Parts Damage Type" Wiki="Set the attack type to judge the part damage" Enum="ATK_PARAM_PARTSDMGTYPE" />
-    <defenseMaterial_Weak AltName="Weak Spot Hit Sound FX" />
-    <defenseMaterialSfx_Weak AltName="Weak Spot Hit Visual FX" />
+    <defenseMaterial_Weak AltName="Weak Spot Hit Sound FX" Enum="WEP_MATERIAL_DEF" />
+    <defenseMaterialSfx_Weak AltName="Weak Spot Hit Visual FX" Enum="WEP_MATERIAL_DEF" />
     <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
     <headEquip AltName="Is Head Equipment" Wiki="Is it head equipment?" IsBool="" />
     <bodyEquip AltName="Is Body Equipment" Wiki="Is it torso equipment?" IsBool="" />

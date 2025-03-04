@@ -2,9 +2,9 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="OBJACT_SP_QUALIFIED_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Goods" />
+      <Option Value="2" Name="SpEffect" />
     </Enum>
     <Enum Name="OBJACT_CHR_SORB_TYPE" type="u8">
         <Option Value="0" Name="Type 0" />

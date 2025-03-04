@@ -18,9 +18,14 @@
     AltName="Talk Script ID"
     Wiki="The ID of a talk ESD used by the character." />
     
-    <UnkT14
-    AltName="Unknown: 0x14"
-    Wiki="" />
+    <PatrolType
+    AltName="Patrol Type"
+    Wiki="The type of behavior used when assigned to a Patrol"
+    Enum="PATROL_TYPE" />
+    
+    <FallbackPlatoonID
+    AltName="Ad-Hoc Platoon ID"
+    Wiki="If enemy is not entrolled into a Platoon, it will be enrolled into a Platoon with this ID + 100000" />
     
     <CharaInitID
     AltName="Character Initialization ID"
@@ -33,6 +38,14 @@
     MapRef="Part-Collision" />
     
     <CollisionIndex
+    IndexProperty="" />
+    
+	<PatrolInfoName
+    AltName="Patrol Info ID"
+    Wiki="The index of the patrol info to use."
+    MapRef="Event-PatrolInfo" />
+    
+    <PatrolInfoIndex
     IndexProperty="" />
     
     <MovePointNames

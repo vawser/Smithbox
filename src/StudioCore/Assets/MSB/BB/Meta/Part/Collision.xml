@@ -67,19 +67,18 @@
         <Option Value="7" Name="Standard: No High Collision" />
         <Option Value="8" Name="Collide with all characters" />
         <Option Value="9" Name="Collide with camera only" />
-        <Option Value="11" Name="Collide with non-player characters only" />
+        <Option Value="11" Name="Collide with non-player characters only (trigger return home AI)" />
         <Option Value="13" Name="Trigger fall death camera in collision" />
         <Option Value="14" Name="Trigger fall death camera in collision" />
         <Option Value="15" Name="Trigger instant death on collision" />
-        <Option Value="16" Name="Type 16" />
-        <Option Value="17" Name="Type 17" />
-        <Option Value="19" Name="Collide with non-player characters only" />
-        <Option Value="20" Name="Type 20" />
+        <Option Value="16" Name="Collide with SFX only" />
+        <Option Value="17" Name="Trigger drawgroups" />
+        <Option Value="19" Name="Collide with non-player characters only (do not trigger return home AI)" />
+        <Option Value="20" Name="Block enemy navigation (door/entrance)" />
         <Option Value="21" Name="Slide movement" />
         <Option Value="22" Name="Block all fall damage" />
-        <Option Value="23" Name="Type 23" />
+        <Option Value="23" Name="Non-invasion zone at level exit" />
         <Option Value="24" Name="Type 24" />
-        <Option Value="29" Name="Type 29" />
     </Enum>
     <Enum Name="SOUND_SPACE_TYPE">
         <Option Value="0" Name="No Reverb" />

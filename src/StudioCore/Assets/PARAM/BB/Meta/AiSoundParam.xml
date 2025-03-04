@@ -2,15 +2,14 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="AI_SOUND_RATE_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Default" />
-        <Option Value="2" Name="Collision Based" />
+        <Option Value="0" Name="Direct sound" />
+        <Option Value="1" Name="Movement sound" />
+        <Option Value="2" Name="Attack sound" />
     </Enum>
-	<Enum Name="AI_SOUND_FAKE_TARGET_TYPE">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Enemy" />
-      <Option Value="2" Name="Ally" />
-	  <Option Value="3" Name="Self" />
+    <Enum Name="AI_SOUND_FAKE_TARGET_TYPE">
+      <Option Value="0" Name="Direct sound" />
+      <Option Value="1" Name="Movement sound" />
+      <Option Value="2" Name="Attack sound" />
     </Enum>
   </Enums>
   <Field>

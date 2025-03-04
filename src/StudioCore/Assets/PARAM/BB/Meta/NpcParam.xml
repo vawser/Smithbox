@@ -69,6 +69,48 @@
       <Option Value="0" Name="Arrows" />
       <Option Value="1" Name="All attacks" />
     </Enum>
+    <Enum Name="WEP_MATERIAL_ATK">
+      <Option Value="255" Name="Material 1" />
+      <Option Value="0" Name="Unk" />
+      <Option Value="1" Name="Likely Unused" />
+      <Option Value="2" Name="Wood" />
+      <Option Value="3" Name="Flesh/Tentacles/Squishy" />
+      <Option Value="4" Name="Likely Unused" />
+      <Option Value="5" Name="Magic?/Splashing?" />
+      <Option Value="6" Name="Fire?" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF">
+      <Option Value="255" Name="Material 1" />
+      <Option Value="29" Name="Air" />
+      <Option Value="50" Name="Sword" />
+      <Option Value="52" Name="Wood Weapon" />
+      <Option Value="53" Name="Slugs" />
+      <Option Value="54" Name="Iron Shield" />
+      <Option Value="55" Name="Wood Shield" />
+      <Option Value="56" Name="Armored Flesh" />
+      <Option Value="57" Name="Chainmail" />
+      <Option Value="58" Name="Unk58" />
+      <Option Value="59" Name="Small Flesh" />
+      <Option Value="60" Name="Small Flesh (Weak)" />
+      <Option Value="61" Name="Paleblood" />
+      <Option Value="62" Name="Paleblood (Weak)" />
+      <Option Value="63" Name="Helmet?" />
+      <Option Value="64" Name="Lava" />
+      <Option Value="65" Name="Lava (Weak)" />
+      <Option Value="66" Name="Unk66" />
+      <Option Value="67" Name="Unk67" />
+      <Option Value="68" Name="Rotted Flesh/Slime" />
+      <Option Value="69" Name="Rotted Flesh/Slime (Weak)" />
+      <Option Value="70" Name="Ghost" />
+      <Option Value="71" Name="Fishman Flesh" />
+      <Option Value="72" Name="Large Flesh" />
+      <Option Value="73" Name="Large Flesh (Weak)" />
+      <Option Value="74" Name="Kin Flesh" />
+      <Option Value="75" Name="Kin Flesh (Weak)" />
+      <Option Value="76" Name="Bone Flesh" />
+      <Option Value="77" Name="Bone" />
+      <Option Value="78" Name="Bloody Slime Flesh" />
+    </Enum>
   </Enums>
   <Field>
     <behaviorVariationId AltName="Behavior Variation ID" Wiki="Variation ID used when calculating the action ID." />
@@ -174,10 +216,10 @@
     <teamType AltName="Team Type" Enum="TEAM_TYPE" Wiki="Determines enemy\ally\aggro\damage status in relation to other teams." />
 	<moveType AltName="Move Type" Enum="NPC_MOVE_TYPE" />
 	<lockDist AltName="Lock-on Distance" Wiki="Lock-on distance [m]" />
-	<material AltName="Material SE - Damaged" Wiki="Sound played by material when damaged." />
-	<materialSfx AltName="Material SFX - Damaged" Wiki="SFX played by material when damaged." />
-    <material_Weak AltName="Material SE - Damaged in Weak Spot" Wiki="Sound played by material when damaged in weak spot." />
-    <materialSfx_Weak AltName="Material SFX - Damaged in Weak Spot" Wiki="SFX played by material when damaged in weak spot." />
+	<material AltName="Material SE - Damaged" Wiki="Sound played by material when damaged." Enum="WEP_MATERIAL_DEF" />
+	<materialSfx AltName="Material SFX - Damaged" Wiki="SFX played by material when damaged." Enum="WEP_MATERIAL_DEF"/>
+    <material_Weak AltName="Material SE - Damaged in Weak Spot" Wiki="Sound played by material when damaged in weak spot." Enum="WEP_MATERIAL_DEF" />
+    <materialSfx_Weak AltName="Material SFX - Damaged in Weak Spot" Wiki="SFX played by material when damaged in weak spot." Enum="WEP_MATERIAL_DEF" />
 	<partsDamageType AltName="Parts Damage Type" Wiki="Determines if weak parts (such as the head) will be affected by all attacks or just arrow attacks.\nHeadshot animation will be used for weak part attacks if it exists." Enum="ATK_PARAM_PARTSDMGTYPE" />
 	<maxUndurationAng AltName="Max Undulation Angle" />
 	<guardLevel AltName="Guard Level" Wiki="Determines guard hit anim used depending on incoming damageLevel." />

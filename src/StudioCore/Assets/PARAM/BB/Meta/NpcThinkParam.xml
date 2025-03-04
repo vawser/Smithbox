@@ -1,5 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="NPC_THINK_GOAL_ACTION">
+      <Option Value="0" Name="Do Nothing" />
+      <Option Value="1" Name="Turn toward target" />
+      <Option Value="2" Name="Walk toward target" />
+      <Option Value="3" Name="Run toward target" />
+      <Option Value="4" Name="Set arbitrary goal" />
+      <Option Value="5" Name="Move away from target" />
+    </Enum>
+    <Enum Name="NPC_THINK_CHANGE_STATE_ACTION">
+      <Option Value="0" Name="Do Nothing" />
+      <Option Value="1" Name="React immediately" />
+      <Option Value="2" Name="React after turning toward target" />
+    </Enum>
+    <Enum Name="NPC_THINK_REPLY_BEHAVIOR_TYPE">
+      <Option Value="0" Name="Move by walking" />
+      <Option Value="1" Name="Move by running" />
+    </Enum>
+  </Enums>
   <Field>
 	<logicId AltName="Logic ID" Wiki="Set the ID of the logic created by the script." />
     <battleGoalID AltName="Battle Goal ID" Wiki="Battle goal ID" />

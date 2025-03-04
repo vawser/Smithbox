@@ -2,45 +2,49 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="GOODS_USE_ANIM">
-      <Option Value="0" Name="Consumable" />
-      <Option Value="1" Name="Apply to Weapon" />
-      <Option Value="2" Name="Quick Throw" />
-      <Option Value="3" Name="Slow Throw" />
-      <Option Value="4" Name="Binoculars" />
-      <Option Value="5" Name="Scatter" />
-      <Option Value="6" Name="Tool Kneel" />
-      <Option Value="7" Name="Prism Stone" />
-      <Option Value="8" Name="Apply to Ground" />
-      <Option Value="9" Name="Crush Consumable" />
-      <Option Value="10" Name="Estus Flask" />
-      <Option Value="11" Name="Dragon Head Stone" />
-      <Option Value="12" Name="Dragon Torso Stone" />
-      <Option Value="13" Name="Pray" />
-      <Option Value="14" Name="Cross Arms and Apply" />
-      <Option Value="16" Name="Quick Apply to Weapon" />
-      <Option Value="17" Name="Throwing Knife" />
-      <Option Value="18" Name="Quick Throw Bottle" />
-      <Option Value="19" Name="Ashen Estus Flask" />
-      <Option Value="20" Name="Throw Backwards" />
-      <Option Value="21" Name="Siegbräu" />
-      <Option Value="22" Name="Transform" />
-      <Option Value="23" Name="Twinkling Dragon Head Stone" />
-      <Option Value="24" Name="Twinkling Dragon Torso Stone" />
-      <Option Value="25" Name="Spear Fragment" />
-      <Option Value="26" Name="Church Guardian Shiv" />
+      <Option Value="0" Name="Eat" />
+      <Option Value="1" Name="RH Weapon Buff" />
+      <Option Value="2" Name="Throwing Knife" />
+      <Option Value="3" Name="Throwable" />
+      <Option Value="4" Name="Monocular" />
+      <Option Value="5" Name="Bone Marrow Ash" />
+      <Option Value="6" Name="Messenger's Gift" />
+      <Option Value="7" Name="Shining Coins" />
+      <Option Value="8" Name="Notebook" />
+      <Option Value="9" Name="Blood Echo item" />
+      <Option Value="10" Name="Drink" />
+      <Option Value="13" Name="Rope Throwable" />
+      <Option Value="14" Name="Ring bell" />
+      <Option Value="15" Name="Silence bell" />
+      <Option Value="16" Name="Hunter's Mark" />
+      <Option Value="17" Name="Lantern" />
+      <Option Value="18" Name="Choir Bell" />
+      <Option Value="19" Name="Beast Roar" />
+      <Option Value="20" Name="Old Hunter Bone" />
+      <Option Value="21" Name="Augur of Ebrietas" />
+      <Option Value="22" Name="A Call Beyond" />
+      <Option Value="23" Name="Tiny Tonitrus" />
+      <Option Value="24" Name="Executioner's Gloves" />
+      <Option Value="25" Name="Shaman Bone Blade" />
+      <Option Value="26" Name="Blood Vial" />
+      <Option Value="27" Name="Music Box" />
+      <Option Value="28" Name="Special Blood Vial" />
+      <Option Value="29" Name="Blood Gem" />
+      <Option Value="30" Name="Blacksky Eye" />
+      <Option Value="31" Name="Accursed Brew" />
+      <Option Value="32" Name="Madaras Whistle" />
+      <Option Value="33" Name="Vermin" />
+      <Option Value="34" Name="Delayed Molotov" />
+      <Option Value="35" Name="Umbilical Cord" />
+      <Option Value="253" Name="Blood Bullets" />
     </Enum>
     <Enum Name="GOODS_OPEN_MENU">
       <Option Value="0" Name="None" />
-      <Option Value="1" Name="Yes / No" />
-      <Option Value="4" Name="Yes / No (Session)" />
-      <Option Value="5" Name="Write Message" />
-      <Option Value="6" Name="Create Blood Message" />
-      <Option Value="7" Name="Roster Of Knights" />
-      <Option Value="8" Name="Unknown" />
-      <Option Value="9" Name="Ok / Cancel" />
-      <Option Value="10" Name="Invasion" />
-      <Option Value="11" Name="Coiled Sword Fragment" />
-      <Option Value="12" Name="Darksign" />
+      <Option Value="1" Name="Yes/No" />
+      <Option Value="4" Name="Silencing Blank" />
+      <Option Value="6" Name="Notebook" />
+      <Option Value="8" Name="Vileblood Register" />
+      <Option Value="9" Name="League Register" />
     </Enum>
     <Enum Name="SP_EFFECT_CATEGORY">
       <Option Value="0" Name="Default" />
@@ -59,11 +63,17 @@
       <Option Value="0" Name="Consumable" />
       <Option Value="1" Name="Key Item" />
       <Option Value="2" Name="Material" />
-	  <Option Value="5" Name="Spell" />
+	  <Option Value="6" Name="Holy Grail" />
     </Enum>
 	<Enum Name="SP_EFFECT_USELIMIT_CATEGORY">
-      <Option Value="0" Name="Default" />
-      <Option Value="3" Name="Dragon Head Stones" />
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="RH Weapon Change" />
+      <Option Value="2" Name="Body Change" />
+      <Option Value="3" Name="Body Change Special" />
+      <Option Value="13" Name="LH Weapon Change" />
+      <Option Value="15" Name="LH Weapon Change" />
+      <Option Value="17" Name="Sinister Resonant Bell" />
+      <Option Value="18" Name="Small Resonant Bell" />
     </Enum>
 	<Enum Name="REPLACE_CATEGORY">
       <Option Value="0" Name="Default" />

@@ -8,7 +8,7 @@
     <releaseFlagIdOffset AltName="Ban Event Flag ID Offset" Wiki="" />
     <npcParamIdOffset AltName="NPC Param ID Offset" Wiki="" />
     <itemLotParamIdOffset AltName="Itemlot ID Offset" Wiki="" />
-    <eneSpeffectId AltName="Enemy SpEffect Offset" Wiki="" />
+    <eneSpeffectId AltName="Enemy SpEffect Offset" Wiki="" Refs="SpEffectParam" />
     <gemDropCorrectParamId AltName="Gem Drop Correction Param ID" Refs="GemDropModifyParam" Wiki="" />
     <gemGenParamIdOffset AltName="Gem Generation ID Offset" Wiki="" />
     <dungeonNameModifierId AltName="Dungeon Name Modifier ID" Wiki="" />

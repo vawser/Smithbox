@@ -2,35 +2,21 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="SP_EFFECT_VFX_SOUL_PARAM_TYPE">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Bright Blue" />
-      <Option Value="2" Name="Red Orange" />
-      <Option Value="3" Name="Green Yellow" />
-      <Option Value="4" Name="Purple" />
-      <Option Value="5" Name="Moss Green" />
-      <Option Value="6" Name="Blue White" />
-      <Option Value="7" Name="Dark Blue" />
-      <Option Value="8" Name="Cobalt Blue" />
-      <Option Value="9" Name="None" />
-      <Option Value="10" Name="White" />
-      <Option Value="11" Name="White Outline" />
-      <Option Value="12" Name="None" />
-      <Option Value="13" Name="[Dark] Bright Blue" />
-      <Option Value="14" Name="[Dark] Red Orange" />
-      <Option Value="15" Name="[Dark] Green Yellow" />
-      <Option Value="16" Name="[Dark] Purple" />
-      <Option Value="17" Name="[Dark] Moss Green" />
-      <Option Value="18" Name="[Dark] Blue White" />
-      <Option Value="19" Name="[Dark] Dark Blue" />
-      <Option Value="20" Name="[Dark] Cobalt Blue" />
-      <Option Value="21" Name="None" />
-      <Option Value="22" Name="White" />
-      <Option Value="23" Name="White Outline" />
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Magic" />
+      <Option Value="2" Name="Flame" />
+      <Option Value="3" Name="Lightning" />
+      <Option Value="4" Name="Darkness" />
+      <Option Value="5" Name="Poison" />
+      <Option Value="6" Name="Cold Air" />
+      <Option Value="7" Name="Physical" />
     </Enum>
 	<Enum Name="SP_EFFECT_VFX_EFFECT_TYPE">
-      <Option Value="0" Name="Body" />
-      <Option Value="1" Name="Right Weapon" />
-      <Option Value="2" Name="Left Weapon" />
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Right Hand Weapon Enchant" />
+      <Option Value="2" Name="Left Hand Weapon Enchant" />
+      <Option Value="3" Name="For Judgement" />
+      <Option Value="4" Name="Healing" />
     </Enum>
 	<Enum Name="SP_EFFECT_OVERWRITE_PHANTOM_PARAM_TYPE">
       <Option Value="0" Name="No Change" />
@@ -53,6 +39,18 @@
         <Option Value="8" Name="Type 8" />
         <Option Value="18" Name="Type 18" />
         <Option Value="19" Name="Type 19" />
+    </Enum>
+    <Enum Name="SP_EFFECT_VFX_PLAYCATEGORY">
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Full Body Effect" />
+      <Option Value="2" Name="Head Effect" />
+      <Option Value="3" Name="Body + Effect" />
+      <Option Value="4" Name="Body - effect" />
+      <Option Value="5" Name="Foot decal offset" />
+      <Option Value="6" Name="Shader effect" />
+      <Option Value="7" Name="Markers" />
+      <Option Value="8" Name="Neural load noise" />
+      <Option Value="9" Name="Neural load persistence" />
     </Enum>
   </Enums>
   <Field>
