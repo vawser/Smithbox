@@ -1,5 +1,3 @@
-ID Name
-80100000 
 0 Head
 1 Neutralizing Boluses
 2 Flask of Crimson Tears +5- Flask of Crimson Tears +5- Flask of Crimson Tears +6- Flask of Crimson Tears +6- Flask of Crimson Tears +11- Flask of Crimson Tears- Flask of Crimson Tears
@@ -22,6 +20,7 @@ ID Name
 34300000 
 70010000 
 80000000 
+80100000 
 204100000 [Larva of Rot] None
 204100100 [Larva of Rot] Aeonian Butterfly
 210000000 [Black Knife Assassin] None

@@ -2918,7 +2918,9 @@ public class ParamBank
             List<string> list = _storedStrippedRowNames[p.Key];
             foreach (Param.Row r in p.Value.Rows)
             {
-                list.Add(r.Name);
+                var output = r.Name;
+
+                list.Add(output);
                 r.Name = "";
             }
 

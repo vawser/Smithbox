@@ -327,7 +327,10 @@ public class TextEditorScreen : EditorScreen
         }
         else
         {
-            TextBank.SaveFmgContainer(Selection.SelectedContainerWrapper);
+            if (TextBank.PrimaryBankLoaded)
+            {
+                TextBank.SaveFmgContainer(Selection.SelectedContainerWrapper);
+            }
         }
     }
 
