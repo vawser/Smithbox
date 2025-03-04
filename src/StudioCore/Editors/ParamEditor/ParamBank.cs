@@ -1679,7 +1679,7 @@ public class ParamBank
 
         using var paramBnd = BND3.Read(param);
 
-        if(CFG.Current.Param_StripRowNames_OnSave_DS1)
+        if(CFG.Current.Param_StripRowNamesOnSave_DS1)
         {
             StripRowNames();
         }
@@ -1695,7 +1695,7 @@ public class ParamBank
 
         Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd", paramBnd);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_DS1)
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
         {
             RestoreStrippedRowNames();
         }
@@ -1741,7 +1741,7 @@ public class ParamBank
 
         using var paramBnd = BND3.Read(param);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_DS1)
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
         {
             StripRowNames();
         }
@@ -1757,7 +1757,7 @@ public class ParamBank
 
         Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd.dcx", paramBnd);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_DS1)
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
         {
             RestoreStrippedRowNames();
         }
@@ -1862,7 +1862,7 @@ public class ParamBank
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                if (CFG.Current.Param_StripRowNames_OnSave_DS2)
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
                 {
                     StripRowNames();
                 }
@@ -1885,14 +1885,14 @@ public class ParamBank
             }
             catch
             {
-                if (CFG.Current.Param_StripRowNames_OnSave_DS2)
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
                 {
                     RestoreStrippedRowNames();
                 }
                 throw;
             }
 
-            if (CFG.Current.Param_StripRowNames_OnSave_DS2)
+            if (CFG.Current.Param_StripRowNamesOnSave_DS2)
             {
                 RestoreStrippedRowNames();
             }
@@ -1916,7 +1916,7 @@ public class ParamBank
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                if (CFG.Current.Param_StripRowNames_OnSave_DS2)
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
                 {
                     StripRowNames();
                 }
@@ -1929,14 +1929,14 @@ public class ParamBank
             }
             catch
             {
-                if (CFG.Current.Param_StripRowNames_OnSave_DS2)
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
                 {
                     RestoreStrippedRowNames();
                 }
                 throw;
             }
 
-            if (CFG.Current.Param_StripRowNames_OnSave_DS2)
+            if (CFG.Current.Param_StripRowNamesOnSave_DS2)
             {
                 RestoreStrippedRowNames();
             }
@@ -1968,7 +1968,7 @@ public class ParamBank
 
         BND4 paramBnd = SFUtil.DecryptDS3Regulation(param);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_DS3)
+        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
         {
             StripRowNames();
         }
@@ -2007,7 +2007,7 @@ public class ParamBank
             //Utils.WriteWithBackup(dir, mod, @"param\stayparam\stayparam.parambnd.dcx", stayBND);
         }
 
-        if (CFG.Current.Param_StripRowNames_OnSave_DS3)
+        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
         {
             RestoreStrippedRowNames();
         }
@@ -2055,7 +2055,7 @@ public class ParamBank
         // Params
         var paramBnd = BND4.Read(param);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_BB)
+        if (CFG.Current.Param_StripRowNamesOnSave_BB)
         {
             StripRowNames();
         }
@@ -2063,7 +2063,7 @@ public class ParamBank
         OverwriteParamsBB(paramBnd);
         Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_BB)
+        if (CFG.Current.Param_StripRowNamesOnSave_BB)
         {
             RestoreStrippedRowNames();
         }
@@ -2111,7 +2111,7 @@ public class ParamBank
         // Params
         var paramBnd = BND4.Read(param);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_SDT)
+        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
         {
             StripRowNames();
         }
@@ -2119,7 +2119,7 @@ public class ParamBank
         OverwriteParamsSDT(paramBnd);
         Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_SDT)
+        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
         {
             RestoreStrippedRowNames();
         }
@@ -2158,7 +2158,7 @@ public class ParamBank
 
         using var paramBnd = BND3.Read(param);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_DES)
+        if (CFG.Current.Param_StripRowNamesOnSave_DES)
         {
             StripRowNames();
         }
@@ -2193,7 +2193,7 @@ public class ParamBank
 
         Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd", paramBnd);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_DES)
+        if (CFG.Current.Param_StripRowNamesOnSave_DES)
         {
             RestoreStrippedRowNames();
         }
@@ -2268,7 +2268,7 @@ public class ParamBank
 
         BND4 regParams = SFUtil.DecryptERRegulation(param);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_ER)
+        if (CFG.Current.Param_StripRowNamesOnSave_ER)
         {
             StripRowNames();
         }
@@ -2277,7 +2277,7 @@ public class ParamBank
 
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.ER);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_ER)
+        if (CFG.Current.Param_StripRowNamesOnSave_ER)
         {
             RestoreStrippedRowNames();
         }
@@ -2355,7 +2355,7 @@ public class ParamBank
 
         BND4 regParams = SFUtil.DecryptAC6Regulation(param);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_AC6)
+        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
         {
             StripRowNames();
         }
@@ -2363,7 +2363,7 @@ public class ParamBank
         OverwriteParamsAC6(regParams);
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.AC6);
 
-        if (CFG.Current.Param_StripRowNames_OnSave_AC6)
+        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
         {
             RestoreStrippedRowNames();
         }
@@ -2906,8 +2906,8 @@ public class ParamBank
     }
 
     /// <summary>
-    /// Strips row names from params, saves them to files, and stores them to be restored after saving params.
-    /// Should always be used in conjunction with RestoreStrippedRowNames().
+    ///     Strips row names from params, saves them to files, and stores them to be restored after saving params.
+    ///     Should always be used in conjunction with RestoreStrippedRowNames().
     /// </summary>
     private void StripRowNames()
     {
@@ -2929,8 +2929,8 @@ public class ParamBank
     }
 
     /// <summary>
-    /// Restores stripped row names back to all params.
-    /// Should always be used in conjunction with StripRowNames().
+    ///     Restores stripped row names back to all params.
+    ///     Should always be used in conjunction with StripRowNames().
     /// </summary>
     private void RestoreStrippedRowNames()
     {

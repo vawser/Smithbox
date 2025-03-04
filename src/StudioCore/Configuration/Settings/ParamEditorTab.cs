@@ -53,37 +53,37 @@ public class ParamEditorTab
             switch(Smithbox.ProjectType)
             {
                 case ProjectType.DES:
-                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNames_OnSave_DES);
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DES);
                     break;
 
                 case ProjectType.DS1:
                 case ProjectType.DS1R:
-                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNames_OnSave_DS1);
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DS1);
                     break;
 
                 case ProjectType.DS2:
                 case ProjectType.DS2S:
-                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNames_OnSave_DS2);
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DS2);
                     break;
 
                 case ProjectType.BB:
-                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNames_OnSave_BB);
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_BB);
                     break;
 
                 case ProjectType.DS3:
-                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNames_OnSave_DS3);
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DS3);
                     break;
 
                 case ProjectType.SDT:
-                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNames_OnSave_SDT);
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_SDT);
                     break;
 
                 case ProjectType.ER:
-                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNames_OnSave_ER);
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_ER);
                     break;
 
                 case ProjectType.AC6:
-                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNames_OnSave_AC6);
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_AC6);
                     break;
             }
             UIHelper.ShowHoverTooltip("If enabled, row names are stripped upon save, meaning no row names will be stored in the regulation.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.\n\nIf this folder is present when a project is loaded, the row names will be restored automatically.");

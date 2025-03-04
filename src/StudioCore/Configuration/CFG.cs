@@ -348,14 +348,15 @@ public class CFG
     //****************************
     // Settings: Param Editor
     //****************************
-    public bool Param_StripRowNames_OnSave_DES = false;
-    public bool Param_StripRowNames_OnSave_DS1 = false;
-    public bool Param_StripRowNames_OnSave_DS2 = false;
-    public bool Param_StripRowNames_OnSave_BB = false;
-    public bool Param_StripRowNames_OnSave_DS3 = false;
-    public bool Param_StripRowNames_OnSave_SDT = false;
-    public bool Param_StripRowNames_OnSave_ER = false;
-    public bool Param_StripRowNames_OnSave_AC6 = false;
+    // Done per project so we can default ON for DS2 and ER without forcing stripping for the others
+    public bool Param_StripRowNamesOnSave_DES = false;
+    public bool Param_StripRowNamesOnSave_DS1 = false;
+    public bool Param_StripRowNamesOnSave_DS2 = true;
+    public bool Param_StripRowNamesOnSave_BB = false;
+    public bool Param_StripRowNamesOnSave_DS3 = false;
+    public bool Param_StripRowNamesOnSave_SDT = false;
+    public bool Param_StripRowNamesOnSave_ER = true;
+    public bool Param_StripRowNamesOnSave_AC6 = false;
 
     public bool Param_SaveERAsDFLT = false;
 
