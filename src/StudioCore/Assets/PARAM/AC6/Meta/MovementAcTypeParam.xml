@@ -119,100 +119,100 @@
     Wiki="The amount of acceleration to apply after switching back to air boost. In kilometres per hour ^ 2." />
     
     <boostMoveSubGroundAccelMPSS
-    AltName=""
-    Wiki="" />
+    AltName="Ground Boost Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of ground boost movement. In kilometres per hour ^ 2." />
     
     <boostMoveSubFlyAccelMPSS
-    AltName=""
-    Wiki="" />
+    AltName="Air Boost Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of air boost movement. In kilometres per hour ^ 2." />
     
     <assaultBoostSubAccelMPSS
-    AltName=""
-    Wiki="" />
-    
+    AltName="Assault Boost Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of assault boost movement. In kilometres per hour ^ 2." />
+ 
     <bladeHomingSubAccelMPSS
-    AltName=""
-    Wiki="" />
+    AltName="Blade Homing Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of blade homing movement. In kilometres per hour ^ 2." />
     
     <pad9
     Padding="" />
     
     <minStiffSpeedKMPH
-    AltName=""
-    Wiki="" />
+    AltName="Minimum Landing Stiffness Speed"
+    Wiki="The minimum recovery time is used when landing at speeds below this speed. In kilometres per hour." />
     
     <minStiffTimeSec
-    AltName=""
-    Wiki="" />
+    AltName="Minimum Landing Stiffness Time"
+    Wiki="The minimum stiffness duration. In seconds." />
     
     <maxStiffSpeedKMPH
-    AltName=""
-    Wiki="" />
+    AltName="Maximum Landing Stiffness Speed"
+    Wiki="The maximum recovery time is used when landing at speeds above this speed. In kilometres per hour." />
     
     <maxStiffTimeSec
-    AltName=""
-    Wiki="" />
+    AltName="Maximum Landing Stiffness Time"
+    Wiki="The maximum stiffness duration. In seconds." />
     
     <realVelocityFeedBackRate
-    AltName=""
-    Wiki="" />
+    AltName="Velocity Feedback %"
+    Wiki="The percentage of velocity that reflects actual movement. Smaller values feel heavier." />
     
     <tankTurnOffset_CenterOffset
-    AltName=""
-    Wiki="" />
+    AltName="Tank Rotation: Pivot Center Offset"
+    Wiki="The tank pivot offset. Front is positive values, back is negative values." />
     
     <tankTurnOffset_MaxFwdOffset
-    AltName=""
-    Wiki="" />
+    AltName="Tank Rotation: Maximum Forward Offset"
+    Wiki="The tank pivot offset to apply when travelling forward at maximum forward speed." />
     
     <tankTurnOffset_MaxBackOffset
-    AltName=""
-    Wiki="" />
+    AltName="Tank Rotation: Maximum Backward Offset"
+    Wiki="The tank pivot offset to apply when travelling backward at maximum backward speed." />
     
     <tankTurnOffset_MaxFwdOffsetSpeedKMH
-    AltName=""
-    Wiki="" />
+    AltName="Tank Rotation: Maximum Forward Speed"
+    Wiki="The maximum speed forward at which the maximum forward offset is applied. In kilometres per hour." />
     
     <tankTurnOffset_MaxBackOffsetSpeedKMH
-    AltName=""
-    Wiki="" />
+    AltName="Tank Rotation: Maximum Backward Speed"
+    Wiki="The maximum speed backward at which the maximum backward offset is applied. In kilometres per hour." />
     
     <tankTurnOffset_MaxMoveDirFwdDirErrAngDeg
-    AltName=""
-    Wiki="" />
+    AltName="Tank Rotation: Maximum Deviation Angle"
+    Wiki="The maximum deviation angle between movement direction and speed direction. In degrees." />
     
     <assaultBoostSideAvoidSubAccelMPSS
-    AltName=""
-    Wiki="" />
+    AltName="Assault Boost: Evasion Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of lateral evasion movement durinbg an assault boost. In kilometres per hour ^ 2." />
     
     <quickBoostAddSpeedToBoostMaxSpeedKMPH
-    AltName=""
-    Wiki="" />
+    AltName="Quick Boost: Maximum Speed Addition"
+    Wiki="The maximum amount of speed added during a dash boost to the quick boost speed. In kilometres per hour." />
     
     <quickTurn_MaxTurnAngleDeg
-    AltName=""
-    Wiki="" />
+    AltName="Quick Turn: Maximum Turning Angle"
+    Wiki="The maximum turning angle during a quick turn. In degrees." />
     
     <pad1
     Padding="" />
     
     <quickTurn_MaxTurnTimeSec
-    AltName=""
-    Wiki="" />
+    AltName="Quick Turn: Maximum Turning Time"
+    Wiki="The maximum duration for a quick turn. In seconds." />
     
     <roundDashMaxSpeedKMPH
-    AltName=""
-    Wiki="" />
+    AltName="Dash: Maximum Speed"
+    Wiki="The maximum dash speed. In kilometres per hour." />
     
     <pad3
     Padding="" />
     
     <roundDashAccelMPSS
-    AltName=""
+    AltName="Dash: "
     Wiki="" />
     
     <roundDashBrakeMPSS
-    AltName=""
+    AltName="Dash: "
     Wiki="" />
     
     <bladeBrakeFromBoostMPSS
