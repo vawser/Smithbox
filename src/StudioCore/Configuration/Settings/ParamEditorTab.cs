@@ -203,9 +203,19 @@ public class ParamEditorTab
             UIHelper.ShowHoverTooltip("Displays field values that utilise the (1 - x) pattern as traditional percentages (e.g. -20 instead of 1.2).");
         }
 
-        // Context Menu
+        // Param Context Menu
+        if (ImGui.CollapsingHeader("Param Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Text("Menu Width");
+            ImGui.DragFloat("##paramContextMenuWidth", ref CFG.Current.Param_ParamContextMenu_Width);
+        }
+
+        // Row Context Menu
         if (ImGui.CollapsingHeader("Row Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Text("Menu Width");
+            ImGui.DragFloat("##rowContextMenuWidth", ref CFG.Current.Param_RowContextMenu_Width);
+
             ImGui.Checkbox("Display row name input", ref CFG.Current.Param_RowContextMenu_NameInput);
             UIHelper.ShowHoverTooltip("Display a row name input within the right-click context menu.");
 
@@ -220,14 +230,13 @@ public class ParamEditorTab
 
             ImGui.Checkbox("Display row reverse lookup option", ref CFG.Current.Param_RowContextMenu_ReverseLoopup);
             UIHelper.ShowHoverTooltip("Show the reverse lookup option in the right-click row context menu.");
-
-            ImGui.Checkbox("Display row copy id option", ref CFG.Current.Param_RowContextMenu_CopyID);
-            UIHelper.ShowHoverTooltip("Show the copy id option in the right-click row context menu.");
         }
 
-        // Context Menu
+        // Field Context Menu
         if (ImGui.CollapsingHeader("Field Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Text("Menu Width");
+            ImGui.DragFloat("##fieldContextMenuWidth", ref CFG.Current.Param_FieldContextMenu_Width);
 
             ImGui.Checkbox("Split context menu", ref CFG.Current.Param_FieldContextMenu_Split);
             UIHelper.ShowHoverTooltip("Split the field context menu into separate menus for separate right-click locations.");
@@ -266,7 +275,7 @@ public class ParamEditorTab
             UIHelper.ShowHoverTooltip("If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)");
         }
 
-        // Context Menu
+        // Image Preview
         if (ImGui.CollapsingHeader("Image Preview", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Text("Image Preview Scale:");

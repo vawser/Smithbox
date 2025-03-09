@@ -401,6 +401,9 @@ public class CFG
 
     public bool Param_MassEdit_ShowAddButtons = true;
 
+    public float Param_ParamContextMenu_Width = 300f;
+
+    public float Param_RowContextMenu_Width = 300f;
     public bool Param_RowContextMenu_NameInput = true;
     public bool Param_RowContextMenu_ShortcutTools = true;
     public bool Param_RowContextMenu_PinOptions = true;
@@ -408,6 +411,7 @@ public class CFG
     public bool Param_RowContextMenu_ReverseLoopup = true;
     public bool Param_RowContextMenu_CopyID = true;
 
+    public float Param_FieldContextMenu_Width = 300f;
     public bool Param_FieldContextMenu_Split = false;
     public bool Param_FieldContextMenu_Name = false;
     public bool Param_FieldContextMenu_Description = false;

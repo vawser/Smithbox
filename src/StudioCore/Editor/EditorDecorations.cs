@@ -1222,7 +1222,7 @@ public class EditorDecorations
     public static void ParamRefReverseLookupSelectables(EditorScreen screen, ParamBank bank, string currentParam,
         int currentID)
     {
-        if (ImGui.BeginMenu("Search for references..."))
+        if (ImGui.BeginMenu("Search for references"))
         {
             Dictionary<string, List<(string, ParamRef)>> items = UICache.GetCached(screen, (bank, currentParam),
                 () => ParamRefReverseLookupFieldItems(bank, currentParam));
