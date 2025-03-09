@@ -80,7 +80,7 @@ public static class VertexUtils
             if (axis is RotationAxis.Y)
             {
                 var newX = vertex.Position.X * cos - vertex.Position.Z * sin;
-                var newZ = -vertex.Position.X * sin + vertex.Position.Z * cos;
+                var newZ = vertex.Position.X * sin + vertex.Position.Z * cos;
                 vertex.Position.X = newX;
                 vertex.Position.Z = newZ;
 
