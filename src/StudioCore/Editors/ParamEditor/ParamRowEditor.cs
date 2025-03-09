@@ -182,16 +182,6 @@ public class ParamRowEditor
                             }
                         }
                     }
-
-                    if (ImGui.BeginPopup($"SeparatorContextMenu##{index}"))
-                    {
-                        var scale = DPI.GetUIScale();
-                        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f) * scale);
-                        EditorDecorations.ListReorderOptions(meta.AlternateOrder, field, index);
-                        ImGui.PopStyleVar();
-                        ImGui.EndPopup();
-                    }
-                    
                 }
                 else if (lastRowExists)
                 {
@@ -1242,11 +1232,6 @@ public class ParamRowEditor
             }
 
             ImGui.Separator();
-        }
-        
-        if (ParamEditorScreen.EditorMode && !isPinned && CFG.Current.Param_AllowFieldReorder && meta is { AlternateOrder: not null })
-        {
-            EditorDecorations.ListReorderOptions(meta.AlternateOrder, internalName);
         }
 
         // Compare

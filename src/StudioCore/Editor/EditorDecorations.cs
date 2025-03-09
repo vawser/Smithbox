@@ -1417,23 +1417,6 @@ public class EditorDecorations
             sourceListToModify[indexOfPin + 1] = currentElement;
         }
     }
-    
-    public static void ListReorderOptions<T>(List<T> sourceListToModify, T currentElement, int index = -1)
-    {
-        if (index == -1) index = sourceListToModify.IndexOf(currentElement);
-        if (index > 0 && ImGui.Selectable("Move up"))
-        {
-            T prevKey = sourceListToModify[index - 1];
-            sourceListToModify[index] = prevKey;
-            sourceListToModify[index - 1] = currentElement;
-        }
-        if (index >= 0 && index < sourceListToModify.Count - 1 && ImGui.Selectable("Move down"))
-        {
-            T nextKey = sourceListToModify[index + 1];
-            sourceListToModify[index] = nextKey;
-            sourceListToModify[index + 1] = currentElement;
-        }
-    }
 
     /// <summary>
     ///     Displays information about the provided property.

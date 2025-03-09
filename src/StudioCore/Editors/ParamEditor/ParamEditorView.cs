@@ -657,53 +657,7 @@ public class ParamEditorView
                 // Rows
                 var selectionCache = _selection.GetSelectionCache(rows, "regular");
                 
-                bool allowReorder = CFG.Current.Param_AllowRowReorder;
-                if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedRows && allowReorder)
-                {
-                    List<string> rowOrder;
-                    if (!(meta?.AlternateRowOrders?.TryGetValue(activeParam, out var defRowOrder) ?? false))
-                    {
-                        rowOrder = [];
-                        defRowOrder = null;
-                    }
-                    else
-                    {
-                        rowOrder = [..defRowOrder];
-                    }
-                    HashSet<string> rowOrderSet = [..rowOrder];
-
-                    foreach (var row in para.Rows)
-                    {
-                        if (!rowOrderSet.Contains(row.ID.ToString()))
-                        {
-                            rowOrder.Add(row.ID.ToString());
-                            rowOrderSet.Add(row.ID.ToString());
-                        }
-                    }
-
-                    if (meta != null && ParamEditorScreen.EditorMode)
-                    {
-                        meta.AlternateRowOrders ??= [];
-                        if (defRowOrder == null)
-                            meta.AlternateRowOrders.Add(activeParam, [..rowOrder]);
-                        else if (defRowOrder.Count != rowOrder.Count)
-                            meta.AlternateRowOrders[activeParam] = [..rowOrder];
-                    }
-
-                    Dictionary<string, (int, Param.Row)> rowD = rows
-                        .Select((r, i) => (i, r))
-                        .ToDictionary(t => t.r.ID.ToString());
-
-                    foreach (string rowId in rowOrder)
-                    {
-                        if (!rowD.TryGetValue(rowId, out var row))
-                            continue;
-                        ParamView_RowList_Entry(selectionCache, row.Item1, activeParam, rows, row.Item2, vanillaDiffCache,
-                            auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
-                            meta);
-                    }
-                } 
-                else if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedRows)
+                if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedRows)
                 {
                     for (var i = 0; i < rows.Count; i++)
                     {
@@ -939,7 +893,7 @@ public class ParamEditorView
         ImGui.PopStyleColor();
 
         // Param Context Menu
-        if (ImGui.BeginPopupContextItem(r.ID.ToString()))
+        if (ImGui.BeginPopupContextItem($"{r.ID}_{selectionCacheIndex}"))
         {
             if (CFG.Current.Param_RowContextMenu_NameInput)
             {
@@ -1112,13 +1066,6 @@ public class ParamEditorView
                 {
                     PlatformUtils.Instance.SetClipboardText($"{r.ID}");
                 }
-            }
-            
-            if (ParamEditorScreen.EditorMode && !isPinned && CFG.Current.Param_AllowRowReorder && 
-                (meta?.AlternateRowOrders?.TryGetValue(activeParam, out var rowOrder) ?? false))
-            {
-                ImGui.Separator();
-                EditorDecorations.ListReorderOptions(rowOrder, r.ID.ToString());
             }
 
             ImGui.EndPopup();
