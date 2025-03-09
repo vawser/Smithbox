@@ -902,8 +902,27 @@ public class ParamEditorView
                     var name = _selection.GetActiveRow().Name;
                     if (name != null)
                     {
-                        ImGui.InputText("##rowName", ref name, 255);
-                        _selection.GetActiveRow().Name = name;
+                        ImGui.InputText("##nameMassEdit", ref name, 255);
+
+                        if (ImGui.IsItemDeactivatedAfterEdit())
+                        {
+                            var editor = Smithbox.EditorHandler.ParamEditor;
+                            var editCommand = $"selection: Name := {name}";
+                            editor._activeView._selection.SortSelection();
+
+                            (MassEditResult res, ActionManager child) = MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
+                                editCommand, Smithbox.EditorHandler.ParamEditor._activeView._selection);
+
+                            if (child != null)
+                            {
+                                editor.EditorActionManager.PushSubManager(child);
+                            }
+
+                            if (res.Type == MassEditResultType.SUCCESS)
+                            {
+                                ParamBank.RefreshParamDifferenceCacheTask();
+                            }
+                        }
                     }
                 }
             }
@@ -940,7 +959,7 @@ public class ParamEditorView
                     _paramEditor.Handler.DuplicateHandler();
                 }
 
-                if (ImGui.BeginMenu("Duplicate Row to Commutative Param", Smithbox.EditorHandler.ParamEditor.Handler.IsCommutativeParam()))
+                if (ImGui.BeginMenu("Duplicate selection to commutative param", Smithbox.EditorHandler.ParamEditor.Handler.IsCommutativeParam()))
                 {
                     Smithbox.EditorHandler.ParamEditor.Handler.DisplayCommutativeDuplicateMenu();
 
