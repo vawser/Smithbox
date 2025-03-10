@@ -14,13 +14,13 @@ namespace StudioCore.Scene.Meshes;
 
 public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 {
-    private readonly string _resourceName;
-    private BoundingBox _bounds;
+    public readonly string _resourceName;
+    public BoundingBox _bounds;
 
-    private int _referenceCount;
-    private ResourceHandle<HavokCollisionResource> _resource;
+    public int _referenceCount;
+    public ResourceHandle<HavokCollisionResource> _resource;
 
-    private List<CollisionSubmeshProvider> _submeshes = new();
+    public List<CollisionSubmeshProvider> _submeshes = new();
 
     public CollisionMeshProvider(string resource)
     {

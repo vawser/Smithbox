@@ -23,10 +23,10 @@ namespace StudioCore.Scene.Framework;
 /// </summary>
 public abstract class RenderableProxy : Renderer.IRendererUpdatable, IDisposable
 {
-    protected bool _autoregister = true;
+    public bool _autoregister = true;
 
-    protected bool _registered;
-    private bool disposedValue;
+    public bool _registered;
+    public bool disposedValue;
 
     public abstract bool RenderSelectionOutline { set; get; }
 

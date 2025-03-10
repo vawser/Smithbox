@@ -32,17 +32,17 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Internal. Visibility of the entity.
     /// </summary>
-    protected bool _EditorVisible = true;
+    public bool _EditorVisible = true;
 
     /// <summary>
     /// Internal. Associated render scene mesh for the entity.
     /// </summary>
-    protected RenderableProxy _renderSceneMesh;
+    public RenderableProxy _renderSceneMesh;
 
     /// <summary>
     /// Cached name for the entity.
     /// </summary>
-    private string CachedName;
+    public string CachedName;
 
     /// <summary>
     /// Cached name for the entity.
@@ -52,27 +52,27 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Current model string for the entity.
     /// </summary>
-    protected string CurrentModelName = "";
+    public string CurrentModelName = "";
 
     /// <summary>
     /// Internal. Bool to track if render scene mesh has been disposed of.
     /// </summary>
-    private bool disposedValue;
+    public bool disposedValue;
 
     /// <summary>
     /// Objects referencing the entity.
     /// </summary>
-    private HashSet<Entity> ReferencingObjects;
+    public HashSet<Entity> ReferencingObjects;
 
     /// <summary>
     /// Temporary Transform used by the entity.
     /// </summary>
-    internal Transform TempTransform = Transform.Default;
+    public Transform TempTransform = Transform.Default;
 
     /// <summary>
     /// Bool to track if Temporary Transform is used.
     /// </summary>
-    internal bool UseTempTransform;
+    public bool UseTempTransform;
 
     /// <summary>
     /// Default constructor.

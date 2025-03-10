@@ -5,7 +5,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor.Decorators;
+using StudioCore.Editors.ParamEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tools.Generation;
@@ -135,24 +135,7 @@ public class ParamEditorView
                         EditorCommandQueue.AddCommand($@"param/view/{_viewIndex}/{paramKey}");
                     }
 
-                    if (ImGui.BeginPopupContextItem())
-                    {
-                        if (ImGui.Selectable("Unpin " + paramKey))
-                        {
-                            Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Remove(paramKey);
-                        }
-
-                        EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams, paramKey);
-
-                        if (ImGui.Selectable("Unpin all"))
-                        {
-                            Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.RemoveAll(x => true);
-                        }
-
-                        ImGui.EndPopup();
-                    }
-
-                    DisplayDS2MapNameAlias(paramKey);
+                    ParamEntryContextMenu.Display(p, paramKey, true);
 
                     ImGui.Unindent(15.0f * scale);
                 }
@@ -333,53 +316,7 @@ public class ParamEditorView
             }
 
             // Context Menu
-            if (ImGui.BeginPopupContextItem())
-            {
-                if (ImGui.Selectable("Pin " + paramKey) &&
-                    !Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Contains(paramKey))
-                {
-                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Add(paramKey);
-                }
-
-                if (ImGui.Selectable("Copy Param Name"))
-                {
-                    PlatformUtils.Instance.SetClipboardText(paramKey);
-                }
-
-                // WIKI - Make false to disable
-                if (CFG.Current.EnableWikiTools)
-                {
-                    if (ImGui.Selectable("Export Param Table"))
-                    {
-                        DokuWikiHelper.OutputParamTableInformation();
-                    }
-
-                    if (ImGui.Selectable("Export Specific Param Wiki Table"))
-                    {
-                        DokuWikiHelper.OutputParamInformation(paramKey);
-                    }
-                }
-
-                if (ParamEditorScreen.EditorMode && p != null)
-                {
-                    var meta = ParamMetaData.Get(p.AppliedParamdef);
-
-                    if (meta != null && meta.Wiki == null && ImGui.MenuItem("Add wiki..."))
-                    {
-                        meta.Wiki = "Empty wiki...";
-                    }
-
-                    if (meta?.Wiki != null && ImGui.MenuItem("Remove wiki"))
-                    {
-                        meta.Wiki = null;
-                    }
-                }
-
-                ImGui.EndPopup();
-            }
-
-            // Map alias
-            //DisplayDS2MapNameAlias(paramKey);
+            ParamEntryContextMenu.Display(p, paramKey);
 
             ImGui.Unindent(15.0f * scale);
         }

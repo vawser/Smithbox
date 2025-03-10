@@ -13,6 +13,7 @@ using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.MapEditor.Tools.AssetBrowser;
 using StudioCore.Editors.MapEditor.Tools.DisplayGroups;
+using StudioCore.Editors.MapEditor.Tools.EntityInformation;
 using StudioCore.Editors.MapEditor.Tools.LightmapAtlasEditor;
 using StudioCore.Editors.MapEditor.Tools.MapQuery;
 using StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
@@ -75,6 +76,7 @@ public class MapEditorScreen : EditorScreen
     public MapQueryView MapQueryView;
     public WorldMapView WorldMapView;
     public LocalSearchView LocalSearchView;
+    public EntityInformationView EntityInformationView;
 
     // Menubar
     public BasicFilters BasicFilters;
@@ -107,6 +109,7 @@ public class MapEditorScreen : EditorScreen
         PrefabView = new PrefabView(this);
         SelectionGroupView = new SelectionGroupView(this);
         NavmeshBuilderView = new NavmeshBuilderView(this);
+        EntityInformationView = new EntityInformationView(this);
 
         BasicFilters = new BasicFilters(this);
         RegionFilters = new RegionFilters(this);
@@ -693,6 +696,12 @@ public class MapEditorScreen : EditorScreen
                 UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Viewport_LightmapAtlas);
             }
 
+            if (ImGui.MenuItem("Entity Information"))
+            {
+                UI.Current.Interface_MapEditor_EntityInformation = !UI.Current.Interface_MapEditor_EntityInformation;
+            }
+            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_EntityInformation);
+
             ImGui.Separator();
 
             if (ImGui.MenuItem("Map Object List: Categories"))
@@ -965,6 +974,11 @@ public class MapEditorScreen : EditorScreen
         if (LightmapAtlasView != null)
         {
             LightmapAtlasView.OnGui();
+        }
+
+        if (EntityInformationView != null)
+        {
+            EntityInformationView.OnGui();
         }
 
         ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);

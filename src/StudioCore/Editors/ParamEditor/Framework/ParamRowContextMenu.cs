@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.ParamEditor.Decorators;
+namespace StudioCore.Editors.ParamEditor.Framework;
 
 public static class ParamRowContextMenu
 {
@@ -162,6 +162,7 @@ public static class ParamRowContextMenu
                             }
                         }
                     }
+                    UIHelper.ShowHoverTooltip($"Pin the current row selection to the top of the row list.");
                 }
                 // Unpin
                 else if(isPinned)
@@ -183,6 +184,7 @@ public static class ParamRowContextMenu
                             }
                         }
                     }
+                    UIHelper.ShowHoverTooltip($"Unpin the current row selection from top of the row list.");
                 }
 
                 ImGui.Separator();

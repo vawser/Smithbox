@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors;
@@ -213,14 +214,7 @@ public class Universe
             }
             else
             {
-                if (LoadedObjectContainers[mapid] == null)
-                {
-                    LoadedObjectContainers[mapid] = map;
-                }
-                else
-                {
-                    LoadedObjectContainers[mapid] = map;
-                }
+                LoadedObjectContainers[mapid] = map;
             }
 
             if (CFG.Current.Viewport_Enable_Rendering)

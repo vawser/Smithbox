@@ -22,7 +22,7 @@ namespace StudioCore.Scene.Meshes;
 /// </summary>
 public abstract class MeshProvider
 {
-    protected List<WeakReference<IMeshProviderEventListener>> _listeners = new();
+    public List<WeakReference<IMeshProviderEventListener>> _listeners = new();
 
     /// <summary>
     ///     This mesh provider has child mesh providers. For example, a FLVER mesh

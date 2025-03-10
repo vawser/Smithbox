@@ -26,35 +26,35 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 {
     public string VirtPath;
 
-    private readonly MeshProvider _meshProvider;
+    public readonly MeshProvider _meshProvider;
 
-    private readonly ModelMarkerType _placeholderType;
-    private readonly MeshRenderables _renderablesSet;
+    public readonly ModelMarkerType _placeholderType;
+    public readonly MeshRenderables _renderablesSet;
 
-    private readonly List<MeshRenderableProxy> _submeshes = new();
+    public readonly List<MeshRenderableProxy> _submeshes = new();
 
-    private RenderFilter _drawfilter = RenderFilter.All;
+    public RenderFilter _drawfilter = RenderFilter.All;
 
-    private DrawGroup _drawgroups = new();
-    protected ResourceSet _perObjectResourceSet;
-    protected Pipeline _pickingPipeline;
+    public DrawGroup _drawgroups = new();
+    public ResourceSet _perObjectResourceSet;
+    public Pipeline _pickingPipeline;
 
-    protected Pipeline _pipeline;
-    private RenderableProxy? _placeholderProxy;
+    public Pipeline _pipeline;
+    public RenderableProxy? _placeholderProxy;
 
-    private int _renderable = -1;
+    public int _renderable = -1;
 
-    private bool _renderOutline;
+    public bool _renderOutline;
 
-    private WeakReference<ISelectable> _selectable;
-    protected Pipeline _selectedPipeline;
-    private int _selectionOutlineRenderable = -1;
-    protected Shader[] _shaders;
+    public WeakReference<ISelectable> _selectable;
+    public Pipeline _selectedPipeline;
+    public int _selectionOutlineRenderable = -1;
+    public Shader[] _shaders;
 
-    private bool _visible = true;
+    public bool _visible = true;
 
-    private Matrix4x4 _world = Matrix4x4.Identity;
-    protected GPUBufferAllocator.GPUBufferHandle? _worldBuffer;
+    public Matrix4x4 _world = Matrix4x4.Identity;
+    public GPUBufferAllocator.GPUBufferHandle? _worldBuffer;
 
     public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string virtPath = "")
     {
