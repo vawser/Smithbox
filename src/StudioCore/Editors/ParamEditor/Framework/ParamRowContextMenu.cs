@@ -206,6 +206,7 @@ public static class ParamRowContextMenu
                 decorator.DecorateContextMenuItems(r);
             }
 
+
             // Comparison Options
             if (CFG.Current.Param_RowContextMenu_CompareOptions)
             {

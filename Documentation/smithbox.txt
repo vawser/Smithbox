@@ -37,7 +37,6 @@
  - SDT
  - DS3
  - BB
-- FEAT: action to revert selected row to vanilla data
 - FEAT: add create text entry group for selection (e.g. new weapon infusion).
 
 - FIX: correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)

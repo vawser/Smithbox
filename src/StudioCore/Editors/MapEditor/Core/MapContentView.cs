@@ -63,25 +63,44 @@ public class MapContentView
         Selection.ClearSelection();
         Screen.Universe.LoadMap(MapID, selected);
         Container = Screen.Universe.GetObjectContainerForMap(MapID);
+
+        if (!CFG.Current.MapEditor_EnableMapUnload)
+        {
+            foreach (var entry in Container.Objects)
+            {
+                entry.EditorVisible = true;
+            }
+        }
     }
 
     public void Unload()
     {
         ContentLoadState = MapContentLoadState.Unloaded;
 
-        Screen.EntityTypeCache.RemoveMapFromCache(this);
-
-        Selection.ClearSelection();
-        EditorActionManager.Clear();
-
-        if (Container != null)
+        if (CFG.Current.MapEditor_EnableMapUnload)
         {
-            Screen.Universe.UnloadContainer(Container, true);
-        }
+            Screen.EntityTypeCache.RemoveMapFromCache(this);
 
-        GC.Collect();
-        GC.WaitForPendingFinalizers();
-        GC.Collect();
+            Selection.ClearSelection();
+            EditorActionManager.Clear();
+
+            if (Container != null)
+            {
+                Screen.Universe.UnloadContainer(Container, true);
+            }
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+        }
+        else
+        {
+            // Otherwise, just hide them
+            foreach(var entry in Container.Objects)
+            {
+                entry.EditorVisible = false;
+            }
+        }
     }
 
     /// <summary>

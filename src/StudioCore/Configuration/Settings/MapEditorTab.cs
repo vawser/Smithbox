@@ -21,6 +21,8 @@ public class MapEditorTab
         // General
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Allow map unload", ref CFG.Current.MapEditor_EnableMapUnload);
+            UIHelper.ShowHoverTooltip("When enabled, a map's resources will be unloaded and released when a map is unloaded. If disabled, they are kept in memory until Smithbox closes.");
 
             ImGui.Checkbox("Enable map load on double-click", ref CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click);
             UIHelper.ShowHoverTooltip("This option will cause double-clicking on a map in the map object list to load it.");

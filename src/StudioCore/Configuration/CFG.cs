@@ -231,6 +231,7 @@ public class CFG
     //****************************
     // Settings: Map Editor
     //****************************
+    public bool MapEditor_EnableMapUnload = true;
     public bool MapEditor_IgnoreSaveExceptions = false;
 
     public bool MapEditor_DisplayMapCategories = true;
