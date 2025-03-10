@@ -37,7 +37,6 @@
  - SDT
  - DS3
  - BB
-- FEAT: action to copy AtkParam/BehaviorParam row into _PC version (vice versa)
 - FEAT: action to revert selected row to vanilla data
 - FEAT: add create text entry group for selection (e.g. new weapon infusion).
 

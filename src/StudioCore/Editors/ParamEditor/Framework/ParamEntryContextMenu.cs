@@ -27,6 +27,7 @@ public static class ParamEntryContextMenu
             {
                 PlatformUtils.Instance.SetClipboardText(paramKey);
             }
+            UIHelper.ShowHoverTooltip($"Copy the name of the current param selection to the clipboard.");
 
             // Pin
             if (!isPinnedEntry)
@@ -74,15 +75,17 @@ public static class ParamEntryContextMenu
 
             if (CFG.Current.EnableWikiTools)
             {
-                if (ImGui.Selectable("Export Param Table"))
+                if (ImGui.Selectable("Copy Param List"))
                 {
                     DokuWikiHelper.OutputParamTableInformation();
                 }
+                UIHelper.ShowHoverTooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
 
-                if (ImGui.Selectable("Export Specific Param Wiki Table"))
+                if (ImGui.Selectable("Copy Param Field List"))
                 {
                     DokuWikiHelper.OutputParamInformation(paramKey);
                 }
+                UIHelper.ShowHoverTooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
             }
 
             ImGui.EndPopup();

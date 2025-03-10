@@ -136,6 +136,16 @@ public static class ParamRowContextMenu
                 UIHelper.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyIdAndName.HintText}\n\n" +
                     "Copy the current row selection ID and Name to the clipboard (multiple rows will produce a list of IDs and Names).");
 
+                // Revert to Default
+                if (ImGui.Selectable(@$"Revert to Default", false,
+                        _selection.RowSelectionExists()
+                            ? ImGuiSelectableFlags.None
+                            : ImGuiSelectableFlags.Disabled))
+                {
+                    _paramEditor.Handler.RevertRowToDefault();
+                }
+                UIHelper.ShowHoverTooltip($"Revert the current row selection field values to the vanilla field values.");
+
                 ImGui.Separator();
             }
 

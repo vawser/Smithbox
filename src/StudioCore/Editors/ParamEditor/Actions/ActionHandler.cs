@@ -542,4 +542,40 @@ public class ActionHandler
         }
     }
 
+    public void RevertRowToDefault()
+    {
+        Param baseParam = ParamBank.PrimaryBank.Params[Screen._activeView._selection.GetActiveParam()];
+        Param vanillaParam = ParamBank.VanillaBank.Params[Screen._activeView._selection.GetActiveParam()];
+
+        if (baseParam == null)
+            return;
+
+        if (vanillaParam == null)
+            return;
+
+        List<Param.Row> rows = Screen._activeView._selection.GetSelectedRows();
+
+        List<Param.Row> rowsToInsert = new();
+
+        foreach (Param.Row bRow in rows)
+        {
+            foreach (var vRow in vanillaParam.Rows)
+            {
+                if (vRow.ID == bRow.ID)
+                {
+                    Param.Row newrow = new(vRow, baseParam);
+                    newrow.Name = bRow.Name; // Keep the current name
+                    rowsToInsert.Add(newrow);
+                }
+            }
+        }
+
+        List<EditorAction> actions = new List<EditorAction>();
+
+        actions.Add(new AddParamsAction(baseParam, "legacystring", rowsToInsert, false, true, -1, 0, false));
+
+        var compoundAction = new CompoundAction(actions);
+
+        Screen.EditorActionManager.ExecuteAction(compoundAction);
+    }
 }
