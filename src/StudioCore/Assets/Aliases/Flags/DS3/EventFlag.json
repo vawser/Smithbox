@@ -15,7 +15,28 @@
         
         { "id": "230", "name": "Ceremony Change: Eclipse in Sky", "tags": [ "script" ] },
         
-        { "id": "1000", "name": "Release Flag at Game Start", "tags": [ "" ] },
+        { "id": "711", "name": "Story: Warp to Grand Archives", "tags": [ "story" ] },
+        
+        { "id": "1420", "name": "State: High Priestess Emma - Character State Reset", "tags": [ "character", "state" ] },
+        { "id": "1421", "name": "State: High Priestess Emma - Dead", "tags": [ "character", "state" ] },
+        { "id": "1422", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1423", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1424", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1425", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1426", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1427", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1428", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1429", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1430", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1431", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1432", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1433", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1434", "name": "State: High Priestess Emma - ?", "tags": [ "character", "state" ] },
+        { "id": "1435", "name": "Progression: High Priestess Emma - Progression Flags Reset", "tags": [ "character", "progression" ] },
+        { "id": "1436", "name": "Progression: High Priestess Emma - ?", "tags": [ "character", "progression" ] },
+        { "id": "1437", "name": "Progression: High Priestess Emma - ?", "tags": [ "character", "progression" ] },
+        { "id": "1438", "name": "Progression: High Priestess Emma - Basin of Vows has been given", "tags": [ "character", "progression" ] },
+        { "id": "1439", "name": "Progression: High Priestess Emma - ?", "tags": [ "character", "progression" ] },
         
         { "id": "2000", "name": "System: Is in Multiplayer Session", "tags": [ "system" ] },
         { "id": "2001", "name": "System: Is not in Multiplayer Session", "tags": [ "system" ] },
@@ -31,6 +52,8 @@
         
         { "id": "6000", "name": "Always OFF", "tags": [ "script" ] },
         { "id": "6001", "name": "Always ON", "tags": [ "script" ] },
+        
+        { "id": "6079", "name": "Gesture Pickup: Path of the Dragon", "tags": [ "script", "gesture" ] },
         
         { "id": "6100", "name": "Defeated the Abyss Watchers", "tags": [ "progression" ] },
         { "id": "6101", "name": "Defeated Yhorm the Giant", "tags": [ "progression" ] },
@@ -413,6 +436,11 @@
         
         { "id": "70000100", "name": "Shop Visibility: Mortician's Ashes", "tags": [ "shop" ] },
         { "id": "70000101", "name": "Shop Visibility: Dreamchaser Ashes", "tags": [ "shop" ] },
+        
+        { "id": "73000170", "name": "Dialogue: High Priestess Emma - Attacked", "tags": [ "quest", "dialogue" ] },
+        { "id": "73000180", "name": "Dialogue: High Priestess Emma - Conversation End (Animation)", "tags": [ "quest", "dialogue" ] },
+        { "id": "73000181", "name": "Dialogue: High Priestess Emma - Conversation End (Basin of Vows)", "tags": [ "quest", "dialogue" ] },
+        { "id": "73000182", "name": "Dialogue: High Priestess Emma - Damaged", "tags": [ "quest", "dialogue" ] },
         
         { "id": "73501010", "name": "Quest Lot: Unbreakable Patches - Catarina Helm", "tags": [ "quest", "itemlot" ] },
         { "id": "73501020", "name": "Quest Lot: Unbreakable Patches - Catarina Armor", "tags": [ "quest", "itemlot" ] },

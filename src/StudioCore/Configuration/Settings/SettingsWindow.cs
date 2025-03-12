@@ -55,6 +55,7 @@ public class SettingsWindow
     private AliasTab MovieAliasTab;
     private AliasTab MapAliasTab;
     private AliasTab TimeActsTab;
+    private AliasTab TalksTab;
 
     public bool TabInitialized = false;
 
@@ -121,6 +122,7 @@ public class SettingsWindow
                 ParticleAliasTab = new AliasTab(Smithbox.BankHandler.ParticleAliases, "Particles", ref CFG.Current.ParticleAtlas_ShowTags);
                 MovieAliasTab = new AliasTab(Smithbox.BankHandler.MovieAliases, "Movies", ref CFG.Current.MovieAtlas_ShowTags);
                 TimeActsTab = new AliasTab(Smithbox.BankHandler.TimeActAliases, "Time acts", ref CFG.Current.TimeActAtlas_ShowTags);
+                TalksTab = new AliasTab(Smithbox.BankHandler.TalkAliases, "Talk scripts", ref CFG.Current.TalkAtlas_ShowTags);
             }
         }
     }
@@ -221,6 +223,9 @@ public class SettingsWindow
                     break;
                 case SelectedSettingTab.ProjectAliases_TimeActs:
                     DisplayAliasTab(TimeActsTab, "Time Acts");
+                    break;
+                case SelectedSettingTab.ProjectAliases_Talks:
+                    DisplayAliasTab(TalksTab, "Talk Scripts");
                     break;
             }
             ImGui.EndChild();
@@ -386,6 +391,7 @@ public class SettingsWindow
         [Display(Name = "Movies")] ProjectAliases_Movies,
         [Display(Name = "Sounds")] ProjectAliases_Sounds,
         [Display(Name = "Map Names")] ProjectAliases_MapNames,
-        [Display(Name = "Time Acts")] ProjectAliases_TimeActs
+        [Display(Name = "Time Acts")] ProjectAliases_TimeActs,
+        [Display(Name = "Talk Scripts")] ProjectAliases_Talks
     }
 }

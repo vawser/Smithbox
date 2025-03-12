@@ -52,6 +52,8 @@ public class MapEntityPropertyFieldMeta
 
     public bool ShowEventFlagList { get; set; } = false;
 
+    public bool ShowTalkList { get; set; } = false;
+
     public bool ShowModelLinkButton { get; set; } = false;
 
     public bool ShowSpawnStateList { get; set; } = false;
@@ -153,6 +155,13 @@ public class MapEntityPropertyFieldMeta
         if (tEventFlagList != null)
         {
             ShowEventFlagList = true;
+        }
+
+        // Talk List
+        XmlAttribute tShowTalkList = entry.Attributes["TalkAlias"];
+        if (tShowTalkList != null)
+        {
+            ShowTalkList = true;
         }
 
         // Spawn State List

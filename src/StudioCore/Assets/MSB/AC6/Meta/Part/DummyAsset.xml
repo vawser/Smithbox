@@ -82,7 +82,8 @@
     
     <Asset_TalkID
     AltName="Talk ID"
-    Wiki="" />
+    Wiki="" 
+    TalkAlias="" />
     
     <Asset_Unk4C
     AltName="Unknown: 0x4C"

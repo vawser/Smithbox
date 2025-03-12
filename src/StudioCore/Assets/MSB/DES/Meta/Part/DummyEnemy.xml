@@ -23,7 +23,8 @@
     
     <TalkID
     AltName="Talk Script ID"
-    Wiki="The ID of a talk ESD used by the character." />
+    Wiki="The ID of a talk ESD used by the character." 
+    TalkAlias="" />
     
     <PointMoveType
     AltName="Point Move Type"

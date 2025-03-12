@@ -399,7 +399,17 @@ public static class MapEditorDecorations
             }
         }
 
-        if (display)
+        if (meta != null && meta.ShowTalkList)
+        {
+            if (Smithbox.BankHandler.TalkAliases.Aliases != null)
+            {
+                options = Smithbox.BankHandler.TalkAliases.Aliases.list;
+                enumName = "ESD";
+                display = true;
+            }
+        }
+
+        if (display && options != null)
         {
             ImGui.NextColumn();
 

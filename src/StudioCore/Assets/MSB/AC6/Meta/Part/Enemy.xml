@@ -21,7 +21,8 @@
     
     <TalkID
     AltName="Talk Script ID"
-    Wiki="The ID of a talk ESD used by the character." />
+    Wiki="The ID of a talk ESD used by the character." 
+    TalkAlias="" />
     
     <Enemy_Unk16
     AltName="Unknown: 0x16"

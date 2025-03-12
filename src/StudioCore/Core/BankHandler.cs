@@ -48,6 +48,7 @@ public class BankHandler
     public AliasBank SoundAliases;
     public AliasBank CutsceneAliases;
     public AliasBank MovieAliases;
+    public AliasBank TalkAliases;
 
     public AliasBank TimeActAliases;
     public HavokGeneratorAliasBank HavokGeneratorAliases;
@@ -89,6 +90,7 @@ public class BankHandler
         SoundAliases = new AliasBank("Sound", "Sounds", "Sound");
         CutsceneAliases = new AliasBank("Cutscene", "Cutscenes", "Cutscene");
         MovieAliases = new AliasBank("Movie", "Movies", "Movie");
+        TalkAliases = new AliasBank("Talk", "Talks", "Talk");
 
         TimeActAliases = new AliasBank("TimeActs", "TimeActs", "TimeAct");
 
@@ -131,6 +133,7 @@ public class BankHandler
         SoundAliases.LoadBank();
         CutsceneAliases.LoadBank();
         MovieAliases.LoadBank();
+        TalkAliases.LoadBank();
 
         TimeActAliases.LoadBank();
         HavokGeneratorAliases.LoadBank();
@@ -182,6 +185,7 @@ public class BankHandler
             SoundAliases.LoadBank();
             CutsceneAliases.LoadBank();
             MovieAliases.LoadBank();
+            TalkAliases.LoadBank();
 
             TimeActAliases.LoadBank();
         }

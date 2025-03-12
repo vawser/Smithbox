@@ -19,7 +19,8 @@
     
     <TalkIDs
     AltName="Talk ID"
-    Wiki="The talk ID to associated with the enemy that corresponds to this slot." />
+    Wiki="The talk ID to associated with the enemy that corresponds to this slot." 
+    TalkAlias="" />
     
     <UnkT44
     AltName="Unknown: 0x44"
