@@ -39,7 +39,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
 
     public string SearchBarText = "";
 
-    private string SelectedMap = "";
+    public string SelectedMap = "";
 
     private bool DisplayChaliceDungeons = true;
 

@@ -493,13 +493,16 @@ public static class SearchFilters
             }
 
             // Match: Tags
-            foreach (string tagStr in MapTags)
+            if (MapTags != null)
             {
-                if (tagStr.ToLower().Contains(entry))
-                    match = true;
+                foreach (string tagStr in MapTags)
+                {
+                    if (tagStr.ToLower().Contains(entry))
+                        match = true;
 
-                if (entry == tagStr.ToLower())
-                    match = true;
+                    if (entry == tagStr.ToLower())
+                        match = true;
+                }
             }
         }
 

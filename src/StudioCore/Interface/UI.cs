@@ -100,6 +100,7 @@ public class UI
     public bool Interface_MapEditor_Viewport_Grid = true;
     public bool Interface_MapEditor_Viewport_LightmapAtlas = true;
     public bool Interface_MapEditor_EntityInformation = false;
+    public bool Interface_MapEditor_EntityIdentifierOverview = false;
 
     // Model Editor
     public bool Interface_ModelEditor_ModelHierarchy = true;

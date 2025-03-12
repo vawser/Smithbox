@@ -29,8 +29,8 @@ public class SystemTab
                 ref CFG.Current.Enable_Soapstone_Server);
             UIHelper.ShowHoverTooltip("Enables the Soapstone Server, allow for cross-data integration with DarkScript.");
 
-            ImGui.Checkbox("Enable Debug Tools", ref CFG.Current.DisplayDebugTools);
-            UIHelper.ShowHoverTooltip("If enabled, the debug tools will be available via the icon bar.");
+            ImGui.Checkbox("Enable debugging tools", ref CFG.Current.DisplayDebugTools);
+            UIHelper.ShowHoverTooltip("If enabled, various debugging tools will be available.");
 
             ImGui.Separator();
 

@@ -13,6 +13,7 @@ using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.MapEditor.Tools.AssetBrowser;
 using StudioCore.Editors.MapEditor.Tools.DisplayGroups;
+using StudioCore.Editors.MapEditor.Tools.EntityIdentifierOverview;
 using StudioCore.Editors.MapEditor.Tools.EntityInformation;
 using StudioCore.Editors.MapEditor.Tools.LightmapAtlasEditor;
 using StudioCore.Editors.MapEditor.Tools.MapQuery;
@@ -77,6 +78,7 @@ public class MapEditorScreen : EditorScreen
     public WorldMapView WorldMapView;
     public LocalSearchView LocalSearchView;
     public EntityInformationView EntityInformationView;
+    public EntityIdentifierOverview EntityIdentifierOverview;
 
     // Menubar
     public BasicFilters BasicFilters;
@@ -110,6 +112,7 @@ public class MapEditorScreen : EditorScreen
         SelectionGroupView = new SelectionGroupView(this);
         NavmeshBuilderView = new NavmeshBuilderView(this);
         EntityInformationView = new EntityInformationView(this);
+        EntityIdentifierOverview = new EntityIdentifierOverview(this);
 
         BasicFilters = new BasicFilters(this);
         RegionFilters = new RegionFilters(this);
@@ -696,11 +699,21 @@ public class MapEditorScreen : EditorScreen
                 UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Viewport_LightmapAtlas);
             }
 
-            if (ImGui.MenuItem("Entity Information"))
+            if (ImGui.MenuItem("Entity Identifier Overview"))
             {
-                UI.Current.Interface_MapEditor_EntityInformation = !UI.Current.Interface_MapEditor_EntityInformation;
+                UI.Current.Interface_MapEditor_EntityIdentifierOverview = !UI.Current.Interface_MapEditor_EntityIdentifierOverview;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_EntityInformation);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_EntityIdentifierOverview);
+
+            // Debug only
+            if (CFG.Current.DisplayDebugTools)
+            {
+                if (ImGui.MenuItem("Entity Information"))
+                {
+                    UI.Current.Interface_MapEditor_EntityInformation = !UI.Current.Interface_MapEditor_EntityInformation;
+                }
+                UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_EntityInformation);
+            }
 
             ImGui.Separator();
 
@@ -979,6 +992,11 @@ public class MapEditorScreen : EditorScreen
         if (EntityInformationView != null)
         {
             EntityInformationView.OnGui();
+        }
+
+        if (EntityIdentifierOverview != null)
+        {
+            EntityIdentifierOverview.OnGui();
         }
 
         ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
