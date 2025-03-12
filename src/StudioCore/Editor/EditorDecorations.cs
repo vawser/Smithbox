@@ -208,7 +208,7 @@ public class EditorDecorations
         foreach (ParamRef r in paramRefs)
         {
             Param.Cell? c = context?[r.ConditionField];
-            var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != r.ConditionValue;
+            var inactiveRef = context != null && c != null && Convert.ToUInt32(c.Value.Value) != r.ConditionValue;
             if (inactiveRef)
             {
                 inactiveRefs.Add(r.ParamName);
@@ -400,7 +400,7 @@ public class EditorDecorations
         foreach (ParamRef rf in paramRefs)
         {
             Param.Cell? c = context?[rf.ConditionField];
-            var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != rf.ConditionValue;
+            var inactiveRef = context != null && c != null && Convert.ToUInt32(c.Value.Value) != rf.ConditionValue;
             if (inactiveRef)
             {
                 continue;

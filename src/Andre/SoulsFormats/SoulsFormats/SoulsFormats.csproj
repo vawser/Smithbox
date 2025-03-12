@@ -27,4 +27,8 @@
     <PackageReference Include="System.Text.Json" Version="8.0.5" />
     <PackageReference Include="ZstdNet" Version="1.4.5" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Formats\STAYPARAM\STAYPARAM\" />
+  </ItemGroup>
 </Project>

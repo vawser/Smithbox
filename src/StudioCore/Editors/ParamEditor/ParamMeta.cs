@@ -961,7 +961,7 @@ public class ParamEnum
 public class ParamRef
 {
     public string ConditionField;
-    public int ConditionValue;
+    public uint ConditionValue;
     public int Offset;
     public string ParamName;
 
@@ -986,7 +986,7 @@ public class ParamRef
             var condition = conditionSplit[1].Substring(0, conditionSplit[1].Length - 1)
                 .Split('=', 2, StringSplitOptions.TrimEntries);
             ConditionField = condition[0];
-            ConditionValue = int.Parse(condition[1]);
+            ConditionValue = uint.Parse(condition[1]);
         }
     }
 
