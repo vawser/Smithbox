@@ -2,9 +2,9 @@
 <PARAMMETA XmlVersion="0">
   <Field>
 	<matchAreaId AltName="Match Area ID" Wiki="Simple match area ID" />
-    <multiPlayStartLimitEventFlagId AltName="Multiplayer Start Limit - Event Flag ID" Wiki="Multiplayer start limit event flag ID" />
+    <multiPlayStartLimitEventFlagId AltName="Multiplayer Start Limit - Event Flag ID" Wiki="Multiplayer start limit event flag ID" FlagAlias="" />
     <otherDisableDistance AltName="Disable Intrusion if Other Ghost In Range" Wiki="Other distances that cannot be invaded by spirits. The intrusion position is searched for the intrusion points within the other ghost invasion impossible distance to the other ghost invasion range upper limit from the host position." />
-    <pcPositionSaveLimitEventFlagId AltName="Player Position Save Limit - Event Flag ID" Wiki="PC position save restriction event flag ID (flag ON - PC position save valid flag OFF - PC position save invalid 0 - PC position save always valid)" />
+    <pcPositionSaveLimitEventFlagId AltName="Player Position Save Limit - Event Flag ID" Wiki="PC position save restriction event flag ID (flag ON - PC position save valid flag OFF - PC position save invalid 0 - PC position save always valid)" FlagAlias="" />
     <bossAreaId AltName="Boss Area ID" Wiki="Areas with the same ID are treated as the same boss area." />
     <cultNpcWhiteGhostEntityId_byFree AltName="White Phantom Entity ID - Free Frame" Wiki="NPC White Spirit Summon Ritual Summon The beginning of the free frame ID used as the NPC's entity ID" />
     <bMapGuradianRegion AltName="Is Map Guardian Region" Wiki="Whether to increase or decrease the frame of the map protection area" IsBool="" />
@@ -21,11 +21,11 @@
     <warpItemUsePermitBonfireId_3 AltName="Warp Item Usage Permitted - Bonfire ID [3]" Wiki="Bonfire entity ID 3 used to determine permission to use warp items" />
     <warpItemUsePermitBonfireId_4 AltName="Warp Item Usage Permitted - Bonfire ID [4]" Wiki="Bonfire entity ID 4 used to determine permission to use warp items" />
     <warpItemUsePermitBonfireId_5 AltName="Warp Item Usage Permitted - Bonfire ID [5]" Wiki="Bonfire entity ID 5 used to determine permission to use warp items" />
-    <warpItemProhibitionEventFlagId_1 AltName="Warp Item Prohibition - Event Flag ID [1]" Wiki="Event flag ID 1 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
-    <warpItemProhibitionEventFlagId_2 AltName="Warp Item Prohibition - Event Flag ID [2]" Wiki="Event flag ID 2 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
-    <warpItemProhibitionEventFlagId_3 AltName="Warp Item Prohibition - Event Flag ID [3]" Wiki="Event flag ID 3 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
-    <warpItemProhibitionEventFlagId_4 AltName="Warp Item Prohibition - Event Flag ID [4]" Wiki="Event flag ID 4 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
-    <warpItemProhibitionEventFlagId_5 AltName="Warp Item Prohibition - Event Flag ID [5]" Wiki="Event flag ID 5 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
+    <warpItemProhibitionEventFlagId_1 AltName="Warp Item Prohibition - Event Flag ID [1]" Wiki="Event flag ID 1 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" FlagAlias="" />
+    <warpItemProhibitionEventFlagId_2 AltName="Warp Item Prohibition - Event Flag ID [2]" Wiki="Event flag ID 2 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" FlagAlias="" />
+    <warpItemProhibitionEventFlagId_3 AltName="Warp Item Prohibition - Event Flag ID [3]" Wiki="Event flag ID 3 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" FlagAlias="" />
+    <warpItemProhibitionEventFlagId_4 AltName="Warp Item Prohibition - Event Flag ID [4]" Wiki="Event flag ID 4 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" FlagAlias="" />
+    <warpItemProhibitionEventFlagId_5 AltName="Warp Item Prohibition - Event Flag ID [5]" Wiki="Event flag ID 5 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" FlagAlias="" />
     <enableBloodstain AltName="Enable Bloodstain" Wiki="Effective bloodstain / death illusion" IsBool="" />
     <enableBloodMessage AltName="Enable Blood Message" Wiki="Blood character valid" IsBool="" />
     <enableGhost AltName="Enable Ghost" Wiki="Phantom effective" IsBool="" />
@@ -38,7 +38,7 @@
     <pad1 AltName="" Padding=""/>
     <pad2 AltName="" Padding=""/>
     <pad3 AltName="" Padding=""/>
-    <multiPlayHASHostLimitEventFlagId AltName="Block Yellow Monk Multiplayer - Event Flag ID" Wiki="Yellow Coat Host Restriction Event Flag - When this flag is turned on, multiplayer as a host of Yellow Coat is prohibited. It is assumed that the block clear flag will be inserted. 0 - No limit" />
+    <multiPlayHASHostLimitEventFlagId AltName="Block Yellow Monk Multiplayer - Event Flag ID" Wiki="Yellow Coat Host Restriction Event Flag - When this flag is turned on, multiplayer as a host of Yellow Coat is prohibited. It is assumed that the block clear flag will be inserted. 0 - No limit" FlagAlias="" />
     <otherMaxDistance AltName="Other Ghost Invasion Range - Max Limit" Wiki="Other ghost invasion range upper limit. The intrusion position is searched for the intrusion points within the other ghost invasion impossible distance to the other ghost invasion range upper limit from the host position." />
     <signPuddleOpenEventFlagId AltName="Summoning Pool Open - Event Flag ID" Wiki="Sign accumulation release event flag ID" />
   </Field>

@@ -19,7 +19,7 @@
     </Enum>
   </Enums>
   <Field>
-	<eventflagId AltName="Event Flag ID" Wiki="Used in RegisterBonfire command in EMEVD." />
+	<eventflagId AltName="Event Flag ID" Wiki="Used in RegisterBonfire command in EMEVD." FlagAlias="" />
 	<bonfireEntityId AltName="Bonfire Entity ID" Wiki="Used in RegisterBonfire command in EMEVD." />
 	<BonfireNameId AltName="Bonfire Name ID" Wiki="Stored in Modern_MenuText." FmgRef="Modern_Menu_Text" />
 	<DescriptionTextId AltName="Description ID" Wiki="Unused.\nPresumably stored in Modern_MenuText." FmgRef="Modern_Menu_Text"/>

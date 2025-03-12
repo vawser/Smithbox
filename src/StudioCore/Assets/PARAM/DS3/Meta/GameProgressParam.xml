@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <EventFlagId AltName="Event Flag ID" />
+    <EventFlagId AltName="Event Flag ID" FlagAlias="" />
     <ProgressId AltName="Progress ID" />
     <pad1 AltName="" Padding=""/>
   </Field>
