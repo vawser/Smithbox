@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<STAYPARAMDEF XmlVersion="0">
+  <Fields>
+    <Field Def="f32 unknown_0x00" />
+    <Field Def="f32 unknown_0x04" />
+    <Field Def="s32 hpGaugeMaximumWidth" />
+    <Field Def="s32 mpGaugeMaximumWidth" />
+    
+    <Field Def="s32 staminaGaugeMaximumWidth" />
+    <Field Def="f32 unknown_0x14" />
+    
+    <Field Def="dummy8 padding_0x18[16]" />
+    
+    <Field Def="s32 unknown_0x28" />
+    <Field Def="s32 unknown_0x2C" />
+    
+    <Field Def="f32 unknown_0x30" />
+    <Field Def="f32 unknown_0x34" />
+    <Field Def="s32 unknown_0x38" />
+    <Field Def="s32 unknown_0x3C" />
+    
+    <Field Def="s32 unknown_0x40" />
+    <Field Def="s32 unknown_0x44" />
+    <Field Def="s32 unknown_0x48" />
+    
+    <Field Def="dummy8 padding_0x4C[52]" />
+    
+    <Field Def="f32 unknown_0x80" />
+    
+    <Field Def="dummy8 padding_0x84[130]" />
+  </Fields>
+</STAYPARAMDEF>

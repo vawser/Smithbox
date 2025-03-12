@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<STAYPARAMDEF XmlVersion="0">
+  <Fields>
+    <Field Def="f32 unknown_0x00" />
+    <Field Def="s32 unknown_0x04" />
+    <Field Def="s32 unknown_0x08" />
+    <Field Def="s32 unknown_0x0C" />
+    
+    <Field Def="s32 unknown_0x10" />
+    <Field Def="s32 unknown_0x14" />
+    <Field Def="s32 unknown_0x18" />
+    <Field Def="f32 unknown_0x1C" />
+    
+    <Field Def="f32 unknown_0x20" />
+    <Field Def="f32 unknown_0x24" />
+    
+    <Field Def="dummy8 padding_0x28[104]" />
+    
+    <Field Def="s32 unknown_0x90" />
+    <Field Def="s32 unknown_0x94" />
+    <Field Def="s32 unknown_0x98" />
+    <Field Def="s32 unknown_0x9C" />
+    
+    <Field Def="f32 unknown_0xA0" />
+    <Field Def="f32 unknown_0xA4" />
+    <Field Def="f32 unknown_0xA8" />
+    <Field Def="f32 unknown_0xAC" />
+    
+    <Field Def="f32 unknown_0xB0" />
+    <Field Def="f32 unknown_0xB4" />
+    <Field Def="s32 unknown_0xB8" />
+    <Field Def="s16 unknown_0xBC" />
+    <Field Def="s16 unknown_0xBE" />
+    
+    <Field Def="f32 unknown_0xC0" />
+    <Field Def="s32 unknown_0xC4" />
+    <Field Def="s32 unknown_0xC8" />
+    <Field Def="s32 unknown_0xCC" />
+    
+    <Field Def="s32 unknown_0xD0" />
+    <Field Def="s32 unknown_0xD4" />
+    <Field Def="s32 unknown_0xD8" />
+    <Field Def="s32 unknown_0xDC" />
+    
+    <Field Def="s32 unknown_0xE0" />
+    <Field Def="s32 unknown_0xE4" />
+    <Field Def="s32 unknown_0xE8" />
+    <Field Def="s32 unknown_0xEC" />
+    
+    <Field Def="s32 unknown_0xF0" />
+    <Field Def="s32 unknown_0xF4" />
+    <Field Def="s32 unknown_0xF8" />
+    <Field Def="s32 unknown_0xFC" />
+    
+    <Field Def="s32 unknown_0x100" />
+    <Field Def="s32 unknown_0x104" />
+    <Field Def="s32 unknown_0x108" />
+    <Field Def="s32 unknown_0x10C" />
+    
+    <Field Def="f32 unknown_0x110" />
+    <Field Def="f32 unknown_0x114" />
+    <Field Def="s16 unknown_0x118" />
+    <Field Def="s16 unknown_0x11A" />
+    <Field Def="s16 unknown_0x11C" />
+    <Field Def="s16 unknown_0x11E" />
+    
+    <Field Def="f32 unknown_0x120" />
+    <Field Def="s32 unknown_0x124" />
+    <Field Def="s32 unknown_0x128" />
+    <Field Def="s32 unknown_0x12C" />
+    
+    <Field Def="f32 unknown_0x130" />
+    <Field Def="f32 unknown_0x134" />
+    <Field Def="f32 unknown_0x138" />
+    <Field Def="s32 unknown_0x13C" />
+    
+    <Field Def="f32 unknown_0x140" />
+    <Field Def="f32 unknown_0x144" />
+    <Field Def="s32 unknown_0x148" />
+    <Field Def="s32 unknown_0x14C" />
+    
+    <Field Def="s32 unknown_0x150" />
+    <Field Def="s32 unknown_0x154" />
+    <Field Def="s32 unknown_0x158" />
+    <Field Def="s32 unknown_0x15C" />
+    
+    <Field Def="s32 unknown_0x160" />
+    <Field Def="s32 unknown_0x164" />
+    <Field Def="s32 unknown_0x168" />
+    <Field Def="s32 unknown_0x16C" />
+    
+    <Field Def="s32 unknown_0x170" />
+    <Field Def="f32 unknown_0x174" />
+    <Field Def="s32 unknown_0x178" />
+    <Field Def="s32 unknown_0x17C" />
+    
+    <Field Def="s32 unknown_0x180" />
+    <Field Def="f32 unknown_0x184" />
+    <Field Def="s32 unknown_0x188" />
+    <Field Def="s32 unknown_0x18C" />
+    
+    <Field Def="s32 unknown_0x190" />
+    <Field Def="s32 unknown_0x194" />
+    <Field Def="f32 unknown_0x198" />
+    <Field Def="f32 unknown_0x19C" />
+    
+    <Field Def="f32 unknown_0x1A0" />
+    <Field Def="f32 unknown_0x1A4" />
+    <Field Def="f32 unknown_0x1A8" />
+    <Field Def="f32 unknown_0x1AC" />
+    
+    <Field Def="f32 unknown_0x1B0" />
+    <Field Def="f32 unknown_0x1B4" />
+    <Field Def="f32 unknown_0x1B8" />
+    <Field Def="f32 unknown_0x1BC" />
+    
+    <Field Def="f32 unknown_0x1C0" />
+    <Field Def="f32 unknown_0x1C4" />
+    <Field Def="s32 unknown_0x1C8" />
+    
+    <Field Def="dummy8 padding_0x1CA[76]" />
+  </Fields>
+</STAYPARAMDEF>

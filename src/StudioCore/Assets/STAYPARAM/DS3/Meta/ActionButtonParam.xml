@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters used for interactable prompts." />
+  
+  <Field>
+    
+    <regionType 
+    AltName="Region Type" 
+    Wiki="Range shape (cylinder, prism, capsule)" 
+    Enum="ACTION_BUTTON_REGION_TYPE" />
+	
+    <padding1 
+    AltName="" 
+    Padding=""/>
+	
+    <dummyPoly1 
+    AltName="Dummy Poly [1]" 
+    Wiki="Specify the dummy polygon ID that is the center of the bottom of the range. If there is no dummy polygib or -1 is entered, the center coordinates will be the reference." />
+    
+    <dummyPoly2 
+    AltName="Dummy Poly [2]" 
+    Wiki="Used only when the range type is a capsule. Additional dummy polygon (capsule) that creates a line segment with two dummy polygons" />
+    
+    <radius 
+    AltName="Radius" 
+    Wiki="Radius (cylinder / capsule)" />
+    
+    <angle 
+    AltName="Angle" 
+    Wiki="Angle (cylinder)" />
+    
+    <depth 
+    AltName="Depth" 
+    Wiki="Depth (prism)" />
+    
+    <width 
+    AltName="Width" 
+    Wiki="Width (prism)" />
+    
+    <height 
+    AltName="Height" 
+    Wiki="Height (cylinder / prism)" />
+    
+    <baseHeightOffset 
+    AltName="Bottom Height Offset" 
+    Wiki="How much to raise or lower the Y coordinate of the bottom (cylinder / prism)" />
+    
+    <angleCheckType 
+    AltName="Angle Difference Check Type" 
+    Wiki="Angle difference judgment type (cylinder / prism)" 
+    Enum="ACTION_BUTTON_ANGLE_CHECK_TYPE" />
+	
+    <padding2 
+    Padding=""/>
+	
+    <allowAngle 
+    AltName="Allowable Angle Difference" 
+    Wiki="Allowable angle difference (cylinder / prism)" />
+    
+    <padding3 
+    Padding=""/>
+	
+    <textBoxType 
+    AltName="Textbox Type" 
+    Wiki="Text box type" 
+    Enum="ACTION_BUTTON_TEXT_BOX_TYPE" />
+    
+	<textId 
+    AltName="Text ID" 
+    Wiki="The FMG Entry ID to display." 
+    FmgRef="Event_Text" />
+    
+	<invalidFlag 
+    AltName="Invalid Event Flag" 
+    Wiki="If the event flag is ON, then this action will not appear." 
+    FlagAlias="" />
+    
+	<grayoutFlag 
+    AltName="Grayout Event Flag" 
+    Wiki="If the event flag is ON, then this action will be grayed out." 
+    FlagAlias="" />
+    
+	<priority 
+    AltName="Display Priority" 
+    Wiki="Priority when displaying multiple actions, 0 is highest priority." />
+    
+    <execInvalidTime 
+    AltName="Execution Invalid Time" 
+    Wiki="Invalid time after execution (-infinite by value)" />
+    
+    <execButtonCircle 
+    AltName="Executed via Circle Button" 
+    Wiki="" 
+    IsBool="" />
+    
+    <sameCategoryActionDisplay 
+    AltName="Same Category Action Display" 
+    Wiki="Whether or not action buttons with the same category specified in the program are displayed on top of each other." 
+    IsBool="" />
+    
+    <padding4
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="ACTION_BUTTON_REGION_TYPE" type="u8">
+        <Option Value="0" Name="Cylinder" />
+        <Option Value="1" Name="Prism" />
+        <Option Value="2" Name="Capsule" />
+    </Enum> 
+    <Enum Name="ACTION_BUTTON_ANGLE_CHECK_TYPE" type="u8">
+        <Option Value="0" Name="Point" />
+        <Option Value="1" Name="Line" />
+    </Enum> 
+    <Enum Name="ACTION_BUTTON_TEXT_BOX_TYPE" type="u8">
+        <Option Value="0" Name="Action Button" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

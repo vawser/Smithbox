@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<STAYPARAMDEF XmlVersion="0">
+  <Fields>
+    <Field Def="f32 unknown_0x00" />
+    <Field Def="f32 unknown_0x04" />
+    <Field Def="s32 unknown_0x08" />
+    <Field Def="f32 unknown_0x0C" />
+    <Field Def="dummy8 padding_0x10[240]" />
+  </Fields>
+</STAYPARAMDEF>

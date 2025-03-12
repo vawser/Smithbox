@@ -64,6 +64,7 @@ public class MapContentView
         Screen.Universe.LoadMap(MapID, selected);
         Container = Screen.Universe.GetObjectContainerForMap(MapID);
 
+        // Reveal hidden entities if "Allow map unload" is false 
         if (!CFG.Current.MapEditor_EnableMapUnload)
         {
             foreach (var entry in Container.Objects)
@@ -77,6 +78,7 @@ public class MapContentView
     {
         ContentLoadState = MapContentLoadState.Unloaded;
 
+        // Unload
         if (CFG.Current.MapEditor_EnableMapUnload)
         {
             Screen.EntityTypeCache.RemoveMapFromCache(this);
@@ -93,10 +95,11 @@ public class MapContentView
             GC.WaitForPendingFinalizers();
             GC.Collect();
         }
+        // Option to ignore unloading and just keep map in memory
         else
         {
-            // Otherwise, just hide them
-            foreach(var entry in Container.Objects)
+            // Hide entities if "Allow map unload" is false
+            foreach (var entry in Container.Objects)
             {
                 entry.EditorVisible = false;
             }

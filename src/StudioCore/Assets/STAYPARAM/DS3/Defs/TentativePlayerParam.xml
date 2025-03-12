@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<STAYPARAMDEF XmlVersion="0">
+  <Fields>
+    <Field Def="s32 unknown_0x00" />
+    <Field Def="f32 unknown_0x04" />
+    <Field Def="f32 unknown_0x08" />
+    <Field Def="s16 unknown_0x0C" />
+    <Field Def="s16 unknown_0x0E" />
+    
+    <Field Def="s32 unknown_0x10" />
+    <Field Def="s32 unknown_0x14" />
+    <Field Def="s32 unknown_0x18" />
+    
+    <Field Def="dummy8 padding_0x1C[16]" />
+    
+    <Field Def="s32 unknown_0x2C" />
+    
+    <Field Def="f32 unknown_0x30" />
+    <Field Def="s16 unknown_0x34" />
+    <Field Def="s16 unknown_0x36" />
+    <Field Def="s32 unknown_0x38" />
+    
+    <Field Def="dummy8 padding_0x3C[16]" />
+    
+    <Field Def="s32 unknown_0x4C" />
+    
+    <Field Def="f32 unknown_0x50" />
+    <Field Def="f32 unknown_0x54" />
+    <Field Def="s32 unknown_0x58" />
+    <Field Def="s32 unknown_0x5C" />
+    
+    <Field Def="s32 unknown_0x60" />
+    <Field Def="s32 unknown_0x64" />
+    <Field Def="s32 unknown_0x68" />
+    <Field Def="s32 unknown_0x6C" />
+    
+    <Field Def="f32 unknown_0x70" />
+    <Field Def="f32 unknown_0x74" />
+    <Field Def="f32 unknown_0x78" />
+    <Field Def="f32 unknown_0x7C" />
+    
+    <Field Def="f32 unknown_0x80" />
+    <Field Def="f32 unknown_0x84" />
+    <Field Def="f32 unknown_0x88" />
+    <Field Def="f32 unknown_0x8C" />
+    
+    <Field Def="f32 unknown_0x90" />
+    <Field Def="f32 unknown_0x94" />
+    <Field Def="f32 unknown_0x98" />
+    <Field Def="s32 unknown_0x9C" />
+    
+    <Field Def="dummy8 unknown_0xA0[4]" />
+    <Field Def="s32 unknown_0xA4" />
+    <Field Def="dummy8 unknown_0xA8[4]" />
+    <Field Def="s32 unknown_0xAC" />
+    
+    <Field Def="dummy8 unknown_0xB0[4]" />
+    <Field Def="f32 unknown_0xB4" />
+    <Field Def="dummy8 unknown_0xB8[4]" />
+    <Field Def="f32 unknown_0xBC" />
+    
+    <Field Def="dummy8 unknown_0xC0[4]" />
+    <Field Def="f32 unknown_0xC4" />
+    
+    <Field Def="dummy8 padding_0xC8[60]" />
+  </Fields>
+</STAYPARAMDEF>
