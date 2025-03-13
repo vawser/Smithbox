@@ -49,7 +49,8 @@
     
     <EntityID
     AltName="Entity ID"
-    Wiki="Identifies this region in event scripts." />
+    Wiki="Identifies this region in event scripts." 
+    EntityIdentifier="" />
   </Field>
   
   <Enums>

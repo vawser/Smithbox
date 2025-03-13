@@ -451,7 +451,7 @@ public class MapPropertyView
             committed = true;
         }
 
-        UpdateProperty(proprow, nullableSelection, paramRowOrCell, newval, changed, committed);
+        UpdateProperty(proprow, nullableSelection, meta, paramRowOrCell, oldval, newval, changed, committed);
         ImGui.NextColumn();
         ImGui.PopID();
         id++;
@@ -563,7 +563,7 @@ public class MapPropertyView
             }
         }
 
-        UpdateProperty(prop, entSelection, newval, changed, committed, arrayIndex, classIndex);
+        UpdateProperty(prop, entSelection, meta, oldval, newval, changed, committed, arrayIndex, classIndex);
         ImGui.NextColumn();
     }
 
@@ -1531,22 +1531,21 @@ public class MapPropertyView
         return (isChanged, isDeactivatedAfterEdit);
     }
 
-    private void UpdateProperty(object prop, Entity selection, object obj, object newval,
+    private void UpdateProperty(object prop, Entity selection, MapEntityPropertyFieldMeta meta, object obj, object oldval, object newval,
         bool changed, bool committed, int arrayindex = -1)
     {
-        // TODO2: strip this out in favor of other ChangeProperty
         if (changed)
         {
-            ChangeProperty(prop, selection, obj, newval, ref committed, arrayindex);
+            ChangeProperty(prop, selection, meta, obj, oldval, newval, ref committed, arrayindex);
         }
 
         if (committed)
         {
-            CommitProperty(selection, false);
+            CommitProperty(meta, selection, oldval, newval, false);
         }
     }
 
-    private void ChangeProperty(object prop, Entity selection, object obj, object newval,
+    private void ChangeProperty(object prop, Entity selection, MapEntityPropertyFieldMeta meta, object obj, object oldval, object newval,
         ref bool committed, int arrayindex = -1)
     {
         if (prop == _changingPropery && _lastUncommittedAction != null &&
@@ -1583,12 +1582,17 @@ public class MapPropertyView
         }
     }
 
-    private void CommitProperty(Entity selection, bool destroyRenderModel)
+    private void CommitProperty(MapEntityPropertyFieldMeta meta, Entity selection, object oldval, object newval, bool destroyRenderModel)
     {
         // Invalidate name cache
         if (selection != null)
         {
             selection.Name = null;
+        }
+
+        if (meta.EntityIdentifierProperty)
+        {
+            Smithbox.EditorHandler.MapEditor.EntityIdentifierOverview.UpdateEntityCache(selection, oldval, newval);
         }
 
         selection.BuildReferenceMap();
@@ -1634,6 +1638,8 @@ public class MapPropertyView
     /// <param name="classIndex">Index of the targeted class in an array of classes.</param>
     private void UpdateProperty(object prop,
      IEnumerable<Entity> selection,
+     MapEntityPropertyFieldMeta meta,
+     object oldval,
      object newval,
 
         bool changed,
@@ -1646,13 +1652,18 @@ public class MapPropertyView
             if (changed)
             {
                 ent.CachedAliasName = null;
-                ent.BuildReferenceMap(); 
+                ent.BuildReferenceMap();
+
+                if (meta.EntityIdentifierProperty)
+                {
+                    Smithbox.EditorHandler.MapEditor.EntityIdentifierOverview.UpdateEntityCache(ent, oldval, newval);
+                }
             }
         }
 
         if (changed)
         {
-            ChangePropertyMultiple(prop, selection, newval, ref committed, arrayindex, classIndex);
+            ChangePropertyMultiple(prop, selection, meta, oldval, newval, ref committed, arrayindex, classIndex);
             foreach (var ent in selection)
             {
                 ent.BuildReferenceMap();
@@ -1682,7 +1693,7 @@ public class MapPropertyView
     /// </summary>
     /// <param name="arrayindex">Index of the targeted value in an array of values.</param>
     /// <param name="classIndex">Index of the targeted class in an array of classes.</param>
-    private void ChangePropertyMultiple(object prop, IEnumerable<Entity> ents, object newval, ref bool committed,
+    private void ChangePropertyMultiple(object prop, IEnumerable<Entity> ents, MapEntityPropertyFieldMeta meta, object oldval, object newval, ref bool committed,
         int arrayindex = -1, int classIndex = -1)
     {
         if (prop == _changingPropery && _lastUncommittedAction != null &&

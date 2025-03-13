@@ -92,26 +92,7 @@ public class EntityIdentifierOverview
             if (Screen.MapListView.SelectedMap == "")
                 ImGui.Text("No map has been loaded and selected yet.");
 
-            foreach (var entry in Screen.MapListView.ContentViews)
-            {
-                var mapId = entry.Key;
-                var view = entry.Value;
-
-                if (mapId != Screen.MapListView.SelectedMap)
-                {
-                    continue;
-                }
-
-                if (view.ContentLoadState is MapContentLoadState.Unloaded)
-                {
-                    continue;
-                }
-
-                if (EntityCache.ContainsKey(mapId))
-                {
-                    DisplayEIOList(mapId, view);
-                }
-            }
+            DisplayEIOList();
 
             ImGui.EndChild();
         }
@@ -124,140 +105,162 @@ public class EntityIdentifierOverview
 
     // TODO: add a hook in the property editor that updates individal cache entries if the entity ID changes
     // That way the user won't need to refresh all of the list constantly
+    // Use MSB Meta to tag the EntityID properties, then use that to know when to invoke hook from property editor
+
     // Could also warn the user if the entity ID already matches something
-
-    // Whenever a map is loaded, setup the entity cache
-    public void SetupEntityCache()
+    public void UpdateEntityCache(Entity curEntity, object oldValue, object newValue)
     {
-        foreach (var viewEntry in Screen.MapListView.ContentViews)
+        var oldKey = $"{oldValue}";
+        var newKey = $"{newValue}";
+
+        if (newKey == "")
+            return;
+
+        if (oldKey == newKey)
+            return;
+
+        var mapID = Screen.MapListView.SelectedMap;
+
+        if (Screen.MapListView.ContentViews.ContainsKey(mapID))
         {
-            var mapId = viewEntry.Key;
-            var view = viewEntry.Value;
+            var curView = Screen.MapListView.ContentViews[mapID];
 
-            if (viewEntry.Value.ContentLoadState is MapContentLoadState.Loaded)
+            if (EntityCache.ContainsKey(mapID))
             {
-                Dictionary<string, Entity> cacheEntry = new Dictionary<string, Entity>();
+                var targetCache = EntityCache[mapID];
 
-                if (EntityCache.ContainsKey(mapId))
+                if (targetCache.ContainsKey(oldKey))
                 {
-                    cacheEntry = EntityCache[mapId];
-                }
-                else
-                {
-                    EntityCache.Add(mapId, new Dictionary<string, Entity>());
-                    cacheEntry = EntityCache[mapId];
+                    targetCache[oldKey] = null;
                 }
 
-                AddCacheEntry(cacheEntry, view, mapId);
-            }
-            else if (viewEntry.Value.ContentLoadState is MapContentLoadState.Unloaded)
-            {
-                if(EntityCache.ContainsKey(mapId))
+                if (targetCache.ContainsKey(newKey))
                 {
-                    EntityCache[mapId] = new Dictionary<string, Entity>();
-                }
-                else
-                {
-                    EntityCache.Add(mapId, new Dictionary<string, Entity>());
+                    targetCache[newKey] = curEntity;
                 }
             }
         }
     }
 
-    public void DisplayEIOList(string mapId, MapContentView view)
+    public void SetupEntityCache()
     {
-        foreach (var viewEntry in Screen.MapListView.ContentViews)
+        var mapID = Screen.MapListView.SelectedMap;
+
+        if (Screen.MapListView.ContentViews.ContainsKey(mapID))
         {
-            if (viewEntry.Value.ContentLoadState is MapContentLoadState.Loaded)
+            var curView = Screen.MapListView.ContentViews[mapID];
+
+            Dictionary<string, Entity> cacheEntry = new Dictionary<string, Entity>();
+
+            if (EntityCache.ContainsKey(mapID))
             {
-                if (EntityCache.ContainsKey(viewEntry.Key))
+                cacheEntry = EntityCache[mapID];
+            }
+            else
+            {
+                EntityCache.Add(mapID, new Dictionary<string, Entity>());
+                cacheEntry = EntityCache[mapID];
+            }
+
+            AddCacheEntry(cacheEntry, curView, mapID);
+        }
+    }
+
+    public void DisplayEIOList()
+    {
+        var mapID = Screen.MapListView.SelectedMap;
+
+        if (Screen.MapListView.ContentViews.ContainsKey(mapID))
+        {
+            var curView = Screen.MapListView.ContentViews[mapID];
+
+            if (EntityCache.ContainsKey(mapID))
+            {
+                var targetCache = EntityCache[mapID];
+
+                foreach (var cacheEntry in targetCache)
                 {
-                    var targetCache = EntityCache[viewEntry.Key];
+                    var id = cacheEntry.Key;
+                    var entity = cacheEntry.Value;
 
-                    foreach (var cacheEntry in targetCache)
+                    if (BlockSeperatorType != BlockSeperatorType.None)
                     {
-                        var id = cacheEntry.Key;
-                        var entity = cacheEntry.Value;
+                        var curId = 0;
+                        int.TryParse(id, out curId);
 
-                        if (BlockSeperatorType != BlockSeperatorType.None)
+                        if (curId != 0 && curId % 1000 == 0)
                         {
-                            var curId = 0;
-                            int.TryParse(id, out curId);
+                            ImGui.Separator();
+                        }
 
-                            if (curId != 0 && curId % 1000 == 0)
+                        if (BlockSeperatorType is BlockSeperatorType.Hundreds)
+                        {
+                            if (curId != 0 && curId % 100 == 0)
                             {
                                 ImGui.Separator();
                             }
+                        }
+                    }
 
-                            if (BlockSeperatorType is BlockSeperatorType.Hundreds)
+                    if (SearchText != "")
+                    {
+                        if(!$"{id}".Contains(SearchText))
+                        {
+                            continue;
+                        }
+                    }
+
+                    if(HideUnassigned)
+                    {
+                        if (entity == null)
+                            continue;
+                    }
+
+                    if (ImGui.Selectable($"{id}", SelectedIdentifier == $"{id}"))
+                    {
+                        SelectedIdentifier = $"{id}";
+
+                        if (entity != null)
+                        {
+                            Screen.Selection.ClearSelection();
+                            Screen.Selection.AddSelection(entity);
+                            Screen.ActionHandler.ApplyFrameInViewport();
+                        }
+                    }
+
+                    if (SelectedIdentifier == $"{id}")
+                    {
+                        if (ImGui.BeginPopupContextWindow($"{id}_ContextMenu"))
+                        {
+                            if (ImGui.Selectable($"Copy ID##copyId_{id}"))
                             {
-                                if (curId != 0 && curId % 100 == 0)
-                                {
-                                    ImGui.Separator();
-                                }
+                                PlatformUtils.Instance.SetClipboardText($"{id}");
                             }
-                        }
-
-                        if (SearchText != "")
-                        {
-                            if(!$"{id}".Contains(SearchText))
-                            {
-                                continue;
-                            }
-                        }
-
-                        if(HideUnassigned)
-                        {
-                            if (entity == null)
-                                continue;
-                        }
-
-                        if (ImGui.Selectable($"{id}", SelectedIdentifier == $"{id}"))
-                        {
-                            SelectedIdentifier = $"{id}";
 
                             if (entity != null)
                             {
-                                Screen.Selection.ClearSelection();
-                                Screen.Selection.AddSelection(entity);
-                                Screen.ActionHandler.ApplyFrameInViewport();
-                            }
-                        }
-
-                        if (SelectedIdentifier == $"{id}")
-                        {
-                            if (ImGui.BeginPopupContextWindow($"{id}_ContextMenu"))
-                            {
-                                if (ImGui.Selectable($"Copy ID##copyId_{id}"))
+                                if (ImGui.Selectable($"Copy Name##copyName_{id}"))
                                 {
-                                    PlatformUtils.Instance.SetClipboardText($"{id}");
+                                    PlatformUtils.Instance.SetClipboardText(entity.Name);
                                 }
 
-                                if (entity != null)
+                                if (ImGui.Selectable($"Copy ID and Name##copyIdAndName_{id}"))
                                 {
-                                    if (ImGui.Selectable($"Copy Name##copyName_{id}"))
-                                    {
-                                        PlatformUtils.Instance.SetClipboardText(entity.Name);
-                                    }
-
-                                    if (ImGui.Selectable($"Copy ID and Name##copyIdAndName_{id}"))
-                                    {
-                                        PlatformUtils.Instance.SetClipboardText($"{id};{entity.Name}");
-                                    }
+                                    PlatformUtils.Instance.SetClipboardText($"{id};{entity.Name}");
                                 }
-
-                                ImGui.EndPopup();
                             }
-                        }
 
-                        if (entity == null)
-                        {
-                            UIHelper.DisplayColoredAlias("Not assigned", UI.Current.ImGui_Invalid_Text_Color);
+                            ImGui.EndPopup();
                         }
-                        else
-                        {
-                            UIHelper.DisplayAlias($"{entity.Name}");
-                        }
+                    }
+
+                    if (entity == null)
+                    {
+                        UIHelper.DisplayColoredAlias("Not assigned", UI.Current.ImGui_Invalid_Text_Color);
+                    }
+                    else
+                    {
+                        UIHelper.DisplayAlias($"{entity.Name}");
                     }
                 }
             }
@@ -302,7 +305,10 @@ public class EntityIdentifierOverview
         var baseIdStr = mapId.Replace("m", "").Replace("_", "");
 
         // 7 width for DS3
-        baseIdStr = $"{baseIdStr.Substring(0, 4)}000";
+        var topID = $"{baseIdStr.Substring(0, 2)}";
+        var midID = $"{baseIdStr.Substring(3, 1)}0"; // Grab the fourth digit, then swap to third digit position
+
+        baseIdStr = $"{topID}{midID}000";
 
         int.TryParse(baseIdStr, out baseId);
 

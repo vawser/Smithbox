@@ -26,6 +26,7 @@ public class MapEntityPropertyFieldMeta
     public bool PositionProperty { get; set; } = false;
     public bool RotationProperty { get; set; } = false;
     public bool ScaleProperty { get; set; } = false;
+    public bool EntityIdentifierProperty { get; set; } = false;
 
     // Meta
     public List<ParamRef> ParamRef { get; set; } = new List<ParamRef>();
@@ -204,6 +205,13 @@ public class MapEntityPropertyFieldMeta
         if (IsRotation != null)
         {
             RotationProperty = true;
+        }
+
+        // Entity ID Property
+        XmlAttribute EntityIdentifier = entry.Attributes["EntityIdentifier"];
+        if (EntityIdentifier != null)
+        {
+            EntityIdentifierProperty = true;
         }
 
         // Scale Property

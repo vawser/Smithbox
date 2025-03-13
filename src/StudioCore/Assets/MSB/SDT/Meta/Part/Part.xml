@@ -33,7 +33,8 @@
     
     <EntityID
     AltName="Entity ID"
-    Wiki="Identifies the map object in event scripts." />
+    Wiki="Identifies the map object in event scripts." 
+    EntityIdentifier="" />
     
     <UnkE04
     AltName="Unknown: 0x4"

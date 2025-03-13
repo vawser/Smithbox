@@ -26,7 +26,8 @@
     
     <EntityID
     AltName="Entity ID"
-    Wiki="Identifies the part in event scripts." />
+    Wiki="Identifies the part in event scripts." 
+    EntityIdentifier="" />
   </Field>
   
   <Enums>

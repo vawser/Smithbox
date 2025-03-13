@@ -59,7 +59,8 @@
     
     <EntityID
     AltName="Entity ID"
-    Wiki="Identifies this region in event scripts." />
+    Wiki="Identifies this region in event scripts." 
+    EntityIdentifier="" />
     
     <UnkC08
     AltName="Unknown: 0x8"

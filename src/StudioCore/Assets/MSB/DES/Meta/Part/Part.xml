@@ -47,7 +47,8 @@
     
     <EntityID
     AltName="Entity ID"
-    Wiki="Identifies the map object in event scripts." />
+    Wiki="Identifies the map object in event scripts." 
+    EntityIdentifier="" />
     
     <LightID
     AltName="Light ID"
