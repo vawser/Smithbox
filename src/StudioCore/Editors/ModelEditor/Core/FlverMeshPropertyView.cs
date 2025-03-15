@@ -145,6 +145,12 @@ public class FlverMeshPropertyView
             }
         }
 
+        if (ImGui.CollapsingHeader("UVs"))
+        {
+            DisplayUVProperties(entry.Vertices);
+        }
+
+
         DisplayMeshAdjustments(entry);
     }
 
@@ -382,6 +388,102 @@ public class FlverMeshPropertyView
         ImGui.Columns(1);
 
         vertexBuffer.LayoutIndex = layoutIndex;
+    }
+
+    private int _selectedUvChannel = -1;
+
+    private void DisplayUVProperties(IReadOnlyList<FLVER.Vertex> vertices)
+    {
+        List<string> uvChannelNames = new();
+        for (int i = 0; i < vertices[0].UVs.Count; i++)
+        {
+            uvChannelNames.Add($"UV{i}");
+        }
+
+        // Render UV Channel Selection UI
+        ImGui.Columns(2);
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("UV Channel");
+        UIHelper.ShowHoverTooltip("Select which UV channel to edit.");
+        ImGui.NextColumn();
+
+        if (ImGui.BeginCombo($"##UVChannelSelector", _selectedUvChannel >= 0 ? uvChannelNames[_selectedUvChannel] : "None"))
+        {
+            foreach ((string uvName, int index) in uvChannelNames.Select((name, idx) => (name, idx)))
+            {
+                bool isSelected = (_selectedUvChannel == index);
+                if (index != -1 && ImGui.Selectable(uvName, isSelected))
+                {
+                    _selectedUvChannel = index;
+                }
+            }
+            ImGui.EndCombo();
+        }
+
+        // Render UV Actions (Mirror Buttons)
+        if (_selectedUvChannel >= 0)
+        {
+            if (ImGui.Button($"Mirror {uvChannelNames[_selectedUvChannel]} on X"))
+            {
+                Screen.EditorActionManager.ExecuteAction(new MirrorUVs(vertices, _selectedUvChannel, true));
+            }
+            ImGui.SameLine();
+            if (ImGui.Button($"Mirror {uvChannelNames[_selectedUvChannel]} on Y"))
+            {
+                Screen.EditorActionManager.ExecuteAction(new MirrorUVs(vertices, _selectedUvChannel, false));
+            }
+
+            // For testing purposes: Show first vertex UV
+            ImGui.NewLine();
+            ImGui.Text($"First Vertex UV: {vertices[0].UVs[_selectedUvChannel]}");
+        }
+
+        // Render the Palette Grid (using CGRam data)
+        var PalZoom = 4; // scaleable
+        var CGRam = new uint[256]; // data (assuming it’s set somewhere)
+        var drawList = ImGui.GetWindowDrawList();
+
+        for (int r = 0; r < 16; r++)
+        {
+            for (int c = 0; c < 16; c++)
+            {
+                // Get position of the current grid cell
+                var p = ImGui.GetCursorScreenPos();
+                var x = p.X + (c * PalZoom);
+                var y = p.Y + (r * PalZoom);
+
+                // Draw the colored rectangle for this grid cell
+                drawList.AddRectFilled(
+                    new Vector2(x, y), // rect start position
+                    new Vector2(x + PalZoom, y + PalZoom), // rect end position
+                    CGRam[(r * 16) + c]); // index into data directly
+            }
+        }
+
+        // Dummy element to provide spacing for the grid
+        ImGui.Dummy(new Vector2(PalZoom * 16, PalZoom * 16f));
+
+        ImGui.Columns(1); // Reset columns back to default
+
+        
+        if (_selectedUvChannel > -1 && _selectedUvChannel < uvChannelNames.Count)
+        {
+
+            // Draw a rectangle spanning two columns
+            var pos = ImGui.GetCursorScreenPos();
+            var size = ImGui.GetContentRegionAvail();
+            float UVHeight = size.X;
+            drawList.AddRectFilled(pos, new Vector2(pos.X + size.X, pos.Y + UVHeight), ImGui.GetColorU32(ImGuiCol.Button));
+            drawList.AddRect(pos, new Vector2(pos.X + size.X, pos.Y + UVHeight), ImGui.GetColorU32(ImGuiCol.Border));
+
+            foreach (var point in vertices.Select(x => x.UVs[_selectedUvChannel]))
+            {
+                drawList.AddCircleFilled(new Vector2(pos.X + size.X * point.X, pos.Y + UVHeight * point.Y), 2.0f, 0xFF00FF00); // Green points
+            }
+
+            // Extend the scroll area by 200 pixels
+            ImGui.Dummy(new Vector2(0, UVHeight));
+        }
     }
 
     private void DisplayBoundingBoxProperties(FLVER2.Mesh.BoundingBoxes boundingBox)
