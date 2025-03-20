@@ -1,15 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration for each OS Tuning install or upgrade." />
+  
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="OsReinforce" 
+    Name="OS Tuning" />
+  </DisplayNames>
+  
   <Field>
-    <Unk0x00 Padding="" />
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
     
-    <osInstallLevels AltName="OS Install - Number of Unlocks" Wiki="Number of unlocks that this OS tuning option has. 1 is Install, 2 and above are upgrades." />
-    <osInstallImage AltName="OS Install - Image ID" Wiki="Refers to the icon ID from SB_OsIcon.layout" TextureRef="Direct/01_common/SB_OsIcon/osInstallImage/OsIcon_" />
+    <disableParam_Product 
+    AltName="Disable Param - Product" 
+    Wiki="Parameters marked with  are excluded in the Product version package." 
+    IsBool="" />
     
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
     
-    <osInstall_DisplayText_Effect AltName="OS Install - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
-    <osInstall_DisplayText_OstChipCost AltName="OS Install - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
-    <osInstall_DisplayText_Description AltName="OS Install - Effect Description" FmgRef="Modern_Menu_Text" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <maxLevel 
+    AltName="OS Install: Number of Unlocks" 
+    Wiki="Number of unlocks that this OS tuning option has. 1 is Install, 2 and above are upgrades." />
+    
+    <iconId 
+    AltName="OS Install: Image ID" 
+    Wiki="Refers to the icon ID from SB_OsIcon.layout" 
+    TextureRef="Direct/01_common/SB_OsIcon/osInstallImage/OsIcon_" />
+    
+    <pad0
+    Padding="" />
+    
+    <addVal_lv1 
+    AltName="OS Install 1: Effect Value" 
+    Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    <exp_lv1 
+    AltName="OS Install 1: OST Chip Cost" 
+    Wiki="The cost in OS chips for the upgrade." />
+    
+    <textId_lv1 
+    AltName="OS Install 1: Effect Description" 
+    Wiki="The description text that displays the effect. The effect value is placed within this FMG text." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <pad_lv1_0
+    Padding="" />
     
     <osUpgrade1_DisplayText_Effect AltName="OS Upgrade 1 - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
     <osUpgrade1_DisplayText_OstChipCost AltName="OS Upgrade 1 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
@@ -34,5 +79,4 @@
     <Unk0x68 Padding="" />
     <Unk0x80 Padding="" />
   </Field>
-  <Self Wiki="Determines the configuration for each OS Tuning install or upgrade." />
 </PARAMMETA>
