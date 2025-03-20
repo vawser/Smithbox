@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration for each OS Tuning install or upgrade." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="OsReinforce" 
+    Name="OS Tuning" />
+  </DisplayNames>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param - Product" 
+    Wiki="Parameters marked with  are excluded in the Product version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <maxLevel 
+    AltName="OS Install: Number of Unlocks" 
+    Wiki="Number of unlocks that this OS tuning option has. 1 is Install, 2 and above are upgrades." />
+    
+    <iconId 
+    AltName="OS Install: Image ID" 
+    Wiki="Refers to the icon ID from SB_OsIcon.layout" 
+    TextureRef="Direct/01_common/SB_OsIcon/iconId/OsIcon_" />
+    
+    <pad0
+    Padding="" />
+    
+    <addVal_lv1 
+    AltName="OS Install 1: Value" 
+    Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    
+    <exp_lv1 
+    AltName="OS Install 1: Cost" 
+    Wiki="The cost in OS chips for the upgrade." />
+    
+    <textId_lv1 
+    AltName="OS Install 1: Description" 
+    Wiki="The description text that displays the effect. The effect value is placed within this FMG text." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <pad_lv1_0
+    Padding="" />
+    
+    <addVal_lv2 
+    AltName="OS Install 2: Value" 
+    Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    
+    <exp_lv2 
+    AltName="OS Install 2: Cost" 
+    Wiki="The cost in OS chips for the upgrade." />
+    
+    <textId_lv2 
+    AltName="OS Install 2: Description" 
+    Wiki="The description text that displays the effect. The effect value is placed within this FMG text." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <pad_lv2_0
+    Padding="" />
+    
+    <addVal_lv3 
+    AltName="OS Install 3: Value" 
+    Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    
+    <exp_lv3 
+    AltName="OS Install 3: Cost" 
+    Wiki="The cost in OS chips for the upgrade." />
+    
+    <textId_lv3
+    AltName="OS Install 3: Description" 
+    Wiki="The description text that displays the effect. The effect value is placed within this FMG text." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <pad_lv3_0
+    Padding="" />
+    
+    <addVal_lv4 
+    AltName="OS Install 4: Value" 
+    Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    
+    <exp_lv4 
+    AltName="OS Install 4: Cost" 
+    Wiki="The cost in OS chips for the upgrade." />
+    
+    <textId_lv4
+    AltName="OS Install 4: Description" 
+    Wiki="The description text that displays the effect. The effect value is placed within this FMG text." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <pad_lv4_0
+    Padding="" />
+    
+    <addVal_lv5
+    AltName="OS Install 5: Value" 
+    Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    
+    <exp_lv5 
+    AltName="OS Install 5: Cost" 
+    Wiki="The cost in OS chips for the upgrade." />
+    
+    <textId_lv5
+    AltName="OS Install 5: Description" 
+    Wiki="The description text that displays the effect. The effect value is placed within this FMG text." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <pad_lv5_0
+    Padding="" />
+    
+    <pad_end
+    Padding="" />
+  </Field>
+</PARAMMETA>

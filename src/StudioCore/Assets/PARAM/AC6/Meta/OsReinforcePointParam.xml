@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the number of OST chips given. Referenced by UnlockParam_OsPoint." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="OsReinforcePoint" 
+    Name="OST Chip Awards" />
+  </DisplayNames>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param - Product" 
+    Wiki="Parameters marked with  are excluded in the Product version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <point 
+    AltName="Award Amount" 
+    Wiki="The amount of chips to award." />
+    
+    <pad0
+    Padding="" />
+  </Field>
+</PARAMMETA>
