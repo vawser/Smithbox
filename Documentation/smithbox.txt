@@ -39,6 +39,11 @@
 - FIX: shortcuts don't work with secondary overviews
 
 #--------------------------------------
+# GPARAM Editor
+#--------------------------------------
+- FEAT: let Bloodborne gparambnd be edited, not only gparam.dcx
+
+#--------------------------------------
 # EMEVD Editor
 #--------------------------------------
 - FEAT: enum selection changes value

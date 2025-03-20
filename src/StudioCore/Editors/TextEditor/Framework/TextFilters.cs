@@ -178,6 +178,8 @@ public class TextFilters
         return isValid;
     }
 
+    public bool FocusSelection_FmgEntryFilter = false;
+
     /// <summary>
     /// Display the fmg entry filter UI
     /// </summary>
@@ -185,6 +187,11 @@ public class TextFilters
     {
         ImGui.InputText($"Search##fmgEntryFilterSearch", ref FmgEntryFilterInput, 255);
         UIHelper.ShowWideHoverTooltip("Chain commands by using the + symbol between them.\n\nSpecial commands:\nmodified - Displays rows where the text is different to vanilla.\nunique - Displays rows that are unique to your project.");
+
+        if (ImGui.IsItemDeactivated())
+        {
+            Screen.Selection.FocusFmgEntrySelection = true;
+        }
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fmgEntryFilterExactMatch", ref FmgEntryFilterExactMatch);

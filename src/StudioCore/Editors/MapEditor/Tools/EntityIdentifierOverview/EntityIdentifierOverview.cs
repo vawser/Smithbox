@@ -103,11 +103,8 @@ public class EntityIdentifierOverview
 
     private Dictionary<string, Dictionary<string, Entity>> EntityCache = new();
 
-    // TODO: add a hook in the property editor that updates individal cache entries if the entity ID changes
-    // That way the user won't need to refresh all of the list constantly
-    // Use MSB Meta to tag the EntityID properties, then use that to know when to invoke hook from property editor
-
-    // Could also warn the user if the entity ID already matches something
+    // TODO: need to change the MapPropertyView part so it is within the Action, so undo is responded to.
+    // TODO: store previous state for one value 'roll' so we can restore the old ID <> Entity association if the user is changing the ID multiple times (e.g. 1 -> 2 -> 3 would wipe the original ID <> Entity association of 1 and 2, even though the curEntity is pointing to 3)
     public void UpdateEntityCache(Entity curEntity, object oldValue, object newValue)
     {
         var oldKey = $"{oldValue}";
