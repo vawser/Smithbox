@@ -1590,7 +1590,7 @@ public class MapPropertyView
             selection.Name = null;
         }
 
-        if (meta.EntityIdentifierProperty)
+        if (meta != null && meta.EntityIdentifierProperty)
         {
             Smithbox.EditorHandler.MapEditor.EntityIdentifierOverview.UpdateEntityCache(selection, oldval, newval);
         }
