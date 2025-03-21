@@ -23,6 +23,7 @@ public class DisplayGroupView
     private ViewportSelection Selection;
 
     private int _dispGroupCount = 8;
+    private string _lastHoveredCheckbox;
 
     public readonly HashSet<string> HighlightedGroups = new();
 
@@ -329,6 +330,22 @@ public class DisplayGroupView
                         else
                         {
                             dg.RenderGroups[g] &= ~(1u << i);
+                        }
+                    }
+
+                    if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenBlockedByActiveItem) && ImGui.IsMouseDown(ImGuiMouseButton.Left))
+                    {
+                        if (_lastHoveredCheckbox != cellKey)
+                        {
+                            if (check)
+                            {
+                                dg.RenderGroups[g] &= ~(1u << i);
+                            }
+                            else
+                            {
+                                dg.RenderGroups[g] |= 1u << i;
+                            }
+                            _lastHoveredCheckbox = cellKey;
                         }
                     }
 
