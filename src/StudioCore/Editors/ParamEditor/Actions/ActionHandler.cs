@@ -334,12 +334,12 @@ public class ActionHandler
     {
         var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
 
-        if (selectedParam.ActiveParamExists())
-        {
-            bool _rowNameImport_useProjectNames = CurrentSourceCategory == SourceType.Project;
-            bool _rowNameImport_useDeveloperNames = CurrentSourceCategory == SourceType.Developer;
+        bool _rowNameImport_useProjectNames = CurrentSourceCategory == SourceType.Project;
+        bool _rowNameImport_useDeveloperNames = CurrentSourceCategory == SourceType.Developer;
 
-            if (ParamBank.PrimaryBank.Params != null)
+        if (ParamBank.PrimaryBank.Params != null)
+        {
+            if (selectedParam.ActiveParamExists())
             {
                 switch (CurrentTargetCategory)
                 {
@@ -365,6 +365,24 @@ public class ActionHandler
                                 _rowNameImport_useDeveloperNames)
                         );
                         break;
+                    case TargetType.AllParams:
+                        Screen.EditorActionManager.ExecuteAction(
+                            ParamBank.PrimaryBank.LoadParamDefaultNames(
+                                null,
+                                _rowNameImporter_EmptyOnly,
+                                _rowNameImporter_VanillaOnly,
+                                _rowNameImport_useProjectNames,
+                                _rowNameImport_useDeveloperNames)
+                        );
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+            else
+            {
+                switch (CurrentTargetCategory)
+                {
                     case TargetType.AllParams:
                         Screen.EditorActionManager.ExecuteAction(
                             ParamBank.PrimaryBank.LoadParamDefaultNames(

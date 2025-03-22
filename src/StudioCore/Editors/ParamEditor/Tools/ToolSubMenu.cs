@@ -136,12 +136,9 @@ public class ToolSubMenu
 
                         if (ImGui.MenuItem("All Params"))
                         {
-                            if (Screen._activeView._selection.RowSelectionExists())
-                            {
-                                Handler.CurrentSourceCategory = SourceType.Developer;
-                                Handler.CurrentTargetCategory = TargetType.AllParams;
-                                Handler.ImportRowNameHandler();
-                            }
+                            Handler.CurrentSourceCategory = SourceType.Developer;
+                            Handler.CurrentTargetCategory = TargetType.AllParams;
+                            Handler.ImportRowNameHandler();
                         }
                         UIHelper.ShowHoverTooltip("Import names for all params.");
 
@@ -176,12 +173,9 @@ public class ToolSubMenu
 
                     if (ImGui.MenuItem("All Params"))
                     {
-                        if (Screen._activeView._selection.RowSelectionExists())
-                        {
-                            Handler.CurrentSourceCategory = SourceType.Smithbox;
-                            Handler.CurrentTargetCategory = TargetType.AllParams;
-                            Handler.ImportRowNameHandler();
-                        }
+                        Handler.CurrentSourceCategory = SourceType.Smithbox;
+                        Handler.CurrentTargetCategory = TargetType.AllParams;
+                        Handler.ImportRowNameHandler();
                     }
                     UIHelper.ShowHoverTooltip("Import names for all params.");
 
@@ -215,12 +209,9 @@ public class ToolSubMenu
 
                     if (ImGui.MenuItem("All Params"))
                     {
-                        if (Screen._activeView._selection.RowSelectionExists())
-                        {
-                            Handler.CurrentSourceCategory = SourceType.Smithbox;
-                            Handler.CurrentTargetCategory = TargetType.AllParams;
-                            Handler.ImportRowNameHandler();
-                        }
+                        Handler.CurrentSourceCategory = SourceType.Smithbox;
+                        Handler.CurrentTargetCategory = TargetType.AllParams;
+                        Handler.ImportRowNameHandler();
                     }
                     UIHelper.ShowHoverTooltip("Import names for all params.");
 
