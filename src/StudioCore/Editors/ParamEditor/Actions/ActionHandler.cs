@@ -61,6 +61,9 @@ public class ActionHandler
 
         Param param = ParamBank.PrimaryBank.Params[paramName];
 
+        if (groups.Groups == null)
+            return false;
+
         if(groups.Groups.Where(e => e.Params.Contains(paramName)).Any())
         {
             isValid = true;
