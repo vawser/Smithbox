@@ -1,10 +1,4 @@
 #--------------------------------------
-# PRIORITY
-#--------------------------------------
-- FIX: map viewport is desynced from map content after unload and reload
- - Note: perhaps LoadedObjectContainer usage needs to be changed to MapListView.ContentViews -> Container in some places
-
-#--------------------------------------
 # General
 #--------------------------------------
 - FEAT: edit history window
@@ -13,15 +7,24 @@
 # Map Editor
 #--------------------------------------
 - FEAT: add async to MSB Mass Edit (global) so it doesn't hang the program
+
 - FEAT: mass edit - templates
+
 - FEAT: add MSB diff bank - add highlighting of different map objects + properties
+
 - FEAT: region selection tool 
  - Spawn 'fake' region, all map objects within it are selected.
+ 
 - FEAT: asset/object collision display
  
+- FEAT: implement SoulFormatsNEXT speedtree solution (https://github.com/soulsmods/SoulsFormatsNEXT/pull/24/files)
+
+- FEAT: implement Identifier entity ID ranges for all games (currently only setup for DS3 properly)
+
 - FIX: asset browser does not update Instance ID and Self Parts
  
-- FEAT: implement SoulFormatsNEXT speedtree solution (https://github.com/soulsmods/SoulsFormatsNEXT/pull/24/files)
+- FIX: map viewport is desynced from map content after unload and reload
+ - Note: perhaps LoadedObjectContainer usage needs to be changed to MapListView.ContentViews -> Container in some places
 
 #--------------------------------------
 # Param Editor
@@ -32,10 +35,13 @@
  - SDT
  - DS3
  - BB
+ 
 - FEAT: add create text entry group for selection (e.g. new weapon infusion).
 
 - FIX: correct row index support in the Param Editor in places where it doesn't function correctly (e.g. row name import)
+
 - FIX: color picker throwing CTD on second param view
+
 - FIX: shortcuts don't work with secondary overviews
 
 #--------------------------------------
@@ -47,15 +53,20 @@
 # EMEVD Editor
 #--------------------------------------
 - FEAT: enum selection changes value
+
 - FEAT: Add ability to insert/delete/order events.
+
 - FEAT: Add ability to insert/delete/order instructions.
+
 - FEAT: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
 
 #--------------------------------------
 # Model Editor
 #--------------------------------------
 - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
+
 - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
+
 - FIX: account for scale when displaying dummies/bones
 
 - FEAT: add a texture search
@@ -74,12 +85,15 @@
 # Texture Viewer: 
 #--------------------------------------
 - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
+
 - FIX: base textures cannot be viewed if project directory does not contain the folder structure needed (i.e. aet204 files, aet204 folder needs to be present in project directory)
 
 #--------------------------------------
 # Viewport
 #--------------------------------------
 - FEAT: overhaul resource management so it isn't so byzantine + improve texture finding
+
 - FIX: viewport resources are not fully released by Resource management system
+
 - FIX: hanging issue if resource fails to resolve loading during map loads.
 

@@ -3893,7 +3893,13 @@
       <Maximum>2</Maximum>
       <SortID>10000</SortID>
     </Field>
-    <Field Def="dummy8 reserve_999[324]">
+    
+    <Field Def="f32 unk_0x6fc" FirstVersion="10810030" />
+    <Field Def="f32 unk_0x700" FirstVersion="10810030" />
+    <Field Def="f32 unk_0x704" FirstVersion="10810030" />
+    <Field Def="f32 unk_0x708" FirstVersion="10810030" />
+    
+    <Field Def="dummy8 reserve_999[308]">
       <DisplayName>予約</DisplayName>
       <SortID>99999</SortID>
     </Field>
