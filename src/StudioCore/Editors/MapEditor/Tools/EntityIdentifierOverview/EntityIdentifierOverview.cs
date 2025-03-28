@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Caching.Memory;
+using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
@@ -39,6 +40,12 @@ public class EntityIdentifierOverview
     {
         if (!UI.Current.Interface_MapEditor_EntityIdentifierOverview)
             return;
+
+        // DS3 IDs only accounted for currently
+        if(Smithbox.ProjectType != ProjectType.DS3)
+        {
+            return;
+        }
 
         var scale = DPI.GetUIScale();
 
