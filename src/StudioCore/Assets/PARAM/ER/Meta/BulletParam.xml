@@ -23,7 +23,7 @@
         <Option Value="3" Name="Didn't hit enemy" />
         <Option Value="4" Name="Hit enemy" />
         <Option Value="5" Name="Unknown" />
-        <Option Value="6" Name="Unknown" />
+        <Option Value="6" Name="Absorbed Bullet" />
         <Option Value="254" Name="Expired" />
         <Option Value="255" Name="Hit ground or enemy" />
     </Enum>
@@ -66,6 +66,7 @@
         <Option Value="2" Name="Unknown Protection" />
         <Option Value="3" Name="Dark Force" />
         <Option Value="4" Name="Unknown" />
+        <Option Value="5" Name="Absorb Bullet" />
         <Option Value="6" Name="Trigger Remote Detonation" />
     </Enum>
   </Enums>
