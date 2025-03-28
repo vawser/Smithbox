@@ -6015,29 +6015,29 @@
 101100 
 101110 
 101120 
-102000 [Tear] Deflecting Hardtear
-102001 [Tear] Deflecting Hardtear
-102002 [Tear] Deflecting Hardtear
-102003 [Tear] Deflecting Hardtear
-102004 [Tear] Deflecting Hardtear
-102005 [Tear] Deflecting Hardtear
-102006 [Tear] Deflecting Hardtear
-102007 [Tear] Deflecting Hardtear
-102008 [Tear] Deflecting Hardtear
-102009 [Tear] Deflecting Hardtear
-102010 
-102011 
-102012 
-102013 
-102014 
-102015 
-102016 
-102017 
-102018 
-102019 
-102020 
-102021 
-102022 
+102000 [Tear] Deflecting Hardtear - Main Duration
+102001 [Tear] Deflecting Hardtear - 6 Perfect Block Frames
+102002 [Tear] Deflecting Hardtear - Alt Guard 3 Perfect Block Frames (JustGuard2)
+102003 [Tear] Deflecting Hardtear - Alt Guard 2 Perfect Block Frames (JustGuard3)
+102004 [Tear] Deflecting Hardtear - Alt Guard 0 Perfect Block Frames (JustGuard4)
+102005 [Tear] Deflecting Hardtear - Reset Alt Guard
+102006 [Tear] Deflecting Hardtear - Unused
+102007 [Tear] Deflecting Hardtear - Guard Counter DMG (Deflect 1)
+102008 [Tear] Deflecting Hardtear - Guard Counter DMG (Deflect 2)
+102009 [Tear] Deflecting Hardtear - Guard Counter DMG (Deflect 3)
+102010 [Tear] Deflecting Hardtear - Guard Counter DMG (Deflect 4)
+102011 [Tear] Deflecting Hardtear - Failsafe Failed Deflect 2 (Absorption)
+102012 [Tear] Deflecting Hardtear - Failsafe Failed Deflect 2 (Cooldown)
+102013 [Tear] Deflecting Hardtear - Failsafe Failed Deflect 3 (Absorption)
+102014 [Tear] Deflecting Hardtear - Failsafe Failed Deflect 3 (Cooldown)
+102015 [Tear] Deflecting Hardtear - Failsafe Failed Deflect 4 (Absorption)
+102016 [Tear] Deflecting Hardtear - Failsafe Failed Deflect 4 (Cooldown)
+102017 [Tear] Deflecting Hardtear - Failsafe Failed Deflect 5+ (No Bonus)
+102018 [Tear] Deflecting Hardtear - Failsafe Failed Deflect 5+ (Cooldown)
+102019 [Tear] Deflecting Hardtear - Reset Failsafes
+102020 [Tear] Deflecting Hardtear - Allow Guard Counters
+102021 [Tear] Deflecting Hardtear - Prevent Guard Counter next Guard
+102022 [Tear] Deflecting Hardtear - Prevent Extra Damage Anims
 102050 
 102051 
 102100 
