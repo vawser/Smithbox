@@ -1095,7 +1095,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
+            //TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
         }
 
         LoadExternalRowNames();
@@ -1196,7 +1196,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
+            //TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
         }
 
         LoadExternalRowNames();
