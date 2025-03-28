@@ -208,7 +208,22 @@ public class EditorDecorations
         foreach (ParamRef r in paramRefs)
         {
             Param.Cell? c = context?[r.ConditionField];
-            var inactiveRef = context != null && c != null && Convert.ToUInt32(c.Value.Value) != r.ConditionValue;
+
+            var inactiveRef = false;
+
+            if (c != null && context != null)
+            {
+                var fieldValue = c.Value.Value;
+                uint uintValue = 0;
+                var isUintValue = uint.TryParse($"{fieldValue}", out uintValue);
+
+                // Only check if field value is valid uint
+                if (isUintValue)
+                {
+                    inactiveRef = uintValue != r.ConditionValue;
+                }
+            }
+
             if (inactiveRef)
             {
                 inactiveRefs.Add(r.ParamName);
@@ -397,10 +412,26 @@ public class EditorDecorations
 
         var originalValue =
             (int)oldval; //make sure to explicitly cast from dynamic or C# complains. Object or Convert.ToInt32 fail.
+
         foreach (ParamRef rf in paramRefs)
         {
             Param.Cell? c = context?[rf.ConditionField];
-            var inactiveRef = context != null && c != null && Convert.ToUInt32(c.Value.Value) != rf.ConditionValue;
+
+            var inactiveRef = false;
+
+            if (c != null && context != null)
+            {
+                var fieldValue = c.Value.Value;
+                uint uintValue = 0;
+                var isUintValue = uint.TryParse($"{fieldValue}", out uintValue);
+
+                // Only check if field value is valid uint
+                if (isUintValue)
+                {
+                    inactiveRef = uintValue != rf.ConditionValue;
+                }
+            }
+
             if (inactiveRef)
             {
                 continue;
