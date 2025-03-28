@@ -41,8 +41,8 @@ public class EntityIdentifierOverview
         if (!UI.Current.Interface_MapEditor_EntityIdentifierOverview)
             return;
 
-        // DS3 IDs only accounted for currently
-        if(Smithbox.ProjectType != ProjectType.DS3)
+        // DS2 is supported currently since it uses Entity IDs differently to the other games.
+        if(Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             return;
         }
@@ -308,13 +308,48 @@ public class EntityIdentifierOverview
         var baseId = 0;
         var baseIdStr = mapId.Replace("m", "").Replace("_", "");
 
-        // 7 width for DS3
-        var topID = $"{baseIdStr.Substring(0, 2)}";
-        var midID = $"{baseIdStr.Substring(3, 1)}0"; // Grab the fourth digit, then swap to third digit position
+        switch(Smithbox.ProjectType)
+        {
+            // 4 digit range with no prefix
+            case ProjectType.DES:
+                break;
+            // 7 digit range with map prefix
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+            case ProjectType.DS3:
+            case ProjectType.BB:
+            case ProjectType.SDT:
+                var topID = $"{baseIdStr.Substring(0, 2)}";
+                var midID = $"{baseIdStr.Substring(3, 1)}0"; // Grab the fourth digit, then swap to third digit position
 
-        baseIdStr = $"{topID}{midID}000";
+                baseIdStr = $"{topID}{midID}000";
 
-        int.TryParse(baseIdStr, out baseId);
+                int.TryParse(baseIdStr, out baseId);
+                break;
+
+            case ProjectType.ER:
+                topID = $"{baseIdStr.Substring(0, 2)}";
+                midID = $"{baseIdStr.Substring(3, 1)}0"; // Grab the fourth digit, then swap to third digit position
+
+                baseIdStr = $"{topID}{midID}000";
+
+                // Different arrangement for open-world tiles
+                if(topID == "60" || topID == "61")
+                {
+                    var secondId = $"{baseIdStr.Substring(2, 2)}";
+                    var thirdId = $"{baseIdStr.Substring(4, 2)}";
+
+                    baseIdStr = $"10{midID}{secondId}{thirdId}000";
+                }
+
+                int.TryParse(baseIdStr, out baseId);
+                break;
+            // 4 digit range with no prefix
+            case ProjectType.AC6:
+                break;
+            default: 
+                break;
+        }
 
         return baseId;
     }
