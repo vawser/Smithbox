@@ -86,7 +86,46 @@ public class ParamEditorTab
                     ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_AC6);
                     break;
             }
-            UIHelper.ShowHoverTooltip("If enabled, row names are stripped upon save, meaning no row names will be stored in the regulation.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.\n\nIf this folder is present when a project is loaded, the row names will be restored automatically.");
+            UIHelper.ShowHoverTooltip("If enabled, row names are stripped upon save, meaning no row names will be stored in the regulation.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
+
+
+            switch (Smithbox.ProjectType)
+            {
+                case ProjectType.DES:
+                    ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES);
+                    break;
+
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1);
+                    break;
+
+                case ProjectType.DS2:
+                case ProjectType.DS2S:
+                    ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2);
+                    break;
+
+                case ProjectType.BB:
+                    ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_BB);
+                    break;
+
+                case ProjectType.DS3:
+                    ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS3);
+                    break;
+
+                case ProjectType.SDT:
+                    ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_SDT);
+                    break;
+
+                case ProjectType.ER:
+                    ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ER);
+                    break;
+
+                case ProjectType.AC6:
+                    ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6);
+                    break;
+            }
+            UIHelper.ShowHoverTooltip("If enabled, stripped row names that have been stored will be applied to the row names during param loading.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
 
             if (Smithbox.ProjectType is ProjectType.ER && ParamBank.PrimaryBank.ParamVersion >= 11210015L)
             {
