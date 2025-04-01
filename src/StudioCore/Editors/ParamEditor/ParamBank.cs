@@ -593,7 +593,10 @@ public class ParamBank
             LoadParamsDESFromFile(drawparam.Value);
         }
 
-        LoadExternalRowNames();
+        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES)
+        {
+            LoadExternalRowNames();
+        }
     }
 
     private void LoadVParamsDES()
@@ -666,7 +669,10 @@ public class ParamBank
             LoadParamsDS1FromFile(drawparam.Value);
         }
 
-        LoadExternalRowNames();
+        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1)
+        {
+            LoadExternalRowNames();
+        }
     }
 
     private void LoadVParamsDS1()
@@ -736,7 +742,13 @@ public class ParamBank
             LoadParamsDS1RFromFile(drawparam.Value);
         }
 
-        LoadExternalRowNames();
+        if (Smithbox.ProjectType is ProjectType.DS1R)
+        {
+            if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1)
+            {
+                LoadExternalRowNames();
+            }
+        }
     }
 
     private void LoadVParamsDS1R()
@@ -800,7 +812,21 @@ public class ParamBank
             }
         }
 
-        LoadExternalRowNames();
+        if (Smithbox.ProjectType is ProjectType.BB)
+        {
+            if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_BB)
+            {
+                LoadExternalRowNames();
+            }
+        }
+
+        if (Smithbox.ProjectType is ProjectType.SDT)
+        {
+            if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_SDT)
+            {
+                LoadExternalRowNames();
+            }
+        }
     }
 
     private void LoadVParamsBBSekiro()
@@ -879,7 +905,10 @@ public class ParamBank
 
         LoadParamsDS2FromFile(looseParams, param, enemyFile);
 
-        LoadExternalRowNames();
+        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2)
+        {
+            LoadExternalRowNames();
+        }
     }
 
     private void LoadVParamsDS2()
@@ -1026,7 +1055,10 @@ public class ParamBank
             LoadParamsDS3FromFile(param);
         }
 
-        LoadExternalRowNames();
+        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS3)
+        {
+            LoadExternalRowNames();
+        }
     }
 
     private void LoadVParamsDS3()
@@ -1098,7 +1130,10 @@ public class ParamBank
             //TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
         }
 
-        LoadExternalRowNames();
+        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ER)
+        {
+            LoadExternalRowNames();
+        }
     }
 
     private void LoadVParamsER()
@@ -1199,7 +1234,10 @@ public class ParamBank
             //TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
         }
 
-        LoadExternalRowNames();
+        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6)
+        {
+            LoadExternalRowNames();
+        }
     }
 
     private void LoadVParamsAC6()
@@ -1695,7 +1733,7 @@ public class ParamBank
 
         Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd", paramBnd);
 
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1)
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
         {
             RestoreStrippedRowNames();
         }
@@ -1757,7 +1795,7 @@ public class ParamBank
 
         Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd.dcx", paramBnd);
 
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1)
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
         {
             RestoreStrippedRowNames();
         }
@@ -1885,14 +1923,14 @@ public class ParamBank
             }
             catch
             {
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2)
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
                 {
                     RestoreStrippedRowNames();
                 }
                 throw;
             }
 
-            if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2)
+            if (CFG.Current.Param_StripRowNamesOnSave_DS2)
             {
                 RestoreStrippedRowNames();
             }
@@ -1929,14 +1967,14 @@ public class ParamBank
             }
             catch
             {
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2)
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
                 {
                     RestoreStrippedRowNames();
                 }
                 throw;
             }
 
-            if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2)
+            if (CFG.Current.Param_StripRowNamesOnSave_DS2)
             {
                 RestoreStrippedRowNames();
             }
@@ -2007,7 +2045,7 @@ public class ParamBank
             //Utils.WriteWithBackup(dir, mod, @"param\stayparam\stayparam.parambnd.dcx", stayBND);
         }
 
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS3)
+        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
         {
             RestoreStrippedRowNames();
         }
@@ -2063,7 +2101,7 @@ public class ParamBank
         OverwriteParamsBB(paramBnd);
         Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
 
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_BB)
+        if (CFG.Current.Param_StripRowNamesOnSave_BB)
         {
             RestoreStrippedRowNames();
         }
@@ -2119,7 +2157,7 @@ public class ParamBank
         OverwriteParamsSDT(paramBnd);
         Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
 
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_SDT)
+        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
         {
             RestoreStrippedRowNames();
         }
@@ -2193,7 +2231,7 @@ public class ParamBank
 
         Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd", paramBnd);
 
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES)
+        if (CFG.Current.Param_StripRowNamesOnSave_DES)
         {
             RestoreStrippedRowNames();
         }
@@ -2277,7 +2315,7 @@ public class ParamBank
 
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.ER);
 
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ER)
+        if (CFG.Current.Param_StripRowNamesOnSave_ER)
         {
             RestoreStrippedRowNames();
         }
@@ -2363,7 +2401,7 @@ public class ParamBank
         OverwriteParamsAC6(regParams);
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.AC6);
 
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6)
+        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
         {
             RestoreStrippedRowNames();
         }
