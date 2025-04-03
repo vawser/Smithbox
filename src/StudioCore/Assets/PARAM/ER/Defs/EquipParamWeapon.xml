@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>EQUIP_PARAM_WEAPON_ST</ParamType>
   <DataVersion>6</DataVersion>
@@ -1238,7 +1238,7 @@
     </Field>
     
     <Field Def="u8 unknown_0x17c_5:1" FirstVersion="11210015" />
-    <Field Def="u8 quickMatchReplanish:1" FirstVersion="11210015" />
+    <Field Def="u8 quickMatchReplenish:1" FirstVersion="11210015" />
     <Field Def="u8 isWeaponCatalyst:1" FirstVersion="11210015" />
     
     <Field Def="u8 correctType_Magic">

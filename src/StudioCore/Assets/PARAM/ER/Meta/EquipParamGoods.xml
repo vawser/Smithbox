@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="GOODS_TYPE" type="u8">
@@ -185,7 +185,7 @@
     <maxRepositoryNum AltName="Max Number Stored in Itembox" Wiki="Number of warehouses" />
     <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." Enum="DISPLAY_CATEGORY_ID" />
     <isUseNoAttackRegion AltName="Enabled in No Attack Region" Wiki="Can it be used in an attack-prohibited area?" IsBool="" />
-    <quickMatchReplanish AltName="Replanish after quick match" Wiki="Should amount of this item be stored and replenished after quick match?" IsBool="" />
+    <quickMatchReplenish AltName="Replenish after quick match" Wiki="Should amount of this item be stored and replenished after quick match?" IsBool="" />
     <pad1 AltName="" Padding=""/>
     <saleValue AltName="Sale Value" Wiki="Selling price" />
     <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
@@ -233,7 +233,7 @@ goodsUseAnim,goodsType,spEffectCategory,opmeMenuType,useLimitCategory,replaceCat
 
 isEquip,isDrop,isDiscard,isDeposit,isFixItem,-,
 
-isConsume,isAutoEquip,isEstablishment,isOnlyOne,isSuppleItem,isFullSuppleItem,isAshenEstusFlask,isEnhance,isEnableFastUseItem,isBonfireWarpItem,isShieldEnchant,isWarpProhibited,enable_ActiveEmber,enable_Ladder,isUseMultiPlayPreparation,canMultiUse,isUseMultiPenaltyOnly,enable_ActiveBigRune,isSleepCol,isUseNoAttackRegion,quickMatchReplanish-,
+isConsume,isAutoEquip,isEstablishment,isOnlyOne,isSuppleItem,isFullSuppleItem,isAshenEstusFlask,isEnhance,isEnableFastUseItem,isBonfireWarpItem,isShieldEnchant,isWarpProhibited,enable_ActiveEmber,enable_Ladder,isUseMultiPlayPreparation,canMultiUse,isUseMultiPenaltyOnly,enable_ActiveBigRune,isSleepCol,isUseNoAttackRegion,quickMatchReplenish-,
 
 isSummonHorse,enableRiding,disableRiding,-,
 
