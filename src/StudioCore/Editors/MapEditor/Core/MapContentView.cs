@@ -42,6 +42,8 @@ public class MapContentView
     private ISelectable _pendingClick;
     private HashSet<Entity> _treeOpenEntities = new();
 
+    private int LoadCount = 0;
+
     public MapContentView(MapEditorScreen screen, string mapID, ObjectContainer container)
     {
         Screen = screen;
@@ -70,6 +72,16 @@ public class MapContentView
             foreach (var entry in Container.Objects)
             {
                 entry.EditorVisible = true;
+            }
+        }
+
+        LoadCount++;
+
+        if (CFG.Current.MapEditor_EnableMapUnload)
+        {
+            if (LoadCount > 1)
+            {
+                PlatformUtils.Instance.MessageBox("Warning: The map object list and the viewport will be desynchronized if you proceed.\nThis is an unresolved bug. Proceed with caution.\n\nIt is recommended that you restart Smithbox to avoid issues.\nAlternatively, you can disable the 'Allow map unload' setting in the Map Editor settings menu.\nThis will circumvent the issue, but you are likely to hit the map rendering limit if you load several maps.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
