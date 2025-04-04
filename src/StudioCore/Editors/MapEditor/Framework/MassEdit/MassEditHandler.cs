@@ -14,6 +14,7 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 
@@ -73,9 +74,21 @@ public class MassEditHandler
 
         ConfigureEdit();
 
-        if (ImGui.Button("Apply", buttonSize))
+        if (MayRunEdit)
         {
-            ProcessMassEdit();
+            if (ImGui.Button("Apply", buttonSize))
+            {
+                StartMassEdit();
+            }
+        }
+        else
+        {
+            ImGui.BeginDisabled();
+            if (ImGui.Button("Apply", buttonSize))
+            {
+            }
+            ImGui.EndDisabled();
+            UIHelper.ShowHoverTooltip("Mass Edit in the process of being applied.");
         }
 
         ImGui.Separator();
@@ -387,12 +400,34 @@ public class MassEditHandler
         }
     }
 
-    
+    private bool MayRunEdit = true;
+
+    private async void StartMassEdit()
+    {
+        MayRunEdit = false;
+
+        Task<bool> applyEditTask = ProcessMassEdit();
+        bool result = await applyEditTask;
+
+        if(result)
+        {
+            TaskLogs.AddLog("Applied MSB Mass Edit successfully.");
+        }
+        else
+        {
+            TaskLogs.AddLog("Failed to apply MSB Mass Edit.");
+        }
+
+        MayRunEdit = true;
+    }
+
     /// <summary>
     /// Handles the map-level part of the Mass Edit
     /// </summary>
-    private void ProcessMassEdit()
+    private async Task<bool> ProcessMassEdit()
     {
+        await Task.Delay(1000);
+
         var selection = Smithbox.EditorHandler.MapEditor.Selection;
         var listView = Smithbox.EditorHandler.MapEditor.MapListView;
         var universe = Smithbox.EditorHandler.MapEditor.Universe;
@@ -447,7 +482,7 @@ public class MassEditHandler
             }
             else
             {
-                TaskLogs.AddLog("MSB mass edit could not be applied.");
+                return false;
             }
         }
 
@@ -500,7 +535,7 @@ public class MassEditHandler
             }
             else
             {
-                TaskLogs.AddLog("MSB mass edit could not be applied.");
+                return false;
             }
 
             universe.SaveAllMaps();
@@ -518,6 +553,8 @@ public class MassEditHandler
 
             CFG.Current.MapEditor_IgnoreSaveExceptions = false;
         }
+
+        return true;
     }
     /// <summary>
     /// Handles the selection filtering for map objects
