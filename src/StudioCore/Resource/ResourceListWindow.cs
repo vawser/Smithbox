@@ -34,7 +34,7 @@ public static class ResourceListWindow
         ImGui.InputText("##resourceTableFilter", ref ResourceFilter, 255);
 
         // Table
-        ImGui.BeginChild("resourceTableSection", tableSize);
+        //ImGui.BeginChild("resourceTableSection", tableSize);
 
         var resDatabase = ResourceManager.GetResourceDatabase();
 
@@ -150,7 +150,7 @@ public static class ResourceListWindow
             ImGui.EndTable();
         }
 
-        ImGui.EndChild();
+        //ImGui.EndChild();
 
         /*
         ImGui.BeginChild("resourceDetailsSection");
