@@ -19,8 +19,6 @@
  
 - FEAT: implement SoulFormatsNEXT speedtree solution (https://github.com/soulsmods/SoulsFormatsNEXT/pull/24/files)
 
-- FEAT: implement Identifier entity ID ranges for all games (currently only setup for DS3 properly)
-
 - FIX: asset browser does not update Instance ID and Self Parts
  
 - FIX: map viewport is desynced from map content after unload and reload

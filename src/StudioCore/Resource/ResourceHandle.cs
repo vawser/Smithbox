@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using static SoulsFormats.MQB;
 
 namespace StudioCore.Resource;
@@ -46,7 +47,7 @@ public interface IResourceHandle
     public void Release(bool force = false);
 
     /// <summary>
-    ///     Should only be used by ResourceManager
+    /// Should only be used by ResourceManager
     /// </summary>
     public void _ResourceLoaded(IResource resource, AccessLevel accessLevel);
 
@@ -63,6 +64,7 @@ public interface IResourceHandle
     public bool IsPersistent();
 
     public void UnloadPersistent();
+
 
 }
 
@@ -85,6 +87,13 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     /// Mark resources that shouldn't be unloaded automatically
     /// </summary>
     public bool Persistent { get; protected set; }
+    public bool IsLoaded { get; protected set; }
+    public AccessLevel AccessLevel { get; protected set; } = AccessLevel.AccessUnloaded;
+
+    /// <summary>
+    /// Virtual path of the entire asset. Used to implement loading
+    /// </summary>
+    public string AssetVirtualPath { get; }
 
     protected T Resource;
 
@@ -93,15 +102,6 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
         AssetVirtualPath = virtualPath;
         Persistent = isPersistent;
     }
-
-    public bool IsLoaded { get; protected set; }
-
-    /// <summary>
-    /// Virtual path of the entire asset. Used to implement loading
-    /// </summary>
-    public string AssetVirtualPath { get; }
-
-    public AccessLevel AccessLevel { get; protected set; } = AccessLevel.AccessUnloaded;
 
     /// <summary>
     /// Adds a handler that is called every time this resource is loaded. If the resource

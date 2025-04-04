@@ -18,7 +18,7 @@ public static class ResourceLoadWindow
     {
         var scale = DPI.GetUIScale();
 
-        if (GetActiveJobProgress().Count() > 0 && UI.Current.System_DisplayResourceLoadingWindow)
+        if (GetActiveJobProgress().Count() > 0)
         {
             ImGui.SetNextWindowSize(new Vector2(400, 310) * scale);
             ImGui.SetNextWindowPos(new Vector2(w - (100 * scale), h - (300 * scale)));

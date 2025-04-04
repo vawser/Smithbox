@@ -1,8 +1,12 @@
-﻿using ImGuiNET;
+﻿using HKLib.hk2018.hk;
+using ImGuiNET;
 using StudioCore.Interface;
+using StudioCore.Resource.Types;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +14,10 @@ namespace StudioCore.Resource;
 
 public static class ResourceListWindow
 {
+    public static string SelectedResource = "";
+    public static IResourceHandle SelectedResourceHandle = null;
+    public static string ResourceFilter = "";
+    
     public static void DisplayWindow(string menuId)
     {
         if (!ImGui.Begin($"Resource List##{menuId}"))
@@ -18,55 +26,187 @@ public static class ResourceListWindow
             return;
         }
 
-        ImGui.Checkbox("Display Resource Loading Window", ref UI.Current.System_DisplayResourceLoadingWindow);
-        UIHelper.ShowHoverTooltip("Toggles the appearance of the map resource loading window during the map load process");
+        var width = ImGui.GetWindowWidth();
+        var height = ImGui.GetWindowHeight();
+        var tableSize = new Vector2(width * 0.98f, height * 0.98f);
 
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("List of Resources Loaded & Unloaded");
+        ImGui.SetNextItemWidth(width * 0.98f);
+        ImGui.InputText("##resourceTableFilter", ref ResourceFilter, 255);
 
-        ImGui.SameLine();
-        ImGui.AlignTextToFramePadding();
-        if (ImGui.Button("Unload All"))
+        // Table
+        ImGui.BeginChild("resourceTableSection", tableSize);
+
+        var resDatabase = ResourceManager.GetResourceDatabase();
+
+        var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
+
+        var imguiId = 0;
+
+        if (ImGui.BeginTable($"resourceListTable", 6, tableFlags))
         {
-            foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
+            ImGui.TableSetupColumn("Select", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Load State", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Access Level", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Reference Count", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Unload", ImGuiTableColumnFlags.WidthStretch);
+
+            // Header
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.Text("Name");
+            UIHelper.ShowHoverTooltip("Name of this resource.");
+
+            ImGui.TableSetColumnIndex(2);
+
+            ImGui.Text("Load State");
+            UIHelper.ShowHoverTooltip("The load state of this resource.");
+
+            ImGui.TableSetColumnIndex(3);
+
+            // Access Level
+            ImGui.Text("Access Level");
+            UIHelper.ShowHoverTooltip("The access level of this resource.");
+
+            ImGui.TableSetColumnIndex(4);
+
+            // Reference Count
+            ImGui.Text("Reference Count");
+            UIHelper.ShowHoverTooltip("The reference count for this resource.");
+
+            ImGui.TableSetColumnIndex(5);
+
+            // Unload
+
+            // Contents
+            foreach (var item in resDatabase)
             {
-                item.Value.Release(true);
+                var resName = item.Key;
+                var resHandle = item.Value;
+
+                if(ResourceFilter != "" && !resName.Contains(ResourceFilter))
+                {
+                    continue;
+                }
+
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+
+                // Select
+                if(ImGui.Button($"{ForkAwesome.Bars}##{imguiId}_select"))
+                {
+                    SelectedResource = resName;
+                }
+                UIHelper.ShowHoverTooltip("Select this resource.");
+
+                ImGui.TableSetColumnIndex(1);
+
+                // Name
+                ImGui.AlignTextToFramePadding();
+                if(SelectedResource == resName)
+                {
+                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{resName}");
+                }
+                else
+                {
+                    ImGui.Text(resName);
+                }
+
+                ImGui.TableSetColumnIndex(2);
+
+                // Load State
+                if (resHandle.IsLoaded())
+                {
+                    ImGui.Text("Loaded");
+                }
+                else
+                {
+                    ImGui.Text("Unloaded");
+                }
+
+                ImGui.TableSetColumnIndex(3);
+
+                // Access Level
+                ImGui.Text($"{resHandle.AccessLevel}");
+                ImGui.TableSetColumnIndex(4);
+
+                // Reference Count
+                ImGui.Text($"{resHandle.GetReferenceCounts()}");
+                ImGui.TableSetColumnIndex(5);
+
+                // Unload
+                if (ImGui.Button($"{ForkAwesome.Times}##{imguiId}_unload"))
+                {
+                    resHandle.Release(true);
+                }
+                UIHelper.ShowHoverTooltip("Unload this resource.");
+
+                imguiId++;
+            }
+
+            ImGui.EndTable();
+        }
+
+        ImGui.EndChild();
+
+        /*
+        ImGui.BeginChild("resourceDetailsSection");
+
+        if(SelectedResource == "")
+        {
+            ImGui.Text($"No resource selected.");
+        }
+        else if(SelectedResourceHandle != null)
+        {
+            var resHandle = SelectedResourceHandle;
+
+            // FLVER
+            if(resHandle is ResourceHandle<FlverResource>)
+            {
+                var resource = (ResourceHandle<FlverResource>)resHandle;
+                var res = resource.Get();
+
+            }
+
+            // Havok Collision
+            if (resHandle is ResourceHandle<HavokCollisionResource>)
+            {
+                var resource = (ResourceHandle<HavokCollisionResource>)resHandle;
+                var res = resource.Get();
+
+            }
+
+            // Havok Navmesh
+            if (resHandle is ResourceHandle<HavokNavmeshResource>)
+            {
+                var resource = (ResourceHandle<HavokNavmeshResource>)resHandle;
+                var res = resource.Get();
+
+            }
+
+            // NVM Navmesh
+            if (resHandle is ResourceHandle<NVMNavmeshResource>)
+            {
+                var resource = (ResourceHandle<NVMNavmeshResource>)resHandle;
+                var res = resource.Get();
+
+            }
+
+            // Texture
+            if (resHandle is ResourceHandle<TextureResource>)
+            {
+                var resource = (ResourceHandle<TextureResource>)resHandle;
+                var res = resource.Get();
+
             }
         }
 
-        ImGui.Columns(5);
-        ImGui.Separator();
-        var id = 0;
+        ImGui.EndChild();
+        */
 
-        foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
-        {
-            if (item.Key == "")
-                continue;
-
-            ImGui.PushID(id);
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(item.Key);
-            ImGui.NextColumn();
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(item.Value.IsLoaded() ? "Loaded" : "Unloaded");
-            ImGui.NextColumn();
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(item.Value.AccessLevel.ToString());
-            ImGui.NextColumn();
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(item.Value.GetReferenceCounts().ToString());
-            ImGui.NextColumn();
-            if (ImGui.Button("Unload"))
-            {
-                item.Value.Release(true);
-            }
-            ImGui.NextColumn();
-            ImGui.PopID();
-            id++;
-        }
-
-        ImGui.Columns(1);
-        ImGui.Separator();
         ImGui.End();
     }
 }
