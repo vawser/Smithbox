@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using SoulsFormats;
 using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
@@ -70,6 +71,15 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
 
                 ImGui.InputText($"Search", ref _searchInput, 255);
                 UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+
+                ImGui.Checkbox("Update Name on Switch", ref CFG.Current.AssetBrowser_UpdateName);
+                UIHelper.ShowHoverTooltip("When a map object is switched to a new form, update the name to match the new form.");
+
+                if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+                {
+                    ImGui.Checkbox("Update Instance ID on Switch", ref CFG.Current.AssetBrowser_UpdateInstanceID);
+                    UIHelper.ShowHoverTooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
+                }
 
                 DisplayCharacterList();
                 DisplayAssetList();
@@ -568,20 +578,18 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                     // ModelName
                     actlist.Add(s.ChangeObjectProperty("ModelName", modelName));
 
-                    // Name
                     if (CFG.Current.AssetBrowser_UpdateName)
                     {
-                        var name = GetUniqueNameString(modelName);
-                        s.Name = name;
-                        actlist.Add(s.ChangeObjectProperty("Name", name));
+                        var updateNameAction = UpdateEntityName(modelName, s);
+                        actlist.Add(updateNameAction);
                     }
 
                     if (CFG.Current.AssetBrowser_UpdateInstanceID)
                     {
-                        // Name
-                        if (s.WrappedObject is MSBE.Part)
+                        if (s.WrappedObject is MSBE.Part || s.WrappedObject is MSB_AC6.Part)
                         {
-                            SetUniqueInstanceID((MsbEntity)s, modelName);
+                            var updateInstanceAction = UpdateInstanceID(modelName, (MsbEntity)s);
+                            actlist.Add(updateInstanceAction);
                         }
                     }
                 }
@@ -592,6 +600,78 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                 var action = new Actions.Viewport.CompoundAction(actlist);
                 Screen.EditorActionManager.ExecuteAction(action);
             }
+        }
+
+        private ViewportAction UpdateEntityName(string modelName, Entity ent)
+        {
+            var name = GetUniqueNameString(modelName);
+            ent.Name = name;
+
+            return ent.GetPropertyChangeAction("Name", name);
+        }
+
+        private ViewportAction UpdateInstanceID(string modelName, MsbEntity ent)
+        {
+            MapContainer m;
+            m = Screen.Universe.GetLoadedMapContainer(ent.MapID);
+
+            Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
+
+            // ER
+            if (ent.WrappedObject is MSBE.Part msbePart)
+            {
+                if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
+                {
+                    foreach (Entity tEnt in m.Objects)
+                    {
+                        if (tEnt.WrappedObject != null && tEnt.WrappedObject is MSBE.Part)
+                        {
+                            mapPartEntities[m].Add((MsbEntity)tEnt);
+                        }
+                    }
+                }
+
+                var newInstanceID = 9000; // Default start value
+
+                while (mapPartEntities[m].FirstOrDefault(e =>
+                           ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
+                           && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID
+                           && msbePart != (MSBE.Part)e.WrappedObject) != null)
+                {
+                    newInstanceID++;
+                }
+
+                return ent.GetPropertyChangeAction("InstanceID", newInstanceID);
+            }
+
+            // AC6
+            if (ent.WrappedObject is MSB_AC6.Part msb_ac6Part)
+            {
+                if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
+                {
+                    foreach (Entity tEnt in m.Objects)
+                    {
+                        if (tEnt.WrappedObject != null && tEnt.WrappedObject is MSB_AC6.Part)
+                        {
+                            mapPartEntities[m].Add((MsbEntity)tEnt);
+                        }
+                    }
+                }
+
+                var newInstanceID = 0; // Default start value
+
+                while (mapPartEntities[m].FirstOrDefault(e =>
+                           ((MSB_AC6.Part)e.WrappedObject).ModelName == msb_ac6Part.ModelName
+                           && ((MSB_AC6.Part)e.WrappedObject).TypeIndex == newInstanceID
+                           && msb_ac6Part != (MSB_AC6.Part)e.WrappedObject) != null)
+                {
+                    newInstanceID++;
+                }
+
+                return ent.GetPropertyChangeAction("TypeIndex", newInstanceID);
+            }
+
+            return null;
         }
 
         public string GetUniqueNameString(string modelName)
@@ -650,40 +730,6 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
             }
 
             return baseName;
-        }
-
-        private void SetUniqueInstanceID(MsbEntity selected, string modelName)
-        {
-            MapContainer m;
-            m = Screen.Universe.GetLoadedMapContainer(selected.MapID);
-
-            Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
-
-            if (selected.WrappedObject is MSBE.Part msbePart)
-            {
-                if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
-                {
-                    foreach (Entity ent in m.Objects)
-                    {
-                        if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
-                        {
-                            mapPartEntities[m].Add((MsbEntity)ent);
-                        }
-                    }
-                }
-
-                var newInstanceID = 9000; // Default start value
-
-                while (mapPartEntities[m].FirstOrDefault(e =>
-                           ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
-                           && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID
-                           && msbePart != (MSBE.Part)e.WrappedObject) != null)
-                {
-                    newInstanceID++;
-                }
-
-                msbePart.InstanceID = newInstanceID;
-            }
         }
 
         private string PadNameString(int value)
