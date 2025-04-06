@@ -66,9 +66,11 @@ public class GparamShortcuts
             Screen.QuickEditHandler.ClearQuickEditCommands();
         }
 
+        /*
         if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ReloadParam))
         {
             GparamMemoryTools.ReloadCurrentGparam(Screen.Selection._selectedGparamInfo);
         }
+        */
     }
 }
