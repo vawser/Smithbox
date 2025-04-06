@@ -167,7 +167,7 @@
     AltName="Guard Absorption %: Coral"
     Wiki="The percentage reduction in Coral damage taken when this character is guarding." />
     
-    <<animIdOffset 
+    <animIdOffset 
     AltName="Primary Animation ID Offset"
     Wiki="A value to offset animation IDs by. 0 = a00, 10000 = a01, etc." />
     
