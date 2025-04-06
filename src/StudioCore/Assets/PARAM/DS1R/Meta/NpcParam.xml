@@ -299,11 +299,11 @@
     
     <def_fire 
     AltName="Defense: Fire"
-    Wiki="The flat physical damage defense this character possess." />
+    Wiki="The flat fire damage defense this character possess." />
     
     <def_thunder 
     AltName="Defense: Lightning"
-    Wiki="The flat physical damage defense this character possess." />
+    Wiki="The flat lightning damage defense this character possess." />
     
     <defFlickPower 
     AltName="Repulsion Defense" 

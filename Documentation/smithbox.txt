@@ -6,10 +6,6 @@
 #--------------------------------------
 # Map Editor
 #--------------------------------------
-- FEAT: add async to MSB Mass Edit (global) so it doesn't hang the program
-
-- FEAT: mass edit - templates
-
 - FEAT: add MSB diff bank - add highlighting of different map objects + properties
 
 - FEAT: region selection tool 
@@ -17,12 +13,8 @@
  
 - FEAT: asset/object collision display
  
-- FEAT: implement SoulFormatsNEXT speedtree solution (https://github.com/soulsmods/SoulsFormatsNEXT/pull/24/files)
-
-- FIX: asset browser does not update Instance ID and Self Parts
- 
 - FIX: map viewport is desynced from map content after unload and reload
- - Note: perhaps LoadedObjectContainer usage needs to be changed to MapListView.ContentViews -> Container in some places
+ - Entity object is not being properly re-created: map content retains version 0, whilst viewport displays version 1, 2, etc.
 
 #--------------------------------------
 # Param Editor
@@ -41,6 +33,8 @@
 - FIX: color picker throwing CTD on second param view
 
 - FIX: shortcuts don't work with secondary overviews
+
+- FIX: sort rows currently wipes rows with multiple entries of the same ID (e.g. 4 rows of 3000, sort will result in 1 row of 3000).
 
 #--------------------------------------
 # GPARAM Editor
@@ -82,6 +76,8 @@
 #--------------------------------------
 # Texture Viewer: 
 #--------------------------------------
+- FEAT: add icon texture export: exports the specific SubTexture for each icon and names it accordingly. Useful for creating an icon repository.
+
 - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
 - FIX: base textures cannot be viewed if project directory does not contain the folder structure needed (i.e. aet204 files, aet204 folder needs to be present in project directory)
