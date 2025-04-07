@@ -20,6 +20,13 @@ public static class ParamCategories
     {
         var categories = Smithbox.BankHandler.ParamCategories.Categories.Categories;
 
+        if (categories == null)
+        {
+            UIHelper.WrappedText("No param categories found.");
+
+            return;
+        }
+
         var sectionWidth = ImGui.GetWindowWidth();
         var sectionHeight = ImGui.GetWindowHeight();
         var defaultButtonSize = new Vector2(sectionWidth * 0.975f, 32);
