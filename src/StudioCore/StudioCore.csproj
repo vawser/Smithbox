@@ -89,73 +89,73 @@
 
   <ItemGroup>
     <Content Include="..\..\lib\SDL2.dll" Link="SDL2.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\Collision.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\Collision.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\Collision_selected.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\Collision_selected.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\DebugWire.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\DebugWire.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverBB.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverBB.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverDS3.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverDS3.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_blend.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_blend.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_blend_selected.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_blend_selected.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_selected.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FlverShader\FlverShader_selected.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\FullScreenQuad.frag.spv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -164,46 +164,46 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\imgui.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\imgui.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\NavSolid.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\NavSolid.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\NavSolid_selected.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\NavSolid_selected.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\NavWire.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\NavWire.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\SimpleFlver.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\SimpleFlver.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\..\lib\libveldrid-spirv.dll" Link="libveldrid-spirv.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\SimpleFlver_selected.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Shaders\SimpleFlver_selected.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="tracy.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
@@ -219,43 +219,42 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\**" CopyToOutputDirectory="Always" />
     
-    <None Update="Assets\Regulations\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Regulations\**" CopyToOutputDirectory="Always" />
     
-    <None Update="Assets\Aliases\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Assets\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Characters\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Parts\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\MapPieces\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Cutscenes\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Flags\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Gparams\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Maps\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Movies\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Particles\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\Sounds\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\TimeActs\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Aliases\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Assets\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Characters\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Parts\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\MapPieces\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Cutscenes\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Flags\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Gparams\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Maps\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Movies\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Particles\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\Sounds\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Aliases\TimeActs\**" CopyToOutputDirectory="Always" />
     
-    <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Textures\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Scripts\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Themes\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Shoebox\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Workflow\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Help\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Textures\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Scripts\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Themes\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Shoebox\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\Workflow\**" CopyToOutputDirectory="Always" />
     
-    <None Update="Assets\FLVER\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\EMEVD\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\ESD\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\GPARAM\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\PARAM\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\MSB\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\TAE\**" CopyToOutputDirectory="PreserveNewest" />
-    
+    <None Update="Assets\FLVER\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\EMEVD\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\ESD\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\GPARAM\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\MSB\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\TAE\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\PARAM" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Licenses\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Licenses\**" CopyToOutputDirectory="Always" />
   </ItemGroup>
   
   <ItemGroup>
@@ -328,7 +327,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Regulations\ER\1.13.1 (11310027)\" />
     <Folder Include="Editors\CutsceneEditor\Actions\" />
     <Folder Include="Editors\CutsceneEditor\Enums\" />
     <Folder Include="Editors\EsdEditor\Actions\" />
