@@ -875,23 +875,88 @@
     AltName="Automatic Foot Effect: Particle ID" 
     Wiki="The SFX identifier used in the automatic foot effect. (ZZZ of XYYZZZ)" />
     
-    <materialSe1 AltName="Damaged - Material SE [1]" Wiki="Determine the SE that sounds when damaged. 1. It is OK to set it by appearance." Enum="WEP_MATERIAL_DEF" />
-    <materialSfx1 AltName="Damaged - Material SFX [1]" Wiki="Determine the SFX that occurs when you take damage. 1. It is OK to set it by appearance." Enum="WEP_MATERIAL_DEF_SFX" />
-    <materialSe_Weak2 AltName="Weak Point - Material SE [2]" Wiki="Determines the SE that sounds when the weak point is damaged. 2" Enum="WEP_MATERIAL_DEF" />
-    <materialSfx_Weak2 AltName="Weak Point - Material SFX [2]" Wiki="Determines the SFX that occurs when the weak point is damaged. 2" Enum="WEP_MATERIAL_DEF_SFX" />
-    <materialSe2 AltName="Damaged - Material SE [2]" Wiki="Determine the SE that sounds when damaged. 2. It is OK to set it by appearance." Enum="WEP_MATERIAL_DEF" />
-    <materialSfx2 AltName="Damaged - Material SFX [2]" Wiki="Determine the SFX that occurs when you take damage. 2. It is OK to set it by appearance." Enum="WEP_MATERIAL_DEF_SFX" />
-    <spEffectID8 AltName="SpEffect ID [8]" Wiki="Resident special effect 8" Refs="SpEffectParam"/>
-    <spEffectID9 AltName="SpEffect ID [9]" Wiki="Resident special effect 9" Refs="SpEffectParam"/>
-    <spEffectID10 AltName="SpEffect ID [10]" Wiki="Resident special effect 10" Refs="SpEffectParam"/>
-    <spEffectID11 AltName="SpEffect ID [11]" Wiki="Resident special effects 11" Refs="SpEffectParam"/>
-    <spEffectID12 AltName="SpEffect ID [12]" Wiki="Resident special effect 12" Refs="SpEffectParam"/>
-    <spEffectID13 AltName="SpEffect ID [13]" Wiki="Resident special effect 13" Refs="SpEffectParam"/>
-    <spEffectID14 AltName="SpEffect ID [14]" Wiki="Resident special effect 14" Refs="SpEffectParam"/>
-    <spEffectID15 AltName="SpEffect ID [15]" Wiki="Resident special effects 15" Refs="SpEffectParam"/>
-    <TentativePlayerId AltName="Tentative Player ID" />
-    <toughness AltName="Toughness" Wiki="Basic value of toughness" />
-    <toughnessRecoverCorrection AltName="Toughness Correction" Wiki="Correction value for toughness recovery time" />
+    <materialSe1 
+    AltName="Defense Presentation: Sound (1: on Damage)" 
+    Wiki="The sound used when damaged." 
+    Enum="WEP_MATERIAL_DEF" />
+
+    <materialSfx1 
+    AltName="Defense Presentation: Particle (1: on Damage)" 
+    Wiki="The particles used when damaged." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <materialSe_Weak2 
+    AltName="Defense Presentation: Sound (on Weak Point Damage)" 
+    Wiki="The sound used when weak point is damaged." 
+    Enum="WEP_MATERIAL_DEF" />
+
+    <materialSfx_Weak2 
+    AltName="Defense Presentation: Particle (on Weak Point Damage)" 
+    Wiki="The particles used when weak point is damaged." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <materialSe2 
+    AltName="Defense Presentation: Sound (2: on Damage)" 
+    Wiki="The sound used when damaged." 
+    Enum="WEP_MATERIAL_DEF" />
+
+    <materialSfx2 
+    AltName="Defense Presentation: Particle (2: on Damage)" 
+    Wiki="The particles used when damaged." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <spEffectID8 
+    AltName="SpEffect ID: 8"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID9 
+    AltName="SpEffect ID: 9"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID10 
+    AltName="SpEffect ID: 10"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID11 
+    AltName="SpEffect ID: 11"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID12 
+    AltName="SpEffect ID: 12"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID13
+    AltName="SpEffect ID: 13"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID14 
+    AltName="SpEffect ID: 14"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID15 
+    AltName="SpEffect ID: 15"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <autoFootEffectDecalId
+    AltName="Foot Decal ID"
+    Wiki="The decal ID to apply for footstep SFX. Floor material is taken into consideration alongside this ID." />
+    
+    <toughness 
+    AltName="Toughness" 
+    Wiki="The base toughness value this character has." />
+    
+    <toughnessRecoverCorrection 
+    AltName="Toughness Correction" 
+    Wiki="The correction to apply to the base toughness recovery rate for this character." />
+    
     <kineticDamageCutRate AltName="Absorption %: Kinetic" Wiki="Kinetic damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
     <slashDamageCutRate AltName="Absorption %: Slash" Wiki="Slash damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
     <blowDamageCutRate AltName="Absorption %: Strike" Wiki="Strike damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
@@ -913,22 +978,87 @@
     <statusResist_Uranium AltName="Status Resist: Uranium" Wiki="Determines resistence to Uranium status inflict."/>
     <freezeGuardResist AltName="Guard Status Resist: Uranium" Wiki="How much to cut the attack power against Uranium (set as a special effect parameter)" />
     <lockCameraParamId AltName="Lock Camera Param ID" Wiki="The ID of the lock camera parameter applied to the camera when locked on. Highest priority. Unused if -1" Refs="LockCamParam" />
-    <spEffectID16 AltName="SpEffect ID [16]" Wiki="Resident special effects 16" Refs="SpEffectParam"/>
-    <spEffectID17 AltName="SpEffect ID [17]" Wiki="Resident special effects 17" Refs="SpEffectParam"/>
-    <spEffectID18 AltName="SpEffect ID [18]" Wiki="Resident special effects 18" Refs="SpEffectParam"/>
-    <spEffectID19 AltName="SpEffect ID [19]" Wiki="Resident special effects 19" Refs="SpEffectParam"/>
-    <spEffectID20 AltName="SpEffect ID [20]" Wiki="Resident special effect 20" Refs="SpEffectParam"/>
-    <spEffectID21 AltName="SpEffect ID [21]" Wiki="Resident special effect 21" Refs="SpEffectParam"/>
-    <spEffectID22 AltName="SpEffect ID [22]" Wiki="Resident special effect 22" Refs="SpEffectParam"/>
-    <spEffectID23 AltName="SpEffect ID [23]" Wiki="Resident special effect 23" Refs="SpEffectParam"/>
-    <spEffectID24 AltName="SpEffect ID [24]" Wiki="Resident special effect 24" Refs="SpEffectParam"/>
-    <spEffectID25 AltName="SpEffect ID [25]" Wiki="Resident special effects 25" Refs="SpEffectParam"/>
-    <spEffectID26 AltName="SpEffect ID [26]" Wiki="Resident special effect 26" Refs="SpEffectParam"/>
-    <spEffectID27 AltName="SpEffect ID [27]" Wiki="Resident special effect 27" Refs="SpEffectParam"/>
-    <spEffectID28 AltName="SpEffect ID [28]" Wiki="Resident special effects 28" Refs="SpEffectParam"/>
-    <spEffectID29 AltName="SpEffect ID [29]" Wiki="Resident special effect 29" Refs="SpEffectParam"/>
-    <spEffectID30 AltName="SpEffect ID [30]" Wiki="Resident special effect 30" Refs="SpEffectParam"/>
-    <spEffectID31 AltName="SpEffect ID [31]" Wiki="Resident special effects 31" Refs="SpEffectParam"/>
+    
+    <spEffectID16
+    AltName="SpEffect ID: 16"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID17
+    AltName="SpEffect ID: 17"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID18
+    AltName="SpEffect ID: 18"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID19
+    AltName="SpEffect ID: 19"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID20
+    AltName="SpEffect ID: 20"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID21
+    AltName="SpEffect ID: 21"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID22
+    AltName="SpEffect ID: 22"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID23
+    AltName="SpEffect ID: 23"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID24
+    AltName="SpEffect ID: 24"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID25
+    AltName="SpEffect ID: 25"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID26
+    AltName="SpEffect ID: 26"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID27
+    AltName="SpEffect ID: 27"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID28
+    AltName="SpEffect ID: 28"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID29
+    AltName="SpEffect ID: 29"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID30
+    AltName="SpEffect ID: 30"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
+    <spEffectID31
+    AltName="SpEffect ID: 31"
+    Wiki="The ID of a SpEffect that affect this character."
+    Refs="SpEffectParam" />
+    
     <disableLockOnAng AltName="Disable Lock-on Angle" Wiki="Create a conical lock-on non-lockable area beneath the enemy. The angle of the size of the cone. Can be changed temporarily from TAE" />
     <clothOffLodLevel AltName="LOD Level to Disable Cloth Processing" Wiki="Set the LOD level to turn off cross processing" />
     <WanderGhostPhantomId AltName="Wandering Ghost Phantom ID" Wiki="Phantom shader with ID specified only on the guest side Specify the phantom shader ID and make it an illusion" />
