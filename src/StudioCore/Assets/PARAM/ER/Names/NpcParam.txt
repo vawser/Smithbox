@@ -83,7 +83,7 @@
 20600000 The Two Fingers
 20600079 The Two Fingers
 21000000 Black Knife Assassin (Unscaled)
-21000034 Black Knife Assassin (Leyndell- Royal Capital)
+21000034 Black Knife Assassin (Leyndell)
 21000052 Black Knife Assassin (Ordina)
 21000735 Black Knife Assassin (Boss)
 21000820 Black Knife Assassin (Boss)
@@ -117,11 +117,11 @@
 21300500 Morgott
 21300534 Morgott, the Omen King
 21310000 Morgott - Dead
-21310034 Morgott - Dead (Leyndell- Royal Capital)
+21310034 Morgott - Dead (Leyndell)
 21400000 Omen
 21400012 Omen
 21400030 Omen
-21400034 Omen (Leyndell- Royal Capital)
+21400034 Omen (Leyndell)
 21400035 Omen
 21400090 Omen
 21400100 Omen
@@ -244,7 +244,7 @@
 25000010 Crucible Knight (Limgrave Evergaol Boss)
 25000014 Crucible Knight
 25000030 Crucible Knight
-25000034 Crucible Knight (Leyndell- Royal Capital)
+25000034 Crucible Knight (Leyndell)
 25000042 Crucible Knight (Boss)
 25000065 Crucible Knight
 25000100 Crucible Knight (Unscaled)
@@ -254,11 +254,11 @@
 25000933 Crucible Knight Ordovis
 25000941 Crucible Knight (Redmane Boss)
 25001000 Crucible Knight (Unscaled)
-25001034 Crucible Knight (Leyndell- Royal Capital)
+25001034 Crucible Knight (Leyndell)
 25001065 Crucible Knight
 25001066 Crucible Knight Siluria
 25001100 Crucible Knight (Unscaled)
-25001134 Crucible Knight (Leyndell- Royal Capital)
+25001134 Crucible Knight (Leyndell)
 25001165 Crucible Knight
 25001933 Crucible Knight Ordovis (Auriza Boss)
 25006000 Crucible Knight (Unscaled)
@@ -275,11 +275,11 @@
 30000000 Exile Soldier
 30000006 Exile Soldier
 30000014 Exile Soldier (Stormveil Castle)
-30000034 Exile Soldier (Leyndell- Royal Capital)
+30000034 Exile Soldier (Leyndell)
 30000100 Exile Soldier
 30000106 Exile Soldier
 30000114 Exile Soldier (Stormveil Castle)
-30000134 Exile Soldier (Leyndell- Royal Capital)
+30000134 Exile Soldier (Leyndell)
 30000200 Exile Soldier
 30000214 Exile Soldier (Stormveil Castle)
 30000300 Exile Soldier
@@ -289,10 +289,10 @@
 30000714 Exile Soldier (Stormveil Castle)
 30000800 Exile Soldier
 30000814 Exile Soldier (Stormveil Castle)
-30000834 Exile Soldier (Leyndell- Royal Capital)
+30000834 Exile Soldier (Leyndell)
 30001000 Exile Soldier
 30001014 Exile Soldier (Stormveil Castle)
-30001034 Exile Soldier (Leyndell- Royal Capital)
+30001034 Exile Soldier (Leyndell)
 30001100 Exile Soldier
 30001114 Exile Soldier (Stormveil Castle)
 30001200 Exile Soldier
@@ -301,10 +301,10 @@
 30001314 Exile Soldier (Stormveil Castle)
 30002000 Exile Soldier
 30002014 Exile Soldier (Stormveil Castle)
-30002034 Exile Soldier (Leyndell- Royal Capital)
+30002034 Exile Soldier (Leyndell)
 30003000 Exile Soldier
 30003014 Exile Soldier (Stormveil Castle)
-30003034 Exile Soldier (Leyndell- Royal Capital)
+30003034 Exile Soldier (Leyndell)
 30003200 Exile Soldier
 30003214 Exile Soldier (Stormveil Castle)
 30003500 Exile Soldier
@@ -330,15 +330,15 @@
 30008040 Exile Soldier (Boss)
 30100000 Banished Knight
 30100014 Banished Knight (Stormveil Castle)
-30100034 Banished Knight (Leyndell- Royal Capital)
+30100034 Banished Knight (Leyndell)
 30100100 Banished Knight
 30100114 Banished Knight (Stormveil Castle)
-30100134 Banished Knight (Leyndell- Royal Capital)
+30100134 Banished Knight (Leyndell)
 30100140 Banished Knight
 30100172 Banished Knight
 30100200 Banished Knight
 30100214 Banished Knight
-30100234 Banished Knight (Leyndell- Royal Capital)
+30100234 Banished Knight (Leyndell)
 30100400 Mausoleum Banished Knight
 30100451 Mausoleum Banished Knight
 30100500 Mausoleum Banished Knight
@@ -348,13 +348,13 @@
 30100800 Banished Knight
 30100814 Banished Knight (Stormveil Castle)
 30101000 Banished Knight
-30101034 Banished Knight (Leyndell- Royal Capital)
+30101034 Banished Knight (Leyndell)
 30101100 Banished Knight
-30101134 Banished Knight (Leyndell- Royal Capital)
+30101134 Banished Knight (Leyndell)
 30101140 Banished Knight
 30101172 Banished Knight
 30101200 Banished Knight
-30101234 Banished Knight (Leyndell- Royal Capital)
+30101234 Banished Knight (Leyndell)
 30101400 Mausoleum Banished Knight
 30101451 Mausoleum Banished Knight
 30101500 Mausoleum Banished Knight
@@ -362,12 +362,12 @@
 30101651 Mausoleum Banished Knight
 30102000 Banished Knight
 30102014 Banished Knight (Stormveil Castle)
-30102034 Banished Knight (Leyndell- Royal Capital)
+30102034 Banished Knight (Leyndell)
 30102100 Banished Knight
-30102134 Banished Knight (Leyndell- Royal Capital)
+30102134 Banished Knight (Leyndell)
 30102172 Banished Knight
 30102200 Banished Knight
-30102234 Banished Knight (Leyndell- Royal Capital)
+30102234 Banished Knight (Leyndell)
 30102400 Mausoleum Banished Knight
 30102451 Mausoleum Banished Knight
 30102500 Mausoleum Banished Knight
@@ -381,7 +381,7 @@
 30108000 Banished Knight
 30200000 Large Exile Soldier
 30200014 Large Exile Soldier
-30200034 Large Exile Soldier (Leyndell- Royal Capital)
+30200034 Large Exile Soldier (Leyndell)
 30200100 Mausoleum Large Exile Soldier
 30200151 Mausoleum Large Exile Soldier
 30208000 Large Exile Soldier
@@ -425,7 +425,7 @@
 30800030 Imp
 30800032 Imp
 30800033 Imp
-30800034 Imp (Leyndell- Royal Capital)
+30800034 Imp (Leyndell)
 30800035 Imp
 30800040 Imp
 30800042 Imp
@@ -442,7 +442,7 @@
 30801020 Imp
 30801032 Imp
 30801033 Imp
-30801034 Imp (Leyndell- Royal Capital)
+30801034 Imp (Leyndell)
 30801035 Imp
 30801040 Imp
 30801042 Imp
@@ -459,7 +459,7 @@
 30802030 Imp
 30802032 Imp
 30802033 Imp
-30802034 Imp (Leyndell- Royal Capital)
+30802034 Imp (Leyndell)
 30802035 Imp
 30806000 Imp
 30806007 Imp
@@ -468,7 +468,7 @@
 30806030 Imp
 30806032 Imp
 30806033 Imp
-30806034 Imp (Leyndell- Royal Capital)
+30806034 Imp (Leyndell)
 30806035 Imp
 30806040 Imp
 30806042 Imp
@@ -628,7 +628,7 @@
 32510000 Tree Sentinel (Unscaled)
 32510010 Tree Sentinel (Limgrave)
 32510030 Tree Sentinel (Altus Plateau)
-32510034 Tree Sentinel  (Leyndell- Royal Capital)
+32510034 Tree Sentinel  (Leyndell)
 32510070 Tree Sentinel
 32511000 Tree Sentinel (Unscaled)
 32511030 Tree Sentinel - Torch (Altus Plateau)
@@ -795,7 +795,7 @@
 33710100 Putrid Ancestral Shaman
 34000000 Grave Warden Duelist
 34000030 Grave Warden Duelist
-34000034 Grave Warden Duelist (Leyndell- Royal Capital)
+34000034 Grave Warden Duelist (Leyndell)
 34000040 Grave Warden Duelist
 34000100 Grave Warden Duelist
 34000200 Grave Warden Duelist
@@ -809,7 +809,7 @@
 34000940 Frenzied Grave Warden Duelist (Boss)
 34000952 Putrid Grave Warden Duelist (Boss)
 34001000 Grave Warden Duelist
-34001034 Grave Warden Duelist (Leyndell- Royal Capital)
+34001034 Grave Warden Duelist (Leyndell)
 34001100 Grave Warden Duelist
 34001110 Grave Warden Duelist (Boss)
 34001133 Grave Warden Duelist (Auriza Boss)
@@ -824,7 +824,7 @@
 34500012 Misbegotten
 34500013 Misbegotten
 34500030 Misbegotten
-34500034 Misbegotten (Leyndell- Royal Capital)
+34500034 Misbegotten (Leyndell)
 34500054 Misbegotten
 34500100 Misbegotten
 34501000 Winged Misbegotten
@@ -832,7 +832,7 @@
 34501013 Winged Misbegotten
 34501020 Winged Misbegotten
 34501030 Winged Misbegotten
-34501034 Winged Misbegotten (Leyndell- Royal Capital)
+34501034 Winged Misbegotten (Leyndell)
 34501052 Winged Misbegotten
 34501054 Winged Misbegotten
 34501100 Winged Misbegotten
@@ -849,7 +849,7 @@
 34510012 Scaly Misbegotten
 34510013 Scaly Misbegotten
 34510030 Scaly Misbegotten
-34510034 Scaly Misbegotten (Leyndell- Royal Capital)
+34510034 Scaly Misbegotten (Leyndell)
 34510052 Scaly Misbegotten
 34510054 Scaly Misbegotten
 34510100 Smithing Master Hewg
@@ -861,7 +861,7 @@
 34519020 Scaly Misbegotten
 34600000 Leonine Misbegotten
 34600012 Leonine Misbegotten
-34600034 Leonine Misbegotten (Leyndell- Royal Capital)
+34600034 Leonine Misbegotten (Leyndell)
 34600054 Leonine Misbegotten
 34600354 Leonine Misbegotten
 34600913 Leonine Misbegotten (Castle Morne Boss)
@@ -1089,10 +1089,10 @@
 36001920 Onyx Lord (Boss)
 36001933 Onyx Lord (Boss)
 36100000 Oracle Envoy
-36100034 Oracle Envoy (Leyndell- Royal Capital)
+36100034 Oracle Envoy (Leyndell)
 36100054 Oracle Envoy
 36200000 Large Oracle Envoy
-36200034 Large Oracle Envoy (Leyndell- Royal Capital)
+36200034 Large Oracle Envoy (Leyndell)
 36200054 Large Oracle Envoy
 36300000 Giant Oracle Envoy
 36300054 Giant Oracle Envoy
@@ -1102,10 +1102,10 @@
 36500020 Guardian
 36500030 Guardian
 36500033 Guardian
-36500034 Guardian (Leyndell- Royal Capital)
+36500034 Guardian (Leyndell)
 36501000 Full-Bloom Guardian
 36501033 Full-Bloom Guardian
-36501034 Full-Bloom Guardian (Leyndell- Royal Capital)
+36501034 Full-Bloom Guardian (Leyndell)
 36501100 Full-Bloom Guardian - Full Bloomed
 36501833 Full-Bloom Guardian
 36502000 Rotten Guardian
@@ -1117,7 +1117,7 @@
 36600014 Commoner
 36600020 Commoner
 36600030 Commoner
-36600034 Commoner (Leyndell- Royal Capital)
+36600034 Commoner (Leyndell)
 36600035 Commoner
 36600041 Commoner
 36600070 Commoner
@@ -1184,7 +1184,7 @@
 36610030 Putrid Corpse
 36610032 Putrid Corpse
 36610033 Putrid Corpse
-36610034 Putrid Corpse (Leyndell- Royal Capital)
+36610034 Putrid Corpse (Leyndell)
 36610035 Putrid Corpse
 36610039 Putrid Corpse
 36610040 Putrid Corpse
@@ -1222,7 +1222,7 @@
 36619040 Putrid Corpse Ghost
 36620000 Putrid Corpse (Large)
 36620012 Putrid Corpse (Large)
-36620034 Putrid Corpse (Large) (Leyndell- Royal Capital)
+36620034 Putrid Corpse (Large) (Leyndell)
 36620040 Putrid Corpse (Large)
 36620054 Putrid Corpse (Large)
 36620100 Putrid Corpse (Large)
@@ -1271,7 +1271,7 @@
 36700042 Elder Albinauric
 36700100 Elder Albinauric
 36700120 Elder Albinauric
-36700134 Elder Albinauric (Leyndell- Royal Capital)
+36700134 Elder Albinauric (Leyndell)
 36701000 Elder Albinauric Sorcerer
 36701021 Elder Albinauric Sorcerer
 36701038 Elder Albinauric Sorcerer
@@ -1315,11 +1315,11 @@
 37010000 Perfumer
 37010030 Perfumer
 37010033 Perfumer
-37010034 Perfumer  (Leyndell- Royal Capital)
+37010034 Perfumer  (Leyndell)
 37010830 Perfumer
 37011000 Perfumer
 37011030 Perfumer
-37011034 Perfumer (Leyndell- Royal Capital)
+37011034 Perfumer (Leyndell)
 37011930 Perfumer Tricia
 37020000 Glintstone Sorcerer
 37020020 Glintstone Sorcerer
@@ -1353,12 +1353,12 @@
 37030031 Page (Shaded Castle)
 37030032 Page
 37030033 Page
-37030034 Page (Leyndell- Royal Capital)
+37030034 Page (Leyndell)
 37030041 Page
 37030052 Page
 37031000 High Page
 37031024 High Page (Raya Lucaria)
-37031034 High Page (Leyndell- Royal Capital)
+37031034 High Page (Leyndell)
 37040000 Battlemage
 37040020 Battlemage
 37040040 Battlemage
@@ -1692,7 +1692,7 @@
 40800028 Rat
 40800030 Rat
 40800032 Rat
-40800034 Rat  (Leyndell- Royal Capital)
+40800034 Rat  (Leyndell)
 40800035 Rat
 40800040 Rat
 40800042 Rat
@@ -1703,7 +1703,7 @@
 40800064 Rat (Siofra River)
 40800065 Rat
 40800100 Rat
-40800134 Rat (Leyndell- Royal Capital)
+40800134 Rat (Leyndell)
 40800210 Rat
 40800212 Rat
 40800300 Rat
@@ -1717,7 +1717,7 @@
 40900020 Giant Rat
 40900030 Giant Rat
 40900032 Giant Rat
-40900034 Giant Rat (Leyndell- Royal Capital)
+40900034 Giant Rat (Leyndell)
 40900035 Giant Rat
 40900040 Giant Rat
 40900042 Giant Rat
@@ -1816,7 +1816,7 @@
 41400038 Snail
 41400062 Snail
 41401000 Snail
-41401034 Snail (Leyndell- Royal Capital)
+41401034 Snail (Leyndell)
 41402000 Snail
 41402020 Snail
 41402035 Snail
@@ -1856,7 +1856,7 @@
 41600024 Large Stray
 41600031 Large Stray (Shaded Castle)
 41600032 Large Stray
-41600034 Large Stray (Leyndell- Royal Capital)
+41600034 Large Stray (Leyndell)
 41600035 Large Stray
 41601000 Large Stray
 41601010 Large Stray
@@ -1874,7 +1874,7 @@
 41610031 Stray (Shaded Castle)
 41610032 Stray
 41610033 Stray
-41610034 Stray (Leyndell- Royal Capital)
+41610034 Stray (Leyndell)
 41610038 Stray
 41610040 Stray
 41610041 Stray
@@ -2363,7 +2363,7 @@
 42400020 Fingercreeper
 42400021 Fingercreeper
 42400032 Fingercreeper
-42400034 Fingercreeper (Leyndell- Royal Capital)
+42400034 Fingercreeper (Leyndell)
 42400035 Fingercreeper
 42400100 Fingercreeper
 42400150 Fingercreeper
@@ -2401,7 +2401,7 @@
 42407020 Fingercreeper
 42407021 Fingercreeper
 42407032 Fingercreeper
-42407034 Fingercreeper  (Leyndell- Royal Capital)
+42407034 Fingercreeper  (Leyndell)
 42407035 Fingercreeper
 42407100 Fingercreeper
 42407121 Fingercreeper
@@ -2440,9 +2440,9 @@
 42500000 Small Fingercreeper
 42500020 Small Fingercreeper
 42500021 Small Fingercreeper
-42500028 Small Fingercreeper (Leyndell- Royal Capital)
+42500028 Small Fingercreeper (Leyndell)
 42500032 Small Fingercreeper
-42500034 Small Fingercreeper  (Leyndell- Royal Capital)
+42500034 Small Fingercreeper  (Leyndell)
 42500035 Small Fingercreeper
 42500100 Small Fingercreeper
 42500150 Small Fingercreeper
@@ -2486,7 +2486,7 @@
 42700014 Elder Lion (Stormveil Castle)
 42700020 Elder Lion
 42700030 Elder Lion
-42700034 Elder Lion  (Leyndell- Royal Capital)
+42700034 Elder Lion  (Leyndell)
 42700040 Elder Lion
 42700041 Elder Lion
 42701000 Elder Lion
@@ -2799,21 +2799,21 @@
 43130000 Leyndell Soldier
 43130030 Leyndell Soldier
 43130032 Leyndell Soldier
-43130034 Leyndell Soldier  (Leyndell- Royal Capital)
+43130034 Leyndell Soldier  (Leyndell)
 43130035 Leyndell Soldier
 43130100 Leyndell Soldier
 43130130 Leyndell Soldier
 43130132 Leyndell Soldier
-43130134 Leyndell Soldier (Leyndell- Royal Capital)
+43130134 Leyndell Soldier (Leyndell)
 43130150 Leyndell Soldier
 43130200 Leyndell Soldier
 43130230 Leyndell Soldier
 43130232 Leyndell Soldier
-43130234 Leyndell Soldier (Leyndell- Royal Capital)
+43130234 Leyndell Soldier (Leyndell)
 43130300 Leyndell Soldier
 43130330 Leyndell Soldier
 43130332 Leyndell Soldier
-43130334 Leyndell Soldier (Leyndell- Royal Capital)
+43130334 Leyndell Soldier (Leyndell)
 43130335 Leyndell Soldier
 43130400 Leyndell Soldier
 43130435 Leyndell Soldier
@@ -2822,7 +2822,7 @@
 43131000 Leyndell Soldier
 43131030 Leyndell Soldier
 43131032 Leyndell Soldier
-43131034 Leyndell Soldier (Leyndell- Royal Capital)
+43131034 Leyndell Soldier (Leyndell)
 43131100 Leyndell Soldier
 43131130 Leyndell Soldier
 43131132 Leyndell Soldier
@@ -2832,11 +2832,11 @@
 43132000 Leyndell Soldier
 43132030 Leyndell Soldier
 43132032 Leyndell Soldier
-43132034 Leyndell Soldier (Leyndell- Royal Capital)
+43132034 Leyndell Soldier (Leyndell)
 43133000 Leyndell Soldier
 43133030 Leyndell Soldier
 43133032 Leyndell Soldier
-43133034 Leyndell Soldier (Leyndell- Royal Capital)
+43133034 Leyndell Soldier (Leyndell)
 43133035 Leyndell Soldier
 43133100 Leyndell Soldier
 43133135 Leyndell Soldier
@@ -3023,7 +3023,7 @@
 43530020 Leyndell Knight
 43530030 Leyndell Knight
 43530032 Leyndell Knight
-43530034 Leyndell Knight (Leyndell- Royal Capital)
+43530034 Leyndell Knight (Leyndell)
 43530035 Leyndell Knight
 43530036 Leyndell Knight
 43530100 Leyndell Knight
@@ -3031,11 +3031,11 @@
 43530200 Leyndell Knight
 43530235 Leyndell Knight
 43530500 Leyndell Knight
-43530534 Leyndell Knight (Leyndell- Royal Capital)
+43530534 Leyndell Knight (Leyndell)
 43531000 Leyndell Knight
 43531030 Leyndell Knight
 43531032 Leyndell Knight
-43531034 Leyndell Knight (Leyndell- Royal Capital)
+43531034 Leyndell Knight (Leyndell)
 43531036 Leyndell Knight
 43531100 Leyndell Knight
 43531130 Leyndell Knight
@@ -3044,34 +3044,34 @@
 43531150 Leyndell Knight
 43531200 Leyndell Knight
 43531232 Leyndell Knight
-43531234 Leyndell Knight (Leyndell- Royal Capital)
+43531234 Leyndell Knight (Leyndell)
 43531300 Leyndell Knight
 43531500 Leyndell Knight
-43531534 Leyndell Knight (Leyndell- Royal Capital)
+43531534 Leyndell Knight (Leyndell)
 43532000 Leyndell Knight
 43532030 Leyndell Knight
-43532034 Leyndell Knight - Archer (Leyndell- Royal Capital)
+43532034 Leyndell Knight - Archer (Leyndell)
 43532050 Leyndell Knight
 43532100 Leyndell Knight
-43540000 Redmane Kngiht
+43540000 Redmane Knight
 43540040 Redmane Knight
 43540041 Redmane Knight
-43540042 Redmane Kngiht
-43540200 Redmane Kngiht
-43540242 Redmane Kngiht
+43540042 Redmane Knight
+43540200 Redmane Knight
+43540242 Redmane Knight
 43540342 Redmane Knight
-43541000 Redmane Kngiht
+43541000 Redmane Knight
 43541040 Redmane Knight
 43541041 Redmane Knight
-43541042 Redmane Kngiht
-43541100 Redmane Kngiht
+43541042 Redmane Knight
+43541100 Redmane Knight
 43541140 Redmane Knight
-43541200 Redmane Kngiht
+43541200 Redmane Knight
 43541242 Redmane Knight
-43542000 Redmane Kngiht
+43542000 Redmane Knight
 43542040 Redmane Knight
-43542042 Redmane Kngiht
-43542200 Redmane Kngiht
+43542042 Redmane Knight
+43542200 Redmane Knight
 43542242 Redmane Knight
 43550000 Mausoleum Knight
 43550020 Mausoleum Knight
@@ -3087,7 +3087,7 @@
 43552052 Mausoleum Knight
 43552066 Mausoleum Knight
 43560000 Haligtree Knight
-43560034 Haligtree Knight (Leyndell- Royal Capital)
+43560034 Haligtree Knight (Leyndell)
 43560056 Haligtree Knight
 43560556 Haligtree Knight
 43561000 Haligtree Knight
@@ -3199,7 +3199,7 @@
 43730500 Leyndell Foot Soldier
 43730530 Leyndell Foot Soldier
 43730532 Leyndell Foot Soldier
-43730534 Leyndell Foot Soldier (Leyndell- Royal Capital)
+43730534 Leyndell Foot Soldier (Leyndell)
 43731000 Leyndell Foot Soldier
 43731030 Leyndell Foot Soldier
 43731050 Leyndell Foot Soldier
@@ -3216,12 +3216,12 @@
 43732030 Leyndell Foot Soldier
 43732500 Leyndell Foot Soldier
 43732530 Leyndell Foot Soldier
-43732534 Leyndell Foot Soldier (Leyndell- Royal Capital)
+43732534 Leyndell Foot Soldier (Leyndell)
 43733000 Leyndell Foot Soldier
 43734000 Leyndell Foot Soldier
 43734030 Leyndell Foot Soldier
 43734032 Leyndell Foot Soldier
-43734034 Leyndell Foot Soldier (Leyndell- Royal Capital)
+43734034 Leyndell Foot Soldier (Leyndell)
 43734035 Leyndell Foot Soldier
 43734050 Leyndell Foot Soldier
 43734500 Leyndell Foot Soldier
@@ -3518,7 +3518,7 @@
 44700020 Abductor Virgin
 44700024 Abductor Virgin
 44700032 Abductor Virgin
-44700034 Abductor Virgin (Leyndell- Royal Capital)
+44700034 Abductor Virgin (Leyndell)
 44700038 Abductor Virgin
 44700040 Abductor Virgin
 44700938 Abductor Virgin (Boss)
@@ -3527,7 +3527,7 @@
 44701024 Abductor Virgin
 44701032 Abductor Virgin
 44701033 Abductor Virgin
-44701034 Abductor Virgin (Leyndell- Royal Capital)
+44701034 Abductor Virgin (Leyndell)
 44701038 Abductor Virgin
 44701100 Abductor Virgin - Broken (Unscaled)
 44701132 Abductor Virgin - Broken
@@ -3539,7 +3539,7 @@
 44800012 Miranda Blossom
 44800020 Miranda Blossom
 44800032 Miranda Blossom
-44800034 Miranda Blossom (Leyndell- Royal Capital)
+44800034 Miranda Blossom (Leyndell)
 44800035 Miranda Blossom
 44800040 Miranda Blossom
 44800054 Miranda Blossom
@@ -3563,7 +3563,7 @@
 44810012 Miranda Sprout
 44810020 Miranda Sprout
 44810032 Miranda Sprout
-44810034 Miranda Sprout (Leyndell- Royal Capital)
+44810034 Miranda Sprout (Leyndell)
 44810035 Miranda Sprout
 44810040 Miranda Sprout
 44810054 Miranda Sprout
@@ -3614,7 +3614,7 @@
 44900024 Living Jar Warrior
 44900032 Living Jar Warrior
 44900033 Living Jar Warrior
-44900034 Living Jar Warrior (Leyndell- Royal Capital)
+44900034 Living Jar Warrior (Leyndell)
 44900035 Living Jar Warrior
 44900038 Living Jar Warrior
 44900050 Living Jar Warrior
@@ -3669,7 +3669,7 @@
 44910024 Living Jar
 44910032 Living Jar
 44910033 Living Jar
-44910034 Living Jar (Leyndell- Royal Capital)
+44910034 Living Jar (Leyndell)
 44910035 Living Jar
 44910038 Living Jar
 44910050 Living Jar
@@ -3679,7 +3679,7 @@
 44910200 Living Fire Jar
 44910232 Living Fire Jar
 44910233 Living Fire Jar
-44910234 Living Fire Jar (Leyndell- Royal Capital)
+44910234 Living Fire Jar (Leyndell)
 44910238 Living Fire Jar
 44910250 Living Fire Jar
 44910300 Living Jar
@@ -3835,19 +3835,19 @@
 46040120 War Counselor Iji
 46040220 War Counselor Iji
 46100000 
-46200000 AAstel, Stars of Darkness
+46200000 Astel, Stars of Darkness
 46200062 Astel, Stars of Darkness
 46200952 Astel, Stars of Darkness (Snowfield Mine)
-46201000 Astel- Stars of Darkness (Unscaled)
-46202000 Astel, Naturalborn of the Void (Unscaled)
-46202030 Astel, Naturalborn of the Void
-46202060 Astel, Naturalborn of the Void (Ainsel River)
-46202062 Astel- Stars of Darkness
-46209000 Astel- Stars of Darkness (Unscaled)
-46209100 Astel- Stars of Darkness (Unscaled)
-46209152 Astel- Stars of Darkness (Snowfield Mine Clone)
-46209200 Astel- Stars of Darkness (Unscaled)
-46209300 Astel- Stars of Darkness (Unscaled)
+46201000 Malformed Stars (Unscaled)
+46202000 Malformed Stars (Unscaled)
+46202030 Malformed Stars
+46202060 Malformed Stars (Ainsel River)
+46202062 Malformed Stars
+46209000 Astel, Stars of Darkness (Unscaled)
+46209100 Malformed Stars (Unscaled)
+46209152 Malformed Stars (Snowfield Mine Clone)
+46209200 Malformed Stars (Unscaled)
+46209300 Malformed Stars (Unscaled)
 46300000 Runebear
 46300010 Runebear
 46300020 Runebear
@@ -3874,12 +3874,12 @@
 46400014 Ulcerated Tree Spirit (Stormveil Castle)
 46400032 Ulcerated Tree Spirit (Boss)
 46400033 Ulcerated Tree Spirit
-46400034 Ulcerated Tree Spirit (Leyndell- Royal Capital)
+46400034 Ulcerated Tree Spirit (Leyndell)
 46400070 Ulcerated Tree Spirit
-46400100 Ulcerated Tree Spirit
-46400156 Ulcerated Tree Spirit
-46400162 Ulcerated Tree Spirit
-46400942 Ulcerated Tree Spirit (Boss)
+46400100 Putrid Tree Spirit
+46400156 Putrid Tree Spirit
+46400162 Putrid Tree Spirit
+46400942 Putrid Tree Spirit (Boss)
 46400950 Ulcerated Tree Spirit (Boss)
 46500000 Dragonkin Soldier (Ice Lightning) (Unscaled)
 46500060 Dragonkin Soldier (Ice Lightning) (Nokstella)
@@ -3895,7 +3895,7 @@
 46600000 Guardian Golem
 46600010 Guardian Golem
 46600030 Guardian Golem
-46600034 Guardian Golem (Leyndell- Royal Capital)
+46600034 Guardian Golem (Leyndell)
 46600070 Guardian Golem
 46600100 Guardian Golem
 46600120 Guardian Golem
@@ -3906,7 +3906,7 @@
 46601000 Guardian Golem
 46601010 Guardian Golem
 46601030 Guardian Golem
-46601034 Guardian Golem (Leyndell- Royal Capital)
+46601034 Guardian Golem (Leyndell)
 46601040 Guardian Golem
 46601042 Guardian Golem
 46601100 Guardian Golem
@@ -3952,7 +3952,7 @@
 46900014 Grafted Scion (Stormveil Castle)
 46900020 Grafted Scion (Liurnia of the Lakes)
 46900032 Grafted Scion (Mt. Gelmir)
-46900034 Grafted Scion (Leyndell- Royal Capital)
+46900034 Grafted Scion (Leyndell)
 47100000 God-Devouring Serpent (Unscaled)
 47100038 God-Devouring Serpent
 47101000 Rykard- Lord of Blasphemy (Unscaled)
@@ -4000,16 +4000,16 @@
 47702066 Ruined Gargoyle (Deeproot Depths)
 47709900 Gargoyle -Passive Battle State-
 47709910 Gargoyle (Greatsword) -Passive Battle State-
-48000000 Mohg- The Omen
+48000000 Mohg, the Omen
 48000068 Mohg, Lord of Blood
-48001000 Mohg- The Omen
-48001935 Mohg- The Omen (Sewers)
-48008000 Mohg- The Omen
-48009000 Mohg- The Omen
+48001000 Mohg, the Omen
+48001935 Mohg, the Omen (Sewers)
+48008000 Mohg, the Omen
+48009000 Mohg, the Omen
 48100000 Erdtree Avatar
 48100012 Erdtree Avatar (Weeping Peninsula Boss)
 48100020 Erdtree Avatar (North Liurnia)
-48100034 Erdtree Avatar (Leyndell- Royal Capital)
+48100034 Erdtree Avatar (Leyndell)
 48100040 Erdtree Avatar
 48100066 Erdtree Avatar (Deeproot Depths)
 48100100 Erdtree Avatar
@@ -4027,14 +4027,14 @@
 48200000 Omenkiller
 48200100 Omenkiller
 48200130 Omenkiller
-48200134 Omenkiller (Leyndell- Royal Capital)
+48200134 Omenkiller (Leyndell)
 48200138 Omenkiller
 48200820 Omenkiller
 48200920 Omenkiller (Boss)
 48200930 Omenkiller (Boss Village)
 48208000 Omenkiller
 48208030 Omenkiller
-48208034 Omenkiller (Leyndell- Royal Capital)
+48208034 Omenkiller (Leyndell)
 48208038 Omenkiller
 48208100 Omenkiller
 48208138 Omenkiller
@@ -5998,7 +5998,7 @@
 60720052 Carrier Pigeon
 60720100 Carrier Pigeon
 60720120 Carrier Pigeon
-60720134 Carrier Pigeon (Leyndell- Royal Capital)
+60720134 Carrier Pigeon (Leyndell)
 60800000 Dragonfly
 60800010 Dragonfly
 60800012 Dragonfly
