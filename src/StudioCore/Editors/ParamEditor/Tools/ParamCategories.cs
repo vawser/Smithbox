@@ -16,6 +16,12 @@ public static class ParamCategories
 
     private static ParamCategoryEntry _selectedUserCategory = null;
 
+    private static string NewEntryName = "";
+    private static bool ForceTop = false;
+    private static bool ForceBottom = false;
+    private static List<string> NewEntryParams = new List<string>();
+    private static int NewEntryParamsCount = 1;
+
     public static void Display()
     {
         var categories = Smithbox.BankHandler.ParamCategories.Categories.Categories;
@@ -243,10 +249,4 @@ public static class ParamCategories
             }
         }
     }
-
-    private static string NewEntryName = "";
-    private static bool ForceTop = false;
-    private static bool ForceBottom = false;
-    private static List<string> NewEntryParams = new List<string>();
-    private static int NewEntryParamsCount = 1;
 }

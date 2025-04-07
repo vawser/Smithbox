@@ -326,16 +326,4 @@
     </Compile>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Editors\CutsceneEditor\Actions\" />
-    <Folder Include="Editors\CutsceneEditor\Enums\" />
-    <Folder Include="Editors\EsdEditor\Actions\" />
-    <Folder Include="Editors\HavokEditor\Actions\" />
-    <Folder Include="Editors\HavokEditor\Core\" />
-    <Folder Include="Editors\HavokEditor\Framework\" />
-    <Folder Include="Editors\HavokEditor\Utils\" />
-    <Folder Include="Editors\HavokEditor\Tools\" />
-    <Folder Include="Editors\TextureViewer\Actions\" />
-  </ItemGroup>
-
 </Project>
