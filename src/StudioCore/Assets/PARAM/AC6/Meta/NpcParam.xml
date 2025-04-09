@@ -957,27 +957,114 @@
     AltName="Toughness Correction" 
     Wiki="The correction to apply to the base toughness recovery rate for this character." />
     
-    <kineticDamageCutRate AltName="Absorption %: Kinetic" Wiki="Kinetic damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
-    <slashDamageCutRate AltName="Absorption %: Slash" Wiki="Slash damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
-    <blowDamageCutRate AltName="Absorption %: Strike" Wiki="Strike damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
-    <thrustDamageCutRate AltName="Absorption %: Thrust" Wiki="Thrust damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
-    <energyDamageCutRate AltName="Absorption %: Energy" Wiki="Energy damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
-    <explosiveDamageCutRate AltName="Absorption %: Explosive" Wiki="Explosive damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
-    <coralDamageCutRate AltName="Absorption %: Coral" Wiki="Coral damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
-    <unknownDamageCutRate AltName="Absorption %: Unknown" Wiki="Dark damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
-    <unknownDamageGuardCutRate AltName="Guard Absorption %: Unknown" Wiki="How much to cut the dark attack?" />
-    <clothUpdateOffset AltName="Cloth Update Offset" Wiki="Cross update priority offset [m]" />
-    <npcPlayerWeightType AltName="NPC Player Weight Type" Wiki="Equipment weight type applied for NPC players" Enum="NPC_WEIGHT_TYPE" />
-    <normalChangeModelId AltName="Replacement Change - Model ID" Wiki="Normal replacement model, texture ID" />
-    <normalChangeAnimChrId AltName="Replacement Change - Anim Chr ID" Wiki="Replace the target animation with the specified ID Anibnd" />
-    <staminaGuardDefVal AltName="Stagger Guard Defence" />
-    <CultSettingId AltName="Cult Setting ID" />
-    <phantomShaderId AltName="Phantom Shader ID" Wiki="ID of the phantom parameter .xlsm to apply" Refs="PhantomParam"/>
-    <multiPlayCorrectionParamId AltName="Multiplayer Correction Param ID" Wiki="Multiplayer correction parameter ID" Refs="MultiPlayCorrectionParam"/>
-    <maxAnklePitchAngle AltName="FootIK Ankle Pitch Limit Angle" Wiki="FootIK Ankle pitch limit angle (-1 no limit). If you have not set Foot End L S in HAT, this angle is used in common with rolls." />
-    <statusResist_Uranium AltName="Status Resist: Uranium" Wiki="Determines resistence to Uranium status inflict."/>
-    <freezeGuardResist AltName="Guard Status Resist: Uranium" Wiki="How much to cut the attack power against Uranium (set as a special effect parameter)" />
-    <lockCameraParamId AltName="Lock Camera Param ID" Wiki="The ID of the lock camera parameter applied to the camera when locked on. Highest priority. Unused if -1" Refs="LockCamParam" />
+    <neutralDamageCutRate 
+    AltName="Absorption %: Kinetic"
+    Wiki="A multiplier to apply to incoming damage if the damage type is Kinetic."
+    IsInvertedPercentage="" />
+    
+    <slashDamageCutRate 
+    AltName="Absorption %: Slash"
+    Wiki="A multiplier to apply to incoming damage if the damage type is Slash."
+    IsInvertedPercentage="" />
+    
+    <blowDamageCutRate 
+    AltName="Absorption %: Strike"
+    Wiki="A multiplier to apply to incoming damage if the damage type is Strike."
+    IsInvertedPercentage="" />
+    
+    <thrustDamageCutRate 
+    AltName="Absorption %: Thrust"
+    Wiki="A multiplier to apply to incoming damage if the damage type is Thrust."
+    IsInvertedPercentage="" />
+    
+    <magicDamageCutRate 
+    AltName="Absorption %: Energy"
+    Wiki="A multiplier to apply to incoming damage if the damage type is Energy."
+    IsInvertedPercentage="" />
+    
+    <fireDamageCutRate 
+    AltName="Absorption %: Explosive"
+    Wiki="A multiplier to apply to incoming damage if the damage type is Explosive."
+    IsInvertedPercentage="" />
+    
+    <thunderDamageCutRate 
+    AltName="Absorption %: Coral"
+    Wiki="A multiplier to apply to incoming damage if the damage type is Coral."
+    IsInvertedPercentage="" />
+    
+    <darkDamageCutRate 
+    AltName="Absorption %: Dark"
+    Wiki="A multiplier to apply to incoming damage if the damage type is Dark."
+    IsInvertedPercentage="" />
+    
+    <darkGuardCutRate 
+    AltName="Guard Absorption %: Dark"
+    Wiki="A multiplier to apply to incoming damage if the damage type is Dark and this character is guarding." />
+    
+    <clothUpdateOffset 
+    AltName="Cloth Update Distance Offset" 
+    Wiki="The distance offset to use for the cloth update check for this character. In metres." />
+    
+    <npcPlayerWeightType 
+    AltName="NPC-AC Weight Type" 
+    Wiki="The equipment load type to apply to player-like characters." 
+    Enum="NPC_WEIGHT_TYPE" />
+    
+    <normalChangeModelId
+    AltName="Model Replacement ID"
+    Wiki="The character ID To use when replacing the model (ChrBND) and textures (TexBND) used by this character." />
+    
+    <normalChangeAnimChrId 
+    AltName="Animation Replacement ID" 
+    Wiki="The character ID To use when replacing the animations (AniBND) used by this character." />
+    
+    <paintRenderTargetSize
+    AltName="Paint Render Target Size"
+    Wiki="The paint render target size for this character. In pixels." />
+    
+    <DamageMaterialThreshold
+    AltName="Damage Material Change Threshold"
+    Wiki="The damage threshold at which the damage material changes. 0 is 0% damage, 100 is 100% damage." />
+    
+    <sideUndulationLimit
+    AltName="Side Undulation Limit"
+    Wiki="The maximum angle when adjusting the left-right angles during undulations. If the total length is long, it is better to set this lower. (If there is a FootIK, the FootIK value will be used.)" />
+    
+    <SfxResBankId
+    AltName="Particle Resource Bank ID"
+    Wiki="The particle resource bank to use for this character. -1 means the bank with the same character ID as this character is used." />
+    
+    <phantomShaderId 
+    AltName="Overlay Shader ID" 
+    Wiki="The overlay shader to apply to this character." 
+    Refs="PhantomParam"/>
+    
+    <multiPlayCorrectionParamId 
+    AltName="Multiplayer Correction ID" 
+    Wiki="The multiplayer correction parameters to use for this character." 
+    Refs="MultiPlayCorrectionParam"/>
+    
+    <maxAnklePitchAngle 
+    AltName="FootIK Ankle Pitch Limit" 
+    Wiki="The ankle pitch limit used during FootIK (-1 no limit)." />
+    
+    <resist_depletedUraniumToxic 
+    AltName="Status Resist: Depleted Uranium" 
+    Wiki="The flat defense value of this character for the specified resistance type." />
+    
+    <depletedUraniumToxicGuardResist 
+    AltName="Guard Absorption %: Depleted Uranium" 
+    Wiki="The absorption to apply to damage of the specified type when this character is guarding." />
+    
+    <teamTypeByGiantNut
+    AltName="Team Type: Giant Nut Seed Change"
+    Wiki="The team type this character follows after a Giant Nut Seed change has been applied." 
+    Enum="TEAM_TYPE" />
+    
+    <lockCameraParamId 
+    AltName="Lock-on Camera Parameters" 
+    Wiki="The lock-on camera parameters to use for players that target this character." 
+    Refs="LockCamParam" />
     
     <spEffectID16
     AltName="SpEffect ID: 16"
@@ -1059,9 +1146,35 @@
     Wiki="The ID of a SpEffect that affect this character."
     Refs="SpEffectParam" />
     
-    <disableLockOnAng AltName="Disable Lock-on Angle" Wiki="Create a conical lock-on non-lockable area beneath the enemy. The angle of the size of the cone. Can be changed temporarily from TAE" />
-    <clothOffLodLevel AltName="LOD Level to Disable Cloth Processing" Wiki="Set the LOD level to turn off cross processing" />
+    <disableLockOnAng 
+    AltName="Disallowed Lock-On Cone" 
+    Wiki="Create a conical area beneath this character based on the specificed angle. Prevents player lock-on. Can be changed temporarily from TAE." />
+    
+    <clothOffLodLevel 
+    AltName="LOD Level to Disable Cloth Processing" 
+    Wiki="The LOD level at which to turn off Havok Cloth processing." />
+    
+    <movementType
+    AltName="Movement Control Type"
+    Wiki="The movement control type to use for this character." 
+    Enum="NPC_MOVEMENT_TYPE" />
+    
+    <estusFlaskRecoveryParamId 
+    AltName="Flask Recovery ID" 
+    Wiki="When this character dies, this flask recovery is applied to the player." 
+    Refs="HPEstusFlaskRecoveryParam"/>
+    
+    <roleNameId 
+    AltName="Role Name ID" 
+    Wiki="Specify the role name at the time of summoning. -1 Use the default role name of the target spirit body. 0 No display. 1 or more Used as a text ID." />
+    <estusFlaskLotPoint AltName="HP/FP Flask Recovery Chance" Wiki="HP / MP est recovery probability when defeating an enemy. The numerator is obtained from the NPC para with 10000 as the denominator." />
+    <hpEstusFlaskLotPoint AltName="HP Flask Recovery Chance" Wiki="Recovery probability of MP Est when defeating an enemy. The numerator is obtained from the NPC para with 10000 as the denominator." />
+    <mpEstusFlaskLotPoint AltName="FP Flask Recovery Chance" Wiki="Recovery probability of MP Est when defeating an enemy. The numerator is obtained from the NPC para with 10000 as the denominator." />
+    <estusFlaskRecovery_failedLotPointAdd AltName="Missed HP/FP Flask Recovery - Bonus Chance" Wiki="Next time probability increase value when you miss the HP / MP est recovery lottery. Addition value of numerator." />
+    <hpEstusFlaskRecovery_failedLotPointAdd AltName="Missed HP Flask Recovery - Bonus Chance" Wiki="The next probability increase value when you miss the HP Est Recovery Lottery. Addition value of numerator." />
+    <mpEstusFlaskRecovery_failedLotPointAdd AltName="Missed FP Flask Recovery - Bonus Chance" Wiki="The next probability increase value when the MP est recovery lottery is missed. Addition value of numerator." />
     <WanderGhostPhantomId AltName="Wandering Ghost Phantom ID" Wiki="Phantom shader with ID specified only on the guest side Specify the phantom shader ID and make it an illusion" />
+    
     <movementEnemyTypeParamId AltName="MovementEnemyTypeParam ID" Refs="MovementEnemyTypeParam" Wiki="Determines movement specifics, such as what types of movement can be made and various speeds." />
     <chrActTurnParamId0 AltName="Character Act Turn ID [0]" Refs="ChrActTurnParam_Npc" />
     <npcWeaponParamId0 AltName="Weapon Param ID [0]" Refs="EquipParamWeapon_Npc" />
@@ -1314,7 +1427,6 @@
       <Option Value="1" Name="Normal" />
       <Option Value="2" Name="Rader" />
     </Enum>
-    <!-- TODO: find field -->
     <Enum Name="NPC_MOVEMENT_TYPE" type="u8">
       <Option Value="0" Name="AC" />
       <Option Value="1" Name="Boss" />

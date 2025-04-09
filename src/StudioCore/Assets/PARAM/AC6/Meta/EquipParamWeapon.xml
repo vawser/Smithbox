@@ -1071,13 +1071,11 @@
     
     <depletedUraniumToxicGuardResist_StaminaShort 
     AltName="Guard Absorption %: Depleted Uranium (no Stamina)" 
-    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." 
-    Obsolete="" />
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
     
     <depletedUraniumToxicGuardResist 
     AltName="Guard Absorption %: Depleted Uranium" 
-    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." 
-    Obsolete="" />
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
     
     <shoulderEquipType
     AltName="Shoulder Slot Equip Type"

@@ -2,6 +2,7 @@
 # General
 #--------------------------------------
 - FEAT: edit history window
+- FEAT: overhaul resource management so it isn't so byzantine + improve texture finding
 
 #--------------------------------------
 # Map Editor
@@ -42,6 +43,24 @@
 - FEAT: let Bloodborne gparambnd be edited, not only gparam.dcx
 
 #--------------------------------------
+# Texture Viewer: 
+#--------------------------------------
+- FEAT: add icon texture export: exports the specific SubTexture for each icon and names it accordingly. Useful for creating an icon repository.
+
+- FEAT: create 'fake' Shoebox Layouts for SDT, DS3, DS1, BB so their icon sheets can work with the icon preview system
+
+- FEAT: add support for tpfbht files, so the high res icons can be viewed. Will need special handling
+
+- FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
+
+- FIX: base textures cannot be viewed if project directory does not contain the folder structure needed (i.e. aet204 files, aet204 folder needs to be present in project directory)
+
+#--------------------------------------
+# Text Editor
+#--------------------------------------
+- FIX: when duplicating a row for projects with DLC0, DLC1, DLC2 structure, automatically place the new row in the DLC2 container and change focus to that, even if the source is DLC0 or DLC1
+
+#--------------------------------------
 # EMEVD Editor
 #--------------------------------------
 - FEAT: enum selection changes value
@@ -64,30 +83,13 @@
 - FEAT: add a texture search
 
 #--------------------------------------
-# Text Editor
-#--------------------------------------
-- FIX: when duplicating a row for projects with DLC0, DLC1, DLC2 structure, automatically place the new row in the DLC2 container and change focus to that, even if the source is DLC0 or DLC1
-
-#--------------------------------------
 # Time Act Editor
 #--------------------------------------
 - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
 
 #--------------------------------------
-# Texture Viewer: 
-#--------------------------------------
-- FEAT: add icon texture export: exports the specific SubTexture for each icon and names it accordingly. Useful for creating an icon repository.
-
-- FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
-
-- FIX: base textures cannot be viewed if project directory does not contain the folder structure needed (i.e. aet204 files, aet204 folder needs to be present in project directory)
-
-#--------------------------------------
 # Viewport
 #--------------------------------------
-- FEAT: overhaul resource management so it isn't so byzantine + improve texture finding
-
 - FIX: viewport resources are not fully released by Resource management system
-
 - FIX: hanging issue if resource fails to resolve loading during map loads.
 
