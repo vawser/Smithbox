@@ -275,7 +275,12 @@ public class UI
 
     public Vector4 ImGui_Logger_Information_Color = new Vector4(0.0f, 1.0f, 0.0f, 1.0f);
     public Vector4 ImGui_Logger_Warning_Color = new Vector4(1.0f, 0f, 0f, 1.0f);
-    public Vector4 ImGui_Logger_Error_Color = new Vector4(1.0f, 0.5f, 0.5f, 1.0f); 
+    public Vector4 ImGui_Logger_Error_Color = new Vector4(1.0f, 0.5f, 0.5f, 1.0f);
+
+    public Vector4 ImGui_Havok_Header = new Vector4(0.409f, 0.967f, 0.693f, 1.0f);
+    public Vector4 ImGui_Havok_Reference = new Vector4(0.0f, 1.0f, 0.0f, 1.0f);
+    public Vector4 ImGui_Havok_Highlight = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+    public Vector4 ImGui_Havok_Warning = new Vector4(1.0f, 0f, 0f, 1.0f);
 
     //**************
     // Interface Styles

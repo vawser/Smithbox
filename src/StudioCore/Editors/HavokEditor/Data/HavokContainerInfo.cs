@@ -16,7 +16,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace StudioCore.Editors.HavokEditor.Framework;
 
 
 public class HavokContainerInfo
@@ -24,7 +24,7 @@ public class HavokContainerInfo
     public HavokContainerType Type { get; set; }
 
     public BND4 Container { get; set; }
-    public Dictionary<string, hkRootLevelContainer> LoadedHavokFiles { get; set; }
+    public Dictionary<string, hkRootLevelContainer> LoadedHavokRoots { get; set; }
     public Dictionary<string, List<IHavokObject>> LoadHavokObjects { get; set; }
 
     public string Filename { get; set; }
@@ -44,21 +44,17 @@ public class HavokContainerInfo
 
 
     public bool LoadFromData { get; set; }
-    
+
     public byte[] Data { get; set; }
 
     public List<string> InternalFileList { get; set; }
-
-    public hkRootLevelContainer LoadedFile { get; set; }
-
-    public List<IHavokObject> LoadedObjects { get; set; }
 
     public HavokContainerInfo(string name, HavokContainerType type)
     {
         Type = type;
         Filename = name;
         IsModified = false;
-        LoadedHavokFiles = new();
+        LoadedHavokRoots = new();
         LoadHavokObjects = new();
 
         BinderDirectory = GetBinderDirectory();
@@ -167,17 +163,19 @@ public class HavokContainerInfo
     /// Loads havok file (from within container) for usage with editor
     /// </summary>
     /// <param name="key"></param>
-    public void LoadFile(string key)
+    public hkRootLevelContainer ReadHavokRoot(string fileKey, string internalType)
     {
-        if (LoadedHavokFiles.ContainsKey(key))
+        var loadedFileKey = $"{internalType}--{fileKey}";
+
+        if (LoadedHavokRoots.ContainsKey(loadedFileKey))
         {
-            LoadedFile = LoadedHavokFiles[key];
+            return LoadedHavokRoots[loadedFileKey];
         }
         else
         {
             foreach (var file in Container.Files)
             {
-                if (file.Name.ToLower() == key.ToLower())
+                if (file.Name.ToLower().Contains(fileKey.ToLower()))
                 {
                     var fileName = file.Name.ToLower();
                     var fileBytes = file.Bytes;
@@ -187,26 +185,36 @@ public class HavokContainerInfo
                     {
                         var container = (hkRootLevelContainer)serializer.Read(memoryStream);
 
-                        LoadedHavokFiles.Add(key, container);
+                        if (LoadedHavokRoots.ContainsKey(loadedFileKey))
+                        {
+                            LoadedHavokRoots[loadedFileKey] = container;
+                        }
+                        else
+                        {
+                            LoadedHavokRoots.Add(loadedFileKey, container);
+                        }
 
-                        LoadedFile = LoadedHavokFiles[key];
+                        return LoadedHavokRoots[loadedFileKey];
                     }
                 }
             }
         }
+        return null;
     }
 
-    public void ReadHavokObjects(string key)
+    public List<IHavokObject> ReadHavokObjects(string fileKey, string internalType)
     {
-        if (LoadHavokObjects.ContainsKey(key))
+        var loadedFileKey = $"{internalType}--{fileKey}";
+
+        if (LoadHavokObjects.ContainsKey(loadedFileKey))
         {
-            LoadedObjects = LoadHavokObjects[key];
+            return LoadHavokObjects[loadedFileKey];
         }
         else
         {
             foreach (var file in Container.Files)
             {
-                if (file.Name.ToLower() == key.ToLower())
+                if (file.Name.ToLower().Contains(fileKey.ToLower()))
                 {
                     var fileName = file.Name.ToLower();
                     var fileBytes = file.Bytes;
@@ -216,12 +224,22 @@ public class HavokContainerInfo
                     {
                         var objects = serializer.ReadAllObjects(memoryStream).ToList();
 
-                        LoadHavokObjects.Add(key, objects);
-                        LoadedObjects = LoadHavokObjects[key];
+                        if (LoadHavokObjects.ContainsKey(loadedFileKey))
+                        {
+                            LoadHavokObjects[loadedFileKey] = objects;
+                        }
+                        else
+                        {
+                            LoadHavokObjects.Add(loadedFileKey, objects);
+                        }
+
+                        return LoadHavokObjects[loadedFileKey];
                     }
                 }
             }
         }
+
+        return null;
     }
 
     /// <summary>

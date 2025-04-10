@@ -101,9 +101,9 @@ public class CFG
     public bool EnableEditor_TAE = false;
     public bool EnableEditor_EMEVD = false;
     public bool EnableEditor_ESD = false;
+    public bool EnableEditor_HAVOK = true;
 
     public bool EnableEditor_MQB_wip = false;
-    public bool EnableEditor_HAVOK_wip = false;
     public bool EnableEditor_MTD_wip = false;
 
     //****************************

@@ -1,52 +1,47 @@
 ﻿using ImGuiNET;
-using SoulsFormats;
-using StudioCore.Editor;
-using StudioCore.Editors.TalkEditor;
-using System.Numerics;
-using System.Reflection;
-using Veldrid;
-using Veldrid.Sdl2;
-using HKLib.Serialization.hk2018.Binary;
-using HKLib.Serialization.hk2018.Xml;
-using HKLib.hk2018;
-using StudioCore.Editors.HavokEditor;
-using static StudioCore.Editors.HavokEditor.HavokFileBank;
-using System.Linq;
-using System;
-using DotNext.Collections.Generic;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using StudioCore.Utilities;
-using System.IO;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
-using StudioCore.Interface;
+using StudioCore.Editor;
+using StudioCore.Editors.HavokEditor.Core;
+using StudioCore.Editors.HavokEditor.Data;
 using StudioCore.Editors.HavokEditor.Enums;
+using StudioCore.Editors.HavokEditor.Framework;
+using StudioCore.Interface;
+using StudioCore.Utilities;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.HavokEditor;
 
 public class HavokEditorScreen : EditorScreen
 {
-
     public ActionManager EditorActionManager = new();
 
-    public HavokContainerInfo SelectedContainerInfo;
-    private string _selectedBinderKey;
+    public HavokSelection Selection;
 
-    private HavokInfoGraphView InfoGraph;
-    private HavokCharacterGraphView CharacterGraph;
-    private HavokBehaviorGraphView BehaviorGraph;
+    public HavokTypeSelectionView TypeSelectionView;
+    public HavokContainerSelectionView ContainerSelectionView;
+    public HavokFileSelectionView FileSelectionView;
 
-    public HavokContainerType CurrentHavokContainerType = HavokContainerType.Behavior;
-    private HavokInternalType CurrentHavokInternalFileType = HavokInternalType.None;
-
-    private string CurrentHavokInternalFileKey = "";
+    public HavokClassSelectionView ClassSelectionView;
+    public HavokClassEntriesView ClassEntriesView;
+    public HavokPropertiesView PropertiesView;
 
     public HavokEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        InfoGraph = new HavokInfoGraphView(this);
-        CharacterGraph = new HavokCharacterGraphView(this);
-        BehaviorGraph = new HavokBehaviorGraphView(this);
+        Selection = new HavokSelection(this);
+
+        TypeSelectionView = new HavokTypeSelectionView(this);
+        ContainerSelectionView = new HavokContainerSelectionView(this);
+        FileSelectionView = new HavokFileSelectionView(this);
+
+        ClassSelectionView = new HavokClassSelectionView(this);
+        ClassEntriesView = new HavokClassEntriesView(this);
+        PropertiesView = new HavokPropertiesView(this);
     }
 
     public string EditorName => "Havok Editor##HavokEditor";
@@ -55,7 +50,7 @@ public class HavokEditorScreen : EditorScreen
 
     public void EditDropdown()
     {
-        if (!CFG.Current.EnableEditor_HAVOK_wip)
+        if (!CFG.Current.EnableEditor_HAVOK)
             return;
 
         if (ImGui.BeginMenu("Edit"))
@@ -95,13 +90,13 @@ public class HavokEditorScreen : EditorScreen
 
     public void ViewDropdown()
     {
-        if (!CFG.Current.EnableEditor_HAVOK_wip)
+        if (!CFG.Current.EnableEditor_HAVOK)
             return;
     }
 
     public void EditorUniqueDropdowns()
     {
-        if (!CFG.Current.EnableEditor_HAVOK_wip)
+        if (!CFG.Current.EnableEditor_HAVOK)
             return;
 
         //ActionMenubar.Display();
@@ -115,7 +110,7 @@ public class HavokEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_HAVOK_wip)
+        if (!CFG.Current.EnableEditor_HAVOK)
             return;
 
         var scale = DPI.GetUIScale();
@@ -150,11 +145,12 @@ public class HavokEditorScreen : EditorScreen
 
             if (HavokFileBank.IsLoaded)
             {
-                HavokContainerTypeList();
-                HavokContainerList();
-                HavokInternalList();
-                HavokGraphDisplay();
-                HavokPropertyView();
+                TypeSelectionView.OnGui();
+                ContainerSelectionView.OnGui();
+                FileSelectionView.OnGui();
+                ClassSelectionView.OnGui();
+                ClassEntriesView.OnGui();
+                PropertiesView.OnGui();
             }
         }
 
@@ -162,165 +158,13 @@ public class HavokEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-    public void HavokGraphDisplay()
-    {
-        ImGui.Begin("Graph##HavokGraph");
-
-        if (CurrentHavokInternalFileType == HavokInternalType.Behavior)
-        {
-            BehaviorGraph.DisplayGraph();
-        }
-        if (CurrentHavokInternalFileType == HavokInternalType.Character)
-        {
-            CharacterGraph.DisplayGraph();
-        }
-        if (CurrentHavokInternalFileType == HavokInternalType.Info)
-        {
-            InfoGraph.DisplayGraph();
-        }
-        ImGui.End();
-    }
-
-    public void HavokPropertyView()
-    {
-        ImGui.Begin("Properties##HavokPropertyView");
-
-        if (CurrentHavokInternalFileType == HavokInternalType.Behavior)
-        {
-            BehaviorGraph.DisplayProperties();
-        }
-        if (CurrentHavokInternalFileType == HavokInternalType.Character)
-        {
-
-        }
-        if (CurrentHavokInternalFileType == HavokInternalType.Info)
-        {
-            InfoGraph.DisplayProperties();
-        }
-        ImGui.End();
-    }
-
-    public void HavokContainerTypeList()
-    {
-        ImGui.Begin("Container Type##HavokContainerTypeList");
-
-        foreach (HavokContainerType e in Enum.GetValues<HavokContainerType>())
-        {
-            var name = e.GetDisplayName();
-            if (ImGui.Selectable(name, e == CurrentHavokContainerType))
-            {
-                CurrentHavokContainerType = e;
-            }
-        }
-
-        ImGui.End();
-    }
-
-    public void HavokContainerList()
-    {
-        ImGui.Begin("Files##HavokContainerList");
-
-        // Behavior List
-        if (CurrentHavokContainerType == HavokContainerType.Behavior)
-        {
-            foreach (var info in HavokFileBank.BehaviorContainerBank)
-            {
-                if (ImGui.Selectable($@" {info.Filename}", info.Filename == _selectedBinderKey))
-                {
-                    _selectedBinderKey = info.Filename;
-                    SelectedContainerInfo = info;
-                    info.LoadBinder();
-                }
-                DisplaySelectableAlias(info.Filename, Smithbox.AliasCacheHandler.AliasCache.Characters);
-            }
-        }
-        // Collision List
-        if (CurrentHavokContainerType == HavokContainerType.Collision)
-        {
-            foreach (var info in HavokFileBank.CollisionContainerBank)
-            {
-                if (ImGui.Selectable($@" {info.Filename}", info.Filename == _selectedBinderKey))
-                {
-                    _selectedBinderKey = info.Filename;
-                    SelectedContainerInfo = info;
-                    info.LoadBinder();
-                }
-            }
-        }
-
-        ImGui.End();
-    }
-
-    public void HavokInternalList()
-    {
-        // File List
-        ImGui.Begin("Internal Files##HavokInternalFileList");
-
-        if (SelectedContainerInfo != null)
-        {
-            if (SelectedContainerInfo.InternalFileList.Count > 0)
-            {
-                foreach (var file in SelectedContainerInfo.InternalFileList)
-                {
-                    var fileName = Path.GetFileNameWithoutExtension(file);
-                    var internalTypeKey = HavokInternalType.None;
-                    var name = file.Split("export")[1];
-
-                    if (CurrentHavokContainerType == HavokContainerType.Behavior)
-                    {
-                        if (name.Contains("behaviors"))
-                        {
-                            internalTypeKey = HavokInternalType.Behavior;
-                        }
-                        else if (name.Contains("characters"))
-                        {
-                            internalTypeKey = HavokInternalType.Character;
-                        }
-                        else
-                        {
-                            internalTypeKey = HavokInternalType.Info;
-                        }
-                    }
-                    else if (CurrentHavokContainerType == HavokContainerType.Collision)
-                    {
-                        internalTypeKey = HavokInternalType.Collision;
-                    }
-                    else if (CurrentHavokContainerType == HavokContainerType.Animation)
-                    {
-                        internalTypeKey = HavokInternalType.Animation;
-                    }
-
-                    var presentationName = $"{internalTypeKey.GetDisplayName()}: {fileName}";
-                    if (ImGui.Selectable($@" {presentationName}", file == CurrentHavokInternalFileKey))
-                    {
-                        CurrentHavokInternalFileKey = file.ToLower();
-                        CurrentHavokInternalFileType = internalTypeKey;
-
-                        SelectedContainerInfo.LoadFile(CurrentHavokInternalFileKey);
-                    }
-                }
-            }
-        }
-
-        ImGui.End();
-    }
-
-    private void DisplaySelectableAlias(string name, Dictionary<string, AliasReference> referenceDict)
-    {
-        var lowerName = name.ToLower();
-
-        if (referenceDict.ContainsKey(lowerName))
-        {
-            var aliasName = referenceDict[lowerName].name;
-
-            UIHelper.DisplayAlias(aliasName);
-        }
-    }
 
     public void OnProjectChanged()
     {
-        if (!CFG.Current.EnableEditor_HAVOK_wip)
+        if (!CFG.Current.EnableEditor_HAVOK)
             return;
+
+        Selection.OnProjectChanged();
 
         HavokFileBank.LoadAllHavokFiles();
 
@@ -329,19 +173,19 @@ public class HavokEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_HAVOK_wip)
+        if (!CFG.Current.EnableEditor_HAVOK)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
         if (HavokFileBank.IsLoaded)
-            HavokFileBank.SaveHavokFile(SelectedContainerInfo);
+            HavokFileBank.SaveHavokFile(Selection.GetContainer());
     }
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_HAVOK_wip)
+        if (!CFG.Current.EnableEditor_HAVOK)
             return;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)

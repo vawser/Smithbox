@@ -4,7 +4,7 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.Editors.HavokEditor;
+using StudioCore.Editors.HavokEditor.Framework;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Enums;

@@ -26,6 +26,7 @@ namespace StudioCore.Tools
     {
         private static void GenerateHavokGeneratorAliases(TimeActSelectionManager SelectionHandler, long id)
         {
+            /*
             //HavokFileBank.LoadAllHavokFiles();
 
             //SelectionHandler.LoadedHavokContainer = TimeActUtils.LoadHavokObjects(info);
@@ -76,6 +77,7 @@ namespace StudioCore.Tools
             {
                 TaskLogs.AddLog($"{ex}");
             }
+            */
         }
 
         public static void ReadShoeboxFile()

@@ -5,6 +5,10 @@
 - FEAT: overhaul resource management so it isn't so byzantine + improve texture finding
 
 #--------------------------------------
+# Havok Editor
+#--------------------------------------
+
+#--------------------------------------
 # Map Editor
 #--------------------------------------
 - FEAT: add MSB diff bank - add highlighting of different map objects + properties
@@ -61,17 +65,6 @@
 - FIX: when duplicating a row for projects with DLC0, DLC1, DLC2 structure, automatically place the new row in the DLC2 container and change focus to that, even if the source is DLC0 or DLC1
 
 #--------------------------------------
-# EMEVD Editor
-#--------------------------------------
-- FEAT: enum selection changes value
-
-- FEAT: Add ability to insert/delete/order events.
-
-- FEAT: Add ability to insert/delete/order instructions.
-
-- FEAT: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
-
-#--------------------------------------
 # Model Editor
 #--------------------------------------
 - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
@@ -82,14 +75,11 @@
 
 - FEAT: add a texture search
 
-#--------------------------------------
-# Time Act Editor
-#--------------------------------------
-- FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
 
 #--------------------------------------
 # Viewport
 #--------------------------------------
 - FIX: viewport resources are not fully released by Resource management system
 - FIX: hanging issue if resource fails to resolve loading during map loads.
+
 

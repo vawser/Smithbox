@@ -339,6 +339,14 @@ public class InterfaceTab
                 ImGui.ColorEdit4("Logger: Error", ref UI.Current.ImGui_Logger_Error_Color);
             }
 
+            if (ImGui.CollapsingHeader("Havok Editor", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.ColorEdit4("Header", ref UI.Current.ImGui_Havok_Header);
+                ImGui.ColorEdit4("Reference", ref UI.Current.ImGui_Havok_Reference);
+                ImGui.ColorEdit4("Highlight", ref UI.Current.ImGui_Havok_Highlight);
+                ImGui.ColorEdit4("Warning", ref UI.Current.ImGui_Havok_Warning);
+            }
+
             if (ImGui.CollapsingHeader("Miscellaneous", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.ColorEdit4("Display Group: Border Highlight", ref UI.Current.DisplayGroupEditor_Border_Highlight);

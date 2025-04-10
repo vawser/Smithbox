@@ -16,7 +16,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace StudioCore.Editors.HavokEditor.Framework;
+
 public static class HavokFileBank
 {
     public static bool IsLoaded { get; private set; }
@@ -29,7 +30,7 @@ public static class HavokFileBank
     {
         // Behaviors
         List<string> fileNames = MiscLocator.GetHavokBehaviorBinders();
-        foreach(var entry in fileNames)
+        foreach (var entry in fileNames)
         {
             var filename = Path.GetFileNameWithoutExtension(entry);
             SetupBehaviorContainer(filename);
@@ -46,7 +47,7 @@ public static class HavokFileBank
 
             var reader = new BXF4Reader(bhdPath, bdtPath);
 
-            foreach(var file in reader.Files)
+            foreach (var file in reader.Files)
             {
                 SetupCollisionContainer(bhdPath, bdtPath, file.Name, reader.ReadFile(file).ToArray());
             }
@@ -91,8 +92,8 @@ public static class HavokFileBank
 
     public static void SaveHavokFile(HavokContainerInfo info)
     {
-        if (!info.IsModified)
-            return;
+        //if (!info.IsModified)
+        //    return;
 
         if (info.IsBxf)
         {
@@ -106,7 +107,7 @@ public static class HavokFileBank
             {
                 var fileBytes = file.Bytes;
 
-                foreach (var entry in info.LoadedHavokFiles)
+                foreach (var entry in info.LoadedHavokRoots)
                 {
                     if (file.Name.ToLower() == entry.Key.ToLower())
                     {

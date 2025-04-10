@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace StudioCore.Editors.MapEditor.Framework.META;
+namespace StudioCore.Editors.HavokEditor.Data;
 
-public class MapParamEnum
+public class HavokMetaEnum
 {
     public string Name;
 
     public Dictionary<string, string> Values = new();
 
-    public MapParamEnum(XmlNode enumNode)
+    public HavokMetaEnum(XmlNode enumNode)
     {
         Name = "";
 

@@ -100,6 +100,11 @@ public class InterfaceThemeConfig
     public List<float> ImGui_Logger_Warning_Color { get; set; }
     public List<float> ImGui_Logger_Error_Color { get; set; }
 
+    public List<float> ImGui_Havok_Header { get; set; }
+    public List<float> ImGui_Havok_Reference { get; set; }
+    public List<float> ImGui_Havok_Highlight { get; set; }
+    public List<float> ImGui_Havok_Warning { get; set; }
+
     public List<float> DisplayGroupEditor_Border_Highlight { get; set; }
     public List<float> DisplayGroupEditor_DisplayActive_Frame { get; set; }
     public List<float> DisplayGroupEditor_DisplayActive_Checkbox { get; set; }

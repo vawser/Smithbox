@@ -6,7 +6,8 @@ using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Core.Project;
-using StudioCore.Editors.HavokEditor;
+using StudioCore.Editors.HavokEditor.Enums;
+using StudioCore.Editors.HavokEditor.Framework;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Interface;
@@ -116,6 +117,7 @@ public static class TimeActUtils
     {
         HavokContainerInfo newInfo = null;
 
+        /*
         foreach (var entry in HavokFileBank.BehaviorContainerBank)
         {
             if (entry.Filename == info.Name)
@@ -128,13 +130,14 @@ public static class TimeActUtils
                     if (name.Contains("behaviors"))
                     {
                         newInfo = entry;
-                        newInfo.LoadFile(file.ToLower());
-                        newInfo.ReadHavokObjects(file.ToLower());
+                        newInfo.LoadFile(file.ToLower(), HavokInternalType.Behavior.ToString());
+                        newInfo.ReadHavokObjects(file.ToLower(), HavokInternalType.Behavior.ToString());
                         return newInfo;
                     }
                 }
             }
         }
+        */
 
         return newInfo;
     }

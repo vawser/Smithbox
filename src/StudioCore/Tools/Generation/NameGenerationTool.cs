@@ -2,7 +2,7 @@
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Editors.HavokEditor;
+using StudioCore.Editors.HavokEditor.Framework;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
 using System;

@@ -87,6 +87,9 @@ public class SystemTab
             ImGui.Checkbox("Enable Time Act Editor", ref CFG.Current.EnableEditor_TAE);
             UIHelper.ShowHoverTooltip("Enables the Time Act Editor in Smithbox.");
 
+            ImGui.Checkbox("Enable Havok Editor", ref CFG.Current.EnableEditor_HAVOK);
+            UIHelper.ShowHoverTooltip("Enables the Havok Editor in Smithbox.");
+
             ImGui.Checkbox("Enable EMEVD Editor", ref CFG.Current.EnableEditor_EMEVD);
             UIHelper.ShowHoverTooltip("Enables the EMEVD Editor in Smithbox." +
                 "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
@@ -101,7 +104,6 @@ public class SystemTab
 
             // WIP
             /*
-            ImGui.Checkbox("Enable Havok Editor", ref CFG.Current.EnableHavokEditor);
             ImGui.Checkbox("Enable Material Editor", ref CFG.Current.EnableMaterialEditor);
             ImGui.Checkbox("Enable Particle Editor", ref CFG.Current.EnableParticleEditor);
             */

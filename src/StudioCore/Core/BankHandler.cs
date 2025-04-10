@@ -11,6 +11,7 @@ using StudioCore.Banks.SpawnStateBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
+using StudioCore.Editors.HavokEditor.Data;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Framework.META;
@@ -161,6 +162,7 @@ public class BankHandler
         ParamBank.ReloadParams();
 
         MsbMeta.SetupMeta();
+        HavokMeta.Setup();
     }
 
     /// <summary>

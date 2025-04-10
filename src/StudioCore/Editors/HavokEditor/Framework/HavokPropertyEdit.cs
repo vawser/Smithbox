@@ -8,13 +8,13 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace StudioCore.Editors.HavokEditor.Framework;
 
-public class HavokPropertyEditor
+public class HavokPropertyEdit
 {
     private HavokEditorScreen Screen;
 
-    public HavokPropertyEditor(HavokEditorScreen screen)
+    public HavokPropertyEdit(HavokEditorScreen screen)
     {
         Screen = screen;
     }
@@ -31,7 +31,7 @@ public class HavokPropertyEditor
             ImGui.InputText($"##textInput_{key}", ref newEntry, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
-                Screen.SelectedContainerInfo.IsModified = true;
+                Screen.Selection.GetContainer().IsModified = true;
                 return newEntry;
             }
         }
@@ -41,14 +41,15 @@ public class HavokPropertyEditor
             var vector = (Vector4)property;
             ImGui.AlignTextToFramePadding();
             ImGui.InputFloat4($"##float4_{key}", ref vector);
-            if(ImGui.IsItemDeactivatedAfterEdit())
+            if (ImGui.IsItemDeactivatedAfterEdit())
             {
-                Screen.SelectedContainerInfo.IsModified = true;
+                Screen.Selection.MarkAsModified();
                 return vector;
             }
         }
 
-        if(property.GetType() == typeof(hkbTransitionEffect.EventMode)) 
+        // TODO: Use JSON enum stuff 
+        if (property.GetType() == typeof(hkbTransitionEffect.EventMode))
         {
             var propEnum = (hkbTransitionEffect.EventMode)property;
             var newValue = property;
@@ -57,9 +58,9 @@ public class HavokPropertyEditor
             {
                 foreach (var val in Enum.GetValues(propEnum.GetType()))
                 {
-                    if(ImGui.Selectable($"{val}"))
+                    if (ImGui.Selectable($"{val}"))
                     {
-                        Screen.SelectedContainerInfo.IsModified = true;
+                        Screen.Selection.MarkAsModified();
                         newValue = (hkbTransitionEffect.EventMode)val;
                         break;
                     }
@@ -76,7 +77,7 @@ public class HavokPropertyEditor
             var list = (List<string>)property;
             var newList = property;
 
-            for(int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 var entry = list[i];
                 var newEntry = entry;
@@ -84,7 +85,7 @@ public class HavokPropertyEditor
                 ImGui.InputText($"##textInput_{key}_{i}", ref newEntry, 255);
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    Screen.SelectedContainerInfo.IsModified = true;
+                    Screen.Selection.MarkAsModified();
                     list[i] = newEntry;
                 }
                 if (i > 0)
@@ -92,15 +93,15 @@ public class HavokPropertyEditor
                     ImGui.SameLine();
                     if (ImGui.Button($"Remove##removeButton_{key}_{i}"))
                     {
-                        Screen.SelectedContainerInfo.IsModified = true;
+                        Screen.Selection.MarkAsModified();
                         list.Remove(entry);
                         break;
                     }
                 }
             }
-            if(ImGui.Button($"Add##addButton_{key}"))
+            if (ImGui.Button($"Add##addButton_{key}"))
             {
-                Screen.SelectedContainerInfo.IsModified = true;
+                Screen.Selection.MarkAsModified();
                 list.Add("");
             }
 

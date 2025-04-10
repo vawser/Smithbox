@@ -110,6 +110,11 @@ namespace StudioCore.Interface
             UI.Current.ImGui_Logger_Warning_Color = UI.Default.ImGui_Logger_Warning_Color;
             UI.Current.ImGui_Logger_Error_Color = UI.Default.ImGui_Logger_Error_Color;
 
+            UI.Current.ImGui_Havok_Header = UI.Default.ImGui_Havok_Header;
+            UI.Current.ImGui_Havok_Reference = UI.Default.ImGui_Havok_Reference;
+            UI.Current.ImGui_Havok_Highlight = UI.Default.ImGui_Havok_Highlight;
+            UI.Current.ImGui_Havok_Warning = UI.Default.ImGui_Havok_Warning;
+
             // Misc
             UI.Current.DisplayGroupEditor_Border_Highlight = UI.Default.DisplayGroupEditor_Border_Highlight;
             UI.Current.DisplayGroupEditor_DisplayActive_Frame = UI.Default.DisplayGroupEditor_DisplayActive_Frame;
@@ -277,6 +282,11 @@ namespace StudioCore.Interface
             theme.ImGui_Logger_Warning_Color = InterfaceUtils.GetFloatList(UI.Current.ImGui_Logger_Warning_Color);
             theme.ImGui_Logger_Error_Color = InterfaceUtils.GetFloatList(UI.Current.ImGui_Logger_Error_Color);
 
+            theme.ImGui_Havok_Header = InterfaceUtils.GetFloatList(UI.Current.ImGui_Havok_Header);
+            theme.ImGui_Havok_Reference = InterfaceUtils.GetFloatList(UI.Current.ImGui_Havok_Reference);
+            theme.ImGui_Havok_Highlight = InterfaceUtils.GetFloatList(UI.Current.ImGui_Havok_Highlight);
+            theme.ImGui_Havok_Warning = InterfaceUtils.GetFloatList(UI.Current.ImGui_Havok_Warning);
+
             theme.DisplayGroupEditor_Border_Highlight = InterfaceUtils.GetFloatList(UI.Current.DisplayGroupEditor_Border_Highlight);
             theme.DisplayGroupEditor_DisplayActive_Frame = InterfaceUtils.GetFloatList(UI.Current.DisplayGroupEditor_DisplayActive_Frame);
             theme.DisplayGroupEditor_DisplayActive_Checkbox = InterfaceUtils.GetFloatList(UI.Current.DisplayGroupEditor_DisplayActive_Checkbox);
@@ -430,6 +440,11 @@ namespace StudioCore.Interface
             UI.Current.ImGui_Logger_Information_Color = InterfaceUtils.GetVectorValue(theme.ImGui_Logger_Information_Color);
             UI.Current.ImGui_Logger_Warning_Color = InterfaceUtils.GetVectorValue(theme.ImGui_Logger_Warning_Color);
             UI.Current.ImGui_Logger_Error_Color = InterfaceUtils.GetVectorValue(theme.ImGui_Logger_Error_Color);
+
+            UI.Current.ImGui_Havok_Header = InterfaceUtils.GetVectorValue(theme.ImGui_Havok_Header);
+            UI.Current.ImGui_Havok_Reference = InterfaceUtils.GetVectorValue(theme.ImGui_Havok_Reference);
+            UI.Current.ImGui_Havok_Highlight = InterfaceUtils.GetVectorValue(theme.ImGui_Havok_Highlight);
+            UI.Current.ImGui_Havok_Warning = InterfaceUtils.GetVectorValue(theme.ImGui_Havok_Warning);
 
             // Misc
             UI.Current.DisplayGroupEditor_Border_Highlight = InterfaceUtils.GetVectorValue(theme.DisplayGroupEditor_Border_Highlight);

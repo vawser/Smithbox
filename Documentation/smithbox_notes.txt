@@ -40,6 +40,22 @@
 - FEAT: material editor
 
 #--------------------------------------
+# EMEVD Editor
+#--------------------------------------
+- FEAT: enum selection changes value
+
+- FEAT: Add ability to insert/delete/order events.
+
+- FEAT: Add ability to insert/delete/order instructions.
+
+- FEAT: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
+
+#--------------------------------------
+# Time Act Editor
+#--------------------------------------
+- FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
+
+#--------------------------------------
 # ESD Editor
 #--------------------------------------
 - FEAT: basic functionality for editing, adding and removing.

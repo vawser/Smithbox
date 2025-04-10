@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HAVOKMETA XmlVersion="0">
+  <Class 
+  Name="Project Data"
+  Description="Constant data associated with a behavior project." />
+  
+  <Field>
+    <m_worldUpWS 
+    Name="World Up WS" 
+    Description="The world up vector." />
+    
+    <m_defaultEventMode 
+    Name="Default Event Mode" 
+    Description="Defines the default event mode." />
+  </Field>
+</HAVOKMETA>

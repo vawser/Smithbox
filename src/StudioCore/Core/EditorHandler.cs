@@ -121,7 +121,7 @@ public class EditorHandler
             EditorList.Add(CutsceneEditor);
         }
 
-        if (CFG.Current.EnableEditor_HAVOK_wip)
+        if (CFG.Current.EnableEditor_HAVOK)
         {
             EditorList.Add(HavokEditor);
         }

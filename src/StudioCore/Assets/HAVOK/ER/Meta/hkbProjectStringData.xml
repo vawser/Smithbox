@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HAVOKMETA XmlVersion="0">
+  <Class 
+  Name="Project String Data"
+  Description="Constant string data associated with a behavior project." />
+  
+  <Field>
+    <m_animationFilenames 
+    Name="Animation Filenames" 
+    Description="A list of referenced animation filenames.\nThis is not necessarily equivalent to the files that were exported.\nThe list of exported files is dependent on several settings in HAT such as 'Only Export Referenced Animations' and 'Bundle Referenced Animations'." />
+    
+    <m_behaviorFilenames 
+    Name="Behavior Filenames" 
+    Description="A list of referenced behavior filenames." />
+    
+    <m_characterFilenames 
+    Name="Character Filenames" 
+    Description="A list of referenced character filenames." />
+    
+    <m_eventNames 
+    Name="Event Names" 
+    Description="he names of the events in the project.  These will not be present if your project has events defined per-behavior." />
+    
+    <m_animationPath 
+    Name="Animation Path" 
+    Description="The path to the folder containing animations.  This can be either absolute or relative to the project folder." />
+    
+    <m_behaviorPath 
+    Name="Behavior Path" 
+    Description="The path to the folder containing behaviors.  This can be either absolute or relative to the project folder." />
+    
+    <m_characterPath 
+    Name="Character Path" 
+    Description="The path to the folder containing characters.  This can be either absolute or relative to the project folder." />
+    
+    <m_scriptsPath 
+    Name="Scripts Path" 
+    Description="The path to the folder containing scripts.  This can be either absolute or relative to the project folder." />
+    
+    <m_fullPathToSource 
+    Name="Full Path to Source" 
+    Description="The full path to the source HKP file." />
+  </Field>
+</HAVOKMETA>
