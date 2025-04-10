@@ -1,11 +1,9 @@
 ﻿using Andre.Formats;
-using Assimp;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextureViewer.Enums;
-using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
@@ -13,9 +11,7 @@ using StudioCore.TextureViewer;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
@@ -116,7 +112,8 @@ public class TexImagePreview : IResourceEventListener
         // Display image
         if (displayImage)
         {
-            ImGui.Image(handle, size, UV0, UV1);
+            ImTextureID texID = new ImTextureID(handle);
+            ImGui.Image(texID, size, UV0, UV1);
         }
 
         return true;

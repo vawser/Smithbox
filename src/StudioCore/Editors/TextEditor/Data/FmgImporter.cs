@@ -1,23 +1,15 @@
-﻿using ImGuiNET;
-using Microsoft.AspNetCore.Components.Forms;
+﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
-using SoulsFormats;
-using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
-using StudioCore.Editors.TextEditor.Actions;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 

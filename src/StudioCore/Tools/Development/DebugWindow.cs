@@ -1,20 +1,14 @@
-﻿using ImGuiNET;
-using SoulsFormats;
-using StudioCore.Core;
+﻿using Hexa.NET.ImGui;
+using SoapstoneLib;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Tests;
 using StudioCore.Tools.Generation;
 using StudioCore.Tools.Validation;
-using StudioCore.Utilities;
 using System.ComponentModel.DataAnnotations;
-using System.IO;
 using System.Numerics;
 using System.Threading.Tasks;
-using System;
-using static SoulsFormats.MSB_AC6;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Interface;
-using SoapstoneLib;
 using static StudioCore.Editor.TaskManager;
 
 namespace StudioCore.Tools.Development;

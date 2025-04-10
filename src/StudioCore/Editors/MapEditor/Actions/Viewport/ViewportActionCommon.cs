@@ -1,19 +1,12 @@
-﻿using DotNext.Collections.Generic;
-using Microsoft.Extensions.Logging;
-using Silk.NET.SDL;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Actions.Viewport;
 

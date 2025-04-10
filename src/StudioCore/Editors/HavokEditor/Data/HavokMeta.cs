@@ -1,12 +1,7 @@
-﻿using StudioCore.Editors.MapEditor.Framework.META;
-using StudioCore.HavokEditor;
-using StudioCore.Resource.Locators;
+﻿using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.HavokEditor.Data;
 

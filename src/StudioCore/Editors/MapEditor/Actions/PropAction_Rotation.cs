@@ -1,13 +1,8 @@
-﻿using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
+﻿using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Actions
 {

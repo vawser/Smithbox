@@ -1,17 +1,10 @@
-﻿using StudioCore.Platform;
-using StudioCore.Scene;
+﻿using Hexa.NET.ImGui;
+using StudioCore.Platform;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Drawing;
-using static StudioCore.Configuration.Settings.TimeActEditorTab;
-using StudioCore.Core.Project;
-using Silk.NET.SDL;
-using StudioCore.Graphics;
-using ImGuiNET;
 
 namespace StudioCore.Interface;
 

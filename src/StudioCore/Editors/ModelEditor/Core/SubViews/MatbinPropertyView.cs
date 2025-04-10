@@ -1,16 +1,9 @@
-﻿using ImGuiNET;
-using Org.BouncyCastle.Utilities;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core.Project;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Core.Properties;
 

@@ -1,7 +1,6 @@
 ﻿using Andre.Formats;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
@@ -9,11 +8,8 @@ using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
-using StudioCore.TextEditor;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Utilities;

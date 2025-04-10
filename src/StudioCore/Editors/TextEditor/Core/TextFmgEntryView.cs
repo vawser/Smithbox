@@ -1,15 +1,7 @@
-﻿using HKLib.hk2018.hkHashMapDetail;
-using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Editor;
 using StudioCore.Interface;
-using StudioCore.Platform;
 using StudioCore.TextEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 

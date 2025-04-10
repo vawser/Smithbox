@@ -1,18 +1,12 @@
-﻿using DotNext.Collections.Generic;
-using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Helpers;
 using StudioCore.Scene;
 using StudioCore.Scene.Enums;
-using StudioCore.Scene.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid;
 using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 

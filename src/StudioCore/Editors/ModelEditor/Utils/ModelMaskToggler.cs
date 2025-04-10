@@ -1,19 +1,14 @@
 ﻿using Andre.Formats;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Veldrid;
 
 namespace StudioCore.Editors.ModelEditor.Utils;

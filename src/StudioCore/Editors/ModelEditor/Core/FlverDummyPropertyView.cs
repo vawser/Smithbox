@@ -1,15 +1,8 @@
-﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
 

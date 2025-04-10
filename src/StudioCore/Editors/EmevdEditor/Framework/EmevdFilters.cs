@@ -1,6 +1,6 @@
 ﻿using HKLib.hk2018.hkaiCollisionAvoidance;
 using HKLib.hk2018.hkAsyncThreadPool;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;

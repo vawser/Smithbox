@@ -1,7 +1,6 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using SoulsFormats.KF4;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors;
@@ -18,7 +17,6 @@ using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;

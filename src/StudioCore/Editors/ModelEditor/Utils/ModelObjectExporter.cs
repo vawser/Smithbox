@@ -1,20 +1,13 @@
 ﻿using Microsoft.Extensions.Logging;
-using Org.BouncyCastle.Utilities;
-using Pfim;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextureViewer.Utils;
-using StudioCore.Resource.Locators;
-using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Utils;
 

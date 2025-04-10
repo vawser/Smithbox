@@ -1,20 +1,10 @@
-﻿using HKLib.hk2018;
-using HKLib.hk2018.hk;
-using HKLib.Serialization.hk2018;
-using HKLib.Serialization.hk2018.Binary;
-using HKLib.Serialization.hk2018.Binary.Util;
-using Microsoft.Extensions.Logging;
+﻿using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.HavokEditor.Enums;
 using StudioCore.Resource.Locators;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.HavokEditor.Framework;
 

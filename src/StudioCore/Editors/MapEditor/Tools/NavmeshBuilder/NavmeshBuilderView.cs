@@ -1,16 +1,16 @@
-﻿using HKX2;
+﻿using Hexa.NET.ImGui;
+using HKX2;
 using HKX2.Builders;
-using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Core.Project;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Havok;
 using StudioCore.Resource;
+using StudioCore.Resource.Types;
+using StudioCore.Scene.Framework;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
-using StudioCore.Core.Project;
-using StudioCore.Resource.Types;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Scene.Framework;
 
 namespace StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 

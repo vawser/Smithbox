@@ -1,23 +1,12 @@
-﻿using ImGuiNET;
-using Octokit;
-using StudioCore.Editor;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
-using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 

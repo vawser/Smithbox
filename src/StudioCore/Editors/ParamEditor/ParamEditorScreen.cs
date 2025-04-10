@@ -1,5 +1,5 @@
 ﻿using Andre.Formats;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
@@ -15,14 +15,12 @@ using StudioCore.Memory;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
 using ActionManager = StudioCore.Editor.ActionManager;
@@ -1734,7 +1732,7 @@ public class ParamEditorScreen : EditorScreen
             ImGui.InputTextMultiline("##MEditRegexInput", ref _currentMEditRegexInput, 65536,
                 new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale);
 
-            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.DontClosePopups))
+            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
                 _activeView._selection.SortSelection();
                 (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
@@ -1803,7 +1801,7 @@ public class ParamEditorScreen : EditorScreen
 
             DelimiterInputText();
 
-            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.DontClosePopups))
+            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
                 (var result, CompoundAction action) = ParamIO.ApplyCSV(ParamBank.PrimaryBank,
                     _currentMEditCSVInput, _activeView._selection.GetActiveParam(), _mEditCSVAppendOnly,
@@ -1832,7 +1830,7 @@ public class ParamEditorScreen : EditorScreen
                 new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale);
             DelimiterInputText();
 
-            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.DontClosePopups))
+            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
                 (var result, CompoundAction action) = ParamIO.ApplySingleCSV(ParamBank.PrimaryBank,
                     _currentMEditCSVInput, _activeView._selection.GetActiveParam(), _currentMEditSingleCSVField,

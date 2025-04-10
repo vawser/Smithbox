@@ -2,7 +2,6 @@ using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
-using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;

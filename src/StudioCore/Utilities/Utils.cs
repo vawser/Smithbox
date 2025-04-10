@@ -1,7 +1,7 @@
 //using Microsoft.Xna.Framework;
 
 using DotNext;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using Microsoft.Win32;
 using SoulsFormats;
 using StudioCore.Configuration;

@@ -1,20 +1,11 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.GparamEditor.Utils;
-using StudioCore.Editors.TextureViewer;
 using StudioCore.GraphicsEditor;
-using StudioCore.Platform;
-using StudioCore.Resource;
-using StudioCore.TextureViewer;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 

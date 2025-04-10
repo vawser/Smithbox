@@ -1,6 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using ImGuiNET;
-using Octokit;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
@@ -15,8 +13,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Framework.Decorators;
 

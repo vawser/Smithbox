@@ -1,13 +1,8 @@
 ﻿using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.MsbEditor;
 using StudioCore.Scene.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 

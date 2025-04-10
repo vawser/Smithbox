@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
@@ -8,7 +8,6 @@ using StudioCore.Editors.GparamEditor.Framework;
 using StudioCore.Editors.GparamEditor.Tools;
 using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.Interface;
-using StudioCore.Utilities;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;

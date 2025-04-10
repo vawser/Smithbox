@@ -1,8 +1,6 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Interface;
-using System;
-using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor.Framework;
 

@@ -1,30 +1,13 @@
-﻿using HKLib.hk2018.hkHashMapDetail;
-using ImGuiNET;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Editor;
 using StudioCore.Editor.Multiselection;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
-using StudioCore.Resource;
-using StudioCore.Resource.Locators;
-using StudioCore.Resource.Types;
-using StudioCore.Scene;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Reflection;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Veldrid.Utilities;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -236,10 +219,10 @@ public class ModelViewportManager
 
         if (curEntity != null)
         {
-            ImGui.SetItemAllowOverlap();
+            ImGui.SetNextItemAllowOverlap();
             var isVisible = curEntity.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * DPI.GetUIScale());
+            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.GetUIScale());
             ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -304,10 +287,10 @@ public class ModelViewportManager
 
         if (curEntity != null)
         {
-            ImGui.SetItemAllowOverlap();
+            ImGui.SetNextItemAllowOverlap();
             var isVisible = curEntity.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * DPI.GetUIScale());
+            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.GetUIScale());
             ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -371,10 +354,10 @@ public class ModelViewportManager
 
         if (curEntity != null)
         {
-            ImGui.SetItemAllowOverlap();
+            ImGui.SetNextItemAllowOverlap();
             var isVisible = curEntity.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * DPI.GetUIScale());
+            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.GetUIScale());
             ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));

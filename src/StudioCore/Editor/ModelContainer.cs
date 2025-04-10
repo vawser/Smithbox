@@ -1,7 +1,7 @@
 ﻿using HKLib.hk2018;
 using HKLib.hk2018.hkaiCollisionAvoidance;
 using HKLib.hk2018.TypeRegistryTest;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor;

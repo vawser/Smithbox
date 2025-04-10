@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StudioCore.Editors.MapEditor.Tools.MapQuery;
+﻿namespace StudioCore.Editors.MapEditor.Tools.MapQuery;
 
 public class MapObjectMatch
 {

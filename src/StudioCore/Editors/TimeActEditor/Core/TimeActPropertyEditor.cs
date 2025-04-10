@@ -1,21 +1,12 @@
-﻿using Assimp;
-using Google.Protobuf.WellKnownTypes;
-using ImGuiNET;
-using Newtonsoft.Json.Linq;
-using SoapstoneLib.Proto.Internal;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Utils;
-using StudioCore.Interface;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using static SoulsFormats.DRB;
 using static SoulsFormats.TAE;
 using static SoulsFormats.TAE.Animation;
 

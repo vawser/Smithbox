@@ -1,11 +1,9 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using static StudioCore.Resource.ResourceManager;
 
 namespace StudioCore.Resource;

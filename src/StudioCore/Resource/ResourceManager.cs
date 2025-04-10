@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Scene;

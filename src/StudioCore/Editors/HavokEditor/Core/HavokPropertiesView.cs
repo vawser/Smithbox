@@ -1,22 +1,13 @@
-﻿using Google.Protobuf.Reflection;
-using ImGuiNET;
-using Microsoft.Extensions.Logging;
-using SoulsFormats;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor.Action;
 using StudioCore.Editors.HavokEditor.Framework;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Framework.Decorators;
-using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.HavokEditor;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.HavokEditor.Core;
 

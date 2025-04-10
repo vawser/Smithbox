@@ -1,15 +1,9 @@
-﻿using StudioCore.Editors.MapEditor;
-using StudioCore.Interface;
+﻿using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Framework;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid.Utilities;
 
 namespace StudioCore.Editors.ModelEditor.Framework;

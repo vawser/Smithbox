@@ -1,10 +1,9 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;

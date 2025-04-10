@@ -1,22 +1,15 @@
-﻿using ImGuiNET;
-using SoulsFormats;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Formats;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Veldrid;
 
@@ -251,7 +244,8 @@ public class WorldMapView : IResourceEventListener
 
                 nint handle = (nint)texRes.GPUTexture.TexHandle;
 
-                ImGui.Image(handle, MapTextureSize);
+                ImTextureID texID = new ImTextureID(handle);
+                ImGui.Image(texID, MapTextureSize);
             }
         }
 

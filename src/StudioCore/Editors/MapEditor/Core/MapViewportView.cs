@@ -1,11 +1,5 @@
-﻿using Silk.NET.SDL;
-using StudioCore.Interface;
+﻿using StudioCore.Interface;
 using StudioCore.Scene;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
 using Viewport = StudioCore.Interface.Viewport;

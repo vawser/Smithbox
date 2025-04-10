@@ -1,20 +1,18 @@
-﻿using SoulsFormats;
+﻿using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using SoulsFormats;
+using StudioCore.Core.Project;
+using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Platform;
+using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
-using StudioCore.Platform;
-using StudioCore.Editor;
-using StudioCore.MsbEditor;
-using StudioCore.Scene;
 using System.Linq;
-using Microsoft.Extensions.Logging;
-
 using static MsbUtils;
-using StudioCore.Core.Project;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Enums;
 
 namespace StudioCore.Editors.MapEditor.Tools.Prefabs;
 

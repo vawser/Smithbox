@@ -1,7 +1,6 @@
-﻿using Google.Protobuf.WellKnownTypes;
+﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using SoulsFormats.KF4;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
@@ -11,11 +10,8 @@ using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
 using StudioCore.Tasks;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Framework;

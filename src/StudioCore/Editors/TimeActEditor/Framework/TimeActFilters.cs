@@ -1,15 +1,7 @@
-﻿using HKLib.hk2018.hk;
-using HKLib.hk2018.hkAsyncThreadPool;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Editors.TimeActEditor.Bank;
-using StudioCore.Interface;
-using System;
 using System.Collections.Generic;
-using System.Formats.Tar;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
 
 namespace StudioCore.Editors.TimeActEditor;
 

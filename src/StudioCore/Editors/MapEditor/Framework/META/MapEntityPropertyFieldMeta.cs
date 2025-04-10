@@ -1,14 +1,6 @@
-﻿using Octokit;
-using SoulsFormats;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Resource.Locators;
-using System;
-using System.Collections.Concurrent;
+﻿using StudioCore.Editors.ParamEditor;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace StudioCore.Editors.MapEditor.Framework.META;

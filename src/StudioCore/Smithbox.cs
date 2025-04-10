@@ -1,12 +1,17 @@
-﻿using ImGuiNET;
-using Silk.NET.SDL;
+﻿using Hexa.NET.ImGui;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Graphics;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource;
+using StudioCore.Tools;
+using StudioCore.Tools.Randomiser;
 using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
@@ -20,14 +25,6 @@ using Veldrid.Sdl2;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
-using StudioCore.Interface;
-using StudioCore.Core;
-using Microsoft.AspNetCore.Components.Forms;
-using StudioCore.Tasks;
-using StudioCore.Tools;
-using StudioCore.Core.Project;
-using StudioCore.Tools.Randomiser;
-using StudioCore.Editors.TextEditor;
 
 namespace StudioCore;
 
@@ -166,20 +163,21 @@ public class Smithbox
             otherFont = UI.Current.System_Other_Font;
 
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
+
         var fileEn = Path.Combine(AppContext.BaseDirectory, engFont);
         var fontEn = File.ReadAllBytes(fileEn);
         var fontEnNative = ImGui.MemAlloc((uint)fontEn.Length);
-        Marshal.Copy(fontEn, 0, fontEnNative, fontEn.Length);
+        Marshal.Copy(fontEn, 0, (nint)fontEnNative, fontEn.Length);
 
         var fileOther = Path.Combine(AppContext.BaseDirectory, otherFont);
         var fontOther = File.ReadAllBytes(fileOther);
         var fontOtherNative = ImGui.MemAlloc((uint)fontOther.Length);
-        Marshal.Copy(fontOther, 0, fontOtherNative, fontOther.Length);
+        Marshal.Copy(fontOther, 0, (nint)fontOtherNative, fontOther.Length);
 
         var fileIcon = Path.Combine(AppContext.BaseDirectory, @"Assets\Fonts\forkawesome-webfont.ttf");
         var fontIcon = File.ReadAllBytes(fileIcon);
         var fontIconNative = ImGui.MemAlloc((uint)fontIcon.Length);
-        Marshal.Copy(fontIcon, 0, fontIconNative, fontIcon.Length);
+        Marshal.Copy(fontIcon, 0, (nint)fontIconNative, fontIcon.Length);
 
         fonts.Clear();
 
@@ -188,7 +186,7 @@ public class Smithbox
 
         // English fonts
         {
-            ImFontConfig* ptr = ImGuiNative.ImFontConfig_ImFontConfig();
+            ImFontConfig* ptr = ImGui.ImFontConfig();
             ImFontConfigPtr cfg = new(ptr);
             cfg.GlyphMinAdvanceX = 5.0f;
             cfg.OversampleH = 3;
@@ -199,7 +197,7 @@ public class Smithbox
 
         // Other language fonts
         {
-            ImFontConfig* ptr = ImGuiNative.ImFontConfig_ImFontConfig();
+            ImFontConfig* ptr = ImGui.ImFontConfig();
             ImFontConfigPtr cfg = new(ptr);
             cfg.MergeMode = true;
             cfg.GlyphMinAdvanceX = 7.0f;
@@ -207,7 +205,7 @@ public class Smithbox
             cfg.OversampleV = 2;
 
             ImFontGlyphRangesBuilderPtr glyphRanges =
-                new(ImGuiNative.ImFontGlyphRangesBuilder_ImFontGlyphRangesBuilder());
+                new(ImGui.ImFontGlyphRangesBuilder());
             glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
             Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
@@ -236,15 +234,17 @@ public class Smithbox
                 glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
             }
 
-            glyphRanges.BuildRanges(out ImVector glyphRange);
-            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, scaleLarge, cfg, glyphRange.Data);
+            ImVector<uint> builtRanges;
+
+            glyphRanges.BuildRanges(&builtRanges);
+            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, scaleLarge, cfg, builtRanges.Data);
             glyphRanges.Destroy();
         }
 
         // Icon fonts
         {
             ushort[] ranges = { ForkAwesome.IconMin, ForkAwesome.IconMax, 0 };
-            ImFontConfig* ptr = ImGuiNative.ImFontConfig_ImFontConfig();
+            ImFontConfig* ptr = ImGui.ImFontConfig();
             ImFontConfigPtr cfg = new(ptr);
             cfg.MergeMode = true;
             cfg.GlyphMinAdvanceX = 12.0f;
@@ -255,7 +255,7 @@ public class Smithbox
             fixed (ushort* r = ranges)
             {
                 ImFontPtr f = fonts.AddFontFromMemoryTTF(fontIconNative, fontIcon.Length, scaleLarge, cfg,
-                    (IntPtr)r);
+                    (uint*)r);
             }
         }
 
@@ -511,7 +511,7 @@ public class Smithbox
         }
 
         var dsid = ImGui.GetID("DockSpace");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.NoSplit);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.NoDockingSplit);
         ImGui.PopStyleVar(1);
         ImGui.End();
         ImGui.PopStyleColor(1);
@@ -584,7 +584,7 @@ public class Smithbox
 
         if (WindowHandler.DebugWindow._showImGuiStackToolWindow)
         {
-            ImGui.ShowStackToolWindow(ref WindowHandler.DebugWindow._showImGuiStackToolWindow);
+            ImGui.ShowIDStackToolWindow(ref WindowHandler.DebugWindow._showImGuiStackToolWindow);
         }
 
         ImGui.PopStyleVar(3);

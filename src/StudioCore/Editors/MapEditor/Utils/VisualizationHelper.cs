@@ -1,13 +1,5 @@
 ﻿using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Editors.MapEditor.Framework.MsbEntity;
 
 namespace StudioCore.Editors.MapEditor.Helpers;
 

@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Core.Properties;
@@ -6,12 +6,7 @@ using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
 

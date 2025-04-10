@@ -1,10 +1,4 @@
-﻿using CommunityToolkit.HighPerformance.Buffers;
-using StudioCore.TextureViewer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StudioCore.TextureViewer;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Editors.TextureViewer;

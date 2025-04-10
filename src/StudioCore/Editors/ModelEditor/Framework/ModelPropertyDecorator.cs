@@ -1,9 +1,7 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;
-using System;
-using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor
 {
@@ -25,7 +23,7 @@ namespace StudioCore.Editors.ModelEditor
             var alias = "";
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Selectable("##gxListIndexDecoratorSelectable", false, ImGuiSelectableFlags.AllowItemOverlap);
+            ImGui.Selectable("##gxListIndexDecoratorSelectable", false, ImGuiSelectableFlags.AllowOverlap);
 
             if (index != -1)
             {
@@ -67,7 +65,7 @@ namespace StudioCore.Editors.ModelEditor
             var alias = "";
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Selectable("##materialIndexDecoratorSelectable", false, ImGuiSelectableFlags.AllowItemOverlap);
+            ImGui.Selectable("##materialIndexDecoratorSelectable", false, ImGuiSelectableFlags.AllowOverlap);
 
             if (index != -1)
             {
@@ -109,7 +107,7 @@ namespace StudioCore.Editors.ModelEditor
             var alias = "";
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Selectable("##nodeListIndexDecoratorSelectable", false, ImGuiSelectableFlags.AllowItemOverlap);
+            ImGui.Selectable("##nodeListIndexDecoratorSelectable", false, ImGuiSelectableFlags.AllowOverlap);
 
             if (index != -1)
             {
@@ -151,7 +149,7 @@ namespace StudioCore.Editors.ModelEditor
             var alias = "";
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Selectable("##bufferLayoutIndexDecoratorSelectable", false, ImGuiSelectableFlags.AllowItemOverlap);
+            ImGui.Selectable("##bufferLayoutIndexDecoratorSelectable", false, ImGuiSelectableFlags.AllowOverlap);
 
             if (index != -1)
             {

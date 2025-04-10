@@ -1,14 +1,8 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
-using StudioCore.Platform;
-using StudioCore.Resource.Locators;
-using StudioCore.Utilities;
-using System;
-using System.Diagnostics;
-using System.IO;
 using System.Numerics;
 using System.Timers;
 using Veldrid;

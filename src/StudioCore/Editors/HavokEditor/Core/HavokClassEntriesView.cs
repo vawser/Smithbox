@@ -1,12 +1,5 @@
-﻿using ImGuiNET;
-using StudioCore.Core.Project;
-using StudioCore.Editors.ModelEditor.Utils;
+﻿using Hexa.NET.ImGui;
 using StudioCore.HavokEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.HavokEditor.Core;
 

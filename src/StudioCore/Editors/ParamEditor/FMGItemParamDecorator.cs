@@ -1,17 +1,12 @@
-﻿using ImGuiNET;
+﻿using Andre.Formats;
+using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Editors.TextEditor.Utils;
+using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Andre.Formats;
-using StudioCore.Editor;
-using HKLib.hk2018.hkWeakPtrTest;
-using Silk.NET.OpenGL;
 
 namespace StudioCore.Editors.ParamEditor;
 

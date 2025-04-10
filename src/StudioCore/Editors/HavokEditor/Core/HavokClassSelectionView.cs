@@ -1,18 +1,6 @@
-﻿using HKLib.hk2018;
-using ImGuiNET;
-using StudioCore.Core.Project;
-using StudioCore.Editors.HavokEditor.Data;
-using StudioCore.Editors.HavokEditor.Framework;
-using StudioCore.Editors.MapEditor;
+﻿using Hexa.NET.ImGui;
 using StudioCore.HavokEditor;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.HavokEditor.Core;
 

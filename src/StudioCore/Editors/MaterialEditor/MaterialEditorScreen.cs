@@ -1,15 +1,9 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Interface;
-using StudioCore.Settings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;

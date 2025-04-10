@@ -1,16 +1,12 @@
-﻿using ImGuiNET;
-using StudioCore.Resource.Types;
-using StudioCore.Resource;
-using StudioCore.TextureViewer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using StudioCore.Resource.Locators;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.TextureViewer.Enums;
+using StudioCore.Resource;
+using StudioCore.Resource.Locators;
+using StudioCore.Resource.Types;
+using StudioCore.TextureViewer;
+using System;
+using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
@@ -60,7 +56,8 @@ public class TexTextureViewport
                 IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
                 Vector2 size = GetImageSize(texRes, true);
 
-                ImGui.Image(handle, size);
+                ImTextureID texID = new ImTextureID(handle);
+                ImGui.Image(texID, size);
             }
         }
 

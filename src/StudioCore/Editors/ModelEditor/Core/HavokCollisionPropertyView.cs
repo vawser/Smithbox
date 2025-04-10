@@ -1,11 +1,5 @@
-﻿using HKLib.hk2018;
-using ImGuiNET;
-using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Hexa.NET.ImGui;
+using HKLib.hk2018;
 
 namespace StudioCore.Editors.ModelEditor.Core
 {

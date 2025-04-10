@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ImGuiNET;
-using System.Numerics;
-using System.ComponentModel.DataAnnotations;
-using static StudioCore.Tools.Development.DebugWindow;
-using StudioCore.Utilities;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Interface;
+using StudioCore.Utilities;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Numerics;
+using System.Threading.Tasks;
 
 namespace StudioCore.Tools.Randomiser;
 

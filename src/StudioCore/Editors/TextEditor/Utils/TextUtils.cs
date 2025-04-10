@@ -1,15 +1,9 @@
-﻿using HKLib.hk2018.hkAsyncThreadPool;
-using Microsoft.Extensions.Logging;
-using Silk.NET.OpenGL;
+﻿using Microsoft.Extensions.Logging;
 using StudioCore.Core.Project;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 

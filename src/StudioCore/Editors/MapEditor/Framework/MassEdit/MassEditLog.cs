@@ -1,12 +1,8 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 

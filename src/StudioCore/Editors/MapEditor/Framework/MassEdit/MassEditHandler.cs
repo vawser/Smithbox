@@ -1,15 +1,12 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;

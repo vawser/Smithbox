@@ -1,15 +1,9 @@
-﻿using ImGuiNET;
-using StudioCore.Interface;
+﻿using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Framework;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Numerics;
-using System.Reflection.PortableExecutable;
-using Veldrid;
 using Veldrid.Utilities;
 
 namespace StudioCore.Editors.MapEditor.Core;

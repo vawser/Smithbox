@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HKLib.hk2018.hkAsyncThreadPool;
-using ImGuiNET;
-using Microsoft.Extensions.DependencyModel;
-using Octokit;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Utilities;
+using System.Linq;
 
 namespace StudioCore.Editors.TextEditor.Utils;
 

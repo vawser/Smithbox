@@ -1,17 +1,10 @@
-﻿using ImGuiNET;
-using Org.BouncyCastle.Asn1.X9;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
-using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 

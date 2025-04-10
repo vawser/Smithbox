@@ -1,25 +1,12 @@
-﻿using DotNext.Collections.Generic;
-using HKLib.hk2018;
-using HKLib.hk2018.hkAsyncThreadPool;
-using Org.BouncyCastle.Crypto;
-using SoulsFormats;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Banks.HavokAliasBank;
+﻿using SoulsFormats;
 using StudioCore.Core.Project;
-using StudioCore.Editors.HavokEditor.Enums;
 using StudioCore.Editors.HavokEditor.Framework;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using static SoulsFormats.DRB;
 using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
 
 namespace StudioCore.Editors.TimeActEditor.Utils;

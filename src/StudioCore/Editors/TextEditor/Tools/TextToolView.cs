@@ -1,19 +1,9 @@
-﻿using HKLib.hk2018.hkAsyncThreadPool;
-using HKLib.hk2018.hkHashMapDetail;
-using ImGuiNET;
-using Octokit;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Core.Project;
-using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 

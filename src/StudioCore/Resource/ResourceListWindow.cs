@@ -1,14 +1,7 @@
-﻿using HKLib.hk2018.hk;
-using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Interface;
-using StudioCore.Resource.Types;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Resource;
 

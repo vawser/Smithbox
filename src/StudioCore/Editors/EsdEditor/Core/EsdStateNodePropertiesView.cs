@@ -1,22 +1,11 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using ImGuiNET;
-using Org.BouncyCastle.Utilities;
-using Silk.NET.SDL;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.EsdEditor.EsdLang;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
-using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using static SoulsFormats.ESD;
 using static StudioCore.Editors.EsdEditor.EsdLang.AST;
 

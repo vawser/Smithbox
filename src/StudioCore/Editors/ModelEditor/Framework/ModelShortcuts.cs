@@ -1,16 +1,11 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.ModelEditor.Core;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Scene;
 using StudioCore.Scene.Enums;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Utilities;
 

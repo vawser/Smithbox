@@ -1,9 +1,4 @@
-﻿using StudioCore.Editors.MapEditor.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 

@@ -1,16 +1,11 @@
-﻿using CsvHelper;
-using ImGuiNET;
-using Silk.NET.SDL;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Tools;
-using StudioCore.Editors.ModelEditor.Utils;
-using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
@@ -19,16 +14,11 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Veldrid.Utilities;
 using static SoulsFormats.MSBE.Part;
-using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 

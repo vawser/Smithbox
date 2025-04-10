@@ -1,5 +1,4 @@
-﻿using ImGuiNET;
-using SoulsFormats;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.EsdEditor;
@@ -7,7 +6,6 @@ using StudioCore.Editors.EsdEditor.Framework;
 using StudioCore.Editors.EsdEditor.Utils;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
-using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;

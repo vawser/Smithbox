@@ -1,7 +1,5 @@
-﻿using ImGuiNET;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
@@ -10,7 +8,6 @@ using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
@@ -18,8 +15,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using static StudioCore.Configuration.SettingsWindow;
 
 namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser

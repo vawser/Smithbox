@@ -1,15 +1,12 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
-using Octokit;
 using SoulsFormats;
-using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
-using System.Reflection;
 using static SoulsFormats.GPARAM;
 using static StudioCore.Editors.GparamEditor.Data.GparamParamBank;
 
@@ -354,7 +351,7 @@ public class GparamPropertyEditor
 
             if (CFG.Current.Gparam_ColorEdit_RGB)
             {
-                flags = ImGuiColorEditFlags.DisplayRGB;
+                flags = ImGuiColorEditFlags.DisplayRgb;
             }
             if (CFG.Current.Gparam_ColorEdit_Decimal)
             {
@@ -362,7 +359,7 @@ public class GparamPropertyEditor
             }
             if (CFG.Current.Gparam_ColorEdit_HSV)
             {
-                flags = ImGuiColorEditFlags.DisplayHSV;
+                flags = ImGuiColorEditFlags.DisplayHsv;
             }
 
             if (ImGui.ColorEdit4($"##value{idx}", ref colorInput, flags))

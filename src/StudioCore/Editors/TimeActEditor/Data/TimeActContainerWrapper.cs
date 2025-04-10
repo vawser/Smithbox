@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
+﻿using System.Collections.Generic;
 
 namespace StudioCore.Editors.TimeActEditor.Bank;
 

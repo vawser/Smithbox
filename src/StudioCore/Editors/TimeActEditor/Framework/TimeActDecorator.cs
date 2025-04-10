@@ -1,7 +1,5 @@
 ﻿using Andre.Formats;
-using HKLib.hk2018.hkHashMapDetail;
-using ImGuiNET;
-using SoapstoneLib.Proto.Internal;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.ProjectEnumBank;
@@ -14,9 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor;
 

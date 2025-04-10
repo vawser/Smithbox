@@ -1,8 +1,6 @@
-﻿using ImGuiNET;
-using Microsoft.Extensions.Caching.Memory;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.Platform;

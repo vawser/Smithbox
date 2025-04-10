@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
@@ -529,10 +529,10 @@ public class MapContentView
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentAD.AssetName}",
                                             treeflags))
                                     {
-                                        ImGui.SetItemAllowOverlap();
+                                        ImGui.SetNextItemAllowOverlap();
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
-                                        ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X -
+                                        ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X -
                                                             18.0f * DPI.GetUIScale());
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
@@ -561,10 +561,10 @@ public class MapContentView
                                     }
                                     else
                                     {
-                                        ImGui.SetItemAllowOverlap();
+                                        ImGui.SetNextItemAllowOverlap();
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
-                                        ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X -
+                                        ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X -
                                                             18.0f * DPI.GetUIScale());
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
@@ -665,7 +665,7 @@ public class MapContentView
         else
         {
             treeImGuiId++;
-            var selectableFlags = ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowItemOverlap;
+            var selectableFlags = ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowOverlap;
 
             if (ImGui.Selectable($"{padding}{e.PrettyName}##{treeImGuiId}", Selection.GetSelection().Contains(e), selectableFlags))
             {
@@ -740,10 +740,10 @@ public class MapContentView
         // Visibility icon
         if (visicon)
         {
-            ImGui.SetItemAllowOverlap();
+            ImGui.SetNextItemAllowOverlap();
             var visible = e.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * DPI.GetUIScale());
+            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.GetUIScale());
             ImGui.PushStyleColor(ImGuiCol.Text, visible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));

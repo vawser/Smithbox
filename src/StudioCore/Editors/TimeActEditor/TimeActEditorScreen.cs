@@ -1,15 +1,10 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Core;
 using StudioCore.Editors.TimeActEditor.Tools;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
-using StudioCore.Scene;
-using StudioCore.Utilities;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
