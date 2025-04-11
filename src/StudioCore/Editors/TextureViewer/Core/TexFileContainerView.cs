@@ -1,10 +1,17 @@
-﻿using Hexa.NET.ImGui;
+﻿using HKLib.hk2018.hkaiCollisionAvoidance;
+using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 using StudioCore.TextureViewer;
 using StudioCore.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Editors.TextureViewer;
 

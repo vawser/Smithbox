@@ -1,7 +1,13 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.TextEditor;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static StudioCore.Editors.EmevdEditor.EmevdBank;
 
 namespace StudioCore.Editors.TextEditor;
 

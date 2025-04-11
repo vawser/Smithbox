@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;

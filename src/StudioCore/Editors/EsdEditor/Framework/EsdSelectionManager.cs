@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.TextEditor;

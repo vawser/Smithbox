@@ -1,11 +1,16 @@
-﻿using SoulsFormats;
+﻿using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.MsbEditor;
 using StudioCore.Scene.Helpers;
+using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Tools.PatrolRouteDraw;
 

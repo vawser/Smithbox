@@ -1,12 +1,16 @@
-﻿using SoulsFormats;
+﻿using Silk.NET.OpenGL;
+using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 

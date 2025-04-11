@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Tasks;
 using System;
 using System.Collections.Concurrent;

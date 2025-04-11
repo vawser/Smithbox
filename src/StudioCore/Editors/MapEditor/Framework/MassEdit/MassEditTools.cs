@@ -1,5 +1,7 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
+using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Interface;
+using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,10 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Numerics;
+using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
+using static SoulsFormats.TAE;
 
 namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 

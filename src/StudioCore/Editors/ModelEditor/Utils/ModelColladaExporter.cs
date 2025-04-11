@@ -1,6 +1,11 @@
 ﻿using Assimp;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Utils;
 

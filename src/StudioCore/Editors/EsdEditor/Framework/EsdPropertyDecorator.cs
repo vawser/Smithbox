@@ -1,5 +1,4 @@
-﻿using Hexa.NET.ImGui;
-using StudioCore.TalkEditor;
+﻿using StudioCore.TalkEditor;
 
 namespace StudioCore.Editors.EsdEditor;
 

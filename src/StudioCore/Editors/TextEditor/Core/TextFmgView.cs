@@ -1,9 +1,17 @@
-﻿using Hexa.NET.ImGui;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using ImGuiNET;
+using Silk.NET.OpenGL;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
+using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static SoulsFormats.MSBS.Event;
 
 namespace StudioCore.Editors.TextEditor;
 

@@ -1,12 +1,21 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
+using StudioCore.MsbEditor;
+using StudioCore.Platform;
+using StudioCore.Scene;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 
 namespace StudioCore.Editors.MapEditor.Tools;
 

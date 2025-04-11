@@ -1,4 +1,13 @@
-﻿namespace StudioCore.Editors.ModelEditor;
+﻿using CommunityToolkit.HighPerformance.Buffers;
+using StudioCore.Editors.ModelEditor.Core;
+using StudioCore.Editors.ModelEditor.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StudioCore.Editors.ModelEditor;
 
 public class ModelCommandQueue
 {

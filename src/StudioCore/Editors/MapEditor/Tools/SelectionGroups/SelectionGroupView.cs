@@ -1,9 +1,12 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
+using StudioCore.MsbEditor;
 using StudioCore.Platform;
+using StudioCore.Scene;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;

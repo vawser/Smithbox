@@ -1,12 +1,20 @@
 ﻿using HKLib.hk2018;
+using HKLib.hk2018.hkAsyncThreadPool;
 using HKLib.Serialization.hk2018.Binary;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.HavokEditor.Enums;
+using StudioCore.Editors.ModelEditor;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.HavokEditor.Framework;
 

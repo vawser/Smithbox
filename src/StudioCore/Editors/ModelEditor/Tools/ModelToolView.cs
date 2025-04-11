@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Tools;
@@ -7,7 +8,13 @@ using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+using static StudioCore.Configuration.Settings.TimeActEditorTab;
 
 namespace StudioCore.Editors.ModelEditor.Actions;
 

@@ -1,8 +1,11 @@
 ﻿using Andre.Formats;
-using Hexa.NET.ImGui;
+using ImGuiNET;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 

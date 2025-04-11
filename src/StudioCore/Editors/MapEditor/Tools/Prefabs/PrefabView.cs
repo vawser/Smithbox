@@ -1,4 +1,4 @@
-using Hexa.NET.ImGui;
+using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using StudioCore;
@@ -9,6 +9,7 @@ using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.Prefabs;
 using StudioCore.Interface;
+using StudioCore.MsbEditor;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
 using System.Collections.Generic;

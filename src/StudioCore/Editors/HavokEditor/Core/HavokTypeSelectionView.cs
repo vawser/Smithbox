@@ -1,8 +1,12 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using StudioCore.Editors.HavokEditor.Enums;
 using StudioCore.HavokEditor;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.HavokEditor.Core;
 

@@ -1,4 +1,4 @@
-﻿
+﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Tasks;

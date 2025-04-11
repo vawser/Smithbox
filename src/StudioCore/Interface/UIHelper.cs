@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
@@ -44,9 +44,9 @@ public static class UIHelper
         ImGui.PushStyleColor(ImGuiCol.HeaderActive, UI.Current.ImGui_Selection_Active);
         ImGui.PushStyleColor(ImGuiCol.Tab, UI.Current.ImGui_Tab);
         ImGui.PushStyleColor(ImGuiCol.TabHovered, UI.Current.ImGui_Tab_Hover);
-        ImGui.PushStyleColor(ImGuiCol.TabSelected, UI.Current.ImGui_Tab_Active);
-        ImGui.PushStyleColor(ImGuiCol.TabDimmed, UI.Current.ImGui_UnfocusedTab);
-        ImGui.PushStyleColor(ImGuiCol.TabDimmedSelected, UI.Current.ImGui_UnfocusedTab_Active);
+        ImGui.PushStyleColor(ImGuiCol.TabActive, UI.Current.ImGui_Tab_Active);
+        ImGui.PushStyleColor(ImGuiCol.TabUnfocused, UI.Current.ImGui_UnfocusedTab);
+        ImGui.PushStyleColor(ImGuiCol.TabUnfocusedActive, UI.Current.ImGui_UnfocusedTab_Active);
 
         // Sizes
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1.0f);

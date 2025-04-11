@@ -1,10 +1,15 @@
 ﻿using Andre.Formats;
-using Hexa.NET.ImGui;
+using ImGuiNET;
+using Microsoft.Extensions.Logging;
+using SoulsFormats;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
+using StudioCore.Tasks;
+using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -12,6 +17,9 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+using static SoulsFormats.BHD5;
 
 namespace StudioCore.Editors.ParamEditor.Actions;
 public enum TargetType

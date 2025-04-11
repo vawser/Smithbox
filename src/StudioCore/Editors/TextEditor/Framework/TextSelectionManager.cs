@@ -1,6 +1,16 @@
-﻿using Hexa.NET.ImGui;
-using SoulsFormats;
+﻿using StudioCore.Configuration;
+using StudioCore.Editor.Multiselection;
 using StudioCore.TextEditor;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SoulsFormats;
+using HKLib.hk2018.hkaiCollisionAvoidance;
+using ImGuiNET;
+using StudioCore.Utilities;
+using StudioCore.Editors.TimeActEditor.Enums;
 
 namespace StudioCore.Editors.TextEditor;
 

@@ -6,6 +6,7 @@ using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
+using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
@@ -16,6 +17,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
 

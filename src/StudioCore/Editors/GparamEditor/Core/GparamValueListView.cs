@@ -1,9 +1,16 @@
-﻿using Hexa.NET.ImGui;
+﻿using HKLib.hk2018.hkaiCollisionAvoidance;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
+using StudioCore.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;

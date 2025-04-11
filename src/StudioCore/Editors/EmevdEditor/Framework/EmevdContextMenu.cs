@@ -1,5 +1,5 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
-using Hexa.NET.ImGui;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;

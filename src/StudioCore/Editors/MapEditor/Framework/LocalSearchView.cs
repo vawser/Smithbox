@@ -1,7 +1,11 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
+using SoulsFormats;
+using SoulsFormats.Util;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.PropertyEditor;
+using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
+using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,6 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Editor;
 using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor.Tools.LightmapAtlasEditor;

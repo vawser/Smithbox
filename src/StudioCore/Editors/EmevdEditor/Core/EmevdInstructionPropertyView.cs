@@ -1,5 +1,5 @@
 ﻿using DotNext.Collections.Generic;
-using Hexa.NET.ImGui;
+using ImGuiNET;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Editors.EmevdEditor.Enums;

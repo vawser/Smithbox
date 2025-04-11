@@ -1,10 +1,16 @@
-﻿using SoulsFormats;
+﻿using HKLib.hk2018.hkaiCollisionAvoidance;
+using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Actions;
+using StudioCore.Editors.TimeActEditor.Actions;
+using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 

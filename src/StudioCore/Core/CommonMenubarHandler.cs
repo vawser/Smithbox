@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Configuration.Help;
 using StudioCore.Configuration.Keybinds;

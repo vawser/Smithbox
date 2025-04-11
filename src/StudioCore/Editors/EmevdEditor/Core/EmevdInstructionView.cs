@@ -1,5 +1,5 @@
 ﻿using HKLib.hk2018.hkaiCollisionAvoidance;
-using Hexa.NET.ImGui;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editors.EmevdEditor.Enums;

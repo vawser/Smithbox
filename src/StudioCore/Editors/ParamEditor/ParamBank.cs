@@ -1,16 +1,18 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Platform;
-using StudioCore.Resource.Locators;
-using StudioCore.Tasks;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
+using StudioCore.Editors.TextEditor;
+using System.ComponentModel.DataAnnotations;
+using StudioCore.Core.Project;
+using StudioCore.Resource.Locators;
+using StudioCore.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 

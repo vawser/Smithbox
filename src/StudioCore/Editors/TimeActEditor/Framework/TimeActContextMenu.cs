@@ -1,5 +1,14 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
+using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Enums;
+using StudioCore.Interface;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static StudioCore.Editors.TimeActEditor.TimeActSelectionManager;
 
 namespace StudioCore.Editors.TimeActEditor;
 

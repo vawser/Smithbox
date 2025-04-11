@@ -5,6 +5,10 @@ using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static SoulsFormats.MSBFA.Event;
 
 namespace StudioCore.Editors.TalkEditor;
 public static class EsdBank

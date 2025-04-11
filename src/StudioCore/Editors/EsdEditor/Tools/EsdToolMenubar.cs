@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
 using StudioCore.Utilities;

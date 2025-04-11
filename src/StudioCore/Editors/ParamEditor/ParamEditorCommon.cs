@@ -1,4 +1,6 @@
-﻿using Hexa.NET.ImGui;
+﻿using Andre.Formats;
+using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
 using System;
 using System.Numerics;
@@ -172,7 +174,7 @@ public class ParamEditorCommon
         else if (typ == typeof(double))
         {
             var val = (double)oldval;
-            if (ImGui.InputDouble("##value", ref val, 0.1f, 1.0f))
+            if (ImGui.InputScalar("##value", ImGuiDataType.Double, new nint(&val)))
             {
                 newval = val;
                 _editedPropCache = newval;
@@ -231,7 +233,7 @@ public class ParamEditorCommon
         {
             // Using InputText means IsItemDeactivatedAfterEdit doesn't pick up random previous item
             var implMe = "ImplementMe";
-            ImGui.InputText("implementMe", ref implMe, 256, ImGuiInputTextFlags.ReadOnly);
+            ImGui.InputText(null, ref implMe, 256, ImGuiInputTextFlags.ReadOnly);
         }
 
         _committedCache |= ImGui.IsItemDeactivatedAfterEdit();

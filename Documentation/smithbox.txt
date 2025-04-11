@@ -7,9 +7,6 @@
 #--------------------------------------
 # Havok Editor
 #--------------------------------------
-- Add filters
-- Add arrow nav
-- Implement node view based on selected top-level class
 
 #--------------------------------------
 # Map Editor

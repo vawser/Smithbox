@@ -1,5 +1,4 @@
-﻿
-using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using Silk.NET.OpenGL;
 using StudioCore.Utilities;
 using System;
@@ -104,10 +103,8 @@ void main()
     public void RecreateFontDeviceTexture()
     {
         ImGuiIOPtr io = ImGui.GetIO();
-
-        byte* pixels;
-        int width, height, bytesPerPixel;
-        io.Fonts.GetTexDataAsRGBA32(&pixels, &width, &height, &bytesPerPixel);
+        // Build
+        io.Fonts.GetTexDataAsRGBA32(out byte* pixels, out var width, out var height, out var bytesPerPixel);
 
         var mips = (uint)Math.Floor(Math.Log(Math.Max(width, height), 2));
         GL.ActiveTexture(TextureUnit.Texture0);
@@ -126,7 +123,7 @@ void main()
             (int)TextureMinFilter.Linear);
 
         // Store our identifier
-        io.Fonts.SetTexID(_fontTexture);
+        io.Fonts.SetTexID((IntPtr)_fontTexture);
         io.Fonts.ClearTexData();
     }
 
@@ -292,29 +289,20 @@ void main()
         for (var i = 0; i < keyEvents.Count; i++)
         {
             KeyEvent keyEvent = keyEvents[i];
-
+            io.KeysDown[(int)keyEvent.Key] = keyEvent.Down;
             if (keyEvent.Key == Key.ControlLeft || keyEvent.Key == Key.ControlRight)
             {
-                if (ImGui.IsKeyDown(ImGuiKey.LeftCtrl) || ImGui.IsKeyDown(ImGuiKey.RightCtrl))
-                {
-                    _controlDown = keyEvent.Down;
-                }
+                _controlDown = keyEvent.Down;
             }
 
             if (keyEvent.Key == Key.ShiftLeft || keyEvent.Key == Key.ShiftRight)
             {
-                if (ImGui.IsKeyDown(ImGuiKey.LeftShift) || ImGui.IsKeyDown(ImGuiKey.RightShift))
-                {
-                    _shiftDown = keyEvent.Down;
-                }
+                _shiftDown = keyEvent.Down;
             }
 
             if (keyEvent.Key == Key.AltLeft || keyEvent.Key == Key.AltRight)
             {
-                if (ImGui.IsKeyDown(ImGuiKey.LeftAlt) || ImGui.IsKeyDown(ImGuiKey.RightAlt))
-                {
-                    _altDown = keyEvent.Down;
-                }
+                _altDown = keyEvent.Down;
             }
         }
 
@@ -325,7 +313,28 @@ void main()
 
     private static void SetOpenTKKeyMappings()
     {
-        ImGuiIOPtr ioPtr = ImGui.GetIO();
+        ImGuiIOPtr io = ImGui.GetIO();
+        io.KeyMap[(int)ImGuiKey.Tab] = (int)Key.Tab;
+        io.KeyMap[(int)ImGuiKey.LeftArrow] = (int)Key.Left;
+        io.KeyMap[(int)ImGuiKey.RightArrow] = (int)Key.Right;
+        io.KeyMap[(int)ImGuiKey.UpArrow] = (int)Key.Up;
+        io.KeyMap[(int)ImGuiKey.DownArrow] = (int)Key.Down;
+        io.KeyMap[(int)ImGuiKey.PageUp] = (int)Key.PageUp;
+        io.KeyMap[(int)ImGuiKey.PageDown] = (int)Key.PageDown;
+        io.KeyMap[(int)ImGuiKey.Home] = (int)Key.Home;
+        io.KeyMap[(int)ImGuiKey.End] = (int)Key.End;
+        io.KeyMap[(int)ImGuiKey.Delete] = (int)Key.Delete;
+        io.KeyMap[(int)ImGuiKey.Backspace] = (int)Key.BackSpace;
+        io.KeyMap[(int)ImGuiKey.Enter] = (int)Key.Enter;
+        io.KeyMap[(int)ImGuiKey.KeypadEnter] = (int)Key.KeypadEnter;
+        io.KeyMap[(int)ImGuiKey.Escape] = (int)Key.Escape;
+        io.KeyMap[(int)ImGuiKey.A] = (int)Key.A;
+        io.KeyMap[(int)ImGuiKey.C] = (int)Key.C;
+        io.KeyMap[(int)ImGuiKey.V] = (int)Key.V;
+        io.KeyMap[(int)ImGuiKey.X] = (int)Key.X;
+        io.KeyMap[(int)ImGuiKey.Y] = (int)Key.Y;
+        io.KeyMap[(int)ImGuiKey.Z] = (int)Key.Z;
+        io.KeyMap[(int)ImGuiKey.Space] = (int)Key.Space;
     }
 
     private void RenderImDrawData(ImDrawDataPtr draw_data)
@@ -386,7 +395,7 @@ void main()
         // Render command lists
         for (var n = 0; n < draw_data.CmdListsCount; n++)
         {
-            ImDrawListPtr cmd_list = draw_data.CmdLists[n];
+            ImDrawListPtr cmd_list = draw_data.CmdListsRange[n];
 
             GL.BufferData(GLEnum.ArrayBuffer, (nuint)(cmd_list.VtxBuffer.Size * sizeof(ImDrawVert)),
                 (void*)cmd_list.VtxBuffer.Data, GLEnum.StreamDraw);
@@ -395,9 +404,8 @@ void main()
 
             for (var cmd_i = 0; cmd_i < cmd_list.CmdBuffer.Size; cmd_i++)
             {
-                ImDrawCmd pcmd = cmd_list.CmdBuffer[cmd_i];
-
-                if (pcmd.UserCallback != null)
+                ImDrawCmdPtr pcmd = cmd_list.CmdBuffer[cmd_i];
+                if (pcmd.UserCallback != IntPtr.Zero)
                 {
                     throw new NotImplementedException();
                 }
@@ -415,7 +423,7 @@ void main()
                         (uint)(clipRect.Z - clipRect.X), (uint)(clipRect.W - clipRect.Y));
 
                     GL.ActiveTexture(TextureUnit.Texture0);
-                    GL.BindTexture(TextureTarget.Texture2D, (uint)pcmd.TextureId.Handle);
+                    GL.BindTexture(TextureTarget.Texture2D, (uint)pcmd.TextureId);
 
                     if ((io.BackendFlags & ImGuiBackendFlags.RendererHasVtxOffset) != 0)
                     {

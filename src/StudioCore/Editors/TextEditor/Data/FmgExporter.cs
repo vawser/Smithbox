@@ -1,5 +1,9 @@
-﻿using Hexa.NET.ImGui;
+﻿using Google.Protobuf.Reflection;
+using ImGuiNET;
+using Microsoft.AspNetCore.Components.Forms;
+using Org.BouncyCastle.Crypto;
 using SoulsFormats;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Platform;
@@ -7,8 +11,10 @@ using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 

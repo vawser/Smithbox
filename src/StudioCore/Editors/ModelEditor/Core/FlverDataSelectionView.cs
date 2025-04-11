@@ -1,11 +1,18 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
-using StudioCore.Editors.ModelEditor.Enums;
-using StudioCore.Editors.ModelEditor.Framework;
-using StudioCore.Interface;
+using StudioCore.Scene;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using Veldrid;
+using StudioCore.MsbEditor;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editor;
+using StudioCore.Core.Project;
+using StudioCore.Interface;
+using StudioCore.Editors.ModelEditor.Framework;
+using StudioCore.Editors.ModelEditor.Enums;
 
 namespace StudioCore.Editors.ModelEditor.Core;
 

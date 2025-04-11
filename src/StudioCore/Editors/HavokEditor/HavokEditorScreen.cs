@@ -1,9 +1,16 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor.Core;
+using StudioCore.Editors.HavokEditor.Data;
+using StudioCore.Editors.HavokEditor.Enums;
 using StudioCore.Editors.HavokEditor.Framework;
 using StudioCore.Interface;
+using StudioCore.Utilities;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;

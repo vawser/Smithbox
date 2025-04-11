@@ -1,11 +1,15 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
+using Org.BouncyCastle.Crypto;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor.Utils;
 

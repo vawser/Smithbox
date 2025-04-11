@@ -1,9 +1,18 @@
-﻿using Hexa.NET.ImGui;
+﻿using HKLib.hk2018.hkaiCollisionAvoidance;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editors.EsdEditor.Enums;
+using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
+using StudioCore.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EsdEditor;
 

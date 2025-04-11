@@ -1,7 +1,14 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
+using SoulsFormats;
+using StudioCore.Resource.Locators;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+using static SoulsFormats.MSB_AC6;
 
 namespace StudioCore.Tests;
 

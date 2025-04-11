@@ -1,5 +1,5 @@
 ﻿using Andre.Formats;
-using Hexa.NET.ImGui;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;

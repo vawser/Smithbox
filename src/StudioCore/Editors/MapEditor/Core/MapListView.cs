@@ -1,15 +1,24 @@
-﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
-using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Interface;
+﻿using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.Platform;
+using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using Veldrid;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.MsbEditor;
+using StudioCore.Editor;
+using StudioCore.Core.Project;
+using StudioCore.Interface;
+using StudioCore.Resource.Locators;
+using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Editors.MapEditor.Tools.WorldMap;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using System.ComponentModel;
 
 namespace StudioCore.Editors.MapEditor.Core;
 

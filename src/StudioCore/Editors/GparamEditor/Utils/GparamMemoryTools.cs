@@ -1,11 +1,20 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Google.Protobuf.WellKnownTypes;
+using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Utilities;
+using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Memory;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static SoulsFormats.MSBB.Event;
 using static StudioCore.Editors.GparamEditor.Data.GparamParamBank;
 
 namespace StudioCore.Editors.GparamEditor.Utils;

@@ -1,8 +1,13 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 using StudioCore.TextureViewer;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextureViewer;
 

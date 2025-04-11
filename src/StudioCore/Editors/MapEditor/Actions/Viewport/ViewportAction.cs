@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using HKLib.hk2018.hkHashMapDetail;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
@@ -6,6 +7,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Framework.MassEdit;
+using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
 using StudioCore.Utilities;

@@ -1,7 +1,14 @@
-﻿using Hexa.NET.ImGui;
+﻿
+using ImGuiNET;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 

@@ -1,7 +1,13 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Interface;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+using static SoulsFormats.FFXDLSE;
 
 namespace StudioCore.Editors.MapEditor.Tools.LightmapAtlasEditor;
 

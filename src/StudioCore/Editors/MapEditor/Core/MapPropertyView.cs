@@ -1,7 +1,8 @@
 ﻿using Andre.Formats;
-using Hexa.NET.ImGui;
+using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
@@ -10,6 +11,8 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Framework.Decorators;
 using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.Editors.MapEditor.PropertyEditor;
+using StudioCore.Editors.ModelEditor.Utils;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tasks;
@@ -20,6 +23,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.MapEditor.Core;
 
@@ -245,7 +249,7 @@ public class MapPropertyView
     /// </summary>
     private static void PropContextRowOpener()
     {
-        ImGui.Selectable("", false, ImGuiSelectableFlags.AllowOverlap);
+        ImGui.Selectable("", false, ImGuiSelectableFlags.AllowItemOverlap);
         ImGui.SameLine();
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {

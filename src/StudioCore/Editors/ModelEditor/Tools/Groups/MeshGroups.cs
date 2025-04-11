@@ -1,15 +1,19 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.Mesh;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Tools
 {

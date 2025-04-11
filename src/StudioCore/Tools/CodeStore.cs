@@ -1,10 +1,20 @@
-﻿using Hexa.NET.ImGui;
+﻿using HKLib.hk2018;
+using HKLib.hk2018.hkAsyncThreadPool;
+using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Banks.HavokAliasBank;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Platform;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace StudioCore.Tools
 {

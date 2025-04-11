@@ -1,10 +1,11 @@
-﻿using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using StudioCore.Editor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TextureViewer.Tools;
 using StudioCore.Editors.TextureViewer.Utils;
 using StudioCore.Interface;
 using StudioCore.Resource;
+using StudioCore.Utilities;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;

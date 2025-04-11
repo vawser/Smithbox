@@ -1,12 +1,16 @@
-﻿using Hexa.NET.ImGui;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.MapEditor.Tools.LightmapAtlasEditor;
 

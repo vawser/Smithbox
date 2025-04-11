@@ -1,16 +1,19 @@
-﻿
-using Hexa.NET.ImGui;
+﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Core.Project;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
 using StudioCore.TextureViewer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
+using System.Text;
 using System.Threading.Tasks;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
