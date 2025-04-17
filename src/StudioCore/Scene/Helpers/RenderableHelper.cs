@@ -49,6 +49,7 @@ public static class RenderableHelper
 
     public static readonly HashSet<string> SpeedTree_Bushes = new()
     {
+        "AEG801_006",
         "AEG801_086",
     };
 
