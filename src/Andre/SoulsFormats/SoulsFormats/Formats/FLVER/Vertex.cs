@@ -138,6 +138,12 @@ namespace SoulsFormats
             {
                 foreach (LayoutMember member in layout)
                 {
+                    //Speedtree
+                    if (member.SpecialModifier == -32768)
+                    {
+                        continue;
+                    }
+
                     if (member.Semantic == LayoutSemantic.Position)
                     {
                         if (member.Type == LayoutType.Float3)
@@ -293,9 +299,13 @@ namespace SoulsFormats
                         else if (member.Type == LayoutType.Byte4C)
                         {
                             UVs.Add(new Vector3(br.ReadByte() / 255f, br.ReadByte() / 255f, br.ReadByte() / 255f));
-                            br.ReadByte();
+                            UVs.Add(new Vector3(br.ReadByte(), br.ReadByte(), 0) / 255f);
                         }
                         else if (member.Type == LayoutType.UV)
+                        {
+                            UVs.Add(new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor);
+                        }
+                        else if (member.Type == LayoutType.Short2ToFloat2B)
                         {
                             UVs.Add(new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor);
                         }
@@ -306,8 +316,8 @@ namespace SoulsFormats
                         }
                         else if (member.Type == LayoutType.Short4toFloat4B)
                         {
-                            UVs.Add(new Vector3(br.ReadInt16(), br.ReadInt16(), br.ReadInt16()) / uvFactor);
-                            br.ReadInt16();
+                            UVs.Add(new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor);
+                            UVs.Add(new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor);
                         }
                         else
                             throw new NotImplementedException($"Read not implemented for {member.Type} {member.Semantic}.");
@@ -612,10 +622,16 @@ namespace SoulsFormats
                         {
                             bw.WriteByte((byte)Math.Round(uv.X / uvFactor * 255f));
                             bw.WriteByte((byte)Math.Round(uv.Y / uvFactor * 255f));
-                            bw.WriteByte((byte)Math.Round(uv.Z / uvFactor * 255f));
-                            bw.WriteByte(0);
+                            uv = uvQueue.Dequeue() * uvFactor;
+                            bw.WriteByte((byte)Math.Round(uv.X / uvFactor * 255f));
+                            bw.WriteByte((byte)Math.Round(uv.Y / uvFactor * 255f));
                         }
                         else if (member.Type == LayoutType.UV)
+                        {
+                            bw.WriteInt16((short)Math.Round(uv.X));
+                            bw.WriteInt16((short)Math.Round(uv.Y));
+                        }
+                        else if (member.Type == LayoutType.Short2ToFloat2B)
                         {
                             bw.WriteInt16((short)Math.Round(uv.X));
                             bw.WriteInt16((short)Math.Round(uv.Y));
@@ -633,8 +649,9 @@ namespace SoulsFormats
                         {
                             bw.WriteInt16((short)Math.Round(uv.X));
                             bw.WriteInt16((short)Math.Round(uv.Y));
-                            bw.WriteInt16((short)Math.Round(uv.Z));
-                            bw.WriteInt16(0);
+                            uv = uvQueue.Dequeue() * uvFactor;
+                            bw.WriteInt16((short)Math.Round(uv.X));
+                            bw.WriteInt16((short)Math.Round(uv.Y));
                         }
                         else
                             throw new NotImplementedException($"Write not implemented for {member.Type} {member.Semantic}.");

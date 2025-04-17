@@ -26,9 +26,12 @@ public class DbgPrimTree : DbgPrimSolid
             NameColor = trunkColor;
 
             // Solid Trunk (Box)
-            Vector3 trunkMin = new Vector3(-trunkWidth / 2, 0, -trunkWidth / 2);
-            Vector3 trunkMax = new Vector3(trunkWidth / 2, trunkHeight, trunkWidth / 2);
-            AddSolidBox(trunkMin, trunkMax, trunkColor);
+            if (trunkWidth > 0 && trunkHeight > 0)
+            {
+                Vector3 trunkMin = new Vector3(-trunkWidth / 2, 0, -trunkWidth / 2);
+                Vector3 trunkMax = new Vector3(trunkWidth / 2, trunkHeight, trunkWidth / 2);
+                AddSolidBox(trunkMin, trunkMax, trunkColor);
+            }
 
             // Cluster (Solid Sphere on top of trunk)
             Vector3 clusterPos = new Vector3(0, trunkHeight + clusterRadius, 0);

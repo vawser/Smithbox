@@ -19,7 +19,13 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown; 0, 1, or 2.
             /// </summary>
-            public int Unk00 { get; set; }
+            ///
+            public short Unk00 { get; set; }
+
+            /// <summary>
+            /// Value of -32768 denotes this member isn't stored with the vertex buffer due to Speedtree.
+            /// </summary>
+            public short SpecialModifier { get; set; }
 
             /// <summary>
             /// Format used to store this member.
@@ -55,7 +61,7 @@ namespace SoulsFormats
                         case LayoutType.Byte4D:
                         case LayoutType.UV:
                         case LayoutType.Byte4E:
-                        case LayoutType.Unknown:
+                        case LayoutType.Short2ToFloat2B:
                             return 4;
 
                         case LayoutType.Float2:
@@ -80,9 +86,10 @@ namespace SoulsFormats
             /// <summary>
             /// Creates a LayoutMember with the specified values.
             /// </summary>
-            public LayoutMember(LayoutType type, LayoutSemantic semantic, int index = 0, int unk00 = 0)
+            public LayoutMember(LayoutType type, LayoutSemantic semantic, int index = 0, short unk00 = 0, short specialModifier = 0)
             {
                 Unk00 = unk00;
+                SpecialModifier = specialModifier;
                 Type = type;
                 Semantic = semantic;
                 Index = index;
@@ -98,8 +105,9 @@ namespace SoulsFormats
 
             internal LayoutMember(BinaryReaderEx br, int structOffset)
             {
-                Unk00 = br.ReadInt32();
-                br.AssertInt32(structOffset);
+                Unk00 = br.ReadInt16();
+                SpecialModifier = br.ReadInt16();
+                br.ReadInt32();
                 Type = br.ReadEnum32<LayoutType>();
                 Semantic = br.ReadEnum32<LayoutSemantic>();
                 Index = br.ReadInt32();
@@ -107,8 +115,8 @@ namespace SoulsFormats
 
             internal void Write(BinaryWriterEx bw, int structOffset)
             {
-                bw.WriteInt32(Unk00);
-                bw.WriteInt32(structOffset);
+                bw.WriteInt16(Unk00);
+                bw.WriteInt16(SpecialModifier);
                 bw.WriteUInt32((uint)Type);
                 bw.WriteUInt32((uint)Semantic);
                 bw.WriteInt32(Index);
@@ -195,7 +203,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            Unknown = 0x2D,
+            Short2ToFloat2B = 0x2D,
 
             /// <summary>
             /// Unknown.

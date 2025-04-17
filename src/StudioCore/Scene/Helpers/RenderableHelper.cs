@@ -45,41 +45,37 @@ public static class RenderableHelper
     private static DbgPrimWireSphere? _jointSphere;
 
     private static DbgPrimTree? _modelMarkerTree;
+    private static DbgPrimTree? _modelMarkerBush;
 
-    /// <summary>
-    /// List of assets starting IDs that will always receive a tree marker.
-    /// Contains speedtree AEGs, which currently do not render in Smithbox.
-    /// Can be removed when speedtree rendering is functional.
-    /// </summary>
-    public static readonly HashSet<string> SpeedTree_Assets = new()
+    public static readonly HashSet<string> SpeedTree_Bushes = new()
     {
-        "AEG801",
-        "AEG805",
-        "AEG810",
-        "AEG811",
-        "AEG813",
-        "AEG814",
-        "AEG815",
-        "AEG816"
+        "AEG801_086",
     };
 
+    public enum SpeedTreeType
+    {
+        None,
+        Bush,
+        Tree
+    }
     /// <summary>
     /// Returns true if the passed mesh provider is a Speed Tree asset
     /// </summary>
-    public static bool IsSpeedTreeAsset(MeshProvider _meshProvider)
+    public static SpeedTreeType IsSpeedTreeAsset(MeshProvider _meshProvider)
     {
         if (_meshProvider is FlverMeshProvider fProvider)
         {
-            if (SpeedTree_Assets.FirstOrDefault(n => fProvider.MeshName.ToUpper().StartsWith(n)) != null)
+            if (fProvider.IsSpeedtree)
             {
-                if (fProvider.MeshName.ToUpper() != "AEG801_224")
+                if (SpeedTree_Bushes.Contains(fProvider.MeshName.ToUpper()))
                 {
-                    return true;
+                    return SpeedTreeType.Bush;
                 }
+                return SpeedTreeType.Tree;
             }
         }
 
-        return false;
+        return SpeedTreeType.None;
     }
 
     /// <summary>
@@ -199,6 +195,14 @@ public static class RenderableHelper
             6f,    // Trunk height
             0.5f,  // Trunk width
             3f,    // Cluster radius
+            Color.Brown,
+            Color.Green);
+
+        _modelMarkerBush = new DbgPrimTree(
+            Transform.Default,
+            0f,    // Trunk height
+            0f,  // Trunk width
+            1f,    // Cluster radius
             Color.Brown,
             Color.Green);
 
@@ -556,6 +560,22 @@ public static class RenderableHelper
         var transparency = 50.0f;
 
         DebugPrimitiveRenderableProxy r = new(renderables, _modelMarkerTree, false);
+
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+
+    // Bush
+    public static DebugPrimitiveRenderableProxy GetBushProxy(MeshRenderables renderables)
+    {
+        var baseColor = CFG.Current.GFX_Renderable_Box_BaseColor;
+        var highlightColor = CFG.Current.GFX_Renderable_Box_HighlightColor;
+        var transparency = 50.0f;
+
+        DebugPrimitiveRenderableProxy r = new(renderables, _modelMarkerBush, false);
 
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);

@@ -215,6 +215,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     {
         var needsPlaceholder = _placeholderType != ModelMarkerType.None;
         var useTreePlaceholder = false;
+        var useBushPlaceholder = false;
 
         for (var i = 0; i < _meshProvider.ChildCount; i++)
         {
@@ -254,10 +255,14 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         if (_placeholderType != ModelMarkerType.None)
         {
             // Speed Tree asset
-            if(RenderableHelper.IsSpeedTreeAsset(_meshProvider))
+            var speedTreeType = RenderableHelper.IsSpeedTreeAsset(_meshProvider);
+            if (speedTreeType != RenderableHelper.SpeedTreeType.None)
             {
                 needsPlaceholder = true;
-                useTreePlaceholder = true;
+                if (speedTreeType == RenderableHelper.SpeedTreeType.Tree)
+                    useTreePlaceholder = true;
+                else
+                    useBushPlaceholder = true;
             }
 
             if (needsPlaceholder)
@@ -269,6 +274,12 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                 {
                     _placeholderProxy =
                     RenderableHelper.GetTreeProxy(_renderablesSet);
+                    _placeholderProxy.DrawFilter = RenderFilter.SpeedTree;
+                }
+                else if (useBushPlaceholder)
+                {
+                    _placeholderProxy =
+                        RenderableHelper.GetBushProxy(_renderablesSet);
                     _placeholderProxy.DrawFilter = RenderFilter.SpeedTree;
                 }
                 else

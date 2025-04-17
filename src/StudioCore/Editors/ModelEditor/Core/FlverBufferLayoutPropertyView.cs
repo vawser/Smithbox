@@ -94,10 +94,12 @@ public class FlverBufferLayoutPropertyView
         ImGui.NextColumn();
 
         ImGui.AlignTextToFramePadding();
-        ImGui.InputInt($"##Unk00##unk00{index}", ref unk00);
+        int unk00ref = 0;
+        ImGui.InputInt($"##Unk00##unk00{index}", ref unk00ref);
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
-            if (layout.Unk00 != unk00)
+            short unk00refconv = (short)unk00ref;
+            if (layout.Unk00 != unk00refconv)
                 Screen.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERBufferLayout_LayoutMember_Unk00(layout, layout.Unk00, unk00));
         }

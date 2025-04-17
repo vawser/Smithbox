@@ -198,6 +198,11 @@ namespace SoulsFormats
             bw.FillInt32("DataSize", (int)bw.Position - dataOffset);
         }
 
+        public bool IsSpeedtree()
+        {
+            return false;
+        }
+
         /// <summary>
         /// A hack to try to fix the messed up endianness for some ACFA test FLVER0 values on version 0x11.
         /// </summary>

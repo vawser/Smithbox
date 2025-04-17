@@ -18,9 +18,9 @@ namespace SoulsFormats
         public class BufferLayout : List<FLVER.LayoutMember>
         {
             /// <summary>
-            /// The total size of all ValueTypes in this layout.
+            /// The total size of all ValueTypes in this layout. Accounts for Speedtree members which do NOT add to this size.
             /// </summary>
-            public int Size => this.Sum(member => member.Size);
+            public int Size => this.Sum(member => member.SpecialModifier == -32768 ? 0 : member.Size);
 
             /// <summary>
             /// Creates a new empty BufferLayout.

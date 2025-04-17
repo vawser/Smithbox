@@ -148,7 +148,8 @@ namespace SoulsFormats
 
             br.AssertInt32(0);
             br.AssertInt32(0);
-            Header.Unk68 = br.AssertInt32([0, 1, 2, 3, 4]);
+            Header.Unk68 = br.AssertInt16([0, 1, 2, 3, 4, 5]);
+            Header.SpecialModifier = br.AssertInt16([0, -32768]);
             br.AssertInt32(0);
             br.AssertInt32(0);
             Header.Unk74 = br.AssertInt32([0, 0x10]);
@@ -496,7 +497,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public int Unk68 { get; set; }
+            public short Unk68 { get; set; }
+
+            /// <summary>
+            /// Used to denote Speedtree if -32768. Doesn't seem to be used for anything else currently.
+            /// </summary>
+            public short SpecialModifier { get; set; }
 
             /// <summary>
             /// Unknown
@@ -517,6 +523,11 @@ namespace SoulsFormats
             {
                 return (FLVERHeader)MemberwiseClone();
             }
+        }
+
+        public bool IsSpeedtree()
+        {
+            return Header.SpecialModifier == -32768;
         }
     }
 }

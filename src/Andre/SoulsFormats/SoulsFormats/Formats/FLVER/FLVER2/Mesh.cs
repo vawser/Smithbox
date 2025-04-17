@@ -94,7 +94,7 @@ namespace SoulsFormats
                 int boneOffset = br.ReadInt32();
                 int faceSetCount = br.ReadInt32();
                 int faceSetOffset = br.ReadInt32();
-                int vertexBufferCount = br.ReadInt32();
+                int vertexBufferCount = br.AssertInt32([0, 1, 2, 3]);
                 int vertexBufferOffset = br.ReadInt32();
 
                 if (boundingBoxOffset != 0)
@@ -165,16 +165,13 @@ namespace SoulsFormats
                 int tanCap = layoutMembers.Count(m => m.Semantic == FLVER.LayoutSemantic.Tangent);
                 int colorCap = layoutMembers.Count(m => m.Semantic == FLVER.LayoutSemantic.VertexColor);
 
-                if (VertexBuffers.Count > 0)
-                {
-                    int vertexCount = VertexBuffers[0].VertexCount;
-                    Vertices = new List<FLVER.Vertex>(vertexCount);
-                    for (int i = 0; i < vertexCount; i++)
-                        Vertices.Add(new FLVER.Vertex(uvCap, tanCap, colorCap));
+                int vertexCount = VertexBuffers.Count > 0 ? VertexBuffers[0].VertexCount : 0;
+                Vertices = new List<FLVER.Vertex>(vertexCount);
+                for (int i = 0; i < vertexCount; i++)
+                    Vertices.Add(new FLVER.Vertex(uvCap, tanCap, colorCap));
 
-                    foreach (VertexBuffer buffer in VertexBuffers)
-                        buffer.ReadBuffer(br, layouts, Vertices, vertexCount, dataOffset, header);
-                }
+                foreach (VertexBuffer buffer in VertexBuffers)
+                    buffer.ReadBuffer(br, layouts, Vertices, vertexCount, dataOffset, header);
             }
 
             internal void Write(BinaryWriterEx bw, int index)
