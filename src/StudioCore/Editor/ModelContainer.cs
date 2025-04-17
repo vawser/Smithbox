@@ -129,12 +129,12 @@ public class ModelContainer : ObjectContainer
         //Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeDummy(index, pos);
     }
 
-    public Vector3 RecursiveBoneOffset(Vector3 pos, FLVER.Node bone, FLVER2 flver)
+    public Vector3 RecursiveBoneOffset(Vector3 translation, FLVER.Node bone, FLVER2 flver)
     {
-        pos = RotateVector(pos, bone.Rotation) + bone.Position;
+        translation = RotateVector(translation, bone.Rotation) + bone.Translation;
         if (bone.ParentIndex >= 0)
-            return RecursiveBoneOffset(pos, flver.Nodes[bone.ParentIndex], flver);
-        return pos;
+            return RecursiveBoneOffset(translation, flver.Nodes[bone.ParentIndex], flver);
+        return translation;
     }
 
     // Rotation logic taken from cannon.js:

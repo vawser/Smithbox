@@ -1,6 +1,5 @@
 ﻿using System.Buffers.Binary;
 using System.Collections.Generic;
-using System.IO;
 
 namespace SoulsFormats
 {
@@ -17,6 +16,11 @@ namespace SoulsFormats
             IReadOnlyList<IFlverTexture> IFlverMaterial.Textures => Textures;
 
             public List<BufferLayout> Layouts { get; set; }
+
+            public Material()
+            {
+
+            }
 
             internal Material(BinaryReaderEx br, bool useUnicode, int version)
             {

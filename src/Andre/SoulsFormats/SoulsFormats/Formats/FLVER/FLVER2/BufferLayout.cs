@@ -1,13 +1,7 @@
-﻿using SoulsFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static SoulsFormats.FLVER;
 
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public partial class FLVER2
@@ -96,7 +90,7 @@ namespace SoulsFormats
                     return false;
                 }
 
-                LayoutMember tangentLayout = new LayoutMember(LayoutType.Byte4C, LayoutSemantic.Tangent, 0, 0);
+                FLVER.LayoutMember tangentLayout = new FLVER.LayoutMember(FLVER.LayoutType.Byte4C, FLVER.LayoutSemantic.Tangent, 0, 0);
                 Insert(normalIndex + 1, tangentLayout);
                 return true;
             }

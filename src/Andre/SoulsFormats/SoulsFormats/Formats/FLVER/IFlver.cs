@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
 namespace SoulsFormats
 {
     /// <summary>

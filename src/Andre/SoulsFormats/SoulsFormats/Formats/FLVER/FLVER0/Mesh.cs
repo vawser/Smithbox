@@ -20,7 +20,7 @@ namespace SoulsFormats
 
             public short DefaultBoneIndex { get; set; }
 
-            public short[] BoneIndices { get; private set; }
+            public short[] BoneIndices { get; set; }
 
             public short Unk46 { get; set; }
 
@@ -30,6 +30,11 @@ namespace SoulsFormats
             IReadOnlyList<FLVER.Vertex> IFlverMesh.Vertices => Vertices;
 
             public int LayoutIndex { get; set; }
+
+            public Mesh()
+            {
+
+            }
 
             internal Mesh(BinaryReaderEx br, FLVER0 flv, int dataOffset, int version)
             {

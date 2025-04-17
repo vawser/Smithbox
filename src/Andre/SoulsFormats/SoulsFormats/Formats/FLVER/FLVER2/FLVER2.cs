@@ -1,13 +1,8 @@
-﻿using SoulsFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
 namespace SoulsFormats
 {
     /// <summary>
@@ -133,7 +128,7 @@ namespace SoulsFormats
             int vertexIndicesSize = br.AssertByte([0, 8, 16, 32]);
             Header.Unicode = br.ReadBoolean();
             Header.Unk4A = br.ReadBoolean();
-            Header.Unk4B = br.ReadBoolean();
+            br.AssertByte(0);
 
             Header.Unk4C = br.ReadInt32();
 
@@ -264,7 +259,7 @@ namespace SoulsFormats
             bw.WriteByte(vertexIndicesSize);
             bw.WriteBoolean(Header.Unicode);
             bw.WriteBoolean(Header.Unk4A);
-            bw.WriteBoolean(Header.Unk4B);
+            bw.WriteByte(0);
 
             bw.WriteInt32(Header.Unk4C);
 
@@ -475,11 +470,6 @@ namespace SoulsFormats
             public bool Unk4A { get; set; }
 
             /// <summary>
-            /// Unknown.
-            /// </summary>
-            public bool Unk4B { get; set; }
-
-            /// <summary>
             /// Unknown; I believe this is the primitive restart constant, but I'm not certain.
             /// </summary>
             public int Unk4C { get; set; }
@@ -498,7 +488,7 @@ namespace SoulsFormats
             /// Unknown.
             /// </summary>
             public short Unk68 { get; set; }
-
+            
             /// <summary>
             /// Used to denote Speedtree if -32768. Doesn't seem to be used for anything else currently.
             /// </summary>

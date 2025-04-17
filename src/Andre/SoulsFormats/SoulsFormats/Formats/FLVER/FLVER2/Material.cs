@@ -1,12 +1,6 @@
-﻿using SoulsFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public partial class FLVER2
@@ -79,7 +73,7 @@ namespace SoulsFormats
                     numStringBytes += texture.Type.Length + 1;
                     numStringBytes += texture.Path.Length + 1;
                 }
-
+                
                 // 2-bytes per character
                 numStringBytes *= 2;
                 return numStringBytes;
@@ -125,7 +119,7 @@ namespace SoulsFormats
                     }
                     GXIndex = gxListIndices[gxOffset];
                 }
-
+                
             }
 
             internal void TakeTextures(Dictionary<int, Texture> textureDict)

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace SoulsFormats
@@ -63,7 +61,7 @@ namespace SoulsFormats
                 BufferOffset = br.ReadInt32();
             }
 
-            internal void ReadBuffer(BinaryReaderEx br, List<BufferLayout> layouts, List<FLVER.Vertex> vertices, int count, int dataOffset, FLVERHeader header)
+            internal void ReadBuffer(BinaryReaderEx br, List<BufferLayout> layouts, List<FLVER.Vertex> vertices, int dataOffset, FLVERHeader header)
             {
                 BufferLayout layout = layouts[LayoutIndex];
                 if (VertexSize != layout.Size)
@@ -82,14 +80,13 @@ namespace SoulsFormats
                     }
                 }
 
-
                 br.StepIn(dataOffset + BufferOffset);
                 {
                     float uvFactor = 1024;
                     if (header.Version >= 0x2000F)
                         uvFactor = 2048;
 
-                    for (int i = 0; i < count; i++)
+                    for (int i = 0; i < vertices.Count; i++)
                         vertices[i].Read(br, layout, uvFactor);
                 }
                 br.StepOut();

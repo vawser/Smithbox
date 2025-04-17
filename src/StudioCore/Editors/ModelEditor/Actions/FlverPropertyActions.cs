@@ -1012,14 +1012,14 @@ public class UpdateProperty_FLVERNode_Translation : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        Entry.Position = NewValue;
+        Entry.Translation = NewValue;
 
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
-        Entry.Position = OldValue;
+        Entry.Translation = OldValue;
 
         return ActionEvent.NoEvent;
     }

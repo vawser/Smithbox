@@ -46,7 +46,7 @@ public class ModelSelectionManager
     public int _subSelectedBufferLayoutMember = -1;
 
     public Vector3 _trackedDummyPosition = new Vector3();
-    public Vector3 _trackedNodePosition = new Vector3();
+    public Vector3 _trackedNodeTranslation = new Vector3();
 
     public bool FocusSelection = false;
     public bool SelectDummy = false;
@@ -260,7 +260,7 @@ public class ModelSelectionManager
         _selectedNode = index;
         _selectedFlverGroupType = GroupSelectionType.Node;
 
-        _trackedNodePosition = new Vector3();
+        _trackedNodeTranslation = new Vector3();
         ViewportManager.SelectRepresentativeNode(_selectedNode);
     }
 

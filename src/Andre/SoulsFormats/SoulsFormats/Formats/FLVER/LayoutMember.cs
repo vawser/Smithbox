@@ -1,12 +1,5 @@
-﻿using SoulsFormats;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public static partial class FLVER
@@ -19,7 +12,6 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown; 0, 1, or 2.
             /// </summary>
-            ///
             public short Unk00 { get; set; }
 
             /// <summary>
@@ -58,7 +50,6 @@ namespace SoulsFormats
                         case LayoutType.Byte4B:
                         case LayoutType.Short2toFloat2:
                         case LayoutType.Byte4C:
-                        case LayoutType.Byte4D:
                         case LayoutType.UV:
                         case LayoutType.Byte4E:
                         case LayoutType.Short2ToFloat2B:
@@ -78,7 +69,7 @@ namespace SoulsFormats
                             return 16;
 
                         default:
-                            return -1;
+                            throw new NotImplementedException($"No size defined for buffer layout type: {Type}");
                     }
                 }
             }
@@ -117,6 +108,7 @@ namespace SoulsFormats
             {
                 bw.WriteInt16(Unk00);
                 bw.WriteInt16(SpecialModifier);
+                bw.WriteInt32(structOffset);
                 bw.WriteUInt32((uint)Type);
                 bw.WriteUInt32((uint)Semantic);
                 bw.WriteInt32(Index);
@@ -174,11 +166,6 @@ namespace SoulsFormats
             /// Four bytes.
             /// </summary>
             Byte4C = 0x13,
-
-            /// <summary>
-            /// Four bytes.
-            /// </summary>
-            Byte4D = 0x14,
 
             /// <summary>
             /// Two shorts.

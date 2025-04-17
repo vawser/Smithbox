@@ -905,50 +905,56 @@ public class HavokCollisionResource : IResource, IDisposable
                 return false;
             }
 
-            var physicsscene = (HKLib.hk2018.hknpPhysicsSceneData)ER_HKX.m_namedVariants[0].m_variant;
-
-            foreach (HKLib.hk2018.hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas[0].m_bodyCinfos)
+            var scene = ER_HKX.m_namedVariants[0].m_variant;
+            if (scene is HKLib.hk2018.hknpPhysicsSceneData physicsscene)
             {
-                if (bodyInfo.m_shape is not HKLib.hk2018.fsnpCustomParamCompressedMeshShape ncol)
+                foreach (HKLib.hk2018.hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas[0].m_bodyCinfos)
                 {
-                    continue;
+                    if (bodyInfo.m_shape is not HKLib.hk2018.fsnpCustomParamCompressedMeshShape ncol)
+                    {
+                        continue;
+                    }
+
+                    try
+                    {
+                        var mesh = new CollisionSubmesh();
+                        var indices = new List<int>();
+                        var vertices = new List<Vector3>();
+
+                        if (bodyInfo.m_shape is HKLib.hk2018.fsnpCustomParamCompressedMeshShape shape2)
+                        {
+                            (mesh, vertices, indices) = HavokCollisionManager.ProcessColData(
+                                (HKLib.hk2018.hknpCompressedMeshShapeData)shape2.m_data, bodyInfo, mesh);
+                            RenderHKX2018(mesh, vertices, indices);
+                        }
+                        else if (bodyInfo.m_shape is HKLib.hk2018.hknpCompressedMeshShape shape1)
+                        {
+                            (mesh, vertices, indices) = HavokCollisionManager.ProcessColData(
+                                (HKLib.hk2018.hknpCompressedMeshShapeData)shape1.m_data, bodyInfo, mesh);
+                            RenderHKX2018(mesh, vertices, indices);
+                        }
+
+                        if (first)
+                        {
+                            Bounds = mesh.Bounds;
+                            first = false;
+                        }
+                        else
+                        {
+                            Bounds = BoundingBox.Combine(Bounds, mesh.Bounds);
+                        }
+
+                        submeshes.Add(mesh);
+                    }
+                    catch (Exception e)
+                    {
+                        // Debug failing cases later
+                    }
                 }
-
-                try
-                {
-                    var mesh = new CollisionSubmesh();
-                    var indices = new List<int>();
-                    var vertices = new List<Vector3>();
-
-                    if (bodyInfo.m_shape is HKLib.hk2018.fsnpCustomParamCompressedMeshShape shape2)
-                    {
-                        (mesh, vertices, indices) = HavokCollisionManager.ProcessColData(
-                            (HKLib.hk2018.hknpCompressedMeshShapeData)shape2.m_data, bodyInfo, mesh);
-                        RenderHKX2018(mesh, vertices, indices);
-                    }
-                    else if (bodyInfo.m_shape is HKLib.hk2018.hknpCompressedMeshShape shape1)
-                    {
-                        (mesh, vertices, indices) = HavokCollisionManager.ProcessColData(
-                            (HKLib.hk2018.hknpCompressedMeshShapeData)shape1.m_data, bodyInfo, mesh);
-                        RenderHKX2018(mesh, vertices, indices);
-                    }
-
-                    if (first)
-                    {
-                        Bounds = mesh.Bounds;
-                        first = false;
-                    }
-                    else
-                    {
-                        Bounds = BoundingBox.Combine(Bounds, mesh.Bounds);
-                    }
-
-                    submeshes.Add(mesh);
-                }
-                catch (Exception e)
-                {
-                    // Debug failing cases later
-                }
+            }
+            else if (scene is HKLib.hk2018.hkxScene actualscene)
+            {
+                // TODO: This is a case that exists as well
             }
 
             GPUMeshes = submeshes.ToArray();

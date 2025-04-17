@@ -13,20 +13,20 @@ namespace StudioCore.Editors.ModelEditor.Actions.Viewport;
 public class ChangeVisualNodeTransform : ViewportAction
 {
     private Entity Node;
-    private Vector3 OldPosition;
-    private Vector3 NewPosition;
+    private Vector3 OldTranslation;
+    private Vector3 NewTranslation;
     private Vector3 OldRotation;
     private Vector3 NewRotation;
     private Vector3 OldScale;
     private Vector3 NewScale;
     private FLVER.Node BoneNode;
 
-    public ChangeVisualNodeTransform(Entity node, Vector3 newPosition, Vector3 newRotation, Vector3 newScale)
+    public ChangeVisualNodeTransform(Entity node, Vector3 newTranslation, Vector3 newRotation, Vector3 newScale)
     {
         Node = node;
         BoneNode = (FLVER.Node)node.WrappedObject;
-        OldPosition = BoneNode.Position;
-        NewPosition = newPosition;
+        OldTranslation = BoneNode.Translation;
+        NewTranslation = newTranslation;
         OldRotation = BoneNode.Rotation;
         NewRotation = newRotation;
         OldScale = BoneNode.Scale;
@@ -35,7 +35,7 @@ public class ChangeVisualNodeTransform : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        BoneNode.Position = NewPosition;
+        BoneNode.Translation = NewTranslation;
         BoneNode.Rotation = NewRotation;
         BoneNode.Scale = NewScale;
         Node.UpdateRenderModel();
@@ -45,7 +45,7 @@ public class ChangeVisualNodeTransform : ViewportAction
 
     public override ActionEvent Undo()
     {
-        BoneNode.Position = OldPosition;
+        BoneNode.Translation = OldTranslation;
         BoneNode.Rotation = OldRotation;
         BoneNode.Scale = OldScale;
         Node.UpdateRenderModel();
