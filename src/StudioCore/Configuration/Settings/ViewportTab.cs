@@ -88,6 +88,9 @@ public class ViewportTab
             ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
             UIHelper.ShowHoverTooltip("Enabling this option will cause a selection outline to appear on selected objects.");
 
+            ImGui.Checkbox("Enable box selection", ref CFG.Current.Viewport_Enable_BoxSelection);
+            UIHelper.ShowHoverTooltip("Click and drag the mouse to select multiple objects. (Ctrl: Subtract, Shift: Add)");
+
             ImGui.Separator();
 
             ImGui.ColorEdit3("Box region - base color", ref CFG.Current.GFX_Renderable_Box_BaseColor);

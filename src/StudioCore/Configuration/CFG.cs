@@ -228,6 +228,8 @@ public class CFG
     public bool Viewport_ViewportInfoPanel_Display_DegreeIncrement = true;
     public bool Viewport_ViewportInfoPanel_Display_MovementIncrement = true;
 
+    public bool Viewport_Enable_BoxSelection = true;
+
     //****************************
     // Settings: Map Editor
     //****************************
