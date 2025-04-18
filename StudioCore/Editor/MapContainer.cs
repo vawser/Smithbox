@@ -1,18 +1,16 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
+using StudioCore.Core.Project;
+using StudioCore.Editors.MapEditor;
+using StudioCore.MsbEditor;
 using StudioCore.Platform;
-using StudioCore.Scene;
+using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Xml.Serialization;
-using StudioCore.MsbEditor;
-using StudioCore.Editors.MaterialEditor;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Core.Project;
-using StudioCore.Resource.Locators;
 using Veldrid.Utilities;
 
 namespace StudioCore.Editor;

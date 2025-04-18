@@ -37,9 +37,6 @@ public class SettingsWindow
     private GparamEditorTab GparamEditorSettings;
     private TextureViewerTab TextureViewerSettings;
     private InterfaceTab InterfaceSettings;
-    private TimeActEditorTab TimeActEditorSettings;
-    private EmevdEditorTab EmevdEditorSettings;
-    private EsdEditorTab EsdEditorSettings;
 
     private ProjectSettingsTab ProjectSettingsTab;
 
@@ -68,9 +65,6 @@ public class SettingsWindow
         TextEditorSettings = new TextEditorTab();
         GparamEditorSettings = new GparamEditorTab();
         TextureViewerSettings = new TextureViewerTab();
-        TimeActEditorSettings = new TimeActEditorTab();
-        EmevdEditorSettings = new EmevdEditorTab();
-        EsdEditorSettings = new EsdEditorTab();
         InterfaceSettings = new InterfaceTab();
 
         ProjectSettingsTab = new ProjectSettingsTab();
@@ -167,15 +161,6 @@ public class SettingsWindow
                     break;
                 case SelectedSettingTab.GparamEditor:
                     GparamEditorSettings.Display();
-                    break;
-                case SelectedSettingTab.TimeActEditor:
-                    TimeActEditorSettings.Display();
-                    break;
-                case SelectedSettingTab.EmevdEditor:
-                    EmevdEditorSettings.Display();
-                    break;
-                case SelectedSettingTab.EsdEditor:
-                    EsdEditorSettings.Display();
                     break;
                 case SelectedSettingTab.TextureViewer:
                     TextureViewerSettings.Display();

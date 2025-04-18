@@ -1,20 +1,15 @@
-﻿using HKLib.hk2018;
-using HKLib.hk2018.hkAsyncThreadPool;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
+using HKLib.hk2018;
 using SoulsFormats;
 using StudioCore.Banks.HavokAliasBank;
-using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TextureViewer;
-using StudioCore.Editors.TimeActEditor;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace StudioCore.Tools
 {
@@ -24,60 +19,6 @@ namespace StudioCore.Tools
     /// </summary>
     internal class CodeStore
     {
-        private static void GenerateHavokGeneratorAliases(TimeActSelectionManager SelectionHandler, long id)
-        {
-            //HavokFileBank.LoadAllHavokFiles();
-
-            //SelectionHandler.LoadedHavokContainer = TimeActUtils.LoadHavokObjects(info);
-
-            List<string> aliasList = new();
-
-            HavokGeneratorAliasResource resource = new HavokGeneratorAliasResource();
-            resource.List = new();
-
-            List<CustomManualSelectorGenerator> cmsgs = SelectionHandler.LoadedHavokContainer.LoadedObjects
-            .Where(x => x is CustomManualSelectorGenerator cmsg && cmsg.m_generators
-            .All(y => y is hkbClipGenerator))
-            .Cast<CustomManualSelectorGenerator>().ToList();
-
-            Dictionary<hkbClipGenerator, List<CustomManualSelectorGenerator>> clipParents = SelectionHandler.LoadedHavokContainer.LoadedObjects
-                .Where(x => x is hkbClipGenerator)
-                .Cast<hkbClipGenerator>()
-                .Distinct()
-                .ToDictionary(x => x, _ => new List<CustomManualSelectorGenerator>());
-
-            var _cmsgsByAnimId = cmsgs.GroupBy(x => x.m_animId).ToDictionary(x => x.Key, x => x.ToList());
-
-            foreach (var entry in _cmsgsByAnimId)
-            {
-                var newRef = new HavokAliasReference();
-                newRef.ID = entry.Key.ToString();
-                newRef.Generators = new List<string>();
-
-                foreach (var val in entry.Value)
-                {
-                    newRef.Generators.Add($"{val.m_name}");
-                }
-
-                resource.List.Add(newRef);
-            }
-
-            string jsonString = JsonSerializer.Serialize(resource, typeof(HavokGeneratorAliasResource), HavokAliasResourceSerializationContext.Default);
-
-            try
-            {
-                var fs = new FileStream($"{Smithbox.ProjectRoot}\\Havokalias.json", System.IO.FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(jsonString);
-                fs.Write(data, 0, data.Length);
-                fs.Flush();
-                fs.Dispose();
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"{ex}");
-            }
-        }
-
         public static void ReadShoeboxFile()
         {
             string sourcePath = $@"F:\\SteamLibrary\\steamapps\\common\\ELDEN RING\\Game\\menu\\hi\01_common.sblytbnd.dcx";

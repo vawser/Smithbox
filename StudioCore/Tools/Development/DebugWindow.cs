@@ -331,16 +331,6 @@ public class DebugWindow
         ImGui.Text("This tool will validate the Time Act files for the current project by loading all TAE files.");
         ImGui.Text("");
 
-        if (TimeActValidationTool.HasFinished)
-        {
-            ImGui.Text("Validation has finished.");
-            ImGui.Text("");
-        }
-
-        if (ImGui.Button("Validate TAE", buttonSize))
-        {
-            TimeActValidationTool.ValidateTAE();
-        }
     }
 
     // Helpers

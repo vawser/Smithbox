@@ -1,11 +1,13 @@
 ﻿using SoulsFormats;
 using StudioCore.Core.Project;
-using StudioCore.Editor;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MaterialEditor;
+namespace StudioCore.Editor;
 
 public class MaterialResourceBank
 {

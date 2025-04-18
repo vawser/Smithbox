@@ -1,25 +1,18 @@
 ﻿#nullable enable
-using DotNext.IO.MemoryMappedFiles;
 using SoulsFormats;
+using StudioCore.Core.Project;
+using StudioCore.MsbEditor;
+using StudioCore.Resource.Locators;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Utilities;
-using StudioCore.Editors.MaterialEditor;
-using StudioCore.MsbEditor;
-using System.Text.RegularExpressions;
-using StudioCore.Core.Project;
-using StudioCore.Resource.Locators;
-using Org.BouncyCastle.Utilities;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ModelEditor;
 using static SoulsFormats.FLVER;
 
 namespace StudioCore.Resource.Types;
