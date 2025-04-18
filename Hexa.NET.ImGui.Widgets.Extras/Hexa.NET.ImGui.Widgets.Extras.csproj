@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net9.0;net9.0-android;net8.0;net8.0-android</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+		<AssemblyVersion>1.0.6</AssemblyVersion>
+		<PackageVersion>1.0.6</PackageVersion>
+		<Description>
+			Hexa.NET.ImGui.Widgets is a comprehensive library of custom widgets for the ImGui graphical user interface library. This package includes a variety of pre-built widgets that enhance the functionality and usability of ImGui in your .NET applications. Each widget is designed to be easy to integrate, with consistent styling and behavior. This library is an extension of the Hexa.NET.ImGui wrapper, providing additional UI components for a seamless user experience.
+		</Description>
+		<PackageTags>
+			Hexa.NET, ImGui, GUI, Widgets, UI, User Interface, .NET, C#, Custom Widgets, HexaNET, ImGuiWrapper
+		</PackageTags>
+		<Authors>Juna Meinhold</Authors>
+		<Copyright>Copyright (c) 2024 Juna Meinhold</Copyright>
+		<PackageProjectUrl>https://github.com/HexaEngine/Hexa.NET.ImGui</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/HexaEngine/Hexa.NET.ImGui</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="../LICENSE.txt" Pack="true" PackagePath="/" />
+		<Content Include="../README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Hexa.NET.ImGui.Widgets\Hexa.NET.ImGui.Widgets.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Hexa.NET.Math" Version="2.0.6" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.12.0" />
+	</ItemGroup>
+
+</Project>

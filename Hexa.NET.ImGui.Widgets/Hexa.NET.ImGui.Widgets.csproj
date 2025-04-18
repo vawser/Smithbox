@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net9.0;net9.0-android;net8.0;net8.0-android;netstandard2.1;netstandard2.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+		<LangVersion>12</LangVersion>
+
+		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+		<EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+		<EnableAotAnalyzer>true</EnableAotAnalyzer>
+		<IsAotCompatible>true</IsAotCompatible>
+
+		<AssemblyVersion>1.2.12</AssemblyVersion>
+		<PackageVersion>1.2.12</PackageVersion>
+		<Description>
+			Hexa.NET.ImGui.Widgets is a comprehensive library of custom widgets for the ImGui graphical user interface library. This package includes a variety of pre-built widgets that enhance the functionality and usability of ImGui in your .NET applications. Each widget is designed to be easy to integrate, with consistent styling and behavior. This library is an extension of the Hexa.NET.ImGui wrapper, providing additional UI components for a seamless user experience.
+		</Description>
+		<PackageTags>
+			Hexa.NET, ImGui, GUI, Widgets, UI, User Interface, .NET, C#, Custom Widgets, HexaNET, ImGuiWrapper
+		</PackageTags>
+		<Authors>Juna Meinhold</Authors>
+		<Copyright>Copyright (c) 2024 Juna Meinhold</Copyright>
+		<PackageProjectUrl>https://github.com/HexaEngine/Hexa.NET.ImGui</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/HexaEngine/Hexa.NET.ImGui</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="assets\fileTypes.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="../LICENSE.txt" Pack="true" PackagePath="/" />
+		<Content Include="../README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="assets\fileTypes.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Hexa.NET.ImGui" Version="2.2.7" />
+		<PackageReference Include="Hexa.NET.Utilities" Version="2.2.1" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+		<PackageReference Include="Ultz.Bcl.Half" Version="1.0.0" />
+		<PackageReference Include="System.Numerics.Vectors" Version="4.6.0" />
+		<PackageReference Include="System.Text.Json" Version="9.0.3" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<PackageReference Include="Ultz.Bcl.Half" Version="1.0.0" />
+		<PackageReference Include="System.Numerics.Vectors" Version="4.6.0" />
+		<PackageReference Include="System.Text.Json" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Bcl.Numerics" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Bcl.HashCode" Version="6.0.0" />
+		<PackageReference Include="IndexRange" Version="1.0.3" />		
+	</ItemGroup>
+
+</Project>
