@@ -207,21 +207,24 @@ public class EditorDecorations
         var first = true;
         foreach (ParamRef r in paramRefs)
         {
+            if (context == null)
+                continue;
+
             Param.Cell? c = context?[r.ConditionField];
+
+            if (c == null)
+                continue;
 
             var inactiveRef = false;
 
-            if (c != null && context != null)
-            {
-                var fieldValue = c.Value.Value;
-                uint uintValue = 0;
-                var isUintValue = uint.TryParse($"{fieldValue}", out uintValue);
+            var fieldValue = c.Value.Value;
+            int intValue = 0;
+            var valueConvertSuccess = int.TryParse($"{fieldValue}", out intValue);
 
-                // Only check if field value is valid uint
-                if (isUintValue)
-                {
-                    inactiveRef = uintValue != r.ConditionValue;
-                }
+            // Only check if field value is valid uint
+            if (valueConvertSuccess)
+            {
+                inactiveRef = intValue != r.ConditionValue;
             }
 
             if (inactiveRef)
@@ -415,21 +418,24 @@ public class EditorDecorations
 
         foreach (ParamRef rf in paramRefs)
         {
-            Param.Cell? c = context?[rf.ConditionField];
+            if (context == null)
+                continue;
+
+            Param.Cell? c = context?[r.ConditionField];
+
+            if (c == null)
+                continue;
 
             var inactiveRef = false;
 
-            if (c != null && context != null)
-            {
-                var fieldValue = c.Value.Value;
-                uint uintValue = 0;
-                var isUintValue = uint.TryParse($"{fieldValue}", out uintValue);
+            var fieldValue = c.Value.Value;
+            int intValue = 0;
+            var valueConvertSuccess = int.TryParse($"{fieldValue}", out intValue);
 
-                // Only check if field value is valid uint
-                if (isUintValue)
-                {
-                    inactiveRef = uintValue != rf.ConditionValue;
-                }
+            // Only check if field value is valid uint
+            if (valueConvertSuccess)
+            {
+                inactiveRef = intValue != rf.ConditionValue;
             }
 
             if (inactiveRef)
