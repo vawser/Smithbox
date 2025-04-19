@@ -421,7 +421,7 @@ public class EditorDecorations
             if (context == null)
                 continue;
 
-            Param.Cell? c = context?[r.ConditionField];
+            Param.Cell? c = context?[rf.ConditionField];
 
             if (c == null)
                 continue;
