@@ -2,13 +2,14 @@
 
   <PropertyGroup>
     <PackageVersion>$(AssemblyVersion)</PackageVersion>
-	<TargetFramework>net8.0-windows</TargetFramework>
+	<TargetFramework>net9.0-windows7.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>12</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Text.Json" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>

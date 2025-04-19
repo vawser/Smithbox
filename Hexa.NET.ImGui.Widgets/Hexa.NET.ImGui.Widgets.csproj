@@ -53,13 +53,13 @@
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
 		<PackageReference Include="Ultz.Bcl.Half" Version="1.0.0" />
 		<PackageReference Include="System.Numerics.Vectors" Version="4.6.0" />
-		<PackageReference Include="System.Text.Json" Version="9.0.3" />
+		<PackageReference Include="System.Text.Json" Version="9.0.4" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
 		<PackageReference Include="Ultz.Bcl.Half" Version="1.0.0" />
 		<PackageReference Include="System.Numerics.Vectors" Version="4.6.0" />
-		<PackageReference Include="System.Text.Json" Version="9.0.3" />
+		<PackageReference Include="System.Text.Json" Version="9.0.4" />
 		<PackageReference Include="Microsoft.Bcl.Numerics" Version="9.0.3" />
 		<PackageReference Include="Microsoft.Bcl.HashCode" Version="6.0.0" />
 		<PackageReference Include="IndexRange" Version="1.0.3" />		

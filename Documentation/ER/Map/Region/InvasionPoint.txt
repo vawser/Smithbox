@@ -1,9 +1,0 @@
-﻿#----------------------------------------
-# InvasionPoint
-#----------------------------------------
-Used to define an hostile invasion point.
-
-#-------------------------
-# Unique Properties
-#-------------------------
-Priority:                   The rate at which this point is picked over others.
