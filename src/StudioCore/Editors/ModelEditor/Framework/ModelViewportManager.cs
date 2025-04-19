@@ -562,9 +562,9 @@ public class ModelViewportManager
         var bone = Screen.ResManager.GetCurrentFLVER().Nodes[Screen.Selection._selectedNode];
         var entBone = (FLVER.Node)transformEnt.WrappedObject;
 
-        if (bone.Position != entBone.Position)
+        if (bone.Translation != entBone.Translation)
         {
-            bone.Position = entBone.Position;
+            bone.Translation = entBone.Translation;
         }
     }
 

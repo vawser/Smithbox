@@ -72,6 +72,8 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     public string MeshName => Path.GetFileNameWithoutExtension(_resourceName);
 
+    public bool IsSpeedtree;
+
     public void OnResourceLoaded(IResourceHandle handle, int tag)
     {
         if (_resource != null)
@@ -162,6 +164,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     {
         _allSubmeshes = new List<FlverSubmeshProvider>();
         FlverResource res = _resource.Get();
+        IsSpeedtree = res.IsSpeedtree;
         _bounds = res.Bounds;
         for (var i = 0; i < res.GPUMeshes.Length; i++)
         {

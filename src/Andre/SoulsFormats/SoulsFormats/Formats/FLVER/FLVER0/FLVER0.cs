@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Buffers.Binary;
 using System.Collections.Generic;
-using System.IO;
 using System.Numerics;
 
 namespace SoulsFormats
@@ -12,7 +11,7 @@ namespace SoulsFormats
     public partial class FLVER0 : SoulsFile<FLVER0>, IFlver
     {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-        public FLVERHeader Header { get; set; }
+        public FLVER0Header Header { get; set; }
 
         public List<FLVER.Dummy> Dummies { get; set; }
         IReadOnlyList<FLVER.Dummy> IFlver.Dummies => Dummies;
@@ -48,12 +47,19 @@ namespace SoulsFormats
         /// <returns>A matrix representing the world transform of the bone.</returns>
         public Matrix4x4 ComputeBoneWorldMatrix(int index)
         {
-            var bone = Nodes[index];
-            Matrix4x4 matrix = bone.ComputeLocalTransform();
-            while (bone.ParentIndex != -1)
+            if(index == -1)
             {
-                bone = Nodes[bone.ParentIndex];
-                matrix *= bone.ComputeLocalTransform();
+                return Matrix4x4.Identity;
+            }
+            var bone = Nodes[index];
+            Matrix4x4 matrix = Nodes[index].ComputeLocalTransform();
+            if (bone.ParentIndex != -1)
+            {
+                do
+                {
+                    bone = Nodes[bone.ParentIndex];
+                    matrix *= bone.ComputeLocalTransform();
+                } while (bone.ParentIndex != -1);
             }
 
             return matrix;
@@ -61,7 +67,7 @@ namespace SoulsFormats
 
         protected override void Read(BinaryReaderEx br)
         {
-            Header = new FLVERHeader();
+            Header = new FLVER0Header();
 
             br.AssertASCII("FLVER\0");
             Header.BigEndian = br.AssertASCII(["L\0", "B\0"]) == "B\0";
@@ -110,6 +116,22 @@ namespace SoulsFormats
             Meshes = new List<Mesh>(meshCount);
             for (int i = 0; i < meshCount; i++)
                 Meshes.Add(new Mesh(br, this, dataOffset, Header.Version));
+        }
+
+        /// <summary>
+        /// A hack to try to fix the messed up endianness for some ACFA test FLVER0 values on version 0x11.
+        /// </summary>
+        /// <param name="br">The reader.</param>
+        /// <param name="version">The FLVER version.</param>
+        /// <returns>The read value.</returns>
+        internal static int ReadVarEndianInt32(BinaryReaderEx br, int version)
+        {
+            int value = br.ReadInt32();
+            if (version != 0x11 || !br.BigEndian)
+                return value;
+
+            int leValue = BinaryPrimitives.ReverseEndianness(value);
+            return (int)Math.Min((uint)value, (uint)leValue);
         }
 
         protected override void Write(BinaryWriterEx bw)
@@ -198,55 +220,9 @@ namespace SoulsFormats
             bw.FillInt32("DataSize", (int)bw.Position - dataOffset);
         }
 
-        /// <summary>
-        /// A hack to try to fix the messed up endianness for some ACFA test FLVER0 values on version 0x11.
-        /// </summary>
-        /// <param name="br">The reader.</param>
-        /// <param name="version">The FLVER version.</param>
-        /// <returns>The read value.</returns>
-        internal static int ReadVarEndianInt32(BinaryReaderEx br, int version)
+        public bool IsSpeedtree()
         {
-            int value = br.ReadInt32();
-            if (version != 0x11 || !br.BigEndian)
-                return value;
-
-            int leValue = BinaryPrimitives.ReverseEndianness(value);
-            return (int)Math.Min((uint)value, (uint)leValue);
-        }
-
-        public class FLVERHeader
-        {
-            public bool BigEndian { get; set; }
-
-            public int Version { get; set; }
-
-            public Vector3 BoundingBoxMin { get; set; }
-
-            public Vector3 BoundingBoxMax { get; set; }
-
-            public byte VertexIndexSize { get; set; }
-
-            public bool Unicode { get; set; }
-
-            public byte Unk4A { get; set; }
-
-            public byte Unk4B { get; set; }
-
-            public int Unk4C { get; set; }
-
-            public int Unk5C { get; set; }
-
-            public FLVERHeader()
-            {
-                BigEndian = true;
-                Version = 0x14;
-                Unicode = false;
-            }
-
-            public FLVERHeader Clone()
-            {
-                return (FLVERHeader)MemberwiseClone();
-            }
+            return false;
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }

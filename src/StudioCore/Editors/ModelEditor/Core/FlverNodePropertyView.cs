@@ -55,7 +55,7 @@ public class FlverNodePropertyView
         int firstChildIndex = entry.FirstChildIndex;
         int nextSiblingIndex = entry.NextSiblingIndex;
         int previousSiblingIndex = entry.PreviousSiblingIndex;
-        var translation = entry.Position;
+        var translation = entry.Translation;
         var rotation = entry.Rotation;
         var scale = entry.Scale;
         var bbMin = entry.BoundingBoxMin;
@@ -183,9 +183,9 @@ public class FlverNodePropertyView
         ImGui.InputFloat3($"##Translation", ref translation);
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
-            if (entry.Position != translation)
+            if (entry.Translation != translation)
                 Screen.EditorActionManager.ExecuteAction(
-                    new UpdateProperty_FLVERNode_Translation(entry, entry.Position, translation));
+                    new UpdateProperty_FLVERNode_Translation(entry, entry.Translation, translation));
         }
 
         ImGui.AlignTextToFramePadding();
@@ -237,10 +237,10 @@ public class FlverNodePropertyView
         ImGui.Columns(1);
 
         // Update representative selectable
-        if (Selection._trackedNodePosition != entry.Position)
+        if (Selection._trackedNodeTranslation != entry.Translation)
         {
-            Selection._trackedNodePosition = entry.Position;
-            Screen.ViewportManager.UpdateRepresentativeNode(index, entry.Position, entry.Rotation, entry.Scale);
+            Selection._trackedNodeTranslation = entry.Translation;
+            Screen.ViewportManager.UpdateRepresentativeNode(index, entry.Translation, entry.Rotation, entry.Scale);
         }
     }
 }

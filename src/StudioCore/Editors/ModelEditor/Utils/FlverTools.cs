@@ -63,7 +63,7 @@ public static class FlverTools
             * Matrix4x4.CreateRotationX(node.Rotation.X)
             * Matrix4x4.CreateRotationZ(node.Rotation.Z)
             * Matrix4x4.CreateRotationY(node.Rotation.Y)
-            * Matrix4x4.CreateTranslation(node.Position);
+            * Matrix4x4.CreateTranslation(node.Translation);
     }
     public static FLVER.Node GetParent(FLVER.Node node, IReadOnlyList<FLVER.Node> nodes)
     {

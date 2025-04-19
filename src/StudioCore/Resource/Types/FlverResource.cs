@@ -82,6 +82,8 @@ public class FlverResource : IResource, IDisposable
     private List<FlverBone> FBones { get; set; }
     private List<Matrix4x4> BoneTransforms { get; set; }
 
+    public bool IsSpeedtree = false;
+
     public GPUBufferAllocator.GPUBufferHandle StaticBoneBuffer { get; private set; }
 
     /// <summary>
@@ -861,7 +863,7 @@ public class FlverResource : IResource, IDisposable
             case FLVER.LayoutType.Byte4C:
             case FLVER.LayoutType.UV:
             case FLVER.LayoutType.Byte4E:
-            case FLVER.LayoutType.Unknown:
+            case FLVER.LayoutType.Short2ToFloat2B:
                 br.ReadUInt32();
                 break;
 
@@ -1952,6 +1954,7 @@ public class FlverResource : IResource, IDisposable
 
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
+            IsSpeedtree = Flver.IsSpeedtree();
             GPUMeshes = new FlverSubmesh[Flver.Meshes.Count()];
             GPUMaterials = new FlverMaterial[Flver.Materials.Count()];
             Bounds = new BoundingBox();
@@ -2049,8 +2052,9 @@ public class FlverResource : IResource, IDisposable
         br.AssertByte(0);
         br.AssertInt32(0);
         br.AssertInt32(0);
-        //br.AssertInt32(0, 1, 2, 3, 4);  // unknown
-        br.ReadInt32(); // unknown
+        br.AssertInt16([0, 1, 2, 3, 4, 5]);  // unknown
+        var specialModifier = br.AssertInt16([0, -32768]);
+        IsSpeedtree = specialModifier == -32768;
         br.AssertInt32(0);
         br.AssertInt32(0);
         br.AssertInt32([0x0, 0x10]);

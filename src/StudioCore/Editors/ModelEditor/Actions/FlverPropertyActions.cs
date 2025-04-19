@@ -1012,14 +1012,14 @@ public class UpdateProperty_FLVERNode_Translation : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        Entry.Position = NewValue;
+        Entry.Translation = NewValue;
 
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
-        Entry.Position = OldValue;
+        Entry.Translation = OldValue;
 
         return ActionEvent.NoEvent;
     }
@@ -1544,10 +1544,10 @@ public class UpdateProperty_FLVERMesh_BoundingBoxes_Unk : ViewportAction
 public class UpdateProperty_FLVERBufferLayout_LayoutMember_Unk00 : ViewportAction
 {
     private FLVER.LayoutMember Entry;
-    private int OldValue;
-    private int NewValue;
+    private short OldValue;
+    private short NewValue;
 
-    public UpdateProperty_FLVERBufferLayout_LayoutMember_Unk00(FLVER.LayoutMember entry, int oldValue, int newValue)
+    public UpdateProperty_FLVERBufferLayout_LayoutMember_Unk00(FLVER.LayoutMember entry, short oldValue, short newValue)
     {
         Entry = entry;
         OldValue = oldValue;

@@ -1,14 +1,8 @@
-﻿using SoulsFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public partial class FLVER2
@@ -24,7 +18,7 @@ namespace SoulsFormats
             /// The mesh is assumed to not be in bind pose and the transform of the bound node is applied to each vertex.
             /// </summary>
             public bool UseBoneWeights { get; set; }
-
+            
             /// <inheritdoc cref="IFlverMesh.Dynamic"/>
             public byte Dynamic => (byte)(UseBoneWeights ? 1 : 0);
 
@@ -94,9 +88,9 @@ namespace SoulsFormats
                 int boneOffset = br.ReadInt32();
                 int faceSetCount = br.ReadInt32();
                 int faceSetOffset = br.ReadInt32();
-                int vertexBufferCount = br.ReadInt32();
+                int vertexBufferCount = br.AssertInt32([0, 1, 2, 3]);
                 int vertexBufferOffset = br.ReadInt32();
-
+                
                 if (boundingBoxOffset != 0)
                 {
                     br.StepIn(boundingBoxOffset);
@@ -116,10 +110,10 @@ namespace SoulsFormats
                 FaceSets = new List<FaceSet>(faceSetIndices.Length);
                 foreach (int i in faceSetIndices)
                 {
-                    if (!faceSetDict.TryGetValue(i, out FaceSet value))
+                    if (!faceSetDict.ContainsKey(i))
                         throw new NotSupportedException("Face set not found or already taken: " + i);
 
-                    FaceSets.Add(value);
+                    FaceSets.Add(faceSetDict[i]);
                     faceSetDict.Remove(i);
                 }
                 faceSetIndices = null;
@@ -130,10 +124,10 @@ namespace SoulsFormats
                 VertexBuffers = new List<VertexBuffer>(vertexBufferIndices.Length);
                 foreach (int i in vertexBufferIndices)
                 {
-                    if (!vertexBufferDict.TryGetValue(i, out VertexBuffer value))
+                    if (!vertexBufferDict.ContainsKey(i))
                         throw new NotSupportedException("Vertex buffer not found or already taken: " + i);
 
-                    VertexBuffers.Add(value);
+                    VertexBuffers.Add(vertexBufferDict[i]);
                     vertexBufferDict.Remove(i);
                 }
                 vertexBufferIndices = null;
@@ -156,6 +150,14 @@ namespace SoulsFormats
                         }
                     }
                 }
+
+                for (int i = 0; i < VertexBuffers.Count; i++)
+                {
+                    VertexBuffer buffer = VertexBuffers[i];
+                    // This appears to be some kind of flag on edge-compressed vertex buffers
+                    if ((buffer.BufferIndex & ~0x60000000) != i)
+                        throw new FormatException("Unexpected vertex buffer index.");
+                }
             }
 
             internal void ReadVertices(BinaryReaderEx br, int dataOffset, List<BufferLayout> layouts, FLVERHeader header)
@@ -165,16 +167,13 @@ namespace SoulsFormats
                 int tanCap = layoutMembers.Count(m => m.Semantic == FLVER.LayoutSemantic.Tangent);
                 int colorCap = layoutMembers.Count(m => m.Semantic == FLVER.LayoutSemantic.VertexColor);
 
-                if (VertexBuffers.Count > 0)
-                {
-                    int vertexCount = VertexBuffers[0].VertexCount;
-                    Vertices = new List<FLVER.Vertex>(vertexCount);
-                    for (int i = 0; i < vertexCount; i++)
-                        Vertices.Add(new FLVER.Vertex(uvCap, tanCap, colorCap));
+                int vertexCount = VertexBuffers.Count > 0 ? VertexBuffers[0].VertexCount : 0;
+                Vertices = new List<FLVER.Vertex>(vertexCount);
+                for (int i = 0; i < vertexCount; i++)
+                    Vertices.Add(new FLVER.Vertex(uvCap, tanCap, colorCap));
 
-                    foreach (VertexBuffer buffer in VertexBuffers)
-                        buffer.ReadBuffer(br, layouts, Vertices, vertexCount, dataOffset, header);
-                }
+                foreach (VertexBuffer buffer in VertexBuffers)
+                    buffer.ReadBuffer(br, layouts, Vertices, dataOffset, header);
             }
 
             internal void Write(BinaryWriterEx bw, int index)

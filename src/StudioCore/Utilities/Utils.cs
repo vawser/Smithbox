@@ -833,7 +833,7 @@ public static class Utils
         {
             var bone = bones[i];
             sb.AppendLine($"[{i}] {bone.Name}");
-            sb.AppendLine($"\tPosition: {bone.Position}");
+            sb.AppendLine($"\tTranslation: {bone.Translation}");
             sb.AppendLine($"\tRotation: {bone.Rotation}");
             sb.AppendLine($"\tScale: {bone.Scale}");
             sb.AppendLine($"\tParent Index: {bone.ParentIndex}");

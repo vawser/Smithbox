@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
 namespace SoulsFormats
 {
     /// <summary>
@@ -28,6 +26,11 @@ namespace SoulsFormats
         /// Actual geometry of the model.
         /// </summary>
         IReadOnlyList<IFlverMesh> Meshes { get; }
+
+        /// <summary>
+        /// Checks if the model is a Speedtree model
+        /// </summary>
+        bool IsSpeedtree();
     }
 
     /// <summary>
